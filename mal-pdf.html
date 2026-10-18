@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="മലയാളം സാഹിത്യ പഠനത്തിനുള്ള മൊഡ്യൂൾ 1 മുതൽ 4 വരെയുള്ള PDF-കൾ">
-  <title>മലയാളം | പഠന PDF-കൾ</title>
+  <meta name="description" content="മലയാളം സാഹിത്യ പഠനത്തിനുള്ള മൊഡ്യൂൾ 1 മുതൽ 4 വരെയുള്ള PDF-കൾ, സമഗ്ര സംഗ്രഹം, അധ്യായം തിരിച്ചുള്ള MCQs">
+  <title>മലയാളം | പഠന PDF-കൾ, സംഗ്രഹം & MCQs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:20px}
     body{margin:0;padding:24px 16px;font-family:'Noto Sans Malayalam',sans-serif;font-size:16px;line-height:1.7;color:#24324a;background:linear-gradient(135deg,#eaf5fc,#f6f4fd 55%,#fdf0f5)}
     a{color:inherit}
-    a:focus-visible{outline:3px solid #e8b343;outline-offset:4px}
+    a:focus-visible, button:focus-visible{outline:3px solid #e8b343;outline-offset:4px}
     .page-box{width:100%;max-width:960px;margin:0 auto;padding:24px;background:#fff;border:1px solid #e4e8f0;border-radius:20px;box-shadow:0 12px 36px rgba(30,41,59,.07)}
     .hero{text-align:center;margin:0 0 18px;padding:14px 18px;border:1px solid #dde3f1;border-radius:14px;background:linear-gradient(110deg,#eef8fb,#f3f0fd,#fdf2f7)}
     .hero h1{margin:0 0 4px;font:800 clamp(26px,4vw,34px)/1.6 'Noto Sans Malayalam',sans-serif;letter-spacing:0;color:#312e81}
     .hero p{margin:0;font-size:14px;font-weight:700;line-height:1.8;color:#5b6680}
     .module-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-bottom:16px}
-    .module-nav a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:34px;padding:5px 6px;border:1px solid #dce2ee;border-radius:8px;background:#f5f7fd;text-decoration:none;font-size:12px;font-weight:700;line-height:1.5;color:#433b8c;overflow-wrap:anywhere;text-align:center}
+    .module-nav a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:34px;padding:5px 6px;border:1px solid #dce2ee;border-radius:8px;background:#f5f7fd;text-decoration:none;font-size:12px;font-weight:700;line-height:1.5;color:#433b8c;overflow-wrap:anywhere;text-align:center;transition:background 0.2s}
     .module-nav a:hover{background:#ececfb}
     .modules-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:16px}
     .module{display:flex;flex-direction:column;min-width:0;margin:0;scroll-margin-top:20px;overflow:hidden;border:1px solid #e1e7ee;border-top:4px solid var(--module-color);border-radius:14px;background:#fff;box-shadow:0 4px 14px rgba(30,41,59,.04)}
@@ -36,21 +36,147 @@
     .chapter-copy{min-width:0}
     .chapter-copy h3{margin:0 0 6px;min-height:42px;font-size:16px;font-weight:700;line-height:1.75;color:#26364d;overflow-wrap:anywhere}
     .chapter-copy p{margin:0;font-size:12px;font-weight:700;line-height:1.7;color:#728096}
-    .actions{grid-column:1/-1;display:grid;grid-template-columns:1fr;gap:8px;align-self:stretch}
-    .actions a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;padding:9px 8px;border:1px solid var(--module-color);border-radius:8px;text-align:center;text-decoration:none;font-size:13px;font-weight:700;line-height:1.7;overflow-wrap:anywhere}
-    .read-online{background:var(--module-color);color:#fff}
+    
+    /* 3-Button Action Grid: PDF, Summary, MCQs */
+    .actions{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-self:stretch;margin-top:4px}
+    .actions a, .actions button{display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;padding:9px 6px;border:1.5px solid var(--module-color);border-radius:8px;text-align:center;text-decoration:none;font-family:inherit;font-size:12.5px;font-weight:700;line-height:1.5;overflow-wrap:anywhere;cursor:pointer;transition:all 0.2s ease;box-sizing:border-box}
+    .read-online{background:var(--module-color);color:#fff !important}
+    .btn-summary{background:var(--module-tint);color:var(--module-color)}
+    .btn-mcq{background:#ffffff;color:var(--module-color)}
+    .actions a:hover, .actions button:hover{filter:brightness(.92);transform:translateY(-1px);box-shadow:0 3px 8px rgba(0,0,0,0.08)}
+    
     .download, .btn-download, a[download], button[download], [download]{display:none!important}
-    .actions a:hover{filter:brightness(.94)}
-    .back{display:block;width:fit-content;max-width:100%;margin:20px auto 0;padding:10px 16px;border:1px solid #dddff0;border-radius:9px;background:#f4f3fc;color:#443c84;text-align:center;text-decoration:none;font-size:13px;font-weight:700}
+    .back{display:block;width:fit-content;max-width:100%;margin:20px auto 0;padding:10px 16px;border:1px solid #dddff0;border-radius:9px;background:#f4f3fc;color:#443c84;text-align:center;text-decoration:none;font-size:13px;font-weight:700;transition:background 0.2s}
+    .back:hover{background:#ecebf9}
+
     /* Module 3 card layout fix */
     #module-3 .chapter-list{display:grid;grid-template-columns:minmax(0,1fr);width:100%;min-width:0}
     #module-3 .chapter{display:grid;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto;gap:12px;width:100%;min-width:0;height:auto;align-content:start}
     #module-3 .chapter .chapter-copy{min-width:0;overflow-wrap:anywhere}
     #module-3 .chapter .chapter-copy h3{min-height:0;white-space:normal;overflow-wrap:anywhere}
-    #module-3 .chapter .actions{grid-column:1/-1;display:grid;grid-template-columns:1fr;width:100%;min-width:0}
-    @media(max-width:680px){body{padding:10px}.page-box{padding:12px;border-radius:14px}.hero{padding:10px}.module-nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:12px}.module-nav a{min-height:32px;font-size:11px;padding:5px 3px;border-radius:7px}.modules-grid{grid-template-columns:minmax(0,1fr);gap:10px}.chapter{padding:12px}.module-heading{padding:8px 12px}.module-heading h2{font-size:16px}.hero p{font-size:12px}}
-    @media(max-width:420px){.chapter{grid-template-columns:36px minmax(0,1fr);gap:10px;padding:12px}.num{width:36px;height:36px;border-radius:9px;font-size:15px}.chapter-copy h3{min-height:0;font-size:15px;line-height:1.65}.actions{grid-template-columns:minmax(0,1fr);gap:7px}.actions a{min-height:42px;font-size:13px}#module-3 .chapter{grid-template-columns:36px minmax(0,1fr);padding:12px}#module-3 .chapter .actions{grid-template-columns:minmax(0,1fr)}}\n    @media(max-width:360px){.module-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.module-nav a{font-size:11px;min-height:30px;padding:4px 3px}}
+    #module-3 .chapter .actions{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;min-width:0}
 
+    /* ========================================================================= */
+    /* INTERACTIVE LMS STUDY MODAL (Detailed Summary & Pure PDF MCQs)           */
+    /* ========================================================================= */
+    .study-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px}
+    .study-modal[hidden]{display:none !important}
+    .study-backdrop{position:fixed;inset:0;background:rgba(15,23,42,0.65);backdrop-filter:blur(4px);animation:fadeIn .2s ease}
+    .study-dialog-panel{position:relative;z-index:10;width:100%;max-width:920px;max-height:90vh;background:#ffffff;border-radius:20px;border:1px solid #cbd5e1;box-shadow:0 24px 60px rgba(15,23,42,0.25);display:flex;flex-direction:column;overflow:hidden;animation:slideUp .25s ease}
+    
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+    .study-modal-header{padding:14px 20px;background:linear-gradient(135deg,var(--active-mod-tint,#edf9f5),#ffffff);border-bottom:1.5px solid #e2e8f0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-shrink:0}
+    .study-modal-header h2{margin:0;font-size:18px;font-weight:800;color:var(--active-mod-color,#0f766e);line-height:1.4}
+    .study-modal-header p{margin:2px 0 0;font-size:12.5px;color:#64748b;font-weight:600}
+    .study-close-btn{appearance:none;background:#f1f5f9;border:1px solid #cbd5e1;color:#475569;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:16px;font-weight:800;cursor:pointer;flex-shrink:0;transition:all .15s}
+    .study-close-btn:hover{background:#fee2e2;border-color:#fca5a5;color:#dc2626}
+
+    /* Chapter Subtabs */
+    .modal-chapter-tabs{display:flex;gap:6px;padding:10px 16px;background:#f8fafc;border-bottom:1px solid #e2e8f0;overflow-x:auto;flex-shrink:0;-webkit-overflow-scrolling:touch}
+    .modal-chapter-tabs button{appearance:none;border:1px solid #cbd5e1;background:#ffffff;color:#334155;padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:inherit;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+    .modal-chapter-tabs button:hover{background:#f1f5f9;border-color:#94a3b8}
+    .modal-chapter-tabs button.active{background:var(--active-mod-color,#0f766e);color:#ffffff;border-color:var(--active-mod-color,#0f766e);box-shadow:0 3px 8px rgba(0,0,0,0.12)}
+
+    /* Mode Switcher Bar (Like other LMS PDF tab) */
+    .study-mode-bar{padding:10px 16px;background:#ffffff;border-bottom:1px solid #edf2f7;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;flex-shrink:0}
+    .mode-switcher{display:inline-flex;background:#f1f5f9;padding:4px;border-radius:9999px;gap:4px;border:1px solid #e2e8f0}
+    .mode-btn{appearance:none;border:none;background:transparent;color:#64748b;font-family:inherit;font-size:12.5px;font-weight:700;padding:6px 16px;border-radius:9999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all 0.2s ease;white-space:nowrap;user-select:none}
+    .mode-btn:hover{color:#0f172a}
+    .mode-btn.active{background:#ffffff;color:var(--active-mod-color,#0f766e);box-shadow:0 2px 7px rgba(0,0,0,0.08);font-weight:800}
+
+    /* Modal Panes Body */
+    .study-panes-body{padding:18px 20px;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch}
+    .study-pane{animation:fadeIn .2s ease}
+
+    /* Pane 1: PDF Viewer */
+    .pdf-action-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px}
+    .btn-open-pdf{display:inline-flex;align-items:center;gap:6px;background:var(--active-mod-color,#0f766e);color:#fff !important;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:filter .2s}
+    .btn-open-pdf:hover{filter:brightness(0.9)}
+    .pdf-embed-wrapper{width:100%;height:580px;border:1px solid #cbd5e1;border-radius:12px;overflow:hidden;background:#525659}
+    .pdf-embed-wrapper iframe{width:100%;height:100%;border:none}
+
+    /* Pane 2: Detailed Chapter Summary */
+    .summary-header-badge-row{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+    .ch-badge-item{font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:6px;background:#f1f5f9;color:#334155;border:1px solid #e2e8f0}
+    .ch-badge-item.genre{background:var(--active-mod-tint,#edf9f5);color:var(--active-mod-color,#0f766e);border-color:transparent}
+
+    .summary-overview-card{background:linear-gradient(135deg,var(--active-mod-tint,#edf9f5) 0%,#ffffff 100%);border-left:4px solid var(--active-mod-color,#0f766e);padding:14px 18px;border-radius:0 12px 12px 0;font-size:14px;line-height:1.75;color:#1e293b;margin-bottom:18px;box-shadow:0 2px 6px rgba(0,0,0,0.03)}
+    .summary-overview-card strong{color:var(--active-mod-color,#0f766e);display:block;margin-bottom:6px;font-size:14.5px;font-weight:800}
+
+    .summary-sections-header{font-size:15px;font-weight:800;color:#0f172a;margin:18px 0 12px;display:flex;align-items:center;gap:8px}
+    .summary-sections-container{display:flex;flex-direction:column;gap:14px;margin-bottom:20px}
+    .summary-section-card{background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;box-shadow:0 2px 5px rgba(0,0,0,0.03);transition:border-color .2s}
+    .summary-section-card:hover{border-color:#cbd5e1}
+    .section-card-top{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+    .section-badge{display:inline-block;padding:2px 8px;border-radius:6px;background:var(--active-mod-tint,#edf9f5);color:var(--active-mod-color,#0f766e);font-size:11px;font-weight:800;letter-spacing:0.5px}
+    .section-title{font-size:14.5px;font-weight:800;color:#0f172a}
+    .section-body-text{font-size:13.5px;line-height:1.8;color:#334155;text-align:justify}
+
+    .info-card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:20px}
+    .info-block{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px}
+    .info-block h4{margin:0 0 10px;font-size:13.5px;font-weight:800;color:#0f172a;display:flex;align-items:center;gap:6px}
+    .info-block ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+    .info-block li{font-size:13px;line-height:1.65;color:#334155}
+    .info-block li strong{color:#0f172a}
+
+    /* Pane 3: Pure PDF MCQs */
+    .quiz-control-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;margin-bottom:16px;gap:12px;flex-wrap:wrap}
+    .stat-badge{font-size:12px;font-weight:700;color:#475569;background:#ffffff;padding:4px 10px;border-radius:6px;border:1px solid #cbd5e1}
+    .quiz-score-badge{font-size:14px;font-weight:800;color:var(--active-mod-color,#0f766e);background:var(--active-mod-tint,#edf9f5);padding:4px 12px;border-radius:8px;border:1px solid var(--active-mod-color,#0f766e)}
+    .btn-shuffle{appearance:none;background:var(--active-mod-color,#0f766e);color:#ffffff;border:none;padding:8px 16px;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:filter .2s;font-family:inherit}
+    .btn-shuffle:hover{filter:brightness(0.9)}
+
+    .quiz-questions-list{display:flex;flex-direction:column;gap:14px}
+    .question-card{background:#ffffff;border:1.5px solid #e2e8f0;border-radius:14px;padding:16px 18px;box-shadow:0 2px 6px rgba(0,0,0,0.03);transition:border-color .2s}
+    .question-card.answered{border-color:#cbd5e1}
+    .question-title{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+    .question-number{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:14px;color:var(--active-mod-color,#0f766e);background:var(--active-mod-tint,#edf9f5);padding:2px 8px;border-radius:6px;flex-shrink:0}
+    .question-text{font-size:14.5px;font-weight:700;color:#0f172a;line-height:1.55}
+
+    .options-grid{display:grid;grid-template-columns:1fr;gap:8px}
+    .opt-btn{appearance:none;width:100%;text-align:left;background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:10px;padding:10px 14px;font-size:13.5px;font-weight:600;color:#1e293b;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:inherit;transition:all .15s}
+    .opt-btn:hover:not(:disabled){background:#f1f5f9;border-color:#94a3b8}
+    .opt-btn:disabled{cursor:default}
+    
+    .opt-btn.correct{background:#dcfce7 !important;border-color:#22c55e !important;color:#14532d !important;font-weight:700}
+    .opt-btn.wrong{background:#fee2e2 !important;border-color:#ef4444 !important;color:#7f1d1d !important}
+    .opt-btn.show-correct{background:#f0fdf4 !important;border-color:#86efac !important;color:#166534 !important;font-weight:700}
+
+    .explanation-box{margin-top:12px;padding:12px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:0 10px 10px 0;font-size:13px;line-height:1.65;color:#14532d;animation:fadeIn .2s ease}
+    .explanation-box strong{display:block;margin-bottom:3px;font-size:13.5px;color:#166534}
+
+    @media(max-width:680px){
+      body{padding:10px}
+      .page-box{padding:12px;border-radius:14px}
+      .hero{padding:10px}
+      .module-nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:12px}
+      .module-nav a{min-height:32px;font-size:11px;padding:5px 3px;border-radius:7px}
+      .modules-grid{grid-template-columns:minmax(0,1fr);gap:10px}
+      .chapter{padding:12px}
+      .module-heading{padding:8px 12px}
+      .module-heading h2{font-size:16px}
+      .hero p{font-size:12px}
+      .actions{grid-template-columns:1fr;gap:6px}
+      .study-dialog-panel{max-height:96vh;border-radius:14px}
+      .study-modal-header{padding:10px 14px}
+      .study-panes-body{padding:12px 14px}
+      .mode-switcher{width:100%;justify-content:center}
+      .mode-btn{padding:5px 10px;font-size:11.5px}
+    }
+    @media(max-width:420px){
+      .chapter{grid-template-columns:36px minmax(0,1fr);gap:10px;padding:12px}
+      .num{width:36px;height:36px;border-radius:9px;font-size:15px}
+      .chapter-copy h3{min-height:0;font-size:15px;line-height:1.65}
+      .actions a, .actions button{min-height:42px;font-size:12px}
+      #module-3 .chapter{grid-template-columns:36px minmax(0,1fr);padding:12px}
+      #module-3 .chapter .actions{grid-template-columns:1fr}
+    }
+    @media(max-width:360px){
+      .module-nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .module-nav a{font-size:11px;min-height:30px;padding:4px 3px}
+    }
   </style>
 </head>
 <body>
@@ -78,7 +204,8 @@
           <div class="chapter-copy"><h3>മലയാള സാഹിത്യാനുശീലനം</h3><p>മലയാളം പഠന PDF</p></div>
           <div class="actions">
             <a class="read-online" href="LiteraryPracticeinMalayalam-Module1_T1777700168876%20(1).pdf" target="_blank" rel="noopener">വായിക്കുക ↗</a>
-            <!-- Reinstated later: <a class="download" href="LiteraryPracticeinMalayalam-Module1_T1777700168876%20(1).pdf" download>PDF ഡൗൺലോഡ് ↓</a> -->
+            <button type="button" class="btn-summary" onclick="openStudyModal(1, 'summary')">സംഗ്രഹം (Summary) ↗</button>
+            <button type="button" class="btn-mcq" onclick="openStudyModal(1, 'mcq')">MCQs ↗</button>
           </div>
         </article>
       </div>
@@ -95,7 +222,8 @@
           <div class="chapter-copy"><h3>മലയാള സാഹിത്യാനുശീലനം</h3><p>മലയാളം പഠന PDF</p></div>
           <div class="actions">
             <a class="read-online" href="LiteraryPracticeinMalayalam-Module2_T1779269299389.pdf" target="_blank" rel="noopener">വായിക്കുക ↗</a>
-            <!-- Reinstated later: <a class="download" href="LiteraryPracticeinMalayalam-Module2_T1779269299389.pdf" download>PDF ഡൗൺലോഡ് ↓</a> -->
+            <button type="button" class="btn-summary" onclick="openStudyModal(2, 'summary')">സംഗ്രഹം (Summary) ↗</button>
+            <button type="button" class="btn-mcq" onclick="openStudyModal(2, 'mcq')">MCQs ↗</button>
           </div>
         </article>
       </div>
@@ -112,12 +240,10 @@
           <div class="chapter-copy"><h3>മലയാള സാഹിത്യാനുശീലനം</h3><p>മലയാളം പഠന PDF</p></div>
           <div class="actions">
             <a class="read-online" href="Module3മലയാളസാഹിത്യാനുശീലനം_T1781936346875%20(1).pdf" target="_blank" rel="noopener">വായിക്കുക ↗</a>
-            <!-- Reinstated later: <a class="download" href="Module3മലയാളസാഹിത്യാനുശീലനം_T1781936346875%20(1).pdf" download>PDF ഡൗൺലോഡ് ↓</a> -->
+            <button type="button" class="btn-summary" onclick="openStudyModal(3, 'summary')">സംഗ്രഹം (Summary) ↗</button>
+            <button type="button" class="btn-mcq" onclick="openStudyModal(3, 'mcq')">MCQs ↗</button>
           </div>
         </article>
-
-
-
       </div>
     </section>
 
@@ -132,7 +258,8 @@
           <div class="chapter-copy"><h3>മലയാളം പഠനസാമഗ്രികൾ</h3><p>മലയാളം പഠന PDF</p></div>
           <div class="actions">
             <a class="read-online" href="MODULE4_T1783445288761.pdf" target="_blank" rel="noopener">വായിക്കുക ↗</a>
-            <!-- Reinstated later: <a class="download" href="MODULE4_T1783445288761.pdf" download>PDF ഡൗൺലോഡ് ↓</a> -->
+            <button type="button" class="btn-summary" onclick="openStudyModal(4, 'summary')">സംഗ്രഹം (Summary) ↗</button>
+            <button type="button" class="btn-mcq" onclick="openStudyModal(4, 'mcq')">MCQs ↗</button>
           </div>
         </article>
       </div>
@@ -140,5 +267,378 @@
     </div>
     <a class="back" href="index.html">ഹോം പേജിലേക്ക് മടങ്ങുക</a>
   </main>
+
+  <!-- ========================================================================= -->
+  <!-- LMS STUDY MODAL (Detailed Summary & Pure PDF MCQs)                        -->
+  <!-- ========================================================================= -->
+  <div id="study-modal" class="study-modal" role="dialog" aria-modal="true" hidden>
+    <div class="study-backdrop" onclick="closeStudyModal()"></div>
+    <div class="study-dialog-panel">
+      <!-- Header -->
+      <header class="study-modal-header">
+        <div>
+          <h2 id="modal-module-title">മൊഡ്യൂൾ 1: ഗദ്യവും വിവർത്തനവും</h2>
+          <p id="modal-module-desc">മലയാള സാഹിത്യാനുശീലനം · CUFYUGP AEC</p>
+        </div>
+        <button class="study-close-btn" type="button" onclick="closeStudyModal()" aria-label="Close">✕</button>
+      </header>
+
+      <!-- Chapter Tabs -->
+      <nav id="modal-chapter-tabs" class="modal-chapter-tabs" aria-label="Chapters"></nav>
+
+      <!-- Mode Switcher -->
+      <div class="study-mode-bar">
+        <div class="mode-switcher" role="tablist">
+          <button type="button" class="mode-btn" data-mode="pdf" onclick="switchMode('pdf')"><span>📄</span> PDF Document</button>
+          <button type="button" class="mode-btn" data-mode="summary" onclick="switchMode('summary')"><span>📝</span> Chapter Summary</button>
+          <button type="button" class="mode-btn" data-mode="mcq" onclick="switchMode('mcq')"><span>🎯</span> Random MCQs</button>
+        </div>
+      </div>
+
+      <!-- Panes Container -->
+      <div class="study-panes-body">
+        <!-- Pane 1: PDF Viewer -->
+        <div id="pane-pdf" class="study-pane">
+          <div class="pdf-action-row">
+            <span id="pdf-viewer-desc" style="font-size:13px; font-weight:700; color:#334155;">ഔദ്യോഗിക കോഴ്സ് PDF</span>
+            <a id="modal-pdf-link" class="btn-open-pdf" href="#" target="_blank" rel="noopener"><span>📄</span> Open PDF in New Tab ↗</a>
+          </div>
+          <div class="pdf-embed-wrapper">
+            <iframe id="modal-pdf-frame" src="" title="PDF Preview" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <!-- Pane 2: Detailed Chapter Summary -->
+        <div id="pane-summary" class="study-pane" style="display:none;">
+          <div id="summary-content"></div>
+        </div>
+
+        <!-- Pane 3: Interactive MCQs -->
+        <div id="pane-mcq" class="study-pane" style="display:none;">
+          <div class="quiz-control-bar">
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="stat-badge">🎯 15 Questions per Session · Sourced from official Course PDF</span>
+              <span id="quiz-score-badge" class="quiz-score-badge">സ്കോർ: 0 / 15</span>
+            </div>
+            <button type="button" class="btn-shuffle" onclick="reshuffleQuiz()">
+              <span>🔀</span> Re-Shuffle / പുതിയ 15 ചോദ്യങ്ങൾ
+            </button>
+          </div>
+          <div id="quiz-questions-list" class="quiz-questions-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Learning Data -->
+  <script src="data/learning_data_malayalam.js"></script>
+  <script src="malayalam_learning_data.js"></script>
+
+  <script>
+    let activeModuleNumber = 1;
+    let activeChapterIndex = 0;
+    let activeMode = 'summary';
+    let currentQuizState = { questions: [], score: 0, answered: 0 };
+
+    function getModuleData(modNum) {
+      if (window.malayalamLearningData) {
+        if (window.malayalamLearningData.modules && window.malayalamLearningData.modules['mal_mod_' + modNum]) {
+          return window.malayalamLearningData.modules['mal_mod_' + modNum];
+        }
+        if (window.malayalamLearningData['mal_mod_' + modNum]) {
+          return window.malayalamLearningData['mal_mod_' + modNum];
+        }
+      }
+      return null;
+    }
+
+    function openStudyModal(modNum, initialMode) {
+      activeModuleNumber = modNum;
+      activeChapterIndex = 0;
+      activeMode = initialMode || 'summary';
+
+      const modData = getModuleData(modNum);
+      if (!modData) {
+        alert('Module data loading. Please refresh.');
+        return;
+      }
+
+      const modal = document.getElementById('study-modal');
+      const dialogPanel = modal.querySelector('.study-dialog-panel');
+      dialogPanel.style.setProperty('--active-mod-color', modData.themeColor || '#0f766e');
+      dialogPanel.style.setProperty('--active-mod-tint', modData.themeTint || '#edf9f5');
+
+      document.getElementById('modal-module-title').textContent = modData.moduleTitle;
+      document.getElementById('modal-module-desc').textContent = modData.moduleSubtitle || 'മലയാള സാഹിത്യാനുശീലനം';
+
+      renderChapterTabs(modData);
+      selectChapter(0);
+      switchMode(activeMode);
+
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeStudyModal() {
+      const modal = document.getElementById('study-modal');
+      modal.hidden = true;
+      document.body.style.overflow = '';
+      const iframe = document.getElementById('modal-pdf-frame');
+      if (iframe) iframe.src = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeStudyModal();
+    });
+
+    function renderChapterTabs(modData) {
+      const tabsNav = document.getElementById('modal-chapter-tabs');
+      tabsNav.replaceChildren();
+
+      (modData.chapters || []).forEach((ch, idx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = idx === activeChapterIndex ? 'active' : '';
+        btn.innerHTML = `<span>📖</span> Ch ${idx + 1} · ${ch.chapterTitle.split(':')[1] || ch.chapterTitle}`;
+        btn.onclick = () => selectChapter(idx);
+        tabsNav.appendChild(btn);
+      });
+    }
+
+    function selectChapter(idx) {
+      activeChapterIndex = idx;
+      const modData = getModuleData(activeModuleNumber);
+      if (!modData || !modData.chapters || !modData.chapters[idx]) return;
+
+      const ch = modData.chapters[idx];
+
+      // Update chapter tab active classes
+      const tabs = document.querySelectorAll('#modal-chapter-tabs button');
+      tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
+
+      // Update PDF pane
+      const pdfLink = document.getElementById('modal-pdf-link');
+      const pdfFrame = document.getElementById('modal-pdf-frame');
+      const pdfHref = modData.pdfHref || 'LiteraryPracticeinMalayalam-Module1_T1777700168876%20(1).pdf';
+      pdfLink.href = pdfHref;
+      document.getElementById('pdf-viewer-desc').textContent = `${ch.chapterTitle} (${ch.author})`;
+      if (activeMode === 'pdf') {
+        pdfFrame.src = pdfHref.split('#')[0] + '#toolbar=0&navpanes=0';
+      }
+
+      // Render Summary
+      renderDetailedSummary(ch);
+
+      // Render MCQs
+      loadChapterQuiz(ch);
+    }
+
+    function switchMode(mode) {
+      activeMode = mode;
+      const modeBtns = document.querySelectorAll('.mode-switcher .mode-btn');
+      modeBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mode === mode);
+      });
+
+      document.getElementById('pane-pdf').style.display = mode === 'pdf' ? 'block' : 'none';
+      document.getElementById('pane-summary').style.display = mode === 'summary' ? 'block' : 'none';
+      document.getElementById('pane-mcq').style.display = mode === 'mcq' ? 'block' : 'none';
+
+      if (mode === 'pdf') {
+        const modData = getModuleData(activeModuleNumber);
+        const pdfFrame = document.getElementById('modal-pdf-frame');
+        if (modData && (!pdfFrame.src || pdfFrame.src === 'about:blank' || pdfFrame.src === window.location.href)) {
+          pdfFrame.src = (modData.pdfHref || '').split('#')[0] + '#toolbar=0&navpanes=0';
+        }
+      }
+    }
+
+    function renderDetailedSummary(ch) {
+      const container = document.getElementById('summary-content');
+      container.replaceChildren();
+
+      // Badges
+      const badgeRow = document.createElement('div');
+      badgeRow.className = 'summary-header-badge-row';
+      badgeRow.innerHTML = `
+        <span class="ch-badge-item genre">${ch.genre || 'സാഹിത്യശാഖ'}</span>
+        <span class="ch-badge-item">രചയിതാവ്: ${ch.author || 'അജ്ഞാതൻ'}</span>
+        ${ch.sourceWork ? `<span class="ch-badge-item">സ്രോതസ്സ്: ${ch.sourceWork}</span>` : ''}
+      `;
+      container.appendChild(badgeRow);
+
+      // Executive Overview
+      const ovCard = document.createElement('div');
+      ovCard.className = 'summary-overview-card';
+      ovCard.innerHTML = `
+        <strong>📌 Executive Chapter Overview (അധ്യായ സംഗ്രഹം)</strong>
+        <div>${ch.summary.overview || ch.summary.overviewMal || ''}</div>
+      `;
+      container.appendChild(ovCard);
+
+      // Section-by-Section Syllabus Coverage
+      if (ch.summary.sections && ch.summary.sections.length) {
+        const secHeader = document.createElement('div');
+        secHeader.className = 'summary-sections-header';
+        secHeader.innerHTML = `<span>📚</span> Comprehensive Syllabus Coverage (${ch.summary.sections.length} Core Parts)`;
+        container.appendChild(secHeader);
+
+        const secContainer = document.createElement('div');
+        secContainer.className = 'summary-sections-container';
+
+        ch.summary.sections.forEach(sec => {
+          const card = document.createElement('div');
+          card.className = 'summary-section-card';
+          card.innerHTML = `
+            <div class="section-card-top">
+              <span class="section-badge">${sec.badge}</span>
+              <span class="section-title">${sec.title}</span>
+            </div>
+            <div class="section-body-text">${sec.text}</div>
+          `;
+          secContainer.appendChild(card);
+        });
+        container.appendChild(secContainer);
+      }
+
+      // Info Cards Grid: Key Takeaways & Important Terms
+      const grid = document.createElement('div');
+      grid.className = 'info-card-grid';
+
+      if (ch.summary.keyTakeaways && ch.summary.keyTakeaways.length) {
+        const takeBlock = document.createElement('div');
+        takeBlock.className = 'info-block';
+        takeBlock.innerHTML = `
+          <h4><span>💡</span> പ്രധാന ആശയങ്ങൾ (Key Takeaways)</h4>
+          <ul>${ch.summary.keyTakeaways.map(item => `<li>${item}</li>`).join('')}</ul>
+        `;
+        grid.appendChild(takeBlock);
+      }
+
+      if (ch.summary.importantTerms && ch.summary.importantTerms.length) {
+        const termsBlock = document.createElement('div');
+        termsBlock.className = 'info-block';
+        termsBlock.innerHTML = `
+          <h4><span>🏷️</span> പ്രധാന ആശയങ്ങളും സാങ്കേതിക പദങ്ങളും</h4>
+          <ul>${ch.summary.importantTerms.map(term => `<li><strong>${term.term || term}</strong>: ${term.meaning || term.def || ''}</li>`).join('')}</ul>
+        `;
+        grid.appendChild(termsBlock);
+      }
+
+      if (ch.summary.examPoints20 && ch.summary.examPoints20.length) {
+        const examBlock = document.createElement('div');
+        examBlock.className = 'info-block';
+        examBlock.style.gridColumn = '1 / -1';
+        examBlock.innerHTML = `
+          <h4><span>⚡</span> ദ്രുത പുനരവലോകനം & പ്രധാന പരീക്ഷാ പോയിന്റുകൾ (High-Yield Exam Points)</h4>
+          <ul style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:8px;">
+            ${ch.summary.examPoints20.map(pt => `<li>${pt}</li>`).join('')}
+          </ul>
+        `;
+        grid.appendChild(examBlock);
+      }
+
+      container.appendChild(grid);
+    }
+
+    function shuffleArray(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function loadChapterQuiz(ch) {
+      const pool = ch.quizPool || [];
+      const shuffled = shuffleArray(pool).slice(0, 15);
+      currentQuizState = { questions: shuffled, score: 0, answered: 0 };
+      updateQuizScore();
+      renderQuizCards();
+    }
+
+    function reshuffleQuiz() {
+      const modData = getModuleData(activeModuleNumber);
+      if (modData && modData.chapters && modData.chapters[activeChapterIndex]) {
+        loadChapterQuiz(modData.chapters[activeChapterIndex]);
+      }
+    }
+
+    function updateQuizScore() {
+      const badge = document.getElementById('quiz-score-badge');
+      if (badge) {
+        badge.textContent = `സ്കോർ: ${currentQuizState.score} / ${currentQuizState.questions.length}`;
+      }
+    }
+
+    function renderQuizCards() {
+      const list = document.getElementById('quiz-questions-list');
+      list.replaceChildren();
+
+      currentQuizState.questions.forEach((q, qIdx) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const title = document.createElement('div');
+        title.className = 'question-title';
+        title.innerHTML = `
+          <span class="question-number">Q${qIdx + 1}</span>
+          <div class="question-text">${q.question || q.questionMal}</div>
+        `;
+        card.appendChild(title);
+
+        const optGrid = document.createElement('div');
+        optGrid.className = 'options-grid';
+
+        const expBox = document.createElement('div');
+        expBox.className = 'explanation-box';
+        expBox.style.display = 'none';
+        expBox.innerHTML = `
+          <strong>💡 വിശദീകരണം (Explanation):</strong>
+          <div>${q.explanation || q.explanationMal || 'പാഠപുസ്തകത്തിലെ വിവരണം അനുസരിച്ച് ഈ ഉത്തരമാണ് ശരി.'}</div>
+        `;
+
+        const optLetters = ['A', 'B', 'C', 'D'];
+        (q.options || []).forEach((opt, optIdx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'opt-btn';
+          btn.innerHTML = `<span><strong>${optLetters[optIdx]})</strong> ${opt}</span>`;
+
+          btn.onclick = () => {
+            const allBtns = optGrid.querySelectorAll('.opt-btn');
+            allBtns.forEach(b => b.disabled = true);
+            card.classList.add('answered');
+
+            const isCorrect = (optIdx === q.answer);
+            if (isCorrect) {
+              btn.classList.add('correct');
+              btn.innerHTML = `<span><strong>${optLetters[optIdx]})</strong> ${opt}</span> <span>✓ ശരി</span>`;
+              currentQuizState.score += 1;
+            } else {
+              btn.classList.add('wrong');
+              btn.innerHTML = `<span><strong>${optLetters[optIdx]})</strong> ${opt}</span> <span>✗ തെറ്റ്</span>`;
+              // Highlight correct option
+              if (allBtns[q.answer]) {
+                allBtns[q.answer].classList.add('show-correct');
+                allBtns[q.answer].innerHTML += ` <span>✓ (ശരിയായ ഉത്തരം)</span>`;
+              }
+            }
+
+            expBox.style.display = 'block';
+            currentQuizState.answered += 1;
+            updateQuizScore();
+          };
+
+          optGrid.appendChild(btn);
+        });
+
+        card.appendChild(optGrid);
+        card.appendChild(expBox);
+        list.appendChild(card);
+      });
+    }
+  </script>
 </body>
 </html>
