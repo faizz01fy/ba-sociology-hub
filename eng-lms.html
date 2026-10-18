@@ -202,18 +202,6 @@ View PDF
 
 </a>
 
-
-
-<a
-id="downloadBtn"
-class="modal-btn"
-download
->
-
-Download PDF
-
-</a>
-
 </div>
 
 </div>
@@ -247,17 +235,23 @@ document.getElementById(
 
 document.getElementById(
 "viewBtn"
-).href=pdf;
-
-document.getElementById(
-"downloadBtn"
-).href=pdf;
+).href='study-guide-reader.html?file='+encodeURIComponent(pdf);
 
 }
 
 function closeModal(){document.getElementById("pdfModal").style.display="none";}
 document.getElementById("pdfModal").addEventListener("click",function(event){if(event.target===this)closeModal();});
-document.addEventListener("keydown",function(event){if(event.key==="Escape")closeModal();});
+document.addEventListener("keydown",function(event){
+  if(event.key==="Escape")closeModal();
+  if((event.ctrlKey||event.metaKey)&&['s','p','u'].includes(event.key.toLowerCase())){
+    event.preventDefault();
+  }
+});
+document.addEventListener('contextmenu',function(event){event.preventDefault();});
+document.addEventListener('click',function(event){
+  const target=event.target.closest('a[download], .btn-download, .download, [download]');
+  if(target)event.preventDefault();
+},true);
 
 </script>
 

@@ -686,7 +686,7 @@
     function viewPdf(url, title) {
       document.getElementById('modalTitle').innerText = title;
       const clean = url.split('#')[0];
-      document.getElementById('pdfFrame').src = clean + '#toolbar=0&navpanes=0';
+      document.getElementById('pdfFrame').src = 'study-guide-reader.html?file=' + encodeURIComponent(clean);
       document.getElementById('viewerModal').style.display = 'block';
     }
 
@@ -701,6 +701,29 @@
         closeViewer();
       }
     };
+
+    // Disable right click across the page
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // Disable keyboard shortcuts for saving and printing
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u'].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+      }
+      if (e.key === 'Escape') {
+        closeViewer();
+      }
+    });
+
+    // Prevent any download actions
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('a[download], .btn-download, .download, [download]');
+      if (target) {
+        e.preventDefault();
+      }
+    }, true);
   </script>
 
 </body>

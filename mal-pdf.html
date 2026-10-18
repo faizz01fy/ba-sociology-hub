@@ -177,6 +177,7 @@
       .module-nav{grid-template-columns:repeat(2,minmax(0,1fr))}
       .module-nav a{font-size:11px;min-height:30px;padding:4px 3px}
     }
+    @media print{body{display:none!important}}
   </style>
 </head>
 <body>
@@ -203,7 +204,7 @@
           <div class="num">01</div>
           <div class="chapter-copy"><h3>മലയാള സാഹിത്യാനുശീലനം</h3><p>മലയാളം പഠന PDF</p></div>
           <div class="actions">
-            <a class="read-online" href="LiteraryPracticeinMalayalam-Module1_T1777700168876%20(1).pdf" target="_blank" rel="noopener">വായിക്കുക ↗</a>
+            <a class="read-online" href="study-guide-reader.html?file=LiteraryPracticeinMalayalam-Module1_T1777700168876%20(1).pdf" target="_blank" rel="noopener">വായിക്കുക ↗</a>
             <button type="button" class="btn-summary" onclick="openStudyModal(1, 'summary')">സംഗ്രഹം (Summary) ↗</button>
             <button type="button" class="btn-mcq" onclick="openStudyModal(1, 'mcq')">MCQs ↗</button>
           </div>
@@ -221,7 +222,7 @@
           <div class="num">02</div>
           <div class="chapter-copy"><h3>മലയാള സാഹിത്യാനുശീലനം</h3><p>മലയാളം പഠന PDF</p></div>
           <div class="actions">
-            <a class="read-online" href="LiteraryPracticeinMalayalam-Module2_T1779269299389.pdf" target="_blank" rel="noopener">വായിക്കുക ↗</a>
+            <a class="read-online" href="study-guide-reader.html?file=LiteraryPracticeinMalayalam-Module2_T1779269299389.pdf" target="_blank" rel="noopener">വായിക്കുക ↗</a>
             <button type="button" class="btn-summary" onclick="openStudyModal(2, 'summary')">സംഗ്രഹം (Summary) ↗</button>
             <button type="button" class="btn-mcq" onclick="openStudyModal(2, 'mcq')">MCQs ↗</button>
           </div>
@@ -239,7 +240,7 @@
           <div class="num">03</div>
           <div class="chapter-copy"><h3>മലയാള സാഹിത്യാനുശീലനം</h3><p>മലയാളം പഠന PDF</p></div>
           <div class="actions">
-            <a class="read-online" href="Module3മലയാളസാഹിത്യാനുശീലനം_T1781936346875%20(1).pdf" target="_blank" rel="noopener">വായിക്കുക ↗</a>
+            <a class="read-online" href="study-guide-reader.html?file=Module3മലയാളസാഹിത്യാനുശീലനം_T1781936346875%20(1).pdf" target="_blank" rel="noopener">വായിക്കുക ↗</a>
             <button type="button" class="btn-summary" onclick="openStudyModal(3, 'summary')">സംഗ്രഹം (Summary) ↗</button>
             <button type="button" class="btn-mcq" onclick="openStudyModal(3, 'mcq')">MCQs ↗</button>
           </div>
@@ -257,7 +258,7 @@
           <div class="num">04</div>
           <div class="chapter-copy"><h3>മലയാളം പഠനസാമഗ്രികൾ</h3><p>മലയാളം പഠന PDF</p></div>
           <div class="actions">
-            <a class="read-online" href="MODULE4_T1783445288761.pdf" target="_blank" rel="noopener">വായിക്കുക ↗</a>
+            <a class="read-online" href="study-guide-reader.html?file=MODULE4_T1783445288761.pdf" target="_blank" rel="noopener">വായിക്കുക ↗</a>
             <button type="button" class="btn-summary" onclick="openStudyModal(4, 'summary')">സംഗ്രഹം (Summary) ↗</button>
             <button type="button" class="btn-mcq" onclick="openStudyModal(4, 'mcq')">MCQs ↗</button>
           </div>
@@ -420,10 +421,10 @@
       const pdfLink = document.getElementById('modal-pdf-link');
       const pdfFrame = document.getElementById('modal-pdf-frame');
       const pdfHref = modData.pdfHref || 'LiteraryPracticeinMalayalam-Module1_T1777700168876%20(1).pdf';
-      pdfLink.href = pdfHref;
+      pdfLink.href = 'study-guide-reader.html?file=' + encodeURIComponent(pdfHref);
       document.getElementById('pdf-viewer-desc').textContent = `${ch.chapterTitle} (${ch.author})`;
       if (activeMode === 'pdf') {
-        pdfFrame.src = pdfHref.split('#')[0] + '#toolbar=0&navpanes=0';
+        pdfFrame.src = 'study-guide-reader.html?file=' + encodeURIComponent(pdfHref.split('#')[0]);
       }
 
       // Render Summary
@@ -448,7 +449,7 @@
         const modData = getModuleData(activeModuleNumber);
         const pdfFrame = document.getElementById('modal-pdf-frame');
         if (modData && (!pdfFrame.src || pdfFrame.src === 'about:blank' || pdfFrame.src === window.location.href)) {
-          pdfFrame.src = (modData.pdfHref || '').split('#')[0] + '#toolbar=0&navpanes=0';
+          pdfFrame.src = 'study-guide-reader.html?file=' + encodeURIComponent((modData.pdfHref || '').split('#')[0]);
         }
       }
     }
@@ -639,6 +640,22 @@
         list.appendChild(card);
       });
     }
+  </script>
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u'].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+      }
+    });
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('a[download], .btn-download, .download, [download]');
+      if (target) {
+        e.preventDefault();
+      }
+    }, true);
   </script>
 </body>
 </html>

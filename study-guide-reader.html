@@ -7,6 +7,7 @@
 button,input,select{font:inherit;color:inherit;background:white;border:1px solid #bdccbd;border-radius:8px;padding:7px 10px}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #b79e48;outline-offset:2px}input{width:62px}#pages{white-space:nowrap}
 main{padding:16px;overflow:auto;text-align:center}canvas{display:block;margin:0 auto;background:white;box-shadow:0 3px 14px #173f3518;max-width:none}.pdf-page{margin:0 auto 20px;scroll-margin-top:90px;background:white;box-shadow:0 3px 14px #173f3518;position:relative}.page-label{padding:6px;color:#52705b;font-size:12px}.page-loading{position:absolute;top:50%;left:0;right:0;color:#52705b}.pdf-page canvas{box-shadow:none}#status{margin:0;padding:8px 16px;text-align:center;background:#f8faf7}[hidden]{display:none!important}
 body.docx-mode{font-family:"Noto Sans Malayalam",system-ui,sans-serif;background:#f1f5f9;color:#172554}body.docx-mode main{max-width:1100px;margin:0 auto;text-align:left}.docx-wrapper{padding:18px!important;background:transparent!important}.docx{margin:0 auto 18px!important;box-shadow:0 3px 14px #173f3520!important}
+@media print{body{display:none!important}}
 </style></head><body>
 <nav class="toolbar" aria-label="Reading controls">
 <label>Page <input id="page" type="number" min="1" value="1" disabled></label><span id="pages">of …</span>
@@ -18,7 +19,12 @@ body.docx-mode{font-family:"Noto Sans Malayalam",system-ui,sans-serif;background
 const el=id=>document.getElementById(id);
 // Shared reading-only interaction for every subject study guide.
 document.addEventListener('contextmenu',event=>event.preventDefault());
-document.addEventListener('dragstart',event=>{if(event.target instanceof HTMLCanvasElement)event.preventDefault();});
+document.addEventListener('dragstart',event=>event.preventDefault());
+document.addEventListener('keydown',event=>{
+  if((event.ctrlKey||event.metaKey)&&['s','p','u'].includes(event.key.toLowerCase())){
+    event.preventDefault();
+  }
+});
 let pdf,pageNumber=1,generation=0,observer,activeTask,queue=Promise.resolve(),sections=[];
 function controls(){el('page').disabled=!pdf;el('zoom').disabled=!pdf;el('page').value=pageNumber;el('pages').textContent='of '+(pdf?pdf.numPages:'…');}
 async function render(){

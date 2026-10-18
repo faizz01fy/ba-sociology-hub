@@ -236,17 +236,19 @@
       }
     }
 
-    /* Hide download buttons from all Malayalam reading tabs and modals across all subjects */
-    .module-dialog--malayalam [download],
-    .module-dialog--malayalam .btn-download,
-    .module-dialog--malayalam .download,
-    .language-tab--malayalam [download],
-    .language-tab--malayalam .btn-download,
-    .language-tab--malayalam .download,
-    [data-subject] .language-tab--malayalam [download],
-    .module-dialog[lang="ml"] [download],
-    .module-dialog[lang="ml"] .btn-download,
-    .module-dialog[lang="ml"] .download {
+    /* Disable and hide download buttons across all tabs, modals, and subjects */
+    .btn-download,
+    .download,
+    #downloadBtn,
+    a[download],
+    button[download],
+    [download],
+    .module-dialog [download],
+    .module-dialog .btn-download,
+    .module-dialog .download,
+    .language-tab [download],
+    .language-tab .btn-download,
+    .language-tab .download {
       display: none !important;
     }
   </style>
@@ -2778,7 +2780,7 @@
       actions.className = 'module-pdf-actions';
       const open = document.createElement('a');
       open.className = 'module-chapter-open-link';
-      open.href = item.href.split('#')[0];
+      open.href = 'study-guide-reader.html?file=' + encodeURIComponent(item.href.split('#')[0]);
       open.target = '_blank';
       open.rel = 'noopener';
       open.textContent = 'Open';
@@ -4286,7 +4288,7 @@
       actions.className='module-pdf-actions';
       const open=document.createElement('a');
       open.className='module-chapter-open-link';
-      open.href=itemMedium==='Malayalam'?item.href.split('#')[0]+'#toolbar=0&navpanes=0':item.href.split('#')[0];
+      open.href='study-guide-reader.html?file='+encodeURIComponent(item.href.split('#')[0]);
       open.target='_blank';
       open.rel='noopener';
       open.textContent='Open';
@@ -4534,7 +4536,7 @@
       const mcqPdf=trigger.classList.contains('language-tab--mcq-pdf');
       moduleDialog.dataset.readingOnly=String(studyGuide);
       moduleDialog.dataset.englishStudyGuide=String(studyGuide && subject==='English');
-      moduleDialog.oncontextmenu=studyGuide?event=>event.preventDefault():null;
+      moduleDialog.oncontextmenu=event=>event.preventDefault();
       const modules=mcqPdf?getMcqPdfModules(subject):studyGuide?getStudyGuideModules(subject):getSubjectModules(subject,medium);
       const englishStudyGuide=studyGuide && subject==='English';
       moduleDialog.classList.toggle('module-dialog--malayalam',(!englishStudyGuide && studyGuide) || medium==='Malayalam');
@@ -4690,6 +4692,28 @@
       document.querySelector('.quick-stats').after(panel);
     }catch(error){/* Students and signed-out visitors see no owner controls. */}
   })();
+
+  // Global right click and shortcut protection across all tabs and subjects
+  document.addEventListener('contextmenu', function(e) {
+    if (e.target.closest('#module-dialog, .module-dialog, .module-pdf-reader, .module-pdf-frame')) {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u'].includes(e.key.toLowerCase())) {
+      if (e.target.closest('#module-dialog, .module-dialog, .module-pdf-reader, .module-pdf-frame') || !document.getElementById('module-dialog')?.hidden) {
+        e.preventDefault();
+      }
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    const target = e.target.closest('a[download], .btn-download, .download, [download]');
+    if (target) {
+      e.preventDefault();
+    }
+  }, true);
   </script>
 
 
