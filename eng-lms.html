@@ -118,7 +118,7 @@ h1{
 
 </head>
 
-<body>
+<body oncontextmenu="event.preventDefault(); return false;">
 
 <div class="page-box">
 
@@ -247,7 +247,7 @@ document.addEventListener("keydown",function(event){
     event.preventDefault();
   }
 });
-document.addEventListener('contextmenu',function(event){event.preventDefault();});
+document.addEventListener('contextmenu',function(event){event.preventDefault(); return false;}, true);
 document.addEventListener('click',function(event){
   const target=event.target.closest('a[download], .btn-download, .download, [download]');
   if(target)event.preventDefault();

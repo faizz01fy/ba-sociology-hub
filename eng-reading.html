@@ -264,6 +264,12 @@
       }
     }
 
+    body, .page-box, .chapter-card, .btn-group, .action-btn {
+      -webkit-touch-callout: none !important;
+      -webkit-user-select: none !important;
+      user-select: none !important;
+    }
+
     /* Bottom nav */
     .bottom-nav {
       margin-top: 40px;
@@ -388,9 +394,9 @@
     }
   </style>
 </head>
-<body>
+<body oncontextmenu="event.preventDefault(); return false;">
 
-  <main class="page-box">
+  <main class="page-box" oncontextmenu="event.preventDefault(); return false;">
     
     <header class="hero">
       <div class="uni-badge">CALICUT UNIVERSITY · CDOE · FYUGP</div>
@@ -730,7 +736,8 @@
     // Disable right click across the page
     document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
-    });
+      return false;
+    }, true);
 
     // Disable keyboard shortcuts for saving and printing
     document.addEventListener('keydown', function(e) {

@@ -8,7 +8,7 @@ button,input,select{font:inherit;color:inherit;background:white;border:1px solid
 main{padding:16px;overflow:auto;text-align:center}canvas{display:block;margin:0 auto;background:white;box-shadow:0 3px 14px #173f3518;max-width:none}.pdf-page{margin:0 auto 20px;scroll-margin-top:90px;background:white;box-shadow:0 3px 14px #173f3518;position:relative}.page-label{padding:6px;color:#52705b;font-size:12px}.page-loading{position:absolute;top:50%;left:0;right:0;color:#52705b}.pdf-page canvas{box-shadow:none}#status{margin:0;padding:8px 16px;text-align:center;background:#f8faf7}[hidden]{display:none!important}
 body.docx-mode{font-family:"Noto Sans Malayalam",system-ui,sans-serif;background:#f1f5f9;color:#172554}body.docx-mode main{max-width:1100px;margin:0 auto;text-align:left}.docx-wrapper{padding:18px!important;background:transparent!important}.docx{margin:0 auto 18px!important;box-shadow:0 3px 14px #173f3520!important}
 @media print{body{display:none!important}}
-</style></head><body>
+</style></head><body oncontextmenu="event.preventDefault(); return false;">
 <nav class="toolbar" aria-label="Reading controls">
 <label>Page <input id="page" type="number" min="1" value="1" disabled></label><span id="pages">of …</span>
 <label>Zoom <select id="zoom" disabled><option value="fit">Fit width</option><option value=".75">75%</option><option value="1">100%</option><option value="1.25">125%</option><option value="1.5">150%</option><option value="2">200%</option></select></label>
@@ -18,7 +18,7 @@ body.docx-mode{font-family:"Noto Sans Malayalam",system-ui,sans-serif;background
 <script type="module">
 const el=id=>document.getElementById(id);
 // Shared reading-only interaction for every subject study guide.
-document.addEventListener('contextmenu',event=>event.preventDefault());
+document.addEventListener('contextmenu',event=>{event.preventDefault(); return false;}, true);
 document.addEventListener('dragstart',event=>event.preventDefault());
 document.addEventListener('keydown',event=>{
   if((event.ctrlKey||event.metaKey)&&['s','p','u'].includes(event.key.toLowerCase())){
