@@ -2,8 +2,8 @@
 // Sourced directly from syllabus & textbook PDFs with English + Malayalam & 15 MCQs per module
 window.educationLearningData = {
   "edu_syllabus": {
-    "title": "Syllabus · Philosophy of Education (PHL1FM 105)",
-    "titleMal": "സിലബസ് · ഫിലോസഫി ഓഫ് എഡ്യൂക്കേഷൻ (PHL1FM 105)",
+    "title": "Syllabus · Philosophy of Education (PHL1FM 105) · BA Sociology FYUG",
+    "titleMal": "സിലബസ് · ഫിലോസഫി ഓഫ് എഡ്യൂക്കേഷൻ (PHL1FM 105) · ബി.എ സോഷ്യോളജി FYUG",
     "filename": "Syllabus_Philosophy_of_Education.pdf"
   },
   "edu_mod_1": {
