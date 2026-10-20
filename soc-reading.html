@@ -405,6 +405,15 @@
       color: #ffffff;
     }
 
+    .modal-voice-btn {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+      border-color: #047857 !important;
+    }
+
+    .modal-voice-btn:hover {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+    }
+
     .close-modal {
       background: rgba(255, 255, 255, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.35);
@@ -668,7 +677,7 @@
 
       .modal-header h3 {
         font-size: 13.5px !important;
-        max-width: calc(100% - 90px) !important;
+        max-width: calc(100% - 130px) !important;
       }
 
       .modal-action-btn, .close-modal {
@@ -1077,6 +1086,7 @@
         <div class="modal-header">
           <h3 id="modalTitle">PDF Viewer</h3>
           <div class="modal-header-actions">
+            <button id="modalVoiceBtn" class="modal-action-btn modal-voice-btn" type="button" title="ശബ്ദ വായന (Voice Read Aloud)" onclick="triggerModalVoice()" aria-label="Voice Read Aloud">🔊</button>
             <a id="modalExternalBtn" class="modal-action-btn" href="#" target="_blank" rel="noopener" title="പുതിയ ടാബിൽ തുറക്കുക (Open in New Tab)">↗</a>
             <button class="close-modal" onclick="closeViewer()" aria-label="Close Viewer">✕</button>
           </div>
@@ -1135,10 +1145,26 @@
       document.body.style.overflow = 'hidden';
     }
 
+    function triggerModalVoice() {
+      const frame = document.getElementById('pdfFrame');
+      if (frame && frame.contentWindow) {
+        frame.contentWindow.postMessage({ action: 'toggleVoiceReader' }, '*');
+      }
+    }
+
     function closeViewer() {
+      const frame = document.getElementById('pdfFrame');
+      if (frame && frame.contentWindow) {
+        try {
+          frame.contentWindow.postMessage({ action: 'stopVoiceReader' }, '*');
+        } catch(e) {}
+      }
       document.getElementById('viewerModal').style.display = 'none';
       document.getElementById('pdfFrame').src = '';
       document.body.style.overflow = '';
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
     }
 
     window.onclick = function(event) {
