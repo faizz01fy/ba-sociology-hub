@@ -1954,16 +1954,9 @@
           {
             label: 'Syllabus · Philosophy of Education',
             title: 'Philosophy of Education · Syllabus · Multi-Disciplinary Course 1',
-            description: 'University of Calicut · CU-FYUGP · Multi-Disciplinary Course 1 (MDC 1) · Course Code PHL1FM 105 · Official University Syllabus (3 Pages)',
+            description: 'University of Calicut · CU-FYUGP · Multi-Disciplinary Course 1 (MDC 1) · Course Code PHL1FM 105 · Official University Syllabus (Pages 132–134)',
             key: 'edu_syllabus',
             href: 'Philosophy%20of%20Education/LMS_PDF/Syllabus_Philosophy_of_Education.pdf'
-          },
-          {
-            label: 'MDC Philosophy · Pages 129–134 PDF',
-            title: 'MDC Philosophy Syllabus · Pages 129–134',
-            description: 'University of Calicut · MDC Philosophy regulation document pages 129 to 134',
-            key: 'edu_syllabus_129_134',
-            href: 'Philosophy%20of%20Education/LMS_PDF/MDC_Philosophy_Pages_129_to_134.pdf'
           }
         ]
       },
@@ -3189,6 +3182,7 @@
         container.replaceChildren(topBar, panePdf, paneSummary, paneQuiz);
       } else {
         container.replaceChildren(topBar, panePdf);
+        preview.click();
       }
     }
     const renderInteractiveEconomicsChapter = renderInteractiveChapter;
@@ -4320,6 +4314,9 @@
       chapterView.append(heading,actions);
       // Keep navigation at the very end, after the document and its preview.
       moduleContent.append(chapterView,reader,windowNav);
+      if (isSyllabusContext(moduleName, item)) {
+        preview.click();
+      }
     }
     function showStudyGuideNavigationPrompt(moduleName,malayalam=false) {
       // Keep the module window clean: do not show the bottom chapter-list instruction card.

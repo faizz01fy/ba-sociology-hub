@@ -1,6 +1,11 @@
 // Philosophy of Education - Comprehensive Learning Data (Modules 1-3)
 // Sourced directly from syllabus & textbook PDFs with English + Malayalam & 15 MCQs per module
 window.educationLearningData = {
+  "edu_syllabus": {
+    "title": "Syllabus · Philosophy of Education (PHL1FM 105)",
+    "titleMal": "സിലബസ് · ഫിലോസഫി ഓഫ് എഡ്യൂക്കേഷൻ (PHL1FM 105)",
+    "filename": "Syllabus_Philosophy_of_Education.pdf"
+  },
   "edu_mod_1": {
     "title": "Module 1 · Philosophical Basis of Education",
     "titleMal": "മൊഡ്യൂൾ 1 · വിദ്യാഭ്യാസത്തിന്റെ തത്ത്വചിന്താപരമായ അടിസ്ഥാനം",
