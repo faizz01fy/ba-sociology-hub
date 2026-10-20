@@ -1,160 +1,678 @@
 <!doctype html>
-<html lang="ml"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Study Guide Reader · Academic Hub</title>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<style>
-*{box-sizing:border-box}html{overflow-anchor:none}body{margin:0;background:#e9eee9;color:#173f35;font:14px/1.5 system-ui,sans-serif}
-.toolbar{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;padding:10px;background:#f8faf7;border-bottom:1px solid #d6dfd5}
-button,input,select{font:inherit;color:inherit;background:white;border:1px solid #bdccbd;border-radius:8px;padding:7px 10px}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #b79e48;outline-offset:2px}input{width:62px}#pages{white-space:nowrap}
-main{padding:16px;overflow:auto;text-align:center}canvas{display:block;margin:0 auto;background:white;box-shadow:0 3px 14px #173f3518;max-width:none}.pdf-page{margin:0 auto 20px;scroll-margin-top:90px;background:white;box-shadow:0 3px 14px #173f3518;position:relative}.page-label{padding:6px;color:#52705b;font-size:12px}.page-loading{position:absolute;top:50%;left:0;right:0;color:#52705b}.pdf-page canvas{box-shadow:none}#status{margin:0;padding:8px 16px;text-align:center;background:#f8faf7}[hidden]{display:none!important}
-body.docx-mode{font-family:"Noto Sans Malayalam",system-ui,sans-serif;background:#f1f5f9;color:#172554}body.docx-mode main{max-width:1100px;margin:0 auto;text-align:left}.docx-wrapper{padding:18px!important;background:transparent!important}.docx{margin:0 auto 18px!important;box-shadow:0 3px 14px #173f3520!important}
-@media print{body{display:none!important}}
-</style></head><body oncontextmenu="event.preventDefault(); return false;">
-<nav class="toolbar" aria-label="Reading controls">
-<label>Page <input id="page" type="number" min="1" value="1" disabled></label><span id="pages">of …</span>
-<label>Zoom <select id="zoom" disabled><option value="fit">Fit width</option><option value=".75">75%</option><option value="1">100%</option><option value="1.25">125%</option><option value="1.5">150%</option><option value="2">200%</option></select></label>
-<button id="retry" type="button" hidden>Retry loading</button>
-</nav><p id="status" role="status" aria-live="polite">Loading study guide…</p>
-<main id="reader" aria-label="All study guide pages"></main>
-<script type="module">
-const el=id=>document.getElementById(id);
-// Shared reading-only interaction for every subject study guide.
-document.addEventListener('contextmenu',event=>{event.preventDefault(); return false;}, true);
-document.addEventListener('dragstart',event=>event.preventDefault());
-document.addEventListener('keydown',event=>{
-  if((event.ctrlKey||event.metaKey)&&['s','p','u'].includes(event.key.toLowerCase())){
-    event.preventDefault();
-  }
-});
-let pdf,pageNumber=1,generation=0,observer,activeTask,queue=Promise.resolve(),sections=[];
-function controls(){el('page').disabled=!pdf;el('zoom').disabled=!pdf;el('page').value=pageNumber;el('pages').textContent='of '+(pdf?pdf.numPages:'…');}
-async function render(){
- if(!pdf)return;
- const currentGeneration=++generation;
- const resumePage=Math.max(1,Math.min(pdf.numPages,pageNumber));
- if(observer)observer.disconnect();
- if(activeTask){activeTask.cancel();activeTask=null;}
- el('reader').replaceChildren();sections=[];queue=Promise.resolve();
- el('status').textContent='Loading page '+resumePage+' of '+pdf.numPages+'…';
- const firstPage=await pdf.getPage(1);
- if(currentGeneration!==generation)return;
- const fitScale=page=>{
-  const original=page.getViewport({scale:1});
-  return el('zoom').value==='fit'?Math.max(.25,Math.min(2,(el('reader').clientWidth-32)/original.width)):Number(el('zoom').value);
- };
- const estimate=firstPage.getViewport({scale:fitScale(firstPage)});
- async function renderPage(section,knownPage){
-  if(currentGeneration!==generation || section.dataset.rendered==='true')return;
-  const number=Number(section.dataset.page);
-  try{
-   const page=knownPage || await pdf.getPage(number);
-   if(currentGeneration!==generation)return;
-   const viewport=page.getViewport({scale:fitScale(page)});
-   section.style.width=viewport.width+'px';section.style.minHeight=(viewport.height+30)+'px';
-   const canvas=document.createElement('canvas');
-   const ratio=Math.min(window.devicePixelRatio||1,1.5);
-   canvas.width=Math.floor(viewport.width*ratio);canvas.height=Math.floor(viewport.height*ratio);
-   canvas.style.width=viewport.width+'px';canvas.style.height=viewport.height+'px';
-   canvas.setAttribute('role','img');canvas.setAttribute('aria-label','Study guide page '+number+' of '+pdf.numPages);
-   section.append(canvas);
-   const task=page.render({canvasContext:canvas.getContext('2d'),viewport,transform:ratio!==1?[ratio,0,0,ratio,0,0]:null});
-   activeTask=task;
-   try{await task.promise;}finally{if(activeTask===task)activeTask=null;}
-   if(currentGeneration!==generation)return;
-   section.dataset.rendered='true';
-   section.querySelector('.page-loading')?.remove();
-   try{
-    const annotations=await page.getAnnotations();
-    if(annotations&&annotations.length){
-     const linkLayer=document.createElement('div');
-     linkLayer.className='pdf-link-layer';
-     linkLayer.style.cssText='position:absolute;top:0;left:0;width:'+viewport.width+'px;height:'+viewport.height+'px;pointer-events:none;';
-     annotations.forEach(a=>{
-      if(a.subtype==='Link'&&a.url){
-       const r=viewport.convertToViewportRectangle(a.rect);
-       const l=Math.min(r[0],r[2]);
-       const t=Math.min(r[1],r[3]);
-       const w=Math.abs(r[2]-r[0]);
-       const h=Math.abs(r[3]-r[1]);
-       const link=document.createElement('a');
-       link.href=a.url;link.target='_blank';link.rel='noopener noreferrer';
-       link.style.cssText='position:absolute;left:'+l+'px;top:'+t+'px;width:'+w+'px;height:'+h+'px;pointer-events:auto;cursor:pointer;background:rgba(59,130,246,0.12);border-radius:3px;transition:background 0.15s;';
-       link.title=(a.url.includes('youtu')?'Watch video: ':'Open link: ')+a.url;
-       link.onmouseenter=()=>link.style.background='rgba(59,130,246,0.28)';
-       link.onmouseleave=()=>link.style.background='rgba(59,130,246,0.12)';
-       linkLayer.append(link);
-      }
-     });
-     section.append(linkLayer);
+<html lang="ml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Study Guide Reader · Academic Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <style>
+    * { box-sizing: border-box; }
+    html { overflow-anchor: none; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: #eef2ef;
+      color: #0f172a;
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
-   }catch(err){console.error('Annotation layer error:',err);}
-  }catch(error){
-   if(currentGeneration!==generation || error?.name==='RenderingCancelledException')return;
-   section.querySelector('canvas')?.remove();
-   const label=section.querySelector('.page-loading');
-   if(label)label.textContent='Could not display this page. Tap Retry loading to try again.';
-   el('retry').hidden=false;
-  }
- }
- // Placeholder creation is synchronous: page 1 no longer waits for every page's metadata.
- for(let number=1;number<=pdf.numPages;number++){
-  const section=document.createElement('section');section.className='pdf-page';
-  section.dataset.page=number;section.setAttribute('aria-label','Page '+number);
-  section.style.width=estimate.width+'px';section.style.minHeight=(estimate.height+30)+'px';
-  const label=document.createElement('div');label.className='page-label';label.textContent='Page '+number+' of '+pdf.numPages;
-  const loading=document.createElement('div');loading.className='page-loading';loading.textContent='Loading page '+number+'…';
-  section.append(label,loading);el('reader').append(section);sections.push(section);
- }
- pageNumber=resumePage;controls();go(resumePage);
- await renderPage(sections[resumePage-1],resumePage===1?firstPage:null);
- if(currentGeneration!==generation)return;
- el('status').textContent=sections[resumePage-1].dataset.rendered==='true'
-  ? pdf.numPages+' pages · Scroll to read the complete guide'
-  : 'Could not display page '+resumePage+'. Tap Retry loading to try again.';
- observer=new IntersectionObserver(entries=>{
-  for(const entry of entries){
-   if(!entry.isIntersecting)continue;
-   observer.unobserve(entry.target);
-   queue=queue.then(()=>renderPage(entry.target)).catch(error=>console.error(error));
-  }
- },{rootMargin:'600px 0px'});
- sections.forEach(section=>observer.observe(section));
-}
-function go(number){if(!pdf)return;pageNumber=Math.max(1,Math.min(pdf.numPages,Math.round(Number(number)||1)));sections[pageNumber-1]?.scrollIntoView({block:'start'});controls();}
-el('page').onchange=event=>go(event.target.value);el('zoom').onchange=render;
-let scrolling=false;
-window.addEventListener('scroll',()=>{if(scrolling)return;scrolling=true;requestAnimationFrame(()=>{scrolling=false;const visible=sections.find(section=>section.getBoundingClientRect().bottom>90);if(visible&&document.activeElement!==el('page')){pageNumber=Number(visible.dataset.page);el('page').value=pageNumber;}});},{passive:true});
-let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(el('zoom').value==='fit')render();},200);});
-async function loadScript(src){
- await new Promise((resolve,reject)=>{
-  const script=document.createElement('script');script.src=src;script.async=true;
-  script.onload=resolve;script.onerror=()=>reject(Error('Could not load the document viewer'));
-  document.head.append(script);
- });
-}
-el('retry').onclick=()=>location.reload();
-try{
- const rawParam = new URLSearchParams(location.search).get('file') || '';
- const file = new URL(rawParam, location.href);
- if(location.origin && location.origin !== 'null' && file.origin !== location.origin) throw Error('Invalid study guide');
- if(file.pathname.toLowerCase().endsWith('.docx')){
-  document.querySelector('.toolbar').hidden=true;
-  document.body.classList.add('docx-mode');
-  el('status').textContent='Loading Word document…';
-  const font=document.createElement('link');font.rel='stylesheet';font.href='https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap';document.head.append(font);
-  if(!window.JSZip)await loadScript('https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js');
-  if(!window.docx?.renderAsync)await loadScript('https://cdn.jsdelivr.net/npm/docx-preview@0.3.6/dist/docx-preview.min.js');
-  const response=await fetch(file.href);
-  if(!response.ok)throw Error('Could not fetch Word document (HTTP '+response.status+')');
-  if(!window.docx?.renderAsync)throw Error('Word document viewer did not load');
-  await window.docx.renderAsync(await response.arrayBuffer(),el('reader'),el('reader'),{className:'docx',inWrapper:true,breakPages:true,ignoreLastRenderedPageBreak:false});
-  el('status').textContent='Word document loaded · Scroll to read the complete module';
- }else if(file.pathname.toLowerCase().endsWith('.pdf')){
-  let lib,cdn='https://cdn.jsdelivr.net/npm';
-  try{lib=await import(cdn+'/pdfjs-dist@4.10.38/build/pdf.mjs');}
-  catch(error){cdn='https://unpkg.com';lib=await import(cdn+'/pdfjs-dist@4.10.38/build/pdf.mjs');}
-  lib.GlobalWorkerOptions.workerSrc=cdn+'/pdfjs-dist@4.10.38/build/pdf.worker.mjs';
-  pdf=await lib.getDocument({url:file.href,isEvalSupported:false,disableAutoFetch:true,rangeChunkSize:262144}).promise;
-  el('page').max=pdf.numPages;controls();await render();
- }else throw Error('Unsupported study guide format');
-}catch(error){console.error(error);document.querySelector('.toolbar').hidden=false;el('retry').hidden=false;el('status').textContent='Reader error: '+(error?.message||'Unknown error')+'. Tap Retry loading to try again.';}
-</script></body></html>
+    
+    /* Toolbar */
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 8px 12px;
+      background: rgba(248, 250, 247, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #d1dbd0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .toolbar-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #ffffff;
+      padding: 3px 6px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+    }
+    
+    button, input, select {
+      font: inherit;
+      color: inherit;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 6px 10px;
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+    
+    button {
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      font-weight: 600;
+    }
+    
+    button:hover:not(:disabled) {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+    
+    button:active:not(:disabled) {
+      transform: scale(0.97);
+    }
+    
+    button:disabled {
+      opacity: 0.45;
+      cursor: default;
+    }
+    
+    button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 2px solid #2563eb;
+      outline-offset: 1px;
+    }
+    
+    .btn-icon {
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    
+    .btn-pill {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+    .btn-pill.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+    
+    input#page {
+      width: 48px;
+      text-align: center;
+      padding: 4px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+    
+    #pages {
+      white-space: nowrap;
+      font-size: 12.5px;
+      color: #475569;
+      font-weight: 600;
+      padding: 0 4px;
+    }
+    
+    select#zoom {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      border-radius: 8px;
+      padding: 4px 8px;
+    }
+    
+    /* Main Reader Area */
+    main {
+      padding: 16px;
+      overflow-x: auto;
+      overflow-y: auto;
+      text-align: center;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-x pan-y pinch-zoom;
+    }
+    
+    .pdf-page {
+      margin: 0 auto 20px;
+      scroll-margin-top: 70px;
+      background: #ffffff;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12);
+      border-radius: 4px;
+      position: relative;
+      transition: box-shadow 0.2s ease;
+      display: inline-block;
+      max-width: none;
+    }
+    
+    .page-label {
+      padding: 6px 12px;
+      color: #64748b;
+      font-size: 11.5px;
+      font-weight: 600;
+      background: #f8fafc;
+      border-bottom: 1px solid #f1f5f9;
+      border-radius: 4px 4px 0 0;
+      user-select: none;
+    }
+    
+    .page-loading {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      color: #64748b;
+      font-size: 13px;
+      font-weight: 600;
+      transform: translateY(-50%);
+    }
+    
+    .pdf-page canvas {
+      display: block;
+      margin: 0 auto;
+      box-shadow: none;
+      max-width: none;
+    }
+    
+    #status {
+      margin: 0;
+      padding: 6px 12px;
+      text-align: center;
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 12px;
+      font-weight: 600;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    [hidden] { display: none !important; }
+    
+    /* Word document mode */
+    body.docx-mode {
+      font-family: "Noto Sans Malayalam", system-ui, sans-serif;
+      background: #f1f5f9;
+      color: #172554;
+    }
+    body.docx-mode main {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: left;
+      padding: 12px;
+    }
+    .docx-wrapper {
+      padding: 12px !important;
+      background: transparent !important;
+    }
+    .docx {
+      margin: 0 auto 18px !important;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.1) !important;
+      max-width: 100% !important;
+    }
+    
+    /* MOBILE OPTIMIZATIONS (< 768px) */
+    @media (max-width: 768px) {
+      body {
+        background: #0f172a; /* Immersive dark background on mobile makes white document pages pop with high contrast */
+      }
+      .toolbar {
+        padding: 6px 8px;
+        gap: 6px;
+        justify-content: space-between;
+        background: #1e293b;
+        border-bottom: 1px solid #334155;
+        color: #f8fafc;
+      }
+      .toolbar-group {
+        background: #0f172a;
+        border-color: #334155;
+        padding: 2px 4px;
+        gap: 3px;
+      }
+      button, input, select {
+        background: #1e293b;
+        color: #f8fafc;
+        border-color: #334155;
+        min-height: 36px;
+        font-size: 13px;
+      }
+      button:hover:not(:disabled) {
+        background: #334155;
+      }
+      .btn-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 17px;
+      }
+      input#page {
+        width: 36px;
+        background: #0f172a;
+        color: #f8fafc;
+      }
+      #pages {
+        color: #94a3b8;
+        font-size: 11px;
+      }
+      select#zoom {
+        font-size: 12px;
+        padding: 4px 6px;
+        max-width: 105px;
+      }
+      main {
+        padding: 2px 0 20px 0; /* Zero wasted horizontal padding on mobile! */
+        background: #0f172a;
+      }
+      .pdf-page {
+        margin: 0 auto 10px;
+        border-radius: 2px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        max-width: 100%;
+      }
+      .page-label {
+        background: #1e293b;
+        color: #94a3b8;
+        font-size: 10.5px;
+        padding: 3px 8px;
+      }
+      #status {
+        background: #1e293b;
+        color: #94a3b8;
+        font-size: 11px;
+        padding: 4px 8px;
+        border-bottom-color: #334155;
+      }
+    }
+    
+    @media print { body { display: none !important; } }
+  </style>
+</head>
+<body oncontextmenu="event.preventDefault(); return false;">
+
+  <nav class="toolbar" aria-label="Reading controls">
+    <!-- Page Navigation -->
+    <div class="toolbar-group">
+      <button id="prevPage" class="btn-icon" type="button" title="മുമ്പത്തെ പേജ് (Previous Page)" disabled aria-label="Previous Page">‹</button>
+      <label style="display:flex;align-items:center;margin:0;">
+        <input id="page" type="number" min="1" value="1" disabled aria-label="Current Page">
+      </label>
+      <span id="pages">of …</span>
+      <button id="nextPage" class="btn-icon" type="button" title="അടുത്ത പേജ് (Next Page)" disabled aria-label="Next Page">›</button>
+    </div>
+
+    <!-- Zoom Controls -->
+    <div class="toolbar-group">
+      <button id="zoomOut" class="btn-icon" type="button" title="ചെറുതാക്കുക (Zoom Out)" disabled aria-label="Zoom Out">−</button>
+      <select id="zoom" disabled aria-label="Zoom scale">
+        <option value="fit">Fit Width (സ്ക്രീൻ വീതി)</option>
+        <option value="read">📖 Read Mode (135%)</option>
+        <option value="1">100% (Normal)</option>
+        <option value="1.25">125% (Large)</option>
+        <option value="1.5">150% (XL)</option>
+        <option value="1.75">175%</option>
+        <option value="2">200% (2X)</option>
+        <option value=".75">75%</option>
+      </select>
+      <button id="zoomIn" class="btn-icon" type="button" title="വലുതാക്കുക (Zoom In)" disabled aria-label="Zoom In">+</button>
+    </div>
+
+    <!-- Extra Tools -->
+    <div class="toolbar-group">
+      <button id="fullscreenBtn" class="btn-icon" type="button" title="പൂർണ്ണ സ്ക്രീൻ (Toggle Fullscreen)" aria-label="Toggle Fullscreen">⛶</button>
+      <button id="openExternalBtn" class="btn-icon" type="button" title="പുതിയ വിൻഡോയിൽ തുറക്കുക (Open in New Tab)" aria-label="Open in New Tab">↗</button>
+      <button id="retry" type="button" hidden>Retry</button>
+    </div>
+  </nav>
+
+  <p id="status" role="status" aria-live="polite">Loading study guide…</p>
+  <main id="reader" aria-label="All study guide pages"></main>
+
+  <script type="module">
+    const el = id => document.getElementById(id);
+    
+    // Security & interaction controls
+    document.addEventListener('contextmenu', event => { event.preventDefault(); return false; }, true);
+    document.addEventListener('dragstart', event => event.preventDefault());
+    document.addEventListener('keydown', event => {
+      if ((event.ctrlKey || event.metaKey) && ['s', 'p', 'u'].includes(event.key.toLowerCase())) {
+        event.preventDefault();
+      }
+    });
+
+    let pdf, pageNumber = 1, generation = 0, observer, activeTask, queue = Promise.resolve(), sections = [];
+    let customZoomScale = null;
+
+    function controls() {
+      const hasPdf = Boolean(pdf);
+      el('page').disabled = !hasPdf;
+      el('prevPage').disabled = !hasPdf || pageNumber <= 1;
+      el('nextPage').disabled = !hasPdf || (pdf && pageNumber >= pdf.numPages);
+      el('zoom').disabled = !hasPdf;
+      el('zoomOut').disabled = !hasPdf;
+      el('zoomIn').disabled = !hasPdf;
+      el('page').value = pageNumber;
+      el('pages').textContent = 'of ' + (pdf ? pdf.numPages : '…');
+    }
+
+    const fitScale = (page) => {
+      const original = page.getViewport({ scale: 1 });
+      const isMobile = window.innerWidth <= 768;
+      
+      if (customZoomScale !== null) {
+        return Math.max(0.3, Math.min(3.5, customZoomScale));
+      }
+      
+      const zVal = el('zoom').value;
+      if (zVal === 'fit') {
+        const availWidth = el('reader').clientWidth || window.innerWidth;
+        const padding = isMobile ? 4 : 32;
+        return Math.max(0.25, Math.min(3.0, (availWidth - padding) / original.width));
+      }
+      if (zVal === 'read') {
+        // Dedicated comfortable reading mode on phones & tablets: 135% of fit width or minimum 1.25
+        const availWidth = el('reader').clientWidth || window.innerWidth;
+        const baseFit = (availWidth - 4) / original.width;
+        return Math.max(1.20, Math.min(2.5, baseFit * 1.35));
+      }
+      return Number(zVal);
+    };
+
+    async function render() {
+      if (!pdf) return;
+      const currentGeneration = ++generation;
+      const resumePage = Math.max(1, Math.min(pdf.numPages, pageNumber));
+      if (observer) observer.disconnect();
+      if (activeTask) { activeTask.cancel(); activeTask = null; }
+      
+      el('reader').replaceChildren();
+      sections = [];
+      queue = Promise.resolve();
+      el('status').textContent = 'Loading page ' + resumePage + ' of ' + pdf.numPages + '…';
+      
+      const firstPage = await pdf.getPage(1);
+      if (currentGeneration !== generation) return;
+      
+      const isMobile = window.innerWidth <= 768;
+      const estimate = firstPage.getViewport({ scale: fitScale(firstPage) });
+
+      async function renderPage(section, knownPage) {
+        if (currentGeneration !== generation || section.dataset.rendered === 'true') return;
+        const number = Number(section.dataset.page);
+        try {
+          const page = knownPage || await pdf.getPage(number);
+          if (currentGeneration !== generation) return;
+          
+          const viewport = page.getViewport({ scale: fitScale(page) });
+          section.style.width = viewport.width + 'px';
+          section.style.minHeight = (viewport.height + 24) + 'px';
+          
+          const canvas = document.createElement('canvas');
+          // High-DPI support: Crisp vector anti-aliased rendering for Malayalam
+          const ratio = Math.min(Math.max(window.devicePixelRatio || 1, isMobile ? 2.0 : 1.5), 2.5);
+          
+          canvas.width = Math.floor(viewport.width * ratio);
+          canvas.height = Math.floor(viewport.height * ratio);
+          canvas.style.width = viewport.width + 'px';
+          canvas.style.height = viewport.height + 'px';
+          canvas.setAttribute('role', 'img');
+          canvas.setAttribute('aria-label', 'Study guide page ' + number + ' of ' + pdf.numPages);
+          section.append(canvas);
+
+          const task = page.render({
+            canvasContext: canvas.getContext('2d'),
+            viewport,
+            transform: ratio !== 1 ? [ratio, 0, 0, ratio, 0, 0] : null
+          });
+          activeTask = task;
+          try { await task.promise; } finally { if (activeTask === task) activeTask = null; }
+          
+          if (currentGeneration !== generation) return;
+          section.dataset.rendered = 'true';
+          section.querySelector('.page-loading')?.remove();
+
+          // Link Annotation Layer
+          try {
+            const annotations = await page.getAnnotations();
+            if (annotations && annotations.length) {
+              const linkLayer = document.createElement('div');
+              linkLayer.className = 'pdf-link-layer';
+              linkLayer.style.cssText = 'position:absolute;top:0;left:0;width:' + viewport.width + 'px;height:' + viewport.height + 'px;pointer-events:none;';
+              annotations.forEach(a => {
+                if (a.subtype === 'Link' && a.url) {
+                  const r = viewport.convertToViewportRectangle(a.rect);
+                  const l = Math.min(r[0], r[2]);
+                  const t = Math.min(r[1], r[3]);
+                  const w = Math.abs(r[2] - r[0]);
+                  const h = Math.abs(r[3] - r[1]);
+                  const link = document.createElement('a');
+                  link.href = a.url;
+                  link.target = '_blank';
+                  link.rel = 'noopener noreferrer';
+                  link.style.cssText = 'position:absolute;left:' + l + 'px;top:' + t + 'px;width:' + w + 'px;height:' + h + 'px;pointer-events:auto;cursor:pointer;background:rgba(59,130,246,0.12);border-radius:3px;transition:background 0.15s;';
+                  link.title = (a.url.includes('youtu') ? 'Watch video: ' : 'Open link: ') + a.url;
+                  link.onmouseenter = () => link.style.background = 'rgba(59,130,246,0.28)';
+                  link.onmouseleave = () => link.style.background = 'rgba(59,130,246,0.12)';
+                  linkLayer.append(link);
+                }
+              });
+              section.append(linkLayer);
+            }
+          } catch (err) {
+            console.error('Annotation layer error:', err);
+          }
+        } catch (error) {
+          if (currentGeneration !== generation || error?.name === 'RenderingCancelledException') return;
+          section.querySelector('canvas')?.remove();
+          const label = section.querySelector('.page-loading');
+          if (label) label.textContent = 'Could not display this page. Tap Retry to try again.';
+          el('retry').hidden = false;
+        }
+      }
+
+      // Synchronously generate placeholder cards
+      for (let number = 1; number <= pdf.numPages; number++) {
+        const section = document.createElement('section');
+        section.className = 'pdf-page';
+        section.dataset.page = number;
+        section.setAttribute('aria-label', 'Page ' + number);
+        section.style.width = estimate.width + 'px';
+        section.style.minHeight = (estimate.height + 24) + 'px';
+
+        const label = document.createElement('div');
+        label.className = 'page-label';
+        label.textContent = 'Page ' + number + ' of ' + pdf.numPages;
+
+        const loading = document.createElement('div');
+        loading.className = 'page-loading';
+        loading.textContent = 'Loading page ' + number + '…';
+
+        section.append(label, loading);
+        el('reader').append(section);
+        sections.push(section);
+      }
+
+      pageNumber = resumePage;
+      controls();
+      go(resumePage);
+      
+      await renderPage(sections[resumePage - 1], resumePage === 1 ? firstPage : null);
+      if (currentGeneration !== generation) return;
+
+      el('status').textContent = sections[resumePage - 1].dataset.rendered === 'true'
+        ? pdf.numPages + ' pages · Scroll or use ‹ › buttons to read'
+        : 'Could not display page ' + resumePage + '. Tap Retry to try again.';
+
+      observer = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          observer.unobserve(entry.target);
+          queue = queue.then(() => renderPage(entry.target)).catch(err => console.error(err));
+        }
+      }, { rootMargin: '600px 0px' });
+      
+      sections.forEach(sec => observer.observe(sec));
+    }
+
+    function go(number) {
+      if (!pdf) return;
+      pageNumber = Math.max(1, Math.min(pdf.numPages, Math.round(Number(number) || 1)));
+      sections[pageNumber - 1]?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      controls();
+    }
+
+    // Event listeners for page navigation
+    el('page').onchange = event => go(event.target.value);
+    el('prevPage').onclick = () => { if (pageNumber > 1) go(pageNumber - 1); };
+    el('nextPage').onclick = () => { if (pdf && pageNumber < pdf.numPages) go(pageNumber + 1); };
+
+    // Zoom event listeners
+    el('zoom').onchange = () => {
+      customZoomScale = null;
+      render();
+    };
+
+    el('zoomIn').onclick = () => {
+      if (!pdf) return;
+      const firstSection = sections[0];
+      const currentScale = fitScale(firstSection ? { getViewport: () => ({ width: 595 }) } : { getViewport: () => ({ width: 595 }) });
+      customZoomScale = Math.min(3.5, (customZoomScale || currentScale) + 0.20);
+      render();
+    };
+
+    el('zoomOut').onclick = () => {
+      if (!pdf) return;
+      const firstSection = sections[0];
+      const currentScale = fitScale(firstSection ? { getViewport: () => ({ width: 595 }) } : { getViewport: () => ({ width: 595 }) });
+      customZoomScale = Math.max(0.35, (customZoomScale || currentScale) - 0.20);
+      render();
+    };
+
+    // Fullscreen and External New Tab
+    el('fullscreenBtn').onclick = () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    };
+
+    el('openExternalBtn').onclick = () => {
+      window.open(location.href, '_blank');
+    };
+
+    // Scroll listener for active page tracking
+    let scrolling = false;
+    window.addEventListener('scroll', () => {
+      if (scrolling) return;
+      scrolling = true;
+      requestAnimationFrame(() => {
+        scrolling = false;
+        const visible = sections.find(section => section.getBoundingClientRect().bottom > 90);
+        if (visible && document.activeElement !== el('page')) {
+          pageNumber = Number(visible.dataset.page);
+          el('page').value = pageNumber;
+          controls();
+        }
+      });
+    }, { passive: true });
+
+    // Resize listener
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (el('zoom').value === 'fit' || el('zoom').value === 'read') render();
+      }, 200);
+    });
+
+    async function loadScript(src) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = () => reject(Error('Could not load the document viewer'));
+        document.head.append(script);
+      });
+    }
+
+    el('retry').onclick = () => location.reload();
+
+    try {
+      const rawParam = new URLSearchParams(location.search).get('file') || '';
+      const file = new URL(rawParam, location.href);
+      if (location.origin && location.origin !== 'null' && file.origin !== location.origin) {
+        throw Error('Invalid study guide');
+      }
+
+      if (file.pathname.toLowerCase().endsWith('.docx')) {
+        document.querySelector('.toolbar').hidden = true;
+        document.body.classList.add('docx-mode');
+        el('status').textContent = 'Loading Word document…';
+        const font = document.createElement('link');
+        font.rel = 'stylesheet';
+        font.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap';
+        document.head.append(font);
+
+        if (!window.JSZip) await loadScript('https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js');
+        if (!window.docx?.renderAsync) await loadScript('https://cdn.jsdelivr.net/npm/docx-preview@0.3.6/dist/docx-preview.min.js');
+
+        const response = await fetch(file.href);
+        if (!response.ok) throw Error('Could not fetch Word document (HTTP ' + response.status + ')');
+        if (!window.docx?.renderAsync) throw Error('Word document viewer did not load');
+
+        await window.docx.renderAsync(await response.arrayBuffer(), el('reader'), el('reader'), {
+          className: 'docx',
+          inWrapper: true,
+          breakPages: true,
+          ignoreLastRenderedPageBreak: false
+        });
+        el('status').textContent = 'Word document loaded · Scroll to read the complete module';
+
+      } else if (file.pathname.toLowerCase().endsWith('.pdf')) {
+        let lib, cdn = 'https://cdn.jsdelivr.net/npm';
+        try {
+          lib = await import(cdn + '/pdfjs-dist@4.10.38/build/pdf.mjs');
+        } catch (error) {
+          cdn = 'https://unpkg.com';
+          lib = await import(cdn + '/pdfjs-dist@4.10.38/build/pdf.mjs');
+        }
+        lib.GlobalWorkerOptions.workerSrc = cdn + '/pdfjs-dist@4.10.38/build/pdf.worker.mjs';
+        
+        pdf = await lib.getDocument({
+          url: file.href,
+          isEvalSupported: false,
+          disableAutoFetch: true,
+          rangeChunkSize: 262144
+        }).promise;
+
+        el('page').max = pdf.numPages;
+        // Auto select "fit" mode on mobile by default so it takes 100% of the screen width
+        if (window.innerWidth <= 768) {
+          el('zoom').value = 'fit';
+        }
+        controls();
+        await render();
+
+      } else {
+        throw Error('Unsupported study guide format');
+      }
+    } catch (error) {
+      console.error(error);
+      document.querySelector('.toolbar').hidden = false;
+      el('retry').hidden = false;
+      el('status').textContent = 'Reader error: ' + (error?.message || 'Unknown error') + '. Tap Retry to try again.';
+    }
+  </script>
+</body>
+</html>
