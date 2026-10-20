@@ -1067,22 +1067,16 @@
       const isF = (v) => /female|woman|sobhana|neerja|heera|zira|jenny|aria|siri|sangeeta/i.test(v.name);
       const isM = (v) => /male|man|midhun|prabhat|ravi|david|mark|guy|george/i.test(v.name);
       const mlVoices = allVoices.filter(v => v.lang.toLowerCase().startsWith('ml'));
-      const enInVoices = allVoices.filter(v => v.lang.toLowerCase() === 'en-in');
-      const inVoices = allVoices.filter(v => v.lang.toLowerCase().includes('in'));
+      const ukEnglishVoices = allVoices.filter(v => /^en-gb(?:-|$)/i.test((v.lang || '').replace(/_/g, '-')));
 
       if (isMalayalam && mlVoices.length) {
         const mlPref = mlVoices.find(v => gender === 'female' ? isF(v) : isM(v)) || mlVoices[0];
         if (mlPref) return mlPref;
       }
 
-      if (gender === 'female') {
-        const inF = enInVoices.find(v => isF(v)) || inVoices.find(v => isF(v)) || allVoices.find(v => isF(v));
-        if (inF) return inF;
-      } else {
-        const inM = enInVoices.find(v => isM(v)) || inVoices.find(v => isM(v)) || allVoices.find(v => isM(v));
-        if (inM) return inM;
-      }
-      return enInVoices[0] || allVoices[0];
+      const genderVoice = ukEnglishVoices.find(v => gender === 'female' ? isF(v) : isM(v));
+      // Keep the en-GB utterance locale when no UK voice is installed.
+      return genderVoice || ukEnglishVoices[0] || null;
     }
 
     function splitIntoNaturalSentences(text) {
@@ -1219,7 +1213,7 @@
       }
       window.speechSynthesis.cancel();
       const ut = new SpeechSynthesisUtterance(text);
-      ut.lang = 'en-IN';
+      ut.lang = 'en-GB';
       const enVoice = getSmartVoice(selectedGender, false);
       if (enVoice) ut.voice = enVoice;
       ut.rate = (speed || 1.0) * 0.95;
