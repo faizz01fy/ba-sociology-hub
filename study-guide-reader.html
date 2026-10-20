@@ -193,7 +193,7 @@
       border: 1px solid #047857;
       font-weight: 700;
       gap: 6px;
-      padding: 5px 11px;
+      padding: 5px 12px;
       border-radius: 8px;
       box-shadow: 0 1px 3px rgba(16, 185, 129, 0.25);
     }
@@ -215,7 +215,7 @@
       50% { transform: scale(1.25); }
     }
 
-    /* Voice Control Panel Drawer (Desktop) */
+    /* Voice Control Panel Drawer (Desktop & Mobile) */
     .voice-panel {
       position: sticky;
       top: 48px;
@@ -228,7 +228,7 @@
       transition: all 0.2s ease-in-out;
     }
     .voice-panel-inner {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -254,57 +254,121 @@
       border-radius: 50%;
       background: #94a3b8;
       display: inline-block;
+      transition: background 0.2s;
     }
     .voice-indicator-dot.active {
       background: #10b981;
       box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
-      animation: blink-dot 1.4s infinite;
-    }
-    @keyframes blink-dot {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.35; }
+      animation: voice-pulse-wave 1s infinite;
     }
     .voice-teleprompter {
       background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #cbd5e1;
       border-left: 4px solid #10b981;
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 8px 12px;
-      font-family: 'Noto Sans Malayalam', 'Plus Jakarta Sans', system-ui, sans-serif;
       font-size: 13.5px;
-      line-height: 1.6;
+      line-height: 1.5;
       color: #1e293b;
-      min-height: 38px;
-      max-height: 70px;
+      min-height: 48px;
+      max-height: 90px;
       overflow-y: auto;
-      text-align: left;
+      word-break: break-word;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .teleprompter-en {
+      font-size: 12.5px;
+      color: #475569;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .teleprompter-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 14px;
+      color: #065f46;
+      font-weight: 700;
+      line-height: 1.5;
     }
     .voice-controls-row {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
       justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
     }
     .voice-btn-group {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
     }
     .voice-ctrl-btn {
-      font-weight: 700;
-      min-height: 34px;
+      min-height: 32px;
       padding: 4px 10px;
-      border-radius: 6px;
+      font-size: 12px;
+      border-radius: 7px;
     }
     .btn-primary-play {
+      background: #10b981 !important;
+      color: #ffffff !important;
+      border-color: #059669 !important;
+      font-weight: 700;
+    }
+    .btn-primary-play:hover {
+      background: #059669 !important;
+    }
+    .voice-mode-pills {
+      display: inline-flex;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 999px;
+      padding: 2px;
+      gap: 2px;
+    }
+    .mode-pill {
+      background: transparent;
+      border: none;
+      color: #475569;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 999px;
+      min-height: 24px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .mode-pill:hover {
+      color: #0f172a;
+      background: rgba(0, 0, 0, 0.05);
+    }
+    .mode-pill.active {
       background: #10b981;
       color: #ffffff;
-      border-color: #059669;
-      gap: 5px;
+      box-shadow: 0 1px 3px rgba(16, 185, 129, 0.35);
     }
-    .btn-primary-play:hover:not(:disabled) {
-      background: #059669;
+    .gender-pill-switch {
+      display: inline-flex;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 999px;
+      padding: 2px;
+      gap: 2px;
+    }
+    .gender-pill {
+      background: transparent;
+      border: none;
+      color: #64748b;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 999px;
+      min-height: 24px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .gender-pill.active {
+      background: #1e293b;
       color: #ffffff;
     }
     .voice-control-group {
@@ -313,38 +377,15 @@
       gap: 6px;
     }
     .voice-group-label {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: #475569;
-    }
-    .gender-pill-switch {
-      display: inline-flex;
-      background: #e2e8f0;
-      border-radius: 20px;
-      padding: 2px;
-      gap: 2px;
-    }
-    .gender-pill {
-      border: none;
-      background: transparent;
-      padding: 4px 10px;
-      border-radius: 18px;
-      font-size: 12px;
-      font-weight: 700;
-      color: #475569;
-      cursor: pointer;
-      min-height: 28px;
-    }
-    .gender-pill.active {
-      background: #ffffff;
-      color: #0f172a;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
     }
     .voice-select {
-      font-size: 12px;
-      padding: 4px 8px;
+      min-height: 30px;
+      padding: 3px 6px;
+      font-size: 11.5px;
       border-radius: 6px;
-      font-weight: 600;
     }
     .voice-checkbox-label {
       display: inline-flex;
@@ -370,8 +411,7 @@
       background: #f1f5f9;
       color: #0f172a;
     }
-
-    /* Word document mode */
+/* Word document mode */
     body.docx-mode {
       font-family: "Noto Sans Malayalam", system-ui, sans-serif;
       background: #f1f5f9;
@@ -603,7 +643,8 @@
 
       <!-- Teleprompter / Active Caption Box -->
       <div id="voiceTeleprompter" class="voice-teleprompter" aria-live="polite">
-        "വായന ആരംഭിക്കാൻ ▶ പ്ലേ ചെയ്യുക. പുരുഷ/സ്ത്രീ ശബ്ദം തിരഞ്ഞെടുക്കാം."
+        <div id="teleprompterEn" class="teleprompter-en">വായന ആരംഭിക്കാൻ ▶ അമർത്തുക.</div>
+        <div id="teleprompterMl" class="teleprompter-ml">ഇംഗ്ലീഷ് ➔ മലയാളം തത്സമയ ശബ്ദ വിവരണം ലഭ്യമാണ് (English to Malayalam Voice).</div>
       </div>
 
       <!-- Control Strip -->
@@ -618,12 +659,28 @@
           <button id="voiceNextSentBtn" class="voice-ctrl-btn" type="button" title="അടുത്ത വാചകം (Next sentence)">⏭</button>
         </div>
 
+        <!-- Voice Mode Selector (En -> Mal Conversion vs English Only vs Direct) -->
+        <div class="voice-control-group">
+          <span class="voice-group-label">മോഡ്:</span>
+          <div class="voice-mode-pills" role="radiogroup" aria-label="Voice Reading Mode">
+            <button id="modeEn2MlBtn" class="mode-pill active" type="button" role="radio" aria-checked="true" data-mode="en2ml" title="ക്ലീൻ ഇംഗ്ലീഷ് എടുത്ത് മലയാളത്തിലേക്ക് വോയ്സ് കൺവേർഷൻ ചെയ്യുക (English to Malayalam Voice Conversion)">
+              🌐 ഇംഗ്ലീഷ് ➔ മലയാളം (En ➔ Mal)
+            </button>
+            <button id="modeEnBtn" class="mode-pill" type="button" role="radio" aria-checked="false" data-mode="en" title="ഇംഗ്ലീഷ് വാചകം നേരിട്ട് വായിക്കുക (English Reading)">
+              🇬🇧 English Only
+            </button>
+            <button id="modeBothBtn" class="mode-pill" type="button" role="radio" aria-checked="false" data-mode="both" title="ഇംഗ്ലീഷും മലയാളം വോയ്സും ഒരുമിച്ച് (Bilingual)">
+              🗣️ En + Mal
+            </button>
+          </div>
+        </div>
+
         <!-- Gender Switcher -->
         <div class="voice-control-group">
           <span class="voice-group-label">ശബ്ദം:</span>
           <div class="gender-pill-switch" role="radiogroup" aria-label="Voice Gender">
-            <button id="genderFemaleBtn" class="gender-pill active" type="button" role="radio" aria-checked="true" data-gender="female">👩 സ്ത്രീ (Female)</button>
-            <button id="genderMaleBtn" class="gender-pill" type="button" role="radio" aria-checked="false" data-gender="male">👨 പുരുഷൻ (Male)</button>
+            <button id="genderFemaleBtn" class="gender-pill active" type="button" role="radio" aria-checked="true" data-gender="female">👩 സ്ത്രീ</button>
+            <button id="genderMaleBtn" class="gender-pill" type="button" role="radio" aria-checked="false" data-gender="male">👨 പുരുഷൻ</button>
           </div>
         </div>
 
@@ -631,10 +688,9 @@
         <div class="voice-control-group">
           <label for="voiceSpeedSelect" class="voice-group-label">സ്പീഡ്:</label>
           <select id="voiceSpeedSelect" class="voice-select" aria-label="Reading Speed">
-            <option value="0.85">0.85x (സ്ലോ/ക്ലിയർ)</option>
-            <option value="1.0" selected>1.0x (സാധാരണ)</option>
-            <option value="1.15">1.15x (വേഗത)</option>
-            <option value="1.3">1.3x (കൂടുതൽ വേഗത)</option>
+            <option value="0.85">0.85x</option>
+            <option value="1.0" selected>1.0x</option>
+            <option value="1.15">1.15x</option>
           </select>
         </div>
 
@@ -642,18 +698,13 @@
         <div class="voice-control-group">
           <label class="voice-checkbox-label" title="നിലവിലെ പേജ് കഴിഞ്ഞാൽ അടുത്ത പേജ് സ്വയമേവ വായിക്കുക">
             <input type="checkbox" id="voiceContinuousCheck" checked>
-            <span>തുടർച്ചയായ വായന</span>
+            <span>തുടർച്ചയായി</span>
           </label>
-        </div>
-
-        <!-- Advanced Voice Dropdown (populates all system voices) -->
-        <div class="voice-control-group" id="advVoiceGroup">
-          <select id="advVoiceSelect" class="voice-select" aria-label="Specific voice selector" style="max-width: 145px; font-size: 11px;">
-            <option value="auto">Auto (സ്വാഭാവിക ശബ്ദം)</option>
-          </select>
         </div>
       </div>
     </div>
+  </div>
+  </div>
   </div>
 
   <p id="status" role="status" aria-live="polite">Loading study guide…</p>
@@ -928,35 +979,72 @@
       });
     }
 
-    // --- VOICE READING (TTS) ENGINE ---
+    // --- VOICE READING (TTS) & LIVE TRANSLATION ENGINE ---
     let allVoices = [];
     let selectedGender = 'female';
+    let voiceMode = 'en2ml'; // 'en2ml' (default), 'en', 'both'
     let isVoicePlaying = false;
     let isVoicePaused = false;
     let currentReadingPage = 1;
     let currentSentenceIdx = 0;
     let currentSentences = [];
     const pageTextCache = {};
+    const translationCache = {};
     let currentUtterance = null;
+    let currentAudio = null;
+
+    // --- MALAYALAM UNICODE SANITIZER & REPAIR ---
+    // Fixes broken, duplicated diacritics, split chillus, and invalid combining characters extracted from PDFs
+    function sanitizeMalayalam(text) {
+      if (!text) return '';
+      return text
+        .replace(/([ാ-്ൗം])+/g, '$1') // Deduplicate vowel signs
+        .replace(/ണ്‍/g, 'ൺ')
+        .replace(/ന്‍/g, 'ൻ')
+        .replace(/ര്‍/g, 'ർ')
+        .replace(/ല്‍/g, 'ൽ')
+        .replace(/ള്‍/g, 'ൾ')
+        .replace(/ക്‍/g, 'ൿ')
+        .replace(/([ഀ-ൿ])\s+([ാ-്ൗ])/g, '$1$2')
+        .normalize('NFC');
+    }
+
+    // --- LIVE ENGLISH TO MALAYALAM TRANSLATION ENGINE ---
+    // Translates pristine English sentences from the PDF to fluent, natural Malayalam in real-time
+    async function translateEnglishToMalayalam(text) {
+      const clean = text.trim();
+      if (!clean) return '';
+      if (translationCache[clean]) return translationCache[clean];
+
+      // If predominantly Malayalam already, sanitize and return
+      const mlMatches = clean.match(/[ഀ-ൿ]/g) || [];
+      if (mlMatches.length > clean.length * 0.4) {
+        const san = sanitizeMalayalam(clean);
+        translationCache[clean] = san;
+        return san;
+      }
+
+      try {
+        const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ml&dt=t&q=${encodeURIComponent(clean)}`;
+        const res = await fetch(url);
+        if (res.ok) {
+          const data = await res.json();
+          const translated = (data[0] || []).map(p => p[0]).filter(Boolean).join('');
+          if (translated) {
+            const san = sanitizeMalayalam(translated);
+            translationCache[clean] = san;
+            return san;
+          }
+        }
+      } catch (err) {
+        console.warn('Live translation fallback to sanitized:', err);
+      }
+      return sanitizeMalayalam(clean);
+    }
 
     function populateVoiceList() {
       if (!('speechSynthesis' in window)) return;
       allVoices = window.speechSynthesis.getVoices() || [];
-      const sel = el('advVoiceSelect');
-      if (!sel) return;
-      const currentVal = sel.value;
-      sel.innerHTML = '<option value="auto">Auto (സ്വാഭാവിക ശബ്ദം)</option>';
-      allVoices.forEach(v => {
-        const opt = document.createElement('option');
-        opt.value = v.voiceURI || v.name;
-        const isF = /female|woman|sobhana|neerja|heera|zira|jenny|aria|siri/i.test(v.name);
-        const tag = isF ? '👩' : '👨';
-        opt.textContent = `${tag} ${v.name} (${v.lang})`;
-        sel.appendChild(opt);
-      });
-      if (currentVal && Array.from(sel.options).some(o => o.value === currentVal)) {
-        sel.value = currentVal;
-      }
     }
 
     if ('speechSynthesis' in window) {
@@ -966,31 +1054,25 @@
 
     function getSmartVoice(gender, isMalayalam) {
       if (!allVoices.length) return null;
-      const isF = (v) => /female|woman|sobhana|neerja|heera|zira|jenny|aria|siri/i.test(v.name);
-      const isM = (v) => /male|man|midhun|prabhat|ravi|david|mark|guy/i.test(v.name);
+      const isF = (v) => /female|woman|sobhana|neerja|heera|zira|jenny|aria|siri|sangeeta/i.test(v.name);
+      const isM = (v) => /male|man|midhun|prabhat|ravi|david|mark|guy|george/i.test(v.name);
       const mlVoices = allVoices.filter(v => v.lang.toLowerCase().startsWith('ml'));
+      const enInVoices = allVoices.filter(v => v.lang.toLowerCase() === 'en-in');
       const inVoices = allVoices.filter(v => v.lang.toLowerCase().includes('in'));
 
-      if (gender === 'female') {
-        if (isMalayalam && mlVoices.length) {
-          const mlF = mlVoices.find(v => isF(v)) || mlVoices[0];
-          if (mlF) return mlF;
-        }
-        const inF = inVoices.find(v => isF(v));
-        if (inF) return inF;
-        const anyF = allVoices.find(v => isF(v));
-        if (anyF) return anyF;
-      } else {
-        if (isMalayalam && mlVoices.length) {
-          const mlM = mlVoices.find(v => isM(v)) || mlVoices[0];
-          if (mlM) return mlM;
-        }
-        const inM = inVoices.find(v => isM(v));
-        if (inM) return inM;
-        const anyM = allVoices.find(v => isM(v));
-        if (anyM) return anyM;
+      if (isMalayalam && mlVoices.length) {
+        const mlPref = mlVoices.find(v => gender === 'female' ? isF(v) : isM(v)) || mlVoices[0];
+        if (mlPref) return mlPref;
       }
-      return allVoices[0];
+
+      if (gender === 'female') {
+        const inF = enInVoices.find(v => isF(v)) || inVoices.find(v => isF(v)) || allVoices.find(v => isF(v));
+        if (inF) return inF;
+      } else {
+        const inM = enInVoices.find(v => isM(v)) || inVoices.find(v => isM(v)) || allVoices.find(v => isM(v));
+        if (inM) return inM;
+      }
+      return enInVoices[0] || allVoices[0];
     }
 
     function splitIntoNaturalSentences(text) {
@@ -1048,6 +1130,102 @@
       return sentences;
     }
 
+    // --- HIGH-FIDELITY MALAYALAM SPEECH PLAYER ---
+    // Uses Google's neural Malayalam TTS audio stream with automatic sentence chunking & SpeechSynthesis fallback
+    function playMalayalamSpeechQueue(text, speed, onComplete) {
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
+      }
+
+      const clean = sanitizeMalayalam(text).trim();
+      if (!clean) {
+        if (onComplete) onComplete();
+        return;
+      }
+
+      const words = clean.split(/\s+/);
+      const chunks = [];
+      let current = '';
+      for (const w of words) {
+        if ((current + ' ' + w).trim().length > 175) {
+          if (current) chunks.push(current.trim());
+          current = w;
+        } else {
+          current = current ? (current + ' ' + w) : w;
+        }
+      }
+      if (current) chunks.push(current.trim());
+
+      let chunkIdx = 0;
+
+      function playNextChunk() {
+        if (!isVoicePlaying || isVoicePaused) return;
+        if (chunkIdx >= chunks.length) {
+          currentAudio = null;
+          if (onComplete) onComplete();
+          return;
+        }
+
+        const chunk = chunks[chunkIdx++];
+        const url = `https://translate.google.com/translate_tts?ie=UTF-8&tl=ml&client=tw-ob&q=${encodeURIComponent(chunk)}`;
+        const audio = new Audio(url);
+        audio.playbackRate = Math.max(0.8, Math.min(1.4, speed || 1.0));
+        currentAudio = audio;
+
+        audio.onended = () => {
+          currentAudio = null;
+          playNextChunk();
+        };
+
+        const fallbackTTS = () => {
+          currentAudio = null;
+          if ('speechSynthesis' in window) {
+            const ut = new SpeechSynthesisUtterance(chunk);
+            ut.lang = 'ml-IN';
+            ut.rate = (speed || 1.0) * 0.90;
+            const mlVoice = allVoices.find(v => v.lang.toLowerCase().startsWith('ml'));
+            if (mlVoice) ut.voice = mlVoice;
+            ut.onend = () => playNextChunk();
+            ut.onerror = () => playNextChunk();
+            window.speechSynthesis.speak(ut);
+          } else {
+            playNextChunk();
+          }
+        };
+
+        audio.onerror = fallbackTTS;
+        audio.play().catch(fallbackTTS);
+      }
+
+      playNextChunk();
+    }
+
+    // --- NATIVE ENGLISH SPEECH (KEEP INTACT) ---
+    function playEnglishSpeech(text, speed, onComplete) {
+      if (!('speechSynthesis' in window)) {
+        if (onComplete) onComplete();
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const ut = new SpeechSynthesisUtterance(text);
+      ut.lang = 'en-IN';
+      const enVoice = getSmartVoice(selectedGender, false);
+      if (enVoice) ut.voice = enVoice;
+      ut.rate = (speed || 1.0) * 0.95;
+      ut.pitch = selectedGender === 'female' ? 1.08 : 0.92;
+      ut.onend = () => {
+        if (onComplete) onComplete();
+      };
+      ut.onerror = (e) => {
+        if (e.error !== 'interrupted' && e.error !== 'canceled') {
+          console.warn('English speech error:', e);
+          if (onComplete) onComplete();
+        }
+      };
+      window.speechSynthesis.speak(ut);
+    }
+
     function updateVoiceUIState() {
       const toggleBtn = el('voiceToggleBtn');
       const playIcon = el('voicePlayIcon');
@@ -1072,15 +1250,20 @@
       }
     }
 
-    function speakSentence(sentences, idx, pNum) {
-      if (!isVoicePlaying || idx >= sentences.length) {
-        if (isVoicePlaying && el('voiceContinuousCheck').checked && pdf && pNum < pdf.numPages) {
+    async function speakSentence(sentences, idx, pNum) {
+      if (!isVoicePlaying || isVoicePaused) return;
+
+      if (idx >= sentences.length) {
+        if (el('voiceContinuousCheck').checked && pdf && pNum < pdf.numPages) {
           go(pNum + 1);
           startReadingPage(pNum + 1, 0);
         } else {
           stopVoice();
-          el('voiceStatusText').textContent = `വായന പൂർത്തിയായി (Finished reading)`;
-          el('voiceTeleprompter').textContent = 'വായന പൂർത്തിയായി. ആവശ്യമെങ്കിൽ വീണ്ടും പ്ലേ ചെയ്യുക.';
+          el('voiceStatusText').textContent = 'വായന പൂർത്തിയായി (Finished reading)';
+          const tEn = el('teleprompterEn');
+          const tMl = el('teleprompterMl');
+          if (tEn) tEn.textContent = 'പേജ് വായന പൂർത്തിയായി.';
+          if (tMl) tMl.textContent = 'ആവശ്യമെങ്കിൽ വീണ്ടും പ്ലേ ചെയ്യുക.';
         }
         return;
       }
@@ -1093,59 +1276,77 @@
         go(pNum);
       }
 
-      el('voiceTeleprompter').textContent = sentence;
       const totalP = pdf ? pdf.numPages : 1;
-      const genderLabel = selectedGender === 'female' ? 'സ്ത്രീ സ്വരം (Female)' : 'പുരുഷ സ്വരം (Male)';
-      el('voiceStatusText').textContent = `🔊 ${genderLabel} · പേജ് ${pNum}/${totalP} · വാചകം ${idx + 1}/${sentences.length}`;
+      const genderLabel = selectedGender === 'female' ? 'സ്ത്രീ സ്വരം' : 'പുരുഷ സ്വരം';
+      const modeLabel = voiceMode === 'en2ml' ? '🌐 ഇംഗ്ലീഷ് ➔ മലയാളം വോയ്സ്' : voiceMode === 'en' ? '🇬🇧 ഇംഗ്ലീഷ് വായന' : '🗣️ ദ്വിഭാഷാ വിവരണം';
+      el('voiceStatusText').textContent = `🔊 ${genderLabel} · ${modeLabel} · പേജ് ${pNum}/${totalP} · വാചകം ${idx + 1}/${sentences.length}`;
 
-      window.speechSynthesis.cancel();
-
-      const utterance = new SpeechSynthesisUtterance(sentence);
-      const hasMalayalam = /[\u0D00-\u0D7F]/.test(sentence);
-
-      const advVal = el('advVoiceSelect')?.value;
-      let voice = null;
-      if (advVal && advVal !== 'auto') {
-        voice = allVoices.find(v => (v.voiceURI || v.name) === advVal);
+      // Stop any existing audio/speech
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
       }
-      if (!voice) {
-        voice = getSmartVoice(selectedGender, hasMalayalam);
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
       }
-      if (voice) {
-        utterance.voice = voice;
-      }
-      utterance.lang = hasMalayalam ? 'ml-IN' : (voice?.lang || 'en-IN');
 
       const speed = Number(el('voiceSpeedSelect').value) || 1.0;
-      utterance.rate = (hasMalayalam ? 0.90 : 0.95) * speed;
-      utterance.pitch = (selectedGender === 'female' ? 1.10 : 0.88);
+      const isEnglish = /[a-zA-Z]{3,}/.test(sentence);
+      const tEn = el('teleprompterEn');
+      const tMl = el('teleprompterMl');
 
-      currentUtterance = utterance;
-
-      utterance.onend = () => {
+      const onNext = () => {
         if (isVoicePlaying && !isVoicePaused && currentSentenceIdx === idx && currentReadingPage === pNum) {
           speakSentence(sentences, idx + 1, pNum);
         }
       };
 
-      utterance.onerror = (e) => {
-        if (e.error !== 'interrupted' && e.error !== 'canceled') {
-          console.warn('SpeechSynthesis error:', e);
-          if (isVoicePlaying && !isVoicePaused) {
-            speakSentence(sentences, idx + 1, pNum);
-          }
+      if (voiceMode === 'en2ml') {
+        // --- ENGLISH TO MALAYALAM VOICE CONVERSION ---
+        // Instead of reading broken Malayalam from PDF, convert clean English to natural Malayalam speech
+        if (isEnglish) {
+          if (tEn) tEn.textContent = '🇬🇧 ' + sentence;
+          if (tMl) tMl.textContent = '⏳ മലയാളത്തിലേക്ക് മാറ്റുന്നു…';
+          const malText = await translateEnglishToMalayalam(sentence);
+          if (tMl) tMl.textContent = '🔊 ' + malText;
+          playMalayalamSpeechQueue(malText, speed, onNext);
+        } else {
+          const san = sanitizeMalayalam(sentence);
+          if (tEn) tEn.textContent = '';
+          if (tMl) tMl.textContent = '🔊 ' + san;
+          playMalayalamSpeechQueue(san, speed, onNext);
         }
-      };
-
-      window.speechSynthesis.speak(utterance);
+      } else if (voiceMode === 'en') {
+        // --- ENGLISH ONLY (KEEP INTACT) ---
+        if (tEn) tEn.textContent = '🇬🇧 ' + sentence;
+        if (tMl) tMl.textContent = '';
+        if (isEnglish) {
+          playEnglishSpeech(sentence, speed, onNext);
+        } else {
+          // If purely Malayalam, speak sanitized Malayalam
+          const san = sanitizeMalayalam(sentence);
+          if (tMl) tMl.textContent = '🔊 ' + san;
+          playMalayalamSpeechQueue(san, speed, onNext);
+        }
+      } else {
+        // --- BILINGUAL MODE (EN FIRST, THEN MAL EXPLANATION) ---
+        if (tEn) tEn.textContent = '🇬🇧 ' + sentence;
+        if (isEnglish) {
+          playEnglishSpeech(sentence, speed, async () => {
+            if (!isVoicePlaying || isVoicePaused) return;
+            const malText = await translateEnglishToMalayalam(sentence);
+            if (tMl) tMl.textContent = '🔊 ' + malText;
+            playMalayalamSpeechQueue(malText, speed, onNext);
+          });
+        } else {
+          const san = sanitizeMalayalam(sentence);
+          if (tMl) tMl.textContent = '🔊 ' + san;
+          playMalayalamSpeechQueue(san, speed, onNext);
+        }
+      }
     }
 
     async function startReadingPage(pageNum, startIdx = 0) {
-      if (!('speechSynthesis' in window)) {
-        alert('ഈ ബ്രൗസറിൽ Voice Reading ലഭ്യമല്ല. ദയവായി Chrome, Edge അല്ലെങ്കിൽ Safari ഉപയോഗിക്കുക.');
-        return;
-      }
-
       isVoicePlaying = true;
       isVoicePaused = false;
       currentReadingPage = pageNum;
@@ -1158,7 +1359,10 @@
         const sentences = await getPageSentences(pageNum);
         currentSentences = sentences;
         if (!sentences || sentences.length === 0) {
-          el('voiceTeleprompter').textContent = `(പേജ് ${pageNum}-ൽ വായിക്കാവുന്ന വാചകങ്ങൾ ലഭ്യമല്ല)`;
+          const tEn = el('teleprompterEn');
+          const tMl = el('teleprompterMl');
+          if (tEn) tEn.textContent = `(പേജ് ${pageNum}-ൽ വായിക്കാവുന്ന വാചകങ്ങൾ ലഭ്യമല്ല)`;
+          if (tMl) tMl.textContent = '';
           if (el('voiceContinuousCheck').checked && pdf && pageNum < pdf.numPages) {
             setTimeout(() => {
               if (isVoicePlaying) {
@@ -1185,7 +1389,12 @@
     function pauseVoice() {
       if (!isVoicePlaying) return;
       isVoicePaused = true;
-      window.speechSynthesis.pause();
+      if (currentAudio) {
+        currentAudio.pause();
+      }
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.pause();
+      }
       updateVoiceUIState();
       el('voiceStatusText').textContent = `⏸ താത്കാലികമായി നിർത്തി (Paused at sentence ${currentSentenceIdx + 1})`;
     }
@@ -1196,7 +1405,11 @@
         return;
       }
       isVoicePaused = false;
-      if (window.speechSynthesis.paused) {
+      if (currentAudio && currentAudio.paused) {
+        currentAudio.play().catch(() => {
+          speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+        });
+      } else if (window.speechSynthesis && window.speechSynthesis.paused) {
         window.speechSynthesis.resume();
       } else if (currentSentences.length > 0) {
         speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
@@ -1208,6 +1421,10 @@
       isVoicePlaying = false;
       isVoicePaused = false;
       currentUtterance = null;
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio = null;
+      }
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
       }
@@ -1248,7 +1465,10 @@
 
     el('voiceStopBtn').onclick = () => {
       stopVoice();
-      el('voiceTeleprompter').textContent = 'വായന നിർത്തി. വീണ്ടും ആരംഭിക്കാൻ ▶ അമർത്തുക.';
+      const tEn = el('teleprompterEn');
+      const tMl = el('teleprompterMl');
+      if (tEn) tEn.textContent = 'വായന നിർത്തി. വീണ്ടും ആരംഭിക്കാൻ ▶ അമർത്തുക.';
+      if (tMl) tMl.textContent = '';
       el('voiceStatusText').textContent = 'ശബ്ദ വായന നിർത്തി (Stopped)';
     };
 
@@ -1270,42 +1490,57 @@
       }
     };
 
-    el('genderFemaleBtn').onclick = () => {
-      selectedGender = 'female';
-      el('genderFemaleBtn').classList.add('active');
-      el('genderFemaleBtn').setAttribute('aria-checked', 'true');
-      el('genderMaleBtn').classList.remove('active');
-      el('genderMaleBtn').setAttribute('aria-checked', 'false');
-      if (isVoicePlaying && !isVoicePaused) {
-        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
-      }
-    };
+    // Voice Mode Buttons
+    const modeBtns = [el('modeEn2MlBtn'), el('modeEnBtn'), el('modeBothBtn')].filter(Boolean);
+    modeBtns.forEach(btn => {
+      btn.onclick = () => {
+        modeBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-checked', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-checked', 'true');
+        voiceMode = btn.dataset.mode;
+        if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
+          speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+        }
+      };
+    });
 
-    el('genderMaleBtn').onclick = () => {
-      selectedGender = 'male';
-      el('genderMaleBtn').classList.add('active');
-      el('genderMaleBtn').setAttribute('aria-checked', 'true');
-      el('genderFemaleBtn').classList.remove('active');
-      el('genderFemaleBtn').setAttribute('aria-checked', 'false');
-      if (isVoicePlaying && !isVoicePaused) {
-        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
-      }
-    };
+    // Gender Switcher
+    const gFem = el('genderFemaleBtn');
+    const gMale = el('genderMaleBtn');
+    if (gFem && gMale) {
+      gFem.onclick = () => {
+        selectedGender = 'female';
+        gFem.classList.add('active');
+        gFem.setAttribute('aria-checked', 'true');
+        gMale.classList.remove('active');
+        gMale.setAttribute('aria-checked', 'false');
+        if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
+          speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+        }
+      };
+      gMale.onclick = () => {
+        selectedGender = 'male';
+        gMale.classList.add('active');
+        gMale.setAttribute('aria-checked', 'true');
+        gFem.classList.remove('active');
+        gFem.setAttribute('aria-checked', 'false');
+        if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
+          speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+        }
+      };
+    }
 
     el('voiceSpeedSelect').onchange = () => {
-      if (isVoicePlaying && !isVoicePaused) {
+      if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
         speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
       }
     };
 
-    el('advVoiceSelect').onchange = () => {
-      if (isVoicePlaying && !isVoicePaused) {
-        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
-      }
-    };
-
-    // Cross-window messaging (e.g. from parent modal header)
-    window.addEventListener('message', (event) => {
+    // Cross-frame message bus
+    window.addEventListener('message', event => {
       if (!event.data) return;
       if (event.data.action === 'toggleVoiceReader') {
         toggleVoicePanel(true);
@@ -1314,8 +1549,13 @@
       }
     });
 
-    window.addEventListener('beforeunload', () => { window.speechSynthesis?.cancel(); });
-    window.addEventListener('pagehide', () => { window.speechSynthesis?.cancel(); });
+    window.addEventListener('beforeunload', () => {
+      stopVoice();
+    });
+    window.addEventListener('pagehide', () => {
+      stopVoice();
+    });
+
 
     el('retry').onclick = () => location.reload();
 
