@@ -16,6 +16,17 @@
 
   // Curated pools of verified high-resolution, subject-specific Unsplash photography
   var SUBJECT_PHOTO_POOLS = {
+    history: [
+      { id: '1695964744922-c7d01b4761cb', desc: 'Historic Kerala palace with traditional timber and tiled architecture' },
+      { id: '1599940824399-b87987ceb72a', desc: 'Ancient stone carving and prehistoric archaeology cave' },
+      { id: '1600100397608-f010f4433ba4', desc: 'Ancient Indian stone temple carvings and historical epigraphy' },
+      { id: '1544620347-c4fd4a3d5957', desc: 'Ancient monolithic stone monuments and prehistoric megaliths' },
+      { id: '1582555172866-f73bb12a2ab3', desc: 'Archaeological artefacts and ancient heritage pottery' },
+      { id: '1507525428034-b723cf961d3e', desc: 'Historic maritime trade coast and ancient harbor waves' },
+      { id: '1602216056096-3b40cc0c9944', desc: 'Serene Kerala backwaters and historic trade routes' },
+      { id: '1514565131-fce0801e5785', desc: 'Ancient heritage architecture in tropical landscape' }
+    ],
+
     english: [
       { id: '1456513080510-7bf3a84b82f8', desc: 'Books and study materials for English' },
       { id: '1457369804613-52c61a468e7d', desc: 'Vintage library shelves and open classical texts' },
@@ -120,6 +131,7 @@
         else if (text.indexOf('economy') !== -1) subjectKey = 'economy';
         else if (text.indexOf('micro') !== -1) subjectKey = 'microeconomics';
         else if (text.indexOf('malayalam') !== -1) subjectKey = 'malayalam';
+        else if (text.indexOf('history') !== -1 || text.indexOf('keralam') !== -1) subjectKey = 'history';
         if (subjectKey) card.setAttribute('data-subject-key', subjectKey);
       }
 
