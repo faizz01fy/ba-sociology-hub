@@ -518,29 +518,166 @@
     #module-dialog.module-dialog--english-study-guide .module-content * { font-family:"DM Sans",Arial,sans-serif !important; }
     @media(max-width:560px){#module-dialog .module-tabs button{font-size:11px}#module-dialog .module-subtabs button{font-size:11px}}
   </style>
-  <style id="universal-subject-window-navigation">
+    <style id="universal-subject-window-navigation">
+    /* Sticky Top Header for Module Window */
     #module-dialog .module-header {
-      position:sticky;top:0;z-index:20;align-items:center;
-      padding:10px 0;margin:0 0 10px;background:#fff;
-      border-bottom:1px solid #d8e2ef;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 30 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 12px 18px !important;
+      margin: 0 0 14px !important;
+      background: #ffffff !important;
+      border-bottom: 1.5px solid #d8e2ef !important;
+      border-radius: 16px 16px 0 0 !important;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05) !important;
+    }
+    #module-dialog .module-header > div:first-child {
+      min-width: 0 !important;
+      flex: 1 1 auto !important;
     }
     #module-dialog .module-header-actions {
-      display:flex!important;flex:0 0 auto;align-items:center;
-      justify-content:flex-end;gap:8px;flex-wrap:wrap;
+      display: flex !important;
+      flex: 0 0 auto !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      gap: 12px !important;
+      flex-wrap: wrap !important;
     }
-    #module-dialog .module-header-actions .module-home { cursor:pointer; }
-    #module-dialog .module-header-actions .module-back-button {
-      appearance:none;font:inherit;
+
+    /* Keyframe Animations for Eye-Catching Blink / Pulsing Glow ("Blick") */
+    @keyframes blick-pulse-back {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45), 0 0 0 0 rgba(59, 130, 246, 0.7);
+      }
+      50% {
+        opacity: 0.88;
+        transform: scale(1.048);
+        filter: brightness(1.28);
+        box-shadow: 0 6px 22px rgba(37, 99, 235, 0.75), 0 0 16px 5px rgba(96, 165, 250, 0.9);
+      }
     }
-    #module-dialog .module-header-actions .module-home:focus-visible {
-      outline:3px solid #60a5fa;outline-offset:2px;
+
+    @keyframes blick-pulse-home {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45), 0 0 0 0 rgba(16, 185, 129, 0.7);
+      }
+      50% {
+        opacity: 0.88;
+        transform: scale(1.048);
+        filter: brightness(1.28);
+        box-shadow: 0 6px 22px rgba(16, 185, 129, 0.75), 0 0 16px 5px rgba(52, 211, 153, 0.9);
+      }
     }
-    #module-dialog .module-window-nav { display:none!important; }
-    @media(max-width:560px) {
-      #module-dialog .module-header { align-items:flex-start;flex-wrap:wrap; }
-      #module-dialog .module-header-actions { width:100%;justify-content:flex-end; }
-      #module-dialog .module-header-actions .module-home {
-        min-height:36px;padding:7px 10px;font-size:12px;
+
+    /* Shared Premium Look for Back & Home tabs/buttons */
+    #module-dialog .module-header-actions .module-home,
+    #module-dialog .module-header-actions .module-back-button,
+    #module-dialog .module-window-nav .module-home,
+    #module-dialog .module-window-nav .module-back-button {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 7px !important;
+      min-height: 42px !important;
+      padding: 9px 18px !important;
+      border-radius: 12px !important;
+      font-size: 13.5px !important;
+      font-weight: 850 !important;
+      font-family: inherit !important;
+      letter-spacing: 0.02em !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+      cursor: pointer !important;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      user-select: none !important;
+      -webkit-font-smoothing: antialiased !important;
+    }
+
+    /* PREMIUM EYE-CATCHING LOOK: BACK BUTTON (Vivid Electric Royal Blue / Indigo) */
+    #module-dialog .module-header-actions .module-back-button,
+    #module-dialog .module-window-nav .module-back-button {
+      appearance: none !important;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #4338ca 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+      text-shadow: 0 1px 2px rgba(15, 23, 42, 0.35) !important;
+      animation: blick-pulse-back 2.2s infinite ease-in-out !important;
+    }
+
+    #module-dialog .module-header-actions .module-back-button:hover,
+    #module-dialog .module-window-nav .module-back-button:hover {
+      animation-play-state: paused !important;
+      transform: translateY(-2px) scale(1.05) !important;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%) !important;
+      box-shadow: 0 7px 24px rgba(37, 99, 235, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+    }
+
+    #module-dialog .module-header-actions .module-back-button:active,
+    #module-dialog .module-window-nav .module-back-button:active {
+      transform: translateY(0) scale(0.98) !important;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4) !important;
+    }
+
+    /* PREMIUM EYE-CATCHING LOOK: HOME BUTTON (Radiant Luminous Emerald / Jade) */
+    #module-dialog .module-header-actions .module-home:not(.module-back-button),
+    #module-dialog .module-window-nav .module-home:not(.module-back-button) {
+      background: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+      text-shadow: 0 1px 2px rgba(6, 78, 59, 0.35) !important;
+      animation: blick-pulse-home 2.2s infinite ease-in-out !important;
+    }
+
+    #module-dialog .module-header-actions .module-home:not(.module-back-button):hover,
+    #module-dialog .module-window-nav .module-home:not(.module-back-button):hover {
+      animation-play-state: paused !important;
+      transform: translateY(-2px) scale(1.05) !important;
+      background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%) !important;
+      box-shadow: 0 7px 24px rgba(16, 185, 129, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+    }
+
+    #module-dialog .module-header-actions .module-home:not(.module-back-button):active,
+    #module-dialog .module-window-nav .module-home:not(.module-back-button):active {
+      transform: translateY(0) scale(0.98) !important;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4) !important;
+    }
+
+    #module-dialog .module-header-actions .module-home:focus-visible,
+    #module-dialog .module-header-actions .module-back-button:focus-visible {
+      outline: 3px solid #f59e0b !important;
+      outline-offset: 3px !important;
+    }
+
+    #module-dialog .module-window-nav { display: none !important; }
+
+    @media (max-width: 560px) {
+      #module-dialog .module-header {
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        padding: 10px 14px !important;
+      }
+      #module-dialog .module-header-actions {
+        width: 100% !important;
+        justify-content: flex-end !important;
+        gap: 8px !important;
+        margin-top: 6px !important;
+      }
+      #module-dialog .module-header-actions .module-home,
+      #module-dialog .module-header-actions .module-back-button {
+        min-height: 38px !important;
+        padding: 7px 14px !important;
+        font-size: 12.5px !important;
       }
     }
   </style>
@@ -988,7 +1125,7 @@
             <div><h2 id="module-title">Study modules</h2><p id="module-description">Choose a module and browse its PDFs.</p></div>
             <nav class="module-header-actions" aria-label="Subject window navigation">
               <button id="module-back-button" class="module-home module-back-button" type="button" aria-label="Go back">← Back</button>
-              <a class="module-home" href="index.html#top" aria-label="Go to Academic Hub home">⌂ Home</a>
+              <a class="module-home module-home-button" href="index.html#top" data-module-close aria-label="Go to Academic Hub home">⌂ Home</a>
             </nav>
           </header>
           <nav id="module-tabs" class="module-tabs" aria-label="Modules"></nav>
@@ -1213,7 +1350,7 @@
 
   <footer><a class="footer-brand" href="index.html">Academic Hub</a><span>Made for focused learning and exam preparation.</span><nav class="footer-nav" aria-label="Footer navigation"><a href="about.html">About</a><a href="privacy-policy.html">Privacy</a><a href="/#support">Contact</a></nav><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a></footer>
   <script>
-    // Back returns from an opened document to its module choices, then closes the chooser.
+        // Back returns from an opened document to its module choices, then closes the chooser.
     document.getElementById('module-back-button')?.addEventListener('click',()=>{
       const dialog=document.getElementById('module-dialog');
       const content=document.getElementById('module-content');
@@ -1231,7 +1368,12 @@
         focusTarget?.scrollIntoView({behavior:'smooth',block:'nearest'});
         return;
       }
-      dialog.querySelector('[data-module-close]')?.click();
+      closeModuleLibrary();
+    });
+    document.querySelectorAll('#module-dialog .module-header-actions a[href*="#top"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        closeModuleLibrary();
+      });
     });
     const searchInput = document.getElementById('search');
     const subjectCards = Array.from(document.querySelectorAll('.subject-card[data-subject]'));
@@ -2032,6 +2174,18 @@
             description: 'Consequentialism · Hedonism · Jeremy Bentham’s Quantitative Utilitarianism · J.S. Mill’s Qualitative Utilitarianism · Kant’s Deontology & Categorical Imperative',
             key: 'ethics_mod_3',
             href: 'Fundamentals%20of%20Ethics/LMS_PDF/Module_3_Ethical_Theories.pdf'
+          }
+        ]
+      },
+      {
+        name: 'Module 4 · Theories of Punishment',
+        items: [
+          {
+            label: 'Module 4 · Theories of Punishment (Retributive, Deterrent & Reformative)',
+            title: 'Fundamentals of Ethics · Module 4 · Theories of Punishment',
+            description: 'Theories of Punishment · Retributive Theory (Rigoristic & Mollified) · Capital Punishment · Deterrent Theory (General & Specific) · Beccaria-Bentham Theorem · Reformative Theory · Moral Responsibility',
+            key: 'ethics_mod_4',
+            href: 'Fundamentals%20of%20Ethics/LMS_PDF/Module_4_Theories_of_Punishment.pdf'
           }
         ]
       },
@@ -4574,7 +4728,7 @@
             : subject==='Philosophy of Education' && medium==='Malayalam'
               ? 'Choose a module to read its Malayalam PDF here without leaving Academic Hub.'
             : subject==='Fundamentals of Ethics' && medium==='English'
-              ? 'Official Fundamentals of Ethics course modules (Modules 1, 2, 3 & 5). Choose a module tab to open or preview its study document.'
+              ? 'Official Fundamentals of Ethics course modules (Modules 1–5). Choose a module tab to open or preview its study document.'
               : subject==='Development Issues in Indian Economy' && medium==='English'
                 ? 'Official Development Issues in Indian Economy course modules (Modules 1–5, 12 documents). Choose a module and topic to open or preview.'
                 : subject==='Mathematics' && medium==='English'

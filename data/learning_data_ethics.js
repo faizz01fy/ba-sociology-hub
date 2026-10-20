@@ -1809,6 +1809,614 @@ window.ethicsLearningData = {
       }
     ]
   },
+  "ethics_mod_4": {
+    "title": "Fundamentals of Ethics · Module 4 · Theories of Punishment",
+    "description": "Theories of Punishment · Retributive Theory (Rigoristic & Mollified) · Capital Punishment · Deterrent Theory (General & Particular) · Beccaria-Bentham Theorem · Reformative Theory · Criminology & Moral Responsibility",
+    "docUrl": "Fundamentals%20of%20Ethics/LMS_PDF/Module_4_Theories_of_Punishment.pdf",
+    "summary": {
+      "overview": "Module 4 investigates the ethical justifications, philosophical foundations, and comparative paradigms of punishment within normative ethics and criminology. It addresses how society responds when a voluntary agent violates moral law, exploring the transition from primitive personal resentment to institutionalized justice where the majesty of law is vindicated. The curriculum examines the three classical theories of punishment: (1) Retributive Theory, which treats punishment as an end in itself demanded by justice ('lex talionis' in Rigoristic form vs consideration of extenuating circumstances like age, intent, and provocation in Mollified form) and its controversial stance on Capital Punishment; (2) Deterrent Theory, which utilizes punishment as a preventive social instrument (epitomized by the dictum 'you are not punished for stealing sheep, but in order that sheep may not be stolen', Bentham's calculation of crime as an 'ill bargain', Sutherland's General vs Particular deterrence, and the Beccaria-Bentham theorem prioritizing certainty over severity); and (3) Reformative Theory, championed by humanitarian reformers, criminology, and Mahatma Gandhi ('Hate the sin not the sinner'), which views crime as a curable pathology and seeks moral rehabilitation, education, and individualization rather than retribution. Finally, the module analyzes the prerequisites of moral responsibility, contrasting free moral agency with deterministic insanity.",
+      "overviewMal": "ധർമ്മശാസ്ത്രത്തിലും ക്രിമിനോളജിയിലുമുള്ള ശിക്ഷാ സിദ്ധാന്തങ്ങളുടെ (Theories of Punishment) ദാർശനിക ന്യായീകരണങ്ങളും അടിത്തറകളും സമഗ്രമായി വിശകലനം ചെയ്യുന്ന പാഠഭാഗം. വ്യക്തിപരമായ പകതീർക്കലിൽ നിന്ന് നിയമവാഴ്ചയുടെയും നീതിയുടെയും സംരക്ഷണത്തിലേക്കുള്ള മാറ്റം ഇത് വ്യക്തമാക്കുന്നു. പ്രധാനമായും മൂന്ന് ശിക്ഷാ സിദ്ധാന്തങ്ങൾ പഠിപ്പിക്കുന്നു: (1) റിട്രിബ്യൂട്ടീവ് സിദ്ധാന്തം (Retributive Theory - പ്രതികാര/നീതി സിദ്ധാന്തം) - ശിക്ഷ എന്നത് മറ്റൊരു ലക്ഷ്യത്തിനുള്ള മാർഗ്ഗമല്ല, മറിച്ച് നീതി ഉറപ്പാക്കാനുള്ള സ്വയം പര്യാപ്തമായ ലക്ഷ്യമാണ്; കർക്കശ രൂപത്തിൽ (Rigoristic - കണ്ണിന് കണ്ണ്, പല്ലിന് പല്ല്) സാഹചര്യങ്ങൾക്ക് സ്ഥാനമില്ലെങ്കിലും ലഘൂകരിച്ച രൂപത്തിൽ (Mollified) കുറ്റവാളിയുടെ പ്രായം, ഉദ്ദേശ്യം തുടങ്ങിയ സാഹചര്യങ്ങൾ പരിഗണിക്കുന്നു; വധശിക്ഷയുടെ (Capital Punishment) ന്യായീകരണവും ഇതിലുണ്ട്; (2) ഡിറ്ററന്റ് സിദ്ധാന്തം (Deterrent Theory - തടസ്സപ്പെടുത്തൽ/ഭയപ്പെടുത്തൽ സിദ്ധാന്തം) - ഭാവിയിലെ കുറ്റകൃത്യങ്ങൾ തടയുക എന്ന ലക്ഷ്യം ('നിങ്ങൾ ചെമ്മരിയാടിനെ മോഷ്ടിച്ചതിനല്ല ശിക്ഷിക്കപ്പെടുന്നത്, ഇനി ആടുകൾ മോഷ്ടിക്കപ്പെടാതിരിക്കാനാണ്'), ബെന്താം, ഹോബ്സ്, ജോൺ ലോക്ക് എന്നിവരുടെ വീക്ഷണങ്ങൾ, ജനറൽ ഡിറ്ററൻസ്, സ്പെസിഫിക് ഡിറ്ററൻസ്, ബെക്കാരിയ-ബെന്താം തിയറം; (3) റിഫോർമേറ്റീവ് സിദ്ധാന്തം (Reformative Theory - പരിഷ്കരണ സിദ്ധാന്തം) - കുറ്റകൃത്യത്തെ ഒരു മാനസിക രോഗമായി (Pathology) കാണുകയും കുറ്റവാളിയെ രോഗിയെപ്പോലെ കണ്ട് മാറ്റിയെടുക്കുകയും ചെയ്യുക, വിക്ടർ ഹ്യൂഗോ, അരിസ്റ്റോട്ടിൽ, മഹാത്മാ ഗാന്ധി ('പാപത്തെ വെറുക്കുക, പാപിയെ സ്നേഹിക്കുക') എന്നിവരുടെ വീക്ഷണങ്ങൾ. കൂടാതെ മനപ്പൂർവ്വമായ പ്രവൃത്തികളിലെ ധാർമ്മിക ഉത്തരവാദിത്തവും മാനസിക രോഗം മൂലമുള്ള ഒഴിവാക്കലും ചർച്ച ചെയ്യുന്നു.",
+      "metrics": [
+        {
+          "label": "RETRIBUTIVE JUSTICE",
+          "value": "Act of Pure Justice",
+          "desc": "Punishment is an end in itself; restores the moral order via Rigoristic or Mollified forms."
+        },
+        {
+          "label": "DETERRENT PRINCIPLE",
+          "value": "Prevention of Crime",
+          "desc": "Focuses on future prevention; certainty of apprehension deters more than severe cruelty."
+        },
+        {
+          "label": "REFORMATIVE IDEAL",
+          "value": "Moral Rehabilitation",
+          "desc": "Treats crime as pathology; transforms offender into a productive member of society."
+        }
+      ],
+      "coreConcepts": [
+        {
+          "term": "Retributive Theory",
+          "termMal": "റിട്രിബ്യൂട്ടീവ് സിദ്ധാന്തം",
+          "def": "The ethical doctrine that punishment is an act of justice and an end in itself, inflicted because the offender deserves it for breaking the moral law.",
+          "defMal": "ധാർമ്മിക നിയമം ലംഘിച്ച കുറ്റവാളി ശിക്ഷ അർഹിക്കുന്നു എന്നതിനാൽ, നീതി നടപ്പാക്കലിന്റെ ഭാഗമായി ശിക്ഷ നൽകണമെന്ന് വാദിക്കുന്ന സിദ്ധാന്തം."
+        },
+        {
+          "term": "Lex Talionis",
+          "termMal": "ലെക്സ് ടാലിയോണിസ് (പ്രതികാര നിയമം)",
+          "def": "The ancient retributive maxim of rigorous justice: 'An eye for an eye, a tooth for a tooth', where punishment strictly mirrors the offense without extenuation.",
+          "defMal": "'കണ്ണിന് കണ്ണ്, പല്ലിന് പല്ല്' എന്ന കർക്കശമായ പ്രതികാര നീതി; ചെയ്ത കുറ്റത്തിന് സമാനമായ ശിക്ഷ ഇളവുകളില്ലാതെ നൽകുന്നു."
+        },
+        {
+          "term": "Deterrent Theory",
+          "termMal": "ഡിറ്ററന്റ് സിദ്ധാന്തം (തടസ്സപ്പെടുത്തൽ സിദ്ധാന്തം)",
+          "def": "The utilitarian theory holding that punishment is justified solely by its ability to prevent future crimes by striking fear into offenders and prospective criminals.",
+          "defMal": "കുറ്റവാളികളെയും മറ്റുള്ളവരെയും ഭയപ്പെടുത്തി ഭാവിയിൽ കുറ്റകൃത്യങ്ങൾ നടക്കാതെ തടയുകയാണ് ശിക്ഷയുടെ ലക്ഷ്യമെന്ന് വാദിക്കുന്ന സിദ്ധാന്തം."
+        },
+        {
+          "term": "Beccaria-Bentham Theorem",
+          "termMal": "ബെക്കാരിയ-ബെന്താം തിയറം",
+          "def": "The criminological proposition that crime rates decrease when punishment has high celerity (swiftness), certainty, and severity—with certainty being the most crucial factor.",
+          "defMal": "ശിക്ഷയുടെ വേഗത, അനിവാര്യത (തീർച്ച), കാഠിന്യം എന്നിവ കുറ്റകൃത്യങ്ങളുടെ നിരക്ക് കുറയ്ക്കുന്നുവെന്നും, കാഠിന്യത്തേക്കാൾ പിടിക്കപ്പെടുമെന്ന തീർച്ചയാണ് കുറ്റകൃത്യം തടയുന്നതെന്നും സമർത്ഥിക്കുന്ന തത്ത്വം."
+        },
+        {
+          "term": "Reformative Theory",
+          "termMal": "റിഫോർമേറ്റീവ് സിദ്ധാന്തം (പരിഷ്കരണ സിദ്ധാന്തം)",
+          "def": "The humanitarian theory regarding crime as a pathological illness, seeking the education, moral treatment, and rehabilitation of the offender rather than punishment.",
+          "defMal": "കുറ്റകൃത്യത്തെ ഒരു മാനസിക അപാകതയായി കാണുകയും, ശിക്ഷിക്കുന്നതിന് പകരം കുറ്റവാളിയെ ചികിത്സയിലൂടെയും വിദ്യാഭ്യാസത്തിലൂടെയും പരിഷ്കരിച്ചെടുക്കണമെന്ന് വാദിക്കുന്ന സിദ്ധാന്തം."
+        },
+        {
+          "term": "Moral Responsibility",
+          "termMal": "ധാർമ്മിക ഉത്തരവാദിത്തം",
+          "def": "The philosophical status of being morally accountable for one's deliberate voluntary acts, requiring free will, sanity, and rational awareness.",
+          "defMal": "വിവേകത്തോടെയും സ്വന്തം സ്വാതന്ത്ര്യത്തോടെയും ചെയ്യുന്ന പ്രവൃത്തികളുടെ ഉത്തരവാദിത്തം വ്യക്തിക്ക് മാത്രമായിരിക്കുന്ന ധാർമ്മിക അവസ്ഥ."
+        }
+      ],
+      "sections": [
+        {
+          "badge": "Part 1",
+          "title": "Foundations of Punishment & Retributive Theory",
+          "titleMal": "ശിക്ഷയുടെ അടിസ്ഥാനവും റിട്രിബ്യൂട്ടീവ് സിദ്ധാന്തവും",
+          "points": [
+            {
+              "en": "Punishment arises when moral consciousness moves beyond personal vengeance to an objective social institution where wrongs against humanity are nullified.",
+              "mal": "വ്യക്തിപരമായ വിദ്വേഷത്തിൽ നിന്നും പ്രതികാരത്തിൽ നിന്നും മാറി, മാനവരാശിക്കെതിരായ തെറ്റുകൾ തിരുത്താനും നിയമത്തിന്റെ പരമാധികാരം നിലനിർത്താനുമുള്ള നീതിപീഠത്തിന്റെ നടപടിയാണ് ശിക്ഷ."
+            },
+            {
+              "en": "Retributive Theory asserts that punishment is an act of justice and an end in itself, not merely a means to achieve social deterrence or reform.",
+              "mal": "റിട്രിബ്യൂട്ടീവ് സിദ്ധാന്തമനുസരിച്ച് ശിക്ഷ എന്നത് നീതിയുടെ പ്രകടനമാണ്; അത് മറ്റെന്തെങ്കിലും ലക്ഷ്യം നേടാനുള്ള ഉപായമല്ല, സ്വയം ഒരു ലക്ഷ്യമാണ്."
+            },
+            {
+              "en": "The moral law is supreme and authoritative; voluntary violation of this law requires that the wages of evil return to the offender's own head.",
+              "mal": "ധാർമ്മിക നിയമം പരമോന്നതമാണ്; അത് സ്വമനസ്സാലെ ലംഘിക്കുന്ന വ്യക്തി തന്റെ പാപത്തിന്റെ ഫലം സ്വന്തം തലയിൽ തന്നെ അനുഭവിക്കേണ്ടതുണ്ട്."
+            }
+          ]
+        },
+        {
+          "badge": "Part 2",
+          "title": "Rigoristic vs Mollified Retribution & Capital Punishment",
+          "titleMal": "കർക്കശ-ലഘൂകൃത രൂപങ്ങളും വധശിക്ഷയും",
+          "points": [
+            {
+              "en": "Rigoristic Retribution insists on the strict maxim 'an eye for an eye, a tooth for a tooth', inflicting penalty matching the offence irrespective of circumstances.",
+              "mal": "'കണ്ണിന് കണ്ണ്, പല്ലിന് പല്ല്' എന്ന കർക്കശമായ മാതൃകയിൽ സാഹചര്യങ്ങൾ നോക്കാതെ ചെയ്ത കുറ്റത്തിന് തുല്യമായ ശിക്ഷ നൽകണമെന്ന് റിഗോറിസ്റ്റിക് രൂപം വാദിക്കുന്നു."
+            },
+            {
+              "en": "Mollified Retribution moderates the rigour of justice by considering extenuating circumstances such as the offender's age, intention, and severe provocation.",
+              "mal": "മോളിഫൈഡ് രൂപം കുറ്റവാളിയുടെ പ്രായം, ഉദ്ദേശ്യം, പ്രകോപനം തുടങ്ങിയ സാഹചര്യങ്ങളെ പരിഗണിച്ച് ശിക്ഷയുടെ കാഠിന്യം കുറയ്ക്കാൻ ശുപാർശ ചെയ്യുന്നു."
+            },
+            {
+              "en": "While both retributive and deterrent theorists have historically justified capital punishment for cold-blooded murder, contemporary enlightened opinion strongly favors its abolition and replacement with life imprisonment.",
+              "mal": "ക്രൂരമായ കൊലപാതകങ്ങൾക്ക് വധശിക്ഷ നൽകണമെന്ന് പാരമ്പര്യമായി വാദിച്ചിരുന്നുവെങ്കിലും, ആധുനിക മാനവിക ചിന്തകൾ വധശിക്ഷയെ എതിർക്കുകയും ജീവപര്യന്തം തടവായി മാറ്റണമെന്ന് ആവശ്യപ്പെടുകയും ചെയ്യുന്നു."
+            }
+          ]
+        },
+        {
+          "badge": "Part 3",
+          "title": "Deterrent Theory & Utilitarian Criminology",
+          "titleMal": "ഡിറ്ററന്റ് സിദ്ധാന്തവും പ്രായോഗിക ക്രൈം പ്രിവൻഷനും",
+          "points": [
+            {
+              "en": "The Deterrent Theory holds that punishment serves to prevent future crimes, encapsulated by the dictum: 'You are not punished for stealing sheep, but in order that sheep may not be stolen.'",
+              "mal": "'നിങ്ങൾ ചെമ്മരിയാടിനെ മോഷ്ടിച്ചതിനല്ല ശിക്ഷിക്കപ്പെടുന്നത്, ഇനി ആരും ആടുകളെ മോഷ്ടിക്കാതിരിക്കാനാണ്' എന്ന ആപ്തവാക്യമാണ് ഡിറ്ററന്റ് തിയറിയുടെ കാതൽ."
+            },
+            {
+              "en": "John Locke noted punishment makes crime 'an ill bargain' to the culprit, while Jeremy Bentham and Thomas Hobbes argued state penalties instill terror to dissuade rational agents from offending.",
+              "mal": "ശിക്ഷയിലൂടെ കുറ്റകൃത്യത്തെ ഒരു 'ലാഭകരമല്ലാത്ത ഇടപാട്' (ill bargain) ആക്കി മാറ്റുന്നുവെന്ന് ജോൺ ലോക്കും, ഭയം സൃഷ്ടിച്ച് കുറ്റകൃത്യങ്ങൾ തടയണമെന്ന് ബെന്താമും ഹോബ്സും സമർത്ഥിച്ചു."
+            },
+            {
+              "en": "Sutherland distinguished between General Deterrence (setting an example to the public) and Particular/Specific Deterrence (preventing the individual convict from re-offending); Beccaria established that certainty of punishment deters far more effectively than harsh severity.",
+              "mal": "സതർലാൻഡ് ഡിറ്ററൻസിനെ ജനറൽ ഡിറ്ററൻസ് (പൊതുജനങ്ങൾക്ക് മാതൃകയാകുക), പർട്ടിക്കുലർ ഡിറ്ററൻസ് (ആ വ്യക്തിയെ വീണ്ടും കുറ്റം ചെയ്യുന്നതിൽ നിന്ന് തടയുക) എന്നിങ്ങനെ തിരിച്ചിരിക്കുന്നു; ശിക്ഷയുടെ കാഠിന്യത്തേക്കാൾ പിടിക്കപ്പെടുമെന്ന തീർച്ചയാണ് കുറ്റങ്ങൾ കുറയ്ക്കുന്നതെന്ന് ബെക്കാരിയ തെളിയിച്ചു."
+            }
+          ]
+        },
+        {
+          "badge": "Part 4",
+          "title": "Reformative Theory, Criminology & Moral Responsibility",
+          "titleMal": "പരിഷ്കരണ സിദ്ധാന്തവും ധാർമ്മിക ഉത്തരവാദിത്തവും",
+          "points": [
+            {
+              "en": "Reformative Theory, supported by modern criminology, views crime as a psychological or social pathology (like kleptomania) that requires hospital treatment and reformatories rather than vindictive pain.",
+              "mal": "ആധുനിക ക്രിമിനോളജിയുടെ പിന്തുണയുള്ള പരിഷ്കരണ സിദ്ധാന്തം കുറ്റകൃത്യങ്ങളെ ക്ലെപ്റ്റോമാനിയ പോലെയുള്ള ഒരു മാനസിക രോഗമായി കാണുകയും, ജയിലുകൾക്ക് പകരം ആശുപത്രികളിലും റിഫോർമേറ്ററികളിലും ചികിത്സ നൽകണമെന്ന് നിർദ്ദേശിക്കുകയും ചെയ്യുന്നു."
+            },
+            {
+              "en": "Mahatma Gandhi proclaimed 'Hate the sin not the sinner' and advocated treating prisoners like patients in a hospital; Victor Hugo similarly declared crime should be treated with gentleness and without anger.",
+              "mal": "'പാപത്തെ വെറുക്കുക, പാപിയെ സ്നേഹിക്കുക' എന്ന് ഉദ്ഘോഷിച്ച മഹാത്മാഗാന്ധി, തടവുകാരെ ആശുപത്രിയിലെ രോഗികളെപ്പോലെ പരിചരിക്കണമെന്ന് ആവശ്യപ്പെട്ടു; ക്രോധമില്ലാതെ ശാന്തതയോടെ തിന്മയെ ചികിത്സിക്കണമെന്ന് വിക്ടർ ഹ്യൂഗോയും വ്യക്തമാക്കി."
+            },
+            {
+              "en": "Moral responsibility requires rational agency and sanity; insane persons cannot be held morally blameworthy, and since a dead person cannot be reformed, the reformative theory strictly opposes capital punishment.",
+              "mal": "മാനസിക രോഗമുള്ള വ്യക്തികൾക്ക് ധാർമ്മിക ഉത്തരവാദിത്തം ചാർത്താനാവില്ല; തൂക്കിലേറ്റപ്പെട്ട ഒരാളെ പരിഷ്കരിക്കാൻ സാധിക്കാത്തതിനാൽ പരിഷ്കരണ സിദ്ധാന്തം വധശിക്ഷയെ പൂർണ്ണമായും തള്ളിക്കളയുന്നു."
+            }
+          ]
+        }
+      ],
+      "examTakeaways": [
+        {
+          "en": "Retributive theory sees punishment as justice in itself (Lex Talionis), Deterrent theory uses punishment for prevention, and Reformative theory seeks the moral cure of the offender.",
+          "mal": "റിട്രിബ്യൂട്ടീവ് സിദ്ധാന്തം ശിക്ഷയെ സ്വയം നീതിയായി കാണുമ്പോൾ, ഡിറ്ററന്റ് സിദ്ധാന്തം കുറ്റകൃത്യങ്ങൾ തടയാനും, റിഫോർമേറ്റീവ് സിദ്ധാന്തം കുറ്റവാളിയെ നന്മയിലേക്ക് മാറ്റിയെടുക്കാനും ലക്ഷ്യമിടുന്നു."
+        },
+        {
+          "en": "Beccaria and Bentham showed that the certainty and celerity of conviction deter crime far more powerfully than excessive cruelty of punishment.",
+          "mal": "ശിക്ഷയുടെ കാഠിന്യത്തേക്കാൾ എത്രയും പെട്ടെന്ന് പിടിക്കപ്പെടുമെന്ന അനിവാര്യതയാണ് കുറ്റകൃത്യങ്ങൾ തടയാൻ ഏറ്റവും ഫലപ്രദമെന്ന് ബെക്കാരിയയും ബെന്താമും തെളിയിച്ചു."
+        },
+        {
+          "en": "Reformative theory strictly invalidates capital punishment because execution permanently destroys the possibility of moral rehabilitation and re-education.",
+          "mal": "വധശിക്ഷ നടപ്പാക്കിക്കഴിഞ്ഞാൽ കുറ്റവാളിയെ മാനസാന്തരപ്പെടുത്താനോ പരിഷ്കരിക്കാനോ കഴിയില്ല എന്നതിനാൽ റിഫോർമേറ്റീവ് സിദ്ധാന്തം വധശിക്ഷയെ പൂർണ്ണമായി നിരാകരിക്കുന്നു."
+        }
+      ]
+    },
+    "quizPool": [
+      {
+        "id": "eth4_q1",
+        "question": "According to the Retributive Theory of punishment, what is the primary justification for punishing an offender?",
+        "questionMal": "റിട്രിബ്യൂട്ടീവ് സിദ്ധാന്തം (Retributive Theory) അനുസരിച്ച് ഒരു കുറ്റവാളിയെ ശിക്ഷിക്കുന്നതിനുള്ള പ്രാഥമിക ന്യായീകരണം എന്താണ്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "Punishment is an act of justice and an end in itself demanded by moral law",
+            "mal": "ശിക്ഷ എന്നത് നീതി നടപ്പാക്കലും ധാർമ്മിക നിയമം അനുശാസിക്കുന്ന സ്വയം പര്യാപ്തമായ ഒരു ലക്ഷ്യവുമാണ്"
+          },
+          {
+            "letter": "B",
+            "en": "To strike terror into the general public so no one will speak against rulers",
+            "mal": "ഭരണാധികാരികൾക്കെതിരെ സംസാരിക്കാതിരിക്കാൻ പൊതുജനങ്ങളിൽ ഭീതി വിതയ്ക്കാൻ"
+          },
+          {
+            "letter": "C",
+            "en": "To generate state revenue through judicial fines and levies",
+            "mal": "കോടതി പിഴകളിലൂടെ സർക്കാരിന് വരുമാനമുണ്ടാക്കാൻ"
+          },
+          {
+            "letter": "D",
+            "en": "To eradicate all forms of human emotional feelings",
+            "mal": "മനുഷ്യന്റെ എല്ലാ വികാരങ്ങളെയും ഇല്ലാതാക്കാൻ"
+          }
+        ],
+        "answer": 0,
+        "explanation": "In Retributive theory, punishment is not a means to an ulterior end but an intrinsic demand of justice to vindicate the violated moral law.",
+        "explanationMal": "റിട്രിബ്യൂട്ടീവ് സിദ്ധാന്തത്തിൽ ശിക്ഷ എന്നത് മറ്റൊരു ബാഹ്യ ലക്ഷ്യത്തിനുള്ള മാർഗ്ഗമല്ല, ലംഘിക്കപ്പെട്ട ധാർമ്മിക നിയമം പുനഃസ്ഥാപിക്കാനുള്ള ആന്തരിക നീതിയാണ്."
+      },
+      {
+        "id": "eth4_q2",
+        "question": "Which historic legal maxim characterizes the Rigoristic form of the Retributive Theory?",
+        "questionMal": "റിട്രിബ്യൂട്ടീവ് സിദ്ധാന്തത്തിന്റെ കർക്കശ രൂപത്തെ (Rigoristic form) പ്രതിനിധീകരിക്കുന്ന പ്രസിദ്ധമായ നിയമ തത്ത്വം ഏതാണ്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "'Live and let live without consequences'",
+            "mal": "'ഫലങ്ങളെക്കുറിച്ച് ചിന്തിക്കാതെ ജീവിക്കുക'"
+          },
+          {
+            "letter": "B",
+            "en": "'An eye for an eye, a tooth for a tooth'",
+            "mal": "'കണ്ണിന് കണ്ണ്, പല്ലിന് പല്ല്'"
+          },
+          {
+            "letter": "C",
+            "en": "'Survival of the strongest individual'",
+            "mal": "'ഏറ്റവും ശക്തനായവൻ മാത്രം അതിജീവിക്കുക'"
+          },
+          {
+            "letter": "D",
+            "en": "'Wealth forgives every transgression'",
+            "mal": "'സമ്പത്ത് എല്ലാ തെറ്റുകളെയും പൊറുക്കുന്നു'"
+          }
+        ],
+        "answer": 1,
+        "explanation": "Rigoristic retribution strictly upholds 'lex talionis' ('an eye for an eye, a tooth for a tooth'), measuring punishment solely by the severity of the offense.",
+        "explanationMal": "സാഹചര്യങ്ങൾ പരിഗണിക്കാതെ ചെയ്ത കുറ്റത്തിന് തുല്യമായ ശിക്ഷ നൽകണമെന്ന് വാദിക്കുന്ന 'കണ്ണിന് കണ്ണ്, പല്ലിന് പല്ല്' എന്ന ലെക്സ് ടാലിയോണിസ് തത്ത്വമാണ് റിഗോറിസ്റ്റിക് രൂപം."
+      },
+      {
+        "id": "eth4_q3",
+        "question": "How does the Mollified form of Retributive Theory differ from its Rigoristic counterpart?",
+        "questionMal": "റിട്രിബ്യൂട്ടീവ് സിദ്ധാന്തത്തിന്റെ ലഘൂകൃത രൂപം (Mollified form) കർക്കശ രൂപത്തിൽ നിന്ന് എങ്ങനെ വ്യത്യാസപ്പെട്ടിരിക്കുന്നു?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "It completely abolishes the existence of judges and courts",
+            "mal": "അത് കോടതികളെയും ജഡ്ജിമാരെയും പൂർണ്ണമായി നിർത്തലാക്കുന്നു"
+          },
+          {
+            "letter": "B",
+            "en": "It takes into account extenuating circumstances such as age, intention, and provocation",
+            "mal": "കുറ്റവാളിയുടെ പ്രായം, ഉദ്ദേശ്യം, പ്രകോപനം തുടങ്ങിയ ലഘൂകരണ സാഹചര്യങ്ങൾ പരിഗണിക്കുന്നു"
+          },
+          {
+            "letter": "C",
+            "en": "It punishes the victim's family instead of the offender",
+            "mal": "കുറ്റവാളിക്ക് പകരം ഇരയുടെ കുടുംബത്തെ ശിക്ഷിക്കുന്നു"
+          },
+          {
+            "letter": "D",
+            "en": "It mandates the death penalty for even minor petty theft",
+            "mal": "ചെറിയ മോഷണങ്ങൾക്ക് പോലും വധശിക്ഷ നിർബന്ധമാക്കുന്നു"
+          }
+        ],
+        "answer": 1,
+        "explanation": "Mollified retribution softens the rigour of justice by evaluating extenuating factors like the criminal's maturity, motives, and mental state.",
+        "explanationMal": "കുറ്റവാളിയുടെ പ്രായം, വികാരം, പ്രകോപനം, ഉദ്ദേശ്യം തുടങ്ങിയ ഘടകങ്ങളെ പരിഗണിച്ച് ശിക്ഷയുടെ കാഠിന്യം കുറയ്ക്കുന്നതാണ് മോളിഫൈഡ് രൂപം."
+      },
+      {
+        "id": "eth4_q4",
+        "question": "What famous dictum illustrates the core utilitarian rationale of the Deterrent Theory of punishment?",
+        "questionMal": "ഡിറ്ററന്റ് സിദ്ധാന്തത്തിന്റെ (Deterrent Theory) അടിസ്ഥാന പ്രയോജനവാദ തത്ത്വത്തെ വിശദീകരിക്കുന്ന പ്രശസ്തമായ വാചകം ഏതാണ്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "'You are not punished for stealing sheep, but in order that sheep may not be stolen'",
+            "mal": "'നിങ്ങൾ ചെമ്മരിയാടിനെ മോഷ്ടിച്ചതിനല്ല ശിക്ഷിക്കപ്പെടുന്നത്, ഇനി ആരും ആടുകളെ മോഷ്ടിക്കാതിരിക്കാനാണ്'"
+          },
+          {
+            "letter": "B",
+            "en": "'Punishment must always multiply the wealth of the landowner'",
+            "mal": "'ശിക്ഷ എപ്പോഴും ഭൂവുടമയുടെ സമ്പത്ത് ഇരട്ടിയാക്കണം'"
+          },
+          {
+            "letter": "C",
+            "en": "'Forgiveness is the sole legal obligation of the state'",
+            "mal": "'മാപ്പ് നൽകുക എന്നത് മാത്രമാണ് സർക്കാരിന്റെ ഒരേയൊരു നിയമപരമായ ബാധ്യത'"
+          },
+          {
+            "letter": "D",
+            "en": "'Punish only those who express sincere remorse'",
+            "mal": "'ആത്മാർത്ഥമായ പശ്ചാത്താപം പ്രകടിപ്പിക്കുന്നവരെ മാത്രം ശിക്ഷിക്കുക'"
+          }
+        ],
+        "answer": 0,
+        "explanation": "This dictum highlights that deterrence looks forward to crime prevention rather than merely looking backward to avenge past deeds.",
+        "explanationMal": "കഴിഞ്ഞുപോയ തെറ്റിന് പ്രതികാരം ചെയ്യുന്നതിലുപരി, ഭാവിയിൽ അത്തരം തെറ്റുകൾ ഉണ്ടാകാതിരിക്കാൻ ഭയം സൃഷ്ടിക്കുകയാണ് ഡിറ്ററന്റ് സിദ്ധാന്തത്തിന്റെ ഉദ്ദേശ്യം."
+      },
+      {
+        "id": "eth4_q5",
+        "question": "Which prominent philosophical thinkers advanced the Deterrent Theory of punishment?",
+        "questionMal": "ശിക്ഷയുടെ ഡിറ്ററന്റ് സിദ്ധാന്തത്തെ ശക്തമായി മുന്നോട്ടുവെച്ച ചിന്തകർ ആരാണ്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "Thomas Hobbes, Cesare Beccaria, and Jeremy Bentham",
+            "mal": "തോമസ് ഹോബ്സ്, സിസേർ ബെക്കാരിയ, ജെറമി ബെന്താം"
+          },
+          {
+            "letter": "B",
+            "en": "Siddhartha Gautama and Nagarjuna",
+            "mal": "സിദ്ധാർത്ഥ ഗൗതമനും നാഗാർജ്ജുനനും"
+          },
+          {
+            "letter": "C",
+            "en": "Jean-Paul Sartre and Albert Camus",
+            "mal": "ഴാങ് പോൾ സാർത്രും ആൽബർട്ട് കാമുവും"
+          },
+          {
+            "letter": "D",
+            "en": "Parmenides, Zeno, and Heraclitus",
+            "mal": "പാർമനൈഡിസ്, സെനോ, ഹെരാക്ലിറ്റസ്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Hobbes, Beccaria, and Bentham developed the utilitarian deterrence framework based on social contract and crime prevention.",
+        "explanationMal": "ഹോബ്സ്, ബെക്കാരിയ, ബെന്താം തുടങ്ങിയ ചിന്തകരാണ് ഭയം സൃഷ്ടിച്ച് കുറ്റകൃത്യങ്ങൾ തടയാമെന്ന ഡിറ്ററന്റ് മാതൃക വികസിപ്പിച്ചത്."
+      },
+      {
+        "id": "eth4_q6",
+        "question": "How did philosopher John Locke describe the function of punishment in dissuading criminals?",
+        "questionMal": "കുറ്റവാളികളെ പിന്തിരിപ്പിക്കുന്നതിൽ ശിക്ഷയുടെ ധർമ്മത്തെ തത്ത്വചിന്തകനായ ജോൺ ലോക്ക് എങ്ങനെയാണ് വിശേഷിപ്പിച്ചത്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "It makes crime 'an ill bargain' to the offender",
+            "mal": "അത് കുറ്റകൃത്യത്തെ കുറ്റവാളിക്ക് ഒരു 'ലാഭകരമല്ലാത്ത ഇടപാട്' (an ill bargain) ആക്കി മാറ്റുന്നു"
+          },
+          {
+            "letter": "B",
+            "en": "It provides criminals with guaranteed government employment",
+            "mal": "അത് കുറ്റവാളികൾക്ക് സർക്കാർ ജോലി ഉറപ്പ് നൽകുന്നു"
+          },
+          {
+            "letter": "C",
+            "en": "It cleanses the soul through supernatural rituals",
+            "mal": "അമാനുഷിക ആചാരങ്ങളിലൂടെ അത് ആത്മാവിനെ ശുദ്ധീകരിക്കുന്നു"
+          },
+          {
+            "letter": "D",
+            "en": "It forces criminals to write poetry in solitary confinement",
+            "mal": "ഏകാന്ത തടവിൽ കുറ്റവാളികളെ കവിത എഴുതാൻ നിർബന്ധിക്കുന്നു"
+          }
+        ],
+        "answer": 0,
+        "explanation": "John Locke stated that by imposing appropriate punishment, crime is made 'an ill bargain' so that pain clearly outweighs illicit gain.",
+        "explanationMal": "ശിക്ഷ ഏർപ്പെടുത്തുന്നതിലൂടെ കുറ്റകൃത്യത്തിൽ നിന്നുള്ള ലാഭത്തേക്കാൾ കൂടുതൽ നഷ്ടവും വേദനയും ഉണ്ടാകുമെന്നും, അതൊരു നഷ്ടക്കച്ചവടമായി കുറ്റവാളിക്ക് തോന്നും എന്നും ജോൺ ലോക്ക് പറഞ്ഞു."
+      },
+      {
+        "id": "eth4_q7",
+        "question": "What is the primary moral objection raised against the Deterrent Theory of punishment?",
+        "questionMal": "ഡിറ്ററന്റ് സിദ്ധാന്തത്തിനെതിരെ ഉന്നയിക്കപ്പെടുന്ന പ്രധാന ധാർമ്മിക വിമർശനം എന്താണ്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "It treats the offender as a mere means for the benefit of others, violating human dignity",
+            "mal": "മറ്റുള്ളവരുടെ നന്മയ്ക്കായി വ്യക്തിയെ കേവലം ഒരു ഉപകരണമായി മാത്രം കാണുകയും മനുഷ്യന്റെ അന്തസ്സ് ഹനിക്കുകയും ചെയ്യുന്നു"
+          },
+          {
+            "letter": "B",
+            "en": "It is overly merciful and forgives serious crimes too quickly",
+            "mal": "ഇത് അമിതമായ കരുണ കാണിക്കുകയും ഗൗരവമുള്ള കുറ്റങ്ങൾ വേഗത്തിൽ ക്ഷമിക്കുകയും ചെയ്യുന്നു"
+          },
+          {
+            "letter": "C",
+            "en": "It requires all citizens to serve as police officers",
+            "mal": "എല്ലാ പൗരന്മാരും പോലീസുകാരായി സേവനമനുഷ്ഠിക്കണമെന്ന് ഇത് ആവശ്യപ്പെടുന്നു"
+          },
+          {
+            "letter": "D",
+            "en": "It costs nothing to enforce in practice",
+            "mal": "പ്രായോഗികമായി നടപ്പിലാക്കാൻ യാതൊരു ചെലവും വരുന്നില്ല"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Kantian and moral critics object that punishing an individual to deter other potential criminals treats the human being as a mere instrument or object.",
+        "explanationMal": "മറ്റുള്ളവർക്ക് മാതൃകയാക്കാൻ വേണ്ടി ഒരാൾക്ക് കടുത്ത ശിക്ഷ നൽകുന്നത് മനുഷ്യനെ വെറുമൊരു ഉപകരണമായി തരംതാഴ്ത്തലാണെന്ന് കാന്റിയൻ ചിന്തകന്മാർ വിമർശിക്കുന്നു."
+      },
+      {
+        "id": "eth4_q8",
+        "question": "In criminologist Sutherland's classification, what is 'General Deterrence'?",
+        "questionMal": "ക്രിമിനോളജിസ്റ്റ് സതർലാൻഡിന്റെ വർഗ്ഗീകരണത്തിൽ 'ജനറൽ ഡിറ്ററൻസ്' (General Deterrence) എന്നാൽ എന്താണ്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "Deterring the general public and potential offenders by making an example of the convict",
+            "mal": "ശിക്ഷ പരസ്യപ്പെടുത്തുന്നതിലൂടെ പൊതുസമൂഹത്തെയും ഭാവി കുറ്റവാളികളെയും തെറ്റ് ചെയ്യുന്നതിൽ നിന്ന് പിന്തിരിപ്പിക്കൽ"
+          },
+          {
+            "letter": "B",
+            "en": "Curing only military personnel of physical illnesses",
+            "mal": "സൈനികരുടെ ശാരീരിക അസുഖങ്ങൾ മാത്രം ചികിത്സിച്ചു മാറ്റൽ"
+          },
+          {
+            "letter": "C",
+            "en": "Replacing prison sentences with community gardening projects",
+            "mal": "തടവുശിക്ഷയ്ക്ക് പകരം സാമൂഹിക കൃഷിത്തോട്ടങ്ങൾ നിർമ്മിക്കൽ"
+          },
+          {
+            "letter": "D",
+            "en": "Pardoning all first-time traffic violators unconditionally",
+            "mal": "ആദ്യമായി ട്രാഫിക് നിയമം ലംഘിക്കുന്നവർക്ക് നിരുപാധികം മാപ്പ് നൽകൽ"
+          }
+        ],
+        "answer": 0,
+        "explanation": "General deterrence punishes an offender publicly so that witnessing the punishment instills fear in potential violators, dissuading them from breaking the law.",
+        "explanationMal": "ശിക്ഷിക്കപ്പെടുന്നയാളെ ഒരു മാതൃകയാക്കി പൊതുസമൂഹത്തിൽ ഭീതി ഉളവാക്കുകയും അതുവഴി മറ്റുള്ളവർ നിയമം ലംഘിക്കുന്നത് തടയുകയും ചെയ്യുന്നതാണ് ജനറൽ ഡിറ്ററൻസ്."
+      },
+      {
+        "id": "eth4_q9",
+        "question": "According to the Beccaria-Bentham theorem, which variable has the greatest deterrent effect on criminal behavior?",
+        "questionMal": "ബെക്കാരിയ-ബെന്താം തിയറം അനുസരിച്ച് കുറ്റകൃത്യങ്ങൾ തടയുന്നതിൽ ഏറ്റവും വലിയ സ്വാധീനം ചെലുത്തുന്നത് എന്താണ്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "The extreme cruelty and barbarity of the physical torture",
+            "mal": "ശാരീരിക പീഡനങ്ങളുടെ ക്രൂരതയും കാടത്തവും"
+          },
+          {
+            "letter": "B",
+            "en": "The certainty and high likelihood of apprehension and conviction",
+            "mal": "കുറ്റം ചെയ്താൽ തീർച്ചയായും പിടിക്കപ്പെടുമെന്ന അനിവാര്യതയും നിശ്ചയദാർഢ്യവും"
+          },
+          {
+            "letter": "C",
+            "en": "The wealth and social prestige of the prosecutor",
+            "mal": "പ്രോസിക്യൂട്ടറുടെ സമ്പത്തും സാമൂഹിക പദവിയും"
+          },
+          {
+            "letter": "D",
+            "en": "The length of the trial transcript documents",
+            "mal": "വിചാരണ രേഖകളുടെ ദൈർഘ്യം"
+          }
+        ],
+        "answer": 1,
+        "explanation": "The consensus view in deterrence theory emphasizes that certainty of conviction is far more critical in preventing crime than mere severity of penalty.",
+        "explanationMal": "ശിക്ഷ എത്ര ക്രൂരമാണെന്നതിനേക്കാൾ, തെറ്റ് ചെയ്താൽ പിടിക്കപ്പെടുമെന്ന ഉറപ്പാണ് (Certainty) കുറ്റകൃത്യങ്ങൾ കുറയ്ക്കാൻ ഏറ്റവും സഹായിക്കുന്നതെന്ന് പഠനങ്ങൾ തെളിയിക്കുന്നു."
+      },
+      {
+        "id": "eth4_q10",
+        "question": "What is the defining perspective of the Reformative Theory of punishment?",
+        "questionMal": "പരിഷ്കരണ സിദ്ധാന്തത്തിന്റെ (Reformative Theory) അടിസ്ഥാനപരമായ കാഴ്ചപ്പാട് എന്താണ്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "Offenders must be physically destroyed to preserve the pure gene pool",
+            "mal": "ജീൻ പൂൾ ശുദ്ധമായി സൂക്ഷിക്കാൻ കുറ്റവാളികളെ ശാരീരികമായി ഉന്മൂലനം ചെയ്യണം"
+          },
+          {
+            "letter": "B",
+            "en": "Crime is a pathological defect or social maladjustment; punishment must educate and morally transform the offender",
+            "mal": "കുറ്റകൃത്യം ഒരു മാനസിക അപാകതയോ സാമൂഹിക പൊരുത്തക്കേടോ ആണ്; ശിക്ഷ കുറ്റവാളിയെ പഠിപ്പിക്കാനും മാനസികമായി മാറ്റിയെടുക്കാനും ഉതകണം"
+          },
+          {
+            "letter": "C",
+            "en": "Every offender should be exiled immediately to remote desert islands",
+            "mal": "എല്ലാ കുറ്റവാളികളെയും ഉടൻ തന്നെ വിദൂര മരുഭൂ ദ്വീപുകളിലേക്ക് നാടുകടത്തണം"
+          },
+          {
+            "letter": "D",
+            "en": "State law should be subordinated to ancient personal blood feuds",
+            "mal": "പഴയ രക്തച്ചൊരിച്ചിലിന്റെ പകവീട്ടലുകൾക്ക് കീഴിൽ രാജ്യനിയമത്തെ സമർപ്പിക്കണം"
+          }
+        ],
+        "answer": 1,
+        "explanation": "The Reformative theory views crime as a curable illness, advocating rehabilitation, moral counseling, and psychiatric or vocational training.",
+        "explanationMal": "കുറ്റകൃത്യത്തെ ഒരു മാനസിക രോഗമായി കാണുകയും, കുറ്റവാളിയെ ശിക്ഷിക്കുന്നതിന് പകരം കൗൺസിലിംഗിലൂടെയും വിദ്യാഭ്യാസത്തിലൂടെയും നല്ലൊരു വ്യക്തിയാക്കി മാറ്റുകയാണ് പരിഷ്കരണ സിദ്ധാന്തത്തിന്റെ ലക്ഷ്യം."
+      },
+      {
+        "id": "eth4_q11",
+        "question": "Why does the Reformative Theory strictly reject Capital Punishment (the death penalty)?",
+        "questionMal": "പരിഷ്കരണ സിദ്ധാന്തം വധശിക്ഷയെ (Capital Punishment) കർശനമായി എതിർക്കുന്നത് എന്തുകൊണ്ടാണ്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "Because an executed criminal cannot be reformed or rehabilitated",
+            "mal": "കാരണം വധിക്കപ്പെട്ട ഒരാളെ ഒരിക്കലും പരിഷ്കരിക്കാനോ നല്ലൊരു പൗരനാക്കി മാറ്റാനോ കഴിയില്ല"
+          },
+          {
+            "letter": "B",
+            "en": "Because ropes and electricity are too expensive for the government",
+            "mal": "സർക്കാരിന് കയറും വൈദ്യുതിയും വാങ്ങാൻ വൻ ചെലവ് വരുന്നതിനാൽ"
+          },
+          {
+            "letter": "C",
+            "en": "Because all judges are legally prohibited from passing final verdicts",
+            "mal": "അന്തിമ വിധി പുറപ്പെടുവിക്കുന്നതിൽ നിന്ന് എല്ലാ ജഡ്ജിമാരെയും വിലക്കിയിട്ടുള്ളതിനാൽ"
+          },
+          {
+            "letter": "D",
+            "en": "Because prisons would become completely deserted and close down",
+            "mal": "ജയിലുകൾ പൂർണ്ണമായും വിജനമാവുകയും അടച്ചുപൂട്ടേണ്ടി വരികയും ചെയ്യുമെന്നതിനാൽ"
+          }
+        ],
+        "answer": 0,
+        "explanation": "A hanged person cannot be re-educated or transformed; execution totally destroys the foundational goal of reformation.",
+        "explanationMal": "മരണപ്പെട്ട വ്യക്തിയെ പരിഷ്കരിക്കാൻ കഴിയില്ല എന്നതിനാൽ പരിഷ്കരണ സിദ്ധാന്തം വധശിക്ഷയെ പൂർണ്ണമായും തള്ളിക്കളയുന്നു."
+      },
+      {
+        "id": "eth4_q12",
+        "question": "Which humanitarian motto was famously advocated by Mahatma Gandhi regarding criminal justice?",
+        "questionMal": "ക്രിമിനൽ നീതിന്യായ വ്യവസ്ഥയെക്കുറിച്ച് മഹാത്മാഗാന്ധി മുന്നോട്ടുവെച്ച പ്രശസ്തമായ മാനവിക മുദ്രാവാക്യം ഏതാണ്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "'Hate the sin not the sinner'",
+            "mal": "'പാപത്തെ വെറുക്കുക, പാപിയെ സ്നേഹിക്കുക'"
+          },
+          {
+            "letter": "B",
+            "en": "'Power flows solely from physical oppression'",
+            "mal": "'ശാരീരിക അടിച്ചമർത്തലിൽ നിന്ന് മാത്രമാണ് അധികാരം ഉണ്ടാകുന്നത്'"
+          },
+          {
+            "letter": "C",
+            "en": "'An eye for an eye will make the whole world prosperous'",
+            "mal": "'കണ്ണിന് കണ്ണ് എന്ന നിയമം ലോകത്തെ സമ്പന്നമാക്കും'"
+          },
+          {
+            "letter": "D",
+            "en": "'Punish first, investigate evidence afterward'",
+            "mal": "'ആദ്യം ശിക്ഷിക്കുക, പിന്നീട് തെളിവുകൾ അന്വേഷിക്കുക'"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Gandhi advocated hating the evil act while treating the offender as a moral being needing spiritual and ethical recovery, like a patient in a hospital.",
+        "explanationMal": "'പാപത്തെ വെറുക്കുക, പാപിയെ സ്നേഹിക്കുക' എന്ന് പഠിപ്പിച്ച ഗാന്ധിജി, ജയിലുകളെ ആശുപത്രികളെപ്പോലെയും തടവുകാരെ രോഗികളെപ്പോലെയും കണ്ട് മാറ്റിയെടുക്കണമെന്ന് വാദിച്ചു."
+      },
+      {
+        "id": "eth4_q13",
+        "question": "How did classical philosopher Aristotle view the nature and role of punishment?",
+        "questionMal": "ക്ലാസിക്കൽ തത്ത്വചിന്തകനായ അരിസ്റ്റോട്ടിൽ ശിക്ഷയെ എന്തിനോടാണ് ഉപമിച്ചത്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "As a form of medicine to cure moral defect",
+            "mal": "ധാർമ്മികമായ അപാകതകളെ പരിഹരിക്കാനുള്ള ഒരു 'ഔഷധം' (Medicine) പോലെ"
+          },
+          {
+            "letter": "B",
+            "en": "As an artistic competition to amuse spectators",
+            "mal": "കാണികളെ രസിപ്പിക്കാനുള്ള ഒരു കലാപരമായ മത്സരം പോലെ"
+          },
+          {
+            "letter": "C",
+            "en": "As a financial contract between private traders",
+            "mal": "സ്വകാര്യ വ്യാപാരികൾ തമ്മിലുള്ള സാമ്പത്തിക കരാർ പോലെ"
+          },
+          {
+            "letter": "D",
+            "en": "As an arbitrary lottery decided by rolling dice",
+            "mal": "പകിട ഉരുട്ടി തീരുമാനിക്കുന്ന ഭാഗ്യപരീക്ഷണം പോലെ"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Aristotle regarded punishment as a form of moral medicine, though critics note some harsh penalties can cause 'iatrogenic' harm and harden criminals.",
+        "explanationMal": "അരിസ്റ്റോട്ടിൽ ശിക്ഷയെ ആത്മാവിന്റെ അസുഖം മാറ്റാനുള്ള 'മരുന്നായാണ്' കണ്ടത്; എന്നാൽ തെറ്റായ മരുന്നുകൾ പുതിയ അസുഖങ്ങൾ ഉണ്ടാക്കുന്നതുപോലെ ക്രൂരമായ ശിക്ഷ കുറ്റവാളികളെ കൂടുതൽ കഠിനചിത്തരാക്കുമെന്നും നിരീക്ഷിക്കപ്പെടുന്നു."
+      },
+      {
+        "id": "eth4_q14",
+        "question": "Under what condition is an individual legally and morally exempt from punishment for a harmful act?",
+        "questionMal": "ഒരു ദോഷകരമായ പ്രവൃത്തിക്ക് ഏത് സാഹചര്യത്തിലാണ് ഒരാൾക്ക് ധാർമ്മികവും നിയമപരവുമായ ശിക്ഷയിൽ നിന്ന് ഇളവ് ലഭിക്കുന്നത്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "When the person is proven to be genuinely insane and alienated from rational self-control",
+            "mal": "വ്യക്തി വിവേകബുദ്ധിയും യുക്തിപരമായ സ്വയം നിയന്ത്രണവുമില്ലാത്ത യഥാർത്ഥ മാനസിക രോഗിയാണെന്ന് തെളിയിക്കപ്പെടുമ്പോൾ"
+          },
+          {
+            "letter": "B",
+            "en": "Whenever the person wears formal noble attire during trial",
+            "mal": "വിചാരണ വേളയിൽ ആഡംബര വസ്ത്രങ്ങൾ ധരിച്ചെത്തുമ്പോഴെല്ലാം"
+          },
+          {
+            "letter": "C",
+            "en": "Whenever the victim does not know the criminal code number",
+            "mal": "ഇരയ്ക്ക് പീനൽ കോഡ് നമ്പർ കൃത്യമായി അറിയാത്തപ്പോഴെല്ലാം"
+          },
+          {
+            "letter": "D",
+            "en": "If the act occurred on a public national holiday",
+            "mal": "പ്രവൃത്തി നടന്നത് ഒരു പൊതു അവധി ദിവസത്തിലാണെങ്കിൽ"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Moral and criminal responsibility requires rationality and free agency; severe insanity alienates a person from their own actions, exempting them from moral blameworthiness.",
+        "explanationMal": "ധാർമ്മിക ഉത്തരവാദിത്തത്തിന് മനസ്സിന്റെ സ്വാഭാവിക സമനില അത്യന്താപേക്ഷിതമാണ്; സ്വന്തം പ്രവൃത്തികളെക്കുറിച്ച് ബോധമില്ലാത്ത മാനസിക രോഗികളിൽ നിന്ന് ശിക്ഷ ഒഴിവാക്കപ്പെടുന്നു."
+      },
+      {
+        "id": "eth4_q15",
+        "question": "What is the primary flaw of treating kleptomania as a deliberate moral crime rather than a psychological compulsion?",
+        "questionMal": "ക്ലെപ്റ്റോമാനിയയെ (Kleptomania) ഒരു മനപ്പൂർവ്വമായ ധാർമ്മിക കുറ്റകൃത്യമായി കണ്ട് ശിക്ഷിക്കുന്നതിലെ പ്രധാന ന്യൂനത എന്താണ്?",
+        "options": [
+          {
+            "letter": "A",
+            "en": "It punishes a pathological irresistible compulsion that requires clinical treatment rather than punitive torture",
+            "mal": "ക്ലിനിക്കൽ ചികിത്സ ആവശ്യമുള്ള അനിയന്ത്രിതമായ ഒരു മാനസിക രോഗാവസ്ഥയെ തിരിച്ചറിയാതെ ക്രൂരമായി ശിക്ഷിക്കുന്നു എന്ന തെറ്റ്"
+          },
+          {
+            "letter": "B",
+            "en": "It causes prisons to run out of cells for serious armed robbers",
+            "mal": "ആയുധധാരികളായ വലിയ കൊള്ളക്കാർക്ക് ജയിലിൽ ഇടമില്ലാതെ വരുന്നു"
+          },
+          {
+            "letter": "C",
+            "en": "It automatically bankrupts the central banks",
+            "mal": "കേന്ദ്ര ബാങ്കുകൾ പാപ്പരാകാൻ ഇടയാക്കുന്നു"
+          },
+          {
+            "letter": "D",
+            "en": "It makes stolen luxury goods impossible to sell in local markets",
+            "mal": "മോഷ്ടിച്ച സാധനങ്ങൾ വിൽക്കാൻ സാധിക്കാതെ വരുന്നു"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Criminology and medical ethics recognize kleptomania as an involuntary impulse control defect that calls for medical/psychiatric therapy rather than retribution.",
+        "explanationMal": "ക്ലെപ്റ്റോമാനിയ എന്നത് മനപ്പൂർവ്വമുള്ള മോഷണമല്ല, മറിച്ച് നിയന്ത്രിക്കാനാവാത്ത മാനസിക അസുഖമാണ്; അതിന് ശിക്ഷയല്ല, മാനസിക ചികിത്സയാണ് നൽകേണ്ടത്."
+      }
+    ]
+  },
   "ethics_mod_5": {
     "title": "Fundamentals of Ethics · Module 5 · Applied Ethics",
     "description": "Applied & Practical Ethics · Casuistry · Bioethics (Euthanasia & Abortion) · Environmental Ethics (Anthropocentrism & Deep Ecology) · Medical Ethics (Hippocratic Oath & 4 Principles) · Media Ethics",
