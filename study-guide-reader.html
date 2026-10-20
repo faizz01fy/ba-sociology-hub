@@ -397,6 +397,15 @@
       font-size: 11.5px;
       border-radius: 6px;
     }
+    .uk-voice-select {
+      max-width: min(52vw, 240px);
+    }
+    .voice-option-help {
+      max-width: 150px;
+      color: #64748b;
+      font-size: 10px;
+      line-height: 1.2;
+    }
     .voice-checkbox-label {
       display: inline-flex;
       align-items: center;
@@ -654,7 +663,7 @@
       <!-- Teleprompter / Active Caption Box -->
       <div id="voiceTeleprompter" class="voice-teleprompter" aria-live="polite">
         <div id="teleprompterEn" class="teleprompter-en">വായന ആരംഭിക്കാൻ ▶ അമർത്തുക.</div>
-        <div id="teleprompterMl" class="teleprompter-ml">ഇംഗ്ലീഷ് ➔ മലയാളം തത്സമയ ശബ്ദ വിവരണം ലഭ്യമാണ് (English to Malayalam Voice).</div>
+        <div id="teleprompterMl" class="teleprompter-ml">UK English speech is selected. Malayalam and bilingual reading are available in the mode options.</div>
       </div>
 
       <!-- Control Strip -->
@@ -673,10 +682,10 @@
         <div class="voice-control-group">
           <span class="voice-group-label">മോഡ്:</span>
           <div class="voice-mode-pills" role="radiogroup" aria-label="Voice Reading Mode">
-            <button id="modeEn2MlBtn" class="mode-pill active" type="button" role="radio" aria-checked="true" data-mode="en2ml" title="ക്ലീൻ ഇംഗ്ലീഷ് എടുത്ത് മലയാളത്തിലേക്ക് വോയ്സ് കൺവേർഷൻ ചെയ്യുക (English to Malayalam Voice Conversion)">
+            <button id="modeEn2MlBtn" class="mode-pill" type="button" role="radio" aria-checked="false" data-mode="en2ml" title="ക്ലീൻ ഇംഗ്ലീഷ് എടുത്ത് മലയാളത്തിലേക്ക് വോയ്സ് കൺവേർഷൻ ചെയ്യുക (English to Malayalam Voice Conversion)">
               🌐 ഇംഗ്ലീഷ് ➔ മലയാളം (En ➔ Mal)
             </button>
-            <button id="modeEnBtn" class="mode-pill" type="button" role="radio" aria-checked="false" data-mode="en" title="ഇംഗ്ലീഷ് വാചകം നേരിട്ട് വായിക്കുക (English Reading)">
+            <button id="modeEnBtn" class="mode-pill active" type="button" role="radio" aria-checked="true" data-mode="en" title="ഇംഗ്ലീഷ് വാചകം നേരിട്ട് വായിക്കുക (English Reading)">
               🇬🇧 English Only
             </button>
             <button id="modeBothBtn" class="mode-pill" type="button" role="radio" aria-checked="false" data-mode="both" title="ഇംഗ്ലീഷും മലയാളം വോയ്സും ഒരുമിച്ച് (Bilingual)">
@@ -692,6 +701,25 @@
             <button id="genderFemaleBtn" class="gender-pill active" type="button" role="radio" aria-checked="true" data-gender="female">👩 സ്ത്രീ</button>
             <button id="genderMaleBtn" class="gender-pill" type="button" role="radio" aria-checked="false" data-gender="male">👨 പുരുഷൻ</button>
           </div>
+        </div>
+
+        <!-- UK English voice choices -->
+        <div class="voice-control-group voice-choice-group">
+          <label for="ukVoiceSelect" class="voice-group-label">UK voice:</label>
+          <select id="ukVoiceSelect" class="voice-select uk-voice-select" aria-label="UK English voice options">
+            <option value="auto">Automatic best match</option>
+          </select>
+          <span id="ukVoiceHint" class="voice-option-help" aria-live="polite"></span>
+        </div>
+
+        <!-- Voice tone choices -->
+        <div class="voice-control-group">
+          <label for="voicePitchSelect" class="voice-group-label">Tone:</label>
+          <select id="voicePitchSelect" class="voice-select" aria-label="Voice tone">
+            <option value="1" selected>Natural</option>
+            <option value="0.88">Deeper</option>
+            <option value="1.12">Brighter</option>
+          </select>
         </div>
 
         <!-- Speed Dropdown -->
@@ -992,7 +1020,9 @@
     // --- VOICE READING (TTS) & LIVE TRANSLATION ENGINE ---
     let allVoices = [];
     let selectedGender = 'female';
-    let voiceMode = 'en2ml'; // 'en2ml' (default), 'en', 'both'
+    let voiceMode = 'en'; // UK English is the reliable default; Malayalam and bilingual modes remain available.
+    let selectedUKVoiceKey = 'auto';
+    let voiceRunToken = 0;
     let isVoicePlaying = false;
     let isVoicePaused = false;
     let currentReadingPage = 1;
@@ -1036,15 +1066,21 @@
 
       try {
         const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ml&dt=t&q=${encodeURIComponent(clean)}`;
-        const res = await fetch(url);
-        if (res.ok) {
-          const data = await res.json();
-          const translated = (data[0] || []).map(p => p[0]).filter(Boolean).join('');
-          if (translated) {
-            const san = sanitizeMalayalam(translated);
-            translationCache[clean] = san;
-            return san;
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 8000);
+        try {
+          const res = await fetch(url, { signal: controller.signal });
+          if (res.ok) {
+            const data = await res.json();
+            const translated = (data[0] || []).map(p => p[0]).filter(Boolean).join('');
+            if (translated) {
+              const san = sanitizeMalayalam(translated);
+              translationCache[clean] = san;
+              return san;
+            }
           }
+        } finally {
+          clearTimeout(timeout);
         }
       } catch (err) {
         console.warn('Live translation fallback to sanitized:', err);
@@ -1052,9 +1088,98 @@
       return sanitizeMalayalam(clean);
     }
 
+    function getVoiceKey(voice) {
+      return voice.voiceURI || String((voice.lang || '') + '::' + (voice.name || ''));
+    }
+
+    function getUKEnglishVoices() {
+      return allVoices.filter(v => /^en-gb(?:-|$)/i.test((v.lang || '').replace(/_/g, '-')));
+    }
+
+    const maleVoiceName = /\b(?:male|man|boy|aaron|ryan|daniel|arthur|oliver|thomas|james|george|david|mark|guy|brian|andrew|matthew|peter|richard|stephen|edward|henry|alfie|callum|noah|liam|rory|sean|darren|nathan|christopher|patrick|midhun|prabhat|ravi)\b/i;
+    const femaleVoiceName = /\b(?:female|woman|girl|sonia|hazel|susan|libby|mia|emma|amy|natasha|neerja|heera|zira|jenny|aria|siri|sangeeta|serena|moira|joanna|kate|tessa|victoria|alice|sophie|hannah|freya|rachel|fiona|martha|megan|sally|samantha)\b/i;
+
+    function isVoiceForGender(voice, gender) {
+      const label = (voice.name || '') + ' ' + (voice.voiceURI || '');
+      return gender === 'male' ? maleVoiceName.test(label) : femaleVoiceName.test(label);
+    }
+
+    function getSmartVoice(gender, isMalayalam) {
+      if (!allVoices.length) return null;
+      const mlVoices = allVoices.filter(v => (v.lang || '').toLowerCase().startsWith('ml'));
+      if (isMalayalam && mlVoices.length) {
+        return mlVoices.find(v => isVoiceForGender(v, gender)) || mlVoices[0];
+      }
+
+      const ukEnglishVoices = getUKEnglishVoices();
+      if (!isMalayalam && selectedUKVoiceKey !== 'auto') {
+        const chosen = ukEnglishVoices.find(v => getVoiceKey(v) === selectedUKVoiceKey);
+        if (chosen) return chosen;
+      }
+      const matchingGender = ukEnglishVoices.filter(v => isVoiceForGender(v, gender));
+      const naturalMatch = matchingGender.find(v => /natural|neural/i.test((v.name || '') + ' ' + (v.voiceURI || '')));
+      if (naturalMatch || matchingGender.length) return naturalMatch || matchingGender[0];
+
+      const saferFallback = ukEnglishVoices.find(v => gender === 'male'
+        ? !femaleVoiceName.test((v.name || '') + ' ' + (v.voiceURI || ''))
+        : !maleVoiceName.test((v.name || '') + ' ' + (v.voiceURI || '')));
+      return saferFallback || ukEnglishVoices[0] || null;
+    }
+
+    function updateUKVoiceHint() {
+      const hint = el('ukVoiceHint');
+      if (!hint) return;
+      const voices = getUKEnglishVoices();
+      hint.textContent = voices.length
+        ? voices.length + ' UK voice option' + (voices.length === 1 ? '' : 's')
+        : 'No installed UK voices; using en-GB fallback';
+    }
+
     function populateVoiceList() {
-      if (!('speechSynthesis' in window)) return;
+      if (!('speechSynthesis' in window)) {
+        updateUKVoiceHint();
+        return;
+      }
       allVoices = window.speechSynthesis.getVoices() || [];
+      const select = el('ukVoiceSelect');
+      if (select) {
+        const previousKey = selectedUKVoiceKey || select.value || 'auto';
+        const ukVoices = getUKEnglishVoices().slice().sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+        select.replaceChildren(new Option('Automatic best match', 'auto'));
+        ukVoices.forEach(voice => {
+          select.add(new Option((voice.name || 'UK English voice') + ' — ' + (voice.lang || 'en-GB'), getVoiceKey(voice)));
+        });
+        selectedUKVoiceKey = ukVoices.some(v => getVoiceKey(v) === previousKey) ? previousKey : 'auto';
+        select.value = selectedUKVoiceKey;
+      }
+      updateUKVoiceHint();
+    }
+
+    async function waitForVoices() {
+      if (!('speechSynthesis' in window)) return [];
+      populateVoiceList();
+      if (allVoices.length) return allVoices;
+      const synth = window.speechSynthesis;
+      if (typeof synth.addEventListener !== 'function') {
+        await new Promise(resolve => setTimeout(resolve, 900));
+      } else {
+        await new Promise(resolve => {
+          let finished = false;
+          let timer;
+          const finish = () => {
+            if (finished) return;
+            finished = true;
+            clearTimeout(timer);
+            synth.removeEventListener('voiceschanged', finish);
+            populateVoiceList();
+            resolve();
+          };
+          timer = setTimeout(finish, 1200);
+          synth.addEventListener('voiceschanged', finish, { once: true });
+        });
+      }
+      populateVoiceList();
+      return allVoices;
     }
 
     if ('speechSynthesis' in window) {
@@ -1062,26 +1187,10 @@
       window.speechSynthesis.onvoiceschanged = populateVoiceList;
     }
 
-    function getSmartVoice(gender, isMalayalam) {
-      if (!allVoices.length) return null;
-      const isF = (v) => /female|woman|sobhana|neerja|heera|zira|jenny|aria|siri|sangeeta/i.test(v.name);
-      const isM = (v) => /male|man|midhun|prabhat|ravi|david|mark|guy|george/i.test(v.name);
-      const mlVoices = allVoices.filter(v => v.lang.toLowerCase().startsWith('ml'));
-      const ukEnglishVoices = allVoices.filter(v => /^en-gb(?:-|$)/i.test((v.lang || '').replace(/_/g, '-')));
-
-      if (isMalayalam && mlVoices.length) {
-        const mlPref = mlVoices.find(v => gender === 'female' ? isF(v) : isM(v)) || mlVoices[0];
-        if (mlPref) return mlPref;
-      }
-
-      const genderVoice = ukEnglishVoices.find(v => gender === 'female' ? isF(v) : isM(v));
-      // Keep the en-GB utterance locale when no UK voice is installed.
-      return genderVoice || ukEnglishVoices[0] || null;
-    }
-
     function splitIntoNaturalSentences(text) {
       if (!text) return [];
-      const rawChunks = text.split(/(?<=[.!?।])\s+|\n{2,}/);
+      const prepared = text.replace(/(^|\n)[ \t]*(Introductory\s+Notes?|Intro\s+Notes?|Introduction(?:\s+Note)?)[ \t]*(?=\n|$)/gim, '\n\n$2\n\n');
+      const rawChunks = prepared.split(/(?<=[.!?।])\s+|\n{2,}/);
       const result = [];
       for (const chunk of rawChunks) {
         const t = chunk.trim();
@@ -1113,19 +1222,26 @@
       if (pdf && pNum <= pdf.numPages) {
         const page = await pdf.getPage(pNum);
         const content = await page.getTextContent();
+        const parts = [];
         for (const it of content.items) {
-          if (!it.str) continue;
-          rawText += it.str;
-          if (it.hasEOL) rawText += ' ';
+          const itemText = (it.str || '').replace(/\s+/g, ' ').trim();
+          if (!itemText) continue;
+          if (parts.length) parts.push(it.hasEOL ? '\n' : ' ');
+          parts.push(itemText);
         }
+        rawText = parts.join('');
       } else {
         rawText = el('reader')?.innerText || '';
       }
 
       const clean = rawText
         .replace(/\0/g, '')
-        .replace(/(\b[a-zA-Z]+)-\s+([a-zA-Z]+\b)/g, '$1$2')
-        .replace(/\s+/g, ' ')
+        .replace(/(\b[a-zA-Z]+)-[ \t]*\n[ \t]*([a-zA-Z]+\b)/g, '$1$2')
+        .replace(/[ \t]+/g, ' ')
+        .replace(/ *\n */g, '\n')
+        .replace(/\n{3,}/g, '\n\n')
+        .replace(/\s+([,.;:!?])/g, '$1')
+        .replace(/([([{])\s+/g, '$1')
         .normalize('NFC')
         .trim();
 
@@ -1136,7 +1252,7 @@
 
     // --- HIGH-FIDELITY MALAYALAM SPEECH PLAYER ---
     // Uses Google's neural Malayalam TTS audio stream with automatic sentence chunking & SpeechSynthesis fallback
-    function playMalayalamSpeechQueue(text, speed, onComplete) {
+    function playMalayalamSpeechQueue(text, speed, onComplete, runToken) {
       if (currentAudio) {
         currentAudio.pause();
         currentAudio = null;
@@ -1144,7 +1260,7 @@
 
       const clean = sanitizeMalayalam(text).trim();
       if (!clean) {
-        if (onComplete) onComplete();
+        if (onComplete && runToken === voiceRunToken) onComplete();
         return;
       }
 
@@ -1162,9 +1278,10 @@
       if (current) chunks.push(current.trim());
 
       let chunkIdx = 0;
+      const isCurrent = () => runToken === voiceRunToken && isVoicePlaying && !isVoicePaused;
 
       function playNextChunk() {
-        if (!isVoicePlaying || isVoicePaused) return;
+        if (!isCurrent()) return;
         if (chunkIdx >= chunks.length) {
           currentAudio = null;
           if (onComplete) onComplete();
@@ -1172,32 +1289,41 @@
         }
 
         const chunk = chunks[chunkIdx++];
-        const url = `https://translate.google.com/translate_tts?ie=UTF-8&tl=ml&client=tw-ob&q=${encodeURIComponent(chunk)}`;
+        const url = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=ml&client=tw-ob&q=' + encodeURIComponent(chunk);
         const audio = new Audio(url);
         audio.playbackRate = Math.max(0.8, Math.min(1.4, speed || 1.0));
         currentAudio = audio;
+        let fallbackStarted = false;
+        let chunkFinished = false;
 
-        audio.onended = () => {
+        const advance = () => {
+          if (chunkFinished || !isCurrent()) return;
+          chunkFinished = true;
           currentAudio = null;
           playNextChunk();
         };
 
         const fallbackTTS = () => {
+          if (fallbackStarted || !isCurrent()) return;
+          fallbackStarted = true;
+          audio.pause();
           currentAudio = null;
           if ('speechSynthesis' in window) {
             const ut = new SpeechSynthesisUtterance(chunk);
             ut.lang = 'ml-IN';
             ut.rate = (speed || 1.0) * 0.90;
-            const mlVoice = allVoices.find(v => v.lang.toLowerCase().startsWith('ml'));
+            const mlVoice = getSmartVoice(selectedGender, true);
             if (mlVoice) ut.voice = mlVoice;
-            ut.onend = () => playNextChunk();
-            ut.onerror = () => playNextChunk();
+            currentUtterance = ut;
+            ut.onend = advance;
+            ut.onerror = advance;
             window.speechSynthesis.speak(ut);
           } else {
-            playNextChunk();
+            advance();
           }
         };
 
+        audio.onended = advance;
         audio.onerror = fallbackTTS;
         audio.play().catch(fallbackTTS);
       }
@@ -1205,29 +1331,42 @@
       playNextChunk();
     }
 
-    // --- NATIVE ENGLISH SPEECH (KEEP INTACT) ---
-    function playEnglishSpeech(text, speed, onComplete) {
+    async function playEnglishSpeech(text, speed, onComplete, runToken) {
       if (!('speechSynthesis' in window)) {
-        if (onComplete) onComplete();
+        if (onComplete && runToken === voiceRunToken) onComplete();
         return;
       }
-      window.speechSynthesis.cancel();
+      await waitForVoices();
+      if (runToken !== voiceRunToken || !isVoicePlaying || isVoicePaused) return;
+
       const ut = new SpeechSynthesisUtterance(text);
       ut.lang = 'en-GB';
       const enVoice = getSmartVoice(selectedGender, false);
       if (enVoice) ut.voice = enVoice;
       ut.rate = (speed || 1.0) * 0.95;
-      ut.pitch = selectedGender === 'female' ? 1.08 : 0.92;
-      ut.onend = () => {
+      ut.pitch = Number(el('voicePitchSelect')?.value) || 1.0;
+      currentUtterance = ut;
+
+      let completed = false;
+      const complete = () => {
+        if (completed || runToken !== voiceRunToken || !isVoicePlaying || isVoicePaused) return;
+        completed = true;
+        currentUtterance = null;
         if (onComplete) onComplete();
       };
-      ut.onerror = (e) => {
-        if (e.error !== 'interrupted' && e.error !== 'canceled') {
-          console.warn('English speech error:', e);
-          if (onComplete) onComplete();
+      ut.onend = complete;
+      ut.onerror = event => {
+        if (event.error !== 'interrupted' && event.error !== 'canceled') {
+          console.warn('English speech error:', event);
+          complete();
         }
       };
-      window.speechSynthesis.speak(ut);
+      try {
+        window.speechSynthesis.speak(ut);
+      } catch (error) {
+        console.warn('Unable to start English speech:', error);
+        complete();
+      }
     }
 
     function updateVoiceUIState() {
@@ -1257,6 +1396,8 @@
     async function speakSentence(sentences, idx, pNum) {
       if (!isVoicePlaying || isVoicePaused) return;
 
+      const runToken = ++voiceRunToken;
+      const isCurrent = () => runToken === voiceRunToken && isVoicePlaying && !isVoicePaused;
       if (idx >= sentences.length) {
         if (el('voiceContinuousCheck').checked && pdf && pNum < pdf.numPages) {
           go(pNum + 1);
@@ -1275,77 +1416,67 @@
       currentSentenceIdx = idx;
       currentReadingPage = pNum;
       const sentence = sentences[idx];
-
-      if (pageNumber !== pNum) {
-        go(pNum);
-      }
+      if (pageNumber !== pNum) go(pNum);
 
       const totalP = pdf ? pdf.numPages : 1;
       const genderLabel = selectedGender === 'female' ? 'സ്ത്രീ സ്വരം' : 'പുരുഷ സ്വരം';
-      const modeLabel = voiceMode === 'en2ml' ? '🌐 ഇംഗ്ലീഷ് ➔ മലയാളം വോയ്സ്' : voiceMode === 'en' ? '🇬🇧 ഇംഗ്ലീഷ് വായന' : '🗣️ ദ്വിഭാഷാ വിവരണം';
-      el('voiceStatusText').textContent = `🔊 ${genderLabel} · ${modeLabel} · പേജ് ${pNum}/${totalP} · വാചകം ${idx + 1}/${sentences.length}`;
+      const modeLabel = voiceMode === 'en2ml' ? '🌐 ഇംഗ്ലീഷ് ➔ മലയാളം വോയ്സ്' : voiceMode === 'en' ? '🇬🇧 UK English reading' : '🗣️ ദ്വിഭാഷാ വിവരണം';
+      el('voiceStatusText').textContent = '🔊 ' + genderLabel + ' · ' + modeLabel + ' · പേജ് ' + pNum + '/' + totalP + ' · വാചകം ' + (idx + 1) + '/' + sentences.length;
 
-      // Stop any existing audio/speech
       if (currentAudio) {
         currentAudio.pause();
         currentAudio = null;
       }
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-      }
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
 
       const speed = Number(el('voiceSpeedSelect').value) || 1.0;
       const isEnglish = /[a-zA-Z]{3,}/.test(sentence);
       const tEn = el('teleprompterEn');
       const tMl = el('teleprompterMl');
-
       const onNext = () => {
-        if (isVoicePlaying && !isVoicePaused && currentSentenceIdx === idx && currentReadingPage === pNum) {
+        if (isCurrent() && currentSentenceIdx === idx && currentReadingPage === pNum) {
           speakSentence(sentences, idx + 1, pNum);
         }
       };
 
       if (voiceMode === 'en2ml') {
-        // --- ENGLISH TO MALAYALAM VOICE CONVERSION ---
-        // Instead of reading broken Malayalam from PDF, convert clean English to natural Malayalam speech
         if (isEnglish) {
           if (tEn) tEn.textContent = '🇬🇧 ' + sentence;
           if (tMl) tMl.textContent = '⏳ മലയാളത്തിലേക്ക് മാറ്റുന്നു…';
           const malText = await translateEnglishToMalayalam(sentence);
+          if (!isCurrent()) return;
           if (tMl) tMl.textContent = '🔊 ' + malText;
-          playMalayalamSpeechQueue(malText, speed, onNext);
+          playMalayalamSpeechQueue(malText, speed, onNext, runToken);
         } else {
           const san = sanitizeMalayalam(sentence);
           if (tEn) tEn.textContent = '';
           if (tMl) tMl.textContent = '🔊 ' + san;
-          playMalayalamSpeechQueue(san, speed, onNext);
+          playMalayalamSpeechQueue(san, speed, onNext, runToken);
         }
       } else if (voiceMode === 'en') {
-        // --- ENGLISH ONLY (KEEP INTACT) ---
         if (tEn) tEn.textContent = '🇬🇧 ' + sentence;
         if (tMl) tMl.textContent = '';
         if (isEnglish) {
-          playEnglishSpeech(sentence, speed, onNext);
+          playEnglishSpeech(sentence, speed, onNext, runToken);
         } else {
-          // If purely Malayalam, speak sanitized Malayalam
           const san = sanitizeMalayalam(sentence);
           if (tMl) tMl.textContent = '🔊 ' + san;
-          playMalayalamSpeechQueue(san, speed, onNext);
+          playMalayalamSpeechQueue(san, speed, onNext, runToken);
         }
       } else {
-        // --- BILINGUAL MODE (EN FIRST, THEN MAL EXPLANATION) ---
         if (tEn) tEn.textContent = '🇬🇧 ' + sentence;
         if (isEnglish) {
           playEnglishSpeech(sentence, speed, async () => {
-            if (!isVoicePlaying || isVoicePaused) return;
+            if (!isCurrent()) return;
             const malText = await translateEnglishToMalayalam(sentence);
+            if (!isCurrent()) return;
             if (tMl) tMl.textContent = '🔊 ' + malText;
-            playMalayalamSpeechQueue(malText, speed, onNext);
-          });
+            playMalayalamSpeechQueue(malText, speed, onNext, runToken);
+          }, runToken);
         } else {
           const san = sanitizeMalayalam(sentence);
           if (tMl) tMl.textContent = '🔊 ' + san;
-          playMalayalamSpeechQueue(san, speed, onNext);
+          playMalayalamSpeechQueue(san, speed, onNext, runToken);
         }
       }
     }
@@ -1390,6 +1521,39 @@
       }
     }
 
+    async function findChapterIntroStart() {
+      if (!pdf) return { page: pageNumber || 1, index: 0 };
+      const searchLimit = Math.min(pdf.numPages, 12);
+      const introHeading = /^(?:(?:chapter|unit)\s+[\divx]+[\s.:—-]*)?(?:introduction(?:\s+note)?|introductory\s+notes?|intro\s+notes?)\b/i;
+      for (let page = 1; page <= searchLimit; page++) {
+        const sentences = await getPageSentences(page);
+        const index = sentences.findIndex(sentence => introHeading.test(sentence.trim()));
+        if (index >= 0) return { page, index };
+      }
+      return { page: 1, index: 0 };
+    }
+
+    async function startChapterReading() {
+      const scanToken = ++voiceRunToken;
+      isVoicePlaying = true;
+      isVoicePaused = false;
+      updateVoiceUIState();
+      el('voiceStatusText').textContent = 'അധ്യായത്തിന്റെ ആമുഖം തിരയുന്നു…';
+      el('voiceDot').className = 'voice-indicator-dot active';
+      try {
+        const start = await findChapterIntroStart();
+        if (scanToken !== voiceRunToken || !isVoicePlaying || isVoicePaused) return;
+        go(start.page);
+        await startReadingPage(start.page, start.index);
+      } catch (err) {
+        if (scanToken === voiceRunToken) {
+          console.error('Chapter introduction search error:', err);
+          el('voiceStatusText').textContent = 'വായനയിൽ തടസ്സം: ' + (err.message || '');
+          stopVoice();
+        }
+      }
+    }
+
     function pauseVoice() {
       if (!isVoicePlaying) return;
       isVoicePaused = true;
@@ -1405,7 +1569,7 @@
 
     function resumeVoice() {
       if (!isVoicePlaying) {
-        startReadingPage(pageNumber, 0);
+        startChapterReading();
         return;
       }
       isVoicePaused = false;
@@ -1424,6 +1588,7 @@
     function stopVoice() {
       isVoicePlaying = false;
       isVoicePaused = false;
+      voiceRunToken++;
       currentUtterance = null;
       if (currentAudio) {
         currentAudio.pause();
@@ -1443,7 +1608,7 @@
       if (shouldOpen) {
         btn.classList.add('active');
         if (!isVoicePlaying) {
-          startReadingPage(pageNumber, 0);
+          startChapterReading();
         }
       } else {
         btn.classList.remove('active');
@@ -1463,7 +1628,7 @@
       } else if (isVoicePlaying && isVoicePaused) {
         resumeVoice();
       } else {
-        startReadingPage(pageNumber, 0);
+        startChapterReading();
       }
     };
 
@@ -1517,6 +1682,9 @@
     if (gFem && gMale) {
       gFem.onclick = () => {
         selectedGender = 'female';
+        selectedUKVoiceKey = 'auto';
+        if (el('ukVoiceSelect')) el('ukVoiceSelect').value = 'auto';
+        updateUKVoiceHint();
         gFem.classList.add('active');
         gFem.setAttribute('aria-checked', 'true');
         gMale.classList.remove('active');
@@ -1527,6 +1695,9 @@
       };
       gMale.onclick = () => {
         selectedGender = 'male';
+        selectedUKVoiceKey = 'auto';
+        if (el('ukVoiceSelect')) el('ukVoiceSelect').value = 'auto';
+        updateUKVoiceHint();
         gMale.classList.add('active');
         gMale.setAttribute('aria-checked', 'true');
         gFem.classList.remove('active');
@@ -1536,6 +1707,20 @@
         }
       };
     }
+
+    el('ukVoiceSelect').onchange = () => {
+      selectedUKVoiceKey = el('ukVoiceSelect').value || 'auto';
+      updateUKVoiceHint();
+      if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
+        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+      }
+    };
+
+    el('voicePitchSelect').onchange = () => {
+      if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
+        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+      }
+    };
 
     el('voiceSpeedSelect').onchange = () => {
       if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
