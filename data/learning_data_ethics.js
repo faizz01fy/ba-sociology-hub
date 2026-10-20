@@ -1,4 +1,22 @@
 window.ethicsLearningData = {
+  "ethics_syllabus": {
+    "title": "Fundamentals of Ethics · Official University Syllabus · Minor Course (PHL1MN101)",
+    "description": "University of Calicut · Course Code PHL1MN101 · Credits: 4 · 60 Hours · Bloom's Taxonomy Outcomes · 5 Modules · Reference Books (Pages 104–106 of Minor-Philosophy.pdf)",
+    "docUrl": "Fundamentals%20of%20Ethics/LMS_PDF/Syllabus_Fundamentals_of_Ethics.pdf",
+    "summary": {
+      "overview": "Official syllabus for Fundamentals of Ethics (PHL1MN101), Semester I Minor Course for Calicut University FYUG. Extracted directly from Minor-Philosophy.pdf (Pages 104–106). Features complete course description, 4 expected course outcomes based on Bloom's Taxonomy, complete module structure with teaching hours & mark distribution (Total 60 hours, 80 marks), and 16 key references.",
+      "keyTopics": [
+        "Course Code: PHL1MN101 | Minor Course | Semester 1 | 4 Credits | 60 Teaching Hours",
+        "Module 1: Introduction to Ethics (10 Hrs, 15 Marks) — Definition, Nature & Scope, Good/Bad/Right/Wrong",
+        "Module 2: Concepts of Ethics (10 Hrs, 15 Marks) — Virtue Ethics, Rights and Duties",
+        "Module 3: Ethical Theories (10 Hrs, 20 Marks) — Consequentialist (Hedonism, Utilitarianism) & Deontological (Categorical Imperative)",
+        "Module 4: Theories of Punishment (20 Hrs, 20 Marks) — Retributivism, Deterrence, Reformative",
+        "Module 5: Applied Ethics (10 Hrs, 10 Marks) — Open Ended Content & Evaluation Decided by Faculty",
+        "16 Official References: J.N. Sinha, William Lillie, Torbjörn Tännsjö, Julia Driver, Aristotle, Kant, J.S. Mill, Thom Brooks, Hilary Putnam, etc."
+      ]
+    }
+  },
+
   "ethics_mod_1": {
     "title": "Fundamentals of Ethics · Module 1 · Introduction to Ethics",
     "description": "Definition, Nature & Scope of Ethics · Good & Bad · Right & Wrong · Western vs Indian Ethics · Is-Ought Distinction · Naturalistic Fallacy · Normative Science",
