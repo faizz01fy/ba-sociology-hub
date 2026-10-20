@@ -186,6 +186,191 @@
     
     [hidden] { display: none !important; }
     
+    /* Voice Reading Button & Toolbar Group */
+    .voice-btn {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #ffffff;
+      border: 1px solid #047857;
+      font-weight: 700;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(16, 185, 129, 0.25);
+    }
+    .voice-btn:hover:not(:disabled) {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      color: #ffffff;
+      border-color: #065f46;
+    }
+    .voice-btn.active {
+      background: #047857;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.4);
+    }
+    .voice-btn.is-playing .voice-icon {
+      display: inline-block;
+      animation: voice-pulse-wave 1.2s infinite ease-in-out;
+    }
+    @keyframes voice-pulse-wave {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+    }
+
+    /* Voice Control Panel Drawer (Desktop) */
+    .voice-panel {
+      position: sticky;
+      top: 48px;
+      z-index: 99;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid #10b981;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+      padding: 10px 16px;
+      transition: all 0.2s ease-in-out;
+    }
+    .voice-panel-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .voice-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .voice-status-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .voice-indicator-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #94a3b8;
+      display: inline-block;
+    }
+    .voice-indicator-dot.active {
+      background: #10b981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+      animation: blink-dot 1.4s infinite;
+    }
+    @keyframes blink-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+    .voice-teleprompter {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #10b981;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-family: 'Noto Sans Malayalam', 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #1e293b;
+      min-height: 38px;
+      max-height: 70px;
+      overflow-y: auto;
+      text-align: left;
+    }
+    .voice-controls-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+    }
+    .voice-btn-group {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .voice-ctrl-btn {
+      font-weight: 700;
+      min-height: 34px;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .btn-primary-play {
+      background: #10b981;
+      color: #ffffff;
+      border-color: #059669;
+      gap: 5px;
+    }
+    .btn-primary-play:hover:not(:disabled) {
+      background: #059669;
+      color: #ffffff;
+    }
+    .voice-control-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .voice-group-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #475569;
+    }
+    .gender-pill-switch {
+      display: inline-flex;
+      background: #e2e8f0;
+      border-radius: 20px;
+      padding: 2px;
+      gap: 2px;
+    }
+    .gender-pill {
+      border: none;
+      background: transparent;
+      padding: 4px 10px;
+      border-radius: 18px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      min-height: 28px;
+    }
+    .gender-pill.active {
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    }
+    .voice-select {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .voice-checkbox-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      user-select: none;
+    }
+    .voice-panel-close-btn {
+      border: none;
+      background: transparent;
+      font-size: 16px;
+      font-weight: bold;
+      color: #64748b;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+    .voice-panel-close-btn:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
     /* Word document mode */
     body.docx-mode {
       font-family: "Noto Sans Malayalam", system-ui, sans-serif;
@@ -289,6 +474,72 @@
         padding: 4px 8px;
         border-bottom-color: #334155;
       }
+      .voice-btn {
+        padding: 4px 8px;
+        font-size: 11.5px;
+        min-height: 32px;
+      }
+      .voice-panel {
+        position: fixed;
+        top: auto;
+        bottom: 8px;
+        left: 8px;
+        right: 8px;
+        z-index: 1000;
+        border-radius: 14px;
+        background: rgba(15, 23, 42, 0.97);
+        border: 1px solid #334155;
+        border-top: 3px solid #10b981;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
+        padding: 8px 10px;
+        color: #f8fafc;
+      }
+      .voice-status-wrap {
+        color: #f8fafc;
+        font-size: 11.5px;
+      }
+      .voice-teleprompter {
+        background: #1e293b;
+        border-color: #334155;
+        border-left: 3px solid #10b981;
+        color: #e2e8f0;
+        font-size: 12px;
+        line-height: 1.5;
+        max-height: 52px;
+        padding: 6px 8px;
+      }
+      .voice-controls-row {
+        gap: 6px;
+      }
+      .voice-ctrl-btn {
+        min-height: 30px;
+        padding: 3px 8px;
+        font-size: 11.5px;
+      }
+      .gender-pill-switch {
+        background: #1e293b;
+      }
+      .gender-pill {
+        font-size: 10.5px;
+        padding: 3px 6px;
+        color: #94a3b8;
+      }
+      .gender-pill.active {
+        background: #334155;
+        color: #ffffff;
+      }
+      .voice-group-label {
+        color: #94a3b8;
+        font-size: 11px;
+      }
+      .voice-checkbox-label {
+        font-size: 11px;
+        color: #cbd5e1;
+      }
+      .voice-panel-close-btn {
+        color: #94a3b8;
+        padding: 2px 6px;
+      }
     }
     
     @media print { body { display: none !important; } }
@@ -323,6 +574,14 @@
       <button id="zoomIn" class="btn-icon" type="button" title="വലുതാക്കുക (Zoom In)" disabled aria-label="Zoom In">+</button>
     </div>
 
+    <!-- Voice Reading Controls -->
+    <div class="toolbar-group">
+      <button id="voiceToggleBtn" class="voice-btn" type="button" title="ശബ്ദ വായന (Voice Read: Male / Female)" aria-label="Voice Read Aloud">
+        <span class="voice-icon">🔊</span>
+        <span class="voice-btn-label">Voice Read</span>
+      </button>
+    </div>
+
     <!-- Extra Tools -->
     <div class="toolbar-group">
       <button id="fullscreenBtn" class="btn-icon" type="button" title="പൂർണ്ണ സ്ക്രീൻ (Toggle Fullscreen)" aria-label="Toggle Fullscreen">⛶</button>
@@ -330,6 +589,72 @@
       <button id="retry" type="button" hidden>Retry</button>
     </div>
   </nav>
+
+  <!-- Audio / Voice Control Panel -->
+  <div id="voicePanel" class="voice-panel" hidden>
+    <div class="voice-panel-inner">
+      <div class="voice-panel-header">
+        <div class="voice-status-wrap">
+          <span id="voiceDot" class="voice-indicator-dot"></span>
+          <span id="voiceStatusText" class="voice-status-text">ശബ്ദ വായന (Voice Reader) തയ്യാറാണ്</span>
+        </div>
+        <button id="closeVoicePanelBtn" class="voice-panel-close-btn" type="button" title="ക്ലോസ് (Close Voice Panel)" aria-label="Close Voice Panel">✕</button>
+      </div>
+
+      <!-- Teleprompter / Active Caption Box -->
+      <div id="voiceTeleprompter" class="voice-teleprompter" aria-live="polite">
+        "വായന ആരംഭിക്കാൻ ▶ പ്ലേ ചെയ്യുക. പുരുഷ/സ്ത്രീ ശബ്ദം തിരഞ്ഞെടുക്കാം."
+      </div>
+
+      <!-- Control Strip -->
+      <div class="voice-controls-row">
+        <!-- Play/Pause & Stop -->
+        <div class="voice-btn-group">
+          <button id="voicePlayBtn" class="voice-ctrl-btn btn-primary-play" type="button" title="പ്ലേ ചെയ്യുക / നിർത്തുക (Play/Pause)">
+            <span id="voicePlayIcon">▶</span> <span id="voicePlayLabel">വായിക്കുക</span>
+          </button>
+          <button id="voiceStopBtn" class="voice-ctrl-btn" type="button" title="വായന നിർത്തുക (Stop)">⏹</button>
+          <button id="voicePrevSentBtn" class="voice-ctrl-btn" type="button" title="മുമ്പത്തെ വാചകം (Previous sentence)">⏮</button>
+          <button id="voiceNextSentBtn" class="voice-ctrl-btn" type="button" title="അടുത്ത വാചകം (Next sentence)">⏭</button>
+        </div>
+
+        <!-- Gender Switcher -->
+        <div class="voice-control-group">
+          <span class="voice-group-label">ശബ്ദം:</span>
+          <div class="gender-pill-switch" role="radiogroup" aria-label="Voice Gender">
+            <button id="genderFemaleBtn" class="gender-pill active" type="button" role="radio" aria-checked="true" data-gender="female">👩 സ്ത്രീ (Female)</button>
+            <button id="genderMaleBtn" class="gender-pill" type="button" role="radio" aria-checked="false" data-gender="male">👨 പുരുഷൻ (Male)</button>
+          </div>
+        </div>
+
+        <!-- Speed Dropdown -->
+        <div class="voice-control-group">
+          <label for="voiceSpeedSelect" class="voice-group-label">സ്പീഡ്:</label>
+          <select id="voiceSpeedSelect" class="voice-select" aria-label="Reading Speed">
+            <option value="0.85">0.85x (സ്ലോ/ക്ലിയർ)</option>
+            <option value="1.0" selected>1.0x (സാധാരണ)</option>
+            <option value="1.15">1.15x (വേഗത)</option>
+            <option value="1.3">1.3x (കൂടുതൽ വേഗത)</option>
+          </select>
+        </div>
+
+        <!-- Continuous Mode Checkbox -->
+        <div class="voice-control-group">
+          <label class="voice-checkbox-label" title="നിലവിലെ പേജ് കഴിഞ്ഞാൽ അടുത്ത പേജ് സ്വയമേവ വായിക്കുക">
+            <input type="checkbox" id="voiceContinuousCheck" checked>
+            <span>തുടർച്ചയായ വായന</span>
+          </label>
+        </div>
+
+        <!-- Advanced Voice Dropdown (populates all system voices) -->
+        <div class="voice-control-group" id="advVoiceGroup">
+          <select id="advVoiceSelect" class="voice-select" aria-label="Specific voice selector" style="max-width: 145px; font-size: 11px;">
+            <option value="auto">Auto (സ്വാഭാവിക ശബ്ദം)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <p id="status" role="status" aria-live="polite">Loading study guide…</p>
   <main id="reader" aria-label="All study guide pages"></main>
@@ -602,6 +927,395 @@
         document.head.append(script);
       });
     }
+
+    // --- VOICE READING (TTS) ENGINE ---
+    let allVoices = [];
+    let selectedGender = 'female';
+    let isVoicePlaying = false;
+    let isVoicePaused = false;
+    let currentReadingPage = 1;
+    let currentSentenceIdx = 0;
+    let currentSentences = [];
+    const pageTextCache = {};
+    let currentUtterance = null;
+
+    function populateVoiceList() {
+      if (!('speechSynthesis' in window)) return;
+      allVoices = window.speechSynthesis.getVoices() || [];
+      const sel = el('advVoiceSelect');
+      if (!sel) return;
+      const currentVal = sel.value;
+      sel.innerHTML = '<option value="auto">Auto (സ്വാഭാവിക ശബ്ദം)</option>';
+      allVoices.forEach(v => {
+        const opt = document.createElement('option');
+        opt.value = v.voiceURI || v.name;
+        const isF = /female|woman|sobhana|neerja|heera|zira|jenny|aria|siri/i.test(v.name);
+        const tag = isF ? '👩' : '👨';
+        opt.textContent = `${tag} ${v.name} (${v.lang})`;
+        sel.appendChild(opt);
+      });
+      if (currentVal && Array.from(sel.options).some(o => o.value === currentVal)) {
+        sel.value = currentVal;
+      }
+    }
+
+    if ('speechSynthesis' in window) {
+      populateVoiceList();
+      window.speechSynthesis.onvoiceschanged = populateVoiceList;
+    }
+
+    function getSmartVoice(gender, isMalayalam) {
+      if (!allVoices.length) return null;
+      const isF = (v) => /female|woman|sobhana|neerja|heera|zira|jenny|aria|siri/i.test(v.name);
+      const isM = (v) => /male|man|midhun|prabhat|ravi|david|mark|guy/i.test(v.name);
+      const mlVoices = allVoices.filter(v => v.lang.toLowerCase().startsWith('ml'));
+      const inVoices = allVoices.filter(v => v.lang.toLowerCase().includes('in'));
+
+      if (gender === 'female') {
+        if (isMalayalam && mlVoices.length) {
+          const mlF = mlVoices.find(v => isF(v)) || mlVoices[0];
+          if (mlF) return mlF;
+        }
+        const inF = inVoices.find(v => isF(v));
+        if (inF) return inF;
+        const anyF = allVoices.find(v => isF(v));
+        if (anyF) return anyF;
+      } else {
+        if (isMalayalam && mlVoices.length) {
+          const mlM = mlVoices.find(v => isM(v)) || mlVoices[0];
+          if (mlM) return mlM;
+        }
+        const inM = inVoices.find(v => isM(v));
+        if (inM) return inM;
+        const anyM = allVoices.find(v => isM(v));
+        if (anyM) return anyM;
+      }
+      return allVoices[0];
+    }
+
+    function splitIntoNaturalSentences(text) {
+      if (!text) return [];
+      const rawChunks = text.split(/(?<=[.!?।])\s+|\n{2,}/);
+      const result = [];
+      for (const chunk of rawChunks) {
+        const t = chunk.trim();
+        if (!t) continue;
+        if (t.length > 150) {
+          const sub = t.split(/(?<=[,;:\-])\s+/);
+          let buf = '';
+          for (const s of sub) {
+            const st = s.trim();
+            if (!st) continue;
+            if (buf && (buf.length + st.length > 140)) {
+              result.push(buf.trim());
+              buf = st;
+            } else {
+              buf = buf ? (buf + ' ' + st) : st;
+            }
+          }
+          if (buf.trim()) result.push(buf.trim());
+        } else {
+          result.push(t);
+        }
+      }
+      return result.filter(s => s && s.length > 1);
+    }
+
+    async function getPageSentences(pNum) {
+      if (pageTextCache[pNum]) return pageTextCache[pNum];
+      let rawText = '';
+      if (pdf && pNum <= pdf.numPages) {
+        const page = await pdf.getPage(pNum);
+        const content = await page.getTextContent();
+        for (const it of content.items) {
+          if (!it.str) continue;
+          rawText += it.str;
+          if (it.hasEOL) rawText += ' ';
+        }
+      } else {
+        rawText = el('reader')?.innerText || '';
+      }
+
+      const clean = rawText
+        .replace(/\0/g, '')
+        .replace(/(\b[a-zA-Z]+)-\s+([a-zA-Z]+\b)/g, '$1$2')
+        .replace(/\s+/g, ' ')
+        .normalize('NFC')
+        .trim();
+
+      const sentences = splitIntoNaturalSentences(clean);
+      pageTextCache[pNum] = sentences;
+      return sentences;
+    }
+
+    function updateVoiceUIState() {
+      const toggleBtn = el('voiceToggleBtn');
+      const playIcon = el('voicePlayIcon');
+      const playLabel = el('voicePlayLabel');
+      const dot = el('voiceDot');
+
+      if (isVoicePlaying && !isVoicePaused) {
+        toggleBtn?.classList.add('is-playing');
+        if (dot) dot.className = 'voice-indicator-dot active';
+        if (playIcon) playIcon.textContent = '⏸';
+        if (playLabel) playLabel.textContent = 'Pause';
+      } else if (isVoicePlaying && isVoicePaused) {
+        toggleBtn?.classList.remove('is-playing');
+        if (dot) dot.className = 'voice-indicator-dot';
+        if (playIcon) playIcon.textContent = '▶';
+        if (playLabel) playLabel.textContent = 'തുടരുക';
+      } else {
+        toggleBtn?.classList.remove('is-playing');
+        if (dot) dot.className = 'voice-indicator-dot';
+        if (playIcon) playIcon.textContent = '▶';
+        if (playLabel) playLabel.textContent = 'വായിക്കുക';
+      }
+    }
+
+    function speakSentence(sentences, idx, pNum) {
+      if (!isVoicePlaying || idx >= sentences.length) {
+        if (isVoicePlaying && el('voiceContinuousCheck').checked && pdf && pNum < pdf.numPages) {
+          go(pNum + 1);
+          startReadingPage(pNum + 1, 0);
+        } else {
+          stopVoice();
+          el('voiceStatusText').textContent = `വായന പൂർത്തിയായി (Finished reading)`;
+          el('voiceTeleprompter').textContent = 'വായന പൂർത്തിയായി. ആവശ്യമെങ്കിൽ വീണ്ടും പ്ലേ ചെയ്യുക.';
+        }
+        return;
+      }
+
+      currentSentenceIdx = idx;
+      currentReadingPage = pNum;
+      const sentence = sentences[idx];
+
+      if (pageNumber !== pNum) {
+        go(pNum);
+      }
+
+      el('voiceTeleprompter').textContent = sentence;
+      const totalP = pdf ? pdf.numPages : 1;
+      const genderLabel = selectedGender === 'female' ? 'സ്ത്രീ സ്വരം (Female)' : 'പുരുഷ സ്വരം (Male)';
+      el('voiceStatusText').textContent = `🔊 ${genderLabel} · പേജ് ${pNum}/${totalP} · വാചകം ${idx + 1}/${sentences.length}`;
+
+      window.speechSynthesis.cancel();
+
+      const utterance = new SpeechSynthesisUtterance(sentence);
+      const hasMalayalam = /[\u0D00-\u0D7F]/.test(sentence);
+
+      const advVal = el('advVoiceSelect')?.value;
+      let voice = null;
+      if (advVal && advVal !== 'auto') {
+        voice = allVoices.find(v => (v.voiceURI || v.name) === advVal);
+      }
+      if (!voice) {
+        voice = getSmartVoice(selectedGender, hasMalayalam);
+      }
+      if (voice) {
+        utterance.voice = voice;
+      }
+      utterance.lang = hasMalayalam ? 'ml-IN' : (voice?.lang || 'en-IN');
+
+      const speed = Number(el('voiceSpeedSelect').value) || 1.0;
+      utterance.rate = (hasMalayalam ? 0.90 : 0.95) * speed;
+      utterance.pitch = (selectedGender === 'female' ? 1.10 : 0.88);
+
+      currentUtterance = utterance;
+
+      utterance.onend = () => {
+        if (isVoicePlaying && !isVoicePaused && currentSentenceIdx === idx && currentReadingPage === pNum) {
+          speakSentence(sentences, idx + 1, pNum);
+        }
+      };
+
+      utterance.onerror = (e) => {
+        if (e.error !== 'interrupted' && e.error !== 'canceled') {
+          console.warn('SpeechSynthesis error:', e);
+          if (isVoicePlaying && !isVoicePaused) {
+            speakSentence(sentences, idx + 1, pNum);
+          }
+        }
+      };
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    async function startReadingPage(pageNum, startIdx = 0) {
+      if (!('speechSynthesis' in window)) {
+        alert('ഈ ബ്രൗസറിൽ Voice Reading ലഭ്യമല്ല. ദയവായി Chrome, Edge അല്ലെങ്കിൽ Safari ഉപയോഗിക്കുക.');
+        return;
+      }
+
+      isVoicePlaying = true;
+      isVoicePaused = false;
+      currentReadingPage = pageNum;
+      updateVoiceUIState();
+
+      el('voiceStatusText').textContent = `പേജ് ${pageNum} ടെക്സ്റ്റ് ലോഡ് ചെയ്യുന്നു…`;
+      el('voiceDot').className = 'voice-indicator-dot active';
+
+      try {
+        const sentences = await getPageSentences(pageNum);
+        currentSentences = sentences;
+        if (!sentences || sentences.length === 0) {
+          el('voiceTeleprompter').textContent = `(പേജ് ${pageNum}-ൽ വായിക്കാവുന്ന വാചകങ്ങൾ ലഭ്യമല്ല)`;
+          if (el('voiceContinuousCheck').checked && pdf && pageNum < pdf.numPages) {
+            setTimeout(() => {
+              if (isVoicePlaying) {
+                go(pageNum + 1);
+                startReadingPage(pageNum + 1, 0);
+              }
+            }, 1000);
+          } else {
+            stopVoice();
+            el('voiceStatusText').textContent = `പേജ് ${pageNum}-ൽ ടെക്സ്റ്റ് ലഭ്യമല്ല`;
+          }
+          return;
+        }
+
+        currentSentenceIdx = Math.max(0, Math.min(sentences.length - 1, startIdx));
+        speakSentence(sentences, currentSentenceIdx, pageNum);
+      } catch (err) {
+        console.error('Text extraction error:', err);
+        el('voiceStatusText').textContent = 'വായനയിൽ തടസ്സം: ' + (err.message || '');
+        stopVoice();
+      }
+    }
+
+    function pauseVoice() {
+      if (!isVoicePlaying) return;
+      isVoicePaused = true;
+      window.speechSynthesis.pause();
+      updateVoiceUIState();
+      el('voiceStatusText').textContent = `⏸ താത്കാലികമായി നിർത്തി (Paused at sentence ${currentSentenceIdx + 1})`;
+    }
+
+    function resumeVoice() {
+      if (!isVoicePlaying) {
+        startReadingPage(pageNumber, 0);
+        return;
+      }
+      isVoicePaused = false;
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+      } else if (currentSentences.length > 0) {
+        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+      }
+      updateVoiceUIState();
+    }
+
+    function stopVoice() {
+      isVoicePlaying = false;
+      isVoicePaused = false;
+      currentUtterance = null;
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      updateVoiceUIState();
+    }
+
+    function toggleVoicePanel(forceOpen = false) {
+      const panel = el('voicePanel');
+      const btn = el('voiceToggleBtn');
+      const shouldOpen = forceOpen ? true : panel.hidden;
+      panel.hidden = !shouldOpen;
+      if (shouldOpen) {
+        btn.classList.add('active');
+        if (!isVoicePlaying) {
+          startReadingPage(pageNumber, 0);
+        }
+      } else {
+        btn.classList.remove('active');
+      }
+    }
+
+    // Voice UI Event Listeners
+    el('voiceToggleBtn').onclick = () => toggleVoicePanel();
+    el('closeVoicePanelBtn').onclick = () => {
+      el('voicePanel').hidden = true;
+      el('voiceToggleBtn').classList.remove('active');
+    };
+
+    el('voicePlayBtn').onclick = () => {
+      if (isVoicePlaying && !isVoicePaused) {
+        pauseVoice();
+      } else if (isVoicePlaying && isVoicePaused) {
+        resumeVoice();
+      } else {
+        startReadingPage(pageNumber, 0);
+      }
+    };
+
+    el('voiceStopBtn').onclick = () => {
+      stopVoice();
+      el('voiceTeleprompter').textContent = 'വായന നിർത്തി. വീണ്ടും ആരംഭിക്കാൻ ▶ അമർത്തുക.';
+      el('voiceStatusText').textContent = 'ശബ്ദ വായന നിർത്തി (Stopped)';
+    };
+
+    el('voicePrevSentBtn').onclick = () => {
+      if (currentSentenceIdx > 0) {
+        speakSentence(currentSentences, currentSentenceIdx - 1, currentReadingPage);
+      } else if (currentReadingPage > 1) {
+        go(currentReadingPage - 1);
+        startReadingPage(currentReadingPage - 1, 0);
+      }
+    };
+
+    el('voiceNextSentBtn').onclick = () => {
+      if (currentSentenceIdx < currentSentences.length - 1) {
+        speakSentence(currentSentences, currentSentenceIdx + 1, currentReadingPage);
+      } else if (pdf && currentReadingPage < pdf.numPages) {
+        go(currentReadingPage + 1);
+        startReadingPage(currentReadingPage + 1, 0);
+      }
+    };
+
+    el('genderFemaleBtn').onclick = () => {
+      selectedGender = 'female';
+      el('genderFemaleBtn').classList.add('active');
+      el('genderFemaleBtn').setAttribute('aria-checked', 'true');
+      el('genderMaleBtn').classList.remove('active');
+      el('genderMaleBtn').setAttribute('aria-checked', 'false');
+      if (isVoicePlaying && !isVoicePaused) {
+        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+      }
+    };
+
+    el('genderMaleBtn').onclick = () => {
+      selectedGender = 'male';
+      el('genderMaleBtn').classList.add('active');
+      el('genderMaleBtn').setAttribute('aria-checked', 'true');
+      el('genderFemaleBtn').classList.remove('active');
+      el('genderFemaleBtn').setAttribute('aria-checked', 'false');
+      if (isVoicePlaying && !isVoicePaused) {
+        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+      }
+    };
+
+    el('voiceSpeedSelect').onchange = () => {
+      if (isVoicePlaying && !isVoicePaused) {
+        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+      }
+    };
+
+    el('advVoiceSelect').onchange = () => {
+      if (isVoicePlaying && !isVoicePaused) {
+        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+      }
+    };
+
+    // Cross-window messaging (e.g. from parent modal header)
+    window.addEventListener('message', (event) => {
+      if (!event.data) return;
+      if (event.data.action === 'toggleVoiceReader') {
+        toggleVoicePanel(true);
+      } else if (event.data.action === 'stopVoiceReader') {
+        stopVoice();
+      }
+    });
+
+    window.addEventListener('beforeunload', () => { window.speechSynthesis?.cancel(); });
+    window.addEventListener('pagehide', () => { window.speechSynthesis?.cancel(); });
 
     el('retry').onclick = () => location.reload();
 
