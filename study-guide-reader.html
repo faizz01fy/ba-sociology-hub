@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
   <meta name="robots" content="noindex,nofollow">
   <title>Study Guide Reader · Academic Hub</title>
+  <script>
+    (() => {
+      const file = new URLSearchParams(location.search).get('file') || '';
+      if (/(?:malayalam|മലയാളം)/i.test(file)) {
+        document.documentElement.classList.add('hide-voice-controls');
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -185,6 +193,8 @@
     }
     
     [hidden] { display: none !important; }
+    html.hide-voice-controls #voiceToolbarGroup,
+    html.hide-voice-controls #voicePanel { display: none !important; }
     
     /* Voice Reading Button & Toolbar Group */
     .voice-btn {
@@ -615,7 +625,7 @@
     </div>
 
     <!-- Voice Reading Controls -->
-    <div class="toolbar-group">
+    <div class="toolbar-group" id="voiceToolbarGroup">
       <button id="voiceToggleBtn" class="voice-btn" type="button" title="ശബ്ദ വായന (Voice Read: Male / Female)" aria-label="Voice Read Aloud">
         <span class="voice-icon">🔊</span>
         <span class="voice-btn-label">Voice Read</span>
