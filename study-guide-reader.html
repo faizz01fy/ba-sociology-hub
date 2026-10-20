@@ -716,8 +716,10 @@
         <div class="voice-control-group">
           <label for="voicePitchSelect" class="voice-group-label">Tone:</label>
           <select id="voicePitchSelect" class="voice-select" aria-label="Voice tone">
-            <option value="1" selected>Natural</option>
-            <option value="0.88">Deeper</option>
+            <option value="auto" selected>Automatic by gender</option>
+            <option value="1">Natural</option>
+            <option value="0.92">Warm</option>
+            <option value="0.82">Deeper</option>
             <option value="1.12">Brighter</option>
           </select>
         </div>
@@ -1130,9 +1132,11 @@
       const hint = el('ukVoiceHint');
       if (!hint) return;
       const voices = getUKEnglishVoices();
+      const matchingGender = voices.some(voice => isVoiceForGender(voice, selectedGender));
       hint.textContent = voices.length
-        ? voices.length + ' UK voice option' + (voices.length === 1 ? '' : 's')
-        : 'No installed UK voices; using en-GB fallback';
+        ? voices.length + ' UK voice option' + (voices.length === 1 ? '' : 's') +
+          (matchingGender ? '' : ' · gender switch uses tone fallback')
+        : 'No UK voice installed · gender switch uses tone fallback';
     }
 
     function populateVoiceList() {
@@ -1344,7 +1348,11 @@
       const enVoice = getSmartVoice(selectedGender, false);
       if (enVoice) ut.voice = enVoice;
       ut.rate = (speed || 1.0) * 0.95;
-      ut.pitch = Number(el('voicePitchSelect')?.value) || 1.0;
+      const selectedTone = el('voicePitchSelect')?.value || 'auto';
+      const hasGenderMatchedVoice = enVoice && isVoiceForGender(enVoice, selectedGender);
+      ut.pitch = selectedTone === 'auto'
+        ? (hasGenderMatchedVoice ? 1.0 : selectedGender === 'male' ? 0.88 : 1.12)
+        : (Number(selectedTone) || 1.0);
       currentUtterance = ut;
 
       let completed = false;
@@ -1676,57 +1684,45 @@
       };
     });
 
+    function restartCurrentSentenceForVoiceChange() {
+      if (!isVoicePlaying || !currentSentences.length) return;
+      // Restart the current sentence so changes also apply while playback is paused.
+      isVoicePaused = false;
+      updateVoiceUIState();
+      speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+    }
+
     // Gender Switcher
     const gFem = el('genderFemaleBtn');
     const gMale = el('genderMaleBtn');
     if (gFem && gMale) {
-      gFem.onclick = () => {
-        selectedGender = 'female';
+      const selectGender = gender => {
+        selectedGender = gender;
         selectedUKVoiceKey = 'auto';
         if (el('ukVoiceSelect')) el('ukVoiceSelect').value = 'auto';
+        // Return to the gender-aware tone so switching always has an audible effect
+        // when the system has no gender-labelled UK voice installed.
+        if (el('voicePitchSelect')) el('voicePitchSelect').value = 'auto';
         updateUKVoiceHint();
-        gFem.classList.add('active');
-        gFem.setAttribute('aria-checked', 'true');
-        gMale.classList.remove('active');
-        gMale.setAttribute('aria-checked', 'false');
-        if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
-          speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
-        }
+        const female = gender === 'female';
+        gFem.classList.toggle('active', female);
+        gFem.setAttribute('aria-checked', String(female));
+        gMale.classList.toggle('active', !female);
+        gMale.setAttribute('aria-checked', String(!female));
+        restartCurrentSentenceForVoiceChange();
       };
-      gMale.onclick = () => {
-        selectedGender = 'male';
-        selectedUKVoiceKey = 'auto';
-        if (el('ukVoiceSelect')) el('ukVoiceSelect').value = 'auto';
-        updateUKVoiceHint();
-        gMale.classList.add('active');
-        gMale.setAttribute('aria-checked', 'true');
-        gFem.classList.remove('active');
-        gFem.setAttribute('aria-checked', 'false');
-        if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
-          speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
-        }
-      };
+      gFem.onclick = () => selectGender('female');
+      gMale.onclick = () => selectGender('male');
     }
 
     el('ukVoiceSelect').onchange = () => {
       selectedUKVoiceKey = el('ukVoiceSelect').value || 'auto';
       updateUKVoiceHint();
-      if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
-        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
-      }
+      restartCurrentSentenceForVoiceChange();
     };
 
-    el('voicePitchSelect').onchange = () => {
-      if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
-        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
-      }
-    };
-
-    el('voiceSpeedSelect').onchange = () => {
-      if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
-        speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
-      }
-    };
+    el('voicePitchSelect').onchange = restartCurrentSentenceForVoiceChange;
+    el('voiceSpeedSelect').onchange = restartCurrentSentenceForVoiceChange;
 
     // Cross-frame message bus
     window.addEventListener('message', event => {
