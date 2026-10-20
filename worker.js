@@ -194,9 +194,23 @@ export default {
       return new Response(responseBody, {status:upstream.status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
     }
     if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/internal/")) return json({error:"Not found"},404);
-    // Serve ordinary static pages and PDFs without per-page Durable Objects analytics.
-    // API, admin, chat, and study-helper routes above remain unchanged.
-    return env.ASSETS.fetch(request);
+    const response = await env.ASSETS.fetch(request);
+    if (request.method === "GET" && response.ok && response.headers.get("Content-Type")?.includes("text/html")) {
+      // Lightweight page visit recording only (1 call per page load, 0 background operations while reading)
+      const task = room.fetch(new Request("https://internal/internal/visit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ip: request.headers.get("CF-Connecting-IP") || "Unavailable",
+          path: url.pathname,
+          country: request.cf?.country || "XX",
+          region: request.cf?.region || "",
+          city: request.cf?.city || ""
+        })
+      })).catch(() => {});
+      ctx.waitUntil(task);
+    }
+    return response;
   }
 };
 
