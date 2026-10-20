@@ -17,6 +17,33 @@
     .page-box{width:100%;max-width:960px;margin:0 auto;padding:24px;background:#fff;border:1px solid #e4e8f0;border-radius:20px;box-shadow:0 12px 36px rgba(30,41,59,.07)}
     .hero{text-align:center;margin:0 0 18px;padding:14px 18px;border:1px solid #dde3f1;border-radius:14px;background:linear-gradient(110deg,#eef8fb,#f3f0fd,#fdf2f7)}
     .hero h1{margin:0 0 4px;font:800 clamp(26px,4vw,34px)/1.6 'Noto Sans Malayalam',sans-serif;letter-spacing:0;color:#312e81}
+
+    /* Bilingual Hero Headings (English Main Heading + Reduced Size Malayalam Heading) */
+    .hero h1, .hero .hero-title {
+      display: block !important;
+      margin: 0 0 12px 0 !important;
+      background: transparent !important;
+      -webkit-background-clip: unset !important;
+      text-shadow: none !important;
+    }
+    .hero-title-en {
+      display: block !important;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+      font-size: clamp(23px, 3.8vw, 34px) !important;
+      line-height: 1.3 !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.01em !important;
+      margin: 0 0 6px 0 !important;
+    }
+    .hero-title-ml {
+      display: block !important;
+      font-family: 'Noto Sans Malayalam', sans-serif !important;
+      font-size: clamp(15px, 2.4vw, 20px) !important;
+      line-height: 1.45 !important;
+      font-weight: 600 !important;
+      opacity: 0.88 !important;
+    }
+
     .hero p{margin:0;font-size:14px;font-weight:700;line-height:1.8;color:#5b6680}
     .module-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-bottom:16px}
     .module-nav a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:34px;padding:5px 6px;border:1px solid #dce2ee;border-radius:8px;background:#f5f7fd;text-decoration:none;font-size:12px;font-weight:700;line-height:1.5;color:#433b8c;overflow-wrap:anywhere;text-align:center;transition:background 0.2s}
@@ -159,7 +186,7 @@
       .module-heading h2{font-size:16px}
       .hero p{font-size:12px}
       .actions{grid-template-columns:1fr;gap:6px}
-      .study-dialog-panel{max-height:96vh;border-radius:14px}
+      .study-modal{padding:0!important}.study-dialog-panel{width:100%!important;max-width:100%!important;height:100vh!important;max-height:100vh!important;border-radius:0!important;border:none!important}.pdf-embed-wrapper{height:calc(100vh - 165px)!important;border-radius:0!important}
       .study-modal-header{padding:10px 14px}
       .study-panes-body{padding:12px 14px}
       .mode-switcher{width:100%;justify-content:center}
@@ -178,12 +205,33 @@
       .module-nav a{font-size:11px;min-height:30px;padding:4px 3px}
     }
     @media print{body{display:none!important}}
-  </style>
+  
+@media (max-width: 768px) {
+
+      /* Responsive Bilingual Hero Heading Scaling */
+      .hero h1, .hero .hero-title {
+        margin-bottom: 8px !important;
+      }
+      .hero-title-en {
+        font-size: clamp(18px, 5.2vw, 24px) !important;
+        line-height: 1.25 !important;
+        margin-bottom: 4px !important;
+      }
+      .hero-title-ml {
+        font-size: clamp(13px, 3.8vw, 15.5px) !important;
+        line-height: 1.4 !important;
+      }
+
+}
+</style>
 </head>
 <body>
   <main class="page-box">
     <header class="hero">
-      <h1>മലയാളം</h1>
+      <h1 class="hero-title">
+        <span class="hero-title-en">Malayalam Language &amp; Literature — LMS PDF Reading</span>
+        <span class="hero-title-ml">മലയാള സാഹിത്യാനുശീലനം — മൊഡ്യൂൾ 1–4</span>
+      </h1>
       <p>മൊഡ്യൂൾ 1–4 · പൂർണ്ണ മലയാളം പഠനസാമഗ്രികൾ</p>
     </header>
     <nav class="module-nav" aria-label="മൊഡ്യൂളുകളിലേക്കുള്ള കണ്ണികൾ">

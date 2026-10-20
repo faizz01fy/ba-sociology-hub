@@ -22,7 +22,7 @@
       -webkit-font-smoothing: antialiased;
     }
     
-    /* Toolbar */
+    /* Desktop Toolbar */
     .toolbar {
       position: sticky;
       top: 0;
@@ -96,19 +96,6 @@
       font-size: 16px;
       font-weight: bold;
       border-radius: 8px;
-    }
-    
-    .btn-pill {
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: #f1f5f9;
-      border-color: #cbd5e1;
-    }
-    .btn-pill.active {
-      background: #2563eb;
-      color: #ffffff;
-      border-color: #2563eb;
     }
     
     input#page {
@@ -221,56 +208,66 @@
       max-width: 100% !important;
     }
     
-    /* MOBILE OPTIMIZATIONS (< 768px) */
+    /* MOBILE-FIRST OPTIMIZATIONS (< 768px) */
     @media (max-width: 768px) {
       body {
-        background: #0f172a; /* Immersive dark background on mobile makes white document pages pop with high contrast */
+        background: #0f172a;
       }
       .toolbar {
-        padding: 6px 8px;
-        gap: 6px;
-        justify-content: space-between;
+        padding: 4px 6px;
+        gap: 4px;
+        justify-content: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
         background: #1e293b;
         border-bottom: 1px solid #334155;
         color: #f8fafc;
       }
+      .toolbar::-webkit-scrollbar { display: none; }
       .toolbar-group {
         background: #0f172a;
         border-color: #334155;
-        padding: 2px 4px;
-        gap: 3px;
+        padding: 2px 3px;
+        gap: 2px;
+        flex-shrink: 0;
       }
       button, input, select {
         background: #1e293b;
         color: #f8fafc;
         border-color: #334155;
-        min-height: 36px;
-        font-size: 13px;
+        min-height: 32px;
+        font-size: 12px;
       }
       button:hover:not(:disabled) {
         background: #334155;
       }
       .btn-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 17px;
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
       }
       input#page {
-        width: 36px;
+        width: 32px;
+        height: 30px;
+        padding: 2px;
         background: #0f172a;
         color: #f8fafc;
+        font-size: 12px;
       }
       #pages {
         color: #94a3b8;
         font-size: 11px;
+        padding: 0 2px;
       }
       select#zoom {
-        font-size: 12px;
-        padding: 4px 6px;
-        max-width: 105px;
+        font-size: 11.5px;
+        padding: 3px 4px;
+        max-width: 95px;
       }
       main {
-        padding: 2px 0 20px 0; /* Zero wasted horizontal padding on mobile! */
+        padding: 2px 0 20px 0;
         background: #0f172a;
       }
       .pdf-page {
@@ -306,7 +303,7 @@
       <label style="display:flex;align-items:center;margin:0;">
         <input id="page" type="number" min="1" value="1" disabled aria-label="Current Page">
       </label>
-      <span id="pages">of …</span>
+      <span id="pages">/ …</span>
       <button id="nextPage" class="btn-icon" type="button" title="അടുത്ത പേജ് (Next Page)" disabled aria-label="Next Page">›</button>
     </div>
 
@@ -314,13 +311,13 @@
     <div class="toolbar-group">
       <button id="zoomOut" class="btn-icon" type="button" title="ചെറുതാക്കുക (Zoom Out)" disabled aria-label="Zoom Out">−</button>
       <select id="zoom" disabled aria-label="Zoom scale">
-        <option value="fit">Fit Width (സ്ക്രീൻ വീതി)</option>
-        <option value="read">📖 Read Mode (135%)</option>
-        <option value="1">100% (Normal)</option>
-        <option value="1.25">125% (Large)</option>
-        <option value="1.5">150% (XL)</option>
+        <option value="fit">Fit Width</option>
+        <option value="read">📖 Read 135%</option>
+        <option value="1">100%</option>
+        <option value="1.25">125%</option>
+        <option value="1.5">150%</option>
         <option value="1.75">175%</option>
-        <option value="2">200% (2X)</option>
+        <option value="2">200%</option>
         <option value=".75">75%</option>
       </select>
       <button id="zoomIn" class="btn-icon" type="button" title="വലുതാക്കുക (Zoom In)" disabled aria-label="Zoom In">+</button>
@@ -361,7 +358,7 @@
       el('zoomOut').disabled = !hasPdf;
       el('zoomIn').disabled = !hasPdf;
       el('page').value = pageNumber;
-      el('pages').textContent = 'of ' + (pdf ? pdf.numPages : '…');
+      el('pages').textContent = '/ ' + (pdf ? pdf.numPages : '…');
     }
 
     const fitScale = (page) => {
@@ -379,7 +376,7 @@
         return Math.max(0.25, Math.min(3.0, (availWidth - padding) / original.width));
       }
       if (zVal === 'read') {
-        // Dedicated comfortable reading mode on phones & tablets: 135% of fit width or minimum 1.25
+        // Dedicated comfortable reading mode: 135% of fit width or minimum 1.25
         const availWidth = el('reader').clientWidth || window.innerWidth;
         const baseFit = (availWidth - 4) / original.width;
         return Math.max(1.20, Math.min(2.5, baseFit * 1.35));
@@ -417,7 +414,7 @@
           section.style.minHeight = (viewport.height + 24) + 'px';
           
           const canvas = document.createElement('canvas');
-          // High-DPI support: Crisp vector anti-aliased rendering for Malayalam
+          // High-DPI support: Crisp anti-aliased rendering for Malayalam
           const ratio = Math.min(Math.max(window.devicePixelRatio || 1, isMobile ? 2.0 : 1.5), 2.5);
           
           canvas.width = Math.floor(viewport.width * ratio);
@@ -598,7 +595,7 @@
     async function loadScript(src) {
       await new Promise((resolve, reject) => {
         const script = document.createElement('script');
-        script.src = src;
+        script.src = script;
         script.async = true;
         script.onload = resolve;
         script.onerror = () => reject(Error('Could not load the document viewer'));
@@ -657,7 +654,7 @@
         }).promise;
 
         el('page').max = pdf.numPages;
-        // Auto select "fit" mode on mobile by default so it takes 100% of the screen width
+        // Default to "fit" on mobile, takes 100% of the screen width with high-DPI crisp rendering
         if (window.innerWidth <= 768) {
           el('zoom').value = 'fit';
         }
