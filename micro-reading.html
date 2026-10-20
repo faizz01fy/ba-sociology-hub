@@ -854,8 +854,7 @@
 
     <!-- Module Filters -->
     <nav class="filter-wrapper" aria-label="Filter by module">
-      <button class="filter-btn active" data-filter="all" onclick="filterModule('all', this)">എല്ലാം (All 23 Units)</button>
-      <button class="filter-btn" data-filter="mod1" onclick="filterModule('mod1', this)">മൊഡ്യൂൾ 1: ചോദനവും പ്രദാനവും (5)</button>
+      <button class="filter-btn active" data-filter="mod1" onclick="filterModule('mod1', this)">മൊഡ്യൂൾ 1: ചോദനവും പ്രദാനവും (5)</button>
       <button class="filter-btn" data-filter="mod2" onclick="filterModule('mod2', this)">മൊഡ്യൂൾ 2: ഉപഭോക്തൃ തെരഞ്ഞെടുപ്പ് (4)</button>
       <button class="filter-btn" data-filter="mod3" onclick="filterModule('mod3', this)">മൊഡ്യൂൾ 3: ഉത്പാദനവും ചെലവും (8)</button>
       <button class="filter-btn" data-filter="mod4" onclick="filterModule('mod4', this)">മൊഡ്യൂൾ 4: വിപണി ഘടനകൾ (3)</button>
@@ -959,7 +958,7 @@
       </section>
 
       <!-- ==================== MOD2 ==================== -->
-      <section class="module-section" data-mod="mod2">
+      <section class="module-section" data-mod="mod2" style="display: none;">
         <div class="module-header">
           <h2>മൊഡ്യൂൾ 2: ഉപഭോക്തൃ തെരഞ്ഞെടുപ്പും തീരുമാനങ്ങളും (Consumer Choice & Decision-Making)</h2>
           <span class="module-tag">Module 2 · Units 6 to 9</span>
@@ -1030,7 +1029,7 @@
       </section>
 
       <!-- ==================== MOD3 ==================== -->
-      <section class="module-section" data-mod="mod3">
+      <section class="module-section" data-mod="mod3" style="display: none;">
         <div class="module-header">
           <h2>മൊഡ്യൂൾ 3: ഉത്പാദനവും ചെലവ് ചലനാത്മകതയും (Production & Cost Dynamics)</h2>
           <span class="module-tag">Module 3 · Units 10 to 17</span>
@@ -1161,7 +1160,7 @@
       </section>
 
       <!-- ==================== MOD4 ==================== -->
-      <section class="module-section" data-mod="mod4">
+      <section class="module-section" data-mod="mod4" style="display: none;">
         <div class="module-header">
           <h2>മൊഡ്യൂൾ 4: മത്സരപരവും കുത്തകപരവുമായ വിപണി ഘടനകൾ (Competitive & Monopoly Structures)</h2>
           <span class="module-tag">Module 4 · Units 18 to 20</span>
@@ -1217,7 +1216,7 @@
       </section>
 
       <!-- ==================== MOD5 ==================== -->
-      <section class="module-section" data-mod="mod5">
+      <section class="module-section" data-mod="mod5" style="display: none;">
         <div class="module-header">
           <h2>മൊഡ്യൂൾ 5: ഒലിഗോപോളിയും അപൂർണ്ണ മത്സര വിപണികളും (Oligopoly & Imperfect Competition)</h2>
           <span class="module-tag">Module 5 · Units 21 to 23</span>
@@ -1562,9 +1561,9 @@
         if (countBadge) countBadge.style.display = 'none';
         cards.forEach(card => card.style.display = 'grid');
         const activeBtn = document.querySelector('.filter-btn.active');
-        const activeMod = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+        const activeMod = activeBtn ? activeBtn.getAttribute('data-filter') : 'mod1';
         sections.forEach(sec => {{
-          if (activeMod === 'all' || sec.getAttribute('data-mod') === activeMod) {{
+          if (sec.getAttribute('data-mod') === activeMod) {{
             sec.style.display = 'block';
           }} else {{
             sec.style.display = 'none';
@@ -1648,7 +1647,10 @@
     }}, true);
 
     document.addEventListener('DOMContentLoaded', function() {{
-      filterModule('all', document.querySelector('.filter-btn.active'));
+      const mod1Btn = document.querySelector('.filter-btn[data-filter="mod1"]');
+      if (mod1Btn) {{
+        filterModule('mod1', mod1Btn);
+      }}
     }});
   </script>
 
