@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 16: Preventing Morally Objectionable Biases in Learning Algorithms</title>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+  @page {
+    size: A4;
+    margin: 16mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+    @bottom-left {
+      content: "University of Calicut · BA Philosophy · Philosophy of AI (PHL1MN102)";
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    line-height: 1.65;
+    font-size: 9.8pt;
+    margin: 0;
+    padding: 0;
+  }
+  .header-box {
+    border: 2px solid #0f766e;
+    border-radius: 12px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+    margin-bottom: 20px;
+  }
+  .badge {
+    display: inline-block;
+    background: #0f766e;
+    color: #ffffff;
+    font-size: 8pt;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  h1 {
+    margin: 0 0 4px 0;
+    color: #115e59;
+    font-size: 15.5pt;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+  .sub-title {
+    font-size: 11.5pt;
+    font-weight: 700;
+    color: #0f766e;
+    margin-bottom: 8px;
+  }
+  .meta-info {
+    font-size: 8.5pt;
+    color: #334155;
+    font-weight: 600;
+    border-top: 1px dashed #99f6e4;
+    padding-top: 6px;
+    margin-top: 6px;
+  }
+  .section-title {
+    background: #0f766e;
+    color: #ffffff;
+    padding: 9px 15px;
+    border-radius: 8px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 22px 0 13px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-after: avoid;
+  }
+  .bilingual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    margin-bottom: 13px;
+    page-break-inside: avoid;
+  }
+  .card-en, .card-ml {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 13px 15px;
+    background: #ffffff;
+    font-size: 9.3pt;
+  }
+  .card-en {
+    border-left: 4px solid #2563eb;
+    background: #f8fafc;
+  }
+  .card-ml {
+    border-left: 4px solid #0f766e;
+    background: #ffffff;
+  }
+  .card-title {
+    font-weight: 800;
+    margin-bottom: 6px;
+    font-size: 9.8pt;
+  }
+  .card-en .card-title { color: #1e40af; }
+  .card-ml .card-title { color: #115e59; }
+  .table-box {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 8.8pt;
+  }
+  .table-box th, .table-box td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .table-box th {
+    background: #0f766e;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .table-box tr:nth-child(even) { background: #f8fafc; }
+  .concept-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-left: 5px solid #0d9488;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 13px 0;
+    font-size: 9.4pt;
+  }
+  .concept-box strong { color: #115e59; }
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0f766e;
+    border-radius: 8px;
+    padding: 13px 16px;
+    margin-bottom: 13px;
+    page-break-inside: avoid;
+  }
+  .qa-q {
+    font-weight: 800;
+    color: #115e59;
+    margin-bottom: 5px;
+    font-size: 9.8pt;
+  }
+  .qa-a {
+    color: #334155;
+    font-size: 9.3pt;
+    line-height: 1.6;
+  }
+  p { margin: 0 0 9px 0; }
+
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <div class="badge">Calicut University · Minor Philosophy (PHL1MN102)</div>
+    <h1>അധ്യായം 16: അൽഗോരിതം പക്ഷപാതം: വിവേചനങ്ങൾ തടയുന്നതിനുള്ള ദാർശനിക മാർഗ്ഗങ്ങൾ</h1>
+    <div class="sub-title">Chapter 16: Algorithmic Bias: Preventing Unfair Biases in Machine Learning</div>
+    <div class="meta-info">
+      <span>📚 Module 4 · Unit 4.2 (a)</span> &nbsp;|&nbsp; 
+      <span>⏱️ 15 Hours Module Weightage · 15 Marks</span>
+    </div>
+  </div>
+
+  <div class="concept-box">
+    <strong>പാഠ്യസംഗ്രഹം (Module Scope):</strong> മെഷീൻ ലേണിംഗ് അൽഗോരിതങ്ങൾ ചരിത്രപരമായ ഡാറ്റയിൽ നിന്നും മനുഷ്യസമൂഹത്തിലെ ലിംഗ-വംശീയ-വർഗ്ഗ വിവേചനങ്ങൾ അതേപടി അനുകരിച്ച് പക്ഷപാതപരമായ തീരുമാനങ്ങളെടുക്കുന്നത് എങ്ങനെ തടയാം എന്ന് ഈ അധ്യായം അപഗ്രഥിക്കുന്നു. നീതി (Fairness), സുതാര്യത (Transparency), ഉത്തരവാദിത്തം (Accountability) എന്നീ FATE തത്ത്വങ്ങൾ വിശദീകരിക്കപ്പെടുന്നു.
+  </div>
+
+
+  <div class="section-title">
+    <span>1. അൽഗോരിതം പക്ഷപാതം: നിർവ്വചനവും ഉറവിടങ്ങളും (Sources of Bias)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Definition & Origins of Algorithmic Discrimination</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">യന്ത്രങ്ങൾ പക്ഷപാതം പഠിക്കുന്നത് എങ്ങനെ?</div>
+      
+              <p>അൽഗോരിതങ്ങൾ നിഷ്പക്ഷമായ ഗണിതസൂത്രങ്ങളാണെന്ന ജനകീയ ധാരണ തെറ്റാണ്. ഒരു എഐ സിസ്റ്റം വ്യവസ്ഥാപിതമായി ഏതെങ്കിലും ഒരു പ്രത്യേക വിഭാഗത്തിനെതിരെ അന്യായമായ അനീതി കാട്ടുമ്പോഴാണ് <strong>അൽഗോരിതം പക്ഷപാതം (Algorithmic Bias)</strong> ഉണ്ടാകുന്നത്.</p>
+              <p>പ്രധാന ഉറവിടങ്ങൾ:<br>
+              <strong>1. ചരിത്രപരമായ ഡാറ്റാ പക്ഷപാതം:</strong> മനുഷ്യസമൂഹത്തിൽ നൂറ്റാണ്ടുകളായി നിലനിന്നിരുന്ന വംശീയ-ലിംഗ വിവേചനങ്ങൾ അടങ്ങിയ പഴയ ഡാറ്റ പഠനത്തിനായി നൽകുമ്പോൾ മെഷീൻ അത് ശാശ്വത സത്യമായി കാണുന്നു.<br>
+              <strong>2. പ്രതിനിധാനക്കുറവ് (Sampling Bias):</strong> ന്യൂനപക്ഷങ്ങളുടെ വിവരങ്ങൾ ഡാറ്റാബേസിൽ വേണ്ടത്ര ഉൾപ്പെടുത്താതിരിക്കൽ.<br>
+              <strong>3. പ്രോക്സി വേരിയബിളുകൾ:</strong> നേരിട്ടുള്ള ജാതി/വംശ വിവരങ്ങൾ ഒഴിവാക്കിയാലും പിൻകോഡോ വിലാസമോ പോലുള്ള ഘടകങ്ങളിലൂടെ പരോക്ഷ വിവേചനം കടന്നുകൂടുന്നു.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Flawed Data In, Flawed Justice Out</div>
+      
+              <p><strong>Algorithmic bias</strong> refers to systematic and unfair discrimination produced by computer systems favoring certain privileged groups while disenfranchising marginalized populations.</p>
+              <p>Primary catalysts include:<br>
+              <strong>1. Historical training biases:</strong> Past human prejudices embedded in historical data archives are replicated and amplified.<br>
+              <strong>2. Sampling deficiencies:</strong> Marginalized communities are grossly under-represented in model benchmarks.<br>
+              <strong>3. Proxy features:</strong> Even if protected attributes (race, gender) are excluded, correlated variables (postal codes, credit inquiries) serve as surrogate discriminatory channels.</p>
+            
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>2. നീതിശാസ്ത്രപരമായ പ്രത്യാഘാതങ്ങൾ (Ethical Implications: COMPAS)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Real-World Injustice: Recidivism & Hiring</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">യഥാർത്ഥ ലോകത്തിലെ വിവേചനങ്ങൾ</div>
+      
+              <p><strong>നീതിനിർവ്വഹണ രംഗം (COMPAS Algorithm):</strong> അമേരിക്കൻ കോടതികളിൽ പ്രതികൾ വീണ്ടും കുറ്റകൃത്യം ചെയ്യാനുള്ള സാധ്യത മുൻകൂട്ടി പ്രവചിക്കാൻ ഉപയോഗിച്ച COMPAS അൽഗോരിതം കറുത്തവർഗ്ഗക്കാർക്കെതിരെ ഇരട്ടി തെറ്റായ റിസ്ക് സ്കോറുകൾ (False Positives) നൽകിയതായി കണ്ടെത്തുകയുണ്ടായി.</p>
+              <p><strong>തൊഴിൽ റിക്രൂട്ട്മെന്റ്:</strong> പ്രമുഖ കമ്പനികളുടെ റിക്രൂട്ട്മെന്റ് അൽഗോരിതങ്ങൾ മുൻകാല റെക്കോർഡുകൾ പരിശോധിച്ച് സ്ത്രീകളുടെ റെസ്യൂമെകൾ സ്വാഭാവികമായി തള്ളിക്കളഞ്ഞത് വലിയ ധാർമ്മിക പ്രതിസന്ധിയുണ്ടാക്കി. ഒരു അൽഗോരിതത്തിന്റെ കണക്കുകൂട്ടൽ വ്യക്തികളുടെ അടിസ്ഥാന അവകാശങ്ങളെയും അവസരങ്ങളെയും നിഷേധിക്കുന്നു.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Quantified Discrimination in High-Stakes Arenas</div>
+      
+              <p><strong>Criminal Justice (COMPAS):</strong> Risk-assessment algorithms designed to predict recidivism systematically yielded higher false-positive rates for Black defendants compared to white counterparts.</p>
+              <p><strong>Algorithmic Hiring:</strong> Automated CV-screening engines penalized resumes containing the word 'women's' due to historic male dominance in technical roles, illustrating how unmonitored optimization entrenches systemic exclusion.</p>
+            
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>3. ഫെയർനസ് സങ്കല്പങ്ങൾ (Theories of Algorithmic Fairness)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Philosophical Conceptions of Fairness</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">വ്യക്തിഗത നീതിയും ഗ്രൂപ്പ് നീതിയും</div>
+      
+              <p>അൽഗോരിതത്തിൽ 'നീതി' (Fairness) എന്നത് ഒരൊറ്റ മാനദണ്ഡമല്ലെന്ന് തത്ത്വചിന്ത വ്യക്തമാക്കുന്നു:<br>
+              <strong>1. വ്യക്തിഗത നീതി (Individual Fairness):</strong> സമാന യോഗ്യതകളും സാഹചര്യങ്ങളുമുള്ള രണ്ട് വ്യക്തികളോട് അൽഗോരിതം ഒരുപോലെ പെരുമാറണം.<br>
+              <strong>2. ഗ്രൂപ്പ് നീതി / ഡെമോഗ്രാഫിക് പാരിറ്റി (Group Fairness):</strong> വ്യത്യസ്ത സാമൂഹിക വിഭാഗങ്ങൾക്കിടയിൽ പോസിറ്റീവ് തീരുമാനങ്ങളുടെ അനുപാതം തുല്യമായിരിക്കണം.<br>
+              <strong>ദാർശനിക പ്രതിസന്ധി:</strong> ഒരേ സമയം വ്യക്തിഗത നീതിയും ഗ്രൂപ്പ് നീതിയും പൂർണ്ണമായി പാലിക്കുക എന്നത് ഗണിതശാസ്ത്രപരമായി അസാധ്യമാണെന്ന് ഗവേഷണങ്ങൾ തെളിയിക്കുന്നു. ഇവിടെ നാം ഏത് ധാർമ്മിക സിദ്ധാന്തത്തിനാണ് മുൻഗണന നൽകുന്നത് എന്നത് പ്രധാനമാണ്.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Individual Equity vs Group Parity</div>
+      
+              <p>Philosophical definitions of fairness in machine learning conflict mathematically:<br>
+              <strong>1. Individual Fairness:</strong> Treats similar individuals identically regardless of group affiliation.<br>
+              <strong>2. Group Fairness / Demographic Parity:</strong> Requires equal selection proportions across diverse protected classes.<br>
+              <strong>Impossibility Theorem:</strong> Mathematical fairness metrics cannot simultaneously satisfy independence, separation, and sufficiency, requiring unavoidable normative trade-offs.</p>
+            
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>4. പരിഹാരങ്ങൾ: FATE ചട്ടക്കൂടും ഓഡിറ്റിംഗും (FATE & Debiasing)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">FATE Framework & Algorithmic Governance</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">പക്ഷപാത നിർമ്മാർജ്ജന വഴികൾ</div>
+      
+              <p>അൽഗോരിതങ്ങളെ ധാർമ്മികമായി ഉത്തരവാദിത്തമുള്ളതാക്കാൻ <strong>FATE</strong> ചട്ടക്കൂട് മുന്നോട്ടുവെക്കുന്നു:<br>
+              • <strong>Fairness (നീതി):</strong> വിവേചനരഹിതമായ ഡാറ്റാ നിർമ്മാണവും പ്രീ-പ്രോസസ്സിംഗ് തിരുത്തലുകളും.<br>
+              • <strong>Accountability (ഉത്തരവാദിത്തം):</strong> അൽഗോരിതം തെറ്റ് ചെയ്താൽ സാങ്കേതിക കമ്പനികളും സ്ഥാപനങ്ങളും നിയമപരമായ ഉത്തരവാദിത്തം ഏറ്റെടുക്കണം.<br>
+              • <strong>Transparency (സുതാര്യത):</strong> ബ്ലാക്ക്-ബോക്സ് മാതൃകകൾ മാറ്റി ന്യായീകരണങ്ങൾ വ്യക്തമാക്കുന്ന എക്സ്പ്ലെയ്നബിൾ AI (XAI) വികസിപ്പിക്കുക.<br>
+              • <strong>Ethics (ധാർമ്മികത):</strong> സ്വതന്ത്ര വിദഗ്ദ്ധരുടെ ആഭിമുഖ്യത്തിലുള്ള അൽഗോരിതമിക് ഓഡിറ്റിംഗ് (Algorithmic Auditing).</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Institutional & Algorithmic Safeguards</div>
+      
+              <p>The <strong>FATE framework</strong> grounds institutional algorithmic justice:<br>
+              • <strong>Fairness:</strong> Mathematical debiasing across pre-processing, in-processing, and post-processing stages.<br>
+              • <strong>Accountability:</strong> Clear liability models enforcing human responsibility for automated decisions.<br>
+              • <strong>Transparency:</strong> Explainable AI (XAI) breaking through opaque 'black-box' deep networks.<br>
+              • <strong>Ethics:</strong> Independent external auditing panels verifying social compliance before deployment.</p>
+            
+    </div>
+  </div>
+
+
+  <div class="section-title">
+    <span>പക്ഷപാത പരിഹാര ഘട്ടങ്ങൾ</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Technical Debiasing Intervention Pipeline</span>
+  </div>
+  <table class="table-box">
+    <thead>
+      <tr>
+        <th>ഘട്ടം (Stage)</th><th>പ്രവർത്തന രീതി (Intervention)</th><th>ധാർമ്മിക ലക്ഷ്യം (Ethical Goal)</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr><td>പ്രീ-പ്രോസസ്സിംഗ് (Pre-processing)</td><td>പരിശീലന ഡാറ്റയിൽ നിന്ന് മുൻവിധികളും പ്രോക്സി ഘടകങ്ങളും നീക്കം ചെയ്യൽ</td><td>ചരിത്രപരമായ വിവേചനങ്ങൾ മോഡൽ കാണാതിരിക്കാൻ ഉറപ്പാക്കുന്നു</td></tr>
+    <tr><td>ഇൻ-പ്രോസസ്സിംഗ് (In-processing)</td><td>അൽഗോരിതത്തിന്റെ ലക്ഷ്യ സൂത്രത്തിൽ ഫെയർനസ് പെനാൽറ്റികൾ ഉൾപ്പെടുത്തൽ</td><td>കൃത്യതയ്ക്കൊപ്പം തുല്യതയ്ക്കും തുല്യ ഗണിത മൂല്യം നൽകുന്നു</td></tr>
+    <tr><td>പോസ്റ്റ്-പ്രോസസ്സിംഗ് (Post-processing)</td><td>മോഡൽ നൽകുന്ന അന്തിമ തീരുമാനങ്ങളുടെ ത്രെഷോൾഡുകൾ പുനഃക്രമീകരിക്കൽ</td><td>വിവിധ ഗ്രൂപ്പുകൾക്ക് തുല്യ പരിഗണന ലഭിക്കുന്നുണ്ടെന്ന് ഉറപ്പാക്കൽ</td></tr>
+    <tr><td>എക്സ്പ്ലെയ്നബിൾ എഐ (XAI)</td><td>തീരുമാനങ്ങൾക്ക് കാരണമായ ലോജിക് മനുഷ്യർക്ക് വായിക്കാവുന്നതാക്കൽ</td><td>അന്യായമായ വിവേചനം കോടതികൾക്ക് ഓഡിറ്റ് ചെയ്യാൻ സഹായിക്കുന്നു</td></tr>
+
+    </tbody>
+  </table>
+
+
+  <div class="section-title">
+    <span>പ്രധാന പരീക്ഷാ ആശയങ്ങൾ (Key Examination Points)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Core Revision Points</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">മലയാളം സംഗ്രഹം (Key Takeaways)</div>
+      
+          <p>• <strong>അൽഗോരിതം പക്ഷപാതം:</strong> മുൻകാല വിവേചനങ്ങൾ ഡാറ്റയിലൂടെ മെഷീൻ സ്വയമേവ പുനരുൽപ്പാദിപ്പിക്കുന്ന പ്രതിഭാസം.<br>
+          • <strong>പ്രോക്സി ഘടകങ്ങൾ:</strong> സംരക്ഷിത വിവരങ്ങൾ മറച്ചാലും പരോക്ഷ തെളിവുകളിലൂടെ വിവേചനം ആവർത്തിക്കപ്പെടാം.<br>
+          • <strong>FATE തത്ത്വങ്ങൾ:</strong> ഫെയർനസ്, അക്കൗണ്ടബിലിറ്റി, ട്രാൻസ്പരൻസി, എത്തിക്സ് എന്നിവ അൽഗോരിത വികാസത്തിൽ അനിവാര്യമാണ്.<br>
+          • <strong>ഓഡിറ്റിംഗ്:</strong> വിവേചനരഹിതമായ പ്രവർത്തനത്തിന് സ്വതന്ത്ര ബാഹ്യ നിരീക്ഷണം നിർബന്ധമാണ്.</p>
+        
+    </div>
+    <div class="card-en">
+      <div class="card-title">English Summary (Key Takeaways)</div>
+      
+          <p>• <strong>Algorithmic Bias:</strong> Systemic disparate impact resulting from biased historical training datasets.<br>
+          • <strong>Proxy Variables:</strong> Excluding direct identifiers does not prevent indirect discrimination.<br>
+          • <strong>FATE Principles:</strong> Fairness, Accountability, Transparency, and Ethics form the ethical pillar.<br>
+          • <strong>Explainability (XAI):</strong> Transparent decision paths are essential for legitimate judicial auditing.</p>
+        
+    </div>
+  </div>
+
+
+  <div class="section-title">
+    <span>വിചിന്തന ചോദ്യങ്ങൾ (Review & Discussion Questions)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Academic Essay & Short Questions</span>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">1. എന്താണ് അൽഗോരിതമിക് പക്ഷപാതം? പരിശീലന ഡാറ്റയിലെ വിവേചനം എങ്ങനെയാണ് ഇതിന് കാരണമാകുന്നത്?</div>
+    <div class="qa-a">കമ്പ്യൂട്ടർ അൽഗോരിതങ്ങൾ ചില പ്രത്യേക വിഭാഗങ്ങൾക്കെതിരെ അന്യായമായി വിവേചനം പുലർത്തുന്നതാണ് അൽഗോരിതമിക് പക്ഷപാതം. മുൻകാല മനുഷ്യസമൂഹത്തിലെ പക്ഷപാതങ്ങൾ അടങ്ങിയ ഡാറ്റയാണ് യന്ത്രങ്ങൾക്ക് നൽകുന്നതെങ്കിൽ, യന്ത്രം ആ ചരിത്രപരമായ അസമത്വങ്ങളെ സാധാരണ നിയമങ്ങളായി സ്വീകരിച്ച് പക്ഷപാതപരമായ തീരുമാനങ്ങളെടുക്കുന്നു.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">2. FATE ചട്ടക്കൂടിന്റെ പ്രധാന ഘടകങ്ങൾ ഏതൊക്കെയാണ്?</div>
+    <div class="qa-a">ഫെയർനസ് (നീതി), അക്കൗണ്ടബിലിറ്റി (ഉത്തരവാദിത്തം), ട്രാൻസ്പരൻസി (സുതാര്യത), എത്തിക്സ് (ധാർമ്മികത) എന്നിവയാണ് FATE ചട്ടക്കൂടിന്റെ നാല് ഘടകങ്ങൾ.</div>
+  </div>
+
+
+</body>
+</html>

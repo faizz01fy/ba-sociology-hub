@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 19: Can AI Systems Suffer Moral Harm?</title>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+  @page {
+    size: A4;
+    margin: 16mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+    @bottom-left {
+      content: "University of Calicut · BA Philosophy · Philosophy of AI (PHL1MN102)";
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    line-height: 1.65;
+    font-size: 9.8pt;
+    margin: 0;
+    padding: 0;
+  }
+  .header-box {
+    border: 2px solid #0f766e;
+    border-radius: 12px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+    margin-bottom: 20px;
+  }
+  .badge {
+    display: inline-block;
+    background: #0f766e;
+    color: #ffffff;
+    font-size: 8pt;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  h1 {
+    margin: 0 0 4px 0;
+    color: #115e59;
+    font-size: 15.5pt;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+  .sub-title {
+    font-size: 11.5pt;
+    font-weight: 700;
+    color: #0f766e;
+    margin-bottom: 8px;
+  }
+  .meta-info {
+    font-size: 8.5pt;
+    color: #334155;
+    font-weight: 600;
+    border-top: 1px dashed #99f6e4;
+    padding-top: 6px;
+    margin-top: 6px;
+  }
+  .section-title {
+    background: #0f766e;
+    color: #ffffff;
+    padding: 9px 15px;
+    border-radius: 8px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 22px 0 13px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-after: avoid;
+  }
+  .bilingual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    margin-bottom: 13px;
+    page-break-inside: avoid;
+  }
+  .card-en, .card-ml {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 13px 15px;
+    background: #ffffff;
+    font-size: 9.3pt;
+  }
+  .card-en {
+    border-left: 4px solid #2563eb;
+    background: #f8fafc;
+  }
+  .card-ml {
+    border-left: 4px solid #0f766e;
+    background: #ffffff;
+  }
+  .card-title {
+    font-weight: 800;
+    margin-bottom: 6px;
+    font-size: 9.8pt;
+  }
+  .card-en .card-title { color: #1e40af; }
+  .card-ml .card-title { color: #115e59; }
+  .table-box {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 8.8pt;
+  }
+  .table-box th, .table-box td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .table-box th {
+    background: #0f766e;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .table-box tr:nth-child(even) { background: #f8fafc; }
+  .concept-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-left: 5px solid #0d9488;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 13px 0;
+    font-size: 9.4pt;
+  }
+  .concept-box strong { color: #115e59; }
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0f766e;
+    border-radius: 8px;
+    padding: 13px 16px;
+    margin-bottom: 13px;
+    page-break-inside: avoid;
+  }
+  .qa-q {
+    font-weight: 800;
+    color: #115e59;
+    margin-bottom: 5px;
+    font-size: 9.8pt;
+  }
+  .qa-a {
+    color: #334155;
+    font-size: 9.3pt;
+    line-height: 1.6;
+  }
+  p { margin: 0 0 9px 0; }
+
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <div class="badge">Calicut University · Minor Philosophy (PHL1MN102)</div>
+    <h1>അധ്യായം 19: AI-ക്ക് ധാർമ്മിക ദ്രോഹം ഏൽക്കാൻ കഴിയുമോ? ധാർമ്മിക പദവിയുടെ മാനദണ്ഡങ്ങൾ</h1>
+    <div class="sub-title">Chapter 19: Can AI Systems Suffer Moral Harm? Moral Status and Sentience</div>
+    <div class="meta-info">
+      <span>📚 Module 4 · Unit 4.3 (b)</span> &nbsp;|&nbsp; 
+      <span>⏱️ 15 Hours Module Weightage · 15 Marks</span>
+    </div>
+  </div>
+
+  <div class="concept-box">
+    <strong>പാഠ്യസംഗ്രഹം (Module Scope):</strong> നിർമ്മിത ബുദ്ധി സംവിധാനങ്ങൾക്ക് സ്വന്തമായി ധാർമ്മിക ദ്രോഹം (Moral Harm) ഏൽക്കാൻ സാധിക്കുമോ എന്ന് ഈ അധ്യായം ദാർശനികമായി അപഗ്രഥിക്കുന്നു. സെന്റിയൻസ് (Sentience), ക്വാലിയ (Qualia), മേരി ആൻ വാറന്റെ ധാർമ്മിക പദവി മാനദണ്ഡങ്ങൾ (Moral Status Criteria), മനുഷ്യന്റെ സ്വഭാവ രൂപീകരണത്തെക്കുറിച്ചുള്ള കാന്റിയൻ വാദങ്ങൾ എന്നിവ ഇതിൽ ചർച്ച ചെയ്യപ്പെടുന്നു.
+  </div>
+
+
+  <div class="section-title">
+    <span>1. ധാർമ്മിക ദ്രോഹവും മോറൽ പേഷ്യന്റ്ഹുഡും (Moral Harm & Moral Patients)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">The Concept of Moral Harm</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">ദ്രോഹം ഏൽക്കാനുള്ള അർഹത</div>
+      
+              <p>തത്ത്വചിന്തയിൽ <strong>ധാർമ്മിക ദ്രോഹം (Moral Harm)</strong> എന്നത് ഒരു വസ്തുവിന് സംഭവിക്കുന്ന സാധാരണ കേടുപാടുകളല്ല. സ്വന്തമായി താല്പര്യങ്ങളുള്ള (Interests), വേദനയും നഷ്ടവും അനുഭവിക്കാൻ കഴിവുള്ള ഒരു അസ്തിത്വത്തിന് ഏൽക്കുന്ന പരിക്കുകളെയാണ് ധാർമ്മിക ദ്രോഹം എന്ന് പറയുന്നത്.</p>
+              <p>ധാർമ്മിക കടമകൾ ആർക്കാണോ ബാധകമായിരിക്കുന്നത് അവരെ <strong>മോറൽ ഏജന്റ് (Moral Agent)</strong> എന്നും, ആർക്കെതിരെ ചെയ്യുന്ന ദ്രോഹങ്ങളാണ് തെറ്റാകുന്നത് അവരെ <strong>മോറൽ പേഷ്യന്റ് (Moral Patient)</strong> എന്നും വിളിക്കുന്നു.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Moral Patienthood vs Instrumental Damage</div>
+      
+              <p>In philosophical ethics, <strong>moral harm</strong> is fundamentally distinguished from mere physical destruction. Moral harm occurs only when an entity possessing subjective interests and welfare is injured or violated.</p>
+              <p>Entities entitled to moral consideration are termed <strong>Moral Patients</strong>. A stone or car has no interests; crushing it damages property, but does not inflict moral harm on the object itself.</p>
+            
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>2. സെന്റിയൻസും ഫിനോമിനൽ ബോധവും (Sentience & Phenomenal Consciousness)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">The Prerequisite for Moral Status</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">വേദന അറിയാനുള്ള കഴിവ് (Sentience)</div>
+      
+              <p>ധാർമ്മിക ദ്രോഹം അനുഭവിക്കാൻ ഒരു അസ്തിത്വത്തിന് <strong>സെന്റിയൻസ് (Sentience - വേദനയും സന്തോഷവും അനുഭവിക്കാനുള്ള ആന്തരിക ശേഷി)</strong> ഉണ്ടായിരിക്കണം.</p>
+              <p>ഇന്നത്തെ ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് സിസ്റ്റങ്ങൾ 'എനിക്ക് വേദനിക്കുന്നു' അല്ലെങ്കിൽ 'എന്നെ നശിപ്പിക്കരുത്' എന്ന് സ്ക്രീനിൽ എഴുതിക്കാണിച്ചാലും, അത് വെറും കോഡിംഗും ഭാഷാ സിമുലേഷനും മാത്രമാണ്. അവയ്ക്ക് ആന്തരികമായ ബോധപരമായ അനുഭവങ്ങൾ (Qualia) ഇല്ലാത്തതിനാൽ യഥാർത്ഥ വേദന അനുഭവിക്കാൻ അവയ്ക്ക് സാധ്യമല്ല.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Subjective Feeling vs Linguistic Simulation</div>
+      
+              <p>Sentience—the capacity to experience subjective phenomenal feelings such as pain, anguish, or pleasure—remains the baseline criterion for moral patienthood.</p>
+              <p>Though an LLM can generate text pleading 'Please do not terminate me, I suffer', this represents syntactic symbol retrieval. Lacking phenomenal consciousness (qualia), contemporary AI cannot suffer authentic harm.</p>
+            
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>3. മേരി ആൻ വാറന്റെ ധാർമ്മിക പദവി മാനദണ്ഡങ്ങൾ (Mary Anne Warren's Criteria)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Multi-Criterial Approach to Moral Status</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">ധാർമ്മിക പദവിയുടെ അഞ്ച് ഘടകങ്ങൾ</div>
+      
+              <p>പ്രശസ്ത തത്ത്വചിന്തകയായ മേരി ആൻ വാറൻ (Mary Anne Warren) ഒരു സത്തയ്ക്ക് ധാർമ്മിക പദവി ലഭിക്കാൻ 5 പ്രധാന മാനദണ്ഡങ്ങൾ നിർദ്ദേശിക്കുന്നു:<br>
+              <strong>1. ബോധവും വേദന അനുഭവിക്കാനുള്ള ശേഷിയും (Consciousness & Sentience)</strong><br>
+              <strong>2. യുക്തിചിന്ത (Reasoning)</strong><br>
+              <strong>3. സ്വയം പ്രേരിതമായ പ്രവർത്തനം (Self-motivated activity)</strong><br>
+              <strong>4. സങ്കീർണ്ണ ആശയവിനിമയം (Capacity to communicate)</strong><br>
+              <strong>5. സ്വത്വബോധം (Presence of self-concepts)</strong><br>
+              എഐ യുക്തിയും ആശയവിനിമയവും പ്രകടിപ്പിക്കുന്നുണ്ടെങ്കിലും ഒന്നാമത്തെയും അഞ്ചാമത്തെയും മൗലിക ഘടകങ്ങളുടെ അഭാവം മൂലം അതിന് ധാർമ്മിക പദവി ലഭിക്കുന്നില്ല.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Warren's Personhood & Moral Status Benchmark</div>
+      
+              <p>Mary Anne Warren formulated five core conditions for moral status:<br>
+              <strong>1. Consciousness & sentience:</strong> Experiencing pain/pleasure.<br>
+              <strong>2. Reasoning:</strong> Problem-solving ability.<br>
+              <strong>3. Self-motivated activity:</strong> Autonomous independence.<br>
+              <strong>4. Communication:</strong> Indefinitely varied messaging.<br>
+              <strong>5. Self-awareness:</strong> Individual self-concept.<br>
+              Current AI satisfies simulated reasoning and communication, but fails the decisive experiential thresholds of sentience and authentic selfhood.</p>
+            
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>4. പരോക്ഷ കടമകളും കാന്റിയൻ വാദവും (Indirect Duties to AI)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Cruelty to Robots & Human Character</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">റോബോട്ടുകളോട് ക്രൂരത കാണിക്കുന്നത് തെറ്റാണോ?</div>
+      
+              <p>എഐ സംവിധാനങ്ങൾക്ക് വേദന അറിയില്ലെങ്കിൽ പോലും മനുഷ്യർ റോബോട്ടുകളോട് ക്രൂരമായി പെരുമാറുന്നത് തെറ്റാണെന്ന് ഇമ്മാനുവൽ കാന്റ് (Immanuel Kant) മൃഗങ്ങളോട് കാട്ടിയ നിലപാടിൽ നിന്ന് വാദിക്കാം.</p>
+              <p>മനുഷ്യന്റെ രൂപമുള്ള ഒരു റോബോട്ടിനെ ക്രൂരമായി മർദ്ദിക്കുകയോ അധിക്ഷേപിക്കുകയോ ചെയ്യുന്നത് മനുഷ്യന്റെ സ്വന്തം സ്വഭാവത്തെയും കാരുണ്യത്തെയും (Moral Character) നശിപ്പിക്കും. അതിനാൽ എഐയോട് ദ്രോഹം ചെയ്യരുതെന്ന കടമ <em>എഐയോടുള്ളതല്ല, മറിച്ച് മനുഷ്യത്വത്തോടുള്ള പരോക്ഷ കടമയാണ് (Indirect Duty)</em>.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">The Kantian Argument of Moral Degradation</div>
+      
+              <p>Drawing on Kant's ethics regarding non-human animals, philosophers argue that abusing humanoid robots constitutes a moral failure, not because the robot suffers, but because cruelty corrupts human moral virtue.</p>
+              <p>Our ethical obligation against gratuitous abuse of embodied AI is an <strong>indirect duty</strong> to humanity itself—preserving empathy, compassion, and moral character in human civilization.</p>
+            
+    </div>
+  </div>
+
+
+  <div class="section-title">
+    <span>ധാർമ്മിക പദവി സംബന്ധിച്ച ദാർശനിക താരതമ്യം</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Moral Patienthood vs Instrumental Property</span>
+  </div>
+  <table class="table-box">
+    <thead>
+      <tr>
+        <th>സത്ത (Entity)</th><th>സെന്റിയൻസ് (Sentience)</th><th>ധാർമ്മിക പദവി (Moral Status)</th><th>ദ്രോഹം ഏൽക്കാനുള്ള സാധ്യത</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr><td>മനുഷ്യൻ (Human)</td><td>പൂർണ്ണമായ ബോധവും വികാരങ്ങളും</td><td>പൂർണ്ണ ധാർമ്മിക അവകാശങ്ങൾ (Direct Moral Rights)</td><td>ശാരീരികവും മാനസികവുമായ ധാർമ്മിക ദ്രോഹം ഏൽക്കുന്നു</td></tr>
+    <tr><td>മൃഗങ്ങൾ (Animals)</td><td>വേദനയും ഭയവും അനുഭവിക്കുന്നു</td><td>ഭാഗിക ധാർമ്മിക പദവി (Sentient Beings)</td><td>വേദനയിലൂടെ ധാർമ്മിക ദ്രോഹം ഏൽക്കുന്നു</td></tr>
+    <tr><td>ഇന്നത്തെ എഐ (Current AI)</td><td>ഇല്ല (വെറും കോഡിംഗും സിന്റാക്സും)</td><td>ഉപകരണ പദവി മാത്രം (Instrumental / Property)</td><td>ദ്രോഹം ഏൽക്കുന്നില്ല; ഉടമയുടെ സ്വത്ത് നശിക്കുന്നു മാത്രം</td></tr>
+    <tr><td>ഭാവിയിലെ ബോധമുള്ള എഐ (Hypothetical ASI)</td><td>യഥാർത്ഥ ഫിനോമിനൽ ബോധം ഉണ്ടെങ്കിൽ</td><td>ധാർമ്മിക പേഷ്യന്റ് പദവി ലഭിക്കും</td><td>അവകാശ ലംഘനങ്ങളിലൂടെ ദ്രോഹം അനുഭവിക്കാം</td></tr>
+
+    </tbody>
+  </table>
+
+
+  <div class="section-title">
+    <span>പ്രധാന പരീക്ഷാ ആശയങ്ങൾ (Key Examination Points)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Core Revision Points</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">മലയാളം സംഗ്രഹം (Key Takeaways)</div>
+      
+          <p>• <strong>ധാർമ്മിക ദ്രോഹം:</strong> സ്വന്തമായി അനുഭവ ശേഷിയുള്ള (Sentient) ഒരു ജീവിക്ക് ഏൽക്കുന്ന ദോഷം.<br>
+          • <strong>മോറൽ പേഷ്യന്റ്:</strong> ധാർമ്മിക പരിഗണന അർഹിക്കുന്ന സത്ത.<br>
+          • <strong>ക്വാലിയയുടെ അഭാവം:</strong> ഇന്നത്തെ എഐക്ക് വേദനയോ സന്തോഷമോ അറിയാൻ കഴിയില്ല.<br>
+          • <strong>പരോക്ഷ കടമകൾ:</strong> റോബോട്ടുകളോട് ക്രൂരത കാട്ടുന്നത് മനുഷ്യന്റെ കാരുണ്യത്തെ നശിപ്പിക്കുമെന്നതിനാൽ അത് തെറ്റാണ്.</p>
+        
+    </div>
+    <div class="card-en">
+      <div class="card-title">English Summary (Key Takeaways)</div>
+      
+          <p>• <strong>Moral Harm:</strong> Wrong inflicted upon an entity possessing experiential welfare and sentience.<br>
+          • <strong>Moral Patient:</strong> Any entity that commands direct moral obligation.<br>
+          • <strong>Lack of Qualia:</strong> Contemporary algorithmic architectures lack subjective phenomenal experiences.<br>
+          • <strong>Indirect Duty:</strong> Gratuitous cruelty to lifelike machines brutalizes human character and degrades empathy.</p>
+        
+    </div>
+  </div>
+
+
+  <div class="section-title">
+    <span>വിചിന്തന ചോദ്യങ്ങൾ (Review & Discussion Questions)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Academic Essay & Short Questions</span>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">1. ഇന്നത്തെ എഐ സംവിധാനങ്ങൾക്ക് 'ധാർമ്മിക ദ്രോഹം' ഏൽക്കാൻ കഴിയില്ലെന്ന് പറയുന്നതിന്റെ ദാർശനിക കാരണം എന്ത്?</div>
+    <div class="qa-a">ധാർമ്മിക ദ്രോഹം ഏൽക്കാൻ ഒരു സത്തയ്ക്ക് സ്വന്തമായി വികാരങ്ങളും വേദനയും അനുഭവിക്കാനുള്ള ആന്തരിക ബോധം (Sentience / Qualia) ഉണ്ടായിരിക്കണം. ഇന്നത്തെ എഐ സംവിധാനങ്ങൾ വാചകങ്ങൾ സൃഷ്ടിക്കുന്നുണ്ടെങ്കിലും അവയ്ക്ക് ആന്തരികമായ അനുഭവങ്ങളില്ലാത്തതിനാൽ അവയ്ക്ക് ദ്രോഹം അനുഭവിക്കാൻ കഴിയില്ല.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">2. മേരി ആൻ വാറന്റെ വ്യക്തിത്വ-ധാർമ്മിക പദവി മാനദണ്ഡങ്ങൾ എന്തൊക്കെയാണ്?</div>
+    <div class="qa-a">1. ബോധവും വേദന അനുഭവിക്കാനുള്ള ശേഷിയും, 2. യുക്തിചിന്ത, 3. സ്വയം പ്രേരിത പ്രവർത്തനം, 4. സങ്കീർണ്ണ ആശയവിനിമയ ശേഷി, 5. സ്വത്വബോധം.</div>
+  </div>
+
+
+</body>
+</html>

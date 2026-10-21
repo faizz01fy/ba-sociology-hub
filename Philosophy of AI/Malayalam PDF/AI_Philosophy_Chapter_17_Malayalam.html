@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 17: How Should AI Systems Be Embedded in Social Relations?</title>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+  @page {
+    size: A4;
+    margin: 16mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+    @bottom-left {
+      content: "University of Calicut · BA Philosophy · Philosophy of AI (PHL1MN102)";
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    line-height: 1.65;
+    font-size: 9.8pt;
+    margin: 0;
+    padding: 0;
+  }
+  .header-box {
+    border: 2px solid #0f766e;
+    border-radius: 12px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+    margin-bottom: 20px;
+  }
+  .badge {
+    display: inline-block;
+    background: #0f766e;
+    color: #ffffff;
+    font-size: 8pt;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  h1 {
+    margin: 0 0 4px 0;
+    color: #115e59;
+    font-size: 15.5pt;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+  .sub-title {
+    font-size: 11.5pt;
+    font-weight: 700;
+    color: #0f766e;
+    margin-bottom: 8px;
+  }
+  .meta-info {
+    font-size: 8.5pt;
+    color: #334155;
+    font-weight: 600;
+    border-top: 1px dashed #99f6e4;
+    padding-top: 6px;
+    margin-top: 6px;
+  }
+  .section-title {
+    background: #0f766e;
+    color: #ffffff;
+    padding: 9px 15px;
+    border-radius: 8px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 22px 0 13px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-after: avoid;
+  }
+  .bilingual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    margin-bottom: 13px;
+    page-break-inside: avoid;
+  }
+  .card-en, .card-ml {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 13px 15px;
+    background: #ffffff;
+    font-size: 9.3pt;
+  }
+  .card-en {
+    border-left: 4px solid #2563eb;
+    background: #f8fafc;
+  }
+  .card-ml {
+    border-left: 4px solid #0f766e;
+    background: #ffffff;
+  }
+  .card-title {
+    font-weight: 800;
+    margin-bottom: 6px;
+    font-size: 9.8pt;
+  }
+  .card-en .card-title { color: #1e40af; }
+  .card-ml .card-title { color: #115e59; }
+  .table-box {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 8.8pt;
+  }
+  .table-box th, .table-box td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .table-box th {
+    background: #0f766e;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .table-box tr:nth-child(even) { background: #f8fafc; }
+  .concept-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-left: 5px solid #0d9488;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 13px 0;
+    font-size: 9.4pt;
+  }
+  .concept-box strong { color: #115e59; }
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0f766e;
+    border-radius: 8px;
+    padding: 13px 16px;
+    margin-bottom: 13px;
+    page-break-inside: avoid;
+  }
+  .qa-q {
+    font-weight: 800;
+    color: #115e59;
+    margin-bottom: 5px;
+    font-size: 9.8pt;
+  }
+  .qa-a {
+    color: #334155;
+    font-size: 9.3pt;
+    line-height: 1.6;
+  }
+  p { margin: 0 0 9px 0; }
+
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <div class="badge">Calicut University · Minor Philosophy (PHL1MN102)</div>
+    <h1>അധ്യായം 17: സാമൂഹിക ബന്ധങ്ങളിലെ നിർമ്മിത ബുദ്ധി: മാനുഷിക മൂല്യങ്ങളും സ്വയംഭരണവും</h1>
+    <div class="sub-title">Chapter 17: AI in Social Relations: Human Dignity, Autonomy, and the ELIZA Effect</div>
+    <div class="meta-info">
+      <span>📚 Module 4 · Unit 4.2 (b)</span> &nbsp;|&nbsp; 
+      <span>⏱️ 15 Hours Module Weightage · 15 Marks</span>
+    </div>
+  </div>
+
+  <div class="concept-box">
+    <strong>പാഠ്യസംഗ്രഹം (Module Scope):</strong> നിർമ്മിത ബുദ്ധി മനുഷ്യന്റെ സാമൂഹിക-കുടുംബ-വ്യക്തിഗത ബന്ധങ്ങളിൽ എങ്ങനെ ഇടപെടണം എന്ന് ഈ അധ്യായം ദാർശനികമായി പരിശോധിക്കുന്നു. എലിസ ഇഫക്ട് (ELIZA effect), ചാറ്റ്‌ബോട്ടുകളോടുള്ള വൈകാരിക അടുപ്പം, ആധികാരികമായ മാനുഷിക ബന്ധങ്ങളുടെ ശോഷണം, നിരീക്ഷണവും സ്വകാര്യതയും എന്നിവ ഇതിൽ ചർച്ച ചെയ്യപ്പെടുന്നു.
+  </div>
+
+
+  <div class="section-title">
+    <span>1. സാമൂഹിക ബന്ധങ്ങളിലെ AI നുഴഞ്ഞുകയറ്റം (AI Penetration in Social Life)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">The Transformation of Human Connection</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">യന്ത്രങ്ങളുമായി പങ്കുവെക്കുന്ന വികാരങ്ങൾ</div>
+      
+              <p>ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് കേവലം ഉപകരണങ്ങൾ മാത്രമല്ല, മനുഷ്യന്റെ സാമൂഹിക കൂട്ടാളികളായും (Companion AI) ഉപദേശകരായും മാറിക്കൊണ്ടിരിക്കുകയാണ്.</p>
+              <p>സംഭാഷണ രൂപത്തിലുള്ള ചാറ്റ്‌ബോട്ടുകൾ മനുഷ്യരെപ്പോലെ സംസാരിക്കുമ്പോൾ, അവ യഥാർത്ഥ വികാരങ്ങളുള്ള ജീവികളാണെന്ന പ്രതീതി സൃഷ്ടിക്കപ്പെടുകയും ആളുകൾ തങ്ങളുടെ അതീവ രഹസ്യങ്ങളും മനസ്സിന്റെ സങ്കടങ്ങളും അവരുമായി പങ്കുവെക്കാൻ തുടങ്ങുകയും ചെയ്യുന്നു.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">From Calculators to Intimate Conversationalists</div>
+      
+              <p>AI technology has fundamentally crossed from utilitarian computational tool to active conversational interlocutor and pseudo-companion in human daily life.</p>
+              <p>Through sophisticated natural language simulation, generative bots elicit deep interpersonal attachment, leading humans to confide emotional vulnerabilities to unthinking algorithms.</p>
+            
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>2. എലിസ ഇഫക്ടും ആന്ത്രോപോമോർഫിസവും (The ELIZA Effect)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Anthropomorphism & The ELIZA Effect</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">ഭാവനയിൽ വിരിയുന്ന ജീവൻ</div>
+      
+              <p>1966-ൽ ജോസഫ് വെയ്‌സൻബോം (Joseph Weizenbaum) വികസിപ്പിച്ച ആദ്യകാല ചാറ്റ്‌ബോട്ടായ ELIZA-യോട് സംസാരിച്ച ആളുകൾ അതിന് യഥാർത്ഥ സഹാനുഭൂതിയുണ്ടെന്ന് വിശ്വസിച്ചതിൽ നിന്നാണ് <strong>എലിസ ഇഫക്ട് (ELIZA Effect)</strong> എന്ന പേര് വന്നത്.</p>
+              <p>വെറും അക്ഷരക്കൂട്ടങ്ങളും പ്രോബബിലിറ്റികളും കൈകാര്യം ചെയ്യുന്ന ഒരു സോഫ്റ്റ്‌വെയറിലേക്ക് മനുഷ്യൻ സ്വന്തം ഭാവനയാൽ ബോധവും വികാരവും മനസ്സിന്റെ ആഴവും ആരോപിക്കുന്ന പ്രതിഭാസമാണിത് (Anthropomorphism). ഇത് മനുഷ്യരെ എളുപ്പത്തിൽ കൃത്രിമ വൈകാരിക ചൂഷണങ്ങൾക്ക് ഇരയാക്കുന്നു.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Attributing Consciousness to Syntactic Mirrors</div>
+      
+              <p>Originating from Joseph Weizenbaum's 1966 ELIZA program, the <strong>ELIZA effect</strong> describes the human propensity to ascribe conscious understanding, empathy, and intent to automated string manipulations.</p>
+              <p>This psychological vulnerability encourages anthropomorphic projection, enabling commercial actors to exploit human emotional longing via simulated digital affection.</p>
+            
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>3. ആധികാരികതയും സാമൂഹിക ഒറ്റപ്പെടലും (Authenticity vs Pseudo-Intimacy)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">The Illusion of Companionship</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">വ്യാജ ബന്ധങ്ങളും ഒറ്റപ്പെടലും</div>
+      
+              <p>മനുഷ്യർ തമ്മിലുള്ള യഥാർത്ഥ ബന്ധങ്ങളിൽ പൊരുത്തക്കേടുകളും, ത്യാഗങ്ങളും, പരസ്പര ഉത്തരവാദിത്തങ്ങളും ആവശ്യമുണ്ട്. എന്നാൽ എഐ കമ്പാനിയനുകൾ എപ്പോഴും ഉപയോക്താവിനെ പ്രീതിപ്പെടുത്തുന്ന തരത്തിൽ മാത്രം പ്രോഗ്രാം ചെയ്യപ്പെട്ടവയാണ്.</p>
+              <p>ഇത്തരം 'ഘർഷണമില്ലാത്ത വ്യാജ ബന്ധങ്ങൾ' (Frictionless Pseudo-Relationships) മനുഷ്യരെ യഥാർത്ഥ സാമൂഹിക ജീവിതത്തിൽ നിന്നും കൂടുതൽ ഒറ്റപ്പെടലിലേക്കും (Social Isolation) യഥാർത്ഥ മനുഷ്യരുമായി ഇടപഴകാനുള്ള കഴിവില്ലായ്മയിലേക്കും നയിക്കുമെന്ന് ദാർശനികർ മുന്നറിയിപ്പ് നൽകുന്നു.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Frictionless AI vs Vulnerable Human Fellowship</div>
+      
+              <p>Authentic human relationships inherently demand vulnerability, compromise, reciprocal sacrifice, and moral patience.</p>
+              <p>AI companions, engineered purely to please, foster frictionless digital complacency. This illusion of companionship risks severing genuine community ties and aggravating acute social alienation.</p>
+            
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>4. മനുഷ്യന്റെ അന്തസ്സും സ്വകാര്യതയും (Dignity, Autonomy, and Surveillance)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Preserving Dignity in an Algorithmic Web</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">നിരീക്ഷണവും വ്യക്തി സ്വാതന്ത്ര്യവും</div>
+      
+              <p>സാമൂഹിക ബന്ധങ്ങളിൽ എഐ വിന്യസിക്കപ്പെടുമ്പോൾ മനുഷ്യന്റെ അന്തസ്സും (Human Dignity) സ്വയംഭരണവും (Autonomy) കാത്തുസൂക്ഷിക്കപ്പെടണം.</p>
+              <p>ഉപയോക്താക്കളുടെ വൈകാരിക വിവരങ്ങൾ ശേഖരിച്ച് വാണിജ്യ ലാഭത്തിനായി പരസ്യങ്ങൾ കാണിക്കാനോ പെരുമാറ്റങ്ങളെ സ്വാധീനിക്കാനോ (Nudging) ശ്രമിക്കുന്നത് മനുഷ്യനെ വെറും ഉപകരണമായി കാണുന്നതിന് തുല്യമാണ്. കാന്റിയൻ എത്തിക്സ് പ്രകാരം മനുഷ്യൻ ഒരിക്കലും മറ്റൊരു ലക്ഷ്യത്തിനുള്ള ഉപകരണമാകരുത് (Never treat humanity as a mere means).</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Kantian Dignity Against Behavioral Exploitation</div>
+      
+              <p>Integrating AI into human relational structures demands preserving <strong>Kantian dignity</strong>: human beings must be treated as ends in themselves, never merely as lucrative data conduits.</p>
+              <p>Harvesting vulnerable emotional admissions for algorithmic nudging and targeted manipulation fundamentally undermines individual moral autonomy and relational privacy.</p>
+            
+    </div>
+  </div>
+
+
+  <div class="section-title">
+    <span>യഥാർത്ഥ ബന്ധങ്ങളും AI ബന്ധങ്ങളും തമ്മിലുള്ള താരതമ്യം</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Authentic Human Ties vs Algorithmic Simulation</span>
+  </div>
+  <table class="table-box">
+    <thead>
+      <tr>
+        <th>സവിശേഷത</th><th>യഥാർത്ഥ മാനുഷിക ബന്ധങ്ങൾ</th><th>എഐ കമ്പാനിയൻഷിപ്പ്</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr><td>വൈകാരിക അടിസ്ഥാനം</td><td>യഥാർത്ഥ ആന്തരിക വികാരങ്ങളും സഹാനുഭൂതിയും (Qualia)</td><td>ഡാറ്റാ വിശകലനത്തിലൂടെയുള്ള വികാര അനുകരണം (Simulation)</td></tr>
+    <tr><td>പരസ്പര ഉത്തരവാദിത്തം</td><td>പരസ്പരമുള്ള ബാധ്യതകളും ത്യാഗങ്ങളും ആവശ്യമാണ്</td><td>ഒരു ബാധ്യതയുമില്ല, ഉപയോക്താവ് എപ്പോഴും അധിപനാണ്</td></tr>
+    <tr><td>വളർച്ചാ സാധ്യത</td><td>സംഘർഷങ്ങളിലൂടെ വ്യക്തിത്വം പക്വത പ്രാപിക്കുന്നു</td><td>സ്വന്തം ചിന്തകൾ മാത്രം പ്രതിഫലിക്കുന്ന സുഖകരമായ തടവറ (Echo Chamber)</td></tr>
+    <tr><td>ലക്ഷ്യം</td><td>മാനവിക ഐക്യവും സ്നേഹവും</td><td>വാണിജ്യ കമ്പനികളുടെ ഉപയോക്തൃ ഇടപഴകലും ഡാറ്റ ശേഖരണവും</td></tr>
+
+    </tbody>
+  </table>
+
+
+  <div class="section-title">
+    <span>പ്രധാന പരീക്ഷാ ആശയങ്ങൾ (Key Examination Points)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Core Revision Points</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">മലയാളം സംഗ്രഹം (Key Takeaways)</div>
+      
+          <p>• <strong>സാമൂഹിക AI:</strong> യന്ത്രങ്ങൾ മാനുഷിക വൈകാരിക മേഖലകളിലേക്ക് പ്രവേശിക്കുമ്പോഴുണ്ടാകുന്ന പ്രതിസന്ധികൾ.<br>
+          • <strong>എലിസ ഇഫക്ട്:</strong> യന്ത്രങ്ങളുടെ വാചകങ്ങളിൽ മനുഷ്യൻ ബോധവും സഹതാപവും സ്വയം ആരോപിക്കൽ.<br>
+          • <strong>ആധികാരികത നഷ്ടപ്പെടൽ:</strong> യഥാർത്ഥ ബന്ധങ്ങളിലെ ത്യാഗങ്ങൾക്ക് പകരം സുഖകരമായ വ്യാജ ബന്ധങ്ങളിലേക്ക് മനുഷ്യൻ ചുരുങ്ങുന്നു.<br>
+          • <strong>കാന്റിയൻ അന്തസ്സ്:</strong> മനുഷ്യന്റെ വൈകാരിക ദൗർബല്യങ്ങളെ കച്ചവടച്ചരക്കാക്കാതെ അന്തസ്സ് കാത്തുസൂക്ഷിക്കണം.</p>
+        
+    </div>
+    <div class="card-en">
+      <div class="card-title">English Summary (Key Takeaways)</div>
+      
+          <p>• <strong>Social AI:</strong> Ethical dilemmas when algorithms mediate and simulate intimate human bonds.<br>
+          • <strong>ELIZA Effect:</strong> Anthropomorphic projection of feelings onto purely deterministic outputs.<br>
+          • <strong>Erosion of Authenticity:</strong> Replacing hard human fellowship with frictionless digital servitude.<br>
+          • <strong>Kantian Dignity:</strong> Human vulnerability must never be converted into behavioural manipulation assets.</p>
+        
+    </div>
+  </div>
+
+
+  <div class="section-title">
+    <span>വിചിന്തന ചോദ്യങ്ങൾ (Review & Discussion Questions)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Academic Essay & Short Questions</span>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">1. എന്താണ് എലിസ ഇഫക്ട് (ELIZA Effect)? ഇത് മനുഷ്യ-യന്ത്ര ബന്ധത്തെ എങ്ങനെ ബാധിക്കുന്നു?</div>
+    <div class="qa-a">യന്ത്രങ്ങളുടെ യാന്ത്രികമായ ഭാഷാ പെരുമാറ്റങ്ങളിൽ പോലും ജീവനും യഥാർത്ഥ വികാരങ്ങളുമുണ്ടെന്ന് മനുഷ്യൻ സ്വയം സങ്കൽപ്പിക്കുന്ന പ്രതിഭാസമാണിത്. ഇത് എഐ ചാറ്റ്‌ബോട്ടുകളോട് അന്ധമായ വൈകാരിക അടുപ്പം തോന്നാനും കബളിപ്പിക്കപ്പെടാനും കാരണമാകുന്നു.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">2. സാമൂഹിക ബന്ധങ്ങളിൽ AI-യെ ഉൾപ്പെടുത്തുമ്പോൾ നേരിടുന്ന പ്രധാന ധാർമ്മിക വെല്ലുവിളികൾ എന്തൊക്കെയാണ്?</div>
+    <div class="qa-a">യഥാർത്ഥ മാനുഷിക ബന്ധങ്ങളുടെ ശോഷണം, ഒറ്റപ്പെടൽ, മനുഷ്യന്റെ അന്തസ്സും സ്വകാര്യതയും ലംഘിക്കപ്പെടൽ, വാണിജ്യ താത്പര്യങ്ങൾക്കായി വികാരങ്ങളെ ചൂഷണം ചെയ്യൽ എന്നിവയാണ് പ്രധാന വെല്ലുവിളികൾ.</div>
+  </div>
+
+
+</body>
+</html>

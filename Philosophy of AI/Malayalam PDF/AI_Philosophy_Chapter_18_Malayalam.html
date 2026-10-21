@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 18: Ethical Rules for Autonomous Vehicles & The Trolley Problem</title>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+  @page {
+    size: A4;
+    margin: 16mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+    @bottom-left {
+      content: "University of Calicut · BA Philosophy · Philosophy of AI (PHL1MN102)";
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    line-height: 1.65;
+    font-size: 9.8pt;
+    margin: 0;
+    padding: 0;
+  }
+  .header-box {
+    border: 2px solid #0f766e;
+    border-radius: 12px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+    margin-bottom: 20px;
+  }
+  .badge {
+    display: inline-block;
+    background: #0f766e;
+    color: #ffffff;
+    font-size: 8pt;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  h1 {
+    margin: 0 0 4px 0;
+    color: #115e59;
+    font-size: 15.5pt;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+  .sub-title {
+    font-size: 11.5pt;
+    font-weight: 700;
+    color: #0f766e;
+    margin-bottom: 8px;
+  }
+  .meta-info {
+    font-size: 8.5pt;
+    color: #334155;
+    font-weight: 600;
+    border-top: 1px dashed #99f6e4;
+    padding-top: 6px;
+    margin-top: 6px;
+  }
+  .section-title {
+    background: #0f766e;
+    color: #ffffff;
+    padding: 9px 15px;
+    border-radius: 8px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 22px 0 13px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-after: avoid;
+  }
+  .bilingual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    margin-bottom: 13px;
+    page-break-inside: avoid;
+  }
+  .card-en, .card-ml {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 13px 15px;
+    background: #ffffff;
+    font-size: 9.3pt;
+  }
+  .card-en {
+    border-left: 4px solid #2563eb;
+    background: #f8fafc;
+  }
+  .card-ml {
+    border-left: 4px solid #0f766e;
+    background: #ffffff;
+  }
+  .card-title {
+    font-weight: 800;
+    margin-bottom: 6px;
+    font-size: 9.8pt;
+  }
+  .card-en .card-title { color: #1e40af; }
+  .card-ml .card-title { color: #115e59; }
+  .table-box {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 8.8pt;
+  }
+  .table-box th, .table-box td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .table-box th {
+    background: #0f766e;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .table-box tr:nth-child(even) { background: #f8fafc; }
+  .concept-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-left: 5px solid #0d9488;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 13px 0;
+    font-size: 9.4pt;
+  }
+  .concept-box strong { color: #115e59; }
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0f766e;
+    border-radius: 8px;
+    padding: 13px 16px;
+    margin-bottom: 13px;
+    page-break-inside: avoid;
+  }
+  .qa-q {
+    font-weight: 800;
+    color: #115e59;
+    margin-bottom: 5px;
+    font-size: 9.8pt;
+  }
+  .qa-a {
+    color: #334155;
+    font-size: 9.3pt;
+    line-height: 1.6;
+  }
+  p { margin: 0 0 9px 0; }
+
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <div class="badge">Calicut University · Minor Philosophy (PHL1MN102)</div>
+    <h1>അധ്യായം 18: സ്വയംഭരണ വാഹനങ്ങളിലെ ധാർമ്മിക നിയമങ്ങളും ട്രോളി പ്രോബ്ലവും</h1>
+    <div class="sub-title">Chapter 18: Ethical Rules for Autonomous Vehicles: The Trolley Problem & Moral Dilemmas</div>
+    <div class="meta-info">
+      <span>📚 Module 4 · Unit 4.3 (a)</span> &nbsp;|&nbsp; 
+      <span>⏱️ 15 Hours Module Weightage · 15 Marks</span>
+    </div>
+  </div>
+
+  <div class="concept-box">
+    <strong>പാഠ്യസംഗ്രഹം (Module Scope):</strong> ഡ്രൈവറില്ലാത്ത കാറുകൾ (Self-Driving Cars) അപകട സാഹചര്യങ്ങളിൽ എടുക്കേണ്ട ധാർമ്മിക തീരുമാനങ്ങൾ ഈ അധ്യായത്തിൽ പരിശോധിക്കുന്നു. ക്ലാസിക്കൽ ഫിലോസഫിയിലെ ട്രോളി പ്രോബ്ലം, യൂട്ടിലിറ്റേറിയൻ vs ഡിയോന്റോളജിക്കൽ നിയമങ്ങൾ, യാത്രക്കാരന്റെയും കാൽനടക്കാരുടെയും സംരക്ഷണം സംബന്ധിച്ച തർക്കങ്ങൾ എന്നിവ ഇതിൽ ഉൾക്കൊള്ളുന്നു.
+  </div>
+
+
+  <div class="section-title">
+    <span>1. സ്വയംഭരണ വാഹനങ്ങളും ധാർമ്മിക പ്രതിസന്ധിയും (The AV Moral Crisis)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Autonomous Decision-Making in Critical Seconds</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">ജീവൻ മരണ പോരാട്ടത്തിലെ അൽഗോരിതം</div>
+      
+              <p>സ്വയംഭരണ വാഹനങ്ങൾ (Autonomous Vehicles) ഗതാഗത സൗകര്യങ്ങൾ വർദ്ധിപ്പിക്കുമെങ്കിലും, ഒരു അപകടം ഒഴിവാക്കാനാവാത്ത സാഹചര്യത്തിൽ ഏത് ദിശയിലേക്ക് വാഹനം തിരിക്കണമെന്ന് ഒരു കമ്പ്യൂട്ടർ പ്രോഗ്രാം തീരുമാനിക്കേണ്ടി വരുന്നു.</p>
+              <p>മനുഷ്യ ഡ്രൈവർമാർ നിമിഷാർദ്ധത്തിലെ സ്വാഭാവിക റിഫ്ലെക്സ് (Reflex) വഴി പ്രതികരിക്കുമ്പോൾ, സ്വയംഭരണ കാറുകളിലെ തീരുമാനം മുൻകൂട്ടി എഴുതിവെച്ച അൽഗോരിതത്തിന്റെ (Pre-programmed code) അടിസ്ഥാനത്തിലാണ് നടക്കുന്നത്. ഇത് ഡ്രൈവിംഗിനെ ഒരു ധാർമ്മിക പ്രശ്നമാക്കി മാറ്റുന്നു.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Reflex vs Pre-programmed Moral Choice</div>
+      
+              <p>While autonomous vehicles promise dramatic reductions in traffic fatalities, unavoidable crash scenarios compel algorithms to execute life-and-death choices within milliseconds.</p>
+              <p>Whereas human drivers act on panic and instinct, an autonomous system acts on deliberate mathematical algorithms written months in advance, transforming every crash into a moral verdict.</p>
+            
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>2. ട്രോളി പ്രോബ്ലത്തിന്റെ ആധുനിക പ്രയോഗം (The Trolley Problem in AI)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Philippa Foot's Classic Dilemma on Wheels</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">ആരെ രക്ഷിക്കണം? ആരെ ഉപേക്ഷിക്കണം?</div>
+      
+              <p>ഫിലിപ്പാ ഫൂട്ട് (Philippa Foot) മുന്നോട്ടുവെച്ച പ്രശസ്തമായ <strong>ട്രോളി പ്രോബ്ലം (Trolley Problem)</strong> റോബോട്ടുകൾക്കും സെൽഫ് ഡ്രൈവിംഗ് കാറുകൾക്കും പുതിയ രൂപത്തിൽ ബാധകമാകുന്നു:</p>
+              <p>ബ്രേക്ക് നഷ്ടപ്പെട്ട ഒരു കാർ മുന്നോട്ട് പോയാൽ റോഡിലുള്ള അഞ്ച് കാൽനടയാത്രക്കാരെ ഇടിക്കും; സൈഡിലേക്ക് വെട്ടിച്ചാൽ ഒരു കാൽനടയാത്രക്കാരനെയോ അല്ലെങ്കിൽ ഭിത്തിയിലിടിച്ച് കാറിലുള്ള യാത്രക്കാരനെയോ അപായപ്പെടുത്തും. ആരെ രക്ഷിക്കണം എന്ന് വാഹനം മുൻകൂട്ടി നിശ്ചയിക്കേണ്ടതുണ്ട്.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">The Trolley Dilemma Reimagined</div>
+      
+              <p>Philippa Foot's classic <strong>Trolley Problem</strong> ceases to be an abstract philosophical paradox and becomes an operational engineering reality.</p>
+              <p>Should an autonomous car continue forward hitting five pedestrians, or swerve onto a sidewalk killing one, or crash into a concrete divider, fatally sacrificing its own passenger?</p>
+            
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>3. യൂട്ടിലിറ്റേറിയനിസവും കാന്റിയൻ എത്തിക്സും (Utilitarian vs Deontological Rules)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Competing Ethical Frameworks</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">പരമാവധി ആളുകളെ രക്ഷിക്കലോ അതോ അവകാശ സംരക്ഷണമോ?</div>
+      
+              <p><strong>1. യൂട്ടിലിറ്റേറിയൻ നിയമങ്ങൾ (Utilitarian Rules):</strong> ജീവഹാനി പരമാവധി കുറയ്ക്കുക (Minimize overall deaths). അഞ്ച് പേരെ രക്ഷിക്കാൻ ഒരാളെ ബലിനൽകുന്നത് ന്യായമാണ്. എന്നാൽ ഇത് യാത്രക്കാരനെ തന്നെ കൊല്ലാൻ വാഹനം തീരുമാനിക്കുന്നതിലേക്ക് നയിക്കാം.</p>
+              <p><strong>2. ഡിയോന്റോളജിക്കൽ നിയമങ്ങൾ (Deontological / Kantian Rules):</strong> ആരെയും ഒരു ഉപകരണമായി (Instrument) ബലികൊടുക്കരുത്. നിർദ്ദോഷിയായ ഒരു യാത്രക്കാരനെയോ കാൽനടക്കാരനെയോ മനഃപൂർവ്വം കൊല്ലുന്നത് ധാർമ്മികമായി തെറ്റാണ്. വാഹനം സ്വന്തം യാത്രക്കാരെ ചതിക്കാൻ പാടില്ലെന്ന വാദവും ശക്തമാണ്.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Consequential Welfare vs Inviolable Duties</div>
+      
+              <p><strong>1. Utilitarian Rules:</strong> Optimize aggregate welfare by minimizing total net casualties. The system chooses whichever path preserves the greatest number of lives.</p>
+              <p><strong>2. Deontological (Kantian) Rules:</strong> Refuse to instrumentalize any individual. Programming a vehicle to deliberately kill its innocent passenger to save pedestrians violates the fundamental duty of passenger protection.</p>
+            
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>4. ഉപഭോക്തൃ വൈരുദ്ധ്യവും എംഐടി മോറൽ മെഷീനും (MIT Moral Machine)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">The Social Paradox & Cultural Disparities</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">മറ്റുള്ളവർ വാങ്ങട്ടെ, ഞാൻ വാങ്ങില്ല!</div>
+      
+              <p>ഗവേഷണങ്ങൾ രസകരമായ ഒരു ധാർമ്മിക വൈരുദ്ധ്യം വെളിപ്പെടുത്തുന്നു: പൊതുജനങ്ങൾ സമൂഹത്തിലെ കാറുകൾ യൂട്ടിലിറ്റേറിയൻ ആയിരിക്കണമെന്ന് (ആളുകളെ രക്ഷിക്കാൻ യാത്രക്കാരനെ ബലികൊടുക്കണം) ആഗ്രഹിക്കുന്നു, എന്നാൽ സ്വന്തമായി കാർ വാങ്ങുമ്പോൾ ഏത് അപകടത്തിലും സ്വന്തം ജീവൻ സംരക്ഷിക്കുന്ന കാറുകൾ മാത്രമേ അവർ വാങ്ങാൻ തയ്യാറാകൂ!</p>
+              <p>എംഐടിയുടെ <strong>മോറൽ മെഷീൻ (Moral Machine)</strong> പഠനം തെളിയിക്കുന്നത് വൃദ്ധരെയാണോ കുട്ടികളെയാണോ രക്ഷിക്കേണ്ടത് എന്നതിൽ പാശ്ചാത്യ-പൗരസ്ത്യ സംസ്കാരങ്ങൾ തമ്മിൽ വലിയ ധാർമ്മിക വീക്ഷണ വ്യത്യാസങ്ങൾ ഉണ്ടെന്നാണ്.</p>
+            
+    </div>
+    <div class="card-en">
+      <div class="card-title">Self-Preservation Paradox & Global Variations</div>
+      
+              <p>Empirical studies expose a profound hypocrisy: citizens overwhelmingly favor utilitarian AV regulations for the general public, but refuse to purchase cars programmed to sacrifice their own passengers.</p>
+              <p>The MIT <strong>Moral Machine experiment</strong> demonstrates stark cross-cultural disagreements: Eastern societies prioritized saving the elderly, whereas Western societies favored younger lives.</p>
+            
+    </div>
+  </div>
+
+
+  <div class="section-title">
+    <span>സ്വയംഭരണ വാഹനങ്ങളിലെ ധാർമ്മിക നയങ്ങളുടെ താരതമ്യം</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Ethical Policies for Autonomous Collision Avoidance</span>
+  </div>
+  <table class="table-box">
+    <thead>
+      <tr>
+        <th>നയം (Ethical Policy)</th><th>തീരുമാന തത്ത്വം</th><th>വിമർശനം / വെല്ലുവിളി</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr><td>യൂട്ടിലിറ്റേറിയൻ നയം (Utilitarian)</td><td>ഏറ്റവും കുറഞ്ഞ ജീവഹാനി വരുന്ന വഴി തിരഞ്ഞെടുക്കുന്നു</td><td>യാത്രക്കാരനെ കൊല്ലാൻ വാഹനം മുൻകൂട്ടി തീരുമാനിക്കുന്നത് വിൽപനയെ ബാധിക്കും</td></tr>
+    <tr><td>യാത്രക്കാരൻ ഒന്നാമത് (Passenger-Priority)</td><td>വാഹനം എപ്പോഴും സ്വന്തം യാത്രക്കാരന്റെ ജീവൻ സംരക്ഷിക്കുന്നു</td><td>റോഡിലെ നിരപരാധികളായ ഒട്ടേറെ കാൽനടക്കാർ അന്യായമായി കൊല്ലപ്പെടാം</td></tr>
+    <tr><td>റാൻഡം സമത്വം (Rawlsian Equivalence)</td><td>മനുഷ്യരുടെ പ്രായമോ പദവിയോ നോക്കാതെ തുല്യരായി കാണുന്നു</td><td>തടയാവുന്ന വൻ ദുരന്തങ്ങളെ ലഘൂകരിക്കുന്നതിൽ പരാജയപ്പെടുന്നു</td></tr>
+    <tr><td>നിയമപരമായ കർക്കശത (Legal Compliance)</td><td>ട്രാഫിക് നിയമങ്ങൾ ഏറ്റവും കുറവ് ലംഘിക്കുന്ന പാത പിന്തുടരുന്നു</td><td>നിയമങ്ങൾ ജീവൻ രക്ഷിക്കുന്നതിനേക്കാൾ മുൻപിലല്ലെന്ന ധാർമ്മിക ചോദ്യം</td></tr>
+
+    </tbody>
+  </table>
+
+
+  <div class="section-title">
+    <span>പ്രധാന പരീക്ഷാ ആശയങ്ങൾ (Key Examination Points)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Core Revision Points</span>
+  </div>
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">മലയാളം സംഗ്രഹം (Key Takeaways)</div>
+      
+          <p>• <strong>സെൽഫ് ഡ്രൈവിംഗ് കാറുകൾ:</strong> അപകട ഘട്ടങ്ങളിലെ തൽക്ഷണ തീരുമാനങ്ങൾ മുൻകൂട്ടി എഴുതിയ അൽഗോരിതത്തെ ആശ്രയിച്ചിരിക്കുന്നു.<br>
+          • <strong>ട്രോളി പ്രോബ്ലം:</strong> അഞ്ച് പേരെ രക്ഷിക്കാൻ ഒരാളെ കൊല്ലുന്നത് ശരിയോ എന്ന ദാർശനിക സമസ്യ റോഡിലേക്ക് വരുന്നു.<br>
+          • <strong>യൂട്ടിലിറ്റേറിയൻ vs ഡിയോന്റോളജിക്കൽ:</strong> ജീവന്റെ എണ്ണം കുറയ്ക്കലും വ്യക്തിഗത അവകാശങ്ങളും തമ്മിലുള്ള പോരാട്ടം.<br>
+          • <strong>സാമൂഹിക വൈരുദ്ധ്യം:</strong> മറ്റുള്ളവരുടെ കാറുകൾ യൂട്ടിലിറ്റേറിയൻ ആകണമെന്നും സ്വന്തം കാർ തന്നെ സംരക്ഷിക്കണമെന്നുമുള്ള മനുഷ്യ മനസ്സ്.</p>
+        
+    </div>
+    <div class="card-en">
+      <div class="card-title">English Summary (Key Takeaways)</div>
+      
+          <p>• <strong>Autonomous Dilemmas:</strong> Automated collision navigation codifies normative philosophy into technical execution.<br>
+          • <strong>Trolley Mechanics:</strong> Resolving inevitable crash trajectories pits aggregate survival against passenger betrayal.<br>
+          • <strong>Utilitarian vs Kantian:</strong> Casualty minimization conflicts with inviolable duty towards the purchaser.<br>
+          • <strong>Moral Pluralism:</strong> MIT Moral Machine findings prove global societies reject a single uniform standard.</p>
+        
+    </div>
+  </div>
+
+
+  <div class="section-title">
+    <span>വിചിന്തന ചോദ്യങ്ങൾ (Review & Discussion Questions)</span>
+    <span style="font-size: 8.5pt; font-weight: 600;">Academic Essay & Short Questions</span>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">1. സ്വയംഭരണ വാഹനങ്ങളുടെ പശ്ചാത്തലത്തിൽ 'ട്രോളി പ്രോബ്ലം' എങ്ങനെയാണ് ഒരു യഥാർത്ഥ സാങ്കേതിക വെല്ലുവിളിയാകുന്നത്?</div>
+    <div class="qa-a">അപകടം ഒഴിവാക്കാനാവാത്ത സാഹചര്യത്തിൽ കാൽനടയാത്രക്കാരെ രക്ഷിക്കാൻ വാഹനം സ്വന്തം യാത്രക്കാരന്റെ ജീവൻ അപകടപ്പെടുത്തണമോ അതോ യാത്രക്കാരനെ സംരക്ഷിക്കാൻ കാൽനടക്കാരെ ഇടിക്കണമോ എന്ന അൽഗോരിതപരമായ തീരുമാനമാണ് ട്രോളി പ്രോബ്ലം സൃഷ്ടിക്കുന്നത്.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">2. സെൽഫ് ഡ്രൈവിംഗ് കാറുകളിലെ ധാർമ്മിക നിയമങ്ങൾ നിശ്ചയിക്കുമ്പോൾ യൂട്ടിലിറ്റേറിയൻ വീക്ഷണവും ഡിയോന്റോളജിക്കൽ വീക്ഷണവും തമ്മിലുള്ള വ്യത്യാസം എന്ത്?</div>
+    <div class="qa-a">യൂട്ടിലിറ്റേറിയൻ വീക്ഷണം മൊത്തം മരണങ്ങളുടെ എണ്ണം കുറയ്ക്കാൻ മുൻഗണന നൽകുമ്പോൾ, ഡിയോന്റോളജിക്കൽ വീക്ഷണം നിരപരാധിയായ ഒരു വ്യക്തിയെ ഉപകരണമാക്കി മനഃപൂർവ്വം കൊല്ലുന്നത് തെറ്റാണെന്ന് വാദിക്കുന്നു.</div>
+  </div>
+
+
+</body>
+</html>
