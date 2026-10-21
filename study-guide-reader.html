@@ -130,6 +130,33 @@
       padding: 4px 8px;
     }
     
+    
+    /* Floating Zoom HUD Badge */
+    #zoomHud {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(15, 23, 42, 0.92);
+      color: #ffffff;
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(8px) scale(0.95);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      backdrop-filter: blur(8px);
+    }
+    #zoomHud.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
     /* Main Reader Area */
     main {
       padding: 16px;
@@ -137,7 +164,7 @@
       overflow-y: auto;
       text-align: center;
       -webkit-overflow-scrolling: touch;
-      touch-action: pan-x pan-y pinch-zoom;
+      touch-action: pan-x pan-y;
     }
     
     .pdf-page {
@@ -518,7 +545,7 @@
         margin: 0 auto 10px;
         border-radius: 2px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-        max-width: 100%;
+        max-width: none !important;
       }
       .page-label {
         background: #1e293b;
@@ -948,6 +975,49 @@
     el('prevPage').onclick = () => { if (pageNumber > 1) go(pageNumber - 1); };
     el('nextPage').onclick = () => { if (pdf && pageNumber < pdf.numPages) go(pageNumber + 1); };
 
+    // --- ZOOM & PINCH CONTROLLER ---
+    let hudTimeout = null;
+    function showZoomHud(scale, text) {
+      const hud = el('zoomHud');
+      if (!hud) return;
+      const display = text || (Math.round(scale * 100) + '%');
+      hud.textContent = '🔍 ' + display;
+      hud.classList.add('visible');
+      clearTimeout(hudTimeout);
+      hudTimeout = setTimeout(() => {
+        hud.classList.remove('visible');
+      }, 1200);
+    }
+
+    function updateZoomDropdown(scale) {
+      const zoomSel = el('zoom');
+      if (!zoomSel) return;
+      const percent = Math.round(scale * 100);
+      let customOpt = zoomSel.querySelector('option[data-pinch="true"]');
+      if (!customOpt) {
+        customOpt = document.createElement('option');
+        customOpt.setAttribute('data-pinch', 'true');
+        zoomSel.insertBefore(customOpt, zoomSel.children[2] || null);
+      }
+      customOpt.value = scale.toFixed(2);
+      customOpt.textContent = '🔍 ' + percent + '%';
+      zoomSel.value = customOpt.value;
+    }
+
+    function getCurrentScale() {
+      if (customZoomScale !== null) return customZoomScale;
+      if (sections[0]) {
+        try {
+          const w = parseFloat(sections[0].style.width);
+          if (w && w > 0) {
+            // Calculate effective scale based on first page section
+            return Math.max(0.35, Math.min(3.8, w / 595.0));
+          }
+        } catch (e) {}
+      }
+      return 1.0;
+    }
+
     // Zoom event listeners
     el('zoom').onchange = () => {
       customZoomScale = null;
@@ -956,19 +1026,167 @@
 
     el('zoomIn').onclick = () => {
       if (!pdf) return;
-      const firstSection = sections[0];
-      const currentScale = fitScale(firstSection ? { getViewport: () => ({ width: 595 }) } : { getViewport: () => ({ width: 595 }) });
-      customZoomScale = Math.min(3.5, (customZoomScale || currentScale) + 0.20);
+      const current = getCurrentScale();
+      const next = Math.min(3.8, Math.round((current + 0.20) * 100) / 100);
+      customZoomScale = next;
+      updateZoomDropdown(next);
+      showZoomHud(next);
       render();
     };
 
     el('zoomOut').onclick = () => {
       if (!pdf) return;
-      const firstSection = sections[0];
-      const currentScale = fitScale(firstSection ? { getViewport: () => ({ width: 595 }) } : { getViewport: () => ({ width: 595 }) });
-      customZoomScale = Math.max(0.35, (customZoomScale || currentScale) - 0.20);
+      const current = getCurrentScale();
+      const next = Math.max(0.35, Math.round((current - 0.20) * 100) / 100);
+      customZoomScale = next;
+      updateZoomDropdown(next);
+      showZoomHud(next);
       render();
     };
+
+    // Touch Pinch-to-Zoom (2-Finger Smooth Scaling & Sharp Snapping)
+    let isPinching = false;
+    let pinchStartDist = 0;
+    let pinchStartScale = 1;
+    let pinchCenter = { x: 0, y: 0 };
+    let currentPinchRatio = 1;
+    const readerEl = el('reader');
+
+    function getTouchDist(t1, t2) {
+      return Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
+    }
+
+    function getTouchMid(t1, t2) {
+      return {
+        x: (t1.clientX + t2.clientX) / 2,
+        y: (t1.clientY + t2.clientY) / 2
+      };
+    }
+
+    window.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 2 && pdf) {
+        isPinching = true;
+        pinchStartDist = getTouchDist(e.touches[0], e.touches[1]);
+        pinchCenter = getTouchMid(e.touches[0], e.touches[1]);
+        pinchStartScale = getCurrentScale();
+        currentPinchRatio = 1;
+        readerEl.style.transition = 'none';
+        showZoomHud(pinchStartScale);
+      }
+    }, { passive: false });
+
+    window.addEventListener('touchmove', (e) => {
+      if (isPinching && e.touches.length === 2 && pdf) {
+        e.preventDefault();
+        const dist = getTouchDist(e.touches[0], e.touches[1]);
+        if (pinchStartDist > 0) {
+          currentPinchRatio = dist / pinchStartDist;
+          const candidateScale = pinchStartScale * currentPinchRatio;
+          const clampedScale = Math.max(0.35, Math.min(4.0, candidateScale));
+          const effectiveRatio = clampedScale / pinchStartScale;
+          
+          readerEl.style.transformOrigin = pinchCenter.x + 'px ' + pinchCenter.y + 'px';
+          readerEl.style.transform = 'scale(' + effectiveRatio.toFixed(3) + ')';
+          showZoomHud(clampedScale);
+        }
+      }
+    }, { passive: false });
+
+    const finishPinch = () => {
+      if (!isPinching) return;
+      isPinching = false;
+      readerEl.style.transform = '';
+      readerEl.style.transformOrigin = '';
+      
+      const targetScale = Math.max(0.35, Math.min(3.8, pinchStartScale * currentPinchRatio));
+      if (Math.abs(targetScale - pinchStartScale) > 0.04) {
+        customZoomScale = Math.round(targetScale * 100) / 100;
+        updateZoomDropdown(customZoomScale);
+        showZoomHud(customZoomScale);
+        render();
+      }
+    };
+
+    window.addEventListener('touchend', (e) => {
+      if (isPinching && e.touches.length < 2) {
+        finishPinch();
+      }
+    }, { passive: false });
+
+    window.addEventListener('touchcancel', () => {
+      if (isPinching) finishPinch();
+    }, { passive: false });
+
+    // Prevent iOS Safari gesture interference
+    window.addEventListener('gesturestart', (e) => e.preventDefault(), { passive: false });
+    window.addEventListener('gesturechange', (e) => e.preventDefault(), { passive: false });
+    window.addEventListener('gestureend', (e) => e.preventDefault(), { passive: false });
+
+    // Trackpad Pinch / Ctrl + Wheel
+    let wheelZoomTimer = null;
+    window.addEventListener('wheel', (e) => {
+      if (e.ctrlKey) {
+        e.preventDefault();
+        if (!pdf) return;
+        const cur = getCurrentScale();
+        const factor = e.deltaY < 0 ? 1.08 : 0.92;
+        const next = Math.max(0.35, Math.min(3.8, Math.round(cur * factor * 100) / 100));
+        customZoomScale = next;
+        updateZoomDropdown(next);
+        showZoomHud(next);
+        clearTimeout(wheelZoomTimer);
+        wheelZoomTimer = setTimeout(() => { render(); }, 120);
+      }
+    }, { passive: false });
+
+    // Double-Tap to Zoom / Fit
+    let lastTapTime = 0;
+    let lastTapPos = { x: 0, y: 0 };
+    readerEl.addEventListener('touchend', (e) => {
+      if (isPinching) return;
+      if (e.changedTouches.length !== 1 || !pdf) return;
+      const now = Date.now();
+      const t = e.changedTouches[0];
+      const dist = Math.hypot(t.clientX - lastTapPos.x, t.clientY - lastTapPos.y);
+      if (now - lastTapTime < 320 && dist < 32) {
+        e.preventDefault();
+        const cur = getCurrentScale();
+        if (cur > 1.35) {
+          customZoomScale = null;
+          el('zoom').value = 'fit';
+          showZoomHud(1.0, 'Fit Width');
+          render();
+        } else {
+          customZoomScale = 1.75;
+          updateZoomDropdown(1.75);
+          showZoomHud(1.75, '175%');
+          render();
+        }
+        lastTapTime = 0;
+        return;
+      }
+      lastTapTime = now;
+      lastTapPos = { x: t.clientX, y: t.clientY };
+    }, { passive: false });
+
+    // Cross-frame messaging from parent modal zoom buttons
+    window.addEventListener('message', (event) => {
+      if (!pdf) return;
+      if (event.data?.action === 'zoom') {
+        const cur = getCurrentScale();
+        const delta = Number(event.data.delta) || 0.2;
+        const next = Math.max(0.35, Math.min(3.8, Math.round((cur + delta) * 100) / 100));
+        customZoomScale = next;
+        updateZoomDropdown(next);
+        showZoomHud(next);
+        render();
+      } else if (event.data?.action === 'resetZoom') {
+        customZoomScale = null;
+        el('zoom').value = 'fit';
+        showZoomHud(1.0, 'Fit Width');
+        render();
+      }
+    });
 
     // Fullscreen and External New Tab
     el('fullscreenBtn').onclick = () => {
@@ -1810,5 +2028,6 @@
       el('status').textContent = 'Reader error: ' + (error?.message || 'Unknown error') + '. Tap Retry to try again.';
     }
   </script>
+  <div id="zoomHud" role="status" aria-live="polite">🔍 100%</div>
 </body>
 </html>

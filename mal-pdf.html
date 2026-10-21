@@ -2,7 +2,7 @@
 <html lang="ml">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="description" content="മലയാളം സാഹിത്യ പഠനത്തിനുള്ള മൊഡ്യൂൾ 1 മുതൽ 4 വരെയുള്ള PDF-കൾ, സമഗ്ര സംഗ്രഹം, അധ്യായം തിരിച്ചുള്ള MCQs">
   <title>മലയാളം | പഠന PDF-കൾ, സംഗ്രഹം & MCQs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -259,7 +259,33 @@
       }
 
 }
-</style>
+
+    .modal-action-btn {
+      background: rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.35) !important;
+      padding: 4px 10px !important;
+      border-radius: 8px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.15s ease !important;
+      line-height: 1.2 !important;
+      min-height: 28px !important;
+    }
+    .modal-action-btn:hover {
+      background: rgba(255, 255, 255, 0.35) !important;
+    }
+    .modal-iframe, .viewer-frame, .reader-frame {
+      -webkit-overflow-scrolling: touch !important;
+      touch-action: pan-x pan-y pinch-zoom !important;
+    }
+
+  </style>
 </head>
 <body>
   <main class="page-box">
@@ -386,6 +412,9 @@
         <div id="pane-pdf" class="study-pane">
           <div class="pdf-action-row">
             <span id="pdf-viewer-desc" style="font-size:13px; font-weight:700; color:#334155;">ഔദ്യോഗിക കോഴ്സ് PDF</span>
+            <button type="button" class="btn-open-pdf" onclick="zoomModalReader(-0.25)" title="Zoom Out (ചെറുതാക്കുക)" aria-label="Zoom Out" style="cursor:pointer;background:#e2e8f0;color:#0f172a;border:1px solid #cbd5e1;padding:6px 10px;border-radius:8px;font-weight:700;display:inline-flex;align-items:center;">🔍−</button>
+            <button type="button" class="btn-open-pdf" onclick="zoomModalReader(0.25)" title="Zoom In (വലുതാക്കുക)" aria-label="Zoom In" style="cursor:pointer;background:#e2e8f0;color:#0f172a;border:1px solid #cbd5e1;padding:6px 10px;border-radius:8px;font-weight:700;display:inline-flex;align-items:center;">🔍+</button>
+            <button type="button" class="btn-open-pdf" onclick="resetModalReaderZoom()" title="Reset Zoom (സാധാരണ)" aria-label="Reset Zoom" style="cursor:pointer;background:#e2e8f0;color:#0f172a;border:1px solid #cbd5e1;padding:6px 10px;border-radius:8px;font-weight:700;display:inline-flex;align-items:center;">↺</button>
             <a id="modal-pdf-link" class="btn-open-pdf" href="#" target="_blank" rel="noopener"><span>📄</span> Open PDF in New Tab ↗</a>
           </div>
           <div class="pdf-embed-wrapper">
@@ -741,5 +770,16 @@
       }
     }, true);
   </script>
+<script>
+    // Modal Reader Zoom Controls (communicates with study-guide-reader)
+    function zoomModalReader(delta) {
+      const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
+      f?.contentWindow?.postMessage({ action: 'zoom', delta: delta }, '*');
+    }
+    function resetModalReaderZoom() {
+      const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
+      f?.contentWindow?.postMessage({ action: 'resetZoom' }, '*');
+    }
+</script>
 </body>
 </html>

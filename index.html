@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="theme-color" content="#0f2b5c">
   <meta name="description" content="Academic Hub — exam-focused notes, MCQ practice tests, videos and study resources for Calicut University students.">
   <meta name="google-adsense-account" content="ca-pub-6526381938888583">
@@ -67,6 +67,32 @@
     #module-dialog .module-subtabs button[aria-selected="true"].chapter-blink-random {
       animation: chapterRandomBlinkActive var(--blink-dur, 0.5s) ease-in-out var(--blink-delay, 0s) var(--blink-count, 7) normal !important;
     }
+  
+    .modal-action-btn {
+      background: rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.35) !important;
+      padding: 4px 10px !important;
+      border-radius: 8px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.15s ease !important;
+      line-height: 1.2 !important;
+      min-height: 28px !important;
+    }
+    .modal-action-btn:hover {
+      background: rgba(255, 255, 255, 0.35) !important;
+    }
+    .modal-iframe, .viewer-frame, .reader-frame {
+      -webkit-overflow-scrolling: touch !important;
+      touch-action: pan-x pan-y pinch-zoom !important;
+    }
+
   </style>
   <style id="academic-hub-red-navigation">
     .topbar{display:flex;flex-direction:column;align-items:center;justify-content:center;height:auto;min-height:76px;padding:14px clamp(18px,3vw,44px) 12px;gap:10px;background:rgba(15,15,18,.97);border-bottom:1px solid #303035;box-shadow:inset 0 3px 0 #e11d2e,0 8px 24px rgba(0,0,0,.16)}
@@ -4886,6 +4912,17 @@
 
 
 
+<script>
+    // Modal Reader Zoom Controls (communicates with study-guide-reader)
+    function zoomModalReader(delta) {
+      const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
+      f?.contentWindow?.postMessage({ action: 'zoom', delta: delta }, '*');
+    }
+    function resetModalReaderZoom() {
+      const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
+      f?.contentWindow?.postMessage({ action: 'resetZoom' }, '*');
+    }
+</script>
 </body>
 </html>
 

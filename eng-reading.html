@@ -2,7 +2,7 @@
 <html lang="ml">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="description" content="കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ സോഷ്യോളജി - ഇംഗ്ലീഷ് ഭാഷാ വൈദഗ്ദ്ധ്യം സമ്പൂർണ്ണ മലയാള പരിഭാഷാ വായനാ സഹായി (Malayalam Reading)">
   <title>ഇംഗ്ലീഷ് മലയാളം വായന | Malayalam Reading</title>
   <link rel="stylesheet" href="style.css">
@@ -1085,6 +1085,9 @@
         <div class="modal-header">
           <h3 id="modalTitle">PDF Viewer</h3>
           <div class="modal-header-actions">
+            <button type="button" class="modal-action-btn" onclick="zoomModalReader(-0.25)" title="Zoom Out (ചെറുതാക്കുക)" aria-label="Zoom Out">🔍−</button>
+            <button type="button" class="modal-action-btn" onclick="zoomModalReader(0.25)" title="Zoom In (വലുതാക്കുക)" aria-label="Zoom In">🔍+</button>
+            <button type="button" class="modal-action-btn" onclick="resetModalReaderZoom()" title="Reset Zoom (യഥാർത്ഥ വലുപ്പം)" aria-label="Reset Zoom">↺</button>
             <a id="modalExternalBtn" class="modal-action-btn" href="#" target="_blank" rel="noopener" title="പുതിയ ടാബിൽ തുറക്കുക (Open in New Tab)">↗</a>
             <button class="close-modal" onclick="closeViewer()">×</button>
           </div>
@@ -1190,5 +1193,16 @@
     });
   </script>
 
+<script>
+    // Modal Reader Zoom Controls (communicates with study-guide-reader)
+    function zoomModalReader(delta) {
+      const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
+      f?.contentWindow?.postMessage({ action: 'zoom', delta: delta }, '*');
+    }
+    function resetModalReaderZoom() {
+      const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
+      f?.contentWindow?.postMessage({ action: 'resetZoom' }, '*');
+    }
+</script>
 </body>
 </html>

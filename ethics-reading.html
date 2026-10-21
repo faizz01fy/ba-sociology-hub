@@ -2,7 +2,7 @@
 <html lang="ml">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="description" content="കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ - ഫണ്ടമെന്റൽസ് ഓഫ് എത്തിക്സ് സമ്പൂർണ്ണ മലയാള & ദ്വിഭാഷാ വായനാ സഹായി (Malayalam Reading) · Fundamentals of Ethics">
   <title>ധർമ്മശാസ്ത്രത്തിന്റെ അടിസ്ഥാനങ്ങൾ മലയാളം വായന | Fundamentals of Ethics Malayalam Reading</title>
   <link rel="stylesheet" href="style.css">
@@ -660,6 +660,32 @@
       .action-btn { flex: 1; }
       .mcq-options { grid-template-columns: 1fr; }
     }
+  
+    .modal-action-btn {
+      background: rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.35) !important;
+      padding: 4px 10px !important;
+      border-radius: 8px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.15s ease !important;
+      line-height: 1.2 !important;
+      min-height: 28px !important;
+    }
+    .modal-action-btn:hover {
+      background: rgba(255, 255, 255, 0.35) !important;
+    }
+    .modal-iframe, .viewer-frame, .reader-frame {
+      -webkit-overflow-scrolling: touch !important;
+      touch-action: pan-x pan-y pinch-zoom !important;
+    }
+
   </style>
 </head>
 <body>
@@ -928,6 +954,9 @@
     <div class="viewer-header">
       <h3 id="modalTitle" class="viewer-title">പഠന സാമഗ്രി വായന (PDF Study Material Viewer)</h3>
       <div class="viewer-actions">
+        <button type="button" class="viewer-btn" onclick="zoomModalReader(-0.25)" title="Zoom Out (ചെറുതാക്കുക)" aria-label="Zoom Out">🔍−</button>
+        <button type="button" class="viewer-btn" onclick="zoomModalReader(0.25)" title="Zoom In (വലുതാക്കുക)" aria-label="Zoom In">🔍+</button>
+        <button type="button" class="viewer-btn" onclick="resetModalReaderZoom()" title="Reset Zoom (യഥാർത്ഥ വലുപ്പം)" aria-label="Reset Zoom">↺</button>
         <a id="modalExternalBtn" href="#" target="_blank" class="viewer-btn">↗ വലിയ സ്ക്രീനിൽ തുറക്കുക (Full Screen)</a>
         <button class="viewer-btn viewer-close" onclick="closeViewer()">✕ അടയ്ക്കുക (Close)</button>
       </div>
@@ -2692,5 +2721,16 @@
     });
 </script>
 
+<script>
+    // Modal Reader Zoom Controls (communicates with study-guide-reader)
+    function zoomModalReader(delta) {
+      const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
+      f?.contentWindow?.postMessage({ action: 'zoom', delta: delta }, '*');
+    }
+    function resetModalReaderZoom() {
+      const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
+      f?.contentWindow?.postMessage({ action: 'resetZoom' }, '*');
+    }
+</script>
 </body>
 </html>
