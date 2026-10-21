@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 13: Knowledge Representation, Processing & Obstacles in AI</title>
+  
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+  @page {
+    size: A4;
+    margin: 16mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+    @bottom-left {
+      content: "University of Calicut · BA Philosophy · Theories of Knowledge in AI";
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    line-height: 1.65;
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+  }
+  .header-box {
+    border: 2px solid #b45309;
+    border-radius: 12px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    margin-bottom: 22px;
+  }
+  .badge {
+    display: inline-block;
+    background: #b45309;
+    color: #ffffff;
+    font-size: 8pt;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  h1 {
+    margin: 0 0 4px 0;
+    color: #78350f;
+    font-size: 16pt;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+  .sub-title {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #b45309;
+    margin-bottom: 8px;
+  }
+  .meta-info {
+    font-size: 8.5pt;
+    color: #475569;
+    font-weight: 600;
+    border-top: 1px dashed #fde68a;
+    padding-top: 6px;
+    margin-top: 6px;
+  }
+  .section-title {
+    background: #b45309;
+    color: #ffffff;
+    padding: 9px 15px;
+    border-radius: 8px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 24px 0 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-after: avoid;
+  }
+  .bilingual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+  .card-en, .card-ml {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 13px 15px;
+    background: #ffffff;
+    font-size: 9.5pt;
+  }
+  .card-en {
+    border-left: 4px solid #2563eb;
+    background: #f8fafc;
+  }
+  .card-ml {
+    border-left: 4px solid #b45309;
+    background: #ffffff;
+  }
+  .card-title {
+    font-weight: 800;
+    margin-bottom: 6px;
+    font-size: 10pt;
+  }
+  .card-en .card-title { color: #1e40af; }
+  .card-ml .card-title { color: #78350f; }
+  .table-box {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 9pt;
+  }
+  .table-box th, .table-box td {
+    border: 1px solid #cbd5e1;
+    padding: 9px 11px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .table-box th {
+    background: #b45309;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .table-box tr:nth-child(even) { background: #f8fafc; }
+  .concept-box {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-left: 5px solid #d97706;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 9.5pt;
+  }
+  .concept-box strong { color: #78350f; }
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #b45309;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+  .qa-q {
+    font-weight: 800;
+    color: #b45309;
+    margin-bottom: 6px;
+    font-size: 10pt;
+  }
+  .qa-a {
+    color: #334155;
+    font-size: 9.5pt;
+    line-height: 1.6;
+  }
+  p { margin: 0 0 10px 0; }
+</style>
+
+</head>
+<body>
+
+  <div class="header-box">
+    <div class="badge">Calicut University · Minor Philosophy (PHL1MN102)</div>
+    <h1>അധ്യായം 13: AI-യിലെ വിജ്ഞാന നിർമ്മിതിയും പ്രതിസന്ധികളും</h1>
+    <div class="sub-title">Chapter 13: Knowledge Representation, Processing & Obstacles in AI</div>
+    <div class="meta-info">
+      <span>📚 Module 3 · Chapter 13</span> &nbsp;|&nbsp; 
+      <span>⏱️ 15 Hours Module Weightage · 20 Marks</span>
+    </div>
+  </div>
+
+  <div class="concept-box">
+    <strong>പാഠ്യസംഗ്രഹം (Module Scope):</strong> കമ്പ്യൂട്ടറുകളിൽ അറിവ് എങ്ങനെ ശേഖരിക്കപ്പെടുന്നു (Representation), സംസ്കരിക്കപ്പെടുന്നു (Processing), ഉപയോഗിക്കപ്പെടുന്നു (Utilisation) എന്നും, സിംബോളിക്, കണക്ഷനിസ്റ്റ്, സ്റ്റാറ്റിസ്റ്റിക്കൽ രീതിശാസ്ത്രങ്ങൾ തമ്മിലുള്ള വ്യത്യാസങ്ങളും, മനുഷ്യനെപ്പോലെയുള്ള യഥാർത്ഥ വിജ്ഞാനം യന്ത്രങ്ങളിൽ ഉണ്ടാക്കുന്നതിലെ പ്രധാന തടസ്സങ്ങളും ഈ അധ്യായം സമഗ്രമായി വിശകലനം ചെയ്യുന്നു.
+  </div>
+
+  <div class="section-title">
+    <span>1. അറിവ് രേഖപ്പെടുത്തുന്ന 3 പ്രധാന രീതിശാസ്ത്രങ്ങൾ</span>
+    <span style="font-size: 9pt; font-weight: 600;">Three Methodologies of Knowledge in AI</span>
+  </div>
+
+  <table class="table-box">
+    <tr>
+      <th style="width: 22%;">രീതിശാസ്ത്രം</th>
+      <th style="width: 38%;">പ്രവർത്തന തത്ത്വം (Mechanism)</th>
+      <th style="width: 40%;">ശക്തിയും പരിമിതിയും</th>
+    </tr>
+    <tr>
+      <td><strong>1. സിംബോളിക് രീതി<br>(Symbolic Method)</strong></td>
+      <td>അറിവിനെ ലോജിക്കൽ നിയമങ്ങളായും ചിഹ്നങ്ങളായും നേരിട്ട് കോഡ് ചെയ്യൽ (Explicit Rules).</td>
+      <td>സുതാര്യവും വിശദീകരിക്കാൻ എളുപ്പവുമാണ്; എന്നാൽ പുതിയ സാഹചര്യങ്ങളിൽ എളുപ്പത്തിൽ തകരുന്നു.</td>
+    </tr>
+    <tr>
+      <td><strong>2. കണക്ഷനിസ്റ്റ് രീതി<br>(Connectionist Method)</strong></td>
+      <td>കൃത്രിമ ന്യൂറോണുകളുടെ വലക്കണ്ണികളിലൂടെ വിജ്ഞാനം പങ്കുവെക്കപ്പെടുന്നു (Distributed Weights).</td>
+      <td>ചിത്രങ്ങളും ശബ്ദങ്ങളും പാറ്റേണുകളും തിരിച്ചറിയാൻ മികച്ചത്; എന്നാൽ ഇത് എങ്ങനെ പ്രവർത്തിക്കുന്നുവെന്ന് വിശദീകരിക്കാൻ പ്രയാസമാണ് (Black Box).</td>
+    </tr>
+    <tr>
+      <td><strong>3. സ്റ്റാറ്റിസ്റ്റിക്കൽ രീതി<br>(Statistical Method)</strong></td>
+      <td>വൻതോതിലുള്ള ഡാറ്റയിൽ നിന്ന് പ്രോബബിലിറ്റികളും സ്ഥിതിവിവരക്കണക്കുകളും കണ്ടെത്തി തീരുമാനമെടുക്കൽ.</td>
+      <td>വലിയ ഡാറ്റയിൽ ഉയർന്ന കൃത്യത നൽകുന്നു; എന്നാൽ ഇതിന് യഥാർത്ഥ കാരണങ്ങൾ (Causality) മനസ്സിലാക്കാൻ കഴിയില്ല.</td>
+    </tr>
+  </table>
+
+  <div class="section-title">
+    <span>2. യന്ത്രങ്ങളിൽ വിജ്ഞാനം രൂപപ്പെടുത്തുന്നതിലെ തടസ്സങ്ങൾ</span>
+    <span style="font-size: 9pt; font-weight: 600;">Obstacles in Machine Knowledge</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">1. സാമാന്യബുദ്ധി പ്രശ്നം (Common Sense Problem)</div>
+      <p>ഒരു ഗ്ലാസ് വെള്ളം താഴെ വീണാൽ ഉടയും എന്നത് മനുഷ്യർക്ക് സ്വാഭാവികമായ അറിവാണ്. എന്നാൽ ഇത്തരം കോടിക്കണക്കിന് നിത്യജീവിത യാഥാർത്ഥ്യങ്ങൾ കമ്പ്യൂട്ടറിന് ഓരോന്നായി പറഞ്ഞുകൊടുക്കാൻ സാധിക്കാത്തത് വലിയൊരു വെല്ലുവിളിയാണ്.</p>
+    </div>
+    <div class="card-en">
+      <div class="card-title">Common-Sense Reasoning Deficit</div>
+      <p>Human beings effortlessly navigate the world utilizing a massive background of intuitive physical and social common-sense facts that remain notoriously resistant to algorithmic codification.</p>
+    </div>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">2. സന്ദർഭബോധവും അർത്ഥവും (Context Sensitivity)</div>
+      <p>മനുഷ്യന്റെ ഭാഷയും തീരുമാനങ്ങളും പൂർണ്ണമായും സന്ദർഭത്തിന് അനുസരിച്ചാണ് മാറുന്നത്. കമ്പ്യൂട്ടറുകൾ വാചകങ്ങൾ കൃത്യമായി പ്രോസസ്സ് ചെയ്യുന്നുണ്ടെങ്കിലും സന്ദർഭത്തിന് പിന്നിലെ യഥാർത്ഥ വികാരം ഗ്രഹിക്കാൻ പ്രയാസപ്പെടുന്നു.</p>
+    </div>
+    <div class="card-en">
+      <div class="card-title">Contextual Plasticity</div>
+      <p>Real-world human cognition is fundamentally context-sensitive. AI architectures, operating on isolated statistical correlations, struggle to discern pragmatic implicature and contextual shift.</p>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>3. പരീക്ഷാ സഹായി: മോഡൽ ചോദ്യോത്തരങ്ങൾ (University Exam Q&A)</span>
+    <span style="font-size: 9pt; font-weight: 600;">Calicut University Exam Pattern</span>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q1. AI-യിലെ അറിവ് നിർമ്മാണത്തിൽ സിംബോളിക് രീതിയും കണക്ഷനിസ്റ്റ് രീതിയും തമ്മിലുള്ള വ്യത്യാസം എന്ത്? (Short Answer - 3 Marks)</div>
+    <div class="qa-a">
+      <strong>ഉത്തരം:</strong> സിംബോളിക് രീതി അറിവിനെ ചിട്ടയായ നിയമങ്ങളിലൂടെ നേരിട്ട് നൽകുന്നു (Top-down rules). കണക്ഷനിസ്റ്റ് രീതി ന്യൂറോണുകളുടെ വലക്കണ്ണികൾ വഴി ഡാറ്റയിൽ നിന്ന് സ്വയം അറിവ് പഠിച്ചെടുക്കുന്നു (Bottom-up neural weights).
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q2. യന്ത്രങ്ങളിൽ മനുഷ്യസമാനമായ വിജ്ഞാനം നിർമ്മിക്കുന്നതിലെ പ്രധാന വെല്ലുവിളികൾ എന്തെല്ലാം? (Short Essay - 5 Marks)</div>
+    <div class="qa-a">
+      <strong>ഉത്തരം:</strong> 1. സാമാന്യബോധത്തിന്റെ അഭാവം (Common sense problem), 2. സന്ദർഭോചിതമായി ചിന്തിക്കാനുള്ള കഴിവുകേട് (Lack of context sensitivity), 3. സിംബലുകൾക്ക് ഭൗതിക ലോകവുമായി ബന്ധമില്ലാത്ത അവസ്ഥ (Symbol Grounding Problem), 4. പ്രോബബിലിറ്റികൾക്കപ്പുറം കാര്യകാരണ ബന്ധങ്ങൾ ഗ്രഹിക്കാനുള്ള പരിമിതി.
+    </div>
+  </div>
+
+</body>
+</html>

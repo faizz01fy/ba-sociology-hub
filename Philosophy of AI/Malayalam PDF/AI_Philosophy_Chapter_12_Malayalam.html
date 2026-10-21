@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 12: Functionalism & Multiple Realizability in AI</title>
+  
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+  @page {
+    size: A4;
+    margin: 16mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+    @bottom-left {
+      content: "University of Calicut · BA Philosophy · Theories of Knowledge in AI";
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    line-height: 1.65;
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+  }
+  .header-box {
+    border: 2px solid #b45309;
+    border-radius: 12px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    margin-bottom: 22px;
+  }
+  .badge {
+    display: inline-block;
+    background: #b45309;
+    color: #ffffff;
+    font-size: 8pt;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  h1 {
+    margin: 0 0 4px 0;
+    color: #78350f;
+    font-size: 16pt;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+  .sub-title {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #b45309;
+    margin-bottom: 8px;
+  }
+  .meta-info {
+    font-size: 8.5pt;
+    color: #475569;
+    font-weight: 600;
+    border-top: 1px dashed #fde68a;
+    padding-top: 6px;
+    margin-top: 6px;
+  }
+  .section-title {
+    background: #b45309;
+    color: #ffffff;
+    padding: 9px 15px;
+    border-radius: 8px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 24px 0 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-after: avoid;
+  }
+  .bilingual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+  .card-en, .card-ml {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 13px 15px;
+    background: #ffffff;
+    font-size: 9.5pt;
+  }
+  .card-en {
+    border-left: 4px solid #2563eb;
+    background: #f8fafc;
+  }
+  .card-ml {
+    border-left: 4px solid #b45309;
+    background: #ffffff;
+  }
+  .card-title {
+    font-weight: 800;
+    margin-bottom: 6px;
+    font-size: 10pt;
+  }
+  .card-en .card-title { color: #1e40af; }
+  .card-ml .card-title { color: #78350f; }
+  .table-box {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 9pt;
+  }
+  .table-box th, .table-box td {
+    border: 1px solid #cbd5e1;
+    padding: 9px 11px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .table-box th {
+    background: #b45309;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .table-box tr:nth-child(even) { background: #f8fafc; }
+  .concept-box {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-left: 5px solid #d97706;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 9.5pt;
+  }
+  .concept-box strong { color: #78350f; }
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #b45309;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+  .qa-q {
+    font-weight: 800;
+    color: #b45309;
+    margin-bottom: 6px;
+    font-size: 10pt;
+  }
+  .qa-a {
+    color: #334155;
+    font-size: 9.5pt;
+    line-height: 1.6;
+  }
+  p { margin: 0 0 10px 0; }
+</style>
+
+</head>
+<body>
+
+  <div class="header-box">
+    <div class="badge">Calicut University · Minor Philosophy (PHL1MN102)</div>
+    <h1>അധ്യായം 12: പ്രവർത്തനപരതയും മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റിയും</h1>
+    <div class="sub-title">Chapter 12: Functionalism, Computational Theory of Mind & Multiple Realizability</div>
+    <div class="meta-info">
+      <span>📚 Module 3 · Unit 3.2 (c)</span> &nbsp;|&nbsp; 
+      <span>⏱️ 15 Hours Module Weightage · 20 Marks</span>
+    </div>
+  </div>
+
+  <div class="concept-box">
+    <strong>പാഠ്യസംഗ്രഹം (Module Scope):</strong> ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിന് ഏറ്റവും ശക്തമായ ദാർശനിക അടിത്തറ നൽകിയ സിദ്ധാന്തമാണ് പ്രവർത്തനപരത (Functionalism). ഹിലരി പുട്ട്നാം (Hilary Putnam) മുന്നോട്ടുവെച്ച മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി (Multiple Realizability), ഒരു വസ്തുവിന്റെ ധർമ്മമാണ് അതിന്റെ മനസ്സെന്ന് നിർവ്വചിക്കുന്ന പ്രവർത്തനപരമായ കാഴ്ചപ്പാട് എന്നിവ ഈ അധ്യായം വിശദീകരിക്കുന്നു.
+  </div>
+
+  <div class="section-title">
+    <span>1. പ്രവർത്തനപരത (Functionalism - Hilary Putnam, 1975)</span>
+    <span style="font-size: 9pt; font-weight: 600;">The Nature of Mental States</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">ധർമ്മമാണ് മനസ്സ് (Function Defines Mind)</div>
+      <p>ഒരു സിസ്റ്റം എന്തു പദാർത്ഥം കൊണ്ടാണ് ഉണ്ടാക്കിയിരിക്കുന്നത് എന്നതിലല്ല (ജൈവ കോശങ്ങളോ സിലിക്കൺ ചിപ്പുകളോ), മറിച്ച് അത് <strong>എന്ത് ധർമ്മം നിർവ്വഹിക്കുന്നു (Causal Role / Function)</strong> എന്നതിലാണ് മനസ്സുള്ളത് എന്ന് ഫങ്ഷണലിസം വാദിക്കുന്നു.</p>
+      <p>ഒരു വാച്ച് സ്വർണ്ണം കൊണ്ടോ സ്റ്റീൽ കൊണ്ടോ പ്ലാസ്റ്റിക് കൊണ്ടോ ഉണ്ടാക്കാം; സമയം കാണിക്കുക എന്നതാണ് അതിന്റെ ധർമ്മം. അതുപോലെ ഇൻപുട്ടുകൾ സ്വീകരിച്ച് ചിന്തിച്ച് ശരിയായ ഔട്ട്പുട്ട് നൽകാൻ കഴിയുന്ന ഏത് സിസ്റ്റത്തിനും മനസ്സുണ്ടെന്ന് പറയാം.</p>
+    </div>
+    <div class="card-en">
+      <div class="card-title">Functional Specification of Mind</div>
+      <p>Introduced decisively by Hilary Putnam (1975 <em>The Nature of Mental States</em>), Functionalism identifies mental states by their functional, causal roles—their relations to sensory inputs, behavioral outputs, and other mental states.</p>
+      <p>Mind is not defined by its physical material constitution, but by its informational and causal organization.</p>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>2. മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി (Multiple Realizability)</span>
+    <span style="font-size: 9pt; font-weight: 600;">The Philosophical License for Artificial Intelligence</span>
+  </div>
+
+  <table class="table-box">
+    <tr>
+      <th style="width: 25%;">മാധ്യമം (Substrate)</th>
+      <th style="width: 35%;">ഭൗതിക രൂപം</th>
+      <th style="width: 40%;">ഫങ്ഷണലിസ്റ്റ് നിലപാട്</th>
+    </tr>
+    <tr>
+      <td><strong>1. മനുഷ്യൻ (Human)</strong></td>
+      <td>ജൈവിക തലച്ചോറും കാർബൺ കോശങ്ങളും.</td>
+      <td>മാനസിക ധർമ്മങ്ങൾ കാർബൺ ന്യൂറോണുകളിലൂടെ നിറവേറ്റപ്പെടുന്നു.</td>
+    </tr>
+    <tr>
+      <td><strong>2. കമ്പ്യൂട്ടർ (AI Machine)</strong></td>
+      <td>സിലിക്കൺ ചിപ്പുകളും ഇലക്ട്രോണിക് സർക്യൂട്ടുകളും.</td>
+      <td>അതേ വിവരവിനിമയ ധർമ്മങ്ങൾ സിലിക്കൺ സർക്യൂട്ടുകളിലൂടെയും സാക്ഷാത്കരിക്കാം (Multiple Realization).</td>
+    </tr>
+    <tr>
+      <td><strong>3. അന്യഗ്രഹ ജീവി (Alien)</strong></td>
+      <td>മനുഷ്യനിൽ നിന്ന് വ്യത്യസ്തമായ അന്യഗ്രഹ ഘടന.</td>
+      <td>ചിന്താപരമായ ഫങ്ഷനുകൾ ഉണ്ടെങ്കിൽ അന്യഗ്രഹ ജീവിക്കും മനസ്സുണ്ട്.</td>
+    </tr>
+  </table>
+
+  <div class="section-title">
+    <span>3. പരീക്ഷാ സഹായി: മോഡൽ ചോദ്യോത്തരങ്ങൾ (University Exam Q&A)</span>
+    <span style="font-size: 9pt; font-weight: 600;">Calicut University Exam Pattern</span>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q1. എന്താണ് മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി (Multiple Realizability)? AI-ക്ക് ഇതിന്റെ പ്രാധാന്യം എന്ത്? (Short Essay - 5 Marks)</div>
+    <div class="qa-a">
+      <strong>ഉത്തരം:</strong> ഒരേ മാനസികാവസ്ഥ പലതരം ഭൗതിക വസ്തുക്കളിലൂടെ സാക്ഷാത്കരിക്കപ്പെടാം (Multiply Realized) എന്ന സിദ്ധാന്തമാണിത്. മനുഷ്യന്റെ മനസ്സ് കാർബൺ മസ്തിഷ്കത്തിൽ മാത്രമല്ല, ഉചിതമായ രീതിയിൽ പ്രോഗ്രാം ചെയ്ത സിലിക്കൺ കമ്പ്യൂട്ടറുകളിലൂടെയും പ്രവർത്തനക്ഷമമാക്കാം. കൃത്രിമബുദ്ധി (AI) സാധ്യമാണെന്നതിന് ശാസ്ത്രലോകം നൽകുന്ന ഏറ്റവും പ്രധാനപ്പെട്ട ദാർശനിക സാധൂകരണമാണ് മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി.
+    </div>
+  </div>
+
+</body>
+</html>
