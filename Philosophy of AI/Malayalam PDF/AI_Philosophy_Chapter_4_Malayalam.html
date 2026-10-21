@@ -2,40 +2,47 @@
 <html lang="ml">
 <head>
   <meta charset="UTF-8">
-  <title>Chapter 4: Problems in the Classical Model of AI · Philosophy of AI (PHL1MN102)</title>
+  <title>Chapter 4: Problems in the Classical (Symbolic) Model of AI</title>
   
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
   @page {
     size: A4;
-    margin: 14mm 14mm 16mm 14mm;
+    margin: 16mm 16mm 18mm 16mm;
     @bottom-right {
-      content: counter(page);
+      content: "Page " counter(page);
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 9pt;
       font-weight: 700;
       color: #64748b;
+    }
+    @bottom-left {
+      content: "University of Calicut · BA Philosophy · Classical Version of AI";
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #94a3b8;
     }
   }
   body {
     font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
     color: #0f172a;
     background: #ffffff;
-    line-height: 1.6;
+    line-height: 1.65;
     font-size: 10pt;
     margin: 0;
     padding: 0;
   }
   .header-box {
-    border: 2px solid #4338ca;
+    border: 2px solid #3730a3;
     border-radius: 12px;
-    padding: 16px 20px;
+    padding: 18px 22px;
     background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
   .badge {
     display: inline-block;
-    background: #4338ca;
+    background: #3730a3;
     color: #ffffff;
     font-size: 8pt;
     font-weight: 800;
@@ -66,19 +73,26 @@
     padding-top: 6px;
     margin-top: 6px;
   }
-  
-  
   .section-title {
-    background: #4338ca;
+    background: #3730a3;
     color: #ffffff;
-    padding: 8px 14px;
+    padding: 9px 15px;
     border-radius: 8px;
     font-size: 11pt;
     font-weight: 800;
-    margin: 22px 0 14px 0;
+    margin: 24px 0 14px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    page-break-after: avoid;
+  }
+  .sub-section-title {
+    color: #312e81;
+    font-size: 10.5pt;
+    font-weight: 800;
+    margin: 16px 0 8px 0;
+    border-bottom: 1.5px solid #c7d2fe;
+    padding-bottom: 4px;
     page-break-after: avoid;
   }
   .bilingual-grid {
@@ -91,7 +105,7 @@
   .card-en, .card-ml {
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    padding: 12px 14px;
+    padding: 13px 15px;
     background: #ffffff;
     font-size: 9.5pt;
   }
@@ -118,34 +132,47 @@
   }
   .table-box th, .table-box td {
     border: 1px solid #cbd5e1;
-    padding: 8px 10px;
+    padding: 9px 11px;
     text-align: left;
+    vertical-align: top;
   }
   .table-box th {
-    background: #4338ca;
+    background: #3730a3;
     color: #ffffff;
     font-weight: 700;
   }
   .table-box tr:nth-child(even) { background: #f8fafc; }
-  .qa-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
+  .concept-box {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-left: 5px solid #4f46e5;
     border-radius: 8px;
     padding: 12px 16px;
-    margin-bottom: 12px;
+    margin: 14px 0;
+    font-size: 9.5pt;
+  }
+  .concept-box strong { color: #1e1b4b; }
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #3730a3;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
     page-break-inside: avoid;
   }
   .qa-q {
     font-weight: 800;
-    color: #4338ca;
+    color: #3730a3;
     margin-bottom: 6px;
     font-size: 10pt;
   }
   .qa-a {
     color: #334155;
     font-size: 9.5pt;
-    line-height: 1.55;
+    line-height: 1.6;
   }
+  p { margin: 0 0 10px 0; }
 </style>
 
 </head>
@@ -157,70 +184,121 @@
     <div class="sub-title">Chapter 4: Problems in the Classical (Symbolic) Model of AI</div>
     <div class="meta-info">
       <span>📚 Module 2 · Unit 2.1</span> &nbsp;|&nbsp; 
-      <span>⏱️ 20 Hours Module Weightage · 20 Marks</span> 
+      <span>⏱️ 20 Hours Module Weightage · 20 Marks</span>
     </div>
   </div>
 
-<div class="section-title">
-    <span>1. ക്ലാസിക്കൽ (സിംബോളിക്) AI മാതൃക (The Classical Symbolic Paradigm)</span>
-    <span style="font-size: 9pt; font-weight: 600;">GOFAI Foundations</span>
+  <div class="concept-box">
+    <strong>പാഠ്യസംഗ്രഹം (Module Scope):</strong> ക്ലാസിക്കൽ AI അഥവാ ഗുഡ് ഓൾഡ്-ഫാഷൻഡ് AI (GOFAI) മനുഷ്യബുദ്ധിയെ പ്രതീകാത്മകവും യുക്തിനിയമങ്ങളാൽ നിർവ്വചിക്കപ്പെട്ടതുമായ (Symbolic, Logical, Rule-based) ഒരു കമ്പ്യൂട്ടേഷണൽ പ്രക്രിയയായിട്ടാണ് കണ്ടത്. എന്നാൽ മനുഷ്യന്റെ ചിന്തയെയും ബുദ്ധിയെയും ഇത്തരത്തിൽ പ്രതീകങ്ങളാക്കി മാറ്റിയപ്പോൾ സംഭവിച്ച ദാർശനികവും സാങ്കേതികവുമായ വീഴ്ചകൾ, ഭൗതികവും വികാരപരവും അനുഭവപരവുമായ ഘടകങ്ങൾ അവഗണിച്ചതിനെതിരെയുള്ള വിമർശനങ്ങൾ, ആദ്യകാല AI സിസ്റ്റങ്ങൾ നേരിട്ട പ്രതിസന്ധികൾ എന്നിവയാണ് ഈ അധ്യായം വിശദമായി പരിശോധിക്കുന്നത്.
+  </div>
+
+  <div class="section-title">
+    <span>1. ക്ലാസിക്കൽ സിംബോളിക് മാതൃകയും തത്ത്വചിന്താപരമായ അടിത്തറയും</span>
+    <span style="font-size: 9pt; font-weight: 600;">The Classical Paradigm & Foundations</span>
   </div>
 
   <div class="bilingual-grid">
     <div class="card-ml">
-      <div class="card-title">മലയാളം വിവരണം</div>
-      <p>ക്ലാസിക്കൽ AI (Good Old-Fashioned AI - GOFAI) മനുഷ്യബുദ്ധിയെ ചിട്ടയായ പ്രതീകങ്ങളുടെയും (Symbols) തത്ത്വാധിഷ്ഠിത യുക്തിനിയമങ്ങളുടെയും (Explicit Rules) അടിസ്ഥാനത്തിലാണ് കണ്ടത്. മനുഷ്യന്റെ യുക്തിചിന്തയെ മുഴുവൻ 'If-Then' നിയമങ്ങളിലൂടെ നിർവ്വചിക്കാമെന്ന് ആദ്യകാല ഗവേഷകർ വിശ്വസിച്ചു.</p>
+      <div class="card-title">മലയാളം ദാർശനിക വിശകലനം</div>
+      <p>ക്ലാസിക്കൽ കൃത്രിമബുദ്ധി മാതൃക രൂപപ്പെട്ടത് <strong>യുക്തിവാദപരമായ (Rationalist)</strong>, <strong>കമ്പ്യൂട്ടേഷണൽ (Computational)</strong> തത്ത്വചിന്തകളുടെ സ്വാധീനത്തിലാണ്. ഈ കാഴ്ചപ്പാടനുസരിച്ച്, പ്രപഞ്ചത്തെക്കുറിച്ചുള്ള എല്ലാ അറിവുകളെയും വ്യക്തമായ ചിഹ്നങ്ങളായും (Discrete Symbols) മനുഷ്യചിന്തയെ ആ ചിഹ്നങ്ങളെ നിയന്ത്രിക്കുന്ന യുക്തിനിയമങ്ങളായും (Formal Logical Rules) മാറ്റാൻ സാധിക്കും.</p>
+      <p>ആദ്യകാല എഐ ശാസ്ത്രജ്ഞർ കരുതിയത് ഗണിതശാസ്ത്രപരമായ ലോജിക്കും 'If-Then' നിയമങ്ങളും ഉപയോഗിച്ച് ഒരു കമ്പ്യൂട്ടർ പ്രോഗ്രാം തയ്യാറാക്കിയാൽ മനുഷ്യനെപ്പോലെ ചിന്തിക്കുന്ന യന്ത്രം നിർമ്മിക്കാം എന്നാണ്.</p>
     </div>
     <div class="card-en">
-      <div class="card-title">English Core Theory</div>
-      <p>The classical paradigm posits intelligence as computational symbol manipulation governed by formal propositional logic. Influenced by rationalist philosophy, it presumes all rational cognition can be codified into explicit declarative rules.</p>
+      <div class="card-title">English Philosophical Framework</div>
+      <p>The conventional paradigm of classical AI—often designated as <em>Good Old-Fashioned AI (GOFAI)</em>—was deeply anchored in <strong>rationalist epistemology</strong> and computationalism. It conceptualized intelligence fundamentally as formal, symbolic, and rule-based manipulation.</p>
+      <p>Within this paradigm, human rational thought is treated as the execution of algorithmic operations over discrete propositional symbols, operating under the assumption that all cognitive competence can be codified into explicit, deductive inferential rules.</p>
     </div>
   </div>
 
   <div class="section-title">
-    <span>2. ക്ലാസിക്കൽ മോഡലിന്റെ പ്രധാന പരാജയകാരണങ്ങൾ (Why Early AI Failed)</span>
-    <span style="font-size: 9pt; font-weight: 600;">LMS Prescribed Criticisms</span>
+    <span>2. ക്ലാസിക്കൽ മാതൃകയ്ക്കെതിരെയുള്ള മൂന്ന് പ്രധാന ദാർശനിക വിമർശനങ്ങൾ</span>
+    <span style="font-size: 9pt; font-weight: 600;">The Three Critical Omissions</span>
   </div>
+
+  <p>മനുഷ്യന്റെ യഥാർത്ഥ ബുദ്ധിശക്തിയെ കേവലം പ്രതീകങ്ങളാക്കി മാറ്റിയപ്പോൾ ക്ലാസിക്കൽ AI മനഃപൂർവ്വം അവഗണിച്ച <strong>മൂന്ന് അടിസ്ഥാന യാഥാർത്ഥ്യങ്ങളെ</strong> കേന്ദ്രീകരിച്ചാണ് ദാർശനിക വിമർശനങ്ങൾ ഉയർന്നുവന്നത്:</p>
 
   <table class="table-box">
     <tr>
-      <th style="width: 25%;">പരിമിതി (Limitation)</th>
-      <th style="width: 35%;">മലയാളം വിശദീകരണം</th>
-      <th style="width: 40%;">English Academic Critique</th>
+      <th style="width: 22%;">അവഗണിക്കപ്പെട്ട ഘടകം</th>
+      <th style="width: 38%;">മലയാളം സമഗ്ര വിശദീകരണം</th>
+      <th style="width: 40%;">English Critical Analysis</th>
     </tr>
     <tr>
-      <td><strong>1. ഭൗതിക സാന്നിധ്യമില്ലായ്മ (Lack of Physicality)</strong></td>
-      <td>യഥാർത്ഥ ലോകവുമായുള്ള ഭൗതിക ഇന്ദ്രിയാനുഭവങ്ങൾ ഇല്ലാതെ വെറും ചിഹ്നങ്ങൾ മാത്രം ഉപയോഗിക്കുന്നത്.</td>
-      <td>Abstract rule manipulation completely detached from sensory-motor embodiment in the physical environment.</td>
+      <td><strong>1. ഭൗതിക ഘടകം<br>(Physical Aspect)</strong></td>
+      <td>മനുഷ്യന്റെ ബുദ്ധി രൂപപ്പെടുന്നത് ഒരു ഭൗതിക ശരീരത്തിലൂടെയും പഞ്ചേന്ദ്രിയങ്ങളിലൂടെയും ബാഹ്യലോകവുമായി നിരന്തരം ഇടപഴകുമ്പോഴാണ് (Sensory-motor interaction). ശരീരമില്ലാതെ ഒരു പെട്ടിയിലിരുന്ന് പ്രതീകങ്ങൾ മാത്രം കൈകാര്യം ചെയ്യുന്ന കമ്പ്യൂട്ടറിന് ആ ചിഹ്നങ്ങൾ ഭൗതിക ലോകവുമായി എങ്ങനെ ബന്ധപ്പെട്ടിരിക്കുന്നു എന്ന് ഗ്രഹിക്കാൻ കഴിയില്ല.</td>
+      <td><strong>Neglect of Physical Embodiment:</strong> Classical AI isolated cognition from bodily presence and sensory immersion. Human intelligence is fundamentally embodied; it develops through tactile, perceptual, and spatial interaction with a dynamic physical environment, which isolated symbol manipulators lack entirely.</td>
     </tr>
     <tr>
-      <td><strong>2. വികാരങ്ങളുടെ അസാന്നിധ്യം (Emotional Neglect)</strong></td>
-      <td>മനുഷ്യന്റെ തീരുമാനങ്ങളിൽ വികാരങ്ങളും ഉൾക്കാഴ്ചയും വഹിക്കുന്ന പങ്ക് നിഷേധിക്കപ്പെട്ടു.</td>
-      <td>Overlooked the vital cognitive role of emotional valence, intuition, and somatic markers in rational human judgement.</td>
+      <td><strong>2. വൈകാരിക ഘടകം<br>(Emotional Aspect)</strong></td>
+      <td>പരമ്പരാഗത ചിന്തകർ ബുദ്ധിയെയും വികാരങ്ങളെയും പരസ്പര വിരുദ്ധമായി കണ്ടു. എന്നാൽ മനുഷ്യന്റെ യുക്തിപൂർവ്വമായ തീരുമാനങ്ങളിൽ വികാരങ്ങളും (Emotions) അനുഭവപരമായ മുൻഗണനകളും ആന്തരിക ചോദനകളും നിർണ്ണായകമാണ്. വികാരങ്ങളില്ലാത്ത കേവല ലോജിക് യാന്ത്രികവും പ്രായോഗിക ബുദ്ധിശൂന്യവുമാണ്.</td>
+      <td><strong>Neglect of Emotional Cognition:</strong> The classical model strictly segregated reason from emotion. Cognitive philosophy demonstrates that human decision-making relies intrinsically on somatic markers, affective valuation, and emotional valence, without which purely deductive systems remain rigid and practically inert.</td>
     </tr>
     <tr>
-      <td><strong>3. അനുഭവസമ്പത്തിന്റെ കുറവ് (Lack of Experiential Cognition)</strong></td>
-      <td>ലോകത്തിലെ സ്വാഭാവിക സന്ദർഭങ്ങളിൽ ജീവിച്ചുള്ള പ്രായോഗിക അറിവ് (Tacit Knowledge) നൽകാൻ നിയമങ്ങൾക്ക് കഴിയില്ല.</td>
-      <td>Inability to formalize tacit, experiential common-sense understanding that humans acquire effortlessly through life.</td>
+      <td><strong>3. അനുഭവപരമായ ഘടകം<br>(Experiential Aspect)</strong></td>
+      <td>മനുഷ്യന്റെ ദൈനംദിന ജീവിതത്തിലെ സാമാന്യബോധം (Common sense) ഒരു നിയമപുസ്തകത്തിലും എഴുതിവെക്കപ്പെട്ടതല്ല; മറിച്ച് ജനനം മുതൽ ജീവിച്ച അനുഭവങ്ങളിലൂടെ സ്വാംശീകരിച്ചതാണ് (Tacit Knowledge). ഇത്തരം അനുഭവസമ്പത്ത് ഔപചാരിക നിയമങ്ങളിലൂടെ കമ്പ്യൂട്ടറിന് നൽകാൻ കഴിയില്ല.</td>
+      <td><strong>Neglect of Experiential Grounding:</strong> Most human understanding consists of unarticulated tacit knowledge acquired organically through situated life experiences. Classical systems, confined to explicit axioms, are unable to represent the fluid, context-sensitive background of lived human reality.</td>
     </tr>
   </table>
 
   <div class="section-title">
-    <span>3. പരീക്ഷാ സഹായി: മോഡൽ ചോദ്യോത്തരങ്ങൾ (Exam Q&A)</span>
+    <span>3. സാങ്കേതികവും ദാർശനികവുമായ പ്രതിസന്ധികൾ (Brittleness & Obstacles)</span>
+    <span style="font-size: 9pt; font-weight: 600;">Technical & Methodological Issues</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">1. ബ്രിട്ടിൽനെസ്സ് (Brittleness / എളുപ്പത്തിൽ തകരൽ)</div>
+      <p>ക്ലാസിക്കൽ റൂൾ-ബേസ്ഡ് സിസ്റ്റങ്ങൾ അവയ്ക്ക് പ്രോഗ്രാം ചെയ്തു നൽകിയ നിയന്ത്രിത മേഖലകളിൽ (Closed Worlds) മികച്ച പ്രകടനം കാഴ്ചവെച്ചു (ഉദാ: ചെസ്സ് കളി). എന്നാൽ മുൻകൂട്ടി നിശ്ചയിക്കാത്ത ഒരു ചെറിയ മാറ്റമോ അവ്യക്തതയോ യഥാർത്ഥ ലോകത്തിൽ നിന്ന് നേരിടേണ്ടി വന്നപ്പോൾ ഈ സംവിധാനങ്ങൾ പൂർണ്ണമായും സ്തംഭിച്ചുപോയി.</p>
+    </div>
+    <div class="card-en">
+      <div class="card-title">Systemic Brittleness in Real Domains</div>
+      <p>Symbolic systems operated effectively solely within narrow, closed-world problem spaces with unambiguous axioms. In open, dynamic, real-world environments with uncertainty and noise, rigid deductive engines suffered catastrophic failures, exhibiting severe conceptual brittleness.</p>
+    </div>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">2. ആദ്യകാല AI-യുടെ പരാജയകാരണങ്ങൾ</div>
+      <p>മനുഷ്യബുദ്ധി ലളിതമായ കുറച്ച് യുക്തിനിയമങ്ങൾ കൊണ്ട് അനുകരിക്കാമെന്ന ആദ്യകാല ഗവേഷകരുടെ അതിമോഹം തെറ്റാണെന്ന് തെളിഞ്ഞു. മനുഷ്യന്റെ ബോധം, സന്ദർഭബോധം (Context), അർത്ഥബോധം (Meaning) എന്നിവ കമ്പ്യൂട്ടേഷണൽ പ്രതീകങ്ങൾക്കപ്പുറമുള്ള ജൈവിക പ്രതിഭാസങ്ങളാണ് എന്ന തിരിച്ചറിവ് ക്ലാസിക്കൽ യുഗത്തിന് അന്ത്യം കുറിച്ചു.</p>
+    </div>
+    <div class="card-en">
+      <div class="card-title">The Failure of Early AI Research</div>
+      <p>Early AI systems failed to attain genuine human-like general intelligence because intelligence is not merely algorithmic deduction over abstract syntax. The neglect of contextuality, intentionality, and biological embodiment exposed the inescapable dead-ends of the classical methodology.</p>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>4. പരീക്ഷാ സഹായി: മോഡൽ ചോദ്യോത്തരങ്ങൾ (University Exam Q&A)</span>
     <span style="font-size: 9pt; font-weight: 600;">Calicut University Exam Pattern</span>
   </div>
 
   <div class="qa-card">
-    <div class="qa-q">Q1. ക്ലാസിക്കൽ AI മാതൃക മനുഷ്യബുദ്ധിയെ എങ്ങനെയാണ് നിർവ്വചിച്ചത്? (How did Classical AI view intelligence?)</div>
+    <div class="qa-q">Q1. ക്ലാസിക്കൽ AI മനുഷ്യബുദ്ധിയെ എങ്ങനെയാണ് വീക്ഷിച്ചത്? അതിന്റെ തത്ത്വചിന്താപരമായ അടിത്തറ എന്തായിരുന്നു? (Short Essay - 5 Marks)</div>
     <div class="qa-a">
-      <strong>ഉത്തരം:</strong> മനുഷ്യന്റെ ബുദ്ധിയും ചിന്തയും പൂർണ്ണമായും ഔപചാരിക ചിഹ്നങ്ങൾ (Symbols), ലോജിക് (Logic), നിയമങ്ങൾ (Rules) എന്നിവ അടിസ്ഥാനമാക്കിയുള്ളതാണ് എന്ന യുക്തിചിന്താപരമായ (Rationalist/Computational) സമീപനമാണ് ക്ലാസിക്കൽ AI സ്വീകരിച്ചത്.
+      <strong>ഉത്തരം:</strong> ക്ലാസിക്കൽ AI മനുഷ്യബുദ്ധിയെ <strong>പ്രതീകാത്മകവും യുക്തിനിയമങ്ങളെ ആധാരമാക്കിയുള്ളതുമായ (Symbolic, logical, and rule-based)</strong> ഒരു പ്രക്രിയയായിട്ടാണ് വീക്ഷിച്ചത്. ഇതിന്റെ ദാർശനിക അടിത്തറ പാശ്ചാത്യ <strong>യുക്തിവാദ (Rationalist)</strong>, കമ്പ്യൂട്ടേഷണൽ തത്ത്വചിന്തകളാണ്. മനുഷ്യന്റെ ചിന്തയെല്ലാം ഔപചാരികമായ യുക്തിനിയമങ്ങളിലൂടെ (Deductive Logic) വ്യാഖ്യാനിക്കാമെന്നും, ലോകത്തിലെ എല്ലാ വസ്തുക്കളെയും പ്രതീകങ്ങളാക്കി കമ്പ്യൂട്ടറിൽ പ്രോഗ്രാം ചെയ്യാമെന്നും ഈ മാതൃക വിശ്വസിച്ചു.
     </div>
   </div>
 
   <div class="qa-card">
-    <div class="qa-q">Q2. ക്ലാസിക്കൽ സിംബോളിക് AI യഥാർത്ഥ മനുഷ്യബുദ്ധി കൈവരിക്കുന്നതിൽ പരാജയപ്പെടാൻ കാരണമെന്ത്?</div>
+    <div class="qa-q">Q2. ക്ലാസിക്കൽ AI മനുഷ്യബുദ്ധി കൈവരിക്കുന്നതിൽ പരാജയപ്പെടാൻ കാരണമായ 3 പ്രധാന ഘടകങ്ങൾ ഏതെല്ലാം? (Short Answer - 3 Marks)</div>
     <div class="qa-a">
-      <strong>ഉത്തരം:</strong> മനുഷ്യന്റെ ചിന്ത കേവലം ലോജിക് മാത്രമല്ല; അതിൽ <strong>ശാരീരികാനുഭവങ്ങൾ (Physical embodiment)</strong>, <strong>വികാരങ്ങൾ (Emotions)</strong>, <strong>സാഹചര്യാനുഭവങ്ങൾ (Experiential knowledge)</strong> എന്നിവ നിർണ്ണായകമാണ്. ഇവയെല്ലാം പൂർണ്ണമായി അവഗണിച്ചതാണ് ക്ലാസിക്കൽ AI-യുടെ പ്രധാന പരാജയകാരണം എന്ന് LMS PDF വ്യക്തമാക്കുന്നു.
+      <strong>ഉത്തരം:</strong> മനുഷ്യന്റെ ചിന്തയെയും വിജ്ഞാനത്തെയും വ്യാഖ്യാനിച്ചപ്പോൾ താഴെ പറയുന്ന മൂന്ന് ഘടകങ്ങൾ അവഗണിച്ചതാണ് ക്ലാസിക്കൽ AI-യുടെ പരാജയത്തിന് കാരണമായത്:<br>
+      1. <strong>ഭൗതിക ഘടകം (Physical Aspect):</strong> ഇന്ദ്രിയാനുഭവങ്ങളും ഭൗതിക ശരീരവും അവഗണിച്ചു.<br>
+      2. <strong>വൈകാരിക ഘടകം (Emotional Aspect):</strong> വികാരങ്ങളും ഉൾക്കാഴ്ചയും യുക്തിചിന്തയിലുള്ള സ്വാധീനം നിഷേധിച്ചു.<br>
+      3. <strong>അനുഭവപരമായ ഘടകം (Experiential Aspect):</strong> ജീവിതാനുഭവങ്ങളിലൂടെ രൂപപ്പെടുന്ന സാമാന്യബോധത്തെയും പ്രായോഗിക വിജ്ഞാനത്തെയും (Tacit knowledge) ഉൾക്കൊള്ളാൻ നിയമങ്ങൾക്ക് കഴിഞ്ഞില്ല.
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q3. ക്ലാസിക്കൽ സിംബോളിക് AI നേരിട്ട സാങ്കേതികവും ദാർശനികവുമായ പ്രതിസന്ധികൾ വിശദീകരിക്കുക. (Essay - 10 Marks)</div>
+    <div class="qa-a">
+      <strong>ഉത്തരം:</strong> 
+      <strong>ആമുഖം:</strong> 1950 മുതൽ 1980 വരെ നിലനിന്ന ക്ലാസിക്കൽ സിംബോളിക് AI മാതൃക തുടക്കത്തിൽ വലിയ വാഗ്ദാനങ്ങൾ നൽകിയെങ്കിലും യഥാർത്ഥ ലോകത്ത് പരാജയപ്പെട്ടു.<br>
+      <strong>പ്രധാന പ്രതിസന്ധികൾ:</strong><br>
+      1. <strong>ബ്രിട്ടിൽനെസ്സ് (Brittleness):</strong> മുൻകൂട്ടി നിശ്ചയിച്ച ചട്ടക്കൂടുകൾക്ക് പുറത്തുള്ള സ്വാഭാവിക ലോകത്തിലെ ഒരു ചെറിയ മാറ്റം പോലും ഉൾക്കൊള്ളാൻ കഴിയാതെ സിസ്റ്റം നിശ്ചലമായി.<br>
+      2. <strong>സാമാന്യബുദ്ധിയുടെ അഭാവം (Lack of Common Sense):</strong> മനുഷ്യർക്ക് എളുപ്പമുള്ള സന്ദർഭോചിതമായ കാര്യങ്ങൾ കമ്പ്യൂട്ടറിന് നിയമങ്ങളാക്കി മാറ്റാൻ സാധിച്ചില്ല.<br>
+      3. <strong>ഭൗതിക യാഥാർത്ഥ്യത്തിൽ നിന്നുള്ള വേർപെടൽ (Lack of Grounding):</strong> പ്രതീകങ്ങൾക്ക് ഭൗതിക ലോകവുമായി യാതൊരു ബന്ധവുമില്ലായിരുന്നു.<br>
+      <strong>ഉപസംഹാരം:</strong> ഈ പരിമിതികളാണ് കർശനമായ യുക്തിനിയമങ്ങളിൽ നിന്ന് സ്വയം പഠിക്കാൻ സാധിക്കുന്ന ആധുനിക മെഷീൻ ലേണിംഗ്, ന്യൂറൽ നെറ്റ്‌വർക്ക് മാതൃകകളിലേക്ക് ശാസ്ത്രലോകത്തെ നയിച്ചത്.
     </div>
   </div>
 

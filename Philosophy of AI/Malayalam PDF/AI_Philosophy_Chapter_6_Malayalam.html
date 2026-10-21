@@ -2,40 +2,47 @@
 <html lang="ml">
 <head>
   <meta charset="UTF-8">
-  <title>Chapter 6: John Searle's Chinese Room Argument · Philosophy of AI (PHL1MN102)</title>
+  <title>Chapter 6: John Searle's Chinese Room Argument & Critique of Classical AI</title>
   
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
   @page {
     size: A4;
-    margin: 14mm 14mm 16mm 14mm;
+    margin: 16mm 16mm 18mm 16mm;
     @bottom-right {
-      content: counter(page);
+      content: "Page " counter(page);
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 9pt;
       font-weight: 700;
       color: #64748b;
+    }
+    @bottom-left {
+      content: "University of Calicut · BA Philosophy · Classical Version of AI";
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #94a3b8;
     }
   }
   body {
     font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
     color: #0f172a;
     background: #ffffff;
-    line-height: 1.6;
+    line-height: 1.65;
     font-size: 10pt;
     margin: 0;
     padding: 0;
   }
   .header-box {
-    border: 2px solid #4338ca;
+    border: 2px solid #3730a3;
     border-radius: 12px;
-    padding: 16px 20px;
+    padding: 18px 22px;
     background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
   .badge {
     display: inline-block;
-    background: #4338ca;
+    background: #3730a3;
     color: #ffffff;
     font-size: 8pt;
     font-weight: 800;
@@ -66,19 +73,26 @@
     padding-top: 6px;
     margin-top: 6px;
   }
-  
-  
   .section-title {
-    background: #4338ca;
+    background: #3730a3;
     color: #ffffff;
-    padding: 8px 14px;
+    padding: 9px 15px;
     border-radius: 8px;
     font-size: 11pt;
     font-weight: 800;
-    margin: 22px 0 14px 0;
+    margin: 24px 0 14px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    page-break-after: avoid;
+  }
+  .sub-section-title {
+    color: #312e81;
+    font-size: 10.5pt;
+    font-weight: 800;
+    margin: 16px 0 8px 0;
+    border-bottom: 1.5px solid #c7d2fe;
+    padding-bottom: 4px;
     page-break-after: avoid;
   }
   .bilingual-grid {
@@ -91,7 +105,7 @@
   .card-en, .card-ml {
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    padding: 12px 14px;
+    padding: 13px 15px;
     background: #ffffff;
     font-size: 9.5pt;
   }
@@ -118,34 +132,47 @@
   }
   .table-box th, .table-box td {
     border: 1px solid #cbd5e1;
-    padding: 8px 10px;
+    padding: 9px 11px;
     text-align: left;
+    vertical-align: top;
   }
   .table-box th {
-    background: #4338ca;
+    background: #3730a3;
     color: #ffffff;
     font-weight: 700;
   }
   .table-box tr:nth-child(even) { background: #f8fafc; }
-  .qa-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
+  .concept-box {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-left: 5px solid #4f46e5;
     border-radius: 8px;
     padding: 12px 16px;
-    margin-bottom: 12px;
+    margin: 14px 0;
+    font-size: 9.5pt;
+  }
+  .concept-box strong { color: #1e1b4b; }
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #3730a3;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
     page-break-inside: avoid;
   }
   .qa-q {
     font-weight: 800;
-    color: #4338ca;
+    color: #3730a3;
     margin-bottom: 6px;
     font-size: 10pt;
   }
   .qa-a {
     color: #334155;
     font-size: 9.5pt;
-    line-height: 1.55;
+    line-height: 1.6;
   }
+  p { margin: 0 0 10px 0; }
 </style>
 
 </head>
@@ -154,78 +181,125 @@
   <div class="header-box">
     <div class="badge">Calicut University · Minor Philosophy (PHL1MN102)</div>
     <h1>അധ്യായം 6: ജോൺ സർളിന്റെ ചൈനീസ് റൂം പരീക്ഷണം</h1>
-    <div class="sub-title">Chapter 6: John Searle's Chinese Room Argument & Critique of Symbolic AI</div>
+    <div class="sub-title">Chapter 6: John Searle's Chinese Room Argument & Critique of the Classical Model</div>
     <div class="meta-info">
       <span>📚 Module 2 · Unit 2.1 (b)</span> &nbsp;|&nbsp; 
-      <span>⏱️ 20 Hours Module Weightage · 20 Marks</span> 
+      <span>⏱️ 20 Hours Module Weightage · 20 Marks</span>
     </div>
   </div>
 
-<div class="section-title">
-    <span>1. ചൈനീസ് റൂം ചിന്താപരീക്ഷണം (The Chinese Room Thought Experiment - 1980)</span>
+  <div class="concept-box">
+    <strong>പാഠ്യസംഗ്രഹം (Module Scope):</strong> ക്ലാസിക്കൽ സിംബോളിക് AI മാതൃകയ്ക്കെതിരെയും ട്യൂറിംഗ് ടെസ്റ്റിനെതിരെയും അമേരിക്കൻ തത്ത്വചിന്തകനായ ജോൺ സർൾ (John Searle) 1980-ൽ മുന്നോട്ടുവെച്ച 'ചൈനീസ് റൂം ചിന്താപരീക്ഷണം', സിന്റാക്സും സെമാന്റിക്സും തമ്മിലുള്ള വ്യത്യാസം, സ്ട്രോംഗ് AI vs വീക്ക് AI തർക്കം, ഈ പരീക്ഷണം ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് വികാസത്തിൽ ചെലുത്തിയ ആഴത്തിലുള്ള ദാർശനിക സ്വാധീനം എന്നിവ ഈ അധ്യായത്തിൽ വിശദമായി പഠിക്കുന്നു.
+  </div>
+
+  <div class="section-title">
+    <span>1. ചൈനീസ് റൂം ചിന്താപരീക്ഷണം (The Chinese Room Experiment - 1980)</span>
     <span style="font-size: 9pt; font-weight: 600;">Minds, Brains and Programs</span>
   </div>
 
   <div class="bilingual-grid">
     <div class="card-ml">
-      <div class="card-title">മലയാളം വിവരണം</div>
-      <p>1980-ൽ <em>'Minds, Brains and Programs'</em> എന്ന പ്രബന്ധത്തിലൂടെ പ്രമുഖ അമേരിക്കൻ തത്ത്വചിന്തകനായ <strong>ജോൺ സർൾ (John Searle)</strong> ട്യൂറിംഗ് ടെസ്റ്റിനും ക്ലാസിക്കൽ സിംബോളിക് AI-ക്കും എതിരെ ശക്തമായ ഒരു ചിന്താപരീക്ഷണം അവതരിപ്പിച്ചു.</p>
-      <p>ചൈനീസ് ഭാഷ തീരെ അറിയാത്ത ഒരാളെ ഒരു മുറിക്കുള്ളിൽ ഇരുത്തുന്നു. അദ്ദേഹത്തിന് ഒരു ഇംഗ്ലീഷ് നിയമപുസ്തകവും (Rule book) ചൈനീസ് അക്ഷരങ്ങളും നൽകുന്നു. പുറത്തുനിന്ന് വരുന്ന ചൈനീസ് ചോദ്യങ്ങൾക്ക് നിയമപുസ്തകം നോക്കി ചിഹ്നങ്ങൾ ഒത്തുനോക്കി അദ്ദേഹം കൃത്യമായ മറുപടി പുറത്തേക്ക് നൽകുന്നു.</p>
-      <p>പുറത്തുള്ളവർക്ക് മുറിക്കുള്ളിലുള്ളയാൾക്ക് ചൈനീസ് നന്നായി അറിയാം എന്ന് തോന്നും; എന്നാൽ യാഥാർത്ഥ്യത്തിൽ അയാൾക്ക് ചൈനീസ് ഭാഷയുടെ ഒരു അക്ഷരത്തിന്റെ പോലും അർത്ഥം അറിയില്ല!</p>
+      <div class="card-title">പരീക്ഷണത്തിന്റെ ഘടനയും വിശദീകരണവും</div>
+      <p>1980-ൽ <em>'Minds, Brains and Programs'</em> എന്ന പ്രബന്ധത്തിലാണ് ജോൺ സർൾ ഈ ചരിത്രപ്രസിദ്ധമായ ചിന്താപരീക്ഷണം അവതരിപ്പിച്ചത്. ചൈനീസ് ഭാഷ തീരെ അറിയാത്ത ഒരാളെ ഒരു അടച്ചിട്ട മുറിയിൽ ഇരുത്തുന്നു. അദ്ദേഹത്തിന് ഒരു ഇംഗ്ലീഷ് റൂൾബുക്കും ചൈനീസ് അക്ഷര ചിഹ്നങ്ങളുടെ വലിയൊരു ശേഖരവും നൽകുന്നു.</p>
+      <p>മുറിയുടെ വാതിലിനടിയിലൂടെ പുറത്തുള്ള ചൈനീസ് പൗരന്മാർ ചോദ്യങ്ങൾ എഴുതി ഉള്ളിലേക്ക് അയക്കുന്നു. മുറിക്കുള്ളിലുള്ള വ്യക്തി ആ ചോദ്യങ്ങളിലെ ചിഹ്നങ്ങളെ റൂൾബുക്കിലെ നിർദ്ദേശങ്ങൾക്കനുസരിച്ച് ഒത്തുനോക്കി (Match చేసి), അതിന് പറയുന്ന ഉത്തരം നൽകുന്ന ചൈനീസ് ചിഹ്നങ്ങൾ കണ്ടെത്തി പുറത്തേക്ക് നൽകുന്നു.</p>
+      <p>പുറത്തുനിൽക്കുന്ന ആളുകൾക്ക് മുറിക്കുള്ളിലുള്ളയാൾക്ക് ചൈനീസ് ഭാഷ പൂർണ്ണമായി അറിയാമെന്ന് തോന്നും. എന്നാൽ മുറിക്കുള്ളിലുള്ള വ്യക്തിക്ക് ചൈനീസ് ഭാഷയിലെ ഒരു വാക്കിന്റെ പോലും യഥാർത്ഥ അർത്ഥം അറിയില്ല!</p>
     </div>
     <div class="card-en">
-      <div class="card-title">English Thought Experiment Setup</div>
-      <p>John Searle imagined himself locked in a room, entirely illiterate in Chinese, equipped with an English rulebook (program) that instructs him how to correlate incoming Chinese symbols with output Chinese symbols.</p>
-      <p>To an outside observer, the room passes the Turing Test by generating fluent Chinese answers. Yet, Searle does not understand a single word of Chinese. He merely manipulates uninterpreted syntactic tokens.</p>
+      <div class="card-title">Experimental Setup & Mechanism</div>
+      <p>In his landmark 1980 critique <em>"Minds, Brains and Programs,"</em> John Searle constructed the Chinese Room thought experiment to expose the fundamental flaw of the computational theory of mind.</p>
+      <p>Searle imagines himself locked inside a room with zero knowledge of the Chinese language. He is equipped with an English manual (the computer program) containing formal lookup rules that correlate incoming strings of Chinese characters with appropriate output Chinese characters.</p>
+      <p>To native Chinese speakers outside, the outputs are indistinguishable from those of a fluent speaker; the room flawlessly passes the Turing Test. Yet, neither Searle nor the room genuinely understands Chinese. The operation is entirely blind syntactic manipulation.</p>
     </div>
   </div>
 
   <div class="section-title">
-    <span>2. സിന്റാക്സും സെമാന്റിക്സും (Syntax vs. Semantics)</span>
-    <span style="font-size: 9pt; font-weight: 600;">Searle's Core Axiom</span>
+    <span>2. സിന്റാക്സും സെമാന്റിക്സും: സർളിന്റെ കാതലായ തത്ത്വം</span>
+    <span style="font-size: 9pt; font-weight: 600;">Syntax vs Semantics: Core Dictum</span>
+  </div>
+
+  <div class="concept-box">
+    <strong>ജോൺ സർളിന്റെ പ്രധാന സമവാക്യം:</strong> <em>"Syntax is not sufficient for Semantics."</em> (ചിഹ്നങ്ങളുടെ വ്യാകരണപരമായ ക്രമീകരണത്തിന് ഒരിക്കലും സ്വാഭാവികമായ അർത്ഥബോധം സൃഷ്ടിക്കാൻ കഴിയില്ല).
   </div>
 
   <table class="table-box">
     <tr>
-      <th style="width: 25%;">മേഖല (Domain)</th>
-      <th style="width: 35%;">സിന്റാക്സ് (Syntax - വ്യാകരണം / ചിഹ്ന ഘടന)</th>
-      <th style="width: 40%;">സെമാന്റിക്സ് (Semantics - അർത്ഥബോധം)</th>
+      <th style="width: 25%;">ഘടകം</th>
+      <th style="width: 35%;">സിന്റാക്സ് (Syntax - പ്രതീക ഘടന)</th>
+      <th style="width: 40%;">സെമാന്റിക്സ് (Semantics - അർത്ഥവിജ്ഞാനം)</th>
     </tr>
     <tr>
-      <td><strong>നിർവ്വചനം (Definition)</strong></td>
-      <td>ചിഹ്നങ്ങളുടെ ആകൃതിയും ബാഹ്യമായ നിയമക്രമവും.</td>
-      <td>ചിഹ്നങ്ങൾക്ക് പിന്നിലുള്ള അന്തസ്സത്തയും യഥാർത്ഥ അർത്ഥവും.</td>
+      <td><strong>നിർവ്വചനം</strong></td>
+      <td>ചിഹ്നങ്ങളുടെ ആകൃതി, സ്ഥാനം, അവ തമ്മിലുള്ള വ്യാകരണപരമായ ബന്ധങ്ങൾ.</td>
+      <td>ചിഹ്നങ്ങൾ പ്രതിനിധീകരിക്കുന്ന ലോക യാഥാർത്ഥ്യങ്ങൾ, ആശയങ്ങൾ, ആന്തരിക അർത്ഥം.</td>
     </tr>
     <tr>
-      <td><strong>കമ്പ്യൂട്ടറിന്റെ കഴിവ് (Computer Ability)</strong></td>
-      <td>കമ്പ്യൂട്ടറുകൾക്ക് സിന്റാക്സ് കൈകാര്യം ചെയ്യാൻ അപാരമായ കഴിവുണ്ട്.</td>
-      <td>കമ്പ്യൂട്ടറുകൾക്ക് ഒരിക്കലും സെമാന്റിക്സ് ഉണ്ടാക്കാൻ സാധിക്കില്ല.</td>
+      <td><strong>കമ്പ്യൂട്ടറിന്റെ പ്രവർത്തനം</strong></td>
+      <td>ഡിജിറ്റൽ കമ്പ്യൂട്ടറുകൾ പൂർണ്ണമായും സിന്റാക്സ് അടിസ്ഥാനമാക്കിയാണ് പ്രവർത്തിക്കുന്നത് (0, 1).</td>
+      <td>കമ്പ്യൂട്ടറുകൾക്ക് ഒരിക്കലും സ്വയം സെമാന്റിക്സ് നിർമ്മിക്കാൻ സാധിക്കില്ല.</td>
     </tr>
     <tr>
-      <td><strong>സർളിന്റെ തത്ത്വം (Searle's Dictum)</strong></td>
-      <td colspan="2" style="background: #eef2ff; color: #312e81; font-weight: 700; text-align: center;">
-        <em>"Syntax alone is neither constitutive of nor sufficient for Semantics."</em><br>
-        (ചിഹ്നങ്ങളുടെ വ്യാകരണ നിയമങ്ങൾ ഒരിക്കലും സ്വാഭാവികമായ അർത്ഥബോധം സൃഷ്ടിക്കുന്നില്ല).
-      </td>
+      <td><strong>മനുഷ്യന്റെ മനസ്സ്</strong></td>
+      <td>മനുഷ്യർ ചിഹ്നങ്ങൾ ഉപയോഗിക്കുന്നുണ്ടെങ്കിലും അവർക്ക് അതിനപ്പുറം കാര്യങ്ങൾ ഗ്രഹിക്കാനാകും.</td>
+      <td>മനുഷ്യന്റെ മനസ്സ് ചിഹ്നങ്ങൾക്ക് അർത്ഥവും അനുഭവവും ലക്ഷ്യവും (Intentionality) നൽകുന്നു.</td>
     </tr>
   </table>
 
   <div class="section-title">
-    <span>3. പരീക്ഷാ സഹായി: മോഡൽ ചോദ്യോത്തരങ്ങൾ (Exam Q&A)</span>
+    <span>3. വീക്ക് AI vs സ്ട്രോംഗ് AI തർക്കവും ദാർശനിക പ്രത്യാഘാതങ്ങളും</span>
+    <span style="font-size: 9pt; font-weight: 600;">Weak AI vs Strong AI & Implications</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">1. വീക്ക് AI (Weak / Narrow AI)</div>
+      <p>കമ്പ്യൂട്ടറുകൾ ചിന്തയെ അനുകരിക്കാനുള്ള (Simulation) പ്രയോജനപ്രദമായ ഉപകരണങ്ങൾ മാത്രമാണെന്ന് ഈ വാദം വ്യക്തമാക്കുന്നു. ഇതിനെ സർൾ അംഗീകരിക്കുന്നു. കമ്പ്യൂട്ടറിന് മനുഷ്യനെപ്പോലെ കണക്കുകൂട്ടാനും ഭാഷ കൈകാര്യം ചെയ്യാനും കഴിയും, എന്നാൽ അതിന് മനസ്സ് ഉണ്ടാകുന്നില്ല.</p>
+    </div>
+    <div class="card-en">
+      <div class="card-title">Weak AI (Functional Simulation)</div>
+      <p>Weak AI asserts that computers are invaluable tools for simulating mental processes, just as computer models simulate hurricanes without being wet. Searle fully accepts Weak AI as an authentic computational achievement.</p>
+    </div>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">2. സ്ട്രോംഗ് AI (Strong AI / AGI)</div>
+      <p>ശരിയായ പ്രോഗ്രാമുകളുള്ള ഒരു കമ്പ്യൂട്ടർ വെറും അനുകരണമല്ല, മറിച്ച് അതിന് അക്ഷരാർത്ഥത്തിൽ ഒരു മനുഷ്യ മനസ്സ് തന്നെയുണ്ടെന്നും അത് കാര്യങ്ങൾ ഗ്രഹിക്കുന്നുണ്ടെന്നും വാദിക്കുന്ന നിലപാടാണ് സ്ട്രോംഗ് AI. ചൈനീസ് റൂം പരീക്ഷണത്തിലൂടെ സർൾ ഈ വാദത്തെ പൂർണ്ണമായി തള്ളിപ്പറഞ്ഞു.</p>
+    </div>
+    <div class="card-en">
+      <div class="card-title">Strong AI (Refuted by Searle)</div>
+      <p>Strong AI claims that an appropriately programmed computer is not merely a model of mind, but literally possesses a genuine mind, authentic understanding, and cognitive states. The Chinese Room definitively refutes Strong AI.</p>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>4. പരീക്ഷാ സഹായി: മോഡൽ ചോദ്യോത്തരങ്ങൾ (University Exam Q&A)</span>
     <span style="font-size: 9pt; font-weight: 600;">Calicut University Exam Pattern</span>
   </div>
 
   <div class="qa-card">
-    <div class="qa-q">Q1. ജോൺ സർളിന്റെ ചൈനീസ് റൂം പരീക്ഷണത്തിന്റെ പ്രധാന ലക്ഷ്യം എന്തായിരുന്നു?</div>
+    <div class="qa-q">Q1. ജോൺ സർളിന്റെ ചൈനീസ് റൂം ചിന്താപരീക്ഷണം ലളിതമായി വിശദീകരിക്കുക. (Short Essay - 5 Marks)</div>
     <div class="qa-a">
-      <strong>ഉത്തരം:</strong> ട്യൂറിംഗ് ടെസ്റ്റ് പാസാകുന്ന ഒരു കമ്പ്യൂട്ടർ പ്രോഗ്രാമിന് കാര്യങ്ങൾ ആന്തരികമായി ഗ്രഹിക്കാനുള്ള കഴിവുണ്ടെന്ന <strong>സ്ട്രോങ്ങ് AI (Strong AI)</strong> വാദത്തെ തകർക്കുക എന്നതായിരുന്നു സർളിന്റെ ലക്ഷ്യം. ശരിയായ ഔട്ട്പുട്ട് നൽകാൻ കഴിഞ്ഞതുകൊണ്ട് മാത്രം കമ്പ്യൂട്ടറിന് ആ ഭാഷ അറിയാമെന്ന് പറയാനാവില്ല.
+      <strong>ഉത്തരം:</strong> 1980-ൽ ജോൺ സർൾ അവതരിപ്പിച്ച ചിന്താപരീക്ഷണമാണിത്. ചൈനീസ് ഭാഷയറിയാത്ത ഒരാളെ ഒരു മുറിയിലിരുത്തി ഇംഗ്ലീഷ് റൂൾബുക്ക് നൽകുന്നു. പുറത്തുനിന്ന് വരുന്ന ചൈനീസ് ചോദ്യങ്ങൾക്ക് ഈ റൂൾബുക്ക് നോക്കി ചിഹ്നങ്ങൾ ഒത്തുനോക്കി അയാൾ കൃത്യമായ മറുപടി പുറത്തേക്ക് നൽകുന്നു. പുറത്തുള്ളവർക്ക് അയാൾക്ക് ചൈനീസ് അറിയാമെന്ന് തോന്നും; എന്നാൽ അയാൾക്ക് ചൈനീസ് അക്ഷരങ്ങളുടെ അർത്ഥം അറിയില്ല. ഒരു കമ്പ്യൂട്ടർ പ്രോഗ്രാം കൃത്യമായ ഔട്ട്പുട്ട് നൽകുന്നുണ്ടെങ്കിലും അതിന് യാതൊരു അർത്ഥബോധവുമില്ലെന്ന് തെളിയിക്കാനാണ് സർൾ ഈ പരീക്ഷണം രൂപകൽപ്പന ചെയ്തത്.
     </div>
   </div>
 
   <div class="qa-card">
-    <div class="qa-q">Q2. 'Syntax is not sufficient for Semantics' എന്ന് സർൾ സമർത്ഥിച്ചത് എന്തുകൊണ്ട്?</div>
+    <div class="qa-q">Q2. 'Syntax is not sufficient for Semantics' എന്ന സർളിന്റെ പ്രസ്താവന വ്യക്തമാക്കുക. (Short Answer - 3 Marks)</div>
     <div class="qa-a">
-      <strong>ഉത്തരം:</strong> കമ്പ്യൂട്ടറുകൾ ചെയ്യുന്നത് അക്കങ്ങളെയും ചിഹ്നങ്ങളെയും (0, 1) ചില നിയമങ്ങൾക്കനുസരിച്ച് ക്രമീകരിക്കൽ (Syntax) മാത്രമാണ്. എന്നാൽ മനുഷ്യന്റെ മനസ്സ് ചിഹ്നങ്ങൾക്ക് അർത്ഥവും ഭാവവും (Semantics / Intentionality) നൽകുന്നു. വെറും ചിഹ്നങ്ങളുടെ ക്രമീകരണത്തിന് ഒരിക്കലും അർത്ഥബോധം ഉണ്ടാക്കാൻ കഴിയില്ല.
+      <strong>ഉത്തരം:</strong> സിന്റാക്സ് (Syntax) എന്നാൽ ചിഹ്നങ്ങളുടെ വ്യാകരണപരമായ ഘടനയും നിയമങ്ങളുമാണ്. സെമാന്റിക്സ് (Semantics) എന്നാൽ ചിഹ്നങ്ങൾ പ്രതിനിധീകരിക്കുന്ന യഥാർത്ഥ അർത്ഥമാണ്. കമ്പ്യൂട്ടർ പ്രോഗ്രാമുകൾക്ക് ചിഹ്നങ്ങളെ കൃത്യമായി മാറ്റിവെക്കാൻ (Syntax manipulation) കഴിയുമെങ്കിലും, ആ ചിഹ്നങ്ങൾക്ക് അർത്ഥം നൽകാൻ (Semantics) കഴിയില്ലെന്നാണ് സർൾ വ്യക്തമാക്കിയത്.
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q3. ചൈനീസ് റൂം പരീക്ഷണം AI-യുടെ വികാസത്തിൽ ഉണ്ടാക്കിയ ദാർശനിക പ്രത്യാഘാതങ്ങൾ ചർച്ച ചെയ്യുക. (Essay - 10 Marks)</div>
+    <div class="qa-a">
+      <strong>ഉത്തരം:</strong> 
+      <strong>ആമുഖം:</strong> ട്യൂറിംഗ് ടെസ്റ്റിനെയും ക്ലാസിക്കൽ സിംബോളിക് AI-യെയും വേരോടെ പിഴുതെറിഞ്ഞ ഒന്നാണ് സർളിന്റെ ചൈനീസ് റൂം പരീക്ഷണം.<br>
+      <strong>പ്രധാന പ്രത്യാഘാതങ്ങൾ:</strong><br>
+      1. <strong>ട്യൂറിംഗ് ടെസ്റ്റിന്റെ പരാജയം:</strong> ബാഹ്യമായ പെരുമാറ്റം മാത്രം നോക്കി ഒരു യന്ത്രത്തിന് ബുദ്ധിയുണ്ടെന്ന് തീരുമാനിക്കാൻ കഴിയില്ലെന്ന് തെളിഞ്ഞു.<br>
+      2. <strong>സ്ട്രോംഗ് AI-യുടെ തകർച്ച:</strong> കേവലം കമ്പ്യൂട്ടേഷണൽ പ്രോഗ്രാമുകൾക്ക് ഒരിക്കലും യഥാർത്ഥ ബോധമോ മനസ്സോ കൈവരിക്കാൻ കഴിയില്ലെന്ന ശക്തമായ വാദമുയർന്നു.<br>
+      3. <strong>ഇന്റൻഷണാലിറ്റിയുടെ പ്രസക്തി (Intentionality):</strong> മനുഷ്യന്റെ ചിന്തയ്ക്ക് ഒരു ലക്ഷ്യവും അർത്ഥവുമുണ്ട്; കമ്പ്യൂട്ടർ പ്രോഗ്രാമുകൾ അർത്ഥമില്ലാത്ത വെറും പൂജ്യങ്ങളും ഒന്നുകളുമാണ് (0s and 1s).<br>
+      <strong>ഉപസംഹാരം:</strong> കമ്പ്യൂട്ടിംഗ് എന്നത് അനുകരണത്തിന് (Simulation) മാത്രമേ ഉപകരിക്കൂ എന്നും, കമ്പ്യൂട്ടറുകൾ ഒരിക്കലും യഥാർത്ഥ മനസ്സുള്ള ജീവികളായി മാറില്ലെന്നും സർൾ സമർത്ഥിച്ചു.
     </div>
   </div>
 

@@ -2,40 +2,47 @@
 <html lang="ml">
 <head>
   <meta charset="UTF-8">
-  <title>Chapter 5: Alan Turing Test & Constraints of Symbolic Reasoning · Philosophy of AI (PHL1MN102)</title>
+  <title>Chapter 5: Alan Turing Test & Constraints of Symbolic Reasoning</title>
   
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
   @page {
     size: A4;
-    margin: 14mm 14mm 16mm 14mm;
+    margin: 16mm 16mm 18mm 16mm;
     @bottom-right {
-      content: counter(page);
+      content: "Page " counter(page);
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 9pt;
       font-weight: 700;
       color: #64748b;
+    }
+    @bottom-left {
+      content: "University of Calicut · BA Philosophy · Classical Version of AI";
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #94a3b8;
     }
   }
   body {
     font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
     color: #0f172a;
     background: #ffffff;
-    line-height: 1.6;
+    line-height: 1.65;
     font-size: 10pt;
     margin: 0;
     padding: 0;
   }
   .header-box {
-    border: 2px solid #4338ca;
+    border: 2px solid #3730a3;
     border-radius: 12px;
-    padding: 16px 20px;
+    padding: 18px 22px;
     background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
   .badge {
     display: inline-block;
-    background: #4338ca;
+    background: #3730a3;
     color: #ffffff;
     font-size: 8pt;
     font-weight: 800;
@@ -66,19 +73,26 @@
     padding-top: 6px;
     margin-top: 6px;
   }
-  
-  
   .section-title {
-    background: #4338ca;
+    background: #3730a3;
     color: #ffffff;
-    padding: 8px 14px;
+    padding: 9px 15px;
     border-radius: 8px;
     font-size: 11pt;
     font-weight: 800;
-    margin: 22px 0 14px 0;
+    margin: 24px 0 14px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    page-break-after: avoid;
+  }
+  .sub-section-title {
+    color: #312e81;
+    font-size: 10.5pt;
+    font-weight: 800;
+    margin: 16px 0 8px 0;
+    border-bottom: 1.5px solid #c7d2fe;
+    padding-bottom: 4px;
     page-break-after: avoid;
   }
   .bilingual-grid {
@@ -91,7 +105,7 @@
   .card-en, .card-ml {
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    padding: 12px 14px;
+    padding: 13px 15px;
     background: #ffffff;
     font-size: 9.5pt;
   }
@@ -118,34 +132,47 @@
   }
   .table-box th, .table-box td {
     border: 1px solid #cbd5e1;
-    padding: 8px 10px;
+    padding: 9px 11px;
     text-align: left;
+    vertical-align: top;
   }
   .table-box th {
-    background: #4338ca;
+    background: #3730a3;
     color: #ffffff;
     font-weight: 700;
   }
   .table-box tr:nth-child(even) { background: #f8fafc; }
-  .qa-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
+  .concept-box {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-left: 5px solid #4f46e5;
     border-radius: 8px;
     padding: 12px 16px;
-    margin-bottom: 12px;
+    margin: 14px 0;
+    font-size: 9.5pt;
+  }
+  .concept-box strong { color: #1e1b4b; }
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #3730a3;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
     page-break-inside: avoid;
   }
   .qa-q {
     font-weight: 800;
-    color: #4338ca;
+    color: #3730a3;
     margin-bottom: 6px;
     font-size: 10pt;
   }
   .qa-a {
     color: #334155;
     font-size: 9.5pt;
-    line-height: 1.55;
+    line-height: 1.6;
   }
+  p { margin: 0 0 10px 0; }
 </style>
 
 </head>
@@ -153,75 +180,104 @@
 
   <div class="header-box">
     <div class="badge">Calicut University · Minor Philosophy (PHL1MN102)</div>
-    <h1>അധ്യായം 5: അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പരിമിതികളും</h1>
-    <div class="sub-title">Chapter 5: Alan Turing Test & Constraints of Symbolic Reasoning</div>
+    <h1>അധ്യായം 5: അലൻ ട്യൂറിംഗ് ടെസ്റ്റും സിംബോളിക് യുക്തിചിന്തയുടെ പരിമിതികളും</h1>
+    <div class="sub-title">Chapter 5: Alan Turing Test, Constraints of Symbolic Reasoning & Authentic Intelligence</div>
     <div class="meta-info">
       <span>📚 Module 2 · Unit 2.1 (a)</span> &nbsp;|&nbsp; 
-      <span>⏱️ 20 Hours Module Weightage · 20 Marks</span> 
+      <span>⏱️ 20 Hours Module Weightage · 20 Marks</span>
     </div>
   </div>
 
-<div class="section-title">
-    <span>1. ട്യൂറിംഗ് കാലഘട്ടത്തിലെ സിംബോളിക് ചിന്തയുടെ പരിമിതികൾ (Constraints in Turing's Era)</span>
-    <span style="font-size: 9pt; font-weight: 600;">Symbolic Reasoning Limitations</span>
+  <div class="concept-box">
+    <strong>പാഠ്യസംഗ്രഹം (Module Scope):</strong> അലൻ ട്യൂറിംഗിന്റെ കാലഘട്ടത്തിൽ ഉയർന്നുവന്ന പ്രതീകാത്മക യുക്തിചിന്തയുടെ (Symbolic Reasoning) ദാർശനിക പരിമിതികൾ എന്തൊക്കെയായിരുന്നുവെന്നും, ആദ്യകാല എഐ ഗവേഷണം നേരിട്ട പ്രധാന തടസ്സങ്ങൾ എന്തൊക്കെയാണെന്നും, കമ്പ്യൂട്ടേഷണൽ പ്രോസസ്സിംഗിനെ യഥാർത്ഥ മനുഷ്യബുദ്ധിയായി (Authentic Intelligence) കാണുന്നതിലെ ദാർശനിക വൈരുദ്ധ്യങ്ങൾ എന്തെല്ലാമാണെന്നും ഈ അധ്യായം വിശകലനം ചെയ്യുന്നു.
+  </div>
+
+  <div class="section-title">
+    <span>1. ട്യൂറിംഗ് കാലഘട്ടത്തിലെ പ്രതീകാത്മക യുക്തിചിന്തയുടെ പരിമിതികൾ</span>
+    <span style="font-size: 9pt; font-weight: 600;">Constraints of Symbolic Reasoning</span>
   </div>
 
   <div class="bilingual-grid">
     <div class="card-ml">
-      <div class="card-title">മലയാളം വിവരണം</div>
-      <p>അലൻ ട്യൂറിംഗ് വിഭാവനം ചെയ്ത കമ്പ്യൂട്ടേഷൻ മാതൃകകൾ പ്രതീകാത്മക യുക്തിയിലാണ് അധിഷ്ഠിതമായിരുന്നത്. എന്നാൽ പ്രതീകാത്മക യുക്തിക്ക് (Symbolic reasoning) യഥാർത്ഥ ലോകത്തിലെ സങ്കീർണ്ണതകളെ നേരിടാൻ നിരവധി പരിമിതികളുണ്ടായിരുന്നു.</p>
-      <p>ചിഹ്നങ്ങൾ കൈകാര്യം ചെയ്യുന്നത് യന്ത്രത്തിന് എളുപ്പമാണെങ്കിലും, ആ ചിഹ്നങ്ങൾ സൂചിപ്പിക്കുന്ന വസ്തുക്കളുടെ യഥാർത്ഥ ലോക സ്വഭാവങ്ങൾ മനസ്സിലാക്കാൻ കമ്പ്യൂട്ടേഷണൽ നിയമങ്ങൾക്ക് കഴിഞ്ഞില്ല.</p>
+      <div class="card-title">മലയാളം വിശകലനം</div>
+      <p>അലൻ ട്യൂറിംഗ് തന്റെ പ്രബന്ധത്തിലൂടെ കമ്പ്യൂട്ടേഷൻ എന്നത് ഗണിതശാസ്ത്രപരമായ ചിഹ്നങ്ങളെ ഘട്ടംഘട്ടമായി മാറ്റിയെഴുതുന്ന പ്രക്രിയയാണെന്ന് സമർത്ഥിച്ചു. ഈ സിംബോളിക് മാതൃകയ്ക്ക് ഗണിത പ്രശ്നങ്ങൾ പരിഹരിക്കാൻ സാധിച്ചെങ്കിലും മനുഷ്യന്റെ സ്വാഭാവിക ഭാഷ കൈകാര്യം ചെയ്യുന്നതിലും ചിന്താപരമായ വഴക്കത്തിലും (Cognitive Flexibility) വലിയ പരിമിതികൾ നേരിട്ടു.</p>
+      <p>ചിഹ്നങ്ങൾ അവയുടെ ബാഹ്യ രൂപത്തിൽ (Syntax) കൈകാര്യം ചെയ്യപ്പെടുമ്പോൾ, ആ ചിഹ്നങ്ങൾ എന്തിനെയാണ് അർത്ഥമാക്കുന്നത് എന്ന് മനസ്സിലാക്കാൻ സിംബോളിക് യുക്തിക്ക് കഴിഞ്ഞില്ല.</p>
     </div>
     <div class="card-en">
-      <div class="card-title">English Theoretical Critique</div>
-      <p>During Turing's era, intelligence was modeled on formal logical manipulation. However, early symbolic systems encountered severe real-world obstacles: combinatorial explosion, brittleness, and an inability to process ambiguous sensory inputs.</p>
+      <div class="card-title">English Theoretical Analysis</div>
+      <p>During Alan Turing's foundational era, machine intelligence was predicated on formal mechanical manipulation of discrete symbolic structures. The inherent constraint of this methodology was its inability to accommodate semantic richness, contextual ambiguity, and non-deductive associative reasoning.</p>
+      <p>Symbolic processing assumes formal syntax mirrors cognitive reality; however, real-world human understanding operates largely through non-formal, intuitive, and holistic modalities that resist mechanistic formalization.</p>
     </div>
   </div>
 
   <div class="section-title">
-    <span>2. കണക്കുകൂട്ടലും യഥാർത്ഥ ബുദ്ധിയും തമ്മിലുള്ള വൈരുദ്ധ്യം (Computing vs Authentic Intelligence)</span>
-    <span style="font-size: 9pt; font-weight: 600;">LMS Objective 7</span>
+    <span>2. ട്യൂറിംഗിന്റെ ആശയങ്ങളും ആദ്യകാല AI നേരിട്ട തടസ്സങ്ങളും</span>
+    <span style="font-size: 9pt; font-weight: 600;">Turing's Concepts vs Early AI Obstacles</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">ട്യൂറിംഗിന്റെ പ്രവർത്തനപരമായ സമീപനം (Operationalism)</div>
+      <p>ഒരു യന്ത്രത്തിന് ആന്തരികമായി മനസ്സുണ്ടോ എന്ന് പരിശോധിക്കുന്നതിന് പകരം, മനുഷ്യനെപ്പോലെ സംസാരിക്കാൻ കഴിയുന്നുണ്ടോ എന്ന ബാഹ്യമായ പെരുമാറ്റത്തെയാണ് ട്യൂറിംഗ് മാനദണ്ഡമാക്കിയത്. എന്നാൽ ഒരു സിസ്റ്റത്തിന് ബാഹ്യമായി മനുഷ്യനെപ്പോലെ സംസാരിക്കാൻ കഴിഞ്ഞതുകൊണ്ട് മാത്രം അതിന് മനുഷ്യനെപ്പോലെ ചിന്തിക്കാനുള്ള കഴിവുണ്ടെന്ന് പറയാനാവില്ലെന്ന് പിൽക്കാല തത്ത്വചിന്തകർ ചൂണ്ടിക്കാട്ടി.</p>
+    </div>
+    <div class="card-en">
+      <div class="card-title">The Operationalist Blindspot</div>
+      <p>Turing's operational test bypassed metaphysical inquiries into inner consciousness by elevating behavioral indistinguishability as the sole test of intelligence. Early AI research embraced this behavioral criterion, but soon discovered that generating convincing verbal responses does not equate to genuine comprehension of reality.</p>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>3. കമ്പ്യൂട്ടിംഗും യഥാർത്ഥ ബുദ്ധിയും: സമഗ്ര താരതമ്യം</span>
+    <span style="font-size: 9pt; font-weight: 600;">Computing vs Authentic Intelligence</span>
   </div>
 
   <table class="table-box">
     <tr>
-      <th style="width: 25%;">മാനദണ്ഡം (Dimension)</th>
+      <th style="width: 25%;">താരതമ്യ തത്ത്വം</th>
       <th style="width: 35%;">കമ്പ്യൂട്ടേഷണൽ പ്രോസസ്സിംഗ് (Computing)</th>
       <th style="width: 40%;">യഥാർത്ഥ മനുഷ്യബുദ്ധി (Authentic Intelligence)</th>
     </tr>
     <tr>
-      <td><strong>1. പ്രവർത്തനം (Operation)</strong></td>
-      <td>പൂർവ്വനിർമ്മിത നിയമങ്ങളും അൽഗോരിതങ്ങളും അനുസരിച്ച് ചിഹ്നങ്ങൾ നീക്കൽ.</td>
-      <td>അർത്ഥബോധത്തോടെയുള്ള ചിന്തയും ബോധപൂർവ്വമായ തീരുമാനമെടുക്കലും.</td>
+      <td><strong>1. പ്രവർത്തന സ്വഭാവം</strong></td>
+      <td>പൂർണ്ണമായും അൽഗോരിതങ്ങളും മുൻകൂട്ടി നിശ്ചയിച്ച പ്രോഗ്രാമുകളും അടിസ്ഥാനമാക്കി നടത്തുന്ന ചിഹ്ന കൈമാറ്റം.</td>
+      <td>ലക്ഷ്യബോധം, ആന്തരിക പ്രേരണകൾ, സ്വതന്ത്ര ഇച്ഛ (Free will) എന്നിവയോടുകൂടിയ സജീവ പ്രവർത്തനം.</td>
     </tr>
     <tr>
-      <td><strong>2. അർത്ഥം (Semantics)</strong></td>
-      <td>ചിഹ്നങ്ങളുടെ ഘടന (Syntax) മാത്രം പരിഗണിക്കുന്നു; അർത്ഥം ഗ്രഹിക്കുന്നില്ല.</td>
-      <td>ചിഹ്നങ്ങൾ പ്രതിനിധീകരിക്കുന്ന ലോക യാഥാർത്ഥ്യങ്ങളെ ആഴത്തിൽ മനസ്സിലാക്കുന്നു.</td>
+      <td><strong>2. അർത്ഥബോധം (Semantics)</strong></td>
+      <td>ചിഹ്നങ്ങളുടെ അർത്ഥം കമ്പ്യൂട്ടറിന് ആവശ്യമില്ല; നിയമങ്ങൾ ശരിയായി പാലിക്കപ്പെടുന്നുണ്ടോ എന്ന് മാത്രം നോക്കുന്നു.</td>
+      <td>ചിഹ്നങ്ങൾക്ക് പിന്നിലുള്ള അർത്ഥം, ഭാവം, ഉദ്ദേശ്യം (Intentionality) എന്നിവ ആഴത്തിൽ ഗ്രഹിക്കുന്നു.</td>
     </tr>
     <tr>
-      <td><strong>3. സന്ദർഭബോധം (Contextuality)</strong></td>
-      <td>പുറത്തുനിന്നുള്ള പുതിയ സന്ദർഭങ്ങളിൽ സിസ്റ്റം തകരാറിലാകുന്നു.</td>
-      <td>സാഹചര്യങ്ങൾക്ക് അനുസരിച്ച് വഴക്കത്തോടെയും സ്വാഭാവികമായും പൊരുത്തപ്പെടുന്നു.</td>
+      <td><strong>3. ബോധം (Consciousness)</strong></td>
+      <td>യാതൊരു ആന്തരിക അനുഭവങ്ങളോ (Qualia) സ്വയം ബോധമോ ഇല്ലാത്ത അന്ധമായ മെക്കാനിസം.</td>
+      <td>ആത്മബോധം (Self-awareness), വികാരങ്ങൾ, വ്യക്തിപരമായ അനുഭവങ്ങൾ എന്നിവയോടുകൂടിയ അസ്തിത്വം.</td>
+    </tr>
+    <tr>
+      <td><strong>4. വഴക്കം (Adaptability)</strong></td>
+      <td>പ്രോഗ്രാമിന് പുറത്തുള്ള പുതിയ സാഹചര്യങ്ങളിൽ തകരാറിലാകുന്നു (Rigid).</td>
+      <td>മുൻപരിചയമില്ലാത്ത പുതിയ സാഹചര്യങ്ങളോടും സർഗ്ഗാത്മകമായി പൊരുത്തപ്പെടുന്നു (Creative & Flexible).</td>
     </tr>
   </table>
 
   <div class="section-title">
-    <span>3. പരീക്ഷാ സഹായി: മോഡൽ ചോദ്യോത്തരങ്ങൾ (Exam Q&A)</span>
+    <span>4. പരീക്ഷാ സഹായി: മോഡൽ ചോദ്യോത്തരങ്ങൾ (University Exam Q&A)</span>
     <span style="font-size: 9pt; font-weight: 600;">Calicut University Exam Pattern</span>
   </div>
 
   <div class="qa-card">
-    <div class="qa-q">Q1. ട്യൂറിംഗ് കാലഘട്ടത്തിലെ പ്രതീകാത്മക യുക്തിചിന്ത നേരിട്ട പ്രധാന വെല്ലുവിളി എന്തായിരുന്നു?</div>
+    <div class="qa-q">Q1. ട്യൂറിംഗ് കാലഘട്ടത്തിലെ പ്രതീകാത്മക യുക്തിചിന്ത നേരിട്ട പ്രധാന തടസ്സങ്ങൾ എന്തൊക്കെയായിരുന്നു? (Short Answer - 3 Marks)</div>
     <div class="qa-a">
-      <strong>ഉത്തരം:</strong> ബാഹ്യമായി നിയമങ്ങൾക്കനുസരിച്ച് പ്രവർത്തിക്കാൻ സാധിക്കുമെങ്കിലും, യഥാർത്ഥ ലോകത്തിലെ അവ്യക്തതകളെയും (Ambiguity) സാമാന്യബോധത്തെയും (Common Sense) പ്രതീകങ്ങളാക്കി മാറ്റാൻ സാധിച്ചില്ല എന്നതാണ് ട്യൂറിംഗ് കാലഘട്ടത്തിലെ സിംബോളിക് റീസണിംഗ് നേരിട്ട പ്രധാന പ്രതിസന്ധി.
+      <strong>ഉത്തരം:</strong> ട്യൂറിംഗ് മുന്നോട്ടുവെച്ച പ്രതീകാത്മക യുക്തിചിന്ത നേരിട്ട പ്രധാന തടസ്സങ്ങൾ:<br>
+      1. പ്രതീകങ്ങൾ കൈകാര്യം ചെയ്യുമ്പോൾ യഥാർത്ഥ ലോകത്തിലെ അർത്ഥങ്ങൾ ഗ്രഹിക്കാൻ കഴിയാത്ത അവസ്ഥ.<br>
+      2. മനുഷ്യഭാഷയിലെ അവ്യക്തതകളെയും (Ambiguity) രൂപകങ്ങളെയും (Metaphors) ഗണിതശാസ്ത്ര ചിഹ്നങ്ങളാക്കി മാറ്റാനുള്ള ബുദ്ധിമുട്ട്.<br>
+      3. ബാഹ്യമായ പെരുമാറ്റ അനുകരണത്തിനപ്പുറം യന്ത്രത്തിന് ആന്തരിക ചിന്താബോധം നൽകാൻ കഴിയാതിരുന്നത്.
     </div>
   </div>
 
   <div class="qa-card">
-    <div class="qa-q">Q2. കമ്പ്യൂട്ടിംഗിനെ യഥാർത്ഥ ബുദ്ധിയായി കാണുന്നതിലെ ദാർശനിക പരിമിതി എന്താണ്? (LMS Objective 7)</div>
+    <div class="qa-q">Q2. കമ്പ്യൂട്ടിംഗിനെ യഥാർത്ഥ ബുദ്ധിയായി (Authentic Intelligence) കണക്കാക്കാൻ കഴിയില്ലെന്ന് വാദിക്കുന്നതിന്റെ ദാർശനിക കാരണങ്ങൾ എന്തെല്ലാം? (Short Essay - 5 Marks)</div>
     <div class="qa-a">
-      <strong>ഉത്തരം:</strong> കമ്പ്യൂട്ടിംഗ് എന്നത് കേവലം ചിഹ്നങ്ങളുടെ കണക്കുകൂട്ടൽ (Mechanical symbol manipulation) മാത്രമാണ്. അതിൽ <strong>ആന്തരിക ബോധമോ (Consciousness)</strong>, <strong>അർത്ഥബോധമോ (Genuinely understanding meaning)</strong> ഇല്ലാത്തതിനാൽ കമ്പ്യൂട്ടേഷൻ യഥാർത്ഥ ബുദ്ധി (Authentic Intelligence) ആകുന്നില്ല.
+      <strong>ഉത്തരം:</strong> കമ്പ്യൂട്ടിംഗ് എന്നത് കേവലം അൽഗോരിതങ്ങൾക്കനുസരിച്ച് ചിഹ്നങ്ങൾ നീക്കിവെക്കുന്ന ഒരു യാന്ത്രിക പ്രക്രിയ മാത്രമാണ്. ഇതിനെ യഥാർത്ഥ ബുദ്ധിയായി കാണാൻ കഴിയില്ലെന്ന് പറയാൻ പ്രധാന കാരണം അതിൽ <strong>ബോധം (Consciousness)</strong>, <strong>അർത്ഥബോധം (Semantics)</strong>, <strong>ആന്തരിക അനുഭവങ്ങൾ (Subjective Experience)</strong> എന്നിവ പൂർണ്ണമായും ഇല്ലാതിരിക്കുന്നതാണ്. ഒരു യന്ത്രം മനുഷ്യനെപ്പോലെ സംസാരിക്കുന്നു എന്ന് തോന്നിപ്പിച്ചാലും അത് വെറും ബാഹ്യമായ അനുകരണം (Simulation) മാത്രമാണ്; യഥാർത്ഥ ബുദ്ധിയല്ല.
     </div>
   </div>
 
