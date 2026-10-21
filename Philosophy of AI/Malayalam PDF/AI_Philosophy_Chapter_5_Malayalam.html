@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 5: Alan Turing Test & Constraints of Symbolic Reasoning · Philosophy of AI (PHL1MN102)</title>
+  
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+  @page {
+    size: A4;
+    margin: 14mm 14mm 16mm 14mm;
+    @bottom-right {
+      content: counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    line-height: 1.6;
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+  }
+  .header-box {
+    border: 2px solid #4338ca;
+    border-radius: 12px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+    margin-bottom: 20px;
+  }
+  .badge {
+    display: inline-block;
+    background: #4338ca;
+    color: #ffffff;
+    font-size: 8pt;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  h1 {
+    margin: 0 0 4px 0;
+    color: #1e1b4b;
+    font-size: 16pt;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+  .sub-title {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #4338ca;
+    margin-bottom: 8px;
+  }
+  .meta-info {
+    font-size: 8.5pt;
+    color: #475569;
+    font-weight: 600;
+    border-top: 1px dashed #c7d2fe;
+    padding-top: 6px;
+    margin-top: 6px;
+  }
+  .lms-box {
+    background: #f8fafc;
+    border: 1.5px solid #cbd5e1;
+    border-left: 5px solid #4338ca;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+  }
+  .lms-box h3 {
+    margin: 0 0 6px 0;
+    color: #4338ca;
+    font-size: 10.5pt;
+    font-weight: 800;
+  }
+  .section-title {
+    background: #4338ca;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 22px 0 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-after: avoid;
+  }
+  .bilingual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+  .card-en, .card-ml {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 14px;
+    background: #ffffff;
+    font-size: 9.5pt;
+  }
+  .card-en {
+    border-left: 4px solid #2563eb;
+    background: #f8fafc;
+  }
+  .card-ml {
+    border-left: 4px solid #4338ca;
+    background: #ffffff;
+  }
+  .card-title {
+    font-weight: 800;
+    margin-bottom: 6px;
+    font-size: 10pt;
+  }
+  .card-en .card-title { color: #1e40af; }
+  .card-ml .card-title { color: #312e81; }
+  .table-box {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 9pt;
+  }
+  .table-box th, .table-box td {
+    border: 1px solid #cbd5e1;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  .table-box th {
+    background: #4338ca;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .table-box tr:nth-child(even) { background: #f8fafc; }
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+  }
+  .qa-q {
+    font-weight: 800;
+    color: #4338ca;
+    margin-bottom: 6px;
+    font-size: 10pt;
+  }
+  .qa-a {
+    color: #334155;
+    font-size: 9.5pt;
+    line-height: 1.55;
+  }
+</style>
+
+</head>
+<body>
+
+  <div class="header-box">
+    <div class="badge">Calicut University · Minor Philosophy (PHL1MN102)</div>
+    <h1>അധ്യായം 5: അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പരിമിതികളും</h1>
+    <div class="sub-title">Chapter 5: Alan Turing Test & Constraints of Symbolic Reasoning</div>
+    <div class="meta-info">
+      <span>📚 Module 2 · Unit 2.1 (a)</span> &nbsp;|&nbsp; 
+      <span>⏱️ 20 Hours Module Weightage · 20 Marks</span> &nbsp;|&nbsp; 
+      <span>🎯 100% Calicut University LMS PDF Aligned</span>
+    </div>
+  </div>
+
+  <div class="lms-box">
+    <h3>🏛️ ഔദ്യോഗിക LMS പാഠ്യലക്ഷ്യങ്ങൾ (Official LMS Objectives - Dr. Krishnan T.)</h3>
+    <p style="margin: 0; font-size: 9.5pt; line-height: 1.5; color: #334155;">
+      • <strong>Constraints of Symbolic Reasoning:</strong> To ascertain the constraints of symbolic reasoning posited during Alan Turing's era.<br>
+      • <strong>Early AI Obstacles:</strong> To connect Turing's first concept of machine intelligence with the obstacles encountered by early AI research.<br>
+      • <strong>Authentic Intelligence:</strong> To examine the philosophical constraints of regarding computing as authentic intelligence.
+    </p>
+  </div>
+
+  <div class="section-title">
+    <span>1. ട്യൂറിംഗ് കാലഘട്ടത്തിലെ സിംബോളിക് ചിന്തയുടെ പരിമിതികൾ (Constraints in Turing's Era)</span>
+    <span style="font-size: 9pt; font-weight: 600;">Symbolic Reasoning Limitations</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-ml">
+      <div class="card-title">മലയാളം വിവരണം</div>
+      <p>അലൻ ട്യൂറിംഗ് വിഭാവനം ചെയ്ത കമ്പ്യൂട്ടേഷൻ മാതൃകകൾ പ്രതീകാത്മക യുക്തിയിലാണ് അധിഷ്ഠിതമായിരുന്നത്. എന്നാൽ പ്രതീകാത്മക യുക്തിക്ക് (Symbolic reasoning) യഥാർത്ഥ ലോകത്തിലെ സങ്കീർണ്ണതകളെ നേരിടാൻ നിരവധി പരിമിതികളുണ്ടായിരുന്നു.</p>
+      <p>ചിഹ്നങ്ങൾ കൈകാര്യം ചെയ്യുന്നത് യന്ത്രത്തിന് എളുപ്പമാണെങ്കിലും, ആ ചിഹ്നങ്ങൾ സൂചിപ്പിക്കുന്ന വസ്തുക്കളുടെ യഥാർത്ഥ ലോക സ്വഭാവങ്ങൾ മനസ്സിലാക്കാൻ കമ്പ്യൂട്ടേഷണൽ നിയമങ്ങൾക്ക് കഴിഞ്ഞില്ല.</p>
+    </div>
+    <div class="card-en">
+      <div class="card-title">English Theoretical Critique</div>
+      <p>During Turing's era, intelligence was modeled on formal logical manipulation. However, early symbolic systems encountered severe real-world obstacles: combinatorial explosion, brittleness, and an inability to process ambiguous sensory inputs.</p>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>2. കണക്കുകൂട്ടലും യഥാർത്ഥ ബുദ്ധിയും തമ്മിലുള്ള വൈരുദ്ധ്യം (Computing vs Authentic Intelligence)</span>
+    <span style="font-size: 9pt; font-weight: 600;">LMS Objective 7</span>
+  </div>
+
+  <table class="table-box">
+    <tr>
+      <th style="width: 25%;">മാനദണ്ഡം (Dimension)</th>
+      <th style="width: 35%;">കമ്പ്യൂട്ടേഷണൽ പ്രോസസ്സിംഗ് (Computing)</th>
+      <th style="width: 40%;">യഥാർത്ഥ മനുഷ്യബുദ്ധി (Authentic Intelligence)</th>
+    </tr>
+    <tr>
+      <td><strong>1. പ്രവർത്തനം (Operation)</strong></td>
+      <td>പൂർവ്വനിർമ്മിത നിയമങ്ങളും അൽഗോരിതങ്ങളും അനുസരിച്ച് ചിഹ്നങ്ങൾ നീക്കൽ.</td>
+      <td>അർത്ഥബോധത്തോടെയുള്ള ചിന്തയും ബോധപൂർവ്വമായ തീരുമാനമെടുക്കലും.</td>
+    </tr>
+    <tr>
+      <td><strong>2. അർത്ഥം (Semantics)</strong></td>
+      <td>ചിഹ്നങ്ങളുടെ ഘടന (Syntax) മാത്രം പരിഗണിക്കുന്നു; അർത്ഥം ഗ്രഹിക്കുന്നില്ല.</td>
+      <td>ചിഹ്നങ്ങൾ പ്രതിനിധീകരിക്കുന്ന ലോക യാഥാർത്ഥ്യങ്ങളെ ആഴത്തിൽ മനസ്സിലാക്കുന്നു.</td>
+    </tr>
+    <tr>
+      <td><strong>3. സന്ദർഭബോധം (Contextuality)</strong></td>
+      <td>പുറത്തുനിന്നുള്ള പുതിയ സന്ദർഭങ്ങളിൽ സിസ്റ്റം തകരാറിലാകുന്നു.</td>
+      <td>സാഹചര്യങ്ങൾക്ക് അനുസരിച്ച് വഴക്കത്തോടെയും സ്വാഭാവികമായും പൊരുത്തപ്പെടുന്നു.</td>
+    </tr>
+  </table>
+
+  <div class="section-title">
+    <span>3. പരീക്ഷാ സഹായി: മോഡൽ ചോദ്യോത്തരങ്ങൾ (Exam Q&A)</span>
+    <span style="font-size: 9pt; font-weight: 600;">Calicut University Exam Pattern</span>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q1. ട്യൂറിംഗ് കാലഘട്ടത്തിലെ പ്രതീകാത്മക യുക്തിചിന്ത നേരിട്ട പ്രധാന വെല്ലുവിളി എന്തായിരുന്നു?</div>
+    <div class="qa-a">
+      <strong>ഉത്തരം:</strong> ബാഹ്യമായി നിയമങ്ങൾക്കനുസരിച്ച് പ്രവർത്തിക്കാൻ സാധിക്കുമെങ്കിലും, യഥാർത്ഥ ലോകത്തിലെ അവ്യക്തതകളെയും (Ambiguity) സാമാന്യബോധത്തെയും (Common Sense) പ്രതീകങ്ങളാക്കി മാറ്റാൻ സാധിച്ചില്ല എന്നതാണ് ട്യൂറിംഗ് കാലഘട്ടത്തിലെ സിംബോളിക് റീസണിംഗ് നേരിട്ട പ്രധാന പ്രതിസന്ധി.
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q2. കമ്പ്യൂട്ടിംഗിനെ യഥാർത്ഥ ബുദ്ധിയായി കാണുന്നതിലെ ദാർശനിക പരിമിതി എന്താണ്? (LMS Objective 7)</div>
+    <div class="qa-a">
+      <strong>ഉത്തരം:</strong> കമ്പ്യൂട്ടിംഗ് എന്നത് കേവലം ചിഹ്നങ്ങളുടെ കണക്കുകൂട്ടൽ (Mechanical symbol manipulation) മാത്രമാണ്. അതിൽ <strong>ആന്തരിക ബോധമോ (Consciousness)</strong>, <strong>അർത്ഥബോധമോ (Genuinely understanding meaning)</strong> ഇല്ലാത്തതിനാൽ കമ്പ്യൂട്ടേഷൻ യഥാർത്ഥ ബുദ്ധി (Authentic Intelligence) ആകുന്നില്ല.
+    </div>
+  </div>
+
+</body>
+</html>
