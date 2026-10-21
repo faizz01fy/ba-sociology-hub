@@ -375,6 +375,10 @@
       }
     }
   </style>
+  <!-- Fast PDF Reader Preloads -->
+  <link rel="prefetch" href="study-guide-reader.html">
+  <link rel="prefetch" href="assets/pdfjs/pdf.min.mjs">
+  <link rel="prefetch" href="assets/pdfjs/pdf.worker.min.mjs">
 </head>
 <body oncontextmenu="event.preventDefault(); return false;">
 
@@ -957,6 +961,34 @@
         e.preventDefault();
       }
     }, true);
+  </script>
+
+
+  <!-- Instant PDF Pre-warmer for all subject cards & tabs -->
+  <script id="fast-subject-prewarmer">
+    (function() {
+      function prewarmUrl(url) {
+        if (!url || (!url.endsWith('.pdf') && !url.includes('.pdf') && !url.endsWith('.docx'))) return;
+        const clean = url.split('#')[0];
+        if (document.querySelector('link[href="' + CSS.escape(clean) + '"]')) return;
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = clean;
+        document.head.appendChild(link);
+      }
+      document.addEventListener('pointerenter', function(e) {
+        const el = e.target.closest && e.target.closest('.btn-view, .read-online, .read-ch-btn, a[href*=".pdf"], .chapter-card, .filter-btn');
+        if (!el || el.dataset.prewarmed) return;
+        el.dataset.prewarmed = 'true';
+        let url = el.getAttribute('href');
+        if (!url) {
+          const oc = el.getAttribute('onclick') || '';
+          const m = oc.match(/viewPdf\(['"]([^'"]+)['"]/);
+          if (m) url = m[1];
+        }
+        if (url) prewarmUrl(url);
+      }, { passive: true });
+    })();
   </script>
 
 </body>

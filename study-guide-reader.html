@@ -7,16 +7,18 @@
   <title>Study Guide Reader · Academic Hub</title>
   <script>
     (() => {
+      // Voice controls are enabled for ALL documents, including Malayalam PDFs
       const file = new URLSearchParams(location.search).get('file') || '';
-      if (/(?:malayalam|മലയാളം)/i.test(file)) {
-        document.documentElement.classList.add('hide-voice-controls');
-      }
+      window.isMalayalamDoc = /(?:malayalam|മലയാളം|_mal|ch\d+.*mal)/i.test(file);
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="modulepreload" href="assets/pdfjs/pdf.min.mjs">
+  <link rel="preload" href="assets/pdfjs/pdf.worker.min.mjs" as="fetch" crossorigin="anonymous">
+
   <style>
     * { box-sizing: border-box; }
     html { overflow-anchor: none; -webkit-text-size-adjust: 100%; }
@@ -220,8 +222,7 @@
     }
     
     [hidden] { display: none !important; }
-    html.hide-voice-controls #voiceToolbarGroup,
-    html.hide-voice-controls #voicePanel { display: none !important; }
+    /* Malayalam voice controls always available */
     
     /* Voice Reading Button & Toolbar Group */
     .voice-btn {
@@ -630,6 +631,109 @@
     
     @media print { body { display: none !important; } }
   </style>
+<style id="sgr-pulse-nav-styles">
+    /* Premium Blinking Back & Home Navigation */
+    @keyframes blick-pulse-back {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45), 0 0 0 0 rgba(59, 130, 246, 0.7);
+      }
+      50% {
+        opacity: 0.88;
+        transform: scale(1.045);
+        filter: brightness(1.28);
+        box-shadow: 0 6px 22px rgba(37, 99, 235, 0.75), 0 0 16px 5px rgba(96, 165, 250, 0.9);
+      }
+    }
+
+    @keyframes blick-pulse-home {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45), 0 0 0 0 rgba(16, 185, 129, 0.7);
+      }
+      50% {
+        opacity: 0.88;
+        transform: scale(1.045);
+        filter: brightness(1.28);
+        box-shadow: 0 6px 22px rgba(16, 185, 129, 0.75), 0 0 16px 5px rgba(52, 211, 153, 0.9);
+      }
+    }
+
+    .reading-top-nav {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      gap: 12px !important;
+      margin: 0;
+      padding: 8px 16px !important;
+      background: #ffffff !important;
+      border-bottom: 1.5px solid #e2e8f0 !important;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 1000 !important;
+    }
+
+    .reading-top-nav .btn-back {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 7px !important;
+      min-height: 38px !important;
+      padding: 7px 16px !important;
+      border-radius: 10px !important;
+      font-size: 13px !important;
+      font-weight: 850 !important;
+      letter-spacing: 0.02em !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+      cursor: pointer !important;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #4338ca 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+      text-shadow: 0 1px 2px rgba(15, 23, 42, 0.35) !important;
+      animation: blick-pulse-back 2.2s infinite ease-in-out !important;
+    }
+
+    .reading-top-nav .btn-back:hover {
+      animation-play-state: paused !important;
+      transform: translateY(-2px) scale(1.04) !important;
+      box-shadow: 0 7px 24px rgba(37, 99, 235, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+    }
+
+    .reading-top-nav .btn-home {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 7px !important;
+      min-height: 38px !important;
+      padding: 7px 16px !important;
+      border-radius: 10px !important;
+      font-size: 13px !important;
+      font-weight: 850 !important;
+      letter-spacing: 0.02em !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+      cursor: pointer !important;
+      background: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+      text-shadow: 0 1px 2px rgba(6, 78, 59, 0.35) !important;
+      animation: blick-pulse-home 2.2s infinite ease-in-out !important;
+    }
+
+    .reading-top-nav .btn-home:hover {
+      animation-play-state: paused !important;
+      transform: translateY(-2px) scale(1.04) !important;
+      box-shadow: 0 7px 24px rgba(16, 185, 129, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+    }
+</style>
 </head>
 <body oncontextmenu="event.preventDefault(); return false;">
 
@@ -709,8 +813,11 @@
         <div class="voice-control-group">
           <span class="voice-group-label">മോഡ്:</span>
           <div class="voice-mode-pills" role="radiogroup" aria-label="Voice Reading Mode">
+            <button id="modeMalBtn" class="mode-pill" type="button" role="radio" aria-checked="false" data-mode="mal" title="മലയാളം നേരിട്ട് വായിക്കുക (Natural Malayalam Reading)">
+              🇮🇳 മലയാളം (Mal Only)
+            </button>
             <button id="modeEn2MlBtn" class="mode-pill" type="button" role="radio" aria-checked="false" data-mode="en2ml" title="ക്ലീൻ ഇംഗ്ലീഷ് എടുത്ത് മലയാളത്തിലേക്ക് വോയ്സ് കൺവേർഷൻ ചെയ്യുക (English to Malayalam Voice Conversion)">
-              🌐 ഇംഗ്ലീഷ് ➔ മലയാളം (En ➔ Mal)
+              🌐 En ➔ Mal
             </button>
             <button id="modeEnBtn" class="mode-pill active" type="button" role="radio" aria-checked="true" data-mode="en" title="ഇംഗ്ലീഷ് വാചകം നേരിട്ട് വായിക്കുക (English Reading)">
               🇬🇧 English Only
@@ -858,7 +965,8 @@
           
           const canvas = document.createElement('canvas');
           // High-DPI support: Crisp anti-aliased rendering for Malayalam
-          const ratio = Math.min(Math.max(window.devicePixelRatio || 1, isMobile ? 2.0 : 1.5), 2.5);
+          const dpr = window.devicePixelRatio || 1;
+          const ratio = Math.min(Math.max(dpr, 1), 1.5);
           
           canvas.width = Math.floor(viewport.width * ratio);
           canvas.height = Math.floor(viewport.height * ratio);
@@ -919,7 +1027,8 @@
         }
       }
 
-      // Synchronously generate placeholder cards
+      // Synchronously generate placeholder cards using DocumentFragment (single reflow)
+      const fragment = document.createDocumentFragment();
       for (let number = 1; number <= pdf.numPages; number++) {
         const section = document.createElement('section');
         section.className = 'pdf-page';
@@ -937,9 +1046,10 @@
         loading.textContent = 'Loading page ' + number + '…';
 
         section.append(label, loading);
-        el('reader').append(section);
+        fragment.append(section);
         sections.push(section);
       }
+      el('reader').append(fragment);
 
       pageNumber = resumePage;
       controls();
@@ -958,7 +1068,7 @@
           observer.unobserve(entry.target);
           queue = queue.then(() => renderPage(entry.target)).catch(err => console.error(err));
         }
-      }, { rootMargin: '600px 0px' });
+      }, { rootMargin: '250px 0px' });
       
       sections.forEach(sec => observer.observe(sec));
     }
@@ -1240,7 +1350,8 @@
     // --- VOICE READING (TTS) & LIVE TRANSLATION ENGINE ---
     let allVoices = [];
     let selectedGender = 'female';
-    let voiceMode = 'en'; // UK English is the reliable default; Malayalam and bilingual modes remain available.
+    let voiceMode = window.isMalayalamDoc ? 'mal' : 'en';
+    let ttsEngine = 'google'; // 'google' = Google Natural Neural Bot (Female), 'system' = Microsoft/Browser, 'all' = Hybrid // UK English is the reliable default; Malayalam and bilingual modes remain available.
     let selectedUKVoiceKey = 'auto';
     let voiceRunToken = 0;
     let isVoicePlaying = false;
@@ -1380,6 +1491,7 @@
     async function waitForVoices() {
       if (!('speechSynthesis' in window)) return [];
       populateVoiceList();
+
       if (allVoices.length) return allVoices;
       const synth = window.speechSynthesis;
       if (typeof synth.addEventListener !== 'function') {
@@ -1394,6 +1506,7 @@
             clearTimeout(timer);
             synth.removeEventListener('voiceschanged', finish);
             populateVoiceList();
+
             resolve();
           };
           timer = setTimeout(finish, 1200);
@@ -1401,11 +1514,13 @@
         });
       }
       populateVoiceList();
+
       return allVoices;
     }
 
     if ('speechSynthesis' in window) {
       populateVoiceList();
+
       window.speechSynthesis.onvoiceschanged = populateVoiceList;
     }
 
@@ -1665,7 +1780,13 @@
         }
       };
 
-      if (voiceMode === 'en2ml') {
+      if (voiceMode === 'mal') {
+        const san = sanitizeMalayalam(sentence);
+        if (tEn) tEn.textContent = isEnglish ? sentence : '';
+        if (tMl) tMl.textContent = '🔊 ' + (san || sentence);
+        // Play directly in natural Malayalam female voice using Google Natural TTS
+        playMalayalamSpeechQueue(san || sentence, speed, onNext, runToken);
+      } else if (voiceMode === 'en2ml') {
         if (isEnglish) {
           if (tEn) tEn.textContent = '🇬🇧 ' + sentence;
           if (tMl) tMl.textContent = '⏳ മലയാളത്തിലേക്ക് മാറ്റുന്നു…';
@@ -1994,20 +2115,39 @@
         el('status').textContent = 'Word document loaded · Scroll to read the complete module';
 
       } else if (file.pathname.toLowerCase().endsWith('.pdf')) {
-        let lib, cdn = 'https://cdn.jsdelivr.net/npm';
+        let lib;
+        const localDistUrl = new URL('assets/pdfjs/pdf.min.mjs', location.href).href;
+        const localWorkerUrl = new URL('assets/pdfjs/pdf.worker.min.mjs', location.href).href;
         try {
-          lib = await import(cdn + '/pdfjs-dist@4.10.38/build/pdf.mjs');
-        } catch (error) {
-          cdn = 'https://unpkg.com';
-          lib = await import(cdn + '/pdfjs-dist@4.10.38/build/pdf.mjs');
+          lib = await import(localDistUrl);
+          lib.GlobalWorkerOptions.workerSrc = localWorkerUrl;
+        } catch (localErr) {
+          console.warn('Local PDF engine failed to load, falling back to CDN...', localErr);
+          let cdn = 'https://cdn.jsdelivr.net/npm';
+          try {
+            lib = await import(cdn + '/pdfjs-dist@4.10.38/build/pdf.min.mjs');
+          } catch (error) {
+            cdn = 'https://unpkg.com';
+            lib = await import(cdn + '/pdfjs-dist@4.10.38/build/pdf.min.mjs');
+          }
+          lib.GlobalWorkerOptions.workerSrc = cdn + '/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs';
         }
-        lib.GlobalWorkerOptions.workerSrc = cdn + '/pdfjs-dist@4.10.38/build/pdf.worker.mjs';
         
+        // Fast direct buffer fetch: avoids Range-request negotiation latency
+        let pdfData = null;
+        try {
+          const resp = await fetch(file.href);
+          if (resp.ok) {
+            pdfData = new Uint8Array(await resp.arrayBuffer());
+          }
+        } catch (_) {}
+
         pdf = await lib.getDocument({
-          url: file.href,
+          ...(pdfData ? { data: pdfData } : { url: file.href }),
           isEvalSupported: false,
-          disableAutoFetch: true,
-          rangeChunkSize: 262144
+          disableAutoFetch: false,
+          disableStream: false,
+          cMapPacked: true
         }).promise;
 
         el('page').max = pdf.numPages;
