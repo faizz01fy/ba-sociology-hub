@@ -201,7 +201,15 @@ export default {
     if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/internal/")) return json({error:"Not found"},404);
     const response = await env.ASSETS.fetch(request);
     if (request.method === "GET" && response.ok && response.headers.get("Content-Type")?.includes("text/html")) {
-      // Lightweight page visit recording only (1 call per page load, 0 background operations while reading)
+      const newHeaders = new Headers(response.headers);
+      newHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate");
+      newHeaders.set("Pragma", "no-cache");
+      newHeaders.set("Expires", "0");
+      const freshHtml = new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: newHeaders
+      });
       const task = room.fetch(new Request("https://internal/internal/visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -214,6 +222,7 @@ export default {
         })
       })).catch(() => {});
       ctx.waitUntil(task);
+      return freshHtml;
     }
     return response;
   }
