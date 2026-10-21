@@ -94,45 +94,929 @@
     }
 
   </style>
-  <style id="academic-hub-red-navigation">
-    .topbar{display:flex;flex-direction:column;align-items:center;justify-content:center;height:auto;min-height:76px;padding:14px clamp(18px,3vw,44px) 12px;gap:10px;background:rgba(15,15,18,.97);border-bottom:1px solid #303035;box-shadow:inset 0 3px 0 #e11d2e,0 8px 24px rgba(0,0,0,.16)}
-    .brand{justify-content:center;gap:13px;width:max-content;min-width:370px;max-width:100%;padding:10px 25px;border:1px solid #93c5fd;border-radius:18px;background:linear-gradient(135deg,#eff6ff,#bfdbfe);box-shadow:0 9px 24px rgba(37,99,235,.24)}
-    .brand-mark{display:grid;place-items:center;flex:0 0 46px;width:46px;height:46px;border:1px solid #a78bfa;border-radius:14px;background:linear-gradient(145deg,#7c3aed,#4f46e5);color:#fff;box-shadow:0 5px 14px rgba(91,33,182,.24)}
-    .brand-book{display:block;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-    .brand-copy{flex:1;min-width:0;justify-items:center;gap:4px;text-align:center}
-    .brand-copy strong{color:#4c1d95;font-size:22px;font-weight:900;letter-spacing:-.35px;text-shadow:none}
-    .brand-copy small{display:inline-flex;align-items:center;width:max-content;max-width:100%;margin-top:0;padding:3px 8px;border:1px solid rgba(91,33,182,.2);border-radius:6px;background:rgba(255,255,255,.65);color:#5b21b6;font-size:10px;font-weight:900;line-height:1.4;letter-spacing:.075em;white-space:nowrap}
-    .nav-links{display:flex;align-items:center;gap:3px;padding:4px;border:1px solid #37373d;border-radius:14px;background:#1b1b20;color:#f4f4f5;font-size:12px;font-weight:700}
-    .nav-links a{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:8px 10px;border:1px solid transparent;border-radius:10px;color:#f2f2f3;white-space:nowrap;transition:background .18s,color .18s,border-color .18s,transform .18s,box-shadow .18s}
-    .nav-links a:hover{transform:translateY(-1px);background:#3d191e;border-color:#74242d;color:#fff}
-    .nav-links a[aria-current="location"]{background:linear-gradient(135deg,#ef3340,#b51220);border-color:#ff6570;color:#fff;box-shadow:0 5px 15px rgba(225,29,46,.3)}
-    .nav-links a:focus-visible{outline:2px solid #ff9aa2;outline-offset:3px}
-    .nav-icon{width:17px;height:17px;flex:0 0 17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-    .nav-cta{padding:10px 14px;border:1px solid #fa5865;border-radius:10px;background:linear-gradient(135deg,#ed2939,#b30f1d);color:#fff;box-shadow:0 7px 18px rgba(225,29,46,.25);font-size:13px}
-    .nav-cta:hover{background:linear-gradient(135deg,#ff3a4a,#c51625)}
-    @media(min-width:701px) and (max-width:1100px){
-      .topbar{flex-wrap:nowrap;justify-content:center;gap:9px;padding-inline:18px}
-      .nav-links{order:initial;flex:0 1 auto;max-width:100%;flex-wrap:wrap;justify-content:center}
-    }
-    @media(max-width:700px){
-      .topbar{height:auto;min-height:68px;padding:12px 14px 10px;gap:9px;flex-wrap:nowrap}
-      .brand{width:min(100%,370px);min-width:0;gap:10px;padding:8px 14px}
-      .brand-mark{flex-basis:38px;width:38px;height:38px;border-radius:12px}
-      .brand-book{width:21px;height:21px}
-      .brand-copy strong{font-size:17px}.brand-copy small{padding:2px 5px;font-size:9px;letter-spacing:.045em}
-      .nav-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));order:3;flex:1 0 100%;width:100%;gap:6px;padding:9px 0 0;border:0;border-top:1px solid #37373d;border-radius:0;background:transparent}
-      .nav-links a{justify-content:flex-start;min-height:39px;padding:7px 9px;font-size:11px}
-      .nav-icon{width:16px;height:16px;flex-basis:16px}
-    }
-    @media(max-width:390px){
-      .topbar{padding-inline:11px}
-      .brand{gap:8px}
-      .brand{padding:7px 10px}
-      .brand-copy strong{font-size:16px}.brand-copy small{padding:2px 4px;font-size:8.5px;letter-spacing:.035em}
-      .nav-links a{gap:6px;padding-inline:7px;font-size:10px}
-    }
-    @media(prefers-reduced-motion:reduce){.nav-links a,.nav-cta{transition:none}}
   
+  
+  <style id="academic-hub-premium-redesign">
+    /* ==========================================================================
+       ACADEMIC HUB - ULTRA-PREMIUM REDESIGN (TOPBAR, TABS, INTERVAL SHOWCASE & STATS)
+       ========================================================================== */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --ah-bg-dark: #090d16;
+      --ah-bg-card: rgba(18, 24, 38, 0.72);
+      --ah-border-glass: rgba(255, 255, 255, 0.08);
+      --ah-border-glass-hover: rgba(255, 255, 255, 0.18);
+      --ah-primary: #4f46e5;
+      --ah-primary-glow: rgba(79, 70, 229, 0.45);
+      --ah-accent-cyan: #06b6d4;
+      --ah-accent-emerald: #10b981;
+      --ah-accent-amber: #f59e0b;
+      --ah-accent-rose: #f43f5e;
+      --ah-text-main: #f8fafc;
+      --ah-text-muted: #94a3b8;
+    }
+
+    /* --- TOPBAR & BRAND --- */
+    .topbar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      width: 100%;
+      height: 72px;
+      padding: 0 clamp(16px, 3.5vw, 42px);
+      background: rgba(9, 13, 22, 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      box-sizing: border-box;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      padding: 6px 14px 6px 8px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+    }
+    .brand:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(99, 102, 241, 0.5);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 22px rgba(99, 102, 241, 0.2);
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .brand-book {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2;
+    }
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1px;
+    }
+    .brand-copy strong {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.2;
+    }
+    .brand-copy small {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 1.5px 6px;
+      border-radius: 4px;
+      background: rgba(99, 102, 241, 0.15);
+      color: #a5b4fc;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1px solid rgba(99, 102, 241, 0.25);
+    }
+
+    /* --- PREMIUM TAB NAVIGATION --- */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 6px;
+      border-radius: 9999px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 38px;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      color: #cbd5e1;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .nav-links a:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-1px);
+    }
+    .nav-links a[aria-current="location"] {
+      color: #ffffff;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 18px rgba(99, 102, 241, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    }
+    .nav-icon {
+      width: 15px;
+      height: 15px;
+      stroke-width: 2;
+    }
+    .nav-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 1px 5px;
+      border-radius: 9999px;
+      font-size: 9.5px;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.15);
+      color: #e2e8f0;
+      margin-left: 2px;
+    }
+    .nav-links a[aria-current="location"] .nav-badge-pill {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+
+    /* Topbar Right - Status indicator */
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .live-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #6ee7b7;
+      font-size: 11.5px;
+      font-weight: 700;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .live-status-pill:hover {
+      background: rgba(16, 185, 129, 0.18);
+      border-color: rgba(16, 185, 129, 0.4);
+      transform: translateY(-1px);
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulseGreen 2s infinite ease-in-out;
+    }
+    @keyframes pulseGreen {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+
+    /* --- SEMESTER MARQUEE BANNER --- */
+    .semester-context {
+      background: #0b111e;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 7px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      overflow: hidden;
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .semester-context-logo {
+      display: grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      color: #818cf8;
+      flex-shrink: 0;
+    }
+    .semester-context p {
+      margin: 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .semester-context-marquee {
+      display: inline-flex;
+      animation: marqueeScroll 28s linear infinite;
+      gap: 40px;
+    }
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* --- HERO INTERVAL PICTURES SHOWCASE --- */
+    .hero-interval-showcase {
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(100% 120% at 50% 0%, #151b2d 0%, #080c16 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 30px clamp(16px, 4vw, 48px) 36px;
+      box-sizing: border-box;
+    }
+    .hero-mesh-glow {
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 380px;
+      background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.22) 0%, rgba(6, 182, 212, 0.1) 45%, transparent 70%);
+      pointer-events: none;
+      filter: blur(40px);
+      z-index: 0;
+    }
+
+    .showcase-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+
+    /* Interval Tab Controller (Top of slider) */
+    .interval-controller-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .interval-nav-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 9999px;
+      backdrop-filter: blur(12px);
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .interval-nav-pills::-webkit-scrollbar { display: none; }
+    .interval-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      border-radius: 9999px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: #94a3b8;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .interval-pill-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .interval-pill-btn.active {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: rgba(99, 102, 241, 0.45);
+      color: #ffffff;
+      box-shadow: 0 2px 12px rgba(99, 102, 241, 0.25);
+    }
+    .interval-pill-btn .pill-num {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 900;
+      color: #818cf8;
+      padding: 1px 5px;
+      border-radius: 4px;
+      background: rgba(99, 102, 241, 0.15);
+    }
+    .interval-pill-btn.active .pill-num {
+      background: #4f46e5;
+      color: #ffffff;
+    }
+
+    /* Interval Progress & Controls */
+    .interval-playback-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .interval-timer-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .interval-progress-bar {
+      width: 90px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .interval-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #6366f1, #06b6d4);
+      border-radius: 9999px;
+      transition: width 0.1s linear;
+    }
+    .slider-ctrl-btn {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+    .slider-ctrl-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    /* Slides Viewport */
+    .showcase-slider-viewport {
+      position: relative;
+      min-height: 440px;
+    }
+    .showcase-slide {
+      display: none;
+      grid-template-columns: 1.05fr 1.25fr;
+      align-items: center;
+      gap: clamp(24px, 4vw, 56px);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .showcase-slide.active {
+      display: grid;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Slide Left: Info Column */
+    .slide-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .slide-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #a5b4fc;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .slide-title {
+      color: #ffffff;
+      font-size: clamp(26px, 2.8vw, 38px);
+      font-weight: 850;
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .slide-desc {
+      color: #94a3b8;
+      font-size: clamp(13px, 1.1vw, 15px);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .slide-features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 4px 0 8px;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+    }
+    .slide-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #e2e8f0;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+    .slide-feature-item svg {
+      width: 16px;
+      height: 16px;
+      color: #10b981;
+      flex-shrink: 0;
+    }
+
+    .slide-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .btn-showcase-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: #ffffff;
+      font-size: 13.5px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(79, 70, 229, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-showcase-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(79, 70, 229, 0.55);
+      color: #ffffff;
+    }
+    .btn-showcase-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #e2e8f0;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-showcase-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* Slide Right: Visual Mockup Showcase with Real Screenshot */
+    .slide-visual {
+      position: relative;
+    }
+    .browser-mockup {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 30px rgba(99, 102, 241, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .browser-mockup:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.8), 0 0 45px rgba(99, 102, 241, 0.25);
+    }
+    .mockup-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 16px;
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .mockup-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .mockup-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #eab308; }
+    .dot-green { background: #22c55e; }
+    .mockup-url {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 6px;
+      padding: 3px 12px;
+      color: #94a3b8;
+      font-size: 11px;
+      font-family: monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mockup-media-frame {
+      position: relative;
+      width: 100%;
+      height: 310px;
+      background: #090d16;
+      overflow: hidden;
+    }
+    .mockup-media-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .browser-mockup:hover .mockup-media-frame img {
+      transform: scale(1.02);
+    }
+
+    /* Floating Feature Badges over Screenshot */
+    .mockup-floating-badge {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      font-size: 11.5px;
+      font-weight: 750;
+      z-index: 2;
+      animation: floatBadge 3.5s ease-in-out infinite alternate;
+    }
+    .badge-top-right {
+      top: 16px;
+      right: 16px;
+      animation-delay: 0s;
+    }
+    .badge-bottom-left {
+      bottom: 16px;
+      left: 16px;
+      animation-delay: 1.5s;
+    }
+    @keyframes floatBadge {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-6px); }
+    }
+    .badge-icon {
+      display: grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      font-size: 11px;
+    }
+    .badge-purple { background: rgba(124, 58, 237, 0.3); color: #c4b5fd; }
+    .badge-emerald { background: rgba(16, 185, 129, 0.3); color: #6ee7b7; }
+    .badge-amber { background: rgba(245, 158, 11, 0.3); color: #fde68a; }
+    .badge-cyan { background: rgba(6, 182, 212, 0.3); color: #67e8f9; }
+
+    /* Slider Dot Indicators */
+    .interval-dots-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 22px;
+    }
+    .interval-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .interval-dot.active {
+      width: 28px;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #6366f1, #06b6d4);
+      box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+    }
+
+    /* --- RECONSTRUCTED PORTAL FEATURE CARDS (QUICK-STATS) --- */
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: -24px clamp(16px, 3.5vw, 42px) 32px;
+      position: relative;
+      z-index: 10;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .stat-card-link {
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+    .stat {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 20px 22px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 18px;
+      box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      cursor: pointer;
+      min-height: 120px;
+      box-sizing: border-box;
+      border-right: none !important;
+    }
+    .stat::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3.5px;
+      opacity: 0.9;
+      transition: height 0.2s ease;
+    }
+    .stat-card--materials::before { background: linear-gradient(90deg, #6366f1, #8b5cf6); }
+    .stat-card--mcq::before { background: linear-gradient(90deg, #0284c7, #06b6d4); }
+    .stat-card--video::before { background: linear-gradient(90deg, #f59e0b, #ea580c); }
+    .stat-card--student::before { background: linear-gradient(90deg, #10b981, #059669); }
+
+    .stat:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 36px -8px rgba(15, 23, 42, 0.16), 0 4px 12px rgba(15, 23, 42, 0.06);
+      background: #ffffff;
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+    .stat:hover::before {
+      height: 5px;
+    }
+
+    .stat-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .stat-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      font-size: 20px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    .stat:hover .stat-icon {
+      transform: scale(1.08);
+    }
+    .stat-purple {
+      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+      color: #6d28d9;
+      box-shadow: 0 4px 12px rgba(109, 40, 217, 0.15);
+    }
+    .stat-blue {
+      background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+      color: #0369a1;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+    }
+    .stat-orange {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      color: #b45309;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15);
+    }
+    .stat-green {
+      background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+      color: #047857;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15);
+    }
+
+    .stat-metric-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .stat-card--materials .stat-metric-badge { background: #ede9fe; color: #5b21b6; }
+    .stat-card--mcq .stat-metric-badge { background: #e0f2fe; color: #075985; }
+    .stat-card--video .stat-metric-badge { background: #fef3c7; color: #92400e; }
+    .stat-card--student .stat-metric-badge { background: #d1fae5; color: #065f46; }
+
+    .stat-body {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      width: 100%;
+    }
+    .stat strong {
+      color: #0f172a;
+      font-size: 15px;
+      font-weight: 800;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: -0.01em;
+    }
+    .stat small {
+      color: #64748b;
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+    .stat-arrow-hint {
+      margin-top: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #4f46e5;
+      font-size: 11px;
+      font-weight: 750;
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: all 0.2s ease;
+    }
+    .stat:hover .stat-arrow-hint {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* --- RESPONSIVE MEDIA QUERIES --- */
+    @media (max-width: 1100px) {
+      .topbar {
+        height: auto;
+        padding: 12px 18px;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .brand {
+        order: 1;
+      }
+      .topbar-right {
+        order: 2;
+      }
+      .nav-links {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 5px;
+        scrollbar-width: none;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .showcase-slide {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .mockup-media-frame {
+        height: 260px;
+      }
+      .quick-stats {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 16px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .topbar {
+        padding: 10px 12px;
+      }
+      .brand {
+        padding: 5px 10px 5px 6px;
+      }
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+      .brand-copy strong {
+        font-size: 14.5px;
+      }
+      .brand-copy small {
+        font-size: 8px;
+      }
+      .live-status-pill {
+        padding: 4px 10px;
+        font-size: 10px;
+      }
+      .nav-links {
+        gap: 3px;
+      }
+      .nav-links a {
+        padding: 6px 11px;
+        font-size: 11.5px;
+        min-height: 34px;
+      }
+      .hero-interval-showcase {
+        padding: 20px 14px 28px;
+      }
+      .interval-controller-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .interval-playback-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .interval-progress-bar {
+        width: 110px;
+      }
+      .slide-title {
+        font-size: 22px;
+      }
+      .slide-desc {
+        font-size: 12.5px;
+      }
+      .mockup-media-frame {
+        height: 200px;
+      }
+      .quick-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      .stat {
+        padding: 14px 16px;
+        min-height: auto;
+      }
+      .mockup-floating-badge {
+        font-size: 10px;
+        padding: 4px 9px;
+      }
+    }
+  </style>
+
+
+
+  <style id="preserved-syllabus-rules">
     /* Standout Syllabus Tab - Different color tab (Amber/Gold) */
     #module-dialog .module-tabs button.module-tab--syllabus {
       background: #fffbeb !important;
@@ -168,8 +1052,8 @@
     #module-dialog:has([data-is-syllabus="true"][aria-selected="true"]) .view-quiz-pane {
       display: none !important;
     }
-
   </style>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -323,7 +1207,7 @@
     .module-reader-load:focus-visible{outline:3px solid #b79e48;outline-offset:3px}
   </style>
   <style id="module-window-home-button">
-    #module-dialog .module-header-actions{display:none!important}
+    #module-dialog .module-header-actions{display:flex!important;align-items:center;gap:10px;}
     #module-dialog .module-home{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:40px;padding:8px 12px;border:1px solid #d7e3db;border-radius:10px;background:#eef6f0;color:#205842;font-size:13px;font-weight:800;text-decoration:none;white-space:nowrap}
     #module-dialog .module-home:hover{background:#dceee1}
     #module-dialog .module-home:focus-visible{outline:3px solid #8bb99a;outline-offset:2px}
@@ -374,7 +1258,13 @@
     #module-dialog .module-tabs{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));order:1;margin:0 0 12px;padding:12px 0 16px;border-bottom:1px solid #e1e7df;}
     #module-dialog .module-subtabs{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));order:2;margin:0 0 16px;padding:4px 0 16px;border-bottom:1px solid #e1e7df;}
     #module-dialog .module-content{order:3;}
-    #module-dialog .module-tabs button[aria-selected="true"]{outline:2px solid rgba(32,88,66,.18);outline-offset:1px;}
+    #module-dialog .module-tabs button[aria-selected="true"]{
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid #1e3a8a !important;
+      box-shadow: 0 4px 14px rgba(30, 64, 175, 0.45) !important;
+      transform: none !important;
+    }
     @media(max-width:560px){#module-dialog .module-tabs{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;}#module-dialog .module-subtabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}}
   </style>
 
@@ -394,7 +1284,7 @@
       gap:14px;
     }
     #module-dialog .module-header > div:first-child { min-width:0; }
-    #module-dialog .module-header-actions{display:none!important}
+    #module-dialog .module-header-actions{display:flex!important;align-items:center;gap:10px;}
     #module-dialog .module-home {
       display:inline-flex;align-items:center;justify-content:center;gap:5px;
       min-height:40px;padding:8px 12px;border:1px solid #9bbce0;border-radius:10px;
@@ -521,7 +1411,7 @@
     @media(max-width:560px) {
       #module-dialog .module-panel { width:100%;max-height:94dvh;border-radius:16px 16px 0 0; }
       #module-dialog .module-header { gap:8px; }
-      #module-dialog .module-header-actions{display:none!important}
+      #module-dialog .module-header-actions{display:flex!important;align-items:center;gap:10px;}
       #module-dialog .module-home { min-height:36px;padding:7px 9px;font-size:12px; }
       #module-dialog .module-tabs { grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:10px 0 13px; }
       #module-dialog .module-tabs button { min-height:42px;padding:7px 3px;font-size:11px; }
@@ -1080,68 +1970,622 @@
   </style>
 </head>
 <body id="top">
-  <nav class="topbar">
+
+  <!-- PREMIUM TOPBAR NAVIGATION -->
+  <header class="topbar">
     <a class="brand" href="index.html" aria-label="Academic Hub home">
-      <span class="brand-mark" aria-hidden="true"><svg class="brand-book" viewBox="0 0 24 24" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v17H6.5A2.5 2.5 0 0 0 4 22zM20 5.5A2.5 2.5 0 0 0 17.5 3H12v17h5.5A2.5 2.5 0 0 1 20 22z"/><path d="M7 7h2M15 7h2"/></svg></span>
-      <span class="brand-copy"><strong>Academic Hub</strong><small>BA SOCIOLOGY &amp; HISTORY</small></span>
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="brand-book" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+          <path d="M6 6h10M6 10h10M6 14h6"></path>
+        </svg>
+      </span>
+      <span class="brand-copy">
+        <strong>Academic Hub</strong>
+        <small>BA SOCIOLOGY &amp; HISTORY</small>
+      </span>
     </a>
-    <div class="nav-links" aria-label="Main navigation">
-      <a href="#top"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 3.5h7v7h-7zM13.5 3.5h7v5h-7zM13.5 10.5h7v10h-7zM3.5 13.5h7v7h-7z"/></svg><span>Overview</span></a>
-      <a href="#subjects"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 5.5A2.5 2.5 0 0 1 6 3h5v17H6a2.5 2.5 0 0 0-2.5 2zM20.5 5.5A2.5 2.5 0 0 0 18 3h-5v17h5a2.5 2.5 0 0 1 2.5 2z"/></svg><span>Semester subjects</span></a>
-      <a href="#tests"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 4h8M9 3h6v3H9zM6 5H4.5v16h15V5H18"/><path d="m8 12 1.5 1.5L12 11M14 12h3M8 17l1.5 1.5L12 16M14 17h3"/></svg><span>Practice tests</span></a>
-      <a href="#study-lounge"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="12 7 12 12 15 15" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Study Lounge</span></a>
-      <a href="#community-chat" hidden><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.5a8 8 0 0 1-8 8 8.7 8.7 0 0 1-3.3-.7L4 20l1.2-4.4a8 8 0 1 1 15.3-4.1z"/><path d="M8 11h8M8 14.5h5"/></svg><span>Student chat</span></a>
+
+    <!-- PREMIUM SEGMENTED TAB NAVIGATION -->
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#top" aria-current="location">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+        </svg>
+        <span>Overview</span>
+      </a>
+      <a href="#subjects">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+          <path d="M4 6h16"></path>
+        </svg>
+        <span>Semester subjects</span>
+        <span class="nav-badge-pill">11</span>
+      </a>
+      <a href="#tests">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M9 11l3 3L22 4"></path>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+        </svg>
+        <span>Practice tests</span>
+        <span class="nav-badge-pill">MCQ</span>
+      </a>
+      <a href="#study-lounge">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="10 8 16 12 10 16 10 8"></polygon>
+        </svg>
+        <span>Study Lounge</span>
+        <span class="nav-badge-pill">Audio</span>
+      </a>
+      <a href="#community-chat">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+        <span>Student chat</span>
+      </a>
+    </nav>
+
+    <!-- RIGHT STATUS BADGE -->
+    <div class="topbar-right">
+      <a href="#subjects" class="live-status-pill" title="Calicut University Official Portal Resources">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>Calicut Univ · 11 Subjects</span>
+      </a>
     </div>
-  </nav>
-  <script>
-    (() => {
-      const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
-      const syncActiveLink = () => {
-        const currentHash = window.location.hash || "#top";
-        const activeLink = links.find(link => link.getAttribute("href") === currentHash) || links[0];
-        links.forEach(link => {
-          if (link === activeLink) link.setAttribute("aria-current", "location");
-          else link.removeAttribute("aria-current");
-        });
-      };
-      window.addEventListener("hashchange", syncActiveLink);
-      syncActiveLink();
-    })();
-  </script>
+  </header>
 
   <main>
-    <div class="semester-context" role="note" aria-label="Calicut University · BA Sociology and History · 11 subjects · Notes, PDFs, revision and mock tests">
+    <!-- UNIVERSITY MARQUEE BANNER -->
+    <div class="semester-context" role="note" aria-label="Calicut University · BA Sociology and History · 11 subjects">
       <span class="semester-context-logo" aria-hidden="true">
-        <svg viewBox="0 0 24 24" focusable="false"><path d="m3 9.5 9-4.5 9 4.5-9 4.5-9-4.5Z"></path><path d="M6.5 11.5v4.2c3.3 2.1 7.7 2.1 11 0v-4.2M21 10v5"></path></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+        </svg>
       </span>
-      <p aria-hidden="true"><span class="semester-context-marquee"><span>CALICUT UNIVERSITY · BA SOCIOLOGY &amp; HISTORY · 11 subjects · Notes, PDFs, revision &amp; mock tests</span><span>CALICUT UNIVERSITY · BA SOCIOLOGY &amp; HISTORY · 11 subjects · Notes, PDFs, revision &amp; mock tests</span></span></p>
+      <p aria-hidden="true">
+        <span class="semester-context-marquee">
+          <span>🎓 CALICUT UNIVERSITY · BA SOCIOLOGY &amp; HISTORY · 11 CORE &amp; COMPLEMENTARY SUBJECTS · COMPLETE LMS NOTES · BILINGUAL READERS · TIMED MCQ EXAMS</span>
+          <span>🎓 CALICUT UNIVERSITY · BA SOCIOLOGY &amp; HISTORY · 11 CORE &amp; COMPLEMENTARY SUBJECTS · COMPLETE LMS NOTES · BILINGUAL READERS · TIMED MCQ EXAMS</span>
+        </span>
+      </p>
     </div>
 
-    <section class="quick-stats" aria-label="Portal features">
-      <div class="stat"><span class="stat-icon stat-purple">▤</span><div><strong>Study materials</strong><small>Notes, PDFs & revision</small></div></div>
-      <div class="stat"><span class="stat-icon stat-blue">✓</span><div><strong>MCQ practice</strong><small>Prepare for your exams</small></div></div>
-      <div class="stat"><span class="stat-icon stat-orange">▶</span><div><strong>Video learning</strong><small>Review topics your way</small></div></div>
-      <div class="stat"><span class="stat-icon stat-green">↗</span><div><strong>Student focused</strong><small>Simple, clear navigation</small></div></div>
+    <!-- EYE-CATCHING INTERVAL PICTURES HERO SHOWCASE -->
+    <section class="hero-interval-showcase" id="portal-showcase" aria-label="Academic Hub Feature Showcase">
+      <div class="hero-mesh-glow" aria-hidden="true"></div>
+      
+      <div class="showcase-inner">
+        <!-- Interval Navigation Bar -->
+        <div class="interval-controller-bar">
+          <div class="interval-nav-pills" role="tablist" aria-label="Feature Showcase Tabs">
+            <button class="interval-pill-btn active" data-slide="0" role="tab" aria-selected="true">
+              <span class="pill-num">01</span>
+              <span>Bilingual Reader &amp; LMS</span>
+            </button>
+            <button class="interval-pill-btn" data-slide="1" role="tab" aria-selected="false">
+              <span class="pill-num">02</span>
+              <span>MCQ Practice Tests</span>
+            </button>
+            <button class="interval-pill-btn" data-slide="2" role="tab" aria-selected="false">
+              <span class="pill-num">03</span>
+              <span>Video &amp; Study Lounge</span>
+            </button>
+            <button class="interval-pill-btn" data-slide="3" role="tab" aria-selected="false">
+              <span class="pill-num">04</span>
+              <span>Active Recall &amp; Chat</span>
+            </button>
+          </div>
+
+          <div class="interval-playback-actions">
+            <div class="interval-timer-wrap">
+              <div class="interval-progress-bar" title="Interval slideshow auto-advance">
+                <div class="interval-progress-fill" id="interval-progress-indicator"></div>
+              </div>
+            </div>
+            <button class="slider-ctrl-btn" id="interval-prev-btn" aria-label="Previous slide" title="Previous Slide">‹</button>
+            <button class="slider-ctrl-btn" id="interval-pause-btn" aria-label="Pause slideshow" title="Pause / Play Slideshow">⏸</button>
+            <button class="slider-ctrl-btn" id="interval-next-btn" aria-label="Next slide" title="Next Slide">›</button>
+          </div>
+        </div>
+
+        <!-- Slides Viewport -->
+        <div class="showcase-slider-viewport">
+          
+          <!-- SLIDE 1: BILINGUAL READER & LMS MODULES -->
+          <article class="showcase-slide active" data-index="0" role="tabpanel">
+            <div class="slide-info">
+              <span class="slide-eyebrow">✨ 11 UNIVERSITY SUBJECTS · ALL MODULES</span>
+              <h1 class="slide-title">Bilingual Reading Guide &amp; Official LMS PDFs</h1>
+              <p class="slide-desc">
+                Everything for Calicut University BA Sociology &amp; History. Read side-by-side English and Malayalam (മലയാളം) explanations, module-wise LMS course books, and quick revision chapter summaries.
+              </p>
+              <ul class="slide-features-list">
+                <li class="slide-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>11 Subjects: Sociology, AI, Ethics, Indian Economy, History of Keralam...</span>
+                </li>
+                <li class="slide-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Dual text layout: English notes + മലയാളം sentence-by-sentence clarity</span>
+                </li>
+                <li class="slide-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Direct LMS PDF module downloads with integrated dark reader</span>
+                </li>
+              </ul>
+              <div class="slide-actions">
+                <a href="#subjects" class="btn-showcase-primary">
+                  <span>Explore 11 Subjects ↓</span>
+                </a>
+                <a href="soc-reading.html" class="btn-showcase-secondary">
+                  <span>Open Sociology Reader ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="slide-visual">
+              <div class="browser-mockup">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span class="mockup-dot dot-red"></span>
+                    <span class="mockup-dot dot-yellow"></span>
+                    <span class="mockup-dot dot-green"></span>
+                  </div>
+                  <div class="mockup-url">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>academic-hub.edu/bilingual-study-reader</span>
+                  </div>
+                </div>
+                <div class="mockup-media-frame">
+                  <img src="screenshot_eng_reading.png" alt="Bilingual Study Reader interface with English and Malayalam modules" loading="eager">
+                  <div class="mockup-floating-badge badge-top-right">
+                    <span class="badge-icon badge-purple">★</span>
+                    <span>English + മലയാളം Parallel</span>
+                  </div>
+                  <div class="mockup-floating-badge badge-bottom-left">
+                    <span class="badge-icon badge-emerald">✓</span>
+                    <span>Calicut University Syllabus</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 2: TIMED MCQ PRACTICE TESTS -->
+          <article class="showcase-slide" data-index="1" role="tabpanel">
+            <div class="slide-info">
+              <span class="slide-eyebrow">🎯 EXAM READINESS ZONE</span>
+              <h2 class="slide-title">Interactive MCQ Tests &amp; Real-time Scoring</h2>
+              <p class="slide-desc">
+                Evaluate your exam preparation with realistic timed MCQ tests. Answer official university question banks with instant rationales, detailed scoring, and answer keys.
+              </p>
+              <ul class="slide-features-list">
+                <li class="slide-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Full-length 60-question mock exams with 30-minute countdown</span>
+                </li>
+                <li class="slide-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Instant review: see correct answers with English &amp; Malayalam notes</span>
+                </li>
+                <li class="slide-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>MCQ PDF Question Banks downloadable for offline study</span>
+                </li>
+              </ul>
+              <div class="slide-actions">
+                <a href="#tests" class="btn-showcase-primary">
+                  <span>Start Practice Tests ↓</span>
+                </a>
+                <a href="history-of-keralam-mcq-test.html" class="btn-showcase-secondary">
+                  <span>History of Keralam Mock (60Q) ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="slide-visual">
+              <div class="browser-mockup">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span class="mockup-dot dot-red"></span>
+                    <span class="mockup-dot dot-yellow"></span>
+                    <span class="mockup-dot dot-green"></span>
+                  </div>
+                  <div class="mockup-url">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>academic-hub.edu/mcq-practice-tests</span>
+                  </div>
+                </div>
+                <div class="mockup-media-frame">
+                  <img src="screenshot_test_question.png" alt="Interactive MCQ Practice test with timer and options" loading="lazy">
+                  <div class="mockup-floating-badge badge-top-right">
+                    <span class="badge-icon badge-cyan">⏱</span>
+                    <span>30-Min Live Exam Timer</span>
+                  </div>
+                  <div class="mockup-floating-badge badge-bottom-left">
+                    <span class="badge-icon badge-emerald">📊</span>
+                    <span>Instant Score Evaluation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 3: STUDY LOUNGE & VIDEO LEARNING -->
+          <article class="showcase-slide" data-index="2" role="tabpanel">
+            <div class="slide-info">
+              <span class="slide-eyebrow">🎧 DEEP FOCUS ENVIRONMENT</span>
+              <h2 class="slide-title">Immersive Study Lounge &amp; Topic Videos</h2>
+              <p class="slide-desc">
+                Transform revision sessions into high-focus blocks. Watch curated chapter lectures, listen to Malayalam audio walk-throughs, and stay in the zone with ambient soundscapes.
+              </p>
+              <ul class="slide-features-list">
+                <li class="slide-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Syllabus-aligned video lessons with chapter timestamps</span>
+                </li>
+                <li class="slide-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Audio revision tracks in Malayalam for listening anywhere</span>
+                </li>
+                <li class="slide-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Built-in Pomodoro focus timers &amp; rain/ambient sound generator</span>
+                </li>
+              </ul>
+              <div class="slide-actions">
+                <a href="#study-lounge" class="btn-showcase-primary">
+                  <span>Enter Study Lounge ↓</span>
+                </a>
+                <a href="#study-lounge" class="btn-showcase-secondary">
+                  <span>Watch Video Lectures ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="slide-visual">
+              <div class="browser-mockup">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span class="mockup-dot dot-red"></span>
+                    <span class="mockup-dot dot-yellow"></span>
+                    <span class="mockup-dot dot-green"></span>
+                  </div>
+                  <div class="mockup-url">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>academic-hub.edu/study-lounge</span>
+                  </div>
+                </div>
+                <div class="mockup-media-frame">
+                  <img src="yt_frame_30s.png" alt="Curated video learning slide presentation" loading="lazy">
+                  <div class="mockup-floating-badge badge-top-right">
+                    <span class="badge-icon badge-amber">▶</span>
+                    <span>Curated Chapter Videos</span>
+                  </div>
+                  <div class="mockup-floating-badge badge-bottom-left">
+                    <span class="badge-icon badge-purple">🎧</span>
+                    <span>Malayalam Audio Guides</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 4: ACTIVE RECALL & STUDENT COMMUNITY -->
+          <article class="showcase-slide" data-index="3" role="tabpanel">
+            <div class="slide-info">
+              <span class="slide-eyebrow">🚀 SMART RETENTION &amp; PEERS</span>
+              <h2 class="slide-title">Active Recall Engine &amp; Student Community</h2>
+              <p class="slide-desc">
+                Retain sociology theories and historical dates 2x longer with spaced repetition testing. Ask questions and share exam strategies with fellow Calicut University peers.
+              </p>
+              <ul class="slide-features-list">
+                <li class="slide-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Cognitive active recall testing for high-yield exam topics</span>
+                </li>
+                <li class="slide-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Open Student Chat space for peer questions and motivation</span>
+                </li>
+                <li class="slide-feature-item">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>100% Free, accessible on mobile phones, tablets, and desktop</span>
+                </li>
+              </ul>
+              <div class="slide-actions">
+                <a href="#community-chat" class="btn-showcase-primary">
+                  <span>Open Student Chat ↓</span>
+                </a>
+                <a href="about.html" class="btn-showcase-secondary">
+                  <span>About Academic Hub ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="slide-visual">
+              <div class="browser-mockup">
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span class="mockup-dot dot-red"></span>
+                    <span class="mockup-dot dot-yellow"></span>
+                    <span class="mockup-dot dot-green"></span>
+                  </div>
+                  <div class="mockup-url">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>academic-hub.edu/student-community</span>
+                  </div>
+                </div>
+                <div class="mockup-media-frame">
+                  <img src="screenshot_desktop_sociology_modal_intact.png" alt="Sociology modal with LMS PDF and study guide options" loading="lazy">
+                  <div class="mockup-floating-badge badge-top-right">
+                    <span class="badge-icon badge-cyan">💬</span>
+                    <span>Student Peer Chat</span>
+                  </div>
+                  <div class="mockup-floating-badge badge-bottom-left">
+                    <span class="badge-icon badge-emerald">🧠</span>
+                    <span>Active Recall Engine</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="interval-dots-row" aria-label="Slide indicators">
+          <button class="interval-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+          <button class="interval-dot" data-slide="1" aria-label="Go to slide 2"></button>
+          <button class="interval-dot" data-slide="2" aria-label="Go to slide 3"></button>
+          <button class="interval-dot" data-slide="3" aria-label="Go to slide 4"></button>
+        </div>
+      </div>
     </section>
 
-    <section id="subjects" class="section-block">
+    <!-- RECONSTRUCTED PORTAL FEATURE CARDS (ELEVATED QUICK-STATS) -->
+    <section class="quick-stats" aria-label="Portal features">
+      <a href="#subjects" class="stat-card-link" onclick="window.switchShowcaseSlide && window.switchShowcaseSlide(0);">
+        <div class="stat stat-card--materials">
+          <div class="stat-header-row">
+            <span class="stat-icon stat-purple" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+                <path d="M6 6h10M6 10h10M6 14h6"></path>
+              </svg>
+            </span>
+            <span class="stat-metric-badge">11 Subjects</span>
+          </div>
+          <div class="stat-body">
+            <strong>Study materials</strong>
+            <small>Notes, PDFs &amp; revision</small>
+            <span class="stat-arrow-hint">Browse library →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#tests" class="stat-card-link" onclick="window.switchShowcaseSlide && window.switchShowcaseSlide(1);">
+        <div class="stat stat-card--mcq">
+          <div class="stat-header-row">
+            <span class="stat-icon stat-blue" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </span>
+            <span class="stat-metric-badge">Timed MCQs</span>
+          </div>
+          <div class="stat-body">
+            <strong>MCQ practice</strong>
+            <small>Prepare for your exams</small>
+            <span class="stat-arrow-hint">Start mock test →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#study-lounge" class="stat-card-link" onclick="window.switchShowcaseSlide && window.switchShowcaseSlide(2);">
+        <div class="stat stat-card--video">
+          <div class="stat-header-row">
+            <span class="stat-icon stat-orange" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+            </span>
+            <span class="stat-metric-badge">HD Lectures</span>
+          </div>
+          <div class="stat-body">
+            <strong>Video learning</strong>
+            <small>Review topics your way</small>
+            <span class="stat-arrow-hint">Open lounge →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#community-chat" class="stat-card-link" onclick="window.switchShowcaseSlide && window.switchShowcaseSlide(3);">
+        <div class="stat stat-card--student">
+          <div class="stat-header-row">
+            <span class="stat-icon stat-green" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </span>
+            <span class="stat-metric-badge">Eng + മല</span>
+          </div>
+          <div class="stat-body">
+            <strong>Student focused</strong>
+            <small>Simple, clear navigation</small>
+            <span class="stat-arrow-hint">Community chat →</span>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <!-- INTERVAL SHOWCASE SCRIPT -->
+    <script>
+      (function() {
+        const slides = Array.from(document.querySelectorAll('.showcase-slide'));
+        const pillBtns = Array.from(document.querySelectorAll('.interval-pill-btn'));
+        const dots = Array.from(document.querySelectorAll('.interval-dot'));
+        const progressBar = document.getElementById('interval-progress-indicator');
+        const prevBtn = document.getElementById('interval-prev-btn');
+        const nextBtn = document.getElementById('interval-next-btn');
+        const pauseBtn = document.getElementById('interval-pause-btn');
+        const showcase = document.getElementById('portal-showcase');
+
+        if (!slides.length) return;
+
+        let currentIndex = 0;
+        let isPaused = false;
+        const INTERVAL_DURATION = 5500; // 5.5 seconds per slide
+        let timerStart = Date.now();
+        let animFrameId = null;
+
+        function showSlide(index) {
+          currentIndex = (index + slides.length) % slides.length;
+          slides.forEach((s, idx) => {
+            s.classList.toggle('active', idx === currentIndex);
+          });
+          pillBtns.forEach((b, idx) => {
+            const active = idx === currentIndex;
+            b.classList.toggle('active', active);
+            b.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          dots.forEach((d, idx) => {
+            d.classList.toggle('active', idx === currentIndex);
+          });
+          timerStart = Date.now();
+        }
+
+        window.switchShowcaseSlide = showSlide;
+
+        function updateProgress() {
+          if (!isPaused) {
+            const elapsed = Date.now() - timerStart;
+            const progress = Math.min((elapsed / INTERVAL_DURATION) * 100, 100);
+            if (progressBar) progressBar.style.width = progress + '%';
+            if (elapsed >= INTERVAL_DURATION) {
+              showSlide(currentIndex + 1);
+            }
+          }
+          animFrameId = requestAnimationFrame(updateProgress);
+        }
+
+        pillBtns.forEach((btn, idx) => {
+          btn.addEventListener('click', () => {
+            showSlide(idx);
+          });
+        });
+
+        dots.forEach((dot, idx) => {
+          dot.addEventListener('click', () => {
+            showSlide(idx);
+          });
+        });
+
+        if (nextBtn) nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+        if (prevBtn) prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+
+        if (pauseBtn) {
+          pauseBtn.addEventListener('click', () => {
+            isPaused = !isPaused;
+            pauseBtn.textContent = isPaused ? '▶' : '⏸';
+            pauseBtn.setAttribute('title', isPaused ? 'Resume slideshow' : 'Pause slideshow');
+          });
+        }
+
+        // Pause on mouse hover for comfortable reading of screenshots
+        if (showcase) {
+          showcase.addEventListener('mouseenter', () => { isPaused = true; });
+          showcase.addEventListener('mouseleave', () => {
+            if (pauseBtn && pauseBtn.textContent === '⏸') {
+              isPaused = false;
+              timerStart = Date.now();
+            }
+          });
+        }
+
+        // Keyboard arrow navigation
+        window.addEventListener('keydown', (e) => {
+          if (document.activeElement && ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+          if (e.key === 'ArrowRight') showSlide(currentIndex + 1);
+          else if (e.key === 'ArrowLeft') showSlide(currentIndex - 1);
+        });
+
+        // Touch swipe support for mobile
+        let touchStartX = 0;
+        if (showcase) {
+          showcase.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+          }, { passive: true });
+          showcase.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) showSlide(currentIndex + 1);
+            else if (touchEndX - touchStartX > 50) showSlide(currentIndex - 1);
+          }, { passive: true });
+        }
+
+        // Start animation loop
+        animFrameId = requestAnimationFrame(updateProgress);
+      })();
+
+      // Active link highlighter for topbar
+      (() => {
+        const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+        const syncActiveLink = () => {
+          const currentHash = window.location.hash || "#top";
+          const activeLink = links.find(link => link.getAttribute("href") === currentHash) || links[0];
+          links.forEach(link => {
+            if (link === activeLink) link.setAttribute("aria-current", "location");
+            else link.removeAttribute("aria-current");
+          });
+        };
+        window.addEventListener("hashchange", syncActiveLink);
+        window.addEventListener("scroll", () => {
+          const sections = ['community-chat', 'study-lounge', 'tests', 'subjects'];
+          let currentSection = '#top';
+          for (const id of sections) {
+            const el = document.getElementById(id);
+            if (el && el.getBoundingClientRect().top <= 140) {
+              currentSection = '#' + id;
+              break;
+            }
+          }
+          links.forEach(link => {
+            if (link.getAttribute("href") === currentSection) link.setAttribute("aria-current", "location");
+            else link.removeAttribute("aria-current");
+          });
+        }, { passive: true });
+        syncActiveLink();
+      })();
+    </script>
+
+<section id="subjects" class="section-block">
       <div class="section-heading"><div><div class="eyebrow">LEARNING LIBRARY</div><h2>Explore your subjects</h2><p>Everything you need to revise, understand and prepare.</p></div>
         <label class="search-wrap"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Search subjects..." aria-label="Search subjects"></label>
       </div>
       <div class="subjects-container">
-        <article class="subject-card" data-subject="Malayalam"><img class="subject-cover" src="https://images.unsplash.com/photo-1621178754488-8fb090bad709?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Kathakali costume and makeup representing Kerala arts" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-rose">അ</span><span class="subject-tag">LANGUAGE</span></div><h3>Malayalam</h3><div class="resource-list"><a href="mal-pdf.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Malayalam module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>LMS PDF</strong><small>Open Malayalam module page</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="mal-guide.html" class="language-tab language-tab--malayalam-guide language-tab--navigate" aria-label="Open Malayalam Guide"><span class="language-badge" aria-hidden="true">MG</span><span class="language-copy"><strong>Malayalam Reading (guide)</strong><small>All 4 modules &amp; chapters complete guide</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-        <article class="subject-card" data-subject="English" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1527554677374-236d3bc88a34?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Open literature book on a wooden table" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-blue">Aa</span><span class="subject-tag">LANGUAGE</span></div><h3>English</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Syllabus &amp; Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="eng-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open English Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Malayalam"><img class="subject-cover" src="https://images.unsplash.com/photo-1621178754488-8fb090bad709?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Kathakali costume and makeup representing Kerala arts" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-rose">അ</span><span class="subject-tag">LANGUAGE</span></div><h3>Malayalam</h3><div class="resource-list"><a href="mal-pdf.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Malayalam module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>LMS PDF</strong><small>Open Malayalam module page</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="mal-guide.html" class="language-tab language-tab--malayalam-guide language-tab--navigate" aria-label="Open Malayalam English Malayalam reading"><span class="language-badge" aria-hidden="true">MG</span><span class="language-copy"><strong>English Malayalam reading</strong><small>All 4 modules &amp; chapters complete guide</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="English" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1527554677374-236d3bc88a34?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Open literature book on a wooden table" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-blue">Aa</span><span class="subject-tag">LANGUAGE</span></div><h3>English</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Syllabus &amp; Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="eng-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open English English Malayalam reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>English Malayalam reading</strong><small>Bilingual English &amp; Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
 
-        <article class="subject-card" data-subject="Sociology"><img class="subject-cover" src="https://images.unsplash.com/photo-1548782033-3ac3a62ece8d?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Community members gathered together outdoors" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-purple">◎</span><span class="subject-tag">CORE SUBJECT</span></div><h3>Sociology</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Syllabus &amp; Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="soc-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Sociology Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-        <article class="subject-card" data-subject="Philosophy of AI"><img class="subject-cover" src="https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="AI microchip on an electronic circuit board" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-mint">✧</span><span class="subject-tag">PHILOSOPHY</span></div><h3>Philosophy of AI</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ai-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Philosophy of AI Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-        <article class="subject-card" data-subject="Philosophy of Education"><img class="subject-cover" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Students learning with a teacher in a classroom" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-orange">✎</span><span class="subject-tag">PHILOSOPHY</span></div><h3>Philosophy of Education</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Syllabus &amp; Module 1–3 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="edu-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Philosophy of Education Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-<article class="subject-card" data-subject="Development Issues in Indian Economy"><img class="subject-cover" src="https://images.unsplash.com/photo-1565371767810-ef913a6c8315?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Indian rupee banknotes representing the Indian economy" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-green">₹</span><span class="subject-tag">ECONOMICS</span></div><h3>Development Issues in Indian Economy</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="econ-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Development Issues in Indian Economy Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Sociology"><img class="subject-cover" src="https://images.unsplash.com/photo-1548782033-3ac3a62ece8d?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Community members gathered together outdoors" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-purple">◎</span><span class="subject-tag">CORE SUBJECT</span></div><h3>Sociology</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Syllabus &amp; Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="soc-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Sociology English Malayalam reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>English Malayalam reading</strong><small>Bilingual English &amp; Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Philosophy of AI"><img class="subject-cover" src="https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="AI microchip on an electronic circuit board" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-mint">✧</span><span class="subject-tag">PHILOSOPHY</span></div><h3>Philosophy of AI</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ai-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Philosophy of AI English Malayalam reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>English Malayalam reading</strong><small>Bilingual English &amp; Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Philosophy of Education"><img class="subject-cover" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Students learning with a teacher in a classroom" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-orange">✎</span><span class="subject-tag">PHILOSOPHY</span></div><h3>Philosophy of Education</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Syllabus &amp; Module 1–3 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="edu-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Philosophy of Education English Malayalam reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>English Malayalam reading</strong><small>Bilingual English &amp; Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+<article class="subject-card" data-subject="Development Issues in Indian Economy"><img class="subject-cover" src="https://images.unsplash.com/photo-1565371767810-ef913a6c8315?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Indian rupee banknotes representing the Indian economy" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-green">₹</span><span class="subject-tag">ECONOMICS</span></div><h3>Development Issues in Indian Economy</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="econ-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Development Issues in Indian Economy English Malayalam reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>English Malayalam reading</strong><small>Bilingual English &amp; Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
 
-        <article class="subject-card" data-subject="Fundamentals of Ethics"><img class="subject-cover" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Handshake representing trust and mutual respect" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-green">◇</span><span class="subject-tag">Minor Course</span></div><h3>Fundamentals of Ethics</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Syllabus &amp; Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ethics-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Fundamentals of Ethics Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-        <article class="subject-card" data-subject="Microeconomic Foundation"><img class="subject-cover" src="https://images.unsplash.com/photo-1644871913429-9ed7696180cc?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Assorted coins representing value and exchange" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-blue">₹</span><span class="subject-tag">Minor Course</span></div><h3>Microeconomic Foundation</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="micro-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Microeconomics Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open Microeconomics MCQ PDFs in English and Malayalam"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>English + Malayalam question banks</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Fundamentals of Ethics"><img class="subject-cover" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Handshake representing trust and mutual respect" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-green">◇</span><span class="subject-tag">Minor Course</span></div><h3>Fundamentals of Ethics</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Syllabus &amp; Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ethics-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Fundamentals of Ethics English Malayalam reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>English Malayalam reading</strong><small>Bilingual English &amp; Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Microeconomic Foundation"><img class="subject-cover" src="https://images.unsplash.com/photo-1644871913429-9ed7696180cc?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Assorted coins representing value and exchange" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-blue">₹</span><span class="subject-tag">Minor Course</span></div><h3>Microeconomic Foundation</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="micro-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Microeconomics English Malayalam reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>English Malayalam reading</strong><small>Bilingual English &amp; Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open Microeconomics MCQ PDFs in English and Malayalam"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>English + Malayalam question banks</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
         <article class="subject-card" data-subject="Arabic"><img class="subject-cover" src="https://images.unsplash.com/photo-1766326057606-2497458466fb?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Ornate Arabic calligraphy carved into a wall" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-orange">ع</span><span class="subject-tag">LANGUAGE</span></div><h3>Arabic</h3><div class="resource-list"><a href="#" class="language-tab language-tab--arabic" role="button" aria-haspopup="dialog" aria-label="Browse Arabic LMS PDF modules"><span class="language-badge" aria-hidden="true">AR</span><span class="language-copy"><strong>Arabic LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
         <article class="subject-card" data-subject="Mathematics"><img class="subject-cover" src="https://images.unsplash.com/photo-1635372722656-389f87a941b7?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Blackboard covered with mathematical equations" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-mint">∑</span><span class="subject-tag">Maths</span></div><h3>Mathematics</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-        <article class="subject-card" data-subject="History of Keralam"><img class="subject-cover" src="https://images.unsplash.com/photo-1695964744922-c7d01b4761cb?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Historic Kerala palace with traditional tiled roofs" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-purple">🏛</span><span class="subject-tag">HISTORY</span></div><h3>History of Keralam up to 12th Century</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="hist-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open History of Keralam Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="history-of-keralam-mcq-test.html" class="language-tab language-tab--mock-test language-tab--navigate" aria-label="Open History of Keralam Mock Test"><span class="language-badge" aria-hidden="true">MT</span><span class="language-copy"><strong>Mock Test (60Q)</strong><small>30 Mins · 100 Q Bank · Instant Review</small></span><span class="language-arrow" aria-hidden="true">→</span></a></div></article>
+        <article class="subject-card" data-subject="History of Keralam"><img class="subject-cover" src="https://images.unsplash.com/photo-1695964744922-c7d01b4761cb?auto=format&amp;fit=crop&amp;w=640&amp;h=360&amp;q=80" alt="Historic Kerala palace with traditional tiled roofs" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-purple">🏛</span><span class="subject-tag">HISTORY</span></div><h3>History of Keralam up to 12th Century</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="hist-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open History of Keralam English Malayalam reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>English Malayalam reading</strong><small>Bilingual English &amp; Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="history-of-keralam-mcq-test.html" class="language-tab language-tab--mock-test language-tab--navigate" aria-label="Open History of Keralam Mock Test"><span class="language-badge" aria-hidden="true">MT</span><span class="language-copy"><strong>Mock Test (60Q)</strong><small>30 Mins · 100 Q Bank · Instant Review</small></span><span class="language-arrow" aria-hidden="true">→</span></a></div></article>
       </div>
       <p id="no-results" class="no-results" hidden>No subjects match your search. Try another keyword.</p>
       <div id="module-dialog" class="module-dialog" role="dialog" aria-modal="true" aria-labelledby="module-title" hidden>
@@ -1200,7 +2644,7 @@
                 <div class="deck-subtitle-row">
                   <div class="filter-wrap">
                     <select id="subject-filter" class="filter-select subject-filter-select" aria-label="Filter Subject or Language">
-                      <option value="all">All Subjects &amp; Languages</option>
+                      <option value="all">Universal Deck (Mixed Subjects)</option>
                       <option value="sociology">Sociology</option>
                       <option value="history">History of Keralam</option>
                       <option value="philosophy">Philosophy &amp; Ethics</option>
@@ -1252,7 +2696,7 @@
                 <div class="deck-subtitle-row">
                   <div class="filter-wrap">
                     <select id="grammar-type-filter" class="filter-select grammar-filter-select" aria-label="Filter English Grammar Type">
-                      <option value="all">All Grammar Topics</option>
+                      <option value="all">Grammar Deck (Mixed Topics)</option>
                       <option value="tenses">Tenses &amp; Forms</option>
                       <option value="voice">Active &amp; Passive Voice</option>
                       <option value="speech">Direct &amp; Indirect Speech</option>
@@ -1271,7 +2715,7 @@
             <div class="flashcard-inner" id="eng-flashcard-inner">
               <div class="flashcard-front">
                 <span class="flashcard-badge eng-badge">TAP TO CHECK RULE ↻</span>
-                <h4 id="eng-card-front-title">She _____ (live) in Calicut since 2018.</h4>
+                <h4 id="eng-card-front-title">She _____ (live) in Kerala since 2018.</h4>
                 <h5 id="eng-card-front-mal" lang="ml">മുൻപ് തുടങ്ങി ഇപ്പോഴും തുടരുന്ന കാര്യത്തിന് ഏത് ടെൻസ്?</h5>
                 <p id="eng-card-front-hint">Choose: has lived OR lived?</p>
               </div>
@@ -1329,7 +2773,7 @@
     </section>
     -->
 
-    <section id="community-chat" class="community-section" hidden>
+    <section id="community-chat" class="community-section">
       <div class="community-intro"><div class="eyebrow">LEARN TOGETHER</div><h2>Academic Hub community</h2><p>Ask a question, share a helpful tip or encourage another student.</p><div class="community-note"><span>↗</span><div><strong>A shared student space</strong><small>Your name and message are public; messages are removed after 7 days.</small></div></div></div>
       <div class="chat-panel">
         <div class="chat-header">
@@ -1572,16 +3016,6 @@
       };
     })();
 
-    // Temporarily disabled while the site is under AdSense review. To restore chat,
-    // set this to true and also enable the chat API in worker.js.
-    const studentChatEnabled = false;
-    const communityChatSection = document.getElementById('community-chat');
-    const communityChatNav = document.querySelector('.nav-links a[href="#community-chat"]');
-    if (studentChatEnabled) {
-      if (communityChatSection) communityChatSection.hidden = false;
-      if (communityChatNav) communityChatNav.hidden = false;
-    }
-    if (studentChatEnabled) {
     const chatForm = document.getElementById('chat-form');
     const chatName = document.getElementById('chat-name');
     const chatText = document.getElementById('chat-message');
@@ -1868,8 +3302,6 @@
         chatSend.disabled = false;
       }
     });
-
-    }
 
     const moduleDialog = document.getElementById('module-dialog');
     const moduleTitle = document.getElementById('module-title');
@@ -3091,6 +4523,121 @@
         paneSummary.append(metricsBar);
       }
 
+      // 3. 4-PDF Expansion Summary (Executive Overview, Deep Framework, Syllabus Analysis & High-Yield Takeaways)
+      const expansionContainer = document.createElement('div');
+      expansionContainer.className = 'summary-4pdf-expansion';
+      expansionContainer.style.cssText = 'margin:18px 0; display:flex; flex-direction:column; gap:12px;';
+
+      const expansionParts = [
+        {
+          num: '1',
+          badge: 'PART 1: EXECUTIVE CONTEXT',
+          title: 'Executive Overview & Context (ആമുഖവും ചരിത്ര പശ്ചാത്തലവും)',
+          desc: 'Historical background, authorial context, and official Calicut University LMS introduction.',
+          contentEn: (docData.summary && docData.summary.overview) || 'Comprehensive orientation to core module objectives, foundational literature, and primary learning outcomes.',
+          contentMl: (docData.summary && docData.summary.overviewMal) || 'ഈ അധ്യായത്തിന്റെ ചരിത്രപരമായ പശ്ചാത്തലം, സിലബസ് ലക്ഷ്യങ്ങൾ, ഔദ്യോഗിക യൂണിവേഴ്സിറ്റി LMS ആമുഖം എന്നിവയുടെ സമഗ്ര വിശദീകരണം.'
+        },
+        {
+          num: '2',
+          badge: 'PART 2: THEORETICAL FRAMEWORK',
+          title: 'Core Concepts & Theoretical Framework (പ്രധാന തത്ത്വങ്ങളും സിദ്ധാന്തങ്ങളും)',
+          desc: 'Core definitions, analytical frameworks, and foundational arguments from LMS curriculum.',
+          items: (docData.summary && docData.summary.coreConcepts) || [
+            { term: 'Core Principle', def: 'Fundamental thesis mandated by Calicut University degree curriculum.' }
+          ]
+        },
+        {
+          num: '3',
+          badge: 'PART 3: SYLLABUS ANALYSIS',
+          title: 'Deep Syllabus Analysis & Practical Evidence (ആഴത്തിലുള്ള വിശകലനവും പ്രായോഗിക തെളിവുകളും)',
+          desc: 'Comprehensive section-by-section breakdown of official LMS course modules with bilingual notes.',
+          sections: (docData.summary && docData.summary.sections) || []
+        },
+        {
+          num: '4',
+          badge: 'PART 4: EXAM TAKEAWAYS',
+          title: 'High-Yield Exam Takeaways & Memory Triggers (പരീക്ഷാ പ്രധാന പോയിന്റുകളും ഓർമ്മക്കുറിപ്പുകളും)',
+          desc: 'Essential points for short, paragraph, and essay questions with high-yield memory triggers.',
+          takeaways: (docData.summary && docData.summary.examTakeaways) || [
+            'Master core definitions, key thinkers, and historical timelines for examination success.',
+            'Connect theoretical concepts with real-world applications and LMS model question formats.'
+          ]
+        }
+      ];
+
+      expansionParts.forEach((part, pIdx) => {
+        const partBox = document.createElement('details');
+        partBox.className = 'expansion-part-box';
+        partBox.open = (pIdx === 0); // First expansion open by default
+        partBox.style.cssText = 'background:#ffffff; border:1.5px solid #e2e8f0; border-radius:14px; overflow:hidden; box-shadow:0 2px 8px rgba(15,23,42,0.03); transition:all 0.2s ease;';
+
+        const summaryHead = document.createElement('summary');
+        summaryHead.style.cssText = 'padding:14px 18px; font-weight:800; font-size:14.5px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; background:linear-gradient(135deg, #f8fafc, #f1f5f9); border-bottom:1px solid #e2e8f0; user-select:none;';
+        summaryHead.innerHTML = `
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:8px; background:linear-gradient(135deg, #2563eb, #1d4ed8); color:#fff; font-size:12px; font-weight:900;">${part.num}</span>
+            <span style="color:#0f172a;">${part.title}</span>
+          </div>
+          <span style="font-size:11px; font-weight:700; padding:3px 9px; border-radius:6px; background:#e0f2fe; color:#0369a1; text-transform:uppercase;">${part.badge}</span>
+        `;
+
+        const partBody = document.createElement('div');
+        partBody.style.cssText = 'padding:16px 18px; line-height:1.65; color:#334155;';
+
+        if (part.contentEn) {
+          const pEn = document.createElement('p');
+          pEn.style.cssText = 'margin:0 0 8px; font-weight:600; color:#1e293b;';
+          pEn.textContent = part.contentEn;
+          partBody.append(pEn);
+          if (part.contentMl) {
+            const pMl = document.createElement('p');
+            pMl.style.cssText = 'margin:0; font-family:"Noto Sans Malayalam",sans-serif; font-size:13.5px; color:#475569;';
+            pMl.textContent = part.contentMl;
+            partBody.append(pMl);
+          }
+        }
+
+        if (part.items) {
+          const list = document.createElement('div');
+          list.style.cssText = 'display:flex; flex-direction:column; gap:8px;';
+          part.items.forEach(item => {
+            const row = document.createElement('div');
+            row.style.cssText = 'padding:8px 12px; border-left:3px solid #3b82f6; background:#f8fafc; border-radius:0 8px 8px 0;';
+            row.innerHTML = `<strong style="color:#0f172a;">${item.term || ''}:</strong> <span>${item.def || item.explanation || ''}</span>`;
+            list.append(row);
+          });
+          partBody.append(list);
+        }
+
+        if (part.sections && part.sections.length > 0) {
+          const secList = document.createElement('div');
+          secList.style.cssText = 'display:flex; flex-direction:column; gap:10px;';
+          part.sections.forEach(sec => {
+            const sc = document.createElement('div');
+            sc.style.cssText = 'padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px;';
+            sc.innerHTML = `<strong style="color:#1e293b; display:block; margin-bottom:4px;">${sec.title || ''}</strong><div style="font-size:13px; color:#475569;">${sec.titleMal || ''}</div>`;
+            secList.append(sc);
+          });
+          partBody.append(secList);
+        }
+
+        if (part.takeaways) {
+          const ul = document.createElement('ul');
+          ul.style.cssText = 'margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px;';
+          part.takeaways.forEach(t => {
+            const li = document.createElement('li');
+            li.style.cssText = 'font-weight:600; color:#0f172a;';
+            li.textContent = t;
+            ul.append(li);
+          });
+          partBody.append(ul);
+        }
+
+        partBox.append(summaryHead, partBody);
+        expansionContainer.append(partBox);
+      });
+      paneSummary.append(expansionContainer);
+
       // 3. Comprehensive Section-by-Section Syllabus Coverage (Bilingual)
       if (docData.summary && Array.isArray(docData.summary.sections) && docData.summary.sections.length > 0) {
         const sectionsHeading = document.createElement('div');
@@ -3248,8 +4795,47 @@
 
       let currentQuiz = { questions: [], score: 0, answered: 0 };
       function loadQuiz() {
-        const pool = docData.quizPool || [];
-        const shuffled = shuffleArray(pool).slice(0, 15);
+        // Collect MCQs from ALL chapters of this subject across the LMS PDF
+        let pool = [];
+        if (docData && Array.isArray(docData.quizPool)) {
+          pool.push(...docData.quizPool);
+        }
+        // Extract all quiz pools across every module and chapter of current subject
+        const currentSubject = (moduleDialog && moduleDialog.dataset.subject) || (item && item.subject) || '';
+        const learningDataKey = {
+          'Philosophy of AI': 'aiLearningData',
+          'Philosophy of Education': 'educationLearningData',
+          'Sociology': 'sociologyLearningData',
+          'History of Keralam': 'historyLearningData',
+          'Development Issues in Indian Economy': 'economicsLearningData',
+          'Fundamentals of Ethics': 'ethicsLearningData',
+          'Microeconomic Foundation': 'microeconomicsLearningData',
+          'English': 'englishLearningData',
+          'Mathematics': 'mathLearningData',
+          'Malayalam': 'malayalamLearningData'
+        }[currentSubject];
+
+        if (learningDataKey && window[learningDataKey] && typeof window[learningDataKey] === 'object') {
+          Object.keys(window[learningDataKey]).forEach(k => {
+            const chap = window[learningDataKey][k];
+            if (chap && Array.isArray(chap.quizPool)) {
+              pool.push(...chap.quizPool);
+            }
+          });
+        }
+        // Deduplicate questions by question text
+        const seen = new Set();
+        const uniquePool = [];
+        pool.forEach(q => {
+          const qText = (typeof q.question === 'object' && q.question !== null) ? (q.question.en || '') : String(q.question || '');
+          if (qText && !seen.has(qText)) {
+            seen.add(qText);
+            uniquePool.push(q);
+          }
+        });
+
+        // Always shuffle from all chapters of LMS PDF
+        const shuffled = shuffleArray(uniquePool.length > 0 ? uniquePool : (docData.quizPool || [])).slice(0, 15);
         currentQuiz = { questions: shuffled, score: 0, answered: 0 };
         questionsList.replaceChildren();
         updateScore();
@@ -4690,7 +6276,6 @@
       }
       moduleSubtabs.setAttribute('role','tablist');
       moduleSubtabs.setAttribute('aria-label','PDFs');
-      const firstAvailableItemIndex=Math.max(0,module.items.findIndex(item=>item.href));
       moduleSubtabs.replaceChildren();
       moduleSubtabs.style.display=module.items.length?'':'none';
       module.items.forEach((item,itemIndex)=>{
@@ -4713,16 +6298,18 @@
         moduleSubtabs.append(button);
       });
       blinkChaptersRandomly();
-      Array.from(moduleTabs.children).forEach((button,index)=>{
-        button.setAttribute('aria-selected',String(index===moduleIndex));
-        button.tabIndex=index===moduleIndex?0:-1;
+      Array.from(moduleTabs.children).forEach((button)=>{
+        const isSelected = button.dataset.moduleIndex === String(moduleIndex);
+        button.setAttribute('aria-selected', String(isSelected));
+        button.tabIndex = isSelected ? 0 : -1;
       });
       if(moduleDialog.dataset.readingOnly==='true') {
         showStudyGuideNavigationPrompt(module.name);
         return;
       }
-      if(module.items.length===1 && module.items[0] && module.items[0].href) {
-        selectModuleItem(subject,medium,module,moduleIndex,0);
+      const firstAvailableItemIndex = module.items.findIndex(item => item && (item.href || item.chapter));
+      if (firstAvailableItemIndex !== -1) {
+        selectModuleItem(subject, medium, module, moduleIndex, firstAvailableItemIndex);
         return;
       }
       moduleContent.replaceChildren();
@@ -4793,8 +6380,12 @@
       const availableModuleIndexes=modules.map((module,index)=>({module,index}))
         .filter(entry=>Array.isArray(entry.module.items) && entry.module.items.some(item=>item && (item.href || item.chapter)))
         .map(entry=>entry.index);
-      const preferredGuideIndex=studyGuide?(subject==='Sociology'?2:subject==='Development Issues in Indian Economy'?1:0):0;
-      const defaultGuideModule=availableModuleIndexes.includes(preferredGuideIndex)?preferredGuideIndex:(availableModuleIndexes[0]??0);
+      // Default to Module 1 for LMS PDF and all study modules!
+      const mod1Index = modules.findIndex(m => m && m.name && /module\s*1\b/i.test(m.name));
+      const preferredGuideIndex = (mod1Index !== -1 && availableModuleIndexes.includes(mod1Index))
+        ? mod1Index
+        : (studyGuide ? (subject==='Sociology'?2:subject==='Development Issues in Indian Economy'?1:0) : 0);
+      const defaultGuideModule = availableModuleIndexes.includes(preferredGuideIndex) ? preferredGuideIndex : (availableModuleIndexes[0] ?? 0);
       modules.forEach((module,moduleIndex)=>{
         if(!availableModuleIndexes.includes(moduleIndex)) return;
         const button=document.createElement('button');
@@ -4827,8 +6418,8 @@
       }
       moduleDialog.hidden=false;
       document.body.style.overflow='hidden';
-      const firstModuleTab=moduleTabs.querySelector('button');
-      (firstModuleTab || moduleDialog.querySelector('.module-home')).focus();
+      const activeModuleTab = moduleTabs.querySelector("button[aria-selected='true']") || moduleTabs.querySelector('button');
+      (activeModuleTab || moduleDialog.querySelector('.module-home')).focus();
     }
     function closeModuleLibrary() {
       moduleContent.replaceChildren();
@@ -4845,10 +6436,8 @@
       if(event.key==='Escape' && !moduleDialog.hidden) closeModuleLibrary();
     });
 
-    if (studentChatEnabled) {
-      loadChat();
-      window.setInterval(loadChat, 6000);
-    }
+    loadChat();
+    window.setInterval(loadChat, 6000);
   </script>
   <script>
   // Safety fallback: if the main page script fails before registering its click
