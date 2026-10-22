@@ -405,10 +405,7 @@
       color: #ffffff;
     }
 
-    .modal-voice-btn {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
-      border-color: #047857 !important;
-    }
+    .modal-voice-btn { display: none !important; }
 
     .modal-voice-btn:hover {
       background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
@@ -877,7 +874,6 @@
 
     <!-- Filter Buttons -->
     <nav class="filter-wrapper" aria-label="Module filters">
-      <button class="filter-btn" onclick="filterModule('syllabus', this)">സിലബസ് (Official Syllabus)</button>
       <button class="filter-btn active" onclick="filterModule('mod1', this)">മൊഡ്യൂൾ 1: സോഷ്യോളജി ആമുഖം (Module 1: Introducing Sociology)</button>
       <button class="filter-btn" onclick="filterModule('mod2', this)">മൊഡ്യൂൾ 2: സോഷ്യോളജി പ്രയോഗം (Module 2: Practicing Sociology)</button>
       <button class="filter-btn" onclick="filterModule('mod3', this)">മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Module 3: Individual & Society)</button>
@@ -1243,7 +1239,6 @@
             <button type="button" class="modal-action-btn" onclick="zoomModalReader(-0.25)" title="Zoom Out (ചെറുതാക്കുക)" aria-label="Zoom Out">🔍−</button>
             <button type="button" class="modal-action-btn" onclick="zoomModalReader(0.25)" title="Zoom In (വലുതാക്കുക)" aria-label="Zoom In">🔍+</button>
             <button type="button" class="modal-action-btn" onclick="resetModalReaderZoom()" title="Reset Zoom (യഥാർത്ഥ വലുപ്പം)" aria-label="Reset Zoom">↺</button>
-            <button id="modalVoiceBtn" class="modal-action-btn modal-voice-btn" type="button" title="ശബ്ദ വായന (Voice Read Aloud)" onclick="triggerModalVoice()" aria-label="Voice Read Aloud">🔊</button>
             <a id="modalExternalBtn" class="modal-action-btn" href="#" target="_blank" rel="noopener" title="പുതിയ ടാബിൽ തുറക്കുക (Open in New Tab)">↗</a>
             <button class="close-modal" onclick="closeViewer()" aria-label="Close Viewer">✕</button>
           </div>
@@ -1303,10 +1298,7 @@
     }
 
     function triggerModalVoice() {
-      const frame = document.getElementById('pdfFrame');
-      if (frame && frame.contentWindow) {
-        frame.contentWindow.postMessage({ action: 'toggleVoiceReader' }, '*');
-      }
+      /* Voice reading removed */
     }
 
     function closeViewer() {
