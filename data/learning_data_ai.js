@@ -8845,6 +8845,972 @@ window.aiLearningData = {
       }
     ]
   },
+  "ai_mal_ch7": {
+    "title": "Module 2 · Chapter 5 · Disembodied Intelligence & Dreyfus' Critique",
+    "titleMal": "മൊഡ്യൂൾ 2 · അധ്യായം 5 · ശരീരമില്ലാത്ത ബുദ്ധിശക്തിയും ഡ്രൈഫസിന്റെ വിമർശനവും",
+    "filename": "Module_2_Chapter_5_Disembodied_Intelligence.pdf",
+    "summary": {
+      "overview": "⚡ HIGH-YIELD EXECUTIVE CORE: Hubert Dreyfus ('What Computers Can't Do', 1972), drawing on Martin Heidegger and Maurice Merleau-Ponty, dismantled disembodied AI. Human expertise and common sense are non-representational, embodied practices grounded in 'Being-in-the-World' (Dasein)—proving computers trapped in pure disembodied symbol-manipulation cannot attain human understanding.",
+      "overviewMal": "⚡ പരീക്ഷാ സംഗ്രഹം (3-Page Core): ഹ്യൂബർട്ട് ഡ്രൈഫസ് 1972-ൽ ഉയർത്തിയ വിപ്ലവകരമായ ഫിനോമിനോളജിക്കൽ വിമർശനം: മനുഷ്യന്റെ ബുദ്ധിശക്തി ശാരീരികമായ ഇടപെടലുകളിലും അബോധപൂർവ്വമായ അനുഭവ പരിജ്ഞാനത്തിലും (Knowing-How) അധിഷ്ഠിതമാണ്; ശരീരമില്ലാത്ത വെറും കമ്പ്യൂട്ടറുകൾക്ക് ഒരിക്കലും കോമൺ സെൻസ് നേടാൻ കഴിയില്ല.",
+      "keyMetrics": [
+        {
+          "label": "SEMINAL TEXT",
+          "labelMal": "പ്രധാന കൃതി",
+          "value": "Dreyfus (1972)",
+          "detail": "⚡ What Computers Can't Do: The phenomenological critique of GOFAI."
+        },
+        {
+          "label": "KEY DISTINCTION",
+          "labelMal": "പ്രധാന വേർതിരിവ്",
+          "value": "Knowing-How vs Knowing-That",
+          "detail": "🔑 Embodied practical coping versus propositional rulebooks."
+        },
+        {
+          "label": "EMERGENT PARADIGM",
+          "labelMal": "പുതിയ മാതൃക",
+          "value": "Embodied Cognition (4E)",
+          "detail": "🧠 Mind is Embodied, Embedded, Enacted, Extended."
+        }
+      ],
+      "sections": [
+        {
+          "badge": "Page 1: The Disembodied Myth",
+          "title": "PAGE 1 · Heideggerian Dasein & The Ready-to-Hand Primacy",
+          "titleMal": "പേജ് 1 · ഹൈഡഗറുടെ ദർശനവും റെഡി-ടു-ഹാൻഡ് പ്രഥമത്വവും",
+          "points": [
+            {
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Being-in-the-World (Dasein)</mark>: Humans are not detached observers inspecting abstract tokens; we are fundamentally immersed in practical coping within a cultural and bodily world.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ലോകത്തിൽ ആയിരിക്കൽ (Dasein):</mark> മനുഷ്യർ വെറുതെ മാറിനിന്ന് ചിഹ്നങ്ങൾ നിരീക്ഷിക്കുന്ന കമ്പ്യൂട്ടറുകളല്ല, മറിച്ച് പ്രകൃതിയോടും സമൂഹത്തോടും ഇഴചേർന്ന് ജീവിക്കുന്നവരാണ്."
+            },
+            {
+              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Ready-to-Hand (Zuhandenheit)</mark>: We experience equipment directly through practical use (like hammering) before we ever analyze it as detached theoretical objects (Present-at-Hand). AI inverted this order.",
+              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>റെഡി-ടു-ഹാൻഡ്:</mark> ഒരു ചുറ്റികയെ മനുഷ്യൻ ആദ്യം അനുഭവിക്കുന്നത് പ്രായോഗികമായി ഉപയോഗിക്കുമ്പോഴാണ്; കമ്പ്യൂട്ടറുകൾ വസ്തുക്കളെ അമൂർത്ത നിയമങ്ങളായി കാണുന്നത് തെറ്റായ ക്രമമാണ്."
+            }
+          ]
+        },
+        {
+          "badge": "Page 2: Knowing-How vs Knowing-That",
+          "title": "PAGE 2 · Knowing-How vs Knowing-That & Skill Acquisition",
+          "titleMal": "പേജ് 2 · നോവിങ്-ഹൗ vs നോവിങ്-ദാറ്റ് & നൈപുണ്യ മാതൃക",
+          "points": [
+            {
+              "en": "<span style='background:#fee2e2; color:#991b1b; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚠️ EXAM TRAP</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Knowing-How vs Knowing-That (Ryle & Dreyfus)</mark>: 'Knowing-That' is factual propositional rules; 'Knowing-How' is intuitive embodied coping (riding a bicycle). Expert humans transcend rules entirely.",
+              "mal": "<span style='background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>⚠️ പരീക്ഷാ ചോദ്യം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>നോവിങ്-ഹൗ vs നോവിങ്-ദാറ്റ്:</mark> സൈക്കിൾ ചവിട്ടുന്നത് പുസ്തകം നോക്കിയല്ല (Knowing-How); ഒരു വിദഗ്ദ്ധൻ നിയമങ്ങളെല്ലാം മറന്ന് അന്തർജ്ഞാനത്തിലൂടെയാണ് കാര്യങ്ങൾ ചെയ്യുന്നത്."
+            },
+            {
+              "en": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🧠 THOUGHT EXPERIMENT</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Dreyfus's 4 False Assumptions</mark>: 1) Biological (brain = binary logic), 2) Psychological (mind = symbol processing), 3) Epistemological (knowledge = codifiable rules), 4) Ontological (world = atomic facts).",
+              "mal": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🧠 ചിന്താ പരീക്ഷണം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>നാല് തെറ്റായ അനുമാനങ്ങൾ:</mark> തലച്ചോറ് വെറും സ്വിച്ചാണെന്നതും, അറിവ് വെറും പുസ്തക നിയമങ്ങളാണെന്നുമുള്ള AI ഗവേഷകരുടെ നാല് അബദ്ധങ്ങളെ ഡ്രൈഫസ് തുറന്നുകാട്ടി."
+            }
+          ]
+        },
+        {
+          "badge": "Page 3: Embodied 4E Cognition",
+          "title": "PAGE 3 · Embodied Cognition (4E Cognition Revolution)",
+          "titleMal": "പേജ് 3 · എംബോഡീഡ് കോഗ്നിഷൻ (4E വിപ്ലവം)",
+          "points": [
+            {
+              "en": "<span style='background:#dcfce7; color:#166534; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>💡 RECALL HOOK</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The 4E Cognition Framework</mark>: Mind is not isolated in a skull-bound CPU; it is <strong>Embodied</strong> (bodily structures), <strong>Embedded</strong> (situated in physical world), <strong>Enacted</strong> (emerging through action), and <strong>Extended</strong> (scaffolded across external tools).",
+              "mal": "<span style='background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>💡 ഓർമ്മയ്ക്കായി:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>4E കോഗ്നിഷൻ:</mark> മനസ്സ് ശരീരത്തിലും (Embodied), ചുറ്റുപാടിലും (Embedded), പ്രവൃത്തികളിലും (Enacted), ഫോണുകൾ പോലുള്ള ബാഹ്യ ഉപകരണങ്ങളിലും (Extended) വ്യാപിച്ച് നിൽക്കുന്നു."
+            },
+            {
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Intelligence Requires a Body</mark>: True common sense requires physical embodiment and sensorimotor interaction—redirecting robotics toward Rodney Brooks' situated agents.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ശരീരമില്ലാതെ ബുദ്ധിയില്ല:</mark> യഥാർത്ഥ കൃത്രിമബുദ്ധിക്ക് ലോകവുമായി നേരിട്ട് ഇടപഴകുന്ന ഒരു റോബോട്ടിക് ശരീരം കൂടിയേ തീരൂ."
+            }
+          ]
+        }
+      ],
+      "coreConcepts": [
+        {
+          "term": "Disembodied Intelligence",
+          "termMal": "ശരീരമില്ലാത്ത ബുദ്ധിശക്തി",
+          "def": "⚡ The flawed assumption that general intelligence can exist in an isolated computer without physical bodily situatedness.",
+          "defMal": "📌 ശാരീരിക ബന്ധമില്ലാതെ അടഞ്ഞ കമ്പ്യൂട്ടറിനുള്ളിൽ മാത്രം ബുദ്ധി നിർമ്മിക്കാൻ കഴിയുമെന്ന തെറ്റായ ധാരണ."
+        },
+        {
+          "term": "Knowing-How vs Knowing-That",
+          "termMal": "നോവിങ്-ഹൗ vs നോവിങ്-ദാറ്റ്",
+          "def": "⚡ Embodied practical capability (Knowing-How) versus explicit factual propositional rules (Knowing-That).",
+          "defMal": "📌 പ്രായോഗിക നൈപുണ്യവും പുസ്തകത്തിലെ നിയമങ്ങളും തമ്മിലുള്ള വ്യത്യാസം."
+        },
+        {
+          "term": "4E Cognition",
+          "termMal": "4E കോഗ്നിഷൻ",
+          "def": "⚡ Cognition is Embodied, Embedded, Enacted, and Extended—never an isolated central processor.",
+          "defMal": "📌 ബുദ്ധി ശരീരത്തിലും പരിസ്ഥിതിയിലും പ്രവർത്തനങ്ങളിലും ലയിച്ചുനിൽക്കുന്നതാണെന്ന ആധുനിക വീക്ഷണം."
+        }
+      ],
+      "examTakeaways": [
+        {
+          "en": "🎯 <strong>Exam Anchor 1:</strong> Dreyfus proved that human common sense is not an encyclopedia of axioms, but an embodied background coping skill.",
+          "mal": "🎯 <strong>പരീക്ഷാ പോയിന്റ് 1:</strong> കോമൺ സെൻസ് എന്നാൽ നിയമങ്ങളുടെ പുസ്തകമല്ല, മറിച്ച് ശരീരത്തിലൂടെ ജീവിച്ചു പഠിച്ച അനുഭവമാണെന്ന് ഡ്രൈഫസ് തെളിയിച്ചു."
+        },
+        {
+          "en": "🎯 <strong>Exam Anchor 2:</strong> 4E Cognition reframed artificial intelligence from disembodied cloud algorithms to physically situated embodied robotics.",
+          "mal": "🎯 <strong>പരീക്ഷാ പോയിന്റ് 2:</strong> ക്ലൗഡ് സോഫ്റ്റ്‌വെയറുകളിൽ നിന്ന് റോബോട്ടിക്സിലേക്ക് AI-യെ വഴിതിരിച്ചുവിട്ടത് ഡ്രൈഫസിന്റെ വിമർശനങ്ങളാണ്."
+        }
+      ]
+    },
+    "quizPool": [
+      {
+        "question": "What is the core premise of Newell and Simon's Physical Symbol System Hypothesis (PSSH)?",
+        "questionMal": "നെവലും സൈമണും അവതരിപ്പിച്ച 'ഫിസിക്കൽ സിംബൽ സിസ്റ്റം ഹൈപ്പോത്തിസിസിന്റെ' (PSSH) പ്രധാന ആശയം എന്താണ്?",
+        "options": [
+          {
+            "en": "A physical symbol system has the necessary and sufficient means for general intelligent action",
+            "mal": "ഒരു ഫിസിക്കൽ സിംബൽ സിസ്റ്റത്തിന് പൊതുവായ ബുദ്ധിപരമായ പ്രവർത്തനങ്ങൾ നടത്താൻ ആവശ്യമായതും പര്യാപ്തമായതുമായ എല്ലാ കഴിവുകളുമുണ്ട്"
+          },
+          {
+            "en": "Intelligence is strictly biological and cannot exist outside organic proteins",
+            "mal": "ബുദ്ധിശക്തി പൂർണ്ണമായും ജൈവികമാണ്, പ്രോട്ടീനുകൾക്ക് പുറത്ത് നിലനിൽക്കില്ല"
+          },
+          {
+            "en": "Neural networks are the only true model of cognition",
+            "mal": "ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ മാത്രമാണ് ചിന്തയുടെ ഒരേയൊരു മാതൃക"
+          },
+          {
+            "en": "Symbols have meaning only if grounded in emotional pain",
+            "mal": "വേദനയോ വികാരങ്ങളോ ഉണ്ടെങ്കിൽ മാത്രമേ ചിഹ്നങ്ങൾക്ക് അർത്ഥമുണ്ടാകൂ"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Allen Newell and Herbert Simon (1976 Turing Award lecture) formulated PSSH: formal manipulation of discrete physical patterns (symbols) is both necessary and sufficient for general intelligence.",
+        "explanationMal": "അലൻ നെവലും ഹെർബർട്ട് സൈമണും (1976) വ്യക്തമാക്കിയതുപോലെ, ചിഹ്നങ്ങളെ ചിട്ടയായി കൈകാര്യം ചെയ്യുന്ന ഒരു വ്യവസ്ഥയ്ക്ക് ഏത് ബുദ്ധിപരമായ പ്രവർത്തനവും നിർവ്വഹിക്കാൻ സാധിക്കും."
+      },
+      {
+        "question": "Who coined the acronym GOFAI (Good Old-Fashioned Artificial Intelligence) to describe symbolic, rule-based AI?",
+        "questionMal": "സിംബോളിക്, റൂൾ-ബേസ്ഡ് AI-യെ വിശേഷിപ്പിക്കാൻ 'GOFAI' എന്ന പദം ആദ്യമായി ഉപയോഗിച്ച തത്ത്വചിന്തകൻ ആര്?",
+        "options": [
+          {
+            "en": "John Haugeland",
+            "mal": "ജോൺ ഹോഗ്‌ലാൻഡ്"
+          },
+          {
+            "en": "John Searle",
+            "mal": "ജോൺ സിയേൾ"
+          },
+          {
+            "en": "Hubert Dreyfus",
+            "mal": "ഹ്യൂബർട്ട് ഡ്രൈഫസ്"
+          },
+          {
+            "en": "Daniel Dennett",
+            "mal": "ഡാനിയൽ ഡെന്നറ്റ്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Philosopher John Haugeland coined the term GOFAI in his 1985 book 'Artificial Intelligence: The Very Idea' to characterize the classical symbolic paradigm.",
+        "explanationMal": "1985-ൽ തത്ത്വചിന്തകനായ ജോൺ ഹോഗ്‌ലാൻഡ് തന്റെ പുസ്തകത്തിലാണ് പരമ്പരാഗത സിംബോളിക് AI-യെ 'GOFAI' എന്ന് നാമകരണം ചെയ്തത്."
+      },
+      {
+        "question": "What is the 'Frame Problem' originally formulated by John McCarthy and Patrick Hayes (1969)?",
+        "questionMal": "1969-ൽ ജോൺ മക്കാർത്തിയും പാട്രിക് ഹെയ്സും ചേർന്ന് അവതരിപ്പിച്ച 'ഫ്രെയിം പ്രോബ്ലം' എന്നാൽ എന്താണ്?",
+        "options": [
+          {
+            "en": "The difficulty of representing what remains unchanged in the world following an action without explicitly updating millions of non-effects",
+            "mal": "ഒരു പ്രവൃത്തി നടക്കുമ്പോൾ ചുറ്റുപാടിൽ മാറ്റമില്ലാതെ തുടരുന്ന കാര്യങ്ങളെ കമ്പ്യൂട്ടറിന് എങ്ങനെ വേഗത്തിൽ തിരിച്ചറിയാം എന്ന സമസ്യ"
+          },
+          {
+            "en": "The mechanical failure of computer monitor frames during computation",
+            "mal": "കമ്പ്യൂട്ടർ മോണിറ്ററുകളുടെ ചട്ടക്കൂടുകൾക്ക് സംഭവിക്കുന്ന സാങ്കേതിക തകരാറുകൾ"
+          },
+          {
+            "en": "The legal liability frame when an AI causes vehicular harm",
+            "mal": "വാഹനാപകടങ്ങളിൽ AI-ക്ക് വരുന്ന നിയമപരമായ ബാധ്യതകൾ"
+          },
+          {
+            "en": "The inability of computers to display oil paintings in high resolution",
+            "mal": "കമ്പ്യൂട്ടറുകൾക്ക് ചിത്രങ്ങൾ റെൻഡർ ചെയ്യാൻ കഴിയാത്ത അവസ്ഥ"
+          }
+        ],
+        "answer": 0,
+        "explanation": "The Frame Problem highlights the computational difficulty for symbolic logic systems in determining which facts about the world stay constant when an action occurs, leading to combinatorial explosion.",
+        "explanationMal": "ഒരു മാറ്റം ഉണ്ടാകുമ്പോൾ ബാക്കിയുള്ള അസംഖ്യം കാര്യങ്ങൾ മാറിയിട്ടില്ല എന്ന് യുക്തിസഹമായി മുൻകൂട്ടി മനസ്സിലാക്കാൻ കമ്പ്യൂട്ടറുകൾ നേരിടുന്ന കഠിനമായ വെല്ലുവിളിയാണിത്."
+      },
+      {
+        "question": "In John Searle's 1980 Chinese Room thought experiment, what fundamental principle does the man in the room demonstrate?",
+        "questionMal": "1980-ൽ ജോൺ സിയേൾ അവതരിപ്പിച്ച 'ചൈനീസ് റൂം' പരീക്ഷണത്തിൽ മുറിക്കുള്ളിലിരിക്കുന്ന മനുഷ്യൻ തെളിയിക്കുന്ന അടിസ്ഥാന തത്ത്വം എന്താണ്?",
+        "options": [
+          {
+            "en": "Syntax alone is neither constitutive of nor sufficient for semantics",
+            "mal": "ചിഹ്നങ്ങളുടെ ഘടന (Syntax) മാത്രം കൈകാര്യം ചെയ്തതുകൊണ്ട് യഥാർത്ഥ അർത്ഥമോ (Semantics) ബോധമോ ഉണ്ടാകില്ല"
+          },
+          {
+            "en": "Chinese grammar is inherently non-computable by humans",
+            "mal": "മനുഷ്യർക്ക് ചൈനീസ് ഭാഷയുടെ വ്യാകരണം കമ്പ്യൂട്ട് ചെയ്യാൻ കഴിയില്ല"
+          },
+          {
+            "en": "Digital computers can learn Chinese faster than human children",
+            "mal": "കമ്പ്യൂട്ടറുകൾ കുട്ടികളേക്കാൾ വേഗത്തിൽ ചൈനീസ് ഭാഷ പഠിക്കുന്നു"
+          },
+          {
+            "en": "Rooms without windows impair linguistic reasoning",
+            "mal": "ജനലുകളില്ലാത്ത മുറികൾ ബുദ്ധിശക്തിയെ പ്രതികൂലമായി ബാധിക്കുന്നു"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Searle proved that a human who understands zero Chinese can follow an English rule-book to manipulate Chinese symbols flawlessly (passing the Turing Test), proving that syntactic symbol manipulation does not produce semantic understanding.",
+        "explanationMal": "ചൈനീസ് അറിയാത്ത ഒരാൾക്ക് നിയമപുസ്തകം നോക്കി ചിഹ്നങ്ങൾ കൃത്യമായി എടുത്ത് നൽകാം; എന്നാൽ അയാൾക്ക് ആ ഭാഷയുടെ അർത്ഥം മനസ്സിലാകുന്നില്ല. കമ്പ്യൂട്ടറുകളും ഇതുപോലെ വെറും ചിഹ്നങ്ങൾ മാത്രമാണ് കൈകാര്യം ചെയ്യുന്നത്."
+      },
+      {
+        "question": "What is the 'Systems Reply' to Searle's Chinese Room argument?",
+        "questionMal": "സിയേളിന്റെ ചൈനീസ് റൂം വാദത്തിന് തത്ത്വചിന്തകർ നൽകിയ 'സിസ്റ്റംസ് റിപ്ലൈ' (Systems Reply) എന്താണ്?",
+        "options": [
+          {
+            "en": "While the man inside does not understand Chinese, the entire system (man + rulebook + paper + room) as a whole understands Chinese",
+            "mal": "മുറിക്കുള്ളിലെ മനുഷ്യന് ചൈനീസ് അറിയില്ലെങ്കിലും, മുറിയും പുസ്തകവും മനുഷ്യനും അടങ്ങുന്ന ആ വ്യവസ്ഥയ്ക്ക് (System) മുഴുവനായി അർത്ഥം മനസ്സിലാകുന്നുണ്ട്"
+          },
+          {
+            "en": "The operating system must be upgraded to Unix",
+            "mal": "കമ്പ്യൂട്ടറിന്റെ ഓപ്പറേറ്റിംഗ് സിസ്റ്റം മാറ്റണം"
+          },
+          {
+            "en": "The man will eventually learn Chinese through repetition",
+            "mal": "ആവർത്തനത്തിലൂടെ മനുഷ്യൻ ക്രമേണ ചൈനീസ് പഠിക്കും"
+          },
+          {
+            "en": "The room requires a Chinese audio translator",
+            "mal": "മുറിയിൽ ഒരു ഓഡിയോ ട്രാൻസ്ലേറ്റർ സ്ഥാപിക്കണം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "The Systems Reply (advocated by Berkeley colleagues) argues that understanding is a property of the total computational system, not an individual sub-component (just as individual neurons in the brain do not understand language).",
+        "explanationMal": "തലച്ചോറിലെ ഒരൊറ്റ ന്യൂറോണിന് ഭാഷ മനസ്സിലാകില്ലെങ്കിലും തലച്ചോറിന് മുഴുവനായി മനസ്സിലാകുന്നത് പോലെ, മുഴു വ്യവസ്ഥയ്ക്കും അറിവുണ്ടെന്ന് സിസ്റ്റംസ് റിപ്ലൈ വാദിക്കുന്നു."
+      },
+      {
+        "question": "How did John Searle refute the 'Systems Reply'?",
+        "questionMal": "സിയേൾ 'സിസ്റ്റംസ് റിപ്ലൈ' വാദത്തെ എങ്ങനെയാണ് തകർത്തത്?",
+        "options": [
+          {
+            "en": "By imagining the man memorizing all rules and symbols; he internalizes the entire system in his head, yet still understands zero Chinese",
+            "mal": "ആ മനുഷ്യൻ പുസ്തകത്തിലെ നിയമങ്ങളെല്ലാം കാണാതെ പഠിച്ച് തന്റെ മനസ്സിലാക്കിയാലും, അയാൾക്ക് ഇപ്പോഴും ചൈനീസ് ഭാഷയുടെ ഒരക്ഷരം പോലും മനസ്സിലാകില്ല"
+          },
+          {
+            "en": "By burning the rulebook and locking the room",
+            "mal": "പുസ്തകം കത്തിച്ചുകളഞ്ഞ് വാതിലടച്ചുകൊണ്ട്"
+          },
+          {
+            "en": "By replacing the symbols with binary electrical voltages",
+            "mal": "ചിഹ്നങ്ങൾക്ക് പകരം വോൾട്ടേജ് നൽകിക്കൊണ്ട്"
+          },
+          {
+            "en": "By proving that English grammar is superior to Chinese",
+            "mal": "ഇംഗ്ലീഷ് വ്യാകരണമാണ് മികച്ചതെന്ന് തെളിയിച്ചുകൊണ്ട്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Searle responded: let the man memorize the rule-book and do all symbol calculations inside his own mind. The man IS the entire system, yet he still does not understand a single word of Chinese.",
+        "explanationMal": "മുഴുവൻ സിസ്റ്റത്തെയും മനസ്സിലാക്കി വെച്ചാലും അയാൾക്ക് ചൈനീസ് വാക്കുകളുടെ അർത്ഥം തിരിയുന്നില്ലെങ്കിൽ, സിസ്റ്റത്തിനും അർത്ഥബോധമില്ലെന്ന് സിയേൾ സമർത്ഥിച്ചു."
+      },
+      {
+        "question": "What is the 'Robot Reply' to Searle's Chinese Room argument?",
+        "questionMal": "ചൈനീസ് റൂമിനെതിരെ ഉയർന്ന 'റോബോട്ട് റിപ്ലൈ' (Robot Reply) എന്താണ് വാദിക്കുന്നത്?",
+        "options": [
+          {
+            "en": "If the computer is placed inside a mobile robot with cameras, sensors, and motors, its symbols become grounded in physical causal interactions with the world",
+            "mal": "കമ്പ്യൂട്ടറിനെ ക്യാമറയും സെൻസറുകളും ചലനശേഷിയുമുള്ള ഒരു റോബോട്ടിൽ ഘടിപ്പിച്ചാൽ, അത് ലോകവുമായി നേരിട്ട് ഇടപെട്ട് ചിഹ്നങ്ങൾക്ക് യഥാർത്ഥ അർത്ഥം നൽകും"
+          },
+          {
+            "en": "Robots are stronger than humans and do not require food",
+            "mal": "റോബോട്ടുകൾക്ക് മനുഷ്യരേക്കാൾ കരുത്തുണ്ടെന്ന വാദം"
+          },
+          {
+            "en": "Robots will eventually revolt against human rulebooks",
+            "mal": "റോബോട്ടുകൾ മനുഷ്യനെതിരെ വിപ്ലവം നടത്തുമെന്ന വാദം"
+          },
+          {
+            "en": "Sensors eliminate the need for computer programming",
+            "mal": "സെൻസറുകൾ ഉള്ളതുകൊണ്ട് പ്രോഗ്രാമിങ് ആവശ്യമില്ലെന്ന വാദം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "The Robot Reply argues that embodiment and causal interaction with the physical environment provide genuine semantic content, resolving the symbol grounding problem.",
+        "explanationMal": "ബാഹ്യ ലോകവുമായി നേരിട്ട് കാണുകയും സ്പർശിക്കുകയും ചെയ്യുന്നതിലൂടെ ചിഹ്നങ്ങൾക്ക് യഥാർത്ഥ അനുഭവപരമായ അർത്ഥം (Semantics) ലഭിക്കുമെന്ന് റോബോട്ട് റിപ്ലൈ പറയുന്നു."
+      },
+      {
+        "question": "What philosophical doctrine established by René Descartes asserts that mind and body are two fundamentally distinct substances?",
+        "questionMal": "മനസ്സും ശരീരവും രണ്ട് തികച്ചും വ്യത്യസ്തമായ പദാർത്ഥങ്ങളാണെന്ന് പ്രഖ്യാപിച്ച റെനെ ഡെസ്കാർട്ടസിന്റെ സിദ്ധാന്തം ഏതാണ്?",
+        "options": [
+          {
+            "en": "Substance Dualism (Cartesian Dualism)",
+            "mal": "സബ്സ്റ്റൻസ് ഡ്യുവലിസം (കാർട്ടീഷ്യൻ ഡ്യുവലിസം)"
+          },
+          {
+            "en": "Logical Positivism",
+            "mal": "ലോജിക്കൽ പോസിറ്റിവിസം"
+          },
+          {
+            "en": "Dialectical Materialism",
+            "mal": "ഡയലക്റ്റിക്കൽ മെറ്റീരിയലിസം"
+          },
+          {
+            "en": "Panpsychism",
+            "mal": "പാൻസൈക്കിസം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Descartes divided reality into Res Cogitans (thinking, non-extended, immaterial mind) and Res Extensa (extended, unthinking, physical matter), creating the classic Mind-Body Problem.",
+        "explanationMal": "ഡെസ്കാർട്ടസ് ലോകത്തെ ചിന്തിക്കുന്ന ആത്മീയ മനസ്സും (Res Cogitans), സ്ഥലം അപഹരിക്കുന്ന ഭൗതിക ശരീരവുമായി (Res Extensa) വിഭജിച്ചു."
+      },
+      {
+        "question": "Where did Descartes hypothesize that the immaterial mind interacted causally with the physical body?",
+        "questionMal": "അദൃശ്യമായ മനസ്സും ഭൗതിക ശരീരവും തമ്മിൽ സന്ധിക്കുന്നത് തലച്ചോറിലെ ഏത് ഭാഗത്താണെന്നാണ് ഡെസ്കാർട്ടസ് അനുമാനിച്ചത്?",
+        "options": [
+          {
+            "en": "The Pineal Gland (Conarium)",
+            "mal": "പീനിയൽ ഗ്രന്ഥി (Pineal Gland)"
+          },
+          {
+            "en": "The Prefrontal Cortex",
+            "mal": "പ്രീഫ്രോണ്ടൽ കോർട്ടെക്സ്"
+          },
+          {
+            "en": "The Hippocampus",
+            "mal": "ഹിപ്പോകാമ്പസ്"
+          },
+          {
+            "en": "The Cerebellum",
+            "mal": "സെറിബെല്ലം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Descartes singled out the pineal gland because it is a unitary structure situated centrally in the brain, unlike the mirrored bilateral cerebral hemispheres.",
+        "explanationMal": "തലച്ചോറിന്റെ മധ്യഭാഗത്തുള്ള ഒറ്റപ്പെട്ട ഗ്രന്ഥിയായതിനാൽ പീനിയൽ ഗ്രന്ഥിയിലാണ് മനസ്സും ശരീരവും സംവദിക്കുന്നതെന്ന് ഡെസ്കാർട്ടസ് കരുതി."
+      },
+      {
+        "question": "What two critical human capacities did Descartes argue could NEVER be duplicated by purely mechanical automata?",
+        "questionMal": "കേവലം യാന്ത്രിക സംവിധാനങ്ങൾക്ക് ഒരിക്കലും നിർവ്വഹിക്കാൻ കഴിയില്ലെന്ന് ഡെസ്കാർട്ടസ് വാദിച്ച രണ്ട് മാനുഷിക കഴിവുകൾ ഏവ?",
+        "options": [
+          {
+            "en": "Creative use of universal language to express thoughts, and universal reason adaptable to all life situations",
+            "mal": "സന്ദർഭോചിതമായി സ്വതന്ത്ര ഭാഷ ഉപയോഗിക്കാനുള്ള കഴിവും, ജീവിതത്തിലെ ഏത് പുതിയ സാഹചര്യത്തോടും പൊരുത്തപ്പെടുന്ന സാർവ്വത്രിക യുക്തിയും"
+          },
+          {
+            "en": "Walking on two legs and digesting meat",
+            "mal": "രണ്ട് കാലിൽ നടക്കാനും ഭക്ഷണം ദഹിപ്പിക്കാനുമുള്ള കഴിവ്"
+          },
+          {
+            "en": "Playing chess and calculating solar eclipses",
+            "mal": "ചെസ്സ് കളിക്കാനും ഗ്രഹണം കണക്കുകൂട്ടാനുമുള്ള കഴിവ്"
+          },
+          {
+            "en": "Generating electrical heat and optical reflections",
+            "mal": "വൈദ്യുതിയും താപവും പുറപ്പെടുവിക്കാനുള്ള കഴിവ്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "In Discourse on the Method (Part V), Descartes stated that machines could never arrange words creatively in response to anything said in their presence, nor act from universal reason rather than rigid mechanical dispositions.",
+        "explanationMal": "ഏത് സംഭാഷണത്തോടും സൃഷ്ടിപരമായി ഭാഷ ഉപയോഗിച്ച് പ്രതികരിക്കാനും, പുതിയ സാഹചര്യങ്ങളിൽ സാർവ്വത്രിക യുക്തിയോടെ പെരുമാറാനും യന്ത്രങ്ങൾക്ക് കഴിയില്ലെന്ന് ഡെസ്കാർട്ടസ് നിരീക്ഷിച്ചു."
+      },
+      {
+        "question": "What was Hubert Dreyfus's central philosophical critique of classical Symbolic AI in 'What Computers Can't Do' (1972)?",
+        "questionMal": "1972-ൽ പ്രസിദ്ധീകരിച്ച 'വാട്ട് കമ്പ്യൂട്ടേഴ്സ് കാന്റ് ഡൂ' എന്ന ഗ്രന്ഥത്തിൽ സിംബോളിക് AI-ക്കെതിരെ ഹ്യൂബർട്ട് ഡ്രൈഫസ് ഉന്നയിച്ച പ്രധാന വാദം എന്താണ്?",
+        "options": [
+          {
+            "en": "Human intelligence relies on embodied, tacit coping and background practices in a physical world, which cannot be captured by disembodied symbolic rules",
+            "mal": "മനുഷ്യന്റെ ബുദ്ധി ശാരീരികമായ ഇടപെടലുകളിലും അബോധപൂർവ്വമായ അനുഭവ പരിജ്ഞാനത്തിലും (Tacit Knowledge) അധിഷ്ഠിതമാണ്; ഇതിനെ വെറും ചിഹ്ന നിയമങ്ങളാക്കി മാറ്റാൻ കഴിയില്ല"
+          },
+          {
+            "en": "Computers do not possess enough magnetic tape storage",
+            "mal": "കമ്പ്യൂട്ടറുകൾക്ക് ആവശ്യത്തിന് കാന്തിക ടേപ്പ് സംഭരണശേഷി ഇല്ല"
+          },
+          {
+            "en": "Transistors are morally forbidden under French existentialism",
+            "mal": "ഫ്രഞ്ച് തത്ത്വചിന്തയിൽ ട്രാൻസിസ്റ്ററുകൾ വിലക്കപ്പെട്ടതാണ്"
+          },
+          {
+            "en": "Silicon chips overheat when running recursive functions",
+            "mal": "സിലിക്കൺ ചിപ്പുകൾ ചൂടാകുന്നത് കൊണ്ടാണ് പ്രശ്നം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Drawing on Martin Heidegger and Maurice Merleau-Ponty, Dreyfus argued that human skill and common sense are non-representational, embodied practices ('being-in-the-world'), refuting GOFAI's disembodied symbol-manipulation model.",
+        "explanationMal": "ഹൈഡഗറുടെയും മെർലോ-പോണ്ടിയുടെയും ഫിനോമിനോളജി ഉപയോഗിച്ച് ഡ്രൈഫസ് വാദിച്ചത് മനുഷ്യബുദ്ധി ശരീരവുമായി ഇഴചേർന്ന് കിടക്കുന്നതാണെന്നും, ചിഹ്നങ്ങൾ മാത്രമുള്ള AI-ക്ക് സാധാരണ ബുദ്ധി (Common Sense) നേടാനാവില്ലെന്നുമാണ്."
+      },
+      {
+        "question": "What is the distinction between 'Knowing-That' and 'Knowing-How' popularized by Gilbert Ryle and used by Dreyfus?",
+        "questionMal": "ഗിൽബർട്ട് റൈലും ഹ്യൂബർട്ട് ഡ്രൈഫസും എടുത്തുകാണിച്ച 'നോവിങ്-ദാറ്റ്' (Knowing-That), 'നോവിങ്-ഹൗ' (Knowing-How) എന്നിവ തമ്മിലുള്ള വ്യത്യാസം എന്താണ്?",
+        "options": [
+          {
+            "en": "Knowing-that is explicit propositional knowledge of facts; knowing-how is embodied practical skill and intuitive mastery that cannot be fully codified into rules",
+            "mal": "നോവിങ്-ദാറ്റ് എന്നത് വാചികമായ വസ്തുതാപരമായ അറിവാണ്; എന്നാൽ നോവിങ്-ഹൗ എന്നത് സൈക്കിൾ ചവിട്ടുന്നതുപോലുള്ള പ്രായോഗിക നൈപുണ്യമാണ്, ഇതിനെ നിയമങ്ങളാക്കി മാറ്റാനാവില്ല"
+          },
+          {
+            "en": "Knowing-that is for humans, knowing-how is exclusively for robots",
+            "mal": "മനുഷ്യർക്ക് നോവിങ്-ദാറ്റും റോബോട്ടുകൾക്ക് നോവിങ്-ഹൗവുമാണെന്ന വ്യത്യാസം"
+          },
+          {
+            "en": "Knowing-that relates to past history, knowing-how relates to future predictions",
+            "mal": "ഭൂതകാലത്തെക്കുറിച്ചുള്ള അറിവും ഭാവിയെക്കുറിച്ചുള്ള അറിവും"
+          },
+          {
+            "en": "Both concepts are identical in predicate logic",
+            "mal": "രണ്ടും ഒരേ അർത്ഥമുള്ള ഗണിത സമവാക്യങ്ങളാണ്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Ryle and Dreyfus emphasized that expert human actions (like riding a bicycle or navigating a crowded room) proceed through intuitive, embodied coping ('knowing-how') rather than consulting an explicit internal rulebook ('knowing-that').",
+        "explanationMal": "നീന്തുന്നതും സൈക്കിൾ ചവിട്ടുന്നതും ആളുകളുമായി ഇടപഴകുന്നതും പുസ്തകത്തിലെ നിയമങ്ങൾ ഓർത്തുവെച്ചല്ല മനുഷ്യർ ചെയ്യുന്നത്; ആന്തരികമായ പ്രായോഗിക ശീലങ്ങളിലൂടെയാണ്."
+      },
+      {
+        "question": "What is Martin Heidegger's concept of 'Being-in-the-World' (Dasein) that Dreyfus applied to critique AI?",
+        "questionMal": "AI-യെ വിമർശിക്കാൻ ഡ്രൈഫസ് ഉപയോഗിച്ച മാർട്ടിൻ ഹൈഡഗറുടെ 'ലോകത്തിൽ ആയിരിക്കൽ' (Being-in-the-World / Dasein) എന്ന ആശയം എന്താണ്?",
+        "options": [
+          {
+            "en": "Humans are fundamentally embedded in an ongoing, meaningful cultural and physical context, rather than detached observers inspecting abstract symbolic objects",
+            "mal": "മനുഷ്യർ കേവലം മാറിനിന്ന് ചിഹ്നങ്ങളെ നിരീക്ഷിക്കുന്ന വിച്ഛേദിക്കപ്പെട്ട ബുദ്ധിയല്ല, മറിച്ച് സംസ്കാരത്തോടും പ്രകൃതിയോടും ലയിച്ചുചേർന്ന് ജീവിക്കുന്ന അസ്തിത്വമാണ്"
+          },
+          {
+            "en": "Humans exist only when connected to an electrical network",
+            "mal": "വൈദ്യുതി ശൃംഖലയിൽ ബന്ധിപ്പിക്കപ്പെടുമ്പോൾ മാത്രമേ മനുഷ്യൻ നിലനിൽക്കുന്നുള്ളൂ"
+          },
+          {
+            "en": "The world is an illusion generated by a biological CPU",
+            "mal": "ഈ ലോകം തലച്ചോർ സൃഷ്ടിക്കുന്ന ഒരു മായ മാത്രമാണെന്ന വാദം"
+          },
+          {
+            "en": "Every human is born with a pre-programmed dictionary in their DNA",
+            "mal": "മനുഷ്യൻ ജനിക്കുന്നത് തന്നെ ഡിഎൻഎയിൽ ഒരു നിഘണ്ടുവുമായിട്ടാണെന്ന വാദം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Heidegger's phenomenology shows that equipment is first experienced as 'ready-to-hand' (absorbed, unreflective practical engagement) before it is ever analyzed as 'present-at-hand' (detached theoretical contemplation). AI mistakenly inverted this order.",
+        "explanationMal": "മനുഷ്യർ ലോകത്തെ ആദ്യം അനുഭവിക്കുന്നത് പ്രായോഗിക ഇടപെടലുകളിലൂടെയാണ് (Ready-to-hand), അല്ലാതെ സിംബോളിക് കമ്പ്യൂട്ടറുകളെപ്പോലെ അമൂർത്ത സിദ്ധാന്തങ്ങളിലൂടെയല്ല."
+      },
+      {
+        "question": "What is the 'Brain Simulator Reply' to the Chinese Room and how did Searle dismantle it?",
+        "questionMal": "ചൈനീസ് റൂമിനെതിരെ ഉന്നയിക്കപ്പെട്ട 'ബ്രെയിൻ സിമുലേറ്റർ റിപ്ലൈയും', അതിനെ സിയേൾ തകർത്തതും എങ്ങനെയാണ്?",
+        "options": [
+          {
+            "en": "Opponents proposed simulating exact neuron firings via water pipes; Searle replied that manipulating water valves still yields zero semantic comprehension of Chinese",
+            "mal": "തലച്ചോറിലെ ഓരോ ന്യൂറോണിന്റെയും പ്രവർത്തനത്തെ പൈപ്പുകളിലൂടെ വെള്ളമൊഴുക്കി അനുകരിച്ചാലും, ആ പൈപ്പുകൾ തിരിക്കുന്ന മനുഷ്യന് ചൈനീസ് ഭാഷയുടെ അർത്ഥം ലഭിക്കില്ലെന്ന് സിയേൾ മറുപടി നൽകി"
+          },
+          {
+            "en": "Opponents proposed building a brain out of copper; Searle melted the copper",
+            "mal": "ചെമ്പ് കൊണ്ട് തലച്ചോർ നിർമ്മിക്കാൻ നിർദ്ദേശിച്ചപ്പോൾ സിയേൾ അത് ഉരക്കിക്കളഞ്ഞു"
+          },
+          {
+            "en": "Opponents claimed digital neurons are immortal; Searle showed power cuts destroy them",
+            "mal": "ഡിജിറ്റൽ ന്യൂറോണുകൾ അമർത്യമാണെന്ന വാദത്തെ വൈദ്യുതി തടസ്സം കാണിച്ച് സിയേൾ തോൽപ്പിച്ചു"
+          },
+          {
+            "en": "Opponents argued simulation is always illegal under copyright law",
+            "mal": "അനുകരണം പകർപ്പവകാശ നിയമത്തിന് എതിരാണെന്ന വാദം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Searle responded that even if one constructs a massive hydraulic system of water pipes simulating every synapse firing in a native speaker's brain, turning the water valves produces no conscious understanding of Chinese.",
+        "explanationMal": "തലച്ചോറിലെ ന്യൂറോണുകളുടെ സിനാപ്റ്റിക് കണക്ഷനുകളെ ജല പൈപ്പുകളിലൂടെ എത്ര കൃത്യമായി അനുകരിച്ചാലും, ആ വാൽവുകൾ നിയന്ത്രിക്കുന്ന ആൾക്ക് ചൈനീസ് ഭാഷയുടെ അർത്ഥം തെല്ലും മനസ്സിലാകില്ല."
+      },
+      {
+        "question": "What modern paradigm in cognitive science directly emerged from the failure of disembodied classical AI?",
+        "questionMal": "ശരീരമില്ലാത്ത ക്ലാസിക്കൽ AI-യുടെ പരാജയത്തിൽ നിന്ന് ജന്മംകൊണ്ട ആധുനിക കോഗ്നിറ്റീവ് സയൻസ് സിദ്ധാന്തം ഏതാണ്?",
+        "options": [
+          {
+            "en": "Embodied Cognition (4E Cognition: Embodied, Embedded, Enacted, Extended)",
+            "mal": "എംബോഡീഡ് കോഗ്നിഷൻ അഥവാ 4E കോഗ്നിഷൻ (ശരീരവൽക്കരിക്കപ്പെട്ട, ഉൾച്ചേർക്കപ്പെട്ട, പ്രവർത്തനപരമായ, വിപുലീകരിക്കപ്പെട്ട ബുദ്ധി)"
+          },
+          {
+            "en": "Pure Substance Dualism",
+            "mal": "പ്യുവർ സബ്സ്റ്റൻസ് ഡ്യുവലിസം"
+          },
+          {
+            "en": "Mechanical Phrenology",
+            "mal": "മെക്കാനിക്കൽ ഫ്രെനോളജി"
+          },
+          {
+            "en": "Radical Solipsism",
+            "mal": "റാഡിക്കൽ സോളിപ്സിസം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Embodied Cognition (Francisco Varela, Andy Clark, Evan Thompson) posits that the mind is not an isolated central processor, but inextricably grounded in bodily interaction and environmental scaffolding.",
+        "explanationMal": "മനസ്സ് എന്നത് അടച്ചുപൂട്ടിയ കമ്പ്യൂട്ടർ പ്രോസസ്സറല്ല, മറിച്ച് ശാരീരിക ഇടപെടലുകളിലൂടെയും ബാഹ്യ ലോകവുമായുള്ള ബന്ധത്തിലൂടെയും രൂപപ്പെടുന്നതാണെന്ന '4E കോഗ്നിഷൻ' മുന്നോട്ടുവന്നു."
+      }
+    ]
+  },
+  "ai_mal_ch8": {
+    "title": "Module 2 · Chapter 5 · Disembodied Intelligence & Dreyfus' Critique",
+    "titleMal": "മൊഡ്യൂൾ 2 · അധ്യായം 5 · ശരീരമില്ലാത്ത ബുദ്ധിശക്തിയും ഡ്രൈഫസിന്റെ വിമർശനവും",
+    "filename": "Module_2_Chapter_5_Disembodied_Intelligence.pdf",
+    "summary": {
+      "overview": "⚡ HIGH-YIELD EXECUTIVE CORE: Hubert Dreyfus ('What Computers Can't Do', 1972), drawing on Martin Heidegger and Maurice Merleau-Ponty, dismantled disembodied AI. Human expertise and common sense are non-representational, embodied practices grounded in 'Being-in-the-World' (Dasein)—proving computers trapped in pure disembodied symbol-manipulation cannot attain human understanding.",
+      "overviewMal": "⚡ പരീക്ഷാ സംഗ്രഹം (3-Page Core): ഹ്യൂബർട്ട് ഡ്രൈഫസ് 1972-ൽ ഉയർത്തിയ വിപ്ലവകരമായ ഫിനോമിനോളജിക്കൽ വിമർശനം: മനുഷ്യന്റെ ബുദ്ധിശക്തി ശാരീരികമായ ഇടപെടലുകളിലും അബോധപൂർവ്വമായ അനുഭവ പരിജ്ഞാനത്തിലും (Knowing-How) അധിഷ്ഠിതമാണ്; ശരീരമില്ലാത്ത വെറും കമ്പ്യൂട്ടറുകൾക്ക് ഒരിക്കലും കോമൺ സെൻസ് നേടാൻ കഴിയില്ല.",
+      "keyMetrics": [
+        {
+          "label": "SEMINAL TEXT",
+          "labelMal": "പ്രധാന കൃതി",
+          "value": "Dreyfus (1972)",
+          "detail": "⚡ What Computers Can't Do: The phenomenological critique of GOFAI."
+        },
+        {
+          "label": "KEY DISTINCTION",
+          "labelMal": "പ്രധാന വേർതിരിവ്",
+          "value": "Knowing-How vs Knowing-That",
+          "detail": "🔑 Embodied practical coping versus propositional rulebooks."
+        },
+        {
+          "label": "EMERGENT PARADIGM",
+          "labelMal": "പുതിയ മാതൃക",
+          "value": "Embodied Cognition (4E)",
+          "detail": "🧠 Mind is Embodied, Embedded, Enacted, Extended."
+        }
+      ],
+      "sections": [
+        {
+          "badge": "Page 1: The Disembodied Myth",
+          "title": "PAGE 1 · Heideggerian Dasein & The Ready-to-Hand Primacy",
+          "titleMal": "പേജ് 1 · ഹൈഡഗറുടെ ദർശനവും റെഡി-ടു-ഹാൻഡ് പ്രഥമത്വവും",
+          "points": [
+            {
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Being-in-the-World (Dasein)</mark>: Humans are not detached observers inspecting abstract tokens; we are fundamentally immersed in practical coping within a cultural and bodily world.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ലോകത്തിൽ ആയിരിക്കൽ (Dasein):</mark> മനുഷ്യർ വെറുതെ മാറിനിന്ന് ചിഹ്നങ്ങൾ നിരീക്ഷിക്കുന്ന കമ്പ്യൂട്ടറുകളല്ല, മറിച്ച് പ്രകൃതിയോടും സമൂഹത്തോടും ഇഴചേർന്ന് ജീവിക്കുന്നവരാണ്."
+            },
+            {
+              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Ready-to-Hand (Zuhandenheit)</mark>: We experience equipment directly through practical use (like hammering) before we ever analyze it as detached theoretical objects (Present-at-Hand). AI inverted this order.",
+              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>റെഡി-ടു-ഹാൻഡ്:</mark> ഒരു ചുറ്റികയെ മനുഷ്യൻ ആദ്യം അനുഭവിക്കുന്നത് പ്രായോഗികമായി ഉപയോഗിക്കുമ്പോഴാണ്; കമ്പ്യൂട്ടറുകൾ വസ്തുക്കളെ അമൂർത്ത നിയമങ്ങളായി കാണുന്നത് തെറ്റായ ക്രമമാണ്."
+            }
+          ]
+        },
+        {
+          "badge": "Page 2: Knowing-How vs Knowing-That",
+          "title": "PAGE 2 · Knowing-How vs Knowing-That & Skill Acquisition",
+          "titleMal": "പേജ് 2 · നോവിങ്-ഹൗ vs നോവിങ്-ദാറ്റ് & നൈപുണ്യ മാതൃക",
+          "points": [
+            {
+              "en": "<span style='background:#fee2e2; color:#991b1b; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚠️ EXAM TRAP</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Knowing-How vs Knowing-That (Ryle & Dreyfus)</mark>: 'Knowing-That' is factual propositional rules; 'Knowing-How' is intuitive embodied coping (riding a bicycle). Expert humans transcend rules entirely.",
+              "mal": "<span style='background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>⚠️ പരീക്ഷാ ചോദ്യം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>നോവിങ്-ഹൗ vs നോവിങ്-ദാറ്റ്:</mark> സൈക്കിൾ ചവിട്ടുന്നത് പുസ്തകം നോക്കിയല്ല (Knowing-How); ഒരു വിദഗ്ദ്ധൻ നിയമങ്ങളെല്ലാം മറന്ന് അന്തർജ്ഞാനത്തിലൂടെയാണ് കാര്യങ്ങൾ ചെയ്യുന്നത്."
+            },
+            {
+              "en": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🧠 THOUGHT EXPERIMENT</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Dreyfus's 4 False Assumptions</mark>: 1) Biological (brain = binary logic), 2) Psychological (mind = symbol processing), 3) Epistemological (knowledge = codifiable rules), 4) Ontological (world = atomic facts).",
+              "mal": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🧠 ചിന്താ പരീക്ഷണം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>നാല് തെറ്റായ അനുമാനങ്ങൾ:</mark> തലച്ചോറ് വെറും സ്വിച്ചാണെന്നതും, അറിവ് വെറും പുസ്തക നിയമങ്ങളാണെന്നുമുള്ള AI ഗവേഷകരുടെ നാല് അബദ്ധങ്ങളെ ഡ്രൈഫസ് തുറന്നുകാട്ടി."
+            }
+          ]
+        },
+        {
+          "badge": "Page 3: Embodied 4E Cognition",
+          "title": "PAGE 3 · Embodied Cognition (4E Cognition Revolution)",
+          "titleMal": "പേജ് 3 · എംബോഡീഡ് കോഗ്നിഷൻ (4E വിപ്ലവം)",
+          "points": [
+            {
+              "en": "<span style='background:#dcfce7; color:#166534; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>💡 RECALL HOOK</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The 4E Cognition Framework</mark>: Mind is not isolated in a skull-bound CPU; it is <strong>Embodied</strong> (bodily structures), <strong>Embedded</strong> (situated in physical world), <strong>Enacted</strong> (emerging through action), and <strong>Extended</strong> (scaffolded across external tools).",
+              "mal": "<span style='background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>💡 ഓർമ്മയ്ക്കായി:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>4E കോഗ്നിഷൻ:</mark> മനസ്സ് ശരീരത്തിലും (Embodied), ചുറ്റുപാടിലും (Embedded), പ്രവൃത്തികളിലും (Enacted), ഫോണുകൾ പോലുള്ള ബാഹ്യ ഉപകരണങ്ങളിലും (Extended) വ്യാപിച്ച് നിൽക്കുന്നു."
+            },
+            {
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Intelligence Requires a Body</mark>: True common sense requires physical embodiment and sensorimotor interaction—redirecting robotics toward Rodney Brooks' situated agents.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ശരീരമില്ലാതെ ബുദ്ധിയില്ല:</mark> യഥാർത്ഥ കൃത്രിമബുദ്ധിക്ക് ലോകവുമായി നേരിട്ട് ഇടപഴകുന്ന ഒരു റോബോട്ടിക് ശരീരം കൂടിയേ തീരൂ."
+            }
+          ]
+        }
+      ],
+      "coreConcepts": [
+        {
+          "term": "Disembodied Intelligence",
+          "termMal": "ശരീരമില്ലാത്ത ബുദ്ധിശക്തി",
+          "def": "⚡ The flawed assumption that general intelligence can exist in an isolated computer without physical bodily situatedness.",
+          "defMal": "📌 ശാരീരിക ബന്ധമില്ലാതെ അടഞ്ഞ കമ്പ്യൂട്ടറിനുള്ളിൽ മാത്രം ബുദ്ധി നിർമ്മിക്കാൻ കഴിയുമെന്ന തെറ്റായ ധാരണ."
+        },
+        {
+          "term": "Knowing-How vs Knowing-That",
+          "termMal": "നോവിങ്-ഹൗ vs നോവിങ്-ദാറ്റ്",
+          "def": "⚡ Embodied practical capability (Knowing-How) versus explicit factual propositional rules (Knowing-That).",
+          "defMal": "📌 പ്രായോഗിക നൈപുണ്യവും പുസ്തകത്തിലെ നിയമങ്ങളും തമ്മിലുള്ള വ്യത്യാസം."
+        },
+        {
+          "term": "4E Cognition",
+          "termMal": "4E കോഗ്നിഷൻ",
+          "def": "⚡ Cognition is Embodied, Embedded, Enacted, and Extended—never an isolated central processor.",
+          "defMal": "📌 ബുദ്ധി ശരീരത്തിലും പരിസ്ഥിതിയിലും പ്രവർത്തനങ്ങളിലും ലയിച്ചുനിൽക്കുന്നതാണെന്ന ആധുനിക വീക്ഷണം."
+        }
+      ],
+      "examTakeaways": [
+        {
+          "en": "🎯 <strong>Exam Anchor 1:</strong> Dreyfus proved that human common sense is not an encyclopedia of axioms, but an embodied background coping skill.",
+          "mal": "🎯 <strong>പരീക്ഷാ പോയിന്റ് 1:</strong> കോമൺ സെൻസ് എന്നാൽ നിയമങ്ങളുടെ പുസ്തകമല്ല, മറിച്ച് ശരീരത്തിലൂടെ ജീവിച്ചു പഠിച്ച അനുഭവമാണെന്ന് ഡ്രൈഫസ് തെളിയിച്ചു."
+        },
+        {
+          "en": "🎯 <strong>Exam Anchor 2:</strong> 4E Cognition reframed artificial intelligence from disembodied cloud algorithms to physically situated embodied robotics.",
+          "mal": "🎯 <strong>പരീക്ഷാ പോയിന്റ് 2:</strong> ക്ലൗഡ് സോഫ്റ്റ്‌വെയറുകളിൽ നിന്ന് റോബോട്ടിക്സിലേക്ക് AI-യെ വഴിതിരിച്ചുവിട്ടത് ഡ്രൈഫസിന്റെ വിമർശനങ്ങളാണ്."
+        }
+      ]
+    },
+    "quizPool": [
+      {
+        "question": "What is the core premise of Newell and Simon's Physical Symbol System Hypothesis (PSSH)?",
+        "questionMal": "നെവലും സൈമണും അവതരിപ്പിച്ച 'ഫിസിക്കൽ സിംബൽ സിസ്റ്റം ഹൈപ്പോത്തിസിസിന്റെ' (PSSH) പ്രധാന ആശയം എന്താണ്?",
+        "options": [
+          {
+            "en": "A physical symbol system has the necessary and sufficient means for general intelligent action",
+            "mal": "ഒരു ഫിസിക്കൽ സിംബൽ സിസ്റ്റത്തിന് പൊതുവായ ബുദ്ധിപരമായ പ്രവർത്തനങ്ങൾ നടത്താൻ ആവശ്യമായതും പര്യാപ്തമായതുമായ എല്ലാ കഴിവുകളുമുണ്ട്"
+          },
+          {
+            "en": "Intelligence is strictly biological and cannot exist outside organic proteins",
+            "mal": "ബുദ്ധിശക്തി പൂർണ്ണമായും ജൈവികമാണ്, പ്രോട്ടീനുകൾക്ക് പുറത്ത് നിലനിൽക്കില്ല"
+          },
+          {
+            "en": "Neural networks are the only true model of cognition",
+            "mal": "ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ മാത്രമാണ് ചിന്തയുടെ ഒരേയൊരു മാതൃക"
+          },
+          {
+            "en": "Symbols have meaning only if grounded in emotional pain",
+            "mal": "വേദനയോ വികാരങ്ങളോ ഉണ്ടെങ്കിൽ മാത്രമേ ചിഹ്നങ്ങൾക്ക് അർത്ഥമുണ്ടാകൂ"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Allen Newell and Herbert Simon (1976 Turing Award lecture) formulated PSSH: formal manipulation of discrete physical patterns (symbols) is both necessary and sufficient for general intelligence.",
+        "explanationMal": "അലൻ നെവലും ഹെർബർട്ട് സൈമണും (1976) വ്യക്തമാക്കിയതുപോലെ, ചിഹ്നങ്ങളെ ചിട്ടയായി കൈകാര്യം ചെയ്യുന്ന ഒരു വ്യവസ്ഥയ്ക്ക് ഏത് ബുദ്ധിപരമായ പ്രവർത്തനവും നിർവ്വഹിക്കാൻ സാധിക്കും."
+      },
+      {
+        "question": "Who coined the acronym GOFAI (Good Old-Fashioned Artificial Intelligence) to describe symbolic, rule-based AI?",
+        "questionMal": "സിംബോളിക്, റൂൾ-ബേസ്ഡ് AI-യെ വിശേഷിപ്പിക്കാൻ 'GOFAI' എന്ന പദം ആദ്യമായി ഉപയോഗിച്ച തത്ത്വചിന്തകൻ ആര്?",
+        "options": [
+          {
+            "en": "John Haugeland",
+            "mal": "ജോൺ ഹോഗ്‌ലാൻഡ്"
+          },
+          {
+            "en": "John Searle",
+            "mal": "ജോൺ സിയേൾ"
+          },
+          {
+            "en": "Hubert Dreyfus",
+            "mal": "ഹ്യൂബർട്ട് ഡ്രൈഫസ്"
+          },
+          {
+            "en": "Daniel Dennett",
+            "mal": "ഡാനിയൽ ഡെന്നറ്റ്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Philosopher John Haugeland coined the term GOFAI in his 1985 book 'Artificial Intelligence: The Very Idea' to characterize the classical symbolic paradigm.",
+        "explanationMal": "1985-ൽ തത്ത്വചിന്തകനായ ജോൺ ഹോഗ്‌ലാൻഡ് തന്റെ പുസ്തകത്തിലാണ് പരമ്പരാഗത സിംബോളിക് AI-യെ 'GOFAI' എന്ന് നാമകരണം ചെയ്തത്."
+      },
+      {
+        "question": "What is the 'Frame Problem' originally formulated by John McCarthy and Patrick Hayes (1969)?",
+        "questionMal": "1969-ൽ ജോൺ മക്കാർത്തിയും പാട്രിക് ഹെയ്സും ചേർന്ന് അവതരിപ്പിച്ച 'ഫ്രെയിം പ്രോബ്ലം' എന്നാൽ എന്താണ്?",
+        "options": [
+          {
+            "en": "The difficulty of representing what remains unchanged in the world following an action without explicitly updating millions of non-effects",
+            "mal": "ഒരു പ്രവൃത്തി നടക്കുമ്പോൾ ചുറ്റുപാടിൽ മാറ്റമില്ലാതെ തുടരുന്ന കാര്യങ്ങളെ കമ്പ്യൂട്ടറിന് എങ്ങനെ വേഗത്തിൽ തിരിച്ചറിയാം എന്ന സമസ്യ"
+          },
+          {
+            "en": "The mechanical failure of computer monitor frames during computation",
+            "mal": "കമ്പ്യൂട്ടർ മോണിറ്ററുകളുടെ ചട്ടക്കൂടുകൾക്ക് സംഭവിക്കുന്ന സാങ്കേതിക തകരാറുകൾ"
+          },
+          {
+            "en": "The legal liability frame when an AI causes vehicular harm",
+            "mal": "വാഹനാപകടങ്ങളിൽ AI-ക്ക് വരുന്ന നിയമപരമായ ബാധ്യതകൾ"
+          },
+          {
+            "en": "The inability of computers to display oil paintings in high resolution",
+            "mal": "കമ്പ്യൂട്ടറുകൾക്ക് ചിത്രങ്ങൾ റെൻഡർ ചെയ്യാൻ കഴിയാത്ത അവസ്ഥ"
+          }
+        ],
+        "answer": 0,
+        "explanation": "The Frame Problem highlights the computational difficulty for symbolic logic systems in determining which facts about the world stay constant when an action occurs, leading to combinatorial explosion.",
+        "explanationMal": "ഒരു മാറ്റം ഉണ്ടാകുമ്പോൾ ബാക്കിയുള്ള അസംഖ്യം കാര്യങ്ങൾ മാറിയിട്ടില്ല എന്ന് യുക്തിസഹമായി മുൻകൂട്ടി മനസ്സിലാക്കാൻ കമ്പ്യൂട്ടറുകൾ നേരിടുന്ന കഠിനമായ വെല്ലുവിളിയാണിത്."
+      },
+      {
+        "question": "In John Searle's 1980 Chinese Room thought experiment, what fundamental principle does the man in the room demonstrate?",
+        "questionMal": "1980-ൽ ജോൺ സിയേൾ അവതരിപ്പിച്ച 'ചൈനീസ് റൂം' പരീക്ഷണത്തിൽ മുറിക്കുള്ളിലിരിക്കുന്ന മനുഷ്യൻ തെളിയിക്കുന്ന അടിസ്ഥാന തത്ത്വം എന്താണ്?",
+        "options": [
+          {
+            "en": "Syntax alone is neither constitutive of nor sufficient for semantics",
+            "mal": "ചിഹ്നങ്ങളുടെ ഘടന (Syntax) മാത്രം കൈകാര്യം ചെയ്തതുകൊണ്ട് യഥാർത്ഥ അർത്ഥമോ (Semantics) ബോധമോ ഉണ്ടാകില്ല"
+          },
+          {
+            "en": "Chinese grammar is inherently non-computable by humans",
+            "mal": "മനുഷ്യർക്ക് ചൈനീസ് ഭാഷയുടെ വ്യാകരണം കമ്പ്യൂട്ട് ചെയ്യാൻ കഴിയില്ല"
+          },
+          {
+            "en": "Digital computers can learn Chinese faster than human children",
+            "mal": "കമ്പ്യൂട്ടറുകൾ കുട്ടികളേക്കാൾ വേഗത്തിൽ ചൈനീസ് ഭാഷ പഠിക്കുന്നു"
+          },
+          {
+            "en": "Rooms without windows impair linguistic reasoning",
+            "mal": "ജനലുകളില്ലാത്ത മുറികൾ ബുദ്ധിശക്തിയെ പ്രതികൂലമായി ബാധിക്കുന്നു"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Searle proved that a human who understands zero Chinese can follow an English rule-book to manipulate Chinese symbols flawlessly (passing the Turing Test), proving that syntactic symbol manipulation does not produce semantic understanding.",
+        "explanationMal": "ചൈനീസ് അറിയാത്ത ഒരാൾക്ക് നിയമപുസ്തകം നോക്കി ചിഹ്നങ്ങൾ കൃത്യമായി എടുത്ത് നൽകാം; എന്നാൽ അയാൾക്ക് ആ ഭാഷയുടെ അർത്ഥം മനസ്സിലാകുന്നില്ല. കമ്പ്യൂട്ടറുകളും ഇതുപോലെ വെറും ചിഹ്നങ്ങൾ മാത്രമാണ് കൈകാര്യം ചെയ്യുന്നത്."
+      },
+      {
+        "question": "What is the 'Systems Reply' to Searle's Chinese Room argument?",
+        "questionMal": "സിയേളിന്റെ ചൈനീസ് റൂം വാദത്തിന് തത്ത്വചിന്തകർ നൽകിയ 'സിസ്റ്റംസ് റിപ്ലൈ' (Systems Reply) എന്താണ്?",
+        "options": [
+          {
+            "en": "While the man inside does not understand Chinese, the entire system (man + rulebook + paper + room) as a whole understands Chinese",
+            "mal": "മുറിക്കുള്ളിലെ മനുഷ്യന് ചൈനീസ് അറിയില്ലെങ്കിലും, മുറിയും പുസ്തകവും മനുഷ്യനും അടങ്ങുന്ന ആ വ്യവസ്ഥയ്ക്ക് (System) മുഴുവനായി അർത്ഥം മനസ്സിലാകുന്നുണ്ട്"
+          },
+          {
+            "en": "The operating system must be upgraded to Unix",
+            "mal": "കമ്പ്യൂട്ടറിന്റെ ഓപ്പറേറ്റിംഗ് സിസ്റ്റം മാറ്റണം"
+          },
+          {
+            "en": "The man will eventually learn Chinese through repetition",
+            "mal": "ആവർത്തനത്തിലൂടെ മനുഷ്യൻ ക്രമേണ ചൈനീസ് പഠിക്കും"
+          },
+          {
+            "en": "The room requires a Chinese audio translator",
+            "mal": "മുറിയിൽ ഒരു ഓഡിയോ ട്രാൻസ്ലേറ്റർ സ്ഥാപിക്കണം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "The Systems Reply (advocated by Berkeley colleagues) argues that understanding is a property of the total computational system, not an individual sub-component (just as individual neurons in the brain do not understand language).",
+        "explanationMal": "തലച്ചോറിലെ ഒരൊറ്റ ന്യൂറോണിന് ഭാഷ മനസ്സിലാകില്ലെങ്കിലും തലച്ചോറിന് മുഴുവനായി മനസ്സിലാകുന്നത് പോലെ, മുഴു വ്യവസ്ഥയ്ക്കും അറിവുണ്ടെന്ന് സിസ്റ്റംസ് റിപ്ലൈ വാദിക്കുന്നു."
+      },
+      {
+        "question": "How did John Searle refute the 'Systems Reply'?",
+        "questionMal": "സിയേൾ 'സിസ്റ്റംസ് റിപ്ലൈ' വാദത്തെ എങ്ങനെയാണ് തകർത്തത്?",
+        "options": [
+          {
+            "en": "By imagining the man memorizing all rules and symbols; he internalizes the entire system in his head, yet still understands zero Chinese",
+            "mal": "ആ മനുഷ്യൻ പുസ്തകത്തിലെ നിയമങ്ങളെല്ലാം കാണാതെ പഠിച്ച് തന്റെ മനസ്സിലാക്കിയാലും, അയാൾക്ക് ഇപ്പോഴും ചൈനീസ് ഭാഷയുടെ ഒരക്ഷരം പോലും മനസ്സിലാകില്ല"
+          },
+          {
+            "en": "By burning the rulebook and locking the room",
+            "mal": "പുസ്തകം കത്തിച്ചുകളഞ്ഞ് വാതിലടച്ചുകൊണ്ട്"
+          },
+          {
+            "en": "By replacing the symbols with binary electrical voltages",
+            "mal": "ചിഹ്നങ്ങൾക്ക് പകരം വോൾട്ടേജ് നൽകിക്കൊണ്ട്"
+          },
+          {
+            "en": "By proving that English grammar is superior to Chinese",
+            "mal": "ഇംഗ്ലീഷ് വ്യാകരണമാണ് മികച്ചതെന്ന് തെളിയിച്ചുകൊണ്ട്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Searle responded: let the man memorize the rule-book and do all symbol calculations inside his own mind. The man IS the entire system, yet he still does not understand a single word of Chinese.",
+        "explanationMal": "മുഴുവൻ സിസ്റ്റത്തെയും മനസ്സിലാക്കി വെച്ചാലും അയാൾക്ക് ചൈനീസ് വാക്കുകളുടെ അർത്ഥം തിരിയുന്നില്ലെങ്കിൽ, സിസ്റ്റത്തിനും അർത്ഥബോധമില്ലെന്ന് സിയേൾ സമർത്ഥിച്ചു."
+      },
+      {
+        "question": "What is the 'Robot Reply' to Searle's Chinese Room argument?",
+        "questionMal": "ചൈനീസ് റൂമിനെതിരെ ഉയർന്ന 'റോബോട്ട് റിപ്ലൈ' (Robot Reply) എന്താണ് വാദിക്കുന്നത്?",
+        "options": [
+          {
+            "en": "If the computer is placed inside a mobile robot with cameras, sensors, and motors, its symbols become grounded in physical causal interactions with the world",
+            "mal": "കമ്പ്യൂട്ടറിനെ ക്യാമറയും സെൻസറുകളും ചലനശേഷിയുമുള്ള ഒരു റോബോട്ടിൽ ഘടിപ്പിച്ചാൽ, അത് ലോകവുമായി നേരിട്ട് ഇടപെട്ട് ചിഹ്നങ്ങൾക്ക് യഥാർത്ഥ അർത്ഥം നൽകും"
+          },
+          {
+            "en": "Robots are stronger than humans and do not require food",
+            "mal": "റോബോട്ടുകൾക്ക് മനുഷ്യരേക്കാൾ കരുത്തുണ്ടെന്ന വാദം"
+          },
+          {
+            "en": "Robots will eventually revolt against human rulebooks",
+            "mal": "റോബോട്ടുകൾ മനുഷ്യനെതിരെ വിപ്ലവം നടത്തുമെന്ന വാദം"
+          },
+          {
+            "en": "Sensors eliminate the need for computer programming",
+            "mal": "സെൻസറുകൾ ഉള്ളതുകൊണ്ട് പ്രോഗ്രാമിങ് ആവശ്യമില്ലെന്ന വാദം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "The Robot Reply argues that embodiment and causal interaction with the physical environment provide genuine semantic content, resolving the symbol grounding problem.",
+        "explanationMal": "ബാഹ്യ ലോകവുമായി നേരിട്ട് കാണുകയും സ്പർശിക്കുകയും ചെയ്യുന്നതിലൂടെ ചിഹ്നങ്ങൾക്ക് യഥാർത്ഥ അനുഭവപരമായ അർത്ഥം (Semantics) ലഭിക്കുമെന്ന് റോബോട്ട് റിപ്ലൈ പറയുന്നു."
+      },
+      {
+        "question": "What philosophical doctrine established by René Descartes asserts that mind and body are two fundamentally distinct substances?",
+        "questionMal": "മനസ്സും ശരീരവും രണ്ട് തികച്ചും വ്യത്യസ്തമായ പദാർത്ഥങ്ങളാണെന്ന് പ്രഖ്യാപിച്ച റെനെ ഡെസ്കാർട്ടസിന്റെ സിദ്ധാന്തം ഏതാണ്?",
+        "options": [
+          {
+            "en": "Substance Dualism (Cartesian Dualism)",
+            "mal": "സബ്സ്റ്റൻസ് ഡ്യുവലിസം (കാർട്ടീഷ്യൻ ഡ്യുവലിസം)"
+          },
+          {
+            "en": "Logical Positivism",
+            "mal": "ലോജിക്കൽ പോസിറ്റിവിസം"
+          },
+          {
+            "en": "Dialectical Materialism",
+            "mal": "ഡയലക്റ്റിക്കൽ മെറ്റീരിയലിസം"
+          },
+          {
+            "en": "Panpsychism",
+            "mal": "പാൻസൈക്കിസം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Descartes divided reality into Res Cogitans (thinking, non-extended, immaterial mind) and Res Extensa (extended, unthinking, physical matter), creating the classic Mind-Body Problem.",
+        "explanationMal": "ഡെസ്കാർട്ടസ് ലോകത്തെ ചിന്തിക്കുന്ന ആത്മീയ മനസ്സും (Res Cogitans), സ്ഥലം അപഹരിക്കുന്ന ഭൗതിക ശരീരവുമായി (Res Extensa) വിഭജിച്ചു."
+      },
+      {
+        "question": "Where did Descartes hypothesize that the immaterial mind interacted causally with the physical body?",
+        "questionMal": "അദൃശ്യമായ മനസ്സും ഭൗതിക ശരീരവും തമ്മിൽ സന്ധിക്കുന്നത് തലച്ചോറിലെ ഏത് ഭാഗത്താണെന്നാണ് ഡെസ്കാർട്ടസ് അനുമാനിച്ചത്?",
+        "options": [
+          {
+            "en": "The Pineal Gland (Conarium)",
+            "mal": "പീനിയൽ ഗ്രന്ഥി (Pineal Gland)"
+          },
+          {
+            "en": "The Prefrontal Cortex",
+            "mal": "പ്രീഫ്രോണ്ടൽ കോർട്ടെക്സ്"
+          },
+          {
+            "en": "The Hippocampus",
+            "mal": "ഹിപ്പോകാമ്പസ്"
+          },
+          {
+            "en": "The Cerebellum",
+            "mal": "സെറിബെല്ലം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Descartes singled out the pineal gland because it is a unitary structure situated centrally in the brain, unlike the mirrored bilateral cerebral hemispheres.",
+        "explanationMal": "തലച്ചോറിന്റെ മധ്യഭാഗത്തുള്ള ഒറ്റപ്പെട്ട ഗ്രന്ഥിയായതിനാൽ പീനിയൽ ഗ്രന്ഥിയിലാണ് മനസ്സും ശരീരവും സംവദിക്കുന്നതെന്ന് ഡെസ്കാർട്ടസ് കരുതി."
+      },
+      {
+        "question": "What two critical human capacities did Descartes argue could NEVER be duplicated by purely mechanical automata?",
+        "questionMal": "കേവലം യാന്ത്രിക സംവിധാനങ്ങൾക്ക് ഒരിക്കലും നിർവ്വഹിക്കാൻ കഴിയില്ലെന്ന് ഡെസ്കാർട്ടസ് വാദിച്ച രണ്ട് മാനുഷിക കഴിവുകൾ ഏവ?",
+        "options": [
+          {
+            "en": "Creative use of universal language to express thoughts, and universal reason adaptable to all life situations",
+            "mal": "സന്ദർഭോചിതമായി സ്വതന്ത്ര ഭാഷ ഉപയോഗിക്കാനുള്ള കഴിവും, ജീവിതത്തിലെ ഏത് പുതിയ സാഹചര്യത്തോടും പൊരുത്തപ്പെടുന്ന സാർവ്വത്രിക യുക്തിയും"
+          },
+          {
+            "en": "Walking on two legs and digesting meat",
+            "mal": "രണ്ട് കാലിൽ നടക്കാനും ഭക്ഷണം ദഹിപ്പിക്കാനുമുള്ള കഴിവ്"
+          },
+          {
+            "en": "Playing chess and calculating solar eclipses",
+            "mal": "ചെസ്സ് കളിക്കാനും ഗ്രഹണം കണക്കുകൂട്ടാനുമുള്ള കഴിവ്"
+          },
+          {
+            "en": "Generating electrical heat and optical reflections",
+            "mal": "വൈദ്യുതിയും താപവും പുറപ്പെടുവിക്കാനുള്ള കഴിവ്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "In Discourse on the Method (Part V), Descartes stated that machines could never arrange words creatively in response to anything said in their presence, nor act from universal reason rather than rigid mechanical dispositions.",
+        "explanationMal": "ഏത് സംഭാഷണത്തോടും സൃഷ്ടിപരമായി ഭാഷ ഉപയോഗിച്ച് പ്രതികരിക്കാനും, പുതിയ സാഹചര്യങ്ങളിൽ സാർവ്വത്രിക യുക്തിയോടെ പെരുമാറാനും യന്ത്രങ്ങൾക്ക് കഴിയില്ലെന്ന് ഡെസ്കാർട്ടസ് നിരീക്ഷിച്ചു."
+      },
+      {
+        "question": "What was Hubert Dreyfus's central philosophical critique of classical Symbolic AI in 'What Computers Can't Do' (1972)?",
+        "questionMal": "1972-ൽ പ്രസിദ്ധീകരിച്ച 'വാട്ട് കമ്പ്യൂട്ടേഴ്സ് കാന്റ് ഡൂ' എന്ന ഗ്രന്ഥത്തിൽ സിംബോളിക് AI-ക്കെതിരെ ഹ്യൂബർട്ട് ഡ്രൈഫസ് ഉന്നയിച്ച പ്രധാന വാദം എന്താണ്?",
+        "options": [
+          {
+            "en": "Human intelligence relies on embodied, tacit coping and background practices in a physical world, which cannot be captured by disembodied symbolic rules",
+            "mal": "മനുഷ്യന്റെ ബുദ്ധി ശാരീരികമായ ഇടപെടലുകളിലും അബോധപൂർവ്വമായ അനുഭവ പരിജ്ഞാനത്തിലും (Tacit Knowledge) അധിഷ്ഠിതമാണ്; ഇതിനെ വെറും ചിഹ്ന നിയമങ്ങളാക്കി മാറ്റാൻ കഴിയില്ല"
+          },
+          {
+            "en": "Computers do not possess enough magnetic tape storage",
+            "mal": "കമ്പ്യൂട്ടറുകൾക്ക് ആവശ്യത്തിന് കാന്തിക ടേപ്പ് സംഭരണശേഷി ഇല്ല"
+          },
+          {
+            "en": "Transistors are morally forbidden under French existentialism",
+            "mal": "ഫ്രഞ്ച് തത്ത്വചിന്തയിൽ ട്രാൻസിസ്റ്ററുകൾ വിലക്കപ്പെട്ടതാണ്"
+          },
+          {
+            "en": "Silicon chips overheat when running recursive functions",
+            "mal": "സിലിക്കൺ ചിപ്പുകൾ ചൂടാകുന്നത് കൊണ്ടാണ് പ്രശ്നം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Drawing on Martin Heidegger and Maurice Merleau-Ponty, Dreyfus argued that human skill and common sense are non-representational, embodied practices ('being-in-the-world'), refuting GOFAI's disembodied symbol-manipulation model.",
+        "explanationMal": "ഹൈഡഗറുടെയും മെർലോ-പോണ്ടിയുടെയും ഫിനോമിനോളജി ഉപയോഗിച്ച് ഡ്രൈഫസ് വാദിച്ചത് മനുഷ്യബുദ്ധി ശരീരവുമായി ഇഴചേർന്ന് കിടക്കുന്നതാണെന്നും, ചിഹ്നങ്ങൾ മാത്രമുള്ള AI-ക്ക് സാധാരണ ബുദ്ധി (Common Sense) നേടാനാവില്ലെന്നുമാണ്."
+      },
+      {
+        "question": "What is the distinction between 'Knowing-That' and 'Knowing-How' popularized by Gilbert Ryle and used by Dreyfus?",
+        "questionMal": "ഗിൽബർട്ട് റൈലും ഹ്യൂബർട്ട് ഡ്രൈഫസും എടുത്തുകാണിച്ച 'നോവിങ്-ദാറ്റ്' (Knowing-That), 'നോവിങ്-ഹൗ' (Knowing-How) എന്നിവ തമ്മിലുള്ള വ്യത്യാസം എന്താണ്?",
+        "options": [
+          {
+            "en": "Knowing-that is explicit propositional knowledge of facts; knowing-how is embodied practical skill and intuitive mastery that cannot be fully codified into rules",
+            "mal": "നോവിങ്-ദാറ്റ് എന്നത് വാചികമായ വസ്തുതാപരമായ അറിവാണ്; എന്നാൽ നോവിങ്-ഹൗ എന്നത് സൈക്കിൾ ചവിട്ടുന്നതുപോലുള്ള പ്രായോഗിക നൈപുണ്യമാണ്, ഇതിനെ നിയമങ്ങളാക്കി മാറ്റാനാവില്ല"
+          },
+          {
+            "en": "Knowing-that is for humans, knowing-how is exclusively for robots",
+            "mal": "മനുഷ്യർക്ക് നോവിങ്-ദാറ്റും റോബോട്ടുകൾക്ക് നോവിങ്-ഹൗവുമാണെന്ന വ്യത്യാസം"
+          },
+          {
+            "en": "Knowing-that relates to past history, knowing-how relates to future predictions",
+            "mal": "ഭൂതകാലത്തെക്കുറിച്ചുള്ള അറിവും ഭാവിയെക്കുറിച്ചുള്ള അറിവും"
+          },
+          {
+            "en": "Both concepts are identical in predicate logic",
+            "mal": "രണ്ടും ഒരേ അർത്ഥമുള്ള ഗണിത സമവാക്യങ്ങളാണ്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Ryle and Dreyfus emphasized that expert human actions (like riding a bicycle or navigating a crowded room) proceed through intuitive, embodied coping ('knowing-how') rather than consulting an explicit internal rulebook ('knowing-that').",
+        "explanationMal": "നീന്തുന്നതും സൈക്കിൾ ചവിട്ടുന്നതും ആളുകളുമായി ഇടപഴകുന്നതും പുസ്തകത്തിലെ നിയമങ്ങൾ ഓർത്തുവെച്ചല്ല മനുഷ്യർ ചെയ്യുന്നത്; ആന്തരികമായ പ്രായോഗിക ശീലങ്ങളിലൂടെയാണ്."
+      },
+      {
+        "question": "What is Martin Heidegger's concept of 'Being-in-the-World' (Dasein) that Dreyfus applied to critique AI?",
+        "questionMal": "AI-യെ വിമർശിക്കാൻ ഡ്രൈഫസ് ഉപയോഗിച്ച മാർട്ടിൻ ഹൈഡഗറുടെ 'ലോകത്തിൽ ആയിരിക്കൽ' (Being-in-the-World / Dasein) എന്ന ആശയം എന്താണ്?",
+        "options": [
+          {
+            "en": "Humans are fundamentally embedded in an ongoing, meaningful cultural and physical context, rather than detached observers inspecting abstract symbolic objects",
+            "mal": "മനുഷ്യർ കേവലം മാറിനിന്ന് ചിഹ്നങ്ങളെ നിരീക്ഷിക്കുന്ന വിച്ഛേദിക്കപ്പെട്ട ബുദ്ധിയല്ല, മറിച്ച് സംസ്കാരത്തോടും പ്രകൃതിയോടും ലയിച്ചുചേർന്ന് ജീവിക്കുന്ന അസ്തിത്വമാണ്"
+          },
+          {
+            "en": "Humans exist only when connected to an electrical network",
+            "mal": "വൈദ്യുതി ശൃംഖലയിൽ ബന്ധിപ്പിക്കപ്പെടുമ്പോൾ മാത്രമേ മനുഷ്യൻ നിലനിൽക്കുന്നുള്ളൂ"
+          },
+          {
+            "en": "The world is an illusion generated by a biological CPU",
+            "mal": "ഈ ലോകം തലച്ചോർ സൃഷ്ടിക്കുന്ന ഒരു മായ മാത്രമാണെന്ന വാദം"
+          },
+          {
+            "en": "Every human is born with a pre-programmed dictionary in their DNA",
+            "mal": "മനുഷ്യൻ ജനിക്കുന്നത് തന്നെ ഡിഎൻഎയിൽ ഒരു നിഘണ്ടുവുമായിട്ടാണെന്ന വാദം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Heidegger's phenomenology shows that equipment is first experienced as 'ready-to-hand' (absorbed, unreflective practical engagement) before it is ever analyzed as 'present-at-hand' (detached theoretical contemplation). AI mistakenly inverted this order.",
+        "explanationMal": "മനുഷ്യർ ലോകത്തെ ആദ്യം അനുഭവിക്കുന്നത് പ്രായോഗിക ഇടപെടലുകളിലൂടെയാണ് (Ready-to-hand), അല്ലാതെ സിംബോളിക് കമ്പ്യൂട്ടറുകളെപ്പോലെ അമൂർത്ത സിദ്ധാന്തങ്ങളിലൂടെയല്ല."
+      },
+      {
+        "question": "What is the 'Brain Simulator Reply' to the Chinese Room and how did Searle dismantle it?",
+        "questionMal": "ചൈനീസ് റൂമിനെതിരെ ഉന്നയിക്കപ്പെട്ട 'ബ്രെയിൻ സിമുലേറ്റർ റിപ്ലൈയും', അതിനെ സിയേൾ തകർത്തതും എങ്ങനെയാണ്?",
+        "options": [
+          {
+            "en": "Opponents proposed simulating exact neuron firings via water pipes; Searle replied that manipulating water valves still yields zero semantic comprehension of Chinese",
+            "mal": "തലച്ചോറിലെ ഓരോ ന്യൂറോണിന്റെയും പ്രവർത്തനത്തെ പൈപ്പുകളിലൂടെ വെള്ളമൊഴുക്കി അനുകരിച്ചാലും, ആ പൈപ്പുകൾ തിരിക്കുന്ന മനുഷ്യന് ചൈനീസ് ഭാഷയുടെ അർത്ഥം ലഭിക്കില്ലെന്ന് സിയേൾ മറുപടി നൽകി"
+          },
+          {
+            "en": "Opponents proposed building a brain out of copper; Searle melted the copper",
+            "mal": "ചെമ്പ് കൊണ്ട് തലച്ചോർ നിർമ്മിക്കാൻ നിർദ്ദേശിച്ചപ്പോൾ സിയേൾ അത് ഉരക്കിക്കളഞ്ഞു"
+          },
+          {
+            "en": "Opponents claimed digital neurons are immortal; Searle showed power cuts destroy them",
+            "mal": "ഡിജിറ്റൽ ന്യൂറോണുകൾ അമർത്യമാണെന്ന വാദത്തെ വൈദ്യുതി തടസ്സം കാണിച്ച് സിയേൾ തോൽപ്പിച്ചു"
+          },
+          {
+            "en": "Opponents argued simulation is always illegal under copyright law",
+            "mal": "അനുകരണം പകർപ്പവകാശ നിയമത്തിന് എതിരാണെന്ന വാദം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Searle responded that even if one constructs a massive hydraulic system of water pipes simulating every synapse firing in a native speaker's brain, turning the water valves produces no conscious understanding of Chinese.",
+        "explanationMal": "തലച്ചോറിലെ ന്യൂറോണുകളുടെ സിനാപ്റ്റിക് കണക്ഷനുകളെ ജല പൈപ്പുകളിലൂടെ എത്ര കൃത്യമായി അനുകരിച്ചാലും, ആ വാൽവുകൾ നിയന്ത്രിക്കുന്ന ആൾക്ക് ചൈനീസ് ഭാഷയുടെ അർത്ഥം തെല്ലും മനസ്സിലാകില്ല."
+      },
+      {
+        "question": "What modern paradigm in cognitive science directly emerged from the failure of disembodied classical AI?",
+        "questionMal": "ശരീരമില്ലാത്ത ക്ലാസിക്കൽ AI-യുടെ പരാജയത്തിൽ നിന്ന് ജന്മംകൊണ്ട ആധുനിക കോഗ്നിറ്റീവ് സയൻസ് സിദ്ധാന്തം ഏതാണ്?",
+        "options": [
+          {
+            "en": "Embodied Cognition (4E Cognition: Embodied, Embedded, Enacted, Extended)",
+            "mal": "എംബോഡീഡ് കോഗ്നിഷൻ അഥവാ 4E കോഗ്നിഷൻ (ശരീരവൽക്കരിക്കപ്പെട്ട, ഉൾച്ചേർക്കപ്പെട്ട, പ്രവർത്തനപരമായ, വിപുലീകരിക്കപ്പെട്ട ബുദ്ധി)"
+          },
+          {
+            "en": "Pure Substance Dualism",
+            "mal": "പ്യുവർ സബ്സ്റ്റൻസ് ഡ്യുവലിസം"
+          },
+          {
+            "en": "Mechanical Phrenology",
+            "mal": "മെക്കാനിക്കൽ ഫ്രെനോളജി"
+          },
+          {
+            "en": "Radical Solipsism",
+            "mal": "റാഡിക്കൽ സോളിപ്സിസം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Embodied Cognition (Francisco Varela, Andy Clark, Evan Thompson) posits that the mind is not an isolated central processor, but inextricably grounded in bodily interaction and environmental scaffolding.",
+        "explanationMal": "മനസ്സ് എന്നത് അടച്ചുപൂട്ടിയ കമ്പ്യൂട്ടർ പ്രോസസ്സറല്ല, മറിച്ച് ശാരീരിക ഇടപെടലുകളിലൂടെയും ബാഹ്യ ലോകവുമായുള്ള ബന്ധത്തിലൂടെയും രൂപപ്പെടുന്നതാണെന്ന '4E കോഗ്നിഷൻ' മുന്നോട്ടുവന്നു."
+      }
+    ]
+  },
   "ai_mal_ch7_8": {
     "title": "Module 2 · Chapter 5 · Disembodied Intelligence & Dreyfus' Critique",
     "titleMal": "മൊഡ്യൂൾ 2 · അധ്യായം 5 · ശരീരമില്ലാത്ത ബുദ്ധിശക്തിയും ഡ്രൈഫസിന്റെ വിമർശനവും",
@@ -13933,6 +14899,1004 @@ window.aiLearningData = {
         {
           "en": "Kant's synthesis directly maps to modern neuro-symbolic AI combining perception with reasoning.",
           "mal": "കാന്റിന്റെ തത്ത്വചിന്തയാണ് ഇന്നത്തെ ന്യൂറോ-സിംബോളിക് AI-യുടെ വഴികാട്ടി."
+        }
+      ]
+    },
+    "quizPool": [
+      {
+        "question": "How many Pramanas (valid means of knowledge) are accepted in the classical Nyaya philosophical system?",
+        "questionMal": "ക്ലാസിക്കൽ ന്യായ ദർശനത്തിൽ സാധുവായ എത്ര പ്രമാണങ്ങളാണ് (Pramanas) അംഗീകരിക്കപ്പെട്ടിട്ടുള്ളത്?",
+        "options": [
+          {
+            "en": "Four: Pratyaksha (perception), Anumana (inference), Upamana (analogy/comparison), and Shabda (testimony)",
+            "mal": "നാല്: പ്രത്യക്ഷം, അനുമാനം, ഉപമാനം, ശബ്ദം (ആപ്തവചനം)"
+          },
+          {
+            "en": "Only one: Pratyaksha (perception)",
+            "mal": "ഒന്ന് മാത്രം: പ്രത്യക്ഷം"
+          },
+          {
+            "en": "Six: including Arthapatti and Anupalabdhi",
+            "mal": "ആറ്: അർത്ഥാപത്തിയും അനുപലബ്ധിയും ഉൾപ്പെടെ"
+          },
+          {
+            "en": "Two: Pratyaksha and Anumana",
+            "mal": "രണ്ട്: പ്രത്യക്ഷവും അനുമാനവും"
+          }
+        ],
+        "answer": 0,
+        "explanation": "The Nyaya school founded by Aksapada Gautama accepts four distinct Pramanas: Pratyaksha (direct perception), Anumana (inferential reasoning), Upamana (analogical comparison), and Shabda (trustworthy testimony).",
+        "explanationMal": "ഗൗതമ മഹർഷിയുടെ ന്യായ ദർശനം അറിവ് നേടാനുള്ള നാല് സാധുവായ വഴികളെ അംഗീകരിക്കുന്നു: പ്രത്യക്ഷം (കാഴ്ച), അനുമാനം (യുക്തി), ഉപമാനം (താരതമ്യം), ശബ്ദം (വിശ്വാസയോഗ്യമായ സാക്ഷ്യം)."
+      },
+      {
+        "question": "What is the five-member syllogism (Pancha-Avayava) of Nyaya inference (Anumana) that anticipated rule-based expert systems?",
+        "questionMal": "റൂൾ-ബേസ്ഡ് എക്സ്പെർട്ട് സിസ്റ്റങ്ങൾക്ക് അടിത്തറയിട്ട ന്യായ ദർശനത്തിലെ അഞ്ചംഗ ന്യായവാക്യം (പഞ്ച-അവയവങ്ങൾ) ഏതാണ്?",
+        "options": [
+          {
+            "en": "Pratijna (thesis), Hetu (reason), Udaharana (example with universal rule), Upanaya (application), and Nigamana (conclusion)",
+            "mal": "പ്രതിജ്ഞ (പ്രസ്താവന), ഹേതു (കാരണം), ഉദാഹരണം (നിയമവും ഉദാഹരണവും), ഉപനയം (പ്രയോഗം), നിഗമനം (തീരുമാനം)"
+          },
+          {
+            "en": "Thesis, Antithesis, Synthesis, Negation, and Affirmation",
+            "mal": "തീസിസ്, ആന്റിതീസിസ്, സിന്തസിസ്, നെഗേഷൻ, അഫർമേഷൻ"
+          },
+          {
+            "en": "Input, Process, Storage, Control, and Output",
+            "mal": "ഇൻപുട്ട്, പ്രോസസ്സ്, സ്റ്റോറേജ്, കൺട്രോൾ, ഔട്ട്പുട്ട്"
+          },
+          {
+            "en": "Major premise, Minor premise, Middle term, Error, and Truth",
+            "mal": "മേജർ പ്രേമൈസ്, മൈനർ പ്രേമൈസ്, മിഡിൽ ടേം, പിഴവ്, സത്യം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Nyaya's Pancha-Avayava syllogism ('The hill has fire; because it has smoke; wherever there is smoke there is fire as in a kitchen; this hill has smoke; therefore this hill has fire') directly mirrors deductive rule-based expert systems.",
+        "explanationMal": "'മലയിൽ തീയുണ്ട് (പ്രതിജ്ഞ); പുകയുള്ളതിനാൽ (ഹേതു); എവിടെ പുകയുണ്ടോ അവിടെ തീയുണ്ട്, അടുക്കളയിലെപ്പോലെ (ഉദാഹരണം); മലയിലും പുകയുണ്ട് (ഉപനയം); അതിനാൽ മലയിൽ തീയുണ്ട് (നിഗമനം)'—ഇത് AI-യിലെ പ്രോഗ്രാമിങ് നിയമങ്ങൾക്ക് തുല്യമാണ്."
+      },
+      {
+        "question": "How many Pramanas are accepted in Buddhist Epistemology founded by Dignaga and Dharmakirti?",
+        "questionMal": "ദിഗ്നാഗനും ധർമ്മകീർത്തിയും സ്ഥാപിച്ച ബുദ്ധ ജ്ഞാനശാസ്ത്രം എത്ര പ്രമാണങ്ങളെയാണ് അംഗീകരിക്കുന്നത്?",
+        "options": [
+          {
+            "en": "Two: Pratyaksha (perception of particulars/svalaksana) and Anumana (inference of universals/samanyalaksana)",
+            "mal": "രണ്ട്: പ്രത്യക്ഷം (പ്രത്യേക ഗുണങ്ങൾ അറിയൽ), അനുമാനം (സാർവ്വത്രിക ആശയങ്ങൾ അറിയൽ)"
+          },
+          {
+            "en": "Four: including Upamana and Shabda",
+            "mal": "നാല്: ഉപമാനവും ശബ്ദവും ഉൾപ്പെടെ"
+          },
+          {
+            "en": "Zero: all knowledge is void (Sunya)",
+            "mal": "ഒന്നുമില്ല: എല്ലാ അറിവും ശൂന്യമാണ്"
+          },
+          {
+            "en": "Six: identical to Advaita Vedanta",
+            "mal": "ആറ്: അദ്വൈത വേദാന്തത്തിന് തുല്യം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Dignaga and Dharmakirti recognized only two Pramanas: direct sensory perception (Pratyaksha) which grasps unique particulars (svalaksana), and inferential thought (Anumana) which operates on conceptual universals (samanyalaksana).",
+        "explanationMal": "ബുദ്ധ ദർശനം ശബ്ദത്തെയും ഉപമാനത്തെയും സ്വതന്ത്ര പ്രമാണങ്ങളായി കാണാതെ പ്രത്യക്ഷം, അനുമാനം എന്നീ രണ്ട് വഴികളെ മാത്രം സത്യമായി അംഗീകരിക്കുന്നു."
+      },
+      {
+        "question": "How does the Buddhist core doctrine of 'Anatta' (No-Self) parallel modern connectionist AI architectures?",
+        "questionMal": "ബുദ്ധമതത്തിലെ 'അനത്ത' (സ്ഥിരമായ ആത്മാവില്ലെന്ന സിദ്ധാന്തം) ഇന്നത്തെ കണക്ഷനിസ്റ്റ് ന്യൂറൽ നെറ്റ്‌വർക്കുകളുമായി എങ്ങനെ സാമ്യപ്പെടുന്നു?",
+        "options": [
+          {
+            "en": "Cognition arises without an enduring centralized homunculus or CPU; it is an emergent dynamic flow of distributed mental factors (khandhas / weights)",
+            "mal": "തലച്ചോറിലോ കമ്പ്യൂട്ടറിലോ തീരുമാനങ്ങൾ എടുക്കുന്ന ഒരൊറ്റ 'ആത്മാവോ' കേന്ദ്രീകൃത സിപിയുവോ ഇല്ല; പകരം കോടിക്കണക്കിന് ന്യൂറോണുകളുടെ പരസ്പര ബന്ധത്തിൽ നിന്നാണ് ചിന്തകൾ ജനിക്കുന്നത്"
+          },
+          {
+            "en": "Buddhism forbids the use of silicon chips",
+            "mal": "ബുദ്ധമതം സിലിക്കൺ ചിപ്പുകളുടെ ഉപയോഗം വിലക്കുന്നു"
+          },
+          {
+            "en": "Neural networks must meditate under bodhi trees to converge",
+            "mal": "ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ ബോധി വൃക്ഷത്തിന് കീഴിൽ ധ്യാനിക്കണം"
+          },
+          {
+            "en": "Computers possess eternal reincarnation cycles in the cloud",
+            "mal": "കമ്പ്യൂട്ടറുകൾക്ക് പുനർജന്മമുണ്ടെന്ന വാദം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Just as Anatta rejects an unchanging Atman in favor of five impermanent skandhas (aggregates) causally interacting, deep learning replaces a single centralized executive CPU with distributed artificial neural node activations.",
+        "explanationMal": "മനസ്സ് എന്നത് സ്ഥിരമായ ഒന്നല്ല, മാറിക്കൊണ്ടിരിക്കുന്ന അനുഭവങ്ങളുടെ പ്രവാഹമാണെന്ന ബുദ്ധന്റെ 'അനത്ത' സിദ്ധാന്തം പോലെയാണ് ന്യൂറൽ നെറ്റ്‌വർക്കിലെ വിതരണം ചെയ്യപ്പെട്ട സിഗ്നലുകൾ."
+      },
+      {
+        "question": "What is the Buddhist Apoha theory of concept formation, and what does it anticipate in AI?",
+        "questionMal": "ബുദ്ധമതത്തിലെ 'അപോഹ' (Apoha) സിദ്ധാന്തം എന്താണ്, അത് AI-യിൽ എന്തിനെയാണ് മുൻകൂട്ടി കണ്ടത്?",
+        "options": [
+          {
+            "en": "Concepts are formed through exclusion/negation of other categories (Anyapoha: 'cow' = 'exclusion of non-cows'), anticipating boundary hyperplanes and vector contrastive embeddings",
+            "mal": "ഒരു വസ്തുവിന്റെ ആശയം ഉണ്ടാകുന്നത് മറ്റുള്ളവയല്ല എന്ന് വേർതിരിച്ചറിയുന്നതിലൂടെയാണ് (അന്യപോഹം: 'പശു' എന്നാൽ 'പശുവല്ലാത്തതിനെ ഒഴിവാക്കൽ'); ഇത് AI-യിലെ വെക്റ്റർ എംബെഡിംഗുകൾക്ക് തുല്യമാണ്"
+          },
+          {
+            "en": "Concepts are divinely implanted by Brahma during sleep",
+            "mal": "ഉറക്കത്തിൽ ബ്രഹ്മാവ് ആശയങ്ങൾ തലച്ചോറിലേക്ക് നൽകുന്നു"
+          },
+          {
+            "en": "Concepts are identical to grammatical punctuation marks",
+            "mal": "ആശയങ്ങൾ വിരാമചിഹ്നങ്ങൾക്ക് തുല്യമാണ്"
+          },
+          {
+            "en": "Knowledge requires memorizing Sanskrit dictionaries without comprehension",
+            "mal": "സംസ്കൃത നിഘണ്ടു കാണാതെ പഠിക്കലാണ് അറിവ്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Dignaga's Apoha theory posited that universal concepts do not possess positive metaphysical essences; they exist purely by distinguishing and excluding the 'other' (anyapoha), mirroring classification decision boundaries in machine learning.",
+        "explanationMal": "ഒരു വസ്തുവിന് പ്രത്യേക സാർവ്വത്രിക ആത്മാവില്ല, മറിച്ച് മറ്റ് വസ്തുക്കളിൽ നിന്നുള്ള വ്യത്യാസം മനസ്സിലാക്കുന്നതിലൂടെയാണ് (നെഗറ്റീവ് വേർതിരിവ്) കമ്പ്യൂട്ടറും മനുഷ്യനും ആശയങ്ങൾ തിരിച്ചറിയുന്നത്."
+      },
+      {
+        "question": "What is the foundational claim of Mind-Brain Identity Theory (Type Physicalism) formulated by Place, Smart, and Feigl?",
+        "questionMal": "പ്ലേസ്, സ്മാർട്ട്, ഫീഗൽ എന്നിവർ അവതരിപ്പിച്ച 'മൈൻഡ്-ബ്രെയിൻ ഐഡന്റിറ്റി തിയറിയുടെ' (Type Physicalism) പ്രധാന വാദം എന്താണ്?",
+        "options": [
+          {
+            "en": "Mental states are strictly identical to specific neurobiological physical states of the brain (e.g., Pain = C-fibers firing)",
+            "mal": "മനുഷ്യന്റെ മാനസികാവസ്ഥകൾ തലച്ചോറിലെ പ്രത്യേക നാഡീ-ജൈവിക പ്രവർത്തനങ്ങൾക്ക് തുല്യമാണ് (ഉദാ: വേദന എന്നാൽ സി-ഫൈബറുകളുടെ ഉത്തേജനം)"
+          },
+          {
+            "en": "The mind is made of ectoplasm hovering above the forehead",
+            "mal": "മനസ്സ് നെറ്റിക്ക് മുകളിൽ പറന്നുനടക്കുന്ന ഒന്നാണ്"
+          },
+          {
+            "en": "The brain is an unnecessary byproduct of spiritual meditation",
+            "mal": "തലച്ചോറ് വെറും അനാവശ്യ അവയവമാണ്"
+          },
+          {
+            "en": "Thoughts are stored outside the universe in black holes",
+            "mal": "ചിന്തകൾ തമോഗർത്തങ്ങളിലാണ് സൂക്ഷിക്കപ്പെടുന്നത്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Type Identity Theory asserts a strict ontological identity between mental types and physical brain types: sensations, beliefs, and emotions are literally nothing other than neurochemical events in the biological brain.",
+        "explanationMal": "മനസ്സും തലച്ചോറും രണ്ടല്ല, ഒന്നാണ്; മാനസിക അനുഭവങ്ങളെല്ലാം തലച്ചോറിലെ ഭൗതിക-രാസ പ്രവർത്തനങ്ങൾ മാത്രമാണെന്ന് ഈ ഭൗതികവാദ സിദ്ധാന്തം വ്യക്തമാക്കുന്നു."
+      },
+      {
+        "question": "What major philosophical objection proposed by Hilary Putnam crippled Type Identity Theory?",
+        "questionMal": "ഹിലരി പുട്ട്നം ഉന്നയിച്ച ഏത് പ്രശസ്തമായ തടസ്സവാദമാണ് മൈൻഡ്-ബ്രെയിൻ ഐഡന്റിറ്റി തിയറിയെ തകർത്തത്?",
+        "options": [
+          {
+            "en": "Multiple Realizability: identical psychological states can be physically realized across radically different substrates (mammalian brains, octopuses, silicon chips)",
+            "mal": "മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി: മനുഷ്യന്റെ തലച്ചോറിലും നീരാളിയിലും സിലിക്കൺ ചിപ്പുകളിലും ഒരേ മാനസികാവസ്ഥ വ്യത്യസ്ത ഭൗതിക മാധ്യമങ്ങളിലൂടെ ഉണ്ടാകാം"
+          },
+          {
+            "en": "The Turing Test was too easy for human children",
+            "mal": "ട്യൂറിങ് ടെസ്റ്റ് കുട്ടികൾക്ക് പോലും ജയിക്കാൻ എളുപ്പമാണ്"
+          },
+          {
+            "en": "Computers cannot execute mathematical division by zero",
+            "mal": "കമ്പ്യൂട്ടറുകൾക്ക് പൂജ്യം കൊണ്ട് ഹരിക്കാൻ കഴിയില്ല"
+          },
+          {
+            "en": "Brains are made of non-atomic spiritual vapor",
+            "mal": "തലച്ചോറ് ആത്മീയ നീരാവി കൊണ്ടാണ് നിർമ്മിച്ചിരിക്കുന്നത്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Putnam (1967) demonstrated that if pain were identical to C-fiber stimulation, an octopus or an alien without C-fibers could never feel pain. Mind is substrate-independent.",
+        "explanationMal": "വേദന എന്നാൽ മനുഷ്യന്റെ സി-ഫൈബറുകൾ മാത്രമാണെന്ന് പറഞ്ഞാൽ സി-ഫൈബറുകൾ ഇല്ലാത്ത നീരാളികൾക്കോ അന്യഗ്രഹ ജീവികൾക്കോ വേദനയുണ്ടാകില്ലെന്ന് പറയേണ്ടിവരും; ഇത് തെറ്റാണെന്ന് പുട്ട്നം തെളിയിച്ചു."
+      },
+      {
+        "question": "How does Functionalism define mental states like belief, desire, and pain?",
+        "questionMal": "ഫങ്ഷണലിസം (Functionalism) മനുഷ്യന്റെ ചിന്തകളെയും വികാരങ്ങളെയും എങ്ങനെയാണ് നിർവചിക്കുന്നത്?",
+        "options": [
+          {
+            "en": "By their functional and causal roles—how they relate sensory inputs to other internal states and motor outputs—not by physical substrate",
+            "mal": "അവയുടെ പ്രവർത്തനപരമായ ദൗത്യങ്ങളിലൂടെ (ഇൻപുട്ട്, ആന്തരിക മാറ്റങ്ങൾ, ഔട്ട്പുട്ട് എന്നിവ തമ്മിലുള്ള കാര്യകാരണ ബന്ധം); അല്ലാതെ അവ നിർമ്മിക്കപ്പെട്ട വസ്തു കൊണ്ടല്ല"
+          },
+          {
+            "en": "By the weight and physical volume of the skull in grams",
+            "mal": "തലയോട്ടിയുടെ ഭാരവും അളവും അനുസരിച്ച്"
+          },
+          {
+            "en": "By astrological planetary positions at the time of birth",
+            "mal": "ജനിച്ച സമയത്തെ ഗ്രഹനിലകൾ അനുസരിച്ച്"
+          },
+          {
+            "en": "By the speed of blood circulation in the veins",
+            "mal": "രക്തയോട്ടത്തിന്റെ വേഗത അനുസരിച്ച്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Functionalism posits that what makes something a mental state is its characteristic causal relations within the cognitive system, regardless of whether it runs on carbon or silicon.",
+        "explanationMal": "ഒരു മാനസികാവസ്ഥ എന്താണെന്ന് നിർണ്ണയിക്കുന്നത് അത് സിസ്റ്റത്തിൽ ചെയ്യുന്ന പ്രവർത്തനമാണ്; തലച്ചോറിലായാലും കമ്പ്യൂട്ടറിലായാലും ഒരേ പ്രവർത്തനം നടക്കുന്നുണ്ടെങ്കിൽ മനസ്സ് ഉണ്ട്."
+      },
+      {
+        "question": "What is the core idea behind Jerry Fodor's Computational Theory of Mind (CTM)?",
+        "questionMal": "ജെറി ഫോഡോർ അവതരിപ്പിച്ച 'കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡിന്റെ' (CTM) കേന്ദ്ര ആശയം എന്താണ്?",
+        "options": [
+          {
+            "en": "Thinking is the formal syntactic manipulation of mental symbols in an internal Language of Thought (Mentalese)",
+            "mal": "ചിന്ത എന്നാൽ മനസ്സിലെ ആന്തരിക ഭാഷയിൽ ('മെന്റലീസ്') ചിഹ്നങ്ങളെ ചിട്ടയായി കൈകാര്യം ചെയ്യുന്ന പ്രക്രിയയാണ്"
+          },
+          {
+            "en": "The brain is an acoustic musical radio receiver",
+            "mal": "തലച്ചോറ് വെറുമൊരു റേഡിയോ റിസീവറാണ്"
+          },
+          {
+            "en": "Consciousness requires eating organic vegetables daily",
+            "mal": "ബോധം നിലനിൽക്കാൻ പച്ചക്കറികൾ കഴിക്കണം"
+          },
+          {
+            "en": "Human minds are controlled by distant telepathic satellites",
+            "mal": "മനുഷ്യന്റെ മനസ്സ് നിയന്ത്രിക്കുന്നത് ഉപഗ്രഹങ്ങളാണ്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Fodor's CTM unites representational realism with Turing computation: intentional states (beliefs, desires) are encoded as mental representations with linguistic syntax processed computational-mechanically.",
+        "explanationMal": "മനസ്സിൽ 'മെന്റലീസ്' എന്ന ആന്തരിക ചിഹ്ന ഭാഷയുണ്ടെന്നും, ചിന്ത എന്നാൽ ആ ചിഹ്നങ്ങളെ കമ്പ്യൂട്ടർ പോലെ പ്രോസസ്സ് ചെയ്യുന്നതാണെന്നും ഫോഡോർ വാദിച്ചു."
+      },
+      {
+        "question": "What is Ned Block's 'China Brain' thought experiment designed to prove against Functionalism?",
+        "questionMal": "ഫങ്ഷണലിസത്തിന് എതിരായി നെഡ് ബ്ലോക്ക് അവതരിപ്പിച്ച 'ചൈന ബ്രെയിൻ' പരീക്ഷണം തെളിയിക്കുന്നത് എന്താണ്?",
+        "options": [
+          {
+            "en": "A system could fully duplicate the functional organization of a human brain while completely lacking qualia (subjective phenomenal consciousness)",
+            "mal": "തലച്ചോറിന്റെ മുഴുവൻ പ്രവർത്തനങ്ങളും കൃത്യമായി അനുകരിച്ചാലും ഒരു സിസ്റ്റത്തിന് ആന്തരിക അനുഭവങ്ങളോ (Qualia) യഥാർത്ഥ ബോധമോ ഉണ്ടാകണമെന്നില്ല"
+          },
+          {
+            "en": "China's population is too small to build a supercomputer",
+            "mal": "ചൈനയിലെ ജനസംഖ്യ സൂപ്പർ കമ്പ്യൂട്ടർ ഉണ്ടാക്കാൻ തികയില്ല"
+          },
+          {
+            "en": "Radio walkie-talkies cause neurological brain damage",
+            "mal": "വാക്കി-ടോക്കികൾ തലച്ചോറിന് കേടുപാടുകൾ ഉണ്ടാക്കുന്നു"
+          },
+          {
+            "en": "Language translation between Chinese and English is impossible",
+            "mal": "ചൈനീസും ഇംഗ്ലീഷും തമ്മിൽ വിവർത്തനം സാധ്യമല്ല"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Block showed that if every citizen of China simulated a neuron communicating via radio, the system would be functionally isomorphic to a brain, yet intuitively devoid of conscious experience (Absent Qualia).",
+        "explanationMal": "ചൈനയിലെ ജനങ്ങൾ വാക്കി-ടോക്കി വഴി തലച്ചോറിന്റെ പ്രവർത്തനം നടത്തിയാലും, ചൈന എന്ന രാജ്യത്തിന് പല്ലുവേദനയോ നിറങ്ങളുടെ അനുഭവമോ ഉണ്ടാകില്ല (Absent Qualia)."
+      },
+      {
+        "question": "What is 'Vyapti' in Indian Nyaya logic, and what is its role in AI inference?",
+        "questionMal": "ന്യായ ദർശനത്തിലെ 'വ്യാപ്തി' എന്നാൽ എന്താണ്, AI ഇൻഫറൻസിൽ അതിന്റെ പങ്കെന്ത്?",
+        "options": [
+          {
+            "en": "The invariable, unconditional universal concomitance between the sign (Hetu) and the inferred property (Sadhya), forming the basis of IF-THEN rules",
+            "mal": "കാരണവും ഫലവും തമ്മിലുള്ള മാറ്റമില്ലാത്ത സാർവ്വത്രിക ബന്ധം (ഉദാ: പുകയും തീയും); ഇതാണ് AI-യിലെ 'IF-THEN' റൂളുകളുടെ അടിസ്ഥാനം"
+          },
+          {
+            "en": "A ritual prayer recited before turning on a computer",
+            "mal": "കമ്പ്യൂട്ടർ ഓൺ ചെയ്യുന്നതിന് മുമ്പുള്ള പ്രാർത്ഥന"
+          },
+          {
+            "en": "The optical reflection of light in a glass prism",
+            "mal": "പ്രകാശത്തിന്റെ പ്രതിഫലനം"
+          },
+          {
+            "en": "The mathematical ratio between screen width and height",
+            "mal": "സ്ക്രീനിന്റെ അളവുകൾ തമ്മിലുള്ള അനുപാതം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Vyapti is the foundational inductive-deductive invariant relation (e.g., 'wherever there is smoke, there is fire') that validates inferential syllogisms in rule-based expert systems.",
+        "explanationMal": "പുകയുള്ളിടത്തെല്ലാം തീയുണ്ടാകും എന്നതുപോലെ, രണ്ട് കാര്യങ്ങൾ തമ്മിലുള്ള മാറ്റമില്ലാത്ത സാർവ്വത്രിക നിയമമാണ് വ്യാപ്തി; ഇത് അടിസ്ഥാനമാക്കിയാണ് റൂൾ-ബേസ്ഡ് AI തീരുമാനങ്ങൾ എടുക്കുന്നത്."
+      },
+      {
+        "question": "What is the Buddhist philosophical doctrine of 'Kshanikavada' (Momentariness) and its computational analogy?",
+        "questionMal": "ബുദ്ധമതത്തിലെ 'ക്ഷണികവാദം' (Kshanikavada) എന്നാൽ എന്താണ്, അതിന്റെ കമ്പ്യൂട്ടേഷണൽ സാമ്യത എന്തിനാണ്?",
+        "options": [
+          {
+            "en": "Everything in reality is a rapid succession of momentary, dynamic flashes/events rather than static unchanging substances, resembling discrete clock cycles and time-series recurrent neural states",
+            "mal": "പ്രപഞ്ചത്തിലെ സകലതും മാറ്റമില്ലാത്ത സ്ഥിര വസ്തുക്കളല്ല, മറിച്ച് ഓരോ ക്ഷണത്തിലും മാറിക്കൊണ്ടിരിക്കുന്ന പ്രവാഹമാണ്; ഇത് കമ്പ്യൂട്ടറിന്റെ ക്ലോക്ക് സൈക്കിളുകൾക്കും റിക്കറന്റ് ന്യൂറൽ നെറ്റ്‌വർക്കുകൾക്കും തുല്യമാണ്"
+          },
+          {
+            "en": "Computers only operate for a single minute before melting",
+            "mal": "കമ്പ്യൂട്ടറുകൾ ഒരു മിനിറ്റ് മാത്രമേ പ്രവർത്തിക്കൂ"
+          },
+          {
+            "en": "Human memory deletes all information every sixty seconds",
+            "mal": "മനുഷ്യന്റെ ഓർമ്മ ഓരോ മിനിറ്റിലും നശിക്കുന്നു"
+          },
+          {
+            "en": "Only momentary electrical storms can power artificial intelligence",
+            "mal": "ഇടിമിന്നൽ കൊണ്ട് മാത്രമേ AI പ്രവർത്തിക്കൂ"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Kshanikavada asserts that reality is composed of instantaneous events (dharmas) appearing and disappearing in causal continuity, directly matching state-transition machines and dynamic hidden states in recurrent deep learning.",
+        "explanationMal": "സ്ഥിരമായി നിൽക്കുന്ന ആത്മാവോ വസ്തുവോ ഇല്ല, തുടർച്ചയായ അനുഭവങ്ങളുടെ മിന്നലുകൾ മാത്രമാണെന്ന ബുദ്ധന്റെ ക്ഷണികവാദം കമ്പ്യൂട്ടറിന്റെ പ്രോസസ്സിങ് സൈക്കിളുകളുമായി തികച്ചും ഒത്തുപോകുന്നു."
+      },
+      {
+        "question": "What is Polanyi's Paradox in epistemology, and why is it a bottleneck for classical AI?",
+        "questionMal": "ജ്ഞാനശാസ്ത്രത്തിലെ 'പൊളാനിയുടെ വിരോധാഭാസം' (Polanyi's Paradox) എന്താണ്, അത് ക്ലാസിക്കൽ AI-ക്ക് വെല്ലുവിളിയായത് എന്തുകൊണ്ട്?",
+        "options": [
+          {
+            "en": "'We know more than we can tell': human tacit knowledge cannot be fully formalized into explicit algorithmic rules",
+            "mal": "'നമുക്ക് വിവരിക്കാൻ കഴിയുന്നതിനേക്കാൾ കൂടുതൽ കാര്യങ്ങൾ അറിയാം': മനുഷ്യന്റെ അനുഭവജ്ഞാനം (Tacit Knowledge) മുഴുവൻ നിയമങ്ങളാക്കി എഴുതാൻ കഴിയില്ല"
+          },
+          {
+            "en": "Computers cannot read books written in foreign languages",
+            "mal": "കമ്പ്യൂട്ടറുകൾക്ക് വിദേശ ഭാഷകൾ വായിക്കാൻ കഴിയില്ല"
+          },
+          {
+            "en": "Math formulas become incorrect after midnight",
+            "mal": "ഗണിത സമവാക്യങ്ങൾ അർദ്ധരാത്രിക്ക് ശേഷം തെറ്റായി മാറുന്നു"
+          },
+          {
+            "en": "Paradoxes automatically erase hard drives",
+            "mal": "വിരോധാഭാസങ്ങൾ ഹാർഡ് ഡ്രൈവ് നശിപ്പിക്കുന്നു"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Michael Polanyi (1966) showed that tacit skills like recognizing a face or riding a bicycle are intuitively executed without conscious rule-following, rendering GOFAI rule-based systems brittle.",
+        "explanationMal": "ഒരു മുഖം തിരിച്ചറിയുന്നതും സൈക്കിൾ ചവിട്ടുന്നതും നിയമങ്ങൾ നോക്കിയല്ല നാം ചെയ്യുന്നത്; ഇത്തരം ആന്തരിക അറിവുകൾ പ്രോഗ്രാം ചെയ്യാൻ ക്ലാസിക്കൽ AI-ക്ക് കഴിഞ്ഞില്ല."
+      },
+      {
+        "question": "What is the Gettier Problem in epistemology, and how does it challenge AI automated decision-making?",
+        "questionMal": "ജ്ഞാനശാസ്ത്രത്തിലെ 'ഗെറ്റിയർ സമസ്യ' (Gettier Problem) എന്താണ്, അത് AI തീരുമാനങ്ങളെ എങ്ങനെ ബാധിക്കുന്നു?",
+        "options": [
+          {
+            "en": "Justified True Belief (JTB) can arise purely through epistemic luck/accident, proving that accurate algorithmic predictions do not equal genuine understanding",
+            "mal": "ഒരു വിശ്വാസം യാദൃശ്ചികമായി ശരിയായതുകൊണ്ട് മാത്രം അത് യഥാർത്ഥ അറിവാകില്ല; AI കൃത്യമായ ഉത്തരം നൽകിയാലും അതിന് വസ്തുത മനസ്സിലായി എന്ന് പറയാനാവില്ല"
+          },
+          {
+            "en": "Gettier proved that computers have human souls",
+            "mal": "കമ്പ്യൂട്ടറുകൾക്ക് ആത്മാവുണ്ടെന്ന് ഗെറ്റിയർ തെളിയിച്ചു"
+          },
+          {
+            "en": "Algorithms can never output true statements",
+            "mal": "അൽഗോരിതങ്ങൾക്ക് ഒരിക്കലും ശരിയുത്തരം നൽകാനാവില്ല"
+          },
+          {
+            "en": "All knowledge must be verified by three judges",
+            "mal": "എല്ലാ അറിവും മൂന്ന് ന്യായാധിപന്മാർ പരിശോധിച്ച് ഉറപ്പാക്കണം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Edmund Gettier (1963) dismantled the classical definition of knowledge (JTB) by demonstrating cases where an agent holds a justified true belief by pure coincidence, mirroring AI models picking up spurious correlations.",
+        "explanationMal": "യാദൃശ്ചികമായി ശരിയുത്തരം കിട്ടുന്നത് യഥാർത്ഥ അറിവല്ലെന്ന് ഗെറ്റിയർ തെളിയിച്ചു; ഡാറ്റയിലെ അവിചാരിത പാറ്റേണുകൾ കണ്ട് AI നൽകുന്ന ഉത്തരങ്ങൾക്കും ഇത് ബാധകമാണ്."
+      },
+      {
+        "question": "How did Gilbert Ryle describe Cartesian mind-body dualism in 'The Concept of Mind' (1949)?",
+        "questionMal": "1949-ൽ ഗിൽബർട്ട് റൈൽ ദെക്കാർത്തിന്റെ ഡ്യുവലിസത്തെ വിശേഷിപ്പിച്ചത് എങ്ങനെയാണ്?",
+        "options": [
+          {
+            "en": "As a 'Category Mistake' leading to the dogma of the 'Ghost in the Machine'",
+            "mal": "ഒരു 'കാറ്റഗറി മിസ്റ്റേക്ക്' (വിഭാഗപരമായ പിഴവ്) വഴി ഉടലെടുത്ത 'യന്ത്രത്തിനുള്ളിലെ പ്രേതം' (Ghost in the Machine) എന്ന്"
+          },
+          {
+            "en": "As the supreme pinnacle of scientific perfection",
+            "mal": "ശാസ്ത്രത്തിന്റെ ഏറ്റവും വലിയ നേട്ടമായി"
+          },
+          {
+            "en": "As an optical illusion caused by damaged glasses",
+            "mal": "കേടായ കണ്ണടകൾ മൂലമുണ്ടാകുന്ന കാഴ്ചഭ്രമമായി"
+          },
+          {
+            "en": "As an electronic glitch in neural synapses",
+            "mal": "ന്യൂറോണുകളിലെ ഇലക്ട്രോണിക് തകരാറായി"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Gilbert Ryle argued that Descartes mistakenly treated the mind as an extra physical substance existing alongside bodily mechanics, rather than understanding mind as behavioral dispositions.",
+        "explanationMal": "ശരീരത്തിനകത്തിരുന്ന് പ്രവർത്തിക്കുന്ന അദൃശ്യ പ്രേതമല്ല മനസ്സ്, മറിച്ച് മനുഷ്യന്റെ പെരുമാറ്റരീതികളുടെ ആകെത്തുകയാണ് മനസ്സ് എന്ന് റൈൽ വ്യക്തമാക്കി."
+      }
+    ]
+  },
+  "ai_mal_ch12": {
+    "title": "Module 3 · Chapter 4 · Functionalism & Machine State Identity",
+    "titleMal": "മൊഡ്യൂൾ 3 · അധ്യായം 4 · ഫങ്ഷണലിസവും മെഷീൻ സ്റ്റേറ്റ് ഐഡന്റിറ്റിയും",
+    "filename": "Module_3_Chapter_4_Functionalism.pdf",
+    "summary": {
+      "overview": "⚡ HIGH-YIELD EXECUTIVE CORE: Functionalism, developed by Hilary Putnam and Jerry Fodor, solved the mind-body problem by asserting that mental states are defined purely by their functional/causal roles (inputs → internal states → outputs), completely independent of physical substrate. It established the bedrock philosophical legitimacy of AI: 'Mind is Software; Brain is Hardware'. However, Ned Block's 'China Brain' and the Qualia problem demonstrated its critical blindspot regarding phenomenal consciousness.",
+      "overviewMal": "⚡ പരീക്ഷാ സംഗ്രഹം (3-Page Core): ഹിലരി പുട്ട്നവും ജെറി ഫോഡോറും അവതരിപ്പിച്ച ഫങ്ഷണലിസം, മനസ്സ് എന്നത് എന്ത് വസ്തു കൊണ്ടാണ് ഉണ്ടാക്കിയത് എന്നതിലല്ല, മറിച്ച് അത് എന്ത് ജോലി ചെയ്യുന്നു എന്നതിലാണ് സ്ഥിതിചെയ്യുന്നത് എന്ന് വ്യക്തമാക്കി. 'മനസ്സ് സോഫ്റ്റ്‌വെയറും തലച്ചോറ് ഹാർഡ്‌വെയറുമാണ്' എന്ന ഈ മാതൃക സിലിക്കൺ ചിപ്പുകളിലും ബുദ്ധി സാധ്യമാണെന്ന് തെളിയിച്ചു; എന്നാൽ അനുഭവങ്ങളെ (Qualia) വിശദീകരിക്കാൻ അതിന് കഴിയില്ലെന്ന് നെഡ് ബ്ലോക്ക് ചൂണ്ടിക്കാട്ടി.",
+      "keyMetrics": [
+        {
+          "label": "CORE THESIS",
+          "labelMal": "കേന്ദ്ര തത്ത്വം",
+          "value": "Functional Role Definition",
+          "detail": "⚡ Mental states are causal nodes linking inputs, internal transitions, and outputs."
+        },
+        {
+          "label": "BEDROCK AXIOM",
+          "labelMal": "അടിസ്ഥാന സിദ്ധാന്തം",
+          "value": "Substrate Neutrality",
+          "detail": "🔑 Multiple Realizability: cognition runs identically on carbon wetware or silicon microchips."
+        },
+        {
+          "label": "FATAL CRITIQUE",
+          "labelMal": "പ്രധാന വിമർശനം",
+          "value": "Absent Qualia & China Brain",
+          "detail": "🧠 A system can execute functional roles without subjective phenomenal experience."
+        }
+      ],
+      "sections": [
+        {
+          "badge": "Page 1: The Functionalist Paradigm",
+          "title": "PAGE 1 · Functionalism & Substrate Neutrality",
+          "titleMal": "പേജ് 1 · ഫങ്ഷണലിസവും സബ്സ്റ്റ്രേറ്റ് ന്യൂട്രാലിറ്റിയും",
+          "points": [
+            {
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Functionalist Definition of Mind</mark>: Mental states are constituted entirely by their causal relations to sensory inputs, other internal cognitive states, and motor actions. Substrate is irrelevant.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഫങ്ഷണലിസം:</mark> ഒരു മാനസികാവസ്ഥ എന്താണെന്ന് നിർണ്ണയിക്കുന്നത് അത് സിസ്റ്റത്തിൽ ചെയ്യുന്ന പ്രവർത്തനമാണ്; അല്ലാതെ അത് നിർമ്മിക്കപ്പെട്ട മാധ്യമമല്ല."
+            },
+            {
+              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The Mousetrap Metaphor</mark>: A device is a mousetrap because it traps mice—whether constructed of wood, steel wire, plastic, or lasers. Similarly, a mind is a mind because it processes cognitive functions, whether built of carbon neurons or silicon transistors.",
+              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>എലിപ്പേണിന്റെ ഉപമ:</mark> മരം കൊണ്ടോ ഇരുമ്പ് കൊണ്ടോ പ്ലാസ്റ്റിക് കൊണ്ടോ ഉണ്ടാക്കിയാലും എലിയെ പിടിക്കുക എന്നതാണ് എലിപ്പേണിന്റെ ജോലി; അതുപോലെ ചിന്തിക്കാൻ കഴിയുമെങ്കിൽ സിലിക്കൺ ചിപ്പും മനസ്സാണ്."
+            },
+            {
+              "en": "<span style='background:#fee2e2; color:#991b1b; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚠️ EXAM TRAP</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Multiple Realizability (Putnam 1967)</mark>: Defeated Mind-Brain Identity Theory: pain cannot be strictly 'human C-fiber firings' because an octopus, dog, or AI agent can instantiate the exact functional role of pain without mammalian neural anatomy.",
+              "mal": "<span style='background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>⚠️ പരീക്ഷാ ചോദ്യം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി:</mark> മനുഷ്യനിലും നീരാളിയിലും റോബോട്ടിലും വ്യത്യസ്ത ഭൗതിക മാധ്യമങ്ങളിലൂടെ ഒരേ മാനസികാവസ്ഥകൾ പ്രവർത്തിപ്പിക്കാമെന്ന് പുട്ട്നം തെളിയിച്ചു."
+            }
+          ]
+        },
+        {
+          "badge": "Page 2: Machine State Functionalism & CTM",
+          "title": "PAGE 2 · Machine State Functionalism & Jerry Fodor's CTM",
+          "titleMal": "പേജ് 2 · മെഷീൻ സ്റ്റേറ്റ് ഫങ്ഷണലിസവും കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡും",
+          "points": [
+            {
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Putnam's Probabilistic Automaton</mark>: Any cognitive being can be formally modeled as a probabilistic Turing machine whose internal states ($S_1, S_2 \\dots S_n$) transition deterministically or probabilistically according to lookup tables.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ട്യൂറിങ് മെഷീൻ മാതൃക:</mark> മനുഷ്യന്റെ മാനസികാവസ്ഥകൾ ഒരു ട്യൂറിങ് മെഷീനിലെ സ്റ്റേറ്റ് ട്രാൻസിഷനുകൾക്ക് തുല്യമാണെന്ന പുട്ട്നത്തിന്റെ സിദ്ധാന്തം."
+            },
+            {
+              "en": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🧠 THOUGHT EXPERIMENT</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Fodor's Language of Thought (Mentalese)</mark>: Jerry Fodor's Computational Theory of Mind (CTM) argues that thoughts possess an internal syntactic structure—we think in a mental language whose grammar is manipulated computationally.",
+              "mal": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🧠 ചിന്താ പരീക്ഷണം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>മെന്റലീസ് (Mentalese):</mark> മനസ്സിൽ ഒരു ആന്തരിക ചിഹ്ന ഭാഷയുണ്ടെന്നും, കമ്പ്യൂട്ടർ പ്രോഗ്രാമുകൾ പോലെ ആ ചിഹ്നങ്ങളെ ചിട്ടയായി മാറ്റിയെഴുതുന്നതാണ് ചിന്തയെന്നും ഫോഡോർ വാദിച്ചു."
+            },
+            {
+              "en": "<span style='background:#dcfce7; color:#166534; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>💡 RECALL HOOK</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Software / Hardware Distinction</mark>: Psychology studies the algorithmic software; neuroscience studies the physical hardware.",
+              "mal": "<span style='background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>💡 ഓർമ്മയ്ക്കായി:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>സോഫ്റ്റ്‌വെയർ - ഹാർഡ്‌വെയർ:</mark> മനശാസ്ത്രം സോഫ്റ്റ്‌വെയറിനെയും, ന്യൂറോസയൻസ് ഹാർഡ്‌വെയറിനെയും പഠിക്കുന്നു."
+            }
+          ]
+        },
+        {
+          "badge": "Page 3: Critiques of Functionalism",
+          "title": "PAGE 3 · Critiques: Ned Block's China Brain & Absent Qualia",
+          "titleMal": "പേജ് 3 · വിമർശനങ്ങൾ: നെഡ് ബ്ലോക്കിന്റെ ചൈന ബ്രെയിനും ആബ്സന്റ് ക്വാലിയയും",
+          "points": [
+            {
+              "en": "<span style='background:#fee2e2; color:#991b1b; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚠️ EXAM TRAP</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Ned Block's China Brain (1978)</mark>: Imagine 1 billion citizens of China connected by two-way walkie-talkies, replicating the exact functional neural firings of a human brain for an hour. Would China collectively feel a conscious toothache or experience the redness of a rose? No!",
+              "mal": "<span style='background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>⚠️ പരീക്ഷാ ചോദ്യം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>നെഡ് ബ്ലോക്കിന്റെ ചൈന ബ്രെയിൻ:</mark> ചൈനയിലെ മുഴുവൻ ജനങ്ങളും വാക്കി-ടോക്കി വഴി തലച്ചോറിന്റെ പ്രവർത്തനങ്ങൾ അനുകരിച്ചാലും, ആ രാജ്യത്തിന് വേദനയോ വികാരങ്ങളോ ഉണ്ടാകില്ല."
+            },
+            {
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The Absent Qualia Problem</mark>: Functionalism completely accounts for computational performance, but fails to explain subjective, qualitative conscious feelings (Qualia). A zombie system can mimic all functions while being pitch-black inside.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ആബ്സന്റ് ക്വാലിയ (Absent Qualia):</mark> എല്ലാ ജോലികളും പുറമെ ഭംഗിയായി ചെയ്താലും ഒരു മെഷീന് ഉള്ളിൽ യാതൊരു അനുഭവങ്ങളും ഉണ്ടാകണമെന്നില്ല."
+            },
+            {
+              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Inverted Spectrum Problem</mark>: Two agents might have identical functional wiring, but one experiences blue whenever the other experiences red. Functionalism cannot detect the qualitative inversion.",
+              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഇൻവേർട്ടഡ് സ്പെക്ട്രം:</mark> രണ്ട് പേർ ഒരേപോലെ പ്രതികരിച്ചാലും ഒരാൾ ഉള്ളിൽ കാണുന്നത് പച്ചയും മറ്റൊരാൾ ചുവപ്പും ആണെങ്കിൽ ഫങ്ഷണലിസത്തിന് അത് വേർതിരിക്കാനാവില്ല."
+            }
+          ]
+        }
+      ],
+      "coreConcepts": [
+        {
+          "term": "Functionalism",
+          "termMal": "ഫങ്ഷണലിസം",
+          "def": "Mental states defined by causal roles, not physical material.",
+          "defMal": "മനസ്സ് എന്തുണ്ട് ഉണ്ടാക്കി എന്നതിലല്ല, എന്ത് ജോലി ചെയ്യുന്നു എന്നതിലൂടെ അറിയപ്പെടുന്നു."
+        },
+        {
+          "term": "Substrate Neutrality",
+          "termMal": "സബ്സ്റ്റ്രേറ്റ് ന്യൂട്രാലിറ്റി",
+          "def": "Cognitive software can run on carbon brains or silicon chips.",
+          "defMal": "തലച്ചോറിലും കമ്പ്യൂട്ടറിലും ഒരേപോലെ പ്രവർത്തിപ്പിക്കാവുന്ന പ്രോഗ്രാം."
+        },
+        {
+          "term": "The China Brain",
+          "termMal": "ചൈന ബ്രെയിൻ സമസ്യ",
+          "def": "Ned Block's proof that functional duplication does not equal conscious qualia.",
+          "defMal": "ഫങ്ഷണൽ പ്രവർത്തനം ബോധത്തിന് തുല്യമാകില്ലെന്ന് തെളിയിക്കുന്ന ഉപമ."
+        }
+      ],
+      "examTakeaways": [
+        {
+          "en": "Functionalism provides the core philosophical justification for Artificial Intelligence.",
+          "mal": "AI-ക്ക് ഏറ്റവും ശക്തമായ ദാർശനിക സാധൂകരണം നൽകിയത് ഫങ്ഷണലിസമാണ്."
+        },
+        {
+          "en": "Multiple Realizability frees mind from organic carbon biological chauvinism.",
+          "mal": "മനസ്സ് മനുഷ്യന്റെ മാംസപേശികളിൽ മാത്രം ഒതുങ്ങുന്ന ഒന്നല്ലെന്ന് മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി തെളിയിച്ചു."
+        },
+        {
+          "en": "Ned Block's China Brain exposes the failure of functionalism to explain phenomenal consciousness (Qualia).",
+          "mal": "ആന്തരിക അനുഭവങ്ങളെയും ബോധത്തെയും വിശദീകരിക്കാൻ ഫങ്ഷണലിസത്തിന് കഴിയില്ലെന്ന് ചൈന ബ്രെയിൻ തെളിയിച്ചു."
+        }
+      ]
+    },
+    "quizPool": [
+      {
+        "question": "How many Pramanas (valid means of knowledge) are accepted in the classical Nyaya philosophical system?",
+        "questionMal": "ക്ലാസിക്കൽ ന്യായ ദർശനത്തിൽ സാധുവായ എത്ര പ്രമാണങ്ങളാണ് (Pramanas) അംഗീകരിക്കപ്പെട്ടിട്ടുള്ളത്?",
+        "options": [
+          {
+            "en": "Four: Pratyaksha (perception), Anumana (inference), Upamana (analogy/comparison), and Shabda (testimony)",
+            "mal": "നാല്: പ്രത്യക്ഷം, അനുമാനം, ഉപമാനം, ശബ്ദം (ആപ്തവചനം)"
+          },
+          {
+            "en": "Only one: Pratyaksha (perception)",
+            "mal": "ഒന്ന് മാത്രം: പ്രത്യക്ഷം"
+          },
+          {
+            "en": "Six: including Arthapatti and Anupalabdhi",
+            "mal": "ആറ്: അർത്ഥാപത്തിയും അനുപലബ്ധിയും ഉൾപ്പെടെ"
+          },
+          {
+            "en": "Two: Pratyaksha and Anumana",
+            "mal": "രണ്ട്: പ്രത്യക്ഷവും അനുമാനവും"
+          }
+        ],
+        "answer": 0,
+        "explanation": "The Nyaya school founded by Aksapada Gautama accepts four distinct Pramanas: Pratyaksha (direct perception), Anumana (inferential reasoning), Upamana (analogical comparison), and Shabda (trustworthy testimony).",
+        "explanationMal": "ഗൗതമ മഹർഷിയുടെ ന്യായ ദർശനം അറിവ് നേടാനുള്ള നാല് സാധുവായ വഴികളെ അംഗീകരിക്കുന്നു: പ്രത്യക്ഷം (കാഴ്ച), അനുമാനം (യുക്തി), ഉപമാനം (താരതമ്യം), ശബ്ദം (വിശ്വാസയോഗ്യമായ സാക്ഷ്യം)."
+      },
+      {
+        "question": "What is the five-member syllogism (Pancha-Avayava) of Nyaya inference (Anumana) that anticipated rule-based expert systems?",
+        "questionMal": "റൂൾ-ബേസ്ഡ് എക്സ്പെർട്ട് സിസ്റ്റങ്ങൾക്ക് അടിത്തറയിട്ട ന്യായ ദർശനത്തിലെ അഞ്ചംഗ ന്യായവാക്യം (പഞ്ച-അവയവങ്ങൾ) ഏതാണ്?",
+        "options": [
+          {
+            "en": "Pratijna (thesis), Hetu (reason), Udaharana (example with universal rule), Upanaya (application), and Nigamana (conclusion)",
+            "mal": "പ്രതിജ്ഞ (പ്രസ്താവന), ഹേതു (കാരണം), ഉദാഹരണം (നിയമവും ഉദാഹരണവും), ഉപനയം (പ്രയോഗം), നിഗമനം (തീരുമാനം)"
+          },
+          {
+            "en": "Thesis, Antithesis, Synthesis, Negation, and Affirmation",
+            "mal": "തീസിസ്, ആന്റിതീസിസ്, സിന്തസിസ്, നെഗേഷൻ, അഫർമേഷൻ"
+          },
+          {
+            "en": "Input, Process, Storage, Control, and Output",
+            "mal": "ഇൻപുട്ട്, പ്രോസസ്സ്, സ്റ്റോറേജ്, കൺട്രോൾ, ഔട്ട്പുട്ട്"
+          },
+          {
+            "en": "Major premise, Minor premise, Middle term, Error, and Truth",
+            "mal": "മേജർ പ്രേമൈസ്, മൈനർ പ്രേമൈസ്, മിഡിൽ ടേം, പിഴവ്, സത്യം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Nyaya's Pancha-Avayava syllogism ('The hill has fire; because it has smoke; wherever there is smoke there is fire as in a kitchen; this hill has smoke; therefore this hill has fire') directly mirrors deductive rule-based expert systems.",
+        "explanationMal": "'മലയിൽ തീയുണ്ട് (പ്രതിജ്ഞ); പുകയുള്ളതിനാൽ (ഹേതു); എവിടെ പുകയുണ്ടോ അവിടെ തീയുണ്ട്, അടുക്കളയിലെപ്പോലെ (ഉദാഹരണം); മലയിലും പുകയുണ്ട് (ഉപനയം); അതിനാൽ മലയിൽ തീയുണ്ട് (നിഗമനം)'—ഇത് AI-യിലെ പ്രോഗ്രാമിങ് നിയമങ്ങൾക്ക് തുല്യമാണ്."
+      },
+      {
+        "question": "How many Pramanas are accepted in Buddhist Epistemology founded by Dignaga and Dharmakirti?",
+        "questionMal": "ദിഗ്നാഗനും ധർമ്മകീർത്തിയും സ്ഥാപിച്ച ബുദ്ധ ജ്ഞാനശാസ്ത്രം എത്ര പ്രമാണങ്ങളെയാണ് അംഗീകരിക്കുന്നത്?",
+        "options": [
+          {
+            "en": "Two: Pratyaksha (perception of particulars/svalaksana) and Anumana (inference of universals/samanyalaksana)",
+            "mal": "രണ്ട്: പ്രത്യക്ഷം (പ്രത്യേക ഗുണങ്ങൾ അറിയൽ), അനുമാനം (സാർവ്വത്രിക ആശയങ്ങൾ അറിയൽ)"
+          },
+          {
+            "en": "Four: including Upamana and Shabda",
+            "mal": "നാല്: ഉപമാനവും ശബ്ദവും ഉൾപ്പെടെ"
+          },
+          {
+            "en": "Zero: all knowledge is void (Sunya)",
+            "mal": "ഒന്നുമില്ല: എല്ലാ അറിവും ശൂന്യമാണ്"
+          },
+          {
+            "en": "Six: identical to Advaita Vedanta",
+            "mal": "ആറ്: അദ്വൈത വേദാന്തത്തിന് തുല്യം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Dignaga and Dharmakirti recognized only two Pramanas: direct sensory perception (Pratyaksha) which grasps unique particulars (svalaksana), and inferential thought (Anumana) which operates on conceptual universals (samanyalaksana).",
+        "explanationMal": "ബുദ്ധ ദർശനം ശബ്ദത്തെയും ഉപമാനത്തെയും സ്വതന്ത്ര പ്രമാണങ്ങളായി കാണാതെ പ്രത്യക്ഷം, അനുമാനം എന്നീ രണ്ട് വഴികളെ മാത്രം സത്യമായി അംഗീകരിക്കുന്നു."
+      },
+      {
+        "question": "How does the Buddhist core doctrine of 'Anatta' (No-Self) parallel modern connectionist AI architectures?",
+        "questionMal": "ബുദ്ധമതത്തിലെ 'അനത്ത' (സ്ഥിരമായ ആത്മാവില്ലെന്ന സിദ്ധാന്തം) ഇന്നത്തെ കണക്ഷനിസ്റ്റ് ന്യൂറൽ നെറ്റ്‌വർക്കുകളുമായി എങ്ങനെ സാമ്യപ്പെടുന്നു?",
+        "options": [
+          {
+            "en": "Cognition arises without an enduring centralized homunculus or CPU; it is an emergent dynamic flow of distributed mental factors (khandhas / weights)",
+            "mal": "തലച്ചോറിലോ കമ്പ്യൂട്ടറിലോ തീരുമാനങ്ങൾ എടുക്കുന്ന ഒരൊറ്റ 'ആത്മാവോ' കേന്ദ്രീകൃത സിപിയുവോ ഇല്ല; പകരം കോടിക്കണക്കിന് ന്യൂറോണുകളുടെ പരസ്പര ബന്ധത്തിൽ നിന്നാണ് ചിന്തകൾ ജനിക്കുന്നത്"
+          },
+          {
+            "en": "Buddhism forbids the use of silicon chips",
+            "mal": "ബുദ്ധമതം സിലിക്കൺ ചിപ്പുകളുടെ ഉപയോഗം വിലക്കുന്നു"
+          },
+          {
+            "en": "Neural networks must meditate under bodhi trees to converge",
+            "mal": "ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ ബോധി വൃക്ഷത്തിന് കീഴിൽ ധ്യാനിക്കണം"
+          },
+          {
+            "en": "Computers possess eternal reincarnation cycles in the cloud",
+            "mal": "കമ്പ്യൂട്ടറുകൾക്ക് പുനർജന്മമുണ്ടെന്ന വാദം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Just as Anatta rejects an unchanging Atman in favor of five impermanent skandhas (aggregates) causally interacting, deep learning replaces a single centralized executive CPU with distributed artificial neural node activations.",
+        "explanationMal": "മനസ്സ് എന്നത് സ്ഥിരമായ ഒന്നല്ല, മാറിക്കൊണ്ടിരിക്കുന്ന അനുഭവങ്ങളുടെ പ്രവാഹമാണെന്ന ബുദ്ധന്റെ 'അനത്ത' സിദ്ധാന്തം പോലെയാണ് ന്യൂറൽ നെറ്റ്‌വർക്കിലെ വിതരണം ചെയ്യപ്പെട്ട സിഗ്നലുകൾ."
+      },
+      {
+        "question": "What is the Buddhist Apoha theory of concept formation, and what does it anticipate in AI?",
+        "questionMal": "ബുദ്ധമതത്തിലെ 'അപോഹ' (Apoha) സിദ്ധാന്തം എന്താണ്, അത് AI-യിൽ എന്തിനെയാണ് മുൻകൂട്ടി കണ്ടത്?",
+        "options": [
+          {
+            "en": "Concepts are formed through exclusion/negation of other categories (Anyapoha: 'cow' = 'exclusion of non-cows'), anticipating boundary hyperplanes and vector contrastive embeddings",
+            "mal": "ഒരു വസ്തുവിന്റെ ആശയം ഉണ്ടാകുന്നത് മറ്റുള്ളവയല്ല എന്ന് വേർതിരിച്ചറിയുന്നതിലൂടെയാണ് (അന്യപോഹം: 'പശു' എന്നാൽ 'പശുവല്ലാത്തതിനെ ഒഴിവാക്കൽ'); ഇത് AI-യിലെ വെക്റ്റർ എംബെഡിംഗുകൾക്ക് തുല്യമാണ്"
+          },
+          {
+            "en": "Concepts are divinely implanted by Brahma during sleep",
+            "mal": "ഉറക്കത്തിൽ ബ്രഹ്മാവ് ആശയങ്ങൾ തലച്ചോറിലേക്ക് നൽകുന്നു"
+          },
+          {
+            "en": "Concepts are identical to grammatical punctuation marks",
+            "mal": "ആശയങ്ങൾ വിരാമചിഹ്നങ്ങൾക്ക് തുല്യമാണ്"
+          },
+          {
+            "en": "Knowledge requires memorizing Sanskrit dictionaries without comprehension",
+            "mal": "സംസ്കൃത നിഘണ്ടു കാണാതെ പഠിക്കലാണ് അറിവ്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Dignaga's Apoha theory posited that universal concepts do not possess positive metaphysical essences; they exist purely by distinguishing and excluding the 'other' (anyapoha), mirroring classification decision boundaries in machine learning.",
+        "explanationMal": "ഒരു വസ്തുവിന് പ്രത്യേക സാർവ്വത്രിക ആത്മാവില്ല, മറിച്ച് മറ്റ് വസ്തുക്കളിൽ നിന്നുള്ള വ്യത്യാസം മനസ്സിലാക്കുന്നതിലൂടെയാണ് (നെഗറ്റീവ് വേർതിരിവ്) കമ്പ്യൂട്ടറും മനുഷ്യനും ആശയങ്ങൾ തിരിച്ചറിയുന്നത്."
+      },
+      {
+        "question": "What is the foundational claim of Mind-Brain Identity Theory (Type Physicalism) formulated by Place, Smart, and Feigl?",
+        "questionMal": "പ്ലേസ്, സ്മാർട്ട്, ഫീഗൽ എന്നിവർ അവതരിപ്പിച്ച 'മൈൻഡ്-ബ്രെയിൻ ഐഡന്റിറ്റി തിയറിയുടെ' (Type Physicalism) പ്രധാന വാദം എന്താണ്?",
+        "options": [
+          {
+            "en": "Mental states are strictly identical to specific neurobiological physical states of the brain (e.g., Pain = C-fibers firing)",
+            "mal": "മനുഷ്യന്റെ മാനസികാവസ്ഥകൾ തലച്ചോറിലെ പ്രത്യേക നാഡീ-ജൈവിക പ്രവർത്തനങ്ങൾക്ക് തുല്യമാണ് (ഉദാ: വേദന എന്നാൽ സി-ഫൈബറുകളുടെ ഉത്തേജനം)"
+          },
+          {
+            "en": "The mind is made of ectoplasm hovering above the forehead",
+            "mal": "മനസ്സ് നെറ്റിക്ക് മുകളിൽ പറന്നുനടക്കുന്ന ഒന്നാണ്"
+          },
+          {
+            "en": "The brain is an unnecessary byproduct of spiritual meditation",
+            "mal": "തലച്ചോറ് വെറും അനാവശ്യ അവയവമാണ്"
+          },
+          {
+            "en": "Thoughts are stored outside the universe in black holes",
+            "mal": "ചിന്തകൾ തമോഗർത്തങ്ങളിലാണ് സൂക്ഷിക്കപ്പെടുന്നത്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Type Identity Theory asserts a strict ontological identity between mental types and physical brain types: sensations, beliefs, and emotions are literally nothing other than neurochemical events in the biological brain.",
+        "explanationMal": "മനസ്സും തലച്ചോറും രണ്ടല്ല, ഒന്നാണ്; മാനസിക അനുഭവങ്ങളെല്ലാം തലച്ചോറിലെ ഭൗതിക-രാസ പ്രവർത്തനങ്ങൾ മാത്രമാണെന്ന് ഈ ഭൗതികവാദ സിദ്ധാന്തം വ്യക്തമാക്കുന്നു."
+      },
+      {
+        "question": "What major philosophical objection proposed by Hilary Putnam crippled Type Identity Theory?",
+        "questionMal": "ഹിലരി പുട്ട്നം ഉന്നയിച്ച ഏത് പ്രശസ്തമായ തടസ്സവാദമാണ് മൈൻഡ്-ബ്രെയിൻ ഐഡന്റിറ്റി തിയറിയെ തകർത്തത്?",
+        "options": [
+          {
+            "en": "Multiple Realizability: identical psychological states can be physically realized across radically different substrates (mammalian brains, octopuses, silicon chips)",
+            "mal": "മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി: മനുഷ്യന്റെ തലച്ചോറിലും നീരാളിയിലും സിലിക്കൺ ചിപ്പുകളിലും ഒരേ മാനസികാവസ്ഥ വ്യത്യസ്ത ഭൗതിക മാധ്യമങ്ങളിലൂടെ ഉണ്ടാകാം"
+          },
+          {
+            "en": "The Turing Test was too easy for human children",
+            "mal": "ട്യൂറിങ് ടെസ്റ്റ് കുട്ടികൾക്ക് പോലും ജയിക്കാൻ എളുപ്പമാണ്"
+          },
+          {
+            "en": "Computers cannot execute mathematical division by zero",
+            "mal": "കമ്പ്യൂട്ടറുകൾക്ക് പൂജ്യം കൊണ്ട് ഹരിക്കാൻ കഴിയില്ല"
+          },
+          {
+            "en": "Brains are made of non-atomic spiritual vapor",
+            "mal": "തലച്ചോറ് ആത്മീയ നീരാവി കൊണ്ടാണ് നിർമ്മിച്ചിരിക്കുന്നത്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Putnam (1967) demonstrated that if pain were identical to C-fiber stimulation, an octopus or an alien without C-fibers could never feel pain. Mind is substrate-independent.",
+        "explanationMal": "വേദന എന്നാൽ മനുഷ്യന്റെ സി-ഫൈബറുകൾ മാത്രമാണെന്ന് പറഞ്ഞാൽ സി-ഫൈബറുകൾ ഇല്ലാത്ത നീരാളികൾക്കോ അന്യഗ്രഹ ജീവികൾക്കോ വേദനയുണ്ടാകില്ലെന്ന് പറയേണ്ടിവരും; ഇത് തെറ്റാണെന്ന് പുട്ട്നം തെളിയിച്ചു."
+      },
+      {
+        "question": "How does Functionalism define mental states like belief, desire, and pain?",
+        "questionMal": "ഫങ്ഷണലിസം (Functionalism) മനുഷ്യന്റെ ചിന്തകളെയും വികാരങ്ങളെയും എങ്ങനെയാണ് നിർവചിക്കുന്നത്?",
+        "options": [
+          {
+            "en": "By their functional and causal roles—how they relate sensory inputs to other internal states and motor outputs—not by physical substrate",
+            "mal": "അവയുടെ പ്രവർത്തനപരമായ ദൗത്യങ്ങളിലൂടെ (ഇൻപുട്ട്, ആന്തരിക മാറ്റങ്ങൾ, ഔട്ട്പുട്ട് എന്നിവ തമ്മിലുള്ള കാര്യകാരണ ബന്ധം); അല്ലാതെ അവ നിർമ്മിക്കപ്പെട്ട വസ്തു കൊണ്ടല്ല"
+          },
+          {
+            "en": "By the weight and physical volume of the skull in grams",
+            "mal": "തലയോട്ടിയുടെ ഭാരവും അളവും അനുസരിച്ച്"
+          },
+          {
+            "en": "By astrological planetary positions at the time of birth",
+            "mal": "ജനിച്ച സമയത്തെ ഗ്രഹനിലകൾ അനുസരിച്ച്"
+          },
+          {
+            "en": "By the speed of blood circulation in the veins",
+            "mal": "രക്തയോട്ടത്തിന്റെ വേഗത അനുസരിച്ച്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Functionalism posits that what makes something a mental state is its characteristic causal relations within the cognitive system, regardless of whether it runs on carbon or silicon.",
+        "explanationMal": "ഒരു മാനസികാവസ്ഥ എന്താണെന്ന് നിർണ്ണയിക്കുന്നത് അത് സിസ്റ്റത്തിൽ ചെയ്യുന്ന പ്രവർത്തനമാണ്; തലച്ചോറിലായാലും കമ്പ്യൂട്ടറിലായാലും ഒരേ പ്രവർത്തനം നടക്കുന്നുണ്ടെങ്കിൽ മനസ്സ് ഉണ്ട്."
+      },
+      {
+        "question": "What is the core idea behind Jerry Fodor's Computational Theory of Mind (CTM)?",
+        "questionMal": "ജെറി ഫോഡോർ അവതരിപ്പിച്ച 'കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡിന്റെ' (CTM) കേന്ദ്ര ആശയം എന്താണ്?",
+        "options": [
+          {
+            "en": "Thinking is the formal syntactic manipulation of mental symbols in an internal Language of Thought (Mentalese)",
+            "mal": "ചിന്ത എന്നാൽ മനസ്സിലെ ആന്തരിക ഭാഷയിൽ ('മെന്റലീസ്') ചിഹ്നങ്ങളെ ചിട്ടയായി കൈകാര്യം ചെയ്യുന്ന പ്രക്രിയയാണ്"
+          },
+          {
+            "en": "The brain is an acoustic musical radio receiver",
+            "mal": "തലച്ചോറ് വെറുമൊരു റേഡിയോ റിസീവറാണ്"
+          },
+          {
+            "en": "Consciousness requires eating organic vegetables daily",
+            "mal": "ബോധം നിലനിൽക്കാൻ പച്ചക്കറികൾ കഴിക്കണം"
+          },
+          {
+            "en": "Human minds are controlled by distant telepathic satellites",
+            "mal": "മനുഷ്യന്റെ മനസ്സ് നിയന്ത്രിക്കുന്നത് ഉപഗ്രഹങ്ങളാണ്"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Fodor's CTM unites representational realism with Turing computation: intentional states (beliefs, desires) are encoded as mental representations with linguistic syntax processed computational-mechanically.",
+        "explanationMal": "മനസ്സിൽ 'മെന്റലീസ്' എന്ന ആന്തരിക ചിഹ്ന ഭാഷയുണ്ടെന്നും, ചിന്ത എന്നാൽ ആ ചിഹ്നങ്ങളെ കമ്പ്യൂട്ടർ പോലെ പ്രോസസ്സ് ചെയ്യുന്നതാണെന്നും ഫോഡോർ വാദിച്ചു."
+      },
+      {
+        "question": "What is Ned Block's 'China Brain' thought experiment designed to prove against Functionalism?",
+        "questionMal": "ഫങ്ഷണലിസത്തിന് എതിരായി നെഡ് ബ്ലോക്ക് അവതരിപ്പിച്ച 'ചൈന ബ്രെയിൻ' പരീക്ഷണം തെളിയിക്കുന്നത് എന്താണ്?",
+        "options": [
+          {
+            "en": "A system could fully duplicate the functional organization of a human brain while completely lacking qualia (subjective phenomenal consciousness)",
+            "mal": "തലച്ചോറിന്റെ മുഴുവൻ പ്രവർത്തനങ്ങളും കൃത്യമായി അനുകരിച്ചാലും ഒരു സിസ്റ്റത്തിന് ആന്തരിക അനുഭവങ്ങളോ (Qualia) യഥാർത്ഥ ബോധമോ ഉണ്ടാകണമെന്നില്ല"
+          },
+          {
+            "en": "China's population is too small to build a supercomputer",
+            "mal": "ചൈനയിലെ ജനസംഖ്യ സൂപ്പർ കമ്പ്യൂട്ടർ ഉണ്ടാക്കാൻ തികയില്ല"
+          },
+          {
+            "en": "Radio walkie-talkies cause neurological brain damage",
+            "mal": "വാക്കി-ടോക്കികൾ തലച്ചോറിന് കേടുപാടുകൾ ഉണ്ടാക്കുന്നു"
+          },
+          {
+            "en": "Language translation between Chinese and English is impossible",
+            "mal": "ചൈനീസും ഇംഗ്ലീഷും തമ്മിൽ വിവർത്തനം സാധ്യമല്ല"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Block showed that if every citizen of China simulated a neuron communicating via radio, the system would be functionally isomorphic to a brain, yet intuitively devoid of conscious experience (Absent Qualia).",
+        "explanationMal": "ചൈനയിലെ ജനങ്ങൾ വാക്കി-ടോക്കി വഴി തലച്ചോറിന്റെ പ്രവർത്തനം നടത്തിയാലും, ചൈന എന്ന രാജ്യത്തിന് പല്ലുവേദനയോ നിറങ്ങളുടെ അനുഭവമോ ഉണ്ടാകില്ല (Absent Qualia)."
+      },
+      {
+        "question": "What is 'Vyapti' in Indian Nyaya logic, and what is its role in AI inference?",
+        "questionMal": "ന്യായ ദർശനത്തിലെ 'വ്യാപ്തി' എന്നാൽ എന്താണ്, AI ഇൻഫറൻസിൽ അതിന്റെ പങ്കെന്ത്?",
+        "options": [
+          {
+            "en": "The invariable, unconditional universal concomitance between the sign (Hetu) and the inferred property (Sadhya), forming the basis of IF-THEN rules",
+            "mal": "കാരണവും ഫലവും തമ്മിലുള്ള മാറ്റമില്ലാത്ത സാർവ്വത്രിക ബന്ധം (ഉദാ: പുകയും തീയും); ഇതാണ് AI-യിലെ 'IF-THEN' റൂളുകളുടെ അടിസ്ഥാനം"
+          },
+          {
+            "en": "A ritual prayer recited before turning on a computer",
+            "mal": "കമ്പ്യൂട്ടർ ഓൺ ചെയ്യുന്നതിന് മുമ്പുള്ള പ്രാർത്ഥന"
+          },
+          {
+            "en": "The optical reflection of light in a glass prism",
+            "mal": "പ്രകാശത്തിന്റെ പ്രതിഫലനം"
+          },
+          {
+            "en": "The mathematical ratio between screen width and height",
+            "mal": "സ്ക്രീനിന്റെ അളവുകൾ തമ്മിലുള്ള അനുപാതം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Vyapti is the foundational inductive-deductive invariant relation (e.g., 'wherever there is smoke, there is fire') that validates inferential syllogisms in rule-based expert systems.",
+        "explanationMal": "പുകയുള്ളിടത്തെല്ലാം തീയുണ്ടാകും എന്നതുപോലെ, രണ്ട് കാര്യങ്ങൾ തമ്മിലുള്ള മാറ്റമില്ലാത്ത സാർവ്വത്രിക നിയമമാണ് വ്യാപ്തി; ഇത് അടിസ്ഥാനമാക്കിയാണ് റൂൾ-ബേസ്ഡ് AI തീരുമാനങ്ങൾ എടുക്കുന്നത്."
+      },
+      {
+        "question": "What is the Buddhist philosophical doctrine of 'Kshanikavada' (Momentariness) and its computational analogy?",
+        "questionMal": "ബുദ്ധമതത്തിലെ 'ക്ഷണികവാദം' (Kshanikavada) എന്നാൽ എന്താണ്, അതിന്റെ കമ്പ്യൂട്ടേഷണൽ സാമ്യത എന്തിനാണ്?",
+        "options": [
+          {
+            "en": "Everything in reality is a rapid succession of momentary, dynamic flashes/events rather than static unchanging substances, resembling discrete clock cycles and time-series recurrent neural states",
+            "mal": "പ്രപഞ്ചത്തിലെ സകലതും മാറ്റമില്ലാത്ത സ്ഥിര വസ്തുക്കളല്ല, മറിച്ച് ഓരോ ക്ഷണത്തിലും മാറിക്കൊണ്ടിരിക്കുന്ന പ്രവാഹമാണ്; ഇത് കമ്പ്യൂട്ടറിന്റെ ക്ലോക്ക് സൈക്കിളുകൾക്കും റിക്കറന്റ് ന്യൂറൽ നെറ്റ്‌വർക്കുകൾക്കും തുല്യമാണ്"
+          },
+          {
+            "en": "Computers only operate for a single minute before melting",
+            "mal": "കമ്പ്യൂട്ടറുകൾ ഒരു മിനിറ്റ് മാത്രമേ പ്രവർത്തിക്കൂ"
+          },
+          {
+            "en": "Human memory deletes all information every sixty seconds",
+            "mal": "മനുഷ്യന്റെ ഓർമ്മ ഓരോ മിനിറ്റിലും നശിക്കുന്നു"
+          },
+          {
+            "en": "Only momentary electrical storms can power artificial intelligence",
+            "mal": "ഇടിമിന്നൽ കൊണ്ട് മാത്രമേ AI പ്രവർത്തിക്കൂ"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Kshanikavada asserts that reality is composed of instantaneous events (dharmas) appearing and disappearing in causal continuity, directly matching state-transition machines and dynamic hidden states in recurrent deep learning.",
+        "explanationMal": "സ്ഥിരമായി നിൽക്കുന്ന ആത്മാവോ വസ്തുവോ ഇല്ല, തുടർച്ചയായ അനുഭവങ്ങളുടെ മിന്നലുകൾ മാത്രമാണെന്ന ബുദ്ധന്റെ ക്ഷണികവാദം കമ്പ്യൂട്ടറിന്റെ പ്രോസസ്സിങ് സൈക്കിളുകളുമായി തികച്ചും ഒത്തുപോകുന്നു."
+      },
+      {
+        "question": "What is Polanyi's Paradox in epistemology, and why is it a bottleneck for classical AI?",
+        "questionMal": "ജ്ഞാനശാസ്ത്രത്തിലെ 'പൊളാനിയുടെ വിരോധാഭാസം' (Polanyi's Paradox) എന്താണ്, അത് ക്ലാസിക്കൽ AI-ക്ക് വെല്ലുവിളിയായത് എന്തുകൊണ്ട്?",
+        "options": [
+          {
+            "en": "'We know more than we can tell': human tacit knowledge cannot be fully formalized into explicit algorithmic rules",
+            "mal": "'നമുക്ക് വിവരിക്കാൻ കഴിയുന്നതിനേക്കാൾ കൂടുതൽ കാര്യങ്ങൾ അറിയാം': മനുഷ്യന്റെ അനുഭവജ്ഞാനം (Tacit Knowledge) മുഴുവൻ നിയമങ്ങളാക്കി എഴുതാൻ കഴിയില്ല"
+          },
+          {
+            "en": "Computers cannot read books written in foreign languages",
+            "mal": "കമ്പ്യൂട്ടറുകൾക്ക് വിദേശ ഭാഷകൾ വായിക്കാൻ കഴിയില്ല"
+          },
+          {
+            "en": "Math formulas become incorrect after midnight",
+            "mal": "ഗണിത സമവാക്യങ്ങൾ അർദ്ധരാത്രിക്ക് ശേഷം തെറ്റായി മാറുന്നു"
+          },
+          {
+            "en": "Paradoxes automatically erase hard drives",
+            "mal": "വിരോധാഭാസങ്ങൾ ഹാർഡ് ഡ്രൈവ് നശിപ്പിക്കുന്നു"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Michael Polanyi (1966) showed that tacit skills like recognizing a face or riding a bicycle are intuitively executed without conscious rule-following, rendering GOFAI rule-based systems brittle.",
+        "explanationMal": "ഒരു മുഖം തിരിച്ചറിയുന്നതും സൈക്കിൾ ചവിട്ടുന്നതും നിയമങ്ങൾ നോക്കിയല്ല നാം ചെയ്യുന്നത്; ഇത്തരം ആന്തരിക അറിവുകൾ പ്രോഗ്രാം ചെയ്യാൻ ക്ലാസിക്കൽ AI-ക്ക് കഴിഞ്ഞില്ല."
+      },
+      {
+        "question": "What is the Gettier Problem in epistemology, and how does it challenge AI automated decision-making?",
+        "questionMal": "ജ്ഞാനശാസ്ത്രത്തിലെ 'ഗെറ്റിയർ സമസ്യ' (Gettier Problem) എന്താണ്, അത് AI തീരുമാനങ്ങളെ എങ്ങനെ ബാധിക്കുന്നു?",
+        "options": [
+          {
+            "en": "Justified True Belief (JTB) can arise purely through epistemic luck/accident, proving that accurate algorithmic predictions do not equal genuine understanding",
+            "mal": "ഒരു വിശ്വാസം യാദൃശ്ചികമായി ശരിയായതുകൊണ്ട് മാത്രം അത് യഥാർത്ഥ അറിവാകില്ല; AI കൃത്യമായ ഉത്തരം നൽകിയാലും അതിന് വസ്തുത മനസ്സിലായി എന്ന് പറയാനാവില്ല"
+          },
+          {
+            "en": "Gettier proved that computers have human souls",
+            "mal": "കമ്പ്യൂട്ടറുകൾക്ക് ആത്മാവുണ്ടെന്ന് ഗെറ്റിയർ തെളിയിച്ചു"
+          },
+          {
+            "en": "Algorithms can never output true statements",
+            "mal": "അൽഗോരിതങ്ങൾക്ക് ഒരിക്കലും ശരിയുത്തരം നൽകാനാവില്ല"
+          },
+          {
+            "en": "All knowledge must be verified by three judges",
+            "mal": "എല്ലാ അറിവും മൂന്ന് ന്യായാധിപന്മാർ പരിശോധിച്ച് ഉറപ്പാക്കണം"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Edmund Gettier (1963) dismantled the classical definition of knowledge (JTB) by demonstrating cases where an agent holds a justified true belief by pure coincidence, mirroring AI models picking up spurious correlations.",
+        "explanationMal": "യാദൃശ്ചികമായി ശരിയുത്തരം കിട്ടുന്നത് യഥാർത്ഥ അറിവല്ലെന്ന് ഗെറ്റിയർ തെളിയിച്ചു; ഡാറ്റയിലെ അവിചാരിത പാറ്റേണുകൾ കണ്ട് AI നൽകുന്ന ഉത്തരങ്ങൾക്കും ഇത് ബാധകമാണ്."
+      },
+      {
+        "question": "How did Gilbert Ryle describe Cartesian mind-body dualism in 'The Concept of Mind' (1949)?",
+        "questionMal": "1949-ൽ ഗിൽബർട്ട് റൈൽ ദെക്കാർത്തിന്റെ ഡ്യുവലിസത്തെ വിശേഷിപ്പിച്ചത് എങ്ങനെയാണ്?",
+        "options": [
+          {
+            "en": "As a 'Category Mistake' leading to the dogma of the 'Ghost in the Machine'",
+            "mal": "ഒരു 'കാറ്റഗറി മിസ്റ്റേക്ക്' (വിഭാഗപരമായ പിഴവ്) വഴി ഉടലെടുത്ത 'യന്ത്രത്തിനുള്ളിലെ പ്രേതം' (Ghost in the Machine) എന്ന്"
+          },
+          {
+            "en": "As the supreme pinnacle of scientific perfection",
+            "mal": "ശാസ്ത്രത്തിന്റെ ഏറ്റവും വലിയ നേട്ടമായി"
+          },
+          {
+            "en": "As an optical illusion caused by damaged glasses",
+            "mal": "കേടായ കണ്ണടകൾ മൂലമുണ്ടാകുന്ന കാഴ്ചഭ്രമമായി"
+          },
+          {
+            "en": "As an electronic glitch in neural synapses",
+            "mal": "ന്യൂറോണുകളിലെ ഇലക്ട്രോണിക് തകരാറായി"
+          }
+        ],
+        "answer": 0,
+        "explanation": "Gilbert Ryle argued that Descartes mistakenly treated the mind as an extra physical substance existing alongside bodily mechanics, rather than understanding mind as behavioral dispositions.",
+        "explanationMal": "ശരീരത്തിനകത്തിരുന്ന് പ്രവർത്തിക്കുന്ന അദൃശ്യ പ്രേതമല്ല മനസ്സ്, മറിച്ച് മനുഷ്യന്റെ പെരുമാറ്റരീതികളുടെ ആകെത്തുകയാണ് മനസ്സ് എന്ന് റൈൽ വ്യക്തമാക്കി."
+      }
+    ]
+  },
+  "ai_mal_ch13": {
+    "title": "Module 3 · Chapter 5 · Epistemological Implications in Artificial Intelligence",
+    "titleMal": "മൊഡ്യൂൾ 3 · അധ്യായം 5 · ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിലെ ജ്ഞാനശാസ്ത്രപരമായ പ്രത്യാഘാതങ്ങൾ",
+    "filename": "Module_3_Chapter_5_Epistemological_Implications_in_AI.pdf",
+    "summary": {
+      "overview": "⚡ HIGH-YIELD EXECUTIVE CORE: The deployment of Deep Learning has radically disrupted classical Epistemology (Justified True Belief / JTB). By generating superhuman predictions through opaque multi-billion parameter architectures without human-comprehensible justifications, AI creates 'Epistemic Opacity' (The Black Box Dilemma), triggers Michael Polanyi's Paradox of tacit knowledge, and raises the Gettier Problem: does an algorithm that is statistically accurate possess genuine knowledge, or merely lucky correlation?",
+      "overviewMal": "⚡ പരീക്ഷാ സംഗ്രഹം (3-Page Core): ആധുനിക ഡീപ് ലേണിംഗ് പരമ്പരാഗത ജ്ഞാനശാസ്ത്രത്തെ (JTB) വെല്ലുവിളിക്കുന്നു. കോടിക്കണക്കിന് പാരാമീറ്ററുകളുള്ള ബ്ലാക്ക് ബോക്സ് സിസ്റ്റങ്ങൾ കൃത്യമായ പ്രവചനങ്ങൾ നടത്തുമ്പോഴും, അവ എങ്ങനെ തീരുമാനത്തിലെത്തി എന്ന് മനുഷ്യന് മനസ്സിലാക്കാനാവാത്ത അവസ്ഥയെ 'എപ്പിസ്റ്റമിക് ഒപാസിറ്റി' (Epistemic Opacity) എന്ന് വിളിക്കുന്നു. പൊളാനിയുടെ അനുഭവജ്ഞാനവും ഗെറ്റിയർ സമസ്യയും ഇതിലൂടെ പുനർജനിക്കുന്നു.",
+      "keyMetrics": [
+        {
+          "label": "EPISTEMIC DILEMMA",
+          "labelMal": "പ്രധാന വെല്ലുവിളി",
+          "value": "Black Box Epistemic Opacity",
+          "detail": "⚡ Accuracy without intelligibility; models predict without giving verifiable scientific justifications."
+        },
+        {
+          "label": "POLANYI BOTTLENECK",
+          "labelMal": "പൊളാനി പ്രതിസന്ധി",
+          "value": "Tacit > Explicit Knowledge",
+          "detail": "🔑 'We know more than we can tell'—intuitive human skill defies classical symbolic codification."
+        },
+        {
+          "label": "GETTIER CHALLENGE",
+          "labelMal": "ഗെറ്റിയർ സമസ്യ",
+          "value": "Epistemic Luck in AI",
+          "detail": "🧠 Highly accurate outputs derived from spurious correlations are not genuine knowledge (Prama)."
+        }
+      ],
+      "sections": [
+        {
+          "badge": "Page 1: Tacit Knowledge & Polanyi's Paradox",
+          "title": "PAGE 1 · Michael Polanyi's Paradox & Tacit Knowledge",
+          "titleMal": "പേജ് 1 · മൈക്കൽ പൊളാനിയുടെ വിരോധാഭാസവും അനുഭവജ്ഞാനവും",
+          "points": [
+            {
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Polanyi's Paradox (1966)</mark>: 'We can know more than we can tell.' Human mastery—such as recognizing a face among millions, diagnosing a subtle illness, or riding a bicycle—is tacit and procedural, defying explicit linguistic verbalization.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>പൊളാനിയുടെ വിരോധാഭാസം:</mark> 'നമുക്ക് വിവരിക്കാൻ കഴിയുന്നതിനേക്കാൾ കൂടുതൽ കാര്യങ്ങൾ അറിയാം.' മുഖം തിരിച്ചറിയുന്നതും സൈക്കിൾ ചവിട്ടുന്നതും അനുഭവജ്ഞാനമാണ് (Tacit Knowledge); അതിന് നിയമങ്ങൾ ടൈപ്പ് ചെയ്യാൻ കഴിയില്ല."
+            },
+            {
+              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Why Deep Learning Solved Polanyi</mark>: Classical AI failed because it forced humans to code tacit knowledge into IF-THEN rules. Deep neural networks bypass explicit verbal rules by inducing implicit distributed weights directly from raw pixel and audio tensors.",
+              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഡീപ് ലേണിംഗിന്റെ വിജയം:</mark> മനുഷ്യന് വാക്കുകളിലൂടെ പറയാൻ കഴിയാത്ത അനുഭവങ്ങളെ ഡാറ്റയിൽ നിന്ന് നേരിട്ട് വെയ്റ്റുകളാക്കി മാറ്റി പഠിച്ചതിലൂടെയാണ് ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ വിജയിച്ചത്."
+            },
+            {
+              "en": "<span style='background:#fee2e2; color:#991b1b; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚠️ EXAM TRAP</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Explicit vs Tacit Boundary</mark>: Symbolic expert systems capture only propositional (explicit) knowledge; connectionist systems capture sub-symbolic (tacit) skills.",
+              "mal": "<span style='background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>⚠️ പരീക്ഷാ ചോദ്യം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>പ്രത്യക്ഷ അറിവും അനുഭവജ്ഞാനവും:</mark> നിയമങ്ങൾ വെച്ചുള്ള അറിവ് സിംബോളിക് AI-യും, പറയാനാവാത്ത പ്രായോഗിക അറിവ് ന്യൂറൽ നെറ്റ്‌വർക്കുകളും പ്രതിനിധീകരിക്കുന്നു."
+            }
+          ]
+        },
+        {
+          "badge": "Page 2: The Black Box & XAI",
+          "title": "PAGE 2 · The Black Box & Explainable AI (XAI)",
+          "titleMal": "പേജ് 2 · ബ്ലാക്ക് ബോക്സും എക്സ്പ്ലെയ്നബിൾ AI-യും (XAI)",
+          "points": [
+            {
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Epistemic Opacity</mark>: A cognitive system is epistemically opaque when a human knower cannot survey, trace, or understand the mathematical justification linking input data to algorithmic output.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>എപ്പിസ്റ്റമിക് ഒപാസിറ്റി:</mark> ഒരു സിസ്റ്റം എങ്ങനെ തീരുമാനത്തിലെത്തി എന്ന് ഒരു മനുഷ്യനും പൂർണ്ണമായി വായിച്ചെടുക്കാനോ വിശദീകരിക്കാനോ കഴിയാത്ത അവസ്ഥ."
+            },
+            {
+              "en": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🧠 THOUGHT EXPERIMENT</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The Inscrutable Medical Oracle</mark>: An AI predicts oncology survival with 99.9% accuracy, but oncologists cannot determine which biological features drove the verdict. Should doctors administer radical chemotherapy based purely on blind algorithmic trust?",
+              "mal": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🧠 ചിന്താ പരീക്ഷണം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഡോക്ടറുടെ സമസ്യ:</mark> ഒരു AI ക്യാൻസർ മരുന്ന് കൃത്യമായി നിർദ്ദേശിക്കുന്നു, എന്നാൽ കാരണം ഡോക്ടർക്ക് അറിയില്ല; കാരണം മനസ്സിലാക്കാതെ രോഗിക്ക് ആ മരുന്ന് നൽകുന്നത് ശരിയാണോ?"
+            },
+            {
+              "en": "<span style='background:#dcfce7; color:#166534; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>💡 RECALL HOOK</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>XAI Mandate</mark>: Explainable AI (SHAP, LIME, Attention Maps) is not merely a technical tool; it is an epistemological necessity to convert blind algorithmic output into Justified Knowledge.",
+              "mal": "<span style='background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>💡 ഓർമ്മയ്ക്കായി:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>XAI-യുടെ പ്രാധാന്യം:</mark> AI നൽകുന്ന ഉത്തരം വെറുമൊരു അന്ധവിശ്വാസമാകാതെ, മനുഷ്യന് ബോധ്യപ്പെടുന്ന യഥാർത്ഥ അറിവാക്കാൻ XAI വിശദീകരണങ്ങൾ കൂടിയേ തീരൂ."
+            }
+          ]
+        },
+        {
+          "badge": "Page 3: Gettier Problem & AI Truth",
+          "title": "PAGE 3 · JTB, The Gettier Problem & Epistemic Luck",
+          "titleMal": "പേജ് 3 · JTB, ഗെറ്റിയർ സമസ്യയും AI-യിലെ ഭാഗ്യവും",
+          "points": [
+            {
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The Gettier Problem in AI (1963)</mark>: Edmund Gettier proved that Justified True Belief (JTB) does not equal knowledge if the belief is true purely by epistemic accident/luck. AI models frequently produce correct outputs based on spurious background correlations (e.g., classifying a wolf because of snow in the background).",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഗെറ്റിയർ സമസ്യ:</mark> യാദൃശ്ചികമായി ഉത്തരം ശരിയായതുകൊണ്ട് മാത്രം അത് യഥാർത്ഥ അറിവാകില്ല; മഞ്ഞ് കണ്ടതുകൊണ്ട് മാത്രം ചെന്നായയാണെന്ന് തെറ്റായ കാരണങ്ങളിലൂടെ AI ശരിയുത്തരം നൽകുന്നത് ഇതിന് ഉദാഹരണമാണ്."
+            },
+            {
+              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Epistemic Luck vs Prama</mark>: In Nyaya terminology, an AI that guesses correctly due to confounding bias produces Bhrama (illusion), not Prama (veridical truth). Genuine AI knowledge requires causal understanding, not associative luck.",
+              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഭാഗ്യവും യഥാർത്ഥ അറിവും:</mark> യാദൃശ്ചികമായ സാമ്യങ്ങൾ കണ്ട് AI നൽകുന്ന ഉത്തരം ന്യായ ദർശനപ്രകാരം 'ഭ്രമം' മാത്രമാണ്; ശരിയായ കാര്യകാരണ ബന്ധം മനസ്സിലാക്കുമ്പോഴേ അത് 'പ്രമ' (സത്യം) ആകുന്നുള്ളൂ."
+            },
+            {
+              "en": "<span style='background:#fee2e2; color:#991b1b; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚠️ EXAM TRAP</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Prediction Is Not Understanding</mark>: High benchmark test scores (e.g., passing USMLE or Bar exams) prove high statistical correlation, not the presence of epistemic understanding or moral comprehension.",
+              "mal": "<span style='background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>⚠️ പരീക്ഷാ ചോദ്യം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>പ്രവചനം അറിവല്ല:</mark> പരീക്ഷകളിൽ ഉയർന്ന മാർക്ക് നേടുന്ന AI മോഡലുകൾക്ക് ആ വിഷയത്തെക്കുറിച്ച് യഥാർത്ഥ ബോധമോ അറിവോ ഉണ്ടെന്ന് അർത്ഥമില്ല."
+            }
+          ]
+        }
+      ],
+      "coreConcepts": [
+        {
+          "term": "Polanyi's Paradox",
+          "termMal": "പൊളാനിയുടെ വിരോധാഭാസം",
+          "def": "'We know more than we can tell'—tacit intuitive skill defies explicit rules.",
+          "defMal": "മനുഷ്യന്റെ അനുഭവജ്ഞാനം മുഴുവൻ നിയമങ്ങളാക്കി മാറ്റാൻ കഴിയില്ലെന്ന തത്ത്വം."
+        },
+        {
+          "term": "Epistemic Opacity",
+          "termMal": "എപ്പിസ്റ്റമിക് ഒപാസിറ്റി",
+          "def": "The condition where AI decision justifications are mathematically untraceable to humans.",
+          "defMal": "AI എങ്ങനെ തീരുമാനമെടുത്തു എന്ന് മനുഷ്യന് മനസ്സിലാകാത്ത ബ്ലാക്ക് ബോക്സ് അവസ്ഥ."
+        },
+        {
+          "term": "Gettier Problem",
+          "termMal": "ഗെറ്റിയർ സമസ്യ",
+          "def": "Correct predictions driven by spurious luck do not constitute valid knowledge.",
+          "defMal": "യാദൃശ്ചികമായി ശരിയാകുന്ന അനുമാനങ്ങൾ യഥാർത്ഥ അറിവല്ലെന്ന തെളിവ്."
+        }
+      ],
+      "examTakeaways": [
+        {
+          "en": "Polanyi's Paradox explains why classical rule-based AI failed and deep learning succeeded.",
+          "mal": "ക്ലാസിക്കൽ AI പരാജയപ്പെടാനും ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ വിജയിക്കാനും കാരണം അനുഭവജ്ഞാനമാണ്."
+        },
+        {
+          "en": "The Black Box problem threatens medical, judicial, and scientific deployment of AI.",
+          "mal": "ബ്ലാക്ക് ബോക്സ് ഒപാസിറ്റി കാരണം AI തീരുമാനങ്ങൾ കോടതികളിലും ചികിത്സയിലും അപകടമുണ്ടാക്കാം."
+        },
+        {
+          "en": "Explainable AI (XAI) is vital to transform raw statistical correlations into epistemically justified truth.",
+          "mal": "അൽഗോരിതങ്ങളുടെ ഉത്തരങ്ങൾ യഥാർത്ഥ സത്യമാക്കാൻ എക്സ്പ്ലെയ്നബിൾ AI അത്യന്താപേക്ഷിതമാണ്."
         }
       ]
     },
