@@ -101,7 +101,7 @@
   };
 
   function buildUnsplashUrl(photoId) {
-    return 'https://images.unsplash.com/photo-' + photoId + '?auto=format&fit=crop&w=900&q=80';
+    return 'https://images.unsplash.com/photo-' + photoId + '?auto=format&fit=crop&w=480&q=70';
   }
 
   var manualShift = 0;
@@ -143,19 +143,31 @@
 
       var imgEl = card.querySelector('.test-image');
       if (imgEl && imgEl.src !== newUrl) {
-        imgEl.style.transition = 'opacity 0.4s ease';
-        imgEl.style.opacity = '0.35';
+        var bounds = imgEl.getBoundingClientRect();
+        var nearViewport = bounds.bottom >= -150 && bounds.top <= window.innerHeight + 150;
+        imgEl.loading = 'lazy';
+        imgEl.decoding = 'async';
+        imgEl.alt = photoObj.desc;
 
-        var tempImg = new Image();
-        tempImg.onload = function () {
-          imgEl.src = newUrl;
-          imgEl.alt = photoObj.desc;
+        if (nearViewport) {
+          imgEl.style.transition = 'opacity 0.4s ease';
+          imgEl.style.opacity = '0.35';
+          imgEl.onload = function () {
+            imgEl.style.opacity = '1';
+            imgEl.onload = null;
+            imgEl.onerror = null;
+          };
+          imgEl.onerror = function () {
+            imgEl.style.opacity = '1';
+            imgEl.onload = null;
+            imgEl.onerror = null;
+          };
+        } else {
           imgEl.style.opacity = '1';
-        };
-        tempImg.onerror = function () {
-          imgEl.style.opacity = '1';
-        };
-        tempImg.src = newUrl;
+        }
+
+        // Let the real, lazy image load in place instead of preloading every card.
+        imgEl.src = newUrl;
       }
     });
   }
