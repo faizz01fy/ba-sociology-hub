@@ -1,8 +1,6 @@
 import {handleStudyHelper} from './study-helper-backend.js';
 export {StudyHelperQuota} from './study-helper-backend.js';
 const CHAT_PATH = "/api/chat";
-// Temporary AdSense-review switch. Set true when public chat is re-enabled.
-const CHAT_ENABLED = false;
 const TRACKER_SCRIPT = "(()=>{let last=\"\";const labels={top:\"Overview\",subjects:\"Semester subjects\",tests:\"Practice tests\",\"ai-study\":\"AI Study Helper\",\"community-chat\":\"Student chat\",support:\"Support\"};function decode(value){try{return decodeURIComponent(value)}catch{return value}}function title(value){return value.replace(/[-_]+/g,\" \").split(\" \").map(function(word){return word?word.charAt(0).toUpperCase()+word.slice(1):\"\"}).join(\" \")}function currentSection(){const path=location.pathname||\"/\";const hash=decode((location.hash||\"\").slice(1));return labels[hash]||(hash?title(hash):(path===\"/\"||path===\"/index.html\"?\"Home\":title(path.split(\"/\").filter(Boolean).map(decode).join(\" / \"))))}function record(){const path=location.pathname||\"/\";const hash=decode((location.hash||\"\").slice(1));const key=path+\"#\"+hash;if(key===last)return;last=key;const label=currentSection();fetch(\"/api/traffic/section\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({path:path,section:label}),keepalive:true}).catch(function(){});}window.addEventListener(\"hashchange\",record);window.addEventListener(\"pageshow\",record);window.addEventListener(\"popstate\",record);record();function livePresence(active){if(document.querySelector(\".hub-owner-traffic-control\"))return;let id=\"\";try{id=sessionStorage.getItem(\"hub_live_visitor\")||\"\";if(!id){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2);sessionStorage.setItem(\"hub_live_visitor\",id)}}catch{id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2)}fetch(\"/api/traffic/presence\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({visitorId:id,path:location.pathname||\"/\",section:currentSection(),active:active!==false}),keepalive:true}).catch(function(){})}livePresence(true);setInterval(function(){if(!document.hidden)livePresence(true)},25000);document.addEventListener(\"visibilitychange\",function(){if(!document.hidden)livePresence(true)});window.addEventListener(\"pagehide\",function(){livePresence(false)})})();";
 const OWNER_LIVE_SCRIPT = "(()=>{const control=document.getElementById('hub-live-control'),panel=document.getElementById('hub-live-panel'),count=document.getElementById('hub-live-count'),summary=document.getElementById('hub-live-summary'),pages=document.getElementById('hub-live-pages'),close=document.getElementById('hub-live-close');if(!control||!panel||!count||!summary||!pages||!close)return;function displayPage(item){const path=String(item.path||'/');const section=String(item.section||'').trim();if(path==='/'||path==='/index.html')return section&&section!=='Home'&&section!=='Overview'?'Home · '+section:'Home page';return section||path}async function update(){try{const response=await fetch('/api/admin/live-visitors',{cache:'no-store',credentials:'same-origin'});if(response.status===401){count.textContent='—';summary.textContent='Owner sign-in required. Sign in to the owner dashboard and reload this page.';pages.replaceChildren();return}const data=await response.json();if(!response.ok)throw Error(data.error||'Could not load live visitors.');const active=Number(data.active)||0;count.textContent=String(active);summary.textContent=active+' active tab'+(active===1?'':'s')+' seen in the last 90 seconds';pages.replaceChildren();const entries=Array.isArray(data.pages)?data.pages:[];if(!active||!entries.length){const empty=document.createElement('li');empty.className='hub-live-empty';empty.textContent='No active visitors right now.';pages.append(empty);return}for(const item of entries){const row=document.createElement('li');const path=document.createElement('span');path.textContent=displayPage(item);const total=document.createElement('strong');const visitors=Number(item.count)||0;total.textContent=visitors+' tab'+(visitors===1?'':'s');row.append(path,total);pages.append(row)}}catch(error){summary.textContent=error.message||'Could not load live visitors.'}}function setOpen(open){panel.hidden=!open;control.setAttribute('aria-expanded',String(open));if(open)update()}control.addEventListener('click',()=>setOpen(panel.hidden));close.addEventListener('click',()=>setOpen(false));document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden){setOpen(false);control.focus()}});update();setInterval(()=>{if(!document.hidden)update()},15000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update()})})();";
 const MAX_NAME = 32;
@@ -45,8 +43,31 @@ function json(payload, status = 200) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    if (!CHAT_ENABLED && (url.pathname === CHAT_PATH || url.pathname.startsWith(`${CHAT_PATH}/`))) {
-      return json({error:"Student chat is temporarily disabled."},410);
+    if (url.pathname === "/api/tts") {
+      const tl = url.searchParams.get("tl") || "ml";
+      const q = url.searchParams.get("q") || "";
+      if (!q) return new Response("Missing q", { status: 400 });
+      const gUrl = "https://translate.google.com/translate_tts?ie=UTF-8&tl=" + encodeURIComponent(tl) + "&client=tw-ob&q=" + encodeURIComponent(q);
+      try {
+        const resp = await fetch(gUrl, {
+          headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Referer": "https://translate.google.com/"
+          }
+        });
+        if (!resp.ok) {
+          return new Response("TTS error: " + resp.status, { status: resp.status });
+        }
+        return new Response(resp.body, {
+          headers: {
+            "Content-Type": "audio/mpeg",
+            "Cache-Control": "public, max-age=86400",
+            "Access-Control-Allow-Origin": "*"
+          }
+        });
+      } catch (err) {
+        return new Response("TTS fetch failed: " + err.message, { status: 502 });
+      }
     }
     if (url.pathname === "/live-owner.js" && request.method === "GET") return new Response(OWNER_LIVE_SCRIPT,{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
     if (url.pathname === "/traffic-tracker.js" && request.method === "GET") return new Response(TRACKER_SCRIPT,{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
@@ -201,15 +222,7 @@ export default {
     if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/internal/")) return json({error:"Not found"},404);
     const response = await env.ASSETS.fetch(request);
     if (request.method === "GET" && response.ok && response.headers.get("Content-Type")?.includes("text/html")) {
-      const newHeaders = new Headers(response.headers);
-      newHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate");
-      newHeaders.set("Pragma", "no-cache");
-      newHeaders.set("Expires", "0");
-      const freshHtml = new Response(response.body, {
-        status: response.status,
-        statusText: response.statusText,
-        headers: newHeaders
-      });
+      // Lightweight page visit recording only (1 call per page load, 0 background operations while reading)
       const task = room.fetch(new Request("https://internal/internal/visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -222,7 +235,16 @@ export default {
         })
       })).catch(() => {});
       ctx.waitUntil(task);
-      return freshHtml;
+
+      const htmlHeaders = new Headers(response.headers);
+      htmlHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate");
+      htmlHeaders.set("Pragma", "no-cache");
+      htmlHeaders.set("Expires", "0");
+      return new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: htmlHeaders
+      });
     }
     return response;
   }
