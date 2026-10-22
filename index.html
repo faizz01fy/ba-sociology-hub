@@ -11,16 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script defer src="data/learning_data_ai.js"></script>
-    <script defer src="data/learning_data_education.js"></script>
-    <script defer src="data/learning_data_economics.js"></script>
-    <script defer src="data/learning_data_english.js"></script>
-    <script defer src="data/learning_data_sociology.js"></script>
-    <script defer src="data/learning_data_ethics.js"></script>
-    <script defer src="data/learning_data_math.js"></script>
-    <script defer src="data/learning_data_history.js"></script>
-    <script defer src="data/learning_data_microeconomics.js"></script>
-    <script defer src="mock-test-rotator.js?v=20261019-clean"></script>
+                                        <script defer src="mock-test-rotator.js?v=20261019-clean"></script>
   <style id="chapter-blink-styles">
     @keyframes chapterRandomBlink {
       0%, 100% {
@@ -3151,6 +3142,46 @@
       }
     ];
         
+    const learningDataSources = {
+      'Philosophy of AI': {src:'data/learning_data_ai.js', globalName:'aiLearningData'},
+      'Philosophy of Education': {src:'data/learning_data_education.js', globalName:'educationLearningData'},
+      'Development Issues in Indian Economy': {src:'data/learning_data_economics.js', globalName:'economicsLearningData'},
+      'English': {src:'data/learning_data_english.js', globalName:'englishLearningData'},
+      'Sociology': {src:'data/learning_data_sociology.js', globalName:'sociologyLearningData'},
+      'Fundamentals of Ethics': {src:'data/learning_data_ethics.js', globalName:'ethicsLearningData'},
+      'Mathematics': {src:'data/learning_data_math.js', globalName:'mathLearningData'},
+      'History of Keralam': {src:'data/learning_data_history.js', globalName:'historyLearningData'},
+      'History': {src:'data/learning_data_history.js', globalName:'historyLearningData'},
+      'Microeconomic Foundation': {src:'data/learning_data_microeconomics.js', globalName:'microeconomicsLearningData'},
+      'Microeconomics': {src:'data/learning_data_microeconomics.js', globalName:'microeconomicsLearningData'},
+      'Malayalam': {src:'data/learning_data_malayalam.js', globalName:'malayalamLearningData'}
+    };
+    const learningDataRequests = Object.create(null);
+    let moduleContentRequestId = 0;
+
+    function loadLearningDataForSubject(subject) {
+      const source = learningDataSources[subject];
+      if (!source || window[source.globalName]) return Promise.resolve();
+      if (learningDataRequests[source.src]) return learningDataRequests[source.src];
+
+      const script = document.createElement('script');
+      script.src = source.src;
+      script.async = true;
+      const request = new Promise((resolve, reject) => {
+        script.onload = () => {
+          if (window[source.globalName]) resolve();
+          else reject(new Error('Learning data did not initialize.'));
+        };
+        script.onerror = () => reject(new Error('Learning data could not be loaded.'));
+      });
+      learningDataRequests[source.src] = request;
+      request.catch(() => {
+        if (learningDataRequests[source.src] === request) delete learningDataRequests[source.src];
+      });
+      document.head.append(script);
+      return request;
+    }
+
     function getChapterLearningData(subject, item) {
       if (!item || !item.key) return null;
       const k = item.key;
@@ -4702,9 +4733,11 @@
       // Keep the module window clean: do not show the bottom chapter-list instruction card.
       moduleContent.replaceChildren();
     }
-    function selectModuleItem(subject,medium,module,moduleIndex,itemIndex) {
+    async function selectModuleItem(subject,medium,module,moduleIndex,itemIndex) {
       // Ignore stale chapter handlers from a module that is no longer selected.
       if(moduleDialog.dataset.activeModuleIndex!==String(moduleIndex)) return;
+      const requestId=++moduleContentRequestId;
+      const item=module.items[itemIndex];
       Array.from(moduleTabs.children).forEach((button,index)=>{
         button.setAttribute('aria-selected',String(index===moduleIndex));
         button.tabIndex=index===moduleIndex?0:-1;
@@ -4713,7 +4746,19 @@
         button.setAttribute('aria-selected',String(index===itemIndex));
         button.tabIndex=index===itemIndex?0:-1;
       });
-      showModuleItem(subject,module.items[itemIndex].medium || medium,module.name,module.items[itemIndex]);
+      if(item && item.key && learningDataSources[subject]) {
+        const loading=document.createElement('p');
+        loading.className='module-empty';
+        loading.textContent='Loading study material…';
+        moduleContent.replaceChildren(loading);
+        try {
+          await loadLearningDataForSubject(subject);
+        } catch(error) {
+          // The regular PDF actions remain available if interactive notes fail to load.
+        }
+        if(requestId!==moduleContentRequestId || moduleDialog.hidden || moduleDialog.dataset.activeModuleIndex!==String(moduleIndex)) return;
+      }
+      showModuleItem(subject,item.medium || medium,module.name,item);
     }
     function renderAiStudyGuideModule(subject,medium,module,moduleIndex) {
       const chapters=[];
@@ -4849,6 +4894,7 @@
     }
     function renderModule(subject,medium,modules,moduleIndex) {
       // Track one active module and rebuild only that module's chapter row.
+      moduleContentRequestId++;
       moduleDialog.dataset.activeModuleIndex=String(moduleIndex);
       moduleSubtabs.replaceChildren();
       moduleContent.replaceChildren();
@@ -4905,6 +4951,7 @@
       moduleContent.append(prompt);
     }
     function openModuleLibrary(trigger) {
+      moduleContentRequestId++;
       const card=trigger.closest('.subject-card');
       const subject=card.dataset.subject;
       moduleDialog.dataset.subject=subject;
@@ -5008,6 +5055,7 @@
       (firstModuleTab || moduleDialog.querySelector('.module-home')).focus();
     }
     function closeModuleLibrary() {
+      moduleContentRequestId++;
       moduleContent.replaceChildren();
       moduleDialog.hidden=true;
       document.body.style.overflow='';
