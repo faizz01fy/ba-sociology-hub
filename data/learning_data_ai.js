@@ -16877,10 +16877,10 @@ window.aiLearningData = {
           "defMal": "ജാതിയോ മതമോ നീക്കം ചെയ്താലും മറ്റ് വിവരങ്ങളിലൂടെ ആളെ തിരിച്ചറിയുന്ന രീതി."
         },
         {
-          "term": "Autonomous Trolley Problem",
-          "termMal": "ഓട്ടോണമസ് ട്രോളി സമസ്യ",
-          "def": "Programming split-second unavoidable fatal collision trade-offs.",
-          "defMal": "ഒഴിവാക്കാനാവാത്ത അപകടങ്ങളിൽ ആരെ രക്ഷിക്കണം എന്ന് അൽഗോരിതം തീരുമാനിക്കുന്ന പ്രതിസന്ധി."
+          "term": "Thomson's Distinction (1985)",
+          "termMal": "തോംസന്റെ വേർതിരിവ്",
+          "def": "Killing vs permitting death; intentional harm vs foreseeable harm in trolleyology.",
+          "defMal": "കൊല്ലലും മരണം അനുവദിക്കലും തമ്മിലും, മനപ്പൂർവ്വമുള്ള ദ്രോഹവും പാർശ്വഫലവും തമ്മിലുള്ള വ്യത്യാസം."
         }
       ],
       "examTakeaways": [
@@ -16901,8 +16901,8 @@ window.aiLearningData = {
           "mal": "AI പക്ഷപാതം വെറുമൊരു കമ്പ്യൂട്ടർ തകരാറല്ല, സമൂഹത്തിലെ അസമത്വങ്ങളുടെ പ്രതിഫലനമാണ്."
         },
         {
-          "en": "Autonomous driving exposes the deep tension between utilitarian casualty minimization and Kantian rights.",
-          "mal": "യൂട്ടിലിറ്റേറിയൻ ചിന്തയും കാന്റിയൻ നീതിയും തമ്മിലുള്ള കടുത്ത പോരാട്ടമാണ് സ്വയംഭരണ കാറുകളിൽ നടക്കുന്നത്."
+          "en": "Judith Jarvis Thomson's (1985) trolley analysis establishes that intentional harm and foreseeable harm are ethically distinct.",
+          "mal": "മനപ്പൂർവ്വമുള്ള ദ്രോഹവും അവിചാരിതമായ പാർശ്വഫലവും ധാർമ്മികമായി വ്യത്യസ്തമാണെന്ന് ജൂഡിത്ത് തോംസൺ (1985) വ്യക്തമാക്കുന്നു."
         }
       ]
     },
@@ -19281,123 +19281,123 @@ window.aiLearningData = {
     ]
   },
   "ai_mod_4_ch5": {
-    "title": "Module 4 · Chapter 5 · Ethical Rules for Autonomous Vehicles & The Trolley Problem",
-    "titleMal": "മൊഡ്യൂൾ 4 · അധ്യായം 5 · സ്വയംഭരണ വാഹനങ്ങളുടെ ധാർമ്മിക നിയമങ്ങളും ട്രോളി സമസ്യയും",
+    "title": "Module 4 · Chapter 5 · Ethical Rules for Autonomous Vehicles (Official LMS Syllabus 4.3 A)",
+    "titleMal": "മൊഡ്യൂൾ 4 · അധ്യായം 5 · സ്വയംഭരണ വാഹനങ്ങളുടെ ധാർമ്മിക നിയമങ്ങൾ (ഔദ്യോഗിക LMS സിലബസ്)",
     "filename": "Module_4_Chapter_5_Ethical_Rules_for_Autonomous_Vehicles.pdf",
     "summary": {
-      "overview": "⚡ HIGH-YIELD EXECUTIVE CORE: Autonomous Vehicles (AVs) transform abstract moral philosophy into millisecond crash optimization algorithms. Philippa Foot's classic Trolley Problem pits Utilitarianism (sacrificing passenger to save multiple pedestrians) against Kantian Deontology (never using a person as a mere instrument). The global MIT Moral Machine study revealed profound cultural ethics divides, while the German Ethics Commission established the world's strictest standard: prohibiting discrimination based on age, gender, or disability.",
-      "overviewMal": "⚡ പരീക്ഷാ സംഗ്രഹം (3-Page Core): സ്വയംഭരണ കാറുകളിലെ അപകടങ്ങളിൽ ആരെ രക്ഷിക്കണം എന്ന ചോദ്യം 'ട്രോളി സമസ്യയെ' റോഡുകളിലേക്ക് കൊണ്ടുവന്നു. കൂടുതൽ ആളുകളെ രക്ഷിക്കാൻ കാറിലിരിക്കുന്നയാളെ ബലിനൽകണമെന്ന യൂട്ടിലിറ്റേറിയൻ വാദവും, ആരെയും മനപ്പൂർവ്വം കൊല്ലരുതെന്ന കാന്റിയൻ വാദവും തമ്മിൽ തർക്കമുണ്ട്. ജർമ്മൻ എത്തിക്സ് കമ്മീഷൻ പ്രായമോ ആരോഗ്യസ്ഥിതിയോ നോക്കി മനുഷ്യ ജീവനുകളെ വേർതിരിക്കുന്നത് പൂർണ്ണമായി നിരോധിച്ചു.",
+      "overview": "⚡ HIGH-YIELD EXECUTIVE CORE (Official Calicut University LMS): When autonomous vehicles (AVs) face unavoidable accident scenarios, they cannot rely on human reflex blamelessness. The LMS text anchors AV ethics in Judith Jarvis Thomson's (1985) Trolley Problem, contrasting retributivist, selfish, and utilitarian strategies across 3 core crash scenarios. To establish just collision rules, the syllabus examines John Rawls's Veil of Ignorance (normative equality across caste, class, and gender), Wood's critique of abstract justice, Hevelke & Nida-Rümelin's (2014) forward-looking vs backward-looking responsibility, and mandatory ethical audits of training data for pedestrians, cyclists, and the elderly.",
+      "overviewMal": "⚡ പരീക്ഷാ സംഗ്രഹം (ഔദ്യോഗിക കാലിക്കറ്റ് സർവ്വകലാശാല LMS): സ്വയംഭരണ കാറുകളിലെ അപകടങ്ങളിൽ കമ്പ്യൂട്ടറുകളുടെ തീരുമാനങ്ങൾ മുൻകൂട്ടി തയ്യാറാക്കിയ ധാർമ്മിക നിയമങ്ങളെ അടിസ്ഥാനമാക്കിയുള്ളതാണ്. ജൂഡിത്ത് തോംസന്റെ (1985) ട്രോളി സമസ്യ, ജോൺ റോൾസിന്റെ 'അജ്ഞതയുടെ മൂടുപടം' (Veil of Ignorance), അതിനെതിരെയുള്ള വുഡിന്റെ വിമർശനം, ഹെവെൽക്കെ & നിഡ-റൂമെലിന്റെ (2014) ഉത്തരവാദിത്ത സിദ്ധാന്തങ്ങൾ, കാൽനടയാത്രക്കാർക്കും മുതിർന്നവർക്കുമായി ഡാറ്റയിൽ വരുത്തേണ്ട എത്തിക്കൽ ഓഡിറ്റുകൾ എന്നിവയാണ് LMS പാഠഭാഗം ചർച്ച ചെയ്യുന്നത്.",
       "keyMetrics": [
         {
-          "label": "PHILOSOPHICAL DILEMMA",
-          "labelMal": "ധാർമ്മിക സമസ്യ",
-          "value": "Trolley Problem in Robotics",
-          "detail": "⚡ Consequentialism (minimize deaths) vs Deontology (passenger duty of care)."
+          "label": "LMS FOUNDATIONAL TEXT",
+          "labelMal": "LMS അടിസ്ഥാന തത്വം",
+          "value": "Thomson (1985) / Patrick Lin",
+          "detail": "⚡ Distinction between intentional harm and foreseeable harm; killing vs permitting death."
         },
         {
-          "label": "GLOBAL DATA STUDY",
-          "labelMal": "ആഗോള പഠനം",
-          "value": "MIT Moral Machine (40M+ votes)",
-          "detail": "🔑 Massive cultural variations in crash preferences between East vs West."
+          "label": "JUSTICE FRAMEWORK",
+          "labelMal": "നീതിശാസ്ത്ര മാതൃക",
+          "value": "Rawls's Veil of Ignorance",
+          "detail": "🔑 Decision-making oblivious of gender, caste, class, wealth, or social standing."
         },
         {
-          "label": "GOLD STANDARD REGULATION",
-          "labelMal": "പ്രധാന നിയമം",
-          "value": "German Ethics Commission (Rule 9)",
-          "detail": "🧠 Absolute ban on discriminating between human lives by age, gender, or health."
+          "label": "ACCOUNTABILITY MODEL",
+          "labelMal": "ഉത്തരവാദിത്ത മാതൃക",
+          "value": "Hevelke & Nida-Rümelin (2014)",
+          "detail": "🧠 Forward-looking (programming) vs Backward-looking (legal liability) responsibility."
         }
       ],
       "sections": [
         {
-          "badge": "Page 1: The Crash Dilemma",
-          "title": "PAGE 1 · The Autonomous Trolley Problem: Utilitarian vs Kantian",
-          "titleMal": "പേജ് 1 · ഓട്ടോണമസ് ട്രോളി സമസ്യ: യൂട്ടിലിറ്റേറിയൻ vs കാന്റിയൻ",
+          "badge": "Page 1: Thomson & The LMS Crash Dilemmas",
+          "title": "PAGE 1 · Judith Jarvis Thomson (1985) & The Three LMS Collision Scenarios",
+          "titleMal": "പേജ് 1 · ജൂഡിത്ത് തോംസൺ (1985) & LMS-ലെ മൂന്ന് പ്രധാന അപകട സാഹചര്യങ്ങൾ",
           "points": [
             {
-              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The AV Trolley Dilemma (Philippa Foot / Judith Thomson)</mark>: Brakes fail at highway speed. Swerving left kills 1 passenger; staying straight kills 5 pedestrians. Utilitarianism commands: minimize casualties ($5 > 1$). Kantianism commands: never actively kill an innocent passenger as a sacrificial means to an end.",
-              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ട്രോളി സമസ്യ:</mark> കാറിന്റെ ബ്രേക്ക് നഷ്ടപ്പെടുമ്പോൾ 5 കാൽനടയാത്രക്കാരെ രക്ഷിക്കാൻ സ്വന്തം കാറിലെ യാത്രക്കാരനെ ഭിത്തിയിലിടിച്ച് കൊല്ലണമോ അതോ യാത്രക്കാരനെ രക്ഷിക്കണമോ എന്ന തർക്കം."
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Judith Jarvis Thomson (1985) Distinction</mark>: Thomson distinguishes between <mark style='background:#fef08a;'>killing and permitting death</mark>, as well as between <mark style='background:#fef08a;'>intentional harm and foreseeable harm</mark>. Moral assessment depends not only on consequences but on the method of harm and the violation of rights.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ജൂഡിത്ത് തോംസൺ (1985):</mark> കൊല്ലുന്നതും (killing) മരണം സംഭവിക്കാൻ അനുവദിക്കുന്നതും (permitting death), മനപ്പൂർവ്വമുള്ള ദ്രോഹവും (intentional harm) മുൻകൂട്ടി കാണാവുന്ന പാർശ്വഫലവും (foreseeable harm) തമ്മിലുള്ള വ്യത്യാസം ധാർമ്മിക വിലയിരുത്തലിൽ നിർണായകമാണ്."
             },
             {
-              "en": "<span style='background:#fee2e2; color:#991b1b; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚠️ EXAM TRAP</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The Buyer's Paradox (Bonnefon et al., 2016)</mark>: Everyone agrees in surveys that autonomous cars SHOULD be programmed to be utilitarian (save the greater number), BUT nobody will ever buy a car programmed to sacrifice its own driver!",
-              "mal": "<span style='background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>⚠️ പരീക്ഷാ ചോദ്യം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഉപഭോക്താവിന്റെ വിരോധാഭാസം:</mark> റോഡിലുള്ളവരെ രക്ഷിക്കാൻ കാറിലിരിക്കുന്ന ആളെ കൊല്ലുന്ന കാറുകൾ വേണമെന്ന് എല്ലാവരും പറയുമെങ്കിലും, ആരും സ്വന്തം ജീവൻ ബലികൊടുക്കുന്ന കാർ പണം കൊടുത്ത് വാങ്ങില്ല."
+              "en": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🧠 THOUGHT EXPERIMENT</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The Crossroads Collision Dilemma</mark>: An AV (1 occupant) faces a red-light running pickup truck (5 occupants), 2 pedestrians, and a tree. The AI can adopt: 1. A <i>Retributivist</i> stance (collide with truck for violating rules); 2. A <i>Selfish</i> strategy (hit pedestrians to save the occupant); or 3. A <i>Utilitarian</i> method (collide with tree, killing occupant to maximize preservation of life).",
+              "mal": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🧠 ചിന്താ പരീക്ഷണം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>LMS കവല അപകട സമസ്യ:</mark> റെഡ് ലൈറ്റ് മറികടന്ന പിക്കപ്പ് വാൻ, 2 കാൽനടക്കാർ, മരം എന്നിവയ്ക്കിടയിൽ കാറിന് സ്വീകരിക്കാവുന്ന 3 വഴികൾ: തെറ്റ് ചെയ്ത വാനിലിടിക്കുക (റെട്രിബ്യൂട്ടീവിസം), കാൽനടക്കാരിലിടിച്ച് ഡ്രൈവറെ രക്ഷിക്കുക (സ്വാർത്ഥം), മരത്തിലിടിച്ച് ഡ്രൈവറെ ബലിനൽകി കൂടുതൽ ജീവനുകൾ രക്ഷിക്കുക (യൂട്ടിലിറ്റേറിയൻ)."
             },
             {
-              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Doing vs Allowing Harm (Doctrine of Double Effect)</mark>: Catholic and deontological ethics forbid actively steering into an innocent person, even if steering saves multiple lives, because direct intentional killing is an absolute evil.",
-              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഡബിൾ ഇഫക്ട് സിദ്ധാന്തം:</mark> കൂടുതൽ പേരെ രക്ഷിക്കാനാണെങ്കിൽ പോലും നിരപരാധിയായ ഒരാളെ മനപ്പൂർവ്വം കൊലപ്പെടുത്തുന്നത് തികച്ചും തെറ്റാണെന്ന കാന്റിയൻ നിലപാട്."
+              "en": "<span style='background:#fee2e2; color:#991b1b; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚠️ EXAM TRAP</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Human 'Blamelessness' vs Machine Deliberation</mark>: A human driver in a sudden crash lacks deliberation time and is deemed legally 'blameless'. By contrast, autonomous vehicles possess superior computational power; their crash decisions reflect pre-programmed choices made during the software planning phase.",
+              "mal": "<span style='background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>⚠️ പരീക്ഷാ ചോദ്യം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>മനുഷ്യന്റെ നിരപരാധിത്വം vs മെഷീൻ കണക്കുകൂട്ടൽ:</mark> പെട്ടെന്നുള്ള അപകടത്തിൽ ആലോചിക്കാൻ സമയമില്ലാത്തതിനാൽ മനുഷ്യൻ നിയമപരമായി കുറ്റവിമുക്തനാണ് (blameless); എന്നാൽ കമ്പ്യൂട്ടറുകളുടെ തീരുമാനം മുൻകൂട്ടി പ്രോഗ്രാം ചെയ്തതാണ്."
             }
           ]
         },
         {
-          "badge": "Page 2: The MIT Moral Machine",
-          "title": "PAGE 2 · The MIT Moral Machine Study & Cultural Divergence",
-          "titleMal": "പേജ് 2 · എം.ഐ.ടി മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine, 2018) & സാംസ്കാരിക വ്യത്യാസങ്ങൾ",
+          "badge": "Page 2: Rawls & Justice in AV Programming",
+          "title": "PAGE 2 · John Rawls's Veil of Ignorance & Wood's Philosophical Critique",
+          "titleMal": "പേജ് 2 · ജോൺ റോൾസിന്റെ അജ്ഞതയുടെ മൂടുപടവും വുഡിന്റെ വിമർശനവും",
           "points": [
             {
-              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The MIT Moral Machine (Awad et al., Nature 2018)</mark>: 40 million decisions from 233 countries revealed universal shared preferences (save humans over animals, save many over few, save the young over the elderly), BUT exposed profound cultural chasms.",
-              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>എം.ഐ.ടി മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine, 2018):</mark> 233 രാജ്യങ്ങളിലെ 4 കോടി ആളുകളുടെ സർവ്വേയിൽ, മൃഗങ്ങളേക്കാൾ മനുഷ്യരെയും, കൂടുതൽ ആളുകളെയും രക്ഷിക്കണമെന്ന് ഭൂരിഭാഗം പേരും അഭിപ്രായപ്പെട്ടു."
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Rawls's Veil of Ignorance (LMS Page 11)</mark>: Impartial algorithmic rules must be designed from an original position where creators are oblivious to their gender, caste, class, ethnicity, wealth, abilities, or social standing. This guarantees equal protection for vulnerable pedestrians and passengers alike.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>റോൾസിന്റെ അജ്ഞതയുടെ മൂടുപടം:</mark> ജാതി, വർഗ്ഗം, ലിംഗം, സമ്പത്ത് എന്നിവയെക്കുറിച്ചുള്ള അറിവില്ലാത്ത ഒരു അവസ്ഥയിൽ നിന്നുകൊണ്ട് വേണം റോഡപകട നിയമങ്ങൾ നിർമ്മിക്കാൻ; ഇത് എല്ലാവർക്കും തുല്യ നീതി ഉറപ്പാക്കുന്നു."
             },
             {
-              "en": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🧠 THOUGHT EXPERIMENT</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Western vs Eastern Moral Clusters</mark>: Western participants strongly favored sparing the young over the old; Eastern participants (China, Japan, Korea) showed significant preference for respecting and sparing the elderly, reflecting Confucian filial values.",
-              "mal": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🧠 ചിന്താ പരീക്ഷണം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>കിഴക്കും പടിഞ്ഞാറും:</mark> പടിഞ്ഞാറൻ രാജ്യങ്ങൾ കുട്ടികളെ രക്ഷിക്കാൻ ആഗ്രഹിച്ചപ്പോൾ, കിഴക്കൻ രാജ്യങ്ങൾ (ചൈന, ജപ്പാൻ) പ്രായമായവരെ രക്ഷിക്കാനാണ് കൂടുതൽ മുൻഗണന നൽകിയത്."
+              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Wood's Contemporary Critique of Rawls (LMS Page 12)</mark>: Philosopher Wood critiques the veil of ignorance for oversimplifying social reality. He contends justice must be grounded in tangible humans with real socio-economic contexts, cultural backgrounds, and empathy—rather than abstract identities devoid of social realities.",
+              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>വുഡിന്റെ റോൾസ് വിമർശനം:</mark> റോൾസിന്റെ സിദ്ധാന്തം യഥാർത്ഥ സാമൂഹിക സാഹചര്യങ്ങളെ അവഗണിക്കുന്നുവെന്നും, അമൂർത്തമായ മനുഷ്യരെയല്ല മറിച്ച് വ്യക്തമായ സംസ്കാരവും സഹാനുഭൂതിയുമുള്ള യഥാർത്ഥ മനുഷ്യരെ കേന്ദ്രീകരിച്ചാകണം നീതിശാസ്ത്രമെന്നും വുഡ് വാദിക്കുന്നു."
             },
             {
-              "en": "<span style='background:#fee2e2; color:#991b1b; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚠️ EXAM TRAP</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Global Ethics Is Not Monolithic</mark>: Software deployed globally cannot assume Silicon Valley utilitarianism fits European human dignity laws or Asian collectivist norms.",
-              "mal": "<span style='background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>⚠️ പരീക്ഷാ ചോദ്യം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഏകീകൃത ധാർമ്മികതയില്ല:</mark> ലോകത്തെല്ലാ മനുഷ്യർക്കും ഒരൊറ്റ ധാർമ്മിക നിയമം ബാധകമാക്കാൻ ഒരു ആഗോള കമ്പനിക്കും കഴിയില്ല."
+              "en": "<span style='background:#dcfce7; color:#166534; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>💡 RECALL HOOK</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The Oncoming Heavy Truck Dilemma (LMS Page 5)</mark>: An AV carrying 5 passengers meets an oncoming heavy truck; avoiding it requires swerving and fatally striking an elderly individual on the sidewalk. Rawlsian justice examines whether age should ever diminish a pedestrian's right to protection.",
+              "mal": "<span style='background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>💡 ഓർമ്മയ്ക്കായി:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>LMS ട്രക്ക്-വൃദ്ധൻ സമസ്യ:</mark> 5 യാത്രക്കാരുള്ള കാർ ട്രക്കിലിടിക്കാതിരിക്കാൻ വശത്തേക്ക് വെട്ടിക്കുമ്പോൾ നടപ്പാതയിലെ പ്രായമായ വ്യക്തിയെ ഇടിക്കേണ്ടി വരുന്ന സാഹചര്യം; പ്രായം നോക്കി ജീവന് മുൻഗണന നൽകുന്നത് നീതിയുക്തമാണോ എന്ന ചോദ്യം."
             }
           ]
         },
         {
-          "badge": "Page 3: German Ethics Commission Rules",
-          "title": "PAGE 3 · The German Ethics Commission 20-Point Rules (2017)",
-          "titleMal": "പേജ് 3 · ജർമ്മൻ എത്തിക്സ് കമ്മീഷന്റെ 20 നിയമങ്ങൾ",
+          "badge": "Page 3: Responsibility & Safety Audits",
+          "title": "PAGE 3 · Moral Accountability & Ethical Data Audits (Hevelke & Nida-Rümelin)",
+          "titleMal": "പേജ് 3 · ധാർമ്മിക ഉത്തരവാദിത്തവും ഡാറ്റാ ഓഡിറ്റിംഗും (ഹെവെൽക്കെ & നിഡ-റൂമെലിൻ)",
           "points": [
             {
-              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Rule 9 (Prohibition of Discrimination)</mark>: 'In the event of unavoidable accident situations, any distinction based on personal features (age, gender, physical or mental constitution) is strictly prohibited. It is also prohibited to offset victims against one another.'",
-              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ജർമ്മൻ റൂൾ 9:</mark> ഒഴിവാക്കാനാവാത്ത അപകടങ്ങളിൽ പ്രായം, ലിംഗം, ശാരീരിക-മാനസിക ശേഷികൾ എന്നിവ നോക്കി മനുഷ്യ ജീവനുകളെ വേർതിരിച്ച് ആരെ കൊല്ലണമെന്ന് തീരുമാനിക്കാൻ പാടില്ല."
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Forward-Looking vs Backward-Looking Responsibility (Hevelke & Nida-Rümelin 2014)</mark>: <i>Forward-looking responsibility</i> addresses how developers and regulators pre-program safety in advance. <i>Backward-looking responsibility</i> addresses legal and moral accountability allocated to sellers, manufacturers, and users after an accident occurs.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഹെവെൽക്കെ & നിഡ-റൂമെലിൻ (2014):</mark> ഭാവിയിലേക്കുള്ള ഉത്തരവാദിത്തം (സുരക്ഷിതമായ അൽഗോരിതം നിർമ്മിക്കൽ) vs കഴിഞ്ഞ അപകടങ്ങളുടെ ഉത്തരവാദിത്തം (നിർമ്മാതാക്കൾക്കും ഉപഭോക്താക്കൾക്കും ഉള്ള നിയമപരമായ ബാധ്യത)."
             },
             {
-              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Human Protection Over Animals & Property</mark>: The German rules establish a strict moral hierarchy: Human life has absolute priority over animal life and material property. Crashing into an empty Ferrari or a stray dog to avoid a human is mandatory.",
-              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>മനുഷ്യജീവന് പരമ പ്രാധാന്യം:</mark> മൃഗങ്ങളുടെ ജീവനേക്കാളും കോടികൾ വിലയുള്ള സ്വത്തുക്കളേക്കാളും ഉപരിയായി മനുഷ്യന്റെ ജീവൻ സംരക്ഷിക്കാൻ കാറുകൾക്ക് ബാധ്യതയുണ്ട്."
+              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Ethical Training Data Audits (LMS Page 16)</mark>: Training data must undergo strict ethical auditing to identify and eliminate bias. It is essential to ensure that vulnerable groups—such as <mark style='background:#fef08a;'>pedestrians, cyclists, the elderly, or individuals with disabilities</mark>—are never under-represented or systematically disadvantaged.",
+              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ട്രെയിനിംഗ് ഡാറ്റാ ഓഡിറ്റിംഗ്:</mark> കാൽനടയാത്രക്കാർ, സൈക്കിൾ യാത്രക്കാർ, പ്രായമായവർ, ഭിന്നശേഷിക്കാർ എന്നിവർ അൽഗോരിതത്തിന്റെ ഡാറ്റയിൽ കൃത്യമായി ഉൾപ്പെട്ടിട്ടുണ്ടെന്ന് ഉറപ്പുവരുത്തുന്ന എത്തിക്കൽ ഓഡിറ്റ് നിർബന്ധമാണ്."
             },
             {
-              "en": "<span style='background:#dcfce7; color:#166534; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>💡 RECALL HOOK</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Black Box Crash Recorder Mandate</mark>: Vehicles must maintain tamper-proof black boxes to log whether the human driver or the automated system was in operational control at the microsecond of impact.",
-              "mal": "<span style='background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>💡 ഓർമ്മയ്ക്കായി:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ബ്ലാക്ക് ബോക്സ് പരിശോധന:</mark> അപകടസമയത്ത് മനുഷ്യനാണോ അതോ കമ്പ്യൂട്ടറാണോ വണ്ടി നിയന്ത്രിച്ചിരുന്നത് എന്ന് കൃത്യമായി രേഖപ്പെടുത്തുന്ന ബ്ലാക്ക് ബോക്സ് നിർബന്ധമാണ്."
+              "en": "<span style='background:#dcfce7; color:#166534; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>💡 RECALL HOOK</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Transparency, Explainability & Edge Cases (LMS Pages 15, 17-18)</mark>: Prioritizing human safety fosters public trust. Algorithms must be explainable and continuously evaluated across atypical edge cases and simulated hazardous environments rather than relying on obscure black-box decision models.",
+              "mal": "<span style='background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>💡 ഓർമ്മയ്ക്കായി:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>സുതാര്യതയും എഡ്ജ് കേസുകളും:</mark> അസാധാരണമായ ട്രാഫിക് സാഹചര്യങ്ങളിലും കൃത്യമായി വിശദീകരിക്കാൻ കഴിയുന്നതും (explainability) മനുഷ്യ ജീവന് മുൻഗണന നൽകുന്നതുമായ അൽഗോരിതങ്ങൾ പൊതുജനവിശ്വാസം വളർത്തുന്നു."
             }
           ]
         }
       ],
       "coreConcepts": [
         {
-          "term": "Autonomous Trolley Problem",
-          "termMal": "ഓട്ടോണമസ് ട്രോളി സമസ്യ",
-          "def": "Programming split-second unavoidable fatal collision trade-offs.",
-          "defMal": "ഒഴിവാക്കാനാവാത്ത അപകടങ്ങളിൽ ആരെ രക്ഷിക്കണം എന്ന് അൽഗോരിതം തീരുമാനിക്കുന്ന പ്രതിസന്ധി."
+          "term": "Thomson's Distinction (1985)",
+          "termMal": "തോംസന്റെ വേർതിരിവ്",
+          "def": "Killing vs permitting death; intentional harm vs foreseeable harm in trolleyology.",
+          "defMal": "കൊല്ലലും മരണം അനുവദിക്കലും തമ്മിലും, മനപ്പൂർവ്വമുള്ള ദ്രോഹവും പാർശ്വഫലവും തമ്മിലുള്ള വ്യത്യാസം."
         },
         {
-          "term": "The Buyer's Paradox",
-          "termMal": "വാങ്ങുന്നയാളുടെ വിരോധാഭാസം",
-          "def": "Demanding utilitarian vehicles for others while refusing to buy cars that sacrifice owners.",
-          "defMal": "മറ്റുള്ളവരെ രക്ഷിക്കാൻ സ്വന്തം ഡ്രൈവറെ കൊല്ലുന്ന കാറുകൾ ആരും വാങ്ങില്ലെന്ന യാഥാർത്ഥ്യം."
+          "term": "Rawls's Veil of Ignorance",
+          "termMal": "അജ്ഞതയുടെ മൂടുപടം",
+          "def": "Designing impartial traffic algorithms without knowledge of one's class, caste, gender, or wealth.",
+          "defMal": "ജാതി, വർഗ്ഗം, ലിംഗം, സമ്പത്ത് എന്നിവ അറിയാതെ തുല്യനീതി ഉറപ്പാക്കുന്ന റോൾസിയൻ സങ്കൽപ്പം."
         },
         {
-          "term": "German Rule 9",
-          "termMal": "ജർമ്മൻ എത്തിക്സ് റൂൾ 9",
-          "def": "Absolute ban on age, gender, or health discrimination in vehicular crash algorithms.",
-          "defMal": "അപകടങ്ങളിൽ പ്രായമോ ലിംഗമോ നോക്കി വേർതിരിവ് കാണിക്കുന്നത് പൂർണ്ണമായി വിലക്കുന്ന നിയമം."
+          "term": "Hevelke & Nida-Rümelin Model",
+          "termMal": "ഉത്തരവാദിത്ത മാതൃക",
+          "def": "Forward-looking (pre-programming safety) vs Backward-looking (liability allocation) responsibility.",
+          "defMal": "അപകടത്തിന് മുമ്പുള്ള മുൻകരുതലും അപകടത്തിന് ശേഷമുള്ള നിയമപരമായ ബാധ്യതയും തമ്മിലുള്ള വേർതിരിവ്."
         }
       ],
       "examTakeaways": [
         {
-          "en": "Autonomous driving exposes the deep tension between utilitarian casualty minimization and Kantian rights.",
-          "mal": "യൂട്ടിലിറ്റേറിയൻ ചിന്തയും കാന്റിയൻ നീതിയും തമ്മിലുള്ള കടുത്ത പോരാട്ടമാണ് സ്വയംഭരണ കാറുകളിൽ നടക്കുന്നത്."
+          "en": "Judith Jarvis Thomson's (1985) trolley analysis establishes that intentional harm and foreseeable harm are ethically distinct.",
+          "mal": "മനപ്പൂർവ്വമുള്ള ദ്രോഹവും അവിചാരിതമായ പാർശ്വഫലവും ധാർമ്മികമായി വ്യത്യസ്തമാണെന്ന് ജൂഡിത്ത് തോംസൺ (1985) വ്യക്തമാക്കുന്നു."
         },
         {
-          "en": "The MIT Moral Machine showed that global consensus on collision ethics does not exist.",
-          "mal": "അപകടങ്ങളിൽ ഒരു ആഗോള ധാർമ്മിക സമവായം നിലവിലില്ലെന്ന് എം.ഐ.ടി മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine, 2018) തെളിയിച്ചു."
+          "en": "John Rawls's Veil of Ignorance demands that AV collision rules treat all human beings with normative equality regardless of caste, class, or age.",
+          "mal": "ജാതിയോ വർഗ്ഗമോ പ്രായമോ നോക്കാതെ എല്ലാ മനുഷ്യർക്കും തുല്യ പരിരക്ഷ നൽകണമെന്ന് റോൾസിന്റെ അജ്ഞതയുടെ മൂടുപടം അനുശാസിക്കുന്നു."
         },
         {
-          "en": "German regulations legally enshrine human dignity by outlawing age-based or demographic crash triage.",
-          "mal": "പ്രായം നോക്കി മനുഷ്യരെ ബലികൊടുക്കുന്നത് ജർമ്മൻ നിയമങ്ങൾ പൂർണ്ണമായി നിരോധിച്ചിരിക്കുന്നു."
+          "en": "Hevelke and Nida-Rümelin (2014) emphasize that autonomous vehicle ethics must encompass both forward-looking safety and backward-looking legal accountability.",
+          "mal": "സുരക്ഷിത പ്രോഗ്രാമിംഗും (forward-looking) അപകടാനന്തര നിയമപരമായ ഉത്തരവാദിത്തവും (backward-looking) ഒരുപോലെ പ്രധാനമാണെന്ന് ഹെവെൽക്കെയും നിഡ-റൂമെലിനും വ്യക്തമാക്കുന്നു."
         }
       ]
     },
@@ -20877,10 +20877,10 @@ window.aiLearningData = {
           "defMal": "ജാതിയോ മതമോ നീക്കം ചെയ്താലും മറ്റ് വിവരങ്ങളിലൂടെ ആളെ തിരിച്ചറിയുന്ന രീതി."
         },
         {
-          "term": "Autonomous Trolley Problem",
-          "termMal": "ഓട്ടോണമസ് ട്രോളി സമസ്യ",
-          "def": "Programming split-second unavoidable fatal collision trade-offs.",
-          "defMal": "ഒഴിവാക്കാനാവാത്ത അപകടങ്ങളിൽ ആരെ രക്ഷിക്കണം എന്ന് അൽഗോരിതം തീരുമാനിക്കുന്ന പ്രതിസന്ധി."
+          "term": "Thomson's Distinction (1985)",
+          "termMal": "തോംസന്റെ വേർതിരിവ്",
+          "def": "Killing vs permitting death; intentional harm vs foreseeable harm in trolleyology.",
+          "defMal": "കൊല്ലലും മരണം അനുവദിക്കലും തമ്മിലും, മനപ്പൂർവ്വമുള്ള ദ്രോഹവും പാർശ്വഫലവും തമ്മിലുള്ള വ്യത്യാസം."
         }
       ],
       "examTakeaways": [
@@ -20901,8 +20901,8 @@ window.aiLearningData = {
           "mal": "AI പക്ഷപാതം വെറുമൊരു കമ്പ്യൂട്ടർ തകരാറല്ല, സമൂഹത്തിലെ അസമത്വങ്ങളുടെ പ്രതിഫലനമാണ്."
         },
         {
-          "en": "Autonomous driving exposes the deep tension between utilitarian casualty minimization and Kantian rights.",
-          "mal": "യൂട്ടിലിറ്റേറിയൻ ചിന്തയും കാന്റിയൻ നീതിയും തമ്മിലുള്ള കടുത്ത പോരാട്ടമാണ് സ്വയംഭരണ കാറുകളിൽ നടക്കുന്നത്."
+          "en": "Judith Jarvis Thomson's (1985) trolley analysis establishes that intentional harm and foreseeable harm are ethically distinct.",
+          "mal": "മനപ്പൂർവ്വമുള്ള ദ്രോഹവും അവിചാരിതമായ പാർശ്വഫലവും ധാർമ്മികമായി വ്യത്യസ്തമാണെന്ന് ജൂഡിത്ത് തോംസൺ (1985) വ്യക്തമാക്കുന്നു."
         }
       ]
     },
@@ -23281,123 +23281,123 @@ window.aiLearningData = {
     ]
   },
   "ai_mal_ch18": {
-    "title": "Module 4 · Chapter 5 · Ethical Rules for Autonomous Vehicles & The Trolley Problem",
-    "titleMal": "മൊഡ്യൂൾ 4 · അധ്യായം 5 · സ്വയംഭരണ വാഹനങ്ങളുടെ ധാർമ്മിക നിയമങ്ങളും ട്രോളി സമസ്യയും",
+    "title": "Module 4 · Chapter 5 · Ethical Rules for Autonomous Vehicles (Official LMS Syllabus 4.3 A)",
+    "titleMal": "മൊഡ്യൂൾ 4 · അധ്യായം 5 · സ്വയംഭരണ വാഹനങ്ങളുടെ ധാർമ്മിക നിയമങ്ങൾ (ഔദ്യോഗിക LMS സിലബസ്)",
     "filename": "Module_4_Chapter_5_Ethical_Rules_for_Autonomous_Vehicles.pdf",
     "summary": {
-      "overview": "⚡ HIGH-YIELD EXECUTIVE CORE: Autonomous Vehicles (AVs) transform abstract moral philosophy into millisecond crash optimization algorithms. Philippa Foot's classic Trolley Problem pits Utilitarianism (sacrificing passenger to save multiple pedestrians) against Kantian Deontology (never using a person as a mere instrument). The global MIT Moral Machine study revealed profound cultural ethics divides, while the German Ethics Commission established the world's strictest standard: prohibiting discrimination based on age, gender, or disability.",
-      "overviewMal": "⚡ പരീക്ഷാ സംഗ്രഹം (3-Page Core): സ്വയംഭരണ കാറുകളിലെ അപകടങ്ങളിൽ ആരെ രക്ഷിക്കണം എന്ന ചോദ്യം 'ട്രോളി സമസ്യയെ' റോഡുകളിലേക്ക് കൊണ്ടുവന്നു. കൂടുതൽ ആളുകളെ രക്ഷിക്കാൻ കാറിലിരിക്കുന്നയാളെ ബലിനൽകണമെന്ന യൂട്ടിലിറ്റേറിയൻ വാദവും, ആരെയും മനപ്പൂർവ്വം കൊല്ലരുതെന്ന കാന്റിയൻ വാദവും തമ്മിൽ തർക്കമുണ്ട്. ജർമ്മൻ എത്തിക്സ് കമ്മീഷൻ പ്രായമോ ആരോഗ്യസ്ഥിതിയോ നോക്കി മനുഷ്യ ജീവനുകളെ വേർതിരിക്കുന്നത് പൂർണ്ണമായി നിരോധിച്ചു.",
+      "overview": "⚡ HIGH-YIELD EXECUTIVE CORE (Official Calicut University LMS): When autonomous vehicles (AVs) face unavoidable accident scenarios, they cannot rely on human reflex blamelessness. The LMS text anchors AV ethics in Judith Jarvis Thomson's (1985) Trolley Problem, contrasting retributivist, selfish, and utilitarian strategies across 3 core crash scenarios. To establish just collision rules, the syllabus examines John Rawls's Veil of Ignorance (normative equality across caste, class, and gender), Wood's critique of abstract justice, Hevelke & Nida-Rümelin's (2014) forward-looking vs backward-looking responsibility, and mandatory ethical audits of training data for pedestrians, cyclists, and the elderly.",
+      "overviewMal": "⚡ പരീക്ഷാ സംഗ്രഹം (ഔദ്യോഗിക കാലിക്കറ്റ് സർവ്വകലാശാല LMS): സ്വയംഭരണ കാറുകളിലെ അപകടങ്ങളിൽ കമ്പ്യൂട്ടറുകളുടെ തീരുമാനങ്ങൾ മുൻകൂട്ടി തയ്യാറാക്കിയ ധാർമ്മിക നിയമങ്ങളെ അടിസ്ഥാനമാക്കിയുള്ളതാണ്. ജൂഡിത്ത് തോംസന്റെ (1985) ട്രോളി സമസ്യ, ജോൺ റോൾസിന്റെ 'അജ്ഞതയുടെ മൂടുപടം' (Veil of Ignorance), അതിനെതിരെയുള്ള വുഡിന്റെ വിമർശനം, ഹെവെൽക്കെ & നിഡ-റൂമെലിന്റെ (2014) ഉത്തരവാദിത്ത സിദ്ധാന്തങ്ങൾ, കാൽനടയാത്രക്കാർക്കും മുതിർന്നവർക്കുമായി ഡാറ്റയിൽ വരുത്തേണ്ട എത്തിക്കൽ ഓഡിറ്റുകൾ എന്നിവയാണ് LMS പാഠഭാഗം ചർച്ച ചെയ്യുന്നത്.",
       "keyMetrics": [
         {
-          "label": "PHILOSOPHICAL DILEMMA",
-          "labelMal": "ധാർമ്മിക സമസ്യ",
-          "value": "Trolley Problem in Robotics",
-          "detail": "⚡ Consequentialism (minimize deaths) vs Deontology (passenger duty of care)."
+          "label": "LMS FOUNDATIONAL TEXT",
+          "labelMal": "LMS അടിസ്ഥാന തത്വം",
+          "value": "Thomson (1985) / Patrick Lin",
+          "detail": "⚡ Distinction between intentional harm and foreseeable harm; killing vs permitting death."
         },
         {
-          "label": "GLOBAL DATA STUDY",
-          "labelMal": "ആഗോള പഠനം",
-          "value": "MIT Moral Machine (40M+ votes)",
-          "detail": "🔑 Massive cultural variations in crash preferences between East vs West."
+          "label": "JUSTICE FRAMEWORK",
+          "labelMal": "നീതിശാസ്ത്ര മാതൃക",
+          "value": "Rawls's Veil of Ignorance",
+          "detail": "🔑 Decision-making oblivious of gender, caste, class, wealth, or social standing."
         },
         {
-          "label": "GOLD STANDARD REGULATION",
-          "labelMal": "പ്രധാന നിയമം",
-          "value": "German Ethics Commission (Rule 9)",
-          "detail": "🧠 Absolute ban on discriminating between human lives by age, gender, or health."
+          "label": "ACCOUNTABILITY MODEL",
+          "labelMal": "ഉത്തരവാദിത്ത മാതൃക",
+          "value": "Hevelke & Nida-Rümelin (2014)",
+          "detail": "🧠 Forward-looking (programming) vs Backward-looking (legal liability) responsibility."
         }
       ],
       "sections": [
         {
-          "badge": "Page 1: The Crash Dilemma",
-          "title": "PAGE 1 · The Autonomous Trolley Problem: Utilitarian vs Kantian",
-          "titleMal": "പേജ് 1 · ഓട്ടോണമസ് ട്രോളി സമസ്യ: യൂട്ടിലിറ്റേറിയൻ vs കാന്റിയൻ",
+          "badge": "Page 1: Thomson & The LMS Crash Dilemmas",
+          "title": "PAGE 1 · Judith Jarvis Thomson (1985) & The Three LMS Collision Scenarios",
+          "titleMal": "പേജ് 1 · ജൂഡിത്ത് തോംസൺ (1985) & LMS-ലെ മൂന്ന് പ്രധാന അപകട സാഹചര്യങ്ങൾ",
           "points": [
             {
-              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The AV Trolley Dilemma (Philippa Foot / Judith Thomson)</mark>: Brakes fail at highway speed. Swerving left kills 1 passenger; staying straight kills 5 pedestrians. Utilitarianism commands: minimize casualties ($5 > 1$). Kantianism commands: never actively kill an innocent passenger as a sacrificial means to an end.",
-              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ട്രോളി സമസ്യ:</mark> കാറിന്റെ ബ്രേക്ക് നഷ്ടപ്പെടുമ്പോൾ 5 കാൽനടയാത്രക്കാരെ രക്ഷിക്കാൻ സ്വന്തം കാറിലെ യാത്രക്കാരനെ ഭിത്തിയിലിടിച്ച് കൊല്ലണമോ അതോ യാത്രക്കാരനെ രക്ഷിക്കണമോ എന്ന തർക്കം."
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Judith Jarvis Thomson (1985) Distinction</mark>: Thomson distinguishes between <mark style='background:#fef08a;'>killing and permitting death</mark>, as well as between <mark style='background:#fef08a;'>intentional harm and foreseeable harm</mark>. Moral assessment depends not only on consequences but on the method of harm and the violation of rights.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ജൂഡിത്ത് തോംസൺ (1985):</mark> കൊല്ലുന്നതും (killing) മരണം സംഭവിക്കാൻ അനുവദിക്കുന്നതും (permitting death), മനപ്പൂർവ്വമുള്ള ദ്രോഹവും (intentional harm) മുൻകൂട്ടി കാണാവുന്ന പാർശ്വഫലവും (foreseeable harm) തമ്മിലുള്ള വ്യത്യാസം ധാർമ്മിക വിലയിരുത്തലിൽ നിർണായകമാണ്."
             },
             {
-              "en": "<span style='background:#fee2e2; color:#991b1b; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚠️ EXAM TRAP</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The Buyer's Paradox (Bonnefon et al., 2016)</mark>: Everyone agrees in surveys that autonomous cars SHOULD be programmed to be utilitarian (save the greater number), BUT nobody will ever buy a car programmed to sacrifice its own driver!",
-              "mal": "<span style='background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>⚠️ പരീക്ഷാ ചോദ്യം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഉപഭോക്താവിന്റെ വിരോധാഭാസം:</mark> റോഡിലുള്ളവരെ രക്ഷിക്കാൻ കാറിലിരിക്കുന്ന ആളെ കൊല്ലുന്ന കാറുകൾ വേണമെന്ന് എല്ലാവരും പറയുമെങ്കിലും, ആരും സ്വന്തം ജീവൻ ബലികൊടുക്കുന്ന കാർ പണം കൊടുത്ത് വാങ്ങില്ല."
+              "en": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🧠 THOUGHT EXPERIMENT</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The Crossroads Collision Dilemma</mark>: An AV (1 occupant) faces a red-light running pickup truck (5 occupants), 2 pedestrians, and a tree. The AI can adopt: 1. A <i>Retributivist</i> stance (collide with truck for violating rules); 2. A <i>Selfish</i> strategy (hit pedestrians to save the occupant); or 3. A <i>Utilitarian</i> method (collide with tree, killing occupant to maximize preservation of life).",
+              "mal": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🧠 ചിന്താ പരീക്ഷണം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>LMS കവല അപകട സമസ്യ:</mark> റെഡ് ലൈറ്റ് മറികടന്ന പിക്കപ്പ് വാൻ, 2 കാൽനടക്കാർ, മരം എന്നിവയ്ക്കിടയിൽ കാറിന് സ്വീകരിക്കാവുന്ന 3 വഴികൾ: തെറ്റ് ചെയ്ത വാനിലിടിക്കുക (റെട്രിബ്യൂട്ടീവിസം), കാൽനടക്കാരിലിടിച്ച് ഡ്രൈവറെ രക്ഷിക്കുക (സ്വാർത്ഥം), മരത്തിലിടിച്ച് ഡ്രൈവറെ ബലിനൽകി കൂടുതൽ ജീവനുകൾ രക്ഷിക്കുക (യൂട്ടിലിറ്റേറിയൻ)."
             },
             {
-              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Doing vs Allowing Harm (Doctrine of Double Effect)</mark>: Catholic and deontological ethics forbid actively steering into an innocent person, even if steering saves multiple lives, because direct intentional killing is an absolute evil.",
-              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഡബിൾ ഇഫക്ട് സിദ്ധാന്തം:</mark> കൂടുതൽ പേരെ രക്ഷിക്കാനാണെങ്കിൽ പോലും നിരപരാധിയായ ഒരാളെ മനപ്പൂർവ്വം കൊലപ്പെടുത്തുന്നത് തികച്ചും തെറ്റാണെന്ന കാന്റിയൻ നിലപാട്."
+              "en": "<span style='background:#fee2e2; color:#991b1b; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚠️ EXAM TRAP</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Human 'Blamelessness' vs Machine Deliberation</mark>: A human driver in a sudden crash lacks deliberation time and is deemed legally 'blameless'. By contrast, autonomous vehicles possess superior computational power; their crash decisions reflect pre-programmed choices made during the software planning phase.",
+              "mal": "<span style='background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>⚠️ പരീക്ഷാ ചോദ്യം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>മനുഷ്യന്റെ നിരപരാധിത്വം vs മെഷീൻ കണക്കുകൂട്ടൽ:</mark> പെട്ടെന്നുള്ള അപകടത്തിൽ ആലോചിക്കാൻ സമയമില്ലാത്തതിനാൽ മനുഷ്യൻ നിയമപരമായി കുറ്റവിമുക്തനാണ് (blameless); എന്നാൽ കമ്പ്യൂട്ടറുകളുടെ തീരുമാനം മുൻകൂട്ടി പ്രോഗ്രാം ചെയ്തതാണ്."
             }
           ]
         },
         {
-          "badge": "Page 2: The MIT Moral Machine",
-          "title": "PAGE 2 · The MIT Moral Machine Study & Cultural Divergence",
-          "titleMal": "പേജ് 2 · എം.ഐ.ടി മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine, 2018) & സാംസ്കാരിക വ്യത്യാസങ്ങൾ",
+          "badge": "Page 2: Rawls & Justice in AV Programming",
+          "title": "PAGE 2 · John Rawls's Veil of Ignorance & Wood's Philosophical Critique",
+          "titleMal": "പേജ് 2 · ജോൺ റോൾസിന്റെ അജ്ഞതയുടെ മൂടുപടവും വുഡിന്റെ വിമർശനവും",
           "points": [
             {
-              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The MIT Moral Machine (Awad et al., Nature 2018)</mark>: 40 million decisions from 233 countries revealed universal shared preferences (save humans over animals, save many over few, save the young over the elderly), BUT exposed profound cultural chasms.",
-              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>എം.ഐ.ടി മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine, 2018):</mark> 233 രാജ്യങ്ങളിലെ 4 കോടി ആളുകളുടെ സർവ്വേയിൽ, മൃഗങ്ങളേക്കാൾ മനുഷ്യരെയും, കൂടുതൽ ആളുകളെയും രക്ഷിക്കണമെന്ന് ഭൂരിഭാഗം പേരും അഭിപ്രായപ്പെട്ടു."
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Rawls's Veil of Ignorance (LMS Page 11)</mark>: Impartial algorithmic rules must be designed from an original position where creators are oblivious to their gender, caste, class, ethnicity, wealth, abilities, or social standing. This guarantees equal protection for vulnerable pedestrians and passengers alike.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>റോൾസിന്റെ അജ്ഞതയുടെ മൂടുപടം:</mark> ജാതി, വർഗ്ഗം, ലിംഗം, സമ്പത്ത് എന്നിവയെക്കുറിച്ചുള്ള അറിവില്ലാത്ത ഒരു അവസ്ഥയിൽ നിന്നുകൊണ്ട് വേണം റോഡപകട നിയമങ്ങൾ നിർമ്മിക്കാൻ; ഇത് എല്ലാവർക്കും തുല്യ നീതി ഉറപ്പാക്കുന്നു."
             },
             {
-              "en": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🧠 THOUGHT EXPERIMENT</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Western vs Eastern Moral Clusters</mark>: Western participants strongly favored sparing the young over the old; Eastern participants (China, Japan, Korea) showed significant preference for respecting and sparing the elderly, reflecting Confucian filial values.",
-              "mal": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🧠 ചിന്താ പരീക്ഷണം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>കിഴക്കും പടിഞ്ഞാറും:</mark> പടിഞ്ഞാറൻ രാജ്യങ്ങൾ കുട്ടികളെ രക്ഷിക്കാൻ ആഗ്രഹിച്ചപ്പോൾ, കിഴക്കൻ രാജ്യങ്ങൾ (ചൈന, ജപ്പാൻ) പ്രായമായവരെ രക്ഷിക്കാനാണ് കൂടുതൽ മുൻഗണന നൽകിയത്."
+              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Wood's Contemporary Critique of Rawls (LMS Page 12)</mark>: Philosopher Wood critiques the veil of ignorance for oversimplifying social reality. He contends justice must be grounded in tangible humans with real socio-economic contexts, cultural backgrounds, and empathy—rather than abstract identities devoid of social realities.",
+              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>വുഡിന്റെ റോൾസ് വിമർശനം:</mark> റോൾസിന്റെ സിദ്ധാന്തം യഥാർത്ഥ സാമൂഹിക സാഹചര്യങ്ങളെ അവഗണിക്കുന്നുവെന്നും, അമൂർത്തമായ മനുഷ്യരെയല്ല മറിച്ച് വ്യക്തമായ സംസ്കാരവും സഹാനുഭൂതിയുമുള്ള യഥാർത്ഥ മനുഷ്യരെ കേന്ദ്രീകരിച്ചാകണം നീതിശാസ്ത്രമെന്നും വുഡ് വാദിക്കുന്നു."
             },
             {
-              "en": "<span style='background:#fee2e2; color:#991b1b; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚠️ EXAM TRAP</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Global Ethics Is Not Monolithic</mark>: Software deployed globally cannot assume Silicon Valley utilitarianism fits European human dignity laws or Asian collectivist norms.",
-              "mal": "<span style='background:#fee2e2; color:#991b1b; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>⚠️ പരീക്ഷാ ചോദ്യം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഏകീകൃത ധാർമ്മികതയില്ല:</mark> ലോകത്തെല്ലാ മനുഷ്യർക്കും ഒരൊറ്റ ധാർമ്മിക നിയമം ബാധകമാക്കാൻ ഒരു ആഗോള കമ്പനിക്കും കഴിയില്ല."
+              "en": "<span style='background:#dcfce7; color:#166534; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>💡 RECALL HOOK</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The Oncoming Heavy Truck Dilemma (LMS Page 5)</mark>: An AV carrying 5 passengers meets an oncoming heavy truck; avoiding it requires swerving and fatally striking an elderly individual on the sidewalk. Rawlsian justice examines whether age should ever diminish a pedestrian's right to protection.",
+              "mal": "<span style='background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>💡 ഓർമ്മയ്ക്കായി:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>LMS ട്രക്ക്-വൃദ്ധൻ സമസ്യ:</mark> 5 യാത്രക്കാരുള്ള കാർ ട്രക്കിലിടിക്കാതിരിക്കാൻ വശത്തേക്ക് വെട്ടിക്കുമ്പോൾ നടപ്പാതയിലെ പ്രായമായ വ്യക്തിയെ ഇടിക്കേണ്ടി വരുന്ന സാഹചര്യം; പ്രായം നോക്കി ജീവന് മുൻഗണന നൽകുന്നത് നീതിയുക്തമാണോ എന്ന ചോദ്യം."
             }
           ]
         },
         {
-          "badge": "Page 3: German Ethics Commission Rules",
-          "title": "PAGE 3 · The German Ethics Commission 20-Point Rules (2017)",
-          "titleMal": "പേജ് 3 · ജർമ്മൻ എത്തിക്സ് കമ്മീഷന്റെ 20 നിയമങ്ങൾ",
+          "badge": "Page 3: Responsibility & Safety Audits",
+          "title": "PAGE 3 · Moral Accountability & Ethical Data Audits (Hevelke & Nida-Rümelin)",
+          "titleMal": "പേജ് 3 · ധാർമ്മിക ഉത്തരവാദിത്തവും ഡാറ്റാ ഓഡിറ്റിംഗും (ഹെവെൽക്കെ & നിഡ-റൂമെലിൻ)",
           "points": [
             {
-              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Rule 9 (Prohibition of Discrimination)</mark>: 'In the event of unavoidable accident situations, any distinction based on personal features (age, gender, physical or mental constitution) is strictly prohibited. It is also prohibited to offset victims against one another.'",
-              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ജർമ്മൻ റൂൾ 9:</mark> ഒഴിവാക്കാനാവാത്ത അപകടങ്ങളിൽ പ്രായം, ലിംഗം, ശാരീരിക-മാനസിക ശേഷികൾ എന്നിവ നോക്കി മനുഷ്യ ജീവനുകളെ വേർതിരിച്ച് ആരെ കൊല്ലണമെന്ന് തീരുമാനിക്കാൻ പാടില്ല."
+              "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Forward-Looking vs Backward-Looking Responsibility (Hevelke & Nida-Rümelin 2014)</mark>: <i>Forward-looking responsibility</i> addresses how developers and regulators pre-program safety in advance. <i>Backward-looking responsibility</i> addresses legal and moral accountability allocated to sellers, manufacturers, and users after an accident occurs.",
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ഹെവെൽക്കെ & നിഡ-റൂമെലിൻ (2014):</mark> ഭാവിയിലേക്കുള്ള ഉത്തരവാദിത്തം (സുരക്ഷിതമായ അൽഗോരിതം നിർമ്മിക്കൽ) vs കഴിഞ്ഞ അപകടങ്ങളുടെ ഉത്തരവാദിത്തം (നിർമ്മാതാക്കൾക്കും ഉപഭോക്താക്കൾക്കും ഉള്ള നിയമപരമായ ബാധ്യത)."
             },
             {
-              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Human Protection Over Animals & Property</mark>: The German rules establish a strict moral hierarchy: Human life has absolute priority over animal life and material property. Crashing into an empty Ferrari or a stray dog to avoid a human is mandatory.",
-              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>മനുഷ്യജീവന് പരമ പ്രാധാന്യം:</mark> മൃഗങ്ങളുടെ ജീവനേക്കാളും കോടികൾ വിലയുള്ള സ്വത്തുക്കളേക്കാളും ഉപരിയായി മനുഷ്യന്റെ ജീവൻ സംരക്ഷിക്കാൻ കാറുകൾക്ക് ബാധ്യതയുണ്ട്."
+              "en": "<span style='background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🔑 CORE PRINCIPLE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Ethical Training Data Audits (LMS Page 16)</mark>: Training data must undergo strict ethical auditing to identify and eliminate bias. It is essential to ensure that vulnerable groups—such as <mark style='background:#fef08a;'>pedestrians, cyclists, the elderly, or individuals with disabilities</mark>—are never under-represented or systematically disadvantaged.",
+              "mal": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>🔑 പ്രധാന തത്ത്വം:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ട്രെയിനിംഗ് ഡാറ്റാ ഓഡിറ്റിംഗ്:</mark> കാൽനടയാത്രക്കാർ, സൈക്കിൾ യാത്രക്കാർ, പ്രായമായവർ, ഭിന്നശേഷിക്കാർ എന്നിവർ അൽഗോരിതത്തിന്റെ ഡാറ്റയിൽ കൃത്യമായി ഉൾപ്പെട്ടിട്ടുണ്ടെന്ന് ഉറപ്പുവരുത്തുന്ന എത്തിക്കൽ ഓഡിറ്റ് നിർബന്ധമാണ്."
             },
             {
-              "en": "<span style='background:#dcfce7; color:#166534; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>💡 RECALL HOOK</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Black Box Crash Recorder Mandate</mark>: Vehicles must maintain tamper-proof black boxes to log whether the human driver or the automated system was in operational control at the microsecond of impact.",
-              "mal": "<span style='background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>💡 ഓർമ്മയ്ക്കായി:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>ബ്ലാക്ക് ബോക്സ് പരിശോധന:</mark> അപകടസമയത്ത് മനുഷ്യനാണോ അതോ കമ്പ്യൂട്ടറാണോ വണ്ടി നിയന്ത്രിച്ചിരുന്നത് എന്ന് കൃത്യമായി രേഖപ്പെടുത്തുന്ന ബ്ലാക്ക് ബോക്സ് നിർബന്ധമാണ്."
+              "en": "<span style='background:#dcfce7; color:#166534; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>💡 RECALL HOOK</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Transparency, Explainability & Edge Cases (LMS Pages 15, 17-18)</mark>: Prioritizing human safety fosters public trust. Algorithms must be explainable and continuously evaluated across atypical edge cases and simulated hazardous environments rather than relying on obscure black-box decision models.",
+              "mal": "<span style='background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>💡 ഓർമ്മയ്ക്കായി:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>സുതാര്യതയും എഡ്ജ് കേസുകളും:</mark> അസാധാരണമായ ട്രാഫിക് സാഹചര്യങ്ങളിലും കൃത്യമായി വിശദീകരിക്കാൻ കഴിയുന്നതും (explainability) മനുഷ്യ ജീവന് മുൻഗണന നൽകുന്നതുമായ അൽഗോരിതങ്ങൾ പൊതുജനവിശ്വാസം വളർത്തുന്നു."
             }
           ]
         }
       ],
       "coreConcepts": [
         {
-          "term": "Autonomous Trolley Problem",
-          "termMal": "ഓട്ടോണമസ് ട്രോളി സമസ്യ",
-          "def": "Programming split-second unavoidable fatal collision trade-offs.",
-          "defMal": "ഒഴിവാക്കാനാവാത്ത അപകടങ്ങളിൽ ആരെ രക്ഷിക്കണം എന്ന് അൽഗോരിതം തീരുമാനിക്കുന്ന പ്രതിസന്ധി."
+          "term": "Thomson's Distinction (1985)",
+          "termMal": "തോംസന്റെ വേർതിരിവ്",
+          "def": "Killing vs permitting death; intentional harm vs foreseeable harm in trolleyology.",
+          "defMal": "കൊല്ലലും മരണം അനുവദിക്കലും തമ്മിലും, മനപ്പൂർവ്വമുള്ള ദ്രോഹവും പാർശ്വഫലവും തമ്മിലുള്ള വ്യത്യാസം."
         },
         {
-          "term": "The Buyer's Paradox",
-          "termMal": "വാങ്ങുന്നയാളുടെ വിരോധാഭാസം",
-          "def": "Demanding utilitarian vehicles for others while refusing to buy cars that sacrifice owners.",
-          "defMal": "മറ്റുള്ളവരെ രക്ഷിക്കാൻ സ്വന്തം ഡ്രൈവറെ കൊല്ലുന്ന കാറുകൾ ആരും വാങ്ങില്ലെന്ന യാഥാർത്ഥ്യം."
+          "term": "Rawls's Veil of Ignorance",
+          "termMal": "അജ്ഞതയുടെ മൂടുപടം",
+          "def": "Designing impartial traffic algorithms without knowledge of one's class, caste, gender, or wealth.",
+          "defMal": "ജാതി, വർഗ്ഗം, ലിംഗം, സമ്പത്ത് എന്നിവ അറിയാതെ തുല്യനീതി ഉറപ്പാക്കുന്ന റോൾസിയൻ സങ്കൽപ്പം."
         },
         {
-          "term": "German Rule 9",
-          "termMal": "ജർമ്മൻ എത്തിക്സ് റൂൾ 9",
-          "def": "Absolute ban on age, gender, or health discrimination in vehicular crash algorithms.",
-          "defMal": "അപകടങ്ങളിൽ പ്രായമോ ലിംഗമോ നോക്കി വേർതിരിവ് കാണിക്കുന്നത് പൂർണ്ണമായി വിലക്കുന്ന നിയമം."
+          "term": "Hevelke & Nida-Rümelin Model",
+          "termMal": "ഉത്തരവാദിത്ത മാതൃക",
+          "def": "Forward-looking (pre-programming safety) vs Backward-looking (liability allocation) responsibility.",
+          "defMal": "അപകടത്തിന് മുമ്പുള്ള മുൻകരുതലും അപകടത്തിന് ശേഷമുള്ള നിയമപരമായ ബാധ്യതയും തമ്മിലുള്ള വേർതിരിവ്."
         }
       ],
       "examTakeaways": [
         {
-          "en": "Autonomous driving exposes the deep tension between utilitarian casualty minimization and Kantian rights.",
-          "mal": "യൂട്ടിലിറ്റേറിയൻ ചിന്തയും കാന്റിയൻ നീതിയും തമ്മിലുള്ള കടുത്ത പോരാട്ടമാണ് സ്വയംഭരണ കാറുകളിൽ നടക്കുന്നത്."
+          "en": "Judith Jarvis Thomson's (1985) trolley analysis establishes that intentional harm and foreseeable harm are ethically distinct.",
+          "mal": "മനപ്പൂർവ്വമുള്ള ദ്രോഹവും അവിചാരിതമായ പാർശ്വഫലവും ധാർമ്മികമായി വ്യത്യസ്തമാണെന്ന് ജൂഡിത്ത് തോംസൺ (1985) വ്യക്തമാക്കുന്നു."
         },
         {
-          "en": "The MIT Moral Machine showed that global consensus on collision ethics does not exist.",
-          "mal": "അപകടങ്ങളിൽ ഒരു ആഗോള ധാർമ്മിക സമവായം നിലവിലില്ലെന്ന് എം.ഐ.ടി മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine, 2018) തെളിയിച്ചു."
+          "en": "John Rawls's Veil of Ignorance demands that AV collision rules treat all human beings with normative equality regardless of caste, class, or age.",
+          "mal": "ജാതിയോ വർഗ്ഗമോ പ്രായമോ നോക്കാതെ എല്ലാ മനുഷ്യർക്കും തുല്യ പരിരക്ഷ നൽകണമെന്ന് റോൾസിന്റെ അജ്ഞതയുടെ മൂടുപടം അനുശാസിക്കുന്നു."
         },
         {
-          "en": "German regulations legally enshrine human dignity by outlawing age-based or demographic crash triage.",
-          "mal": "പ്രായം നോക്കി മനുഷ്യരെ ബലികൊടുക്കുന്നത് ജർമ്മൻ നിയമങ്ങൾ പൂർണ്ണമായി നിരോധിച്ചിരിക്കുന്നു."
+          "en": "Hevelke and Nida-Rümelin (2014) emphasize that autonomous vehicle ethics must encompass both forward-looking safety and backward-looking legal accountability.",
+          "mal": "സുരക്ഷിത പ്രോഗ്രാമിംഗും (forward-looking) അപകടാനന്തര നിയമപരമായ ഉത്തരവാദിത്തവും (backward-looking) ഒരുപോലെ പ്രധാനമാണെന്ന് ഹെവെൽക്കെയും നിഡ-റൂമെലിനും വ്യക്തമാക്കുന്നു."
         }
       ]
     },
