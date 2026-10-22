@@ -19330,11 +19330,11 @@ window.aiLearningData = {
         {
           "badge": "Page 2: The MIT Moral Machine",
           "title": "PAGE 2 · The MIT Moral Machine Study & Cultural Divergence",
-          "titleMal": "പേജ് 2 · എം.ഐ.ടി മോറൽ മെഷീൻ പഠനവും സാംസ്കാരിക വ്യത്യാസങ്ങളും",
+          "titleMal": "പേജ് 2 · എം.ഐ.ടി മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine, 2018) & സാംസ്കാരിക വ്യത്യാസങ്ങൾ",
           "points": [
             {
               "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The MIT Moral Machine (Awad et al., Nature 2018)</mark>: 40 million decisions from 233 countries revealed universal shared preferences (save humans over animals, save many over few, save the young over the elderly), BUT exposed profound cultural chasms.",
-              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>എം.ഐ.ടി മോറൽ മെഷീൻ:</mark> 233 രാജ്യങ്ങളിലെ 4 കോടി ആളുകളുടെ സർവ്വേയിൽ, മൃഗങ്ങളേക്കാൾ മനുഷ്യരെയും, കൂടുതൽ ആളുകളെയും രക്ഷിക്കണമെന്ന് ഭൂരിഭാഗം പേരും അഭിപ്രായപ്പെട്ടു."
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>എം.ഐ.ടി മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine, 2018):</mark> 233 രാജ്യങ്ങളിലെ 4 കോടി ആളുകളുടെ സർവ്വേയിൽ, മൃഗങ്ങളേക്കാൾ മനുഷ്യരെയും, കൂടുതൽ ആളുകളെയും രക്ഷിക്കണമെന്ന് ഭൂരിഭാഗം പേരും അഭിപ്രായപ്പെട്ടു."
             },
             {
               "en": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🧠 THOUGHT EXPERIMENT</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Western vs Eastern Moral Clusters</mark>: Western participants strongly favored sparing the young over the old; Eastern participants (China, Japan, Korea) showed significant preference for respecting and sparing the elderly, reflecting Confucian filial values.",
@@ -19393,7 +19393,7 @@ window.aiLearningData = {
         },
         {
           "en": "The MIT Moral Machine showed that global consensus on collision ethics does not exist.",
-          "mal": "അപകടങ്ങളിൽ ആരെ രക്ഷിക്കണം എന്നതിൽ ലോകമെമ്പാടും വ്യത്യസ്ത കാഴ്ചപ്പാടുകളാണുള്ളത്."
+          "mal": "അപകടങ്ങളിൽ ഒരു ആഗോള ധാർമ്മിക സമവായം നിലവിലില്ലെന്ന് എം.ഐ.ടി മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine, 2018) തെളിയിച്ചു."
         },
         {
           "en": "German regulations legally enshrine human dignity by outlawing age-based or demographic crash triage.",
@@ -23330,11 +23330,11 @@ window.aiLearningData = {
         {
           "badge": "Page 2: The MIT Moral Machine",
           "title": "PAGE 2 · The MIT Moral Machine Study & Cultural Divergence",
-          "titleMal": "പേജ് 2 · എം.ഐ.ടി മോറൽ മെഷീൻ പഠനവും സാംസ്കാരിക വ്യത്യാസങ്ങളും",
+          "titleMal": "പേജ് 2 · എം.ഐ.ടി മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine, 2018) & സാംസ്കാരിക വ്യത്യാസങ്ങൾ",
           "points": [
             {
               "en": "<span style='background:#e0f2fe; color:#0369a1; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>⚡ MEMORIZE</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>The MIT Moral Machine (Awad et al., Nature 2018)</mark>: 40 million decisions from 233 countries revealed universal shared preferences (save humans over animals, save many over few, save the young over the elderly), BUT exposed profound cultural chasms.",
-              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>എം.ഐ.ടി മോറൽ മെഷീൻ:</mark> 233 രാജ്യങ്ങളിലെ 4 കോടി ആളുകളുടെ സർവ്വേയിൽ, മൃഗങ്ങളേക്കാൾ മനുഷ്യരെയും, കൂടുതൽ ആളുകളെയും രക്ഷിക്കണമെന്ന് ഭൂരിഭാഗം പേരും അഭിപ്രായപ്പെട്ടു."
+              "mal": "<span style='background:#fef3c7; color:#92400e; padding:2px 6px; border-radius:4px; font-weight:700; font-size:11.5px; margin-right:5px;'>📌 ഓർമ്മിക്കുക:</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>എം.ഐ.ടി മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine, 2018):</mark> 233 രാജ്യങ്ങളിലെ 4 കോടി ആളുകളുടെ സർവ്വേയിൽ, മൃഗങ്ങളേക്കാൾ മനുഷ്യരെയും, കൂടുതൽ ആളുകളെയും രക്ഷിക്കണമെന്ന് ഭൂരിഭാഗം പേരും അഭിപ്രായപ്പെട്ടു."
             },
             {
               "en": "<span style='background:#f3e8ff; color:#6b21a8; padding:2px 7px; border-radius:5px; font-weight:800; font-size:12px; margin-right:6px;'>🧠 THOUGHT EXPERIMENT</span> <mark style='background:#fef08a; padding:1px 5px; border-radius:3px; font-weight:700;'>Western vs Eastern Moral Clusters</mark>: Western participants strongly favored sparing the young over the old; Eastern participants (China, Japan, Korea) showed significant preference for respecting and sparing the elderly, reflecting Confucian filial values.",
@@ -23393,7 +23393,7 @@ window.aiLearningData = {
         },
         {
           "en": "The MIT Moral Machine showed that global consensus on collision ethics does not exist.",
-          "mal": "അപകടങ്ങളിൽ ആരെ രക്ഷിക്കണം എന്നതിൽ ലോകമെമ്പാടും വ്യത്യസ്ത കാഴ്ചപ്പാടുകളാണുള്ളത്."
+          "mal": "അപകടങ്ങളിൽ ഒരു ആഗോള ധാർമ്മിക സമവായം നിലവിലില്ലെന്ന് എം.ഐ.ടി മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine, 2018) തെളിയിച്ചു."
         },
         {
           "en": "German regulations legally enshrine human dignity by outlawing age-based or demographic crash triage.",

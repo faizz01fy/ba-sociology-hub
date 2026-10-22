@@ -2150,14 +2150,16 @@
         // Fast direct buffer fetch: avoids Range-request negotiation latency
         let pdfData = null;
         try {
-          const resp = await fetch(file.href);
+          const freshUrl = file.href + (file.href.includes('?') ? '&' : '?') + 'v=' + Date.now();
+          const resp = await fetch(freshUrl, { cache: 'no-store' });
           if (resp.ok) {
             pdfData = new Uint8Array(await resp.arrayBuffer());
           }
         } catch (_) {}
 
+        const docUrl = file.href + (file.href.includes('?') ? '&' : '?') + 'v=' + Date.now();
         pdf = await lib.getDocument({
-          ...(pdfData ? { data: pdfData } : { url: file.href }),
+          ...(pdfData ? { data: pdfData } : { url: docUrl }),
           isEvalSupported: false,
           disableAutoFetch: false,
           disableStream: false,
