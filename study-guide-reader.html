@@ -7,9 +7,51 @@
   <title>Study Guide Reader · Academic Hub</title>
   <script>
     (() => {
-      // Voice controls are enabled for ALL documents, including Malayalam PDFs
-      const file = new URLSearchParams(location.search).get('file') || '';
-      window.isMalayalamDoc = /(?:malayalam|മലയാളം|_mal|ch\d+.*mal)/i.test(file);
+      const search = location.search || '';
+      let file = '';
+      const m = search.match(/[?&]file=(.*?)(?:&(?:tab|voice|v|lang|page|zoom)=|$)/i);
+      if (m && m[1]) {
+        file = m[1];
+      } else {
+        file = new URLSearchParams(search).get('file') || '';
+      }
+      try { file = decodeURIComponent(file); } catch(_) {}
+      try { if (file.includes('%')) file = decodeURIComponent(file); } catch(_) {}
+      file = file.trim().replace(/^['"]|['"]$/g, '');
+
+      let tab = '';
+      const tabMatch = search.match(/[?&]tab=([^&#]*)/i);
+      if (tabMatch && tabMatch[1]) tab = tabMatch[1].toLowerCase();
+      else tab = (new URLSearchParams(search).get('tab') || '').toLowerCase();
+
+      const voice = new URLSearchParams(search).get('voice');
+
+      if (!file && (tab === 'malayalam_reading' || tab === 'reading' || tab === 'malayalam')) {
+        file = 'Malayalam_Complete_Study_Guide.pdf';
+      }
+
+      // Voice reading is ONLY enabled for LMS PDF tab.
+      // For Malayalam Reading tabs of all subjects, voice reading is disabled & hidden.
+      const isLmsTab = (tab === 'lms' || tab === 'lmspdf' || tab === 'lms-pdf' || voice === '1');
+      const isNonLmsTab = (
+        tab === 'malayalam_reading' ||
+        tab === 'reading' ||
+        tab === 'study_guide' ||
+        tab === 'study-guide' ||
+        tab === 'mcq' ||
+        tab === 'mcq_pdf' ||
+        tab === 'mcq-pdf' ||
+        voice === '0'
+      );
+
+      if (!isLmsTab || isNonLmsTab) {
+        document.documentElement.classList.add('hide-voice-controls');
+        window.hideVoiceReader = true;
+      } else {
+        document.documentElement.classList.remove('hide-voice-controls');
+        window.hideVoiceReader = false;
+      }
+      window.isMalayalamDoc = /(?:malayalam|മലയാളം|_mal|ch\d+.*mal|LiteraryPractice|MODULE4|Module3.*മലയാള)/i.test(file);
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +59,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="modulepreload" href="assets/pdfjs/pdf.min.mjs">
-  <link rel="preload" href="assets/pdfjs/pdf.worker.min.mjs" as="fetch" crossorigin="anonymous">
 
   <style>
     * { box-sizing: border-box; }
@@ -159,6 +200,12 @@
       transform: translateY(0) scale(1);
     }
 
+    /* Active Reading Page Glowing Highlight */
+    .pdf-page.active-reading-page {
+      box-shadow: 0 0 0 4px #10b981, 0 8px 32px rgba(16, 185, 129, 0.45) !important;
+      transition: box-shadow 0.3s ease;
+    }
+
     /* Main Reader Area */
     main {
       padding: 16px;
@@ -222,7 +269,15 @@
     }
     
     [hidden] { display: none !important; }
-    /* Malayalam voice controls always available */
+    
+    /* Hide voice controls for Malayalam reading tab */
+    .hide-voice-controls #voiceToolbarGroup,
+    .hide-voice-controls #voicePanel,
+    .hide-voice-controls .voice-btn,
+    .hide-voice-controls #mobileVoiceBtn {
+      display: none !important;
+    }
+
     
     /* Voice Reading Button & Toolbar Group */
     .voice-btn {
@@ -631,11 +686,7 @@
     
     @media print { body { display: none !important; } }
   
-    /* Voice Reading disabled across study guide reader */
-    #voiceToolbarGroup,
-    #voicePanel {
-      display: none !important;
-    }
+    /* Voice Reading fully reinstated */
 
   </style>
 <style id="sgr-pulse-nav-styles">
@@ -741,11 +792,7 @@
       box-shadow: 0 7px 24px rgba(16, 185, 129, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
     }
 
-    /* Voice Reading disabled across study guide reader */
-    #voiceToolbarGroup,
-    #voicePanel {
-      display: none !important;
-    }
+    /* Voice Reading fully reinstated */
 
   </style>
 </head>
@@ -779,7 +826,7 @@
     </div>
 
     <!-- Voice Reading Controls -->
-    <div class="toolbar-group" id="voiceToolbarGroup" style="display:none !important;" hidden>
+    <div class="toolbar-group" id="voiceToolbarGroup">
       <button id="voiceToggleBtn" class="voice-btn" type="button" title="ശബ്ദ വായന (Voice Read: Male / Female)" aria-label="Voice Read Aloud">
         <span class="voice-icon">🔊</span>
         <span class="voice-btn-label">Voice Read</span>
@@ -853,11 +900,12 @@
 
         <!-- UK English voice choices -->
         <div class="voice-control-group voice-choice-group">
-          <label for="ukVoiceSelect" class="voice-group-label">UK voice:</label>
-          <select id="ukVoiceSelect" class="voice-select uk-voice-select" aria-label="UK English voice options">
-            <option value="auto">Automatic best match</option>
+          <label for="englishEngineSelect" class="voice-group-label">English Voice:</label>
+          <select id="englishEngineSelect" class="voice-select" aria-label="English voice reader options">
+            <option value="google" selected>✨ Google Voice Reader (Clear)</option>
+            <option value="uk">🇬🇧 UK English (British)</option>
+            <option value="us">🇺🇸 US English (American)</option>
           </select>
-          <span id="ukVoiceHint" class="voice-option-help" aria-live="polite"></span>
         </div>
 
         <!-- Voice tone choices -->
@@ -892,8 +940,6 @@
       </div>
     </div>
   </div>
-  </div>
-  </div>
 
   <p id="status" role="status" aria-live="polite">Loading study guide…</p>
   <main id="reader" aria-label="All study guide pages"></main>
@@ -910,7 +956,10 @@
       }
     });
 
-    let pdf, pageNumber = 1, generation = 0, observer, activeTask, queue = Promise.resolve(), sections = [];
+        let pdf, pageNumber = 1, generation = 0, observer, pageTrackingObserver, sections = [];
+    const activeTasks = new Map();
+    let renderQueue = [];
+    let isProcessingQueue = false;
     let customZoomScale = null;
 
     function controls() {
@@ -948,98 +997,156 @@
       return Number(zVal);
     };
 
+    function cancelAllActiveTasks() {
+      for (const [sec, task] of activeTasks.entries()) {
+        try { task.cancel(); } catch(_) {}
+      }
+      activeTasks.clear();
+      renderQueue = [];
+      isProcessingQueue = false;
+    }
+
+    function enqueuePage(section) {
+      if (!section || section.dataset.rendered === 'true' || section.dataset.rendering === 'true') return;
+      if (!renderQueue.includes(section)) {
+        renderQueue.push(section);
+      }
+      processRenderQueue();
+    }
+
+    async function processRenderQueue() {
+      if (isProcessingQueue) return;
+      isProcessingQueue = true;
+      while (renderQueue.length > 0) {
+        // Sort queue dynamically so pages closest to currently viewed pageNumber render FIRST
+        renderQueue.sort((a, b) => {
+          const distA = Math.abs(Number(a.dataset.page) - pageNumber);
+          const distB = Math.abs(Number(b.dataset.page) - pageNumber);
+          return distA - distB;
+        });
+        const next = renderQueue.shift();
+        if (next && next.dataset.rendered !== 'true' && next.dataset.rendering !== 'true') {
+          await renderPage(next);
+        }
+      }
+      isProcessingQueue = false;
+    }
+
+    async function renderPage(section, knownPage) {
+      if (section.dataset.rendered === 'true' || section.dataset.rendering === 'true') return;
+      const currentGeneration = generation;
+      const number = Number(section.dataset.page);
+      section.dataset.rendering = 'true';
+
+      try {
+        const page = knownPage || await pdf.getPage(number);
+        if (currentGeneration !== generation) return;
+
+        const viewport = page.getViewport({ scale: fitScale(page) });
+        section.style.width = viewport.width + 'px';
+        section.style.minHeight = (viewport.height + 24) + 'px';
+
+        // Remove any old canvas or link layers to guarantee zero duplicate rendering
+        const oldCanvas = section.querySelector('canvas');
+        if (oldCanvas) oldCanvas.remove();
+        const oldLinks = section.querySelector('.pdf-link-layer');
+        if (oldLinks) oldLinks.remove();
+
+        const canvas = document.createElement('canvas');
+        // High-DPI support: Crisp anti-aliased rendering
+        const dpr = window.devicePixelRatio || 1;
+        const ratio = Math.min(Math.max(dpr, 1), 1.5);
+
+        canvas.width = Math.floor(viewport.width * ratio);
+        canvas.height = Math.floor(viewport.height * ratio);
+        canvas.style.width = viewport.width + 'px';
+        canvas.style.height = viewport.height + 'px';
+        canvas.setAttribute('role', 'img');
+        canvas.setAttribute('aria-label', 'Study guide page ' + number + ' of ' + pdf.numPages);
+
+        // Alpha: false provides instant 2x-3x GPU compositor acceleration & eliminates scroll jank
+        const ctx = canvas.getContext('2d', { alpha: false });
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        section.append(canvas);
+
+        const task = page.render({
+          canvasContext: ctx,
+          viewport,
+          transform: ratio !== 1 ? [ratio, 0, 0, ratio, 0, 0] : null
+        });
+        activeTasks.set(section, task);
+
+        try {
+          await task.promise;
+        } finally {
+          activeTasks.delete(section);
+        }
+
+        if (currentGeneration !== generation) return;
+        section.dataset.rendered = 'true';
+        section.querySelector('.page-loading')?.remove();
+
+        // Link Annotation Layer
+        try {
+          const annotations = await page.getAnnotations();
+          if (annotations && annotations.length) {
+            const linkLayer = document.createElement('div');
+            linkLayer.className = 'pdf-link-layer';
+            linkLayer.style.cssText = 'position:absolute;top:0;left:0;width:' + viewport.width + 'px;height:' + viewport.height + 'px;pointer-events:none;';
+            annotations.forEach(a => {
+              if (a.subtype === 'Link' && a.url) {
+                const r = viewport.convertToViewportRectangle(a.rect);
+                const l = Math.min(r[0], r[2]);
+                const t = Math.min(r[1], r[3]);
+                const w = Math.abs(r[2] - r[0]);
+                const h = Math.abs(r[3] - r[1]);
+                const link = document.createElement('a');
+                link.href = a.url;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.style.cssText = 'position:absolute;left:' + l + 'px;top:' + t + 'px;width:' + w + 'px;height:' + h + 'px;pointer-events:auto;cursor:pointer;background:rgba(59,130,246,0.12);border-radius:3px;transition:background 0.15s;';
+                link.title = (a.url.includes('youtu') ? 'Watch video: ' : 'Open link: ') + a.url;
+                link.onmouseenter = () => link.style.background = 'rgba(59,130,246,0.28)';
+                link.onmouseleave = () => link.style.background = 'rgba(59,130,246,0.12)';
+                linkLayer.append(link);
+              }
+            });
+            section.append(linkLayer);
+          }
+        } catch (err) {
+          console.error('Annotation layer error:', err);
+        }
+      } catch (error) {
+        if (currentGeneration !== generation || error?.name === 'RenderingCancelledException') return;
+        section.querySelector('canvas')?.remove();
+        const label = section.querySelector('.page-loading');
+        if (label) label.textContent = 'Could not display this page. Tap Retry to try again.';
+        el('retry').hidden = false;
+      } finally {
+        delete section.dataset.rendering;
+      }
+    }
+
     async function render() {
       if (!pdf) return;
       const currentGeneration = ++generation;
       const resumePage = Math.max(1, Math.min(pdf.numPages, pageNumber));
+
       if (observer) observer.disconnect();
-      if (activeTask) { activeTask.cancel(); activeTask = null; }
-      
+      if (pageTrackingObserver) pageTrackingObserver.disconnect();
+      cancelAllActiveTasks();
+
       el('reader').replaceChildren();
       sections = [];
-      queue = Promise.resolve();
       el('status').textContent = 'Loading page ' + resumePage + ' of ' + pdf.numPages + '…';
-      
+
       const firstPage = await pdf.getPage(1);
       if (currentGeneration !== generation) return;
-      
+
       const isMobile = window.innerWidth <= 768;
       const estimate = firstPage.getViewport({ scale: fitScale(firstPage) });
-
-      async function renderPage(section, knownPage) {
-        if (currentGeneration !== generation || section.dataset.rendered === 'true') return;
-        const number = Number(section.dataset.page);
-        try {
-          const page = knownPage || await pdf.getPage(number);
-          if (currentGeneration !== generation) return;
-          
-          const viewport = page.getViewport({ scale: fitScale(page) });
-          section.style.width = viewport.width + 'px';
-          section.style.minHeight = (viewport.height + 24) + 'px';
-          
-          const canvas = document.createElement('canvas');
-          // High-DPI support: Crisp anti-aliased rendering for Malayalam
-          const dpr = window.devicePixelRatio || 1;
-          const ratio = Math.min(Math.max(dpr, 1), 1.5);
-          
-          canvas.width = Math.floor(viewport.width * ratio);
-          canvas.height = Math.floor(viewport.height * ratio);
-          canvas.style.width = viewport.width + 'px';
-          canvas.style.height = viewport.height + 'px';
-          canvas.setAttribute('role', 'img');
-          canvas.setAttribute('aria-label', 'Study guide page ' + number + ' of ' + pdf.numPages);
-          section.append(canvas);
-
-          const task = page.render({
-            canvasContext: canvas.getContext('2d'),
-            viewport,
-            transform: ratio !== 1 ? [ratio, 0, 0, ratio, 0, 0] : null
-          });
-          activeTask = task;
-          try { await task.promise; } finally { if (activeTask === task) activeTask = null; }
-          
-          if (currentGeneration !== generation) return;
-          section.dataset.rendered = 'true';
-          section.querySelector('.page-loading')?.remove();
-
-          // Link Annotation Layer
-          try {
-            const annotations = await page.getAnnotations();
-            if (annotations && annotations.length) {
-              const linkLayer = document.createElement('div');
-              linkLayer.className = 'pdf-link-layer';
-              linkLayer.style.cssText = 'position:absolute;top:0;left:0;width:' + viewport.width + 'px;height:' + viewport.height + 'px;pointer-events:none;';
-              annotations.forEach(a => {
-                if (a.subtype === 'Link' && a.url) {
-                  const r = viewport.convertToViewportRectangle(a.rect);
-                  const l = Math.min(r[0], r[2]);
-                  const t = Math.min(r[1], r[3]);
-                  const w = Math.abs(r[2] - r[0]);
-                  const h = Math.abs(r[3] - r[1]);
-                  const link = document.createElement('a');
-                  link.href = a.url;
-                  link.target = '_blank';
-                  link.rel = 'noopener noreferrer';
-                  link.style.cssText = 'position:absolute;left:' + l + 'px;top:' + t + 'px;width:' + w + 'px;height:' + h + 'px;pointer-events:auto;cursor:pointer;background:rgba(59,130,246,0.12);border-radius:3px;transition:background 0.15s;';
-                  link.title = (a.url.includes('youtu') ? 'Watch video: ' : 'Open link: ') + a.url;
-                  link.onmouseenter = () => link.style.background = 'rgba(59,130,246,0.28)';
-                  link.onmouseleave = () => link.style.background = 'rgba(59,130,246,0.12)';
-                  linkLayer.append(link);
-                }
-              });
-              section.append(linkLayer);
-            }
-          } catch (err) {
-            console.error('Annotation layer error:', err);
-          }
-        } catch (error) {
-          if (currentGeneration !== generation || error?.name === 'RenderingCancelledException') return;
-          section.querySelector('canvas')?.remove();
-          const label = section.querySelector('.page-loading');
-          if (label) label.textContent = 'Could not display this page. Tap Retry to try again.';
-          el('retry').hidden = false;
-        }
-      }
 
       // Synchronously generate placeholder cards using DocumentFragment (single reflow)
       const fragment = document.createDocumentFragment();
@@ -1067,30 +1174,57 @@
 
       pageNumber = resumePage;
       controls();
-      go(resumePage);
-      
-      await renderPage(sections[resumePage - 1], resumePage === 1 ? firstPage : null);
+      go(resumePage, false);
+
+      // Render the current/resume page immediately with zero lag
+      const resumeSec = sections[resumePage - 1];
+      await renderPage(resumeSec, resumePage === 1 ? firstPage : null);
       if (currentGeneration !== generation) return;
 
-      el('status').textContent = sections[resumePage - 1].dataset.rendered === 'true'
+      el('status').textContent = resumeSec.dataset.rendered === 'true'
         ? pdf.numPages + ' pages · Scroll or use ‹ › buttons to read'
         : 'Could not display page ' + resumePage + '. Tap Retry to try again.';
 
+      // Efficient view observer for on-demand lazy rendering
       observer = new IntersectionObserver(entries => {
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
           observer.unobserve(entry.target);
-          queue = queue.then(() => renderPage(entry.target)).catch(err => console.error(err));
+          enqueuePage(entry.target);
         }
-      }, { rootMargin: '250px 0px' });
-      
-      sections.forEach(sec => observer.observe(sec));
+      }, { rootMargin: '350px 0px' });
+
+      sections.forEach(sec => {
+        if (sec.dataset.rendered !== 'true') observer.observe(sec);
+      });
+
+      // Off-main-thread active page tracker (zero layout reflow)
+      pageTrackingObserver = new IntersectionObserver((entries) => {
+        const intersecting = entries.filter(e => e.isIntersecting);
+        if (intersecting.length > 0) {
+          intersecting.sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top));
+          const p = Number(intersecting[0].target.dataset.page);
+          if (p && p !== pageNumber && document.activeElement !== el('page')) {
+            pageNumber = p;
+            el('page').value = pageNumber;
+            controls();
+          }
+        }
+      }, { rootMargin: '-10% 0px -70% 0px' });
+
+      sections.forEach(sec => pageTrackingObserver.observe(sec));
     }
 
-    function go(number) {
+    function go(number, smooth = true) {
       if (!pdf) return;
       pageNumber = Math.max(1, Math.min(pdf.numPages, Math.round(Number(number) || 1)));
-      sections[pageNumber - 1]?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      const targetSec = sections[pageNumber - 1];
+      if (targetSec) {
+        targetSec.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
+        if (targetSec.dataset.rendered !== 'true') {
+          enqueuePage(targetSec);
+        }
+      }
       controls();
     }
 
@@ -1325,21 +1459,7 @@
       window.open(location.href, '_blank');
     };
 
-    // Scroll listener for active page tracking
-    let scrolling = false;
-    window.addEventListener('scroll', () => {
-      if (scrolling) return;
-      scrolling = true;
-      requestAnimationFrame(() => {
-        scrolling = false;
-        const visible = sections.find(section => section.getBoundingClientRect().bottom > 90);
-        if (visible && document.activeElement !== el('page')) {
-          pageNumber = Number(visible.dataset.page);
-          el('page').value = pageNumber;
-          controls();
-        }
-      });
-    }, { passive: true });
+    // Active page tracking handled off-thread via pageTrackingObserver
 
     // Resize listener
     let resizeTimer;
@@ -1353,7 +1473,7 @@
     async function loadScript(src) {
       await new Promise((resolve, reject) => {
         const script = document.createElement('script');
-        script.src = script;
+        script.src = src;
         script.async = true;
         script.onload = resolve;
         script.onerror = () => reject(Error('Could not load the document viewer'));
@@ -1449,11 +1569,22 @@
       return gender === 'male' ? maleVoiceName.test(label) : femaleVoiceName.test(label);
     }
 
-    function getSmartVoice(gender, isMalayalam) {
+        function getSmartVoice(gender, isMalayalam) {
       if (!allVoices.length) return null;
-      const mlVoices = allVoices.filter(v => (v.lang || '').toLowerCase().startsWith('ml'));
-      if (isMalayalam && mlVoices.length) {
-        return mlVoices.find(v => isVoiceForGender(v, gender)) || mlVoices[0];
+      if (isMalayalam) {
+        const mlVoices = allVoices.filter(v => (v.lang || '').toLowerCase().startsWith('ml'));
+        if (mlVoices.length) {
+          const gMatch = mlVoices.find(v => isVoiceForGender(v, gender));
+          if (gMatch) return gMatch;
+          return mlVoices[0];
+        }
+        const indVoices = allVoices.filter(v => /(?:-in\b|india|hindi|tamil)/i.test((v.lang || '') + ' ' + (v.name || '')));
+        if (indVoices.length) {
+          const gMatch = indVoices.find(v => isVoiceForGender(v, gender));
+          if (gMatch) return gMatch;
+          return indVoices[0];
+        }
+        return null;
       }
 
       const ukEnglishVoices = getUKEnglishVoices();
@@ -1462,13 +1593,29 @@
         if (chosen) return chosen;
       }
       const matchingGender = ukEnglishVoices.filter(v => isVoiceForGender(v, gender));
-      const naturalMatch = matchingGender.find(v => /natural|neural/i.test((v.name || '') + ' ' + (v.voiceURI || '')));
+      const naturalMatch = matchingGender.find(v => /natural|neural|online|google/i.test((v.name || '') + ' ' + (v.voiceURI || '')));
       if (naturalMatch || matchingGender.length) return naturalMatch || matchingGender[0];
 
       const saferFallback = ukEnglishVoices.find(v => gender === 'male'
         ? !femaleVoiceName.test((v.name || '') + ' ' + (v.voiceURI || ''))
         : !maleVoiceName.test((v.name || '') + ' ' + (v.voiceURI || '')));
       return saferFallback || ukEnglishVoices[0] || null;
+    }
+
+    function getEnglishVoiceByDialect(targetLang, gender) {
+      if (!allVoices.length) return null;
+      const prefix = targetLang.toLowerCase();
+      const dialectVoices = allVoices.filter(v => (v.lang || '').replace(/_/g, '-').toLowerCase().startsWith(prefix));
+      const pool = dialectVoices.length ? dialectVoices : allVoices.filter(v => (v.lang || '').toLowerCase().startsWith('en'));
+
+      const genderPool = pool.filter(v => isVoiceForGender(v, gender));
+      const neuralGender = genderPool.find(v => /natural|neural|online|google/i.test((v.name || '') + ' ' + (v.voiceURI || '')));
+      if (neuralGender) return neuralGender;
+      if (genderPool.length) return genderPool[0];
+
+      const neuralAny = pool.find(v => /natural|neural|online|google/i.test((v.name || '') + ' ' + (v.voiceURI || '')));
+      if (neuralAny) return neuralAny;
+      return pool[0] || null;
     }
 
     function updateUKVoiceHint() {
@@ -1567,6 +1714,129 @@
       return result.filter(s => s && s.length > 1);
     }
 
+
+    // --- ML-TT (REVATHI / KARTHIKA / ISM) TO UNICODE MALAYALAM CONVERTER ---
+    const MLTT_LIGATURES = {
+      'Hmt«m-_-tbm-{Km-^n': 'ഓട്ടോബയോഗ്രഫി', 'Hmt«m-_-tbm-{Km^n': 'ഓട്ടോബയോഗ്രഫി',
+      'ae-bmf': 'മലയാള', 'kmln-Xym-\\p-io-e\\w': 'സാഹിത്യാനുശീലനം', 'kmln-Xym-p-io-e\\w': 'സാഹിത്യാനുശീലനം',
+      'Imen-¡äv': 'കാലിക്കറ്റ്', 'kÀÆ-I-em-ime': 'സർവ്വകലാശാല', 'kÀÆ-Iem-ime': 'സർവ്വകലാശാല',
+      'ska-ÌÀ': 'സെമസ്റ്റർ', 'samUyqÄ': 'മൊഡ്യൂൾ', 'Bß-IY': 'ആത്മകഥ', 'Hcm-fpsS': 'ഒരാളുടെ',
+      'PohnXw': 'ജീവിതം', 'Pohn-X': 'ജീവിത', 'Pohn-Xw': 'ജീവിതം', 'AbmÄ': 'അയാൾ', 'kzbw': 'സ്വയം',
+      'Fgp-Xp-¶-XmWv': 'എഴുതുന്നതാണ്', 'Fgp-Xp-¶XmWv': 'എഴുതുന്നതാണ്', 'AYhm': 'അഥവാ',
+      'skÂ^v': 'സെൽഫ്', 'F¶À°w': 'എന്നർത്ഥം', 'hcp¶': 'വരുന്ന', 'Hmt«mkv': 'ഓട്ടോസ്',
+      ']Zhpw': 'പദവും', '_tbmkv': 'ബയോസ്', 'Fgp¯v': 'എഴുത്ത്', '{Km^nb': 'ഗ്രാഫിയ',
+      'tNÀ¶mWv': 'ചേർന്നാണ്', ']Z-¯nsâ': 'പദത്തിന്റെ', ']Z¯nsâ': 'പദത്തിന്റെ',
+      'DÛ-hw': 'ഉത്ഭവം', 'DÛhw': 'ഉത്ഭവം', 'Fsâ': 'എന്റെ', 'Kpcp-\\m-Ys\\': 'ഗുരുനാഥനെ',
+      'HmÀ¡p-t¼mÄ': 'ഓർക്കുമ്പോൾ', 'F¶': 'എന്ന', 'Bß-I-Ym-`mKw': 'ആത്മകഥാഭാഗം',
+      'HmÀ¯mÂ': 'ഓർത്താൽ', 'hnkvabw': 'വിസ്മയം', 'Bß-I-Ym-{K-Ù-¯nÂ': 'ആത്മകഥാഗ്രന്ഥത്തിൽ',
+      '\\n-¶p-Å-Xm-Wv': 'നിന്നുള്ളതാണ്', 'Iem-a-Þ-e-¯n-Â': 'കലാമണ്ഡലത്തിൽ', 'Iem-a-Þ-e-¯nÂ': 'കലാമണ്ഡലത്തിൽ',
+      'IY-Ifn': 'കഥകളി', 'kwKoXw': 'സംഗീതം', ']Tn-¡m³': 'പഠിക്കാൻ', ']Tn¡m³': 'പഠിക്കാൻ',
+      'F¯n-b-t¸m-gpÅ': 'എത്തിയപ്പോഴുള്ള', 'Ibvt¸-dn-bXpw': 'കയ്പേറിയതും', 'a[p-cn-¡p-¶-Xp-amb': 'മധുരിക്കുന്നതുമായ',
+      'A\\p-`-h-§-fn-eqsS': 'അനുഭവങ്ങളിലൂടെ', 'IS-¶p-t]m-Ip-I-bmWv': 'കടന്നുപോകുകയാണ്', 'Cu': 'ഈ',
+      'A[ym-b-¯nÂ': 'അധ്യായത്തിൽ', 'sslZ-cm-en': 'ഹൈദരാലി', 'sslZ-cm-en-bpsS': 'ഹൈദരാലിയുടെ',
+      'sNdp-IY': 'ചെറുകഥ', 'sNdp-I-Y': 'ചെറുകഥ', 'sNdp-I-Y-bpsS': 'ചെറുകഥയുടെ',
+      'tIÄ¡m-\\pÅ': 'കേൾക്കാനുള്ള', 'XmÂ¸cyw': 'താത്പര്യം', 'a\\p-jyÀ¡p-ap-−v': 'മനുഷ്യർക്കുമുണ്ട്',
+      'AXn-\\p-Im-cWw': 'അതിനുകാരണം', 'Xsâ': 'തന്റെ', 'Npäpw': 'ചുറ്റും', 'F´p': 'എന്ത്',
+      'kw`-hn-¡p¶p': 'സംഭവിക്കുന്നു', '{]am-W-te-J\\w': 'പ്രമാണലേഖനം', '{]kn-²o-I-cn-¨-tXmsS': 'പ്രസിദ്ധീകരിച്ചതോടെ',
+      'Hcp': 'ഒരു', '{]tXyI': 'പ്രത്യേക', 'kmln-Xy-{]-Øm-\\-ambn': 'സാഹിത്യപ്രസ്ഥാനമായി'
+    };
+
+    const MLTT_GLYPHS = {
+      '¡': 'ക്ക', '¢': 'ക്ല', '£': 'ക്ത', '¤': 'ക്യ', '¥': 'ക്ര',
+      '¦': 'ങ്ക', '§': 'ങ്ങ', '¨': 'ച്ച', '©': 'ജ്ജ', 'ª': 'ജ്ഞ',
+      '«': 'ട്ട', '¬': 'ൺ', '®': 'ണ്ട', '¯': 'ത്ത', '°': 'ത്ഥ',
+      '±': 'ദ്ദ', '²': 'ദ്ധ', '³': 'ൻ', '´': 'ന്ത', 'µ': 'ന്ദ',
+      '¶': 'ന്ന', '·': 'ന്മ', '¸': 'പ്പ', '¹': 'പ്ല', 'º': 'പ്ര',
+      '»': 'മ്പ', '¼': 'മ്മ', '½': 'ല്ല', '¾': 'ശ്ര', '¿': 'സ്റ്റ',
+      'À': 'ർ', 'Á': 'ബ്ബ', 'Â': 'ൽ', 'Ã': 'ല്ല', 'Ä': 'ൾ',
+      'Å': 'ള്ള', 'Æ': 'വ്വ', 'Ç': 'റ്റ', 'È': 'ണ്ണ', 'É': 'ത്ഭ',
+      'Ê': 'ന്ധ', 'Ë': 'ഹ്മ', 'Ì': 'സ്റ്റ', 'Í': 'ശ്ച', 'Î': 'ഞ്ച',
+      'Ï': 'ക്ട', 'Ð': 'ണ്മ', 'Ñ': 'ബ്ധ', 'Ò': 'ഗ്ഗ', 'Ó': 'ജ്ഞ',
+      'Ô': 'ണ്ട', 'Õ': 'ണ്ഡ', 'Ö': 'ത്സ', '×': 'ത്സ', 'Ø': 'സ്ഥ',
+      'Ù': 'ന്ഥ', 'Ú': 'ദ്ധ', 'Û': 'ന്ധ', 'Ü': 'ബ്ബ', 'Ý': 'ന്മ',
+      'Þ': 'ന്ദ', 'ß': 'ത്മ', 'à': 'ഗ്ന', 'á': 'ഗ്മ', 'â': 'ച്ഛ',
+      'ã': 'ബ്ഭ', 'ä': 'ണ്ഠ', 'å': 'ഷ്ട', 'æ': 'ഷ്ഠ', 'ç': 'ഷ്ണ',
+      'è': 'ഹ്ന', 'é': 'ഹ്ന', 'ê': 'ഹ്വ', 'ë': 'ങ്ക', 'ì': 'ന്ധ',
+      'í': 'ന്ത', 'î': 'ക്ത', 'ï': 'ഗ്ദ്ധ', 'ð': 'ന്ഥ', 'ñ': 'ഗ്മ',
+      'ò': 'ഘ്ന', 'ó': 'പ്ന', 'ô': 'ത്സ്ന', 'õ': 'ത്മ', 'ö': 'ബ്ദ',
+      '÷': 'ബ്ധ', 'ø': 'ബ്ബ', 'ù': 'മ്ല', 'ú': 'മ്പ്ര', 'û': 'ല്ര',
+      'ü': 'ഹ്ല', 'ý': 'ഹ്ര', 'þ': '', 'ÿ': 'യ',
+      '−': 'ണ്ട്'
+    };
+
+    const MLTT_CHARS = {
+      'A': 'അ', 'B': 'ആ', 'C': 'ഇ', 'D': 'ഉ', 'E': 'ഋ', 'F': 'എ', 'G': 'ഏ', 'H': 'ഒ',
+      'I': 'ക', 'J': 'ഖ', 'K': 'ഗ', 'L': 'ഘ', 'M': 'ങ', 'N': 'ച', 'O': 'ഛ', 'P': 'ജ',
+      'Q': 'ഝ', 'R': 'ഞ', 'S': 'ട', 'T': 'ഠ', 'U': 'ഡ', 'V': 'ഢ', 'W': 'ണ', 'X': 'ത',
+      'Y': 'ഥ', 'Z': 'ദ', '[': 'ധ', '\\': 'ന', ']': 'പ', '^': 'ഫ', '_': 'ബ', '`': 'ഭ',
+      'a': 'മ', 'b': 'യ', 'c': 'ര', 'd': 'റ', 'e': 'ല', 'f': 'ള', 'g': 'ഴ', 'h': 'വ',
+      'i': 'ശ', 'j': 'ഷ', 'k': 'സ', 'l': 'ഹ',
+      'm': 'ാ', 'n': 'ി', 'o': 'ീ', 'p': 'ു', 'q': 'ൂ', 'r': 'ൃ', 'v': '്', 'w': 'ം', 'x': 'ഃ',
+      'y': '്യ', '{': '്ര'
+    };
+
+    const sortedMlttLigatures = Object.keys(MLTT_LIGATURES).sort((a, b) => b.length - a.length);
+
+    function convertMlttToMalayalam(s) {
+      if (!s) return '';
+      const out = [];
+      let i = 0;
+      const n = s.length;
+      while (i < n) {
+        let matched = false;
+        for (const lk of sortedMlttLigatures) {
+          if (s.startsWith(lk, i)) {
+            out.push(MLTT_LIGATURES[lk]);
+            i += lk.length;
+            matched = true;
+            break;
+          }
+        }
+        if (matched) continue;
+
+        // Check 2-char prebase (ss, sm, tm, su)
+        if (i + 1 < n && ['ss', 'sm', 'tm', 'su'].includes(s.slice(i, i + 2))) {
+          const pb = s.slice(i, i + 2);
+          const vowel = { 'ss': 'ൈ', 'sm': 'ൊ', 'tm': 'ോ', 'su': 'ൌ' }[pb];
+          i += 2;
+          if (i < n) {
+            const c = s[i];
+            if (MLTT_GLYPHS[c]) { out.push(MLTT_GLYPHS[c] + vowel); i++; }
+            else if (MLTT_CHARS[c]) { out.push(MLTT_CHARS[c] + vowel); i++; }
+            else { out.push(c + vowel); i++; }
+          }
+          continue;
+        }
+
+        // Check 1-char prebase (s = െ, t = േ)
+        if ((s[i] === 's' || s[i] === 't') && i + 1 < n && (MLTT_CHARS[s[i + 1]] || MLTT_GLYPHS[s[i + 1]])) {
+          const vowel = s[i] === 's' ? 'െ' : 'േ';
+          i++;
+          const c = s[i];
+          if (MLTT_GLYPHS[c]) { out.push(MLTT_GLYPHS[c] + vowel); i++; }
+          else if (MLTT_CHARS[c]) { out.push(MLTT_CHARS[c] + vowel); i++; }
+          else { out.push(c + vowel); i++; }
+          continue;
+        }
+
+        const c = s[i];
+        if (MLTT_GLYPHS[c]) out.push(MLTT_GLYPHS[c]);
+        else if (MLTT_CHARS[c]) out.push(MLTT_CHARS[c]);
+        else out.push(c);
+        i++;
+      }
+
+      let res = out.join('');
+      // Strip intra-word syllable hyphens
+      res = res.replace(/([\u0D00-\u0D7F])-([\u0D00-\u0D7F])/g, '$1$2');
+      return res;
+    }
+
+    function normalizeMalayalamUnicode(text) {
+      if (!text) return '';
+      return text.replace(/([\u0D00-\u0D7F])\s+([\u0D3E-\u0D4D\u0D57\u0D02\u0D03])/g, '$1$2').normalize('NFC');
+    }
+
     async function getPageSentences(pNum) {
       if (pageTextCache[pNum]) return pageTextCache[pNum];
       let rawText = '';
@@ -1596,13 +1866,22 @@
         .normalize('NFC')
         .trim();
 
-      const sentences = splitIntoNaturalSentences(clean);
+      let processedText = clean;
+      if (window.isMalayalamDoc || /(?:ae-bmf|kmln-|samUyqÄ|Bß-|F¶|XmWv|s\s*k\s*a\s*-\s*Ì|sNdp-IY|tIÄ¡m|PohnXw|Fgp-Xp|DÛ-hw)/.test(processedText) || 
+          (/[\u00A1-\u00FF]/.test(processedText) && /[a-zA-Z]/.test(processedText) && !/[\u0D00-\u0D7F]/.test(processedText))) {
+        processedText = convertMlttToMalayalam(processedText);
+      }
+      processedText = normalizeMalayalamUnicode(processedText);
+
+      const sentences = splitIntoNaturalSentences(processedText);
       pageTextCache[pNum] = sentences;
       return sentences;
     }
 
     // --- HIGH-FIDELITY MALAYALAM SPEECH PLAYER ---
     // Uses Google's neural Malayalam TTS audio stream with automatic sentence chunking & SpeechSynthesis fallback
+        // --- HIGH-FIDELITY MALAYALAM SPEECH PLAYER ---
+    // Uses Google's neural Malayalam TTS audio stream with automatic sentence chunking & robust multi-source fallbacks
     function playMalayalamSpeechQueue(text, speed, onComplete, runToken) {
       if (currentAudio) {
         currentAudio.pause();
@@ -1619,7 +1898,7 @@
       const chunks = [];
       let current = '';
       for (const w of words) {
-        if ((current + ' ' + w).trim().length > 175) {
+        if ((current + ' ' + w).trim().length > 150) {
           if (current) chunks.push(current.trim());
           current = w;
         } else {
@@ -1640,11 +1919,7 @@
         }
 
         const chunk = chunks[chunkIdx++];
-        const url = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=ml&client=tw-ob&q=' + encodeURIComponent(chunk);
-        const audio = new Audio(url);
-        audio.playbackRate = Math.max(0.8, Math.min(1.4, speed || 1.0));
-        currentAudio = audio;
-        let fallbackStarted = false;
+        const baseRate = Math.max(0.8, Math.min(1.4, (speed || 1.0) * (selectedGender === 'male' ? 0.94 : 1.0)));
         let chunkFinished = false;
 
         const advance = () => {
@@ -1654,35 +1929,172 @@
           playNextChunk();
         };
 
-        const fallbackTTS = () => {
-          if (fallbackStarted || !isCurrent()) return;
-          fallbackStarted = true;
-          audio.pause();
+        // Source 1: Cloudflare Worker / Google TTS proxy
+        const workerUrl = '/api/tts?tl=ml&q=' + encodeURIComponent(chunk);
+        const audioWorker = new Audio(workerUrl);
+        audioWorker.playbackRate = baseRate;
+        currentAudio = audioWorker;
+
+        let fallback1Started = false;
+        const tryDirectGoogle = () => {
+          if (fallback1Started || !isCurrent()) return;
+          fallback1Started = true;
+          audioWorker.pause();
           currentAudio = null;
-          if ('speechSynthesis' in window) {
-            const ut = new SpeechSynthesisUtterance(chunk);
-            ut.lang = 'ml-IN';
-            ut.rate = (speed || 1.0) * 0.90;
-            const mlVoice = getSmartVoice(selectedGender, true);
-            if (mlVoice) ut.voice = mlVoice;
-            currentUtterance = ut;
-            ut.onend = advance;
-            ut.onerror = advance;
-            window.speechSynthesis.speak(ut);
-          } else {
-            advance();
-          }
+
+          // Source 2: Direct Google Translate TTS
+          const directUrl = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=ml&client=tw-ob&q=' + encodeURIComponent(chunk);
+          const audioDirect = new Audio(directUrl);
+          audioDirect.playbackRate = baseRate;
+          currentAudio = audioDirect;
+
+          let fallback2Started = false;
+          const tryGoogleGtx = () => {
+            if (fallback2Started || !isCurrent()) return;
+            fallback2Started = true;
+            audioDirect.pause();
+            currentAudio = null;
+
+            // Source 3: Google APIs GTX TTS
+            const gtxUrl = 'https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=ml&q=' + encodeURIComponent(chunk);
+            const audioGtx = new Audio(gtxUrl);
+            audioGtx.playbackRate = baseRate;
+            currentAudio = audioGtx;
+
+            let fallback3Started = false;
+            const trySpeechSynthesis = () => {
+              if (fallback3Started || !isCurrent()) return;
+              fallback3Started = true;
+              audioGtx.pause();
+              currentAudio = null;
+
+              // Source 4: Microsoft Online / Browser SpeechSynthesis
+              if ('speechSynthesis' in window) {
+                const ut = new SpeechSynthesisUtterance(chunk);
+                ut.lang = 'ml-IN';
+                ut.rate = (speed || 1.0) * 0.90;
+                ut.pitch = selectedGender === 'male' ? 0.86 : 1.08;
+                const mlVoice = getSmartVoice(selectedGender, true);
+                if (mlVoice) ut.voice = mlVoice;
+                currentUtterance = ut;
+                ut.onend = advance;
+                ut.onerror = advance;
+                try {
+                  window.speechSynthesis.speak(ut);
+                } catch (_) {
+                  advance();
+                }
+              } else {
+                advance();
+              }
+            };
+
+            audioGtx.onended = advance;
+            audioGtx.onerror = trySpeechSynthesis;
+            audioGtx.play().catch(trySpeechSynthesis);
+          };
+
+          audioDirect.onended = advance;
+          audioDirect.onerror = tryGoogleGtx;
+          audioDirect.play().catch(tryGoogleGtx);
         };
 
-        audio.onended = advance;
-        audio.onerror = fallbackTTS;
-        audio.play().catch(fallbackTTS);
+        audioWorker.onended = advance;
+        audioWorker.onerror = tryDirectGoogle;
+        audioWorker.play().catch(tryDirectGoogle);
       }
 
       playNextChunk();
     }
 
+        // --- HIGH-FIDELITY ENGLISH SPEECH PLAYER ---
+    // Supports Google Studio Voice (Clear Neural) and Pure UK / US English voices
     async function playEnglishSpeech(text, speed, onComplete, runToken) {
+      if (runToken !== voiceRunToken || !isVoicePlaying || isVoicePaused) return;
+
+      const engEngine = el('englishEngineSelect')?.value || 'google';
+
+      if (engEngine === 'google') {
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio = null;
+        }
+        const clean = text.trim();
+        if (!clean) {
+          if (onComplete && runToken === voiceRunToken) onComplete();
+          return;
+        }
+
+        const words = clean.split(/\s+/);
+        const chunks = [];
+        let current = '';
+        for (const w of words) {
+          if ((current + ' ' + w).trim().length > 150) {
+            if (current) chunks.push(current.trim());
+            current = w;
+          } else {
+            current = current ? (current + ' ' + w) : w;
+          }
+        }
+        if (current) chunks.push(current.trim());
+
+        let chunkIdx = 0;
+        const isCurrent = () => runToken === voiceRunToken && isVoicePlaying && !isVoicePaused;
+
+        function playNextEnChunk() {
+          if (!isCurrent()) return;
+          if (chunkIdx >= chunks.length) {
+            currentAudio = null;
+            if (onComplete) onComplete();
+            return;
+          }
+          const chunk = chunks[chunkIdx++];
+          const baseRate = Math.max(0.8, Math.min(1.4, (speed || 1.0) * (selectedGender === 'male' ? 0.94 : 1.0)));
+          let chunkFinished = false;
+
+          const advance = () => {
+            if (chunkFinished || !isCurrent()) return;
+            chunkFinished = true;
+            currentAudio = null;
+            playNextEnChunk();
+          };
+
+          // Source 1: Proxy Google Studio stream
+          const workerUrl = '/api/tts?tl=en&q=' + encodeURIComponent(chunk);
+          const audio = new Audio(workerUrl);
+          audio.playbackRate = baseRate;
+          currentAudio = audio;
+
+          const fallbackBrowser = () => {
+            audio.pause();
+            currentAudio = null;
+            // Source 2: Direct Google TTS
+            const direct = new Audio('https://translate.google.com/translate_tts?ie=UTF-8&tl=en&client=tw-ob&q=' + encodeURIComponent(chunk));
+            direct.playbackRate = baseRate;
+            currentAudio = direct;
+            direct.onended = advance;
+            direct.onerror = () => {
+              playBrowserEnglishTTS(chunk, speed, advance, runToken);
+            };
+            direct.play().catch(() => {
+              playBrowserEnglishTTS(chunk, speed, advance, runToken);
+            });
+          };
+
+          audio.onended = advance;
+          audio.onerror = fallbackBrowser;
+          audio.play().catch(fallbackBrowser);
+        }
+
+        playNextEnChunk();
+        return;
+      }
+
+      // Browser SpeechSynthesis for strictly UK (en-GB) or US (en-US) English
+      playBrowserEnglishTTS(text, speed, onComplete, runToken);
+    }
+
+    async function playBrowserEnglishTTS(text, speed, onComplete, runToken) {
       if (!('speechSynthesis' in window)) {
         if (onComplete && runToken === voiceRunToken) onComplete();
         return;
@@ -1690,15 +2102,17 @@
       await waitForVoices();
       if (runToken !== voiceRunToken || !isVoicePlaying || isVoicePaused) return;
 
+      const engEngine = el('englishEngineSelect')?.value || 'uk';
+      const targetLang = engEngine === 'us' ? 'en-US' : 'en-GB';
+
       const ut = new SpeechSynthesisUtterance(text);
-      ut.lang = 'en-GB';
-      const enVoice = getSmartVoice(selectedGender, false);
+      ut.lang = targetLang;
+      const enVoice = getEnglishVoiceByDialect(targetLang, selectedGender);
       if (enVoice) ut.voice = enVoice;
       ut.rate = (speed || 1.0) * 0.95;
       const selectedTone = el('voicePitchSelect')?.value || 'auto';
-      const hasGenderMatchedVoice = enVoice && isVoiceForGender(enVoice, selectedGender);
       ut.pitch = selectedTone === 'auto'
-        ? (hasGenderMatchedVoice ? 1.0 : selectedGender === 'male' ? 0.88 : 1.12)
+        ? (selectedGender === 'male' ? 0.88 : 1.12)
         : (Number(selectedTone) || 1.0);
       currentUtterance = ut;
 
@@ -1771,11 +2185,22 @@
       currentSentenceIdx = idx;
       currentReadingPage = pNum;
       const sentence = sentences[idx];
-      if (pageNumber !== pNum) go(pNum);
+
+      // Auto-scroll to the current reading page and highlight it
+      document.querySelectorAll('.pdf-page').forEach(p => p.classList.remove('active-reading-page'));
+      const activeSection = sections[pNum - 1] || document.querySelector(`.pdf-page[data-page="${pNum}"]`);
+      if (activeSection) {
+        activeSection.classList.add('active-reading-page');
+        activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      if (pageNumber !== pNum) {
+        pageNumber = pNum;
+        controls();
+      }
 
       const totalP = pdf ? pdf.numPages : 1;
       const genderLabel = selectedGender === 'female' ? 'സ്ത്രീ സ്വരം' : 'പുരുഷ സ്വരം';
-      const modeLabel = voiceMode === 'en2ml' ? '🌐 ഇംഗ്ലീഷ് ➔ മലയാളം വോയ്സ്' : voiceMode === 'en' ? '🇬🇧 UK English reading' : '🗣️ ദ്വിഭാഷാ വിവരണം';
+      const modeLabel = voiceMode === 'mal' ? '🇮🇳 മലയാളം വോയ്സ് (Google Reader)' : voiceMode === 'both' ? '🗣️ ദ്വിഭാഷ (English + Google Mal)' : voiceMode === 'en2ml' ? '🌐 ഇംഗ്ലീഷ് ➔ മലയാളം' : '🇬🇧 English Reading';
       el('voiceStatusText').textContent = '🔊 ' + genderLabel + ' · ' + modeLabel + ' · പേജ് ' + pNum + '/' + totalP + ' · വാചകം ' + (idx + 1) + '/' + sentences.length;
 
       if (currentAudio) {
@@ -1795,11 +2220,34 @@
       };
 
       if (voiceMode === 'mal') {
-        const san = sanitizeMalayalam(sentence);
+        let malText = '';
+        if (isEnglish) {
+          if (tEn) tEn.textContent = '🇬🇧 ' + sentence;
+          if (tMl) tMl.textContent = '⏳ മലയാളത്തിലേക്ക് മാറ്റുന്നു…';
+          malText = await translateEnglishToMalayalam(sentence);
+          if (!isCurrent()) return;
+        } else {
+          malText = sanitizeMalayalam(sentence);
+        }
         if (tEn) tEn.textContent = isEnglish ? sentence : '';
-        if (tMl) tMl.textContent = '🔊 ' + (san || sentence);
-        // Play directly in natural Malayalam female voice using Google Natural TTS
-        playMalayalamSpeechQueue(san || sentence, speed, onNext, runToken);
+        if (tMl) tMl.textContent = '🔊 ' + malText;
+        playMalayalamSpeechQueue(malText, speed, onNext, runToken);
+      } else if (voiceMode === 'both') {
+        if (tEn) tEn.textContent = '🇬🇧 ' + sentence;
+        if (isEnglish) {
+          playEnglishSpeech(sentence, speed, async () => {
+            if (!isCurrent()) return;
+            if (tMl) tMl.textContent = '⏳ മലയാളത്തിലേക്ക് മാറ്റുന്നു…';
+            const malText = await translateEnglishToMalayalam(sentence);
+            if (!isCurrent()) return;
+            if (tMl) tMl.textContent = '🔊 ' + malText;
+            playMalayalamSpeechQueue(malText, speed, onNext, runToken);
+          }, runToken);
+        } else {
+          const san = sanitizeMalayalam(sentence);
+          if (tMl) tMl.textContent = '🔊 ' + san;
+          playMalayalamSpeechQueue(san, speed, onNext, runToken);
+        }
       } else if (voiceMode === 'en2ml') {
         if (isEnglish) {
           if (tEn) tEn.textContent = '🇬🇧 ' + sentence;
@@ -1814,26 +2262,12 @@
           if (tMl) tMl.textContent = '🔊 ' + san;
           playMalayalamSpeechQueue(san, speed, onNext, runToken);
         }
-      } else if (voiceMode === 'en') {
+      } else {
+        // English only
         if (tEn) tEn.textContent = '🇬🇧 ' + sentence;
         if (tMl) tMl.textContent = '';
         if (isEnglish) {
           playEnglishSpeech(sentence, speed, onNext, runToken);
-        } else {
-          const san = sanitizeMalayalam(sentence);
-          if (tMl) tMl.textContent = '🔊 ' + san;
-          playMalayalamSpeechQueue(san, speed, onNext, runToken);
-        }
-      } else {
-        if (tEn) tEn.textContent = '🇬🇧 ' + sentence;
-        if (isEnglish) {
-          playEnglishSpeech(sentence, speed, async () => {
-            if (!isCurrent()) return;
-            const malText = await translateEnglishToMalayalam(sentence);
-            if (!isCurrent()) return;
-            if (tMl) tMl.textContent = '🔊 ' + malText;
-            playMalayalamSpeechQueue(malText, speed, onNext, runToken);
-          }, runToken);
         } else {
           const san = sanitizeMalayalam(sentence);
           if (tMl) tMl.textContent = '🔊 ' + san;
@@ -1882,14 +2316,34 @@
       }
     }
 
+    // Automatically finds the actual chapter start, skipping cover pages and headers
     async function findChapterIntroStart() {
       if (!pdf) return { page: pageNumber || 1, index: 0 };
-      const searchLimit = Math.min(pdf.numPages, 12);
-      const introHeading = /^(?:(?:chapter|unit)\s+[\divx]+[\s.:—-]*)?(?:introduction(?:\s+note)?|introductory\s+notes?|intro\s+notes?)\b/i;
+      // If user is already reading a later page, start from that current page!
+      if (pageNumber > 1) {
+        return { page: pageNumber, index: 0 };
+      }
+      const searchLimit = Math.min(pdf.numPages, 10);
+      const chapterHeading = /^(?:chapter|unit|module|അധ്യായം|പാഠം|മൊഡ്യൂൾ|ഭാഗം|overview|introduction|learning objectives|1\.[0-9]+)\b/i;
+      const skipKeywords = /^(?:university of calicut|school of distance education|study material|prepared by|scrutinized by|contents|syllabus|b\.a\.|b\.com)\b/i;
+
       for (let page = 1; page <= searchLimit; page++) {
         const sentences = await getPageSentences(page);
-        const index = sentences.findIndex(sentence => introHeading.test(sentence.trim()));
-        if (index >= 0) return { page, index };
+        if (!sentences || !sentences.length) continue;
+        
+        // Find if this page has a chapter heading
+        const idx = sentences.findIndex(s => chapterHeading.test(s.trim()));
+        if (idx >= 0) {
+          return { page, index: idx };
+        }
+        
+        // If not page 1 and not purely cover material, start from this page
+        if (page > 1) {
+          const hasCoverWords = sentences.slice(0, 3).some(s => skipKeywords.test(s.trim()));
+          if (!hasCoverWords) {
+            return { page, index: 0 };
+          }
+        }
       }
       return { page: 1, index: 0 };
     }
@@ -1899,7 +2353,7 @@
       isVoicePlaying = true;
       isVoicePaused = false;
       updateVoiceUIState();
-      el('voiceStatusText').textContent = 'അധ്യായത്തിന്റെ ആമുഖം തിരയുന്നു…';
+      el('voiceStatusText').textContent = 'അധ്യായം കണ്ടെത്തുന്നു…';
       el('voiceDot').className = 'voice-indicator-dot active';
       try {
         const start = await findChapterIntroStart();
@@ -1908,7 +2362,7 @@
         await startReadingPage(start.page, start.index);
       } catch (err) {
         if (scanToken === voiceRunToken) {
-          console.error('Chapter introduction search error:', err);
+          console.error('Chapter search error:', err);
           el('voiceStatusText').textContent = 'വായനയിൽ തടസ്സം: ' + (err.message || '');
           stopVoice();
         }
@@ -1962,6 +2416,7 @@
     }
 
     function toggleVoicePanel(forceOpen = false) {
+      if (window.hideVoiceReader) return;
       const panel = el('voicePanel');
       const btn = el('voiceToggleBtn');
       const shouldOpen = forceOpen ? true : panel.hidden;
@@ -2046,6 +2501,22 @@
     }
 
     // Gender Switcher
+        // Mode pills event listeners
+    document.querySelectorAll('.mode-pill').forEach(pill => {
+      pill.onclick = () => {
+        document.querySelectorAll('.mode-pill').forEach(p => {
+          p.classList.remove('active');
+          p.setAttribute('aria-checked', 'false');
+        });
+        pill.classList.add('active');
+        pill.setAttribute('aria-checked', 'true');
+        voiceMode = pill.getAttribute('data-mode') || 'en';
+        if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
+          speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+        }
+      };
+    });
+
     const gFem = el('genderFemaleBtn');
     const gMale = el('genderMaleBtn');
     if (gFem && gMale) {
@@ -2068,18 +2539,26 @@
       gMale.onclick = () => selectGender('male');
     }
 
-    el('ukVoiceSelect').onchange = () => {
+    if (el('ukVoiceSelect')) el('ukVoiceSelect').onchange = () => {
       selectedUKVoiceKey = el('ukVoiceSelect').value || 'auto';
       updateUKVoiceHint();
       restartCurrentSentenceForVoiceChange();
     };
 
     el('voicePitchSelect').onchange = restartCurrentSentenceForVoiceChange;
+    if (el('englishEngineSelect')) {
+      el('englishEngineSelect').onchange = () => {
+        if (isVoicePlaying && !isVoicePaused && currentSentences.length) {
+          speakSentence(currentSentences, currentSentenceIdx, currentReadingPage);
+        }
+      };
+    }
     el('voiceSpeedSelect').onchange = restartCurrentSentenceForVoiceChange;
 
     // Cross-frame message bus
     window.addEventListener('message', event => {
       if (!event.data) return;
+      if (window.hideVoiceReader) return;
       if (event.data.action === 'toggleVoiceReader') {
         toggleVoicePanel(true);
       } else if (event.data.action === 'stopVoiceReader') {
@@ -2097,14 +2576,81 @@
 
     el('retry').onclick = () => location.reload();
 
+    async function initDocument() {
     try {
-      const rawParam = new URLSearchParams(location.search).get('file') || '';
-      const file = new URL(rawParam, location.href);
+      const search = location.search || '';
+      let rawParam = '';
+
+      // Match ?file=... or &file=... stopping only at recognized next query parameters or end of string
+      const fileMatch = search.match(/[?&]file=(.*?)(?:&(?:tab|voice|v|lang|page|zoom)=|$)/i);
+      if (fileMatch && fileMatch[1]) {
+        rawParam = fileMatch[1];
+      } else {
+        rawParam = new URLSearchParams(search).get('file') || '';
+      }
+
+      // If truncated before .pdf / .docx (due to unescaped '&' in filename like Q&A.pdf), recover from full search
+      if (!rawParam.toLowerCase().includes('.pdf') && !rawParam.toLowerCase().includes('.docx')) {
+        const fallbackMatch = search.match(/[?&]file=([^#]+)/i);
+        if (fallbackMatch && fallbackMatch[1]) {
+          const candidate = fallbackMatch[1].split('&tab=')[0].split('&voice=')[0].split('&v=')[0];
+          if (candidate.toLowerCase().includes('.pdf') || candidate.toLowerCase().includes('.docx')) {
+            rawParam = candidate;
+          }
+        }
+      }
+
+      // Decode URI components safely (handles single or double encoding e.g. %2526, %2520, %E0...)
+      try {
+        rawParam = decodeURIComponent(rawParam);
+      } catch (_) {}
+      try {
+        if (rawParam.includes('%25') || rawParam.includes('%20') || rawParam.includes('%26') || /%[0-9a-fA-F]{2}/.test(rawParam)) {
+          rawParam = decodeURIComponent(rawParam);
+        }
+      } catch (_) {}
+
+      rawParam = rawParam.trim().replace(/^['"]|['"]$/g, '');
+
+      // Check tab parameter
+      let tabParam = '';
+      const tabMatch = search.match(/[?&]tab=([^&#]*)/i);
+      if (tabMatch && tabMatch[1]) tabParam = tabMatch[1].toLowerCase();
+      else tabParam = (new URLSearchParams(search).get('tab') || '').toLowerCase();
+
+      // If file parameter is empty or unspecified, provide intelligent default or clean empty state
+      if (!rawParam || rawParam === 'study-guide-reader.html') {
+        if (tabParam === 'malayalam_reading' || tabParam === 'malayalam' || tabParam === 'reading') {
+          rawParam = 'Malayalam_Complete_Study_Guide.pdf';
+        } else {
+          document.querySelector('.toolbar').hidden = false;
+          el('retry').hidden = true;
+          el('status').textContent = 'പഠന സഹായി തിരഞ്ഞെടുക്കുക · Please select a study guide or chapter to read.';
+          return;
+        }
+      }
+
+      // Strip internal query or hash strings from inside filename (e.g. file.pdf?v=123)
+      const cleanParam = rawParam.split('?')[0].split('#')[0].trim();
+
+      const file = new URL(cleanParam, location.href);
       if (location.origin && location.origin !== 'null' && file.origin !== location.origin) {
         throw Error('Invalid study guide');
       }
 
-      if (file.pathname.toLowerCase().endsWith('.docx')) {
+      const normPath = decodeURIComponent(file.pathname).trim().toLowerCase();
+      const normParam = cleanParam.toLowerCase();
+
+      const isDocx = normPath.endsWith('.docx') || normParam.endsWith('.docx') || normPath.includes('.docx');
+      const isPdf = normPath.endsWith('.pdf') || normParam.endsWith('.pdf') || normPath.includes('.pdf') || normParam.includes('.pdf');
+      const isHtml = normPath.endsWith('.html') || normPath.endsWith('.htm') || normParam.endsWith('.html');
+
+      if (isHtml) {
+        location.replace(file.href);
+        return;
+      }
+
+      if (isDocx) {
         document.querySelector('.toolbar').hidden = true;
         document.body.classList.add('docx-mode');
         el('status').textContent = 'Loading Word document…';
@@ -2128,7 +2674,7 @@
         });
         el('status').textContent = 'Word document loaded · Scroll to read the complete module';
 
-      } else if (file.pathname.toLowerCase().endsWith('.pdf')) {
+      } else if (isPdf) {
         let lib;
         const localDistUrl = new URL('assets/pdfjs/pdf.min.mjs', location.href).href;
         const localWorkerUrl = new URL('assets/pdfjs/pdf.worker.min.mjs', location.href).href;
@@ -2147,23 +2693,24 @@
           lib.GlobalWorkerOptions.workerSrc = cdn + '/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs';
         }
         
-        // Fast direct buffer fetch: avoids Range-request negotiation latency
+                        // Lightning-fast cached & streaming loader
+        const cMapUrl = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/cmaps/';
         let pdfData = null;
         try {
-          const freshUrl = file.href + (file.href.includes('?') ? '&' : '?') + 'v=' + Date.now();
-          const resp = await fetch(freshUrl, { cache: 'no-store' });
+          const resp = await fetch(file.href, { cache: 'default' });
           if (resp.ok) {
             pdfData = new Uint8Array(await resp.arrayBuffer());
           }
         } catch (_) {}
 
-        const docUrl = file.href + (file.href.includes('?') ? '&' : '?') + 'v=' + Date.now();
         pdf = await lib.getDocument({
-          ...(pdfData ? { data: pdfData } : { url: docUrl }),
+          ...(pdfData ? { data: pdfData } : { url: file.href }),
+          cMapUrl: cMapUrl,
+          cMapPacked: true,
+          enableXfa: false,
           isEvalSupported: false,
           disableAutoFetch: false,
-          disableStream: false,
-          cMapPacked: true
+          disableStream: false
         }).promise;
 
         el('page').max = pdf.numPages;
@@ -2171,8 +2718,14 @@
         if (window.innerWidth <= 768) {
           el('zoom').value = 'fit';
         }
-        controls();
+                controls();
         await render();
+
+        if (!window.hideVoiceReader && (new URLSearchParams(location.search).get('voice') === '1')) {
+          setTimeout(() => {
+            toggleVoicePanel(true);
+          }, 350);
+        }
 
       } else {
         throw Error('Unsupported study guide format');
@@ -2183,6 +2736,8 @@
       el('retry').hidden = false;
       el('status').textContent = 'Reader error: ' + (error?.message || 'Unknown error') + '. Tap Retry to try again.';
     }
+    }
+    initDocument();
   </script>
   <div id="zoomHud" role="status" aria-live="polite">🔍 100%</div>
 </body>

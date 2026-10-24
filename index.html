@@ -277,37 +277,96 @@
     .ai-guide-version-tabs button:focus-visible{outline:3px solid #b6a7ff;outline-offset:2px}
     @media(max-width:560px){.ai-guide-version-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.ai-guide-version-tabs button{padding:8px 6px;font-size:12px}}
   </style>
-  <style id="equal-open-preview-buttons">
+    <style id="equal-open-preview-buttons">
     .module-pdf-actions{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}
     .module-pdf-actions > .module-chapter-open-link,
-    .module-pdf-actions > .module-reader-load{
+    .module-pdf-actions > .module-reader-load,
+    .module-pdf-actions > .module-chapter-voice-btn{
       box-sizing:border-box;
       display:inline-flex;
-      flex:1 1 140px;
+      flex:1 1 120px;
       align-items:center;
       justify-content:center;
       min-width:0;
       min-height:44px;
       margin:0;
-      padding:12px 16px;
+      padding:12px 14px;
       border-radius:12px;
       font-family:inherit;
-      font-size:14px;
-      font-weight:700;
+      font-size:13.5px;
+      font-weight:750;
       line-height:1.2;
       text-align:center;
       text-decoration:none;
+      transition:all 0.18s ease;
+      letter-spacing:0.01em;
     }
-    @media(max-width:420px){
+    .module-pdf-actions > .module-chapter-open-link{
+      background:linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+      color:#ffffff !important;
+      border:0;
+      cursor:pointer;
+      gap:6px;
+      box-shadow:0 3px 10px rgba(37, 99, 235, 0.3);
+    }
+    .module-pdf-actions > .module-chapter-open-link:hover{
+      background:linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #2563eb 100%);
+      transform:translateY(-1.5px);
+      box-shadow:0 6px 18px rgba(37, 99, 235, 0.45);
+    }
+    .module-pdf-actions > .module-chapter-open-link:focus-visible{
+      outline:3px solid #60a5fa;
+      outline-offset:2px;
+    }
+    /* Noticeable, vibrant Light Blue Preview Here button / tab */
+    .module-pdf-actions > .module-reader-load{
+      background:linear-gradient(135deg, #38bdf8 0%, #0ea5e9 55%, #0284c7 100%) !important;
+      color:#ffffff !important;
+      border:0 !important;
+      cursor:pointer;
+      gap:6px;
+      box-shadow:0 4px 14px rgba(14, 165, 233, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.3) inset !important;
+      text-shadow:0 1px 2px rgba(12, 74, 110, 0.55);
+    }
+    .module-pdf-actions > .module-reader-load:hover:not(:disabled){
+      background:linear-gradient(135deg, #0ea5e9 0%, #0284c7 55%, #0369a1 100%) !important;
+      transform:translateY(-1.5px) scale(1.02);
+      box-shadow:0 7px 22px rgba(14, 165, 233, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.45) inset !important;
+      filter:brightness(1.05);
+    }
+    .module-pdf-actions > .module-reader-load:focus-visible{
+      outline:3px solid #38bdf8;
+      outline-offset:2px;
+    }
+    .module-pdf-actions > .module-chapter-voice-btn{
+      background:linear-gradient(135deg, #047857 0%, #059669 45%, #10b981 100%);
+      color:#ffffff !important;
+      border:0;
+      cursor:pointer;
+      gap:6px;
+      box-shadow:0 3px 10px rgba(16, 185, 129, 0.35);
+    }
+    .module-pdf-actions > .module-chapter-voice-btn:hover{
+      background:linear-gradient(135deg, #065f46 0%, #047857 45%, #059669 100%);
+      transform:translateY(-1.5px);
+      box-shadow:0 6px 18px rgba(16, 185, 129, 0.48);
+    }
+    .module-pdf-actions > .module-chapter-voice-btn:focus-visible{
+      outline:3px solid #34d399;
+      outline-offset:2px;
+    }
+    @media(max-width:520px){
       .module-pdf-actions{gap:8px}
       .module-pdf-actions > .module-chapter-open-link,
-      .module-pdf-actions > .module-reader-load{flex-basis:0;padding:11px 8px}
+      .module-pdf-actions > .module-reader-load,
+      .module-pdf-actions > .module-chapter-voice-btn{flex-basis:0;padding:10px 8px;font-size:12px}
     }
   </style>
   <style id="manual-document-reader">
-    .module-reader-load{display:inline-flex;align-items:center;justify-content:center;margin:20px;padding:13px 22px;border:0;border-radius:12px;background:#235944;color:white;font:inherit;font-weight:700;cursor:pointer}
-    .module-reader-load:hover{background:#194334}
-    .module-reader-load:focus-visible{outline:3px solid #b79e48;outline-offset:3px}
+    .module-reader-load{display:inline-flex;align-items:center;justify-content:center;margin:20px;padding:13px 22px;border:0;border-radius:12px;background:linear-gradient(135deg, #38bdf8 0%, #0ea5e9 55%, #0284c7 100%);color:white;font:inherit;font-weight:750;cursor:pointer;box-shadow:0 4px 14px rgba(14, 165, 233, 0.42);transition:all 0.18s ease;text-shadow:0 1px 2px rgba(12, 74, 110, 0.55)}
+    .module-reader-load:hover:not(:disabled){background:linear-gradient(135deg, #0ea5e9 0%, #0284c7 55%, #0369a1 100%);transform:translateY(-1.5px) scale(1.02);box-shadow:0 7px 22px rgba(14, 165, 233, 0.6)}
+    .module-reader-load:disabled{opacity:0.55;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+    .module-reader-load:focus-visible{outline:3px solid #38bdf8;outline-offset:3px}
   </style>
   <style id="module-window-home-button">
     #module-dialog .module-header-actions{display:none!important}
@@ -3247,17 +3306,19 @@
 
       const actions = document.createElement('div');
       actions.className = 'module-pdf-actions';
+      const isLmsTabContext = (moduleDialog.dataset.isLms === 'true' || (moduleDialog.dataset.readingOnly !== 'true' && moduleDialog.dataset.isMcqPdf !== 'true'));
+      const tabParam = isLmsTabContext ? '&tab=lms' : (moduleDialog.dataset.readingOnly === 'true' ? '&tab=study_guide' : '&tab=mcq');
       const open = document.createElement('a');
       open.className = 'module-chapter-open-link';
-      open.href = 'study-guide-reader.html?file=' + encodeURIComponent(item.href.split('#')[0]);
+      open.href = 'study-guide-reader.html?file=' + encodeURIComponent(decodeURIComponent(item.href.split('#')[0])) + tabParam;
       open.target = '_blank';
       open.rel = 'noopener';
-      open.textContent = 'Open';
+      open.innerHTML = '<span aria-hidden="true">📄</span> Open';
 
       const preview = document.createElement('button');
       preview.type = 'button';
       preview.className = 'module-reader-load';
-      preview.textContent = 'Preview Here';
+      preview.innerHTML = '<span aria-hidden="true">👁️</span> Preview Here';
       preview.setAttribute('aria-label', 'Preview ' + (item.title || item.label) + ' inside this window');
 
       const reader = document.createElement('section');
@@ -3271,15 +3332,41 @@
           frame.className = 'module-pdf-frame';
           frame.title = (item.title || item.label) + ' preview';
           frame.loading = 'eager';
-          frame.src = 'study-guide-reader.html?file=' + encodeURIComponent(item.href.split('#')[0]);
+          frame.src = 'study-guide-reader.html?file=' + encodeURIComponent(decodeURIComponent(item.href.split('#')[0])) + tabParam;
           reader.append(frame);
         }
         reader.hidden = false;
-        preview.textContent = 'Preview Here';
+        preview.innerHTML = '<span aria-hidden="true">👁️</span> Preview Here';
         reader.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
 
       actions.append(open, preview);
+      if (isLmsTabContext) {
+        const voiceBtn = document.createElement('a');
+        voiceBtn.className = 'module-chapter-voice-btn';
+        let voiceHrefFile = item.href.split('#')[0];
+        let voiceAnchor = '';
+        if (/(?:LiteraryPractice|MODULE4|Module3.*മലയാള|malayalam)/i.test(voiceHrefFile) || /malayalam|മലയാള/i.test(item.title || item.label || '')) {
+          voiceHrefFile = 'Malayalam_Complete_Study_Guide.pdf';
+          const modMatch = (item.title || item.label || item.href).match(/module\s*(\d+)|മൊഡ്യൂൾ\s*(\d+)/i);
+          const mNum = modMatch ? (modMatch[1] || modMatch[2]) : '1';
+          const modPg = { '1': 5, '2': 52, '3': 86, '4': 121 }[mNum] || 5;
+          voiceAnchor = '#page=' + modPg;
+        }
+        voiceBtn.href = 'study-guide-reader.html?file=' + encodeURIComponent(decodeURIComponent(voiceHrefFile)) + '&tab=lms&voice=1' + voiceAnchor;
+        voiceBtn.target = '_blank';
+        voiceBtn.rel = 'noopener';
+        voiceBtn.innerHTML = '<span aria-hidden="true">🔊</span> Voice Reading';
+        voiceBtn.setAttribute('aria-label', 'Listen to ' + (item.title || item.label) + ' with Voice Reading');
+        voiceBtn.addEventListener('click', (e) => {
+          const frame = reader.querySelector('iframe');
+          if (frame && !reader.hidden) {
+            e.preventDefault();
+            frame.contentWindow?.postMessage({ action: 'toggleVoiceReader' }, '*');
+          }
+        });
+        actions.append(voiceBtn);
+      }
       if (docData.videoResources && docData.videoResources.length) {
         const videoSection = document.createElement('div');
         videoSection.className = 'syllabus-videos-section';
@@ -4389,24 +4476,24 @@
           item('സമ്പൂർണ്ണ ഗൈഡ് (Master Guide)','മലയാള സാഹിത്യാനുശീലനം · സമ്പൂർണ്ണ പഠന സഹായി (മൊഡ്യൂൾ 1)','Malayalam_Complete_Study_Guide.pdf','Malayalam','മൊഡ്യൂൾ 1: ഗദ്യവും വിവർത്തനവും സമഗ്ര ഗൈഡ്'),
           item('Chapter 1 · ആത്മകഥ','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 1 · അധ്യായം 1 · ആത്മകഥ','Malayalam_Notes_Chapter_1_Final.pdf','Malayalam','ആത്മകഥ · മലയാളം പഠനക്കുറിപ്പുകൾ'),
           item('Chapter 1 · ആത്മകഥ','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 1 · അധ്യായം 1 · ആത്മകഥ','Malayalam_Exam_Notes_Final.pdf','Malayalam','ആത്മകഥ · പരീക്ഷാ കുറിപ്പുകൾ'),
-          item('Chapter 2 · കിഴവനും ക്രാക്കാത്തൂവയും','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 1 · അധ്യായം 2 · കിഴവനും ക്രാക്കാത്തൂവയും','SK_Pottekkatt_Study%20notes_chap2.pdf','Malayalam','കിഴവനും ക്രാക്കാത്തൂവയും · പഠനക്കുറിപ്പുകൾ'),
+          item('Chapter 2 · കിഴവനും ക്രാക്കാത്തൂവയും','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 1 · അധ്യായം 2 · കിഴവനും ക്രാക്കാത്തൂവയും','SK_Pottekkatt_Study notes_chap2.pdf','Malayalam','കിഴവനും ക്രാക്കാത്തൂവയും · പഠനക്കുറിപ്പുകൾ'),
           item('Chapter 4 · അർമേനിയയിലെ ശോകഗാനം','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 1 · അധ്യായം 4 · അർമേനിയയിലെ ശോകഗാനം','malayalam_chapter4_notes.pdf','Malayalam','അർമേനിയയിലെ ശോകഗാനം · പഠനക്കുറിപ്പുകൾ'),
           item('Chapter 4 · അർമേനിയയിലെ ശോകഗാനം','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 1 · അധ്യായം 4 · അർമേനിയയിലെ ശോകഗാനം','malayalam_chapter4_module1.pdf','Malayalam','അർമേനിയയിലെ ശോകഗാനം · മലയാളം PDF'),
-          item('Module 1 · മലയാളസാഹിത്യാനുശീലനം','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 1 · മലയാളസാഹിത്യാനുശീലനം','LiteraryPracticeinMalayalam-Module1_T1777700168876%20(1).pdf','Malayalam','മൊഡ്യൂൾ 1 · പൂർണ്ണ പഠനസാമഗ്രി'),
-          item('Chapter 4 · ചോദ്യോത്തരങ്ങൾ','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 1 · അധ്യായം 4 · ചോദ്യോത്തരങ്ങൾ','malayalam_chapter4_Q%26A.pdf','Malayalam','അധ്യായം 4 · ചോദ്യോത്തരങ്ങൾ'),
+          item('Module 1 · മലയാളസാഹിത്യാനുശീലനം','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 1 · മലയാളസാഹിത്യാനുശീലനം','LiteraryPracticeinMalayalam-Module1_T1777700168876 (1).pdf','Malayalam','മൊഡ്യൂൾ 1 · പൂർണ്ണ പഠനസാമഗ്രി'),
+          item('Chapter 4 · ചോദ്യോത്തരങ്ങൾ','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 1 · അധ്യായം 4 · ചോദ്യോത്തരങ്ങൾ','malayalam_chapter4_Q&A.pdf','Malayalam','അധ്യായം 4 · ചോദ്യോത്തരങ്ങൾ'),
         ],
         [
           item('സമ്പൂർണ്ണ ഗൈഡ് (Master Guide)','മലയാള സാഹിത്യാനുശീലനം · സമ്പൂർണ്ണ പഠന സഹായി (മൊഡ്യൂൾ 2)','Malayalam_Complete_Study_Guide.pdf','Malayalam','മൊഡ്യൂൾ 2: ചെറുകഥയും നോവലും സമഗ്ര ഗൈഡ്'),
           item('Chapter 1 · പൂവമ്പഴം','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 2 · അധ്യായം 1 · പൂവമ്പഴം','Poovampazham_Class_Notes.pdf','Malayalam','പൂവമ്പഴം · ക്ലാസ് നോട്ടുകൾ'),
-          item('Chapter 3 · ദൈവത്തിന്റെ കണ്ണ്','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 2 · അധ്യായം 3 · ദൈവത്തിന്റെ കണ്ണ്','Module2_chapter3_%E0%B4%A6%E0%B5%88%E0%B4%B5%E0%B4%A4%E0%B5%8D%E0%B4%A4%E0%B4%BF%E0%B4%A8%E0%B5%8D%E0%B4%B1%E0%B5%86_%E0%B4%95%E0%B4%A3%E0%B5%8D%E0%B4%A3%E0%B5%8D%20.pdf','Malayalam','ദൈവത്തിന്റെ കണ്ണ് · പഠനക്കുറിപ്പുകൾ'),
+          item('Chapter 3 · ദൈവത്തിന്റെ കണ്ണ്','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 2 · അധ്യായം 3 · ദൈവത്തിന്റെ കണ്ണ്','Module2_chapter3_ദൈവത്തിന്റെ_കണ്ണ് .pdf','Malayalam','ദൈവത്തിന്റെ കണ്ണ് · പഠനക്കുറിപ്പുകൾ'),
           item('Module 2 · മലയാളസാഹിത്യാനുശീലനം','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 2 · മലയാളസാഹിത്യാനുശീലനം','LiteraryPracticeinMalayalam-Module2_T1779269299389.pdf','Malayalam','മൊഡ്യൂൾ 2 · പൂർണ്ണ പഠനസാമഗ്രി'),
         ],
         [
           item('സമ്പൂർണ്ണ ഗൈഡ് (Master Guide)','മലയാള സാഹിത്യാനുശീലനം · സമ്പൂർണ്ണ പഠന സഹായി (മൊഡ്യൂൾ 3)','Malayalam_Complete_Study_Guide.pdf','Malayalam','മൊഡ്യൂൾ 3: കവിത സമഗ്ര ഗൈഡ്'),
-          item('Chapter 1 · സമുദ്രലംഘനം','Malayalam Study Guide · Module 3 · Chapter 1 · സമുദ്രലംഘനം','%E0%B4%B8%E0%B4%AE%E0%B5%81%E0%B4%A6%E0%B5%8D%E0%B4%B0%E0%B4%B2%E0%B4%82%E0%B4%98%E0%B4%A8%E0%B4%82%20_chp1_Module3.pdf','Malayalam','Malayalam Module 3 · Chapter 1'),
-          item('Chapter 2 · ചിന്താവിഷ്ടയായ സീത','Malayalam Study Guide · Module 3 · Chapter 2 · ചിന്താവിഷ്ടയായ സീത','%E0%B4%9A%E0%B4%BF%E0%B4%A8%E0%B5%8D%E0%B4%A4%E0%B4%BE%E0%B4%B5%E0%B4%BF%E0%B4%B7%E0%B5%8D%E0%B4%9F%E0%B4%AF%E0%B4%BE%E0%B4%AF%20%E0%B4%B8%E0%B5%80%E0%B4%A4_chap2Module3..pdf','Malayalam','Malayalam Module 3 · Chapter 2'),
-          item('Chapter 3 · ഇവനെ കൂടി','Malayalam Study Guide · Module 3 · Chapter 3 · ഇവനെ കൂടി','%E0%B4%87%E0%B4%B5%E0%B4%A8%E0%B5%86%20%E0%B4%95%E0%B5%82%E0%B4%9F%E0%B4%BF%20chap3%20_Module3.pdf','Malayalam','Malayalam Module 3 · Chapter 3'),
-          item('Module 3 · മലയാളസാഹിത്യാനുശീലനം','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 3 · മലയാളസാഹിത്യാനുശീലനം','Module3%E0%B4%AE%E0%B4%B2%E0%B4%AF%E0%B4%BE%E0%B4%B3%E0%B4%B8%E0%B4%BE%E0%B4%B9%E0%B4%BF%E0%B4%A4%E0%B5%8D%E0%B4%AF%E0%B4%BE%E0%B4%A8%E0%B5%81%E0%B4%B6%E0%B5%80%E0%B4%B2%E0%B4%A8%E0%B4%82_T1781936346875%20(1).pdf','Malayalam','മൊഡ്യൂൾ 3 · പൂർണ്ണ പഠനസാമഗ്രി'),
+          item('Chapter 1 · സമുദ്രലംഘനം','Malayalam Study Guide · Module 3 · Chapter 1 · സമുദ്രലംഘനം','സമുദ്രലംഘനം _chp1_Module3.pdf','Malayalam','Malayalam Module 3 · Chapter 1'),
+          item('Chapter 2 · ചിന്താവിഷ്ടയായ സീത','Malayalam Study Guide · Module 3 · Chapter 2 · ചിന്താവിഷ്ടയായ സീത','ചിന്താവിഷ്ടയായ സീത_chap2Module3..pdf','Malayalam','Malayalam Module 3 · Chapter 2'),
+          item('Chapter 3 · ഇവനെ കൂടി','Malayalam Study Guide · Module 3 · Chapter 3 · ഇവനെ കൂടി','ഇവനെ കൂടി chap3 _Module3.pdf','Malayalam','Malayalam Module 3 · Chapter 3'),
+          item('Module 3 · മലയാളസാഹിത്യാനുശീലനം','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 3 · മലയാളസാഹിത്യാനുശീലനം','Module3മലയാളസാഹിത്യാനുശീലനം_T1781936346875 (1).pdf','Malayalam','മൊഡ്യൂൾ 3 · പൂർണ്ണ പഠനസാമഗ്രി'),
         ],
         [
           item('സമ്പൂർണ്ണ ഗൈഡ് (Master Guide)','മലയാള സാഹിത്യാനുശീലനം · സമ്പൂർണ്ണ പഠന സഹായി (മൊഡ്യൂൾ 4)','Malayalam_Complete_Study_Guide.pdf','Malayalam','മൊഡ്യൂൾ 4: ദൃശ്യകല, നാടകം, സിനിമ സമഗ്ര ഗൈഡ്'),
@@ -4638,7 +4725,7 @@
         const preview=document.createElement('button');
         preview.type='button';
         preview.className='module-reader-load';
-        preview.textContent='Preview Here';
+        preview.innerHTML='<span aria-hidden="true">👁️</span> Preview Here';
         preview.disabled=true;
         preview.title='Study material has not been uploaded for this chapter yet.';
         actions.append(open,preview);
@@ -4689,16 +4776,18 @@
       heading.textContent=item.title || item.label || moduleName;
       const actions=document.createElement('div');
       actions.className='module-pdf-actions';
+      const isLmsTabContext = (moduleDialog.dataset.isLms === 'true' || (moduleDialog.dataset.readingOnly !== 'true' && moduleDialog.dataset.isMcqPdf !== 'true'));
+      const tabParam = isLmsTabContext ? '&tab=lms' : (moduleDialog.dataset.readingOnly === 'true' ? '&tab=study_guide' : '&tab=mcq');
       const open=document.createElement('a');
       open.className='module-chapter-open-link';
-      open.href='study-guide-reader.html?file='+encodeURIComponent(item.href.split('#')[0]);
+      open.href='study-guide-reader.html?file='+encodeURIComponent(decodeURIComponent(item.href.split('#')[0])) + tabParam;
       open.target='_blank';
       open.rel='noopener';
-      open.textContent='Open';
+      open.innerHTML='<span aria-hidden="true">📄</span> Open';
       const preview=document.createElement('button');
       preview.type='button';
       preview.className='module-reader-load';
-      preview.textContent='Preview Here';
+      preview.innerHTML='<span aria-hidden="true">👁️</span> Preview Here';
       preview.setAttribute('aria-label','Preview '+(item.title || item.label)+' inside this window');
       const reader=document.createElement('section');
       reader.className='module-pdf-reader';
@@ -4712,14 +4801,40 @@
           frame.loading='eager';
           // Use the full-page reader for PDFs and Word files so the preview
           // exposes every page in one scrollable window, not just the first PDF view.
-          frame.src='study-guide-reader.html?file='+encodeURIComponent(item.href.split('#')[0]);
+          frame.src='study-guide-reader.html?file='+encodeURIComponent(decodeURIComponent(item.href.split('#')[0])) + tabParam;
           reader.append(frame);
         }
         reader.hidden=false;
-        preview.textContent='Preview Here';
+        preview.innerHTML='<span aria-hidden="true">👁️</span> Preview Here';
         reader.scrollIntoView({behavior:'smooth',block:'start'});
       });
       actions.append(open,preview);
+      if (isLmsTabContext) {
+        const voiceBtn = document.createElement('a');
+        voiceBtn.className = 'module-chapter-voice-btn';
+        let voiceHrefFile = item.href.split('#')[0];
+        let voiceAnchor = '';
+        if (/(?:LiteraryPractice|MODULE4|Module3.*മലയാള|malayalam)/i.test(voiceHrefFile) || /malayalam|മലയാള/i.test(item.title || item.label || '')) {
+          voiceHrefFile = 'Malayalam_Complete_Study_Guide.pdf';
+          const modMatch = (item.title || item.label || item.href).match(/module\s*(\d+)|മൊഡ്യൂൾ\s*(\d+)/i);
+          const mNum = modMatch ? (modMatch[1] || modMatch[2]) : '1';
+          const modPg = { '1': 5, '2': 52, '3': 86, '4': 121 }[mNum] || 5;
+          voiceAnchor = '#page=' + modPg;
+        }
+        voiceBtn.href = 'study-guide-reader.html?file=' + encodeURIComponent(decodeURIComponent(voiceHrefFile)) + '&tab=lms&voice=1' + voiceAnchor;
+        voiceBtn.target = '_blank';
+        voiceBtn.rel = 'noopener';
+        voiceBtn.innerHTML = '<span aria-hidden="true">🔊</span> Voice Reading';
+        voiceBtn.setAttribute('aria-label', 'Listen to ' + (item.title || item.label) + ' with Voice Reading');
+        voiceBtn.addEventListener('click', (e) => {
+          const frame = reader.querySelector('iframe');
+          if (frame && !reader.hidden) {
+            e.preventDefault();
+            frame.contentWindow?.postMessage({ action: 'toggleVoiceReader' }, '*');
+          }
+        });
+        actions.append(voiceBtn);
+      }
       chapterView.append(heading,actions);
       // Keep navigation at the very end, after the document and its preview.
       moduleContent.append(chapterView,reader,windowNav);
@@ -4955,6 +5070,8 @@
       const mcqPdf=trigger.classList.contains('language-tab--mcq-pdf');
       moduleDialog.dataset.readingOnly=String(studyGuide);
       moduleDialog.dataset.englishStudyGuide=String(studyGuide && subject==='English');
+      moduleDialog.dataset.isMcqPdf=String(mcqPdf);
+      moduleDialog.dataset.isLms=String(!studyGuide && !mcqPdf);
       moduleDialog.oncontextmenu=event=>event.preventDefault();
       const modules=mcqPdf?getMcqPdfModules(subject):studyGuide?getStudyGuideModules(subject):getSubjectModules(subject,medium);
       const englishStudyGuide=studyGuide && subject==='English';
