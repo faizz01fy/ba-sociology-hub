@@ -1087,6 +1087,9 @@
         if (currentGeneration !== generation) return;
         section.dataset.rendered = 'true';
         section.querySelector('.page-loading')?.remove();
+        if (Number(section.dataset.page) === pageNumber && el('status')) {
+          el('status').textContent = pdf.numPages + ' pages · Scroll or use ‹ › buttons to read';
+        }
 
         // Link Annotation Layer
         try {
@@ -1174,16 +1177,19 @@
 
       pageNumber = resumePage;
       controls();
-      go(resumePage, false);
+      pageNumber = resumePage;
+      controls();
 
       // Render the current/resume page immediately with zero lag
       const resumeSec = sections[resumePage - 1];
       await renderPage(resumeSec, resumePage === 1 ? firstPage : null);
       if (currentGeneration !== generation) return;
 
-      el('status').textContent = resumeSec.dataset.rendered === 'true'
-        ? pdf.numPages + ' pages · Scroll or use ‹ › buttons to read'
-        : 'Could not display page ' + resumePage + '. Tap Retry to try again.';
+      if (resumeSec.dataset.rendered === 'true') {
+        el('status').textContent = pdf.numPages + ' pages · Scroll or use ‹ › buttons to read';
+      } else if (resumeSec.dataset.rendering !== 'true') {
+        el('status').textContent = 'Could not display page ' + resumePage + '. Tap Retry to try again.';
+      }
 
       // Efficient view observer for on-demand lazy rendering
       observer = new IntersectionObserver(entries => {
@@ -1867,8 +1873,11 @@
         .trim();
 
       let processedText = clean;
-      if (window.isMalayalamDoc || /(?:ae-bmf|kmln-|samUyqÄ|Bß-|F¶|XmWv|s\s*k\s*a\s*-\s*Ì|sNdp-IY|tIÄ¡m|PohnXw|Fgp-Xp|DÛ-hw)/.test(processedText) || 
-          (/[\u00A1-\u00FF]/.test(processedText) && /[a-zA-Z]/.test(processedText) && !/[\u0D00-\u0D7F]/.test(processedText))) {
+      // Only run ML-TT ASCII converter if the text does NOT already contain genuine Malayalam Unicode
+      // AND explicitly contains ML-TT font signatures
+      const hasMalayalamUnicode = /[\u0D00-\u0D7F]/.test(processedText);
+      const hasMlttSignature = /(?:ae-bmf|kmln-|samUyqÄ|Bß-|F¶|XmWv|s\s*k\s*a\s*-\s*Ì|sNdp-IY|tIÄ¡m|PohnXw|Fgp-Xp|DÛ-hw|tNÀ¶mWv|sslZ-cm-en)/.test(processedText);
+      if (!hasMalayalamUnicode && hasMlttSignature) {
         processedText = convertMlttToMalayalam(processedText);
       }
       processedText = normalizeMalayalamUnicode(processedText);
