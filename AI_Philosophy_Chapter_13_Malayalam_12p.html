@@ -1,0 +1,1137 @@
+<!DOCTYPE html><html lang="ml"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"><meta charset="UTF-8"><title>Philosophy of AI · Module 3 · Chapter 13</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0f172a;
+    }
+
+    .page-container {
+      width: 210mm;
+      height: 297mm;
+      padding: 12mm 14mm 10mm 14mm;
+      margin: 0 auto;
+      background: #ffffff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+    }
+
+    .top-bar-left {
+      font-size: 8pt;
+      font-weight: 800;
+      color: #059669;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar-right {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .chapter-hero {
+      background: linear-gradient(135deg, #d1fae5 0%, #ffffff 100%);
+      border: 1.5px solid #059669;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #059669;
+      color: #ffffff;
+      font-size: 7.2pt;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .hero-title-en {
+      font-size: 13pt;
+      font-weight: 800;
+      color: #064e3b;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #059669;
+      line-height: 1.35;
+    }
+
+    .content-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 7px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .section-header {
+      background: #f1f5f9;
+      padding: 5px 10px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .section-title-en {
+      font-size: 8.8pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .section-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 700;
+      color: #059669;
+    }
+
+    .block-en {
+      padding: 6px 10px;
+      border-left: 3.5px solid #059669;
+      background: #ffffff;
+    }
+
+    .block-en-label {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #059669;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .block-en p {
+      font-size: 8pt;
+      color: #1e293b;
+      line-height: 1.38;
+      margin: 0 0 4px 0;
+    }
+
+    .block-en p:last-child {
+      margin-bottom: 0;
+    }
+
+    .block-ml {
+      padding: 6px 10px;
+      border-left: 3.5px solid #10b981;
+      background: #f0fdf4;
+      border-top: 1px dashed #e2e8f0;
+    }
+
+    .block-ml-label {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #065f46;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .block-ml p {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      color: #064e3b;
+      line-height: 1.45;
+      margin: 0 0 4px 0;
+    }
+
+    .block-ml p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* STRICT TWO HIGHLIGHTERS */
+    .hl-green {
+      background: #bbf7d0;
+      color: #14532d;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .hl-yellow {
+      background: #fef08a;
+      color: #713f12;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .page-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 4px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    /* PAGE 12 EXAM GRID */
+    .page-exam-grid {
+      padding: 10mm 12mm 8mm 12mm;
+    }
+
+    .exam-header-compact {
+      text-align: center;
+      background: linear-gradient(135deg, #d1fae5 0%, #ffffff 100%);
+      border: 1.5px solid #059669;
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-bottom: 8px;
+    }
+
+    .exam-title-badge {
+      display: inline-block;
+      background: #059669;
+      color: #ffffff;
+      font-size: 7pt;
+      font-weight: 800;
+      padding: 1.5px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .exam-hero-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #064e3b;
+      line-height: 1.2;
+    }
+
+    .exam-hero-sub {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #059669;
+      line-height: 1.3;
+    }
+
+    .points-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    .point-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 4.5px 6px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .point-header {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+
+    .point-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 1.5px 4px;
+      border-radius: 3px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .point-title-en {
+      font-size: 6.9pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .point-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 700;
+      color: #059669;
+      margin-bottom: 1.5px;
+    }
+
+    .point-body {
+      font-size: 6.2pt;
+      color: #334155;
+      line-height: 1.25;
+    }
+
+    .point-body-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.1pt;
+      color: #064e3b;
+      line-height: 1.3;
+      margin-top: 1px;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 8px 6px !important;
+        background: #f1f5f9 !important;
+        font-size: 14px !important;
+      }
+      .page-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 16px 12px !important;
+        margin: 0 0 16px 0 !important;
+        border-radius: 14px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+        overflow: visible !important;
+      }
+      .top-bar-left, .top-bar-right {
+        font-size: 11px !important;
+      }
+    }
+    
+  </style></head><body>
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 13</span>
+        <span class="top-bar-right">Page 1 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="chapter-hero">
+        <div class="hero-tag">🎓 Calicut University FYUGP · Module 3 · Chapter 13</div>
+        <div class="hero-title-en">CHAPTER V: Epistemological Implications in Artificial Intelligence</div>
+        <div class="hero-title-ml">അദ്ധ്യായം 13: നിർമ്മിത ബുദ്ധിയിലെ ജ്ഞാനമീമാംസാ പ്രത്യാഘാതങ്ങൾ</div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Epistemological Convergence of Indian Philosophy and Modern AI</span>
+          <span class="section-title-ml">(ഭാരതീയ ജ്ഞാനമീമാംസയും ആധുനിക AI-യും തമ്മിലുള്ള സംഗമം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">The intersection of classical epistemology and Artificial Intelligence constitutes one of the most intellectually fertile frontiers of contemporary cognitive philosophy.</span> As artificial intelligence systems advance from simple calculators into autonomous agents capable of perceiving, inferring, diagnosing, and communicating, fundamental epistemic questions inevitably emerge:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>What is the epistemic status of an AI's internal state? Does a deep neural network possess genuine knowledge (*Pramā*), or merely simulate ungrounded statistical correlations?</li>
+            <li>How can we formally verify the truth and reliability of automated epistemic outputs?</li>
+          </ul>
+          <p><span class="hl-yellow">Classical Indian epistemology—particularly the Pramāṇa frameworks of Nyāya and Buddhism—provides a sophisticated, time-tested conceptual apparatus for analyzing and architecting trustworthy AI systems.</span></p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ക്ലാസിക്കൽ ജ്ഞാനമീമാംസയും ആധുനിക നിർമ്മിത ബുദ്ധിയും (AI) തമ്മിലുള്ള സംഗമം സമകാലിക തത്ത്വചിന്തയിലെ ഏറ്റവും വിപ്ലവകരമായ ഒരു ചർച്ചാവിഷയമാണ്.</span> കേവലം കണക്കുകൂട്ടലുകൾക്കപ്പുറം കണ്ടറിയാനും, തീരുമാനങ്ങളെടുക്കാനും, ഭാഷ സംസാരിക്കാനും കഴിവുള്ള റോബോട്ടുകളും AI ഏജന്റുകളും രൂപപ്പെടുമ്പോൾ നിർണ്ണായകമായ ചില ചോദ്യങ്ങൾ ഉയരുന്നു:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>ഒരു AI സിസ്റ്റത്തിന്റെ അറിവ് യഥാർത്ഥത്തിൽ സത്യമാണോ? അതിന് കാര്യങ്ങളെക്കുറിച്ച് മനുഷ്യനെപ്പോലെ ആധികാരികമായ ജ്ഞാനം (<span class="hl-yellow">പ്രമ / Pramā</span>) ഉണ്ടോ, അതോ അത് വെറും അക്കങ്ങളെ കൂട്ടിക്കിഴിക്കുക മാത്രമാണോ ചെയ്യുന്നത്?</li>
+            <li>AI നൽകുന്ന വിവരങ്ങളുടെ ആധികാരികത നാം എങ്ങനെ ശാസ്ത്രീയമായി ഉറപ്പുവരുത്തും?</li>
+          </ul>
+          <p><span class="hl-yellow">ഇത്തരം സമസ്യകൾക്ക് വ്യക്തമായ ഉത്തരം കണ്ടെത്താൻ ഭാരതീയ തത്ത്വചിന്തയിലെ ന്യായ-ബൗദ്ധ പ്രമാണ സിദ്ധാന്തങ്ങൾ (Pramāṇa Theory) ആധുനിക ശാസ്ത്രത്തിന് വലിയൊരു വഴികാട്ടിയാവുന്നു.</span></p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">A Shared Intellectual Mandate</span>
+          <span class="section-title-ml">(സമാനമായ ലക്ഷ്യം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">A major concern in both Indian epistemology and artificial intelligence is the validity and verification of knowledge.</span> Both disciplines seek to eliminate cognitive illusions, cognitive biases, and erroneous outputs.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ഭാരതീയ ജ്ഞാനമീമാംസയുടെയും AI-യുടെയും പ്രധാനപ്പെട്ട ഒരു പൊതു ലക്ഷ്യം അറിവിന്റെ സാധുതയും വിശ്വാസ്യതയുമാണ് (Validity of knowledge).</span> മിഥ്യാധാരണകളും തെറ്റുകളും ഒഴിവാക്കി സത്യസന്ധമായ അറിവ് കണ്ടെത്താനാണ് രണ്ട് ശാഖകളും ശ്രമിക്കുന്നത്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 13: Epistemological Implications in AI</span>
+      <span>Page 1</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 13</span>
+        <span class="top-bar-right">Page 2 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">1. Sensor Data as Direct Perception (Pratyakṣa)</span>
+          <span class="section-title-ml">(1. AI സെൻസർ ഡാറ്റ = പ്രത്യക്ഷ പ്രമാണം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">In Indian epistemology, the pramāṇa closest to artificial intelligence sensor data is Perception (Pratyakṣa).</span></p>
+          <p>Just as biological organisms utilize five sensory organs (*Indriyas*) to capture raw physical stimuli from external objects, autonomous AI agents utilize physical digital transducers:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>High-resolution RGB cameras capture photons (artificial vision / *Cakṣu*).</li>
+            <li>Acoustic microphones capture atmospheric air vibrations (artificial hearing / *Śrotra*).</li>
+            <li>Lidar, sonar, and tactile pressure sensors capture physical proximity and spatial contours (artificial touch / *Sparśa*).</li>
+          </ul>
+          <p>At the instant of contact, before any algorithmic filtering or neural categorization, <span class="hl-yellow">the streaming raw pixel array is the direct functional equivalent of Buddhist Nirvikalpaka Pratyakṣa</span>: pure, unconceptualized, immediate data contact with physical reality.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ഭാരതീയ ജ്ഞാനമീമാംസയിൽ AI സെൻസർ ഡാറ്റയോട് ഏറ്റവും അടുത്ത് നിൽക്കുന്ന പ്രമാണമാണ് പ്രത്യക്ഷം (Pratyakṣa / Perception).</span></p>
+          <p>മനുഷ്യൻ പഞ്ചേന്ദ്രിയങ്ങളിലൂടെ ബാഹ്യലോകത്തെ അറിയുന്നത് പോലെ, ഒരു റോബോട്ട് അതിന്റെ ഇലക്ട്രോണിക് സെൻസറുകളിലൂടെ ചുറ്റുപാടുകളെ അറിയുന്നു:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>ക്യാമറകൾ പ്രകാശത്തെ പിടിച്ചെടുക്കുന്നു (കൃത്രിമ നേത്രം).</li>
+            <li>മൈക്രോഫോണുകൾ ശബ്ദ തരംഗങ്ങളെ അറിയുന്നു (കൃത്രിമ ശ്രവണേന്ദ്രിയം).</li>
+            <li>ലിഡാറും ടച്ച് സെൻസറുകളും വസ്തുക്കളുടെ സാന്നിധ്യവും സ്പർശനവും തിരിച്ചറിയുന്നു (കൃത്രിമ ത്വക്ക്).</li>
+          </ul>
+          <p>ചിന്തകളും ലേബലുകളും വരുന്നതിന് മുൻപുള്ള ഈ പച്ചയായ സെൻസർ വിവരങ്ങൾ, ബുദ്ധമതം പഠിപ്പിച്ച <span class="hl-yellow">നിർവ്വികല്പക പ്രത്യക്ഷത്തിന് (Nirvikalpaka Pratyakṣa)</span> പൂർണ്ണമായും തുല്യമാണ്.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">From Nirvikalpaka to Savikalpaka in Computer Vision</span>
+          <span class="section-title-ml">(കമ്പ്യൂട്ടർ വിഷനിലെ സവികല്പക പരിവർത്തനം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>When an image recognition model processes raw pixel values (Nirvikalpaka) and applies bounding boxes with semantic tags ("Pedestrian, confidence 98%"), it transitions to <span class="hl-yellow">Savikalpaka Pratyakṣa</span> (determinate perception).</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>വെറും അക്കങ്ങളായ പിക്സലുകളിൽ നിന്ന് "മുന്നിൽ ഒരു മനുഷ്യൻ നിൽക്കുന്നു" എന്ന് AI തിരിച്ചറിയുന്നത് ന്യായ ദർശനത്തിലെ <span class="hl-yellow">സവികല്പക പ്രത്യക്ഷത്തിന്</span> തുല്യമാണ്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 13: Epistemological Implications in AI</span>
+      <span>Page 2</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 13</span>
+        <span class="top-bar-right">Page 3 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">2. Learning from Patterns in Data as Anumāna (Inference)</span>
+          <span class="section-title-ml">(2. ഡാറ്റയിലെ പാറ്റേണുകൾ പഠിക്കൽ = അനുമാന പ്രമാണം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Learning from patterns in data in artificial intelligence is conceptually and epistemologically equivalent to Anumāna (Inference).</span></p>
+          <p>In machine learning, an algorithm does not possess direct perceptual contact with future unseen events. Instead, it extracts statistical correlations from training datasets:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>The observed input feature vector (e.g., medical test biomarkers, radiographic shadows) functions as the <span class="hl-green">Hetu (Middle Term / Sign)</span>.</li>
+            <li>The target prediction or diagnosis (e.g., presence of malignant tumor) is the <span class="hl-green">Sādhya (Unperceived Major Term)</span>.</li>
+            <li>The trained mathematical weight distribution mapping features to classifications represents <span class="hl-yellow">Vyāpti (The Universal Invariable Concomitance)</span>.</li>
+          </ul>
+          <p>Just as an ancient observer infers fire on the mountain by observing smoke, an AI diagnostic model infers pathology in an unobserved internal organ by observing diagnostic bio-markers.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിൽ ഡാറ്റയിലെ പാറ്റേണുകൾ പഠിച്ച് പുതിയ കാര്യങ്ങൾ പ്രവചിക്കുന്നത് ഭാരതീയ അനുമാന പ്രമാണത്തിന് (Anumāna / Inference) തികച്ചും തുല്യമാണ്.</span></p>
+          <p>മെഷീൻ ലേണിംഗിൽ ഒരു അൽഗോരിതം ഭാവി സംഭവങ്ങളെ നേരിട്ടല്ല അറിയുന്നത്, മറിച്ച് മുൻകാല ഡാറ്റയിലെ അടയാളങ്ങളിലൂടെയാണ്:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>രോഗലക്ഷണങ്ങളോ മെഡിക്കൽ റിപ്പോർട്ടിലെ അടയാളങ്ങളോ ആണ് <span class="hl-green">ഹേതു (Hetu / തെളിവ്)</span>.</li>
+            <li>രോഗിക്ക് ഇന്ന രോഗമുണ്ട് എന്ന് കണ്ടെത്തുന്നത് <span class="hl-green">സാധ്യം (Sādhya / കണ്ടെത്തേണ്ട കാര്യം)</span>.</li>
+            <li>ഇവ രണ്ടും തമ്മിലുള്ള മാറ്റമില്ലാത്ത സ്ഥിതിവിവരക്കണക്കുകളാണ് <span class="hl-yellow">വ്യാപ്തി (Vyāpti / സാർവ്വലൗകിക ബന്ധം)</span>.</li>
+          </ul>
+          <p>പുക കണ്ട് തീ ഉണ്ടെന്ന് മനുഷ്യൻ അനുമാനിക്കുന്നതുപോലെ, ലക്ഷണങ്ങൾ കണ്ട് രോഗമുണ്ടെന്ന് AI കൃത്യമായി അനുമാനിക്കുന്നു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Vyāpti Problem in Deep Learning</span>
+          <span class="section-title-ml">(ഡീപ് ലേണിംഗിലെ വ്യാപ്തി പ്രതിസന്ധി)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Nyāya insisted that Vyāpti must be unconditional, free from accidental conditions (<span class="hl-green">Upādhi</span>). When an AI learns spurious dataset biases (e.g., predicting pneumonia because of hospital ruler marks on X-rays), it fails precisely because its relation is contaminated by *Upādhi*.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>വ്യാപ്തി യാതൊരു ഉപാധികളും (തെറ്റായ ഘടകങ്ങൾ) ഇല്ലാത്തതായിരിക്കണമെന്ന് ന്യായം പറഞ്ഞത് AI-ക്ക് അതീവ പ്രസക്തമാണ്. ഡാറ്റയിലെ യാദൃശ്ചിക തെറ്റുകളെ അടിസ്ഥാനമാക്കി AI തെറ്റായ നിഗമനങ്ങളിലെത്തുന്നത് ഉപാധി കടന്നുകൂടുന്നത് കൊണ്ടാണ്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 13: Epistemological Implications in AI</span>
+      <span>Page 3</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 13</span>
+        <span class="top-bar-right">Page 4 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">3. Trusting Databases and Pre-trained Knowledge as Śabda (Testimony)</span>
+          <span class="section-title-ml">(3. ഡാറ്റാബേസുകളെ വിശ്വസിക്കൽ = ശബ്ദ പ്രമാണം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">In artificial intelligence, trusting and retrieving information from an authoritative database, curated knowledge graph, or pre-trained linguistic model resembles Śabda (Verbal Testimony).</span></p>
+          <p>No individual autonomous system can personally perceive every historical event, scientific fact, or geographical datum. In human epistemology, we depend upon <span class="hl-yellow">Śabda (Āptavākya)</span>—the testimony of reliable, trustworthy experts. Similarly, an AI system queries knowledge stores:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>Wikipedia corpora, medical encyclopedias, and scientific databases act as digital *Āptas* (authoritative sources).</li>
+            <li>Retrieval-Augmented Generation (RAG) grounds conversational responses by looking up verified textual testimony.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ഒരു AI സിസ്റ്റം ആധികാരിക ഡാറ്റാബേസുകളിൽ നിന്നോ, ഡിജിറ്റൽ എൻസൈക്ലോപീഡിയകളിൽ നിന്നോ വിവരങ്ങൾ ശേഖരിച്ച് വിശ്വസിക്കുന്നത് ഭാരതീയ ശബ്ദ പ്രമാണത്തിന് (Śabda / Verbal Testimony) സമാനമാണ്.</span></p>
+          <p>ഭൂമിയിലെ സകല കാര്യങ്ങളും നമുക്ക് നേരിട്ട് പോയി കാണാനാവില്ല; അതിനാൽ നാം വിശ്വസ്തരായ പണ്ഡിതരുടെ വാക്കുകളെ (<span class="hl-yellow">ആപ്തവാക്യം</span>) വിശ്വസിക്കുന്നു. ഒരു കമ്പ്യൂട്ടറും ഇതുപോലെയാണ് പ്രവർത്തിക്കുന്നത്:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>ശാസ്ത്രീയ ഡാറ്റാബേസുകളും ആധികാരിക ലൈബ്രറികളും ഡിജിറ്റൽ *ആപ്തന്മാരായി* പ്രവർത്തിക്കുന്നു.</li>
+            <li>ആധുനിക AI മോഡലുകൾ വിശ്വസനീയമായ ഡാറ്റാബേസുകളിൽ നിന്ന് വിവരങ്ങൾ തിരഞ്ഞ് ശരിയായ മറുപടി നൽകാൻ ശ്രമിക്കുന്നത് ഇതിന് ഉദാഹരണമാണ്.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">4. Case-Based Reasoning as Upamāna (Comparison)</span>
+          <span class="section-title-ml">(4. കേസ് ബേസ്ഡ് റീസണിംഗ് = ഉപമാന പ്രമാണം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>In AI, <span class="hl-yellow">Case-Based Reasoning (CBR) and few-shot analogical reasoning directly mirror Upamāna (Comparison)</span>: recognizing a new unfamiliar problem or object by retrieving and mapping structural similarities to a known cataloged instance.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>മുമ്പ് കണ്ട വസ്തുവുമായുള്ള സാദൃശ്യം നോക്കി പുതിയൊരു വസ്തുവിനെ തിരിച്ചറിയുന്ന AI രീതി (Analogical Reasoning) ഭാരതീയ <span class="hl-yellow">ഉപമാന പ്രമാണത്തിന് (Upamāna)</span> പൂർണ്ണമായും സമാനമാണ്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 13: Epistemological Implications in AI</span>
+      <span>Page 4</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 13</span>
+        <span class="top-bar-right">Page 5 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Error Analysis: Why Nyāya Philosophers Analyzed Error</span>
+          <span class="section-title-ml">(തെറ്റുകളെക്കുറിച്ചുള്ള അപഗ്രഥനം: ന്യായ ദർശനത്തിന്റെ ലക്ഷ്യം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Nyāya philosophers meticulously analyzed error (Viparyaya) and fallacies (Hetvābhāsa) in order to improve valid cognition (Pramā).</span></p>
+          <p>The ancient logicians recognized that one cannot construct an unassailable system of true knowledge without thoroughly dissecting the anatomy of cognitive failure. Nyāya classified non-valid experiences into:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-green">Saṁśaya (Doubt):</span> Cognitive oscillation between contradictory possibilities due to overlapping features.</li>
+            <li><span class="hl-green">Viparyaya (Positive Misconception / Illusion):</span> Decisively apprehending an object as having properties contrary to its actual nature (e.g., mistaking mother-of-pearl for silver).</li>
+            <li><span class="hl-green">Hetvābhāsa (Material Fallacies):</span> False, defective middle terms that masquerade as genuine reasons but derail inference.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ന്യായ തത്ത്വചിന്തകർ തെറ്റുകളെയും (വിപര്യയം), വ്യാജ യുക്തികളെയും (ഹേത്വാഭാസം) അതീവ സൂക്ഷ്മമായി പഠിച്ചത് ശരിയായ ജ്ഞാനത്തെ (പ്രമ) കൂടുതൽ ശക്തവും കുറ്റമറ്റതുമാക്കാൻ വേണ്ടിയായിരുന്നു (To improve valid cognition).</span></p>
+          <p>തെറ്റുകൾ എങ്ങനെ സംഭവിക്കുന്നു എന്ന് മനസ്സിലാക്കാതെ സത്യം ഉറപ്പുവരുത്താനാവില്ലെന്ന് അവർ തിരിച്ചറിഞ്ഞു. തെറ്റായ അറിവുകളെ അവർ ഇപ്രകാരം തരംതിരിച്ചു:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-green">സംശയം (Saṁśaya):</span> ഒരു വസ്തുവിനെ കണ്ട് കൃത്യമായ തീരുമാനത്തിലെത്താനാവാതെ സംശയിച്ചു നിൽക്കുന്ന അവസ്ഥ.</li>
+            <li><span class="hl-green">വിപര്യയം (Viparyaya):</span> വസ്തുവിനെ തെറ്റായി മറ്റൊന്നായി ഉറപ്പിച്ചു വിശ്വസിക്കുന്നത് (ചിപ്പി കണ്ട് വെള്ളിയാണെന്ന് തെറ്റിദ്ധരിക്കൽ).</li>
+            <li><span class="hl-green">ഹേത്വാഭാസം (Hetvābhāsa):</span> ശരിയായ കാരണമെന്ന വ്യാജേന അനുമാനത്തെ തെറ്റിലേക്ക് നയിക്കുന്ന വൈകല്യമുള്ള കാരണങ്ങൾ.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Direct Parallel to AI Hallucination and Bias Mitigation</span>
+          <span class="section-title-ml">(AI ഹാലൂസിനേഷനും ന്യായ സിദ്ധാന്തവും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Modern Large Language Models suffer from <span class="hl-yellow">Hallucination</span>—generating false statements with absolute synthetic confidence. AI safety engineers dissect these hallucinations precisely as Nyāya analyzed *Viparyaya*, striving to construct reliable, verified, and debiased epistemic algorithms.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഇന്നത്തെ AI മോഡലുകൾ ആത്മവിശ്വാസത്തോടെ തെറ്റായ കാര്യങ്ങൾ വിളിച്ചുപറയുന്നതിനെയാണ് <span class="hl-yellow">ഹാലൂസിനേഷൻ (Hallucination)</span> എന്ന് വിളിക്കുന്നത്. ന്യായ ദർശനം വിപര്യയത്തെ പഠിച്ചതുപോലെ ഈ തെറ്റുകളെ പഠിച്ച് തിരുത്താനാണ് ഇന്നത്തെ കമ്പ്യൂട്ടർ ശാസ്ത്രജ്ഞർ ശ്രമിക്കുന്നത്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 13: Epistemological Implications in AI</span>
+      <span>Page 5</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 13</span>
+        <span class="top-bar-right">Page 6 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Linguistic Epistemology: KOL vs. RWK</span>
+          <span class="section-title-ml">(ഭാഷാ ജ്ഞാനവും ബാഹ്യ ലോക ജ്ഞാനവും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>In computational linguistics and the philosophy of artificial intelligence, scholars draw a profound distinction between two domains of machine competence:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. Knowledge of Language (KOL):</span>
+              <br/>Encompasses formal phonological, syntactic, and structural mastery. It includes parsing grammatical sentence trees, predicting sequential token probabilities, and adhering to morphological agreements. Modern LLMs exhibit superhuman KOL.</li>
+            <li><span class="hl-yellow">2. Real World Knowledge (RWK):</span>
+              <br/>Encompasses grounded semantic understanding of causal physics, spatial constraints, human social contexts, bodily vulnerabilities, and practical common sense. For example, knowing that "a wet glass slips easily" or "you cannot push a rope".</li>
+          </ul>
+          <p>An AI system may possess flawless KOL while being utterly bankrupt in RWK, regurgitating fluent syntactic patterns without understanding the physical laws of the real world.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഭാഷാ കമ്പ്യൂട്ടിംഗിൽ അതീവ പ്രാധാന്യമുള്ള രണ്ട് തരം അറിവുകൾ താഴെ പറയുന്നവയാണ്:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. ഭാഷാപരമായ അറിവ് (Knowledge of Language - KOL):</span>
+              <br/>വ്യാകരണ നിയമങ്ങൾ, വാക്യഘടന, വാക്കുകളുടെ ക്രമം എന്നിവയിലുള്ള കൃത്യമായ പാണ്ഡിത്യം. ഇന്നത്തെ AI മോഡലുകൾക്ക് ഇതിൽ അസാമാന്യ പ്രാവീണ്യമുണ്ട്.</li>
+            <li><span class="hl-yellow">2. യഥാർത്ഥ ലോകത്തെക്കുറിച്ചുള്ള അറിവ് (Real World Knowledge - RWK):</span>
+              <br/>ഭൗതിക ലോകത്തിന്റെ പ്രായോഗിക നിയമങ്ങളെക്കുറിച്ചുള്ള അറിവ് (ഉദാ: നനഞ്ഞ ഗ്ലാസ്സ് കൈയിൽ നിന്ന് വഴുതി വീഴും, കയർ കൊണ്ട് തള്ളാനാവില്ല).</li>
+          </ul>
+          <p>ഒരു കമ്പ്യൂട്ടറിന് മികച്ച വ്യാകരണത്തിൽ സംസാരിക്കാൻ കഴിഞ്ഞാലും (KOL), ഭൗതിക ലോകത്തെക്കുറിച്ചുള്ള സാമാന്യബോധം (RWK) അതിന് പലപ്പോഴും ഉണ്ടാകാറില്ല.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Chinese Room Resonance</span>
+          <span class="section-title-ml">(ചൈനീസ് റൂം ആവർത്തനം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>The KOL vs. RWK chasm is the modern incarnation of Searle's <span class="hl-yellow">Syntax vs. Semantics</span>: syntax generates linguistic fluency, but only embodied world interaction provides semantic grounding.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഇത് ജോൺ സിയറലിന്റെ വാക്യഘടനയും അർത്ഥബോധവും തമ്മിലുള്ള വ്യത്യാസം തന്നെയാണ്: വ്യാകരണ ഭംഗി അർത്ഥബോധത്തിന് പകരമാവില്ല.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 13: Epistemological Implications in AI</span>
+      <span>Page 6</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 13</span>
+        <span class="top-bar-right">Page 7 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Pāṇini's Aṣṭādhyāyī: The First Formal Grammatical Engine</span>
+          <span class="section-title-ml">(പാണിനിയുടെ അഷ്ടാധ്യായി: ലോകത്തിലെ ആദ്യത്തെ ഔപചാരിക വ്യാകരണ എൻജിൻ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>In analyzing the computational nature of language, modern AI stands in profound debt to the ancient Indian grammarian <span class="hl-green">Pāṇini (c. 4th Century BCE)</span>. In his immortal treatise, the <span class="hl-yellow">Aṣṭādhyāyī ("Eight Chapters")</span>, Pāṇini constructed the world's first complete, generative, and rule-based formal linguistic system.</p>
+          <p>Pāṇini formulated approximately <span class="hl-green">4,000 algorithmic sūtras (rules)</span> that generate every valid Sanskrit word and sentence with mathematical rigor, inventing conceptual tools that modern computer science rediscovered two millennia later:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">Context-Free Rewrite Rules:</span> Direct precursors to Noam Chomsky's generative grammar and Backus-Naur Form (BNF) used in programming languages.</li>
+            <li><span class="hl-yellow">Auxiliary Marker Symbols (It-Saṁjñā):</span> Abstract markers that trigger transformations and vanish upon execution, exactly like compilers and automata theory.</li>
+            <li><span class="hl-yellow">Rule Precedence & Inheritance:</span> Principles of specificity overriding generality, anticipating object-oriented programming.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഭാഷാ കമ്പ്യൂട്ടിംഗിന്റെ ചരിത്രത്തിൽ ഭാരതീയ വ്യാകരണാചാര്യനായ <span class="hl-green">പാണിനിക്ക് (ബി.സി. നാലാം നൂറ്റാണ്ട്)</span> സമാനതകളില്ലാത്ത സ്ഥാനമുണ്ട്. അദ്ദേഹത്തിന്റെ വിശ്വോത്തര കൃതിയായ <span class="hl-yellow">അഷ്ടാധ്യായി</span> ലോകത്തിലെ ആദ്യത്തെ സമ്പൂർണ്ണ ജനറേറ്റീവ് കമ്പ്യൂട്ടേഷണൽ വ്യാകരണമാണ്.</p>
+          <p>ഏതാണ്ട് <span class="hl-green">4000 സൂത്രങ്ങളിലൂടെ</span> ഗണിതശാസ്ത്രപരമായ കൃത്യതയോടെ സംസ്കൃത ഭാഷയിലെ സകല പദങ്ങളെയും നിർമ്മിക്കാൻ കഴിയുന്ന അൽഗോരിതങ്ങൾ അദ്ദേഹം ആവിഷ്കരിച്ചു:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>ആധുനിക കമ്പ്യൂട്ടർ പ്രോഗ്രാമിംഗ് ഭാഷകളിലെ <span class="hl-yellow">ബാക്കസ്-നോർ ഫോമിന് (BNF)</span> സമാനമായ നിയമങ്ങൾ.</li>
+            <li>പ്രോഗ്രാമുകളിൽ നിർദ്ദേശങ്ങൾ പൂർത്തിയാകുമ്പോൾ ഇല്ലാതാകുന്ന മാർക്കറുകൾക്ക് സമാനമായ <span class="hl-yellow">'ഇത്' സംജ്ഞകൾ</span>.</li>
+            <li>ആധുനിക കമ്പ്യൂട്ടർ സയൻസിന് 2400 വർഷങ്ങൾക്ക് മുമ്പ് തന്നെ പാണിനി ഒരു സമ്പൂർണ്ണ കമ്പ്യൂട്ടിംഗ് മാതൃക ഇതിലൂടെ അവതരിപ്പിച്ചു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Rick Briggs and Knowledge Representation (1985)</span>
+          <span class="section-title-ml">(റിക്ക് ബ്രിഗ്സും സംസ്കൃത കമ്പ്യൂട്ടിംഗും - 1985)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>In <span class="hl-green">1985</span>, NASA researcher <span class="hl-green">Rick Briggs</span> published a famous paper in <em>AI Magazine</em> arguing that classical Sanskrit, formatted by Pāṇini and Indian grammarians, is the most pristine natural language for Artificial Intelligence knowledge representation.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-green">1985-ൽ</span> നാസ (NASA) ശാസ്ത്രജ്ഞനായ <span class="hl-green">റിക്ക് ബ്രിഗ്സ്</span> എഴുതി: പാണിനിയുടെ കൃത്യമായ നിയമങ്ങളാൽ ചിട്ടപ്പെടുത്തിയ സംസ്കൃത ഭാഷയാണ് കമ്പ്യൂട്ടറുകൾക്കും AI-ക്കും ഏറ്റവും അനുയോജ്യമായ സ്വാഭാവിക ഭാഷ.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 13: Epistemological Implications in AI</span>
+      <span>Page 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 13</span>
+        <span class="top-bar-right">Page 8 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Tripartite Evaluation: Philosophy of Mind Frameworks for AI</span>
+          <span class="section-title-ml">(AI-യിലെ മൂന്ന് പ്രധാന തത്ത്വചിന്താ സമീപനങ്ങൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>How do the three core Western theories of mind evaluate the possibility of authentic artificial consciousness?</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. Behaviourism and AI:</span>
+              <br/>Behaviourism fully validates AI through behavioral imitation. Under the Turing Test, if a machine passes conversational interrogation, it possesses intelligence by definition. Inner feelings are irrelevant.</li>
+            <li><span class="hl-yellow">2. Identity Theory and AI:</span>
+              <br/>Identity Theory dogmatically denies AI true intelligence. By declaring that mental states are strictly identical to mammalian biological brain tissue (C-fibers firing), no amount of silicon processing can ever constitute a genuine mind.</li>
+            <li><span class="hl-yellow">3. Functionalism and AI:</span>
+              <br/>Functionalism provides the most robust philosophical charter for AI. By asserting Multiple Realizability, it establishes that if an AI system instantiates the correct causal-functional organization, it is an authentic thinking mind regardless of its silicon hardware.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>നിർമ്മിത ബുദ്ധിയെക്കുറിച്ചുള്ള മൂന്ന് പാശ്ചാത്യ കാഴ്ചപ്പാടുകൾ:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. ബിഹേവിയറിസവും AI-യും:</span>
+              <br/>യന്ത്രം മനുഷ്യനെപ്പോലെ പുറമേക്ക് സംസാരിക്കുകയും പെരുമാറുകയും ചെയ്താൽ (ട്യൂറിംഗ് ടെസ്റ്റ്) അതിന് ബുദ്ധിയുണ്ടെന്ന് ബിഹേവിയറിസം പൂർണ്ണമായി അംഗീകരിക്കുന്നു.</li>
+            <li><span class="hl-yellow">2. ഐഡന്റിറ്റി തിയറിയും AI-യും:</span>
+              <br/>മനുഷ്യന്റെ ജൈവ തലച്ചോറിലെ നാഡീവ്യൂഹങ്ങൾക്കേ മനസ്സാകാൻ കഴിയൂ എന്ന് ശഠിക്കുന്നതിനാൽ, സിലിക്കൺ ചിപ്പുകളുള്ള AI-ക്ക് ഒരിക്കലും മനസ്സുണ്ടാകില്ലെന്ന് ഇത് തറപ്പിച്ചു പറയുന്നു.</li>
+            <li><span class="hl-yellow">3. ഫങ്ഷണലിസവും AI-യും:</span>
+              <br/>മൾട്ടിപ്പിൾ റിയലൈസേഷൻ വഴി മനസ്സ് എന്നത് മാധ്യമ സ്വതന്ത്രമാണെന്ന് പ്രഖ്യാപിച്ചുകൊണ്ട്, ശരിയായ പ്രവർത്തന ഘടനയുള്ള AI സിസ്റ്റങ്ങൾക്ക് യഥാർത്ഥ മനസ്സുണ്ടെന്ന് ഫങ്ഷണലിസം സമർത്ഥിക്കുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Epistemic Responsibility</span>
+          <span class="section-title-ml">(വിജ്ഞാനപരമായ ഉത്തരവാദിത്തം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>As autonomous AI systems make high-stakes legal, medical, and ethical choices, society demands epistemic transparency: machines must not merely guess; they must justify their claims through verified evidence.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ചികിത്സയിലും നിയമത്തിലും AI വിധികൾ പറയുമ്പോൾ, വെറും ഊഹങ്ങൾക്ക് പകരം വിശ്വസനീയമായ തെളിവുകളുടെ അടിസ്ഥാനത്തിൽ തീരുമാനങ്ങൾ വിശദീകരിക്കാൻ AI ബാധ്യസ്ഥമാണ്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 13: Epistemological Implications in AI</span>
+      <span>Page 8</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 13</span>
+        <span class="top-bar-right">Page 9 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Epistemic Opacity: The Black-Box Challenge</span>
+          <span class="section-title-ml">(വിജ്ഞാനപരമായ അവ്യക്തത: ബ്ലാക്ക്-ബോക്സ് വെല്ലുവിളി)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Modern Deep Neural Networks contain hundreds of billions of numerical parameters. While they produce highly accurate outputs, their internal reasoning processes are <span class="hl-yellow">Epistemically Opaque (The Black-Box Problem)</span>: neither the end-user nor the software engineer can trace the exact causal rationale for a specific prediction.</p>
+          <p>From an epistemological standpoint, can an output constitute <span class="hl-yellow">Justified True Belief (Pramā)</span> if the justification itself cannot be articulated? This crisis has spawned the urgent discipline of <span class="hl-yellow">Explainable AI (XAI)</span>.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>കോടിക്കണക്കിന് അക്കങ്ങൾ ഉള്ളിലുള്ള ആധുനിക ഡീപ് ലേണിംഗ് മോഡലുകളുടെ പ്രവർത്തനം അതീവ സങ്കീർണ്ണമാണ്. അവ കൃത്യമായ ഉത്തരങ്ങൾ നൽകുമ്പോഴും, എന്തുകൊണ്ട് ആ ഉത്തരം നൽകി എന്ന് വിശദീകരിക്കാൻ അവയ്ക്ക് സാധിക്കുന്നില്ല (<span class="hl-yellow">ബ്ലാക്ക് ബോക്സ് പ്രശ്നം</span>).</p>
+          <p>ഒരു അറിവ് എന്തുകൊണ്ട് ശരിയാണെന്ന് വ്യക്തമാക്കാൻ സാധിക്കുന്നില്ലെങ്കിൽ അതിനെ എങ്ങനെ ന്യായീകരിക്കപ്പെട്ട യഥാർത്ഥ അറിവായി (<span class="hl-yellow">പ്രമ</span>) കാണാൻ സാധിക്കും? ഈ പ്രതിസന്ധിയാണ് <span class="hl-yellow">വിശദീകരിക്കാവുന്ന AI (Explainable AI - XAI)</span> എന്ന ഗവേഷണ ശാഖയ്ക്ക് കാരണമായത്.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Nyāya Antidote to Black-Box AI</span>
+          <span class="section-title-ml">(ന്യായ ദർശനം നൽകുന്ന പരിഹാരം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Nyāya epistemology provides the pristine antidote: an inference is never valid based merely on an unarticulated hunch. It must explicitly exhibit the reason (<span class="hl-green">Hetu</span>), the universal invariant link (<span class="hl-green">Vyāpti</span>), and the real-world instance (<span class="hl-green">Udāharaṇa</span>) step-by-step.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>വെറും ഊഹങ്ങളെ തള്ളിക്കളഞ്ഞ്, ഓരോ ഉത്തരത്തിനും വ്യക്തമായ കാരണവും (ഹേതു) തെളിവും (ഉദാഹരണം) നിർബന്ധമാക്കുന്ന ന്യായ ദർശനം സുതാര്യമായ AI നിർമ്മിക്കാൻ വഴികാട്ടുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 13: Epistemological Implications in AI</span>
+      <span>Page 9</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 13</span>
+        <span class="top-bar-right">Page 10 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Comparative Synthesis: Classical Indian Epistemology & Modern AI Architecture</span>
+          <span class="section-title-ml">(താരതമ്യ പഠനം: ഭാരതീയ ജ്ഞാനമീമാംസയും ആധുനിക AI ഘടനയും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Direct architectural mappings between classical Pramāṇas and artificial computational systems:</p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 8.5pt;">
+            <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+              <th style="padding: 5px; text-align: left;">Indian Pramāṇa</th>
+              <th style="padding: 5px; text-align: left;">AI Computational Equivalent</th>
+              <th style="padding: 5px; text-align: left;">Epistemic Function</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Pratyakṣa (Perception)</td>
+              <td style="padding: 5px;">Sensors (Cameras, Lidar, Microphones, Telemetry)</td>
+              <td style="padding: 5px;">Direct raw data acquisition from external physical reality.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Anumāna (Inference)</td>
+              <td style="padding: 5px;">Machine Learning, Pattern Recognition, Deductive Engines</td>
+              <td style="padding: 5px;">Predicting unobserved labels via learned statistical Vyāpti.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Śabda (Testimony)</td>
+              <td style="padding: 5px;">Databases, Knowledge Graphs, Pre-trained Models</td>
+              <td style="padding: 5px;">Querying verified, trustworthy external information sources.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Upamāna (Comparison)</td>
+              <td style="padding: 5px;">Case-Based Reasoning, Few-Shot Analogical Learning</td>
+              <td style="padding: 5px;">Solving novel problems by transferring structural similarities.</td>
+            </tr>
+          </table>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഭാരതീയ പ്രമാണങ്ങളും AI സാങ്കേതികവിദ്യയും തമ്മിലുള്ള പൊരുത്തം:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45; font-size: 8.5pt;">
+            <li><strong>പ്രത്യക്ഷം (Pratyakṣa):</strong> ക്യാമറകളും ലിഡാറുകളും വഴി പുറംലോകത്തെ നേരിട്ടറിയുന്ന സെൻസർ ഡാറ്റ.</li>
+            <li><strong>അനുമാനം (Anumāna):</strong> ഡാറ്റയിലെ പാറ്റേണുകൾ അപഗ്രഥിച്ച് വിവരങ്ങൾ കണ്ടെത്തുന്ന മെഷീൻ ലേണിംഗ്.</li>
+            <li><strong>ശബ്ദം (Śabda):</strong> വിശ്വസനീയമായ ഡാറ്റാബേസുകളിൽ നിന്നും വിക്കിപീഡിയയിൽ നിന്നും വിവരങ്ങൾ എടുക്കൽ.</li>
+            <li><strong>ഉപമാനം (Upamāna):</strong> മുൻകാല കേസുകളുമായുള്ള സാദൃശ്യം നോക്കി പുതിയ പ്രശ്നങ്ങൾ പരിഹരിക്കുന്ന അനലോഗിക്കൽ ലേണിംഗ്.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 13: Epistemological Implications in AI</span>
+      <span>Page 10</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 13</span>
+        <span class="top-bar-right">Page 11 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">University Academic Exercises: Knock Your Brain</span>
+          <span class="section-title-ml">(യൂണിവേഴ്സിറ്റി Curriculum പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ)</span>
+        </div>
+        <div class="block-en" style="font-size: 8.5pt;">
+          <p><strong>1. Which pramāṇa is closest to AI sensor data?</strong><br/>
+          (A) Perception &nbsp; (B) Testimony &nbsp; (C) Postulation &nbsp; (D) Comparison<br/>
+          <em>Answer:</em> <span class="hl-yellow">(A) Perception (Pratyakṣa)</span></p>
+          <p><strong>2. Learning from patterns in data in AI is similar to:</strong><br/>
+          (A) Yoga &nbsp; (B) Anumāna (inference) &nbsp; (C) Worship &nbsp; (D) Myth<br/>
+          <em>Answer:</em> <span class="hl-yellow">(B) Anumāna (inference)</span></p>
+          <p><strong>3. Trusting information from a database in AI resembles:</strong><br/>
+          (A) Illusion &nbsp; (B) Śabda (testimony) &nbsp; (C) Doubt &nbsp; (D) Meditation<br/>
+          <em>Answer:</em> <span class="hl-yellow">(B) Śabda (testimony)</span></p>
+          <p><strong>4. A major concern in both Indian epistemology and AI is:</strong><br/>
+          (A) Fashion &nbsp; (B) Validity of knowledge &nbsp; (C) Architecture &nbsp; (D) Music<br/>
+          <em>Answer:</em> <span class="hl-yellow">(B) Validity of knowledge</span></p>
+          <p><strong>5. Nyāya philosophers analyzed error in order to:</strong><br/>
+          (A) Improve valid cognition &nbsp; (B) Increase confusion &nbsp; (C) Reject perception &nbsp; (D) Avoid debate<br/>
+          <em>Answer:</em> <span class="hl-yellow">(A) Improve valid cognition</span></p>
+        </div>
+        <div class="block-ml" style="font-size: 8.5pt;">
+          <p><strong>മലയാളം സംഗ്രഹം & Curriculum ഉത്തരങ്ങൾ:</strong><br/>
+          1. AI സെൻസർ ഡാറ്റയോട് ഏറ്റവും അടുത്ത് നിൽക്കുന്ന പ്രമാണം: <span class="hl-yellow">പ്രത്യക്ഷം (Perception / Pratyakṣa)</span>.<br/>
+          2. ഡാറ്റയിലെ പാറ്റേണുകൾ പഠിക്കുന്നത് ഇതിന് സമാനമാണ്: <span class="hl-yellow">അനുമാനം (Anumāna / inference)</span>.<br/>
+          3. AI-യിൽ ഡാറ്റാബേസിലെ വിവരങ്ങളെ വിശ്വസിക്കുന്നത് ഇതിന് സമാനമാണ്: <span class="hl-yellow">ശബ്ദം (Śabda / testimony)</span>.<br/>
+          4. ഭാരതീയ ജ്ഞാനമീമാംസയിലെയും AI-യിലെയും പ്രധാന ആശങ്ക: <span class="hl-yellow">അറിവിന്റെ സാധുത (Validity of knowledge)</span>.<br/>
+          5. ന്യായ ചിന്തകർ തെറ്റുകളെ പഠിച്ചത് ഇതിന് വേണ്ടിയായിരുന്നു: <span class="hl-yellow">ശരിയായ ജ്ഞാനം മെച്ചപ്പെടുത്താൻ (Improve valid cognition)</span>.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Unleash Your Potential: Detailed University Questions</span>
+          <span class="section-title-ml">(വിശദമായ പരീക്ഷാ ചോദ്യങ്ങൾ)</span>
+        </div>
+        <div class="block-en" style="font-size: 8.5pt;">
+          <p><strong>Q1: Examine the theory of knowing (pramāṇa) in Indian philosophy and its significance for AI.</strong><br/>
+          <em>Core Answer:</em> Indian pramāṇas provide a blueprint for AI: sensor inputs (Pratyakṣa), pattern learning (Anumāna), knowledge bases (Śabda), and analogy (Upamāna).</p>
+          <p><strong>Q2: Examine epistemic concepts of Nyāya and Buddhist philosophy concerning AI.</strong><br/>
+          <em>Core Answer:</em> Nyāya error analysis and five-step syllogisms inspire Explainable AI; Buddhist non-conceptual Pratyakṣa mirrors raw telemetry and Apoha mirrors classification.</p>
+          <p><strong>Q3: Analyse Behaviourism, Identity Theory, and Functionalism concerning AI.</strong><br/>
+          <em>Core Answer:</em> Behaviourism evaluates AI by outward imitation (Turing Test); Identity Theory denies AI thought; Functionalism validates AI via multiple realizability.</p>
+        </div>
+        <div class="block-ml" style="font-size: 8.5pt;">
+          <p><strong>ചോദ്യം 1: ഭാരതീയ പ്രമാണ സിദ്ധാന്തവും AI-യിലെ അതിന്റെ പ്രസക്തിയും വിലയിരുത്തുക.</strong><br/>
+          <em>ഉത്തരം:</em> സെൻസർ ഡാറ്റ (പ്രത്യക്ഷം), മെഷീൻ ലേണിംഗ് (അനുമാനം), ഡാറ്റാബേസ് (ശബ്ദം), താരതമ്യം (ഉപമാനം) എന്നിവ AI-ക്ക് ദാർശനിക അടിത്തറയേകുന്നു.</p>
+          <p><strong>ചോദ്യം 2: ന്യായ-ബൗദ്ധ തത്ത്വങ്ങൾ AI-ക്ക് എങ്ങനെ സഹായകമാകുന്നു?</strong><br/>
+          <em>ഉത്തരം:</em> ന്യായത്തിന്റെ ഹേതു-വ്യാപ്തി ബന്ധങ്ങൾ സുതാര്യമായ AI (XAI) നിർമ്മിക്കാനും, ബൗദ്ധ അപോഹ സിദ്ധാന്തം ഡാറ്റാ വർഗ്ഗീകരണത്തിനും വഴികാട്ടുന്നു.</p>
+          <p><strong>ചോദ്യം 3: ബിഹേവിയറിസം, ഐഡന്റിറ്റി തിയറി, ഫങ്ഷണലിസം എന്നിവയെ AI-യുമായി താരതമ്യം ചെയ്യുക.</strong><br/>
+          <em>ഉത്തരം:</em> ബിഹേവിയറിസം ബാഹ്യ പെരുമാറ്റത്തെയും, ഐഡന്റിറ്റി തിയറി മനുഷ്യന്റെ തലച്ചോറിനെയും കാണുമ്പോൾ, ഫങ്ഷണലിസം സിലിക്കൺ ചിപ്പുകളിലും ബുദ്ധി സാധ്യമാണെന്ന് സമർത്ഥിക്കുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 13: Epistemological Implications in AI</span>
+      <span>Page 11</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 13</span>
+        <span class="top-bar-right">Page 12 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="chapter-hero" style="padding: 6px 12px; margin-bottom: 8px;">
+        <div class="hero-tag">🎯 Quick Revision & Exam Mastery</div>
+        <div class="hero-title-en" style="font-size: 13pt;">20 Core Academic Concepts: Epistemological Implications in AI</div>
+        <div class="hero-title-ml" style="font-size: 10pt;">20 പ്രധാന പരീക്ഷാ ആശയങ്ങൾ: AI-യിലെ ജ്ഞാനമീമാംസാ പ്രത്യാഘാതങ്ങൾ</div>
+      </div>
+
+      <div class="grid-container">
+        <!-- 1 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">👁️ Sensor</span><span class="point-title-en">Sensor Data as Pratyakṣa</span></div>
+          <div class="point-title-ml">സെൻസർ ഡാറ്റ = പ്രത്യക്ഷം</div>
+          <div class="point-body">In Indian epistemology, the pramāṇa closest to AI camera, radar, and telemetry sensor data is Perception.</div>
+          <div class="point-body-ml">AI സെൻസറുകൾ പുറംലോകത്തെ അറിയുന്നത് പ്രത്യക്ഷ പ്രമാണത്തിന് തുല്യമാണ്.</div>
+        </div>
+        <!-- 2 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">📊 ML Logic</span><span class="point-title-en">Learning Patterns as Anumāna</span></div>
+          <div class="point-title-ml">പാറ്റേൺ ലേണിംഗ് = അനുമാനം</div>
+          <div class="point-body">Extracting statistical correlations and making predictions from data is equivalent to Anumāna (Inference).</div>
+          <div class="point-body-ml">ഡാറ്റയിലെ അടയാളങ്ങളിൽ നിന്ന് കാര്യങ്ങൾ കണ്ടെത്തുന്നത് അനുമാന പ്രമാണമാണ്.</div>
+        </div>
+        <!-- 3 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🗄️ Database</span><span class="point-title-en">Database Trust as Śabda</span></div>
+          <div class="point-title-ml">ഡാറ്റാബേസ് = ശബ്ദ പ്രമാണം</div>
+          <div class="point-body">Trusting pre-trained corpora and curated databases in AI resembles relying on verbal testimony (*Śabda*).</div>
+          <div class="point-body-ml">വിശ്വസനീയമായ ഡാറ്റാബേസുകളിൽ നിന്ന് വിവരങ്ങൾ എടുക്കുന്നത് ശബ്ദ പ്രമാണമാണ്.</div>
+        </div>
+        <!-- 4 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🎯 Core Quest</span><span class="point-title-en">Validity of Knowledge</span></div>
+          <div class="point-title-ml">അറിവിന്റെ സാധുത</div>
+          <div class="point-body">A paramount concern shared by both Indian epistemology and AI is establishing the objective validity of knowledge.</div>
+          <div class="point-body-ml">ഭാരതീയ തത്ത്വചിന്തയുടെയും AI-യുടെയും പ്രധാന ലക്ഷ്യം അറിവിന്റെ സാധുതയാണ്.</div>
+        </div>
+        <!-- 5 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🔬 Error Purpose</span><span class="point-title-en">Analyzing Error</span></div>
+          <div class="point-title-ml">തെറ്റുകളെ അപഗ്രഥിക്കൽ</div>
+          <div class="point-body">Nyāya philosophers dissected error (*Viparyaya*) specifically to improve and safeguard valid cognition (*Pramā*).</div>
+          <div class="point-body-ml">ശരിയായ ജ്ഞാനത്തെ കൂടുതൽ ശക്തമാക്കാനാണ് ന്യായം തെറ്റുകളെ പഠിച്ചത്.</div>
+        </div>
+        <!-- 6 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🎭 Error Types</span><span class="point-title-en">Saṁśaya and Viparyaya</span></div>
+          <div class="point-title-ml">സംശയവും വിപര്യയവും</div>
+          <div class="point-body">Saṁśaya is oscillation between possibilities; Viparyaya is false conviction, anticipating AI hallucinations.</div>
+          <div class="point-body-ml">സംശയവും തെറ്റായ ഉറപ്പും AI ഹാലൂസിനേഷനുകൾക്ക് മുൻഗാമിയാണ്.</div>
+        </div>
+        <!-- 7 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🗣️ Language</span><span class="point-title-en">Knowledge of Language (KOL)</span></div>
+          <div class="point-title-ml">ഭാഷാപരമായ അറിവ് (KOL)</div>
+          <div class="point-body">Formal syntactic and grammatical parsing mastery; heavily mastered by modern Large Language Models.</div>
+          <div class="point-body-ml">വാക്യഘടനയിലും വ്യാകരണത്തിലുമുള്ള കൃത്യമായ പ്രാവീണ്യം.</div>
+        </div>
+        <!-- 8 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🌍 Reality</span><span class="point-title-en">Real World Knowledge (RWK)</span></div>
+          <div class="point-title-ml">യഥാർത്ഥ ലോകത്തെക്കുറിച്ചുള്ള അറിവ്</div>
+          <div class="point-body">Embodied practical common sense and physical intuition, remaining a major limitation of disembodied AI.</div>
+          <div class="point-body-ml">ഭൗതിക ലോകത്തിന്റെ പ്രായോഗിക നിയമങ്ങളെക്കുറിച്ചുള്ള അറിവ്.</div>
+        </div>
+        <!-- 9 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">📜 Genius</span><span class="point-title-en">Pāṇini (c. 4th Century BCE)</span></div>
+          <div class="point-title-ml">പാണിനി</div>
+          <div class="point-body">Ancient Indian grammarian who formulated the *Aṣṭādhyāyī*, the world's first formal generative grammar engine.</div>
+          <div class="point-body-ml">ലോകത്തിലെ ആദ്യത്തെ ഫോർമൽ ജനറേറ്റീവ് വ്യാകരണം രചിച്ച വ്യാകരണാചാര്യൻ.</div>
+        </div>
+        <!-- 10 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">⚙️ 4000 Rules</span><span class="point-title-en">Aṣṭādhyāyī Algorithms</span></div>
+          <div class="point-title-ml">അഷ്ടാധ്യായി സൂത്രങ്ങൾ</div>
+          <div class="point-body">Prefigured modern context-free grammars, Backus-Naur form, compilers, and Chomsky hierarchies.</div>
+          <div class="point-body-ml">ആധുനിക കമ്പ്യൂട്ടർ പ്രോഗ്രാമിംഗിനും കംപൈലറുകൾക്കും വഴികാട്ടിയായ സൂത്രങ്ങൾ.</div>
+        </div>
+        <!-- 11 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🚀 NASA Paper</span><span class="point-title-en">Rick Briggs (1985)</span></div>
+          <div class="point-title-ml">റിക്ക് ബ്രിഗ്സ് (1985)</div>
+          <div class="point-body">NASA scientist who revealed Sanskrit's formal syntactic perfection as the ideal medium for AI knowledge representation.</div>
+          <div class="point-body-ml">സംസ്കൃതമാണ് AI-ക്ക് ഏറ്റവും അനുയോജ്യമായ ഭാഷയെന്ന് സമർത്ഥിച്ച നാസ ശാസ്ത്രജ്ഞൻ.</div>
+        </div>
+        <!-- 12 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🤖 Turing Link</span><span class="point-title-en">Behaviourism Stance on AI</span></div>
+          <div class="point-title-ml">ബിഹേവിയറിസവും AI-യും</div>
+          <div class="point-body">Equates intelligence with external behavioral mimicry; passes AI if it succeeds in the Turing Test.</div>
+          <div class="point-body-ml">മനുഷ്യനെപ്പോലെ സംസാരിച്ചാൽ യന്ത്രത്തിന് ബുദ്ധിയുണ്ടെന്ന് അംഗീകരിക്കുന്നു.</div>
+        </div>
+        <!-- 13 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🚫 Biological Veto</span><span class="point-title-en">Identity Theory Stance on AI</span></div>
+          <div class="point-title-ml">ഐഡന്റിറ്റി തിയറിയുടെ നിഷേധം</div>
+          <div class="point-body">Strictly denies AI true cognition because silicon chips lack biological mammalian brain tissues.</div>
+          <div class="point-body-ml">ജൈവ തലച്ചോറില്ലാത്തതിനാൽ യന്ത്രങ്ങൾക്ക് മനസ്സുണ്ടാകില്ലെന്ന് തറപ്പിച്ചു പറയുന്നു.</div>
+        </div>
+        <!-- 14 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🌐 Multiple Real</span><span class="point-title-en">Functionalism Stance on AI</span></div>
+          <div class="point-title-ml">ഫങ്ഷണലിസത്തിന്റെ അംഗീകാരം</div>
+          <div class="point-body">Validates synthetic minds via Multiple Realizability: cognition is software independent of physical hardware.</div>
+          <div class="point-body-ml">മാധ്യമ സ്വതന്ത്രത വഴി സിലിക്കൺ യന്ത്രങ്ങൾക്കും മനസ്സുണ്ടാകാമെന്ന് സ്ഥാപിക്കുന്നു.</div>
+        </div>
+        <!-- 15 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">📦 Box Crisis</span><span class="point-title-en">The Black-Box Opacity Problem</span></div>
+          <div class="point-title-ml">ബ്ലാക്ക്-ബോക്സ് പ്രശ്നം</div>
+          <div class="point-body">Deep neural networks produce answers without human-interpretable reasons, creating an epistemic crisis.</div>
+          <div class="point-body-ml">ഉത്തരങ്ങൾ എന്തുകൊണ്ട് നൽകി എന്ന് വ്യക്തമാക്കാൻ AI-ക്ക് സാധിക്കാത്ത പ്രതിസന്ധി.</div>
+        </div>
+        <!-- 16 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">💡 Transparency</span><span class="point-title-en">Explainable AI (XAI)</span></div>
+          <div class="point-title-ml">വിശദീകരിക്കാവുന്ന AI (XAI)</div>
+          <div class="point-body">The movement demanding AI justify its conclusions step-by-step, echoing the Nyāya Pañcāvayava model.</div>
+          <div class="point-body-ml">തീരുമാനങ്ങൾക്ക് വ്യക്തമായ ന്യായീകരണം നൽകുന്ന സുതാര്യമായ AI മാതൃക.</div>
+        </div>
+        <!-- 17 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🚫 Exclusion</span><span class="point-title-en">Apoha and Classification</span></div>
+          <div class="point-title-ml">അപോഹയും AI ക്ലാസിഫിക്കേഷനും</div>
+          <div class="point-body">Buddhist negative exclusion theory directly models modern neural decision boundary hyperplanes.</div>
+          <div class="point-body-ml">വിരുദ്ധമായതിനെ ഒഴിവാക്കി വസ്തുക്കളെ തരംതിരിക്കുന്ന ബൗദ്ധ യുക്തി.</div>
+        </div>
+        <!-- 18 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🐂 Analogy Model</span><span class="point-title-en">Upamāna in CBR Systems</span></div>
+          <div class="point-title-ml">ഉപമാനവും കേസ് ബേസ്ഡ് റീസണിംഗും</div>
+          <div class="point-body">Transfer learning and few-shot analogical reasoning execute the classical Indian Upamāna mechanism.</div>
+          <div class="point-body-ml">സാദൃശ്യം കണ്ടുകൊണ്ട് പുതിയ പ്രശ്നങ്ങൾ പരിഹരിക്കുന്ന സാങ്കേതികവിദ്യ.</div>
+        </div>
+        <!-- 19 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">⚖️ Rigor</span><span class="point-title-en">Epistemic Responsibility</span></div>
+          <div class="point-title-ml">വിജ്ഞാനപരമായ ഉത്തരവാദിത്തം</div>
+          <div class="point-body">Demands AI outputs adhere to strict truth, justification, and bias-free ethical standards.</div>
+          <div class="point-body-ml">AI തീരുമാനങ്ങൾ മുൻവിധികളില്ലാത്ത സത്യസന്ധമായ അറിവായിരിക്കണമെന്ന നിബന്ധന.</div>
+        </div>
+        <!-- 20 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🏁 Final Vision</span><span class="point-title-en">The Epistemic Future of AI</span></div>
+          <div class="point-title-ml">AI-യുടെ ജ്ഞാനമീമാംസാ ഭാവി</div>
+          <div class="point-body">True machine intelligence requires uniting sensory data, logical inference, grounded common sense, and transparent justification.</div>
+          <div class="point-body-ml">സെൻസറുകളും യുക്തിയും സാമാന്യബോധവും ഒത്തുചേരുമ്പോൾ മാത്രമേ യഥാർത്ഥ AI സാധ്യമാകൂ.</div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 13: 20 Core Academic Concepts</span>
+      <span>Page 12</span>
+    </div>
+  </div>
+</body></html>

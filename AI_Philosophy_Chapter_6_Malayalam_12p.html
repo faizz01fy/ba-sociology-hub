@@ -1,0 +1,1074 @@
+<!DOCTYPE html><html lang="ml"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"><meta charset="UTF-8"><title>Philosophy of AI · Module 2 · Chapter 6</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0f172a;
+    }
+
+    .page-container {
+      width: 210mm;
+      height: 297mm;
+      padding: 12mm 14mm 10mm 14mm;
+      margin: 0 auto;
+      background: #ffffff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+    }
+
+    .top-bar-left {
+      font-size: 8pt;
+      font-weight: 800;
+      color: #dc2626;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar-right {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .chapter-hero {
+      background: linear-gradient(135deg, #fee2e2 0%, #ffffff 100%);
+      border: 1.5px solid #dc2626;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 7.2pt;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .hero-title-en {
+      font-size: 13pt;
+      font-weight: 800;
+      color: #991b1b;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #dc2626;
+      line-height: 1.35;
+    }
+
+    .content-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 7px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .section-header {
+      background: #f1f5f9;
+      padding: 5px 10px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .section-title-en {
+      font-size: 8.8pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .section-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 700;
+      color: #dc2626;
+    }
+
+    .block-en {
+      padding: 6px 10px;
+      border-left: 3.5px solid #dc2626;
+      background: #ffffff;
+    }
+
+    .block-en-label {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #dc2626;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .block-en p {
+      font-size: 8pt;
+      color: #1e293b;
+      line-height: 1.38;
+      margin: 0 0 4px 0;
+    }
+
+    .block-en p:last-child {
+      margin-bottom: 0;
+    }
+
+    .block-ml {
+      padding: 6px 10px;
+      border-left: 3.5px solid #10b981;
+      background: #f0fdf4;
+      border-top: 1px dashed #e2e8f0;
+    }
+
+    .block-ml-label {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #065f46;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .block-ml p {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      color: #064e3b;
+      line-height: 1.45;
+      margin: 0 0 4px 0;
+    }
+
+    .block-ml p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* STRICT TWO HIGHLIGHTERS */
+    .hl-green {
+      background: #bbf7d0;
+      color: #14532d;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .hl-yellow {
+      background: #fef08a;
+      color: #713f12;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .page-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 4px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    /* PAGE 12 EXAM GRID */
+    .page-exam-grid {
+      padding: 10mm 12mm 8mm 12mm;
+    }
+
+    .exam-header-compact {
+      text-align: center;
+      background: linear-gradient(135deg, #fee2e2 0%, #ffffff 100%);
+      border: 1.5px solid #dc2626;
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-bottom: 8px;
+    }
+
+    .exam-title-badge {
+      display: inline-block;
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 7pt;
+      font-weight: 800;
+      padding: 1.5px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .exam-hero-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #991b1b;
+      line-height: 1.2;
+    }
+
+    .exam-hero-sub {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #dc2626;
+      line-height: 1.3;
+    }
+
+    .points-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    .point-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 4.5px 6px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .point-header {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+
+    .point-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 1.5px 4px;
+      border-radius: 3px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .point-title-en {
+      font-size: 6.9pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .point-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 700;
+      color: #dc2626;
+      margin-bottom: 1.5px;
+    }
+
+    .point-body {
+      font-size: 6.2pt;
+      color: #334155;
+      line-height: 1.25;
+    }
+
+    .point-body-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.1pt;
+      color: #064e3b;
+      line-height: 1.3;
+      margin-top: 1px;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 8px 6px !important;
+        background: #f1f5f9 !important;
+        font-size: 14px !important;
+      }
+      .page-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 16px 12px !important;
+        margin: 0 0 16px 0 !important;
+        border-radius: 14px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+        overflow: visible !important;
+      }
+      .top-bar-left, .top-bar-right {
+        font-size: 11px !important;
+      }
+    }
+    
+  </style></head><body>
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 6</span>
+        <span class="top-bar-right">Page 1 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="chapter-hero">
+        <div class="hero-tag">🎓 Calicut University FYUGP · Module 2 · Chapter 6</div>
+        <div class="hero-title-en">CHAPTER III: Chinese Room Experiment</div>
+        <div class="hero-title-ml">അദ്ധ്യായം 6: ചൈനീസ് റൂം പരീക്ഷണം</div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">John Searle and the 1980 Breakthrough</span>
+          <span class="section-title-ml">(ജോൺ സിയറലും 1980-ലെ വിപ്ലവകരമായ ആശയവും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>In <span class="hl-green">1980</span>, American philosopher <span class="hl-green">John Searle</span> published a seminal treatise titled <span class="hl-yellow">"Minds, Brains, and Programs"</span> in the journal <em>Behavioral and Brain Sciences</em>. In this work, Searle formulated the world-famous <span class="hl-yellow">Chinese Room Thought Experiment</span>, delivering one of the most powerful and enduring challenges against the fundamental assumptions of artificial intelligence.</p>
+          <p>Searle's primary philosophical target was the burgeoning doctrine known as <span class="hl-yellow">Strong AI</span>. Proponents of Strong AI asserted that an appropriately programmed digital computer does not merely simulate human mental states; rather, it literally possesses a mind, exhibits genuine cognitive understanding, and experiences authentic intentionality.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-green">1980-ൽ</span> അമേരിക്കൻ തത്ത്വചിന്തകനായ <span class="hl-green">ജോൺ സിയറൽ</span> <em>ബിഹേവിയറൽ ആൻഡ് ബ്രെയിൻ സയൻസസ്</em> എന്ന ജേണലിൽ <span class="hl-yellow">"മൈൻഡ്സ്, ബ്രെയിൻസ്, ആൻഡ് പ്രോഗ്രാംസ്"</span> എന്ന പ്രബന്ധം പ്രസിദ്ധീകരിച്ചു. ഇതിലൂടെ അദ്ദേഹം അവതരിപ്പിച്ച <span class="hl-yellow">ചൈനീസ് റൂം ചിന്താപരീക്ഷണം (Chinese Room Experiment)</span> ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിന്റെ അടിത്തറയെത്തന്നെ ചോദ്യം ചെയ്യുന്ന ഒന്നായി മാറി.</p>
+          <p>സിയറലിന്റെ പ്രധാന ലക്ഷ്യം <span class="hl-yellow">സ്ട്രോങ് AI (Strong AI)</span> എന്ന ആശയത്തെ തകർക്കുക എന്നതായിരുന്നു. ശരിയായി പ്രോഗ്രാം ചെയ്യപ്പെട്ട ഒരു കമ്പ്യൂട്ടർ മനസ്സിനെ വെറുതെ അനുകരിക്കുകയല്ല, മറിച്ച് അതിന് യഥാർത്ഥത്തിൽ ഒരു മനസ്സുണ്ടെന്നും, അതിന് മനുഷ്യനെപ്പോലെ അറിവും ബോധവുമുണ്ടെന്നും സ്ട്രോങ് AI വാദിച്ചിരുന്നു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Strong AI vs. Weak AI Distinction</span>
+          <span class="section-title-ml">(സ്ട്രോങ് AI-യും വീക്ക് AI-യും തമ്മിലുള്ള വ്യത്യാസം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Weak AI (Cautious AI):</span> Uses computers as powerful investigative tools to simulate mental processes and model cognitive hypotheses without claiming that the machine itself thinks.</p>
+          <p><span class="hl-yellow">Strong AI:</span> Claims that the executed computer program literally constitutes a mind with cognitive states, subjective understanding, and true comprehension.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">വീക്ക് AI (Weak AI):</span> കമ്പ്യൂട്ടറുകളെ വിവരങ്ങൾ അപഗ്രഥിക്കാനും മനുഷ്യ മനസ്സിന്റെ പ്രവർത്തനങ്ങളെ മാതൃകയാക്കാനുമുള്ള വെറുമൊരു ശാസ്ത്രീയ ഉപകരണമായി മാത്രം കാണുന്നു. യന്ത്രത്തിന് മനസ്സുണ്ടെന്ന് ഇത് അവകാശപ്പെടുന്നില്ല.</p>
+          <p><span class="hl-yellow">സ്ട്രോങ് AI (Strong AI):</span> കൃത്യമായി പ്രവർത്തിക്കുന്ന പ്രോഗ്രാം ഉള്ള ഒരു കമ്പ്യൂട്ടറിന് മനുഷ്യനെപ്പോലെ യഥാർത്ഥത്തിൽ മനസ്സ്, വിചാരം, ബോധപൂർവ്വമായ അറിവ് എന്നിവ ഉണ്ടെന്ന് വാദിക്കുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 2 · Chapter 6: Chinese Room Experiment</span>
+      <span>Page 1</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 6</span>
+        <span class="top-bar-right">Page 2 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Mechanics of the Chinese Room</span>
+          <span class="section-title-ml">(ചൈനീസ് റൂം പരീക്ഷണത്തിന്റെ പ്രവർത്തന ഘടന)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Searle asked his audience to imagine a thought experiment structured as follows:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>A monolingual English-speaking person who understands <span class="hl-yellow">not a single character of Chinese</span> is locked inside an isolated room.</li>
+            <li>Inside the room are baskets containing Chinese characters (<span class="hl-green">the database</span>).</li>
+            <li>The person is provided with an exhaustive instruction rulebook written entirely in English (<span class="hl-green">the program</span>).</li>
+            <li>Native Chinese speakers outside slide sheets of paper covered with Chinese characters into the room through a slot (<span class="hl-yellow">inputs / questions</span>).</li>
+            <li>The person consults the English rulebook: <em>"Whenever you see a squiggly symbol A, look into basket B, extract symbol C, and slide it back through the slot"</em> (<span class="hl-yellow">outputs / answers</span>).</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>സിയറൽ ഒരു വിചിത്രമായ പരീക്ഷണം സങ്കൽപ്പിക്കാൻ ആവശ്യപ്പെട്ടു:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>ഇംഗ്ലീഷ് മാത്രം അറിയാവുന്ന, <span class="hl-yellow">ഒരു ചൈനീസ് വാക്കുപോലും അറിയാത്ത</span> ഒരാളെ ഒരു മുറിക്കുള്ളിൽ അടച്ചിടുന്നു.</li>
+            <li>മുറിക്കുള്ളിൽ നിറയെ ചൈനീസ് അക്ഷരങ്ങൾ അടങ്ങിയ പെട്ടികളുണ്ട് (<span class="hl-green">ഡാറ്റാബേസ്</span>).</li>
+            <li>അയാൾക്ക് വായിക്കാൻ ഇംഗ്ലീഷിൽ എഴുതിയ ഒരു വലിയ നിയമപുസ്തകമുണ്ട് (<span class="hl-green">പ്രോഗ്രാം</span>).</li>
+            <li>പുറത്തുനിൽക്കുന്ന ചൈനീസ് ഭാഷക്കാർ വാതിലിന്റെ വിടവിലൂടെ ചോദ്യങ്ങൾ എഴുതിയ കടലാസ് ഉള്ളിലേക്ക് ഇടുന്നു (<span class="hl-yellow">ഇൻപുട്ട് / ചോദ്യങ്ങൾ</span>).</li>
+            <li>അകത്തിരിക്കുന്നയാൾ പുസ്തകം നോക്കുന്നു: <em>"ഇന്ന ചിഹ്നം കണ്ടാൽ ഇന്ന പെട്ടിയിൽ നിന്ന് ഇന്ന ചിഹ്നം എടുത്ത് പുറത്തേക്ക് നൽകുക"</em> (<span class="hl-yellow">ഔട്ട്പുട്ട് / ഉത്തരങ്ങൾ</span>).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Flawless Output Without Internal Comprehension</span>
+          <span class="section-title-ml">(അർത്ഥമറിയാതെ പൂർണ്ണമായ ഉത്തരങ്ങൾ നൽകൽ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>To native speakers outside, the room produces answers indistinguishable from a fluent Chinese scholar. The room effortlessly passes the <span class="hl-green">Turing Test</span>. Yet, <span class="hl-yellow">the person inside still understands zero Chinese</span>. He is manipulating meaningless squiggles solely by their physical shapes according to syntactic instructions.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>പുറത്തുനിൽക്കുന്ന ആളുകൾക്ക് മുറിക്കുള്ളിലിരിക്കുന്നത് മികച്ചൊരു ചൈനീസ് പണ്ഡിതനാണെന്നേ തോന്നൂ. ഈ മുറി <span class="hl-green">ട്യൂറിംഗ് ടെസ്റ്റ്</span> നിഷ്പ്രയാസം വിജയിക്കുന്നു. എന്നാൽ, <span class="hl-yellow">അകത്തിരിക്കുന്ന ആൾക്ക് ചൈനീസ് ഭാഷയിലെ ഒരു വാക്കിന്റെയും അർത്ഥം ഇപ്പോഴും അറിയില്ല</span>. ചിഹ്നങ്ങളുടെ രൂപം മാത്രം നോക്കി നിയമങ്ങൾ നടപ്പിലാക്കുക മാത്രമാണ് അയാൾ ചെയ്തത്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 2 · Chapter 6: Chinese Room Experiment</span>
+      <span>Page 2</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 6</span>
+        <span class="top-bar-right">Page 3 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Core Principle: Syntax is Not Sufficient for Semantics</span>
+          <span class="section-title-ml">(അടിസ്ഥാന തത്ത്വം: സിന്റാക്സ് ഒരിക്കലും സെമാന്റിക്സ് ആകുന്നില്ല)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Searle extracted the profound philosophical maxim that governs modern cognitive debate:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">Syntax:</span> Refers to the formal, structural, and grammatical rules governing the order and arrangement of symbols, irrespective of what those symbols represent.</li>
+            <li><span class="hl-yellow">Semantics:</span> Refers to the meaning, intentionality, reference, and conceptual comprehension underlying linguistic symbols.</li>
+          </ul>
+          <p><span class="hl-yellow">"Syntax alone is neither constitutive of nor sufficient for semantics."</span> Digital computers are purely syntactic engines; they operate exclusively by matching patterns and executing formal symbol permutations. Therefore, execution of software can never by itself generate authentic semantic comprehension.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>സിയറൽ ആവിഷ്കരിച്ച അതിപ്രധാനമായ തത്ത്വചിന്താ സിദ്ധാന്തമാണിത്:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">സിന്റാക്സ് (Syntax / വാക്യഘടന):</span> വാക്കുകളുടെയോ ചിഹ്നങ്ങളുടെയോ അർത്ഥം നോക്കാതെ, അവയെ ക്രമീകരിക്കുന്ന വ്യാകരണപരമായ ഔപചാരിക നിയമങ്ങൾ.</li>
+            <li><span class="hl-yellow">സെമാന്റിക്സ് (Semantics / അർത്ഥബോധം):</span> ചിഹ്നങ്ങൾക്ക് പിന്നിലെ ആന്തരികമായ അർത്ഥം, ബോധപൂർവ്വമായ ഗ്രഹണം, വസ്തുക്കളുമായുള്ള ബന്ധം.</li>
+          </ul>
+          <p><span class="hl-yellow">"വെറും സിന്റാക്സ് ഒരിക്കലും സെമാന്റിക്സ് ആകാൻ പര്യാപ്തമല്ല."</span> കമ്പ്യൂട്ടറുകൾ കേവലം ചിഹ്നങ്ങളെ നിയമാനുസൃതം മാറ്റിമറിക്കുന്ന സിന്റാക്സ് യന്ത്രങ്ങൾ മാത്രമാണ്. അതുകൊണ്ട് തന്നെ ചിഹ്നങ്ങൾ മാറ്റിവെക്കുന്നത് കൊണ്ട് മാത്രം അവയ്ക്ക് ഒരിക്കലും യഥാർത്ഥ അർത്ഥബോധം ഉണ്ടാകില്ല.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Critique of the Turing Test</span>
+          <span class="section-title-ml">(ട്യൂറിംഗ് ടെസ്റ്റിന് നേരെയുള്ള വിമർശനം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>The Chinese Room directly refutes the validity of the Turing Test. A machine can pass the test through blind formal syntactic shuffling, proving that <span class="hl-yellow">behavioral mimicry does not guarantee cognitive awareness</span>.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ചൈനീസ് റൂം പരീക്ഷണം ട്യൂറിംഗ് ടെസ്റ്റിന്റെ വിശ്വാസ്യതയെ തകർക്കുന്നു. അർത്ഥമറിയാതെ ചിഹ്നങ്ങൾ അടുക്കിവെച്ച് ടെസ്റ്റ് വിജയിക്കാൻ സാധിക്കുന്നത് വഴി, <span class="hl-yellow">പുറമേക്ക് മനുഷ്യനെപ്പോലെ പെരുമാറുന്നത് കൊണ്ട് മാത്രം ബുദ്ധിയുണ്ടെന്ന് കരുതാനാവില്ലെന്ന് വ്യക്തമാകുന്നു</span>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 2 · Chapter 6: Chinese Room Experiment</span>
+      <span>Page 3</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 6</span>
+        <span class="top-bar-right">Page 4 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Searle's Formal Logical Syllogism</span>
+          <span class="section-title-ml">(സിയറലിന്റെ ഔപചാരിക യുക്തിവാദ ഘടന)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Searle summarized his thesis into four indisputable propositions:</p>
+          <ol style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">Premise 1:</span> Brains cause minds (Neurobiological processes causally produce mental phenomena).</li>
+            <li><span class="hl-yellow">Premise 2:</span> Syntax is not by itself sufficient for semantics (Formal symbol manipulation lacks inherent meaning).</li>
+            <li><span class="hl-yellow">Premise 3:</span> Computer programs are entirely defined by their formal syntactic operations.</li>
+            <li><span class="hl-yellow">Conclusion 1:</span> Implementing a computer program is never by itself sufficient for creating a mind.</li>
+            <li><span class="hl-yellow">Conclusion 2:</span> The exact way the brain produces mental phenomena cannot be merely by instantiating a computer program.</li>
+          </ol>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>തന്റെ വാദത്തെ സിയറൽ നാല് അടിസ്ഥാന സമവാക്യങ്ങളായി സംഗ്രഹിച്ചു:</p>
+          <ol style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">ആദ്യ നിഗമനം (Premise 1):</span> തലച്ചോറിന്റെ ജൈവിക പ്രവർത്തനങ്ങളാണ് മനസ്സിന് കാരണമാകുന്നത്.</li>
+            <li><span class="hl-yellow">രണ്ടാം നിഗമനം (Premise 2):</span> സിന്റാക്സ് (വാക്യഘടന) മാത്രം കൊണ്ട് ഒരിക്കലും സെമാന്റിക്സ് (അർത്ഥബോധം) ഉണ്ടാകില്ല.</li>
+            <li><span class="hl-yellow">മൂന്നാം നിഗമനം (Premise 3):</span> കമ്പ്യൂട്ടർ പ്രോഗ്രാമുകൾ പൂർണ്ണമായും നിർവ്വചിക്കപ്പെടുന്നത് അവയുടെ ഔപചാരിക സിന്റാക്സ് അടിസ്ഥാനമാക്കിയാണ്.</li>
+            <li><span class="hl-yellow">അന്തിമ തീരുമാനം (Conclusion):</span> കമ്പ്യൂട്ടർ പ്രോഗ്രാം പ്രവർത്തിപ്പിച്ചു എന്നത് കൊണ്ട് മാത്രം അവിടെ മനസ്സ് രൂപപ്പെടുന്നില്ല; തലച്ചോറിന്റെ പ്രവർത്തനം വെറുമൊരു പ്രോഗ്രാം റൺ ചെയ്യലല്ല.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Intentionality and Mental States</span>
+          <span class="section-title-ml">(ഇന്റെൻഷണാലിറ്റിയും മാനസികാവസ്ഥകളും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Intentionality</span> is the property of mental states by which they are directed at, about, or of objects and states of affairs in the world. A computer manipulating symbols possesses no intrinsic "aboutness"; the meaning is entirely in the minds of the human users who interpret the symbols.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ഇന്റെൻഷണാലിറ്റി (Intentionality):</span> ഒരു മാനസികാവസ്ഥയ്ക്ക് യഥാർത്ഥ ലോകത്തിലെ വസ്തുക്കളെയോ അനുഭവങ്ങളെയോ കുറിച്ച് ചിന്തിക്കാനുള്ള ആന്തരിക ശേഷി. കമ്പ്യൂട്ടറിന് ഈ ശേഷിയില്ല; അത് നൽകുന്ന വിവരങ്ങൾക്ക് അർത്ഥം കൽപ്പിക്കുന്നത് അത് വായിക്കുന്ന മനുഷ്യന്റെ മനസ്സാണ്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 2 · Chapter 6: Chinese Room Experiment</span>
+      <span>Page 4</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 6</span>
+        <span class="top-bar-right">Page 5 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Counter-Arguments: 1. The Systems Reply</span>
+          <span class="section-title-ml">(പ്രതിവാദങ്ങൾ: 1. സിസ്റ്റംസ് മറുപടി)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">The Objection:</span> Articulated by cognitive scientists at Berkeley and MIT: While the individual person inside the room does not understand Chinese, <span class="hl-yellow">the entire system as an integrated whole</span> (comprising the person, the rulebook, the baskets of symbols, and the room) does understand Chinese. Understanding is a property of the whole system, just as a single neuron does not think, but the whole brain does.</p>
+          <p><span class="hl-yellow">Searle's Rebuttal:</span> Searle offered a decisive modification. Imagine the person internalizes the entire system: he memorizes the rulebook and all the symbol baskets, and does all the calculations in his head outdoors. Now he <em>is</em> the entire system! Yet, he still doesn't understand a word of Chinese. He knows only formal associations, not what the words mean.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">എതിർവാദം:</span> മുറിക്കുള്ളിലിരിക്കുന്ന ആൾക്ക് ചൈനീസ് അറിയില്ല എന്നത് ശരിയാണ്. എന്നാൽ <span class="hl-yellow">ആ മനുഷ്യനും, നിയമപുസ്തകവും, അക്ഷരപ്പെട്ടികളും, മുറിയും ചേർന്ന സമഗ്രമായ സിസ്റ്റം (Entire System)</span> ചൈനീസ് ഭാഷ മനസ്സിലാക്കുന്നുണ്ട്. തലച്ചോറിലെ ഒരൊറ്റ ന്യൂറോണിന് ചിന്തിക്കാനാവില്ലെങ്കിലും തലച്ചോറിന് മുഴുവനായി ചിന്തിക്കാൻ കഴിയുന്നത് പോലെയാണിത്.</p>
+          <p><span class="hl-yellow">സിയറലിന്റെ മറുപടി:</span> ആ മനുഷ്യൻ നിയമപുസ്തകവും അക്ഷരങ്ങളും കാണാപാഠം പഠിച്ച് മനസ്സിൽ വെച്ച് തുറസ്സായ സ്ഥലത്തിരുന്ന് പ്രവർത്തിക്കുന്നു എന്ന് കരുതുക. ഇപ്പോൾ ആ വ്യക്തി തന്നെയാണ് മുഴുവൻ സിസ്റ്റവും. എന്നിട്ടും അയാൾക്ക് ചൈനീസ് ഭാഷയുടെ അർത്ഥം അറിയില്ലല്ലോ! അതിനാൽ സിസ്റ്റം മുഴുവനായാലും അർത്ഥം ജനിക്കുന്നില്ല.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Emergence vs. Empty Symbol Manipulation</span>
+          <span class="section-title-ml">(എമർജൻസും വെറും ചിഹ്നങ്ങളുടെ കണക്കുകൂട്ടലും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Multiplying zero understanding across multiple components still totals zero understanding. Stacking syntactic operations never produces semantic emergence.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>അറിവില്ലായ്മയെ എത്ര ഭാഗങ്ങളായി വിഭജിച്ചാലും ആകെത്തുക അറിവില്ലായ്മ മാത്രമാണ്. അർത്ഥമില്ലാത്ത ചിഹ്നങ്ങൾ കൂട്ടിവെച്ചാൽ പെട്ടെന്ന് അർത്ഥബോധം സ്വയംഭൂവായി ഉണ്ടാവില്ല.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 2 · Chapter 6: Chinese Room Experiment</span>
+      <span>Page 5</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 6</span>
+        <span class="top-bar-right">Page 6 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Counter-Arguments: 2. The Robot Reply</span>
+          <span class="section-title-ml">(പ്രതിവാദങ്ങൾ: 2. റോബോട്ട് മറുപടി)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">The Objection:</span> Proposed by roboticists: The failure of understanding in the Chinese room stems from isolation from the physical environment. If the computer program is placed inside a mobile robot equipped with television cameras, tactile sensors, and motorized arms that interact with real objects in the world, the symbols will gain causal meaning (grounding) through direct sensory interaction.</p>
+          <p><span class="hl-yellow">Searle's Rebuttal:</span> Searle replied that adding perceptual inputs and motor outputs changes nothing fundamental. Imagine the person in the room receives sensor data as numbers (e.g., 0101 from the camera) and sends commands as numbers to motors. To the person inside, it is still just symbol shuffling without any semantic awareness of what those numbers represent.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">എതിർവാദം:</span> ചൈനീസ് റൂം ഒരു അടഞ്ഞ മുറിയായതുകൊണ്ടാണ് അർത്ഥം മനസ്സിലാകാത്തത്. ഈ പ്രോഗ്രാം ഒരു ചലിക്കുന്ന റോബോട്ടിൽ ഘടിപ്പിച്ച്, ക്യാമറകളും സെൻസറുകളും കൈകാലുകളും നൽകി യഥാർത്ഥ ലോകത്തിലേക്ക് വിട്ടാൽ, വസ്തുക്കളുമായുള്ള സമ്പർക്കത്തിലൂടെ ചിഹ്നങ്ങൾക്ക് അർത്ഥമുണ്ടാകും.</p>
+          <p><span class="hl-yellow">സിയറലിന്റെ മറുപടി:</span> ക്യാമറകളും ചക്രങ്ങളും ഘടിപ്പിച്ചാലും അടിസ്ഥാന യാഥാർത്ഥ്യം മാറുന്നില്ല. റോബോട്ടിന്റെ ക്യാമറയിൽ നിന്നുള്ള കാഴ്ചകൾ അകത്തിരിക്കുന്ന ആൾക്ക് വെറും അക്കങ്ങളോ (0101) ചിഹ്നങ്ങളോ ആയി മാത്രമേ എത്തുന്നുള്ളൂ. അയാൾ അപ്പോഴും കാണുന്നത് ചിഹ്നങ്ങൾ മാത്രമാണ്, പുറംലോകത്തെക്കുറിച്ചുള്ള അറിവല്ല.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Concession of Strong AI in the Robot Reply</span>
+          <span class="section-title-ml">(റോബോട്ട് വാദത്തിലെ പരാജയം സമ്മതിക്കൽ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Searle pointed out that the Robot Reply actually tacitly concedes Strong AI's defeat, because it admits that <span class="hl-yellow">pure cognition cannot be achieved by software alone</span>; it requires causal physical interaction with the world.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഈ മറുപടിയിലൂടെ എതിരാളികൾ യഥാർത്ഥത്തിൽ സ്ട്രോങ് AI പരാജയപ്പെട്ടുവെന്ന് സമ്മതിക്കുകയാണെന്ന് സിയറൽ ചൂണ്ടിക്കാട്ടി: <span class="hl-yellow">വെറും സോഫ്റ്റ്‌വെയർ കൊണ്ട് ചിന്ത സാധ്യമല്ലെന്നും ഭൗതിക സമ്പർക്കം അത്യന്താപേക്ഷിതമാണെന്നും അവർ സമ്മതിക്കുന്നു</span>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 2 · Chapter 6: Chinese Room Experiment</span>
+      <span>Page 6</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 6</span>
+        <span class="top-bar-right">Page 7 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Counter-Arguments: 3. The Brain Simulator Reply</span>
+          <span class="section-title-ml">(പ്രതിവാദങ്ങൾ: 3. ബ്രെയിൻ സിമുലേറ്റർ മറുപടി)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">The Objection:</span> Suppose we construct a program that simulates the exact sequence of neurochemical synapses and neuronal firings of a native Chinese speaker's brain. Since the program faithfully reproduces the operational wiring of the brain, it must reproduce understanding.</p>
+          <p><span class="hl-yellow">Searle's Rebuttal:</span> Searle imagined replacing the software simulation with a vast network of water pipes, valves, and water tanks managed by the English speaker. Turning valves on and off to simulate neurons firing does not make the water pipes conscious or understand Chinese! Simulating the physics of a hurricane inside a computer will not get anyone wet; likewise, <span class="hl-yellow">simulating a brain does not create a mind</span>.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">എതിർവാദം:</span> ചൈനീസ് സംസാരിക്കുന്ന ഒരാളുടെ തലച്ചോറിലെ ഓരോ ന്യൂറോണുകളുടെയും നാഡീവ്യൂഹങ്ങളുടെയും പ്രവർത്തനങ്ങളെ കൃത്യമായി സിമുലേറ്റ് ചെയ്യുന്ന ഒരു പ്രോഗ്രാം നിർമ്മിച്ചാൽ തലച്ചോറിന് സമാനമായ അറിവ് അവിടെ ഉണ്ടാകില്ലേ?</p>
+          <p><span class="hl-yellow">സിയറലിന്റെ മറുപടി:</span> ഒരു വാട്ടർ പൈപ്പും വാൽവുകളും വെച്ച് ന്യൂറോണുകളുടെ പ്രവർത്തനം കാണിക്കുന്ന പരീക്ഷണം സങ്കൽപ്പിക്കുക. പൈപ്പിലൂടെ വെള്ളം ഒഴുകുന്നത് നിയന്ത്രിച്ചാൽ ആ പൈപ്പുകൾക്ക് ചൈനീസ് ഭാഷ മനസ്സിലാകുമോ? കമ്പ്യൂട്ടറിൽ ഒരു പേമാരി സിമുലേറ്റ് ചെയ്താൽ ആരും നനയില്ല; അതുപോലെ <span class="hl-yellow">തലച്ചോറിനെ സിമുലേറ്റ് ചെയ്തതുകൊണ്ട് മനസ്സ് ഉണ്ടാവില്ല</span>.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Simulation vs. Duplication</span>
+          <span class="section-title-ml">(സിമുലേഷനും യഥാർത്ഥ സൃഷ്ടിയും തമ്മിലുള്ള അന്തരം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Simulation is not duplication.</span> A simulation of digestion produces no actual calories; a simulation of combustion burns no wood; and a computational simulation of cognition produces no conscious comprehension.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">സിമുലേഷൻ ഒരിക്കലും യഥാർത്ഥ സൃഷ്ടിയല്ല.</span> ദഹന പ്രക്രിയ കമ്പ്യൂട്ടറിൽ സിമുലേറ്റ് ചെയ്താൽ ഊർജ്ജം ലഭിക്കില്ല; കത്തുന്നത് സിമുലേറ്റ് ചെയ്താൽ വിറക് കരിയില്ല; അതുപോലെ ചിന്ത സിമുലേറ്റ് ചെയ്താൽ ബോധം ഉണ്ടാകില്ല.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 2 · Chapter 6: Chinese Room Experiment</span>
+      <span>Page 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 6</span>
+        <span class="top-bar-right">Page 8 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Counter-Arguments: 4. The Other Minds Reply</span>
+          <span class="section-title-ml">(പ്രതിവാദങ്ങൾ: 4. മറ്റ് മനസ്സുകളെക്കുറിച്ചുള്ള വാദം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">The Objection:</span> How do you know that other human beings understand Chinese? Only by their outward linguistic behavior. If a computer exhibits the exact same behavior, we must attribute understanding to it as well, or fall into solipsism.</p>
+          <p><span class="hl-yellow">Searle's Rebuttal:</span> In cognitive science, attributing understanding is not an epistemological guessing game based on behavior; it is an investigation into underlying causal mechanisms. We attribute understanding to other humans because they possess biological brains with the same neurobiological causal powers as ours.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">എതിർവാദം:</span> മറ്റ് മനുഷ്യർക്ക് ചൈനീസ് അറിയാമെന്ന് നാം മനസ്സിലാക്കുന്നത് അവരുടെ ബാഹ്യ സംസാരത്തിലൂടെ മാത്രമാണ്. കമ്പ്യൂട്ടറും അതേപോലെ സംസാരിക്കുമ്പോൾ അതിന് അറിവുണ്ടെന്ന് സമ്മതിക്കേണ്ടതല്ലേ?</p>
+          <p><span class="hl-yellow">സിയറലിന്റെ മറുപടി:</span> ശാസ്ത്രത്തിൽ അറിവ് എന്നത് വെറും പെരുമാറ്റത്തെ നോക്കിയുള്ള ഊഹമല്ല. മറ്റ് മനുഷ്യർക്ക് നമ്മുടേതിന് സമാനമായ ജൈവിക തലച്ചോറും കഴിവുകളും ഉള്ളതുകൊണ്ടാണ് നാം അവരെ വിശ്വസിക്കുന്നത്. യന്ത്രത്തിന് ഈ ജൈവിക ശക്തിയില്ല.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Searle's Positive Theory: Biological Naturalism</span>
+          <span class="section-title-ml">(സിയറലിന്റെ ബയോളജിക്കൽ നാച്ചുറലിസം സിദ്ധാന്തം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Biological Naturalism</span> posits that consciousness and mental phenomena are real biological products caused by micro-level neurobiological processes in the brain, much like digestion is caused by the stomach. Mental states cannot be disembodied or instantiated purely by software.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ബയോളജിക്കൽ നാച്ചുറലിസം:</span> ആമാശയം ദഹനം സാധ്യമാക്കുന്നതുപോലെ, തലച്ചോറിലെ ജൈവ-രാസ പ്രവർത്തനങ്ങളുടെ സ്വാഭാവിക ഫലമാണ് ബോധവും മനസ്സും. വെറുമൊരു സോഫ്റ്റ്‌വെയർ കോഡ് പ്രവർത്തിപ്പിച്ചാൽ ഈ ജൈവിക ബോധം ഉണ്ടാകില്ല.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 2 · Chapter 6: Chinese Room Experiment</span>
+      <span>Page 8</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 6</span>
+        <span class="top-bar-right">Page 9 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Stevan Harnad's Symbol Grounding Problem</span>
+          <span class="section-title-ml">(സ്റ്റീവൻ ഹർനാഡിന്റെ സിംബൽ ഗ്രൗണ്ടിംഗ് പ്രശ്നം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Inspired directly by Searle's thought experiment, cognitive scientist <span class="hl-green">Stevan Harnad (1990)</span> formulated the famous <span class="hl-yellow">Symbol Grounding Problem</span>: How can the semantic interpretation of a formal symbol system be made intrinsic rather than parasitic on meanings in the human observer's head?</p>
+          <p>Harnad argued that a system that merely defines symbols through other symbols is like a non-Chinese speaker attempting to learn Chinese using exclusively a Chinese-to-Chinese dictionary: each word leads to endless other circular definitions without ever connecting to a grounded physical reality.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>സിയറലിന്റെ പരീക്ഷണത്തിൽ നിന്ന് പ്രചോദനം ഉൾക്കൊണ്ട് <span class="hl-green">സ്റ്റീവൻ ഹർനാഡ് (1990)</span> <span class="hl-yellow">സിംബൽ ഗ്രൗണ്ടിംഗ് പ്രോബ്ലം</span> രൂപപ്പെടുത്തി: ചിഹ്നങ്ങൾക്ക് ബാഹ്യമായ വ്യാഖ്യാനങ്ങൾക്ക് പകരം സ്വന്തമായ ആന്തരിക അർത്ഥം എങ്ങനെ ലഭിക്കും?</p>
+          <p>ചൈനീസ് അറിയാത്ത ഒരാൾ ചൈനീസ്-ടു-ചൈനീസ് ഡിക്ഷണറി നോക്കി പഠിക്കാൻ ശ്രമിക്കുന്നത് പോലെയാണിത്: ഒരു വാക്കിന് പകരം മറ്റൊരു വാക്ക് ലഭിക്കുമെങ്കിലും ഒന്നിന്റെയും യഥാർത്ഥ അർത്ഥം മനസ്സിലാകില്ല. ചിഹ്നങ്ങൾ യാഥാർത്ഥ്യവുമായി ബന്ധിപ്പിക്കപ്പെടാതെ കിടക്കുന്നു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Relevance to Contemporary Large Language Models</span>
+          <span class="section-title-ml">(ആധുനിക ഭാഷാ മോഡലുകളിൽ ഇതിന്റെ പ്രസക്തി)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Modern Large Language Models predict next tokens based on statistical co-occurrences. While their syntax is astonishingly sophisticated, philosophers ask: <span class="hl-yellow">Are they anything more than monumental Chinese Rooms</span>, manipulating vectors without conscious semantics?</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഇന്നത്തെ ആധുനിക AI മോഡലുകൾ വാക്യങ്ങൾ നിർമ്മിക്കുന്നത് മുൻപത്തെ വാക്കുകളുടെ സ്ഥിതിവിവരക്കണക്കുകൾ നോക്കിയാണ്. അവ അത്യന്തം ഗംഭീരമായി സംസാരിക്കുമ്പോഴും, അവ യഥാർത്ഥത്തിൽ <span class="hl-yellow">ഒരു വലിയ ചൈനീസ് റൂം തന്നെയല്ലേ</span> എന്ന ചോദ്യം ഇന്നും പ്രസക്തമാണ്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 2 · Chapter 6: Chinese Room Experiment</span>
+      <span>Page 9</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 6</span>
+        <span class="top-bar-right">Page 10 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Comparative Synthesis: Strong AI vs. John Searle</span>
+          <span class="section-title-ml">(താരതമ്യ പഠനം: സ്ട്രോങ് AI-യും ജോൺ സിയറലും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>The philosophical chasm between computational functionalism and Searle's biological realism:</p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 8.5pt;">
+            <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+              <th style="padding: 5px; text-align: left;">Dimension</th>
+              <th style="padding: 5px; text-align: left;">Strong AI (Turing / Functionalists)</th>
+              <th style="padding: 5px; text-align: left;">John Searle (Biological Naturalism)</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Substrate</td>
+              <td style="padding: 5px;">Substrate-independent; silicon can think.</td>
+              <td style="padding: 5px;">Substrate-dependent; requires brain-like causal biology.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Understanding</td>
+              <td style="padding: 5px;">Passing Turing Test is sufficient proof.</td>
+              <td style="padding: 5px;">Behavioral output is syntax; comprehension requires semantics.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Mind Nature</td>
+              <td style="padding: 5px;">Software program running on hardware.</td>
+              <td style="padding: 5px;">Emergent neurobiological biological process.</td>
+            </tr>
+          </table>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>സ്ട്രോങ് AI-യും സിയറലിന്റെ സിദ്ധാന്തവും തമ്മിലുള്ള പ്രധാന താരതമ്യം:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45; font-size: 8.5pt;">
+            <li><strong>മാധ്യമം (Substrate):</strong> സ്ട്രോങ് AI സിലിക്കൺ ചിപ്പുകൾക്കും മനസ്സാകാമെന്ന് പറയുമ്പോൾ, തലച്ചോറിന് സമാനമായ ജൈവിക ശേഷി വേണമെന്ന് സിയറൽ വാദിക്കുന്നു.</li>
+            <li><strong>അറിവ് (Understanding):</strong> ട്യൂറിംഗ് ടെസ്റ്റ് ജയിച്ചാൽ ബുദ്ധിയായി എന്ന് ഫങ്ഷണലിസ്റ്റുകൾ പറയുമ്പോൾ, അത് വെറും വാക്യഘടനയാണെന്നും യഥാർത്ഥ അർത്ഥബോധമല്ലെന്നും സിയറൽ പറയുന്നു.</li>
+            <li><strong>മനസ്സ് (Mind):</strong> മനസ്സ് വെറുമൊരു സോഫ്റ്റ്‌വെയറാണെന്ന് കമ്പ്യൂട്ടേഷണലിസവും, തലച്ചോറിന്റെ ജൈവിക ഫലമാണെന്ന് സിയറലും വ്യക്തമാക്കുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 2 · Chapter 6: Chinese Room Experiment</span>
+      <span>Page 10</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 6</span>
+        <span class="top-bar-right">Page 11 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">University Academic Exercises: Knock Your Brain</span>
+          <span class="section-title-ml">(യൂണിവേഴ്സിറ്റി Curriculum പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ)</span>
+        </div>
+        <div class="block-en" style="font-size: 8.5pt;">
+          <p><strong>1. The Chinese Room argument was proposed by:</strong><br/>
+          (a) Alan Turing &nbsp; (b) John Searle &nbsp; (c) Hilary Putnam &nbsp; (d) Marvin Minsky<br/>
+          <em>Answer:</em> <span class="hl-green">(b) John Searle</span></p>
+          <p><strong>2. The Chinese Room thought experiment was designed to challenge:</strong><br/>
+          (a) Weak AI &nbsp; (b) Functionalism &nbsp; (c) Strong AI &nbsp; (d) Behaviorism<br/>
+          <em>Answer:</em> <span class="hl-yellow">(c) Strong AI</span></p>
+          <p><strong>3. In the Chinese Room, the person inside the room is manipulating:</strong><br/>
+          (a) Electrical circuits &nbsp; (b) Meanings &nbsp; (c) Symbols according to rules &nbsp; (d) Neural signals<br/>
+          <em>Answer:</em> <span class="hl-yellow">(c) Symbols according to rules</span></p>
+          <p><strong>4. Which test is indirectly criticized by the Chinese Room argument?</strong><br/>
+          (a) IQ Test &nbsp; (b) Turing Test &nbsp; (c) CAPTCHA &nbsp; (d) SAT<br/>
+          <em>Answer:</em> <span class="hl-yellow">(b) Turing Test</span></p>
+          <p><strong>5. Searle’s argument distinguishes between:</strong><br/>
+          (a) Syntax and semantics &nbsp; (b) Hardware and software &nbsp; (c) Mind and body &nbsp; (d) Input and output<br/>
+          <em>Answer:</em> <span class="hl-yellow">(a) Syntax and semantics</span></p>
+        </div>
+        <div class="block-ml" style="font-size: 8.5pt;">
+          <p><strong>മലയാളം സംഗ്രഹം & Curriculum ഉത്തരങ്ങൾ:</strong><br/>
+          1. ചൈനീസ് റൂം വാദം അവതരിപ്പിച്ചത്: <span class="hl-green">ജോൺ സിയറൽ (John Searle)</span>.<br/>
+          2. ഈ പരീക്ഷണം വെല്ലുവിളിക്കുന്നത്: <span class="hl-yellow">സ്ട്രോങ് AI (Strong AI)</span>.<br/>
+          3. മുറിക്കുള്ളിലിരിക്കുന്ന ആൾ കൈകാര്യം ചെയ്യുന്നത്: <span class="hl-yellow">നിയമങ്ങൾക്കനുസൃതമായ ചിഹ്നങ്ങൾ (Symbols according to rules)</span>.<br/>
+          4. പരോക്ഷമായി വിമർശിക്കപ്പെടുന്ന പരീക്ഷ: <span class="hl-yellow">ട്യൂറിംഗ് ടെസ്റ്റ് (Turing Test)</span>.<br/>
+          5. സിയറലിന്റെ വാദം വേർതിരിക്കുന്നത്: <span class="hl-yellow">സിന്റാക്സും സെമാന്റിക്സും (Syntax and semantics)</span>.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Unleash Your Potential: Detailed University Questions</span>
+          <span class="section-title-ml">(വിശദമായ പരീക്ഷാ ചോദ്യങ്ങൾ)</span>
+        </div>
+        <div class="block-en" style="font-size: 8.5pt;">
+          <p><strong>Q1: What is the Chinese Room Argument put forth by John Searle?</strong><br/>
+          <em>Core Answer:</em> A thought experiment showing that rule-based syntactic symbol shuffling does not produce semantic comprehension; refutes Strong AI and the Turing Test.</p>
+          <p><strong>Q2: What distinguishes syntax from semantics in the Chinese Room Argument?</strong><br/>
+          <em>Core Answer:</em> Syntax concerns grammatical rule manipulation; semantics concerns intentional meaning and conscious understanding. Syntax is not sufficient for semantics.</p>
+        </div>
+        <div class="block-ml" style="font-size: 8.5pt;">
+          <p><strong>ചോദ്യം 1: ജോൺ സിയറലിന്റെ ചൈനീസ് റൂം വാദം വിശദീകരിക്കുക.</strong><br/>
+          <em>ഉത്തരം:</em> ചിഹ്നങ്ങൾ നിയമാനുസൃതം കൈകാര്യം ചെയ്യുന്നത് കൊണ്ട് മാത്രം അർത്ഥബോധം ഉണ്ടാകില്ലെന്നും സ്ട്രോങ് AI തെറ്റാണെന്നും തെളിയിക്കുന്ന പരീക്ഷണം.</p>
+          <p><strong>ചോദ്യം 2: സിന്റാക്സും സെമാന്റിക്സും തമ്മിലുള്ള വ്യത്യാസം എന്താണ്?</strong><br/>
+          <em>ഉത്തരം:</em> സിന്റാക്സ് എന്നത് ഔപചാരിക വാക്യഘടനയും ചിഹ്നങ്ങളുടെ ക്രമവുമാണ്; സെമാന്റിക്സ് എന്നത് അവയുടെ ആന്തരിക അർത്ഥമാണ്. സിന്റാക്സ് സെമാന്റിക്സിന് പകരമാവില്ല.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 2 · Chapter 6: Chinese Room Experiment</span>
+      <span>Page 11</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 6</span>
+        <span class="top-bar-right">Page 12 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="chapter-hero" style="padding: 6px 12px; margin-bottom: 8px;">
+        <div class="hero-tag">🎯 Quick Revision & Exam Mastery</div>
+        <div class="hero-title-en" style="font-size: 13pt;">20 Core Academic Concepts: Chinese Room Experiment</div>
+        <div class="hero-title-ml" style="font-size: 10pt;">20 പ്രധാന പരീക്ഷാ ആശയങ്ങൾ: ചൈനീസ് റൂം പരീക്ഷണം</div>
+      </div>
+
+      <div class="grid-container">
+        <!-- 1 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">👨‍🏫 Philosopher</span><span class="point-title-en">John Searle</span></div>
+          <div class="point-title-ml">ജോൺ സിയറൽ</div>
+          <div class="point-body">American philosopher who devised the Chinese Room argument in his seminal 1980 paper.</div>
+          <div class="point-body-ml">1980-ൽ ചൈനീസ് റൂം പരീക്ഷണം ആവിഷ്കരിച്ച പ്രമുഖ അമേരിക്കൻ തത്ത്വചിന്തകൻ.</div>
+        </div>
+        <!-- 2 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">📜 Landmark Essay</span><span class="point-title-en">Minds, Brains, and Programs (1980)</span></div>
+          <div class="point-title-ml">മൈൻഡ്സ്, ബ്രെയിൻസ്, ആൻഡ് പ്രോഗ്രാംസ്</div>
+          <div class="point-body">Foundational treatise challenging functionalism and computationalism in cognitive science.</div>
+          <div class="point-body-ml">കമ്പ്യൂട്ടേഷണൽ മൈൻഡ് വാദത്തെ തകർത്ത പ്രസിദ്ധമായ 1980-ലെ പ്രബന്ധം.</div>
+        </div>
+        <!-- 3 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🎯 Prime Target</span><span class="point-title-en">Strong AI</span></div>
+          <div class="point-title-ml">സ്ട്രോങ് AI</div>
+          <div class="point-body">The doctrine that appropriately programmed computers literally have minds and genuine understanding.</div>
+          <div class="point-body-ml">കമ്പ്യൂട്ടറുകൾക്ക് യഥാർത്ഥത്തിൽ മനസ്സും ചിന്താശേഷിയുമുണ്ടെന്ന വാദം.</div>
+        </div>
+        <!-- 4 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🛠️ Tool View</span><span class="point-title-en">Weak AI</span></div>
+          <div class="point-title-ml">വീക്ക് AI</div>
+          <div class="point-body">The uncontested view that computers are useful tools for simulating mental processes.</div>
+          <div class="point-body-ml">കമ്പ്യൂട്ടർ മനസ്സിനെ അനുകരിക്കാനുള്ള വെറുമൊരു ഉപകരണം മാത്രമാണെന്ന കാഴ്ചപ്പാട്.</div>
+        </div>
+        <!-- 5 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">📐 Grammar</span><span class="point-title-en">Syntax</span></div>
+          <div class="point-title-ml">സിന്റാക്സ് (വാക്യഘടന)</div>
+          <div class="point-body">Formal, algorithmic manipulation of physical symbol shapes according to program rules.</div>
+          <div class="point-body-ml">അർത്ഥമില്ലാതെ ചിഹ്നങ്ങൾ നിയമങ്ങൾക്കനുസരിച്ച് ക്രമീകരിക്കുന്ന പ്രക്രിയ.</div>
+        </div>
+        <!-- 6 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">💡 Meaning</span><span class="point-title-en">Semantics</span></div>
+          <div class="point-title-ml">സെമാന്റിക്സ് (അർത്ഥബോധം)</div>
+          <div class="point-body">Conceptual understanding, mental content, and intentional directedness towards reality.</div>
+          <div class="point-body-ml">ചിഹ്നങ്ങൾ നൽകുന്ന യഥാർത്ഥ അർത്ഥവും ആന്തരിക ബോധവും.</div>
+        </div>
+        <!-- 7 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">⚡ Core Axiom</span><span class="point-title-en">Syntax Insufficiency</span></div>
+          <div class="point-title-ml">സിന്റാക്സിന്റെ അപര്യാപ്തത</div>
+          <div class="point-body">Syntax alone is neither constitutive of nor sufficient for semantics.</div>
+          <div class="point-body-ml">വെറും വാക്യഘടന ഒരിക്കലും അർത്ഥബോധത്തിന് പകരമാവില്ലെന്ന സിയറലിന്റെ തത്ത്വം.</div>
+        </div>
+        <!-- 8 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">📦 Analogy</span><span class="point-title-en">The Chinese Room Setup</span></div>
+          <div class="point-title-ml">ചൈനീസ് റൂം സംവിധാനം</div>
+          <div class="point-body">English speaker, rulebook (program), and symbol baskets: yields perfect output with zero understanding.</div>
+          <div class="point-body-ml">ചൈനീസ് അറിയാത്ത ഒരാൾ പുസ്തകം നോക്കി ചൈനീസ് ഭാഷയിൽ മറുപടി നൽകുന്നു.</div>
+        </div>
+        <!-- 9 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🥊 Refutation</span><span class="point-title-en">Turing Test Critique</span></div>
+          <div class="point-title-ml">ട്യൂറിംഗ് ടെസ്റ്റിന്റെ പരാജയം</div>
+          <div class="point-body">Passing the imitation test does not demonstrate comprehension, only syntactic manipulation.</div>
+          <div class="point-body-ml">ടെസ്റ്റ് വിജയിച്ചാലും അവിടെ അർത്ഥബോധം ഇല്ലെന്ന് തെളിയിക്കുന്നു.</div>
+        </div>
+        <!-- 10 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🧩 System</span><span class="point-title-en">The Systems Reply</span></div>
+          <div class="point-title-ml">സിസ്റ്റംസ് മറുപടി</div>
+          <div class="point-body">Claims the entire room system understands; refuted because memorizing the room still yields no semantics.</div>
+          <div class="point-body-ml">മുഴുവൻ സിസ്റ്റത്തിനും അറിവുണ്ടെന്ന വാദത്തെ സിയറൽ തള്ളിക്കളഞ്ഞു.</div>
+        </div>
+        <!-- 11 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🤖 Embodiment</span><span class="point-title-en">The Robot Reply</span></div>
+          <div class="point-title-ml">റോബോട്ട് മറുപടി</div>
+          <div class="point-body">Claims sensory-motor grounding gives symbols meaning; refuted as camera inputs are still just numbers.</div>
+          <div class="point-body-ml">ക്യാമറയും ചക്രങ്ങളും വെച്ചാലും അക്കങ്ങൾ അർത്ഥമായി മാറുന്നില്ല.</div>
+        </div>
+        <!-- 12 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🌊 Analogy</span><span class="point-title-en">The Brain Simulator Reply</span></div>
+          <div class="point-title-ml">ബ്രെയിൻ സിമുലേറ്റർ മറുപടി</div>
+          <div class="point-body">Simulating neurons via water pipes produces no consciousness; simulation is not duplication.</div>
+          <div class="point-body-ml">തലച്ചോറിനെ സിമുലേറ്റ് ചെയ്യുന്നത് വാട്ടർ പൈപ്പുകൾ വഴി വെള്ളം ഒഴുക്കുന്നത് പോലെയാണ്.</div>
+        </div>
+        <!-- 13 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🧠 Causality</span><span class="point-title-en">Biological Naturalism</span></div>
+          <div class="point-title-ml">ബയോളജിക്കൽ നാച്ചുറലിസം</div>
+          <div class="point-body">Consciousness is causally produced by neurobiological brain chemistry, not by abstract computation.</div>
+          <div class="point-body-ml">തലച്ചോറിന്റെ ജൈവിക പ്രവർത്തനങ്ങളുടെ ഫലമാണ് മനസ്സ്.</div>
+        </div>
+        <!-- 14 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🧭 Aboutness</span><span class="point-title-en">Intentionality</span></div>
+          <div class="point-title-ml">ഇന്റെൻഷണാലിറ്റി</div>
+          <div class="point-body">The mental capacity to refer to real external entities; computers have derived, not original intentionality.</div>
+          <div class="point-body-ml">ബാഹ്യ യാഥാർത്ഥ്യങ്ങളെക്കുറിച്ച് ബോധപൂർവ്വം ചിന്തിക്കാനുള്ള കഴിവ്.</div>
+        </div>
+        <!-- 15 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">⚓ Grounding</span><span class="point-title-en">Symbol Grounding Problem</span></div>
+          <div class="point-title-ml">സിംബൽ ഗ്രൗണ്ടിംഗ് പ്രശ്നം</div>
+          <div class="point-body">Harnad's question: how to attach intrinsic meanings to formal tokens without human interpretation.</div>
+          <div class="point-body-ml">ചിഹ്നങ്ങളെ യഥാർത്ഥ അർത്ഥവുമായി ബന്ധിപ്പിക്കാനുള്ള പ്രതിസന്ധി.</div>
+        </div>
+        <!-- 16 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">⛈️ Metaphor</span><span class="point-title-en">Weather Simulation Metaphor</span></div>
+          <div class="point-title-ml">പേമാരി സിമുലേഷൻ ഉപമ</div>
+          <div class="point-body">Simulating a thunderstorm gets nobody wet; simulating thought produces no understanding.</div>
+          <div class="point-body-ml">കമ്പ്യൂട്ടറിൽ മഴ സിമുലേറ്റ് ചെയ്താൽ ആരും നനയില്ല; ചിന്തയും അതുപോലെയാണ്.</div>
+        </div>
+        <!-- 17 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🔍 Skepticism</span><span class="point-title-en">Other Minds Distinction</span></div>
+          <div class="point-title-ml">മറ്റ് മനസ്സുകളെക്കുറിച്ചുള്ള വേർതിരിവ്</div>
+          <div class="point-body">We assume humans understand due to shared biology, not merely outward mimicry.</div>
+          <div class="point-body-ml">മനുഷ്യർക്ക് സമാനമായ ജൈവിക തലച്ചോറുള്ളതുകൊണ്ടാണ് നാം അവരെ വിശ്വസിക്കുന്നത്.</div>
+        </div>
+        <!-- 18 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🔤 LLM Link</span><span class="point-title-en">Stochastic Token Generators</span></div>
+          <div class="point-title-ml">ആധുനിക ടോക്കൺ ജനറേറ്ററുകൾ</div>
+          <div class="point-body">LLMs are massive automated Chinese Rooms predicting token sequences without mental models.</div>
+          <div class="point-body-ml">ഇന്നത്തെ AI മോഡലുകളും അർത്ഥമറിയാതെ വാക്കുകൾ പ്രവചിക്കുന്ന ചൈനീസ് റൂമുകളാണ്.</div>
+        </div>
+        <!-- 19 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">⚙️ Contrast</span><span class="point-title-en">Hardware Independence Fallacy</span></div>
+          <div class="point-title-ml">ഹാർഡ്‌വെയർ സ്വതന്ത്രതയിലെ തെറ്റ്</div>
+          <div class="point-body">Searle refutes functionalist multiple realizability: physics and biology matter for real minds.</div>
+          <div class="point-body-ml">മനസ്സ് ഏത് ഉപകരണത്തിലും പ്രവർത്തിപ്പിക്കാമെന്ന വാദത്തെ സിയറൽ തള്ളുന്നു.</div>
+        </div>
+        <!-- 20 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🏁 Legacy</span><span class="point-title-en">Permanent Check on AI Hubris</span></div>
+          <div class="point-title-ml">AI ഗവേഷണത്തിലെ സ്ഥിരം ജാഗ്രത</div>
+          <div class="point-body">The decisive reminder that calculating answers is fundamentally distinct from understanding them.</div>
+          <div class="point-body-ml">ഉത്തരങ്ങൾ കണക്കുകൂട്ടുന്നതും അത് മനസ്സിലാക്കുന്നതും രണ്ടാണ് എന്ന അനശ്വര സത്യം.</div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 2 · Chapter 6: 20 Core Academic Concepts</span>
+      <span>Page 12</span>
+    </div>
+  </div>
+</body></html>

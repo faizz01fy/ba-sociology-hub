@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta charset="UTF-8">
+<title>ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ - അധ്യായ പഠന സഹായി</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  @page {
+    size: A4 portrait;
+    margin: 14mm 13mm 14mm 13mm;
+    @top-right {
+      content: "മലയാള സാഹിത്യാനുശീലനം · അധ്യായ പഠന സഹായി";
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Malayalam', 'Manjari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .chapter-header {
+    background: linear-gradient(135deg, var(--c-primary, #0f766e) 0%, var(--c-dark, #134e4a) 100%);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    page-break-inside: avoid;
+  }
+
+  .ch-pill-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .ch-pill {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .chapter-header h1 {
+    font-size: 17pt;
+    font-weight: 900;
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+    color: #ffffff;
+  }
+
+  .ch-meta-sub {
+    font-size: 10pt;
+    color: #ccfbf1;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Author Profile Card */
+  .author-profile-box {
+    background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%);
+    border: 1.5px solid #cbd5e1;
+    border-left: 5px solid var(--c-primary, #0f766e);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    page-break-inside: avoid;
+  }
+
+  .author-profile-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .author-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 3px;
+  }
+
+  .author-profile-title h3 {
+    margin: 0;
+    font-size: 12.5pt;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .author-profile-title h3 small {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #64748b;
+  }
+
+  .author-meta-pill {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 8.5pt;
+    color: #334155;
+    line-height: 1.45;
+  }
+
+  .author-meta-pill b { color: var(--c-primary, #0f766e); }
+
+  .author-bio-body p {
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+
+  .author-works-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .author-works-head {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
+  }
+
+  .works-cat-row {
+    margin-bottom: 4px;
+    font-size: 8.5pt;
+    line-height: 1.5;
+  }
+
+  .works-cat-row:last-child { margin-bottom: 0; }
+
+  .works-cat-label {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: 8pt;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .works-cat-content { color: #475569; }
+
+  .author-awards-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #854d0e;
+    margin-bottom: 6px;
+  }
+
+  .author-significance-strip {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #1e40af;
+  }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .obj-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .out-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .card-label {
+    font-size: 9.5pt;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+  }
+  .obj-card .card-label { color: #166534; }
+  .out-card .card-label { color: #1e40af; }
+
+  .obj-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  .intro-box {
+    background: #fafaf9;
+    border: 1px solid #e7e5e4;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #292524;
+    page-break-inside: avoid;
+  }
+
+  .intro-box .intro-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #b45309;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .concept-section {
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    page-break-inside: avoid;
+  }
+
+  .concept-section h2 {
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--c-primary, #0f766e);
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .concept-section p {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: #334155;
+    margin: 0 0 6px 0;
+  }
+
+  .conclusion-box {
+    background: #fdf4ff;
+    border: 1px solid #f5d0fe;
+    border-left: 4px solid #a855f7;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 16px 0;
+    page-break-inside: avoid;
+  }
+
+  .conclusion-box .conc-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #7e22ce;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .conclusion-box p {
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #3b0764;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  .takeaways-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .takeaways-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f766e;
+  }
+
+  .takeaways-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #134e4a;
+    line-height: 1.55;
+  }
+
+  .glossary-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .glossary-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #334155;
+  }
+
+  .glossary-item {
+    font-size: 8.5pt;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .revision-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 9pt;
+    line-height: 1.6;
+    color: #713f12;
+    page-break-inside: avoid;
+  }
+
+  .progress-section {
+    border-top: 2px solid #e2e8f0;
+    padding-top: 14px;
+    margin-top: 16px;
+  }
+
+  .progress-header {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 0 0 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-inside: avoid;
+  }
+
+  .q-type-title {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f766e;
+    margin: 14px 0 8px 0;
+    padding-left: 8px;
+    border-left: 3px solid #0f766e;
+    page-break-inside: avoid;
+  }
+
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+
+  .qa-question {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+
+  .qa-answer {
+    font-size: 9pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0;
+    white-space: pre-line;
+  }
+
+  .essay-card {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .essay-card .qa-question {
+    font-size: 10pt;
+    color: #1e1b4b;
+    margin-bottom: 10px;
+  }
+
+  .essay-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 4px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .mcq-container {
+    margin-top: 14px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-q {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 5px 0;
+  }
+
+  .mcq-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    font-size: 8.5pt;
+    color: #334155;
+  }
+
+  .mcq-opt {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
+  .mcq-key-card {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 14px 0 20px 0;
+    page-break-inside: avoid;
+  }
+
+  .mcq-key-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 10pt;
+    font-weight: 800;
+    color: #166534;
+  }
+
+  .key-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    font-size: 8pt;
+    color: #14532d;
+  }
+
+  .key-item {
+    background: #ffffff;
+    border: 1px solid #bbf7d0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.35;
+  }
+
+  .exam-points-card {
+    background: linear-gradient(135deg, #fefce8 0%, #fffbeb 100%);
+    border: 1.5px solid #fde047;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 25px 0;
+    box-shadow: 0 3px 10px rgba(234, 179, 8, 0.1);
+    page-break-inside: avoid;
+  }
+
+  .exam-points-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #facc15;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+
+  .exam-points-head h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 900;
+    color: #854d0e;
+  }
+
+  .exam-tag {
+    background: #ca8a04;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 14px;
+    text-transform: uppercase;
+  }
+
+  .exam-points-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #713f12;
+  }
+
+  .exam-points-list li {
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .exam-points-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ca8a04;
+    font-weight: 900;
+  }
+
+
+    @media (max-width: 768px) {
+      body {
+        padding: 14px 10px !important;
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+      .chapter-header {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+      }
+    }
+    
+  </style>
+</head>
+<body style="--c-primary: #0f766e; --c-dark: #0f172a;">
+  <div class="chapter-wrapper">
+    <header class="chapter-header">
+      <div class="ch-pill-row">
+        <span class="ch-pill">മൊഡ്യൂൾ 1</span>
+        <span class="ch-pill">ആത്മകഥ (Autobiography)</span>
+        <span class="ch-pill">അധ്യായം 1</span>
+      </div>
+      <h1>ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ</h1>
+      <p class="ch-meta-sub">രചയിതാവ്: <b>കലാമണ്ഡലം ഹൈദരാലി</b> · ഉറവിടം: ഓർമ്മതൻ വിസ്മയം</p>
+    </header>
+
+        <div class="author-profile-box">
+          <div class="author-profile-head">
+            <div class="author-profile-title">
+              <span class="author-badge">✍️ കവിപരിചയം / രചയിതാവിന്റെ സമഗ്ര പരിചയം</span>
+              <h3>കലാമണ്ഡലം ഹൈദരാലി <small>(1946 സെപ്റ്റംബർ 5 – 2006 ജനുവരി 5)</small></h3>
+            </div>
+            <div class="author-meta-pill">
+              <b>സ്ഥലം / പശ്ചാത്തലം:</b> ഓട്ടുപാറ, വടക്കാഞ്ചേരി (തൃശ്ശൂർ ജില്ല)<br>
+              <b>സാഹിത്യ പദവി:</b> പ്രശസ്ത കഥകളി സംഗീതജ്ഞൻ, ഗായകൻ, ഗ്രന്ഥകാരൻ. കഥകളി സംഗീതത്തിൽ ജാതി-മത വേലിക്കെട്ടുകൾ തകർത്ത നവോത്ഥാന നായകൻ.
+            </div>
+          </div>
+          <div class="author-bio-body">
+            <p>കഥകളി സംഗീതരംഗത്ത് വിപ്ലവകരമായ മാറ്റങ്ങൾ സൃഷ്ടിച്ച അനന്യനായ സംഗീതജ്ഞനാണ് കലാമണ്ഡലം ഹൈദരാലി. പൂർണ്ണമായും ഹൈന്ദവ ക്ഷേത്രകലയായി സംരക്ഷിക്കപ്പെട്ടിരുന്ന കഥകളിയിലേക്ക് ഒരു മുസ്ലിം കുടുംബത്തിൽ നിന്നുമെത്തി തന്റെ മാന്ത്രിക നാദത്തിലൂടെ അരങ്ങുകളെ വിസ്മയിപ്പിച്ച പ്രതിഭയാണ് അദ്ദേഹം. വടക്കാഞ്ചേരിയിലെ ഓട്ടുപാറയിൽ ജനിച്ച ഹൈദരാലി ദാരിദ്ര്യത്തോടും മത-സാമൂഹിക വിലക്കുകളോടും പൊരുതിയാണ് കേരള കലാമണ്ഡലത്തിൽ പ്രവേശനം നേടിയത്. മഹാകവി വള്ളത്തോളിന്റെ പ്രത്യേക വാത്സല്യവും സംഗീത കുലപതി കലാമണ്ഡലം നീലകണ്ഠൻ നമ്പീശന്റെ കഠിന ശിക്ഷണവും അദ്ദേഹത്തെ ഒന്നാംകിട കഥകളി ഗായകനാക്കി മാറ്റി. ക്ഷേത്രങ്ങളിൽ പ്രവേശനം നിഷേധിക്കപ്പെട്ടപ്പോഴും ക്ഷേത്രമതിൽക്കെട്ടിന് പുറത്തിരുന്ന് ആലാപനം നടത്തി അദ്ദേഹം കലയോടുള്ള പ്രതിബദ്ധത തെളിയിച്ചു. പിന്നീട് കലാമണ്ഡലത്തിൽത്തന്നെ അധ്യാപകനായും മുഖ്യ ഗായകനായും മാറി കഥകളി സംഗീതത്തെ സാധാരണ ജനങ്ങളിലേക്ക് എത്തിക്കുന്നതിൽ അദ്ദേഹം നിർണ്ണായക പങ്കുവഹിച്ചു.</p>
+            
+            <div class="author-works-section">
+              <div class="author-works-head">📚 പ്രധാന കൃതികളും സാഹിത്യ സംഭാവനകളും:</div>
+        
+              <div class="works-cat-row">
+                <span class="works-cat-label">ആത്മകഥ</span>
+                <span class="works-cat-content">ഓർമ്മതൻ വിസ്മയം (വി. രമേഷ് കുമാറുമായി ചേർന്ന് തയ്യാറാക്കിയ ഹൃദയസ്പർശിയായ ജീവിതകഥ. മലയാള ആത്മകഥാ സാഹിത്യത്തിലെ അപൂർവ്വ രചന).</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">സംഗീത സംഭാവനകൾ</span>
+                <span class="works-cat-content">നളചരിതം (നാലു ദിവസങ്ങളും), കർണ്ണശപഥം, ദുര്യോധനവധം, കല്യാണസൗഗന്ധികം, കിർമ്മീരവധം, ദക്ഷയാഗം തുടങ്ങിയ പ്രശസ്ത ആട്ടക്കഥകളിലെ അനശ്വര ആലാപനങ്ങൾ.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">കാസറ്റുകളും ആൽബങ്ങളും</span>
+                <span class="works-cat-content">കഥകളി പദങ്ങളെ ശാസ്ത്രീയ-ലളിത സംഗീത ശൈലിയിൽ സാധാരണക്കാർക്കായി ചിട്ടപ്പെടുത്തിയ നിരവധി പ്രശസ്ത ഓഡിയോ ആൽബങ്ങൾ.</span>
+              </div>
+            
+            </div>
+            
+            <div class="author-awards-strip">
+              <b>🏆 പ്രധാന പുരസ്കാരങ്ങൾ:</b> കേരള സംഗീത നാടക അക്കാദമി അവാർഡ്, കേരള കലാമണ്ഡലം അവാർഡ്, തുളസീവനം അവാർഡ്, കാലിക്കറ്റ് സർവ്വകലാശാലയുടെയും വിവിധ സാംസ്കാരിക സംഘടനകളുടെയും വിശിഷ്ട പുരസ്കാരങ്ങൾ.
+            </div>
+            
+            <div class="author-significance-strip">
+              <b>✦ സാഹിത്യ സംഭാവന & സവിശേഷ സ്ഥാനം:</b> സ്വന്തം ജീവിതത്തിലെ കയ്പേറിയ അനുഭവങ്ങളെ സത്യസന്ധമായും ആർജ്ജവത്തോടെയും 'ഓർമ്മതൻ വിസ്മയം' എന്ന ആത്മകഥയിലൂടെ അവതരിപ്പിച്ച് മലയാള ജീവചരിത്ര-ആത്മകഥാ സാഹിത്യത്തിന് വലിയ മുതൽക്കൂട്ടായി മാറി.
+            </div>
+          </div>
+        </div>
+        
+      <div class="objectives-grid">
+        <div class="obj-card">
+          <div class="card-label">❖ പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</div>
+          <ul class="obj-list">
+    <li>ആത്മകഥ എന്ന സാഹിത്യശാഖയുടെ സവിശേഷതകളും ഘടനയും നിർവ്വചിക്കുക.</li><li>കേരള കലാമണ്ഡലത്തിലെ ആദ്യ അഹിന്ദു കഥകളി സംഗീതജ്ഞനായ കലാമണ്ഡലം ഹൈദരാലിയുടെ ജീവിതാനുഭവങ്ങൾ മനസ്സിലാക്കുക.</li><li>ഗുരു-ശിഷ്യ ബന്ധത്തിന്റെ പവിത്രതയും സാമൂഹികമായ അവഗണനകളെ അതിജീവിച്ച കലാനുഭവവും വിശകലനം ചെയ്യുക.</li>
+          </ul>
+        </div>
+        <div class="out-card">
+          <div class="card-label">✦ പഠന ഫലങ്ങൾ (Learning Outcomes)</div>
+          <ul class="obj-list">
+    <li>ആത്മകഥാ സാഹിത്യത്തിലെ ആത്മനിഷ്ഠതയും കാലഘട്ടത്തിന്റെ ചരിത്രവും തിരിച്ചറിയാൻ വിദ്യാർത്ഥിക്ക് സാധിക്കുന്നു.</li><li>സാമൂഹിക അനാചാരങ്ങളെയും വർണ്ണ-വർഗ്ഗ വിവേചനങ്ങളെയും മറികടക്കാൻ കല നൽകുന്ന ആത്മവിശ്വാസം തിരിച്ചറിയുന്നു.</li><li>ഹൈദരാലിയുടെ ഭാഷാശൈലിയും ആഖ്യാനഭംഗിയും ആസ്വാദനക്കുറിപ്പായി വികസിപ്പിക്കാൻ പ്രാപ്തി നേടുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="intro-box">
+        <span class="intro-label">ആമുഖം (Introduction)</span>
+    <p>ഒരാൾ സ്വന്തം ജീവിതം സ്വയം എഴുതുന്ന സാഹിത്യ രൂപമാണ് ആത്മകഥ (Autobiography). ഗ്രീക്ക് പദങ്ങളായ 'ഓട്ടോസ്' (Autos - സ്വയം), 'ബയോസ്' (Bios - ജീവിതം), 'ഗ്രാഫിയ' (Graphein - എഴുത്ത്) എന്നിവ ചേർന്നാണ് ഓട്ടോബയോഗ്രഫി എന്ന പദമുണ്ടായത്. വർത്തമാനകാലത്തിൽ നിന്നുകൊണ്ട് ഭൂതകാല അനുഭവങ്ങളിലേക്ക് തിരിഞ്ഞുനോക്കുന്ന ആത്മപരിശോധനയാണിത്. സ്വന്തം തെറ്റുകുറ്റങ്ങൾ ഏറ്റുപറയാനുള്ള സത്യസന്ധതയും ആർജ്ജവവുമാണ് ആത്മകഥയുടെ കാതൽ. കഥകളി സംഗീത ലോകത്ത് ജാതി-മത വിവേചനങ്ങളുടെ മതിലുകൾ ഭേദിച്ച് തന്റേതായ ഇടം കണ്ടെത്തിയ കലാമണ്ഡലം ഹൈദരാലിയുടെ 'ഓർമ്മതൻ വിസ്മയം' എന്ന ആത്മകഥയിലെ പ്രസിദ്ധമായ ഒരു അധ്യായമാണ് 'എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ'.</p></div>
+        <section class="concept-section">
+          <h2>1. ആത്മകഥയുടെ ഘടനയും സ്വഭാവവിശേഷങ്ങളും</h2>
+          <p>സാഹിത്യരൂപങ്ങളിൽ ഏറ്റവും കൂടുതൽ വായനാക്ഷമതയുള്ള വിഭാഗങ്ങളിലൊന്നാണ് ആത്മകഥ. ഇത് കേവലമൊരു വ്യക്തിചരിത്രമല്ല; മറിച്ച്, എഴുത്തുകാരൻ ജീവിച്ച കാലഘട്ടത്തിന്റെ സാമൂഹിക-സാംസ്കാരിക ചരിത്രം കൂടിയാണ്. ആത്മനിഷ്ഠത (Subjectivity), ആത്മാർത്ഥത (Sincerity), ഭൂതകാലസ്മരണകളുടെ പുനരാവിഷ്കാരം (Retrospection) എന്നിവ ആത്മകഥയുടെ പ്രധാന ഘടകങ്ങളാണ്. സ്വന്തം മനസ്സാക്ഷിയെ വിചാരണ ചെയ്യുന്നതിലൂടെ ആത്മകഥാകാരൻ വായനക്കാരനുമായി ഒരു ഹൃദയബന്ധം സ്ഥാപിക്കുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>2. കലാമണ്ഡലം ഹൈദരാലിയുടെ പശ്ചാത്തലം</h2>
+          <p>1946-ൽ വടക്കാഞ്ചേരിയിലെ ഓട്ടുപാറയിൽ ജനിച്ച ഹൈദരാലി ദാരിദ്ര്യവും സാമൂഹികമായ അവഗണനകളും നിറഞ്ഞ ബാല്യത്തിലൂടെയാണ് കടന്നുപോയത്. കഥകളി പൂർണ്ണമായും ഹൈന്ദവ ക്ഷേത്രകലയായി നിലനിന്നിരുന്ന കാലത്താണ് ഒരു മുസ്ലിം ബാലൻ കഥകളി സംഗീതം അഭ്യസിക്കാൻ കലാമണ്ഡലത്തിലെത്തുന്നത്. സ്വാതന്ത്ര്യലബ്ധിക്കു ശേഷം ഏകദേശം പത്തുവർഷങ്ങൾ കഴിഞ്ഞാണ് ഹൈദരാലി കലാമണ്ഡലത്തിൽ എത്തുന്നത്. വള്ളത്തോൾ നാരായണമേനോന്റെ മതനിരപേക്ഷ കാഴ്ചപ്പാടാണ് ഹൈദരാലിക്ക് കലാമണ്ഡലത്തിന്റെ വാതിലുകൾ തുറന്നുകൊടുത്തത്.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>3. ഗുരുനാഥനായ കലാമണ്ഡലം നീലകണ്ഠൻ നമ്പീശൻ</h2>
+          <p>ഹൈദരാലിയുടെ ജീവിതത്തിലെ വഴിത്തിരിവായിരുന്നു ഗുരുവായ കലാമണ്ഡലം നീലകണ്ഠൻ നമ്പീശനുമായുള്ള കണ്ടുമുട്ടൽ. കണിശക്കാരനും കർക്കശക്കാരനുമായ അധ്യാപകനായിരുന്നു നമ്പീശൻ ആശാൻ. എന്നാൽ ആ കാർക്കശ്യത്തിനു പിന്നിൽ ഒരു വാത്സല്യനിധിയായ പിതാവിന്റെ സ്നേഹമുണ്ടായിരുന്നു. അഹിന്ദുവായതിനാൽ ക്ഷേത്രങ്ങളിൽ നടക്കുന്ന കഥകളിയരങ്ങുകളിൽ പ്രവേശിക്കാൻ ഹൈദരാലിക്ക് അനുവാദമുണ്ടായിരുന്നില്ല. പലപ്പോഴും ക്ഷേത്രമതിൽക്കെട്ടിനു പുറത്തിരുന്നാണ് അദ്ദേഹം പാടിയത്. എന്നാൽ നീലകണ്ഠൻ നമ്പീശൻ തന്റെ പ്രിയശിഷ്യന് നൽകിയ സംരക്ഷണവും വാത്സല്യവും ആത്മവിശ്വാസവും ഹൈദരാലിയുടെ പ്രതിഭയെ തളരാതെ കാത്തുസൂക്ഷിച്ചു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>4. അനുഭവതീക്ഷ്ണതയും സ്നേഹവാത്സല്യങ്ങളും</h2>
+          <p>ഗുരുനാഥനിൽ നിന്ന് തല്ലും ശകാരവും വാങ്ങിക്കൂട്ടിയ അനുഭവങ്ങളും, രോഗശയ്യയിൽ ഗുരു ശുശ്രൂഷിച്ച സ്നേഹനിമിഷങ്ങളും ഹൈദരാലി അതീവ ഹൃദ്യമായി ഓർത്തെടുക്കുന്നു. ഒരു രാത്രിയിൽ കടുത്ത പനിയുമായി വിറച്ചുകിടന്ന ശിഷ്യന്റെ പുതപ്പ് നേരെയാക്കിക്കൊടുക്കുകയും തടവി ആശ്വസിപ്പിക്കുകയും ചെയ്ത നമ്പീശൻ ആശാന്റെ ചിത്രം ഹൈദരാലിയുടെ മനസ്സിൽ മായാതെ നിന്നു. ക്ഷേത്രപ്രവേശന വിലക്കിന്റെ കയ്പേറിയ യാഥാർത്ഥ്യങ്ങൾക്കിടയിലും ഗുരുവിന്റെ സ്നേഹമാണ് തന്നെ ഒരു കലാകാരനായി നിലനിർത്തിയതെന്ന് ഹൈദരാലി കൃതജ്ഞതയോടെ ഏറ്റുപറയുന്നു.</p>
+        </section>
+        
+    <div class="conclusion-box">
+      <span class="conc-label">ഉപസംഹാരം (Chapter Conclusion)</span>
+      <p>കലാമണ്ഡലം ഹൈദരാലിയുടെ 'എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ' എന്ന ആത്മകഥാഭാഗം കലയ്ക്കും മനുഷ്യബന്ധങ്ങൾക്കും ജാതി-മത വേലിക്കെട്ടുകളെക്കാൾ ഉന്നതമായ സ്ഥാനമുണ്ടെന്ന് തെളിയിക്കുന്നു. കണ്ണീരും പുഞ്ചിരിയും ഇടകലർന്ന ലളിതമായ ആഖ്യാനശൈലിയിലൂടെ ഒരു മഹാനായ ഗുരുവിന്റെ വ്യക്തിത്വവും പ്രതിഭാശാലിയായ ഒരു ശിഷ്യന്റെ ആത്മസമർപ്പണവും ഇവിടെ അനശ്വരമാക്കപ്പെടുന്നു.</p>
+    </div>
+    
+    <div class="summary-grid">
+      <div class="takeaways-box">
+        <h3>✦ പ്രധാന പാഠങ്ങൾ (Key Takeaways)</h3>
+        <ul class="takeaways-list">
+    <li>ആത്മകഥ എന്നാൽ സ്വന്തം ജീവിതം സ്വയം സത്യസന്ധമായി എഴുതുന്നതാണ്.</li><li>കലാമണ്ഡലം ഹൈദരാലി ആദ്യത്തെ പ്രമുഖ അഹിന്ദു കഥകളി സംഗീതജ്ഞനാണ്.</li><li>ഗുരു കലാമണ്ഡലം നീലകണ്ഠൻ നമ്പീശന്റെ വാത്സല്യവും സംരക്ഷണവുമാണ് ഹൈദരാലിയെ വളർത്തിയത്.</li><li>ക്ഷേത്രമതിലുകൾക്കപ്പുറം കലയുടെ സാർവ്വലൗകിക മാനവികത ഉയർത്തിപ്പിടിച്ച ജീവിതഗാഥയാണിത്.</li>
+        </ul>
+      </div>
+      <div class="glossary-box">
+        <h3>📖 പ്രധാന സാങ്കേതിക പദാവലി (Key Terms)</h3>
+    <div class="glossary-item"><b>ആത്മകഥ (Autobiography):</b> സ്വന്തം ജീവിതാനുഭവങ്ങൾ സ്വയം സത്യസന്ധമായി എഴുതി തയ്യാറാക്കുന്ന സാഹിത്യരൂപം.</div><div class="glossary-item"><b>ഗുരുകുല സമ്പ്രദായം:</b> ഗുരുവിന്റെ കൂടെ താമസിച്ച് കലയും വിദ്യയും അച്ചടക്കത്തോടെ അഭ്യസിക്കുന്ന പരമ്പരാഗത രീതി.</div><div class="glossary-item"><b>കഥകളി സംഗീതം:</b> കഥകളിക്ക് പശ്ചാത്തലമായി ആലപിക്കുന്ന കർണ്ണാടക-സോപാന സംഗീത ശൈലിയിലുള്ള ആലാപനം.</div>
+      </div>
+    </div>
+    
+    <div class="revision-strip">
+      <b>ദ്രുത പുനഃപരിശോധനാ കുറിപ്പ് (Quick Revision):</b> ആത്മകഥയുടെ നിർവ്വചനം: ഓട്ടോസ് + ബയോസ് + ഗ്രാഫിയ. ഹൈദരാലിയുടെ ജനനം 1946-ൽ. കലാമണ്ഡലത്തിൽ പ്രവേശനം. നീലകണ്ഠൻ നമ്പീശന്റെ ശിക്ഷണവും വാത്സല്യവും. ക്ഷേത്രവിലക്കുകൾ നേരിട്ടപ്പോളും ഗുരു നൽകിയ മനോധൈര്യം. 2006-ൽ അന്തരിച്ചു. ആത്മകഥ: ഓർമ്മതൻ വിസ്മയം.
+    </div>
+    
+    <div class="progress-section">
+      <div class="progress-header">
+        <span>പഠന പുരോഗതി വിലയിരുത്തൽ (Check Your Progress)</span>
+        <small>യഥാർത്ഥ ചോദ്യങ്ങളും സമഗ്ര ഉത്തരങ്ങളും</small>
+      </div>
+    <div class="q-type-title">ലഘുകുറിപ്പുകൾ (Short Notes)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. ആത്മകഥ എന്നാൽ എന്ത്? പദോത്പത്തി വ്യക്തമാക്കുക.</div>
+              <div class="qa-answer">ഒരാൾ സ്വന്തം ജീവിതം സ്വയം സത്യസന്ധമായി എഴുതുന്ന സാഹിത്യരൂപമാണ് ആത്മകഥ. ഇംഗ്ലീഷിലെ 'Autobiography' എന്ന പദം 'Autos' (സ്വയം), 'Bios' (ജീവിതം), 'Graphein' (എഴുത്ത്) എന്നീ ഗ്രീക്ക് പദങ്ങളിൽ നിന്നാണ് ഉണ്ടായത്. വർത്തമാനകാലത്തിൽ നിന്നുകൊണ്ട് ഭൂതകാല അനുഭവങ്ങളെ സത്യസന്ധമായും ആത്മനിഷ്ഠമായും പുനരവലോകനം ചെയ്യുകയാണ് ഇതിൽ ചെയ്യുന്നത്.</div>
+            </div>
+            
+            <div class="qa-card">
+              <div class="qa-question">2. കലാമണ്ഡലം നീലകണ്ഠൻ നമ്പീശൻ എന്ന ഗുരുനാഥന്റെ സവിശേഷതകൾ എന്തെല്ലാം?</div>
+              <div class="qa-answer">കലാമണ്ഡലത്തിലെ പ്രഗത്ഭനായ കഥകളി സംഗീതാധ്യാപകനായിരുന്നു നീലകണ്ഠൻ നമ്പീശൻ. പുറമെ കർക്കശക്കാരനും അച്ചടക്കമുള്ളവനുമായിരുന്നെങ്കിലും അകമെ സ്നേഹസമ്പന്നനായ ഒരു പിതാവായിരുന്നു അദ്ദേഹം. ജാതി-മത പരിഗണനകൾക്കതീതമായി ഹൈദരാലിയുടെ പ്രതിഭയെ തിരിച്ചറിഞ്ഞ് അദ്ദേഹത്തെ ഹൃദയപൂർവ്വം സ്നേഹിക്കുകയും സംരക്ഷിക്കുകയും ചെയ്തു.</div>
+            </div>
+            <div class="q-type-title">ലഘൂപന്യാസങ്ങൾ (Short Essays)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. കലാമണ്ഡലത്തിൽ ഹൈദരാലി നേരിട്ട പ്രതിസന്ധികളും അവയെ അതിജീവിച്ച രീതിയും വിവരിക്കുക.</div>
+              <div class="qa-answer">കേരള കലാമണ്ഡലത്തിൽ കഥകളി സംഗീതം അഭ്യസിക്കാൻ എത്തിയ ആദ്യത്തെ മുസ്ലിം ബാലനായിരുന്നു ഹൈദരാലി. അന്നത്തെ യാഥാസ്ഥിതിക സാമൂഹിക വ്യവസ്ഥിതിയിൽ അഹിന്ദുക്കൾക്ക് കഥകളി അഭ്യസിക്കുന്നതും ക്ഷേത്രങ്ങളിൽ പ്രവേശിക്കുന്നതും അചിന്തനീയമായിരുന്നു. പലപ്പോഴും ക്ഷേത്രോത്സവങ്ങളിലെ കളിയരങ്ങുകളിൽ പങ്കെടുക്കാൻ ഹൈദരാലിക്ക് കഴിഞ്ഞിരുന്നില്ല. ക്ഷേത്രമതിലിനു പുറത്തിരുന്നാണ് അദ്ദേഹം പാടിയത്. എന്നാൽ ഗുരുനാഥനായ നീലകണ്ഠൻ നമ്പീശന്റെ നിർലോഭമായ പിന്തുണയും മഹാകവി വള്ളത്തോളിന്റെ ദീർഘവീക്ഷണവും കലയോടുള്ള അടങ്ങാത്ത അഭിനിവേശവും വഴി ഹൈദരാലി ഈ പ്രതിസന്ധികളെയെല്ലാം അതിജീവിച്ചു.</div>
+            </div>
+            <div class="q-type-title">ഉപന്യാസങ്ങൾ (Long Essays - 300+ Words)</div>
+            <div class="essay-card">
+              <span class="essay-badge">സമഗ്ര ഉപന്യാസം · 300+ WORDS</span>
+              <div class="qa-question">1. കലാമണ്ഡലം ഹൈദരാലിയുടെ 'എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ' എന്ന ആത്മകഥാഭാഗം വിശകലനം ചെയ്ത് ഉപന്യാസം തയ്യാറാക്കുക.</div>
+              <div class="qa-answer">ആമുഖം:
+കേരളത്തിലെ ക്ലാസിക്കൽ കലാരൂപമായ കഥകളി രംഗത്ത് അഹിന്ദുക്കൾക്ക് പ്രവേശനം അസാധ്യമായിരുന്ന ഒരു ഇരുണ്ട കാലഘട്ടത്തിലാണ് കലാമണ്ഡലം ഹൈദരാലി എന്ന പ്രതിഭാധനനായ സംഗീതജ്ഞൻ കടന്നുവരുന്നത്. തൃശ്ശൂർ ജില്ലയിലെ വടക്കാഞ്ചേരിക്കടുത്തുള്ള ഓട്ടുപാറയിൽ ഒരു സാധാരണ മുസ്ലിം കുടുംബത്തിൽ ജനിച്ച ഹൈദരാലി, ദാരിദ്ര്യത്തോടും പട്ടിണിയോടും ഒപ്പം സമൂഹത്തിലെ കൊടിയ ജാതി-മത വിവേചനങ്ങളോടും പോരാടിയാണ് കഥകളി സംഗീതത്തിന്റെ കൊടുമുടി കീഴടക്കിയത്. അദ്ദേഹത്തിന്റെ വിഖ്യാതമായ ആത്മകഥയാണ് 'ഓർമ്മതൻ വിസ്മയം'. അതിലെ 'എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ' എന്ന ഹൃദയസ്പർശിയായ അധ്യായം, ഒരു ശിഷ്യന് തന്റെ ഗുരുവിനോടുള്ള അടങ്ങാത്ത ആദരവിന്റെയും, കലയുടെ വിശുദ്ധി മനുഷ്യഹൃദയങ്ങളെ എങ്ങനെ ഒന്നിപ്പിക്കുന്നു എന്നതിന്റെയും അനശ്വരമായ ചരിത്ര സാക്ഷ്യപത്രമാണ്.
+
+കലാമണ്ഡല പ്രവേശനവും വള്ളത്തോളിന്റെ ദർശനവും:
+ഇന്ത്യ സ്വാതന്ത്ര്യം നേടി പത്തു വർഷത്തോളം കഴിഞ്ഞ ഘട്ടത്തിലാണ് ഹൈദരാലി വള്ളത്തോൾ നാരായണമേനോൻ സ്ഥാപിച്ച ചെറുതുരുത്തിയിലെ കേരള കലാമണ്ഡലത്തിലേക്ക് എത്തുന്നത്. ക്ഷേത്രകലയായ കഥകളി അഭ്യസിക്കാൻ ഒരു മുസ്ലിം ബാലൻ വരുന്നത് സ്വന്തം സമുദായത്തിനും അന്നത്തെ സവർണ്ണ യാഥാസ്ഥിതിക സമൂഹത്തിനും ഒരുപോലെ അമ്പരപ്പുണ്ടാക്കി. എന്നാൽ മഹാകവി വള്ളത്തോളിന്റെ വിശാലമായ മതനിരപേക്ഷ കാഴ്ചപ്പാടും മാനവിക ബോധവുമാണ് ഹൈദരാലിക്ക് കലാമണ്ഡലത്തിൽ പ്രവേശനം ഉറപ്പാക്കിയത്. കലയ്ക്ക് മതമില്ലെന്നും പ്രതിഭ മാത്രമാണ് മാനദണ്ഡമെന്നും വള്ളത്തോൾ പ്രഖ്യാപിച്ചു. ഇത് കേരളീയ കലാരംഗത്തെ ചരിത്രപരമായ ഒരു വഴിത്തിരിവായിരുന്നു.
+
+ഗുരു നീലകണ്ഠൻ നമ്പീശന്റെ വാത്സല്യവും ശിക്ഷണവും:
+ഹൈദരാലിയുടെ സംഗീതജീവിതത്തിലെ മാർഗ്ഗദർശിയും ദൈവതുല്യനായ വഴികാട്ടിയുമായിരുന്നു കലാമണ്ഡലം നീലകണ്ഠൻ നമ്പീശൻ ആശാൻ. കളരിയിൽ അങ്ങേയറ്റം കാർക്കശ്യക്കാരനും ചിട്ടയുള്ള ശിക്ഷകനുമായിരുന്നു നമ്പീശൻ. പാടുമ്പോൾ ശ്രുതിയിലോ താളത്തിലോ നേരിയ പിഴവുണ്ടായാൽ പോലും ശിഷ്യന് ഗുരുവിന്റെ കയ്യിൽ നിന്ന് കഠിനമായ ശിക്ഷകൾ ലഭിക്കുമായിരുന്നു. എന്നാൽ ആ കാർക്കശ്യത്തിന് പിന്നിൽ ശിഷ്യനെ ഒരു തികഞ്ഞ കലാകാരനാക്കി മാറ്റാനുള്ള തീവ്രമായ ആഗ്രഹമായിരുന്നു. ഒരിക്കൽ ഹൈദരാലിക്ക് കഠിനമായ പനി പിടിപെട്ട് കിടപ്പിലായ രാത്രിയിൽ, മറ്റാരും കാണാതെ ശിഷ്യന്റെ അടുക്കൽ വന്ന് പുതപ്പിച്ചു കൊടുക്കുകയും, നെറ്റിയിൽ തലോടി പ്രാർത്ഥിക്കുകയും ചെയ്ത ഗുരുവിന്റെ വാത്സല്യം ഹൈദരാലിയുടെ ഉള്ളുലച്ചു. ശിക്ഷയും സ്നേഹവും ഇഴചേർന്ന ഈ ഗുരുകുല രീതി അദ്ദേഹത്തെ പൂർണ്ണതയുള്ള സംഗീതജ്ഞനാക്കി മാറ്റി.
+
+അവഗണനകളും അതിജീവനത്തിന്റെ പാതയും:
+കഥകളി പ്രധാനമായും ക്ഷേത്രോത്സവങ്ങളിലാണ് അരങ്ങേറിയിരുന്നത് എന്നതിനാൽ, അഹിന്ദുവായ ഹൈദരാലിക്ക് ക്ഷേത്രമതിലുകൾക്കകത്ത് പ്രവേശിക്കാൻ അന്നത്തെ ക്ഷേത്രഭാരവാഹികളും യാഥാസ്ഥിതികരും അനുവാദം നൽകിയില്ല. കൊല്ലൂർ മൂകാംബിക ക്ഷേത്രത്തിലും മറ്റ് നിരവധി ക്ഷേത്രങ്ങളിലും പരിപാടി നടക്കുമ്പോൾ, ഹൈദരാലിക്ക് മതിലിനു പുറത്ത് മഴയത്തും ചെളിയിലും നിന്ന് മൈക്കിലൂടെ പാടേണ്ടി വന്നു. ഈ അപമാനകരമായ സാഹചര്യങ്ങളിൽ പോലും അദ്ദേഹം പകയോ വിദ്വേഷമോ കാട്ടിയില്ല. മറിച്ച്, തന്റെ ഭാവസാന്ദ്രമായ ശബ്ദമാധുര്യം കൊണ്ട് ക്ഷേത്രത്തിനകത്തിരുന്ന ആസ്വാദകരുടെ കണ്ണുകളെ ഈറനണിയിച്ച് അദ്ദേഹം കലയിലൂടെ മറുപടി നൽകി.
+
+സംഗീത ശൈലിയും ഭാഷാപരമായ സൗന്ദര്യവും:
+പരമ്പരാഗതമായി ഗാംഭീര്യവും കടുപ്പവുമുള്ള ചൊല്ലിയാട്ട ശൈലിയിൽ നിന്ന് വ്യത്യസ്തമായി, സംഗീതത്തിന് അതീവ മാധുര്യവും ഭാവസാന്ദ്രതയും നൽകി കഥകളി സംഗീതത്തെ സാധാരണ ജനങ്ങളിലേക്ക് അടുപ്പിച്ചത് ഹൈദരാലിയാണ്. അദ്ദേഹത്തിന്റെ ആത്മകഥയിലെ ഗദ്യശൈലി ലളിതവും, ഒഴുക്കുള്ളതും, വായനക്കാരന്റെ ഹൃദയത്തെ തൊടുന്നതുമാണ്. ഒരു കാലഘട്ടത്തിന്റെ സാമൂഹിക യാഥാർത്ഥ്യങ്ങളെ ഒട്ടും അതിശയോക്തിയില്ലാതെ സത്യസന്ധമായി പകർത്താൻ അദ്ദേഹത്തിന് കഴിഞ്ഞു.
+
+ഉപസംഹാരം:
+കലാമണ്ഡലം ഹൈദരാലിയുടെ ഈ ആത്മകഥ കേവലം ഒരു കലാകാരന്റെ വ്യക്തിഗത ഓർമ്മകൾ മാത്രമല്ല; അത് കേരളീയ നവോത്ഥാനത്തിന്റെയും മാനവികതയുടെയും വലിയൊരു വിളംബരമാണ്. ഗുരുശിഷ്യ ബന്ധത്തിന്റെ പവിത്രതയും, ജാതിവിവേചനത്തിനെതിരെയുള്ള കലയുടെ പ്രതിരോധവും, പച്ചയായ സത്യസന്ധതയും നിറഞ്ഞ ഈ അധ്യായം മലയാള സാഹിത്യത്തിലെ എക്കാലത്തെയും മഹത്തായ ഗദ്യപാഠങ്ങളിലൊന്നായി നിലകൊള്ളുന്നു.</div>
+            </div>
+            
+    <div class="q-type-title">പ്രധാന പരീക്ഷാ മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (15 Important MCQs)</div>
+    <div class="mcq-container">
+    
+        <div class="mcq-item">
+          <div class="mcq-q">1. കലാമണ്ഡലം ഹൈദരാലിയുടെ ആത്മകഥയുടെ പേരെന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) എന്റെ കഥ</div>
+            <div class="mcq-opt">B) ഓർമ്മതൻ വിസ്മയം</div>
+            <div class="mcq-opt">C) ജീവിതപ്പാത</div>
+            <div class="mcq-opt">D) കവിയുടെ കാൽപ്പാടുകൾ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">2. ആത്മകഥ (Autobiography) എന്ന പദത്തിലെ 'ബയോസ്' (Bios) എന്ന പദത്തിന്റെ അർത്ഥമെന്ത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) സ്വയം</div>
+            <div class="mcq-opt">B) എഴുത്ത്</div>
+            <div class="mcq-opt">C) ജീവിതം</div>
+            <div class="mcq-opt">D) ഓർമ്മ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">3. കലാമണ്ഡലം ഹൈദരാലിയുടെ പ്രധാന ഗുരുനാഥൻ ആരായിരുന്നു?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കലാമണ്ഡലം കൃഷ്ണൻ നായർ</div>
+            <div class="mcq-opt">B) കലാമണ്ഡലം നീലകണ്ഠൻ നമ്പീശൻ</div>
+            <div class="mcq-opt">C) കലാമണ്ഡലം ഗോപി</div>
+            <div class="mcq-opt">D) വള്ളത്തോൾ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">4. ഏത് കലാരൂപത്തിലെ സംഗീതത്തിലാണ് ഹൈദരാലി പ്രാവീണ്യം നേടിയത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കൂടിയാട്ടം</div>
+            <div class="mcq-opt">B) ചാക്യാർകൂത്ത്</div>
+            <div class="mcq-opt">C) കഥകളി സംഗീതം</div>
+            <div class="mcq-opt">D) മോഹിനിയാട്ടം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">5. ഹൈദരാലിക്ക് കലാമണ്ഡലത്തിൽ പ്രവേശനം നൽകാൻ മുൻകൈയെടുത്ത മഹാകവി ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഉള്ളൂർ</div>
+            <div class="mcq-opt">B) വള്ളത്തോൾ നാരായണമേനോൻ</div>
+            <div class="mcq-opt">C) കുമാരനാശാൻ</div>
+            <div class="mcq-opt">D) ജി. ശങ്കരക്കുറുപ്പ്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">6. സ്വാതന്ത്ര്യലബ്ധിക്കു ശേഷം ഏകദേശം എത്ര വർഷം കഴിഞ്ഞാണ് ഹൈദരാലി കലാമണ്ഡലത്തിലെത്തുന്നത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) അഞ്ചു വർഷം</div>
+            <div class="mcq-opt">B) പത്തു വർഷം</div>
+            <div class="mcq-opt">C) ഇരുപത് വർഷം</div>
+            <div class="mcq-opt">D) പതിനഞ്ചു വർഷം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">7. ഹൈദരാലിക്ക് കടുത്ത പനി വന്ന രാത്രിയിൽ ആരും കാണാതെ വന്ന് പുതപ്പിച്ചു കൊടുത്തത് ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വള്ളത്തോൾ</div>
+            <div class="mcq-opt">B) അമ്മ</div>
+            <div class="mcq-opt">C) നീലകണ്ഠൻ നമ്പീശൻ ആശാൻ</div>
+            <div class="mcq-opt">D) സഹപാഠി</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">8. അഹിന്ദുവായതിനാൽ ഹൈദരാലിക്ക് പ്രവേശനം നിഷേധിക്കപ്പെട്ട ഇടങ്ങൾ ഏവ?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വിദ്യാലയങ്ങൾ</div>
+            <div class="mcq-opt">B) കലാമണ്ഡലം</div>
+            <div class="mcq-opt">C) ക്ഷേത്രങ്ങളിലെ കളിയരങ്ങുകൾ</div>
+            <div class="mcq-opt">D) കളിസ്ഥലങ്ങൾ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">9. ഹൈദരാലി അന്തരിച്ച വർഷമേത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 2000</div>
+            <div class="mcq-opt">B) 2006 ജനുവരി 5</div>
+            <div class="mcq-opt">C) 2010</div>
+            <div class="mcq-opt">D) 2015</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">10. ആത്മകഥയുടെ ഏറ്റവും പ്രധാനപ്പെട്ട ആന്തരിക ഗുണം എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഭാവന</div>
+            <div class="mcq-opt">B) പച്ചയായ സത്യസന്ധതയും ആത്മനിഷ്ഠതയും</div>
+            <div class="mcq-opt">C) അതിശയോക്തി</div>
+            <div class="mcq-opt">D) ഹാസ്യം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">11. 'ഓട്ടോബയോഗ്രഫി' എന്ന വാക്കിലെ 'ഓട്ടോസ്' എന്ന പദത്തിന്റെ അർത്ഥം?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ജീവിതം</div>
+            <div class="mcq-opt">B) വണ്ടി</div>
+            <div class="mcq-opt">C) സ്വയം</div>
+            <div class="mcq-opt">D) ലോകം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">12. കഥകളി സംഗീതത്തിൽ ഹൈദരാലി കൊണ്ടുവന്ന പ്രധാന മാറ്റം എന്തായിരുന്നു?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഉപകരണങ്ങളുടെ മാറ്റം</div>
+            <div class="mcq-opt">B) ശബ്ദമാധുര്യവും ഭാവതീവ്രതയും ചേർന്ന ജനകീയ ശൈലി</div>
+            <div class="mcq-opt">C) ഇംഗ്ലീഷ് ഗാനങ്ങൾ</div>
+            <div class="mcq-opt">D) ദ്രുതതാളം മാത്രം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">13. കലാമണ്ഡലം സ്ഥിതി ചെയ്യുന്നത് ഏത് ജില്ലയിലാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കോഴിക്കോട്</div>
+            <div class="mcq-opt">B) തൃശ്ശൂർ (ചെറുതുരുത്തി)</div>
+            <div class="mcq-opt">C) എറണാകുളം</div>
+            <div class="mcq-opt">D) പാലക്കാട്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">14. ഹൈദരാലിയുടെ ജന്മസ്ഥലം എവിടെയാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ചെറുതുരുത്തി</div>
+            <div class="mcq-opt">B) ഓട്ടുപാറ (വടക്കാഞ്ചേരി)</div>
+            <div class="mcq-opt">C) ഗുരുവായൂർ</div>
+            <div class="mcq-opt">D) പൊന്നാനി</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">15. 'എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ' എന്ന പാഠഭാഗം നൽകുന്ന പ്രധാന സന്ദേശം എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ധനസമ്പാദനം</div>
+            <div class="mcq-opt">B) ജാതിമതങ്ങൾക്കതീതമായ ഗുരുശിഷ്യബന്ധവും കലയുടെ മഹത്വവും</div>
+            <div class="mcq-opt">C) വിദേശയാത്ര</div>
+            <div class="mcq-opt">D) മത്സരബുദ്ധി</div>
+          </div>
+        </div>
+        </div>
+    <div class="mcq-key-card">
+      <h4>MCQ ഉത്തര സൂചിക & വിശദീകരണങ്ങൾ (Answer Key)</h4>
+      <div class="key-grid">
+    
+        <div class="key-item">
+          <b>1. B</b>: കലാമണ്ഡലം ഹൈദരാലിയുടെ പ്രസിദ്ധമായ ആത്മകഥയാണ് 'ഓർമ്മതൻ വിസ്മയം'.
+        </div>
+        
+        <div class="key-item">
+          <b>2. C</b>: 'ഓട്ടോസ്' എന്നാൽ സ്വയം, 'ബയോസ്' എന്നാൽ ജീവിതം, 'ഗ്രാഫിയ' എന്നാൽ എഴുത്ത് എന്നാണ് ഗ്രീക്ക് പദാർത്ഥം.
+        </div>
+        
+        <div class="key-item">
+          <b>3. B</b>: ഹൈദരാലിയുടെ സംഗീത ഗുരു പ്രശസ്ത കഥകളി സംഗീതാചാര്യൻ കലാമണ്ഡലം നീലകണ്ഠൻ നമ്പീശനാണ്.
+        </div>
+        
+        <div class="key-item">
+          <b>4. C</b>: കഥകളി സംഗീതത്തിലെ അതികായനായിരുന്നു കലാമണ്ഡലം ഹൈദരാലി.
+        </div>
+        
+        <div class="key-item">
+          <b>5. B</b>: കേരള കലാമണ്ഡലത്തിന്റെ സ്ഥാപകനായ വള്ളത്തോൾ നാരായണമേനോന്റെ മതനിരപേക്ഷ നിലപാടാണ് ഹൈദരാലിക്ക് പ്രവേശനം നൽകിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>6. B</b>: സ്വാതന്ത്ര്യലബ്ധിക്കു ശേഷം ഏകദേശം 10 വർഷം കഴിഞ്ഞാണ് ഹൈദരാലി കലാമണ്ഡലത്തിൽ പഠിക്കാൻ എത്തുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>7. C</b>: തന്റെ ഗുരുവായ നീലകണ്ഠൻ നമ്പീശൻ ആശാനാണ് രാത്രിയിൽ വന്ന് ശിഷ്യനെ പുതപ്പിച്ചു കൊടുത്തത്.
+        </div>
+        
+        <div class="key-item">
+          <b>8. C</b>: അക്കാലത്ത് ക്ഷേത്രങ്ങളിലെ കളിയരങ്ങുകളിൽ ഹൈദരാലിക്ക് പ്രവേശനം നിഷേധിക്കപ്പെട്ടിരുന്നു.
+        </div>
+        
+        <div class="key-item">
+          <b>9. B</b>: 2006 ജനുവരി 5-നാണ് റോഡപകടത്തിൽ കലാമണ്ഡലം ഹൈദരാലി അന്തരിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>10. B</b>: സ്വന്തം ജീവിതത്തെക്കുറിച്ചുള്ള സത്യസന്ധമായ ആത്മപരിശോധനയും ആത്മനിഷ്ഠതയുമാണ് ആത്മകഥയുടെ അടിസ്ഥാനം.
+        </div>
+        
+        <div class="key-item">
+          <b>11. C</b>: ഗ്രീക്കിൽ 'Autos' എന്നാൽ സ്വയം എന്നാണ് അർത്ഥം.
+        </div>
+        
+        <div class="key-item">
+          <b>12. B</b>: രാഗഭാവങ്ങളെ അതീവ മാധുര്യത്തോടെയും ഭാവതീവ്രതയോടെയും ആലപിച്ച് ജനകീയമാക്കാൻ ഹൈദരാലിക്ക് സാധിച്ചു.
+        </div>
+        
+        <div class="key-item">
+          <b>13. B</b>: തൃശ്ശൂർ ജില്ലയിലെ ചെറുതുരുത്തിയിലാണ് കേരള കലാമണ്ഡലം സ്ഥിതി ചെയ്യുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>14. B</b>: തൃശ്ശൂർ ജില്ലയിലെ വടക്കാഞ്ചേരിക്കടുത്തുള്ള ഓട്ടുപാറയിലാണ് ഹൈദരാലി ജനിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>15. B</b>: കലയ്ക്കും യഥാർത്ഥ മാനവികതയ്ക്കും ജാതിമത വേലിക്കെട്ടുകളെക്കാൾ ഉന്നതമായ സ്ഥാനമുണ്ടെന്ന സന്ദേശമാണിത്.
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="exam-points-card">
+      <div class="exam-points-head">
+        <h3>അധ്യാപകനും ഉള്ളടക്കവും സംബന്ധിച്ച 20 പ്രധാന പരീക്ഷാ പോയിന്റുകൾ</h3>
+        <span class="exam-tag">20 EXAM FOCUS POINTS</span>
+      </div>
+      <ul class="exam-points-list">
+    <li>1. രചയിതാവ്: കലാമണ്ഡലം ഹൈദരാലി (1946–2006) - പ്രശസ്ത കഥകളി സംഗീതജ്ഞൻ.</li><li>2. ആത്മകഥ: 'ഓർമ്മതൻ വിസ്മയം' എന്ന കൃതിയിൽ നിന്നുള്ളതാണ് ഈ അധ്യായം.</li><li>3. പദോത്പത്തി: ഓട്ടോസ് (സ്വയം) + ബയോസ് (ജീവിതം) + ഗ്രാഫിയ (എഴുത്ത്).</li><li>4. ഹൈദരാലി ജനിച്ചത് തൃശ്ശൂർ ജില്ലയിലെ വടക്കാഞ്ചേരിക്ക് അടുത്തുള്ള ഓട്ടുപാറയിൽ.</li><li>5. ആദ്യത്തെ പ്രമുഖ അഹിന്ദു കഥകളി സംഗീതജ്ഞനാണ് ഹൈദരാലി.</li><li>6. കഥകളി അഭ്യസിക്കാൻ ഹൈദരാലിക്ക് പ്രവേശനം നൽകിയത് മഹാകവി വള്ളത്തോൾ.</li><li>7. പ്രധാന ഗുരുനാഥൻ: കലാമണ്ഡലം നീലകണ്ഠൻ നമ്പീശൻ ആശാൻ.</li><li>8. നീലകണ്ഠൻ നമ്പീശൻ ആശാൻ കർക്കശക്കാരനായ അധ്യാപകനും വാത്സല്യനിധിയായ പിതാവുമായിരുന്നു.</li><li>9. സ്വാതന്ത്ര്യലബ്ധിക്കു ശേഷം ഏകദേശം 10 വർഷം കഴിഞ്ഞാണ് ഹൈദരാലി കലാമണ്ഡലത്തിൽ എത്തുന്നത്.</li><li>10. യാഥാസ്ഥിതിക കാലഘട്ടത്തിൽ അഹിന്ദുക്കൾക്ക് ക്ഷേത്രങ്ങളിലെ കളിയരങ്ങുകളിൽ പ്രവേശനം നിഷിദ്ധമായിരുന്നു.</li><li>11. പലപ്പോഴും ക്ഷേത്രമതിൽക്കെട്ടിനു പുറത്തിരുന്നാണ് ഹൈദരാലി മൈക്കിലൂടെ പാടിയത്.</li><li>12. ഗുരുവിന്റെ കരുതലും സ്നേഹവുമാണ് തന്നെ ഒരു കലാകാരനായി നിലനിർത്തിയതെന്ന് അദ്ദേഹം സാക്ഷ്യപ്പെടുത്തുന്നു.</li><li>13. പനി ബാധിച്ച രാത്രിയിൽ ഗുരു ആശാൻ ശിഷ്യനെ പുതപ്പിച്ചു തലോടിയ നിമിഷം മായാത്ത ഓർമ്മയായി നിൽക്കുന്നു.</li><li>14. കഥകളി സംഗീതത്തിൽ രാഗഭാവവും ശബ്ദമാധുര്യവും സമന്വയിപ്പിച്ച അതുല്യ പ്രതിഭയായിരുന്നു ഹൈദരാലി.</li><li>15. ഫാക്ടിൽ (FACT) കഥകളി സംഗീതാധ്യാപകനായി 1965-ൽ ഹൈദരാലി ഔദ്യോഗിക ജീവിതം ആരംഭിച്ചു.</li><li>16. 2006 ജനുവരി 5-ന് ഒരു വാഹനാപകടത്തിലാണ് അദ്ദേഹം അന്തരിച്ചത്.</li><li>17. ആത്മകഥയിലെ പ്രധാന സ്വഭാവം: സത്യസന്ധത, ആത്മനിഷ്ഠത, പശ്ചാത്തപിക്കാനുള്ള ആർജ്ജവം.</li><li>18. പാരമ്പര്യ കലാരംഗത്ത് നിലനിന്നിരുന്ന ജാതി-മത വിവേചനങ്ങളുടെ നേർച്ചിത്രം ഈ കൃതി വെളിപ്പെടുത്തുന്നു.</li><li>19. കലയുടെയും സ്നേഹത്തിന്റെയും മുന്നിൽ ബാഹ്യമായ വിവേചനങ്ങൾ അപ്രസക്തമാകുന്നുവെന്ന് ഈ പാഠം വ്യക്തമാക്കുന്നു.</li><li>20. പരീക്ഷാ ഫോക്കസ്: ആത്മകഥയുടെ ലക്ഷണങ്ങൾ, നീലകണ്ഠൻ നമ്പീശന്റെ ഗുരുവ്യക്തിത്വം, ഹൈദരാലിയുടെ പ്രതിസന്ധികളും അതിജീവനവും.</li>
+      </ul>
+    </div>
+    </div></div></body></html>

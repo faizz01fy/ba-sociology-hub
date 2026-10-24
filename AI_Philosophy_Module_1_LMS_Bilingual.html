@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <meta charset="UTF-8">
+  <title>Module 1: Introduction to Artificial Intelligence · Philosophy of AI (PHL1MN102)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    
+    @page {
+      size: A4;
+      margin: 14mm 14mm 16mm 14mm;
+      @bottom-right {
+        content: counter(page);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 9pt;
+        font-weight: 700;
+        color: #64748b;
+      }
+    }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.6;
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .header-box {
+      border: 2px solid #0f766e;
+      border-radius: 12px;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+      margin-bottom: 20px;
+    }
+    
+    .badge {
+      display: inline-block;
+      background: #0f766e;
+      color: #ffffff;
+      font-size: 8pt;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    
+    h1 {
+      margin: 0 0 4px 0;
+      color: #134e4a;
+      font-size: 16pt;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    
+    .sub-title {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #0d9488;
+      margin-bottom: 8px;
+    }
+    
+    .meta-info {
+      font-size: 8.5pt;
+      color: #475569;
+      font-weight: 600;
+      border-top: 1px dashed #99f6e4;
+      padding-top: 6px;
+      margin-top: 6px;
+    }
+    
+    .lms-box {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-left: 5px solid #0f766e;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 22px;
+    }
+    
+    .lms-box h3 {
+      margin: 0 0 6px 0;
+      color: #0f766e;
+      font-size: 10.5pt;
+      font-weight: 800;
+    }
+    
+    .section-title {
+      background: #0f766e;
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 11pt;
+      font-weight: 800;
+      margin: 22px 0 14px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      page-break-after: avoid;
+    }
+    
+    .bilingual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+      page-break-inside: avoid;
+    }
+    
+    .card-en, .card-ml {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      background: #ffffff;
+      font-size: 9.5pt;
+    }
+    
+    .card-en {
+      border-left: 4px solid #2563eb;
+      background: #f8fafc;
+    }
+    
+    .card-ml {
+      border-left: 4px solid #059669;
+      background: #f0fdf4;
+    }
+    
+    .card-heading {
+      font-weight: 800;
+      font-size: 9.5pt;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .card-en .card-heading { color: #1e40af; }
+    .card-ml .card-heading { color: #065f46; }
+    
+    ul {
+      margin: 6px 0;
+      padding-left: 18px;
+    }
+    
+    li {
+      margin-bottom: 5px;
+    }
+    
+    .key-term {
+      background: #fef3c7;
+      color: #92400e;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+    
+    .qa-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+    
+    .qa-q {
+      background: #f1f5f9;
+      padding: 8px 12px;
+      font-weight: 800;
+      color: #1e293b;
+      font-size: 9.5pt;
+      border-bottom: 1px solid #cbd5e1;
+    }
+    
+    .qa-a {
+      padding: 10px 14px;
+      background: #ffffff;
+    }
+    
+    .table-custom {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 9pt;
+      page-break-inside: avoid;
+    }
+    
+    .table-custom th, .table-custom td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    
+    .table-custom th {
+      background: #0f766e;
+      color: #ffffff;
+      font-weight: 800;
+    }
+    
+    .table-custom tr:nth-child(even) {
+      background: #f8fafc;
+    }
+    
+    .page-break {
+      page-break-before: always;
+    }
+  
+    @media (max-width: 768px) {
+      body {
+        padding: 12px 10px !important;
+        font-size: 15px !important;
+        line-height: 1.65 !important;
+      }
+      .header-box {
+        padding: 14px 12px !important;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header-box">
+    <span class="badge">Calicut University · BA Sociology FYUG · Minor Course (PHL1MN102)</span>
+    <h1>Module 1: Introduction to Artificial Intelligence</h1>
+    <div class="sub-title">മൊഡ്യൂൾ 1: ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിലേക്കുള്ള ആമുഖം</div>
+    <div class="meta-info">
+      <strong>LMS Source Document:</strong> Module_1_Introduction_to_Artificial_Intelligence.pdf &amp; Official Syllabus (Pages 113–116)<br>
+      <strong>Syllabus Code:</strong> PHL1MN102 · Credits: 4 · Weightage: 15 Marks / 10 Hours
+    </div>
+  </div>
+
+  <!-- LMS MODULE FOUNDATION & OBJECTIVES (STRICTLY FROM LMS PDF) -->
+  <div class="lms-box">
+    <h3>📋 ഔദ്യോഗിക LMS അവലോകനവും പഠന ലക്ഷ്യങ്ങളും (Official LMS Overview &amp; Objectives)</h3>
+    <p style="margin:0 0 8px 0; font-size:9pt; color:#334155;">
+      <strong>LMS Overview:</strong> This Module evaluates the history and foundations of Artificial Intelligence, tracing its origins from ancient philosophy to the modern day. We examine the concept of philosophy of AI, focussing on the integration of philosophical areas within AI. It introduces Aristotle and foundational thinkers, illustrates the inception of AI, and outlines its principal evolutionary frameworks.
+    </p>
+    <div style="font-size:8.5pt; color:#0f766e; font-weight:700;">
+      ✓ 6 Core LMS Objectives: 1) Historical Evolution 2) Foundational Principles (Logic &amp; Reasoning) 3) Milestones &amp; Pioneers (Turing, McCarthy, Minsky, Simon) 4) Methodologies (Symbolic AI, Connectionism, ML, Deep Learning) 5) The Turing Test (Can a machine think?) 6) Introductory Ethical Principles.
+    </div>
+  </div>
+
+  <!-- SECTION 1: HISTORICAL EVOLUTION -->
+  <div class="section-title">
+    <span>1. Historical Evolution: Philosophy to Computational Frameworks</span>
+    <span>ചരിത്രപരമായ വികാസം: തത്ത്വചിന്തയിൽ നിന്ന് കമ്പ്യൂട്ടറുകളിലേക്ക്</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-en">
+      <div class="card-heading">🇬🇧 English Core Concept</div>
+      <p>AI did not originate purely in computer science; its intellectual roots reside in classical philosophy. For millennia, philosophers sought to understand the mechanics of human thought, formal deduction, and knowledge representation.</p>
+      <ul>
+        <li><strong>Aristotle (384–322 BCE):</strong> Formulated formal logic and the <span class="key-term">Syllogism</span>—a mechanical set of inferential rules where true premises guarantee a true conclusion. This proved that deduction can proceed formally regardless of material content.</li>
+        <li><strong>Gottfried Wilhelm Leibniz (1646–1716):</strong> Envisioned the <em>Calculus Ratiocinator</em> and <em>Characteristica Universalis</em>, hypothesizing that all human reasoning could be reduced to calculation.</li>
+        <li><strong>George Boole (1815–1864):</strong> Formalized binary algebraic logic (Boolean logic: True/False, 1/0), providing the mathematical substrate for modern digital electronics.</li>
+        <li><strong>The Dartmouth Conference (1956):</strong> Regarded as the official birth of AI as an academic discipline. John McCarthy coined the term "Artificial Intelligence".</li>
+      </ul>
+    </div>
+    <div class="card-ml">
+      <div class="card-heading">🇲🇱 മലയാളം വിശദീകരണം</div>
+      <p>കൃത്രിമബുദ്ധി (AI) കമ്പ്യൂട്ടർ സയൻസിൽ പെട്ടെന്ന് ഉണ്ടായ ഒന്നല്ല; അതിന്റെ ബൗദ്ധിക വേരുകൾ പുരാതന തത്ത്വചിന്തയിലാണ് നിലകൊള്ളുന്നത്. ചിന്തയെ ചിട്ടപ്പെടുത്താനുള്ള മനുഷ്യന്റെ അന്വേഷണമാണ് AI-യുടെ തുടക്കം.</p>
+      <ul>
+        <li><strong>അരിസ്റ്റോട്ടിൽ (ബി.സി. 384–322):</strong> യുക്തിചിന്തയെ ആദ്യമായി ശാസ്ത്രീയമായി ചിട്ടപ്പെടുത്തി. അദ്ദേഹം വികസിപ്പിച്ച <span class="key-term">ന്യായയുക്തി (Syllogism)</span> വഴി രണ്ട് പ്രസ്താവനകളിൽ നിന്ന് നിഗമനത്തിലെത്തുന്ന formal നിയമങ്ങൾ നൽകി.</li>
+        <li><strong>ഗോട്ട്ഫ്രൈഡ് ലൈബ്നിസ് (1646–1716):</strong> മനുഷ്യന്റെ ചിന്തകളെ ഗണിതശാസ്ത്രപരമായ സമവാക്യങ്ങളാക്കി മാറ്റി കണക്കുകൂട്ടാൻ കഴിയുന്ന സാർവ്വത്രിക ഭാഷ വിഭാവനം ചെയ്തു.</li>
+        <li><strong>ജോർജ്ജ് ബൂൾ (1815–1864):</strong> ബൂളിയൻ ആൾജിബ്ര (Boolean Logic: 1/0, ശരി/തെറ്റ്) രൂപീകരിച്ചു; ഇത് ആധുനിക ഡിജിറ്റൽ കമ്പ്യൂട്ടറുകളുടെ പ്രവർത്തന അടിത്തറയായി.</li>
+        <li><strong>ഡാർട്ട്മൗത്ത് കോൺഫറൻസ് (1956):</strong> ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് ഒരു സ്വതന്ത്ര വിജ്ഞാനശാഖയായി പിറവിയെടുത്ത ചരിത്ര സമ്മേളനം. ജോൺ മക്കാർത്തിയാണ് 'ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ്' എന്ന പദം നൽകിയത്.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 2: FOUNDATIONAL PRINCIPLES -->
+  <div class="section-title">
+    <span>2. Fundamental Principles: Logic, Reasoning, Problem-Solving &amp; Learning</span>
+    <span>അടിസ്ഥാന തത്ത്വങ്ങൾ: യുക്തി, യുക്തിചിന്ത, പ്രശ്നപരിഹാരം, പഠനം</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-en">
+      <div class="card-heading">🇬🇧 4 Foundational Pillars</div>
+      <ul>
+        <li><strong>Logic (യുക്തി):</strong> The rigorous formulation of thought. Classical AI relies on propositional and predicate logic to derive verified consequences from given axioms without contradiction.</li>
+        <li><strong>Reasoning (യുക്തിചിന്ത):</strong> The algorithmic manipulation of knowledge. Encompasses <em>Deductive</em> (certain conclusions), <em>Inductive</em> (pattern-based generalization), and <em>Abductive</em> (best explanatory inference) reasoning.</li>
+        <li><strong>Problem-Solving (പ്രശ്നപരിഹാരം):</strong> Conceptualized by Simon and Newell as state-space search. A problem is defined by an initial state, allowed operators, goal states, and heuristics that prune search spaces.</li>
+        <li><strong>Learning (പഠനം):</strong> The system’s capability to adaptively improve performance on subsequent tasks utilizing past data and experiences without explicit reprogramming.</li>
+      </ul>
+    </div>
+    <div class="card-ml">
+      <div class="card-heading">🇲🇱 4 അടിസ്ഥാന ഘടകങ്ങൾ</div>
+      <ul>
+        <li><strong>ലോജിക് (Formal Logic):</strong> ചിന്തകളുടെ ക്രമീകൃത നിയമങ്ങൾ. കൃത്യമായ നിയമങ്ങളിലൂടെയും സിംബലുകളിലൂടെയും പ്രസ്താവനകളുടെ സത്യത (Truth Value) ഉറപ്പുവരുത്തുന്നു.</li>
+        <li><strong>റീസണിംഗ് (Reasoning):</strong> ലഭ്യമായ വിവരങ്ങളിൽ നിന്ന് പുതിയ അറിവ് നിർമ്മിക്കുന്ന പ്രക്രിയ. ഡിഡക്റ്റീവ് (നിഗമന യുക്തി), ഇൻഡക്റ്റീവ് (സാമാന്യവൽക്കരണ യുക്തി) രീതികൾ ഇതിൽ ഉൾപ്പെടുന്നു.</li>
+        <li><strong>പ്രശ്നപരിഹാരം (Problem-Solving):</strong> പ്രാരംഭ ഘട്ടത്തിൽ (Initial State) നിന്ന് ലക്ഷ്യത്തിലേക്ക് (Goal State) എത്താനുള്ള തിരച്ചിൽ പ്രക്രിയ. കമ്പ്യൂട്ടറുകൾ ഹ്യൂറിസ്റ്റിക് അൽഗോരിതങ്ങൾ ഉപയോഗിച്ച് പ്രശ്നം പരിഹരിക്കുന്നു.</li>
+        <li><strong>പഠനം (Learning):</strong> അനുഭവങ്ങളിൽ നിന്നും ഡാറ്റയിൽ നിന്നും സ്വയം പഠിച്ച് മുൻപത്തെ തെറ്റുകൾ തിരുത്താനും കാര്യക്ഷമത വർദ്ധിപ്പിക്കാനുമുള്ള യന്ത്രത്തിന്റെ ശേഷി.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 3: KEY PIONEERS (STRICTLY REQUIRED BY LMS OBJECTIVE 3) -->
+  <div class="section-title">
+    <span>3. Significant Milestones &amp; Pioneers (LMS Objective 3)</span>
+    <span>പ്രധാന നാഴികക്കല്ലുകളും വ്യക്തിത്വങ്ങളും</span>
+  </div>
+
+  <table class="table-custom">
+    <thead>
+      <tr>
+        <th style="width:25%;">Pioneer / വ്യക്തിത്വം</th>
+        <th style="width:38%;">Core Contribution (English)</th>
+        <th style="width:37%;">പ്രധാന സംഭാവന (മലയാളം)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Alan Turing (അലൻ ട്യൂറിംഗ്)</strong><br><small>1912–1954</small></td>
+        <td>Father of Theoretical Computer Science and AI. Formulated the Turing Machine (1936) and the seminal paper <em>Computing Machinery and Intelligence</em> (1950) proposing the <strong>Turing Test (Imitation Game)</strong>.</td>
+        <td>കമ്പ്യൂട്ടർ സയൻസിന്റെയും AI-യുടെയും പിതാവ്. ട്യൂറിംഗ് മെഷീൻ ആശയം അവതരിപ്പിച്ചു. യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ എന്ന് പരിശോധിക്കുന്ന പ്രസിദ്ധമായ <strong>'ട്യൂറിംഗ് ടെസ്റ്റ്' (1950)</strong> നിർദ്ദേശിച്ചു.</td>
+      </tr>
+      <tr>
+        <td><strong>John McCarthy (ജോൺ മക്കാർത്തി)</strong><br><small>1927–2011</small></td>
+        <td>Coined the term <strong>"Artificial Intelligence"</strong> at the 1956 Dartmouth Conference. Created the <strong>LISP</strong> programming language (1958), the dominant language for classical symbolic AI and knowledge representation.</td>
+        <td>1956-ൽ 'ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ്' എന്ന പേര് നിർദ്ദേശിച്ചു. ക്ലാസിക്കൽ AI-യുടെ പ്രമുഖ ഭാഷയായ <strong>LISP</strong> വികസിപ്പിച്ചു. സിംബോളിക് AI-യുടെ പ്രധാന വക്താവ്.</td>
+      </tr>
+      <tr>
+        <td><strong>Marvin Minsky (മാർവിൻ മിൻസ്കി)</strong><br><small>1927–2016</small></td>
+        <td>Co-founder of the MIT AI Laboratory. Pioneered artificial neural networks (SNARC, 1951), frames theory for knowledge representation, and co-authored the book <em>Perceptrons</em> (1969) examining computational limits of early neural models.</td>
+        <td>MIT AI ലാബിന്റെ സഹസ്ഥാപകൻ. ആദ്യ ന്യൂറൽ നെറ്റ്‌വർക്ക് സിമുലേറ്റർ (SNARC) നിർമ്മിച്ചു. അറിവിനെ ഓർമ്മയിൽ സൂക്ഷിക്കാനുള്ള 'ഫ്രെയിംസ് തിയറി' വികസിപ്പിച്ചു. പെർസെപ്‌ട്രോൺസിന്റെ പരിമിതികൾ ചൂണ്ടിക്കാണിച്ചു.</td>
+      </tr>
+      <tr>
+        <td><strong>Herbert Simon (ഹെർബർട്ട് സൈമൺ)</strong><br><small>1916–2001</small></td>
+        <td>Nobel Laureate and cognitive scientist. Co-developed the <strong>Logic Theorist (1955)</strong> and <strong>General Problem Solver (GPS)</strong> with Allen Newell, demonstrating that machines can use heuristics to prove mathematical theorems.</td>
+        <td>നോബൽ സമ്മാന ജേതാവ്. അലൻ ന്യൂവലുമായി ചേർന്ന് ലോകത്തിലെ ആദ്യ AI പ്രോഗ്രാമുകളായ <strong>'ലോജിക് തിയറിസ്റ്റ്'</strong>, 'ജനറൽ പ്രോബ്ലം സോൾവർ' എന്നിവ വികസിപ്പിച്ചു. മനുഷ്യ ചിന്തയെ സിംബലുകൾ ഉപയോഗിച്ച് തെളിയിച്ചു.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 4: PRINCIPAL METHODOLOGIES (STRICTLY REQUIRED BY LMS OBJECTIVE 4) -->
+  <div class="section-title">
+    <span>4. Principal Methodologies &amp; Evolutionary Frameworks</span>
+    <span>പ്രധാന സമീപനങ്ങളും ചട്ടക്കൂടുകളും (Symbolic, Connectionist, ML, Deep Learning)</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-en">
+      <div class="card-heading">🇬🇧 4 Methodological Paradigms</div>
+      <ol>
+        <li><strong>Symbolic AI (GOFAI - Good Old-Fashioned AI):</strong> Treats intelligence as the manipulation of explicit symbols using explicit logical rules (Top-Down approach). Emphasizes formal logic and expert systems.</li>
+        <li><strong>Connectionism (Neural Networks):</strong> Models cognition after the biological architecture of the human brain (Bottom-Up approach). Information is processed via interconnected nodes (neurons) and weighted connections.</li>
+        <li><strong>Machine Learning (ML):</strong> Shifts from hand-coded rules to statistical inference. Algorithms ingest vast training datasets to discover patterns, classifications, and predictive mathematical functions autonomously.</li>
+        <li><strong>Deep Learning (DL):</strong> Utilizes multi-layered (deep) artificial neural networks to automatically extract hierarchical representations from raw data (e.g., computer vision, large language models).</li>
+      </ol>
+    </div>
+    <div class="card-ml">
+      <div class="card-heading">🇲🇱 4 പ്രധാന വികാസ ഘട്ടങ്ങൾ</div>
+      <ol>
+        <li><strong>സിംബോളിക് AI (Symbolic / GOFAI):</strong> ചിന്തയെ ചിഹ്നങ്ങളുടെയും കൃത്യമായ ഗണിത നിയമങ്ങളുടെയും നിയന്ത്രണമായി കാണുന്നു (Top-Down സമീപനം). എക്സ്പെർട്ട് സിസ്റ്റങ്ങൾ ഇതിന് ഉദാഹരണമാണ്.</li>
+        <li><strong>കണക്ഷനിസം (Connectionism):</strong> മനുഷ്യ മസ്തിഷ്കത്തിലെ ന്യൂറോണുകളുടെ പ്രവർത്തന മാതൃക പിന്തുടരുന്നു (Bottom-Up സമീപനം). പരസ്പരം ബന്ധിപ്പിക്കപ്പെട്ട ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ വഴിയാണ് വിവരങ്ങൾ കൈകാര്യം ചെയ്യുന്നത്.</li>
+        <li><strong>മെഷീൻ ലേണിംഗ് (Machine Learning):</strong> കമ്പ്യൂട്ടറുകൾക്ക് ഓരോ നിയമവും സ്വയം കോഡ് ചെയ്യുന്നതിന് പകരം, വലിയ ഡാറ്റകൾ നൽകി അതിൽ നിന്ന് തനിയെ പാറ്റേണുകൾ കണ്ടെത്തി പഠിക്കാൻ അനുവദിക്കുന്ന രീതി.</li>
+        <li><strong>ഡീപ്പ് ലേണിംഗ് (Deep Learning):</strong> അനേകം പാളികളുള്ള (Multi-layered) കൃത്രിമ ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ ഉപയോഗിച്ച് സങ്കീർണ്ണമായ ഡാറ്റകൾ (ചിത്രങ്ങൾ, ശബ്ദം, വലിയ ഭാഷാ മോഡലുകൾ) നേരിട്ട് അപഗ്രഥിക്കുന്ന അത്യാധുനിക രീതി.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- SECTION 5: CAN A MACHINE THINK? & TURING TEST -->
+  <div class="section-title">
+    <span>5. Can a Machine Think? &amp; Foundational Philosophical Inquiry</span>
+    <span>ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ? ട്യൂറിംഗ് ടെസ്റ്റും ദാർശനിക അന്വേഷണങ്ങളും</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-en">
+      <div class="card-heading">🇬🇧 Turing's Operational Definition</div>
+      <p>In his 1950 landmark paper, Alan Turing bypassed the vague metaphysical question <em>"Can machines think?"</em> and replaced it with an operational behavioral criterion: <strong>The Imitation Game (Turing Test)</strong>.</p>
+      <ul>
+        <li><strong>The Setup:</strong> An interrogator communicates textually via a terminal with an unseen human and a machine. If the interrogator cannot reliably distinguish machine responses from human responses, the machine is operationally deemed intelligent.</li>
+        <li><strong>Core Philosophical Shift:</strong> Shifted the criterion of intelligence from <em>internal essence (soul/consciousness)</em> to <em>functional, observable performance</em>.</li>
+        <li><strong>Foundational Counter-Arguments:</strong> Anticipated objections including the Theological objection, the "Heads in the Sand" objection, the Mathematical objection (Gödel’s theorem), and Lady Lovelace’s argument (machines cannot originate anything new).</li>
+      </ul>
+    </div>
+    <div class="card-ml">
+      <div class="card-heading">🇲🇱 ട്യൂറിംഗിന്റെ നിരീക്ഷണം</div>
+      <p>1950-ൽ അലൻ ട്യൂറിംഗ് 'യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ?' എന്ന അവ്യക്തമായ ചോദ്യത്തിന് പകരം പരീക്ഷണാടിസ്ഥാനത്തിൽ തെളിയിക്കാവുന്ന ഒരു മാതൃക അവതരിപ്പിച്ചു: <strong>ഇമിറ്റേഷൻ ഗെയിം (ട്യൂറിംഗ് ടെസ്റ്റ്)</strong>.</p>
+      <ul>
+        <li><strong>ടെസ്റ്റിന്റെ ഘടന:</strong> ഒരു ചോദ്യകർത്താവ് രണ്ട് വ്യത്യസ്ത മുറികളിലുള്ള മനുഷ്യനുമായും കമ്പ്യൂട്ടറുമായും ടെക്സ്റ്റ് വഴി മാത്രം ആശയവിനിമയം നടത്തുന്നു. സംസാരിക്കുന്നത് മനുഷ്യനാണോ യന്ത്രമാണോ എന്ന് ചോദ്യകർത്താവിന് തിരിച്ചറിയാൻ കഴിയാതെ വന്നാൽ ആ യന്ത്രം ബുദ്ധിയുള്ളതായി കണക്കാക്കാം.</li>
+        <li><strong>ദാർശനിക വഴിത്തിരിവ്:</strong> ബുദ്ധി എന്നത് ആത്മാവിലോ ബോധത്തിലോ ഉള്ള ഒന്നല്ല, മറിച്ച് പ്രവർത്തനപരമായ കഴിവാണെന്ന് (Functional Performance) ട്യൂറിംഗ് വാദിച്ചു.</li>
+        <li><strong>വിമർശനങ്ങളും മറുപടികളും:</strong> ദൈവശാസ്ത്രപരമായ വാദങ്ങൾ, ലേഡി ലവ്‌ലേസിന്റെ വാദം (യന്ത്രങ്ങൾക്ക് സ്വന്തമായി പുതിയ ആശയങ്ങൾ സൃഷ്ടിക്കാൻ കഴിയില്ല) എന്നിവയെ ട്യൂറിംഗ് യുക്തിസഹമായി നേരിട്ടു.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 6: PHILOSOPHY IN THE LIGHT OF AI & INTRODUCTORY ETHICS -->
+  <div class="section-title">
+    <span>6. Philosophy in the Light of AI &amp; Introductory Ethics</span>
+    <span>AI-യുടെ വെളിച്ചത്തിൽ തത്ത്വചിന്തയും പ്രാഥമിക ധാർമ്മിക തത്ത്വങ്ങളും</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-en">
+      <div class="card-heading">🇬🇧 Two-Way Philosophical Synergy</div>
+      <ul>
+        <li><strong>Philosophy to AI:</strong> Provides theoretical ontology (what entities exist), epistemology (what constitutes knowledge), logic, and moral philosophy to guide algorithms.</li>
+        <li><strong>AI to Philosophy:</strong> Acts as an empirical testing lab. Ancient thought experiments regarding intentionality, mind-body interaction, and deduction can now be coded and algorithmically simulated.</li>
+        <li><strong>Introductory Ethical Principles:</strong> From the beginning, AI systems must be aligned with fundamental human dignity, fairness, accountability, and safety—preventing unchecked autonomous harm.</li>
+      </ul>
+    </div>
+    <div class="card-ml">
+      <div class="card-heading">🇲🇱 തത്ത്വചിന്തയും AI-യും തമ്മിലുള്ള പരസ്പര ബന്ധം</div>
+      <ul>
+        <li><strong>തത്ത്വചിന്ത AI-ക്ക് നൽകുന്നത്:</strong> ആശയപരമായ അടിത്തറ, യുക്തിചിന്തയുടെ നിയമങ്ങൾ, ജ്ഞാനനിർമ്മാണ മാതൃകകൾ, മൂല്യബോധം എന്നിവ തത്ത്വചിന്ത AI-ക്ക് നൽകുന്നു.</li>
+        <li><strong>AI തത്ത്വചിന്തയ്ക്ക് നൽകുന്നത്:</strong> അമൂർത്തമായ തത്ത്വചിന്താ ആശയങ്ങളെയും മനസ്സിന്റെ പ്രവർത്തനങ്ങളെയും പ്രായോഗികമായി പരീക്ഷിച്ച് ബോധ്യപ്പെടാനുള്ള കമ്പ്യൂട്ടേഷൻ മാതൃകകൾ AI നൽകുന്നു.</li>
+        <li><strong>പ്രാഥമിക ധാർമ്മിക തത്ത്വങ്ങൾ:</strong> സാങ്കേതിക വികാസം മനുഷ്യന്റെ നന്മയ്ക്കും സമത്വത്തിനും സുരക്ഷയ്ക്കും വേണ്ടിയാകണം; മനുഷ്യന്റെ നിയന്ത്രണം (Human-in-the-loop) ഉറപ്പുവരുത്തേണ്ടത് അത്യാവശ്യമാണ്.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EXAM-FOCUSED HIGH-YIELD Q&A BASED STRICTLY ON MODULE 1 -->
+  <div class="section-title">
+    <span>7. Exam-Focused High-Yield Q&amp;A (Strictly Syllabus Aligned)</span>
+    <span>പരീക്ഷാ കേന്ദ്രീകൃത ചോദ്യോത്തരങ്ങൾ (15 മാർക്ക് ഫോക്കസ്)</span>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q1. Define Artificial Intelligence and state its historical origin in philosophy. (കൃത്രിമബുദ്ധി നിർവ്വചിക്കുക; തത്ത്വചിന്തയിലെ അതിന്റെ ചരിത്രപരമായ ഉത്ഭവം വ്യക്തമാക്കുക.)</div>
+    <div class="qa-a">
+      <p><strong>Answer:</strong> Artificial Intelligence (AI) is the subfield of computer science dedicated to developing systems capable of performing tasks typically requiring human intelligence—including reasoning, problem-solving, learning, and language understanding. Conceptually, AI originated in classical Greek philosophy, where Aristotle formulated deductive logic (syllogism). Later, Leibniz and Boole mechanized reasoning into formal mathematical calculus, which Turing and McCarthy formalized into modern computational frameworks.</p>
+      <p style="color:#065f46; font-size:9pt; margin-top:4px;"><strong>മലയാളം ഉത്തരം:</strong> മനുഷ്യന്റെ ബുദ്ധിശക്തി ആവശ്യമുള്ള കാര്യങ്ങളായ യുക്തിചിന്ത, പ്രശ്നപരിഹാരം, പഠനം, ആശയവിനിമയം എന്നിവ കമ്പ്യൂട്ടറുകൾ വഴി സാധ്യമാക്കുന്ന ശാസ്ത്രശാഖയാണ് കൃത്രിമബുദ്ധി (AI). പുരാതന ഗ്രീക്ക് തത്ത്വചിന്തകൻ അരിസ്റ്റോട്ടിലിന്റെ ന്യായയുക്തിചിന്തയിൽ നിന്നാണ് ഇതിന്റെ തുടക്കം. പിന്നീട് ലൈബ്നിസും ജോർജ്ജ് ബൂളും ചിന്തയെ ഗണിത സമവാക്യങ്ങളാക്കി മാറ്റി, അലൻ ട്യൂറിംഗും ജോൺ മക്കാർത്തിയും ഇത് കമ്പ്യൂട്ടർ ശാസ്ത്രമായി വികസിപ്പിച്ചു.</p>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q2. Differentiate between Symbolic AI and Connectionism. (സിംബോളിക് AI-യും കണക്ഷനിസവും തമ്മിലുള്ള വ്യത്യാസങ്ങൾ വ്യക്തമാക്കുക.)</div>
+    <div class="qa-a">
+      <p><strong>Answer:</strong> 
+        <strong>Symbolic AI (Top-Down / GOFAI):</strong> Operates on explicit symbols, facts, and human-defined if-then logical rules. Highly interpretable but fragile in ambiguous real-world situations.<br>
+        <strong>Connectionism (Bottom-Up / Neural Networks):</strong> Inspired by biological brain networks. Learns patterns by adjusting mathematical connection weights between interconnected artificial neurons across layers. Excellent at pattern recognition (vision, speech) but acts as a "black box".
+      </p>
+      <p style="color:#065f46; font-size:9pt; margin-top:4px;"><strong>മലയാളം ഉത്തരം:</strong> 
+        <strong>സിംബോളിക് AI (Top-Down):</strong> മനുഷ്യൻ നിർവ്വചിച്ച വ്യക്തമായ ചിഹ്നങ്ങളും നിയമങ്ങളും യുക്തിയും അടിസ്ഥാനമാക്കി പ്രവർത്തിക്കുന്നു. വ്യാഖ്യാനിക്കാൻ എളുപ്പമാണ്.<br>
+        <strong>കണക്ഷനിസം (Bottom-Up):</strong> മനുഷ്യ മസ്തിഷ്കത്തിലെ ന്യൂറോണുകളുടെ ശൃംഖലയെ മാതൃകയാക്കി ഡാറ്റയിൽ നിന്ന് സ്വയം പഠിക്കുന്നു. ഇമേജ്, വോയ്‌സ് റെക്കഗ്നിഷൻ എന്നിവയിൽ മികച്ചുനിൽക്കുന്നു.
+      </p>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q3. Explain the Turing Test and its philosophical importance. (ട്യൂറിംഗ് ടെസ്റ്റും അതിന്റെ ദാർശനിക പ്രാധാന്യവും വിശദീകരിക്കുക.)</div>
+    <div class="qa-a">
+      <p><strong>Answer:</strong> Proposed by Alan Turing in 1950, the Turing Test evaluates whether a machine can exhibit intelligent behavior indistinguishable from a human in textual dialogue. If a human interrogator cannot reliably discern which conversant is machine and which is human, the machine passes. Philosophically, it established an <em>operational and functional definition</em> of machine intelligence, asserting that observable intellectual performance is the legitimate metric of mind, rejecting the notion that thinking requires biological organs.</p>
+      <p style="color:#065f46; font-size:9pt; margin-top:4px;"><strong>മലയാളം ഉത്തരം:</strong> 1950-ൽ അലൻ ട്യൂറിംഗ് നിർദ്ദേശിച്ച പരീക്ഷണമാണിത്. ടെക്സ്റ്റ് സംഭാഷണത്തിലൂടെ ഒരു മനുഷ്യനും കമ്പ്യൂട്ടറും ചോദ്യകർത്താവിനോട് സംസാരിക്കുന്നു. ഏതാണ് യന്ത്രം ഏതാണ് മനുഷ്യൻ എന്ന് തിരിച്ചറിയാൻ സാധിച്ചില്ലെങ്കിൽ ആ കമ്പ്യൂട്ടറിന് ബുദ്ധിയുണ്ടെന്ന് അനുമാനിക്കാം. ബുദ്ധി എന്നത് ശരീരത്തിന്റെ പ്രത്യേകതയല്ല, മറിച്ച് നിരീക്ഷണവിധേയമായ പ്രവർത്തനക്ഷമതയാണെന്ന് (Functional Intelligence) ഇത് ദാർശനികമായി സ്ഥാപിച്ചു.</p>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q4. Summarize the contributions of McCarthy, Minsky, and Simon. (മക്കാർത്തി, മിൻസ്കി, സൈമൺ എന്നിവരുടെ സംഭാവനകൾ ചുരുക്കി എഴുതുക.)</div>
+    <div class="qa-a">
+      <p><strong>Answer:</strong> 
+        <strong>John McCarthy:</strong> Named the discipline "Artificial Intelligence" (1956) and created LISP.<br>
+        <strong>Marvin Minsky:</strong> Pioneered early neural network simulators (SNARC), frames for knowledge structures, and critiqued early perceptrons.<br>
+        <strong>Herbert Simon:</strong> Created the Logic Theorist and GPS with Newell, showing that heuristic problem-solving mirrors human cognitive deduction.
+      </p>
+      <p style="color:#065f46; font-size:9pt; margin-top:4px;"><strong>മലയാളം ഉത്തരം:</strong> 
+        <strong>ജോൺ മക്കാർത്തി:</strong> 1956-ൽ 'AI' എന്ന പേര് നൽകി, LISP പ്രോഗ്രാമിംഗ് ഭാഷ വികസിപ്പിച്ചു.<br>
+        <strong>മാർവിൻ മിൻസ്കി:</strong> ആദ്യ ന്യൂറൽ നെറ്റ്‌വർക്ക് രൂപകൽപ്പന ചെയ്തു, അറിവിന്റെ പ്രാതിനിധ്യത്തിന് ഫ്രെയിംസ് തിയറി നൽകി.<br>
+        <strong>ഹെർബർട്ട് സൈമൺ:</strong> ലോകത്തിലെ ആദ്യ AI പ്രോഗ്രാമുകളായ ലോജിക് തിയറിസ്റ്റും GPS-ഉം വികസിപ്പിച്ച് മനുഷ്യ യുക്തിചിന്ത കമ്പ്യൂട്ടറിൽ സാധ്യമാക്കി.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

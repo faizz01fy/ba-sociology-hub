@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta charset="UTF-8">
+<title>കവിത: സമുദ്രലംഘനം - അധ്യായ പഠന സഹായി</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  @page {
+    size: A4 portrait;
+    margin: 14mm 13mm 14mm 13mm;
+    @top-right {
+      content: "മലയാള സാഹിത്യാനുശീലനം · അധ്യായ പഠന സഹായി";
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Malayalam', 'Manjari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .chapter-header {
+    background: linear-gradient(135deg, var(--c-primary, #0f766e) 0%, var(--c-dark, #134e4a) 100%);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    page-break-inside: avoid;
+  }
+
+  .ch-pill-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .ch-pill {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .chapter-header h1 {
+    font-size: 17pt;
+    font-weight: 900;
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+    color: #ffffff;
+  }
+
+  .ch-meta-sub {
+    font-size: 10pt;
+    color: #ccfbf1;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Author Profile Card (കവിപരിചയം / രചയിതാവിന്റെ പരിചയം) */
+  .author-profile-box {
+    background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%);
+    border: 1.5px solid #cbd5e1;
+    border-left: 5px solid var(--c-primary, #0f766e);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    page-break-inside: avoid;
+  }
+
+  .author-profile-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .author-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 3px;
+  }
+
+  .author-profile-title h3 {
+    margin: 0;
+    font-size: 12.5pt;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .author-profile-title h3 small {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #64748b;
+  }
+
+  .author-meta-pill {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 8.5pt;
+    color: #334155;
+    line-height: 1.45;
+  }
+
+  .author-meta-pill b { color: var(--c-primary, #0f766e); }
+
+  .author-bio-body p {
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+
+  .author-works-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .author-works-head {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
+  }
+
+  .works-cat-row {
+    margin-bottom: 4px;
+    font-size: 8.5pt;
+    line-height: 1.5;
+  }
+
+  .works-cat-row:last-child { margin-bottom: 0; }
+
+  .works-cat-label {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: 8pt;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .works-cat-content { color: #475569; }
+
+  .author-awards-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #854d0e;
+    margin-bottom: 6px;
+  }
+
+  .author-significance-strip {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #1e40af;
+  }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .obj-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .out-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .card-label {
+    font-size: 9.5pt;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+  }
+  .obj-card .card-label { color: #166534; }
+  .out-card .card-label { color: #1e40af; }
+
+  .obj-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  .intro-box {
+    background: #fafaf9;
+    border: 1px solid #e7e5e4;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #292524;
+    page-break-inside: avoid;
+  }
+
+  .intro-box .intro-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #b45309;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .concept-section {
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    page-break-inside: avoid;
+  }
+
+  .concept-section h2 {
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--c-primary, #0f766e);
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .concept-section p {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: #334155;
+    margin: 0 0 6px 0;
+  }
+
+  .conclusion-box {
+    background: #fdf4ff;
+    border: 1px solid #f5d0fe;
+    border-left: 4px solid #a855f7;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 16px 0;
+    page-break-inside: avoid;
+  }
+
+  .conclusion-box .conc-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #7e22ce;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .conclusion-box p {
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #3b0764;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  .takeaways-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .takeaways-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f766e;
+  }
+
+  .takeaways-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #134e4a;
+    line-height: 1.55;
+  }
+
+  .glossary-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .glossary-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #334155;
+  }
+
+  .glossary-item {
+    font-size: 8.5pt;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .revision-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 9pt;
+    line-height: 1.6;
+    color: #713f12;
+    page-break-inside: avoid;
+  }
+
+  .progress-section {
+    border-top: 2px solid #e2e8f0;
+    padding-top: 14px;
+    margin-top: 16px;
+  }
+
+  .progress-header {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 0 0 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-inside: avoid;
+  }
+
+  .q-type-title {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f766e;
+    margin: 14px 0 8px 0;
+    padding-left: 8px;
+    border-left: 3px solid #0f766e;
+    page-break-inside: avoid;
+  }
+
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+
+  .qa-question {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+
+  .qa-answer {
+    font-size: 9pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0;
+    white-space: pre-line;
+  }
+
+  .essay-card {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .essay-card .qa-question {
+    font-size: 10pt;
+    color: #1e1b4b;
+    margin-bottom: 10px;
+  }
+
+  .essay-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 4px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .mcq-container {
+    margin-top: 14px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-q {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 5px 0;
+  }
+
+  .mcq-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    font-size: 8.5pt;
+    color: #334155;
+  }
+
+  .mcq-opt {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
+  .mcq-key-card {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 14px 0 20px 0;
+    page-break-inside: avoid;
+  }
+
+  .mcq-key-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 10pt;
+    font-weight: 800;
+    color: #166534;
+  }
+
+  .key-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    font-size: 8pt;
+    color: #14532d;
+  }
+
+  .key-item {
+    background: #ffffff;
+    border: 1px solid #bbf7d0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.35;
+  }
+
+  .exam-points-card {
+    background: linear-gradient(135deg, #fefce8 0%, #fffbeb 100%);
+    border: 1.5px solid #fde047;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 25px 0;
+    box-shadow: 0 3px 10px rgba(234, 179, 8, 0.1);
+    page-break-inside: avoid;
+  }
+
+  .exam-points-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #facc15;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+
+  .exam-points-head h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 900;
+    color: #854d0e;
+  }
+
+  .exam-tag {
+    background: #ca8a04;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 14px;
+    text-transform: uppercase;
+  }
+
+  .exam-points-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #713f12;
+  }
+
+  .exam-points-list li {
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .exam-points-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ca8a04;
+    font-weight: 900;
+  }
+
+
+    @media (max-width: 768px) {
+      body {
+        padding: 14px 10px !important;
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+      .chapter-header {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+      }
+    }
+    
+  </style>
+</head>
+<body style="--c-primary: #be185d; --c-dark: #0f172a;">
+  <div class="chapter-wrapper">
+    <header class="chapter-header">
+      <div class="ch-pill-row">
+        <span class="ch-pill">മൊഡ്യൂൾ 3</span>
+        <span class="ch-pill">കിളിപ്പാട്ട് / ക്ലാസിക്കൽ കവിത (Classical Poetry)</span>
+        <span class="ch-pill">അധ്യായം 8</span>
+      </div>
+      <h1>കവിത: സമുദ്രലംഘനം</h1>
+      <p class="ch-meta-sub">രചയിതാവ്: <b>തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ</b> · ഉറവിടം: അധ്യാത്മരാമായണം കിളിപ്പാട്ട് (സുന്ദരകാണ്ഡം)</p>
+    </header>
+
+        <div class="author-profile-box">
+          <div class="author-profile-head">
+            <div class="author-profile-title">
+              <span class="author-badge">✍️ കവിപരിചയം / രചയിതാവിന്റെ സമഗ്ര പരിചയം</span>
+              <h3>തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ <small>(പതിനാറാം നൂറ്റാണ്ട് (16th Century))</small></h3>
+            </div>
+            <div class="author-meta-pill">
+              <b>സ്ഥലം / പശ്ചാത്തലം:</b> തൃക്കണ്ടിയൂർ തുഞ്ചൻപറമ്പ്, തിരൂർ (മലപ്പുറം ജില്ല)<br>
+              <b>സാഹിത്യ പദവി:</b> മലയാള ഭാഷയുടെ പിതാവ് (Father of Malayalam Language), കിളിപ്പാട്ട് പ്രസ്ഥാനത്തിന്റെ ഉപജ്ഞാതാവ്, ഭക്തിപ്രസ്ഥാനത്തിന്റെ ആചാര്യൻ.
+            </div>
+          </div>
+          <div class="author-bio-body">
+            <p>മലയാള ഭാഷയുടെയും സംസ്കാരത്തിന്റെയും ആത്മാവ് രൂപപ്പെടുത്തിയ മഹദ് വ്യക്തിത്വമാണ് തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ. പതിനാറാം നൂറ്റാണ്ടിൽ മലപ്പുറം ജില്ലയിലെ തിരൂരിലുള്ള തുഞ്ചൻപറമ്പിലാണ് അദ്ദേഹം ജീവിച്ചിരുന്നത്. സംസ്കൃത ആധിപത്യമുള്ള മണിപ്രവാളത്തിനും തമിഴ് ചുവയുള്ള പാട്ടുസാഹിത്യത്തിനും ഇടയിൽ സാധാരണ മലയാളികൾക്കായി തനതായ അക്ഷരമാലയും കാവ്യഭാഷയും കിളിപ്പാട്ടു ശൈലിയും അദ്ദേഹം സൃഷ്ടിച്ചു. കിളിയെക്കൊണ്ട് കഥ പറയിക്കുന്ന 'കിളിപ്പാട്ട് പ്രസ്ഥാനം' മലയാള കവിതയ്ക്ക് പുതിയൊരു താളവും സംഗീതാത്മകതയും നൽകി. രാമായണവും മഹാഭാരതവും ലളിതമായ ഭാഷയിൽ മലയാളികൾക്ക് സമ്മാനിച്ചതിലൂടെ അദ്ദേഹം കേവലം ഒരു കവി മാത്രമല്ല, മലയാള ജനതയെ സാംസ്കാരികമായും ഭാഷാപരമായും ഒന്നിപ്പിച്ച നവോത്ഥാന ശില്പി കൂടിയായി മാറി.</p>
+            
+            <div class="author-works-section">
+              <div class="author-works-head">📚 പ്രധാന കൃതികളും സാഹിത്യ സംഭാവനകളും (Major Works & Contributions):</div>
+        
+              <div class="works-cat-row">
+                <span class="works-cat-label">പ്രധാന കിളിപ്പാട്ടുകൾ</span>
+                <span class="works-cat-content">അദ്ധ്യാത്മരാമായണം കിളിപ്പാട്ട് (ബാലകാണ്ഡം, അയോദ്ധ്യാകാണ്ഡം, ആരണ്യകാണ്ഡം, കിഷ്കിന്ധാകാണ്ഡം, സുന്ദരകാണ്ഡം - സമുദ്രലംഘനം, യുദ്ധകാണ്ഡം), ശ്രീമഹാഭാരതം കിളിപ്പാട്ട്, ശ്രീമദ് ഭാഗവതം കിളിപ്പാട്ട്.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">സ്തോത്ര-തത്വചിന്താ കൃതികൾ</span>
+                <span class="works-cat-content">ഹരിനാമകീർത്തനം, ചിന്താരത്നം, കൈവല്യനവനീതം, ശതമുഖരാമായണം.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">കാവ്യ വൃത്തങ്ങൾ</span>
+                <span class="works-cat-content">കേക, കാകളി, മഞ്ജരി, നത്തോന്നത, അന്നനട എന്നീ തനതു ദ്രാവിഡ വൃത്തങ്ങളുടെ മനോഹരമായ പ്രയോഗം.</span>
+              </div>
+            
+            </div>
+            
+            <div class="author-awards-strip">
+              <b>🏆 പ്രധാന പുരസ്കാരങ്ങളും അംഗീകാരങ്ങളും:</b> കാലാതീതമായ ജനകീയ ആദരവ്; കേരള സർക്കാരിന്റെ ഏറ്റവും ഉയർന്ന സാഹിത്യ ബഹുമതിയായ 'എഴുത്തച്ഛൻ പുരസ്കാരം' അദ്ദേഹത്തിന്റെ നാമധേയത്തിലാണ് ഏർപ്പെടുത്തിയിരിക്കുന്നത്.
+            </div>
+            
+            <div class="author-significance-strip">
+              <b>✦ സാഹിത്യ സംഭാവന & സവിശേഷ സ്ഥാനം:</b> മലയാള അക്ഷരമാലയെ 51 അക്ഷരങ്ങളായി ചിട്ടപ്പെടുത്തി ഗ്രന്ഥലിപി ജനകീയമാക്കി. കേരളത്തിലെ ഭക്തിപ്രസ്ഥാനത്തിന്റെ അമരക്കാരനായി നിന്ന് അധർമ്മങ്ങൾക്കും അസമത്വങ്ങൾക്കുമെതിരെ കാവ്യത്തിലൂടെ മാനവികതയുടെയും ഭക്തിയുടെയും ദിവ്യസന്ദേശം നൽകി.
+            </div>
+          </div>
+        </div>
+        
+      <div class="objectives-grid">
+        <div class="obj-card">
+          <div class="card-label">❖ പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</div>
+          <ul class="obj-list">
+    <li>മലയാള ഭാഷാപിതാവായ തുഞ്ചത്ത് എഴുത്തച്ഛന്റെ കാവ്യസംഭാവനകളും കിളിപ്പാട്ട് പ്രസ്ഥാനവും മനസ്സിലാക്കുക.</li><li>അധ്യാത്മരാമായണം സുന്ദരകാണ്ഡത്തിലെ സമുദ്രലംഘന സന്ദർഭവും കാവ്യഭംഗിയും വിശകലനം ചെയ്യുക.</li><li>ഹനുമാന്റെ അചഞ്ചലമായ രാമഭക്തി, അസാമാന്യമായ ആത്മവിശ്വാസം, വിനയം എന്നിവയുടെ മാനവിക തലം തിരിച്ചറിയുക.</li>
+          </ul>
+        </div>
+        <div class="out-card">
+          <div class="card-label">✦ പഠന ഫലങ്ങൾ (Learning Outcomes)</div>
+          <ul class="obj-list">
+    <li>പ്രാചീന-മധ്യകാല മലയാള കവിതയുടെ ഭാഷാരീതികളും വൃത്തഭംഗിയും ആസ്വദിക്കാൻ സാധിക്കുന്നു.</li><li>ഭക്തിപ്രസ്ഥാനം മലയാള ഭാഷയ്ക്കും സമൂഹത്തിനും നൽകിയ സാംസ്കാരിക ഉണർവ്വ് വിലയിരുത്താൻ കഴിയുന്നു.</li><li>കപിവരന്മാരുടെ ആശങ്കകളും ഹനുമാന്റെ ഉത്തരങ്ങളും തമ്മിലുള്ള നാടകീയത നിരൂപണം ചെയ്യാൻ പ്രാപ്തി നേടുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="intro-box">
+        <span class="intro-label">ആമുഖം (Introduction)</span>
+    <p>മലയാള ഭാഷയുടെ പിതാവായി സർവ്വാദരങ്ങളോടെ അംഗീകരിക്കപ്പെടുന്ന യുഗപ്രഭാവനായ കവിയാണ് തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ (16-ാം നൂറ്റാണ്ട്). സംസ്കൃതവും തമിഴും കലർന്ന മണിപ്രവാള-പാട്ട് പ്രസ്ഥാനങ്ങളിൽ നിന്ന് മലയാള ഭാഷയെ ശുദ്ധീകരിച്ച്, ആധുനിക മലയാള ലിപിക്കും സാഹിത്യത്തിനും അടിത്തറയിട്ടത് എഴുത്തച്ഛനാണ്. തത്തയെക്കൊണ്ട് കഥ പറയിക്കുന്ന 'കിളിപ്പാട്ട് പ്രസ്ഥാന'ത്തിലൂടെ അദ്ദേഹം രചിച്ച 'അധ്യാത്മരാമായണം കിളിപ്പാട്ട്' മലയാളിയുടെ ആത്മീയ-സാംസ്കാരിക സർവ്വസ്വമാണ്. രാവണൻ അപഹരിച്ചുകൊണ്ടുപോയ സീതാദേവിയെ അന്വേഷിച്ച് ദക്ഷിണ സമുദ്രതീരത്തെത്തിയ വാനരപ്പട സമുദ്രം കണ്ട് നിരാശരായപ്പോൾ, മഹേന്ദ്രപർവ്വത മുകളിൽ നിന്ന് ലങ്കയിലേക്ക് ചാടാനൊരുങ്ങുന്ന ഹനുമാന്റെ വീര്യവും ആത്മവിശ്വാസവുമാണ് 'സമുദ്രലംഘനം' എന്ന പ്രസിദ്ധമായ കാവ്യഭാഗത്ത് ആവിഷ്കരിക്കപ്പെടുന്നത്.</p></div>
+        <section class="concept-section">
+          <h2>1. കിളിപ്പാട്ട് പ്രസ്ഥാനവും എഴുത്തച്ഛന്റെ ഭാഷാവിപ്ലവവും</h2>
+          <p>കിളിയെക്കൊണ്ട് ഭക്തിസാന്ദ്രമായ രാമകഥ പാടിക്കുന്ന രീതിയാണ് കിളിപ്പാട്ട്. കവിയുടെ അഹങ്കാരം ഇല്ലാതാക്കാനും സരസ്വതീദേവിയുടെ വാഹനമായ തത്തയുടെ നാദത്തിലൂടെ കഥ ശ്രവണസുഭഗമാക്കാനുമാണ് ഈ സങ്കേതം ഉപയോഗിച്ചത്. കാകളി, കേക, മണികാഞ്ചി, അന്നനട തുടങ്ങിയ ദ്രavid വൃത്തങ്ങളിലാണ് കിളിപ്പാട്ടുകൾ രചിക്കപ്പെട്ടത്. ജാതിവിവേചനങ്ങൾ കൊടികുത്തിവാണ മധ്യകാല കേരളത്തിൽ അക്ഷരജ്ഞാനം നിഷേധിക്കപ്പെട്ടിരുന്ന സാധാരണ ജനങ്ങൾക്ക് ഭക്തിയുടെയും അറിവിന്റെയും വാതിലുകൾ തുറന്നുകൊടുത്ത വിപ്ലവകാരിയാണ് എഴുത്തച്ഛൻ.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>2. സമുദ്രതീരത്തെ പ്രതിസന്ധിയും വാനരന്മാരുടെ നിരാശയും</h2>
+          <p>സീതയെ കണ്ടെത്താനാവാതെ ദക്ഷിണ സമുദ്രതീരത്ത് എത്തിച്ചേർന്ന അംഗദനും ജാംബവാനും ഉൾപ്പെടെയുള്ള വാനരവീരന്മാർ നൂറുയോജന വിസ്തൃതിയുള്ള മഹാസമുദ്രം കണ്ട് ഭയപ്പെട്ടു. സമുദ്രം ചാടിക്കടക്കാൻ ആർക്കും ത്രാണിയില്ലെന്ന് കണ്ട് അവർ പ്രായോപവേശം ചെയ്യാൻ ഒരുങ്ങി. ഈ ഘട്ടത്തിൽ വൃദ്ധനായ ജാംബവാൻ ഹനുമാന്റെ ശാപത്താൽ മറഞ്ഞുപോയ ജന്മസിദ്ധമായ ദിവ്യശക്തികളെ ഓർമ്മിപ്പിച്ചുണർത്തുന്നു. അതോടെ ഹനുമാൻ തന്റെ വിശ്വരൂപം കൈക്കൊള്ളുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>3. ഹനുമാന്റെ വീര്യവും ആത്മവിശ്വാസവും</h2>
+          <p>മഹേന്ദ്രപർവ്വതത്തിന്റെ കൊടുമുടിയിൽ കയറിനിന്ന ഹനുമാൻ വാനരന്മാരോട് അതീവ ഗംഭീരമായി സംസാരിക്കുന്നു:</p><p>“കപിവരരോടമിതബലസഹിതമുരചെയ്തിതു കണ്ടുകൊൾവിൻ നിങ്ങളെല്ലാവരും</p><p>മമ ജനകസദൃശനഹമതിചപലമൊരു കാറ്റെന്നു കണ്ടാലും...”</p><p>വായുപുത്രനായ തനിക്ക് വായുവിനെപ്പോലെ അതിവേഗത്തിൽ സഞ്ചരിക്കാൻ കഴിയുമെന്നും, രാമന്റെ നാമം ഹൃദയത്തിൽ സൂക്ഷിക്കുന്നവന് അസാധ്യമായി യാതൊന്നുമില്ലെന്നും ഹനുമാൻ പ്രഖ്യാപിക്കുന്നു. ശ്രീരാമന്റെ ബാണം പോലെ താൻ കുതിച്ചുപാഞ്ഞ് ലങ്കയിലെത്തി സീതയെ കണ്ടെത്തുമെന്നും, ആവശ്യമെങ്കിൽ രാവണനെ നിഷ്പ്രയാസം ബന്ധിച്ച് രാമസന്നിധിയിൽ എത്തിക്കുമെന്നും അദ്ദേഹം ഉറപ്പിച്ചുപറയുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>4. ഭക്തിയും വീര്യവും സമന്വയിക്കുന്ന കാവ്യഭംഗി</h2>
+          <p>ഈ കാവ്യഭാഗത്ത് വീരരസവും ഭക്തിരസവും അത്യപൂർവ്വമായ ചാരുതയോടെ സംഗമിക്കുന്നു. ഹനുമാന്റെ ശരീരവലുപ്പവും കുതിച്ചുചാട്ടവും വരുത്തുന്ന പ്രകൃതിക്ഷോഭങ്ങൾ - പർവ്വതം വിറയ്ക്കുന്നതും, വൃക്ഷങ്ങൾ കടപുഴകുന്നതും, സമുദ്രജലം ഇളകിമറിയുന്നതും - എഴുത്തച്ഛൻ അതീവ ശബ്ദഭംഗിയോടെ വർണ്ണിക്കുന്നു. എന്നാൽ ഈ വീര്യത്തിനിടയിലും അഹങ്കാരമില്ലാതെ, സകല വിജയങ്ങളും ശ്രീരാമപാദങ്ങളിൽ സമർപ്പിക്കുന്ന പരമഭക്തന്റെ വിനയമാണ് ഹനുമാനെ ലോകോത്തര കഥാപാത്രമാക്കുന്നത്.</p>
+        </section>
+        
+    <div class="conclusion-box">
+      <span class="conc-label">ഉപസംഹാരം (Chapter Conclusion)</span>
+      <p>എഴുത്തച്ഛന്റെ 'സമുദ്രലംഘനം' ആത്മവിശ്വാസത്തിന്റെയും പ്രതിസന്ധികളെ മറികടക്കാനുള്ള ഇച്ഛാശക്തിയുടെയും അനശ്വരമായ കാവ്യപ്രതീകമാണ്. അസാധ്യമെന്ന് തോന്നുന്ന ലക്ഷ്യങ്ങളെയും കഠിനപരിശ്രമത്തിലൂടെയും ലക്ഷ്യബോധത്തിലൂടെയും കീഴടക്കാമെന്ന ഉദാത്തമായ ജീവിതപാഠം ഈ കവിത പകർന്നുനൽകുന്നു.</p>
+    </div>
+    
+    <div class="summary-grid">
+      <div class="takeaways-box">
+        <h3>✦ പ്രധാന പാഠങ്ങൾ (Key Takeaways)</h3>
+        <ul class="takeaways-list">
+    <li>തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ മലയാള ഭാഷയുടെ പിതാവാണ്.</li><li>അധ്യാത്മരാമായണം കിളിപ്പാട്ടിലെ സുന്ദരകാണ്ഡത്തിൽ നിന്നുള്ളതാണ് 'സമുദ്രലംഘനം'.</li><li>കിളിപ്പാട്ട് പ്രസ്ഥാനം ജനകീയ ഭക്തിക്കും ഭാഷാവികാസത്തിനും വഴിയൊരുക്കി.</li><li>ഹനുമാൻ അചഞ്ചലമായ ആത്മവിശ്വാസത്തിന്റെയും ഭക്തിയുടെയും അസാമാന്യ വീര്യത്തിന്റെയും പ്രതീകമാണ്.</li>
+        </ul>
+      </div>
+      <div class="glossary-box">
+        <h3>📖 പ്രധാന സാങ്കേതിക പദാവലി (Key Terms)</h3>
+    <div class="glossary-item"><b>കിളിപ്പാട്ട്:</b> തത്തയെക്കൊണ്ട് സരസ്വതീ വന്ദനം നടത്തി കഥ പാടിക്കുന്ന മലയാള കാവ്യരീതി.</div><div class="glossary-item"><b>സുന്ദരകാണ്ഡം:</b> രാമായണത്തിലെ അഞ്ചാമത്തെ കാണ്ഡം; ഹനുമാന്റെ ലങ്കായാത്രയും സീതാന്വേഷണവും പ്രതിപാദിക്കുന്നു.</div><div class="glossary-item"><b>വീരരസം:</b> ധീരത, ആത്മവിശ്വാസം, പരാക്രമം എന്നിവയിലൂടെ ഉളവാകുന്ന കാവ്യാനുഭൂതി.</div>
+      </div>
+    </div>
+    
+    <div class="revision-strip">
+      <b>ദ്രുത പുനഃപരിശോധനാ കുറിപ്പ് (Quick Revision):</b> എഴുത്തച്ഛന്റെ സമുദ്രലംഘനം (സുന്ദരകാണ്ഡം). 16-ാം നൂറ്റാണ്ടിലെ ഭക്തിപ്രസ്ഥാനം. വാനരന്മാരുടെ നിരാശയും ജാംബവാന്റെ ഉണർത്തലും. മഹേന്ദ്രപർവ്വതത്തിൽ നിന്നുള്ള ഹനുമാന്റെ പ്രഖ്യാപനം. വായുപുത്രന്റെ വേഗത. ശ്രീരാമബാണം പോലെയുള്ള കുതിപ്പ്. ഭക്തിയും വീര്യവും സമന്വയിക്കുന്ന കാവ്യശൈലി.
+    </div>
+    
+    <div class="progress-section">
+      <div class="progress-header">
+        <span>പഠന പുരോഗതി വിലയിരുത്തൽ (Check Your Progress)</span>
+        <small>യഥാർത്ഥ ചോദ്യങ്ങളും സമഗ്ര ഉത്തരങ്ങളും</small>
+      </div>
+    <div class="q-type-title">ലഘുകുറിപ്പുകൾ (Short Notes)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. കിളിപ്പാട്ട് പ്രസ്ഥാനം എന്നാൽ എന്ത്? അതിന്റെ ലക്ഷ്യങ്ങൾ എന്തെല്ലാമായിരുന്നു?</div>
+              <div class="qa-answer">കിളിയെക്കൊണ്ട് കഥ പറയിപ്പിക്കുന്ന ശൈലിയിൽ കാവ്യരചന നടത്തുന്ന സമ്പ്രദായമാണ് കിളിപ്പാട്ട് പ്രസ്ഥാനം. കവിയുടെ അഹങ്കാരം ഒഴിവാക്കാനും സരസ്വതീവാഹനമായ തത്തയുടെ മാധുര്യമുള്ള സ്വരത്തിൽ കഥ പാടാനും ഇത് ഉപകരിച്ചു. മണിപ്രവാളത്തിന്റെ കാഠിന്യമില്ലാതെ സാധാരണക്കാർക്ക് മനസ്സിലാകുന്ന ലളിതവും ഭക്തിസാന്ദ്രവുമായ കാവ്യഭാഷ സൃഷ്ടിക്കുക എന്നതായിരുന്നു എഴുത്തച്ഛന്റെ പ്രധാന ലക്ഷ്യം.</div>
+            </div>
+            
+            <div class="qa-card">
+              <div class="qa-question">2. 'കപിവരരോടമിതബലസഹിതമുരചെയ്തിതു...' - സന്ദർഭം വ്യക്തമാക്കുക.</div>
+              <div class="qa-answer">അധ്യാത്മരാമായണം കിളിപ്പാട്ടിലെ സുന്ദരകാണ്ഡത്തിൽ ഹനുമാൻ സമുദ്രലംഘനത്തിന് ഒരുങ്ങുന്ന സന്ദർഭമാണിത്. സമുദ്രം ചാടിക്കടക്കാൻ കഴിയാതെ വിഷമിച്ചുനിന്ന വാനരന്മാരെ നോക്കി, തനിക്ക് കാറ്റിന്റെ വേഗതയുണ്ടെന്നും ശ്രീരാമനാമത്തിന്റെ ശക്തിയാൽ നിഷ്പ്രയാസം ലങ്കയിലെത്തി സീതയെ കണ്ടെത്തുമെന്നും ഹനുമാൻ ആത്മവിശ്വാസത്തോടെ പ്രഖ്യാപിക്കുന്ന നിമിഷമാണിത്.</div>
+            </div>
+            <div class="q-type-title">ലഘൂപന്യാസങ്ങൾ (Short Essays)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. സമുദ്രലംഘനത്തിൽ പ്രകടമാകുന്ന ഹനുമാന്റെ വീര്യവും ആത്മവിശ്വാസവും എഴുത്തച്ഛൻ എങ്ങനെയാണ് വർണ്ണിക്കുന്നത്?</div>
+              <div class="qa-answer">സമുദ്രതീരത്ത് ഭയന്നുവിറച്ചുനിന്ന വാനരപ്പടയ്ക്ക് മുന്നിൽ ഒരു മഹാമേരുവിനെപ്പോലെയാണ് ഹനുമാൻ വളർന്നുനിൽക്കുന്നത്. വായുദേവന്റെ പുത്രനായ തനിക്ക് ആകാശത്തിലൂടെ പറന്നുയരാൻ യാതൊരു തടസ്സവുമില്ലെന്ന് അദ്ദേഹം വ്യക്തമാക്കുന്നു. 'ശ്രീരാമന്റെ അസ്ത്രം കണക്കെ താൻ കുതിക്കും' എന്ന ഉപമ ഹനുമാന്റെ വേഗതയെയും ലക്ഷ്യബോധത്തെയും കാണിക്കുന്നു. ലങ്കയിൽ സീതയെ കണ്ടില്ലെങ്കിൽ സ്വർഗ്ഗലോകത്ത് ചെന്നും അന്വേഷിക്കുമെന്നും, ആവശ്യമെങ്കിൽ രാവണനെ ലങ്കയോടെ പിഴുതെടുത്ത് കൊണ്ടുവരുമെന്നും ഉള്ള ഹനുമാന്റെ വാക്കുകൾ അസാമാന്യമായ വീരരസത്തെ സൃഷ്ടിക്കുന്നു. ശക്തിക്കൊപ്പം രാമഭക്തിയും സമന്വയിക്കുന്ന ഉജ്ജ്വലമായ ആത്മവിശ്വാസമാണ് ഹനുമാന്റെ പ്രത്യേകത.</div>
+            </div>
+            <div class="q-type-title">ഉപന്യാസങ്ങൾ (Long Essays - 300+ Words)</div>
+            <div class="essay-card">
+              <span class="essay-badge">സമഗ്ര ഉപന്യാസം · 300+ WORDS</span>
+              <div class="qa-question">1. എഴുത്തച്ഛന്റെ 'സമുദ്രലംഘനം' എന്ന കാവ്യഭാഗത്തിന്റെ കാവ്യഭംഗിയും ഭക്തിഭാവവും സമഗ്രമായി വിലയിരുത്തി ഉപന്യാസം തയ്യാറാക്കുക.</div>
+              <div class="qa-answer">ആമുഖം:
+മലയാള ഭാഷയുടെ പിതാവും ഭക്തിപ്രസ്ഥാനത്തിന്റെ ആചാര്യനുമായ തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛന്റെ അമരരചനയാണ് 'അദ്ധ്യാത്മരാമായണം കിളിപ്പാട്ട്'. രാമായണത്തിലെ ഏറ്റവും വീരരസപ്രധാനവും സൗന്ദര്യസാന്ദ്രവുമായ ഒരു ഭാഗമാണ് സുന്ദരകാണ്ഡത്തിലെ 'സമുദ്രലംഘനം'. ശ്രീരാമന്റെ ദൂതനായി സീതാന്വേഷണത്തിന് ലങ്കയിലേക്ക് പുറപ്പെടുന്ന ഹനുമാന്റെ അമാനുഷിക ശക്തിയും, ആത്മവിശ്വാസവും, ഭക്തിപാരമ്യവും നിറഞ്ഞുനിൽക്കുന്ന ഈ കാവ്യഭാഗം മലയാള ക്ലാസിക്കൽ കവിതയുടെ മകുടോദാഹരണമാണ്.
+
+കഥാസന്ദർഭവും ഹനുമാന്റെ വിശ്വരൂപവും:
+സീതയെ കണ്ടെത്താനായി തെക്കൻ തീരത്തെത്തിയ വാനരസൈന്യം നൂറുയോജന വിസ്താരമുള്ള മഹാസമുദ്രം കണ്ട് നിരാശരാകുന്നു. ആ ഘട്ടത്തിലാണ് ജാംബവാൻ ഹനുമാന്റെ ജന്മരഹസ്യങ്ങളും അപാരമായ ശക്തിയും അദ്ദേഹത്തെ ഓർമ്മിപ്പിക്കുന്നത്. അതോടെ ഹനുമാൻ തന്റെ യഥാർത്ഥ വിശ്വരൂപം പ്രാപിക്കുന്നു. മഹേന്ദ്രപർവ്വതത്തിന്റെ മുകളിൽ കയറി നിന്ന്, ശ്രീരാമന്റെ നാമം ഹൃദയത്തിൽ ധ്യാനിച്ച് ആകാശത്തിലേക്ക് കുതിച്ചുയരുന്ന ഹനുമാന്റെ ചിത്രം എഴുത്തച്ഛൻ അതീവ ഗംഭീരമായി വർണ്ണിച്ചിരിക്കുന്നു. പർവ്വതം കുലുങ്ങി വിറയ്ക്കുന്നതും, ഗുഹകളിൽ നിന്ന് കാട്ടുതീ ഉയരുന്നതും, മൃഗങ്ങൾ ഭയന്നോടുന്നതും വീരരസത്തിന്റെ ഉച്ചകോടിയെ അടയാളപ്പെടുത്തുന്നു.
+
+മാർഗ്ഗമധ്യത്തിലെ പ്രതിബന്ധങ്ങളും വിജയവും:
+ആകാശമാർഗ്ഗത്തിലൂടെയുള്ള യാത്രയിൽ ഹനുമാന് മൂന്ന് വലിയ പരീക്ഷണങ്ങളെ നേരിടേണ്ടി വരുന്നു. സമുദ്രത്തിൽ നിന്നുയർന്നു വന്ന മൈനാക പർവ്വതം ഹനുമാന് വിശ്രമിക്കാൻ ഇടം നൽകിയെങ്കിലും, ശ്രീരാമകാര്യം സാധിക്കാതെ വിശ്രമമില്ലെന്ന് പറഞ്ഞ് ഹനുമാൻ അതിനെ സ്നേഹപൂർവ്വം തൊട്ടുവണങ്ങി മുന്നോട്ട് പോകുന്നു. തുടർന്ന് തന്നെ വിഴുങ്ങാൻ വന്ന സുരസ എന്ന നാഗമാതാവിന്റെ വായയിൽ സൂക്ഷ്മരൂപത്തിൽ പ്രവേശിച്ച് പുറത്തുവന്ന് തന്റെ ബുദ്ധിസാമർത്ഥ്യം തെളിയിക്കുന്നു. ആകാശത്തിലൂടെ പോകുന്നവരുടെ നിഴൽ പിടിച്ചുവെച്ച് ഭക്ഷിക്കുന്ന സിംഹികയെ വധിച്ച് പ്രതിബന്ധങ്ങളെല്ലാം തകർത്ത് ലങ്കയിലെത്തുന്നു. ഈ പരീക്ഷണങ്ങൾ ഹനുമാന്റെ സേവനസന്നദ്ധതയും ധീരതയും തെളിയിക്കുന്നു.
+
+കിളിപ്പാട്ട് പ്രസ്ഥാനവും കാവ്യസൗന്ദര്യവും:
+എഴുത്തച്ഛൻ കിളിയെക്കൊണ്ട് പാടിക്കുന്ന കിളിപ്പാട്ട് ശൈലി മലയാള കാവ്യലോകത്തിന് നൽകിയ സംഭാവന അതുല്യമാണ്. കേക, കാകളി തുടങ്ങിയ ദ്രാവിഡ വൃത്തങ്ങളുടെ താളനിബദ്ധമായ ഒഴുക്കും, സംസ്കൃത-മലയാള പദാവലികളുടെ മനോഹരമായ ചേർച്ചയും കാവ്യഭാഗത്തെ അത്യധികം സംഗീതാത്മകമാക്കുന്നു. വായനക്കാരന്റെ മനസ്സിൽ ഹനുമാന്റെ ആകാശയാത്ര ഒരു ചലച്ചിത്രം പോലെ മിന്നിമറയുന്നു. ഭക്തിയെ കേവല പൂജകളിൽ ഒതുക്കാതെ, ലക്ഷ്യബോധമുള്ള കർമ്മശേഷിയാക്കി മാറ്റാൻ എഴുത്തച്ഛന് കഴിഞ്ഞു.
+
+ഭക്തിയും കർമ്മയോഗവും സമന്വയിക്കുന്ന ആത്മീയ ദർശനം:
+ഹനുമാന്റെ കഥാപാത്രത്തിലൂടെ എഴുത്തച്ഛൻ പകർന്നുനൽകുന്നത് കർമ്മയോഗത്തിന്റെ ഉദാത്തമായ സന്ദേശമാണ്. സ്വന്തം കഴിവുകളിൽ അഹങ്കരിക്കാതെ, സർവ്വവും ഈശ്വരനിൽ സമർപ്പിച്ചുകൊണ്ട് പ്രവർത്തിക്കുന്നതാണ് യഥാർത്ഥ ഭക്തിയെന്ന് കവി പഠിപ്പിക്കുന്നു. ജീവിതത്തിലെ കഷ്ടപ്പാടുകളുടെയും പ്രതിസന്ധികളുടെയും മഹാസമുദ്രങ്ങളെ തരണം ചെയ്യാൻ ഇച്ഛാശക്തിയും വിശ്വാസവും മാത്രം മതിയെന്ന് ഈ ആഖ്യാനം നമ്മെ ഓർമ്മിപ്പിക്കുന്നു.
+
+ഉപസംഹാരം:
+എഴുത്തച്ഛന്റെ 'സമുദ്രലംഘനം' ഭക്തിയുടെയും കർമ്മശേഷിയുടെയും അത്യപൂർവ്വ സംഗമമാണ്. ലക്ഷ്യബോധവും സമർപ്പണവുമുള്ള മനുഷ്യന് അസാധ്യമായി ഒന്നുമില്ലെന്ന വലിയ ജീവിതസന്ദേശം നൽകുന്ന ഈ കാവ്യഭാഗം മലയാള സാഹിത്യത്തിന്റെ എക്കാലത്തെയും വലിയ അഭിമാനമാണ്. കാലദേശങ്ങളെ അതിജീവിച്ച് മനുഷ്യഹൃദയങ്ങളിൽ ധീരതയും നന്മയും നിറയ്ക്കാൻ ഈ കാവ്യഭാഗത്തിന് എന്നും സാധിക്കും.
+
+കാവ്യഭാഷയുടെ ഓജസ്സും വൃത്തഭംഗിയും:
+എഴുത്തച്ഛന്റെ കവിതാശൈലി വായനക്കാരനിൽ ഭക്തിയും വീര്യവും ഒരുപോലെ നിറയ്ക്കുന്നതാണ്. കിളിപ്പാട്ട് പ്രസ്ഥാനത്തിലൂടെ ജനകീയ ഭാഷയിലേക്ക് രാമായണത്തെ എത്തിച്ചപ്പോൾ, ദ്രാവിഡ വൃത്തങ്ങളായ കേകയും കാകളിയും അത്യപൂർവ്വമായ നാദഭംഗി കൈവരിച്ചു. സമുദ്രലംഘനത്തിലെ ഓരോ പദങ്ങളും താളനിബദ്ധമായി അണിനിരക്കുമ്പോൾ കാതുകളിൽ ഒരു മഹാസമുദ്രത്തിന്റെ ഇരമ്പൽ കേൾക്കാൻ സാധിക്കും. ഭാഷയുടെ ക്ലാസിക്കൽ സൗന്ദര്യവും ദാർശനിക ഗാംഭീര്യവും ഒത്തുചേർന്ന ഈ ഭാഗം മലയാള കാവ്യപാരമ്പര്യത്തിന്റെ എക്കാലത്തെയും തിളങ്ങുന്ന രത്നമായി നിലകൊള്ളുന്നു.</div>
+            </div>
+            
+    <div class="q-type-title">പ്രധാന പരീക്ഷാ മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (15 Important MCQs)</div>
+    <div class="mcq-container">
+    
+        <div class="mcq-item">
+          <div class="mcq-q">1. മലയാള ഭാഷയുടെ പിതാവായി അറിയപ്പെടുന്നത് ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ചെറുശ്ശേരി</div>
+            <div class="mcq-opt">B) തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ</div>
+            <div class="mcq-opt">C) കുഞ്ചൻ നമ്പ്യാർ</div>
+            <div class="mcq-opt">D) കുമാരനാശാൻ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">2. 'സമുദ്രലംഘനം' അധ്യാത്മരാമായണത്തിലെ ഏത് കാണ്ഡത്തിലാണ് ഉൾപ്പെടുന്നത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ബാലകാണ്ഡം</div>
+            <div class="mcq-opt">B) അയോദ്ധ്യാകാണ്ഡം</div>
+            <div class="mcq-opt">C) സുന്ദരകാണ്ഡം</div>
+            <div class="mcq-opt">D) യുദ്ധകാണ്ഡം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">3. തത്തയെക്കൊണ്ട് കഥ പറയിക്കുന്ന കാവ്യപ്രസ്ഥാനം ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) മണിപ്രവാളം</div>
+            <div class="mcq-opt">B) കിളിപ്പാട്ട് പ്രസ്ഥാനം</div>
+            <div class="mcq-opt">C) ചമ്പു</div>
+            <div class="mcq-opt">D) ആട്ടക്കഥ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">4. ഹനുമാൻ സമുദ്രലംഘനത്തിന് മുമ്പ് കയറിനിന്ന പർവ്വതം ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഹിമാലയം</div>
+            <div class="mcq-opt">B) മഹേന്ദ്രപർവ്വതം</div>
+            <div class="mcq-opt">C) സഹ്യപർവ്വതം</div>
+            <div class="mcq-opt">D) വിന്ധ്യാപർവ്വതം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">5. ഹനുമാന്റെ മറഞ്ഞുപോയ ശക്തികളെ ഓർമ്മിപ്പിച്ചുണർത്തിയ വൃദ്ധ വാനരൻ ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) സുഗ്രീവൻ</div>
+            <div class="mcq-opt">B) അംഗദൻ</div>
+            <div class="mcq-opt">C) ജാംബവാൻ</div>
+            <div class="mcq-opt">D) നീലൻ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">6. ഹനുമാൻ ആരുടെ പുത്രനാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) സൂര്യന്റെ</div>
+            <div class="mcq-opt">B) വായുദേവന്റെ (പവനപുത്രൻ)</div>
+            <div class="mcq-opt">C) വരുണന്റെ</div>
+            <div class="mcq-opt">D) അഗ്നിയുടെ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">7. ഹനുമാൻ തന്റെ യാത്രയെ ഉപമിക്കുന്നത് എന്തിനോടാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഇടിമിന്നലിനോട്</div>
+            <div class="mcq-opt">B) ശ്രീരാമന്റെ അസ്ത്രത്തോട് (ബാണം)</div>
+            <div class="mcq-opt">C) പക്ഷിയോട്</div>
+            <div class="mcq-opt">D) മേഘത്തോട്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">8. എഴുത്തച്ഛൻ ജീവിച്ചിരുന്ന കാലഘട്ടം ഏതാണെന്നാണ് പൊതുവെ കരുതപ്പെടുന്നത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 12-ാം നൂറ്റാണ്ട്</div>
+            <div class="mcq-opt">B) 16-ാം നൂറ്റാണ്ട്</div>
+            <div class="mcq-opt">C) 19-ാം നൂറ്റാണ്ട്</div>
+            <div class="mcq-opt">D) 14-ാം നൂറ്റാണ്ട്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">9. സമുദ്രലംഘനം കാവ്യഭാഗത്ത് പ്രബലമായി നിൽക്കുന്ന പ്രധാന രസങ്ങൾ ഏവ?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ശൃംഗാരവും ഹാസ്യവും</div>
+            <div class="mcq-opt">B) വീരരസവും ഭക്തിരസവും</div>
+            <div class="mcq-opt">C) കരുണരസം മാത്രം</div>
+            <div class="mcq-opt">D) ഭയാനകരസം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">10. എഴുത്തച്ഛന്റെ ജന്മസ്ഥലം എവിടെയാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) തൃക്കണ്ടിയൂർ (തിരൂർ, മലപ്പുറം)</div>
+            <div class="mcq-opt">B) കോട്ടയം</div>
+            <div class="mcq-opt">C) തിരുവനന്തപുരം</div>
+            <div class="mcq-opt">D) തൃശ്ശൂർ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">11. 'മമ ജനകസദൃശനഹമതിചപലമൊരു കാറ്റെന്നു കണ്ടാലും' - ഇവിടെ 'ജനകൻ' എന്ന് ഉദ്ദേശിച്ചത് ആരെയാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ദശരഥനെ</div>
+            <div class="mcq-opt">B) വായുദേവനെ</div>
+            <div class="mcq-opt">C) ശ്രീരാമനെ</div>
+            <div class="mcq-opt">D) ജനകരാജാവിനെ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">12. അധ്യാത്മരാമായണം കിളിപ്പാട്ടിൽ എത്ര കാണ്ഡങ്ങളുണ്ട്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 5</div>
+            <div class="mcq-opt">B) 6 കാണ്ഡങ്ങൾ</div>
+            <div class="mcq-opt">C) 7</div>
+            <div class="mcq-opt">D) 8</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">13. എഴുത്തച്ഛന്റെ മറ്റൊരു പ്രശസ്തമായ കിളിപ്പാട്ട് കൃതി ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കൃഷ്ണഗാഥ</div>
+            <div class="mcq-opt">B) മഹാഭാരതം കിളിപ്പാട്ട്</div>
+            <div class="mcq-opt">C) ജ്ഞാനപ്പാന</div>
+            <div class="mcq-opt">D) നളചരിതം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">14. സമുദ്രത്തിന്റെ വിസ്തൃതി എത്ര യോജനയാണെന്നാണ് കവിതയിൽ പറയുന്നത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 10 യോജന</div>
+            <div class="mcq-opt">B) 50 യോജന</div>
+            <div class="mcq-opt">C) 100 യോജന</div>
+            <div class="mcq-opt">D) 1000 യോജന</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">15. 'സമുദ്രലംഘനം' എന്ന കാവ്യഭാഗം വായനക്കാർക്ക് നൽകുന്ന പ്രചോദനം എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഭയം</div>
+            <div class="mcq-opt">B) അസാധ്യമെന്ന് തോന്നുന്നതിനെയും ഇച്ഛാശക്തിയും വിശ്വാസവും കൊണ്ട് കീഴടക്കാം</div>
+            <div class="mcq-opt">C) യുദ്ധക്കൊതി</div>
+            <div class="mcq-opt">D) അഹങ്കാരം</div>
+          </div>
+        </div>
+        </div>
+    <div class="mcq-key-card">
+      <h4>MCQ ഉത്തര സൂചിക & വിശദീകരണങ്ങൾ (Answer Key)</h4>
+      <div class="key-grid">
+    
+        <div class="key-item">
+          <b>1. B</b>: തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛനാണ് മലയാള ഭാഷാപിതാവ്.
+        </div>
+        
+        <div class="key-item">
+          <b>2. C</b>: ഹനുമാന്റെ ലങ്കായാത്രയും സീതാന്വേഷണവും പ്രതിപാദിക്കുന്ന സുന്ദരകാണ്ഡത്തിലാണ് സമുദ്രലംഘനം.
+        </div>
+        
+        <div class="key-item">
+          <b>3. B</b>: എഴുത്തച്ഛൻ ജനകീയമാക്കിയ പ്രസ്ഥാനമാണ് കിളിപ്പാട്ട് പ്രസ്ഥാനം.
+        </div>
+        
+        <div class="key-item">
+          <b>4. B</b>: ദക്ഷിണ സമുദ്രതീരത്തെ മഹേന്ദ്രപർവ്വതത്തിന്റെ മുകളിൽ നിന്നാണ് ഹനുമാൻ ആകാശത്തേക്ക് കുതിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>5. C</b>: ജാംബവാന്റെ വാക്കുകളാണ് ഹനുമാന്റെ ശക്തിയെ ഉണർത്തിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>6. B</b>: ഹനുമാൻ വായുദേവന്റെ (പവനന്റെ) പുത്രനാണ്.
+        </div>
+        
+        <div class="key-item">
+          <b>7. B</b>: 'രാമബാണം കണക്കെ താൻ പായും' എന്നാണ് ഹനുമാൻ പ്രഖ്യാപിക്കുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>8. B</b>: പതിനാറാം നൂറ്റാണ്ടിലാണ് എഴുത്തച്ഛൻ ജീവിച്ചിരുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>9. B</b>: ഹനുമാന്റെ വീര്യവും ശ്രീരാമനോടുള്ള ആഴമേറിയ ഭക്തിയുമാണ് ഇതിൽ നിറഞ്ഞുനിൽക്കുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>10. A</b>: മലപ്പുറം ജില്ലയിലെ തിരൂരിനടുത്തുള്ള തൃക്കണ്ടിയൂരിലാണ് തുഞ്ചൻ പറമ്പ് സ്ഥിതി ചെയ്യുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>11. B</b>: തന്റെ പിതാവായ വായുദേവനെപ്പോലെ താനും അതിവേഗതയുള്ളവനാണെന്നാണ് ഹനുമാൻ പറയുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>12. B</b>: ബാല, അയോദ്ധ്യാ, ആരണ്യ, കിഷ്കിന്ധാ, സുന്ദര, യുദ്ധ കാണ്ഡങ്ങൾ ഉൾപ്പെടെ ആറ് കാണ്ഡങ്ങളാണുള്ളത്.
+        </div>
+        
+        <div class="key-item">
+          <b>13. B</b>: മഹാഭാരതം കിളിപ്പാട്ടാണ് എഴുത്തച്ഛന്റെ മറ്റൊരു പ്രധാന കൃതി.
+        </div>
+        
+        <div class="key-item">
+          <b>14. C</b>: നൂറുയോജന വിസ്താരമുള്ള സമുദ്രത്തെയാണ് ഹനുമാൻ ചാടിക്കടക്കുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>15. B</b>: പ്രതിസന്ധികളെ ഇച്ഛാശക്തിയോടെ അതിജീവിക്കാമെന്ന വലിയ ആത്മവിശ്വാസമാണ് ഈ കവിത പകരുന്നത്.
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="exam-points-card">
+      <div class="exam-points-head">
+        <h3>അധ്യാപകനും ഉള്ളടക്കവും സംബന്ധിച്ച 20 പ്രധാന പരീക്ഷാ പോയിന്റുകൾ</h3>
+        <span class="exam-tag">20 EXAM FOCUS POINTS</span>
+      </div>
+      <ul class="exam-points-list">
+    <li>1. രചയിതാവ്: തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ (16-ാം നൂറ്റാണ്ട്) - മലയാള ഭാഷാപിതാവ്.</li><li>2. കൃതി: അധ്യാത്മരാമായണം കിളിപ്പാട്ട് - സുന്ദരകാണ്ഡത്തിലെ 'സമുദ്രലംഘനം'.</li><li>3. കാവ്യപ്രസ്ഥാനം: കിളിപ്പാട്ട് പ്രസ്ഥാനം (തത്തയെക്കൊണ്ട് കഥ പറയിക്കുന്ന ജനകീയ കാവ്യരീതി).</li><li>4. എഴുത്തച്ഛന്റെ ജന്മസ്ഥലം: മലപ്പുറം ജില്ലയിലെ തിരൂരിലുള്ള തൃക്കണ്ടിയൂർ (തുഞ്ചൻ പറമ്പ്).</li><li>5. പ്രധാന വൃത്തങ്ങൾ: കാകളി, കേക, മണികാഞ്ചി, അന്നനട തുടങ്ങിയ ദ്രാവിഡ വൃത്തങ്ങൾ.</li><li>6. സന്ദർഭം: സീതയെ അന്വേഷിച്ച് ദക്ഷിണ സമുദ്രതീരത്തെത്തിയ വാനരപ്പട സമുദ്രം കണ്ട് നിരാശരാകുന്നു.</li><li>7. ജാംബവാന്റെ ദൗത്യം: ശാപത്താൽ വിസ്മരിച്ചുപോയ ഹനുമാന്റെ ദിവ്യശക്തികളെ ഓർമ്മിപ്പിച്ചുണർത്തുന്നു.</li><li>8. ഹനുമാൻ നിൽക്കുന്ന സ്ഥലം: മഹേന്ദ്രപർവ്വതത്തിന്റെ ഏറ്റവും ഉയർന്ന കൊടുമുടി.</li><li>9. പിതാവ്: വായുദേവൻ (പവനൻ); അതിനാൽ ഹനുമാൻ 'വായുപുത്രൻ' എന്നറിയപ്പെടുന്നു.</li><li>10. കുതിപ്പിന്റെ ഉപമ: ശ്രീരാമന്റെ വില്ലിൽ നിന്ന് പായുന്ന അസ്ത്രം (രാമബാണം) പോലെ കുതിച്ചുപായും.</li><li>11. ഹനുമാന്റെ ശപഥം: ലങ്കയിലോ സ്വർഗ്ഗത്തിലോ പാതാളത്തിലോ എവിടെയാണെങ്കിലും സീതാദേവിയെ കണ്ടെത്തും.</li><li>12. വീര്യത്തിന്റെ മൂർദ്ധന്യത: ആവശ്യമെങ്കിൽ രാവണനെ ലങ്കയോടെ പിഴുതെടുത്ത് രാമസന്നിധിയിൽ കൊണ്ടുവരും.</li><li>13. പ്രബലമായ രസങ്ങൾ: വീരരസവും (ധീരത) ഭക്തിരസവും (സമർപ്പണം).</li><li>14. സമുദ്രത്തിന്റെ അളവ്: നൂറുയോജന വിസ്താരമുള്ള മഹാസമുദ്രം.</li><li>15. പ്രകൃതി വർണ്ണന: ഹനുമാന്റെ കുതിപ്പിൽ പർവ്വതം വിറകൊള്ളുകയും വൃക്ഷങ്ങൾ ആകാശത്തേക്ക് പറക്കുകയും ചെയ്യുന്നു.</li><li>16. മറ്റ് പ്രമുഖ കൃതികൾ: മഹാഭാരതം കിളിപ്പാട്ട്, ഹരിനാമകീർത്തനം, ഉത്തരരാമായണം കിളിപ്പാട്ട്.</li><li>17. ഭാഷാ സംഭാവന: സംസ്കൃത-തമിഴ് അതിപ്രസരത്തിൽ നിന്ന് മുക്തമാക്കി ആധുനിക മലയാള ഭാഷയ്ക്ക് അടിത്തറയിട്ടു.</li><li>18. സാമൂഹിക മാറ്റം: അധഃസ്ഥിത ജനവിഭാഗങ്ങൾക്ക് അക്ഷരവും ഭക്തിയും പകർന്നുനൽകിയ കാവ്യവിപ്ലവം.</li><li>19. ഹനുമാന്റെ മഹത്വം: അപാരമായ ശക്തിയുണ്ടായിട്ടും സകല വിജയങ്ങളും ഈശ്വരനിൽ സമർപ്പിക്കുന്ന പരമവിനയം.</li><li>20. പരീക്ഷാ ഫോക്കസ്: കിളിപ്പാട്ട് പ്രസ്ഥാന സവിശേഷതകൾ, ഹനുമാന്റെ ആത്മവിശ്വാസ പ്രഖ്യാപനം, വീര-ഭക്തി രസങ്ങൾ, എഴുത്തച്ഛന്റെ ഭാഷാ സംഭാവന.</li>
+      </ul>
+    </div>
+    </div></div></body></html>

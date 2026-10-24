@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta charset="UTF-8">
+<title>കീഴാള ദൃശ്യസംസ്കാരം: ‘കമ്മട്ടിപ്പാടം’, ‘അങ്കമാലി ഡയറീസ്’ (നാടൻപാട്ടുകളുടെ സാമൂഹിക പ്രാധാന്യം) - അധ്യായ പഠന സഹായി</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  @page {
+    size: A4 portrait;
+    margin: 14mm 13mm 14mm 13mm;
+    @top-right {
+      content: "മലയാള സാഹിത്യാനുശീലനം · അധ്യായ പഠന സഹായി";
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Malayalam', 'Manjari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .chapter-header {
+    background: linear-gradient(135deg, var(--c-primary, #0f766e) 0%, var(--c-dark, #134e4a) 100%);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    page-break-inside: avoid;
+  }
+
+  .ch-pill-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .ch-pill {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .chapter-header h1 {
+    font-size: 17pt;
+    font-weight: 900;
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+    color: #ffffff;
+  }
+
+  .ch-meta-sub {
+    font-size: 10pt;
+    color: #ccfbf1;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Author Profile Card (കവിപരിചയം / രചയിതാവിന്റെ പരിചയം) */
+  .author-profile-box {
+    background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%);
+    border: 1.5px solid #cbd5e1;
+    border-left: 5px solid var(--c-primary, #0f766e);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    page-break-inside: avoid;
+  }
+
+  .author-profile-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .author-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 3px;
+  }
+
+  .author-profile-title h3 {
+    margin: 0;
+    font-size: 12.5pt;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .author-profile-title h3 small {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #64748b;
+  }
+
+  .author-meta-pill {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 8.5pt;
+    color: #334155;
+    line-height: 1.45;
+  }
+
+  .author-meta-pill b { color: var(--c-primary, #0f766e); }
+
+  .author-bio-body p {
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+
+  .author-works-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .author-works-head {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
+  }
+
+  .works-cat-row {
+    margin-bottom: 4px;
+    font-size: 8.5pt;
+    line-height: 1.5;
+  }
+
+  .works-cat-row:last-child { margin-bottom: 0; }
+
+  .works-cat-label {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: 8pt;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .works-cat-content { color: #475569; }
+
+  .author-awards-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #854d0e;
+    margin-bottom: 6px;
+  }
+
+  .author-significance-strip {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #1e40af;
+  }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .obj-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .out-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .card-label {
+    font-size: 9.5pt;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+  }
+  .obj-card .card-label { color: #166534; }
+  .out-card .card-label { color: #1e40af; }
+
+  .obj-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  .intro-box {
+    background: #fafaf9;
+    border: 1px solid #e7e5e4;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #292524;
+    page-break-inside: avoid;
+  }
+
+  .intro-box .intro-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #b45309;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .concept-section {
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    page-break-inside: avoid;
+  }
+
+  .concept-section h2 {
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--c-primary, #0f766e);
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .concept-section p {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: #334155;
+    margin: 0 0 6px 0;
+  }
+
+  .conclusion-box {
+    background: #fdf4ff;
+    border: 1px solid #f5d0fe;
+    border-left: 4px solid #a855f7;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 16px 0;
+    page-break-inside: avoid;
+  }
+
+  .conclusion-box .conc-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #7e22ce;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .conclusion-box p {
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #3b0764;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  .takeaways-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .takeaways-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f766e;
+  }
+
+  .takeaways-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #134e4a;
+    line-height: 1.55;
+  }
+
+  .glossary-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .glossary-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #334155;
+  }
+
+  .glossary-item {
+    font-size: 8.5pt;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .revision-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 9pt;
+    line-height: 1.6;
+    color: #713f12;
+    page-break-inside: avoid;
+  }
+
+  .progress-section {
+    border-top: 2px solid #e2e8f0;
+    padding-top: 14px;
+    margin-top: 16px;
+  }
+
+  .progress-header {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 0 0 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-inside: avoid;
+  }
+
+  .q-type-title {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f766e;
+    margin: 14px 0 8px 0;
+    padding-left: 8px;
+    border-left: 3px solid #0f766e;
+    page-break-inside: avoid;
+  }
+
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+
+  .qa-question {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+
+  .qa-answer {
+    font-size: 9pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0;
+    white-space: pre-line;
+  }
+
+  .essay-card {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .essay-card .qa-question {
+    font-size: 10pt;
+    color: #1e1b4b;
+    margin-bottom: 10px;
+  }
+
+  .essay-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 4px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .mcq-container {
+    margin-top: 14px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-q {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 5px 0;
+  }
+
+  .mcq-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    font-size: 8.5pt;
+    color: #334155;
+  }
+
+  .mcq-opt {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
+  .mcq-key-card {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 14px 0 20px 0;
+    page-break-inside: avoid;
+  }
+
+  .mcq-key-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 10pt;
+    font-weight: 800;
+    color: #166534;
+  }
+
+  .key-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    font-size: 8pt;
+    color: #14532d;
+  }
+
+  .key-item {
+    background: #ffffff;
+    border: 1px solid #bbf7d0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.35;
+  }
+
+  .exam-points-card {
+    background: linear-gradient(135deg, #fefce8 0%, #fffbeb 100%);
+    border: 1.5px solid #fde047;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 25px 0;
+    box-shadow: 0 3px 10px rgba(234, 179, 8, 0.1);
+    page-break-inside: avoid;
+  }
+
+  .exam-points-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #facc15;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+
+  .exam-points-head h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 900;
+    color: #854d0e;
+  }
+
+  .exam-tag {
+    background: #ca8a04;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 14px;
+    text-transform: uppercase;
+  }
+
+  .exam-points-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #713f12;
+  }
+
+  .exam-points-list li {
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .exam-points-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ca8a04;
+    font-weight: 900;
+  }
+
+
+    @media (max-width: 768px) {
+      body {
+        padding: 14px 10px !important;
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+      .chapter-header {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+      }
+    }
+    
+  </style>
+</head>
+<body style="--c-primary: #0369a1; --c-dark: #0f172a;">
+  <div class="chapter-wrapper">
+    <header class="chapter-header">
+      <div class="ch-pill-row">
+        <span class="ch-pill">മൊഡ്യൂൾ 4</span>
+        <span class="ch-pill">ചലച്ചിത്ര സാംസ്കാരിക പഠനം (Subaltern Cultural Studies)</span>
+        <span class="ch-pill">അധ്യായം 14</span>
+      </div>
+      <h1>കീഴാള ദൃശ്യസംസ്കാരം: ‘കമ്മട്ടിപ്പാടം’, ‘അങ്കമാലി ഡയറീസ്’ (നാടൻപാട്ടുകളുടെ സാമൂഹിക പ്രാധാന്യം)</h1>
+      <p class="ch-meta-sub">രചയിതാവ്: <b>രാജീവ് രവി ('കമ്മട്ടിപ്പാടം') / ലിജോ ജോസ് പെല്ലിശ്ശേരി ('അങ്കമാലി ഡയറീസ്')</b> · ഉറവിടം: 'കമ്മട്ടിപ്പാടം' (2016) & 'അങ്കമാലി ഡയറീസ്' (2017)</p>
+    </header>
+
+        <div class="author-profile-box">
+          <div class="author-profile-head">
+            <div class="author-profile-title">
+              <span class="author-badge">✍️ കവിപരിചയം / രചയിതാവിന്റെ സമഗ്ര പരിചയം</span>
+              <h3>രാജീവ് രവി ('കമ്മട്ടിപ്പാടം'), പി. ബാലചന്ദ്രൻ & ലിജോ ജോസ് പെല്ലിശ്ശേരി <small>(രാജീവ് രവി (ജനനം 1973) | പി. ബാലചന്ദ്രൻ (1952 – 2021) | ലിജോ (ജനനം 1978))</small></h3>
+            </div>
+            <div class="author-meta-pill">
+              <b>സ്ഥലം / പശ്ചാത്തലം:</b> കൊച്ചി / വൈക്കം / ചാലക്കുടി<br>
+              <b>സാഹിത്യ പദവി:</b> ദേശീയ അവാർഡ് ജേതാക്കളായ ചലച്ചിത്രകാരന്മാർ, തിരക്കഥാകൃത്തുക്കൾ, കീഴാള സാംസ്കാരിക രാഷ്ട്രീയത്തിന്റെ വക്താക്കൾ.
+            </div>
+          </div>
+          <div class="author-bio-body">
+            <p>മലയാള സിനിമയിലെ സവർണ്ണ കേന്ദ്രീകൃതമായ മുഖ്യധാരാ ആഖ്യാനങ്ങളെ തകിടം മറിച്ച് നഗരവൽക്കരണത്തിന്റെയും വികസനത്തിന്റെയും പേരിൽ സ്വന്തം മണ്ണിൽ നിന്ന് ആട്ടിയോടിക്കപ്പെട്ട കീഴാള ജനവിഭാഗങ്ങളുടെ രാഷ്ട്രീയവും ദൃശ്യസംസ്കാരവും ശക്തമായി പ്രതിഫലിപ്പിച്ച വിപ്ലവകരമായ സിനിമയാണ് രാജീവ് രവി സംവിധാനം ചെയ്ത 'കമ്മട്ടിപ്പാടം' (2016). പി. ബാലചന്ദ്രൻ തിരക്കഥയെഴുതിയ ഈ ചിത്രം എറണാകുളം നഗരത്തിന്റെ വികസനത്തിനായി ദളിത് ജനതയുടെ ചോരയും നീരും ഊറ്റിയെടുത്ത ചരിത്രത്തെ ധീരമായി തുറന്നുകാട്ടുന്നു. ചിത്രത്തിലെ കെ. അൻവർ അലി എഴുതിയ 'പുഴുപുലികൾ' എന്ന വിഖ്യാത ഗാനം കീഴാളന്റെ നിലനിൽപ്പും പ്രതിരോധവും സാംസ്കാരികമായി പ്രഖ്യാപിക്കുന്നു. ലിജോ ജോസ് പെല്ലിശ്ശേരിയുടെ 'അങ്കമാലി ഡയറീസ്' അങ്കമാലിയുടെ നാട്ടുജീവിതത്തെയും നാടൻ പാട്ടുകളെയും തനതു സംസ്കാരത്തെയും അവതരിപ്പിച്ചുകൊണ്ട് ഈ കീഴാള സൗന്ദര്യശാസ്ത്രത്തെ മറ്റൊരു തലത്തിലേക്ക് ഉയർത്തി.</p>
+            
+            <div class="author-works-section">
+              <div class="author-works-head">📚 പ്രധാന കൃതികളും സാഹിത്യ സംഭാവനകളും (Major Works & Contributions):</div>
+        
+              <div class="works-cat-row">
+                <span class="works-cat-label">രാജീവ് രവിയുടെ സംവിധാന സംരംഭങ്ങൾ</span>
+                <span class="works-cat-content">കമ്മട്ടിപ്പാടം (2016), അന്നയും റസൂലും (2013), ഞാൻ സ്റ്റീവ് ലോപ്പസ് (2014), തുറമുഖം (2023).</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">ഛായാഗ്രഹണം (Cinematography)</span>
+                <span class="works-cat-content">ഗാങ്സ് ഓഫ് വാസിപൂർ, ദേവ് ഡി, ഗുലാൽ, ലയേഴ്സ് ഡൈസ് (ദേശീയ അവാർഡ്), ബോംബെ വെൽവെറ്റ്.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">പി. ബാലചന്ദ്രന്റെ നാടകങ്ങളും തിരക്കഥകളും</span>
+                <span class="works-cat-content">പാവം ഉസ്മാൻ (നാടകം - സാഹിത്യ അക്കാദമി അവാർഡ്), ഉള്ളൊഴുക്കുകൾ, കമ്മട്ടിപ്പാടം, പവിത്രം, പുനരധിവാസം (ദേശീയ അവാർഡ്).</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">കീഴാള നാടൻപാട്ട് പാരമ്പര്യം</span>
+                <span class="works-cat-content">'പുഴുപുലികൾ' (രചന: അൻവർ അലി, സംഗീതം: ജോൺ പി. വർക്കി), നാടൻ കലാസമിതികളുടെ നാടോടി പ്രതിരോധ ഗാനങ്ങൾ.</span>
+              </div>
+            
+            </div>
+            
+            <div class="author-awards-strip">
+              <b>🏆 പ്രധാന പുരസ്കാരങ്ങളും അംഗീകാരങ്ങളും:</b> മികച്ച ഛായാഗ്രഹണത്തിനുള്ള ദേശീയ ചലച്ചിത്ര അവാർഡ് (രാജീവ് രവി), മികച്ച തിരക്കഥയ്ക്കുള്ള കേരള സാഹിത്യ അക്കാദമി അവാർഡ് (പി. ബാലചന്ദ്രൻ), കേരള സംസ്ഥാന ചലച്ചിത്ര അവാർഡുകൾ (വിനായകൻ - മികച്ച നടൻ, മണികണ്ഠൻ ആചാരി - മികച്ച സ്വഭാവനടൻ).
+            </div>
+            
+            <div class="author-significance-strip">
+              <b>✦ സാഹിത്യ സംഭാവന & സവിശേഷ സ്ഥാനം:</b> പാർശ്വവൽക്കരിക്കപ്പെട്ട ദളിത് ജനവിഭാഗങ്ങളെ കേവലം ഇരകളായല്ല, മറിച്ച് തനതായ സാംസ്കാരിക പ്രതിരോധ ശേഷിയുള്ള പോരാളികളായാണ് കമ്മട്ടിപ്പാടവും അനുബന്ധ കീഴാള ദൃശ്യസംസ്കാരവും അടയാളപ്പെടുത്തിയത്.
+            </div>
+          </div>
+        </div>
+        
+      <div class="objectives-grid">
+        <div class="obj-card">
+          <div class="card-label">❖ പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</div>
+          <ul class="obj-list">
+    <li>മലയാള സിനിമയിലെ കീഴാള ദൃശ്യസംസ്കാരത്തെയും (Subaltern Visual Culture) രാഷ്ട്രീയത്തെയും കുറിച്ച് പഠിക്കുക.</li><li>'കമ്മട്ടിപ്പാടം', 'അങ്കമാലി ഡയറീസ്' എന്നീ സിനിമകളിലെ നാടൻപാട്ടുകളുടെ സാമൂഹിക പ്രാധാന്യം മനസ്സിലാക്കുക.</li><li>ഭൂമി, അധികാരം, പാർശ്വവൽക്കരണം, പ്രാദേശിക ഭാഷ എന്നിവ സിനിമയിലൂടെ എങ്ങനെ പുനർനിർവ്വചിക്കപ്പെടുന്നു എന്ന് വിശകലനം ചെയ്യുക.</li>
+          </ul>
+        </div>
+        <div class="out-card">
+          <div class="card-label">✦ പഠന ഫലങ്ങൾ (Learning Outcomes)</div>
+          <ul class="obj-list">
+    <li>പരമ്പരാഗത മുഖ്യധാരാ സൗന്ദര്യശാസ്ത്രത്തെ കീഴാള കലാരൂപങ്ങൾ ചോദ്യം ചെയ്യുന്നത് എങ്ങനെയെന്ന് തിരിച്ചറിയാൻ സാധിക്കുന്നു.</li><li>നാടൻപാട്ടുകൾ വെറുമൊരു വിനോദമല്ലെന്നും, അത് ചരിത്രപരമായ ചെറുത്തുനിൽപ്പിന്റെ ശബ്ദമാണെന്നും വിലയിരുത്താൻ കഴിയുന്നു.</li><li>സമകാലിക മലയാള സിനിമയിലെ റിയലിസവും ദൃശ്യ-സംഗീത വിപ്ലവവും അപഗ്രഥിക്കാൻ പ്രാപ്തി നേടുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="intro-box">
+        <span class="intro-label">ആമുഖം (Introduction)</span>
+    <p>സമകാലിക മലയാള സിനിമയിൽ കീഴാള ജനതയുടെ ചരിത്രവും സംസ്കാരവും ശക്തമായി അടയാളപ്പെടുത്തിയ രണ്ട് നിർണ്ണായക ചിത്രങ്ങളാണ് രാജീവ് രവിയുടെ 'കമ്മട്ടിപ്പാടം' (2016), ലിജോ ജോസ് പെല്ലിശ്ശേരിയുടെ 'അങ്കമാലി ഡയറീസ്' (2017). പരമ്പരാഗത വരേണ്യ സൗന്ദര്യസങ്കൽപ്പങ്ങളെയും പോളിഷ് ചെയ്ത ഭാഷാശൈലിയെയും തച്ചുടച്ചുകൊണ്ട്, യഥാർത്ഥ മനുഷ്യരുടെ വിയർപ്പും രക്തവും പ്രാദേശിക താളങ്ങളും ഈ സിനിമകൾ അഭ്രപാളിയിലെത്തിച്ചു. പ്രത്യേകിച്ച്, ഈ രണ്ട് ചിത്രങ്ങളിലെയും നാടൻപാട്ട് രൂപത്തിലുള്ള ഗാനങ്ങൾ സിനിമയിലെ കേവല വിനോദോപാധിയല്ല; മറിച്ച് ദലിത്-തൊഴിലാളി വർഗ്ഗത്തിന്റെ ചരിത്രപരമായ അതിജീവനത്തിന്റെയും പാർശ്വവൽക്കരണത്തിനെതിരെയുള്ള സാംസ്കാരിക പ്രതിരോധത്തിന്റെയും ജീവസ്സുറ്റ രേഖകളാണ്.</p></div>
+        <section class="concept-section">
+          <h2>1. 'കമ്മട്ടിപ്പാടം' - നഗരവൽക്കരണവും ദലിത് ഉന്മൂലനവും</h2>
+          <p>എറണാകുളം നഗരത്തിന്റെ ഇന്നത്തെ ഗ്ലാമറിന് പിന്നിൽ കമ്മട്ടിപ്പാടം എന്ന ദലിത് കോളനിയിലെ മനുഷ്യരെ ചതിയിലൂടെയും അക്രമത്തിലൂടെയും തുരത്തിയോടിച്ച ചോരയുടെ ചരിത്രമുണ്ട്. രാജീവ് രവി സംവിധാനം ചെയ്ത് പി. ബാലചന്ദ്രൻ രചിച്ച ഈ ചിത്രം, ദുൽഖർ സൽമാൻ (കൃഷ്ണൻ), വിനായകൻ (ഗംഗ), മണികണ്ഠൻ ആചാരി (ബാലൻ ചേട്ടൻ) എന്നിവരിലൂടെ ഈ ചരിത്രസത്യം തുറന്നുകാട്ടുന്നു. റിയൽ എസ്റ്റേറ്റ് മാഫിയയും സവർണ്ണ മൂലധന ശക്തികളും ചേർന്ന് കീഴാളരെ എങ്ങനെ ഗുണ്ടകളാക്കി മാറ്റി ഒടുവിൽ സ്വന്തം മണ്ണിൽ നിന്ന് നിഷ്കാസിതരാക്കി എന്ന് ചിത്രം വ്യക്തമാക്കുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>2. 'കമ്മട്ടിപ്പാട'ത്തിലെ ഗാനങ്ങളും പ്രതിരോധത്തിന്റെ ശബ്ദവും</h2>
+          <p>ചിത്രത്തിലെ 'പുഴുപുളികൾ', 'പാരാകെ' തുടങ്ങിയ നാടൻപാട്ട് ശൈലിയിലുള്ള ഗാനങ്ങൾ മണ്ണും വിയർപ്പും ചേർന്ന കീഴാളന്റെ ഉള്ളുതുറക്കലുകളാണ്. ചെമ്പൻ വിനോദും വിനായകനും അൻവർ അലിയും ചേർന്നൊരുക്കിയ ഈ ഗാനങ്ങൾ ഔപചാരിക സംഗീതത്തിന്റെ വ്യാകരണങ്ങളെയല്ല, മറിച്ച് അടിച്ചമർത്തപ്പെട്ട ഒരു ജനതയുടെ രോഷത്തെയും സങ്കടത്തെയുമാണ് ആവിഷ്കരിക്കുന്നത്. ഭൂമിയും അധികാരവും നഷ്ടപ്പെട്ട ജനതയുടെ ആത്മാവിന്റെ വിലാപമായി ഈ പാട്ടുകൾ മാറുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>3. 'അങ്കമാലി ഡയറീസ്' - പ്രാദേശികതയും നാടൻ ഊർജ്ജവും</h2>
+          <p>ലിജോ ജോസ് പെല്ലിശ്ശേരി സംവിധാനം ചെയ്ത് ചെമ്പൻ വിനോദ് ജോസ് രചിച്ച 'അങ്കമാലി ഡയറീസ്' അങ്കമാലിയുടെ പ്രാദേശിക തെരുവ് സംസ്കാരത്തെയും പന്നിയിറച്ചി ബിസിനസ്സ് നടത്തുന്ന സാധാരണക്കാരായ ചെറുപ്പക്കാരുടെ സംഘർഷങ്ങളെയും ആവിഷ്കരിക്കുന്നു. പ്രശാന്ത് പിള്ള ഒരുക്കിയ 'തിയ്യമ്മേ', 'അയ്യപ്പന്റമ്മ നെയ്യപ്പം ചുട്ടു' തുടങ്ങിയ പാട്ടുകൾ നാടൻപാട്ടിന്റെ ചടുലമായ താളവും പ്രാദേശിക തനിമയും ഉൾക്കൊള്ളുന്നു. അങ്കമാലിയുടെ തെരുവ് ഭാഷയും ശരീരഭാഷയും ആഘോഷങ്ങളും ഈ ഗാനങ്ങളിലൂടെ നേരിട്ട് പ്രേക്ഷകനിലേക്ക് എത്തുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>4. നാടൻപാട്ടുകളുടെ സാമൂഹിക പ്രാധാന്യം</h2>
+          <p>ഈ രണ്ട് സിനിമകളിലെയും നാടൻപാട്ടുകൾക്ക് അഞ്ച് സുപ്രധാനമായ സാമൂഹിക മാനങ്ങളുണ്ട്:</p><p>1. പ്രാദേശിക തിരിച്ചറിവും തനിമയുള്ള ഭാഷയും: ശുദ്ധഭാഷാ വാദത്തെ തകർത്ത് പ്രാദേശിക ഭാഷാഭേദങ്ങൾക്ക് അംഗീകാരം നൽകുന്നു.</p><p>2. വർഗ്ഗബോധവും അധികാര വ്യവസ്ഥയും: ദലിത്-തൊഴിലാളി വർഗ്ഗത്തിന്റെ ചരിത്രപരമായ ചൂഷണങ്ങളെ പുറത്തുകൊണ്ടുവരുന്നു.</p><p>3. കഥാവസ്തുവിന്റെ ജൈവഭാഗം: പാട്ടുകൾ കഥയെ തടസ്സപ്പെടുത്താതെ നരേറ്റീവിന്റെ അവിഭാജ്യ ഘടകമായി മുന്നോട്ടുപോകുന്നു.</p><p>4. സാംസ്കാരിക പ്രതിരോധം: ഔദ്യോഗിക വരേണ്യ സംഗീതത്തിന് നേരെയുള്ള കീഴാള ജനതയുടെ രാഷ്ട്രീയ പ്രഖ്യാപനമായി മാറുന്നു.</p><p>5. സൗന്ദര്യബോധത്തിന്റെ നവീകരണം: മലയാള സിനിമയുടെ സൗന്ദര്യസങ്കൽപ്പങ്ങളെ കൂടുതൽ റിയലിസ്റ്റിക്കും ജനകീയവുമാക്കുന്നു.</p>
+        </section>
+        
+    <div class="conclusion-box">
+      <span class="conc-label">ഉപസംഹാരം (Chapter Conclusion)</span>
+      <p>'കമ്മട്ടിപ്പാടം', 'അങ്കമാലി ഡയറീസ്' എന്നീ ചിത്രങ്ങളിലെ നാടൻപാട്ടുകൾ വിനോദത്തിന്റെ അതിരുകൾ കടന്ന് സാമൂഹിക സാക്ഷ്യങ്ങളായി മാറുന്നു. പാർശ്വവൽക്കരിക്കപ്പെട്ട മനുഷ്യരുടെ വേദനയും പ്രതിരോധവും ഒരേസമയം ശബ്ദമാകുന്ന ഈ ഗാനങ്ങൾ മലയാള ദൃശ്യസംസ്കാരത്തിലെ വലിയൊരു വിപ്ലവമാണ്.</p>
+    </div>
+    
+    <div class="summary-grid">
+      <div class="takeaways-box">
+        <h3>✦ പ്രധാന പാഠങ്ങൾ (Key Takeaways)</h3>
+        <ul class="takeaways-list">
+    <li>'കമ്മട്ടിപ്പാടം' (സംവിധാനം: രാജീവ് രവി): എറണാകുളത്തെ ദലിത് കോളനിയുടെ ഭൂമി പിടിച്ചെടുക്കലും ചരിത്രപരമായ ഉന്മൂലനവും.</li><li>'അങ്കമാലി ഡയറീസ്' (സംവിധാനം: ലിജോ ജോസ് പെല്ലിശ്ശേരി): അങ്കമാലിയുടെ തനത് നാടൻ സംസ്കാരവും ഭക്ഷണവും തെരുവ് ജീവിതവും.</li><li>നാടൻപാട്ടുകൾ ഔദ്യോഗിക വരേണ്യ സംഗീതത്തെ വെല്ലുവിളിക്കുന്ന കീഴാള സാംസ്കാരിക പ്രതിരോധമാണ്.</li><li>ഈ ചിത്രങ്ങളിലെ ഗാനങ്ങൾ മലയാള സിനിമയുടെ ഭാഷയെയും സൗന്ദര്യബോധത്തെയും അടിമുടി മാറ്റിമറിച്ചു.</li>
+        </ul>
+      </div>
+      <div class="glossary-box">
+        <h3>📖 പ്രധാന സാങ്കേതിക പദാവലി (Key Terms)</h3>
+    <div class="glossary-item"><b>കീഴാള ദൃശ്യസംസ്കാരം (Subaltern Visual Culture):</b> അധഃസ്ഥിത-പാർശ്വവൽക്കരിക്കപ്പെട്ട ജനതയുടെ ജീവിതവും രാഷ്ട്രീയവും പ്രതിഫലിക്കുന്ന ദൃശ്യകല.</div><div class="glossary-item"><b>സാംസ്കാരിക പ്രതിരോധം:</b> മേധാവിത്വ മൂല്യങ്ങൾക്കെതിരെ തനത് നാടൻ കലകളിലൂടെയും ഭാഷയിലൂടെയും നടത്തുന്ന ചെറുത്തുനിൽപ്പ്.</div><div class="glossary-item"><b>പാർശ്വവൽക്കരണം (Marginalization):</b> ഒരു വിഭാഗം ജനങ്ങളെ വികസനത്തിൽ നിന്നും അധികാരത്തിൽ നിന്നും പുറന്തള്ളുന്ന അവസ്ഥ.</div>
+      </div>
+    </div>
+    
+    <div class="revision-strip">
+      <b>ദ്രുത പുനഃപരിശോധനാ കുറിപ്പ് (Quick Revision):</b> കീഴാള ദൃശ്യസംസ്കാരം. 'കമ്മട്ടിപ്പാടം' (രാജീവ് രവി) - കൊച്ചിയിലെ ദലിത് ഭൂമി തട്ടിയെടുക്കലും വിനായകന്റെ ഗംഗയും. 'അങ്കമാലി ഡയറീസ്' (ലിജോ ജോസ് പെല്ലിശ്ശേരി) - പ്രാദേശിക ജീവിതവും നാടൻ താളങ്ങളും. നാടൻപാട്ടുകളുടെ 5 സാമൂഹിക പ്രാധാന്യങ്ങൾ: പ്രാദേശികത, വർഗ്ഗബോധം, നരേറ്റീവ് സാന്നിധ്യം, പ്രതിരോധ ശബ്ദം, സൗന്ദര്യശാസ്ത്ര വിപ്ലവം.
+    </div>
+    
+    <div class="progress-section">
+      <div class="progress-header">
+        <span>പഠന പുരോഗതി വിലയിരുത്തൽ (Check Your Progress)</span>
+        <small>യഥാർത്ഥ ചോദ്യങ്ങളും സമഗ്ര ഉത്തരങ്ങളും</small>
+      </div>
+    <div class="q-type-title">ലഘുകുറിപ്പുകൾ (Short Notes)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. 'കമ്മട്ടിപ്പാടം' എന്ന സിനിമയിലെ ഗാനങ്ങൾ കീഴാള വർഗ്ഗത്തിന്റെ ചരിത്രവുമായി എങ്ങനെ ബന്ധപ്പെട്ടിരിക്കുന്നു?</div>
+              <div class="qa-answer">എറണാകുളം നഗരത്തിന്റെ വികസനത്തിനായി കുടിയൊഴിപ്പിക്കപ്പെട്ട ദലിത് ജനതയുടെ കണ്ണീരും അമർഷവുമാണ് 'കമ്മട്ടിപ്പാട'ത്തിലെ പാട്ടുകൾ. പുഴുപുളികൾ നിറഞ്ഞ ചെളിമണ്ണിൽ പണിയെടുത്ത് ഒടുവിൽ സ്വന്തം ഭൂമി പോലും നഷ്ടപ്പെട്ട കീഴാളരുടെ ആത്മാവിന്റെ വിലാപവും രോഷവുമാണ് ഈ നാടൻ ഗാനങ്ങളിലൂടെ പുറത്തുവരുന്നത്. നാടൻപാട്ടുകൾ ഇവിടെ കേവല വിനോദമല്ല, മറിച്ച് പാർശ്വവൽക്കരണത്തിനെതിരെയുള്ള പ്രതിഷേധമാണ്.</div>
+            </div>
+            
+            <div class="qa-card">
+              <div class="qa-question">2. 'അങ്കമാലി ഡയറീസ്' സിനിമയിലെ പ്രാദേശിക ഭാഷയുടെയും നാടൻ താളങ്ങളുടെയും പ്രാധാന്യം എന്ത്?</div>
+              <div class="qa-answer">അങ്കമാലിയിലെ സാധാരണക്കാരായ ക്രൈസ്തവ-തൊഴിലാളി ജനതയുടെ സംസാരശൈലിയും തെരുവ് സംസ്കാരവുമാണ് സിനിമയുടെ ഭാഷ. പ്രശാന്ത് പിള്ള ഒരുക്കിയ നാടൻപാട്ട് ശൈലിയിലുള്ള ഗാനങ്ങൾ അങ്കമാലിയുടെ ആഘോഷങ്ങളെയും യുവത്വത്തിന്റെ ആവേശങ്ങളെയും അതേപടി ഒപ്പിയെടുക്കുന്നു. ഔപചാരിക സിനിമകളുടെ കൃത്രിമത്വം ഉപേക്ഷിച്ച് പച്ചയായ നാട്ടുജീവിതത്തെ ആഘോഷിക്കാൻ ഈ ഗാനങ്ങൾക്ക് കഴിഞ്ഞു.</div>
+            </div>
+            <div class="q-type-title">ലഘൂപന്യാസങ്ങൾ (Short Essays)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. സമകാലിക മലയാള സിനിമയിൽ നാടൻപാട്ടുകൾ കൊണ്ടുവന്ന ഭാവുകത്വപരമായ വഴിത്തിരിവുകൾ എന്തെല്ലാം?</div>
+              <div class="qa-answer">കാലങ്ങളായി മലയാള സിനിമയിൽ നിലനിന്നിരുന്ന ശാസ്ത്രീയ-മെലഡി ഗാനങ്ങളുടെ ആധിപത്യത്തെ വെല്ലുവിളിച്ചുകൊണ്ടാണ് നാടൻപാട്ടുകൾ കടന്നുവന്നത്. സംഗീതത്തിന്റെ 'സുരഭില' മാനദണ്ഡങ്ങളെ ചോദ്യം ചെയ്തുകൊണ്ട്, അസംസ്കൃതവും യഥാർത്ഥവുമായ ശബ്ദലോകത്തെ അവ പരിചയപ്പെടുത്തി. പാട്ടുകൾ പശ്ചാത്തല സംഗീതമായി മാറാതെ കഥാപാത്രങ്ങളുടെ വൈകാരികാവസ്ഥയുടെയും സാമൂഹിക പശ്ചാത്തലത്തിന്റെയും ജൈവിക ഭാഗമായി മാറി. തൊഴിലാളികളുടെയും കീഴാളരുടെയും ശബ്ദത്തിന് മുഖ്യധാരയിൽ ഇടം നേടിക്കൊടുത്ത വലിയൊരു സാംസ്കാരിക വിപ്ലവമായിരുന്നു ഇത്.</div>
+            </div>
+            <div class="q-type-title">ഉപന്യാസങ്ങൾ (Long Essays - 300+ Words)</div>
+            <div class="essay-card">
+              <span class="essay-badge">സമഗ്ര ഉപന്യാസം · 300+ WORDS</span>
+              <div class="qa-question">1. ‘കമ്മട്ടിപ്പാടം’, ‘അങ്കമാലി ഡയറീസ്’ സിനിമകളിലെ നാടൻപാട്ട് രൂപത്തിലുള്ള ഗാനങ്ങളുടെ സാമൂഹ്യ പ്രാധാന്യം സമഗ്രമായി കണ്ടെത്തി ഉപന്യസിക്കുക.</div>
+              <div class="qa-answer">ആമുഖം:
+മലയാള മുഖ്യധാരാ സിനിമകളിലെ പരമ്പരാഗത സവർണ്ണ-ഉപരിവർഗ്ഗ സൗന്ദര്യസങ്കല്പങ്ങളെയും ഔപചാരിക സംഗീത നിയമങ്ങളെയും അടിമുടി ഉടച്ചുവാർത്തുകൊണ്ട്, പാർശ്വവൽക്കരിക്കപ്പെട്ട മനുഷ്യരുടെ സംസ്കാരത്തെയും ജീവിത യാഥാർത്ഥ്യങ്ങളെയും മുൻനിരയിലേക്ക് കൊണ്ടുവന്ന പ്രസ്ഥാനമാണ് കീഴാള ദൃശ്യസംസ്കാരം. കൊച്ചിയുടെയും അങ്കമാലിയുടെയും അധോലോകങ്ങളെയും ഗ്രാമീണ ജീവിതങ്ങളെയും സത്യസന്ധമായി ആവിഷ്കരിച്ച രാജീവ് രവിയുടെ 'കമ്മട്ടിപ്പാടം' (2016), ലിജോ ജോസ് പെല്ലിശ്ശേരിയുടെ 'അങ്കമാലി ഡയറീസ്' (2017) എന്നീ ചലച്ചിത്രങ്ങൾ ഇതിന് മികച്ച ഉദാഹരണങ്ങളാണ്. ഈ സിനിമകളിൽ ഉപയോഗിച്ചിരിക്കുന്ന നാടൻപാട്ട് ശീലത്തിലുള്ള ഗാനങ്ങൾ കേവലം വിനോദത്തിനപ്പുറം വലിയൊരു സാമൂഹിക ചരിത്രവും വർഗ്ഗബോധവും പ്രതിരോധവും പ്രതിഫലിപ്പിക്കുന്ന സാംസ്കാരിക രേഖകളാണ്.
+
+പ്രാദേശിക തിരിച്ചറിവും ഭാഷാപരമായ തനിമയും:
+ഇരു സിനിമകളിലും ഉപയോഗിച്ചിട്ടുള്ള നാടൻപാട്ടുകൾ കൊച്ചിയുടെയും അങ്കമാലിയുടെയും പ്രാദേശിക ഭാഷാശൈലിയെയും ഉച്ചാരണത്തെയും താളത്തെയും കൃത്യമായി ഉൾക്കൊള്ളുന്നു. 'നാടൻ' എന്നത് ഇവിടെ കേവലം ബാഹ്യമായ ഒരു അലങ്കാരമല്ല; മറിച്ച് ആ ജനതയുടെ സ്വാഭാവികമായ സ്വയംപ്രകടനമാണ്. ഔദ്യോഗിക ഭാഷാശുദ്ധിയെ നിരാകരിച്ചുകൊണ്ട് പാർശ്വവൽക്കരിക്കപ്പെട്ട മനുഷ്യരുടെ പച്ചയായ അനുഭവങ്ങളെ കാണികളിലേക്ക് നേരിട്ടെത്തിക്കാൻ ഈ ഗാനങ്ങൾക്ക് കഴിയുന്നു.
+
+വർഗ്ഗബോധവും അധികാരവ്യവസ്ഥയോടുള്ള പോരാട്ടവും:
+'കമ്മട്ടിപ്പാടം' എന്ന സിനിമയിലെ ഗാനങ്ങളിൽ ദളിത്-തൊഴിലാളി ജീവിതത്തിന്റെ തീക്ഷ്ണമായ സംഘർഷങ്ങളും ചരിത്രപരമായ അവഗണനയും നിഴലിക്കുന്നു. എറണാകുളം നഗരവികസനത്തിന് പിന്നിൽ തങ്ങളുടെ ഭൂമിയും ജീവിതവും അടിയറവ് പറയേണ്ടിവന്ന ദളിതരുടെ കണ്ണീരും പ്രതിഷേധവുമാണ് ഇതിൽ പ്രതിഫലിക്കുന്നത്. മറുവശത്ത്, 'അങ്കമാലി ഡയറീസി'ൽ തൊഴിലാളി-കീഴാള വർഗ്ഗ യുവത്വത്തിന്റെ വന്യമായ ഊർജ്ജവും ആക്രമണാത്മക യാഥാർത്ഥ്യവും പാട്ടുകളുടെ കടുപ്പമുള്ള താളങ്ങളിലൂടെ പ്രകടമാകുന്നു.
+
+കഥാവസ്തുവിന്റെ ജൈവഭാഗവും പ്രതിരോധത്തിന്റെ ശബ്ദവും:
+ഈ സിനിമകളിൽ പാട്ടുകൾ കഥാഗതിയെ തടസ്സപ്പെടുത്തുന്ന കേവല ഇടവേളകളല്ല; മറിച്ച് നരേറ്റീവിന്റെ അവിഭാജ്യമായ ജൈവഘടകങ്ങളാണ്. കഥാപാത്രങ്ങളുടെ മാനസികാവസ്ഥയും സാമൂഹിക പശ്ചാത്തലവും പാട്ടുകളിലൂടെയാണ് മുന്നോട്ട് നീങ്ങുന്നത്. ചരിത്രപരമായി അടിച്ചമർത്തപ്പെട്ട ജനതയുടെ ശബ്ദമാണ് നാടൻപാട്ടുകൾ. ആഘോഷവും ദുഃഖവും കോപവും ഒരേസമയം വഹിച്ചുകൊണ്ട്, സവർണ്ണ ഔപചാരിക സംഗീത ഭാഷയ്ക്കെതിരെയുള്ള ഒരു വലിയ സാംസ്കാരിക പ്രഖ്യാപനമായി ഈ പാട്ടുകൾ നിലകൊള്ളുന്നു.
+
+ഗാനങ്ങളുടെ ചലച്ചിത്രപരമായ പങ്ക്:
+കമ്മട്ടിപ്പാടത്തിൽ ഗംഗയുടെയും കൃഷ്ണന്റെയും ബാലന്റെയും ജീവിതത്തെ അനുഗമിക്കുന്ന നാടൻ ഈണങ്ങളും, അങ്കമാലി ഡയറീസിൽ പന്നിവെട്ട് രംഗങ്ങളിലും പെപ്പയുടെ സംഘത്തിന്റെ ആഘോഷങ്ങളിലും മുഴങ്ങുന്ന തെരുവ് ഗാനങ്ങളും കഥാപാത്രങ്ങളുടെ സ്വാഭാവിക വികാരപ്രകടനങ്ങളായി മാറുന്നു. ഉന്മാദവും ആത്മരോഷവും അതിജീവനത്വരയും പ്രതിഫലിപ്പിക്കുന്ന ഈ ഗാനങ്ങൾക്ക് കൃത്രിമമായ ആധുനിക ഓർക്കസ്ട്രേഷനുകളേക്കാൾ വലിയ വൈകാരിക തീവ്രതയുണ്ട്.
+
+സാംസ്കാരിക പഠനങ്ങളുടെ വെളിച്ചത്തിലുള്ള വിലയിരുത്തൽ:
+സാംസ്കാരിക പഠനങ്ങളുടെ (Cultural Studies) വെളിച്ചത്തിൽ പരിശോധിക്കുമ്പോൾ, കീഴാള ജനതയുടെ സംഗീത രൂപങ്ങൾ എക്കാലത്തും വരേണ്യ അധികാര രൂപങ്ങൾക്കെതിരെയുള്ള പ്രതിരോധമായിരുന്നു. മലയാള ചലച്ചിത്ര ചരിത്രത്തിൽ പി. ഭാസ്കരനും വയലാറും ഒ.എൻ.വിയും അടയാളപ്പെടുത്തിയ നാടോടി പാരമ്പര്യത്തിന്റെ തുടർച്ചയായും, എന്നാൽ അതിനേക്കാൾ അസംസ്കൃതവും വിപ്ലവകരവുമായ ആധുനിക ഭാവുകത്വമായും ഈ സിനിമകളിലെ നാടൻപാട്ടുകളെ വിലയിരുത്താം.
+
+മലയാള സിനിമയിലെ പുതിയ സൗന്ദര്യശാസ്ത്രം:
+പരമ്പരാഗത സംഗീതത്തിന്റെ 'സുന്ദര' മാനദണ്ഡങ്ങളെ ചോദ്യം ചെയ്ത്, അസംസ്കൃതവും റിയലിസ്റ്റിക്കുമായ ശബ്ദലോകം അവതരിപ്പിച്ചതിലൂടെ മലയാള സിനിമയുടെ സൗന്ദര്യബോധത്തെത്തന്നെ ഈ ചിത്രങ്ങൾ പുതുക്കിപ്പണിതു. വിനോദത്തിന്റെ അതിരുകൾ കടന്ന് മാർജിനലൈസ്ഡ് സമൂഹങ്ങളുടെ ചരിത്രവും വേദനയും പ്രതിരോധവും വെള്ളിത്തിരയിൽ ഉച്ചത്തിൽ മുഴക്കിയ ശക്തമായ കലാപ്രകടനങ്ങളായി ഈ നാടൻപാട്ടുകൾ മാറുന്നു.
+
+ഉപസംഹാരം:
+ചുരുക്കത്തിൽ, 'കമ്മട്ടിപ്പാടവും' 'അങ്കമാലി ഡയറീസും' മലയാള ചലച്ചിത്ര സംഗീതത്തിന് സമ്മാനിച്ചത് പുതിയൊരു ഭാവുകത്വമാണ്. ജനങ്ങളുടെ ജീവിതത്തോട് ഏറ്റവും അടുത്തുനിൽക്കുന്ന നാടൻപാട്ടുകളെ ദൃശ്യസംസ്കാരത്തിന്റെ കരുത്തുറ്റ ഭാഗമാക്കി മാറ്റിയതിലൂടെ, കീഴാള മനുഷ്യരുടെ സ്വത്വവും സംസ്കാരവും ഇവിടെ ശാശ്വതമായി അടയാളപ്പെടുത്തപ്പെടുന്നു.</div>
+            </div>
+            
+    <div class="q-type-title">പ്രധാന പരീക്ഷാ മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (15 Important MCQs)</div>
+    <div class="mcq-container">
+    
+        <div class="mcq-item">
+          <div class="mcq-q">1. 'കമ്മട്ടിപ്പാടം' എന്ന വിഖ്യാത ചിത്രം സംവിധാനം ചെയ്തത് ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ലിജോ ജോസ് പെല്ലിശ്ശേരി</div>
+            <div class="mcq-opt">B) രാജീവ് രവി</div>
+            <div class="mcq-opt">C) അമൽ നീരദ്</div>
+            <div class="mcq-opt">D) ആഷിഖ് അബു</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">2. 'അങ്കമാലി ഡയറീസ്' എന്ന ചിത്രം സംവിധാനം ചെയ്തത് ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) രാജീവ് രവി</div>
+            <div class="mcq-opt">B) ലിജോ ജോസ് പെല്ലിശ്ശേരി</div>
+            <div class="mcq-opt">C) ദിലീഷ് പോത്തൻ</div>
+            <div class="mcq-opt">D) ശ്യാം പുഷ്കരൻ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">3. 'കമ്മട്ടിപ്പാടം' എന്ന സിനിമ പ്രധാനമായും ചർച്ച ചെയ്യുന്ന ചരിത്രപരമായ പ്രശ്നം എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വിദേശ കുടിയേറ്റം</div>
+            <div class="mcq-opt">B) കൊച്ചി നഗരവൽക്കരണവും ദലിതരുടെ ഭൂമി തട്ടിയെടുക്കലും പാർശ്വവൽക്കരണവും</div>
+            <div class="mcq-opt">C) കപ്പൽ നിർമ്മാണം</div>
+            <div class="mcq-opt">D) വിനോദയാത്ര</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">4. 'കമ്മട്ടിപ്പാട'ത്തിലെ 'ഗംഗ' എന്ന കഥാപാത്രത്തിലൂടെ മികച്ച നടനുള്ള സംസ്ഥാന അവാർഡ് നേടിയത് ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ദുൽഖർ സൽമാൻ</div>
+            <div class="mcq-opt">B) വിനായകൻ</div>
+            <div class="mcq-opt">C) മണികണ്ഠൻ ആചാരി</div>
+            <div class="mcq-opt">D) ഷൈൻ ടോം ചാക്കോ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">5. 'അങ്കമാലി ഡയറീസ്' ചിത്രത്തിന്റെ തിരക്കഥ രചിച്ചത് ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) പി. ബാലചന്ദ്രൻ</div>
+            <div class="mcq-opt">B) ചെമ്പൻ വിനോദ് ജോസ്</div>
+            <div class="mcq-opt">C) എസ്. ഹരീഷ്</div>
+            <div class="mcq-opt">D) ബിപിൻ ചന്ദ്രൻ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">6. 'കമ്മട്ടിപ്പാടം' സിനിമയുടെ തിരക്കഥാകൃത്ത് ആരാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) പി. ബാലചന്ദ്രൻ</div>
+            <div class="mcq-opt">B) രഞ്ജിത്ത്</div>
+            <div class="mcq-opt">C) എം.ടി.</div>
+            <div class="mcq-opt">D) ജോൺപോൾ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">7. 'അങ്കമാലി ഡയറീസ്' ചിത്രത്തിലെ സംഗീത സംവിധായകൻ ആരാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) സുഷിൻ ശ്യാം</div>
+            <div class="mcq-opt">B) പ്രശാന്ത് പിള്ള</div>
+            <div class="mcq-opt">C) ബിജിബാൽ</div>
+            <div class="mcq-opt">D) ദീപക് ദേവ്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">8. ഈ സിനിമകളിലെ നാടൻപാട്ടുകൾ പ്രധാനമായും പ്രതിനിധീകരിക്കുന്നത് ഏത് വിഭാഗത്തിന്റെ ശബ്ദമാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വരേണ്യ വർഗ്ഗത്തിന്റെ</div>
+            <div class="mcq-opt">B) കീഴാള - തൊഴിലാളി വർഗ്ഗത്തിന്റെ (Subaltern)</div>
+            <div class="mcq-opt">C) വിദേശികളുടെ</div>
+            <div class="mcq-opt">D) ഭരണാധികാരികളുടെ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">9. 'അങ്കമാലി ഡയറീസ്' സിനിമയിലെ പ്രധാന കഥാപാത്രമായ വിൻസെന്റ് പെപ്പെയെ അവതരിപ്പിച്ചത് ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ആന്റണി വർഗ്ഗീസ് (പെപ്പെ)</div>
+            <div class="mcq-opt">B) അപ്പാനി ശരത്ത്</div>
+            <div class="mcq-opt">C) ടിറ്റോ വിൽസൺ</div>
+            <div class="mcq-opt">D) ചെമ്പൻ വിനോദ്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">10. 'കമ്മട്ടിപ്പാട'ത്തിലെ ബാലൻ ചേട്ടൻ എന്ന കഥാപാത്രത്തെ അവതരിപ്പിച്ച നടൻ ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) അലൻസിയർ</div>
+            <div class="mcq-opt">B) മണികണ്ഠൻ ആചാരി</div>
+            <div class="mcq-opt">C) സുരാജ്</div>
+            <div class="mcq-opt">D) ജോജു ജോർജ്ജ്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">11. 'അങ്കമാലി ഡയറീസി'ലെ പ്രശസ്തമായ നാടൻപാട്ട് ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) അയ്യപ്പന്റമ്മ നെയ്യപ്പം ചുട്ടു / തീയ്യമ്മേ</div>
+            <div class="mcq-opt">B) കായലരികത്ത്</div>
+            <div class="mcq-opt">C) മലരേ</div>
+            <div class="mcq-opt">D) ചെരാതുകൾ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">12. കീഴാള ദൃശ്യസംസ്കാരം വെല്ലുവിളിക്കുന്നത് എന്തിനെയാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ശാസ്ത്രത്തെ</div>
+            <div class="mcq-opt">B) പരമ്പരാഗത വരേണ്യ സൗന്ദര്യശാസ്ത്രത്തെയും വിവേചനങ്ങളെയും</div>
+            <div class="mcq-opt">C) സാങ്കേതികവിദ്യയെ</div>
+            <div class="mcq-opt">D) വിദേശ സിനിമകളെ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">13. 'കമ്മട്ടിപ്പാടം' സിനിമ പുറത്തിറങ്ങിയ വർഷമേത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 2010</div>
+            <div class="mcq-opt">B) 2016</div>
+            <div class="mcq-opt">C) 2018</div>
+            <div class="mcq-opt">D) 2020</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">14. നാടൻപാട്ടുകൾക്ക് ഈ സിനിമകളിലുള്ള പ്രധാന ആഖ്യാന ധർമ്മം എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വെറും സമയംകൊല്ലി</div>
+            <div class="mcq-opt">B) കഥയുടെ അവിഭാജ്യ ഘടകമായി മാറി യാഥാർത്ഥ്യം പ്രകടിപ്പിക്കൽ</div>
+            <div class="mcq-opt">C) ഡാൻസ് മാത്രം</div>
+            <div class="mcq-opt">D) പരസ്യം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">15. ഈ രണ്ട് സിനിമകളും മലയാള സിനിമാ ചരിത്രത്തിൽ അടയാളപ്പെടുത്തുന്നത് എന്തിനെയാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ആനിമേഷൻ വിപ്ലവം</div>
+            <div class="mcq-opt">B) പ്രാദേശിക യാഥാർത്ഥ്യങ്ങളിലേക്കും കീഴാള സംസ്കാരത്തിലേക്കുമുള്ള ഭാവുകത്വ വഴിത്തിരിവ്</div>
+            <div class="mcq-opt">C) ചരിത്രമില്ലായ്മ</div>
+            <div class="mcq-opt">D) കോമഡി മാത്രം</div>
+          </div>
+        </div>
+        </div>
+    <div class="mcq-key-card">
+      <h4>MCQ ഉത്തര സൂചിക & വിശദീകരണങ്ങൾ (Answer Key)</h4>
+      <div class="key-grid">
+    
+        <div class="key-item">
+          <b>1. B</b>: പ്രശസ്ത സംവിധായകനും ഛായാഗ്രാഹകനുമായ രാജീവ് രവിയാണ് 'കമ്മട്ടിപ്പാടം' സംവിധാനം ചെയ്തത്.
+        </div>
+        
+        <div class="key-item">
+          <b>2. B</b>: ലിജോ ജോസ് പെല്ലിശ്ശേരിയാണ് 'അങ്കമാലി ഡയറീസ്' (2017) സംവിധാനം ചെയ്തത്.
+        </div>
+        
+        <div class="key-item">
+          <b>3. B</b>: എറണാകുളം നഗരവികസനത്തിന്റെ പേരിൽ ദലിതർ കുടിയൊഴിപ്പിക്കപ്പെട്ട യാഥാർത്ഥ്യമാണിത്.
+        </div>
+        
+        <div class="key-item">
+          <b>4. B</b>: വിനായകനാണ് ഗംഗ എന്ന കഥാപാത്രത്തെ അവിസ്മരണീയമാക്കി സംസ്ഥാന അവാർഡ് നേടിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>5. B</b>: നടൻ ചെമ്പൻ വിനോദ് ജോസാണ് 'അങ്കമാലി ഡയറീസ്' രചിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>6. A</b>: പ്രമുഖ നാടകകൃത്തും നടനുമായ അന്തരിച്ച പി. ബാലചന്ദ്രനാണ് തിരക്കഥ എഴുതിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>7. B</b>: പ്രശാന്ത് പിള്ളയാണ് ചിത്രത്തിലെ ചടുലമായ നാടൻ ഈണങ്ങൾ ഒരുക്കിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>8. B</b>: പാർശ്വവൽക്കരിക്കപ്പെട്ട കീഴാള-തൊഴിലാളി വർഗ്ഗത്തിന്റെ ശബ്ദമാണിത്.
+        </div>
+        
+        <div class="key-item">
+          <b>9. A</b>: ആന്റണി വർഗ്ഗീസാണ് പെപ്പെ എന്ന നായക കഥാപാത്രത്തിലൂടെ അരങ്ങേറ്റം കുറിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>10. B</b>: മണികണ്ഠൻ ആചാരിയാണ് ബാലൻ ചേട്ടനെ അവതരിപ്പിച്ച് മികച്ച സ്വഭാവ നടനുള്ള അവാർഡ് നേടിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>11. A</b>: 'തിയ്യമ്മേ', 'അയ്യപ്പന്റമ്മ നെയ്യപ്പം ചുട്ടു' തുടങ്ങിയവ ചിത്രത്തിലെ പ്രധാന നാടൻപാട്ടുകളാണ്.
+        </div>
+        
+        <div class="key-item">
+          <b>12. B</b>: വരേണ്യ സൗന്ദര്യസങ്കൽപ്പങ്ങളെയും ജാതി-വർഗ്ഗ വിവേചനങ്ങളെയുമാണ് കീഴാള സിനിമകൾ ചോദ്യം ചെയ്യുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>13. B</b>: 2016 മെയ് മാസത്തിലാണ് 'കമ്മട്ടിപ്പാടം' റിലീസ് ചെയ്തത്.
+        </div>
+        
+        <div class="key-item">
+          <b>14. B</b>: കഥയുടെ ആന്തരിക ഭാവമായി മാറി സാമൂഹിക യാഥാർത്ഥ്യങ്ങൾ പ്രകടിപ്പിക്കലാണിത്.
+        </div>
+        
+        <div class="key-item">
+          <b>15. B</b>: കീഴാള ജീവിതത്തിലേക്കും തനത് പ്രാദേശികതയിലേക്കും മലയാള സിനിമ തിരിഞ്ഞുനടന്ന ചരിത്ര നാഴികക്കല്ലുകളാണിവ.
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="exam-points-card">
+      <div class="exam-points-head">
+        <h3>അധ്യാപകനും ഉള്ളടക്കവും സംബന്ധിച്ച 20 പ്രധാന പരീക്ഷാ പോയിന്റുകൾ</h3>
+        <span class="exam-tag">20 EXAM FOCUS POINTS</span>
+      </div>
+      <ul class="exam-points-list">
+    <li>1. 'കമ്മട്ടിപ്പാടം' (2016): സംവിധാനം - രാജീവ് രവി; തിരക്കഥ - പി. ബാലചന്ദ്രൻ.</li><li>2. 'അങ്കമാലി ഡയറീസ്' (2017): സംവിധാനം - ലിജോ ജോസ് പെല്ലിശ്ശേരി; തിരക്കഥ - ചെമ്പൻ വിനോദ് ജോസ്.</li><li>3. പ്രധാന പ്രമേയം: കീഴാള ദൃശ്യസംസ്കാരം (Subaltern Visual Culture) & നാടൻപാട്ടുകളുടെ സാമൂഹിക പ്രാധാന്യം.</li><li>4. കമ്മട്ടിപ്പാടത്തിലെ കേന്ദ്ര വിഷയം: എറണാകുളം നഗരവൽക്കരണത്തിന്റെ മറവിൽ നടന്ന ദലിത് ഭൂമി പിടിച്ചെടുക്കലും പാർശ്വവൽക്കരണവും.</li><li>5. കമ്മട്ടിപ്പാടത്തിലെ കഥാപാത്രങ്ങൾ: കൃഷ്ണൻ (ദുൽഖർ സൽമാൻ), ഗംഗ (വിനായകൻ), ബാലൻ (മണികണ്ഠൻ ആചാരി).</li><li>6. പുരസ്കാരം: വിനായകന് മികച്ച നടനുള്ള സംസ്ഥാന അവാർഡും മണികണ്ഠന് മികച്ച സ്വഭാവ നടനുള്ള അവാർഡും ലഭിച്ചു.</li><li>7. അങ്കമാലി ഡയറീസിലെ സവിശേഷത: അങ്കമാലിയുടെ പ്രാദേശിക തെരുവ് സംസ്കാരവും പോർക്ക് ബിസിനസ്സ് പശ്ചാത്തലവും.</li><li>8. അങ്കമാലി ഡയറീസിലെ നായകൻ: ആന്റണി വർഗ്ഗീസ് (വിൻസെന്റ് പെപ്പെ) - 86 പുതുമുഖങ്ങൾ അഭിനയിച്ചു.</li><li>9. സംഗീതം: പ്രശാന്ത് പിള്ള (അങ്കമാലി ഡയറീസ്); കെ (കമ്മട്ടിപ്പാടം).</li><li>10. നാടൻപാട്ടുകളുടെ പ്രാധാന്യം 1: പ്രാദേശിക ഭാഷാഭേദങ്ങൾക്കും തനിമയ്ക്കും വലിയ സ്വീകാര്യത നൽകി.</li><li>11. നാടൻപാട്ടുകളുടെ പ്രാധാന്യം 2: ദലിത്-തൊഴിലാളി വർഗ്ഗത്തിന്റെ ചരിത്രപരമായ ചൂഷണങ്ങളെ പുറത്തുകൊണ്ടുവന്നു.</li><li>12. നാടൻപാട്ടുകളുടെ പ്രാധാന്യം 3: പാട്ടുകൾ കേവല വിനോദമല്ലാതെ സിനിമയുടെ നരേറ്റീവ് ഘടകമായി മാറി.</li><li>13. നാടൻപാട്ടുകളുടെ പ്രാധാന്യം 4: വരേണ്യ ഔദ്യോഗിക സംഗീതത്തിന് നേരെയുള്ള കീഴാള പ്രതിരോധം.</li><li>14. നാടൻപാട്ടുകളുടെ പ്രാധാന്യം 5: മലയാള സിനിമയുടെ സൗന്ദര്യശാസ്ത്രത്തെ കൂടുതൽ റിയലിസ്റ്റിക്കാക്കി മാറ്റി.</li><li>15. പാട്ടുകൾ: 'പുഴുപുളികൾ', 'പാരാകെ' (കമ്മട്ടിപ്പാടം); 'തിയ്യമ്മേ', 'അയ്യപ്പന്റമ്മ നെയ്യപ്പം ചുട്ടു' (അങ്കമാലി ഡയറീസ്).</li><li>16. ഭാഷാ വിപ്ലവം: ശുദ്ധമലയാളത്തിന് പകരം കൊച്ചിയുടെയും അങ്കമാലിയുടെയും നാട്ടുഭാഷ അഭ്രപാളിയിലെത്തി.</li><li>17. കീഴാള രാഷ്ട്രീയം: മണ്ണും സംസ്കാരവും നഷ്ടപ്പെടുന്ന ജനതയുടെ ചെറുത്തുനിൽപ്പിന്റെ സാംസ്കാരിക പ്രഖ്യാപനം.</li><li>18. രാജീവ് രവിയുടെയും ലിജോയുടെയും ശൈലി: യാഥാർത്ഥ്യബോധവും അതിതീവ്രമായ ദൃശ്യാനുഭവവും സമന്വയിക്കുന്ന ചലച്ചിത്രഭാഷ.</li><li>19. പരീക്ഷാ ഫോക്കസ്: കമ്മട്ടിപ്പാടം മുന്നോട്ടുവെക്കുന്ന ദലിത് രാഷ്ട്രീയം, അങ്കമാലി ഡയറീസിലെ പ്രാദേശികത, നാടൻപാട്ടുകളുടെ 5 സാമൂഹിക തലങ്ങൾ.</li><li>20. ഈ അധ്യായം സമകാലിക മലയാള ദൃശ്യസംസ്കാരത്തിന്റെ ഏറ്റവും ജീവസ്സുറ്റ കീഴാള മുന്നേറ്റത്തെ പ്രതിനിധീകരിക്കുന്നു.</li>
+      </ul>
+    </div>
+    </div></div></body></html>

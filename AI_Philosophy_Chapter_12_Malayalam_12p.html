@@ -1,0 +1,1152 @@
+<!DOCTYPE html><html lang="ml"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"><meta charset="UTF-8"><title>Philosophy of AI · Module 3 · Chapter 12</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0f172a;
+    }
+
+    .page-container {
+      width: 210mm;
+      height: 297mm;
+      padding: 12mm 14mm 10mm 14mm;
+      margin: 0 auto;
+      background: #ffffff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+    }
+
+    .top-bar-left {
+      font-size: 8pt;
+      font-weight: 800;
+      color: #7c3aed;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar-right {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .chapter-hero {
+      background: linear-gradient(135deg, #ede9fe 0%, #ffffff 100%);
+      border: 1.5px solid #7c3aed;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #7c3aed;
+      color: #ffffff;
+      font-size: 7.2pt;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .hero-title-en {
+      font-size: 13pt;
+      font-weight: 800;
+      color: #5b21b6;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #7c3aed;
+      line-height: 1.35;
+    }
+
+    .content-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 7px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .section-header {
+      background: #f1f5f9;
+      padding: 5px 10px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .section-title-en {
+      font-size: 8.8pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .section-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 700;
+      color: #7c3aed;
+    }
+
+    .block-en {
+      padding: 6px 10px;
+      border-left: 3.5px solid #7c3aed;
+      background: #ffffff;
+    }
+
+    .block-en-label {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #7c3aed;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .block-en p {
+      font-size: 8pt;
+      color: #1e293b;
+      line-height: 1.38;
+      margin: 0 0 4px 0;
+    }
+
+    .block-en p:last-child {
+      margin-bottom: 0;
+    }
+
+    .block-ml {
+      padding: 6px 10px;
+      border-left: 3.5px solid #10b981;
+      background: #f0fdf4;
+      border-top: 1px dashed #e2e8f0;
+    }
+
+    .block-ml-label {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #065f46;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .block-ml p {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      color: #064e3b;
+      line-height: 1.45;
+      margin: 0 0 4px 0;
+    }
+
+    .block-ml p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* STRICT TWO HIGHLIGHTERS */
+    .hl-green {
+      background: #bbf7d0;
+      color: #14532d;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .hl-yellow {
+      background: #fef08a;
+      color: #713f12;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .page-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 4px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    /* PAGE 12 EXAM GRID */
+    .page-exam-grid {
+      padding: 10mm 12mm 8mm 12mm;
+    }
+
+    .exam-header-compact {
+      text-align: center;
+      background: linear-gradient(135deg, #ede9fe 0%, #ffffff 100%);
+      border: 1.5px solid #7c3aed;
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-bottom: 8px;
+    }
+
+    .exam-title-badge {
+      display: inline-block;
+      background: #7c3aed;
+      color: #ffffff;
+      font-size: 7pt;
+      font-weight: 800;
+      padding: 1.5px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .exam-hero-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #5b21b6;
+      line-height: 1.2;
+    }
+
+    .exam-hero-sub {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #7c3aed;
+      line-height: 1.3;
+    }
+
+    .points-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    .point-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 4.5px 6px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .point-header {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+
+    .point-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 1.5px 4px;
+      border-radius: 3px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .point-title-en {
+      font-size: 6.9pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .point-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 700;
+      color: #7c3aed;
+      margin-bottom: 1.5px;
+    }
+
+    .point-body {
+      font-size: 6.2pt;
+      color: #334155;
+      line-height: 1.25;
+    }
+
+    .point-body-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.1pt;
+      color: #064e3b;
+      line-height: 1.3;
+      margin-top: 1px;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 8px 6px !important;
+        background: #f1f5f9 !important;
+        font-size: 14px !important;
+      }
+      .page-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 16px 12px !important;
+        margin: 0 0 16px 0 !important;
+        border-radius: 14px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+        overflow: visible !important;
+      }
+      .top-bar-left, .top-bar-right {
+        font-size: 11px !important;
+      }
+    }
+    
+  </style></head><body>
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 12</span>
+        <span class="top-bar-right">Page 1 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="chapter-hero">
+        <div class="hero-tag">🎓 Calicut University FYUGP · Module 3 · Chapter 12</div>
+        <div class="hero-title-en">CHAPTER IV: Functionalism</div>
+        <div class="hero-title-ml">അദ്ധ്യായം 12: ഫങ്ഷണലിസം (പ്രവർത്തനവാദം)</div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Mid-Twentieth-Century Emergence of Functionalism</span>
+          <span class="section-title-ml">(ഇരുപതാം നൂറ്റാണ്ടിലെ ഫങ്ഷണലിസത്തിന്റെ ഉദയം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Functionalism is the dominant theory in modern philosophy of mind and cognitive science, defining mental states primarily in terms of their causal roles, functional relations, and input–output operations.</span> It originated in the middle of the twentieth century, primarily developed by American philosophers <span class="hl-green">Hilary Putnam</span> and <span class="hl-green">Jerry Fodor</span>.</p>
+          <p><span class="hl-yellow">Functionalism emerged largely as a revolutionary alternative to both Identity Theory and Behaviourism:</span></p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-green">Overcoming Behaviourism:</span> Behaviourism wrongly reduced the mind to external muscular twitches, completely denying internal mental states and thoughts. Functionalism reinstates internal mental states as authentic causal realities.</li>
+            <li><span class="hl-green">Overcoming Identity Theory:</span> Mind-Brain Identity Theory tied mental states strictly to human mammalian brain tissue (C-fibers). Functionalism liberated the mind from biological chauvinism, recognizing that thinking can be instantiated across disparate physical systems.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">മാനസികാവസ്ഥകളെ അവ നിർവ്വഹിക്കുന്ന ധർമ്മങ്ങളുടെയും (Causal Roles), ഇൻപുട്ട്-ഔട്ട്പുട്ട് ബന്ധങ്ങളുടെയും അടിസ്ഥാനത്തിൽ നിർവ്വചിക്കുന്ന ആധുനിക തത്ത്വചിന്താ സിദ്ധാന്തമാണ് ഫങ്ഷണലിസം (Functionalism).</span> ഇരുപതാം നൂറ്റാണ്ടിന്റെ മധ്യത്തിൽ പ്രമുഖ ചിന്തകരായ <span class="hl-green">ഹിലരി പുട്ട്നാം</span>, <span class="hl-green">ജെറി ഫോഡോർ</span> എന്നിവരാണ് ഇത് വികസിപ്പിച്ചത്.</p>
+          <p><span class="hl-yellow">ഐഡന്റിറ്റി തിയറിയുടെയും ബിഹേവിയറിസത്തിന്റെയും ന്യൂനതകൾ പരിഹരിക്കാനുള്ള ശക്തമായൊരു ബദലായാണ് ഫങ്ഷണലിസം ഉയർന്നുവന്നത്:</span></p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-green">ബിഹേവിയറിസത്തെ മറികടക്കൽ:</span> ആന്തരിക വിചാരങ്ങളെ നിഷേധിച്ച് വെറും ബാഹ്യ പെരുമാറ്റങ്ങളിൽ മനസ്സിനെ ഒതുക്കിയ ബിഹേവിയറിസത്തിന്റെ തെറ്റ് തിരുത്തി, മനസ്സിനുള്ളിലെ വിചാരങ്ങൾ യഥാർത്ഥ കാരണങ്ങളാണെന്ന് ഫങ്ഷണലിസം വ്യക്തമാക്കി.</li>
+            <li><span class="hl-green">ഐഡന്റിറ്റി തിയറിയെ മറികടക്കൽ:</span> മനുഷ്യന്റെ ജൈവ തലച്ചോറിൽ മാത്രമേ മനസ്സുണ്ടാകൂ എന്ന ഐഡന്റിറ്റി തിയറിയുടെ സങ്കുചിത ചിന്തയെ തകർത്ത്, തലച്ചോറല്ലാത്ത മറ്റ് സംവിധാനങ്ങളിലും ചിന്ത സാധ്യമാണെന്ന് തെളിയിച്ചു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Charter of Cognitive Science</span>
+          <span class="section-title-ml">(കോഗ്നിറ്റീവ് സയൻസിന്റെ ആണിക്കല്ല്)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Functionalism provided the ultimate philosophical justification for artificial intelligence: <span class="hl-yellow">if mental states are functional states, then a machine with the correct causal organization literally possesses a mind.</span></p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>നിർമ്മിത ബുദ്ധിക്ക് ഏറ്റവും ശക്തമായ സൈദ്ധാന്തിക അടിത്തറ നൽകിയത് ഫങ്ഷണലിസമാണ്: <span class="hl-yellow">മനസ്സ് എന്നത് പ്രവർത്തനമാണെങ്കിൽ, ആ പ്രവർത്തനം നടത്തുന്ന കമ്പ്യൂട്ടറുകൾക്കും മനസ്സുണ്ടെന്ന് സമ്മതിക്കേണ്ടി വരും.</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 12: Functionalism</span>
+      <span>Page 1</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 12</span>
+        <span class="top-bar-right">Page 2 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Defining Mental States by Causal Roles and Input–Output Relations</span>
+          <span class="section-title-ml">(കാരണ-കാര്യ ധർമ്മങ്ങളിലൂടെ മാനസികാവസ്ഥകളെ നിർവ്വചിക്കൽ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">According to functionalism, a mental state is identified not by its biological brain tissue, nor by its spiritual substance, but by its input–output relations and causal network.</span></p>
+          <p>A mental state is completely defined by its tripartite causal nexus:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. Environmental Inputs:</span> Sensory stimuli impinging upon the system (e.g., placing one's bare hand upon a scorching hot stove).</li>
+            <li><span class="hl-yellow">2. Causal Interactions with Other Mental States:</span> Generating intermediate mental states (e.g., the belief that the hand will be burned, combined with the intense desire to escape tissue damage, combined with a sensation of distress).</li>
+            <li><span class="hl-yellow">3. Behavioral Outputs:</span> Motor actions produced by the system (e.g., jerking the arm away rapidly, wincing, shouting, and applying cold water).</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ഫങ്ഷണലിസത്തിന്റെ വീക്ഷണത്തിൽ, ഒരു മാനസികാവസ്ഥയെ നിർവ്വചിക്കുന്നത് തലച്ചോറിലെ മാംസപേശികൾ കൊണ്ടല്ല, മറിച്ച് അതിന്റെ ഇൻപുട്ട്-ഔട്ട്പുട്ട് ബന്ധങ്ങളിലൂടെയാണ്.</span></p>
+          <p>മൂന്ന് ഘടകങ്ങളുടെ ഒരു കണ്ണിയായാണ് ഏതൊരു മാനസികാവസ്ഥയും പ്രവർത്തിക്കുന്നത്:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. ബാഹ്യ ഇൻപുട്ടുകൾ (Inputs):</span> ചുറ്റുപാടിൽ നിന്ന് ലഭിക്കുന്ന അനുഭവങ്ങൾ (ഉദാ: ചൂടുള്ള അടുപ്പിൽ കൈ തൊടുന്നത്).</li>
+            <li><span class="hl-yellow">2. മറ്റ് ആന്തരിക വിചാരങ്ങളുമായുള്ള ബന്ധം:</span> കൈ പൊള്ളുമെന്ന ഭയം, കൈ പിൻവലിക്കണമെന്ന തീവ്രമായ ആഗ്രഹം, അസ്വസ്ഥത എന്നീ മാനസികാവസ്ഥകൾ ജനിക്കുന്നത്.</li>
+            <li><span class="hl-yellow">3. ബാഹ്യ ഔട്ട്പുട്ടുകൾ (Outputs):</span> പെട്ടെന്ന് കൈ പുറകോട്ട് വലിക്കുക, നിലവിളിക്കുക, വെള്ളമൊഴിക്കുക എന്നീ പ്രവൃത്തികൾ ഉണ്ടാവുന്നത്.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Mental States as Real Internal Causes</span>
+          <span class="section-title-ml">(യഥാർത്ഥ ആന്തരിക കാരണമായി മനസ്സ്)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Unlike behaviourism which treated mental states as nonexistent, <span class="hl-yellow">functionalism treats mental states as genuine internal causal nodes</span> in a complex computational network mediating between sensory input and motor action.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>മനസ്സൊരു മായയാണെന്ന് പറഞ്ഞ ബിഹേവിയറിസത്തിൽ നിന്ന് വ്യത്യസ്തമായി, <span class="hl-yellow">നമ്മുടെ തീരുമാനങ്ങളും ചിന്തകളും പ്രവൃത്തികളെ നിയന്ത്രിക്കുന്ന യഥാർത്ഥ കാരണങ്ങളാണെന്ന് ഫങ്ഷണലിസം സമർത്ഥിക്കുന്നു.</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 12: Functionalism</span>
+      <span>Page 2</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 12</span>
+        <span class="top-bar-right">Page 3 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Multiple Realization (Multiple Realizability)</span>
+          <span class="section-title-ml">(മൾട്ടിപ്പിൾ റിയലൈസേഷൻ അഥവാ ബഹുവിധ സാക്ഷാത്കാരം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">The defining hallmark of functionalism is the doctrine of Multiple Realization: the idea that the exact same mental state can exist and be realized in radically different physical systems.</span> Formulated by <span class="hl-green">Hilary Putnam</span> in 1967, this thesis directly refutes Type Physicalism.</p>
+          <p>Putnam used everyday functional analogies:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>What makes something a <span class="hl-green">Carburetor</span> or a <span class="hl-green">Clock</span>? Not what material it is constructed from! A clock can be constructed of mechanical brass gears, digital silicon quartz, flowing water, or sundial shadows. A clock is defined solely by its function: keeping time accurately.</li>
+            <li>Similarly, what makes a state <span class="hl-yellow">Pain</span> or <span class="hl-yellow">Belief</span> is not whether it is composed of mammalian biological neurons! An identical functional state of pain can be physically realized in:
+              <br/>• A human mammal (carbon-based neurobiology).
+              <br/>• An octopus (decentralized non-mammalian ganglia).
+              <br/>• An extraterrestrial alien (silicon-based biochemistry).
+              <br/>• An advanced robotic computer (semiconductor microprocessors).</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ഫങ്ഷണലിസത്തിന്റെ ഏറ്റവും പ്രസിദ്ധമായ തത്ത്വമാണ് മൾട്ടിപ്പിൾ റിയലൈസേഷൻ (Multiple Realization): ഒരേ മാനസികാവസ്ഥയെ തികച്ചും വ്യത്യസ്തമായ ഭൗതിക വസ്തുക്കളിൽ സൃഷ്ടിച്ചെടുക്കാൻ സാധിക്കുമെന്ന ആശയം.</span> <span class="hl-green">ഹിലരി പുട്ട്നാം</span> അവതരിപ്പിച്ച ഈ ആശയം ഐഡന്റിറ്റി തിയറിയെ തകർത്തു.</p>
+          <p>പുട്ട്നാം ഒരു ഘടികാരത്തിന്റെ ഉദാഹരണം നൽകി:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>ഒരു <span class="hl-green">ക്ലോക്ക്</span> എന്നാൽ എന്താണ്? അത് നിർമ്മിച്ചിരിക്കുന്ന വസ്തുവല്ല പ്രധാനം. പിച്ചള കൊണ്ടോ, മണൽ കൊണ്ടോ, ഡിജിറ്റൽ സിലിക്കൺ കൊണ്ടോ ക്ലോക്ക് ഉണ്ടാക്കാം; കൃത്യമായി സമയം കാണിക്കുക എന്നതാണ് അതിന്റെ ധർമ്മം.</li>
+            <li>അതുപോലെ <span class="hl-yellow">വേദനയോ ചിന്തയോ</span> എന്നത് മനുഷ്യന്റെ മാംസപേശികളിൽ മാത്രം ഒതുങ്ങുന്ന ഒന്നല്ല. അത് നിർവ്വഹിക്കുന്ന ധർമ്മം കൃത്യമാണെങ്കിൽ:
+              <br/>• മനുഷ്യനിലും (ജൈവ തലച്ചോറ്),
+              <br/>• നീരാളിയിലും (ജൈവ നാഡീവ്യൂഹം),
+              <br/>• അന്യഗ്രഹ ജീവികളിലും,
+              <br/>• സിലിക്കൺ ചിപ്പുകളുള്ള റോബോട്ടിലും ഒരുപോലെ മനസ്സ് ഉണ്ടാകാം.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Hardware Independence</span>
+          <span class="section-title-ml">(ഹാർഡ്‌വെയർ സ്വതന്ത്രത)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Just as Microsoft Word runs identically on Intel x86, Apple ARM, or cloud silicon, <span class="hl-yellow">human cognition is a software program realizable across diverse substrates.</span></p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഒരു സോഫ്റ്റ്‌വെയർ ഏത് കമ്പ്യൂട്ടറിലും ഒരേപോലെ പ്രവർത്തിക്കുന്നതുപോലെ, ബുദ്ധി എന്നത് ഏത് മാധ്യമത്തിലും പ്രവർത്തിപ്പിക്കാവുന്ന ഒന്നാണെന്ന് തെളിയുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 12: Functionalism</span>
+      <span>Page 3</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 12</span>
+        <span class="top-bar-right">Page 4 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Putnam's Machine-State Functionalism</span>
+          <span class="section-title-ml">(മെഷീൻ-സ്റ്റേറ്റ് ഫങ്ഷണലിസവും ട്യൂറിംഗ് യന്ത്ര മാതൃകയും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Hilary Putnam formulated the earliest concrete version of functionalism, known as <span class="hl-yellow">Machine-State Functionalism</span>, by modeling the human mind directly upon an abstract <span class="hl-green">Turing Machine</span>.</p>
+          <p>Under this computational model, any cognitive being is characterized by a finite set of internal machine states described in a <span class="hl-yellow">Machine Table (Program)</span>. Each state is completely specified by conditional algorithmic transition rules:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><em>"If the system is in State S1 and receives Input I1, it emits Output O1 and transitions to internal State S2."</em></li>
+          </ul>
+          <p>Putnam claimed that human mental states (such as feeling pain or expecting food) are nothing other than these formal computational machine states. The physical constitution of the machine—whether vacuum tubes, neurons, or water pipes—is philosophically irrelevant.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഹിലരി പുട്ട്നാം ആദ്യമായി മുന്നോട്ടുവെച്ച മാതൃകയാണ് <span class="hl-yellow">മെഷീൻ-സ്റ്റേറ്റ് ഫങ്ഷണലിസം (Machine-State Functionalism)</span>. മനുഷ്യ മനസ്സിനെ ഒരു <span class="hl-green">ട്യൂറിംഗ് മെഷീനായി (Turing Machine)</span> അദ്ദേഹം വിഭാവനം ചെയ്തു.</p>
+          <p>ഈ മാതൃകയനുസരിച്ച്, ചിന്തിക്കുന്ന ഏതൊരു ജീവിയും ഒരു <span class="hl-yellow">മെഷീൻ ടേബിളിലെ (പ്രോഗ്രാം)</span> നിയമങ്ങൾക്കനുസരിച്ചാണ് പ്രവർത്തിക്കുന്നത്:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><em>"സിസ്റ്റം ഒന്നാം അവസ്ഥയിലായിരിക്കുമ്പോൾ ഒരു നിശ്ചിത ഇൻപുട്ട് ലഭിച്ചാൽ, അത് ഒരു പ്രത്യേക ഔട്ട്പുട്ട് നൽകി രണ്ടാം അവസ്ഥയിലേക്ക് മാറുന്നു."</em></li>
+          </ul>
+          <p>മനുഷ്യന്റെ വേദനയും സന്തോഷവുമെല്ലാം ഇത്തരത്തിലുള്ള കമ്പ്യൂട്ടേഷണൽ അവസ്ഥകൾ മാത്രമാണെന്നും, യന്ത്രം എന്തുകൊണ്ട് നിർമ്മിച്ചു എന്നത് പ്രസക്തമല്ലെന്നും അദ്ദേഹം വാദിച്ചു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Transition to Causal Network Functionalism</span>
+          <span class="section-title-ml">(കാരണ-കാര്യ ശൃംഖലാ ഫങ്ഷണലിസം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Because deterministic Turing machine states are strictly sequential, later thinkers developed <span class="hl-yellow">Causal Role Functionalism (Psychofunctionalism)</span>, permitting vast, parallel networks of interconnected beliefs and desires.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>പിന്നീട് വന്ന ചിന്തകർ ഒരേസമയം ആയിരക്കണക്കിന് വികാരങ്ങളും ചിന്തകളും ചേർന്നൊരു സങ്കീർണ്ണ ശൃംഖലയായി പ്രവർത്തിക്കുന്ന ആധുനിക ഫങ്ഷണലിസം വികസിപ്പിച്ചു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 12: Functionalism</span>
+      <span>Page 4</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 12</span>
+        <span class="top-bar-right">Page 5 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Jerry Fodor: The Computational Theory of Mind (CTM)</span>
+          <span class="section-title-ml">(ജെറി ഫോഡോർ: കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡ്)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>American philosopher and cognitive scientist <span class="hl-green">Jerry Fodor (1935–2017)</span> advanced functionalism into its most influential modern formulation: the <span class="hl-yellow">Computational Theory of Mind (CTM)</span> and the <span class="hl-yellow">Language of Thought (LOT) Hypothesis</span>.</p>
+          <p>In <em>The Language of Thought (1975)</em> and <em>Psychosemantics (1987)</em>, Fodor argued that:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>Thinking is not a mysterious fluid; <span class="hl-yellow">thinking is literal mechanical computation.</span></li>
+            <li>Mental states involve computational relations to internal representations encoded in an innate mental language called <span class="hl-green">Mentalese</span>.</li>
+            <li>Mentalese possesses a compositional syntax and formal combinatorial semantics just like natural spoken language.</li>
+            <li>Reasoning is the formal manipulation of the syntactic shapes of these internal symbols according to algorithmic rules, driven by physical causal mechanics.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>പ്രമുഖ അമേരിക്കൻ തത്ത്വചിന്തകനായ <span class="hl-green">ജെറി ഫോഡോർ</span> ഫങ്ഷണലിസത്തെ വളർത്തി <span class="hl-yellow">കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡ് (CTM)</span>, <span class="hl-yellow">ലാംഗ്വേജ് ഓഫ് തോട്ട് (Language of Thought / Mentalese)</span> എന്നീ സിദ്ധാന്തങ്ങൾ ആവിഷ്കരിച്ചു:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>ചിന്ത എന്നത് ഒരു നിഗൂഢ കാര്യമല്ല; <span class="hl-yellow">ചിന്ത എന്നാൽ അക്ഷരാർത്ഥത്തിൽ കമ്പ്യൂട്ടറുകളിലെപ്പോലെയുള്ള കണക്കുകൂട്ടലുകളാണ് (Computation).</span></li>
+            <li>മനുഷ്യന്റെ തലച്ചോറിനുള്ളിൽ <span class="hl-green">മെന്റലീസ് (Mentalese)</span> എന്നൊരു ആന്തരിക ചിന്താഭാഷയുണ്ട്.</li>
+            <li>ഈ ഭാഷയിൽ ചിഹ്നങ്ങൾ വ്യാകരണ നിയമങ്ങൾക്കനുസരിച്ച് ക്രമീകരിക്കപ്പെടുന്നു.</li>
+            <li>യുക്തിചിന്ത എന്നാൽ കമ്പ്യൂട്ടർ പ്രോഗ്രാം ചിഹ്നങ്ങൾ കൈകാര്യം ചെയ്യുന്നത് പോലെ ഈ ആന്തരിക ചിഹ്നങ്ങളെ നിയമാനുസൃതം പ്രവർത്തിപ്പിക്കലാണ്.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Intentional Realism</span>
+          <span class="section-title-ml">(ഇന്റെൻഷണൽ റിയലിസം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Fodor insisted that common sense beliefs and desires are real physical states with semantic content, bridging the gap between physical neurons and psychological intentions.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>നമ്മുടെ ആഗ്രഹങ്ങളും വിശ്വാസങ്ങളും വെറും സങ്കല്പങ്ങളല്ലെന്നും, തലച്ചോറിലെ ഭൗതിക ചിഹ്നങ്ങളാൽ നിയന്ത്രിക്കപ്പെടുന്ന യഥാർത്ഥ കാര്യങ്ങളാണെന്നും ഫോഡോർ തെളിയിച്ചു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 12: Functionalism</span>
+      <span>Page 5</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 12</span>
+        <span class="top-bar-right">Page 6 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Correlation Between Functionalism and Artificial Intelligence</span>
+          <span class="section-title-ml">(ഫങ്ഷണലിസവും ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസും തമ്മിലുള്ള ബന്ധം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>The philosophical symbiotic marriage between Functionalism and Artificial Intelligence is total and organic:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. Justification of Synthetic Minds:</span> If functionalism is correct, building a mind does not require biological cloning or artificial organic cells. Any computing machine executing the identical functional causal network <span class="hl-yellow">literally has a mind</span>.</li>
+            <li><span class="hl-yellow">2. Substrate Neutrality:</span> AI research is fundamentally predicated on the functionalist premise that carbon is not a magical element. Silicon microchips, optical circuits, and quantum computers are fully legitimate substrates for consciousness and intelligence.</li>
+            <li><span class="hl-yellow">3. Cognitive Modeling:</span> AI engineers model human vision, memory, language comprehension, and motor planning as functional sub-modules (input processing → feature extraction → action planning).</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഫങ്ഷണലിസവും ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസും തമ്മിലുള്ള അഭേദ്യമായ ബന്ധം:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. യന്ത്ര മനസ്സിന്റെ സാധുത:</span> ഫങ്ഷണലിസം ശരിയാണെങ്കിൽ, ചിന്ത ഉണ്ടാക്കാൻ ജൈവ കോശങ്ങൾ വേണമെന്നില്ല. ശരിയായ പ്രവർത്തന ശൃംഖലയുള്ള ഒരു കമ്പ്യൂട്ടറിന് <span class="hl-yellow">യഥാർത്ഥത്തിൽ തന്നെ മനസ്സുണ്ടാകും</span>.</li>
+            <li><span class="hl-yellow">2. മാധ്യമ നിഷ്പക്ഷത:</span> മനുഷ്യന്റെ കാർബൺ കോശങ്ങളിൽ മാത്രമല്ല, സിലിക്കൺ ചിപ്പുകളിലും കമ്പ്യൂട്ടറുകളിലും ബുദ്ധിയെ സൃഷ്ടിക്കാൻ കഴിയുമെന്ന ഉറപ്പ് AI-ക്ക് നൽകുന്നത് ഫങ്ഷണലിസമാണ്.</li>
+            <li><span class="hl-yellow">3. കോഗ്നിറ്റീവ് മാതൃകകൾ:</span> മനുഷ്യന്റെ കാഴ്ച, ഓർമ്മ, ഭാഷ എന്നിവയെ കമ്പ്യൂട്ടർ പ്രോഗ്രാമുകളിലെ ഇൻപുട്ട്-ഔട്ട്പുട്ട് മൊഡ്യൂളുകളായി വികസിപ്പിക്കാൻ AI-ക്ക് സാധിക്കുന്നത് ഈ സിദ്ധാന്തത്തിലൂടെയാണ്.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Strong AI as Pure Functionalism</span>
+          <span class="section-title-ml">(സ്ട്രോങ് AI എന്നാൽ ശുദ്ധമായ ഫങ്ഷണലിസം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Strong AI (the doctrine that software programs literally constitute minds) is nothing more than <span class="hl-yellow">computational functionalism carried to its logical conclusion</span>.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>കമ്പ്യൂട്ടറുകൾക്ക് യഥാർത്ഥത്തിൽ മനസ്സുണ്ടെന്ന സ്ട്രോങ് AI വാദം യഥാർത്ഥത്തിൽ ഫങ്ഷണലിസത്തിന്റെ പൂർണ്ണ രൂപം തന്നെയാണ്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 12: Functionalism</span>
+      <span>Page 6</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 12</span>
+        <span class="top-bar-right">Page 7 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Criticisms of Functionalism: 1. Ned Block's China Brain</span>
+          <span class="section-title-ml">(വിമർശനങ്ങൾ: 1. നെഡ് ബ്ലോക്കിന്റെ ചൈന ബ്രെയിൻ വാദം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>In <span class="hl-green">1978</span>, philosopher <span class="hl-green">Ned Block</span> published a devastating thought experiment known as the <span class="hl-yellow">China Brain (Chinese Nation Argument)</span> to expose the fundamental vulnerability of functionalism:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>Suppose the entire population of China (roughly one billion people) is organized to simulate the functional causal operations of a human brain.</li>
+            <li>Each citizen simulates one neuron, communicating via walkie-talkies according to a giant functional lookup table displayed on satellites.</li>
+            <li>The entire system connects to a mechanical body, receiving inputs and generating motor outputs.</li>
+          </ul>
+          <p>According to functionalism, this system has the exact same functional causal organization as a human brain; therefore, <span class="hl-yellow">the nation of China as a whole must feel conscious pain, experience joy, and perceive red!</span> Block argues that this is intuitively absurd: the system lacks subjective conscious experience (<span class="hl-yellow">Qualia</span>).</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-green">1978-ൽ</span> <span class="hl-green">നെഡ് ബ്ലോക്ക്</span> ഫങ്ഷണലിസത്തിന്റെ പൊള്ളത്തരങ്ങൾ തുറന്നുകാട്ടാൻ <span class="hl-yellow">ചൈന ബ്രെയിൻ (China Brain)</span> എന്ന ചിന്താപരീക്ഷണം അവതരിപ്പിച്ചു:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>ചൈനയിലെ നൂറ് കോടി ജനങ്ങൾ ഓരോരുത്തരും തലച്ചോറിലെ ഓരോ ന്യൂറോണുകളെപ്പോലെ പ്രവർത്തിക്കുന്നു എന്ന് കരുതുക.</li>
+            <li>സാറ്റലൈറ്റിലെ നിർദ്ദേശങ്ങൾ നോക്കി അവർ വാക്കി-ടോക്കികളിലൂടെ പരസ്പരം വിവരങ്ങൾ കൈമാറി ഒരു കൃത്രിമ ശരീരത്തെ ചലിപ്പിക്കുന്നു.</li>
+          </ul>
+          <p>ഫങ്ഷണലിസമനുസരിച്ച് ഈ സിസ്റ്റത്തിന് തലച്ചോറിന്റെ അതേ പ്രവർത്തന ഘടനയുണ്ട്; അതിനാൽ <span class="hl-yellow">ചൈന എന്ന ആ രാജ്യം മുഴുവനായി വേദനയും സന്തോഷവും അനുഭവിക്കുന്ന ഒരു മനസ്സായി മാറണം!</span> ഇത് അസംബന്ധമാണെന്നും, വെറും പ്രവർത്തനങ്ങൾ കൊണ്ട് ആന്തരികമായ ബോധം (Qualia) ഉണ്ടാവില്ലെന്നും ബ്ലോക്ക് തെളിയിച്ചു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Problem of Absent Qualia</span>
+          <span class="section-title-ml">(ക്വാലിയ അഥവാ ആന്തരിക ബോധത്തിന്റെ അഭാവം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Qualia</span> denotes the qualitative, raw subjective feel of experience (the redness of a rose, the agony of a burn). Functionalism explains causal roles, but completely fails to explain why feelings exist.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ക്വാലിയ (Qualia):</span> ചുവപ്പിന്റെ കാഴ്ച, വേദനയുടെ ആന്തരിക അനുഭവം എന്നിവയെയാണ് ക്വാലിയ എന്ന് വിളിക്കുന്നത്. പ്രവർത്തനങ്ങളെ വിശദീകരിക്കാൻ കഴിയുമെങ്കിലും ഇത്തരം ആന്തരിക വികാരങ്ങൾ എങ്ങനെ ഉണ്ടാകുന്നു എന്ന് പറയാൻ ഫങ്ഷണലിസത്തിന് കഴിയില്ല.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 12: Functionalism</span>
+      <span>Page 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 12</span>
+        <span class="top-bar-right">Page 8 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Criticisms of Functionalism: 2. The Inverted Spectrum Argument</span>
+          <span class="section-title-ml">(വിമർശനങ്ങൾ: 2. ഇൻവേർട്ടഡ് സ്പെക്ട്രം വാദം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Imagine two individuals, Person A and Person B, who are functionally identical in every observable and internal behavioral metric:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>Both look at a ripe tomato, both shout "That tomato is red!", both stop at red traffic lights, and both pick red apples.</li>
+            <li>Yet, from birth, Person B's internal subjective color spectrum is <span class="hl-yellow">inverted</span>: whenever Person A experiences the qualitative sensation of Red, Person B subjectively experiences Green!</li>
+          </ul>
+          <p>Because Person B learned to call that green sensation "red" since childhood, their functional relations, vocabulary, and behavior are 100% identical. Yet their subjective conscious mental states are contrary! <span class="hl-yellow">This proves that functional roles do not capture the intrinsic essence of conscious qualia.</span></p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>രണ്ട് ആളുകൾ തികച്ചും ഒരേപോലെ പെരുമാറുന്നു എന്ന് കരുതുക:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>രണ്ട് പേരും തക്കാളി കണ്ട് "ഇത് ചുവപ്പാണ്" എന്ന് പറയുന്നു, ട്രാഫിക് സിഗ്നലിൽ ചുവപ്പ് കണ്ട് വണ്ടി നിർത്തുന്നു.</li>
+            <li>എന്നാൽ ജനനം മുതൽ രണ്ടാമത്തെയാളുടെ ഉള്ളിലെ നിറങ്ങളുടെ കാഴ്ച <span class="hl-yellow">നേരെ തിരിച്ചാണെങ്കിലോ (Inverted Spectrum)</span>: ഒന്നാമൻ ചുവപ്പ് കാണുമ്പോൾ രണ്ടാമന്റെ ഉള്ളിൽ അനുഭവപ്പെടുന്നത് പച്ചയാണ്!</li>
+          </ul>
+          <p>ബാഹ്യമായി രണ്ട് പേരുടെയും പെരുമാറ്റം ഒന്നാണെങ്കിലും അവരുടെ ആന്തരിക അനുഭവം വിരുദ്ധമാണ്. <span class="hl-yellow">വെറും ബാഹ്യ പ്രവർത്തനങ്ങൾ കൊണ്ട് ആന്തരിക ബോധത്തെ അളക്കാനാവില്ലെന്ന് ഇത് തെളിയിക്കുന്നു.</span></p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Searle's Chinese Room Counter-Attack</span>
+          <span class="section-title-ml">(സിയറലിന്റെ ചൈനീസ് റൂം പ്രത്യാക്രമണം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-green">John Searle (1980)</span> demolished machine functionalism by proving that executing a functional program table is purely syntactic shuffling, completely devoid of semantic understanding.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>പ്രവർത്തനപരമായ ഒരു പ്രോഗ്രാം ടേബിൾ പ്രവർത്തിപ്പിച്ചത് കൊണ്ട് മാത്രം അർത്ഥം മനസ്സിലാകില്ലെന്ന് <span class="hl-green">ജോൺ സിയറൽ</span> ചൈനീസ് റൂമിലൂടെ ഫങ്ഷണലിസത്തിന് മറുപടി നൽകി.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 12: Functionalism</span>
+      <span>Page 8</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 12</span>
+        <span class="top-bar-right">Page 9 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Distinctions: Functionalism, Identity Theory, and Behaviourism</span>
+          <span class="section-title-ml">(താരതമ്യ പഠനം: ഫങ്ഷണലിസം, ഐഡന്റിറ്റി തിയറി, ബിഹേവിയറിസം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Understanding the exact conceptual boundaries between the three competing physicalist schools is an essential university exam requirement:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. Behaviourism:</span>
+              <br/>• <em>Ontology:</em> Eliminates internal mental states.
+              <br/>• <em>Criterion:</em> Mental terms mean external bodily behaviors and tendencies to act.
+              <br/>• <em>Fatal Flaw:</em> Cannot account for internal thoughts, hidden pain, or actors faking behavior.</li>
+            <li><span class="hl-yellow">2. Identity Theory (Type Physicalism):</span>
+              <br/>• <em>Ontology:</em> Real internal mental states exist, but they are strictly physical brain states.
+              <br/>• <em>Criterion:</em> Specific mental type = specific neurological brain type (Pain = C-fibers).
+              <br/>• <em>Fatal Flaw:</em> Biological chauvinism (denies minds to creatures with non-human biology or AI).</li>
+            <li><span class="hl-yellow">3. Functionalism:</span>
+              <br/>• <em>Ontology:</em> Real internal mental states exist as causal functional roles in a system.
+              <br/>• <em>Criterion:</em> Defined by inputs, causal relations to other mental states, and outputs.
+              <br/>• <em>Advantage:</em> Allows multiple realizability; accounts for internal states without biological bias.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>മൂന്ന് സിദ്ധാന്തങ്ങളും തമ്മിലുള്ള കൃത്യമായ വ്യത്യാസങ്ങൾ:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. ബിഹേവിയറിസം:</span>
+              <br/>• ആന്തരിക മനസ്സിനെ നിഷേധിക്കുന്നു; വെറും ബാഹ്യ പെരുമാറ്റം മാത്രമാണ് അറിവ്.
+              <br/>• ഉള്ളിലൊതുക്കുന്ന വേദനയെ വിശദീകരിക്കാൻ കഴിയില്ല.</li>
+            <li><span class="hl-yellow">2. ഐഡന്റിറ്റി തിയറി:</span>
+              <br/>• മനസ്സ് തലച്ചോറിലെ ജൈവ നാഡികൾ (സി-ഫൈബർ) മാത്രമാണ്.
+              <br/>• മനുഷ്യന്റെ തലച്ചോറില്ലാത്ത ജീവികൾക്കും കമ്പ്യൂട്ടറുകൾക്കും മനസ്സുണ്ടാകില്ലെന്ന സങ്കുചിത ചിന്ത.</li>
+            <li><span class="hl-yellow">3. ഫങ്ഷണലിസം:</span>
+              <br/>• മനസ്സ് എന്നത് കാരണ-കാര്യ ബന്ധങ്ങളുടെ പ്രവർത്തനമാണ്.
+              <br/>• മൾട്ടിപ്പിൾ റിയലൈസേഷൻ വഴി സിലിക്കൺ റോബോട്ടുകൾക്കും മനസ്സുണ്ടാകാമെന്ന് അംഗീകരിക്കുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Why Functionalism Won the Cognitive Revolution</span>
+          <span class="section-title-ml">(ഫങ്ഷണലിസം എന്തുകൊണ്ട് വിജയിച്ചു?)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Functionalism triumphed because it avoided both the internal emptiness of behaviourism and the narrow biological bigotry of identity theory, creating the intellectual architecture of modern AI.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ബിഹേവിയറിസത്തിന്റെ ശൂന്യതയെയും ഐഡന്റിറ്റി തിയറിയുടെ സങ്കുചിതത്വത്തെയും ഒരേസമയം ഒഴിവാക്കാൻ കഴിഞ്ഞതുകൊണ്ടാണ് ഫങ്ഷണലിസം ആധുനിക കമ്പ്യൂട്ടർ സയൻസിന്റെ നട്ടെല്ലായി മാറിയത്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 12: Functionalism</span>
+      <span>Page 9</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 12</span>
+        <span class="top-bar-right">Page 10 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Comparative Synthesis: Master Thinkers on Functional Mind</span>
+          <span class="section-title-ml">(താരതമ്യ പഠനം: പ്രമുഖ ചിന്തകരും ഫങ്ഷണൽ മൈൻഡും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Summary of master perspectives on computational functionalism:</p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 8.5pt;">
+            <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+              <th style="padding: 5px; text-align: left;">Thinker</th>
+              <th style="padding: 5px; text-align: left;">Key Concept</th>
+              <th style="padding: 5px; text-align: left;">Core Argument</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Hilary Putnam</td>
+              <td style="padding: 5px;">Multiple Realization, Machine-State Functionalism</td>
+              <td style="padding: 5px;">Minds are functional machine tables realizable across silicon, meat, or mechanical substrates.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Jerry Fodor</td>
+              <td style="padding: 5px;">Language of Thought (LOT), Mentalese</td>
+              <td style="padding: 5px;">Thinking is literal syntactic symbol computation over internal symbolic mental representations.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Ned Block</td>
+              <td style="padding: 5px;">China Brain, Absent Qualia</td>
+              <td style="padding: 5px;">Functionalism is too liberal; simulating brain functions does not create subjective qualia.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">John Searle</td>
+              <td style="padding: 5px;">Chinese Room Argument</td>
+              <td style="padding: 5px;">Syntax and functional relations lack intrinsic intentional semantics; minds require biological causality.</td>
+            </tr>
+          </table>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>പ്രധാന തത്ത്വചിന്തകരുടെ കാഴ്ചപ്പാടുകൾ:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45; font-size: 8.5pt;">
+            <li><span class="hl-green">ഹിലരി പുട്ട്നാം:</span> മൾട്ടിപ്പിൾ റിയലൈസേഷൻ വഴി സിലിക്കൺ യന്ത്രങ്ങൾക്കും മനസ്സുണ്ടാകാമെന്ന് സ്ഥാപിച്ചു.</li>
+            <li><span class="hl-green">ജെറി ഫോഡോർ:</span> തലച്ചോറിനുള്ളിലെ ചിന്താഭാഷയായ മെന്റലീസിലൂടെയുള്ള കണക്കുകൂട്ടലുകളാണ് ചിന്തയെന്ന് തെളിയിച്ചു.</li>
+            <li><span class="hl-green">നെഡ് ബ്ലോക്ക്:</span> ചൈന ബ്രെയിൻ പരീക്ഷണത്തിലൂടെ ഫങ്ഷണലിസത്തിന് ബോധം (Qualia) വിശദീകരിക്കാനാവില്ലെന്ന് കാണിച്ചു.</li>
+            <li><span class="hl-green">ജോൺ സിയറൽ:</span> വെറും പ്രോഗ്രാം റൺ ചെയ്തതുകൊണ്ട് അർത്ഥബോധം ഉണ്ടാകില്ലെന്ന് ചൈനീസ് റൂമിലൂടെ വാദിച്ചു.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 12: Functionalism</span>
+      <span>Page 10</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 12</span>
+        <span class="top-bar-right">Page 11 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">University Academic Exercises: Knock Your Brain</span>
+          <span class="section-title-ml">(യൂണിവേഴ്സിറ്റി Curriculum പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ)</span>
+        </div>
+        <div class="block-en" style="font-size: 8.5pt;">
+          <p><strong>1. Functionalism defines mental states mainly in terms of their:</strong><br/>
+          (A) Chemical composition &nbsp; (B) Physical location &nbsp; (C) Causal roles &nbsp; (D) Spiritual nature<br/>
+          <em>Answer:</em> <span class="hl-yellow">(C) Causal roles</span></p>
+          <p><strong>2. Functionalism emerged largely as an alternative to:</strong><br/>
+          (A) Dualism only &nbsp; (B) Identity theory and behaviourism &nbsp; (C) Pragmatism &nbsp; (D) Existentialism<br/>
+          <em>Answer:</em> <span class="hl-yellow">(B) Identity theory and behaviourism</span></p>
+          <p><strong>3. According to functionalism, a mental state is identified by:</strong><br/>
+          (A) Brain tissue &nbsp; (B) Input–output relations &nbsp; (C) Personal feelings only &nbsp; (D) Moral value<br/>
+          <em>Answer:</em> <span class="hl-yellow">(B) Input–output relations</span></p>
+          <p><strong>4. The idea that the same mental state can exist in different physical systems is called:</strong><br/>
+          (A) Supervenience &nbsp; (B) Eliminativism &nbsp; (C) Multiple realization &nbsp; (D) Parallelism<br/>
+          <em>Answer:</em> <span class="hl-yellow">(C) Multiple realization</span></p>
+          <p><strong>5. Which philosopher is strongly associated with functionalism?</strong><br/>
+          (A) B. F. Skinner &nbsp; (B) Hilary Putnam &nbsp; (C) René Descartes &nbsp; (D) David Hume<br/>
+          <em>Answer:</em> <span class="hl-green">(B) Hilary Putnam</span></p>
+        </div>
+        <div class="block-ml" style="font-size: 8.5pt;">
+          <p><strong>മലയാളം സംഗ്രഹം & Curriculum ഉത്തരങ്ങൾ:</strong><br/>
+          1. ഫങ്ഷണലിസം മാനസികാവസ്ഥകളെ നിർവ്വചിക്കുന്നത് പ്രധാനമായും: <span class="hl-yellow">അവയുടെ ധർമ്മങ്ങളുടെ അടിസ്ഥാനത്തിൽ (Causal roles)</span>.<br/>
+          2. ഫങ്ഷണലിസം ഉയർന്നുവന്നത് ഇതിനുള്ള ശക്തമായ ബദലായിട്ടാണ്: <span class="hl-yellow">ഐഡന്റിറ്റി തിയറിയും ബിഹേവിയറിസവും (Identity theory and behaviourism)</span>.<br/>
+          3. ഫങ്ഷണലിസമനുസരിച്ച് മാനസികാവസ്ഥകളെ തിരിച്ചറിയുന്നത്: <span class="hl-yellow">ഇൻപുട്ട്-ഔട്ട്പുട്ട് ബന്ധങ്ങളിലൂടെ (Input–output relations)</span>.<br/>
+          4. ഒരേ മാനസികാവസ്ഥ വ്യത്യസ്ത ഭൗതിക സംവിധാനങ്ങളിൽ നിലനിൽക്കാമെന്ന ആശയം: <span class="hl-yellow">മൾട്ടിപ്പിൾ റിയലൈസേഷൻ (Multiple realization)</span>.<br/>
+          5. ഫങ്ഷണലിസവുമായി ഏറ്റവും ശക്തമായി ബന്ധപ്പെട്ട തത്ത്വചിന്തകൻ: <span class="hl-green">ഹിലരി പുട്ട്നാം (Hilary Putnam)</span>.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Unleash Your Potential: Detailed University Questions</span>
+          <span class="section-title-ml">(വിശദമായ പരീക്ഷാ ചോദ്യങ്ങൾ)</span>
+        </div>
+        <div class="block-en" style="font-size: 8.5pt;">
+          <p><strong>Q1: Elucidate the notion of functionalism within the philosophy of mind.</strong><br/>
+          <em>Core Answer:</em> Defines mental states by their functional causal roles between inputs, other mental states, and behavioral outputs, independent of physical substrate.</p>
+          <p><strong>Q2: Examine the correlation between functionalism and artificial intelligence.</strong><br/>
+          <em>Core Answer:</em> Functionalism validates AI by establishing Multiple Realizability: cognition is software that can run on silicon chips just as on biological brains.</p>
+          <p><strong>Q3: Elucidate the distinctions between functionalism, identity theory, and behaviourism.</strong><br/>
+          <em>Core Answer:</em> Behaviourism reduces mind to external action; Identity Theory reduces mind to brain neurons; Functionalism defines mind by internal causal organizational roles.</p>
+        </div>
+        <div class="block-ml" style="font-size: 8.5pt;">
+          <p><strong>ചോദ്യം 1: ഫങ്ഷണലിസം എന്നാൽ എന്താണ്?</strong><br/>
+          <em>ഉത്തരം:</em> മനസ്സ് എന്നത് ഭൗതിക വസ്തുവല്ലെന്നും ഇൻപുട്ടുകൾക്കും ഔട്ട്പുട്ടുകൾക്കും ഇടയിലുള്ള പ്രവർത്തനപരമായ കാര്യകാരണ ബന്ധമാണെന്നുമുള്ള സിദ്ധാന്തം.</p>
+          <p><strong>ചോദ്യം 2: ഫങ്ഷണലിസവും AI-യും തമ്മിലുള്ള ബന്ധം എന്ത്?</strong><br/>
+          <em>ഉത്തരം:</em> മൾട്ടിപ്പിൾ റിയലൈസേഷൻ വഴി സിലിക്കൺ ചിപ്പുകളുള്ള കമ്പ്യൂട്ടറുകൾക്കും മനുഷ്യന് തുല്യമായ മനസ്സ് ഉണ്ടാകാമെന്ന് ഫങ്ഷണലിസം സമർത്ഥിക്കുന്നു.</p>
+          <p><strong>ചോദ്യം 3: ബിഹേവിയറിസവും, ഐഡന്റിറ്റി തിയറിയും, ഫങ്ഷണലിസവും തമ്മിലുള്ള വ്യത്യാസങ്ങൾ വ്യക്തമാക്കുക.</strong><br/>
+          <em>ഉത്തരം:</em> ബിഹേവിയറിസം വെറും പെരുമാറ്റത്തെയും, ഐഡന്റിറ്റി തിയറി തലച്ചോറിലെ കോശങ്ങളെയും കാണുമ്പോൾ, ഫങ്ഷണലിസം അവയുടെ ആന്തരിക പ്രവർത്തന ധർമ്മത്തെ കാണുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 12: Functionalism</span>
+      <span>Page 11</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 12</span>
+        <span class="top-bar-right">Page 12 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="chapter-hero" style="padding: 6px 12px; margin-bottom: 8px;">
+        <div class="hero-tag">🎯 Quick Revision & Exam Mastery</div>
+        <div class="hero-title-en" style="font-size: 13pt;">20 Core Academic Concepts: Functionalism</div>
+        <div class="hero-title-ml" style="font-size: 10pt;">20 പ്രധാന പരീക്ഷാ ആശയങ്ങൾ: ഫങ്ഷണലിസം</div>
+      </div>
+
+      <div class="grid-container">
+        <!-- 1 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">⚙️ Definition</span><span class="point-title-en">Functionalism</span></div>
+          <div class="point-title-ml">ഫങ്ഷണലിസം</div>
+          <div class="point-body">Theory defining mental states strictly by their causal roles, functional relations, and input–output operations.</div>
+          <div class="point-body-ml">മാനസികാവസ്ഥകളെ അവയുടെ പ്രവർത്തന ധർമ്മങ്ങളുടെ അടിസ്ഥാനത്തിൽ നിർവ്വചിക്കുന്ന സിദ്ധാന്തം.</div>
+        </div>
+        <!-- 2 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🔄 Alternative</span><span class="point-title-en">Historical Alternative</span></div>
+          <div class="point-title-ml">ചരിത്രപരമായ ബദൽ</div>
+          <div class="point-body">Emerged in mid-20th century as a powerful alternative to both Identity Theory and Behaviourism.</div>
+          <div class="point-body-ml">ഐഡന്റിറ്റി തിയറിക്കും ബിഹേവിയറിസത്തിനും ബദലായി ഇരുപതാം നൂറ്റാണ്ടിൽ വളർന്നുവന്നത്.</div>
+        </div>
+        <!-- 3 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">👨‍🏫 Pioneer</span><span class="point-title-en">Hilary Putnam</span></div>
+          <div class="point-title-ml">ഹിലരി പുട്ട്നാം</div>
+          <div class="point-body">American philosopher strongly associated with founding Machine-State Functionalism and Multiple Realizability.</div>
+          <div class="point-body-ml">ഫങ്ഷണലിസത്തിന്റെയും മൾട്ടിപ്പിൾ റിയലൈസേഷന്റെയും ഉപജ്ഞാതാവ്.</div>
+        </div>
+        <!-- 4 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🔌 Identification</span><span class="point-title-en">Input–Output Relations</span></div>
+          <div class="point-title-ml">ഇൻപുട്ട്-ഔട്ട്പുട്ട് ബന്ധങ്ങൾ</div>
+          <div class="point-body">Mental states identified by mediating between sensory inputs, other internal mental states, and motor outputs.</div>
+          <div class="point-body-ml">ഇൻപുട്ടുകൾക്കും ഔട്ട്പുട്ടുകൾക്കും ഇടയിലുള്ള കണ്ണിയായി മനസ്സിനെ തിരിച്ചറിയൽ.</div>
+        </div>
+        <!-- 5 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🌐 Substrate Free</span><span class="point-title-en">Multiple Realization</span></div>
+          <div class="point-title-ml">മൾട്ടിപ്പിൾ റിയലൈസേഷൻ</div>
+          <div class="point-body">The thesis that the exact same mental state can exist and be realized in completely different physical systems.</div>
+          <div class="point-body-ml">ഒരേ മാനസികാവസ്ഥ പലതരം ഭൗതിക മാധ്യമങ്ങളിൽ സൃഷ്ടിക്കാമെന്ന തത്ത്വം.</div>
+        </div>
+        <!-- 6 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">⏰ Metaphor</span><span class="point-title-en">Clock Analogy</span></div>
+          <div class="point-title-ml">ഘടികാര ഉപമ</div>
+          <div class="point-body">A clock is defined by timekeeping, not whether it is made of brass gears, sand, or digital chips.</div>
+          <div class="point-body-ml">ക്ലോക്ക് സമയം കാണിക്കുന്നതുപോലെ, മനസ്സ് ചിന്തയെ നയിക്കുന്ന പ്രവർത്തനമാണ്.</div>
+        </div>
+        <!-- 7 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">💽 Model</span><span class="point-title-en">Machine-State Functionalism</span></div>
+          <div class="point-title-ml">മെഷീൻ-സ്റ്റേറ്റ് ഫങ്ഷണലിസം</div>
+          <div class="point-body">Putnam's early view equating human mental states with the internal computational states of a Turing machine.</div>
+          <div class="point-body-ml">മനസ്സിനെ ഒരു ട്യൂറിംഗ് മെഷീൻ പ്രോഗ്രാമായി കണ്ട ആദ്യകാല മാതൃക.</div>
+        </div>
+        <!-- 8 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🧠 Language</span><span class="point-title-en">Jerry Fodor's LOT</span></div>
+          <div class="point-title-ml">ലാംഗ്വേജ് ഓഫ് തോട്ട് (മെന്റലീസ്)</div>
+          <div class="point-body">Language of Thought hypothesis: thinking is computation over innate mental symbols in "Mentalese".</div>
+          <div class="point-body-ml">തലച്ചോറിനുള്ളിലെ ആന്തരിക ചിന്താഭാഷയായ മെന്റലീസിലെ ചിഹ്നങ്ങളുടെ കണക്കുകൂട്ടൽ.</div>
+        </div>
+        <!-- 9 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">💻 CTM</span><span class="point-title-en">Computational Theory of Mind</span></div>
+          <div class="point-title-ml">കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡ്</div>
+          <div class="point-body">The doctrine that the human mind is literally a computer executing syntactic algorithmic operations.</div>
+          <div class="point-body-ml">മനുഷ്യ മനസ്സ് അക്ഷരാർത്ഥത്തിൽ ഒരു കമ്പ്യൂട്ടറാണെന്ന തത്ത്വം.</div>
+        </div>
+        <!-- 10 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🤖 AI Alliance</span><span class="point-title-en">Correlation with AI</span></div>
+          <div class="point-title-ml">AI-യുമായുള്ള പൊരുത്തം</div>
+          <div class="point-body">Functionalism provides AI's foundational charter: cognitive states exist in silicon if software matches causal roles.</div>
+          <div class="point-body-ml">സിലിക്കൺ റോബോട്ടുകൾക്കും മനസ്സുണ്ടാകാമെന്നതിന് AI-ക്ക് ലഭിച്ച തത്ത്വചിന്താ പിൻബലം.</div>
+        </div>
+        <!-- 11 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">❌ Chauvinism Beat</span><span class="point-title-en">Defeating Chauvinism</span></div>
+          <div class="point-title-ml">സങ്കുചിതത്വത്തെ തോൽപ്പിക്കൽ</div>
+          <div class="point-body">Overcame Identity Theory's prejudice that pain must require human mammalian carbon C-fibers.</div>
+          <div class="point-body-ml">മനുഷ്യന്റെ നാഡികളിൽ മാത്രം ഒതുങ്ങുന്ന ഒന്നല്ല മനസ്സെന്ന തിരിച്ചറിവ്.</div>
+        </div>
+        <!-- 12 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🎭 Action Contrast</span><span class="point-title-en">Contrast with Behaviourism</span></div>
+          <div class="point-title-ml">ബിഹേവിയറിസവുമായുള്ള വ്യത്യാസം</div>
+          <div class="point-body">Behaviourism limits mind to outward twitching; functionalism validates rich internal mental causal states.</div>
+          <div class="point-body-ml">വെറും ബാഹ്യ പെരുമാറ്റങ്ങൾക്ക് പകരം ആന്തരിക വിചാരങ്ങളെയും ഫങ്ഷണലിസം ഉൾക്കൊള്ളുന്നു.</div>
+        </div>
+        <!-- 13 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🇨🇳 Critique 1</span><span class="point-title-en">Ned Block's China Brain (1978)</span></div>
+          <div class="point-title-ml">നെഡ് ബ്ലോക്കിന്റെ ചൈന ബ്രെയിൻ</div>
+          <div class="point-body">One billion citizens simulating brain neurons via walkie-talkies proves functionalism lacks qualia.</div>
+          <div class="point-body-ml">ചൈനയിലെ ജനങ്ങൾ ചേർന്ന് പ്രവർത്തിച്ചാലും അവിടെ ആന്തരിക ബോധം ഉണ്ടാകില്ലെന്ന പരീക്ഷണം.</div>
+        </div>
+        <!-- 14 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🌈 Critique 2</span><span class="point-title-en">Inverted Spectrum Argument</span></div>
+          <div class="point-title-ml">ഇൻവേർട്ടഡ് സ്പെക്ട്രം വാദം</div>
+          <div class="point-body">Identical functional color behaviors can mask completely opposite subjective qualitative sensations.</div>
+          <div class="point-body-ml">ഒരേപോലെ പെരുമാറുമ്പോഴും ഉള്ളിൽ വിരുദ്ധമായ നിറങ്ങൾ അനുഭവപ്പെടാമെന്ന വാദം.</div>
+        </div>
+        <!-- 15 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">✨ Hard Problem</span><span class="point-title-en">The Problem of Qualia</span></div>
+          <div class="point-title-ml">ക്വാലിയ പ്രശ്നം</div>
+          <div class="point-body">Functionalism explains computational functions, but completely fails to explain subjective conscious feelings.</div>
+          <div class="point-body-ml">വികാരങ്ങളുടെ ആന്തരിക സുഖദുഃഖങ്ങളെ വിശദീകരിക്കാൻ ഫങ്ഷണലിസത്തിന് കഴിയില്ല.</div>
+        </div>
+        <!-- 16 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">📦 Critique 3</span><span class="point-title-en">Searle's Chinese Room Challenge</span></div>
+          <div class="point-title-ml">സിയറലിന്റെ വെല്ലുവിളി</div>
+          <div class="point-body">Formal causal functional tables manipulate syntax without producing intentional semantic understanding.</div>
+          <div class="point-body-ml">പ്രവർത്തനപരമായ പ്രോഗ്രാം ടേബിളുകൾ വെറും ചിഹ്നങ്ങൾ മാത്രമാണെന്ന സിയറലിന്റെ വാദം.</div>
+        </div>
+        <!-- 17 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🧭 Intentionality</span><span class="point-title-en">Psychosemantics</span></div>
+          <div class="point-title-ml">സൈക്കോസെമാന്റിക്സ്</div>
+          <div class="point-body">Fodor's enterprise to ground mental content in causal informational connections to external reality.</div>
+          <div class="point-body-ml">ആന്തരിക ചിന്തകളെ ബാഹ്യ ലോകത്തിലെ യഥാർത്ഥ വസ്തുക്കളുമായി ബന്ധിപ്പിക്കൽ.</div>
+        </div>
+        <!-- 18 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🧩 Mind As Program</span><span class="point-title-en">Software / Hardware Dualism</span></div>
+          <div class="point-title-ml">സോഫ്റ്റ്‌വെയർ - ഹാർഡ്‌വെയർ തത്ത്വം</div>
+          <div class="point-body">Modern materialist rebirth of dualism: software logic is formally distinct from physical silicon chips.</div>
+          <div class="point-body-ml">സോഫ്റ്റ്‌വെയറും ഹാർഡ്‌വെയറും തമ്മിലുള്ള വ്യത്യാസമാണ് ആധുനിക മനസ്സ്.</div>
+        </div>
+        <!-- 19 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🚀 Dominance</span><span class="point-title-en">Cognitive Science Standard</span></div>
+          <div class="point-title-ml">കോഗ്നിറ്റീവ് സയൻസിന്റെ അടിസ്ഥാനം</div>
+          <div class="point-body">Functionalism remains the standard foundational working hypothesis of cognitive science and modern AI.</div>
+          <div class="point-body-ml">ഇന്നത്തെ ന്യൂറോസയൻസിലും AI ഗവേഷണത്തിലും ഏറ്റവും കൂടുതൽ ഉപയോഗിക്കപ്പെടുന്ന സിദ്ധാന്തം.</div>
+        </div>
+        <!-- 20 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🏁 Legacy</span><span class="point-title-en">Mind as Organization</span></div>
+          <div class="point-title-ml">മനസ്സ് എന്നാൽ സംഘാടനം</div>
+          <div class="point-body">Consciousness is not what a thing is made of, but how dynamically and causally it organizes information.</div>
+          <div class="point-body-ml">മനസ്സ് ഉണ്ടാക്കിയിരിക്കുന്നത് എന്തുകൊണ്ടാണെന്നതിലല്ല, അത് എങ്ങനെ പ്രവർത്തിക്കുന്നു എന്നതിലാണ് സത്യം.</div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 12: 20 Core Academic Concepts</span>
+      <span>Page 12</span>
+    </div>
+  </div>
+</body></html>

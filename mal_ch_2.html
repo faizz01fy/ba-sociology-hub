@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta charset="UTF-8">
+<title>സഞ്ചാരസാഹിത്യം: കിഴവനും ക്രാക്കാത്തൂവയും - അധ്യായ പഠന സഹായി</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  @page {
+    size: A4 portrait;
+    margin: 14mm 13mm 14mm 13mm;
+    @top-right {
+      content: "മലയാള സാഹിത്യാനുശീലനം · അധ്യായ പഠന സഹായി";
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Malayalam', 'Manjari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .chapter-header {
+    background: linear-gradient(135deg, var(--c-primary, #0f766e) 0%, var(--c-dark, #134e4a) 100%);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    page-break-inside: avoid;
+  }
+
+  .ch-pill-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .ch-pill {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .chapter-header h1 {
+    font-size: 17pt;
+    font-weight: 900;
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+    color: #ffffff;
+  }
+
+  .ch-meta-sub {
+    font-size: 10pt;
+    color: #ccfbf1;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Author Profile Card (കവിപരിചയം / രചയിതാവിന്റെ പരിചയം) */
+  .author-profile-box {
+    background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%);
+    border: 1.5px solid #cbd5e1;
+    border-left: 5px solid var(--c-primary, #0f766e);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    page-break-inside: avoid;
+  }
+
+  .author-profile-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .author-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 3px;
+  }
+
+  .author-profile-title h3 {
+    margin: 0;
+    font-size: 12.5pt;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .author-profile-title h3 small {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #64748b;
+  }
+
+  .author-meta-pill {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 8.5pt;
+    color: #334155;
+    line-height: 1.45;
+  }
+
+  .author-meta-pill b { color: var(--c-primary, #0f766e); }
+
+  .author-bio-body p {
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+
+  .author-works-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .author-works-head {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
+  }
+
+  .works-cat-row {
+    margin-bottom: 4px;
+    font-size: 8.5pt;
+    line-height: 1.5;
+  }
+
+  .works-cat-row:last-child { margin-bottom: 0; }
+
+  .works-cat-label {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: 8pt;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .works-cat-content { color: #475569; }
+
+  .author-awards-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #854d0e;
+    margin-bottom: 6px;
+  }
+
+  .author-significance-strip {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #1e40af;
+  }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .obj-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .out-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .card-label {
+    font-size: 9.5pt;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+  }
+  .obj-card .card-label { color: #166534; }
+  .out-card .card-label { color: #1e40af; }
+
+  .obj-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  .intro-box {
+    background: #fafaf9;
+    border: 1px solid #e7e5e4;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #292524;
+    page-break-inside: avoid;
+  }
+
+  .intro-box .intro-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #b45309;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .concept-section {
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    page-break-inside: avoid;
+  }
+
+  .concept-section h2 {
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--c-primary, #0f766e);
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .concept-section p {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: #334155;
+    margin: 0 0 6px 0;
+  }
+
+  .conclusion-box {
+    background: #fdf4ff;
+    border: 1px solid #f5d0fe;
+    border-left: 4px solid #a855f7;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 16px 0;
+    page-break-inside: avoid;
+  }
+
+  .conclusion-box .conc-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #7e22ce;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .conclusion-box p {
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #3b0764;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  .takeaways-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .takeaways-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f766e;
+  }
+
+  .takeaways-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #134e4a;
+    line-height: 1.55;
+  }
+
+  .glossary-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .glossary-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #334155;
+  }
+
+  .glossary-item {
+    font-size: 8.5pt;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .revision-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 9pt;
+    line-height: 1.6;
+    color: #713f12;
+    page-break-inside: avoid;
+  }
+
+  .progress-section {
+    border-top: 2px solid #e2e8f0;
+    padding-top: 14px;
+    margin-top: 16px;
+  }
+
+  .progress-header {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 0 0 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-inside: avoid;
+  }
+
+  .q-type-title {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f766e;
+    margin: 14px 0 8px 0;
+    padding-left: 8px;
+    border-left: 3px solid #0f766e;
+    page-break-inside: avoid;
+  }
+
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+
+  .qa-question {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+
+  .qa-answer {
+    font-size: 9pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0;
+    white-space: pre-line;
+  }
+
+  .essay-card {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .essay-card .qa-question {
+    font-size: 10pt;
+    color: #1e1b4b;
+    margin-bottom: 10px;
+  }
+
+  .essay-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 4px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .mcq-container {
+    margin-top: 14px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-q {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 5px 0;
+  }
+
+  .mcq-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    font-size: 8.5pt;
+    color: #334155;
+  }
+
+  .mcq-opt {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
+  .mcq-key-card {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 14px 0 20px 0;
+    page-break-inside: avoid;
+  }
+
+  .mcq-key-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 10pt;
+    font-weight: 800;
+    color: #166534;
+  }
+
+  .key-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    font-size: 8pt;
+    color: #14532d;
+  }
+
+  .key-item {
+    background: #ffffff;
+    border: 1px solid #bbf7d0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.35;
+  }
+
+  .exam-points-card {
+    background: linear-gradient(135deg, #fefce8 0%, #fffbeb 100%);
+    border: 1.5px solid #fde047;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 25px 0;
+    box-shadow: 0 3px 10px rgba(234, 179, 8, 0.1);
+    page-break-inside: avoid;
+  }
+
+  .exam-points-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #facc15;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+
+  .exam-points-head h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 900;
+    color: #854d0e;
+  }
+
+  .exam-tag {
+    background: #ca8a04;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 14px;
+    text-transform: uppercase;
+  }
+
+  .exam-points-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #713f12;
+  }
+
+  .exam-points-list li {
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .exam-points-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ca8a04;
+    font-weight: 900;
+  }
+
+
+    @media (max-width: 768px) {
+      body {
+        padding: 14px 10px !important;
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+      .chapter-header {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+      }
+    }
+    
+  </style>
+</head>
+<body style="--c-primary: #0f766e; --c-dark: #0f172a;">
+  <div class="chapter-wrapper">
+    <header class="chapter-header">
+      <div class="ch-pill-row">
+        <span class="ch-pill">മൊഡ്യൂൾ 1</span>
+        <span class="ch-pill">സഞ്ചാരസാഹിത്യം (Travelogue)</span>
+        <span class="ch-pill">അധ്യായം 2</span>
+      </div>
+      <h1>സഞ്ചാരസാഹിത്യം: കിഴവനും ക്രാക്കാത്തൂവയും</h1>
+      <p class="ch-meta-sub">രചയിതാവ്: <b>എസ്.കെ. പൊറ്റെക്കാട്ട്</b> · ഉറവിടം: ഇന്തോനേഷ്യൻ ഡയറി (1955) - 1953-ലെ ജാവ യാത്ര</p>
+    </header>
+
+        <div class="author-profile-box">
+          <div class="author-profile-head">
+            <div class="author-profile-title">
+              <span class="author-badge">✍️ കവിപരിചയം / രചയിതാവിന്റെ സമഗ്ര പരിചയം</span>
+              <h3>എസ്.കെ. പൊറ്റെക്കാട്ട് (ശങ്കരൻകുട്ടി കുഞ്ഞിരാമൻ പൊറ്റെക്കാട്ട്) <small>(1913 മാർച്ച് 14 – 1982 ഓഗസ്റ്റ് 6)</small></h3>
+            </div>
+            <div class="author-meta-pill">
+              <b>സ്ഥലം / പശ്ചാത്തലം:</b> കോഴിക്കോട്<br>
+              <b>സാഹിത്യ പദവി:</b> സഞ്ചാരസാഹിത്യകാരൻ, നോവലിസ്റ്റ്, ചെറുകഥാകൃത്ത്, പാർലമെന്റ് അംഗം (1962-67), ജ്ഞാനപീഠ പുരസ്കാര ജേതാവ്.
+            </div>
+          </div>
+          <div class="author-bio-body">
+            <p>സഞ്ചാരസാഹിത്യകാരൻ എന്നതിനുപുറമെ നോവലിസ്റ്റ്, ചെറുകഥാകൃത്ത് എന്നീ നിലകളിൽ ശ്രദ്ധേയനാണ് എസ്.കെ. പൊറ്റെക്കാട്ട്. യാത്രകളിലെ വൈവിധ്യം അവതരിപ്പിച്ചുകൊണ്ടും സാഹിത്യമൂല്യം ഉയർത്തിപ്പിടിച്ചുകൊണ്ടും എഴുതപ്പെട്ടതാണ് എസ്.കെ.യുടെ സഞ്ചാരസാഹിത്യകൃതികൾ. ലോകത്തിന്റെ വിവിധ കോണുകളിലൂടെ ഒറ്റയ്ക്ക് സഞ്ചരിച്ച് അവിടുത്തെ സാധാരണ മനുഷ്യരുടെ ജീവിതവും സംസ്കാരവും സൗന്ദര്യവും അദ്ദേഹം മലയാളികൾക്ക് മുന്നിൽ തുറന്നുവെച്ചു. യാത്രാവിവരണങ്ങൾക്ക് പുറമെ ഒരു ദേശത്തിന്റെയും തെരുവിന്റെയും ചരിത്രവും ജീവിതവും നോവലുകളിലൂടെയും ചെറുകഥകളിലൂടെയും അദ്ദേഹം ആവിഷ്കരിച്ചു. സഞ്ചാരസാഹിത്യത്തെ മലയാളത്തിൽ സ്വതന്ത്രാസ്തിത്വമുള്ള ഒരു സാഹിത്യപ്രസ്ഥാനമാക്കി മാറ്റുന്നതിൽ മുഖ്യ പങ്കു വഹിച്ചു.</p>
+            
+            <div class="author-works-section">
+              <div class="author-works-head">📚 പ്രധാന കൃതികളും സാഹിത്യ സംഭാവനകളും (Major Works & Contributions):</div>
+        
+              <div class="works-cat-row">
+                <span class="works-cat-label">പ്രധാന യാത്രാവിവരണങ്ങൾ</span>
+                <span class="works-cat-content">കാശ്മീർ (1948), യാത്രാസ്മരണകൾ (1949), കാപ്പിരികളുടെ നാട്ടിൽ (1951), സിംഹഭൂമി (1954), നൈൽഡയറി (1954), ഇന്നത്തെ യൂറോപ്പ് (1955), ഇന്തോനേഷ്യൻ ഡയറി (1955), പാതിരാസൂര്യന്റെ നാട്ടിൽ (1956), സോവിയറ്റ് ഡയറി (1957), ബാലിദ്വീപ് (1958), ബൊഹീമിയൻ ചിത്രങ്ങൾ (1960), ഹിമാലയസാമ്രാജ്യത്തിൽ (1967), നേപ്പാൾ യാത്ര (1967), ലണ്ടൻ നോട്ട്ബുക്ക് (1970), കയ്റോ കത്തുകൾ (1974), ക്ലിയോപാട്രയുടെ നാട്ടിൽ (1977).</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">പ്രശസ്ത നോവലുകൾ</span>
+                <span class="works-cat-content">ഒരു ദേശത്തിന്റെ കഥ (1971), ഒരു തെരുവിന്റെ കഥ (1960), വിഷകന്യക (1948), നാടൻപ്രേമം (1941), മൂടുപടം (1955), കുരുമുളക്, കറുത്ത പൊന്ന്.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">ചെറുകഥാ സമാഹാരങ്ങൾ</span>
+                <span class="works-cat-content">പുള്ളിമാൻ, മേഘമല്ലിക, അന്തിവെളിച്ചം, രംഗമണ്ഡപം, നിശാഗന്ധി, വനകന്യക, കടൽ, കാട്ടുചെമ്പകം, പത്മരാഗം, കനകാമ്പരം.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">കവിതാ സമാഹാരങ്ങൾ</span>
+                <span class="works-cat-content">പ്രഭാതകാന്തി, സഞ്ചാരിയുടെ ഗീതങ്ങൾ, പ്രേമശില്പി.</span>
+              </div>
+            
+            </div>
+            
+            <div class="author-awards-strip">
+              <b>🏆 പ്രധാന പുരസ്കാരങ്ങളും അംഗീകാരങ്ങളും:</b> ജ്ഞാനപീഠ പുരസ്കാരം (1980 - ഒരു ദേശത്തിന്റെ കഥ), കേന്ദ്ര സാഹിത്യ അക്കാദമി അവാർഡ് (1972 - ഒരു ദേശത്തിന്റെ കഥ), കേരള സാഹിത്യ അക്കാദമി അവാർഡ് (1961 - ഒരു തെരുവിന്റെ കഥ), സാഹിത്യ പ്രവർത്തക സഹകരണ സംഘം (SPCS) അവാർഡ്.
+            </div>
+            
+            <div class="author-significance-strip">
+              <b>✦ സാഹിത്യ സംഭാവന & സവിശേഷ സ്ഥാനം:</b> മലയാളത്തിൽ സഞ്ചാരസാഹിത്യത്തെ ഒരു ജനപ്രിയ ഗദ്യശാഖയായി വളർത്തിയെടുക്കുകയും, അധിനിവേശ വിരുദ്ധതയും മനുഷ്യസ്നേഹവും പ്രകൃതിവർണ്ണനയും ഇഴചേർത്ത കാവ്യാത്മകമായ ഗദ്യശൈലി സമ്മാനിക്കുകയും ചെയ്തു.
+            </div>
+          </div>
+        </div>
+        
+      <div class="objectives-grid">
+        <div class="obj-card">
+          <div class="card-label">❖ പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</div>
+          <ul class="obj-list">
+    <li>മലയാള സഞ്ചാരസാഹിത്യത്തിന്റെ ചരിത്രവും എസ്.കെ. പൊറ്റെക്കാട്ടിന്റെ സംഭാവനകളും മനസ്സിലാക്കുക.</li><li>യാത്രാവിവരണങ്ങളിൽ ഭൂമിശാസ്ത്രം, ചരിത്രം, മാനവികത എന്നിവ എങ്ങനെ സമന്വയിക്കുന്നു എന്ന് തിരിച്ചറിയുക.</li><li>ഏണസ്റ്റ് ഹെമിങ്‌വേയുടെ 'കിഴവനും കടലും' നോവലും ക്രാക്കാത്തോവ അഗ്നിപർവ്വത ചരിത്രവും യാത്രയുമായി ഇണക്കിച്ചേർത്ത രീതി വിലയിരുത്തുക.</li>
+          </ul>
+        </div>
+        <div class="out-card">
+          <div class="card-label">✦ പഠന ഫലങ്ങൾ (Learning Outcomes)</div>
+          <ul class="obj-list">
+    <li>സഞ്ചാരസാഹിത്യത്തിന്റെ വൈവിധ്യമാർന്ന ഭാവതലങ്ങളെ വിശകലനം ചെയ്യാൻ സാധിക്കുന്നു.</li><li>എസ്.കെ. പൊറ്റെക്കാട്ടിന്റെ അനന്യമായ നിരീക്ഷണപാടവവും ഭാഷാസൗന്ദര്യവും ആസ്വദിക്കാൻ കഴിയുന്നു.</li><li>സാധാരണ ജനങ്ങളോടും തൊഴിലാളികളോടുമുള്ള എഴുത്തുകാരന്റെ മാനവിക ഐക്യദാർഢ്യം തിരിച്ചറിയുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="intro-box">
+        <span class="intro-label">ആമുഖം (Introduction)</span>
+    <p>മലയാള സഞ്ചാരസാഹിത്യത്തെ ലോകനിലവാരത്തിലേക്ക് ഉയർത്തിയ വിശ്വവിഖ്യാത സാഹിത്യകാരനാണ് എസ്.കെ. പൊറ്റെക്കാട്ട് (1913–1982). കേവലം കാഴ്ചകളുടെ വർണ്ണനയ്ക്കപ്പുറം ചരിത്രം, ഭൂമിശാസ്ത്രം, നരവംശശാസ്ത്രം, രാഷ്ട്രീയം, ജനജീവിതം എന്നിവയെ സമന്വയിപ്പിക്കുന്നതായിരുന്നു അദ്ദേഹത്തിന്റെ യാത്രാവിവരണങ്ങൾ. 1955-ൽ പ്രസിദ്ധീകരിച്ച 'ഇന്തോനേഷ്യൻ ഡയറി'യിലെ പ്രധാന അധ്യായമാണ് 'കിഴവനും ക്രാക്കാത്തൂവയും' (1953-ലെ ജാവ യാത്ര). യാത്രാവേളയിൽ അദ്ദേഹം വായിക്കുന്ന ഏണസ്റ്റ് ഹെമിങ്‌വേയുടെ 'കിഴവനും കടലും' (The Old Man and the Sea) എന്ന നോവലും, കപ്പലിൽ നിന്ന് കാണുന്ന ക്രാക്കാത്തൂവ (Krakatoa) അഗ്നിപർവ്വതവും, ഡെക്കിലെ സാധാരണക്കാരായ സ്ത്രീ-പുരുഷ യാത്രികരുടെ ജീവിതവും ഈ അധ്യായത്തിൽ അത്ഭുതകരമായ രീതിയിൽ സംഗമിക്കുന്നു.</p></div>
+        <section class="concept-section">
+          <h2>1. കപ്പൽയാത്രയും ഡെക്കിലെ സ്ത്രീലോകവും</h2>
+          <p>കപ്പലിലെ ഒന്നാം ക്ലാസ് യാത്രയുടെ കൃത്രിമത്വവും ആഡംബരവും മടുത്ത പൊറ്റെക്കാട്ട് സാധാരണക്കാരായ ജാവക്കാർ യാത്രചെയ്യുന്ന ഡെക്കിലേക്ക് ഇറങ്ങിച്ചെന്നു. 'സ്ത്രീലോകം' എന്ന ശീർഷകത്തിൽ ഡെക്കിലെ വിവിധ സാംസ്കാരിക പശ്ചാത്തലങ്ങളുള്ള സ്ത്രീ യാത്രക്കാരെ അദ്ദേഹം ഹൃദ്യമായി ചിത്രീകരിക്കുന്നു. ചുവന്ന പട്ടുടുപ്പണിഞ്ഞ മിശ്രവർഗ്ഗ സുന്ദരി, അവളുടെ അമ്മയോ ദാസിയോ ആയ കിഴവി, സദാ കടലിലേക്ക് ഉറ്റുനോക്കി നിൽക്കുന്ന കോങ്കണ്ണുള്ള സ്ത്രീ എന്നിവരെല്ലാം പൊറ്റെക്കാട്ടിന്റെ സൂക്ഷ്മ നിരീക്ഷണത്തിൽ തെളിയുന്നു. കപ്പൽ ജോലിക്കാരനായ നോമ്പോ, തുമിമാൻ, ഇൻഡോനേഷ്യൻ പട്ടാളക്കാരനായ റൊജീത്തോ എന്നിവരുടെ നിഷ്കളങ്കമായ സ്നേഹവും സഹായമനോഭാവവും ഡെക്ക് ജീവിതത്തെ സജീവമാക്കുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>2. ഏണസ്റ്റ് ഹെമിങ്‌വേയുടെ 'കിഴവനും കടലും' എന്ന നോവൽ വായന</h2>
+          <p>കപ്പലിന്റെ ഡെക്കിലിരുന്ന് പൊറ്റെക്കാട്ട് വായിക്കുന്നത് ഏണസ്റ്റ് ഹെമിങ്‌വേയുടെ വിഖ്യാത നോവലായ 'കിഴവനും കടലും' (The Old Man and the Sea) ആണ്. ക്യൂബൻ മുക്കുവനായ സാന്തിയാഗോ എന്ന വൃദ്ധൻ ഭീമാകാരമായ മാർലിൻ മത്സ്യവുമായി നടത്തുന്ന ജീവന്മരണ പോരാട്ടമാണ് നോവലിന്റെ പ്രമേയം. തുടർച്ചയായി 84 ദിവസം മീനൊന്നും കിട്ടാതെ നിരാശനായ വൃദ്ധൻ 85-ാം ദിവസം നടത്തുന്ന സാഹസിക പോരാട്ടം മനുഷ്യന്റെ തോൽക്കാത്ത ഇച്ഛാശക്തിയുടെ പ്രതീകമാണ്. 'മനുഷ്യൻ പരാജയപ്പെടാൻ സൃഷ്ടിക്കപ്പെട്ടവനല്ല; അവനെ നശിപ്പിക്കാൻ കഴിഞ്ഞേക്കാം, പക്ഷേ പരാജയപ്പെടുത്താനാവില്ല' എന്ന നോവലിലെ ദാർശനിക സന്ദേശം പൊറ്റെക്കാട്ടിന്റെ സ്വന്തം സമുദ്രയാത്രാനുഭവങ്ങളുമായി ഇഴചേർന്നുനിൽക്കുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>3. ക്രാക്കാത്തൂവ (Krakatoa) അഗ്നിപർവ്വതത്തിന്റെ ഭീകരത</h2>
+          <p>കപ്പൽ ജാവൻ കടലിലൂടെയും സുന്ദാ കടലിടുക്കിലൂടെയും നീങ്ങുമ്പോൾ വിദൂരതയിൽ ഭീതിദമായ ഒരു ദ്വീപ് പൊറ്റെക്കാട്ടിന്റെ കണ്ണിൽപ്പെടുന്നു. അതാണ് ലോകചരിത്രത്തിലെ ഏറ്റവും വിനാശകരമായ അഗ്നിപർവ്വതങ്ങളിലൊന്നായ ക്രാക്കാത്തൂവ. 1883 ആഗസ്റ്റിൽ ഉണ്ടായ അതിഭീകരമായ അഗ്നിപർവ്വത വിസ്ഫോടനത്തിൽ 36,000-ത്തിലധികം ആളുകളാണ് കൊല്ലപ്പെട്ടത്. ആ സ്ഫോടനത്തിന്റെ ശബ്ദപ്രകമ്പനം 3,000 മൈലുകൾക്കപ്പുറം മുഴങ്ങിക്കേൾക്കുകയും കൂറ്റൻ സുനാമിത്തിരകൾ ജാവയിലും സുമാത്രയിലും ആഞ്ഞടിക്കുകയും ചെയ്തു. ഈ ചരിത്രഭീകരതയെ പൊറ്റെക്കാട്ട് അതീവ ഗൗരവത്തോടെ അവതരിപ്പിക്കുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>4. പ്രകൃതിയുടെ സംഹാരശക്തിയും മനുഷ്യന്റെ അതിജീവനവും</h2>
+          <p>ഒരുവശത്ത് ബാഹ്യപ്രകൃതിയുടെ സംഹാരരുദ്രമായ വിനാശശക്തിയായി ക്രാക്കാത്തൂവ നിൽക്കുമ്പോൾ, മറുവശത്ത് പ്രകൃതിയുടെ വെല്ലുവിളികളെ ധീരമായി നേരിടുന്ന മനുഷ്യന്റെ അജയ്യമായ ആന്തരിക ഇച്ഛാശക്തിയായി സാന്തിയാഗോ എന്ന കിഴവൻ വായനക്കാരന്റെ മനസ്സിൽ നിറയുന്നു. ബാഹ്യമായ പ്രകൃതിയുടെ സംഹാരതാണ്ഡവവും മനുഷ്യന്റെ പതറാത്ത ചെറുത്തുനിൽപ്പും തമ്മിലുള്ള അത്ഭുതകരമായ ഒരു ദാർശനിക പൊരുത്തം പൊറ്റെക്കാട്ട് ഈ അധ്യായത്തിലൂടെ സൃഷ്ടിക്കുന്നു.</p>
+        </section>
+        
+    <div class="conclusion-box">
+      <span class="conc-label">ഉപസംഹാരം (Chapter Conclusion)</span>
+      <p>എസ്.കെ. പൊറ്റെക്കാട്ടിന്റെ 'കിഴവനും ക്രാക്കാത്തൂവയും' സഞ്ചാരസാഹിത്യത്തിന് പുതിയൊരു സൗന്ദര്യശാസ്ത്രം ചമയ്ക്കുന്നു. വെറുമൊരു ഭൂപ്രദേശ വർണ്ണനയ്ക്കപ്പുറം സാഹിത്യവും പ്രകൃതിശക്തിയും ചരിത്രവും സാധാരണ മനുഷ്യജീവിതവും ഒത്തുചേരുന്ന ഉജ്ജ്വലമായ ഒരു വായനാനുഭവമാണ് ഈ കൃതി സമ്മാനിക്കുന്നത്.</p>
+    </div>
+    
+    <div class="summary-grid">
+      <div class="takeaways-box">
+        <h3>✦ പ്രധാന പാഠങ്ങൾ (Key Takeaways)</h3>
+        <ul class="takeaways-list">
+    <li>എസ്.കെ. പൊറ്റെക്കാട്ട് മലയാള സഞ്ചാരസാഹിത്യത്തിന്റെ കുലപതിയാണ് (ജ്ഞാനപീഠ ജേതാവ്).</li><li>ആഡംബര ക്യാബിനുകൾ ഉപേക്ഷിച്ച് സാധാരണക്കാരായ ഡെക്ക് യാത്രികരുമായി അദ്ദേഹം ഇടപഴകി.</li><li>യാത്രയ്ക്കിടയിൽ ഏണസ്റ്റ് ഹെമിങ്‌വേയുടെ 'കിഴവനും കടലും' വായിക്കുന്നു.</li><li>1883-ൽ പൊട്ടിത്തെറിച്ച ക്രാക്കാത്തോവ അഗ്നിപർവ്വതത്തിന്റെ ചരിത്രവും ഭീകരതയും വിവരിക്കുന്നു.</li>
+        </ul>
+      </div>
+      <div class="glossary-box">
+        <h3>📖 പ്രധാന സാങ്കേതിക പദാവലി (Key Terms)</h3>
+    <div class="glossary-item"><b>സഞ്ചാരസാഹിത്യം (Travelogue):</b> യാത്രാനുഭവങ്ങളും ഭൂപ്രകൃതിയും സംസ്കാരവും പ്രതിപാദിക്കുന്ന സാഹിത്യശാഖ.</div><div class="glossary-item"><b>ക്രാക്കാത്തൂവ (Krakatoa):</b> ഇന്തോനേഷ്യയിലെ സുമാത്രയ്ക്കും ജാവയ്ക്കും ഇടയിലുള്ള സുന്ദാ കടലിടുക്കിലെ വിഖ്യാത അഗ്നിപർവ്വതം.</div><div class="glossary-item"><b>ഡെക്ക് യാത്രക്കാർ (Deck Passengers):</b> കപ്പലിലെ തട്ടിൽ കുറഞ്ഞ ചെലവിൽ യാത്ര ചെയ്യുന്ന സാധാരണക്കാരായ ജനങ്ങൾ.</div>
+      </div>
+    </div>
+    
+    <div class="revision-strip">
+      <b>ദ്രുത പുനഃപരിശോധനാ കുറിപ്പ് (Quick Revision):</b> 1955-ലെ ഇന്തോനേഷ്യൻ കപ്പൽയാത്ര. ഡെക്കിലെ ജാവക്കാർ. ഹെമിങ്‌വേയുടെ 'കിഴവനും കടലും' വായന. സാന്തിയാഗോയുടെ ധീരത. ക്രാക്കാത്തോവ അഗ്നിപർവ്വത സ്ഫോടനം (1883, 36000 മരണം, 3000 മൈൽ അകലെ കേട്ട ശബ്ദം). പ്രകൃതിയും മനുഷ്യനും തമ്മിലുള്ള സമന്വയം.
+    </div>
+    
+    <div class="progress-section">
+      <div class="progress-header">
+        <span>പഠന പുരോഗതി വിലയിരുത്തൽ (Check Your Progress)</span>
+        <small>യഥാർത്ഥ ചോദ്യങ്ങളും സമഗ്ര ഉത്തരങ്ങളും</small>
+      </div>
+    <div class="q-type-title">ലഘുകുറിപ്പുകൾ (Short Notes)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. എസ്.കെ. പൊറ്റെക്കാട്ടിന്റെ യാത്രാവിവരണങ്ങളുടെ പ്രധാന സവിശേഷതകൾ എന്തെല്ലാം?</div>
+              <div class="qa-answer">കേവലമായ കാഴ്ചകളുടെ വിവരണം മാത്രമല്ല എസ്.കെ. പൊറ്റെക്കാട്ടിന്റെ സഞ്ചാരസാഹിത്യം. ചരിത്രം, ഭൂമിശാസ്ത്രം, ജനജീവിതം, നാടോടിക്കഥകൾ, സംസ്കാരം എന്നിവയെല്ലാം സർഗ്ഗാത്മകമായി സംയോജിപ്പിക്കുന്ന ശൈലിയാണ് അദ്ദേഹത്തിന്റേത്. കാവ്യാത്മകമായ ഭാഷയും ഹാസ്യവും സാധാരണക്കാരോടുള്ള മാനവിക ഐക്യദാർഢ്യവും അദ്ദേഹത്തിന്റെ രചനകളെ ആകർഷകമാക്കുന്നു.</div>
+            </div>
+            
+            <div class="qa-card">
+              <div class="qa-question">2. ക്രാക്കാത്തോവ അഗ്നിപർവ്വത സ്ഫോടനത്തെക്കുറിച്ച് പൊറ്റെക്കാട്ട് വിവരിക്കുന്ന വസ്തുതകൾ എന്തെല്ലാം?</div>
+              <div class="qa-answer">1883 ആഗസ്റ്റിലാണ് ലോകചരിത്രത്തെ നടുക്കിയ ക്രാക്കാത്തോവ അഗ്നിപർവ്വത സ്ഫോടനം ഉണ്ടായത്. സ്ഫോടനത്തിൽ 36,000-ത്തിലധികം ആളുകൾ കൊല്ലപ്പെട്ടു. ഇതിന്റെ പ്രകമ്പനം 3,000 മൈൽ അകലെ വരെ കേൾക്കാമായിരുന്നു. പർവ്വതത്തിന്റെ വലിയൊരു ഭാഗം കടലിൽ മുങ്ങിപ്പോകുകയും ഭീമാകാരമായ സുനാമിത്തിരകൾ ജാവയിലും സുമാത്രയിലും ആഞ്ഞടിക്കുകയും ചെയ്തു.</div>
+            </div>
+            <div class="q-type-title">ലഘൂപന്യാസങ്ങൾ (Short Essays)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. 'കിഴവനും കടലും' എന്ന നോവലിലെ സാന്തിയാഗോയുടെ പോരാട്ടം പൊറ്റെക്കാട്ട് സ്വന്തം യാത്രയുമായി എങ്ങനെ ബന്ധിപ്പിക്കുന്നു?</div>
+              <div class="qa-answer">കപ്പലിന്റെ ഡെക്കിലിരുന്ന് പൊറ്റെക്കാട്ട് വായിക്കുന്നത് ഹെമിങ്‌വേയുടെ 'കിഴവനും കടലും' ആണ്. 84 ദിവസത്തെ പരാജയത്തിനു ശേഷവും തോൽക്കാൻ കൂട്ടാക്കാതെ മാർലിൻ മത്സ്യവുമായി പോരാടുന്ന സാന്തിയാഗോ എന്ന വൃദ്ധൻ അക്ഷീണമായ മനുഷ്യ ഇച്ഛാശക്തിയുടെ പ്രതീകമാണ്. കപ്പലിന് ചുറ്റുമുള്ള അനന്തമായ കടൽക്കാഴ്ചകളും, മുന്നിൽ കാണുന്ന വിനാശകാരിയായ ക്രാക്കാത്തോവ അഗ്നിപർവ്വതവും കാണുമ്പോൾ, പ്രകൃതിയുടെ സംഹാരശക്തിക്ക് മുന്നിലും പതറാതെ പൊരുതുന്ന മനുഷ്യന്റെ പ്രതിരോധമായി സാന്തിയാഗോ മാറുന്നു. പ്രകൃതിയും മനുഷ്യനും തമ്മിലുള്ള ഈ ജീവൽബന്ധമാണ് പൊറ്റെക്കാട്ട് ഇവിടെ വരച്ചുകാട്ടുന്നത്.</div>
+            </div>
+            <div class="q-type-title">ഉപന്യാസങ്ങൾ (Long Essays - 300+ Words)</div>
+            <div class="essay-card">
+              <span class="essay-badge">സമഗ്ര ഉപന്യാസം · 300+ WORDS</span>
+              <div class="qa-question">1. ജാവയിലേക്കുള്ള കപ്പൽയാത്രാനുഭവങ്ങൾ ചുരുക്കി വിവരിച്ച്, എസ്.കെ. പൊറ്റെക്കാട്ടിന്റെ 'കിഴവനും ക്രാക്കാത്തൂവയും' എന്ന പാഠഭാഗം നിരൂപണം ചെയ്യുക.</div>
+              <div class="qa-answer">ആമുഖം:
+മലയാള സഞ്ചാരസാഹിത്യ ശാഖയ്ക്ക് ആഗോള പ്രശസ്തിയും സാഹിത്യപരമായ ആഴവും പകർന്നുനൽകിയ അനുപമ പ്രതിഭയാണ് എസ്.കെ. പൊറ്റെക്കാട്ട്. ഭൂഖണ്ഡങ്ങൾ തോറും അലഞ്ഞുതിരിഞ്ഞ്, നാടുകളുടെ കേവല ഭൂമിശാസ്ത്രപരമായ വിവരണങ്ങൾക്കപ്പുറം അവിടുത്തെ പച്ചയായ മനുഷ്യരുടെ സംസ്കാരത്തെയും ആന്തരിക വികാരങ്ങളെയും ഹൃദയസ്പർശിയായി ആവിഷ്കരിച്ച എഴുത്തുകാരനാണ് അദ്ദേഹം. 1953-ൽ സിംഗപ്പൂരിൽ നിന്ന് ജാവയിലെ പ്രധാന തുറമുഖ നഗരമായ സുരബായയിലേക്ക് 'വാൻ വെയ്ക്ക്' എന്ന ഡച്ച് കപ്പലിൽ നടത്തിയ സമുദ്രയാത്രയെ അധികരിച്ച് 'ഇന്തോനേഷ്യൻ ഡയറി'യിൽ (1955) രചിച്ച വിഖ്യാതമായ അധ്യായമാണ് 'കിഴവനും ക്രാക്കാത്തൂവയും'. ഈ യാത്രാവിവരണത്തെ പ്രധാനമായും മൂന്ന് ഘട്ടങ്ങളായാണ് പൊറ്റെക്കാട്ട് ആവിഷ്കരിക്കുന്നത്: കപ്പൽ ഡെക്കിലെ സ്ത്രീലോകം, സാന്തിയാഗോയുടെ മത്സ്യവേട്ട, രാക്ഷസന്റെ വിശ്വരൂപമായ ക്രാക്കാത്തൂവ അഗ്നിപർവ്വതം.
+
+ഡെക്ക് യാത്രയും കപ്പലിലെ സ്ത്രീലോകവും:
+കപ്പലിലെ ഒന്നാം ക്ലാസ് യാത്രയിലെ ആഡംബരവും കൃത്രിമത്വവും നൽകിയ വിരസത കാരണം പൊറ്റെക്കാട്ട് സാധാരണക്കാരായ ജാവക്കാർ യാത്ര ചെയ്യുന്ന മൂന്നാം തരം ഡെക്കിലേക്ക് ഇറങ്ങിച്ചെന്നു. സഹയാത്രികരായ സാധാരണ മനുഷ്യരുടെ സ്നേഹവും പെരുമാറ്റവും അദ്ദേഹത്തെ ആകർഷിച്ചു. കപ്പൽ ജോലിക്കാരനായ നോമ്പോ ഫ്ലാസ്കിൽ കരുതിക്കൊടുത്ത ചൂടുവെള്ളവും, ഇൻഡോനേഷ്യൻ പട്ടാളക്കാരനായ റൊജീത്തോ നൽകിയ ടിൻപാലും പഞ്ചസാരയും ഉപയോഗിച്ച് അദ്ദേഹം പ്രഭാത ചായ ഉണ്ടാക്കിക്കുടിക്കുന്നു. 'സ്ത്രീലോകം' എന്ന ശീർഷകത്തിൽ ഡെക്കിലെ വിവിധ സാംസ്കാരിക പശ്ചാത്തലങ്ങളുള്ള സ്ത്രീ യാത്രികരെ അദ്ദേഹം അതീവ ഹൃദ്യമായി ചിത്രീകരിക്കുന്നുണ്ട്. ചുവന്ന പട്ടുടുപ്പും കഴുത്തിൽ കൃത്രിമ പവിഴമാലയുമണിഞ്ഞ് സദാ ഉറങ്ങുന്ന മിശ്രവർഗ്ഗ സുന്ദരി, അവളുടെ അമ്മയോ ദാസിയോ ആയ വയോധിക, സദാ കടലിലേക്ക് ഉറ്റുനോക്കി നിൽക്കുന്ന കോങ്കണ്ണുള്ള സ്ത്രീ തുടങ്ങിയവരെല്ലാം പൊറ്റെക്കാട്ടിന്റെ സൂക്ഷ്മ നിരീക്ഷണത്തിൽ സവിശേഷ ഭംഗിയോടെ തെളിയുന്നു.
+
+ഹെമിങ്‌വേയുടെ 'കിഴവനും കടലും' വായനയും സാന്തിയാഗോയും:
+കപ്പലിന്റെ ഡെക്കിലിരുന്ന് പൊറ്റെക്കാട്ട് വായിക്കുന്നത് നോബൽ സമ്മാന ജേതാവായ ഏണസ്റ്റ് ഹെമിങ്‌വേയുടെ വിഖ്യാത നോവലായ 'കിഴവനും കടലും' (The Old Man and the Sea) ആണ്. തുടർച്ചയായി 84 ദിവസം മീനൊന്നും കിട്ടാതെ പരാജയപ്പെട്ടിട്ടും തളരാതെ, 85-ാം ദിവസം ഭീമാകാരമായ മാർലിൻ മത്സ്യവുമായി ജീവന്മരണ പോരാട്ടം നടത്തുന്ന സാന്തിയാഗോ എന്ന ക്യൂബൻ വൃദ്ധന്റെ അജയ്യമായ ആത്മവീര്യത്തെ തന്റെ കടൽയാത്രയുമായി പൊറ്റെക്കാട്ട് ബന്ധിപ്പിക്കുന്നു. സാന്തിയാഗോയുടെ അക്ഷീണമായ അധ്വാനവും ധൈര്യവും മനുഷ്യന്റെ തോൽക്കാത്ത ഇച്ഛാശക്തിയുടെ പ്രതീകമായി മാറുന്നു. "മനുഷ്യൻ പരാജയപ്പെടാൻ സൃഷ്ടിക്കപ്പെട്ടവനല്ല; അവനെ നശിപ്പിക്കാൻ കഴിഞ്ഞേക്കാം, പക്ഷേ പരാജയപ്പെടുത്താനാവില്ല" എന്ന നോവലിലെ ദാർശനിക വചനം കടൽയാത്രയിലെ ഏകാന്തതയുമായി ഇഴചേരുന്നു. പൊറ്റെക്കാട്ട് സാന്തിയാഗോയോടൊപ്പം സമുദ്രത്തിലൂടെ സഞ്ചരിക്കുന്നു എന്നൊരു മാന്ത്രിക പ്രതീതി ഈ വായനയിലൂടെ സൃഷ്ടിക്കപ്പെടുന്നു.
+
+ക്രാക്കാത്തൂവ അഗ്നിപർവ്വതവും വിസ്ഫോടന ചരിത്രവും:
+കപ്പൽ സുന്ദാ കടലിടുക്കിലൂടെ നീങ്ങുമ്പോൾ വിദൂരതയിൽ ഭീതിദമായ ക്രാക്കാത്തൂവ എന്ന അഗ്നിപർവ്വത ദ്വീപ് ദൃശ്യമാകുന്നു. നോമ്പോ ആ ദ്വീപിനെ പൊറ്റെക്കാട്ടിന് പരിചയപ്പെടുത്തിക്കൊടുക്കുന്നു. 'രാക്ഷസന്റെ വിശ്വരൂപം' എന്ന ഭാഗത്ത് ലോകചരിത്രത്തിലെ തന്നെ ഏറ്റവും ഭീകരമായ ക്രാക്കാത്തൂവ അഗ്നിപർവ്വത വിസ്ഫോടനത്തിന്റെ ചരിത്രയാഥാർത്ഥ്യങ്ങൾ പൊറ്റെക്കാട്ട് വായനക്കാർക്ക് മുന്നിൽ അനാവരണം ചെയ്യുന്നു. 1883 ആഗസ്റ്റിൽ ഉണ്ടായ ആ മഹാസ്ഫോടനത്തിൽ 36,000-ത്തിലധികം ആളുകൾ കൊല്ലപ്പെടുകയും 3,000 മൈൽ ദൂരം വരെ സ്ഫോടന ശബ്ദം മുഴങ്ങിക്കേൾക്കുകയും ചെയ്തു. സ്ഫോടനത്തെ തുടർന്നുണ്ടായ കൂറ്റൻ സുനാമിത്തിരകൾ ജാവയിലെയും സുമാത്രയിലെയും തീരങ്ങളിൽ വിതച്ച നാശനഷ്ടങ്ങൾ പ്രകൃതിയുടെ വിനാശകരമായ സംഹാരതാണ്ഡവമായി ചരിത്രത്തിൽ രേഖപ്പെടുത്തപ്പെട്ടു.
+
+ഉപസംഹാരം:
+പുറത്ത് പ്രകൃതിയുടെ സംഹാരശക്തിയായ ക്രാക്കാത്തൂവയും, അകത്ത് പ്രകൃതിയുടെ വെല്ലുവിളികളെ ധീരമായി നേരിടുന്ന മനുഷ്യന്റെ പ്രതീകമായ സാന്തിയാഗോയും തമ്മിലുള്ള ഒരു അത്ഭുതകരമായ ദാർശനിക സമന്വയമാണ് ഈ പാഠഭാഗം. കേവല കാഴ്ചകൾക്കപ്പുറം ചരിത്രവും സാഹിത്യവും മാനവികതയും സമന്വയിപ്പിക്കുന്ന പൊറ്റെക്കാട്ടിന്റെ പ്രതിഭ ഇതിനെ മലയാള സഞ്ചാരസാഹിത്യത്തിലെ അനശ്വരമായൊരു മാസ്റ്റർപീസാക്കി മാറ്റുന്നു.</div>
+            </div>
+            
+    <div class="q-type-title">പ്രധാന പരീക്ഷാ മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (15 Important MCQs)</div>
+    <div class="mcq-container">
+    
+        <div class="mcq-item">
+          <div class="mcq-q">1. 'കിഴവനും ക്രാക്കാത്തൂവയും' എന്ന യാത്രാവിവരണം ഏത് പുസ്തകത്തിലേതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കാപ്പിരികളുടെ നാട്ടിൽ</div>
+            <div class="mcq-opt">B) ഇന്തോനേഷ്യൻ യാത്രാവിവരണം (ബാലിദ്വീപ് യാത്ര)</div>
+            <div class="mcq-opt">C) നൈൽ ഡയറി</div>
+            <div class="mcq-opt">D) ലണ്ടൻ നോട്ട്ബുക്ക്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">2. എസ്.കെ. പൊറ്റെക്കാട്ടിന് ജ്ഞാനപീഠ പുരസ്കാരം നേടിക്കൊടുത്ത കൃതി ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വിഷകന്യക</div>
+            <div class="mcq-opt">B) ഒരു തെരുവിന്റെ കഥ</div>
+            <div class="mcq-opt">C) ഒരു ദേശത്തിന്റെ കഥ</div>
+            <div class="mcq-opt">D) കുരുത്തോല</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">3. കപ്പലിന്റെ ഡെക്കിലിരുന്ന് പൊറ്റെക്കാട്ട് വായിച്ച വിദേശ നോവൽ ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) യുദ്ധവും സമാധാനവും</div>
+            <div class="mcq-opt">B) കിഴവനും കടലും (The Old Man and the Sea)</div>
+            <div class="mcq-opt">C) അമ്മ</div>
+            <div class="mcq-opt">D) പാവങ്ങൾ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">4. 'കിഴവനും കടലും' എന്ന നോവലിലെ പ്രധാന കഥാപാത്രമായ വൃദ്ധന്റെ പേരെന്ത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) മനോലിൻ</div>
+            <div class="mcq-opt">B) സാന്തിയാഗോ</div>
+            <div class="mcq-opt">C) പെഡ്രോ</div>
+            <div class="mcq-opt">D) ജോ ഡിമാഗിയോ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">5. ക്രാക്കാത്തോവ അഗ്നിപർവ്വത സ്ഫോടനം ഉണ്ടായ വർഷമേത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 1955</div>
+            <div class="mcq-opt">B) 1883 ആഗസ്റ്റ്</div>
+            <div class="mcq-opt">C) 1947</div>
+            <div class="mcq-opt">D) 1900</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">6. ക്രാക്കാത്തോവ സ്ഫോടനത്തിൽ എത്രപേർ കൊല്ലപ്പെട്ടതായാണ് കണക്കാക്കുന്നത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 10,000</div>
+            <div class="mcq-opt">B) 36,000-ലധികം</div>
+            <div class="mcq-opt">C) 50,000</div>
+            <div class="mcq-opt">D) 5,000</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">7. ക്രാക്കാത്തോവ സ്ഫോടനത്തിന്റെ ശബ്ദം എത്ര മൈൽ അകലെ വരെ കേട്ടു?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 500 മൈൽ</div>
+            <div class="mcq-opt">B) 1000 മൈൽ</div>
+            <div class="mcq-opt">C) 3000 മൈൽ</div>
+            <div class="mcq-opt">D) 100 മൈൽ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">8. പൊറ്റെക്കാട്ട് കപ്പലിലെ ഒന്നാം ക്ലാസ് ഉപേക്ഷിച്ച് എവിടേക്കാണ് പോയത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) എഞ്ചിൻ റൂമിലേക്ക്</div>
+            <div class="mcq-opt">B) ക്യാപ്റ്റന്റെ മുറിയിലേക്ക്</div>
+            <div class="mcq-opt">C) ഡെക്കിലേക്ക് (തട്ടിലേക്ക്)</div>
+            <div class="mcq-opt">D) അടുക്കളയിലേക്ക്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">9. ഡെക്കിൽ ഉണ്ടായിരുന്ന സാധാരണ യാത്രക്കാർ ഏത് ദേശക്കാരായിരുന്നു?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ജപ്പാൻകാർ</div>
+            <div class="mcq-opt">B) ഇംഗ്ലീഷുകാർ</div>
+            <div class="mcq-opt">C) ജാവക്കാർ (ഇന്തോനേഷ്യക്കാർ)</div>
+            <div class="mcq-opt">D) ആഫ്രിക്കക്കാർ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">10. ഏണസ്റ്റ് ഹെമിങ്‌വേ ഏത് രാജ്യക്കാരനായ എഴുത്തുകാരനാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഇംഗ്ലണ്ട്</div>
+            <div class="mcq-opt">B) റഷ്യ</div>
+            <div class="mcq-opt">C) അമേരിക്ക</div>
+            <div class="mcq-opt">D) ഫ്രാൻസ്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">11. 'മനുഷ്യൻ പരാജയപ്പെടാൻ സൃഷ്ടിക്കപ്പെട്ടവനല്ല' എന്ന വാക്യം ആരുടെ കൃതിയിലേതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ടോൾസ്റ്റോയ്</div>
+            <div class="mcq-opt">B) ഷേക്സ്പിയർ</div>
+            <div class="mcq-opt">C) ഏണസ്റ്റ് ഹെമിങ്‌വേ</div>
+            <div class="mcq-opt">D) ഒ. ചന്തുമേനോൻ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">12. ക്രാക്കാത്തോവ സ്ഥിതി ചെയ്യുന്നത് ഏത് കടലിടുക്കിലാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) പാക് കടലിടുക്ക്</div>
+            <div class="mcq-opt">B) സുന്ദാ കടലിടുക്ക് (Sunda Strait)</div>
+            <div class="mcq-opt">C) മലാക്ക കടലിടുക്ക്</div>
+            <div class="mcq-opt">D) ജിബ്രാൾട്ടർ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">13. എസ്.കെ. പൊറ്റെക്കാട്ടിന്റെ യാത്ര നടന്ന വർഷമേത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 1945</div>
+            <div class="mcq-opt">B) 1955</div>
+            <div class="mcq-opt">C) 1965</div>
+            <div class="mcq-opt">D) 1975</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">14. സാന്തിയാഗോ പിടിച്ച ഭീമാകാരമായ മത്സ്യത്തിന്റെ ഇനം ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) തിമിംഗലം</div>
+            <div class="mcq-opt">B) സ്രാവ്</div>
+            <div class="mcq-opt">C) മാർലിൻ (Marlin)</div>
+            <div class="mcq-opt">D) അയല</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">15. 'കിഴവനും ക്രാക്കാത്തൂവയും' എന്ന പാഠഭാഗം പ്രധാനമായും ചർച്ച ചെയ്യുന്നത് എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) സാമ്പത്തിക ശാസ്ത്രം</div>
+            <div class="mcq-opt">B) പ്രകൃതിയുടെ സംഹാരശക്തിയും മനുഷ്യന്റെ തോൽക്കാത്ത ഇച്ഛാശക്തിയും</div>
+            <div class="mcq-opt">C) കപ്പലിന്റെ എൻജിൻ പ്രവർത്തനം</div>
+            <div class="mcq-opt">D) വിദേശ നയതന്ത്രം</div>
+          </div>
+        </div>
+        </div>
+    <div class="mcq-key-card">
+      <h4>MCQ ഉത്തര സൂചിക & വിശദീകരണങ്ങൾ (Answer Key)</h4>
+      <div class="key-grid">
+    
+        <div class="key-item">
+          <b>1. B</b>: എസ്.കെ. പൊറ്റെക്കാട്ടിന്റെ ഇന്തോനേഷ്യൻ യാത്രാവിവരണത്തിലെ അധ്യായമാണിത്.
+        </div>
+        
+        <div class="key-item">
+          <b>2. C</b>: 1980-ൽ 'ഒരു ദേശത്തിന്റെ കഥ' എന്ന നോവലിനാണ് പൊറ്റെക്കാട്ടിന് ജ്ഞാനപീഠം ലഭിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>3. B</b>: ഏണസ്റ്റ് ഹെമിങ്‌വേയുടെ 'The Old Man and the Sea' ആണ് അദ്ദേഹം വായിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>4. B</b>: ക്യൂബൻ വൃദ്ധനായ മുക്കുവന്റെ പേര് സാന്തിയാഗോ എന്നാണ്.
+        </div>
+        
+        <div class="key-item">
+          <b>5. B</b>: 1883 ആഗസ്റ്റിലാണ് ഭീകരമായ ക്രാക്കാത്തോവ അഗ്നിപർവ്വത സ്ഫോടനം ഉണ്ടായത്.
+        </div>
+        
+        <div class="key-item">
+          <b>6. B</b>: സ്ഫോടനത്തിലും തുടർന്നുണ്ടായ സുനാമിയിലുമായി 36,000-ൽ അധികം ആളുകൾ കൊല്ലപ്പെട്ടു.
+        </div>
+        
+        <div class="key-item">
+          <b>7. C</b>: ഏകദേശം 3,000 മൈൽ ദൂരം വരെ സ്ഫോടനത്തിന്റെ ഭയങ്കര ശബ്ദം മുഴങ്ങിക്കേട്ടു.
+        </div>
+        
+        <div class="key-item">
+          <b>8. C</b>: സാധാരണക്കാരായ ജാവക്കാർ യാത്ര ചെയ്യുന്ന കപ്പലിന്റെ ഡെക്കിലേക്കാണ് അദ്ദേഹം പോയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>9. C</b>: ഇന്തോനേഷ്യയിലെ ജാവ ദ്വീപുകാരായ സാധാരണക്കാരായിരുന്നു ഡെക്കിലെ യാത്രക്കാർ.
+        </div>
+        
+        <div class="key-item">
+          <b>10. C</b>: ഏണസ്റ്റ് ഹെമിങ്‌വേ വിഖ്യാതനായ അമേരിക്കൻ നോവലിസ്റ്റാണ്.
+        </div>
+        
+        <div class="key-item">
+          <b>11. C</b>: ഹെമിങ്‌വേയുടെ 'കിഴവനും കടലും' എന്ന നോവലിലെ വിഖ്യാത വാക്യമാണിത്.
+        </div>
+        
+        <div class="key-item">
+          <b>12. B</b>: ജാവയ്ക്കും സുമാത്രയ്ക്കും ഇടയിലുള്ള സുന്ദാ കടലിടുക്കിലാണ് ക്രാക്കാത്തോവ.
+        </div>
+        
+        <div class="key-item">
+          <b>13. B</b>: 1955-ലാണ് അദ്ദേഹം ഇന്തോനേഷ്യൻ ദ്വീപുകളിലേക്ക് കപ്പൽയാത്ര നടത്തിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>14. C</b>: ഭീമാകാരമായ മാർലിൻ മത്സ്യത്തെയാണ് സാന്തിയാഗോ ദിവസങ്ങളോളം പൊരുതി പിടികൂടിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>15. B</b>: പ്രകൃതിയുടെ ഭീകരതയും മനുഷ്യന്റെ ചെറുത്തുനിൽപ്പും തമ്മിലുള്ള സമന്വയമാണ് ഇതിന്റെ കാതൽ.
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="exam-points-card">
+      <div class="exam-points-head">
+        <h3>അധ്യാപകനും ഉള്ളടക്കവും സംബന്ധിച്ച 20 പ്രധാന പരീക്ഷാ പോയിന്റുകൾ</h3>
+        <span class="exam-tag">20 EXAM FOCUS POINTS</span>
+      </div>
+      <ul class="exam-points-list">
+    <li>1. രചയിതാവ്: എസ്.കെ. പൊറ്റെക്കാട്ട് (1913–1982) - മലയാള സഞ്ചാരസാഹിത്യത്തിന്റെ കുലപതി.</li><li>2. ജ്ഞാനപീഠ പുരസ്കാരം ലഭിച്ച വർഷം: 1980 ('ഒരു ദേശത്തിന്റെ കഥ').</li><li>3. പാഠഭാഗം എടുത്തത്: ഇന്തോനേഷ്യൻ യാത്രാവിവരണത്തിൽ നിന്ന് (1955-ലെ യാത്ര).</li><li>4. കപ്പലിലെ ഒന്നാം ക്ലാസ് വിരസമായപ്പോൾ പൊറ്റെക്കാട്ട് ഡെക്കിലേക്ക് മാറി.</li><li>5. ഡെക്കിലെ യാത്രക്കാർ: ദരിദ്രരും സാധാരണക്കാരുമായ ജാവൻ തൊഴിലാളികളും സ്ത്രീകളും.</li><li>6. വായന: ഏണസ്റ്റ് ഹെമിങ്‌വേയുടെ 'ദി ഓൾഡ് മാൻ ആൻഡ് ദി സീ' (കിഴവനും കടലും).</li><li>7. ഹെമിങ്‌വേയ്ക്ക് പുലിറ്റ്സർ സമ്മാനവും (1953) നോബൽ സമ്മാനവും (1954) നേടിക്കൊടുത്ത കൃതിയാണിത്.</li><li>8. കേന്ദ്ര കഥാപാത്രം: സാന്തിയാഗോ എന്ന ക്യൂബൻ വൃദ്ധ മുക്കുവൻ.</li><li>9. സാന്തിയാഗോ പിടിച്ച മത്സ്യം: 18 അടി നീളമുള്ള മാർലിൻ മത്സ്യം.</li><li>10. പ്രശസ്ത തത്ത്വം: 'Man is not made for defeat. A man can be destroyed but not defeated.'</li><li>11. അഗ്നിപർവ്വതം: ക്രാക്കാത്തോവ (ഇന്തോനേഷ്യൻ ഉച്ചാരണം: ക്രാക്കാത്തൂവ).</li><li>12. സ്ഥാനം: സുമാത്രയ്ക്കും ജാവയ്ക്കും ഇടയിലുള്ള സുന്ദാ കടലിടുക്കിൽ.</li><li>13. ചരിത്രപരമായ സ്ഫോടനം: 1883 ആഗസ്റ്റ് 26-27 തീയതികളിൽ.</li><li>14. നാശനഷ്ടം: 36,000-ലധികം മനുഷ്യജീവനുകൾ, 160-ലധികം ഗ്രാമങ്ങൾ തകർന്നു.</li><li>15. സ്ഫോടന ശബ്ദം 3,000 മൈൽ ദൂരെ വരെ മുഴങ്ങിക്കേട്ടു (ചരിത്രത്തിലെ ഏറ്റവും ഉച്ചത്തിലുള്ള ശബ്ദം).</li><li>16. സാഹിത്യവും പ്രകൃതിയും: പുറത്ത് പ്രകൃതിയുടെ വിനാശരൂപം (അഗ്നിപർവ്വതം), അകത്ത് മനുഷ്യന്റെ പോരാട്ടവീര്യം (സാന്തിയാഗോ).</li><li>17. പൊറ്റെക്കാട്ടിന്റെ ശൈലി: കേവല വിവരണം വിട്ട് ചരിത്രവും മാനവികതയും സമന്വയിപ്പിക്കുന്ന ആഖ്യാനം.</li><li>18. സഞ്ചാരസാഹിത്യത്തിലെ ജനാധിപത്യബോധം: സാധാരണ മനുഷ്യരുടെ ജീവിതാനുഭവങ്ങൾക്ക് പ്രാമുഖ്യം നൽകൽ.</li><li>19. കടൽയാത്രയുടെ സൗന്ദര്യവും ഏകാന്തതയും ഭാഷാമാധുര്യത്തോടെ വരച്ചുകാട്ടുന്നു.</li><li>20. പരീക്ഷാ ഫോക്കസ്: പൊറ്റെക്കാട്ടിന്റെ യാത്രാസവിശേഷതകൾ, സാന്തിയാഗോയുടെ പ്രതീകാത്മകത, ക്രാക്കാത്തോവ സ്ഫോടന ചരിത്രം.</li>
+      </ul>
+    </div>
+    </div></div></body></html>

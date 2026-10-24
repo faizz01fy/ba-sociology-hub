@@ -1,0 +1,1024 @@
+<!DOCTYPE html><html lang="ml"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"><meta charset="UTF-8"><title>Philosophy of AI · Module 1 · Chapter 3</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0f172a;
+    }
+
+    .page-container {
+      width: 210mm;
+      height: 297mm;
+      padding: 12mm 14mm 10mm 14mm;
+      margin: 0 auto;
+      background: #ffffff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+    }
+
+    .top-bar-left {
+      font-size: 8pt;
+      font-weight: 800;
+      color: #7c3aed;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar-right {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .chapter-hero {
+      background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%);
+      border: 1.5px solid #7c3aed;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #7c3aed;
+      color: #ffffff;
+      font-size: 7.2pt;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .hero-title-en {
+      font-size: 13pt;
+      font-weight: 800;
+      color: #4c1d95;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #6d28d9;
+      line-height: 1.35;
+    }
+
+    .content-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 7px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .section-header {
+      background: #f1f5f9;
+      padding: 5px 10px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .section-title-en {
+      font-size: 8.8pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .section-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 700;
+      color: #7c3aed;
+    }
+
+    .block-en {
+      padding: 6px 10px;
+      border-left: 3.5px solid #7c3aed;
+      background: #ffffff;
+    }
+
+    .block-en-label {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #6d28d9;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .block-en p {
+      font-size: 8pt;
+      color: #1e293b;
+      line-height: 1.38;
+      margin: 0 0 4px 0;
+    }
+
+    .block-en p:last-child {
+      margin-bottom: 0;
+    }
+
+    .block-ml {
+      padding: 6px 10px;
+      border-left: 3.5px solid #8b5cf6;
+      background: #fdf4ff;
+      border-top: 1px dashed #e2e8f0;
+    }
+
+    .block-ml-label {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #701a75;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .block-ml p {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      color: #4a044e;
+      line-height: 1.45;
+      margin: 0 0 4px 0;
+    }
+
+    .block-ml p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* STRICT TWO HIGHLIGHTERS */
+    .hl-green {
+      background: #bbf7d0;
+      color: #14532d;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .hl-yellow {
+      background: #fef08a;
+      color: #713f12;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .page-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 4px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    /* PAGE 12 EXAM GRID */
+    .page-exam-grid {
+      padding: 10mm 12mm 8mm 12mm;
+    }
+
+    .exam-header-compact {
+      text-align: center;
+      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+      border: 1.5px solid #7c3aed;
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-bottom: 8px;
+    }
+
+    .exam-title-badge {
+      display: inline-block;
+      background: #7c3aed;
+      color: #ffffff;
+      font-size: 7pt;
+      font-weight: 800;
+      padding: 1.5px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .exam-hero-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #4c1d95;
+      line-height: 1.2;
+    }
+
+    .exam-hero-sub {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #6d28d9;
+      line-height: 1.3;
+    }
+
+    .points-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    .point-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 4.5px 6px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .point-header {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+
+    .point-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 1.5px 4px;
+      border-radius: 3px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .point-title-en {
+      font-size: 6.9pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .point-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 700;
+      color: #7c3aed;
+      margin-bottom: 1.5px;
+    }
+
+    .point-body {
+      font-size: 6.2pt;
+      color: #334155;
+      line-height: 1.25;
+    }
+
+    .point-body-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.1pt;
+      color: #4a044e;
+      line-height: 1.3;
+      margin-top: 1px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 8px 6px !important;
+        background: #f1f5f9 !important;
+        font-size: 14px !important;
+      }
+      .page-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 16px 12px !important;
+        margin: 0 0 16px 0 !important;
+        border-radius: 14px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+        overflow: visible !important;
+      }
+      .top-bar-left, .top-bar-right {
+        font-size: 11px !important;
+      }
+    }
+    
+  </style></head><body>
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 3</span>
+        <span class="top-bar-right">Page 1 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="chapter-hero">
+        <div class="hero-tag">🎓 Calicut University FYUGP · Module 1 · Chapter 3</div>
+        <div class="hero-title-en">CHAPTER III: Philosophy in the Light of AI</div>
+        <div class="hero-title-ml">അദ്ധ്യായം 3: നിർമ്മിത ബുദ്ധിയുടെ വെളിച്ചത്തിൽ തത്ത്വചിന്ത</div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Academic Overview: A Novel Philosophical Epoch</span>
+          <span class="section-title-ml">(Curriculum അവലോകനം: പുതിയ ദാർശനിക യുഗം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>The emergence of Artificial Intelligence (AI) has introduced a novel domain in philosophy, questioning established concepts regarding consciousness, epistemology, ethics, and human identity. <span class="hl-yellow">Artificial intelligence is not merely a technological advancement but also a significant philosophical occurrence that necessitates a re-evaluation of the concepts of thought, knowledge, and humanity.</span> Since antiquity, philosophy has posed fundamental inquiries: <em>"What is knowledge?", "What is the nature of consciousness?", "In what manners are mind and body differentiated?", "What constitutes morality?"</em> The progression of AI prompts a re-evaluation of these longstanding issues from an unprecedented perspective.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>നിർമ്മിത ബുദ്ധിയുടെ (AI) ആവിർഭാവം തത്ത്വചിന്തയിൽ ഒരു പുതിയ യുഗത്തിന് തുടക്കം കുറിച്ചിരിക്കുന്നു. മനുഷ്യന്റെ ബോധം, ജ്ഞാനശാസ്ത്രം (Epistemology), ധാർമ്മികത, മനുഷ്യ വ്യക്തിത്വം എന്നിവയെക്കുറിച്ചുള്ള പരമ്പരാഗത സങ്കല്പങ്ങളെ ഇത് പുനഃപരിശോധിക്കുന്നു. <span class="hl-yellow">നിർമ്മിത ബുദ്ധി എന്നത് കേവലമൊരു സാങ്കേതിക മുന്നേറ്റം മാത്രമല്ല; ചിന്ത, അറിവ്, മനുഷ്യത്വം എന്നിവയെക്കുറിച്ചുള്ള കാഴ്ചപ്പാടുകളെ പുനർമൂല്യനിർണ്ണയം ചെയ്യാൻ പ്രേരിപ്പിക്കുന്ന ചരിത്രപരമായ ഒരു ദാർശനിക പ്രതിഭാസം കൂടിയാണിത്.</span> പുരാതന കാലം മുതൽ തത്ത്വചിന്ത ഉന്നയിച്ച അടിസ്ഥാന ചോദ്യങ്ങളെ പുതിയ വെളിച്ചത്തിൽ നോക്കിക്കാണാൻ AI നമ്മെ പ്രേരിപ്പിക്കുന്നു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Three Core Curriculum Chapter Objectives</span>
+          <span class="section-title-ml">(Curriculum പാഠ്യപദ്ധതിയിലെ മൂന്ന് പ്രധാന ലക്ഷ്യങ്ങൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>According to the official curriculum text, this chapter systematically investigates three primary intellectual pillars:</p>
+          <p>1. <span class="hl-yellow">Intelligence and Consciousness:</span> Investigate the notions of cognition, consciousness, subjective awareness, and the mind-body problem.</p>
+          <p>2. <span class="hl-yellow">Epistemological Approach:</span> Investigate truth, veracity, Justified True Belief (JTB), and the principal theories of truth (Correspondence, Coherence, Pragmatic).</p>
+          <p>3. <span class="hl-yellow">Ethical Norms & Accountability:</span> Investigate the etymological origins of ethics, applied ethics, algorithmic fairness, transparency, and personal identity in the AI era.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>Curriculum പാഠഭാഗം അനുസരിച്ച് ഈ അധ്യായം മൂന്ന് അടിസ്ഥാന സ്തംഭങ്ങളെയാണ് പരിശോധിക്കുന്നത്:</p>
+          <p>1. <span class="hl-yellow">ബുദ്ധിയും ബോധവും:</span> കോഗ്നിഷൻ, ബോധം, മനസ്സ്-ശരീര ബന്ധം എന്നിവയെക്കുറിച്ചുള്ള സമഗ്രമായ അന്വേഷണം.</p>
+          <p>2. <span class="hl-yellow">ജ്ഞാനശാസ്ത്ര സമീപനം:</span> അറിവ്, സത്യം, ജസ്റ്റിഫൈഡ് ട്രൂ ബിലീഫ് (JTB), സത്യത്തെക്കുറിച്ചുള്ള മൂന്ന് പ്രധാന സിദ്ധാന്തങ്ങൾ (കറസ്പോണ്ടൻസ്, കോഹറൻസ്, പ്രാഗ്മാറ്റിക്).</p>
+          <p>3. <span class="hl-yellow">ധാർമ്മികതയും ഉത്തരവാദിത്തവും:</span> എത്തിക്സിന്റെ ഭാഷാപരമായ ഉത്ഭവം, പ്രായോഗിക ധാർമ്മികത, അക്കൗണ്ടബിലിറ്റി, AI യുഗത്തിലെ മനുഷ്യ വ്യക്തിത്വം എന്നിവ.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 1 · Chapter 3: Philosophy in the Light of AI</span>
+      <span>Page 1</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 3</span>
+        <span class="top-bar-right">Page 2 of 12 ✨ Cognition & Consciousness</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Defining Cognition in Philosophy & Cognitive Science</span>
+          <span class="section-title-ml">(തത്ത്വചിന്തയിൽ കോഗ്നിഷന്റെ നിർവ്വചനം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>In philosophy, <span class="hl-yellow">cognition has traditionally been seen as the mental capacity for knowledge, encompassing all processes associated with acquiring, storing, manipulating, and utilising knowledge.</span> It constitutes a significant component of <span class="hl-yellow">Epistemology</span> (the philosophy of knowing) and the <span class="hl-yellow">Philosophy of Mind</span>. In general philosophical terminology, cognition encompasses the states and processes that result in knowing, and is strictly differentiated from sensation, raw emotion, and volition. In modern cognitive psychology and cognitive science, cognition is conceptualized as the representational state and computational process of the mind, encompassing language, symbol manipulation, and behavioral regulation.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>തത്ത്വചിന്തയിൽ, <span class="hl-yellow">അറിവ് നേടാനും, സൂക്ഷിച്ചുവെക്കാനും, കൈകാര്യം ചെയ്യാനും, പ്രയോഗിക്കാനുമുള്ള മനസ്സിന്റെ ശേഷിയെയാണ് കോഗ്നിഷൻ (Cognition) എന്ന് പരമ്പരാഗതമായി നിർവ്വചിക്കുന്നത്.</span> ഇത് ജ്ഞാനശാസ്ത്രത്തിന്റെയും (Epistemology) മനസ്സിന്റെ തത്ത്വചിന്തയുടെയും (Philosophy of Mind) പ്രധാന ഭാഗമാണ്. കേവലമായ ഇന്ദ്രിയാനുഭവങ്ങൾ, വികാരങ്ങൾ, ആഗ്രഹങ്ങൾ എന്നിവയിൽ നിന്ന് വ്യത്യസ്തമായി അറിവിലേക്ക് നയിക്കുന്ന ബോധപൂർവ്വമായ മാനസിക പ്രക്രിയകളെയാണ് കോഗ്നിഷൻ എന്ന് വിളിക്കുന്നത്. ആധുനിക കോഗ്നിറ്റീവ് സയൻസിൽ ഭാഷാ പ്രയോഗം, ചിഹ്നങ്ങളുടെ പ്രോസസ്സിംഗ്, പെരുമാറ്റ നിയന്ത്രണം എന്നിവ ഇതിൽ ഉൾപ്പെടുന്നു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">René Descartes: "Cognitio" vs. "Scientia" & Subjective Awareness</span>
+          <span class="section-title-ml">(റെനെ ദെക്കാർത്ത്: കോഗ്നിഷ്യോയും സയൻഷ്യയും ആന്തരിക ബോധവും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-green">René Descartes</span> meticulously scrutinized the distinction between the mind and the body. "Cognitio" is typically rendered as "knowledge"; nevertheless, this translation lacks precision. Although "knowledge" is properly a translation of the Latin <span class="hl-yellow">"scientia"</span>, Descartes differentiated <span class="hl-yellow">cognitio</span> from <span class="hl-yellow">scientia</span>, asserting that much of our ordinary cognition is muddled, confused, and insufficient. <span class="hl-yellow">Descartes asserted that awareness constitutes the essence of the mind (the fundamental attribute of mental states), concluding that all mental states are necessarily conscious.</span> From a Cartesian perspective, consciousness is inherently subjective, as the individual possessing it possesses exclusive, privileged first-person access that no external observer can directly attain.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-green">റെനെ ദെക്കാർത്ത്</span> മനസ്സിനെയും ശരീരത്തെയും വേർതിരിച്ച് വിശകലനം ചെയ്തു. ലാറ്റിൻ പദമായ <span class="hl-yellow">"കോഗ്നിഷ്യോ" (Cognitio)</span> സാധാരണയായി 'അറിവ്' എന്ന് വിവർത്തനം ചെയ്യപ്പെടാറുണ്ടെങ്കിലും അത് പൂർണ്ണമായും കൃത്യമല്ല. യഥാർത്ഥ അറിവിനെ സൂചിപ്പിക്കുന്നത് <span class="hl-yellow">"സയൻഷ്യ" (Scientia)</span> എന്ന പദമാണ്. കോഗ്നിഷ്യോ പലപ്പോഴും അവ്യക്തവും അപൂർണ്ണവുമായ സാധാരണ ധാരണകളായിരിക്കാമെന്ന് ദെക്കാർത്ത് സമർത്ഥിച്ചു. <span class="hl-yellow">ബോധമാണ് മനസ്സിന്റെ കാതൽ എന്ന് പ്രഖ്യാപിച്ച അദ്ദേഹം, എല്ലാ മാനസിക അവസ്ഥകളും ബോധപൂർവ്വമായവയാണെന്ന് വാദിച്ചു.</span> ഒരു വ്യക്തിക്ക് തന്റെ ആന്തരിക ചിന്തകളിലേക്ക് മാത്രമുള്ള സ്വകാര്യമായ ആദ്യ-വ്യക്തി അനുഭവം (subjective privileged access) മറ്റാർക്കും നേരിട്ട് കാണാനാവില്ലെന്ന് അദ്ദേഹം വ്യക്തമാക്കി.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 1 · Chapter 3: Philosophy in the Light of AI</span>
+      <span>Page 2</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 3</span>
+        <span class="top-bar-right">Page 3 of 12 ✨ Spinoza's Three Grades of Cognition</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Baruch Spinoza: Epistemological Levels of Knowing</span>
+          <span class="section-title-ml">(ബറൂക്ക് സ്പിനോസ: ജ്ഞാനത്തിന്റെ മൂന്ന് തലങ്ങൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>17th-century rationalist philosopher <span class="hl-green">Baruch Spinoza</span> formulated a rigorous hierarchical classification of cognition, differentiating among three distinct grades of knowing:</p>
+          <p>• <span class="hl-yellow">First Grade (Opinion and Imagination):</span> Consists of superficial, second-hand opinions, sensory imagination, and cognition generated from fluctuating, vague experiences. <span class="hl-yellow">Spinoza declared that this first level of cognition is the sole source of falsehood and error.</span></p>
+          <p>• <span class="hl-yellow">Second Grade (Reason / Ratio):</span> Scientific and logical rationality. It investigates the fundamental causes and laws of events, seeking common notions and necessary deductive truths.</p>
+          <p>• <span class="hl-yellow">Third Grade (Intuitive Knowledge / Scientia Intuitiva):</span> The highest grade of cognition. It progresses directly from an adequate concept of the formal essence of certain attributes of God/Nature to the comprehensive, holistic intellectual understanding of the essence of things. <span class="hl-yellow">"Only first-order cognition is the source of falsehood; second- and third-order cognition is inherently and necessarily true."</span></p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>പതിനേഴാം നൂറ്റാണ്ടിലെ പ്രമുഖ തത്ത്വചിന്തകനായ <span class="hl-green">ബറൂക്ക് സ്പിനോസ</span> അറിവിനെ മൂന്ന് ശ്രേണികളായി തരംതിരിച്ചു:</p>
+          <p>• <span class="hl-yellow">ഒന്നാം തലം (അഭിപ്രായങ്ങളും ഭാവനയും):</span> ബാഹ്യമായ ഇന്ദ്രിയാനുഭവങ്ങൾ, കേട്ടുകേൾവികൾ, ഭാവനകൾ എന്നിവയിൽ നിന്ന് രൂപപ്പെടുന്ന അറിവാണിത്. <span class="hl-yellow">ഈ ഒന്നാം തരം ജ്ഞാനം മാത്രമാണ് എല്ലാ തെറ്റുകളുടെയും വ്യാജധാരണകളുടെയും ഉറവിടമെന്ന് സ്പിനോസ പ്രഖ്യാപിച്ചു.</span></p>
+          <p>• <span class="hl-yellow">രണ്ടാം തലം (യുക്തി / Ratio):</span> പ്രതിഭാസങ്ങളുടെ അടിസ്ഥാന കാരണങ്ങളെയും സാർവ്വത്രിക നിയമങ്ങളെയും കണ്ടെത്താൻ ശ്രമിക്കുന്ന ശാസ്ത്രീയവും യുക്തിസഹവുമായ അറിവാണിത്.</p>
+          <p>• <span class="hl-yellow">മൂന്നാം തലം (അന്തർജ്ഞാനം / Scientia Intuitiva):</span> അറിവിന്റെ ഏറ്റവും ഉയർന്ന തലമാണിത്. പ്രകൃതിയുടെ അല്ലെങ്കിൽ പ്രപഞ്ചത്തിന്റെ ആന്തരിക സത്തയെ സമഗ്രമായി നേരിട്ട് ഗ്രഹിക്കുന്ന ജ്ഞാനമാണിത്. <span class="hl-yellow">"ഒന്നാം തരത്തിലുള്ള അറിവ് മാത്രമാണ് തെറ്റുകൾക്ക് കാരണം; രണ്ടും മൂന്നും തരത്തിലുള്ള അറിവുകൾ സ്വാഭാവികമായും സത്യസന്ധവും കുറ്റമറ്റതുമാണ്."</span></p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Relevance of Spinoza's Grades to Modern AI Systems</span>
+          <span class="section-title-ml">(ആധുനിക AI സംവിധാനങ്ങളിൽ സ്പിനോസയുടെ പ്രസക്തി)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>In computational philosophy, modern machine learning models (such as LLMs) operate largely within Spinoza’s <span class="hl-yellow">first grade</span>: they assimilate statistical patterns from human training data, which inherently leaves them susceptible to hallucinations and falsehoods. Classical symbolic systems attempt to implement the <span class="hl-yellow">second grade</span> (formal deductive ratio). Achieving the <span class="hl-yellow">third grade</span> (holistic intuitive comprehension) remains an insurmountable barrier for contemporary artificial agents.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>കമ്പ്യൂട്ടേഷണൽ തത്ത്വചിന്തയിൽ, ഇന്നത്തെ ലാർജ് ലാംഗ്വേജ് മോഡലുകൾ (LLMs) സ്പിനോസയുടെ <span class="hl-yellow">ഒന്നാം തലത്തിലാണ്</span> പ്രവർത്തിക്കുന്നത്: വലിയ അളവിലുള്ള ഡാറ്റയിൽ നിന്നുള്ള പാറ്റേണുകൾ മാത്രം സ്വീകരിക്കുന്നതിനാൽ അവയിൽ മിഥ്യാധാരണകൾ (hallucinations) സംഭവിക്കുന്നു. ക്ലാസിക്കൽ AI <span class="hl-yellow">രണ്ടാം തലമായ</span> ഫോർമൽ യുക്തി നടപ്പിലാക്കാൻ ശ്രമിക്കുന്നു. എന്നാൽ <span class="hl-yellow">മൂന്നാം തലമായ</span> സമഗ്രമായ അന്തർജ്ഞാനം കൈവരിക്കാൻ ഇന്നത്തെ ഒരു AI-ക്കും സാധിച്ചിട്ടില്ല.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 1 · Chapter 3: Philosophy in the Light of AI</span>
+      <span>Page 3</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 3</span>
+        <span class="top-bar-right">Page 4 of 12 ✨ Empiricism & Tabula Rasa</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Empiricist Paradigm: Tabula Rasa & Sensory Foundations</span>
+          <span class="section-title-ml">(അനുഭവവാദ മാതൃക: ടാബുല റാസയും ഇന്ദ്രിയ അടിത്തറയും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>The fundamental principle of <span class="hl-yellow">Empiricism</span> asserts that all knowledge derives exclusively from sensory experience. Cognition is essentially the process of receiving, organizing, and integrating sensory data. Empiricists reject the Rationalist assertion of innate ideas, positing instead that <span class="hl-yellow">at birth, the mind is an unblemished "Tabula Rasa" (a blank slate)</span>. This signifies the total absence of pre-existing notions or innate cognitive frameworks independent of experience. All mental constructs must be developed from the foundational level through contact with reality.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">അനുഭവവാദത്തിന്റെ (Empiricism)</span> അടിസ്ഥാന തത്ത്വം, എല്ലാ അറിവുകളും ബാഹ്യ ഇന്ദ്രിയാനുഭവങ്ങളിൽ നിന്നാണ് ഉത്ഭവിക്കുന്നത് എന്നതാണ്. ഇന്ദ്രിയ വിവരങ്ങൾ സ്വീകരിക്കുകയും അവയെ ചിട്ടപ്പെടുത്തുകയുമാണ് കോഗ്നിഷൻ. ജനനസമയത്ത് മനുഷ്യന്റെ മനസ്സ് പൂർണ്ണമായും ശൂന്യമായ ഒരു എഴുത്തുപലകയാണ്—<span class="hl-yellow">"ടാബുല റാസ" (Tabula Rasa)</span>—എന്ന് അനുഭവവാദം സമർത്ഥിക്കുന്നു. ജനിക്കുമ്പോൾ തന്നെ മനസ്സിൽ മുൻകൂട്ടി നിശ്ചയിച്ച ആശയങ്ങൾ (innate ideas) ഇല്ലെന്നും, ബാഹ്യ ലോകവുമായുള്ള സമ്പർക്കത്തിലൂടെ മാത്രമേ എല്ലാ അറിവുകളും നിർമ്മിക്കപ്പെടുന്നുള്ളൂ എന്നും ഇത് വ്യക്തമാക്കുന്നു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Two Sources of Mental Content: Sensation and Reflection</span>
+          <span class="section-title-ml">(മാനസിക ഉള്ളടക്കത്തിന്റെ രണ്ട് ഉറവിടങ്ങൾ: സെൻസേഷനും റിഫ്ലെക്ഷനും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Empiricists categorize the origin of all mental content (ideas and concepts) into two fundamental sources:</p>
+          <p>1. <span class="hl-yellow">Sensation (External Sense):</span> Concepts obtained from experiencing the external environment via the five senses (e.g., the sensory notions of "red," "cold," "loud").</p>
+          <p>2. <span class="hl-yellow">Reflection (Internal Sense):</span> Concepts originating from the mind's observation of its own internal operations (e.g., the notions of "thinking," "willing," "believing").</p>
+          <p>Through <span class="hl-yellow">Associative Processing</span>, the brain combines indivisible <span class="hl-yellow">Simple Ideas</span> (direct sensations) into <span class="hl-yellow">Complex Ideas</span> (synthesized concepts, such as combining "horse" and "horn" into the complex notion of a "unicorn", or abstract concepts like "justice").</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>മനുഷ്യ മനസ്സിലെ എല്ലാ ആശയങ്ങളുടെയും ഉത്ഭവത്തെ അനുഭവവാദികൾ രണ്ട് സ്രോതസ്സുകളായി തരംതിരിക്കുന്നു:</p>
+          <p>1. <span class="hl-yellow">സെൻസേഷൻ (ബാഹ്യ ഇന്ദ്രിയാനുഭവം):</span> പഞ്ചേന്ദ്രിയങ്ങൾ വഴി ബാഹ്യ ലോകത്തുനിന്ന് ലഭിക്കുന്ന വിവരങ്ങൾ (ഉദാ: ചുവപ്പ്, തണുപ്പ്, വലിയ ശബ്ദം).</p>
+          <p>2. <span class="hl-yellow">റിഫ്ലെക്ഷൻ (ആന്തരിക മനനാനുഭവം):</span> മനസ്സ് സ്വന്തം പ്രവർത്തനങ്ങളെത്തന്നെ നിരീക്ഷിക്കുന്നതിലൂടെ ലഭിക്കുന്ന ആശയങ്ങൾ (ഉദാ: ചിന്തിക്കൽ, ആഗ്രഹിക്കൽ, വിശ്വസിക്കൽ).</p>
+          <p>നേരിട്ട് ലഭിക്കുന്ന ലളിതമായ ആശയങ്ങളെ (<span class="hl-yellow">Simple Ideas</span>) പരസ്പരം സംയോജിപ്പിച്ചുകൊണ്ടാണ് സങ്കീർണ്ണമായ ആശയങ്ങൾ (<span class="hl-yellow">Complex Ideas</span> - ഉദാ: കുതിരയും കൊമ്പും ചേർത്ത് യൂണികോൺ എന്ന സങ്കല്പം ഉണ്ടാക്കുന്നത്) മനസ്സ് നിർമ്മിക്കുന്നത്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 1 · Chapter 3: Philosophy in the Light of AI</span>
+      <span>Page 4</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 3</span>
+        <span class="top-bar-right">Page 5 of 12 ✨ Kant's Epistemological Synthesis</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Immanuel Kant's Synthesis: The Copernican Revolution in Epistemology</span>
+          <span class="section-title-ml">(ഇമ്മാനുവൽ കാന്റിന്റെ സമന്വയം: ജ്ഞാനശാസ്ത്രത്തിലെ കോപ്പർനിക്കൻ വിപ്ലവം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-green">Immanuel Kant</span> executed a revolutionary synthesis to resolve the longstanding impasse between Rationalism and Empiricism. Kant agreed with Rationalists that genuine knowledge must be necessary and universal, while concurring with Empiricists that all knowledge begins with experience. Kant declared that knowledge is the result of two indispensable factors operating in conjunction: <span class="hl-yellow">Knowledge = Sensory Input + Innate Mental Structures</span>. Termed the <span class="hl-yellow">"Copernican Revolution"</span>, Kant reversed the philosophical perspective: rather than the mind passively conforming to objects, objects must conform to the a priori architecture of the mind to be experienced at all.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-green">ഇമ്മാനുവൽ കാന്റ്</span> യുക്തിവാദവും അനുഭവവാദവും തമ്മിലുള്ള ചരിത്രപരമായ തർക്കത്തെ സമന്വയിപ്പിച്ചു. യഥാർത്ഥ അറിവ് സാർവ്വത്രികവും അനിവാര്യവുമായിരിക്കണമെന്ന് യുക്തിവാദികളോടൊപ്പം സമ്മതിച്ച അദ്ദേഹം, എല്ലാ അറിവുകളും ആരംഭിക്കുന്നത് അനുഭവങ്ങളിൽ നിന്നാണെന്ന അനുഭവവാദ തത്ത്വത്തെയും അംഗീകരിച്ചു. അദ്ദേഹം പ്രഖ്യാപിച്ച സൂത്രവാക്യം: <span class="hl-yellow">അറിവ് = ഇന്ദ്രിയ വിവരങ്ങൾ (Sensory Input) + മനസ്സിലെ അന്തർലീനമായ ഘടനകൾ (Innate Structures)</span>. മനസ്സ് ബാഹ്യ വസ്തുക്കൾക്ക് അനുസരിച്ച് മാറുന്നതിന് പകരം, നമ്മുടെ മനസ്സിന്റെ ഘടനയ്ക്ക് അനുസൃതമായി മാത്രമേ ബാഹ്യ വസ്തുക്കളെ അനുഭവിക്കാൻ കഴിയൂ എന്ന് അദ്ദേഹം സ്ഥാപിച്ചതിനെ <span class="hl-yellow">കോപ്പർനിക്കൻ വിപ്ലവം</span> എന്ന് വിളിക്കുന്നു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Two Complementary Faculties: Sensibility & Understanding</span>
+          <span class="section-title-ml">(മനസ്സിന്റെ രണ്ട് പൂരക ഘടകങ്ങൾ: സെൻസിബിലിറ്റിയും അണ്ടർസ്റ്റാൻഡിംഗും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Kant categorized human intellect into two indispensable faculties:</p>
+          <p>1. <span class="hl-yellow">Sensibility (Empiricist Faculty):</span> The mind's passive receptivity that absorbs raw sensory information. It organizes sensory chaos through two a priori forms of intuition: <span class="hl-yellow">Space</span> (organizing external perception) and <span class="hl-yellow">Time</span> (organizing internal sequential perception).</p>
+          <p>2. <span class="hl-yellow">Understanding (Rationalist Faculty):</span> The mind's active spontaneity that conceptualizes structured sensations via 12 innate <span class="hl-yellow">Categories of Comprehension</span>. The most critical are <span class="hl-yellow">Substance and Accident</span> (recognizing persistent entities) and <span class="hl-yellow">Causality and Dependence</span> (recognizing universal causal laws, refuting Hume's scepticism). Consciousness is unified via the <span class="hl-yellow">Transcendental Unity of Apperception</span>.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>മനുഷ്യ മനസ്സിനെ കാന്റ് രണ്ട് ഘടകങ്ങളായി തരംതിരിച്ചു:</p>
+          <p>1. <span class="hl-yellow">സെൻസിബിലിറ്റി (Sensibility):</span> ബാഹ്യ ലോകത്തുനിന്ന് വിവരങ്ങൾ സ്വീകരിക്കുന്ന നിഷ്ക്രിയ ഘടകം. ഇതിനെ ചിട്ടപ്പെടുത്താൻ മനസ്സ് <span class="hl-yellow">സ്ഥലം (Space)</span>, <span class="hl-yellow">സമയം (Time)</span> എന്നീ രണ്ട് സ്വതസിദ്ധമായ ചട്ടക്കൂടുകൾ ഉപയോഗിക്കുന്നു.</p>
+          <p>2. <span class="hl-yellow">അണ്ടർസ്റ്റാൻഡിംഗ് (Understanding):</span> വിവരങ്ങളെ ആശയങ്ങളാക്കി മാറ്റുന്ന മനസ്സിന്റെ സജീവ ഘടകം. ഇതിലുള്ള 12 കാറ്റഗറികളിൽ പ്രധാനപ്പെട്ടവയാണ് <span class="hl-yellow">സബ്‌സ്റ്റൻസ് & ആക്സിഡന്റ്</span>, <span class="hl-yellow">കാരണവും ഫലവും (Causality)</span> എന്നിവ. ഈ അനുഭവങ്ങളെയെല്ലാം കോർത്തിണക്കുന്ന കേന്ദ്ര ബിന്ദുവാണ് <span class="hl-yellow">ട്രാൻസെൻഡന്റൽ യൂണിറ്റി ഓഫ് അപ്പർസെപ്ഷൻ</span>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 1 · Chapter 3: Philosophy in the Light of AI</span>
+      <span>Page 5</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 3</span>
+        <span class="top-bar-right">Page 6 of 12 ✨ Philosophical Theories of Consciousness</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Philosophical Perspectives on Consciousness</span>
+          <span class="section-title-ml">(ബോധത്തെക്കുറിച്ചുള്ള പ്രധാന ദാർശനിക വീക്ഷണങ്ങൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>The Curriculum details how prominent philosophical schools conceptualize consciousness:</p>
+          <p>• <span class="hl-green">René Descartes (Dualism):</span> Consciousness is an immaterial substance (<span class="hl-yellow">Res Cogitans</span>) distinct from the physical mechanical body (<span class="hl-yellow">Res Extensa</span>), characterized by subjective first-person privileged access.</p>
+          <p>• <span class="hl-green">Baruch Spinoza (Monism):</span> Rejected dualism. There is only one substance—Nature or God. Consciousness (Thought) and physical reality (Extension) are two parallel attributes of this single reality.</p>
+          <p>• <span class="hl-green">Gottfried Leibniz (Idealism/Monadology):</span> Reality consists of an infinite array of mind-like entities called <span class="hl-yellow">Monads</span>, each reflecting the cosmos from its unique internal perspective.</p>
+          <p>• <span class="hl-green">Edmund Husserl (Phenomenology):</span> Consciousness is inherently <span class="hl-yellow">Intentional</span>—it is always directed toward an object ("consciousness of something").</p>
+          <p>• <span class="hl-green">William James (Radical Empiricism):</span> Consciousness is not an entity, but a dynamic relation within "pure experience."</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ബോധത്തെക്കുറിച്ചുള്ള പ്രമുഖ ദാർശനിക കാഴ്ചപ്പാടുകൾ Curriculum വിശദീകരിക്കുന്നു:</p>
+          <p>• <span class="hl-green">റെനെ ദെക്കാർത്ത് (ഡ്യുവലിസം):</span> ബോധം എന്നത് അഭൗതികമായ ആത്മാവാണ് (<span class="hl-yellow">Res Cogitans</span>); അത് ഭൗതിക ശരീരത്തിൽ (<span class="hl-yellow">Res Extensa</span>) നിന്നും സ്വതന്ത്രവും ആന്തരികവുമാണ്.</p>
+          <p>• <span class="hl-green">ബറൂക്ക് സ്പിനോസ (മോണിസം):</span> പ്രകൃതി അഥവാ ദൈവം എന്ന ഒരൊറ്റ സത്ത മാത്രമേ ഉള്ളൂ; ബോധവും ഭൗതിക ശരീരവും ആ ഒരൊറ്റ സത്തയുടെ രണ്ട് മുഖങ്ങൾ മാത്രമാണ്.</p>
+          <p>• <span class="hl-green">ഗോട്ട്ഫ്രൈഡ് ലൈബ്നിസ് (മോണഡോളജി):</span> പ്രപഞ്ചം മുഴുവൻ <span class="hl-yellow">മോണഡുകൾ (Monads)</span> എന്നറിയപ്പെടുന്ന ആത്മീയ ബിന്ദുക്കളാൽ നിർമ്മിതമാണ്; ഓരോ മോണഡും പ്രപഞ്ചത്തെ പ്രതിഫലിപ്പിക്കുന്നു.</p>
+          <p>• <span class="hl-green">എഡ്മണ്ട് ഹുസ്സെറൽ (ഫിനോമിനോളജി):</span> ബോധം എപ്പോഴും ബാഹ്യമായ ഒരു വസ്തുവിലേക്ക് തിരിഞ്ഞിരിക്കുന്നതാണ് (<span class="hl-yellow">Intentionality</span>).</p>
+          <p>• <span class="hl-green">വില്യം ജെയിംസ് (റാഡിക്കൽ എംപിരിസിസം):</span> ബോധം ഒരു പ്രത്യേക വസ്തുവല്ല, ശുദ്ധമായ അനുഭവങ്ങളുടെ ഒഴുക്കാണ്.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Computational Challenge to Consciousness</span>
+          <span class="section-title-ml">(ബോധത്തിനെതിരെയുള്ള കമ്പ്യൂട്ടേഷണൽ വെല്ലുവിളി)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">AI challenges traditional philosophy by demonstrating that machines can execute reasoning, pattern recognition, learning, and complex problem-solving entirely without subjective consciousness.</span> This raises the profound question: is subjective awareness necessary for intelligence, or is consciousness an incidental biological byproduct?</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ആന്തരികമായ യാതൊരു ബോധവുമില്ലാതെ തന്നെ യുക്തിപൂർവ്വം ചിന്തിക്കാനും കണക്കുകൂട്ടലുകൾ നടത്താനും പഠിക്കാനും യന്ത്രങ്ങൾക്ക് കഴിയുമെന്ന് AI തെളിയിച്ചിരിക്കുന്നു.</span> ഇത് തത്ത്വചിന്തയിൽ വലിയൊരു ചോദ്യം ഉയർത്തുന്നു: ബുദ്ധിപരമായ പ്രവർത്തനങ്ങൾക്ക് യഥാർത്ഥത്തിൽ ബോധം അനിവാര്യമാണോ, അതോ വെറുമൊരു ജൈവ പ്രക്രിയ മാത്രമാണോ?</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 1 · Chapter 3: Philosophy in the Light of AI</span>
+      <span>Page 6</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 3</span>
+        <span class="top-bar-right">Page 7 of 12 ✨ Epistemology & Veracity</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Epistemology and Veracity: The Pursuit of Truth</span>
+          <span class="section-title-ml">(ജ്ഞാനശാസ്ത്രവും സത്യസന്ധതയും: സത്യത്തിലേക്കുള്ള അന്വേഷണം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Epistemology is the philosophical discipline that examines the nature, origins, boundaries, and legitimacy of knowledge.</span> It investigates essential inquiries: <em>What is knowledge? How is knowledge acquired? What renders a belief justified?</em> <span class="hl-yellow">Veracity</span> pertains to truthfulness, precision, and adherence to objective reality. In artificial intelligence, epistemology questions whether AI models "know" anything or merely process statistical tokens without understanding.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">അറിവിന്റെ സ്വഭാവം, ഉത്ഭവം, അതിരുകൾ, സാധുത എന്നിവയെക്കുറിച്ച് പഠിക്കുന്ന തത്ത്വചിന്താ ശാഖയാണ് ജ്ഞാനശാസ്ത്രം (Epistemology).</span> അറിവ് എന്താണ്, അത് എങ്ങനെ നേടുന്നു, ഒരു വിശ്വാസത്തെ സാധൂകരിക്കുന്നത് എന്താണ് തുടങ്ങിയ വിഷയങ്ങൾ ഇത് അന്വേഷിക്കുന്നു. <span class="hl-yellow">വെരാസിറ്റി (Veracity)</span> എന്നാൽ പ്രസ്താവനകളുടെ സത്യസന്ധതയും കൃത്യതയുമാണ്. ഡാറ്റ പ്രോസസ്സ് ചെയ്യുന്ന കമ്പ്യൂട്ടറുകൾക്ക് യഥാർത്ഥത്തിൽ അറിവുണ്ടോ അതോ അറിവുള്ളതായി ഭാവിക്കുകയാണോ എന്ന് ജ്ഞാനശാസ്ത്രം ചോദിക്കുന്നു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Justified True Belief (JTB) in Classical Epistemology</span>
+          <span class="section-title-ml">(ജസ്റ്റിഫൈഡ് ട്രൂ ബിലീഫ് - JTB സിദ്ധാന്തം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Derived from <span class="hl-green">Plato’s Theaetetus</span>, the classical epistemological definition of knowledge is <span class="hl-yellow">Justified True Belief (JTB)</span>. Under this definition, an agent $S$ knows a proposition $P$ if and only if:</p>
+          <p>1. <span class="hl-yellow">Belief:</span> $S$ actually believes that $P$ is the case.</p>
+          <p>2. <span class="hl-yellow">Truth:</span> $P$ is objectively true in reality (without truth, a belief is mere delusion).</p>
+          <p>3. <span class="hl-yellow">Justification:</span> $S$ possesses adequate reasons, evidence, or logical grounds supporting $P$.</p>
+          <p>In AI, an algorithm may output a true fact, but because it lacks internal belief and conscious justification, philosophers question whether machine outputs qualify as authentic knowledge.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-green">പ്ലേറ്റോയുടെ തിയറ്റീറ്റസ് (Theaetetus)</span> എന്ന ഗ്രന്ഥത്തിൽ നിന്ന് രൂപപ്പെട്ട പരമ്പരാഗത നിർവ്വചനമാണ് <span class="hl-yellow">ജസ്റ്റിഫൈഡ് ട്രൂ ബിലീഫ് (JTB)</span>. ഒരു വ്യക്തിക്ക് ഒന്നിനെക്കുറിച്ച് അറിവുണ്ടെന്ന് പറയണമെങ്കിൽ മൂന്ന് വ്യവസ്ഥകൾ പൂർത്തിയാകണം:</p>
+          <p>1. <span class="hl-yellow">വിശ്വാസം (Belief):</span> ആ പ്രസ്താവന സത്യമാണെന്ന് വ്യക്തി യഥാർത്ഥത്തിൽ വിശ്വസിക്കണം.</p>
+          <p>2. <span class="hl-yellow">സത്യം (Truth):</span> ആ പ്രസ്താവന ബാഹ്യ ലോകത്ത് വസ്തുനിഷ്ഠമായി ശരിയായിരിക്കണം.</p>
+          <p>3. <span class="hl-yellow">സാധൂകരണം (Justification):</span> ആ വിശ്വാസത്തെ പിന്തുണയ്ക്കുന്ന ശക്തമായ യുക്തിയോ തെളിവോ ഉണ്ടായിരിക്കണം.</p>
+          <p>ഒരു കമ്പ്യൂട്ടർ ശരിയായ ഉത്തരം നൽകുമ്പോഴും, അതിന് സ്വന്തമായി വിശ്വാസമോ ബോധപൂർവ്വമായ തെളിവോ ഇല്ലാത്തതിനാൽ അത് യഥാർത്ഥ അറിവാകുമോ എന്ന് തത്ത്വചിന്തകർ സംശയിക്കുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 1 · Chapter 3: Philosophy in the Light of AI</span>
+      <span>Page 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 3</span>
+        <span class="top-bar-right">Page 8 of 12 ✨ Three Theories of Truth</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Three Dominant Philosophical Theories of Truth</span>
+          <span class="section-title-ml">(സത്യത്തെക്കുറിച്ചുള്ള മൂന്ന് പ്രധാന ദാർശനിക സിദ്ധാന്തങ്ങൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>The Curriculum highlights three foundational theories that elucidate the nature of truth:</p>
+          <p>1. <span class="hl-yellow">Correspondence Theory:</span> Truth is that which accurately represents or corresponds to objective reality. A proposition is true if it aligns with external factual states of affairs. Example: The statement <em>"Snow is white"</em> is true if and only if, in actual physical reality, snow is white.</p>
+          <p>2. <span class="hl-yellow">Coherence Theory:</span> Truth is defined by internal consistency within an established belief system. A proposition is true if it harmoniously integrates with other verified propositions without logical contradiction. Example: In mathematics, a new theorem is accepted as true if it coheres with the axiomatic framework.</p>
+          <p>3. <span class="hl-yellow">Pragmatic Theory:</span> Truth is evaluated based on practical efficacy and utility in real-world applications. A belief is true if acting upon it yields successful, productive outcomes. Example: <em>"Exercise enhances health"</em> is true because it produces empirically verified beneficial results in human practice.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>സത്യത്തിന്റെ സ്വഭാവം വിശദീകരിക്കാൻ Curriculum മൂന്ന് സിദ്ധാന്തങ്ങൾ വ്യക്തമാക്കുന്നു:</p>
+          <p>1. <span class="hl-yellow">കറസ്പോണ്ടൻസ് തിയറി (Correspondence Theory):</span> ഒരു പ്രസ്താവന ബാഹ്യ ലോകത്തിലെ യഥാർത്ഥ വസ്തുതയുമായി പൊരുത്തപ്പെടുമ്പോൾ മാത്രമേ അത് സത്യമാകൂ. ഉദാഹരണത്തിന്: <em>"മഞ്ഞ് വെളുത്തതാണ്"</em> എന്ന പ്രസ്താവന സത്യമാകുന്നത് യഥാർത്ഥ ലോകത്ത് മഞ്ഞിന് വെള്ള നിറമുള്ളതുകൊണ്ടാണ്.</p>
+          <p>2. <span class="hl-yellow">കോഹറൻസ് തിയറി (Coherence Theory):</span> നിലവിലുള്ള മറ്റ് വിശ്വാസങ്ങളോടും ശാസ്ത്രീയ തത്ത്വങ്ങളോടും ഒരു പ്രസ്താവന പരസ്പരവിരുദ്ധമാകാതെ ചേർന്നുനിൽക്കുമ്പോൾ അത് സത്യമാകുന്നു. ഗണിതശാസ്ത്രത്തിലെ തിയറങ്ങൾ നിലവിലെ സമവാക്യങ്ങളുമായി പൊരുത്തപ്പെടുന്നതിലൂടെയാണ് സത്യമായി അംഗീകരിക്കപ്പെടുന്നത്.</p>
+          <p>3. <span class="hl-yellow">പ്രാഗ്മാറ്റിക് തിയറി (Pragmatic Theory):</span> ഒരു ആശയത്തിന്റെ പ്രായോഗിക ഫലപ്രാപ്തിയാണ് അതിന്റെ സത്യം നിർണ്ണയിക്കുന്നത്. പ്രായോഗിക ജീവിതത്തിൽ അത് വിജയകരമായ ഫലങ്ങൾ നൽകുന്നുവെങ്കിൽ അത് സത്യമാണ്. ഉദാഹരണത്തിന്: <em>"വ്യായാമം ആരോഗ്യം വർദ്ധിപ്പിക്കുന്നു"</em> എന്നത് പ്രായോഗികമായി നല്ല ഫലം നൽകുന്നതിനാൽ സത്യമാണ്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 1 · Chapter 3: Philosophy in the Light of AI</span>
+      <span>Page 8</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 3</span>
+        <span class="top-bar-right">Page 9 of 12 ✨ Verification & Justification</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Verification vs. Justification in Epistemology</span>
+          <span class="section-title-ml">(ജ്ഞാനശാസ്ത്രത്തിൽ വേരിഫിക്കേഷനും ജസ്റ്റിഫിക്കേഷനും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Verification and justification operate at distinct levels of knowledge evaluation:</p>
+          <p>• <span class="hl-yellow">Verification:</span> Refers to the empirical or logical process of confirming the truth or falsity of a statement through direct observation or systematic proof.</p>
+          <p>• <span class="hl-yellow">Justification:</span> Concerns the rational grounds, reasons, or evidence that support why a belief is held. A belief can be justified even if it later turns out to be false, provided reasonable evidence supported it at the time.</p>
+          <p>• <span class="hl-yellow">Verificationism:</span> Asserts that a statement is cognitive and meaningful only if it is empirically verifiable (through sensory perception) or analytically true by definition (e.g., "all bachelors are unmarried men"). Metaphysical and theological claims, lacking empirical verifiability, are considered non-cognitive.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>അറിവിനെ പരിശോധിക്കുന്ന രണ്ട് പ്രധാന തലങ്ങളാണ് വേരിഫിക്കേഷനും ജസ്റ്റിഫിക്കേഷനും:</p>
+          <p>• <span class="hl-yellow">വേരിഫിക്കേഷൻ (Verification):</span> ഇന്ദ്രിയ നിരീക്ഷണത്തിലൂടെയോ ഗണിത യുക്തിയിലൂടെയോ ഒരു പ്രസ്താവന ശരിയോ തെറ്റോ എന്ന് നേരിട്ട് ഉറപ്പുവരുത്തുന്ന പ്രക്രിയ.</p>
+          <p>• <span class="hl-yellow">ജസ്റ്റിഫിക്കേഷൻ (Justification):</span> ഒരു കാര്യത്തിൽ വിശ്വസിക്കാൻ വ്യക്തിക്കുള്ള ശക്തമായ കാരണങ്ങളും തെളിവുകളുമാണിത്.</p>
+          <p>• <span class="hl-yellow">വേരിഫിക്കേഷനിസം (Verificationism):</span> ഇന്ദ്രിയങ്ങളിലൂടെ നേരിട്ട് തെളിയിക്കാൻ കഴിയുന്നതോ, നിർവ്വചനം കൊണ്ട് തന്നെ ശരിയായതോ (ഉദാ: അവിവാഹിതരായ പുരുഷന്മാരാണ് ബാച്ചിലർമാർ) ആയ പ്രസ്താവനകൾക്ക് മാത്രമേ അർത്ഥമുള്ളൂ എന്ന സിദ്ധാന്തം. പരീക്ഷണങ്ങളിലൂടെ തെളിയിക്കാനാവാത്ത അതിഭൗതിക വാദങ്ങൾ അർത്ഥശൂന്യമാണെന്ന് ഇത് വാദിക്കുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 1 · Chapter 3: Philosophy in the Light of AI</span>
+      <span>Page 9</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 3</span>
+        <span class="top-bar-right">Page 10 of 12 ✨ Ethics, Applied Ethics & Accountability</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Etymology of Ethics & Applied Ethics</span>
+          <span class="section-title-ml">(ധാർമ്മികതയുടെ ഉത്ഭവവും പ്രായോഗിക ധാർമ്മികതയും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">"Ethics" derives etymologically from two foundational words: the Greek word "ethos" (character) and the Latin word "mores" (customs / conventions).</span> Together, they establish ethics as the study of what is right, good, and virtuous in human conduct. <span class="hl-yellow">Applied Ethics</span> is a critical subfield that focuses on the practical application of ethical concepts to real-life circumstances and professional domains (e.g., bioethics, data privacy, autonomous weapons), moving beyond abstract theory to resolve concrete ethical conundrums.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">'ക്യാരക്ടർ' അല്ലെങ്കിൽ സ്വഭാവം എന്നർത്ഥം വരുന്ന 'ഈഥോസ്' (ethos) എന്ന ഗ്രീക്ക് പദത്തിൽ നിന്നും, 'കീഴ്‌വഴക്കങ്ങൾ' എന്നർത്ഥം വരുന്ന 'മോറസ്' (mores) എന്ന ലാറ്റിൻ പദത്തിൽ നിന്നുമാണ് എത്തിക്സ് ഉണ്ടായത്.</span> മനുഷ്യ പെരുമാറ്റത്തിലെ നന്മയെയും തിന്മയെയും കുറിച്ചുള്ള പഠനമാണിത്. സിദ്ധാന്തങ്ങളിൽ മാത്രം ഒതുങ്ങാതെ, യഥാർത്ഥ ജീവിതത്തിലെയും പ്രൊഫഷണൽ രംഗങ്ങളിലെയും (ഉദാ: ഡാറ്റാ സ്വകാര്യത, റോബോട്ടിക്സ്) ധാർമ്മിക പ്രശ്നങ്ങൾക്ക് പ്രായോഗിക പരിഹാരം കാണുന്ന ശാഖയാണ് <span class="hl-yellow">അപ്ലൈഡ് എത്തിക്സ് (Applied Ethics)</span>.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Accountability & The "Black Box" Problem in AI</span>
+          <span class="section-title-ml">(അക്കൗണ്ടബിലിറ്റിയും ബ്ലാക്ക്-ബോക്സ് പ്രശ്നവും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Accountability denotes the ethical, legal, and societal responsibility of individuals or institutions to elucidate and rationalize their actions, decisions, and results.</span> In artificial intelligence, accountability is severely challenged by two factors:</p>
+          <p>1. <span class="hl-yellow">Black-Box Opacity:</span> Complex deep learning models lack interpretability; their decision chains cannot be audited by human operators, obscuring why a medical diagnosis or lending decision was reached.</p>
+          <p>2. <span class="hl-yellow">Autonomous Learning:</span> Systems adapt post-deployment in response to new data. When harm occurs, assigning liability between developer, operator, and data curator becomes legally and morally contentious.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">തങ്ങൾ ചെയ്യുന്ന പ്രവർത്തനങ്ങൾക്കും തീരുമാനങ്ങൾക്കും ഫലങ്ങൾക്കും സമൂഹത്തിന് മുൻപിൽ യുക്തിസഹമായ വിശദീകരണം നൽകാനുള്ള ഉത്തരവാദിത്തത്തെയാണ് അക്കൗണ്ടബിലിറ്റി (Accountability) എന്ന് വിളിക്കുന്നത്.</span> എന്നാൽ AI-യിൽ ഇത് രണ്ട് വലിയ പ്രതിസന്ധികൾ നേരിടുന്നു:</p>
+          <p>1. <span class="hl-yellow">ബ്ലാക്ക് ബോക്സ് സ്വഭാവം:</span> സങ്കീർണ്ണമായ ഡീപ്പ് ലേണിംഗ് സിസ്റ്റങ്ങൾ എങ്ങനെ ഒരു തീരുമാനത്തിലെത്തി എന്ന് മനുഷ്യർക്ക് പരിശോധിച്ചറിയാൻ കഴിയാത്ത അവസ്ഥ.</p>
+          <p>2. <span class="hl-yellow">സ്വയം പഠന ശേഷി:</span> വിന്യസിച്ച ശേഷം പുതിയ ഡാറ്റയിൽ നിന്ന് സ്വയം പഠിച്ച് മാറുന്ന AI വലിയൊരു അപകടമുണ്ടാക്കിയാൽ, അതിന്റെ കുറ്റം സോഫ്റ്റ്‌വെയർ എൻജിനീയർക്കാണോ അതോ അത് ഉപയോഗിച്ച സ്ഥാപനത്തിനാണോ എന്ന് നിശ്ചയിക്കാൻ സാധിക്കാതെ വരുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 1 · Chapter 3: Philosophy in the Light of AI</span>
+      <span>Page 10</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 3</span>
+        <span class="top-bar-right">Page 11 of 12 ✨ Identity & Curriculum Q&A</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Personal Identity in the Era of AI</span>
+          <span class="section-title-ml">(AI യുഗത്തിൽ മനുഷ്യന്റെ വ്യക്തിത്വം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>The syllabus identifies critical concerns regarding human identity: (1) <span class="hl-yellow">Threat to Human Uniqueness:</span> If computers can think, learn, and create, what remains exclusively human? (2) <span class="hl-yellow">Dehumanisation:</span> Over-reliance on AI diminishes human autonomy. (3) <span class="hl-yellow">Hybrid Identity:</span> Integration of biological minds with synthetic chips (brain-computer interfaces, cyborgs) creates deep societal inequalities between enhanced and non-enhanced humans.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>AI യുഗത്തിൽ മനുഷ്യ വ്യക്തിത്വം നേരിടുന്ന പ്രധാന ഭീഷണികൾ: (1) <span class="hl-yellow">മനുഷ്യന്റെ സവിശേഷത നഷ്ടപ്പെടൽ:</span> യന്ത്രങ്ങൾ സർഗ്ഗാത്മകമായി ചിന്തിക്കുമ്പോൾ മനുഷ്യന്റെ പ്രത്യേകത ഇല്ലാതാകുന്നു. (2) <span class="hl-yellow">ആശ്രിതത്വം:</span> യന്ത്രങ്ങളെ അമിതമായി ആശ്രയിക്കുന്നത് മനുഷ്യന്റെ സ്വയംനിർണ്ണയാവകാശത്തെ തളർത്തുന്നു. (3) <span class="hl-yellow">ഹൈബ്രിഡ് വ്യക്തിത്വം:</span> മനുഷ്യ ശരീരവും ഇലക്ട്രോണിക് ചിപ്പുകളും ചേരുന്നതോടെ (സൈബോർഗുകൾ) സമൂഹത്തിൽ വലിയ അസമത്വങ്ങൾ രൂപപ്പെടുന്നു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Academic Evaluation: "Demonstrate What You Obtained" & "Knock Your Brain"</span>
+          <span class="section-title-ml">(Curriculum നേരിട്ടുള്ള പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">Official Curriculum Questions & Answers (English)</div>
+          <p>• <strong>What is Epistemology?</strong> <span class="hl-yellow">Epistemology is the philosophical discipline that examines the nature, origins, boundaries, and legitimacy of knowledge.</span></p>
+          <p>• <strong>What constitutes the fundamental basis of knowledge?</strong> <span class="hl-yellow">Truth</span>.</p>
+          <p>• <strong>Which theory posits that truth is what corresponds to objective reality?</strong> <span class="hl-yellow">Correspondence Theory</span>.</p>
+          <p>• <strong>What concerns the reason or evidence supporting a belief?</strong> <span class="hl-yellow">Justification</span>.</p>
+          <p>• <strong>What subfield focuses on practical ethical application?</strong> <span class="hl-yellow">Applied Ethics</span>.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">Curriculum ഔദ്യോഗിക ചോദ്യോത്തരങ്ങൾ (മലയാളം)</div>
+          <p>• <strong>ജ്ഞാനശാസ്ത്രം എന്നാൽ എന്താണ്?</strong> <span class="hl-yellow">അറിവിന്റെ സ്വഭാവം, ഉത്ഭവം, അതിരുകൾ, സാധുത എന്നിവയെക്കുറിച്ച് പഠിക്കുന്ന തത്ത്വചിന്താ ശാഖ.</span></p>
+          <p>• <strong>അറിവിന്റെ അടിസ്ഥാനം എന്താണ്?</strong> <span class="hl-yellow">സത്യം (Truth)</span>.</p>
+          <p>• <strong>വസ്തുനിഷ്ഠമായ ലോകവുമായി പൊരുത്തപ്പെടുന്നതാണ് സത്യം എന്ന് പറയുന്ന സിദ്ധാന്തം?</strong> <span class="hl-yellow">കറസ്പോണ്ടൻസ് തിയറി</span>.</p>
+          <p>• <strong>ഒരു വിശ്വാസത്തെ പിന്തുണയ്ക്കുന്ന തെളിവുകളെ എന്ത് വിളിക്കുന്നു?</strong> <span class="hl-yellow">ജസ്റ്റിഫിക്കേഷൻ (Justification)</span>.</p>
+          <p>• <strong>പ്രായോഗിക ധാർമ്മിക പ്രശ്നങ്ങൾ പരിഹരിക്കുന്ന ശാഖ?</strong> <span class="hl-yellow">അപ്ലൈഡ് എത്തിക്സ്</span>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 1 · Chapter 3: Philosophy in the Light of AI</span>
+      <span>Page 11</span>
+    </div>
+  </div>
+
+  <div class="page-container page-exam-grid">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 3</span>
+        <span class="top-bar-right">Page 12 of 12 ✨ High-Yield Exam Memorization</span>
+      </div>
+
+      <div class="exam-header-compact">
+        <div class="exam-title-badge">🎯 MUST-KNOW EXAM RECALL COMPENDIUM</div>
+        <div class="exam-hero-title">20 Core Academic Concepts & Analytical Pillars</div>
+        <div class="exam-hero-sub">നിർമ്മിത ബുദ്ധിയുടെ വെളിച്ചത്തിൽ തത്ത്വചിന്ത — പരീക്ഷാ കേന്ദ്രീകൃത സമഗ്ര ആശയങ്ങൾ</div>
+      </div>
+
+      <div class="points-grid">
+        <!-- 1 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🧠 Mind Capacity</span><span class="point-title-en">Philosophical Cognition</span></div>
+          <div class="point-title-ml">കോഗ്നിഷൻ നിർവ്വചനം</div>
+          <div class="point-body">Mental capacity for acquiring, storing, manipulating, and utilising knowledge, distinct from sensation.</div>
+          <div class="point-body-ml">അറിവ് നേടാനും പ്രയോഗിക്കാനുമുള്ള മനസ്സിന്റെ ശേഷി; ഇന്ദ്രിയാനുഭവങ്ങളിൽ നിന്ന് വ്യത്യസ്തം.</div>
+        </div>
+        <!-- 2 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">📜 Latin Distinction</span><span class="point-title-en">Cognitio vs. Scientia</span></div>
+          <div class="point-title-ml">കോഗ്നിഷ്യോ & സയൻഷ്യ</div>
+          <div class="point-body">Descartes distinguished ordinary muddled cognition from true, systematic scientific knowledge (scientia).</div>
+          <div class="point-body-ml">സാധാരണ അറിവും യഥാർത്ഥ ശാസ്ത്രീയ ജ്ഞാനവും തമ്മിലുള്ള ദെക്കാർത്തിന്റെ വ്യത്യാസം.</div>
+        </div>
+        <!-- 3 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">👁️ Subjective Core</span><span class="point-title-en">Cartesian Consciousness</span></div>
+          <div class="point-title-ml">ദെക്കാർത്തിന്റെ ബോധം</div>
+          <div class="point-body">Awareness as essence of mind; all mental states conscious with privileged first-person subjective access.</div>
+          <div class="point-body-ml">ബോധമാണ് മനസ്സിന്റെ കാതൽ; വ്യക്തിക്ക് മാത്രമുള്ള സ്വകാര്യ ആന്തരിക അനുഭവം.</div>
+        </div>
+        <!-- 4 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🥇 Error Source</span><span class="point-title-en">Spinoza's First Grade</span></div>
+          <div class="point-title-ml">സ്പിനോസയുടെ ഒന്നാം തലം</div>
+          <div class="point-body">Opinion and imagination from fluctuating experiences; the sole source of falsehood and illusion.</div>
+          <div class="point-body-ml">ഭാവനകളും അഭിപ്രായങ്ങളും; എല്ലാ തെറ്റുകളുടെയും ഉറവിടമായ ഒന്നാം തരം ജ്ഞാനം.</div>
+        </div>
+        <!-- 5 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🥈 Deductive Law</span><span class="point-title-en">Spinoza's Second Grade</span></div>
+          <div class="point-title-ml">സ്പിനോസയുടെ രണ്ടാം തലം</div>
+          <div class="point-body">Reason (ratio) investigating fundamental causes and laws of events to attain necessary truths.</div>
+          <div class="point-body-ml">പ്രതിഭാസങ്ങളുടെ അടിസ്ഥാന കാരണങ്ങൾ കണ്ടെത്തുന്ന ശാസ്ത്രീയ യുക്തി.</div>
+        </div>
+        <!-- 6 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🥉 Highest Wisdom</span><span class="point-title-en">Scientia Intuitiva</span></div>
+          <div class="point-title-ml">സ്പിനോസയുടെ മൂന്നാം തലം</div>
+          <div class="point-body">Intuitive knowledge progressing from adequate essence concepts to comprehensive holistic understanding.</div>
+          <div class="point-body-ml">പ്രപഞ്ചത്തിന്റെ ആന്തരിക സത്തയെ നേരിട്ട് ഗ്രഹിക്കുന്ന ഏറ്റവും ഉയർന്ന ജ്ഞാനം.</div>
+        </div>
+        <!-- 7 -->
+        <div class="point-card" style="border-left: 3.5px solid #be185d;">
+          <div class="point-header"><span class="point-tag" style="background:#be185d;">📄 Blank Slate</span><span class="point-title-en">Tabula Rasa Doctrine</span></div>
+          <div class="point-title-ml">ടാബുല റാസ സിദ്ധാന്തം</div>
+          <div class="point-body">Empiricist dogma: mind at birth is unblemished blank slate; no innate ideas exist prior to experience.</div>
+          <div class="point-body-ml">ജനനസമയത്ത് മനുഷ്യ മനസ്സ് ശൂന്യമായ എഴുത്തുപലകയാണ്; അനുഭവങ്ങളിൽ നിന്ന് മാത്രമേ അറിവുണ്ടാകൂ.</div>
+        </div>
+        <!-- 8 -->
+        <div class="point-card" style="border-left: 3.5px solid #4f46e5;">
+          <div class="point-header"><span class="point-tag" style="background:#4f46e5;">🌍 External Sense</span><span class="point-title-en">Sensation vs. Reflection</span></div>
+          <div class="point-title-ml">സെൻസേഷനും റിഫ്ലെക്ഷനും</div>
+          <div class="point-body">Sensation brings external environment data (red, cold); reflection observes mind's own thinking.</div>
+          <div class="point-body-ml">ബാഹ്യ ഇന്ദ്രിയാനുഭവങ്ങളും മനസ്സ് സ്വന്തം പ്രവർത്തനങ്ങളെ നിരീക്ഷിക്കുന്ന ആന്തരിക അനുഭവവും.</div>
+        </div>
+        <!-- 9 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🦄 Mind Assembly</span><span class="point-title-en">Simple & Complex Ideas</span></div>
+          <div class="point-title-ml">ലളിതവും സങ്കീർണ്ണവുമായ ആശയങ്ങൾ</div>
+          <div class="point-body">Simple indivisible sensory units are synthesized into complex constructs (horse + horn = unicorn).</div>
+          <div class="point-body-ml">ലളിതമായ ആശയങ്ങൾ സംയോജിപ്പിച്ച് സങ്കീർണ്ണ ആശയങ്ങൾ നിർമ്മിക്കുന്ന രീതി.</div>
+        </div>
+        <!-- 10 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">☀️ Copernican Leap</span><span class="point-title-en">Kant's Synthesis</span></div>
+          <div class="point-title-ml">കാന്റിന്റെ സമന്വയം</div>
+          <div class="point-body">Knowledge = Sensory Input + Innate Structures; objects must conform to the architecture of mind.</div>
+          <div class="point-body-ml">അറിവ് എന്നാൽ ഇന്ദ്രിയ വിവരങ്ങളും മനസ്സിന്റെ സ്വതസിദ്ധമായ ഘടനയും ചേർന്നതാണെന്ന വിപ്ലവം.</div>
+        </div>
+        <!-- 11 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">⏳ A Priori Grid</span><span class="point-title-en">Space and Time (Sensibility)</span></div>
+          <div class="point-title-ml">സ്ഥലവും സമയവും</div>
+          <div class="point-body">Inherent modalities of intuition organizing external perception (Space) and internal perception (Time).</div>
+          <div class="point-body-ml">ഇന്ദ്രിയ വിവരങ്ങളെ ചിട്ടപ്പെടുത്താൻ മനസ്സ് ഉപയോഗിക്കുന്ന രണ്ട് അടിസ്ഥാന ചട്ടക്കൂടുകൾ.</div>
+        </div>
+        <!-- 12 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🔗 Cause & Object</span><span class="point-title-en">Categories of Understanding</span></div>
+          <div class="point-title-ml">12 കാറ്റഗറികൾ</div>
+          <div class="point-body">12 innate concepts applied to experience, notably Substance & Accident and Causality & Dependence.</div>
+          <div class="point-body-ml">അനുഭവങ്ങളെ ആശയങ്ങളാക്കി മാറ്റാൻ കാന്റ് നിർദ്ദേശിച്ച സബ്‌സ്റ്റൻസ്, കാരണ-ഫല നിയമങ്ങൾ.</div>
+        </div>
+        <!-- 13 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🎯 Aiming Outward</span><span class="point-title-en">Husserl's Intentionality</span></div>
+          <div class="point-title-ml">ഹുസ്സെറലിന്റെ ഇന്റൻഷണാലിറ്റി</div>
+          <div class="point-body">Phenomenological dogma: consciousness is always consciousness of an object directed outward.</div>
+          <div class="point-body-ml">ബോധം എപ്പോഴും ഒരു ബാഹ്യ വസ്തുവിലേക്ക് ലക്ഷ്യമാക്കി നിൽക്കുന്നതാണെന്ന തത്ത്വം.</div>
+        </div>
+        <!-- 14 -->
+        <div class="point-card" style="border-left: 3.5px solid #be185d;">
+          <div class="point-header"><span class="point-tag" style="background:#be185d;">📖 Plato's Standard</span><span class="point-title-en">Justified True Belief (JTB)</span></div>
+          <div class="point-title-ml">ജസ്റ്റിഫൈഡ് ട്രൂ ബിലീഫ്</div>
+          <div class="point-body">Classical triad from Plato's Theaetetus requiring belief, truth, and justification for genuine knowledge.</div>
+          <div class="point-body-ml">പ്ലേറ്റോ നിർദ്ദേശിച്ച അറിവിന്റെ മൂന്ന് മാനദണ്ഡങ്ങൾ: വിശ്വാസം, സത്യം, സാധൂകരണം.</div>
+        </div>
+        <!-- 15 -->
+        <div class="point-card" style="border-left: 3.5px solid #4f46e5;">
+          <div class="point-header"><span class="point-tag" style="background:#4f46e5;">❄️ Fact Alignment</span><span class="point-title-en">Correspondence Theory</span></div>
+          <div class="point-title-ml">കറസ്പോണ്ടൻസ് തിയറി</div>
+          <div class="point-body">Truth as accurate representation of objective reality; "Snow is white" is true if snow is physically white.</div>
+          <div class="point-body-ml">പ്രസ്താവന ബാഹ്യ യാഥാർത്ഥ്യവുമായി പൊരുത്തപ്പെടുമ്പോൾ സത്യമാകുന്നു എന്ന സിദ്ധാന്തം.</div>
+        </div>
+        <!-- 16 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">📐 Internal Harmony</span><span class="point-title-en">Coherence Theory</span></div>
+          <div class="point-title-ml">കോഹറൻസ് തിയറി</div>
+          <div class="point-body">Truth defined by consistency within an established belief system without internal contradiction.</div>
+          <div class="point-body-ml">ഒരു പ്രസ്താവന നിലവിലുള്ള അറിവുകളുമായി പൊരുത്തപ്പെടുമ്പോൾ സത്യമാകുന്നു എന്ന സിദ്ധാന്തം.</div>
+        </div>
+        <!-- 17 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🛠️ Real Utility</span><span class="point-title-en">Pragmatic Theory</span></div>
+          <div class="point-title-ml">പ്രാഗ്മാറ്റിക് തിയറി</div>
+          <div class="point-body">Truth evaluated on practical outcomes and utility; beliefs are true if acting on them succeeds.</div>
+          <div class="point-body-ml">പ്രായോഗിക ജീവിതത്തിൽ വിജയകരമായ ഫലങ്ങൾ നൽകുന്നതാണ് സത്യം എന്ന സിദ്ധാന്തം.</div>
+        </div>
+        <!-- 18 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🔬 Testable Meaning</span><span class="point-title-en">Verificationism</span></div>
+          <div class="point-title-ml">വേരിഫിക്കേഷനിസം</div>
+          <div class="point-body">A statement is meaningful only if empirically verifiable or analytically true by definition.</div>
+          <div class="point-body-ml">ഇന്ദ്രിയങ്ങളിലൂടെ തെളിയിക്കാൻ കഴിയുന്ന പ്രസ്താവനകൾക്ക് മാത്രമേ അർത്ഥമുള്ളൂ എന്ന സിദ്ധാന്തം.</div>
+        </div>
+        <!-- 19 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">⚖️ Ethos & Mores</span><span class="point-title-en">Etymology of Ethics</span></div>
+          <div class="point-title-ml">എത്തിക്സ് ഉത്ഭവം</div>
+          <div class="point-body">Derived from Greek "ethos" (character) and Latin "mores" (conventions); science of moral ideal in conduct.</div>
+          <div class="point-body-ml">സ്വഭാവം (ഈഥോസ്), കീഴ്‌വഴക്കങ്ങൾ (മോറസ്) എന്നിവയിൽ നിന്നുള്ള ധാർമ്മിക ശാസ്ത്രം.</div>
+        </div>
+        <!-- 20 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">📦 Inscrutable Net</span><span class="point-title-en">Black-Box Accountability</span></div>
+          <div class="point-title-ml">ബ്ലാക്ക്-ബോക്സ് അക്കൗണ്ടബിലിറ്റി</div>
+          <div class="point-body">Responsibility to elucidate decisions, challenged by deep learning opacity and autonomous adaptation.</div>
+          <div class="point-body-ml">ഡീപ്പ് ലേണിംഗിന്റെ ദുരൂഹത കാരണം തീരുമാനങ്ങൾക്ക് ഉത്തരവാദിത്തം നിശ്ചയിക്കാനുള്ള വെല്ലുവിളി.</div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 1 · Chapter 3: 20 Core Academic Concepts</span>
+      <span>Page 12</span>
+    </div>
+  </div>
+</body></html>

@@ -1,0 +1,1145 @@
+<!DOCTYPE html><html lang="ml"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"><meta charset="UTF-8"><title>Philosophy of AI · Module 3 · Chapter 10</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0f172a;
+    }
+
+    .page-container {
+      width: 210mm;
+      height: 297mm;
+      padding: 12mm 14mm 10mm 14mm;
+      margin: 0 auto;
+      background: #ffffff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+    }
+
+    .top-bar-left {
+      font-size: 8pt;
+      font-weight: 800;
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar-right {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .chapter-hero {
+      background: linear-gradient(135deg, #dbeafe 0%, #ffffff 100%);
+      border: 1.5px solid #2563eb;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 7.2pt;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .hero-title-en {
+      font-size: 13pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #2563eb;
+      line-height: 1.35;
+    }
+
+    .content-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 7px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .section-header {
+      background: #f1f5f9;
+      padding: 5px 10px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .section-title-en {
+      font-size: 8.8pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .section-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 700;
+      color: #2563eb;
+    }
+
+    .block-en {
+      padding: 6px 10px;
+      border-left: 3.5px solid #2563eb;
+      background: #ffffff;
+    }
+
+    .block-en-label {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .block-en p {
+      font-size: 8pt;
+      color: #1e293b;
+      line-height: 1.38;
+      margin: 0 0 4px 0;
+    }
+
+    .block-en p:last-child {
+      margin-bottom: 0;
+    }
+
+    .block-ml {
+      padding: 6px 10px;
+      border-left: 3.5px solid #10b981;
+      background: #f0fdf4;
+      border-top: 1px dashed #e2e8f0;
+    }
+
+    .block-ml-label {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #065f46;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .block-ml p {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      color: #064e3b;
+      line-height: 1.45;
+      margin: 0 0 4px 0;
+    }
+
+    .block-ml p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* STRICT TWO HIGHLIGHTERS */
+    .hl-green {
+      background: #bbf7d0;
+      color: #14532d;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .hl-yellow {
+      background: #fef08a;
+      color: #713f12;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .page-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 4px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    /* PAGE 12 EXAM GRID */
+    .page-exam-grid {
+      padding: 10mm 12mm 8mm 12mm;
+    }
+
+    .exam-header-compact {
+      text-align: center;
+      background: linear-gradient(135deg, #dbeafe 0%, #ffffff 100%);
+      border: 1.5px solid #2563eb;
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-bottom: 8px;
+    }
+
+    .exam-title-badge {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 7pt;
+      font-weight: 800;
+      padding: 1.5px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .exam-hero-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      line-height: 1.2;
+    }
+
+    .exam-hero-sub {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #2563eb;
+      line-height: 1.3;
+    }
+
+    .points-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    .point-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 4.5px 6px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .point-header {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+
+    .point-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 1.5px 4px;
+      border-radius: 3px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .point-title-en {
+      font-size: 6.9pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .point-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 1.5px;
+    }
+
+    .point-body {
+      font-size: 6.2pt;
+      color: #334155;
+      line-height: 1.25;
+    }
+
+    .point-body-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.1pt;
+      color: #064e3b;
+      line-height: 1.3;
+      margin-top: 1px;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 8px 6px !important;
+        background: #f1f5f9 !important;
+        font-size: 14px !important;
+      }
+      .page-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 16px 12px !important;
+        margin: 0 0 16px 0 !important;
+        border-radius: 14px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+        overflow: visible !important;
+      }
+      .top-bar-left, .top-bar-right {
+        font-size: 11px !important;
+      }
+    }
+    
+  </style></head><body>
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 10</span>
+        <span class="top-bar-right">Page 1 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="chapter-hero">
+        <div class="hero-tag">🎓 Calicut University FYUGP · Module 3 · Chapter 10</div>
+        <div class="hero-title-en">CHAPTER II: Nyāya Epistemology</div>
+        <div class="hero-title-ml">അദ്ധ്യായം 10: ന്യായ ജ്ഞാനമീമാംസ (ന്യായ എപ്പിസ്റ്റമോളജി)</div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Foundations of the Nyāya School</span>
+          <span class="section-title-ml">(ന്യായ ദർശനത്തിന്റെ അടിത്തറ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Nyāya philosophy is one of the six classical orthodox (Āstika) schools of Indian thought, primarily renowned for its profound system of logical reasoning, epistemology, and methodology of debate.</span> Founded by the ancient sage <span class="hl-green">Akṣapāda Gautama</span> in the foundational text <em>Nyāya Sūtras</em>, the word <em>Nyāya</em> literally signifies "going into a subject" or "rigorous philosophical investigation through logical rules".</p>
+          <p>Nyāya operates in close philosophical alliance with the <span class="hl-green">Vaiśeṣika</span> school founded by <span class="hl-green">Kaṇāda</span>. In this classical partnership, <span class="hl-yellow">Vaiśeṣika constructs the metaphysics and ontology (analyzing the categories of reality / Padārthas), while Nyāya constructs the epistemology and formal logic.</span> Nyāya maintains that liberation (*Mokṣa*) is attained through the true knowledge of reality generated by valid means of cognition.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ഭാരതീയ തത്ത്വചിന്തയിലെ ആറ് ആസ്തിക ദർശനങ്ങളിൽ യുക്തിചിന്തയ്ക്കും, തർക്കശാസ്ത്രത്തിനും, ജ്ഞാനമീമാംസയ്ക്കും ഏറ്റവും പ്രാധാന്യം നൽകിയ ദർശനമാണ് ന്യായ ദർശനം.</span> <span class="hl-green">അക്ഷപാദ ഗൗതമൻ</span> രചിച്ച <em>ന്യായസൂത്രങ്ങളാണ്</em> ഇതിന്റെ അടിസ്ഥാന ഗ്രന്ഥം. 'ന്യായം' എന്ന വാക്കിനർത്ഥം നിയമങ്ങളിലൂടെയുള്ള ആഴത്തിലുള്ള യുക്തിവിചാരം എന്നാണ്.</p>
+          <p><span class="hl-green">കണാദൻ</span> സ്ഥാപിച്ച <span class="hl-green">വൈശേഷിക ദർശനവുമായി</span> ചേർന്നാണ് ന്യായം പ്രവർത്തിക്കുന്നത്. <span class="hl-yellow">വൈശേഷികം പ്രപഞ്ചത്തിലെ വസ്തുക്കളെക്കുറിച്ചുള്ള ഭൗതിക സിദ്ധാന്തവും (മെറ്റാഫിസിക്സ്), ന്യായം അവയെ അറിയാനുള്ള യുക്തിയും ജ്ഞാനമീമാംസയും (എപ്പിസ്റ്റമോളജി) നൽകുന്നു.</span> ശരിയായ അറിവ് നേടുന്നതിലൂടെ മാത്രമേ മനുഷ്യന് മോക്ഷം നേടാനാവൂ എന്ന് ന്യായം പഠിപ്പിച്ചു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Core Focus: Logic and Valid Knowledge</span>
+          <span class="section-title-ml">(പ്രധാന ശ്രദ്ധ: യുക്തിചിന്തയും ശരിയായ അറിവും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Unlike mystical or purely ritualistic traditions, <span class="hl-yellow">Nyāya is primarily concerned with logical reasoning, criteria of truth, and valid knowledge (Pramā).</span> It demands rigorous proof and epistemological justification for every metaphysical claim.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>അന്ധവിശ്വാസങ്ങൾക്കോ ആചാരങ്ങൾക്കോ പകരം, <span class="hl-yellow">യുക്തിപൂർവ്വമായ ചിന്തയ്ക്കും ശരിയായ ജ്ഞാനത്തിനും (പ്രമ) മാത്രമാണ് ന്യായ ദർശനം പരമമായ പ്രാധാന്യം നൽകുന്നത്.</span> ഏതൊരു അറിവും ശാസ്ത്രീയമായ തെളിവുകളുടെ അടിസ്ഥാനത്തിൽ ബോധ്യപ്പെടണമെന്ന് ന്യായം ശഠിക്കുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 10: Nyāya Epistemology</span>
+      <span>Page 1</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 10</span>
+        <span class="top-bar-right">Page 2 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Pramā (Valid Knowledge) vs. Apramā (Invalid Cognition)</span>
+          <span class="section-title-ml">(പ്രമയും അപ്രമയും: ശരിയായ അറിവും തെറ്റായ അറിവും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>In Nyāya, all experiences (*Anubhava*) are classified into two broad epistemic divisions:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">Pramā (Valid Knowledge):</span> A true, faithful, uncontradicted representation of an object as it really exists (*Yathārtha-anubhava*). When a snake is recognized as a snake, or a rope as a rope, the cognition is *Pramā*.</li>
+            <li><span class="hl-yellow">Apramā (Invalid Cognition):</span> Non-veridical experience (*Ayathārtha-anubhava*), divided into:
+              <br/>1. <span class="hl-green">Saṁśaya (Doubt):</span> Uncertainty between conflicting characteristics (e.g., wondering in dim light whether an object is a post or a man).
+              <br/>2. <span class="hl-green">Viparyaya (Error / Illusion):</span> Definite false cognition (e.g., mistaking a shiny shell for silver).
+              <br/>3. <span class="hl-green">Tarka (Hypothetical Reasoning):</span> Indirect argument (*reductio ad absurdum*) used to refute false assumptions.
+              <br/>4. <span class="hl-green">Smṛti (Memory):</span> Merely recollected impressions, not fresh immediate knowledge.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ന്യായ ദർശനത്തിൽ മനുഷ്യന്റെ അനുഭവങ്ങളെ രണ്ടാക്കി തിരിച്ചിരിക്കുന്നു:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">പ്രമ (ശരിയായ ജ്ഞാനം):</span> വസ്തുവിനെ അത് എങ്ങനെയാണോ അതുപോലെ തന്നെ തെറ്റില്ലാതെ അറിയുന്നത് (യഥാർത്ഥ അനുഭവം). കയറിനെ കയറായും പാമ്പിനെ പാമ്പായും തിരിച്ചറിയുന്നത് പ്രമയാണ്.</li>
+            <li><span class="hl-yellow">അപ്രമ (തെറ്റായ അറിവ്):</span> സത്യമല്ലാത്ത അനുഭവങ്ങൾ. ഇതിൽ നാല് കാര്യങ്ങൾ ഉൾപ്പെടുന്നു:
+              <br/>1. <span class="hl-green">സംശയം (Saṁśaya):</span> മങ്ങിയ വെളിച്ചത്തിൽ കാണുന്നത് മനുഷ്യനാണോ അതോ മരക്കുറ്റിയാണോ എന്ന സന്ദേഹം.
+              <br/>2. <span class="hl-green">വിപര്യയം (Viparyaya):</span> ചിപ്പി കണ്ട് വെള്ളിയാണെന്ന് തെറ്റിദ്ധരിക്കുന്നത് പോലെയുള്ള പൂർണ്ണമായ വ്യാമോഹം.
+              <br/>3. <span class="hl-green">തർക്കം (Tarka):</span> തെറ്റായ വാദങ്ങളെ പൊളിക്കാൻ ഉപയോഗിക്കുന്ന അനുമാനപരമായ ചോദ്യം ചെയ്യൽ.
+              <br/>4. <span class="hl-green">സ്മൃതി (Smṛti):</span> ഓർമ്മകൾ മാത്രമായതിനാൽ ഇത് പുതിയ അറിവല്ല.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Four Epistemic Constituents (Caturgroha)</span>
+          <span class="section-title-ml">(അറിവിന്റെ നാല് അടിസ്ഥാന ഘടകങ്ങൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Valid cognition requires four factors: (1) <span class="hl-yellow">Pramātā</span> (the knowing subject/self), (2) <span class="hl-yellow">Prameya</span> (the knowable object), (3) <span class="hl-yellow">Pramāṇa</span> (the means of knowing), and (4) <span class="hl-yellow">Pramiti</span> (the resulting verified cognition).</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>അറിവ് ഉണ്ടാകാൻ നാല് ഘടകങ്ങൾ വേണം: (1) പ്രമാതാവ് (അറിയുന്ന വ്യക്തി), (2) പ്രമേയം (അറിയപ്പെടേണ്ട വസ്തു), (3) പ്രമാണം (അറിയാനുള്ള മാർഗ്ഗം), (4) പ്രമിതി (ലഭിച്ച അന്തിമ അറിവ്).</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 10: Nyāya Epistemology</span>
+      <span>Page 2</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 10</span>
+        <span class="top-bar-right">Page 3 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Four Nyāya Pramāṇas</span>
+          <span class="section-title-ml">(ന്യായ ദർശനത്തിലെ നാല് പ്രമാണങ്ങൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">The Nyāya school formally accepts exactly four independent Pramāṇas:</span></p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-green">1. Pratyakṣa (Perception):</span> Direct cognitive apprehension resulting from the contact of sense organs with real external objects.</li>
+            <li><span class="hl-green">2. Anumāna (Inference):</span> Rational indirect deduction of an unobserved truth mediated through an observed invariable sign (*Liṅga / Hetu*).</li>
+            <li><span class="hl-green">3. Upamāna (Comparison / Analogy):</span> Acquisition of knowledge of an unfamiliar object through its perceived similarity to a familiar object.</li>
+            <li><span class="hl-green">4. Śabda (Verbal Testimony):</span> Authentic knowledge derived from the spoken or written statement of an authoritative, trustworthy person (*Āpta*).</li>
+          </ul>
+          <p>Nyāya rigorously demonstrates that other proposed pramāṇas—such as Presumption (*Arthāpatti*) and Non-apprehension (*Anupalabdhi*)—are reducible to Inference and Perception, rejecting them as distinct sources.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ന്യായ ദർശനം നാല് സ്വതന്ത്ര പ്രമാണങ്ങളെയാണ് അംഗീകരിക്കുന്നത്:</span></p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-green">1. പ്രത്യക്ഷം (Pratyakṣa):</span> ഇന്ദ്രിയങ്ങളും ബാഹ്യ വസ്തുക്കളും തമ്മിലുള്ള നേരിട്ടുള്ള സമ്പർക്കത്തിലൂടെ ലഭിക്കുന്ന അറിവ്.</li>
+            <li><span class="hl-green">2. അനുമാനം (Anumāna):</span> കാണുന്ന അടയാളത്തിൽ (ഹേതു) നിന്ന് കാണാത്ത യാഥാർത്ഥ്യത്തെ യുക്തിയിലൂടെ കണ്ടെത്തുന്ന രീതി.</li>
+            <li><span class="hl-green">3. ഉപമാനം (Upamāna):</span> അറിയാവുന്ന വസ്തുവുമായുള്ള സാദൃശ്യം കണ്ട് പുതിയൊരു വസ്തുവിനെ തിരിച്ചറിയൽ.</li>
+            <li><span class="hl-green">4. ശബ്ദം (Śabda):</span> വിശ്വസ്തനും സത്യസന്ധനുമായ ഒരു ആധികാരിക വ്യക്തിയുടെ വാക്കുകളിലൂടെ ലഭിക്കുന്ന അറിവ്.</li>
+          </ul>
+          <p>മറ്റ് ദർശനങ്ങൾ പറഞ്ഞ അർത്ഥാപത്തി, അനുപലബ്ധി എന്നിവയെ അനുമാനത്തിലും പ്രത്യക്ഷത്തിലും ഉൾക്കൊള്ളിച്ച് സ്വതന്ത്ര പ്രമാണങ്ങളല്ലെന്ന് ന്യായം വ്യക്തമാക്കി.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Realistic Epistemology</span>
+          <span class="section-title-ml">(റിയലിസ്റ്റിക് എപ്പിസ്റ്റമോളജി)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Nyāya is an epistemological realism: external physical objects exist objectively and independently of human minds, and our cognitive faculties are fully capable of grasping their authentic reality.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>മനുഷ്യന്റെ മനസ്സിന് പുറത്ത് ഭൗതിക വസ്തുക്കൾ യഥാർത്ഥമായി നിലനിൽക്കുന്നുണ്ടെന്നും, പ്രമാണങ്ങളിലൂടെ അവയെ ശരിയായി മനസ്സിലാക്കാൻ നമുക്ക് സാധിക്കുമെന്നും ന്യായം സമർത്ഥിക്കുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 10: Nyāya Epistemology</span>
+      <span>Page 3</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 10</span>
+        <span class="top-bar-right">Page 4 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Pratyakṣa (Perception): Definition and Stages</span>
+          <span class="section-title-ml">(പ്രത്യക്ഷം: നിർവ്വചനവും ഘട്ടങ്ങളും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Gautama defined perception as non-erroneous cognition produced by the contact of a sense organ with an object (*Indriyārthasannikarṣa*). Unlike Buddhism which accepts only non-conceptual perception, <span class="hl-yellow">Nyāya accepts both stages of perception as valid:</span></p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-green">1. Nirvikalpaka (Indeterminate / Non-Conceptual Perception):</span>
+              <br/>The primary, immediate apprehension where the object is sensed in its bare factuality without structure, names, or classes. It is an unexpressed awareness ("something exists").</li>
+            <li><span class="hl-green">2. Savikalpaka (Determinate / Conceptual Perception):</span>
+              <br/>The mature, structured cognition where the object is explicitly identified with its name, genus (*Jāti*), quality (*Guṇa*), action (*Karma*), and substance (*Dravya*). For example: "This is a brown wooden table."</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഇന്ദ്രിയങ്ങളും വസ്തുക്കളും തമ്മിലുള്ള സംയോഗത്തിൽ നിന്നാണ് പ്രത്യക്ഷം ഉണ്ടാകുന്നത്. ബുദ്ധമതത്തിൽ നിന്ന് വ്യത്യസ്തമായി, <span class="hl-yellow">പ്രത്യക്ഷത്തിന്റെ രണ്ട് ഘട്ടങ്ങളെയും ന്യായം പൂർണ്ണമായി അംഗീകരിക്കുന്നു:</span></p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-green">1. നിർവ്വികല്പക പ്രത്യക്ഷം:</span>
+              <br/>വസ്തുവിനെ ഇന്ദ്രിയങ്ങൾ തൊട്ടറിയുന്ന ആദ്യ ഘട്ടം. പേരോ രൂപമോ ഇല്ലാതെ എന്തോ ഒന്ന് ഉണ്ടെന്നുള്ള അവ്യക്തമായ അനുഭവം മാത്രമാണിത്.</li>
+            <li><span class="hl-green">2. സവികല്പക പ്രത്യക്ഷം:</span>
+              <br/>വസ്തുവിന്റെ പേര്, ജാതി, ഗുണം എന്നിവ തിരിച്ചറിഞ്ഞ് വ്യക്തമായി മനസ്സിലാക്കുന്ന പൂർണ്ണമായ അറിവ്. ഉദാഹരണത്തിന്: "ഇതൊരു തടി മേശയാണ്" എന്ന് അറിയുന്നത്.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Laukika (Ordinary) and Alaukika (Extraordinary) Perception</span>
+          <span class="section-title-ml">(ലൗകികവും അലൗകികവുമായ പ്രത്യക്ഷം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Nyāya divides perception into <span class="hl-yellow">Laukika</span> (normal contact via 5 external senses plus the internal organ *Manas*) and <span class="hl-yellow">Alaukika</span> (extraordinary perception: *Sāmānyalakṣaṇa* grasping the universal through a single instance, *Jñānalakṣaṇa* seeing ice as cold, and *Yogaja* intuitive perception of mystics).</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>സാധാരണ ഇന്ദ്രിയങ്ങളിലൂടെയുള്ള <span class="hl-yellow">ലൗകിക പ്രത്യക്ഷം</span> കൂടാതെ, സാമാന്യലക്ഷണം, ജ്ഞാനലക്ഷണം (മഞ്ഞ് കാണുമ്പോൾ തന്നെ തണുപ്പ് അനുഭവപ്പെടൽ), യോഗജം (യോഗികളുടെ അതീന്ദ്രിയ ജ്ഞാനം) എന്നീ മൂന്ന് <span class="hl-yellow">അലൗകിക പ്രത്യക്ഷങ്ങളും</span> ന്യായം വിശദീകരിക്കുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 10: Nyāya Epistemology</span>
+      <span>Page 4</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 10</span>
+        <span class="top-bar-right">Page 5 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Anumāna (Inference) and the Universal Relation (Vyāpti)</span>
+          <span class="section-title-ml">(അനുമാനവും വ്യാപ്തി സിദ്ധാന്തവും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>In Nyāya, <span class="hl-yellow">Anumāna literally means "cognition following prior knowledge"</span> (*anu* = after, *māna* = knowing). It is defined as knowledge of an unperceived object (<span class="hl-green">Sādhya</span>) in a subject (<span class="hl-green">Pakṣa</span>) by virtue of an observed middle term (<span class="hl-green">Hetu / Liṅga</span>).</p>
+          <p><span class="hl-yellow">The absolute logical nerve-center of Anumāna is Vyāpti (Invariable Concomitance).</span> Vyāpti is the eternal, unconditional, constant relation between the Hetu (middle term) and the Sādhya (major term). For inference to be valid, Vyāpti must be strictly free from any adventitious condition (<span class="hl-green">Upādhi</span>).</p>
+          <p>For example: <em>"Wherever there is smoke, there is fire"</em> is a valid universal relation. However, <em>"Wherever there is fire, there is smoke"</em> is invalid, because fire in a glowing red-hot iron ball produces no smoke unless wet fuel (*Upādhi*) is present.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">മുൻപറിവിനെ അടിസ്ഥാനമാക്കി പുതിയൊരു അറിവ് നേടുന്ന പ്രക്രിയയാണ് അനുമാനം (Anumāna).</span> മലയിൽ പുക (ഹേതു) കണ്ടതിൽ നിന്നും മലയിൽ (പക്ഷം) തീ (സാധ്യം) ഉണ്ടെന്ന് നാം കണ്ടെത്തുന്നു.</p>
+          <p><span class="hl-yellow">അനുമാനത്തിന്റെ ജീവനാഡിയാണ് വ്യാപ്തി (Vyāpti).</span> ഹേതുവും സാധ്യവും തമ്മിലുള്ള ശാശ്വതവും ഒഴിച്ചുകൂടാനാവാത്തതുമായ ബന്ധമാണിത്. യാതൊരു ഉപാധികളും (നിബന്ധനകൾ) ഇല്ലാതെ എവിടെ പുകയുണ്ടോ അവിടെയെല്ലാം തീ ഉണ്ടായിരിക്കും എന്നത് വ്യാപ്തിക്ക് ഉദാഹരണമാണ്.</p>
+          <p>എന്നാൽ "തീ ഉള്ളിടത്തെല്ലാം പുകയുണ്ടാകും" എന്നത് തെറ്റാണ്; കാരണം പഴുത്ത ഇരുമ്പുഗുളികയിൽ തീയുണ്ടെങ്കിലും പച്ചവിറക് (ഉപാധി) ഇല്ലാത്തതിനാൽ പുകയുണ്ടാവില്ല.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Three Terms of Inference</span>
+          <span class="section-title-ml">(അനുമാനത്തിലെ മൂന്ന് ഘടകങ്ങൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>1. <span class="hl-yellow">Pakṣa:</span> Minor term / subject of inquiry (e.g., The Hill).<br/>
+          2. <span class="hl-yellow">Sādhya:</span> Major term / unperceived fact to be proven (e.g., Fire).<br/>
+          3. <span class="hl-yellow">Hetu:</span> Middle term / perceived evidence or sign (e.g., Smoke).</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>1. <span class="hl-yellow">പക്ഷം:</span> വിഷയം (മല).<br/>
+          2. <span class="hl-yellow">സാധ്യം:</span> തെളിയിക്കേണ്ട കാര്യം (തീ).<br/>
+          3. <span class="hl-yellow">ഹേതു:</span> തെളിവായി കണ്ട അടയാളം (പുക).</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 10: Nyāya Epistemology</span>
+      <span>Page 5</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 10</span>
+        <span class="top-bar-right">Page 6 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Nyāya Five-Membered Syllogism (Pañcāvayava)</span>
+          <span class="section-title-ml">(ന്യായ പഞ്ചാവയവ വാക്യം: അഞ്ചംഗ യുക്തിവാക്യം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>For convincing others in philosophical debates (*Parārthānumāna*), Nyāya formulated the world-renowned <span class="hl-yellow">Five-Membered Syllogism (Pañcāvayava)</span>. Combining both inductive empirical observation and deductive logic:</p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 8.5pt;">
+            <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+              <th style="padding: 5px; text-align: left;">Step / Member</th>
+              <th style="padding: 5px; text-align: left;">Sanskrit Term</th>
+              <th style="padding: 5px; text-align: left;">Classical Example</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">1. Proposition</td>
+              <td style="padding: 5px; color: #1e3a8a; font-weight: 600;">Pratijñā</td>
+              <td style="padding: 5px;">The hill possesses fire.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">2. Reason</td>
+              <td style="padding: 5px; color: #1e3a8a; font-weight: 600;">Hetu</td>
+              <td style="padding: 5px;">Because it has smoke.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">3. Exemplification</td>
+              <td style="padding: 5px; color: #1e3a8a; font-weight: 600;">Udāharaṇa</td>
+              <td style="padding: 5px;">Wherever there is smoke, there is fire, as in a kitchen.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">4. Application</td>
+              <td style="padding: 5px; color: #1e3a8a; font-weight: 600;">Upanaya</td>
+              <td style="padding: 5px;">The hill has smoke which is invariably associated with fire.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">5. Conclusion</td>
+              <td style="padding: 5px; color: #1e3a8a; font-weight: 600;">Nigamana</td>
+              <td style="padding: 5px;">Therefore, the hill possesses fire.</td>
+            </tr>
+          </table>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>മറ്റൊരാൾക്ക് ഒരു സത്യം യുക്തിപൂർവ്വം തെളിയിച്ചു കൊടുക്കാൻ ന്യായം രൂപകൽപ്പന ചെയ്തതാണ് <span class="hl-yellow">പഞ്ചാവയവ വാക്യം</span>:</p>
+          <ol style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45; font-size: 8.5pt;">
+            <li><strong>1. പ്രതിജ്ഞ (Pratijñā):</strong> തെളിയിക്കേണ്ട വാചകം — "മലയിൽ തീയുണ്ട്".</li>
+            <li><strong>2. ഹേതു (Hetu):</strong> അതിനുള്ള കാരണം — "കാരണം അവിടെ പുകയുണ്ട്".</li>
+            <li><strong>3. ഉദാഹരണം (Udāharaṇa):</strong> വ്യാപ്തിയും ഉദാഹരണവും — "എവിടെയൊക്കെ പുകയുണ്ടോ അവിടെയൊക്കെ തീയുണ്ട്, അടുക്കളയിലെപ്പോലെ".</li>
+            <li><strong>4. ഉപനയം (Upanaya):</strong> ഉദാഹരണത്തെ വിഷയത്തിൽ പ്രയോഗിക്കൽ — "തീയുമായി അഭേദ്യമായി ബന്ധപ്പെട്ട പുക ഈ മലയിലുണ്ട്".</li>
+            <li><strong>5. നിഗമനം (Nigamana):</strong> അന്തിമ തീർപ്പ് — "അതുകൊണ്ട് മലയിൽ തീയുണ്ട്".</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Synthesis of Induction and Deduction</span>
+          <span class="section-title-ml">(ഇൻഡക്ഷന്റെയും ഡിഡക്ഷന്റെയും സമന്വയം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Unlike Western Aristotelian syllogisms which are purely formal deduction, <span class="hl-yellow">Nyāya syllogism synthesizes real empirical observation (inductive Udāharaṇa) with strict logical deduction.</span></p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>പാശ്ചാത്യ അരിസ്റ്റോട്ടിലിയൻ യുക്തിയിൽ നിന്ന് വ്യത്യസ്തമായി, ബാഹ്യ ലോകത്തെ അനുഭവങ്ങളെയും (ഇൻഡക്ഷൻ) ശുദ്ധമായ യുക്തിയെയും (ഡിഡക്ഷൻ) ന്യായം പരസ്പരം സമന്വയിപ്പിക്കുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 10: Nyāya Epistemology</span>
+      <span>Page 6</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 10</span>
+        <span class="top-bar-right">Page 7 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Upamāna (Comparison / Analogy)</span>
+          <span class="section-title-ml">(ഉപമാന പ്രമാണം: സാദൃശ്യത്തിലൂടെയുള്ള അറിവ്)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Upamāna is the source of knowledge regarding the relationship between a name and the object denoted by it, based on recognized resemblance to a known object.</span></p>
+          <p>Classical Example: A city dweller is informed by a forester that a wild ox (<span class="hl-green">Gavaya</span>) looks very much like a domestic cow. Later, traveling into a deep forest, he spots a strange animal closely resembling a cow. Recalling the forester's authoritative description, he immediately realizes: <em>"This creature is a Gavaya."</em></p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">അറിയാവുന്ന ഒരു വസ്തുവിന്റെ സാദൃശ്യം കണ്ടുകൊണ്ട് പുതിയൊരു വസ്തുവിനെയും അതിന്റെ പേരിനെയും തിരിച്ചറിയുന്ന രീതിയാണ് ഉപമാനം.</span></p>
+          <p>ഉദാഹരണം: കാട്ടുപോത്ത് (ഗവയൻ) നാട്ടിലെ പശുവിനെപ്പോലെയിരിക്കും എന്ന് ഒരാൾ കേൾക്കുന്നു. പിന്നീട് കാട്ടിൽ വെച്ച് പശുവിന് സമാനമായ ഒരു മൃഗത്തെ കാണുമ്പോൾ, "ഇതാണ് കാട്ടുപോത്ത്" എന്ന് അയാൾ തിരിച്ചറിയുന്നു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Śabda (Verbal Testimony) and Four Semantic Conditions</span>
+          <span class="section-title-ml">(ശബ്ദ പ്രമാണവും നാല് ഭാഷാ നിബന്ധനകളും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Śabda is the statement of an Āpta—a trustworthy, authoritative person who knows the truth and speaks without deceit.</span> For a sentence to convey valid meaning, it must satisfy four semantic criteria:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. Ākāṅkṣā (Syntactic Expectancy):</span> Words in a sentence must logically require each other to complete the sense.</li>
+            <li><span class="hl-yellow">2. Yogyatā (Semantic Compatibility):</span> Words must not express a logical impossibility (e.g., "Moisten with fire" is disqualified).</li>
+            <li><span class="hl-yellow">3. Sannidhi (Phonetic Contiguity):</span> Words must be uttered in continuous temporal proximity without massive pauses.</li>
+            <li><span class="hl-yellow">4. Tātparya (Contextual Intention):</span> The intended meaning must match the speaker's contextual intent.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">സത്യമറിയാവുന്ന, വിശ്വസ്തനായ ഒരാളുടെ വാക്കുകളാണ് ശബ്ദ പ്രമാണം.</span> ഒരു വാക്യം ശരിയായ അർത്ഥം നൽകാൻ നാല് ഗുണങ്ങൾ വേണം:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>1. ആകാംക്ഷ: വാക്യത്തിലെ വാക്കുകൾ പരസ്പരം പൂർണ്ണത നൽകുന്നതായിരിക്കണം.</li>
+            <li>2. യോഗ്യത: അർത്ഥപരമായ പൊരുത്തം ഉണ്ടായിരിക്കണം ("തീ കൊണ്ട് നനയ്ക്കുക" എന്നത് യോഗ്യതയില്ലാത്ത വാക്യമാണ്).</li>
+            <li>3. സന്നിധി: വാക്കുകൾ വലിയ ഇടവേളകളില്ലാതെ അടുത്തടുത്ത് പറയണം.</li>
+            <li>4. താത്പര്യം: സന്ദർഭത്തിനനുസരിച്ചുള്ള ശരിയായ ഉദ്ദേശ്യമായിരിക്കണം.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 10: Nyāya Epistemology</span>
+      <span>Page 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 10</span>
+        <span class="top-bar-right">Page 8 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Why Arthāpatti is NOT a Nyāya Pramāṇa</span>
+          <span class="section-title-ml">(അർത്ഥാപത്തി എന്തുകൊണ്ട് ന്യായ പ്രമാണമല്ല?)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Mīmāṁsā and Advaita Vedānta recognize <span class="hl-yellow">Arthāpatti (Presumption / Postulation)</span> as an independent fifth pramāṇa to resolve an apparent contradiction (e.g., Fat Devadatta does not eat during the day; therefore he must eat at night).</p>
+          <p><span class="hl-yellow">Nyāya decisively rejects Arthāpatti as an independent pramāṇa</span>, arguing that it is simply a case of <span class="hl-green">Anumāna (Inference)</span> based on negative concomitance (*Vyatireka-vyāpti*): <em>"A living fat man who fasts by day must eat at night, just as anyone who gains weight without daytime food consumes calories at night."</em> Thus, Arthāpatti is subsumed under Anumāna.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>മീമാംസയും വേദാന്തവും സ്വീകരിച്ച <span class="hl-yellow">അർത്ഥാപത്തിയെ (Presumption) ന്യായം തള്ളിക്കളയുന്നു</span> (ഉദാ: തടിച്ച ദേവദത്തൻ പകൽ ഭക്ഷണം കഴിക്കുന്നില്ല, അതിനാൽ അവൻ രാത്രി കഴിക്കുന്നുണ്ടാകണം).</p>
+          <p>ഇത് പുതിയൊരു പ്രമാണമല്ലെന്നും, <span class="hl-green">അനുമാനത്തിന്റെ തന്നെ മറ്റൊരു രൂപം മാത്രമാണെന്നും</span> ന്യായം സമർത്ഥിച്ചു. അതിനാൽ അർത്ഥാപത്തിയെ സ്വതന്ത്ര പ്രമാണമായി കാണേണ്ടതില്ല.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Subsumption of Anupalabdhi (Non-Apprehension) under Perception</span>
+          <span class="section-title-ml">(അനുപലബ്ധിയെ പ്രത്യക്ഷത്തിൽ ഉൾപ്പെടുത്തൽ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Advaita argues that knowing the absence of a pot on the floor requires a sixth pramāṇa (*Anupalabdhi*). Nyāya counters that <span class="hl-yellow">absence (Abhāva) is directly perceived by the eyes</span> via the relation of qualification (*Viśeṣaṇatā*): you directly see the bare floor qualified by the absence of the pot.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>തറയിൽ ഒരു കുടമില്ലാത്ത അവസ്ഥയെ (അഭാവം) അറിയാൻ പുതിയ പ്രമാണം ആവശ്യമില്ലെന്നും, തറ ശൂന്യമായിരിക്കുന്നത് നാം കണ്ണുകൊണ്ട് <span class="hl-yellow">നേരിട്ട് കാണുകയാണെന്നും (പ്രത്യക്ഷം)</span> ന്യായം വ്യക്തമാക്കി.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 10: Nyāya Epistemology</span>
+      <span>Page 8</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 10</span>
+        <span class="top-bar-right">Page 9 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Nyāya Epistemology as Blueprint for Modern AI Architectures</span>
+          <span class="section-title-ml">(ആധുനിക AI-യുടെ മാതൃകയായി ന്യായ യുക്തിശാസ്ത്രം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Nyāya epistemology provides extraordinary architectural blueprints for contemporary computational intelligence:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">Rule-Based Inference Engines:</span> Prolog, expert systems, and deductive logic programming execute knowledge retrieval using patterns identical to the five-membered Pañcāvayava.</li>
+            <li><span class="hl-yellow">Vyāpti and Statistical Machine Learning:</span> Discovering invariable correlations (*Vyāpti*) free from accidental confounds (*Upādhi*) is the holy grail of causal machine learning and feature selection.</li>
+            <li><span class="hl-yellow">Explainable AI (XAI):</span> Modern deep neural networks suffer from "black-box opacity". Nyāya demands that every conclusion (*Nigamana*) be justified step-by-step through an explicit reason (*Hetu*) and empirical example (*Udāharaṇa*), offering a pristine model for transparent, accountable AI.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ആധുനിക കമ്പ്യൂട്ടർ സയൻസിനും AI-ക്കും ന്യായ ദർശനം നൽകുന്ന നിർണ്ണായക സംഭാവനകൾ:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">ഇൻഫറൻസ് എൻജിനുകൾ:</span> പ്രോലോഗ് (Prolog) പോലുള്ള പ്രോഗ്രാമിംഗ് ഭാഷകളിൽ യുക്തിപരമായ തീരുമാനങ്ങൾ എടുക്കുന്നത് ന്യായ പഞ്ചാവയവ വാക്യത്തിന് സമാനമായാണ്.</li>
+            <li><span class="hl-yellow">ഡാറ്റാ ബന്ധങ്ങൾ കണ്ടെത്തൽ:</span> മെഷീൻ ലേണിംഗിൽ കൃത്യമായ കാര്യകാരണ ബന്ധങ്ങൾ കണ്ടെത്തുന്നത് ന്യായത്തിലെ *വ്യാപ്തി* സിദ്ധാന്തത്തിന് തുല്യമാണ്.</li>
+            <li><span class="hl-yellow">വിശദീകരിക്കാവുന്ന AI (Explainable AI):</span> ഇന്നത്തെ AI-കൾ ഉത്തരങ്ങൾ നൽകുമ്പോൾ അതിനുള്ള കാരണങ്ങൾ പറയാൻ സാധിക്കാറില്ല (ബ്ലാക്ക് ബോക്സ്). എന്നാൽ ന്യായം ഓരോ ഉത്തരത്തിനും കൃത്യമായ കാരണവും (ഹേതു) തെളിവും (ഉദാഹരണം) നിഷ്കർഷിക്കുന്നത് സുതാര്യമായ AI നിർമ്മിക്കാൻ വഴികാട്ടുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Error Analysis in AI</span>
+          <span class="section-title-ml">(AI-യിലെ തെറ്റുകൾ കണ്ടെത്തൽ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Nyāya meticulously analyzed error (*Viparyaya*) to safeguard valid cognition. In AI, hallucination detection and bias mitigation directly parallel Nyāya's rigor in identifying fallacies of the middle term (<span class="hl-green">Hetvābhāsa</span>).</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>തെറ്റായ അറിവുകൾ (വിപര്യയം) എങ്ങനെ സംഭവിക്കുന്നുവെന്ന് ന്യായം പഠിച്ചത്, ഇന്നത്തെ AI-യിലെ തെറ്റായ വിവരങ്ങളും മുൻവിധികളും (Hallucinations) തിരുത്താൻ സഹായിക്കുന്ന ഒരു മികച്ച മാതൃകയാണ്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 10: Nyāya Epistemology</span>
+      <span>Page 9</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 10</span>
+        <span class="top-bar-right">Page 10 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Comparative Synthesis: Nyāya Syllogism vs. Aristotelian Syllogism</span>
+          <span class="section-title-ml">(താരതമ്യ പഠനം: ന്യായ വാക്യവും അരിസ്റ്റോട്ടിലിന്റെ യുക്തിവാക്യവും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>A rigorous comparative matrix between the two logical titans:</p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 8.5pt;">
+            <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+              <th style="padding: 5px; text-align: left;">Feature</th>
+              <th style="padding: 5px; text-align: left;">Nyāya Logic (Indian)</th>
+              <th style="padding: 5px; text-align: left;">Aristotelian Logic (Western)</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Structure</td>
+              <td style="padding: 5px;">5 Propositions (Pañcāvayava).</td>
+              <td style="padding: 5px;">3 Propositions (Major, Minor, Conclusion).</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Epistemic Nature</td>
+              <td style="padding: 5px;">Inductive-Deductive; requires real-world instance (*Udāharaṇa*).</td>
+              <td style="padding: 5px;">Purely deductive and formal; indifferent to material fact.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Middle Term</td>
+              <td style="padding: 5px;">Hetu (Must possess Vyāpti free from Upādhi).</td>
+              <td style="padding: 5px;">Middle Term (Connects major and minor terms).</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Target Goal</td>
+              <td style="padding: 5px;">Practical liberation & infallible material truth.</td>
+              <td style="padding: 5px;">Formal validity and logical consistency.</td>
+            </tr>
+          </table>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ന്യായ യുക്തിയും പാശ്ചാത്യ അരിസ്റ്റോട്ടിലിയൻ യുക്തിയും തമ്മിലുള്ള വ്യത്യാസങ്ങൾ:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45; font-size: 8.5pt;">
+            <li><strong>ഘടന:</strong> ന്യായത്തിന് 5 വാക്യങ്ങളുള്ളപ്പോൾ (പഞ്ചാവയവം), അരിസ്റ്റോട്ടിലിന് 3 വാക്യങ്ങൾ മാത്രമാണുള്ളത്.</li>
+            <li><strong>സ്വഭാവം:</strong> അരിസ്റ്റോട്ടിൽ വെറും ഫോർമൽ ചിഹ്നങ്ങളെ ആശ്രയിക്കുമ്പോൾ, ന്യായം ഭൗതിക ലോകത്തിലെ യഥാർത്ഥ ഉദാഹരണത്തെയും അനുഭവത്തെയും നിർബന്ധമാക്കുന്നു.</li>
+            <li><strong>ലക്ഷ്യം:</strong> പാശ്ചാത്യ യുക്തി വാദത്തിന്റെ ഭംഗി നോക്കുമ്പോൾ, ന്യായം പ്രായോഗിക ജീവിതത്തിലെ സത്യത്തെയും മോക്ഷത്തെയുമാണ് ലക്ഷ്യമിടുന്നത്.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 10: Nyāya Epistemology</span>
+      <span>Page 10</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 10</span>
+        <span class="top-bar-right">Page 11 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">University Academic Exercises: Knock Your Brain</span>
+          <span class="section-title-ml">(യൂണിവേഴ്സിറ്റി Curriculum പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ)</span>
+        </div>
+        <div class="block-en" style="font-size: 8.5pt;">
+          <p><strong>1. Nyāya philosophy is primarily concerned with:</strong><br/>
+          (a) Liberation through devotion &nbsp; (b) Logical reasoning and valid knowledge &nbsp; (c) Ritual practices &nbsp; (d) Meditation techniques<br/>
+          <em>Answer:</em> <span class="hl-yellow">(b) Logical reasoning and valid knowledge</span></p>
+          <p><strong>2. In Nyāya, valid knowledge is called:</strong><br/>
+          (a) Avidyā &nbsp; (b) Pramā &nbsp; (c) Samsāra &nbsp; (d) Mokṣa<br/>
+          <em>Answer:</em> <span class="hl-yellow">(b) Pramā</span></p>
+          <p><strong>3. How many Pramāṇas are accepted by the Nyāya school?</strong><br/>
+          (a) Two &nbsp; (b) Three &nbsp; (c) Four &nbsp; (d) Six<br/>
+          <em>Answer:</em> <span class="hl-yellow">(c) Four</span></p>
+          <p><strong>4. Which of the following is NOT a Nyāya Pramāṇa?</strong><br/>
+          (a) Perception (Pratyakṣa) &nbsp; (b) Inference (Anumāna) &nbsp; (c) Comparison (Upamāna) &nbsp; (d) Presumption (Arthāpatti)<br/>
+          <em>Answer:</em> <span class="hl-yellow">(d) Presumption (Arthāpatti)</span></p>
+          <p><strong>5. Anumāna (inference) is based on:</strong><br/>
+          (a) Direct experience &nbsp; (b) Testimony &nbsp; (c) Universal relation (Vyāpti) &nbsp; (d) Guesswork<br/>
+          <em>Answer:</em> <span class="hl-yellow">(c) Universal relation (Vyāpti)</span></p>
+        </div>
+        <div class="block-ml" style="font-size: 8.5pt;">
+          <p><strong>മലയാളം സംഗ്രഹം & Curriculum ഉത്തരങ്ങൾ:</strong><br/>
+          1. ന്യായ ദർശനം പ്രധാനമായും ശ്രദ്ധ കേന്ദ്രീകരിക്കുന്നത്: <span class="hl-yellow">യുക്തിചിന്തയും ശരിയായ ജ്ഞാനവും (Logical reasoning and valid knowledge)</span>.<br/>
+          2. ന്യായത്തിൽ ശരിയായ അറിവിനെ വിളിക്കുന്നത്: <span class="hl-yellow">പ്രമ (Pramā)</span>.<br/>
+          3. ന്യായ ദർശനം അംഗീകരിച്ച പ്രമാണങ്ങളുടെ എണ്ണം: <span class="hl-yellow">നാല് (Four)</span>.<br/>
+          4. ന്യായ പ്രമാണമല്ലാത്തത് ഏത്: <span class="hl-yellow">അർത്ഥാപത്തി (Presumption / Arthāpatti)</span>.<br/>
+          5. അനുമാനം അടിസ്ഥാനമാക്കിയിരിക്കുന്നത്: <span class="hl-yellow">സാർവ്വലൗകിക ബന്ധത്തെ അഥവാ വ്യാപ്തിയെ (Vyāpti)</span>.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Unleash Your Potential: Detailed University Questions</span>
+          <span class="section-title-ml">(വിശദമായ പരീക്ഷാ ചോദ്യങ്ങൾ)</span>
+        </div>
+        <div class="block-en" style="font-size: 8.5pt;">
+          <p><strong>Q1: Elucidate the theory of knowledge and pramāṇas within the Nyāya framework?</strong><br/>
+          <em>Core Answer:</em> Nyāya defines valid knowledge as Pramā (true representation of reality), generated by four distinct pramāṇas: Pratyakṣa, Anumāna, Upamāna, and Śabda.</p>
+          <p><strong>Q2: Elucidate the Nyāya theory of inference, providing appropriate instances?</strong><br/>
+          <em>Core Answer:</em> Founded upon Vyāpti (invariable relation between smoke and fire); demonstrated formally via the 5-membered Pañcāvayava syllogism on the hill.</p>
+        </div>
+        <div class="block-ml" style="font-size: 8.5pt;">
+          <p><strong>ചോദ്യം 1: ന്യായ ദർശനത്തിലെ ജ്ഞാന സിദ്ധാന്തവും പ്രമാണങ്ങളും വ്യക്തമാക്കുക.</strong><br/>
+          <em>ഉത്തരം:</em> യാഥാർത്ഥ്യത്തെ തെറ്റില്ലാതെ അറിയുന്ന പ്രമയെ നേടാൻ നാല് പ്രമാണങ്ങളാണ് (പ്രത്യക്ഷം, അനുമാനം, ഉപമാനം, ശബ്ദം) ന്യായം നിർദ്ദേശിക്കുന്നത്.</p>
+          <p><strong>ചോദ്യം 2: ന്യായ അനുമാന സിദ്ധാന്തം ഉദാഹരണ സഹിതം വിശദീകരിക്കുക.</strong><br/>
+          <em>ഉത്തരം:</em> വ്യാപ്തി ബന്ധത്തിൽ അധിഷ്ഠിതമായി, മലയിലെ പുക കണ്ട് തീ അനുമാനിക്കുന്ന രീതിയും പഞ്ചാവയവ വാക്യവും (പ്രതിജ്ഞ, ഹേതു, ഉദാഹരണം, ഉപനയം, നിഗമനം).</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 10: Nyāya Epistemology</span>
+      <span>Page 11</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 10</span>
+        <span class="top-bar-right">Page 12 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="chapter-hero" style="padding: 6px 12px; margin-bottom: 8px;">
+        <div class="hero-tag">🎯 Quick Revision & Exam Mastery</div>
+        <div class="hero-title-en" style="font-size: 13pt;">20 Core Academic Concepts: Nyāya Epistemology</div>
+        <div class="hero-title-ml" style="font-size: 10pt;">20 പ്രധാന പരീക്ഷാ ആശയങ്ങൾ: ന്യായ ജ്ഞാനമീമാംസ</div>
+      </div>
+
+      <div class="grid-container">
+        <!-- 1 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">👨‍🏫 Founder</span><span class="point-title-en">Akṣapāda Gautama</span></div>
+          <div class="point-title-ml">അക്ഷപാദ ഗൗതമൻ</div>
+          <div class="point-body">Ancient sage who founded the Nyāya school and authored the foundational *Nyāya Sūtras*.</div>
+          <div class="point-body-ml">ന്യായ ദർശനത്തിന്റെ സ്ഥാപകനും ന്യായസൂത്രങ്ങളുടെ കർത്താവും.</div>
+        </div>
+        <!-- 2 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">⚖️ Domain</span><span class="point-title-en">Logic and Epistemology</span></div>
+          <div class="point-title-ml">യുക്തിയും ജ്ഞാനമീമാംസയും</div>
+          <div class="point-body">Nyāya is primarily concerned with logical reasoning, criteria of truth, and methodology of valid cognition.</div>
+          <div class="point-body-ml">യുക്തിചിന്തയ്ക്കും ശരിയായ അറിവിനും മുൻഗണന നൽകുന്ന ദർശനം.</div>
+        </div>
+        <!-- 3 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">✨ Valid Cognition</span><span class="point-title-en">Pramā</span></div>
+          <div class="point-title-ml">പ്രമ</div>
+          <div class="point-body">Valid, true, non-erroneous cognition representing the object as it actually is (*Yathārtha-anubhava*).</div>
+          <div class="point-body-ml">വസ്തുവിനെ ഉള്ളതുപോലെ തെറ്റില്ലാതെ അറിയുന്ന ശരിയായ ജ്ഞാനം.</div>
+        </div>
+        <!-- 4 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🔢 4 Means</span><span class="point-title-en">Four Pramāṇas</span></div>
+          <div class="point-title-ml">നാല് പ്രമാണങ്ങൾ</div>
+          <div class="point-body">Nyāya accepts four pramāṇas: Perception (Pratyakṣa), Inference (Anumāna), Comparison (Upamāna), and Testimony (Śabda).</div>
+          <div class="point-body-ml">ന്യായം സ്വീകരിച്ച 4 പ്രമാണങ്ങൾ: പ്രത്യക്ഷം, അനുമാനം, ഉപമാനം, ശബ്ദം.</div>
+        </div>
+        <!-- 5 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">❌ Rejection</span><span class="point-title-en">Rejection of Arthāpatti</span></div>
+          <div class="point-title-ml">അർത്ഥാപത്തിയെ നിരാകരിക്കൽ</div>
+          <div class="point-body">Presumption is not an independent pramāṇa; Nyāya subsumes it completely under Anumāna.</div>
+          <div class="point-body-ml">അർത്ഥാപത്തി അനുമാനത്തിൽ അടങ്ങിയിരിക്കുന്നതിനാൽ സ്വതന്ത്ര പ്രമാണമല്ല.</div>
+        </div>
+        <!-- 6 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">👁️ Sense Contact</span><span class="point-title-en">Indriyārthasannikarṣa</span></div>
+          <div class="point-title-ml">ഇന്ദ്രിയാർത്ഥസന്നികർഷം</div>
+          <div class="point-body">The direct physical and cognitive contact between sense organs and real external objects.</div>
+          <div class="point-body-ml">ഇന്ദ്രിയങ്ങളും വസ്തുക്കളും തമ്മിലുള്ള നേരിട്ടുള്ള സമ്പർക്കം.</div>
+        </div>
+        <!-- 7 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🌱 Raw Sense</span><span class="point-title-en">Nirvikalpaka Pratyakṣa</span></div>
+          <div class="point-title-ml">നിർവ്വികല്പക പ്രത്യക്ഷം</div>
+          <div class="point-body">Indeterminate perception: primary unexpressed awareness of an object without structure or name.</div>
+          <div class="point-body-ml">പേരോ രൂപമോ ഇല്ലാതെ എന്തോ ഉണ്ടെന്ന പ്രാഥമിക അനുഭവം.</div>
+        </div>
+        <!-- 8 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🏷️ Structure</span><span class="point-title-en">Savikalpaka Pratyakṣa</span></div>
+          <div class="point-title-ml">സവികല്പക പ്രത്യക്ഷം</div>
+          <div class="point-body">Determinate perception: fully structured cognition recognizing the object's name, class, and attributes.</div>
+          <div class="point-body-ml">വസ്തുവിന്റെ പേരും ജാതിയും തിരിച്ചറിയുന്ന പൂർണ്ണമായ പ്രത്യക്ഷം.</div>
+        </div>
+        <!-- 9 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🔥 Invariable Link</span><span class="point-title-en">Vyāpti</span></div>
+          <div class="point-title-ml">വ്യാപ്തി</div>
+          <div class="point-body">The invariable, unconditional universal relation between the Hetu (smoke) and Sādhya (fire).</div>
+          <div class="point-body-ml">ഹേതുവും സാധ്യവും തമ്മിലുള്ള ശാശ്വതമായ അവിഭാജ്യ ബന്ധം.</div>
+        </div>
+        <!-- 10 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">⛰️ Minor Term</span><span class="point-title-en">Pakṣa</span></div>
+          <div class="point-title-ml">പക്ഷം</div>
+          <div class="point-body">The subject or locus in which the unperceived predicate is to be proven (e.g., The Hill).</div>
+          <div class="point-body-ml">കാര്യം തെളിയിക്കപ്പെടേണ്ട സ്ഥലം അഥവാ വിഷയം (മല).</div>
+        </div>
+        <!-- 11 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🎯 Major Term</span><span class="point-title-en">Sādhya</span></div>
+          <div class="point-title-ml">സാധ്യം</div>
+          <div class="point-body">The target unperceived property to be established through logical inference (e.g., Fire).</div>
+          <div class="point-body-ml">അനുമാനത്തിലൂടെ കണ്ടെത്തേണ്ട അന്തിമ വസ്തു (തീ).</div>
+        </div>
+        <!-- 12 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🔍 Middle Term</span><span class="point-title-en">Hetu (Liṅga)</span></div>
+          <div class="point-title-ml">ഹേതു (ലിംഗം)</div>
+          <div class="point-body">The middle term; the observed mark, sign, or reason that enables inference (e.g., Smoke).</div>
+          <div class="point-body-ml">കാഴ്ചയിൽ കാണുന്ന അടയാളം അഥവാ കാരണം (പുക).</div>
+        </div>
+        <!-- 13 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🪜 5 Steps</span><span class="point-title-en">Pañcāvayava Syllogism</span></div>
+          <div class="point-title-ml">പഞ്ചാവയവ വാക്യം</div>
+          <div class="point-body">5-step formal deduction: Pratijñā, Hetu, Udāharaṇa, Upanaya, and Nigamana.</div>
+          <div class="point-body-ml">അഞ്ച് പടികളായുള്ള ന്യായ യുക്തിവാക്യം.</div>
+        </div>
+        <!-- 14 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🐂 Analogy</span><span class="point-title-en">Upamāna (Comparison)</span></div>
+          <div class="point-title-ml">ഉപമാനം</div>
+          <div class="point-body">Knowledge of the denotation of a name through recognized similarity (e.g., Gavaya cow analogy).</div>
+          <div class="point-body-ml">സാദൃശ്യം കണ്ടുകൊണ്ട് പുതിയ വസ്തുവിനെ തിരിച്ചറിയൽ.</div>
+        </div>
+        <!-- 15 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🗣️ Testimony</span><span class="point-title-en">Śabda (Āptavākya)</span></div>
+          <div class="point-title-ml">ശബ്ദം (ആപ്തവാക്യം)</div>
+          <div class="point-body">Verbal testimony of an authoritative, trustworthy person who speaks without error or deceit.</div>
+          <div class="point-body-ml">വിശ്വസ്തനും ആധികാരികനുമായ വ്യക്തിയുടെ വാക്കുകൾ.</div>
+        </div>
+        <!-- 16 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🧩 Grammar</span><span class="point-title-en">Semantic Conditions</span></div>
+          <div class="point-title-ml">ഭാഷാ നിബന്ധനകൾ</div>
+          <div class="point-body">Four requirements for meaningful language: Ākāṅkṣā, Yogyatā, Sannidhi, and Tātparya.</div>
+          <div class="point-body-ml">വാക്യത്തിന് അർത്ഥമുണ്ടാകാൻ വേണ്ട ആകാംക്ഷ, യോഗ്യത, സന്നിധി, താത്പര്യം.</div>
+        </div>
+        <!-- 17 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🚫 Error Study</span><span class="point-title-en">Analysis of Viparyaya</span></div>
+          <div class="point-title-ml">വിപര്യയ പഠനം</div>
+          <div class="point-body">Carefully analyzing error and fallacies (*Hetvābhāsa*) to fortify verified cognition.</div>
+          <div class="point-body-ml">തെറ്റുകളെ അപഗ്രഥിച്ച് യഥാർത്ഥ അറിവ് ഉറപ്പുവരുത്തൽ.</div>
+        </div>
+        <!-- 18 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">💻 AI Logic</span><span class="point-title-en">Rule-Based Reasoning</span></div>
+          <div class="point-title-ml">പ്രോഗ്രാമിംഗ് ഇൻഫറൻസ്</div>
+          <div class="point-body">Nyāya deduction mirrors logic programming (Prolog) and forward/backward chaining expert engines.</div>
+          <div class="point-body-ml">AI-യിലെ ഡിഡക്റ്റീവ് റൂളുകളും പ്രോലോഗ് പ്രോഗ്രാമിംഗും ന്യായത്തിന് സമാനം.</div>
+        </div>
+        <!-- 19 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">💡 Transparency</span><span class="point-title-en">Explainable AI (XAI)</span></div>
+          <div class="point-title-ml">വിശദീകരിക്കാവുന്ന AI</div>
+          <div class="point-body">Nyāya's insistence on explicit justification (*Hetu* + *Udāharaṇa*) provides the ideal model for transparent AI.</div>
+          <div class="point-body-ml">ഓരോ തീരുമാനത്തിനും വ്യക്തമായ കാരണം നൽകുന്ന സുതാര്യമായ AI മാതൃക.</div>
+        </div>
+        <!-- 20 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🏁 Legacy</span><span class="point-title-en">Monument of Indian Realism</span></div>
+          <div class="point-title-ml">ഭാരതീയ യുക്തിയുടെ സുവർണ്ണ ഗോപുരം</div>
+          <div class="point-body">The definitive orthodox school proving that reality is knowable through rigorous empirical logic.</div>
+          <div class="point-body-ml">ശാസ്ത്രാധിഷ്ഠിത യുക്തിയിലൂടെ സത്യം കണ്ടെത്താമെന്ന് തെളിയിച്ച മഹാദർശനം.</div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 10: 20 Core Academic Concepts</span>
+      <span>Page 12</span>
+    </div>
+  </div>
+</body></html>

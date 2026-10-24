@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta charset="UTF-8">
+<title>നോവൽ: ദൈവത്തിന്റെ കണ്ണ് - അധ്യായ പഠന സഹായി</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  @page {
+    size: A4 portrait;
+    margin: 14mm 13mm 14mm 13mm;
+    @top-right {
+      content: "മലയാള സാഹിത്യാനുശീലനം · അധ്യായ പഠന സഹായി";
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Malayalam', 'Manjari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .chapter-header {
+    background: linear-gradient(135deg, var(--c-primary, #0f766e) 0%, var(--c-dark, #134e4a) 100%);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    page-break-inside: avoid;
+  }
+
+  .ch-pill-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .ch-pill {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .chapter-header h1 {
+    font-size: 17pt;
+    font-weight: 900;
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+    color: #ffffff;
+  }
+
+  .ch-meta-sub {
+    font-size: 10pt;
+    color: #ccfbf1;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Author Profile Card (കവിപരിചയം / രചയിതാവിന്റെ പരിചയം) */
+  .author-profile-box {
+    background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%);
+    border: 1.5px solid #cbd5e1;
+    border-left: 5px solid var(--c-primary, #0f766e);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    page-break-inside: avoid;
+  }
+
+  .author-profile-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .author-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 3px;
+  }
+
+  .author-profile-title h3 {
+    margin: 0;
+    font-size: 12.5pt;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .author-profile-title h3 small {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #64748b;
+  }
+
+  .author-meta-pill {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 8.5pt;
+    color: #334155;
+    line-height: 1.45;
+  }
+
+  .author-meta-pill b { color: var(--c-primary, #0f766e); }
+
+  .author-bio-body p {
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+
+  .author-works-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .author-works-head {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
+  }
+
+  .works-cat-row {
+    margin-bottom: 4px;
+    font-size: 8.5pt;
+    line-height: 1.5;
+  }
+
+  .works-cat-row:last-child { margin-bottom: 0; }
+
+  .works-cat-label {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: 8pt;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .works-cat-content { color: #475569; }
+
+  .author-awards-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #854d0e;
+    margin-bottom: 6px;
+  }
+
+  .author-significance-strip {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #1e40af;
+  }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .obj-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .out-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .card-label {
+    font-size: 9.5pt;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+  }
+  .obj-card .card-label { color: #166534; }
+  .out-card .card-label { color: #1e40af; }
+
+  .obj-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  .intro-box {
+    background: #fafaf9;
+    border: 1px solid #e7e5e4;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #292524;
+    page-break-inside: avoid;
+  }
+
+  .intro-box .intro-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #b45309;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .concept-section {
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    page-break-inside: avoid;
+  }
+
+  .concept-section h2 {
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--c-primary, #0f766e);
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .concept-section p {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: #334155;
+    margin: 0 0 6px 0;
+  }
+
+  .conclusion-box {
+    background: #fdf4ff;
+    border: 1px solid #f5d0fe;
+    border-left: 4px solid #a855f7;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 16px 0;
+    page-break-inside: avoid;
+  }
+
+  .conclusion-box .conc-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #7e22ce;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .conclusion-box p {
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #3b0764;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  .takeaways-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .takeaways-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f766e;
+  }
+
+  .takeaways-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #134e4a;
+    line-height: 1.55;
+  }
+
+  .glossary-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .glossary-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #334155;
+  }
+
+  .glossary-item {
+    font-size: 8.5pt;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .revision-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 9pt;
+    line-height: 1.6;
+    color: #713f12;
+    page-break-inside: avoid;
+  }
+
+  .progress-section {
+    border-top: 2px solid #e2e8f0;
+    padding-top: 14px;
+    margin-top: 16px;
+  }
+
+  .progress-header {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 0 0 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-inside: avoid;
+  }
+
+  .q-type-title {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f766e;
+    margin: 14px 0 8px 0;
+    padding-left: 8px;
+    border-left: 3px solid #0f766e;
+    page-break-inside: avoid;
+  }
+
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+
+  .qa-question {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+
+  .qa-answer {
+    font-size: 9pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0;
+    white-space: pre-line;
+  }
+
+  .essay-card {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .essay-card .qa-question {
+    font-size: 10pt;
+    color: #1e1b4b;
+    margin-bottom: 10px;
+  }
+
+  .essay-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 4px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .mcq-container {
+    margin-top: 14px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-q {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 5px 0;
+  }
+
+  .mcq-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    font-size: 8.5pt;
+    color: #334155;
+  }
+
+  .mcq-opt {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
+  .mcq-key-card {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 14px 0 20px 0;
+    page-break-inside: avoid;
+  }
+
+  .mcq-key-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 10pt;
+    font-weight: 800;
+    color: #166534;
+  }
+
+  .key-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    font-size: 8pt;
+    color: #14532d;
+  }
+
+  .key-item {
+    background: #ffffff;
+    border: 1px solid #bbf7d0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.35;
+  }
+
+  .exam-points-card {
+    background: linear-gradient(135deg, #fefce8 0%, #fffbeb 100%);
+    border: 1.5px solid #fde047;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 25px 0;
+    box-shadow: 0 3px 10px rgba(234, 179, 8, 0.1);
+    page-break-inside: avoid;
+  }
+
+  .exam-points-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #facc15;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+
+  .exam-points-head h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 900;
+    color: #854d0e;
+  }
+
+  .exam-tag {
+    background: #ca8a04;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 14px;
+    text-transform: uppercase;
+  }
+
+  .exam-points-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #713f12;
+  }
+
+  .exam-points-list li {
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .exam-points-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ca8a04;
+    font-weight: 900;
+  }
+
+
+    @media (max-width: 768px) {
+      body {
+        padding: 14px 10px !important;
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+      .chapter-header {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+      }
+    }
+    
+  </style>
+</head>
+<body style="--c-primary: #4338ca; --c-dark: #0f172a;">
+  <div class="chapter-wrapper">
+    <header class="chapter-header">
+      <div class="ch-pill-row">
+        <span class="ch-pill">മൊഡ്യൂൾ 2</span>
+        <span class="ch-pill">നോവൽ (Novel)</span>
+        <span class="ch-pill">അധ്യായം 7</span>
+      </div>
+      <h1>നോവൽ: ദൈവത്തിന്റെ കണ്ണ്</h1>
+      <p class="ch-meta-sub">രചയിതാവ്: <b>എൻ.പി. മുഹമ്മദ്</b> · ഉറവിടം: കേന്ദ്ര സാഹിത്യ അക്കാദമി അവാർഡ് നേടിയ നോവൽ (1993)</p>
+    </header>
+
+        <div class="author-profile-box">
+          <div class="author-profile-head">
+            <div class="author-profile-title">
+              <span class="author-badge">✍️ കവിപരിചയം / രചയിതാവിന്റെ സമഗ്ര പരിചയം</span>
+              <h3>എൻ.പി. മുഹമ്മദ് (N.P. Mohammed) <small>(1928 ജൂലൈ 1 – 2003 ജനുവരി 3)</small></h3>
+            </div>
+            <div class="author-meta-pill">
+              <b>സ്ഥലം / പശ്ചാത്തലം:</b> കുറ്റിച്ചിറ, കോഴിക്കോട്<br>
+              <b>സാഹിത്യ പദവി:</b> പ്രശസ്ത നോവലിസ്റ്റ്, ചെറുകഥാകൃത്ത്, ചിന്തകൻ, സാഹിത്യ നിരൂപകൻ, കേരള സാഹിത്യ അക്കാദമി പ്രസിഡന്റ് (1997-2000), കേന്ദ്ര സാഹിത്യ അക്കാദമി അംഗം, മാതൃഭൂമി റസിഡന്റ് എഡിറ്റർ.
+            </div>
+          </div>
+          <div class="author-bio-body">
+            <p>മലബാർ മുസ്ലിം ജീവിതത്തിന്റെ സാംസ്കാരിക വൈവിധ്യങ്ങളെയും മാനസിക വ്യാപാരങ്ങളെയും ആധുനികതയുടെ സൗന്ദര്യശാസ്ത്രത്തിൽ വാർത്തെടുത്ത അതുല്യ എഴുത്തുകാരനാണ് എൻ.പി. മുഹമ്മദ്. സ്വാതന്ത്ര്യസമര സേനാനിയും കെ.പി.സി.സി സെക്രട്ടറിയുമായിരുന്ന എൻ.പി. അബുഹാജിയുടെ മകനായി കോഴിക്കോട് കുറ്റിച്ചിറയിലാണ് അദ്ദേഹം ജനിച്ചത്. കോഴിക്കോടൻ മുസ്ലിം കുടുംബങ്ങളിലെ ആചാരങ്ങൾ, കച്ചവട സംസ്കാരം, അന്ധവിശ്വാസങ്ങൾ, മനസ്സിന്റെ ഇരുൾക്കോണുകൾ എന്നിവയെല്ലാം അദ്ദേഹം തന്റെ രചനകളിലൂടെ തുറന്നുകാട്ടി. കുട്ടികളുടെ മനസ്സിന്റെ നിഷ്കളങ്കതയും മാന്ത്രികതയും ആവാഹിച്ച 'ദൈവത്തിന്റെ കണ്ണ്' മലയാള നോവൽ സാഹിത്യത്തിലെ അപൂർവ്വ വിസ്മയമാണ്. എം.ടി. വാസുദേവൻ നായരുമായി ചേർന്ന് രചിച്ച 'അറബിപ്പൊന്ന്' മലയാള സാഹിത്യത്തിലെ അപൂർവ്വമായ സംയുക്ത രചനാ പരീക്ഷണമായി ഇന്നും തിളങ്ങിനിൽക്കുന്നു.</p>
+            
+            <div class="author-works-section">
+              <div class="author-works-head">📚 പ്രധാന കൃതികളും സാഹിത്യ സംഭാവനകളും (Major Works & Contributions):</div>
+        
+              <div class="works-cat-row">
+                <span class="works-cat-label">പ്രശസ്ത നോവലുകൾ</span>
+                <span class="works-cat-content">ദൈവത്തിന്റെ കണ്ണ് (1990), എണ്ണപ്പാടം (1978), ഹിരണ്യകശിപു (1967), അറബിപ്പൊന്ന് (എം.ടിയോടൊപ്പം, 1960), മരം (1968), മുഹമ്മദ് അബ്ദുറഹ്മാൻ (ചരിത്ര നോവൽ), കൊലോസ്.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">ചെറുകഥാ സമാഹാരങ്ങൾ</span>
+                <span class="works-cat-content">തൊപ്പി, പ്രെസിഡന്റിന്റെ മരണം, കറുത്ത വെളിച്ചം, ഗൗരീശം, എൻ.പി. മുഹമ്മദിന്റെ കഥകൾ (സമ്പൂർണ്ണം), ഡീകോളനൈസേഷൻ.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">നിരൂപണങ്ങളും പഠനങ്ങളും</span>
+                <span class="works-cat-content">കാവ്യപീഠിക, നോവലിന്റെ ഗുണവിശേഷങ്ങൾ, കണ്ണാടിയുടെ വിസ്മയം, മതനിരപേക്ഷതയുടെ ആന്തരിക തലങ്ങൾ.</span>
+              </div>
+            
+            </div>
+            
+            <div class="author-awards-strip">
+              <b>🏆 പ്രധാന പുരസ്കാരങ്ങളും അംഗീകാരങ്ങളും:</b> കേന്ദ്ര സാഹിത്യ അക്കാദമി അവാർഡ് (1993 - 'ദൈവത്തിന്റെ കണ്ണ്'), കേരള സാഹിത്യ അക്കാദമി അവാർഡ് (1972 - 'മരം' എന്ന കഥയ്ക്ക്, 1993 - 'ദൈവത്തിന്റെ കണ്ണ്' നോവലിന്), വയലാർ അവാർഡ് (2000 - 'മുഹമ്മദ് അബ്ദുറഹ്മാൻ'), ലളിതാംബിക അന്തർജ്ജനം സ്മാരക പുരസ്കാരം, പത്മപ്രഭാ പുരസ്കാരം.
+            </div>
+            
+            <div class="author-significance-strip">
+              <b>✦ സാഹിത്യ സംഭാവന & സവിശേഷ സ്ഥാനം:</b> വള്ളുവനാടൻ നായർ തറവാട്ടു പരിസരങ്ങളിൽ തങ്ങിനിന്ന മലയാള നോവലിനെ കോഴിക്കോടിന്റെ അങ്ങാടികളിലേക്കും കുറ്റിച്ചിറയിലെ തറവാടുകളിലേക്കും വികസിപ്പിച്ച് ബഹുസ്വര സംസ്കാരത്തിന്റെ ആഴം അടയാളപ്പെടുത്തി.
+            </div>
+          </div>
+        </div>
+        
+      <div class="objectives-grid">
+        <div class="obj-card">
+          <div class="card-label">❖ പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</div>
+          <ul class="obj-list">
+    <li>എൻ.പി. മുഹമ്മദിന്റെ സാഹിത്യ സംഭാവനകളും നോവലിന്റെ സവിശേഷതകളും മനസ്സിലാക്കുക.</li><li>പരപ്പനങ്ങാടിയുടെ പ്രാദേശികത, മുസ്ലിം സമുദായ ജീവിതം, അന്ധവിശ്വാസങ്ങൾ എന്നിവ വിശകലനം ചെയ്യുക.</li><li>കോയമോൻ എന്ന ബാലന്റെ നിഷ്കളങ്കമായ ദൃഷ്ടിയിലൂടെ വലിയവരുടെ സ്വാർത്ഥലോകം അനാവരണം ചെയ്യുന്ന ആഖ്യാനരീതി ഗ്രഹിക്കുക.</li>
+          </ul>
+        </div>
+        <div class="out-card">
+          <div class="card-label">✦ പഠന ഫലങ്ങൾ (Learning Outcomes)</div>
+          <ul class="obj-list">
+    <li>നോവലിലെ മിത്തും അന്ധവിശ്വാസവും യുക്തിചിന്തയും തമ്മിലുള്ള വൈരുദ്ധ്യം തിരിച്ചറിയാൻ വിദ്യാർത്ഥിക്ക് കഴിയുന്നു.</li><li>മോയ്മതാലി, കുഞ്ഞഹമ്മദ് മാസ്റ്റർ, താമി തുടങ്ങിയ കഥാപാത്രങ്ങളുടെ വൈകാരിക-സാമൂഹിക തലം അപഗ്രഥിക്കുന്നു.</li><li>നോവൽ സാഹിത്യത്തിന്റെ ഘടനാപരമായ സൗന്ദര്യം വിലയിരുത്താൻ പ്രാപ്തി നേടുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="intro-box">
+        <span class="intro-label">ആമുഖം (Introduction)</span>
+    <p>മലയാള നോവൽ സാഹിത്യത്തിൽ ആധുനികതയുടെയും പ്രാദേശിക ചരിത്രത്തിന്റെയും സമന്വയം തീർത്ത പ്രതിഭയാണ് എൻ.പി. മുഹമ്മദ് (1929–2003). 1993-ൽ കേന്ദ്ര സാഹിത്യ അക്കാദമി പുരസ്കാരം നേടിയ അദ്ദേഹത്തിന്റെ മാസ്റ്റർപീസാണ് 'ദൈവത്തിന്റെ കണ്ണ്'. മലപ്പുറം ജില്ലയിലെ തീരദേശ ഗ്രാമമായ പരപ്പനങ്ങാടിയുടെ പശ്ചാത്തലത്തിൽ, ഒരു മുസ്ലിം തറവാട്ടിലെ ജീവിതങ്ങളെ കോയമോൻ (അഹമ്മദ്) എന്ന കൊച്ചുകുട്ടിയുടെ കാഴ്ചയിലൂടെ അവതരിപ്പിക്കുന്ന നോവലാണിത്. അന്ധവിശ്വാസങ്ങളും മന്ത്രവാദവും നിധിവേട്ടയും അരങ്ങുവാഴുന്ന ഒരു സമൂഹത്തിൽ, ആധുനികതയുടെയും വിവേകത്തിന്റെയും പ്രകാശവും തകരുന്ന മനുഷ്യബന്ധങ്ങളും ഈ നോവൽ തീവ്രമായി അടയാളപ്പെടുത്തുന്നു.</p></div>
+        <section class="concept-section">
+          <h2>1. കോയമോൻ എന്ന ബാലന്റെ ദൃഷ്ടി (Point of View)</h2>
+          <p>മുതിർന്നവരുടെ കാപട്യങ്ങളും സ്വാർത്ഥതകളും നിറഞ്ഞ ലോകത്തെ ഒരു കൊച്ചുകുട്ടിയുടെ നിഷ്കളങ്കമായ കണ്ണുകളിലൂടെ നോക്കിക്കാണുന്നതാണ് ഈ നോവലിന്റെ പ്രധാന ആഖ്യാനതന്ത്രം. കോയമോന് ലോകം വിസ്മയങ്ങളും ഭയങ്ങളും നിറഞ്ഞതാണ്. സ്വന്തം കുടുംബത്തിലെ മാറ്റങ്ങളും പ്രിയപ്പെട്ടവരുടെ വേദനകളും അവൻ തിരിച്ചറിയുന്നത് സ്വന്തം മനസ്സിന്റെ നിഷ്കളങ്കമായ അളവുകോലുകൾ വെച്ചാണ്.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>2. കഥാപാത്രങ്ങളും ബന്ധങ്ങളുടെ തകർച്ചയും</h2>
+          <p>• ഉമ്മു: കോയമോന്റെ അമ്മായിയുടെ മകൾ; അവന്റെ കൂട്ടുകാരി. എന്നാൽ സമുദായത്തിലെ അനാചാരം കാരണം പത്താം വയസ്സിൽ തന്നെ അവളെ ഒരു വൃദ്ധന് വിവാഹം കഴിച്ചുകൊടുക്കുന്നു. കുട്ടിക്കാലം നഷ്ടപ്പെടുന്ന പെൺജീവിതത്തിന്റെ ദുരന്തമാണിത്.</p><p>• മോയ്മതാലി: കോയമോന്റെ പ്രിയപ്പെട്ട ഇളയച്ഛൻ. സ്നേഹസമ്പന്നനായ അദ്ദേഹം മാനസികാസ്വാസ്ഥ്യം മൂലം ചങ്ങലയിൽ ബന്ധിക്കപ്പെടുന്നു. തറവാടിന്റെ ശാപത്തിന്റെ പ്രതീകമായി മോയ്മതാലി മാറുന്നു.</p><p>• കുഞ്ഞഹമ്മദ് മാസ്റ്റർ: അന്ധവിശ്വാസങ്ങളുടെ കൂരിരുട്ടിൽ യുക്തിയുടെയും അറിവിന്റെയും വെളിച്ചമായി നിൽക്കുന്ന ഒരേയൊരു കഥാപാത്രം. പുസ്തകങ്ങളും വായനയും പത്രങ്ങളുമായി ജീവിക്കുന്ന അദ്ദേഹത്തെ യാഥാസ്ഥിതിക സമൂഹം 'നായ്ക്കുഞ്ഞഹമ്മദ്' എന്ന് വിളിച്ച് ആക്ഷേപിക്കുന്നു.</p><p>• കോയസ്സൻ & താമി: തറവാട്ടിലെ ധനമോഹവും നിധിവേട്ടയും ലക്ഷ്യമിട്ട് കടന്നുവരുന്ന മന്ത്രവാദിയാണ് താമി. അവന്റെ മന്ത്രവാദങ്ങൾ നാരകത്ത് തറവാടിനെ പൂർണ്ണമായും തകർക്കുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>3. അന്ധവിശ്വാസങ്ങളും തറവാടിന്റെ പതനവും</h2>
+          <p>നാരകത്ത് തറവാട്ടിൽ സമ്പത്തുണ്ടെന്ന് വിശ്വസിച്ച് കോയസ്സൻ നടത്തുന്ന നിധിവേട്ടയും താമിയുടെ മന്ത്രവാദ കർമ്മങ്ങളും സമൂഹത്തിന്റെ ജീർണ്ണതയെ കാണിക്കുന്നു. രോഗം വന്നാൽ ഡോക്ടറെ കാണിക്കാതെ മന്ത്രവാദിയെ ആശ്രയിക്കുന്ന ആളുകളാണ് അവിടെയുള്ളത്. എന്നാൽ ശാസ്ത്രീയ ചികിത്സയും വിദ്യാഭ്യാസവും വേണമെന്ന് വാദിച്ച കുഞ്ഞഹമ്മദ് മാസ്റ്റർ ഒറ്റപ്പെട്ടുപോകുന്നു. അന്ധവിശ്വാസം എങ്ങനെ മനുഷ്യരെ മാനസിക രോഗികളാക്കുകയും കുടുംബങ്ങളെ തകർക്കുകയും ചെയ്യുന്നുവെന്ന് നോവൽ വ്യക്തമാക്കുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>4. 'ദൈവത്തിന്റെ കണ്ണ്' - ദാർശനിക മാനം</h2>
+          <p>മനുഷ്യന്റെ സകല പാപങ്ങളും കള്ളത്തരങ്ങളും കാപട്യങ്ങളും മുകളിൽ നിന്ന് സദാ വീക്ഷിച്ചുകൊണ്ടിരിക്കുന്ന അദൃശ്യമായ ഒന്നാണ് 'ദൈവത്തിന്റെ കണ്ണ്'. മനുഷ്യർ പരസ്പരം ചതിക്കുമ്പോഴും, നിധിക്കുവേണ്ടി മന്ത്രവാദം നടത്തുമ്പോഴും ആ കണ്ണ് അവരെ ഉറ്റുനോക്കുന്നുണ്ട്. ദൈവഭയമില്ലാത്ത സ്വാർത്ഥതയ്ക്കുള്ള ശിക്ഷ മനുഷ്യർ സ്വയം വിതച്ചെടുക്കുകയാണെന്ന് നോവൽ അടിവരയിടുന്നു.</p>
+        </section>
+        
+    <div class="conclusion-box">
+      <span class="conc-label">ഉപസംഹാരം (Chapter Conclusion)</span>
+      <p>എൻ.പി. മുഹമ്മദിന്റെ 'ദൈവത്തിന്റെ കണ്ണ്' പ്രാദേശിക ഭാഷയുടെയും സംസ്കാരത്തിന്റെയും കരുത്തിൽ തീർത്ത ഒരു ക്ലാസിക് നോവലാണ്. അന്ധവിശ്വാസങ്ങളിൽ നിന്ന് ആധുനികതയിലേക്കുള്ള ഒരു സമൂഹത്തിന്റെ പരിവർത്തന വേദനകളും, ഒരു കുട്ടിയുടെ കൺമുന്നിൽ തകർന്നുവീഴുന്ന തറവാടിന്റെ കണ്ണീരും മലയാളിയുടെ ഓർമ്മയിൽ എക്കാലവും തങ്ങിനിൽക്കും.</p>
+    </div>
+    
+    <div class="summary-grid">
+      <div class="takeaways-box">
+        <h3>✦ പ്രധാന പാഠങ്ങൾ (Key Takeaways)</h3>
+        <ul class="takeaways-list">
+    <li>എൻ.പി. മുഹമ്മദ് 1993-ൽ കേന്ദ്ര സാഹിത്യ അക്കാദമി അവാർഡ് നേടിയ നോവലാണ് 'ദൈവത്തിന്റെ കണ്ണ്'.</li><li>കോയമോൻ എന്ന കൊച്ചുബാലന്റെ കാഴ്ചപ്പാടിലൂടെയാണ് നോവൽ വികസിക്കുന്നത്.</li><li>പരപ്പനങ്ങാടി എന്ന തീരദേശ മുസ്ലിം ഗ്രാമത്തിന്റെ തനത് സംസ്കാരവും ഭാഷയും ആവിഷ്കരിക്കുന്നു.</li><li>അന്ധവിശ്വാസങ്ങൾക്കെതിരെ യുക്തിചിന്ത ഉയർത്തിപ്പിടിക്കുന്ന കഥാപാത്രമാണ് കുഞ്ഞഹമ്മദ് മാസ്റ്റർ.</li>
+        </ul>
+      </div>
+      <div class="glossary-box">
+        <h3>📖 പ്രധാന സാങ്കേതിക പദാവലി (Key Terms)</h3>
+    <div class="glossary-item"><b>ദൈവത്തിന്റെ കണ്ണ്:</b> മനുഷ്യന്റെ സകല കർമ്മങ്ങളെയും സദാ വീക്ഷിക്കുന്ന പരമമായ പ്രപഞ്ച നീതി.</div><div class="glossary-item"><b>നാരകത്ത് തറവാട്:</b> നോവലിലെ സംഭവങ്ങൾ നടക്കുന്ന, ജീർണ്ണതയും നിധിവേട്ടയും നിറഞ്ഞ പരമ്പരാഗത വീട്.</div><div class="glossary-item"><b>കുട്ടിയുടെ ദൃഷ്ടി (Child's Point of View):</b> നിഷ്കളങ്കമായ കണ്ണിലൂടെ മുതിർന്നവരുടെ സങ്കീർണ്ണതകൾ കാണുന്ന സാഹിത്യ തന്ത്രം.</div>
+      </div>
+    </div>
+    
+    <div class="revision-strip">
+      <b>ദ്രുത പുനഃപരിശോധനാ കുറിപ്പ് (Quick Revision):</b> എൻ.പി. മുഹമ്മദിന്റെ 'ദൈവത്തിന്റെ കണ്ണ്' (1993 അക്കാദമി അവാർഡ്). കോയമോന്റെ നിഷ്കളങ്ക വീക്ഷണം. പരപ്പനങ്ങാടിയുടെ പശ്ചാത്തലം. ഉമ്മുവിന്റെ ബാലവിവാഹം. മോയ്മതാലിയുടെ ചങ്ങലകൾ. താമിയുടെ മന്ത്രവാദവും നിധിവേട്ടയും. കുഞ്ഞഹമ്മദ് മാസ്റ്ററുടെ യുക്തിചിന്ത. ദൈവത്തിന്റെ സർവ്വവ്യാപിയായ നീതി.
+    </div>
+    
+    <div class="progress-section">
+      <div class="progress-header">
+        <span>പഠന പുരോഗതി വിലയിരുത്തൽ (Check Your Progress)</span>
+        <small>യഥാർത്ഥ ചോദ്യങ്ങളും സമഗ്ര ഉത്തരങ്ങളും</small>
+      </div>
+    <div class="q-type-title">ലഘുകുറിപ്പുകൾ (Short Notes)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. താമിയുടെ വരവോടെ നാരകത്ത് തറവാട്ടിലുണ്ടായ മാറ്റങ്ങൾ എന്തെല്ലാം?</div>
+              <div class="qa-answer">മന്ത്രവാദിയായ താമി നാരകത്ത് തറവാട്ടിൽ എത്തിയതോടെ അവിടെ ഭയത്തിന്റെയും അവിശ്വാസത്തിന്റെയും അന്തരീക്ഷം പടർന്നു. തറവാട്ടിൽ നിധിയുണ്ടെന്ന് വിശ്വസിപ്പിച്ച് അവൻ കോയസ്സനെക്കൊണ്ട് പൂജകളും ആഭിചാര കർമ്മങ്ങളും നടത്തിച്ചു. കുടുംബാംഗങ്ങൾ പരസ്പരം സംശയിക്കാനും വഴക്കിടാനും തുടങ്ങി. സമ്പത്തും മനസ്സമാധാനവും നശിച്ച തറവാട് സർവ്വനാശത്തിന്റെ വക്കിലെത്തി.</div>
+            </div>
+            
+            <div class="qa-card">
+              <div class="qa-question">2. കുഞ്ഞഹമ്മദ് മാസ്റ്റർ എന്ന കഥാപാത്രം പ്രതിനിധീകരിക്കുന്ന മൂല്യങ്ങൾ എന്തെല്ലാം?</div>
+              <div class="qa-answer">അന്ധവിശ്വാസങ്ങളും അനാചാരങ്ങളും കൊടികുത്തിവാണ പരപ്പനങ്ങാടിയിൽ യുക്തിചിന്തയുടെയും ആധുനികതയുടെയും വെളിച്ചമായി നിന്ന ആളാണ് കുഞ്ഞഹമ്മദ് മാസ്റ്റർ. വായന, ശാസ്ത്രബോധം, വിദ്യാഭ്യാസം എന്നിവയിൽ വിശ്വസിച്ച അദ്ദേഹം രോഗത്തിന് ഡോക്ടറെ കാണിക്കണമെന്ന് ഉപദേശിച്ചു. യാഥാസ്ഥിതികർ അദ്ദേഹത്തെ പരിഹസിച്ചെങ്കിലും പതറാതെ സത്യത്തിന്റെ പക്ഷത്ത് അദ്ദേഹം ഉറച്ചുനിന്നു.</div>
+            </div>
+            <div class="q-type-title">ലഘൂപന്യാസങ്ങൾ (Short Essays)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. 'ദൈവത്തിന്റെ കണ്ണ്' എന്ന നോവലിൽ മോയ്മതാലിയുടെ ചങ്ങലകൾ എന്തിന്റെ പ്രതീകമാണ്?</div>
+              <div class="qa-answer">കോയമോന്റെ പ്രിയപ്പെട്ട ഇളയച്ഛനായ മോയ്മതാലി ചങ്ങലയിൽ ബന്ധിക്കപ്പെട്ട നിലയിലാണ് നോവലിൽ പ്രത്യക്ഷപ്പെടുന്നത്. സ്നേഹവും നന്മയുമുള്ള ഒരു മനുഷ്യന് അന്നത്തെ കാപട്യം നിറഞ്ഞ സമൂഹത്തിൽ ജീവിക്കാൻ കഴിയില്ലെന്നതിന്റെ പ്രതീകമാണ് അദ്ദേഹത്തിന്റെ ഭ്രാന്ത്. മാനസികരോഗത്തെ ചികിത്സിക്കാൻ തയ്യാറാകാതെ, ബാധകൂടിയതാണെന്ന് വിശ്വസിച്ച് അദ്ദേഹത്തെ ചങ്ങലയ്ക്കിട്ട കുടുംബത്തിന്റെ ക്രൂരത അന്ധവിശ്വാസത്തിന്റെ ആഴം വ്യക്തമാക്കുന്നു. തറവാടിന്റെ ജീർണ്ണതയുടെയും തടവിലാക്കപ്പെട്ട നിഷ്കളങ്കതയുടെയും പ്രതീകമാണ് മോയ്മതാലിയുടെ ആ ചങ്ങലകൾ.</div>
+            </div>
+            <div class="q-type-title">ഉപന്യാസങ്ങൾ (Long Essays - 300+ Words)</div>
+            <div class="essay-card">
+              <span class="essay-badge">സമഗ്ര ഉപന്യാസം · 300+ WORDS</span>
+              <div class="qa-question">1. കോയമോന്റെ നിഷ്കളങ്കമായ മനസ്സ് അന്ധവിശ്വാസങ്ങളുടെയും അനാചാരങ്ങളുടെയും ലോകത്തേക്ക് പരിണമിക്കുന്നത് എങ്ങനെ എന്ന് ‘ദൈവത്തിന്റെ കണ്ണിനെ’ ആധാരമാക്കി വിലയിരുത്തുക.</div>
+              <div class="qa-answer">ആമുഖം:
+എൻ.പി. മുഹമ്മദിന് കേന്ദ്ര സാഹിത്യ അക്കാദമി അവാർഡ് നേടിക്കൊടുത്ത പ്രശസ്ത നോവലാണ് 'ദൈവത്തിന്റെ കണ്ണ്' (1993). മലബാറിലെ പരപ്പനങ്ങാടി എന്ന തീരദേശ ഗ്രാമത്തിന്റെ പശ്ചാത്തലത്തിൽ, ഒരു കൊച്ചുബാലന്റെ കണ്ണിലൂടെ പരമ്പരാഗത മുസ്ലിം സമൂഹത്തിലെ അന്ധവിശ്വാസങ്ങളെയും അനാചാരങ്ങളെയും കുടുംബത്തർച്ചകളെയും ആവിഷ്കരിക്കുന്ന നോവലാണിത്. ബാലമനസ്സിന്റെ നിഷ്കളങ്കതയിലേക്ക് മുതിർന്നവരുടെ ഭയങ്ങളും സ്വാർത്ഥതകളും അന്ധവിശ്വാസങ്ങളും കടന്നുവരുമ്പോഴുണ്ടാകുന്ന മാനസിക ദുരന്തത്തെ അതീവ ഹൃദയസ്പർശിയായി നോവൽ വരച്ചുകാട്ടുന്നു.
+
+കോയമോന്റെ ശൈശവ ലോകവും പരപ്പനങ്ങാടിയും:
+കോഴിക്കോട്ടെ സ്കൂളിൽ പഠിക്കുന്ന കോയമോൻ എന്ന കൊച്ചുബാലൻ പരപ്പനങ്ങാടിയിലെ നാരകത്ത് തറവാട്ടിലെത്തുന്നതോടെയാണ് നോവൽ വികസിക്കുന്നത്. ഉമ്മുവും ബാപ്പയും അകന്നു കഴിയുന്ന സാഹചര്യത്തിൽ, പരപ്പനങ്ങാടിയിലെ കടൽത്തീരവും പുഴയും തോപ്പുകളും കുളങ്ങളും പക്ഷികളും അവന് കൗതുകകരമായ പുതിയ അനുഭവങ്ങൾ സമ്മാനിക്കുന്നു. ട്രെയിനിലെ ടിക്കറ്റ് പരിശോധകനാകാൻ കൊതിക്കുന്ന നിഷ്കളങ്കനായ ഒരു ബാലനാണവൻ. പ്രകൃതിയോടും ചുറ്റുപാടുകളോടും ജീവജാലങ്ങളോടും കൂട്ടുചേരുന്ന അവന്റെ കൊച്ചു മനസ്സിൽ തിന്മയുടെ യാതൊരു കറയുമുണ്ടായിരുന്നില്ല. കുട്ടിക്കാലത്തിന്റെ വിസ്മയങ്ങളും നിഷ്കളങ്കമായ ആഗ്രഹങ്ങളും അവൻ മനസ്സിൽ താലോലിക്കുന്നു.
+
+അന്ധവിശ്വാസങ്ങളുടെ തറവാടും കോയസ്സനും:
+എന്നാൽ നാരകത്ത് തറവാട് അന്ധവിശ്വാസങ്ങളുടെയും ദുർമന്ത്രവാദങ്ങളുടെയും തടവറയായിരുന്നു. തറവാട്ടിലെ നിധി കിട്ടുമെന്ന വ്യാമോഹത്തിൽ മന്ത്രവാദിയായ താമിയുടെ സഹായം തേടുന്ന കോയസ്സൻ മൂത്താപ്പ തറവാടിനെ പതുക്കെ നശിപ്പിക്കുന്നു. മന്ത്രവാദങ്ങളും ഏലസ്സുകളും ആഭിചാരങ്ങളും നിറഞ്ഞുനിന്ന ആ അന്തരീക്ഷത്തിൽ മുതിർന്നവരുടെ നിരന്തരമായ ഭയവും പിശാചുബാധയെക്കുറിച്ചുള്ള സങ്കല്പങ്ങളും കോയമോന്റെ മനസ്സിനെയും വേട്ടയാടുന്നു. അന്ധവിശ്വാസങ്ങൾക്കെതിരെ യുക്തിചിന്തയും വായനയും പുലർത്തുന്ന കുഞ്ഞഹമ്മദ് മാസ്റ്ററെ യാഥാസ്ഥിതിക സമൂഹം "നായ്ക്കുഞ്ഞഹമ്മദ്" എന്ന് വിളിച്ച് ആട്ടിയോടിക്കുന്നത് അവിടുത്തെ ചിന്താശൂന്യതയെയും അസഹിഷ്ണുതയെയും വെളിപ്പെടുത്തുന്നു.
+
+സെയ്ത് അലിയുടെ കൊലപാതകവും കോയമോന്റെ ഭ്രാന്തും:
+കോയമോന് ഏറെ പ്രിയപ്പെട്ട, മാനസിക വെല്ലുവിളി നേരിടുന്ന നിസ്സഹായനായ ബന്ധുവാണ് സെയ്ത് അലി (മൊയ്താലി). മൗലിദ് സദ്യയിലെ ഇറച്ചിക്കറി തട്ടിമറിച്ചു എന്ന കുറ്റത്തിന് ക്രൂരനായ കോയസ്സൻ സെയ്ത് അലിയെ ക്രൂരമായി ചവിട്ടിക്കൊല്ലുന്നത് കോയമോൻ നേരിൽ കാണുന്നു. തുടർന്ന് തറവാട്ടിൽ തുടരെ അരങ്ങേറുന്ന ദുരന്തങ്ങളും കൺമുന്നിലെ മരണങ്ങളും ആ ബാലന്റെ മനസ്സിനെ വല്ലാതെ പിടിച്ചുലയ്ക്കുന്നു. എപ്പോഴും തന്നെ തുറിച്ചുനോക്കുന്ന 'ദൈവത്തിന്റെ കണ്ണി'നെക്കുറിച്ചുള്ള പാപഭീതിയും മരണഭയവും താങ്ങാനാവാതെ ഒടുവിൽ കോയമോൻ ബോധക്ഷയത്തിലേക്കും ഭ്രാന്തിലേക്കും വഴുതിവീഴുന്നു.
+
+സൂഫി പാരമ്പര്യവും മലബാറിന്റെ സാംസ്കാരിക പശ്ചാത്തലവും:
+പരപ്പനങ്ങാടിയുടെ തീരദേശ സംസ്കാരവും മാപ്പിള കുടുംബങ്ങളിലെ ആചാരങ്ങളും കുട്ടികളുടെ മനശ്ശാസ്ത്രപരമായ വളർച്ചയും എൻ.പി. മുഹമ്മദ് അതീവ റിയലിസ്റ്റിക്കായി വരച്ചുകാട്ടുന്നു. കോയമോന്റെ ഭാവനാലോകത്ത് വിരിയുന്ന അത്ഭുതങ്ങളും പ്രകൃതിദൃശ്യങ്ങളും നോവലിന് മാന്ത്രികമായ ഭംഗി നൽകുമ്പോഴും, അന്ധവിശ്വാസങ്ങളുടെ ഭീകരത ആ നിഷ്കളങ്കതയെ തകർത്തെറിയുന്നു. മുതിർന്നവരുടെ കപട സദാചാരവും സ്വാർത്ഥതയും നിഷ്കളങ്കമായ ബാല്യത്തെ എങ്ങനെ മരണത്തിലേക്കും ഭ്രാന്തിലേക്കും തള്ളിവിടുന്നു എന്നതിന്റെ അനശ്വരമായ സാക്ഷ്യപത്രമാണ് ഈ നോവൽ.
+
+രചനാശൈലിയും ദാർശനിക വശവും:
+കോഴിക്കോടൻ നാടൻ ഭാഷാശൈലിയും പ്രാദേശിക മൊഴിഭംഗിയും നോവലിന് വലിയൊരു ജീവൻ നൽകുന്നു. ആധുനികതയുടെ വരവോടെ തകരുന്ന കൂട്ടുകുടുംബങ്ങളുടെ സ്നേഹബന്ധങ്ങളും മൂല്യച്യുതിയും നോവലിൽ വേദനയോടെ രേഖപ്പെടുത്തിയിരിക്കുന്നു. ഒരു കുട്ടിയുടെ വീക്ഷണകോണിലൂടെ ലോകത്തെ കാണുന്നതിലൂടെ സാധാരണ സംഭവങ്ങൾക്ക് പോലും ആഴമേറിയ ദാർശനിക മാനം കൈവരുന്നു.
+
+ഉപസംഹാരം:
+കുട്ടികളുടെ പൂവിതൾ പോലെയുള്ള മനസ്സിൽ മുതിർന്നവരുടെ അന്ധവിശ്വാസങ്ങളും ക്രൂരതകളും ഉണ്ടാക്കുന്ന ശാശ്വതമായ മുറിവുകളെയാണ് എൻ.പി. മുഹമ്മദ് അടയാളപ്പെടുത്തുന്നത്. പ്രകൃതിയും സംസ്കാരവും മിത്തും ഇഴചേരുന്ന ഈ രചന ബാലമനശ്ശാസ്ത്രത്തിന്റെയും സാമൂഹിക വിമർശനത്തിന്റെയും അനശ്വരമായൊരു നോവൽ ശില്പമായി ഇന്നും നിലകൊള്ളുന്നു.</div>
+            </div>
+            
+    <div class="q-type-title">പ്രധാന പരീക്ഷാ മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (15 Important MCQs)</div>
+    <div class="mcq-container">
+    
+        <div class="mcq-item">
+          <div class="mcq-q">1. 'ദൈവത്തിന്റെ കണ്ണ്' എന്ന നോവൽ രചിച്ചത് ആരാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഒ.വി. വിജയൻ</div>
+            <div class="mcq-opt">B) എൻ.പി. മുഹമ്മദ്</div>
+            <div class="mcq-opt">C) യു.എ. ഖാദർ</div>
+            <div class="mcq-opt">D) പുനത്തിൽ കുഞ്ഞബ്ദുള്ള</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">2. 'ദൈവത്തിന്റെ കണ്ണ്' എന്ന നോവലിന് കേന്ദ്ര സാഹിത്യ അക്കാദമി പുരസ്കാരം ലഭിച്ച വർഷമേത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 1980</div>
+            <div class="mcq-opt">B) 1993</div>
+            <div class="mcq-opt">C) 2000</div>
+            <div class="mcq-opt">D) 1975</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">3. നോവലിന്റെ പ്രധാന കഥാ പശ്ചാത്തലമായ ഗ്രാമം ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) പൊന്നാനി</div>
+            <div class="mcq-opt">B) പരപ്പനങ്ങാടി</div>
+            <div class="mcq-opt">C) കൊടുങ്ങല്ലൂർ</div>
+            <div class="mcq-opt">D) തലശ്ശേരി</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">4. നോവലിലെ പ്രധാന കേന്ദ്ര കഥാപാത്രമായ ബാലന്റെ പേരെന്ത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കോയമോൻ (അഹമ്മദ്)</div>
+            <div class="mcq-opt">B) അപ്പു</div>
+            <div class="mcq-opt">C) ബാപ്പുട്ടി</div>
+            <div class="mcq-opt">D) ഹമീദ്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">5. കോയമോന്റെ കളിക്കൂട്ടുകാരിയായ ഉമ്മുവിനെ എത്രാമത്തെ വയസ്സിലാണ് വിവാഹം കഴിപ്പിച്ചത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 18 വയസ്സിൽ</div>
+            <div class="mcq-opt">B) 10-ാം വയസ്സിൽ</div>
+            <div class="mcq-opt">C) 15 വയസ്സിൽ</div>
+            <div class="mcq-opt">D) 12 വയസ്സിൽ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">6. തറവാട്ടിൽ ചങ്ങലയിൽ ബന്ധിക്കപ്പെട്ട നിലയിൽ കഴിയുന്ന കഥാപാത്രം ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കുഞ്ഞഹമ്മദ് മാസ്റ്റർ</div>
+            <div class="mcq-opt">B) മോയ്മതാലി</div>
+            <div class="mcq-opt">C) താമി</div>
+            <div class="mcq-opt">D) കോയസ്സൻ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">7. നിധിവേട്ടയ്ക്കായി നാരകത്ത് തറവാട്ടിലെത്തുന്ന മന്ത്രവാദി ആരാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഖാസി</div>
+            <div class="mcq-opt">B) താമി</div>
+            <div class="mcq-opt">C) വലിയുല്ലാഹി</div>
+            <div class="mcq-opt">D) മുസലിയാർ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">8. അന്ധവിശ്വാസങ്ങൾക്കെതിരെ യുക്തിചിന്തയും വായനയും ഉയർത്തിപ്പിടിച്ച കഥാപാത്രം ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കുഞ്ഞഹമ്മദ് മാസ്റ്റർ</div>
+            <div class="mcq-opt">B) കോയസ്സൻ</div>
+            <div class="mcq-opt">C) താമി</div>
+            <div class="mcq-opt">D) ബാപ്പ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">9. നാട്ടുകാർ കുഞ്ഞഹമ്മദ് മാസ്റ്ററെ ആക്ഷേപിച്ചു വിളിച്ച പേരെന്ത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഭ്രാന്തൻ മാസ്റ്റർ</div>
+            <div class="mcq-opt">B) നായ്ക്കുഞ്ഞഹമ്മദ്</div>
+            <div class="mcq-opt">C) സായിപ്പ്</div>
+            <div class="mcq-opt">D) കാഫിർ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">10. എൻ.പി. മുഹമ്മദ് കേരള സാഹിത്യ അക്കാദമിയിൽ വഹിച്ച പ്രധാന പദവി എന്തായിരുന്നു?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ട്രഷറർ</div>
+            <div class="mcq-opt">B) പ്രസിഡന്റ്</div>
+            <div class="mcq-opt">C) സെക്രട്ടറി</div>
+            <div class="mcq-opt">D) അംഗം മാത്രം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">11. 'ദൈവത്തിന്റെ കണ്ണ്' എന്ന ശീർഷകം എന്തിനെയാണ് അർത്ഥമാക്കുന്നത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) സൂര്യനെ</div>
+            <div class="mcq-opt">B) മനുഷ്യന്റെ സകല കർമ്മങ്ങളെയും സദാ വീക്ഷിക്കുന്ന പ്രപഞ്ച നീതി</div>
+            <div class="mcq-opt">C) വിളക്കിനെ</div>
+            <div class="mcq-opt">D) വിഗ്രഹത്തെ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">12. നോവലിൽ തകർച്ച നേരിടുന്ന പ്രധാന കുടുംബം ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വടക്കേപ്പാട്ട്</div>
+            <div class="mcq-opt">B) നാരകത്ത് തറവാട്</div>
+            <div class="mcq-opt">C) ആലുക്കൽ</div>
+            <div class="mcq-opt">D) പുതിയപുരയിൽ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">13. എൻ.പി. മുഹമ്മദും എം.ടി. വാസുദേവൻ നായരും ചേർന്നെഴുതിയ സംയുക്ത നോവൽ ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) മഞ്ഞ്</div>
+            <div class="mcq-opt">B) അറബിപ്പൊന്ന്</div>
+            <div class="mcq-opt">C) കാലം</div>
+            <div class="mcq-opt">D) എണ്ണപ്പാടം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">14. എൻ.പി. മുഹമ്മദ് അന്തരിച്ച വർഷമേത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 2003 ജനുവരി 3</div>
+            <div class="mcq-opt">B) 1995</div>
+            <div class="mcq-opt">C) 2010</div>
+            <div class="mcq-opt">D) 1990</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">15. 'ദൈവത്തിന്റെ കണ്ണ്' എന്ന നോവൽ മുന്നോട്ടുവെക്കുന്ന പ്രധാന സന്ദേശം എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) മന്ത്രവാദത്തിന്റെ വിജയം</div>
+            <div class="mcq-opt">B) അന്ധവിശ്വാസങ്ങളുടെ വിനാശവും മാനവിക-യുക്തിബോധത്തിന്റെ ആവശ്യകതയും</div>
+            <div class="mcq-opt">C) സമ്പത്തിന്റെ മഹത്വം</div>
+            <div class="mcq-opt">D) കടൽ യാത്ര</div>
+          </div>
+        </div>
+        </div>
+    <div class="mcq-key-card">
+      <h4>MCQ ഉത്തര സൂചിക & വിശദീകരണങ്ങൾ (Answer Key)</h4>
+      <div class="key-grid">
+    
+        <div class="key-item">
+          <b>1. B</b>: എൻ.പി. മുഹമ്മദാണ് കേന്ദ്ര സാഹിത്യ അക്കാദമി അവാർഡ് നേടിയ 'ദൈവത്തിന്റെ കണ്ണ്' എഴുതിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>2. B</b>: 1993-ലാണ് ഈ നോവലിന് കേന്ദ്ര സാഹിത്യ അക്കാദമി അവാർഡ് ലഭിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>3. B</b>: മലപ്പുറം ജില്ലയിലെ തീരദേശ ഗ്രാമമായ പരപ്പനങ്ങാടിയാണ് നോവലിന്റെ പശ്ചാത്തലം.
+        </div>
+        
+        <div class="key-item">
+          <b>4. A</b>: കോയമോൻ എന്ന ബാലന്റെ ദൃഷ്ടിയിലൂടെയാണ് കഥ വികസിക്കുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>5. B</b>: ബാലവിവാഹത്തിന്റെ ഇരയായി പത്താം വയസ്സിലാണ് ഉമ്മുവിനെ വിവാഹം കഴിപ്പിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>6. B</b>: കോയമോന്റെ പ്രിയപ്പെട്ട ഇളയച്ഛനായ മോയ്മതാലിയാണ് മാനസികാസ്വാസ്ഥ്യം മൂലം ചങ്ങലയിൽ കഴിയുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>7. B</b>: താമി എന്ന മന്ത്രവാദിയാണ് നിധിയെടുക്കാൻ തറവാട്ടിൽ എത്തുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>8. A</b>: കുഞ്ഞഹമ്മദ് മാസ്റ്ററാണ് ശാസ്ത്രബോധവും വായനയും പ്രോത്സാഹിപ്പിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>9. B</b>: യാഥാസ്ഥിതിക സമൂഹത്തിന്റെ പുച്ഛം കാരണം അവർ അദ്ദേഹത്തെ 'നായ്ക്കുഞ്ഞഹമ്മദ്' എന്ന് വിളിച്ചു.
+        </div>
+        
+        <div class="key-item">
+          <b>10. B</b>: എൻ.പി. മുഹമ്മദ് കേരള സാഹിത്യ അക്കാദമി പ്രസിഡന്റായി സേവനമനുഷ്ഠിച്ചിട്ടുണ്ട്.
+        </div>
+        
+        <div class="key-item">
+          <b>11. B</b>: മനുഷ്യന്റെ സകല ചതികളും തെറ്റുകളും നിരീക്ഷിക്കുന്ന പരമമായ പ്രപഞ്ച നീതിയാണിത്.
+        </div>
+        
+        <div class="key-item">
+          <b>12. B</b>: നാരകത്ത് തറവാടിന്റെ തകർച്ചയും പതനവുമാണ് കഥയുടെ കാതൽ.
+        </div>
+        
+        <div class="key-item">
+          <b>13. B</b>: സ്വർണ്ണക്കള്ളക്കടത്തിന്റെ പശ്ചാത്തലത്തിൽ ഇരുവരും ചേർന്നെഴുതിയ വിഖ്യാത നോവലാണ് 'അറബിപ്പൊന്ന്'.
+        </div>
+        
+        <div class="key-item">
+          <b>14. A</b>: 2003 ജനുവരി 3-നാണ് കോഴിക്കോട് വെച്ച് അദ്ദേഹം അന്തരിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>15. B</b>: അന്ധവിശ്വാസങ്ങൾ കുടുംബങ്ങളെ തകർക്കുമെന്നും വിവേകവും ശാസ്ത്രബോധവുമാണ് ആവശ്യമെന്നുമുള്ള സന്ദേശമാണിത്.
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="exam-points-card">
+      <div class="exam-points-head">
+        <h3>അധ്യാപകനും ഉള്ളടക്കവും സംബന്ധിച്ച 20 പ്രധാന പരീക്ഷാ പോയിന്റുകൾ</h3>
+        <span class="exam-tag">20 EXAM FOCUS POINTS</span>
+      </div>
+      <ul class="exam-points-list">
+    <li>1. രചയിതാവ്: എൻ.പി. മുഹമ്മദ് (1929–2003) - പ്രമുഖ മലയാള നോവലിസ്റ്റും ചിന്തകനും.</li><li>2. പുരസ്കാരം: 1993-ൽ കേന്ദ്ര സാഹിത്യ അക്കാദമി അവാർഡ് നേടിയ നോവൽ.</li><li>3. കഥാപശ്ചാത്തലം: മലപ്പുറം ജില്ലയിലെ തീരദേശ ഗ്രാമമായ പരപ്പനങ്ങാടി.</li><li>4. കേന്ദ്ര കഥാപാത്രം: കോയമോൻ (അഹമ്മദ്) - ലോകത്തെ നിഷ്കളങ്കമായി നോക്കിക്കാണുന്ന കൊച്ചുബാലൻ.</li><li>5. ആഖ്യാനതന്ത്രം: കുട്ടിയുടെ വീക്ഷണകോൺ (Child's Point of View) ഉപയോഗിച്ചുള്ള ആഖ്യാനം.</li><li>6. കളിക്കൂട്ടുകാരി: ഉമ്മു - പത്താം വയസ്സിൽ ബാലവിവാഹത്തിന് ഇരയാക്കപ്പെട്ട പെൺകുട്ടി.</li><li>7. ചങ്ങലയിൽ ബന്ധിക്കപ്പെട്ട കഥാപാത്രം: മോയ്മതാലി - സ്നേഹസമ്പന്നനായ ഇളയച്ഛൻ.</li><li>8. അന്ധവിശ്വാസത്തിന്റെ ആൾരൂപം: താമി എന്ന മന്ത്രവാദി (നിധിവേട്ടയ്ക്കായി എത്തുന്നു).</li><li>9. യുക്തിചിന്തയുടെ വക്താവ്: കുഞ്ഞഹമ്മദ് മാസ്റ്റർ (വായനയും ശാസ്ത്രവും പ്രോത്സാഹിപ്പിച്ച അധ്യാപകൻ).</li><li>10. യാഥാസ്ഥിതികരുടെ അധിക്ഷേപം: കുഞ്ഞഹമ്മദ് മാസ്റ്ററെ 'നായ്ക്കുഞ്ഞഹമ്മദ്' എന്ന് വിളിച്ച് ആക്ഷേപിച്ചു.</li><li>11. തകർച്ചയിലായ തറവാട്: നാരകത്ത് തറവാട് (അന്ധവിശ്വാസവും നിധിവേട്ടയും മൂലം സർവ്വനാശം).</li><li>12. ശീർഷകത്തിന്റെ അർത്ഥം: മനുഷ്യരുടെ സകല കർമ്മങ്ങളെയും രഹസ്യങ്ങളെയും വീക്ഷിക്കുന്ന ദൈവത്തിന്റെ സർവ്വജ്ഞത.</li><li>13. സാമൂഹിക വിമർശനം: ബാലവിവാഹം, മന്ത്രവാദം, രോഗങ്ങളോടുള്ള അന്ധമായ സമീപനം എന്നിവയെ നോവൽ വിചാരണ ചെയ്യുന്നു.</li><li>14. സംയുക്ത നോവൽ: എം.ടി. വാസുദേവൻ നായരുമായി ചേർന്ന് 'അറബിപ്പൊന്ന്' എന്ന നോവൽ രചിച്ചു.</li><li>15. മറ്റ് പ്രധാന കൃതികൾ: 'ഹിരണ്യകശിപു', 'എണ്ണപ്പാടം', 'ഉണ്ണികൃഷ്ണന്റെ ഏഴ് ദിവസങ്ങൾ'.</li><li>16. കേരള സാഹിത്യ അക്കാദമി പ്രസിഡന്റായും കേന്ദ്ര സാഹിത്യ അക്കാദമി അംഗമായും സേവനമനുഷ്ഠിച്ചു.</li><li>17. കോഴിക്കോട് കുണ്ടുങ്ങലിൽ 1929-ൽ ജനനം; സ്വാതന്ത്ര്യസമര സേനാനിയായ എൻ.പി. അബുവിന്റെ മകൻ.</li><li>18. മുസ്ലിം സമുദായത്തിലെ ആന്തരിക വൈരുദ്ധ്യങ്ങളെ നിശിതമായി വിമർശിച്ച എഴുത്തുകാരനാണ് എൻ.പി.</li><li>19. നോവൽ വിരൽചൂണ്ടുന്നത്: അന്ധവിശ്വാസങ്ങളിൽ നിന്നുള്ള വിമോചനത്തിനും ആധുനിക വിദ്യാഭ്യാസത്തിനും.</li><li>20. പരീക്ഷാ ഫോക്കസ്: കോയമോന്റെ ആഖ്യാനരീതി, കുഞ്ഞഹമ്മദ് മാസ്റ്ററുടെ യുക്തിവാദം, പരപ്പനങ്ങാടിയുടെ പ്രാദേശികത, താമിയുടെ മന്ത്രവാദ പ്രത്യാഘാതങ്ങൾ.</li>
+      </ul>
+    </div>
+    </div></div></body></html>

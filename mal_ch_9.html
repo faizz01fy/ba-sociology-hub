@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta charset="UTF-8">
+<title>കവിത: ചിന്താവിഷ്ടയായ സീത - അധ്യായ പഠന സഹായി</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  @page {
+    size: A4 portrait;
+    margin: 14mm 13mm 14mm 13mm;
+    @top-right {
+      content: "മലയാള സാഹിത്യാനുശീലനം · അധ്യായ പഠന സഹായി";
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Malayalam', 'Manjari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .chapter-header {
+    background: linear-gradient(135deg, var(--c-primary, #0f766e) 0%, var(--c-dark, #134e4a) 100%);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    page-break-inside: avoid;
+  }
+
+  .ch-pill-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .ch-pill {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .chapter-header h1 {
+    font-size: 17pt;
+    font-weight: 900;
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+    color: #ffffff;
+  }
+
+  .ch-meta-sub {
+    font-size: 10pt;
+    color: #ccfbf1;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Author Profile Card (കവിപരിചയം / രചയിതാവിന്റെ പരിചയം) */
+  .author-profile-box {
+    background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%);
+    border: 1.5px solid #cbd5e1;
+    border-left: 5px solid var(--c-primary, #0f766e);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    page-break-inside: avoid;
+  }
+
+  .author-profile-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .author-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 3px;
+  }
+
+  .author-profile-title h3 {
+    margin: 0;
+    font-size: 12.5pt;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .author-profile-title h3 small {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #64748b;
+  }
+
+  .author-meta-pill {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 8.5pt;
+    color: #334155;
+    line-height: 1.45;
+  }
+
+  .author-meta-pill b { color: var(--c-primary, #0f766e); }
+
+  .author-bio-body p {
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+
+  .author-works-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .author-works-head {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
+  }
+
+  .works-cat-row {
+    margin-bottom: 4px;
+    font-size: 8.5pt;
+    line-height: 1.5;
+  }
+
+  .works-cat-row:last-child { margin-bottom: 0; }
+
+  .works-cat-label {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: 8pt;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .works-cat-content { color: #475569; }
+
+  .author-awards-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #854d0e;
+    margin-bottom: 6px;
+  }
+
+  .author-significance-strip {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #1e40af;
+  }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .obj-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .out-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .card-label {
+    font-size: 9.5pt;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+  }
+  .obj-card .card-label { color: #166534; }
+  .out-card .card-label { color: #1e40af; }
+
+  .obj-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  .intro-box {
+    background: #fafaf9;
+    border: 1px solid #e7e5e4;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #292524;
+    page-break-inside: avoid;
+  }
+
+  .intro-box .intro-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #b45309;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .concept-section {
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    page-break-inside: avoid;
+  }
+
+  .concept-section h2 {
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--c-primary, #0f766e);
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .concept-section p {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: #334155;
+    margin: 0 0 6px 0;
+  }
+
+  .conclusion-box {
+    background: #fdf4ff;
+    border: 1px solid #f5d0fe;
+    border-left: 4px solid #a855f7;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 16px 0;
+    page-break-inside: avoid;
+  }
+
+  .conclusion-box .conc-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #7e22ce;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .conclusion-box p {
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #3b0764;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  .takeaways-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .takeaways-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f766e;
+  }
+
+  .takeaways-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #134e4a;
+    line-height: 1.55;
+  }
+
+  .glossary-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .glossary-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #334155;
+  }
+
+  .glossary-item {
+    font-size: 8.5pt;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .revision-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 9pt;
+    line-height: 1.6;
+    color: #713f12;
+    page-break-inside: avoid;
+  }
+
+  .progress-section {
+    border-top: 2px solid #e2e8f0;
+    padding-top: 14px;
+    margin-top: 16px;
+  }
+
+  .progress-header {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 0 0 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-inside: avoid;
+  }
+
+  .q-type-title {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f766e;
+    margin: 14px 0 8px 0;
+    padding-left: 8px;
+    border-left: 3px solid #0f766e;
+    page-break-inside: avoid;
+  }
+
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+
+  .qa-question {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+
+  .qa-answer {
+    font-size: 9pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0;
+    white-space: pre-line;
+  }
+
+  .essay-card {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .essay-card .qa-question {
+    font-size: 10pt;
+    color: #1e1b4b;
+    margin-bottom: 10px;
+  }
+
+  .essay-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 4px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .mcq-container {
+    margin-top: 14px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-q {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 5px 0;
+  }
+
+  .mcq-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    font-size: 8.5pt;
+    color: #334155;
+  }
+
+  .mcq-opt {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
+  .mcq-key-card {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 14px 0 20px 0;
+    page-break-inside: avoid;
+  }
+
+  .mcq-key-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 10pt;
+    font-weight: 800;
+    color: #166534;
+  }
+
+  .key-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    font-size: 8pt;
+    color: #14532d;
+  }
+
+  .key-item {
+    background: #ffffff;
+    border: 1px solid #bbf7d0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.35;
+  }
+
+  .exam-points-card {
+    background: linear-gradient(135deg, #fefce8 0%, #fffbeb 100%);
+    border: 1.5px solid #fde047;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 25px 0;
+    box-shadow: 0 3px 10px rgba(234, 179, 8, 0.1);
+    page-break-inside: avoid;
+  }
+
+  .exam-points-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #facc15;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+
+  .exam-points-head h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 900;
+    color: #854d0e;
+  }
+
+  .exam-tag {
+    background: #ca8a04;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 14px;
+    text-transform: uppercase;
+  }
+
+  .exam-points-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #713f12;
+  }
+
+  .exam-points-list li {
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .exam-points-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ca8a04;
+    font-weight: 900;
+  }
+
+
+    @media (max-width: 768px) {
+      body {
+        padding: 14px 10px !important;
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+      .chapter-header {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+      }
+    }
+    
+  </style>
+</head>
+<body style="--c-primary: #be185d; --c-dark: #0f172a;">
+  <div class="chapter-wrapper">
+    <header class="chapter-header">
+      <div class="ch-pill-row">
+        <span class="ch-pill">മൊഡ്യൂൾ 3</span>
+        <span class="ch-pill">ഖണ്ഡകാവ്യം / ആധുനിക കവിത (Modern Romantic Poetry)</span>
+        <span class="ch-pill">അധ്യായം 9</span>
+      </div>
+      <h1>കവിത: ചിന്താവിഷ്ടയായ സീത</h1>
+      <p class="ch-meta-sub">രചയിതാവ്: <b>മഹാകവി കുമാരനാശാൻ</b> · ഉറവിടം: ചിന്താവിഷ്ടയായ സീത (1919)</p>
+    </header>
+
+        <div class="author-profile-box">
+          <div class="author-profile-head">
+            <div class="author-profile-title">
+              <span class="author-badge">✍️ കവിപരിചയം / രചയിതാവിന്റെ സമഗ്ര പരിചയം</span>
+              <h3>മഹാകവി കുമാരനാശാൻ <small>(1873 ഏപ്രിൽ 12 – 1924 ജനുവരി 16)</small></h3>
+            </div>
+            <div class="author-meta-pill">
+              <b>സ്ഥലം / പശ്ചാത്തലം:</b> കായിക്കര, ചിറയിൻകീഴ് (തിരുവനന്തപുരം ജില്ല)<br>
+              <b>സാഹിത്യ പദവി:</b> മലയാളത്തിലെ ആധുനിക കവിത്രയത്തിലെ പ്രമുഖൻ (ഉള്ളൂർ, വള്ളത്തോൾ, ആശാൻ), സ്നേഹഗായകൻ, കാവ്യനവോത്ഥാനത്തിന്റെ നായകൻ, ദാർശനിക കവി, ശ്രീനാരായണഗുരുവിന്റെ പ്രഥമ ശിഷ്യൻ, SNDP യോഗത്തിന്റെ പ്രഥമ ജനറൽ സെക്രട്ടറി, ശ്രീമൂലം പ്രജാസഭാംഗം.
+            </div>
+          </div>
+          <div class="author-bio-body">
+            <p>മലയാള കാവ്യരംഗത്ത് കാല്പനിക വസന്തത്തിനും സാമൂഹിക വിപ്ലവത്തിനും തിരികൊളുത്തിയ യുഗപ്രഭാവനായ കവിയാണ് കുമാരനാശാൻ. 1873-ൽ തിരുവനന്തപുരം കായിക്കരയിൽ തൊമ്മൻവിളാകത്ത് നാരായണന്റെയും കാളിയമ്മയുടെയും മകനായി ജനിച്ചു. ശ്രീനാരായണഗുരുവിന്റെ ശിഷ്യത്വം സ്വീകരിച്ച് ബാംഗ്ലൂർ, മദ്രാസ്, കൽക്കട്ട എന്നിവിടങ്ങളിൽ ഉപരിപഠനം നടത്തി തത്വചിന്തയിലും സംസ്കൃതത്തിലും ഇംഗ്ലീഷിലും അഗാധ പാണ്ഡിത്യം നേടി. 1907-ൽ 'മിതവാദി' പത്രത്തിൽ പ്രസിദ്ധീകരിച്ച 'വീണപൂവ്' എന്ന ദാർശനിക ഖണ്ഡകാവ്യത്തിലൂടെ മലയാള കവിതയെ അതുവരെയുണ്ടായിരുന്ന അർത്ഥശൂന്യമായ ശ്ലോകനിർമ്മിതിയിൽ നിന്നും ശൃംഗാരവർണ്ണനകളിൽ നിന്നും മോചിപ്പിച്ച് അത്യുന്നതമായ ഭാവസാന്ദ്രതയിലേക്ക് ഉയർത്തി. പുരാണകഥാപാത്രങ്ങളെ സമകാലിക സാമൂഹിക ബോധത്തോടെ പുനർവായിച്ച 'ചിന്താവിഷ്ടയായ സീത' ലോകോത്തര ക്ലാസിക്കുകളിലൊന്നാണ്. ജാതിവിവേചനത്തിനെതിരെയുള്ള പോരാട്ടവും പല്ലനയാറ്റിലെ അകാല മരണവും (റെഡീമർ ബോട്ട് ദുരന്തം) അദ്ദേഹത്തിന്റെ ജീവിതത്തിന് രക്തസാക്ഷിത്വത്തിന്റെ പരിവേഷം നൽകി.</p>
+            
+            <div class="author-works-section">
+              <div class="author-works-head">📚 പ്രധാന കൃതികളും സാഹിത്യ സംഭാവനകളും (Major Works & Contributions):</div>
+        
+              <div class="works-cat-row">
+                <span class="works-cat-label">പ്രശസ്ത ഖണ്ഡകാവ്യങ്ങൾ</span>
+                <span class="works-cat-content">വീണപൂവ് (1907), നളിനി അല്ലെങ്കിൽ ഒരു സ്നേഹം (1911), ലീല (1914), പ്രരോദനം (1919 - വിലാപകാവ്യം), ചിന്താവിഷ്ടയായ സീത (1919), ദുരവസ്ഥ (1922), ചണ്ഡാലഭിക്ഷുകി (1922), കരുണ (1923).</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">കവിതാസമാഹാരങ്ങൾ</span>
+                <span class="works-cat-content">മണിമാല, വനമാല, പുഷ്പവാടി (കുട്ടിക്കവിതകൾ), ഗ്രാമവൃക്ഷത്തിലെ കുയിൽ.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">സ്തോത്രകൃതികൾ & വിവർത്തനങ്ങൾ</span>
+                <span class="works-cat-content">സൗന്ദര്യലഹരി, ശിവസ്തോത്രമാല, വിചിത്രവിജയം (നാടകം), രാജയോഗം (വിവർത്തനം).</span>
+              </div>
+            
+            </div>
+            
+            <div class="author-awards-strip">
+              <b>🏆 പ്രധാന പുരസ്കാരങ്ങളും അംഗീകാരങ്ങളും:</b> 1922-ൽ വെയിൽസ് രാജകുമാരൻ മദ്രാസിൽ വെച്ച് പട്ടും വളയും സമ്മാനിച്ച് 'മഹാകവി' ബിരുദം നൽകി ആദരിച്ചു (മഹാകാവ്യം രചിക്കാതെ തന്നെ ഖണ്ഡകാവ്യങ്ങളുടെ ഭാവമഹിമ കൊണ്ട് മാത്രം മഹാകവി പദവി നേടിയ അപൂർവ്വ പ്രതിഭ).
+            </div>
+            
+            <div class="author-significance-strip">
+              <b>✦ സാഹിത്യ സംഭാവന & സവിശേഷ സ്ഥാനം:</b> "സ്നേഹമാണഖിലസാരമൂഴിയിൽ", "സ്നേഹത്തിൽനിന്നുദിക്കുന്നു ലോകം" എന്നിങ്ങനെ സ്നേഹത്തെ പ്രപഞ്ചസത്യമായി പ്രഖ്യാപിച്ച സ്നേഹഗായകൻ. സ്ത്രീയുടെ ആത്മാഭിമാനവും സ്വാതന്ത്ര്യവും നീതിയും കാവ്യത്തിന്റെ കേന്ദ്രബിന്ദുവാക്കി മാറ്റിയ സാമൂഹിക വിപ്ലവകാരി.
+            </div>
+          </div>
+        </div>
+        
+      <div class="objectives-grid">
+        <div class="obj-card">
+          <div class="card-label">❖ പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</div>
+          <ul class="obj-list">
+    <li>മലയാള കാവ്യരംഗത്തെ കാൽപ്പനിക വിപ്ലവവും കുമാരനാശാന്റെ നവോത്ഥാന സംഭാവനകളും മനസ്സിലാക്കുക.</li><li>പൗരാണിക രാമായണത്തിലെ സീതയെ ആശാൻ എങ്ങനെ ആധുനിക സ്ത്രീപക്ഷ വീക്ഷണത്തോടെ പുനഃസൃഷ്ടിച്ചു എന്ന് വിലയിരുത്തുക.</li><li>ശ്രീരാമന്റെ രാജധർമ്മവും സ്ത്രീയുടെ ആത്മാഭിമാനവും തമ്മിലുള്ള ദാർശനിക സംഘർഷം അപഗ്രഥിക്കുക.</li>
+          </ul>
+        </div>
+        <div class="out-card">
+          <div class="card-label">✦ പഠന ഫലങ്ങൾ (Learning Outcomes)</div>
+          <ul class="obj-list">
+    <li>ആശാന്റെ കാവ്യങ്ങളിലെ അന്തർലീനമായ ദാർശനിക ഗാംഭീര്യവും സൗന്ദര്യവും തിരിച്ചറിയാൻ സാധിക്കുന്നു.</li><li>സ്ത്രീയുടെ മൗലികാവകാശങ്ങളും നീതിബോധവും മുൻനിർത്തി കാവ്യഭാഗം നിരൂപണം ചെയ്യാൻ പ്രാപ്തി നേടുന്നു.</li><li>മണിപ്രവാള-ക്ലാസിക്കൽ ശൈലിയിൽ നിന്നുള്ള ആധുനിക കാവ്യപരിണാമം വ്യക്തമാക്കാൻ കഴിയുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="intro-box">
+        <span class="intro-label">ആമുഖം (Introduction)</span>
+    <p>മലയാള കവിതയെ പാരമ്പര്യത്തിന്റെ ശൃംഗാരച്ചട്ടക്കൂടുകളിൽ നിന്ന് മുക്തമാക്കി, ആഴമേറിയ ചിന്തയുടെയും സാമൂഹിക നവോത്ഥാനത്തിന്റെയും ഉന്നതങ്ങളിലേക്ക് നയിച്ച മഹാകവിയാണ് കുമാരനാശാൻ (1873–1924). ശ്രീനാരായണഗുരുവിന്റെ പ്രിയശിഷ്യനായ ആശാൻ രചിച്ച ഏറ്റവും ഉദാത്തമായ ദാർശനിക ഖണ്ഡകാവ്യമാണ് 1919-ൽ പ്രസിദ്ധീകരിച്ച 'ചിന്താവിഷ്ടയായ സീത'. രാമനാൽ കാട്ടിൽ ഉപേക്ഷിക്കപ്പെട്ട ഗർഭിണിയായ സീത, വാത്മീകിയുടെ ആശ്രമത്തിലിരുന്ന് തന്റെ കഴിഞ്ഞകാല ജീവിതത്തെയും ശ്രീരാമന്റെ പ്രവൃത്തികളെയും പുനർവിചാരണ ചെയ്യുന്നതാണ് ഈ കൃതിയുടെ പ്രമേയം. നിശ്ശബ്ദമായി കരയുന്ന പഴയ സീതയ്ക്ക് പകരം, ആത്മാഭിമാനമുള്ള ഒരു ആധുനിക സ്ത്രീയായി സീത ഇവിടെ ഉയിർത്തെഴുന്നേൽക്കുന്നു.</p></div>
+        <section class="concept-section">
+          <h2>1. ആശാന്റെ കാവ്യവിപ്ലവവും കാൽപ്പനിക വസന്തവും</h2>
+          <p>ഉള്ളൂരും വള്ളത്തോളും ആശാനും ചേർന്ന കവിത്രയത്തിൽ 'സ്നേഹഗായകൻ' എന്നും 'ആശയാശാൻ' എന്നും അറിയപ്പെട്ട മഹാകവിയാണ് കുമാരനാശാൻ. 1907-ൽ 'വീണപൂവ്' എഴുതിക്കൊണ്ട് മലയാളത്തിൽ റൊമാന്റിക് (കാൽപ്പനിക) പ്രസ്ഥാനത്തിന് തുടക്കം കുറിച്ചു. 'ചിന്താവിഷ്ടയായ സീത'യിൽ ബാഹ്യമായ സംഭവവികാസങ്ങളേക്കാൾ പ്രാധാന്യം ഒരു സ്ത്രീയുടെ ആന്തരിക ചിന്തകൾക്കാണ് (Internal Monologue / Stream of Consciousness). വസന്തതിലകം വൃത്തത്തിലാണ് ആശാൻ ഈ കാവ്യം രചിച്ചിരിക്കുന്നത്.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>2. ലക്ഷ്മണന്റെ യാത്രപറച്ചിലും സീതയുടെ കണ്ണീരോർമ്മകളും</h2>
+          <p>കാവ്യഭാഗത്തിലെ അതിപ്രസിദ്ധമായ ശ്ലോകം കാട്ടിൽ തന്നെ ഉപേക്ഷിച്ച് മടങ്ങുന്ന ലക്ഷ്മണനെക്കുറിച്ചുള്ളതാണ്:</p><p>“പുരികം പുഴുപോൽ പിടഞ്ഞകം-ഞെരിയും തൻതല താങ്ങി കൈകളാൽ</p><p>പിരിവാനരുതാഞ്ഞു കണ്ണുനീർ-ചൊരിയും ലക്ഷ്മണനെ സ്മരിപ്പൂ ഞാൻ...”</p><p>തന്നോട് ഈ ക്രൂരത പറയാൻ കഴിയാതെ, പുരികം പുഴുവിനെപ്പോലെ പിടയുകയും സ്വന്തം തല കൈകളിൽ താങ്ങി വാവിട്ടു കരയുകയും ചെയ്ത ലക്ഷ്മണന്റെ മുഖം സീതയുടെ മനസ്സിൽ മായാതെ നിൽക്കുന്നു. രാജാവിന്റെ ക്രൂരമായ ആജ്ഞ നടപ്പിലാക്കാൻ വിധിക്കപ്പെട്ട ലക്ഷ്മണനോട് സീതയ്ക്ക് പകയില്ല, മറിച്ച് അപാരമായ വാത്സല്യവും സഹതാപവുമാണ് തോന്നുന്നത്.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>3. ശ്രീരാമന്റെ രാജധർമ്മവും പുരുഷാധിപത്യവും വിചാരണ ചെയ്യപ്പെടുന്നു</h2>
+          <p>സീതയുടെ ചിന്തകൾ പിന്നീട് തിരിയുന്നത് ശ്രീരാമനിലേക്കാണ്. പ്രജകളുടെ അപവാദത്തിന് (പൗരാപവാദം) ചെവികൊടുത്ത്, അഗ്നിപരീക്ഷയിലൂടെ പവിത്രത തെളിയിച്ച തന്റെ പ്രിയപത്നിയെ ഗർഭിണിയായിരിക്കുമ്പോൾ കാട്ടിൽ ഉപേക്ഷിച്ച രാമന്റെ നടപടിയെ സീത നിശിതമായി ചോദ്യം ചെയ്യുന്നു. രാജധർമ്മം എന്നത് മനുഷ്യത്വമില്ലായ്മയാണോ? പ്രജകളെ തൃപ്തിപ്പെടുത്താൻ സ്വന്തം മനസ്സാക്ഷിയെയും ധർമ്മപത്നിയെയും ബലികൊടുക്കുന്നതാണോ ഒരു ഉത്തമ പുരുഷന്റെ മഹത്വം? തുടങ്ങിയ തീക്ഷ്ണമായ ചോദ്യങ്ങൾ സീത ഉന്നയിക്കുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>4. പക്വതയാർന്ന സ്നേഹവും ഉദാത്തമായ ഉപസംഹാരവും</h2>
+          <p>എന്നാൽ സീതയുടെ വിചാരം വെറുമൊരു ക്രോധപ്രകടനമല്ല. രാമൻ അനുഭവിച്ച ഏകാന്തതയെയും സങ്കടങ്ങളെയും അവൾ തിരിച്ചറിയുന്നുണ്ട്. അശ്വമേധയാഗ വേദിയിൽ വെച്ച് വീണ്ടും പവിത്രത തെളിയിക്കാൻ ശ്രീരാമൻ ആവശ്യപ്പെടുമ്പോൾ, ഇനി ആർക്കും മുന്നിലും തലകുനിക്കില്ലെന്ന് പ്രഖ്യാപിച്ച് ഭൂമിദേവിയുടെ മടിത്തട്ടിലേക്ക് അപ്രത്യക്ഷയാകാനാണ് സീത തീരുമാനിക്കുന്നത്. പരമമായ ആത്മാഭിമാനത്തോടെ അവൾ ഭൂമിയിലേക്ക് ആഴ്ന്നിറങ്ങുന്നു.</p>
+        </section>
+        
+    <div class="conclusion-box">
+      <span class="conc-label">ഉപസംഹാരം (Chapter Conclusion)</span>
+      <p>കുമാരനാശാന്റെ 'ചിന്താവിഷ്ടയായ സീത' ലോകസാഹിത്യത്തിലെ തന്നെ ഏറ്റവും ഉദാത്തമായ സ്ത്രീപക്ഷ രചനകളിലൊന്നാണ്. അടിച്ചമർത്തപ്പെട്ട സ്ത്രീത്വത്തിന്റെ പ്രതിഷേധവും ആത്മാഭിമാനവും ഒരുപോലെ പ്രകാശിക്കുന്ന ഈ കാവ്യം മാനവിക മൂല്യങ്ങളുടെ അനശ്വര ഗോപുരമായി നിലകൊള്ളുന്നു.</p>
+    </div>
+    
+    <div class="summary-grid">
+      <div class="takeaways-box">
+        <h3>✦ പ്രധാന പാഠങ്ങൾ (Key Takeaways)</h3>
+        <ul class="takeaways-list">
+    <li>മഹാകവി കുമാരനാശാൻ 1919-ൽ രചിച്ച വിഖ്യാത ഖണ്ഡകാവ്യമാണ് 'ചിന്താവിഷ്ടയായ സീത'.</li><li>വസന്തതിലകം വൃത്തത്തിലാണ് ഈ കൃതി രചിക്കപ്പെട്ടിരിക്കുന്നത്.</li><li>സീത വെറുമൊരു നിഷ്ക്രിയ കഥാപാത്രമല്ല; രാമന്റെ രാജനീതിയെ ചോദ്യം ചെയ്യുന്ന സ്വതന്ത്ര വ്യക്തിത്വമാണ്.</li><li>'പുരികം പുഴുപോൽ പിടഞ്ഞകം...' എന്ന ശ്ലോകം ലക്ഷ്മണന്റെ നിസ്സഹായാവസ്ഥയും സീതയുടെ വാത്സല്യവും വ്യക്തമാക്കുന്നു.</li>
+        </ul>
+      </div>
+      <div class="glossary-box">
+        <h3>📖 പ്രധാന സാങ്കേതിക പദാവലി (Key Terms)</h3>
+    <div class="glossary-item"><b>ഖണ്ഡകാവ്യം:</b> മഹാകാവ്യത്തിന്റെ സകല ലക്ഷണങ്ങളും തികയാത്ത, എന്നാൽ ഏതെങ്കിലും ഒരു ഭാവത്തെ ആഴത്തിൽ പ്രതിപാദിക്കുന്ന കാവ്യരൂപം.</div><div class="glossary-item"><b>ആത്മഗതങ്ങൾ (Internal Monologue):</b> കഥാപാത്രം സ്വന്തം മനസ്സിൽ നടത്തുന്ന ആഴമേറിയ വിചാരങ്ങളുടെ ആവിഷ്കാരം.</div><div class="glossary-item"><b>പൗരാപവാദം:</b> അയോദ്ധ്യയിലെ അലക്കുകാരനും പ്രജകളും സീതയുടെ പാതിവ്രത്യത്തെക്കുറിച്ച് പരസ്യമായി പറഞ്ഞ അധിക്ഷേപം.</div>
+      </div>
+    </div>
+    
+    <div class="revision-strip">
+      <b>ദ്രുത പുനഃപരിശോധനാ കുറിപ്പ് (Quick Revision):</b> കുമാരനാശാന്റെ ചിന്താവിഷ്ടയായ സീത (1919). വസന്തതിലകം വൃത്തം. വാത്മീകി ആശ്രമത്തിലെ സീതയുടെ ചിന്തകൾ. ലക്ഷ്മണന്റെ കണ്ണീരോർമ്മ. രാമന്റെ രാജധർമ്മ വിചാരണ. പുരുഷാധിപത്യത്തിന് നേരെയുള്ള ചോദ്യങ്ങൾ. ഒടുവിൽ ഭൂമിദേവിയിലേക്ക് ആഴ്ന്നിറങ്ങുന്ന ഉദാത്തമായ ആത്മാഭിമാനം.
+    </div>
+    
+    <div class="progress-section">
+      <div class="progress-header">
+        <span>പഠന പുരോഗതി വിലയിരുത്തൽ (Check Your Progress)</span>
+        <small>യഥാർത്ഥ ചോദ്യങ്ങളും സമഗ്ര ഉത്തരങ്ങളും</small>
+      </div>
+    <div class="q-type-title">ലഘുകുറിപ്പുകൾ (Short Notes)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. 'പുരികം പുഴുപോൽ പിടഞ്ഞകം-ഞെരിയും തൻതല താങ്ങി കൈകളാൽ...' - ശ്ലോകത്തിന്റെ സന്ദർഭവും കാവ്യഭംഗിയും വിവരിക്കുക.</div>
+              <div class="qa-answer">ഗർഭിണിയായ സീതയെ വനത്തിൽ ഉപേക്ഷിക്കാൻ കൊണ്ടുവന്ന ലക്ഷ്മണൻ യാത്രപറഞ്ഞു പിരിയുന്ന ദാരുണ സന്ദർഭമാണിത്. ജ്യേഷ്ഠന്റെ ആജ്ഞ നിറവേറ്റേണ്ടി വന്നതിലുള്ള കടുത്ത ദുഃഖത്താൽ ലക്ഷ്മണന്റെ പുരികങ്ങൾ പുഴുവിനെപ്പോലെ പിടയുകയും, തനിക്ക് ഈ പാപം താങ്ങാനാവുന്നില്ലെന്ന മട്ടിൽ തല കൈകളിൽ താങ്ങി അവൻ വാവിട്ടു കരയുകയും ചെയ്തു. 'പുരികം പുഴുപോൽ' എന്ന ഉപമ ലക്ഷ്മണന്റെ ആന്തരിക വേദനയെയും പിടച്ചിലിനെയും അതീവ തീവ്രമായി ദൃശ്യവൽക്കരിക്കുന്നു.</div>
+            </div>
+            
+            <div class="qa-card">
+              <div class="qa-question">2. വാല്മീകിയുടെ സീതയിൽ നിന്ന് ആശാന്റെ സീത എങ്ങനെ വ്യത്യാസപ്പെട്ടിരിക്കുന്നു?</div>
+              <div class="qa-answer">പൗരാണിക വാല്മീകി രാമായണത്തിലെ സീത നിശ്ശബ്ദമായി വിധിക്ക് കീഴടങ്ങുന്ന വിധേയത്വമുള്ള കഥാപാത്രമാണ്. എന്നാൽ കുമാരനാശാന്റെ സീത സ്വന്തമായി ചിന്തിക്കുകയും, ശ്രീരാമന്റെ രാജധർമ്മത്തിലെ കാപട്യങ്ങളെയും അധർമ്മങ്ങളെയും ധീരമായി വിചാരണ ചെയ്യുകയും ചെയ്യുന്ന ആത്മാഭിമാനമുള്ള ആധുനിക സ്ത്രീയാണ്. അവൾ കണ്ണീരൊഴുക്കുകയല്ല, മറിച്ച് നീതിക്കുവേണ്ടി ശബ്ദമുയർത്തുകയാണ് ചെയ്യുന്നത്.</div>
+            </div>
+            <div class="q-type-title">ലഘൂപന്യാസങ്ങൾ (Short Essays)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. കുമാരനാശാന്റെ 'ചിന്താവിഷ്ടയായ സീത' മുന്നോട്ടുവെക്കുന്ന സ്ത്രീപക്ഷ ദർശനം എന്താണ്?</div>
+              <div class="qa-answer">പുരുഷകേന്ദ്രീകൃതമായ ഒരു സമൂഹത്തിൽ സ്ത്രീയുടെ പവിത്രതയും ആത്മാഭിമാനവും എപ്പോഴും പുരുഷന്റെ സംശയങ്ങൾക്ക് വിധേയമാക്കപ്പെടുന്നു എന്ന കയ്പേറിയ യാഥാർത്ഥ്യമാണ് ഈ കാവ്യം തുറന്നുകാട്ടുന്നത്. രാവണന്റെ തടവറയിൽ അഗ്നിശുദ്ധി തെളിയിച്ചിട്ടും, കേവലമൊരു അലക്കുകാരന്റെ അപവാദം കേട്ട് ഗർഭിണിയായ പത്നിയെ കാട്ടിലേക്ക് ആട്ടിയോടിച്ച രാമന്റെ നടപടി പുരുഷാധിപത്യത്തിന്റെ ക്രൂരതയാണ്. സ്ത്രീ പുരുഷന്റെ വെറുമൊരു കളിപ്പാവയോ അലങ്കാരമോ അല്ലെന്നും അവൾക്ക് സ്വതന്ത്രമായ അസ്തിത്വമുണ്ടെന്നും ആശാന്റെ സീത സമർത്ഥിക്കുന്നു. ഒടുവിൽ രാമന്റെ സന്നിധിയിൽ വീണ്ടും നിരപരാധിത്വം തെളിയിക്കാൻ വിസമ്മതിച്ച് ഭൂമിയിലേക്ക് ആഴ്ന്നിറങ്ങുന്നതിലൂടെ സീത സ്ത്രീത്വത്തിന്റെ മഹത്വം പ്രഖ്യാപിക്കുന്നു.</div>
+            </div>
+            <div class="q-type-title">ഉപന്യാസങ്ങൾ (Long Essays - 300+ Words)</div>
+            <div class="essay-card">
+              <span class="essay-badge">സമഗ്ര ഉപന്യാസം · 300+ WORDS</span>
+              <div class="qa-question">1. 'ചിന്താവിഷ്ടയായ സീത' എന്ന ഖണ്ഡകാവ്യത്തിൽ കുമാരനാശാൻ നിർവ്വഹിക്കുന്ന ധർമ്മസങ്കടങ്ങളുടെയും സ്ത്രീസ്വത്വത്തിന്റെയും ആവിഷ്കാരം സമഗ്രമായി ഉപന്യസിക്കുക.</div>
+              <div class="qa-answer">ആമുഖം:
+മലയാള കാൽപ്പനിക കവിതാ പ്രസ്ഥാനത്തെ സാമൂഹിക നവോത്ഥാനവുമായി വിളക്കിച്ചേർത്ത മഹാകവിയാണ് കുമാരനാശാൻ. സ്ത്രീയുടെ ആത്മാഭിമാനത്തെയും സ്വാതന്ത്ര്യത്തെയും ഏറ്റവും ഉദാത്തമായി പ്രഖ്യാപിക്കുന്ന അദ്ദേഹത്തിന്റെ വിഖ്യാതമായ മാസ്റ്റർപീസ് ഖണ്ഡകാവ്യമാണ് 'ചിന്താവിഷ്ടയായ സീത'. രാമായണത്തിലെ പരമ്പരാഗതമായ സീതാസങ്കല്പത്തെ അടിമുടി ഉടച്ചുവാർത്തുകൊണ്ട്, നീതിബോധവും ആത്മാഭിമാനവുമുള്ള ഒരു സ്ത്രീയുടെ ചിന്തകളിലൂടെ പുരുഷാധിപത്യ മൂല്യങ്ങളെ വിചാരണ ചെയ്യുന്ന വിപ്ലവകരമായ കാവ്യരചനയാണിത്.
+
+ഏകാന്തതയും ധർമ്മസങ്കടങ്ങളുടെ വിചാരണയും:
+വാത്മീകിയുടെ തപോവനത്തിൽ, തന്റെ പുത്രന്മാരായ ലവകുശന്മാർ ശ്രീരാമന്റെ അശ്വമേധയാഗത്തിന് പോയ സന്ധ്യാസമയത്ത് ഏകാന്തയായിരിക്കുന്ന സീതയുടെ ചിന്തകളാണ് കാവ്യത്തിന്റെ ഇതിവൃത്തം. തന്നെ അകാരണമായി കാട്ടിലുപേക്ഷിച്ച ശ്രീരാമന്റെ പ്രവൃത്തിയെക്കുറിച്ച് സീത ആഴത്തിൽ ചിന്തിക്കുന്നു. ഒരു രാജ്ഞിയെന്ന നിലയിലും പതിവ്രതയായ ഭാര്യയെന്ന നിലയിലും അഗ്നിശുദ്ധി തെളിയിച്ചിട്ടും, ഒരു നിസ്സാരനായ അലക്കുകാരന്റെ അപവാദത്തെ ഭയന്ന് ഗർഭിണിയായ തന്നെ കൊടുംകാട്ടിൽ ഉപേക്ഷിച്ച രാമന്റെ 'രാജധർമ്മം' യഥാർത്ഥത്തിൽ ക്രൂരതയല്ലേ എന്ന് സീത ചോദ്യം ചെയ്യുന്നു.
+
+സ്ത്രീത്വത്തിന്റെ ആത്മാഭിമാനവും നീതിബോധവും:
+സീതയുടെ വാക്കുകൾ ഒരു സാധാരണ സ്ത്രീയുടെ വിലാപമല്ല; മറിച്ച് അനീതിക്കെതിരെയുള്ള ദാർശനികമായ ചോദ്യം ചെയ്യലാണ്. പ്രജകളുടെ പ്രീതിക്കായി സ്വന്തം ഭാര്യയെ ബലികൊടുത്ത രാമന്റെ ധർമ്മസങ്കല്പത്തിലെ സ്വാർത്ഥതയെ സീത തുറന്നുകാട്ടുന്നു. പുരുഷന്റെ സൗകര്യങ്ങൾക്കനുസരിച്ച് നിർവ്വചിക്കപ്പെടുന്ന പാതിവ്രത്യ സങ്കല്പങ്ങളെ ആശാന്റെ സീത നിരാകരിക്കുന്നു. ഭർത്താവിനാൽ ഉപേക്ഷിക്കപ്പെട്ടെങ്കിലും തന്റെ ആന്തരിക വിശുദ്ധിയിൽ അചഞ്ചലമായ വിശ്വാസമുള്ള ആത്മാഭിമാനമുള്ള സ്വതന്ത്ര വ്യക്തിത്വമായി സീത ഇവിടെ ഉയർന്നുനിൽക്കുന്നു. സ്ത്രീയെ കേവലം കാഴ്ച്ചവസ്തുവായോ പാവയായോ കാണുന്ന ലോകത്തോട് അവൾ കലഹിക്കുന്നു.
+
+ക്രോധത്തിൽ നിന്ന് പ്രശാന്തതയിലേക്കുള്ള പരിണാമം:
+തുടക്കത്തിൽ രാമനോട് തോന്നുന്ന കടുത്ത അമർഷവും രോഷവും ക്രമേണ ശാന്തമായ കാരുണ്യമായി പരിണമിക്കുന്നുണ്ട്. രാമൻ അനുഭവിക്കുന്ന രാജകീയ ഏകാന്തതയെയും നിസ്സഹായാവസ്ഥയെയും സീത തിരിച്ചറിയുന്നു. വിദ്വേഷമില്ലാത്ത ഉന്നതമായ സ്നേഹത്തിലേക്ക് സീതയുടെ മനസ്സ് ഉയരുന്നു. എന്നാൽ വീണ്ടും രാമന്റെ സഭയിൽ ചെന്ന് ശുദ്ധി തെളിയിക്കാൻ സീത തയ്യാറല്ല. ഭൗതികമായ കപടലോകത്തെ ഉപേക്ഷിച്ച് ഭൂമാതാവിന്റെ മടിത്തട്ടിലേക്ക് ലയിക്കാനാണ് അവൾ തീരുമാനിക്കുന്നത്.
+
+ആശാന്റെ കാവ്യദർശനവും മന്ദാക്രാന്ത വൃത്തവും:
+ശാന്തവും ഗംഭീരവുമായ മന്ദാക്രാന്ത വൃത്തത്തിലാണ് ആശാൻ ഈ കാവ്യശില്പം രചിച്ചിരിക്കുന്നത്. കാളിദാസന്റെ മേഘസന്ദേശത്തിന് ശേഷം മന്ദാക്രാന്ത വൃത്തം ഇത്രയേറെ ഭാവസാന്ദ്രമായി ഉപയോഗിക്കപ്പെട്ട മറ്റൊരു കൃതിയില്ല. സീതയുടെ ഓരോ ചിന്തയും യുക്തിഭദ്രവും തത്ത്വചിന്താപരവുമാണ്. ആശാന്റെ 'സ്നേഹമാണഖിലസാരമൂഴിയിൽ' എന്ന ദർശനത്തിന്റെ ഏറ്റവും ഉജ്ജ്വലമായ പ്രകടനമാണ് ഈ കൃതി.
+
+ഉപസംഹാരം:
+കുമാരനാശാന്റെ 'ചിന്താവിഷ്ടയായ സീത' ഭാരതീയ സാഹിത്യത്തിലെ തന്നെ ഏറ്റവും ശക്തമായ സ്ത്രീപക്ഷ രചനകളിലൊന്നാണ്. സ്ത്രീത്വത്തിന്റെ മഹത്വത്തെയും ആത്മാഭിമാനത്തെയും എക്കാലത്തേക്കുമായി അനശ്വരമാക്കി നിലനിർത്താൻ ഈ കൃതിക്ക് സാധിച്ചിരിക്കുന്നു. ലോകസാഹിത്യത്തിലെ ക്ലാസിക്കുകളോട് കിടപിടിക്കുന്ന മാസ്റ്റർപീസാണിത്.
+
+ധാർമ്മിക ഔന്നത്യവും സാർവ്വകാലിക പ്രസക്തിയും:
+ആശാന്റെ സീത ഒരു പുരാണ കഥാപാത്രത്തിനപ്പുറം ആധുനിക സ്ത്രീത്വത്തിന്റെ എക്കാലത്തെയും വലിയ പ്രതീകമാണ്. പുരുഷകേന്ദ്രീകൃതമായ സമൂഹത്തിൽ സ്വന്തം തെറ്റുകൾ മറച്ചുവെക്കാൻ സ്ത്രീയെ ബലിയാടാക്കുന്ന പ്രവണത ഇന്നത്തെ ലോകത്തും നിലനിൽക്കുന്നുണ്ട്. ഇതിനെതിരെ സീത ഉയർത്തുന്ന ചോദ്യങ്ങൾ ഏത് കാലഘട്ടത്തിലെയും നീതിക്കായുള്ള മുറവിളിയാണ്. രാമനെ സ്നേഹിക്കുമ്പോഴും അദ്ദേഹത്തിന്റെ അനീതിയെ അംഗീകരിക്കാൻ അവൾ തയ്യാറാകുന്നില്ല. പ്രണയത്തേക്കാൾ വലുതാണ് സ്വന്തം ആത്മാഭിമാനമെന്ന പ്രഖ്യാപനം സ്ത്രീശാക്തീകരണത്തിന്റെ ചരിത്രത്തിൽ തങ്കലിപികളാൽ എഴുതപ്പെടേണ്ട ഒന്നാണ്.
+
+സ്ത്രീപക്ഷ വായനയും സാമൂഹിക മാറ്റവും:
+വാത്മീകിയുടെ രാമായണത്തിലെ ശാന്തയായ സീതയിൽ നിന്ന് വ്യത്യസ്തമായി, സ്വന്തം അവകാശങ്ങൾക്കായി ശബ്ദമുയർത്തുന്ന സീതയെയാണ് ആശാൻ സൃഷ്ടിച്ചത്. ഇത് ഇരുപതാം നൂറ്റാണ്ടിലെ കേരളീയ നവോത്ഥാനത്തിന് വലിയൊരു ഊർജ്ജമായി മാറി. അടിച്ചമർത്തപ്പെട്ട സ്ത്രീകൾക്ക് തങ്ങളുടെ സങ്കടങ്ങൾ തുറന്നുപറയാനുള്ള ധൈര്യം ഈ കാവ്യം പകർന്നുനൽകി.</div>
+            </div>
+            
+    <div class="q-type-title">പ്രധാന പരീക്ഷാ മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (15 Important MCQs)</div>
+    <div class="mcq-container">
+    
+        <div class="mcq-item">
+          <div class="mcq-q">1. 'ചിന്താവിഷ്ടയായ സീത' എന്ന വിഖ്യാത കാവ്യം രചിച്ചത് ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വള്ളത്തോൾ</div>
+            <div class="mcq-opt">B) ഉള്ളൂർ</div>
+            <div class="mcq-opt">C) മഹാകവി കുമാരനാശാൻ</div>
+            <div class="mcq-opt">D) ചങ്ങമ്പുഴ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">2. 'ചിന്താവിഷ്ടയായ സീത' ഏത് വൃത്തത്തിലാണ് രചിക്കപ്പെട്ടിരിക്കുന്നത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കേക</div>
+            <div class="mcq-opt">B) കാകളി</div>
+            <div class="mcq-opt">C) വസന്തതിലകം</div>
+            <div class="mcq-opt">D) മഞ്ജരി</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">3. 'ചിന്താവിഷ്ടയായ സീത' പ്രസിദ്ധീകരിച്ച വർഷമേത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 1907</div>
+            <div class="mcq-opt">B) 1919</div>
+            <div class="mcq-opt">C) 1924</div>
+            <div class="mcq-opt">D) 1930</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">4. 'പുരികം പുഴുപോൽ പിടഞ്ഞകം...' എന്ന ശ്ലോകത്തിൽ ആരെക്കുറിച്ചാണ് സീത ഓർക്കുന്നത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ശ്രീരാമനെ</div>
+            <div class="mcq-opt">B) ലക്ഷ്മണനെ</div>
+            <div class="mcq-opt">C) വസിഷ്ഠനെ</div>
+            <div class="mcq-opt">D) ഭരതനെ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">5. കാട്ടിൽ ഉപേക്ഷിക്കപ്പെട്ട സീത ഏത് മഹർഷിയുടെ ആശ്രമത്തിലാണ് കഴിഞ്ഞത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വാത്മീകി മഹർഷിയുടെ</div>
+            <div class="mcq-opt">B) വിശ്വാമിത്രന്റെ</div>
+            <div class="mcq-opt">C) വസിഷ്ഠന്റെ</div>
+            <div class="mcq-opt">D) അഗസ്ത്യന്റെ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">6. കുമാരനാശാന്റെ കാവ്യഗുരു ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) തുഞ്ചത്ത് എഴുത്തച്ഛൻ</div>
+            <div class="mcq-opt">B) ശ്രീനാരായണഗുരു</div>
+            <div class="mcq-opt">C) കേരളവർമ്മ</div>
+            <div class="mcq-opt">D) ഉള്ളൂർ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">7. ശ്രീരാമൻ സീതയെ കാട്ടിലേക്ക് അയക്കാൻ കാരണമെന്തായിരുന്നു?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വനവാസ മോഹം</div>
+            <div class="mcq-opt">B) പൗരാപവാദം (പ്രജകളുടെ അപവാദം)</div>
+            <div class="mcq-opt">C) യുദ്ധം</div>
+            <div class="mcq-opt">D) യാഗശാല നിർമ്മാണം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">8. ആശാന്റെ 'വീണപൂവ്' പ്രസിദ്ധീകരിച്ച വർഷമേത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 1907</div>
+            <div class="mcq-opt">B) 1919</div>
+            <div class="mcq-opt">C) 1922</div>
+            <div class="mcq-opt">D) 1890</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">9. ഒടുവിൽ വീണ്ടും പവിത്രത തെളിയിക്കാൻ ആവശ്യപ്പെട്ടപ്പോൾ സീത എന്തു ചെയ്തു?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) അയോദ്ധ്യ ഭരിച്ചു</div>
+            <div class="mcq-opt">B) ഭൂമിദേവിയുടെ മടിത്തട്ടിലേക്ക് ആഴ്ന്നിറങ്ങി</div>
+            <div class="mcq-opt">C) യുദ്ധം ചെയ്തു</div>
+            <div class="mcq-opt">D) കൊട്ടാരത്തിലേക്ക് മടങ്ങി</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">10. 'ആശയഗംഭീരൻ' എന്ന വിശേഷണത്തിന് അർഹനായ കവി ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വള്ളത്തോൾ</div>
+            <div class="mcq-opt">B) കുമാരനാശാൻ</div>
+            <div class="mcq-opt">C) ഉള്ളൂർ</div>
+            <div class="mcq-opt">D) ജി. ശങ്കരക്കുറുപ്പ്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">11. സീതയുടെ വിചാരങ്ങൾ പ്രധാനമായും കേന്ദ്രീകരിക്കുന്നത് ഏത് വിഷയത്തിലാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) സമ്പത്ത്</div>
+            <div class="mcq-opt">B) ശ്രീരാമന്റെ രാജധർമ്മവും സ്ത്രീയുടെ ആത്മാഭിമാനവും</div>
+            <div class="mcq-opt">C) കൊട്ടാര സുഖങ്ങൾ</div>
+            <div class="mcq-opt">D) കുട്ടികളുടെ വിദ്യാഭ്യാസം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">12. കുമാരനാശാൻ അന്തരിച്ചത് ഏത് അപകടത്തിലാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) തീവണ്ടി അപകടം</div>
+            <div class="mcq-opt">B) പല്ലനയാറ്റിലെ റെഡീമർ ബോട്ട് അപകടത്തിൽ (1924)</div>
+            <div class="mcq-opt">C) വിമാന അപകടം</div>
+            <div class="mcq-opt">D) വാർദ്ധക്യം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">13. എസ്.എൻ.ഡി.പി യോഗത്തിന്റെ ആദ്യത്തെ ജനറൽ സെക്രട്ടറി ആരായിരുന്നു?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഡോ. പൽപ്പു</div>
+            <div class="mcq-opt">B) മഹാകവി കുമാരനാശാൻ</div>
+            <div class="mcq-opt">C) ടി.കെ. മാധവൻ</div>
+            <div class="mcq-opt">D) സി.വി. കുഞ്ഞുരാമൻ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">14. കുമാരനാശാന്റെ മറ്റൊരു വിഖ്യാത ഖണ്ഡകാവ്യം ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കരുണ</div>
+            <div class="mcq-opt">B) ചണ്ഡാലഭിക്ഷുകി</div>
+            <div class="mcq-opt">C) ദുരവസ്ഥ</div>
+            <div class="mcq-opt">D) ഇവയെല്ലാം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">15. 'ചിന്താവിഷ്ടയായ സീത' എന്ന കാവ്യം ആധുനിക സമൂഹത്തോട് സംവദിക്കുന്നത് എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) അന്ധമായ അനുസരണ</div>
+            <div class="mcq-opt">B) സ്ത്രീയുടെ ആത്മാഭിമാനവും നീതിബോധവും സ്വാതന്ത്ര്യവും</div>
+            <div class="mcq-opt">C) രാജഭക്തി</div>
+            <div class="mcq-opt">D) കാട്ടിലെ ജീവിതം</div>
+          </div>
+        </div>
+        </div>
+    <div class="mcq-key-card">
+      <h4>MCQ ഉത്തര സൂചിക & വിശദീകരണങ്ങൾ (Answer Key)</h4>
+      <div class="key-grid">
+    
+        <div class="key-item">
+          <b>1. C</b>: മഹാകവി കുമാരനാശാനാണ് 1919-ൽ 'ചിന്താവിഷ്ടയായ സീത' രചിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>2. C</b>: സംസ്കൃത വൃത്തമായ 'വസന്തതിലകം' വൃത്തത്തിലാണ് ഈ കൃതി രചിക്കപ്പെട്ടത്.
+        </div>
+        
+        <div class="key-item">
+          <b>3. B</b>: 1919-ലാണ് 'ചിന്താവിഷ്ടയായ സീത' ആദ്യമായി പുസ്തകരൂപത്തിൽ പ്രസിദ്ധീകരിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>4. B</b>: കാട്ടിൽ തന്നെ ഉപേക്ഷിച്ചു പിരിയുന്ന ലക്ഷ്മണന്റെ വേദനയെക്കുറിച്ചാണ് സീത ഓർക്കുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>5. A</b>: വാത്മീകി മഹർഷിയുടെ തപോവനത്തിലാണ് സീത ലവകുശന്മാരുമായി കഴിഞ്ഞത്.
+        </div>
+        
+        <div class="key-item">
+          <b>6. B</b>: ശ്രീനാരായണഗുരുവാണ് കുമാരനാശാന്റെ ആത്മീയ-കാവ്യ വഴികാട്ടി.
+        </div>
+        
+        <div class="key-item">
+          <b>7. B</b>: അയോദ്ധ്യയിലെ പ്രജകളുടെ അടിസ്ഥാനരഹിതമായ പൗരാപവാദമാണ് സീതാപരിത്യാഗത്തിന് കാരണമായത്.
+        </div>
+        
+        <div class="key-item">
+          <b>8. A</b>: 1907-ൽ മിതവാദി പത്രത്തിലാണ് ആശാന്റെ 'വീണപൂവ്' ആദ്യമായി പ്രസിദ്ധീകരിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>9. B</b>: ആത്മാഭിമാനം സംരക്ഷിച്ചുകൊണ്ട് സീത ഭൂമിദേവിയുടെ മടിത്തട്ടിലേക്ക് അപ്രത്യക്ഷയായി.
+        </div>
+        
+        <div class="key-item">
+          <b>10. B</b>: ആഴമേറിയ ദാർശനിക ആശയങ്ങൾ ആവിഷ്കരിച്ചതിനാൽ കുമാരനാശാൻ 'ആശയാശാൻ' / 'ആശയഗംഭീരൻ' എന്നറിയപ്പെടുന്നു.
+        </div>
+        
+        <div class="key-item">
+          <b>11. B</b>: രാജനീതിയുടെ പേരിലുള്ള ക്രൂരതയും സ്ത്രീയുടെ സ്വത്വബോധവുമാണ് പ്രധാന ചിന്താവിഷയം.
+        </div>
+        
+        <div class="key-item">
+          <b>12. B</b>: 1924 ജനുവരി 16-ന് പല്ലനയാറ്റിലുണ്ടായ റെഡീമർ ബോട്ട് ദുരന്തത്തിലാണ് ആശാൻ അന്തരിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>13. B</b>: 1903-ൽ എസ്.എൻ.ഡി.പി യോഗം രൂപീകരിച്ചപ്പോൾ ആദ്യ ജനറൽ സെക്രട്ടറി കുമാരനാശാനായിരുന്നു.
+        </div>
+        
+        <div class="key-item">
+          <b>14. D</b>: കരുണ, ചണ്ഡാലഭിക്ഷുകി, ദുരവസ്ഥ, നളിനി, ലീല തുടങ്ങിയവ ആശാന്റെ അമര രചനകളാണ്.
+        </div>
+        
+        <div class="key-item">
+          <b>15. B</b>: സ്ത്രീയുടെ സ്വയംനിർണ്ണയാവകാശവും നീതിബോധവുമാണ് കാവ്യത്തിന്റെ പ്രധാന സന്ദേശം.
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="exam-points-card">
+      <div class="exam-points-head">
+        <h3>അധ്യാപകനും ഉള്ളടക്കവും സംബന്ധിച്ച 20 പ്രധാന പരീക്ഷാ പോയിന്റുകൾ</h3>
+        <span class="exam-tag">20 EXAM FOCUS POINTS</span>
+      </div>
+      <ul class="exam-points-list">
+    <li>1. രചയിതാവ്: മഹാകവി കുമാരനാശാൻ (1873–1924) - സ്നേഹഗായകൻ, ആശയഗംഭീരൻ.</li><li>2. പ്രസിദ്ധീകരിച്ച വർഷം: 1919.</li><li>3. കാവ്യരൂപം: ഖണ്ഡകാവ്യം; വൃത്തം: വസന്തതിലകം.</li><li>4. പശ്ചാത്തലം: വാത്മീകിയുടെ തപോവനത്തിൽ ഏകാന്തമായി ചിന്തകളിൽ മുഴുകിയിരിക്കുന്ന സീത.</li><li>5. ആഖ്യാനരീതി: ആത്മഗതങ്ങൾ (Internal Monologue / ബോധധാരാ രീതി).</li><li>6. പ്രധാന ശ്ലോകം: 'പുരികം പുഴുപോൽ പിടഞ്ഞകം-ഞെരിയും തൻതല താങ്ങി കൈകളാൽ / പിരിവാനരുതാഞ്ഞു കണ്ണുനീർ-ചൊരിയും ലക്ഷ്മണനെ സ്മരിപ്പൂ ഞാൻ'.</li><li>7. ലക്ഷ്മണന്റെ അവസ്ഥ: പുരികം പുഴുവിനെപ്പോലെ പിടയുന്ന കടുത്ത മാനസിക വേദനയോടുള്ള വിടപറച്ചിൽ.</li><li>8. സീതയുടെ മനോഭാവം: ലക്ഷ്മണനോട് സഹതാപവും സ്നേഹവും; അദ്ദേഹം രാജാജ്ഞയുടെ നിസ്സഹായനായ ഉപകരണമാണ്.</li><li>9. കേന്ദ്ര സംഘർഷം: ശ്രീരാമന്റെ 'രാജധർമ്മം' vs സീതയുടെ 'വ്യക്തിത്വവും നീതിയും'.</li><li>10. പൗരാപവാദം: അയോദ്ധ്യയിലെ പ്രജകളുടെ അപവാദത്തിന് വഴങ്ങി രാമൻ ഗർഭിണിയായ പത്നിയെ ഉപേക്ഷിച്ചു.</li><li>11. സ്ത്രീപക്ഷ കാഴ്ചപ്പാട്: സീത നിശ്ശബ്ദയായി കണ്ണീരൊഴുക്കുന്ന അബലയല്ല, രാമന്റെ അനീതികളെ ചോദ്യം ചെയ്യുന്ന ആധുനിക സ്ത്രീയാണ്.</li><li>12. രാമന്റെ ആന്തരിക ദുഃഖം: രാമൻ അനുഭവിച്ച കടുത്ത ഏകാന്തതയും മാനസിക സംഘർഷവും സീത തിരിച്ചറിയുന്നുണ്ട്.</li><li>13. കാവ്യത്തിന്റെ പര്യവസാനം: വീണ്ടും അഗ്നിശുദ്ധി തെളിയിക്കാൻ വിസമ്മതിച്ച് ഭൂമിദേവിയുടെ മടിത്തട്ടിലേക്ക് ആഴ്ന്നിറങ്ങുന്നു.</li><li>14. കാൽപ്പനിക വിപ്ലവം: 1907-ൽ 'വീണപൂവ്' വഴി മലയാളത്തിൽ തുടക്കമിട്ട റൊമാന്റിക് കാവ്യവസന്തത്തിന്റെ ഉന്നത ശൃംഗം.</li><li>15. ഗുരുനാഥൻ: ശ്രീനാരായണഗുരു (ആശാന്റെ ആത്മീയ മാർഗ്ഗദർശി).</li><li>16. സംഘടനാ പ്രവർത്തനം: എസ്.എൻ.ഡി.പി യോഗത്തിന്റെ ആദ്യ ജനറൽ സെക്രട്ടറി (1903).</li><li>17. മരണം: 1924 ജനുവരി 16-ന് പല്ലനയാറ്റിലുണ്ടായ റെഡീമർ ബോട്ട് ദുരന്തത്തിൽ.</li><li>18. പല്ലനയിലെ സ്മാരകം: കുമാരകോടി സ്മാരകം.</li><li>19. പൗരാണിക മിത്തിനെ മാനവികതയുടെയും സ്ത്രീവിമോചനത്തിന്റെയും വെളിച്ചത്തിൽ പുനർവായിച്ച അതുല്യ കൃതി.</li><li>20. പരീക്ഷാ ഫോക്കസ്: ലക്ഷ്മണന്റെ പിടച്ചിൽ, രാമന്റെ രാജനീതി വിചാരണ, സീതയുടെ സ്ത്രീപക്ഷ ദർശനം, വസന്തതിലകം വൃത്തഭംഗി.</li>
+      </ul>
+    </div>
+    </div></div></body></html>

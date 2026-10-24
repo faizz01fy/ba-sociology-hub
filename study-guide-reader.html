@@ -2,7 +2,7 @@
 <html lang="ml">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover">
   <meta name="robots" content="noindex,nofollow">
   <title>Study Guide Reader · Academic Hub</title>
   <script>
@@ -541,9 +541,9 @@
         background: #0f172a;
       }
       .toolbar {
-        padding: 4px 6px;
-        gap: 4px;
-        justify-content: center;
+        padding: max(6px, env(safe-area-inset-top, 0px)) 8px 6px;
+        gap: 6px;
+        justify-content: flex-start;
         flex-wrap: nowrap;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -556,24 +556,27 @@
       .toolbar-group {
         background: #0f172a;
         border-color: #334155;
-        padding: 2px 3px;
-        gap: 2px;
+        padding: 3px 5px;
+        gap: 4px;
         flex-shrink: 0;
+        border-radius: 8px;
       }
       button, input, select {
         background: #1e293b;
         color: #f8fafc;
         border-color: #334155;
-        min-height: 32px;
-        font-size: 12px;
+        min-height: 36px;
+        font-size: 13px;
+        touch-action: manipulation;
       }
       button:hover:not(:disabled) {
         background: #334155;
       }
       .btn-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 15px;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+        border-radius: 6px;
       }
       input#page {
         width: 32px;
@@ -624,16 +627,19 @@
       .voice-panel {
         position: fixed;
         top: auto;
-        bottom: 8px;
-        left: 8px;
-        right: 8px;
+        bottom: max(10px, env(safe-area-inset-bottom, 0px));
+        left: max(8px, env(safe-area-inset-left, 0px));
+        right: max(8px, env(safe-area-inset-right, 0px));
+        max-height: calc(85dvh - env(safe-area-inset-bottom, 0px));
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         z-index: 1000;
-        border-radius: 14px;
+        border-radius: 16px;
         background: rgba(15, 23, 42, 0.97);
         border: 1px solid #334155;
-        border-top: 3px solid #10b981;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
-        padding: 8px 10px;
+        border-top: 3.5px solid #10b981;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
+        padding: 10px 12px;
         color: #f8fafc;
       }
       .voice-status-wrap {

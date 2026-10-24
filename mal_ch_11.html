@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta charset="UTF-8">
+<title>നാടകവേദി: മലയാള നാടകവേദിയും സ്ത്രീപക്ഷ നാടകവേദിയും - അധ്യായ പഠന സഹായി</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  @page {
+    size: A4 portrait;
+    margin: 14mm 13mm 14mm 13mm;
+    @top-right {
+      content: "മലയാള സാഹിത്യാനുശീലനം · അധ്യായ പഠന സഹായി";
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Malayalam', 'Manjari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .chapter-header {
+    background: linear-gradient(135deg, var(--c-primary, #0f766e) 0%, var(--c-dark, #134e4a) 100%);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    page-break-inside: avoid;
+  }
+
+  .ch-pill-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .ch-pill {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .chapter-header h1 {
+    font-size: 17pt;
+    font-weight: 900;
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+    color: #ffffff;
+  }
+
+  .ch-meta-sub {
+    font-size: 10pt;
+    color: #ccfbf1;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Author Profile Card (കവിപരിചയം / രചയിതാവിന്റെ പരിചയം) */
+  .author-profile-box {
+    background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%);
+    border: 1.5px solid #cbd5e1;
+    border-left: 5px solid var(--c-primary, #0f766e);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    page-break-inside: avoid;
+  }
+
+  .author-profile-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .author-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 3px;
+  }
+
+  .author-profile-title h3 {
+    margin: 0;
+    font-size: 12.5pt;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .author-profile-title h3 small {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #64748b;
+  }
+
+  .author-meta-pill {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 8.5pt;
+    color: #334155;
+    line-height: 1.45;
+  }
+
+  .author-meta-pill b { color: var(--c-primary, #0f766e); }
+
+  .author-bio-body p {
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+
+  .author-works-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .author-works-head {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
+  }
+
+  .works-cat-row {
+    margin-bottom: 4px;
+    font-size: 8.5pt;
+    line-height: 1.5;
+  }
+
+  .works-cat-row:last-child { margin-bottom: 0; }
+
+  .works-cat-label {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: 8pt;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .works-cat-content { color: #475569; }
+
+  .author-awards-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #854d0e;
+    margin-bottom: 6px;
+  }
+
+  .author-significance-strip {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #1e40af;
+  }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .obj-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .out-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .card-label {
+    font-size: 9.5pt;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+  }
+  .obj-card .card-label { color: #166534; }
+  .out-card .card-label { color: #1e40af; }
+
+  .obj-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  .intro-box {
+    background: #fafaf9;
+    border: 1px solid #e7e5e4;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #292524;
+    page-break-inside: avoid;
+  }
+
+  .intro-box .intro-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #b45309;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .concept-section {
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    page-break-inside: avoid;
+  }
+
+  .concept-section h2 {
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--c-primary, #0f766e);
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .concept-section p {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: #334155;
+    margin: 0 0 6px 0;
+  }
+
+  .conclusion-box {
+    background: #fdf4ff;
+    border: 1px solid #f5d0fe;
+    border-left: 4px solid #a855f7;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 16px 0;
+    page-break-inside: avoid;
+  }
+
+  .conclusion-box .conc-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #7e22ce;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .conclusion-box p {
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #3b0764;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  .takeaways-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .takeaways-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f766e;
+  }
+
+  .takeaways-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #134e4a;
+    line-height: 1.55;
+  }
+
+  .glossary-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .glossary-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #334155;
+  }
+
+  .glossary-item {
+    font-size: 8.5pt;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .revision-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 9pt;
+    line-height: 1.6;
+    color: #713f12;
+    page-break-inside: avoid;
+  }
+
+  .progress-section {
+    border-top: 2px solid #e2e8f0;
+    padding-top: 14px;
+    margin-top: 16px;
+  }
+
+  .progress-header {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 0 0 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-inside: avoid;
+  }
+
+  .q-type-title {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f766e;
+    margin: 14px 0 8px 0;
+    padding-left: 8px;
+    border-left: 3px solid #0f766e;
+    page-break-inside: avoid;
+  }
+
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+
+  .qa-question {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+
+  .qa-answer {
+    font-size: 9pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0;
+    white-space: pre-line;
+  }
+
+  .essay-card {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .essay-card .qa-question {
+    font-size: 10pt;
+    color: #1e1b4b;
+    margin-bottom: 10px;
+  }
+
+  .essay-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 4px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .mcq-container {
+    margin-top: 14px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-q {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 5px 0;
+  }
+
+  .mcq-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    font-size: 8.5pt;
+    color: #334155;
+  }
+
+  .mcq-opt {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
+  .mcq-key-card {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 14px 0 20px 0;
+    page-break-inside: avoid;
+  }
+
+  .mcq-key-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 10pt;
+    font-weight: 800;
+    color: #166534;
+  }
+
+  .key-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    font-size: 8pt;
+    color: #14532d;
+  }
+
+  .key-item {
+    background: #ffffff;
+    border: 1px solid #bbf7d0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.35;
+  }
+
+  .exam-points-card {
+    background: linear-gradient(135deg, #fefce8 0%, #fffbeb 100%);
+    border: 1.5px solid #fde047;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 25px 0;
+    box-shadow: 0 3px 10px rgba(234, 179, 8, 0.1);
+    page-break-inside: avoid;
+  }
+
+  .exam-points-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #facc15;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+
+  .exam-points-head h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 900;
+    color: #854d0e;
+  }
+
+  .exam-tag {
+    background: #ca8a04;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 14px;
+    text-transform: uppercase;
+  }
+
+  .exam-points-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #713f12;
+  }
+
+  .exam-points-list li {
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .exam-points-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ca8a04;
+    font-weight: 900;
+  }
+
+
+    @media (max-width: 768px) {
+      body {
+        padding: 14px 10px !important;
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+      .chapter-header {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+      }
+    }
+    
+  </style>
+</head>
+<body style="--c-primary: #0369a1; --c-dark: #0f172a;">
+  <div class="chapter-wrapper">
+    <header class="chapter-header">
+      <div class="ch-pill-row">
+        <span class="ch-pill">മൊഡ്യൂൾ 4</span>
+        <span class="ch-pill">നാടകം & രംഗകല (Theatre Studies)</span>
+        <span class="ch-pill">അധ്യായം 11</span>
+      </div>
+      <h1>നാടകവേദി: മലയാള നാടകവേദിയും സ്ത്രീപക്ഷ നാടകവേദിയും</h1>
+      <p class="ch-meta-sub">രചയിതാവ്: <b>കേരള നാടക പ്രസ്ഥാനം & സ്ത്രീപക്ഷ നാടകവേദി</b> · ഉറവിടം: മലയാള നാടക ചരിത്രാവലോകനം & 'പെൺകുട്ടി' നാടകം</p>
+    </header>
+
+        <div class="author-profile-box">
+          <div class="author-profile-head">
+            <div class="author-profile-title">
+              <span class="author-badge">✍️ കവിപരിചയം / രചയിതാവിന്റെ സമഗ്ര പരിചയം</span>
+              <h3>കേരള നാടക പ്രസ്ഥാനം & സ്ത്രീപക്ഷ നാടകവേദി <small>(ഇരുപതാം നൂറ്റാണ്ട് മുതൽ സമകാലികം വരെ (20th Century – Present))</small></h3>
+            </div>
+            <div class="author-meta-pill">
+              <b>സ്ഥലം / പശ്ചാത്തലം:</b> കേരളം<br>
+              <b>സാഹിത്യ പദവി:</b> സാമൂഹിക പരിഷ്കരണ നാടകങ്ങളുടെയും ജനകീയ നാടകവേദിയുടെയും സ്ത്രീപക്ഷ നാടക പ്രസ്ഥാനത്തിന്റെയും ശില്പികൾ.
+            </div>
+          </div>
+          <div class="author-bio-body">
+            <p>കേരളീയ നവോത്ഥാനത്തെയും സാമൂഹിക പരിവർത്തനങ്ങളെയും ഏറ്റവും തീവ്രമായി മുന്നോട്ടുനയിച്ച മാധ്യമമാണ് മലയാള നാടകവേദി. 1929-ൽ വി.ടി. ഭട്ടതിരിപ്പാട് രചിച്ച 'അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്' എന്ന നാടകം നമ്പൂതിരി സമുദായത്തിലെ അനാചാരങ്ങൾക്കും സ്ത്രീകളുടെ അടിച്ചമർത്തലിനുമെതിരെ ആഞ്ഞടിച്ചതോടെയാണ് ആധുനിക നാടകത്തിന് തുടക്കമാകുന്നത്. തുടർന്ന് എം.ആർ.ബിയുടെ 'മറക്കുടയ്ക്കുള്ളിലെ മഹാനരകം', പ്രേംജിയുടെ 'ഋതുമതി' എന്നീ നാടകങ്ങൾ സ്ത്രീവിമോചനത്തിന്റെ വിപ്ലവാഹ്വാനങ്ങളായി. തുടർന്ന് തോപ്പിൽ ഭാസിയുടെ നേതൃത്വത്തിൽ കെ.പി.എ.സി (KPAC) തൊഴിലാളിവർഗ്ഗ രാഷ്ട്രീയത്തെയും കർഷക പ്രക്ഷോഭങ്ങളെയും ജനകീയ നാടകങ്ങളാക്കി. തൊണ്ണൂറുകളോടെ പ്രൊഫഷണൽ നാടകങ്ങളിലെ പുരുഷാധിപത്യത്തിന് ബദലായി സാറാ ജോസഫ്, സജിത മഠത്തിൽ, ശ്രീജാ ആറങ്ങോട്ടുകര തുടങ്ങിയവരുടെ നേതൃത്വത്തിൽ സ്ത്രീപക്ഷ നാടകവേദി (Feminist Theatre) ഉയർന്നു വന്നു. പുരുഷന്റെ കാഴ്ചയിലെ സ്ത്രീ എന്ന സങ്കൽപ്പത്തെ ഉടച്ചുവാർത്ത് സ്ത്രീയുടെ ആന്തരികാനുഭവങ്ങളും ശരീരരാഷ്ട്രീയവും സ്വയം പ്രഖ്യാപിക്കുന്ന സമാന്തര രംഗകലയായി സ്ത്രീപക്ഷ നാടകം വികസിച്ചു.</p>
+            
+            <div class="author-works-section">
+              <div class="author-works-head">📚 പ്രധാന കൃതികളും സാഹിത്യ സംഭാവനകളും (Major Works & Contributions):</div>
+        
+              <div class="works-cat-row">
+                <span class="works-cat-label">സാമൂഹിക പരിഷ്കരണ നാടകങ്ങൾ</span>
+                <span class="works-cat-content">അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക് (വി.ടി. ഭട്ടതിരിപ്പാട്, 1929), മറക്കുടയ്ക്കുള്ളിലെ മഹാനരകം (എം.ആർ.ബി, 1931), ഋതുമതി (പ്രേംജി, 1944).</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">ജനകീയ രാഷ്ട്രീയ നാടകങ്ങൾ (KPAC)</span>
+                <span class="works-cat-content">നിങ്ങളെന്നെ കമ്മ്യൂണിസ്റ്റാക്കി (തോപ്പിൽ ഭാസി, 1952), സർവ്വേക്കല്ല്, മുടിയനായ പുത്രൻ, അശ്വമേധം, തുലാഭാരം.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">ആധുനിക & തനതു നാടകവേദി</span>
+                <span class="works-cat-content">അവനവൻ കടമ്പ (കാവാലം നാരായണപ്പണിക്കർ), ഭാരതവാക്യം (ജി. ശങ്കരപ്പിള്ള), ആ മനുഷ്യൻ നീ തന്നെ (സി.ജെ. തോമസ്).</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">സ്ത്രീപക്ഷ നാടകങ്ങൾ</span>
+                <span class="works-cat-content">പെൺകൂത്ത് (സാറാ ജോസഫ്), മത്സ്യഗന്ധി (സജിത മഠത്തിൽ), പെൺകുട്ടി, ലേഡി മക്ബത്ത് (ശ്രീജാ ആറങ്ങോട്ടുകര).</span>
+              </div>
+            
+            </div>
+            
+            <div class="author-awards-strip">
+              <b>🏆 പ്രധാന പുരസ്കാരങ്ങളും അംഗീകാരങ്ങളും:</b> കേന്ദ്ര സംഗീത നാടക അക്കാദമി അവാർഡുകൾ, കേരള സാഹിത്യ അക്കാദമി പുരസ്കാരങ്ങൾ, കേരള സംഗീത നാടക അക്കാദമി ഫെലോഷിപ്പുകൾ.
+            </div>
+            
+            <div class="author-significance-strip">
+              <b>✦ സാഹിത്യ സംഭാവന & സവിശേഷ സ്ഥാനം:</b> നാടകം വെറുമൊരു വിനോദോപാധിയല്ല, മറിച്ച് സമൂഹത്തെ അടിമുടി പരിഷ്കരിക്കാനും പാർശ്വവൽക്കരിക്കപ്പെട്ട സ്ത്രീകൾക്ക് സ്വത്വബോധം നൽകാനുമുള്ള വിപ്ലവകരമായ രാഷ്ട്രീയ ആയുധമാണെന്ന് മലയാള നാടകവേദി തെളിയിച്ചു.
+            </div>
+          </div>
+        </div>
+        
+      <div class="objectives-grid">
+        <div class="obj-card">
+          <div class="card-label">❖ പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</div>
+          <ul class="obj-list">
+    <li>മലയാള നാടകവേദിയുടെ ഉത്ഭവവും ചരിത്രപരമായ പരിണാമഘട്ടങ്ങളും മനസ്സിലാക്കുക.</li><li>സാമൂഹിക പരിഷ്കരണ നാടകങ്ങൾ (വി.ടി. ഭട്ടതിരിപ്പാടിന്റെ 'അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്') കേരളീയ സമൂഹത്തിൽ ഉണ്ടാക്കിയ വിപ്ലവം വിലയിരുത്തുക.</li><li>സ്ത്രീപക്ഷ നാടകവേദി (Feminist Theatre), കുറിയേടത്ത് താത്രിയുടെ സ്മാർത്തവിചാരം, 'പെൺകുട്ടി' നാടകം എന്നിവയിലെ ലിംഗനീതി അപഗ്രഥിക്കുക.</li>
+          </ul>
+        </div>
+        <div class="out-card">
+          <div class="card-label">✦ പഠന ഫലങ്ങൾ (Learning Outcomes)</div>
+          <ul class="obj-list">
+    <li>നാടകം ഒരു സാമൂഹിക വിമോചന മാധ്യമമായി പ്രവർത്തിച്ച രീതി തിരിച്ചറിയാൻ വിദ്യാർത്ഥിക്ക് സാധിക്കുന്നു.</li><li>പരമ്പരാഗത രംഗവേദിയിൽ സ്ത്രീശരീരവും സ്ത്രീശബ്ദവും അടിച്ചമർത്തപ്പെട്ട ചരിത്രം അപഗ്രഥിക്കാൻ കഴിയുന്നു.</li><li>കുറിയേടത്ത് താത്രി, കൊണേള്ളി മാധവി, പെൺകുട്ടി തുടങ്ങിയ സ്ത്രീപക്ഷ ചരിത്രാനുഭവങ്ങളെ മുൻനിർത്തി കുറിപ്പ് തയ്യാറാക്കാൻ പ്രാപ്തി നേടുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="intro-box">
+        <span class="intro-label">ആമുഖം (Introduction)</span>
+    <p>കേരളത്തിന്റെ സാമൂഹിക മാറ്റങ്ങൾക്ക് ഏറ്റവും കൂടുതൽ വേഗത പകർന്ന ദൃശ്യകലാരൂപമാണ് നാടകം. 1882-ൽ കാളിദാസന്റെ 'അഭിജ്ഞാനശാകുന്തളം' കേരളവർമ്മ വലിയകോയിത്തമ്പുരാൻ മലയാളത്തിലേക്ക് വിവർത്തനം ചെയ്തതോടെയാണ് ആധുനിക മലയാള നാടകവേദി ആരംഭിക്കുന്നത്. തുടർന്ന് വി.ടി. ഭട്ടതിരിപ്പാടിന്റെ 'അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്' (1929), കെ. ദാമോദരന്റെ 'പാട്ടബാക്കി' (1937) തുടങ്ങിയ സാമൂഹിക-രാഷ്ട്രീയ നാടകങ്ങൾ കേരളത്തിൽ നവോത്ഥാന കൊടുങ്കാറ്റഴിച്ചുവിട്ടു. എന്നാൽ പുരുഷകേന്ദ്രീകൃതമായിരുന്ന ഈ രംഗവേദിയിലേക്ക് സ്ത്രീയുടെ അനുഭവങ്ങളെയും ശരീരരാഷ്ട്രീയത്തെയും പ്രതിരോധത്തെയും മുൻനിർത്തി കടന്നുവന്ന പ്രസ്ഥാനമാണ് 'സ്ത്രീപക്ഷ നാടകവേദി' (Feminist Theatre). കുറിയേടത്ത് താത്രിയുടെ ചരിത്രപ്രസിദ്ധമായ സ്മാർത്തവിചാരവും 'പെൺകുട്ടി' തുടങ്ങിയ സമകാലിക നാടകങ്ങളും ഈ പ്രതിരോധത്തിന്റെ പ്രതീകങ്ങളാണ്.</p></div>
+        <section class="concept-section">
+          <h2>1. മലയാള നാടകവേദിയുടെ ചരിത്രപരമായ വികാസം</h2>
+          <p>• വിവർത്തന കാലഘട്ടം: 1882-ൽ കേരളവർമ്മയുടെ 'മണിപ്രവാള ശാകുന്തളം' രംഗത്തവതരിപ്പിച്ചു. തുടർന്ന് നിരവധി സംസ്കൃത-ഇംഗ്ലീഷ് നാടകങ്ങൾ മലയാളത്തിലേക്ക് പരിഭാഷപ്പെടുത്തി.</p><p>• സാമൂഹിക പരിഷ്കരണ നാടകം: 1929-ൽ വി.ടി. ഭട്ടതിരിപ്പാട് രചിച്ച 'അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്' നമ്പൂതിരി സമുദായത്തിലെ അന്തർജ്ജനങ്ങളുടെ ദുരിതങ്ങൾ, ബാലികാവിവാഹം, വൃദ്ധവിവാഹം, മറക്കുടയ്ക്കുള്ളിലെ തടവറ എന്നിവ തകർത്തു. യഥാർത്ഥ അന്തർജ്ജനങ്ങൾ തന്നെ അരങ്ങിലെത്തിയ വിപ്ലവമായിരുന്നു അത്.</p><p>• രാഷ്ട്രീയ നാടകങ്ങൾ: കെ. ദാമോദരന്റെ 'പാട്ടബാക്കി' (1937) ജന്മിത്വത്തിനെതിരെയുള്ള കർഷക പോരാട്ടമായി മാറി. തോപ്പിൽ ഭാസിയുടെ KPAC നാടകങ്ങൾ ('നിങ്ങളെന്നെ കമ്മ്യൂണിസ്റ്റാക്കി') കേരളത്തിലെ തൊഴിലാളി വർഗ്ഗത്തെ ഉണർത്തി.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>2. സ്ത്രീപക്ഷ നാടകവേദിയുടെ ആവിർഭാവം</h2>
+          <p>പരമ്പരാഗത നാടകങ്ങളിൽ സ്ത്രീ വെറുമൊരു ഉപഭോഗവസ്തുവോ, പുരുഷന്റെ കാമനകളെ തൃപ്തിപ്പെടുത്തുന്ന അലങ്കാരമോ മാത്രമായിരുന്നു. പുരുഷൻമാർ സ്ത്രീവേഷം കെട്ടിയിരുന്ന കാലത്ത് നിന്ന് സ്ത്രീകൾ രംഗത്തെത്തിയെങ്കിലും, ആൺനോട്ടങ്ങൾക്കൊത്ത വേഷങ്ങൾ മാത്രമാണ് അവർക്ക് ലഭിച്ചത്. ഈ പശ്ചാത്തലത്തിലാണ് സ്ത്രീയുടെ സ്വത്വം, സ്വാതന്ത്ര്യം, ലൈംഗികത, അക്രമങ്ങൾക്കെതിരെയുള്ള ചെറുത്തുനിൽപ്പ് എന്നിവ പ്രമേയമാക്കി ഫെമിനിസ്റ്റ് തിയേറ്റർ ഉയർന്നുവന്നത്.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>3. കുറിയേടത്ത് താത്രിയുടെ ചരിത്രപരമായ വിചാരണ</h2>
+          <p>1905-ൽ കൊച്ചി രാജ്യത്ത് നടന്ന കുറിയേടത്ത് താത്രിയുടെ സ്മാർത്തവിചാരം (Smarthavicharam) കേരള സ്ത്രീചരിത്രത്തിലെ ഏറ്റവും വിപ്ലവകരമായ സംഭവമാണ്. ജാതിഭ്രഷ്ട് കൽപ്പിക്കാനായി തന്നെ വിചാരണ ചെയ്ത വൈദികരുടെയും സമൂഹപ്രമാണിമാരുടെയും മുന്നിൽ പതറാതെ നിന്ന താത്രി, തന്നോട് ലൈംഗികബന്ധം പുലർത്തിയ 64 പ്രമുഖ സവർണ്ണ പുരുഷന്മാരുടെ പേരുകളും തെളിവുകളും വെളിപ്പെടുത്തി. തന്നെ വിചാരണ ചെയ്ത പുരുഷന്മാരെ തന്നെ പ്രതിക്കൂട്ടിൽ നിർത്തിയ താത്രിയുടെ ധീരത സ്ത്രീപക്ഷ നാടകവേദിയുടെ വലിയൊരു ഊർജ്ജസ്രോതസ്സാണ്.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>4. 'പെൺകുട്ടി' നാടകവും ആധുനിക സ്ത്രീയാഥാർത്ഥ്യങ്ങളും</h2>
+          <p>കൊണേള്ളി മാധവി, പെൺകുട്ടി തുടങ്ങിയ നാടകങ്ങൾ ആധുനിക സമൂഹത്തിൽ സ്ത്രീകൾ അനുഭവിക്കുന്ന കൊടിയ ലൈംഗിക പീഡനങ്ങളെയും ഗാർഹിക പീഡനങ്ങളെയും അനാവരണം ചെയ്യുന്നു. ആമുഖ രംഗത്ത് മെഴുകുതിരി കത്തിച്ചുവെച്ച് വെളിച്ചത്തിൽ സ്വന്തം മുറിവുകൾ കാണുന്ന പെൺകുട്ടി, ആശുപത്രി കിടക്കയിലും തെരുവിലും അവൾ നേരിടുന്ന ക്രൂരതകൾ എന്നിവ സമൂഹത്തിന്റെ കപടമുഖത്തെ തുറന്നുകാട്ടുന്നു. സ്ത്രീ ശരീരം പുരുഷന്റെ വേട്ടയാടൽ ഇടമല്ലെന്നും അവൾക്കും ആത്മാഭിമാനത്തോടെ ജീവിക്കാൻ അവകാശമുണ്ടെന്നും നാടകം ഉറക്കെ പ്രഖ്യാപിക്കുന്നു.</p>
+        </section>
+        
+    <div class="conclusion-box">
+      <span class="conc-label">ഉപസംഹാരം (Chapter Conclusion)</span>
+      <p>മലയാള നാടകവേദി കേവലമൊരു വിനോദോപാധിയല്ല, മറിച്ച് നൂറ്റാണ്ടുകളായി അടിഞ്ഞുകൂടിയ ജാതി-ലിംഗ അസമത്വങ്ങൾക്കെതിരെയുള്ള ആയുധമാണ്. വി.ടി.യിൽ തുടങ്ങി ആധുനിക സ്ത്രീപക്ഷ നാടകവേദി വരെ എത്തുമ്പോൾ, ശബ്ദമില്ലാത്തവരുടെ ശബ്ദമായി മാറാൻ നാടകത്തിന് കഴിഞ്ഞിട്ടുണ്ടെന്ന് വ്യക്തമാകുന്നു.</p>
+    </div>
+    
+    <div class="summary-grid">
+      <div class="takeaways-box">
+        <h3>✦ പ്രധാന പാഠങ്ങൾ (Key Takeaways)</h3>
+        <ul class="takeaways-list">
+    <li>1882-ൽ കേരളവർമ്മയുടെ 'ഭാഷാശാകുന്തളം' വിവർത്തനത്തോടെ ആധുനിക മലയാള നാടകവേദി ആരംഭിച്ചു.</li><li>വി.ടി. ഭട്ടതിരിപ്പാടിന്റെ 'അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്' (1929) സാമൂഹിക വിപ്ലവം സൃഷ്ടിച്ചു.</li><li>കുറിയേടത്ത് താത്രിയുടെ 1905-ലെ സ്മാർത്തവിചാരം സ്ത്രീപക്ഷ പ്രതിരോധത്തിന്റെ വിപ്ലവ ചരിത്രമാണ്.</li><li>'പെൺകുട്ടി' നാടകം ആധുനിക സമൂഹത്തിലെ സ്ത്രീശരീര രാഷ്ട്രീയവും പീഡനങ്ങളും ധീരമായി ആവിഷ്കരിക്കുന്നു.</li>
+        </ul>
+      </div>
+      <div class="glossary-box">
+        <h3>📖 പ്രധാന സാങ്കേതിക പദാവലി (Key Terms)</h3>
+    <div class="glossary-item"><b>സ്ത്രീപക്ഷ നാടകവേദി (Feminist Theatre):</b> സ്ത്രീയുടെ അനുഭവങ്ങൾ, രാഷ്ട്രീയം, ലിംഗസമത്വം എന്നിവ മുൻനിർത്തിയുള്ള നാടകപ്രസ്ഥാനം.</div><div class="glossary-item"><b>സ്മാർത്തവിചാരം (1905):</b> നമ്പൂതിരി സമുദായത്തിലെ വ്യഭിചാരക്കുറ്റം ആരോപിച്ച് സ്ത്രീകളെ ജാതിഭ്രഷ്ട് കൽപ്പിച്ചിരുന്ന സഭാവിചാരണ.</div><div class="glossary-item"><b>അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്:</b> 1929-ൽ വി.ടി. ഭട്ടതിരിപ്പാട് രചിച്ച നവോത്ഥാന നാടകം.</div>
+      </div>
+    </div>
+    
+    <div class="revision-strip">
+      <b>ദ്രുത പുനഃപരിശോധനാ കുറിപ്പ് (Quick Revision):</b> 1882-ൽ ശാകുന്തളം വിവർത്തനം. 1929-ൽ 'അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്' (വി.ടി.). 1937-ൽ 'പാട്ടബാക്കി' (കെ. ദാമോദരൻ). സ്ത്രീപക്ഷ നാടകവേദി. 1905-ലെ കുറിയേടത്ത് താത്രിയുടെ സ്മാർത്തവിചാരം. 'പെൺകുട്ടി' നാടകത്തിലെ സ്ത്രീശരീര രാഷ്ട്രീയം. ലിംഗനീതിക്കായുള്ള പോരാട്ടം.
+    </div>
+    
+    <div class="progress-section">
+      <div class="progress-header">
+        <span>പഠന പുരോഗതി വിലയിരുത്തൽ (Check Your Progress)</span>
+        <small>യഥാർത്ഥ ചോദ്യങ്ങളും സമഗ്ര ഉത്തരങ്ങളും</small>
+      </div>
+    <div class="q-type-title">ലഘുകുറിപ്പുകൾ (Short Notes)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. കുറിയേടത്ത് താത്രിയുടെ വ്യക്തിത്വം അനാവരണം ചെയ്യുക.</div>
+              <div class="qa-answer">നമ്പൂതിരി സമുദായത്തിലെ നീതിരഹിതമായ വ്യവസ്ഥിതിക്ക് നേരെ വിരൽചൂണ്ടിയ ധീരയായ പ്രതിരോധത്തിന്റെ പ്രതീകമാണ് കുറിയേടത്ത് താത്രി. 1905-ൽ വ്യഭിചാരക്കുറ്റം ചുമത്തി തന്നെ വിചാരണ ചെയ്ത സ്മാർത്തന്മാരുടെ മുന്നിൽ ഭയന്നുവിറയ്ക്കാതെ, തന്നെ ലൈംഗികമായി ചൂഷണം ചെയ്ത സമുദായത്തിലെ 64 പ്രമുഖ പുരുഷന്മാരുടെ പേരുകളും തെളിവുകളും കൃത്യമായി വിളിച്ച് പറഞ്ഞ് അവർ ആൺകോയ്മയെ വിറപ്പിച്ചു. കേരളത്തിലെ ആദ്യത്തെ വിപ്ലവകാരിയായ ഫെമിനിസ്റ്റായി താത്രി ചരിത്രത്തിൽ രേഖപ്പെടുത്തപ്പെടുന്നു.</div>
+            </div>
+            
+            <div class="qa-card">
+              <div class="qa-question">2. വി.ടി. ഭട്ടതിരിപ്പാടിന്റെ 'അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്' എന്ന നാടകത്തിന്റെ ചരിത്രപരമായ പങ്ക് എന്താണ്?</div>
+              <div class="qa-answer">1929-ൽ പുറത്തുവന്ന ഈ നാടകം നമ്പൂതിരി സമുദായത്തിലെ അനാചാരങ്ങളെ വേരോടെ പിഴുതെറിയാൻ കാരണമായി. അന്തർജ്ജനങ്ങൾക്ക് വിദ്യാഭ്യാസം നൽകാനും, വിധവാവിവാഹം പ്രോത്സാഹിപ്പിക്കാനും, മാറുമറയ്ക്കാനും ഈ നാടകം ആഹ്വാനം ചെയ്തു. യഥാർത്ഥ അന്തർജ്ജനങ്ങൾ തന്നെ മറക്കുട ഉപേക്ഷിച്ച് അരങ്ങിൽ അഭിനയിക്കാൻ മുന്നോട്ടുവന്നതോടെ കേരളീയ നവോത്ഥാനത്തിൽ അതൊരു പുതിയ യുഗപ്പിറവിയായി മാറി.</div>
+            </div>
+            <div class="q-type-title">ലഘൂപന്യാസങ്ങൾ (Short Essays)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. 'പെൺകുട്ടി' എന്ന നാടകം സ്ത്രീയുടെ സാമൂഹിക യാഥാർത്ഥ്യങ്ങളെ എങ്ങനെയാണ് അരങ്ങിൽ പ്രതിഫലിപ്പിക്കുന്നത്?</div>
+              <div class="qa-answer">ആധുനിക സമൂഹത്തിൽ സ്ത്രീ അനുഭവിക്കുന്ന കൊടിയ ചൂഷണങ്ങളെയും അരക്ഷിതാവസ്ഥകളെയും നേർക്കുനേർ വരച്ചുകാട്ടുന്ന നാടകമാണ് 'പെൺകുട്ടി'. വീട്ടിലും ജോലിസ്ഥലത്തും ആശുപത്രിയിലും തെരുവിലും സ്ത്രീ നേരിടുന്ന ലൈംഗിക അതിക്രമങ്ങൾ നാടകത്തിൽ ചർച്ച ചെയ്യപ്പെടുന്നു. മെഴുകുതിരി വെളിച്ചത്തിൽ സ്വന്തം മുറിവുകളെ നോക്കിക്കാണുന്ന പെൺകുട്ടി എന്ന കഥാപാത്രം, സമൂഹത്തിന്റെ കപട സദാചാരബോധത്തിന് മുന്നിൽ ഒരു ചോദ്യചിഹ്നമായി മാറുന്നു. സ്ത്രീയുടെ ശരീരത്തെ ഉപഭോഗവസ്തുവായി മാത്രം കാണുന്ന പുരുഷാധിപത്യ യുക്തിയെ തച്ചുടച്ച്, സ്വയം ഒരു മനുഷ്യജീവിയായി ജീവിക്കാനുള്ള അവളുടെ അവകാശമാണ് നാടകം മുന്നോട്ടുവെക്കുന്നത്.</div>
+            </div>
+            <div class="q-type-title">ഉപന്യാസങ്ങൾ (Long Essays - 300+ Words)</div>
+            <div class="essay-card">
+              <span class="essay-badge">സമഗ്ര ഉപന്യാസം · 300+ WORDS</span>
+              <div class="qa-question">1. മലയാള നാടകവേദിയുടെ ചരിത്രപരമായ വികാസവും സ്ത്രീപക്ഷ നാടകവേദിയുടെ രൂപീകരണവും സമഗ്രമായി ഉപന്യസിക്കുക.</div>
+              <div class="qa-answer">ആമുഖം:
+കേരളത്തിന്റെ സാമൂഹിക പരിഷ്കരണ പ്രക്രിയയിൽ നാടകവേദി വഹിച്ച പങ്ക് അതുല്യമാണ്. പത്തൊൻപതാം നൂറ്റാണ്ടിന്റെ അവസാനത്തിൽ സംസ്കൃത നാടകങ്ങളുടെയും പാശ്ചാത്യ നാടകങ്ങളുടെയും അനുകരണമായി തുടങ്ങിയ മലയാള നാടകവേദി, ക്രമേണ ജീവസ്സുറ്റ സാമൂഹിക-രാഷ്ട്രീയ പ്രതിരോധ വേദിയായി രൂപാന്തരപ്പെട്ടു. ഇതിന്റെ സ്വാഭാവികമായ തുടർച്ചയായാണ് അരങ്ങിലെ പുരുഷാധിപത്യത്തെ വെല്ലുവിളിച്ചുകൊണ്ട് സ്ത്രീപക്ഷ നാടകവേദി മലയാളത്തിൽ ശക്തിപ്രാപിക്കുന്നത്. ഈ ചരിത്രപരമായ പരിണാമം കേരളീയ സംസ്കാരത്തിന്റെ വികാസരേഖ കൂടിയാണ്.
+
+സാമൂഹ്യ പരിഷ്കരണ നാടകങ്ങളും നവോത്ഥാനവും:
+നമ്പൂതിരി സമുദായത്തിലെ അനാചാരങ്ങൾക്കെതിരെ വി.ടി. ഭട്ടതിരിപ്പാട് രചിച്ച 'അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്' (1929) എന്ന നാടകം കേരള ചരിത്രത്തിലെ വലിയൊരു വഴിത്തിരിവായിരുന്നു. സ്ത്രീകളുടെ വിദ്യാഭ്യാസത്തിനും വിധവാ വിവാഹത്തിനും വേണ്ടി ശബ്ദമുയർത്തിയ ഈ നാടകം നാടകശാലകളെ വിപ്ലവവേദികളാക്കി മാറ്റി. തുടർന്ന് എം.ആർ. ഭട്ടതിരിപ്പാടിന്റെ 'മറക്കുടയ്ക്കുള്ളിലെ മഹാനരകം', പ്രേംജിയുടെ 'ഋതുമതി' എന്നീ നാടകങ്ങളും സാമൂഹിക മാറ്റത്തിന് ആക്കം കൂട്ടി. തുടർന്ന് വന്ന കെ.പി.എ.സി.യുടെ 'നിങ്ങളെന്നെ കമ്മ്യൂണിസ്റ്റാക്കി' തുടങ്ങിയ നാടകങ്ങൾ തൊഴിലാളിവർഗ്ഗ രാഷ്ട്രീയത്തെ അരങ്ങിലെത്തിച്ചു. നാടകം ജനകീയ പ്രക്ഷോഭങ്ങളുടെ ആയുധമായി മാറി.
+
+സ്ത്രീപക്ഷ നാടകവേദിയുടെ ഉദയവും പ്രസക്തിയും:
+പരമ്പരാഗത നാടകവേദിയിൽ സ്ത്രീകൾ പലപ്പോഴും പുരുഷന്റെ കാഴ്ച്ചവസ്തുക്കളോ നിസ്സഹായരായ കഥാപാത്രങ്ങളോ മാത്രമായിരുന്നു. ഇതിനെതിരെ സ്ത്രീയുടെ അനുഭവങ്ങളെയും ശരീരത്തെയും രാഷ്ട്രീയത്തെയും മുൻനിർത്തി ഉയർന്നുവന്ന പ്രസ്ഥാനമാണ് സ്ത്രീപക്ഷ നാടകവേദി. കുറിയേടത്ത് താത്രിയുടെ സ്മാർത്തവിചാരത്തെ പുനർവായിച്ചുകൊണ്ടുള്ള നാടകങ്ങളും, സാറാ ജോസഫ് തുടങ്ങിയവരുടെ നേതൃത്വത്തിൽ അരങ്ങേറിയ 'പെൺകുട്ടി' പോലുള്ള സ്ത്രീപക്ഷ നാടകങ്ങളും ഈ രംഗത്ത് വിപ്ലവം സൃഷ്ടിച്ചു. സ്ത്രീയുടെ ആത്മാഭിമാനവും നീതിയും ഉറക്കെ പ്രഖ്യാപിക്കുന്ന ഇടമായി നാടകവേദി മാറി.
+
+തനതു നാടകവേദിയും രംഗഭാഷാ പരീക്ഷണങ്ങളും:
+പരമ്പരാഗത നാടകവേദിയുടെ ചട്ടക്കൂടുകളെ ഉടച്ചുകൊണ്ട് തെരുവ് നാടകങ്ങളും തുറസ്സായ ഇടങ്ങളിലെ നാടകാവിഷ്കാരങ്ങളും സജീവമായി. ശരീരഭാഷ, ശബ്ദം, സംഗീതം എന്നിവയെ പുതിയ രീതിയിൽ വിനിയോഗിച്ചുകൊണ്ട് സ്ത്രീപക്ഷ നാടകങ്ങൾ പുതിയൊരു രംഗഭാഷ സൃഷ്ടിച്ചു. പുരുഷകേന്ദ്രീകൃതമായ സമൂഹത്തിന്റെ ഇരട്ടത്താപ്പുകളെ തുറന്നുകാട്ടാൻ നാടകം ഒരു ശക്തമായ ആയുധമായി മാറി. കാവാലം നാരായണപ്പണിക്കർ, ജി. ശങ്കരപ്പിള്ള തുടങ്ങിയവർ തനതു നാടകവേദിയിലൂടെ നാടോടി പാരമ്പര്യത്തെ വീണ്ടെടുത്തതും ശ്രദ്ധേയമാണ്.
+
+ഉപസംഹാരം:
+അടുക്കളയിൽ നിന്ന് അരങ്ങിലേക്കും, അവിടെ നിന്ന് സ്വതന്ത്രമായ സ്ത്രീപക്ഷ ഇടങ്ങളിലേക്കുമുള്ള മലയാള നാടകവേദിയുടെ യാത്ര കേരളീയ സ്ത്രീവിമോചന ചരിത്രത്തിന്റെ പ്രധാന ഏടാണ്. കലയെ സാമൂഹിക മാറ്റത്തിനുള്ള ഉപകരണമാക്കാൻ കഴിഞ്ഞു എന്നതാണ് മലയാള നാടകവേദിയുടെ എക്കാലത്തെയും വലിയ വിജയം. പുതിയ കാലത്തെ ലിംഗസമത്വ പോരാട്ടങ്ങൾക്ക് മലയാള നാടക പാരമ്പര്യം എന്നും വലിയൊരു ഊർജ്ജമാണ്.
+
+ജനകീയ നാടകവേദിയും സമകാലിക പ്രസക്തിയും:
+അരങ്ങിലെ മാറ്റങ്ങൾ കേവലം അഭിനയരീതികളിൽ ഒതുങ്ങിനിന്നില്ല; അത് ജനങ്ങളുടെ ചിന്താരീതിയെത്തന്നെ അടിമുടി മാറ്റിമറിച്ചു. തെരുവ് നാടകങ്ങളും ജനകീയ നാടകങ്ങളും കേരളത്തിലെ ഗ്രാമാന്തരങ്ങളിൽ വലിയൊരു സാംസ്കാരിക മുന്നേറ്റം ഉണ്ടാക്കി. സ്ത്രീകളുടെ പ്രശ്നങ്ങളും തൊഴിലാളികളുടെ അവകാശങ്ങളും പൊതുസമൂഹത്തിന്റെ മുന്നിൽ ചർച്ചയാക്കാൻ നാടകത്തിന് കഴിഞ്ഞു. ആധുനിക ഇലക്ട്രോണിക് മാധ്യമങ്ങളുടെ കാലത്തും, മനുഷ്യർ മുഖാമുഖം കണ്ട് സംവദിക്കുന്ന നാടകവേദിയുടെ പ്രസക്തി ഒട്ടും കുറഞ്ഞിട്ടില്ലെന്ന് സമകാലിക നാടകങ്ങൾ തെളിയിക്കുന്നു. കല ജനങ്ങൾക്ക് വേണ്ടിയാകണം എന്ന വലിയ പാഠമാണ് മലയാള നാടകവേദി പകർന്നുതരുന്നത്.
+
+സ്ത്രീയുടെ സ്വതന്ത്ര അരങ്ങും ഭാവിയും:
+പുരുഷന്റെ അധീശത്വത്തിൽ നിന്ന് മുക്തമായ സ്വതന്ത്രമായൊരു സ്ത്രീപക്ഷ അരങ്ങ് സൃഷ്ടിക്കാൻ ഇന്ന് മലയാളി സ്ത്രീകൾക്ക് കഴിയുന്നുണ്ട്. സ്വന്തം അനുഭവങ്ങളും വേദനകളും സ്വന്തം ഭാഷയിൽ അവതരിപ്പിക്കാൻ നാടകം അവർക്ക് ധൈര്യം നൽകുന്നു.</div>
+            </div>
+            
+    <div class="q-type-title">പ്രധാന പരീക്ഷാ മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (15 Important MCQs)</div>
+    <div class="mcq-container">
+    
+        <div class="mcq-item">
+          <div class="mcq-q">1. ആധുനിക മലയാള നാടകവേദി ആരംഭിക്കുന്നത് ഏത് കൃതിയുടെ വിവർത്തനത്തോടെയാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) മാക്ബത്ത്</div>
+            <div class="mcq-opt">B) കാളിദാസന്റെ അഭിജ്ഞാനശാകുന്തളം (1882)</div>
+            <div class="mcq-opt">C) പാട്ടബാക്കി</div>
+            <div class="mcq-opt">D) സുഭദ്രാഹരണം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">2. 'അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്' എന്ന വിപ്ലവകരമായ നാടകം രചിച്ചത് ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വി.ടി. ഭട്ടതിരിപ്പാട് (1929)</div>
+            <div class="mcq-opt">B) തോപ്പിൽ ഭാസി</div>
+            <div class="mcq-opt">C) എം.ആർ.ബി</div>
+            <div class="mcq-opt">D) പ്രേംജി</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">3. 1905-ൽ ചരിത്രപ്രസിദ്ധമായ സ്മാർത്തവിചാരത്തിൽ 64 പ്രമാണിമാരുടെ പേരുകൾ വെളിപ്പെടുത്തിയ സ്ത്രീ ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ആര്യ പള്ളം</div>
+            <div class="mcq-opt">B) കുറിയേടത്ത് താത്രി</div>
+            <div class="mcq-opt">C) പാർവ്വതി നെന്മിനിമംഗലം</div>
+            <div class="mcq-opt">D) ലളിതാംബിക</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">4. 'പാട്ടബാക്കി' എന്ന രാഷ്ട്രീയ നാടകം രചിച്ചത് ആരാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കെ. ദാമോദരൻ (1937)</div>
+            <div class="mcq-opt">B) തോപ്പിൽ ഭാസി</div>
+            <div class="mcq-opt">C) പി. കൃഷ്ണപിള്ള</div>
+            <div class="mcq-opt">D) ഇ.എം.എസ്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">5. 'നിങ്ങളെന്നെ കമ്മ്യൂണിസ്റ്റാക്കി' എന്ന നാടകം ഏത് നാടക സംഘത്തിന്റേതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കലാഭവൻ</div>
+            <div class="mcq-opt">B) കെ.പി.എ.സി (KPAC)</div>
+            <div class="mcq-opt">C) സൂര്യ</div>
+            <div class="mcq-opt">D) കോഴിക്കോട് സംഗമം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">6. സ്ത്രീപക്ഷ നാടകവേദി (Feminist Theatre) പ്രധാനമായും ഊന്നൽ നൽകുന്നത് എന്തിനാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കൊട്ടാര രഹസ്യങ്ങൾ</div>
+            <div class="mcq-opt">B) സ്ത്രീയുടെ സ്വത്വം, സ്വാതന്ത്ര്യം, ശരീര രാഷ്ട്രീയം, ലിംഗനീതി</div>
+            <div class="mcq-opt">C) ഹാസ്യം മാത്രം</div>
+            <div class="mcq-opt">D) യുദ്ധവിജയങ്ങൾ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">7. ആമുഖ രംഗത്ത് മെഴുകുതിരി കത്തിച്ചുവെച്ച് സംസാരിക്കുന്ന പെൺകുട്ടി കഥാപാത്രം ഏത് നാടകത്തിലേതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) പെൺകുട്ടി</div>
+            <div class="mcq-opt">B) അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്</div>
+            <div class="mcq-opt">C) മുദ്രരാക്ഷസം</div>
+            <div class="mcq-opt">D) ഭാഗ്യചക്രം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">8. 'അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്' അരങ്ങേറിയ വർഷമേത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 1920</div>
+            <div class="mcq-opt">B) 1929</div>
+            <div class="mcq-opt">C) 1935</div>
+            <div class="mcq-opt">D) 1947</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">9. കുറിയേടത്ത് താത്രിയുടെ വിചാരണ നടന്നത് ഏത് നാട്ടുരാജ്യത്തിലാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) തിരുവിതാംകൂർ</div>
+            <div class="mcq-opt">B) കൊച്ചി രാജ്യം</div>
+            <div class="mcq-opt">C) മലബാർ</div>
+            <div class="mcq-opt">D) മദ്രാസ്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">10. ശാകുന്തളം മലയാളത്തിലേക്ക് പരിഭാഷപ്പെടുത്തിയത് ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കേരളവർമ്മ വലിയകോയിത്തമ്പുരാൻ</div>
+            <div class="mcq-opt">B) എ.ആർ. രാജരാജവർമ്മ</div>
+            <div class="mcq-opt">C) വള്ളത്തോൾ</div>
+            <div class="mcq-opt">D) ഉള്ളൂർ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">11. 'അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്' എന്ന ശീർഷകം എന്തിനെയാണ് അർത്ഥമാക്കുന്നത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) പാചകക്കല</div>
+            <div class="mcq-opt">B) സ്ത്രീകളുടെ വീട്ടുതടവറയിൽ നിന്നുള്ള മോചനവും പൊതുരംഗപ്രവേശവും</div>
+            <div class="mcq-opt">C) നാടകാഭിനയം മാത്രം</div>
+            <div class="mcq-opt">D) വിദേശ യാത്ര</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">12. ആദ്യകാല നാടകങ്ങളിൽ സ്ത്രീവേഷം കെട്ടിയിരുന്നത് ആരായിരുന്നു?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) സ്ത്രീകൾ മാത്രം</div>
+            <div class="mcq-opt">B) പുരുഷന്മാർ</div>
+            <div class="mcq-opt">C) കുട്ടികൾ</div>
+            <div class="mcq-opt">D) വിദേശികൾ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">13. സി.വി. രാമൻപിള്ളയുടെ പ്രശസ്തമായ പ്രഹസനം ഏത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കുറുപ്പില്ലാക്കളരി</div>
+            <div class="mcq-opt">B) മാർത്താണ്ഡവർമ്മ</div>
+            <div class="mcq-opt">C) ധർമ്മരാജാ</div>
+            <div class="mcq-opt">D) രാമരാജാബഹദൂർ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">14. താത്രി എത്ര പുരുഷന്മാരുടെ പേരുകളാണ് വിചാരണയിൽ തെളിവോടെ വെളിപ്പെടുത്തിയത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 10</div>
+            <div class="mcq-opt">B) 25</div>
+            <div class="mcq-opt">C) 64 പേർ</div>
+            <div class="mcq-opt">D) 100 പേർ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">15. സ്ത്രീപക്ഷ നാടകവേദിയുടെ ആത്യന്തിക ലക്ഷ്യം എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) പുരുഷന്മാരെ എതിർക്കൽ മാത്രം</div>
+            <div class="mcq-opt">B) ലിംഗനീതിയും സ്ത്രീയുടെ സ്വയംനിർണ്ണയാവകാശവും ഉറപ്പാക്കൽ</div>
+            <div class="mcq-opt">C) പണമുണ്ടാക്കൽ</div>
+            <div class="mcq-opt">D) നൃത്തം അവതരിപ്പിക്കൽ</div>
+          </div>
+        </div>
+        </div>
+    <div class="mcq-key-card">
+      <h4>MCQ ഉത്തര സൂചിക & വിശദീകരണങ്ങൾ (Answer Key)</h4>
+      <div class="key-grid">
+    
+        <div class="key-item">
+          <b>1. B</b>: 1882-ൽ കേരളവർമ്മ വലിയകോയിത്തമ്പുരാൻ ശാകുന്തളം വിവർത്തനം ചെയ്തതോടെയാണ് ആധുനിക നാടകം തുടങ്ങിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>2. A</b>: നമ്പൂതിരി സമുദായ പരിഷ്കരണത്തിനായി വി.ടി. ഭട്ടതിരിപ്പാടാണ് ഈ നാടകം രചിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>3. B</b>: ആൺകോയ്മയെ വിറപ്പിച്ച ചരിത്ര വിചാരണ നേരിട്ട ധീരവനിതയാണ് കുറിയേടത്ത് താത്രി.
+        </div>
+        
+        <div class="key-item">
+          <b>4. A</b>: 1937-ൽ കർഷക പ്രസ്ഥാനത്തിന്റെ ഭാഗമായി കെ. ദാമോദരനാണ് 'പാട്ടബാക്കി' രചിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>5. B</b>: തോപ്പിൽ ഭാസിയുടെ രചനയിൽ KPAC അവതരിപ്പിച്ച ജനകീയ നാടകമാണിത്.
+        </div>
+        
+        <div class="key-item">
+          <b>6. B</b>: സ്ത്രീയുടെ സ്വത്വബോധവും തുല്യനീതിക്കായുള്ള പോരാട്ടവുമാണ് ഇതിന്റെ കാതൽ.
+        </div>
+        
+        <div class="key-item">
+          <b>7. A</b>: 'പെൺകുട്ടി' എന്ന സ്ത്രീപക്ഷ നാടകത്തിലാണ് ഈ രംഗമുള്ളത്.
+        </div>
+        
+        <div class="key-item">
+          <b>8. B</b>: 1929-ലാണ് ഇടക്കുന്നിയിൽ വെച്ച് ഈ നാടകം ആദ്യമായി അരങ്ങേറിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>9. B</b>: കൊച്ചി മഹാരാജാവിന്റെ ഭരണകാലത്താണ് കൊച്ചിയിൽ ഈ സ്മാർത്തവിചാരം നടന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>10. A</b>: 1882-ൽ കേരളവർമ്മ വലിയകോയിത്തമ്പുരാനാണ് ശാകുന്തളം പരിഭാഷപ്പെടുത്തിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>11. B</b>: അന്തർജ്ജനങ്ങളെ അടുക്കളയിലെ ഇരുട്ടിൽ നിന്ന് സമൂഹത്തിന്റെ വെളിച്ചത്തിലേക്ക് നയിക്കുക എന്ന ആശയമാണിത്.
+        </div>
+        
+        <div class="key-item">
+          <b>12. B</b>: അക്കാലത്ത് സ്ത്രീകൾ അരങ്ങിൽ വരാതിരുന്നതിനാൽ പുരുഷന്മാർ തന്നെയാണ് സ്ത്രീവേഷം ധരിച്ചിരുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>13. A</b>: 'കുറുപ്പില്ലാക്കളരി' സി.വി.യുടെ വിഖ്യാതമായ പ്രഹസനമാണ്.
+        </div>
+        
+        <div class="key-item">
+          <b>14. C</b>: 64 സവർണ്ണ പ്രമാണിമാരുടെ പേരുകളാണ് അവർ വിചാരണയിൽ വെളിപ്പെടുത്തിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>15. B</b>: സമൂഹത്തിൽ യഥാർത്ഥ ലിംഗസമത്വവും സ്ത്രീയുടെ ആത്മാഭിമാനവും സ്ഥാപിച്ചെടുക്കലാണിത്.
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="exam-points-card">
+      <div class="exam-points-head">
+        <h3>അധ്യാപകനും ഉള്ളടക്കവും സംബന്ധിച്ച 20 പ്രധാന പരീക്ഷാ പോയിന്റുകൾ</h3>
+        <span class="exam-tag">20 EXAM FOCUS POINTS</span>
+      </div>
+      <ul class="exam-points-list">
+    <li>1. മലയാള നാടകവേദിയുടെ തുടക്കം: 1882-ൽ കേരളവർമ്മ വലിയകോയിത്തമ്പുരാന്റെ കാളിദാസ ശാകുന്തള പരിഭാഷയോടെ.</li><li>2. നവോത്ഥാന നാടകം: വി.ടി. ഭട്ടതിരിപ്പാടിന്റെ 'അടുക്കളയിൽനിന്ന് അരങ്ങത്തേക്ക്' (1929).</li><li>3. വി.ടി.യുടെ നാടക ലക്ഷ്യം: നമ്പൂതിരി സമുദായത്തിലെ അന്തർജ്ജനങ്ങളുടെ വിമോചനം, വിധവാവിവാഹം, പൗരാവകാശം.</li><li>4. കർഷക നാടകം: കെ. ദാമോദരന്റെ 'പാട്ടബാക്കി' (1937) - ജന്മിത്വത്തിനെതിരെയുള്ള പോരാട്ടം.</li><li>5. രാഷ്ട്രീയ ജനകീയ നാടകം: തോപ്പിൽ ഭാസിയുടെ 'നിങ്ങളെന്നെ കമ്മ്യൂണിസ്റ്റാക്കി' (KPAC).</li><li>6. സ്ത്രീപക്ഷ നാടകവേദി (Feminist Theatre): ആൺകോയ്മയെ ചോദ്യം ചെയ്ത് സ്ത്രീ സ്വത്വവും ശരീരരാഷ്ട്രീയവും അരങ്ങിലെത്തിച്ച പ്രസ്ഥാനം.</li><li>7. കുറിയേടത്ത് താത്രി: 1905-ൽ കൊച്ചി രാജ്യത്ത് നടന്ന സ്മാർത്തവിചാരത്തിലെ വിപ്ലവനായിക.</li><li>8. താത്രിയുടെ ചെറുത്തുനിൽപ്പ്: തന്നെ വ്യഭിചാരക്കുറ്റം ചുമത്തി ഭ്രഷ്ടാക്കാൻ ശ്രമിച്ച 64 സവർണ്ണ പുരുഷന്മാരുടെ പേരുകൾ വെളിപ്പെടുത്തി.</li><li>9. സ്ത്രീചരിത്രത്തിലെ പ്രാധാന്യം: ആൺനോട്ടങ്ങളെയും സദാചാര കാപട്യങ്ങളെയും തകർത്ത ആദ്യത്തെ ധീരമായ സ്ത്രീവിപ്ലവം.</li><li>10. സമകാലിക നാടകം: 'പെൺകുട്ടി' - സ്ത്രീ അനുഭവിക്കുന്ന ഗാർഹിക-ലൈംഗിക പീഡനങ്ങളുടെ തുറന്നെഴുത്ത്.</li><li>11. നാടകത്തിലെ പ്രതീകം: മെഴുകുതിരി വെളിച്ചത്തിൽ സ്വന്തം മുറിവുകൾ കാണുന്ന പെൺകുട്ടി.</li><li>12. ആദ്യകാല സ്ത്രീവേഷങ്ങൾ: സ്ത്രീകൾക്ക് അഭിനയം നിഷിദ്ധമായിരുന്ന കാലത്ത് പുരുഷന്മാരാണ് സ്ത്രീവേഷം ധരിച്ചിരുന്നത്.</li><li>13. സി.വി. രാമൻപിള്ളയുടെ സംഭാവന: 'കുറുപ്പില്ലാക്കളരി', 'ബട്ടർഫ്ലൈ' തുടങ്ങിയ സാമൂഹിക പ്രഹസനങ്ങൾ.</li><li>14. പ്രൊഫഷണൽ നാടകവേദിയുടെ സ്വാധീനം: കെ.പി.എ.സി, കാളിദാസ കലാകേന്ദ്രം തുടങ്ങിയ സമിതികൾ.</li><li>15. നാടകം കേവല വിനോദമല്ല, മറിച്ച് ചൂഷണങ്ങൾക്കെതിരെയുള്ള തീക്ഷ്ണമായ സാമൂഹിക ആയുധമാണ്.</li><li>16. സ്ത്രീപക്ഷ നാടകവേദി സ്ത്രീയെ ഉപഭോഗവസ്തുവായി കാണുന്ന പരമ്പരാഗത സൗന്ദര്യസങ്കൽപ്പങ്ങളെ നിരസിക്കുന്നു.</li><li>17. വി.ടി.യുടെ നാടകത്തിൽ സ്ത്രീ കഥാപാത്രങ്ങൾ യഥാർത്ഥ മറക്കുട വലിച്ചെറിഞ്ഞ് അരങ്ങിലേക്ക് കടന്നുവന്നു.</li><li>18. ആശുപത്രി, കുടുംബം, പൊതുഇടം എന്നിവിടങ്ങളിലെല്ലാം സ്ത്രീ അനുഭവിക്കുന്ന അരക്ഷിതാവസ്ഥ 'പെൺകുട്ടി' നാടകം തുറന്നുകാട്ടുന്നു.</li><li>19. പരീക്ഷാ ഫോക്കസ്: മലയാള നാടകവേദിയുടെ ഘട്ടങ്ങൾ, വി.ടി.യുടെ നാടക വിപ്ലവം, കുറിയേടത്ത് താത്രിയുടെ സ്മാർത്തവിചാരം, സ്ത്രീപക്ഷ നാടക സവിശേഷതകൾ.</li><li>20. ഈ അധ്യായം മലയാള നാടകവേദിയുടെ സാമൂഹിക പ്രതിബദ്ധതയുടെയും സ്ത്രീപക്ഷ മുന്നേറ്റത്തിന്റെയും സാക്ഷ്യപത്രമാണ്.</li>
+      </ul>
+    </div>
+    </div></div></body></html>

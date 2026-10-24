@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta charset="UTF-8">
+<title>കവിത: ഇവനെക്കൂടി - അധ്യായ പഠന സഹായി</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  @page {
+    size: A4 portrait;
+    margin: 14mm 13mm 14mm 13mm;
+    @top-right {
+      content: "മലയാള സാഹിത്യാനുശീലനം · അധ്യായ പഠന സഹായി";
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Malayalam', 'Manjari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .chapter-header {
+    background: linear-gradient(135deg, var(--c-primary, #0f766e) 0%, var(--c-dark, #134e4a) 100%);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    page-break-inside: avoid;
+  }
+
+  .ch-pill-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .ch-pill {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .chapter-header h1 {
+    font-size: 17pt;
+    font-weight: 900;
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+    color: #ffffff;
+  }
+
+  .ch-meta-sub {
+    font-size: 10pt;
+    color: #ccfbf1;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Author Profile Card (കവിപരിചയം / രചയിതാവിന്റെ പരിചയം) */
+  .author-profile-box {
+    background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%);
+    border: 1.5px solid #cbd5e1;
+    border-left: 5px solid var(--c-primary, #0f766e);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    page-break-inside: avoid;
+  }
+
+  .author-profile-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .author-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 3px;
+  }
+
+  .author-profile-title h3 {
+    margin: 0;
+    font-size: 12.5pt;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .author-profile-title h3 small {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #64748b;
+  }
+
+  .author-meta-pill {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 8.5pt;
+    color: #334155;
+    line-height: 1.45;
+  }
+
+  .author-meta-pill b { color: var(--c-primary, #0f766e); }
+
+  .author-bio-body p {
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+
+  .author-works-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .author-works-head {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
+  }
+
+  .works-cat-row {
+    margin-bottom: 4px;
+    font-size: 8.5pt;
+    line-height: 1.5;
+  }
+
+  .works-cat-row:last-child { margin-bottom: 0; }
+
+  .works-cat-label {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: 8pt;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .works-cat-content { color: #475569; }
+
+  .author-awards-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #854d0e;
+    margin-bottom: 6px;
+  }
+
+  .author-significance-strip {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #1e40af;
+  }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .obj-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .out-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .card-label {
+    font-size: 9.5pt;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+  }
+  .obj-card .card-label { color: #166534; }
+  .out-card .card-label { color: #1e40af; }
+
+  .obj-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  .intro-box {
+    background: #fafaf9;
+    border: 1px solid #e7e5e4;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #292524;
+    page-break-inside: avoid;
+  }
+
+  .intro-box .intro-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #b45309;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .concept-section {
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    page-break-inside: avoid;
+  }
+
+  .concept-section h2 {
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--c-primary, #0f766e);
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .concept-section p {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: #334155;
+    margin: 0 0 6px 0;
+  }
+
+  .conclusion-box {
+    background: #fdf4ff;
+    border: 1px solid #f5d0fe;
+    border-left: 4px solid #a855f7;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 16px 0;
+    page-break-inside: avoid;
+  }
+
+  .conclusion-box .conc-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #7e22ce;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .conclusion-box p {
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #3b0764;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  .takeaways-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .takeaways-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f766e;
+  }
+
+  .takeaways-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #134e4a;
+    line-height: 1.55;
+  }
+
+  .glossary-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .glossary-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #334155;
+  }
+
+  .glossary-item {
+    font-size: 8.5pt;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .revision-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 9pt;
+    line-height: 1.6;
+    color: #713f12;
+    page-break-inside: avoid;
+  }
+
+  .progress-section {
+    border-top: 2px solid #e2e8f0;
+    padding-top: 14px;
+    margin-top: 16px;
+  }
+
+  .progress-header {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 0 0 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-inside: avoid;
+  }
+
+  .q-type-title {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f766e;
+    margin: 14px 0 8px 0;
+    padding-left: 8px;
+    border-left: 3px solid #0f766e;
+    page-break-inside: avoid;
+  }
+
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+
+  .qa-question {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+
+  .qa-answer {
+    font-size: 9pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0;
+    white-space: pre-line;
+  }
+
+  .essay-card {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .essay-card .qa-question {
+    font-size: 10pt;
+    color: #1e1b4b;
+    margin-bottom: 10px;
+  }
+
+  .essay-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 4px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .mcq-container {
+    margin-top: 14px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-q {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 5px 0;
+  }
+
+  .mcq-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    font-size: 8.5pt;
+    color: #334155;
+  }
+
+  .mcq-opt {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
+  .mcq-key-card {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 14px 0 20px 0;
+    page-break-inside: avoid;
+  }
+
+  .mcq-key-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 10pt;
+    font-weight: 800;
+    color: #166534;
+  }
+
+  .key-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    font-size: 8pt;
+    color: #14532d;
+  }
+
+  .key-item {
+    background: #ffffff;
+    border: 1px solid #bbf7d0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.35;
+  }
+
+  .exam-points-card {
+    background: linear-gradient(135deg, #fefce8 0%, #fffbeb 100%);
+    border: 1.5px solid #fde047;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 25px 0;
+    box-shadow: 0 3px 10px rgba(234, 179, 8, 0.1);
+    page-break-inside: avoid;
+  }
+
+  .exam-points-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #facc15;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+
+  .exam-points-head h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 900;
+    color: #854d0e;
+  }
+
+  .exam-tag {
+    background: #ca8a04;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 14px;
+    text-transform: uppercase;
+  }
+
+  .exam-points-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #713f12;
+  }
+
+  .exam-points-list li {
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .exam-points-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ca8a04;
+    font-weight: 900;
+  }
+
+
+    @media (max-width: 768px) {
+      body {
+        padding: 14px 10px !important;
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+      .chapter-header {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+      }
+    }
+    
+  </style>
+</head>
+<body style="--c-primary: #be185d; --c-dark: #0f172a;">
+  <div class="chapter-wrapper">
+    <header class="chapter-header">
+      <div class="ch-pill-row">
+        <span class="ch-pill">മൊഡ്യൂൾ 3</span>
+        <span class="ch-pill">വിലാപകാവ്യം / അനുസ്മരണ കവിത (Elegy)</span>
+        <span class="ch-pill">അധ്യായം 10</span>
+      </div>
+      <h1>കവിത: ഇവനെക്കൂടി</h1>
+      <p class="ch-meta-sub">രചയിതാവ്: <b>കെ. സച്ചിദാനന്ദൻ</b> · ഉറവിടം: സച്ചിദാനന്ദന്റെ കവിതകൾ (1985)</p>
+    </header>
+
+        <div class="author-profile-box">
+          <div class="author-profile-head">
+            <div class="author-profile-title">
+              <span class="author-badge">✍️ കവിപരിചയം / രചയിതാവിന്റെ സമഗ്ര പരിചയം</span>
+              <h3>കെ. സച്ചിദാനന്ദൻ & മഹാകവി വൈലോപ്പിള്ളി ശ്രീധരമേനോൻ <small>(കെ. സച്ചിദാനന്ദൻ (ജനനം: 1946) | മഹാകവി വൈലോപ്പിള്ളി (1911 – 1985))</small></h3>
+            </div>
+            <div class="author-meta-pill">
+              <b>സ്ഥലം / പശ്ചാത്തലം:</b> പുല്ലൂറ്റ്, കൊടുങ്ങല്ലൂർ (സച്ചിദാനന്ദൻ) | കലൂർ, എറണാകുളം (വൈലോപ്പിള്ളി)<br>
+              <b>സാഹിത്യ പദവി:</b> സച്ചിദാനന്ദൻ: പ്രമുഖ കവി, നാടകകൃത്ത്, ചിന്തകൻ, വിവർത്തകൻ, കേന്ദ്ര സാഹിത്യ അക്കാദമി സെക്രട്ടറി (1996-2006), കേരള സാഹിത്യ അക്കാദമി പ്രസിഡന്റ്. | വൈലോപ്പിള്ളി: ശാസ്ത്രബോധത്തിന്റെയും കാർഷിക സംസ്കാരത്തിന്റെയും ഹരിതകാന്തി പാടിയ മഹാകവി.
+            </div>
+          </div>
+          <div class="author-bio-body">
+            <p>മലയാള ആധുനികോത്തര കവിതയിലെ ഏറ്റവും കരുത്തുറ്റ രാഷ്ട്രീയ-സൗന്ദര്യശാസ്ത്ര ശബ്ദമാണ് കെ. സച്ചിദാനന്ദൻ. കൊടുങ്ങല്ലൂരിൽ ജനിച്ച അദ്ദേഹം ഇംഗ്ലീഷ് പ്രൊഫസറായും പിന്നീട് കേന്ദ്ര സാഹിത്യ അക്കാദമിയുടെ സെക്രട്ടറിയായും പ്രവർത്തിച്ചു. അടിച്ചമർത്തപ്പെട്ട ജനതയുടെ പ്രതിരോധവും പരിസ്ഥിതിയും ഫാസിസ്റ്റ് വിരുദ്ധതയും അദ്ദേഹത്തിന്റെ കവിതകളിൽ ജ്വലിച്ചുനിൽക്കുന്നു. 'ഇവനെക്കൂടി' എന്ന കവിത മലയാള കാവ്യലോകത്തെ നിത്യഹരിത പ്രതിഭയായ മഹാകവി വൈലോപ്പിള്ളി ശ്രീധരമേനോന്റെ കാവ്യജീവിതത്തിനും ഭാവുകത്വത്തിനുമുള്ള സമർപ്പണമാണ്. കണ്ണീർപ്പാടവും സഹ്യന്റെ മകനും മാമ്പഴവും കുടിയൊഴിപ്പിക്കലും പാടിയ വൈലോപ്പിള്ളിയുടെ കണ്ണീരിന്റെയും സ്നേഹത്തിന്റെയും കാവ്യപാരമ്പര്യത്തെ സച്ചിദാനന്ദൻ ഈ കവിതയിലൂടെ അടുത്ത തലമുറയിലേക്ക് കണ്ണിചേർക്കുന്നു.</p>
+            
+            <div class="author-works-section">
+              <div class="author-works-head">📚 പ്രധാന കൃതികളും സാഹിത്യ സംഭാവനകളും (Major Works & Contributions):</div>
+        
+              <div class="works-cat-row">
+                <span class="works-cat-label">സച്ചിദാനന്ദന്റെ പ്രധാന കവിതാസമാഹാരങ്ങൾ</span>
+                <span class="works-cat-content">ഇവനെക്കൂടി (1987), എഴുത്തച്ഛൻ എഴുതുമ്പോൾ, അഞ്ചു സൂര്യൻ, ആത്മഗീത, അപൂർണ്ണം, വേനൽമഴ, പീഡാനുഭവം, വീടുമാറ്റം, കവിത (1994-1999), മറന്നുപോയ വാക്കുകൾ, ബാബാ ബുലേഷാ.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">നാടകങ്ങൾ & നിരൂപണം</span>
+                <span class="works-cat-content">ഭാരതഗാഥ, ഗാന്ധി (നാടകങ്ങൾ); കുരുക്ഷേത്രം, സംവാദങ്ങൾ, കവിതയും രാഷ്ട്രീയവും, മലയാള കവിതാപഠനങ്ങൾ (നിരൂപണം).</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">വൈലോപ്പിള്ളിയുടെ പ്രധാന കൃതികൾ</span>
+                <span class="works-cat-content">കന്നിക്കൊയ്ത്ത് (1947), ശ്രീരേഖ, വിട, കുടിയൊഴിപ്പിക്കൽ, കണ്ണീർപ്പാടം, മകരക്കൊയ്ത്ത്, മാമ്പഴം, സഹ്യന്റെ മകൻ, കടൽകാക്കകൾ.</span>
+              </div>
+            
+            </div>
+            
+            <div class="author-awards-strip">
+              <b>🏆 പ്രധാന പുരസ്കാരങ്ങളും അംഗീകാരങ്ങളും:</b> സച്ചിദാനന്ദൻ: കേന്ദ്ര സാഹിത്യ അക്കാദമി അവാർഡ് (2012), കേരള സാഹിത്യ അക്കാദമി അവാർഡ് (കവിത, നാടകം, നിരൂപണം, വിവർത്തനം, യാത്രാവിവരണം എന്നീ 5 വിഭാഗങ്ങളിലും!), എഴുത്തച്ഛൻ പുരസ്കാരം (2017), വയലാർ അവാർഡ്, ആശാൻ പുരസ്കാരം. | വൈലോപ്പിള്ളി: കേന്ദ്ര സാഹിത്യ അക്കാദമി അവാർഡ് (1964), കേരള സാഹിത്യ അക്കാദമി അവാർഡ് (1969), വയലാർ അവാർഡ് (1981 - മകരക്കൊയ്ത്ത്).
+            </div>
+            
+            <div class="author-significance-strip">
+              <b>✦ സാഹിത്യ സംഭാവന & സവിശേഷ സ്ഥാനം:</b> ഇന്ത്യൻ സാഹിത്യത്തെ ലോകവേദിയിൽ എത്തിച്ച സച്ചിദാനന്ദന്റെ വിവർത്തനങ്ങളും, കവിതയെ ആത്മാന്വേഷണത്തിന്റെയും സാമൂഹിക പ്രതിരോധത്തിന്റെയും മൂർച്ചയേറിയ ആയുധമാക്കിയ അദ്ദേഹത്തിന്റെ രചനാശൈലിയും മലയാളത്തിന് പുതിയൊരു ആഗോള മാനദണ്ഡം നൽകി.
+            </div>
+          </div>
+        </div>
+        
+      <div class="objectives-grid">
+        <div class="obj-card">
+          <div class="card-label">❖ പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</div>
+          <ul class="obj-list">
+    <li>ആധുനികോത്തര മലയാള കവിതയുടെ സവിശേഷതകളും കെ. സച്ചിദാനന്ദന്റെ കാവ്യശൈലിയും മനസ്സിലാക്കുക.</li><li>മഹാകവി വൈലോപ്പിള്ളി ശ്രീധരമേനോന്റെ കാവ്യപ്രപഞ്ചത്തെയും മലയാള സംസ്കാരവുമായുള്ള ബന്ധത്തെയും കുറിച്ച് പഠിക്കുക.</li><li>പരമ്പരാഗത വിലാപകവിതകളിൽ നിന്ന് വ്യത്യസ്തമായി പ്രകൃതിയും സംസ്കാരവും സമന്വയിക്കുന്ന പുതിയൊരു അനുസ്മരണ ശൈലി അപഗ്രഥിക്കുക.</li>
+          </ul>
+        </div>
+        <div class="out-card">
+          <div class="card-label">✦ പഠന ഫലങ്ങൾ (Learning Outcomes)</div>
+          <ul class="obj-list">
+    <li>കവിതയിലെ പ്രതീകങ്ങളും മിത്തുകളും രാഷ്ട്രീയ-സാംസ്കാരിക മാനങ്ങളും തിരിച്ചറിയാൻ സാധിക്കുന്നു.</li><li>നിളാനദിയും സഹ്യനും കേരളത്തിന്റെ മാതൃബിംബങ്ങളായി മാറുന്ന രീതി ആസ്വദിക്കാൻ കഴിയുന്നു.</li><li>വൈലോപ്പിള്ളിയുടെ കാവ്യജീവിതത്തിന്റെ സമഗ്രതയും കവിതയുടെ സൗന്ദര്യവും വിലയിരുത്താൻ പ്രാപ്തി നേടുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="intro-box">
+        <span class="intro-label">ആമുഖം (Introduction)</span>
+    <p>മലയാള കവിതയെ ലോകകവിതയുടെ വിശാലമായ ചക്രവാളത്തിലേക്ക് നയിച്ച പ്രമുഖ ആധുനിക കവിയാണ് കെ. സച്ചിദാനന്ദൻ (ജനനം 1946). കേരളീയ സംസ്കാരത്തിന്റെ ജീവനാഡിയായ മഹാകവി വൈലോപ്പിള്ളി ശ്രീധരമേനോൻ (1911–1985) അന്തരിച്ചപ്പോൾ, അദ്ദേഹത്തിന് അന്ത്യാഞ്ജലി അർപ്പിച്ചുകൊണ്ട് സച്ചിദാനന്ദൻ രചിച്ച വിഖ്യാത വിലാപകാവ്യമാണ് 'ഇവനെക്കൂടി'. ഔപചാരികമായ സ്തുതിവചനങ്ങൾക്ക് പകരം, കേരളത്തിന്റെ പച്ചപ്പും നിളാനദിയും സഹ്യപർവ്വതവും ഓണക്കവിതകളും ചേർത്തുവെച്ച് വൈലോപ്പിള്ളിയുടെ കാവ്യജീവിതത്തെ പ്രകൃതിയുടെ മടിത്തട്ടിലേക്ക് ലയിപ്പിക്കുന്ന അനുപമമായ കവിതയാണിത്.</p></div>
+        <section class="concept-section">
+          <h2>1. കവി പരിചയവും സച്ചിദാനന്ദന്റെ ആധുനിക ഭാവുകത്വവും</h2>
+          <p>ഇന്ത്യൻ സാഹിത്യത്തിലെയും ലോക കവിതാവേദികളിലെയും സജീവ സാന്നിധ്യമാണ് സച്ചിദാനന്ദൻ. കേന്ദ്ര സാഹിത്യ അക്കാദമി സെക്രട്ടറിയായും കേരള സാഹിത്യ അക്കാദമി പ്രസിഡന്റായും പ്രവർത്തിച്ചിട്ടുള്ള അദ്ദേഹം, ഫാസിസത്തിനും അനീതികൾക്കുമെതിരെയുള്ള ശക്തമായ പ്രതിരോധമായി കവിതയെ മാറ്റി. പരമ്പരാഗത ചരമകവിതകളുടെ വായ്ത്താരികളിൽ നിന്ന് മാറി, ഒരു കവിയുടെ ആത്മാവിനെ മണ്ണിലേക്കും പ്രകൃതിയിലേക്കും തിരിച്ചുവിളിക്കുന്ന ആധുനിക കാവ്യഭാഷയാണ് 'ഇവനെക്കൂടി'യിൽ ഉള്ളത്.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>2. നിളയോടുള്ള കാവ്യനീതി നിറഞ്ഞ അഭ്യർത്ഥന</h2>
+          <p>കവിത ആരംഭിക്കുന്നത് കേരളത്തിന്റെ സാംസ്കാരിക മാതാവായ നിളാനദിയോട് (ഭാരതപ്പുഴ) കവി നടത്തുന്ന ആർദ്രമായ അഭ്യർത്ഥനയോടെയാണ്:</p><p>സ്വന്തം മണ്ണിലെ പച്ചപ്പിനെയും അധ്വാനിക്കുന്ന കർഷകരെയും കണ്ണീരിനെയും പാടി അനശ്വരനാക്കിയ കവിയാണ് വൈലോപ്പിള്ളി. സംഘകാല കവിയായ കപിലന്റെ മരുതഭൂമിയും ഇലഞ്ഞിയും നനച്ചൊഴുകുന്ന ഭാരതപ്പുഴയോട്, കാലത്തിന്റെ തീരത്ത് തളർന്നുവീണ ഈ മകനെക്കൂടി സ്വന്തം മാറോടണയ്ക്കണമെന്ന് സച്ചിദാനന്ദൻ അപേക്ഷിക്കുന്നു. സഹ്യനും നിളയും മനുഷ്യസഹജമായ ഭാവങ്ങളോടെ കവിതയിൽ ജീവസ്സുറ്റ കഥാപാത്രങ്ങളായി മാറുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>3. വൈലോപ്പിള്ളിയുടെ കാവ്യപ്രപഞ്ചത്തിന്റെ സ്മരണകൾ</h2>
+          <p>വൈലോപ്പിള്ളിയുടെ വിഖ്യാതമായ കൃതികളിലൂടെയും കഥാപാത്രങ്ങളിലൂടെയും കവിത സഞ്ചരിക്കുന്നു:</p><p>• 'ഓണപ്പാട്ടുകാർ' & 'കന്നിക്കൊയ്ത്ത്': കേരളത്തിന്റെ കാർഷിക സംസ്കാരവും സമൃദ്ധിയും തുളുമ്പുന്ന രചനകൾ.</p><p>• 'കണ്ണീർപ്പാടം': മലയാളിയുടെ ആഴമേറിയ ദുഃഖങ്ങളെയും ആത്മസംഘർഷങ്ങളെയും വരച്ചുകാട്ടിയ കൃതി.</p><p>• 'കുടിയൊഴിക്കൽ': കേരളീയ മധ്യവർഗ്ഗത്തിന്റെ ആത്മവിചാരണയും വിപ്ലവാഹ്വാനവും മുഴക്കിയ മാസ്റ്റർപീസ് കാവ്യം.</p><p>• 'ചന്ദ്രന്റെ ചിരി', 'കാക്ക': പ്രകൃതിയുടെ നിസ്സാരമെന്ന് തോന്നുന്ന ബിംബങ്ങളിൽ അഗാധമായ തത്ത്വചിന്ത കണ്ടെത്തിയ രചനകൾ.</p><p>ഓണപ്പാട്ടിന്റെ താളവും മുളങ്കാടിന്റെ സംഗീതവും ചേർന്നതാണ് വൈലോപ്പിള്ളിക്കവിതയെന്ന് സച്ചിദാനന്ദൻ ഓർമ്മിപ്പിക്കുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>4. വിഷാദവും സൗന്ദര്യവും - മണ്ണിലേക്ക് മടങ്ങുന്ന കവി</h2>
+          <p>വൈലോപ്പിള്ളിയുടെ കവിതകളുടെ ഏറ്റവും വലിയ സവിശേഷത ദുഃഖം പോലും സൗന്ദര്യമായി മാറുന്നു എന്നതാണ്. ഒരു സന്ധ്യാസൂര്യനെപ്പോലെ ചായുന്ന കവിയുടെ ആത്മാവ് മരണത്തിൽ ഇല്ലാതാകുന്നില്ല. ചരമകവിതകൾ പലപ്പോഴും മരിച്ചവരെ സ്വർഗ്ഗത്തിലേക്ക് പറഞ്ഞയക്കാനാണ് ശ്രമിക്കാറുള്ളത്. എന്നാൽ 'ഇവനെക്കൂടി' എന്ന കവിതയാകട്ടെ, കവിയെ ഈ മണ്ണിന്റെ, നിളയുടെ, പച്ചപ്പിന്റെ നിത്യസാന്നിധ്യമായി ഇവിടെത്തന്നെ നിലനിർത്തുന്നു.</p>
+        </section>
+        
+    <div class="conclusion-box">
+      <span class="conc-label">ഉപസംഹാരം (Chapter Conclusion)</span>
+      <p>സച്ചിദാനന്ദന്റെ 'ഇവനെക്കൂടി' കേവലമൊരു വിലാപകാവ്യമല്ല; അത് ഒരു മഹാകവിയുടെ സർഗ്ഗജീവിതത്തിനുള്ള മലയാളത്തിന്റെ കൃതജ്ഞതയാണ്. കവിയും പ്രകൃതിയും സംസ്കാരവും ഒന്നായിത്തീരുന്ന അപൂർവ്വമായ സൗന്ദര്യാനുഭവം ഈ കവിത വായനക്കാരന് സമ്മാനിക്കുന്നു.</p>
+    </div>
+    
+    <div class="summary-grid">
+      <div class="takeaways-box">
+        <h3>✦ പ്രധാന പാഠങ്ങൾ (Key Takeaways)</h3>
+        <ul class="takeaways-list">
+    <li>രചയിതാവ്: കെ. സച്ചിദാനന്ദൻ (പ്രമുഖ ആധുനിക കവി).</li><li>വൈലോപ്പിള്ളി ശ്രീധരമേനോന്റെ (1911–1985) നിര്യാണത്തിൽ എഴുതിയ അനുസ്മരണ കവിതയാണിത്.</li><li>നിളാനദിയോടും സഹ്യപർവ്വതത്തോടും വൈലോപ്പിള്ളിയെ ഏറ്റുവാങ്ങാൻ കവി അഭ്യർത്ഥിക്കുന്നു.</li><li>'കുടിയൊഴിക്കൽ', 'കണ്ണീർപ്പാടം', 'കന്നിക്കൊയ്ത്ത്' തുടങ്ങിയ വൈലോപ്പിള്ളിക്കവിതകൾ ഇതിൽ സ്മരിക്കപ്പെടുന്നു.</li>
+        </ul>
+      </div>
+      <div class="glossary-box">
+        <h3>📖 പ്രധാന സാങ്കേതിക പദാവലി (Key Terms)</h3>
+    <div class="glossary-item"><b>വിലാപകാവ്യം (Elegy):</b> പ്രിയപ്പെട്ടവരുടെ വിയോഗത്തിൽ ദുഃഖം രേഖപ്പെടുത്തി രചിക്കുന്ന അനുസ്മരണ കവിത.</div><div class="glossary-item"><b>നിളാനദി (ഭാരതപ്പുഴ):</b> കേരളീയ സംസ്കാരത്തിന്റെയും സാഹിത്യത്തിന്റെയും മാതൃനദി.</div><div class="glossary-item"><b>മരുതഭൂമി:</b> സംഘകാല തിണകളിൽ വയലും വയൽ சார்ந்த പ്രദേശവുമായ കാർഷിക ഭൂമി.</div>
+      </div>
+    </div>
+    
+    <div class="revision-strip">
+      <b>ദ്രുത പുനഃപരിശോധനാ കുറിപ്പ് (Quick Revision):</b> സച്ചിദാനന്ദന്റെ 'ഇവനെക്കൂടി' (1985). വൈലോപ്പിള്ളിക്കുള്ള അന്ത്യാഞ്ജലി. നിളാനദിയോടുള്ള പ്രാർത്ഥന. മരുതഭൂമിയും ഇലഞ്ഞിയും. കുടിയൊഴിക്കൽ, കണ്ണീർപ്പാടം, ഓണക്കവിതകളുടെ ഓർമ്മ. വിഷാദവും സൗന്ദര്യവും ഇഴചേരുന്ന വൈലോപ്പിള്ളിശൈലി. മണ്ണിലേക്ക് തിരിച്ചെത്തുന്ന കവി.
+    </div>
+    
+    <div class="progress-section">
+      <div class="progress-header">
+        <span>പഠന പുരോഗതി വിലയിരുത്തൽ (Check Your Progress)</span>
+        <small>യഥാർത്ഥ ചോദ്യങ്ങളും സമഗ്ര ഉത്തരങ്ങളും</small>
+      </div>
+    <div class="q-type-title">ലഘുകുറിപ്പുകൾ (Short Notes)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. 'ഇവനെക്കൂടി' എന്ന കവിതയിൽ നിളാനദിയോട് സച്ചിദാനന്ദൻ നടത്തുന്ന അഭ്യർത്ഥന എന്ത്?</div>
+              <div class="qa-answer">കേരളത്തിന്റെ സംസ്കാരത്തെയും മനുഷ്യവേദനകളെയും പാടിയുറക്കിയ മഹാകവി വൈലോപ്പിള്ളിയെ സ്വന്തം മടിത്തട്ടിലേക്ക് ഏറ്റുവാങ്ങണമെന്നാണ് സച്ചിദാനന്ദൻ നിളാനദിയോട് അഭ്യർത്ഥിക്കുന്നത്. അമ്മയെപ്പോലെ ശാന്തമായൊഴുകുന്ന ഭാരതപ്പുഴ ഈ പ്രിയപുത്രന്റെ വിയോഗത്തിൽ കണ്ണീരൊഴുക്കി അവനെ താലോലിക്കണമെന്ന് കവി ആർദ്രമായി യാചിക്കുന്നു.</div>
+            </div>
+            
+            <div class="qa-card">
+              <div class="qa-question">2. വൈലോപ്പിള്ളിയുടെ കവിതകളുടെ ആന്തരിക ശക്തിയായി സച്ചിദാനന്ദൻ കാണുന്നത് എന്താണ്?</div>
+              <div class="qa-answer">കേരളത്തിന്റെ പച്ചപ്പും, ഓണപ്പാട്ടിന്റെ താളവും, മുളങ്കാടിന്റെ സംഗീതവും, അധ്വാനിക്കുന്ന മനുഷ്യന്റെ കണ്ണീരുമാണ് വൈലോപ്പിള്ളിക്കവിതകളുടെ ആന്തരിക ശക്തി. വിഷാദം പോലും സൗന്ദര്യമായി മാറുന്ന ഒരു മൃദുലഭാവം അദ്ദേഹത്തിന്റെ കവിതകൾക്കുണ്ട്. അത് മലയാളി മനസ്സിനെ എപ്പോഴും നവീകരിക്കുന്നു.</div>
+            </div>
+            <div class="q-type-title">ലഘൂപന്യാസങ്ങൾ (Short Essays)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. പരമ്പരാഗത ചരമകവിതകളിൽ നിന്ന് സച്ചിദാനന്ദന്റെ 'ഇവനെക്കൂടി' എങ്ങനെയാണ് വേറിട്ടുനിൽക്കുന്നത്?</div>
+              <div class="qa-answer">പരമ്പരാഗത വിലാപകവിതകൾ മരണപ്പെട്ട വ്യക്തിയുടെ ഗുണഗണങ്ങളെ അതിശയോക്തിയോടെ വർണ്ണിക്കുകയും, അയാളെ സ്വർഗ്ഗത്തിലേക്ക് യാത്രയാക്കുന്ന ഔപചാരികമായ വിതുമ്പലുകളായി ഒതുങ്ങുകയും ചെയ്യാറുണ്ട്. എന്നാൽ സച്ചിദാനന്ദന്റെ 'ഇവനെക്കൂടി' കവിയെ സ്വർഗ്ഗത്തിലേക്കല്ല, മറിച്ച് അദ്ദേഹം അഗാധമായി പ്രണയിച്ച കേരളത്തിന്റെ മണ്ണിലേക്കും നിളാനദിയിലേക്കുമാണ് തിരിച്ചുവിളിക്കുന്നത്. വൈലോപ്പിള്ളിയുടെ ജീവസ്സുറ്റ കാവ്യബിംബങ്ങളെ ഓർത്തെടുത്തുകൊണ്ട്, മരണമില്ലാത്ത ഒരു സാന്നിധ്യമായി കവിയെ പ്രകൃതിയിൽ ലയിപ്പിക്കുന്ന പുരോഗമനപരമായ ദർശനമാണ് ഈ കവിതയെ വേറിട്ടുനിർത്തുന്നത്.</div>
+            </div>
+            <div class="q-type-title">ഉപന്യാസങ്ങൾ (Long Essays - 300+ Words)</div>
+            <div class="essay-card">
+              <span class="essay-badge">സമഗ്ര ഉപന്യാസം · 300+ WORDS</span>
+              <div class="qa-question">1. മഹാകവി വൈലോപ്പിള്ളിയുടെ കാവ്യപ്രപഞ്ചത്തെ പുനരാവിഷ്കരിച്ചുകൊണ്ട് സച്ചിദാനന്ദൻ രചിച്ച 'ഇവനെക്കൂടി' എന്ന കവിത സമഗ്രമായി നിരൂപണം ചെയ്യുക.</div>
+              <div class="qa-answer">ആമുഖം:
+മലയാള കവിതയിലെ ആധുനികതയുടെയും പ്രതിരോധ സൗന്ദര്യശാസ്ത്രത്തിന്റെയും പ്രമുഖ വക്താവാണ് കെ. സച്ചിദാനന്ദൻ. മലയാളത്തിന്റെ മഹാകവി വൈലോപ്പിള്ളി ശ്രീധരമേനോന്റെ വിയോഗത്തിൽ അനുശോചിച്ചുകൊണ്ട്, അദ്ദേഹത്തിന്റെ കാവ്യപ്രപഞ്ചത്തിന് മുന്നിൽ സമർപ്പിച്ച ഉജ്ജ്വലമായ ശ്രദ്ധാഞ്ജലിയാണ് 'ഇവനെക്കൂടി' എന്ന കവിത. വൈലോപ്പിള്ളിയുടെ കവിതകളിലെ തീക്ഷ്ണമായ ജീവിത യാഥാർത്ഥ്യങ്ങളെയും കാർഷിക സംസ്കാരത്തെയും പച്ചമണ്ണിന്റെ ഗന്ധത്തെയും പുനരാവിഷ്കരിക്കുന്ന ഒരു മെറ്റാ-പൊയട്രി (കവിതയെക്കുറിച്ചുള്ള കവിത) കൂടിയാണിത്.
+
+വൈലോപ്പിള്ളിയുടെ കാവ്യപ്രപഞ്ചത്തിന്റെ പുനർവായന:
+മലയാള കവിതയ്ക്ക് പച്ചമണ്ണിന്റെയും അധ്വാനിക്കുന്ന മനുഷ്യന്റെയും കരുത്ത് നൽകിയ കവിയാണ് വൈലോപ്പിള്ളി. 'കണ്ണീർപ്പാടം', 'സഹ്യന്റെ മകൻ', 'മാമ്പഴം', 'കന്നിക്കൊയ്ത്ത്' തുടങ്ങിയ പ്രശസ്ത കൃതികളിലെ ബിംബങ്ങളെ സച്ചിദാനന്ദൻ ഈ കവിതയിൽ അതീവ സമർത്ഥമായി വിളക്കിച്ചേർക്കുന്നു. ജീവിതത്തിന്റെ കയ്പുകളെയും സംഘർഷങ്ങളെയും നേരിടാൻ കവിതയെ വാളാക്കി മാറ്റിയ വൈലോപ്പിള്ളിയുടെ കാവ്യനീതിയെ സച്ചിദാനന്ദൻ ആദരവോടെ സ്മരിക്കുന്നു. വിട്ടുവീഴ്ചയില്ലാത്ത സത്യസന്ധതയും മനുഷ്യസ്നേഹവുമായിരുന്നു ആ കവിതകളുടെ കാതൽ. ശാസ്ത്രബോധവും പ്രകൃതിസ്നേഹവും ഒത്തുചേർന്ന ആ കാവ്യപാരമ്പര്യത്തെ സച്ചിദാനന്ദൻ വണങ്ങുന്നു.
+
+മരണത്തെ അതിജീവിക്കുന്ന കലയുടെ അനശ്വരത:
+ഭൗതികമായി ഒരു കവി മരണപ്പെടുമ്പോഴും അദ്ദേഹത്തിന്റെ കവിതകൾ സമൂഹത്തിന്റെ ധമനികളിൽ ജീവനായി ഒഴുകിക്കൊണ്ടിരിക്കുമെന്ന് കവിത ഓർമ്മിപ്പിക്കുന്നു. വൈലോപ്പിള്ളി വിതച്ച വിത്തുകൾ കേരളത്തിന്റെ മണ്ണിൽ ഇനിയും മുളച്ചുപൊന്തും. കവിയുടെ ചിതാഭസ്മം മണ്ണിൽ ലയിക്കുമ്പോൾ അത് കൂടുതൽ ഫലഭൂയിഷ്ഠമായൊരു കാവ്യസംസ്കാരത്തിന് വളമായി മാറുന്നു. പ്രകൃതിയും മനുഷ്യനും തമ്മിലുള്ള അറ്റുപോകാത്ത ബന്ധത്തെയാണ് വൈലോപ്പിള്ളി ഉയർത്തിപ്പിടിച്ചത്; ആ പാരമ്പര്യം തുടരേണ്ടതിന്റെ ആവശ്യകത സച്ചിദാനന്ദൻ ഊന്നിപ്പറയുന്നു. കവിത മരണത്തെ പരാജയപ്പെടുത്തുന്ന അമൃതമാണെന്ന് കവി പ്രഖ്യാപിക്കുന്നു.
+
+ജൈവ രാഷ്ട്രീയവും ആധുനിക കവിതാ ശൈലിയും:
+ആധുനിക കവിതയുടെ എല്ലാ കരുത്തും ഉൾക്കൊള്ളുന്ന രചനാരീതിയാണ് സച്ചിദാനന്ദന്റേത്. ആർദ്രമായ സ്മരണയോടൊപ്പം തന്നെ തീക്ഷ്ണമായ രാഷ്ട്രീയ ബോധവും ഇതിൽ ഇഴചേർന്നു നിൽക്കുന്നു. കേരളത്തിന്റെ പാരിസ്ഥിതിക തകർച്ചകൾക്കെതിരെയും, കർഷക ജനതയുടെ വിയർപ്പിന്റെ വില തിരിച്ചറിയുന്നതിനും വൈലോപ്പിള്ളിയുടെ കവിതകൾ ഇന്നും മാർഗ്ഗദർശകമാണെന്ന് സച്ചിദാനന്ദൻ വ്യക്തമാക്കുന്നു. രൂപകങ്ങളുടെയും ബിംബങ്ങളുടെയും മനോഹരമായ നിര കവിതയെ സൗന്ദര്യശാസ്ത്രപരമായി ഉന്നത നിലവാരത്തിലെത്തിക്കുന്നു.
+
+ഉപസംഹാരം:
+'ഇവനെക്കൂടി' എന്നത് കേവലം ഒരു അനുസ്മരണ കവിത മാത്രമല്ല; അത് രണ്ട് തലമുറയിലെ കവികൾ തമ്മിലുള്ള സർഗ്ഗാത്മകമായ സംവാദമാണ്. മലയാള കവിതയുടെ ജീവസ്സുറ്റ പാരമ്പര്യത്തെയും പ്രതിരോധ മൂല്യങ്ങളെയും നെഞ്ചിലേറ്റുന്ന ഈ കൃതി സമകാലിക കവിതാശാഖയിലെ തിളങ്ങുന്ന ഒരേടാണ്. മനുഷ്യത്വവും പ്രകൃതിബോധവും കാത്തുസൂക്ഷിക്കാൻ വരുംതലമുറയ്ക്ക് വലിയൊരു പ്രചോദനമാണിത്.
+
+കാർഷിക സംസ്കാരവും പാരിസ്ഥിതിക ദർശനവും:
+മലയാള കവിതയിൽ മണ്ണും മനുഷ്യനും തമ്മിലുള്ള ജൈവബന്ധം ഏറ്റവും തീവ്രമായി അവതരിപ്പിച്ചത് വൈലോപ്പിള്ളിയാണ്. പച്ചപ്പു നിറഞ്ഞ പാടങ്ങളും, അധ്വാനിക്കുന്ന കർഷകരും, കൊയ്ത്തുപാട്ടുകളും അദ്ദേഹത്തിന്റെ കവിതകളിൽ സജീവമായി തുടിച്ചുനിന്നു. ആധുനിക നഗരവൽക്കരണത്തിൽ പ്രകൃതി നശിച്ചുകൊണ്ടിരിക്കുന്ന ഇക്കാലത്ത്, വൈലോപ്പിള്ളിയുടെ കാവ്യചിന്തകൾക്ക് വലിയ പ്രസക്തിയുണ്ടെന്ന് സച്ചിദാനന്ദൻ വ്യക്തമാക്കുന്നു. മണ്ണിൽ പണിയെടുക്കുന്നവന്റെ വിയർപ്പാണ് സംസ്കാരത്തിന്റെ അടിത്തറയെന്ന് ഓർമ്മിപ്പിക്കുന്ന ഈ കവിത, മലയാള സാഹിത്യത്തിലെ എക്കാലത്തെയും മികച്ച പാരിസ്ഥിതിക രാഷ്ട്രീയ കാവ്യങ്ങളിലൊന്നാണ്.
+
+കവിതയിലെ പ്രതിരോധവും സ്മരണയും:
+മഹാകവിയുടെ കവിതകളിലെ ഓരോ വരികളും സാധാരണക്കാരന്റെ ജീവിതസമരങ്ങളോട് ചേർന്നുനിൽക്കുന്നവയായിരുന്നു. കവിയുടെ ഭൗതികശരീരം ഇല്ലാതായാലും അദ്ദേഹത്തിന്റെ ചിന്തകൾ പുതിയ തലമുറയ്ക്ക് വഴികാട്ടിയായി എക്കാലവും പ്രകാശിക്കുമെന്ന് സച്ചിദാനന്ദൻ ഉറപ്പിച്ചു പറയുന്നു. മനുഷ്യസ്നേഹത്തിന്റെയും കർഷകമനസ്സിന്റെയും വിജയമാണിത്. ചൂഷണങ്ങൾക്കെതിരെയുള്ള കാവ്യപ്രതിരോധമായി വൈലോപ്പിള്ളിയുടെ ഓരോ രചനയും നിലകൊള്ളുന്നു. കല സമൂഹത്തിന്റെ കണ്ണാടിയാകണമെന്ന് വിശ്വസിക്കുന്ന എല്ലാവർക്കും ഈ കവിത വലിയൊരു അനുഭവമാണ്.</div>
+            </div>
+            
+    <div class="q-type-title">പ്രധാന പരീക്ഷാ മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (15 Important MCQs)</div>
+    <div class="mcq-container">
+    
+        <div class="mcq-item">
+          <div class="mcq-q">1. 'ഇവനെക്കൂടി' എന്ന കവിത ആരെ അനുസ്മരിച്ചുകൊണ്ട് എഴുതിയതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കുമാരനാശാനെ</div>
+            <div class="mcq-opt">B) മഹാകവി വൈലോപ്പിള്ളി ശ്രീധരമേനോനെ</div>
+            <div class="mcq-opt">C) ചങ്ങമ്പുഴയെ</div>
+            <div class="mcq-opt">D) ജി. ശങ്കരക്കുറുപ്പിനെ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">2. 'ഇവനെക്കൂടി' എന്ന കവിത രചിച്ച ആധുനിക കവി ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കടമ്മനിട്ട</div>
+            <div class="mcq-opt">B) അയ്യപ്പപ്പണിക്കർ</div>
+            <div class="mcq-opt">C) കെ. സച്ചിദാനന്ദൻ</div>
+            <div class="mcq-opt">D) ബാലചന്ദ്രൻ ചുള്ളിക്കാട്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">3. കവിതയിൽ കവിയെ ഏറ്റുവാങ്ങാൻ പ്രാർത്ഥിക്കുന്നത് ഏത് നദിയോടാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) പെരിയാർ</div>
+            <div class="mcq-opt">B) നിളാനദി (ഭാരതപ്പുഴ)</div>
+            <div class="mcq-opt">C) പമ്പ</div>
+            <div class="mcq-opt">D) ചാലിയാർ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">4. വൈലോപ്പിള്ളി ശ്രീധരമേനോൻ അന്തരിച്ച വർഷമേത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 1970</div>
+            <div class="mcq-opt">B) 1985 ഡിസംബർ</div>
+            <div class="mcq-opt">C) 1990</div>
+            <div class="mcq-opt">D) 1980</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">5. വൈലോപ്പിള്ളിയുടെ കാവ്യപ്രപഞ്ചത്തിൽ പെടാത്ത കൃതി ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കുടിയൊഴിക്കൽ</div>
+            <div class="mcq-opt">B) കന്നിക്കൊയ്ത്ത്</div>
+            <div class="mcq-opt">C) കണ്ണീർപ്പാടം</div>
+            <div class="mcq-opt">D) രമണൻ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">6. സച്ചിദാനന്ദൻ കേന്ദ്ര സാഹിത്യ അക്കാദമിയിൽ വഹിച്ച പ്രധാന പദവി എന്തായിരുന്നു?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) പ്രസിഡന്റ്</div>
+            <div class="mcq-opt">B) സെക്രട്ടറി</div>
+            <div class="mcq-opt">C) ട്രഷറർ</div>
+            <div class="mcq-opt">D) ഉപദേശകൻ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">7. കവിതയിൽ പരാമർശിക്കുന്ന പ്രാചീന സംഘകാല കവി ആരാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) തിരുവള്ളുവർ</div>
+            <div class="mcq-opt">B) കപിലൻ</div>
+            <div class="mcq-opt">C) ഇളങ്കോ അടികൾ</div>
+            <div class="mcq-opt">D) മാങ്കുടി മരുതനാർ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">8. വൈലോപ്പിള്ളിയുടെ മാസ്റ്റർപീസ് കാവ്യമായി കരുതപ്പെടുന്ന കൃതി ഏത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) മാമ്പഴം</div>
+            <div class="mcq-opt">B) കുടിയൊഴിക്കൽ</div>
+            <div class="mcq-opt">C) സഹ്യന്റെ മകൻ</div>
+            <div class="mcq-opt">D) കാക്ക</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">9. 'ഇവനെക്കൂടി' എന്ന കവിത ഏത് കാവ്യവിഭാഗത്തിൽപ്പെടുന്നു?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) മഹാകാവ്യം</div>
+            <div class="mcq-opt">B) വിലാപകാവ്യം (Elegy)</div>
+            <div class="mcq-opt">C) നാടോടിപ്പാട്ട്</div>
+            <div class="mcq-opt">D) ഹാസ്യകവിത</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">10. വൈലോപ്പിള്ളിക്കവിതകളുടെ പ്രധാന സവിശേഷതയായി പറയുന്നത് എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വെറും ഭക്തി</div>
+            <div class="mcq-opt">B) ശാസ്ത്രബോധവും മനുഷ്യസ്നേഹവും പ്രകൃതിസൗന്ദര്യവും</div>
+            <div class="mcq-opt">C) സന്യാസം</div>
+            <div class="mcq-opt">D) വിദേശ പ്രേമം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">11. കവി വൈലോപ്പിള്ളിയുടെ ആത്മാവിനെ ഉപമിക്കുന്നത് എന്തിനോടാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഉദയസൂര്യനോട്</div>
+            <div class="mcq-opt">B) സന്ധ്യാസൂര്യനോട്</div>
+            <div class="mcq-opt">C) ചന്ദ്രനോട്</div>
+            <div class="mcq-opt">D) നക്ഷത്രത്തോട്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">12. സച്ചിദാനന്ദൻ നിലവിൽ ഏത് സ്ഥാപനത്തിന്റെ പ്രസിഡന്റാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) സംഗീത നാടക അക്കാദമി</div>
+            <div class="mcq-opt">B) കേരള സാഹിത്യ അക്കാദമി</div>
+            <div class="mcq-opt">C) ഭാഷാ ഇൻസ്റ്റിറ്റ്യൂട്ട്</div>
+            <div class="mcq-opt">D) കലാമണ്ഡലം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">13. വൈലോപ്പിള്ളി ജനിച്ച വർഷം ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 1900</div>
+            <div class="mcq-opt">B) 1911 മെയ് 11</div>
+            <div class="mcq-opt">C) 1920</div>
+            <div class="mcq-opt">D) 1930</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">14. ചരമകവിതകളെക്കുറിച്ച് സച്ചിദാനന്ദൻ കവിതയിൽ നടത്തുന്ന നിരീക്ഷണം എന്ത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) അവ എപ്പോഴും സത്യമാണ്</div>
+            <div class="mcq-opt">B) അവ മരിച്ചവരെ പെട്ടെന്ന് സ്വർഗ്ഗത്തിലേക്ക് പറഞ്ഞയക്കുന്നു</div>
+            <div class="mcq-opt">C) അവ പാടാൻ പാടില്ല</div>
+            <div class="mcq-opt">D) അവ വളരെ നീളമുള്ളതാണ്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">15. 'ഇവനെക്കൂടി' എന്ന കവിത മുന്നോട്ടുവെക്കുന്ന ആത്യന്തിക ദർശനം എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വിനാശം</div>
+            <div class="mcq-opt">B) കവി മണ്ണിലും പ്രകൃതിയിലും അനശ്വരനായി ജീവിക്കുന്നു</div>
+            <div class="mcq-opt">C) പണത്തിന്റെ മൂല്യം</div>
+            <div class="mcq-opt">D) പുനർജന്മം</div>
+          </div>
+        </div>
+        </div>
+    <div class="mcq-key-card">
+      <h4>MCQ ഉത്തര സൂചിക & വിശദീകരണങ്ങൾ (Answer Key)</h4>
+      <div class="key-grid">
+    
+        <div class="key-item">
+          <b>1. B</b>: മഹാകവി വൈലോപ്പിള്ളി അന്തരിച്ചപ്പോൾ (1985) സച്ചിദാനന്ദൻ രചിച്ച കവിതയാണിത്.
+        </div>
+        
+        <div class="key-item">
+          <b>2. C</b>: പ്രശസ്ത കവിയും ചിന്തകനുമായ കെ. സച്ചിദാനന്ദനാണ് ഈ കവിത എഴുതിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>3. B</b>: കേരളത്തിന്റെ സാംസ്കാരിക നദിയായ നിളയോടാണ് വൈലോപ്പിള്ളിയെ ഏറ്റുവാങ്ങാൻ അഭ്യർത്ഥിക്കുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>4. B</b>: 1985 ഡിസംബർ 22-നാണ് മഹാകവി വൈലോപ്പിള്ളി അന്തരിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>5. D</b>: 'രമണൻ' ചങ്ങമ്പുഴയുടെ കൃതിയാണ്; കുടിയൊഴിക്കലും കന്നിക്കൊയ്ത്തും കണ്ണീർപ്പാടവും വൈലോപ്പിള്ളിയുടേതാണ്.
+        </div>
+        
+        <div class="key-item">
+          <b>6. B</b>: കേന്ദ്ര സാഹിത്യ അക്കാദമിയുടെ സെക്രട്ടറിയായി സച്ചിദാനന്ദൻ ദീർഘകാലം സേവനമനുഷ്ഠിച്ചിട്ടുണ്ട്.
+        </div>
+        
+        <div class="key-item">
+          <b>7. B</b>: സംഘകാല കവിയായ കപിലന്റെ കാവ്യഭൂമിയെക്കുറിച്ച് കവിതയിൽ സൂചിപ്പിക്കുന്നുണ്ട്.
+        </div>
+        
+        <div class="key-item">
+          <b>8. B</b>: കേരളീയ മധ്യവർഗ്ഗത്തിന്റെ ആത്മവിചാരണയായ 'കുടിയൊഴിക്കൽ' വൈലോപ്പിള്ളിയുടെ മാസ്റ്റർപീസാണ്.
+        </div>
+        
+        <div class="key-item">
+          <b>9. B</b>: ഒരു വ്യക്തിയുടെ വിയോഗത്തിൽ രചിക്കുന്ന വിലാപകാവ്യമാണ് (Elegy) ഇത്.
+        </div>
+        
+        <div class="key-item">
+          <b>10. B</b>: മണ്ണിലിറങ്ങി നിൽക്കുന്ന മാനവികതയും ശാസ്ത്രബോധവുമാണ് വൈലോപ്പിള്ളിയുടെ കാവ്യമുദ്ര.
+        </div>
+        
+        <div class="key-item">
+          <b>11. B</b>: ശാന്തമായി ചായുന്ന സന്ധ്യാസൂര്യനെപ്പോലെയാണ് കവിയുടെ സാന്നിധ്യം.
+        </div>
+        
+        <div class="key-item">
+          <b>12. B</b>: കേരള സാഹിത്യ അക്കാദമി പ്രസിഡന്റായി സച്ചിദാനന്ദൻ സേവനമനുഷ്ഠിക്കുന്നു.
+        </div>
+        
+        <div class="key-item">
+          <b>13. B</b>: 1911 മെയ് 11-ന് എറണാകുളം ജില്ലയിലെ കലൂരിലാണ് വൈലോപ്പിള്ളി ജനിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>14. B</b>: സാധാരണ ചരമകവിതകൾ സ്വർഗ്ഗത്തിലേക്ക് പറഞ്ഞയക്കുമ്പോൾ, സച്ചിദാനന്ദൻ കവിയെ മണ്ണിലേക്ക് തിരിച്ചുവിളിക്കുന്നു.
+        </div>
+        
+        <div class="key-item">
+          <b>15. B</b>: മഹാകവികൾ സ്വന്തം കൃതികളിലൂടെയും മണ്ണിലൂടെയും മരണമില്ലാതെ അമരരായി ജീവിക്കുന്നുവെന്ന ദർശനമാണിത്.
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="exam-points-card">
+      <div class="exam-points-head">
+        <h3>അധ്യാപകനും ഉള്ളടക്കവും സംബന്ധിച്ച 20 പ്രധാന പരീക്ഷാ പോയിന്റുകൾ</h3>
+        <span class="exam-tag">20 EXAM FOCUS POINTS</span>
+      </div>
+      <ul class="exam-points-list">
+    <li>1. രചയിതാവ്: കെ. സച്ചിദാനന്ദൻ (ജനനം 1946) - പ്രശസ്ത ആധുനിക കവി, സാഹിത്യ ചിന്തകൻ.</li><li>2. കവിത: 'ഇവനെക്കൂടി' (1985) - മലയാളത്തിലെ ഉദാത്തമായ വിലാപകാവ്യം.</li><li>3. സമർപ്പണം: മഹാകവി വൈലോപ്പിള്ളി ശ്രീധരമേനോന്റെ (1911–1985) വിയോഗത്തിൽ എഴുതിയത്.</li><li>4. സംസ്കാരത്തിന്റെ പ്രതീകം: നിളാനദി (ഭാരതപ്പുഴ) - വൈലോപ്പിള്ളിയെ ഏറ്റുവാങ്ങാൻ അഭ്യർത്ഥിക്കുന്നു.</li><li>5. കവിതയുടെ തുടക്കം: നിളയോടും സഹ്യപർവ്വതത്തോടും ഒരു മകനെക്കൂടി താലോലിക്കാൻ നടത്തുന്ന യാചന.</li><li>6. സംഘകാല പരാമർശം: പ്രാചീന സംഘകവി കപിലന്റെ മരുതഭൂമിയും ഇലഞ്ഞിയും.</li><li>7. കാവ്യപ്രപഞ്ചം: 'കുടിയൊഴിക്കൽ', 'കണ്ണീർപ്പാടം', 'കന്നിക്കൊയ്ത്ത്', 'ഓണപ്പാട്ടുകാർ', 'ചന്ദ്രന്റെ ചിരി', 'കാക്ക'.</li><li>8. വൈലോപ്പിള്ളിയുടെ പ്രത്യേകത: ദുഃഖത്തെപ്പോലും കാവ്യസൗന്ദര്യമാക്കി മാറ്റാനുള്ള മാന്ത്രിക സിദ്ധി.</li><li>9. ആധുനിക സമീപനം: കവിയെ സ്വർഗ്ഗത്തിലേക്ക് പറഞ്ഞയക്കാതെ കേരളത്തിന്റെ മണ്ണിലേക്ക് തന്നെ തിരിച്ചുവിളിക്കുന്നു.</li><li>10. സംഗീത സാന്നിധ്യം: ഓണപ്പാട്ടിന്റെ താളവും മുളങ്കാടിന്റെ വന്യസംഗീതവും സമന്വയിച്ച കാവ്യശൈലി.</li><li>11. വൈലോപ്പിള്ളിയുടെ ജന്മസ്ഥലം: എറണാകുളം ജില്ലയിലെ കലൂർ (1911 മെയ് 11).</li><li>12. തൊഴിൽ: ഹൈസ്കൂൾ അധ്യാപകൻ (സയൻസ് അധ്യാപകൻ എന്ന യുക്തിബോധം കവിതകളിൽ തെളിയുന്നു).</li><li>13. സച്ചിദാനന്ദൻ വഹിച്ച പദവികൾ: കേന്ദ്ര സാഹിത്യ അക്കാദമി സെക്രട്ടറി, കേരള സാഹിത്യ അക്കാദമി പ്രസിഡന്റ്.</li><li>14. സച്ചിദാനന്ദന്റെ മറ്റ് പ്രശസ്ത കൃതികൾ: 'എഴുത്തച്ഛനെഴുതുമ്പോൾ', 'പീഡനസംഗീതം', 'ആത്മഗീതങ്ങൾ'.</li><li>15. സാഹിത്യ അക്കാദമി അവാർഡ്, എഴുത്തച്ഛൻ പുരസ്കാരം, വയലാർ അവാർഡ് എന്നിവ സച്ചിദാനന്ദന് ലഭിച്ചിട്ടുണ്ട്.</li><li>16. മനുഷ്യസ്നേഹവും പ്രകൃതിയും സംസ്കാരവും ഒന്നാകുന്ന ഉദാത്തമായ കാവ്യാനുഭവം.</li><li>17. വൈലോപ്പിള്ളിയുടെ കൃതികൾ മലയാള ഭാഷയ്ക്ക് നൽകിയ ജീവസ്സും തുടിപ്പും കവിത അനുസ്മരിക്കുന്നു.</li><li>18. സന്ധ്യാസൂര്യനെപ്പോലെ വിടപറഞ്ഞ കവിയുടെ ഓർമ്മകൾക്ക് മരണമില്ലെന്ന് കവിത സാക്ഷ്യപ്പെടുത്തുന്നു.</li><li>19. പരീക്ഷാ ഫോക്കസ്: നിളാനദിയോടുള്ള അഭ്യർത്ഥന, വൈലോപ്പിള്ളിക്കവിതകളുടെ സവിശേഷതകൾ, പരമ്പരാഗത ചരമകവിതകളിൽ നിന്നുള്ള വ്യത്യാസം.</li><li>20. ഈ കവിത വൈലോപ്പിള്ളിയുടെ അനശ്വരതയ്ക്കുള്ള കേരളത്തിന്റെ സാംസ്കാരിക പ്രണാമമാണ്.</li>
+      </ul>
+    </div>
+    </div></div></body></html>

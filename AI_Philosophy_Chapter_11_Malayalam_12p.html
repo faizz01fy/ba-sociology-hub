@@ -1,0 +1,1107 @@
+<!DOCTYPE html><html lang="ml"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"><meta charset="UTF-8"><title>Philosophy of AI · Module 3 · Chapter 11</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0f172a;
+    }
+
+    .page-container {
+      width: 210mm;
+      height: 297mm;
+      padding: 12mm 14mm 10mm 14mm;
+      margin: 0 auto;
+      background: #ffffff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+    }
+
+    .top-bar-left {
+      font-size: 8pt;
+      font-weight: 800;
+      color: #0891b2;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar-right {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .chapter-hero {
+      background: linear-gradient(135deg, #cffafe 0%, #ffffff 100%);
+      border: 1.5px solid #0891b2;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #0891b2;
+      color: #ffffff;
+      font-size: 7.2pt;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .hero-title-en {
+      font-size: 13pt;
+      font-weight: 800;
+      color: #155e75;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0891b2;
+      line-height: 1.35;
+    }
+
+    .content-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 7px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .section-header {
+      background: #f1f5f9;
+      padding: 5px 10px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .section-title-en {
+      font-size: 8.8pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .section-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 700;
+      color: #0891b2;
+    }
+
+    .block-en {
+      padding: 6px 10px;
+      border-left: 3.5px solid #0891b2;
+      background: #ffffff;
+    }
+
+    .block-en-label {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #0891b2;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .block-en p {
+      font-size: 8pt;
+      color: #1e293b;
+      line-height: 1.38;
+      margin: 0 0 4px 0;
+    }
+
+    .block-en p:last-child {
+      margin-bottom: 0;
+    }
+
+    .block-ml {
+      padding: 6px 10px;
+      border-left: 3.5px solid #10b981;
+      background: #f0fdf4;
+      border-top: 1px dashed #e2e8f0;
+    }
+
+    .block-ml-label {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #065f46;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .block-ml p {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      color: #064e3b;
+      line-height: 1.45;
+      margin: 0 0 4px 0;
+    }
+
+    .block-ml p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* STRICT TWO HIGHLIGHTERS */
+    .hl-green {
+      background: #bbf7d0;
+      color: #14532d;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .hl-yellow {
+      background: #fef08a;
+      color: #713f12;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .page-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 4px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    /* PAGE 12 EXAM GRID */
+    .page-exam-grid {
+      padding: 10mm 12mm 8mm 12mm;
+    }
+
+    .exam-header-compact {
+      text-align: center;
+      background: linear-gradient(135deg, #cffafe 0%, #ffffff 100%);
+      border: 1.5px solid #0891b2;
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-bottom: 8px;
+    }
+
+    .exam-title-badge {
+      display: inline-block;
+      background: #0891b2;
+      color: #ffffff;
+      font-size: 7pt;
+      font-weight: 800;
+      padding: 1.5px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .exam-hero-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #155e75;
+      line-height: 1.2;
+    }
+
+    .exam-hero-sub {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #0891b2;
+      line-height: 1.3;
+    }
+
+    .points-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    .point-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 4.5px 6px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .point-header {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+
+    .point-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 1.5px 4px;
+      border-radius: 3px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .point-title-en {
+      font-size: 6.9pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .point-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 700;
+      color: #0891b2;
+      margin-bottom: 1.5px;
+    }
+
+    .point-body {
+      font-size: 6.2pt;
+      color: #334155;
+      line-height: 1.25;
+    }
+
+    .point-body-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.1pt;
+      color: #064e3b;
+      line-height: 1.3;
+      margin-top: 1px;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 8px 6px !important;
+        background: #f1f5f9 !important;
+        font-size: 14px !important;
+      }
+      .page-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 16px 12px !important;
+        margin: 0 0 16px 0 !important;
+        border-radius: 14px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+        overflow: visible !important;
+      }
+      .top-bar-left, .top-bar-right {
+        font-size: 11px !important;
+      }
+    }
+    
+  </style></head><body>
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 11</span>
+        <span class="top-bar-right">Page 1 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="chapter-hero">
+        <div class="hero-tag">🎓 Calicut University FYUGP · Module 3 · Chapter 11</div>
+        <div class="hero-title-en">CHAPTER III: Western Epistemology</div>
+        <div class="hero-title-ml">അദ്ധ്യായം 11: പാശ്ചാത്യ ജ്ഞാനമീമാംസ (വെസ്റ്റേൺ എപ്പിസ്റ്റമോളജി)</div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Epistemology: The Core Philosophical Enquiry</span>
+          <span class="section-title-ml">(ജ്ഞാനമീമാംസ: തത്ത്വചിന്തയിലെ പ്രധാന അന്വേഷണം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Epistemology is defined as the core branch of Western philosophy that investigates the nature, sources, limits, and justification of human knowledge.</span> While aesthetics asks "What is beauty?" and ethics asks "What is justice?", <span class="hl-yellow">the central question of epistemology is: "What can we know and how do we know it?"</span></p>
+          <p>Traced to Plato's dialogue <em>Theaetetus</em>, traditional Western epistemology defined knowledge as <span class="hl-yellow">Justified True Belief (JTB)</span>: for a person to truly know a proposition P, (1) P must be true, (2) the person must believe P, and (3) the person must possess adequate epistemic justification for believing P. In <span class="hl-green">1963</span>, <span class="hl-green">Edmund Gettier</span> revolutionized epistemology by demonstrating that justified true belief can occasionally arise through mere luck or false premises, igniting modern debates on the criteria of cognitive verification.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">മനുഷ്യന്റെ അറിവിന്റെ സ്വഭാവം, ഉറവിടങ്ങൾ, പരിധികൾ, സാധുത എന്നിവയെക്കുറിച്ച് പഠിക്കുന്ന പാശ്ചാത്യ തത്ത്വചിന്താ ശാഖയാണ് ജ്ഞാനമീമാംസ (Epistemology).</span> സൗന്ദര്യശാസ്ത്രം "സൗന്ദര്യം എന്താണ്?" എന്നും, എത്തിക്സ് "നന്മ എന്താണ്?" എന്നും ചോദിക്കുമ്പോൾ, <span class="hl-yellow">ജ്ഞാനമീമാംസയുടെ കേന്ദ്ര ചോദ്യം ഇതാണ്: "നമുക്ക് എന്തൊക്കെ അറിയാൻ കഴിയും, നാം അത് എങ്ങനെ അറിയുന്നു?"</span></p>
+          <p>പ്ലേറ്റോയുടെ കാലം മുതൽ അറിവിനെ <span class="hl-yellow">ന്യായീകരിക്കപ്പെട്ട യഥാർത്ഥ വിശ്വാസം (Justified True Belief - JTB)</span> എന്നാണ് വിളിച്ചിരുന്നത്: ഒരു കാര്യം സത്യമായിരിക്കണം, നാം അത് വിശ്വസിക്കണം, അതിന് ശക്തമായ ന്യായീകരണം ഉണ്ടായിരിക്കണം. എന്നാൽ <span class="hl-green">1963-ൽ</span> <span class="hl-green">എഡ്മണ്ട് ഗെറ്റിയർ</span> ഇതിലെ പോരായ്മകൾ ചൂണ്ടിക്കാണിച്ചുകൊണ്ട് ആധുനിക അന്വേഷണങ്ങൾക്ക് തുടക്കമിട്ടു.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Two Great Rival Traditions</span>
+          <span class="section-title-ml">(പാശ്ചാത്യ തത്ത്വചിന്തയിലെ രണ്ട് പ്രധാന ധാരകൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Modern Western epistemology has historically been shaped by the monumental contest between <span class="hl-yellow">Rationalism (Continental Reason)</span> and <span class="hl-yellow">Empiricism (British Sensory Experience)</span>, eventually culminating in Immanuel Kant's critical synthesis.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ശുദ്ധമായ ബുദ്ധിക്ക് മുൻഗണന നൽകിയ <span class="hl-yellow">റാഷണലിസവും (Rationalism)</span>, ഇന്ദ്രിയാനുഭവങ്ങൾക്ക് മുൻഗണന നൽകിയ <span class="hl-yellow">എംപിരിസിസവും (Empiricism)</span> തമ്മിലുള്ള തർക്കമാണ് പാശ്ചാത്യ ജ്ഞാനമീമാംസയെ വളർത്തിയത്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 11: Western Epistemology</span>
+      <span>Page 1</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 11</span>
+        <span class="top-bar-right">Page 2 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Rationalism: The Primacy of Reason and Innate Ideas</span>
+          <span class="section-title-ml">(റാഷണലിസം: യുക്തിയുടെയും ജന്മസിദ്ധ ആശയങ്ങളുടെയും പ്രാധാന്യം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Rationalism holds that reason and deductive intellect are the primary, infallible sources of knowledge, completely superior to misleading sensory experience.</span> Championed by Continental thinkers including <span class="hl-green">René Descartes (1596–1650)</span>, <span class="hl-green">Baruch Spinoza (1632–1677)</span>, and <span class="hl-green">Gottfried Wilhelm Leibniz (1646–1716)</span>, rationalists asserted that:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>Fundamental truths about reality can be known <span class="hl-yellow">A Priori</span> (prior to, and independently of, sensory experience).</li>
+            <li>Humans possess <span class="hl-yellow">Innate Ideas</span> (such as principles of geometry, logical axioms, and the idea of infinity/God) placed in the intellect from birth.</li>
+            <li>Sensory perception is unstable, relative, and deceptive, incapable of yielding universal necessity.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ഇന്ദ്രിയാനുഭവങ്ങളേക്കാൾ ഉപരിയായി മനുഷ്യന്റെ യുക്തിചിന്തയാണ് ശരിയായ അറിവിന്റെ ഏക ഉറവിടമെന്ന് വാദിക്കുന്ന സിദ്ധാന്തമാണ് റാഷണലിസം.</span> <span class="hl-green">റെനെ ദെക്കാർത്ത്</span>, <span class="hl-green">സ്പിനോസ</span>, <span class="hl-green">ലൈബ്നിറ്റ്സ്</span> എന്നിവരായിരുന്നു ഇതിന്റെ പ്രമുഖ വക്താക്കൾ:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>അനുഭവങ്ങൾക്ക് മുൻപ് തന്നെ അറിയാൻ കഴിയുന്ന അറിവുകളാണ് (<span class="hl-yellow">A Priori</span>) ഏറ്റവും ശ്രേഷ്ഠമായത്.</li>
+            <li>ജനിക്കുമ്പോൾ തന്നെ ദൈവം മനസ്സിൽ നിക്ഷേപിച്ച <span class="hl-yellow">ജന്മസിദ്ധമായ ആശയങ്ങൾ (Innate Ideas)</span> മനുഷ്യനുണ്ട് (ഗണിത തത്ത്വങ്ങൾ, യുക്തിനിയമങ്ങൾ).</li>
+            <li>ഇന്ദ്രിയങ്ങൾ നമ്മെ പലപ്പോഴും കബളിപ്പിക്കുന്നതിനാൽ ശാശ്വത സത്യങ്ങൾ കണ്ടെത്താൻ ഇന്ദ്രിയങ്ങൾക്ക് കഴിയില്ല.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">A Priori vs. A Posteriori Knowledge</span>
+          <span class="section-title-ml">(എ പ്രയോറി - എ പോസ്റ്റീരിയറി അറിവുകൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">A Priori:</span> Knowledge justified independently of experience (e.g., "All bachelors are unmarried", 2 + 2 = 4).<br/>
+          <span class="hl-yellow">A Posteriori:</span> Empirical knowledge verified through sensory observation (e.g., "Water boils at 100°C").</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">എ പ്രയോറി (A Priori):</span> അനുഭവങ്ങൾക്ക് മുൻപുള്ള യുക്തിപരമായ അറിവ് (ഉദാ: 2 + 2 = 4).<br/>
+          <span class="hl-yellow">എ പോസ്റ്റീരിയറി (A Posteriori):</span> കണ്ട് അനുഭവിച്ചറിഞ്ഞ ബാഹ്യ ശാസ്ത്രീയ അറിവ് (ഉദാ: വെള്ളം 100 ഡിഗ്രിയിൽ തിളയ്ക്കുന്നു).</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 11: Western Epistemology</span>
+      <span>Page 2</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 11</span>
+        <span class="top-bar-right">Page 3 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Empiricism: John Locke and the Tabula Rasa</span>
+          <span class="section-title-ml">(എംപിരിസിസം: ജോൺ ലോക്കും ടാബുല റാസയും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Empiricism is the doctrine that all human knowledge originates exclusively from sensory experience.</span> The thinker <span class="hl-yellow">most closely associated with empiricism is English philosopher John Locke (1632–1704)</span>. In his monumental work, <span class="hl-green">"An Essay Concerning Human Understanding" (1690)</span>, Locke launched a devastating critique against Cartesian innate ideas.</p>
+          <p>Locke asserted that <span class="hl-yellow">at birth, the human mind is like a blank slate (Tabula Rasa) or white sheet of paper, totally devoid of all characters, ideas, or principles.</span> All the materials of reason and knowledge enter the mind from experience through two primary fountains:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-green">1. Sensation:</span> External perception of physical objects via our sensory organs (sight, sound, taste, touch, smell).</li>
+            <li><span class="hl-green">2. Reflection:</span> Internal perception of the mind's own internal operations (thinking, doubting, willing, believing).</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">മനുഷ്യന്റെ എല്ലാ അറിവുകളും ഇന്ദ്രിയാനുഭവങ്ങളിൽ നിന്ന് മാത്രമാണ് ഉണ്ടാകുന്നതെന്ന വാദമാണ് എംപിരിസിസം (Empiricism).</span> ഇതിന്റെ പ്രമുഖ വക്താവ് പ്രശസ്ത ഇംഗ്ലീഷ് തത്ത്വചിന്തകനായ <span class="hl-green">ജോൺ ലോക്ക് (1632–1704)</span> ആണ്. 1690-ൽ അദ്ദേഹം പ്രസിദ്ധീകരിച്ച ഗ്രന്ഥത്തിലൂടെ ജന്മസിദ്ധ ആശയങ്ങളെ അദ്ദേഹം നിരാകരിച്ചു.</p>
+          <p><span class="hl-yellow">ജനിക്കുമ്പോൾ മനുഷ്യന്റെ മനസ്സ് ഒന്നുമെഴുതാത്ത ഒരു വെളുത്ത സ്ലേറ്റ് പോലെയാണ് (ടേബുല റാസ / Tabula Rasa).</span> യാതൊരു ആശയങ്ങളും ജന്മനാ ഉള്ളിലില്ല. അനുഭവങ്ങൾ മാത്രമാണ് അതിൽ അറിവുകൾ എഴുതിച്ചേർക്കുന്നത്. രണ്ട് വഴികളിലൂടെയാണ് അറിവ് മനസ്സിലെത്തുന്നത്:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-green">1. സെൻസേഷൻ (ഇന്ദ്രിയാനുഭവം):</span> കാഴ്ച, കേൾവി, സ്പർശനം എന്നിവയിലൂടെ പുറംലോകത്തെ അറിയൽ.</li>
+            <li><span class="hl-green">2. റിഫ്ലക്ഷൻ (ചിന്താപരമായ വിചാരം):</span> മനസ്സിന്റെ ആന്തരിക ചിന്തകളെയും ഓർമ്മകളെയും തിരിച്ചറിയൽ.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Primary vs. Secondary Qualities</span>
+          <span class="section-title-ml">(പ്രൈമറി - സെക്കൻഡറി ഗുണങ്ങൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Locke distinguished <span class="hl-yellow">Primary Qualities</span> (inseparable from the object: shape, size, solidity, motion) from <span class="hl-yellow">Secondary Qualities</span> (powers in objects producing subjective sensations in observers: color, taste, sound, scent).</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>വസ്തുവിൽ തന്നെയുള്ള വസ്തുനിഷ്ഠ ഗുണങ്ങളെ <span class="hl-yellow">പ്രൈമറി ഗുണങ്ങൾ</span> (വലുപ്പം, ആകൃതി) എന്നും, മനുഷ്യന്റെ മനസ്സിൽ തോന്നുന്ന വ്യക്തിനിഷ്ഠ അനുഭവങ്ങളെ <span class="hl-yellow">സെക്കൻഡറി ഗുണങ്ങൾ</span> (നിറം, രുചി, മണം) എന്നും ലോക്ക് തരംതിരിച്ചു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 11: Western Epistemology</span>
+      <span>Page 3</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 11</span>
+        <span class="top-bar-right">Page 4 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Evolution of Empiricism: Berkeley and David Hume</span>
+          <span class="section-title-ml">(എംപിരിസിസത്തിന്റെ വികാസം: ബെർക്ക്‌ലിയും ഡേവിഡ് ഹ്യൂമും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Empiricism progressed through radical stages:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-green">George Berkeley (1685–1753):</span> Subjective Idealism (*Esse est percipi* — to be is to be perceived). Denied the independent existence of material matter; physical things are collections of perceived ideas maintained by God.</li>
+            <li><span class="hl-green">David Hume (1711–1776):</span> Radical Scepticism. Formulated "Hume's Fork" (Relations of Ideas vs. Matters of Fact). Hume argued that causality is never directly perceived; it is merely an animal psychological habit of expecting constant conjunction, undermining the rational certainty of scientific induction.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>എംപിരിസിസം കൂടുതൽ ആഴത്തിലേക്ക് വികസിച്ച ഘട്ടങ്ങൾ:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-green">ജോർജ്ജ് ബെർക്ക്‌ലി (1685–1753):</span> ഭൗതിക വസ്തുക്കൾക്ക് സ്വതന്ത്ര നിലനിൽപ്പില്ലെന്നും കാണപ്പെടുന്ന ആശയങ്ങൾ മാത്രമാണ് യാഥാർത്ഥ്യമെന്നും അദ്ദേഹം വാദിച്ചു (*Esse est percipi*).</li>
+            <li><span class="hl-green">ഡേവിഡ് ഹ്യൂം (1711–1776):</span> തീവ്ര സംശയവാദം. കാര്യകാരണ ബന്ധം പ്രകൃതിയിലെ നിയമമല്ലെന്നും, മനുഷ്യന്റെ മനസ്സിന്റെ ശീലം മാത്രമാണെന്നും വാദിച്ചുകൊണ്ട് ശാസ്ത്രീയ നിഗമനങ്ങളെപ്പോലും അദ്ദേഹം ചോദ്യം ചെയ്തു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Immanuel Kant's Synthesis: The Copernican Revolution</span>
+          <span class="section-title-ml">(ഇമ്മാനുവൽ കാന്റിന്റെ സമന്വയം: കോപ്പർനിക്കൻ വിപ്ലവം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-green">Immanuel Kant (1724–1804)</span> resolved the clash between Rationalism and Empiricism in <em>Critique of Pure Reason (1781)</em>: <span class="hl-yellow">"Thoughts without content are empty, intuitions without concepts are blind."</span> Sensory experience provides raw empirical content, but the human mind shapes it through innate categories of the understanding (space, time, causality).</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-green">ഇമ്മാനുവൽ കാന്റ് (1724–1804)</span> ഈ രണ്ട് വാദങ്ങളെയും സമന്വയിപ്പിച്ചു: <span class="hl-yellow">"ഉള്ളടക്കമില്ലാത്ത ചിന്തകൾ ശൂന്യമാണ്, സങ്കൽപ്പങ്ങളില്ലാത്ത ഇന്ദ്രിയാനുഭവങ്ങൾ അന്ധമാണ്."</span> ഇന്ദ്രിയങ്ങൾ വിവരങ്ങൾ തരുമ്പോൾ മനസ്സ് അതിനെ ക്രമീകരിക്കുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 11: Western Epistemology</span>
+      <span>Page 4</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 11</span>
+        <span class="top-bar-right">Page 5 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Theories in Philosophy of Mind: 1. Behaviourism</span>
+          <span class="section-title-ml">(മനസ്സിന്റെ സിദ്ധാന്തങ്ങൾ: 1. ബിഹേവിയറിസം / പെരുമാറ്റവാദം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Philosophical Behaviourism arose in the mid-twentieth century as a radical materialist rejection of Cartesian dualism.</span> Articulated by Oxford philosopher <span class="hl-green">Gilbert Ryle</span> in <em>The Concept of Mind (1949)</em> and psychologist <span class="hl-green">B.F. Skinner</span>, Behaviourism asserts that:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>There is no private, hidden spiritual substance or <span class="hl-yellow">"Ghost in the Machine"</span>.</li>
+            <li><span class="hl-yellow">Mental states are entirely reducible to observable bodily behavior and behavioral dispositions.</span></li>
+            <li>To say "Devadatta is in pain" does not denote a mysterious inner ghostly ache; it simply means Devadatta is wincing, shouting, weeping, or disposed to take an aspirin.</li>
+            <li>To say "Smith believes it will rain" means Smith carries an umbrella and closes his windows.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">ദെക്കാർത്തിന്റെ ഡ്യുവലിസത്തെ പൂർണ്ണമായി നിരാകരിച്ചുകൊണ്ട് ഇരുപതാം നൂറ്റാണ്ടിൽ ഉയർന്നുവന്ന ഭൗതികവാദ സിദ്ധാന്തമാണ് ബിഹേവിയറിസം (Behaviourism).</span> <span class="hl-green">ഗിൽബർട്ട് റൈൽ</span>, <span class="hl-green">ബി.എഫ്. സ്കിന്നർ</span> എന്നിവർ ഇതിനെ നയിച്ചു:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>ശരീരത്തിനുള്ളിൽ അദൃശ്യമായൊരു ആത്മാവ് അഥവാ <span class="hl-yellow">"യന്ത്രത്തിലെ പ്രേതം" (Ghost in the Machine)</span> ഇല്ല.</li>
+            <li><span class="hl-yellow">മനസ്സും ചിന്തയും എന്നത് പുറമേക്ക് കാണുന്ന ബാഹ്യമായ പെരുമാറ്റങ്ങൾ മാത്രമാണ്.</span></li>
+            <li>"രാഹുലിന് വേദനിക്കുന്നു" എന്ന് പറഞ്ഞാൽ അതിനർത്ഥം അവൻ കരയുന്നു, വിരൽ അമർത്തിപ്പിടിക്കുന്നു എന്നീ ബാഹ്യ പെരുമാറ്റങ്ങൾ പ്രകടിപ്പിക്കുന്നു എന്ന് മാത്രമാണ്.</li>
+            <li>"മഴ പെയ്യുമെന്ന് വിശ്വസിക്കുന്നു" എന്നാൽ കുടയെടുത്ത് പുറപ്പെടുന്നു എന്ന പെരുമാറ്റമാണ്.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Fatal Flaws of Behaviourism</span>
+          <span class="section-title-ml">(ബിഹേവിയറിസത്തിന്റെ പോരായ്മകൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Behaviourism failed because it ignored <span class="hl-yellow">Qualia (subjective inner feeling)</span>: an actor can perfectly simulate agony without feeling pain, and a stoic soldier can suppress all outward behavior while enduring excruciating agony.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഒരു നടന് വേദനയില്ലാതെ വേദന അഭിനയിക്കാനും, ഒരു ധീരനായ സൈനികന് അതികഠിനമായ വേദന പുറമേക്ക് കാട്ടാതെ മനസ്സിലൊതുക്കാനും കഴിയും; അതിനാൽ പെരുമാറ്റം മാത്രമല്ല മനസ്സ് എന്ന് തെളിഞ്ഞു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 11: Western Epistemology</span>
+      <span>Page 5</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 11</span>
+        <span class="top-bar-right">Page 6 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Theories in Philosophy of Mind: 2. Identity Theory</span>
+          <span class="section-title-ml">(മനസ്സിന്റെ സിദ്ധാന്തങ്ങൾ: 2. ഐഡന്റിറ്റി തിയറി / തന്മയത്വ വാദം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p><span class="hl-yellow">Identity Theory in philosophy of mind claims that mental states are strictly identical to physical brain states.</span> It is also universally known as <span class="hl-yellow">Mind–Brain Identity Theory</span> or <span class="hl-yellow">Type Physicalism</span>.</p>
+          <p>Formulated in the late 1950s by Australian materialist philosophers <span class="hl-green">U.T. Place (1956)</span>, <span class="hl-green">Herbert Feigl (1958)</span>, and <span class="hl-yellow">most closely associated with J.J.C. Smart (1959)</span> in his landmark paper <em>"Sensations and Brain Processes"</em>. Identity theory asserts that:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>The sensation of pain is not merely correlated with neurological activity; <span class="hl-yellow">pain IS the firing of C-fibers in the physical brain.</span></li>
+            <li>Just as science discovered that "Water IS H2O", "Lightning IS electrical discharge", and "The Morning Star IS the Evening Star (Venus)", scientific neuroscience will discover that conscious sensations are literally neurochemical neural patterns.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p><span class="hl-yellow">മാനസികാവസ്ഥകൾ എന്നത് തലച്ചോറിലെ ഭൗതികാവസ്ഥകൾക്ക് പൂർണ്ണമായും തുല്യമാണെന്ന് വാദിക്കുന്ന സിദ്ധാന്തമാണ് ഐഡന്റിറ്റി തിയറി (Identity Theory).</span> ഇത് <span class="hl-yellow">മൈൻഡ്-ബ്രെയിൻ ഐഡന്റിറ്റി തിയറി (Mind–Brain Identity Theory)</span> എന്നും അറിയപ്പെടുന്നു.</p>
+          <p>1950-കളിൽ <span class="hl-green">യു.ടി. പ്ലേസ്</span>, <span class="hl-green">ഹെർബർട്ട് ഫീഗൽ</span>, കൂടാതെ ഈ സിദ്ധാന്തവുമായി ഏറ്റവും കൂടുതൽ ബന്ധപ്പെട്ടിരിക്കുന്ന <span class="hl-green">ജെ.ജെ.സി. സ്മാർട്ട് (J. J. C. Smart - 1959)</span> എന്നിവരാണ് ഇത് വികസിപ്പിച്ചത്:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>വേദന എന്ന മാനസികാവസ്ഥ തലച്ചോറിലെ <span class="hl-yellow">സി-ഫൈബറുകളുടെ (C-fibers) ഉത്തേജനത്തിന് തുല്യമാണ്.</span></li>
+            <li>"വെള്ളം എന്നാൽ H2O ആണ്", "മിന്നൽ എന്നാൽ വൈദ്യുത പ്രവാഹമാണ്" എന്ന് ശാസ്ത്രം തെളിയിച്ചതുപോലെ, ചിന്തയും ബോധവും എന്നത് തലച്ചോറിലെ ന്യൂറോണുകളുടെ പ്രവർത്തനമാണെന്ന് ശാസ്ത്രം വ്യക്തമാക്കുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Ontological Reductionism</span>
+          <span class="section-title-ml">(ഓന്റോളജിക്കൽ റിഡക്ഷനിസം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Identity theory eliminates Cartesian dualism by demonstrating that the mind is nothing above and beyond the physical biological brain.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>മനസ്സ് എന്നത് തലച്ചോറിന് പുറത്തുള്ള അദൃശ്യ വസ്തുവല്ലെന്നും, അത് തലച്ചോർ തന്നെയാണ് എന്നും വ്യക്തമാക്കിക്കൊണ്ട് ഇത് ഡ്യുവലിസത്തെ ഇല്ലാതാക്കുന്നു.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 11: Western Epistemology</span>
+      <span>Page 6</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 11</span>
+        <span class="top-bar-right">Page 7 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Fatal Flaw of Identity Theory: Biological Chauvinism</span>
+          <span class="section-title-ml">(ഐഡന്റിറ്റി തിയറിയുടെ വലിയ പോരായ്മ: ബയോളജിക്കൽ ഷോവനിസം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Despite its materialist appeal, Mind-Brain Identity Theory collapsed under a devastating theoretical counter-argument formulated by <span class="hl-green">Hilary Putnam (1967)</span>: <span class="hl-yellow">Biological Chauvinism</span>.</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>If pain is strictly identical to the human neurological firing of C-fibers, then an octopus, an alien organism based on silicon, or an artificial intelligence can <span class="hl-yellow">never experience pain or possess a mind</span>, simply because they lack human mammalian C-fibers!</li>
+            <li>Yet, an octopus clearly feels distress when wounded, despite possessing a radically disparate decentralized nervous system.</li>
+          </ul>
+          <p>Identity Theory unfairly tied the universal concept of mind to the idiosyncratic, accidental biology of terrestrial mammals. This catastrophic limitation compelled philosophers to develop <span class="hl-yellow">Functionalism</span>.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഐഡന്റിറ്റി തിയറിക്കെതിരെ <span class="hl-green">ഹിലരി പുട്ട്നാം (1967)</span> ഉന്നയിച്ച അതിശക്തമായ വിമർശനമാണ് <span class="hl-yellow">ബയോളജിക്കൽ ഷോവനിസം (Biological Chauvinism)</span>:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li>വേദന എന്നാൽ മനുഷ്യന്റെ തലച്ചോറിലെ സി-ഫൈബർ നാഡികൾ മിടിക്കുന്നതാണെന്ന് ശഠിച്ചാൽ, മനുഷ്യന്റെ തലച്ചോറില്ലാത്ത ഒരു നീരാളിക്കോ (Octopus), അന്യഗ്രഹ ജീവിക്കോ, കമ്പ്യൂട്ടറിനോ <span class="hl-yellow">ഒരിക്കലും വേദനയോ മനസ്സോ ഉണ്ടാകില്ലെന്ന് പറയേണ്ടിവരും!</span></li>
+            <li>എന്നാൽ നീരാളിക്ക് പരിക്കേറ്റാൽ അത് വ്യക്തമായി വേദന പ്രകടിപ്പിക്കുന്നുണ്ട്.</li>
+          </ul>
+          <p>മനസ്സിനെ മനുഷ്യന്റെ രക്തത്തിലും കോശങ്ങളിലും മാത്രം തളച്ചിട്ട ഈ അബദ്ധമാണ് ചിന്തകന്മാരെ <span class="hl-yellow">ഫങ്ഷണലിസത്തിലേക്ക്</span> നയിച്ചത്.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Implication for Artificial Intelligence</span>
+          <span class="section-title-ml">(നിർമ്മിത ബുദ്ധിക്കുള്ള വെല്ലുവിളി)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Identity theory dogmatically banned AI from ever achieving true thought. If mental states require wet carbon neurons, synthetic silicon processors are eternally disqualified.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഐഡന്റിറ്റി തിയറി സത്യമാണെങ്കിൽ കമ്പ്യൂട്ടറുകൾക്ക് ഒരിക്കലും മനസ്സുണ്ടാകില്ല; കാരണം അവയിൽ തലച്ചോറിലെ ജൈവ നാഡികൾ ഇല്ലല്ലോ.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 11: Western Epistemology</span>
+      <span>Page 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 11</span>
+        <span class="top-bar-right">Page 8 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Theories of Truth in Epistemology</span>
+          <span class="section-title-ml">(ജ്ഞാനമീമാംസയിലെ സത്യത്തെക്കുറിച്ചുള്ള സിദ്ധാന്തങ്ങൾ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Western epistemology identifies three primary theories regarding what makes a belief true:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. Correspondence Theory:</span> A proposition is true if it accurately corresponds to an objective fact or state of affairs in the real world (e.g., "The cat is on the mat" is true if and only if there actually is a physical cat on the physical mat). Classical realists, Aristotle, Russell.</li>
+            <li><span class="hl-yellow">2. Coherence Theory:</span> A proposition is true if it harmoniously coheres and fits without logical contradiction within an interconnected web of existing accepted beliefs. Idealists, Spinoza, Bradley.</li>
+            <li><span class="hl-yellow">3. Pragmatic Theory:</span> A proposition is true if believing and acting upon it works successfully and fruitfully in practical human experience. Formulated by <span class="hl-green">William James</span>, <span class="hl-green">Charles Sanders Peirce</span>, and <span class="hl-green">John Dewey</span>.</li>
+          </ul>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഒരു അറിവ് സത്യമാണെന്ന് ഉറപ്പിക്കുന്ന മൂന്ന് പ്രധാന സിദ്ധാന്തങ്ങൾ:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+            <li><span class="hl-yellow">1. കറസ്പോണ്ടൻസ് തിയറി:</span> പറയുന്ന കാര്യം യഥാർത്ഥ ലോകത്തിലെ വസ്തുതയുമായി കൃത്യമായി ഒത്തുപോകുമ്പോഴാണ് അത് സത്യമാകുന്നത് (ഉദാ: "പൂച്ച പായയിലുണ്ട്" എന്നത് അവിടെ യഥാർത്ഥത്തിൽ പൂച്ചയുണ്ടെങ്കിലേ സത്യമാകൂ).</li>
+            <li><span class="hl-yellow">2. കോഹറൻസ് തിയറി:</span> നമ്മുടെ മറ്റ് അറിവുകളുമായി പരസ്പര വിരുദ്ധതയില്ലാതെ യോജിച്ചുപോകുന്നതാണ് സത്യം.</li>
+            <li><span class="hl-yellow">3. പ്രാഗ്മാറ്റിക് തിയറി:</span> ജീവിതത്തിൽ പ്രായോഗികമായി ഫലം ചെയ്യുന്നതും പ്രവർത്തിക്കുന്നതുമായ അറിവാണ് സത്യം (<span class="hl-green">വില്യം ജെയിംസ്</span>, <span class="hl-green">ജോൺ ഡ്യൂയി</span>).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Verificationism in AI Knowledge Bases</span>
+          <span class="section-title-ml">(AI-യിലെ വിവരങ്ങൾ ഉറപ്പുവരുത്തൽ)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>AI fact-checking and knowledge retrieval rely on Correspondence (verifying against live web sources) and Coherence (detecting internal semantic contradictions in generated text).</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>AI നൽകുന്ന വിവരങ്ങൾ ശരിയാണോ എന്ന് പരിശോധിക്കുന്നത് പുറംലോകത്തെ വസ്തുതകൾ പരിശോധിച്ചും (കറസ്പോണ്ടൻസ്), വാചകങ്ങളിലെ പരസ്പര വിരുദ്ധതകൾ ഒഴിവാക്കിയുമാണ് (കോഹറൻസ്).</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 11: Western Epistemology</span>
+      <span>Page 8</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 11</span>
+        <span class="top-bar-right">Page 9 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Problem of Induction and Machine Learning</span>
+          <span class="section-title-ml">(ഇൻഡക്ഷൻ പ്രശ്നവും ആധുനിക മെഷീൻ ലേണിംഗും)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Modern Machine Learning is essentially an automated implementation of British Empiricism: feeding millions of training examples (*sensory data*) into a neutral network (*tabula rasa*) to extract statistical regularities.</p>
+          <p>However, machine learning inherits <span class="hl-green">David Hume's famous Problem of Induction</span>: No matter how many millions of white swans an AI observes in historical training data, <span class="hl-yellow">it can never logically guarantee that the next swan will not be black</span>. When a self-driving car encounters a novel, unprecedented scenario (an "out-of-distribution" event), empirical induction offers no necessary deductive certainty, leading to catastrophic failure.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ഇന്നത്തെ മെഷീൻ ലേണിംഗ് എന്നത് ജോൺ ലോക്കിന്റെ ടേബുല റാസയുടെ സാങ്കേതിക രൂപമാണ്: ഒന്നുമറിയാത്ത ഒരു അൽഗോരിതത്തിലേക്ക് ലക്ഷക്കണക്കിന് ചിത്രങ്ങളും വിവരങ്ങളും നൽകി അതിനെ പഠിപ്പിക്കുന്നു.</p>
+          <p>എന്നാൽ ഇത് <span class="hl-green">ഡേവിഡ് ഹ്യൂം ഉന്നയിച്ച ഇൻഡക്ഷൻ പ്രശ്നത്തെ (Problem of Induction)</span> നേരിടുന്നു: കോടിക്കണക്കിന് വെളുത്ത അരയന്നങ്ങളെ കണ്ടതുകൊണ്ട് മാത്രം അടുത്തതായി കാണുന്ന അരയന്നം കറുത്തതല്ലെന്ന് ഉറപ്പിക്കാൻ കഴിയില്ല. മുമ്പ് കാണാത്ത പുതിയൊരു സാഹചര്യം വരുമ്പോൾ സ്വയം ഓടുന്ന ഡ്രൈവറില്ലാ കാറുകൾ പെട്ടെന്ന് അപകടത്തിൽപ്പെടുന്നത് ഈ ഇൻഡക്ഷൻ പരിമിതി മൂലമാണ്.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">The Hybrid AI Necessity</span>
+          <span class="section-title-ml">(ഹൈബ്രിഡ് AI-യുടെ അനിവാര്യത)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>Just as Kant proved that pure empiricism fails without innate rational categories, modern AI increasingly demands <span class="hl-yellow">Neurosymbolic AI</span>: marrying empirical deep learning with rationalist deductive logic constraints.</p>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>ശുദ്ധമായ അനുഭവം മാത്രം പോരെന്നും യുക്തിയുടെ ചട്ടക്കൂട് വേണമെന്നും കാന്റ് പറഞ്ഞതുപോലെ, ആധുനിക AI-യിലും ഡാറ്റാ പഠനത്തോടൊപ്പം കർക്കശമായ യുക്തിനിയമങ്ങളും ഉൾച്ചേർക്കേണ്ടത് അത്യന്താപേക്ഷിതമാണ്.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 11: Western Epistemology</span>
+      <span>Page 9</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 11</span>
+        <span class="top-bar-right">Page 10 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Comparative Synthesis: Behaviourism vs. Identity Theory vs. Functionalism</span>
+          <span class="section-title-ml">(താരതമ്യ പട്ടിക: ബിഹേവിയറിസം, ഐഡന്റിറ്റി തിയറി, ഫങ്ഷണലിസം)</span>
+        </div>
+        <div class="block-en">
+          <div class="block-en-label">English Explanation</div>
+          <p>The philosophical progression of 20th-century theories of mind:</p>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 8.5pt;">
+            <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+              <th style="padding: 5px; text-align: left;">Theory</th>
+              <th style="padding: 5px; text-align: left;">Core Claim</th>
+              <th style="padding: 5px; text-align: left;">Primary Thinkers</th>
+              <th style="padding: 5px; text-align: left;">Stance on AI Minds</th>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Behaviourism</td>
+              <td style="padding: 5px;">Mental states are patterns of external behavior and dispositions.</td>
+              <td style="padding: 5px;">Gilbert Ryle, B.F. Skinner</td>
+              <td style="padding: 5px;">Yes, if it mimics behavior (Turing Test passes).</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Identity Theory</td>
+              <td style="padding: 5px;">Mental states are identical to physical biological brain states.</td>
+              <td style="padding: 5px;">J.J.C. Smart, U.T. Place</td>
+              <td style="padding: 5px;">Strictly NO (Silicon chips lack human C-fibers).</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 5px; font-weight: 600;">Functionalism</td>
+              <td style="padding: 5px;">Mental states are causal functional roles independent of substrate.</td>
+              <td style="padding: 5px;">Hilary Putnam, Jerry Fodor</td>
+              <td style="padding: 5px;">YES (Multiple realizability allows silicon minds).</td>
+            </tr>
+          </table>
+        </div>
+        <div class="block-ml">
+          <div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+          <p>പ്രധാന സിദ്ധാന്തങ്ങളുടെ സംഗ്രഹം:</p>
+          <ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45; font-size: 8.5pt;">
+            <li><strong>ബിഹേവിയറിസം:</strong> മനസ്സ് എന്നത് ബാഹ്യ പെരുമാറ്റം മാത്രമാണ് (<span class="hl-green">റൈൽ, സ്കിന്നർ</span>). യന്ത്രം മനുഷ്യനെപ്പോലെ പെരുമാറിയാൽ അതിന് മനസ്സുണ്ടെന്ന് അംഗീകരിക്കുന്നു.</li>
+            <li><strong>ഐഡന്റിറ്റി തിയറി:</strong> മനസ്സ് എന്നാൽ തലച്ചോറിന്റെ ജൈവിക കോശങ്ങളാണ് (<span class="hl-green">ജെ.ജെ.സി. സ്മാർട്ട്</span>). സിലിക്കൺ യന്ത്രങ്ങളിൽ തലച്ചോറിലെ കോശങ്ങളില്ലാത്തതിനാൽ AI-ക്ക് മനസ്സുണ്ടാകില്ലെന്ന് ശഠിക്കുന്നു.</li>
+            <li><strong>ഫങ്ഷണലിസം:</strong> മനസ്സ് എന്നത് പ്രവർത്തനങ്ങളിലെ കാരണ-കാര്യ ബന്ധമാണ് (<span class="hl-green">പുട്ട്നാം</span>). ചിപ്പ് ഏതായാലും പ്രവർത്തനം ഒന്നാണെങ്കിൽ AI-ക്കും മനസ്സുണ്ടെന്ന് സമ്മതിക്കുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 11: Western Epistemology</span>
+      <span>Page 10</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 11</span>
+        <span class="top-bar-right">Page 11 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">University Academic Exercises: Knock Your Brain</span>
+          <span class="section-title-ml">(യൂണിവേഴ്സിറ്റി Curriculum പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ)</span>
+        </div>
+        <div class="block-en" style="font-size: 8.5pt;">
+          <p><strong>1. Which of the following questions is central to epistemology?</strong><br/>
+          (a) What is beauty? &nbsp; (b) What is justice? &nbsp; (c) What can we know and how do we know it? &nbsp; (d) What is the good life?<br/>
+          <em>Answer:</em> <span class="hl-yellow">(c) What can we know and how do we know it?</span></p>
+          <p><strong>2. Which philosopher is most closely associated with empiricism?</strong><br/>
+          (a) René Descartes &nbsp; (b) Immanuel Kant &nbsp; (c) John Locke &nbsp; (d) G. W. F. Hegel<br/>
+          <em>Answer:</em> <span class="hl-green">(c) John Locke</span></p>
+          <p><strong>3. According to John Locke, the human mind at birth is like:</strong><br/>
+          (a) A mirror &nbsp; (b) A blank slate (tabula rasa) &nbsp; (c) A rational structure &nbsp; (d) A divine spark<br/>
+          <em>Answer:</em> <span class="hl-yellow">(b) A blank slate (tabula rasa)</span></p>
+          <p><strong>4. Identity Theory in philosophy of mind claims that:</strong><br/>
+          (a) Mental states are patterns of behavior &nbsp; (b) Mental states are identical to brain states &nbsp; (c) Mental states are illusions &nbsp; (d) Mental states are non-physical substances<br/>
+          <em>Answer:</em> <span class="hl-yellow">(b) Mental states are identical to brain states</span></p>
+          <p><strong>5. Identity Theory is also known as:</strong><br/>
+          (a) Dualism &nbsp; (b) Functionalism &nbsp; (c) Mind–Brain Identity Theory &nbsp; (d) Logical Positivism<br/>
+          <em>Answer:</em> <span class="hl-yellow">(c) Mind–Brain Identity Theory</span></p>
+          <p><strong>6. Which philosopher is most closely associated with the development of Identity Theory?</strong><br/>
+          (a) Gilbert Ryle &nbsp; (b) J. J. C. Smart &nbsp; (c) Hilary Putnam &nbsp; (d) Daniel Dennett<br/>
+          <em>Answer:</em> <span class="hl-green">(b) J. J. C. Smart</span></p>
+        </div>
+        <div class="block-ml" style="font-size: 8.5pt;">
+          <p><strong>മലയാളം സംഗ്രഹം & Curriculum ഉത്തരങ്ങൾ:</strong><br/>
+          1. ജ്ഞാനമീമാംസയിലെ കേന്ദ്ര ചോദ്യം: <span class="hl-yellow">നമുക്ക് എന്തൊക്കെ അറിയാൻ കഴിയും, നാം അത് എങ്ങനെ അറിയുന്നു? (What can we know and how do we know it?)</span>.<br/>
+          2. എംപിരിസിസവുമായി ഏറ്റവും കൂടുതൽ ബന്ധപ്പെട്ടിരിക്കുന്ന തത്ത്വചിന്തകൻ: <span class="hl-green">ജോൺ ലോക്ക് (John Locke)</span>.<br/>
+          3. ജോൺ ലോക്കിന്റെ അഭിപ്രായത്തിൽ ജനിക്കുമ്പോൾ മനസ്സ്: <span class="hl-yellow">വെളുത്ത സ്ലേറ്റ് പോലെയാണ് (ടാബുല റാസ - Tabula rasa)</span>.<br/>
+          4. ഐഡന്റിറ്റി തിയറിയുടെ വാദം: <span class="hl-yellow">മാനസികാവസ്ഥകൾ തലച്ചോറിലെ അവസ്ഥകൾക്ക് തുല്യമാണ് (Mental states are identical to brain states)</span>.<br/>
+          5. ഐഡന്റിറ്റി തിയറിയുടെ മറ്റൊരു പേര്: <span class="hl-yellow">മൈൻഡ്-ബ്രെയിൻ ഐഡന്റിറ്റി തിയറി (Mind–Brain Identity Theory)</span>.<br/>
+          6. ഐഡന്റിറ്റി തിയറിയുമായി ഏറ്റവും കൂടുതൽ ബന്ധപ്പെട്ട ചിന്തകൻ: <span class="hl-green">ജെ. ജെ. സി. സ്മാർട്ട് (J. J. C. Smart)</span>.</p>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <span class="section-title-en">Unleash Your Potential: Detailed University Questions</span>
+          <span class="section-title-ml">(വിശദമായ പരീക്ഷാ ചോദ്യങ്ങൾ)</span>
+        </div>
+        <div class="block-en" style="font-size: 8.5pt;">
+          <p><strong>Q1: What is Identity Theory in the philosophy of mind?</strong><br/>
+          <em>Core Answer:</em> A physicalist theory (developed by J.J.C. Smart and U.T. Place) asserting that mental states are literally identical to physical brain states (type physicalism).</p>
+          <p><strong>Q2: Elucidate Behaviourism within the philosophy of mind.</strong><br/>
+          <em>Core Answer:</em> Ryle and Skinner's doctrine that mental states are publicly observable behaviors and behavioral dispositions, eliminating Cartesian "ghost in the machine".</p>
+        </div>
+        <div class="block-ml" style="font-size: 8.5pt;">
+          <p><strong>ചോദ്യം 1: ഐഡന്റിറ്റി തിയറി എന്നാൽ എന്താണ്?</strong><br/>
+          <em>ഉത്തരം:</em> മാനസികാവസ്ഥകൾ എന്നത് തലച്ചോറിലെ ന്യൂറോണുകളുടെ ഭൗതിക പ്രവർത്തനങ്ങൾ തന്നെയാണെന്ന് ജെ.ജെ.സി. സ്മാർട്ട് തെളിയിച്ച സിദ്ധാന്തം.</p>
+          <p><strong>ചോദ്യം 2: ബിഹേവിയറിസം വ്യക്തമാക്കുക.</strong><br/>
+          <em>ഉത്തരം:</em> ആന്തരികമായ അദൃശ്യ മനസ്സില്ലെന്നും, ബാഹ്യമായ ശാരീരിക പെരുമാറ്റങ്ങൾ മാത്രമാണ് ചിന്തയെന്നും ഗിൽബർട്ട് റൈൽ സമർത്ഥിച്ച വാദം.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 11: Western Epistemology</span>
+      <span>Page 11</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 3 · Chapter 11</span>
+        <span class="top-bar-right">Page 12 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="chapter-hero" style="padding: 6px 12px; margin-bottom: 8px;">
+        <div class="hero-tag">🎯 Quick Revision & Exam Mastery</div>
+        <div class="hero-title-en" style="font-size: 13pt;">20 Core Academic Concepts: Western Epistemology</div>
+        <div class="hero-title-ml" style="font-size: 10pt;">20 പ്രധാന പരീക്ഷാ ആശയങ്ങൾ: പാശ്ചാത്യ ജ്ഞാനമീമാംസ</div>
+      </div>
+
+      <div class="grid-container">
+        <!-- 1 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">❓ Core Quest</span><span class="point-title-en">Central Question of Epistemology</span></div>
+          <div class="point-title-ml">ജ്ഞാനമീമാംസയിലെ കേന്ദ്ര ചോദ്യം</div>
+          <div class="point-body">"What can we know and how do we know it?" — the foundational quest into epistemic limits and justification.</div>
+          <div class="point-body-ml">നമുക്ക് എന്തൊക്കെ അറിയാൻ കഴിയും, നാം അത് എങ്ങനെ അറിയുന്നു എന്ന അന്വേഷണം.</div>
+        </div>
+        <!-- 2 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">📜 Definition</span><span class="point-title-en">Justified True Belief (JTB)</span></div>
+          <div class="point-title-ml">ന്യായീകരിക്കപ്പെട്ട യഥാർത്ഥ വിശ്വാസം</div>
+          <div class="point-body">Classical tripartite definition of knowledge traced to Plato's *Theaetetus*, challenged by Gettier (1963).</div>
+          <div class="point-body-ml">അറിവ് എന്നാൽ ന്യായീകരിക്കപ്പെട്ട യഥാർത്ഥ വിശ്വാസമാണെന്ന പ്ലേറ്റോയുടെ നിർവ്വചനം.</div>
+        </div>
+        <!-- 3 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">👨‍🏫 Pioneer</span><span class="point-title-en">John Locke (1632–1704)</span></div>
+          <div class="point-title-ml">ജോൺ ലോക്ക്</div>
+          <div class="point-body">English philosopher most closely associated with founding British Empiricism and tabula rasa.</div>
+          <div class="point-body-ml">ബ്രിട്ടീഷ് എംപിരിസിസത്തിന്റെ സ്ഥാപകനും പ്രമുഖ ചിന്തകനും.</div>
+        </div>
+        <!-- 4 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">📝 Blank Slate</span><span class="point-title-en">Tabula Rasa</span></div>
+          <div class="point-title-ml">ടാബുല റാസ (വെളുത്ത സ്ലേറ്റ്)</div>
+          <div class="point-body">Locke's doctrine that the human mind at birth is a blank slate; all knowledge derives from experience.</div>
+          <div class="point-body-ml">ജനിക്കുമ്പോൾ മനസ്സ് ഒന്നുമെഴുതാത്ത വെറും സ്ലേറ്റാണെന്ന സിദ്ധാന്തം.</div>
+        </div>
+        <!-- 5 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🧠 Reason</span><span class="point-title-en">Rationalism</span></div>
+          <div class="point-title-ml">റാഷണലിസം</div>
+          <div class="point-body">Epistemic doctrine that deductive reason is the primary source of truth, independent of the senses.</div>
+          <div class="point-body-ml">ശുദ്ധമായ യുക്തിചിന്തയാണ് ശരിയായ അറിവിന്റെ ഉറവിടമെന്ന വാദം.</div>
+        </div>
+        <!-- 6 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">👁️ Experience</span><span class="point-title-en">Empiricism</span></div>
+          <div class="point-title-ml">എംപിരിസിസം</div>
+          <div class="point-body">Epistemic doctrine that sensory perception and observation are the exclusive foundations of knowledge.</div>
+          <div class="point-body-ml">ഇന്ദ്രിയാനുഭവങ്ങൾ മാത്രമാണ് അറിവിന്റെ അടിസ്ഥാനമെന്ന വാദം.</div>
+        </div>
+        <!-- 7 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">📐 Prior Reason</span><span class="point-title-en">A Priori Knowledge</span></div>
+          <div class="point-title-ml">എ പ്രയോറി അറിവ്</div>
+          <div class="point-body">Knowledge justified independently of sensory experience (e.g., mathematical axioms and tautologies).</div>
+          <div class="point-body-ml">അനുഭവങ്ങൾക്ക് മുൻപേ യുക്തിയിലൂടെ അറിയാൻ കഴിയുന്ന സത്യങ്ങൾ.</div>
+        </div>
+        <!-- 8 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🔬 Empirical Fact</span><span class="point-title-en">A Posteriori Knowledge</span></div>
+          <div class="point-title-ml">എ പോസ്റ്റീരിയറി അറിവ്</div>
+          <div class="point-body">Knowledge dependent upon empirical investigation and sensory observation of the world.</div>
+          <div class="point-body-ml">ഇന്ദ്രിയങ്ങളിലൂടെ കണ്ട് ബോധ്യപ്പെടുന്ന പ്രായോഗിക ശാസ്ത്രീയ അറിവ്.</div>
+        </div>
+        <!-- 9 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🎭 Mind Theory</span><span class="point-title-en">Behaviourism</span></div>
+          <div class="point-title-ml">ബിഹേവിയറിസം</div>
+          <div class="point-body">The physicalist view reducing mental states entirely to publicly observable behavioral dispositions.</div>
+          <div class="point-body-ml">മാനസികാവസ്ഥകൾ എന്നത് ബാഹ്യ പെരുമാറ്റങ്ങൾ മാത്രമാണെന്ന വാദം.</div>
+        </div>
+        <!-- 10 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">👻 Critique</span><span class="point-title-en">Ghost in the Machine</span></div>
+          <div class="point-title-ml">യന്ത്രത്തിലെ പ്രേതം</div>
+          <div class="point-body">Gilbert Ryle's famous satirical critique of Cartesian dualistic mind-body separation.</div>
+          <div class="point-body-ml">ദെക്കാർത്തിന്റെ ഡ്യുവലിസത്തെ പരിഹസിച്ചുകൊണ്ട് ഗിൽബർട്ട് റൈൽ നൽകിയ പേര്.</div>
+        </div>
+        <!-- 11 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🧠 Physicalism</span><span class="point-title-en">Identity Theory (Type Physicalism)</span></div>
+          <div class="point-title-ml">ഐഡന്റിറ്റി തിയറി</div>
+          <div class="point-body">Claims that mental states are strictly identical to physical neurobiological brain states.</div>
+          <div class="point-body-ml">മനസ്സ് എന്നാൽ തലച്ചോറിലെ ന്യൂറോണുകളുടെ ഭൗതിക പ്രവർത്തനമാണെന്ന വാദം.</div>
+        </div>
+        <!-- 12 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">👨‍🔬 Pioneer</span><span class="point-title-en">J. J. C. Smart</span></div>
+          <div class="point-title-ml">ജെ. ജെ. സി. സ്മാർട്ട്</div>
+          <div class="point-body">Philosopher most closely associated with Identity Theory ("Sensations and Brain Processes", 1959).</div>
+          <div class="point-body-ml">ഐഡന്റിറ്റി തിയറിയുടെ ഏറ്റവും പ്രധാനപ്പെട്ട വക്താവ്.</div>
+        </div>
+        <!-- 13 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">⚡ Sensation</span><span class="point-title-en">Pain is C-Fibers Firing</span></div>
+          <div class="point-title-ml">വേദന എന്നാൽ സി-ഫൈബർ ഉത്തേജനം</div>
+          <div class="point-body">The classical paradigm of Identity Theory: subjective pain literally IS neurochemical nerve firing.</div>
+          <div class="point-body-ml">വേദന എന്ന അനുഭവം തലച്ചോറിലെ നാഡീ സ്പന്ദനത്തിന് തുല്യമാണ്.</div>
+        </div>
+        <!-- 14 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🐙 Limitation</span><span class="point-title-en">Biological Chauvinism</span></div>
+          <div class="point-title-ml">ബയോളജിക്കൽ ഷോവനിസം</div>
+          <div class="point-body">Putnam's critique: Identity Theory unfairly denies minds to octopuses, aliens, and silicon machines.</div>
+          <div class="point-body-ml">മനുഷ്യന്റെ നാഡികളില്ലാത്ത ജീവികൾക്ക് മനസ്സില്ലെന്ന് ശഠിച്ച പോരായ്മ.</div>
+        </div>
+        <!-- 15 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🌍 Real World</span><span class="point-title-en">Correspondence Theory of Truth</span></div>
+          <div class="point-title-ml">കറസ്പോണ്ടൻസ് തിയറി</div>
+          <div class="point-body">A proposition is true if and only if it corresponds to an objective fact in reality.</div>
+          <div class="point-body-ml">പറയുന്ന കാര്യം ബാഹ്യ ലോകത്തിലെ വസ്തുതയുമായി യോജിക്കുമ്പോൾ സത്യമാകുന്നു.</div>
+        </div>
+        <!-- 16 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🕸️ Consistency</span><span class="point-title-en">Coherence Theory of Truth</span></div>
+          <div class="point-title-ml">കോഹറൻസ് തിയറി</div>
+          <div class="point-body">A proposition is true if it fits consistently without contradiction within a system of beliefs.</div>
+          <div class="point-body-ml">വിശ്വാസങ്ങൾ പരസ്പരം വിരുദ്ധതയില്ലാതെ യോജിച്ചുപോകുന്നതാണ് സത്യം.</div>
+        </div>
+        <!-- 17 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🛠️ Pragmatism</span><span class="point-title-en">Pragmatic Theory of Truth</span></div>
+          <div class="point-title-ml">പ്രാഗ്മാറ്റിക് തിയറി</div>
+          <div class="point-body">A proposition is true if acting upon it produces fruitful, workable results in practical life.</div>
+          <div class="point-body-ml">പ്രായോഗിക ജീവിതത്തിൽ വിജയം നൽകുന്ന അറിവാണ് സത്യം.</div>
+        </div>
+        <!-- 18 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🦢 Scepticism</span><span class="point-title-en">Hume's Problem of Induction</span></div>
+          <div class="point-title-ml">ഹ്യൂമിന്റെ ഇൻഡക്ഷൻ പ്രശ്നം</div>
+          <div class="point-body">Past observed regularities provide no logical deductive guarantee for future unseen cases.</div>
+          <div class="point-body-ml">പഴയ വിവരങ്ങൾ കണ്ടതുകൊണ്ട് മാത്രം ഭാവി സുരക്ഷിതമായി പ്രവചിക്കാനാവില്ല.</div>
+        </div>
+        <!-- 19 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🤖 ML Link</span><span class="point-title-en">Machine Learning as Tabula Rasa</span></div>
+          <div class="point-title-ml">മെഷീൻ ലേണിംഗ് ടേബുല റാസ</div>
+          <div class="point-body">Training empty deep neural networks on big data implements Locke's blank slate empirically.</div>
+          <div class="point-body-ml">ശൂന്യമായ അൽഗോരിതത്തിലേക്ക് ഡാറ്റ നൽകി പഠിപ്പിക്കുന്ന ആധുനിക AI രീതി.</div>
+        </div>
+        <!-- 20 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🏁 Kantian Ideal</span><span class="point-title-en">The Epistemic Synthesis</span></div>
+          <div class="point-title-ml">കാന്റിന്റെ സമന്വയം</div>
+          <div class="point-body">Data without concepts is blind; logic without data is empty — the foundational mandate of modern AI.</div>
+          <div class="point-body-ml">അനുഭവങ്ങളും യുക്തിയും ചേരുമ്പോൾ മാത്രമേ പൂർണ്ണമായ വിജ്ഞാനം ഉണ്ടാകൂ എന്ന സത്യം.</div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 3 · Chapter 11: 20 Core Academic Concepts</span>
+      <span>Page 12</span>
+    </div>
+  </div>
+</body></html>

@@ -1,0 +1,127 @@
+{
+  "title": "Advanced Python Programming - Comprehensive Study Notes",
+  "titleMal": "അഡ്വാൻസ്ഡ് പൈത്തൺ പ്രോഗ്രാമിംഗ് - സമഗ്ര പഠന സഹായി",
+  "overview": "This document covers foundational and advanced concepts in Python programming as outlined in the curriculum. Key subjects include operating system interfaces, file I/O operations, datetime manipulation, regular expressions, multithreading and multiprocessing, network socket programming, database integration with MySQL, GUI development using Tkinter, advanced exception handling, and object-oriented programming paradigms.",
+  "overviewMal": "ഈ പഠനസഹായി പൈത്തൺ പ്രോഗ്രാമിംഗിലെ അടിസ്ഥാനപരവും നൂതനവുമായ വിവിധ ആശയങ്ങൾ സമഗ്രമായി പ്രതിപാദിക്കുന്നു. ഓപ്പറേറ്റിംഗ് സിസ്റ്റം ഇന്റർഫേസുകൾ, ഫയൽ ഹാൻഡ്‌ലിംഗ്, ഡേറ്റ്-ടൈം മൊഡ്യൂളുകൾ, റെഗുലർ എക്സ്പ്രഷനുകൾ, മൾട്ടിത്രെഡിംഗ്, സോക്കറ്റ് പ്രോഗ്രാമിംഗ്, MySQL ഡാറ്റാബേസ് കണക്റ്റിവിറ്റി, Tkinter ഉപയോഗിച്ചുള്ള GUI നിർമ്മാണം, എക്സപ്ഷൻ ഹാൻഡ്‌ലിംഗ്, ഒബ്ജക്റ്റ്-ഓറിയന്റഡ് പ്രോഗ്രാമിംഗ് ആശയങ്ങൾ എന്നിവ ഇതിൽ ഉൾപ്പെടുന്നു.",
+  "sections": [
+    {
+      "badge": "Unit 1",
+      "title": "OS Interface, Date-Time, and File Operations",
+      "titleMal": "ഒഎസ് മൊഡ്യൂൾ, ഡേറ്റ്-ടൈം, ഫയൽ പ്രവർത്തനങ്ങൾ",
+      "points": [
+        {
+          "en": "The `os` module provides standard operating system interactions: `os.getcwd()` retrieves the current working directory, `os.mkdir()` creates a directory, `os.listdir()` lists directory contents, `os.remove()` deletes a file, and `os.rename()` renames an existing file or directory.",
+          "mal": "`os` മൊഡ്യൂൾ ഓപ്പറേറ്റിംഗ് സിസ്റ്റവുമായി സംവദിക്കാനുള്ള സൗകര്യമൊരുക്കുന്നു: `os.getcwd()` നിലവിലെ വർക്കിംഗ് ഡയറക്ടറി നൽകുന്നു, `os.mkdir()` പുതിയ ഡയറക്ടറി നിർമ്മിക്കുന്നു, `os.listdir()` ഫയലുകളുടെ പട്ടിക ലഭ്യമാക്കുന്നു, `os.remove()` ഫയൽ നീക്കംചെയ്യുന്നു, `os.rename()` പേര് മാറ്റാൻ ഉപയോഗിക്കുന്നു."
+        },
+        {
+          "en": "The `datetime` module offers classes for manipulating dates and times efficiently, including `datetime.date` (year, month, day), `datetime.time` (hour, minute, second, microsecond), and `datetime.datetime` for combined representations, alongside `strftime()` and `strptime()` for parsing and formatting strings.",
+          "mal": "തീയതികളും സമയങ്ങളും കൈകാര്യം ചെയ്യാൻ `datetime` മൊഡ്യൂൾ ഉപയോഗിക്കുന്നു. ഇതിൽ `datetime.date`, `datetime.time`, `datetime.datetime` ക്ലാസുകളും, തീയതികളെ സ്ട്രിംഗുകളാക്കി മാറ്റാനും തിരിച്ചും മാറ്റാനും `strftime()`, `strptime()` മെത്തേഡുകളും അടങ്ങിയിരിക്കുന്നു."
+        },
+        {
+          "en": "Python provides various file opening modes via `open()`: Read (`'r'`), Write (`'w'`), Append (`'a'`), Exclusive creation (`'x'`), as well as binary variants (`'rb'`, `'wb'`) and update modes (`'r+'`, `'w+'`, `'a+'`).",
+          "mal": "പൈത്തണിലെ പ്രധാന ഫയൽ മോഡുകൾ: റീഡ് ചെയ്യാനുള്ള `'r'`, എഴുതാനുള്ള `'w'`, ഫയലിന്റെ അവസാനം കൂട്ടിച്ചേർക്കാനുള്ള `'a'`, പുതിയ ഫയൽ മാത്രം സൃഷ്ടിക്കാനുള്ള `'x'`, കൂടാതെ ബൈനറി മോഡുകളും (`'rb'`, `'wb'`) അപ്ഡേറ്റ് മോഡുകളും (`'r+'`, `'w+'`) എന്നിവയാണ്."
+        },
+        {
+          "en": "In file navigation, `file.tell()` returns the current position of the file pointer as an integer offset from the beginning, whereas `file.seek(offset, whence)` reposition the pointer to a specified byte offset based on reference points (0 for start, 1 for current position, 2 for end).",
+          "mal": "ഫയൽ നാവിഗേഷനിൽ, `file.tell()` ഫയൽ പോയിന്ററിന്റെ ഇപ്പോഴത്തെ സ്ഥാനം നൽകുന്നു; എന്നാൽ `file.seek(offset, whence)` ഫയൽ പോയിന്ററിനെ നിർദ്ദിഷ്ട സ്ഥാനത്തേക്ക് (0: തുടക്കം, 1: നിലവിലെ സ്ഥാനം, 2: അവസാനം) മാറ്റാൻ ഉപയോഗിക്കുന്നു."
+        },
+        {
+          "en": "To count uppercase characters in a file, iterate through characters or lines and verify using `char.isupper()`, keeping a running tally of matches.",
+          "mal": "ഒരു ഫയലിലെ വലിയക്ഷരങ്ങൾ (uppercase) എണ്ണുന്നതിനായി, ഫയലിലെ ഓരോ അക്ഷരവും പരിശോധിച്ച് `char.isupper()` ഉപയോഗിച്ച് അത് വലിയക്ഷരമാണോ എന്ന് ഉറപ്പുവരുത്തി കൗണ്ട് ചെയ്യാം."
+        }
+      ]
+    },
+    {
+      "badge": "Unit 2",
+      "title": "Regular Expressions, Multiprocessing, and Multithreading",
+      "titleMal": "റെഗുലർ എക്സ്പ്രഷൻ, മൾട്ടിപ്രോസസ്സിംഗ്, മൾട്ടിത്രെഡിംഗ്",
+      "points": [
+        {
+          "en": "A Regular Expression (regex) is a sequence of characters specifying a search pattern using the `re` module. Key patterns include `.` (any single character except newline), `^` (start of string), `$` (end of string), `*` (zero or more repetitions), `+` (one or more repetitions), and `\\d` (matches any decimal digit).",
+          "mal": "ടെക്സ്റ്റുകളിലെ പാറ്റേണുകൾ തിരയുന്നതിനും പരിശോധിക്കുന്നതിനുമുള്ള ഒരു സാങ്കേതികവിദ്യയാണ് റെഗുലർ എക്സ്പ്രഷൻ (`re`). പ്രധാന പാറ്റേണുകൾ: `.` (ഏതെങ്കിലും ഒരു അക്ഷരം), `^` (വരിയുടെ തുടക്കം), `$` (വരിയുടെ അവസാനം), `*` (പൂജ്യമോ അതിലധികമോ തവണ), `+` (ഒന്നോ അതിലധികമോ തവണ), `\\d` (അക്കങ്ങൾ) എന്നിവയാണ്."
+        },
+        {
+          "en": "A process is an independent program execution unit with its own dedicated memory space, whereas a thread is a lightweight execution sub-unit within a process that shares memory and resources with other threads.",
+          "mal": "ഒരു പ്രോസസ്സ് എന്നത് സ്വന്തമായി പ്രത്യേക മെമ്മറി സ്പേസ് ഉള്ള ഒരു സ്വതന്ത്ര പ്രോഗ്രാം എക്സിക്യൂഷൻ യൂണിറ്റാണ്; എന്നാൽ ത്രെഡ് എന്നത് പ്രോസസ്സിനുള്ളിലെ മെമ്മറിയും റിസോഴ്സുകളും പങ്കിടുന്ന ലഘുവായ ഒരു എക്സിക്യൂഷൻ ഭാഗമാണ്."
+        },
+        {
+          "en": "Deadlock in multithreading refers to a state where two or more threads are permanently blocked, each waiting indefinitely for a lock or resource held by the other, preventing any thread from making progress.",
+          "mal": "മൾട്ടിത്രെഡിംഗിലെ 'ഡെഡ്‌ലോക്ക്' എന്നാൽ രണ്ട് അല്ലെങ്കിൽ അതിലധികം ത്രെഡുകൾ പരസ്പരം കൈവശം വച്ചിരിക്കുന്ന റിസോഴ്സുകൾക്കായി കാത്തിരുന്ന് പ്രവർത്തനം പൂർണ്ണമായി തടസ്സപ്പെടുന്ന നിശ്ചലാവസ്ഥയാണ്."
+        }
+      ]
+    },
+    {
+      "badge": "Unit 3",
+      "title": "Network Programming and Database Connectivity",
+      "titleMal": "നെറ്റ്‌വർക്ക് പ്രോഗ്രാമിംഗും ഡാറ്റാബേസ് കണക്റ്റിവിറ്റിയും",
+      "points": [
+        {
+          "en": "TCP (Transmission Control Protocol) is connection-oriented, reliable, orders data packets, and guarantees delivery via acknowledgments, whereas UDP (User Datagram Protocol) is connectionless, faster, unreliable, and does not guarantee packet delivery or sequence.",
+          "mal": "TCP എന്നത് കണക്ഷൻ-ഓറിയന്റഡും, ഡാറ്റ കൃത്യമായി എത്തിച്ചേരുമെന്ന് ഉറപ്പുനൽകുന്നതുമായ ഒരു പ്രോട്ടോക്കോളാണ്. എന്നാൽ UDP എന്നത് കണക്ഷൻ-ലെസ്സ് ആയതും, വേഗതയേറിയതും, ഡാറ്റ ലഭിക്കുമെന്ന് ഉറപ്പ് നൽകാത്തതുമായ പ്രോട്ടോക്കോളാണ്."
+        },
+        {
+          "en": "Crucial socket methods in Python's `socket` module include `socket()` to initialize an endpoint, `bind((host, port))` to bind to a network address, `listen()` to queue incoming connections, `accept()` to accept a connection, and `connect()` to establish a client-server connection.",
+          "mal": "പൈത്തൺ `socket` മൊഡ്യൂളിലെ പ്രധാന മെത്തേഡുകൾ: `socket()` (സോക്കറ്റ് നിർമ്മിക്കാൻ), `bind()` (ഐപി വിലാസവും പോർട്ടും ലിങ്ക് ചെയ്യാൻ), `listen()` (കണക്ഷനുകൾക്കായി കാത്തിരിക്കാൻ), `accept()` (കണക്ഷൻ സ്വീകരിക്കാൻ), `connect()` (സെർവറിലേക്ക് ബന്ധിപ്പിക്കാൻ)."
+        },
+        {
+          "en": "MySQL table creation in Python is performed using `mysql.connector` or `PyMySQL` by executing a `CREATE TABLE` query through an active database cursor and committing changes.",
+          "mal": "പൈത്തണിൽ `mysql.connector` ഉപയോഗിച്ച് ഒരു ഡാറ്റാബേസ് കണക്ഷനും കർസറും നിർമ്മിച്ച്, `CREATE TABLE` എന്ന SQL നിർദ്ദേശം `cursor.execute()` വഴി റൺ ചെയ്ത് പുതിയ ടേബിൾ സൃഷ്ടിക്കാം."
+        }
+      ]
+    },
+    {
+      "badge": "Unit 4",
+      "title": "Tkinter GUI and Exception Handling",
+      "titleMal": "Tkinter ജിയുഐ പ്രോഗ്രാമിംഗും എക്സപ്ഷൻ ഹാൻഡ്‌ലിംഗും",
+      "points": [
+        {
+          "en": "Tkinter supports three primary layout managers: `pack()` (arranges widgets in blocks/sides), `grid()` (organizes widgets in a tabular two-dimensional table of rows and columns), and `place()` (explicitly positions widgets via absolute or relative coordinates x and y).",
+          "mal": "Tkinter മൂന്ന് പ്രധാന ലേഔട്ട് മാനേജറുകൾ നൽകുന്നു: `pack()` (വിഡ്ജറ്റുകളെ വശങ്ങളിലേക്ക് അടുക്കുന്നു), `grid()` (വരികളും നിരകളുമായി ക്രമീകരിക്കുന്നു), `place()` (നിശ്ചിത x, y കോർഡിനേറ്റുകൾ ഉപയോഗിച്ച് കൃത്യസ്ഥാനത്ത് വിന്യസിക്കുന്നു)."
+        },
+        {
+          "en": "The `Entry` widget in Tkinter provides a single-line text input field for accepting user-typed alphanumeric data, configured with parameters like `show='*'` for passwords and manipulated using `get()` and `delete()`.",
+          "mal": "ഉപയോക്താവിൽ നിന്ന് ഒറ്റവരി ടെക്സ്റ്റ് ഇൻപുട്ട് സ്വീകരിക്കാൻ Tkinter-ൽ `Entry` വിഡ്ജറ്റ് ഉപയോഗിക്കുന്നു; പാസ്‌വേഡുകൾ മറയ്ക്കാൻ `show='*'` ഉപയോഗിക്കാം, ഡാറ്റ വായിക്കാൻ `get()` ഉപയോഗിക്കുന്നു."
+        },
+        {
+          "en": "Common built-in exceptions in Python include `ZeroDivisionError` (division by zero), `ValueError` (inappropriate argument value), `TypeError` (operation on an inappropriate type), `IndexError` (sequence index out of range), and `KeyError` (dictionary key not found).",
+          "mal": "പൈത്തണിലെ സാധാരണ ബിൽറ്റ്-ഇൻ എക്സപ്ഷനുകൾ: `ZeroDivisionError` (പൂജ്യം കൊണ്ടുള്ള ഹരണം), `ValueError` (തെറ്റായ മൂല്യം), `TypeError` (യോജിക്കാത്ത ഡാറ്റാ തരം), `IndexError` (പരിധിക്ക് പുറത്തുള്ള ഇൻഡക്സ്), `KeyError` (ഡിക്ഷണറിയിൽ കീ ഇല്ലാതിരിക്കൽ)."
+        },
+        {
+          "en": "The `raise` statement forcibly triggers a specific exception when custom conditions fail, such as `raise ZeroDivisionError('Denominator cannot be zero')`.",
+          "mal": "നിർദ്ദിഷ്ട നിബന്ധനകൾ ലംഘിക്കപ്പെടുമ്പോൾ പ്രോഗ്രാമർക്ക് സ്വന്തമായി ഒരു എക്സപ്ഷൻ ട്രിഗർ ചെയ്യാനായി `raise` സ്റ്റേറ്റ്മെന്റ് ഉപയോഗിക്കാം (ഉദാ: `raise ZeroDivisionError('Denominator cannot be zero')`)."
+        },
+        {
+          "en": "The `assert condition, message` statement acts as a debugging aid that evaluates a boolean condition; if the condition evaluates to False, an `AssertionError` is raised with the optional error message.",
+          "mal": "കോഡിന്റെ ഡീബഗ്ഗിംഗിനായി ഉപയോഗിക്കുന്ന ഒന്നാണ് `assert`. നൽകിയിരിക്കുന്ന കണ്ടീഷൻ തെറ്റാണെങ്കിൽ (False), പ്രോഗ്രാം ഒരു `AssertionError` സൃഷ്ടിക്കുന്നു."
+        }
+      ]
+    },
+    {
+      "badge": "Unit 5",
+      "title": "Object-Oriented Programming (OOP) in Python",
+      "titleMal": "ഒബ്ജക്റ്റ് ഓറിയന്റഡ് പ്രോഗ്രാമിംഗ് (OOP) ആശയങ്ങൾ",
+      "points": [
+        {
+          "en": "Inheritance permits a child class to inherit attributes and methods from a parent class. Types include Single, Multiple, Multilevel, Hierarchical, and Hybrid inheritance, written using syntax like `class DerivedClass(BaseClass):`.",
+          "mal": "ഒരു പാരന്റ് ക്ലാസിലെ സ്വഭാവവിശേഷങ്ങളും മെത്തേഡുകളും ചൈൽഡ് ക്ലാസിന് നൽകുന്നതിനെയാണ് ഇൻഹെറിറ്റൻസ് എന്ന് പറയുന്നത്. സിംഗിൾ, മൾട്ടിപ്പിൾ, മൾട്ടിലെവൽ, ഹൈറാർക്കിക്കൽ, ഹൈബ്രിഡ് എന്നിവയാണ് ഇതിന്റെ വകഭേദങ്ങൾ (`class DerivedClass(BaseClass):`)."
+        },
+        {
+          "en": "Operator overloading enables built-in operators to execute customized operations on user-defined objects by overriding magic/dunder methods (e.g., `__add__` for `+`, `__sub__` for `-`, `__str__` for string conversion).",
+          "mal": "ഓപ്പറേറ്റർ ഓവർലോഡിംഗ് വഴി പ്രത്യേക ഡണ്ടർ മെത്തേഡുകൾ (ഉദാ: `+` ന് `__add__`, `-` ന് `__sub__`) ഉപയോഗിച്ച് ഉപയോക്താവ് നിർമ്മിച്ച ഒബ്ജക്റ്റുകളിൽ സാധാരണ ഓപ്പറേറ്ററുകൾ പ്രവർത്തിപ്പിക്കാൻ സാധിക്കുന്നു."
+        },
+        {
+          "en": "An abstract class derived from `abc.ABC` contains at least one abstract method annotated with `@abstractmethod`. It provides a blueprint and cannot be instantiated directly without concrete subclass implementations.",
+          "mal": "`abc` മൊഡ്യൂളിലെ `ABC` ഉപയോഗിച്ച് നിർമ്മിക്കുന്ന അബ്‌സ്ട്രാക്റ്റ് ക്ലാസിൽ `@abstractmethod` എന്ന ഡെക്കറേറ്ററുള്ള മെത്തേഡുകൾ ഉണ്ടാകും. ഇത്തരം ക്ലാസുകൾ നേരിട്ട് ഒബ്‌ജക്റ്റുകൾ ഉണ്ടാക്കാൻ അനുവദിക്കില്ല, പകരം ഉപവർഗ്ഗങ്ങൾക്ക് (subclasses) ഒരു മാതൃകയായി പ്രവർത്തിക്കുന്നു."
+        },
+        {
+          "en": "Python implements access control conventions: Public attributes are openly accessible, Protected attributes (prefixed with a single underscore `_var`) indicate intended internal use, and Private attributes (prefixed with double underscore `__var`) enforce name mangling.",
+          "mal": "പൈത്തണിലെ ആക്‌സസ് മോഡിഫയറുകൾ: പബ്ലിക് (എവിടെനിന്നും ലഭ്യമാകുന്നത്), പ്രൊട്ടക്റ്റഡ് (ഒരു അണ്ടർസ്കോറോടെ തുടങ്ങുന്നത്, `_name`), പ്രൈവറ്റ് (രണ്ട് അണ്ടർസ്കോറോടെ തുടങ്ങുന്നത്, `__name` - ക്ലാസിന് പുറത്തുനിന്നും നേരിട്ട് ആക്സസ് ചെയ്യാനാകില്ല)."
+        },
+        {
+          "en": "Constructors (`__init__`) initialize new instances upon creation, while destructors (`__del__`) are invoked when instances are destroyed or garbage collected, freeing up external resources.",
+          "mal": "ഒരു ഒബ്‌ജക്റ്റ് നിർമ്മിക്കപ്പെടുമ്പോൾ അതിനെ പ്രാരംഭ സജ്ജീകരണങ്ങൾ ചെയ്യാൻ കൺസ്ട്രക്റ്ററും (`__init__`), ഒബ്ജക്റ്റ് മെമ്മറിയിൽ നിന്ന് ഒഴിവാക്കപ്പെടുമ്പോൾ റിസോഴ്സുകൾ ഒഴിവാക്കാൻ ഡിസ്ട്രക്റ്ററും (`__del__`) ഉപയോഗിക്കുന്നു."
+        }
+      ]
+    }
+  ]
+}

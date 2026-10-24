@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta charset="UTF-8">
+<title>ചെറുകഥ: വില്ലുവണ്ടി - അധ്യായ പഠന സഹായി</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  @page {
+    size: A4 portrait;
+    margin: 14mm 13mm 14mm 13mm;
+    @top-right {
+      content: "മലയാള സാഹിത്യാനുശീലനം · അധ്യായ പഠന സഹായി";
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Malayalam', 'Manjari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 10pt;
+    line-height: 1.7;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .chapter-header {
+    background: linear-gradient(135deg, var(--c-primary, #0f766e) 0%, var(--c-dark, #134e4a) 100%);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    page-break-inside: avoid;
+  }
+
+  .ch-pill-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .ch-pill {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .chapter-header h1 {
+    font-size: 17pt;
+    font-weight: 900;
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+    color: #ffffff;
+  }
+
+  .ch-meta-sub {
+    font-size: 10pt;
+    color: #ccfbf1;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Author Profile Card (കവിപരിചയം / രചയിതാവിന്റെ പരിചയം) */
+  .author-profile-box {
+    background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%);
+    border: 1.5px solid #cbd5e1;
+    border-left: 5px solid var(--c-primary, #0f766e);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    page-break-inside: avoid;
+  }
+
+  .author-profile-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .author-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    border-radius: 5px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 3px;
+  }
+
+  .author-profile-title h3 {
+    margin: 0;
+    font-size: 12.5pt;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .author-profile-title h3 small {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #64748b;
+  }
+
+  .author-meta-pill {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 8.5pt;
+    color: #334155;
+    line-height: 1.45;
+  }
+
+  .author-meta-pill b { color: var(--c-primary, #0f766e); }
+
+  .author-bio-body p {
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+
+  .author-works-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .author-works-head {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 5px;
+  }
+
+  .works-cat-row {
+    margin-bottom: 4px;
+    font-size: 8.5pt;
+    line-height: 1.5;
+  }
+
+  .works-cat-row:last-child { margin-bottom: 0; }
+
+  .works-cat-label {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: 8pt;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  .works-cat-content { color: #475569; }
+
+  .author-awards-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #854d0e;
+    margin-bottom: 6px;
+  }
+
+  .author-significance-strip {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: #1e40af;
+  }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .obj-card {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .out-card {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .card-label {
+    font-size: 9.5pt;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+  }
+  .obj-card .card-label { color: #166534; }
+  .out-card .card-label { color: #1e40af; }
+
+  .obj-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  .intro-box {
+    background: #fafaf9;
+    border: 1px solid #e7e5e4;
+    border-left: 4px solid #f59e0b;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #292524;
+    page-break-inside: avoid;
+  }
+
+  .intro-box .intro-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #b45309;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .concept-section {
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    page-break-inside: avoid;
+  }
+
+  .concept-section h2 {
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--c-primary, #0f766e);
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .concept-section p {
+    font-size: 9.5pt;
+    line-height: 1.75;
+    color: #334155;
+    margin: 0 0 6px 0;
+  }
+
+  .conclusion-box {
+    background: #fdf4ff;
+    border: 1px solid #f5d0fe;
+    border-left: 4px solid #a855f7;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin: 16px 0;
+    page-break-inside: avoid;
+  }
+
+  .conclusion-box .conc-label {
+    font-size: 10pt;
+    font-weight: 800;
+    color: #7e22ce;
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .conclusion-box p {
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #3b0764;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+  }
+
+  .takeaways-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .takeaways-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f766e;
+  }
+
+  .takeaways-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 9pt;
+    color: #134e4a;
+    line-height: 1.55;
+  }
+
+  .glossary-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  .glossary-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #334155;
+  }
+
+  .glossary-item {
+    font-size: 8.5pt;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .revision-strip {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 9pt;
+    line-height: 1.6;
+    color: #713f12;
+    page-break-inside: avoid;
+  }
+
+  .progress-section {
+    border-top: 2px solid #e2e8f0;
+    padding-top: 14px;
+    margin-top: 16px;
+  }
+
+  .progress-header {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 800;
+    margin: 0 0 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    page-break-inside: avoid;
+  }
+
+  .q-type-title {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f766e;
+    margin: 14px 0 8px 0;
+    padding-left: 8px;
+    border-left: 3px solid #0f766e;
+    page-break-inside: avoid;
+  }
+
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+
+  .qa-question {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+
+  .qa-answer {
+    font-size: 9pt;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0;
+    white-space: pre-line;
+  }
+
+  .essay-card {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+
+  .essay-card .qa-question {
+    font-size: 10pt;
+    color: #1e1b4b;
+    margin-bottom: 10px;
+  }
+
+  .essay-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 4px;
+    font-size: 8pt;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .mcq-container {
+    margin-top: 14px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+  }
+
+  .mcq-q {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 5px 0;
+  }
+
+  .mcq-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    font-size: 8.5pt;
+    color: #334155;
+  }
+
+  .mcq-opt {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
+  .mcq-key-card {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 14px 0 20px 0;
+    page-break-inside: avoid;
+  }
+
+  .mcq-key-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 10pt;
+    font-weight: 800;
+    color: #166534;
+  }
+
+  .key-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    font-size: 8pt;
+    color: #14532d;
+  }
+
+  .key-item {
+    background: #ffffff;
+    border: 1px solid #bbf7d0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    line-height: 1.35;
+  }
+
+  .exam-points-card {
+    background: linear-gradient(135deg, #fefce8 0%, #fffbeb 100%);
+    border: 1.5px solid #fde047;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0 25px 0;
+    box-shadow: 0 3px 10px rgba(234, 179, 8, 0.1);
+    page-break-inside: avoid;
+  }
+
+  .exam-points-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #facc15;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+  }
+
+  .exam-points-head h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 900;
+    color: #854d0e;
+  }
+
+  .exam-tag {
+    background: #ca8a04;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 14px;
+    text-transform: uppercase;
+  }
+
+  .exam-points-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #713f12;
+  }
+
+  .exam-points-list li {
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .exam-points-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ca8a04;
+    font-weight: 900;
+  }
+
+
+    @media (max-width: 768px) {
+      body {
+        padding: 14px 10px !important;
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+      .chapter-header {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+      }
+    }
+    
+  </style>
+</head>
+<body style="--c-primary: #4338ca; --c-dark: #0f172a;">
+  <div class="chapter-wrapper">
+    <header class="chapter-header">
+      <div class="ch-pill-row">
+        <span class="ch-pill">മൊഡ്യൂൾ 2</span>
+        <span class="ch-pill">ചെറുകഥ (Short Story)</span>
+        <span class="ch-pill">അധ്യായം 6</span>
+      </div>
+      <h1>ചെറുകഥ: വില്ലുവണ്ടി</h1>
+      <p class="ch-meta-sub">രചയിതാവ്: <b>കെ. രേഖ</b> · ഉറവിടം: കെ. രേഖയുടെ തെരഞ്ഞെടുത്ത കഥകൾ</p>
+    </header>
+
+        <div class="author-profile-box">
+          <div class="author-profile-head">
+            <div class="author-profile-title">
+              <span class="author-badge">✍️ കവിപരിചയം / രചയിതാവിന്റെ സമഗ്ര പരിചയം</span>
+              <h3>കെ. രേഖ (K. Rekha) <small>(ജനനം: 1975 (ജീവിച്ചിരിക്കുന്നു))</small></h3>
+            </div>
+            <div class="author-meta-pill">
+              <b>സ്ഥലം / പശ്ചാത്തലം:</b> കാട്ടുങ്ങച്ചിറ, ഇരിങ്ങാലക്കുട (തൃശ്ശൂർ ജില്ല)<br>
+              <b>സാഹിത്യ പദവി:</b> സമകാലിക മലയാള ചെറുകഥാകൃത്ത്, പത്രപ്രവർത്തക (മലയാള മനോരമ ചീഫ് സബ് എഡിറ്റർ), കേരള സാഹിത്യ അക്കാദമി അവാർഡ് ജേതാവ്.
+            </div>
+          </div>
+          <div class="author-bio-body">
+            <p>സമകാലിക മലയാള ചെറുകഥാ ലോകത്ത് പെൺജീവിതത്തിന്റെ സൂക്ഷ്മ ഭാവങ്ങളെയും രാഷ്ട്രീയത്തെയും പുതിയ ഭാവുകത്വത്തോടെ അടയാളപ്പെടുത്തിയ പ്രമുഖ എഴുത്തുകാരിയാണ് കെ. രേഖ. ഇരിങ്ങാലക്കുടയിലെ കാട്ടുങ്ങച്ചിറയിൽ ജനിച്ച രേഖ, കാലിക്കറ്റ് സർവ്വകലാശാലയിൽ നിന്നും ബിരുദാനന്തര ബിരുദവും ജേണലിസവും പൂർത്തിയാക്കി പത്രപ്രവർത്തന രംഗത്തെത്തി. പാർശ്വവൽക്കരിക്കപ്പെട്ട മനുഷ്യരുടെ, വിശേഷിച്ച് ദളിത് സ്ത്രീകളുടെ ആത്മാഭിമാനവും അതിജീവന ശ്രമങ്ങളും അവരുടെ രചനകളിലെ മുഖ്യ പ്രമേയമാണ്. മഹാത്മാ അയ്യങ്കാളിയുടെ ചരിത്രപ്രസിദ്ധമായ വില്ലുവണ്ടി സമരത്തെ ആധുനിക കേരളത്തിലെ ഒരു ദളിത് പെൺകുട്ടിയുടെ ബസ് യാത്രാ അനുഭവവുമായി കൂട്ടിയിണക്കി രചിച്ച 'വില്ലുവണ്ടി' എന്ന കഥ സമകാലിക മലയാള ചെറുകഥയിലെ ഏറ്റവും ശക്തമായ രാഷ്ട്രീയ രചനകളിലൊന്നായി വിലയിരുത്തപ്പെടുന്നു.</p>
+            
+            <div class="author-works-section">
+              <div class="author-works-head">📚 പ്രധാന കൃതികളും സാഹിത്യ സംഭാവനകളും (Major Works & Contributions):</div>
+        
+              <div class="works-cat-row">
+                <span class="works-cat-label">പ്രധാന കഥാസമാഹാരങ്ങൾ</span>
+                <span class="works-cat-content">വില്ലുവണ്ടി (2015), ആറാം വിരൽ (2012), മാലാഖമാർക്കിടയിൽ ഒരു പെൺകുട്ടി (2000), കുമ്പസാരം, പരസ്യശരീരം, കെ. രേഖയുടെ കഥകൾ.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">ഓർമ്മക്കുറിപ്പുകൾ & ജീവചരിത്രം</span>
+                <span class="works-cat-content">മാധവിക്കുട്ടി: പ്രണയത്തിന്റെ രാജകുമാരി, പെണ്ണെഴുത്തുകൾ.</span>
+              </div>
+            
+              <div class="works-cat-row">
+                <span class="works-cat-label">പ്രധാന കഥകൾ</span>
+                <span class="works-cat-content">വില്ലുവണ്ടി, ആറാം വിരൽ, ചതുരംഗം, മാലാഖമാർക്കിടയിൽ ഒരു പെൺകുട്ടി, അജ്ഞാതൻ.</span>
+              </div>
+            
+            </div>
+            
+            <div class="author-awards-strip">
+              <b>🏆 പ്രധാന പുരസ്കാരങ്ങളും അംഗീകാരങ്ങളും:</b> കേരള സാഹിത്യ അക്കാദമി അവാർഡ് (2014 - 'ആറാം വിരൽ' എന്ന ചെറുകഥാസമാഹാരത്തിന്), അങ്കണം ഇ.പി. സുഷമ എൻഡോവ്മെന്റ് അവാർഡ്, വി.പി. ശിവകുമാർ കേളി പുരസ്കാരം, ലളിതാംബിക അന്തർജ്ജനം സ്മാരക അവാർഡ്, എസ്.ബി.ടി സാഹിത്യ പുരസ്കാരം, ഗീതാ ഹിരണ്യൻ എൻഡോവ്മെന്റ് അവാർഡ്.
+            </div>
+            
+            <div class="author-significance-strip">
+              <b>✦ സാഹിത്യ സംഭാവന & സവിശേഷ സ്ഥാനം:</b> മലയാള പെണ്ണെഴുത്തിനെ പരമ്പരാഗത വിലാപങ്ങളിൽ നിന്നും പരാതികളിൽ നിന്നും മോചിപ്പിച്ച് അധികാര രൂപങ്ങളോട് നേരിട്ട് കലഹിക്കുന്ന സജീവമായ രാഷ്ട്രീയ പ്രതിരോധമാക്കി മാറ്റിയതാണ് കെ. രേഖയുടെ രചനകളുടെ ചരിത്രപരമായ പ്രാധാന്യം.
+            </div>
+          </div>
+        </div>
+        
+      <div class="objectives-grid">
+        <div class="obj-card">
+          <div class="card-label">❖ പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</div>
+          <ul class="obj-list">
+    <li>സമകാലിക മലയാള ചെറുകഥയിലെ ദലിത്-സ്ത്രീപക്ഷ പ്രതിരോധങ്ങൾ മനസ്സിലാക്കുക.</li><li>മഹാത്മാ അയ്യങ്കാളിയുടെ ചരിത്രപ്രസിദ്ധമായ വില്ലുവണ്ടി സമരത്തിന്റെ രാഷ്ട്രീയ പ്രസക്തി തിരിച്ചറിയുക.</li><li>ആധുനിക വിദ്യാഭ്യാസ സ്ഥാപനങ്ങളിൽ ഒളിഞ്ഞിരിക്കുന്ന സവർണ്ണ പൊതുബോധത്തെയും വിവേചനങ്ങളെയും വിമർശനാത്മകമായി വിലയിരുത്തുക.</li>
+          </ul>
+        </div>
+        <div class="out-card">
+          <div class="card-label">✦ പഠന ഫലങ്ങൾ (Learning Outcomes)</div>
+          <ul class="obj-list">
+    <li>വിദ്യാഭ്യാസ രംഗത്തെ ജാതിവിവേചനങ്ങളുടെ സൂക്ഷ്മ രൂപങ്ങളെ തിരിച്ചറിയാൻ വിദ്യാർത്ഥിക്ക് കഴിയുന്നു.</li><li>ഉമാബാലൻ എന്ന കഥാപാത്രത്തിന്റെ ആത്മാഭിമാനവും ചെറുത്തുനിൽപ്പും വിശകലനം ചെയ്യാൻ പ്രാപ്തി നേടുന്നു.</li><li>ചരിത്രപരമായ സമരങ്ങൾ സമകാലിക സാഹിത്യത്തിൽ എങ്ങനെ പുനർജനിക്കുന്നു എന്ന് ബോധ്യപ്പെടുന്നു.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="intro-box">
+        <span class="intro-label">ആമുഖം (Introduction)</span>
+    <p>സമകാലിക മലയാള ചെറുകഥാ സാഹിത്യത്തിലെ ശ്രദ്ധേയയായ എഴുത്തുകാരിയാണ് കെ. രേഖ. കേരള നവോത്ഥാന ചരിത്രത്തിലെ വിപ്ലവകരമായ ഒരു ഏടായ മഹാത്മാ അയ്യങ്കാളിയുടെ വില്ലുവണ്ടി സമരത്തെയും (1893), ദലിതർക്ക് വിദ്യാഭ്യാസ അവകാശം നേടിയെടുക്കാനുള്ള പോരാട്ടങ്ങളെയും (1904) ആധുനിക കാലത്തെ കാമ്പസ് ജീവിതവുമായി സമന്വയിപ്പിക്കുന്ന ഉജ്ജ്വലമായ കഥയാണ് 'വില്ലുവണ്ടി'. വിദ്യാഭ്യാസത്തിൽ സംവരണം നേടി പ്രൊഫഷണൽ മാനേജ്‌മെന്റ് കോഴ്സ് പൂർത്തിയാക്കിയ ഉമാബാലൻ എന്ന ദലിത് യുവതിയുടെ അനുഭവങ്ങളിലൂടെ, പരിഷ്കൃതമെന്ന് നടിക്കുന്ന ആധുനിക സമൂഹത്തിൽ ഇപ്പോഴും പുകയുന്ന ജാതിവിവേചനത്തിന്റെ മുഖംമൂടികൾ ഈ കഥ വലിച്ചുകീറുന്നു.</p></div>
+        <section class="concept-section">
+          <h2>1. പുനസ്സമാഗമവും (Reunion) ഭൂതകാല സ്മരണകളും</h2>
+          <p>പഠിച്ചിറങ്ങിയ മാനേജ്‌മെന്റ് കോഴ്സിന്റെ അലുമിനി മീറ്റിംഗിനുള്ള (ഒത്തുകൂടൽ) ക്ഷണക്കത്ത് ലഭിക്കുന്നിടത്താണ് കഥ ആരംഭിക്കുന്നത്. ക്ഷണക്കത്ത് കണ്ട ഉമാബാലന്റെ മനസ്സിലേക്ക് കോളേജ് കാലത്തെ അപമാനകരമായ അനുഭവങ്ങൾ ഇരച്ചെത്തുന്നു. ക്ലാസിലെ മറ്റൊരു വിദ്യാർത്ഥിയായ ഇല്യാസിനും ഉമാബാലനും തങ്ങൾ അനുഭവിച്ച മാനസിക പീഡനങ്ങൾ ഓർമ്മവരുന്നു. ബാഹ്യമായി സമത്വവും ആധുനികതയും പ്രസംഗിക്കുന്ന കാമ്പസുകളിൽ ജാതിബോധം എത്രമാത്രം ആഴത്തിൽ വേരൂന്നിയിരിക്കുന്നു എന്ന് ഈ ഓർമ്മകൾ സാക്ഷ്യപ്പെടുത്തുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>2. വെങ്കിട സാറിന്റെ ഒളിഞ്ഞിരിക്കുന്ന സവർണ്ണ അഹന്ത</h2>
+          <p>കോളേജിലെ പ്രൊഫസറായ വെങ്കിട സാർ സവർണ്ണ പൊതുബോധത്തിന്റെ പ്രതീകമാണ്. അദ്ദേഹം ഒരിക്കലും പരസ്യമായി ജാതി പറയുകയോ തെറിവിളിക്കുകയോ ചെയ്യുന്നില്ല. പകരം പരിഷ്കൃതമായ ഭാഷയിലും ചിരിയിലും പൊതിഞ്ഞാണ് വിവേചനം കാട്ടുന്നത്. സംവരണത്തിലൂടെ വന്ന ഉമാബാലനോട് അദ്ദേഹം കാണിക്കുന്ന പുച്ഛവും സഹതാപവും നിറഞ്ഞ പെരുമാറ്റം ഉമയുടെ ആത്മാഭിമാനത്തെ നിരന്തരം മുറിവേൽപ്പിക്കുന്നു. 'നത്തിങ് ഹാസ് ചെയ്ഞ്ച്ഡ്' (Nothing has changed) എന്ന അദ്ദേഹത്തിന്റെ ഭാവം വ്യവസ്ഥിതിയുടെ കാപട്യത്തെ തുറന്നുകാട്ടുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>3. അയ്യങ്കാളിയുടെ വില്ലുവണ്ടി സമരത്തിന്റെ പശ്ചാത്തലം</h2>
+          <p>1893-ൽ അധഃസ്ഥിതർക്ക് വഴിനടക്കാൻ അവകാശമില്ലാതിരുന്ന കാലത്ത്, രണ്ട് വെള്ളക്കാളകളെ കെട്ടിയ വില്ലുവണ്ടിയിൽ മണിമുഴക്കി വെങ്ങാനൂരിലെ പൊതുവഴിയിലൂടെ യാത്രചെയ്ത മഹാത്മാ അയ്യങ്കാളിയുടെ വിപ്ലവചരിത്രം കഥയിൽ അന്തർധാരയായി ഒഴുകുന്നു. വില്ലുവണ്ടി വെറുമൊരു വാഹനമല്ല; അത് സവർണ്ണ മേധാവിത്വത്തിന്റെ നെഞ്ചിലൂടെ ഓടിച്ചുപോയ ആത്മാഭിമാനത്തിന്റെ രഥമാണ്. 1904-ൽ പുലയക്കുട്ടികളെ പള്ളിക്കൂടത്തിൽ കയറ്റാൻ അയ്യങ്കാളി നടത്തിയ സ്കൂൾ പ്രവേശന സമരവും കർഷകത്തൊഴിലാളി പണിമുടക്കും കഥയിൽ സ്മരിക്കപ്പെടുന്നു.</p>
+        </section>
+        
+        <section class="concept-section">
+          <h2>4. ഉമാബാലന്റെ പ്രതിരോധവും ആധുനികതയും</h2>
+          <p>ഉമാബാലൻ സഹതാപം യാചിക്കുന്ന നിസ്സഹായയല്ല. അവൾ തന്റെ പഠനമികവിലൂടെയും കഠിനാധ്വാനത്തിലൂടെയും സ്വന്തം ഇടം ഉറപ്പിക്കുന്നു. വെങ്കിട സാറുമാരുടെ പരിഹാസങ്ങൾക്ക് മുന്നിൽ പതറാതെ, അയ്യങ്കാളിയുടെ വില്ലുവണ്ടിയുടെ മുഴക്കം ഉള്ളിലേറ്റുവാങ്ങി മുന്നോട്ട് നടക്കുകയാണ് അവൾ. അയ്യങ്കാളിയുടെ സമരം അവസാനിച്ചിട്ടില്ലെന്നും ആധുനിക വിദ്യാഭ്യാസ ഇടങ്ങളിൽ അത് കൂടുതൽ തീക്ഷ്ണമായി തുടരുകയാണെന്നും കഥ വ്യക്തമാക്കുന്നു.</p>
+        </section>
+        
+    <div class="conclusion-box">
+      <span class="conc-label">ഉപസംഹാരം (Chapter Conclusion)</span>
+      <p>കെ. രേഖയുടെ 'വില്ലുവണ്ടി' കേവലമൊരു കാമ്പസ് കഥയല്ല; അത് കേരളത്തിലെ നവോത്ഥാന മൂല്യങ്ങളുടെ സമകാലിക പരിശോധനയാണ്. അടിച്ചമർത്തപ്പെട്ട ജനതയ്ക്ക് വിദ്യാഭ്യാസവും അധികാരവും എത്തിപ്പിടിക്കാൻ എത്രമാത്രം പ്രതിബന്ധങ്ങളെ തകർക്കേണ്ടതുണ്ടെന്ന് ഉമാബാലന്റെ ജീവിതം നമ്മെ ബോധ്യപ്പെടുത്തുന്നു.</p>
+    </div>
+    
+    <div class="summary-grid">
+      <div class="takeaways-box">
+        <h3>✦ പ്രധാന പാഠങ്ങൾ (Key Takeaways)</h3>
+        <ul class="takeaways-list">
+    <li>കെ. രേഖ സമകാലിക മലയാള കഥയിലെ കരുത്തുറ്റ സ്ത്രീശബ്ദമാണ്.</li><li>മഹാത്മാ അയ്യങ്കാളിയുടെ 1893-ലെ വില്ലുവണ്ടി സമരം ചരിത്രപരമായ പ്രതിരോധത്തിന്റെ ബിംബമാണ്.</li><li>ഉമാബാലൻ ആധുനിക കാമ്പസിലെ സവർണ്ണ വിവേചനങ്ങളെ അതിജീവിക്കുന്ന ദലിത് പെൺകുട്ടിയാണ്.</li><li>വെങ്കിട സാർ സവർണ്ണ കാപട്യത്തിന്റെയും അദൃശ്യമായ ജാതിബോധത്തിന്റെയും പ്രതീകമാണ്.</li>
+        </ul>
+      </div>
+      <div class="glossary-box">
+        <h3>📖 പ്രധാന സാങ്കേതിക പദാവലി (Key Terms)</h3>
+    <div class="glossary-item"><b>വില്ലുവണ്ടി സമരം (1893):</b> അധഃസ്ഥിതരുടെ സഞ്ചാരസ്വാതന്ത്ര്യത്തിനായി അയ്യങ്കാളി വെങ്ങാനൂരിൽ നടത്തിയ ചരിത്രസമരം.</div><div class="glossary-item"><b>സവർണ്ണ പൊതുബോധം:</b> ഉപരിവർഗ്ഗ താല്പര്യങ്ങളെയും മുൻവിധികളെയും സ്വാഭാവിക സത്യങ്ങളായി കാണുന്ന മനോഭാവം.</div><div class="glossary-item"><b>സ്ഥാപനവൽക്കൃത വിവേചനം:</b> നിയമപരമായി സമത്വമുണ്ടെങ്കിലും വിദ്യാഭ്യാസ-തൊഴിൽ ഇടങ്ങളിൽ ഒളിഞ്ഞുകിടക്കുന്ന വിവേചനം.</div>
+      </div>
+    </div>
+    
+    <div class="revision-strip">
+      <b>ദ്രുത പുനഃപരിശോധനാ കുറിപ്പ് (Quick Revision):</b> കെ. രേഖയുടെ 'വില്ലുവണ്ടി'. അലുമിനി മീറ്റിംഗ് ക്ഷണം. ഉമാബാലന്റെ കോളേജ് ഓർമ്മകൾ. സംവരണത്തോടുള്ള വെങ്കിട സാറിന്റെ പുച്ഛം. അയ്യങ്കാളിയുടെ 1893-ലെ വില്ലുവണ്ടി സമരം. വിദ്യാഭ്യാസത്തിനായുള്ള പോരാട്ടങ്ങൾ. കാമ്പസുകളിലെ ഒളിഞ്ഞിരിക്കുന്ന ജാതിവിവേചനം. ഉമയുടെ പ്രതിരോധം.
+    </div>
+    
+    <div class="progress-section">
+      <div class="progress-header">
+        <span>പഠന പുരോഗതി വിലയിരുത്തൽ (Check Your Progress)</span>
+        <small>യഥാർത്ഥ ചോദ്യങ്ങളും സമഗ്ര ഉത്തരങ്ങളും</small>
+      </div>
+    <div class="q-type-title">ലഘുകുറിപ്പുകൾ (Short Notes)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. അയ്യങ്കാളിയുടെ വില്ലുവണ്ടി സമരത്തിന്റെ ചരിത്രപരമായ പ്രസക്തി എന്താണ്?</div>
+              <div class="qa-answer">1893-ൽ തിരുവിതാംകൂറിലെ വെങ്ങാനൂരിൽ മഹാത്മാ അയ്യങ്കാളി നടത്തിയ വില്ലുവണ്ടി സമരം കേരളത്തിലെ പൗരാവകാശ പോരാട്ടങ്ങളുടെ നാഴികക്കല്ലാണ്. അധഃസ്ഥിതർക്ക് നടക്കാൻ പോലും അനുവാദമില്ലാതിരുന്ന രാജവീഥിയിലൂടെ, മണികെട്ടിയ കാളകളെ പൂട്ടിയ വില്ലുവണ്ടിയിൽ തലപ്പാവണിഞ്ഞ് അദ്ദേഹം യാത്രചെയ്തു. ജാതിക്കോമരങ്ങളുടെ വിലക്കുകളെ കാറ്റിൽപ്പറത്തിക്കൊണ്ട് സഞ്ചാരസ്വാതന്ത്ര്യം പ്രഖ്യാപിച്ച ധീരമായ ചരിത്രസംഭവമാണിത്.</div>
+            </div>
+            
+            <div class="qa-card">
+              <div class="qa-question">2. വെങ്കിട സാറിന്റെ പെരുമാറ്റത്തിൽ തെളിയുന്ന സവർണ്ണ മനോഭാവം എങ്ങനെയുള്ളതാണ്?</div>
+              <div class="qa-answer">വെങ്കിട സാർ പ്രത്യക്ഷത്തിൽ പരിഷ്കാരിയും സൗമ്യനുമായി അഭിനയിക്കുന്ന ആളാണ്. എന്നാൽ സംവരണത്തിലൂടെ ക്ലാസിലെത്തിയ ഉമാബാലനോട് അദ്ദേഹത്തിന് കടുത്ത പുച്ഛവും അവഗണനയുമാണ് ഉണ്ടായിരുന്നത്. അവളുടെ കഴിവുകളെ അംഗീകരിക്കാതെ, സംവരണത്തിന്റെ ആനുകൂല്യം കൊണ്ടാണ് അവൾ ഇവിടെയെത്തിയതെന്ന് നിരന്തരം ഓർമ്മിപ്പിക്കുന്ന അദ്ദേഹത്തിന്റെ മനോഭാവം ആധുനിക വിദ്യാഭ്യാസ ഇടങ്ങളിലെ ഒളിഞ്ഞിരിക്കുന്ന ജാതിവിവേചനമാണ്.</div>
+            </div>
+            <div class="q-type-title">ലഘൂപന്യാസങ്ങൾ (Short Essays)</div>
+            <div class="qa-card">
+              <div class="qa-question">1. 'വില്ലുവണ്ടി' എന്ന കഥ ആധുനിക കേരളീയ പൊതുബോധത്തെ എങ്ങനെയാണ് വിചാരണ ചെയ്യുന്നത്?</div>
+              <div class="qa-answer">കേരളം നവോത്ഥാനത്തിലൂടെയും സാക്ഷരതയിലൂടെയും വലിയ പുരോഗതി നേടിയെന്ന് അവകാശപ്പെടുമ്പോഴും, കാമ്പസുകളിലും പ്രൊഫഷണൽ ഇടങ്ങളിലും ജാതിബോധം ഇന്നും ശക്തമായി നിലനിൽക്കുന്നുവെന്ന് 'വില്ലുവണ്ടി' എന്ന കഥ തെളിയിക്കുന്നു. ഉമാബാലന്റെ ക്ലാസ് മുറി അനുഭവങ്ങൾ മെറിറ്റോക്രസിയുടെ പേരിൽ സംവരണവിഭാഗങ്ങളെ അപമാനിക്കുന്ന സവർണ്ണ യുക്തികളെ തുറന്നുകാട്ടുന്നു. പഴയകാലത്ത് വഴിനടക്കാനുള്ള സമരമായിരുന്നെങ്കിൽ, ഇന്ന് അറിവധികാരത്തിന്റെ ഇടങ്ങളിൽ തുല്യതയ്ക്കുവേണ്ടിയുള്ള സമരമായി വില്ലുവണ്ടി മാറുന്നു. അങ്ങനെ ചരിത്രവും വർത്തമാനവും തമ്മിലുള്ള തീക്ഷ്ണമായ ഒരു സംവാദമായി ഈ കഥ മാറുന്നു.</div>
+            </div>
+            <div class="q-type-title">ഉപന്യാസങ്ങൾ (Long Essays - 300+ Words)</div>
+            <div class="essay-card">
+              <span class="essay-badge">സമഗ്ര ഉപന്യാസം · 300+ WORDS</span>
+              <div class="qa-question">1. ഉമാബാലൻ ജാതിയിലധിഷ്ഠിതമായ സമൂഹജീവിതത്തിനെതിരെ നിലകൊള്ളുന്ന ശക്തയായ സ്ത്രീ കഥാപാത്രമാണോ? കെ. രേഖയുടെ 'വില്ലുവണ്ടി' എന്ന കഥയെ ആസ്പദമാക്കി ഉപന്യസിക്കുക.</div>
+              <div class="qa-answer">ആമുഖം:
+സമകാലിക മലയാള കഥാസാഹിത്യത്തിൽ ശ്രദ്ധേയയായ കെ. രേഖയുടെ പ്രശസ്ത കഥയാണ് 'വില്ലുവണ്ടി'. 1893-ൽ മഹാത്മാ അയ്യങ്കാളി നടത്തിയ ചരിത്രപ്രസിദ്ധമായ വില്ലുവണ്ടി സമരത്തിന്റെ വിപ്ലവകരമായ പ്രതിരോധ പാരമ്പര്യത്തെ സമകാലിക കോർപ്പറേറ്റ് വിദ്യാഭ്യാസ അന്തരീക്ഷവുമായി ബന്ധിപ്പിച്ചുകൊണ്ട്, ഇന്നും സമൂഹത്തിൽ അദൃശ്യമായി തുടരുന്ന ജാതിവിവേചനത്തെയും സവർണ്ണ മേധാവിത്വത്തെയും വിചാരണ ചെയ്യുന്ന അതിശക്തമായ രചനയാണിത്. ജാതിരഹിതമെന്ന് ബാഹ്യമായി അവകാശപ്പെടുന്ന ആധുനിക മലയാളി സമൂഹത്തിന്റെ ഉള്ളിലെ വരേണ്യ മനോഭാവങ്ങളെയും അധ്യാപക-വിദ്യാർത്ഥി തലങ്ങളിലെ ജാതീയമായ തരംതിരിവുകളെയും കഥ അതിനിശിതമായി തുറന്നുകാട്ടുന്നു.
+
+അയ്യങ്കാളിയുടെ വില്ലുവണ്ടി സമരത്തിന്റെ രാഷ്ട്രീയ പ്രസക്തി:
+1893-ൽ പൊതുവഴികളിലൂടെ അധഃസ്ഥിത ജനവിഭാഗങ്ങൾക്ക് സഞ്ചാരസ്വാതന്ത്ര്യം നിഷേധിക്കപ്പെട്ട ഇരുണ്ട കാലഘട്ടത്തിലാണ് വെങ്ങാനൂരിലെ പൊതുനിരത്തിലൂടെ അയ്യങ്കാളി വില്ലുവണ്ടി ഓടിച്ച് ചരിത്രപ്രസിദ്ധമായ സമരം നടത്തിയത്. ഫ്യൂഡൽ സവർണ്ണ മേധാവിത്വത്തിനെതിരെയുള്ള സമാനതകളില്ലാത്ത ആത്മവീര്യമായിരുന്നു അത്. നൂറ്റാണ്ടുകൾക്കിപ്പുറവും ആധുനിക കേരളത്തിലെ ഉയർന്ന പ്രൊഫഷണൽ കോളേജുകളിലും കോർപ്പറേറ്റ് സ്ഥാപനങ്ങളിലും സംവരണവിഭാഗങ്ങളോട് പുലർത്തുന്ന മനശാസ്ത്രപരമായ അയിത്തത്തെയും നിശബ്ദമായ മാറ്റിനിർത്തലിനെയും കെ. രേഖ തന്റെ കഥയിലൂടെ അതിവിദഗ്ദ്ധമായി വിചാരണ ചെയ്യുന്നുണ്ട്.
+
+ഉമാബാലൻ എന്ന കേന്ദ്ര കഥാപാത്രം:
+എം.ബി.എ. പഠനം പൂർത്തിയാക്കി നിലവിൽ വിളക്കുമാടം ബ്ലോക്ക് പഞ്ചായത്ത് മെമ്പറായി ജനസേവനം നടത്തുന്ന ആത്മാഭിമാനമുള്ള ദളിത് യുവതിയാണ് ഉമാബാലൻ. ഉന്നത വിദ്യാഭ്യാസ സ്ഥാപനത്തിൽ പഠനകാലത്ത് സംവരണത്തിലൂടെ എത്തിയ ഉമയെ അധ്യാപകരും സഹപാഠികളും നിശബ്ദമായി മാറ്റിനിർത്തുകയും തരംതാഴ്ത്തി കാണുകയും ചെയ്തിരുന്നു. ഉമയുടെ വസ്ത്രധാരണത്തെയും സംസാരരീതിയെയും പരിഹാസത്തോടെയാണ് അവർ വീക്ഷിച്ചത്. എന്നാൽ അപകർഷതാബോധത്തിൽ തളരാതെ, സ്വയം അധ്വാനിച്ച് രാഷ്ട്രീയത്തിലും പൊതുപ്രവർത്തനത്തിലും സ്വന്തമായ ഇടം നേടിയെടുത്ത ശക്തയായ വ്യക്തിത്വമാണ് ഉമാബാലൻ. പൊതുസമൂഹത്തിലെ നീതിക്കും തുല്യാവകാശത്തിനും വേണ്ടി നിരന്തരം പോരാടുന്ന ആധുനിക സ്ത്രീയുടെ ഉത്തമ മാതൃകയാണവൾ.
+
+ഇല്യാസും അജിത്തും - കോർപ്പറേറ്റ് കാപട്യം:
+മാനേജ്‌മെന്റ് കോഴ്സ് പൂർത്തിയാക്കാൻ മാസങ്ങൾ മാത്രം ബാക്കിനിൽക്കെ, അധ്യാപകരുടെ ജാതീയവും വരേണ്യവുമായ നിലപാടുകൾക്കെതിരെ പരസ്യമായി പ്രതിഷേധിച്ച് സർട്ടിഫിക്കറ്റുകൾ ഉപേക്ഷിച്ചു പോയ വിപ്ലവകാരിയായ സഹപാഠിയാണ് ഇല്യാസ്. പഠനകാലത്ത് അങ്ങേയറ്റം സമർത്ഥനായിരുന്നിട്ടും വരേണ്യ മനസ്ഥിതിക്കാരായ പ്രൊഫസർമാർക്ക് അവൻ അനഭിമതനായി മാറി. വർഷങ്ങൾക്ക് ശേഷം നടക്കുന്ന റീയൂണിയൻ വേളയിൽ, മദ്യപിച്ച് രക്തം ഛർദ്ദിച്ചു വീഴുന്ന അജിത്തിനെ അവന്റെ പഴയ കാമുകി അമലുവും മറ്റ് കൂട്ടുകാരും അവജ്ഞയോടെ ഉപേക്ഷിക്കുമ്പോൾ, ജാതിയും പദവിയും നോക്കാതെ അവനെ താങ്ങി ആശുപത്രിയിലെത്തിക്കുന്നത് ഉമാബാലനാണ്. കോർപ്പറേറ്റ് സൗഹൃദങ്ങളുടെ പൊള്ളത്തരവും സ്വാർത്ഥതയും തുറന്നുകാട്ടപ്പെടുമ്പോൾ ഉമയുടെ നിസ്വാർത്ഥമായ കാരുണ്യവും മാനവികതയും കൂടുതൽ പ്രകാശിക്കുന്നു.
+
+സർ വെങ്കിടിയുടെ വിരമിക്കലും ഉമയുടെ ശബ്ദരേഖയും:
+വരേണ്യ മനോഭാവത്തിന്റെ പ്രതീകമായ പ്രൊഫസർ വെങ്കിടി സാറിന്റെ വിരമിക്കൽ ചടങ്ങിലേക്ക് ഉമാബാലൻ അയക്കുന്ന ഓഡിയോ സന്ദേശം കഥയുടെ ഉച്ചസ്ഥായിയാണ്. "വെങ്കിടി സാറ് പറഞ്ഞല്ലോ എനിക്ക് മാറ്റമൊന്നുമില്ലെന്ന്... അതെ, നത്തിങ് ഹാസ് ചേഞ്ച്ഡ്... ഒന്നര വർഷം നിങ്ങളുടെ ഇടയിൽ മണ്ടനെപ്പോലെ ജീവിച്ച ആ ബുദ്ധിമാനായ ഇല്യാസിനെ നിങ്ങൾ ഓർക്കുന്നുണ്ടോ? ജീവിതം മടുക്കുമ്പോൾ നിങ്ങൾ അവനെ അന്വേഷിച്ചു കണ്ടെത്തണം, അപ്പോൾ വലിയൊരു ഉത്തരം കിട്ടും" എന്ന് ധീരമായി പ്രഖ്യാപിക്കുന്ന ഉമ, ഉന്നത വിദ്യാഭ്യാസ രംഗത്തെ കാപട്യങ്ങളെയും സ്ഥാപനവൽകൃത ജാതിബോധത്തെയും വിചാരണ ചെയ്യുന്നു. ഉമയുടെ ശബ്ദം അവിടെ സവർണ്ണ മനസ്സാക്ഷിക്കുള്ള ചാട്ടവാറടിയായി മാറുന്നു.
+
+ഉപസംഹാരം:
+അയ്യങ്കാളിയുടെ വില്ലുവണ്ടി സവർണ്ണ പൊതുവഴികളിലൂടെ സഞ്ചാരസ്വാതന്ത്ര്യം പ്രഖ്യാപിച്ചതുപോലെ, ആധുനിക വരേണ്യ ഇടങ്ങളിലേക്ക് പ്രതിരോധത്തിന്റെ ശബ്ദമുയർത്തി കടന്നുവരുന്ന ശക്തയായ ദളിത് സ്ത്രീയുടെ പ്രതീകമാണ് ഉമാബാലൻ. പുതിയ കാലത്തെ അധികാര സ്ഥാപനങ്ങളിലെ ജാതീയമായ തരംതിരിവുകൾക്കെതിരെ പൊരുതുന്ന പുതിയ തലമുറയുടെ ആത്മാഭിമാന പ്രഖ്യാപനമായി ഈ കഥാപാത്രം മലയാള സാഹിത്യത്തിൽ എക്കാലവും തിളങ്ങിനിൽക്കുന്നു.</div>
+            </div>
+            
+    <div class="q-type-title">പ്രധാന പരീക്ഷാ മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങൾ (15 Important MCQs)</div>
+    <div class="mcq-container">
+    
+        <div class="mcq-item">
+          <div class="mcq-q">1. 'വില്ലുവണ്ടി' എന്ന കഥ രചിച്ചത് ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കെ.ആർ. മീര</div>
+            <div class="mcq-opt">B) ബി. ജയമോഹൻ</div>
+            <div class="mcq-opt">C) കെ. രേഖ</div>
+            <div class="mcq-opt">D) സി.എസ്. ചന്ദ്രിക</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">2. കഥയിലെ പ്രധാന ദലിത് കഥാപാത്രമായ പെൺകുട്ടിയുടെ പേരെന്ത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഉമാബാലൻ</div>
+            <div class="mcq-opt">B) രേഖ</div>
+            <div class="mcq-opt">C) ആതിര</div>
+            <div class="mcq-opt">D) മാധവി</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">3. മഹാത്മാ അയ്യങ്കാളി ചരിത്രപ്രസിദ്ധമായ വില്ലുവണ്ടി സമരം നടത്തിയത് ഏത് വർഷത്തിലാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 1850</div>
+            <div class="mcq-opt">B) 1893</div>
+            <div class="mcq-opt">C) 1924</div>
+            <div class="mcq-opt">D) 1936</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">4. കഥയിലെ സവർണ്ണ മുൻവിധികളുള്ള അധ്യാപക കഥാപാത്രം ആരാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) മാധവൻ സാർ</div>
+            <div class="mcq-opt">B) വെങ്കിട സാർ</div>
+            <div class="mcq-opt">C) ശങ്കരൻ മാസ്റ്റർ</div>
+            <div class="mcq-opt">D) ജോസഫ് സാർ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">5. ഉമാബാലന്റെ സഹപാഠിയായി കഥയിൽ കടന്നുവരുന്ന മറ്റൊരു വിദ്യാർത്ഥി ആര്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഇല്യാസ്</div>
+            <div class="mcq-opt">B) രാഹുൽ</div>
+            <div class="mcq-opt">C) ജോൺ</div>
+            <div class="mcq-opt">D) സതീഷ്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">6. ഉമാബാലൻ പഠിച്ച ഉന്നത കോഴ്സ് ഏതാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) മെഡിസിൻ</div>
+            <div class="mcq-opt">B) മാനേജ്‌മെന്റ് കോഴ്സ് (MBA/Management)</div>
+            <div class="mcq-opt">C) ബി.എഡ്</div>
+            <div class="mcq-opt">D) എൻജിനീയറിങ്</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">7. അയ്യങ്കാളി വില്ലുവണ്ടിയിൽ പൂട്ടിയിരുന്നത് ഏത് മൃഗങ്ങളെയാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) കുതിരകൾ</div>
+            <div class="mcq-opt">B) രണ്ട് വെള്ളക്കാളകൾ</div>
+            <div class="mcq-opt">C) പോത്തുകൾ</div>
+            <div class="mcq-opt">D) ഒട്ടകം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">8. അയ്യങ്കാളി ദലിത് കുട്ടികളുടെ വിദ്യാഭ്യാസത്തിനായി വിദ്യാലയ പ്രവേശന സമരം തുടങ്ങിയ വർഷമേത്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) 1904</div>
+            <div class="mcq-opt">B) 1893</div>
+            <div class="mcq-opt">C) 1931</div>
+            <div class="mcq-opt">D) 1947</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">9. കഥ തുടങ്ങുന്നത് ഏത് സന്ദർഭത്തിലാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) വിവാഹ ക്ഷണം ലഭിക്കുമ്പോൾ</div>
+            <div class="mcq-opt">B) കോളേജ് അലുമിനി മീറ്റിംഗിന്റെ ക്ഷണക്കത്ത് കിട്ടുമ്പോൾ</div>
+            <div class="mcq-opt">C) പരീക്ഷാ ഫലം വരുമ്പോൾ</div>
+            <div class="mcq-opt">D) യാത്രയ്ക്കിടയിൽ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">10. വെങ്കിട സാറിന്റെ പെരുമാറ്റത്തെ കഥയിൽ വിശേഷിപ്പിക്കുന്നത് എങ്ങനെയാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ദേഷ്യം നിറഞ്ഞത്</div>
+            <div class="mcq-opt">B) പരിഷ്കൃതമായ കാപട്യവും അദൃശ്യമായ ജാതിബോധവും</div>
+            <div class="mcq-opt">C) നിഷ്കളങ്കമായ സ്നേഹം</div>
+            <div class="mcq-opt">D) അജ്ഞത</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">11. 'വില്ലുവണ്ടി' എന്ന വാക്ക് കഥയിൽ എന്തിന്റെ പ്രതീകമാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ഒരു കാർഷിക ഉപകരണം</div>
+            <div class="mcq-opt">B) കീഴാളരുടെ ചെറുത്തുനിൽപ്പും ആത്മാഭിമാനവും</div>
+            <div class="mcq-opt">C) ആഡംബര വാഹനം</div>
+            <div class="mcq-opt">D) വിനോദം</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">12. ഉമാബാലൻ കോളേജിൽ പ്രവേശനം നേടിയത് ഏത് വഴിയാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) മാനേജ്‌മെന്റ് ക്വാട്ട</div>
+            <div class="mcq-opt">B) സംവരണം (Reservation)</div>
+            <div class="mcq-opt">C) സ്പോർട്സ് ക്വാട്ട</div>
+            <div class="mcq-opt">D) എൻ.ആർ.ഐ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">13. സാധുജന പരിപാലന സംഘം (SJPS) സ്ഥാപിച്ചത് ആരാണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) ശ്രീനാരായണഗുരു</div>
+            <div class="mcq-opt">B) മഹാത്മാ അയ്യങ്കാളി (1907)</div>
+            <div class="mcq-opt">C) സഹോദരൻ അയ്യപ്പൻ</div>
+            <div class="mcq-opt">D) പൊയ്കയിൽ അപ്പച്ചൻ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">14. കഥാകാരിയായ കെ. രേഖയുടെ രചനകളുടെ പ്രധാന സവിശേഷത എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) റൊമാന്റിക് പ്രണയം മാത്രം</div>
+            <div class="mcq-opt">B) തീക്ഷ്ണമായ സാമൂഹിക-സ്ത്രീപക്ഷ യാഥാർത്ഥ്യങ്ങൾ</div>
+            <div class="mcq-opt">C) ചരിത്രമില്ലായ്മ</div>
+            <div class="mcq-opt">D) കൊട്ടാരകഥകൾ</div>
+          </div>
+        </div>
+        
+        <div class="mcq-item">
+          <div class="mcq-q">15. 'വില്ലുവണ്ടി' എന്ന കഥ വായനക്കാരോട് സംവദിക്കുന്ന പ്രധാന വിഷയം എന്താണ്?</div>
+          <div class="mcq-options">
+            <div class="mcq-opt">A) പണത്തിന്റെ ആധിക്യം</div>
+            <div class="mcq-opt">B) ആധുനികതയുടെ മൂടുപടത്തിനുള്ളിലെ ജാതിവിവേചനവും അതിജീവനവും</div>
+            <div class="mcq-opt">C) കാളവണ്ടി പന്തയം</div>
+            <div class="mcq-opt">D) വിദേശ പഠനം</div>
+          </div>
+        </div>
+        </div>
+    <div class="mcq-key-card">
+      <h4>MCQ ഉത്തര സൂചിക & വിശദീകരണങ്ങൾ (Answer Key)</h4>
+      <div class="key-grid">
+    
+        <div class="key-item">
+          <b>1. C</b>: സമകാലിക കഥാകൃത്തായ കെ. രേഖയാണ് 'വില്ലുവണ്ടി' എന്ന കഥ എഴുതിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>2. A</b>: മാനേജ്‌മെന്റ് പഠനം പൂർത്തിയാക്കിയ ഉമാബാലനാണ് കഥയിലെ കേന്ദ്ര കഥാപാത്രം.
+        </div>
+        
+        <div class="key-item">
+          <b>3. B</b>: 1893-ൽ വെങ്ങാനൂരിലെ പൊതുവഴിയിലൂടെ വില്ലുവണ്ടി ഓടിച്ചാണ് അയ്യങ്കാളി സമരം നടത്തിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>4. B</b>: വെങ്കിട സാറാണ് ഉമാബാലനോട് ജാതിവിവേചനപരമായ സമീപനം പുലർത്തുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>5. A</b>: ഇല്യാസ് എന്ന വിദ്യാർത്ഥിയും ഉമാബാലന്റെ സഹപാഠിയായി കടന്നുവരുന്നുണ്ട്.
+        </div>
+        
+        <div class="key-item">
+          <b>6. B</b>: പ്രൊഫഷണൽ മാനേജ്‌മെന്റ് കോഴ്സാണ് അവൾ പഠിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>7. B</b>: മണികെട്ടിയ രണ്ട് വെള്ളക്കാളകളെ പൂട്ടിയ വില്ലുവണ്ടിയിലാണ് അയ്യങ്കാളി സഞ്ചരിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>8. A</b>: 1904-ൽ വെങ്ങാനൂരിൽ സ്വന്തമായി പള്ളിക്കൂടം സ്ഥാപിച്ചും സമരം നടത്തിയും അദ്ദേഹം പോരാടി.
+        </div>
+        
+        <div class="key-item">
+          <b>9. B</b>: പഴയ സഹപാഠികളുടെ ഒത്തുചേരൽ (Reunion) ക്ഷണക്കത്ത് കിട്ടുമ്പോഴാണ് കഥ ആരംഭിക്കുന്നത്.
+        </div>
+        
+        <div class="key-item">
+          <b>10. B</b>: പുറമെ പരിഷ്കാരിയായി നടിച്ച് ഉള്ളിൽ ജാതിവിവേചനം കൊണ്ടുനടക്കുന്ന ആളാണ് വെങ്കിട സാർ.
+        </div>
+        
+        <div class="key-item">
+          <b>11. B</b>: അയ്യങ്കാളിയുടെ പോരാട്ടവീര്യത്തിന്റെയും കീഴാളരുടെ ആത്മാഭിമാനത്തിന്റെയും പ്രതീകമാണ് വില്ലുവണ്ടി.
+        </div>
+        
+        <div class="key-item">
+          <b>12. B</b>: സംവരണത്തിലൂടെയാണ് ഉമാബാലൻ ആ ഉന്നത സ്ഥാപനത്തിൽ എത്തിയത്.
+        </div>
+        
+        <div class="key-item">
+          <b>13. B</b>: 1907-ൽ മഹാത്മാ അയ്യങ്കാളിയാണ് സാധുജന പരിപാലന സംഘം സ്ഥാപിച്ചത്.
+        </div>
+        
+        <div class="key-item">
+          <b>14. B</b>: സ്ത്രീജീവിതത്തിന്റെയും സാമൂഹിക അസമത്വങ്ങളുടെയും ശക്തമായ ആവിഷ്കാരമാണ് രേഖയുടെ കഥകൾ.
+        </div>
+        
+        <div class="key-item">
+          <b>15. B</b>: ആധുനിക വിദ്യാഭ്യാസ ഇടങ്ങളിൽ നിലനിൽക്കുന്ന ജാതിവിവേചനങ്ങളും അതിജീവനവുമാണ് കഥയുടെ കാതൽ.
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="exam-points-card">
+      <div class="exam-points-head">
+        <h3>അധ്യാപകനും ഉള്ളടക്കവും സംബന്ധിച്ച 20 പ്രധാന പരീക്ഷാ പോയിന്റുകൾ</h3>
+        <span class="exam-tag">20 EXAM FOCUS POINTS</span>
+      </div>
+      <ul class="exam-points-list">
+    <li>1. രചയിതാവ്: കെ. രേഖ - സമകാലിക മലയാള ചെറുകഥയിലെ പ്രമുഖ എഴുത്തുകാരി.</li><li>2. കഥ: 'വില്ലുവണ്ടി' - ചരിത്രവും സമകാലിക കാമ്പസ് ജീവിതവും സമന്വയിക്കുന്ന കഥ.</li><li>3. കേന്ദ്ര കഥാപാത്രം: ഉമാബാലൻ (ദലിത് മാനേജ്‌മെന്റ് വിദ്യാർത്ഥിനി).</li><li>4. സഹപാഠി കഥാപാത്രം: ഇല്യാസ്.</li><li>5. വില്ലൻ സ്വഭാവമുള്ള അധ്യാപകൻ: വെങ്കിട സാർ (സവർണ്ണ പൊതുബോധത്തിന്റെ പ്രതീകം).</li><li>6. കഥയുടെ തുടക്കം: പൂർവ്വവിദ്യാർത്ഥി സംഗമത്തിന്റെ (Alumni Meet) ക്ഷണക്കത്ത് ലഭിക്കുമ്പോൾ.</li><li>7. ചരിത്ര പശ്ചാത്തലം: മഹാത്മാ അയ്യങ്കാളിയുടെ 1893-ലെ വില്ലുവണ്ടി സമരം.</li><li>8. അയ്യങ്കാളി സമരം നടത്തിയത്: തിരുവിതാംകൂറിലെ വെങ്ങാനൂരിൽ സഞ്ചാരസ്വാതന്ത്ര്യത്തിനായി.</li><li>9. വില്ലുവണ്ടിയുടെ പ്രത്യേകത: മണിമുഴങ്ങുന്ന രണ്ട് വെള്ളക്കാളകളെ പൂട്ടിയ ആഡംബര വണ്ടി.</li><li>10. 1904-ൽ അയ്യങ്കാളി ദലിത് കുട്ടികളുടെ വിദ്യാഭ്യാസത്തിനായി വിദ്യാലയ പ്രവേശന സമരം നടത്തി.</li><li>11. 1907-ൽ സാധുജന പരിപാലന സംഘം (SJPS) രൂപീകരിച്ചു.</li><li>12. വെങ്കിട സാറിന്റെ തന്ത്രം: പരസ്യമായി ജാതി പറയാതെ സംവരണത്തെ പുച്ഛിച്ച് മാനസികമായി തളർത്തൽ.</li><li>13. കാമ്പസുകളിലെ മെറിറ്റ് വാദം ദലിത് വിദ്യാർത്ഥികളെ പാർശ്വവൽക്കരിക്കാനുള്ള ആയുധമായി മാറുന്നു.</li><li>14. ഉമാബാലന്റെ മനോഭാവം: നിസ്സഹായയായി കരയാതെ പഠനമികവിലൂടെ ആത്മാഭിമാനം സംരക്ഷിക്കൽ.</li><li>15. വില്ലുവണ്ടി എന്നത് ഒരു യാത്രാവാഹനം മാത്രമല്ല, കീഴാളരുടെ പൗരാവകാശ രഥമാണ്.</li><li>16. കേരള മോഡൽ വിദ്യാഭ്യാസത്തിന്റെ പരിമിതികളെയും അദൃശ്യ ജാതിയെയും കഥ വിചാരണ ചെയ്യുന്നു.</li><li>17. അലുമിനി മീറ്റ് എന്നത് വിജയങ്ങളുടെ കാപട്യങ്ങൾ പ്രദർശിപ്പിക്കുന്ന വേദിയായി കഥയിൽ മാറുന്നു.</li><li>18. ചരിത്രത്തിലെ സമരവീര്യവും ആധുനിക യുവതിയുടെ ആത്മാഭിമാനവും കഥയിൽ ഇഴചേർന്നിരിക്കുന്നു.</li><li>19. കെ. രേഖയുടെ മറ്റ് ശ്രദ്ധേയമായ കൃതികൾ: 'ആരുടേയോ ഒരു സഖാവ്', 'മാലാഖമാർക്ക് ചിറകുകളുണ്ടോ'.</li><li>20. പരീക്ഷാ ഫോക്കസ്: വില്ലുവണ്ടി സമര ചരിത്രം, ഉമാബാലന്റെ പ്രതിരോധം, വെങ്കിട സാറിന്റെ ജാതിബോധം, സ്ഥാപനവൽക്കൃത വിവേചനം.</li>
+      </ul>
+    </div>
+    </div></div></body></html>

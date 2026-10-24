@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <meta charset="UTF-8">
+  <title>Module 2: Classical Version of Artificial Intelligence · Philosophy of AI (PHL1MN102)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    
+    @page {
+      size: A4;
+      margin: 14mm 14mm 16mm 14mm;
+      @bottom-right {
+        content: counter(page);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 9pt;
+        font-weight: 700;
+        color: #64748b;
+      }
+    }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.6;
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .header-box {
+      border: 2px solid #4338ca;
+      border-radius: 12px;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+      margin-bottom: 20px;
+    }
+    
+    .badge {
+      display: inline-block;
+      background: #4338ca;
+      color: #ffffff;
+      font-size: 8pt;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    
+    h1 {
+      margin: 0 0 4px 0;
+      color: #312e81;
+      font-size: 16pt;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    
+    .sub-title {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #4f46e5;
+      margin-bottom: 8px;
+    }
+    
+    .meta-info {
+      font-size: 8.5pt;
+      color: #475569;
+      font-weight: 600;
+      border-top: 1px dashed #c7d2fe;
+      padding-top: 6px;
+      margin-top: 6px;
+    }
+    
+    .lms-box {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-left: 5px solid #4338ca;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 22px;
+    }
+    
+    .lms-box h3 {
+      margin: 0 0 6px 0;
+      color: #4338ca;
+      font-size: 10.5pt;
+      font-weight: 800;
+    }
+    
+    .section-title {
+      background: #4338ca;
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 11pt;
+      font-weight: 800;
+      margin: 22px 0 14px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      page-break-after: avoid;
+    }
+    
+    .bilingual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+      page-break-inside: avoid;
+    }
+    
+    .card-en, .card-ml {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      background: #ffffff;
+      font-size: 9.5pt;
+    }
+    
+    .card-en {
+      border-left: 4px solid #2563eb;
+      background: #f8fafc;
+    }
+    
+    .card-ml {
+      border-left: 4px solid #059669;
+      background: #f0fdf4;
+    }
+    
+    .card-heading {
+      font-weight: 800;
+      font-size: 9.5pt;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .card-en .card-heading { color: #1e40af; }
+    .card-ml .card-heading { color: #065f46; }
+    
+    ul, ol {
+      margin: 6px 0;
+      padding-left: 18px;
+    }
+    
+    li {
+      margin-bottom: 5px;
+    }
+    
+    .key-term {
+      background: #fef3c7;
+      color: #92400e;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+    
+    .qa-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+    
+    .qa-q {
+      background: #f1f5f9;
+      padding: 8px 12px;
+      font-weight: 800;
+      color: #1e293b;
+      font-size: 9.5pt;
+      border-bottom: 1px solid #cbd5e1;
+    }
+    
+    .qa-a {
+      padding: 10px 14px;
+      background: #ffffff;
+    }
+    
+    .table-custom {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 9pt;
+      page-break-inside: avoid;
+    }
+    
+    .table-custom th, .table-custom td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    
+    .table-custom th {
+      background: #4338ca;
+      color: #ffffff;
+      font-weight: 800;
+    }
+    
+    .table-custom tr:nth-child(even) {
+      background: #f8fafc;
+    }
+  
+    @media (max-width: 768px) {
+      body {
+        padding: 12px 10px !important;
+        font-size: 15px !important;
+        line-height: 1.65 !important;
+      }
+      .header-box {
+        padding: 14px 12px !important;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header-box">
+    <span class="badge">Calicut University · BA Sociology FYUG · Minor Course (PHL1MN102)</span>
+    <h1>Module 2: Classical Version of Artificial Intelligence</h1>
+    <div class="sub-title">മൊഡ്യൂൾ 2: ക്ലാസിക്കൽ വേർഷൻ ഓഫ് ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ്</div>
+    <div class="meta-info">
+      <strong>LMS Source Document:</strong> Module_2_Classical_Version_of_Artificial_Intelligence.pdf &amp; Official Syllabus (Pages 114–115)<br>
+      <strong>Syllabus Code:</strong> PHL1MN102 · Credits: 4 · Weightage: 20 Marks / 20 Hours
+    </div>
+  </div>
+
+  <!-- LMS MODULE FOUNDATION & 9 OBJECTIVES (STRICTLY FROM LMS PDF) -->
+  <div class="lms-box">
+    <h3>📋 ഔദ്യോഗിക LMS അവലോകനവും 9 പഠന ലക്ഷ്യങ്ങളും (Official LMS Overview &amp; 9 Objectives)</h3>
+    <p style="margin:0 0 8px 0; font-size:9pt; color:#334155;">
+      <strong>LMS Overview:</strong> The module examines the philosophical issues arising from the development of AI. The conventional paradigm of AI views intelligence as symbolic, logical, and rule-based, influenced by rationalist and computational philosophies. However, it faces philosophical criticism for overlooking the physical, emotional, and experiential aspects of human cognition.
+    </p>
+    <div style="font-size:8.5pt; color:#4338ca; font-weight:700;">
+      ✓ 9 Core LMS Objectives: 1) Constraints of symbolic reasoning 2) Why early AI failed to attain genuine human-like intelligence 3) Philosophical &amp; technological issues in symbolic methodology 4) Turing's concept vs obstacles in early research 5) Shift from rule-based to learning-based AI 6) John Searle's critique of Classical Symbolic AI 7) Philosophical constraints of viewing computing as authentic intelligence 8) Ramifications of the Chinese Room Argument 9) Descartes and origins of Philosophy of Mind &amp; Disembodied Intelligence.
+    </div>
+  </div>
+
+  <!-- SECTION 1: THE CLASSICAL (SYMBOLIC) PARADIGM & ITS CONSTRAINTS -->
+  <div class="section-title">
+    <span>1. Classical (Symbolic) AI: Assumptions &amp; Inherent Constraints</span>
+    <span>ക്ലാസിക്കൽ (സിംബോളിക്) AI: അടിസ്ഥാന സങ്കല്പങ്ങളും പരിമിതികളും</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-en">
+      <div class="card-heading">🇬🇧 The Classical (GOFAI) Paradigm</div>
+      <p>Classical AI (often termed <em>GOFAI</em> or Good Old-Fashioned AI) was founded upon the <strong>Physical Symbol System Hypothesis (PSSH)</strong> proposed by Newell and Simon (1976). It asserted that a physical symbol system possesses the necessary and sufficient means for general intelligent action.</p>
+      <ul>
+        <li><strong>Symbolic Manipulation:</strong> Cognition is viewed purely as syntactic manipulation of tokens/symbols according to formal deductive rules.</li>
+        <li><strong>Inability to Reach Genuine Human Intelligence:</strong>
+          <ul>
+            <li><strong>The Frame Problem:</strong> Rule-based systems struggle to know which background facts remain unchanged when an action is performed in a dynamic environment.</li>
+            <li><strong>Brittleness:</strong> Symbolic systems function impressively in closed, microworld domains (like Chess), but fail catastrophically when encountering novel, unpredicted situations.</li>
+            <li><strong>Common Sense Knowledge:</strong> Formalizing intuitive everyday human understanding requires an infinite regress of explicit rules.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="card-ml">
+      <div class="card-heading">🇲🇱 ക്ലാസിക്കൽ AI-യുടെ പ്രവർത്തനവും തകർച്ചയും</div>
+      <p>ക്ലാസിക്കൽ AI (GOFAI) ചിന്തയെ കണ്ടത് ചിഹ്നങ്ങളുടെയും കണിശമായ നിയമങ്ങളുടെയും അടിസ്ഥാനത്തിലാണ് (Physical Symbol System Hypothesis). മനുഷ്യ മനസ്സ് ഒരു ഡിജിറ്റൽ കമ്പ്യൂട്ടർ പോലെ ചിഹ്നങ്ങൾ കൈകാര്യം ചെയ്യുന്നുവെന്ന് ഇത് കരുതി.</p>
+      <ul>
+        <li><strong>പ്രവർത്തന രീതി:</strong> അറിവിനെ ചിഹ്നങ്ങളാക്കി (Symbols) മാറ്റി, അവയെ ലോജിക്കൽ നിയമങ്ങളിലൂടെ നിയന്ത്രിച്ച് ഉത്തരങ്ങളിലെത്തുന്നു.</li>
+        <li><strong>യഥാർത്ഥ മനുഷ്യ ബുദ്ധി കൈവരിക്കാൻ കഴിയാത്തതിന്റെ കാരണങ്ങൾ:</strong>
+          <ul>
+            <li><strong>ഫ്രെയിം പ്രോബ്ലം (Frame Problem):</strong> ഒരു മാറ്റം സംഭവിക്കുമ്പോൾ ലോകത്തിലെ ഏതൊക്കെ കാര്യങ്ങൾ മാറ്റമില്ലാതെ തുടരുന്നു എന്ന് തിരിച്ചറിയാൻ സിംബോളിക് സിസ്റ്റങ്ങൾക്ക് കഴിയുന്നില്ല.</li>
+            <li><strong>ബ്രിട്ടിൽനെസ്സ് (Brittleness/പെട്ടെന്ന് തകരൽ):</strong> മുൻകൂട്ടി നിശ്ചയിച്ച ചട്ടക്കൂടുകൾക്ക് (ഉദാ: ചെസ്സ് കളി) അപ്പുറമുള്ള പുതിയ സന്ദർഭങ്ങളിൽ ക്ലാസിക്കൽ AI പൂർണ്ണമായും പരാജയപ്പെടുന്നു.</li>
+            <li><strong>സാമാന്യബുദ്ധിയുടെ കുറവ് (Common Sense):</strong> മനുഷ്യർക്ക് സ്വാഭാവികമായി ഉള്ള സാമാന്യബോധം കമ്പ്യൂട്ടറിൽ കോഡ് ചെയ്തു നൽകുക അസാധ്യമായി മാറി.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 2: SHIFT FROM RULE-BASED TO LEARNING-BASED AI -->
+  <div class="section-title">
+    <span>2. The Paradigm Shift: Rule-Based to Learning-Based AI (LMS Objective 5)</span>
+    <span>മാറ്റത്തിന്റെ വഴിത്തിരിവ്: നിയമ കേന്ദ്രീകൃതത്തിൽ നിന്ന് ഡാറ്റാ പഠനത്തിലേക്ക്</span>
+  </div>
+
+  <table class="table-custom">
+    <thead>
+      <tr>
+        <th style="width:25%;">Dimension / ഘടകം</th>
+        <th style="width:38%;">Classical Rule-Based AI (Symbolic)</th>
+        <th style="width:37%;">Modern Learning-Based AI (Connectionist / ML)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Architecture (ഘടനാ രീതി)</strong></td>
+        <td><strong>Top-Down:</strong> Human engineers hand-code explicit rules, ontologies, and if-then logic trees.</td>
+        <td><strong>Bottom-Up:</strong> Deep multi-layered artificial neural networks adjust connection weights from raw data.</td>
+      </tr>
+      <tr>
+        <td><strong>Cognitive Focus (ബൗദ്ധിക തലം)</strong></td>
+        <td>Formal deduction, abstract problem-solving, theorem proving, expert systems.</td>
+        <td>Perception, pattern recognition, sensory processing, probabilistic inference, generative language.</td>
+      </tr>
+      <tr>
+        <td><strong>Handling Uncertainty (അനിശ്ചിതത്വം)</strong></td>
+        <td>Extremely brittle; fails when inputs deviate from formalized rules.</td>
+        <td>Robust; generalizes gracefully to noisy, ambiguous, and incomplete real-world data.</td>
+      </tr>
+      <tr>
+        <td><strong>Explainability (സുതാര്യത)</strong></td>
+        <td>White-box; every logical step in the inference chain is human-auditable.</td>
+        <td>Black-box; high predictive accuracy but inner mathematical weights resist intuitive interpretation.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 3: JOHN SEARLE & THE CHINESE ROOM EXPERIMENT (UNIT 2.1 b) -->
+  <div class="section-title">
+    <span>3. John Searle’s Critique: The Chinese Room Argument (Unit 2.1 b)</span>
+    <span>ജോൺ സിയേളിന്റെ വിമർശനം: ചൈനീസ് റൂം പരീക്ഷണം</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-en">
+      <div class="card-heading">🇬🇧 Minds, Brains, and Programs (1980)</div>
+      <p>American philosopher John Searle designed the <strong>Chinese Room Thought Experiment</strong> to refute <em>Strong AI</em> (the claim that an appropriately programmed computer literally has a mind and understands).</p>
+      <ul>
+        <li><strong>The Experiment:</strong> An English-speaking person who knows zero Chinese is locked in a room with a rulebook in English. Chinese characters are slipped under the door. The person strictly follows the English rulebook to match patterns and slips corresponding Chinese symbols back outside.</li>
+        <li><strong>The Result:</strong> To people outside, the room produces fluent Chinese. But does the person inside understand Chinese? <strong>Not a single word.</strong></li>
+        <li><strong>Core Philosophical Dictum:</strong> <span class="key-term">Syntax is not Semantics</span>. Formal syntactic symbol manipulation (which is all digital computers do) is fundamentally insufficient for semantic understanding (mental meaning and intentionality).</li>
+        <li><strong>Weak AI vs. Strong AI:</strong>
+          <ul>
+            <li><em>Weak AI:</em> Computation is a valuable tool for simulating and studying the mind (Valid).</li>
+            <li><em>Strong AI:</em> A computer program is literally a mind with genuine understanding (Refuted by Searle).</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="card-ml">
+      <div class="card-heading">🇲🇱 സിന്റാക്സ് എന്നാൽ സെമാന്റിക്സ് അല്ല</div>
+      <p>1980-ൽ ജോൺ സിയേൾ അവതരിപ്പിച്ച <strong>'ചൈനീസ് റൂം'</strong> പരീക്ഷണം, കമ്പ്യൂട്ടറുകൾക്ക് യഥാർത്ഥത്തിൽ ചിന്തിക്കാനോ മനസ്സിലാക്കാനോ കഴിയില്ലെന്ന് (Anti-Strong AI) സമർത്ഥിച്ചു.</p>
+      <ul>
+        <li><strong>പരീക്ഷണത്തിന്റെ ഘടന:</strong> ചൈനീസ് ഭാഷ ഒട്ടും അറിയാത്ത ഒരാളെ ഒരു മുറിക്കുള്ളിലാക്കുന്നു. അദ്ദേഹത്തിന് ഇംഗ്ലീഷിലുള്ള ഒരു നിയമപുസ്തകവും (Rules) നൽകുന്നു. വാതിലിനടിയിലൂടെ ചൈനീസ് അക്ഷരങ്ങൾ വരുമ്പോൾ, നിയമപുസ്തകം നോക്കി അതിന് ചേരുന്ന ചിഹ്നങ്ങൾ തപ്പി അയാൾ പുറത്തേക്ക് നൽകുന്നു.</li>
+        <li><strong>നിരീക്ഷണം:</strong> പുറത്തുനിൽക്കുന്നവർക്ക് മുറിക്കുള്ളിലുള്ളയാൾ നന്നായി ചൈനീസ് സംസാരിക്കുന്നുവെന്ന് തോന്നും. എന്നാൽ അയാൾക്ക് ചൈനീസിലെ ഒരു വാക്കിന്റെ പോലും അർത്ഥം അറിയാമോ? <strong>ഇല്ല!</strong></li>
+        <li><strong>മുഖ്യ ദാർശനിക തത്ത്വം:</strong> <span class="key-term">സിന്റാക്സ് (Syntax) എന്നാൽ സെമാന്റിക്സ് (Semantics) അല്ല</span>. വ്യാകരണ നിയമങ്ങൾക്കനുസരിച്ച് ചിഹ്നങ്ങൾ മാറ്റിവെക്കാൻ (Syntax) കമ്പ്യൂട്ടറിന് സാധിക്കുമെങ്കിലും, ആ ചിഹ്നങ്ങളുടെ ആന്തരിക അർത്ഥം (Semantics) ഗ്രഹിക്കാൻ കഴിയില്ല.</li>
+        <li><strong>വീക്ക് AI vs സ്ട്രോംഗ് AI:</strong>
+          <ul>
+            <li><em>വീക്ക് AI:</em> മനസ്സിന്റെ പ്രവർത്തനങ്ങളെ അനുകരിക്കാനുള്ള ശക്തമായ ഉപകരണം മാത്രമാണ് കമ്പ്യൂട്ടർ.</li>
+            <li><em>സ്ട്രോംഗ് AI:</em> ശരിയായി പ്രോഗ്രാം ചെയ്ത കമ്പ്യൂട്ടറിന് മനുഷ്യനെപ്പോലെ സ്വന്തമായി മനസ്സുണ്ടെന്ന വാദമാണിത്; ഇത് തികച്ചും തെറ്റാണെന്ന് സിയേൾ സ്ഥാപിച്ചു.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 4: SEARLE'S COUNTER-REPLIES -->
+  <div class="section-title">
+    <span>4. Philosophical Objections to Searle &amp; His Counter-Replies</span>
+    <span>സിയേളിന്റെ വാദത്തോടുള്ള പ്രധാന പ്രതികരണങ്ങളും അദ്ദേഹത്തിന്റെ മറുപടിയും</span>
+  </div>
+
+  <table class="table-custom">
+    <thead>
+      <tr>
+        <th style="width:28%;">Objection / വിമർശനം</th>
+        <th style="width:36%;">The Argument (English &amp; Malayalam)</th>
+        <th style="width:36%;">Searle’s Refutation (സിയേളിന്റെ മറുപടി)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>The Systems Reply<br>(സിസ്റ്റം വാദം)</strong></td>
+        <td>While the person inside doesn't understand Chinese, the <em>whole system</em> (person + room + rulebook + symbol boxes) as a totality understands Chinese.</td>
+        <td>If the person memorizes the rulebook and all symbols, doing all calculations mentally in the open, the person IS the system—and still understands no Chinese!</td>
+      </tr>
+      <tr>
+        <td><strong>The Robot Reply<br>(റോബോട്ട് വാദം)</strong></td>
+        <td>Place the program inside a physical robot with cameras, sensors, and actuators interacting with the real physical world to ground symbols in reality.</td>
+        <td>Sensory inputs are just more syntactic data inputs. The person inside is simply processing more symbols without semantic grounding.</td>
+      </tr>
+      <tr>
+        <td><strong>The Brain Simulator Reply<br>(മസ്തിഷ്ക സിമുലേറ്റർ വാദം)</strong></td>
+        <td>Design a program that precisely simulates the actual sequence of neuronal firings in a native Chinese speaker’s brain.</td>
+        <td>Simulating a biological process is not duplicating it. Simulating the chemical combustion of a fire does not burn the computer; simulating digestion does not digest food.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 5: DESCARTES & ORIGINS OF PHILOSOPHY OF MIND (UNIT 2.2 a) -->
+  <div class="section-title">
+    <span>5. René Descartes &amp; Inception of Philosophy of Mind (Unit 2.2 a)</span>
+    <span>റെനെ ദെക്കാർത്തും മനസ്സിന്റെ തത്ത്വചിന്തയുടെ തുടക്കവും</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-en">
+      <div class="card-heading">🇬🇧 Cartesian Substance Dualism</div>
+      <p>Modern philosophy of mind traces directly to French philosopher <strong>René Descartes (1596–1650)</strong> and his foundational method of hyperbolic doubt in <em>Meditations on First Philosophy (1641)</em>.</p>
+      <ul>
+        <li><strong>Cogito, Ergo Sum:</strong> "I think, therefore I am." While one can doubt the existence of physical objects or one's own physical body, one cannot doubt the existence of the doubting/thinking self.</li>
+        <li><strong>Two Distinct Substances:</strong>
+          <ul>
+            <li><strong>Res Cogitans (Thinking Substance):</strong> Non-physical, unextended, indivisible, conscious mind.</li>
+            <li><strong>Res Extensa (Extended Substance):</strong> Physical, spatially extended, divisible matter obeying mechanical laws.</li>
+          </ul>
+        </li>
+        <li><strong>The Mind-Body Interaction Problem:</strong> If mind and matter are entirely distinct substances, how can an immaterial thought cause a physical arm to move? (Descartes proposed the pineal gland, which philosophers found scientifically untenable).</li>
+        <li><strong>Descartes on Machines:</strong> Descartes viewed animals as pure mechanical automata (*bête-machine*). While machines might simulate human sounds, they can never possess a <em>universal instrument of reason</em> or authentic thought.</li>
+      </ul>
+    </div>
+    <div class="card-ml">
+      <div class="card-heading">🇲🇱 ദെക്കാർത്തിന്റെ ദ്വൈതവാദ ദർശനം</div>
+      <p>ആധുനിക മനസ്സിന്റെ തത്ത്വചിന്തയുടെ (Philosophy of Mind) ആരംഭം ഫ്രഞ്ച് ചിന്തകനായ <strong>റെനെ ദെക്കാർത്തിൽ (1596–1650)</strong> നിന്നാണ് ആരംഭിക്കുന്നത്.</p>
+      <ul>
+        <li><strong>കോഗിറ്റോ എർഗോ സം (Cogito, Ergo Sum):</strong> "ഞാൻ ചിന്തിക്കുന്നു, അതിനാൽ ഞാൻ നിലനിൽക്കുന്നു." ഭൗതിക ശരീരത്തിന്റെ നിലനിൽപ്പ് ഒരുപക്ഷേ മായയോ സ്വപ്നമോ ആകാം; എന്നാൽ ചിന്തിക്കുന്ന, സംശയിക്കുന്ന 'ഞാൻ' എന്ന മനസ്സ് സത്യമാണ്.</li>
+        <li><strong>രണ്ട് വ്യത്യസ്ത പദാർത്ഥങ്ങൾ (Substance Dualism):</strong>
+          <ul>
+            <li><strong>റെസ് കോഗിറ്റൻസ് (Res Cogitans):</strong> ഭൗതിക രൂപമില്ലാത്ത, വിഭജിക്കാനാവാത്ത, ചിന്തയും ബോധവുമുള്ള ആത്മീയ മനസ്സ്.</li>
+            <li><strong>റെസ് എക്സ്റ്റെൻസ (Res Extensa):</strong> സ്ഥലവും ഭാരവുമുള്ള, വിഭജിക്കാൻ കഴിയുന്ന, യാന്ത്രിക നിയമങ്ങൾ പാലിക്കുന്ന ഭൗതിക ശരീരം.</li>
+          </ul>
+        </li>
+        <li><strong>മനസ്സ്-ശരീര പ്രശ്നം (Mind-Body Problem):</strong> ഭൗതികമല്ലാത്ത മനസ്സ് എങ്ങനെയാണ് ഭൗതികമായ ശരീരത്തെ ചലിപ്പിക്കുന്നത് എന്ന ചോദ്യം തത്ത്വചിന്തയിലെ വലിയ പ്രഹേളികയായി മാറി.</li>
+        <li><strong>യന്ത്രങ്ങളെക്കുറിച്ചുള്ള ദെക്കാർത്തിന്റെ വീക്ഷണം:</strong> മൃഗങ്ങളും യന്ത്രങ്ങളും യാന്ത്രിക പാവകൾ (Automata) മാത്രമാണ്. ഒരു യന്ത്രത്തിന് ചില വാക്കുകൾ ആവർത്തിക്കാൻ കഴിഞ്ഞേക്കാം, എന്നാൽ മനുഷ്യന്റെ സാർവ്വത്രിക യുക്തിചിന്തയോ മനസ്സിന്റെ ബോധമോ കൈവരിക്കാനാവില്ല.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 6: DISEMBODIED INTELLIGENCE & CRITIQUES (UNIT 2.2 b) -->
+  <div class="section-title">
+    <span>6. Disembodied Intelligence &amp; Critiques from Embodied Cognition</span>
+    <span>ശരീരരഹിത ബുദ്ധിയും (Disembodied AI) ശരീരബദ്ധ ജ്ഞാനത്തിന്റെ വിമർശനങ്ങളും</span>
+  </div>
+
+  <div class="bilingual-grid">
+    <div class="card-en">
+      <div class="card-heading">🇬🇧 Disembodied AI vs. Embodied Cognition</div>
+      <ul>
+        <li><strong>The Concept of Disembodied Intelligence:</strong> Classical AI inherited Cartesian dualism by assuming that intelligence is a pure software phenomenon. It believed thought can be fully realized in an isolated abstract processor, indifferent to whether it has a body, senses, or physical interaction with the world.</li>
+        <li><strong>Philosophical Critiques:</strong>
+          <ul>
+            <li><strong>Hubert Dreyfus (1972 - <em>What Computers Can't Do</em>):</strong> Drew on Heidegger and Merleau-Ponty to argue that human understanding is inherently situated, biological, and grounded in non-formalized bodily skills and background practices.</li>
+            <li><strong>Embodied &amp; Situated AI (Rodney Brooks):</strong> Proposed that intelligence does not emerge from abstract symbol tables, but from physical interaction with an environment (*"The world is its own best model"*).</li>
+            <li><strong>Emotion &amp; Experiential Cognition:</strong> Human rationality is deeply coupled with somatic feelings, emotions (Antonio Damasio), and lived experience—qualities entirely absent in purely computational algorithms.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="card-ml">
+      <div class="card-heading">🇲🇱 ശരീരരഹിത ബുദ്ധിയുടെ പരിമിതികൾ</div>
+      <ul>
+        <li><strong>ശരീരരഹിത ബുദ്ധി (Disembodied Intelligence):</strong> ക്ലാസിക്കൽ AI വിശ്വസിച്ചത് ബുദ്ധി എന്നത് ശരീരവുമായി ബന്ധമില്ലാത്ത കേവലം ഒരു സോഫ്റ്റ്‌വെയർ പ്രോഗ്രാമാണ് എന്നാണ്. ഒരു കമ്പ്യൂട്ടർ ചിപ്പിൽ മാത്രം അടങ്ങിയിരിക്കുന്ന അമൂർത്തമായ ഒന്നായി ചിന്തയെ കണ്ടു.</li>
+        <li><strong>പ്രധാന ദാർശനിക വിമർശനങ്ങൾ:</strong>
+          <ul>
+            <li><strong>ഹ്യൂബർട്ട് ഡ്രൈഫസിന്റെ വിമർശനം (Hubert Dreyfus):</strong> മനുഷ്യന്റെ ചിന്ത എന്നത് ശരീരത്തിലൂടെയും അനുഭവങ്ങളിലൂടെയും പരിസ്ഥിതിയുമായി നിരന്തരം ഇടപഴകി (Situated Cognition) രൂപപ്പെടുന്നതാണ്. നിയമങ്ങൾ മനഃപാഠമാക്കുന്നതിലൂടെ അത് ലഭിക്കില്ല.</li>
+            <li><strong>എംബോഡിഡ് AI (Embodied AI - Rodney Brooks):</strong> ബുദ്ധി ഉണ്ടാകുന്നത് ശൂന്യമായ ചിഹ്നങ്ങളിൽ നിന്നല്ല, മറിച്ച് ബാഹ്യലോകവുമായി നേരിട്ട് സമ്പർക്കം പുലർത്തുന്ന ശരീരവും സെൻസറുകളും ഉള്ളപ്പോഴാണ്.</li>
+            <li><strong>വികാരങ്ങളും അനുഭവങ്ങളും:</strong> മനുഷ്യന്റെ തീരുമാനങ്ങൾ വികാരങ്ങളുമായും ശാരീരികാനുഭവങ്ങളുമായും ഇഴചേർന്നു നിൽക്കുന്നു; കമ്പ്യൂട്ടറുകൾക്ക് ഇല്ലാത്തതും ഇതാണ്.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 7: EXAM-FOCUSED HIGH-YIELD Q&A BASED STRICTLY ON MODULE 2 -->
+  <div class="section-title">
+    <span>7. Exam-Focused High-Yield Q&amp;A (Strictly Syllabus Aligned)</span>
+    <span>പരീക്ഷാ കേന്ദ്രീകൃത ചോദ്യോത്തരങ്ങൾ (20 മാർക്ക് ഫോക്കസ്)</span>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q1. Explain John Searle’s Chinese Room Argument and evaluate its impact on Strong AI. (ജോൺ സിയേളിന്റെ ചൈനീസ് റൂം പരീക്ഷണം വിശദീകരിക്കുക; സ്ട്രോംഗ് AI-യിൽ അത് ഉണ്ടാക്കിയ പ്രത്യാഘാതങ്ങൾ വിലയിരുത്തുക.)</div>
+    <div class="qa-a">
+      <p><strong>Answer:</strong> Proposed by John Searle in 1980, the Chinese Room argument demonstrates that purely formal syntactic manipulation of symbols does not equate to semantic understanding. A person following an English rulebook inside a room can manipulate Chinese characters to produce fluent answers without understanding Chinese meaning. Searle concludes that <strong>Syntax is not Semantics</strong>. Consequently, <em>Strong AI</em> (the theory that running a computer program constitutes genuine mental understanding) is definitively refuted. Computation merely simulates thought without achieving consciousness or intentionality.</p>
+      <p style="color:#065f46; font-size:9pt; margin-top:4px;"><strong>മലയാളം ഉത്തരം:</strong> 1980-ൽ ജോൺ സിയേൾ അവതരിപ്പിച്ച ചിന്താ പരീക്ഷണമാണിത്. ചൈനീസ് ഭാഷയറിയാത്ത ഒരാൾക്ക് മുറിക്കുള്ളിലിരുന്ന് ഇംഗ്ലീഷ് റൂൾബുക്ക് ഉപയോഗിച്ച് ചൈനീസ് ചോദ്യങ്ങൾക്ക് ശരിയായ ഉത്തരം നൽകാൻ കഴിയും. എന്നാൽ അയാൾക്ക് ചൈനീസ് അർത്ഥം മനസ്സിലാകുന്നില്ല. ഇതിലൂടെ കമ്പ്യൂട്ടറുകൾ ചെയ്യുന്നത് വെറും ചിഹ്നങ്ങൾ മാറ്റിവെക്കൽ (Syntax) മാത്രമാണെന്നും, അവയ്ക്ക് അർത്ഥം ഗ്രഹിക്കാനുള്ള കഴിവ് (Semantics) ഇല്ലെന്നും സിയേൾ തെളിയിച്ചു. കമ്പ്യൂട്ടറുകൾക്ക് മനുഷ്യനെപ്പോലെ മനസ്സുണ്ടെന്ന 'സ്ട്രോംഗ് AI' വാദത്തെ ഇത് തകർത്തു.</p>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q2. What is Substance Dualism? Explain Descartes' contribution to the Philosophy of Mind. (പദാർത്ഥ ദ്വൈതവാദം എന്താണ്? മനസ്സിന്റെ തത്ത്വചിന്തയിൽ റെനെ ദെക്കാർത്തിന്റെ സംഭാവനകൾ വ്യക്തമാക്കുക.)</div>
+    <div class="qa-a">
+      <p><strong>Answer:</strong> Substance Dualism, formulated by René Descartes, posits that reality consists of two distinct, irreducible substances: <em>Res Cogitans</em> (the immaterial, indivisible, conscious mind) and <em>Res Extensa</em> (the material, extended, divisible body governed by mechanical laws). Through his radical doubt leading to <em>"Cogito, Ergo Sum"</em> (I think, therefore I am), Descartes established that the mind’s existence is self-evident even if the physical body is doubted. This established modern Philosophy of Mind and gave rise to the <strong>Mind-Body Problem</strong>: explaining how an immaterial mind can causally interact with a physical machine/body.</p>
+      <p style="color:#065f46; font-size:9pt; margin-top:4px;"><strong>മലയാളം ഉത്തരം:</strong> റെനെ ദെക്കാർത്ത് ആവിഷ്കരിച്ച പദാർത്ഥ ദ്വൈതവാദം (Substance Dualism) പ്രകാരം പ്രപഞ്ചത്തിൽ രണ്ട് വ്യത്യസ്ത പദാർത്ഥങ്ങളുണ്ട്: ഭൗതികമല്ലാത്ത ചിന്താശേഷിയുള്ള മനസ്സ് (Res Cogitans), ഭൗതികമായ ശരീരം (Res Extensa). "ഞാൻ ചിന്തിക്കുന്നു, അതിനാൽ ഞാൻ നിലനിൽക്കുന്നു" (Cogito, Ergo Sum) എന്നതിലൂടെ മനസ്സ് സ്വതന്ത്രമായി നിലനിൽക്കുന്ന ഒന്നാണെന്ന് അദ്ദേഹം സ്ഥാപിച്ചു. ഇത് മനസ്സിന്റെ തത്ത്വചിന്തയ്ക്ക് അടിത്തറയിടുകയും, ശരീരവും മനസ്സും തമ്മിലുള്ള ബന്ധം എന്താണെന്ന 'മൈൻഡ്-ബോഡി പ്രശ്നത്തിന്' വഴിതുറക്കുകയും ചെയ്തു.</p>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q3. What is Disembodied Intelligence? Outline the major philosophical criticisms against it. (ശരീരരഹിത ബുദ്ധി എന്താണ്? അതിനെതിരെയുള്ള പ്രധാന ദാർശനിക വിമർശനങ്ങൾ വിവരിക്കുക.)</div>
+    <div class="qa-a">
+      <p><strong>Answer:</strong> Disembodied Intelligence is the classical AI assumption that cognition is a pure abstract software process, capable of operating in isolation inside a computer processor without needing a physical body or environmental embodiment. Criticisms against it include: 
+      1) <strong>Hubert Dreyfus:</strong> Human cognition is rooted in biological embodiment, lived coping, and physical background context rather than static symbol manipulation.
+      2) <strong>Embodied AI (Rodney Brooks):</strong> True intelligence requires physical sensors and actuators interacting in real time with an unmodelled physical world.
+      3) <strong>Affective Neuroscience:</strong> Reason is inextricably bound up with emotion, body states, and physical survival instincts (Antonio Damasio).</p>
+      <p style="color:#065f46; font-size:9pt; margin-top:4px;"><strong>മലയാളം ഉത്തരം:</strong> ബുദ്ധി എന്നത് ശരീരവുമായി ബന്ധമില്ലാത്ത കേവല കമ്പ്യൂട്ടേഷൻ പ്രക്രിയ മാത്രമാണെന്ന ക്ലാസിക്കൽ AI സങ്കൽപ്പമാണ് 'ശരീരരഹിത ബുദ്ധി'. ഇതിനെതിരെയുള്ള പ്രധാന വിമർശനങ്ങൾ:
+      1) <strong>ഹ്യൂബർട്ട് ഡ്രൈഫസ്:</strong> മനുഷ്യബുദ്ധി എന്നത് ശരീരത്തിലൂടെ ബാഹ്യലോകവുമായി ജീവിച്ച് നേടുന്ന അനുഭവജ്ഞാനമാണ്.
+      2) <strong>റോഡ്‌നി ബ്രൂക്ക്സ്:</strong> ഭൗതിക ലോകവുമായി നേരിട്ട് സംവദിക്കുന്ന ശരീരവും സെൻസറുകളും ഇല്ലാതെ യഥാർത്ഥ ബുദ്ധി സാധ്യമല്ല.
+      3) <strong>ശാരീരിക വികാരങ്ങൾ:</strong> യുക്തിചിന്ത എന്നത് മനുഷ്യന്റെ ശാരീരിക വികാരങ്ങളോടും അനുഭവങ്ങളോടും ബന്ധപ്പെട്ടിരിക്കുന്നു, കമ്പ്യൂട്ടറുകളിൽ ഇതൊന്നുമില്ല.</p>
+    </div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q4. Compare the Turing Test with the Chinese Room Argument. (ട്യൂറിംഗ് ടെസ്റ്റും ചൈനീസ് റൂം പരീക്ഷണവും തമ്മിൽ താരതമ്യം ചെയ്യുക.)</div>
+    <div class="qa-a">
+      <p><strong>Answer:</strong> 
+        <strong>Alan Turing's Test (1950):</strong> Takes an <em>operational / behavioral</em> stance. If a machine mimics human conversational behavior so well that an interrogator cannot distinguish it from a human, it is considered intelligent. Turing equates behavioral performance with intelligence.<br>
+        <strong>John Searle's Chinese Room (1980):</strong> Rejects pure behavioral criteria. Demonstrates that a system can produce flawless conversational outputs (passing the Turing Test) completely devoid of understanding, consciousness, or intentionality. Performance is not comprehension.
+      </p>
+      <p style="color:#065f46; font-size:9pt; margin-top:4px;"><strong>മലയാളം ഉത്തരം:</strong> 
+        <strong>ട്യൂറിംഗ് ടെസ്റ്റ് (1950):</strong> പ്രവർത്തനപരമായ കഴിവിനാണ് (Behavioral Performance) പ്രാധാന്യം നൽകുന്നത്. മനുഷ്യനെപ്പോലെ സംസാരിക്കാൻ യന്ത്രത്തിന് കഴിഞ്ഞാൽ അതിന് ബുദ്ധിയുണ്ടെന്ന് കരുതാം.<br>
+        <strong>ചൈനീസ് റൂം (1980):</strong> ബാഹ്യമായ പ്രകടനത്തെ തള്ളിക്കളയുന്നു. മനുഷ്യനെപ്പോലെ സംസാരിച്ചാലും ഉള്ളിൽ യാതൊരുവിധ അർത്ഥബോധമോ ചിന്തയോ ഉണ്ടാകണമെന്നില്ലെന്ന് തെളിയിക്കുന്നു. പെർഫോമൻസ് എന്നാൽ മനസ്സിലാക്കൽ (Understanding) അല്ല.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
