@@ -1508,16 +1508,45 @@
     // Fixes broken, duplicated diacritics, split chillus, and invalid combining characters extracted from PDFs
     function sanitizeMalayalam(text) {
       if (!text) return '';
-      return text
-        .replace(/([ാ-്ൗം])+/g, '$1') // Deduplicate vowel signs
+      let s = text
+        .replace(/\xad/g, '')
+        .replace(/\u200b/g, '')
+        .replace(/\u200c/g, '')
+        .replace(/\0/g, '')
+        .replace(/([\u0D00-\u0D7F])-\s*\n\s*([\u0D00-\u0D7F])/g, '$1$2')
+        // Deduplicate doubled matras / signs (Chromium PDF printing artifact): ൈൈ -> ൈ, െെ -> െ, േേ -> േ, ാാ -> ാ, ിി -> ി, ീീ -> ീ, ംം -> ം, ുു -> ു, ൂൂ -> ൂ
+        .replace(/([\u0D3E-\u0D4D\u0D57\u0D02\u0D03])\1+/g, '$1')
+        .replace(/([െേൈ])\1+/g, '$1')
+        .replace(/([ാിീുൂൃംഃ])\1+/g, '$1')
+        // Fix isolated vowel signs preceded by space: മ ൊ -> മൊ
+        .replace(/([\u0D00-\u0D7F])\s+([\u0D3E-\u0D4D\u0D57\u0D02\u0D03])/g, '$1$2')
+        // Repair split words and syllables broken across space/newline
+        .replace(/ഹൈ\s+ദരാലി/g, 'ഹൈദരാലി')
+        .replace(/സെ\s+പ്റ്റംബർ/g, 'സെപ്റ്റംബർ')
+        .replace(/സാഹിത്യാ\s*നുശീലനം/g, 'സാഹിത്യാനുശീലനം')
+        .replace(/അധ്യാ\s*യം/g, 'അധ്യായം')
+        .replace(/ഗുരു\s*നാഥനെ/g, 'ഗുരുനാഥനെ')
+        .replace(/ഓർക്കു\s*മ്പോൾ/g, 'ഓർക്കുമ്പോൾ')
+        .replace(/കലാ\s*മണ്ഡലം/g, 'കലാമണ്ഡലം')
+        .replace(/അങ്ക\s*മാലി/g, 'അങ്കമാലി')
+        .replace(/കമ്മട്ടി\s*പ്പാടം/g, 'കമ്മട്ടിപ്പാടം')
+        .replace(/വിസ്മ\s*യം/g, 'വിസ്മയം')
+        .replace(/ജീവി\s*തം/g, 'ജീവിതം')
+        .replace(/ആത്മ\s*കഥ/g, 'ആത്മകഥ')
+        .replace(/പ്രവേ\s*ശനം/g, 'പ്രവേശനം')
+        .replace(/നിഷേ\s*ധം/g, 'നിഷേധം')
+        .replace(/വിദ്വേ\s*ഷമോ/g, 'വിദ്വേഷമോ')
+        .replace(/സന്ദേ\s*ശം/g, 'സന്ദേശം')
+        .replace(/ഉള്ള\s*ടക്കം/g, 'ഉള്ളടക്കം')
         .replace(/ണ്‍/g, 'ൺ')
         .replace(/ന്‍/g, 'ൻ')
         .replace(/ര്‍/g, 'ർ')
         .replace(/ല്‍/g, 'ൽ')
         .replace(/ള്‍/g, 'ൾ')
         .replace(/ക്‍/g, 'ൿ')
-        .replace(/([ഀ-ൿ])\s+([ാ-്ൗ])/g, '$1$2')
+        .replace(/[ \t]+/g, ' ')
         .normalize('NFC');
+      return s;
     }
 
     // --- LIVE ENGLISH TO MALAYALAM TRANSLATION ENGINE ---
@@ -1880,6 +1909,7 @@
       if (!hasMalayalamUnicode && hasMlttSignature) {
         processedText = convertMlttToMalayalam(processedText);
       }
+      processedText = sanitizeMalayalam(processedText);
       processedText = normalizeMalayalamUnicode(processedText);
 
       const sentences = splitIntoNaturalSentences(processedText);

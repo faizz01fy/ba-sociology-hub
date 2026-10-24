@@ -3347,11 +3347,11 @@
         let voiceHrefFile = item.href.split('#')[0];
         let voiceAnchor = '';
         if (/(?:LiteraryPractice|MODULE4|Module3.*മലയാള|malayalam)/i.test(voiceHrefFile) || /malayalam|മലയാള/i.test(item.title || item.label || '')) {
-          voiceHrefFile = 'Malayalam_Complete_Study_Guide.pdf';
           const modMatch = (item.title || item.label || item.href).match(/module\s*(\d+)|മൊഡ്യൂൾ\s*(\d+)/i);
           const mNum = modMatch ? (modMatch[1] || modMatch[2]) : '1';
-          const modPg = { '1': 5, '2': 52, '3': 86, '4': 121 }[mNum] || 5;
-          voiceAnchor = '#page=' + modPg;
+          const modGuideMap = { '1': 'Malayalam_Guide_Chapter_1.pdf', '2': 'Malayalam_Guide_Chapter_5.pdf', '3': 'Malayalam_Guide_Chapter_8.pdf', '4': 'Malayalam_Guide_Chapter_11.pdf' };
+          voiceHrefFile = modGuideMap[mNum] || 'Malayalam_Guide_Chapter_1.pdf';
+          voiceAnchor = '';
         }
         voiceBtn.href = 'study-guide-reader.html?file=' + encodeURIComponent(decodeURIComponent(voiceHrefFile)) + '&tab=lms&voice=1' + voiceAnchor;
         voiceBtn.target = '_blank';
@@ -4815,11 +4815,11 @@
         let voiceHrefFile = item.href.split('#')[0];
         let voiceAnchor = '';
         if (/(?:LiteraryPractice|MODULE4|Module3.*മലയാള|malayalam)/i.test(voiceHrefFile) || /malayalam|മലയാള/i.test(item.title || item.label || '')) {
-          voiceHrefFile = 'Malayalam_Complete_Study_Guide.pdf';
           const modMatch = (item.title || item.label || item.href).match(/module\s*(\d+)|മൊഡ്യൂൾ\s*(\d+)/i);
           const mNum = modMatch ? (modMatch[1] || modMatch[2]) : '1';
-          const modPg = { '1': 5, '2': 52, '3': 86, '4': 121 }[mNum] || 5;
-          voiceAnchor = '#page=' + modPg;
+          const modGuideMap = { '1': 'Malayalam_Guide_Chapter_1.pdf', '2': 'Malayalam_Guide_Chapter_5.pdf', '3': 'Malayalam_Guide_Chapter_8.pdf', '4': 'Malayalam_Guide_Chapter_11.pdf' };
+          voiceHrefFile = modGuideMap[mNum] || 'Malayalam_Guide_Chapter_1.pdf';
+          voiceAnchor = '';
         }
         voiceBtn.href = 'study-guide-reader.html?file=' + encodeURIComponent(decodeURIComponent(voiceHrefFile)) + '&tab=lms&voice=1' + voiceAnchor;
         voiceBtn.target = '_blank';
