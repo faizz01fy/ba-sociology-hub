@@ -2696,8 +2696,17 @@
       }
 
       if (isDocx) {
-        document.querySelector('.toolbar').hidden = true;
+        document.querySelector('.toolbar').hidden = false;
         document.body.classList.add('docx-mode');
+        const vGrp = el('voiceToolbarGroup');
+        if (vGrp) vGrp.style.display = 'flex';
+        el('pages').textContent = '/ Docx';
+        el('page').value = '1';
+        el('prevPage').disabled = true;
+        el('nextPage').disabled = true;
+        el('zoomOut').disabled = true;
+        el('zoom').disabled = true;
+        el('zoomIn').disabled = true;
         el('status').textContent = 'Loading Word document…';
         const font = document.createElement('link');
         font.rel = 'stylesheet';
