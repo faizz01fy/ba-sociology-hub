@@ -3306,8 +3306,10 @@
 
       const actions = document.createElement('div');
       actions.className = 'module-pdf-actions';
-      const isLmsTabContext = (moduleDialog.dataset.isLms === 'true' || (moduleDialog.dataset.readingOnly !== 'true' && moduleDialog.dataset.isMcqPdf !== 'true'));
+      const isLmsTabContext = moduleDialog.dataset.isLms === 'true' && moduleDialog.dataset.readingOnly !== 'true' && moduleDialog.dataset.isMcqPdf !== 'true';
       const tabParam = isLmsTabContext ? '&tab=lms' : (moduleDialog.dataset.readingOnly === 'true' ? '&tab=study_guide' : '&tab=mcq');
+      const isMalayalamSubject = /(?:Malayalam|മലയാളം)/i.test(docData.subjectTitle || docData.title || (typeof currentSubject !== 'undefined' ? currentSubject : '') || '');
+      const shouldShowVoiceBtn = isLmsTabContext && isMalayalamSubject;
       const open = document.createElement('a');
       open.className = 'module-chapter-open-link';
       open.href = 'study-guide-reader.html?file=' + encodeURIComponent(decodeURIComponent(item.href.split('#')[0])) + tabParam;
@@ -3341,7 +3343,7 @@
       });
 
       actions.append(open, preview);
-      if (isLmsTabContext) {
+      if (shouldShowVoiceBtn) {
         const voiceBtn = document.createElement('a');
         voiceBtn.className = 'module-chapter-voice-btn';
         let voiceHrefFile = item.href.split('#')[0];
@@ -4776,8 +4778,10 @@
       heading.textContent=item.title || item.label || moduleName;
       const actions=document.createElement('div');
       actions.className='module-pdf-actions';
-      const isLmsTabContext = (moduleDialog.dataset.isLms === 'true' || (moduleDialog.dataset.readingOnly !== 'true' && moduleDialog.dataset.isMcqPdf !== 'true'));
+      const isLmsTabContext = moduleDialog.dataset.isLms === 'true' && moduleDialog.dataset.readingOnly !== 'true' && moduleDialog.dataset.isMcqPdf !== 'true';
       const tabParam = isLmsTabContext ? '&tab=lms' : (moduleDialog.dataset.readingOnly === 'true' ? '&tab=study_guide' : '&tab=mcq');
+      const isMalayalamSubject = /(?:Malayalam|മലയാളം)/i.test(docData.subjectTitle || docData.title || (typeof currentSubject !== 'undefined' ? currentSubject : '') || '');
+      const shouldShowVoiceBtn = isLmsTabContext && isMalayalamSubject;
       const open=document.createElement('a');
       open.className='module-chapter-open-link';
       open.href='study-guide-reader.html?file='+encodeURIComponent(decodeURIComponent(item.href.split('#')[0])) + tabParam;
@@ -4809,7 +4813,7 @@
         reader.scrollIntoView({behavior:'smooth',block:'start'});
       });
       actions.append(open,preview);
-      if (isLmsTabContext) {
+      if (shouldShowVoiceBtn) {
         const voiceBtn = document.createElement('a');
         voiceBtn.className = 'module-chapter-voice-btn';
         let voiceHrefFile = item.href.split('#')[0];
