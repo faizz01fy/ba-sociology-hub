@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script defer src="mock-test-rotator.js?v=20261023-speed"></script>
+  <link rel="prefetch" href="study-guide-reader.html">
+  <link rel="prefetch" href="assets/pdfjs/pdf.min.mjs">
+  <link rel="prefetch" href="assets/pdfjs/pdf.worker.min.mjs">
   <style id="chapter-blink-styles">
     @keyframes chapterRandomBlink {
       0%, 100% {
@@ -3308,7 +3311,7 @@
       actions.className = 'module-pdf-actions';
       const isLmsTabContext = moduleDialog.dataset.isLms === 'true' && moduleDialog.dataset.readingOnly !== 'true' && moduleDialog.dataset.isMcqPdf !== 'true';
       const tabParam = isLmsTabContext ? '&tab=lms' : (moduleDialog.dataset.readingOnly === 'true' ? '&tab=study_guide' : '&tab=mcq');
-      const isMalayalamSubject = /(?:Malayalam|മലയാളം)/i.test(docData.subjectTitle || docData.title || (typeof currentSubject !== 'undefined' ? currentSubject : '') || '');
+      const isMalayalamSubject = /(?:Malayalam|മലയാളം)/i.test((typeof docData !== 'undefined' && docData ? (docData.subjectTitle || docData.title) : '') || subject || (item && (item.title || item.label)) || (typeof currentSubject !== 'undefined' ? currentSubject : '') || '');
       const shouldShowVoiceBtn = isLmsTabContext && isMalayalamSubject;
       const open = document.createElement('a');
       open.className = 'module-chapter-open-link';
@@ -4502,7 +4505,8 @@
           item('Chapter 1 · നാടകവേദി','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 4 · അധ്യായം 1 · നാടകവേദി','Malayalam_Complete_Study_Guide.pdf','Malayalam','മലയാള നാടകവേദിയും സ്ത്രീപക്ഷ നാടകവേദിയും'),
           item('Chapter 2 · നൻപകൽ നേരത്ത് മയക്കം','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 4 · അധ്യായം 2 · നൻപകൽ നേരത്ത് മയക്കം','Malayalam_Complete_Study_Guide.pdf','Malayalam','ലിജോ ജോസ് പെല്ലിശ്ശേരി · മമ്മൂട്ടി'),
           item('Chapter 3 · ചലച്ചിത്ര ഗാനങ്ങൾ','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 4 · അധ്യായം 3 · ചലച്ചിത്ര ഗാനശാഖ','Malayalam_Complete_Study_Guide.pdf','Malayalam','മലയാള ചലച്ചിത്ര ഗാനശാഖയും ഗാനരചയിതാക്കളും'),
-          item('Chapter 4 · കീഴാള ദൃശ്യസംസ്കാരം','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 4 · അധ്യായം 4 · കീഴാള ദൃശ്യസംസ്കാരം','Malayalam_Complete_Study_Guide.pdf','Malayalam','കമ്മട്ടിപ്പാടം, അങ്കമാലി ഡയറീസ്')
+          item('Chapter 4 · കീഴാള ദൃശ്യസംസ്കാരം','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 4 · അധ്യായം 4 · കീഴാള ദൃശ്യസംസ്കാരം','Malayalam_Complete_Study_Guide.pdf','Malayalam','കമ്മട്ടിപ്പാടം, അങ്കമാലി ഡയറീസ്'),
+          item('Module 4 · മലയാളസാഹിത്യാനുശീലനം','മലയാളം പഠനസഹായി · മൊഡ്യൂൾ 4 · മലയാളസാഹിത്യാനുശീലനം','MODULE4_T1783445288761.pdf','Malayalam','മൊഡ്യൂൾ 4 · പൂർണ്ണ പഠനസാമഗ്രി')
         ]
       ]);
       if(subject==='Mathematics') return modules([
@@ -4677,6 +4681,17 @@
           embed:true
         }]
       }];
+      if(subject==='Malayalam') return [{
+        name:'Malayalam Q&A · MCQs',
+        items:[{
+          label:'Malayalam Chapter 4 Q&A PDF',
+          title:'Malayalam · Chapter 4 · Questions & Answers',
+          href:'malayalam_chapter4_Q&A.pdf',
+          medium:'Malayalam',
+          description:'മലയാളം അധ്യായം 4 ചോദ്യോത്തരങ്ങൾ (Q&A / MCQs).',
+          embed:true
+        }]
+      }];
       return [1,2,3,4].map(n=>({name:'Module '+n,items:[{label:'MCQ PDF awaiting upload',title:subject+' · Module '+n+' · MCQ PDF',description:'Upload the MCQ question-paper PDF for this subject and module to display it here.'}]}));
     }
     function showModuleItem(subject,medium,moduleName,item) {
@@ -4780,7 +4795,7 @@
       actions.className='module-pdf-actions';
       const isLmsTabContext = moduleDialog.dataset.isLms === 'true' && moduleDialog.dataset.readingOnly !== 'true' && moduleDialog.dataset.isMcqPdf !== 'true';
       const tabParam = isLmsTabContext ? '&tab=lms' : (moduleDialog.dataset.readingOnly === 'true' ? '&tab=study_guide' : '&tab=mcq');
-      const isMalayalamSubject = /(?:Malayalam|മലയാളം)/i.test(docData.subjectTitle || docData.title || (typeof currentSubject !== 'undefined' ? currentSubject : '') || '');
+      const isMalayalamSubject = /(?:Malayalam|മലയാളം)/i.test((typeof docData !== 'undefined' && docData ? (docData.subjectTitle || docData.title) : '') || subject || (item && (item.title || item.label)) || (typeof currentSubject !== 'undefined' ? currentSubject : '') || '');
       const shouldShowVoiceBtn = isLmsTabContext && isMalayalamSubject;
       const open=document.createElement('a');
       open.className='module-chapter-open-link';
@@ -4860,19 +4875,20 @@
         button.setAttribute('aria-selected',String(index===itemIndex));
         button.tabIndex=index===itemIndex?0:-1;
       });
-      if(item && item.key && learningDataSources[subject]) {
-        const loading=document.createElement('p');
-        loading.className='module-empty';
-        loading.textContent='Loading study material…';
-        moduleContent.replaceChildren(loading);
+      // Instant 0ms render: display document actions immediately
+      showModuleItem(subject,item.medium || medium,module.name,item);
+
+      // Background load interactive notes & quiz data if needed, upgrading view smoothly
+      const source = learningDataSources[subject];
+      if(item && item.key && source && !window[source.globalName]) {
         try {
           await loadLearningDataForSubject(subject);
         } catch(error) {
-          // The regular PDF actions remain available if interactive notes fail to load.
+          // Regular PDF actions remain active
         }
         if(requestId!==moduleContentRequestId || moduleDialog.hidden || moduleDialog.dataset.activeModuleIndex!==String(moduleIndex)) return;
+        showModuleItem(subject,item.medium || medium,module.name,item);
       }
-      showModuleItem(subject,item.medium || medium,module.name,item);
     }
     function renderAiStudyGuideModule(subject,medium,module,moduleIndex) {
       const chapters=[];
@@ -5069,6 +5085,9 @@
       const card=trigger.closest('.subject-card');
       const subject=card.dataset.subject;
       moduleDialog.dataset.subject=subject;
+      if (typeof loadLearningDataForSubject === 'function' && learningDataSources[subject]) {
+        loadLearningDataForSubject(subject);
+      }
       const medium=trigger.classList.contains('language-tab--malayalam')?'Malayalam':trigger.classList.contains('language-tab--arabic')?'Arabic':'English';
       const studyGuide=trigger.classList.contains('language-tab--study-guide');
       const mcqPdf=trigger.classList.contains('language-tab--mcq-pdf');
@@ -5088,6 +5107,8 @@
       moduleDescription.textContent=mcqPdf
         ? (subject==='English'
           ? 'Open the updated English Language Skills MCQ question paper PDF (All Modules 1–4, 121 questions with verified answer keys).'
+          : subject==='Malayalam'
+          ? 'Open the uploaded Malayalam Q&A and MCQ PDF modules for exam preparation.'
           : subject==='Microeconomic Foundation'
           ? 'Choose English or Malayalam to read your uploaded Microeconomics MCQ question banks.'
           : subject==='Philosophy of AI'
@@ -5278,6 +5299,61 @@
       f?.contentWindow?.postMessage({ action: 'resetZoom' }, '*');
     }
 </script>
+
+  <!-- Instant Subject & Reader Pre-warmer for all subject cards & tabs -->
+  <script id="fast-subject-prewarmer">
+    (function() {
+      const prewarmed = new Set();
+      function prewarmUrl(url, asType) {
+        if (!url || prewarmed.has(url)) return;
+        prewarmed.add(url);
+        const clean = url.split('#')[0];
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = clean;
+        if (asType) link.as = asType;
+        document.head.appendChild(link);
+      }
+
+      function prewarmSubject(element) {
+        const card = element.closest('.subject-card');
+        if (!card) return;
+        const subject = card.dataset.subject;
+        if (subject && typeof loadLearningDataForSubject === 'function' && learningDataSources[subject]) {
+          loadLearningDataForSubject(subject);
+        }
+        card.querySelectorAll('a[href]').forEach(a => {
+          const href = a.getAttribute('href');
+          if (href && href !== '#' && !href.startsWith('http')) {
+            prewarmUrl(href, 'document');
+          }
+        });
+        prewarmUrl('study-guide-reader.html', 'document');
+        prewarmUrl('assets/pdfjs/pdf.min.mjs', 'script');
+        prewarmUrl('assets/pdfjs/pdf.worker.min.mjs', 'script');
+      }
+
+      // Prewarm on hover (desktop) and touchstart (mobile)
+      document.addEventListener('pointerenter', function(e) {
+        const target = e.target.closest && e.target.closest('.subject-card, .language-tab, .test-card');
+        if (target) prewarmSubject(target);
+      }, { passive: true });
+
+      document.addEventListener('touchstart', function(e) {
+        const target = e.target.closest && e.target.closest('.subject-card, .language-tab, .test-card');
+        if (target) prewarmSubject(target);
+      }, { passive: true });
+
+      // Idle pre-warming
+      const idle = window.requestIdleCallback || function(cb) { setTimeout(cb, 1200); };
+      idle(function() {
+        prewarmUrl('study-guide-reader.html', 'document');
+        prewarmUrl('assets/pdfjs/pdf.min.mjs', 'script');
+        prewarmUrl('assets/pdfjs/pdf.worker.min.mjs', 'script');
+      });
+    })();
+  </script>
+
 </body>
 </html>
 

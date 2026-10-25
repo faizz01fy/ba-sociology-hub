@@ -59,6 +59,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="modulepreload" href="assets/pdfjs/pdf.min.mjs">
+  <link rel="prefetch" href="assets/pdfjs/pdf.worker.min.mjs">
 
   <style>
     * { box-sizing: border-box; }
@@ -2749,16 +2750,8 @@
         
                         // Lightning-fast cached & streaming loader
         const cMapUrl = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/cmaps/';
-        let pdfData = null;
-        try {
-          const resp = await fetch(file.href, { cache: 'default' });
-          if (resp.ok) {
-            pdfData = new Uint8Array(await resp.arrayBuffer());
-          }
-        } catch (_) {}
-
         pdf = await lib.getDocument({
-          ...(pdfData ? { data: pdfData } : { url: file.href }),
+          url: file.href,
           cMapUrl: cMapUrl,
           cMapPacked: true,
           enableXfa: false,
