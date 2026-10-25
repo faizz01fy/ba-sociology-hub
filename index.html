@@ -73,6 +73,41 @@
     #module-dialog .module-subtabs button[aria-selected="true"].chapter-blink-random {
       animation: chapterRandomBlinkActive var(--blink-dur, 0.5s) ease-in-out var(--blink-delay, 0s) var(--blink-count, 6) normal !important;
     }
+    @keyframes moduleTabBlinkAnim {
+      0%, 100% {
+        transform: scale(1);
+        border-color: var(--mod-border, #cbd5e1);
+        filter: brightness(1);
+      }
+      50% {
+        transform: scale(1.08);
+        border-color: var(--mod-c2, #3b82f6);
+        box-shadow: 0 6px 18px var(--mod-glow, rgba(59, 130, 246, 0.5)), 0 0 12px var(--mod-glow, rgba(59, 130, 246, 0.35));
+        filter: brightness(1.2);
+      }
+    }
+    #module-dialog .module-tabs button.module-colored-tab {
+      border: 1.5px solid var(--mod-border, #cbd5e1) !important;
+      background: linear-gradient(130deg, #ffffff, var(--mod-bg, #f8fafc)) !important;
+      color: var(--mod-c1, #1e293b) !important;
+      font-weight: 700 !important;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+      transition: all 0.25s ease !important;
+    }
+    #module-dialog .module-tabs button.module-colored-tab:hover {
+      border-color: var(--mod-c2, #3b82f6) !important;
+      box-shadow: 0 4px 14px var(--mod-glow, rgba(59, 130, 246, 0.3)) !important;
+      transform: translateY(-1px);
+    }
+    #module-dialog .module-tabs button.module-colored-tab[aria-selected="true"] {
+      background: linear-gradient(135deg, var(--mod-c1, #1e40af), var(--mod-c2, #3b82f6)) !important;
+      color: #ffffff !important;
+      border-color: var(--mod-c1, #1e40af) !important;
+      box-shadow: 0 4px 16px var(--mod-glow, rgba(59, 130, 246, 0.45)) !important;
+    }
+    #module-dialog .module-tabs button.module-tab-blink {
+      animation: moduleTabBlinkAnim 0.5s ease-in-out var(--mod-delay, 0s) 5 normal !important;
+    }
   
     .modal-action-btn {
       background: rgba(255, 255, 255, 0.2) !important;
@@ -5208,6 +5243,24 @@
           renderModule(subject,medium,modules,moduleIndex);
         });
         moduleTabs.append(button);
+      });
+      const modPalette = [
+        { c1: '#1e40af', c2: '#3b82f6', border: '#93c5fd', glow: 'rgba(59, 130, 246, 0.45)', bg: '#eff6ff' },
+        { c1: '#065f46', c2: '#10b981', border: '#6ee7b7', glow: 'rgba(16, 185, 129, 0.45)', bg: '#ecfdf5' },
+        { c1: '#6b21a8', c2: '#8b5cf6', border: '#c4b5fd', glow: 'rgba(139, 92, 246, 0.45)', bg: '#f5f3ff' },
+        { c1: '#c2410c', c2: '#f97316', border: '#fdba74', glow: 'rgba(249, 115, 22, 0.45)', bg: '#fff7ed' },
+        { c1: '#be123c', c2: '#f43f5e', border: '#fda4af', glow: 'rgba(244, 63, 94, 0.45)', bg: '#fff1f2' }
+      ];
+      Array.from(moduleTabs.children).forEach((btn, idx) => {
+        const color = modPalette[idx % modPalette.length];
+        btn.style.setProperty('--mod-c1', color.c1);
+        btn.style.setProperty('--mod-c2', color.c2);
+        btn.style.setProperty('--mod-border', color.border);
+        btn.style.setProperty('--mod-glow', color.glow);
+        btn.style.setProperty('--mod-bg', color.bg);
+        btn.classList.add('module-colored-tab');
+        btn.style.setProperty('--mod-delay', `${(idx * 0.1).toFixed(2)}s`);
+        btn.classList.add('module-tab-blink');
       });
       if(availableModuleIndexes.length) {
         renderModule(subject,medium,modules,defaultGuideModule);

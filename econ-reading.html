@@ -139,7 +139,7 @@
       font-weight: 500 !important;
     }
 
-    /* Filter Bar */
+    /* Filter Bar & Colorful Module Tabs */
     .filter-wrapper {
       margin-bottom: 24px;
       display: flex;
@@ -149,23 +149,72 @@
     }
 
     .filter-btn {
-      padding: 9px 18px;
-      border-radius: 12px;
-      border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      color: #334155;
+      padding: 10px 20px;
+      border-radius: 14px;
+      border: 1.5px solid var(--mod-border, #cbd5e1);
+      background: linear-gradient(130deg, #ffffff, var(--mod-bg, #f8fafc));
+      color: var(--mod-c1, #334155);
       font-size: 13.5px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
       font-family: inherit;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .filter-btn:hover, .filter-btn.active {
-      background: #059669;
-      color: #ffffff;
-      border-color: #059669;
-      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+    .filter-btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--mod-c2, #059669);
+      box-shadow: 0 6px 16px var(--mod-glow, rgba(5, 150, 105, 0.25));
+      color: var(--mod-c1, #065f46);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--mod-c1, #065f46), var(--mod-c2, #059669)) !important;
+      color: #ffffff !important;
+      border-color: var(--mod-c1, #065f46) !important;
+      box-shadow: 0 6px 18px var(--mod-glow, rgba(5, 150, 105, 0.45)) !important;
+      transform: translateY(-1px);
+    }
+
+    /* Keyframe Animations for Eye-Catching Module Tab Blinking */
+    @keyframes module-tab-blink {
+      0%, 100% {
+        transform: scale(1);
+        border-color: var(--mod-border, #cbd5e1);
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        filter: brightness(1);
+      }
+      50% {
+        transform: scale(1.08);
+        border-color: var(--mod-c2, #059669);
+        box-shadow: 0 8px 24px var(--mod-glow, rgba(5, 150, 105, 0.65)), 0 0 16px var(--mod-glow, rgba(5, 150, 105, 0.4));
+        filter: brightness(1.22);
+      }
+    }
+
+    @keyframes module-tab-blink-active {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 6px 18px var(--mod-glow, rgba(5, 150, 105, 0.45));
+        filter: brightness(1);
+      }
+      50% {
+        transform: scale(1.1);
+        box-shadow: 0 10px 30px var(--mod-glow, rgba(5, 150, 105, 0.85)), 0 0 20px var(--mod-glow, rgba(5, 150, 105, 0.6));
+        filter: brightness(1.3);
+      }
+    }
+
+    .filter-btn.module-blinking {
+      animation: module-tab-blink 0.55s ease-in-out var(--mod-delay, 0s) 5 normal !important;
+    }
+
+    .filter-btn.active.module-blinking {
+      animation: module-tab-blink-active 0.55s ease-in-out var(--mod-delay, 0s) 5 normal !important;
     }
 
     /* Search input */
@@ -929,11 +978,11 @@
 
     <!-- Module Filters -->
     <nav class="filter-wrapper" aria-label="Filter by module">
-      <button class="filter-btn active active" onclick="filterModule('mod1', this)">മൊഡ്യൂൾ 1: ചരിത്ര പശ്ചാത്തലങ്ങൾ (Module 1: Historical Background · 8)</button>
-      <button class="filter-btn" onclick="filterModule('mod2', this)">മൊഡ്യൂൾ 2: ദാരിദ്ര്യം (Module 2: Poverty in India · 1)</button>
-      <button class="filter-btn" onclick="filterModule('mod3', this)">മൊഡ്യൂൾ 3: അസമത്വം (Module 3: Inequality · 1)</button>
-      <button class="filter-btn" onclick="filterModule('mod4', this)">മൊഡ്യൂൾ 4: തൊഴിലില്ലായ്മ (Module 4: Unemployment · 1)</button>
-      <button class="filter-btn" onclick="filterModule('mod5', this)">മൊഡ്യൂൾ 5: വികസന പ്രശ്നങ്ങൾ (Module 5: Development Issues · 1)</button>
+      <button class="filter-btn active" data-mod="mod1" style="--mod-c1:#1e40af; --mod-c2:#3b82f6; --mod-border:#93c5fd; --mod-bg:#eff6ff; --mod-glow:rgba(59, 130, 246, 0.45);" onclick="filterModule('mod1', this)">മൊഡ്യൂൾ 1: ചരിത്ര പശ്ചാത്തലങ്ങൾ (Module 1: Historical Background · 8)</button>
+      <button class="filter-btn" data-mod="mod2" style="--mod-c1:#065f46; --mod-c2:#10b981; --mod-border:#6ee7b7; --mod-bg:#ecfdf5; --mod-glow:rgba(16, 185, 129, 0.45);" onclick="filterModule('mod2', this)">മൊഡ്യൂൾ 2: ദാരിദ്ര്യം (Module 2: Poverty in India · 1)</button>
+      <button class="filter-btn" data-mod="mod3" style="--mod-c1:#6b21a8; --mod-c2:#8b5cf6; --mod-border:#c4b5fd; --mod-bg:#f5f3ff; --mod-glow:rgba(139, 92, 246, 0.45);" onclick="filterModule('mod3', this)">മൊഡ്യൂൾ 3: അസമത്വം (Module 3: Inequality · 1)</button>
+      <button class="filter-btn" data-mod="mod4" style="--mod-c1:#c2410c; --mod-c2:#f97316; --mod-border:#fdba74; --mod-bg:#fff7ed; --mod-glow:rgba(249, 115, 22, 0.45);" onclick="filterModule('mod4', this)">മൊഡ്യൂൾ 4: തൊഴിലില്ലായ്മ (Module 4: Unemployment · 1)</button>
+      <button class="filter-btn" data-mod="mod5" style="--mod-c1:#be123c; --mod-c2:#f43f5e; --mod-border:#fda4af; --mod-bg:#fff1f2; --mod-glow:rgba(244, 63, 94, 0.45);" onclick="filterModule('mod5', this)">മൊഡ്യൂൾ 5: വികസന പ്രശ്നങ്ങൾ (Module 5: Development Issues · 1)</button>
     </nav>
 
     <!-- Search Input -->
@@ -1195,6 +1244,16 @@
   </div>
 
   <script>
+    function triggerModuleTabsBlink() {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach((btn, idx) => {
+        btn.classList.remove('module-blinking');
+        void btn.offsetWidth;
+        btn.style.setProperty('--mod-delay', `${(idx * 0.1).toFixed(2)}s`);
+        btn.classList.add('module-blinking');
+      });
+    }
+
     function triggerChapterBlink(modId) {
       const targetSecs = modId === 'all' 
         ? document.querySelectorAll('.module-section')
@@ -1212,8 +1271,16 @@
 
     function filterModule(modId, btn) {
       const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      buttons.forEach(b => {
+        b.classList.remove('active');
+        b.classList.remove('module-blinking');
+      });
+      if (btn) {
+        btn.classList.add('active');
+        void btn.offsetWidth;
+        btn.style.setProperty('--mod-delay', '0s');
+        btn.classList.add('module-blinking');
+      }
 
       const sections = document.querySelectorAll('.module-section');
       sections.forEach(sec => {
@@ -1293,6 +1360,10 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Blink colorful module tabs on initial load for a while
+      if (typeof triggerModuleTabsBlink === 'function') {
+        triggerModuleTabsBlink();
+      }
       const activeBtn = document.querySelector('.filter-btn.active') || document.querySelector('.filter-btn');
       if (activeBtn) {
         activeBtn.click();
