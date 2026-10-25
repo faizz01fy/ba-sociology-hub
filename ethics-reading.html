@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="description" content="കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ - ഫണ്ടമെന്റൽസ് ഓഫ് എത്തിക്സ് സമ്പൂർണ്ണ മലയാള & ദ്വിഭാഷാ വായനാ സഹായി (Malayalam Reading) · Fundamentals of Ethics">
   <title>ധർമ്മശാസ്ത്രത്തിന്റെ അടിസ്ഥാനങ്ങൾ മലയാളം വായന | Fundamentals of Ethics English Malayalam Reading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="prefetch" href="study-guide-reader.html">
+  <link rel="prefetch" href="assets/pdfjs/pdf.min.mjs">
+  <link rel="prefetch" href="assets/pdfjs/pdf.worker.min.mjs">
   <link rel="stylesheet" href="style.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
-
     :root {
       --eth-primary: #047857;
       --eth-secondary: #059669;
@@ -827,10 +831,7 @@
     }
   </style>
 
-  <!-- Fast PDF Reader Preloads -->
-  <link rel="prefetch" href="study-guide-reader.html">
-  <link rel="prefetch" href="assets/pdfjs/pdf.min.mjs">
-  <link rel="prefetch" href="assets/pdfjs/pdf.worker.min.mjs">
+  
 </head>
 <body>
 
@@ -848,9 +849,6 @@
       <span class="hero-title-en">Fundamentals of Ethics — English Malayalam Reading</span>
       <span class="hero-title-ml">ധർമ്മശാസ്ത്രത്തിന്റെ അടിസ്ഥാനങ്ങൾ — സമ്പൂർണ്ണ മലയാളം & ദ്വിഭാഷാ വായന</span>
     </h1>
-    <p>
-      Fundamentals of Ethics — കാലിക്കറ്റ് സർവ്വകലാശാല ഔദ്യോഗിക സിലബസ് പ്രകാരമുള്ള എല്ലാ LMS പാഠഭാഗങ്ങളുടെയും (Modules 1–5) ആധികാരിക മലയാള പരിഭാഷ, വിശദമായ ദ്വിഭാഷാ പഠന കുറിപ്പുകൾ, പ്രധാന ചിന്തകരുടെ വിശകലനങ്ങൾ, എല്ലാ മോഡൽ ചോദ്യോത്തരങ്ങളും (Short, Paragraph & Essay), 100 പരീക്ഷാ പോയിന്റുകളും KNOCK YOUR MIND! (Quick recall, key concepts and memory triggers) അടങ്ങിയ സമഗ്ര പഠന സഹായി.
-    </p>
     <div class="hero-stats">
       <span class="stat-pill"><span class="stat-dot"></span>ഔദ്യോഗിക സിലബസ് & LMS (Official Syllabus &amp; Modules 1–5)</span>
       <span class="stat-pill"><span class="stat-dot"></span>ഇംഗ്ലീഷ് – മലയാളം വാക്യാധിഷ്ഠിത പഠനം (English – Malayalam Depth)</span>
@@ -2879,20 +2877,22 @@
 </script>
 
 
-  <!-- Instant PDF Pre-warmer for all subject cards & tabs -->
+    <!-- Instant PDF Pre-warmer for all subject cards & tabs -->
   <script id="fast-subject-prewarmer">
     (function() {
+      const prewarmed = new Set();
       function prewarmUrl(url) {
-        if (!url || (!url.endsWith('.pdf') && !url.includes('.pdf') && !url.endsWith('.docx'))) return;
+        if (!url || prewarmed.has(url)) return;
+        if (!url.endsWith('.pdf') && !url.includes('.pdf') && !url.endsWith('.docx')) return;
+        prewarmed.add(url);
         const clean = url.split('#')[0];
-        if (document.querySelector('link[href="' + CSS.escape(clean) + '"]')) return;
         const link = document.createElement('link');
         link.rel = 'prefetch';
         link.href = clean;
         document.head.appendChild(link);
       }
-      document.addEventListener('pointerenter', function(e) {
-        const el = e.target.closest && e.target.closest('.btn-view, .read-online, .read-ch-btn, a[href*=".pdf"], .chapter-card, .filter-btn');
+
+      function extractAndPrewarm(el) {
         if (!el || el.dataset.prewarmed) return;
         el.dataset.prewarmed = 'true';
         let url = el.getAttribute('href');
@@ -2902,7 +2902,31 @@
           if (m) url = m[1];
         }
         if (url) prewarmUrl(url);
-      }, { passive: true });
+
+        // If hovering a card, prewarm its view button
+        const btn = el.querySelector && el.querySelector('.btn-view, .read-online, .read-ch-btn');
+        if (btn) {
+          const btnOc = btn.getAttribute('onclick') || '';
+          const bm = btnOc.match(/viewPdf\(['"]([^'"]+)['"]/);
+          if (bm) prewarmUrl(bm[1]);
+        }
+      }
+
+      // Prewarm on desktop hover & mobile touch
+      ['pointerenter', 'touchstart', 'pointerdown'].forEach(evt => {
+        document.addEventListener(evt, function(e) {
+          const el = e.target.closest && e.target.closest('.btn-view, .read-online, .read-ch-btn, a[href*=".pdf"], .chapter-card, .filter-btn');
+          if (el) extractAndPrewarm(el);
+        }, { passive: true });
+      });
+
+      // Prewarm active module chapters on idle
+      const idle = window.requestIdleCallback || function(cb) { setTimeout(cb, 1000); };
+      idle(function() {
+        document.querySelectorAll('.module-section:not([style*="display: none"]) .btn-view, .module-section:not([style*="display: none"]) .read-online').forEach((btn, idx) => {
+          if (idx < 4) extractAndPrewarm(btn);
+        });
+      });
     })();
   </script>
 

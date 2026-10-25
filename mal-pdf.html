@@ -6,8 +6,14 @@
   <meta name="description" content="മലയാളം സാഹിത്യ പഠനത്തിനുള്ള മൊഡ്യൂൾ 1 മുതൽ 4 വരെയുള്ള PDF-കൾ, സമഗ്ര സംഗ്രഹം, അധ്യായം തിരിച്ചുള്ള MCQs">
   <title>മലയാളം | പഠന PDF-കൾ, സംഗ്രഹം & MCQs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="prefetch" href="study-guide-reader.html">
+  <link rel="prefetch" href="assets/pdfjs/pdf.min.mjs">
+  <link rel="prefetch" href="assets/pdfjs/pdf.worker.min.mjs">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="prefetch" href="study-guide-reader.html">
+  <link rel="prefetch" href="assets/pdfjs/pdf.min.mjs">
+  <link rel="prefetch" href="assets/pdfjs/pdf.worker.min.mjs">
   <style>
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:20px}
@@ -414,10 +420,7 @@
       transform: translateY(-1px) !important;
     }
   </style>
-  <!-- Fast PDF Reader Preloads -->
-  <link rel="prefetch" href="study-guide-reader.html">
-  <link rel="prefetch" href="assets/pdfjs/pdf.min.mjs">
-  <link rel="prefetch" href="assets/pdfjs/pdf.worker.min.mjs">
+  
 </head>
 <body>
   <main class="page-box">
@@ -432,7 +435,6 @@
         <span class="hero-title-en">Malayalam Language &amp; Literature — LMS PDF Reading</span>
         <span class="hero-title-ml">മലയാള സാഹിത്യാനുശീലനം — മൊഡ്യൂൾ 1–4</span>
       </h1>
-      <p>മൊഡ്യൂൾ 1–4 · പൂർണ്ണ മലയാളം പഠനസാമഗ്രികൾ</p>
     </header>
     <nav class="module-nav" aria-label="മൊഡ്യൂളുകളിലേക്കുള്ള കണ്ണികൾ">
       <a href="#module-1">മൊഡ്യൂൾ 1</a>
@@ -584,7 +586,6 @@
 
   <!-- Load Learning Data -->
   <script src="data/learning_data_malayalam.js"></script>
-  <script src="malayalam_learning_data.js"></script>
 
   <script>
     let activeModuleNumber = 1;
@@ -921,20 +922,22 @@
     }
 </script>
 
-  <!-- Instant PDF Pre-warmer for all subject cards & tabs -->
+    <!-- Instant PDF Pre-warmer for all subject cards & tabs -->
   <script id="fast-subject-prewarmer">
     (function() {
+      const prewarmed = new Set();
       function prewarmUrl(url) {
-        if (!url || (!url.endsWith('.pdf') && !url.includes('.pdf') && !url.endsWith('.docx'))) return;
+        if (!url || prewarmed.has(url)) return;
+        if (!url.endsWith('.pdf') && !url.includes('.pdf') && !url.endsWith('.docx')) return;
+        prewarmed.add(url);
         const clean = url.split('#')[0];
-        if (document.querySelector('link[href="' + CSS.escape(clean) + '"]')) return;
         const link = document.createElement('link');
         link.rel = 'prefetch';
         link.href = clean;
         document.head.appendChild(link);
       }
-      document.addEventListener('pointerenter', function(e) {
-        const el = e.target.closest && e.target.closest('.btn-view, .read-online, .read-ch-btn, a[href*=".pdf"], .chapter-card, .filter-btn');
+
+      function extractAndPrewarm(el) {
         if (!el || el.dataset.prewarmed) return;
         el.dataset.prewarmed = 'true';
         let url = el.getAttribute('href');
@@ -944,7 +947,31 @@
           if (m) url = m[1];
         }
         if (url) prewarmUrl(url);
-      }, { passive: true });
+
+        // If hovering a card, prewarm its view button
+        const btn = el.querySelector && el.querySelector('.btn-view, .read-online, .read-ch-btn');
+        if (btn) {
+          const btnOc = btn.getAttribute('onclick') || '';
+          const bm = btnOc.match(/viewPdf\(['"]([^'"]+)['"]/);
+          if (bm) prewarmUrl(bm[1]);
+        }
+      }
+
+      // Prewarm on desktop hover & mobile touch
+      ['pointerenter', 'touchstart', 'pointerdown'].forEach(evt => {
+        document.addEventListener(evt, function(e) {
+          const el = e.target.closest && e.target.closest('.btn-view, .read-online, .read-ch-btn, a[href*=".pdf"], .chapter-card, .filter-btn');
+          if (el) extractAndPrewarm(el);
+        }, { passive: true });
+      });
+
+      // Prewarm active module chapters on idle
+      const idle = window.requestIdleCallback || function(cb) { setTimeout(cb, 1000); };
+      idle(function() {
+        document.querySelectorAll('.module-section:not([style*="display: none"]) .btn-view, .module-section:not([style*="display: none"]) .read-online').forEach((btn, idx) => {
+          if (idx < 4) extractAndPrewarm(btn);
+        });
+      });
     })();
   </script>
 
