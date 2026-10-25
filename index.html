@@ -21,26 +21,17 @@
         opacity: 1;
         transform: scale(1);
         filter: brightness(1);
+        border-color: var(--ch-border, #cbd5e1);
+        border-left-color: var(--ch-c2, #3b82f6);
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
       }
-      20% {
-        opacity: 0.88;
-        transform: scale(0.98);
-        filter: brightness(1.08) drop-shadow(0 0 6px rgba(59, 130, 246, 0.35));
-      }
-      48% {
-        opacity: 1;
-        transform: scale(1.02);
-        filter: brightness(1.1) drop-shadow(0 0 10px rgba(37, 99, 235, 0.45));
-      }
-      72% {
-        opacity: 0.9;
-        transform: scale(0.99);
-        filter: brightness(1.06) drop-shadow(0 0 6px rgba(59, 130, 246, 0.3));
-      }
-      88% {
-        opacity: 1;
-        transform: scale(1.01);
-        filter: brightness(1.04) drop-shadow(0 0 8px rgba(37, 99, 235, 0.4));
+      50% {
+        opacity: 0.95;
+        transform: scale(1.03);
+        filter: brightness(1.18);
+        border-color: var(--ch-c2, #3b82f6);
+        border-left-color: var(--ch-c1, #1e40af);
+        box-shadow: 0 6px 20px var(--ch-glow, rgba(59, 130, 246, 0.5)), 0 0 14px var(--ch-glow, rgba(59, 130, 246, 0.35));
       }
     }
     @keyframes chapterRandomBlinkActive {
@@ -50,16 +41,37 @@
         filter: brightness(1);
       }
       50% {
-        opacity: 0.35;
-        transform: scale(1.05);
-        filter: brightness(1.25) drop-shadow(0 0 20px rgba(37, 99, 235, 0.9));
+        opacity: 0.75;
+        transform: scale(1.04);
+        filter: brightness(1.22);
+        box-shadow: 0 8px 24px var(--ch-glow, rgba(59, 130, 246, 0.7)), 0 0 16px var(--ch-glow, rgba(59, 130, 246, 0.45));
       }
     }
+    #module-dialog .module-subtabs button.chapter-colored-tab {
+      border: 1.5px solid var(--ch-border, #cbd5e1) !important;
+      border-left: 4px solid var(--ch-c2, #3b82f6) !important;
+      background: linear-gradient(130deg, #ffffff, var(--ch-bg, #f8fafc)) !important;
+      color: #1e293b !important;
+      font-weight: 600 !important;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+      transition: all 0.25s ease !important;
+    }
+    #module-dialog .module-subtabs button.chapter-colored-tab:hover {
+      border-color: var(--ch-c2, #3b82f6) !important;
+      box-shadow: 0 4px 14px var(--ch-glow, rgba(59, 130, 246, 0.3)) !important;
+      transform: translateY(-1px);
+    }
+    #module-dialog .module-subtabs button.chapter-colored-tab[aria-selected="true"] {
+      background: linear-gradient(135deg, var(--ch-c1, #1e40af), var(--ch-c2, #3b82f6)) !important;
+      color: #ffffff !important;
+      border-color: var(--ch-c1, #1e40af) !important;
+      box-shadow: 0 4px 16px var(--ch-glow, rgba(59, 130, 246, 0.45)) !important;
+    }
     #module-dialog .module-subtabs button.chapter-blink-random {
-      animation: chapterRandomBlink var(--blink-dur, 0.5s) ease-in-out var(--blink-delay, 0s) var(--blink-count, 7) normal !important;
+      animation: chapterRandomBlink var(--blink-dur, 0.5s) ease-in-out var(--blink-delay, 0s) var(--blink-count, 6) normal !important;
     }
     #module-dialog .module-subtabs button[aria-selected="true"].chapter-blink-random {
-      animation: chapterRandomBlinkActive var(--blink-dur, 0.5s) ease-in-out var(--blink-delay, 0s) var(--blink-count, 7) normal !important;
+      animation: chapterRandomBlinkActive var(--blink-dur, 0.5s) ease-in-out var(--blink-delay, 0s) var(--blink-count, 6) normal !important;
     }
   
     .modal-action-btn {
@@ -4961,12 +4973,33 @@
     function blinkChaptersRandomly() {
       const buttons = Array.from(moduleSubtabs.querySelectorAll('button'));
       if (!buttons.length) return;
-      buttons.forEach(btn => {
+      const palette = [
+        { c1: '#1e40af', c2: '#3b82f6', border: '#93c5fd', glow: 'rgba(59, 130, 246, 0.45)', bg: '#eff6ff' },
+        { c1: '#065f46', c2: '#10b981', border: '#6ee7b7', glow: 'rgba(16, 185, 129, 0.45)', bg: '#ecfdf5' },
+        { c1: '#6b21a8', c2: '#8b5cf6', border: '#c4b5fd', glow: 'rgba(139, 92, 246, 0.45)', bg: '#f5f3ff' },
+        { c1: '#b45309', c2: '#f59e0b', border: '#fcd34d', glow: 'rgba(245, 158, 11, 0.45)', bg: '#fffbeb' },
+        { c1: '#be123c', c2: '#f43f5e', border: '#fda4af', glow: 'rgba(244, 63, 94, 0.45)', bg: '#fff1f2' },
+        { c1: '#0f766e', c2: '#14b8a6', border: '#5eead4', glow: 'rgba(20, 184, 166, 0.45)', bg: '#f0fdfa' },
+        { c1: '#3730a3', c2: '#6366f1', border: '#a5b4fc', glow: 'rgba(99, 102, 241, 0.45)', bg: '#eef2ff' },
+        { c1: '#a21caf', c2: '#d946ef', border: '#f0abfc', glow: 'rgba(217, 70, 239, 0.45)', bg: '#fdf4ff' },
+        { c1: '#c2410c', c2: '#f97316', border: '#fdba74', glow: 'rgba(249, 115, 22, 0.45)', bg: '#fff7ed' },
+        { c1: '#581c87', c2: '#a855f7', border: '#d8b4fe', glow: 'rgba(168, 85, 247, 0.45)', bg: '#faf5ff' },
+        { c1: '#0369a1', c2: '#0ea5e9', border: '#7dd3fc', glow: 'rgba(14, 165, 233, 0.45)', bg: '#f0f9ff' },
+        { c1: '#9f1239', c2: '#fb7185', border: '#fecdd3', glow: 'rgba(251, 113, 133, 0.45)', bg: '#fff1f2' }
+      ];
+      buttons.forEach((btn, idx) => {
         btn.classList.remove('chapter-blink-random');
         void btn.offsetWidth;
-        const delay = (Math.random() * 0.42).toFixed(3);
-        const duration = (0.35 + Math.random() * 0.35).toFixed(3);
-        const count = Math.floor(6 + Math.random() * 3);
+        const color = palette[idx % palette.length];
+        btn.style.setProperty('--ch-c1', color.c1);
+        btn.style.setProperty('--ch-c2', color.c2);
+        btn.style.setProperty('--ch-border', color.border);
+        btn.style.setProperty('--ch-glow', color.glow);
+        btn.style.setProperty('--ch-bg', color.bg);
+        btn.classList.add('chapter-colored-tab');
+        const delay = (idx * 0.08).toFixed(3);
+        const duration = (0.42).toFixed(3);
+        const count = 6;
         btn.style.setProperty('--blink-delay', `${delay}s`);
         btn.style.setProperty('--blink-dur', `${duration}s`);
         btn.style.setProperty('--blink-count', String(count));

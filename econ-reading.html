@@ -225,22 +225,25 @@
       gap: 16px;
     }
 
+    /* Chapter cards with individual distinct colors & colored tabs */
     .chapter-card {
-      border: 1px solid #e2e8f0;
+      border: 1.5px solid var(--ch-border, #e2e8f0);
+      border-left: 6px solid var(--ch-c2, #059669);
       border-radius: 20px;
       padding: 20px 24px;
       display: grid;
       grid-template-columns: 64px 1fr auto;
       align-items: center;
       gap: 20px;
-      background: linear-gradient(130deg, #ffffff, #f9fbf9);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      background: linear-gradient(130deg, #ffffff, var(--ch-bg, #f9fbf9));
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
     }
 
     .chapter-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(5, 150, 105, 0.1);
-      border-color: #a7f3d0;
+      box-shadow: 0 10px 24px var(--ch-glow, rgba(5, 150, 105, 0.25));
+      border-color: var(--ch-c2, #059669);
     }
 
     .chapter-num {
@@ -252,8 +255,9 @@
       color: #ffffff;
       font-size: 18px;
       font-weight: 800;
-      background: linear-gradient(135deg, #065f46, #059669);
-      box-shadow: 0 6px 14px rgba(5, 150, 105, 0.28);
+      background: linear-gradient(135deg, var(--ch-c1, #065f46), var(--ch-c2, #059669));
+      box-shadow: 0 6px 14px var(--ch-glow, rgba(5, 150, 105, 0.32));
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .chapter-info h3 {
@@ -266,8 +270,8 @@
 
     .chapter-info .eng-title {
       font-size: 13.5px;
-      color: #059669;
-      font-weight: 600;
+      color: var(--ch-c1, #059669);
+      font-weight: 700;
       margin-bottom: 4px;
     }
 
@@ -299,14 +303,80 @@
     }
 
     .btn-view {
-      background: #ecfdf5;
-      color: #065f46;
-      border: 1px solid #a7f3d0;
+      background: linear-gradient(135deg, var(--ch-c1, #065f46), var(--ch-c2, #059669));
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 4px 12px var(--ch-glow, rgba(5, 150, 105, 0.28));
     }
 
     .btn-view:hover {
-      background: #d1fae5;
-      color: #044e39;
+      transform: translateY(-1px) scale(1.03);
+      filter: brightness(1.15);
+      box-shadow: 0 6px 18px var(--ch-glow, rgba(5, 150, 105, 0.45));
+    }
+
+    /* Keyframe Animations for Eye-Catching Blink with Different Colors */
+    @keyframes chapter-card-blink {
+      0%, 100% {
+        border-color: var(--ch-border, #e2e8f0);
+        border-left-color: var(--ch-c2, #059669);
+        box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+        transform: scale(1);
+      }
+      25% {
+        border-color: var(--ch-c2, #059669);
+        border-left-color: var(--ch-c1, #065f46);
+        box-shadow: 0 8px 24px var(--ch-glow, rgba(5, 150, 105, 0.45)), 0 0 12px var(--ch-glow, rgba(5, 150, 105, 0.25));
+        transform: scale(1.015);
+      }
+      50% {
+        border-color: var(--ch-c1, #065f46);
+        border-left-color: var(--ch-c2, #059669);
+        box-shadow: 0 12px 30px var(--ch-glow, rgba(5, 150, 105, 0.6)), 0 0 18px var(--ch-glow, rgba(5, 150, 105, 0.4));
+        transform: scale(1.02);
+      }
+      75% {
+        border-color: var(--ch-c2, #059669);
+        border-left-color: var(--ch-c1, #065f46);
+        box-shadow: 0 8px 24px var(--ch-glow, rgba(5, 150, 105, 0.45)), 0 0 12px var(--ch-glow, rgba(5, 150, 105, 0.25));
+        transform: scale(1.01);
+      }
+    }
+
+    @keyframes chapter-badge-blink {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 6px 14px var(--ch-glow, rgba(5, 150, 105, 0.32));
+      }
+      50% {
+        transform: scale(1.15);
+        filter: brightness(1.28);
+        box-shadow: 0 10px 24px var(--ch-glow, rgba(5, 150, 105, 0.75)), 0 0 16px var(--ch-glow, rgba(5, 150, 105, 0.55));
+      }
+    }
+
+    @keyframes chapter-btn-blink {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 12px var(--ch-glow, rgba(5, 150, 105, 0.28));
+      }
+      50% {
+        transform: scale(1.08);
+        filter: brightness(1.22);
+        box-shadow: 0 8px 22px var(--ch-glow, rgba(5, 150, 105, 0.65)), 0 0 14px var(--ch-glow, rgba(5, 150, 105, 0.4));
+      }
+    }
+
+    .chapter-card.blinking {
+      animation: chapter-card-blink 0.6s ease-in-out var(--ch-delay, 0s) 5 normal;
+    }
+    .chapter-card.blinking .chapter-num {
+      animation: chapter-badge-blink 0.6s ease-in-out var(--ch-delay, 0s) 5 normal;
+    }
+    .chapter-card.blinking .btn-view {
+      animation: chapter-btn-blink 0.6s ease-in-out var(--ch-delay, 0s) 5 normal;
     }
 
     .btn-download,
@@ -883,7 +953,8 @@
         <div class="chapter-list">
 
           <!-- Ch 1 -->
-          <article class="chapter-card">
+          <article class="chapter-card" style="--ch-c1:#1e40af; --ch-c2:#3b82f6; --ch-border:#93c5fd; --ch-glow:rgba(59, 130, 246, 0.45); --ch-bg:#eff6ff;">
+
             <div class="chapter-num">01</div>
             <div class="chapter-info">
               <h3>അധ്യായം 1: സാമ്പത്തിക വികസനത്തിന്റെ അർത്ഥവും സ്വഭാവവും</h3>
@@ -897,7 +968,8 @@
           </article>
 
           <!-- Ch 2 -->
-          <article class="chapter-card">
+          <article class="chapter-card" style="--ch-c1:#065f46; --ch-c2:#10b981; --ch-border:#6ee7b7; --ch-glow:rgba(16, 185, 129, 0.45); --ch-bg:#ecfdf5;">
+
             <div class="chapter-num">02</div>
             <div class="chapter-info">
               <h3>അധ്യായം 2: കൊളോണിയൽ കാലഘട്ടത്തിലെ ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥ</h3>
@@ -911,7 +983,8 @@
           </article>
 
           <!-- Ch 3 -->
-          <article class="chapter-card">
+          <article class="chapter-card" style="--ch-c1:#6b21a8; --ch-c2:#8b5cf6; --ch-border:#c4b5fd; --ch-glow:rgba(139, 92, 246, 0.45); --ch-bg:#f5f3ff;">
+
             <div class="chapter-num">03</div>
             <div class="chapter-info">
               <h3>അധ്യായം 3: ആസൂത്രണ കാലഘട്ടം 1951–1991</h3>
@@ -925,7 +998,8 @@
           </article>
 
           <!-- Ch 4 -->
-          <article class="chapter-card">
+          <article class="chapter-card" style="--ch-c1:#b45309; --ch-c2:#f59e0b; --ch-border:#fcd34d; --ch-glow:rgba(245, 158, 11, 0.45); --ch-bg:#fffbeb;">
+
             <div class="chapter-num">04</div>
             <div class="chapter-info">
               <h3>അധ്യായം 4: ഉദാരവൽക്കരണ യുഗം (1991 മുതൽ)</h3>
@@ -939,7 +1013,8 @@
           </article>
 
           <!-- Ch 5 -->
-          <article class="chapter-card">
+          <article class="chapter-card" style="--ch-c1:#be123c; --ch-c2:#f43f5e; --ch-border:#fda4af; --ch-glow:rgba(244, 63, 94, 0.45); --ch-bg:#fff1f2;">
+
             <div class="chapter-num">05</div>
             <div class="chapter-info">
               <h3>അധ്യായം 5: വികസന സൂചകങ്ങൾ: യഥാർത്ഥ വരുമാനം</h3>
@@ -953,7 +1028,8 @@
           </article>
 
           <!-- Ch 6 -->
-          <article class="chapter-card">
+          <article class="chapter-card" style="--ch-c1:#0f766e; --ch-c2:#14b8a6; --ch-border:#5eead4; --ch-glow:rgba(20, 184, 166, 0.45); --ch-bg:#f0fdfa;">
+
             <div class="chapter-num">06</div>
             <div class="chapter-info">
               <h3>അധ്യായം 6: ആരോഗ്യവും വിദ്യാഭ്യാസവും വികസന സൂചകങ്ങളായി</h3>
@@ -967,7 +1043,8 @@
           </article>
 
           <!-- Ch 7 -->
-          <article class="chapter-card">
+          <article class="chapter-card" style="--ch-c1:#3730a3; --ch-c2:#6366f1; --ch-border:#a5b4fc; --ch-glow:rgba(99, 102, 241, 0.45); --ch-bg:#eef2ff;">
+
             <div class="chapter-num">07</div>
             <div class="chapter-info">
               <h3>അധ്യായം 7: സാമ്പത്തിക വികസനത്തിലെ അടിസ്ഥാന പ്രശ്നങ്ങൾ</h3>
@@ -981,7 +1058,8 @@
           </article>
 
           <!-- Ch 8 -->
-          <article class="chapter-card">
+          <article class="chapter-card" style="--ch-c1:#a21caf; --ch-c2:#d946ef; --ch-border:#f0abfc; --ch-glow:rgba(217, 70, 239, 0.45); --ch-bg:#fdf4ff;">
+
             <div class="chapter-num">08</div>
             <div class="chapter-info">
               <h3>അധ്യായം 8: ചരിത്ര പശ്ചാത്തലങ്ങൾ — സമഗ്ര അവലോകനം</h3>
@@ -1004,7 +1082,8 @@
           <span class="module-tag">Module 2 (Poverty in India)</span>
         </div>
         <div class="chapter-list">
-          <article class="chapter-card">
+          <article class="chapter-card" style="--ch-c1:#c2410c; --ch-c2:#f97316; --ch-border:#fdba74; --ch-glow:rgba(249, 115, 22, 0.45); --ch-bg:#fff7ed;">
+
             <div class="chapter-num">09</div>
             <div class="chapter-info">
               <h3>അധ്യായം 9: ഇന്ത്യയിലെ ദാരിദ്ര്യം: നിർവ്വചനം, അളവുകോലുകൾ, ലഘൂകരണ പദ്ധതികൾ</h3>
@@ -1026,7 +1105,8 @@
           <span class="module-tag">Module 3 (Inequality in India)</span>
         </div>
         <div class="chapter-list">
-          <article class="chapter-card">
+          <article class="chapter-card" style="--ch-c1:#581c87; --ch-c2:#a855f7; --ch-border:#d8b4fe; --ch-glow:rgba(168, 85, 247, 0.45); --ch-bg:#faf5ff;">
+
             <div class="chapter-num">10</div>
             <div class="chapter-info">
               <h3>അധ്യായം 10: ഇന്ത്യയിലെ സാമ്പത്തിക അസമത്വം: അളവുകോലുകൾ, കാരണങ്ങൾ, പരിഹാര നയങ്ങൾ</h3>
@@ -1048,7 +1128,8 @@
           <span class="module-tag">Module 4 (Unemployment in India)</span>
         </div>
         <div class="chapter-list">
-          <article class="chapter-card">
+          <article class="chapter-card" style="--ch-c1:#0369a1; --ch-c2:#0ea5e9; --ch-border:#7dd3fc; --ch-glow:rgba(14, 165, 233, 0.45); --ch-bg:#f0f9ff;">
+
             <div class="chapter-num">11</div>
             <div class="chapter-info">
               <h3>അധ്യായം 11: ഇന്ത്യയിലെ തൊഴിലില്ലായ്മ: നിർവ്വചനം, അളവുകോലുകൾ, കാരണങ്ങളും ലഘൂകരണ പദ്ധതികളും</h3>
@@ -1070,7 +1151,8 @@
           <span class="module-tag">Module 5 (Open-Ended Issues & Empirical Projects)</span>
         </div>
         <div class="chapter-list">
-          <article class="chapter-card">
+          <article class="chapter-card" style="--ch-c1:#9f1239; --ch-c2:#fb7185; --ch-border:#fecdd3; --ch-glow:rgba(251, 113, 133, 0.45); --ch-bg:#fff1f2;">
+
             <div class="chapter-num">12</div>
             <div class="chapter-info">
               <h3>അധ്യായം 12: ഇന്ത്യയിലെ ധനക്കമ്മിയും പണപ്പെരുപ്പവും — ദാരിദ്ര്യ-തൊഴിലില്ലായ്മാ പ്രായോഗിക പ്രൊജക്റ്റുകൾ</h3>
@@ -1113,6 +1195,21 @@
   </div>
 
   <script>
+    function triggerChapterBlink(modId) {
+      const targetSecs = modId === 'all' 
+        ? document.querySelectorAll('.module-section')
+        : document.querySelectorAll(`.module-section[data-mod="${modId}"]`);
+      targetSecs.forEach(sec => {
+        const cards = sec.querySelectorAll('.chapter-card');
+        cards.forEach((card, idx) => {
+          card.classList.remove('blinking');
+          void card.offsetWidth;
+          card.style.setProperty('--ch-delay', `${(idx * 0.12).toFixed(2)}s`);
+          card.classList.add('blinking');
+        });
+      });
+    }
+
     function filterModule(modId, btn) {
       const buttons = document.querySelectorAll('.filter-btn');
       buttons.forEach(b => b.classList.remove('active'));
@@ -1126,6 +1223,9 @@
           sec.style.display = 'none';
         }
       });
+
+      // Blink each chapter tab with its distinct color for a while, keeping the colored tab
+      triggerChapterBlink(modId);
     }
 
     function filterChapters() {
