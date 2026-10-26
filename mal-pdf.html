@@ -302,6 +302,284 @@
       background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
       transform: translateY(-1px) !important;
     }
+
+    /* ========================================================================= */
+    /* ALL MODULE TABS & ALL CHAPTER TABS (DESKTOP & MOBILE FIRST)              */
+    /* ========================================================================= */
+    .modal-module-tabs {
+      display: flex;
+      gap: 8px;
+      padding: 10px 16px;
+      background: #f8fafc;
+      border-bottom: 1.5px solid #e2e8f0;
+      overflow-x: auto;
+      flex-shrink: 0;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    .modal-module-tabs::-webkit-scrollbar {
+      height: 4px;
+    }
+    .modal-module-tabs::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .mod-tab-btn {
+      appearance: none;
+      border: 1.5px solid #cbd5e1;
+      background: #ffffff;
+      color: #334155;
+      padding: 7px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: inherit;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      flex-shrink: 0;
+    }
+    .mod-tab-btn:hover {
+      border-color: var(--mod-btn-color, #0f766e);
+      background: var(--mod-btn-tint, #edf9f5);
+      color: var(--mod-btn-color, #0f766e);
+      transform: translateY(-1px);
+    }
+    .mod-tab-btn.active {
+      background: var(--mod-btn-color, #0f766e) !important;
+      color: #ffffff !important;
+      border-color: var(--mod-btn-color, #0f766e) !important;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+    }
+    .mod-tab-badge {
+      display: inline-grid;
+      place-items: center;
+      width: 24px;
+      height: 22px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.07);
+      font-size: 11px;
+      font-weight: 900;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .mod-tab-btn.active .mod-tab-badge {
+      background: rgba(255, 255, 255, 0.28);
+      color: #ffffff;
+    }
+
+    /* Chapter Subtabs in Modal */
+    .modal-chapter-tabs {
+      display: flex;
+      gap: 6px;
+      padding: 8px 16px;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      overflow-x: auto;
+      flex-shrink: 0;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      position: sticky;
+      top: 50px;
+      z-index: 4;
+    }
+    .modal-chapter-tabs::-webkit-scrollbar {
+      height: 3px;
+    }
+    .modal-chapter-tabs::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    .chapter-tab-btn {
+      appearance: none;
+      border: 1.5px solid #e2e8f0;
+      background: #f8fafc;
+      color: #334155;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 750;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: inherit;
+      transition: all 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+    .chapter-tab-btn:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+      color: #0f172a;
+    }
+    .chapter-tab-btn.active {
+      background: var(--active-mod-color, #0f766e) !important;
+      color: #ffffff !important;
+      border-color: var(--active-mod-color, #0f766e) !important;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
+    }
+    .ch-tab-num {
+      display: inline-grid;
+      place-items: center;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.08);
+      font-size: 11px;
+      font-weight: 850;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .chapter-tab-btn.active .ch-tab-num {
+      background: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    /* On-page Chapter Quick Jump Cards */
+    .module-ch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+      padding: 12px 16px 16px;
+      background: #fbfcfe;
+      border-top: 1px dashed #e2e8f0;
+    }
+    .ch-item-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+      transition: all 0.2s ease;
+    }
+    .ch-item-card:hover {
+      border-color: var(--module-color, #0f766e);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+    .ch-card-top {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .ch-card-num {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--module-tint, #edf9f5);
+      color: var(--module-color, #0f766e);
+      font-size: 12.5px;
+      font-weight: 850;
+      flex-shrink: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .ch-card-title {
+      font-size: 13.5px;
+      font-weight: 750;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+    .ch-card-author {
+      font-size: 11.5px;
+      color: #64748b;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .ch-card-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .ch-card-actions button {
+      padding: 6px 8px;
+      border-radius: 7px;
+      font-size: 11.5px;
+      font-weight: 750;
+      cursor: pointer;
+      font-family: inherit;
+      border: 1.5px solid var(--module-color, #0f766e);
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .btn-ch-summary {
+      background: var(--module-tint, #edf9f5);
+      color: var(--module-color, #0f766e);
+    }
+    .btn-ch-mcq {
+      background: var(--module-color, #0f766e);
+      color: #ffffff !important;
+    }
+    .ch-card-actions button:hover {
+      filter: brightness(0.92);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 680px) {
+      .modal-module-tabs {
+        padding: 8px 10px;
+        gap: 6px;
+      }
+      .mod-tab-btn {
+        padding: 6px 12px;
+        font-size: 12.5px;
+        border-radius: 8px;
+        min-height: 38px;
+      }
+      .mod-tab-label {
+        max-width: 140px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .modal-chapter-tabs {
+        padding: 6px 10px;
+        gap: 6px;
+      }
+      .chapter-tab-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        min-height: 36px;
+      }
+      .ch-tab-name {
+        max-width: 130px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .module-ch-grid {
+        grid-template-columns: 1fr;
+        padding: 10px 12px 14px;
+      }
+    }
+    @media (max-width: 420px) {
+      .modal-module-tabs {
+        padding: 6px 8px;
+      }
+      .mod-tab-btn {
+        padding: 5px 9px;
+        font-size: 11.5px;
+      }
+      .modal-chapter-tabs {
+        padding: 5px 8px;
+      }
+      .chapter-tab-btn {
+        padding: 5px 8px;
+        font-size: 11px;
+      }
+    }
+
   </style>
 <style id="pdf-pulse-nav-styles">
     /* Premium Blinking Back & Home Navigation */
@@ -460,6 +738,60 @@
           </div>
         </article>
       </div>
+      <div class="module-ch-grid">
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">01</span>
+            <div>
+              <div class="ch-card-title">ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ</div>
+              <div class="ch-card-author">കലാമണ്ഡലം ഹൈദരാലി</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(1, 'summary', 0)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(1, 'mcq', 0)">🎯 MCQs</button>
+          </div>
+        </div>
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">02</span>
+            <div>
+              <div class="ch-card-title">സഞ്ചാരസാഹിത്യം: കിഴവനും കൊക്കാത്തുവായും</div>
+              <div class="ch-card-author">എസ്.കെ. പൊറ്റെക്കാട്ട്</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(1, 'summary', 1)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(1, 'mcq', 1)">🎯 MCQs</button>
+          </div>
+        </div>
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">03</span>
+            <div>
+              <div class="ch-card-title">അഭിമുഖം: മാധവിക്കുട്ടിയുമായി നടത്തിയ അഭിമുഖം</div>
+              <div class="ch-card-author">അക്ബർ കക്കട്ടിൽ</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(1, 'summary', 2)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(1, 'mcq', 2)">🎯 MCQs</button>
+          </div>
+        </div>
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">04</span>
+            <div>
+              <div class="ch-card-title">പോഡ്കാസ്റ്റ് / വിവർത്തനം: അർമേനിയയിലെ ശോകഗാനം</div>
+              <div class="ch-card-author">സജി മാർക്കോസ്</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(1, 'summary', 3)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(1, 'mcq', 3)">🎯 MCQs</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="module" id="module-2" aria-labelledby="module-2-title">
@@ -477,6 +809,47 @@
             <button type="button" class="btn-mcq" onclick="openStudyModal(2, 'mcq')">MCQs ↗</button>
           </div>
         </article>
+      </div>
+      <div class="module-ch-grid">
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">01</span>
+            <div>
+              <div class="ch-card-title">ചെറുകഥ: പൂവമ്പഴം</div>
+              <div class="ch-card-author">കാരൂർ നീലകണ്ഠപ്പിള്ള</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(2, 'summary', 0)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(2, 'mcq', 0)">🎯 MCQs</button>
+          </div>
+        </div>
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">02</span>
+            <div>
+              <div class="ch-card-title">ചെറുകഥ: വില്ലുവണ്ടി</div>
+              <div class="ch-card-author">കെ. രേഖ</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(2, 'summary', 1)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(2, 'mcq', 1)">🎯 MCQs</button>
+          </div>
+        </div>
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">03</span>
+            <div>
+              <div class="ch-card-title">നോവൽ: ദൈവത്തിന്റെ കണ്ണ്</div>
+              <div class="ch-card-author">എൻ.പി. മുഹമ്മദ്</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(2, 'summary', 2)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(2, 'mcq', 2)">🎯 MCQs</button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -496,6 +869,47 @@
           </div>
         </article>
       </div>
+      <div class="module-ch-grid">
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">01</span>
+            <div>
+              <div class="ch-card-title">കവിത: സമുദ്രലംഘനം</div>
+              <div class="ch-card-author">തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(3, 'summary', 0)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(3, 'mcq', 0)">🎯 MCQs</button>
+          </div>
+        </div>
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">02</span>
+            <div>
+              <div class="ch-card-title">കവിത: ചിന്താവിഷ്ടയായ സീത</div>
+              <div class="ch-card-author">മഹാകവി കുമാരനാശാൻ</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(3, 'summary', 1)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(3, 'mcq', 1)">🎯 MCQs</button>
+          </div>
+        </div>
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">03</span>
+            <div>
+              <div class="ch-card-title">കവിത: ഇവനെക്കൂടി</div>
+              <div class="ch-card-author">കെ. സച്ചിദാനന്ദൻ</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(3, 'summary', 2)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(3, 'mcq', 2)">🎯 MCQs</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="module" id="module-4" aria-labelledby="module-4-title">
@@ -513,6 +927,60 @@
             <button type="button" class="btn-mcq" onclick="openStudyModal(4, 'mcq')">MCQs ↗</button>
           </div>
         </article>
+      </div>
+      <div class="module-ch-grid">
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">01</span>
+            <div>
+              <div class="ch-card-title">നാടകവേദി: മലയാള നാടകവേദിയും സ്ത്രീപക്ഷ നാടകവേദിയും</div>
+              <div class="ch-card-author">കേരള നാടക പ്രസ്ഥാനം</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(4, 'summary', 0)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(4, 'mcq', 0)">🎯 MCQs</button>
+          </div>
+        </div>
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">02</span>
+            <div>
+              <div class="ch-card-title">ചലച്ചിത്രം: നൻപകൽ നേരത്ത് മയക്കം</div>
+              <div class="ch-card-author">ലിജോ ജോസ് പെല്ലിശ്ശേരി / എസ്. ഹരീഷ്</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(4, 'summary', 1)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(4, 'mcq', 1)">🎯 MCQs</button>
+          </div>
+        </div>
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">03</span>
+            <div>
+              <div class="ch-card-title">ചലച്ചിത്ര ഗാനം: ഗാനശാഖയും ഗാനരചയിതാക്കളും</div>
+              <div class="ch-card-author">പി. ഭാസ്കരൻ, വയലാർ, ഒ.എൻ.വി</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(4, 'summary', 2)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(4, 'mcq', 2)">🎯 MCQs</button>
+          </div>
+        </div>
+        <div class="ch-item-card">
+          <div class="ch-card-top">
+            <span class="ch-card-num">04</span>
+            <div>
+              <div class="ch-card-title">കീഴാള ദൃശ്യസംസ്കാരം: കമ്മട്ടിപ്പാടം, അങ്കമാലി ഡയറീസ്</div>
+              <div class="ch-card-author">രാജീവ് രവി / ലിജോ ജോസ് പെല്ലിശ്ശേരി</div>
+            </div>
+          </div>
+          <div class="ch-card-actions">
+            <button type="button" class="btn-ch-summary" onclick="openStudyModal(4, 'summary', 3)">📝 സംഗ്രഹം</button>
+            <button type="button" class="btn-ch-mcq" onclick="openStudyModal(4, 'mcq', 3)">🎯 MCQs</button>
+          </div>
+        </div>
       </div>
     </section>
     </div>
@@ -533,6 +1001,9 @@
         </div>
         <button class="study-close-btn" type="button" onclick="closeStudyModal()" aria-label="Close">✕</button>
       </header>
+
+      <!-- All Module Tabs (Desktop & Mobile) -->
+      <nav id="modal-module-tabs" class="modal-module-tabs" aria-label="Modules"></nav>
 
       <!-- Chapter Tabs -->
       <nav id="modal-chapter-tabs" class="modal-chapter-tabs" aria-label="Chapters"></nav>
@@ -605,9 +1076,53 @@
       return null;
     }
 
-    function openStudyModal(modNum, initialMode) {
+    function renderModuleTabs() {
+      const tabsNav = document.getElementById('modal-module-tabs');
+      if (!tabsNav) return;
+      tabsNav.replaceChildren();
+
+      const modConfigs = [
+        { num: 1, label: 'മൊഡ്യൂൾ 1', title: 'ഗദ്യവും വിവർത്തനവും', color: '#0f766e', tint: '#edf9f5' },
+        { num: 2, label: 'മൊഡ്യൂൾ 2', title: 'ചെറുകഥയും നോവലും', color: '#4f46e5', tint: '#f1f0fd' },
+        { num: 3, label: 'മൊഡ്യൂൾ 3', title: 'കവിത', color: '#be185d', tint: '#fcf0f5' },
+        { num: 4, label: 'മൊഡ്യൂൾ 4', title: 'ദൃശ്യകല & സിനിമ', color: '#0369a1', tint: '#eef7fc' }
+      ];
+
+      modConfigs.forEach(m => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'mod-tab-btn' + (m.num === activeModuleNumber ? ' active' : '');
+        btn.style.setProperty('--mod-btn-color', m.color);
+        btn.style.setProperty('--mod-btn-tint', m.tint);
+        btn.innerHTML = `<span class="mod-tab-badge">M${m.num}</span><span class="mod-tab-label">${m.label} · ${m.title}</span>`;
+        btn.onclick = () => switchModule(m.num);
+        tabsNav.appendChild(btn);
+      });
+    }
+
+    function switchModule(modNum) {
       activeModuleNumber = modNum;
       activeChapterIndex = 0;
+      const modData = getModuleData(modNum);
+      if (!modData) return;
+
+      const modal = document.getElementById('study-modal');
+      const dialogPanel = modal.querySelector('.study-dialog-panel');
+      dialogPanel.style.setProperty('--active-mod-color', modData.themeColor || '#0f766e');
+      dialogPanel.style.setProperty('--active-mod-tint', modData.themeTint || '#edf9f5');
+
+      document.getElementById('modal-module-title').textContent = modData.moduleTitle;
+      document.getElementById('modal-module-desc').textContent = modData.moduleSubtitle || 'മലയാള സാഹിത്യാനുശീലനം';
+
+      renderModuleTabs();
+      renderChapterTabs(modData);
+      selectChapter(0);
+      switchMode(activeMode);
+    }
+
+    function openStudyModal(modNum, initialMode, initialChIdx) {
+      activeModuleNumber = modNum;
+      activeChapterIndex = (typeof initialChIdx === 'number' && initialChIdx >= 0) ? initialChIdx : 0;
       activeMode = initialMode || 'summary';
 
       const modData = getModuleData(modNum);
@@ -624,8 +1139,9 @@
       document.getElementById('modal-module-title').textContent = modData.moduleTitle;
       document.getElementById('modal-module-desc').textContent = modData.moduleSubtitle || 'മലയാള സാഹിത്യാനുശീലനം';
 
+      renderModuleTabs();
       renderChapterTabs(modData);
-      selectChapter(0);
+      selectChapter(activeChapterIndex);
       switchMode(activeMode);
 
       modal.hidden = false;
@@ -651,8 +1167,10 @@
       (modData.chapters || []).forEach((ch, idx) => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = idx === activeChapterIndex ? 'active' : '';
-        btn.innerHTML = `<span>📖</span> Ch ${idx + 1} · ${ch.chapterTitle.split(':')[1] || ch.chapterTitle}`;
+        btn.className = 'chapter-tab-btn' + (idx === activeChapterIndex ? ' active' : '');
+        const cleanTitle = ch.chapterTitle.includes(':') ? ch.chapterTitle.split(':')[1].trim() : ch.chapterTitle;
+        btn.innerHTML = `<span class="ch-tab-num">Ch ${idx + 1}</span> <span class="ch-tab-name">${cleanTitle}</span>`;
+        btn.title = ch.chapterTitle + (ch.author ? ' (' + ch.author + ')' : '');
         btn.onclick = () => selectChapter(idx);
         tabsNav.appendChild(btn);
       });
@@ -668,6 +1186,9 @@
       // Update chapter tab active classes
       const tabs = document.querySelectorAll('#modal-chapter-tabs button');
       tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
+      if (tabs[idx]) {
+        tabs[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
 
       // Update PDF pane
       const pdfLink = document.getElementById('modal-pdf-link');
