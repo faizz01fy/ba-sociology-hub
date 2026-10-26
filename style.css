@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
 /* Academic Hub premium design system */
 :root{
   color-scheme:light;
@@ -458,31 +457,373 @@ strong,b,summary,.eyebrow,.subject-tag,.test-label,.module-eyebrow,.ai-study-eye
 
 
 
-/* Centered semester ticker and distinct brand chip. */
-.semester-context{
-  display:grid;grid-template-columns:24px minmax(0,1fr) 24px;align-items:center;gap:9px;
-  box-sizing:border-box;width:100%;max-width:1280px;min-height:36px;margin:8px auto 0;padding:6px 10px;
-  border:1px solid #d7e6dd;border-radius:12px;
-  background:linear-gradient(100deg,#edf7f1 0%,#f8f3e8 100%);
-  box-shadow:0 4px 12px rgba(31,81,57,.07);
-  color:#596579;font-size:calc(.8rem + 4px);line-height:1.45;letter-spacing:.01em;text-align:center;
+/* Colorful & Elegant Moving Banner (Semester Context Ticker) */
+.semester-context {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 1280px;
+  min-height: 48px;
+  margin: 12px auto 14px;
+  padding: 6px 14px;
+  border-radius: 14px;
+  background: linear-gradient(110deg, #090e1a 0%, #151a36 22%, #0e2444 48%, #241438 74%, #0a2128 92%, #090e1a 100%);
+  background-size: 250% 250%;
+  animation: bannerAuroraShift 16s ease-in-out infinite;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 8px 26px -4px rgba(79, 70, 229, 0.35),
+    0 2px 8px rgba(15, 23, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+  overflow: hidden !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 5;
 }
-.semester-context-logo{
-  display:grid;place-items:center;flex:none;width:24px;height:24px;
-  border-radius:8px;background:linear-gradient(145deg,#287052,#174b3a);color:#fff;
+
+/* Glowing multicolored laser top-border accent */
+.semester-context::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #f43f5e, #fbbf24, #10b981, #06b6d4, #8b5cf6, #ec4899, #f43f5e);
+  background-size: 200% 100%;
+  animation: bannerLaserGlow 6s linear infinite;
+  border-radius: 14px 14px 0 0;
+  z-index: 2;
 }
-.semester-context-logo svg{display:block;width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.semester-context::after{
-  content:"";display:block;justify-self:center;width:9px;height:9px;border-radius:50%;
-  background:#2c9b65;box-shadow:0 0 0 4px rgba(44,155,101,.14);
-  animation:semester-context-live 1.6s ease-in-out infinite;
+
+@keyframes bannerAuroraShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-.semester-context p{min-width:0;margin:0;overflow:hidden;font:inherit;text-align:center;white-space:nowrap}
-.semester-context-marquee{display:flex;width:max-content;animation:semester-context-scroll 28s linear infinite;will-change:transform}
-.semester-context-marquee span{display:block;flex:none;padding-right:3.5rem;white-space:nowrap}
-.semester-context:hover .semester-context-marquee{animation-play-state:paused}
-@keyframes semester-context-scroll{to{transform:translateX(-50%)}}
-@keyframes semester-context-live{50%{box-shadow:0 0 0 7px rgba(44,155,101,.04);opacity:.68}}
+
+@keyframes bannerLaserGlow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+/* Left Brand Icon Badge: Radiant Magenta-Violet-Blue Gradient with Glow */
+.semester-context-logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #f43f5e 0%, #8b5cf6 55%, #06b6d4 100%);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.65), 0 2px 6px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 3;
+}
+.semester-context-logo:hover {
+  transform: scale(1.1) rotate(-4deg);
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.85);
+}
+.semester-context-logo svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
+
+/* Right Status Live Pulse Chip */
+.semester-context-live {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(52, 211, 153, 0.45);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+  z-index: 3;
+  flex: none;
+  user-select: none;
+}
+
+.live-beacon {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 0 8px #34d399;
+  animation: bannerLivePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.live-label {
+  color: #34d399;
+  font-weight: 800;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@keyframes bannerLivePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.85), 0 0 8px #34d399;
+    transform: scale(0.95);
+  }
+  65% {
+    box-shadow: 0 0 0 7px rgba(52, 211, 153, 0), 0 0 14px #10b981;
+    transform: scale(1.1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0), 0 0 8px #34d399;
+    transform: scale(0.95);
+  }
+}
+
+/* Marquee Paragraph & Text Wrapper with Elegant Edge Fades */
+.semester-context p {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  width: auto !important;
+  margin: 0;
+  overflow: hidden !important;
+  white-space: nowrap;
+  font-family: 'Plus Jakarta Sans', 'Outfit', 'DM Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  mask-image: linear-gradient(90deg, transparent 0, #000 36px, #000 calc(100% - 36px), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 36px, #000 calc(100% - 36px), transparent 100%);
+}
+
+.semester-context-marquee {
+  display: flex;
+  width: max-content;
+  animation: semester-context-scroll 24s linear infinite;
+  will-change: transform;
+}
+
+.semester-context:hover .semester-context-marquee {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 3.5rem;
+  white-space: nowrap;
+  flex: none;
+}
+
+/* 1. University Badge: Amber Gold Gradient Pill with White Dot */
+.ticker-badge-univ {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 11px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  color: #1c1917;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.45);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.ticker-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 6px #ffffff;
+}
+
+/* 2. Sparkles with Radiant Glow */
+.ticker-sparkle {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1;
+}
+.ticker-sparkle-pink {
+  color: #f43f5e;
+  filter: drop-shadow(0 0 6px rgba(244, 63, 94, 0.85));
+}
+.ticker-sparkle-cyan {
+  color: #38bdf8;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.85));
+}
+
+/* 3. Degree Program: Gradient Cyan-Violet Luminous Text */
+.ticker-degree {
+  font-weight: 800;
+  font-size: 13.5px;
+  letter-spacing: 0.05em;
+  background: linear-gradient(90deg, #38bdf8 0%, #818cf8 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.4));
+}
+
+/* 4. Subjects Count Badge: Neon Mint / Emerald Pill */
+.ticker-badge-subjects {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.28) 0%, rgba(5, 150, 105, 0.4) 100%);
+  border: 1px solid rgba(52, 211, 153, 0.6);
+  color: #6ee7b7;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+}
+
+/* 5. Bullet Separator */
+.ticker-sep {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 11px;
+}
+
+/* 6. Feature Pills with Distinct Vibrant Colors */
+.ticker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+}
+
+.ticker-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* Rose / Coral for Notes */
+.ticker-pill-notes {
+  color: #fb7185;
+  filter: drop-shadow(0 0 5px rgba(251, 113, 133, 0.45));
+}
+
+/* Electric Cyan for PDFs */
+.ticker-pill-pdfs {
+  color: #38bdf8;
+  filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.45));
+}
+
+/* Vivid Amber for Revision */
+.ticker-pill-revision {
+  color: #fbbf24;
+  filter: drop-shadow(0 0 5px rgba(251, 191, 36, 0.45));
+}
+
+/* Royal Lavender for Mock Tests */
+.ticker-pill-tests {
+  color: #c084fc;
+  filter: drop-shadow(0 0 5px rgba(192, 132, 252, 0.45));
+}
+
+@keyframes semester-context-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 700px) {
+  .semester-context {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 5px 10px !important;
+    min-height: 42px !important;
+    margin: 8px auto 12px !important;
+  }
+  .semester-context-logo {
+    flex: 0 0 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 7px !important;
+  }
+  .semester-context-logo svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .semester-context-live {
+    flex: 0 0 auto !important;
+    padding: 2px 7px !important;
+    gap: 4px !important;
+  }
+  .live-beacon {
+    width: 6px !important;
+    height: 6px !important;
+  }
+  .live-label {
+    font-size: 8.5px !important;
+  }
+  .semester-context p {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    font-size: 12px !important;
+    mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%) !important;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%) !important;
+  }
+  .marquee-group {
+    gap: 9px !important;
+    padding-right: 2.5rem !important;
+  }
+  .ticker-badge-univ {
+    padding: 2px 8px !important;
+    font-size: 10px !important;
+  }
+  .ticker-degree {
+    font-size: 12px !important;
+  }
+  .ticker-badge-subjects {
+    padding: 2px 8px !important;
+    font-size: 10px !important;
+  }
+  .ticker-pill {
+    font-size: 11.5px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .semester-context,
+  .semester-context::before,
+  .semester-context::after,
+  .semester-context-marquee,
+  .semester-context-logo {
+    animation: none !important;
+  }
+  .semester-context-marquee {
+    display: flex !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+    transform: none !important;
+  }
+  .marquee-group + .marquee-group {
+    display: none !important;
+  }
+}
+
 /* Give the site identity its own soft mint highlight. */
 .brand{gap:10px;padding:5px 10px;border:1px solid #d6e5da;border-radius:15px;background:#e9f3ec}
 .brand-copy strong{font-size:21.2px}
@@ -491,16 +832,6 @@ strong,b,summary,.eyebrow,.subject-tag,.test-label,.module-eyebrow,.ai-study-eye
   .brand{gap:9px;padding:4px 8px}
   .brand-copy strong{font-size:16px}
   .brand-copy small{margin-top:3px;font-size:11px}
-  .semester-context{grid-template-columns:22px minmax(0,1fr) 22px;gap:8px;padding:7px 8px}
-  .semester-context-logo{width:22px;height:22px}
-  .semester-context::after{width:8px;height:8px}
-}
-@media(prefers-reduced-motion:reduce){
-  .semester-context::after{animation:none}
-  .semester-context-marquee{display:block;width:100%;animation:none;transform:none;will-change:auto}
-  .semester-context-marquee span{display:block;padding:0;white-space:normal}
-  .semester-context-marquee span+span{display:none}
-  .semester-context p{overflow:visible;white-space:normal}
 }
 
 
@@ -2075,6 +2406,125 @@ footer .footer-nav a:focus-visible{outline:2px solid #bfcfc3;outline-offset:3px}
   margin-top: 3px !important;
 }
 
+/* Eye-Catching Diagrams, Examples, and Principle Cards */
+.flowchart-diagram-card {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%) !important;
+  border: 1.5px solid #a7f3d0 !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.08) !important;
+}
+.flowchart-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #065f46 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-bottom: 8px !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase !important;
+}
+.flowchart-steps {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.flowchart-step {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  background: #ffffff !important;
+  border: 1.5px solid #6ee7b7 !important;
+  border-radius: 8px !important;
+  padding: 6px 12px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+.flowchart-step-en {
+  font-size: 12.5px !important;
+  font-weight: 750 !important;
+  color: #065f46 !important;
+}
+.flowchart-step-mal {
+  font-family: 'Noto Sans Malayalam', sans-serif !important;
+  font-size: 11px !important;
+  color: #047857 !important;
+}
+.flowchart-arrow {
+  color: #059669 !important;
+  font-weight: 850 !important;
+  font-size: 16px !important;
+}
+.example-callout-card {
+  background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%) !important;
+  border-left: 4.5px solid #eab308 !important;
+  border-radius: 0 12px 12px 0 !important;
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+  box-shadow: 0 2px 8px rgba(234, 179, 8, 0.08) !important;
+}
+.example-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #854d0e !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-bottom: 5px !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase !important;
+}
+.example-en {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #713f12 !important;
+  line-height: 1.5 !important;
+}
+.example-mal {
+  font-family: 'Noto Sans Malayalam', sans-serif !important;
+  font-size: 12px !important;
+  color: #854d0e !important;
+  line-height: 1.55 !important;
+  margin-top: 3px !important;
+}
+.rule-card {
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%) !important;
+  border-left: 4.5px solid #6366f1 !important;
+  border-radius: 0 12px 12px 0 !important;
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08) !important;
+}
+.rule-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #3730a3 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-bottom: 5px !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase !important;
+}
+.rule-en {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #312e81 !important;
+  line-height: 1.5 !important;
+}
+.rule-mal {
+  font-family: 'Noto Sans Malayalam', sans-serif !important;
+  font-size: 12px !important;
+  color: #4338ca !important;
+  line-height: 1.55 !important;
+  margin-top: 3px !important;
+}
+
 /* Core Concepts */
 .concept-tag {
   background: var(--subject-bg-soft, #f7faf6) !important;
@@ -3373,8 +3823,7 @@ html, body {
   box-sizing: border-box !important;
 }
 .semester-context p {
-  width: 100% !important;
-  max-width: 100% !important;
+  min-width: 0 !important;
   overflow: hidden !important;
 }
 @media (max-width: 768px) {
