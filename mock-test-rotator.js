@@ -303,6 +303,10 @@
     if (pill && pill.parentNode) {
       pill.parentNode.removeChild(pill);
     }
+    var oldBtns = card.querySelectorAll('.rotator-nav-btn');
+    for (var b = 0; b < oldBtns.length; b++) {
+      if (oldBtns[b].parentNode) oldBtns[b].parentNode.removeChild(oldBtns[b]);
+    }
   }
 
   function setupCardInteractiveRotator(card, cardIndex) {
@@ -326,25 +330,9 @@
       controlsWrap.className = 'rotator-controls';
       controlsWrap.setAttribute('aria-label', 'Photo pool controls');
 
-      var prevBtn = document.createElement('button');
-      prevBtn.type = 'button';
-      prevBtn.className = 'rotator-nav-btn rotator-prev';
-      prevBtn.innerHTML = '‹';
-      prevBtn.title = 'Previous photo';
-      prevBtn.setAttribute('aria-label', 'Previous photo');
-
-      var nextBtn = document.createElement('button');
-      nextBtn.type = 'button';
-      nextBtn.className = 'rotator-nav-btn rotator-next';
-      nextBtn.innerHTML = '›';
-      nextBtn.title = 'Next photo';
-      nextBtn.setAttribute('aria-label', 'Next photo');
-
       var progBar = document.createElement('div');
       progBar.className = 'rotator-progress-line';
 
-      controlsWrap.appendChild(prevBtn);
-      controlsWrap.appendChild(nextBtn);
       controlsWrap.appendChild(progBar);
 
       // Insert relative wrapper if needed
@@ -359,22 +347,7 @@
         imgParent.appendChild(controlsWrap);
       }
 
-      // Event handlers for manual click
-      prevBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        state.index = (state.index - 1 + pool.length) % pool.length;
-        applyPhotoToCard(card, state.index, true);
-        restartCardTimer(card);
-      });
 
-      nextBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        state.index = (state.index + 1) % pool.length;
-        applyPhotoToCard(card, state.index, true);
-        restartCardTimer(card);
-      });
     }
 
     // Pause on hover
