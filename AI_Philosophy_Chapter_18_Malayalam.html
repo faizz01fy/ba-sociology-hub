@@ -1,0 +1,931 @@
+<!DOCTYPE html><html lang="ml"><head><meta charset="UTF-8"><title>Philosophy of AI · Module 4 · Chapter 5 (Chapter 18)</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0f172a;
+    }
+
+    .page-container {
+      width: 210mm;
+      height: 297mm;
+      padding: 12mm 14mm 10mm 14mm;
+      margin: 0 auto;
+      background: #ffffff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+    }
+
+    .top-bar-left {
+      font-size: 8pt;
+      font-weight: 800;
+      color: #e11d48;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar-right {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .chapter-hero {
+      background: linear-gradient(135deg, #ffe4e6 0%, #ffffff 100%);
+      border: 1.5px solid #e11d48;
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-bottom: 9px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #e11d48;
+      color: #ffffff;
+      font-size: 6.8pt;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .hero-title-en {
+      font-size: 11.5pt;
+      font-weight: 800;
+      color: #881337;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #e11d48;
+      line-height: 1.35;
+    }
+
+    .section-header {
+      background: #f1f5f9;
+      border-left: 4px solid #e11d48;
+      padding: 5px 8px;
+      margin-bottom: 7px;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .section-title-en {
+      font-size: 9.2pt;
+      font-weight: 800;
+      color: #1e293b;
+      letter-spacing: 0.3px;
+    }
+
+    .section-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #e11d48;
+      margin-top: 1px;
+    }
+
+    .content-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 7px;
+      padding: 8px 10px;
+      margin-bottom: 7px;
+    }
+
+    .bilingual-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-bottom: 6px;
+    }
+
+    .block-en {
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 6px 8px;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .block-ml {
+      background: #fffbeb;
+      border-left: 3px solid #fde68a;
+      padding: 6px 8px;
+      border-radius: 0 5px 5px 0;
+      font-family: 'Noto Sans Malayalam', sans-serif;
+    }
+
+    .block-label {
+      font-size: 6.8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .block-en .block-label { color: #475569; }
+    .block-ml .block-label { color: #92400e; }
+
+    .block-en p {
+      font-size: 8pt;
+      color: #1e293b;
+      line-height: 1.42;
+      margin: 0 0 4px 0;
+    }
+
+    .block-en p:last-child {
+      margin-bottom: 0;
+    }
+
+    .block-ml p {
+      font-size: 7.7pt;
+      color: #78350f;
+      line-height: 1.45;
+      margin: 0 0 4px 0;
+    }
+
+    .block-ml p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* STRICT TWO HIGHLIGHTERS */
+    .hl-green {
+      background: #bbf7d0;
+      color: #14532d;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .hl-yellow {
+      background: #fef08a;
+      color: #713f12;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .page-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 4px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    /* PAGE 12 EXAM GRID */
+    .page-exam-grid {
+      padding: 10mm 12mm 8mm 12mm;
+    }
+
+    .exam-header-compact {
+      text-align: center;
+      background: linear-gradient(135deg, #ffe4e6 0%, #ffffff 100%);
+      border: 1.5px solid #e11d48;
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-bottom: 8px;
+    }
+
+    .exam-title-badge {
+      display: inline-block;
+      background: #e11d48;
+      color: #ffffff;
+      font-size: 7pt;
+      font-weight: 800;
+      padding: 1.5px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .exam-hero-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #881337;
+      line-height: 1.2;
+    }
+
+    .exam-hero-sub {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #e11d48;
+      line-height: 1.3;
+    }
+
+    .points-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    .point-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 4.5px 6px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .point-header {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+
+    .point-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 1.5px 4px;
+      border-radius: 2px;
+      color: #ffffff;
+    }
+
+    .point-title-en {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.15;
+    }
+
+    .point-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.4pt;
+      font-weight: 700;
+      color: #e11d48;
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+
+    .point-body {
+      font-size: 6.4pt;
+      color: #334155;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+
+    .point-body-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.1pt;
+      color: #475569;
+      line-height: 1.25;
+    }
+    </style></head><body>
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 5 (Chapter 18)</span>
+        <span class="top-bar-right">Page 1 of 7 ✨ Bilingual Study Guide</span>
+      </div>
+      <div class="chapter-hero">
+        <div class="hero-tag">🎓 Calicut University FYUGP · Minor Philosophy (PHL1MN102) · Module 4</div>
+        <div class="hero-title-en">CHAPTER V: 4.3(A) What sort of ethical rules should AI like self-driving car use?</div>
+        <div class="hero-title-ml">അദ്ധ്യായം 5: സ്വയംഭരണ കാറുകൾ പോലുള്ള AI സംവിധാനങ്ങൾ ഏതുതരം ധാർമ്മിക നിയമങ്ങളാണ് ഉപയോഗിക്കേണ്ടത്?</div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">1. Autonomous Vehicles: Perception, Autonomy and Moral Agency</div>
+          <div class="section-title-ml">സ്വയംഭരണ വാഹനങ്ങൾ: കാഴ്ച്ച, സ്വയംഭരണാധികാരം & ധാർമ്മിക കർതൃത്വം</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Technical Architecture of Self-Driving Cars</div>
+            <p><span class="hl-yellow">An autonomous vehicle, often termed a self-driving car, possesses the ability to perceive its environment, make judgements, and operate independently of human intervention</span>.</p>
+            <p>It utilizes a sophisticated sensor fusion matrix—integrating <span class="hl-green">computer vision, LiDAR, radar, and real-time deep learning</span>—to navigate complex urban thoroughfares, predict pedestrian vectors, and maintain vehicle stabilization.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 സ്വയംഭരണ കാറുകളുടെ സാങ്കേതിക അടിത്തറ</div>
+            <p><span class="hl-yellow">മനുഷ്യന്റെ നേരിട്ടുള്ള നിയന്ത്രണമില്ലാതെ ചുറ്റുപാടുകൾ മനസ്സിലാക്കാനും, സ്വയം തീരുമാനങ്ങളെടുക്കാനും, സുരക്ഷിതമായി ഓടാനും കഴിയുന്ന വാഹനങ്ങളെയാണ് സ്വയംഭരണ കാറുകൾ എന്ന് വിളിക്കുന്നത്</span>.</p>
+            <p>ക്യാമറകൾ, ലൈഡാർ (LiDAR), റഡാർ, ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് എന്നിവ സംയോജിപ്പിച്ചാണ് ഈ കാറുകൾ റോഡിലെ തടസ്സങ്ങൾ കണ്ടെത്തുകയും കാൽനടയാത്രക്കാരുടെ നീക്കങ്ങൾ മുൻകൂട്ടി കണ്ട് വാഹനം നിയന്ത്രിക്കുകയും ചെയ്യുന്നത്.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 The Dilemma of Decision-Making under Uncertainty</div>
+            <p>Driving is not purely computational navigation; it constantly encounters radical, split-second ethical dilemmas where collisions become physically unavoidable.</p>
+            <p>In meta-ethics, <span class="hl-yellow">there is no universally acknowledged algorithm that can be mathematically deemed "right"</span> when machines must choose between catastrophic alternative human harms.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 അനിശ്ചിതത്വങ്ങളിലെ തീരുമാന പ്രതിസന്ധി</div>
+            <p>ഡ്രൈവിംഗ് എന്നത് കേവലം വാഹനം ഓടിക്കൽ മാത്രമല്ല; അപകടങ്ങൾ ഒഴിവാക്കാനാവാത്ത ചില അപൂർവ്വ നിമിഷങ്ങളിൽ ധാർമ്മിക തീരുമാനങ്ങൾ എടുക്കേണ്ട സാഹചര്യം റോഡിൽ ഉണ്ടാകുന്നു.</p>
+            <p>ആരെ രക്ഷിക്കണം, ആർക്ക് പരിക്കേൽക്കണം എന്ന അതിസങ്കീർണ്ണമായ സന്ദർഭങ്ങളിൽ, <span class="hl-yellow">ഗണിതശാസ്ത്രപരമായി തികച്ചും "ശരി" എന്ന് സാർവ്വലൗകികമായി അംഗീകരിക്കപ്പെട്ട ഒരു അൽഗോരിതവും നിലവിലില്ല</span> എന്നതാണ് വലിയ പ്രതിസന്ധി.</p>
+          </div>
+        </div>
+      </div>
+<div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">2. The Trolley Problem Adapted to Autonomous Navigation</div>
+          <div class="section-title-ml">ട്രോളി പ്രശ്നം (Trolley Problem) സ്വയംഭരണ കാറുകളിൽ</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 The Classical Dilemma Re-engineered</div>
+            <p>Recent philosophers evaluate autonomous collision ethics using scenarios adapted from Philippa Foot's classic <span class="hl-green">Trolley Problem</span>.</p>
+            <p>Imagine a vehicle suffering catastrophic brake failure while approaching a crosswalk containing five pedestrians. The vehicle can either stay its course, striking the five, or swerve onto a pavement striking an innocent bystander, forcing an algorithmic choice.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ഫിലിപ്പ ഫൂട്ടിന്റെ ട്രോളി പ്രശ്നം</div>
+            <p>ഫിലിപ്പ ഫൂട്ട് അവതരിപ്പിച്ച പ്രശസ്തമായ <span class="hl-green">ട്രോളി പ്രോബ്ലം (Trolley Problem)</span> എന്ന ദാർശനിക ഉദാഹരണം സ്വയംഭരണ കാറുകളുടെ കാര്യത്തിൽ ഇന്ന് ചർച്ച ചെയ്യപ്പെടുന്നു.</p>
+            <p>ബ്രേക്ക് നഷ്ടപ്പെട്ട ഒരു കാർ അഞ്ച് കാൽനടയാത്രക്കാർക്ക് നേരെ പാഞ്ഞടുക്കുന്നു; വാഹനം വെട്ടിച്ചാൽ ഫുട്പാത്തിലുള്ള മറ്റൊരാൾ കൊല്ലപ്പെടും. ഈ നിമിഷത്തിൽ അൽഗോരിതം ആരെ വധിക്കാൻ തീരുമാനിക്കണം എന്നതാണ് ചോദ്യം.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Passenger vs Pedestrian Conundrum</div>
+            <p>The situation intensifies when the choice involves the vehicle's own occupants: swerving to avoid five pedestrians would steer the vehicle off a cliff, killing the passenger inside.</p>
+            <p><span class="hl-yellow">Should the software sacrifice its own paying occupant to save a larger aggregate number of external strangers?</span> This presents a profound conflict between consumer trust and public morality.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 യാത്രക്കാരനും കാൽനടയാത്രക്കാരനും തമ്മിലുള്ള പോരാട്ടം</div>
+            <p>കാറിലെ യാത്രക്കാരന്റെ ജീവൻ അപകടത്തിലാകുന്ന സാഹചര്യത്തിൽ ഈ ചോദ്യം കൂടുതൽ സങ്കീർണ്ണമാകുന്നു: അഞ്ച് വഴിയാത്രക്കാരെ രക്ഷിക്കാൻ വാഹനം കൊക്കയിലേക്ക് മറിഞ്ഞ് കാറിലിരിക്കുന്നയാൾ മരിക്കണോ?</p>
+            <p><span class="hl-yellow">കൂടുതൽ ആളുകളെ രക്ഷിക്കാൻ വേണ്ടി സ്വന്തം കാറിലെ യാത്രക്കാരനെ കൊല്ലാൻ അൽഗോരിതം തയ്യാറാകണമോ?</span> ഇത് ഉപഭോക്താവിന്റെ വിശ്വാസവും പൊതുധാർമ്മികതയും തമ്മിലുള്ള വലിയ സംഘർഷമാണ്.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 5: Autonomous Vehicle Ethics & Trolley Dilemma</span>
+      <span>Page 1 of 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 5 (Chapter 18)</span>
+        <span class="top-bar-right">Page 2 of 7 ✨ Bilingual Study Guide</span>
+      </div>
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">3. Utilitarian Minimization vs The 'Selfish' Vehicle Algorithm</div>
+          <div class="section-title-ml">യൂട്ടിലിറ്റേറിയൻ സമീപനവും 'സ്വാർത്ഥ' അൽഗോരിതവും</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 The Utilitarian Calculus of Harm</div>
+            <p><span class="hl-green">Utilitarianism</span> dictates that the ethical course of action is that which maximizes aggregate net utility or <span class="hl-yellow">minimizes the total number of human casualties</span>.</p>
+            <p>Under strict utilitarian optimization, sacrificing one passenger to spare five pedestrians is mathematically mandated. However, consumer surveys reveal that while people praise utilitarian cars abstractly, nobody is willing to purchase a vehicle programmed to sacrifice them.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 യൂട്ടിലിറ്റേറിയൻ കണക്കുകൂട്ടലുകൾ</div>
+            <p><span class="hl-green">യൂട്ടിലിറ്റേറിയനിസം (Utilitarianism)</span> അനുശാസിക്കുന്നത്, ഏറ്റവും കുറഞ്ഞ ആൾനാശം ഉണ്ടാക്കുന്ന തീരുമാനമാണ് ധാർമ്മികമായി ശരി എന്നാണ്.</p>
+            <p>ഈ സിദ്ധാന്തപ്രകാരം അഞ്ച് പേരെ രക്ഷിക്കാൻ കാറിലിരിക്കുന്ന ഒരാളെ ബലികൊടുക്കണം. എന്നാൽ, അപകടമുണ്ടായാൽ യാത്രക്കാരനെ കൊല്ലാൻ പ്രോഗ്രാം ചെയ്ത കാറുകൾ വാങ്ങാൻ ആരും തയ്യാറാകില്ലെന്ന് സർവ്വേകൾ തെളിയിക്കുന്നു.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 The 'Selfish' Vehicle Strategy</div>
+            <p>Conversely, manufacturers could deploy a <span class="hl-yellow">"selfish" algorithm programmed to protect the vehicle's passengers at all costs</span>, treating external pedestrians as secondary.</p>
+            <p>While commercially attractive to buyers, this strategy violates fundamental social justice and public safety, creating an unacceptable ethical regime where purchasing power buys immunity at the expense of pedestrians.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 'സ്വാർത്ഥ' വാഹന തന്ത്രം (Selfish Algorithm)</div>
+            <p>മറുവശത്ത്, എന്ത് വിലകൊടുത്തും <span class="hl-yellow">സ്വന്തം കാറിലെ യാത്രക്കാരനെ മാത്രം സംരക്ഷിക്കുകയും പുറത്തുള്ളവരെ അവഗണിക്കുകയും ചെയ്യുന്ന 'സ്വാർത്ഥ' അൽഗോരിതം</span> ഉപയോഗിക്കാമെന്ന് ചിലർ കരുതുന്നു.</p>
+            <p>ഇത് കാറ് വാങ്ങുന്നവർക്ക് ഇഷ്ടപ്പെടുമെങ്കിലും, കാൽനടയാത്രക്കാരുടെ ജീവന് പുല്ലുവില കൽപ്പിക്കുന്നത് വഴി പൊതുനീതിക്കും സാമൂഹിക സുരക്ഷയ്ക്കും കടുത്ത വെല്ലുവിളിയായി മാറുന്നു.</p>
+          </div>
+        </div>
+      </div>
+<div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">4. Deontological Ethics and the Inviolable Duty to Do No Harm</div>
+          <div class="section-title-ml">ഡീയോണ്ടോളജിക്കൽ നീതിശാസ്ത്രവും അപരാധരാഹിത്യവും</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 The Kantian Categorical Imperative</div>
+            <p><span class="hl-green">Deontological ethics</span>, rooted in Immanuel Kant, asserts that actions possess inherent moral rightness or wrongness independent of their net consequences.</p>
+            <p><span class="hl-yellow">A fundamental deontological maxim prohibits intentionally killing or harming an innocent human being as a mere instrumental means</span> to preserve other lives.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 കാന്റിന്റെ കടമാധിഷ്ഠിത നീതിശാസ്ത്രം</div>
+            <p>ഇമ്മാനുവൽ കാന്റിന്റെ <span class="hl-green">ഡീയോണ്ടോളജി (Deontological Ethics)</span> അനുസരിച്ച്, ഒരു പ്രവൃത്തിയുടെ അനന്തരഫലങ്ങൾ നോക്കിയല്ല, മറിച്ച് അതിന്റെ സ്വഭാവം നോക്കിയാണ് ധാർമ്മികത നിശ്ചയിക്കേണ്ടത്.</p>
+            <p><span class="hl-yellow">മറ്റുള്ളവരെ രക്ഷിക്കാൻ വേണ്ടി നിരപരാധിയായ ഒരാളെ മനഃപൂർവ്വം കൊല്ലുന്നത് കൊടും തെറ്റാണ്</span>; മനുഷ്യനെ മറ്റൊരു ലക്ഷ്യത്തിനുള്ള ഉപകരണമായി ഉപയോഗിക്കാൻ പാടില്ലെന്ന് കാന്റ് പഠിപ്പിക്കുന്നു.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Active Killing vs Allowing Harm</div>
+            <p>Deontologists draw a crucial moral distinction between <em>actively executing a fatal swerve</em> onto an innocent bystander versus <em>passively failing to stop</em> in an unavoidable brake failure.</p>
+            <p>Programming a machine to deliberately target a bystander transforms the car into an <span class="hl-green">active agent of murder</span>, an ethical outcome deontology categorically forbids.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 മനഃപൂർവ്വമായ കൊലപാതകവും അപകടവും</div>
+            <p>ഒരു വഴിപോക്കനെ മനഃപൂർവ്വം ഇടിച്ചു കൊലപ്പെടുത്തുന്നതും, ബ്രേക്ക് കിട്ടാതെ സ്വഭാവികമായി അപകടം സംഭവിക്കുന്നതും തമ്മിൽ ധാർമ്മികമായി വലിയ വ്യത്യാസമുണ്ട്.</p>
+            <p>ഫുട്പാത്തിലുള്ള ഒരാളെ കൊല്ലാൻ അൽഗോരിതം മുൻകൂട്ടി തീരുമാനമെടുക്കുന്നത് യന്ത്രത്തെ ഒരു <span class="hl-green">കൊലപാതകിയാക്കി മാറ്റുന്നതിന് തുല്യമാണ്</span> എന്ന് ഡീയോണ്ടോളജി വ്യക്തമാക്കുന്നു.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 5: Autonomous Vehicle Ethics & Trolley Dilemma</span>
+      <span>Page 2 of 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 5 (Chapter 18)</span>
+        <span class="top-bar-right">Page 3 of 7 ✨ Bilingual Study Guide</span>
+      </div>
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">5. John Rawls's 'Veil of Ignorance' in Algorithmic Policy</div>
+          <div class="section-title-ml">ജോൺ റോൾസിന്റെ 'അജ്ഞതയുടെ മൂടുപടം' (Veil of Ignorance)</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 The Original Position Concept</div>
+            <p>Political philosopher <span class="hl-green">John Rawls</span> proposed that just social rules are those formulated behind a <span class="hl-green">"Veil of Ignorance"</span>, where decision-makers remain unaware of their personal attributes.</p>
+            <p><span class="hl-yellow">Parties remain oblivious of their gender, caste, race, socioeconomic wealth, physical vulnerability, or whether they will be a car passenger or an outdoor pedestrian</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 റോൾസിന്റെ ആദ്യകാല അവസ്ഥ (Original Position)</div>
+            <p>പ്രശസ്ത തത്ത്വചിന്തകനായ <span class="hl-green">ജോൺ റോൾസ് (John Rawls)</span> നീതിപൂർവ്വമായ നിയമങ്ങൾ നിർമ്മിക്കാൻ <span class="hl-green">'അജ്ഞതയുടെ മൂടുപടം' (Veil of Ignorance)</span> എന്ന ആശയം മുന്നോട്ടുവെച്ചു.</p>
+            <p><span class="hl-yellow">നിയമങ്ങൾ ഉണ്ടാക്കുന്നവർ തങ്ങൾ സ്ത്രീയാണോ പുരുഷനാണോ, പണക്കാരനാണോ ദരിദ്രനാണോ, കാറിലിരിക്കുന്നയാളാണോ അതോ റോഡിലൂടെ നടക്കുന്നയാളാണോ എന്ന് അറിയാതെ നിയമങ്ങൾ നിർമ്മിക്കണം</span>.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Maximizing Protection for the Most Vulnerable</div>
+            <p>Behind the veil, rational agents choose principles protecting the most disadvantaged (the <em>maximin rule</em>), since anyone could end up as the defenseless pedestrian.</p>
+            <p>Rawlsian AV algorithms mandate that <span class="hl-yellow">safety protocols prioritize protecting vulnerable road users</span> (children, elderly pedestrians, cyclists) over vehicle property preservation.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ദുർബലർക്കുള്ള പരമാവധി സംരക്ഷണം</div>
+            <p>തങ്ങൾ ആരാണെന്ന് അറിയാത്ത അവസ്ഥയിൽ, ഏറ്റവും ദുർബലരായവർക്ക് പരമാവധി സംരക്ഷണം നൽകുന്ന നിയമങ്ങളേ മനുഷ്യർ തിരഞ്ഞെടുക്കൂ (Maximin Rule).</p>
+            <p>അതിനാൽ റോൾസിന്റെ സിദ്ധാന്തപ്രകാരം, <span class="hl-yellow">റോഡിലെ കാൽനടയാത്രക്കാർക്കും, കുട്ടികൾക്കും, സൈക്കിൾ യാത്രക്കാർക്കുമാണ്</span> സ്വയംഭരണ കാറുകൾ ഏറ്റവും ഉയർന്ന സുരക്ഷ നൽകേണ്ടത്.</p>
+          </div>
+        </div>
+      </div>
+<div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">6. Philosophical Critiques of Rawlsian Driving Models</div>
+          <div class="section-title-ml">റോൾസിയൻ മാതൃകയ്ക്കെതിരെയുള്ള ദാർശനിക വിമർശനങ്ങൾ</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Physical Realities vs Abstract Thought Experiments</div>
+            <p>Contemporary ethicists critique Rawls's veil of ignorance, contending that it disregards the chaotic empirical physics of real-world vehicular traffic.</p>
+            <p><span class="hl-yellow">Trolley experiments presuppose absolute binary outcomes with 100% certainty, whereas real collisions involve chaotic probabilities, friction variables, and reaction margins</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 യഥാർത്ഥ ലോകവും സാങ്കല്പിക ചിന്തകളും</div>
+            <p>റോൾസിന്റെ അമൂർത്തമായ ചിന്ത പരീക്ഷണങ്ങൾ റോഡിലെ സങ്കീർണ്ണമായ ഭൗതിക യാഥാർത്ഥ്യങ്ങളെ പരിഗണിക്കുന്നില്ലെന്ന് ആധുനിക ദാർശനികർ വിമർശിക്കുന്നു.</p>
+            <p><span class="hl-yellow">ട്രോളി പ്രശ്നങ്ങളിൽ ഉറപ്പായ ഫലങ്ങൾ മുൻകൂട്ടി കാണാമെങ്കിലും, യഥാർത്ഥ റോഡപകടങ്ങളിൽ വേഗത, റോഡിന്റെ അവസ്ഥ, കാറ്റിന്റെ ദിശ തുടങ്ങിയ അപ്രതീക്ഷിത ഘടകങ്ങളാണ്</span> തീരുമാനങ്ങളെ സ്വാധീനിക്കുന്നത്.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Dynamic Pedestrian Behaviour and Edge Cases</div>
+            <p>Pedestrians do not stand motionless waiting for algorithmic judgment; they actively react, scramble, and maneuver unpredictably.</p>
+            <p>Attempting to hardcode abstract moral calculations into real-time code creates <span class="hl-green">deadly latency lags and edge-case paralysis</span>, demonstrating that pure philosophical models require concrete engineering adaptations.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 കാൽനടയാത്രക്കാരുടെ അപ്രതീക്ഷിത നീക്കങ്ങൾ</div>
+            <p>കാൽനടയാത്രക്കാർ നിശ്ചലരായി നിൽക്കുന്നവരല്ല; അപകടം കണ്ട് അവർ പല ദിശകളിലേക്ക് വിഭ്രാന്തിയോടെ ഓടിയേക്കാം.</p>
+            <p>ഇത്തരം സന്ദർഭങ്ങളിൽ സങ്കീർണ്ണമായ തത്ത്വചിന്താ കണക്കുകൂട്ടലുകൾ നടത്താൻ ശ്രമിക്കുന്നത് <span class="hl-green">കമ്പ്യൂട്ടറിന്റെ പ്രോസസ്സിംഗ് വേഗത കുറയ്ക്കാനും വൻ ദുരന്തങ്ങൾക്കും</span> ഇടയാക്കും.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 5: Autonomous Vehicle Ethics & Trolley Dilemma</span>
+      <span>Page 3 of 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 5 (Chapter 18)</span>
+        <span class="top-bar-right">Page 4 of 7 ✨ Bilingual Study Guide</span>
+      </div>
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">7. Landmark Regulatory Model: German Ethics Commission (2017)</div>
+          <div class="section-title-ml">ജർമ്മൻ എത്തിക്സ് കമ്മീഷൻ മാർഗ്ഗനിർദ്ദേശങ്ങൾ (2017)</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 First Worldwide Ethical Framework for Automated Driving</div>
+            <p>In <span class="hl-green">2017</span>, the <span class="hl-green">German Ethics Commission on Automated and Connected Driving</span> promulgated the world's first formal governmental code of 20 binding ethical rules.</p>
+            <p><span class="hl-yellow">Principle 1: Human life is inviolable and unconditionally supersedes damage to animals or physical property in all driving situations</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ലോകത്തിലെ ആദ്യത്തെ ഔദ്യോഗിക എത്തിക്സ് കോഡ്</div>
+            <p><span class="hl-green">2017-ൽ</span> ജർമ്മൻ സർക്കാർ നിയോഗിച്ച <span class="hl-green">ജർമ്മൻ എത്തിക്സ് കമ്മീഷൻ</span> സ്വയംഭരണ കാറുകൾക്കായി ലോകത്തിലെ ആദ്യത്തെ 20 ധാർമ്മിക ചട്ടങ്ങൾ പുറത്തിറക്കി.</p>
+            <p><span class="hl-yellow">തത്ത്വം 1: ഏതൊരു സാഹചര്യത്തിലും മൃഗങ്ങളുടെ ജീവനെയോ വസ്തുവകകളെയോക്കാൾ മനുഷ്യ ജീവന് പരമമായ മുൻഗണന നൽകണം</span>.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Strict Prohibition of Demographic Discrimination</div>
+            <p>The Commission strictly outlawed programming any distinction based on <span class="hl-yellow">age, gender, disability, race, or physical constitution</span> during unavoidable collision choices.</p>
+            <p>An algorithm cannot decide to strike an elderly grandmother to spare a young child; <span class="hl-green">all human lives possess equal and inviolable moral standing</span> under the law.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 വിവേചനത്തിനെതിരെയുള്ള കർശന നിരോധനം</div>
+            <p>അപകടങ്ങളിൽ ആരെ ഒഴിവാക്കണം എന്ന് തീരുമാനിക്കാൻ <span class="hl-yellow">പ്രായം, ലിംഗം, ശാരീരിക അവസ്ഥ, ജാതി എന്നിവ കണക്കിലെടുക്കുന്നത് കമ്മീഷൻ കർശനമായി നിരോധിച്ചു</span>.</p>
+            <p>കുട്ടിയെ രക്ഷിക്കാൻ പ്രായമായ വ്യക്തിയെ ഇടിക്കാം എന്ന് തീരുമാനിക്കാൻ അൽഗോരിതത്തിന് അധികാരമില്ല; <span class="hl-green">എല്ലാ മനുഷ്യ ജീവനും നിയമത്തിന് മുന്നിൽ തുല്യ വിലയാണുള്ളത്</span>.</p>
+          </div>
+        </div>
+      </div>
+<div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">8. Legal Liability Allocation: Manufacturer vs Driver vs Engineer</div>
+          <div class="section-title-ml">നിയമപരമായ ബാധ്യത: നിർമ്മാതാവ്, ഡ്രൈവർ & സോഫ്റ്റ്‌വെയർ എഞ്ചിനീയർ</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 The Shift from Driver Negligence to Product Liability</div>
+            <p>Traditional tort law premises automobile liability on individual driver negligence (distracted driving, speeding, alcohol impairment).</p>
+            <p>With fully autonomous level-4 and level-5 vehicles, <span class="hl-yellow">liability shifts decisively toward strict product liability borne by manufacturers and software developers</span> for code defects or design negligence.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ഡ്രൈവറിൽ നിന്നും കമ്പനിയിലേക്ക് മാറുന്ന ബാധ്യത</div>
+            <p>പരമ്പരാഗതമായി ഡ്രൈവറുടെ അശ്രദ്ധ മൂലമാണ് അപകടങ്ങൾക്ക് നഷ്ടപരിഹാരം നൽകേണ്ടി വന്നിരുന്നത്.</p>
+            <p>എന്നാൽ സ്വയംഭരണ കാറുകളിൽ, <span class="hl-yellow">ബാധ്യത വാഹന നിർമ്മാതാക്കളിലേക്കും സോഫ്റ്റ്‌വെയർ ഡെവലപ്പർമാരിലേക്കും തിരിയുന്നു</span>; കോഡിംഗിലെ പിഴവുകൾക്ക് പ്രൊഡക്റ്റ് ലയബിലിറ്റി നിയമപ്രകാരം കമ്പനികൾ നഷ്ടപരിഹാരം നൽകണം.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Mandatory Black-Box Telemetry Recorders</div>
+            <p>Legal systems mandate standardized <span class="hl-green">Event Data Recorders (EDRs)</span> continuously recording sensory inputs, software states, and driver interventions.</p>
+            <p>These tamper-proof data logs provide verifiable evidence determining whether autonomy was actively engaged during a collision, <span class="hl-yellow">preventing corporate evasion of legal responsibility</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ബ്ലാക്ക് ബോക്സ് ഡാറ്റാ റെക്കോർഡറുകൾ</div>
+            <p>അപകട സമയത്ത് വാഹനം ഏത് അവസ്ഥയിലായിരുന്നു എന്ന് തെളിയിക്കാൻ <span class="hl-green">ഇവന്റ് ഡാറ്റാ റെക്കോർഡറുകൾ (EDR / Black Box)</span> നിർബന്ധമാക്കിയിട്ടുണ്ട്.</p>
+            <p>വാഹനത്തിന്റെ സെൻസറുകളും കമ്പ്യൂട്ടറും എന്ത് തീരുമാനമാണ് എടുത്തതെന്ന് ഇത് വ്യക്തമാക്കുകയും, <span class="hl-yellow">കമ്പനികൾ ഉത്തരവാദിത്തത്തിൽ നിന്ന് ഒഴിഞ്ഞുമാറുന്നത് തടയുകയും</span> ചെയ്യുന്നു.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 5: Autonomous Vehicle Ethics & Trolley Dilemma</span>
+      <span>Page 4 of 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 5 (Chapter 18)</span>
+        <span class="top-bar-right">Page 5 of 7 ✨ Bilingual Study Guide</span>
+      </div>
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">9. Fail-Safe Engineering: Minimal Risk Maneuvers (MRM)</div>
+          <div class="section-title-ml">ഫെയിൽ-സേഫ് എൻജിനീയറിങ്: മിനിമൽ റിസ്ക് മാനുവറുകൾ (MRM)</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 The Minimal Risk Maneuver (MRM) Protocol</div>
+            <p>Rather than solving unsolvable trolley trade-offs, practical automotive safety focuses on <span class="hl-green">Minimal Risk Maneuvers (MRM)</span>.</p>
+            <p><span class="hl-yellow">When sensor data becomes ambiguous, systems encounter novel edge cases, or hardware fails, the vehicle safely decelerates, engages hazard lighting, and pulls to the shoulder</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 അപകടസാദ്ധ്യത കുറഞ്ഞ സുരക്ഷിത പിന്മാറ്റം</div>
+            <p>തീരുമാനിക്കാൻ കഴിയാത്ത ദാർശനിക തർക്കങ്ങളിൽ കുടുങ്ങുന്നതിന് പകരം, പ്രായോഗിക എഞ്ചിനീയറിംഗ് <span class="hl-green">മിനിമൽ റിസ്ക് മാനുവർ (MRM)</span> തത്ത്വത്തിലാണ് ശ്രദ്ധ കേന്ദ്രീകരിക്കുന്നത്.</p>
+            <p><span class="hl-yellow">സെൻസറുകൾക്ക് റോഡിലെ കാര്യങ്ങൾ തിരിച്ചറിയാൻ കഴിയാതെ വരികയോ തകരാർ സംഭവിക്കുകയോ ചെയ്താൽ, വാഹനം തനിയെ വേഗത കുറച്ച് റോഡരികിലേക്ക് ഒതുക്കി നിർത്തുന്നു</span>.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Robust Redundancy and Safety Buffers</div>
+            <p>Mission-critical autonomous architectures employ triple-redundant compute nodes and dual independent braking circuits.</p>
+            <p>Maintaining wide defensive safety buffers around vehicles prevents dangerous dilemma situations from arising in the first place, <span class="hl-yellow">proving that preventive engineering dissolves abstract ethical dilemmas</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ബാക്കപ്പ് സംവിധാനങ്ങളും മുൻകരുതലുകളും</div>
+            <p>ഒരു കമ്പ്യൂട്ടറിന് തകരാർ സംഭവിച്ചാലും പ്രവർത്തിക്കാൻ ഇരട്ട ബാക്കപ്പ് സിസ്റ്റങ്ങളും ബ്രേക്കിംഗ് സംവിധാനങ്ങളും ഏർപ്പെടുത്തുന്നു.</p>
+            <p>റോഡിൽ മറ്റ് വാഹനങ്ങളുമായി സുരക്ഷിത അകലം പാലിക്കുന്നത് വഴി <span class="hl-yellow">അപകട സന്ദർഭങ്ങൾ ഉണ്ടാകുന്നത് തന്നെ മുൻകൂട്ടി ഒഴിവാക്കാൻ</span> സാധിക്കുന്നു.</p>
+          </div>
+        </div>
+      </div>
+<div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">10. Rigorous Simulation, Data Audits and Public Transparency</div>
+          <div class="section-title-ml">ഡാറ്റാ ഓഡിറ്റിംഗും സിമുലേഷൻ പരിശോധനകളും</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Billions of Virtual Simulation Miles</div>
+            <p>Before testing on public roads, autonomous software undergoes billions of miles in photo-realistic physics simulators testing extreme weather and rare pedestrian edge cases.</p>
+            <p><span class="hl-yellow">Continuous stress testing identifies systemic bugs, sensor blinding, and dangerous edge-case behaviors before real humans are endangered</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 വിർച്വൽ സിമുലേഷൻ പരിശോധനകൾ</div>
+            <p>യഥാർത്ഥ റോഡുകളിൽ ഇറക്കുന്നതിന് മുൻപ്, കോടിക്കണക്കിന് കിലോമീറ്ററുകൾ കമ്പ്യൂട്ടർ സിമുലേഷനുകൾ വഴി കഠിനമായ കാലാവസ്ഥകളിലും റോഡുകളിലും ഓടിച്ച് പരിശോധിക്കുന്നു.</p>
+            <p><span class="hl-yellow">മനുഷ്യർക്ക് അപകടം പറ്റുന്നതിന് മുൻപ് തന്നെ സോഫ്റ്റ്‌വെയറിലെ തകരാറുകളും സുരക്ഷാ വീഴ്ചകളും കണ്ടെത്താൻ</span> ഇത് സഹായിക്കുന്നു.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Open Ethical Audits and Public Trust</div>
+            <p>Public acceptance of driverless vehicles rests entirely upon transparent safety verifications.</p>
+            <p><span class="hl-yellow">Independent public oversight, standardized open crash reporting, and algorithmic explainability ensure automated vehicles genuinely enhance societal welfare</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 സുതാര്യതയും ജനവിശ്വാസവും</div>
+            <p>ഡ്രൈവർരഹിത കാറുകളെ പൊതുസമൂഹം അംഗീകരിക്കണമെങ്കിൽ സുരക്ഷാ വിവരങ്ങൾ തികച്ചും സുതാര്യമായിരിക്കണം.</p>
+            <p><span class="hl-yellow">സ്വതന്ത്ര പരിശോധനകളും അപകട റിപ്പോർട്ടുകൾ പരസ്യപ്പെടുത്തലും വഴി മാത്രമേ സാങ്കേതികവിദ്യയിൽ പൊതുജനവിശ്വാസം</span> ആർജ്ജിക്കാൻ കഴിയൂ.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 5: Autonomous Vehicle Ethics & Trolley Dilemma</span>
+      <span>Page 5 of 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 5 (Chapter 18)</span>
+        <span class="top-bar-right">Page 6 of 7 ✨ Bilingual Study Guide</span>
+      </div>
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">11. Academic Curriculum Practice Questions & Analytical Drill</div>
+          <div class="section-title-ml">സർവ്വകലാശാല പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ & വിശകലന പരിശീലനം</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Knock Your Brain: Official Curriculum MCQs</div>
+            <p><strong>Q1: What is the core rule established by the German Ethics Commission (2017)?</strong><br>
+            A) Protect animals first | <span class="hl-yellow">B) Human life is inviolable and unconditionally supersedes property or animals; zero discrimination by age</span> | C) Sacrifice passengers always | D) Ignore pedestrians<br>
+            <em>Answer: B · Absolute inviolability of human life and non-discrimination.</em></p>
+            <p><strong>Q2: What is a Minimal Risk Maneuver (MRM)?</strong><br>
+            A) Accelerating out of danger | <span class="hl-yellow">B) Safely pulling over to the shoulder and stopping when sensors encounter novel edge cases</span> | C) Swerving onto sidewalks | D) Disabling brakes<br>
+            <em>Answer: B · Practical fail-safe graceful degradation protocol.</em></p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 സർവ്വകലാശാല പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ</div>
+            <p><strong>ചോദ്യം 1: 2017-ലെ ജർമ്മൻ എത്തിക്സ് കമ്മീഷൻ പ്രഖ്യാപിച്ച പ്രധാന നിയമമെന്താണ്?</strong><br>
+            A) മൃഗങ്ങളെ ആദ്യം സംരക്ഷിക്കുക | <span class="hl-yellow">B) മനുഷ്യ ജീവന് സമ്പൂർണ്ണ മുൻഗണന നൽകണം; പ്രായം നോക്കിയുള്ള വിവേചനം പാടില്ല</span> | C) കാറിലിരിക്കുന്നയാളെ എപ്പോഴും കൊല്ലുക | D) കാൽനടയാത്രക്കാരെ അവഗണിക്കുക<br>
+            <em>ശരിയുത്തരം: B · മനുഷ്യ ജീവന്റെ പരമമായ പവിത്രതയും വിവേചനരാഹിത്യവും.</em></p>
+            <p><strong>ചോദ്യം 2: മിനിമൽ റിസ്ക് മാനുവർ (MRM) എന്നാൽ എന്താണ്?</strong><br>
+            A) വേഗത കൂട്ടുക | <span class="hl-yellow">B) ആശയക്കുഴപ്പമുണ്ടായാൽ വാഹനം വേഗത കുറച്ച് സുരക്ഷിതമായി റോഡരികിലേക്ക് ഒതുക്കി നിർത്തൽ</span> | C) ഫുട്പാത്തിലേക്ക് വാഹനം കയറ്റൽ | D) ബ്രേക്ക് മാറ്റിവെക്കൽ<br>
+            <em>ശരിയുത്തരം: B · അപകടം ഒഴിവാക്കാനുള്ള സാങ്കേതിക മുൻകരുതൽ.</em></p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Core Analytical Essay Topics</div>
+            <p><strong>1. Utilitarianism vs Deontology in Driving:</strong> Critically assess how consequentialist and duty-based ethics conflict in programming collision choices.</p>
+            <p><strong>2. The German Regulatory Framework:</strong> Discuss why the German Ethics Commission banned demographic trade-offs and evaluate its global impact.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 പ്രധാന പരീക്ഷാ ഉപന്യാസ വിഷയങ്ങൾ</div>
+            <p><strong>1. ഡ്രൈവിംഗിലെ യൂട്ടിലിറ്റേറിയൻ-ഡീയോണ്ടോളജി തർക്കം:</strong> അപകട നിമിഷങ്ങളിൽ രണ്ട് ധാർമ്മിക സിദ്ധാന്തങ്ങൾ തമ്മിലുള്ള സംഘർഷത്തെക്കുറിച്ച് ഉപന്യാസം തയ്യാറാക്കുക.</p>
+            <p><strong>2. ജർമ്മൻ എത്തിക്സ് കമ്മീഷന്റെ പ്രാധാന്യം:</strong> പ്രായം നോക്കിയുള്ള വിവേചനം ജർമ്മൻ കമ്മീഷൻ നിരോധിച്ചത് എന്തുകൊണ്ടാണെന്ന് സമഗ്രമായി വിശകലനം ചെയ്യുക.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 5: Autonomous Vehicle Ethics & Trolley Dilemma</span>
+      <span>Page 6 of 7</span>
+    </div>
+  </div>
+
+  <div class="page-container page-exam-grid">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 5 (Chapter 18)</span>
+        <span class="top-bar-right">Page 7 of 7 ✨ High-Yield Exam Recall Cheat-Sheet</span>
+      </div>
+
+      <div class="exam-header-compact">
+        <div class="exam-title-badge">🎯 MUST-KNOW EXAM RECALL COMPENDIUM</div>
+        <div class="exam-hero-title">20 Core Academic Concepts & Analytical Pillars</div>
+        <div class="exam-hero-sub">സ്വയംഭരണ വാഹനങ്ങളുടെ ധാർമ്മികത — പരീക്ഷാ കേന്ദ്രീകൃത സമഗ്ര ആശയങ്ങൾ</div>
+      </div>
+
+      <div class="points-grid">
+        <!-- 1 -->
+        <div class="point-card" style="border-left: 3.5px solid #e11d48;">
+          <div class="point-header"><span class="point-tag" style="background:#e11d48;">🚗 Platform</span><span class="point-title-en">Autonomous Vehicle (AV)</span></div>
+          <div class="point-title-ml">സ്വയംഭരണ വാഹനം</div>
+          <div class="point-body">A vehicle capable of sensing environments and operating safely without human driver intervention.</div>
+          <div class="point-body-ml">മനുഷ്യ ഡ്രൈവറുടെ സഹായമില്ലാതെ തനിയെ ഓടുന്ന സ്മാർട്ട് വാഹനം.</div>
+        </div>
+        <!-- 2 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🚃 Dilemma</span><span class="point-title-en">Trolley Problem (AV)</span></div>
+          <div class="point-title-ml">ട്രോളി പ്രശ്നം</div>
+          <div class="point-body">Split-second ethical dilemma choosing between striking pedestrians or sacrificing vehicle passengers.</div>
+          <div class="point-body-ml">യാത്രക്കാരെയോ അതോ വഴിയാത്രക്കാരെയോ രക്ഷിക്കേണ്ടത് എന്ന ധാർമ്മിക സമസ്യ.</div>
+        </div>
+        <!-- 3 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">📊 Numbers</span><span class="point-title-en">Utilitarian Algorithm</span></div>
+          <div class="point-title-ml">യൂട്ടിലിറ്റേറിയൻ അൽഗോരിതം</div>
+          <div class="point-body">Programming cars to strictly minimize total net casualties regardless of who is inside the car.</div>
+          <div class="point-body-ml">ആകെ ഉണ്ടാകുന്ന മരണങ്ങളുടെ എണ്ണം കുറയ്ക്കാൻ മാത്രം മുൻഗണന നൽകുന്ന രീതി.</div>
+        </div>
+        <!-- 4 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🛡️ Buyer First</span><span class="point-title-en">Selfish Car Algorithm</span></div>
+          <div class="point-title-ml">'സ്വാർത്ഥ' വാഹന തന്ത്രം</div>
+          <div class="point-body">Prioritizing the survival of paying vehicle passengers above external pedestrian safety.</div>
+          <div class="point-body-ml">പുറത്തുള്ളവരെ വകവെയ്ക്കാതെ സ്വന്തം യാത്രക്കാരനെ മാത്രം എപ്പോഴും സംരക്ഷിക്കൽ.</div>
+        </div>
+        <!-- 5 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">📜 Kantian Duty</span><span class="point-title-en">Deontological AV Rule</span></div>
+          <div class="point-title-ml">ഡീയോണ്ടോളജിക്കൽ നിയമം</div>
+          <div class="point-body">Absolute prohibition against deliberately steering to kill an innocent bystander as an instrumental means.</div>
+          <div class="point-body-ml">മറ്റുള്ളവരെ രക്ഷിക്കാൻ നിരപരാധിയെ മനഃപൂർവ്വം കൊല്ലുന്നത് നിരോധിക്കൽ.</div>
+        </div>
+        <!-- 6 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🌫️ Rawlsian</span><span class="point-title-en">Veil of Ignorance (AV)</span></div>
+          <div class="point-title-ml">അജ്ഞതയുടെ മൂടുപടം</div>
+          <div class="point-body">Formulating traffic ethics without knowing if one will be a car owner, cyclist, or vulnerable child.</div>
+          <div class="point-body-ml">തങ്ങൾ ആരാണെന്ന് മുൻകൂട്ടി അറിയാതെ നിഷ്പക്ഷമായി നിയമങ്ങൾ ഉണ്ടാക്കൽ.</div>
+        </div>
+        <!-- 7 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🦺 Maximin</span><span class="point-title-en">Protecting Vulnerable Users</span></div>
+          <div class="point-title-ml">ദുർബലർക്കുള്ള സംരക്ഷണം</div>
+          <div class="point-body">Prioritizing cyclists and pedestrians who lack protective metal vehicular passenger cabins.</div>
+          <div class="point-body-ml">സുരക്ഷാ കവചങ്ങളില്ലാത്ത കാൽനടയാത്രക്കാർക്ക് ഏറ്റവും ഉയർന്ന പരിഗണന നൽകൽ.</div>
+        </div>
+        <!-- 8 -->
+        <div class="point-card" style="border-left: 3.5px solid #4f46e5;">
+          <div class="point-header"><span class="point-tag" style="background:#4f46e5;">🇩🇪 Landmark</span><span class="point-title-en">German Ethics Commission (2017)</span></div>
+          <div class="point-title-ml">ജർമ്മൻ എത്തിക്സ് കമ്മീഷൻ</div>
+          <div class="point-body">World's first 20-rule governmental code governing automated and connected vehicular systems.</div>
+          <div class="point-body-ml">സ്വയംഭരണ കാറുകൾക്കായി ലോകത്തിൽ ആദ്യമായി തയ്യാറാക്കിയ 20 ഔദ്യോഗിക ചട്ടങ്ങൾ.</div>
+        </div>
+        <!-- 9 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">👑 Inviolable</span><span class="point-title-en">Human Life Over Property</span></div>
+          <div class="point-title-ml">മനുഷ്യ ജീവന്റെ പരമാധികാരം</div>
+          <div class="point-body">Human safety unconditionally supersedes animal protection or damage to roadside infrastructure.</div>
+          <div class="point-body-ml">വസ്തുവകകൾക്കോ മൃഗങ്ങൾക്കോ ഉപരിയായി മനുഷ്യ ജീവന് മുൻഗണന നൽകൽ.</div>
+        </div>
+        <!-- 10 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🚫 Anti-Bias</span><span class="point-title-en">No Age / Gender Trade-Offs</span></div>
+          <div class="point-title-ml">വിവേചന നിരോധനം</div>
+          <div class="point-body">Strict ban on programming cars to choose targets based on age, gender, race, or physical disability.</div>
+          <div class="point-body-ml">പ്രായമോ ലിംഗമോ നോക്കി അപകടത്തിൽ ആളെ തിരഞ്ഞെടുക്കുന്നത് പൂർണ്ണമായി തടയൽ.</div>
+        </div>
+        <!-- 11 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🏢 Shift</span><span class="point-title-en">Product Liability Shift</span></div>
+          <div class="point-title-ml">പ്രൊഡക്റ്റ് ലയബിലിറ്റി</div>
+          <div class="point-body">Transition from driver negligence torts to strict manufacturer and software developer accountability.</div>
+          <div class="point-body-ml">ഡ്രൈവറുടെ പിഴവിൽ നിന്നും കാർ നിർമ്മിച്ച കമ്പനിയുടെ ഉത്തരവാദിത്തത്തിലേക്ക് മാറുന്നത്.</div>
+        </div>
+        <!-- 12 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">📼 Evidence</span><span class="point-title-en">Event Data Recorder (EDR)</span></div>
+          <div class="point-title-ml">ഇവന്റ് ഡാറ്റാ റെക്കോർഡർ</div>
+          <div class="point-body">Tamper-proof black-box telemetry logging software and sensor states leading up to collisions.</div>
+          <div class="point-body-ml">അപകട നിമിഷങ്ങളിലെ തീരുമാനങ്ങൾ രേഖപ്പെടുത്തി സൂക്ഷിക്കുന്ന ബ്ലാക്ക് ബോക്സ്.</div>
+        </div>
+        <!-- 13 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🛑 Fail-Safe</span><span class="point-title-en">Minimal Risk Maneuver (MRM)</span></div>
+          <div class="point-title-ml">മിനിമൽ റിസ്ക് മാനുവർ</div>
+          <div class="point-body">Safely decelerating and pulling to the shoulder whenever sensors encounter novel edge-case uncertainty.</div>
+          <div class="point-body-ml">ആശയക്കുഴപ്പമുണ്ടായാൽ വാഹനം വേഗത കുറച്ച് റോഡരികിലേക്ക് മാറ്റിനിർത്തുന്ന സുരക്ഷാ രീതി.</div>
+        </div>
+        <!-- 14 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">📡 Redundancy</span><span class="point-title-en">Hardware Triple Redundancy</span></div>
+          <div class="point-title-ml">ട്രിപ്പിൾ റിഡണ്ടൻസി</div>
+          <div class="point-body">Deploying multiple independent processors and braking systems ensuring instant failover safety.</div>
+          <div class="point-body-ml">ഒരു കമ്പ്യൂട്ടർ കേടായാലും പ്രവർത്തിക്കാൻ ബാക്കപ്പ് സംവിധാനങ്ങൾ ഒരുക്കൽ.</div>
+        </div>
+        <!-- 15 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🧪 Virtual Test</span><span class="point-title-en">Billions of Simulation Miles</span></div>
+          <div class="point-title-ml">സിമുലേഷൻ മൈലുകൾ</div>
+          <div class="point-body">Testing software in photorealistic virtual simulators to evaluate rare crash edge cases prior to deployment.</div>
+          <div class="point-body-ml">റോഡിലിറക്കുന്നതിന് മുൻപ് കമ്പ്യൂട്ടറിൽ കോടിക്കണക്കിന് കിലോമീറ്ററുകൾ ഓടിച്ചു പഠിക്കൽ.</div>
+        </div>
+        <!-- 16 -->
+        <div class="point-card" style="border-left: 3.5px solid #e11d48;">
+          <div class="point-header"><span class="point-tag" style="background:#e11d48;">🔭 Radar Fusion</span><span class="point-title-en">Sensor Matrix Fusion</span></div>
+          <div class="point-title-ml">സെൻസർ ഫ്യൂഷൻ</div>
+          <div class="point-body">Combining optical cameras, radar pulses, and LiDAR point-clouds into unified spatial awareness.</div>
+          <div class="point-body-ml">ക്യാമറയും റഡാറും ഒരുമിച്ച് ചേർത്ത് ചുറ്റുപാടുകളെ കൃത്യമായി തിരിച്ചറിയൽ.</div>
+        </div>
+        <!-- 17 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">⚖️ Public Trust</span><span class="point-title-en">Open Crash Transparency</span></div>
+          <div class="point-title-ml">അപകട സുതാര്യത</div>
+          <div class="point-body">Mandatory disclosure of autonomous collision logs to public regulators to accelerate collective safety.</div>
+          <div class="point-body-ml">അപകട വിവരങ്ങൾ പരസ്യപ്പെടുത്തി സുരക്ഷാ സംവിധാനങ്ങൾ മെച്ചപ്പെടുത്തൽ.</div>
+        </div>
+        <!-- 18 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">⏱️ Latency</span><span class="point-title-en">Edge-Case Latency Risk</span></div>
+          <div class="point-title-ml">പ്രോസസ്സിംഗ് കാലതാമസം</div>
+          <div class="point-body">Complex moral calculations introducing fatal compute delays during millisecond braking decisions.</div>
+          <div class="point-body-ml">അമിതമായ ചിന്ത കാരണം ബ്രേക്കിടാൻ സമയം വൈകുന്ന അപകടം.</div>
+        </div>
+        <!-- 19 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🛡️ Prevent</span><span class="point-title-en">Defensive Safety Buffers</span></div>
+          <div class="point-title-ml">മുൻകരുതൽ അകലം പാലിക്കൽ</div>
+          <div class="point-body">Rigorous defensive driving algorithms dissolving ethical dilemmas through conservative speed buffers.</div>
+          <div class="point-body-ml">സുരക്ഷിത അകലവും നിയന്ത്രിത വേഗതയും വഴി അപകട സാഹചര്യം തന്നെ ഉണ്ടാകാതിരിക്കൽ.</div>
+        </div>
+        <!-- 20 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🌟 Core Lesson</span><span class="point-title-en">Ethics-by-Design in Mobility</span></div>
+          <div class="point-title-ml">ധാർമ്മിക ഗതാഗത രൂപകൽപ്പന</div>
+          <div class="point-body">Ensuring passenger convenience never compromises constitutional human dignity and shared civic safety.</div>
+          <div class="point-body-ml">യാത്രാ സൗകര്യങ്ങൾക്ക് വേണ്ടി മനുഷ്യന്റെ ജീവനും അവകാശങ്ങൾക്കും കോട്ടം തട്ടാതിരിക്കൽ.</div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 5: 20 Core Academic Concepts</span>
+      <span>Page 7 of 7</span>
+    </div>
+  </div>
+</body></html>

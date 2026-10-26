@@ -7,7 +7,7 @@
   <meta name="description" content="Academic Hub — exam-focused notes, MCQ practice tests, videos and study resources for Calicut University students.">
   <meta name="google-adsense-account" content="ca-pub-6526381938888583">
   <title>Academic Hub | Learn • Practise • Succeed</title>
-  <link rel="stylesheet" href="style.css?v=20261023-speed">
+  <link rel="stylesheet" href="style.css?v=20261026-slow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -1174,6 +1174,672 @@
       background: #0369a1;
     }
   </style>
+  <style id="dynamic-photo-pool-and-tabs">
+    /* ========================================================================== */
+    /* DYNAMIC PHOTO POOL, INTERVAL ROTATOR & CATEGORY FILTER TABS                */
+    /* ========================================================================== */
+
+    /* Section Heading Badges */
+    .heading-with-badge {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+    }
+    .rotator-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+      border: 1px solid #86efac;
+      border-radius: 999px;
+      color: #166534;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      box-shadow: 0 2px 8px rgba(22, 101, 52, 0.08);
+      white-space: nowrap;
+    }
+    .rotator-live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: rotatorPulse 1.8s infinite;
+    }
+    @keyframes rotatorPulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    /* Category Filter Tabs Bar (Subjects & Mock Tests) */
+    .subject-filter-tabs, .test-filter-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px 2px 14px 2px;
+      margin: 10px 0 20px 0;
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 transparent;
+      -webkit-overflow-scrolling: touch;
+    }
+    .subject-filter-tabs::-webkit-scrollbar, .test-filter-tabs::-webkit-scrollbar {
+      height: 4px;
+    }
+    .subject-filter-tabs::-webkit-scrollbar-thumb, .test-filter-tabs::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .filter-tab-btn, .test-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      color: #334155;
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+    }
+    .filter-tab-btn:hover, .test-tab-btn:hover {
+      border-color: #3b82f6;
+      color: #1e40af;
+      background: #f8fafc;
+      transform: translateY(-1.5px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.12);
+    }
+    .filter-tab-btn.active, .test-tab-btn.active {
+      background: linear-gradient(135deg, #0f2b5c 0%, #1e40af 100%) !important;
+      border-color: #1e40af !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px rgba(30, 64, 175, 0.3) !important;
+      transform: translateY(-1px);
+    }
+    .filter-tab-btn .tab-count, .test-tab-btn .tab-count, .test-tab-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 20px;
+      padding: 0 6px;
+      border-radius: 10px;
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 11px;
+      font-weight: 800;
+      transition: all 0.2s ease;
+    }
+    .filter-tab-btn.active .tab-count, .test-tab-btn.active .tab-count, .test-tab-btn.active .test-tab-count {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    /* Photo Rotator Frame & Interactive Controls */
+    .subject-image-wrapper, .test-image-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      margin: calc(-1 * var(--subject-card-padding, 17px)) calc(-1 * var(--subject-card-padding, 17px)) 14px;
+      background: #0f172a;
+    }
+    .test-image-wrapper {
+      margin: -14px -14px 12px !important;
+      border-radius: 14px 14px 0 0 !important;
+    }
+    .subject-image-wrapper .subject-cover,
+    .test-image-wrapper .test-image {
+      margin: 0 !important;
+      width: 100% !important;
+      display: block;
+      transition: transform 0.4s ease, opacity 0.35s ease;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .subject-card:hover .subject-cover,
+    .test-card:hover .test-image {
+      transform: scale(1.045);
+    }
+
+    /* Floating Rotator Controls Overlay */
+    .rotator-controls {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8px;
+      z-index: 2;
+    }
+    .rotator-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+    }
+    .rotator-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #f8fafc;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .rotator-mid-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(2px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .subject-card:hover .rotator-mid-row,
+    .test-card:hover .rotator-mid-row,
+    .rotator-hovered .rotator-mid-row {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .rotator-nav-btn {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+      user-select: none;
+    }
+    .rotator-nav-btn:hover {
+      background: rgba(30, 64, 175, 0.9);
+      border-color: #60a5fa;
+      transform: scale(1.12);
+    }
+    .rotator-nav-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Live Animated Progress Line at photo bottom */
+    .rotator-progress-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2.5px;
+      background: rgba(255, 255, 255, 0.25);
+      overflow: hidden;
+      z-index: 3;
+    }
+    .rotator-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #38bdf8, #22c55e);
+      box-shadow: 0 0 6px #38bdf8;
+      transition: width linear;
+    }
+
+    /* Extra Attractive Card Enhancements */
+    .subject-card, .test-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+    }
+    .subject-card:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 0 16px 32px rgba(15, 43, 92, 0.1) !important;
+    }
+    .test-card:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 0 16px 32px rgba(15, 43, 92, 0.12) !important;
+    }
+    .subject-card[hidden], .test-card[hidden] {
+      display: none !important;
+    }
+  </style>
+
+  <style id="university-notices-css">
+    /* ========================================================================== */
+    /* CALICUT UNIVERSITY NOTICES & NOTIFICATION CENTER                          */
+    /* ========================================================================== */
+    .univ-notices-section {
+      margin: 0 0 40px;
+      padding: 26px 28px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #eff6ff 100%);
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
+      position: relative;
+    }
+    .univ-notices-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .univ-notices-heading h2 {
+      margin: 0 0 4px;
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .univ-notices-heading p {
+      margin: 0;
+      color: #64748b;
+      font-size: 0.92rem;
+    }
+    .univ-live-sync-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #334155;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .univ-live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      animation: univPulse 2s infinite;
+    }
+    @keyframes univPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.25); opacity: 0.7; }
+    }
+    .univ-refresh-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 2px 4px;
+      color: #64748b;
+      transition: transform 0.3s ease, color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+    }
+    .univ-refresh-btn:hover {
+      color: #2563eb;
+      transform: rotate(180deg);
+    }
+    .univ-refresh-btn.spinning {
+      animation: univSpin 0.8s linear infinite;
+    }
+    @keyframes univSpin {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Breaking Alert Bar */
+    .univ-breaking-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 14px;
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      font-size: 0.88rem;
+      color: #991b1b;
+    }
+    .univ-breaking-pill {
+      background: #ef4444;
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .univ-breaking-text {
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 600;
+    }
+    .univ-breaking-text a {
+      color: #991b1b;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Controls Bar: Tabs & Search */
+    .univ-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .univ-filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .univ-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #475569;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .univ-tab-btn:hover {
+      background: #f8fafc;
+      border-color: #94a3b8;
+      color: #1e293b;
+    }
+    .univ-tab-btn.active {
+      background: #0f172a;
+      border-color: #0f172a;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+    }
+    .univ-tab-count {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 9999px;
+      background: rgba(0, 0, 0, 0.08);
+      color: inherit;
+    }
+    .univ-tab-btn.active .univ-tab-count {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+
+    /* Search & Sub-filter pills */
+    .univ-search-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+    .univ-search-wrap {
+      flex: 1;
+      min-width: 260px;
+      position: relative;
+    }
+    .univ-search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      pointer-events: none;
+      font-size: 0.95rem;
+    }
+    .univ-search-input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 38px 10px 38px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      font-size: 0.9rem;
+      color: #1e293b;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    .univ-search-input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+    .univ-search-clear {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .univ-quick-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .univ-pill {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .univ-pill:hover, .univ-pill.active {
+      background: #3b82f6;
+      border-color: #3b82f6;
+      color: #ffffff;
+    }
+
+    /* Notice Card List */
+    .univ-notices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .univ-notice-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 14px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .univ-notice-card:hover {
+      transform: translateY(-1px);
+      border-color: #93c5fd;
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.07);
+    }
+    .univ-notice-content {
+      flex: 1;
+      min-width: 260px;
+    }
+    .univ-notice-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .univ-badge-category {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .univ-badge-cdoe {
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+    .univ-badge-regular {
+      background: #dbeafe;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+    .univ-badge-general {
+      background: #f3e8ff;
+      color: #7e22ce;
+      border: 1px solid #e9d5ff;
+    }
+    .univ-badge-subtype {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+    .univ-badge-new {
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #ef4444;
+      color: #ffffff;
+      animation: univPulse 2s infinite;
+    }
+    .univ-notice-date {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-left: auto;
+    }
+    .univ-notice-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.45;
+      margin: 0;
+    }
+    .univ-notice-title mark {
+      background: #fef08a;
+      color: #0f172a;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+    .univ-notice-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .univ-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      background: #eff6ff;
+      color: #2563eb;
+      border: 1px solid #bfdbfe;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .univ-download-btn:hover {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    }
+    .univ-load-more-wrap {
+      text-align: center;
+      margin-top: 18px;
+    }
+    .univ-load-more-btn {
+      padding: 10px 24px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #1e293b;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
+    }
+    .univ-load-more-btn:hover {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+    .univ-empty-state {
+      text-align: center;
+      padding: 36px 20px;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .univ-notices-section {
+        padding: 18px 16px;
+        border-radius: 18px;
+      }
+      .univ-notices-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .univ-notice-card {
+        padding: 12px 14px;
+      }
+      .univ-notice-date {
+        margin-left: 0;
+        width: 100%;
+      }
+      .univ-download-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+
 </head>
 <body id="top">
   <nav class="topbar">
@@ -1185,6 +1851,7 @@
       <a href="#top"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 3.5h7v7h-7zM13.5 3.5h7v5h-7zM13.5 10.5h7v10h-7zM3.5 13.5h7v7h-7z"/></svg><span>Overview</span></a>
             <a href="#subjects"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 5.5A2.5 2.5 0 0 1 6 3h5v17H6a2.5 2.5 0 0 0-2.5 2zM20.5 5.5A2.5 2.5 0 0 0 18 3h-5v17h5a2.5 2.5 0 0 1 2.5 2z"/></svg><span>Semester subjects</span></a>
       <a href="#tests"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 4h8M9 3h6v3H9zM6 5H4.5v16h15V5H18"/><path d="m8 12 1.5 1.5L12 11M14 12h3M8 17l1.5 1.5L12 16M14 17h3"/></svg><span>Practice tests</span></a>
+            <a href="#notices"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span>University Notices</span></a>
       <a href="#study-lounge"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="12 7 12 12 15 15" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Study Lounge</span></a>
       <a href="#community-chat" hidden><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.5a8 8 0 0 1-8 8 8.7 8.7 0 0 1-3.3-.7L4 20l1.2-4.4a8 8 0 1 1 15.3-4.1z"/><path d="M8 11h8M8 14.5h5"/></svg><span>Student chat</span></a>
     </div>
@@ -1242,6 +1909,36 @@
             <span class="ticker-sep">•</span>
             <span class="ticker-pill ticker-pill-tests"><span class="ticker-icon">🎯</span> Mock Tests</span>
           </span>
+          <span class="marquee-group">
+            <span class="ticker-badge-univ"><span class="ticker-dot"></span>CALICUT UNIVERSITY</span>
+            <span class="ticker-sparkle ticker-sparkle-pink">✦</span>
+            <span class="ticker-degree">BA SOCIOLOGY &amp; HISTORY</span>
+            <span class="ticker-sparkle ticker-sparkle-cyan">✦</span>
+            <span class="ticker-badge-subjects"><span class="ticker-icon">📚</span> 11 SUBJECTS</span>
+            <span class="ticker-sep">•</span>
+            <span class="ticker-pill ticker-pill-notes"><span class="ticker-icon">📝</span> Notes</span>
+            <span class="ticker-sep">•</span>
+            <span class="ticker-pill ticker-pill-pdfs"><span class="ticker-icon">📑</span> PDFs</span>
+            <span class="ticker-sep">•</span>
+            <span class="ticker-pill ticker-pill-revision"><span class="ticker-icon">⚡</span> Revision</span>
+            <span class="ticker-sep">•</span>
+            <span class="ticker-pill ticker-pill-tests"><span class="ticker-icon">🎯</span> Mock Tests</span>
+          </span>
+          <span class="marquee-group">
+            <span class="ticker-badge-univ"><span class="ticker-dot"></span>CALICUT UNIVERSITY</span>
+            <span class="ticker-sparkle ticker-sparkle-pink">✦</span>
+            <span class="ticker-degree">BA SOCIOLOGY &amp; HISTORY</span>
+            <span class="ticker-sparkle ticker-sparkle-cyan">✦</span>
+            <span class="ticker-badge-subjects"><span class="ticker-icon">📚</span> 11 SUBJECTS</span>
+            <span class="ticker-sep">•</span>
+            <span class="ticker-pill ticker-pill-notes"><span class="ticker-icon">📝</span> Notes</span>
+            <span class="ticker-sep">•</span>
+            <span class="ticker-pill ticker-pill-pdfs"><span class="ticker-icon">📑</span> PDFs</span>
+            <span class="ticker-sep">•</span>
+            <span class="ticker-pill ticker-pill-revision"><span class="ticker-icon">⚡</span> Revision</span>
+            <span class="ticker-sep">•</span>
+            <span class="ticker-pill ticker-pill-tests"><span class="ticker-icon">🎯</span> Mock Tests</span>
+          </span>
         </span>
       </p>
       <div class="semester-context-live" title="Live Academic Updates" aria-hidden="true">
@@ -1257,24 +1954,116 @@
       <div class="stat"><span class="stat-icon stat-green">↗</span><div><strong>Student focused</strong><small>Simple, clear navigation</small></div></div>
     </section>
 
-    <section id="subjects" class="section-block">
-      <div class="section-heading"><div><div class="eyebrow">LEARNING LIBRARY</div><h2>Explore your subjects</h2><p>Everything you need to revise, understand and prepare.</p></div>
-        <label class="search-wrap"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Search subjects..." aria-label="Search subjects"></label>
+    
+    <!-- ========================================================================== -->
+    <!-- CALICUT UNIVERSITY LIVE NOTICE BOARD (CDOE & REGULAR)                     -->
+    <!-- ========================================================================== -->
+    <section id="notices" class="univ-notices-section" aria-label="Calicut University Official Notices">
+      <div class="univ-notices-header">
+        <div class="univ-notices-heading">
+          <div class="eyebrow" style="color:#0284c7;font-weight:800;letter-spacing:0.06em;font-size:0.75rem;margin-bottom:4px;">CALICUT UNIVERSITY OFFICIAL PORTAL</div>
+          <h2>
+            <svg style="width:24px;height:24px;fill:none;stroke:#2563eb;stroke-width:2.2;" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            Live University Notices &amp; Exam Circulars
+          </h2>
+          <p>Auto-synced announcements for <strong>CDOE (Distance &amp; Online Education)</strong> and <strong>Regular Examination Bhavan</strong>.</p>
+        </div>
+        <div class="univ-live-sync-badge">
+          <span class="univ-live-dot"></span>
+          <span id="univ-sync-label">Auto-Synced Just Now</span>
+          <button id="univ-refresh-btn" class="univ-refresh-btn" title="Refresh latest notices" type="button" aria-label="Refresh notices">↻</button>
+        </div>
       </div>
+
+      <!-- Breaking Alert Bar for Recent Critical Notifications -->
+      <div id="univ-breaking-bar" class="univ-breaking-bar">
+        <span class="univ-breaking-pill">Latest Alert</span>
+        <span id="univ-breaking-content" class="univ-breaking-text">Loading latest university announcements...</span>
+      </div>
+
+      <!-- Filter Tabs & Real-time Search -->
+      <div class="univ-controls">
+        <div class="univ-filter-tabs" role="tablist" aria-label="Filter notices by university wing">
+          <button class="univ-tab-btn active" data-category="all" role="tab" aria-selected="true">
+            <span>✦ All Notices</span> <span id="count-all" class="univ-tab-count">...</span>
+          </button>
+          <button class="univ-tab-btn" data-category="cdoe" role="tab" aria-selected="false">
+            <span>🎓 CDOE / Distance</span> <span id="count-cdoe" class="univ-tab-count">...</span>
+          </button>
+          <button class="univ-tab-btn" data-category="regular" role="tab" aria-selected="false">
+            <span>🏛 Regular Exams</span> <span id="count-regular" class="univ-tab-count">...</span>
+          </button>
+          <button class="univ-tab-btn" data-category="general" role="tab" aria-selected="false">
+            <span>📢 General UOC</span> <span id="count-general" class="univ-tab-count">...</span>
+          </button>
+        </div>
+
+        <div class="univ-search-row">
+          <div class="univ-search-wrap">
+            <span class="univ-search-icon" aria-hidden="true">⌕</span>
+            <input type="search" id="univ-search-input" class="univ-search-input" placeholder="Search notices by course, semester, keyword (e.g. BA, BCom, MBA, Timetable, Scheme)..." aria-label="Search notices">
+            <button id="univ-search-clear" class="univ-search-clear" type="button" aria-label="Clear search">✕</button>
+          </div>
+          <div class="univ-quick-pills" aria-label="Quick topic filters">
+            <button class="univ-pill" data-pill="timetable">Timetable</button>
+            <button class="univ-pill" data-pill="registration">Exam Registration</button>
+            <button class="univ-pill" data-pill="internal">Internal Exam</button>
+            <button class="univ-pill" data-pill="scheme">Scheme Change</button>
+            <button class="univ-pill" data-pill="results">Results</button>
+            <button class="univ-pill" data-pill="admission">Admission</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rendered Notices Cards List -->
+      <div id="univ-notices-container" class="univ-notices-list" aria-live="polite">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Load More / Pagination -->
+      <div id="univ-load-more-wrap" class="univ-load-more-wrap" style="display:none;">
+        <button id="univ-load-more-btn" class="univ-load-more-btn" type="button">Load More Notices</button>
+      </div>
+    </section>
+
+    <section id="subjects" class="section-block">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">LEARNING LIBRARY</div>
+          <h2>Explore your subjects</h2>
+          <p>Everything you need to revise, understand and prepare.</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <div class="rotator-live-badge" title="Dynamic photo pool rotating every 10 seconds across all subjects">
+            <span class="rotator-live-dot"></span> 16+ Curated Photos · 10s Live Interval
+          </div>
+          <label class="search-wrap"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Search subjects..." aria-label="Search subjects"></label>
+        </div>
+      </div>
+
+      <!-- Subject Category Filter Tabs -->
+      <nav class="subject-filter-tabs" aria-label="Filter subjects by category">
+        <button class="filter-tab-btn active" data-filter="all"><span class="tab-icon">✦</span> All Subjects <span class="tab-count">11</span></button>
+        <button class="filter-tab-btn" data-filter="languages"><span class="tab-icon">🗣</span> Languages <span class="tab-count">3</span></button>
+        <button class="filter-tab-btn" data-filter="social"><span class="tab-icon">🏛</span> Social &amp; History <span class="tab-count">2</span></button>
+        <button class="filter-tab-btn" data-filter="philosophy"><span class="tab-icon">💡</span> Philosophy &amp; AI <span class="tab-count">3</span></button>
+        <button class="filter-tab-btn" data-filter="economics"><span class="tab-icon">📊</span> Economics <span class="tab-count">2</span></button>
+        <button class="filter-tab-btn" data-filter="maths"><span class="tab-icon">📐</span> Mathematics <span class="tab-count">1</span></button>
+      </nav>
       <div class="subjects-container">
-        <article class="subject-card" data-subject="Malayalam"><img class="subject-cover" src="https://images.unsplash.com/photo-1621178754488-8fb090bad709?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Kathakali costume and makeup representing Kerala arts" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-rose">അ</span><span class="subject-tag">LANGUAGE</span></div><h3>Malayalam</h3><div class="resource-list"><a href="mal-pdf.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Malayalam module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>LMS PDF</strong><small>Open Malayalam module page</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="mal-guide.html" class="language-tab language-tab--malayalam-guide language-tab--navigate" aria-label="Open Malayalam Guide"><span class="language-badge" aria-hidden="true">MG</span><span class="language-copy"><strong>Malayalam Reading (guide)</strong><small>All 4 modules &amp; chapters complete guide</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-        <article class="subject-card" data-subject="English" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1527554677374-236d3bc88a34?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Open literature book on a wooden table" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-blue">Aa</span><span class="subject-tag">LANGUAGE</span></div><h3>English</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="eng-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open English Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Malayalam" data-category="languages"><img class="subject-cover" src="https://images.unsplash.com/photo-1621178754488-8fb090bad709?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Kathakali costume and makeup representing Kerala arts" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-rose">അ</span><span class="subject-tag">LANGUAGE</span></div><h3>Malayalam</h3><div class="resource-list"><a href="mal-pdf.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Malayalam module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>LMS PDF</strong><small>Open Malayalam module page</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="mal-guide.html" class="language-tab language-tab--malayalam-guide language-tab--navigate" aria-label="Open Malayalam Guide"><span class="language-badge" aria-hidden="true">MG</span><span class="language-copy"><strong>Malayalam Reading (guide)</strong><small>All 4 modules &amp; chapters complete guide</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="English" data-category="languages" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1527554677374-236d3bc88a34?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Open literature book on a wooden table" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-blue">Aa</span><span class="subject-tag">LANGUAGE</span></div><h3>English</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="eng-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open English Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
 
-        <article class="subject-card" data-subject="Sociology"><img class="subject-cover" src="https://images.unsplash.com/photo-1548782033-3ac3a62ece8d?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Community members gathered together outdoors" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-purple">◎</span><span class="subject-tag">CORE SUBJECT</span></div><h3>Sociology</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="soc-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Sociology Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-        <article class="subject-card" data-subject="Philosophy of AI"><img class="subject-cover" src="https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="AI microchip on an electronic circuit board" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-mint">✧</span><span class="subject-tag">Minor for BA Sociology</span></div><h3>Philosophy of AI</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ai-reading.html?v=20261023_tabs" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Philosophy of AI Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All 5 modules &amp; chapters complete guide</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-        <article class="subject-card" data-subject="Philosophy of Education"><img class="subject-cover" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Students learning with a teacher in a classroom" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-orange">✎</span><span class="subject-tag">MDC 1 / BA Sociology</span></div><h3>Philosophy of Education</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–3 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="edu-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Philosophy of Education Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-<article class="subject-card" data-subject="Development Issues in Indian Economy"><img class="subject-cover" src="https://images.unsplash.com/photo-1565371767810-ef913a6c8315?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Indian rupee banknotes representing the Indian economy" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-green">₹</span><span class="subject-tag">ECONOMICS</span></div><h3>Development Issues in Indian Economy</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="econ-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Development Issues in Indian Economy Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Sociology" data-category="social"><img class="subject-cover" src="https://images.unsplash.com/photo-1548782033-3ac3a62ece8d?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Community members gathered together outdoors" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-purple">◎</span><span class="subject-tag">CORE SUBJECT</span></div><h3>Sociology</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="soc-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Sociology Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Philosophy of AI" data-category="philosophy"><img class="subject-cover" src="https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="AI microchip on an electronic circuit board" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-mint">✧</span><span class="subject-tag">Minor for BA Sociology</span></div><h3>Philosophy of AI</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ai-reading.html?v=20261023_tabs" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Philosophy of AI Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All 5 modules &amp; chapters complete guide</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Philosophy of Education" data-category="philosophy"><img class="subject-cover" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Students learning with a teacher in a classroom" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-orange">✎</span><span class="subject-tag">MDC 1 / BA Sociology</span></div><h3>Philosophy of Education</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–3 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="edu-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Philosophy of Education Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+<article class="subject-card" data-subject="Development Issues in Indian Economy" data-category="economics"><img class="subject-cover" src="https://images.unsplash.com/photo-1565371767810-ef913a6c8315?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Indian rupee banknotes representing the Indian economy" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-green">₹</span><span class="subject-tag">ECONOMICS</span></div><h3>Development Issues in Indian Economy</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="econ-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Development Issues in Indian Economy Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
 
-        <article class="subject-card" data-subject="Fundamentals of Ethics"><img class="subject-cover" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Handshake representing trust and mutual respect" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-green">◇</span><span class="subject-tag">Minor Course</span></div><h3>Fundamentals of Ethics</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ethics-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Fundamentals of Ethics Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-        <article class="subject-card" data-subject="Microeconomic Foundation"><img class="subject-cover" src="https://images.unsplash.com/photo-1644871913429-9ed7696180cc?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Assorted coins representing value and exchange" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-blue">₹</span><span class="subject-tag">Minor Course</span></div><h3>Microeconomic Foundation</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="micro-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Microeconomics Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open Microeconomics MCQ PDFs in English and Malayalam"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>English + Malayalam question banks</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-        <article class="subject-card" data-subject="Arabic"><img class="subject-cover" src="https://images.unsplash.com/photo-1766326057606-2497458466fb?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Ornate Arabic calligraphy carved into a wall" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-orange">ع</span><span class="subject-tag">LANGUAGE</span></div><h3>Arabic</h3><div class="resource-list"><a href="#" class="language-tab language-tab--arabic" role="button" aria-haspopup="dialog" aria-label="Browse Arabic LMS PDF modules"><span class="language-badge" aria-hidden="true">AR</span><span class="language-copy"><strong>Arabic LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-        <article class="subject-card" data-subject="Mathematics"><img class="subject-cover" src="https://images.unsplash.com/photo-1635372722656-389f87a941b7?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Blackboard covered with mathematical equations" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-mint">∑</span><span class="subject-tag">Maths</span></div><h3>Mathematics</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
-        <article class="subject-card" data-subject="History of Keralam"><img class="subject-cover" src="https://images.unsplash.com/photo-1695964744922-c7d01b4761cb?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Historic Kerala palace with traditional tiled roofs" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-purple">🏛</span><span class="subject-tag">HISTORY</span></div><h3>History of Keralam up to 12th Century</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="hist-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open History of Keralam Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="history-of-keralam-mcq-test.html" class="language-tab language-tab--mock-test language-tab--navigate" aria-label="Open History of Keralam Mock Test"><span class="language-badge" aria-hidden="true">MT</span><span class="language-copy"><strong>Mock Test (60Q)</strong><small>30 Mins · 100 Q Bank · Instant Review</small></span><span class="language-arrow" aria-hidden="true">→</span></a></div></article>
+        <article class="subject-card" data-subject="Fundamentals of Ethics" data-category="philosophy"><img class="subject-cover" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Handshake representing trust and mutual respect" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-green">◇</span><span class="subject-tag">Minor Course</span></div><h3>Fundamentals of Ethics</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ethics-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Fundamentals of Ethics Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Microeconomic Foundation" data-category="economics"><img class="subject-cover" src="https://images.unsplash.com/photo-1644871913429-9ed7696180cc?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Assorted coins representing value and exchange" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-blue">₹</span><span class="subject-tag">Minor Course</span></div><h3>Microeconomic Foundation</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="micro-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Microeconomics Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open Microeconomics MCQ PDFs in English and Malayalam"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>English + Malayalam question banks</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Arabic" data-category="languages"><img class="subject-cover" src="https://images.unsplash.com/photo-1766326057606-2497458466fb?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Ornate Arabic calligraphy carved into a wall" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-orange">ع</span><span class="subject-tag">LANGUAGE</span></div><h3>Arabic</h3><div class="resource-list"><a href="#" class="language-tab language-tab--arabic" role="button" aria-haspopup="dialog" aria-label="Browse Arabic LMS PDF modules"><span class="language-badge" aria-hidden="true">AR</span><span class="language-copy"><strong>Arabic LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Mathematics" data-category="maths"><img class="subject-cover" src="https://images.unsplash.com/photo-1635372722656-389f87a941b7?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Blackboard covered with mathematical equations" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-mint">∑</span><span class="subject-tag">Maths</span></div><h3>Mathematics</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="History of Keralam" data-category="social"><img class="subject-cover" src="https://images.unsplash.com/photo-1695964744922-c7d01b4761cb?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Historic Kerala palace with traditional tiled roofs" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-purple">🏛</span><span class="subject-tag">HISTORY</span></div><h3>History of Keralam up to 12th Century</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="hist-reading.html" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open History of Keralam Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--mcq-pdf" role="button" aria-haspopup="dialog" aria-label="Open MCQ PDF modules"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>MCQ question paper PDFs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="history-of-keralam-mcq-test.html" class="language-tab language-tab--mock-test language-tab--navigate" aria-label="Open History of Keralam Mock Test"><span class="language-badge" aria-hidden="true">MT</span><span class="language-copy"><strong>Mock Test (60Q)</strong><small>30 Mins · 100 Q Bank · Instant Review</small></span><span class="language-arrow" aria-hidden="true">→</span></a></div></article>
       </div>
       <p id="no-results" class="no-results" hidden>No subjects match your search. Try another keyword.</p>
       <div id="module-dialog" class="module-dialog" role="dialog" aria-modal="true" aria-labelledby="module-title" hidden>
@@ -1295,16 +2084,37 @@
     </section>
 
     <section id="tests" class="tests-section">
-      <div class="section-heading"><div><div class="eyebrow">CHECK YOUR PREPARATION</div><h2>Mock tests & exam practice</h2><p>Practise questions and get ready for exam day.</p></div><span class="tests-pill">PRACTICE ZONE</span></div>
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">CHECK YOUR PREPARATION</div>
+          <h2>Mock tests & exam practice</h2>
+          <p>Practise questions and get ready for exam day.</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <div class="rotator-live-badge" title="Dynamic photo pool rotating every 10 seconds across all mock tests">
+            <span class="rotator-live-dot"></span> 16+ Photos · 10s Dynamic Cycle
+          </div>
+          <span class="tests-pill">PRACTICE ZONE</span>
+        </div>
+      </div>
+
+      <!-- Mock Test Category Filter Tabs -->
+      <nav class="test-filter-tabs" aria-label="Filter mock tests by stream">
+        <button class="test-tab-btn active" data-test-filter="all"><span class="tab-icon">🎯</span> All Practice Tests <span class="test-tab-count">8</span></button>
+        <button class="test-tab-btn" data-test-filter="languages"><span class="tab-icon">🗣</span> Language</button>
+        <button class="test-tab-btn" data-test-filter="social"><span class="tab-icon">🏛</span> Sociology &amp; History</button>
+        <button class="test-tab-btn" data-test-filter="philosophy"><span class="tab-icon">💡</span> Philosophy &amp; Ethics</button>
+        <button class="test-tab-btn" data-test-filter="economics"><span class="tab-icon">📊</span> Economics</button>
+      </nav>
             <div class="test-grid">
-        <article class="test-card" data-subject-key="english"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Books and study materials for English"><div class="test-icon test-blue">Aa</div><span class="test-label">ENGLISH</span><h3>English MCQ Test</h3><p></p><a href="english-mcq-60q-test-final.html">Start test <span>→</span></a></article>
-        <article class="test-card" data-subject-key="sociology"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="People gathered together representing society"><div class="test-icon test-purple">◎</div><span class="test-label">SOCIOLOGY</span><h3>Sociology Comprehensive Test</h3><p></p><a href="sociology-mock-test-final-60q.html?v=20261017a">Start test <span>→</span></a></article>
-        <article class="test-card" data-subject-key="education"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Student learning for philosophy of education"><div class="test-icon test-orange">✎</div><span class="test-label">EDUCATION</span><h3>Philosophy of Education</h3><p></p><a href="philosophy-of-education-mock-test.html">Start test <span>→</span></a></article>
-        <article class="test-card" data-subject-key="ai"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Artificial intelligence and digital technology"><div class="test-icon test-mint">✧</div><span class="test-label">ARTIFICIAL INTELLIGENCE</span><h3>Philosophy of AI</h3><p></p><a href="philosophy-of-ai-mcq-test.html">Start test <span>→</span></a></article>
-        <article class="test-card" data-subject-key="history"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1609137144217-1f4153a7f763?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Ancient Kerala monuments and temple architecture"><div class="test-icon test-purple">📜</div><span class="test-label">HISTORY</span><h3>History of Keralam up to 12th Century</h3><p></p><a href="history-mock-test.html">Start test <span>→</span></a></article>
-        <article class="test-card" data-subject-key="ethics"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Handshake representing ethical conduct and trust"><div class="test-icon test-green">◇</div><span class="test-label">ETHICS</span><h3>Fundamentals of Ethics MCQ Test</h3><p></p><a href="ethics-mock-test.html">Start test <span>→</span></a></article>
-        <article class="test-card" data-subject-key="economy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Economic data and charts for Indian economy"><div class="test-icon test-green">₹</div><span class="test-label">INDIAN ECONOMY</span><h3>Development Issues of Indian Economy</h3><p></p><a href="economictest.html">Start test <span>→</span></a></article>
-        <article class="test-card" data-subject-key="microeconomics"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1644871913429-9ed7696180cc?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Coins representing microeconomics and consumer choice"><div class="test-icon test-green">₹</div><span class="test-label">MICROECONOMICS</span><h3>Microeconomic Foundation</h3><p></p><a href="microeconomics-foundation-mcq-test.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="english" data-category="languages"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Books and study materials for English"><div class="test-icon test-blue">Aa</div><span class="test-label">ENGLISH</span><h3>English MCQ Test</h3><p></p><a href="english-mcq-60q-test-final.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="sociology" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="People gathered together representing society"><div class="test-icon test-purple">◎</div><span class="test-label">SOCIOLOGY</span><h3>Sociology Comprehensive Test</h3><p></p><a href="sociology-mock-test-final-60q.html?v=20261017a">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="education" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Student learning for philosophy of education"><div class="test-icon test-orange">✎</div><span class="test-label">EDUCATION</span><h3>Philosophy of Education</h3><p></p><a href="philosophy-of-education-mock-test.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="ai" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Artificial intelligence and digital technology"><div class="test-icon test-mint">✧</div><span class="test-label">ARTIFICIAL INTELLIGENCE</span><h3>Philosophy of AI</h3><p></p><a href="philosophy-of-ai-mcq-test.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="history" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1695964744922-c7d01b4761cb?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Historic Kerala palace with traditional timber and tiled architecture"><div class="test-icon test-purple">📜</div><span class="test-label">HISTORY</span><h3>History of Keralam up to 12th Century</h3><p></p><a href="history-mock-test.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="ethics" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Handshake representing ethical conduct and trust"><div class="test-icon test-green">◇</div><span class="test-label">ETHICS</span><h3>Fundamentals of Ethics MCQ Test</h3><p></p><a href="ethics-mock-test.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="economy" data-category="economics"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Economic data and charts for Indian economy"><div class="test-icon test-green">₹</div><span class="test-label">INDIAN ECONOMY</span><h3>Development Issues of Indian Economy</h3><p></p><a href="economictest.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="microeconomics" data-category="economics"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1644871913429-9ed7696180cc?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Coins representing microeconomics and consumer choice"><div class="test-icon test-green">₹</div><span class="test-label">MICROECONOMICS</span><h3>Microeconomic Foundation</h3><p></p><a href="microeconomics-foundation-mcq-test.html">Start test <span>→</span></a></article>
       </div>
     </section>
 
@@ -1548,160 +2358,439 @@
       noResults.hidden = visible !== 0;
     });
 
-    // Dynamic one-hour timeframe photo rotator for subject cards (strictly audited, 100% subject-matched)
+    // Dynamic 10-Second Curated Photo Rotator & Category Filter Engine for Subject Cards
     (() => {
       const subjectGalleries = {
         'Malayalam': [
-          { id: 'photo-1621178754488-8fb090bad709', alt: 'Kathakali costume and vibrant stage makeup of Kerala' },
-          { id: 'photo-1602216056096-3b40cc0c9944', alt: 'Traditional Kerala kettuvallam houseboat gliding on backwaters' },
-          { id: 'photo-1611299074735-a2db673dd495', alt: 'Tranquil palm-fringed backwaters and canal in Alappuzha Kerala' },
-          { id: 'photo-1787324264288-3d8359e5f2fa', alt: 'Traditional wooden canoe on calm Kerala backwater river' },
-          { id: 'photo-1590050752117-238cb0fb12b1', alt: 'Lush green tea plantations and misty hills of Munnar Kerala' },
-          { id: 'photo-1695964744922-c7d01b4761cb', alt: 'Traditional Kerala heritage architecture with sloping tiled roofs' }
+          { id: '1621178754488-8fb090bad709', alt: 'Kathakali costume and vibrant stage makeup of Kerala' },
+          { id: '1602216056096-3b40cc0c9944', alt: 'Traditional Kerala kettuvallam houseboat gliding on backwaters' },
+          { id: '1611299074735-a2db673dd495', alt: 'Tranquil palm-fringed backwaters and canal in Alappuzha Kerala' },
+          { id: '1787324264288-3d8359e5f2fa', alt: 'Traditional wooden canoe on calm Kerala backwater river' },
+          { id: '1590050752117-238cb0fb12b1', alt: 'Lush green tea plantations and misty hills of Munnar Kerala' },
+          { id: '1695964744922-c7d01b4761cb', alt: 'Traditional Kerala heritage architecture with sloping tiled roofs' },
+          { id: '1590123732197-e7079d2ceb89', alt: 'Fort Kochi iconic Chinese fishing nets on Kerala coast' },
+          { id: '1584551246679-0daf3d275d0f', alt: 'Traditional Kerala temple lamp and brass craft' },
+          { id: '1514565131-fce0801e5785', alt: 'Ancient stone pillar architecture and historic temple sanctum' },
+          { id: '1507525428034-b723cf961d3e', alt: 'Historic maritime trade coast and ancient Malabar waves' },
+          { id: '1544716278-ca5e3f4abd8c', alt: 'Classic Malayalam literature and scholarly reading' },
+          { id: '1582510003544-4d00b7f74220', alt: 'Traditional cultural dance performance in Kerala' },
+          { id: '1516205651411-aef33a44f7c2', alt: 'Traditional sacred Nilavilakku brass oil lamp' },
+          { id: '1506744038136-46273834b3fb', alt: 'Pristine misty rainforest mountains of Wayanad Kerala' },
+          { id: '1516450360452-9312f5e86fc7', alt: 'Kerala festive celebration and traditional music' },
+          { id: '1599940824399-b87987ceb72a', alt: 'Edakkal rock engravings and prehistoric Kerala archaeology' }
         ],
         'English': [
-          { id: 'photo-1527554677374-236d3bc88a34', alt: 'Open literature book resting on a warm wooden library table' },
-          { id: 'photo-1495446815901-a7297e633e8d', alt: 'Neatly stacked classic literature and poetry hardcovers' },
-          { id: 'photo-1455390582262-044cdead277a', alt: 'Classic fountain pen drafting prose on lined notebook paper' },
-          { id: 'photo-1456513080510-7bf3a84b82f8', alt: 'Open literature book with reading glasses in quiet study' },
-          { id: 'photo-1497633762265-9d179a990aa6', alt: 'Colorful classic literature book spines on library shelf' },
-          { id: 'photo-1476275466078-4007374efbbe', alt: 'Open classic literature novel resting in sunlit outdoor study' }
+          { id: '1527554677374-236d3bc88a34', alt: 'Open literature book resting on a warm wooden library table' },
+          { id: '1495446815901-a7297e633e8d', alt: 'Neatly stacked classic literature and poetry hardcovers' },
+          { id: '1455390582262-044cdead277a', alt: 'Classic fountain pen drafting prose on lined notebook paper' },
+          { id: '1456513080510-7bf3a84b82f8', alt: 'Open literature book with reading glasses in quiet study' },
+          { id: '1497633762265-9d179a990aa6', alt: 'Colorful classic literature book spines on library shelf' },
+          { id: '1476275466078-4007374efbbe', alt: 'Open classic literature novel resting in sunlit outdoor study' },
+          { id: '1457369804613-52c61a468e7d', alt: 'Vintage library shelves and open classical texts' },
+          { id: '1512820790803-83ca734da794', alt: 'Aesthetic open book with soft page depth' },
+          { id: '1474932430478-367dbb6832c1', alt: 'Vintage literary typewriter and manuscript notes' },
+          { id: '1524995997946-a1c2e315a42f', alt: 'Grand university study archive with study lanterns' },
+          { id: '1463320726281-696a485928c7', alt: 'Scholarly reading desk with fountain pen and notes' },
+          { id: '1521587760476-6c12a4b040da', alt: 'Majestic college library hall with historical volumes' },
+          { id: '1499750310107-5fef28a66643', alt: 'Student desk reviewing English grammar and analytical essay' },
+          { id: '1516979187457-637abb4f9353', alt: 'Cozy book stacks and warm reading lamp' },
+          { id: '1481627834876-b7833e8f5570', alt: 'Classical literature library with rows of timeless works' },
+          { id: '1506880018603-83d5b814b5a6', alt: 'Reader immersed in classic literature manuscript' }
         ],
         'Sociology': [
-          { id: 'photo-1548782033-3ac3a62ece8d', alt: 'Community members gathered together smiling in unity outdoors' },
-          { id: 'photo-1511632765486-a01980e01a18', alt: 'Friends and community members sharing meaningful conversation' },
-          { id: 'photo-1528605248644-14dd04022da1', alt: 'Diverse group enjoying a collaborative community meal together' },
-          { id: 'photo-1529156069898-49953e39b3ac', alt: 'Group of diverse young people embracing community and social harmony' },
-          { id: 'photo-1776692629196-82f981d49217', alt: 'Community circle gathered outdoors in dialogue and connection' },
-          { id: 'photo-1761250027507-c0be614c0254', alt: 'Public conference hall of engaged citizens discussing civic issues' }
+          { id: '1548782033-3ac3a62ece8d', alt: 'Community members gathered together smiling in unity outdoors' },
+          { id: '1511632765486-a01980e01a18', alt: 'Friends and community members sharing meaningful conversation' },
+          { id: '1528605248644-14dd04022da1', alt: 'Diverse group enjoying a collaborative community meal together' },
+          { id: '1529156069898-49953e39b3ac', alt: 'Group of diverse young people embracing community and social harmony' },
+          { id: '1776692629196-82f981d49217', alt: 'Community circle gathered outdoors in dialogue and connection' },
+          { id: '1761250027507-c0be614c0254', alt: 'Public conference hall of engaged citizens discussing civic issues' },
+          { id: '1582213782179-e0d53f98f2ca', alt: 'Unified hands in solidarity representing social cooperation' },
+          { id: '1531206715517-5c0ba140b2b8', alt: 'Social science university seminar and dialogue' },
+          { id: '1491438590914-bc09fcaaf77a', alt: 'Dynamic human interaction in urban social spaces' },
+          { id: '1517486808906-6ca8b3f04846', alt: 'Group of scholars studying sociological dynamics' },
+          { id: '1573496359142-b8d87734a5a2', alt: 'Social institutions, culture and collective behavior' },
+          { id: '1511895426328-dc8714191300', alt: 'Multi-generational family celebrating social bonds' },
+          { id: '1517048676732-d65bc937f952', alt: 'Collaborative group gathered discussing community cohesion' },
+          { id: '1559027615-cd4628902d4a', alt: 'Non-profit civic volunteers working together for common good' },
+          { id: '1522202176988-66273c2fd55f', alt: 'Collaborative students discussing sociology theories' },
+          { id: '1534528741775-53994a69daeb', alt: 'Portrait of human diversity and social solidarity' }
         ],
         'Philosophy of AI': [
-          { id: 'photo-1697577418970-95d99b5a55cf', alt: 'Advanced AI microchip processor on printed circuit board' },
-          { id: 'photo-1677442136019-21780ecad995', alt: 'Futuristic neural network and digital mind computing data' },
-          { id: 'photo-1620712943543-bcc4688e7485', alt: 'Futuristic humanoid robot seated contemplating machine consciousness' },
-          { id: 'photo-1485827404703-89b55fcc595e', alt: 'Humanoid robot interacting and demonstrating intelligent behavior' },
-          { id: 'photo-1531746790731-6c087fecd65a', alt: 'Robotic hand and human touch representing artificial cognition' },
-          { id: 'photo-1589254065878-42c9da997008', alt: 'Humanoid robot exploring ethical thought and artificial intelligence' }
+          { id: '1697577418970-95d99b5a55cf', alt: 'Advanced AI microchip processor on printed circuit board' },
+          { id: '1677442136019-21780ecad995', alt: 'Futuristic neural network and digital mind computing data' },
+          { id: '1620712943543-bcc4688e7485', alt: 'Futuristic humanoid robot seated contemplating machine consciousness' },
+          { id: '1485827404703-89b55fcc595e', alt: 'Humanoid robot interacting and demonstrating intelligent behavior' },
+          { id: '1531746790731-6c087fecd65a', alt: 'Robotic hand and human touch representing artificial cognition' },
+          { id: '1589254065878-42c9da997008', alt: 'Humanoid robot exploring ethical thought and artificial intelligence' },
+          { id: '1618005182384-a83a8bd57fbe', alt: 'Luminous cyan neural wave abstract cognitive intelligence' },
+          { id: '1635070041078-e363dbe005cb', alt: 'Quantum computing algorithmic data vortex' },
+          { id: '1526374965328-7f61d4dc18c5', alt: 'Matrix digital cyber code stream and machine logic' },
+          { id: '1558494949-ef010cbdcc31', alt: 'Datacenter glowing cyan representing compute power' },
+          { id: '1507413245164-6160d8298b31', alt: 'Glowing digital neural brain synapse visualization' },
+          { id: '1518770660439-4636190af475', alt: 'High-tech AI interface circuit board and cyber logic' },
+          { id: '1550751827-4bd374c3f58b', alt: 'Futuristic neon cybersecurity and artificial intelligence' },
+          { id: '1535378917042-10a22c95931a', alt: 'Robotic sensor eye analyzing philosophical visual inputs' },
+          { id: '1516321318423-f06f85e504b3', alt: 'Computational machine learning network visualization' },
+          { id: '1579783900882-c0d3dad7b119', alt: 'Abstract fractal simulation of synthetic digital consciousness' }
         ],
         'Philosophy of Education': [
-          { id: 'photo-1509062522246-3755977927d7', alt: 'Students learning actively with engaged teacher in classroom' },
-          { id: 'photo-1606761568499-6d2451b23c66', alt: 'Modern university lecture hall prepared for philosophical academic debate' },
-          { id: 'photo-1580582932707-520aed937b7b', alt: 'Classroom study desks facing front chalkboard for structured pedagogy' },
-          { id: 'photo-1524178232363-1fb2b075b655', alt: 'Educator guiding students through collaborative academic inquiry' },
-          { id: 'photo-1577896851231-70ef18881754', alt: 'Students engaged in active classroom discussion and question asking' },
-          { id: 'photo-1503676260728-1c00da094a0b', alt: 'Young student holding books ready for educational discovery' }
+          { id: '1509062522246-3755977927d7', alt: 'Students learning actively with engaged teacher in classroom' },
+          { id: '1606761568499-6d2451b23c66', alt: 'Modern university lecture hall prepared for philosophical academic debate' },
+          { id: '1580582932707-520aed937b7b', alt: 'Classroom study desks facing front chalkboard for structured pedagogy' },
+          { id: '1524178232363-1fb2b075b655', alt: 'Educator guiding students through collaborative academic inquiry' },
+          { id: '1577896851231-70ef18881754', alt: 'Students engaged in active classroom discussion and question asking' },
+          { id: '1503676260728-1c00da094a0b', alt: 'Young student holding books ready for educational discovery' },
+          { id: '1427504494785-3a9ca7044f45', alt: 'Active collaborative learning and scholarly debate' },
+          { id: '1498243691581-b145c3f54a5a', alt: 'Classical university campus pathway of academic wisdom' },
+          { id: '1516321318423-f06f85e504b3', alt: 'Interactive educational workshop and creative thinking' },
+          { id: '1523240795612-9a054b0db644', alt: 'Dedicated students pursuing academic excellence together' },
+          { id: '1517486808906-6ca8b3f04846', alt: 'University scholars discussing pedagogical philosophy' },
+          { id: '1497633762265-9d179a990aa6', alt: 'Campus library resources for educational development' },
+          { id: '1455390582262-044cdead277a', alt: 'Critical thinking and reflective educational journaling' },
+          { id: '1531403009284-440f080d1e12', alt: 'Socratic inquiry group learning in modern classroom' },
+          { id: '1532619675605-1ede6c2ed2b0', alt: 'Students engrossed in academic study in university library' },
+          { id: '1434030216411-0b793f4b4173', alt: 'Student taking meticulous notes during philosophy lecture' }
         ],
         'Development Issues in Indian Economy': [
-          { id: 'photo-1565371767810-ef913a6c8315', alt: 'Indian rupee banknotes representing national monetary and fiscal policy' },
-          { id: 'photo-1770892123242-c876a0a343f5', alt: 'Indian farmer cultivating agricultural fields representing agrarian economy' },
-          { id: 'photo-1570168007204-dfb528c6958f', alt: 'Gateway of India and Mumbai financial center representing urban development' },
-          { id: 'photo-1460925895917-afdab827c52f', alt: 'Macroeconomic data analytics and national development growth charts' },
-          { id: 'photo-1611974789855-9c2a0a7236a3', alt: 'Stock market exchange charts tracking economic growth and liberalisation' },
-          { id: 'photo-1579621970563-ebec7560ff3e', alt: 'Plant growing from currency coins representing sustainable development' }
+          { id: '1565371767810-ef913a6c8315', alt: 'Indian rupee banknotes representing national monetary and fiscal policy' },
+          { id: '1770892123242-c876a0a343f5', alt: 'Indian farmer cultivating agricultural fields representing agrarian economy' },
+          { id: '1570168007204-dfb528c6958f', alt: 'Gateway of India and Mumbai financial center representing urban development' },
+          { id: '1460925895917-afdab827c52f', alt: 'Macroeconomic data analytics and national development growth charts' },
+          { id: '1611974789855-9c2a0a7236a3', alt: 'Stock market exchange charts tracking economic growth and liberalisation' },
+          { id: '1579621970563-ebec7560ff3e', alt: 'Plant growing from currency coins representing sustainable development' },
+          { id: '1582213782179-e0d53f98f2ca', alt: 'Indian rural development and collective micro enterprise' },
+          { id: '1532375810709-75b1da00537c', alt: 'India Gate and national economic infrastructure' },
+          { id: '1526304640581-d334cdbbf45e', alt: 'Currency notes and Indian economic valuation' },
+          { id: '1563986768609-322da13575f3', alt: 'Financial market exchange and industrial GDP metrics' },
+          { id: '1542601906990-b4d3fb778b09', alt: 'Agrarian reform, food security and rural economics' },
+          { id: '1474487548417-781cb71495f3', alt: 'Indian railway network connecting national markets and industry' },
+          { id: '1498084393753-b411b2d26b34', alt: 'Modern urban infrastructure and transportation network' },
+          { id: '1513836279014-a89f7a76ae86', alt: 'Bustling rural Indian bazaar showing local commodity exchange' },
+          { id: '1586528116311-ad8dd3c8310d', alt: 'International maritime freight port expanding export trade' },
+          { id: '1486406146926-c627a92ad1ab', alt: 'Modern metropolitan financial district and enterprise towers' }
         ],
         'Fundamentals of Ethics': [
-          { id: 'photo-1521790797524-b2497295b8a0', alt: 'Firm professional handshake representing mutual trust and ethical integrity' },
-          { id: 'photo-1589829545856-d10d557cf95f', alt: 'Classical Lady Justice statue holding balance scales of moral justice' },
-          { id: 'photo-1589994965851-a8f479c573a9', alt: 'Bronze scales of justice symbolizing ethical fairness and law' },
-          { id: 'photo-1768839719921-6a554fb3e847', alt: 'Sculpted monument of justice representing moral uprightness and duty' },
-          { id: 'photo-1505664194779-8beaceb93744', alt: 'Philosophy library with classical bust representing moral philosophy' },
-          { id: 'photo-1589578527966-fdac0f44566c', alt: 'Bronze Lady Justice statue holding scales of justice and sword' }
+          { id: '1521790797524-b2497295b8a0', alt: 'Firm professional handshake representing mutual trust and ethical integrity' },
+          { id: '1589829545856-d10d557cf95f', alt: 'Classical Lady Justice statue holding balance scales of moral justice' },
+          { id: '1589994965851-a8f479c573a9', alt: 'Bronze scales of justice symbolizing ethical fairness and law' },
+          { id: '1768839719921-6a554fb3e847', alt: 'Sculpted monument of justice representing moral uprightness and duty' },
+          { id: '1505664194779-8beaceb93744', alt: 'Philosophy library with classical bust representing moral philosophy' },
+          { id: '1589578527966-fdac0f44566c', alt: 'Bronze Lady Justice statue holding scales of justice and sword' },
+          { id: '1506126613408-eca07ce68773', alt: 'Zen balanced stones representing moral equilibrium' },
+          { id: '1479839672679-a46483c0e7c8', alt: 'Classical marble philosopher statue contemplating virtue ethics' },
+          { id: '1534447677768-be436bb09401', alt: 'Cosmic moral compass guiding ethical decision-making' },
+          { id: '1516251193007-45ef944ab0c6', alt: 'Collective hands building a fair, just and equitable society' },
+          { id: '1528747045269-390fe33c19f2', alt: 'Classical neoclassical courthouse colonnade of justice' },
+          { id: '1513694203232-719a280e022f', alt: 'Sunbeam illuminating marble arch of truth and rectitude' },
+          { id: '1470071459604-3b5ec3a7fe05', alt: 'Serene pristine nature symbolizing bioethical harmony' },
+          { id: '1455390582262-044cdead277a', alt: 'Scribe pen annotating codes of professional ethics' },
+          { id: '1457369804613-52c61a468e7d', alt: 'Ancient parchment codex of ethical philosophy' },
+          { id: '1526304640581-d334cdbbf45e', alt: 'Honest equitable trade based on ethical principles' }
         ],
         'Microeconomic Foundation': [
-          { id: 'photo-1644871913429-9ed7696180cc', alt: 'Assorted coins and currency representing microeconomic valuation' },
-          { id: 'photo-1518458028785-8fbcd101ebb9', alt: 'Coins resting on wood demonstrating savings and consumer choice' },
-          { id: 'photo-1559526324-4b87b5e36e44', alt: 'Stacking coins illustrating cost structures and price equilibrium' },
-          { id: 'photo-1553729459-efe14ef6055d', alt: 'Financial calculations and ledger reviewing firm economics' },
-          { id: 'photo-1590283603385-17ffb3a7f29f', alt: 'Financial candlestick charts reflecting price theory and consumer choices' },
-          { id: 'photo-1611974789855-9c2a0a7236a3', alt: 'Real-time market price charts tracking equilibrium dynamics' }
+          { id: '1644871913429-9ed7696180cc', alt: 'Assorted coins and currency representing microeconomic valuation' },
+          { id: '1518458028785-8fbcd101ebb9', alt: 'Coins resting on wood demonstrating savings and consumer choice' },
+          { id: '1559526324-4b87b5e36e44', alt: 'Stacking coins illustrating cost structures and price equilibrium' },
+          { id: '1553729459-efe14ef6055d', alt: 'Financial calculations and ledger reviewing firm economics' },
+          { id: '1590283603385-17ffb3a7f29f', alt: 'Financial candlestick charts reflecting price theory and consumer choices' },
+          { id: '1611974789855-9c2a0a7236a3', alt: 'Real-time market price charts tracking equilibrium dynamics' },
+          { id: '1607604276583-eef5d076aa5f', alt: 'Antique brass balance scale measuring economic utility' },
+          { id: '1526304640581-d334cdbbf45e', alt: 'Consumer choice and monetary exchange equilibrium' },
+          { id: '1535320903710-d993d3d77d29', alt: 'Retail behavior, consumer demand and elasticities' },
+          { id: '1486406146926-c627a92ad1ab', alt: 'Competitive market enterprise and firm structures' },
+          { id: '1488459716781-31db52582fe9', alt: 'Open agricultural produce market showing real supply and demand' },
+          { id: '1554224155-8d04cb21cd6c', alt: 'Calculator and pencil working out marginal cost and utility' },
+          { id: '1555421689-491a97ff2040', alt: 'Consumer evaluating goods and utility in retail store' },
+          { id: '1501339847302-ac426a4a7cbb', alt: 'Small commercial enterprise and monopolistic competition model' },
+          { id: '1581091226825-a6a2a5aee158', alt: 'Factory manufacturing line demonstrating production function' },
+          { id: '1580519542036-c47de6196ba5', alt: 'Banking currency exchange and liquidity transaction' }
         ],
         'Arabic': [
-          { id: 'photo-1766326057606-2497458466fb', alt: 'Ornate Arabic calligraphy carved into historic architectural stone' },
-          { id: 'photo-1720701575003-51dafcf39cb4', alt: 'Historic illuminated Arabic manuscript with gilded calligraphy' },
-          { id: 'photo-1720701574998-d68020bce2bd', alt: 'Classical Arabic calligraphy text on parchment folio' },
-          { id: 'photo-1791340324867-aea4c3d7920b', alt: 'Ancient illuminated Arabic manuscript displayed in scholarly study' },
-          { id: 'photo-1754400743862-b3df948fdbdc', alt: 'Intricate Islamic horseshoe arches and carved geometric ornamentation' },
-          { id: 'photo-1564769625905-50e93615e769', alt: 'Majestic dome and arches showcasing classical Arab architectural heritage' }
+          { id: '1766326057606-2497458466fb', alt: 'Ornate Arabic calligraphy carved into historic architectural stone' },
+          { id: '1720701575003-51dafcf39cb4', alt: 'Historic illuminated Arabic manuscript with gilded calligraphy' },
+          { id: '1720701574998-d68020bce2bd', alt: 'Classical Arabic calligraphy text on parchment folio' },
+          { id: '1791340324867-aea4c3d7920b', alt: 'Ancient illuminated Arabic manuscript displayed in scholarly study' },
+          { id: '1754400743862-b3df948fdbdc', alt: 'Intricate Islamic horseshoe arches and carved geometric ornamentation' },
+          { id: '1564769625905-50e93615e769', alt: 'Majestic dome and arches showcasing classical Arab architectural heritage' },
+          { id: '1519817650390-64a93db51149', alt: 'Classical Arabesque geometric patterns and script aesthetics' },
+          { id: '1509316975850-ff9c5deb0cd9', alt: 'Moorish palace carved geometric stucco and cursive Arabic script' },
+          { id: '1544716278-ca5e3f4abd8c', alt: 'Classic folio of Arabic literary prose and poetic verses' },
+          { id: '1542838132-92c53300491e', alt: 'Magnificent illuminated arches in historic Islamic architecture' },
+          { id: '1534447677768-be436bb09401', alt: 'Ancient desert trade route caravan culture and Arab heritage' },
+          { id: '1517256064527-09c73fc73e38', alt: 'Traditional Arab hospitality tea ceremony and majlis gathering' },
+          { id: '1506744038136-46273834b3fb', alt: 'Serene Arabian landscape and historic spice trade horizons' },
+          { id: '1513694203232-719a280e022f', alt: 'Sunlit traditional carved wooden mashrabiya screen' },
+          { id: '1457369804613-52c61a468e7d', alt: 'Historic archive of classical Arabic philosophy and linguistics' },
+          { id: '1512453979798-5ea266f8880c', alt: 'Grand turquoise Arabesque dome with intricate calligraphy band' }
         ],
         'Mathematics': [
-          { id: 'photo-1635372722656-389f87a941b7', alt: 'Blackboard covered in rigorous mathematical equations and formulas' },
-          { id: 'photo-1758685733897-80154016629f', alt: 'System of linear algebraic equations on blackboard' },
-          { id: 'photo-1509228468518-180dd4864904', alt: 'Mathematical compass and technical drafting on coordinate paper' },
-          { id: 'photo-1758685848261-16a5a9e68811', alt: 'Student analyzing advanced calculus proofs on full chalkboard' },
-          { id: 'photo-1635070041078-e363dbe005cb', alt: 'Collaborative problem-solving with complex algebraic mathematics' },
-          { id: 'photo-1596495578065-6e0763fa1178', alt: 'Chalkboard filled with advanced geometric and mathematical derivations' }
+          { id: '1635372722656-389f87a941b7', alt: 'Blackboard covered in rigorous mathematical equations and formulas' },
+          { id: '1758685733897-80154016629f', alt: 'System of linear algebraic equations on blackboard' },
+          { id: '1509228468518-180dd4864904', alt: 'Mathematical compass and technical drafting on coordinate paper' },
+          { id: '1758685848261-16a5a9e68811', alt: 'Student analyzing advanced calculus proofs on full chalkboard' },
+          { id: '1635070041078-e363dbe005cb', alt: 'Collaborative problem-solving with complex algebraic mathematics' },
+          { id: '1596495578065-6e0763fa1178', alt: 'Advanced geometric and mathematical derivations' },
+          { id: '1518770660439-4636190af475', alt: 'Geometric circuit precision and mathematical logic' },
+          { id: '1581092160607-ee22621dd758', alt: 'Precision technical caliper measuring mathematical proportions' },
+          { id: '1507413245164-6160d8298b31', alt: 'Spatial 3D coordinate geometry wireframe structure' },
+          { id: '1509062522246-3755977927d7', alt: 'Mathematical lecture on differential calculus equations' },
+          { id: '1455390582262-044cdead277a', alt: 'Mathematical drafting with graph paper and geometric compass' },
+          { id: '1558494949-ef010cbdcc31', alt: 'Network graph theory and computational topology nodes' },
+          { id: '1516321318423-f06f85e504b3', alt: 'Mathematical analysis in theoretical computer science' },
+          { id: '1460925895917-afdab827c52f', alt: 'Statistical normal distribution curves and probability plots' },
+          { id: '1526374965328-7f61d4dc18c5', alt: 'Number theory and cryptography algorithms on digital screen' },
+          { id: '1606761568499-6d2451b23c66', alt: 'Classical university mathematics lecture hall with chalkboard proofs' }
         ],
         'History of Keralam': [
-          { id: 'photo-1695964744922-c7d01b4761cb', alt: 'Historic Kerala palace courtyard with traditional gabled wooden architecture' },
-          { id: 'photo-1590123732197-e7079d2ceb89', alt: 'Historic Fort Kochi iconic Chinese fishing nets on Kerala coast' },
-          { id: 'photo-1590050752117-238cb0fb12b1', alt: 'Historic waterway of ancient Kerala spice trade and maritime navigation' },
-          { id: 'photo-1602216056096-3b40cc0c9944', alt: 'Traditional maritime wooden trade craft gliding on Kerala backwaters' },
-          { id: 'photo-1621178754488-8fb090bad709', alt: 'Centuries-old Kathakali classical heritage drama of Keralam' },
-          { id: 'photo-1787324264288-3d8359e5f2fa', alt: 'Heritage wooden craft on Kerala waters reminiscent of ancient coastal trade' }
+          { id: '1695964744922-c7d01b4761cb', alt: 'Padmanabhapuram Palace traditional Kerala timber architecture' },
+          { id: '1599940824399-b87987ceb72a', alt: 'Edakkal Cave prehistoric rock petroglyphs and engravings' },
+          { id: '1544620347-c4fd4a3d5957', alt: 'Iron Age Megalithic monuments and Kudakkal dolmens' },
+          { id: '1582555172866-f73bb12a2ab3', alt: 'Archaeological artefacts and ancient heritage pottery' },
+          { id: '1507525428034-b723cf961d3e', alt: 'Historic Muziris maritime trade coast and ancient Malabar waves' },
+          { id: '1602216056096-3b40cc0c9944', alt: 'Serene Kerala backwaters and inland trade route corridors' },
+          { id: '1514565131-fce0801e5785', alt: 'Ancient stone pillar architecture and historic temple sanctum' },
+          { id: '1584551246679-0daf3d275d0f', alt: 'Traditional Kerala temple lamp and heritage brass craft' },
+          { id: '1590123732197-e7079d2ceb89', alt: 'Fort Kochi iconic Chinese fishing nets on Kerala coast' },
+          { id: '1590050752117-238cb0fb12b1', alt: 'Ancient trade route through Western Ghats hill ranges' },
+          { id: '1621178754488-8fb090bad709', alt: 'Centuries-old Kathakali classical heritage drama of Keralam' },
+          { id: '1787324264288-3d8359e5f2fa', alt: 'Heritage wooden craft on Kerala waters reminiscent of coastal trade' },
+          { id: '1544716278-ca5e3f4abd8c', alt: 'Ancient copper plate inscriptions and palm leaf records' },
+          { id: '1542601906990-b4d3fb778b09', alt: 'Historic Malabar black pepper and cardamom cultivation' },
+          { id: '1506744038136-46273834b3fb', alt: 'Ancient coastal fortress watchtower overlooking Arabian Sea' },
+          { id: '1611299074735-a2db673dd495', alt: 'Traditional Vallam Kali snake boat trade waterways' }
         ]
       };
 
-      const ONE_HOUR_MS = 60 * 60 * 1000;
-
-      function getSlotIndex(galleryLength, offsetHours = 0) {
-        const now = Date.now();
-        const slot = Math.floor(now / ONE_HOUR_MS) + offsetHours;
-        return ((slot % galleryLength) + galleryLength) % galleryLength;
-      }
+      const INTERVAL_MS = 10000;
+      const cardStates = new Map();
 
       function buildPhotoUrl(photoId) {
-        return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=560&h=315&q=70`;
+        return `https://images.unsplash.com/photo-${photoId}?auto=format&fit=crop&w=640&h=360&q=75`;
       }
 
-      function updateCardCovers(offsetHours = 0) {
-        const cards = document.querySelectorAll('.subject-card[data-subject]');
-        cards.forEach(card => {
-          const subject = card.dataset.subject;
-          const gallery = subjectGalleries[subject];
-          if (!gallery || gallery.length === 0) return;
+      function applyPhotoToCard(card, photoIndex, animate = true) {
+        const subject = card.dataset.subject;
+        const gallery = subjectGalleries[subject];
+        if (!gallery || gallery.length === 0) return;
 
-          const img = card.querySelector('img.subject-cover');
-          if (!img) return;
+        const actualIdx = ((photoIndex % gallery.length) + gallery.length) % gallery.length;
+        const state = cardStates.get(card) || { index: 0, paused: false };
+        state.index = actualIdx;
+        cardStates.set(card, state);
 
-          const activeItem = gallery[getSlotIndex(gallery.length, offsetHours)];
-          const targetUrl = buildPhotoUrl(activeItem.id);
+        const photoObj = gallery[actualIdx];
+        const newUrl = buildPhotoUrl(photoObj.id);
+        const img = card.querySelector('img.subject-cover');
 
-          if (img.src !== targetUrl && !img.src.includes(activeItem.id)) {
-            img.src = targetUrl;
-            img.alt = activeItem.alt;
+        if (img) {
+          img.alt = photoObj.alt;
+          img.title = photoObj.alt;
+
+          if (animate && img.src !== newUrl) {
+            img.style.transition = 'opacity 0.38s ease, transform 0.38s ease';
+            img.style.opacity = '0.35';
+            img.style.transform = 'scale(0.98)';
+            const tempImg = new Image();
+            tempImg.onload = () => {
+              img.src = newUrl;
+              img.style.opacity = '1';
+              img.style.transform = 'scale(1)';
+            };
+            tempImg.onerror = () => {
+              img.style.opacity = '1';
+              img.style.transform = 'scale(1)';
+            };
+            tempImg.src = newUrl;
+          } else {
+            img.src = newUrl;
+            img.style.opacity = '1';
           }
+        }
+
+        const pill = card.querySelector('.rotator-pill');
+        if (pill) {
+          pill.textContent = `${actualIdx + 1} / ${gallery.length}`;
+          pill.title = photoObj.alt;
+        }
+      }
+
+      function setupCardRotator(card, cardIndex) {
+        const subject = card.dataset.subject;
+        const gallery = subjectGalleries[subject];
+        if (!gallery || gallery.length === 0) return;
+
+        const state = {
+          index: (cardIndex * 3) % gallery.length,
+          paused: false,
+          timer: null
+        };
+        cardStates.set(card, state);
+
+        const img = card.querySelector('img.subject-cover');
+        if (img && !card.querySelector('.rotator-controls')) {
+          const controlsWrap = document.createElement('div');
+          controlsWrap.className = 'rotator-controls';
+
+          const topRow = document.createElement('div');
+          topRow.className = 'rotator-top-row';
+          const pill = document.createElement('span');
+          pill.className = 'rotator-pill';
+          pill.textContent = `${state.index + 1} / ${gallery.length}`;
+          topRow.appendChild(pill);
+
+          const midRow = document.createElement('div');
+          midRow.className = 'rotator-mid-row';
+
+          const prevBtn = document.createElement('button');
+          prevBtn.type = 'button';
+          prevBtn.className = 'rotator-nav-btn rotator-prev';
+          prevBtn.innerHTML = '‹';
+          prevBtn.title = 'Previous photo';
+          prevBtn.setAttribute('aria-label', 'Previous photo');
+
+          const nextBtn = document.createElement('button');
+          nextBtn.type = 'button';
+          nextBtn.className = 'rotator-nav-btn rotator-next';
+          nextBtn.innerHTML = '›';
+          nextBtn.title = 'Next photo';
+          nextBtn.setAttribute('aria-label', 'Next photo');
+
+          midRow.appendChild(prevBtn);
+          midRow.appendChild(nextBtn);
+
+          const progBar = document.createElement('div');
+          progBar.className = 'rotator-progress-line';
+
+          controlsWrap.appendChild(topRow);
+          controlsWrap.appendChild(midRow);
+          controlsWrap.appendChild(progBar);
+
+          const imgParent = img.parentNode;
+          if (imgParent === card) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'subject-image-wrapper';
+            imgParent.insertBefore(wrapper, img);
+            wrapper.appendChild(img);
+            wrapper.appendChild(controlsWrap);
+          } else {
+            imgParent.appendChild(controlsWrap);
+          }
+
+          prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            state.index = (state.index - 1 + gallery.length) % gallery.length;
+            applyPhotoToCard(card, state.index, true);
+            restartCardTimer(card);
+          });
+
+          nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            state.index = (state.index + 1) % gallery.length;
+            applyPhotoToCard(card, state.index, true);
+            restartCardTimer(card);
+          });
+        }
+
+        card.addEventListener('mouseenter', () => {
+          state.paused = true;
+          card.classList.add('rotator-hovered');
         });
 
-        preloadUpcomingPhotos(offsetHours);
+        card.addEventListener('mouseleave', () => {
+          state.paused = false;
+          card.classList.remove('rotator-hovered');
+        });
+
+        applyPhotoToCard(card, state.index, false);
+
+        const initialDelay = (cardIndex * 1200) % INTERVAL_MS;
+        setTimeout(() => {
+          startCardTimer(card);
+        }, initialDelay);
       }
 
-      function preloadUpcomingPhotos(currentOffset = 0) {
-        try {
-          Object.values(subjectGalleries).forEach(gallery => {
-            const nextItem = gallery[getSlotIndex(gallery.length, currentOffset + 1)];
-            if (nextItem) {
-              const preloadImg = new Image();
-              preloadImg.src = buildPhotoUrl(nextItem.id);
-            }
+      function startCardTimer(card) {
+        const state = cardStates.get(card);
+        if (!state) return;
+        if (state.timer) clearInterval(state.timer);
+
+        state.timer = setInterval(() => {
+          if (!state.paused && document.visibilityState !== 'hidden') {
+            state.index++;
+            applyPhotoToCard(card, state.index, true);
+          }
+        }, INTERVAL_MS);
+      }
+
+      function restartCardTimer(card) {
+        const state = cardStates.get(card);
+        if (!state) return;
+        if (state.timer) clearInterval(state.timer);
+        startCardTimer(card);
+      }
+
+      // Initialize all cards
+      const cards = document.querySelectorAll('.subject-card[data-subject]');
+      cards.forEach((card, idx) => {
+        setupCardRotator(card, idx);
+      });
+
+      // Subject category filter tabs logic integrated with search input
+      const filterTabs = document.querySelectorAll('.subject-filter-tabs .filter-tab-btn');
+      let activeFilter = 'all';
+
+      function updateCardVisibility() {
+        const term = (searchInput ? searchInput.value.trim().toLowerCase() : '');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category') || '';
+          const matchesCategory = (activeFilter === 'all' || category === activeFilter);
+          const matchesSearch = !term || card.dataset.subject.toLowerCase().includes(term) || card.innerText.toLowerCase().includes(term);
+
+          const shouldShow = matchesCategory && matchesSearch;
+          card.hidden = !shouldShow;
+          if (shouldShow) visibleCount++;
+        });
+
+        if (noResults) {
+          noResults.hidden = visibleCount !== 0;
+        }
+      }
+
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          filterTabs.forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
           });
-        } catch (_) {}
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          activeFilter = tab.getAttribute('data-filter') || 'all';
+          updateCardVisibility();
+        });
+      });
+
+      if (searchInput) {
+        // Re-attach input listener to integrate with category tabs
+        searchInput.addEventListener('input', updateCardVisibility);
       }
 
-      function scheduleNextUpdate() {
-        const now = Date.now();
-        const msRemaining = ONE_HOUR_MS - (now % ONE_HOUR_MS);
-        window.setTimeout(() => {
-          updateCardCovers();
-          scheduleNextUpdate();
-        }, msRemaining + 300);
-      }
-
-      updateCardCovers();
-      scheduleNextUpdate();
-
-      // Safe debug/test hook for manual timeframe inspection
+      // Safe debug/manual hook (backward compatibility)
       window.__setSubjectTimeframeOffset = (offset) => {
-        updateCardCovers(offset);
+        cards.forEach(card => {
+          const state = cardStates.get(card);
+          if (state) {
+            state.index += offset;
+            applyPhotoToCard(card, state.index, true);
+          }
+        });
+      };
+
+      window.shuffleSubjectPhotos = (step = 1) => {
+        window.__setSubjectTimeframeOffset(step);
       };
     })();
 
@@ -5474,6 +6563,256 @@
         prewarmUrl('assets/pdfjs/pdf.min.mjs', 'script');
         prewarmUrl('assets/pdfjs/pdf.worker.min.mjs', 'script');
       });
+    })();
+  </script>
+
+
+  <script src="data/university_notices.js"></script>
+  <script id="university-notices-engine">
+    (function() {
+      let allNotices = Array.isArray(window.UNIVERSITY_NOTICES) ? window.UNIVERSITY_NOTICES : [];
+      let currentCategory = 'all';
+      let currentQuery = '';
+      let currentSubtype = '';
+      let displayLimit = 12;
+      const PAGE_STEP = 12;
+
+      const container = document.getElementById('univ-notices-container');
+      const loadMoreWrap = document.getElementById('univ-load-more-wrap');
+      const loadMoreBtn = document.getElementById('univ-load-more-btn');
+      const searchInput = document.getElementById('univ-search-input');
+      const searchClear = document.getElementById('univ-search-clear');
+      const syncLabel = document.getElementById('univ-sync-label');
+      const refreshBtn = document.getElementById('univ-refresh-btn');
+      const breakingContent = document.getElementById('univ-breaking-content');
+
+      function updateCounts() {
+        const cAll = allNotices.length;
+        const cCdoe = allNotices.filter(n => n.category === 'cdoe').length;
+        const cReg = allNotices.filter(n => n.category === 'regular').length;
+        const cGen = allNotices.filter(n => n.category === 'general').length;
+
+        const elAll = document.getElementById('count-all');
+        const elCdoe = document.getElementById('count-cdoe');
+        const elReg = document.getElementById('count-regular');
+        const elGen = document.getElementById('count-general');
+
+        if (elAll) elAll.textContent = cAll;
+        if (elCdoe) elCdoe.textContent = cCdoe;
+        if (elReg) elReg.textContent = cReg;
+        if (elGen) elGen.textContent = cGen;
+
+        // Update breaking bar with the top notice
+        if (allNotices.length > 0 && breakingContent) {
+          const top = allNotices[0];
+          breakingContent.innerHTML = `<span style="font-weight:700;">[${top.category_label || top.category.toUpperCase()}]</span> <a href="${top.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(top.title)}</a> &mdash; <span style="opacity:0.8;">${escapeHtml(top.date || '')}</span>`;
+        }
+      }
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>"']/g, function(m) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+        });
+      }
+
+      function highlightText(text, query) {
+        if (!query) return escapeHtml(text);
+        const safeQuery = query.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+        const regex = new RegExp(`(${safeQuery})`, 'gi');
+        return escapeHtml(text).replace(regex, '<mark>$1</mark>');
+      }
+
+      function renderNotices() {
+        if (!container) return;
+
+        let filtered = allNotices.slice();
+
+        // Filter category
+        if (currentCategory !== 'all') {
+          filtered = filtered.filter(n => n.category === currentCategory);
+        }
+
+        // Filter sub-type pill
+        if (currentSubtype) {
+          filtered = filtered.filter(n => (n.sub_type || '').toLowerCase().includes(currentSubtype) || (n.title || '').toLowerCase().includes(currentSubtype));
+        }
+
+        // Filter search query
+        if (currentQuery) {
+          const q = currentQuery.toLowerCase();
+          filtered = filtered.filter(n => (n.title || '').toLowerCase().includes(q) || (n.sub_type || '').toLowerCase().includes(q) || (n.source || '').toLowerCase().includes(q));
+        }
+
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div class="univ-empty-state">
+              <p style="font-size:1.8rem;margin:0 0 8px;">🔍</p>
+              <strong>No notices found matching your criteria</strong>
+              <p style="font-size:0.85rem;margin-top:4px;">Try searching for another keyword or switch category filters.</p>
+            </div>
+          `;
+          if (loadMoreWrap) loadMoreWrap.style.display = 'none';
+          return;
+        }
+
+        const visible = filtered.slice(0, displayLimit);
+
+        container.innerHTML = visible.map(n => {
+          const categoryClass = n.category === 'cdoe' ? 'univ-badge-cdoe' : (n.category === 'regular' ? 'univ-badge-regular' : 'univ-badge-general');
+          const isNewTag = n.is_new ? '<span class="univ-badge-new">NEW</span>' : '';
+          const subTypeTag = n.sub_type ? `<span class="univ-badge-subtype">${escapeHtml(n.sub_type)}</span>` : '';
+          const highlightedTitle = highlightText(n.title, currentQuery);
+          const isPdf = (n.url || '').toLowerCase().includes('.pdf');
+          const actionText = isPdf ? 'Download PDF ↗' : 'View Circular ↗';
+
+          return `
+            <article class="univ-notice-card" id="${escapeHtml(n.id)}">
+              <div class="univ-notice-content">
+                <div class="univ-notice-meta">
+                  <span class="univ-badge-category ${categoryClass}">${escapeHtml(n.category_label || n.category.toUpperCase())}</span>
+                  ${subTypeTag}
+                  ${isNewTag}
+                  <span class="univ-notice-date">📅 ${escapeHtml(n.date || 'Recent')} &bull; ${escapeHtml(n.source || 'University')}</span>
+                </div>
+                <h3 class="univ-notice-title">${highlightedTitle}</h3>
+              </div>
+              <div class="univ-notice-actions">
+                <a class="univ-download-btn" href="${escapeHtml(n.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open notice: ${escapeHtml(n.title)}">
+                  <svg style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  ${actionText}
+                </a>
+              </div>
+            </article>
+          `;
+        }).join('');
+
+        if (loadMoreWrap) {
+          if (filtered.length > displayLimit) {
+            loadMoreWrap.style.display = 'block';
+            loadMoreBtn.textContent = `Load More Notices (${filtered.length - displayLimit} remaining)`;
+          } else {
+            loadMoreWrap.style.display = 'none';
+          }
+        }
+      }
+
+      // Event listeners for tabs
+      document.querySelectorAll('.univ-tab-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.univ-tab-btn').forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          this.classList.add('active');
+          this.setAttribute('aria-selected', 'true');
+          currentCategory = this.getAttribute('data-category');
+          displayLimit = PAGE_STEP;
+          renderNotices();
+        });
+      });
+
+      // Quick filter pills
+      document.querySelectorAll('.univ-pill').forEach(pill => {
+        pill.addEventListener('click', function() {
+          const val = this.getAttribute('data-pill');
+          if (this.classList.contains('active')) {
+            this.classList.remove('active');
+            currentSubtype = '';
+          } else {
+            document.querySelectorAll('.univ-pill').forEach(p => p.classList.remove('active'));
+            this.classList.add('active');
+            currentSubtype = val;
+          }
+          displayLimit = PAGE_STEP;
+          renderNotices();
+        });
+      });
+
+      // Search handling
+      if (searchInput) {
+        searchInput.addEventListener('input', function() {
+          currentQuery = this.value.trim();
+          if (searchClear) searchClear.style.display = currentQuery ? 'block' : 'none';
+          displayLimit = PAGE_STEP;
+          renderNotices();
+        });
+      }
+
+      if (searchClear) {
+        searchClear.addEventListener('click', function() {
+          if (searchInput) searchInput.value = '';
+          currentQuery = '';
+          searchClear.style.display = 'none';
+          displayLimit = PAGE_STEP;
+          renderNotices();
+        });
+      }
+
+      // Load more button
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+          displayLimit += PAGE_STEP;
+          renderNotices();
+        });
+      }
+
+      // Auto-fetch fresh data from Cloudflare Worker API
+      async function syncNoticesFromApi() {
+        if (refreshBtn) refreshBtn.classList.add('spinning');
+        if (syncLabel) syncLabel.textContent = 'Syncing...';
+
+        const endpoints = [
+          '/api/notices',
+          'https://academic-hub.faiz01cu.workers.dev/api/notices',
+          'data/university_notices.json'
+        ];
+
+        let success = false;
+        for (const ep of endpoints) {
+          try {
+            const resp = await fetch(ep, { cache: 'no-cache' });
+            if (resp.ok) {
+              const data = await resp.json();
+              if (Array.isArray(data.notices) && data.notices.length > 0) {
+                allNotices = data.notices;
+                window.UNIVERSITY_NOTICES = allNotices;
+                updateCounts();
+                renderNotices();
+                success = true;
+                if (syncLabel) syncLabel.textContent = 'Live Synced Just Now';
+                break;
+              }
+            }
+          } catch (e) {
+            // try next endpoint
+          }
+        }
+
+        if (!success && syncLabel) {
+          syncLabel.textContent = 'Loaded Offline Cache';
+        }
+
+        if (refreshBtn) {
+          setTimeout(() => refreshBtn.classList.remove('spinning'), 600);
+        }
+      }
+
+      if (refreshBtn) {
+        refreshBtn.addEventListener('click', function() {
+          syncNoticesFromApi();
+        });
+      }
+
+      // Initial render & background sync
+      updateCounts();
+      renderNotices();
+
+      // Background auto-refresh on page load
+      setTimeout(syncNoticesFromApi, 1200);
+
+      // Periodically refresh every 15 minutes if page is kept open
+      setInterval(syncNoticesFromApi, 15 * 60 * 1000);
     })();
   </script>
 

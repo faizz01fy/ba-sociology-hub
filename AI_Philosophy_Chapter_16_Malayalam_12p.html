@@ -1,0 +1,1016 @@
+<!DOCTYPE html><html lang="ml"><head><meta charset="UTF-8"><title>Philosophy of AI · Module 4 · Chapter 3 (Chapter 16)</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0f172a;
+    }
+
+    .page-container {
+      width: 210mm;
+      height: 297mm;
+      padding: 12mm 14mm 10mm 14mm;
+      margin: 0 auto;
+      background: #ffffff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+    }
+
+    .top-bar-left {
+      font-size: 8pt;
+      font-weight: 800;
+      color: #e11d48;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar-right {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .chapter-hero {
+      background: linear-gradient(135deg, #ffe4e6 0%, #ffffff 100%);
+      border: 1.5px solid #e11d48;
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-bottom: 9px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #e11d48;
+      color: #ffffff;
+      font-size: 6.8pt;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .hero-title-en {
+      font-size: 11.5pt;
+      font-weight: 800;
+      color: #881337;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #e11d48;
+      line-height: 1.35;
+    }
+
+    .section-header {
+      background: #f1f5f9;
+      border-left: 4px solid #e11d48;
+      padding: 5px 8px;
+      margin-bottom: 7px;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .section-title-en {
+      font-size: 9.2pt;
+      font-weight: 800;
+      color: #1e293b;
+      letter-spacing: 0.3px;
+    }
+
+    .section-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #e11d48;
+      margin-top: 1px;
+    }
+
+    .content-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 7px;
+      padding: 8px 10px;
+      margin-bottom: 7px;
+    }
+
+    .bilingual-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-bottom: 6px;
+    }
+
+    .block-en {
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 6px 8px;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .block-ml {
+      background: #fffbeb;
+      border-left: 3px solid #fde68a;
+      padding: 6px 8px;
+      border-radius: 0 5px 5px 0;
+      font-family: 'Noto Sans Malayalam', sans-serif;
+    }
+
+    .block-label {
+      font-size: 6.8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .block-en .block-label { color: #475569; }
+    .block-ml .block-label { color: #92400e; }
+
+    .block-en p {
+      font-size: 8pt;
+      color: #1e293b;
+      line-height: 1.42;
+      margin: 0 0 4px 0;
+    }
+
+    .block-en p:last-child {
+      margin-bottom: 0;
+    }
+
+    .block-ml p {
+      font-size: 7.7pt;
+      color: #78350f;
+      line-height: 1.45;
+      margin: 0 0 4px 0;
+    }
+
+    .block-ml p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* STRICT TWO HIGHLIGHTERS */
+    .hl-green {
+      background: #bbf7d0;
+      color: #14532d;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .hl-yellow {
+      background: #fef08a;
+      color: #713f12;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .page-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 4px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    /* PAGE 12 EXAM GRID */
+    .page-exam-grid {
+      padding: 10mm 12mm 8mm 12mm;
+    }
+
+    .exam-header-compact {
+      text-align: center;
+      background: linear-gradient(135deg, #ffe4e6 0%, #ffffff 100%);
+      border: 1.5px solid #e11d48;
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-bottom: 8px;
+    }
+
+    .exam-title-badge {
+      display: inline-block;
+      background: #e11d48;
+      color: #ffffff;
+      font-size: 7pt;
+      font-weight: 800;
+      padding: 1.5px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .exam-hero-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #881337;
+      line-height: 1.2;
+    }
+
+    .exam-hero-sub {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #e11d48;
+      line-height: 1.3;
+    }
+
+    .points-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    .point-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 4.5px 6px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .point-header {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+
+    .point-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 1.5px 4px;
+      border-radius: 2px;
+      color: #ffffff;
+    }
+
+    .point-title-en {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.15;
+    }
+
+    .point-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.4pt;
+      font-weight: 700;
+      color: #e11d48;
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+
+    .point-body {
+      font-size: 6.4pt;
+      color: #334155;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+
+    .point-body-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.1pt;
+      color: #475569;
+      line-height: 1.25;
+    }
+    </style></head><body>
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 3 (Chapter 16)</span>
+        <span class="top-bar-right">Page 1 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="chapter-hero">
+        <div class="hero-tag">🎓 Calicut University FYUGP · Minor Philosophy (PHL1MN102) · Module 4</div>
+        <div class="hero-title-en">CHAPTER III: 4.2(A) How do we prevent learning algorithms from acquiring morally objectionable biases?</div>
+        <div class="hero-title-ml">അദ്ധ്യായം 3: മെഷീൻ ലേണിംഗ് അൽഗോരിതങ്ങൾ ധാർമ്മികമായി ആക്ഷേപകരമായ പക്ഷപാതങ്ങൾ ആർജ്ജിക്കുന്നത് എങ്ങനെ തടയാം?</div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">1. Transition from Human Judgment to Algorithmic Decisions</div>
+          <div class="section-title-ml">മനുഷ്യന്റെ വിവേചനാധികാരത്തിൽ നിന്നും അൽഗോരിതമിക് തീരുമാനങ്ങളിലേക്കുള്ള മാറ്റം</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Historical Decision-Making & Algorithmic Automation</div>
+            <p>For most of human history, people made pivotal choices affecting other individuals: <span class="hl-green">hiring employees</span>, approving loans, diagnosing illnesses, manufacturing, and legal adjudication.</p>
+            <p>In recent decades, artificial intelligence systems have increasingly supplanted human gatekeepers. While automated decisions promise unprecedented speed and scale, they risk <span class="hl-yellow">systematizing and codifying deep societal injustices into mathematical code</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 മനുഷ്യന്റെ തീരുമാനങ്ങളും യന്ത്രവൽക്കരണവും</div>
+            <p>മനുഷ്യചരിത്രത്തിലുടനീളം മറ്റുള്ളവരുടെ ജീവിതത്തെ സ്വാധീനിക്കുന്ന പ്രധാന തീരുമാനങ്ങൾ മനുഷ്യർ തന്നെയാണ് എടുത്തിരുന്നത്: <span class="hl-green">തൊഴിൽ നൽകൽ</span>, ബാങ്ക് വായ്പകൾ അനുവദിക്കൽ, രോഗനിർണ്ണയം, നീതിനിർവ്വഹണം എന്നിവ ഇതിൽപ്പെടുന്നു.</p>
+            <p>എന്നാൽ സമീപകാലത്ത്, ഈ തീരുമാനങ്ങൾ സ്വയംഭരണ കമ്പ്യൂട്ടർ അൽഗോരിതങ്ങൾക്ക് കൈമാറ്റം ചെയ്യപ്പെടുന്നു. ഇത് വേഗത വർദ്ധിപ്പിക്കുമെങ്കിലും, <span class="hl-yellow">സമൂഹത്തിലെ ചരിത്രപരമായ അനീതികളെ ഗണിതശാസ്ത്ര കോഡുകളിലൂടെ സ്ഥിരപ്പെടുത്തുന്ന അപകടകരമായ അവസ്ഥ</span> സൃഷ്ടിക്കുന്നു.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 The Myth of Algorithmic Objectivity</div>
+            <p>A prevalent misconception assumes that because mathematical algorithms rely on data and quantitative calculations, they are inherently neutral, objective, and devoid of prejudice.</p>
+            <p>In reality, <span class="hl-yellow">learning algorithms assimilate and replicate patterns directly from historical training data</span>, absorbing systemic inequities and presenting biased conclusions under the deceptive guise of scientific neutrality.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 അൽഗോരിതമിക് നിഷ്പക്ഷതയെക്കുറിച്ചുള്ള മിഥ്യാധാരണ</div>
+            <p>കമ്പ്യൂട്ടർ പ്രോഗ്രാമുകൾ ഡാറ്റയും കണക്കുകൂട്ടലുകളും അടിസ്ഥാനമാക്കിയാണ് പ്രവർത്തിക്കുന്നത് എന്നതിനാൽ, അവ പക്ഷപാതരഹിതവും പൂർണ്ണ നിഷ്പക്ഷവുമാണെന്ന തെറ്റായ ധാരണ വ്യാപകമാണ്.</p>
+            <p>യഥാർത്ഥത്തിൽ, <span class="hl-yellow">മെഷീൻ ലേണിംഗ് അൽഗോരിതങ്ങൾ ചരിത്രപരമായ ഡാറ്റയിൽ നിന്നാണ് പഠിക്കുന്നത് എന്നതിനാൽ</span>, മുൻകാലങ്ങളിൽ സമൂഹത്തിൽ നിലനിന്നിരുന്ന എല്ലാ പക്ഷപാതങ്ങളെയും സ്വാംശീകരിക്കുകയും ശാസ്ത്രീയ നിഷ്പക്ഷതയുടെ മറവിൽ അവയെ വീണ്ടും നടപ്പിലാക്കുകയും ചെയ്യുന്നു.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 3: Algorithmic Bias Introduction</span>
+      <span>Page 1</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 3</span>
+        <span class="top-bar-right">Page 2 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">2. Ingraining Societal Prejudices into Machine Learning Models</div>
+          <div class="section-title-ml">സമൂഹത്തിലെ മുൻവിധികളെ യന്ത്രങ്ങൾ സ്വാംശീകരിക്കുന്ന വിധം</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Assimilation of Historical Discrimination</div>
+            <p>As AI assimilates statistical patterns from existing training corpora, <span class="hl-green">societal discriminatory practices</span>—such as gender bias, racial prejudice, caste hierarchies, or economic inequality—become firmly ingrained in algorithmic decision pathways.</p>
+            <p>Consequently, automated models produce systematically inequitable outcomes in high-stakes domains including <span class="hl-yellow">employment recruitment, predictive criminal policing, medical resource allocation, and credit underwriting</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ചരിത്രപരമായ വിവേചനങ്ങളുടെ സ്വാംശീകരണം</div>
+            <p>നിലവിലുള്ള ഡാറ്റാബേസുകളിൽ നിന്ന് പാറ്റേണുകൾ മനസ്സിലാക്കുമ്പോൾ, സമൂഹത്തിൽ നിലനിന്നിരുന്ന <span class="hl-green">ലിംഗവിവേചനം, വംശീയ മുൻവിധികൾ, ജാതീയത, സാമ്പത്തിക അസമത്വങ്ങൾ</span> എന്നിവയെല്ലാം അൽഗോരിതത്തിന്റെ ചിന്താരീതിയിൽ ആഴത്തിൽ വേരൂന്നുന്നു.</p>
+            <p>ഇതിന്റെ ഫലമായി, <span class="hl-yellow">ജോലി തിരഞ്ഞെടുപ്പ്, കുറ്റകൃത്യ പ്രവചനം, ചികിത്സാ സൗകര്യങ്ങളുടെ വിതരണം, ബാങ്ക് വായ്പകൾ</span> തുടങ്ങിയ നിർണ്ണായക മേഖലകളിൽ മെഷീനുകൾ വിവേചനപരമായ തീരുമാനങ്ങൾ എടുക്കുന്നു.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Amplification vs Simple Reflection</div>
+            <p>Algorithms do not merely mirror societal prejudices; they actively <span class="hl-yellow">amplify and entrench existing structural inequalities</span> through dynamic feedback loops.</p>
+            <p>When biased algorithmic scores deny loans or interviews to marginalized demographics, the resulting economic deprivation generates fresh real-world data confirming the algorithm's skewed predictions, creating a self-reinforcing discriminatory cycle.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 പക്ഷപാതങ്ങളുടെ വർദ്ധനവും ഫീഡ്‌ബാക്ക് ലൂപ്പും</div>
+            <p>അൽഗോരിതങ്ങൾ നിലവിലുള്ള വിവേചനങ്ങളെ പ്രതിഫലിപ്പിക്കുക മാത്രമല്ല ചെയ്യുന്നത്; അവ <span class="hl-yellow">സാമൂഹിക അസമത്വങ്ങളെ ഇരട്ടിയാക്കി ശക്തിപ്പെടുത്തുകയും</span> ചെയ്യുന്നു.</p>
+            <p>മെഷീൻ നൽകിയ പക്ഷപാതപരമായ മാർക്കുകൾ കാരണം പാർശ്വവൽക്കരിക്കപ്പെട്ട വിഭാഗങ്ങൾക്ക് തൊഴിലോ വായ്പയോ നിഷേധിക്കപ്പെടുമ്പോൾ, അത് പുതിയ ഡാറ്റയായി മാറി അൽഗോരിതത്തിന്റെ തെറ്റായ നിഗമനങ്ങളെ വീണ്ടും സാധൂകരിക്കുന്നു.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 3: Data Bias Mechanisms</span>
+      <span>Page 2</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 3</span>
+        <span class="top-bar-right">Page 3 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">3. Representation Disparities: Minorities and Protected Classes</div>
+          <div class="section-title-ml">പ്രാതിനിധ്യക്കുറവും പാർശ്വവൽക്കരിക്കപ്പെട്ട സമൂഹങ്ങളും</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Disproportionate Harm to Vulnerable Groups</div>
+            <p>Algorithmic discrimination renders computational decision-making severely detrimental to <span class="hl-green">minorities and under-represented communities</span>, perpetuating entrenched historical disadvantages.</p>
+            <p><span class="hl-yellow">Ethnicity denotes shared cultural, linguistic, historical, or ancestral traits</span>. When machine learning models trained on dominant population samples are deployed universally, error rates and false rejection rates surge catastrophically for minority demographics.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ദുർബല ജനവിഭാഗങ്ങൾ നേരിടുന്ന നാശനഷ്ടങ്ങൾ</div>
+            <p>അൽഗോരിതമിക് വിവേചനം <span class="hl-green">ന്യൂനപക്ഷങ്ങൾക്കും പിന്നാക്ക ജനവിഭാഗങ്ങൾക്കും</span> കനത്ത പ്രഹരമായി മാറുകയും, അവർ പരമ്പരാഗതമായി അനുഭവിച്ചുവരുന്ന പിന്നാക്കാവസ്ഥയെ ഊട്ടിയുറപ്പിക്കുകയും ചെയ്യുന്നു.</p>
+            <p><span class="hl-yellow">വംശീയത (Ethnicity) എന്നത് പങ്കിട്ട സംസ്കാരം, ഭാഷ, പാരമ്പര്യം എന്നിവയെയാണ് സൂചിപ്പിക്കുന്നത്</span>. ഭൂരിപക്ഷ ജനവിഭാഗങ്ങളുടെ വിവരങ്ങൾ വെച്ച് പരിശീലിപ്പിച്ച മോഡലുകൾ എല്ലാവർക്കുമായി പ്രയോഗിക്കുമ്പോൾ ന്യൂനപക്ഷങ്ങൾ തെറ്റായി നിരസിക്കപ്പെടുന്നു.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Facial Recognition and Error Disparities</div>
+            <p>Commercial facial analysis algorithms demonstrate stark performance differentials: near-perfect accuracy for light-skinned males, contrasted with <span class="hl-green">error rates exceeding 30% for dark-skinned females</span>.</p>
+            <p>This empirical disparity stems directly from <span class="hl-yellow">under-representation in foundational training benchmarks</span>, proving that skewed datasets generate fundamentally unjust technical systems.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ഫേഷ്യൽ റെക്കഗ്നിഷനിലെ കൃത്യതയില്ലായ്മ</div>
+            <p>വാണിജ്യ ഫേഷ്യൽ റെക്കഗ്നിഷൻ ടൂളുകൾ പരിശോധിച്ചപ്പോൾ, വെളുത്ത വർഗ്ഗക്കാരായ പുരുഷന്മാരിൽ കൃത്യത കാണിച്ചപ്പോൾ, <span class="hl-green">കറുത്ത വർഗ്ഗക്കാരായ സ്ത്രീകളിൽ പിശകുകളുടെ നിരക്ക് 30 ശതമാനത്തിലധികമായി</span> ഉയർന്നു.</p>
+            <p>പരിശീലന ഡാറ്റാബേസുകളിൽ <span class="hl-yellow">ന്യൂനപക്ഷങ്ങളുടെ വിവരങ്ങൾ ഉൾപ്പെടുത്താതിരുന്നതാണ്</span> ഈ വലിയ സാങ്കേതിക പിഴവിന് കാരണമായത് എന്ന് വ്യക്തമാണ്.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 3: Representation Disparities</span>
+      <span>Page 3</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 3</span>
+        <span class="top-bar-right">Page 4 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">4. Labour Market Discrimination and Automated Screening</div>
+          <div class="section-title-ml">തൊഴിൽ വിപണിയിലെ വിവേചനവും ഓട്ടോമേറ്റഡ് സ്ക്രീനിംഗും</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Automated Hiring Algorithms</div>
+            <p>Corporate recruitment increasingly utilizes automated algorithms to filter thousands of job applications, screening resumes based on keywords, prestige metrics, and tenure patterns.</p>
+            <p>Because historical corporate leadership was predominantly homogeneous, <span class="hl-yellow">learning algorithms trained on decades of past hiring data systematically penalize female and minority applicants</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 റിക്രൂട്ട്മെന്റ് അൽഗോരിതങ്ങളുടെ പക്ഷപാതം</div>
+            <p>വൻകിട കമ്പനികൾ ആയിരക്കണക്കിന് തൊഴിൽ അപേക്ഷകൾ പരിശോധിക്കാൻ ഓട്ടോമേറ്റഡ് എഐ സ്ക്രീനിംഗ് ടൂളുകളെയാണ് ഇന്ന് വ്യാപകമായി ഉപയോഗിക്കുന്നത്.</p>
+            <p>കഴിഞ്ഞ ദശാബ്ദങ്ങളിൽ ഉയർന്ന പദവികളിൽ പുരുഷ മേധാവിത്വമായിരുന്നു നിലനിന്നിരുന്നത് എന്നതിനാൽ, <span class="hl-yellow">പഴയ ഡാറ്റ വെച്ച് പഠിച്ച എഐ സ്ത്രീകൾ അയച്ച അപേക്ഷകളെ തഴയുകയും നിരാകരിക്കുകയും ചെയ്യുന്നു</span>.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Algorithmic Penalization of Women's Credentials</div>
+            <p>In high-profile real-world implementations, natural language models penalized candidate resumes containing terms such as <span class="hl-green">"women's soccer"</span> or graduates from all-women colleges.</p>
+            <p>This demonstrates that <span class="hl-yellow">without deliberate ethical constraints, optimization algorithms naturally treat historical privilege as merit</span> and marginalization as incompetence.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 സ്ത്രീകളുടെ യോഗ്യതകൾ തഴയപ്പെടൽ</div>
+            <p>ചില ആഗോള കമ്പനികളുടെ എഐ പരീക്ഷണങ്ങളിൽ, റെസ്യുമെയിൽ <span class="hl-green">'വനിതാ കോളേജ്'</span> എന്നോ 'വനിതാ ക്ലബ്ബ്' എന്നോ പരാമർശമുള്ള അപേക്ഷകൾക്ക് സിസ്റ്റം മാർക്ക് കുറച്ചതായി കണ്ടെത്തി.</p>
+            <p>ധാർമ്മിക നിയന്ത്രണങ്ങൾ ഏർപ്പെടുത്തിയില്ലെങ്കിൽ, <span class="hl-yellow">ചരിത്രപരമായ ആധിപത്യത്തെ കഴിവായും പാർശ്വവൽക്കരണത്തെ അയോഗ്യതയായും</span> മെഷീനുകൾ തെറ്റിദ്ധരിക്കുമെന്നതിന്റെ തെളിവാണിത്.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 3: Labour Market Bias</span>
+      <span>Page 4</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 3</span>
+        <span class="top-bar-right">Page 5 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">5. Gender Prejudice, Societal Roles and Labeling Bias</div>
+          <div class="section-title-ml">ലിംഗവിവേചനം, പരമ്പരാഗത വേഷങ്ങൾ & ലേബലിംഗ് പക്ഷപാതം</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Origin of Gender Prejudice in Training Datasets</div>
+            <p><span class="hl-yellow">Gender prejudice originates from historical datasets documenting unequal societal roles, pay disparities, and gendered occupational segregation</span>.</p>
+            <p>Word embedding models in natural language processing famously associate male pronouns with "doctor", "executive", and "engineer", while associating female pronouns with "nurse", "homemaker", and "receptionist".</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 പരിശീലന ഡാറ്റയിലെ ലിംഗപരമായ മുൻവിധികൾ</div>
+            <p><span class="hl-yellow">സമൂഹത്തിൽ പണ്ടുതൊട്ടേ നിലനിന്നിരുന്ന തൊഴിൽ വിഭജനങ്ങളും, വേതന അസമത്വങ്ങളും, സ്ത്രീവിരുദ്ധ മുൻവിധികളുമാണ് ലിംഗപക്ഷപാതത്തിന് കാരണമാകുന്നത്</span>.</p>
+            <p>ലാംഗ്വേജ് മോഡലുകളിൽ പുരുഷ പദങ്ങളെ "ഡോക്ടർ", "ഡയറക്ടർ", "എഞ്ചിനീയർ" എന്നിവയോടും, സ്ത്രീ പദങ്ങളെ "നഴ്സ്", "അടുക്കള ജോലി", "സഹായി" എന്നിവയോടും അൽഗോരിതം സ്വാഭാവികമായി ബന്ധിപ്പിക്കുന്നു.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Labeling Biases and Human Evaluator Prejudice</div>
+            <p>Supervised learning requires human annotators to label training examples (e.g. grading essays, classifying loan risk, or tagging suspicious activity).</p>
+            <p>When human annotators harbor subconscious racial or gender prejudices, their subjective biases are directly embedded into <span class="hl-green">"ground truth" training labels</span>, creating fundamentally corrupted target objectives.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ലേബലിംഗിലെ മനുഷ്യ പക്ഷപാതങ്ങൾ</div>
+            <p>മെഷീൻ ലേണിംഗ് മോഡലുകളെ പരിശീലിപ്പിക്കാൻ ഡാറ്റയെ തരംതിരിക്കുന്നത് (Labeling) മനുഷ്യരാണ്. ഇതിൽ മനുഷ്യരുടെ സ്വന്തം മുൻവിധികൾ കലരുന്നു.</p>
+            <p>ഡാറ്റാ ലേബൽ ചെയ്യുന്ന വ്യക്തികൾക്ക് വംശീയമോ ലിംഗപരമോ ആയ മുൻവിധികളുണ്ടെങ്കിൽ, അത് എഐ പഠിച്ചെടുക്കുന്ന <span class="hl-green">'സത്യം' (Ground Truth)</span> ആയി മാറുകയും സിസ്റ്റത്തെ ശാശ്വതമായി ദുഷിപ്പിക്കുകയും ചെയ്യുന്നു.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 3: Gender Bias & Labeling</span>
+      <span>Page 5</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 3</span>
+        <span class="top-bar-right">Page 6 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">6. The Fallacy of 'Fairness through Blindness' and Proxies</div>
+          <div class="section-title-ml">'അന്ധത വഴിയുള്ള നീതി' എന്ന മിഥ്യയും പ്രോക്സി വിവേചനവും</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 The Insufficiency of Removing Protected Attributes</div>
+            <p>A naive solution proposes eliminating sensitive attributes (e.g. removing "race", "gender", or "caste" columns from databases) to ensure fair treatment.</p>
+            <p><span class="hl-yellow">Excluding protected characteristics from algorithms is entirely insufficient to avert discrimination</span>. Complex learning algorithms readily discover correlated proxy variables that reconstruct the excluded attribute with alarming accuracy.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 വിവരങ്ങൾ മറച്ചുവെച്ചതുകൊണ്ട് മാത്രം നീതി ഉറപ്പാകില്ല</div>
+            <p>ഡാറ്റാബേസിൽ നിന്ന് ജാതി, മതം, ലിംഗം എന്നീ കോളങ്ങൾ ഒഴിവാക്കിയാൽ വിവേചനം അവസാനിക്കും എന്ന നിഷ്കളങ്കമായ വാദം തികച്ചും തെറ്റാണ്.</p>
+            <p><span class="hl-yellow">ഈ വിവരങ്ങൾ നീക്കം ചെയ്തതുകൊണ്ട് മാത്രം അൽഗോരിതമിക് വിവേചനം തടയാനാവില്ല</span>. സങ്കീർണ്ണമായ മെഷീൻ ലേണിംഗ് ടൂളുകൾ മറ്റ് അനുബന്ധ ഘടകങ്ങളിലൂടെ ഒളിഞ്ഞിരിക്കുന്ന ഈ വിവരങ്ങളെ കൃത്യമായി പുനർനിർമ്മിക്കുന്നു.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Proxy Discrimination in Real-World Systems</div>
+            <p><span class="hl-green">Proxy discrimination</span> occurs when seemingly neutral features—such as postal zip codes, shopping patterns, high school alumni networks, or vocabulary choices—correlate tightly with race, gender, or wealth.</p>
+            <p>An algorithm utilizing residential location to assess creditworthiness ends up de facto discriminating against historically segregated racial minorities, perpetuating systemic redlining under an algorithmic veneer.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 പ്രോക്സി വിവേചനം (Proxy Discrimination)</div>
+            <p>പിൻകോഡുകൾ, പഠിച്ച സ്കൂളുകൾ, വാങ്ങൽ രീതികൾ തുടങ്ങിയ നിരുപദ്രവകരമെന്ന് തോന്നുന്ന കാര്യങ്ങൾ വംശത്തോടും ജാതിയോടും സാമ്പത്തികാവസ്ഥയോടും ശക്തമായി ബന്ധപ്പെട്ടിരിക്കുന്നതിനെയാണ് <span class="hl-green">പ്രോക്സി വേരിയബിളുകൾ</span> എന്ന് വിളിക്കുന്നത്.</p>
+            <p>താമസസ്ഥലം മാത്രം അടിസ്ഥാനമാക്കി ലോൺ നൽകാതിരിക്കുമ്പോൾ, അത് ആ പ്രദേശത്ത് താമസിക്കുന്ന ന്യൂനപക്ഷങ്ങൾക്ക് വായ്പ നിഷേധിക്കുന്ന <span class="hl-yellow">പരോക്ഷ വിവേചനമായി (Redlining)</span> മാറുന്നു.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 3: Proxy Discrimination Fallacy</span>
+      <span>Page 6</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 3</span>
+        <span class="top-bar-right">Page 7 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">7. Embedding Fairness Constraints into Mathematical Objectives</div>
+          <div class="section-title-ml">ഗണിതശാസ്ത്ര ലക്ഷ്യങ്ങളിൽ നീതിയുടെ നിബന്ധനകൾ ഉൾച്ചേർക്കൽ</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Incorporating Formal Fairness Metrics</div>
+            <p><span class="hl-yellow">Embedding fairness constraints entails intentionally designing algorithms to adhere to mathematically specified ethical standards</span> during objective optimization.</p>
+            <p>Common formal definitions include: <strong>1. Demographic Parity</strong> (acceptance rates must be equal across protected groups); <strong>2. Equalized Odds</strong> (true positive and false positive rates must be balanced across groups); <strong>3. Individual Fairness</strong> (similar individuals receive similar treatment).</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 നീതിയുടെ ഗണിതശാസ്ത്ര അളവുകോലുകൾ</div>
+            <p><span class="hl-yellow">അൽഗോരിതത്തിന്റെ കണക്കുകൂട്ടലുകളിൽ തന്നെ കർശനമായ ധാർമ്മിക നിബന്ധനകൾ ഉൾച്ചേർക്കുന്ന പ്രക്രിയയാണിത്</span>.</p>
+            <p>പ്രധാന അളവുകോലുകൾ: <strong>1. ഡെമോഗ്രാഫിക് പാരിറ്റി:</strong> എല്ലാ ജനവിഭാഗങ്ങൾക്കും തുല്യ അനുപാതത്തിൽ തിരഞ്ഞെടുക്കപ്പെടാനുള്ള അവസരം ഉറപ്പാക്കൽ; <strong>2. ഇക്വലൈസ്ഡ് ഓഡ്സ്:</strong> യോഗ്യരായവരെ തിരഞ്ഞെടുക്കുന്നതിലും പിഴവുകൾ വരുത്തുന്നതിലും എല്ലാ ഗ്രൂപ്പുകളിലും തുല്യത പാലിക്കൽ.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 The Mathematical Impossibility Theorem</div>
+            <p>Computer scientists have proven mathematically that <span class="hl-green">mutually exclusive fairness metrics cannot all be satisfied simultaneously</span> whenever baseline base rates differ across groups.</p>
+            <p>This mathematical reality forces developers and society to make explicit philosophical and ethical choices: <span class="hl-yellow">which definition of justice takes precedence in a given social context?</span></p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 നീതിയുടെ ഗണിതശാസ്ത്രപരമായ പ്രതിസന്ധി</div>
+            <p>സമൂഹത്തിലെ യാഥാർത്ഥ്യങ്ങൾ വ്യത്യസ്തമായിരിക്കുമ്പോൾ, <span class="hl-green">എല്ലാ നീതിയുടെ അളവുകോലുകളും ഒരേസമയം പൂർണ്ണമായി തൃപ്തിപ്പെടുത്താൻ ഒരു ഗണിതശാസ്ത്ര മോഡലിനും കഴിയില്ലെന്ന്</span> തെളിയിക്കപ്പെട്ടിട്ടുണ്ട്.</p>
+            <p>ഇത് സാങ്കേതിക പ്രശ്നമല്ല, മറിച്ച് ദാർശനികമായ ഒന്നാണ്: ഒരു പ്രത്യേക സാഹചര്യത്തിൽ <span class="hl-yellow">ഏത് നീതിബോധത്തിനാണ് മുൻഗണന നൽകേണ്ടത്</span> എന്ന് മനുഷ്യ സമൂഹം തന്നെ തീരുമാനിക്കേണ്ടതുണ്ട്.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 3: Mathematical Fairness Metrics</span>
+      <span>Page 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 3</span>
+        <span class="top-bar-right">Page 8 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">8. Data Preprocessing, Re-sampling & Algorithmic Debiasing</div>
+          <div class="section-title-ml">ഡാറ്റാ പ്രീ-പ്രോസസ്സിംഗും പക്ഷപാത ലഘൂകരണ രീതികളും</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Three Stages of Algorithmic Debiasing</div>
+            <p>Engineers combat algorithmic bias across three technical pipeline stages:</p>
+            <p><strong>1. Pre-processing:</strong> Re-sampling, re-weighting, and augmenting historical datasets to rectify representation deficits before training begins.<br>
+            <strong>2. In-processing:</strong> Modifying loss functions with penalty regularization terms punishing discriminatory decision boundaries.<br>
+            <strong>3. Post-processing:</strong> Adjusting classification decision thresholds across groups to guarantee equitable real-world impact.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 പക്ഷപാതം ഒഴിവാക്കാനുള്ള മൂന്ന് ഘട്ടങ്ങൾ</div>
+            <p>എഐ സംവിധാനങ്ങളിൽ പക്ഷപാതം തിരുത്താൻ മൂന്ന് സാങ്കേതിക ഘട്ടങ്ങൾ ഉപയോഗിക്കുന്നു:</p>
+            <p><strong>1. പ്രീ-പ്രോസസ്സിംഗ്:</strong> പരിശീലനത്തിന് മുൻപ് തന്നെ പിന്നാക്ക വിഭാഗങ്ങളുടെ ഡാറ്റ കൂടുതൽ ചേർത്തും ബാലൻസ് ചെയ്തും വിവരങ്ങൾ ശുദ്ധീകരിക്കൽ.<br>
+            <strong>2. ഇൻ-പ്രോസസ്സിംഗ്:</strong> മോഡൽ പഠിക്കുമ്പോൾ തന്നെ വിവേചനപരമായ തീരുമാനങ്ങൾക്ക് പിഴ ചുമത്തുന്ന അൽഗോരിതങ്ങൾ ഉപയോഗിക്കൽ.<br>
+            <strong>3. പോസ്റ്റ്-പ്രോസസ്സിംഗ്:</strong> യഥാർത്ഥത്തിൽ തീരുമാനങ്ങൾ പുറത്തുവിടുമ്പോൾ തുല്യനീതി ഉറപ്പാക്കാൻ കട്ട്-ഓഫ് മാർക്കുകൾ പുനർക്രമീകരിക്കൽ.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Disparate Impact Mitigation</div>
+            <p><span class="hl-green">Disparate impact</span> occurs when a facially neutral policy or model produces substantially disparate and disadvantageous outcomes for a protected group.</p>
+            <p>Mitigating disparate impact requires <span class="hl-yellow">continuous statistical parity audits</span> to ensure technology serves as an instrument of social justice rather than automated disenfranchisement.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ഡിസ്പറേറ്റ് ഇംപാക്ട് ലഘൂകരണം</div>
+            <p>പുറമേക്ക് നിഷ്പക്ഷമെന്ന് തോന്നിക്കുന്ന ഒരു നയം പാർശ്വവൽക്കരിക്കപ്പെട്ട വിഭാഗങ്ങൾക്ക് ദോഷകരമായി ഭവിക്കുന്നതിനെയാണ് <span class="hl-green">ഡിസ്പറേറ്റ് ഇംപാക്ട് (Disparate Impact)</span> എന്ന് വിളിക്കുന്നത്.</p>
+            <p>ഇത്തരം പ്രത്യാഘാതങ്ങൾ തടയാൻ <span class="hl-yellow">തുടർച്ചയായ സ്റ്റാറ്റിസ്റ്റിക്കൽ ഓഡിറ്റിംഗ്</span> നടത്തുകയും, സാങ്കേതികവിദ്യ സാമൂഹിക നീതിക്ക് വേണ്ടി നിലകൊള്ളുന്നുവെന്ന് ഉറപ്പാക്കുകയും വേണം.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 3: Debiasing Techniques</span>
+      <span>Page 8</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 3</span>
+        <span class="top-bar-right">Page 9 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">9. Algorithmic Auditing, Explainability and Model Cards</div>
+          <div class="section-title-ml">അൽഗോരിതമിക് ഓഡിറ്റിംഗും മോഡൽ കാർഡുകളും</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Independent Algorithmic Auditing</div>
+            <p>Relying on self-regulation by tech corporations is widely recognized as ethically inadequate.</p>
+            <p><span class="hl-yellow">Independent third-party algorithmic auditing</span> subjects models to rigorous red-teaming, testing for discriminatory output differentials across sensitive intersectional identities prior to public deployment.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 സ്വതന്ത്ര അൽഗോരിതമിക് ഓഡിറ്റിംഗ്</div>
+            <p>ടെക് കമ്പനികളുടെ സ്വന്തം മേൽനോട്ടത്തിൽ മാത്രം വിശ്വസിക്കുന്നത് സുരക്ഷിതമല്ലെന്ന് ലോകം തിരിച്ചറിഞ്ഞിട്ടുണ്ട്.</p>
+            <p><span class="hl-yellow">സ്വതന്ത്രരായ വിദഗ്ദ്ധ സമിതികൾ അൽഗോരിതങ്ങളെ സമഗ്രമായി പരിശോധിച്ച് (Algorithmic Auditing)</span>, വിവിധ ജനവിഭാഗങ്ങളോട് മോഡൽ പക്ഷപാതം കാണിക്കുന്നുണ്ടോ എന്ന് പരസ്യപ്പെടുത്തുന്നതിന് മുൻപ് ഉറപ്പാക്കണം.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Model Cards and Datasheets for Datasets</div>
+            <p>Pioneering ethicists propose standardized documentation: <span class="hl-green">Model Cards</span> and <span class="hl-green">Datasheets for Datasets</span>.</p>
+            <p>These documents explicitly disclose training demographics, evaluation metrics, performance limitations, and intended operating contexts, <span class="hl-yellow">institutionalizing accountability and radical transparency</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 മോഡൽ കാർഡുകളും സുതാര്യതയും</div>
+            <p>സാങ്കേതികവിദ്യയിലെ സുതാര്യത ഉറപ്പാക്കാൻ <span class="hl-green">മോഡൽ കാർഡുകൾ (Model Cards)</span>, ഡാറ്റാ ഷീറ്റുകൾ എന്നിവ ഉപയോഗിക്കുന്നു.</p>
+            <p>എന്തെല്ലാം വിവരങ്ങൾ ഉപയോഗിച്ചാണ് സിസ്റ്റം പഠിച്ചത്, ഇതിന്റെ പോരായ്മകൾ എന്തൊക്കെയാണ്, എവിടെയൊക്കെ ഇത് പ്രയോഗിക്കാൻ പാടില്ല എന്ന വിവരങ്ങൾ പരസ്യപ്പെടുത്തുന്നത് വഴി <span class="hl-yellow">ഉത്തരവാദിത്തം സ്ഥാപിച്ചെടുക്കാൻ</span> സാധിക്കുന്നു.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 3: Auditing & Transparency</span>
+      <span>Page 9</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 3</span>
+        <span class="top-bar-right">Page 10 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">10. Legal Frameworks, Human Rights and Democratic Oversight</div>
+          <div class="section-title-ml">നിയമ ചട്ടക്കൂടുകൾ, മനുഷ്യാവകാശങ്ങൾ & ജനാധിപത്യ നിയന്ത്രണം</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Enforcing Non-Discrimination Protections</div>
+            <p>Constitutional principles of equal protection mandate that automated systems cannot circumvent civil rights statutes.</p>
+            <p><span class="hl-yellow">Legal regulations require developers to bear legal liability for disparate outcomes</span>, guaranteeing that individuals harmed by algorithmic decisions possess a legally enforceable <span class="hl-green">Right to Explanation</span> and redress.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ഭരണഘടനാപരമായ തുല്യനീതി സംരക്ഷണം</div>
+            <p>ഭരണഘടന ഉറപ്പുനൽകുന്ന തുല്യനീതിയും പൗരാവകാശങ്ങളും നിഷേധിക്കാൻ ഒരു അൽഗോരിതത്തിനും അനുവാദമില്ല.</p>
+            <p>എഐ സംവിധാനങ്ങൾ വരുത്തുന്ന വിവേചനങ്ങൾക്ക് നിർമ്മാതാക്കൾ ശിക്ഷാർഹരാണെന്ന് <span class="hl-yellow">നിയമങ്ങൾ അനുശാസിക്കുന്നു</span>; കൂടാതെ എഐ തള്ളിക്കളഞ്ഞ തീരുമാനങ്ങൾക്ക് പിന്നിലെ കാരണം ചോദിച്ചറിയാനുള്ള അവകാശവും (<span class="hl-green">Right to Explanation</span>) പൗരനുണ്ട്.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Participatory Design with Impacted Communities</div>
+            <p>Democratizing AI governance requires incorporating the voices of historically marginalized groups into the initial formulation of algorithmic models.</p>
+            <p><span class="hl-yellow">Participatory design ensures that ethical values and social justice priorities define technical parameters</span>, preventing high-tech solutions from replicating past colonial or patriarchal oppression.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 സമൂഹത്തിന്റെ പങ്കാളിത്തത്തോടുകൂടിയ നിർമ്മാണം</div>
+            <p>എഐ സാങ്കേതികവിദ്യയുടെ ഗുണദോഷങ്ങൾ അനുഭവിക്കുന്ന സാധാരണ ജനങ്ങളെയും പിന്നാക്ക വിഭാഗങ്ങളെയും ഈ സംവിധാനങ്ങളുടെ രൂപകൽപ്പനയിൽ പങ്കാളികളാക്കണം.</p>
+            <p><span class="hl-yellow">പങ്കാളിത്ത രൂപകൽപ്പന (Participatory Design) വഴി സാമൂഹിക നീതിക്ക് മുൻഗണന നൽകിക്കൊണ്ട്</span> ചരിത്രപരമായ വിവേചനങ്ങൾ ആവർത്തിക്കപ്പെടാതെ നോക്കാൻ സാധിക്കുന്നു.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 3: Legal & Democratic Oversight</span>
+      <span>Page 10</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 3</span>
+        <span class="top-bar-right">Page 11 of 12 ✨ Bilingual Study Guide</span>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">11. Academic Curriculum Practice Questions & Analytical Drill</div>
+          <div class="section-title-ml">സർവ്വകലാശാല പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ & വിശകലന പരിശീലനം</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Knock Your Brain: Official Curriculum MCQs</div>
+            <p><strong>Q1: Why does excluding protected attributes fail to eliminate bias?</strong><br>
+            A) Algorithms forget rules | <span class="hl-yellow">B) Proxies like zip codes and browsing patterns correlate tightly with protected traits</span> | C) Algorithms become too fast | D) Data storage limitations<br>
+            <em>Answer: B · The fallacy of fairness through blindness due to proxy variables.</em></p>
+            <p><strong>Q2: What is the primary cause of algorithmic bias in recruitment?</strong><br>
+            A) Random software bugs | <span class="hl-yellow">B) Machine learning trained on historical datasets reflecting male-dominated past hiring</span> | C) Excessive memory capacity | D) Lack of math models<br>
+            <em>Answer: B · Ingestion and amplification of historical human prejudices.</em></p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 സർവ്വകലാശാല പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ</div>
+            <p><strong>ചോദ്യം 1: ജാതിയും ലിംഗവും ഡാറ്റയിൽ നിന്ന് ഒഴിവാക്കിയതുകൊണ്ട് മാത്രം വിവേചനം അവസാനിക്കാത്തത് എന്തുകൊണ്ട്?</strong><br>
+            A) എഐ നിയമങ്ങൾ മറന്നുപോകുന്നു | <span class="hl-yellow">B) പിൻകോഡും മറ്റ് പ്രോക്സി വേരിയബിളുകളും വഴി ഇത്തരം വിവരങ്ങൾ അൽഗോരിതം കണ്ടെത്തുന്നു</span> | C) കമ്പ്യൂട്ടറിന്റെ വേഗത കൂടുന്നു | D) മെമ്മറിയുടെ കുറവ്<br>
+            <em>ശരിയുത്തരം: B · പ്രോക്സി വേരിയബിളുകളിലൂടെയുള്ള പരോക്ഷ വിവേചനം.</em></p>
+            <p><strong>ചോദ്യം 2: തൊഴിൽ തിരഞ്ഞെടുപ്പിൽ എഐ പക്ഷപാതം കാണിക്കാൻ പ്രധാന കാരണമെന്ത്?</strong><br>
+            A) പ്രോഗ്രാമിംഗിലെ സാങ്കേതിക പിഴവ് | <span class="hl-yellow">B) മുൻകാലങ്ങളിലെ പുരുഷ മേധാവിത്വപരമായ ചരിത്ര ഡാറ്റയിൽ നിന്ന് എഐ പഠിച്ചെടുത്തത് കാരണം</span> | C) വലിയ മെമ്മറി ഉള്ളതിനാൽ | D) കണക്കുകൾ തെറ്റിയതുകൊണ്ട്<br>
+            <em>ശരിയുത്തരം: B · ചരിത്രപരമായ വിവേചനങ്ങളെ അൽഗോരിതം സത്യമായി സ്വീകരിച്ചു.</em></p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Core Analytical Essay Topics</div>
+            <p><strong>1. The Impossibility Theorem of Fairness:</strong> Explain why mathematical definitions of fairness conflict and discuss how policymakers should resolve this tension.</p>
+            <p><strong>2. Preventing Algorithmic Discrimination:</strong> Outline a comprehensive framework combining data debiasing, third-party auditing, and constitutional protections.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 പ്രധാന പരീക്ഷാ ഉപന്യാസ വിഷയങ്ങൾ</div>
+            <p><strong>1. നീതിയുടെ ഗണിതശാസ്ത്ര വൈരുദ്ധ്യം:</strong> എല്ലാ നീതിമാനദണ്ഡങ്ങളും ഒരേസമയം തൃപ്തിപ്പെടുത്താൻ കഴിയില്ലെന്ന ഗണിതശാസ്ത്ര സത്യത്തെക്കുറിച്ച് ചർച്ച ചെയ്യുക.</p>
+            <p><strong>2. അൽഗോരിതമിക് വിവേചനം തടയൽ:</strong> ഡാറ്റാ ശുദ്ധീകരണം, സ്വതന്ത്ര ഓഡിറ്റിംഗ്, ഭരണഘടനാ അവകാശങ്ങൾ എന്നിവ സംയോജിപ്പിച്ചുള്ള പ്രതിരോധ തന്ത്രം രൂപപ്പെടുത്തുക.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 3: Exam Drill & Q&As</span>
+      <span>Page 11</span>
+    </div>
+  </div>
+
+  <div class="page-container page-exam-grid">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 3 (Chapter 16)</span>
+        <span class="top-bar-right">Page 12 of 12 ✨ High-Yield Exam Recall Cheat-Sheet</span>
+      </div>
+
+      <div class="exam-header-compact">
+        <div class="exam-title-badge">🎯 MUST-KNOW EXAM RECALL COMPENDIUM</div>
+        <div class="exam-hero-title">20 Core Academic Concepts & Analytical Pillars</div>
+        <div class="exam-hero-sub">അൽഗോരിതമിക് പക്ഷപാതവും നീതിയും — പരീക്ഷാ കേന്ദ്രീകൃത സമഗ്ര ആശയങ്ങൾ</div>
+      </div>
+
+      <div class="points-grid">
+        <!-- 1 -->
+        <div class="point-card" style="border-left: 3.5px solid #e11d48;">
+          <div class="point-header"><span class="point-tag" style="background:#e11d48;">⚖️ Core Concept</span><span class="point-title-en">Algorithmic Bias</span></div>
+          <div class="point-title-ml">അൽഗോരിതമിക് പക്ഷപാതം</div>
+          <div class="point-body">Systematic and repeatable errors in computer systems that create unfair outcomes across protected classes.</div>
+          <div class="point-body-ml">പ്രത്യേക ജനവിഭാഗങ്ങളോട് അന്യായമായ വിവേചനം സൃഷ്ടിക്കുന്ന വ്യവസ്ഥാപിത പിഴവുകൾ.</div>
+        </div>
+        <!-- 2 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🏛️ Origin</span><span class="point-title-en">Historical Data Prejudice</span></div>
+          <div class="point-title-ml">ചരിത്രപരമായ മുൻവിധികൾ</div>
+          <div class="point-body">Pre-existing societal discrimination reflected directly in training data and assimilated by machine learning models.</div>
+          <div class="point-body-ml">സമൂഹത്തിൽ പണ്ടുതൊട്ടേ നിലനിന്നിരുന്ന വിവേചനങ്ങൾ ഡാറ്റയിലൂടെ എഐ പഠിച്ചെടുക്കൽ.</div>
+        </div>
+        <!-- 3 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🔍 Proxy Trap</span><span class="point-title-en">Proxy Discrimination</span></div>
+          <div class="point-title-ml">പ്രോക്സി വിവേചനം</div>
+          <div class="point-body">Neutral variables (e.g. zip codes, alumni networks) encoding sensitive traits and replicating unfair treatment.</div>
+          <div class="point-body-ml">പിൻകോഡ് പോലുള്ള വിവരങ്ങളിലൂടെ ജാതിയും വംശവും കണ്ടെത്തി വിവേചനം കാണിക്കൽ.</div>
+        </div>
+        <!-- 4 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🚫 Fallacy</span><span class="point-title-en">Fairness through Blindness</span></div>
+          <div class="point-title-ml">'അന്ധത വഴിയുള്ള നീതി' എന്ന മിഥ്യ</div>
+          <div class="point-body">The erroneous assumption that removing sensitive demographic labels prevents algorithmic discrimination.</div>
+          <div class="point-body-ml">കോളങ്ങൾ നീക്കം ചെയ്തതുകൊണ്ട് മാത്രം വിവേചനം അവസാനിക്കുമെന്ന തെറ്റായ ധാരണ.</div>
+        </div>
+        <!-- 5 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">📉 Sample Deficit</span><span class="point-title-en">Representation Bias</span></div>
+          <div class="point-title-ml">പ്രാതിനിധ്യ പക്ഷപാതം</div>
+          <div class="point-body">Under-representation of minority demographics in training datasets leading to severe error spikes.</div>
+          <div class="point-body-ml">പരിശീലന വിവരങ്ങളിൽ ന്യൂനപക്ഷങ്ങളുടെ വിവരങ്ങൾ കുറവായതിനാൽ വരുന്ന ഗുരുതര പിഴവുകൾ.</div>
+        </div>
+        <!-- 6 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">👥 Human Flaw</span><span class="point-title-en">Labeling / Annotator Bias</span></div>
+          <div class="point-title-ml">ലേബലിംഗ് പക്ഷപാതം</div>
+          <div class="point-body">Subjective prejudices of human annotators embedded into foundational 'ground truth' classifications.</div>
+          <div class="point-body-ml">ഡാറ്റ തരംതിരിക്കുന്ന മനുഷ്യരുടെ സ്വന്തം മുൻവിധികൾ എഐയുടെ ലക്ഷ്യമായി മാറുന്ന അവസ്ഥ.</div>
+        </div>
+        <!-- 7 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">💼 Recruitment</span><span class="point-title-en">Automated Hiring Disparity</span></div>
+          <div class="point-title-ml">തൊഴിൽ തിരഞ്ഞെടുപ്പിലെ പക്ഷപാതം</div>
+          <div class="point-body">Algorithms penalizing female and minority credentials based on past male-dominated corporate hiring.</div>
+          <div class="point-body-ml">പഴയ പുരുഷ മേധാവിത്വ ഡാറ്റ കാരണം സ്ത്രീകളുടെ റെസ്യുമെകൾ തഴയപ്പെടുന്നത്.</div>
+        </div>
+        <!-- 8 -->
+        <div class="point-card" style="border-left: 3.5px solid #4f46e5;">
+          <div class="point-header"><span class="point-tag" style="background:#4f46e5;">📊 Metric</span><span class="point-title-en">Demographic Parity</span></div>
+          <div class="point-title-ml">ഡെമോഗ്രാഫിക് പാരിറ്റി</div>
+          <div class="point-body">Requiring identical positive outcome rates across all protected demographic subgroups.</div>
+          <div class="point-body-ml">എല്ലാ വിഭാഗങ്ങൾക്കും ഒരേ അനുപാതത്തിൽ വിജയസാദ്ധ്യത ഉറപ്പാക്കുന്ന സമത്വ രീതി.</div>
+        </div>
+        <!-- 9 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">⚖️ Metric</span><span class="point-title-en">Equalized Odds</span></div>
+          <div class="point-title-ml">ഇക്വലൈസ്ഡ് ഓഡ്സ്</div>
+          <div class="point-body">Ensuring true positive and false positive rates are equal across all protected demographic groups.</div>
+          <div class="point-body-ml">ശരിയായ തിരഞ്ഞെടുപ്പിലും തെറ്റായ നിരസിക്കലിലും ഗ്രൂപ്പുകൾക്കിടയിൽ തുല്യത പാലിക്കൽ.</div>
+        </div>
+        <!-- 10 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">🧩 Paradox</span><span class="point-title-en">Impossibility Theorem of Fairness</span></div>
+          <div class="point-title-ml">നീതിയുടെ അസാദ്ധ്യതാ സിദ്ധാന്തം</div>
+          <div class="point-body">Mathematical proof that demographic parity and predictive parity cannot both hold under unequal base rates.</div>
+          <div class="point-body-ml">വ്യത്യസ്ത നീതിമാനദണ്ഡങ്ങൾ ഒരേസമയം ഗണിതശാസ്ത്രപരമായി പൂർണ്ണമാക്കാൻ കഴിയില്ലെന്ന തെളിവ്.</div>
+        </div>
+        <!-- 11 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🧹 Pre-Stage</span><span class="point-title-en">Pre-processing Debiasing</span></div>
+          <div class="point-title-ml">പ്രീ-പ്രോസസ്സിംഗ് ഡീബയാസിംഗ്</div>
+          <div class="point-body">Re-sampling, re-weighting, and augmenting historical datasets prior to model training.</div>
+          <div class="point-body-ml">മോഡൽ പഠിക്കുന്നതിന് മുൻപ് തന്നെ ഡാറ്റയിലെ അസമത്വങ്ങൾ പരിഹരിച്ചു മാറ്റൽ.</div>
+        </div>
+        <!-- 12 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">⚙️ In-Stage</span><span class="point-title-en">In-processing Regularization</span></div>
+          <div class="point-title-ml">ഇൻ-പ്രോസസ്സിംഗ് റെഗുലറൈസേഷൻ</div>
+          <div class="point-body">Incorporating explicit mathematical fairness penalty terms into model objective functions.</div>
+          <div class="point-body-ml">വിവേചനപരമായ തീരുമാനങ്ങൾക്ക് സ്വയം പിഴ ചുമത്തുന്ന അൽഗോരിതങ്ങൾ നിർമ്മിക്കൽ.</div>
+        </div>
+        <!-- 13 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🎯 Post-Stage</span><span class="point-title-en">Post-processing Thresholding</span></div>
+          <div class="point-title-ml">പോസ്റ്റ്-പ്രോസസ്സിംഗ് തിരുത്തലുകൾ</div>
+          <div class="point-body">Adjusting classification thresholds across demographic groups to ensure equitable distribution.</div>
+          <div class="point-body-ml">തീരുമാനങ്ങൾ പുറപ്പെടുവിക്കുമ്പോൾ കട്ട്-ഓഫ് മാർക്കുകൾ നീതിപൂർവ്വമായി പുനർക്രമീകരിക്കൽ.</div>
+        </div>
+        <!-- 14 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">⚠️ Harm</span><span class="point-title-en">Disparate Impact</span></div>
+          <div class="point-title-ml">ഡിസ്പറേറ്റ് ഇംപാക്ട്</div>
+          <div class="point-body">Facially neutral algorithmic policies producing substantially unequal outcomes for protected groups.</div>
+          <div class="point-body-ml">പുറമേക്ക് നിഷ്പക്ഷമെന്ന് തോന്നിക്കുന്ന നിയമങ്ങൾ ഒരു പ്രത്യേക വിഭാഗത്തിന് ദോഷകരമാകുന്നത്.</div>
+        </div>
+        <!-- 15 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🔍 Independent</span><span class="point-title-en">Algorithmic Auditing</span></div>
+          <div class="point-title-ml">അൽഗോരിതമിക് ഓഡിറ്റിംഗ്</div>
+          <div class="point-body">Rigorous red-teaming and empirical scrutiny by independent third parties prior to commercial release.</div>
+          <div class="point-body-ml">സ്വതന്ത്ര വിദഗ്ദ്ധ സമിതികൾ നടത്തുന്ന സുരക്ഷാ-പക്ഷപാത പരിശോധനകൾ.</div>
+        </div>
+        <!-- 16 -->
+        <div class="point-card" style="border-left: 3.5px solid #e11d48;">
+          <div class="point-header"><span class="point-tag" style="background:#e11d48;">📋 Open Book</span><span class="point-title-en">Model Cards</span></div>
+          <div class="point-title-ml">മോഡൽ കാർഡുകൾ (Model Cards)</div>
+          <div class="point-body">Standardized benchmark disclosures detailing dataset characteristics, limitations, and evaluation metrics.</div>
+          <div class="point-body-ml">സിസ്റ്റത്തിന്റെ പരിമിതികളും പഠന വിവരങ്ങളും പരസ്യപ്പെടുത്തുന്ന രേഖകൾ.</div>
+        </div>
+        <!-- 17 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">⚖️ Redress</span><span class="point-title-en">Right to Explanation</span></div>
+          <div class="point-title-ml">വിശദീകരണം ചോദിക്കാനുള്ള അവകാശം</div>
+          <div class="point-body">Legally binding mandate giving affected individuals the right to understand automated rejections.</div>
+          <div class="point-body-ml">അൽഗോരിതം തീരുമാനത്തിന് പിന്നിലെ കാരണം അറിയാനുള്ള നിയമപരമായ പൗരാവകാശം.</div>
+        </div>
+        <!-- 18 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🤝 Inclusion</span><span class="point-title-en">Participatory Design</span></div>
+          <div class="point-title-ml">പങ്കാളിത്ത രൂപകൽപ്പന</div>
+          <div class="point-body">Engaging marginalized communities in system formulation to ensure human rights define core architecture.</div>
+          <div class="point-body-ml">ബാധിതരാകുന്ന ജനവിഭാഗങ്ങളെ കൂടി ഉൾപ്പെടുത്തി സാങ്കേതികവിദ്യ രൂപകൽപ്പന ചെയ്യൽ.</div>
+        </div>
+        <!-- 19 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🔄 Feedback</span><span class="point-title-en">Self-Fulfilling Loops</span></div>
+          <div class="point-title-ml">സ്വയം പ്രവർത്തിക്കുന്ന ദുഷിച്ച വലയം</div>
+          <div class="point-body">Biased predictions causing real-world deprivation that re-enters datasets as confirmatory evidence.</div>
+          <div class="point-body-ml">തെറ്റായ തീരുമാനങ്ങൾ മൂലം ജനങ്ങൾ ദരിദ്രരാവുകയും അത് വീണ്ടും പക്ഷപാതത്തിന് കാരണമാവുകയും ചെയ്യൽ.</div>
+        </div>
+        <!-- 20 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🛡️ Constitutional</span><span class="point-title-en">Equal Protection Doctrine</span></div>
+          <div class="point-title-ml">ഭരണഘടനാ തുല്യനീതി</div>
+          <div class="point-body">Automated intelligence systems must remain strictly subordinate to universal human rights statutes.</div>
+          <div class="point-body-ml">എഐ സംവിധാനങ്ങൾ മനുഷ്യാവകാശങ്ങൾക്കും ഭരണഘടനാ തത്ത്വങ്ങൾക്കും വിധേയമായിരിക്കണം.</div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 3: 20 Core Academic Concepts</span>
+      <span>Page 12</span>
+    </div>
+  </div>
+</body></html>

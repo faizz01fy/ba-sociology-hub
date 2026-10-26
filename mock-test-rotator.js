@@ -17,14 +17,14 @@
   // Curated pools of verified high-resolution, subject-specific Unsplash photography
   var SUBJECT_PHOTO_POOLS = {
     history: [
-      { id: '1695964744922-c7d01b4761cb', desc: 'Historic Kerala palace with traditional timber and tiled architecture' },
+      { id: '1695964744922-c7d01b4761cb', desc: 'Padmanabhapuram Palace traditional Kerala timber architecture' },
       { id: '1599940824399-b87987ceb72a', desc: 'Ancient stone carving and prehistoric archaeology cave' },
-      { id: '1600100397608-f010f4433ba4', desc: 'Ancient Indian stone temple carvings and historical epigraphy' },
       { id: '1544620347-c4fd4a3d5957', desc: 'Ancient monolithic stone monuments and prehistoric megaliths' },
       { id: '1582555172866-f73bb12a2ab3', desc: 'Archaeological artefacts and ancient heritage pottery' },
       { id: '1507525428034-b723cf961d3e', desc: 'Historic maritime trade coast and ancient harbor waves' },
       { id: '1602216056096-3b40cc0c9944', desc: 'Serene Kerala backwaters and historic trade routes' },
-      { id: '1514565131-fce0801e5785', desc: 'Ancient heritage architecture in tropical landscape' }
+      { id: '1514565131-fce0801e5785', desc: 'Ancient stone pillar architecture and historic temple sanctum' },
+      { id: '1584551246679-0daf3d275d0f', desc: 'Traditional Kerala temple lamp and heritage brass craft' }
     ],
 
     english: [
@@ -159,11 +159,20 @@
           };
           imgEl.onerror = function () {
             imgEl.style.opacity = '1';
+            if (pool && pool[0] && imgEl.src !== buildUnsplashUrl(pool[0].id)) {
+              imgEl.src = buildUnsplashUrl(pool[0].id);
+            }
             imgEl.onload = null;
             imgEl.onerror = null;
           };
         } else {
           imgEl.style.opacity = '1';
+          imgEl.onerror = function () {
+            if (pool && pool[0] && imgEl.src !== buildUnsplashUrl(pool[0].id)) {
+              imgEl.src = buildUnsplashUrl(pool[0].id);
+            }
+            imgEl.onerror = null;
+          };
         }
 
         // Let the real, lazy image load in place instead of preloading every card.

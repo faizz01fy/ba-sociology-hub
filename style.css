@@ -610,7 +610,7 @@ strong,b,summary,.eyebrow,.subject-tag,.test-label,.module-eyebrow,.ai-study-eye
 .semester-context-marquee {
   display: flex;
   width: max-content;
-  animation: semester-context-scroll 24s linear infinite;
+  animation: semester-context-scroll 32s linear infinite;
   will-change: transform;
 }
 
@@ -621,123 +621,189 @@ strong,b,summary,.eyebrow,.subject-tag,.test-label,.module-eyebrow,.ai-study-eye
 .marquee-group {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding-right: 3.5rem;
+  gap: 10px;
+  padding-right: 2.8rem;
   white-space: nowrap;
   flex: none;
 }
 
-/* 1. University Badge: Amber Gold Gradient Pill with White Dot */
+/* 1. University Badge: Radiant Golden Sunburst Capsule */
 .ticker-badge-univ {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 3px 11px;
+  gap: 7px;
+  padding: 4px 13px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
-  color: #1c1917;
+  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+  color: #1a1202;
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.45);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.6), 0 2px 6px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ticker-badge-univ:hover {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.85);
 }
 
 .ticker-dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #ffffff;
-  box-shadow: 0 0 6px #ffffff;
+  box-shadow: 0 0 8px #ffffff;
+  animation: tickerDotPulse 1.8s ease-in-out infinite;
+}
+@keyframes tickerDotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 0.75; }
 }
 
-/* 2. Sparkles with Radiant Glow */
+/* 2. Sparkles with Dynamic Twinkle Glow */
 .ticker-sparkle {
   display: inline-block;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1;
+  animation: sparkleTwinkle 2.5s ease-in-out infinite;
 }
 .ticker-sparkle-pink {
-  color: #f43f5e;
-  filter: drop-shadow(0 0 6px rgba(244, 63, 94, 0.85));
+  color: #ff2d75;
+  filter: drop-shadow(0 0 8px #ff2d75);
 }
 .ticker-sparkle-cyan {
-  color: #38bdf8;
-  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.85));
+  color: #00f2fe;
+  filter: drop-shadow(0 0 8px #00f2fe);
+}
+@keyframes sparkleTwinkle {
+  0%, 100% { transform: scale(0.9) rotate(0deg); opacity: 0.8; }
+  50% { transform: scale(1.35) rotate(24deg); opacity: 1; }
 }
 
-/* 3. Degree Program: Gradient Cyan-Violet Luminous Text */
+/* 3. Degree Program: Violet-Indigo Luminous Capsule */
 .ticker-degree {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 13px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(168, 85, 247, 0.4) 100%);
+  border: 1.5px solid rgba(167, 139, 250, 0.7);
+  color: #e0e7ff;
   font-weight: 800;
-  font-size: 13.5px;
-  letter-spacing: 0.05em;
-  background: linear-gradient(90deg, #38bdf8 0%, #818cf8 50%, #f472b6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.4));
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.75);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.ticker-degree:hover {
+  transform: translateY(-1px) scale(1.03);
+  border-color: rgba(192, 132, 252, 0.95);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.7);
 }
 
-/* 4. Subjects Count Badge: Neon Mint / Emerald Pill */
+/* 4. Subjects Count Badge: Neon Emerald Capsule */
 .ticker-badge-subjects {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 3px 10px;
+  gap: 6px;
+  padding: 4px 12px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.28) 0%, rgba(5, 150, 105, 0.4) 100%);
-  border: 1px solid rgba(52, 211, 153, 0.6);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.32) 0%, rgba(5, 150, 105, 0.48) 100%);
+  border: 1.5px solid rgba(52, 211, 153, 0.8);
   color: #6ee7b7;
   font-weight: 800;
-  font-size: 11px;
+  font-size: 11.5px;
   letter-spacing: 0.04em;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ticker-badge-subjects:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.8);
 }
 
-/* 5. Bullet Separator */
+/* 5. Glowing Separator */
 .ticker-sep {
-  color: rgba(255, 255, 255, 0.35);
-  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 10px;
+  margin: 0 1px;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
 }
 
-/* 6. Feature Pills with Distinct Vibrant Colors */
+/* 6. Colorful Feature Pills */
 .ticker-pill {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
   font-weight: 700;
-  font-size: 12.5px;
+  font-size: 11.5px;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ticker-pill:hover {
+  transform: translateY(-1px) scale(1.04);
 }
 
 .ticker-icon {
   font-size: 13px;
   line-height: 1;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
 }
 
-/* Rose / Coral for Notes */
+/* Rose / Pink Capsule for Notes */
 .ticker-pill-notes {
-  color: #fb7185;
-  filter: drop-shadow(0 0 5px rgba(251, 113, 133, 0.45));
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.28) 0%, rgba(225, 29, 72, 0.45) 100%);
+  border: 1.5px solid rgba(251, 113, 133, 0.75);
+  color: #ffe4e6;
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  text-shadow: 0 0 6px rgba(244, 63, 94, 0.55);
+}
+.ticker-pill-notes:hover {
+  box-shadow: 0 0 18px rgba(244, 63, 94, 0.75);
 }
 
-/* Electric Cyan for PDFs */
+/* Electric Cyan Capsule for PDFs */
 .ticker-pill-pdfs {
-  color: #38bdf8;
-  filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.45));
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.28) 0%, rgba(2, 132, 199, 0.45) 100%);
+  border: 1.5px solid rgba(56, 189, 248, 0.75);
+  color: #e0f2fe;
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  text-shadow: 0 0 6px rgba(14, 165, 233, 0.55);
+}
+.ticker-pill-pdfs:hover {
+  box-shadow: 0 0 18px rgba(14, 165, 233, 0.75);
 }
 
-/* Vivid Amber for Revision */
+/* Vivid Golden Amber Capsule for Revision */
 .ticker-pill-revision {
-  color: #fbbf24;
-  filter: drop-shadow(0 0 5px rgba(251, 191, 36, 0.45));
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.28) 0%, rgba(202, 138, 4, 0.45) 100%);
+  border: 1.5px solid rgba(250, 204, 21, 0.75);
+  color: #fef9c3;
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  text-shadow: 0 0 6px rgba(234, 179, 8, 0.55);
+}
+.ticker-pill-revision:hover {
+  box-shadow: 0 0 18px rgba(234, 179, 8, 0.75);
 }
 
-/* Royal Lavender for Mock Tests */
+/* Royal Violet Capsule for Mock Tests */
 .ticker-pill-tests {
-  color: #c084fc;
-  filter: drop-shadow(0 0 5px rgba(192, 132, 252, 0.45));
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.3) 0%, rgba(126, 34, 206, 0.48) 100%);
+  border: 1.5px solid rgba(192, 132, 252, 0.8);
+  color: #fae8ff;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  text-shadow: 0 0 6px rgba(168, 85, 247, 0.55);
+}
+.ticker-pill-tests:hover {
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.75);
 }
 
 @keyframes semester-context-scroll {
@@ -786,22 +852,24 @@ strong,b,summary,.eyebrow,.subject-tag,.test-label,.module-eyebrow,.ai-study-eye
     -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%) !important;
   }
   .marquee-group {
-    gap: 9px !important;
-    padding-right: 2.5rem !important;
+    gap: 7px !important;
+    padding-right: 2rem !important;
   }
   .ticker-badge-univ {
-    padding: 2px 8px !important;
-    font-size: 10px !important;
+    padding: 2.5px 8px !important;
+    font-size: 9.5px !important;
   }
   .ticker-degree {
-    font-size: 12px !important;
-  }
-  .ticker-badge-subjects {
-    padding: 2px 8px !important;
+    padding: 2.5px 9px !important;
     font-size: 10px !important;
   }
+  .ticker-badge-subjects {
+    padding: 2.5px 8px !important;
+    font-size: 9.5px !important;
+  }
   .ticker-pill {
-    font-size: 11.5px !important;
+    padding: 2.5px 8px !important;
+    font-size: 10px !important;
   }
 }
 

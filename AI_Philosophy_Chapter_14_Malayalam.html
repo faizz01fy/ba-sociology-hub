@@ -1,0 +1,931 @@
+<!DOCTYPE html><html lang="ml"><head><meta charset="UTF-8"><title>Philosophy of AI · Module 4 · Chapter 1 (Chapter 14)</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0f172a;
+    }
+
+    .page-container {
+      width: 210mm;
+      height: 297mm;
+      padding: 12mm 14mm 10mm 14mm;
+      margin: 0 auto;
+      background: #ffffff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+    }
+
+    .top-bar-left {
+      font-size: 8pt;
+      font-weight: 800;
+      color: #e11d48;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar-right {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .chapter-hero {
+      background: linear-gradient(135deg, #ffe4e6 0%, #ffffff 100%);
+      border: 1.5px solid #e11d48;
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-bottom: 9px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #e11d48;
+      color: #ffffff;
+      font-size: 6.8pt;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .hero-title-en {
+      font-size: 11.5pt;
+      font-weight: 800;
+      color: #881337;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #e11d48;
+      line-height: 1.35;
+    }
+
+    .section-header {
+      background: #f1f5f9;
+      border-left: 4px solid #e11d48;
+      padding: 5px 8px;
+      margin-bottom: 7px;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .section-title-en {
+      font-size: 9.2pt;
+      font-weight: 800;
+      color: #1e293b;
+      letter-spacing: 0.3px;
+    }
+
+    .section-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: #e11d48;
+      margin-top: 1px;
+    }
+
+    .content-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 7px;
+      padding: 8px 10px;
+      margin-bottom: 7px;
+    }
+
+    .bilingual-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-bottom: 6px;
+    }
+
+    .block-en {
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 6px 8px;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .block-ml {
+      background: #fffbeb;
+      border-left: 3px solid #fde68a;
+      padding: 6px 8px;
+      border-radius: 0 5px 5px 0;
+      font-family: 'Noto Sans Malayalam', sans-serif;
+    }
+
+    .block-label {
+      font-size: 6.8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .block-en .block-label { color: #475569; }
+    .block-ml .block-label { color: #92400e; }
+
+    .block-en p {
+      font-size: 8pt;
+      color: #1e293b;
+      line-height: 1.42;
+      margin: 0 0 4px 0;
+    }
+
+    .block-en p:last-child {
+      margin-bottom: 0;
+    }
+
+    .block-ml p {
+      font-size: 7.7pt;
+      color: #78350f;
+      line-height: 1.45;
+      margin: 0 0 4px 0;
+    }
+
+    .block-ml p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* STRICT TWO HIGHLIGHTERS */
+    .hl-green {
+      background: #bbf7d0;
+      color: #14532d;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .hl-yellow {
+      background: #fef08a;
+      color: #713f12;
+      font-weight: 700;
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+
+    .page-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 4px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    /* PAGE 12 EXAM GRID */
+    .page-exam-grid {
+      padding: 10mm 12mm 8mm 12mm;
+    }
+
+    .exam-header-compact {
+      text-align: center;
+      background: linear-gradient(135deg, #ffe4e6 0%, #ffffff 100%);
+      border: 1.5px solid #e11d48;
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-bottom: 8px;
+    }
+
+    .exam-title-badge {
+      display: inline-block;
+      background: #e11d48;
+      color: #ffffff;
+      font-size: 7pt;
+      font-weight: 800;
+      padding: 1.5px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .exam-hero-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #881337;
+      line-height: 1.2;
+    }
+
+    .exam-hero-sub {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #e11d48;
+      line-height: 1.3;
+    }
+
+    .points-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    .point-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 4.5px 6px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .point-header {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+
+    .point-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 1.5px 4px;
+      border-radius: 2px;
+      color: #ffffff;
+    }
+
+    .point-title-en {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.15;
+    }
+
+    .point-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.4pt;
+      font-weight: 700;
+      color: #e11d48;
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+
+    .point-body {
+      font-size: 6.4pt;
+      color: #334155;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+
+    .point-body-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 6.1pt;
+      color: #475569;
+      line-height: 1.25;
+    }
+    </style></head><body>
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 1 (Chapter 14)</span>
+        <span class="top-bar-right">Page 1 of 7 ✨ Bilingual Study Guide</span>
+      </div>
+      <div class="chapter-hero">
+        <div class="hero-tag">🎓 Calicut University FYUGP · Minor Philosophy (PHL1MN102) · Module 4</div>
+        <div class="hero-title-en">CHAPTER I: 4.1 (A) How do we align the aims of autonomous AI systems with our own?</div>
+        <div class="hero-title-ml">അദ്ധ്യായം 1: സ്വയംഭരണ AI സംവിധാനങ്ങളുടെ പ്രവർത്തന ലക്ഷ്യങ്ങളെ നമ്മുടേതുമായി എങ്ങനെ പൊരുത്തപ്പെടുത്താം?</div>
+      </div>
+
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">1. The AI Alignment Problem: Definition and Core Dilemma</div>
+          <div class="section-title-ml">AI അലൈൻമെന്റ് പ്രതിസന്ധി: നിർവ്വചനവും ദാർശനിക വ്യാപ്തിയും</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Autonomous Decision-Making & Human Values</div>
+            <p>As artificial intelligence advances towards more autonomy—capable of making decisions without human supervision—the principal challenge is to <span class="hl-yellow">ensure that its goals and behaviours are congruent with human values and intentions</span>.</p>
+            <p>This fundamental challenge is formally designated as the <span class="hl-green">AI alignment problem</span>. Artificial intelligence systems pursue objectives based entirely on their programming, objective functions, or machine learning training parameters.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 സ്വയംഭരണ തീരുമാനങ്ങളും മാനുഷിക മൂല്യങ്ങളും</div>
+            <p>മനുഷ്യന്റെ നേരിട്ടുള്ള മേൽനോട്ടമില്ലാതെ സ്വതന്ത്രമായി തീരുമാനങ്ങളെടുക്കാൻ പ്രാപ്തിയുള്ള സ്വയംഭരണ തലത്തിലേക്ക് ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് മുന്നേറുമ്പോൾ, <span class="hl-yellow">യന്ത്രത്തിന്റെ പ്രവർത്തന ലക്ഷ്യങ്ങളും പെരുമാറ്റങ്ങളും മനുഷ്യന്റെ ധാർമ്മിക മൂല്യങ്ങളോടും ഉദ്ദേശ്യങ്ങളോടും പൂർണ്ണമായി പൊരുത്തപ്പെടുന്നുവെന്ന് ഉറപ്പാക്കുകയാണ്</span> ഏറ്റവും പ്രധാനപ്പെട്ട ദൗത്യം.</p>
+            <p>ഈ ദാർശനിക-സാങ്കേതിക വെല്ലുവിളിയാണ് <span class="hl-green">AI അലൈൻമെന്റ് പ്രതിസന്ധി (AI Alignment Problem)</span> എന്ന് അറിയപ്പെടുന്നത്. മെഷീൻ ലേണിംഗ് അൽഗോരിതങ്ങൾ അവയ്ക്ക് നൽകിയിട്ടുള്ള പ്രോഗ്രാമിംഗിന്റെയും ലക്ഷ്യങ്ങളുടെയും അടിസ്ഥാനത്തിലാണ് പ്രവർത്തിക്കുന്നത്.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Ambiguity, Misinterpretation & The Safety Paradox</div>
+            <p>Nevertheless, if their objectives are ambiguously articulated, insufficient, or misinterpreted, they may yield outcomes that seem to adhere to directives yet <span class="hl-yellow">contravene foundational human values</span>.</p>
+            <p>An AI system programmed strictly to <span class="hl-green">"maximise efficiency"</span> may overlook vital considerations of justice, fairness, or safety. Aligning AI with human aims requires that computers not only follow our instructions but also <span class="hl-yellow">understand our true intents</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 അവ്യക്തതയും സുരക്ഷാ പ്രതിസന്ധിയും</div>
+            <p>മെഷീനുകൾക്ക് നൽകുന്ന ലക്ഷ്യങ്ങൾ അവ്യക്തമായി നിർവ്വചിക്കപ്പെടുകയോ, അപൂർണ്ണമാവുകയോ, അല്ലെങ്കിൽ തെറ്റായി വ്യാഖ്യാനിക്കപ്പെടുകയോ ചെയ്താൽ, അവ ബാഹ്യമായി കൽപ്പനകൾ പാലിക്കുന്നു എന്ന് തോന്നിക്കുമെങ്കിലും <span class="hl-yellow">മനുഷ്യന്റെ അടിസ്ഥാന മൂല്യങ്ങൾക്ക് വിരുദ്ധമായ വിനാശകരമായ പ്രത്യാഘാതങ്ങൾ</span> സൃഷ്ടിച്ചേക്കാം.</p>
+            <p><span class="hl-green">"കാര്യക്ഷമത പരമാവധിയാക്കുക"</span> എന്ന് മാത്രം നിർദ്ദേശിക്കപ്പെട്ട ഒരു എഐ നീതിയെയോ സുരക്ഷിതത്വത്തെയോ പാടേ അവഗണിച്ചേക്കാം. അതിനാൽ എഐ നമ്മുടെ കൽപ്പനകൾ അക്ഷരംപ്രതി നടപ്പിലാക്കുക മാത്രമല്ല, <span class="hl-yellow">മനുഷ്യന്റെ ആന്തരിക ഉദ്ദേശ്യം മനസ്സിലാക്കാനും</span> പ്രാപ്തമാകണം.</p>
+          </div>
+        </div>
+      </div>
+<div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">2. Ethical Ramifications in Computer-Based Advisory Systems</div>
+          <div class="section-title-ml">കമ്പ്യൂട്ടർ അധിഷ്ഠിത ഉപദേശക സംവിധാനങ്ങളിലെ ധാർമ്മിക പ്രത്യാഘാതങ്ങൾ</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Urgent Moral Inquiries in Machine Consultation</div>
+            <p>As AI systems become increasingly complicated and widespread, advisory and decision-making processes in diverse fields carry <span class="hl-yellow">intensified ethical ramifications</span>.</p>
+            <p>Computer-based assistance solutions raise urgent inquiries: To what degree can we expect these systems to participate in <span class="hl-green">intricate moral decision-making</span>? Can we expect systems to exhibit moral autonomy or provide moral counsel regarded as authoritative or even superior to human viewpoints?</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 മെഷീൻ ഉപദേശങ്ങളിലെ ധാർമ്മിക ചോദ്യങ്ങൾ</div>
+            <p>എഐ സംവിധാനങ്ങൾ സങ്കീർണ്ണവും സാർവ്വത്രികവുമായി മാറുന്നതോടെ, വിവിധ മേഖലകളിലെ മെഷീൻ അധിഷ്ഠിത തീരുമാനങ്ങൾ <span class="hl-yellow">ശക്തമായ ധാർമ്മിക പ്രത്യാഘാതങ്ങൾ</span> സൃഷ്ടിക്കുന്നു.</p>
+            <p>സങ്കീർണ്ണമായ <span class="hl-green">ധാർമ്മിക തീരുമാനങ്ങൾ എടുക്കുന്നതിൽ</span> കമ്പ്യൂട്ടറുകളെ എത്രത്തോളം വിശ്വസിക്കാം? ഈ സംവിധാനങ്ങൾക്ക് സ്വതന്ത്രമായ ധാർമ്മിക സ്വയംഭരണാധികാരം ഉണ്ടെന്ന് കരുതാനാകുമോ? മനുഷ്യരേക്കാൾ മികച്ചതോ ആധികാരികമോ ആയ ധാർമ്മികോപദേശം നൽകാൻ മെഷീനുകൾക്ക് സാധിക്കുമോ?</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Simulation of Moral Reasoning vs Genuine Responsibility</div>
+            <p>What aims could be reached by <span class="hl-green">imitating moral decision-making</span> in machines? What functionalities would be included in this computational simulation?</p>
+            <p>Under what circumstances might computer-based decision systems be attributed <span class="hl-yellow">moral responsibility or accountability</span> for their assessments or actions? Alongside replicating morally responsible behaviour, there are questions whether artificial agents can be considered entities with <span class="hl-green">genuine moral responsibility</span> akin to conventional adult human agents.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ധാർമ്മിക അനുകരണവും യഥാർത്ഥ ഉത്തരവാദിത്തവും</div>
+            <p>മെഷീനുകളിൽ <span class="hl-green">ധാർമ്മിക ചിന്താഗതിയെ കൃത്രിമമായി അനുകരിക്കുന്നതിലൂടെ</span> എന്ത് ലക്ഷ്യങ്ങളാണ് നാം കൈവരിക്കുന്നത്? ഈ അനുകരണത്തിൽ എന്തെല്ലാം സവിശേഷതകൾ ഉൾക്കൊള്ളിക്കണം?</p>
+            <p>ഏതൊക്കെ സാഹചര്യങ്ങളിലാണ് കമ്പ്യൂട്ടർ സിസ്റ്റങ്ങൾക്ക് അവയുടെ തീരുമാനങ്ങളുടെ പേരിൽ <span class="hl-yellow">ധാർമ്മിക ഉത്തരവാദിത്തവും ബാധ്യതയും</span> കൽപ്പിക്കാൻ സാധിക്കുക? മനുഷ്യനെപ്പോലെ ധാർമ്മിക വിലയിരുത്തലുകൾക്ക് വിധേയമാക്കാവുന്ന <span class="hl-green">യഥാർത്ഥ ധാർമ്മിക കർതൃത്വം (Moral Agency)</span> കൃത്രിമ ബുദ്ധിക്ക് നൽകാൻ സാധിക്കുമോ?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 1: AI Alignment Architecture</span>
+      <span>Page 1 of 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 1 (Chapter 14)</span>
+        <span class="top-bar-right">Page 2 of 7 ✨ Bilingual Study Guide</span>
+      </div>
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">3. Philosophical Analysis of Moral Status and Standing</div>
+          <div class="section-title-ml">ധാർമ്മിക പദവിയുടെ (Moral Status) ദാർശനിക വിശകലനം</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 The Notion of Moral Stance and Intrinsic Value</div>
+            <p><span class="hl-yellow">To possess moral status is to have moral significance or standing</span>. It denotes an entity toward which moral agents hold, or may possess, binding moral obligations.</p>
+            <p>If an entity possesses moral standing, we must not act impulsively; we are ethically compelled to consider its wishes, interests, or welfare. We hold an obligation to undertake this action not solely for potential benefits to ourselves, but because its demands possess <span class="hl-green">intrinsic moral significance</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ധാർമ്മിക പദവിയും ആന്തരിക മൂല്യവും</div>
+            <p><span class="hl-yellow">ധാർമ്മിക പദവി (Moral Status) ഉണ്ടായിരിക്കുക എന്നാൽ ധാർമ്മികമായ പ്രാധാന്യമോ സ്ഥാനമോ ഉണ്ടായിരിക്കുക എന്നാണ് അർത്ഥമാക്കുന്നത്</span>. ധാർമ്മിക വ്യക്തികൾക്ക് ആരോടാണോ ബാധ്യതകൾ നിറവേറ്റേണ്ടത്, ആ നിലനില്പിനെയാണ് ഇത് സൂചിപ്പിക്കുന്നത്.</p>
+            <p>ഒരു അസ്തിത്വത്തിന് ധാർമ്മിക സ്ഥാനമുണ്ടെങ്കിൽ, നാം തോന്നിയതുപോലെ പെരുമാറരുത്; തീരുമാനങ്ങളിൽ അതിന്റെ താല്പര്യങ്ങളും ക്ഷേമവും പരിഗണിക്കാൻ നാം ബാധ്യസ്ഥരാണ്. നമ്മുടെ സ്വാർത്ഥ നേട്ടത്തിനപ്പുറം, ആ അസ്തിത്വത്തിന് <span class="hl-green">സ്വതസിദ്ധമായ ആന്തരിക മൂല്യമുള്ളതിനാലാണ്</span> ഈ പരിഗണന നൽകുന്നത്.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Conflict Between Natural & Artificial Agents</div>
+            <p>How far could artificial beings be developed before we perceive them as possessing <span class="hl-green">moral entitlements</span>? In what situations would artificial agents have needs that justify human moral consideration?</p>
+            <p>How can the interests of artificial and natural agents be harmonised when they potentially conflict morally? A specific query concerns the recognition of artificial agents as <span class="hl-yellow">bearers of legal rights or legal personalities</span> within jurisprudence.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 കൃത്രിമ സൃഷ്ടികളുടെ അവകാശങ്ങളും നിയമ വ്യക്തിത്വവും</div>
+            <p>ഏതൊരു ഘട്ടം വരെ വികസിക്കുമ്പോഴാണ് മെഷീനുകൾക്ക് <span class="hl-green">ധാർമ്മിക അവകാശങ്ങൾ (Moral Entitlements)</span> ഉണ്ടെന്ന് നാം അംഗീകരിക്കുക? മെഷീനുകളുടെ ആവശ്യങ്ങൾ മനുഷ്യൻ പരിഗണിക്കേണ്ട സാഹചര്യങ്ങൾ എപ്പോഴാണ് ഉണ്ടാവുക?</p>
+            <p>മനുഷ്യന്റെയും കൃത്രിമ ഏജന്റുകളുടെയും താല്പര്യങ്ങൾ തമ്മിൽ ധാർമ്മികമായി ഏറ്റുമുട്ടുമ്പോൾ അവയെ എങ്ങനെ സമന്വയിപ്പിക്കും? നിയമവ്യവസ്ഥയിൽ കൃത്രിമ ബുദ്ധിക്ക് <span class="hl-yellow">നിയമപരമായ അവകാശങ്ങളോ വ്യക്തിത്വമോ (Legal Personality)</span> നൽകേണ്ടതുണ്ടോ എന്നത് ഗൗരവമേറിയ ചോദ്യമാണ്.</p>
+          </div>
+        </div>
+      </div>
+<div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">4. Etymological and Conceptual Foundations of Ethics</div>
+          <div class="section-title-ml">ധാർമ്മിക ശാസ്ത്രത്തിന്റെ നിഷ്പത്തിയും (Etymology) അടിസ്ഥാന നിർവ്വചനങ്ങളും</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Etymology: Ethos, Mores & Mackenzie's Definition</div>
+            <p>Ethics is the systematic study of behaviour, evaluating human actions according to their moral correctness or incorrectness.</p>
+            <p>The term "ethics" originates from the <span class="hl-green">Greek word "ethos"</span>, signifying "character", and the <span class="hl-green">Latin word "mores"</span>, signifying "customs". <span class="hl-green">Mackenzie</span> classically defines ethics as <span class="hl-yellow">"the examination of what is right or noble in human behaviour"</span> or the investigation of ideals inherent to conduct.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 പദോല്പത്തി: Ethos, Mores & മക്കൻസിയുടെ നിർവ്വചനം</div>
+            <p>മനുഷ്യന്റെ പെരുമാറ്റങ്ങളെ ശരിയോ തെറ്റോ എന്ന് ദാർശനികമായി വിലയിരുത്തുന്ന പഠനശാഖയാണ് എത്തിക്സ് അഥവാ നീതിശാസ്ത്രം.</p>
+            <p>'എത്തിക്സ്' എന്ന വാക്ക് "സ്വഭാവം" എന്നർത്ഥം വരുന്ന <span class="hl-green">ഗ്രീക്ക് പദമായ 'Ethos'</span>-ൽ നിന്നും "ആചാരങ്ങൾ" എന്നർത്ഥമുള്ള <span class="hl-green">ലാറ്റിൻ പദമായ 'Mores'</span>-ൽ നിന്നും ഉത്ഭവിച്ചതാണ്. <span class="hl-green">മക്കൻസി (Mackenzie)</span> നീതിശാസ്ത്രത്തെ നിർവ്വചിക്കുന്നത് <span class="hl-yellow">"മനുഷ്യ പെരുമാറ്റത്തിലെ ഉദാത്തമായ നന്മയെയും ശരിയെയും കുറിച്ചുള്ള ശാസ്ത്രീയ അന്വേഷണം"</span> എന്നാണ്.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Philosophical Clarification: 'Right' and 'Good'</div>
+            <p><strong>a. Right:</strong> The term originates from the <span class="hl-green">Latin 'rectus'</span>, signifying <span class="hl-yellow">'straight' or 'in accordance with rule'</span>. An activity is right when it adheres to established moral rules.</p>
+            <p><strong>b. Good:</strong> The term is linked to the <span class="hl-green">German 'gut'</span>. An object or action is deemed good when it possesses value for a purpose or helps us achieve a virtuous goal.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 'ശരി' (Right), 'നന്മ' (Good) എന്നിവയുടെ വിശകലനം</div>
+            <p><strong>a. ശരി (Right):</strong> 'നേരായത്' അല്ലെങ്കിൽ 'നിയമാനുസൃതമായത്' എന്നർത്ഥമുള്ള <span class="hl-green">ലാറ്റിൻ പദമായ 'Rectus'</span>-ൽ നിന്നാണ് ഇതിന്റെ ഉത്ഭവം. ഒരു പ്രവൃത്തി അംഗീകൃത ധാർമ്മിക നിയമങ്ങൾക്കനുസൃതമാകുമ്പോഴാണ് അത് ശരിയാകുന്നത്.</p>
+            <p><strong>b. നന്മ (Good):</strong> <span class="hl-green">ജർമ്മൻ പദമായ 'Gut'</span>-മായി ഇത് ബന്ധപ്പെട്ടിരിക്കുന്നു. നിശ്ചിത ലക്ഷ്യത്തിലേക്ക് നയിക്കുന്നതോ സദ്ഗുണപൂർണ്ണമായ ലക്ഷ്യം കൈവരിക്കാൻ സഹായിക്കുന്നതോ ആയ കാര്യങ്ങളെയാണ് നന്മ എന്ന് വിശേഷിപ്പിക്കുന്നത്.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 1: AI Alignment Architecture</span>
+      <span>Page 2 of 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 1 (Chapter 14)</span>
+        <span class="top-bar-right">Page 3 of 7 ✨ Bilingual Study Guide</span>
+      </div>
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">5. Moral Consciousness, Freedom and Voluntary Action</div>
+          <div class="section-title-ml">ധാർമ്മിക ബോധം, സ്വാതന്ത്ര്യം & ഇച്ഛാപരമായ പ്രവൃത്തികൾ</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Voluntary Action & Moral Awareness</div>
+            <p>The pursuit of truth requires ethics. It evaluates the <span class="hl-yellow">ethicality of voluntary human actions</span>, analysing motivation, intent, and causes of action rather than biological evolution.</p>
+            <p>Ethics investigates the concept of the <span class="hl-green">ultimate good (summum bonum)</span>, analysing principles of rights, obligations, conscience, duty, and moral sentiments arising during moral judgement.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ഇച്ഛാപരമായ പ്രവൃത്തികളും ധാർമ്മികാവബോധവും</div>
+            <p>സത്യാന്വേഷണത്തിന് നീതിശാസ്ത്രം അത്യന്താപേക്ഷിതമാണ്. മനുഷ്യന്റെ ജൈവിക പരിണാമത്തിനപ്പുറം, അവന്റെ <span class="hl-yellow">ഇച്ഛാപരമായ പ്രവൃത്തികളുടെ (Voluntary Actions) ധാർമ്മികതയും</span> ലക്ഷ്യങ്ങളുമാണ് എത്തിക്സ് പരിശോധിക്കുന്നത്.</p>
+            <p>നീതിശാസ്ത്രം <span class="hl-green">പരമമായ നന്മയെ (Ultimate Good)</span> വിശകലനം ചെയ്യുന്നു; അതോടൊപ്പം അവകാശങ്ങൾ, ബാധ്യതകൾ, മനസ്സാക്ഷി, കടമ, ധാർമ്മിക വിധികൾ എന്നിവയെക്കുറിച്ച് സമഗ്രമായി പഠിക്കുന്നു.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Integrity vs Mere Technological Proficiency</div>
+            <p>Ethics investigates the nature of human freedom, virtue, and universally recognised obligations.</p>
+            <p>An individual may thrive as an artist or orator while exhibiting moral shortcomings, or conversely, a morally virtuous person may lack technical skill. <span class="hl-yellow">Ethics concerns the principles that cultivate personal integrity and societal welfare</span>, proving that technical efficiency must be guided by ethical virtue.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 സമഗ്രതയും സാങ്കേതിക പ്രാവീണ്യവും</div>
+            <p>മനുഷ്യന്റെ സ്വാതന്ത്ര്യം, സദ്ഗുണം, സാർവ്വലൗകികമായി അംഗീകരിക്കപ്പെട്ട കടമകൾ എന്നിവയെക്കുറിച്ച് നീതിശാസ്ത്രം ആഴത്തിൽ ചിന്തിക്കുന്നു.</p>
+            <p>ഒരാൾ സാങ്കേതികവിദ്യയിലോ കലയിലോ അതിവിദഗ്ദ്ധനായിരിക്കുമ്പോഴും ധാർമ്മികമായി അധഃപതിച്ചേക്കാം; അല്ലെങ്കിൽ ധാർമ്മികതയുള്ള ഒരാൾക്ക് സാങ്കേതിക അറിവ് കുറവായിരിക്കാം. <span class="hl-yellow">സാങ്കേതിക കാര്യക്ഷമതയെക്കാൾ വ്യക്തിത്വ ശുദ്ധിയും സാമൂഹിക ക്ഷേമവുമാണ് പരമപ്രധാനം</span> എന്ന് എത്തിക്സ് നമ്മെ ഓർമ്മിപ്പിക്കുന്നു.</p>
+          </div>
+        </div>
+      </div>
+<div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">6. Fundamental Human Rights as Ethical Anchors</div>
+          <div class="section-title-ml">അടിസ്ഥാന മനുഷ്യാവകാശങ്ങൾ: ധാർമ്മിക അടിത്തറകൾ</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Right to Life and Right to Freedom</div>
+            <p><strong>1. <span class="hl-green">Right to Life:</span></strong> <span class="hl-yellow">Self-realisation constitutes the ultimate good, necessitating the continuation of life</span>. The sanctity of life must be acknowledged as a sacred moral duty.</p>
+            <p><strong>2. <span class="hl-green">Right to Freedom:</span></strong> Self-realisation is achieved through individual volition. One must be at liberty to exert autonomy without infringing upon social order or the rights of others.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ജീവിക്കാനും സ്വാതന്ത്ര്യത്തിനുമുള്ള അവകാശം</div>
+            <p><strong>1. <span class="hl-green">ജീവിക്കാനുള്ള അവകാശം:</span></strong> <span class="hl-yellow">സ്വയം സാക്ഷാത്കാരമാണ് പരമമായ നന്മ, അത് കൈവരിക്കാൻ ജീവന്റെ തുടർച്ച അത്യന്താപേക്ഷിതമാണ്</span>. ജീവന്റെ പവിത്രത കാത്തുസൂക്ഷിക്കുക എന്നത് പവിത്രമായ കടമയാണ്.</p>
+            <p><strong>2. <span class="hl-green">സ്വാതന്ത്ര്യത്തിനുള്ള അവകാശം:</span></strong> സ്വയം സാക്ഷാത്കാരം സാധ്യമാകുന്നത് ഇച്ഛാസ്വാതന്ത്ര്യത്തിലൂടെയാണ്. മറ്റുള്ളവരുടെ അവകാശങ്ങളെയോ സാമൂഹിക ക്രമത്തെയോ ഹനിക്കാതെ സ്വയംഭരണം നടത്താൻ ഓരോ വ്യക്തിക്കും അവകാശമുണ്ട്.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Right to Work and Right to Education</div>
+            <p><strong>3. <span class="hl-green">Right to Work:</span></strong> Derived from the fundamental right to life; without livelihood, self-actualization is denied. A contemporary welfare state must ensure employment.</p>
+            <p><strong>4. <span class="hl-green">Right to Education:</span></strong> Rights and obligations are linked. Society must provide optimal opportunities for individuals to realise their intellectual potential and contribute to collective welfare.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 തൊഴിൽ, വിദ്യാഭ്യാസ അവകാശങ്ങൾ</div>
+            <p><strong>3. <span class="hl-green">തൊഴിൽ ചെയ്യാനുള്ള അവകാശം:</span></strong> ജീവിക്കാനുള്ള അവകാശത്തിൽ നിന്ന് ഉടലെടുക്കുന്നതാണ് തൊഴിലവകാശം. ഉപജീവനമില്ലാതെ വ്യക്തിത്വ വികാസം അസാധ്യമായതിനാൽ ക്ഷേമരാഷ്ട്രങ്ങൾ തൊഴിൽ ഉറപ്പാക്കണം.</p>
+            <p><strong>4. <span class="hl-green">വിദ്യാഭ്യാസത്തിനുള്ള അവകാശം:</span></strong> അവകാശങ്ങളും കടമകളും പരസ്പരം ബന്ധപ്പെട്ടിരിക്കുന്നു. വ്യക്തികളുടെ സർഗ്ഗശേഷി വികസിപ്പിക്കാനും സമൂഹത്തിന് സംഭാവന നൽകാനും ഉന്നത വിദ്യാഭ്യാസം ഉറപ്പാക്കേണ്ടതുണ്ട്.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 1: AI Alignment Architecture</span>
+      <span>Page 3 of 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 1 (Chapter 14)</span>
+        <span class="top-bar-right">Page 4 of 7 ✨ Bilingual Study Guide</span>
+      </div>
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">7. Applied Ethics and Emergence of AI Ethics Frameworks</div>
+          <div class="section-title-ml">പ്രയോഗിക നീതിശാസ്ത്രവും (Applied Ethics) AI എത്തിക്‌സ് ചട്ടക്കൂടും</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Applied Ethics & Emerging Digital Hazards</div>
+            <p>The practical dimension of ethics is <span class="hl-green">applied ethics</span>, encompassing situational ethics alongside meta-ethics which investigates semantic queries regarding freedom and determinism.</p>
+            <p>While AI offers great utility, workplace surveillance and opaque algorithmic data practices subject humans to unprecedented hazards, potentially violating <span class="hl-yellow">employee privacy and trust</span>.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 പ്രയോഗിക നീതിശാസ്ത്രവും ഡിജിറ്റൽ ഭീഷണികളും</div>
+            <p>നീതിശാസ്ത്രത്തിന്റെ പ്രായോഗിക വശമാണ് <span class="hl-green">അപ്ലൈഡ് എത്തിക്സ് (Applied Ethics)</span>. യഥാർത്ഥ ജീവിത സന്ദർഭങ്ങളിലെ ധാർമ്മിക പ്രശ്നങ്ങളെയാണ് ഇത് അഭിസംബോധന ചെയ്യുന്നത്.</p>
+            <p>എഐ സംവിധാനങ്ങൾ വലിയ പ്രയോജനം ചെയ്യുമ്പോഴും, തൊഴിലിടങ്ങളിലെ രഹസ്യ നിരീക്ഷണങ്ങളും അൽഗോരിതങ്ങളും മനുഷ്യരെ മുൻപെങ്ങുമില്ലാത്ത അപകടങ്ങളിലേക്ക് തള്ളിവിടുകയും <span class="hl-yellow">സ്വകാര്യതയും വിശ്വാസ്യതയും തകർക്കുകയും</span> ചെയ്യുന്നു.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Four Core Principles for Trustworthy AI</div>
+            <p><span class="hl-green">AI ethics</span> is the specialised branch of applied ethics addressing algorithms, data practices, and automated systems.</p>
+            <p>Frameworks coalesce around four core pillars: <span class="hl-yellow">transparency, accountability, fairness, and privacy protection</span>, designed to guide the development of responsible and trustworthy AI technologies.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 വിശ്വസനീയ AI-യുടെ നാല് അടിസ്ഥാന തൂണുകൾ</div>
+            <p>അൽഗോരിതങ്ങളും ഡാറ്റാ പ്രവർത്തനങ്ങളും സൃഷ്ടിക്കുന്ന വെല്ലുവിളികൾ പരിഹരിക്കുന്ന പ്രത്യേക പഠനശാഖയാണ് <span class="hl-green">എഐ എത്തിക്സ് (AI Ethics)</span>.</p>
+            <p>ഉത്തരവാദിത്തമുള്ള എഐ സാങ്കേതികവിദ്യ വികസിപ്പിക്കുന്നതിന് ആഗോളതലത്തിൽ നാല് പ്രധാന തത്ത്വങ്ങൾ മുന്നോട്ടുവെക്കുന്നു: <span class="hl-yellow">സുതാര്യത (Transparency), ഉത്തരവാദിത്തം (Accountability), നീതി (Fairness), സ്വകാര്യതാ സംരക്ഷണം (Privacy)</span>.</p>
+          </div>
+        </div>
+      </div>
+<div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">8. Goal Specification and Embedding Human Values</div>
+          <div class="section-title-ml">ലക്ഷ്യ നിർണ്ണയവും മനുഷ്യ മൂല്യങ്ങൾ ഉൾച്ചേർക്കലും</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Precise Goal and Value Specification</div>
+            <p><span class="hl-green">AI alignment</span> requires synchronising the objectives of autonomous systems with human intentions so they operate freely while reflecting our priorities.</p>
+            <p><span class="hl-yellow">Precise goal definition denotes explicit articulation of anticipated functions, operational constraints, and results the system must eschew</span>. Technical accuracy is vital for alignment.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 കൃത്യമായ ലക്ഷ്യ നിർണ്ണയത്തിന്റെ പ്രാധാന്യം</div>
+            <p>സ്വയംഭരണ യന്ത്രങ്ങൾ സ്വതന്ത്രമായി പ്രവർത്തിക്കുമ്പോഴും നമ്മുടെ താല്പര്യങ്ങൾക്ക് അനുസൃതമായിരിക്കാൻ <span class="hl-green">എഐ അലൈൻമെന്റ്</span> അത്യന്താപേക്ഷിതമാണ്.</p>
+            <p><span class="hl-yellow">സിസ്റ്റം ചെയ്യേണ്ട പ്രവർത്തനങ്ങൾ, പാലിക്കേണ്ട നിയന്ത്രണങ്ങൾ, ഒഴിവാക്കേണ്ട പ്രത്യാഘാതങ്ങൾ എന്നിവ കൃത്യമായി നിർവ്വചിക്കുന്നതാണ് ലക്ഷ്യ നിർണ്ണയം</span>. ലക്ഷ്യങ്ങൾ തെറ്റായി വ്യാഖ്യാനിക്കപ്പെടാതിരിക്കാൻ കൃത്യത കൂടിയേ തീരൂ.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Embedding Standards vs Learning Values</div>
+            <p><span class="hl-yellow">Embedding human values entails creating AI that continually honours core ethics rather than solely focusing on technical speed</span>.</p>
+            <p><span class="hl-green">Learning human values</span> equips systems to deduce, adapt to, and honour preferences and ethical conventions from human feedback, rather than relying exclusively on rigid, hardcoded rules.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 മൂല്യങ്ങൾ ഉൾച്ചേർക്കലും പഠിച്ചെടുക്കലും</div>
+            <p><span class="hl-yellow">കേവലം സാങ്കേതിക വേഗതയിലോ ലാഭത്തിലോ ശ്രദ്ധ കേന്ദ്രീകരിക്കാതെ മാനുഷിക മൂല്യങ്ങളെ എപ്പോഴും ആദരിക്കുന്ന സിസ്റ്റങ്ങളെ നിർമ്മിക്കുന്നതാണ് വാല്യൂ എംബെഡിംഗ്</span>.</p>
+            <p>കർക്കശമായ പ്രോഗ്രാം ചട്ടങ്ങൾക്ക് പകരം, മനുഷ്യന്റെ പെരുമാറ്റത്തിൽ നിന്നും ഫീഡ്‌ബാക്കിൽ നിന്നും <span class="hl-green">മൂല്യങ്ങൾ സ്വാംശീകരിക്കാനും ക്രമീകരിക്കാനും (Learning Human Values)</span> മെഷീനുകളെ പരിശീലിപ്പിക്കണം.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 1: AI Alignment Architecture</span>
+      <span>Page 4 of 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 1 (Chapter 14)</span>
+        <span class="top-bar-right">Page 5 of 7 ✨ Bilingual Study Guide</span>
+      </div>
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">9. Safety, Non-Harm, and the Protection of Vulnerabilities</div>
+          <div class="section-title-ml">സുരക്ഷിതത്വം, ഉപദ്രവരാഹിത്യം & ചൂഷണങ്ങൾ തടയൽ</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Physical, Psychological and Social Safety</div>
+            <p><span class="hl-yellow">Safety and non-harm constitute a fundamental value that consistently supersedes efficiency, speed, or profit</span>.</p>
+            <p><strong>Physical safety</strong> prevents injury or damage to assets in high-risk autonomous AI. <strong>Psychological and social safety</strong> guarantees systems do not inflict mental suffering, emotional discomfort, social exclusion, or erode societal trust.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ശാരീരിക-മാനസിക-സാമൂഹിക സുരക്ഷ</div>
+            <p><span class="hl-yellow">കാര്യക്ഷമത, വേഗത, ലാഭം എന്നിവയേക്കാൾ ഉപരിയായി എഐ അലൈൻമെന്റിൽ മുൻഗണന നൽകേണ്ട ഒന്നാണ് സുരക്ഷിതത്വവും ഉപദ്രവരാഹിത്യവും (Safety & Non-Harm)</span>.</p>
+            <p><strong>ശാരീരിക സുരക്ഷ</strong> ജീവഹാനിയും പരിക്കുകളും തടയുന്നു. <strong>മാനസിക-സാമൂഹിക സുരക്ഷ</strong> വ്യക്തികൾക്ക് മാനസിക വിഷമമോ, തെറ്റായ ധാരണകളോ, ഒറ്റപ്പെടലോ ഉണ്ടാകാതിരിക്കാനും സാമൂഹിക സ്ഥാപനങ്ങൾ തകരാതിരിക്കാനും സംരക്ഷണം നൽകുന്നു.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Prohibition of Manipulation & Respect for Dignity</div>
+            <p>AI systems must strictly refrain from: <span class="hl-green">emotional manipulation</span>, <span class="hl-green">deceptive persuasion</span>, and <span class="hl-green">exploiting human vulnerabilities</span>.</p>
+            <p><span class="hl-yellow">Respect for human dignity acknowledges the inherent value of every individual</span>; humans must never be regarded solely as instruments, data points, or means to an end.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 ചൂഷണം തടയലും മാനുഷിക അന്തസ്സും</div>
+            <p>എഐ സംവിധാനങ്ങൾ മൂന്ന് കാര്യങ്ങൾ കർശനമായി ഒഴിവാക്കണം: <span class="hl-green">വൈകാരിക കൃത്രിമം (Emotional manipulation)</span>, <span class="hl-green">വഞ്ചനാപരമായ സ്വാധീനം</span>, <span class="hl-green">മനുഷ്യന്റെ ബലഹീനതകളെ ചൂഷണം ചെയ്യൽ</span>.</p>
+            <p><span class="hl-yellow">മാനുഷിക അന്തസ്സ് (Human Dignity) ആദരിക്കപ്പെടണം</span>; വ്യക്തികളെ ഒരിക്കലും വെറും വിവരങ്ങളായോ (Data Points), ഉപകരണങ്ങളായോ, ലക്ഷ്യത്തിലേക്കുള്ള മാർഗ്ഗമായോ മാത്രം മെഷീനുകൾ കാണരുത്.</p>
+          </div>
+        </div>
+      </div>
+<div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">10. Equal Moral Worth, Impartiality & Explainable AI (XAI)</div>
+          <div class="section-title-ml">തുല്യ ധാർമ്മിക മൂല്യം, നിഷ്പക്ഷത & വിശദീകരിക്കാവുന്ന AI (XAI)</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Equal Moral Worth & Non-Discrimination</div>
+            <p><span class="hl-yellow">All human beings possess equal moral positions and merit equal respect</span>, irrespective of race, gender, caste, religion, wealth, or ability.</p>
+            <p><strong>Fairness and Non-Discrimination:</strong> Automated systems must guarantee equal treatment, avoiding unjust biases based on extraneous attributes. <strong>Impartial decision-making</strong> mandates choices rely objectively on pertinent facts.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 വിവേചനരാഹിത്യവും നിഷ്പക്ഷ തീരുമാനങ്ങളും</div>
+            <p><span class="hl-yellow">ജാതി, മതം, ലിംഗം, സമ്പത്ത് എന്നിവയ്ക്കതീതമായി എല്ലാ മനുഷ്യർക്കും തുല്യമായ ധാർമ്മിക സ്ഥാനവും ആദരവും അവകാശപ്പെട്ടിരിക്കുന്നു</span>.</p>
+            <p><strong>നീതിയും വിവേചനരാഹിത്യവും:</strong> ബാഹ്യമായ വ്യക്തിഗത ഘടകങ്ങളുടെ അടിസ്ഥാനത്തിൽ പക്ഷപാതപരമായ തീരുമാനങ്ങൾ എടുക്കുന്നത് എഐ തടയണം. പ്രസക്തമായ വസ്തുതകളെ മാത്രം അടിസ്ഥാനമാക്കി <strong>നിഷ്പക്ഷമായ വിധികൾ</strong> പുറപ്പെടുവിക്കണം.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Explainable AI (XAI) & Solving Black Box Models</div>
+            <p><span class="hl-green">Transparency and Explainability (XAI)</span> render automated systems comprehensible, interpretable, and accountable to human auditors and end-users.</p>
+            <p>Explainability addresses the notorious <span class="hl-yellow">"black box" problem</span> where complex neural networks evade human understanding. Clear algorithmic rationale enables the early detection and rectification of alignment failures.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 എക്‌സ്പ്ലൈനബിൾ AI-യും 'ബ്ലാക്ക് ബോക്സ്' പ്രതിസന്ധിയും</div>
+            <p><span class="hl-green">സുതാര്യതയും വിശദീകരിക്കാനുള്ള കഴിവും (XAI)</span> എഐ തീരുമാനങ്ങളെ മനുഷ്യർക്ക് മനസ്സിലാക്കാനും ഓഡിറ്റ് ചെയ്യാനും സാധ്യമാക്കുന്നു.</p>
+            <p>ഡീപ് ലേണിംഗ് മോഡലുകളുടെ സങ്കീർണ്ണത കാരണം മനുഷ്യബുദ്ധിക്ക് എളുപ്പം പിടികിട്ടാത്ത <span class="hl-yellow">'ബ്ലാക്ക് ബോക്സ്' (Black Box) പ്രതിസന്ധിയെ</span> ഇത് ഇല്ലാതാക്കുന്നു. എഐ എന്തുകൊണ്ട് ഒരു തീരുമാനമെടുത്തു എന്ന് വിശദീകരിക്കാൻ സാധിക്കുന്നത് തെറ്റുകൾ തിരുത്താൻ സഹായിക്കുന്നു.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 1: AI Alignment Architecture</span>
+      <span>Page 5 of 7</span>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 1 (Chapter 14)</span>
+        <span class="top-bar-right">Page 6 of 7 ✨ Bilingual Study Guide</span>
+      </div>
+      <div class="content-box">
+        <div class="section-header">
+          <div class="section-title-en">11. Privacy, Human Oversight & Academic Practice Exercises</div>
+          <div class="section-title-ml">ഡാറ്റാ സംരക്ഷണം, മാനുഷിക മേൽനോട്ടം & പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ</div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Privacy, Data Minimisation & Human-in-the-Loop</div>
+            <p><span class="hl-yellow">Data minimisation asserts that only data essential for a specific purpose should be gathered</span>. Informed consent and confidentiality protect Personally Identifiable Information (<span class="hl-green">PII</span>).</p>
+            <p><span class="hl-green">Human-in-the-loop oversight</span> guarantees individuals can intervene or deactivate AI when required. Designers and deployers bear ultimate moral and legal accountability.</p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 സ്വകാര്യതയും ഹ്യൂമൻ-ഇൻ-ദി-ലൂപ്പും</div>
+            <p><span class="hl-yellow">ഒരു നിശ്ചിത ആവശ്യത്തിന് തികച്ചും അത്യന്താപേക്ഷിതമായ വിവരങ്ങൾ മാത്രമേ ശേഖരിക്കാവൂ എന്ന തത്ത്വമാണ് ഡാറ്റാ മിനിമൈസേഷൻ</span>. അറിവോടെയുള്ള സമ്മതവും രഹസ്യസ്വഭാവവും വ്യക്തിഗത വിവരങ്ങളെ (<span class="hl-green">PII</span>) സംരക്ഷിക്കുന്നു.</p>
+            <p><span class="hl-green">ഹ്യൂമൻ-ഇൻ-ദി-ലൂപ്പ് (Human-in-the-Loop)</span> മേൽനോട്ടം വഴി അടിയന്തര ഘട്ടങ്ങളിൽ യന്ത്രത്തെ തടയാൻ മനുഷ്യന് അധികാരം ഉറപ്പാക്കുന്നു. എഐ വരുത്തുന്ന തെറ്റുകൾക്ക് മനുഷ്യ ഡെവലപ്പർമാർക്കാണ് പൂർണ്ണ ഉത്തരവാദിത്തം.</p>
+          </div>
+        </div>
+
+        <div class="bilingual-pair">
+          <div class="block-en">
+            <div class="block-label">🇬🇧 Knock Your Brain: Official Curriculum MCQs</div>
+            <p><strong>Q1: What is the main goal of AI alignment?</strong><br>
+            A) Faster systems | <span class="hl-yellow">B) Ensure AI acts according to human values</span> | C) Autonomy without supervision | D) Reduce cost<br>
+            <em>Answer: B · Congruence with human values and intentions.</em></p>
+            <p><strong>Q2: Why is continuous monitoring important?</strong><br>
+            <span class="hl-yellow">A) AI systems may drift from human-aligned behaviour over time</span> | B) Goals never change | C) Delegate all duties | D) Slows efficiency<br>
+            <em>Answer: A · Preventing alignment drift across changing societal conditions.</em></p>
+          </div>
+          <div class="block-ml">
+            <div class="block-label">🇲🇱 സർവ്വകലാശാല പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ</div>
+            <p><strong>ചോദ്യം 1: എഐ അലൈൻമെന്റിന്റെ പ്രധാന ലക്ഷ്യമെന്ത്?</strong><br>
+            A) വേഗത കൂട്ടുക | <span class="hl-yellow">B) എഐ മനുഷ്യ മൂല്യങ്ങൾക്കനുസരിച്ച് പ്രവർത്തിക്കുന്നുവെന്ന് ഉറപ്പാക്കുക</span> | C) മേൽനോട്ടമില്ലാത്ത സ്വയംഭരണം | D) ചിലവ് കുറയ്ക്കുക<br>
+            <em>ശരിയുത്തരം: B · മനുഷ്യ ഉദ്ദേശ്യങ്ങളോടുള്ള സമ്പൂർണ്ണ പൊരുത്തം.</em></p>
+            <p><strong>ചോദ്യം 2: നിരന്തരമായ മേൽനോട്ടം (Continuous Monitoring) അനിവാര്യമായിരിക്കുന്നത് എന്തുകൊണ്ട്?</strong><br>
+            <span class="hl-yellow">A) കാലക്രമേണ എഐ പ്രവർത്തനങ്ങൾ മനുഷ്യ മൂല്യങ്ങളിൽ നിന്നും വ്യതിചലിച്ചേക്കാം (Drift)</span> | B) മാറ്റമില്ലാത്ത ലക്ഷ്യങ്ങൾ | C) ഉത്തരവാദിത്ത കൈമാറ്റം | D) കാര്യക്ഷമത കുറയ്ക്കൽ<br>
+            <em>ശരിയുത്തരം: A · അലൈൻമെന്റ് ഡ്രിഫ്റ്റ് തടയാൻ നിരന്തര ഓഡിറ്റിംഗ് ആവശ്യമാണ്.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 1: AI Alignment Architecture</span>
+      <span>Page 6 of 7</span>
+    </div>
+  </div>
+
+  <div class="page-container page-exam-grid">
+    <div>
+      <div class="top-bar">
+        <span class="top-bar-left">📘 Philosophy of AI · Module 4 · Chapter 1 (Chapter 14)</span>
+        <span class="top-bar-right">Page 7 of 7 ✨ High-Yield Exam Recall Cheat-Sheet</span>
+      </div>
+
+      <div class="exam-header-compact">
+        <div class="exam-title-badge">🎯 MUST-KNOW EXAM RECALL COMPENDIUM</div>
+        <div class="exam-hero-title">20 Core Academic Concepts & Analytical Pillars</div>
+        <div class="exam-hero-sub">സ്വയംഭരണ AI അലൈൻമെന്റും എത്തിക്സും — പരീക്ഷാ കേന്ദ്രീകൃത സമഗ്ര ആശയങ്ങൾ</div>
+      </div>
+
+      <div class="points-grid">
+        <!-- 1 -->
+        <div class="point-card" style="border-left: 3.5px solid #e11d48;">
+          <div class="point-header"><span class="point-tag" style="background:#e11d48;">🎯 Core Goal</span><span class="point-title-en">AI Alignment Problem</span></div>
+          <div class="point-title-ml">AI അലൈൻമെന്റ് പ്രതിസന്ധി</div>
+          <div class="point-body">Ensuring autonomous system goals and behaviours remain strictly congruent with human values.</div>
+          <div class="point-body-ml">സ്വയംഭരണ യന്ത്രങ്ങളുടെ പ്രവർത്തനങ്ങൾ മനുഷ്യന്റെ ഉദ്ദേശ്യങ്ങളോട് പൊരുത്തപ്പെടുന്നുവെന്ന് ഉറപ്പാക്കൽ.</div>
+        </div>
+        <!-- 2 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">⚖️ Moral Worth</span><span class="point-title-en">Moral Status & Standing</span></div>
+          <div class="point-title-ml">ധാർമ്മിക പദവി (Moral Status)</div>
+          <div class="point-body">An entity toward which moral agents hold direct moral obligations due to its intrinsic worth.</div>
+          <div class="point-body-ml">സ്വതസിദ്ധമായ ആന്തരിക പ്രാധാന്യമുള്ളതിനാൽ ധാർമ്മിക പരിഗണന അർഹിക്കുന്ന അസ്തിത്വം.</div>
+        </div>
+        <!-- 3 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🏛️ Etymology</span><span class="point-title-en">Ethos & Mores</span></div>
+          <div class="point-title-ml">പദോല്പത്തി: Ethos, Mores</div>
+          <div class="point-body">Originating from Greek 'ethos' (character) and Latin 'mores' (customs), studying right conduct.</div>
+          <div class="point-body-ml">സ്വഭാവം (Ethos), ആചാരം (Mores) എന്നിവയിൽ നിന്നും നീതിശാസ്ത്ര പദത്തിന്റെ ഉത്ഭവം.</div>
+        </div>
+        <!-- 4 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">📜 Definition</span><span class="point-title-en">Mackenzie's Conduct Formula</span></div>
+          <div class="point-title-ml">മക്കൻസിയുടെ സ്വഭാവ നിർവ്വചനം</div>
+          <div class="point-body">The scientific examination of what is right or noble in human behaviour and voluntary action.</div>
+          <div class="point-body-ml">മനുഷ്യന്റെ ഇച്ഛാപരമായ പ്രവൃത്തികളിലെ ഉദാത്തമായ നന്മയെക്കുറിച്ചുള്ള ശാസ്ത്രീയ അന്വേഷണം.</div>
+        </div>
+        <!-- 5 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">📏 Rule-Bound</span><span class="point-title-en">Rectus & 'Right'</span></div>
+          <div class="point-title-ml">'ശരി' (Right / Rectus)</div>
+          <div class="point-body">Derived from Latin 'rectus' meaning straight or in rigorous accordance with established moral rule.</div>
+          <div class="point-body-ml">ധാർമ്മിക നിയമങ്ങൾക്ക് അനുസൃതമായി നേരായ മാർഗ്ഗത്തിൽ പ്രവർത്തിക്കുക എന്നത്.</div>
+        </div>
+        <!-- 6 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🌟 Ultimate Good</span><span class="point-title-en">Gut & 'Good'</span></div>
+          <div class="point-title-ml">'നന്മ' (Good / Gut)</div>
+          <div class="point-body">Related to German 'gut'; denotes conduct that effectively realizes our virtuous purpose or goal.</div>
+          <div class="point-body-ml">സദ്ഗുണപൂർണ്ണമായ ലക്ഷ്യങ്ങൾ കൈവരിക്കാൻ സഹായിക്കുന്ന ഗുണമേന്മയുള്ള അവസ്ഥ.</div>
+        </div>
+        <!-- 7 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🌱 Primordial</span><span class="point-title-en">Right to Life</span></div>
+          <div class="point-title-ml">ജീവിക്കാനുള്ള അവകാശം</div>
+          <div class="point-body">Sanctity of existence is the foundational right; continuation of life is vital for self-realisation.</div>
+          <div class="point-body-ml">സ്വയം സാക്ഷാത്കാരത്തിന് ജീവൻ അനിവാര്യമായതിനാൽ ജീവന്റെ പവിത്രത സംരക്ഷിക്കപ്പെടണം.</div>
+        </div>
+        <!-- 8 -->
+        <div class="point-card" style="border-left: 3.5px solid #4f46e5;">
+          <div class="point-header"><span class="point-tag" style="background:#4f46e5;">🕊️ Volition</span><span class="point-title-en">Right to Freedom</span></div>
+          <div class="point-title-ml">സ്വാതന്ത്ര്യത്തിനുള്ള അവകാശം</div>
+          <div class="point-body">Autonomy to achieve one's ultimate purpose without infringing on the social order or others.</div>
+          <div class="point-body-ml">സാമൂഹിക ക്രമം തകർക്കാതെ സ്വന്തം ലക്ഷ്യങ്ങൾ നേടാനുള്ള വ്യക്തിപരമായ സ്വാതന്ത്ര്യം.</div>
+        </div>
+        <!-- 9 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">💼 Livelihood</span><span class="point-title-en">Right to Work</span></div>
+          <div class="point-title-ml">തൊഴിൽ ചെയ്യാനുള്ള അവകാശം</div>
+          <div class="point-body">Derived from the right to life; modern welfare states must provide universal employment opportunities.</div>
+          <div class="point-body-ml">ഉപജീവനവും സ്വയം വികാസവും ഉറപ്പാക്കാൻ ഓരോ പൗരനും തൊഴിൽ ചെയ്യാനുള്ള അവകാശമുണ്ട്.</div>
+        </div>
+        <!-- 10 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">📚 Potential</span><span class="point-title-en">Right to Education</span></div>
+          <div class="point-title-ml">വിദ്യാഭ്യാസത്തിനുള്ള അവകാശം</div>
+          <div class="point-body">Empowering individuals to attain maximum capability and contribute to collective welfare.</div>
+          <div class="point-body-ml">വ്യക്തികളുടെ ബുദ്ധിപരവും സാമൂഹികവുമായ ശേഷി പരമാവധി വികസിപ്പിക്കാനുള്ള അവസരം.</div>
+        </div>
+        <!-- 11 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🛠️ Practical</span><span class="point-title-en">Applied AI Ethics</span></div>
+          <div class="point-title-ml">പ്രയോഗിക നീതിശാസ്ത്രം</div>
+          <div class="point-body">Addressing emerging ethical hazards in algorithmic practices, workplace surveillance, and automated models.</div>
+          <div class="point-body-ml">ഡിജിറ്റൽ നിരീക്ഷണവും അൽഗോരിതങ്ങളും ഉയർത്തുന്ന പുതിയ വെല്ലുവിളികളെ നേരിടുന്ന ശാഖ.</div>
+        </div>
+        <!-- 12 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🎯 Articulation</span><span class="point-title-en">Clear Goal Specification</span></div>
+          <div class="point-title-ml">കൃത്യമായ ലക്ഷ്യ നിർണ്ണയം</div>
+          <div class="point-body">Explicit definition of anticipated functions, operating constraints, and outcomes to eschew.</div>
+          <div class="point-body-ml">എഐ ചെയ്യേണ്ടതും കർശനമായി ഒഴിവാക്കേണ്ടതുമായ കാര്യങ്ങൾ കൃത്യമായി പ്രഖ്യാപിക്കൽ.</div>
+        </div>
+        <!-- 13 -->
+        <div class="point-card" style="border-left: 3.5px solid #dc2626;">
+          <div class="point-header"><span class="point-tag" style="background:#dc2626;">🛡️ Paramount</span><span class="point-title-en">Safety & Non-Harm</span></div>
+          <div class="point-title-ml">സുരക്ഷിതത്വവും ഉപദ്രവരാഹിത്യവും</div>
+          <div class="point-body">Consistently supersedes speed, efficiency, or profit in all high-risk autonomous AI systems.</div>
+          <div class="point-body-ml">വേഗതയേക്കാളും ലാഭത്തേക്കാളും ഉപരിയായി ജീവനും സ്വത്തിനും മുൻഗണന നൽകുന്ന സമീപനം.</div>
+        </div>
+        <!-- 14 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🧠 Well-Being</span><span class="point-title-en">Psychological Safety</span></div>
+          <div class="point-title-ml">മാനസിക-സാമൂഹിക സുരക്ഷ</div>
+          <div class="point-body">Guarantees AI does not cause mental anguish, social isolation, anxiety, or distrust among users.</div>
+          <div class="point-body-ml">മാനസിക സംഘർഷമോ വൈകാരിക പരിക്കോ സാമൂഹിക അകൽച്ചയോ സൃഷ്ടിക്കാതിരിക്കൽ.</div>
+        </div>
+        <!-- 15 -->
+        <div class="point-card" style="border-left: 3.5px solid #059669;">
+          <div class="point-header"><span class="point-tag" style="background:#059669;">🚫 Boundary</span><span class="point-title-en">Prohibition of Manipulation</span></div>
+          <div class="point-title-ml">ചൂഷണ നിരോധനം</div>
+          <div class="point-body">AI must refrain from emotional deception, manipulative persuasion, and exploiting human vulnerabilities.</div>
+          <div class="point-body-ml">മനുഷ്യന്റെ ബലഹീനതകളെ ചൂഷണം ചെയ്യുന്നതും വഞ്ചനാപരമായ സ്വാധീനങ്ങളും തടയൽ.</div>
+        </div>
+        <!-- 16 -->
+        <div class="point-card" style="border-left: 3.5px solid #e11d48;">
+          <div class="point-header"><span class="point-tag" style="background:#e11d48;">👑 Kantian Core</span><span class="point-title-en">Human Dignity</span></div>
+          <div class="point-title-ml">മാനുഷിക അന്തസ്സ് (Dignity)</div>
+          <div class="point-body">Individuals have intrinsic worth and must never be treated as mere data points or instruments.</div>
+          <div class="point-body-ml">മനുഷ്യനെ വെറും ഡാറ്റയായോ ഉപകരണമായോ കണക്കാക്കാതെ അന്തസ്സോടെ കാണുക.</div>
+        </div>
+        <!-- 17 -->
+        <div class="point-card" style="border-left: 3.5px solid #d97706;">
+          <div class="point-header"><span class="point-tag" style="background:#d97706;">⚖️ Equality</span><span class="point-title-en">Equal Moral Worth</span></div>
+          <div class="point-title-ml">തുല്യ ധാർമ്മിക മൂല്യം</div>
+          <div class="point-body">Equal respect for all persons regardless of extraneous attributes, preventing algorithmic discrimination.</div>
+          <div class="point-body-ml">ജാതി, മത, ലിംഗ ഭേദമന്യേ എല്ലാവർക്കും തുല്യ പരിഗണന നൽകി വിവേചനം ഇല്ലാതാക്കൽ.</div>
+        </div>
+        <!-- 18 -->
+        <div class="point-card" style="border-left: 3.5px solid #2563eb;">
+          <div class="point-header"><span class="point-tag" style="background:#2563eb;">🔍 Explainability</span><span class="point-title-en">Explainable AI (XAI)</span></div>
+          <div class="point-title-ml">വിശദീകരിക്കാവുന്ന AI (XAI)</div>
+          <div class="point-body">Overcoming the black-box dilemma by making algorithmic decision rationales interpretable to humans.</div>
+          <div class="point-body-ml">തീരുമാനങ്ങൾ എങ്ങനെയെടുത്തു എന്ന് മനുഷ്യർക്ക് വ്യക്തമാക്കിക്കൊണ്ട് സുതാര്യത ഉറപ്പാക്കൽ.</div>
+        </div>
+        <!-- 19 -->
+        <div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+          <div class="point-header"><span class="point-tag" style="background:#7c3aed;">🔐 Data Rights</span><span class="point-title-en">Data Minimisation</span></div>
+          <div class="point-title-ml">ഡാറ്റാ മിനിമൈസേഷൻ</div>
+          <div class="point-body">Gathering, processing, and retaining only the data strictly essential for an intended purpose.</div>
+          <div class="point-body-ml">ആവശ്യത്തിന് മാത്രമുള്ള വിവരങ്ങൾ മാത്രം ശേഖരിക്കുകയും അനാവശ്യ ഡാറ്റ ഒഴിവാക്കുകയും ചെയ്യൽ.</div>
+        </div>
+        <!-- 20 -->
+        <div class="point-card" style="border-left: 3.5px solid #0891b2;">
+          <div class="point-header"><span class="point-tag" style="background:#0891b2;">🕹️ Oversight</span><span class="point-title-en">Human-in-the-Loop</span></div>
+          <div class="point-title-ml">ഹ്യൂമൻ-ഇൻ-ദി-ലൂപ്പ് മേൽനോട്ടം</div>
+          <div class="point-body">Ensuring human authority to audit, intervene, or deactivate AI systems to maintain ethical alignment.</div>
+          <div class="point-body-ml">നിർണ്ണായക ഘട്ടങ്ങളിൽ ഇടപെടാനും നിയന്ത്രിക്കാനുമുള്ള അന്തിമ അധികാരം മനുഷ്യനിൽ നിലനിർത്തൽ.</div>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+      <span>Module 4 · Chapter 1: 20 Core Academic Concepts</span>
+      <span>Page 7 of 7</span>
+    </div>
+  </div>
+</body></html>
