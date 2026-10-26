@@ -2762,7 +2762,7 @@
                         // Lightning-fast streaming loader: Progressive Page 1 first-paint
         const cMapUrl = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/cmaps/';
         pdf = await lib.getDocument({
-          url: file.href,
+          url: file.href + (file.href.includes('?') ? '&' : '?') + 'v=' + Date.now(),
           cMapUrl: cMapUrl,
           cMapPacked: true,
           enableXfa: false,
