@@ -802,10 +802,464 @@
     /* Voice Reading fully reinstated */
 
   </style>
+<style>
+    /* --- BLAZING FAST SUBJECTS DRAWER & HUB STYLES --- */
+    .btn-subjects {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 8px;
+      font-weight: 750;
+      font-size: 13px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+      transition: all 0.16s ease;
+      white-space: nowrap;
+    }
+    .btn-subjects:hover {
+      background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #2563eb 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.5);
+    }
+    .btn-home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 10px;
+      background: #ffffff;
+      color: #334155 !important;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 12.5px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-home-link:hover {
+      background: #f1f5f9;
+      color: #0f172a !important;
+      border-color: #94a3b8;
+    }
+    .active-doc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #1d4ed8;
+      max-width: 220px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Subjects Drawer Overlay */
+    #subjectsDrawerBackdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+    #subjectsDrawerBackdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #subjectsDrawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: min(94vw, 460px);
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 6px 0 28px rgba(0, 0, 0, 0.3);
+      z-index: 2001;
+      transform: translateX(-100%);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    #subjectsDrawer.open {
+      transform: translateX(0);
+    }
+    .drawer-header {
+      padding: 14px 16px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #334155;
+    }
+    .drawer-title {
+      font-size: 15px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .drawer-close-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: none;
+      color: #ffffff;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+    .drawer-close-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .drawer-search-wrap {
+      padding: 10px 14px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .drawer-search-input {
+      width: 100%;
+      padding: 8px 12px;
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .drawer-search-input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+    .drawer-filter-pills {
+      display: flex;
+      gap: 6px;
+      padding: 8px 14px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .drawer-filter-pills::-webkit-scrollbar { display: none; }
+    .drawer-pill-btn {
+      padding: 4px 10px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .drawer-pill-btn.active, .drawer-pill-btn:hover {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+    .drawer-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .drawer-subject-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .drawer-subject-card:hover {
+      border-color: #93c5fd;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+    }
+    .drawer-subject-card.active-subject {
+      border-color: #3b82f6;
+      background: #fafcff;
+    }
+    .drawer-subject-header {
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      background: #f8fafc;
+      border-bottom: 1px solid transparent;
+      transition: background 0.15s;
+    }
+    .drawer-subject-card.expanded .drawer-subject-header {
+      border-bottom-color: #e2e8f0;
+      background: #f1f5f9;
+    }
+    .drawer-subject-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+    .drawer-subject-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: #e0e7ff;
+      color: #3730a3;
+      font-weight: 800;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .drawer-subject-name {
+      font-size: 13px;
+      font-weight: 750;
+      color: #0f172a;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .drawer-subject-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 10px;
+      background: #e2e8f0;
+      color: #475569;
+    }
+    .drawer-subject-modules {
+      display: none;
+      padding: 8px 10px;
+      background: #ffffff;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .drawer-subject-card.expanded .drawer-subject-modules {
+      display: flex;
+    }
+    .drawer-mod-block {
+      border-left: 2px solid #cbd5e1;
+      padding-left: 8px;
+      margin-bottom: 4px;
+    }
+    .drawer-mod-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 4px;
+    }
+    .drawer-chapter-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 8px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #1e293b;
+      font-size: 12px;
+      font-weight: 600;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 3px;
+      transition: all 0.14s ease;
+      cursor: pointer;
+    }
+    .drawer-chapter-link:hover {
+      background: #eff6ff;
+      border-color: #93c5fd;
+      color: #1d4ed8;
+      transform: translateX(2px);
+    }
+    .drawer-chapter-link.active-chapter {
+      background: #dbeafe;
+      border-color: #3b82f6;
+      color: #1e40af;
+      font-weight: 750;
+    }
+
+    /* Welcome Hub Grid (Shown when no file is selected) */
+    .welcome-hub {
+      max-width: 1080px;
+      margin: 20px auto;
+      padding: 20px 16px;
+    }
+    .welcome-hero {
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 24px 16px;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+    .welcome-hero h1 {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .welcome-hero p {
+      font-size: 14px;
+      color: #94a3b8;
+      margin: 0;
+    }
+    .welcome-search-box {
+      margin: 16px auto 0;
+      max-width: 500px;
+      position: relative;
+    }
+    .welcome-search-input {
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1.5px solid #334155;
+      background: #1e293b;
+      color: #ffffff;
+      font-size: 14px;
+      outline: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .welcome-search-input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    }
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 16px;
+    }
+    .welcome-card {
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: all 0.18s ease;
+    }
+    .welcome-card:hover {
+      border-color: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.12);
+    }
+    .welcome-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .welcome-card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #eff6ff;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .welcome-card-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+    .welcome-card-desc {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.4;
+    }
+    .welcome-card-chapters {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-height: 160px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .welcome-ch-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 8px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #1e293b;
+      text-decoration: none;
+      transition: all 0.12s;
+    }
+    .welcome-ch-btn:hover {
+      background: #eff6ff;
+      border-color: #93c5fd;
+      color: #2563eb;
+    }
+
+    /* Fast virtualized page loading indicator via CSS */
+    .pdf-page:not([data-rendered="true"]) {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+    .pdf-page:not([data-rendered="true"])::after {
+      content: "⚡ Loading Page " attr(data-page) "...";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 13px;
+      font-weight: 700;
+      color: #94a3b8;
+      background: #f1f5f9;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
+    }
+</style>
 </head>
 <body oncontextmenu="event.preventDefault(); return false;">
 
   <nav class="toolbar" aria-label="Reading controls">
+    <!-- Subjects Directory & Hub Home -->
+    <div class="toolbar-group">
+      <button id="subjectsBtn" class="btn-subjects" type="button" title="വിഷയങ്ങളും അധ്യായങ്ങളും (Browse All Subjects & Chapters)" aria-label="Subjects Library">
+        <span>📚</span> Subjects
+      </button>
+      <span id="activeDocBadge" class="active-doc-badge" title="Current Document">Study Guide</span>
+      <a href="index.html#subjects" class="btn-home-link" title="Academic Hub Home">⌂ Home</a>
+    </div>
+
     <!-- Page Navigation -->
     <div class="toolbar-group">
       <button id="prevPage" class="btn-icon" type="button" title="മുമ്പത്തെ പേജ് (Previous Page)" disabled aria-label="Previous Page">‹</button>
@@ -847,6 +1301,30 @@
       <button id="retry" type="button" hidden>Retry</button>
     </div>
   </nav>
+
+  <!-- Slide-out Subjects & Chapters Drawer -->
+  <div id="subjectsDrawerBackdrop"></div>
+  <aside id="subjectsDrawer" aria-label="Subjects and Chapters Directory">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <span>📚</span> All 11 Subjects & Chapters
+      </div>
+      <button id="closeDrawerBtn" class="drawer-close-btn" type="button" aria-label="Close Subjects Drawer">✕</button>
+    </div>
+    <div class="drawer-search-wrap">
+      <input type="search" id="drawerSearchInput" class="drawer-search-input" placeholder="🔍 Search any subject or chapter...">
+    </div>
+    <div class="drawer-filter-pills">
+      <button class="drawer-pill-btn active" data-cat="all">All (11)</button>
+      <button class="drawer-pill-btn" data-cat="languages">🗣 Languages</button>
+      <button class="drawer-pill-btn" data-cat="social">🏛 Social</button>
+      <button class="drawer-pill-btn" data-cat="philosophy">✧ Philosophy</button>
+      <button class="drawer-pill-btn" data-cat="economics">₹ Economics</button>
+      <button class="drawer-pill-btn" data-cat="maths">∑ Maths</button>
+    </div>
+    <div id="drawerContent" class="drawer-content"></div>
+  </aside>
+
 
   <!-- Audio / Voice Control Panel -->
   <div id="voicePanel" class="voice-panel" hidden>
@@ -953,6 +1431,8 @@
 
   <script type="module">
     const el = id => document.getElementById(id);
+    const pageCanvasCache = new Map();
+     // 0ms fast page canvas LRU cache
     
     // Security & interaction controls
     document.addEventListener('contextmenu', event => { event.preventDefault(); return false; }, true);
@@ -1043,6 +1523,18 @@
       if (section.dataset.rendered === 'true' || section.dataset.rendering === 'true') return;
       const currentGeneration = generation;
       const number = Number(section.dataset.page);
+
+      // 0ms Instant restore from in-memory Page Bitmap Cache
+      if (pageCanvasCache.has(number)) {
+        const cached = pageCanvasCache.get(number);
+        const oldC = section.querySelector('canvas');
+        if (oldC) oldC.remove();
+        section.append(cached);
+        section.dataset.rendered = 'true';
+        delete section.dataset.rendering;
+        return;
+      }
+
       section.dataset.rendering = 'true';
 
       try {
@@ -1094,6 +1586,16 @@
 
         if (currentGeneration !== generation) return;
         section.dataset.rendered = 'true';
+        pageCanvasCache.set(number, canvas);
+        if (pageCanvasCache.size > 25) {
+          const firstKey = pageCanvasCache.keys().next().value;
+          pageCanvasCache.delete(firstKey);
+        }
+        pageCanvasCache.set(number, canvas);
+        if (pageCanvasCache.size > 25) {
+          const firstKey = pageCanvasCache.keys().next().value;
+          pageCanvasCache.delete(firstKey);
+        }
         section.querySelector('.page-loading')?.remove();
         if (Number(section.dataset.page) === pageNumber && el('status')) {
           el('status').textContent = pdf.numPages + ' pages · Scroll or use ‹ › buttons to read';
@@ -2682,7 +3184,7 @@
         } else {
           document.querySelector('.toolbar').hidden = false;
           el('retry').hidden = true;
-          el('status').textContent = 'പഠന സഹായി തിരഞ്ഞെടുക്കുക · Please select a study guide or chapter to read.';
+          showWelcomeSubjectHub();
           return;
         }
       }
@@ -2762,7 +3264,7 @@
                         // Lightning-fast streaming loader: Progressive Page 1 first-paint
         const cMapUrl = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/cmaps/';
         pdf = await lib.getDocument({
-          url: file.href + (file.href.includes('?') ? '&' : '?') + 'v=' + Date.now(),
+          url: file.href,
           cMapUrl: cMapUrl,
           cMapPacked: true,
           enableXfa: false,
@@ -2771,6 +3273,16 @@
           disableStream: false
         }).promise;
 
+                if (activeDocBadge) {
+          const cleanName = decodeURIComponent(file.pathname).split('/').pop().replace(/\.pdf$/i, '').replace(/_/g, ' ');
+          activeDocBadge.textContent = cleanName;
+        }
+        document.title = decodeURIComponent(file.pathname).split('/').pop() + ' · Academic Hub';
+                if (activeDocBadge) {
+          const cleanName = decodeURIComponent(file.pathname).split('/').pop().replace(/\.pdf$/i, '').replace(/_/g, ' ');
+          activeDocBadge.textContent = cleanName;
+        }
+        document.title = decodeURIComponent(file.pathname).split('/').pop() + ' · Academic Hub';
         el('page').max = pdf.numPages;
         // Default to "fit" on mobile, takes 100% of the screen width with high-DPI crisp rendering
         if (window.innerWidth <= 768) {
@@ -2795,8 +3307,226 @@
       el('status').textContent = 'Reader error: ' + (error?.message || 'Unknown error') + '. Tap Retry to try again.';
     }
     }
+
+    // Embedded Complete 11 Subjects Catalog for 0ms Instant Loading
+    const ALL_SUBJECTS_CATALOG = [{"id": "malayalam", "name": "Malayalam", "icon": "അ", "category": "languages", "tag": "LANGUAGE", "description": "Literary Practices in Malayalam (സാഹിത്യാനുശീലനം)", "modules": [{"name": "Module 1 · Gadyam & Vivarthanam", "chapters": [{"title": "സമ്പൂർണ്ണ പഠന സഹായി (Master Guide)", "file": "Malayalam_Complete_Study_Guide.pdf", "desc": "മൊഡ്യൂൾ 1: ഗദ്യവും വിവർത്തനവും സമഗ്ര ഗൈഡ്"}, {"title": "Chapter 1 · ആത്മകഥ (Exam Notes)", "file": "Malayalam_Exam_Notes_Final.pdf", "desc": "ആത്മകഥ · പരീക്ഷാ കുറിപ്പുകൾ"}, {"title": "Chapter 1 · ആത്മകഥ (Notes)", "file": "Malayalam_Notes_Chapter_1_Final.pdf", "desc": "ആത്മകഥ · മലയാളം പഠനക്കുറിപ്പുകൾ"}, {"title": "Chapter 2 · കിഴവനും ക്രാക്കാത്തൂവയും", "file": "SK_Pottekkatt_Study notes_chap2.pdf", "desc": "എസ്.കെ. പൊറ്റെക്കാട്ട് · പഠനക്കുറിപ്പുകൾ"}, {"title": "Chapter 4 · അർമേനിയയിലെ ശോകഗാനം", "file": "malayalam_chapter4_notes.pdf", "desc": "അർമേനിയയിലെ ശോകഗാനം · പഠനക്കുറിപ്പുകൾ"}, {"title": "Module 1 · സമ്പൂർണ്ണ PDF", "file": "LiteraryPracticeinMalayalam-Module1_T1777700168876 (1).pdf", "desc": "യൂണിവേഴ്സിറ്റി LMS ഒഫീഷ്യൽ PDF"}]}, {"name": "Module 2 · Kadha & Novel", "chapters": [{"title": "സമ്പൂർണ്ണ ഗൈഡ് (Master Guide)", "file": "Malayalam_Complete_Study_Guide.pdf", "desc": "മൊഡ്യൂൾ 2: ചെറുകഥയും നോവലും സമഗ്ര ഗൈഡ്"}, {"title": "Chapter 1 · പൂവമ്പഴം (Class Notes)", "file": "Poovampazham_Class_Notes.pdf", "desc": "പൂവമ്പഴം · ക്ലാസ് നോട്ടുകൾ"}, {"title": "Chapter 3 · ദൈവത്തിന്റെ കണ്ണ്", "file": "Module2_chapter3_ദൈവത്തിന്റെ_കണ്ണ് .pdf", "desc": "എൻ.പി. മുഹമ്മദ് · പഠനക്കുറിപ്പുകൾ"}, {"title": "Module 2 · സമ്പൂർണ്ണ PDF", "file": "LiteraryPracticeinMalayalam-Module2_T1779269299389.pdf", "desc": "യൂണിവേഴ്സിറ്റി LMS ഒഫീഷ്യൽ PDF"}]}, {"name": "Module 3 · Kavitha", "chapters": [{"title": "സമ്പൂർണ്ണ ഗൈഡ് (Master Guide)", "file": "Malayalam_Complete_Study_Guide.pdf", "desc": "മൊഡ്യൂൾ 3: കവിത സമഗ്ര ഗൈഡ്"}, {"title": "Chapter 1 · സമുദ്രലംഘനം", "file": "സമുദ്രലംഘനം _chp1_Module3.pdf", "desc": "ചെറുശ്ശേരി · കൃഷ്ണഗാഥ"}, {"title": "Chapter 2 · ചിന്താവിഷ്ടയായ സീത", "file": "ചിന്താവിഷ്ടയായ സീത_chap2Module3..pdf", "desc": "കുമാരനാശാൻ · പഠനം"}, {"title": "Chapter 3 · ഇവനെ കൂടി", "file": "ഇവനെ കൂടി chap3 _Module3.pdf", "desc": "സച്ചിദാനന്ദൻ · പഠനം"}, {"title": "Module 3 · സമ്പൂർണ്ണ PDF", "file": "Module3മലയാളസാഹിത്യാനുശീലനം_T1781936346875 (1).pdf", "desc": "യൂണിവേഴ്സിറ്റി LMS ഒഫീഷ്യൽ PDF"}]}, {"name": "Module 4 · Drishya Kalasahithyam & Cinema", "chapters": [{"title": "സമ്പൂർണ്ണ ഗൈഡ് (Master Guide)", "file": "Malayalam_Complete_Study_Guide.pdf", "desc": "മൊഡ്യൂൾ 4: ദൃശ്യകല, നാടകം, സിനിമ സമഗ്ര ഗൈഡ്"}, {"title": "Chapter 1 · നാടകവേദി", "file": "Malayalam_Complete_Study_Guide.pdf", "desc": "മലയാള നാടകവേദിയും സ്ത്രീപക്ഷ നാടകവേദിയും"}, {"title": "Chapter 2 · നൻപകൽ നേരത്ത് മയക്കം", "file": "Malayalam_Complete_Study_Guide.pdf", "desc": "ലിജോ ജോസ് പെല്ലിശ്ശേരി · മമ്മൂട്ടി"}, {"title": "Chapter 3 · ചലച്ചിത്ര ഗാനങ്ങൾ", "file": "Malayalam_Complete_Study_Guide.pdf", "desc": "മലയാള ചലച്ചിത്ര ഗാനശാഖ"}, {"title": "Chapter 4 · കീഴാള ദൃശ്യസംസ്കാരം", "file": "Malayalam_Complete_Study_Guide.pdf", "desc": "കമ്മട്ടിപ്പാടം, അങ്കമാലി ഡയറീസ്"}, {"title": "Module 4 · സമ്പൂർണ്ണ PDF", "file": "MODULE4_T1783445288761.pdf", "desc": "യൂണിവേഴ്സിറ്റി LMS ഒഫീഷ്യൽ PDF"}]}]}, {"id": "english", "name": "English", "icon": "Aa", "category": "languages", "tag": "LANGUAGE", "description": "English Language Skills for Humanities and Other BA Programmes", "modules": [{"name": "Module 1 · Listening", "chapters": [{"title": "Full Course Textbook (AEC1)", "file": "AEC1-English.pdf", "desc": "Comprehensive English Coursebook · 202 Pages"}, {"title": "Chapter 1 · I Have a Dream (ML)", "file": "English/Malayalam PDF/English_Module_1_Ch1_I_Have_A_Dream_Malayalam.pdf", "desc": "Martin Luther King, Jr. · Malayalam Translation & Notes"}, {"title": "Chapter 2 · Anthem (ML)", "file": "English/Malayalam PDF/English_Module_1_Ch2_Anthem_Malayalam.pdf", "desc": "Leonard Cohen · Malayalam Translation & Notes"}, {"title": "Chapter 3 · Art as Social Work (ML)", "file": "English/Malayalam PDF/English_Module_1_Ch3_Art_As_Social_Work_Malayalam.pdf", "desc": "Amy Morales Lara · Malayalam Translation & Notes"}, {"title": "MCQ Question Bank", "file": "English_MCQ_full_module.pdf", "desc": "All Modules 1–4 · 121 Questions with Verified Answers"}]}, {"name": "Module 2 · Speaking", "chapters": [{"title": "Chapter 1 · Soft Language (ML)", "file": "English/Malayalam PDF/English_Module_2_Ch1_Soft_Language_Malayalam.pdf", "desc": "George Carlin · Malayalam Translation & Analysis"}, {"title": "Chapter 2 · Death of a Salesman (ML)", "file": "English/Malayalam PDF/English_Module_2_Ch2_Death_Of_A_Salesman_Malayalam.pdf", "desc": "Arthur Miller · Malayalam Translation & Analysis"}, {"title": "Chapter 3 · Rip It Out (ML)", "file": "English/Malayalam PDF/English_Module_2_Ch3_Rip_It_Out_Malayalam.pdf", "desc": "Dead Poets Society · Keating · Malayalam Guide"}]}, {"name": "Module 3 · Reading", "chapters": [{"title": "Chapter 1 · Reading Skills Intro (ML)", "file": "English/Malayalam PDF/English_Module_3_Ch1_Reading_Skills_Intro_Malayalam.pdf", "desc": "Skimming, Scanning, SQ3R Methods"}, {"title": "Chapter 2 · The Second Coming (ML)", "file": "English/Malayalam PDF/English_Module_3_Ch2_The_Second_Coming_Malayalam.pdf", "desc": "W.B. Yeats · Poem Translation & Poetic Devices"}, {"title": "Chapter 3 · The Frog Prince (ML)", "file": "English/Malayalam PDF/English_Module_3_Ch3_The_Frog_Prince_Malayalam.pdf", "desc": "Stevie Smith · Malayalam Translation & Study Notes"}, {"title": "Chapter 4 · Optimism (ML)", "file": "English/Malayalam PDF/English_Module_3_Ch4_Optimism_Helen_Keller_Malayalam.pdf", "desc": "Helen Keller · Malayalam Translation & Analysis"}]}, {"name": "Module 4 · Writing", "chapters": [{"title": "Chapter 1 · Writing Skills Intro (ML)", "file": "English/Malayalam PDF/English_Module_4_Ch1_Writing_Skills_Intro_Malayalam.pdf", "desc": "Paragraph Cohesion, Transitions & Structure"}, {"title": "Chapter 2 · Ambedkar's Speech (ML)", "file": "English/Malayalam PDF/English_Module_4_Ch2_Ambedkar_1936_Speech_Malayalam.pdf", "desc": "Dr. B.R. Ambedkar · 1936 Speech Analysis"}, {"title": "Chapter 3 · The World-Renowned Nose (ML)", "file": "English/Malayalam PDF/English_Module_4_Ch3_Basheer_World_Renowned_Nose_Malayalam.pdf", "desc": "Vaikom Muhammad Basheer · Satire & Society"}, {"title": "Chapter 4 · Cinema Paradiso (ML)", "file": "English/Malayalam PDF/English_Module_4_Ch4_Cinema_Paradiso_Review_Malayalam.pdf", "desc": "Film Review Writing & Cinematography"}]}]}, {"id": "sociology", "name": "Sociology", "icon": "◎", "category": "social", "tag": "CORE SUBJECT", "description": "Introduction to Sociology (BA Sociology Core)", "modules": [{"name": "Module 1 · Introducing Sociology", "chapters": [{"title": "Module 1 · Official LMS PDF", "file": "Sociology/LMS_PDF/Module_1_Introducing_Sociology.pdf", "desc": "Nature, Scope and Historical Emergence of Sociology"}]}, {"name": "Module 2 · Practicing Sociology", "chapters": [{"title": "Module 2 · Official LMS PDF", "file": "Sociology/LMS_PDF/Module_2_Practicing_Sociology.pdf", "desc": "Sociological Methods, Field Research & Applications"}]}, {"name": "Module 3 · Individual and Society", "chapters": [{"title": "Chapter 3.1 · Social Interaction Types", "file": "Sociology/LMS_PDF/Module_3_1_Social_Interaction_Types.pdf", "desc": "Cooperation, Accommodation, Assimilation & Conflict"}, {"title": "Chapter 3.2 · Social Groups Types", "file": "Sociology/LMS_PDF/Module_3_2_Social_Groups_Types.pdf", "desc": "Primary, Secondary, In-Group and Out-Group Dynamics"}, {"title": "Chapter 3.3 · Socialization Definition & Types", "file": "Sociology/LMS_PDF/Module_3_3_Socialization_Definition_and_Types.pdf", "desc": "Primary, Secondary, Anticipatory & Re-socialization"}, {"title": "Chapter 3.4 · Agents of Socialization", "file": "Sociology/LMS_PDF/Module_3_4_Agents_of_Socialization.pdf", "desc": "Family, Peer Groups, School & Mass Media"}, {"title": "Chapter 3.5 · Stages of Socialization", "file": "Sociology/LMS_PDF/Module_3_5_Stages_of_Socialization.pdf", "desc": "Infancy, Childhood, Adolescence & Adulthood"}, {"title": "Chapter 3.6 · Social Control Types & Agencies", "file": "Sociology/LMS_PDF/Module_3_6_Social_Control_Types_and_Agencies.pdf", "desc": "Formal & Informal Social Control Mechanisms"}, {"title": "Comprehensive Study Guide · Module 3", "file": "Module_III_Individual_and_Society_.pdf", "desc": "Complete In-Depth Notes with Summaries & MCQs"}]}, {"name": "Module 4 · Sociology and Society", "chapters": [{"title": "Chapter 4.1 · Society Characteristics & Types", "file": "Sociology/LMS_PDF/Module_4_1_Society_Characteristics_and_Types.pdf", "desc": "Tribal, Agrarian, Industrial & Post-Industrial Societies"}, {"title": "Chapter 4.2 · Introduction to Social Institutions", "file": "Sociology/LMS_PDF/Module_4_2_Social_Institutions_Definition_and_Characteristics.pdf", "desc": "Family, Kinship, Religion, Economy & Politics"}, {"title": "Chapter 4.3 · Social Structure: Status and Role", "file": "Sociology/LMS_PDF/Module_4_3_Social_Structure_Status_and_Role.pdf", "desc": "Ascribed vs Achieved Status, Role Conflict & Strain"}, {"title": "Chapter 4.4 · Social Change Factors", "file": "Sociology/LMS_PDF/Module_4_4_Social_Change_Factors.pdf", "desc": "Technological, Demographic, Cultural & Economic Factors"}]}, {"name": "Module 5 & Question Banks", "chapters": [{"title": "Sociology MCQs · With Answer Keys", "file": "Sociology_MCQs_Answered.pdf", "desc": "Verified MCQ Question Bank with Detailed Explanations"}, {"title": "Sociology MCQs · Practice Bank", "file": "Sociology_MCQs_Practice.pdf", "desc": "Practice Test Questions for Self-Assessment"}]}]}, {"id": "philosophy-of-ai", "name": "Philosophy of AI", "icon": "✧", "category": "philosophy", "tag": "Minor Course", "description": "Philosophy of Artificial Intelligence (PHL1MN 102)", "modules": [{"name": "Module 1 · Introduction to AI", "chapters": [{"title": "Chapter 1 · History & Foundations (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_1_Malayalam.pdf", "desc": "From Aristotle to Dartmouth Conference 1956 · Malayalam Guide"}, {"title": "Chapter 2 · Can a Machine Think? (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_2_Malayalam.pdf", "desc": "Alan Turing · Imitation Game · Computing Machinery & Intelligence"}, {"title": "Chapter 3 · Philosophy in the Light of AI (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_3_Malayalam.pdf", "desc": "Ontology, Mind & Computation · Malayalam Guide"}, {"title": "Module 1 · Official LMS Document", "file": "philosophy of AI/LMS PDF/Module_1_Introduction_to_Artificial_Intelligence.pdf", "desc": "Calicut University Official LMS PDF"}]}, {"name": "Module 2 · Classical Version of AI", "chapters": [{"title": "Chapter 4 · Physical Symbol System (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_4_Malayalam.pdf", "desc": "Newell & Simon 1976 · PSSH Hypothesis"}, {"title": "Chapter 5 · Functionalism (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_5_Malayalam.pdf", "desc": "Hilary Putnam · Mind as Software · Multiple Realizability"}, {"title": "Chapter 6 · Functionalism Continued (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_6_Malayalam.pdf", "desc": "Machine State Functionalism vs Homuncular Functionalism"}, {"title": "Chapter 7 · Representational Theory (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_7_Malayalam.pdf", "desc": "Jerry Fodor · Language of Thought (Mentalese)"}, {"title": "Chapter 8 · Computational Theory (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_8_Malayalam.pdf", "desc": "CTMM · Syntax Drives Semantics"}, {"title": "Module 2 · Official LMS Document", "file": "philosophy of AI/LMS PDF/Module_2_Classical_Version_of_Artificial_Intelligence.pdf", "desc": "Calicut University Official LMS PDF"}]}, {"name": "Module 3 · Theories of Knowledge in AI", "chapters": [{"title": "Chapter 9 · Logic and Reasoning (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_9_Malayalam.pdf", "desc": "Propositional & First-Order Predicate Logic in AI"}, {"title": "Chapter 10 · Rule-Based Systems (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_10_Malayalam.pdf", "desc": "Inference Engines, Expert Systems & Production Rules"}, {"title": "Chapter 11 · Semantic Networks (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_11_Malayalam.pdf", "desc": "Knowledge Representation, Frames & Ontologies"}, {"title": "Chapter 12 · Connectionism & ANNs (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_12_Malayalam.pdf", "desc": "PDP, Neural Networks, Weights & Backpropagation"}, {"title": "Chapter 13 · Chinese Room Argument (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_13_Malayalam.pdf", "desc": "John Searle 1980 · Syntax vs Semantics · Strong AI Critique"}, {"title": "Module 3 · Official LMS Document", "file": "philosophy of AI/LMS PDF/Module_3_Theories_of_Knowledge_in_Artificial_Intelligence.pdf", "desc": "Calicut University Official LMS PDF"}]}, {"name": "Module 4 · Ethical & Philosophical Implications", "chapters": [{"title": "Chapter 14 · Aligning Autonomous AI (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_14_Malayalam.pdf", "desc": "The AI Alignment Problem · Human Values & Intentions"}, {"title": "Chapter 15 · Existential Threat (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_15_Malayalam.pdf", "desc": "Nick Bostrom · Superintelligence & AGI Safety"}, {"title": "Chapter 16 · Preventing Bias (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_16_Malayalam.pdf", "desc": "Algorithmic Injustice, Fairness & Accountability"}, {"title": "Chapter 17 · Embedding AI in Institutions (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_17_Malayalam.pdf", "desc": "Healthcare, Governance, Legal AI & Social Norms"}, {"title": "Chapter 18 · Ethical Rules for Autonomous Systems", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_18_Malayalam.pdf", "desc": "Asimov's Laws, Trolley Problems & Machine Ethics"}, {"title": "Chapter 19 · Can AI Suffer? Moral Status", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_19_Malayalam.pdf", "desc": "Sentience, Consciousness & Moral Patienthood"}, {"title": "Chapter 20 · Moral Responsibility (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_20_Malayalam.pdf", "desc": "Can AI be a Moral Agent? Legal & Ethical Accountability"}, {"title": "Module 4 · Official LMS Document", "file": "philosophy of AI/LMS PDF/Module_4_Ethical_and_Philosophical_Implications_of_AI_System.pdf", "desc": "Calicut University Official LMS PDF"}]}, {"name": "Module 5 & Question Banks", "chapters": [{"title": "Chapter 21 · Superintelligence (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_21_Malayalam.pdf", "desc": "Intelligence Explosion & Technological Singularity"}, {"title": "Chapter 22 · Consciousness in Machines (ML)", "file": "Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_22_Malayalam.pdf", "desc": "Qualia, Hard Problem of Consciousness & Future of Humanity"}, {"title": "Module 5 · Official LMS Document", "file": "philosophy of AI/LMS PDF/Module_5_Philosophical_Underpinning_of_AI_and_Future_of_Humanity.pdf", "desc": "Calicut University Official LMS PDF"}, {"title": "Philosophy of AI MCQs · Bilingual", "file": "Philosophy_of_AI_MCQ_Eng_malayalam.pdf", "desc": "Comprehensive Question Paper & Answer Bank"}]}]}, {"id": "philosophy-of-education", "name": "Philosophy of Education", "icon": "✎", "category": "philosophy", "tag": "MDC 1", "description": "Philosophy of Education (Multi-Disciplinary Course)", "modules": [{"name": "Module 1 · Philosophical Basis of Education", "chapters": [{"title": "Module 1 · Malayalam PDF", "file": "Philosophy of Education/Malayalam PDF/Philosophy_Education_Malayalam_Module_1.pdf", "desc": "വിദ്യാഭ്യാസത്തിന്റെ ദാർശനിക അടിത്തറ · സമഗ്ര മലയാളം നോട്ടുകൾ"}, {"title": "Module 1 · Additional Malayalam Guide", "file": "Philosophy of Education/Malayalam PDF/PHILOSOPHYOFEDUCATIONMODULE1_Malayalam (1).pdf", "desc": "വിപുലീകരിച്ച മലയാള പഠന സഹായി"}, {"title": "Module 1 · Official LMS PDF", "file": "Philosophy of Education/LMS_PDF/Module_1_Philosophical_Basis_of_Education.pdf", "desc": "Calicut University Official LMS PDF"}, {"title": "Part 4 · English Notes", "file": "Philosophy_of_Education_Module1_Part4-v5.pdf", "desc": "Core Concepts & Educational Thinkers"}]}, {"name": "Module 2 · Western Approach", "chapters": [{"title": "Module 2 · Western Approach (ML)", "file": "Philosophy of Education/Malayalam PDF/Philosophy_Education_Malayalam_Module_2.pdf", "desc": "പാശ്ചാത്യ വിദ്യാഭ്യാസ ദർശനങ്ങൾ: Idealism, Naturalism, Pragmatism"}, {"title": "Module 2 · Official LMS PDF", "file": "Philosophy of Education/LMS_PDF/Module_2_Western_Approach_to_Educational_Philosophy.pdf", "desc": "Calicut University Official LMS PDF"}]}, {"name": "Module 3 · Indian Approach & MCQs", "chapters": [{"title": "Module 3 · Indian Approach (ML)", "file": "Philosophy of Education/Malayalam PDF/Philosophy_Education_Malayalam_Module_3.pdf", "desc": "ഭാരതീയ വിദ്യാഭ്യാസ ദർശനങ്ങൾ: വേദാന്തം, ബുദ്ധിസം, ഗാന്ധിജി, ടാഗോർ"}, {"title": "Module 3 · Official LMS PDF", "file": "Philosophy of Education/LMS_PDF/Module_3_Indian_Approach_to_Educational_Philosophy.pdf", "desc": "Calicut University Official LMS PDF"}, {"title": "Philosophy of Education MCQs", "file": "Philosophy of Education MCQs.pdf", "desc": "Verified Question Bank with Answers"}]}]}, {"id": "development-issues-in-indian-economy", "name": "Development Issues in Indian Economy", "icon": "₹", "category": "economics", "tag": "ECONOMICS", "description": "Historical Precedents and Contemporary Issues in the Indian Economy", "modules": [{"name": "Module 1 · Historical Precedents", "chapters": [{"title": "അധ്യായം 1 · സാമ്പത്തിക വികസനത്തിന്റെ അർത്ഥം", "file": "Development Issues in Indian Economy/Malayalam PDF/Econ_Module_1_Ch1_Meaning_of_Development_Malayalam.pdf", "desc": "വികസനത്തിന്റെ നിർവ്വചനം, ഗുണങ്ങൾ, 20 MCQs"}, {"title": "അധ്യായം 2 · കൊളോണിയൽ കാലഘട്ടം", "file": "Development Issues in Indian Economy/Malayalam PDF/Econ_Module_1_Ch2_Colonial_Period_History_Malayalam.pdf", "desc": "ബ്രിട്ടീഷ് ഭരണത്തിലെ സാമ്പത്തിക ചൂഷണം, 20 MCQs"}, {"title": "അധ്യായം 3 · ആസൂത്രണ കാലഘട്ടം 1951–1991", "file": "Development Issues in Indian Economy/Malayalam PDF/Econ_Module_1_Ch3_Planning_Era_1951_1991_Malayalam.pdf", "desc": "പഞ്ചവത്സര പദ്ധതികൾ, നെഹ്റുവിയൻ മാതൃക, 20 MCQs"}, {"title": "അധ്യായം 4 · ഉദാരവൽക്കരണ യുഗം (1991 മുതൽ)", "file": "Development Issues in Indian Economy/Malayalam PDF/Econ_Module_1_Ch4_Liberalisation_Era_1991_Malayalam.pdf", "desc": "LPG പരിഷ്കാരങ്ങൾ, സാമ്പത്തിക പ്രതിസന്ധി, 20 MCQs"}, {"title": "അധ്യായം 5 · യഥാർത്ഥ വരുമാനം സൂചകം", "file": "Development Issues in Indian Economy/Malayalam PDF/Econ_Module_1_Ch5_Real_Income_Indicator_Malayalam.pdf", "desc": "ദേശീയ വരുമാനം, പ്രതിശീർഷ വരുമാനം, 20 MCQs"}, {"title": "അധ്യായം 6 · ആരോഗ്യവും വിദ്യാഭ്യാസവും", "file": "Development Issues in Indian Economy/Malayalam PDF/Econ_Module_1_Ch6_Health_and_Education_Malayalam.pdf", "desc": "മനുഷ്യവികസന സൂചിക (HDI), കേരള മോഡൽ, 20 MCQs"}, {"title": "അധ്യായം 7 · അടിസ്ഥാന വികസന പ്രശ്നങ്ങൾ", "file": "Development Issues in Indian Economy/Malayalam PDF/Econ_Module_1_Ch7_Basic_Issues_in_Development_Malayalam.pdf", "desc": "സാമ്പത്തിക വികസനത്തിലെ വെല്ലുവിളികൾ, 20 MCQs"}, {"title": "അധ്യായം 8 · ചരിത്ര പശ്ചാത്തലങ്ങൾ അവലോകനം", "file": "Development Issues in Indian Economy/Malayalam PDF/Econ_Module_1_Ch8_Historical_Precedents_Overview_Malayalam.pdf", "desc": "മൊഡ്യൂൾ 1 സമ്പൂർണ്ണ അവലോകനവും ചോദ്യോത്തരങ്ങളും"}, {"title": "Module 1 · Official LMS Document", "file": "Development Issues in Indian Economy/LMS_PDF/Module_1_Historical_Precedents_of_Development_Issues.pdf", "desc": "Calicut University Official LMS PDF"}]}, {"name": "Module 2 · Poverty", "chapters": [{"title": "അധ്യായം 9 · ഇന്ത്യയിലെ ദാരിദ്ര്യം (ML)", "file": "Development Issues in Indian Economy/Malayalam PDF/Econ_Module_2_Ch1_Poverty_in_India_Malayalam.pdf", "desc": "ദാരിദ്ര്യരേഖ, ടെണ്ടുൽക്കർ കമ്മിറ്റി, ദാരിദ്ര്യ നിർമ്മാർജ്ജന പദ്ധതികൾ"}, {"title": "Module 2 · Poverty (English LMS)", "file": "Development Issues in Indian Economy/LMS_PDF/Module_2_Poverty.pdf", "desc": "Calicut University Official LMS PDF"}]}, {"name": "Module 3 · Inequality", "chapters": [{"title": "അധ്യായം 10 · ഇന്ത്യയിലെ അസമത്വം (ML)", "file": "Development Issues in Indian Economy/Malayalam PDF/Econ_Module_3_Ch1_Inequality_in_India_Malayalam.pdf", "desc": "ലോറൻസ് കർവ്, ജിനി ഗുണകം, അസമത്വത്തിന്റെ കാരണങ്ങൾ"}, {"title": "Module 3 · Inequality (English LMS)", "file": "Development Issues in Indian Economy/LMS_PDF/Module_3_Inequality.pdf", "desc": "Calicut University Official LMS PDF"}]}, {"name": "Module 4 · Unemployment", "chapters": [{"title": "അധ്യായം 11 · ഇന്ത്യയിലെ തൊഴിലില്ലായ്മ (ML)", "file": "Development Issues in Indian Economy/Malayalam PDF/Econ_Module_4_Ch1_Unemployment_in_India_Malayalam.pdf", "desc": "തൊഴിലില്ലായ്മയുടെ തരങ്ങൾ, MGNREGA, സർവേ ഫലങ്ങൾ"}, {"title": "Module 4 · Unemployment (English LMS)", "file": "Development Issues in Indian Economy/LMS_PDF/Module_4_Unemployment.pdf", "desc": "Calicut University Official LMS PDF"}]}, {"name": "Module 5 & Question Banks", "chapters": [{"title": "അധ്യായം 12 · ധനക്കമ്മിയും പണപ്പെരുപ്പവും (ML)", "file": "Development Issues in Indian Economy/Malayalam PDF/Econ_Module_5_Ch1_Open_Ended_Issues_Fiscal_Inflation_Malayalam.pdf", "desc": "പണപ്പെരുപ്പം, ധനക്കമ്മി, സമകാലിക സാമ്പത്തിക വിഷയങ്ങൾ"}, {"title": "Module 5 · Open Ended Issues (English LMS)", "file": "Development Issues in Indian Economy/LMS_PDF/Module_5_Open_Ended_Issues.pdf", "desc": "Calicut University Official LMS PDF"}, {"title": "Indian Economy MCQs · Question Bank", "file": "Development__Indian_Economy_MCQs.pdf", "desc": "Verified MCQ Question Bank & Practice Questions"}]}]}, {"id": "fundamentals-of-ethics", "name": "Fundamentals of Ethics", "icon": "◇", "category": "philosophy", "tag": "Minor Course", "description": "Philosophical & Practical Fundamentals of Ethics", "modules": [{"name": "Module 1 · Introduction to Ethics", "chapters": [{"title": "Chapter 1 · നൈതികതയുടെ അടിസ്ഥാന തത്വങ്ങൾ (ML)", "file": "Fundamentals of Ethics/Malayalam PDF/Ethics_Chapter_1_Malayalam.pdf", "desc": "നൈതികതയുടെ സ്വഭാവം, വ്യാപ്തി, ശരിയും തെറ്റും"}, {"title": "Syllabus & Core Outline · Ethics", "file": "Fundamentals of Ethics/LMS_PDF/Syllabus_Fundamentals_of_Ethics.pdf", "desc": "Official Syllabus & Course Structure"}]}, {"name": "Module 2 · Concepts of Ethics", "chapters": [{"title": "Chapter 2 · സദ്ഗുണങ്ങളും അവകാശങ്ങളും (ML)", "file": "Fundamentals of Ethics/Malayalam PDF/Ethics_Chapter_2_Malayalam.pdf", "desc": "പ്ലേറ്റോയുടെ കാർഡിനൽ സദ്ഗുണങ്ങൾ, അരിസ്റ്റോട്ടിൽ, അവകാശങ്ങളും കടമകളും"}]}, {"name": "Module 3 · Theories of Ethics", "chapters": [{"title": "Chapter 3 · നൈതിക സിദ്ധാന്തങ്ങൾ (ML)", "file": "Fundamentals of Ethics/Malayalam PDF/Ethics_Chapter_3_Malayalam.pdf", "desc": "യൂട്ടിലിറ്റേറിയനിസം (ബെന്താം, മിൽ), കാന്റിന്റെ ഡിയോണ്ടോളജി"}]}, {"name": "Module 4 · Normative & Applied Ethics", "chapters": [{"title": "Chapter 4 · പ്രായോഗിക നൈതികത (ML)", "file": "Fundamentals of Ethics/Malayalam PDF/Ethics_Chapter_4_Malayalam.pdf", "desc": "ബയോഎത്തിക്സ്, പരിസ്ഥിതി നൈതികത, മെഡിക്കൽ എത്തിക്സ്"}, {"title": "Chapter 5 · സമകാലിക ധാർമ്മിക പ്രശ്നങ്ങൾ (ML)", "file": "Fundamentals of Ethics/Malayalam PDF/Ethics_Chapter_5_Malayalam.pdf", "desc": "യൂതനേഷ്യ, അബോർഷൻ, വധശിക്ഷ തുടങ്ങിയ ധാർമ്മിക ചർച്ചകൾ"}]}, {"name": "Exam Preparation & Special Guides", "chapters": [{"title": "Ethics Exam Cracker · സമ്പൂർണ്ണ ഗൈഡ് (ML)", "file": "Fundamentals of Ethics/Malayalam PDF/Ethics_Exam_Cracker_Malayalam.pdf", "desc": "പരീക്ഷാ കേന്ദ്രീകൃത സമഗ്ര പുനരവലോകനം & ചോദ്യോത്തരങ്ങൾ"}]}]}, {"id": "microeconomic-foundation", "name": "Microeconomic Foundation", "icon": "₹", "category": "economics", "tag": "Minor Course", "description": "Microeconomic Foundations for Arts and Social Sciences", "modules": [{"name": "Module 1 · Supply and Demand", "chapters": [{"title": "Unit 1 · ചോദനം (Demand) · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_1_Demand_Malayalam.pdf", "desc": "ചോദന നിയമം, ചോദന വക്രങ്ങൾ, 20 MCQs"}, {"title": "Unit 2 · പ്രദാനം (Supply) · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_2_Supply_Malayalam.pdf", "desc": "പ്രദാന നിയമം, പ്രദാന വക്രങ്ങൾ, 20 MCQs"}, {"title": "Unit 3 · കമ്പോള സന്തുലിതാവസ്ഥ (Market Eq) · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_3_Market_Equilibrium_Malayalam.pdf", "desc": "സന്തുലിത വിലയും അളവും"}, {"title": "Unit 4 · സന്തുലിതാവസ്ഥയിലെ മാറ്റങ്ങൾ · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_4_Shocking_Equilibrium_Malayalam.pdf", "desc": "ചോദന-പ്രദാന മാറ്റങ്ങളുടെ ആഘാതം"}, {"title": "Unit 5 · സന്തുലിത ഫലങ്ങൾ · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_5_Equilibrium_Effects_Malayalam.pdf", "desc": "വില നിയന്ത്രണങ്ങളും സർക്കാർ ഇടപെടലുകളും"}, {"title": "Units 1–5 · Official LMS PDFs", "file": "Microeconomics/LMS_PDF/Microeconomics_Module_1_Unit_1_Demand.pdf", "desc": "Calicut University Official LMS PDF"}]}, {"name": "Module 2 · Consumer Theory", "chapters": [{"title": "Unit 6 · ഉപഭോക്തൃ മുൻഗണനകൾ · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_6_Consumer_Preferences_Malayalam.pdf", "desc": "ഇൻഡിഫറൻസ് കർവുകൾ, MRS"}, {"title": "Unit 7 · യൂട്ടിലിറ്റി (Utility) · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_7_Utility_Malayalam.pdf", "desc": "കാർഡിനൽ vs ഓർഡിനൽ യൂട്ടിലിറ്റി"}, {"title": "Unit 8 · ബജറ്റ് രേഖ (Budget Constraint) · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_8_Budget_Constraint_Malayalam.pdf", "desc": "വരുമാന മാറ്റങ്ങളും വില മാറ്റങ്ങളും"}, {"title": "Unit 9 · ഉപഭോക്തൃ സന്തുലിതാവസ്ഥ · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_9_Constrained_Choice_Malayalam.pdf", "desc": "ബജറ്റ് രേഖയും ഇൻഡിഫറൻസ് കർവും"}]}, {"name": "Module 3 · Production and Costs", "chapters": [{"title": "Unit 10 · സ്ഥാപനങ്ങളുടെ ഉടമസ്ഥത · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_10_Ownership_Firms_Malayalam.pdf", "desc": "ഉടമസ്ഥതാ രൂപങ്ങളും മാനേജ്‌മെന്റും"}, {"title": "Unit 11 · ഉല്പാദന ധർമ്മം · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_11_Production_Functions_Malayalam.pdf", "desc": "ഹ്രസ്വകാല ദീർഘകാല ഉല്പാദനം"}, {"title": "Unit 12 · ഹ്രസ്വകാല ഉല്പാദനം · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_12_Short_Run_Production_Malayalam.pdf", "desc": "ആനുപാതിക മാറ്റ നിയമം"}, {"title": "Unit 13 · ദീർഘകാല ഉല്പാദനം · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_13_Long_Run_Production_Malayalam.pdf", "desc": "ഐസോക്വാന്റുകൾ, റിട്ടേൺസ് ടു സ്കെയിൽ"}, {"title": "Unit 15 · ചെലവുകളുടെ സ്വഭാവം · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_15_Nature_of_Costs_Malayalam.pdf", "desc": "ഫിക്സഡ് ചെലവുകൾ, വേരിയബിൾ ചെലവുകൾ"}]}, {"name": "Module 4 · Market Structures", "chapters": [{"title": "Unit 18 · പൂർണ്ണമത്സര കമ്പോളം · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_18_Perfect_Competition_Malayalam.pdf", "desc": "Perfect Competition · സവിശേഷതകൾ"}, {"title": "Unit 19 · കുത്തക കമ്പോളം (Monopoly) · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_19_Monopoly_Malayalam.pdf", "desc": "Monopoly · വില നിർണ്ണയം"}, {"title": "Unit 21 · ഒലിഗോപോളി (Oligopoly) · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_21_Oligopoly_Malayalam.pdf", "desc": "Oligopoly · കുറച്ച് വൻകിട കമ്പനികൾ"}, {"title": "Unit 22 · കുത്തക മത്സര കമ്പോളം · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_22_Monopolistic_Competition_Malayalam.pdf", "desc": "Monopolistic Competition"}]}, {"name": "Module 5 & Question Banks", "chapters": [{"title": "Unit 23 · ആഗോള കമ്പോള ഘടനകൾ · ML", "file": "Microeconomics/Malayalam PDF/Micro_Unit_23_Global_Market_Structures_Malayalam.pdf", "desc": "അന്താരാഷ്ട്ര കമ്പോളങ്ങളും മത്സരവും"}, {"title": "Microeconomics Q&A · English Bank", "file": "Microeconomics_Questions_and_Answers.pdf", "desc": "Verified Questions, Options and Answers in English"}]}]}, {"id": "arabic", "name": "Arabic", "icon": "ع", "category": "languages", "tag": "LANGUAGE", "description": "Arabic Language & Communication Skills", "modules": [{"name": "Module 1 · Communication Skills", "chapters": [{"title": "Module 1 · Core Study Guide (PDF 1)", "file": "notesphere-ARABIC-module-1.pdf", "desc": "Grammar, Vocabulary & Reading Comprehension"}, {"title": "Module 1 · Additional Practice (PDF 2)", "file": "notesphere-ARABIC-module-1 (1).pdf", "desc": "Sentence Formation & Dialogue Practice"}, {"title": "Module 1 · Extended Notes (PDF 3)", "file": "notesphere-ARABIC-module-1 (2).pdf", "desc": "Official University Course Material"}]}, {"name": "Module 2 · Applied Arabic", "chapters": [{"title": "Module 2 · Part 1", "file": "notesphere-ARABIC-module-2.pdf", "desc": "Applied Language Structures & Vocabulary"}, {"title": "Module 2 · Part 2", "file": "notesphere-ARABIC-module-2 (1).pdf", "desc": "Grammatical Rules & Syntax"}, {"title": "Module 2 · Part 3", "file": "notesphere-ARABIC-module-2 (3).pdf", "desc": "Selected Prose Passages & Analysis"}, {"title": "Module 2 · Part 4", "file": "notesphere-ARABIC-module-2 (4).pdf", "desc": "Translation & Conversational Exercises"}, {"title": "Module 2 · Part 5", "file": "notesphere-ARABIC-module-2 (5).pdf", "desc": "Review Exercises and Q&A"}]}]}, {"id": "mathematics", "name": "Mathematics", "icon": "∑", "category": "maths", "tag": "Maths", "description": "Foundational Mathematics for Higher Education", "modules": [{"name": "Module 1 · Numbers & Algebra", "chapters": [{"title": "Chapter 1 · Number Systems", "file": "notesphere-MATHEMATICS-chapter-1.pdf", "desc": "Real Numbers, Divisibility & Modular Arithmetic"}, {"title": "Chapter 2 · Quadratic Equations", "file": "notesphere-MATHEMATICS-chapter-2.pdf", "desc": "Roots, Discriminants and Factoring Techniques"}, {"title": "Chapter 3 · Linear Systems", "file": "notesphere-MATHEMATICS-chapter-3.pdf", "desc": "Simultaneous Equations & Matrix Methods"}, {"title": "Chapter 4 · Inequalities", "file": "notesphere-MATHEMATICS-chapter-4.pdf", "desc": "Absolute Values and Interval Notations"}]}, {"name": "Module 2 · Functions & Sequences", "chapters": [{"title": "Chapter 5 · Sets and Relations", "file": "notesphere-MATHEMATICS-chapter-5.pdf", "desc": "Venn Diagrams, Cartesian Products & Mappings"}, {"title": "Chapter 6 · Functions and Graphs", "file": "notesphere-MATHEMATICS-chapter-6.pdf", "desc": "Domain, Range, Inverses and Graph Shapes"}, {"title": "Chapter 7 · Arithmetic Progressions", "file": "notesphere-MATHEMATICS-chapter-7.pdf", "desc": "AP Formulae, nth Terms and Sums"}, {"title": "Chapter 8 · Geometric Progressions", "file": "notesphere-MATHEMATICS-chapter-8.pdf", "desc": "GP Series, Infinite Sums and Applications"}]}, {"name": "Module 3 · Trigonometry & Coordinates", "chapters": [{"title": "Chapter 9 · Trigonometric Ratios", "file": "notesphere-MATHEMATICS-chapter-9.pdf", "desc": "Unit Circle, Angles and Standard Identities"}, {"title": "Chapter 10 · Trigonometric Identities", "file": "notesphere-MATHEMATICS-chapter-10.pdf", "desc": "Compound Angles, Double Angles and Proofs"}, {"title": "Chapter 11 · Coordinate Geometry", "file": "notesphere-MATHEMATICS-chapter-11.pdf", "desc": "Distance Formula, Section Formula and Slope"}, {"title": "Chapter 12 · Straight Lines", "file": "notesphere-MATHEMATICS-chapter-12.pdf", "desc": "Forms of Equations and Intersections"}]}, {"name": "Module 4 · Calculus & Statistics", "chapters": [{"title": "Chapter 13 · Limits and Continuity", "file": "notesphere-MATHEMATICS-chapter-13.pdf", "desc": "Left and Right Hand Limits and Continuity"}, {"title": "Chapter 14 · Differentiation", "file": "notesphere-MATHEMATICS-chapter-14.pdf", "desc": "Power, Product, Quotient and Chain Rules"}, {"title": "Chapter 15 · Applications of Derivatives", "file": "notesphere-MATHEMATICS-chapter-15.pdf", "desc": "Tangents, Normals, Maxima and Minima"}, {"title": "Chapter 16 · Integration Basics", "file": "notesphere-MATHEMATICS-chapter-16.pdf", "desc": "Indefinite and Definite Integrals"}, {"title": "Chapter 17 · Summary & Review", "file": "notesphere-MATHEMATICS-chapter-17.pdf", "desc": "Comprehensive Formula Review & Practice Problems"}]}]}, {"id": "history-of-keralam", "name": "History of Keralam", "icon": "🏛", "category": "social", "tag": "HISTORY", "description": "History of Keralam up to 12th Century (HIS1MN 102)", "modules": [{"name": "Module 1 · Landscape and Environment", "chapters": [{"title": "Module 1 · Landscape & Environment (ML)", "file": "History/Malayalam PDF/History_Module_1_Landscape_and_Environment_Malayalam.pdf", "desc": "ഭൂപ്രകൃതി, പശ്ചിമഘട്ടം, 44 നദികൾ, മൺസൂൺ & ചോദ്യോത്തരങ്ങൾ"}, {"title": "Module 1 · Official LMS PDF", "file": "History/LMS_PDF/History_of_Keralam_Module_1_Landscape_and_Environment.pdf", "desc": "Calicut University Official LMS PDF"}, {"title": "Kerala History up to 12th Century (EN)", "file": "Kerala_History_Upto_12th_Century.pdf", "desc": "Complete Overview Textbook"}]}, {"name": "Module 2 · Prehistoric Settlements & Art", "chapters": [{"title": "Chapter 1 · Prehistoric Settlements (ML)", "file": "History/Malayalam PDF/History_Module_2_Ch1_Prehistoric_Settlements_Malayalam.pdf", "desc": "പ്രാചീന ശിലായുഗം, മധ്യശിലായുഗം, നവീന ശിലായുഗം"}, {"title": "Chapter 2 · Rock Shelters & Art (ML)", "file": "History/Malayalam PDF/History_Module_2_Ch2_Rock_Shelters_Prehistoric_Art_Malayalam.pdf", "desc": "ഇടയ്ക്കൽ ഗുഹകൾ, മറയൂർ പെട്രോഗ്ലിഫുകൾ"}, {"title": "Chapter 3 · Megalithic Culture (ML)", "file": "History/Malayalam PDF/History_Module_2_Ch3_Megalithic_Culture_Malayalam.pdf", "desc": "കുടക്കല്ല്, തൊപ്പിക്കല്ല്, മുനിയറകൾ, പോർക്കുളം"}, {"title": "Module 2 · Official LMS PDFs", "file": "History/LMS_PDF/History_of_Keralam_Module_2_Ch1_Prehistoric_Settlements.pdf", "desc": "Calicut University Official LMS PDF"}]}, {"name": "Module 3 · Early Historic Keralam", "chapters": [{"title": "Module 3 · Early Historic Keralam (ML)", "file": "History/Malayalam PDF/History_Module_3_Early_Historic_Keralam_Malayalam.pdf", "desc": "സംഘസാഹിത്യം, ഐന്തിണകൾ, റോമൻ വാണിജ്യം, മുസിരിസ്, പട്ടണം"}, {"title": "Module 3 · Official LMS PDF", "file": "History/LMS_PDF/History_of_Keralam_Module_3_Early_Historic_Keralam.pdf", "desc": "Calicut University Official LMS PDF"}]}, {"name": "Module 4 · Medieval Keralam & Field Study", "chapters": [{"title": "Module 4 · Medieval Keralam (ML)", "file": "History/Malayalam PDF/History_Module_4_Keralam_Upto_12th_Century_Malayalam.pdf", "desc": "രണ്ടാം ചേര സാമ്രാജ്യം, ശാസനങ്ങൾ (വാഴപ്പള്ളി, തരിസാപ്പള്ളി), നാലുതളി"}, {"title": "Module 4 · Official LMS PDF", "file": "History/LMS_PDF/History_of_Keralam_Module_4_Keralam_Upto_12th_Century.pdf", "desc": "Calicut University Official LMS PDF"}, {"title": "Module 5 · Doing History / Field Study (ML)", "file": "History/Malayalam PDF/History_Module_5_Doing_History_Field_Visit_Malayalam.pdf", "desc": "ചരിത്രാന്വേഷണ രീതികൾ, സ്മാരക സന്ദർശനം"}]}]}];
+    
+    // Subjects Drawer Controller
+    const subjectsBtn = document.getElementById('subjectsBtn');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const drawerBackdrop = document.getElementById('subjectsDrawerBackdrop');
+    const drawer = document.getElementById('subjectsDrawer');
+    const drawerContent = document.getElementById('drawerContent');
+    const drawerSearchInput = document.getElementById('drawerSearchInput');
+    const activeDocBadge = document.getElementById('activeDocBadge');
+
+    function toggleSubjectsDrawer(forceState) {
+      const open = typeof forceState === 'boolean' ? forceState : !drawer.classList.contains('open');
+      drawer.classList.toggle('open', open);
+      drawerBackdrop.classList.toggle('open', open);
+      if (open) {
+        drawerSearchInput.focus();
+        renderDrawerList(drawerSearchInput.value);
+      }
+    }
+
+    if (subjectsBtn) subjectsBtn.onclick = () => toggleSubjectsDrawer();
+    if (closeDrawerBtn) closeDrawerBtn.onclick = () => toggleSubjectsDrawer(false);
+    if (drawerBackdrop) drawerBackdrop.onclick = () => toggleSubjectsDrawer(false);
+
+    // Filter pills in drawer
+    let activeCategoryFilter = 'all';
+    document.querySelectorAll('.drawer-pill-btn').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.drawer-pill-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategoryFilter = btn.dataset.cat;
+        renderDrawerList(drawerSearchInput.value);
+      };
+    });
+
+    if (drawerSearchInput) {
+      drawerSearchInput.oninput = (e) => renderDrawerList(e.target.value);
+    }
+
+    function renderDrawerList(filterText = '') {
+      drawerContent.replaceChildren();
+      const term = filterText.toLowerCase().trim();
+      const curFile = (new URLSearchParams(location.search).get('file') || '').toLowerCase();
+
+      ALL_SUBJECTS_CATALOG.forEach(subj => {
+        if (activeCategoryFilter !== 'all' && subj.category !== activeCategoryFilter) return;
+
+        // Check search match
+        const matchesSubj = subj.name.toLowerCase().includes(term) || (subj.description && subj.description.toLowerCase().includes(term));
+        const matchedModules = [];
+
+        subj.modules.forEach(mod => {
+          const matchedChapters = mod.chapters.filter(ch => 
+            matchesSubj || ch.title.toLowerCase().includes(term) || (ch.desc && ch.desc.toLowerCase().includes(term)) || ch.file.toLowerCase().includes(term)
+          );
+          if (matchedChapters.length > 0) {
+            matchedModules.push({ name: mod.name, chapters: matchedChapters });
+          }
+        });
+
+        if (term && matchedModules.length === 0) return;
+
+        const isCurrentSubj = curFile && subj.modules.some(m => m.chapters.some(c => curFile.includes(c.file.toLowerCase().split('/').pop())));
+
+        const card = document.createElement('div');
+        card.className = 'drawer-subject-card' + (isCurrentSubj ? ' active-subject expanded' : (term ? ' expanded' : ''));
+
+        const header = document.createElement('div');
+        header.className = 'drawer-subject-header';
+        header.innerHTML = `
+          <div class="drawer-subject-info">
+            <span class="drawer-subject-icon">${subj.icon}</span>
+            <div>
+              <div class="drawer-subject-name">${subj.name}</div>
+              <div style="font-size:11px;color:#64748b;">${subj.modules.length} Modules · ${subj.modules.reduce((a,m)=>a+m.chapters.length,0)} PDFs</div>
+            </div>
+          </div>
+          <span class="drawer-subject-badge">${subj.tag}</span>
+        `;
+        header.onclick = () => card.classList.toggle('expanded');
+
+        const modContainer = document.createElement('div');
+        modContainer.className = 'drawer-subject-modules';
+
+        const modulesToShow = term ? matchedModules : subj.modules;
+        modulesToShow.forEach(mod => {
+          const mb = document.createElement('div');
+          mb.className = 'drawer-mod-block';
+          mb.innerHTML = `<div class="drawer-mod-title">${mod.name}</div>`;
+
+          mod.chapters.forEach(ch => {
+            const chLink = document.createElement('div');
+            const isActiveCh = curFile && curFile.includes(ch.file.toLowerCase().split('/').pop());
+            chLink.className = 'drawer-chapter-link' + (isActiveCh ? ' active-chapter' : '');
+            chLink.innerHTML = `
+              <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">📄 ${ch.title}</span>
+              <span style="font-size:10.5px;opacity:0.7;flex-shrink:0;">Read ➔</span>
+            `;
+            chLink.onclick = (e) => {
+              e.stopPropagation();
+              toggleSubjectsDrawer(false);
+              switchDocument(ch.file, ch.title, subj.name);
+            };
+            mb.append(chLink);
+          });
+          modContainer.append(mb);
+        });
+
+        card.append(header, modContainer);
+        drawerContent.append(card);
+      });
+    }
+
+    // Switch Document Function (0ms reload, in-place streaming)
+    function switchDocument(relPath, title, subjectName) {
+      const newUrl = new URL(location.href);
+      newUrl.searchParams.set('file', relPath);
+      history.pushState(null, title || '', newUrl.href);
+
+      if (activeDocBadge) {
+        activeDocBadge.textContent = (subjectName ? subjectName + ' · ' : '') + (title || relPath.split('/').pop());
+      }
+      document.title = (title || relPath.split('/').pop()) + ' · Academic Hub';
+
+      // Clear current canvas cache and re-initialize
+      pageCanvasCache.clear();
+      initDocument();
+    }
+
+    // Render Welcome Subject Hub when no file is selected
+    function showWelcomeSubjectHub() {
+      const reader = el('reader');
+      reader.replaceChildren();
+      document.querySelector('.toolbar').hidden = false;
+      el('status').textContent = '📚 Select any of the 11 subjects to start reading';
+
+      const hub = document.createElement('div');
+      hub.className = 'welcome-hub';
+      hub.innerHTML = `
+        <div class="welcome-hero">
+          <h1>📚 Calicut University Academic Hub — PDF Reader</h1>
+          <p>Instant high-speed reader for all 11 Subjects & 173 Chapters. Choose a subject below or use the search bar.</p>
+          <div class="welcome-search-box">
+            <input type="search" id="welcomeSearch" class="welcome-search-input" placeholder="🔍 Search subjects, chapters or topics...">
+          </div>
+        </div>
+        <div id="welcomeGrid" class="welcome-grid"></div>
+      `;
+
+      const grid = hub.querySelector('#welcomeGrid');
+      const search = hub.querySelector('#welcomeSearch');
+
+      function renderGrid(term = '') {
+        grid.replaceChildren();
+        const t = term.toLowerCase().trim();
+
+        ALL_SUBJECTS_CATALOG.forEach(subj => {
+          const matchSubj = subj.name.toLowerCase().includes(t) || (subj.description && subj.description.toLowerCase().includes(t));
+          const allChs = [];
+          subj.modules.forEach(m => m.chapters.forEach(c => {
+            if (!t || matchSubj || c.title.toLowerCase().includes(t) || c.file.toLowerCase().includes(t)) {
+              allChs.push(c);
+            }
+          }));
+
+          if (t && allChs.length === 0) return;
+
+          const card = document.createElement('div');
+          card.className = 'welcome-card';
+          card.innerHTML = `
+            <div class="welcome-card-header">
+              <span class="welcome-card-icon">${subj.icon}</span>
+              <div>
+                <div class="welcome-card-title">${subj.name}</div>
+                <div class="welcome-card-desc">${subj.description || subj.tag}</div>
+              </div>
+            </div>
+            <div style="font-size:11px;font-weight:750;color:#2563eb;margin-top:4px;">
+              ${subj.modules.length} Modules · ${allChs.length} Chapters
+            </div>
+            <div class="welcome-card-chapters">
+              ${allChs.slice(0, 5).map(c => `
+                <a href="?file=${encodeURIComponent(c.file)}" class="welcome-ch-btn" data-file="${c.file}" data-title="${c.title}">
+                  <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">📄 ${c.title}</span>
+                  <span>➔</span>
+                </a>
+              `).join('')}
+              ${allChs.length > 5 ? `<div style="text-align:center;font-size:11px;color:#64748b;margin-top:2px;">+ ${allChs.length - 5} more chapters in drawer</div>` : ''}
+            </div>
+          `;
+
+          card.querySelectorAll('.welcome-ch-btn').forEach(btn => {
+            btn.onclick = (e) => {
+              e.preventDefault();
+              switchDocument(btn.dataset.file, btn.dataset.title, subj.name);
+            };
+          });
+
+          grid.append(card);
+        });
+      }
+
+      search.oninput = (e) => renderGrid(e.target.value);
+      renderGrid();
+      reader.append(hub);
+    }
+  
+    // Expose helpers globally
+    window.switchDocument = switchDocument;
+    window.toggleSubjectsDrawer = toggleSubjectsDrawer;
+    window.showWelcomeSubjectHub = showWelcomeSubjectHub;
+
+    // Run document initialization
     initDocument();
   </script>
   <div id="zoomHud" role="status" aria-live="polite">🔍 100%</div>
+
+
 </body>
 </html>
