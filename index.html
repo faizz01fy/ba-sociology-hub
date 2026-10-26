@@ -1601,6 +1601,11 @@
       color: #93c5fd;
       border: 1px solid rgba(59, 130, 246, 0.4);
     }
+    .univ-pill-gen {
+      background: rgba(168, 85, 247, 0.25);
+      color: #d8b4fe;
+      border: 1px solid rgba(168, 85, 247, 0.4);
+    }
     .univ-pill-date {
       color: #94a3b8;
       font-size: 0.7rem;
@@ -2166,17 +2171,17 @@
           </div>
         </button>
 
-        <!-- Button 3: General UOC -->
+        <!-- Button 3: General & Media News -->
         <button id="btn-tab-general" class="univ-eye-btn univ-btn-general" data-target="general" type="button" role="tab" aria-selected="false" aria-controls="univ-drawer">
           <div class="univ-btn-left">
-            <span class="univ-btn-icon-wrap">📢</span>
+            <span class="univ-btn-icon-wrap">📰</span>
             <div class="univ-btn-text-wrap">
-              <span class="univ-btn-title">General University News</span>
-              <span class="univ-btn-sub">Admissions &bull; Merit lists &bull; Circulars</span>
+              <span class="univ-btn-title">General &amp; Media News</span>
+              <span class="univ-btn-sub">Campus updates &bull; Media reports &bull; Press</span>
             </div>
           </div>
           <div class="univ-btn-right">
-            <span id="badge-count-general" class="univ-btn-count-pill">... Circulars</span>
+            <span id="badge-count-general" class="univ-btn-count-pill">... Updates</span>
             <span class="univ-btn-arrow">&#9662;</span>
           </div>
         </button>
@@ -6785,26 +6790,32 @@
         if (!marquee) return;
         const cdoeItems = allNotices.filter(n => n.category === 'cdoe');
         const regItems = allNotices.filter(n => n.category === 'regular');
+        const genItems = allNotices.filter(n => n.category === 'general');
 
-        // Pick 3 freshest items (e.g. 1st CDOE, 1st Regular, 2nd CDOE/Regular)
-        const top3 = [];
-        if (cdoeItems[0]) top3.push(cdoeItems[0]);
-        if (regItems[0]) top3.push(regItems[0]);
-        if (cdoeItems[1]) top3.push(cdoeItems[1]);
-        else if (regItems[1]) top3.push(regItems[1]);
+        // Pick freshest items across categories (CDOE, Regular Exam & Media News)
+        const topPool = [];
+        if (cdoeItems[0]) topPool.push(cdoeItems[0]);
+        if (regItems[0]) topPool.push(regItems[0]);
+        if (genItems[0]) topPool.push(genItems[0]);
+        if (cdoeItems[1]) topPool.push(cdoeItems[1]);
+        else if (regItems[1]) topPool.push(regItems[1]);
+        else if (genItems[1]) topPool.push(genItems[1]);
 
-        if (top3.length === 0) return;
+        if (topPool.length === 0) return;
 
-        const buildItemsHtml = () => top3.map(n => {
+        const buildItemsHtml = () => topPool.map(n => {
           const isCdoe = n.category === 'cdoe';
-          const tagClass = isCdoe ? 'univ-pill-cdoe' : 'univ-pill-reg';
-          const tagLabel = isCdoe ? 'CDOE / Distance' : 'Regular Exam';
+          const isReg = n.category === 'regular';
+          const tagClass = isCdoe ? 'univ-pill-cdoe' : (isReg ? 'univ-pill-reg' : 'univ-pill-gen');
+          const tagLabel = isCdoe ? 'CDOE / Distance' : (isReg ? 'Regular Exam' : (n.source || 'Media News'));
+          const isPdf = (n.url || '').toLowerCase().includes('.pdf');
+          const actionText = isPdf ? 'PDF ↗' : 'Read ↗';
           return `
             <a class="univ-marquee-item" href="${escapeHtml(n.url)}" target="_blank" rel="noopener noreferrer">
               <span class="univ-pill-new">NEW</span>
-              <span class="univ-pill-tag ${tagClass}">${tagLabel}</span>
+              <span class="univ-pill-tag ${tagClass}">${escapeHtml(tagLabel)}</span>
               <span style="font-weight:600;">${escapeHtml(n.title)}</span>
-              <span class="univ-pill-date">(${escapeHtml(n.date || 'Recent')}) &bull; PDF ↗</span>
+              <span class="univ-pill-date">(${escapeHtml(n.date || 'Recent')}) &bull; ${actionText}</span>
             </a>
           `;
         }).join('<span style="opacity:0.3;color:#94a3b8;font-size:1rem;">✦</span>');
@@ -6828,7 +6839,7 @@
 
         if (bCdoe) bCdoe.textContent = cdoeCount + ' Circulars';
         if (bReg) bReg.textContent = regCount + ' Circulars';
-        if (bGen) bGen.textContent = genCount + ' Circulars';
+        if (bGen) bGen.textContent = genCount + ' News Updates';
       }
 
       // =========================================================================
@@ -6871,8 +6882,8 @@
           drawerCount.style.background = '#dbeafe';
           drawerCount.style.color = '#1d4ed8';
         } else {
-          drawerTitle.textContent = 'General University Announcements';
-          drawerIcon.textContent = '📢';
+          drawerTitle.textContent = 'General University & Outside Media News';
+          drawerIcon.textContent = '📰';
           drawerCount.className = 'univ-drawer-badge';
           drawerCount.style.background = '#f3e8ff';
           drawerCount.style.color = '#7e22ce';
@@ -6908,7 +6919,7 @@
           list = list.filter(n => (n.title || '').toLowerCase().includes(q) || (n.sub_type || '').toLowerCase().includes(q));
         }
 
-        drawerCount.textContent = list.length + ' Circulars';
+        drawerCount.textContent = list.length + (activeSection === 'general' ? ' News Updates' : ' Circulars');
 
         if (list.length === 0) {
           drawerList.innerHTML = `
@@ -6926,7 +6937,14 @@
           const newTag = n.is_new ? '<span style="background:#ef4444;color:#ffffff;font-size:0.65rem;font-weight:800;padding:2px 6px;border-radius:4px;">NEW</span>' : '';
           const highlightedTitle = highlightText(n.title, searchFilter);
           const isPdf = (n.url || '').toLowerCase().includes('.pdf');
-          const btnText = isPdf ? 'Download PDF ↗' : 'Open Link ↗';
+          const isMedia = n.category === 'general' && !isPdf;
+          const btnText = isPdf ? 'Download PDF ↗' : (isMedia ? 'Read Article ↗' : 'Open Link ↗');
+          const iconSvg = isPdf 
+            ? `<svg style="width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.2;" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>`
+            : `<svg style="width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.2;" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
+
+          const sourceLabel = n.source ? escapeHtml(n.source) : (isMedia ? 'News Media' : 'University');
+          const dateLabel = escapeHtml(n.date || 'Recent');
 
           return `
             <div class="univ-card-item">
@@ -6934,13 +6952,13 @@
                 <div class="univ-card-meta">
                   ${subTypeTag}
                   ${newTag}
-                  <span class="univ-card-date">📅 ${escapeHtml(n.date || 'Recent')} &bull; ${escapeHtml(n.source || 'University')}</span>
+                  <span class="univ-card-date">📅 ${dateLabel} &bull; ${sourceLabel}</span>
                 </div>
                 <h4 class="univ-card-title">${highlightedTitle}</h4>
               </div>
               <div class="univ-card-actions">
                 <a class="univ-card-download-btn" href="${escapeHtml(n.url)}" target="_blank" rel="noopener noreferrer">
-                  <svg style="width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.2;" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  ${iconSvg}
                   ${btnText}
                 </a>
               </div>
