@@ -545,6 +545,7 @@ strong,b,summary,.eyebrow,.subject-tag,.test-label,.module-eyebrow,.ai-study-eye
 
 /* Right Status Live Pulse Chip */
 .semester-context-live {
+  display: none !important; /* Temporarily disabled */
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -598,20 +599,31 @@ strong,b,summary,.eyebrow,.subject-tag,.test-label,.module-eyebrow,.ai-study-eye
   min-width: 0 !important;
   width: auto !important;
   margin: 0;
-  overflow: hidden !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
   white-space: nowrap;
   font-family: 'Plus Jakarta Sans', 'Outfit', 'DM Sans', sans-serif;
   font-size: 13px;
   line-height: 1.4;
-  mask-image: linear-gradient(90deg, transparent 0, #000 36px, #000 calc(100% - 36px), transparent 100%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 36px, #000 calc(100% - 36px), transparent 100%);
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+.semester-context p::-webkit-scrollbar {
+  display: none !important;
 }
 
 .semester-context-marquee {
-  display: flex;
-  width: max-content;
-  animation: semester-context-scroll 160s linear infinite;
-  will-change: transform;
+  display: inline-flex !important;
+  align-items: center !important;
+  width: max-content !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+.marquee-group ~ .marquee-group {
+  display: none !important;
 }
 
 .semester-context:hover .semester-context-marquee {
@@ -848,8 +860,11 @@ strong,b,summary,.eyebrow,.subject-tag,.test-label,.module-eyebrow,.ai-study-eye
     flex: 1 1 0% !important;
     min-width: 0 !important;
     font-size: 12px !important;
-    mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%) !important;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%) !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
   }
   .marquee-group {
     gap: 7px !important;
