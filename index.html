@@ -2177,7 +2177,7 @@
             <span class="univ-btn-icon-wrap">📰</span>
             <div class="univ-btn-text-wrap">
               <span class="univ-btn-title">General &amp; Media News</span>
-              <span class="univ-btn-sub">Campus updates &bull; Media reports &bull; Press</span>
+              <span class="univ-btn-sub">Latest 15 days only &bull; Media &bull; Press</span>
             </div>
           </div>
           <div class="univ-btn-right">
@@ -6829,9 +6829,10 @@
       // 2. UPDATE BUTTON PILL COUNTS
       // =========================================================================
       function updateCounts() {
+        const fifteenDaysAgo = Date.now() - (15 * 24 * 60 * 60 * 1000);
         const cdoeCount = allNotices.filter(n => n.category === 'cdoe').length;
         const regCount = allNotices.filter(n => n.category === 'regular').length;
-        const genCount = allNotices.filter(n => n.category === 'general').length;
+        const genCount = allNotices.filter(n => n.category === 'general' && ((n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo))).length;
 
         const bCdoe = document.getElementById('badge-count-cdoe');
         const bReg = document.getElementById('badge-count-regular');
@@ -6839,7 +6840,7 @@
 
         if (bCdoe) bCdoe.textContent = cdoeCount + ' Circulars';
         if (bReg) bReg.textContent = regCount + ' Circulars';
-        if (bGen) bGen.textContent = genCount + ' News Updates';
+        if (bGen) bGen.textContent = genCount + ' Latest News';
       }
 
       // =========================================================================
@@ -6882,7 +6883,7 @@
           drawerCount.style.background = '#dbeafe';
           drawerCount.style.color = '#1d4ed8';
         } else {
-          drawerTitle.textContent = 'General University & Outside Media News';
+          drawerTitle.textContent = 'General & Media News (Latest 15 Days Only)';
           drawerIcon.textContent = '📰';
           drawerCount.className = 'univ-drawer-badge';
           drawerCount.style.background = '#f3e8ff';
@@ -6913,6 +6914,10 @@
         if (!drawerList || !activeSection) return;
 
         let list = allNotices.filter(n => n.category === activeSection);
+        if (activeSection === 'general') {
+          const fifteenDaysAgo = Date.now() - (15 * 24 * 60 * 60 * 1000);
+          list = list.filter(n => (n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo));
+        }
 
         if (searchFilter) {
           const q = searchFilter.toLowerCase();
@@ -6925,7 +6930,7 @@
           drawerList.innerHTML = `
             <div style="text-align:center;padding:32px 16px;color:#64748b;">
               <p style="font-size:1.6rem;margin:0 0 6px;">🔍</p>
-              <strong>No circulars found matching your search</strong>
+              <strong>No news found matching your search (strictly within last 15 days)</strong>
               <p style="font-size:0.82rem;margin:4px 0 0;">Try typing another keyword.</p>
             </div>
           `;
