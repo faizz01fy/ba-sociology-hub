@@ -5166,6 +5166,9 @@
       };
 
       container.replaceChildren(topBar, panePdf, paneSummary, paneQuiz);
+      if (moduleDialog.dataset.isMcqPdf === 'true') {
+        btnQuiz.click();
+      }
     }
     const renderInteractiveEconomicsChapter = renderInteractiveChapter;
 
@@ -6100,9 +6103,92 @@
         }]
       }];
       if(subject==='Malayalam') return malayalamCourseModules;
+      if(subject==='Mathematics') return mathematicsCourseModules;
       return [1,2,3,4].map(n=>({name:'Module '+n,items:[{label:'MCQ PDF awaiting upload',title:subject+' · Module '+n+' · MCQ PDF',description:'Upload the MCQ question-paper PDF for this subject and module to display it here.'}]}));
     }
-    function showModuleItem(subject,medium,moduleName,item) {
+    function showModuleItem(subject,medium,moduleName,item,module=null,moduleIndex=null,itemIndex=null) {
+      if (moduleIndex === null || moduleIndex === undefined) {
+        moduleIndex = parseInt(moduleDialog.dataset.activeModuleIndex || '0', 10);
+      }
+      if (itemIndex === null || itemIndex === undefined) {
+        itemIndex = parseInt(moduleDialog.dataset.activeItemIndex || '0', 10);
+      }
+      const activeModules = moduleDialog._currentModules || (moduleDialog.dataset.isMcqPdf === 'true' ? getMcqPdfModules(subject) : getSubjectModules(subject, medium));
+
+      function findAdjacentChapter(mods, mIdx, iIdx, dir) {
+        if (!mods || !mods.length || mIdx === null || isNaN(mIdx) || iIdx === null || isNaN(iIdx)) return null;
+        let curM = mIdx;
+        let curI = iIdx + dir;
+        while (curM >= 0 && curM < mods.length) {
+          const mod = mods[curM];
+          if (mod && Array.isArray(mod.items)) {
+            while (curI >= 0 && curI < mod.items.length) {
+              const it = mod.items[curI];
+              if (it && (it.href || it.chapter || it.key) && !isSyllabusContext(mod.name, it)) {
+                return { moduleIndex: curM, itemIndex: curI, module: mod, item: it };
+              }
+              curI += dir;
+            }
+          }
+          curM += dir;
+          if (curM >= 0 && curM < mods.length) {
+            const nextMod = mods[curM];
+            curI = (dir > 0) ? 0 : (nextMod && nextMod.items ? nextMod.items.length - 1 : -1);
+          }
+        }
+        return null;
+      }
+      const prevTarget = findAdjacentChapter(activeModules, moduleIndex, itemIndex, -1);
+      const nextTarget = findAdjacentChapter(activeModules, moduleIndex, itemIndex, 1);
+
+      function createNavButtons(isQuizBottom) {
+        const navWrap = document.createElement('div');
+        navWrap.className = isQuizBottom ? 'quiz-chapter-nav-btns' : 'module-nav-btns';
+        navWrap.style.display = 'inline-flex';
+        navWrap.style.alignItems = 'center';
+        navWrap.style.gap = '8px';
+
+        if (prevTarget) {
+          const prevBtn = document.createElement('button');
+          prevBtn.type = 'button';
+          prevBtn.className = 'module-home module-nav-prev';
+          prevBtn.style.cssText = 'background:#f8fafc; color:#334155; border:1.5px solid #cbd5e1; font-weight:700; cursor:pointer;';
+          prevBtn.innerHTML = '<span aria-hidden="true">←</span> Previous Chapter';
+          prevBtn.title = prevTarget.item.label || prevTarget.item.title || 'Previous Chapter';
+          prevBtn.onclick = () => {
+            if (prevTarget.moduleIndex !== moduleIndex) {
+              moduleDialog.dataset.activeModuleIndex = String(prevTarget.moduleIndex);
+              renderModule(subject, medium, activeModules, prevTarget.moduleIndex, prevTarget.itemIndex);
+            } else {
+              selectModuleItem(subject, medium, prevTarget.module, prevTarget.moduleIndex, prevTarget.itemIndex);
+            }
+            const scrollEl = moduleDialog.querySelector('.module-panel') || moduleContent;
+            if (scrollEl && typeof scrollEl.scrollTo === 'function') scrollEl.scrollTo({ top: 0, behavior: 'smooth' });
+          };
+          navWrap.append(prevBtn);
+        }
+
+        if (nextTarget) {
+          const nextBtn = document.createElement('button');
+          nextBtn.type = 'button';
+          nextBtn.className = 'module-home module-nav-next';
+          nextBtn.style.cssText = 'background:linear-gradient(135deg, #1d4ed8, #2563eb); color:#ffffff; border:1.5px solid #1e40af; font-weight:800; cursor:pointer; box-shadow:0 2px 6px rgba(37,99,235,0.25);';
+          nextBtn.innerHTML = 'Next Chapter <span aria-hidden="true">→</span>';
+          nextBtn.title = nextTarget.item.label || nextTarget.item.title || 'Next Chapter';
+          nextBtn.onclick = () => {
+            if (nextTarget.moduleIndex !== moduleIndex) {
+              moduleDialog.dataset.activeModuleIndex = String(nextTarget.moduleIndex);
+              renderModule(subject, medium, activeModules, nextTarget.moduleIndex, nextTarget.itemIndex);
+            } else {
+              selectModuleItem(subject, medium, nextTarget.module, nextTarget.moduleIndex, nextTarget.itemIndex);
+            }
+            const scrollEl = moduleDialog.querySelector('.module-panel') || moduleContent;
+            if (scrollEl && typeof scrollEl.scrollTo === 'function') scrollEl.scrollTo({ top: 0, behavior: 'smooth' });
+          };
+          navWrap.append(nextBtn);
+        }
+        return navWrap;
+      }
       const itemMedium=item.medium || medium;
       const readingOnly=moduleDialog.dataset.readingOnly==='true';
       moduleDialog.classList.toggle('module-dialog--malayalam',itemMedium==='Malayalam');
@@ -6182,6 +6268,9 @@
         homeWindow.href='index.html#top';
         homeWindow.textContent='⌂ Home Page';
         windowNav.append(backWindow,homeWindow);
+      if (prevTarget || nextTarget) {
+        windowNav.prepend(createNavButtons(false));
+      }
       const chapterData = getChapterLearningData(subject, item);
       if (chapterData) {
         renderInteractiveChapter(chapterView, item, moduleName, chapterData);
@@ -6192,6 +6281,17 @@
           if (sp) sp.remove();
           const qp = chapterView.querySelector('.view-quiz-pane');
           if (qp) qp.remove();
+        }
+        const quizPane = chapterView.querySelector('.view-quiz-pane');
+        if (quizPane && (prevTarget || nextTarget)) {
+          const quizBottomBar = document.createElement('div');
+          quizBottomBar.className = 'quiz-bottom-nav';
+          quizBottomBar.style.cssText = 'display:flex; justify-content:space-between; align-items:center; margin-top:24px; padding:16px 6px 4px; border-top:1.5px dashed #cbd5e1; gap:12px; flex-wrap:wrap;';
+          const navLabel = document.createElement('span');
+          navLabel.style.cssText = 'font-size:13px; font-weight:700; color:#475569; display:inline-flex; align-items:center; gap:6px;';
+          navLabel.innerHTML = '<span>📖</span> <strong>Chapter Navigation</strong>';
+          quizBottomBar.append(navLabel, createNavButtons(true));
+          quizPane.append(quizBottomBar);
         }
         moduleContent.append(chapterView, windowNav);
         return;
@@ -6273,6 +6373,7 @@
     async function selectModuleItem(subject,medium,module,moduleIndex,itemIndex) {
       // Ignore stale chapter handlers from a module that is no longer selected.
       if(moduleDialog.dataset.activeModuleIndex!==String(moduleIndex)) return;
+      moduleDialog.dataset.activeItemIndex=String(itemIndex);
       const requestId=++moduleContentRequestId;
       const item=module.items[itemIndex];
       Array.from(moduleTabs.children).forEach((button,index)=>{
@@ -6284,7 +6385,7 @@
         button.tabIndex=index===itemIndex?0:-1;
       });
       // Instant 0ms render: display document actions immediately
-      showModuleItem(subject,item.medium || medium,module.name,item);
+      showModuleItem(subject,item.medium || medium,module.name,item,module,moduleIndex,itemIndex);
 
       // Background load interactive notes & quiz data if needed, upgrading view smoothly
       const source = learningDataSources[subject];
@@ -6295,7 +6396,7 @@
           // Regular PDF actions remain active
         }
         if(requestId!==moduleContentRequestId || moduleDialog.hidden || moduleDialog.dataset.activeModuleIndex!==String(moduleIndex)) return;
-        showModuleItem(subject,item.medium || medium,module.name,item);
+        showModuleItem(subject,item.medium || medium,module.name,item,module,moduleIndex,itemIndex);
       }
     }
     function renderAiStudyGuideModule(subject,medium,module,moduleIndex) {
@@ -6451,7 +6552,7 @@
       if(chapters.length) selectChapter(0);
       else moduleContent.replaceChildren();
     }
-    function renderModule(subject,medium,modules,moduleIndex) {
+    function renderModule(subject,medium,modules,moduleIndex,initialItemIndex=null) {
       // Track one active module and rebuild only that module's chapter row.
       moduleContentRequestId++;
       moduleDialog.dataset.activeModuleIndex=String(moduleIndex);
@@ -6495,6 +6596,15 @@
         button.setAttribute('aria-selected',String(index===moduleIndex));
         button.tabIndex=index===moduleIndex?0:-1;
       });
+      if(initialItemIndex !== null && initialItemIndex !== undefined && module.items && module.items[initialItemIndex]) {
+        selectModuleItem(subject, medium, module, moduleIndex, initialItemIndex);
+        return;
+      }
+      if(moduleDialog.dataset.isMcqPdf === 'true' && module.items && module.items.length > 0) {
+        const firstIdx = Math.max(0, module.items.findIndex(item => item && (item.href || item.chapter)));
+        selectModuleItem(subject, medium, module, moduleIndex, firstIdx);
+        return;
+      }
       if(moduleDialog.dataset.readingOnly==='true') {
         showStudyGuideNavigationPrompt(module.name);
         return;
@@ -6526,6 +6636,9 @@
       moduleDialog.dataset.isLms=String(!studyGuide && !mcqPdf);
       moduleDialog.oncontextmenu=event=>event.preventDefault();
       const modules=mcqPdf?getMcqPdfModules(subject):studyGuide?getStudyGuideModules(subject):getSubjectModules(subject,medium);
+      moduleDialog._currentModules = modules;
+      moduleDialog._currentSubject = subject;
+      moduleDialog._currentMedium = medium;
       const englishStudyGuide=studyGuide && subject==='English';
       moduleDialog.classList.toggle('module-dialog--malayalam',(!englishStudyGuide && studyGuide) || medium==='Malayalam');
       moduleDialog.classList.toggle('module-dialog--english-study-guide',englishStudyGuide);
@@ -6542,7 +6655,9 @@
           ? 'Choose English or Malayalam to read your uploaded Microeconomics MCQ question banks.'
           : subject==='Philosophy of AI'
             ? 'Open the uploaded Philosophy of AI MCQ PDF in English and Malayalam.'
-            : subject==='Philosophy of Education'
+            : subject==='Mathematics'
+          ? 'Official Mathematics MCQ question papers & practice tests (Modules 1–4, 18 chapters & question banks with verified solutions).'
+          : subject==='Philosophy of Education'
               ? 'Open the uploaded Philosophy of Education MCQ question paper PDF.'
               : 'MCQ PDF section. Add the subject’s question-paper PDFs to the matching module when ready.')
         : studyGuide
