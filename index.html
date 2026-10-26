@@ -1188,20 +1188,9 @@
       gap: 12px;
       width: 100%;
     }
-    .rotator-live-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 5px 12px;
-      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-      border: 1px solid #86efac;
-      border-radius: 999px;
-      color: #166534;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.3px;
-      box-shadow: 0 2px 8px rgba(22, 101, 52, 0.08);
-      white-space: nowrap;
+        .rotator-live-badge,
+    .rotator-pill {
+      display: none !important;
     }
     .rotator-live-dot {
       width: 8px;
@@ -2176,9 +2165,6 @@
           <p>Everything you need to revise, understand and prepare.</p>
         </div>
         <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-          <div class="rotator-live-badge" title="Dynamic photo pool rotating every 30 minutes across all subjects">
-            <span class="rotator-live-dot"></span> 16+ Curated Photos · 30m Interval
-          </div>
           <label class="search-wrap"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Search subjects..." aria-label="Search subjects"></label>
         </div>
       </div>
@@ -2233,9 +2219,6 @@
           <p>Practise questions and get ready for exam day.</p>
         </div>
         <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-          <div class="rotator-live-badge" title="Dynamic photo pool rotating every 30 minutes across all mock tests">
-            <span class="rotator-live-dot"></span> 16+ Photos · 30m Interval
-          </div>
           <span class="tests-pill">PRACTICE ZONE</span>
         </div>
       </div>
@@ -2703,7 +2686,7 @@
         ]
       };
 
-      const INTERVAL_MS = 30 * 60 * 1000; // 30-minute interval (half an hour)
+      const INTERVAL_MS = 20 * 60 * 1000; // 20-minute interval
       const cardStates = new Map();
 
       function buildPhotoUrl(photoId) {
@@ -2750,9 +2733,8 @@
         }
 
         const pill = card.querySelector('.rotator-pill');
-        if (pill) {
-          pill.textContent = `${actualIdx + 1} / ${gallery.length}`;
-          pill.title = photoObj.alt;
+        if (pill && pill.parentNode) {
+          pill.parentNode.removeChild(pill);
         }
       }
 
@@ -2761,8 +2743,10 @@
         const gallery = subjectGalleries[subject];
         if (!gallery || gallery.length === 0) return;
 
+        // Fresh photo on every open / refresh
+        const randomIndex = Math.floor(Math.random() * gallery.length);
         const state = {
-          index: (cardIndex * 3) % gallery.length,
+          index: randomIndex,
           paused: false,
           timer: null
         };
@@ -2773,12 +2757,7 @@
           const controlsWrap = document.createElement('div');
           controlsWrap.className = 'rotator-controls';
 
-          const topRow = document.createElement('div');
-          topRow.className = 'rotator-top-row';
-          const pill = document.createElement('span');
-          pill.className = 'rotator-pill';
-          pill.textContent = `${state.index + 1} / ${gallery.length}`;
-          topRow.appendChild(pill);
+          
 
           const midRow = document.createElement('div');
           midRow.className = 'rotator-mid-row';
@@ -2803,7 +2782,7 @@
           const progBar = document.createElement('div');
           progBar.className = 'rotator-progress-line';
 
-          controlsWrap.appendChild(topRow);
+          
           controlsWrap.appendChild(midRow);
           controlsWrap.appendChild(progBar);
 
@@ -2858,19 +2837,18 @@
         if (!state) return;
         if (state.timer) clearInterval(state.timer);
 
-        let lastSlot = Math.floor(Date.now() / INTERVAL_MS);
+        let lastAdvance = Date.now();
 
-        // Check every 15 seconds so half-hour interval triggers accurately even if tab was backgrounded
+        // 20-minute interval rotation
         state.timer = setInterval(() => {
-          const currentSlot = Math.floor(Date.now() / INTERVAL_MS);
-          if (currentSlot !== lastSlot) {
-            lastSlot = currentSlot;
+          if (Date.now() - lastAdvance >= INTERVAL_MS) {
+            lastAdvance = Date.now();
             if (!state.paused) {
               state.index++;
               applyPhotoToCard(card, state.index, true);
             }
           }
-        }, 15000);
+        }, 10000);
       }
 
       function restartCardTimer(card) {
