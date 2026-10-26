@@ -1,246 +1,1070 @@
 <!DOCTYPE html>
-<html lang="ml">
-<head>
-  <meta charset="UTF-8">
-  <title>Chapter 2: Can a Machine Think? · Philosophy of AI (PHL1MN102)</title>
-  
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-  @page {
-    size: A4;
-    margin: 14mm 14mm 16mm 14mm;
-    @bottom-right {
-      content: counter(page);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 9pt;
-      font-weight: 700;
-      color: #64748b;
+<html lang="ml"><head><meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" name="viewport"/><meta charset="utf-8"/><title>Philosophy of AI · Module 1 · Chapter 2</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 6mm 8mm 6mm 8mm;
     }
-  }
-  body {
-    font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
-    color: #0f172a;
-    background: #ffffff;
-    line-height: 1.6;
-    font-size: 10pt;
-    margin: 0;
-    padding: 0;
-  }
-  .header-box {
-    border: 2px solid #0f766e;
-    border-radius: 12px;
-    padding: 16px 20px;
-    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
-    margin-bottom: 20px;
-  }
-  .badge {
-    display: inline-block;
-    background: #0f766e;
-    color: #ffffff;
-    font-size: 8pt;
-    font-weight: 800;
-    padding: 3px 10px;
-    border-radius: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-  }
-  h1 {
-    margin: 0 0 4px 0;
-    color: #134e4a;
-    font-size: 16pt;
-    font-weight: 800;
-    line-height: 1.3;
-  }
-  .sub-title {
-    font-size: 12pt;
-    font-weight: 700;
-    color: #0d9488;
-    margin-bottom: 8px;
-  }
-  .meta-info {
-    font-size: 8.5pt;
-    color: #475569;
-    font-weight: 600;
-    border-top: 1px dashed #99f6e4;
-    padding-top: 6px;
-    margin-top: 6px;
-  }
-  
-  
-  .section-title {
-    background: #0f766e;
-    color: #ffffff;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 11pt;
-    font-weight: 800;
-    margin: 22px 0 14px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    page-break-after: avoid;
-  }
-  .bilingual-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
-    page-break-inside: avoid;
-  }
-  .card-en, .card-ml {
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 12px 14px;
-    background: #ffffff;
-    font-size: 9.5pt;
-  }
-  .card-en {
-    border-left: 4px solid #2563eb;
-    background: #f8fafc;
-  }
-  .card-ml {
-    border-left: 4px solid #059669;
-    background: #ffffff;
-  }
-  .card-title {
-    font-weight: 800;
-    margin-bottom: 6px;
-    font-size: 10pt;
-  }
-  .card-en .card-title { color: #1e40af; }
-  .card-ml .card-title { color: #065f46; }
-  .table-box {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 9pt;
-  }
-  .table-box th, .table-box td {
-    border: 1px solid #cbd5e1;
-    padding: 8px 10px;
-    text-align: left;
-  }
-  .table-box th {
-    background: #0f766e;
-    color: #ffffff;
-    font-weight: 700;
-  }
-  .table-box tr:nth-child(even) { background: #f8fafc; }
-  .qa-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin-bottom: 12px;
-    page-break-inside: avoid;
-  }
-  .qa-q {
-    font-weight: 800;
-    color: #0f766e;
-    margin-bottom: 6px;
-    font-size: 10pt;
-  }
-  .qa-a {
-    color: #334155;
-    font-size: 9.5pt;
-    line-height: 1.55;
-  }
-</style>
 
-</head>
-<body>
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
 
-  <div class="header-box">
-    <div class="badge">Calicut University · Minor Philosophy (PHL1MN102)</div>
-    <h1>അധ്യായം 2: ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ?</h1>
-    <div class="sub-title">Chapter 2: Can a Machine Think? (The Turing Test & Machine Intelligence)</div>
-    <div class="meta-info">
-      <span>📚 Module 1 · Unit 1.1 (b)</span> &nbsp;|&nbsp; 
-      <span>⏱️ 10 Hours Module Weightage</span> 
-    </div>
-  </div>
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.34;
+      font-size: 7.4pt;
+      margin: 0;
+      padding: 0;
+    }
 
-<div class="section-title">
-    <span>1. ട്യൂറിംഗിന്റെ അനുകരണ പരീക്ഷണം (The Imitation Game - 1950)</span>
-    <span style="font-size: 9pt; font-weight: 600;">Computing Machinery and Intelligence</span>
-  </div>
+    .page-container {
+      height: 284mm;
+      max-height: 284mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      break-after: page;
+      position: relative;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
 
-  <div class="bilingual-grid">
-    <div class="card-ml">
-      <div class="card-title">മലയാളം വിവരണം</div>
-      <p>1950-ൽ പ്രസിദ്ധീകരിച്ച <em>'Computing Machinery and Intelligence'</em> എന്ന പ്രബന്ധത്തിലാണ് അലൻ ട്യൂറിംഗ് "യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ?" എന്ന കാതലായ ചോദ്യം ഉന്നയിച്ചത്.</p>
-      <p>'ചിന്ത' എന്ന വാക്കിന്റെ അമൂർത്തമായ നിർവ്വചനങ്ങളിൽ കുടുങ്ങാതെ, ഒരു യന്ത്രത്തിന് മനുഷ്യനെപ്പോലെ ബുദ്ധിപൂർവ്വം പെരുമാറാൻ സാധിക്കുമോ എന്ന് പരിശോധിക്കാനായി അദ്ദേഹം <strong>'ഇമിറ്റേഷൻ ഗെയിം' (Imitation Game)</strong> അഥവാ <strong>ട്യൂറിംഗ് ടെസ്റ്റ്</strong> ആവിഷ്കരിച്ചു.</p>
-    </div>
-    <div class="card-en">
-      <div class="card-title">English Academic Concept</div>
-      <p>In his landmark 1950 paper <em>"Computing Machinery and Intelligence,"</em> Alan Turing replaced the metaphysical question <em>"Can machines think?"</em> with an operational behavioural benchmark: the <strong>Imitation Game (Turing Test)</strong>.</p>
-      <p>If a machine can converse via text so convincingly that a human interrogator cannot reliably distinguish it from a real human, the machine has demonstrated functional intelligence.</p>
-    </div>
-  </div>
+    .page-container:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
 
-  <div class="section-title">
-    <span>2. ട്യൂറിംഗ് ടെസ്റ്റിന്റെ ഘടന (Structure of the Turing Test)</span>
-    <span style="font-size: 9pt; font-weight: 600;">Experimental Methodology</span>
-  </div>
+    /* Top Bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #4f46e5;
+      padding-bottom: 2px;
+      margin-bottom: 4px;
+    }
 
-  <table class="table-box">
-    <tr>
-      <th style="width: 25%;">ഘടകം (Participant)</th>
-      <th style="width: 35%;">പങ്ക് (Role in Test)</th>
-      <th style="width: 40%;">വിശദീകരണം (Theoretical Purpose)</th>
-    </tr>
-    <tr>
-      <td><strong>C: ചോദ്യകർത്താവ് (Interrogator)</strong></td>
-      <td>മനുഷ്യനായ നിരീക്ഷകൻ (Human Judge)</td>
-      <td>ടെർമിനൽ വഴി ചോദ്യങ്ങൾ അയച്ച് മറുപടികൾ പരിശോധിച്ച് ഏതാണ് മനുഷ്യൻ, ഏതാണ് യന്ത്രം എന്ന് കണ്ടെത്താൻ ശ്രമിക്കുന്നു.</td>
-    </tr>
-    <tr>
-      <td><strong>A: കമ്പ്യൂട്ടർ (Machine)</strong></td>
-      <td>പരീക്ഷണ വിധേയമാകുന്ന AI</td>
-      <td>മനുഷ്യനെപ്പോലെ സ്വാഭാവികമായി ചിന്തിക്കുന്നതായി തോന്നിപ്പിച്ച് ചോദ്യകർത്താവിനെ തെറ്റിദ്ധരിപ്പിക്കാൻ ശ്രമിക്കുന്നു.</td>
-    </tr>
-    <tr>
-      <td><strong>B: മനുഷ്യൻ (Human Respondent)</strong></td>
-      <td>യഥാർത്ഥ മനുഷ്യൻ</td>
-      <td>താൻ തന്നെയാണ് യഥാർത്ഥ മനുഷ്യൻ എന്ന് ചോദ്യകർത്താവിന് ബോധ്യപ്പെടുത്തിക്കൊടുക്കാൻ സത്യസന്ധമായി മറുപടി നൽകുന്നു.</td>
-    </tr>
-  </table>
+    .top-bar-left {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #4f46e5;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
 
-  <div class="section-title">
-    <span>3. ദാർശനിക പ്രാധാന്യവും പരിമിതികളും (Philosophical Implications)</span>
-    <span style="font-size: 9pt; font-weight: 600;">Simulation vs Understanding</span>
-  </div>
+    .top-bar-right {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #1e1b4b;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 1px 7px;
+      border-radius: 4px;
+    }
 
-  <div class="bilingual-grid">
-    <div class="card-ml">
-      <div class="card-title">പെരുമാറ്റപരമായ മാതൃക (Behavioral Benchmark)</div>
-      <p>ട്യൂറിംഗ് ടെസ്റ്റ് ആന്തരിക വികാരങ്ങളെയോ ബോധത്തെയോ അല്ല അളക്കുന്നത്; മറിച്ച് പുറമേക്ക് പ്രകടമാകുന്ന ഭാഷാപരമായ പെരുമാറ്റത്തെയാണ് (Behavioral Indistinguishability). മനുഷ്യനെപ്പോലെ സംസാരിക്കാൻ കഴിയുന്നതിനെ ബുദ്ധിയുടെ അടയാളമായി ട്യൂറിംഗ് കണ്ടു.</p>
-    </div>
-    <div class="card-en">
-      <div class="card-title">Operational Definition of Intelligence</div>
-      <p>Turing's operational test prioritizes external functional performance over unobservable internal mental states. If external linguistic behaviour is identical to human reasoning, functional intelligence is verified.</p>
-    </div>
-  </div>
+    /* Chapter Hero Banner */
+    .chapter-hero {
+      background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 60%, #4f46e5 100%);
+      color: #ffffff;
+      border-radius: 7px;
+      padding: 6px 12px;
+      margin-bottom: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+      border: 1px solid #818cf8;
+    }
 
-  <div class="section-title">
-    <span>4. പരീക്ഷാ സഹായി: മോഡൽ ചോദ്യോത്തരങ്ങൾ (Exam Q&A)</span>
-    <span style="font-size: 9pt; font-weight: 600;">Calicut University Exam Pattern</span>
-  </div>
+    .hero-tag {
+      font-size: 6.2pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #a5b4fc;
+      margin-bottom: 2px;
+    }
 
-  <div class="qa-card">
-    <div class="qa-q">Q1. എന്താണ് ട്യൂറിംഗ് ടെസ്റ്റ്? അത് എങ്ങനെയാണ് നിർവ്വഹിക്കുന്നത്? (Explain the Turing Test)</div>
-    <div class="qa-a">
-      <strong>ഉത്തരം:</strong> 1950-ൽ അലൻ ട്യൂറിംഗ് ആവിഷ്കരിച്ച ഇമിറ്റേഷൻ ഗെയിമാണിത്. ഇതിൽ ഒരു മനുഷ്യ ചോദ്യകർത്താവ് വെവ്വേറെ മുറികളിലിരിക്കുന്ന ഒരു മനുഷ്യനോടും ഒരു കമ്പ്യൂട്ടറിനോടും ടെക്സ്റ്റ് സന്ദേശങ്ങൾ വഴി സംഭാഷണം നടത്തുന്നു. കമ്പ്യൂട്ടറിന് മനുഷ്യനെപ്പോലെ സംസാരിക്കാനും ചോദ്യകർത്താവിനെ ആശയക്കുഴപ്പത്തിലാക്കാനും സാധിച്ചാൽ ആ യന്ത്രം ട്യൂറിംഗ് ടെസ്റ്റ് പാസായതായി കണക്കാക്കുന്നു.
-    </div>
-  </div>
+    .hero-title-en {
+      font-size: 9.8pt;
+      font-weight: 800;
+      margin: 0 0 2px 0;
+      line-height: 1.22;
+      color: #ffffff;
+    }
 
-  <div class="qa-card">
-    <div class="qa-q">Q2. ട്യൂറിംഗ് ടെസ്റ്റിന്റെ പ്രധാന ദാർശനിക പരിമിതി എന്താണ്? (Philosophical limitation of Turing Test)</div>
-    <div class="qa-a">
-      <strong>ഉത്തരം:</strong> ട്യൂറിംഗ് ടെസ്റ്റ് <strong>ബാഹ്യമായ ഭാഷാ പെരുമാറ്റത്തെ (Simulation)</strong> മാത്രമാണ് അളക്കുന്നത്; യന്ത്രത്തിന് ആന്തരികമായി കാര്യങ്ങൾ ഗ്രഹിക്കാനുള്ള ബോധമോ അർത്ഥബോധമോ (Intentionality / Understanding) ഉണ്ടോ എന്ന് ഇത് തെളിയിക്കുന്നില്ല.
-    </div>
-  </div>
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      margin: 0;
+      color: #f8fafc;
+      line-height: 1.32;
+    }
 
-</body>
-</html>
+    /* Content Box / Unit Card */
+    .content-box, .unit-card {
+      border: 1.2px solid #e2e8f0;
+      border-radius: 6px;
+      background: #ffffff;
+      margin-bottom: 4.5px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .section-header, .unit-head {
+      background: linear-gradient(90deg, #f1f5f9 0%, #f8fafc 100%);
+      border-left: 3.5px solid #4f46e5;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 3.5px 8px;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-title-en, .unit-title-en {
+      font-size: 7.8pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .section-title-ml, .unit-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.4pt;
+      font-weight: 700;
+      color: #4338ca;
+      margin-left: 6px;
+    }
+
+    /* Side-by-Side Bilingual Grid */
+    .bilingual-pair {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 6px !important;
+      padding: 4px 6px !important;
+      box-sizing: border-box !important;
+      background: #ffffff !important;
+    }
+
+    .block-en {
+      background: #f8fafc !important;
+      border: 1px solid #e0e7ff !important;
+      border-left: 3.5px solid #4f46e5 !important;
+      padding: 4px 7px !important;
+      border-radius: 4px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      margin: 0 !important;
+      min-width: 0 !important;
+    }
+
+    .block-en-label, .block-label {
+      font-size: 6.2pt !important;
+      font-weight: 800 !important;
+      color: #4338ca !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      margin-bottom: 2px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 3px !important;
+    }
+
+    .block-en p {
+      font-size: 7.2pt !important;
+      color: #1e293b !important;
+      line-height: 1.32 !important;
+      margin: 0 0 3px 0 !important;
+      text-align: justify !important;
+    }
+    .block-en p:last-child { margin-bottom: 0 !important; }
+
+    .block-ml {
+      background: #f0fdf4 !important;
+      border: 1px solid #dcfce7 !important;
+      border-left: 3.5px solid #10b981 !important;
+      padding: 4px 7px !important;
+      border-radius: 4px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      margin: 0 !important;
+      min-width: 0 !important;
+    }
+
+    .block-ml-label {
+      font-family: 'Noto Sans Malayalam', sans-serif !important;
+      font-size: 6.2pt !important;
+      font-weight: 800 !important;
+      color: #047857 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.4px !important;
+      margin-bottom: 2px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 3px !important;
+    }
+
+    .block-ml p {
+      font-family: 'Noto Sans Malayalam', sans-serif !important;
+      font-size: 7.1pt !important;
+      color: #064e3b !important;
+      line-height: 1.38 !important;
+      margin: 0 0 3px 0 !important;
+      text-align: justify !important;
+    }
+    .block-ml p:last-child { margin-bottom: 0 !important; }
+
+    /* Highlights */
+    .hl-green {
+      background: #bbf7d0 !important;
+      color: #14532d !important;
+      padding: 0.5px 3px !important;
+      border-radius: 2px !important;
+      font-weight: 600 !important;
+    }
+
+    .hl-yellow {
+      background: #fef08a !important;
+      color: #713f12 !important;
+      padding: 0.5px 3px !important;
+      border-radius: 2px !important;
+      font-weight: 600 !important;
+    }
+
+    /* Page Footer */
+    .page-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 6.2pt;
+      color: #64748b;
+      margin-top: auto;
+    }
+
+    .footer-left { font-weight: 600; }
+    .footer-badges { display: flex; gap: 8px; }
+    .footer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 5.8pt;
+      font-weight: 700;
+    }
+    .badge-dot { width: 5px; height: 5px; border-radius: 50%; display: inline-block; }
+
+    /* Exam Cards, MCQs, Revision Masterclass */
+    .mcq-card {
+      border: 1.2px solid #cbd5e1;
+      border-radius: 5px;
+      padding: 3.5px 6px;
+      margin-bottom: 3px;
+      background: #ffffff;
+    }
+
+    .mcq-q-en { font-size: 7.3pt; font-weight: 800; color: #0f172a; }
+    .mcq-q-ml { font-family: 'Noto Sans Malayalam', sans-serif; font-size: 7pt; font-weight: 700; color: #0369a1; margin-bottom: 2px; }
+
+    .mcq-grid, .mcq-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin: 2px 0;
+    }
+
+    .mcq-opt, .mcq-option {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 3px;
+      padding: 2px 5px;
+      font-size: 6.8pt;
+    }
+
+    .mcq-opt.correct, .mcq-option.correct {
+      background: #ecfdf5;
+      border: 1.2px solid #10b981;
+      font-weight: 700;
+      color: #047857;
+    }
+
+    .mcq-exp, .mcq-explanation {
+      font-size: 6.3pt;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 1.5px 5px;
+      border-radius: 3px;
+      margin-top: 2px;
+    }
+
+    .essay-card {
+      border: 1.2px solid #4f46e5;
+      border-radius: 5px;
+      background: #ffffff;
+      padding: 4px 7px;
+      margin-bottom: 3px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .essay-q-en { font-size: 7.6pt; font-weight: 800; color: #0f172a; }
+    .essay-q-ml { font-family: 'Noto Sans Malayalam', sans-serif; font-size: 7.2pt; font-weight: 700; color: #4f46e5; margin-bottom: 2px; }
+
+    .points-grid, .page-exam-grid, .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5px;
+      margin: 3px 0;
+    }
+
+    .core-point-card, .point-card {
+      border: 1.2px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 3px 5px;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .point-top {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 1px;
+    }
+
+    .point-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .point-title-en { font-size: 7pt; font-weight: 800; color: #0f172a; }
+    .point-title-ml { font-family: 'Noto Sans Malayalam', sans-serif; font-size: 6.7pt; font-weight: 700; color: #0369a1; margin-bottom: 1px; }
+    .point-body { font-size: 6.3pt; color: #334155; line-height: 1.22; }
+    .point-body-ml { font-family: 'Noto Sans Malayalam', sans-serif; font-size: 6.2pt; color: #064e3b; line-height: 1.26; margin-top: 1px; }
+</style></head><body>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 2</span>
+<span class="top-bar-right">Page 1 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="chapter-hero">
+<div class="hero-tag">🎓 Calicut University FYUGP · Module 1 · Chapter 2</div>
+<div class="hero-title-en">CHAPTER II: Can a Machine Think? (The Turing Test &amp; Church's Thesis)</div>
+<div class="hero-title-ml">അദ്ധ്യായം 2: ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ? (ട്യൂറിംഗ് ടെസ്റ്റും ചർച്ച് തീസിസും)</div>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Academic Overview: The Fundamental Inquiry of Artificial Intelligence</span>
+<span class="section-title-ml">(Curriculum അവലോകനം: നിർമ്മിത ബുദ്ധിയിലെ മൗലികമായ ചോദ്യം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>The inquiry <span class="hl-yellow">"Can a machine think?"</span> is probably the most essential and persistent philosophical question in the domain of Artificial Intelligence. It was initially and meticulously examined by computer pioneer <span class="hl-green">Alan Turing</span> in his key 1950 article, <span class="hl-green">"Computing Machinery and Intelligence."</span> In the early 1950s, the ambiguous inquiry—"might a machine possess the capacity for thought?"—was substituted with a more accessible and operationally precise inquiry: <span class="hl-yellow">"Might a computer that manipulates physical symbols in accordance with structure-sensitive rules contain the capacity for thought?"</span> This inquiry represents the direct culmination of fifty years of study in formal logic and computational theory.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><span class="hl-yellow">"ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ?"</span> എന്ന ചോദ്യമാണ് നിർമ്മിത ബുദ്ധിയിലെ ഏറ്റവും പ്രധാനപ്പെട്ടതും ശാശ്വതവുമായ ദാർശനിക ചോദ്യം. കമ്പ്യൂട്ടർ ശാസ്ത്രത്തിന്റെ തുടക്കക്കാരനായ <span class="hl-green">അലൻ ട്യൂറിംഗ്</span> 1950-ൽ പ്രസിദ്ധീകരിച്ച <span class="hl-green">"കമ്പ്യൂട്ടിംഗ് മെഷിനറി ആൻഡ് ഇന്റലിജൻസ്"</span> എന്ന ചരിത്രപ്രസിദ്ധമായ ലേഖനത്തിലാണ് ഈ വിഷയം ആദ്യമായി ആഴത്തിൽ പരിശോധിച്ചത്. 1950-കളുടെ തുടക്കത്തിൽ "ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ?" എന്ന അവ്യക്തമായ ചോദ്യത്തെ മാറ്റിനിർത്തി കൂടുതൽ വ്യക്തതയുള്ള ചോദ്യം അദ്ദേഹം മുന്നോട്ടുവെച്ചു: <span class="hl-yellow">"ഘടനാനുസൃതമായ നിയമങ്ങൾക്കനുസരിച്ച് ഭൗതിക ചിഹ്നങ്ങളെ കൈകാര്യം ചെയ്യുന്ന ഒരു കമ്പ്യൂട്ടറിന് ചിന്താശേഷി ഉണ്ടാകാൻ സാധിക്കുമോ?"</span> ഫോർമൽ ലോജിക്കിലും കമ്പ്യൂട്ടേഷൻ സിദ്ധാന്തത്തിലും അൻപത് വർഷമായി നടന്ന പഠനങ്ങളുടെ സ്വാഭാവിക പരിസമാപ്തിയായിരുന്നു ഈ അന്വേഷണം.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Curriculum Chapter Objectives: Cognitive Scope &amp; Epistemology</span>
+<span class="section-title-ml">(Curriculum പഠന ലക്ഷ്യങ്ങൾ: കോഗ്നിറ്റീവ് തലവും ജ്ഞാനശാസ്ത്രവും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>According to the official source text, the study of this inquiry is guided by five primary academic objectives:</p>
+<p>1. To investigate the notion of <span class="hl-yellow">cognition</span> and its implications in both human and artificial realms.</p>
+<p>2. To analyse <span class="hl-green">Alan Turing's</span> inquiry and the mechanics of the <span class="hl-yellow">Turing Test</span>.</p>
+<p>3. To comprehend the fundamental distinctions between human biological intelligence and synthetic machine intelligence.</p>
+<p>4. To examine rigorous philosophical arguments concerning the feasibility of machine cognition.</p>
+<p>5. To examine fundamental viewpoints from philosophers and scientists, notably <span class="hl-green">Alan Turing</span>, <span class="hl-green">Alonzo Church</span>, <span class="hl-green">John von Neumann</span>, <span class="hl-green">Hubert L. Dreyfus</span>, and <span class="hl-green">John Searle</span>.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>Curriculum പാഠഭാഗം അനുസരിച്ച് ഈ പഠനത്തെ നയിക്കുന്ന അഞ്ച് പ്രധാന ലക്ഷ്യങ്ങൾ:</p>
+<p>1. മനുഷ്യനിലും യന്ത്രങ്ങളിലുമുള്ള <span class="hl-yellow">കോഗ്നിഷൻ (ജ്ഞാനശേഷി)</span> എന്ന ആശയത്തെക്കുറിച്ച് വിശദമായി അന്വേഷിക്കുക.</p>
+<p>2. <span class="hl-green">അലൻ ട്യൂറിംഗിന്റെ</span> അന്വേഷണങ്ങളും <span class="hl-yellow">ട്യൂറിംഗ് ടെസ്റ്റും</span> വിശകലനം ചെയ്യുക.</p>
+<p>3. മനുഷ്യന്റെ സ്വാഭാവിക ബുദ്ധിയും കൃത്രിമ ബുദ്ധിയും തമ്മിലുള്ള അന്തരം മനസ്സിലാക്കുക.</p>
+<p>4. യന്ത്രങ്ങൾക്ക് ചിന്താശേഷി കൈവരിക്കാൻ കഴിയുമോ എന്നതിനെക്കുറിച്ചുള്ള ദാർശനിക വാദങ്ങൾ പരിശോധിക്കുക.</p>
+<p>5. <span class="hl-green">അലൻ ട്യൂറിംഗ്</span>, <span class="hl-green">അലോൺസോ ചർച്ച്</span>, <span class="hl-green">ജോൺ ഫോൺ ന്യൂമാൻ</span>, <span class="hl-green">ഹ്യൂബർട്ട് ഡ്രെയ്ഫസ്</span>, <span class="hl-green">ജോൺ സിയൾ</span> എന്നിവരുടെ കാഴ്ചപ്പാടുകൾ വിലയിരുത്തുക.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 1 · Chapter 2: Can a Machine Think?</span>
+<span>Page 1</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 2</span>
+<span class="top-bar-right">Page 2 of 12 ✨ Computational Theory &amp; Church's Thesis</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Yes, It Can: Foundations in Computational Theory</span>
+<span class="section-title-ml">(അതെ, യന്ത്രത്തിന് കഴിയും: കമ്പ്യൂട്ടേഷൻ സിദ്ധാന്തത്തിലെ കണ്ടെത്തലുകൾ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>Could a machine think? The syllabus notes that there were many profound reasons for saying yes, rooted in two monumental findings in computational theory. <span class="hl-yellow">The first was Church’s Thesis, which states that every effectively computable function is recursively computable.</span> An "effectively computable" function means there is a "rote" procedure for determining, in finite time, the output of the function for a given input. "Recursively computable" means more specifically that there is a finite set of basic operations that can be applied to a given input, and then applied again and again to successive results to yield the output in finite time. The notion of a rote procedure is nonformal and intuitive, so Church’s thesis does not admit of a formal mathematical proof, but it captures the absolute essence of what it means to compute.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ? ഇതിന് അനുകൂലമായ മറുപടി നൽകാൻ നിരവധി ദാർശനിക കാരണങ്ങളുണ്ടെന്ന് Curriculum ചൂണ്ടിക്കാട്ടുന്നു. കമ്പ്യൂട്ടേഷൻ സിദ്ധാന്തത്തിലെ രണ്ട് സുപ്രധാന കണ്ടെത്തലുകളാണ് ഇതിന്റെ അടിസ്ഥാനം. <span class="hl-yellow">ഇതിൽ ഒന്നാമത്തേത് ചർച്ച് തീസിസ് (Church's Thesis) ആണ്; ഫലപ്രദമായി കണക്കുകൂട്ടാൻ കഴിയുന്ന (effectively computable) ഏതൊരു ഫംഗ്ഷനും ആവർത്തന നിയമങ്ങളിലൂടെ കണക്കാക്കാൻ (recursively computable) കഴിയുമെന്ന് ഇത് സമർത്ഥിക്കുന്നു.</span> ഒരു നിശ്ചിത സമയത്തിനുള്ളിൽ കൃത്യമായ ചട്ടങ്ങളിലൂടെ ഔട്ട്പുട്ട് കണ്ടെത്താൻ കഴിയുന്ന ഒരു യാന്ത്രിക രീതി ഉണ്ടെന്നാണ് എഫക്റ്റീവ് കമ്പ്യൂട്ടബിലിറ്റി കൊണ്ട് അർത്ഥമാക്കുന്നത്. ചർച്ച് തീസിസ് എന്നത് ഗണിതശാസ്ത്രപരമായി തെളിയിക്കപ്പെടുന്ന ഒരു സിദ്ധാന്തമല്ല, മറിച്ച് കമ്പ്യൂട്ടേഷന്റെ കാതലായ സ്വഭാവത്തെ നിർവ്വചിക്കുന്ന ഒരു ദാർശനിക അനുമാനമാണ്.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Alonzo Church, Lambda Calculus, and the Turing Machine</span>
+<span class="section-title-ml">(അലോൺസോ ചർച്ചും ലാംഡ കാൽക്കുലസും ട്യൂറിംഗ് മെഷീനും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>American logician <span class="hl-green">Alonzo Church</span> posited that a function is effectively computable if and only if it can be calculated by <span class="hl-yellow">lambda calculus</span>, a formal symbolic language he devised to express mathematical functions and computation. Simultaneously, <span class="hl-green">Alan Turing</span> conceptualised the <span class="hl-yellow">Turing Machine</span>—an abstract mechanical device that manipulates symbols on an infinite tape in accordance with predefined configuration rules. Church's Thesis links the intuitive, informal concept of an algorithm with rigorous mathematical definitions. It forms the ultimate cornerstone of computer science, as all modern digital computers are physical realizations of universal Turing machines.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ഒരു ഫംഗ്ഷൻ എഫക്റ്റീവ് ആയി കണക്കുകൂട്ടാൻ സാധിക്കണമെങ്കിൽ അത് താൻ വികസിപ്പിച്ച <span class="hl-yellow">ലാംഡ കാൽക്കുലസ് (Lambda Calculus)</span> എന്ന ഫോർമൽ ഭാഷയിലൂടെ കണക്കാക്കാൻ കഴിയുന്നതായിരിക്കണമെന്ന് <span class="hl-green">അലോൺസോ ചർച്ച്</span> വാദിച്ചു. അതേ കാലഘട്ടത്തിൽ തന്നെ <span class="hl-green">അലൻ ട്യൂറിംഗ്</span> ഒരു ടേപ്പിലെ ചിഹ്നങ്ങളെ നിയമങ്ങൾക്കനുസരിച്ച് മാറ്റിയെഴുതുന്ന <span class="hl-yellow">ട്യൂറിംഗ് മെഷീൻ (Turing Machine)</span> എന്ന ഗണിത മാതൃക ആവിഷ്കരിച്ചു. അൽഗോരിതം എന്ന ആശയത്തെ ഗണിതശാസ്ത്രപരമായ നിർവ്വചനവുമായി ബന്ധിപ്പിക്കുന്നത് ചർച്ച് തീസിസ് ആണ്. ആധുനിക കമ്പ്യൂട്ടറുകളെല്ലാം ട്യൂറിംഗ് മെഷീന്റെ ഭൗതിക രൂപങ്ങളായതിനാൽ കമ്പ്യൂട്ടർ ശാസ്ത്രത്തിന്റെ അടിത്തറയാണിത്.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 1 · Chapter 2: Can a Machine Think?</span>
+<span>Page 2</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 2</span>
+<span class="top-bar-right">Page 3 of 12 ✨ Universal Turing Machine &amp; SM Machine</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">The Second Finding: Alan Turing's Universal Machine</span>
+<span class="section-title-ml">(രണ്ടാമത്തെ കണ്ടെത്തൽ: അലൻ ട്യൂറിംഗിന്റെ യൂണിവേഴ്സൽ മെഷീൻ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p><span class="hl-yellow">The second monumental computational result was Alan M. Turing's demonstration that any recursively computable function can be computed in finite time by a maximally simple sort of symbol-manipulating machine called a Universal Turing Machine.</span> This machine is guided by a set of recursively applicable rules that are strictly sensitive to the identity, order, and arrangement of the elementary symbols it encounters on its tape. These two findings entail something truly remarkable: <span class="hl-yellow">a standard digital computer, given only the right program, a sufficiently large memory, and enough time, can compute any rule-governed input-output function whatsoever.</span> It can display any systematic pattern of responses to the environment.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><span class="hl-yellow">കമ്പ്യൂട്ടേഷൻ സിദ്ധാന്തത്തിലെ രണ്ടാമത്തെ കണ്ടെത്തൽ, റിക്കർഷിപ്പായി കണക്കാക്കാൻ കഴിയുന്ന ഏതൊരു ഫംഗ്ഷനെയും ഒരു ലളിതമായ യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീന് നിശ്ചിത സമയത്തിനുള്ളിൽ കണക്കുകൂട്ടാൻ സാധിക്കുമെന്ന് അലൻ ട്യൂറിംഗ് തെളിയിച്ചതാണ്.</span> ഈ മെഷീൻ വായിക്കുന്ന ചിഹ്നങ്ങളുടെ ക്രമത്തിനും രൂപത്തിനും അനുസൃതമായി പ്രവർത്തിക്കുന്ന കർശനമായ നിയമങ്ങളാലാണ് ഇത് നിയന്ത്രിക്കപ്പെടുന്നത്. ഈ രണ്ട് കണ്ടെത്തലുകളും വിരൽചൂണ്ടുന്നത് വലിയൊരു സത്യത്തിലേക്കാണ്: <span class="hl-yellow">ശരിയായ ഒരു പ്രോഗ്രാമും ആവശ്യത്തിന് മെമ്മറിയും സമയവും നൽകിയാൽ, നിയമങ്ങളാൽ നിയന്ത്രിക്കപ്പെടുന്ന ഏതൊരു ഇൻപുട്ട്-ഔട്ട്പുട്ട് ഫംഗ്ഷനും കണക്കുകൂട്ടാൻ ഒരു ഡിജിറ്റൽ കമ്പ്യൂട്ടറിന് സാധിക്കും.</span> പരിസ്ഥിതിയോട് ഏത് രീതിയിലും പ്രതികരിക്കാൻ യന്ത്രങ്ങൾക്ക് ഇതുവഴി സാധ്യമാകുന്നു.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">The Symbol-Manipulating Machine (SM Machine)</span>
+<span class="section-title-ml">(സിംബൽ-മാനിപുലേറ്റിംഗ് മെഷീൻ / SM മെഷീൻ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>More specifically, these theoretical results imply that a suitably programmed <span class="hl-yellow">symbol-manipulating machine (SM machine)</span> should be able to pass the Turing test for conscious intelligence. The machine passes this test if its typed responses cannot be discriminated from the responses of a real, intelligent human person. If human cognition is governed by an effective function, the Church and Turing results assure us that a suitable SM machine could compute it. Early outcomes were extremely favourable: SM robots equipped with sophisticated algorithms addressed intricate instructions, resolved advanced arithmetic, played checkers and chess, and demonstrated theorems, proving the immense potential of the program-writing paradigm.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ഈ സൈദ്ധാന്തിക കണ്ടെത്തലുകൾ വ്യക്തമാക്കുന്നത്, ശരിയായ രീതിയിൽ പ്രോഗ്രാം ചെയ്യപ്പെട്ട ഒരു <span class="hl-yellow">സിംബൽ-മാനിപുലേറ്റിംഗ് മെഷീന് (SM Machine)</span> ട്യൂറിംഗ് ടെസ്റ്റ് വിജയിക്കാൻ സാധിക്കും എന്നാണ്. ഒരു യഥാർത്ഥ മനുഷ്യൻ നൽകുന്ന മറുപടികളിൽ നിന്നും വേർതിരിച്ചറിയാൻ കഴിയാത്ത വിധം മറുപടികൾ നൽകാൻ കഴിഞ്ഞാൽ ആ യന്ത്രം ട്യൂറിംഗ് ടെസ്റ്റ് വിജയിച്ചതായി കണക്കാക്കാം. മനുഷ്യന്റെ ബുദ്ധിയും ചിന്തയും ഒരു ഫംഗ്ഷൻ ആണെങ്കിൽ, ആ ഫംഗ്ഷനെ കണക്കുകൂട്ടാൻ ഒരു SM മെഷീന് സാധിക്കുമെന്ന് ചർച്ച്-ട്യൂറിംഗ് സിദ്ധാന്തം ഉറപ്പുനൽകുന്നു. ആദ്യകാല പരീക്ഷണങ്ങളിൽ സങ്കീർണ്ണ ഗണിത പ്രശ്നങ്ങൾ പരിഹരിക്കാനും ചെസ്സ് കളിക്കാനും സിദ്ധാന്തങ്ങൾ തെളിയിക്കാനും ഇത്തരം മെഷീനുകൾക്ക് സാധിച്ചത് ഇതിന് തെളിവാണ്.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 1 · Chapter 2: Can a Machine Think?</span>
+<span>Page 3</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 2</span>
+<span class="top-bar-right">Page 4 of 12 ✨ The Turing Test &amp; Imitation Game</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">The Turing Test: Operationalizing Intelligence</span>
+<span class="section-title-ml">(ട്യൂറിംഗ് ടെസ്റ്റ്: യന്ത്രബുദ്ധിയുടെ പ്രവർത്തനപരമായ പരീക്ഷണം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>In his 1950 paper, <span class="hl-green">Alan Turing</span> introduced the <span class="hl-yellow">Imitation Game</span> (the Turing Test) as an operational criterion for machine intelligence. Turing realized that defining "thinking" abstractly invites endless metaphysical and theological debates. Instead, he proposed an empirical behavioral benchmark: a human interrogator communicates via text terminal with two hidden entities—one a human being, the other a digital computer. <span class="hl-yellow">If the interrogator cannot reliably distinguish the computer from the human after sustained questioning, the computer must be credited with intelligence.</span> Turing shifted the standard from "Does the machine have an inner spiritual soul?" to "Can the machine behave indistinguishably from an intelligent human?"</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>1950-ലെ പ്രബന്ധത്തിൽ <span class="hl-green">അലൻ ട്യൂറിംഗ്</span> യന്ത്രബുദ്ധിയെ അളക്കാനായി <span class="hl-yellow">ഇമിറ്റേഷൻ ഗെയിം (ട്യൂറിംഗ് ടെസ്റ്റ്)</span> അവതരിപ്പിച്ചു. "ചിന്ത" എന്ന വാക്കിന് അമൂർത്തമായ നിർവ്വചനം നൽകാൻ ശ്രമിക്കുന്നത് മതപരവും ആത്മീയവുമായ തർക്കങ്ങളിലേക്കേ വഴിതെളിക്കൂ എന്ന് ട്യൂറിംഗ് മനസ്സിലാക്കി. പകരം അദ്ദേഹം ഒരു പ്രായോഗിക പെരുമാറ്റ പരീക്ഷണം മുന്നോട്ടുവെച്ചു: ഒരു മുറിയിലിരിക്കുന്ന മനുഷ്യ ന്യായാധിപൻ ടെർമിനൽ വഴി മറ്റ് രണ്ട് മുറികളിലുള്ളവരുമായി സംസാരിക്കുന്നു; ഇതിൽ ഒരാൾ യഥാർത്ഥ മനുഷ്യനും മറ്റൊന്ന് കമ്പ്യൂട്ടറുമാണ്. <span class="hl-yellow">തുടർച്ചയായ സംഭാഷണത്തിനൊടുവിൽ ഏതാണ് കമ്പ്യൂട്ടർ ഏതാണ് മനുഷ്യൻ എന്ന് തിരിച്ചറിയാൻ ആ ന്യായാധിപന് സാധിച്ചില്ലെങ്കിൽ, ആ കമ്പ്യൂട്ടറിന് ചിന്താശേഷിയുണ്ടെന്ന് അംഗീകരിക്കണം.</span> ആത്മാവുണ്ടോ എന്ന അന്വേഷണത്തിന് പകരം മനുഷ്യനെപ്പോലെ പെരുമാറാൻ കഴിയുമോ എന്നതാണ് പ്രധാനമെന്ന് ട്യൂറിംഗ് വ്യക്തമാക്കി.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Philosophical Implications of the Turing Benchmark</span>
+<span class="section-title-ml">(ട്യൂറിംഗ് മാനദണ്ഡത്തിന്റെ ദാർശനിക പ്രത്യാഘാതങ്ങൾ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>The Turing Test embodies the philosophical stance of <span class="hl-yellow">Behaviorism and Functionalism</span>. It asserts that if a system performs all external conversational functions of an intelligent entity, denying it intelligence is unscientific and solipsistic. We judge other human beings to be intelligent based solely on their verbal and behavioral outputs, as we have no direct access to their internal subjective consciousness. Turing argued that parity of reasoning requires us to extend the exact same empirical standard to machines.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ട്യൂറിംഗ് ടെസ്റ്റ് തത്ത്വചിന്തയിലെ <span class="hl-yellow">ബിഹേവിയറിസവുമായും (Behaviorism) ഫങ്ഷണലിസവുമായും (Functionalism)</span> ചേർന്നുനിൽക്കുന്നു. ഒരു യന്ത്രം ബാഹ്യമായി മനുഷ്യനെപ്പോലെ എല്ലാ ബുദ്ധിപരമായ സംഭാഷണങ്ങളും നടത്തുന്നുണ്ടെങ്കിൽ, അതിന് ബുദ്ധിയില്ലെന്ന് വാദിക്കുന്നത് യുക്തിസഹമല്ലെന്ന് ഇത് സമർത്ഥിക്കുന്നു. മറ്റ് മനുഷ്യരുടെ ഉള്ളിലെ ചിന്തകൾ നേരിട്ട് കാണാൻ നമുക്ക് സാധിക്കാത്തതിനാൽ, അവരുടെ സംസാരവും പെരുമാറ്റവും നോക്കിയാണ് നാം അവർക്ക് ബുദ്ധിയുണ്ടെന്ന് വിധിക്കുന്നത്; അതേ അളവുകോൽ യന്ത്രങ്ങളുടെ കാര്യത്തിലും പ്രയോഗിക്കണമെന്ന് ട്യൂറിംഗ് വാദിച്ചു.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 1 · Chapter 2: Can a Machine Think?</span>
+<span>Page 4</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 2</span>
+<span class="top-bar-right">Page 5 of 12 ✨ Turing's Objections: Theological &amp; Mathematical</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">1. The Theological Objection</span>
+<span class="section-title-ml">(1. ദൈവശാസ്ത്രപരമായ എതിർപ്പ്)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p><strong>Objection:</strong> Thinking is a function of man’s immortal soul, which God has given only to humans and not to animals or machines. Therefore, no machine can ever think.</p>
+<p><strong>Turing’s Rebuttal:</strong> <span class="hl-yellow">Turing responded that this places an arbitrary theological restriction on divine omnipotence.</span> If God is omnipotent, He could just as easily infuse a soul into a sufficiently complex computer chassis as He does into a biological human body. Furthermore, historical religious dogma once similarly claimed the sun revolved around the earth.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><strong>എതിർപ്പ്:</strong> ചിന്ത എന്നത് ദൈവത്താൽ മനുഷ്യന് മാത്രം നൽകപ്പെട്ടിട്ടുള്ള ആത്മാവിന്റെ ഗുണമാണ്; മൃഗങ്ങൾക്കോ യന്ത്രങ്ങൾക്കോ ആത്മാവില്ലാത്തതിനാൽ യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാനാവില്ല.</p>
+<p><strong>ട്യൂറിംഗിന്റെ മറുപടി:</strong> <span class="hl-yellow">ഇത് ദൈവത്തിന്റെ സർവ്വശക്തിത്വത്തിന് മേൽ പരിധികൾ കൽപ്പിക്കുന്നതിന് തുല്യമാണെന്ന് ട്യൂറിംഗ് മറുപടി നൽകി.</span> സർവ്വശക്തനായ ദൈവത്തിന് മനുഷ്യ ശരീരത്തിലേക്ക് ആത്മാവിനെ നൽകാൻ കഴിയുമെങ്കിൽ, സങ്കീർണ്ണമായ ഒരു കമ്പ്യൂട്ടറിലേക്കും ആത്മാവിനെ പ്രവേശിപ്പിക്കാൻ സാധിക്കും. കൂടാതെ പുരാതന കാലത്ത് ഭൂമിയാണ് പ്രപഞ്ചത്തിന്റെ കേന്ദ്രമെന്ന അന്ധവിശ്വാസത്തിന് സമാനമാണിത്.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">2. The "Heads in the Sand" Objection</span>
+<span class="section-title-ml">(2. "തല മണലിൽ പൂഴ്ത്തിവെക്കൽ" എതിർപ്പ്)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p><strong>Objection:</strong> The consequences of machines thinking would be too dreadful. Let us hope and believe that they cannot do so.</p>
+<p><strong>Turing’s Rebuttal:</strong> Turing dismissed this as an emotional reaction stemming from human anthropocentric fear of losing intellectual superiority, rather than a reasoned philosophical argument.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><strong>എതിർപ്പ്:</strong> യന്ത്രങ്ങൾ ചിന്തിക്കാൻ തുടങ്ങിയാൽ മനുഷ്യകുലത്തിന് അത് ഭീഷണിയാകും; അതിനാൽ യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാൻ കഴിയില്ലെന്ന് വിശ്വസിക്കാനാണ് നാം ആഗ്രഹിക്കുന്നത്.</p>
+<p><strong>ട്യൂറിംഗിന്റെ മറുപടി:</strong> ഇതൊരു യുക്തിസഹമായ വാദമല്ലെന്നും, സ്വന്തം ആധിപത്യം നഷ്ടപ്പെടുമോ എന്ന മനുഷ്യന്റെ അരക്ഷിതാവസ്ഥയിൽ നിന്നും ഭയത്തിൽ നിന്നും ഉത്ഭവിക്കുന്ന വൈകാരിക പ്രതികരണം മാത്രമാണെന്നും ട്യൂറിംഗ് ചൂണ്ടിക്കാട്ടി.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">3. The Mathematical Objection (Gödel's Incompleteness)</span>
+<span class="section-title-ml">(3. ഗണിതശാസ്ത്രപരമായ എതിർപ്പ് - ഗോഡൽ സിദ്ധാന്തം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p><strong>Objection:</strong> Based on <span class="hl-green">Kurt Gödel's Incompleteness Theorems (1931)</span>, in any consistent formal logical system, there are statements that are true but cannot be proven within the system. Discrete-state machines are limited by these mathematical boundaries, whereas human mathematicians intuitively grasp truths beyond the system.</p>
+<p><strong>Turing’s Rebuttal:</strong> <span class="hl-yellow">Turing noted that humans themselves are not infallible.</span> Human intellect makes mistakes, falls into contradictions, and is subject to similar cognitive limitations; superiority over machines on this basis is unfounded.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><strong>എതിർപ്പ്:</strong> <span class="hl-green">കുർട്ട് ഗോഡലിന്റെ</span> ഇൻകംപ്ലീറ്റ്നസ്സ് സിദ്ധാന്തപ്രകാരം, ഏത് ഗണിത സിസ്റ്റത്തിലും തെളിയിക്കാൻ കഴിയാത്ത ചില സത്യങ്ങളുണ്ടാകും; യന്ത്രങ്ങൾക്ക് ഈ പരിമിതി മറികടക്കാനാവില്ല, എന്നാൽ മനുഷ്യന് അത് സാധിക്കും.</p>
+<p><strong>ട്യൂറിംഗിന്റെ മറുപടി:</strong> <span class="hl-yellow">മനുഷ്യരും അപൂർണ്ണരാണെന്ന് ട്യൂറിംഗ് ഓർമ്മിപ്പിച്ചു.</span> മനുഷ്യരും തെറ്റുകൾ വരുത്തുകയും യുക്തിപരമായ വൈരുദ്ധ്യങ്ങളിൽ പെടുകയും ചെയ്യുന്നുണ്ട്; അതിനാൽ ഇതിന്റെ പേരിൽ മനുഷ്യന് യന്ത്രത്തേക്കാൾ പൂർണ്ണമായ ഔന്നത്യമുണ്ടെന്ന് പറയാനാവില്ല.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 1 · Chapter 2: Can a Machine Think?</span>
+<span>Page 5</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 2</span>
+<span class="top-bar-right">Page 6 of 12 ✨ Turing's Objections: Consciousness &amp; Lovelace</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">4. The Argument from Consciousness (Prof. Jefferson's Lister Oration)</span>
+<span class="section-title-ml">(4. ബോധത്തെക്കുറിച്ചുള്ള വാദം - പ്രൊഫ. ജെഫേഴ്സൺ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p><strong>Objection:</strong> Quoting <span class="hl-green">Professor Jefferson (1949)</span>: <em>"Not until a machine can write a sonnet or compose a concerto because of thoughts and emotions felt, and not by the chance fall of symbols, could we agree that machine equals brain."</em> The machine must have subjective inner feelings (<span class="hl-yellow">Qualia</span>).</p>
+<p><strong>Turing’s Rebuttal:</strong> <span class="hl-yellow">Turing argued that this demand leads directly to Solipsism</span>—the extreme philosophical view that the only mind one can be sure exists is one’s own. If we require inner feeling, a man could claim that he alone is conscious and that all other humans are automata. The only scientific path is to accept communication in the Imitation Game as proof of mind.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><strong>എതിർപ്പ്:</strong> ഒരു യന്ത്രത്തിന് സ്വന്തം വികാരങ്ങളിൽ നിന്നും വിചാരങ്ങളിൽ നിന്നും ഒരു കവിത എഴുതാനോ സംഗീതം ചിട്ടപ്പെടുത്താനോ കഴിയുന്നതുവരെ അതിന് തലച്ചോറിന് തുല്യമായ ചിന്തയുണ്ടെന്ന് പറയാനാവില്ലെന്ന് <span class="hl-green">പ്രൊഫ. ജെഫേഴ്സൺ</span> വാദിച്ചു.</p>
+<p><strong>ട്യൂറിംഗിന്റെ മറുപടി:</strong> <span class="hl-yellow">ഈ വാദം നമ്മെ സോളിപ്സിസത്തിലേക്ക് (Solipsism - സ്വന്തം മനസ്സ് മാത്രമേ ഉള്ളൂ എന്ന ചിന്ത) നയിക്കുമെന്ന് ട്യൂറിംഗ് മുന്നറിയിപ്പ് നൽകി.</span> ഉള്ളിലെ വികാരം നേരിട്ട് അറിയണം എന്ന് നിർബന്ധം പിടിച്ചാൽ, ഞാൻ മാത്രമേ ചിന്തിക്കുന്നുള്ളൂ എന്നും മറ്റുള്ള മനുഷ്യരെല്ലാം വെറും പാവകളാണെന്നും ഒരാൾക്ക് വാദിക്കാം. ബാഹ്യമായ സംഭാഷണത്തിലൂടെ ബോധം വിലയിരുത്തുന്നതാണ് ശാസ്ത്രീയമായ വഴി.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">5. Arguments from Various Disabilities ("Machines Can Never Do X")</span>
+<span class="section-title-ml">(5. കഴിവില്ലായ്മയെക്കുറിച്ചുള്ള വാദങ്ങൾ - "യന്ത്രങ്ങൾക്ക് X ചെയ്യാൻ കഴിയില്ല")</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p><strong>Objection:</strong> Sceptics argue: "You can make a machine do many things, but it can never be kind, resourceful, beautiful, friendly, have a sense of humour, fall in love, or learn from experience."</p>
+<p><strong>Turing’s Rebuttal:</strong> These criticisms simply reflect the limited memory and storage of early computers. As memory capacities expand to millions of digits, machines will exhibit genuine resourcefulness and diverse behavioral adaptability.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><strong>എതിർപ്പ്:</strong> യന്ത്രങ്ങൾക്ക് കണക്കുകൂട്ടാം, എന്നാൽ അവയ്ക്ക് സ്നേഹം, നർമ്മബോധം, സൗഹൃദം, പ്രണയം, സ്വന്തം അനുഭവങ്ങളിൽ നിന്ന് പഠിക്കാനുള്ള കഴിവ് എന്നിവ ഒരിക്കലും ഉണ്ടാകില്ല.</p>
+<p><strong>ട്യൂറിംഗിന്റെ മറുപടി:</strong> ആദ്യകാല കമ്പ്യൂട്ടറുകളുടെ മെമ്മറി പരിമിതിയിൽ നിന്നാണ് ഇത്തരം തെറ്റിദ്ധാരണകൾ ഉണ്ടാകുന്നത്. മെമ്മറിയും പ്രോസസ്സിംഗ് ശേഷിയും വളരുന്നതോടെ മനുഷ്യനെപ്പോലെ വഴക്കത്തോടെ പ്രതികരിക്കാൻ യന്ത്രങ്ങൾക്ക് സാധിക്കും.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">6. Lady Lovelace’s Objection: Machines Cannot Originate Anything</span>
+<span class="section-title-ml">(6. ലേഡി ലവ്ലേസിന്റെ വിമർശനം: യന്ത്രങ്ങൾക്ക് പുതുതായി ഒന്നും നിർമ്മിക്കാനാവില്ല)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p><strong>Objection:</strong> <span class="hl-green">Ada Lovelace</span> famously stated that Babbage's Analytical Engine had no pretension to originate anything; it can only do what we know how to order it to perform.</p>
+<p><strong>Turing’s Rebuttal:</strong> <span class="hl-yellow">Turing countered that machines take us by surprise constantly.</span> Furthermore, humans rarely "originate" knowledge from pure nothingness; our original ideas are synthesized from absorbed teaching and environmental data, which machines can emulate.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><strong>എതിർപ്പ്:</strong> <span class="hl-green">അഡാ ലവ്ലേസ്</span> പ്രസ്താവിച്ചത് പോലെ, യന്ത്രങ്ങൾക്ക് സ്വയം പുതുതായി എന്തെങ്കിലും കണ്ടെത്താൻ കഴിയില്ല; മനുഷ്യൻ നിർദ്ദേശിക്കുന്നത് അനുസരിക്കാൻ മാത്രമേ അതിന് സാധിക്കൂ.</p>
+<p><strong>ട്യൂറിംഗിന്റെ മറുപടി:</strong> <span class="hl-yellow">യന്ത്രങ്ങൾ മനുഷ്യരെ അത്ഭുതപ്പെടുത്തുന്ന ഫലങ്ങൾ പലപ്പോഴും ഉണ്ടാക്കാറുണ്ടെന്ന് ട്യൂറിംഗ് വ്യക്തമാക്കി.</span> മനുഷ്യനും ശൂന്യതയിൽ നിന്നല്ല പുതിയ ആശയങ്ങൾ ഉണ്ടാക്കുന്നത്; മുൻപ് പഠിച്ച കാര്യങ്ങൾ പുനഃസംയോജിപ്പിച്ചാണ് നാം ചിന്തിക്കുന്നത്; യന്ത്രങ്ങൾക്കും ഇത് സാധ്യമാണ്.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 1 · Chapter 2: Can a Machine Think?</span>
+<span>Page 6</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 2</span>
+<span class="top-bar-right">Page 7 of 12 ✨ Nervous System, Informality &amp; ESP</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">7. Argument from Continuity in the Nervous System</span>
+<span class="section-title-ml">(7. നാഡീവ്യൂഹത്തിന്റെ തുടർച്ചയെക്കുറിച്ചുള്ള വാദം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p><strong>Objection:</strong> The biological nervous system is continuous (analogue), where small variations in chemical synaptic impulses cause massive cognitive shifts. Digital computers are discrete-state machines that jump between distinct steps (0 and 1); therefore, a digital machine cannot replicate a biological nervous system.</p>
+<p><strong>Turing’s Rebuttal:</strong> <span class="hl-yellow">A discrete-state machine can simulate continuous physical dynamics to any desired degree of precision.</span> In the Imitation Game, the interrogator cannot detect whether the internal computation is continuous or discrete.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><strong>എതിർപ്പ്:</strong> മനുഷ്യന്റെ നാഡീവ്യൂഹം അനലോഗ് (തുടർച്ചയായ രാസപ്രക്രിയകൾ) ആണ്; എന്നാൽ കമ്പ്യൂട്ടർ ഡിസ്ക്രീറ്റ് (0, 1 എന്ന കൃത്യമായ വിച്ഛേദങ്ങൾ) ആണ്. അതിനാൽ ഡിജിറ്റൽ കമ്പ്യൂട്ടറിന് ജൈവ തലച്ചോറിനെ അനുകരിക്കാനാവില്ല.</p>
+<p><strong>ട്യൂറിംഗിന്റെ മറുപടി:</strong> <span class="hl-yellow">ഏത് അനലോഗ് പ്രതിഭാസത്തെയും വളരെ സൂക്ഷ്മമായ കണക്കുകൂട്ടലുകളിലൂടെ സിമുലേറ്റ് ചെയ്യാൻ ഡിജിറ്റൽ കമ്പ്യൂട്ടറുകൾക്ക് സാധിക്കുമെന്ന് ട്യൂറിംഗ് തെളിയിച്ചു.</span> ഇമിറ്റേഷൻ ഗെയിമിൽ മറുപടി നൽകുന്ന രീതിയെ ഇത് ബാധിക്കില്ല.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">8. The Argument from Informality of Behaviour</span>
+<span class="section-title-ml">(8. പെരുമാറ്റത്തിന്റെ നിയമരഹിത സ്വഭാവത്തെക്കുറിച്ചുള്ള വാദം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p><strong>Objection:</strong> Human behavior cannot be captured by rigid rules. There is no set of rules that tells a person what to do in every conceivable situation; since machines must operate by explicit rules, they cannot replicate flexible human behavior.</p>
+<p><strong>Turing’s Rebuttal:</strong> Confusing "rules of conduct" (social laws) with "laws of behaviour" (scientific laws of nature). The absence of explicit prescriptive guidelines does not imply that human actions violate deterministic physical and cognitive laws.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><strong>എതിർപ്പ്:</strong> മനുഷ്യന്റെ പെരുമാറ്റത്തെ കണിശമായ നിയമങ്ങളാക്കി മാറ്റാൻ കഴിയില്ല; ജീവിതത്തിലെ ഓരോ സാഹചര്യത്തിലും മനുഷ്യൻ വഴക്കത്തോടെയാണ് പ്രതികരിക്കുന്നത്; എന്നാൽ യന്ത്രങ്ങൾ കർശന നിയമങ്ങൾക്കനുസരിച്ച് മാത്രമേ പ്രവർത്തിക്കൂ.</p>
+<p><strong>ട്യൂറിംഗിന്റെ മറുപടി:</strong> സാമൂഹികമായ പെരുമാറ്റ ചട്ടങ്ങളും (rules of conduct) പ്രകൃതിയുടെ ശാസ്ത്രീയ നിയമങ്ങളും (laws of behavior) തമ്മിലുള്ള വ്യത്യാസം മനസ്സിലാക്കാത്തതുകൊണ്ടാണിത്. മനുഷ്യനും ചില ഭൗതിക-മാനസിക നിയമങ്ങൾക്ക് വിധേയമായാണ് തീരുമാനങ്ങളെടുക്കുന്നത്.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">9. The Argument from Extra-Sensory Perception (ESP)</span>
+<span class="section-title-ml">(9. ഇന്ദ്രിയാതീത ജ്ഞാനത്തെക്കുറിച്ചുള്ള വാദം - ESP)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p><strong>Objection:</strong> If humans possess telepathy, clairvoyance, or extra-sensory perception, a human competitor in the Imitation Game could telepathically transmit answers, exposing the machine.</p>
+<p><strong>Turing’s Rebuttal:</strong> Turing noted that if ESP were ever proven real, the test could simply be conducted inside a "telepathy-proof room" to ensure rigorous scientific fairness.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><strong>എതിർപ്പ്:</strong> മനുഷ്യർക്ക് ടെലിപ്പതി പോലുള്ള ഇന്ദ്രിയാതീത ശക്തികളുണ്ടെങ്കിൽ, പരീക്ഷണത്തിൽ യന്ത്രത്തിന് അതില്ലെന്ന് പെട്ടെന്ന് തിരിച്ചറിയാം.</p>
+<p><strong>ട്യൂറിംഗിന്റെ മറുപടി:</strong> ടെലിപ്പതി യഥാർത്ഥമാണെന്ന് തെളിഞ്ഞാൽ ടെലിപ്പതി തടയുന്ന പ്രത്യേക മുറികളിൽ (telepathy-proof room) പരീക്ഷണം നടത്തി ശാസ്ത്രീയ നീതി ഉറപ്പാക്കാവുന്നതേയുള്ളൂ എന്ന് ട്യൂറിംഗ് തമാശയായി പറഞ്ഞു.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 1 · Chapter 2: Can a Machine Think?</span>
+<span>Page 7</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 2</span>
+<span class="top-bar-right">Page 8 of 12 ✨ It Cannot: Hubert Dreyfus's Critique</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">It Cannot: Arguments Against Machine Cognition</span>
+<span class="section-title-ml">(അതിനൊരിക്കലും കഴിയില്ല: യന്ത്രചിന്തയ്ക്കെതിരെയുള്ള ദാർശനിക വാദങ്ങൾ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>Could a machine think? The syllabus notes that there were also compelling arguments for saying no. The initial objection was occasionally made that thinking was a nonphysical process occurring in an immaterial Cartesian soul. However, such dualistic resistance was neither evolutionarily nor explanatorily plausible and had a negligible impact on practical AI research. <span class="hl-yellow">A far more formidable and influential line of philosophical objection emerged from phenomenological and cognitive critiques.</span></p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ? ഇല്ല എന്ന് സമർത്ഥിക്കാൻ ശക്തമായ ദാർശനിക വാദങ്ങളും നിലവിലുണ്ടെന്ന് Curriculum വ്യക്തമാക്കുന്നു. ചിന്ത എന്നത് അഭൗതികമായ ആത്മാവിൽ നടക്കുന്ന പ്രക്രിയയാണെന്ന ഡ്യുവലിസ്റ്റ് വാദങ്ങൾ തുടക്കത്തിൽ ഉയർന്നെങ്കിലും, ശാസ്ത്രീയ ലോകത്ത് അത് കാര്യമായ സ്വാധീനമുണ്ടാക്കിയില്ല. <span class="hl-yellow">എന്നാൽ ഫിനോമിനോളജിയിൽ നിന്നും കോഗ്നിറ്റീവ് സയൻസിൽ നിന്നും ഉയർന്നുവന്ന അതിശക്തമായ മറ്റൊരു വിമർശനം AI സമൂഹത്തെ പിടിച്ചുകുലുക്കി.</span></p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Hubert L. Dreyfus (1972): What Computers Can’t Do</span>
+<span class="section-title-ml">(ഹ്യൂബർട്ട് ഡ്രെയ്ഫസ് 1972: കമ്പ്യൂട്ടറുകൾക്ക് എന്ത് ചെയ്യാൻ കഴിയില്ല)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>In 1972, American philosopher <span class="hl-green">Hubert L. Dreyfus</span> published a landmark book highly critical of the parade-case simulations of cognitive activity. Dreyfus contended their insufficiency as representations of authentic cognition and highlighted a recurring pattern of failure in AI endeavors:</p>
+<p>• <span class="hl-yellow">Lack of Background Information:</span> Dreyfus proposed that machines lack the extensive reservoir of unexpressed prior information (common-sense background) inherent in every human being.</p>
+<p>• <span class="hl-yellow">Intuitive Coping:</span> Machines lack the intuitive ability to utilize pertinent elements of background knowledge in response to evolving, ambiguous situations.</p>
+<p>Dreyfus did not deny the possibility that an artificial physical system of some kind might think, but he was highly critical of the idea that genuine cognition could ever be achieved solely by symbol manipulation at the hands of recursively applicable rules.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>1972-ൽ പ്രമുഖ തത്ത്വചിന്തകനായ <span class="hl-green">ഹ്യൂബർട്ട് ഡ്രെയ്ഫസ് (Hubert L. Dreyfus)</span> പ്രസിദ്ധീകരിച്ച കൃതി ക്ലാസിക്കൽ AI-യുടെ പൊള്ളത്തരങ്ങളെ തുറന്നുകാട്ടി. കമ്പ്യൂട്ടർ സിമുലേഷനുകൾ യഥാർത്ഥ ചിന്തയല്ലെന്നും പരാജയപ്പെടാൻ വിധിക്കപ്പെട്ടതാണെന്നും അദ്ദേഹം സമർത്ഥിച്ചു:</p>
+<p>• <span class="hl-yellow">സാമാന്യബോധത്തിന്റെ കുറവ്:</span> ഓരോ മനുഷ്യനിലും അന്തർലീനമായിട്ടുള്ള വലിയ തോതിലുള്ള അനുഭവ സമ്പത്തും സാമാന്യബോധവും (unexpressed prior information) യന്ത്രങ്ങൾക്ക് ഇല്ലെന്ന് അദ്ദേഹം ചൂണ്ടിക്കാട്ടി.</p>
+<p>• <span class="hl-yellow">പ്രായോഗിക അന്തർജ്ഞാനം:</span> മാറിക്കൊണ്ടിരിക്കുന്ന സന്ദർഭങ്ങൾക്ക് അനുസൃതമായി ഉചിതമായ തീരുമാനങ്ങളെടുക്കാനുള്ള അന്തർജ്ഞാനം (intuitive coping) യന്ത്രങ്ങൾക്കില്ല.</p>
+<p>ഭാവിയിൽ ഏതെങ്കിലും തരത്തിലുള്ള ഭൗതിക സംവിധാനങ്ങൾക്ക് ചിന്തിക്കാൻ കഴിഞ്ഞേക്കാമെന്ന സാധ്യത അദ്ദേഹം പൂർണ്ണമായി തള്ളിയില്ലെങ്കിലും, വെറും ചിഹ്നങ്ങൾ മാറ്റിയെഴുതിക്കൊണ്ട് (symbol manipulation) യഥാർത്ഥ ബുദ്ധി നേടാമെന്ന വാദത്തെ അദ്ദേഹം നിശിതമായി തള്ളിപ്പറഞ്ഞു.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 1 · Chapter 2: Can a Machine Think?</span>
+<span>Page 8</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 2</span>
+<span class="top-bar-right">Page 9 of 12 ✨ John Searle: Syntax vs Semantics</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">John Searle (1980): "Minds, Brains and Programs"</span>
+<span class="section-title-ml">(ജോൺ സിയൾ 1980: "മൈൻഡ്സ്, ബ്രെയിൻസ് ആൻഡ് പ്രോഗ്രാംസ്")</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>In his monumental 1980 paper <span class="hl-green">"Minds, Brains and Programs"</span>, American philosopher <span class="hl-green">John Searle</span> authored a radically new and devastating criticism aimed at the most basic assumption of classical AI: the idea that the appropriate manipulation of structured symbols by the recursive application of structure-sensitive rules could constitute conscious intelligence. <span class="hl-yellow">Searle designed his thought experiment to demonstrate that software programming cannot make a computer conscious or endow it with a mind that is anything like a human mind.</span> Searle's paper provoked an intensely lively and hostile reaction from AI researchers, psychologists, and philosophers across the globe.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>1980-ൽ പ്രസിദ്ധീകരിച്ച <span class="hl-green">"മൈൻഡ്സ്, ബ്രെയിൻസ് ആൻഡ് പ്രോഗ്രാംസ്"</span> എന്ന പ്രബന്ധത്തിലൂടെ <span class="hl-green">ജോൺ സിയൾ (John Searle)</span> ക്ലാസിക്കൽ AI-യുടെ അടിസ്ഥാന സിദ്ധാന്തങ്ങളെ തകിടം മറിച്ചു. വെറും ചിഹ്നങ്ങളെ നിയമങ്ങൾക്കനുസരിച്ച് കൈകാര്യം ചെയ്യുന്നതുകൊണ്ട് യഥാർത്ഥ ബോധമോ ബുദ്ധിയോ ഉണ്ടാകില്ലെന്ന് അദ്ദേഹം വാദിച്ചു. <span class="hl-yellow">വെറുമൊരു സോഫ്റ്റ്‌വെയറിനും കമ്പ്യൂട്ടറിന് ബോധം നൽകാനോ മനുഷ്യ മനസ്സിന് തുല്യമാക്കാനോ കഴിയില്ലെന്ന് തെളിയിക്കാനാണ് അദ്ദേഹം ചൈനീസ് റൂം പരീക്ഷണം നടത്തിയത്.</span> ലോകമെമ്പാടുമുള്ള AI ഗവേഷകരിൽ നിന്നും തത്ത്വചിന്തകരിൽ നിന്നും വലിയ വാഗ്വാദങ്ങൾക്കാണ് ഈ പ്രബന്ധം തിരികൊളുത്തിയത്.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">The Epistemological Core: Empty Syntax Cannot Generate Real Semantics</span>
+<span class="section-title-ml">(ജ്ഞാനശാസ്ത്ര തത്ത്വം: ശൂന്യമായ വാക്യഘടനയ്ക്ക് അർത്ഥം നൽകാനാവില്ല)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>The universal philosophical lesson drawn from Searle's critique is that <span class="hl-yellow">any system that merely manipulates physical symbols in accordance with structure-sensitive rules will be at best a hollow mock-up of real conscious intelligence.</span> The reason is mathematically and conceptually absolute: <span class="hl-yellow">it is impossible to generate "real semantics" (meaning, intentionality, qualitative comprehension) merely by cranking away on "empty syntax" (formal rules and token arrangements).</span> A computer simulates understanding without understanding anything at all.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>സിയളിന്റെ വിമർശനം മുന്നോട്ടുവെച്ച ഏറ്റവും വലിയ ദാർശനിക പാഠം ഇതാണ്: <span class="hl-yellow">നിയമങ്ങൾക്കനുസരിച്ച് ചിഹ്നങ്ങൾ മാറ്റിയെഴുതുന്ന ഏതൊരു സംവിധാനവും യഥാർത്ഥ ബുദ്ധിയുടെ ഒരു പൊള്ളയായ അനുകരണം (hollow mock-up) മാത്രമായിരിക്കും.</span> ഇതിന് പിന്നിലെ യുക്തി വളരെ ലളിതമാണ്: <span class="hl-yellow">വെറും "ശൂന്യമായ വാക്യഘടന" (empty syntax) കൈകാര്യം ചെയ്തതുകൊണ്ട് ഒരിക്കലും "യഥാർത്ഥ അർത്ഥബോധം" (real semantics) സൃഷ്ടിക്കാൻ കഴിയില്ല.</span> ഒരു കമ്പ്യൂട്ടർ അർത്ഥം മനസ്സിലാക്കുന്നതായി നടിക്കുക മാത്രമേ ചെയ്യുന്നുള്ളൂ, അതിന് യാതൊരു ആന്തരിക ബോധവുമില്ല.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 1 · Chapter 2: Can a Machine Think?</span>
+<span>Page 9</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 2</span>
+<span class="top-bar-right">Page 10 of 12 ✨ Affirmative vs Sceptical Synthesis</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Affirmative vs. Sceptical Synthesis in AI Philosophy</span>
+<span class="section-title-ml">(അനുകൂല-പ്രതികൂല വാദങ്ങളുടെ സമന്വയം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>The philosophical discourse around "Can a machine think?" divides into two rigorous intellectual camps:</p>
+<p>• <span class="hl-yellow">The Affirmative (Computationalist) Camp:</span> Championed by <span class="hl-green">Alan Turing</span>, <span class="hl-green">Alonzo Church</span>, and classical AI pioneers. If cognition is an effective rule-governed input-output function, then universal Turing machines with sufficient memory and appropriate algorithms can compute it. Behavioral indistinguishability in the Turing Test is the only scientifically valid standard.</p>
+<p>• <span class="hl-yellow">The Sceptical (Embodied / Semantic) Camp:</span> Championed by <span class="hl-green">Hubert Dreyfus</span> and <span class="hl-green">John Searle</span>. Intelligence requires rich, embodied, uncodifiable human background knowledge and intentional semantic understanding. Pure syntactic symbol manipulation cannot bridge the chasm between functional simulation and genuine subjective consciousness.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>"ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ?" എന്ന ചർച്ചയിൽ രണ്ട് പ്രധാന ധാരകളാണുള്ളത്:</p>
+<p>• <span class="hl-yellow">അനുകൂലിക്കുന്നവർ (കമ്പ്യൂട്ടേഷണലിസ്റ്റുകൾ):</span> <span class="hl-green">അലൻ ട്യൂറിംഗ്</span>, <span class="hl-green">അലോൺസോ ചർച്ച്</span> എന്നിവരുടെ നേതൃത്വത്തിലുള്ള വിഭാഗം. ചിന്ത എന്നത് നിയമങ്ങളാൽ നിയന്ത്രിക്കപ്പെടുന്ന ഒരു പ്രക്രിയയാണെങ്കിൽ ഒരു യൂണിവേഴ്സൽ കമ്പ്യൂട്ടറിന് അത് സാധ്യമാണ്. ട്യൂറിംഗ് ടെസ്റ്റിലെ വിജയമാണ് ഇതിനുള്ള തെളിവ്.</p>
+<p>• <span class="hl-yellow">എതിർക്കുന്നവർ (ഫിനോമിനോളജിക്കൽ ധാര):</span> <span class="hl-green">ഹ്യൂബർട്ട് ഡ്രെയ്ഫസ്</span>, <span class="hl-green">ജോൺ സിയൾ</span> എന്നിവർ. മനുഷ്യന്റെ പ്രായോഗിക അനുഭവങ്ങളെയും ശരീരബദ്ധമായ അറിവിനെയും യന്ത്രങ്ങൾക്ക് അനുകരിക്കാനാവില്ല. കേവലം ചിഹ്നങ്ങൾ പ്രോസസ്സ് ചെയ്യുന്നത് യഥാർത്ഥ അർത്ഥബോധമോ ബോധമോ ആകില്ല.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Significance for Future Cognitive Science</span>
+<span class="section-title-ml">(കോഗ്നിറ്റീവ് സയൻസിലെ ദൂരവ്യാപക പ്രാധാന്യം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>This ongoing philosophical confrontation drove the evolution of modern cognitive science. It exposed the limitations of brittle, disembodied GOFAI systems and motivated the modern shift toward neural network connectionism, embodied robotics, and situated cognition, proving that philosophy directly shapes artificial intelligence architecture.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ഈ ദാർശനിക തർക്കങ്ങളാണ് ആധുനിക കോഗ്നിറ്റീവ് സയൻസിന്റെ വികാസത്തിന് വഴിമരുന്നിട്ടത്. പഴയ സിംബോളിക് AI-യുടെ പോരായ്മകൾ തിരിച്ചറിഞ്ഞതോടെയാണ് ആധുനിക ന്യൂറൽ നെറ്റ്‌വർക്കുകളിലേക്കും റോബോട്ടിക്സിലേക്കും സാങ്കേതികലോകം മാറിയത്; തത്ത്വചിന്ത സാങ്കേതികവിദ്യയെ എങ്ങനെ നയിക്കുന്നുവെന്നതിന് ഉത്തമ ഉദാഹരണമാണിത്.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 1 · Chapter 2: Can a Machine Think?</span>
+<span>Page 10</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 2</span>
+<span class="top-bar-right">Page 11 of 12 ✨ University Exam Evaluation &amp; Q&amp;A</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Academic Review Questions: "Demonstrate What You Obtained"</span>
+<span class="section-title-ml">(Curriculum പാഠഭാഗ ചോദ്യോത്തരങ്ങൾ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">Official Curriculum Questions &amp; Model Answers (English)</div>
+<p><strong>1. Identify the philosophers who contend that machines possess the ability to think.</strong></p>
+<p><span class="hl-green">Alan Turing</span>, <span class="hl-green">Alonzo Church</span>, <span class="hl-green">Claude Shannon</span>, and early functionalists argued that suitably programmed symbol-manipulating machines can achieve authentic cognitive thought.</p>
+<p><strong>2. Examine Church's Thesis.</strong></p>
+<p><span class="hl-yellow">Church's Thesis posits that every effectively computable function is recursively computable.</span> It asserts that any mechanical algorithm can be formally expressed via lambda calculus or computed by a Turing machine.</p>
+<p><strong>3. Compose a written piece regarding Alan Turing.</strong></p>
+<p><span class="hl-green">Alan Turing</span> demonstrated that any recursively computable function can be computed in finite time by a universal Turing machine, authored <span class="hl-green">"Intelligent Machinery"</span>, and formulated the operational <span class="hl-yellow">Turing Test</span> in 1950.</p>
+<p><strong>4. Compose a piece regarding Hubert L. Dreyfus and John Searle.</strong></p>
+<p><span class="hl-green">Dreyfus (1972)</span> argued AI lacks human common-sense background knowledge. <span class="hl-green">Searle (1980)</span> demonstrated in "Minds, Brains and Programs" that syntax cannot produce semantics.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">ഔദ്യോഗിക Curriculum ചോദ്യോത്തരങ്ങൾ (മലയാളം)</div>
+<p><strong>1. യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാൻ കഴിയുമെന്ന് വാദിച്ച തത്ത്വചിന്തകരെ കണ്ടെത്തുക.</strong></p>
+<p><span class="hl-green">അലൻ ട്യൂറിംഗ്</span>, <span class="hl-green">അലോൺസോ ചർച്ച്</span>, <span class="hl-green">ക്ലോഡ് ഷാനൻ</span> തുടങ്ങിയവർ ശരിയായ പ്രോഗ്രാമുകളിലൂടെ യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാൻ സാധിക്കുമെന്ന് വാദിച്ചു.</p>
+<p><strong>2. ചർച്ച് തീസിസ് പരിശോധിക്കുക.</strong></p>
+<p><span class="hl-yellow">ഫലപ്രദമായി കണക്കുകൂട്ടാൻ കഴിയുന്ന ഏതൊരു ഫംഗ്ഷനും ആവർത്തന നിയമങ്ങളിലൂടെ (recursively) കണക്കുകൂട്ടാൻ സാധിക്കുമെന്ന് ചർച്ച് തീസിസ് വ്യക്തമാക്കുന്നു.</span> ലാംഡ കാൽക്കുലസ്, ട്യൂറിംഗ് മെഷീൻ എന്നിവ ഇതിന്റെ അടിസ്ഥാനങ്ങളാണ്.</p>
+<p><strong>3. അലൻ ട്യൂറിംഗിനെക്കുറിച്ച് കുറിപ്പ് എഴുതുക.</strong></p>
+<p>യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീൻ അവതരിപ്പിച്ച <span class="hl-green">അലൻ ട്യൂറിംഗ്</span>, <span class="hl-green">"ഇന്റലിജന്റ് മെഷിനറി"</span> എന്ന പ്രബന്ധം രചിക്കുകയും 1950-ൽ <span class="hl-yellow">ട്യൂറിംഗ് ടെസ്റ്റ്</span> മുന്നോട്ടുവെക്കുകയും ചെയ്തു.</p>
+<p><strong>4. ഹ്യൂബർട്ട് ഡ്രെയ്ഫസിനെയും ജോൺ സിയളിനെയും കുറിച്ച് എഴുതുക.</strong></p>
+<p><span class="hl-green">ഡ്രെയ്ഫസ് (1972)</span> യന്ത്രങ്ങൾക്ക് മനുഷ്യന്റെ സാമാന്യബോധം ഇല്ലെന്ന് ചൂണ്ടിക്കാട്ടി. <span class="hl-green">ജോൺ സിയൾ (1980)</span> വെറും വാക്യഘടനയ്ക്ക് (syntax) യഥാർത്ഥ അർത്ഥബോധം (semantics) നൽകാനാവില്ലെന്ന് സ്ഥാപിച്ചു.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Curriculum "Knock Your Brain" Quick Assessment</span>
+<span class="section-title-ml">(Curriculum ക്വിക്ക് അസസ്സ്മെന്റ്)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">Direct Multiple Choice Evaluation (English)</div>
+<p>• <strong>Who authored the article "Minds, Brains and Programs"?</strong> <span class="hl-green">John Searle</span> (1980).</p>
+<p>• <strong>Who was the first person to use the human terminology "memory" when referring to a computer?</strong> <span class="hl-green">John von Neumann</span>.</p>
+<p>• <strong>Who is recognized as the founder of Information Theory?</strong> <span class="hl-green">Claude Shannon</span>.</p>
+<p>• <strong>Who was the author of the notable research entitled "Intelligent Machinery"?</strong> <span class="hl-green">Alan Turing</span>.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">നേരിട്ടുള്ള Curriculum ചോദ്യങ്ങൾ (മലയാളം)</div>
+<p>• <strong>"മൈൻഡ്സ്, ബ്രെയിൻസ് ആൻഡ് പ്രോഗ്രാംസ്" എന്ന പ്രബന്ധം രചിച്ചത് ആര്?</strong> <span class="hl-green">ജോൺ സിയൾ</span> (1980).</p>
+<p>• <strong>കമ്പ്യൂട്ടറിലേക്ക് "മെമ്മറി" എന്ന പദം ആദ്യമായി കൊണ്ടുവന്നത് ആര്?</strong> <span class="hl-green">ജോൺ ഫോൺ ന്യൂമാൻ</span>.</p>
+<p>• <strong>ഇൻഫർമേഷൻ തിയറിയുടെ സ്ഥാപകൻ ആര്?</strong> <span class="hl-green">ക്ലോഡ് ഷാനൻ</span>.</p>
+<p>• <strong>"ഇന്റലിജന്റ് മെഷിനറി" എന്ന ഗവേഷണ പ്രബന്ധം രചിച്ചത് ആര്?</strong> <span class="hl-green">അലൻ ട്യൂറിംഗ്</span>.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 1 · Chapter 2: Can a Machine Think?</span>
+<span>Page 11</span>
+</div>
+</div>
+<div class="page-container page-exam-grid">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 1 · Chapter 2</span>
+<span class="top-bar-right">Page 12 of 12 ✨ High-Yield Exam Memorization</span>
+</div>
+<div class="exam-header-compact">
+<div class="exam-title-badge">🎯 MUST-KNOW EXAM RECALL COMPENDIUM</div>
+<div class="exam-hero-title">20 Core Academic Concepts &amp; Analytical Pillars</div>
+<div class="exam-hero-sub">ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ? — പരീക്ഷാ കേന്ദ്രീകൃത സമഗ്ര ആശയങ്ങൾ</div>
+</div>
+<div class="points-grid">
+<!-- 1 -->
+<div class="point-card" style="border-left: 3.5px solid #2563eb;">
+<div class="point-header"><span class="point-tag" style="background:#2563eb;">📜 Mind 1950</span><span class="point-title-en">Computing Machinery &amp; Intelligence</span></div>
+<div class="point-title-ml">1950-ലെ ട്യൂറിംഗ് പ്രബന്ധം</div>
+<div class="point-body">Alan Turing's foundational paper replacing "Can a machine think?" with the operational Imitation Game.</div>
+<div class="point-body-ml">യന്ത്രചിന്തയെക്കുറിച്ചുള്ള അവ്യക്തമായ ചോദ്യങ്ങൾക്ക് പകരം ട്യൂറിംഗ് ടെസ്റ്റ് നിർദ്ദേശിച്ച ലേഖനം.</div>
+</div>
+<!-- 2 -->
+<div class="point-card" style="border-left: 3.5px solid #059669;">
+<div class="point-header"><span class="point-tag" style="background:#059669;">⚙️ Function Law</span><span class="point-title-en">Church's Thesis</span></div>
+<div class="point-title-ml">ചർച്ച് തീസിസ്</div>
+<div class="point-body">Every effectively computable function is recursively computable via rote mechanical procedures.</div>
+<div class="point-body-ml">ഫലപ്രദമായി കണക്കാക്കാവുന്ന ഏതൊരു ഫംഗ്ഷനും യാന്ത്രിക നിയമങ്ങളിലൂടെ പരിഹരിക്കാമെന്ന സിദ്ധാന്തം.</div>
+</div>
+<!-- 3 -->
+<div class="point-card" style="border-left: 3.5px solid #d97706;">
+<div class="point-header"><span class="point-tag" style="background:#d97706;">🔤 Formal System</span><span class="point-title-en">Alonzo Church &amp; Lambda</span></div>
+<div class="point-title-ml">അലോൺസോ ചർച്ചും ലാംഡയും</div>
+<div class="point-body">Posited functions are computable if and only if expressible in formal lambda calculus.</div>
+<div class="point-body-ml">ലാംഡ കാൽക്കുലസിലൂടെ പ്രകടിപ്പിക്കാൻ കഴിയുന്നവയാണ് കമ്പ്യൂട്ടബിൾ എന്ന് തെളിയിച്ചു.</div>
+</div>
+<!-- 4 -->
+<div class="point-card" style="border-left: 3.5px solid #dc2626;">
+<div class="point-header"><span class="point-tag" style="background:#dc2626;">📼 Universal Tape</span><span class="point-title-en">Universal Turing Machine</span></div>
+<div class="point-title-ml">യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീൻ</div>
+<div class="point-body">Abstract device processing symbols on tape via recursively applicable structure-sensitive rules.</div>
+<div class="point-body-ml">ടേപ്പിലെ ചിഹ്നങ്ങളെ നിയമങ്ങൾക്കനുസരിച്ച് കൈകാര്യം ചെയ്ത് കണക്കുകൂട്ടുന്ന അമൂർത്ത യന്ത്രം.</div>
+</div>
+<!-- 5 -->
+<div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+<div class="point-header"><span class="point-tag" style="background:#7c3aed;">🔲 Symbol Machine</span><span class="point-title-en">Symbol-Manipulating (SM) Machine</span></div>
+<div class="point-title-ml">SM മെഷീൻ മാതൃക</div>
+<div class="point-body">Standard digital computers computing any rule-governed input-output function to pass Turing test.</div>
+<div class="point-body-ml">ചിഹ്നങ്ങൾ മാറ്റിയെഴുതി ട്യൂറിംഗ് ടെസ്റ്റ് വിജയിക്കാൻ പ്രാപ്തമായ ഡിജിറ്റൽ കമ്പ്യൂട്ടർ സംവിധാനം.</div>
+</div>
+<!-- 6 -->
+<div class="point-card" style="border-left: 3.5px solid #0891b2;">
+<div class="point-header"><span class="point-tag" style="background:#0891b2;">🎭 The Game</span><span class="point-title-en">Imitation Game Benchmark</span></div>
+<div class="point-title-ml">ഇമിറ്റേഷൻ ഗെയിം</div>
+<div class="point-body">Conversational test where machine is deemed intelligent if interrogator cannot distinguish it from human.</div>
+<div class="point-body-ml">സംഭാഷണത്തിലൂടെ കമ്പ്യൂട്ടറിനെ മനുഷ്യനിൽ നിന്ന് വേർതിരിച്ചറിയാൻ കഴിയില്ലെന്ന് ഉറപ്പാക്കുന്ന പരീക്ഷണം.</div>
+</div>
+<!-- 7 -->
+<div class="point-card" style="border-left: 3.5px solid #be185d;">
+<div class="point-header"><span class="point-tag" style="background:#be185d;">📝 Early Study</span><span class="point-title-en">Intelligent Machinery (Turing)</span></div>
+<div class="point-title-ml">ഇന്റലിജന്റ് മെഷിനറി പഠനം</div>
+<div class="point-body">Turing examined machine intelligence constraints and estimated brain memory at 10 billion binary digits.</div>
+<div class="point-body-ml">തലച്ചോറിന്റെ മെമ്മറി ശേഷി 10 ബില്യൺ ബിറ്റുകളാണെന്ന് ട്യൂറിംഗ് കണക്കാക്കിയ പ്രബന്ധം.</div>
+</div>
+<!-- 8 -->
+<div class="point-card" style="border-left: 3.5px solid #4f46e5;">
+<div class="point-header"><span class="point-tag" style="background:#4f46e5;">💾 Human Term</span><span class="point-title-en">Von Neumann's "Memory"</span></div>
+<div class="point-title-ml">ഫോൺ ന്യൂമാന്റെ "മെമ്മറി"</div>
+<div class="point-body">First to use human term "memory" for stored-program computers, drawing neuro-anatomical parallels.</div>
+<div class="point-body-ml">കമ്പ്യൂട്ടറിലേക്ക് "മെമ്മറി" എന്ന പദം കൊണ്ടുവരികയും നാഡീവ്യൂഹത്തോട് ഉപമിക്കുകയും ചെയ്ത ശാസ്ത്രജ്ഞൻ.</div>
+</div>
+<!-- 9 -->
+<div class="point-card" style="border-left: 3.5px solid #059669;">
+<div class="point-header"><span class="point-tag" style="background:#059669;">🌐 Information</span><span class="point-title-en">Claude Shannon's DSRPAI</span></div>
+<div class="point-title-ml">ക്ലോഡ് ഷാനൻ &amp; DSRPAI</div>
+<div class="point-body">Information theory father who co-founded 1956 Dartmouth project to simulate human intellect.</div>
+<div class="point-body-ml">ഡാർട്ട്മൗത്ത് പ്രോജക്ടിന് നേതൃത്വം നൽകിയ ഇൻഫർമേഷൻ തിയറിയുടെ സ്ഥാപകൻ.</div>
+</div>
+<!-- 10 -->
+<div class="point-card" style="border-left: 3.5px solid #d97706;">
+<div class="point-header"><span class="point-tag" style="background:#d97706;">⛪ Objection 1</span><span class="point-title-en">Theological Objection</span></div>
+<div class="point-title-ml">ദൈവശാസ്ത്രപരമായ വാദം</div>
+<div class="point-body">Claims only humans have souls; Turing countered this restricts God's omnipotence to infuse souls into machines.</div>
+<div class="point-body-ml">ആത്മാവ് മനുഷ്യന് മാത്രമേയുള്ളൂ എന്ന വാദത്തിന് ദൈവത്തിന്റെ സർവ്വശക്തിത്വത്തിലൂടെ നൽകിയ മറുപടി.</div>
+</div>
+<!-- 11 -->
+<div class="point-card" style="border-left: 3.5px solid #dc2626;">
+<div class="point-header"><span class="point-tag" style="background:#dc2626;">🏖️ Objection 2</span><span class="point-title-en">Heads in the Sand</span></div>
+<div class="point-title-ml">തല മണലിൽ പൂഴ്ത്തൽ</div>
+<div class="point-body">Fear of machine superiority dismissed by Turing as emotional anthropocentrism, not philosophy.</div>
+<div class="point-body-ml">യന്ത്രങ്ങൾ വളരുമെന്ന മനുഷ്യന്റെ ഭയത്തിൽ നിന്നുള്ള വൈകാരിക എതിർപ്പ്.</div>
+</div>
+<!-- 12 -->
+<div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+<div class="point-header"><span class="point-tag" style="background:#7c3aed;">🔢 Objection 3</span><span class="point-title-en">Mathematical Limit (Gödel)</span></div>
+<div class="point-title-ml">ഗണിതശാസ്ത്ര പരിമിതി</div>
+<div class="point-body">Incompleteness theorem limits machines; Turing countered humans are equally fallible and imperfect.</div>
+<div class="point-body-ml">ഗോഡൽ സിദ്ധാന്തത്തിന്റെ പേരിൽ യന്ത്രങ്ങളെ തള്ളുമ്പോൾ മനുഷ്യനും അപൂർണ്ണനാണെന്ന് സമർത്ഥിച്ചു.</div>
+</div>
+<!-- 13 -->
+<div class="point-card" style="border-left: 3.5px solid #0891b2;">
+<div class="point-header"><span class="point-tag" style="background:#0891b2;">👁️ Objection 4</span><span class="point-title-en">Consciousness &amp; Solipsism</span></div>
+<div class="point-title-ml">ബോധവും സോളിപ്സിസവും</div>
+<div class="point-body">Jefferson's qualia demand leads to solipsism; operational testing is the only rigorous path.</div>
+<div class="point-body-ml">ഉള്ളിലെ വികാരം തെളിയിക്കണമെന്ന വാദം സ്വന്തം മനസ്സ് മാത്രമേ ഉള്ളൂ എന്ന അന്ധതയിലേക്ക് നയിക്കും.</div>
+</div>
+<!-- 14 -->
+<div class="point-card" style="border-left: 3.5px solid #be185d;">
+<div class="point-header"><span class="point-tag" style="background:#be185d;">♿ Objection 5</span><span class="point-title-en">Various Disabilities</span></div>
+<div class="point-title-ml">കഴിവില്ലായ്മ വാദങ്ങൾ</div>
+<div class="point-body">"Machines cannot do X" reflects early computer storage limits rather than permanent cognitive barriers.</div>
+<div class="point-body-ml">ആദ്യകാല കമ്പ്യൂട്ടറുകളുടെ കുറഞ്ഞ മെമ്മറിയിൽ നിന്ന് രൂപപ്പെട്ട തെറ്റായ ധാരണകൾ.</div>
+</div>
+<!-- 15 -->
+<div class="point-card" style="border-left: 3.5px solid #4f46e5;">
+<div class="point-header"><span class="point-tag" style="background:#4f46e5;">👩‍🔬 Objection 6</span><span class="point-title-en">Lovelace's Origination Claim</span></div>
+<div class="point-title-ml">ലവ്ലേസിന്റെ വാദത്തിനുള്ള മറുപടി</div>
+<div class="point-body">Ada claimed machines cannot originate; Turing replied machines surprise us and humans synthesize prior data.</div>
+<div class="point-body-ml">മനുഷ്യനും പഴയ അറിവുകൾ ചേർത്തുവെച്ചാണ് പുതിയവ സൃഷ്ടിക്കുന്നതെന്ന് ട്യൂറിംഗ് വ്യക്തമാക്കി.</div>
+</div>
+<!-- 16 -->
+<div class="point-card" style="border-left: 3.5px solid #059669;">
+<div class="point-header"><span class="point-tag" style="background:#059669;">⚡ Objection 7</span><span class="point-title-en">Continuous Nervous System</span></div>
+<div class="point-title-ml">നാഡീവ്യൂഹ തുടർച്ച</div>
+<div class="point-body">Discrete digital computers can simulate continuous analogue neural dynamics with arbitrary precision.</div>
+<div class="point-body-ml">ഏത് അനലോഗ് നാഡീവ്യൂഹ പ്രക്രിയകളെയും ഡിജിറ്റൽ കമ്പ്യൂട്ടറുകൾക്ക് അനുകരിക്കാൻ കഴിയും.</div>
+</div>
+<!-- 17 -->
+<div class="point-card" style="border-left: 3.5px solid #d97706;">
+<div class="point-header"><span class="point-tag" style="background:#d97706;">📖 Objection 8</span><span class="point-title-en">Informality of Behaviour</span></div>
+<div class="point-title-ml">പെരുമാറ്റ നിയമങ്ങൾ</div>
+<div class="point-body">Confusing social rules of conduct with scientific laws of behaviour; humans also obey causal laws.</div>
+<div class="point-body-ml">സാമൂഹിക ചട്ടങ്ങളും ശാസ്ത്രീയ നിയമങ്ങളും തമ്മിലുള്ള അന്തരം വ്യക്തമാക്കിയ മറുപടി.</div>
+</div>
+<!-- 18 -->
+<div class="point-card" style="border-left: 3.5px solid #dc2626;">
+<div class="point-header"><span class="point-tag" style="background:#dc2626;">📦 Background Gap</span><span class="point-title-en">Hubert Dreyfus (1972)</span></div>
+<div class="point-title-ml">ഹ്യൂബർട്ട് ഡ്രെയ്ഫസിന്റെ വിമർശനം</div>
+<div class="point-body">What Computers Can't Do: machines lack reservoir of unexpressed prior background knowledge and intuitive coping.</div>
+<div class="point-body-ml">മനുഷ്യന്റെ അനുഭവ സമ്പത്തും സാമാന്യബോധവും ഇല്ലാത്തതാണ് AI-യുടെ പരാജയങ്ങൾക്ക് കാരണമെന്ന് വാദിച്ചു.</div>
+</div>
+<!-- 19 -->
+<div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+<div class="point-header"><span class="point-tag" style="background:#7c3aed;">🇨🇳 1980 Paper</span><span class="point-title-en">Minds, Brains and Programs</span></div>
+<div class="point-title-ml">സിയളിന്റെ ചൈനീസ് റൂം ലേഖനം</div>
+<div class="point-body">John Searle's paper demonstrating software cannot make a computer conscious or endow it with a real mind.</div>
+<div class="point-body-ml">വെറുമൊരു സോഫ്റ്റ്‌വെയറിനും കമ്പ്യൂട്ടറിന് ബോധം നൽകാനാവില്ലെന്ന് സ്ഥാപിച്ച പ്രബന്ധം.</div>
+</div>
+<!-- 20 -->
+<div class="point-card" style="border-left: 3.5px solid #0891b2;">
+<div class="point-header"><span class="point-tag" style="background:#0891b2;">🔤 Core Axiom</span><span class="point-title-en">Syntax Cannot Yield Semantics</span></div>
+<div class="point-title-ml">വാക്യഘടനയും അർത്ഥബോധവും</div>
+<div class="point-body">Cranking away on empty syntax cannot generate real semantics; symbolic manipulation is hollow mock-up.</div>
+<div class="point-body-ml">ശൂന്യമായ ചിഹ്നങ്ങൾ മാറ്റിയെഴുതിയതുകൊണ്ട് യഥാർത്ഥ അർത്ഥബോധം സൃഷ്ടിക്കാനാവില്ലെന്ന സിയളിന്റെ തത്ത്വം.</div>
+</div>
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 1 · Chapter 2: 20 Core Academic Concepts</span>
+<span>Page 12</span>
+</div>
+</div>
+</body></html>

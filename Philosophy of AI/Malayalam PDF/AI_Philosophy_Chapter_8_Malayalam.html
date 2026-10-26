@@ -1,331 +1,1099 @@
 <!DOCTYPE html>
-<html lang="ml">
-<head>
-  <meta charset="UTF-8">
-  <title>Chapter 8: Disembodied Intelligence & Shift to Learning Models</title>
-  
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-  @page {
-    size: A4;
-    margin: 16mm 16mm 18mm 16mm;
-    @bottom-right {
-      content: "Page " counter(page);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 9pt;
+<html lang="ml"><head><meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" name="viewport"/><meta charset="utf-8"/><title>Philosophy of AI · Module 2 · Chapter 8</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 6mm 8mm 6mm 8mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.34;
+      font-size: 7.4pt;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-container {
+      height: 284mm;
+      max-height: 284mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      break-after: page;
+      position: relative;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .page-container:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #4f46e5;
+      padding-bottom: 2px;
+      margin-bottom: 4px;
+    }
+
+    .top-bar-left {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #4f46e5;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .top-bar-right {
+      font-size: 6.8pt;
       font-weight: 700;
+      color: #1e1b4b;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 1px 7px;
+      border-radius: 4px;
+    }
+
+    /* Chapter Hero Banner */
+    .chapter-hero {
+      background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 60%, #4f46e5 100%);
+      color: #ffffff;
+      border-radius: 7px;
+      padding: 6px 12px;
+      margin-bottom: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+      border: 1px solid #818cf8;
+    }
+
+    .hero-tag {
+      font-size: 6.2pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #a5b4fc;
+      margin-bottom: 2px;
+    }
+
+    .hero-title-en {
+      font-size: 9.8pt;
+      font-weight: 800;
+      margin: 0 0 2px 0;
+      line-height: 1.22;
+      color: #ffffff;
+    }
+
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      margin: 0;
+      color: #f8fafc;
+      line-height: 1.32;
+    }
+
+    /* Content Box / Unit Card */
+    .content-box, .unit-card {
+      border: 1.2px solid #e2e8f0;
+      border-radius: 6px;
+      background: #ffffff;
+      margin-bottom: 4.5px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .section-header, .unit-head {
+      background: linear-gradient(90deg, #f1f5f9 0%, #f8fafc 100%);
+      border-left: 3.5px solid #4f46e5;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 3.5px 8px;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-title-en, .unit-title-en {
+      font-size: 7.8pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .section-title-ml, .unit-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.4pt;
+      font-weight: 700;
+      color: #4338ca;
+      margin-left: 6px;
+    }
+
+    /* Side-by-Side Bilingual Grid */
+    .bilingual-pair {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 6px !important;
+      padding: 4px 6px !important;
+      box-sizing: border-box !important;
+      background: #ffffff !important;
+    }
+
+    .block-en {
+      background: #f8fafc !important;
+      border: 1px solid #e0e7ff !important;
+      border-left: 3.5px solid #4f46e5 !important;
+      padding: 4px 7px !important;
+      border-radius: 4px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      margin: 0 !important;
+      min-width: 0 !important;
+    }
+
+    .block-en-label, .block-label {
+      font-size: 6.2pt !important;
+      font-weight: 800 !important;
+      color: #4338ca !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      margin-bottom: 2px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 3px !important;
+    }
+
+    .block-en p {
+      font-size: 7.2pt !important;
+      color: #1e293b !important;
+      line-height: 1.32 !important;
+      margin: 0 0 3px 0 !important;
+      text-align: justify !important;
+    }
+    .block-en p:last-child { margin-bottom: 0 !important; }
+
+    .block-ml {
+      background: #f0fdf4 !important;
+      border: 1px solid #dcfce7 !important;
+      border-left: 3.5px solid #10b981 !important;
+      padding: 4px 7px !important;
+      border-radius: 4px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      margin: 0 !important;
+      min-width: 0 !important;
+    }
+
+    .block-ml-label {
+      font-family: 'Noto Sans Malayalam', sans-serif !important;
+      font-size: 6.2pt !important;
+      font-weight: 800 !important;
+      color: #047857 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.4px !important;
+      margin-bottom: 2px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 3px !important;
+    }
+
+    .block-ml p {
+      font-family: 'Noto Sans Malayalam', sans-serif !important;
+      font-size: 7.1pt !important;
+      color: #064e3b !important;
+      line-height: 1.38 !important;
+      margin: 0 0 3px 0 !important;
+      text-align: justify !important;
+    }
+    .block-ml p:last-child { margin-bottom: 0 !important; }
+
+    /* Highlights */
+    .hl-green {
+      background: #bbf7d0 !important;
+      color: #14532d !important;
+      padding: 0.5px 3px !important;
+      border-radius: 2px !important;
+      font-weight: 600 !important;
+    }
+
+    .hl-yellow {
+      background: #fef08a !important;
+      color: #713f12 !important;
+      padding: 0.5px 3px !important;
+      border-radius: 2px !important;
+      font-weight: 600 !important;
+    }
+
+    /* Page Footer */
+    .page-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 6.2pt;
       color: #64748b;
+      margin-top: auto;
     }
-    @bottom-left {
-      content: "University of Calicut · BA Philosophy · Classical Version of AI";
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 8pt;
-      font-weight: 600;
-      color: #94a3b8;
+
+    .footer-left { font-weight: 600; }
+    .footer-badges { display: flex; gap: 8px; }
+    .footer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 5.8pt;
+      font-weight: 700;
     }
-  }
-  body {
-    font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
-    color: #0f172a;
-    background: #ffffff;
-    line-height: 1.65;
-    font-size: 10pt;
-    margin: 0;
-    padding: 0;
-  }
-  .header-box {
-    border: 2px solid #3730a3;
-    border-radius: 12px;
-    padding: 18px 22px;
-    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
-    margin-bottom: 22px;
-  }
-  .badge {
-    display: inline-block;
-    background: #3730a3;
-    color: #ffffff;
-    font-size: 8pt;
-    font-weight: 800;
-    padding: 3px 10px;
-    border-radius: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-  }
-  h1 {
-    margin: 0 0 4px 0;
-    color: #1e1b4b;
-    font-size: 16pt;
-    font-weight: 800;
-    line-height: 1.3;
-  }
-  .sub-title {
-    font-size: 12pt;
-    font-weight: 700;
-    color: #4338ca;
-    margin-bottom: 8px;
-  }
-  .meta-info {
-    font-size: 8.5pt;
-    color: #475569;
-    font-weight: 600;
-    border-top: 1px dashed #c7d2fe;
-    padding-top: 6px;
-    margin-top: 6px;
-  }
-  .section-title {
-    background: #3730a3;
-    color: #ffffff;
-    padding: 9px 15px;
-    border-radius: 8px;
-    font-size: 11pt;
-    font-weight: 800;
-    margin: 24px 0 14px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    page-break-after: avoid;
-  }
-  .sub-section-title {
-    color: #312e81;
-    font-size: 10.5pt;
-    font-weight: 800;
-    margin: 16px 0 8px 0;
-    border-bottom: 1.5px solid #c7d2fe;
-    padding-bottom: 4px;
-    page-break-after: avoid;
-  }
-  .bilingual-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
-    page-break-inside: avoid;
-  }
-  .card-en, .card-ml {
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 13px 15px;
-    background: #ffffff;
-    font-size: 9.5pt;
-  }
-  .card-en {
-    border-left: 4px solid #2563eb;
-    background: #f8fafc;
-  }
-  .card-ml {
-    border-left: 4px solid #4338ca;
-    background: #ffffff;
-  }
-  .card-title {
-    font-weight: 800;
-    margin-bottom: 6px;
-    font-size: 10pt;
-  }
-  .card-en .card-title { color: #1e40af; }
-  .card-ml .card-title { color: #312e81; }
-  .table-box {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 9pt;
-  }
-  .table-box th, .table-box td {
-    border: 1px solid #cbd5e1;
-    padding: 9px 11px;
-    text-align: left;
-    vertical-align: top;
-  }
-  .table-box th {
-    background: #3730a3;
-    color: #ffffff;
-    font-weight: 700;
-  }
-  .table-box tr:nth-child(even) { background: #f8fafc; }
-  .concept-box {
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    border-left: 5px solid #4f46e5;
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin: 14px 0;
-    font-size: 9.5pt;
-  }
-  .concept-box strong { color: #1e1b4b; }
-  .qa-card {
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-left: 4px solid #3730a3;
-    border-radius: 8px;
-    padding: 14px 18px;
-    margin-bottom: 14px;
-    page-break-inside: avoid;
-  }
-  .qa-q {
-    font-weight: 800;
-    color: #3730a3;
-    margin-bottom: 6px;
-    font-size: 10pt;
-  }
-  .qa-a {
-    color: #334155;
-    font-size: 9.5pt;
-    line-height: 1.6;
-  }
-  p { margin: 0 0 10px 0; }
-</style>
+    .badge-dot { width: 5px; height: 5px; border-radius: 50%; display: inline-block; }
 
-</head>
-<body>
+    /* Exam Cards, MCQs, Revision Masterclass */
+    .mcq-card {
+      border: 1.2px solid #cbd5e1;
+      border-radius: 5px;
+      padding: 3.5px 6px;
+      margin-bottom: 3px;
+      background: #ffffff;
+    }
 
-  <div class="header-box">
-    <div class="badge">Calicut University · Minor Philosophy (PHL1MN102)</div>
-    <h1>അധ്യായം 8: ശരീരമില്ലാത്ത ബുദ്ധിശക്തിയും പഠന മാതൃകകളിലേക്കുള്ള മാറ്റവും</h1>
-    <div class="sub-title">Chapter 8: Disembodied Intelligence & The Historical Shift to Learning-Based AI</div>
-    <div class="meta-info">
-      <span>📚 Module 2 · Unit 2.2 (b)</span> &nbsp;|&nbsp; 
-      <span>⏱️ 20 Hours Module Weightage · 20 Marks</span>
-    </div>
-  </div>
+    .mcq-q-en { font-size: 7.3pt; font-weight: 800; color: #0f172a; }
+    .mcq-q-ml { font-family: 'Noto Sans Malayalam', sans-serif; font-size: 7pt; font-weight: 700; color: #0369a1; margin-bottom: 2px; }
 
-  <div class="concept-box">
-    <strong>പാഠ്യസംഗ്രഹം (Module Scope):</strong> മനുഷ്യബുദ്ധിയെ ഭൗതിക ശരീരവുമായി യാതൊരു ബന്ധവുമില്ലാത്ത കേവലം ഇൻഫർമേഷൻ പ്രോസസ്സിംഗ് ആയി കണ്ട 'ശരീരമില്ലാത്ത ബുദ്ധിശക്തി' (Disembodied Intelligence) എന്ന ആശയവും അതിനെതിരെയുള്ള വിമർശനങ്ങളും, ക്ലാസിക്കൽ റൂൾ-ബേസ്ഡ് AI മോഡലുകളിൽ നിന്ന് ആധുനിക ലേണിംഗ്-ബേസ്ഡ് AI മോഡലുകളിലേക്കുള്ള വിപ്ലവകരമായ മാറ്റത്തിന്റെ ചരിത്രപരവും ദാർശനികവുമായ കാരണങ്ങളും ഈ അധ്യായം സമഗ്രമായി പഠിക്കുന്നു.
-  </div>
+    .mcq-grid, .mcq-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin: 2px 0;
+    }
 
-  <div class="section-title">
-    <span>1. ശരീരമില്ലാത്ത ബുദ്ധിശക്തി (Disembodied Intelligence)</span>
-    <span style="font-size: 9pt; font-weight: 600;">The Disembodied Paradigm</span>
-  </div>
+    .mcq-opt, .mcq-option {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 3px;
+      padding: 2px 5px;
+      font-size: 6.8pt;
+    }
 
-  <div class="bilingual-grid">
-    <div class="card-ml">
-      <div class="card-title">സങ്കല്പവും പ്രധാന തത്ത്വവും</div>
-      <p>ആദ്യകാല കമ്പ്യൂട്ടേഷണൽ എഐ ഗവേഷകർ മുന്നോട്ടുവെച്ച സിദ്ധാന്തമാണ് <strong>'ശരീരമില്ലാത്ത ബുദ്ധിശക്തി' (Disembodied Intelligence)</strong>. ഈ സിദ്ധാന്തപ്രകാരം, ബുദ്ധി എന്നത് ഭൗതിക ശരീരത്തിൽ നിന്ന് പൂർണ്ണമായും സ്വതന്ത്രമായ അമൂർത്തമായ ഒരു പ്രക്രിയയാണ്.</p>
-      <p>മസ്തിഷ്കം ഒരു ഹാർഡ്‌വെയറും മനസ്സ് അതിൽ പ്രവർത്തിക്കുന്ന ഒരു സോഫ്റ്റ്‌വെയറുമാണ്. ഒരു സോഫ്റ്റ്‌വെയർ ഏത് കമ്പ്യൂട്ടറിലും റൺ ചെയ്യാൻ കഴിയുന്നതുപോലെ, മനുഷ്യന്റെ ചിന്തയെയും ശാരീരികാനുഭവങ്ങളില്ലാതെ ഏത് സിലിക്കൺ ചിപ്പിലും നിർമ്മിക്കാൻ കഴിയുമെന്ന അന്ധമായ വിശ്വാസമായിരുന്നു ഇത്.</p>
-    </div>
-    <div class="card-en">
-      <div class="card-title">Substrate-Independent Intelligence</div>
-      <p>Disembodied AI is grounded in computational functionalism, presupposing that cognition is substrate-independent algorithmic data processing. Within this doctrine, the mind is conceived as software executing computations on organic brain hardware.</p>
-      <p>Consequently, classical theorists asserted that intelligence could be fully replicated in silicon circuits without requiring sensory-motor interaction, somatic embodiment, or environmental immersion.</p>
-    </div>
-  </div>
+    .mcq-opt.correct, .mcq-option.correct {
+      background: #ecfdf5;
+      border: 1.2px solid #10b981;
+      font-weight: 700;
+      color: #047857;
+    }
 
-  <div class="section-title">
-    <span>2. ശരീരമില്ലാത്ത ബുദ്ധിശക്തിക്കെതിരെയുള്ള ദാർശനിക വിമർശനങ്ങൾ</span>
-    <span style="font-size: 9pt; font-weight: 600;">The Embodied Critique</span>
-  </div>
+    .mcq-exp, .mcq-explanation {
+      font-size: 6.3pt;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 1.5px 5px;
+      border-radius: 3px;
+      margin-top: 2px;
+    }
 
-  <table class="table-box">
-    <tr>
-      <th style="width: 25%;">വിമർശന തത്ത്വം</th>
-      <th style="width: 35%;">മലയാളം വിശദീകരണം</th>
-      <th style="width: 40%;">English Philosophical Critique</th>
-    </tr>
-    <tr>
-      <td><strong>1. ബോഡിഡ് കൊഗ്നിഷൻ<br>(Embodied Cognition)</strong></td>
-      <td>മനുഷ്യന്റെ ചിന്തയും അറിവും രൂപപ്പെടുന്നത് കേവലം തലച്ചോറിൽ മാത്രമല്ല; അത് ശരീരത്തിന്റെ ചലനങ്ങളിലൂടെയും കണ്ണും കാതും കൈകാലുകളും ഉപയോഗിച്ച് ലോകത്തെ അനുഭവിച്ചറിയുന്നതിലൂടെയുമാണ്.</td>
-      <td>Cognition is not an isolated central processor; it is intrinsically scaffolded by the biological body's sensory-motor capacities engaging dynamically with physical terrain.</td>
-    </tr>
-    <tr>
-      <td><strong>2. സിംബൽ ഗ്രൗണ്ടിംഗ് പ്രശ്നം<br>(Symbol Grounding Problem)</strong></td>
-      <td>കമ്പ്യൂട്ടറിലെ ചിഹ്നങ്ങൾ പരസ്പരം ബന്ധിപ്പിച്ചിരിക്കുന്നുവെങ്കിലും അവയ്ക്ക് യഥാർത്ഥ ലോകത്തിലെ വസ്തുക്കളുമായി യാതൊരു ഭൗതിക ബന്ധവുമില്ല (Grounding). ഇന്ദ്രിയാനുഭവങ്ങളിലൂടെ മാത്രമേ ചിഹ്നങ്ങൾക്ക് അർത്ഥം ലഭിക്കൂ.</td>
-      <td>Symbols inside a disembodied machine remain ungrounded tokens referring only to other symbols in an infinite circular dictionary, devoid of experiential anchor.</td>
-    </tr>
-  </table>
+    .essay-card {
+      border: 1.2px solid #4f46e5;
+      border-radius: 5px;
+      background: #ffffff;
+      padding: 4px 7px;
+      margin-bottom: 3px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
 
-  <div class="section-title">
-    <span>3. നിയമങ്ങളിൽ നിന്ന് പഠന മാതൃകകളിലേക്കുള്ള മാറ്റം (The Paradigm Shift)</span>
-    <span style="font-size: 9pt; font-weight: 600;">Shift from Rule-Based to Learning-Based AI</span>
-  </div>
+    .essay-q-en { font-size: 7.6pt; font-weight: 800; color: #0f172a; }
+    .essay-q-ml { font-family: 'Noto Sans Malayalam', sans-serif; font-size: 7.2pt; font-weight: 700; color: #4f46e5; margin-bottom: 2px; }
 
-  <div class="bilingual-grid">
-    <div class="card-ml">
-      <div class="card-title">1. റൂൾ ബേസ്ഡ് മോഡലുകളുടെ പരാജയം (Failure of Rule-Based AI)</div>
-      <p>മനുഷ്യന്റെ ഭാഷയും ജീവിതാനുഭവങ്ങളും അത്യന്തം സങ്കീർണ്ണമാണ്. മനുഷ്യർ സംസാരിക്കുമ്പോഴോ പെരുമാറുമ്പോഴോ ഉണ്ടാകുന്ന ലക്ഷക്കണക്കിന് അപവാദങ്ങളെ (Exceptions) എഴുതിവെക്കാൻ എത്ര വലിയ റൂൾബുക്കിനും സാധിച്ചില്ല. കമ്പ്യൂട്ടറുകൾക്ക് നിയമങ്ങൾ നൽകുന്ന രീതി വഴിമുട്ടി.</p>
-    </div>
-    <div class="card-en">
-      <div class="card-title">Exhaustion of Rule-Based Architectures</div>
-      <p>Human language, vision, and contextual reasoning contain infinite nuances that defy exhaustive formalization into handcrafted rules. Hand-coded symbolic knowledge bases collapsed under their own combinatorial weight and lack of real-world plasticity.</p>
-    </div>
-  </div>
+    .points-grid, .page-exam-grid, .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5px;
+      margin: 3px 0;
+    }
 
-  <div class="bilingual-grid">
-    <div class="card-ml">
-      <div class="card-title">2. ലേണിംഗ് ബേസ്ഡ് മോഡലുകളിലേക്കുള്ള പരിവർത്തനം</div>
-      <p>ഇവിടെയാണ് ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് അതിന്റെ ചരിത്രത്തിലെ ഏറ്റവും വലിയ വഴിത്തിരിവ് നടത്തിയത്: <strong>കമ്പ്യൂട്ടറിന് നിയമങ്ങൾ പറഞ്ഞുകൊടുക്കുന്നതിന് പകരം, ഡാറ്റയിൽ നിന്ന് സ്വയം നിയമങ്ങൾ പഠിക്കാൻ കമ്പ്യൂട്ടറിനെ പരിശീലിപ്പിക്കുന്ന രീതി (Learning from Data / Artificial Neural Networks)</strong> നിലവിൽ വന്നു. ഇത് ഇന്നത്തെ ആധുനിക എഐ വിപ്ലവത്തിന് വഴിയൊരുക്കി.</p>
-    </div>
-    <div class="card-en">
-      <div class="card-title">Emergence of Learning-Based Paradigms</div>
-      <p>The field shifted fundamentally from top-down deductive programming to bottom-up inductive learning. Rather than telling machines the explicit rules, systems are trained on massive datasets to discover emergent patterns, mimicking biological neural adaptation.</p>
-    </div>
-  </div>
+    .core-point-card, .point-card {
+      border: 1.2px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 3px 5px;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
 
-  <div class="section-title">
-    <span>4. സമഗ്ര താരതമ്യ പട്ടിക: രണ്ട് യുഗങ്ങൾ തമ്മിൽ</span>
-    <span style="font-size: 9pt; font-weight: 600;">Comparative Paradigm Matrix</span>
-  </div>
+    .point-top {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 1px;
+    }
 
-  <table class="table-box">
-    <tr>
-      <th style="width: 20%;">സവിശേഷത</th>
-      <th style="width: 40%;">ക്ലാസിക്കൽ റൂൾ-ബേസ്ഡ് AI (Classical GOFAI)</th>
-      <th style="width: 40%;">ആധുനിക ലേണിംഗ്-ബേസ്ഡ് AI (Learning-Based Models)</th>
-    </tr>
-    <tr>
-      <td><strong>അടിസ്ഥാന തത്ത്വം</strong></td>
-      <td>ടോപ്പ്-ഡൗൺ സിംബോളിക് ലോജിക് (Top-down logic rules).</td>
-      <td>ബോട്ടം-അപ്പ് പാറ്റേൺ ലേണിംഗ് (Bottom-up statistical learning).</td>
-    </tr>
-    <tr>
-      <td><strong>അറിവ് രൂപീകരണം</strong></td>
-      <td>മനുഷ്യർ നേരിട്ട് ടൈപ്പ് ചെയ്തുനൽകുന്ന അറിവ് (Hand-coded).</td>
-      <td>വൻതോതിലുള്ള ഡാറ്റയിൽ നിന്ന് അൽഗോരിതങ്ങൾ സ്വയം കണ്ടെത്തുന്ന അറിവ്.</td>
-    </tr>
-    <tr>
-      <td><strong>വഴക്കം (Flexibility)</strong></td>
-      <td>വളരെ കാർക്കശ്യമേറിയതും പുതിയ തെറ്റുകളിൽ തകരുന്നതുമാണ്.</td>
-      <td>അവ്യക്തതകളെ നേരിടാനും സ്വയം തിരുത്താനും ശേഷിയുള്ളതാണ്.</td>
-    </tr>
-    <tr>
-      <td><strong>ശരീരവും ഇന്ദ്രിയങ്ങളും</strong></td>
-      <td>പൂർണ്ണമായും ശരീരമില്ലാത്തത് (Disembodied).</td>
-      <td>സെൻസറുകൾ, ക്യാമറകൾ എന്നിവയിലൂടെ പരിസ്ഥിതിയുമായി കൂടുതൽ ബന്ധപ്പെടുന്നു.</td>
-    </tr>
-  </table>
+    .point-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
 
-  <div class="section-title">
-    <span>5. പരീക്ഷാ സഹായി: മോഡൽ ചോദ്യോത്തരങ്ങൾ (University Exam Q&A)</span>
-    <span style="font-size: 9pt; font-weight: 600;">Calicut University Exam Pattern</span>
-  </div>
+    .point-title-en { font-size: 7pt; font-weight: 800; color: #0f172a; }
+    .point-title-ml { font-family: 'Noto Sans Malayalam', sans-serif; font-size: 6.7pt; font-weight: 700; color: #0369a1; margin-bottom: 1px; }
+    .point-body { font-size: 6.3pt; color: #334155; line-height: 1.22; }
+    .point-body-ml { font-family: 'Noto Sans Malayalam', sans-serif; font-size: 6.2pt; color: #064e3b; line-height: 1.26; margin-top: 1px; }
+</style></head><body>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 8</span>
+<span class="top-bar-right">Page 1 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="chapter-hero">
+<div class="hero-tag">🎓 Calicut University FYUGP · Module 2 · Chapter 8</div>
+<div class="hero-title-en">CHAPTER V: Disembodied Intelligence</div>
+<div class="hero-title-ml">അദ്ധ്യായം 8: ശരീരരഹിതമായ ബുദ്ധി (ഡിസ്എംബോഡീഡ് ഇന്റലിജൻസ്)</div>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">The Concept of Disembodied Intelligence</span>
+<span class="section-title-ml">(ശരീരരഹിതമായ ബുദ്ധി എന്ന ആശയം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p><span class="hl-yellow">Disembodied intelligence denotes the philosophical and technological concept that intellect, rationality, cognition, and mental processes can exist, function, and flourish independently of a physical, biological body.</span> In this view, cognition is an autonomous abstract capacity that does not intrinsically require flesh, bones, biological senses, or corporeal anatomy to perform reasoning.</p>
+<p>Historically, this notion draws from ancient theological beliefs in an immortal soul surviving the physical demise of the mortal body. In modern thought, it was given rigorous metaphysical legitimacy by <span class="hl-green">René Descartes'</span> substance dualism, which divorced the thinking mind (*Res Cogitans*) entirely from the extended material body (*Res Extensa*).</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><span class="hl-yellow">ഒരു ജൈവിക ശരീരത്തിന്റെയോ ബാഹ്യ അവയവങ്ങളുടെയോ സഹായമില്ലാതെ തന്നെ ശുദ്ധമായ ബുദ്ധിക്കും, വിചാരങ്ങൾക്കും, യുക്തിചിന്തകൾക്കും സ്വതന്ത്രമായി പ്രവർത്തിക്കാൻ കഴിയുമെന്ന സങ്കൽപ്പമാണ് ശരീരരഹിതമായ ബുദ്ധി (Disembodied Intelligence).</span> ഈ കാഴ്ചപ്പാടനുസരിച്ച്, ചിന്ത എന്നത് രക്തവും മാംസവുമുള്ള ശരീരത്തിൽ മാത്രം ഒതുങ്ങുന്ന ഒന്നല്ല, മറിച്ച് സ്വതന്ത്രമായൊരു അമൂർത്ത ശേഷിയാണ്.</p>
+<p>ശരീരം മരിച്ചാലും ആത്മാവ് ബാക്കിനിൽക്കുമെന്ന പ്രാചീന മതവിശ്വാസങ്ങളിലും, മനസ്സിനെ ശരീരത്തിൽ നിന്ന് പൂർണ്ണമായി വേർതിരിച്ച <span class="hl-green">റെനെ ദെക്കാർത്തിന്റെ</span> തത്ത്വചിന്തയിലുമാണ് ഇതിന്റെ വേരുകൾ കിടക്കുന്നത്.</p>
+</div></div>
 
-  <div class="qa-card">
-    <div class="qa-q">Q1. എന്താണ് ഡിസ്‌എംബോഡീഡ് ഇന്റലിജൻസ് (Disembodied Intelligence)? (Short Answer - 3 Marks)</div>
-    <div class="qa-a">
-      <strong>ഉത്തരം:</strong> മനുഷ്യന്റെ ചിന്തയെയും ബുദ്ധിയെയും ഭൗതിക ശരീരവുമായോ ഇന്ദ്രിയാനുഭവങ്ങളുമായോ യാതൊരു ബന്ധവുമില്ലാത്ത, കേവലം അമൂർത്തമായ ഒരു വിവര പ്രോസസ്സിംഗ് (Substrate-independent information processing) മാത്രമായി കാണുന്ന ക്ലാസിക്കൽ സമീപനമാണ് ഡിസ്‌എംബോഡീഡ് ഇന്റലിജൻസ്.
-    </div>
-  </div>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">The Rise of Computational Formalism</span>
+<span class="section-title-ml">(കമ്പ്യൂട്ടേഷണൽ ഫോർമലിസത്തിന്റെ ഉദയം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>With the mid-twentieth-century birth of digital computers, disembodied intelligence transitioned from theological speculation to an engineering program. Cognition was operationalized as <span class="hl-yellow">abstract symbol manipulation</span> executing independently of physical embodiment.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ഇരുപതാം നൂറ്റാണ്ടിൽ ഡിജിറ്റൽ കമ്പ്യൂട്ടറുകൾ നിലവിൽ വന്നതോടെ, ഈ ആശയം വെറും ആത്മീയ സങ്കൽപ്പത്തിൽ നിന്ന് എൻജിനീയറിംഗ് ലക്ഷ്യമായി മാറി. ശാരീരിക രൂപമില്ലാതെ തന്നെ അമൂർത്ത ചിഹ്നങ്ങളെ കൈകാര്യം ചെയ്യുന്ന ഒരു <span class="hl-yellow">ശുദ്ധമായ സോഫ്റ്റ്‌വെയറായി</span> ചിന്ത പുനർനിർവ്വചിക്കപ്പെട്ടു.</p>
+</div></div>
 
-  <div class="qa-card">
-    <div class="qa-q">Q2. നിയമങ്ങളെ അടിസ്ഥാനമാക്കിയുള്ള സിസ്റ്റങ്ങളിൽ നിന്ന് പഠന മാതൃകകളിലേക്ക് AI മാറിയത് എന്തുകൊണ്ട്? (Short Essay - 5 Marks)</div>
-    <div class="qa-a">
-      <strong>ഉത്തരം:</strong> മനുഷ്യന്റെ ഭാഷയിലെയും ജീവിതത്തിലെയും സങ്കീർണ്ണമായ സന്ദർഭങ്ങളെ 'If-Then' പോലുള്ള കർശനമായ നിയമങ്ങൾ കൊണ്ട് പൂർണ്ണമായി നിർവ്വചിക്കാൻ സാധിക്കില്ല. മുൻകൂട്ടി നിശ്ചയിക്കാത്ത ചെറിയൊരു മാറ്റം വന്നാൽപ്പോലും ക്ലാസിക്കൽ റൂൾ സിസ്റ്റങ്ങൾ സ്തംഭിച്ചുപോയി (Brittleness). ഈ പരാജയം മറികടക്കാനാണ് മനുഷ്യ മസ്തിഷ്കത്തെപ്പോലെ ഡാറ്റയിൽ നിന്നും അനുഭവങ്ങളിൽ നിന്നും സ്വയം പാറ്റേണുകൾ പഠിച്ചെടുക്കുന്ന <strong>ലേണിംഗ് ബേസ്ഡ് AI (മെഷീൻ ലേണിംഗ് / ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ)</strong> മാതൃകയിലേക്ക് ശാസ്ത്രലോകം മാറിയത്.
-    </div>
-  </div>
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 2 · Chapter 8: Disembodied Intelligence</span>
+<span>Page 1</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 8</span>
+<span class="top-bar-right">Page 2 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Descartes' Conceivability Argument for Disembodiment</span>
+<span class="section-title-ml">(ശരീരമില്ലായ്മയ്ക്കുള്ള ദെക്കാർത്തിന്റെ സങ്കൽപ്പിക്കൽ വാദം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>The philosophical foundation for disembodied intelligence rests upon <span class="hl-green">René Descartes'</span> <span class="hl-yellow">Conceivability Argument</span>:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li>1. I can clearly and distinctly conceive of myself as a thinking thing without a physical body.</li>
+<li>2. What is clearly and distinctly conceivable is logically possible (at least through divine omnipotence).</li>
+<li>3. Therefore, it is metaphysically possible for the mind to exist separately from the body.</li>
+</ul>
+<p>Because Descartes can doubt the existence of his arms, legs, and brain while being incapable of doubting his own consciousness, he concluded that <span class="hl-yellow">bodily embodiment is merely an accidental, non-essential feature of an intellect</span>.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ശരീരമില്ലാത്ത ബുദ്ധി എന്ന ആശയത്തിന് തത്ത്വചിന്താപരമായ പിൻബലം നൽകിയത് <span class="hl-green">റെനെ ദെക്കാർത്തിന്റെ</span> <span class="hl-yellow">സങ്കൽപ്പിക്കൽ വാദമാണ് (Conceivability Argument)</span>:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li>1. ശരീരമില്ലാത്ത ഒരു ചിന്തിക്കുന്ന സത്തയായി എന്നെ സങ്കൽപ്പിക്കാൻ എനിക്ക് വ്യക്തമായി സാധിക്കുന്നുണ്ട്.</li>
+<li>2. യുക്തിപരമായി വ്യക്തമായി സങ്കൽപ്പിക്കാൻ കഴിയുന്ന കാര്യങ്ങൾ സാധ്യമാക്കാൻ ദൈവത്തിന് കഴിയും.</li>
+<li>3. അതിനാൽ ശരീരമില്ലാതെ തന്നെ മനസ്സിന് സ്വതന്ത്രമായി നിലനിൽക്കാൻ കഴിയും.</li>
+</ul>
+<p>കൈകാലുകളുടെ നിലനിൽപ്പിനെ സംശയിക്കുമ്പോഴും സ്വന്തം ചിന്തയെ സംശയിക്കാൻ കഴിയില്ലെന്നതിനാൽ, <span class="hl-yellow">ശരീരം എന്നത് ബുദ്ധിയുടെ അടിസ്ഥാന ഘടകമല്ലെന്നും വെറുമൊരു ബാഹ്യ കവചം മാത്രമാണെന്നും</span> അദ്ദേഹം വാദിച്ചു.</p>
+</div></div>
 
-  <div class="qa-card">
-    <div class="qa-q">Q3. ക്ലാസിക്കൽ സിംബോളിക് AI-യിൽ നിന്ന് ആധുനിക ലേണിംഗ്-ബേസ്ഡ് AI-യിലേക്കുള്ള ചരിത്രപരവും ദാർശനികവുമായ മാറ്റം സമഗ്രമായി ഉപന്യസിക്കുക. (Essay - 10 Marks)</div>
-    <div class="qa-a">
-      <strong>ഉത്തരം:</strong> 
-      <strong>ആമുഖം:</strong> കൃത്രിമബുദ്ധിയുടെ ചരിത്രത്തിലെ ഏറ്റവും നിർണ്ണായകമായ വഴിത്തിരിവാണ് റൂൾ-ബേസ്ഡ് മോഡലുകളിൽ നിന്ന് ലേണിംഗ്-ബേസ്ഡ് മോഡലുകളിലേക്കുള്ള മാറ്റം.<br>
-      <strong>ക്ലാസിക്കൽ യുഗത്തിന്റെ പരിമിതികൾ:</strong><br>
-      1. ഭൗതിക യാഥാർത്ഥ്യങ്ങളിൽ നിന്നും ശരീരത്തിൽ നിന്നുമുള്ള വേർപെടൽ (Disembodiment).<br>
-      2. കഠിനമായ നിയമങ്ങൾ കാരണം പുതിയ സന്ദർഭങ്ങളിൽ പരാജയപ്പെടൽ.<br>
-      <strong>ലേണിംഗ് മാതൃകകളുടെ മുന്നേറ്റം:</strong><br>
-      1. മനുഷ്യൻ നിയമങ്ങൾ ഉണ്ടാക്കുന്നതിന് പകരം ഡാറ്റയിൽ നിന്ന് കമ്പ്യൂട്ടർ സ്വയം പഠിക്കുന്നു.<br>
-      2. ചിത്രങ്ങൾ, ശബ്ദങ്ങൾ, സ്വാഭാവിക ഭാഷ എന്നിവയിലെ സൂക്ഷ്മമായ വ്യത്യാസങ്ങൾ തിരിച്ചറിയാൻ സാധിക്കുന്നു.<br>
-      <strong>ഉപസംഹാരം:</strong> കമ്പ്യൂട്ടേഷണൽ ലോജിക്കിന്റെ പരാജയത്തിൽ നിന്ന് രൂപപ്പെട്ട ഈ ലേണിംഗ് വിപ്ലവമാണ് ഇന്നത്തെ അത്യാധുനിക AI സംവിധാനങ്ങളുടെയെല്ലാം അടിത്തറ.
-    </div>
-  </div>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">The Divisibility Argument and Indivisible Mind</span>
+<span class="section-title-ml">(വിഭജന വാദവും വിഭജിക്കാനാവാത്ത മനസ്സും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>Descartes emphasized that <span class="hl-yellow">cutting the physical body into pieces does not divide the mind into pieces</span>. A severed limb leaves consciousness perfectly whole, proving that consciousness is non-spatial and completely distinct from divisible matter.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ശരീരത്തെ എത്ര മുറിച്ചുമാറ്റിയാലും <span class="hl-yellow">അതുകൊണ്ട് മനസ്സ് കഷണങ്ങളായി വിഭജിക്കപ്പെടുന്നില്ലെന്ന്</span> ദെക്കാർത്ത് ചൂണ്ടിക്കാട്ടി. ഒരു കൈ മുറിഞ്ഞുപോയാലും ബോധം പൂർണ്ണമായി നിലനിൽക്കുന്നു; ഇത് മനസ്സ് ഭൗതിക ശരീരത്തിന് അതീതമാണെന്ന് തെളിയിക്കുന്നു.</p>
+</div></div>
 
-</body>
-</html>
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 2 · Chapter 8: Disembodied Intelligence</span>
+<span>Page 2</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 8</span>
+<span class="top-bar-right">Page 3 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">The Hardware / Software Analogy</span>
+<span class="section-title-ml">(ഹാർഡ്‌വെയർ - സോഫ്റ്റ്‌വെയർ ഉപമ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>The dawn of digital computing provided classical AI with its defining metaphor: the <span class="hl-yellow">mind-as-software and brain-as-hardware</span> paradigm. Under this conceptual framework:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li>The human brain and biological body constitute the physical substrate (<span class="hl-green">hardware</span>).</li>
+<li>The mind, intelligence, thoughts, and knowledge constitute the computational program (<span class="hl-yellow">software</span>).</li>
+</ul>
+<p>Just as a computer program can run identically on a supercomputer, a desktop PC, or a server in the cloud, <span class="hl-yellow">intellect is substrate-independent</span>. It requires only an abstract computing medium to execute its formal algorithms, rendering the biological human body scientifically incidental.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ആധുനിക കമ്പ്യൂട്ടറുകളുടെ വരവോടെ രൂപപ്പെട്ട അതിപ്രധാനമായൊരു സങ്കൽപ്പമാണ് <span class="hl-yellow">മനസ്സ് സോഫ്റ്റ്‌വെയറും തലച്ചോറ് ഹാർഡ്‌വെയറുമാണ്</span> എന്ന ഉപമ:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li>മനുഷ്യന്റെ തലച്ചോറും ശരീരവും വെറുമൊരു ഭൗതിക ഉപകരണം മാത്രമാണ് (<span class="hl-green">ഹാർഡ്‌വെയർ</span>).</li>
+<li>നമ്മുടെ മനസ്സും ബുദ്ധിയും വിജ്ഞാനവും അതിൽ പ്രവർത്തിക്കുന്ന പ്രോഗ്രാമാണ് (<span class="hl-yellow">സോഫ്റ്റ്‌വെയർ</span>).</li>
+</ul>
+<p>ഒരു കമ്പ്യൂട്ടർ സോഫ്റ്റ്‌വെയർ ഏത് കമ്പ്യൂട്ടറിലും പ്രവർത്തിപ്പിക്കാൻ കഴിയുന്നത് പോലെ, <span class="hl-yellow">ബുദ്ധി എന്നത് ഏത് മാധ്യമത്തിലും പ്രവർത്തിപ്പിക്കാവുന്ന ഒന്നാണ്</span>. അതിനാൽ ശരീരവും രക്തവുമൊന്നും ബുദ്ധിക്ക് നിർബന്ധമല്ലെന്ന നിഗമനത്തിൽ ക്ലാസിക്കൽ AI എത്തിച്ചേർന്നു.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Substrate Independence (Multiple Realizability)</span>
+<span class="section-title-ml">(മാധ്യമ സ്വതന്ത്രത അഥവാ മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p><span class="hl-yellow">Substrate Independence</span> asserts that mental states are defined by their functional organization, not by their physical material. Silicon chips, optical gates, or carbon neurons are equally capable of realizing intelligence.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><span class="hl-yellow">മാധ്യമ സ്വതന്ത്രത:</span> ചിന്തയ്ക്ക് കാരണം അത് ഉണ്ടാക്കിയിരിക്കുന്ന വസ്തുവല്ല, മറിച്ച് അതിന്റെ പ്രവർത്തന ഘടനയാണ്. സിലിക്കൺ ചിപ്പിലോ, പ്രകാശ തരംഗങ്ങളിലോ, ജൈവ കോശങ്ങളിലോ എവിടെ വേണമെങ്കിലും ബുദ്ധിയെ സൃഷ്ടിക്കാം.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 2 · Chapter 8: Disembodied Intelligence</span>
+<span>Page 3</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 8</span>
+<span class="top-bar-right">Page 4 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Functionalism and the Computational Theory of Mind</span>
+<span class="section-title-ml">(ഫങ്ഷണലിസവും കമ്പ്യൂട്ടേഷണൽ മൈൻഡ് സിദ്ധാന്തവും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>In philosophy of mind, <span class="hl-yellow">Functionalism</span>—championed by <span class="hl-green">Hilary Putnam</span> and <span class="hl-green">Jerry Fodor</span>—provided the ultimate philosophical defense of disembodied AI. Functionalism defines mental states (desires, beliefs, pains) strictly by their <span class="hl-yellow">functional and causal roles</span>:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li>Inputs from the environment.</li>
+<li>Transitions to other internal mental states.</li>
+<li>Outputs in the form of actions or answers.</li>
+</ul>
+<p>Because mental states are functional relations, they do not belong uniquely to biological human bodies. If an isolated computer server running an algorithmic network maintains the exact same causal relations, it possesses genuine cognitive states without requiring a body.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><span class="hl-green">ഹിലരി പുട്ട്നാം</span>, <span class="hl-green">ജെറി ഫോഡോർ</span> എന്നിവർ വികസിപ്പിച്ച <span class="hl-yellow">ഫങ്ഷണലിസം (Functionalism)</span> ശരീരമില്ലാത്ത ബുദ്ധിക്ക് ശക്തമായ പിന്തുണ നൽകി. മാനസികാവസ്ഥകളെ (വിശ്വാസങ്ങൾ, ആഗ്രഹങ്ങൾ, വേദന) അവ നിർവ്വഹിക്കുന്ന <span class="hl-yellow">ധർമ്മങ്ങളുടെയും കാരണങ്ങളുടെയും (Causal Roles)</span> അടിസ്ഥാനത്തിലാണ് ഫങ്ഷണലിസം കാണുന്നത്:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li>പുറത്തുനിന്ന് ലഭിക്കുന്ന ഇൻപുട്ടുകൾ.</li>
+<li>മറ്റ് ആന്തരിക അവസ്ഥകളിലേക്കുള്ള മാറ്റങ്ങൾ.</li>
+<li>പുറത്തേക്ക് നൽകുന്ന ഉത്തരങ്ങളോ പെരുമാറ്റങ്ങളോ (ഔട്ട്പുട്ട്).</li>
+</ul>
+<p>ഒരു മുറിയിലിരിക്കുന്ന കമ്പ്യൂട്ടർ സെർവറിന് ഈ കാരണ-കാര്യ ബന്ധങ്ങളെ കൃത്യമായി പാലിക്കാൻ കഴിയുമെങ്കിൽ, ശരീരമില്ലാതെ തന്നെ അതിന് മനസ്സുണ്ടെന്ന് ഫങ്ഷണലിസം സമർത്ഥിക്കുന്നു.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Disembodied Symbolic AI (GOFAI)</span>
+<span class="section-title-ml">(ശരീരരഹിതമായ സിംബോളിക് AI)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>Good Old-Fashioned AI was inherently disembodied: it treated intelligent agents as pure disembodied problem-solvers manipulating propositional knowledge bases inside a silicon vacuum.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ക്ലാസിക്കൽ AI (GOFAI) അടിസ്ഥാനപരമായി ശരീരമില്ലാത്ത ബുദ്ധിയായിരുന്നു: ലോകവുമായി ശാരീരിക ബന്ധമില്ലാതെ, സിലിക്കൺ ചിപ്പിൽ യുക്തിവാക്യങ്ങൾ മാറ്റിമറിക്കുന്ന അമൂർത്ത സംവിധാനങ്ങളായിരുന്നു അവ.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 2 · Chapter 8: Disembodied Intelligence</span>
+<span>Page 4</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 8</span>
+<span class="top-bar-right">Page 5 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">The Breakdown of Disembodied AI</span>
+<span class="section-title-ml">(ശരീരരഹിത AI നേരിട്ട കനത്ത തിരിച്ചടികൾ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>Despite early optimism, disembodied symbolic AI hit catastrophic theoretical walls during the late 1970s and 1980s:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li><span class="hl-yellow">Brittleness:</span> Disembodied programs performed brilliantly in sterile, closed worlds (like chess), but broke down catastrophically when confronted with the dynamic open world.</li>
+<li><span class="hl-yellow">The Common Sense Knowledge Deficit:</span> An intellect that has never stubbed a toe, felt hunger, walked on ice, or carried an egg has no intuitive comprehension of physical gravity, fragility, balance, or danger.</li>
+<li><span class="hl-yellow">The Frame Problem:</span> Lacking an embodied survival imperative, the disembodied machine could not determine which background facts changed and which remained relevant when an action occurred.</li>
+</ul>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ആദ്യകാല പ്രതീക്ഷകൾക്ക് വിപരീതമായി, 1970-കളിലും 80-കളിലും ശരീരമില്ലാത്ത AI വലിയ പ്രതിസന്ധിയിലായി:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li><span class="hl-yellow">ബ്രിറ്റിൽനസ്സ് (തകർന്നുപോകുന്ന സ്വഭാവം):</span> ചെസ്സ് പോലുള്ള കൃത്രിമ ലോകങ്ങളിൽ വിജയിച്ചെങ്കിലും, ജീവനുള്ള യഥാർത്ഥ ലോകത്തെ കണ്ടുമുട്ടിയപ്പോൾ ഈ പ്രോഗ്രാമുകൾ പൂർണ്ണമായി പരാജയപ്പെട്ടു.</li>
+<li><span class="hl-yellow">സാമാന്യബോധത്തിന്റെ അഭാവം:</span> ഒരിക്കലും വിശപ്പറിയാത്ത, വീണുപോകാത്ത, ഐസിൽ നടക്കാത്ത ഒരു ശരീരമില്ലാത്ത യന്ത്രത്തിന് ഭൂഗുരുത്വാകർഷണം, വീഴുന്ന സാധനങ്ങൾ, അപകടം എന്നിവയെക്കുറിച്ച് സ്വാഭാവിക അറിവുണ്ടാകില്ല.</li>
+<li><span class="hl-yellow">ഫ്രെയിം പ്രോബ്ലം:</span> ജീവൻ രക്ഷിക്കാനുള്ള ശരീരബോധം ഇല്ലാത്തതിനാൽ, ഒരു മാറ്റം വരുമ്പോൾ പ്രസക്തമായത് ഏത് അപ്രസക്തമായത് ഏത് എന്ന് തിരിച്ചറിയാൻ യന്ത്രത്തിന് കഴിഞ്ഞില്ല.</li>
+</ul>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">The Fallacy of the Disembodied Mind</span>
+<span class="section-title-ml">(ശരീരമില്ലാത്ത മനസ്സ് എന്ന മിഥ്യാധാരണ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>Critics realized that <span class="hl-yellow">reason is not a free-floating computational balloon</span>. Intelligence evolved over millions of years to guide a biological organism through a dangerous physical terrain.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><span class="hl-yellow">ബുദ്ധി എന്നത് ആകാശത്ത് ഒഴുകിനടക്കുന്ന ഒന്നല്ല</span>. അപകടങ്ങൾ നിറഞ്ഞ ഈ ലോകത്ത് ഒരു ജീവിക്ക് അതിജീവിക്കാൻ വേണ്ടി പ്രകൃതി ശാരീരികമായി രൂപപ്പെടുത്തിയതാണ് ബുദ്ധിയെന്ന് ഗവേഷകർ തിരിച്ചറിഞ്ഞു.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 2 · Chapter 8: Disembodied Intelligence</span>
+<span>Page 5</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 8</span>
+<span class="top-bar-right">Page 8 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Hubert Dreyfus: What Computers Can't Do</span>
+<span class="section-title-ml">(ഹ്യൂബർട്ട് ഡ്രൈഫസ്: കമ്പ്യൂട്ടറുകൾക്ക് സാധിക്കാത്തവ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>American philosopher <span class="hl-green">Hubert Dreyfus (1972, 1992)</span> mounted the most comprehensive philosophical assault on disembodied AI in his landmark book <span class="hl-yellow">"What Computers Can't Do"</span>. Drawing upon continental phenomenology, Dreyfus demonstrated that classical AI's assumption that human thinking consists of explicit formal rules and factual databases was fatally flawed.</p>
+<p>Dreyfus made the crucial distinction between:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li><span class="hl-yellow">Knowing-That (Propositional Knowledge):</span> Abstract facts, definitions, and explicit rules (e.g., rules of grammar, math formulas).</li>
+<li><span class="hl-yellow">Knowing-How (Embodied Skillful Coping):</span> Tacit, non-verbal bodily abilities (e.g., riding a bicycle, hammering a nail, maintaining balance, judging facial expressions).</li>
+</ul>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>അമേരിക്കൻ തത്ത്വചിന്തകനായ <span class="hl-green">ഹ്യൂബർട്ട് ഡ്രൈഫസ്</span> <span class="hl-yellow">"വാട്ട് കമ്പ്യൂട്ടേഴ്സ് കാന്റ് ഡൂ" (What Computers Can't Do)</span> എന്ന കൃതിയിലൂടെ ശരീരരഹിത AI-യെ കടന്നാക്രമിച്ചു. മനുഷ്യന്റെ ചിന്ത എന്നത് കുറെ ലിഖിത നിയമങ്ങളുടെയും ഡാറ്റകളുടെയും കൂട്ടമാണെന്ന AI-യുടെ ധാരണ തെറ്റാണെന്ന് അദ്ദേഹം സമർത്ഥിച്ചു.</p>
+<p>ഡ്രൈഫസ് രണ്ട് പ്രധാന അറിവുകളെ വേർതിരിച്ചു കാണിച്ചു:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li><span class="hl-yellow">നോവിങ്-ദാറ്റ് (Knowing-That):</span> പുസ്തകങ്ങളിൽ നിന്ന് പഠിക്കുന്ന വസ്തുതകളും ഗണിത സൂത്രവാക്യങ്ങളും.</li>
+<li><span class="hl-yellow">നോവിങ്-ഹൗ (Knowing-How):</span> വാക്കുകൾ കൊണ്ട് പറയാനാവാത്ത ശാരീരിക നൈപുണ്യങ്ങൾ (സൈക്കിൾ ചവിട്ടൽ, ആണിയടിക്കൽ, ബാലൻസ് ചെയ്യൽ, മറ്റൊരാളുടെ മുഖഭാവം വായിക്കൽ).</li>
+</ul>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Embodied Skillful Coping</span>
+<span class="section-title-ml">(ശരീരബദ്ധമായ നൈപുണ്യം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>Human mastery is fundamentally intuitive, bodily coping that operates without consulting mental rulebooks. A cyclist doesn't calculate physics formulas while turning; their body responds dynamically to balance and inertia.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>സൈക്കിൾ തിരിക്കുമ്പോൾ ആരും ഭൗതികശാസ്ത്ര സമവാക്യങ്ങൾ മനസ്സിൽ കൂട്ടിക്കിഴിക്കുന്നില്ല; മറിച്ച് അവരുടെ ശരീരം സാഹചര്യത്തിനനുസരിച്ച് നേരിട്ട് ബാലൻസ് ചെയ്യുകയാണ്. ഇതാണ് യഥാർത്ഥ ബുദ്ധി.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 2 · Chapter 8: Disembodied Intelligence</span>
+<span>Page 6</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 8</span>
+<span class="top-bar-right">Page 7 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Martin Heidegger: Being-in-the-World (Dasein)</span>
+<span class="section-title-ml">(മാർട്ടിൻ ഹൈഡഗർ: ലോകത്തിൽ വസിക്കൽ / ഡാസൈൻ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>German philosopher <span class="hl-green">Martin Heidegger (1927)</span> argued in <em>Being and Time</em> that humans are not detached Cartesian minds contemplating an external world of objects. Humans are fundamentally <span class="hl-yellow">"Being-in-the-World" (Dasein)</span>, embedded seamlessly in an everyday background of practical equipment:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li><span class="hl-yellow">Ready-to-hand (Zuhandenheit):</span> When hammering, the hammer is not an object of conscious mental reflection; it becomes an transparent extension of the arm.</li>
+<li><span class="hl-yellow">Present-at-hand (Vorhandenheit):</span> Only when the hammer breaks does the mind detach and coldly theorize about it.</li>
+</ul>
+<p>Classical AI mistakenly treated all intelligence as if it were cold, detached theorizing (*Present-at-hand*), omitting the primordial embedded background.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ജർമ്മൻ തത്ത്വചിന്തകനായ <span class="hl-green">മാർട്ടിൻ ഹൈഡഗർ (1927)</span> മനുഷ്യനെ ഒരു കാഴ്ചക്കാരനായല്ല, മറിച്ച് ലോകത്തിൽ ആഴത്തിൽ ലയിച്ചുചേർന്നു ജീവിക്കുന്ന <span class="hl-yellow">ഡാസൈൻ (Being-in-the-World)</span> ആയാണ് കണ്ടത്:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li><span class="hl-yellow">റെഡി-ടു-ഹാൻഡ് (Zuhandenheit):</span> ചുറ്റിക കൊണ്ട് അടിക്കുമ്പോൾ നാം ചുറ്റികയെക്കുറിച്ച് ബോധപൂർവ്വം ചിന്തിക്കുന്നില്ല; അത് കൈയുടെ ഭാഗമായി മാറുന്നു.</li>
+<li><span class="hl-yellow">പ്രസന്റ്-അറ്റ്-ഹാൻഡ് (Vorhandenheit):</span> ചുറ്റിക തകരുമ്പോൾ മാത്രമാണ് നാം അതിനെ ഒരു വസ്തുവായി കണ്ടു പരിശോധിക്കുന്നത്.</li>
+</ul>
+<p>ക്ലാസിക്കൽ AI ഈ യാഥാർത്ഥ്യം മനസ്സിലാക്കാതെ എല്ലാറ്റിനെയും വരണ്ട കണക്കുകൂട്ടലുകളായി മാത്രം കണ്ടതാണ് അതിന്റെ പരാജയത്തിന് കാരണം.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Maurice Merleau-Ponty: The Primacy of Perception</span>
+<span class="section-title-ml">(മെർലോ-പോണ്ടി: അനുഭവങ്ങളുടെ ശാരീരിക കേന്ദ്രം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>French phenomenologist <span class="hl-green">Maurice Merleau-Ponty (1945)</span> established in <em>Phenomenology of Perception</em> that <span class="hl-yellow">the body is our anchor to reality</span>. Perception is not passive data processing; it is bodily motor exploration. Without a living body, there is no spatial perspective, no intentionality, and no meaning.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><span class="hl-green">മോറിസ് മെർലോ-പോണ്ടി (1945)</span> സമർത്ഥിച്ചു: <span class="hl-yellow">നമ്മുടെ ശരീരമാണ് യാഥാർത്ഥ്യവുമായുള്ള നമ്മുടെ പാലം</span>. കാഴ്ചയും കേൾവിയുമെല്ലാം വെറും ഡാറ്റയല്ല, ശാരീരികമായ ചലനങ്ങളാണ്. ശരീരമില്ലാതെ ചിന്തയോ കാഴ്ചപ്പാടോ ഉണ്ടാകില്ല.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 2 · Chapter 8: Disembodied Intelligence</span>
+<span>Page 7</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 8</span>
+<span class="top-bar-right">Page 8 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">The Robotic Revolution: Rodney Brooks and Situated AI</span>
+<span class="section-title-ml">(റോബോട്ടിക് വിപ്ലവം: റോഡ്നി ബ്രൂക്സും സിറ്റുവേറ്റഡ് AI-യും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>In the late 1980s and early 1990s, MIT roboticist <span class="hl-green">Rodney Brooks</span> led an intellectual rebellion against disembodied AI. In his manifesto <span class="hl-yellow">"Elephants Don't Play Chess" (1990)</span>, Brooks argued that AI had spent decades building disembodied chess engines while failing to construct a machine with the common sense navigation of an insect.</p>
+<p>Brooks introduced two revolutionary pillars:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li><span class="hl-yellow">1. Situatedness:</span> The robot is physically embedded in the real world, not processing abstract simulations. The world directly affects the robot through sensors.</li>
+<li><span class="hl-yellow">2. Embodiment:</span> The robot possesses a physical body with mass, inertia, sensors, and actuators, feeling the friction and constraints of physical reality.</li>
+</ul>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>1980-കളുടെ അവസാനം എം.ഐ.ടിയിലെ <span class="hl-green">റോഡ്നി ബ്രൂക്സ്</span> ശരീരമില്ലാത്ത AI-ക്കെതിരെ പുതിയൊരു വിപ്ലവം നയിച്ചു. <span class="hl-yellow">"ആനകൾ ചെസ്സ് കളിക്കാറില്ല" (1990)</span> എന്ന പ്രബന്ധത്തിൽ, ഒരു ചെറിയ പ്രാണിയുടെ നടക്കാനുള്ള കഴിവ് പോലുമില്ലാത്ത യന്ത്രങ്ങളെ ചെസ്സ് കളിപ്പിക്കാൻ വേണ്ടി AI പതിറ്റാണ്ടുകൾ പാഴാക്കിയെന്ന് അദ്ദേഹം പരിഹസിച്ചു.</p>
+<p>ബ്രൂക്സ് രണ്ട് പ്രധാന തത്ത്വങ്ങൾ മുന്നോട്ടുവെച്ചു:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li><span class="hl-yellow">1. സിറ്റുവേറ്റഡ്‌നെസ്സ് (സാഹചര്യബദ്ധത):</span> റോബോട്ട് ഭൗതിക ലോകത്തിൽ നേരിട്ട് സമ്പർക്കത്തിലായിരിക്കണം; അത് വെറും സിമുലേഷനുകൾ വായിക്കുകയല്ല വേണ്ടത്.</li>
+<li><span class="hl-yellow">2. എംബോഡിമെന്റ് (ശരീരബദ്ധത):</span> റോബോട്ടിന് ഭാരവും സെൻസറുകളും ചക്രങ്ങളുമുള്ള യഥാർത്ഥ ശരീരമുണ്ടായിരിക്കണം; അത് ലോകത്തിലെ തടസ്സങ്ങൾ അനുഭവിച്ചറിയണം.</li>
+</ul>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">The World is Its Own Best Model</span>
+<span class="section-title-ml">(ലോകം തന്നെയാണ് അതിന്റെ ഏറ്റവും മികച്ച മാതൃക)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>Brooks rejected building massive, internal symbolic world representations: <span class="hl-yellow">"The world is its own best model."</span> Instead of memorizing a map, a situated robot continually senses and acts in real-time, letting the physical environment guide behavior.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>കമ്പ്യൂട്ടറിനുള്ളിൽ ലോകത്തിന്റെ വലിയൊരു മാപ്പ് സൂക്ഷിക്കുന്നതിന് പകരം, <span class="hl-yellow">"ലോകം തന്നെയാണ് ഏറ്റവും നല്ല മാതൃക"</span> എന്ന് ബ്രൂക്സ് പ്രഖ്യാപിച്ചു. വഴിയിലെ തടസ്സങ്ങൾ സെൻസറിലൂടെ നേരിട്ട് തിരിച്ചറിഞ്ഞ് ചലിക്കുന്ന റോബോട്ടുകളെ അദ്ദേഹം സൃഷ്ടിച്ചു.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 2 · Chapter 8: Disembodied Intelligence</span>
+<span>Page 8</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 8</span>
+<span class="top-bar-right">Page 9 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Brooks' Subsumption Architecture</span>
+<span class="section-title-ml">(സബ്സംപ്ഷൻ ആർക്കിടെക്ചർ - തലങ്ങളായുള്ള നിയന്ത്രണം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>To implement embodied AI, Brooks engineered the <span class="hl-yellow">Subsumption Architecture</span>, a layered, decentralized control system that mirrors biological evolution:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li><span class="hl-green">Layer 0 (Base Level):</span> Collision avoidance (stop or turn when obstacle is detected).</li>
+<li><span class="hl-green">Layer 1:</span> Wander randomly across open terrain.</li>
+<li><span class="hl-green">Layer 2:</span> Explore interesting targets or navigate toward light.</li>
+<li><span class="hl-green">Layer 3:</span> Map terrain and manipulate objects.</li>
+</ul>
+<p>Crucially, there is <span class="hl-yellow">no centralized central processing unit (CPU)</span> or symbolic brain. Higher layers subsume (inhibit or override) lower layers without erasing their basic survival reflexes. This bottom-up, insect-like robotics achieved robust agility where GOFAI crumbled.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ശരീരമുള്ള AI-യെ യാഥാർത്ഥ്യമാക്കാൻ ബ്രൂക്സ് <span class="hl-yellow">സബ്സംപ്ഷൻ ആർക്കിടെക്ചർ (Subsumption Architecture)</span> വികസിപ്പിച്ചു. പ്രകൃതിയിലെ ജീവികളുടെ പരിണാമത്തെ അനുകരിക്കുന്ന തട്ടുകളായുള്ള സംവിധാനമാണിത്:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45;">
+<li><span class="hl-green">തട്ട് 0 (അടിത്തട്ട്):</span> കൂട്ടിയിടികൾ ഒഴിവാക്കൽ (തടസ്സം കണ്ടാൽ നിൽക്കുക അല്ലെങ്കിൽ മാറുക).</li>
+<li><span class="hl-green">തട്ട് 1:</span> വെറുതെ അങ്ങോട്ടുമിങ്ങോട്ടും നടക്കുക.</li>
+<li><span class="hl-green">തട്ട് 2:</span> വെളിച്ചമുള്ള സ്ഥലങ്ങളിലേക്ക് നീങ്ങുക.</li>
+<li><span class="hl-green">തട്ട് 3:</span> സാധനങ്ങൾ എടുക്കുകയും കൈകാര്യം ചെയ്യുകയും ചെയ്യുക.</li>
+</ul>
+<p>ഇവിടെ <span class="hl-yellow">ഒരൊറ്റ കേന്ദ്ര തലച്ചോറില്ല</span>. മുകളിലെ തട്ടുകൾ താഴെയുള്ള തട്ടുകളെ നിയന്ത്രിക്കുന്നു. പ്രാണികളെപ്പോലെ സ്വയം ചലിക്കുന്ന ഈ റോബോട്ടുകൾ അതിശയകരമായ ചലനശേഷി പ്രകടിപ്പിച്ചു.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Bottom-Up vs. Top-Down Paradigm Shift</span>
+<span class="section-title-ml">(ബോട്ടം-അപ്പ് സമീപനത്തിലേക്കുള്ള മാറ്റം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>Disembodied AI was top-down (imposing logic onto reality). Situated robotics is bottom-up (grounding basic bodily movement in physical mechanics before attempting abstract reason).</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ശരീരരഹിത AI മുകളിൽ നിന്ന് താഴേക്കുള്ളതായിരുന്നു (യുക്തി അടിച്ചേൽപ്പിക്കൽ). എന്നാൽ ശരീരമുള്ള റോബോട്ടിക്സ് താഴെ നിന്ന് മുകളിലേക്കാണ് (ആദ്യം നടക്കാൻ പഠിക്കുക, പിന്നീട് യുക്തി ചിന്തിക്കുക).</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 2 · Chapter 8: Disembodied Intelligence</span>
+<span>Page 9</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 8</span>
+<span class="top-bar-right">Page 10 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Comparative Synthesis: Disembodied vs. Embodied AI</span>
+<span class="section-title-ml">(താരതമ്യ പട്ടിക: ശരീരരഹിത AI-യും ശരീരബദ്ധ AI-യും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en">
+<div class="block-en-label">English Explanation</div>
+<p>The philosophical and technical divide between the two paradigms:</p>
+<table style="width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 8.5pt;">
+<tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1;">
+<th style="padding: 5px; text-align: left;">Feature</th>
+<th style="padding: 5px; text-align: left;">Disembodied AI (GOFAI)</th>
+<th style="padding: 5px; text-align: left;">Embodied AI (Situated Robotics)</th>
+</tr>
+<tr style="border-bottom: 1px solid #e2e8f0;">
+<td style="padding: 5px; font-weight: 600;">Metaphysical Root</td>
+<td style="padding: 5px;">Cartesian Dualism, Functionalism</td>
+<td style="padding: 5px;">Phenomenology (Heidegger, Merleau-Ponty)</td>
+</tr>
+<tr style="border-bottom: 1px solid #e2e8f0;">
+<td style="padding: 5px; font-weight: 600;">Locus of Mind</td>
+<td style="padding: 5px;">Abstract silicon processor / software</td>
+<td style="padding: 5px;">Body-environment interaction loop</td>
+</tr>
+<tr style="border-bottom: 1px solid #e2e8f0;">
+<td style="padding: 5px; font-weight: 600;">Primary Task</td>
+<td style="padding: 5px;">Chess, theorem proving, logic calculus</td>
+<td style="padding: 5px;">Locomotion, obstacle avoidance, balance</td>
+</tr>
+<tr style="border-bottom: 1px solid #e2e8f0;">
+<td style="padding: 5px; font-weight: 600;">World View</td>
+<td style="padding: 5px;">Detailed internal symbolic world-map</td>
+<td style="padding: 5px;">"The world is its own best model"</td>
+</tr>
+</table>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>രണ്ട് മാതൃകകൾ തമ്മിലുള്ള വ്യത്യാസങ്ങൾ:</p>
+<ul style="margin: 4px 0 6px 16px; padding: 0; line-height: 1.45; font-size: 8.5pt;">
+<li><strong>തത്ത്വചിന്താ അടിത്തറ:</strong> ശരീരരഹിത AI ദെക്കാർത്തിന്റെ ഡ്യുവലിസത്തെ ആശ്രയിക്കുമ്പോൾ, ശരീരബദ്ധ AI ഹൈഡഗറുടെയും മെർലോ-പോണ്ടിയുടെയും ശരീര തത്ത്വചിന്തയെ ആശ്രയിക്കുന്നു.</li>
+<li><strong>മനസ്സിന്റെ ഇരിപ്പിടം:</strong> ശരീരരഹിത AI ചിന്തയെ സിലിക്കൺ ചിപ്പിലെ സോഫ്റ്റ്‌വെയറായി കാണുമ്പോൾ, ശരീരബദ്ധ AI അതിനെ ശരീരവും ലോകവും തമ്മിലുള്ള നിരന്തര സമ്പർക്കമായി കാണുന്നു.</li>
+<li><strong>പ്രധാന ലക്ഷ്യം:</strong> പഴയ AI ചെസ്സും സമവാക്യങ്ങളും പരിഹരിക്കാൻ ശ്രമിച്ചു; പുതിയ AI നടക്കാനും, തടസ്സങ്ങൾ ഒഴിവാക്കാനും, അതിജീവിക്കാനും ശ്രമിക്കുന്നു.</li>
+</ul>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 2 · Chapter 8: Disembodied Intelligence</span>
+<span>Page 10</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 8</span>
+<span class="top-bar-right">Page 11 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">University Academic Exercises: Knock Your Brain</span>
+<span class="section-title-ml">(യൂണിവേഴ്സിറ്റി Curriculum പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="font-size: 8.5pt;"><div class="block-en-label">English Explanation</div>
+<p><strong>1. Descartes uses the conceivability argument to show that:</strong><br/>
+          (a) Mind and body are identical   (b) Mind and body are distinct   (c) Only the body exists   (d) Knowledge is impossible<br/>
+<em>Answer:</em> <span class="hl-yellow">(b) Mind and body are distinct</span></p>
+<p><strong>2. Descartes believes he can clearly conceive of himself as:</strong><br/>
+          (a) A machine   (b) A body without a mind   (c) A thinking thing without a body   (d) Pure matter<br/>
+<em>Answer:</em> <span class="hl-yellow">(c) A thinking thing without a body</span></p>
+<p><strong>3. The divisibility argument concludes that because bodies are divisible and minds are not, they are:</strong><br/>
+          (a) The same substance   (b) Completely unrelated   (c) Distinct substances   (d) Imaginary<br/>
+<em>Answer:</em> <span class="hl-yellow">(c) Distinct substances</span></p>
+<p><strong>4. In the divisibility argument, Descartes claims that cutting the body:</strong><br/>
+          (a) Destroys the mind   (b) Divides consciousness into pieces   (c) Does not divide the mind   (d) Proves materialism<br/>
+<em>Answer:</em> <span class="hl-yellow">(c) Does not divide the mind</span></p>
+<p><strong>5. The conceivability argument claims that if two things can be clearly conceived apart, then they:</strong><br/>
+          (a) Must be illusions   (b) Are logically contradictory   (c) Can exist separately   (d) Are material<br/>
+<em>Answer:</em> <span class="hl-yellow">(c) Can exist separately</span></p>
+</div><div class="block-ml" style="font-size: 8.5pt;"><div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><strong>മലയാളം സംഗ്രഹം &amp; Curriculum ഉത്തരങ്ങൾ:</strong><br/>
+          1. സങ്കൽപ്പിക്കൽ വാദത്തിലൂടെ ദെക്കാർത്ത് തെളിയിക്കുന്നത്: <span class="hl-yellow">മനസ്സും ശരീരവും രണ്ട് വ്യത്യസ്ത കാര്യങ്ങളാണ് (Mind and body are distinct)</span>.<br/>
+          2. ദെക്കാർത്തിന് തന്നെത്തന്നെ സങ്കൽപ്പിക്കാൻ കഴിയുന്നത്: <span class="hl-yellow">ശരീരമില്ലാത്ത ഒരു ചിന്തിക്കുന്ന വസ്തുവായി (A thinking thing without a body)</span>.<br/>
+          3. വിഭജന വാദത്തിന്റെ അന്തിമ നിഗമനം: <span class="hl-yellow">അവ തികച്ചും വ്യത്യസ്ത പദാർത്ഥങ്ങളാണ് (Distinct substances)</span>.<br/>
+          4. ശരീരം മുറിച്ചുമാറ്റുമ്പോൾ ദെക്കാർത്ത് പറയുന്നത്: <span class="hl-yellow">മനസ്സ് മുറിഞ്ഞുപോകുന്നില്ല (Does not divide the mind)</span>.<br/>
+          5. വ്യക്തമായി വേർതിരിച്ച് സങ്കൽപ്പിക്കാൻ കഴിയുമെങ്കിൽ അവയ്ക്ക്: <span class="hl-yellow">സ്വതന്ത്രമായി വേറിട്ടു നിലനിൽക്കാൻ കഴിയും (Can exist separately)</span>.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header">
+<span class="section-title-en">Unleash Your Potential: Detailed University Questions</span>
+<span class="section-title-ml">(വിശദമായ പരീക്ഷാ ചോദ്യങ്ങൾ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="font-size: 8.5pt;"><div class="block-en-label">English Explanation</div>
+<p><strong>Q1: Elucidate the notion of disembodied intelligence in relation to René Descartes' philosophies.</strong><br/>
+<em>Core Answer:</em> Founded on Cartesian dualism; mind as non-extended *res cogitans* conceives itself existing completely apart from the physical body.</p>
+<p><strong>Q2: What is the definition of disembodied intelligence in philosophy of mind and AI?</strong><br/>
+<em>Core Answer:</em> The view that cognitive processes and rationality operate independently of biological physical bodies, exemplified by software executing on hardware.</p>
+</div><div class="block-ml" style="font-size: 8.5pt;"><div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><strong>ചോദ്യം 1: ദെക്കാർത്തിന്റെ തത്ത്വചിന്തയിൽ ശരീരരഹിത ബുദ്ധിയുടെ പങ്ക് വ്യക്തമാക്കുക.</strong><br/>
+<em>ഉത്തരം:</em> സബ്സ്റ്റൻസ് ഡ്യുവലിസത്തിൽ അധിഷ്ഠിതം; ചിന്തിക്കുന്ന മനസ്സിന് ഭൗതിക ശരീരമില്ലാതെ തന്നെ നിലനിൽക്കാനാകുമെന്ന വാദം.</p>
+<p><strong>ചോദ്യം 2: ശരീരരഹിത ബുദ്ധിയുടെ നിർവ്വചനം എന്താണ്?</strong><br/>
+<em>ഉത്തരം:</em> ജൈവിക ശരീരമില്ലാതെ അമൂർത്ത ചിഹ്നങ്ങളിലൂടെയും കമ്പ്യൂട്ടേഷണൽ സോഫ്റ്റ്‌വെയറിലൂടെയും ബുദ്ധി പ്രവർത്തിക്കുമെന്ന കാഴ്ചപ്പാട്.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 2 · Chapter 8: Disembodied Intelligence</span>
+<span>Page 11</span>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 2 · Chapter 8</span>
+<span class="top-bar-right">Page 12 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="chapter-hero" style="padding: 6px 12px; margin-bottom: 8px;">
+<div class="hero-tag">🎯 Quick Revision &amp; Exam Mastery</div>
+<div class="hero-title-en" style="font-size: 13pt;">20 Core Academic Concepts: Disembodied Intelligence</div>
+<div class="hero-title-ml" style="font-size: 10pt;">20 പ്രധാന പരീക്ഷാ ആശയങ്ങൾ: ശരീരരഹിതമായ ബുദ്ധി</div>
+</div>
+<div class="grid-container">
+<!-- 1 -->
+<div class="point-card" style="border-left: 3.5px solid #2563eb;">
+<div class="point-header"><span class="point-tag" style="background:#2563eb;">💡 Definition</span><span class="point-title-en">Disembodied Intelligence</span></div>
+<div class="point-title-ml">ശരീരരഹിതമായ ബുദ്ധി</div>
+<div class="point-body">Cognitive rationality existing, computing, and operating independently of a physical biological body.</div>
+<div class="point-body-ml">ശരീരത്തിന്റെ സഹായമില്ലാതെ സ്വതന്ത്രമായി ചിന്തിക്കാൻ കഴിയുന്ന ബുദ്ധി.</div>
+</div>
+<!-- 2 -->
+<div class="point-card" style="border-left: 3.5px solid #0891b2;">
+<div class="point-header"><span class="point-tag" style="background:#0891b2;">💭 Metaphysics</span><span class="point-title-en">Conceivability Argument</span></div>
+<div class="point-title-ml">സങ്കൽപ്പിക്കൽ വാദം</div>
+<div class="point-body">Descartes' proof: clearly conceiving self without a body guarantees mind-body ontological distinction.</div>
+<div class="point-body-ml">ശരീരമില്ലാതെ ചിന്തിക്കാൻ കഴിയുന്നത് മനസ്സും ശരീരവും രണ്ടെന്നതിന് തെളിവാണ്.</div>
+</div>
+<!-- 3 -->
+<div class="point-card" style="border-left: 3.5px solid #059669;">
+<div class="point-header"><span class="point-tag" style="background:#059669;">✂️ Substance</span><span class="point-title-en">Divisibility Argument</span></div>
+<div class="point-title-ml">വിഭജന വാദം</div>
+<div class="point-body">Amputating body limbs does not divide consciousness into pieces; mind is strictly indivisible.</div>
+<div class="point-body-ml">ശരീരഭാഗങ്ങൾ മുറിച്ചാലും മനസ്സ് മുറിഞ്ഞുപോകുന്നില്ല.</div>
+</div>
+<!-- 4 -->
+<div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+<div class="point-header"><span class="point-tag" style="background:#7c3aed;">💻 Metaphor</span><span class="point-title-en">Hardware / Software Analogy</span></div>
+<div class="point-title-ml">ഹാർഡ്‌വെയർ - സോഫ്റ്റ്‌വെയർ ഉപമ</div>
+<div class="point-body">Mind conceived as abstract software; brain and body viewed as incidental, replaceable hardware.</div>
+<div class="point-body-ml">മനസ്സ് സോഫ്റ്റ്‌വെയറും തലച്ചോർ വെറും ഹാർഡ്‌വെയറുമാണെന്ന മാതൃക.</div>
+</div>
+<!-- 5 -->
+<div class="point-card" style="border-left: 3.5px solid #d97706;">
+<div class="point-header"><span class="point-tag" style="background:#d97706;">⚙️ Functionalism</span><span class="point-title-en">Multiple Realizability</span></div>
+<div class="point-title-ml">മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി</div>
+<div class="point-body">Mental states defined by functional relations, realizable in silicon chips or organic meat equally.</div>
+<div class="point-body-ml">ബുദ്ധി സിലിക്കൺ ചിപ്പിലോ ജൈവ കോശങ്ങളിലോ ഒരുപോലെ സൃഷ്ടിക്കാമെന്ന വാദം.</div>
+</div>
+<!-- 6 -->
+<div class="point-card" style="border-left: 3.5px solid #dc2626;">
+<div class="point-header"><span class="point-tag" style="background:#dc2626;">🏰 Classical AI</span><span class="point-title-en">GOFAI Paradigmatic Bias</span></div>
+<div class="point-title-ml">ക്ലാസിക്കൽ AI-യുടെ മുൻവിധി</div>
+<div class="point-body">Symbolic AI assumed reason was purely disembodied manipulation of propositional rules.</div>
+<div class="point-body-ml">ചിഹ്നങ്ങൾ മാറ്റിവെക്കുന്നതിലൂടെ മാത്രം ബുദ്ധിയുണ്ടാകുമെന്ന മുൻവിധി.</div>
+</div>
+<!-- 7 -->
+<div class="point-card" style="border-left: 3.5px solid #2563eb;">
+<div class="point-header"><span class="point-tag" style="background:#2563eb;">💥 Breakdown</span><span class="point-title-en">Brittleness Crisis</span></div>
+<div class="point-title-ml">തകർന്നുപോകുന്ന പ്രതിസന്ധി</div>
+<div class="point-body">Disembodied AI collapsed outside microworlds because it lacked physical intuition of reality.</div>
+<div class="point-body-ml">യഥാർത്ഥ ലോകത്തെ കണ്ടുമുട്ടിയപ്പോൾ ശരീരമില്ലാത്ത AI പരാജയപ്പെട്ടു.</div>
+</div>
+<!-- 8 -->
+<div class="point-card" style="border-left: 3.5px solid #0891b2;">
+<div class="point-header"><span class="point-tag" style="background:#0891b2;">🪨 Common Sense</span><span class="point-title-en">Common Sense Deficit</span></div>
+<div class="point-title-ml">സാമാന്യബോധത്തിന്റെ അഭാവം</div>
+<div class="point-body">No understanding of gravity, pain, friction, or danger without experiencing physical vulnerability.</div>
+<div class="point-body-ml">ശാരീരിക വേദനയും വീഴ്ചയും അറിയാത്തതിനാൽ സാമാന്യബോധം ഇല്ലാതെപോയി.</div>
+</div>
+<!-- 9 -->
+<div class="point-card" style="border-left: 3.5px solid #059669;">
+<div class="point-header"><span class="point-tag" style="background:#059669;">🖼️ Frame Limit</span><span class="point-title-en">The Frame Problem</span></div>
+<div class="point-title-ml">ഫ്രെയിം പ്രോബ്ലം</div>
+<div class="point-body">Inability of a disembodied logic engine to know what remains relevant when actions occur.</div>
+<div class="point-body-ml">പ്രസക്തമായ മാറ്റങ്ങൾ ഏതെന്ന് തിരിച്ചറിയാൻ കഴിയാത്ത പ്രതിസന്ധി.</div>
+</div>
+<!-- 10 -->
+<div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+<div class="point-header"><span class="point-tag" style="background:#7c3aed;">👨‍🏫 Critic</span><span class="point-title-en">Hubert Dreyfus (1972)</span></div>
+<div class="point-title-ml">ഹ്യൂബർട്ട് ഡ്രൈഫസ്</div>
+<div class="point-body">Asserted that human common sense is bodily skillful coping, not formal propositional calculus.</div>
+<div class="point-body-ml">മനുഷ്യന്റെ ബുദ്ധി ശാരീരിക നൈപുണ്യമാണെന്ന് വാദിച്ച തത്ത്വചിന്തകൻ.</div>
+</div>
+<!-- 11 -->
+<div class="point-card" style="border-left: 3.5px solid #d97706;">
+<div class="point-header"><span class="point-tag" style="background:#d97706;">🚴 Know-How</span><span class="point-title-en">Knowing-How vs Knowing-That</span></div>
+<div class="point-title-ml">നോവിങ്-ഹൗവും നോവിങ്-ദാറ്റും</div>
+<div class="point-body">Bodily intuitive coping (riding a bike) precedes and enables formal book knowledge.</div>
+<div class="point-body-ml">ശാരീരിക നൈപുണ്യമാണ് ലിഖിത അറിവിനേക്കാൾ മുൻപിൽ നിൽക്കുന്നത്.</div>
+</div>
+<!-- 12 -->
+<div class="point-card" style="border-left: 3.5px solid #dc2626;">
+<div class="point-header"><span class="point-tag" style="background:#dc2626;">🌍 Embedded</span><span class="point-title-en">Heidegger's Being-in-the-World</span></div>
+<div class="point-title-ml">ഹൈഡഗറുടെ ലോകത്തിൽ വസിക്കൽ</div>
+<div class="point-body">Humans are *Dasein*, always already immersed in practical, bodily equipment contexts.</div>
+<div class="point-body-ml">മനുഷ്യൻ ലോകത്തിൽ ആഴത്തിൽ ലയിച്ചുചേർന്ന ജീവിയാണ്.</div>
+</div>
+<!-- 13 -->
+<div class="point-card" style="border-left: 3.5px solid #2563eb;">
+<div class="point-header"><span class="point-tag" style="background:#2563eb;">🔨 Tools</span><span class="point-title-en">Ready-to-Hand (Zuhanden)</span></div>
+<div class="point-title-ml">റെഡി-ടു-ഹാൻഡ്</div>
+<div class="point-body">Skillful tool use acts transparently through the body, not as conscious mental data processing.</div>
+<div class="point-body-ml">ഉപകരണങ്ങൾ കൈകാര്യം ചെയ്യുമ്പോൾ ശരീരം നേരിട്ട് പ്രതികരിക്കുന്നു.</div>
+</div>
+<!-- 14 -->
+<div class="point-card" style="border-left: 3.5px solid #0891b2;">
+<div class="point-header"><span class="point-tag" style="background:#0891b2;">👁️ Perception</span><span class="point-title-en">Merleau-Ponty's Body Anchor</span></div>
+<div class="point-title-ml">മെർലോ-പോണ്ടിയുടെ ശരീര നങ്കൂരം</div>
+<div class="point-body">The living body is our anchor to reality; perception is bodily exploration, not computer decoding.</div>
+<div class="point-body-ml">ശരീരമാണ് യാഥാർത്ഥ്യവുമായുള്ള മനുഷ്യന്റെ നങ്കൂരം.</div>
+</div>
+<!-- 15 -->
+<div class="point-card" style="border-left: 3.5px solid #059669;">
+<div class="point-header"><span class="point-tag" style="background:#059669;">🤖 Rebel</span><span class="point-title-en">Rodney Brooks (MIT)</span></div>
+<div class="point-title-ml">റോഡ്നി ബ്രൂക്സ്</div>
+<div class="point-body">Pioneered situated robotics, rejecting disembodied symbol shufflers in favor of insect-like agility.</div>
+<div class="point-body-ml">ശരീരമുള്ള റോബോട്ടുകളെ നിർമ്മിച്ച് പുതിയ വിപ്ലവം സൃഷ്ടിച്ച ശാസ്ത്രജ്ഞൻ.</div>
+</div>
+<!-- 16 -->
+<div class="point-card" style="border-left: 3.5px solid #7c3aed;">
+<div class="point-header"><span class="point-tag" style="background:#7c3aed;">🐘 Manifesto</span><span class="point-title-en">Elephants Don't Play Chess (1990)</span></div>
+<div class="point-title-ml">ആനകൾ ചെസ്സ് കളിക്കാറില്ല</div>
+<div class="point-body">Landmark paper declaring basic physical navigation far more essential than disembodied chess.</div>
+<div class="point-body-ml">ശാരീരിക ചലനമാണ് അമൂർത്ത ചെസ്സ് കളിയേക്കാൾ പ്രധാനമെന്ന പ്രഖ്യാപനം.</div>
+</div>
+<!-- 17 -->
+<div class="point-card" style="border-left: 3.5px solid #d97706;">
+<div class="point-header"><span class="point-tag" style="background:#d97706;">🌐 Direct World</span><span class="point-title-en">World as Its Own Best Model</span></div>
+<div class="point-title-ml">ലോകം തന്നെയാണ് മികച്ച മാതൃക</div>
+<div class="point-body">Robots should directly sense the real world in real-time rather than storing complex internal maps.</div>
+<div class="point-body-ml">അകത്തിരുന്ന് മാപ്പുകൾ നോക്കാതെ ലോകത്തെ നേരിട്ട് തിരിച്ചറിയൽ.</div>
+</div>
+<!-- 18 -->
+<div class="point-card" style="border-left: 3.5px solid #dc2626;">
+<div class="point-header"><span class="point-tag" style="background:#dc2626;">🪜 Control</span><span class="point-title-en">Subsumption Architecture</span></div>
+<div class="point-title-ml">സബ്സംപ്ഷൻ ആർക്കിടെക്ചർ</div>
+<div class="point-body">Layered, decentralized behavioral system: avoid collisions at base, explore at top, with no central CPU.</div>
+<div class="point-body-ml">കേന്ദ്ര തലച്ചോറില്ലാതെ തട്ടുകളായി പ്രവർത്തിക്കുന്ന റോബോട്ട് നിയന്ത്രണം.</div>
+</div>
+<!-- 19 -->
+<div class="point-card" style="border-left: 3.5px solid #2563eb;">
+<div class="point-header"><span class="point-tag" style="background:#2563eb;">🌱 Bottom-Up</span><span class="point-title-en">Embodied AI Paradigm</span></div>
+<div class="point-title-ml">ബോട്ടം-അപ്പ് സമീപനം</div>
+<div class="point-body">Grounding perception and motor action in physical reality before attempting abstract logic.</div>
+<div class="point-body-ml">ആദ്യം ശാരീരിക പ്രവർത്തനങ്ങൾ ഉറപ്പിക്കുക, പിന്നീട് യുക്തി ചിന്തിക്കുക.</div>
+</div>
+<!-- 20 -->
+<div class="point-card" style="border-left: 3.5px solid #0891b2;">
+<div class="point-header"><span class="point-tag" style="background:#0891b2;">🏁 Final Truth</span><span class="point-title-en">Mind Requires Embodiment</span></div>
+<div class="point-title-ml">മനസ്സിന് ശരീരം അനിവാര്യം</div>
+<div class="point-body">Cognition is not an isolated ghost in a machine; it is a living dance between body and world.</div>
+<div class="point-body-ml">ബുദ്ധി എന്നത് വെറുമൊരു സോഫ്റ്റ്‌വെയറല്ല, ശരീരവും ലോകവും ചേർന്നുള്ള അനുഭവമാണ്.</div>
+</div>
+</div>
+</div>
+<div class="page-footer">
+<span>Calicut University FYUGP · Minor Philosophy (PHL1MN102)</span>
+<span>Module 2 · Chapter 8: 20 Core Academic Concepts</span>
+<span>Page 12</span>
+</div>
+</div>
+</body></html>

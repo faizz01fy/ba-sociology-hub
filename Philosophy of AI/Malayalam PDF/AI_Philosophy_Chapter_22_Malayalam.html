@@ -1,335 +1,1209 @@
 <!DOCTYPE html>
-<html lang="ml">
-<head>
-  <meta charset="UTF-8">
-  <title>Chapter 22: The Future of Humanity: Ethical Governance & Prudent Amalgamation of AI</title>
-  <style>
+<html lang="ml"><head><meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" name="viewport"/><meta charset="utf-8"/><title>Philosophy of AI · Module 5 · Chapter 22</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap');
 
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-  @page {
-    size: A4;
-    margin: 16mm 16mm 18mm 16mm;
-    @bottom-right {
-      content: "Page " counter(page);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 9pt;
+    @page {
+      size: A4 portrait;
+      margin: 6mm 8mm 6mm 8mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.34;
+      font-size: 7.4pt;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-container {
+      height: 284mm;
+      max-height: 284mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      break-after: page;
+      position: relative;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .page-container:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #4f46e5;
+      padding-bottom: 2px;
+      margin-bottom: 4px;
+    }
+
+    .top-bar-left {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #4f46e5;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .top-bar-right {
+      font-size: 6.8pt;
       font-weight: 700;
+      color: #1e1b4b;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 1px 7px;
+      border-radius: 4px;
+    }
+
+    /* Chapter Hero Banner */
+    .chapter-hero {
+      background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 60%, #4f46e5 100%);
+      color: #ffffff;
+      border-radius: 7px;
+      padding: 6px 12px;
+      margin-bottom: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+      border: 1px solid #818cf8;
+    }
+
+    .hero-tag {
+      font-size: 6.2pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #a5b4fc;
+      margin-bottom: 2px;
+    }
+
+    .hero-title-en {
+      font-size: 9.8pt;
+      font-weight: 800;
+      margin: 0 0 2px 0;
+      line-height: 1.22;
+      color: #ffffff;
+    }
+
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      margin: 0;
+      color: #f8fafc;
+      line-height: 1.32;
+    }
+
+    /* Content Box / Unit Card */
+    .content-box, .unit-card {
+      border: 1.2px solid #e2e8f0;
+      border-radius: 6px;
+      background: #ffffff;
+      margin-bottom: 4.5px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .section-header, .unit-head {
+      background: linear-gradient(90deg, #f1f5f9 0%, #f8fafc 100%);
+      border-left: 3.5px solid #4f46e5;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 3.5px 8px;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-title-en, .unit-title-en {
+      font-size: 7.8pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .section-title-ml, .unit-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.4pt;
+      font-weight: 700;
+      color: #4338ca;
+      margin-left: 6px;
+    }
+
+    /* Side-by-Side Bilingual Grid */
+    .bilingual-pair {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 6px !important;
+      padding: 4px 6px !important;
+      box-sizing: border-box !important;
+      background: #ffffff !important;
+    }
+
+    .block-en {
+      background: #f8fafc !important;
+      border: 1px solid #e0e7ff !important;
+      border-left: 3.5px solid #4f46e5 !important;
+      padding: 4px 7px !important;
+      border-radius: 4px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      margin: 0 !important;
+      min-width: 0 !important;
+    }
+
+    .block-en-label, .block-label {
+      font-size: 6.2pt !important;
+      font-weight: 800 !important;
+      color: #4338ca !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      margin-bottom: 2px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 3px !important;
+    }
+
+    .block-en p {
+      font-size: 7.2pt !important;
+      color: #1e293b !important;
+      line-height: 1.32 !important;
+      margin: 0 0 3px 0 !important;
+      text-align: justify !important;
+    }
+    .block-en p:last-child { margin-bottom: 0 !important; }
+
+    .block-ml {
+      background: #f0fdf4 !important;
+      border: 1px solid #dcfce7 !important;
+      border-left: 3.5px solid #10b981 !important;
+      padding: 4px 7px !important;
+      border-radius: 4px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      margin: 0 !important;
+      min-width: 0 !important;
+    }
+
+    .block-ml-label {
+      font-family: 'Noto Sans Malayalam', sans-serif !important;
+      font-size: 6.2pt !important;
+      font-weight: 800 !important;
+      color: #047857 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.4px !important;
+      margin-bottom: 2px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 3px !important;
+    }
+
+    .block-ml p {
+      font-family: 'Noto Sans Malayalam', sans-serif !important;
+      font-size: 7.1pt !important;
+      color: #064e3b !important;
+      line-height: 1.38 !important;
+      margin: 0 0 3px 0 !important;
+      text-align: justify !important;
+    }
+    .block-ml p:last-child { margin-bottom: 0 !important; }
+
+    /* Highlights */
+    .hl-green {
+      background: #bbf7d0 !important;
+      color: #14532d !important;
+      padding: 0.5px 3px !important;
+      border-radius: 2px !important;
+      font-weight: 600 !important;
+    }
+
+    .hl-yellow {
+      background: #fef08a !important;
+      color: #713f12 !important;
+      padding: 0.5px 3px !important;
+      border-radius: 2px !important;
+      font-weight: 600 !important;
+    }
+
+    /* Page Footer */
+    .page-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 6.2pt;
       color: #64748b;
+      margin-top: auto;
     }
-    @bottom-left {
-      content: "University of Calicut · BA Philosophy · Philosophy of AI (PHL1MN102)";
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 8pt;
-      font-weight: 600;
-      color: #94a3b8;
+
+    .footer-left { font-weight: 600; }
+    .footer-badges { display: flex; gap: 8px; }
+    .footer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 5.8pt;
+      font-weight: 700;
     }
-  }
-  body {
-    font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
-    color: #0f172a;
-    background: #ffffff;
-    line-height: 1.65;
-    font-size: 9.8pt;
-    margin: 0;
-    padding: 0;
-  }
-  .header-box {
-    border: 2px solid #0f766e;
-    border-radius: 12px;
-    padding: 18px 22px;
-    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
-    margin-bottom: 20px;
-  }
-  .badge {
-    display: inline-block;
-    background: #0f766e;
-    color: #ffffff;
-    font-size: 8pt;
-    font-weight: 800;
-    padding: 3px 10px;
-    border-radius: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-  }
-  h1 {
-    margin: 0 0 4px 0;
-    color: #115e59;
-    font-size: 15.5pt;
-    font-weight: 800;
-    line-height: 1.3;
-  }
-  .sub-title {
-    font-size: 11.5pt;
-    font-weight: 700;
-    color: #0f766e;
-    margin-bottom: 8px;
-  }
-  .meta-info {
-    font-size: 8.5pt;
-    color: #334155;
-    font-weight: 600;
-    border-top: 1px dashed #99f6e4;
-    padding-top: 6px;
-    margin-top: 6px;
-  }
-  .section-title {
-    background: #0f766e;
-    color: #ffffff;
-    padding: 9px 15px;
-    border-radius: 8px;
-    font-size: 11pt;
-    font-weight: 800;
-    margin: 22px 0 13px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    page-break-after: avoid;
-  }
-  .bilingual-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 13px;
-    margin-bottom: 13px;
-    page-break-inside: avoid;
-  }
-  .card-en, .card-ml {
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 13px 15px;
-    background: #ffffff;
-    font-size: 9.3pt;
-  }
-  .card-en {
-    border-left: 4px solid #2563eb;
-    background: #f8fafc;
-  }
-  .card-ml {
-    border-left: 4px solid #0f766e;
-    background: #ffffff;
-  }
-  .card-title {
-    font-weight: 800;
-    margin-bottom: 6px;
-    font-size: 9.8pt;
-  }
-  .card-en .card-title { color: #1e40af; }
-  .card-ml .card-title { color: #115e59; }
-  .table-box {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 15px 0;
-    font-size: 8.8pt;
-  }
-  .table-box th, .table-box td {
-    border: 1px solid #cbd5e1;
-    padding: 8px 10px;
-    text-align: left;
-    vertical-align: top;
-  }
-  .table-box th {
-    background: #0f766e;
-    color: #ffffff;
-    font-weight: 700;
-  }
-  .table-box tr:nth-child(even) { background: #f8fafc; }
-  .concept-box {
-    background: #f0fdfa;
-    border: 1px solid #99f6e4;
-    border-left: 5px solid #0d9488;
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin: 13px 0;
-    font-size: 9.4pt;
-  }
-  .concept-box strong { color: #115e59; }
-  .qa-card {
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-left: 4px solid #0f766e;
-    border-radius: 8px;
-    padding: 13px 16px;
-    margin-bottom: 13px;
-    page-break-inside: avoid;
-  }
-  .qa-q {
-    font-weight: 800;
-    color: #115e59;
-    margin-bottom: 5px;
-    font-size: 9.8pt;
-  }
-  .qa-a {
-    color: #334155;
-    font-size: 9.3pt;
-    line-height: 1.6;
-  }
-  p { margin: 0 0 9px 0; }
+    .badge-dot { width: 5px; height: 5px; border-radius: 50%; display: inline-block; }
 
-  </style>
-</head>
-<body>
+    /* Exam Cards, MCQs, Revision Masterclass */
+    .mcq-card {
+      border: 1.2px solid #cbd5e1;
+      border-radius: 5px;
+      padding: 3.5px 6px;
+      margin-bottom: 3px;
+      background: #ffffff;
+    }
 
-  <div class="header-box">
-    <div class="badge">Calicut University · Minor Philosophy (PHL1MN102)</div>
-    <h1>അധ്യായം 22: മനുഷ്യരാശിയുടെ ഭാവിയും ധാർമ്മിക ഭരണവും: ശാസ്ത്ര മുന്നേറ്റവും ധാർമ്മിക ഉത്തരവാദിത്തവും</h1>
-    <div class="sub-title">Chapter 22: The Future of Humanity: Ethical Governance & Prudent Amalgamation of AI</div>
-    <div class="meta-info">
-      <span>📚 Module 5 · Unit Chapter 22</span> &nbsp;|&nbsp; 
-      <span>⏱️ 10 Hours Module Weightage · 10 Marks</span>
-    </div>
-  </div>
+    .mcq-q-en { font-size: 7.3pt; font-weight: 800; color: #0f172a; }
+    .mcq-q-ml { font-family: 'Noto Sans Malayalam', sans-serif; font-size: 7pt; font-weight: 700; color: #0369a1; margin-bottom: 2px; }
 
-  <div class="concept-box">
-    <strong>പാഠ്യസംഗ്രഹം (Module Scope):</strong> മനുഷ്യരാശിയുടെ ഭാവി സുരക്ഷിതമാക്കാൻ ശാസ്ത്രീയ സാങ്കേതിക മുന്നേറ്റങ്ങളെ ധാർമ്മിക ഉത്തരവാദിത്തവുമായും ദാർശനിക അവബോധവുമായും എങ്ങനെ വിവേകപൂർവ്വം സമന്വയിപ്പിക്കാം (Prudent Amalgamation of Scientific Advancement with Ethical Responsibility) എന്ന് ഈ ഉപസംഹാര അധ്യായം വിശദീകരിക്കുന്നു. ഭരണകൂടം, ആരോഗ്യം, സാമ്പത്തിക ഘടനകൾ എന്നിവയിലെ എഐ നിയന്ത്രണവും ഹ്യൂമൻ-സെന്റേർഡ് സമീപനവും ഇതിൽ ചർച്ച ചെയ്യപ്പെടുന്നു.
-  </div>
+    .mcq-grid, .mcq-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin: 2px 0;
+    }
 
+    .mcq-opt, .mcq-option {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 3px;
+      padding: 2px 5px;
+      font-size: 6.8pt;
+    }
 
-  <div class="section-title">
-    <span>1. ശാസ്ത്ര മുന്നേറ്റവും ധാർമ്മിക ഉത്തരവാദിത്തവും</span>
-    <span style="font-size: 8.5pt; font-weight: 600;">Prudent Amalgamation of Science & Ethics</span>
-  </div>
-  <div class="bilingual-grid">
-    <div class="card-ml">
-      <div class="card-title">വിവേകപൂർണ്ണമായ സമന്വയം (Prudent Amalgamation)</div>
-      
-              <p>കേന്ദ്ര ദാർശനിക സന്ദേശം: <em>"എഐ യുഗത്തിൽ മനുഷ്യരാശിയുടെ ഭാവി എന്നത് ശാസ്ത്രീയ മുന്നേറ്റത്തെ ധാർമ്മിക ഉത്തരവാദിത്തവുമായും ബുദ്ധിപരമായ ധാരണയുമായും വിവേകപൂർവ്വം സമന്വയിപ്പിക്കുന്നതിനെ (Prudent Amalgamation of Scientific Advancement with Ethical Responsibility) ആശ്രയിച്ചിരിക്കും."</em></p>
-              <p>തത്ത്വചിന്തയില്ലാത്ത ശാസ്ത്രം അന്ധവും അപകടകരവുമാണ്; പ്രായോഗിക ശാസ്ത്രവുമായി സംവദിക്കാത്ത തത്ത്വചിന്ത നിഷ്ക്രിയവുമാണ്. എഐ സാങ്കേതികവിദ്യ മനുഷ്യ നാഗരികതയെ മാറ്റിസ്ഥാപിക്കുന്നതിനോ ദുർബലപ്പെടുത്തുന്നതിനോ പകരം അതിനെ സമ്പന്നമാക്കുന്ന ഉപാധിയായി പ്രവർത്തിക്കാൻ ഈ സമന്വയം അനിവാര്യമാണ്.</p>
-            
-    </div>
-    <div class="card-en">
-      <div class="card-title">The Imperative of Prudent Amalgamation</div>
-      
-              <p>The future of humanity in the age of AI will depend on the prudent amalgamation of scientific advancement with ethical responsibility and intellectual understanding.</p>
-              <p>A balanced approach—merging scientific progress with philosophical reflection—is essential to ensure that artificial intelligence functions as a tool that enriches and supports human civilisation rather than replacing or weakening it.</p>
-            
-    </div>
-  </div>
+    .mcq-opt.correct, .mcq-option.correct {
+      background: #ecfdf5;
+      border: 1.2px solid #10b981;
+      font-weight: 700;
+      color: #047857;
+    }
 
-  <div class="section-title">
-    <span>2. സാമൂഹിക ഘടനകളും ധാർമ്മിക ഭരണവും</span>
-    <span style="font-size: 8.5pt; font-weight: 600;">Governance in Healthcare, Economy, and Government</span>
-  </div>
-  <div class="bilingual-grid">
-    <div class="card-ml">
-      <div class="card-title">ആരോഗ്യം, സാമ്പത്തികം, ഭരണകൂടം എന്നിവയിലെ സ്വാധീനം</div>
-      
-              <p>എഐ സംവിധാനങ്ങൾ സർക്കാർ ഭരണം (Government), ആരോഗ്യരംഗം (Healthcare), സാമ്പത്തിക ഘടനകൾ (Economic Structures) എന്നിവയെ കൂടുതൽ സ്വാധീനിച്ചുകൊണ്ടിരിക്കുകയാണ്.</p>
-              <p>പുതിയ സാങ്കേതികവിദ്യകൾ മനുഷ്യന്റെ ക്ഷേമത്തെ അപകടപ്പെടുത്താതെ ഉയർത്തുന്നു എന്ന് ഉറപ്പാക്കാൻ സമൂഹം ധാർമ്മിക നിലവാരങ്ങളും (Ethical Standards) ഉത്തരവാദിത്തവും (Accountability) നീതിയും (Fairness) സ്ഥാപിക്കണം. ഈ നിയന്ത്രണങ്ങൾക്ക് വഴികാട്ടാൻ ദാർശനിക അന്വേഷണം അത്യന്താപേക്ഷിതമാണ്.</p>
-            
-    </div>
-    <div class="card-en">
-      <div class="card-title">Deliberation Across Core Institutional Pillars</div>
-      
-              <p>As AI systems increasingly influence human life in critical arenas such as government, healthcare, and economic structures, society must establish ethical standards to ensure technology enhances human wellbeing rather than imperiling it.</p>
-              <p>Philosophical inquiry is not an academic luxury; it is indispensable in guiding the development, safety verification, and regulatory governance of artificial intelligence.</p>
-            
-    </div>
-  </div>
+    .mcq-exp, .mcq-explanation {
+      font-size: 6.3pt;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 1.5px 5px;
+      border-radius: 3px;
+      margin-top: 2px;
+    }
 
-  <div class="section-title">
-    <span>3. ഹ്യൂമൻ-സെന്റേർഡ് എഐ (Human-Centered Artificial Intelligence)</span>
-    <span style="font-size: 8.5pt; font-weight: 600;">Human-Centered AI: Machines Serving Humans</span>
-  </div>
-  <div class="bilingual-grid">
-    <div class="card-ml">
-      <div class="card-title">മനുഷ്യനെ കേന്ദ്രമാക്കിയുള്ള സാങ്കേതികവിദ്യ</div>
-      
-              <p>എഐ സംവിധാനങ്ങൾ മനുഷ്യനെ മാറ്റിസ്ഥാപിക്കാനുള്ളതല്ല (Replacement), മറിച്ച് മനുഷ്യന്റെ ക്ഷേമത്തെയും സർഗ്ഗാത്മകതയെയും വികസിപ്പിക്കാനുള്ളതാണ് എന്ന കാഴ്ചപ്പാടാണ് <strong>ഹ്യൂമൻ-സെന്റേർഡ് എഐ</strong>.</p>
-              <p>ലാഭമോ കാര്യക്ഷമതയോ മാത്രമല്ല മാനദണ്ഡമാക്കേണ്ടത്; മനുഷ്യാവകാശങ്ങൾ, സാമൂഹിക നീതി, മാനസിക ആരോഗ്യം, പരിസ്ഥിതി സംരക്ഷണം എന്നിവയ്ക്ക് സാങ്കേതികവിദ്യ നൽകുന്ന സംഭാവനകളെ അടിസ്ഥാനമാക്കി വേണം എഐ സംവിധാനങ്ങളെ അളക്കേണ്ടത്.</p>
-            
-    </div>
-    <div class="card-en">
-      <div class="card-title">Empowerment Over Displacement</div>
-      
-              <p><strong>Human-Centered Artificial Intelligence (HCAI)</strong> insists that intelligent systems must be architected to amplify human agency, capability, and dignity rather than automate humans into obsolescence.</p>
-              <p>Technological advancement cannot be measured solely by corporate productivity metrics, but by its substantive contribution to fundamental human rights, democratic equity, and ecological sanity.</p>
-            
-    </div>
-  </div>
+    .essay-card {
+      border: 1.2px solid #4f46e5;
+      border-radius: 5px;
+      background: #ffffff;
+      padding: 4px 7px;
+      margin-bottom: 3px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
 
-  <div class="section-title">
-    <span>4. ഭാവിയെക്കുറിച്ചുള്ള സമഗ്ര ദാർശനിക വീക്ഷണം</span>
-    <span style="font-size: 8.5pt; font-weight: 600;">A Balanced Vision for Human Civilization</span>
-  </div>
-  <div class="bilingual-grid">
-    <div class="card-ml">
-      <div class="card-title">യന്ത്രങ്ങളോടൊപ്പമുള്ള നാഗരികതയുടെ ഭാവി</div>
-      
-              <p>തത്ത്വചിന്ത എന്നത് കേവലം കഴിഞ്ഞുപോയ കാലത്തെ ആശയങ്ങളല്ല, മറിച്ച് മനുഷ്യന്റെ ഭാവിയെ വെളിച്ചത്തിലേക്ക് നയിക്കുന്ന ദീപമാണ്.</p>
-              <p>എഐ യുഗത്തിൽ മനുഷ്യൻ സ്വന്തം അസ്തിത്വത്തിന്റെ മൂല്യം തിരിച്ചറിയണം. യന്ത്രങ്ങൾക്ക് കണക്കുകൂട്ടാൻ കഴിയും, എന്നാൽ മൂല്യങ്ങൾ സൃഷ്ടിക്കാനും, കാരുണ്യം കാട്ടാനും, അർത്ഥപൂർണ്ണമായ ജീവിതം നയിക്കാനും മനുഷ്യർക്ക് മാത്രമേ കഴിയൂ. ഈ മാനവികതയെ കാത്തുസൂക്ഷിച്ചുകൊണ്ട് സാങ്കേതികവിദ്യയെ ഉപയോഗിക്കുമ്പോഴാണ് മനുഷ്യരാശിയുടെ ഭാവി ശോഭനമാകുന്നത്.</p>
-            
-    </div>
-    <div class="card-en">
-      <div class="card-title">Preserving Humanity as the Creator of Meaning</div>
-      
-              <p>Philosophy of Artificial Intelligence ultimately returns us to the foundational philosophical inquiry: <em>What does it mean to be human?</em></p>
-              <p>Machines compute, optimize, and simulate; yet only conscious human beings create existential meaning, cultivate genuine compassion, and bear moral responsibility. Guarding this humanity ensures a prosperous civilization.</p>
-            
-    </div>
-  </div>
+    .essay-q-en { font-size: 7.6pt; font-weight: 800; color: #0f172a; }
+    .essay-q-ml { font-family: 'Noto Sans Malayalam', sans-serif; font-size: 7.2pt; font-weight: 700; color: #4f46e5; margin-bottom: 2px; }
 
+    .points-grid, .page-exam-grid, .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5px;
+      margin: 3px 0;
+    }
 
-  <div class="section-title">
-    <span>എഐ ഭരണത്തിന്റെ നാല് സ്തംഭങ്ങൾ</span>
-    <span style="font-size: 8.5pt; font-weight: 600;">Four Pillars of Global AI Governance</span>
-  </div>
-  <table class="table-box">
-    <thead>
-      <tr>
-        <th>സ്തംഭം (Pillar)</th><th>പ്രധാന ലക്ഷ്യം</th><th>പ്രായോഗിക നടപ്പാക്കൽ</th>
-      </tr>
-    </thead>
-    <tbody>
-    <tr><td>ധാർമ്മിക ചട്ടക്കൂടുകൾ (Ethical Frameworks)</td><td>സാങ്കേതികവിദ്യ മനുഷ്യ നന്മയ്ക്കായി വിനിയോഗിക്കപ്പെടുന്നു എന്ന് ഉറപ്പാക്കൽ</td><td>ധാർമ്മിക മാർഗ്ഗനിർദ്ദേശങ്ങളും നിയമപരമായ പരിശോധനയും</td></tr>
-    <tr><td>സാങ്കേതിക സുരക്ഷ (Technical Safety)</td><td>സിസ്റ്റങ്ങളുടെ അലൈൻമെന്റും അപകടരഹിതമായ പ്രവർത്തനവും</td><td>സുരക്ഷാ ഓഡിറ്റിംഗും ബ്ലാക്ക്-ബോക്സ് സുതാര്യതയും</td></tr>
-    <tr><td>ജനാധിപത്യ പങ്കാളിത്തം (Democratic Inclusivity)</td><td>എഐ തീരുമാനങ്ങളിൽ പൊതുജനങ്ങളുടെയും സമൂഹത്തിന്റെയും പങ്കാളിത്തം</td><td>ഡിജിറ്റൽ സാക്ഷരതയും പൊതു സംവാദങ്ങളും</td></tr>
-    <tr><td>സുസ്ഥിര വികസനം (Sustainability)</td><td>ഡാറ്റാ സെന്ററുകളുടെ അമിത ഊർജ്ജ ഉപഭോഗവും കാർബൺ മലിനീകരണവും നിയന്ത്രിക്കൽ</td><td>ഗ്രീൻ കമ്പ്യൂട്ടിംഗും പരിസ്ഥിതി സൗഹൃദ സാങ്കേതികവിദ്യയും</td></tr>
+    .core-point-card, .point-card {
+      border: 1.2px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 3px 5px;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
 
-    </tbody>
-  </table>
+    .point-top {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 1px;
+    }
 
+    .point-tag {
+      font-size: 6pt;
+      font-weight: 800;
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
 
-  <div class="section-title">
-    <span>പ്രധാന പരീക്ഷാ ആശയങ്ങൾ (Key Examination Points)</span>
-    <span style="font-size: 8.5pt; font-weight: 600;">Core Revision Points</span>
-  </div>
-  <div class="bilingual-grid">
-    <div class="card-ml">
-      <div class="card-title">മലയാളം സംഗ്രഹം (Key Takeaways)</div>
-      
-          <p>• <strong>പ്രൂഡന്റ് അമാൽഗമേഷൻ:</strong> ശാസ്ത്രീയ വളർച്ചയെ ധാർമ്മിക ഉത്തരവാദിത്തവുമായി വിവേകപൂർവ്വം സമന്വയിപ്പിക്കൽ.<br>
-          • <strong>സാമൂഹിക സ്ഥാപനങ്ങൾ:</strong> ഭരണകൂടം, ആരോഗ്യം, സാമ്പത്തിക രംഗം എന്നിവയിലെ എഐ ഉപയോഗത്തിൽ കർശന മാനദണ്ഡങ്ങൾ.<br>
-          • <strong>ഹ്യൂമൻ-സെന്റേർഡ് AI:</strong> മനുഷ്യനെ മാറ്റിസ്ഥാപിക്കലല്ല, മനുഷ്യന്റെ സർഗ്ഗാത്മകത വർദ്ധിപ്പിക്കലാണ് ലക്ഷ്യം.<br>
-          • <strong>അന്തിമ ലക്ഷ്യം:</strong> കണക്കുകൂട്ടലുകൾ യന്ത്രങ്ങൾക്ക് വിട്ടുകൊടുക്കുമ്പോഴും മൂല്യനിർണ്ണയവും അർത്ഥവും മനുഷ്യനിൽ ഭദ്രമായിരിക്കണം.</p>
-        
-    </div>
-    <div class="card-en">
-      <div class="card-title">English Summary (Key Takeaways)</div>
-      
-          <p>• <strong>Prudent Amalgamation:</strong> Fusing scientific velocity with disciplined ethical reflection.<br>
-          • <strong>Institutional Safeguards:</strong> Rigorous accountability across government, healthcare, and finance.<br>
-          • <strong>Human-Centered AI:</strong> Systems engineered to augment human flourishing rather than eliminate labor.<br>
-          • <strong>Philosophical Horizon:</strong> Algorithms calculate probabilities, but human beings author purpose and moral meaning.</p>
-        
-    </div>
-  </div>
+    .point-title-en { font-size: 7pt; font-weight: 800; color: #0f172a; }
+    .point-title-ml { font-family: 'Noto Sans Malayalam', sans-serif; font-size: 6.7pt; font-weight: 700; color: #0369a1; margin-bottom: 1px; }
+    .point-body { font-size: 6.3pt; color: #334155; line-height: 1.22; }
+    .point-body-ml { font-family: 'Noto Sans Malayalam', sans-serif; font-size: 6.2pt; color: #064e3b; line-height: 1.26; margin-top: 1px; }
+</style></head><body>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 5 · Chapter 22</span>
+<span class="top-bar-right">Page 1 of 12 ✨ Bilingual Study Guide</span>
+</div>
+<div class="chapter-hero" style="background: linear-gradient(135deg, #064e3b 0%, #047857 55%, #059669 100%); border-color: #34d399;">
+<div class="hero-tag" style="color: #6ee7b7;">🎓 Calicut University FYUGP · Module 5 · Chapter III</div>
+<div class="hero-title-en">CHAPTER III: Indian Epistemology, Orthodox &amp; Heterodox Systems and AI Implications</div>
+<div class="hero-title-ml">അദ്ധ്യായം 22: ഭാരതീയ ജ്ഞാനശാസ്ത്രം, ആസ്തിക-നാസ്തിക ദർശനങ്ങൾ &amp; AI സമന്വയം</div>
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Classification of Indian Philosophy: Āstika and Nāstika</span>
+<span class="section-title-ml">(ഭാരതീയ തത്ത്വചിന്തയുടെ വർഗ്ഗീകരണം: ആസ്തികവും നാസ്തികവും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>What does the classification of Indian philosophy mean, and how is it divided into <span class="hl-yellow">Āstika (orthodox)</span> and <span class="hl-yellow">Nāstika (heterodox)</span> schools? In Indian philosophical tradition, this division is not determined by belief in a personal God, but by whether a school accepts the authority of the <span class="hl-green">Vedas</span>. Schools that recognize Vedic testimony as valid are classified as Āstika, while those rejecting Vedic authority are classified as Nāstika.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ഭാരതീയ തത്ത്വചിന്തയെ പ്രധാനമായും <span class="hl-yellow">ആസ്തിക ദർശനങ്ങൾ (orthodox)</span> എന്നും <span class="hl-yellow">നാസ്തിക ദർശനങ്ങൾ (heterodox)</span> എന്നും രണ്ടായി തിരിക്കുന്നു. ഈ വിഭജനം ഈശ്വരവിശ്വാസത്തെ അടിസ്ഥാനമാക്കിയുള്ളതല്ല, മറിച്ച് <span class="hl-green">വേദങ്ങളുടെ</span> പ്രാമാണ്യത്തെ (authority of Vedas) അംഗീകരിക്കുന്നുണ്ടോ ഇല്ലയോ എന്നതിനെ അടിസ്ഥാനമാക്കിയാണ്. വേദങ്ങളെ പ്രമാണമായി സ്വീകരിക്കുന്നവർ ആസ്തികരും, നിഷേധിക്കുന്നവർ നാസ്തികരുമാണ്.</p>
+</div></div>
 
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">The Six Orthodox (Āstika) Philosophical Systems (Ṣaḍ-Darśana)</span>
+<span class="section-title-ml">(ആറ് ആസ്തിക ദർശനങ്ങൾ: ഷഡ്ദർശനങ്ങൾ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>List the six orthodox Indian philosophical systems. The six classical Āstika schools are: <span class="hl-yellow">Nyāya</span> (epistemology and logic, founded by Gautama), <span class="hl-yellow">Vaiśeṣika</span> (atomic ontology, founded by Kaṇāda), <span class="hl-yellow">Sāṅkhya</span> (dualism of Puruṣa and Prakṛti, founded by Kapila), <span class="hl-yellow">Yoga</span> (psychological discipline, systematized by Patañjali), <span class="hl-yellow">Mīmāṃsā</span> (ritual hermeneutics, founded by Jaimini), and <span class="hl-yellow">Vedānta</span> (metaphysics of Brahman and Ātman, developed by Bādarāyaṇa).</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>വേദങ്ങളെ അടിസ്ഥാനമാക്കിയുള്ള ആറ് പ്രധാന ആസ്തിക ദർശനങ്ങൾ (ഷഡ്ദർശനങ്ങൾ): <span class="hl-yellow">ന്യായ ദർശനം</span> (യുക്തിയും ജ്ഞാനശാസ്ത്രവും - ഗൗതമൻ), <span class="hl-yellow">വൈശേഷിക ദർശനം</span> (പരമാണു സിദ്ധാന്തം - കണാദൻ), <span class="hl-yellow">സാംഖ്യ ദർശനം</span> (പുരുഷനും പ്രകൃതിയും - കപിലൻ), <span class="hl-yellow">യോഗ ദർശനം</span> (മനശ്ശാസ്ത്ര സാധന - പതഞ്ജലി), <span class="hl-yellow">മീമാംസ</span> (വേദ കർമ്മകാണ്ഡം - ജൈമിനി), <span class="hl-yellow">വേദാന്തം</span> (ബ്രഹ്മവും ആത്മാവും - ബാദരായണൻ).</p>
+</div></div>
 
-  <div class="section-title">
-    <span>വിചിന്തന ചോദ്യങ്ങൾ (Review & Discussion Questions)</span>
-    <span style="font-size: 8.5pt; font-weight: 600;">Academic Essay & Short Questions</span>
-  </div>
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Vedic versus Non-Vedic Philosophical Distinctions</span>
+<span class="section-title-ml">(വൈദികവും അparseവൈദികവുമായ ദർശന വ്യത്യാസങ്ങൾ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>What distinguishes Vedic from non-Vedic schools? Vedic schools ground their ultimate epistemological validity in transcendent revelation (*Śabda-Pramāṇa*), asserting an enduring self (*Ātman*). Non-Vedic schools reject Vedic infallibility, constructing alternative epistemologies based solely on empirical observation, rational inference, or psychological introspective analysis without reliance on scriptural authority.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>വൈദിക ദർശനങ്ങൾ ശാശ്വതമായ ആത്മാവിലും വേദങ്ങളുടെ അപ്രമാദിത്വത്തിലും വിശ്വസിക്കുന്നു. എന്നാൽ അparseവൈദിക ദർശനങ്ങൾ വേദങ്ങളെ നിരാകരിക്കുകയും, പ്രമാണമായി കേവല ഇന്ദ്രിയാനുഭവങ്ങളെയും യുക്തിവിചാരങ്ങളെയും മാത്രം ആശ്രയിക്കുകയും ചെയ്യുന്നു.</p>
+</div></div>
 
-  <div class="qa-card">
-    <div class="qa-q">1. എഐ-യുടെ ഭാവിയെക്കുറിച്ചുള്ള ചർച്ചയിൽ 'ശാസ്ത്ര മുന്നേറ്റത്തിന്റെയും ധാർമ്മിക ഉത്തരവാദിത്തത്തിന്റെയും സമന്വയം' (Prudent Amalgamation) എന്തുകൊണ്ട് നിർണ്ണായകമാകുന്നു?</div>
-    <div class="qa-a">ധാർമ്മിക നിയന്ത്രണമില്ലാത്ത സാങ്കേതിക മുന്നേറ്റം വിനാശകരമായ അപകടങ്ങളിലേക്കും അസമത്വത്തിലേക്കും മനുഷ്യനെ നയിക്കും. അതേസമയം വിവേകപൂർവ്വമായ തത്ത്വചിന്താപരമായ സമന്വയം സാങ്കേതികവിദ്യയെ മനുഷ്യ നന്മയ്ക്കായുള്ള ഉപാധിയാക്കി മാറ്റുന്നു.</div>
-  </div>
+</div>
+</div>
+<div class="page-footer">
+<div class="footer-left">🎓 Philosophy of AI · Module 5 · Chapter 22 · University Study Guide</div>
+<div class="footer-badges">
+<span class="footer-badge"><span class="badge-dot" style="background:#15803d;"></span> Green: Vedic Thinkers</span>
+<span class="footer-badge"><span class="badge-dot" style="background:#a16207;"></span> Yellow: Core Exam Lines Only</span>
+</div>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 5 · Chapter 22</span>
+<span class="top-bar-right">Page 2 of 12 ✨ Heterodox Nāstika Systems</span>
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Primary Heterodox (Nāstika) Schools of Indian Philosophy</span>
+<span class="section-title-ml">(പ്രധാന നാസ്തിക ദർശനങ്ങൾ: ചാർവാകം, ജൈനമതം, ബുദ്ധമതം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>Identify the primary heterodox Nāstika schools of Indian philosophy. The three primary Nāstika schools are: <span class="hl-yellow">Cārvāka (Lokāyata)</span>, which is radical materialist and empiricist; <span class="hl-yellow">Jainism</span>, which is pluralistic, non-absolutist (*Anekāntavāda*), and dualist; and <span class="hl-yellow">Buddhism</span>, which is phenomenological, anti-essentialist (*Anattā*), and pragmatist.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>വേദങ്ങളെ നിഷേധിക്കുന്ന മൂന്ന് പ്രധാന നാസ്തിക ദർശനങ്ങൾ: <span class="hl-yellow">ചാർവാക ദർശനം (ലോകായതം)</span> - തീവ്ര ഭൗതികവാദം; <span class="hl-yellow">ജൈന ദർശനം</span> - അനേകാന്തവാദം, ആത്മസംയമനം; <span class="hl-yellow">ബുദ്ധ ദർശനം</span> - ക്ഷണികവാദം, അനാത്മവാദം (Anatta).</p>
+</div></div>
 
-  <div class="qa-card">
-    <div class="qa-q">2. സർക്കാർ, ആരോഗ്യം, സാമ്പത്തിക മേഖലകളിലെ എഐ വ്യാപനത്തിൽ പാലിക്കേണ്ട ധാർമ്മിക മാനദണ്ഡങ്ങൾ എന്തൊക്കെയാണ്?</div>
-    <div class="qa-a">ഉത്തരവാദിത്തം (Accountability), നീതി (Fairness), ധാർമ്മിക വിധിനിർണ്ണയം (Ethical Judgement) എന്നിവ ഉറപ്പാക്കണമെന്നും, സാങ്കേതികവിദ്യ മനുഷ്യന്റെ ക്ഷേമം വർദ്ധിപ്പിക്കുന്നുവെന്ന് ഉറപ്പാക്കണമെന്നും ദാർശനിക വിശകലനങ്ങൾ വ്യക്തമാക്കുന്നു.</div>
-  </div>
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">What Makes Buddhism a Nāstika School?</span>
+<span class="section-title-ml">(ബുദ്ധമതം ഒരു നാസ്തിക ദർശനമാകുന്നത് എന്തുകൊണ്ട്?)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>What makes Buddhism a Nāstika school? <span class="hl-green">Buddhism</span> is classified as Nāstika because it explicitly rejects the infallible authority of the Vedas, denies the existence of an eternal, unchanging soul (<span class="hl-yellow">Anattā / Nairātmyavāda</span>), rejects caste hierarchies, and refuses to postulate an omnipotent creator God, relying instead on dependent origination (*Pratītyasamutpāda*).</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ബുദ്ധമതം നാസ്തിക ദർശനമായി കണക്കാക്കപ്പെടുന്നത്: വേദങ്ങളുടെ പ്രാമാണ്യത്തെ നിഷേധിക്കുന്നു, ശാശ്വതമായ ഒരു ആത്മാവില്ലെന്ന് (<span class="hl-yellow">അനാത്മവാദം - Anatta</span>) പ്രഖ്യാപിക്കുന്നു, പ്രപഞ്ച സൃഷ്ടാവായ ഒരു ദൈവത്തെ അംഗീകരിക്കുന്നില്ല, എല്ലാം പരസ്പരാശ്രിതമായി ഉത്ഭവിക്കുന്നു (പ്രതീത്യസമുത്പാദം) എന്ന് പഠിപ്പിക്കുന്നു.</p>
+</div></div>
 
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Perception as the Sole Source of Knowledge: Cārvāka Materialism</span>
+<span class="section-title-ml">(പ്രത്യക്ഷം മാത്രമാണ് ഏക പ്രമാണം: ചാർവാക ഭൗതികവാദം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>Which school considers perception the sole source of knowledge? <span class="hl-green">Cārvāka (Lokāyata)</span> considers perception (<span class="hl-yellow">Pratyakṣa</span>) the sole legitimate pramāṇa. Cārvāka rejects inference (*Anumāna*) because inference requires an invariant universal relation (*Vyāpti*), which cannot be empirically verified in all times and places. For Cārvāka, only what can be directly perceived by the senses exists.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>പ്രത്യക്ഷം (Perception) മാത്രമാണ് അറിവിന്റെ ഏക ഉറവിടമെന്ന് വാദിക്കുന്നത് <span class="hl-green">ചാർവാക (ലോകായത)</span> ദർശനമാണ്. അനുമാനം (Inference) തെറ്റാൻ സാധ്യതയുള്ളതിനാൽ ചാർവാകർ അതിനെ തള്ളിക്കളയുന്നു; ഇന്ദ്രിയങ്ങൾ കൊണ്ട് നേരിട്ട് കാണാനും തൊടാനും കഴിയുന്ന ഭൗതിക ലോകം മാത്രമേ സത്യമായിട്ടുള്ളൂ എന്ന് അവർ പഠിപ്പിക്കുന്നു.</p>
+</div></div>
 
-</body>
-</html>
+</div>
+</div>
+<div class="page-footer">
+<div class="footer-left">🎓 Philosophy of AI · Module 5 · Chapter 22 · University Study Guide</div>
+<div class="footer-badges">
+<span class="footer-badge"><span class="badge-dot" style="background:#15803d;"></span> Green: Buddhist &amp; Cārvāka Traditions</span>
+<span class="footer-badge"><span class="badge-dot" style="background:#a16207;"></span> Yellow: Core Exam Lines Only</span>
+</div>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 5 · Chapter 22</span>
+<span class="top-bar-right">Page 3 of 12 ✨ Jñāna vs Pramā &amp; Pramāṇa</span>
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">What Jñāna Signifies in Indian Philosophy</span>
+<span class="section-title-ml">(ഭാരതീയ തത്ത്വചിന്തയിൽ ജ്ഞാനം എന്നാൽ എന്താണ്?)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>What does <span class="hl-yellow">Jñāna</span> signify in Indian philosophy? Jñāna broadly denotes cognition, awareness, or any mental state of apprehension. It encompasses all forms of consciousness—whether true, false, doubtful, perceptual, or inferential. It is the general capacity of mind to illuminate and reveal an object to a conscious subject.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ഭാരതീയ തത്ത്വചിന്തയിൽ 'ജ്ഞാനം' എന്നത് മനസ്സിന്റെ ഏതൊരു അവബോധത്തെയോ ധാരണയെയോ സൂചിപ്പിക്കുന്നു. അത് സത്യമോ മിഥ്യയോ സംശയമോ ആകാം; ഒരു വസ്തുവിനെ മനസ്സിലാക്കാനുള്ള ബുദ്ധിയുടെ പൊതുവായ ശേഷിയാണ് ജ്ഞാനം.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">How Jñāna Differs from Pramā (Valid Knowledge)</span>
+<span class="section-title-ml">(ജ്ഞാനവും പ്രമയും (ശരിയായ അറിവ്) തമ്മിലുള്ള വ്യത്യാസം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>How does Jñāna differ from <span class="hl-yellow">Pramā</span> (valid knowledge)? Jñāna includes invalid cognitions (*Apramā*), such as illusions (mistaking a rope for a snake), dreams, errors, and doubts. Pramā, however, is strictly <span class="hl-yellow">valid, uncontradicted, and true cognition</span> (*yathārtha anubhava*). Pramā represents truth that corresponds accurately to reality and leads to successful practical action (*arthakriyākāritva*).</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>എല്ലാ മാനസിക ബോധങ്ങളും ജ്ഞാനമാണ് (തെറ്റായ അറിവും സ്വപ്നവും ഉൾപ്പെടെ). എന്നാൽ <span class="hl-yellow">'പ്രമ' (Pramā) എന്നത് യഥാർത്ഥവും മാറ്റമില്ലാത്തതുമായ ശരിയായ അറിവാണ് (valid knowledge)</span>. കയറിനെ പാമ്പായി കാണുന്നത് ജ്ഞാനമാണെങ്കിലും അത് പ്രമയല്ല; കയറിനെ കയറായി തന്നെ അറിയുന്നതാണ് പ്രമ.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Definition of Pramāṇa and Its Relationship to Jñāna</span>
+<span class="section-title-ml">(പ്രമാണത്തിന്റെ നിർവ്വചനവും ജ്ഞാനവുമായുള്ള ബന്ധവും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>Define <span class="hl-yellow">Pramāṇa</span> and its relationship to Jñāna. A Pramāṇa is the operative instrument or reliable means of acquiring valid knowledge (*pramāyāḥ karaṇaṃ pramāṇam*). While Jñāna is the general cognitive state, Pramāṇa is the verified cognitive channel (e.g., perception, inference) that transforms mere cognition into valid truth (Pramā).</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><span class="hl-yellow">'പ്രമാണം' എന്നാൽ ശരിയായ അറിവ് (പ്രമ) നേടാനുള്ള ഉപാധി അല്ലെങ്കിൽ ഉറവിടമാണ് (means of valid knowledge)</span>. ജ്ഞാനം അനുഭവമാണെങ്കിൽ, ആ അറിവ് ശരിയാണെന്ന് ഉറപ്പുവരുത്തുന്ന ഉപകരണമാണ് പ്രമാണം (ഉദാ: പ്രത്യക്ഷം, അനുമാനം).</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<div class="footer-left">🎓 Philosophy of AI · Module 5 · Chapter 22 · University Study Guide</div>
+<div class="footer-badges">
+<span class="footer-badge"><span class="badge-dot" style="background:#15803d;"></span> Green: Epistemological Categories</span>
+<span class="footer-badge"><span class="badge-dot" style="background:#a16207;"></span> Yellow: Core Exam Lines Only</span>
+</div>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 5 · Chapter 22</span>
+<span class="top-bar-right">Page 4 of 12 ✨ Buddhist Epistemology: Two Pramāṇas</span>
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Why Does Buddhism Only Recognise Two Pramāṇas?</span>
+<span class="section-title-ml">(ബുദ്ധമതം എന്തുകൊണ്ട് രണ്ട് പ്രമാണങ്ങളെ മാത്രം അംഗീകരിക്കുന്നു?)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>Why does Buddhism only recognise two pramāṇas? Critically explain. Developed by master logicians <span class="hl-green">Dignāga</span> and <span class="hl-green">Dharmakīrti</span>, Buddhist epistemology accepts only two pramāṇas: <span class="hl-yellow">Pratyakṣa (Perception)</span> and <span class="hl-yellow">Anumāna (Inference)</span>. The ontological justification is precise: there are only two objects of cognition in reality: the unique particular (*Svalakṣaṇa*), grasped only by perception, and the general universal concept (*Sāmānyalakṣaṇa*), grasped only by inference. No third reality exists, hence no third pramāṇa is possible.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>പ്രശസ്ത ബുദ്ധ തത്ത്വചിന്തകരായ <span class="hl-green">ദിങ്നാഗനും</span> <span class="hl-green">ധർമ്മകീർത്തിയും</span> രണ്ട് പ്രമാണങ്ങളെ മാത്രമേ അംഗീകരിക്കുന്നുള്ളൂ: <span class="hl-yellow">പ്രത്യക്ഷവും (Perception) അനുമാനവും (Inference)</span>. കാരണം പ്രപഞ്ചത്തിൽ അറിയാൻ രണ്ട് കാര്യങ്ങൾ മാത്രമേയുള്ളൂ: പ്രത്യേക വസ്തുവിന്റെ തനിമ (സ്വലക്ഷണം - Svalakshana), അവയുടെ സാമാന്യ ആശയം (സാമാന്യലക്ഷണം). മൂന്നാമതൊരു യാഥാർത്ഥ്യമില്ലാത്തതിനാൽ മൂന്നാമതൊരു പ്രമാണത്തിന്റെ ആവശ്യമില്ല.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Sources of Information Accepted by Buddhist Epistemology</span>
+<span class="section-title-ml">(ബുദ്ധ ജ്ഞാനശാസ്ത്രം സ്വീകരിക്കുന്ന അറിവിന്റെ ഉറവിടങ്ങൾ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>Which sources of information does Buddhism accept? What number of Pramāṇas does Buddhist epistemology accept? Buddhism strictly accepts exactly <span class="hl-yellow">two pramāṇas</span>. It explicitly rejects scriptural testimony (*Śabda*) and comparison (*Upamāna*) as independent sources, subsuming reliable verbal testimony under inference (*Anumāna*).</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ബുദ്ധമതം കൃത്യമായി <span class="hl-yellow">രണ്ട് പ്രമാണങ്ങളെ</span> മാത്രമേ അംഗീകരിക്കുന്നുള്ളൂ. വേദങ്ങളെയോ പവിത്ര ഗ്രന്ഥങ്ങളെയോ (ശബ്ദ പ്രമാണം) ഉപമാനത്തെയോ അത് സ്വതന്ത്ര പ്രമാണങ്ങളായി കാണുന്നില്ല; വിശ്വസനീയമായ വാക്കുകളെ അനുമാനത്തിന്റെ ഭാഗമായാണ് ബുദ്ധമതം കാണുന്നത്.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Buddhism's Perception–Inference Relationship</span>
+<span class="section-title-ml">(ബുദ്ധമതത്തിലെ പ്രത്യക്ഷ-അനുമാന ബന്ധം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>Buddhism's perception-inference relationship: Perception is direct, non-verbal, and unconstructed (*Kalpanāpoḍha*), contacting pure reality in the present moment. Inference is conceptual, indirect, and mental, constructing generalizations through thought. Perception provides raw cognitive contact; inference builds mental models upon it.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>പ്രത്യക്ഷം എന്നത് വസ്തുവിനെ യാതൊരു ഭാവനകളുമില്ലാതെ നേരിട്ട് അറിയുന്നതാണ് (direct &amp; non-conceptual). എന്നാൽ അനുമാനം എന്നത് മനസ്സുകൊണ്ട് ചിന്തിച്ചുണ്ടാക്കുന്ന പൊതുവായ അറിവാണ് (conceptual &amp; indirect). പ്രത്യക്ഷം അറിവിന്റെ അടിത്തറയിടുമ്പോൾ അനുമാനം അതിൽ യുക്തിസഹമായ നിഗമനങ്ങൾ നിർമ്മിക്കുന്നു.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<div class="footer-left">🎓 Philosophy of AI · Module 5 · Chapter 22 · University Study Guide</div>
+<div class="footer-badges">
+<span class="footer-badge"><span class="badge-dot" style="background:#15803d;"></span> Green: Dignāga &amp; Dharmakīrti</span>
+<span class="footer-badge"><span class="badge-dot" style="background:#a16207;"></span> Yellow: Core Exam Lines Only</span>
+</div>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 5 · Chapter 22</span>
+<span class="top-bar-right">Page 5 of 12 ✨ Buddhist Pratyakṣa &amp; Nirvikalpaka</span>
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Defining Pratyakṣa (Perception) in Buddhist Philosophy</span>
+<span class="section-title-ml">(ബുദ്ധ തത്ത്വചിന്തയിൽ പ്രത്യക്ഷത്തിന്റെ നിർവ്വചനം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>Define <span class="hl-yellow">Pratyakṣa (Perception)</span> in Buddhist philosophy. <span class="hl-green">Dignāga</span> defined perception as <span class="hl-yellow">“pratyakṣaṃ kalpanāpoḍham”</span>—perception is cognition that is totally free from mental construction, conceptual elaboration, names, or categories. It is the unmediated experiential grasp of an immediate sensory datum before the mind superimposes linguistic labels or concepts upon it.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p><span class="hl-green">ദിങ്നാഗൻ</span> പ്രത്യക്ഷത്തെ നിർവചിച്ചത് <span class="hl-yellow">"പ്രത്യക്ഷം കൽപനാപോഢം"</span> എന്നാണ്—അതായത് യാതൊരു മാനസിക സങ്കൽപ്പങ്ങളോ വാക്കുകളോ ചേരാത്ത നിർമ്മലമായ ഇന്ദ്രിയാനുഭവമാണ് യഥാർത്ഥ പ്രത്യക്ഷം. ഒരു വസ്തുവിനെ പേരോ വർഗ്ഗമോ ചേർത്ത് വിളിക്കുന്നതിന് മുൻപുള്ള നിമിഷാർദ്ധത്തിലുള്ള അനുഭവമാണിത്.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Nirvikalpaka Pratyakṣa (Non-Conceptual Perception)</span>
+<span class="section-title-ml">(നിർവികല്പക പ്രത്യക്ഷം: സങ്കൽപ്പരഹിതമായ അനുഭവം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>What is <span class="hl-yellow">Nirvikalpaka Pratyakṣa</span> (non-conceptual perception)? For Buddhist thinkers, authentic perception is exclusively Nirvikalpaka: direct, raw sensation devoid of verbal or conceptual attribution. The moment you identify "this is an apple", conceptualization (*Vikalpa*) has entered. Nirvikalpaka is the pristine sensory moment before language intervenes.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ഭാഷയും വാക്കുകളും ഇടപെടാത്ത കേവല ഇന്ദ്രിയാനുഭവത്തെയാണ് <span class="hl-yellow">നിർവികല്പക പ്രത്യക്ഷം</span> എന്ന് പറയുന്നത്. "ഇതൊരു ആപ്പിളാണ്" എന്ന് പേരിട്ടു വിളിക്കുമ്പോഴേക്കും അത് സവികല്പകമായി (ആശയപരമായി) മാറുന്നു; അതിന് തൊട്ടുമുമ്പുള്ള ശുദ്ധമായ സംവേദനമാണ് നിർവികല്പകം.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">How Many Types of Perception Do Buddhist Thinkers Accept?</span>
+<span class="section-title-ml">(ബുദ്ധ ചിന്തകർ അംഗീകരിക്കുന്ന നാല് പ്രത്യക്ഷങ്ങൾ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>How many perceptions do Buddhist thinkers accept? Buddhist epistemology identifies <span class="hl-yellow">four types of perception</span>: 1. Sensory perception (*Indriya-pratyakṣa*), 2. Mental perception (*Mānasa-pratyakṣa*), 3. Self-awareness (*Svasaṃvedana*), and 4. Yogic direct perception (*Yogi-pratyakṣa*).</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ബുദ്ധ തത്ത്വചിന്തകർ അംഗീകരിക്കുന്ന നാല് പ്രത്യക്ഷങ്ങൾ: 1. ഇന്ദ്രിയ പ്രത്യക്ഷം (കണ്ണ്, മൂക്ക് മുതലായവ വഴി), 2. മാനസ പ്രത്യക്ഷം (മനസ്സിന്റെ ആന്തരിക അനുഭവം), 3. സ്വസംവേദനം (ബോധത്തിന് സ്വയം ഉള്ള അവബോധം), 4. യോഗി പ്രത്യക്ഷം (ധ്യാനത്തിലൂടെയുള്ള അനുഭവം).</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<div class="footer-left">🎓 Philosophy of AI · Module 5 · Chapter 22 · University Study Guide</div>
+<div class="footer-badges">
+<span class="footer-badge"><span class="badge-dot" style="background:#15803d;"></span> Green: Dignāga's Framework</span>
+<span class="footer-badge"><span class="badge-dot" style="background:#a16207;"></span> Yellow: Core Exam Lines Only</span>
+</div>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 5 · Chapter 22</span>
+<span class="top-bar-right">Page 6 of 12 ✨ Buddhist Anumāna &amp; Hetu</span>
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Anumāna (Inference) in Buddhist Philosophy</span>
+<span class="section-title-ml">(ബുദ്ധ തത്ത്വചിന്തയിൽ അനുമാനം: Anumāna)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>What is <span class="hl-yellow">Anumāna (Inference)</span> in Buddhist philosophy, and what distinguishes it from perception? While perception grasps unique momentary particulars (*Svalakṣaṇa*), inference grasps universal concepts (*Sāmānyalakṣaṇa*). Anumāna is indirect cognition of an unperceived object through the observation of an invariant mark or sign (*Liṅga*).</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ബുദ്ധ തത്ത്വചിന്തയിൽ അനുമാനം എന്നാൽ അദൃശ്യമായ ഒരു കാര്യത്തെ ഒരു അടയാളത്തിലൂടെ (ലിംഗം) മനസ്സിലാക്കുന്ന പരോക്ഷ ജ്ഞാനമാണ് (indirect cognition). പ്രത്യക്ഷം വസ്തുവിനെ നേരിട്ട് കാണുമ്പോൾ, അനുമാനം സാമാന്യ ആശയങ്ങളിലൂടെ ചിന്തിച്ച് കണ്ടെത്തുന്നു.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">What Does Hetu (Logical Reason) Do in Inference?</span>
+<span class="section-title-ml">(അനുമാനത്തിൽ ഹേതുവിന്റെ (Hetu) പ്രാധാന്യം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>What does <span class="hl-yellow">Hetu (logical reason / middle term)</span> do in inference? The Hetu is the evidential bridge that justifies inferential knowledge (e.g., smoke is the Hetu that proves fire on the hill). <span class="hl-green">Dignāga</span> formulated the doctrine of <span class="hl-yellow">Trairūpya-hetu</span>: for a Hetu to be valid, it must satisfy three conditions: presence in the subject (*Pakṣadharmatā*), presence in similar cases (*Sapakṣesattva*), and complete absence in dissimilar cases (*Vipakṣādvyāvṛtti*).</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>അനുമാനത്തിൽ അറിവ് സ്ഥാപിക്കാനുള്ള യുക്തിസഹമായ കാരണമാണ് <span class="hl-yellow">ഹേതു (Hetu)</span>. (ഉദാഹരണം: പർവ്വതത്തിൽ തീ ഉണ്ടെന്ന് ഉറപ്പിക്കുന്നത് 'പുക' എന്ന ഹേതു കൊണ്ടാണ്). ഒരു ഹേതു സാധുവാകാൻ അത് മൂന്ന് നിബന്ധനകൾ പാലിക്കണമെന്ന് <span class="hl-green">ദിങ്നാഗൻ</span> പഠിപ്പിച്ചു (ത്രൈരൂപ്യ ഹേതു).</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Vyāpti: Invariant Universal Concomitance</span>
+<span class="section-title-ml">(വ്യാപ്തി: മാറ്റമില്ലാത്ത സാർവത്രിക ബന്ധം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>The foundation of all inference is <span class="hl-yellow">Vyāpti</span>: the invariable, unconditional universal relation between the sign (smoke) and the signified (fire). Dharmakīrti established that Vyāpti is guaranteed either by identity (*Tādātmya*, e.g., an oak is a tree) or causal law (*Tadutpatti*, e.g., smoke is produced by fire), prefiguring inductive reasoning in computer science.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ഹേതുവും (പുക) സാധ്യവും (തീ) തമ്മിലുള്ള അവിഭാജ്യവും മാറ്റമില്ലാത്തതുമായ ബന്ധത്തെയാണ് <span class="hl-yellow">വ്യാപ്തി (Vyāpti)</span> എന്ന് വിളിക്കുന്നത്. പുകയുള്ളിടത്തെല്ലാം തീ ഉണ്ടാകും എന്ന സാർവത്രിക നിയമമാണ് അനുമാനത്തിന്റെ നട്ടെല്ല്.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<div class="footer-left">🎓 Philosophy of AI · Module 5 · Chapter 22 · University Study Guide</div>
+<div class="footer-badges">
+<span class="footer-badge"><span class="badge-dot" style="background:#15803d;"></span> Green: Dignāga &amp; Dharmakīrti</span>
+<span class="footer-badge"><span class="badge-dot" style="background:#a16207;"></span> Yellow: Core Exam Lines Only</span>
+</div>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 5 · Chapter 22</span>
+<span class="top-bar-right">Page 7 of 12 ✨ Nyāya Epistemology &amp; 4 Pramāṇas</span>
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">What Nyāya Means and Who Founded the System</span>
+<span class="section-title-ml">(ന്യായ ദർശനത്തിന്റെ അർത്ഥവും സ്ഥാപകനും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>What does <span class="hl-yellow">Nyāya</span> mean, and who founded the system? Nyāya literally signifies "that by which the mind is led to a conclusion"—signifying logic, method, and righteous critical inquiry (*Ānvīkṣikī*). The Nyāya school was founded by <span class="hl-green">Sage Akṣapāda Gautama</span> (c. 2nd century BCE), author of the foundational *Nyāya Sūtras*.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>'ന്യായ' എന്ന വാക്കിന്റെ അർത്ഥം മനസ്സിനെ ശരിയായ നിഗമനത്തിലേക്ക് നയിക്കുന്ന യുക്തി അഥവാ രീതി എന്നാണ്. ഭാരതത്തിലെ യുക്തിശാസ്ത്ര ശാഖയായ ന്യായ ദർശനം സ്ഥാപിച്ചത് <span class="hl-green">അക്ഷപാദ ഗൗതമ മഹർഷിയാണ്</span> (ന്യായസൂത്രത്തിന്റെ കർത്താവ്).</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">The Four Pramāṇas Acceptable in Nyāya Epistemology</span>
+<span class="section-title-ml">(ന്യായ ദർശനം അംഗീകരിക്കുന്ന നാല് പ്രമാണങ്ങൾ)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>The four Pramāṇas acceptable in Nyāya are: 1. <span class="hl-yellow">Pratyakṣa (Perception)</span>: direct sensory-object contact; 2. <span class="hl-yellow">Anumāna (Inference)</span>: deduction from signs; 3. <span class="hl-yellow">Upamāna (Comparison / Analogy)</span>: knowledge gained via resemblance; 4. <span class="hl-yellow">Śabda (Verbal Testimony)</span>: the assertion of a trustworthy authority (*Āptavākya*).</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ന്യായ ദർശനം അംഗീകരിക്കുന്ന നാല് പ്രമാണങ്ങൾ: 1. <span class="hl-yellow">പ്രത്യക്ഷം</span> (ഇന്ദ്രിയങ്ങളിലൂടെ നേരിട്ടുള്ള അനുഭവം), 2. <span class="hl-yellow">അനുമാനം</span> (യുക്തിപരമായ നിഗമനം), 3. <span class="hl-yellow">ഉപമാനം</span> (സാദൃശ്യത്തിലൂടെയുള്ള താരതമ്യം), 4. <span class="hl-yellow">ശബ്ദം</span> (വിശ്വസനീയമായ ആധികാരിക വചനം).</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Defining Pratyakṣa (Perception) Using Nyāya</span>
+<span class="section-title-ml">(ന്യായ ദർശനത്തിലെ പ്രത്യക്ഷ നിർവ്വചനം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>Define Pratyakṣa (Perception) using Nyāya. Gautama defined perception as <span class="hl-yellow">“indriyārtha-sannikarṣotpannaṃ jñānam”</span>—knowledge arising from the contact of sense organs with their respective objects. Nyāya specifies that valid perception must be non-erroneous (*Avyabhicāri*), definite (*Vyavasāyātmaka*), and unnamable (*Avyapadeśya*).</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ഇന്ദ്രിയങ്ങൾ വസ്തുക്കളുമായി നേരിട്ട് സമ്പർക്കത്തിൽ വരുമ്പോൾ ഉണ്ടാകുന്ന അറിവിനെയാണ് ന്യായ ദർശനം പ്രത്യക്ഷം എന്ന് നിർവചിക്കുന്നത്. അത് തെറ്റില്ലാത്തതും സംശയരഹിതവുമായിരിക്കണം.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<div class="footer-left">🎓 Philosophy of AI · Module 5 · Chapter 22 · University Study Guide</div>
+<div class="footer-badges">
+<span class="footer-badge"><span class="badge-dot" style="background:#15803d;"></span> Green: Sage Gautama</span>
+<span class="footer-badge"><span class="badge-dot" style="background:#a16207;"></span> Yellow: Core Exam Lines Only</span>
+</div>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 5 · Chapter 22</span>
+<span class="top-bar-right">Page 8 of 12 ✨ Nyāya vs Buddhist Epistemology</span>
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Comparative Analysis: Nyāya vs. Buddhist Epistemology</span>
+<span class="section-title-ml">(താരതമ്യം: ന്യായ ദർശനവും ബുദ്ധ ജ്ഞാനശാസ്ത്രവും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>Compare Nyāya with Buddhist epistemology. While <span class="hl-green">Nyāya</span> accepts <span class="hl-yellow">four pramāṇas</span> and champions realism (universals exist objectively), <span class="hl-green">Buddhism</span> accepts only <span class="hl-yellow">two pramāṇas</span> and rejects real universals as mental fictions (*Apoha*). For Nyāya, perception can be both non-conceptual (*Nirvikalpaka*) and fully conceptual (*Savikalpaka*); for Buddhism, perception is strictly non-conceptual.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ന്യായ ദർശനം നാല് പ്രമാണങ്ങളെയും ബാഹ്യ ലോകത്തിന്റെ ശാശ്വതമായ അസ്തിത്വത്തെയും അംഗീകരിക്കുന്നു; എന്നാൽ ബുദ്ധമതം രണ്ട് പ്രമാണങ്ങളെ മാത്രമേ അംഗീകരിക്കുന്നുള്ളൂ. ന്യായ ദർശനത്തിൽ ചിന്തയും വാക്കുകളും ചേർന്നുള്ള അറിവും പ്രത്യക്ഷമാകുമ്പോൾ, ബുദ്ധമതത്തിൽ വാക്കുകൾ കലരാത്ത ശുദ്ധമായ അനുഭവം മാത്രമേ പ്രത്യക്ഷമാകൂ.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Nyāya Syllogism (Pañcāvayava) vs. Aristotelian Syllogism</span>
+<span class="section-title-ml">(ന്യായ പഞ്ചാവയവ വാക്യവും അരിസ്റ്റോട്ടിലിന്റെ ന്യായവാക്യവും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>The Nyāya syllogism features five steps (*Pañcāvayava*): 1. Proposition (*Pratijñā* - The hill has fire), 2. Reason (*Hetu* - Because it has smoke), 3. Example (*Udāharaṇa* - Wherever smoke, there is fire, as in a kitchen), 4. Application (*Upanaya* - This hill has smoke accompanied by fire), 5. Conclusion (*Nigamana* - Therefore this hill has fire). Unlike Aristotle's 3-step purely deductive syllogism, Nyāya seamlessly combines <span class="hl-yellow">deduction with inductive empirical observation</span>.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>അരിസ്റ്റോട്ടിലിന്റെ മൂന്ന് ഘട്ടങ്ങളുള്ള സിദ്ധാന്തത്തിൽ നിന്ന് വ്യത്യസ്തമായി, ന്യായ ദർശനം അഞ്ച് ഘട്ടങ്ങളുള്ള പഞ്ചാവയവ വാക്യം ഉപയോഗിക്കുന്നു: പ്രതിജ്ഞ, ഹേതു, ഉദാഹരണം, ഉപനയം, നിഗമനം. ഇത് ശുദ്ധമായ ഡിഡക്ഷനും പ്രായോഗിക അനുഭവവും ഒരുപോലെ സംയോജിപ്പിക്കുന്നു.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<div class="footer-left">🎓 Philosophy of AI · Module 5 · Chapter 22 · University Study Guide</div>
+<div class="footer-badges">
+<span class="footer-badge"><span class="badge-dot" style="background:#15803d;"></span> Green: Nyāya &amp; Buddhist Logicians</span>
+<span class="footer-badge"><span class="badge-dot" style="background:#a16207;"></span> Yellow: Core Exam Lines Only</span>
+</div>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 5 · Chapter 22</span>
+<span class="top-bar-right">Page 9 of 12 ✨ Classical AI &amp; ML Re-Synthesis</span>
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Re-examining Classical AI Characteristics &amp; Symbolic Representation</span>
+<span class="section-title-ml">(ക്ലാസിക്കൽ AI-യുടെ സവിശേഷതകളും സിംബോളിക് പ്രതിനിധാനവും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>Elucidate the primary characteristics of Classical AI and the function of symbolic representation. Classical AI relies on physical symbols to denote real-world states and entities. These symbols act as proxies for thoughts, manipulated through formal logic rules. While symbolic representation allowed clear tracing of conclusions, it required all knowledge to be explicitly defined in advance, limiting adaptability in dynamic environments.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ക്ലാസിക്കൽ AI ബാഹ്യ ലോകത്തെ ചിഹ്നങ്ങളിലൂടെ പ്രതിനിധീകരിക്കുന്നു. ചിന്തകളെ ഇത്തരം സിംബലുകളാക്കി മാറ്റി യുക്തിനിയമങ്ങളിലൂടെ കൈകാര്യം ചെയ്യുന്നതാണ് ഇതിന്റെ രീതി. ഇത് തീരുമാനങ്ങൾ വ്യക്തമായി മനസ്സിലാക്കാൻ സഹായിക്കുമെങ്കിലും, എല്ലാ വിവരങ്ങളും മുൻകൂട്ടി പ്രോഗ്രാം ചെയ്യേണ്ടി വരുന്നത് ഇതിന്റെ പരിമിതിയാണ്.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Synthesizing Classical AI and Machine Learning Paradigms</span>
+<span class="section-title-ml">(ക്ലാസിക്കൽ AI-യും മെഷീൻ ലേണിംഗും തമ്മിലുള്ള സമന്വയം)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>Contrast Classical Artificial Intelligence with Machine Learning. While Classical AI models deduction and formal reasoning from top-down rules, Machine Learning excels at inductive pattern recognition from bottom-up statistical data. Modern AI synthesis seeks <span class="hl-yellow">Neuro-Symbolic architectures</span>: pairing the perceptual robustness of neural networks with the rigorous, explainable inference of symbolic systems.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ക്ലാസിക്കൽ AI നിയമങ്ങളിൽ നിന്ന് നിഗമനങ്ങളിലേക്ക് (deduction) പോകുമ്പോൾ, മെഷീൻ ലേണിംഗ് ഡാറ്റയിൽ നിന്ന് പുതിയ പാറ്റേണുകൾ കണ്ടെത്തുന്നു (induction). ഇന്ന് ഇവ രണ്ടും സംയോജിപ്പിച്ചുകൊണ്ടുള്ള ന്യൂറോ-സിംബോളിക് AI രീതിയാണ് ഭാവി നിർമ്മിത ബുദ്ധിയുടെ പ്രധാന വഴി.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<div class="footer-left">🎓 Philosophy of AI · Module 5 · Chapter 22 · University Study Guide</div>
+<div class="footer-badges">
+<span class="footer-badge"><span class="badge-dot" style="background:#15803d;"></span> Green: AI Paradigms</span>
+<span class="footer-badge"><span class="badge-dot" style="background:#a16207;"></span> Yellow: Core Exam Lines Only</span>
+</div>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 5 · Chapter 22</span>
+<span class="top-bar-right">Page 10 of 12 ✨ Disembodied Mind &amp; Neuroscience</span>
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Disembodied Intelligence: Benefits and Drawbacks</span>
+<span class="section-title-ml">(ശരീരമില്ലാത്ത ബുദ്ധി: ഗുണങ്ങളും പോരായ്മകളും)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>What are the benefits and drawbacks of the concept of disembodied intelligence? The primary benefit is substrate independence: intelligent algorithms can exist in digital form, migrate across clouds, and compute at light-speed without biological fatigue or vulnerability. The fatal drawback is the <span class="hl-yellow">symbol grounding problem</span>: disembodied symbols have no intrinsic meaning connected to real physical reality, leaving the machine blind to real-world context.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ഗുണങ്ങൾ: ശരീരമില്ലാത്ത ഡിജിറ്റൽ പ്രോഗ്രാമുകൾക്ക് ക്ഷീണമില്ലാതെ പ്രകാശവേഗതയിൽ ക്ലൗഡിൽ പ്രവർത്തിക്കാൻ കഴിയും. പോരായ്മകൾ: ഭൗതികമായ അനുഭവങ്ങളില്ലാത്തതിനാൽ ചിഹ്നങ്ങൾക്ക് യഥാർത്ഥ അർത്ഥം നൽകാൻ അവയ്ക്ക് കഴിയില്ല (Symbol Grounding Problem); കേവല വിവരങ്ങൾക്കപ്പുറം ലോകത്തിന്റെ യാഥാർത്ഥ്യം മനസ്സിലാക്കാൻ അവയ്ക്ക് സാധിക്കുന്നില്ല.</p>
+</div></div>
+
+</div>
+<div class="content-box">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">How Neuroscience Challenges the Notion of Disembodied Intelligence</span>
+<span class="section-title-ml">(ന്യൂറോ സയൻസ് ശരീരമില്ലാത്ത ബുദ്ധിയെ വെല്ലുവിളിക്കുന്നത് എങ്ങനെ?)</span>
+</div>
+<div class="bilingual-pair"><div class="block-en" style="border-left-color: #059669;">
+<div class="block-en-label" style="color: #059669;">English Explanation</div>
+<p>How does neuroscience challenge the notion of disembodied intelligence? Contemporary cognitive neuroscience, led by <span class="hl-green">Antonio Damasio</span> and <span class="hl-green">Francisco Varela</span>, proves that human consciousness and reasoning are completely inseparable from biological somatic markers, emotional homeostasis, and sensorimotor interaction. Cognition is an embodied, enacted bodily phenomenon; pure disembodied computational reason is a biological impossibility.</p>
+</div><div class="block-ml">
+<div class="block-ml-label">മലയാളം വിശദീകരണം</div>
+<p>ആധുനിക ന്യൂറോസയൻസ് തെളിയിക്കുന്നത് മനുഷ്യന്റെ ചിന്തയും വിവേകവും ശരീരത്തിൽ നിന്നും വികാരങ്ങളിൽ നിന്നും വേർപെടുത്താനാവാത്ത ഒന്നാണെന്നാണ് (Embodied Cognition). ശരീരത്തിന്റെ ഇടപെടലുകളില്ലാതെ കേവല കമ്പ്യൂട്ടേഷനിലൂടെ യഥാർത്ഥ ബോധം സൃഷ്ടിക്കാൻ കഴിയില്ലെന്ന് ന്യൂറോ സയൻസ് വ്യക്തമാക്കുന്നു.</p>
+</div></div>
+
+</div>
+</div>
+<div class="page-footer">
+<div class="footer-left">🎓 Philosophy of AI · Module 5 · Chapter 22 · University Study Guide</div>
+<div class="footer-badges">
+<span class="footer-badge"><span class="badge-dot" style="background:#15803d;"></span> Green: Antonio Damasio &amp; Francisco Varela</span>
+<span class="footer-badge"><span class="badge-dot" style="background:#a16207;"></span> Yellow: Core Exam Lines Only</span>
+</div>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 5 · Chapter 22</span>
+<span class="top-bar-right">Page 11 of 12 ✨ Academic Assessment &amp; Essays</span>
+</div>
+<!-- Knock your brain 5 MCQs -->
+<div class="content-box" style="margin-bottom:3px;">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Knock your brain: Academic Assessment</span>
+<span class="section-title-ml">(പരീക്ഷാ കേന്ദ്രീകൃത ചോദ്യോത്തരങ്ങൾ)</span>
+</div>
+<div style="padding:3px 6px;">
+<div class="mcq-card">
+<div class="mcq-q-en">1. In Indian philosophy, the division into Āstika and Nāstika is based on:</div>
+<div class="mcq-q-ml">1. ഭാരതീയ തത്ത്വചിന്തയിൽ ആസ്തിക-നാസ്തിക വിഭജനത്തിന്റെ അടിസ്ഥാനം:</div>
+<div class="mcq-grid">
+<div class="mcq-opt">a) Belief in reincarnation</div>
+<div class="mcq-opt correct">b) Acceptance of Vedic authority ✓</div>
+<div class="mcq-opt">c) Practice of Yoga</div>
+<div class="mcq-opt">d) Worship of deities</div>
+</div>
+<div class="mcq-exp">💡 <b>Answer: (b)</b> വേദങ്ങളുടെ പ്രാമാണ്യം അംഗീകരിക്കുന്നുണ്ടോ എന്നതിനെ അടിസ്ഥാനമാക്കിയാണ് ഈ വിഭജനം.</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-q-en">2. Which school of Indian philosophy accepts perception (Pratyakṣa) as the sole Pramāṇa?</div>
+<div class="mcq-q-ml">2. പ്രത്യക്ഷം മാത്രമാണ് ഏക പ്രമാണമെന്ന് വാദിക്കുന്ന ദർശനം ഏത്?</div>
+<div class="mcq-grid">
+<div class="mcq-opt">a) Nyāya</div>
+<div class="mcq-opt">b) Buddhism</div>
+<div class="mcq-opt correct">c) Cārvāka ✓</div>
+<div class="mcq-opt">d) Vedānta</div>
+</div>
+<div class="mcq-exp">💡 <b>Answer: (c)</b> ചാർവാക (ലോകായത) ദർശനം പ്രത്യക്ഷത്തെ മാത്രമേ അംഗീകരിക്കുന്നുള്ളൂ.</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-q-en">3. How many Pramāṇas does Buddhist epistemology (Dignāga &amp; Dharmakīrti) recognize?</div>
+<div class="mcq-q-ml">3. ബുദ്ധ ജ്ഞാനശാസ്ത്രം എത്ര പ്രമാണങ്ങളെ അംഗീകരിക്കുന്നു?</div>
+<div class="mcq-grid">
+<div class="mcq-opt">a) One (Perception only)</div>
+<div class="mcq-opt correct">b) Two (Perception &amp; Inference) ✓</div>
+<div class="mcq-opt">c) Four (Nyāya framework)</div>
+<div class="mcq-opt">d) Six (Mīmāṃsā framework)</div>
+</div>
+<div class="mcq-exp">💡 <b>Answer: (b)</b> പ്രത്യക്ഷവും അനുമാനവും എന്നീ രണ്ട് പ്രമാണങ്ങൾ മാത്രം.</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-q-en">4. The five-membered syllogism (Pañcāvayava) is a hallmark of which school?</div>
+<div class="mcq-q-ml">4. പഞ്ചാവയവ വാക്യം ഏത് ദർശനത്തിന്റെ പ്രത്യേകതയാണ്?</div>
+<div class="mcq-grid">
+<div class="mcq-opt correct">a) Nyāya ✓</div>
+<div class="mcq-opt">b) Cārvāka</div>
+<div class="mcq-opt">c) Sāṅkhya</div>
+<div class="mcq-opt">d) Classical AI</div>
+</div>
+<div class="mcq-exp">💡 <b>Answer: (a)</b> അക്ഷപാദ ഗൗതമന്റെ ന്യായ ദർശനത്തിന്റെ സംഭാവനയാണ് പഞ്ചാവയവ വാക്യം.</div>
+</div>
+<div class="mcq-card">
+<div class="mcq-q-en">5. The concept of "Embodied Cognition" in cognitive neuroscience asserts that:</div>
+<div class="mcq-q-ml">5. കോഗ്നിറ്റീവ് ന്യൂറോസയൻസിലെ 'എംബോഡീഡ് കോഗ്നിഷൻ' വ്യക്തമാക്കുന്നത്:</div>
+<div class="mcq-grid">
+<div class="mcq-opt">a) Mind is disembodied software</div>
+<div class="mcq-opt correct">b) Thinking is rooted in bodily sensorimotor interaction ✓</div>
+<div class="mcq-opt">c) Silicon chips feel pain</div>
+<div class="mcq-opt">d) All algorithms possess qualia</div>
+</div>
+<div class="mcq-exp">💡 <b>Answer: (b)</b> ചിന്ത എന്നത് ശാരീരികാനുഭവങ്ങളുമായി അഭേദ്യമായി ബന്ധപ്പെട്ടിരിക്കുന്നു.</div>
+</div>
+</div>
+</div>
+<!-- Unleash your potential Essays -->
+<div class="content-box" style="margin-bottom:2px;">
+<div class="section-header" style="border-left-color: #059669;">
+<span class="section-title-en">Unleash your potential: Philosophical Essay Prompts</span>
+<span class="section-title-ml">(ദാർശനിക വിശകലന ഉപന്യാസങ്ങൾ)</span>
+</div>
+<div style="padding:3px 6px;">
+<div class="essay-card" style="border-color: #059669;">
+<div class="essay-q-en">Prompt 1: Compare Buddhist and Nyāya theories of perception and their relevance to AI sensory processing.</div>
+<div class="essay-q-ml">ചോദ്യം 1: ബുദ്ധ-ന്യായ പ്രത്യക്ഷ സിദ്ധാന്തങ്ങളെ താരതമ്യം ചെയ്യുക.</div>
+<p style="font-size:6.8pt; color:#1e293b; margin:1px 0; line-height:1.25;"><b>Academic Analysis:</b> Buddhism strictly separates non-conceptual sensory intake (*Nirvikalpaka*) from linguistic concept application (*Vikalpa*), paralleling raw sensory signal processing vs classification in modern machine learning. Nyāya integrates both into an unbroken continuum of realistic cognition.</p>
+<p style="font-family:'Noto Sans Malayalam', sans-serif; font-size:6.6pt; color:#064e3b; margin:1px 0; line-height:1.28;"><b>മലയാള വിശകലനം:</b> കേവല ഇന്ദ്രിയാനുഭവത്തെയും ഭാഷാപരമായ വർഗ്ഗീകരണത്തെയും ബുദ്ധമതം വേർതിരിച്ചു കാണുന്നത് ആധുനിക കമ്പ്യൂട്ടർ വിഷൻ പ്രോസസ്സിംഗിന് സമാനമാണ്.</p>
+</div>
+<div class="essay-card" style="border-color: #059669;">
+<div class="essay-q-en">Prompt 2: How do neuroscience and embodied cognition refute the idea of a purely disembodied AI intellect?</div>
+<div class="essay-q-ml">ചോദ്യം 2: ശരീരമില്ലാത്ത AI ബുദ്ധിയെ ന്യൂറോസയൻസ് എങ്ങനെ തള്ളിക്കളയുന്നു?</div>
+<p style="font-size:6.8pt; color:#1e293b; margin:1px 0; line-height:1.25;"><b>Academic Analysis:</b> Human common-sense intelligence is grounded in bodily homeostasis, emotional somatic markers, and physical navigation. Disembodied machines suffer the symbol grounding problem, proving that true cognitive agency demands embodiment.</p>
+<p style="font-family:'Noto Sans Malayalam', sans-serif; font-size:6.6pt; color:#064e3b; margin:1px 0; line-height:1.28;"><b>മലയാള വിശകലനം:</b> വികാരങ്ങളും ശാരീരികാനുഭവങ്ങളും ഇല്ലാതെ കേവലം കോഡുകളിലൂടെ മാത്രം മനുഷ്യനെപ്പോലെയുള്ള സമഗ്ര ബുദ്ധി കൈവരിക്കാനാവില്ല.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="page-footer">
+<div class="footer-left">🎓 Philosophy of AI · Module 5 · Chapter 22 · University Study Guide</div>
+<div class="footer-badges">
+<span class="footer-badge"><span class="badge-dot" style="background:#15803d;"></span> Green: Indian Traditions</span>
+<span class="footer-badge"><span class="badge-dot" style="background:#a16207;"></span> Yellow: Core Exam Lines Only</span>
+</div>
+</div>
+</div>
+<div class="page-container">
+<div>
+<div class="top-bar">
+<span class="top-bar-left">📘 Philosophy of AI · Module 5 · Chapter 22</span>
+<span class="top-bar-right">Page 12 of 12 ✨ Final Core Exam Revision</span>
+</div>
+<div class="chapter-hero" style="background: linear-gradient(135deg, #064e3b 0%, #047857 50%, #059669 100%); border-color: #34d399;">
+<div class="hero-tag" style="color: #6ee7b7;">🎯 Quick Revision Masterclass · High-Yield Exam Takeaways</div>
+<div class="hero-title-en">🌟 Core Exam Concepts: Indian Epistemology, Pramāṇas &amp; The Future of AI</div>
+<div class="hero-title-ml">🌟 പ്രധാന പരീക്ഷാ കേന്ദ്രീകൃത ആശയങ്ങൾ: ഭാരതീയ ജ്ഞാനശാസ്ത്രവും AI-യുടെ ഭാവിയും</div>
+</div>
+<div class="points-grid">
+<!-- Concept 1 -->
+<div class="core-point-card" style="border-left: 3.5px solid #059669;">
+<div class="point-top">
+<span class="point-tag" style="background: #047857;">📜 Classification</span>
+<span class="point-title-en">Āstika vs Nāstika Criterion</span>
+</div>
+<div class="point-title-ml">ആസ്തിക-നാസ്തിക തരംതിരിവ്</div>
+<div class="point-body">Based on acceptance or rejection of Vedic authority, not on belief in God.</div>
+<div class="point-body-ml">വേദങ്ങളുടെ പ്രാമാണ്യം അംഗീകരിക്കുന്നുണ്ടോ എന്നതിനെ അടിസ്ഥാനമാക്കിയുള്ളതാണ് ഈ വിഭജനം.</div>
+</div>
+<!-- Concept 2 -->
+<div class="core-point-card" style="border-left: 3.5px solid #3b82f6;">
+<div class="point-top">
+<span class="point-tag" style="background: #2563eb;">🏛️ Ṣaḍ-Darśana</span>
+<span class="point-title-en">Six Orthodox Schools</span>
+</div>
+<div class="point-title-ml">ആറ് ആസ്തിക ദർശനങ്ങൾ</div>
+<div class="point-body">Nyāya, Vaiśeṣika, Sāṅkhya, Yoga, Mīmāṃsā, and Vedānta accept Vedic testimony.</div>
+<div class="point-body-ml">ന്യായ, വൈശേഷിക, സാംഖ്യ, യോഗ, മീമാംസ, വേദാന്തം എന്നിവയാണ് ഷഡ്ദർശനങ്ങൾ.</div>
+</div>
+<!-- Concept 3 -->
+<div class="core-point-card" style="border-left: 3.5px solid #8b5cf6;">
+<div class="point-top">
+<span class="point-tag" style="background: #7c3aed;">☸️ Buddhism</span>
+<span class="point-title-en">Nāstika Classification</span>
+</div>
+<div class="point-title-ml">ബുദ്ധമതം നാസ്തിക ദർശനം</div>
+<div class="point-body">Rejects Vedas, creator God, and eternal Ātman, asserting universal impermanence and Anattā.</div>
+<div class="point-body-ml">വേദങ്ങളെയും ശാശ്വത ആത്മാവിനെയും നിഷേധിക്കുന്നതിനാൽ ബുദ്ധമതം നാസ്തിക ദർശനമാണ്.</div>
+</div>
+<!-- Concept 4 -->
+<div class="core-point-card" style="border-left: 3.5px solid #f59e0b;">
+<div class="point-top">
+<span class="point-tag" style="background: #d97706;">🔥 Cārvāka</span>
+<span class="point-title-en">Perception as Sole Pramāṇa</span>
+</div>
+<div class="point-title-ml">ചാർവാകം: പ്രത്യക്ഷം മാത്രം</div>
+<div class="point-body">Radical empiricism rejecting inference and testimony; only perceived physical matter is real.</div>
+<div class="point-body-ml">പ്രത്യക്ഷം മാത്രമാണ് സത്യം; അനുമാനവും വേദങ്ങളും തെറ്റാണെന്ന് ചാർവാകർ വാദിക്കുന്നു.</div>
+</div>
+<!-- Concept 5 -->
+<div class="core-point-card" style="border-left: 3.5px solid #ec4899;">
+<div class="point-top">
+<span class="point-tag" style="background: #db2777;">💡 Cognition</span>
+<span class="point-title-en">Jñāna vs Pramā</span>
+</div>
+<div class="point-title-ml">ജ്ഞാനവും പ്രമയും തമ്മിലുള്ള വ്യത്യാസം</div>
+<div class="point-body">Jñāna is all awareness (including illusion and doubt); Pramā is strictly valid, true cognition.</div>
+<div class="point-body-ml">എല്ലാ അവബോധവും ജ്ഞാനമാണ്; എന്നാൽ യഥാർത്ഥവും ശരിയായതുമായ അറിവ് മാത്രമാണ് പ്രമ.</div>
+</div>
+<!-- Concept 6 -->
+<div class="core-point-card" style="border-left: 3.5px solid #06b6d4;">
+<div class="point-top">
+<span class="point-tag" style="background: #0891b2;">⚖️ Instrument</span>
+<span class="point-title-en">Pramāṇa Definition</span>
+</div>
+<div class="point-title-ml">പ്രമാണത്തിന്റെ നിർവ്വചനം</div>
+<div class="point-body">Operative means or reliable cognitive instrument by which valid knowledge (Pramā) is gained.</div>
+<div class="point-body-ml">ശരിയായ അറിവ് നേടാനുള്ള വിശ്വസനീയമായ ഉപാധിയാണ് പ്രമാണം.</div>
+</div>
+<!-- Concept 7 -->
+<div class="core-point-card" style="border-left: 3.5px solid #14b8a6;">
+<div class="point-top">
+<span class="point-tag" style="background: #0d9488;">✌️ Two Pramāṇas</span>
+<span class="point-title-en">Buddhist Epistemic Constraint</span>
+</div>
+<div class="point-title-ml">ബുദ്ധമതത്തിലെ രണ്ട് പ്രമാണങ്ങൾ</div>
+<div class="point-body">Accepts only Pratyakṣa (Perception) and Anumāna (Inference), corresponding to particulars and universals.</div>
+<div class="point-body-ml">പ്രത്യക്ഷം, അനുമാനം എന്നിവ മാത്രമേ ബുദ്ധമതം അംഗീകരിക്കുന്നുള്ളൂ.</div>
+</div>
+<!-- Concept 8 -->
+<div class="core-point-card" style="border-left: 3.5px solid #f97316;">
+<div class="point-top">
+<span class="point-tag" style="background: #ea580c;">👁️ Perception</span>
+<span class="point-title-en">Kalpanāpoḍha Conception</span>
+</div>
+<div class="point-title-ml">കൽപനാപോഢ പ്രത്യക്ഷം</div>
+<div class="point-body">Dignāga defines perception as purely non-conceptual and free from verbal construction.</div>
+<div class="point-body-ml">വാക്കുകളും സങ്കൽപ്പങ്ങളും കലരാത്ത ശുദ്ധമായ ഇന്ദ്രിയാനുഭവമാണ് പ്രത്യക്ഷം.</div>
+</div>
+<!-- Concept 9 -->
+<div class="core-point-card" style="border-left: 3.5px solid #6366f1;">
+<div class="point-top">
+<span class="point-tag" style="background: #4f46e5;">✨ Nirvikalpaka</span>
+<span class="point-title-en">Non-Conceptual Reality</span>
+</div>
+<div class="point-title-ml">നിർവികല്പക പ്രത്യക്ഷം</div>
+<div class="point-body">Grasps the unique particular (Svalakṣaṇa) in the pristine instant before language intervenes.</div>
+<div class="point-body-ml">ഭാഷ ഇടപെടുന്നതിന് മുൻപുള്ള വസ്തുവിന്റെ തനിമയുള്ള ശുദ്ധ അനുഭവം.</div>
+</div>
+<!-- Concept 10 -->
+<div class="core-point-card" style="border-left: 3.5px solid #ef4444;">
+<div class="point-top">
+<span class="point-tag" style="background: #dc2626;">📐 Hetu</span>
+<span class="point-title-en">Role of Logical Reason</span>
+</div>
+<div class="point-title-ml">ഹേതുവിന്റെ പ്രാധാന്യം</div>
+<div class="point-body">The middle term and evidential bridge proving the unperceived predicate through Trairūpya.</div>
+<div class="point-body-ml">അനുമാനത്തിൽ അറിവ് സ്ഥാപിക്കാനുള്ള യുക്തിപരമായ കാരണമാണ് ഹേതു.</div>
+</div>
+<!-- Concept 11 -->
+<div class="core-point-card" style="border-left: 3.5px solid #84cc16;">
+<div class="point-top">
+<span class="point-tag" style="background: #65a30d;">🔗 Vyāpti</span>
+<span class="point-title-en">Universal Concomitance</span>
+</div>
+<div class="point-title-ml">വ്യാപ്തി: സാർവത്രിക നിയമം</div>
+<div class="point-body">Invariable, unconditional relationship between sign and signified (smoke and fire).</div>
+<div class="point-body-ml">ഹേതുവും കാര്യവും തമ്മിലുള്ള മാറ്റമില്ലാത്ത ബന്ധമാണ് വ്യാപ്തി.</div>
+</div>
+<!-- Concept 12 -->
+<div class="core-point-card" style="border-left: 3.5px solid #a855f7;">
+<div class="point-top">
+<span class="point-tag" style="background: #9333ea;">🏛️ Nyāya</span>
+<span class="point-title-en">Sage Gautama's Realism</span>
+</div>
+<div class="point-title-ml">ഗൗതമന്റെ ന്യായ ദർശനം</div>
+<div class="point-body">Logical realism establishing four pramāṇas: Pratyakṣa, Anumāna, Upamāna, and Śabda.</div>
+<div class="point-body-ml">പ്രത്യക്ഷം, അനുമാനം, ഉപമാനം, ശബ്ദം എന്നീ നാല് പ്രമാണങ്ങൾ ന്യായ ദർശനം അംഗീകരിക്കുന്നു.</div>
+</div>
+<!-- Concept 13 -->
+<div class="core-point-card" style="border-left: 3.5px solid #0284c7;">
+<div class="point-top">
+<span class="point-tag" style="background: #0369a1;">🖐️ Pañcāvayava</span>
+<span class="point-title-en">Five-Membered Syllogism</span>
+</div>
+<div class="point-title-ml">പഞ്ചാവയവ ന്യായവാക്യം</div>
+<div class="point-body">Pratijñā, Hetu, Udāharaṇa, Upanaya, Nigamana: integrates deduction and empirical induction.</div>
+<div class="point-body-ml">പ്രതിജ്ഞ, ഹേതു, ഉദാഹരണം, ഉപനയം, നിഗമനം എന്നീ അഞ്ച് ഘട്ടങ്ങളുള്ള യുക്തിരീതി.</div>
+</div>
+<!-- Concept 14 -->
+<div class="core-point-card" style="border-left: 3.5px solid #e11d48;">
+<div class="point-top">
+<span class="point-tag" style="background: #be123c;">⚔️ Realism vs Apoha</span>
+<span class="point-title-en">Nyāya vs Buddhism Debate</span>
+</div>
+<div class="point-title-ml">ന്യായ-ബുദ്ധ സംവാദം</div>
+<div class="point-body">Nyāya asserts real objective universals; Buddhism views universals as conceptual negations (Apoha).</div>
+<div class="point-body-ml">ന്യായ ദർശനം സാമാന്യ ആശയങ്ങൾ സത്യമാണെന്ന് പറയുമ്പോൾ, ബുദ്ധമതം അവ മാനസിക സങ്കൽപ്പങ്ങളാണെന്ന് വാദിക്കുന്നു.</div>
+</div>
+<!-- Concept 15 -->
+<div class="core-point-card" style="border-left: 3.5px solid #10b981;">
+<div class="point-top">
+<span class="point-tag" style="background: #047857;">🧩 GOFAI Re-visited</span>
+<span class="point-title-en">Limits of Hand-Coded Rules</span>
+</div>
+<div class="point-title-ml">സിംബോളിക് AI പരിമിതികൾ</div>
+<div class="point-body">Explicit physical symbol manipulation is brittle and unable to handle real-world perceptual noise.</div>
+<div class="point-body-ml">മുൻകൂട്ടി നൽകിയ നിയമങ്ങൾ പുതിയ സാഹചര്യങ്ങളിൽ പരാജയപ്പെടുന്നു.</div>
+</div>
+<!-- Concept 16 -->
+<div class="core-point-card" style="border-left: 3.5px solid #3b82f6;">
+<div class="point-top">
+<span class="point-tag" style="background: #1d4ed8;">🔄 Synthesis</span>
+<span class="point-title-en">Neuro-Symbolic AI</span>
+</div>
+<div class="point-title-ml">ന്യൂറോ-സിംബോളിക് AI</div>
+<div class="point-body">Combining neural network perception with symbolic logic deduction for robust intelligence.</div>
+<div class="point-body-ml">ഡീപ് ലേണിംഗിന്റെ സംവേദനവും ലോജിക്കിന്റെ യുക്തിയും സമന്വയിപ്പിക്കുന്ന ഭാവി രീതി.</div>
+</div>
+<!-- Concept 17 -->
+<div class="core-point-card" style="border-left: 3.5px solid #8b5cf6;">
+<div class="point-top">
+<span class="point-tag" style="background: #6d28d9;">☁️ Substrate Freedom</span>
+<span class="point-title-en">Disembodied AI Benefits</span>
+</div>
+<div class="point-title-ml">ശരീരമില്ലായ്മയുടെ നേട്ടങ്ങൾ</div>
+<div class="point-body">Cloud mobility, infinite computational scaling, and zero biological fatigue.</div>
+<div class="point-body-ml">ക്ഷീണമില്ലാതെ പ്രകാശവേഗതയിൽ ഡാറ്റ പ്രോസസ്സ് ചെയ്യാനുള്ള കഴിവ്.</div>
+</div>
+<!-- Concept 18 -->
+<div class="core-point-card" style="border-left: 3.5px solid #d97706;">
+<div class="point-top">
+<span class="point-tag" style="background: #b45309;">⚓ Symbol Grounding</span>
+<span class="point-title-en">Fatal Disembodied Flaw</span>
+</div>
+<div class="point-title-ml">സിംബൽ ഗ്രൗണ്ടിംഗ് പ്രശ്നം</div>
+<div class="point-body">Disembodied algorithmic tokens have no anchor in physical reality and lack intrinsic meaning.</div>
+<div class="point-body-ml">ശാരീരികാനുഭവങ്ങളില്ലാത്തതിനാൽ വാക്കുകൾക്ക് യഥാർത്ഥ അർത്ഥം ഗ്രഹിക്കാൻ AI-ക്ക് കഴിയില്ല.</div>
+</div>
+<!-- Concept 19 -->
+<div class="core-point-card" style="border-left: 3.5px solid #059669;">
+<div class="point-top">
+<span class="point-tag" style="background: #047857;">🧠 Neuroscience</span>
+<span class="point-title-en">Somatic Grounding of Mind</span>
+</div>
+<div class="point-title-ml">ന്യൂറോസയൻസ് വെല്ലുവിളി</div>
+<div class="point-body">Antonio Damasio proves rationality is inseparable from bodily feelings and emotional homeostasis.</div>
+<div class="point-body-ml">വികാരങ്ങളും ശരീരവും ഇല്ലാതെ വിവേകപൂർണ്ണമായ ബുദ്ധി അസാധ്യമാണെന്ന് ഡമാസിയോ തെളിയിച്ചു.</div>
+</div>
+<!-- Concept 20 -->
+<div class="core-point-card" style="border-left: 3.5px solid #dc2626;">
+<div class="point-top">
+<span class="point-tag" style="background: #991b1b;">🧍 Embodiment</span>
+<span class="point-title-en">Future of Human Flourishing</span>
+</div>
+<div class="point-title-ml">മാനവരാശിയുടെ ഭാവിയും ആത്മീയതയും</div>
+<div class="point-body">Human unique dignity resides in conscious embodiment, empathy, and spiritual self-realization.</div>
+<div class="point-body-ml">മനുഷ്യന്റെ അന്തസ്സ് കേവല ബുദ്ധിയിലല്ല, മറിച്ച് സഹാനുഭൂതിയിലും ആത്മബോധത്തിലുമാണ്.</div>
+</div>
+</div>
+</div>
+<div class="page-footer">
+<div class="footer-left">🎓 Philosophy of AI · Module 5 · Chapter 22 · University Study Guide</div>
+<div class="footer-badges">
+<span class="footer-badge">✨ Core Exam Takeaways</span>
+<span class="footer-badge">🎓 Academic Excellence</span>
+</div>
+</div>
+</div>
+</body></html>
