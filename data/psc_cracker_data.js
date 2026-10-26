@@ -1,6 +1,7 @@
 // Kerala PSC Cracker - Official Data & Question Bank
 // Following Guidelines in Study Content Guide | Kerala PSC + K-TET
 // Checked: 26 October 2026
+// Verified & Hosted on Academic Hub CDN (SSL Secured)
 
 window.PSC_CRACKER_DATA = {
   meta: {
@@ -18,7 +19,7 @@ window.PSC_CRACKER_DATA = {
       dateOfTest: "23.12.2016",
       keyStatus: "Final",
       checkedDate: "26 October 2026",
-      sourceUrl: "https://www.keralapsc.gov.in/sites/default/files/2018-08/175-2016.pdf",
+      sourceUrl: "pdfs/psc/psc_175_2016.pdf",
       category: "Technical / Tradesman",
       type: "Official Past Paper"
     },
@@ -31,7 +32,7 @@ window.PSC_CRACKER_DATA = {
       dateOfTest: "17.12.2016",
       keyStatus: "Final",
       checkedDate: "26 October 2026",
-      sourceUrl: "https://www.keralapsc.gov.in/sites/default/files/2018-08/171-2016.pdf",
+      sourceUrl: "pdfs/psc/psc_171_2016.pdf",
       category: "Teaching / Education",
       type: "Official Past Paper"
     },
@@ -44,7 +45,7 @@ window.PSC_CRACKER_DATA = {
       dateOfTest: "16.12.2016",
       keyStatus: "Final",
       checkedDate: "26 October 2026",
-      sourceUrl: "https://www.keralapsc.gov.in/sites/default/files/2018-08/170-2016.pdf",
+      sourceUrl: "pdfs/psc/psc_170_2016.pdf",
       category: "Degree / Polytechnic Lecturer",
       type: "Official Past Paper"
     },
@@ -57,7 +58,7 @@ window.PSC_CRACKER_DATA = {
       dateOfTest: "09.12.2016",
       keyStatus: "Final",
       checkedDate: "26 October 2026",
-      sourceUrl: "https://www.keralapsc.gov.in/sites/default/files/2018-08/167-2016.pdf",
+      sourceUrl: "pdfs/psc/psc_167_2016.pdf",
       category: "Degree / Polytechnic Lecturer",
       type: "Official Past Paper"
     },

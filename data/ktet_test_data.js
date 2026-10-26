@@ -1,6 +1,7 @@
 // K-TET Test - Official Data & Question Bank
 // Following Guidelines in Study Content Guide | Kerala PSC + K-TET
 // Checked: 26 October 2026
+// Verified & Hosted on Academic Hub CDN (SSL Secured)
 
 window.KTET_TEST_DATA = {
   meta: {
@@ -15,8 +16,8 @@ window.KTET_TEST_DATA = {
       target: "Lower Primary Teachers (Classes I to V)",
       badge: "Classes 1-5 LP",
       subjects: ["Child Development & Pedagogy", "Language I (Malayalam/Tamil/Kannada)", "Language II (English/Arabic)", "Mathematics", "Environmental Studies"],
-      modelPdf: "https://ktet.kerala.gov.in/modelquestion/question1.pdf",
-      syllabusPdf: "https://ktet.kerala.gov.in/syllabus/syllabus1.pdf",
+      modelPdf: "pdfs/ktet/ktet_cat1_model.pdf",
+      syllabusPdf: "pdfs/ktet/ktet_cat1_syllabus.pdf",
       latestKey: "Rectified Key - February 2026",
       keyStatus: "Rectified",
       checkedDate: "26 October 2026"
@@ -27,8 +28,8 @@ window.KTET_TEST_DATA = {
       target: "Upper Primary Teachers (Classes VI to VIII)",
       badge: "Classes 6-8 UP",
       subjects: ["Child Development & Pedagogy", "Language I (Malayalam/Tamil/Kannada)", "Language II (English/Hindi/Arabic/Urdu)", "Science & Mathematics or Social Science"],
-      modelPdf: "https://ktet.kerala.gov.in/modelquestion/question2.pdf",
-      syllabusPdf: "https://ktet.kerala.gov.in/syllabus/syllabus2.pdf",
+      modelPdf: "pdfs/ktet/ktet_cat2_model.pdf",
+      syllabusPdf: "pdfs/ktet/ktet_cat2_syllabus.pdf",
       latestKey: "Rectified Key - February 2026",
       keyStatus: "Rectified",
       checkedDate: "26 October 2026"
@@ -39,8 +40,8 @@ window.KTET_TEST_DATA = {
       target: "High School Teachers (Classes VIII to X)",
       badge: "Classes 8-10 HS",
       subjects: ["Adolescent Psychology & Theories of Learning", "Language I (English/Malayalam/Tamil/Kannada)", "Subject Specific Pedagogy & Content"],
-      modelPdf: "https://ktet.kerala.gov.in/modelquestion/question3.pdf",
-      syllabusPdf: "https://ktet.kerala.gov.in/syllabus/syllabus3.pdf",
+      modelPdf: "pdfs/ktet/ktet_cat3_model.pdf",
+      syllabusPdf: "pdfs/ktet/ktet_cat3_syllabus.pdf",
       latestKey: "Rectified Key - February 2026",
       keyStatus: "Rectified",
       checkedDate: "26 October 2026"
@@ -51,8 +52,8 @@ window.KTET_TEST_DATA = {
       target: "Specialist Teachers & Language Teachers (Up to Upper Primary)",
       badge: "Specialist & Language",
       subjects: ["Child Development, Pedagogy & Teacher Aptitude", "Language I & II", "Special Subject: Hindi, Arabic, Urdu, Sanskrit, Physical Ed, Art, Craft"],
-      modelPdf: "https://ktet.kerala.gov.in/modelquestion/question4.pdf",
-      syllabusPdf: "https://ktet.kerala.gov.in/syllabus/syllabus4.pdf",
+      modelPdf: "pdfs/ktet/ktet_cat4_model.pdf",
+      syllabusPdf: "pdfs/ktet/ktet_cat4_syllabus.pdf",
       latestKey: "Rectified Key - February 2026",
       keyStatus: "Rectified",
       checkedDate: "26 October 2026"
@@ -64,35 +65,35 @@ window.KTET_TEST_DATA = {
       category: "Category I",
       session: "February 2026",
       status: "Rectified",
-      url: "https://ktet.kerala.gov.in/downloads/answerkey_FEB2026/RECTIFIED/RECTIFIED%20KEY%20-%20CATEGORY%201.pdf"
+      url: "pdfs/ktet/ktet_feb2026_rectified_cat1.pdf"
     },
     {
       title: "K-TET Category II Rectified Answer Key (February 2026 Session)",
       category: "Category II",
       session: "February 2026",
       status: "Rectified",
-      url: "https://ktet.kerala.gov.in/downloads/answerkey_FEB2026/RECTIFIED/RECTIFIED%20KEY%20-%20CATEGORY%202.pdf"
+      url: "pdfs/ktet/ktet_feb2026_rectified_cat2.pdf"
     },
     {
       title: "K-TET Category III Rectified Answer Key (February 2026 Session)",
       category: "Category III",
       session: "February 2026",
       status: "Rectified",
-      url: "https://ktet.kerala.gov.in/downloads/answerkey_FEB2026/RECTIFIED/RECTIFIED%20KEY%20-%20CATEGORY%203.pdf"
+      url: "pdfs/ktet/ktet_feb2026_rectified_cat3.pdf"
     },
     {
       title: "K-TET Category IV Rectified Answer Key (February 2026 Session)",
       category: "Category IV",
       session: "February 2026",
       status: "Rectified",
-      url: "https://ktet.kerala.gov.in/downloads/answerkey_FEB2026/RECTIFIED/RECTIFIED%20KEY%20-%20CATEGORY%204.pdf"
+      url: "pdfs/ktet/ktet_feb2026_rectified_cat4.pdf"
     },
     {
       title: "K-TET September 2026 Official Examination Notification",
       category: "All Categories",
       session: "September 2026",
       status: "Official Notice",
-      url: "https://ktet.kerala.gov.in/downloads/sep2026/K-TET%20September%202026-Notification.pdf"
+      url: "pdfs/ktet/ktet_sep2026_notification.pdf"
     }
   ],
   questions: [
