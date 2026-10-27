@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="theme-color" content="#065f46">
-  <meta name="description" content="Independent K-TET practice for Categories I–IV with source-labelled model papers, syllabus materials, timed quizzes, and answer-key status.">
+  <meta name="description" content="K-TET Categories I–IV study guidance with original practice questions, explanations, and links to official resources.">
   <link rel="canonical" href="https://academichubfaiz.in/ktet-test.html">
   <title>KTET Test | Category-wise K-TET Practice | Academic Hub</title>
   <link rel="stylesheet" href="style.css?v=20261026-ktet">
@@ -527,7 +527,7 @@
     <!-- Source Attribution & Publishing Protocol Box (Page 3 Compliance) -->
     <div class="protocol-card">
       <strong>Source and answer-key notes:</strong>
-      Materials are labelled by K-TET category, session, and answer-key status. Academic Hub is an independent study resource, not an official K-TET or Pareeksha Bhavan website. Check the <a href="https://ktet.kerala.gov.in/">official K-TET portal</a> for current notifications and the latest document before relying on an older paper.
+      The quizzes contain original Academic Hub practice questions, not official K-TET model questions or answer keys. Category links open official syllabus and model-question materials. Academic Hub is independent; check the <a href="https://ktet.kerala.gov.in/">official K-TET portal</a> for current notices and published keys.
     </div>
 
     <!-- Category Selector -->
@@ -567,7 +567,7 @@
       <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
         <div>
           <h2 style="font-size:20px; font-family:Manrope,sans-serif; color:#064e3b; margin-bottom:4px;">Official K-TET Downloads &amp; Rectified Keys</h2>
-          <p style="font-size:13px; color:#64748b;">Open official K-TET notifications, model questions, syllabus pages, and published answer keys.</p>
+          <p style="font-size:13px; color:#64748b;">The official K-TET portal lists current notices and published answer keys. Open the portal and choose the matching category or session.</p>
         </div>
       </div>
       <div class="dl-list" id="downloads-list"></div>
@@ -576,7 +576,7 @@
   </main>
 
   <footer style="text-align:center; padding:24px 18px; border-top:1px solid #e2e8f0; font-size:12px; color:#64748b;">
-    Academic Hub · K-TET Portal · Content verified against official Pareeksha Bhavan / SCERT materials.
+    Academic Hub · K-TET Test · Original practice questions; official resources are linked separately.
   </footer>
 
   <!-- Load Data -->
@@ -610,8 +610,8 @@
             </div>
             <div class="cat-target">${c.target}</div>
             <div class="cat-links">
-              <a href="${c.modelPdf}" target="_blank" rel="noopener noreferrer" class="cat-link" onclick="event.stopPropagation()">Official model questions &rarr;</a>
-              <a href="${c.syllabusPdf}" target="_blank" rel="noopener noreferrer" class="cat-link" onclick="event.stopPropagation()">Official syllabus &rarr;</a>
+              <a href="${c.modelUrl}" target="_blank" rel="noopener noreferrer" class="cat-link" onclick="event.stopPropagation()">Official model questions &rarr;</a>
+              <a href="${c.syllabusUrl}" target="_blank" rel="noopener noreferrer" class="cat-link" onclick="event.stopPropagation()">Official syllabus &rarr;</a>
             </div>
           </div>
         `;
@@ -650,7 +650,7 @@
               <span class="badge-official">${q.type}</span>
               <span style="margin-left:6px; font-weight:700; color:#065f46;">${q.category} · ${q.subject}</span>
             </div>
-            <span class="badge-key">Answer Key: ${q.keyStatus}</span>
+            <span class="badge-key">Status: ${q.keyStatus}</span>
           </div>
           <p class="q-text">${idx + 1}. ${q.question}</p>
           <div class="options-grid">
@@ -666,7 +666,7 @@
             <p style="margin-top:6px;">${q.explanation}</p>
             <div class="q-source-label">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-              <span>${q.source} · Verified: ${q.checkedDate}</span>
+              <span>Question note: ${q.source}</span>
             </div>
           </div>
         </article>
@@ -699,7 +699,7 @@
             <div style="font-size:12px; color:#64748b; margin-top:2px;">${d.category} · Session: ${d.session}</div>
           </div>
           <a href="${d.url}" target="_blank" rel="noopener noreferrer" class="dl-btn">
-            Open official source &rarr;
+            Open official K-TET portal &rarr;
           </a>
         </div>
       `).join('');
@@ -806,7 +806,7 @@
       res.style.display = 'block';
       res.innerHTML = `
         <div style="font-size:42px; font-weight:800; color:#064e3b; font-family:Manrope,sans-serif;">${score} / ${questions.length}</div>
-        <p style="font-size:16px; color:#475569; margin:8px 0 18px;">Score: <strong>${pct}%</strong> · Verified against SCERT K-TET Model Keys</p>
+        <p style="font-size:16px; color:#475569; margin:8px 0 18px;">Score: <strong>${pct}%</strong> · Practice score based on the explanations shown with each question</p>
         <button class="tab-pill" style="background:#059669; color:#fff;" onclick="startKtetMock()">Retry Mock Test</button>
         <button class="tab-pill" style="margin-left:8px;" onclick="switchKtetMode('practice')">Review in Practice Mode</button>
       `;

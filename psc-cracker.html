@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="theme-color" content="#0f2b5c">
-  <meta name="description" content="Independent Kerala PSC practice with post-wise papers, paper codes, source notes, timed mock tests, and answer-key status in a separate study division.">
+  <meta name="description" content="Kerala PSC paper references and original topic-based practice questions with explanations in a separate study division.">
   <link rel="canonical" href="https://academichubfaiz.in/psc-cracker.html">
   <title>PSC Cracker | Kerala PSC Practice | Academic Hub</title>
   <link rel="stylesheet" href="style.css?v=20261026-psc">
@@ -497,7 +497,7 @@
     <!-- Source Attribution & Publishing Protocol Box (Page 3 Compliance) -->
     <div class="protocol-card">
       <strong>Source and answer-key notes:</strong>
-      Archived items show their exam or post, paper code, year, and answer-key status. Academic Hub is an independent study resource, not an official PSC website. Check the <a href="https://www.keralapsc.gov.in/">official Kerala PSC portal</a> for current notifications and any updated key before relying on an older paper.
+      This page contains original practice questions written for revision; they are not official PSC questions or answer keys. Paper references link to the <a href="https://www.keralapsc.gov.in/previous-question-papers?page=0&amp;tid=All">official Kerala PSC paper index</a>. Check PSC for current notifications and answer-key updates.
     </div>
 
     <!-- Mode Selector & Category Filters -->
@@ -536,12 +536,12 @@
       <div id="mock-result" style="display:none; text-align:center; padding:30px 10px;"></div>
     </div>
 
-    <!-- Official Previous Papers Archive Table -->
+    <!-- Official paper reference index -->
     <section class="papers-card">
       <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
         <div>
           <h2 style="font-size:20px; font-family:Manrope,sans-serif; color:#0f2b5c; margin-bottom:4px;">PSC Previous Paper Index</h2>
-          <p style="font-size:13px; color:#64748b;">Paper references are listed by post, exam code, date, and answer-key status. Search the official PSC portal by the paper code shown here.</p>
+          <p style="font-size:13px; color:#64748b;">References are listed by post, paper code, test date, and the answer-key status shown on the linked PSC record.</p>
         </div>
       </div>
       <div class="papers-table-wrap">
@@ -564,7 +564,7 @@
   </main>
 
   <footer style="text-align:center; padding:24px 18px; border-top:1px solid #e2e8f0; font-size:12px; color:#64748b;">
-    Academic Hub · Kerala PSC Cracker · Content verified against official Kerala PSC answer keys.
+    Academic Hub · PSC Cracker · Original practice questions; paper references link to Kerala PSC.
   </footer>
 
   <!-- Load Data -->
@@ -596,7 +596,7 @@
               <span class="badge-official">${q.type}</span>
               <span style="margin-left:6px; font-weight:700; color:#475569;">${q.topic}</span>
             </div>
-            <span class="badge-key">Answer Key: ${q.keyStatus}</span>
+            <span class="badge-key">Status: ${q.keyStatus}</span>
           </div>
           <p class="q-text">${idx + 1}. ${q.question}</p>
           <div class="options-grid">
@@ -612,7 +612,7 @@
             <p style="margin-top:6px;">${q.explanation}</p>
             <div class="q-source-label">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-              <span>${q.source} · Verified: ${q.checkedDate}</span>
+              <span>Question note: ${q.source}</span>
             </div>
           </div>
         </article>
@@ -645,14 +645,14 @@
             <strong>${p.post}</strong>
             <div style="font-size:12px; color:#64748b;">${p.dept}</div>
           </td>
-          <td><code style="background:#f1f5f9; padding:3px 6px; border-radius:4px; font-weight:700;">${p.code}</code></td>
+          <td><code style="background:#f1f5f9; padding:3px 6px; border-radius:4px; font-weight:700;">${p.code}</code>${p.categoryCode ? `<div style="font-size:11px; color:#64748b; margin-top:3px;">Category ${p.categoryCode}</div>` : ""}</td>
           <td>${p.dateOfTest}</td>
           <td><span class="badge-key" style="background:#ecfdf5; color:#065f46; border-color:#a7f3d0;">${p.keyStatus}</span></td>
           <td>
             ${p.sourceUrl ? `
               <a href="${p.sourceUrl}" target="_blank" rel="noopener noreferrer" class="pdf-dl-btn">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7"></path><path d="M10 14 21 3"></path><path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6"></path></svg>
-                Search official PSC
+                View on official PSC
               </a>
             ` : '<span style="color:#94a3b8; font-size:12px;">Archived</span>'}
           </td>
@@ -777,7 +777,7 @@
       res.style.display = 'block';
       res.innerHTML = `
         <div style="font-size:42px; font-weight:800; color:#0f2b5c; font-family:Manrope,sans-serif;">${score} / ${questions.length}</div>
-        <p style="font-size:16px; color:#475569; margin:8px 0 18px;">Score: <strong>${pct}%</strong> · Verified with Kerala PSC Final Keys</p>
+        <p style="font-size:16px; color:#475569; margin:8px 0 18px;">Score: <strong>${pct}%</strong> · Practice score based on the explanations shown with each question</p>
         <button class="tab-pill" style="background:#2563eb; color:#fff;" onclick="startMock()">Retry Mock Test</button>
         <button class="tab-pill" style="margin-left:8px;" onclick="switchMode('practice')">Review in Practice Mode</button>
       `;
