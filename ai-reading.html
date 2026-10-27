@@ -897,7 +897,90 @@
       box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25) !important;
     }
 
-  </style>
+  
+
+    /* ==========================================================================
+       Continuous Interval Blink for All Module/Chapter Tabs with Respective Colors
+       ========================================================================== */
+    .filter-wrapper, .filter-bar {
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .filter-btn {
+      padding: 11px 20px;
+      border-radius: 14px;
+      border: 2px solid var(--mod-border, #cbd5e1) !important;
+      background: linear-gradient(130deg, #ffffff, var(--mod-bg, #f8fafc)) !important;
+      color: var(--mod-c1, #334155) !important;
+      font-size: 13.5px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      font-family: inherit;
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      animation: module-tab-blink 6s infinite ease-in-out !important;
+      animation-delay: var(--mod-delay, 0s) !important;
+    }
+
+    @keyframes module-tab-blink {
+      0%, 100% {
+        transform: scale(1);
+        border-color: var(--mod-border, #cbd5e1);
+        box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+        filter: brightness(1);
+      }
+      50% {
+        transform: scale(1.06);
+        border-color: var(--mod-c2, #3b82f6);
+        box-shadow: 0 8px 24px var(--mod-glow, rgba(59, 130, 246, 0.55)), 0 0 16px var(--mod-glow, rgba(59, 130, 246, 0.35));
+        filter: brightness(1.18);
+      }
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      border-color: var(--mod-c2, #3b82f6) !important;
+      box-shadow: 0 8px 20px var(--mod-glow, rgba(59, 130, 246, 0.35)) !important;
+      color: var(--mod-c1, #1e40af) !important;
+      animation-play-state: paused !important;
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--mod-c1, #1e293b), var(--mod-c2, #0f172a)) !important;
+      color: #ffffff !important;
+      border-color: var(--mod-c2, #0f172a) !important;
+      box-shadow: 0 8px 24px var(--mod-glow, rgba(15, 23, 42, 0.5)) !important;
+      animation: module-tab-blink-active 6s infinite ease-in-out !important;
+      animation-delay: var(--mod-delay, 0s) !important;
+    }
+
+    @keyframes module-tab-blink-active {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 6px 18px var(--mod-glow, rgba(15, 23, 42, 0.35));
+        filter: brightness(1);
+      }
+      50% {
+        transform: scale(1.08);
+        box-shadow: 0 12px 32px var(--mod-glow, rgba(15, 23, 42, 0.75)), 0 0 20px var(--mod-glow, rgba(15, 23, 42, 0.5));
+        filter: brightness(1.25);
+      }
+    }
+
+    .filter-btn.active:hover {
+      animation-play-state: paused !important;
+    }
+
+</style>
 </head>
 <body>
 <main class="page-box">
@@ -915,12 +998,12 @@
 </header>
 <!-- Module Filters (All in English) -->
 <nav aria-label="Filter by module" class="filter-wrapper">
-<button class="filter-btn" onclick="filterModule(\'mod1\', this)">Module 1: Foundations (3 Chapters)</button>
-<button class="filter-btn" onclick="filterModule('mod2', this)">Module 2: Classical AI (5 Chapters)</button>
-<button class="filter-btn" onclick="filterModule('mod3', this)">Module 3: Epistemology (5 Chapters)</button>
-<button class="filter-btn" onclick="filterModule('mod4', this)">Module 4: Ethics of AI (7 Chapters)</button>
-<button class="filter-btn" onclick="filterModule('mod5', this)">Module 5: Future &amp; Perspectives (2 Chapters)</button>
-<button class="filter-btn active" onclick="filterModule(\'all\', this)">📚 All Chapters (22 Chapters)</button>
+<button class="filter-btn" onclick="filterModule(\'mod1\', this)" style="--mod-c1:#4338ca; --mod-c2:#6366f1; --mod-border:#a5b4fc; --mod-bg:#eef2ff; --mod-glow:rgba(99, 102, 241, 0.55); --mod-delay:0.0s;">Module 1: Foundations (3 Chapters)</button>
+<button class="filter-btn" onclick="filterModule('mod2', this)" style="--mod-c1:#1d4ed8; --mod-c2:#3b82f6; --mod-border:#93c5fd; --mod-bg:#eff6ff; --mod-glow:rgba(59, 130, 246, 0.55); --mod-delay:1.0s;">Module 2: Classical AI (5 Chapters)</button>
+<button class="filter-btn" onclick="filterModule('mod3', this)" style="--mod-c1:#059669; --mod-c2:#10b981; --mod-border:#6ee7b7; --mod-bg:#ecfdf5; --mod-glow:rgba(16, 185, 129, 0.55); --mod-delay:2.0s;">Module 3: Epistemology (5 Chapters)</button>
+<button class="filter-btn" onclick="filterModule('mod4', this)" style="--mod-c1:#7c3aed; --mod-c2:#8b5cf6; --mod-border:#c4b5fd; --mod-bg:#f5f3ff; --mod-glow:rgba(139, 92, 246, 0.55); --mod-delay:3.0s;">Module 4: Ethics of AI (7 Chapters)</button>
+<button class="filter-btn" onclick="filterModule('mod5', this)" style="--mod-c1:#ea580c; --mod-c2:#f97316; --mod-border:#fdba74; --mod-bg:#fff7ed; --mod-glow:rgba(249, 115, 22, 0.55); --mod-delay:4.0s;">Module 5: Future &amp; Perspectives (2 Chapters)</button>
+<button class="filter-btn active" onclick="filterModule(\'all\', this)" style="--mod-c1:#be123c; --mod-c2:#f43f5e; --mod-border:#fda4af; --mod-bg:#fff1f2; --mod-glow:rgba(244, 63, 94, 0.55); --mod-delay:5.0s;">📚 All Chapters (22 Chapters)</button>
 </nav>
 <!-- Search Input (English Placeholder) -->
 <div class="search-bar">
