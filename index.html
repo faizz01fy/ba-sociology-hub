@@ -1616,9 +1616,15 @@
     /* ========================================================================== */
     .univ-buttons-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 10px;
       margin-bottom: 4px;
+    }
+    @media (max-width: 992px) {
+      .univ-buttons-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
     }
     @media (max-width: 768px) {
       .univ-buttons-grid {
@@ -1756,6 +1762,27 @@
     .univ-btn-general.active {
       border-color: #ffffff;
       box-shadow: 0 0 0 2.5px rgba(168, 85, 247, 0.5), 0 8px 20px rgba(147, 51, 234, 0.45);
+    }
+
+    /* Directorate of Admission Button - Radiant Sunset Amber / Coral */
+    .univ-btn-admission {
+      background: linear-gradient(135deg, #c2410c 0%, #ea580c 50%, #f97316 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);
+    }
+    .univ-btn-admission:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(234, 88, 12, 0.38);
+      border-color: #ffedd5;
+    }
+    .univ-btn-admission.active {
+      border-color: #ffffff;
+      box-shadow: 0 0 0 2.5px rgba(249, 115, 22, 0.5), 0 8px 20px rgba(234, 88, 12, 0.45);
+    }
+    .univ-pill-adm {
+      background: rgba(249, 115, 22, 0.25);
+      color: #fed7aa;
+      border: 1px solid rgba(249, 115, 22, 0.4);
     }
 
     /* ========================================================================== */
@@ -2209,12 +2236,27 @@
           <div class="univ-btn-left">
             <span class="univ-btn-icon-wrap">📰</span>
             <div class="univ-btn-text-wrap">
-              <span class="univ-btn-title">Admission &amp; General News</span>
-              <span class="univ-btn-sub">Directorate of Admission (DoA) &bull; Latest 15 days media</span>
+              <span class="univ-btn-title">General &amp; Media News</span>
+              <span class="univ-btn-sub">Latest 15 days media &bull; Campus reports</span>
             </div>
           </div>
           <div class="univ-btn-right">
             <span id="badge-count-general" class="univ-btn-count-pill">... Updates</span>
+            <span class="univ-btn-arrow">&#9662;</span>
+          </div>
+        </button>
+
+        <!-- Button 4: Directorate of Admission (Separate Tab) -->
+        <button id="btn-tab-admission" class="univ-eye-btn univ-btn-admission" data-target="admission" type="button" role="tab" aria-selected="false" aria-controls="univ-drawer">
+          <div class="univ-btn-left">
+            <span class="univ-btn-icon-wrap">📢</span>
+            <div class="univ-btn-text-wrap">
+              <span class="univ-btn-title">Directorate of Admission</span>
+              <span class="univ-btn-sub">Latest 1 month data &bull; Official circulars</span>
+            </div>
+          </div>
+          <div class="univ-btn-right">
+            <span id="badge-count-admission" class="univ-btn-count-pill">... Circulars</span>
             <span class="univ-btn-arrow">&#9662;</span>
           </div>
         </button>
@@ -6938,7 +6980,8 @@
       const buttons = {
         cdoe: document.getElementById('btn-tab-cdoe'),
         regular: document.getElementById('btn-tab-regular'),
-        general: document.getElementById('btn-tab-general')
+        general: document.getElementById('btn-tab-general'),
+        admission: document.getElementById('btn-tab-admission')
       };
 
       function escapeHtml(str) {
@@ -7001,22 +7044,27 @@
       // 2. UPDATE BUTTON PILL COUNTS
       // =========================================================================
       function updateCounts() {
-        const fifteenDaysAgo = Date.now() - (15 * 24 * 60 * 60 * 1000);
+        const now = Date.now();
+        const fifteenDaysAgo = now - (15 * 24 * 60 * 60 * 1000);
+        const oneMonthAgo = now - (30 * 24 * 60 * 60 * 1000);
+
         const cdoeCount = allNotices.filter(n => n.category === 'cdoe').length;
         const regCount = allNotices.filter(n => n.category === 'regular').length;
-        const genCount = allNotices.filter(n => {
-          if (n.category !== 'general') return false;
-          if (n.source && n.source.includes('Admission')) return true;
-          return (n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo);
-        }).length;
+        const genCount = allNotices.filter(n => n.category === 'general' && ((n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo))).length;
+        let admCount = allNotices.filter(n => n.category === 'admission' && ((n.timestamp || 0) >= oneMonthAgo || (new Date(n.date).getTime() >= oneMonthAgo))).length;
+        if (admCount < 3) {
+          admCount = allNotices.filter(n => n.category === 'admission').slice(0, 7).length;
+        }
 
         const bCdoe = document.getElementById('badge-count-cdoe');
         const bReg = document.getElementById('badge-count-regular');
         const bGen = document.getElementById('badge-count-general');
+        const bAdm = document.getElementById('badge-count-admission');
 
         if (bCdoe) bCdoe.textContent = cdoeCount + ' Circulars';
         if (bReg) bReg.textContent = regCount + ' Circulars';
-        if (bGen) bGen.textContent = genCount + ' Notifications';
+        if (bGen) bGen.textContent = genCount + ' News Updates';
+        if (bAdm) bAdm.textContent = admCount + ' Circulars';
       }
 
       // =========================================================================
@@ -7058,8 +7106,14 @@
           drawerCount.className = 'univ-drawer-badge';
           drawerCount.style.background = '#dbeafe';
           drawerCount.style.color = '#1d4ed8';
+        } else if (secKey === 'admission') {
+          drawerTitle.textContent = 'Directorate of Admission (DoA) - Latest 1 Month';
+          drawerIcon.textContent = '📢';
+          drawerCount.className = 'univ-drawer-badge';
+          drawerCount.style.background = '#ffedd5';
+          drawerCount.style.color = '#c2410c';
         } else {
-          drawerTitle.textContent = 'Directorate of Admission (DoA) & General News';
+          drawerTitle.textContent = 'General & Outside Media News (Latest 15 Days)';
           drawerIcon.textContent = '📰';
           drawerCount.className = 'univ-drawer-badge';
           drawerCount.style.background = '#f3e8ff';
@@ -7090,12 +7144,16 @@
         if (!drawerList || !activeSection) return;
 
         let list = allNotices.filter(n => n.category === activeSection);
+        const now = Date.now();
         if (activeSection === 'general') {
-          const fifteenDaysAgo = Date.now() - (15 * 24 * 60 * 60 * 1000);
-          list = list.filter(n => {
-            if (n.source && n.source.includes('Admission')) return true;
-            return (n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo);
-          });
+          const fifteenDaysAgo = now - (15 * 24 * 60 * 60 * 1000);
+          list = list.filter(n => (n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo));
+        } else if (activeSection === 'admission') {
+          const oneMonthAgo = now - (30 * 24 * 60 * 60 * 1000);
+          list = list.filter(n => (n.timestamp || 0) >= oneMonthAgo || (new Date(n.date).getTime() >= oneMonthAgo));
+          if (list.length < 3) {
+            list = allNotices.filter(n => n.category === 'admission').slice(0, 7);
+          }
         }
 
         if (searchFilter) {
@@ -7198,7 +7256,7 @@
         const endpoints = [
           '/api/notices',
           'https://academic-hub.faiz01cu.workers.dev/api/notices',
-          'data/university_notices.json?v=20261027-doa'
+          'data/university_notices.json?v=20261027-tab4'
         ];
 
         let success = false;
