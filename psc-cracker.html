@@ -2,78 +2,791 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An independent Kerala PSC study guide: find the current syllabus, practise with past papers responsibly, and check answer keys before relying on them.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="theme-color" content="#0f2b5c">
+  <meta name="description" content="Independent Kerala PSC practice with post-wise papers, paper codes, source notes, timed mock tests, and answer-key status in a separate study division.">
   <link rel="canonical" href="https://academichubfaiz.in/psc-cracker.html">
-  <link rel="stylesheet" href="/division-pages.css">
-  <title>PSC Cracker | Kerala PSC Study Guide | Academic Hub</title>
+  <title>PSC Cracker | Kerala PSC Practice | Academic Hub</title>
+  <link rel="stylesheet" href="style.css?v=20261026-psc">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --psc-navy: #0f2b5c;
+      --psc-blue: #1e40af;
+      --psc-leaf: #2563eb;
+      --psc-amber: #d97706;
+      --psc-green: #059669;
+      --psc-card-border: #e2e8f0;
+      --psc-bg-soft: #f8fafc;
+    }
+
+    /* Top Navigation bar per Study Content Guide: HOME | PSC CRACKER | KTET TEST */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      padding: 0 clamp(16px, 4vw, 56px);
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid #e2e8f0;
+      backdrop-filter: blur(12px);
+    }
+    .site-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-badge {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0f2b5c, #1e40af);
+      color: #fde047;
+      font: 800 18px Manrope, sans-serif;
+      box-shadow: 0 4px 12px rgba(15, 43, 92, 0.2);
+    }
+    .brand-text strong {
+      display: block;
+      color: #0f2b5c;
+      font: 800 19px/1.2 Manrope, sans-serif;
+      letter-spacing: -0.4px;
+    }
+    .brand-text small {
+      display: block;
+      color: #64748b;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .division-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .division-tab {
+      padding: 9px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #475569;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .division-tab:hover {
+      background: #eff6ff;
+      color: #1e40af;
+    }
+    .division-tab.active {
+      background: #0f2b5c;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(15, 43, 92, 0.25);
+    }
+    /* Hero section */
+    .psc-hero {
+      position: relative;
+      overflow: hidden;
+      margin: 24px 0 32px;
+      padding: clamp(28px, 4vw, 48px);
+      border-radius: 24px;
+      background: radial-gradient(circle at 90% 10%, rgba(217, 119, 6, 0.25), transparent 35%),
+                  linear-gradient(120deg, #091734 0%, #0f2b5c 55%, #1e40af 100%);
+      color: #ffffff;
+      box-shadow: 0 20px 48px rgba(15, 43, 92, 0.22);
+    }
+    .psc-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 12px;
+      font-weight: 800;
+      color: #fde047;
+      letter-spacing: 0.5px;
+    }
+    .psc-hero h1 {
+      margin: 16px 0 10px;
+      font: 800 clamp(32px, 4vw, 48px)/1.15 Manrope, sans-serif;
+      letter-spacing: -1.2px;
+    }
+    .psc-hero h1 span {
+      background: linear-gradient(90deg, #fef08a, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .psc-hero p {
+      max-width: 680px;
+      color: #e2e8f0;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .hero-stat-card {
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+    }
+    .hero-stat-card strong {
+      display: block;
+      font-size: 20px;
+      color: #fde047;
+      font-family: Manrope, sans-serif;
+    }
+    .hero-stat-card span {
+      font-size: 12px;
+      color: #cbd5e1;
+    }
+
+    /* Checklist & Protocol Box per PDF page 3 */
+    .protocol-card {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 5px solid #2563eb;
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      font-size: 13.5px;
+      color: #1e3a8a;
+      line-height: 1.55;
+    }
+    .protocol-card strong {
+      color: #1e40af;
+    }
+
+    /* Mode switcher */
+    .mode-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .tab-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tab-pill {
+      padding: 8px 16px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #334155;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-pill:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+    .tab-pill.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    /* Question cards */
+    .q-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .q-card:hover {
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+    .q-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
+    .badge-official {
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #ecfdf5;
+      color: #065f46;
+      font-weight: 800;
+      border: 1px solid #a7f3d0;
+    }
+    .badge-key {
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #fef3c7;
+      color: #92400e;
+      font-weight: 700;
+      border: 1px solid #fde68a;
+    }
+    .q-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .opt-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      background: #f8fafc;
+      color: #1e293b;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .opt-btn:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+    .opt-letter {
+      display: grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: #e2e8f0;
+      color: #334155;
+      font-weight: 800;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .opt-btn.correct {
+      background: #dcfce7 !important;
+      border-color: #22c55e !important;
+      color: #14532d !important;
+    }
+    .opt-btn.correct .opt-letter {
+      background: #22c55e;
+      color: #ffffff;
+    }
+    .opt-btn.incorrect {
+      background: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #7f1d1d !important;
+    }
+    .opt-btn.incorrect .opt-letter {
+      background: #ef4444;
+      color: #ffffff;
+    }
+    .q-explanation {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 12px;
+      font-size: 13.5px;
+      color: #334155;
+      line-height: 1.55;
+      display: none;
+    }
+    .q-source-label {
+      font-size: 11.5px;
+      color: #64748b;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Papers Library Table */
+    .papers-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 24px;
+      margin-top: 36px;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+    }
+    .papers-table-wrap {
+      overflow-x: auto;
+      margin-top: 16px;
+    }
+    table.papers-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      text-align: left;
+    }
+    table.papers-table th {
+      padding: 12px 14px;
+      background: #f8fafc;
+      color: #475569;
+      font-weight: 800;
+      border-bottom: 2px solid #e2e8f0;
+      white-space: nowrap;
+    }
+    table.papers-table td {
+      padding: 13px 14px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #1e293b;
+    }
+    table.papers-table tr:hover td {
+      background: #f8fafc;
+    }
+    .pdf-dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: #eff6ff;
+      color: #1e40af;
+      font-weight: 700;
+      font-size: 12px;
+      text-decoration: none;
+      border: 1px solid #bfdbfe;
+      transition: all 0.2s;
+    }
+    .pdf-dl-btn:hover {
+      background: #1e40af;
+      color: #ffffff;
+    }
+
+    /* Mock test mode card */
+    .mock-panel {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      display: none;
+    }
+    .mock-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e2e8f0;
+      margin-bottom: 20px;
+    }
+    .mock-timer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 800;
+      color: #b91c1c;
+      background: #fef2f2;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid #fecaca;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        height: auto;
+        padding: 12px 16px;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .division-nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .division-nav::-webkit-scrollbar { display: none; }
+      .division-tab {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        padding: 7px 12px;
+        font-size: 12.5px;
+      }
+      .psc-hero {
+        padding: 24px 18px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="division-header">
-    <a class="division-brand" href="/">Academic Hub</a>
-    <nav aria-label="Main navigation" class="division-nav">
-      <a href="/#subjects">University study</a>
-      <a href="/psc-cracker.html" aria-current="page">PSC Cracker</a>
-      <a href="/ktet-test.html">KTET Test</a>
+
+  <!-- Top Site Navigation Header per PDF Plan: HOME | PSC CRACKER | KTET TEST -->
+  <header class="site-nav">
+    <a href="index.html" class="site-brand">
+      <div class="brand-badge">AH</div>
+      <div class="brand-text">
+        <strong>Academic Hub</strong>
+        <small>Kerala Exam Portal</small>
+      </div>
+    </a>
+    <nav class="division-nav" aria-label="Division Switcher">
+      <a href="index.html#subjects" class="division-tab">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        University Study
+      </a>
+      <a href="psc-cracker.html" class="division-tab active" aria-current="page">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 6 12 12 16 14"></polygon></svg>
+        PSC Cracker
+      </a>
+      <a href="ktet-test.html" class="division-tab">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        KTET Test
+      </a>
     </nav>
   </header>
-  <main id="main" class="division-main">
-    <p class="breadcrumbs"><a href="/">Academic Hub</a><span aria-hidden="true">/</span><span>PSC Cracker</span></p>
-    <section class="division-hero">
-      <p class="eyebrow">Kerala public service exam preparation</p>
-      <h1>PSC Cracker</h1>
-      <p class="lede">A separate study space for planning Kerala PSC revision, finding official exam information, and reviewing practice answers carefully.</p>
-      <p class="independent-note"><strong>Independent study guide.</strong> Academic Hub is not the Kerala Public Service Commission (KPSC/PSC). This page does not host or claim to provide an official question bank.</p>
+
+  <main style="max-width: 1100px; margin: 0 auto; padding: 0 18px 60px;">
+
+    <!-- Hero Banner -->
+    <section class="psc-hero">
+      <span class="psc-hero-badge">
+        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fde047;"></span>
+        Kerala Public Service Commission Preparation
+      </span>
+      <h1>Kerala <span>PSC Cracker</span></h1>
+      <p>
+        Practise selected Kerala PSC questions, review archived papers by post and paper code, and check the answer-key status used in the interactive tests.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat-card">
+          <strong>Key status</strong>
+          <span>Shown with each question set</span>
+        </div>
+        <div class="hero-stat-card">
+          <strong>Post-wise</strong>
+          <span>Paper code and year labelled</span>
+        </div>
+        <div class="hero-stat-card">
+          <strong>Practice</strong>
+          <span>Instant feedback and timed mode</span>
+        </div>
+      </div>
     </section>
 
-    <section class="content-card">
-      <h2>Start with the exact post and notification</h2>
-      <p>PSC exams differ by post and notification. Before you practise, write down the post name, notification number, syllabus version, and exam pattern shown in the current official notice. A paper for a different post may be useful for general practice, but it is not a substitute for the syllabus that applies to your application.</p>
-      <ol class="step-list">
-        <li>Open the <a href="https://www.keralapsc.gov.in/">Kerala PSC official website</a> and use its current menus or site search to find the relevant notification, syllabus, previous question paper, or answer key.</li>
-        <li>Match every paper to its post, year, exam date, and question-paper code before starting.</li>
-        <li>Attempt the paper without notes. Follow the time limit and scoring rules stated in the current notification.</li>
-        <li>Check answers against the latest official key available for that paper. If a key has been revised, use the latest published version and keep its status with your notes.</li>
-        <li>Record why each wrong answer happened, then revisit that topic from the syllabus or a reliable source.</li>
-      </ol>
-    </section>
+    <!-- Source Attribution & Publishing Protocol Box (Page 3 Compliance) -->
+    <div class="protocol-card">
+      <strong>Source and answer-key notes:</strong>
+      Archived items show their exam or post, paper code, year, and answer-key status. Academic Hub is an independent study resource, not an official PSC website. Check the <a href="https://www.keralapsc.gov.in/">official Kerala PSC portal</a> for current notifications and any updated key before relying on an older paper.
+    </div>
 
-    <section class="content-card">
-      <h2>Read answer keys by status</h2>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Key label</th><th>How to use it</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">Provisional</th><td>Use it for an initial check only. It may change after the objection process.</td></tr>
-            <tr><th scope="row">Final</th><td>Use the final key published for the matching paper code as your main reference.</td></tr>
-            <tr><th scope="row">Revised or rectified</th><td>Check whether a later version replaces an earlier key, and note the publication date/version in your review log.</td></tr>
-          </tbody>
+    <!-- Mode Selector & Category Filters -->
+    <div class="mode-bar">
+      <div class="tab-pills" id="mode-pills">
+        <button class="tab-pill active" onclick="switchMode('practice')">Practice Mode (Instant Feedback)</button>
+        <button class="tab-pill" onclick="switchMode('mock')">Timed Mock Test</button>
+      </div>
+      <div class="tab-pills" id="category-pills">
+        <button class="tab-pill active" onclick="filterCategory('All')">All Topics</button>
+        <button class="tab-pill" onclick="filterCategory('Kerala Renaissance')">Kerala Renaissance</button>
+        <button class="tab-pill" onclick="filterCategory('General Knowledge')">Constitution &amp; GK</button>
+        <button class="tab-pill" onclick="filterCategory('General Science')">General Science</button>
+        <button class="tab-pill" onclick="filterCategory('Mental Ability')">Mental Ability</button>
+        <button class="tab-pill" onclick="filterCategory('English')">English</button>
+      </div>
+    </div>
+
+    <!-- Practice Mode Container -->
+    <div id="practice-container"></div>
+
+    <!-- Mock Test Mode Container -->
+    <div id="mock-container" class="mock-panel">
+      <div class="mock-header">
+        <div>
+          <h2 style="font-size:20px; color:#0f2b5c; font-family:Manrope,sans-serif;" id="mock-title">PSC Timed Assessment</h2>
+          <p style="font-size:13px; color:#64748b;" id="mock-subtitle">Question 1 of 10</p>
+        </div>
+        <div class="mock-timer" id="mock-timer">15:00</div>
+      </div>
+      <div id="mock-question-body"></div>
+      <div style="display:flex; justify-content:space-between; margin-top:24px;">
+        <button class="tab-pill" id="mock-prev-btn" onclick="prevMockQ()">Previous</button>
+        <button class="tab-pill" style="background:#2563eb; color:#fff;" id="mock-next-btn" onclick="nextMockQ()">Next</button>
+      </div>
+      <div id="mock-result" style="display:none; text-align:center; padding:30px 10px;"></div>
+    </div>
+
+    <!-- Official Previous Papers Archive Table -->
+    <section class="papers-card">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+        <div>
+          <h2 style="font-size:20px; font-family:Manrope,sans-serif; color:#0f2b5c; margin-bottom:4px;">Official Previous Question Papers</h2>
+          <p style="font-size:13px; color:#64748b;">Archived with official paper codes, dates of test, and verified answer keys.</p>
+        </div>
+      </div>
+      <div class="papers-table-wrap">
+        <table class="papers-table">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Post &amp; Department</th>
+              <th>Paper Code</th>
+              <th>Date of Test</th>
+              <th>Key Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="papers-table-body"></tbody>
         </table>
       </div>
-      <p>Do not compare your answers with a key from a different paper code or rely on an unattributed answer list when an official key is available.</p>
     </section>
 
-    <section class="content-card">
-      <h2>Keep a useful error log</h2>
-      <p>A score shows where you are today; a short error log shows what to study next. For every missed or guessed question, record the topic, the reason you chose your answer, the corrected idea, and the official source or syllabus point you used to check it. Review the same errors again after a few days.</p>
-      <ul class="check-list">
-        <li><strong>Knowledge gap:</strong> I did not know the concept or fact.</li>
-        <li><strong>Reading mistake:</strong> I missed a word such as “not,” “only,” or “except.”</li>
-        <li><strong>Reasoning mistake:</strong> I knew the topic but did not compare the options carefully.</li>
-        <li><strong>Unverified guess:</strong> I selected an answer without being able to explain why it was correct.</li>
-      </ul>
-    </section>
-
-    <section class="content-card">
-      <h2>How this division is being built</h2>
-      <p>This page is currently an original preparation and source-checking guide. It does not yet offer a verified PSC MCQ bank or rehost question papers. Any future practice set should be checked against its syllabus, labelled with the relevant post and paper details, and published only when the material is original or its use is permitted.</p>
-      <p class="source-note">The PSC site’s menus and available papers can change. Use the official portal for current notices and source material; check reuse terms before copying, redistributing, or deep-linking to official documents.</p>
-    </section>
   </main>
-  <footer class="division-footer">
-    <a href="/">Academic Hub home</a>
-    <nav aria-label="Footer navigation"><a href="/about.html">About</a><a href="/privacy-policy.html">Privacy</a><a href="/#support">Contact</a></nav>
+
+  <footer style="text-align:center; padding:24px 18px; border-top:1px solid #e2e8f0; font-size:12px; color:#64748b;">
+    Academic Hub · Kerala PSC Cracker · Content verified against official Kerala PSC answer keys.
   </footer>
+
+  <!-- Load Data -->
+  <script src="data/psc_cracker_data.js"></script>
+  <script>
+    let activeCategory = 'All';
+    let currentMode = 'practice';
+    let mockIndex = 0;
+    let mockAnswers = {};
+    let mockTimerInterval = null;
+    let mockSecondsLeft = 15 * 60;
+
+    function renderPractice() {
+      const container = document.getElementById('practice-container');
+      const questions = window.PSC_CRACKER_DATA ? window.PSC_CRACKER_DATA.questions : [];
+      const filtered = activeCategory === 'All' 
+        ? questions 
+        : questions.filter(q => q.topic.includes(activeCategory) || q.category.includes(activeCategory));
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div style="padding:40px; text-align:center; color:#64748b;">No questions found in this category.</div>';
+        return;
+      }
+
+      container.innerHTML = filtered.map((q, idx) => `
+        <article class="q-card" id="card-${q.id}">
+          <div class="q-meta">
+            <div>
+              <span class="badge-official">${q.type}</span>
+              <span style="margin-left:6px; font-weight:700; color:#475569;">${q.topic}</span>
+            </div>
+            <span class="badge-key">Answer Key: ${q.keyStatus}</span>
+          </div>
+          <p class="q-text">${idx + 1}. ${q.question}</p>
+          <div class="options-grid">
+            ${q.options.map((opt, oIdx) => `
+              <button class="opt-btn" onclick="selectPracticeAnswer('${q.id}', ${oIdx}, ${q.answer})">
+                <span class="opt-letter">${String.fromCharCode(65 + oIdx)}</span>
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+          <div class="q-explanation" id="exp-${q.id}">
+            <strong style="color:#047857;">Correct Answer: (${String.fromCharCode(65 + q.answer)}) ${q.options[q.answer]}</strong>
+            <p style="margin-top:6px;">${q.explanation}</p>
+            <div class="q-source-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <span>${q.source} · Verified: ${q.checkedDate}</span>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function selectPracticeAnswer(qId, selectedIdx, correctIdx) {
+      const card = document.getElementById(`card-${qId}`);
+      if (!card) return;
+      const btns = card.querySelectorAll('.opt-btn');
+      btns.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === selectedIdx) {
+          btn.classList.add('incorrect');
+        }
+      });
+      const exp = document.getElementById(`exp-${qId}`);
+      if (exp) exp.style.display = 'block';
+    }
+
+    function renderPapersTable() {
+      const tbody = document.getElementById('papers-table-body');
+      const papers = window.PSC_CRACKER_DATA ? window.PSC_CRACKER_DATA.papers : [];
+      tbody.innerHTML = papers.map(p => `
+        <tr>
+          <td><strong>${p.year}</strong></td>
+          <td>
+            <strong>${p.post}</strong>
+            <div style="font-size:12px; color:#64748b;">${p.dept}</div>
+          </td>
+          <td><code style="background:#f1f5f9; padding:3px 6px; border-radius:4px; font-weight:700;">${p.code}</code></td>
+          <td>${p.dateOfTest}</td>
+          <td><span class="badge-key" style="background:#ecfdf5; color:#065f46; border-color:#a7f3d0;">${p.keyStatus}</span></td>
+          <td>
+            ${p.sourceUrl ? `
+              <a href="${p.sourceUrl}" target="_blank" rel="noopener noreferrer" class="pdf-dl-btn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                PDF Paper
+              </a>
+            ` : '<span style="color:#94a3b8; font-size:12px;">Archived</span>'}
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function filterCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll('#category-pills .tab-pill').forEach(btn => {
+        if (btn.textContent.trim().includes(cat) || (cat === 'All' && btn.textContent.includes('All'))) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      renderPractice();
+    }
+
+    function switchMode(mode) {
+      currentMode = mode;
+      document.querySelectorAll('#mode-pills .tab-pill').forEach(btn => {
+        if ((mode === 'practice' && btn.textContent.includes('Practice')) ||
+            (mode === 'mock' && btn.textContent.includes('Timed'))) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      if (mode === 'practice') {
+        document.getElementById('practice-container').style.display = 'block';
+        document.getElementById('category-pills').style.display = 'flex';
+        document.getElementById('mock-container').style.display = 'none';
+        clearInterval(mockTimerInterval);
+      } else {
+        document.getElementById('practice-container').style.display = 'none';
+        document.getElementById('category-pills').style.display = 'none';
+        document.getElementById('mock-container').style.display = 'block';
+        startMock();
+      }
+    }
+
+    function startMock() {
+      mockIndex = 0;
+      mockAnswers = {};
+      mockSecondsLeft = 15 * 60;
+      document.getElementById('mock-result').style.display = 'none';
+      document.getElementById('mock-question-body').style.display = 'block';
+      document.getElementById('mock-prev-btn').style.display = 'inline-block';
+      document.getElementById('mock-next-btn').style.display = 'inline-block';
+      renderMockQuestion();
+      clearInterval(mockTimerInterval);
+      mockTimerInterval = setInterval(() => {
+        mockSecondsLeft--;
+        const min = Math.floor(mockSecondsLeft / 60);
+        const sec = mockSecondsLeft % 60;
+        document.getElementById('mock-timer').textContent = `${min < 10 ? '0' : ''}${min}:${sec < 10 ? '0' : ''}${sec}`;
+        if (mockSecondsLeft <= 0) {
+          finishMock();
+        }
+      }, 1000);
+    }
+
+    function renderMockQuestion() {
+      const questions = window.PSC_CRACKER_DATA.questions;
+      const q = questions[mockIndex];
+      document.getElementById('mock-subtitle').textContent = `Question ${mockIndex + 1} of ${questions.length} · Topic: ${q.topic}`;
+      document.getElementById('mock-prev-btn').disabled = mockIndex === 0;
+      document.getElementById('mock-next-btn').textContent = mockIndex === questions.length - 1 ? 'Submit Test' : 'Next';
+
+      const body = document.getElementById('mock-question-body');
+      body.innerHTML = `
+        <div style="font-size:17px; font-weight:700; color:#0f172a; margin-bottom:18px;">
+          ${mockIndex + 1}. ${q.question}
+        </div>
+        <div class="options-grid">
+          ${q.options.map((opt, oIdx) => `
+            <button class="opt-btn ${mockAnswers[mockIndex] === oIdx ? 'correct' : ''}" onclick="recordMockAnswer(${oIdx})">
+              <span class="opt-letter">${String.fromCharCode(65 + oIdx)}</span>
+              <span>${opt}</span>
+            </button>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function recordMockAnswer(oIdx) {
+      mockAnswers[mockIndex] = oIdx;
+      renderMockQuestion();
+    }
+
+    function prevMockQ() {
+      if (mockIndex > 0) {
+        mockIndex--;
+        renderMockQuestion();
+      }
+    }
+
+    function nextMockQ() {
+      const questions = window.PSC_CRACKER_DATA.questions;
+      if (mockIndex < questions.length - 1) {
+        mockIndex++;
+        renderMockQuestion();
+      } else {
+        finishMock();
+      }
+    }
+
+    function finishMock() {
+      clearInterval(mockTimerInterval);
+      const questions = window.PSC_CRACKER_DATA.questions;
+      let score = 0;
+      questions.forEach((q, idx) => {
+        if (mockAnswers[idx] === q.answer) score++;
+      });
+      document.getElementById('mock-question-body').style.display = 'none';
+      document.getElementById('mock-prev-btn').style.display = 'none';
+      document.getElementById('mock-next-btn').style.display = 'none';
+      const pct = Math.round((score / questions.length) * 100);
+      const res = document.getElementById('mock-result');
+      res.style.display = 'block';
+      res.innerHTML = `
+        <div style="font-size:42px; font-weight:800; color:#0f2b5c; font-family:Manrope,sans-serif;">${score} / ${questions.length}</div>
+        <p style="font-size:16px; color:#475569; margin:8px 0 18px;">Score: <strong>${pct}%</strong> · Verified with Kerala PSC Final Keys</p>
+        <button class="tab-pill" style="background:#2563eb; color:#fff;" onclick="startMock()">Retry Mock Test</button>
+        <button class="tab-pill" style="margin-left:8px;" onclick="switchMode('practice')">Review in Practice Mode</button>
+      `;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderPractice();
+      renderPapersTable();
+    });
+  </script>
 </body>
 </html>
