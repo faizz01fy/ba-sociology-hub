@@ -2871,14 +2871,46 @@
     }
 
     // In-Page PDF Viewer Modal
+    
+    let isNativeFastMode = false;
+    let currentPdfCleanUrl = '';
+    let currentPdfCleanTitle = '';
+
+    function toggleModalReaderEngine() {
+      if (!currentPdfCleanUrl) return;
+      isNativeFastMode = !isNativeFastMode;
+      viewPdf(currentPdfCleanUrl, currentPdfCleanTitle);
+    }
+
     function viewPdf(url, title) {
-      document.getElementById('modalTitle').innerText = title;
-      const clean = url.split('#')[0];
-      const readerUrl = 'study-guide-reader.html?file=' + encodeURIComponent(clean) + '&tab=malayalam_reading';
-      document.getElementById('pdfFrame').src = readerUrl;
+      currentPdfCleanUrl = url.split('#')[0];
+      currentPdfCleanTitle = title;
+      const modalTitle = document.getElementById('modalTitle');
+      if (modalTitle) modalTitle.innerText = title;
+
+      const frame = document.getElementById('pdfFrame');
       const extBtn = document.getElementById('modalExternalBtn');
-      if (extBtn) extBtn.href = readerUrl;
-      document.getElementById('viewerModal').style.display = 'block';
+      const toggleBtn = document.getElementById('modalFastToggle');
+
+      if (isNativeFastMode) {
+        frame.src = currentPdfCleanUrl + '#toolbar=1&navpanes=1&zoom=page-width';
+        if (extBtn) extBtn.href = currentPdfCleanUrl;
+        if (toggleBtn) {
+          toggleBtn.innerText = '📖 Enhanced';
+          toggleBtn.style.background = '#4338ca';
+        }
+      } else {
+        const readerUrl = 'study-guide-reader.html?file=' + encodeURIComponent(currentPdfCleanUrl) + '&tab=malayalam_reading';
+        frame.src = readerUrl;
+        if (extBtn) extBtn.href = readerUrl;
+        if (toggleBtn) {
+          toggleBtn.innerText = '⚡ Fast View';
+          toggleBtn.style.background = '#059669';
+        }
+      }
+
+      const modal = document.getElementById('viewerModal');
+      if (modal) modal.style.display = 'block';
       document.body.style.overflow = 'hidden';
     }
 

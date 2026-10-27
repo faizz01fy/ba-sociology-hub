@@ -1333,7 +1333,8 @@
 <div class="modal-header">
 <h3 id="modalTitle">Study Guide Reader</h3>
 <div class="modal-header-actions">
-<button class="modal-action-btn modal-btn-back" onclick="closeViewer()" title="Go Back" type="button">← Back</button>
+<button id="modalFastToggle" class="modal-action-btn" onclick="toggleModalReaderEngine()" title="Toggle Instant Native Reader / Enhanced Reader" type="button" style="font-size:12px; font-weight:800; padding:5px 11px; border-radius:8px; background:#059669; color:#fff; border:none; cursor:pointer; margin-right:4px;">⚡ Fast View</button>
+          <button class="modal-action-btn modal-btn-back" onclick="closeViewer()" title="Go Back" type="button">← Back</button>
 <a class="modal-action-btn modal-btn-home" href="index.html#top" title="Academic Hub Home">⌂ Home</a>
 <button aria-label="Zoom Out" class="modal-action-btn" onclick="zoomModalReader(-0.25)" title="Zoom Out" type="button">Zoom −</button>
 <button aria-label="Zoom In" class="modal-action-btn" onclick="zoomModalReader(0.25)" title="Zoom In" type="button">Zoom +</button>
@@ -1401,14 +1402,46 @@
       });
     }
 
+    
+    let isNativeFastMode = false;
+    let currentPdfCleanUrl = '';
+    let currentPdfCleanTitle = '';
+
+    function toggleModalReaderEngine() {
+      if (!currentPdfCleanUrl) return;
+      isNativeFastMode = !isNativeFastMode;
+      viewPdf(currentPdfCleanUrl, currentPdfCleanTitle);
+    }
+
     function viewPdf(url, title) {
-      document.getElementById('modalTitle').innerText = title;
-      const clean = url.split('#')[0];
-      const readerUrl = 'study-guide-reader.html?file=' + encodeURIComponent(clean) + '&tab=malayalam_reading';
-      document.getElementById('pdfFrame').src = readerUrl;
+      currentPdfCleanUrl = url.split('#')[0];
+      currentPdfCleanTitle = title;
+      const modalTitle = document.getElementById('modalTitle');
+      if (modalTitle) modalTitle.innerText = title;
+
+      const frame = document.getElementById('pdfFrame');
       const extBtn = document.getElementById('modalExternalBtn');
-      if (extBtn) extBtn.href = readerUrl;
-      document.getElementById('viewerModal').style.display = 'block';
+      const toggleBtn = document.getElementById('modalFastToggle');
+
+      if (isNativeFastMode) {
+        frame.src = currentPdfCleanUrl + '#toolbar=1&navpanes=1&zoom=page-width';
+        if (extBtn) extBtn.href = currentPdfCleanUrl;
+        if (toggleBtn) {
+          toggleBtn.innerText = '📖 Enhanced';
+          toggleBtn.style.background = '#4338ca';
+        }
+      } else {
+        const readerUrl = 'study-guide-reader.html?file=' + encodeURIComponent(currentPdfCleanUrl) + '&tab=malayalam_reading';
+        frame.src = readerUrl;
+        if (extBtn) extBtn.href = readerUrl;
+        if (toggleBtn) {
+          toggleBtn.innerText = '⚡ Fast View';
+          toggleBtn.style.background = '#059669';
+        }
+      }
+
+      const modal = document.getElementById('viewerModal');
+      if (modal) modal.style.display = 'block';
       document.body.style.overflow = 'hidden';
     }
 
