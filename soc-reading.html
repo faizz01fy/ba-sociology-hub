@@ -820,38 +820,127 @@
 
   <style id="subject-eye-catching-theme">
     :root {
-      --primary: #dc2626;
-      --primary-dark: #b91c1c;
-      --primary-light: #fff1f2;
-      --primary-border: #fecdd3;
+      --primary: #7e22ce;
+      --primary-dark: #6b21a8;
+      --primary-light: #faf5ff;
+      --primary-border: #e9d5ff;
     }
     .hero {
-      background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 50%, #fef2f2 100%) !important;
-      border: 1.5px solid #fecdd3 !important;
-      box-shadow: 0 8px 24px rgba(220, 38, 38, 0.12) !important;
+      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 50%, #f5f3ff 100%) !important;
+      border: 1.5px solid #d8b4fe !important;
+      box-shadow: 0 8px 24px rgba(126, 34, 206, 0.12) !important;
     }
     .filter-btn.active {
-      background: #dc2626 !important;
-      border-color: #b91c1c !important;
+      background: #7e22ce !important;
+      border-color: #6b21a8 !important;
       color: #ffffff !important;
-      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.12) !important;
+      box-shadow: 0 4px 14px rgba(126, 34, 206, 0.3) !important;
     }
     .filter-btn:hover:not(.active) {
-      background: #fff1f2 !important;
-      border-color: #dc2626 !important;
-      color: #dc2626 !important;
+      background: #f3e8ff !important;
+      border-color: #7e22ce !important;
+      color: #7e22ce !important;
     }
     .read-btn, .btn-primary, .chapter-badge {
-      background: #dc2626 !important;
+      background: #7e22ce !important;
       color: #ffffff !important;
     }
     .chapter-card:hover {
-      border-color: #dc2626 !important;
-      box-shadow: 0 8px 20px rgba(220, 38, 38, 0.12) !important;
+      border-color: #7e22ce !important;
+      box-shadow: 0 8px 20px rgba(126, 34, 206, 0.15) !important;
     }
   </style>
 
   
+<style>
+    /* Premium Navigation: Back and Home Buttons */
+    @keyframes blink-nav-back {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+      }
+      50% {
+        transform: scale(1.04);
+        filter: brightness(1.2);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.75);
+      }
+    }
+    @keyframes blink-nav-home {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45);
+      }
+      50% {
+        transform: scale(1.04);
+        filter: brightness(1.2);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.75);
+      }
+    }
+    .reading-top-nav .btn-back,
+    .bottom-nav .nav-btn-back,
+    .modal-action-btn.modal-btn-back {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #4338ca 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+      font-weight: 850 !important;
+      text-shadow: 0 1px 2px rgba(15, 23, 42, 0.4);
+      animation: blink-nav-back 2.2s infinite ease-in-out !important;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .reading-top-nav .btn-home,
+    .bottom-nav .nav-btn-home,
+    .modal-action-btn.modal-btn-home {
+      background: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+      font-weight: 850 !important;
+      text-shadow: 0 1px 2px rgba(15, 23, 42, 0.4);
+      animation: blink-nav-home 2.2s infinite ease-in-out !important;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .reading-top-nav .btn-back:hover,
+    .bottom-nav .nav-btn-back:hover,
+    .modal-action-btn.modal-btn-back:hover,
+    .reading-top-nav .btn-home:hover,
+    .bottom-nav .nav-btn-home:hover,
+    .modal-action-btn.modal-btn-home:hover {
+      animation-play-state: paused !important;
+      transform: translateY(-2px) scale(1.04) !important;
+    }
+    .bottom-nav {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1.5px solid #e2e8f0;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .bottom-nav .nav-btn-back,
+    .bottom-nav .nav-btn-home {
+      min-height: 48px;
+      padding: 12px 28px;
+      border-radius: 14px;
+      font-size: 15px;
+      min-width: 170px;
+    }
+</style>
 </head>
 <body>
 
@@ -874,11 +963,13 @@
 
     <!-- Filter Buttons -->
     <nav class="filter-wrapper" aria-label="Module filters">
-      <button class="filter-btn active" onclick="filterModule('mod1', this)">മൊഡ്യൂൾ 1: സോഷ്യോളജി ആമുഖം (Module 1: Introducing Sociology)</button>
-      <button class="filter-btn" onclick="filterModule('mod2', this)">മൊഡ്യൂൾ 2: സോഷ്യോളജി പ്രയോഗം (Module 2: Practicing Sociology)</button>
-      <button class="filter-btn" onclick="filterModule('mod3', this)">മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Module 3: Individual & Society)</button>
-      <button class="filter-btn" onclick="filterModule('mod4', this)">മൊഡ്യൂൾ 4: സ്ഥാപനങ്ങളും സംസ്കാരവും (Module 4: Institutions & Culture)</button>
-      <button class="filter-btn" onclick="filterModule('mod5', this)">മൊഡ്യൂൾ 5: ഫീൽഡ് വർക്കും രീതിശാസ്ത്രവും (Module 5: Doing Sociology / Field Dynamics)</button>
+      <button class="filter-btn" data-mod="syllabus" onclick="filterModule('syllabus', this)">📋 സിലബസ് രൂപരേഖ (Syllabus Structure)</button>
+      <button class="filter-btn active" data-mod="mod1" onclick="filterModule('mod1', this)">മൊഡ്യൂൾ 1: സോഷ്യോളജി ആമുഖം (Module 1: Introducing Sociology)</button>
+      <button class="filter-btn" data-mod="mod2" onclick="filterModule('mod2', this)">മൊഡ്യൂൾ 2: സോഷ്യോളജി പ്രയോഗം (Module 2: Practicing Sociology)</button>
+      <button class="filter-btn" data-mod="mod3" onclick="filterModule('mod3', this)">മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Module 3: Individual & Society)</button>
+      <button class="filter-btn" data-mod="mod4" onclick="filterModule('mod4', this)">മൊഡ്യൂൾ 4: സ്ഥാപനങ്ങളും സംസ്കാരവും (Module 4: Institutions & Culture)</button>
+      <button class="filter-btn" data-mod="mod5" onclick="filterModule('mod5', this)">മൊഡ്യൂൾ 5: ഫീൽഡ് വർക്കും രീതിശാസ്ത്രവും (Module 5: Doing Sociology / Field Dynamics)</button>
+      <button class="filter-btn" data-mod="all" onclick="filterModule('all', this)">📚 എല്ലാ അധ്യായങ്ങളും (All Modules)</button>
     </nav>
 
     <!-- Search Input -->
@@ -1249,9 +1340,10 @@
 
     <!-- Bottom Navigation -->
     <div class="bottom-nav">
+      <button type="button" class="nav-btn nav-btn-back" onclick="if(window.history.length>1){window.history.back();}else{window.location.href='index.html#subjects';}" aria-label="Go back">← Back</button>
       <a class="nav-btn nav-soc-lms" href="soc-lms.html">📄 Sociology LMS PDF (Original)</a>
       <a class="nav-btn nav-mock-test" href="sociology-mock-test-final-60q.html">📝 Sociology Comprehensive Mock Test</a>
-      <a class="nav-btn nav-home" href="index.html">← Back to Portal Home</a>
+      <a class="nav-btn nav-btn nav-btn-home" href="index.html">← Back to Portal Home</a>
     </div>
 
   </main>
@@ -1260,7 +1352,14 @@
     function filterModule(modId, btn) {
       const buttons = document.querySelectorAll('.filter-btn');
       buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      
+      if (btn) {
+        btn.classList.add('active');
+      } else {
+        const found = document.querySelector(`.filter-btn[data-mod="${modId}"]`) || 
+                      document.querySelector(`.filter-btn[onclick*="${modId}"]`);
+        if (found) found.classList.add('active');
+      }
 
       const sections = document.querySelectorAll('.module-section');
       sections.forEach(sec => {
@@ -1270,12 +1369,34 @@
           sec.style.display = 'none';
         }
       });
+
+      // Clear or re-filter chapters when switching modules
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput && searchInput.value.trim() !== '') {
+        filterChapters();
+      }
     }
 
     function filterChapters() {
-      const query = document.getElementById('searchInput').value.toLowerCase();
+      const query = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
+      const activeBtn = document.querySelector('.filter-btn.active');
+      const activeMod = activeBtn ? (activeBtn.getAttribute('data-mod') || 'mod1') : 'all';
+
+      const sections = document.querySelectorAll('.module-section');
       const cards = document.querySelectorAll('.chapter-card');
-      
+
+      if (!query) {
+        sections.forEach(sec => {
+          if (activeMod === 'all' || sec.getAttribute('data-mod') === activeMod) {
+            sec.style.display = 'block';
+          } else {
+            sec.style.display = 'none';
+          }
+        });
+        cards.forEach(card => card.style.display = 'grid');
+        return;
+      }
+
       cards.forEach(card => {
         const text = card.innerText.toLowerCase();
         if (text.includes(query)) {
@@ -1287,18 +1408,17 @@
     }
 
     function viewPdf(url, title) {
-      document.getElementById('modalTitle').innerText = title;
+      const modalTitle = document.getElementById('modalTitle');
+      if (modalTitle) modalTitle.innerText = title;
       const clean = url.split('#')[0];
       const readerUrl = 'study-guide-reader.html?file=' + encodeURIComponent(clean) + '&tab=malayalam_reading';
-      document.getElementById('pdfFrame').src = readerUrl;
+      const frame = document.getElementById('pdfFrame');
+      if (frame) frame.src = readerUrl;
       const extBtn = document.getElementById('modalExternalBtn');
       if (extBtn) extBtn.href = readerUrl;
-      document.getElementById('viewerModal').style.display = 'block';
+      const modal = document.getElementById('viewerModal');
+      if (modal) modal.style.display = 'block';
       document.body.style.overflow = 'hidden';
-    }
-
-    function triggerModalVoice() { /* Voice reading removed */ }, '*');
-      }
     }
 
     function closeViewer() {
@@ -1308,12 +1428,23 @@
           frame.contentWindow.postMessage({ action: 'stopVoiceReader' }, '*');
         } catch(e) {}
       }
-      document.getElementById('viewerModal').style.display = 'none';
-      document.getElementById('pdfFrame').src = '';
+      const modal = document.getElementById('viewerModal');
+      if (modal) modal.style.display = 'none';
+      if (frame) frame.src = '';
       document.body.style.overflow = '';
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
       }
+    }
+
+    function zoomModalReader(delta) {
+      const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
+      f?.contentWindow?.postMessage({ action: 'zoom', delta: delta }, '*');
+    }
+
+    function resetModalReaderZoom() {
+      const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
+      f?.contentWindow?.postMessage({ action: 'resetZoom' }, '*');
     }
 
     window.onclick = function(event) {
@@ -1345,65 +1476,35 @@
         e.preventDefault();
       }
     }, true);
-  </script>
 
+    // Auto-activate requested or default Module 1
+    (function initModuleActivation() {
+      function activate() {
+        const hash = window.location.hash ? window.location.hash.replace('#', '') : '';
+        let targetMod = 'mod1';
+        if (hash === 'syl' || hash === 'syllabus') {
+          targetMod = 'syllabus';
+        } else if (['mod1', 'mod2', 'mod3', 'mod4', 'mod5', 'all'].includes(hash)) {
+          targetMod = hash;
+        }
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const activeBtn = document.querySelector('.filter-btn.active') || document.querySelector('.filter-btn');
-      if (activeBtn) {
-        activeBtn.click();
+        const targetBtn = document.querySelector(`.filter-btn[data-mod="${targetMod}"]`) || 
+                          document.querySelector(`.filter-btn[onclick*="${targetMod}"]`) || 
+                          document.querySelector('.filter-btn');
+        if (typeof filterModule === 'function' && targetBtn) {
+          filterModule(targetMod, targetBtn);
+        }
       }
-    });
-  </script>
 
-<script>
-    // Modal Reader Zoom Controls (communicates with study-guide-reader)
-    function zoomModalReader(delta) {
-      const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
-      f?.contentWindow?.postMessage({ action: 'zoom', delta: delta }, '*');
-    }
-    function resetModalReaderZoom() {
-      const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
-      f?.contentWindow?.postMessage({ action: 'resetZoom' }, '*');
-    }
-</script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Direct jump to Module 1 on page load unless specific hash provided
-      const hash = window.location.hash ? window.location.hash.replace('#', '') : 'mod1';
-      const targetMod = (hash === 'syl' || hash === 'syllabus') ? hash : 'mod1';
-      const targetBtn = document.querySelector(`.filter-btn[onclick*="${targetMod}"]`) || document.querySelector('.filter-btn[onclick*="mod1"]');
-      if (typeof filterModule === 'function' && targetBtn) {
-        filterModule(targetMod, targetBtn);
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', activate);
+      } else {
+        activate();
       }
-    });
+    })();
   </script>
 
-
-<script>
-// Auto-initialize reading view directly to Module 1 (Never Syllabus or all simultaneously)
-(function() {
-  function activateModule1() {
-    const mod1Btn = document.querySelector('.filter-btn[data-mod="mod1"]') || 
-                    document.querySelector('.filter-btn[data-filter="mod1"]') || 
-                    Array.from(document.querySelectorAll('.filter-btn')).find(b => /mod(?:ule)?\s*1|മൊഡ്യൂൾ\s*1/i.test(b.textContent)) ||
-                    document.querySelector('.filter-btn.active');
-    if (typeof filterModule === 'function' && mod1Btn) {
-      filterModule('mod1', mod1Btn);
-    }
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', activateModule1);
-  } else {
-    activateModule1();
-  }
-})();
-</script>
-
-
-    <!-- Instant PDF Pre-warmer for all subject cards & tabs -->
+  <!-- Instant PDF Pre-warmer for all subject cards & tabs -->
   <script id="fast-subject-prewarmer">
     (function() {
       const prewarmed = new Set();
