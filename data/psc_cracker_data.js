@@ -1,272 +1,265 @@
-// Kerala PSC Cracker - Official Data & Question Bank
+// Kerala PSC Cracker - Independent practice data
 // Following Guidelines in Study Content Guide | Kerala PSC + K-TET
-// Checked: 26 October 2026
-// Verified & Hosted on Academic Hub CDN (SSL Secured)
+// Checked: 27 October 2026
+// Question references use PSC paper codes; official PDFs are not mirrored here.
 
 window.PSC_CRACKER_DATA = {
   meta: {
     division: "PSC Cracker",
-    description: "Kerala PSC previous papers, answer-key verified practice tests and topic-wise preparation",
-    attributionPattern: "Source: Kerala PSC, [exam/post], paper code [code], [year]. Answer key: [provisional/final/rectified]. Checked: [date]."
+    description: "Official paper references with independently written Kerala PSC topic practice questions.",
+    attributionPattern: "Practice questions are original Academic Hub items; official paper records and key status link to Kerala PSC."
   },
   papers: [
     {
-      id: "psc_175_2016",
-      year: 2016,
-      post: "Tradesman - Automobile Mechanic",
-      dept: "Technical Education",
-      code: "175/2016",
-      dateOfTest: "23.12.2016",
-      keyStatus: "Final",
-      checkedDate: "26 October 2026",
-      sourceUrl: "pdfs/psc/psc_175_2016.pdf",
-      category: "Technical / Tradesman",
-      type: "Official Past Paper"
+      "id": "psc_175_2016",
+      "year": 2016,
+      "post": "Tradesman - Automobile Mechanic",
+      "dept": "Technical Education - Palakkad",
+      "code": "175/2016",
+      "dateOfTest": "23.12.2016",
+      "keyStatus": "Provisional key listed",
+      "checkedDate": "27 October 2026",
+      "sourceUrl": "https://www.keralapsc.gov.in/tradesman-automobile-mechanic-technical-education",
+      "category": "Technical / Tradesman",
+      "type": "Official paper reference"
     },
     {
-      id: "psc_171_2016",
-      year: 2016,
-      post: "UP School Assistant - Malayalam Medium",
-      dept: "Education",
-      code: "171/2016",
-      dateOfTest: "17.12.2016",
-      keyStatus: "Final",
-      checkedDate: "26 October 2026",
-      sourceUrl: "pdfs/psc/psc_171_2016.pdf",
-      category: "Teaching / Education",
-      type: "Official Past Paper"
+      "id": "psc_171_2016",
+      "year": 2016,
+      "post": "UP School Assistant - Malayalam Medium",
+      "dept": "Education",
+      "code": "171/2016",
+      "dateOfTest": "17.12.2016",
+      "keyStatus": "Final key listed",
+      "checkedDate": "27 October 2026",
+      "sourceUrl": "https://www.keralapsc.gov.in/school-assistant-malayalam-medium-education-2",
+      "category": "Teaching / Education",
+      "type": "Official paper reference"
     },
     {
-      id: "psc_170_2016",
-      year: 2016,
-      post: "Lecturer in Civil Engineering",
-      dept: "Govt Polytechnics / Technical Education",
-      code: "170/2016",
-      dateOfTest: "16.12.2016",
-      keyStatus: "Final",
-      checkedDate: "26 October 2026",
-      sourceUrl: "pdfs/psc/psc_170_2016.pdf",
-      category: "Degree / Polytechnic Lecturer",
-      type: "Official Past Paper"
+      "id": "psc_170_2016",
+      "year": 2016,
+      "post": "Lecturer in Civil Engineering - Govt Polytechnics",
+      "dept": "Technical Education",
+      "code": "170/2016",
+      "dateOfTest": "16.12.2016",
+      "keyStatus": "Provisional key listed",
+      "checkedDate": "27 October 2026",
+      "sourceUrl": "https://www.keralapsc.gov.in/lecturer-civil-engineering-govt-polytechnics-technical-education-0",
+      "category": "Degree / Polytechnic Lecturer",
+      "type": "Official paper reference"
     },
     {
-      id: "psc_167_2016",
-      year: 2016,
-      post: "Lecturer in Electrical & Electronics Engineering",
-      dept: "Govt Polytechnics / Technical Education",
-      code: "167/2016",
-      dateOfTest: "09.12.2016",
-      keyStatus: "Final",
-      checkedDate: "26 October 2026",
-      sourceUrl: "pdfs/psc/psc_167_2016.pdf",
-      category: "Degree / Polytechnic Lecturer",
-      type: "Official Past Paper"
+      "id": "psc_167_2016",
+      "year": 2016,
+      "post": "Lecturer in Electrical and Electronics Engineering - Govt Polytechnics",
+      "dept": "Technical Education",
+      "code": "167/2016",
+      "dateOfTest": "09.12.2016",
+      "keyStatus": "Provisional key listed",
+      "checkedDate": "27 October 2026",
+      "sourceUrl": "https://www.keralapsc.gov.in/lecturer-electrical-and-electronics-engineering-govst-polytechnics-technical-education",
+      "category": "Degree / Polytechnic Lecturer",
+      "type": "Official paper reference"
     },
     {
-      id: "psc_deg_sec_asst",
-      year: 2023,
-      post: "Secretariat Assistant / Auditor / Degree Level Prelims",
-      dept: "Secretariat / Kerala Govt Services",
-      code: "048/2023",
-      dateOfTest: "29.04.2023",
-      keyStatus: "Final",
-      checkedDate: "26 October 2026",
-      category: "Degree Level",
-      type: "Official Past Paper"
+      "id": "psc_048_2023",
+      "year": 2023,
+      "post": "Fire and Rescue Officer (+2 Level Main Exam 2022)",
+      "dept": "Fire and Rescue Services",
+      "code": "048/2023",
+      "dateOfTest": "29.05.2023",
+      "keyStatus": "Final key listed",
+      "checkedDate": "27 October 2026",
+      "sourceUrl": "https://keralapsc.gov.in/index.php/node/?page=2089",
+      "category": "Plus Two Level",
+      "type": "Official paper reference"
     },
     {
-      id: "psc_tenth_ldc",
-      year: 2024,
-      post: "Lower Division Clerk (LDC) / Tenth Level Preliminary",
-      dept: "Various Departments",
-      code: "072/2024",
-      dateOfTest: "11.05.2024",
-      keyStatus: "Final",
-      checkedDate: "26 October 2026",
-      category: "Tenth Level",
-      type: "Official Past Paper"
+      "id": "psc_072_2024",
+      "year": 2025,
+      "post": "Assistant Manager Grade II",
+      "dept": "State Farming Corporation of Kerala Limited",
+      "code": "74/2025/OL",
+      "categoryCode": "072/2024",
+      "dateOfTest": "03.07.2025",
+      "keyStatus": "Final key listed",
+      "checkedDate": "27 October 2026",
+      "sourceUrl": "https://www.keralapsc.gov.in/assistant-manager-grade-ii-state-farming-corporation-kerala-limited",
+      "category": "Statewide",
+      "type": "Official paper reference"
     }
   ],
   questions: [
     {
-      id: "psc_q1",
-      topic: "Kerala Renaissance & History",
-      category: "Kerala History",
-      question: "Which social reformer organized the famous 'Villuvandi Samaram' (Bullock Cart Strike) in 1893 demanding the right of lower caste citizens to travel on public roads?",
-      options: [
-        "Ayyankali",
+      "id": "psc_q1",
+      "topic": "Kerala Renaissance & History",
+      "category": "Kerala History",
+      "question": "A historical account describes the consecration of a Shiva image at Aruvippuram in 1888. Which reformer is associated with this event?",
+      "options": [
         "Sree Narayana Guru",
-        "Vakkom Moulavi",
-        "Sahodaran Ayyappan"
+        "Ayyankali",
+        "Chattampi Swamikal",
+        "Vakkom Moulavi"
       ],
-      answer: 0,
-      explanation: "Mahatma Ayyankali rode a decorated bullock cart ('Villuvandi') along the public roads of Venganoor in 1893, breaking the ban that denied untouchables the right to use public pathways.",
-      source: "Kerala PSC, Degree Level Examination / Kerala Renaissance Module",
-      keyStatus: "Final Key",
-      checkedDate: "26 October 2026",
-      type: "Official Past Paper"
+      "answer": 0,
+      "explanation": "The Aruvippuram consecration is associated with Sree Narayana Guru and is often discussed as a challenge to caste restrictions around religious practice.",
+      "source": "Original Academic Hub practice question; independently written for revision.",
+      "keyStatus": "Practice answer",
+      "type": "Original practice question"
     },
     {
-      id: "psc_q2",
-      topic: "Kerala Geography",
-      category: "Kerala Studies",
-      question: "Which is the smallest Taluk in Kerala by geographical area?",
-      options: [
-        "Chittur",
-        "Kunnathur",
-        "Kochi",
-        "Alappuzha"
+      "id": "psc_q2",
+      "topic": "Kerala Geography",
+      "category": "Kerala Studies",
+      "question": "A short river that rises in Kerala’s Western Ghats and drains into the Arabian Sea generally flows in which direction?",
+      "options": [
+        "East",
+        "West",
+        "North",
+        "South"
       ],
-      answer: 1,
-      explanation: "Kunnathur taluk in Kollam district is traditionally recognized as the smallest taluk by land area in Kerala.",
-      source: "Kerala PSC, Lecturer Exam, Paper Code 170/2016",
-      keyStatus: "Final Key",
-      checkedDate: "26 October 2026",
-      type: "Official Past Paper"
+      "answer": 1,
+      "explanation": "The Western Ghats form Kerala’s eastern highland edge, while the Arabian Sea lies to the west; rivers flowing from the Ghats to the sea therefore move westward.",
+      "source": "Original Academic Hub practice question; independently written for revision.",
+      "keyStatus": "Practice answer",
+      "type": "Original practice question"
     },
     {
-      id: "psc_q3",
-      topic: "Indian Constitution",
-      category: "General Knowledge",
-      question: "Which Article of the Constitution of India guarantees the Right to Constitutional Remedies, famously termed by Dr. B.R. Ambedkar as the 'Heart and Soul' of the Constitution?",
-      options: [
+      "id": "psc_q3",
+      "topic": "Indian Constitution",
+      "category": "General Knowledge",
+      "question": "A person asks the Supreme Court directly to enforce a Fundamental Right. Which article provides this constitutional remedy?",
+      "options": [
         "Article 14",
         "Article 21",
         "Article 32",
         "Article 368"
       ],
-      answer: 2,
-      explanation: "Article 32 empowers individuals to approach the Supreme Court directly for the enforcement of Fundamental Rights via writs (Habeas Corpus, Mandamus, Prohibition, Quo Warranto, Certiorari).",
-      source: "Kerala PSC, Degree Preliminary & Secretariat Assistant Stage",
-      keyStatus: "Final Key",
-      checkedDate: "26 October 2026",
-      type: "Official Past Paper"
+      "answer": 2,
+      "explanation": "Article 32 allows a person to approach the Supreme Court for enforcement of Fundamental Rights.",
+      "source": "Original Academic Hub practice question; independently written for revision.",
+      "keyStatus": "Practice answer",
+      "type": "Original practice question"
     },
     {
-      id: "psc_q4",
-      topic: "Kerala Culture & Literature",
-      category: "Kerala Renaissance",
-      question: "Where is Kerala Sangeetha Nataka Akademi headquartered?",
-      options: [
-        "Thrissur",
-        "Ernakulam",
-        "Kottayam",
-        "Thiruvananthapuram"
+      "id": "psc_q4",
+      "topic": "Kerala Culture & Literature",
+      "category": "Kerala Renaissance",
+      "question": "Which Malayalam novel, first published in 1889, is associated with O. Chandu Menon?",
+      "options": [
+        "Indulekha",
+        "Kundalatha",
+        "Marthandavarma",
+        "Chemmeen"
       ],
-      answer: 0,
-      explanation: "Kerala Sangeetha Nataka Akademi is headquartered at Chembukkavu in Thrissur, established in 1958 to foster dance, drama, and music.",
-      source: "Kerala PSC, Paper Code 170/2016",
-      keyStatus: "Final Key",
-      checkedDate: "26 October 2026",
-      type: "Official Past Paper"
+      "answer": 0,
+      "explanation": "O. Chandu Menon wrote Indulekha, a landmark Malayalam novel published in 1889.",
+      "source": "Original Academic Hub practice question; independently written for revision.",
+      "keyStatus": "Practice answer",
+      "type": "Original practice question"
     },
     {
-      id: "psc_q5",
-      topic: "General Science & Environment",
-      category: "General Science",
-      question: "Which national park in Kerala is famous for harboring the largest viable population of the endangered Nilgiri Tahr?",
-      options: [
-        "Silent Valley National Park",
-        "Eravikulam National Park",
-        "Periyar National Park",
-        "Pambadum Shola National Park"
+      "id": "psc_q5",
+      "topic": "General Science & Environment",
+      "category": "General Science",
+      "question": "In a food chain, which group makes its own food using sunlight and forms the base for consumers?",
+      "options": [
+        "Decomposers",
+        "Producers",
+        "Primary consumers",
+        "Scavengers"
       ],
-      answer: 1,
-      explanation: "Eravikulam National Park in Idukki district is home to the largest wild population of Nilgiri Tahr (Nilgiritragus hylocrius) and the blooming Neelakurinji flowers.",
-      source: "Kerala PSC, Tenth / Degree Level General Studies",
-      keyStatus: "Final Key",
-      checkedDate: "26 October 2026",
-      type: "Official Past Paper"
+      "answer": 1,
+      "explanation": "Green plants and algae use photosynthesis to make organic food and commonly form the first trophic level.",
+      "source": "Original Academic Hub practice question; independently written for revision.",
+      "keyStatus": "Practice answer",
+      "type": "Original practice question"
     },
     {
-      id: "psc_q6",
-      topic: "Mental Ability & Quantitative Reasoning",
-      category: "Mental Ability",
-      question: "If 12 men can complete a project in 18 days, how many days will 9 men take to complete the exact same project working at the same pace?",
-      options: [
-        "20 days",
-        "22 days",
-        "24 days",
-        "26 days"
+      "id": "psc_q6",
+      "topic": "Mental Ability & Quantitative Reasoning",
+      "category": "Mental Ability",
+      "question": "A candidate gets 36 answers correct out of 45. What percentage of the questions were correct?",
+      "options": [
+        "70%",
+        "75%",
+        "80%",
+        "85%"
       ],
-      answer: 2,
-      explanation: "Total Work = Men × Days = 12 × 18 = 216 man-days. Days required by 9 men = 216 / 9 = 24 days.",
-      source: "Kerala PSC, LDC & Secretariat Assistant Arithmetic Section",
-      keyStatus: "Final Key",
-      checkedDate: "26 October 2026",
-      type: "Official Past Paper"
+      "answer": 2,
+      "explanation": "36 ÷ 45 × 100 = 80%.",
+      "source": "Original Academic Hub practice question; independently written for revision.",
+      "keyStatus": "Practice answer",
+      "type": "Original practice question"
     },
     {
-      id: "psc_q7",
-      topic: "General English",
-      category: "English",
-      question: "Identify the correctly spelled word from the options below:",
-      options: [
-        "Bureaucracy",
-        "Bureacracy",
-        "Burocracy",
-        "Bureaucrasy"
+      "id": "psc_q7",
+      "topic": "General English",
+      "category": "English",
+      "question": "Choose the verb that correctly completes the sentence: “The list of books ___ on the desk.”",
+      "options": [
+        "are",
+        "is",
+        "have",
+        "were"
       ],
-      answer: 0,
-      explanation: "The correct spelling is 'Bureaucracy' (derived from French 'bureau' desk/office + Greek 'kratos' rule).",
-      source: "Kerala PSC, General English Grammar & Vocabulary",
-      keyStatus: "Final Key",
-      checkedDate: "26 October 2026",
-      type: "Official Past Paper"
+      "answer": 1,
+      "explanation": "The subject is the singular noun “list.” The phrase “of books” does not change the subject, so “is” agrees with it.",
+      "source": "Original Academic Hub practice question; independently written for revision.",
+      "keyStatus": "Practice answer",
+      "type": "Original practice question"
     },
     {
-      id: "psc_q8",
-      topic: "Indian Economy & Planning",
-      category: "Indian Economy",
-      question: "Which institution replaced the Planning Commission of India on January 1, 2015?",
-      options: [
-        "Finance Commission of India",
-        "NITI Aayog (National Institution for Transforming India)",
-        "National Development Council",
-        "Central Statistical Office"
+      "id": "psc_q8",
+      "topic": "Indian Economy & Planning",
+      "category": "Indian Economy",
+      "question": "If the price of a household’s usual basket of goods rises while its money income stays the same, what happens to its purchasing power?",
+      "options": [
+        "It usually falls",
+        "It always doubles",
+        "It stays fixed",
+        "It becomes unrelated to prices"
       ],
-      answer: 1,
-      explanation: "NITI Aayog was formed on January 1, 2015, serving as the premier policy think tank of the Government of India, replacing the 65-year-old Planning Commission.",
-      source: "Kerala PSC, Current Affairs & Economy Bank",
-      keyStatus: "Final Key",
-      checkedDate: "26 October 2026",
-      type: "Official Past Paper"
+      "answer": 0,
+      "explanation": "With unchanged income, rising prices mean the same money buys fewer goods, so purchasing power falls.",
+      "source": "Original Academic Hub practice question; independently written for revision.",
+      "keyStatus": "Practice answer",
+      "type": "Original practice question"
     },
     {
-      id: "psc_q9",
-      topic: "Kerala Renaissance",
-      category: "Kerala Renaissance",
-      question: "Who was the editor of the revolutionary reformist journal 'Mitavadi' published from Calicut/Kozhikode?",
-      options: [
-        "C. Krishnan",
-        "K. Kelappan",
-        "V.T. Bhattathiripad",
-        "A.K. Gopalan"
+      "id": "psc_q9",
+      "topic": "Kerala Renaissance",
+      "category": "Kerala Renaissance",
+      "question": "The Vaikom Satyagraha is chiefly remembered for campaigning for which public right?",
+      "options": [
+        "Access to public roads around the Vaikom temple for oppressed communities",
+        "A separate state legislature",
+        "A ban on Malayalam newspapers",
+        "Free primary textbooks"
       ],
-      answer: 0,
-      explanation: "Mitavadi was founded by Murkoth Kumaran and later taken over and edited by C. Krishnan in 1913, serving as a powerful mouthpiece for social equality.",
-      source: "Kerala PSC, Special Renaissance Syllabus Paper",
-      keyStatus: "Final Key",
-      checkedDate: "26 October 2026",
-      type: "Official Past Paper"
+      "answer": 0,
+      "explanation": "The movement challenged restrictions that prevented oppressed communities from using public roads around the Vaikom temple.",
+      "source": "Original Academic Hub practice question; independently written for revision.",
+      "keyStatus": "Practice answer",
+      "type": "Original practice question"
     },
     {
-      id: "psc_q10",
-      topic: "General Science - Physics",
-      category: "General Science",
-      question: "What physical phenomenon is responsible for the twinkling of stars in the night sky?",
-      options: [
-        "Total Internal Reflection",
-        "Atmospheric Refraction of starlight",
-        "Dispersion of light through water droplets",
-        "Diffraction of light rays"
+      "id": "psc_q10",
+      "topic": "General Science - Physics",
+      "category": "General Science",
+      "question": "A straw looks displaced where it enters a glass of water because light changes direction between water and air. What is this effect called?",
+      "options": [
+        "Diffraction",
+        "Refraction",
+        "Dispersion",
+        "Reflection"
       ],
-      answer: 1,
-      explanation: "Atmospheric refraction occurs as starlight passes through air layers with varying optical densities and temperatures, causing the apparent position of the star to fluctuate slightly.",
-      source: "Kerala PSC, General Science Secondary Module",
-      keyStatus: "Final Key",
-      checkedDate: "26 October 2026",
-      type: "Official Past Paper"
+      "answer": 1,
+      "explanation": "Refraction is the change in direction of light as it passes between materials in which it travels at different speeds.",
+      "source": "Original Academic Hub practice question; independently written for revision.",
+      "keyStatus": "Practice answer",
+      "type": "Original practice question"
     }
   ]
 };
