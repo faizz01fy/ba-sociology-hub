@@ -1,10 +1,646 @@
-// university-notices-backend.js - Live Auto-fetcher & Caching API for Calicut University Notices (CDOE, Regular & 15-Day Media News)
+// university-notices-backend.js - Live Auto-fetcher & Caching API for Calicut University Notices (CDOE, Regular, Directorate of Admission & Media News)
 
 const CACHE_TTL_SECONDS = 1800; // Cache for 30 minutes
-const FIFTEEN_DAYS_MS = 15 * 24 * 60 * 60 * 1000; // Strictly 15 days
+const FIFTEEN_DAYS_MS = 15 * 24 * 60 * 60 * 1000; // 15 days
 
-// Guaranteed fallback media news - strictly from the last 15 days only
-const FALLBACK_MEDIA_NEWS = [
+// Guaranteed fallback notices including official Directorate of Admission (pages=23) and 15-day media news
+const FALLBACK_GENERAL_NOTICES = [
+  {
+    "id": "doa-1",
+    "title": "PhD 2026 : Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1792216457_Notifications_PhD4293.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PhD Admission",
+    "date": "17 Oct 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1792195200000
+  },
+  {
+    "id": "doa-2",
+    "title": "2026-27 Late Inter-University Transfers to Third and Fifth Semesters of FYUGP - Late Application Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1788430100_Notifications_Transfer5566.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "College Transfer",
+    "date": "03 Sep 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1788393600000
+  },
+  {
+    "id": "doa-3",
+    "title": "2026 - 27 - Inter-Collegiate Late Application - Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1785929756_Notifications_ug6406.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "05 Aug 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1785888000000
+  },
+  {
+    "id": "doa-4",
+    "title": "PGDRP 2026: NOTIFICATION",
+    "url": "https://admission.uoc.ac.in/downloads/1785822843_Notifications_PartTimeCourses2041.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "04 Aug 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1785801600000
+  },
+  {
+    "id": "doa-5",
+    "title": "2026-27 AY - Inter-University Transfers to Third and Fifth Semesters of FYUGP",
+    "url": "https://admission.uoc.ac.in/downloads/1784288651_Notifications_ug4764.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "College Transfer",
+    "date": "17 Jul 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1784246400000
+  },
+  {
+    "id": "doa-6",
+    "title": "2026-27 AY College Transfer - FYUGP Third and Fifth Semesters",
+    "url": "https://admission.uoc.ac.in/downloads/1782386764_Notifications_ug6872.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "College Transfer",
+    "date": "25 Jun 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1782345600000
+  },
+  {
+    "id": "doa-7",
+    "title": "M A Development Studies (To fill the vacancies that arise due to students exiting after the sixth semester of the Integrated MA Development Studies Programme (2023 admission batch))",
+    "url": "https://admission.uoc.ac.in/downloads/1782112143_Notifications_entrance9369.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "22 Jun 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1782086400000
+  },
+  {
+    "id": "doa-8",
+    "title": "Certificate Course in Professional Dog Training and Canine Forensics 2026 - Batch I - Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1781523459_Notifications_PartTimeCourses3378.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "15 Jun 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1781481600000
+  },
+  {
+    "id": "doa-9",
+    "title": "Post Graduate Diploma in Digital Media Production (Project Mode) programme - Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1780558136_Notifications_PartTimeCourses5693.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "12 Jun 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1781222400000
+  },
+  {
+    "id": "doa-10",
+    "title": "M.Ed 2026 : Online Registration - Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1781090853_Notifications_medu7906.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PG/B.Ed Admission",
+    "date": "10 Jun 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1781049600000
+  },
+  {
+    "id": "doa-11",
+    "title": "FYUGP 2026 - 27 : Online Registration - Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1780400855_Notifications_ug1275.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "FYUGP Admission",
+    "date": "02 Jun 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1780358400000
+  },
+  {
+    "id": "doa-12",
+    "title": "IPCAP 2026 - 27 : Online Registration - Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1780400259_Notifications_IP2461.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "02 Jun 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1780358400000
+  },
+  {
+    "id": "doa-13",
+    "title": "Afzal - Ul - Ulama (Preliminary) 2026 - 27: Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1779795258_Notifications_afsal6472.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "26 May 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1779753600000
+  },
+  {
+    "id": "doa-14",
+    "title": "Project Mode Diploma 2026: Online Registration Commenced- Last Date: 02.06.2026",
+    "url": "https://admission.uoc.ac.in/downloads/1779535539_Notifications_PartTimeCourses8702.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "23 May 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1779494400000
+  },
+  {
+    "id": "doa-15",
+    "title": "PGCAP 2026 : Online Registration - Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1779276800_Notifications_pg3751.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PG/B.Ed Admission",
+    "date": "20 May 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1779235200000
+  },
+  {
+    "id": "doa-16",
+    "title": "MBA 2026: Notification cum Prospectus",
+    "url": "https://admission.uoc.ac.in/downloads/1774433719_Notifications_MBA1654.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "25 Mar 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1774396800000
+  },
+  {
+    "id": "doa-17",
+    "title": "CU-CET 2026 Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1774265657_Notifications_entrance5721.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "23 Mar 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1774224000000
+  },
+  {
+    "id": "doa-18",
+    "title": "Certificate Course in Professional Dog Training and Canine Forensics -Batch II",
+    "url": "https://admission.uoc.ac.in/downloads/1773211008_Notifications_PartTimeCourses3526.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "11 Mar 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1773187200000
+  },
+  {
+    "id": "doa-19",
+    "title": "Fourth Semester College Transfer - Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1768991283_Notifications_ug2336.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "College Transfer",
+    "date": "21 Jan 2026",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1768953600000
+  },
+  {
+    "id": "doa-20",
+    "title": "Ph.D 2025 - Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1765796208_Notifications_PhD4534.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PhD Admission",
+    "date": "15 Dec 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1765756800000
+  },
+  {
+    "id": "doa-21",
+    "title": "Notification for admission to Diploma in Digital Media Production, offered in Project Mode - 2025-2026 (II Batch)",
+    "url": "https://admission.uoc.ac.in/downloads/1764917691_Notifications_PartTimeCourses5538.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "05 Dec 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1764892800000
+  },
+  {
+    "id": "doa-22",
+    "title": "PG Diploma in Translation & Secretarial Practice in Hindi, Certificate Course in Commercial & Spoken Hindi - 2026 -27",
+    "url": "https://admission.uoc.ac.in/downloads/1764916613_Notifications_PartTimeCourses5281.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "05 Dec 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1764892800000
+  },
+  {
+    "id": "doa-23",
+    "title": "Certificate Course in Professional Dog Training and Canine Forensics Online Registration Commenced -Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1761132995_Notifications_PartTimeCourses4148.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "23 Oct 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1761177600000
+  },
+  {
+    "id": "doa-24",
+    "title": "ADMISSION NOTIFICATION FOR B.Ed. COMMERCE PROGRAMME 2025-26",
+    "url": "https://admission.uoc.ac.in/downloads/1753769784_Notifications_bedu6561.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PG/B.Ed Admission",
+    "date": "29 Jul 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1753747200000
+  },
+  {
+    "id": "doa-25",
+    "title": "FYUGP INTER UNIVERSITY TRANSFER NOTIFICATION",
+    "url": "https://admission.uoc.ac.in/downloads/1753703461_Notifications_ug5206.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "College Transfer",
+    "date": "28 Jul 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1753660800000
+  },
+  {
+    "id": "doa-26",
+    "title": "Post Graduate Diploma in Rehabilitation Psychology(PGDRP) : Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1751870163_Notifications_PartTimeCourses9088.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "07 Jul 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1751846400000
+  },
+  {
+    "id": "doa-27",
+    "title": "INTER COLLEGE MAJOR SWITCHING / COLLEGE TRANSFER WITH EXISTING MAJOR 2025 : Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1750851322_Notifications_ug2023.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "College Transfer",
+    "date": "25 Jun 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1750809600000
+  },
+  {
+    "id": "doa-28",
+    "title": "ADMISSION NOTIFICATION FOR B.Ed. SPECIAL EDUCATION (HEARING IMPAIRED/INTELLECTUAL DISABILITY) 2025-2026",
+    "url": "https://admission.uoc.ac.in/downloads/1749210380_Notifications_bedu6057.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PG/B.Ed Admission",
+    "date": "06 Jun 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1749168000000
+  },
+  {
+    "id": "doa-29",
+    "title": "B.Ed 2025 - 26 : Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1749210218_Notifications_bedu5016.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PG/B.Ed Admission",
+    "date": "06 Jun 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1749168000000
+  },
+  {
+    "id": "doa-30",
+    "title": "PGCAP 2025 - 26 : Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1749037499_Notifications_pg7685.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PG/B.Ed Admission",
+    "date": "04 Jun 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1748995200000
+  },
+  {
+    "id": "doa-31",
+    "title": "IPCAP 2025 : Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1748602836_Notifications_IP6726.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "30 May 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1748563200000
+  },
+  {
+    "id": "doa-32",
+    "title": "B.Voc 2025 - 26 Under Graduate Programmes : Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1748605071_Notifications_ug7088.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "30 May 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1748563200000
+  },
+  {
+    "id": "doa-33",
+    "title": "FYUGCAP 2025-26 : Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1748424976_Notifications_ug1854.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "FYUGP Admission",
+    "date": "28 May 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1748390400000
+  },
+  {
+    "id": "doa-34",
+    "title": "Project Mode Diploma/PG Diploma Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1748083265_Notifications_PartTimeCourses7634.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "24 May 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1748044800000
+  },
+  {
+    "id": "doa-35",
+    "title": "Afzal - Ul - Ulama (Preliminary) 2025 - 26 : Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1747888938_Notifications_afsal7547.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "22 May 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1747872000000
+  },
+  {
+    "id": "doa-36",
+    "title": "CU-CET 2025 : Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1743247472_Notifications_entrance2477.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "29 Mar 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1743206400000
+  },
+  {
+    "id": "doa-37",
+    "title": "MBA Registration 2025 : Notification-cum-Prospectus",
+    "url": "https://admission.uoc.ac.in/downloads/1743230595_Notifications_MBA7434.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Notice",
+    "date": "29 Mar 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1743206400000
+  },
+  {
+    "id": "doa-38",
+    "title": "Ph.D 2024 - Notification",
+    "url": "https://admission.uoc.ac.in/downloads/1737700066_Notifications_PhD1429.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PhD Admission",
+    "date": "24 Jan 2025",
+    "is_new": false,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1737676800000
+  },
+  {
+    "id": "doa-39",
+    "title": "PhD-2026 Last date extended",
+    "url": "https://admission.uoc.ac.in/downloads/1793013440_Press_Release_PhD1138.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PhD Admission",
+    "date": "26 Oct 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1792972800000
+  },
+  {
+    "id": "doa-40",
+    "title": "PhD 2026: Online application commences on 17.10.2026 at 11.00 am",
+    "url": "https://admission.uoc.ac.in/downloads/1792154399_Press_Release_PhD6638.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PhD Admission",
+    "date": "16 Oct 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1792108800000
+  },
+  {
+    "id": "doa-41",
+    "title": "MPEd (CUCET 2026) - Last Date of online registration extended till 22.09.2026",
+    "url": "https://admission.uoc.ac.in/downloads/1789540165_Press_Release_entrance6904.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Press Release",
+    "date": "16 Sep 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1789516800000
+  },
+  {
+    "id": "doa-42",
+    "title": "Afsal Ul Ulama 2026-27 admission - Extended",
+    "url": "https://admission.uoc.ac.in/downloads/1789125666_Press_Release_afsal8926.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Press Release",
+    "date": "11 Sep 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1789084800000
+  },
+  {
+    "id": "doa-43",
+    "title": "Press release - B.Ed 2026-27 admission - Online registration extended till 05/09/206 , 11 a.m",
+    "url": "https://admission.uoc.ac.in/downloads/1788435648_Press_Release_bedu3782.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PG/B.Ed Admission",
+    "date": "03 Sep 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1788393600000
+  },
+  {
+    "id": "doa-44",
+    "title": "2026-27 Late Inter-University Transfers to Third and Fifth Semesters of FYUGP",
+    "url": "https://admission.uoc.ac.in/downloads/1788430179_Press_Release_Transfer2984.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "College Transfer",
+    "date": "03 Sep 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1788393600000
+  },
+  {
+    "id": "doa-45",
+    "title": "Extension of last date of Afsal Ul Ulama Preliminary - Press Release",
+    "url": "https://admission.uoc.ac.in/downloads/1788323964_Press_Release_afsal6502.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Press Release",
+    "date": "02 Sep 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1788307200000
+  },
+  {
+    "id": "doa-46",
+    "title": "Rank list published",
+    "url": "https://admission.uoc.ac.in/downloads/1787133199_Press_Release_ug4733.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Press Release",
+    "date": "31 Aug 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1788134400000
+  },
+  {
+    "id": "doa-47",
+    "title": "Integrated PG in affiliated colleges - Last Date of Admission extended till 11/09/2026",
+    "url": "https://admission.uoc.ac.in/downloads/1787562531_Press_Release_IP8362.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Press Release",
+    "date": "24 Aug 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1787529600000
+  },
+  {
+    "id": "doa-48",
+    "title": "PGCAP 2026 : Last date of admission extended to 11.09.2026",
+    "url": "https://admission.uoc.ac.in/downloads/1787387903_Press_Release_pg8142.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "PG/B.Ed Admission",
+    "date": "22 Aug 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1787356800000
+  },
+  {
+    "id": "doa-49",
+    "title": "BPEd & BPES(Integrated) - Late Registration, Last Date:29.08.2026",
+    "url": "https://admission.uoc.ac.in/downloads/1787304448_Press_Release_entrance6139.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Press Release",
+    "date": "21 Aug 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1787270400000
+  },
+  {
+    "id": "doa-50",
+    "title": "PGDRP - 2026 Entrance Examination",
+    "url": "https://admission.uoc.ac.in/downloads/1787138753_Press_Release_PartTimeCourses4771.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Press Release",
+    "date": "19 Aug 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1787097600000
+  },
+  {
+    "id": "doa-51",
+    "title": "Certificate Course in Professional Dog Training and Canine Forensics 2026 Batch I - Online Registration extended up to 31.08.2026",
+    "url": "https://admission.uoc.ac.in/downloads/1787132406_Press_Release_PartTimeCourses9410.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Press Release",
+    "date": "19 Aug 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1787097600000
+  },
+  {
+    "id": "doa-52",
+    "title": "MBA Admissions 2026 - Online Registration Reopened up to 14.09.2026, 4.00 PM",
+    "url": "https://admission.uoc.ac.in/downloads/1787132316_Press_Release_MBA2147.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Press Release",
+    "date": "19 Aug 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1787097600000
+  },
+  {
+    "id": "doa-53",
+    "title": "PGDRP Entrance Test 2026 - Press Release",
+    "url": "https://admission.uoc.ac.in/downloads/1787118737_Press_Release_PartTimeCourses8110.pdf",
+    "category": "general",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Admission Press Release",
+    "date": "19 Aug 2026",
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)",
+    "timestamp": 1787097600000
+  },
   {
     "id": "media-3",
     "title": "കാലിക്കറ്റ് സർവകലാശാലയിലേക്ക് പ്രതിഷേധ മാർച്ച് നടത്തി ഫ്രറ്റേണിറ്റി മൂവ്മെൻ്റ്",
@@ -430,34 +1066,43 @@ export async function handleUniversityNotices(request, env, ctx) {
     // Cache match error ignored
   }
 
-  // 3. Auto-fetch from university & media sources in parallel
+  // 3. Auto-fetch from university sources (CDOE, Regular, Directorate of Admission) & Media in parallel
   let freshNotices = [];
   try {
-    const [cdoeNotices, pareekshaNotices, mediaNotices] = await Promise.allSettled([
+    const [cdoeNotices, pareekshaNotices, admissionNotices, mediaNotices] = await Promise.allSettled([
       fetchCdoeNotices(),
       fetchPareekshaNotices(),
+      fetchAdmissionNotices(),
       fetchMediaNews()
     ]);
 
     const cdoeList = cdoeNotices.status === "fulfilled" ? cdoeNotices.value : [];
     const pbList = pareekshaNotices.status === "fulfilled" ? pareekshaNotices.value : [];
+    const admList = admissionNotices.status === "fulfilled" ? admissionNotices.value : [];
     let mediaList = mediaNotices.status === "fulfilled" ? mediaNotices.value : [];
 
-    // Filter media strictly to last 15 days only
+    // Filter media strictly to last 15 days
     const cutoffTime = Date.now() - FIFTEEN_DAYS_MS;
     mediaList = mediaList.filter(m => (m.timestamp || 0) >= cutoffTime);
 
-    // If live fetch returned fewer than 3 recent items, populate from 15-day fallback
-    if (mediaList.length < 3) {
-      const existingUrls = new Set(mediaList.map(m => m.url));
-      for (const fb of FALLBACK_MEDIA_NEWS) {
-        if (!existingUrls.has(fb.url) && (fb.timestamp || 0) >= cutoffTime) {
-          mediaList.push(fb);
+    // Combine Admission + Media news for general section
+    let generalList = [...admList, ...mediaList];
+
+    // If general list is small or live fetch had partial network issue, merge fallback
+    if (generalList.length < 5) {
+      const existingUrls = new Set(generalList.map(g => g.url));
+      for (const fb of FALLBACK_GENERAL_NOTICES) {
+        if (!existingUrls.has(fb.url)) {
+          if (fb.source && fb.source.includes("Admission")) {
+            generalList.push(fb);
+          } else if ((fb.timestamp || 0) >= cutoffTime) {
+            generalList.push(fb);
+          }
         }
       }
     }
 
-    freshNotices = [...cdoeList, ...pbList, ...mediaList];
+    freshNotices = [...cdoeList, ...pbList, ...generalList];
 
     if (freshNotices.length > 0) {
       const payload = {
@@ -504,11 +1149,11 @@ export async function handleUniversityNotices(request, env, ctx) {
 
   return new Response(JSON.stringify({
     last_updated: new Date().toISOString(),
-    total: FALLBACK_MEDIA_NEWS.length,
+    total: FALLBACK_GENERAL_NOTICES.length,
     cdoe_count: 0,
     regular_count: 0,
-    general_count: FALLBACK_MEDIA_NEWS.length,
-    notices: FALLBACK_MEDIA_NEWS
+    general_count: FALLBACK_GENERAL_NOTICES.length,
+    notices: FALLBACK_GENERAL_NOTICES
   }), {
     status: 200,
     headers: {
@@ -522,9 +1167,10 @@ function filterAndReturnNotices(data, categoryFilter, cacheStatus) {
   let list = data.notices || [];
   const cutoffTime = Date.now() - FIFTEEN_DAYS_MS;
 
-  // Strictly filter out any general/media news older than 15 days
   list = list.filter(n => {
     if (n.category === "general") {
+      // Keep all Directorate of Admission notifications; filter media news to 15 days
+      if (n.source && n.source.includes("Admission")) return true;
       return (n.timestamp || 0) >= cutoffTime;
     }
     return true; // Keep CDOE and Regular intact
@@ -536,7 +1182,13 @@ function filterAndReturnNotices(data, categoryFilter, cacheStatus) {
 
   const cdoeList = (data.notices || []).filter(n => n.category === "cdoe");
   const regList = (data.notices || []).filter(n => n.category === "regular");
-  const genList = (data.notices || []).filter(n => n.category === "general" && (n.timestamp || 0) >= cutoffTime);
+  const genList = (data.notices || []).filter(n => {
+    if (n.category === "general") {
+      if (n.source && n.source.includes("Admission")) return true;
+      return (n.timestamp || 0) >= cutoffTime;
+    }
+    return false;
+  });
 
   return new Response(JSON.stringify({
     last_updated: data.last_updated,
@@ -656,6 +1308,94 @@ async function fetchPareekshaNotices() {
   return notices;
 }
 
+// 3. Official Directorate of Admission (DoA) Auto-Fetcher (pages=23 Notifications & pages=21 Press Releases)
+async function fetchAdmissionNotices() {
+  const notices = [];
+  const urls = [
+    {"url": "https://admission.uoc.ac.in/admissionnews?pages=23", "sub": "Admission Notice"},
+    {"url": "https://admission.uoc.ac.in/admissionnews?pages=21", "sub": "Admission Press Release"}
+  ];
+
+  const seen = new Set();
+  let id = 1;
+
+  for (const item of urls) {
+    try {
+      const resp = await fetch(item.url, {
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        },
+        cf: { cacheTtl: 3600, cacheEverything: true }
+      });
+      if (!resp.ok) continue;
+
+      const html = await resp.text();
+      const pattern = /<li[^>]*class=["'][^"']*media[^"']*["'][^>]*>([\s\S]*?)<\/li>/gi;
+      let m;
+
+      while ((m = pattern.exec(html)) !== null) {
+        const liHtml = m[1];
+        const aMatch = liHtml.match(/<h[1-6][^>]*>\s*<a\s+[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/i);
+        const smallMatch = liHtml.match(/<small[^>]*>([\s\S]*?)<\/small>/i);
+
+        if (!aMatch) continue;
+
+        let rawHref = aMatch[1].trim();
+        let title = aMatch[2].replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+        let rawDate = smallMatch ? smallMatch[1].replace(/<[^>]+>/g, "").trim() : "";
+
+        let url = rawHref;
+        if (!url.startsWith("http")) {
+          url = "https://admission.uoc.ac.in/" + url.replace(/^\//, "");
+        }
+
+        const tLower = title.toLowerCase();
+        if (title.length < 5 || seen.has(tLower)) continue;
+        seen.add(tLower);
+
+        let cleanDate = "Recent";
+        let ts = 0;
+        let year = "";
+        const dm = rawDate.match(/([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})/);
+        if (dm) {
+          const mStr = dm[1];
+          const dStr = dm[2];
+          year = dm[3];
+          cleanDate = `${dStr} ${mStr} ${year}`;
+          const dObj = new Date(`${mStr} ${dStr}, ${year}`);
+          if (!isNaN(dObj.getTime())) ts = dObj.getTime();
+        }
+
+        if (year && year !== "2026" && year !== "2025") continue;
+
+        let subType = item.sub;
+        if (/phd|ph\.d/i.test(tLower)) subType = "PhD Admission";
+        else if (/transfer/i.test(tLower)) subType = "College Transfer";
+        else if (/fyugp|ugcap/i.test(tLower)) subType = "FYUGP Admission";
+        else if (/pgcap|m\.ed|b\.ed|pg/i.test(tLower)) subType = "PG/B.Ed Admission";
+
+        notices.push({
+          id: `doa-${id++}`,
+          title,
+          url,
+          category: "general",
+          category_label: "Directorate of Admission",
+          sub_type: subType,
+          date: cleanDate,
+          is_new: year === "2026" && /Oct|Sep|Aug/i.test(cleanDate),
+          source: "Directorate of Admission (DoA)",
+          timestamp: ts
+        });
+      }
+    } catch (e) {
+      console.error("fetchAdmissionNotices error:", e);
+    }
+  }
+
+  return notices;
+}
+
+// 4. Outside Media News Auto-Fetcher (Strictly 15 Days)
 async function fetchMediaNews() {
   const news = [];
   const cutoffTime = Date.now() - FIFTEEN_DAYS_MS;
@@ -695,7 +1435,6 @@ async function fetchMediaNews() {
         if (isNaN(dObj.getTime())) continue;
 
         const timestamp = dObj.getTime();
-        // STRICT RULE: Must be within 15 days only!
         if (timestamp < cutoffTime) continue;
 
         let title = unescapeXml(tMatch[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1").trim());
@@ -750,7 +1489,6 @@ async function fetchMediaNews() {
     }
   }
 
-  // Sort freshest first
   news.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
   return news;
 }

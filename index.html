@@ -2209,8 +2209,8 @@
           <div class="univ-btn-left">
             <span class="univ-btn-icon-wrap">📰</span>
             <div class="univ-btn-text-wrap">
-              <span class="univ-btn-title">General &amp; Media News</span>
-              <span class="univ-btn-sub">Latest 15 days only &bull; Media &bull; Press</span>
+              <span class="univ-btn-title">Admission &amp; General News</span>
+              <span class="univ-btn-sub">Directorate of Admission (DoA) &bull; Latest 15 days media</span>
             </div>
           </div>
           <div class="univ-btn-right">
@@ -7004,7 +7004,11 @@
         const fifteenDaysAgo = Date.now() - (15 * 24 * 60 * 60 * 1000);
         const cdoeCount = allNotices.filter(n => n.category === 'cdoe').length;
         const regCount = allNotices.filter(n => n.category === 'regular').length;
-        const genCount = allNotices.filter(n => n.category === 'general' && ((n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo))).length;
+        const genCount = allNotices.filter(n => {
+          if (n.category !== 'general') return false;
+          if (n.source && n.source.includes('Admission')) return true;
+          return (n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo);
+        }).length;
 
         const bCdoe = document.getElementById('badge-count-cdoe');
         const bReg = document.getElementById('badge-count-regular');
@@ -7012,7 +7016,7 @@
 
         if (bCdoe) bCdoe.textContent = cdoeCount + ' Circulars';
         if (bReg) bReg.textContent = regCount + ' Circulars';
-        if (bGen) bGen.textContent = genCount + ' Latest News';
+        if (bGen) bGen.textContent = genCount + ' Notifications';
       }
 
       // =========================================================================
@@ -7055,7 +7059,7 @@
           drawerCount.style.background = '#dbeafe';
           drawerCount.style.color = '#1d4ed8';
         } else {
-          drawerTitle.textContent = 'General & Media News (Latest 15 Days Only)';
+          drawerTitle.textContent = 'Directorate of Admission (DoA) & General News';
           drawerIcon.textContent = '📰';
           drawerCount.className = 'univ-drawer-badge';
           drawerCount.style.background = '#f3e8ff';
@@ -7088,7 +7092,10 @@
         let list = allNotices.filter(n => n.category === activeSection);
         if (activeSection === 'general') {
           const fifteenDaysAgo = Date.now() - (15 * 24 * 60 * 60 * 1000);
-          list = list.filter(n => (n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo));
+          list = list.filter(n => {
+            if (n.source && n.source.includes('Admission')) return true;
+            return (n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo);
+          });
         }
 
         if (searchFilter) {
@@ -7191,7 +7198,7 @@
         const endpoints = [
           '/api/notices',
           'https://academic-hub.faiz01cu.workers.dev/api/notices',
-          'data/university_notices.json?v=20261026-15days'
+          'data/university_notices.json?v=20261027-doa'
         ];
 
         let success = false;
