@@ -1,18 +1,19 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <meta name="description" content="Calicut University BA Philosophy of Artificial Intelligence Complete Malayalam & English Study Guide (Malayalam Reading)">
-  <title>Philosophy of Artificial Intelligence — Malayalam & English Reading | Academic Hub</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="prefetch" href="study-guide-reader.html">
-  <link rel="prefetch" href="assets/pdfjs/pdf.min.mjs">
-  <link rel="prefetch" href="assets/pdfjs/pdf.worker.min.mjs">
-  <link rel="stylesheet" href="style.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
+<meta content="Calicut University BA Philosophy of Artificial Intelligence Complete Malayalam &amp; English Study Guide (Malayalam Reading)" name="description"/>
+<title>Philosophy of Artificial Intelligence — Malayalam &amp; English Reading | Academic Hub</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Noto+Sans+Malayalam:wght@400;500;600;700;800&amp;family=Manjari:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="study-guide-reader.html" rel="prefetch"/>
+<link href="assets/pdfjs/pdf.min.mjs" rel="prefetch"/>
+<link href="assets/pdfjs/pdf.worker.min.mjs" rel="prefetch"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
     :root {
       --ai-primary: #312e81;
       --ai-secondary: #4338ca;
@@ -808,382 +809,460 @@
         box-sizing: border-box !important;
       }
     }
-  </style>
-
   
+
+    /* ==========================================================================
+       Interval Blink & Vibrant Rainbow Palette Animations for Chapter Cards
+       ========================================================================== */
+    .chapter-card {
+      border: 1.5px solid var(--ch-border, #e2e8f0) !important;
+      animation: card-interval-blink 8s infinite ease-in-out !important;
+      animation-delay: var(--ch-delay, 0s) !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    @keyframes card-interval-blink {
+      0%, 100% {
+        border-color: var(--ch-border, #e2e8f0);
+        box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+      }
+      50% {
+        border-color: var(--ch-c2, #4338ca);
+        box-shadow: 0 8px 24px var(--ch-glow, rgba(67, 56, 202, 0.35)), 0 0 12px var(--ch-glow, rgba(67, 56, 202, 0.2));
+      }
+    }
+
+    .chapter-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px var(--ch-glow, rgba(67, 56, 202, 0.25)) !important;
+      border-color: var(--ch-c2, #4338ca) !important;
+      animation-play-state: paused !important;
+    }
+
+    .chapter-num, .ch-num {
+      background: linear-gradient(135deg, var(--ch-c1, #312e81), var(--ch-c2, #4338ca)) !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 14px var(--ch-glow, rgba(67, 56, 202, 0.3)) !important;
+      animation: badge-interval-blink 8s infinite ease-in-out !important;
+      animation-delay: var(--ch-delay, 0s) !important;
+    }
+
+    @keyframes badge-interval-blink {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 12px var(--ch-glow, rgba(67, 56, 202, 0.3));
+      }
+      50% {
+        transform: scale(1.08);
+        filter: brightness(1.22);
+        box-shadow: 0 8px 22px var(--ch-glow, rgba(67, 56, 202, 0.65)), 0 0 14px var(--ch-glow, rgba(67, 56, 202, 0.5));
+      }
+    }
+
+    .btn-view, .action-btn.btn-view, .read-ch-btn, .read-full-btn, .btn-action {
+      background: linear-gradient(135deg, var(--ch-c1, #312e81), var(--ch-c2, #4338ca)) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+      box-shadow: 0 4px 12px var(--ch-glow, rgba(67, 56, 202, 0.3)) !important;
+      animation: btn-interval-blink 8s infinite ease-in-out !important;
+      animation-delay: var(--ch-delay, 0s) !important;
+    }
+
+    @keyframes btn-interval-blink {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 12px var(--ch-glow, rgba(67, 56, 202, 0.3));
+      }
+      50% {
+        transform: scale(1.05);
+        filter: brightness(1.22);
+        box-shadow: 0 6px 20px var(--ch-glow, rgba(67, 56, 202, 0.65)), 0 0 14px var(--ch-glow, rgba(67, 56, 202, 0.4));
+      }
+    }
+
+    .chapter-card:hover .chapter-num,
+    .chapter-card:hover .ch-num,
+    .chapter-card:hover .btn-view,
+    .chapter-card:hover .action-btn,
+    .chapter-card:hover .read-ch-btn {
+      animation-play-state: paused !important;
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #1e293b, #0f172a) !important;
+      color: #ffffff !important;
+      border-color: #0f172a !important;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25) !important;
+    }
+
+  </style>
 </head>
 <body>
-
-  <main class="page-box">
-    <!-- Premium Sticky Top Back & Home Navigation (All in English) -->
-    <nav class="reading-top-nav" aria-label="Reading navigation">
-      <button type="button" class="btn-back" onclick="if(window.history.length &gt; 1){window.history.back();}else{window.location.href='index.html';}" aria-label="Go back">← Back</button>
-      <a class="btn-home" href="index.html#top" aria-label="Academic Hub Home">⌂ Home</a>
-    </nav>
-
-    <header class="hero">
-      <div class="uni-badge">CALICUT UNIVERSITY · CDOE · FYUGP</div>
-      <h1 class="hero-title">
-        <span class="hero-title-en">Philosophy of Artificial Intelligence — English Malayalam Reading</span>
-        <span class="hero-title-ml">ഫിലോസഫി ഓഫ് ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് — മലയാളം വായന</span>
-      </h1>
-    </header>
-
-    <!-- Module Filters (All in English) -->
-    <nav class="filter-wrapper" aria-label="Filter by module">
-      <button class="filter-btn active" onclick="filterModule('mod1', this)">Module 1: Foundations (3 Chapters)</button>
-      <button class="filter-btn" onclick="filterModule('mod2', this)">Module 2: Classical AI (5 Chapters)</button>
-      <button class="filter-btn" onclick="filterModule('mod3', this)">Module 3: Epistemology (5 Chapters)</button>
-      <button class="filter-btn" onclick="filterModule('mod4', this)">Module 4: Ethics of AI (7 Chapters)</button>
-      <button class="filter-btn" onclick="filterModule('mod5', this)">Module 5: Future &amp; Perspectives (2 Chapters)</button>
-      <button class="filter-btn" onclick="filterModule('all', this)">All Chapters (22 Chapters)</button>
-    </nav>
-
-    <!-- Search Input (English Placeholder) -->
-    <div class="search-bar">
-      <input type="text" id="searchInput" onkeyup="filterChapters()" placeholder="Search by chapter number, title, topic, or keyword...">
-    </div>
-
-    <!-- Chapter Sections -->
-    <div id="chapterContainer">
-      <!-- ==================== MOD1 ==================== -->
-      <section class="module-section" data-mod="mod1" style="display: block;">
-        <div class="module-header">
-          <h2>മൊഡ്യൂൾ 1: നിർമ്മിത ബുദ്ധിയുടെ ചരിത്രവും തത്ത്വചിന്താപരമായ അടിത്തറയും</h2>
-          <span class="module-tag">Module 1 (3 Chapters)</span>
-        </div>
-        <div class="chapter-list">
-          <!-- Ch 01 -->
-          <article class="chapter-card" style="--ch-c1:#1d4ed8; --ch-c2:#3b82f6; --ch-glow:rgba(59, 130, 246, 0.45); --ch-border:#bfdbfe; --ch-delay:0s;">
-            <div class="chapter-num">01</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 1: നിർമ്മിത ബുദ്ധിയുടെ ചരിത്രവും അടിത്തറയും</h3>
-              <div class="eng-title">History and Foundations of Artificial Intelligence</div>
-              <p>ഗ്രീക്ക് തത്ത്വചിന്തയും ലൈബ്നിസിന്റെ ലോജിക്കും മുതൽ ഡാർട്ട്മൗത്ത് കോൺഫറൻസും ആധുനിക കമ്പ്യൂട്ടേഷൻ മാതൃകകളും വരെയുള്ള വികാസം.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_1_Malayalam.pdf', 'History and Foundations of Artificial Intelligence')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 02 -->
-          <article class="chapter-card" style="--ch-c1:#059669; --ch-c2:#10b981; --ch-glow:rgba(16, 185, 129, 0.45); --ch-border:#a7f3d0; --ch-delay:2.5s;">
-            <div class="chapter-num">02</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 2: ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ? (ട്യൂറിംഗ് ടെസ്റ്റും ചർച്ച് തീസിസും)</h3>
-              <div class="eng-title">Can a Machine Think? (The Turing Test & Church's Thesis)</div>
-              <p>അലൻ ട്യൂറിംഗിന്റെ 1950-ലെ പ്രബന്ധം, ഇമിറ്റേഷൻ ഗെയിം, യന്ത്രചിന്തയെക്കുറിച്ചുള്ള വാദങ്ങളും ചർച്ച് തീസിസും.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_2_Malayalam.pdf', 'Can a Machine Think? (The Turing Test & Church's Thesis)')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 03 -->
-          <article class="chapter-card" style="--ch-c1:#7c3aed; --ch-c2:#8b5cf6; --ch-glow:rgba(139, 92, 246, 0.45); --ch-border:#ddd6fe; --ch-delay:5s;">
-            <div class="chapter-num">03</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 3: നിർമ്മിത ബുദ്ധിയുടെ വെളിച്ചത്തിൽ തത്ത്വചിന്ത</h3>
-              <div class="eng-title">Philosophy in the Light of AI</div>
-              <p>തത്ത്വചിന്തയും കമ്പ്യൂട്ടിംഗും തമ്മിലുള്ള പാരസ്പര്യം, ബോധം, ദെക്കാർത്തെ, സ്പിനോസയുടെ ജ്ഞാന തലങ്ങൾ എന്നിവയെക്കുറിച്ചുള്ള വിശകലനം.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_3_Malayalam.pdf', 'Philosophy in the Light of AI')">Read Online</button>
-            </div>
-          </article>
-        </div>
-      </section>
-      <!-- ==================== MOD2 ==================== -->
-      <section class="module-section" data-mod="mod2" style="display: none;">
-        <div class="module-header">
-          <h2>മൊഡ്യൂൾ 2: ക്ലാസിക്കൽ നിർമ്മിത ബുദ്ധിയും കമ്പ്യൂട്ടേഷൻ മാതൃകകളും</h2>
-          <span class="module-tag">Module 2 (5 Chapters)</span>
-        </div>
-        <div class="chapter-list">
-          <!-- Ch 04 -->
-          <article class="chapter-card" style="--ch-c1:#d97706; --ch-c2:#f59e0b; --ch-glow:rgba(245, 158, 11, 0.45); --ch-border:#fde68a; --ch-delay:0s;">
-            <div class="chapter-num">04</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 4: ക്ലാസിക്കൽ AI മാതൃകയിലെ പ്രശ്നങ്ങൾ (GOFAI)</h3>
-              <div class="eng-title">Problems in the Classical Model of AI (GOFAI)</div>
-              <p>ക്ലാസിക്കൽ സിംബോളിക് AI, സിംബൽ മാനിപുലേഷൻ, ഫ്രെയിം പ്രോബ്ലം, യഥാർത്ഥ ലോകത്തിലെ പരിമിതികൾ.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_4_Malayalam.pdf', 'Problems in the Classical Model of AI (GOFAI)')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 05 -->
-          <article class="chapter-card" style="--ch-c1:#e11d48; --ch-c2:#f43f5e; --ch-glow:rgba(244, 63, 94, 0.45); --ch-border:#fecdd3; --ch-delay:1.8s;">
-            <div class="chapter-num">05</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 5: അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പ്രവർത്തന പരിമിതികളും</h3>
-              <div class="eng-title">Alan Turing Test & Operational Limits</div>
-              <p>പ്രവർത്തനപരമായ ബുദ്ധിയും യഥാർത്ഥ ബോധവും, ട്യൂറിംഗ് ടെസ്റ്റിനെതിരെയുള്ള ഒൻപത് പ്രധാന വിമർശനങ്ങൾ.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_5_Malayalam.pdf', 'Alan Turing Test & Operational Limits')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 06 -->
-          <article class="chapter-card" style="--ch-c1:#0d9488; --ch-c2:#14b8a6; --ch-glow:rgba(20, 184, 166, 0.45); --ch-border:#99f6e4; --ch-delay:3.6s;">
-            <div class="chapter-num">06</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 6: ചൈനീസ് റൂം പരീക്ഷണം (ജോൺ സിയൾ 1980)</h3>
-              <div class="eng-title">Chinese Room Experiment (John Searle 1980)</div>
-              <p>ജോൺ സിയളിന്റെ പ്രശസ്തമായ ചിന്താപരീക്ഷണം: സിന്റാക്സ് എന്നത് സെമാന്റിക്സ് അല്ല, സ്ട്രോങ് AI-ക്കെതിരെയുള്ള വാദങ്ങൾ.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_6_Malayalam.pdf', 'Chinese Room Experiment (John Searle 1980)')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 07 -->
-          <article class="chapter-card" style="--ch-c1:#4338ca; --ch-c2:#6366f1; --ch-glow:rgba(99, 102, 241, 0.45); --ch-border:#c7d2fe; --ch-delay:5.4s;">
-            <div class="chapter-num">07</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 7: ദെക്കാർത്തെയും മനസ്സിന്റെ തത്ത്വചിന്തയും (ഡ്യുവലിസം)</h3>
-              <div class="eng-title">Descartes & Philosophy of Mind (Substance Dualism)</div>
-              <p>റെനെ ദെക്കാർത്തെ, മനസ്സ്-ശരീര ദ്വൈതവാദം (Dualism), ചിന്തിക്കുന്ന വസ്തുവും ഭൗതിക വസ്തുവും.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_7_Malayalam.pdf', 'Descartes & Philosophy of Mind (Substance Dualism)')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 08 -->
-          <article class="chapter-card" style="--ch-c1:#c026d3; --ch-c2:#d946ef; --ch-glow:rgba(217, 70, 239, 0.45); --ch-border:#f5d0fe; --ch-delay:7.2s;">
-            <div class="chapter-num">08</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 8: ശരീരരഹിതമായ ബുദ്ധി (Disembodied Intelligence)</h3>
-              <div class="eng-title">Disembodied Intelligence</div>
-              <p>ശരീരമില്ലാതെ കേവല അൽഗോരിതങ്ങൾക്ക് ബോധം സാധ്യമാണോ എന്ന അന്വേഷണവും എംബോഡിഡ് കോഗ്നിഷൻ സിദ്ധാന്തവും.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_8_Malayalam.pdf', 'Disembodied Intelligence')">Read Online</button>
-            </div>
-          </article>
-        </div>
-      </section>
-      <!-- ==================== MOD3 ==================== -->
-      <section class="module-section" data-mod="mod3" style="display: none;">
-        <div class="module-header">
-          <h2>മൊഡ്യൂൾ 3: നിർമ്മിത ബുദ്ധിയിലെ ജ്ഞാനമീമാംസാ സിദ്ധാന്തങ്ങൾ</h2>
-          <span class="module-tag">Module 3 (5 Chapters)</span>
-        </div>
-        <div class="chapter-list">
-          <!-- Ch 09 -->
-          <article class="chapter-card" style="--ch-c1:#ea580c; --ch-c2:#f97316; --ch-glow:rgba(249, 115, 22, 0.45); --ch-border:#fed7aa; --ch-delay:0s;">
-            <div class="chapter-num">09</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 9: ബൗദ്ധ ജ്ഞാനമീമാംസ (Buddhism Epistemology)</h3>
-              <div class="eng-title">Buddhism Epistemology</div>
-              <p>പ്രത്യക്ഷവും അനുമാനവും, പ്രതീത്യസമുത്പാദം, അനാത്മവാദം, നിർമ്മിതബുദ്ധിയിലെ ജ്ഞാന രൂപീകരണം.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_9_Malayalam.pdf', 'Buddhism Epistemology')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 10 -->
-          <article class="chapter-card" style="--ch-c1:#047857; --ch-c2:#34d399; --ch-glow:rgba(52, 211, 153, 0.45); --ch-border:#a7f3d0; --ch-delay:1.8s;">
-            <div class="chapter-num">10</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 10: ന്യായ ജ്ഞാനമീമാംസയും വിജ്ഞാന പ്രാതിനിധ്യവും</h3>
-              <div class="eng-title">Nyaya Epistemology & Knowledge Representation</div>
-              <p>ന്യായ ദർശനത്തിലെ നാല് പ്രമാണങ്ങൾ, യുക്തിസഹമായ നിഗമന ചട്ടക്കൂട്, AI നോളജ് ഗ്രാഫുകൾ.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_10_Malayalam.pdf', 'Nyaya Epistemology & Knowledge Representation')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 11 -->
-          <article class="chapter-card" style="--ch-c1:#3730a3; --ch-c2:#818cf8; --ch-glow:rgba(129, 140, 248, 0.45); --ch-border:#c7d2fe; --ch-delay:3.6s;">
-            <div class="chapter-num">11</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 11: പാശ്ചാത്യ ജ്ഞാനമീമാംസ (യുക്തിവാദവും അനുഭവവാദവും)</h3>
-              <div class="eng-title">Western Epistemology (Rationalism vs Empiricism)</div>
-              <p>റാഷണലിസവും എംപിരിസിസവും, ജസ്റ്റിഫൈഡ് ട്രൂ ബിലീഫ്, സിംബോളിക് AI vs മെഷീൻ ലേണിംഗ്.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_11_Malayalam.pdf', 'Western Epistemology (Rationalism vs Empiricism)')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 12 -->
-          <article class="chapter-card" style="--ch-c1:#b45309; --ch-c2:#fbbf24; --ch-glow:rgba(251, 191, 36, 0.45); --ch-border:#fde68a; --ch-delay:5.4s;">
-            <div class="chapter-num">12</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 12: ഫങ്ഷണലിസവും കമ്പ്യൂട്ടേഷണൽ മനസ്സും</h3>
-              <div class="eng-title">Functionalism & Computational Mind</div>
-              <p>ഹിലരി പുട്നത്തിന്റെ ഫങ്ഷണലിസം, മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി (മനസ്സ് സോഫ്റ്റ്‌വെയറും തലച്ചോറ് ഹാർഡ്‌വെയറും).</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_12_Malayalam.pdf', 'Functionalism & Computational Mind')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 13 -->
-          <article class="chapter-card" style="--ch-c1:#be185d; --ch-c2:#f472b6; --ch-glow:rgba(244, 114, 182, 0.45); --ch-border:#fbcfe8; --ch-delay:7.2s;">
-            <div class="chapter-num">13</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 13: നിർമ്മിത ബുദ്ധിയിലെ ജ്ഞാനമീമാംസാപരമായ പ്രത്യാഘാതങ്ങൾ</h3>
-              <div class="eng-title">Epistemological Implications in Artificial Intelligence</div>
-              <p>യന്ത്രജ്ഞാനത്തിന്റെ സത്യാവസ്ഥ, ഡീപ് ലേണിംഗിലെ ബ്ലാക്ക് ബോക്സ് പ്രശ്നം, എക്സ്പ്ലെയിനബിൾ AI (XAI).</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_13_Malayalam.pdf', 'Epistemological Implications in Artificial Intelligence')">Read Online</button>
-            </div>
-          </article>
-        </div>
-      </section>
-      <!-- ==================== MOD4 ==================== -->
-      <section class="module-section" data-mod="mod4" style="display: none;">
-        <div class="module-header">
-          <h2>മൊഡ്യൂൾ 4: ധാർമ്മികത, നീതിശാസ്ത്രം, സാമൂഹിക പ്രത്യാഘാതങ്ങൾ</h2>
-          <span class="module-tag">Module 4 (7 Chapters)</span>
-        </div>
-        <div class="chapter-list">
-          <!-- Ch 14 -->
-          <article class="chapter-card" style="--ch-c1:#0284c7; --ch-c2:#38bdf8; --ch-glow:rgba(56, 189, 248, 0.45); --ch-border:#bae6fd; --ch-delay:0s;">
-            <div class="chapter-num">14</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 14: 4.1(A) സ്വയംഭരണ AI-യുടെ ലക്ഷ്യങ്ങളെ മാനുഷിക മൂല്യങ്ങളുമായി സമന്വയിപ്പിക്കൽ</h3>
-              <div class="eng-title">4.1(A) Aligning Autonomous AI Aims with Human Values</div>
-              <p>AI വാല്യൂ അലൈൻമെന്റ് പ്രോബ്ലം, ഇൻസ്ട്രുമെന്റൽ കൺവർജൻസ്, പേപ്പർക്ലിപ്പ് മാക്സിമൈസർ, മനുഷ്യമൂല്യ സംരക്ഷണം.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_14_Malayalam.pdf', '4.1(A) Aligning Autonomous AI Aims with Human Values')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 15 -->
-          <article class="chapter-card" style="--ch-c1:#065f46; --ch-c2:#10b981; --ch-glow:rgba(16, 185, 129, 0.45); --ch-border:#a7f3d0; --ch-delay:1.3s;">
-            <div class="chapter-num">15</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 15: 4.1(B) AI-യുടെ ഭാവി മാനവരാശിക്ക് അസ്തിത്വപരമായ ഭീഷണിയാണോ?</h3>
-              <div class="eng-title">4.1(B) Does the Future of AI Pose an Existential Threat?</div>
-              <p>എക്സിസ്റ്റൻഷ്യൽ റിസ്ക്, സൂപ്പർ ഇന്റലിജൻസ്, റോബോട്ടിക്സ് നിയമങ്ങൾ, അനിയന്ത്രിത AI-യുടെ വിപത്തുകൾ.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_15_Malayalam.pdf', '4.1(B) Does the Future of AI Pose an Existential Threat?')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 16 -->
-          <article class="chapter-card" style="--ch-c1:#5b21b6; --ch-c2:#a78bfa; --ch-glow:rgba(167, 139, 250, 0.45); --ch-border:#ddd6fe; --ch-delay:2.6s;">
-            <div class="chapter-num">16</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 16: 4.2(A) ലേണിംഗ് അൽഗോരിതങ്ങളിലെ പക്ഷപാതങ്ങൾ എങ്ങനെ തടയാം?</h3>
-              <div class="eng-title">4.2(A) Preventing Algorithmic Biases in Learning Algorithms</div>
-              <p>അൽഗോരിതമിക് ബയാസ്, ചരിത്രപരമായ മുൻവിധികൾ, വിവേചനങ്ങൾ തടയൽ, നീതിപൂർവ്വകമായ അൽഗോരിതം നിർമ്മാണം.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_16_Malayalam.pdf', '4.2(A) Preventing Algorithmic Biases in Learning Algorithms')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 17 -->
-          <article class="chapter-card" style="--ch-c1:#c2410c; --ch-c2:#fb923c; --ch-glow:rgba(251, 146, 60, 0.45); --ch-border:#fed7aa; --ch-delay:3.9s;">
-            <div class="chapter-num">17</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 17: 4.2(B) സാമൂഹിക ബന്ധങ്ങളിൽ AI എങ്ങനെ ഉൾച്ചേർക്കണം?</h3>
-              <div class="eng-title">4.2(B) How should AI systems be embedded in our social relations?</div>
-              <p>നിവേശിത ഉപകരണങ്ങൾ, വെർച്വൽ അസിസ്റ്റന്റുകൾ, ആരോഗ്യ സംരക്ഷണത്തിലെ വിശ്വാസ്യത, സോഷ്യൽ സ്കിൽ ശോഷണം, എതിക്സ്-ബൈ-ഡിസൈൻ.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_17_Malayalam.pdf', '4.2(B) How should AI systems be embedded in our social relations?')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 18 -->
-          <article class="chapter-card" style="--ch-c1:#9f1239; --ch-c2:#fb7185; --ch-glow:rgba(251, 113, 133, 0.45); --ch-border:#fecdd3; --ch-delay:5.2s;">
-            <div class="chapter-num">18</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 18: 4.3(A) സ്വയം നിയന്ത്രിത വാഹനങ്ങൾക്കായുള്ള ധാർമ്മിക നിയമങ്ങൾ</h3>
-              <div class="eng-title">4.3(A) Ethical Rules for Autonomous Vehicles</div>
-              <p>ഡ്രൈവർരഹിത കാറുകൾ, ട്രോളി പ്രോബ്ലം, അപകട ഘട്ടങ്ങളിലെ ധാർമ്മിക തീരുമാനങ്ങൾ (യൂട്ടിലിറ്റേറിയനിസം vs ഡിയോൺടോളജി).</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_18_Malayalam.pdf', '4.3(A) Ethical Rules for Autonomous Vehicles')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 19 -->
-          <article class="chapter-card" style="--ch-c1:#0e7490; --ch-c2:#22d3ee; --ch-glow:rgba(34, 211, 238, 0.45); --ch-border:#a5f3fc; --ch-delay:6.5s;">
-            <div class="chapter-num">19</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 19: 4.3(B) AI സംവിധാനങ്ങൾക്ക് ധാർമ്മികമായ ദോഷം അനുഭവിക്കാൻ കഴിയുമോ?</h3>
-              <div class="eng-title">4.3(B) Can AI Systems Suffer Moral Harm?</div>
-              <p>മോറൽ പേഷ്യന്റ്ഹുഡ്, ബോധവും വേദനയും അനുഭവിക്കാനുള്ള കഴിവ്, അവകാശങ്ങളും ചൂഷണവും.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_19_Malayalam.pdf', '4.3(B) Can AI Systems Suffer Moral Harm?')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 20 -->
-          <article class="chapter-card" style="--ch-c1:#6b21a8; --ch-c2:#c084fc; --ch-glow:rgba(192, 132, 252, 0.45); --ch-border:#e9d5ff; --ch-delay:7.8s;">
-            <div class="chapter-num">20</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 20: 4.3(C) AI സംവിധാനങ്ങൾ ധാർമ്മിക കർത്താക്കളാകുമോ? ഉത്തരവാദിത്തം എങ്ങനെ ഉറപ്പാക്കാം?</h3>
-              <div class="eng-title">4.3(C) Can AI Systems Be Moral Agents & Accountability?</div>
-              <p>മോറൽ ഏജൻസി, ഇച്ഛാസ്വാതന്ത്ര്യം, ഉത്തരവാദിത്ത വിടവ് (Responsibility Gap), ക്രിമിനൽ-സിവിൽ ബാധ്യതകൾ.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_20_Malayalam.pdf', '4.3(C) Can AI Systems Be Moral Agents & Accountability?')">Read Online</button>
-            </div>
-          </article>
-        </div>
-      </section>
-      <!-- ==================== MOD5 ==================== -->
-      <section class="module-section" data-mod="mod5" style="display: none;">
-        <div class="module-header">
-          <h2>മൊഡ്യൂൾ 5: നിർമ്മിത ബുദ്ധിയുടെ തത്ത്വചിന്തയും മാനവരാശിയുടെ ഭാവിയും</h2>
-          <span class="module-tag">Module 5 (2 Chapters)</span>
-        </div>
-        <div class="chapter-list">
-          <!-- Ch 21 -->
-          <article class="chapter-card" style="--ch-c1:#1e1b4b; --ch-c2:#4f46e5; --ch-glow:rgba(79, 70, 229, 0.45); --ch-border:#c7d2fe; --ch-delay:0s;">
-            <div class="chapter-num">21</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 21: മെഷീൻ കോഗ്നിഷനും ക്ലാസിക്കൽ AI സമന്വയവും</h3>
-              <div class="eng-title">Machine Cognition & Classical AI Synthesis</div>
-              <p>യഥാർത്ഥ ചിന്തയും അനുകരണവും തമ്മിലുള്ള വ്യത്യാസം, ക്ലാസിക്കൽ AI-യുടെ ഗുണദോഷങ്ങൾ, മെഷീൻ കോഗ്നിഷൻ ചർച്ചകൾ.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_21_Malayalam.pdf', 'Machine Cognition & Classical AI Synthesis')">Read Online</button>
-            </div>
-          </article>
-          <!-- Ch 22 -->
-          <article class="chapter-card" style="--ch-c1:#064e3b; --ch-c2:#059669; --ch-glow:rgba(5, 150, 105, 0.45); --ch-border:#a7f3d0; --ch-delay:4s;">
-            <div class="chapter-num">22</div>
-            <div class="chapter-info">
-              <h3>അധ്യായം 22: ഭാരതീയ തത്ത്വചിന്തയിലെ ആസ്തിക ദർശനങ്ങളും മാനവരാശിയുടെ ഭാവിയും</h3>
-              <div class="eng-title">Indian Philosophy Āstika Schools & Future of Humanity</div>
-              <p>ഷഡ്ദർശനങ്ങൾ (ന്യായ, വൈശേഷിക, സാംഖ്യ, യോഗ, മീമാംസ, വേദാന്തം), ബോധത്തെക്കുറിച്ചുള്ള ഭാരതീയ വീക്ഷണം, സെമിനാർ ചോദ്യങ്ങൾ.</p>
-            </div>
-            <div class="btn-group">
-              <button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_22_Malayalam.pdf', 'Indian Philosophy Āstika Schools & Future of Humanity')">Read Online</button>
-            </div>
-          </article>
-        </div>
-      </section>
-    </div>
-
-    <!-- Bottom Navigation: All in English with 10s Colourful Blinking -->
-    <footer class="bottom-nav">
-      <button type="button" class="nav-btn nav-btn-back" onclick="if(window.history.length &gt; 1){window.history.back();}else{window.location.href='index.html';}" aria-label="Go back">← Back</button>
-      <a class="nav-btn nav-btn-home" href="index.html#top" aria-label="Academic Hub Home">⌂ Home</a>
-    </footer>
-
-  </main>
-
-  <!-- PDF View Modal with Explicit English Action Buttons (No blank buttons) -->
-  <div id="viewerModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 id="modalTitle">Study Guide Reader</h3>
-        <div class="modal-header-actions">
-          
-          <button type="button" class="modal-action-btn" onclick="zoomModalReader(-0.25)" title="Zoom Out" aria-label="Zoom Out">Zoom −</button>
-          <button type="button" class="modal-action-btn" onclick="zoomModalReader(0.25)" title="Zoom In" aria-label="Zoom In">Zoom +</button>
-          <button type="button" class="modal-action-btn" onclick="resetModalReaderZoom()" title="Reset Zoom" aria-label="Reset Zoom">Reset</button>
-          <a id="modalExternalBtn" class="modal-action-btn" href="#" target="_blank" rel="noopener" title="Open in New Tab" aria-label="Open in New Tab">Open ↗</a>
-          <button class="close-modal" onclick="closeViewer()" aria-label="Close">✕ Close</button>
-        </div>
-      </div>
-      <iframe id="pdfFrame" class="modal-iframe" src="" title="PDF Viewer"></iframe>
-    </div>
-  </div>
-
-  <script>
+<main class="page-box">
+<!-- Premium Sticky Top Back & Home Navigation (All in English) -->
+<nav aria-label="Reading navigation" class="reading-top-nav">
+<button aria-label="Go back" class="btn-back" onclick="if(window.history.length &gt; 1){window.history.back();}else{window.location.href='index.html';}" type="button">← Back</button>
+<a aria-label="Academic Hub Home" class="btn-home" href="index.html#top">⌂ Home</a>
+</nav>
+<header class="hero">
+<div class="uni-badge">CALICUT UNIVERSITY · CDOE · FYUGP</div>
+<h1 class="hero-title">
+<span class="hero-title-en">Philosophy of Artificial Intelligence — English Malayalam Reading</span>
+<span class="hero-title-ml">ഫിലോസഫി ഓഫ് ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് — മലയാളം വായന</span>
+</h1>
+</header>
+<!-- Module Filters (All in English) -->
+<nav aria-label="Filter by module" class="filter-wrapper">
+<button class="filter-btn" onclick="filterModule(\'mod1\', this)">Module 1: Foundations (3 Chapters)</button>
+<button class="filter-btn" onclick="filterModule('mod2', this)">Module 2: Classical AI (5 Chapters)</button>
+<button class="filter-btn" onclick="filterModule('mod3', this)">Module 3: Epistemology (5 Chapters)</button>
+<button class="filter-btn" onclick="filterModule('mod4', this)">Module 4: Ethics of AI (7 Chapters)</button>
+<button class="filter-btn" onclick="filterModule('mod5', this)">Module 5: Future &amp; Perspectives (2 Chapters)</button>
+<button class="filter-btn active" onclick="filterModule(\'all\', this)">📚 All Chapters (22 Chapters)</button>
+</nav>
+<!-- Search Input (English Placeholder) -->
+<div class="search-bar">
+<input id="searchInput" onkeyup="filterChapters()" placeholder="Search by chapter number, title, topic, or keyword..." type="text"/>
+</div>
+<!-- Chapter Sections -->
+<div id="chapterContainer">
+<!-- ==================== MOD1 ==================== -->
+<section class="module-section" data-mod="mod1" style="display: block;">
+<div class="module-header">
+<h2>മൊഡ്യൂൾ 1: നിർമ്മിത ബുദ്ധിയുടെ ചരിത്രവും തത്ത്വചിന്താപരമായ അടിത്തറയും</h2>
+<span class="module-tag">Module 1 (3 Chapters)</span>
+</div>
+<div class="chapter-list">
+<!-- Ch 01 -->
+<article class="chapter-card" style="--ch-c1:#1d4ed8; --ch-c2:#3b82f6; --ch-glow:rgba(59, 130, 246, 0.45); --ch-border:#bfdbfe; --ch-delay:0.0s;">
+<div class="chapter-num">01</div>
+<div class="chapter-info">
+<h3>അധ്യായം 1: നിർമ്മിത ബുദ്ധിയുടെ ചരിത്രവും അടിത്തറയും</h3>
+<div class="eng-title">History and Foundations of Artificial Intelligence</div>
+<p>ഗ്രീക്ക് തത്ത്വചിന്തയും ലൈബ്നിസിന്റെ ലോജിക്കും മുതൽ ഡാർട്ട്മൗത്ത് കോൺഫറൻസും ആധുനിക കമ്പ്യൂട്ടേഷൻ മാതൃകകളും വരെയുള്ള വികാസം.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_1_Malayalam.pdf', 'History and Foundations of Artificial Intelligence')">Read Online</button>
+</div>
+</article>
+<!-- Ch 02 -->
+<article class="chapter-card" style="--ch-c1:#059669; --ch-c2:#10b981; --ch-glow:rgba(16, 185, 129, 0.45); --ch-border:#a7f3d0; --ch-delay:0.4s;">
+<div class="chapter-num">02</div>
+<div class="chapter-info">
+<h3>അധ്യായം 2: ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ? (ട്യൂറിംഗ് ടെസ്റ്റും ചർച്ച് തീസിസും)</h3>
+<div class="eng-title">Can a Machine Think? (The Turing Test &amp; Church's Thesis)</div>
+<p>അലൻ ട്യൂറിംഗിന്റെ 1950-ലെ പ്രബന്ധം, ഇമിറ്റേഷൻ ഗെയിം, യന്ത്രചിന്തയെക്കുറിച്ചുള്ള വാദങ്ങളും ചർച്ച് തീസിസും.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_2_Malayalam.pdf', 'Can a Machine Think? (The Turing Test &amp; Church's Thesis)')">Read Online</button>
+</div>
+</article>
+<!-- Ch 03 -->
+<article class="chapter-card" style="--ch-c1:#7c3aed; --ch-c2:#8b5cf6; --ch-glow:rgba(139, 92, 246, 0.45); --ch-border:#ddd6fe; --ch-delay:0.7s;">
+<div class="chapter-num">03</div>
+<div class="chapter-info">
+<h3>അധ്യായം 3: നിർമ്മിത ബുദ്ധിയുടെ വെളിച്ചത്തിൽ തത്ത്വചിന്ത</h3>
+<div class="eng-title">Philosophy in the Light of AI</div>
+<p>തത്ത്വചിന്തയും കമ്പ്യൂട്ടിംഗും തമ്മിലുള്ള പാരസ്പര്യം, ബോധം, ദെക്കാർത്തെ, സ്പിനോസയുടെ ജ്ഞാന തലങ്ങൾ എന്നിവയെക്കുറിച്ചുള്ള വിശകലനം.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_3_Malayalam.pdf', 'Philosophy in the Light of AI')">Read Online</button>
+</div>
+</article>
+</div>
+</section>
+<!-- ==================== MOD2 ==================== -->
+<section class="module-section" data-mod="mod2" style="display: block;">
+<div class="module-header">
+<h2>മൊഡ്യൂൾ 2: ക്ലാസിക്കൽ നിർമ്മിത ബുദ്ധിയും കമ്പ്യൂട്ടേഷൻ മാതൃകകളും</h2>
+<span class="module-tag">Module 2 (5 Chapters)</span>
+</div>
+<div class="chapter-list">
+<!-- Ch 04 -->
+<article class="chapter-card" style="--ch-c1:#d97706; --ch-c2:#f59e0b; --ch-glow:rgba(245, 158, 11, 0.45); --ch-border:#fde68a; --ch-delay:1.1s;">
+<div class="chapter-num">04</div>
+<div class="chapter-info">
+<h3>അധ്യായം 4: ക്ലാസിക്കൽ AI മാതൃകയിലെ പ്രശ്നങ്ങൾ (GOFAI)</h3>
+<div class="eng-title">Problems in the Classical Model of AI (GOFAI)</div>
+<p>ക്ലാസിക്കൽ സിംബോളിക് AI, സിംബൽ മാനിപുലേഷൻ, ഫ്രെയിം പ്രോബ്ലം, യഥാർത്ഥ ലോകത്തിലെ പരിമിതികൾ.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_4_Malayalam.pdf', 'Problems in the Classical Model of AI (GOFAI)')">Read Online</button>
+</div>
+</article>
+<!-- Ch 05 -->
+<article class="chapter-card" style="--ch-c1:#e11d48; --ch-c2:#f43f5e; --ch-glow:rgba(244, 63, 94, 0.45); --ch-border:#fecdd3; --ch-delay:1.5s;">
+<div class="chapter-num">05</div>
+<div class="chapter-info">
+<h3>അധ്യായം 5: അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പ്രവർത്തന പരിമിതികളും</h3>
+<div class="eng-title">Alan Turing Test &amp; Operational Limits</div>
+<p>പ്രവർത്തനപരമായ ബുദ്ധിയും യഥാർത്ഥ ബോധവും, ട്യൂറിംഗ് ടെസ്റ്റിനെതിരെയുള്ള ഒൻപത് പ്രധാന വിമർശനങ്ങൾ.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_5_Malayalam.pdf', 'Alan Turing Test &amp; Operational Limits')">Read Online</button>
+</div>
+</article>
+<!-- Ch 06 -->
+<article class="chapter-card" style="--ch-c1:#0d9488; --ch-c2:#14b8a6; --ch-glow:rgba(20, 184, 166, 0.45); --ch-border:#99f6e4; --ch-delay:1.8s;">
+<div class="chapter-num">06</div>
+<div class="chapter-info">
+<h3>അധ്യായം 6: ചൈനീസ് റൂം പരീക്ഷണം (ജോൺ സിയൾ 1980)</h3>
+<div class="eng-title">Chinese Room Experiment (John Searle 1980)</div>
+<p>ജോൺ സിയളിന്റെ പ്രശസ്തമായ ചിന്താപരീക്ഷണം: സിന്റാക്സ് എന്നത് സെമാന്റിക്സ് അല്ല, സ്ട്രോങ് AI-ക്കെതിരെയുള്ള വാദങ്ങൾ.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_6_Malayalam.pdf', 'Chinese Room Experiment (John Searle 1980)')">Read Online</button>
+</div>
+</article>
+<!-- Ch 07 -->
+<article class="chapter-card" style="--ch-c1:#4338ca; --ch-c2:#6366f1; --ch-glow:rgba(99, 102, 241, 0.45); --ch-border:#c7d2fe; --ch-delay:2.2s;">
+<div class="chapter-num">07</div>
+<div class="chapter-info">
+<h3>അധ്യായം 7: ദെക്കാർത്തെയും മനസ്സിന്റെ തത്ത്വചിന്തയും (ഡ്യുവലിസം)</h3>
+<div class="eng-title">Descartes &amp; Philosophy of Mind (Substance Dualism)</div>
+<p>റെനെ ദെക്കാർത്തെ, മനസ്സ്-ശരീര ദ്വൈതവാദം (Dualism), ചിന്തിക്കുന്ന വസ്തുവും ഭൗതിക വസ്തുവും.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_7_Malayalam.pdf', 'Descartes &amp; Philosophy of Mind (Substance Dualism)')">Read Online</button>
+</div>
+</article>
+<!-- Ch 08 -->
+<article class="chapter-card" style="--ch-c1:#c026d3; --ch-c2:#d946ef; --ch-glow:rgba(217, 70, 239, 0.45); --ch-border:#f5d0fe; --ch-delay:2.5s;">
+<div class="chapter-num">08</div>
+<div class="chapter-info">
+<h3>അധ്യായം 8: ശരീരരഹിതമായ ബുദ്ധി (Disembodied Intelligence)</h3>
+<div class="eng-title">Disembodied Intelligence</div>
+<p>ശരീരമില്ലാതെ കേവല അൽഗോരിതങ്ങൾക്ക് ബോധം സാധ്യമാണോ എന്ന അന്വേഷണവും എംബോഡിഡ് കോഗ്നിഷൻ സിദ്ധാന്തവും.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_8_Malayalam.pdf', 'Disembodied Intelligence')">Read Online</button>
+</div>
+</article>
+</div>
+</section>
+<!-- ==================== MOD3 ==================== -->
+<section class="module-section" data-mod="mod3" style="display: block;">
+<div class="module-header">
+<h2>മൊഡ്യൂൾ 3: നിർമ്മിത ബുദ്ധിയിലെ ജ്ഞാനമീമാംസാ സിദ്ധാന്തങ്ങൾ</h2>
+<span class="module-tag">Module 3 (5 Chapters)</span>
+</div>
+<div class="chapter-list">
+<!-- Ch 09 -->
+<article class="chapter-card" style="--ch-c1:#ea580c; --ch-c2:#f97316; --ch-glow:rgba(249, 115, 22, 0.45); --ch-border:#fed7aa; --ch-delay:2.9s;">
+<div class="chapter-num">09</div>
+<div class="chapter-info">
+<h3>അധ്യായം 9: ബൗദ്ധ ജ്ഞാനമീമാംസ (Buddhism Epistemology)</h3>
+<div class="eng-title">Buddhism Epistemology</div>
+<p>പ്രത്യക്ഷവും അനുമാനവും, പ്രതീത്യസമുത്പാദം, അനാത്മവാദം, നിർമ്മിതബുദ്ധിയിലെ ജ്ഞാന രൂപീകരണം.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_9_Malayalam.pdf', 'Buddhism Epistemology')">Read Online</button>
+</div>
+</article>
+<!-- Ch 10 -->
+<article class="chapter-card" style="--ch-c1:#047857; --ch-c2:#34d399; --ch-glow:rgba(52, 211, 153, 0.45); --ch-border:#a7f3d0; --ch-delay:3.3s;">
+<div class="chapter-num">10</div>
+<div class="chapter-info">
+<h3>അധ്യായം 10: ന്യായ ജ്ഞാനമീമാംസയും വിജ്ഞാന പ്രാതിനിധ്യവും</h3>
+<div class="eng-title">Nyaya Epistemology &amp; Knowledge Representation</div>
+<p>ന്യായ ദർശനത്തിലെ നാല് പ്രമാണങ്ങൾ, യുക്തിസഹമായ നിഗമന ചട്ടക്കൂട്, AI നോളജ് ഗ്രാഫുകൾ.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_10_Malayalam.pdf', 'Nyaya Epistemology &amp; Knowledge Representation')">Read Online</button>
+</div>
+</article>
+<!-- Ch 11 -->
+<article class="chapter-card" style="--ch-c1:#3730a3; --ch-c2:#818cf8; --ch-glow:rgba(129, 140, 248, 0.45); --ch-border:#c7d2fe; --ch-delay:3.6s;">
+<div class="chapter-num">11</div>
+<div class="chapter-info">
+<h3>അധ്യായം 11: പാശ്ചാത്യ ജ്ഞാനമീമാംസ (യുക്തിവാദവും അനുഭവവാദവും)</h3>
+<div class="eng-title">Western Epistemology (Rationalism vs Empiricism)</div>
+<p>റാഷണലിസവും എംപിരിസിസവും, ജസ്റ്റിഫൈഡ് ട്രൂ ബിലീഫ്, സിംബോളിക് AI vs മെഷീൻ ലേണിംഗ്.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_11_Malayalam.pdf', 'Western Epistemology (Rationalism vs Empiricism)')">Read Online</button>
+</div>
+</article>
+<!-- Ch 12 -->
+<article class="chapter-card" style="--ch-c1:#b45309; --ch-c2:#fbbf24; --ch-glow:rgba(251, 191, 36, 0.45); --ch-border:#fde68a; --ch-delay:4.0s;">
+<div class="chapter-num">12</div>
+<div class="chapter-info">
+<h3>അധ്യായം 12: ഫങ്ഷണലിസവും കമ്പ്യൂട്ടേഷണൽ മനസ്സും</h3>
+<div class="eng-title">Functionalism &amp; Computational Mind</div>
+<p>ഹിലരി പുട്നത്തിന്റെ ഫങ്ഷണലിസം, മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി (മനസ്സ് സോഫ്റ്റ്‌വെയറും തലച്ചോറ് ഹാർഡ്‌വെയറും).</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_12_Malayalam.pdf', 'Functionalism &amp; Computational Mind')">Read Online</button>
+</div>
+</article>
+<!-- Ch 13 -->
+<article class="chapter-card" style="--ch-c1:#be185d; --ch-c2:#f472b6; --ch-glow:rgba(244, 114, 182, 0.45); --ch-border:#fbcfe8; --ch-delay:4.4s;">
+<div class="chapter-num">13</div>
+<div class="chapter-info">
+<h3>അധ്യായം 13: നിർമ്മിത ബുദ്ധിയിലെ ജ്ഞാനമീമാംസാപരമായ പ്രത്യാഘാതങ്ങൾ</h3>
+<div class="eng-title">Epistemological Implications in Artificial Intelligence</div>
+<p>യന്ത്രജ്ഞാനത്തിന്റെ സത്യാവസ്ഥ, ഡീപ് ലേണിംഗിലെ ബ്ലാക്ക് ബോക്സ് പ്രശ്നം, എക്സ്പ്ലെയിനബിൾ AI (XAI).</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_13_Malayalam.pdf', 'Epistemological Implications in Artificial Intelligence')">Read Online</button>
+</div>
+</article>
+</div>
+</section>
+<!-- ==================== MOD4 ==================== -->
+<section class="module-section" data-mod="mod4" style="display: block;">
+<div class="module-header">
+<h2>മൊഡ്യൂൾ 4: ധാർമ്മികത, നീതിശാസ്ത്രം, സാമൂഹിക പ്രത്യാഘാതങ്ങൾ</h2>
+<span class="module-tag">Module 4 (7 Chapters)</span>
+</div>
+<div class="chapter-list">
+<!-- Ch 14 -->
+<article class="chapter-card" style="--ch-c1:#0284c7; --ch-c2:#38bdf8; --ch-glow:rgba(56, 189, 248, 0.45); --ch-border:#bae6fd; --ch-delay:4.7s;">
+<div class="chapter-num">14</div>
+<div class="chapter-info">
+<h3>അധ്യായം 14: 4.1(A) സ്വയംഭരണ AI-യുടെ ലക്ഷ്യങ്ങളെ മാനുഷിക മൂല്യങ്ങളുമായി സമന്വയിപ്പിക്കൽ</h3>
+<div class="eng-title">4.1(A) Aligning Autonomous AI Aims with Human Values</div>
+<p>AI വാല്യൂ അലൈൻമെന്റ് പ്രോബ്ലം, ഇൻസ്ട്രുമെന്റൽ കൺവർജൻസ്, പേപ്പർക്ലിപ്പ് മാക്സിമൈസർ, മനുഷ്യമൂല്യ സംരക്ഷണം.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_14_Malayalam.pdf', '4.1(A) Aligning Autonomous AI Aims with Human Values')">Read Online</button>
+</div>
+</article>
+<!-- Ch 15 -->
+<article class="chapter-card" style="--ch-c1:#065f46; --ch-c2:#10b981; --ch-glow:rgba(16, 185, 129, 0.45); --ch-border:#a7f3d0; --ch-delay:5.1s;">
+<div class="chapter-num">15</div>
+<div class="chapter-info">
+<h3>അധ്യായം 15: 4.1(B) AI-യുടെ ഭാവി മാനവരാശിക്ക് അസ്തിത്വപരമായ ഭീഷണിയാണോ?</h3>
+<div class="eng-title">4.1(B) Does the Future of AI Pose an Existential Threat?</div>
+<p>എക്സിസ്റ്റൻഷ്യൽ റിസ്ക്, സൂപ്പർ ഇന്റലിജൻസ്, റോബോട്ടിക്സ് നിയമങ്ങൾ, അനിയന്ത്രിത AI-യുടെ വിപത്തുകൾ.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_15_Malayalam.pdf', '4.1(B) Does the Future of AI Pose an Existential Threat?')">Read Online</button>
+</div>
+</article>
+<!-- Ch 16 -->
+<article class="chapter-card" style="--ch-c1:#5b21b6; --ch-c2:#a78bfa; --ch-glow:rgba(167, 139, 250, 0.45); --ch-border:#ddd6fe; --ch-delay:5.5s;">
+<div class="chapter-num">16</div>
+<div class="chapter-info">
+<h3>അധ്യായം 16: 4.2(A) ലേണിംഗ് അൽഗോരിതങ്ങളിലെ പക്ഷപാതങ്ങൾ എങ്ങനെ തടയാം?</h3>
+<div class="eng-title">4.2(A) Preventing Algorithmic Biases in Learning Algorithms</div>
+<p>അൽഗോരിതമിക് ബയാസ്, ചരിത്രപരമായ മുൻവിധികൾ, വിവേചനങ്ങൾ തടയൽ, നീതിപൂർവ്വകമായ അൽഗോരിതം നിർമ്മാണം.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_16_Malayalam.pdf', '4.2(A) Preventing Algorithmic Biases in Learning Algorithms')">Read Online</button>
+</div>
+</article>
+<!-- Ch 17 -->
+<article class="chapter-card" style="--ch-c1:#c2410c; --ch-c2:#fb923c; --ch-glow:rgba(251, 146, 60, 0.45); --ch-border:#fed7aa; --ch-delay:5.8s;">
+<div class="chapter-num">17</div>
+<div class="chapter-info">
+<h3>അധ്യായം 17: 4.2(B) സാമൂഹിക ബന്ധങ്ങളിൽ AI എങ്ങനെ ഉൾച്ചേർക്കണം?</h3>
+<div class="eng-title">4.2(B) How should AI systems be embedded in our social relations?</div>
+<p>നിവേശിത ഉപകരണങ്ങൾ, വെർച്വൽ അസിസ്റ്റന്റുകൾ, ആരോഗ്യ സംരക്ഷണത്തിലെ വിശ്വാസ്യത, സോഷ്യൽ സ്കിൽ ശോഷണം, എതിക്സ്-ബൈ-ഡിസൈൻ.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_17_Malayalam.pdf', '4.2(B) How should AI systems be embedded in our social relations?')">Read Online</button>
+</div>
+</article>
+<!-- Ch 18 -->
+<article class="chapter-card" style="--ch-c1:#9f1239; --ch-c2:#fb7185; --ch-glow:rgba(251, 113, 133, 0.45); --ch-border:#fecdd3; --ch-delay:6.2s;">
+<div class="chapter-num">18</div>
+<div class="chapter-info">
+<h3>അധ്യായം 18: 4.3(A) സ്വയം നിയന്ത്രിത വാഹനങ്ങൾക്കായുള്ള ധാർമ്മിക നിയമങ്ങൾ</h3>
+<div class="eng-title">4.3(A) Ethical Rules for Autonomous Vehicles</div>
+<p>ഡ്രൈവർരഹിത കാറുകൾ, ട്രോളി പ്രോബ്ലം, അപകട ഘട്ടങ്ങളിലെ ധാർമ്മിക തീരുമാനങ്ങൾ (യൂട്ടിലിറ്റേറിയനിസം vs ഡിയോൺടോളജി).</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_18_Malayalam.pdf', '4.3(A) Ethical Rules for Autonomous Vehicles')">Read Online</button>
+</div>
+</article>
+<!-- Ch 19 -->
+<article class="chapter-card" style="--ch-c1:#0e7490; --ch-c2:#22d3ee; --ch-glow:rgba(34, 211, 238, 0.45); --ch-border:#a5f3fc; --ch-delay:6.5s;">
+<div class="chapter-num">19</div>
+<div class="chapter-info">
+<h3>അധ്യായം 19: 4.3(B) AI സംവിധാനങ്ങൾക്ക് ധാർമ്മികമായ ദോഷം അനുഭവിക്കാൻ കഴിയുമോ?</h3>
+<div class="eng-title">4.3(B) Can AI Systems Suffer Moral Harm?</div>
+<p>മോറൽ പേഷ്യന്റ്ഹുഡ്, ബോധവും വേദനയും അനുഭവിക്കാനുള്ള കഴിവ്, അവകാശങ്ങളും ചൂഷണവും.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_19_Malayalam.pdf', '4.3(B) Can AI Systems Suffer Moral Harm?')">Read Online</button>
+</div>
+</article>
+<!-- Ch 20 -->
+<article class="chapter-card" style="--ch-c1:#6b21a8; --ch-c2:#c084fc; --ch-glow:rgba(192, 132, 252, 0.45); --ch-border:#e9d5ff; --ch-delay:6.9s;">
+<div class="chapter-num">20</div>
+<div class="chapter-info">
+<h3>അധ്യായം 20: 4.3(C) AI സംവിധാനങ്ങൾ ധാർമ്മിക കർത്താക്കളാകുമോ? ഉത്തരവാദിത്തം എങ്ങനെ ഉറപ്പാക്കാം?</h3>
+<div class="eng-title">4.3(C) Can AI Systems Be Moral Agents &amp; Accountability?</div>
+<p>മോറൽ ഏജൻസി, ഇച്ഛാസ്വാതന്ത്ര്യം, ഉത്തരവാദിത്ത വിടവ് (Responsibility Gap), ക്രിമിനൽ-സിവിൽ ബാധ്യതകൾ.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_20_Malayalam.pdf', '4.3(C) Can AI Systems Be Moral Agents &amp; Accountability?')">Read Online</button>
+</div>
+</article>
+</div>
+</section>
+<!-- ==================== MOD5 ==================== -->
+<section class="module-section" data-mod="mod5" style="display: block;">
+<div class="module-header">
+<h2>മൊഡ്യൂൾ 5: നിർമ്മിത ബുദ്ധിയുടെ തത്ത്വചിന്തയും മാനവരാശിയുടെ ഭാവിയും</h2>
+<span class="module-tag">Module 5 (2 Chapters)</span>
+</div>
+<div class="chapter-list">
+<!-- Ch 21 -->
+<article class="chapter-card" style="--ch-c1:#1e1b4b; --ch-c2:#4f46e5; --ch-glow:rgba(79, 70, 229, 0.45); --ch-border:#c7d2fe; --ch-delay:7.3s;">
+<div class="chapter-num">21</div>
+<div class="chapter-info">
+<h3>അധ്യായം 21: മെഷീൻ കോഗ്നിഷനും ക്ലാസിക്കൽ AI സമന്വയവും</h3>
+<div class="eng-title">Machine Cognition &amp; Classical AI Synthesis</div>
+<p>യഥാർത്ഥ ചിന്തയും അനുകരണവും തമ്മിലുള്ള വ്യത്യാസം, ക്ലാസിക്കൽ AI-യുടെ ഗുണദോഷങ്ങൾ, മെഷീൻ കോഗ്നിഷൻ ചർച്ചകൾ.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_21_Malayalam.pdf', 'Machine Cognition &amp; Classical AI Synthesis')">Read Online</button>
+</div>
+</article>
+<!-- Ch 22 -->
+<article class="chapter-card" style="--ch-c1:#064e3b; --ch-c2:#059669; --ch-glow:rgba(5, 150, 105, 0.45); --ch-border:#a7f3d0; --ch-delay:7.6s;">
+<div class="chapter-num">22</div>
+<div class="chapter-info">
+<h3>അധ്യായം 22: ഭാരതീയ തത്ത്വചിന്തയിലെ ആസ്തിക ദർശനങ്ങളും മാനവരാശിയുടെ ഭാവിയും</h3>
+<div class="eng-title">Indian Philosophy Āstika Schools &amp; Future of Humanity</div>
+<p>ഷഡ്ദർശനങ്ങൾ (ന്യായ, വൈശേഷിക, സാംഖ്യ, യോഗ, മീമാംസ, വേദാന്തം), ബോധത്തെക്കുറിച്ചുള്ള ഭാരതീയ വീക്ഷണം, സെമിനാർ ചോദ്യങ്ങൾ.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Philosophy of AI/Malayalam PDF/AI_Philosophy_Chapter_22_Malayalam.pdf', 'Indian Philosophy Āstika Schools &amp; Future of Humanity')">Read Online</button>
+</div>
+</article>
+</div>
+</section>
+</div>
+<!-- Bottom Navigation: All in English with 10s Colourful Blinking -->
+<footer class="bottom-nav">
+<button aria-label="Go back" class="nav-btn nav-btn-back" onclick="if(window.history.length &gt; 1){window.history.back();}else{window.location.href='index.html';}" type="button">← Back</button>
+<a aria-label="Academic Hub Home" class="nav-btn nav-btn-home" href="index.html#top">⌂ Home</a>
+</footer>
+</main>
+<!-- PDF View Modal with Explicit English Action Buttons (No blank buttons) -->
+<div class="modal" id="viewerModal">
+<div class="modal-content">
+<div class="modal-header">
+<h3 id="modalTitle">Study Guide Reader</h3>
+<div class="modal-header-actions">
+<button class="modal-action-btn modal-btn-back" onclick="closeViewer()" title="Go Back" type="button">← Back</button>
+<a class="modal-action-btn modal-btn-home" href="index.html#top" title="Academic Hub Home">⌂ Home</a>
+<button aria-label="Zoom Out" class="modal-action-btn" onclick="zoomModalReader(-0.25)" title="Zoom Out" type="button">Zoom −</button>
+<button aria-label="Zoom In" class="modal-action-btn" onclick="zoomModalReader(0.25)" title="Zoom In" type="button">Zoom +</button>
+<button aria-label="Reset Zoom" class="modal-action-btn" onclick="resetModalReaderZoom()" title="Reset Zoom" type="button">Reset</button>
+<a aria-label="Open in New Tab" class="modal-action-btn" href="#" id="modalExternalBtn" rel="noopener" target="_blank" title="Open in New Tab">Open ↗</a>
+<button aria-label="Close" class="close-modal" onclick="closeViewer()">✕ Close</button>
+</div>
+</div>
+<iframe class="modal-iframe" id="pdfFrame" src="" title="PDF Viewer"></iframe>
+</div>
+</div>
+<script>
 
     function zoomModalReader(delta) {
       const frame = document.getElementById('pdfFrame');
@@ -1292,9 +1371,8 @@
       }
     }, true);
   </script>
-
-  <!-- Modal Reader Zoom Controls (communicates with study-guide-reader) -->
-  <script>
+<!-- Modal Reader Zoom Controls (communicates with study-guide-reader) -->
+<script>
     function zoomModalReader(delta) {
       const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
       f?.contentWindow?.postMessage({ action: 'zoom', delta: delta }, '*');
@@ -1304,9 +1382,8 @@
       f?.contentWindow?.postMessage({ action: 'resetZoom' }, '*');
     }
   </script>
-
-  <!-- Auto-initialize to Module 1 Strictly on Page Load -->
-  <script>
+<!-- Auto-initialize to Module 1 Strictly on Page Load -->
+<script>
     (function initModule1() {
       function activate() {
         const mod1Btn = document.querySelector('.filter-btn[onclick*="mod1"]') || document.querySelector('.filter-btn');
@@ -1321,9 +1398,8 @@
       }
     })();
   </script>
-
-    <!-- Instant PDF Pre-warmer for all subject cards & tabs -->
-  <script id="fast-subject-prewarmer">
+<!-- Instant PDF Pre-warmer for all subject cards & tabs -->
+<script id="fast-subject-prewarmer">
     (function() {
       const prewarmed = new Set();
       function prewarmUrl(url) {
@@ -1374,6 +1450,5 @@
       });
     })();
   </script>
-
 </body>
 </html>
