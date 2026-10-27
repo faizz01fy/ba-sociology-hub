@@ -3857,12 +3857,12 @@
           </div>
         </button>
 
-        <!-- Button 3: General & Media News -->
+        <!-- Button 3: CUC News -->
         <button id="btn-tab-general" class="univ-eye-btn univ-btn-general" data-target="general" type="button" role="tab" aria-selected="false" aria-controls="univ-drawer">
           <div class="univ-btn-left">
             <span class="univ-btn-icon-wrap">📰</span>
             <div class="univ-btn-text-wrap">
-              <span class="univ-btn-title">General &amp; Media News</span>
+              <span class="univ-btn-title">CUC News</span>
               <span class="univ-btn-sub">Latest 15 days media</span>
             </div>
           </div>
@@ -13563,7 +13563,7 @@
 
           const tagClass = isCdoe ? 'univ-pill-cdoe' : (isReg ? 'univ-pill-reg' : 'univ-pill-gen');
 
-          const tagLabel = isCdoe ? 'CDOE / Distance' : (isReg ? 'Regular Exam' : (n.source || 'Media News'));
+          const tagLabel = isCdoe ? 'CDOE / Distance' : (isReg ? 'Regular Exam' : (n.source || 'CUC News'));
 
           const isPdf = (n.url || '').toLowerCase().includes('.pdf');
 
@@ -13736,7 +13736,7 @@
 
         } else {
 
-          drawerTitle.textContent = 'General & Outside Media News (Latest 15 Days)';
+          drawerTitle.textContent = 'CUC News (Latest 15 Days)';
 
           drawerIcon.textContent = '📰';
 
@@ -14022,7 +14022,7 @@
 
           'https://academic-hub.faiz01cu.workers.dev/api/notices',
 
-          'data/university_notices.json?v=20261027-tab4'
+          'data/university_notices.json?v=20261027-cuc-v2'
 
         ];
 
@@ -14034,7 +14034,7 @@
 
           try {
 
-            const resp = await fetch(ep, { cache: 'no-cache' });
+            const resp = await fetch(ep, { cache: 'no-cache', signal: AbortSignal.timeout(3000) });
 
             if (resp.ok) {
 
