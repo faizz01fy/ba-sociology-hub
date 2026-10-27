@@ -139,33 +139,51 @@
       font-weight: 500 !important;
     }
 
-    /* Filter Bar */
-    .filter-wrapper {
-      margin-bottom: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .filter-btn {
-      padding: 9px 18px;
-      border-radius: 12px;
-      border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      color: #334155;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-family: inherit;
-    }
-
-    .filter-btn:hover, .filter-btn.active {
-      background: #7e22ce;
-      color: #ffffff;
-      border-color: #7e22ce;
-      box-shadow: 0 4px 12px rgba(126, 34, 206, 0.25);
+    /* Vertical stacked descending module tabs one by one downwards for smooth mobile and web view */
+    .filter-wrapper {
+      margin: 0 auto 24px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      max-width: 820px;
+    }
+
+    .filter-btn {
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 14px;
+      border: 1.5px solid #cbd5e1;
+      background: linear-gradient(130deg, #ffffff, #f8fafc);
+      color: #334155;
+      font-size: 14.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: inherit;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-left: 6px solid #7e22ce;
+      box-sizing: border-box;
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-2px);
+      border-color: #7e22ce;
+      color: #581c87;
+      background: #faf5ff;
+      box-shadow: 0 4px 14px rgba(126, 34, 206, 0.2);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #581c87, #7e22ce) !important;
+      color: #ffffff !important;
+      border-color: #581c87 !important;
+      box-shadow: 0 6px 18px rgba(126, 34, 206, 0.35) !important;
+      border-left: 6px solid #c084fc !important;
     }
 
     /* Search input */
@@ -552,29 +570,35 @@
         line-height: 1.6 !important;
       }
 
-      /* Horizontal scrolling pill tabs for modules */
-      .filter-wrapper {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        gap: 8px;
-        padding: 4px 2px 10px 2px;
-        margin-bottom: 16px;
-        justify-content: flex-start;
-      }
-
-      .filter-wrapper::-webkit-scrollbar {
-        display: none;
-      }
-
-      .filter-btn {
-        flex-shrink: 0;
-        white-space: nowrap;
-        padding: 8px 14px;
-        font-size: 13px;
-        border-radius: 999px;
+      /* Vertical stacked descending module tabs one by one downwards on mobile devices */
+      .filter-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        overflow-x: visible !important;
+        gap: 9px !important;
+        padding: 4px 0 16px 0 !important;
+        margin-bottom: 16px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .filter-wrapper::-webkit-scrollbar {
+        display: none !important;
+      }
+
+      .filter-btn {
+        width: 100% !important;
+        flex-shrink: 0 !important;
+        white-space: normal !important;
+        text-align: center !important;
+        justify-content: center !important;
+        padding: 11px 14px !important;
+        font-size: 13.5px !important;
+        line-height: 1.4 !important;
+        border-radius: 12px !important;
+        border-left: 5px solid #7e22ce !important;
+        box-sizing: border-box !important;
       }
 
       .search-bar {
@@ -962,14 +986,14 @@
     </header>
 
     <!-- Filter Buttons -->
-    <nav class="filter-wrapper" aria-label="Module filters">
-      <button class="filter-btn" data-mod="syllabus" onclick="filterModule('syllabus', this)">📋 സിലബസ് രൂപരേഖ (Syllabus Structure)</button>
-      <button class="filter-btn active" data-mod="mod1" onclick="filterModule('mod1', this)">മൊഡ്യൂൾ 1: സോഷ്യോളജി ആമുഖം (Module 1: Introducing Sociology)</button>
-      <button class="filter-btn" data-mod="mod2" onclick="filterModule('mod2', this)">മൊഡ്യൂൾ 2: സോഷ്യോളജി പ്രയോഗം (Module 2: Practicing Sociology)</button>
-      <button class="filter-btn" data-mod="mod3" onclick="filterModule('mod3', this)">മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Module 3: Individual & Society)</button>
-      <button class="filter-btn" data-mod="mod4" onclick="filterModule('mod4', this)">മൊഡ്യൂൾ 4: സ്ഥാപനങ്ങളും സംസ്കാരവും (Module 4: Institutions & Culture)</button>
-      <button class="filter-btn" data-mod="mod5" onclick="filterModule('mod5', this)">മൊഡ്യൂൾ 5: ഫീൽഡ് വർക്കും രീതിശാസ്ത്രവും (Module 5: Doing Sociology / Field Dynamics)</button>
-      <button class="filter-btn" data-mod="all" onclick="filterModule('all', this)">📚 എല്ലാ അധ്യായങ്ങളും (All Modules)</button>
+    <nav class="filter-wrapper" aria-label="Module filters">
+      <button class="filter-btn active" data-mod="all" onclick="filterModule('all', this)">📚 എല്ലാ അധ്യായങ്ങളും (All Modules · Full Syllabus)</button>
+      <button class="filter-btn" data-mod="syllabus" onclick="filterModule('syllabus', this)">📋 സിലബസ് രൂപരേഖ (Syllabus Structure)</button>
+      <button class="filter-btn" data-mod="mod1" onclick="filterModule('mod1', this)">മൊഡ്യൂൾ 1: സോഷ്യോളജി ആമുഖം (Module 1: Introducing Sociology)</button>
+      <button class="filter-btn" data-mod="mod2" onclick="filterModule('mod2', this)">മൊഡ്യൂൾ 2: സോഷ്യോളജി പ്രയോഗം (Module 2: Practicing Sociology)</button>
+      <button class="filter-btn" data-mod="mod3" onclick="filterModule('mod3', this)">മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Module 3: Individual & Society)</button>
+      <button class="filter-btn" data-mod="mod4" onclick="filterModule('mod4', this)">മൊഡ്യൂൾ 4: സോഷ്യോളജിയും സമൂഹവും (Module 4: Sociology and Society)</button>
+      <button class="filter-btn" data-mod="mod5" onclick="filterModule('mod5', this)">മൊഡ്യൂൾ 5: സാമൂഹിക ചലനാത്മകത തിരിച്ചറിയൽ (Module 5: Perceiving Social Dynamics)</button>
     </nav>
 
     <!-- Search Input -->
@@ -978,7 +1002,7 @@
     </div>
 
     <!-- ==================== SYLLABUS ==================== -->
-    <section class="module-section" data-mod="syllabus" style="display: none;">
+    <section class="module-section" data-mod="syllabus" style="display: block;">
       <div class="module-header">
         <h2>സിലബസ് രൂപരേഖ (Curriculum Structure)</h2>
         <span class="module-tag">Core Syllabus</span>
@@ -1034,7 +1058,7 @@
     </section>
 
     <!-- ==================== MODULE 2 ==================== -->
-    <section class="module-section" data-mod="mod2" style="display: none;">
+    <section class="module-section" data-mod="mod2" style="display: block;">
       <div class="module-header">
         <h2>മൊഡ്യൂൾ 2: പ്രാക്റ്റീസിങ് സോഷ്യോളജി (Practicing Sociology)</h2>
         <span class="module-tag">Module 2</span>
@@ -1063,7 +1087,7 @@
     </section>
 
     <!-- ==================== MODULE 3 ==================== -->
-    <section class="module-section" data-mod="mod3" style="display: none;">
+    <section class="module-section" data-mod="mod3" style="display: block;">
       <div class="module-header">
         <h2>മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Individual and Society)</h2>
         <span class="module-tag">Module 3 · 6 Chapters</span>
@@ -1199,7 +1223,7 @@
     </section>
 
     <!-- ==================== MODULE 4 ==================== -->
-    <section class="module-section" data-mod="mod4" style="display: none;">
+    <section class="module-section" data-mod="mod4" style="display: block;">
       <div class="module-header">
         <h2>മൊഡ്യൂൾ 4: സോഷ്യോളജിയും സമൂഹവും (Sociology and Society)</h2>
         <span class="module-tag">Module 4 · 4 Chapters</span>
@@ -1294,7 +1318,7 @@
     </section>
 
     <!-- ==================== MODULE 5 ==================== -->
-    <section class="module-section" data-mod="mod5" style="display: none;">
+    <section class="module-section" data-mod="mod5" style="display: block;">
       <div class="module-header">
         <h2>മൊഡ്യൂൾ 5: പ്രായോഗിക ഫീൽഡ് അസസ്സ്മെന്റ് (Perceiving Social Dynamics)</h2>
         <span class="module-tag">Module 5 · Practical</span>
@@ -1482,7 +1506,7 @@
     (function initModuleActivation() {
       function activate() {
         const hash = window.location.hash ? window.location.hash.replace('#', '') : '';
-        let targetMod = 'mod1';
+        let targetMod = 'all';
         if (hash === 'syl' || hash === 'syllabus') {
           targetMod = 'syllabus';
         } else if (['mod1', 'mod2', 'mod3', 'mod4', 'mod5', 'all'].includes(hash)) {
