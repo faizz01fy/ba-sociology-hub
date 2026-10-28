@@ -1876,7 +1876,14 @@
     function filterModule(modId, btn) {
       const buttons = document.querySelectorAll('.filter-btn');
       buttons.forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
+      if (btn) {
+        btn.classList.add('active');
+      } else {
+        const found = document.querySelector(`.filter-btn[data-mod="${modId}"]`) ||
+                      document.querySelector(`.filter-btn[data-filter="${modId}"]`) ||
+                      document.querySelector(`.filter-btn[onclick*="${modId}"]`);
+        if (found) found.classList.add('active');
+      }
 
       const sections = document.querySelectorAll('.module-section');
       sections.forEach(sec => {
@@ -2004,7 +2011,14 @@
     function switchCrackerTab(paneId, btn) {
       const tabBtns = document.querySelectorAll('.cracker-tab-btn');
       tabBtns.forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
+      if (btn) {
+        btn.classList.add('active');
+      } else {
+        const found = document.querySelector(`.filter-btn[data-mod="${modId}"]`) ||
+                      document.querySelector(`.filter-btn[data-filter="${modId}"]`) ||
+                      document.querySelector(`.filter-btn[onclick*="${modId}"]`);
+        if (found) found.classList.add('active');
+      }
 
       const panes = document.querySelectorAll('.cracker-content-pane');
       panes.forEach(p => p.classList.remove('active'));
@@ -2048,10 +2062,19 @@
       }
     }, true);
 
+    // Unified robust initialization
     document.addEventListener('DOMContentLoaded', function() {
-      const mod1Btn = document.querySelector('.filter-btn[data-filter="mod1"]');
-      if (mod1Btn) {
-        filterModule('mod1', mod1Btn);
+      const hash = window.location.hash ? window.location.hash.replace('#', '') : '';
+      let initialMod = 'all';
+      if (['mod1', 'mod2', 'mod3', 'mod4', 'mod5', 'all'].includes(hash)) {
+        initialMod = hash;
+      }
+      const initialBtn = document.querySelector(`.filter-btn[data-mod="${initialMod}"]`) ||
+                         document.querySelector(`.filter-btn[data-filter="${initialMod}"]`) ||
+                         document.querySelector('.filter-btn.active') ||
+                         document.querySelector('.filter-btn');
+      if (initialBtn) {
+        filterModule(initialMod, initialBtn);
       }
     });
   </script>
@@ -2065,36 +2088,6 @@
       const f = document.getElementById('pdfFrame') || document.getElementById('modal-pdf-frame') || document.querySelector('.reader-frame');
       f?.contentWindow?.postMessage({ action: 'resetZoom' }, '*');
     }
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Direct jump to Module 1 on page load unless specific hash provided
-      const hash = window.location.hash ? window.location.hash.replace('#', '') : 'mod1';
-      const targetMod = (hash === 'syl' || hash === 'syllabus') ? hash : 'mod1';
-      const targetBtn = document.querySelector(`.filter-btn[onclick*="${targetMod}"]`) || document.querySelector('.filter-btn[onclick*="mod1"]');
-      if (typeof filterModule === 'function' && targetBtn) {
-        filterModule(targetMod, targetBtn);
-      }
-    });
-  </script>
-<script>
-// Auto-initialize reading view directly to Module 1 (Never Syllabus or all simultaneously)
-(function() {
-  function activateModule1() {
-    const mod1Btn = document.querySelector('.filter-btn[data-mod="mod1"]') || 
-                    document.querySelector('.filter-btn[data-filter="mod1"]') || 
-                    Array.from(document.querySelectorAll('.filter-btn')).find(b => /mod(?:ule)?\s*1|മൊഡ്യൂൾ\s*1/i.test(b.textContent)) ||
-                    document.querySelector('.filter-btn.active');
-    if (typeof filterModule === 'function' && mod1Btn) {
-      filterModule('mod1', mod1Btn);
-    }
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', activateModule1);
-  } else {
-    activateModule1();
-  }
-})();
 </script>
 <!-- Instant PDF Pre-warmer for all subject cards & tabs -->
 <script id="fast-subject-prewarmer">
