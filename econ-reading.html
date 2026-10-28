@@ -777,7 +777,7 @@
     let currentLoadedPdf = '';
 
     
-    let isNativeFastMode = false;
+    let isNativeFastMode = true; // Default to the direct PDF viewer for reliable opening on iPhone and mobile browsers.
     let currentPdfCleanUrl = '';
     let currentPdfCleanTitle = '';
 
@@ -799,15 +799,15 @@
 
       if (isNativeFastMode) {
         frame.src = currentPdfCleanUrl + '#toolbar=1&navpanes=1&zoom=page-width';
-        if (extBtn) extBtn.href = currentPdfCleanUrl;
+        if (extBtn) { extBtn.href = currentPdfCleanUrl; extBtn.target = '_blank'; }
         if (toggleBtn) {
-          toggleBtn.innerText = '📖 Enhanced';
+          toggleBtn.innerText = '📖 Enhanced Reader';
           toggleBtn.style.background = '#4338ca';
         }
       } else {
         const readerUrl = 'study-guide-reader.html?file=' + encodeURIComponent(currentPdfCleanUrl) + '&tab=malayalam_reading';
         frame.src = readerUrl;
-        if (extBtn) extBtn.href = readerUrl;
+        if (extBtn) { extBtn.href = currentPdfCleanUrl; extBtn.target = '_blank'; }
         if (toggleBtn) {
           toggleBtn.innerText = '⚡ Fast View';
           toggleBtn.style.background = '#059669';
