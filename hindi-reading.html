@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
+<meta content="Calicut University BA Hindi Complete Malayalam & Hindi Study Guide (Malayalam Reading Portal)" name="description"/>
+<title>Hindi — Malayalam & Hindi Reading | Academic Hub</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="study-guide-reader.html" rel="prefetch"/>
+<link href="assets/pdfjs/pdf.min.mjs" rel="prefetch"/>
+<link href="assets/pdfjs/pdf.worker.min.mjs" rel="prefetch"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+    :root {
+      --hindi-primary: #9a3412;
+      --hindi-secondary: #ea580c;
+      --hindi-light: #fff7ed;
+      --hindi-border: #fdba74;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', 'Noto Sans Malayalam', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #fff7ed, #fef2f2, #fafaf9);
+      padding: 30px 18px;
+      color: #0f172a;
+      min-height: 100vh;
+    }
+
+    .page-box {
+      max-width: 980px;
+      margin: auto;
+      background: #ffffff;
+      padding: 36px 32px;
+      border-radius: 28px;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+    }
+
+    .hero {
+      display: block !important;
+      position: relative !important;
+      min-height: 0 !important;
+      grid-template-columns: none !important;
+      gap: 0 !important;
+      margin: 0 0 28px 0 !important;
+      padding: 32px 24px 34px !important;
+      text-align: center !important;
+      background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%) !important;
+      border: 1px solid #fdba74 !important;
+      border-radius: 24px !important;
+      box-shadow: 0 8px 24px rgba(234, 88, 12, 0.12) !important;
+      color: #0f172a !important;
+    }
+
+    .hero:before {
+      display: none !important;
+      content: none !important;
+    }
+
+    .uni-badge {
+      display: inline-block !important;
+      background: #ffedd5 !important;
+      color: #9a3412 !important;
+      padding: 6px 18px !important;
+      border-radius: 999px !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      margin-bottom: 14px !important;
+      letter-spacing: 0.5px !important;
+      border: 1px solid #fed7aa !important;
+    }
+
+    .hero h1, .hero .hero-title {
+      display: block !important;
+      margin: 0 0 12px 0 !important;
+      background: transparent !important;
+      -webkit-background-clip: unset !important;
+      text-shadow: none !important;
+    }
+
+    .hero-title-en {
+      display: block !important;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+      font-size: clamp(23px, 3.8vw, 34px) !important;
+      line-height: 1.3 !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.01em !important;
+      margin: 0 0 6px 0 !important;
+      color: #7c2d12 !important;
+      opacity: 1 !important;
+    }
+
+    .hero-title-ml {
+      display: block !important;
+      font-family: 'Noto Sans Malayalam', sans-serif !important;
+      font-size: clamp(15px, 2.4vw, 20px) !important;
+      line-height: 1.45 !important;
+      font-weight: 600 !important;
+      color: #ea580c !important;
+      opacity: 1 !important;
+    }
+
+    .reading-top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 20px;
+      padding: 10px 16px;
+      background: #ffffff;
+      border: 1.5px solid #fed7aa;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+    }
+
+    @keyframes blink-nav-back {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1) hue-rotate(0deg);
+        box-shadow: 0 4px 14px rgba(29, 78, 216, 0.5);
+      }
+      50% {
+        transform: scale(1.05);
+        filter: brightness(1.28) hue-rotate(45deg);
+        box-shadow: 0 6px 24px rgba(124, 58, 237, 0.8), 0 0 18px 6px rgba(167, 139, 250, 0.85);
+      }
+    }
+
+    @keyframes blink-nav-home {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1) hue-rotate(0deg);
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.5);
+      }
+      50% {
+        transform: scale(1.05);
+        filter: brightness(1.28) hue-rotate(60deg);
+        box-shadow: 0 6px 24px rgba(245, 158, 11, 0.8), 0 0 18px 6px rgba(251, 191, 36, 0.85);
+      }
+    }
+
+    .reading-top-nav .btn-back,
+    .bottom-nav .nav-btn-back {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #4338ca 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+      font-weight: 850 !important;
+      text-shadow: 0 1px 2px rgba(15, 23, 42, 0.4);
+      animation: blink-nav-back 10s infinite ease-in-out !important;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      min-height: 40px;
+      padding: 8px 18px;
+      border-radius: 12px;
+      font-size: 13.5px;
+    }
+
+    .reading-top-nav .btn-home,
+    .bottom-nav .nav-btn-home {
+      background: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+      font-weight: 850 !important;
+      text-shadow: 0 1px 2px rgba(15, 23, 42, 0.4);
+      animation: blink-nav-home 10s infinite ease-in-out !important;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      min-height: 40px;
+      padding: 8px 18px;
+      border-radius: 12px;
+      font-size: 13.5px;
+    }
+
+    .filter-wrapper {
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .filter-btn {
+      padding: 11px 20px;
+      border-radius: 14px;
+      border: 2px solid var(--mod-border, #cbd5e1) !important;
+      background: linear-gradient(130deg, #ffffff, var(--mod-bg, #f8fafc)) !important;
+      color: var(--mod-c1, #334155) !important;
+      font-size: 13.5px;
+      font-weight: 750;
+      cursor: pointer;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+      animation: module-tab-interval-blink 7s infinite ease-in-out;
+      animation-delay: var(--mod-delay, 0s);
+    }
+
+    @keyframes module-tab-interval-blink {
+      0%, 100% {
+        transform: scale(1);
+        border-color: var(--mod-border, #cbd5e1);
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+      }
+      50% {
+        transform: scale(1.04);
+        border-color: var(--mod-c2, #ea580c);
+        box-shadow: 0 6px 18px var(--mod-glow, rgba(234, 88, 12, 0.45)), 0 0 10px var(--mod-glow, rgba(234, 88, 12, 0.3));
+      }
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      border-color: var(--mod-c2, #ea580c) !important;
+      box-shadow: 0 8px 20px var(--mod-glow, rgba(234, 88, 12, 0.35)) !important;
+      color: var(--mod-c1, #c2410c) !important;
+      animation-play-state: paused !important;
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--mod-c1, #9a3412), var(--mod-c2, #c2410c)) !important;
+      color: #ffffff !important;
+      border-color: var(--mod-c2, #c2410c) !important;
+      box-shadow: 0 8px 24px var(--mod-glow, rgba(154, 52, 18, 0.5)) !important;
+    }
+
+    /* Search bar */
+    .search-bar {
+      margin-bottom: 24px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 14px;
+      border: 1.5px solid #fed7aa;
+      font-size: 14.5px;
+      background: #ffffff;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+      outline: none;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+
+    .search-bar input:focus {
+      border-color: #ea580c;
+      box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.15);
+    }
+
+    /* Module sections & cards */
+    .module-section {
+      margin-bottom: 34px;
+    }
+
+    .module-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #fed7aa;
+    }
+
+    .module-header h2 {
+      font-size: 19px;
+      margin: 0;
+      color: #9a3412;
+      font-weight: 700;
+    }
+
+    .module-tag {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 8px;
+      background: #fff7ed;
+      color: #9a3412;
+      border: 1px solid #fed7aa;
+    }
+
+    .chapter-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .chapter-card {
+      border: 1.5px solid var(--ch-border, #fed7aa);
+      border-radius: 20px;
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: 64px 1fr auto;
+      align-items: center;
+      gap: 20px;
+      background: linear-gradient(130deg, #ffffff, #fffaf5);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      animation: card-interval-blink 8s infinite ease-in-out;
+      animation-delay: var(--ch-delay, 0s);
+    }
+
+    @keyframes card-interval-blink {
+      0%, 100% {
+        border-color: var(--ch-border, #fed7aa);
+        box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+      }
+      50% {
+        border-color: var(--ch-c2, #ea580c);
+        box-shadow: 0 8px 24px var(--ch-glow, rgba(234, 88, 12, 0.35)), 0 0 12px var(--ch-glow, rgba(234, 88, 12, 0.2));
+      }
+    }
+
+    .chapter-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px var(--ch-glow, rgba(234, 88, 12, 0.25));
+      border-color: var(--ch-c2, #ea580c);
+      animation-play-state: paused;
+    }
+
+    .chapter-num {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--ch-c1, #9a3412), var(--ch-c2, #ea580c));
+      box-shadow: 0 6px 14px var(--ch-glow, rgba(234, 88, 12, 0.3));
+    }
+
+    .chapter-info h3 {
+      font-size: 16.5px;
+      line-height: 1.5;
+      color: #0f172a;
+      margin: 0 0 4px 0;
+      font-weight: 700;
+      font-family: 'Noto Sans Malayalam', sans-serif;
+    }
+
+    .chapter-info .eng-title {
+      font-size: 13.5px;
+      color: var(--ch-c1, #ea580c);
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .chapter-info p {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.6;
+      margin: 0;
+      font-family: 'Noto Sans Malayalam', sans-serif;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .action-btn {
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 13.5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      border: none;
+    }
+
+    .btn-view {
+      background: linear-gradient(135deg, var(--ch-c1, #9a3412), var(--ch-c2, #ea580c)) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+      box-shadow: 0 4px 12px var(--ch-glow, rgba(234, 88, 12, 0.3)) !important;
+    }
+
+    .btn-view:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--ch-glow, rgba(234, 88, 12, 0.5)) !important;
+    }
+
+    /* Modal Viewer */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(6px);
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      width: 100%;
+      height: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .modal-header {
+      background: #1e293b;
+      color: #ffffff;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .modal-header h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .modal-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .modal-action-btn {
+      background: #334155;
+      color: #ffffff;
+      border: 1px solid #475569;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .modal-action-btn:hover {
+      background: #475569;
+      color: #ffffff;
+    }
+
+    .close-modal {
+      background: #fee2e2;
+      color: #dc2626;
+      border: 1px solid #fca5a5;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .close-modal:hover {
+      background: #dc2626;
+      color: #ffffff;
+      border-color: #dc2626;
+    }
+
+    .modal-iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: #f8fafc;
+    }
+
+    .bottom-nav {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #fed7aa;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .bottom-nav .nav-btn-back,
+    .bottom-nav .nav-btn-home {
+      min-height: 50px;
+      padding: 14px 28px;
+      border-radius: 16px;
+      font-size: 15px;
+      min-width: 190px;
+    }
+
+    @media (max-width: 768px) {
+      .page-box { padding: 20px 14px; }
+      .chapter-card { grid-template-columns: 50px 1fr; gap: 14px; padding: 16px; }
+      .chapter-num { width: 48px; height: 48px; font-size: 16px; border-radius: 14px; }
+      .btn-group { grid-column: 1 / -1; width: 100%; }
+      .action-btn { width: 100%; }
+      .modal { padding: 0; }
+      .modal-content { border-radius: 0; height: 100vh; }
+    }
+</style>
+</head>
+<body>
+<main class="page-box">
+<!-- Sticky Top Navigation -->
+<nav aria-label="Reading navigation" class="reading-top-nav">
+<button aria-label="Go back" class="btn-back" onclick="if(window.history.length > 1){window.history.back();}else{window.location.href='index.html';}" type="button">← Back</button>
+<a aria-label="Academic Hub Home" class="btn-home" href="index.html#top">⌂ Home</a>
+</nav>
+
+<!-- Hero Banner -->
+<header class="hero">
+<div class="uni-badge">CALICUT UNIVERSITY · CDOE · FYUGP</div>
+<h1 class="hero-title">
+<span class="hero-title-en">Hindi Literature & Language — Hindi Malayalam Reading</span>
+<span class="hero-title-ml">ഹിന്ദി സാഹിത്യവും ഭാഷയും — മലയാളം വായന പഠന സഹായി</span>
+</h1>
+</header>
+
+<!-- Module Filters -->
+<nav aria-label="Filter by module" class="filter-wrapper">
+<button class="filter-btn" data-mod="mod1" onclick="filterModule('mod1', this)" style="--mod-c1:#9a3412; --mod-c2:#ea580c; --mod-border:#fdba74; --mod-bg:#fff7ed; --mod-glow:rgba(234, 88, 12, 0.55); --mod-delay:0.0s;">Module 1: Samvidhan & Rajbhasha (2 Chapters)</button>
+<button class="filter-btn" data-mod="mod2" onclick="filterModule('mod2', this)" style="--mod-c1:#1e40af; --mod-c2:#3b82f6; --mod-border:#93c5fd; --mod-bg:#eff6ff; --mod-glow:rgba(59, 130, 246, 0.55); --mod-delay:1.0s;">Module 2: Adhunik Hindi Kavita (3 Chapters)</button>
+<button class="filter-btn" data-mod="mod3" onclick="filterModule('mod3', this)" style="--mod-c1:#065f46; --mod-c2:#10b981; --mod-border:#6ee7b7; --mod-bg:#ecfdf5; --mod-glow:rgba(16, 185, 129, 0.55); --mod-delay:2.0s;">Module 3: Vakya Sanrachna & Vyakaran (1 Chapter)</button>
+<button class="filter-btn active" data-mod="all" onclick="filterModule('all', this)" style="--mod-c1:#be123c; --mod-c2:#f43f5e; --mod-border:#fda4af; --mod-bg:#fff1f2; --mod-glow:rgba(244, 63, 94, 0.55); --mod-delay:3.0s;">📚 All Chapters (6 Chapters)</button>
+</nav>
+
+<!-- Search Input -->
+<div class="search-bar">
+<input id="searchInput" onkeyup="filterChapters()" placeholder="Search by chapter number, title, poet, topic, or keyword..." type="text"/>
+</div>
+
+<!-- Special Complete Study Guide Banner -->
+<div style="margin-bottom: 24px;">
+  <article class="chapter-card" style="--ch-c1:#7c2d12; --ch-c2:#c2410c; --ch-glow:rgba(194, 65, 12, 0.45); --ch-border:#fdba74; --ch-delay:0.0s; background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);">
+    <div class="chapter-num" style="font-size:14px; background:linear-gradient(135deg, #7c2d12, #ea580c);">FULL</div>
+    <div class="chapter-info">
+      <h3 style="color:#7c2d12;">ഹിന്ദി സമ്പൂർണ്ണ മലയാളം പഠന സഹായി (എല്ലാ മൊഡ്യൂളുകളും ഒരൊറ്റ പിഡിഎഫിൽ)</h3>
+      <div class="eng-title">Hindi All Modules Complete Bilingual Study Guide (18 Pages Comprehensive Guide)</div>
+      <p>മൊഡ്യൂൾ 1 (സംവിധാൻ & രാജ്ഭാഷ), മൊഡ്യൂൾ 2 (ആധുനിക ഹിന്ദി കവിത - പന്ത്, കുൻവർ നാരായൺ, അസംഘഘോഷ്), മൊഡ്യൂൾ 3 (വാക്യ സംരചന & വ്യാകരണം) എന്നിവയുടെ സമ്പൂർണ്ണ പരിഭാഷയും വിശദീകരണവും ചോദ്യോത്തരങ്ങളും.</p>
+    </div>
+    <div class="btn-group">
+      <button class="action-btn btn-view" onclick="viewPdf('Hindi/Malayalam PDF/Hindi_Complete_Malayalam_Reading_Study_Guide.pdf', 'Hindi All Modules Complete Bilingual Study Guide')">Read Full Guide</button>
+    </div>
+  </article>
+</div>
+
+<!-- Chapter Container -->
+<div id="chapterContainer">
+
+<!-- ==================== MODULE 1 ==================== -->
+<section class="module-section" data-mod="mod1" style="display: block;">
+<div class="module-header">
+<h2>മൊഡ്യൂൾ 1: ഇന്ത്യൻ ഭരണഘടനയും ഔദ്യോഗിക ഭാഷാ വ്യവസ്ഥകളും</h2>
+<span class="module-tag">Module 1 (2 Chapters)</span>
+</div>
+<div class="chapter-list">
+
+<!-- Ch 01 -->
+<article class="chapter-card" style="--ch-c1:#9a3412; --ch-c2:#ea580c; --ch-glow:rgba(234, 88, 12, 0.45); --ch-border:#fed7aa; --ch-delay:0.1s;">
+<div class="chapter-num">01</div>
+<div class="chapter-info">
+<h3>അധ്യായം 1: ഇന്ത്യൻ ഭരണഘടനാ നിർമ്മാണവും ആമുഖവും (Preamble)</h3>
+<div class="eng-title">Module 1 · Ch 1 : Samvidhan Nirman Prakriya, Samvidhan Sabha Evam Uddeshika</div>
+<p>ഭരണഘടനാ നിർമ്മാണ സഭയുടെ രൂപീകരണം, ഡോ. ബി.ആർ. അംബേദ്കറുടെ ഡ്രാഫ്റ്റിംഗ് കമ്മിറ്റി, ആമുഖത്തിലെ പരമാധികാര, സോഷ്യലിസ്റ്റ്, മതേതര, ജനാധിപത്യ റിപ്പബ്ലിക് ദർശനങ്ങൾ, മൂന്ന് നീതികൾ, പദസമ്പത്തും ചോദ്യോത്തരങ്ങളും.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Hindi/Malayalam PDF/Hindi_Module_1_Ch1_Samvidhan_Nirman_Preamble_Malayalam.pdf', 'Samvidhan Nirman Prakriya & Preamble')">Read Online</button>
+</div>
+</article>
+
+<!-- Ch 02 -->
+<article class="chapter-card" style="--ch-c1:#c2410c; --ch-c2:#f97316; --ch-glow:rgba(249, 115, 22, 0.45); --ch-border:#fed7aa; --ch-delay:0.3s;">
+<div class="chapter-num">02</div>
+<div class="chapter-info">
+<h3>അധ്യായം 2: ഔദ്യോഗിക ഭാഷാ വ്യവസ്ഥകളും മുൻഷി-അയ്യങ്കാർ ഫോർമുലയും</h3>
+<div class="eng-title">Module 1 · Ch 2 : Rajbhasha Hindi, Bhag-17 Evam Munshi-Ayyangar Formula</div>
+<p>1949 സെപ്റ്റംബർ 14-ലെ രാജ്ഭാഷാ തീരുമാനം, മുൻഷി-അയ്യങ്കാർ ഫോർമുല, അനുച്ഛേദം 120, 210, 343 മുതൽ 351 വരെയുള്ള വ്യവസ്ഥകൾ, രാഷ്ട്രഭാഷയും ഔദ്യോഗിക ഭാഷയും, LMS പേജ് 13-ലെ 11 ചോദ്യോത്തരങ്ങൾ.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Hindi/Malayalam PDF/Hindi_Module_1_Ch2_Rajbhasha_Hindi_Munshi_Ayyangar_Malayalam.pdf', 'Rajbhasha Hindi & Munshi-Ayyangar Formula')">Read Online</button>
+</div>
+</article>
+
+</div>
+</section>
+
+<!-- ==================== MODULE 2 ==================== -->
+<section class="module-section" data-mod="mod2" style="display: block;">
+<div class="module-header">
+<h2>മൊഡ്യൂൾ 2: ആധുനിക ഹിന്ദി കവിത (കവികളും കവിതകളും)</h2>
+<span class="module-tag">Module 2 (3 Chapters)</span>
+</div>
+<div class="chapter-list">
+
+<!-- Ch 03 -->
+<article class="chapter-card" style="--ch-c1:#1e40af; --ch-c2:#3b82f6; --ch-glow:rgba(59, 130, 246, 0.45); --ch-border:#bfdbfe; --ch-delay:0.5s;">
+<div class="chapter-num">03</div>
+<div class="chapter-info">
+<h3>അധ്യായം 3: സുമിത്രാനന്ദൻ പന്ത് — 'പ്രഥം രശ്മി' (കവിത)</h3>
+<div class="eng-title">Module 2 · Ch 1 : Sumitranandan Pant - 'Pratham Rashmi' Kavita & Bhavarth</div>
+<p>'പ്രകൃതിയുടെ സുകുമാര കവി' സുമിത്രാനന്ദൻ പന്തിന്റെ കാവ്യജീവിതം (ഛായാവാദ്, പ്രഗതിവാദ്, അരവിന്ദ ദർശനം), 'പ്രഥം രശ്മി' കവിതയുടെ പൂർണ്ണ വരികൾ, വരികൾതോറുമുള്ള മലയാള പരിഭാഷ, സൗന്ദര്യശാസ്ത്ര വിശകലനവും പരീക്ഷാ ചോദ്യങ്ങളും.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Hindi/Malayalam PDF/Hindi_Module_2_Ch1_Sumitranandan_Pant_Pratham_Rashmi_Malayalam.pdf', 'Sumitranandan Pant - Pratham Rashmi')">Read Online</button>
+</div>
+</article>
+
+<!-- Ch 04 -->
+<article class="chapter-card" style="--ch-c1:#0369a1; --ch-c2:#0ea5e9; --ch-glow:rgba(14, 165, 233, 0.45); --ch-border:#bae6fd; --ch-delay:0.7s;">
+<div class="chapter-num">04</div>
+<div class="chapter-info">
+<h3>അധ്യായം 4: കുൻവർ നാരായൺ — 'കവിതാ കി സരൂരത്' (കവിത)</h3>
+<div class="eng-title">Module 2 · Ch 2 : Kunwar Narayan - 'Kavita Ki Zaroorat' Kavita & Bhavarth</div>
+<p>തീസ്രാ സപ്തക്, നയീ കവിതയുടെ പ്രമുഖനായ കുൻവർ നാരായന്റെ സാഹിത്യ സംഭാവനകൾ, മനുഷ്യജീവിതത്തിൽ കവിതയുടെ അനിവാര്യത വരച്ചുകാട്ടുന്ന കവിത, മലയാള തർജ്ജമ, ആക്ഷേപഹാസ്യ വിശകലനവും ചോദ്യോത്തരങ്ങളും.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Hindi/Malayalam PDF/Hindi_Module_2_Ch2_Kunwar_Narayan_Kavita_Ki_Zaroorat_Malayalam.pdf', 'Kunwar Narayan - Kavita Ki Zaroorat')">Read Online</button>
+</div>
+</article>
+
+<!-- Ch 05 -->
+<article class="chapter-card" style="--ch-c1:#4338ca; --ch-c2:#6366f1; --ch-glow:rgba(99, 102, 241, 0.45); --ch-border:#c7d2fe; --ch-delay:0.9s;">
+<div class="chapter-num">05</div>
+<div class="chapter-info">
+<h3>അധ്യായം 5: അസംഘഘോഷ് — 'മേം ദൂംഗാ മഖൂൽ ജവാബ്' (കവിത)</h3>
+<div class="eng-title">Module 2 · Ch 3 : Asanghghosh - 'Main Doonga Maqool Jawab' Kavita & Dalit Chetna</div>
+<p>ദളിത് ചേതനയുടെ പ്രമുഖ ശബ്ദമായ അസംഘഘോഷിന്റെ ജീവിതം, 'തീസ്രാ പക്ഷ്' പത്രിക, ചരിത്രപരമായ അടിച്ചമർത്തലുകൾക്കെതിരെ അംബേദ്കറൈറ്റ് വിദ്യാഭ്യാസത്തിലൂടെ നൽകുന്ന ഉചിതമായ മറുപടി, സമ്പൂർണ്ണ മലയാള കാവ്യാർത്ഥം.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Hindi/Malayalam PDF/Hindi_Module_2_Ch3_Asanghghosh_Main_Doonga_Maqool_Jawab_Malayalam.pdf', 'Asanghghosh - Main Doonga Maqool Jawab')">Read Online</button>
+</div>
+</article>
+
+</div>
+</section>
+
+<!-- ==================== MODULE 3 ==================== -->
+<section class="module-section" data-mod="mod3" style="display: block;">
+<div class="module-header">
+<h2>മൊഡ്യൂൾ 3: വാക്യ സംരചനയും വ്യാകരണവും</h2>
+<span class="module-tag">Module 3 (1 Chapter)</span>
+</div>
+<div class="chapter-list">
+
+<!-- Ch 06 -->
+<article class="chapter-card" style="--ch-c1:#065f46; --ch-c2:#10b981; --ch-glow:rgba(16, 185, 129, 0.45); --ch-border:#a7f3d0; --ch-delay:1.1s;">
+<div class="chapter-num">06</div>
+<div class="chapter-info">
+<h3>അധ്യായം 6: വാക്യ സംരചന, വാക്യഭേദങ്ങൾ, രൂപാന്തരീകരണവും വ്യാകരണവും</h3>
+<div class="eng-title">Module 3 · Ch 1 : Vakya Sanrachna, Bhed, Roopantaran Evam LMS Vyakaran</div>
+<p>വാക്യത്തിന്റെ നിർവ്വചനം, പ്രധാന രണ്ട് ഘടകങ്ങളായ ഉദ്ദേശ്യവും (Subject) വിധേയവും (Predicate), ലളിത-മിശ്ര-സംയുക്ത വാക്യങ്ങൾ, അർത്ഥാടിസ്ഥാനത്തിലുള്ള 8 വാക്യഭേദങ്ങൾ, വാക്യ രൂപാന്തരീകരണ നിയമങ്ങളും പരീക്ഷാ വ്യാകരണ ചോദ്യോത്തരങ്ങളും.</p>
+</div>
+<div class="btn-group">
+<button class="action-btn btn-view" onclick="viewPdf('Hindi/Malayalam PDF/Hindi_Module_3_Ch1_Vakya_Sanrachna_Vyakaran_Malayalam.pdf', 'Vakya Sanrachna & Vyakaran')">Read Online</button>
+</div>
+</article>
+
+</div>
+</section>
+
+</div>
+
+<!-- Bottom Navigation -->
+<footer class="bottom-nav">
+<button aria-label="Go back" class="nav-btn nav-btn-back" onclick="if(window.history.length > 1){window.history.back();}else{window.location.href='index.html';}" type="button">Back</button>
+<a aria-label="Academic Hub Home" class="nav-btn nav-btn-home" href="index.html#top">Home</a>
+</footer>
+</main>
+
+<!-- PDF View Modal -->
+<div class="modal" id="viewerModal">
+<div class="modal-content">
+<div class="modal-header">
+<h3 id="modalTitle">Hindi Study Guide Reader</h3>
+<div class="modal-header-actions">
+<button id="modalFastToggle" class="modal-action-btn" onclick="toggleModalReaderEngine()" title="Toggle Instant Native Reader / Enhanced Reader" type="button" style="font-size:12px; font-weight:800; padding:5px 11px; border-radius:8px; background:#059669; color:#fff; border:none; cursor:pointer; margin-right:4px;">⚡ Fast View</button>
+<button class="modal-action-btn modal-btn-back" onclick="closeViewer()" title="Go Back" type="button">Back</button>
+<a class="modal-action-btn modal-btn-home" href="index.html#top" title="Academic Hub Home">Home</a>
+<button aria-label="Zoom Out" class="modal-action-btn" onclick="zoomModalReader(-0.25)" title="Zoom Out" type="button">Zoom -</button>
+<button aria-label="Zoom In" class="modal-action-btn" onclick="zoomModalReader(0.25)" title="Zoom In" type="button">Zoom +</button>
+<button aria-label="Reset Zoom" class="modal-action-btn" onclick="resetModalReaderZoom()" title="Reset Zoom" type="button">Reset</button>
+<a aria-label="Open in New Tab" class="modal-action-btn" href="#" id="modalExternalBtn" rel="noopener" target="_blank" title="Open in New Tab">Open ↗</a>
+<button aria-label="Close" class="close-modal" onclick="closeViewer()">✕ Close</button>
+</div>
+</div>
+<iframe class="modal-iframe" id="pdfFrame" src="" title="PDF Viewer"></iframe>
+</div>
+</div>
+
+<script>
+    function zoomModalReader(delta) {
+      const f = document.getElementById('pdfFrame');
+      f?.contentWindow?.postMessage({ action: 'zoom', delta: delta }, '*');
+    }
+    function resetModalReaderZoom() {
+      const f = document.getElementById('pdfFrame');
+      f?.contentWindow?.postMessage({ action: 'resetZoom' }, '*');
+    }
+
+    function filterModule(mod, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const sections = document.querySelectorAll('.module-section');
+      sections.forEach(sec => {
+        if (mod === 'all' || sec.getAttribute('data-mod') === mod) {
+          sec.style.display = 'block';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+      filterChapters();
+    }
+
+    function filterChapters() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const activeFilterBtn = document.querySelector('.filter-btn.active');
+      const activeMod = activeFilterBtn ? activeFilterBtn.getAttribute('data-mod') : 'all';
+
+      const cards = document.querySelectorAll('.chapter-card');
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const parentSec = card.closest('.module-section');
+        const secMod = parentSec ? parentSec.getAttribute('data-mod') : 'all';
+
+        const matchesMod = (activeMod === 'all' || secMod === activeMod || !parentSec);
+        const matchesQuery = !query || text.includes(query);
+
+        if (matchesMod && matchesQuery) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    let isNativeFastMode = false;
+    let currentPdfCleanUrl = '';
+    let currentPdfCleanTitle = '';
+
+    function toggleModalReaderEngine() {
+      if (!currentPdfCleanUrl) return;
+      isNativeFastMode = !isNativeFastMode;
+      viewPdf(currentPdfCleanUrl, currentPdfCleanTitle);
+    }
+
+    function viewPdf(url, title) {
+      currentPdfCleanUrl = url.split('#')[0];
+      currentPdfCleanTitle = title;
+      const modalTitle = document.getElementById('modalTitle');
+      if (modalTitle) modalTitle.innerText = title;
+
+      const frame = document.getElementById('pdfFrame');
+      const extBtn = document.getElementById('modalExternalBtn');
+      const toggleBtn = document.getElementById('modalFastToggle');
+
+      if (isNativeFastMode) {
+        frame.src = currentPdfCleanUrl + '#toolbar=1&navpanes=1&zoom=page-width';
+        if (extBtn) extBtn.href = currentPdfCleanUrl;
+        if (toggleBtn) {
+          toggleBtn.innerText = '📖 Enhanced';
+          toggleBtn.style.background = '#ea580c';
+        }
+      } else {
+        const readerUrl = 'study-guide-reader.html?file=' + encodeURIComponent(currentPdfCleanUrl) + '&tab=malayalam_reading';
+        frame.src = readerUrl;
+        if (extBtn) extBtn.href = readerUrl;
+        if (toggleBtn) {
+          toggleBtn.innerText = '⚡ Fast View';
+          toggleBtn.style.background = '#059669';
+        }
+      }
+
+      const modal = document.getElementById('viewerModal');
+      if (modal) modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeViewer() {
+      const frame = document.getElementById('pdfFrame');
+      if (frame && frame.contentWindow) {
+        try {
+          frame.contentWindow.postMessage({ action: 'stopVoiceReader' }, '*');
+        } catch (e) {}
+      }
+      document.getElementById('viewerModal').style.display = 'none';
+      document.getElementById('pdfFrame').src = '';
+      document.body.style.overflow = '';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('viewerModal');
+      if (event.target == modal) {
+        closeViewer();
+      }
+    };
+
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u'].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+      }
+      if (e.key === 'Escape') {
+        closeViewer();
+      }
+    });
+
+    (function initModuleActivation() {
+      function activate() {
+        const hash = window.location.hash ? window.location.hash.replace('#', '') : '';
+        let targetMod = 'all';
+        if (['mod1', 'mod2', 'mod3', 'all'].includes(hash)) {
+          targetMod = hash;
+        }
+        const targetBtn = document.querySelector(`.filter-btn[data-mod="${targetMod}"]`) || document.querySelector('.filter-btn');
+        if (typeof filterModule === 'function' && targetBtn) {
+          filterModule(targetMod, targetBtn);
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', activate);
+      } else {
+        activate();
+      }
+    })();
+</script>
+</body>
+</html>
