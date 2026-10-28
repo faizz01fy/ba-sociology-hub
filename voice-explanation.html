@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="description" content="Voice Explanations — Chapter-by-chapter YouTube audio lectures and voice classes for Calicut University syllabus." />
+  <title>Voice Explanations | YouTube Audio Classes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #dc2626;
+      --primary-dark: #b91c1c;
+      --primary-soft: #fef2f2;
+      --accent: #d97706;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
+      --shadow-lg: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 40%, #fef2f2 100%);
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', -apple-system, sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 90px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* Top Navigation */
+    .top-navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: #f1f5f9;
+      color: #334155;
+      font-weight: 700;
+      font-size: 13.5px;
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 17px;
+      color: #0f172a;
+    }
+    .brand-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .search-bar-wrap {
+      flex: 1;
+      max-width: 360px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 9px 14px 9px 36px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      font-size: 13.5px;
+      background: #f8fafc;
+      transition: all 0.2s;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+    }
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1180px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    /* Subject Switcher Tabs Bar */
+    .subject-tabs-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+      scrollbar-width: thin;
+    }
+    .subject-tabs-scroll::-webkit-scrollbar { height: 5px; }
+    .subject-tabs-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
+    .subj-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: #334155;
+      font-size: 13.5px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+    .subj-tab-btn:hover {
+      border-color: #cbd5e1;
+      background: #f8fafc;
+      transform: translateY(-1px);
+    }
+    .subj-tab-btn.active {
+      background: #0f172a;
+      border-color: #0f172a;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+    }
+    .subj-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      background: #f1f5f9;
+      color: #475569;
+    }
+    .subj-tab-btn.active .subj-badge {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    /* Active Subject Hero Card */
+    .hero-banner {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .hero-title-group p {
+      color: var(--text-muted);
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 14px;
+    }
+    .hero-stat-pill {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 10px 16px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .hero-stat-pill strong {
+      display: block;
+      font-size: 20px;
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .hero-stat-pill span {
+      font-size: 11.5px;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Modules & Chapters */
+    .module-group {
+      margin-bottom: 32px;
+    }
+    .module-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      margin-bottom: 14px;
+    }
+    .module-title {
+      font-weight: 800;
+      font-size: 15px;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .module-count {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      background: #fff;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    /* Chapter Grid */
+    .chapters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 16px;
+    }
+
+    /* Chapter Card */
+    .chapter-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .chapter-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .chapter-card.playing {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+    }
+
+    .card-top {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .thumb-wrap {
+      position: relative;
+      width: 110px;
+      height: 68px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #0f172a;
+    }
+    .thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .thumb-duration {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+    .play-overlay-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 28px;
+      height: 28px;
+      background: rgba(220, 38, 38, 0.9);
+      color: #fff;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+    }
+
+    .card-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-sub {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .btn-play-voice {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 9px;
+      border: 1px solid var(--primary);
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .btn-play-voice:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-yt-external {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      color: #475569;
+      font-size: 12.5px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .btn-yt-external:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    /* Compact Embedded Player Tab inside Card */
+    .mini-player-tab {
+      display: none;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 12px;
+      margin-top: 4px;
+    }
+    .mini-player-tab.active {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .player-tab-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .player-tab-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #dc2626;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .player-tab-close {
+      background: none;
+      border: none;
+      color: #64748b;
+      font-size: 16px;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    .player-tab-close:hover {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .player-frame-wrap {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+    }
+    .player-frame-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Sticky Bottom Audio Bar */
+    .bottom-sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(16px);
+      color: #ffffff;
+      padding: 12px 24px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
+      z-index: 200;
+    }
+    .bottom-sticky-bar.visible {
+      display: flex;
+      animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+    .sticky-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .sticky-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .sticky-texts {
+      min-width: 0;
+    }
+    .sticky-title {
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sticky-sub {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .sticky-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .sticky-btn {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+    .sticky-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .sticky-btn-close {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 20px;
+      padding: 4px;
+    }
+    .sticky-btn-close:hover {
+      color: #fff;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1.5px dashed var(--border);
+    }
+    .empty-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .empty-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 6px;
+    }
+    .empty-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .top-navbar { padding: 10px 14px; }
+      .search-bar-wrap { max-width: 200px; }
+      .chapters-grid { grid-template-columns: 1fr; }
+      .hero-banner { padding: 18px; }
+      .hero-title-group h1 { font-size: 20px; }
+      .bottom-sticky-bar { padding: 10px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <nav class="top-navbar" aria-label="Main Navigation">
+    <div class="nav-left">
+      <a href="index.html" class="back-btn" title="Back to Academic Hub">
+        <span aria-hidden="true">←</span> Hub
+      </a>
+      <div class="brand-title">
+        <span class="brand-icon" aria-hidden="true">🎙️</span>
+        <span>Voice Explanation</span>
+      </div>
+    </div>
+
+    <div class="search-bar-wrap">
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input type="search" id="chapter-search" class="search-input" placeholder="Search chapter or topic..." aria-label="Search voice explanations">
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- Subject Switcher Tabs -->
+    <div class="subject-tabs-scroll" id="subject-tabs" role="tablist" aria-label="Select Subject">
+      <!-- Generated via JavaScript -->
+    </div>
+
+    <!-- Active Subject Hero Banner -->
+    <section class="hero-banner" id="hero-banner">
+      <div class="hero-title-group">
+        <h1 id="hero-subject-name">Loading Subject...</h1>
+        <p id="hero-subject-desc">Chapter-by-chapter voice lectures &amp; explanations from YouTube</p>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat-pill">
+          <strong id="stat-video-count">0</strong>
+          <span>Voice Lectures</span>
+        </div>
+        <div class="hero-stat-pill">
+          <strong id="stat-module-count">0</strong>
+          <span>Modules</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapters Content Container -->
+    <main id="chapters-container">
+      <!-- Populated via JavaScript -->
+    </main>
+
+  </div>
+
+  <!-- Bottom Floating Audio Bar -->
+  <aside class="bottom-sticky-bar" id="sticky-audio-bar" aria-label="Audio Playback Bar">
+    <div class="sticky-info">
+      <div class="sticky-icon" aria-hidden="true">▶</div>
+      <div class="sticky-texts">
+        <div class="sticky-title" id="sticky-title">Playing lecture...</div>
+        <div class="sticky-sub" id="sticky-sub">Calicut University Official Lecture</div>
+      </div>
+    </div>
+    <div class="sticky-actions">
+      <a href="#" target="_blank" rel="noopener" class="sticky-btn" id="sticky-yt-link">
+        <span>↗</span> Full Player
+      </a>
+      <button type="button" class="sticky-btn-close" id="sticky-close" aria-label="Close Player">✕</button>
+    </div>
+  </aside>
+
+  <!-- Load Subject Voice Data -->
+  <script src="voice_explanation_data.js"></script>
+
+  <script>
+    (function () {
+      const data = (typeof window.VOICE_EXPLANATIONS_DATA !== 'undefined') ? window.VOICE_EXPLANATIONS_DATA : ((typeof VOICE_EXPLANATIONS_DATA !== 'undefined') ? VOICE_EXPLANATIONS_DATA : {});
+
+      // Determine initial subject from URL query param `?subject=...`
+      const urlParams = new URLSearchParams(window.location.search);
+      let currentSlug = (urlParams.get('subject') || 'malayalam').toLowerCase();
+
+      // Fallback if slug not found
+      if (!data[currentSlug]) {
+        currentSlug = Object.keys(data)[0] || 'malayalam';
+      }
+
+      const subjectTabsContainer = document.getElementById('subject-tabs');
+      const heroSubjectName = document.getElementById('hero-subject-name');
+      const heroSubjectDesc = document.getElementById('hero-subject-desc');
+      const statVideoCount = document.getElementById('stat-video-count');
+      const statModuleCount = document.getElementById('stat-module-count');
+      const chaptersContainer = document.getElementById('chapters-container');
+      const searchInput = document.getElementById('chapter-search');
+
+      const stickyBar = document.getElementById('sticky-audio-bar');
+      const stickyTitle = document.getElementById('sticky-title');
+      const stickySub = document.getElementById('sticky-sub');
+      const stickyYtLink = document.getElementById('sticky-yt-link');
+      const stickyClose = document.getElementById('sticky-close');
+
+      let currentPlayingCard = null;
+
+      // Render Subject Tab Buttons
+      function renderSubjectTabs() {
+        subjectTabsContainer.innerHTML = '';
+        Object.keys(data).forEach(slug => {
+          const s = data[slug];
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'subj-tab-btn' + (slug === currentSlug ? ' active' : '');
+          btn.dataset.slug = slug;
+          btn.setAttribute('role', 'tab');
+          btn.setAttribute('aria-selected', slug === currentSlug ? 'true' : 'false');
+          btn.innerHTML = `<span style="font-weight:800;">${s.badge}</span> ${s.name} <span class="subj-badge">${s.totalVideos || 0}</span>`;
+          btn.addEventListener('click', () => {
+            if (currentSlug !== slug) {
+              currentSlug = slug;
+              const newUrl = new URL(window.location);
+              newUrl.searchParams.set('subject', slug);
+              window.history.pushState({}, '', newUrl);
+              updateUI();
+            }
+          });
+          subjectTabsContainer.append(btn);
+        });
+      }
+
+      // Render Chapters for Selected Subject
+      function renderChapters(filterQuery = '') {
+        const subject = data[currentSlug];
+        if (!subject) return;
+
+        heroSubjectName.innerHTML = `${subject.badge} ${subject.name}`;
+        statVideoCount.textContent = subject.totalVideos || 0;
+        statModuleCount.textContent = (subject.modules || []).length;
+
+        chaptersContainer.innerHTML = '';
+
+        if (!subject.modules || subject.modules.length === 0 || subject.totalVideos === 0) {
+          chaptersContainer.innerHTML = `
+            <div class="empty-state">
+              <span class="empty-icon">🎧</span>
+              <div class="empty-title">Voice Explanations Coming Soon</div>
+              <div class="empty-desc">Lectures and voice notes for <strong>${subject.name}</strong> are currently being curated and will be uploaded shortly.</div>
+            </div>`;
+          return;
+        }
+
+        const query = filterQuery.trim().toLowerCase();
+        let matchedTotal = 0;
+
+        subject.modules.forEach((mod, modIdx) => {
+          const filteredVids = mod.videos.filter(v => {
+            if (!query) return true;
+            return (v.title && v.title.toLowerCase().includes(query)) ||
+                   (v.chapter && v.chapter.toLowerCase().includes(query)) ||
+                   (mod.moduleName && mod.moduleName.toLowerCase().includes(query));
+          });
+
+          if (filteredVids.length === 0) return;
+          matchedTotal += filteredVids.length;
+
+          const group = document.createElement('section');
+          group.className = 'module-group';
+
+          const mHeader = document.createElement('div');
+          mHeader.className = 'module-header';
+          mHeader.innerHTML = `
+            <div class="module-title">
+              <span style="color:var(--primary);font-size:14px;">📁</span>
+              <span>${mod.moduleName}</span>
+            </div>
+            <div class="module-count">${filteredVids.length} Voice Lectures</div>
+          `;
+          group.append(mHeader);
+
+          const grid = document.createElement('div');
+          grid.className = 'chapters-grid';
+
+          filteredVids.forEach(v => {
+            const card = document.createElement('article');
+            card.className = 'chapter-card';
+            card.dataset.ytid = v.youtubeId;
+
+            const durationText = v.duration ? `${v.duration}m` : 'Audio';
+            const thumbUrl = `https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg`;
+
+            card.innerHTML = `
+              <div class="card-top">
+                <div class="thumb-wrap">
+                  <img class="thumb-img" src="${thumbUrl}" alt="${v.title}" loading="lazy" />
+                  <span class="play-overlay-icon" aria-hidden="true">▶</span>
+                  <span class="thumb-duration">${durationText}</span>
+                </div>
+                <div class="card-info">
+                  <div class="card-title" title="${v.title}">${v.title}</div>
+                  <div class="card-sub">${v.chapter || mod.moduleName}</div>
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <button type="button" class="btn-play-voice">
+                  <span aria-hidden="true">▶</span> Play Voice
+                </button>
+                <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="btn-yt-external" title="Open directly in YouTube">
+                  ↗ YouTube
+                </a>
+              </div>
+
+              <!-- Compact Embedded Player Tab -->
+              <div class="mini-player-tab">
+                <div class="player-tab-header">
+                  <span class="player-tab-label">
+                    <span aria-hidden="true">🔊</span> Compact Voice Player
+                  </span>
+                  <button type="button" class="player-tab-close" title="Close player">✕</button>
+                </div>
+                <div class="player-frame-wrap">
+                  <!-- iframe inserted on play -->
+                </div>
+              </div>
+            `;
+
+            const playBtn = card.querySelector('.btn-play-voice');
+            const playerTab = card.querySelector('.mini-player-tab');
+            const frameWrap = card.querySelector('.player-frame-wrap');
+            const closeBtn = card.querySelector('.player-tab-close');
+
+            function startPlayback() {
+              // Deactivate any currently playing card
+              if (currentPlayingCard && currentPlayingCard !== card) {
+                const prevTab = currentPlayingCard.querySelector('.mini-player-tab');
+                const prevFrame = currentPlayingCard.querySelector('.player-frame-wrap');
+                const prevPlayBtn = currentPlayingCard.querySelector('.btn-play-voice');
+                if (prevTab) prevTab.classList.remove('active');
+                if (prevFrame) prevFrame.innerHTML = '';
+                if (prevPlayBtn) prevPlayBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
+                currentPlayingCard.classList.remove('playing');
+              }
+
+              // Load iframe
+              frameWrap.innerHTML = `
+                <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&rel=0&modestbranding=1"
+                        title="${v.title}"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>`;
+              playerTab.classList.add('active');
+              card.classList.add('playing');
+              playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
+              currentPlayingCard = card;
+
+              // Update Bottom Sticky Bar
+              stickyTitle.textContent = v.title;
+              stickySub.textContent = `${subject.name} · ${v.chapter || mod.moduleName}`;
+              stickyYtLink.href = v.url;
+              stickyBar.classList.add('visible');
+            }
+
+            function stopPlayback() {
+              frameWrap.innerHTML = '';
+              playerTab.classList.remove('active');
+              card.classList.remove('playing');
+              playBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
+              if (currentPlayingCard === card) {
+                currentPlayingCard = null;
+                stickyBar.classList.remove('visible');
+              }
+            }
+
+            playBtn.addEventListener('click', () => {
+              if (playerTab.classList.contains('active')) {
+                stopPlayback();
+              } else {
+                startPlayback();
+              }
+            });
+
+            closeBtn.addEventListener('click', stopPlayback);
+
+            grid.append(card);
+          });
+
+          group.append(grid);
+          chaptersContainer.append(group);
+        });
+
+        if (matchedTotal === 0 && query) {
+          chaptersContainer.innerHTML = `
+            <div class="empty-state">
+              <span class="empty-icon">🔍</span>
+              <div class="empty-title">No matching chapters found</div>
+              <div class="empty-desc">No voice lectures matched "<strong>${filterQuery}</strong>" in ${subject.name}. Try a different keyword.</div>
+            </div>`;
+        }
+      }
+
+      function updateUI() {
+        // Update tab buttons active state
+        document.querySelectorAll('.subj-tab-btn').forEach(btn => {
+          const isActive = btn.dataset.slug === currentSlug;
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        renderChapters(searchInput.value);
+      }
+
+      // Search Filter Event
+      searchInput.addEventListener('input', (e) => {
+        renderChapters(e.target.value);
+      });
+
+      // Sticky Bar Close Event
+      stickyClose.addEventListener('click', () => {
+        stickyBar.classList.remove('visible');
+        if (currentPlayingCard) {
+          const frame = currentPlayingCard.querySelector('.player-frame-wrap');
+          const tab = currentPlayingCard.querySelector('.mini-player-tab');
+          const playBtn = currentPlayingCard.querySelector('.btn-play-voice');
+          if (frame) frame.innerHTML = '';
+          if (tab) tab.classList.remove('active');
+          if (playBtn) playBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
+          currentPlayingCard.classList.remove('playing');
+          currentPlayingCard = null;
+        }
+      });
+
+      // Handle popstate for back/forward navigation
+      window.addEventListener('popstate', () => {
+        const p = new URLSearchParams(window.location.search);
+        const s = (p.get('subject') || 'malayalam').toLowerCase();
+        if (data[s] && s !== currentSlug) {
+          currentSlug = s;
+          updateUI();
+        }
+      });
+
+      // Initial Mount
+      renderSubjectTabs();
+      updateUI();
+    })();
+  </script>
+</body>
+</html>
