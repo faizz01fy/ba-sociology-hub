@@ -260,6 +260,20 @@
     @keyframes spinPage {
       to { transform: rotate(360deg); }
     }
+
+    /* Auto-hide loading indicators as soon as page is rendered or has canvas */
+    .pdf-page[data-rendered="true"] .page-loading,
+    .pdf-page:has(canvas) .page-loading {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+    .pdf-page[data-rendered="true"]::after,
+    .pdf-page:has(canvas)::after {
+      display: none !important;
+      content: none !important;
+    }
     
     .pdf-page canvas {
       display: block;
@@ -1247,18 +1261,8 @@
       position: relative;
     }
     .pdf-page:not([data-rendered="true"])::after {
-      content: "⚡ Loading Page " attr(data-page) "...";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 13px;
-      font-weight: 700;
-      color: #94a3b8;
-      background: #f1f5f9;
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: 1px solid #cbd5e1;
+      content: none !important;
+      display: none !important;
     }
 </style>
 </head>
@@ -1551,6 +1555,7 @@
         section.append(cached);
         section.dataset.rendered = 'true';
         delete section.dataset.rendering;
+        section.querySelector('.page-loading')?.remove();
         return;
       }
 
@@ -1606,19 +1611,15 @@
           activeTasks.delete(section);
         }
 
-        if (currentGeneration !== generation) return;
         section.dataset.rendered = 'true';
-        pageCanvasCache.set(number, canvas);
-        if (pageCanvasCache.size > 25) {
-          const firstKey = pageCanvasCache.keys().next().value;
-          pageCanvasCache.delete(firstKey);
-        }
-        pageCanvasCache.set(number, canvas);
-        if (pageCanvasCache.size > 25) {
-          const firstKey = pageCanvasCache.keys().next().value;
-          pageCanvasCache.delete(firstKey);
-        }
         section.querySelector('.page-loading')?.remove();
+        pageCanvasCache.set(number, canvas);
+        if (pageCanvasCache.size > 25) {
+          const firstKey = pageCanvasCache.keys().next().value;
+          pageCanvasCache.delete(firstKey);
+        }
+
+        if (currentGeneration !== generation) return;
         if (Number(section.dataset.page) === pageNumber && el('status')) {
           el('status').textContent = pdf.numPages + ' pages · Scroll or use ‹ › buttons to read';
         }
@@ -1672,6 +1673,7 @@
       if (observer) observer.disconnect();
       if (pageTrackingObserver) pageTrackingObserver.disconnect();
       cancelAllActiveTasks();
+      pageCanvasCache.clear();
 
       el('reader').replaceChildren();
       sections = [];
