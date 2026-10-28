@@ -1,5 +1,6 @@
 import {handleStudyHelper} from './study-helper-backend.js';
 export {StudyHelperQuota} from './study-helper-backend.js';
+import {handleUniversityNotices} from './university-notices-backend.js';
 const CHAT_PATH = "/api/chat";
 const TRACKER_SCRIPT = "(()=>{let last=\"\";const labels={top:\"Overview\",subjects:\"Semester subjects\",tests:\"Practice tests\",\"ai-study\":\"AI Study Helper\",\"community-chat\":\"Student chat\",support:\"Support\"};function decode(value){try{return decodeURIComponent(value)}catch{return value}}function title(value){return value.replace(/[-_]+/g,\" \").split(\" \").map(function(word){return word?word.charAt(0).toUpperCase()+word.slice(1):\"\"}).join(\" \")}function currentSection(){const path=location.pathname||\"/\";const hash=decode((location.hash||\"\").slice(1));return labels[hash]||(hash?title(hash):(path===\"/\"||path===\"/index.html\"?\"Home\":title(path.split(\"/\").filter(Boolean).map(decode).join(\" / \"))))}function record(){const path=location.pathname||\"/\";const hash=decode((location.hash||\"\").slice(1));const key=path+\"#\"+hash;if(key===last)return;last=key;const label=currentSection();fetch(\"/api/traffic/section\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({path:path,section:label}),keepalive:true}).catch(function(){});}window.addEventListener(\"hashchange\",record);window.addEventListener(\"pageshow\",record);window.addEventListener(\"popstate\",record);record();function livePresence(active){if(document.querySelector(\".hub-owner-traffic-control\"))return;let id=\"\";try{id=sessionStorage.getItem(\"hub_live_visitor\")||\"\";if(!id){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2);sessionStorage.setItem(\"hub_live_visitor\",id)}}catch{id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2)}fetch(\"/api/traffic/presence\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({visitorId:id,path:location.pathname||\"/\",section:currentSection(),active:active!==false}),keepalive:true}).catch(function(){})}livePresence(true);setInterval(function(){if(!document.hidden)livePresence(true)},25000);document.addEventListener(\"visibilitychange\",function(){if(!document.hidden)livePresence(true)});window.addEventListener(\"pagehide\",function(){livePresence(false)})})();";
 const OWNER_LIVE_SCRIPT = "(()=>{const control=document.getElementById('hub-live-control'),panel=document.getElementById('hub-live-panel'),count=document.getElementById('hub-live-count'),summary=document.getElementById('hub-live-summary'),pages=document.getElementById('hub-live-pages'),close=document.getElementById('hub-live-close');if(!control||!panel||!count||!summary||!pages||!close)return;function displayPage(item){const path=String(item.path||'/');const section=String(item.section||'').trim();if(path==='/'||path==='/index.html')return section&&section!=='Home'&&section!=='Overview'?'Home · '+section:'Home page';return section||path}async function update(){try{const response=await fetch('/api/admin/live-visitors',{cache:'no-store',credentials:'same-origin'});if(response.status===401){count.textContent='—';summary.textContent='Owner sign-in required. Sign in to the owner dashboard and reload this page.';pages.replaceChildren();return}const data=await response.json();if(!response.ok)throw Error(data.error||'Could not load live visitors.');const active=Number(data.active)||0;count.textContent=String(active);summary.textContent=active+' active tab'+(active===1?'':'s')+' seen in the last 90 seconds';pages.replaceChildren();const entries=Array.isArray(data.pages)?data.pages:[];if(!active||!entries.length){const empty=document.createElement('li');empty.className='hub-live-empty';empty.textContent='No active visitors right now.';pages.append(empty);return}for(const item of entries){const row=document.createElement('li');const path=document.createElement('span');path.textContent=displayPage(item);const total=document.createElement('strong');const visitors=Number(item.count)||0;total.textContent=visitors+' tab'+(visitors===1?'':'s');row.append(path,total);pages.append(row)}}catch(error){summary.textContent=error.message||'Could not load live visitors.'}}function setOpen(open){panel.hidden=!open;control.setAttribute('aria-expanded',String(open));if(open)update()}control.addEventListener('click',()=>setOpen(panel.hidden));close.addEventListener('click',()=>setOpen(false));document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden){setOpen(false);control.focus()}});update();setInterval(()=>{if(!document.hidden)update()},15000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update()})})();";
@@ -49,12 +50,20 @@ export default {
       if (!q) return new Response("Missing q", { status: 400 });
       const gUrl = "https://translate.google.com/translate_tts?ie=UTF-8&tl=" + encodeURIComponent(tl) + "&client=tw-ob&q=" + encodeURIComponent(q);
       try {
-        const resp = await fetch(gUrl, {
+        let resp = await fetch(gUrl, {
           headers: {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
             "Referer": "https://translate.google.com/"
           }
         });
+        if (!resp.ok) {
+          const gtxUrl = "https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=" + encodeURIComponent(tl) + "&q=" + encodeURIComponent(q);
+          resp = await fetch(gtxUrl, {
+            headers: {
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            }
+          });
+        }
         if (!resp.ok) {
           return new Response("TTS error: " + resp.status, { status: resp.status });
         }
@@ -72,6 +81,7 @@ export default {
     if (url.pathname === "/live-owner.js" && request.method === "GET") return new Response(OWNER_LIVE_SCRIPT,{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
     if (url.pathname === "/traffic-tracker.js" && request.method === "GET") return new Response(TRACKER_SCRIPT,{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
     if (url.pathname === '/api/study-helper' || url.pathname === '/api/study-helper/status') return handleStudyHelper(request, env);
+    if (url.pathname === '/api/notices') return handleUniversityNotices(request, env, ctx);
     const room = env.TRAFFIC_ROOM.get(env.TRAFFIC_ROOM.idFromName("academic-hub-owner-traffic"));
     if (isPrivateBuPath(url.pathname)) {
       if (request.method !== "GET" && request.method !== "HEAD") return json({error:"Method not allowed."},405);
@@ -195,6 +205,7 @@ export default {
       }));
     }
     if (url.pathname === "/api/test-results/submit") {
+      // Test report submissions are kept ALIVE 24/7 (lightweight 1-call submissions do not drain quota)
       if (request.method !== "POST") return json({error:"Method not allowed."},405);
       if (request.headers.get("Origin") !== url.origin) return json({error:"Forbidden"},403);
       const declaredLength = Number(request.headers.get("Content-Length") || 0);
@@ -220,9 +231,39 @@ export default {
       return new Response(responseBody, {status:upstream.status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
     }
     if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/internal/")) return json({error:"Not found"},404);
-    const response = await env.ASSETS.fetch(request);
+    let response = await env.ASSETS.fetch(request);
+    if (!response.ok && url.pathname.toLowerCase().endsWith('.pdf')) {
+      const candidates = [];
+      const decodedPath = decodeURIComponent(url.pathname);
+      if (decodedPath.includes('/Malayalam PDF/')) {
+        candidates.push(decodedPath.replace('/Malayalam PDF/', '/Malayalam_PDF/'));
+      }
+      if (decodedPath.includes('/Malayalam_PDF/')) {
+        candidates.push(decodedPath.replace('/Malayalam_PDF/', '/Malayalam PDF/'));
+      }
+      if (decodedPath.includes('/LMS PDF/')) {
+        candidates.push(decodedPath.replace('/LMS PDF/', '/LMS_PDF/'));
+      }
+      if (decodedPath.includes('/LMS_PDF/')) {
+        candidates.push(decodedPath.replace('/LMS_PDF/', '/LMS PDF/'));
+      }
+      const parts = decodedPath.split('/');
+      const filename = parts[parts.length - 1];
+      candidates.push('/pdfs/' + filename);
+      candidates.push('/' + filename);
+
+      for (const cPath of candidates) {
+        try {
+          const altUrl = new URL(encodeURI(cPath), request.url);
+          const altResp = await env.ASSETS.fetch(new Request(altUrl, request));
+          if (altResp.ok) {
+            response = altResp;
+            break;
+          }
+        } catch (_) {}
+      }
+    }
     if (request.method === "GET" && response.ok && response.headers.get("Content-Type")?.includes("text/html")) {
-      // Lightweight page visit recording only (1 call per page load, 0 background operations while reading)
       const task = room.fetch(new Request("https://internal/internal/visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -235,6 +276,26 @@ export default {
         })
       })).catch(() => {});
       ctx.waitUntil(task);
+
+      const hasAdminCookie = (request.headers.get("Cookie") || "").includes("__Host-hub_admin=");
+      let isOwner = false;
+      if (hasAdminCookie) {
+        try {
+          const session = await room.fetch(await adminRequest(request, env, "https://internal/admin/api/admin/session"));
+          isOwner = session.ok;
+        } catch {}
+      }
+
+      response = new HTMLRewriter().on("body", {
+        element(el) {
+          el.append('<script src="/traffic-tracker.js" defer></script>', { html: true });
+          if (isOwner) {
+            el.append('<style id="hub-owner-traffic-control-style">.hub-owner-traffic-control{position:fixed!important;right:max(12px,env(safe-area-inset-right,0px))!important;top:max(12px,env(safe-area-inset-top,0px))!important;z-index:2147483647!important;display:inline-flex!important;align-items:center;justify-content:center;gap:.45rem;min-height:48px;min-width:48px;max-width:calc(100vw - 24px);padding:12px 18px;box-sizing:border-box;border:2px solid #fff;border-radius:999px;background:#173b35;color:#fff!important;box-shadow:0 6px 24px rgba(0,0,0,.32);font:700 16px/1.2 system-ui,sans-serif;text-decoration:none!important;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.hub-owner-traffic-control:hover,.hub-owner-traffic-control:focus-visible{background:#225c50;outline:3px solid #f3c969;outline-offset:2px}.hub-owner-traffic-control:active{transform:translateY(1px)}@media(max-width:600px){.hub-owner-traffic-control{min-height:52px;max-width:calc(100vw - 24px);padding:14px 18px;font-size:16px}}</style>', { html: true });
+            el.append('<a class="hub-owner-traffic-control" href="/admin/traffic#radar" aria-label="Open private live visitors dashboard">Live visitors <b id="hub-live-count" aria-live="polite">…</b> <span aria-hidden="true">↗</span></a>', { html: true });
+            el.append('<script src="/live-owner.js" defer></script>', { html: true });
+          }
+        }
+      }).transform(response);
 
       const htmlHeaders = new Headers(response.headers);
       htmlHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -510,8 +571,8 @@ function adminPage(authorized) {
   <div class="brand-title">
     <div class="brand-radar"></div>
     <div class="brand-text">
-      <h1>ACADEMIC HUB // CONTROL ROOM <span>v3.0 ENTERPRISE</span></h1>
-      <div class="brand-sub">OPERATIONS WATCH & TELEMETRY CENTER · PRIVATE OWNER ACCESS</div>
+      <h1>ACADEMIC HUB // CONTROL ROOM <span>TRAFFIC WATCH</span></h1>
+      <div class="brand-sub">OPERATIONS WATCH & VISITOR TELEMETRY · SECURE OWNER CONSOLE</div>
     </div>
   </div>
 
@@ -527,6 +588,10 @@ function adminPage(authorized) {
     <div class="clock-item">
       <span class="clock-label">RADAR LINK</span>
       <span class="clock-time" id="radar-link-status" style="color:var(--accent-emerald)">● NOMINAL</span>
+    </div>
+    <div class="clock-item">
+      <span class="clock-label">TRAFFIC WATCH</span>
+      <span class="clock-time" id="quota-guard-status" style="color:var(--accent-emerald)">● ACTIVE 24/7</span>
     </div>
   </div>
 
@@ -581,148 +646,30 @@ function adminPage(authorized) {
     </div>
   </div>
 
-  <div class="kpi-card tests">
+  <div class="kpi-card popular">
     <div class="kpi-head">
-      <span class="kpi-title">ASSESSMENT ENGINE</span>
-      <span class="kpi-badge tests">7 SUBJECTS</span>
+      <span class="kpi-title">TOP ACCESSED CONTENT</span>
+      <span class="kpi-badge popular">LEADER</span>
     </div>
-    <div class="kpi-val"><span id="test-total-attempts">0</span> <small>ATTEMPTS</small></div>
+    <div class="kpi-val" style="font-size:20px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" id="top-content-name">—</div>
     <div class="kpi-foot">
-      <span class="highlight" style="color:var(--accent-emerald)" id="test-pass-rate">0% PASS</span> · <span id="test-avg-score">0% AVG</span>
+      <span class="highlight" id="top-content-views">0 views</span> · <span id="top-content-visitors">0 visitors</span>
     </div>
   </div>
 </section>
 
 <nav class="nav-tabs" role="tablist">
-  <button class="tab-btn active" id="tab-btn-assessment" type="button" role="tab" aria-selected="true">🎯 ASSESSMENT MATRIX <span class="badge-pill" id="badge-total-tests">0</span></button>
+  <button class="tab-btn active" id="tab-btn-geo" type="button" role="tab" aria-selected="true">👥 VISITORS & IP AUDIT <span class="badge-pill" id="badge-total-ips">0 IPs</span></button>
   <button class="tab-btn" id="tab-btn-radar" type="button" role="tab" aria-selected="false">🛰️ LIVE RADAR PRESENCE <span class="badge-pill" id="badge-live-tabs">0 ACTIVE</span></button>
-  <button class="tab-btn" id="tab-btn-geo" type="button" role="tab" aria-selected="false">🌍 GEO & NETWORK INTELLIGENCE <span class="badge-pill" id="badge-total-ips">0 IPs</span></button>
   <button class="tab-btn" id="tab-btn-content" type="button" role="tab" aria-selected="false">📊 CONTENT LEADERBOARD <span class="badge-pill" id="badge-total-pages">0</span></button>
-  <button class="tab-btn" id="tab-btn-chat" type="button" role="tab" aria-selected="false">💬 COMMUNITY CHAT <span class="badge-pill">MOD</span></button>
 </nav>
 
 <main class="control-panel">
-  <!-- STATION 1: MOCK TEST COMMAND CENTER -->
-  <section class="station-card" id="panel-assessment">
+  <!-- TAB 1: VISITORS & IP AUDIT (DEFAULT OPEN TAB) -->
+  <section class="station-card" id="panel-geo">
     <div class="station-header">
       <div>
-        <h2><span class="station-dot"></span> 7-SUBJECT ASSESSMENT TELEMETRY MATRIX</h2>
-        <p class="station-desc">Automated scoring diagnostics, pass-rate gauges, and student performance across all 7 semester disciplines.</p>
-      </div>
-      <div style="display:flex;gap:8px">
-        <button class="btn btn-primary" id="btn-export-results" type="button">📥 EXPORT RESULTS CSV</button>
-        <button class="btn" id="refresh-results" type="button">🔄 REFRESH ATTEMPTS</button>
-      </div>
-    </div>
-
-    <!-- 7 SUBJECT MATRIX CARDS -->
-    <div class="subject-grid" id="subject-cards-grid">
-      <!-- Generated dynamically -->
-    </div>
-
-    <!-- SCORE SPECTRUM HISTOGRAM -->
-    <div class="spectrum-box">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <span style="font-size:11px; font-family:var(--font-mono); font-weight:700; color:var(--text-muted); text-transform:uppercase;">Score Distribution Spectrum (<span id="spectrum-total">0</span> Total Attempts)</span>
-        <span style="font-size:11px; font-family:var(--font-mono); color:var(--accent-emerald);" id="spectrum-pass-rate">0% Passed Standards (>=40%)</span>
-      </div>
-      <div class="spectrum-bar">
-        <div class="spectrum-seg distinction" id="seg-distinction" style="width: 25%;" title="Distinction (>=80%)"></div>
-        <div class="spectrum-seg merit" id="seg-merit" style="width: 25%;" title="Very Good (60-79%)"></div>
-        <div class="spectrum-seg pass" id="seg-pass" style="width: 25%;" title="Pass Standard (40-59%)"></div>
-        <div class="spectrum-seg fail" id="seg-fail" style="width: 25%;" title="Below Pass (<40%)"></div>
-      </div>
-      <div class="spectrum-legend">
-        <div class="legend-item"><span class="legend-dot distinction"></span> Distinction [80-100%]: <strong id="count-distinction">0</strong> (<span id="pct-distinction">0%</span>)</div>
-        <div class="legend-item"><span class="legend-dot merit"></span> Very Good [60-79%]: <strong id="count-merit">0</strong> (<span id="pct-merit">0%</span>)</div>
-        <div class="legend-item"><span class="legend-dot pass"></span> Pass Standard [40-59%]: <strong id="count-pass">0</strong> (<span id="pct-pass">0%</span>)</div>
-        <div class="legend-item"><span class="legend-dot fail"></span> Below Pass [&lt;40%]: <strong id="count-fail">0</strong> (<span id="pct-fail">0%</span>)</div>
-      </div>
-    </div>
-
-    <!-- FILTER & SEARCH HUD -->
-    <div class="filter-row">
-      <input type="text" class="search-input" id="result-search-input" placeholder="🔍 Search Student Name, ID, Subject, or Reg #..." value="">
-      <select class="filter-select" id="subject-filter">
-        <option value="">All 7 Subjects</option>
-      </select>
-      <select class="filter-select" id="grade-filter">
-        <option value="">Performance: All Marks</option>
-        <option value="distinction">Distinction (>=80%)</option>
-        <option value="pass">Passed Standard (>=40%)</option>
-        <option value="fail">Below Pass / Needs Improvement (&lt;40%)</option>
-      </select>
-      <select class="filter-select" id="identity-filter">
-        <option value="">Identity: All Submissions</option>
-        <option value="named">Named Students Only</option>
-        <option value="anon">Legacy Anonymous Only</option>
-      </select>
-      <select class="filter-select" id="page-size">
-        <option value="25">25 per page</option>
-        <option value="50" selected>50 per page</option>
-        <option value="100">100 per page</option>
-        <option value="250">250 per page</option>
-      </select>
-    </div>
-
-    <p id="results-status" role="status" style="font-size:12px; font-family:var(--font-mono); color:var(--text-dim); margin-bottom:10px;">Loading mock test results...</p>
-
-    <!-- DETAILED ATTEMPTS TABLE (WITH RECTIFIED NAMES & SUBJECTS) -->
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Student Identity</th>
-            <th>Registration</th>
-            <th>Test Discipline / Subject</th>
-            <th>Score</th>
-            <th>Mark %</th>
-            <th>Performance Status</th>
-            <th>Wrong</th>
-            <th>Skipped</th>
-            <th>Device Attempt</th>
-            <th>Submission Mode</th>
-            <th>Timestamp (IST)</th>
-          </tr>
-        </thead>
-        <tbody id="result-rows">
-          <!-- Rendered dynamically -->
-        </tbody>
-      </table>
-    </div>
-
-    <div class="pagination-bar">
-      <span id="page-info" class="page-info">Page 1 of 1</span>
-      <div class="page-controls">
-        <button class="btn" id="prev-page" type="button" disabled>◀ PREVIOUS</button>
-        <button class="btn" id="next-page" type="button" disabled>NEXT ▶</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATION 2: LIVE AUDIENCE RADAR -->
-  <section class="station-card" id="panel-radar" hidden>
-    <div class="station-header">
-      <div>
-        <h2><span class="station-dot"></span> LIVE AUDIENCE RADAR (CONCURRENT TABS STREAM)</h2>
-        <p class="station-desc">Telemetry active within the last 90 seconds. Highlights concurrent study clusters and live mock test sessions.</p>
-      </div>
-      <div>
-        <span style="font-size:12px; font-family:var(--font-mono); color:var(--accent-emerald);" id="radar-summary-text">● CHECKING RADAR...</span>
-      </div>
-    </div>
-
-    <div class="radar-grid" id="live-pages-grid">
-      <!-- Rendered dynamically -->
-    </div>
-  </section>
-
-  <!-- STATION 3: GEO & NETWORK INTELLIGENCE -->
-  <section class="station-card" id="panel-geo" hidden>
-    <div class="station-header">
-      <div>
-        <h2><span class="station-dot"></span> GLOBAL INGRESS & NETWORK AUDIT LOG</h2>
+        <h2><span class="station-dot"></span> VISITOR AUDIT & INGRESS TELEMETRY</h2>
         <p class="station-desc">Deep telemetry records by visitor IP, regional geolocations, visit velocity, and chronological section breadcrumbs.</p>
       </div>
       <div>
@@ -736,25 +683,31 @@ function adminPage(authorized) {
     </div>
 
     <div class="filter-row">
-      <input type="text" class="search-input" id="traffic-search-input" placeholder="🔍 Search IP Address, City, Country, or Page Path..." value="">
-      <select class="filter-select" id="traffic-page-size">
-        <option value="25" selected>25 rows</option>
-        <option value="50">50 rows</option>
-        <option value="100">100 rows</option>
-      </select>
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="traffic-search-input" placeholder="Search IP Address, City, Country, or Page Path..." value="">
+      </div>
+      <div class="filter-group">
+        <label for="traffic-page-size" class="filter-label">ROWS:</label>
+        <select class="filter-select" id="traffic-page-size">
+          <option value="25" selected>25 rows</option>
+          <option value="50">50 rows</option>
+          <option value="100">100 rows</option>
+        </select>
+      </div>
     </div>
 
     <div class="table-wrapper">
       <table>
         <thead>
           <tr>
-            <th>Last Active (IST)</th>
-            <th>Visitor IP Address</th>
-            <th>Total Visits</th>
-            <th>Country / Region</th>
-            <th>State / City</th>
-            <th>Current Active Page</th>
-            <th>Section Trail History</th>
+            <th style="min-width:160px">Last Active (IST)</th>
+            <th style="min-width:160px">Visitor IP Address</th>
+            <th style="min-width:110px">Total Visits</th>
+            <th style="min-width:170px">Country / Region</th>
+            <th style="min-width:160px">State / City</th>
+            <th style="min-width:180px">Current Active Page</th>
+            <th style="min-width:240px">Section Trail History</th>
           </tr>
         </thead>
         <tbody id="rows">
@@ -772,7 +725,24 @@ function adminPage(authorized) {
     </div>
   </section>
 
-  <!-- STATION 4: CONTENT LEADERBOARD -->
+  <!-- TAB 2: LIVE AUDIENCE RADAR -->
+  <section class="station-card" id="panel-radar" hidden>
+    <div class="station-header">
+      <div>
+        <h2><span class="station-dot"></span> LIVE AUDIENCE RADAR (CONCURRENT TABS STREAM)</h2>
+        <p class="station-desc">Telemetry active within the last 90 seconds. Highlights concurrent study clusters and live student sessions.</p>
+      </div>
+      <div>
+        <span class="radar-live-badge" id="radar-summary-text">● CHECKING RADAR...</span>
+      </div>
+    </div>
+
+    <div class="radar-grid" id="live-pages-grid">
+      <!-- Rendered dynamically -->
+    </div>
+  </section>
+
+  <!-- TAB 3: CONTENT LEADERBOARD -->
   <section class="station-card" id="panel-content" hidden>
     <div class="station-header">
       <div>
@@ -785,46 +755,16 @@ function adminPage(authorized) {
       <table>
         <thead>
           <tr>
-            <th>Rank</th>
+            <th style="width:70px">Rank</th>
             <th>Learning Page / Section</th>
-            <th>Total Views</th>
-            <th>Unique Visitors</th>
-            <th>Views / Visitor Ratio</th>
-            <th>Last Activity (IST)</th>
-            <th>Visitor IP Deep Audit</th>
+            <th style="width:120px">Total Views</th>
+            <th style="width:140px">Unique Visitors</th>
+            <th style="width:130px">Views / Visitor</th>
+            <th style="width:180px">Last Activity (IST)</th>
+            <th style="min-width:200px">Visitor IP Deep Audit</th>
           </tr>
         </thead>
         <tbody id="popular-page-rows">
-          <!-- Rendered dynamically -->
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- STATION 5: COMMUNITY CHAT MODERATION -->
-  <section class="station-card" id="panel-chat" hidden>
-    <div class="station-header">
-      <div>
-        <h2><span class="station-dot"></span> COMMUNITY CHAT TACTICAL INTERCEPT & MODERATION</h2>
-        <p class="station-desc">Live intercept of student peer chat. Monitor discussion, remove spam, or wipe room on command.</p>
-      </div>
-      <div style="display:flex;gap:8px">
-        <button class="btn btn-primary" id="admin-chat-refresh" type="button">🔄 REFRESH CHAT</button>
-        <button class="btn btn-danger" id="admin-chat-clear" type="button">⚠️ CLEAR ALL MESSAGES</button>
-      </div>
-    </div>
-    <p id="admin-chat-status" role="status" style="font-size:12px; font-family:var(--font-mono); color:var(--text-dim); margin-bottom:10px;"></p>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:160px">Timestamp (IST)</th>
-            <th style="width:180px">Student Identity</th>
-            <th>Message Body</th>
-            <th style="width:110px">Moderation</th>
-          </tr>
-        </thead>
-        <tbody id="admin-chat-rows">
           <!-- Rendered dynamically -->
         </tbody>
       </table>
@@ -842,10 +782,10 @@ function adminPage(authorized) {
         <label for="password">OWNER SECURITY KEY</label>
         <input id="password" type="password" autocomplete="current-password" required maxlength="1024" placeholder="Enter owner admin password...">
       </div>
+      <div id="status" class="login-status" role="status"></div>
       <button class="btn btn-primary" style="width:100%; justify-content:center; padding:12px; margin-top:8px;" type="submit">AUTHENTICATE & ENTER</button>
     </form>
-    <p id="status" role="status" class="login-status"></p>
-    <div style="margin-top:20px; border-top:1px solid rgba(255,255,255,0.06); padding-top:14px;">
+    <div style="margin-top:20px; border-top:1px solid rgba(255,255,255,0.08); padding-top:16px;">
       <a href="/" class="btn" style="width:100%; justify-content:center;">RETURN TO ACADEMIC HUB</a>
     </div>
   </div>
@@ -854,37 +794,42 @@ function adminPage(authorized) {
 
   const styles = `
 :root {
-  --bg-core: #070b12;
-  --bg-surface: #0e1524;
-  --bg-surface-elevated: #141e33;
-  --bg-card: rgba(18, 28, 48, 0.75);
-  --border-subtle: rgba(56, 189, 248, 0.15);
-  --border-glow: rgba(16, 185, 129, 0.4);
-  --accent-cyan: #06b6d4;
+  --bg-core: #090d16;
+  --bg-surface: #0f172a;
+  --bg-surface-elevated: #1e293b;
+  --bg-card: rgba(17, 24, 39, 0.9);
+  --border-subtle: rgba(56, 189, 248, 0.22);
+  --border-card: rgba(148, 163, 184, 0.16);
+  --accent-cyan: #38bdf8;
+  --accent-cyan-glow: rgba(56, 189, 248, 0.25);
   --accent-emerald: #10b981;
-  --accent-amber: #f59e0b;
+  --accent-emerald-glow: rgba(16, 185, 129, 0.25);
+  --accent-purple: #c084fc;
+  --accent-purple-glow: rgba(192, 132, 252, 0.25);
+  --accent-amber: #fbbf24;
   --accent-rose: #f43f5e;
-  --accent-indigo: #6366f1;
+  --accent-indigo: #818cf8;
+  --text-pure: #ffffff;
   --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
-  --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --text-muted: #cbd5e1;
+  --text-dim: #94a3b8;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'JetBrains Mono', Consolas, Menlo, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   background-color: var(--bg-core);
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.12), transparent),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.12), transparent),
     linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 100% 100%, 32px 32px, 32px 32px;
   color: var(--text-main);
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
   min-height: 100vh;
-  padding: 16px 20px 60px;
+  padding: 18px 24px 60px;
 }
 
 /* TOP COMMAND HUD */
@@ -894,14 +839,14 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
-  padding: 14px 20px;
+  padding: 16px 22px;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+  margin-bottom: 22px;
 }
-.brand-title { display: flex; align-items: center; gap: 12px; }
+.brand-title { display: flex; align-items: center; gap: 14px; }
 .brand-radar {
   width: 14px;
   height: 14px;
@@ -924,65 +869,67 @@ body {
   100% { transform: scale(2.2); opacity: 0; }
 }
 .brand-text h1 {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--text-pure);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 .brand-text h1 span {
   color: var(--accent-cyan);
   font-family: var(--font-mono);
-  font-weight: 500;
+  font-weight: 700;
   font-size: 11px;
-  padding: 2px 6px;
-  background: rgba(6, 182, 212, 0.12);
-  border: 1px solid rgba(6, 182, 212, 0.3);
+  padding: 3px 8px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: 4px;
 }
 .brand-sub {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+  margin-top: 2px;
 }
 
 .hud-clocks {
   display: flex;
   align-items: center;
   gap: 20px;
-  font-family: var(--font-mono);
   background: rgba(0, 0, 0, 0.35);
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-card);
 }
 .clock-item { display: flex; flex-direction: column; }
-.clock-label { font-size: 9px; color: var(--text-dim); letter-spacing: 0.05em; text-transform: uppercase; }
-.clock-time { font-size: 14px; font-weight: 700; color: var(--accent-cyan); }
+.clock-label { font-size: 11px; font-weight: 700; color: var(--text-dim); letter-spacing: 0.05em; text-transform: uppercase; }
+.clock-time { font-size: 15px; font-weight: 700; font-family: var(--font-mono); color: var(--accent-cyan); }
 
 .hud-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.refresh-rate-label { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); display: inline-flex; align-items: center; gap: 4px; }
+.refresh-rate-label { font-family: var(--font-sans); font-size: 12px; font-weight: 700; color: var(--text-muted); display: inline-flex; align-items: center; gap: 6px; }
 .select-inline {
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-subtle);
   color: var(--accent-cyan);
   font-family: var(--font-mono);
-  font-size: 11px;
-  padding: 4px 6px;
-  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 .btn {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  padding: 8px 14px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 8px 16px;
   border-radius: 6px;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-card);
   background: var(--bg-surface-elevated);
   color: var(--text-main);
   cursor: pointer;
@@ -992,101 +939,102 @@ body {
   text-decoration: none;
   transition: all 0.15s ease;
 }
-.btn:hover { background: rgba(6, 182, 212, 0.15); border-color: var(--accent-cyan); color: #fff; }
+.btn:hover { background: rgba(56, 189, 248, 0.15); border-color: var(--accent-cyan); color: var(--text-pure); }
 .btn-primary {
-  background: linear-gradient(135deg, #0e7490, #0891b2);
-  border-color: #06b6d4;
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+  border-color: #38bdf8;
   color: #fff;
-  box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
 }
+.btn-primary:hover { background: linear-gradient(135deg, #0369a1, #0891b2); color: #fff; }
 .btn-danger {
   background: rgba(244, 63, 94, 0.15);
   border-color: rgba(244, 63, 94, 0.4);
-  color: var(--accent-rose);
+  color: #fda4af;
 }
 .btn-danger:hover { background: rgba(244, 63, 94, 0.3); color: #fff; }
 
 /* TOP KPI METRICS GRID */
 .kpi-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
 }
 .kpi-card {
   background: var(--bg-card);
   backdrop-filter: blur(8px);
-  border: 1px solid var(--border-subtle);
-  border-radius: 10px;
-  padding: 14px 18px;
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 16px 20px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
 }
-.kpi-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; }
+.kpi-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
 .kpi-card.live::before { background: var(--accent-emerald); }
 .kpi-card.today::before { background: var(--accent-cyan); }
 .kpi-card.buffer::before { background: var(--accent-indigo); }
-.kpi-card.tests::before { background: var(--accent-amber); }
+.kpi-card.popular::before { background: var(--accent-purple); }
 
 .kpi-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.kpi-title { font-size: 11px; font-family: var(--font-mono); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
-.kpi-badge { font-size: 9px; font-family: var(--font-mono); font-weight: 700; padding: 2px 6px; border-radius: 999px; text-transform: uppercase; }
-.kpi-badge.live { background: rgba(16, 185, 129, 0.2); color: var(--accent-emerald); }
-.kpi-badge.today { background: rgba(6, 182, 212, 0.2); color: var(--accent-cyan); }
-.kpi-badge.total { background: rgba(99, 102, 241, 0.2); color: #818cf8; }
-.kpi-badge.tests { background: rgba(245, 158, 11, 0.2); color: var(--accent-amber); }
+.kpi-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); }
+.kpi-badge { font-size: 11px; font-family: var(--font-mono); font-weight: 700; padding: 2px 7px; border-radius: 999px; text-transform: uppercase; }
+.kpi-badge.live { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+.kpi-badge.today { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+.kpi-badge.total { background: rgba(129, 140, 248, 0.2); color: #a5b4fc; }
+.kpi-badge.popular { background: rgba(192, 132, 252, 0.2); color: #d8b4fe; }
 
-.kpi-val { font-size: 26px; font-weight: 800; font-family: var(--font-mono); color: #fff; line-height: 1.1; margin-bottom: 6px; }
-.kpi-val small { font-size: 13px; font-weight: 500; color: var(--text-dim); }
-.kpi-foot { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-dim); font-family: var(--font-mono); }
-.kpi-foot span.highlight { color: var(--text-main); font-weight: 600; }
+.kpi-val { font-size: 30px; font-weight: 800; font-family: var(--font-mono); color: var(--text-pure); line-height: 1.1; margin-bottom: 6px; }
+.kpi-val small { font-size: 13px; font-weight: 600; color: var(--text-dim); margin-left: 4px; }
+.kpi-foot { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--text-muted); }
+.kpi-foot span.highlight { color: var(--text-pure); font-weight: 700; }
 
 /* NAVIGATION TABS */
 .nav-tabs {
   display: flex;
-  gap: 6px;
-  border-bottom: 1px solid var(--border-subtle);
-  margin-bottom: 20px;
+  gap: 8px;
+  border-bottom: 1px solid var(--border-card);
+  margin-bottom: 22px;
   overflow-x: auto;
   padding-bottom: 2px;
 }
 .tab-btn {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 10px 16px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 12px 20px;
   background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-card);
   border-bottom: none;
   border-radius: 8px 8px 0 0;
-  color: var(--text-muted);
+  color: var(--text-dim);
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
   white-space: nowrap;
+  transition: all 0.15s ease;
 }
-.tab-btn:hover { color: #fff; background: var(--bg-surface-elevated); }
+.tab-btn:hover { color: var(--text-pure); background: var(--bg-surface-elevated); }
 .tab-btn.active {
   background: var(--bg-surface-elevated);
-  color: #fff;
+  color: var(--text-pure);
   border-color: var(--accent-cyan);
-  border-bottom: 2px solid var(--accent-cyan);
-  box-shadow: 0 -2px 10px rgba(6, 182, 212, 0.15);
+  border-bottom: 3px solid var(--accent-cyan);
+  box-shadow: 0 -3px 12px rgba(56, 189, 248, 0.18);
 }
-.tab-btn .badge-pill { font-size: 9px; padding: 1px 6px; border-radius: 999px; background: rgba(255, 255, 255, 0.1); }
-.tab-btn.active .badge-pill { background: var(--accent-cyan); color: #000; font-weight: 800; }
+.tab-btn .badge-pill { font-size: 11px; font-family: var(--font-mono); padding: 2px 7px; border-radius: 999px; background: rgba(255, 255, 255, 0.1); color: var(--text-muted); font-weight: 700; }
+.tab-btn.active .badge-pill { background: var(--accent-cyan); color: #04101e; font-weight: 800; }
 
 /* CONTROL ROOM PANELS */
 .control-panel { display: grid; gap: 20px; }
 .station-card {
   background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-card);
   border-radius: 12px;
-  padding: 20px;
+  padding: 22px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 .station-card[hidden] { display: none !important; }
@@ -1096,183 +1044,241 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-card);
 }
-.station-header h2 { font-size: 15px; font-weight: 700; letter-spacing: 0.03em; color: #fff; display: flex; align-items: center; gap: 10px; }
-.station-header h2 .station-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan); }
-.station-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-
-/* 7 SUBJECT GRID */
-.subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-bottom: 20px; }
-.subject-box {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 10px;
-  padding: 12px 14px;
-  cursor: pointer;
-  transition: transform 0.15s ease, border-color 0.15s ease;
-}
-.subject-box:hover { transform: translateY(-2px); border-color: var(--accent-cyan); }
-.subject-box.active-filter { border-color: var(--accent-cyan); box-shadow: 0 0 12px rgba(6, 182, 212, 0.3); }
-.subject-box-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-.subject-name { font-size: 13px; font-weight: 700; color: #fff; }
-.subject-tests-count { font-size: 10px; font-family: var(--font-mono); color: var(--text-dim); margin-top: 1px; }
-.subject-status { font-size: 9px; font-family: var(--font-mono); font-weight: 700; padding: 2px 6px; border-radius: 999px; text-transform: uppercase; }
-.subject-status.nominal { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); }
-.subject-status.attention { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); }
-
-.subject-meter { height: 5px; background: rgba(255, 255, 255, 0.08); border-radius: 3px; overflow: hidden; margin-bottom: 10px; }
-.subject-meter-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--accent-emerald), var(--accent-cyan)); }
-
-.subject-stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; text-align: center; }
-.subject-stat-unit { background: rgba(0, 0, 0, 0.3); padding: 5px 3px; border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.04); }
-.subject-stat-lbl { font-size: 9px; color: var(--text-dim); font-family: var(--font-mono); text-transform: uppercase; }
-.subject-stat-num { font-size: 12px; font-weight: 700; font-family: var(--font-mono); color: #fff; }
-
-/* SPECTRUM HISTOGRAM */
-.spectrum-box { background: rgba(0, 0, 0, 0.3); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-subtle); margin-bottom: 18px; }
-.spectrum-bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; margin: 10px 0 12px; gap: 2px; }
-.spectrum-seg { height: 100%; position: relative; }
-.spectrum-seg.distinction { background: var(--accent-emerald); }
-.spectrum-seg.merit { background: var(--accent-cyan); }
-.spectrum-seg.pass { background: var(--accent-amber); }
-.spectrum-seg.fail { background: var(--accent-rose); }
-.spectrum-legend { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 11px; font-family: var(--font-mono); }
-.legend-item { display: flex; align-items: center; gap: 5px; }
-.legend-dot { width: 7px; height: 7px; border-radius: 50%; }
-.legend-dot.distinction { background: var(--accent-emerald); }
-.legend-dot.merit { background: var(--accent-cyan); }
-.legend-dot.pass { background: var(--accent-amber); }
-.legend-dot.fail { background: var(--accent-rose); }
+.station-header h2 { font-size: 16px; font-weight: 800; letter-spacing: 0.03em; color: var(--text-pure); display: flex; align-items: center; gap: 10px; }
+.station-header h2 .station-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan); }
+.station-desc { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
 
 /* FILTERS & SEARCH ROW */
 .filter-row {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 14px;
+  gap: 12px;
+  margin-bottom: 16px;
   background: rgba(0, 0, 0, 0.25);
-  padding: 10px 14px;
+  padding: 12px 16px;
   border-radius: 8px;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-card);
 }
+.search-wrap {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-card);
+  border-radius: 6px;
+  padding: 0 10px;
+}
+.search-wrap:focus-within {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+}
+.search-icon { font-size: 13px; color: var(--text-dim); }
 .search-input {
   flex: 1;
-  min-width: 200px;
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  padding: 7px 10px;
-  color: #fff;
-  font-family: var(--font-mono);
-  font-size: 11px;
+  background: transparent;
+  border: none;
+  padding: 9px 0;
+  color: var(--text-pure);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
 }
-.search-input:focus { outline: none; border-color: var(--accent-cyan); box-shadow: 0 0 8px rgba(6, 182, 212, 0.3); }
+.search-input:focus { outline: none; }
+.search-input::placeholder { color: var(--text-dim); }
+.filter-group { display: flex; align-items: center; gap: 8px; }
+.filter-label { font-size: 12px; font-weight: 700; color: var(--text-dim); }
 .filter-select {
   background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-card);
   border-radius: 6px;
-  padding: 7px 10px;
-  color: #fff;
+  padding: 8px 12px;
+  color: var(--text-pure);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 /* DATA TABLES */
-.table-wrapper { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border-subtle); background: rgba(10, 16, 28, 0.6); }
-table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 11px; }
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-card);
+  background: rgba(10, 16, 28, 0.7);
+}
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 th {
-  background: rgba(16, 26, 44, 0.95);
-  color: var(--text-muted);
+  background: #0c1322;
+  color: #93c5fd;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.05em;
-  padding: 9px 12px;
+  padding: 12px 14px;
   text-align: left;
   border-bottom: 1px solid var(--border-subtle);
   white-space: nowrap;
 }
-td { padding: 9px 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.04); color: var(--text-main); vertical-align: middle; }
-tr:hover td { background: rgba(6, 182, 212, 0.04); }
-
-/* BADGES & PILLS */
-.name-pill { font-weight: 700; color: #fff; display: inline-flex; align-items: center; gap: 6px; }
-.name-pill.anon { color: var(--text-dim); font-style: italic; }
-.rep-badge {
-  font-size: 9px;
-  padding: 1px 5px;
-  border-radius: 4px;
-  background: rgba(244, 63, 94, 0.2);
-  color: var(--accent-rose);
-  border: 1px solid rgba(244, 63, 94, 0.4);
-  font-weight: 800;
+td {
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  color: var(--text-main);
+  vertical-align: middle;
 }
-.mark-badge { display: inline-block; font-weight: 800; padding: 2px 7px; border-radius: 999px; font-size: 10px; }
-.mark-distinction { background: rgba(16, 185, 129, 0.2); color: var(--accent-emerald); border: 1px solid var(--accent-emerald); }
-.mark-pass { background: rgba(6, 182, 212, 0.2); color: var(--accent-cyan); border: 1px solid var(--accent-cyan); }
-.mark-marginal { background: rgba(245, 158, 11, 0.2); color: var(--accent-amber); border: 1px solid var(--accent-amber); }
-.mark-fail { background: rgba(244, 63, 94, 0.2); color: var(--accent-rose); border: 1px solid var(--accent-rose); }
+tr:nth-child(even) td { background: rgba(255, 255, 255, 0.015); }
+tr:hover td { background: rgba(56, 189, 248, 0.07); }
 
+/* VISITOR STYLED ELEMENTS */
+.time-stamp {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.ip-badge {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+.visits-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+}
+.visits-badge.multi {
+  background: rgba(16, 185, 129, 0.18);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+.visits-badge.single {
+  background: rgba(148, 163, 184, 0.14);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
 .country-pill {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 11px;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
   background: rgba(255, 255, 255, 0.05);
-  padding: 2px 7px;
+  padding: 3px 9px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-pure);
 }
-.country-flag { font-size: 13px; }
+.country-flag { font-size: 15px; }
+.location-text {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.path-pill {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: #93c5fd;
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  padding: 3px 8px;
+  border-radius: 6px;
+  word-break: break-all;
+}
+
+/* DETAILS & SECTIONS IN TABLES */
+details.section-details summary, details.popular-details summary {
+  cursor: pointer;
+  color: var(--accent-cyan);
+  font-size: 12.5px;
+  font-weight: 700;
+  outline: none;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+details.section-details summary:hover, details.popular-details summary:hover {
+  background: rgba(56, 189, 248, 0.12);
+  color: #7dd3fc;
+}
+.section-visit-list {
+  margin: 6px 0 0;
+  padding-left: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.section-visit-list li { margin: 3px 0; }
 
 /* RADAR GRID */
-.radar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.radar-live-badge {
+  font-size: 13px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent-emerald);
+}
+.radar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
 .radar-card {
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-card);
   border-radius: 10px;
-  padding: 12px 16px;
+  padding: 14px 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   overflow: hidden;
 }
-.radar-card.active-card { border-color: rgba(16, 185, 129, 0.5); box-shadow: 0 0 15px rgba(16, 185, 129, 0.15); }
-.radar-card-info h4 { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 2px; }
-.radar-card-path { font-size: 10px; font-family: var(--font-mono); color: var(--text-dim); }
+.radar-card.active-card {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.18);
+}
+.radar-card-info h4 { font-size: 14px; font-weight: 700; color: var(--text-pure); margin-bottom: 4px; }
+.radar-card-path { font-size: 12px; font-family: var(--font-mono); color: var(--text-dim); }
 .radar-card-count { text-align: right; }
-.radar-card-count .num { font-size: 22px; font-weight: 800; font-family: var(--font-mono); color: var(--accent-emerald); }
-.radar-card-count .label { font-size: 8px; text-transform: uppercase; color: var(--text-dim); font-family: var(--font-mono); }
+.radar-card-count .num { font-size: 24px; font-weight: 800; font-family: var(--font-mono); color: var(--accent-emerald); }
+.radar-card-count .label { font-size: 10px; text-transform: uppercase; color: var(--text-dim); font-family: var(--font-mono); font-weight: 700; }
 
 /* COUNTRY GRID */
-.country-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 16px; }
+.country-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 18px; }
 .country-card {
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-card);
   border-radius: 8px;
-  padding: 10px 12px;
+  padding: 11px 14px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
-.country-card .flag { font-size: 22px; }
+.country-card .flag { font-size: 24px; }
 .country-card .c-info { flex: 1; }
-.country-card .c-name { font-size: 12px; font-weight: 700; color: #fff; }
-.country-card .c-visitors { font-size: 10px; font-family: var(--font-mono); color: var(--text-dim); }
-
-/* DETAILS & SECTIONS IN TABLES */
-details.section-details summary, details.popular-details summary { cursor: pointer; color: var(--accent-cyan); font-weight: 600; outline: none; }
-.section-visit-list { margin: 6px 0 0; padding-left: 14px; font-size: 10px; color: var(--text-muted); }
-.section-visit-list li { margin: 2px 0; }
+.country-card .c-name { font-size: 13px; font-weight: 700; color: var(--text-pure); }
+.country-card .c-visitors { font-size: 11.5px; font-family: var(--font-mono); color: var(--text-muted); margin-top: 1px; }
 
 /* PAGINATION */
-.pagination-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
-.page-controls { display: flex; gap: 6px; }
+.pagination-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+.page-controls { display: flex; gap: 8px; }
 
 /* LOGIN SCREEN */
 .login-wrapper { display: flex; justify-content: center; align-items: center; min-height: 80vh; }
@@ -1282,34 +1288,34 @@ details.section-details summary, details.popular-details summary { cursor: point
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: 14px;
-  padding: 28px 24px;
+  padding: 32px 28px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   text-align: center;
 }
-.login-box h2 { font-size: 18px; font-weight: 800; letter-spacing: 0.05em; color: #fff; margin-bottom: 4px; }
-.login-sub { font-size: 10px; font-family: var(--font-mono); color: var(--text-dim); letter-spacing: 0.05em; margin-bottom: 20px; }
-.login-field { text-align: left; margin-bottom: 14px; }
-.login-field label { display: block; font-size: 10px; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 6px; }
+.login-box h2 { font-size: 19px; font-weight: 800; letter-spacing: 0.04em; color: var(--text-pure); margin-bottom: 6px; }
+.login-sub { font-size: 11px; font-family: var(--font-mono); color: var(--text-dim); letter-spacing: 0.05em; margin-bottom: 22px; }
+.login-field { text-align: left; margin-bottom: 16px; }
+.login-field label { display: block; font-size: 11px; font-weight: 700; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 6px; }
 .login-field input {
   width: 100%;
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-subtle);
   border-radius: 6px;
-  padding: 10px 12px;
-  color: #fff;
+  padding: 11px 14px;
+  color: var(--text-pure);
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
 }
-.login-field input:focus { outline: none; border-color: var(--accent-cyan); box-shadow: 0 0 10px rgba(6, 182, 212, 0.3); }
-.login-status { margin-top: 12px; font-size: 12px; font-family: var(--font-mono); color: var(--accent-rose); min-height: 18px; }
+.login-field input:focus { outline: none; border-color: var(--accent-cyan); box-shadow: 0 0 12px rgba(56, 189, 248, 0.3); }
+.login-status { margin-top: 12px; font-size: 13px; font-family: var(--font-mono); color: var(--accent-rose); min-height: 18px; }
 
 @media (max-width: 768px) {
-  body { padding: 10px 12px 40px; }
-  .hud-header { flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 14px; }
-  .hud-clocks { justify-content: space-between; }
+  body { padding: 12px 14px 40px; font-size: 13px; }
+  .hud-header { flex-direction: column; align-items: stretch; gap: 14px; padding: 14px 16px; }
+  .hud-clocks { justify-content: space-between; flex-wrap: wrap; }
   .kpi-grid { grid-template-columns: 1fr 1fr; }
   .nav-tabs { gap: 4px; }
-  .tab-btn { padding: 8px 12px; font-size: 10px; }
+  .tab-btn { padding: 10px 14px; font-size: 12px; }
 }
   `;
 
@@ -1337,310 +1343,59 @@ details.section-details summary, details.popular-details summary { cursor: point
       const utcEl = document.getElementById('utc-clock');
       if (istEl) istEl.textContent = istStr;
       if (utcEl) utcEl.textContent = utcStr;
+      const quotaGuard = document.getElementById('quota-guard-status');
+      if (quotaGuard) {
+        quotaGuard.style.color = 'var(--accent-emerald)';
+        quotaGuard.textContent = '● ACTIVE 24/7';
+      }
     }
     setInterval(updateClocks, 1000);
     updateClocks();
 
     // STATE
-    let allResults = [];
     let trafficRecords = [];
     let popularPageRecords = [];
     let liveData = { active: 0, pages: [] };
-    let repeatedIPTotal = 0;
-    let resultsPage = 1;
     let trafficPage = 1;
-    let activeSubjectFilter = "";
-    const SUBJECT_GROUPS = ["Sociology", "Philosophy of Education", "Indian Economy", "AI & Mind", "Ethics", "English", "Malayalam"];
 
-    function subjectGroup(value){
-      const name = String(value || "").toLowerCase();
-      if (/sociology/.test(name)) return "Sociology";
-      if (/education/.test(name)) return "Philosophy of Education";
-      if (/economy|economic|foundation/.test(name)) return "Indian Economy";
-      if (/artificial intelligence|(?:^|[^a-z0-9])ai(?:[^a-z0-9]|$)|mind|philosophy of mind/.test(name)) return "AI & Mind";
-      if (/ethic/.test(name)) return "Ethics";
-      if (/english/.test(name)) return "English";
-      if (/malayalam/.test(name)) return "Malayalam";
-      return "Other";
-    }
-
-    function isPassed(r){ const s = String(r.status||""); return /pass/i.test(s) && !/fail|below pass|needs improvement/i.test(s); }
-    function isFailed(r){ return !isPassed(r); }
-    function isDistinction(r){ return Number(r.percentage) >= 80; }
-
-    // RENDER ATTEMPTS & 7-SUBJECT MATRIX
-    function renderResults() {
-      const search = (document.getElementById('result-search-input').value || "").trim().toLowerCase();
-      const subjectFilter = document.getElementById('subject-filter').value || activeSubjectFilter;
-      const gradeFilter = document.getElementById('grade-filter').value;
-      const identityFilter = document.getElementById('identity-filter').value;
-      const size = Math.max(1, Number(document.getElementById('page-size').value) || 50);
-
-      // Filter attempts
-      let filtered = allResults.filter(item => {
-        if (subjectFilter && subjectGroup(item.subject) !== subjectFilter) return false;
-        if (gradeFilter === 'distinction' && !isDistinction(item)) return false;
-        if (gradeFilter === 'pass' && !isPassed(item)) return false;
-        if (gradeFilter === 'fail' && !isFailed(item)) return false;
-        const rawName = String(item.name || "").trim();
-        const isAnon = !rawName || rawName.toLowerCase() === 'anonymous' || rawName.toLowerCase() === 'student';
-        if (identityFilter === 'named' && isAnon) return false;
-        if (identityFilter === 'anon' && !isAnon) return false;
-
-        if (search) {
-          const matchStr = (item.id + " " + item.name + " " + item.subject + " " + item.reg).toLowerCase();
-          if (!matchStr.includes(search)) return false;
-        }
-        return true;
-      });
-
-      // Macro KPI
-      const totalAttempts = allResults.length;
-      const passedCount = allResults.filter(isPassed).length;
-      const passRate = totalAttempts ? ((passedCount / totalAttempts) * 100).toFixed(1) : 0;
-      const validScores = allResults.map(r => Number(r.percentage)).filter(Number.isFinite);
-      const avgScore = validScores.length ? (validScores.reduce((a, b) => a + b, 0) / validScores.length).toFixed(1) : 0;
-
-      document.getElementById('test-total-attempts').textContent = String(totalAttempts);
-      document.getElementById('test-pass-rate').textContent = passRate + '% PASS';
-      document.getElementById('test-avg-score').textContent = avgScore + '% AVG';
-      document.getElementById('badge-total-tests').textContent = String(totalAttempts);
-
-      // Spectrum calculations
-      const distCount = allResults.filter(isDistinction).length;
-      const meritCount = allResults.filter(r => Number(r.percentage) >= 60 && Number(r.percentage) < 80).length;
-      const passStandardCount = allResults.filter(r => Number(r.percentage) >= 40 && Number(r.percentage) < 60).length;
-      const failCount = allResults.filter(r => Number(r.percentage) < 40).length;
-
-      document.getElementById('spectrum-total').textContent = String(totalAttempts);
-      document.getElementById('spectrum-pass-rate').textContent = passRate + '% Passed Standards (>=40%)';
-      document.getElementById('count-distinction').textContent = String(distCount);
-      document.getElementById('pct-distinction').textContent = totalAttempts ? ((distCount/totalAttempts)*100).toFixed(1)+'%' : '0%';
-      document.getElementById('count-merit').textContent = String(meritCount);
-      document.getElementById('pct-merit').textContent = totalAttempts ? ((meritCount/totalAttempts)*100).toFixed(1)+'%' : '0%';
-      document.getElementById('count-pass').textContent = String(passStandardCount);
-      document.getElementById('pct-pass').textContent = totalAttempts ? ((passStandardCount/totalAttempts)*100).toFixed(1)+'%' : '0%';
-      document.getElementById('count-fail').textContent = String(failCount);
-      document.getElementById('pct-fail').textContent = totalAttempts ? ((failCount/totalAttempts)*100).toFixed(1)+'%' : '0%';
-
-      if (totalAttempts) {
-        document.getElementById('seg-distinction').style.width = ((distCount/totalAttempts)*100) + '%';
-        document.getElementById('seg-merit').style.width = ((meritCount/totalAttempts)*100) + '%';
-        document.getElementById('seg-pass').style.width = ((passStandardCount/totalAttempts)*100) + '%';
-        document.getElementById('seg-fail').style.width = ((failCount/totalAttempts)*100) + '%';
-      }
-
-      // Render 7 Subject Cards
-      const grid = document.getElementById('subject-cards-grid');
-      grid.replaceChildren();
-      for (const subj of SUBJECT_GROUPS) {
-        const items = allResults.filter(r => subjectGroup(r.subject) === subj);
-        const subjPassed = items.filter(isPassed).length;
-        const subjRate = items.length ? ((subjPassed / items.length) * 100).toFixed(1) : 0;
-        const scores = items.map(r => Number(r.percentage)).filter(Number.isFinite);
-        const subjAvg = scores.length ? (scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(1) : 0;
-        const topMark = scores.length ? Math.max(...scores).toFixed(1) : '—';
-        const tests = new Set(items.map(r => r.subject || "Test"));
-
-        const card = document.createElement('div');
-        card.className = 'subject-box' + (subjectFilter === subj ? ' active-filter' : '');
-        card.onclick = () => {
-          if (activeSubjectFilter === subj) {
-            activeSubjectFilter = "";
-            document.getElementById('subject-filter').value = "";
-          } else {
-            activeSubjectFilter = subj;
-            document.getElementById('subject-filter').value = subj;
-          }
-          resultsPage = 1;
-          renderResults();
-        };
-
-        const head = document.createElement('div'); head.className = 'subject-box-head';
-        const titleDiv = document.createElement('div');
-        const sName = document.createElement('div'); sName.className = 'subject-name'; sName.textContent = subj;
-        const sSub = document.createElement('div'); sSub.className = 'subject-tests-count'; sSub.textContent = (tests.size || 1) + " Tests Registered";
-        titleDiv.append(sName, sSub);
-
-        const badge = document.createElement('span');
-        badge.className = 'subject-status ' + (Number(subjRate) >= 70 ? 'nominal' : 'attention');
-        badge.textContent = subjRate + '% PASS';
-        head.append(titleDiv, badge);
-
-        const meter = document.createElement('div'); meter.className = 'subject-meter';
-        const fill = document.createElement('div'); fill.className = 'subject-meter-fill'; fill.style.width = subjRate + '%';
-        meter.append(fill);
-
-        const sRow = document.createElement('div'); sRow.className = 'subject-stats-row';
-        sRow.innerHTML = '<div class="subject-stat-unit"><div class="subject-stat-lbl">Attempts</div><div class="subject-stat-num">' + items.length + '</div></div>' +
-          '<div class="subject-stat-unit"><div class="subject-stat-lbl">Average</div><div class="subject-stat-num">' + subjAvg + '%</div></div>' +
-          '<div class="subject-stat-unit"><div class="subject-stat-lbl">Top Mark</div><div class="subject-stat-num">' + topMark + (topMark !== '—' ? '%' : '') + '</div></div>';
-
-        card.append(head, meter, sRow);
-        grid.append(card);
-      }
-
-      // Name repeat tracking
-      const nameCounts = new Map();
-      for (const r of allResults) {
-        const k = String(r.name || "").trim().toLowerCase();
-        if (k && k !== 'anonymous' && k !== 'student') {
-          nameCounts.set(k, (nameCounts.get(k) || 0) + 1);
-        }
-      }
-
-      // Pagination
-      const totalPages = Math.max(1, Math.ceil(filtered.length / size));
-      resultsPage = Math.min(Math.max(1, resultsPage), totalPages);
-      const start = (resultsPage - 1) * size;
-      const pageItems = filtered.slice(start, start + size);
-
-      const tbody = document.getElementById('result-rows');
-      tbody.replaceChildren();
-
-      if (!pageItems.length) {
-        const emptyTr = document.createElement('tr');
-        emptyTr.innerHTML = '<td colspan="12" style="text-align:center; padding:32px; color:var(--text-dim); font-family:var(--font-mono); font-size:13px;">' + (allResults.length ? 'NO MATCHING TEST ATTEMPTS FOUND FOR THIS FILTER' : 'NO TEST ATTEMPTS RECORDED IN DATABASE YET') + '</td>';
-        tbody.append(emptyTr);
-      }
-
-      for (const item of pageItems) {
-        const tr = document.createElement('tr');
-        
-        // ID
-        const tdId = document.createElement('td'); tdId.textContent = '#' + item.id; tr.append(tdId);
-
-        // Student Identity (Rectified display)
-        const tdName = document.createElement('td');
-        const rawName = String(item.name || "").trim();
-        const normName = rawName.toLowerCase();
-        const isAnon = !rawName || normName === 'anonymous' || normName === 'student';
-        
-        const pill = document.createElement('span');
-        if (isAnon) {
-          pill.className = 'name-pill anon';
-          pill.innerHTML = 'Anonymous Student <span style="font-size:9px; background:rgba(255,255,255,0.06); padding:1px 4px; border-radius:3px;">[Legacy #' + item.id + ']</span>';
-        } else {
-          pill.className = 'name-pill';
-          pill.textContent = rawName;
-          const count = nameCounts.get(normName) || 1;
-          if (count > 1) {
-            const badge = document.createElement('span');
-            badge.className = 'rep-badge';
-            badge.textContent = '×' + count;
-            badge.title = count + ' attempts by this student';
-            pill.append(badge);
-          }
-        }
-        tdName.append(pill);
-        tr.append(tdName);
-
-        // Registration
-        const tdReg = document.createElement('td'); tdReg.textContent = item.reg || 'N/A'; tr.append(tdReg);
-
-        // Subject / Test Discipline
-        const tdSub = document.createElement('td');
-        tdSub.innerHTML = '<strong style="color:#fff">' + (item.subject || 'Unspecified Test') + '</strong>';
-        tr.append(tdSub);
-
-        // Score
-        const tdScore = document.createElement('td');
-        tdScore.innerHTML = '<strong>' + (item.score != null ? item.score : '—') + ' / ' + (item.total != null ? item.total : '—') + '</strong>';
-        tr.append(tdScore);
-
-        // Mark %
-        const tdPct = document.createElement('td');
-        const pctVal = Number(item.percentage);
-        const markBadge = document.createElement('span');
-        if (Number.isFinite(pctVal)) {
-          markBadge.className = 'mark-badge ' + (pctVal >= 80 ? 'mark-distinction' : pctVal >= 60 ? 'mark-pass' : pctVal >= 40 ? 'mark-marginal' : 'mark-fail');
-          markBadge.textContent = pctVal.toFixed(1) + '%';
-        } else {
-          markBadge.textContent = '—';
-        }
-        tdPct.append(markBadge);
-        tr.append(tdPct);
-
-        // Performance Status
-        const tdStatus = document.createElement('td');
-        const st = String(item.status || "Unknown").toUpperCase();
-        const pass = isPassed(item);
-        tdStatus.innerHTML = '<span style="font-weight:700; color:' + (pass ? 'var(--accent-emerald)' : 'var(--accent-rose)') + '">' + st + '</span>';
-        tr.append(tdStatus);
-
-        // Wrong
-        const tdWrong = document.createElement('td'); tdWrong.textContent = item.wrong != null ? String(item.wrong) : '—'; tr.append(tdWrong);
-
-        // Skipped
-        const tdSkip = document.createElement('td'); tdSkip.textContent = item.unanswered != null ? String(item.unanswered) : '—'; tr.append(tdSkip);
-
-        // Device attempt (Same IP count)
-        const tdIp = document.createElement('td');
-        const ipAtt = Number(item.same_ip_attempts);
-        if (Number.isFinite(ipAtt) && ipAtt > 1) {
-          tdIp.innerHTML = '<span class="rep-badge">' + ipAtt + ' on IP</span>';
-        } else {
-          tdIp.textContent = Number.isFinite(ipAtt) ? ipAtt + ' on IP' : '—';
-        }
-        tr.append(tdIp);
-
-        // Submission Mode
-        const tdMode = document.createElement('td');
-        if (item.auto_submitted) {
-          tdMode.innerHTML = '<span style="color:var(--accent-amber)">⌛ Auto-Timeout</span>';
-        } else {
-          tdMode.innerHTML = '<span style="color:var(--accent-cyan)">⏱ Manual</span>';
-        }
-        tr.append(tdMode);
-
-        // Timestamp (IST)
-        const tdTime = document.createElement('td'); tdTime.textContent = formatIST(item.submitted_at); tr.append(tdTime);
-
-        tbody.append(tr);
-      }
-
-      const first = filtered.length ? start + 1 : 0;
-      const last = Math.min(start + pageItems.length, filtered.length);
-      document.getElementById('page-info').textContent = "Showing " + first + "–" + last + " of " + filtered.length + " attempts · Page " + resultsPage + " of " + totalPages;
-      document.getElementById('prev-page').disabled = resultsPage <= 1;
-      document.getElementById('next-page').disabled = resultsPage >= totalPages;
-      document.getElementById('results-status').textContent = allResults.length ? "Auditing " + filtered.length + " matching student attempts in database." : "No mock test attempts recorded yet.";
-    }
-
-    // RENDER TRAFFIC & GEO
+    // RENDER TRAFFIC (VISITORS WITH IP & DETAILS)
     function renderTraffic() {
       const search = (document.getElementById('traffic-search-input').value || "").trim().toLowerCase();
       const size = Math.max(1, Number(document.getElementById('traffic-page-size').value) || 25);
 
-      let filtered = trafficRecords.filter(v => {
+      let filtered = trafficRecords.filter(item => {
         if (!search) return true;
-        const str = (v.ip + " " + v.city + " " + v.region + " " + v.country + " " + v.path).toLowerCase();
-        return str.includes(search);
+        const info = countryInfo(item.country);
+        const hay = [item.ip, item.country, info.name, item.region, item.city, item.path, ...(item.sections||[]).map(s=>s.name)].filter(Boolean).join(' ').toLowerCase();
+        return hay.includes(search);
       });
 
-      // Country summary
-      const countryCounts = new Map();
-      for (const v of trafficRecords) {
-        const c = v.country || 'XX';
-        countryCounts.set(c, (countryCounts.get(c) || 0) + (v.visits || 1));
+      // Render Country Summary Grid
+      const countryGrid = document.getElementById('country-summary-grid');
+      countryGrid.replaceChildren();
+      const countryMap = new Map();
+      for (const item of trafficRecords) {
+        const c = item.country || 'XX';
+        const curr = countryMap.get(c) || { count: 0, visits: 0 };
+        curr.count += 1;
+        curr.visits += (item.visits || 1);
+        countryMap.set(c, curr);
       }
-      const cGrid = document.getElementById('country-summary-grid');
-      cGrid.replaceChildren();
-      const sortedCountries = Array.from(countryCounts.entries()).sort((a,b)=>b[1]-a[1]).slice(0, 8);
-      const totalVis = trafficRecords.reduce((a,b)=>a+(b.visits||1),0);
 
-      for (const [code, count] of sortedCountries) {
+      const topCountries = Array.from(countryMap.entries()).sort((a,b) => b[1].count - a[1].count).slice(0, 6);
+      for (const [code, stat] of topCountries) {
         const info = countryInfo(code);
-        const card = document.createElement('div'); card.className = 'country-card';
-        const pct = totalVis ? ((count / totalVis) * 100).toFixed(1) : 0;
-        card.innerHTML = '<div class="flag">' + info.flag + '</div>' +
+        const card = document.createElement('div');
+        card.className = 'country-card';
+        card.innerHTML = '<span class="flag">' + info.flag + '</span>' +
           '<div class="c-info">' +
-            '<div class="c-name">' + info.name + '</div>' +
-            '<div class="c-visitors">' + count + ' visits · ' + pct + '%</div>' +
+            '<div class="c-name">' + info.name.split(' (')[0] + '</div>' +
+            '<div class="c-visitors">' + stat.count + ' IP' + (stat.count===1?'':'s') + ' · ' + stat.visits + ' visit' + (stat.visits===1?'':'s') + '</div>' +
           '</div>';
-        cGrid.append(card);
+        countryGrid.append(card);
       }
 
+      // Pagination
       const totalPages = Math.max(1, Math.ceil(filtered.length / size));
       trafficPage = Math.min(Math.max(1, trafficPage), totalPages);
       const start = (trafficPage - 1) * size;
@@ -1651,24 +1406,26 @@ details.section-details summary, details.popular-details summary { cursor: point
 
       if (!pageItems.length) {
         const emptyTr = document.createElement('tr');
-        emptyTr.innerHTML = '<td colspan="7" style="text-align:center; padding:32px; color:var(--text-dim); font-family:var(--font-mono); font-size:13px;">' + (trafficRecords.length ? 'NO MATCHING IP RECORDS FOUND' : 'NO INGRESS IP TELEMETRY LOGGED IN 7-DAY BUFFER') + '</td>';
+        emptyTr.innerHTML = '<td colspan="7" style="text-align:center; padding:36px; color:var(--text-dim); font-size:14px;">' + (trafficRecords.length ? 'NO VISITOR RECORDS FOUND FOR CURRENT FILTER' : 'NO VISITOR TRAFFIC LOGGED YET') + '</td>';
         rows.append(emptyTr);
       }
 
       for (const v of pageItems) {
         const tr = document.createElement('tr');
-        
-        // Time
-        const tdTime = document.createElement('td'); tdTime.textContent = formatIST(v.time); tr.append(tdTime);
 
-        // IP
+        // Last Active (IST)
+        const tdTime = document.createElement('td');
+        tdTime.innerHTML = '<span class="time-stamp">' + formatIST(v.time) + '</span>';
+        tr.append(tdTime);
+
+        // Visitor IP Address
         const tdIp = document.createElement('td');
-        tdIp.innerHTML = '<strong style="color:var(--accent-cyan)">' + v.ip + '</strong>';
+        tdIp.innerHTML = '<span class="ip-badge">' + v.ip + '</span>';
         tr.append(tdIp);
 
-        // Visits
+        // Total Visits
         const tdVisits = document.createElement('td');
-        tdVisits.innerHTML = '<span class="mark-badge ' + (v.visits > 10 ? 'mark-distinction' : v.visits > 3 ? 'mark-pass' : 'mark-marginal') + '">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
+        tdVisits.innerHTML = '<span class="visits-badge ' + (v.visits > 1 ? 'multi' : 'single') + '">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
         tr.append(tdVisits);
 
         // Country
@@ -1679,19 +1436,26 @@ details.section-details summary, details.popular-details summary { cursor: point
 
         // State / City
         const tdLoc = document.createElement('td');
+        tdLoc.className = 'location-text';
         tdLoc.textContent = [v.region, v.city].filter(Boolean).join(', ') || 'Unknown';
         tr.append(tdLoc);
 
         // Current Page
-        const tdPage = document.createElement('td'); tdPage.textContent = v.path || '/'; tr.append(tdPage);
+        const tdPage = document.createElement('td');
+        tdPage.innerHTML = '<span class="path-pill">' + (v.path || '/') + '</span>';
+        tr.append(tdPage);
 
         // Section Trail
         const tdTrail = document.createElement('td');
         const sections = Array.isArray(v.sections) ? v.sections : [];
         if (sections.length) {
-          const details = document.createElement('details'); details.className = 'section-details';
-          const summary = document.createElement('summary'); summary.textContent = 'Visited ' + sections.length + ' sections'; details.append(summary);
-          const ul = document.createElement('ul'); ul.className = 'section-visit-list';
+          const details = document.createElement('details');
+          details.className = 'section-details';
+          const summary = document.createElement('summary');
+          summary.textContent = '📂 Visited ' + sections.length + ' section' + (sections.length === 1 ? '' : 's');
+          details.append(summary);
+          const ul = document.createElement('ul');
+          ul.className = 'section-visit-list';
           for (const s of sections) {
             const li = document.createElement('li');
             li.textContent = s.name + ' — ' + s.visits + ' visit' + (s.visits === 1 ? '' : 's') + ' (Last: ' + formatIST(s.lastVisit) + ')';
@@ -1700,7 +1464,7 @@ details.section-details summary, details.popular-details summary { cursor: point
           details.append(ul);
           tdTrail.append(details);
         } else {
-          tdTrail.textContent = 'No trail';
+          tdTrail.innerHTML = '<span style="color:var(--text-dim); font-size:12.5px;">No section trail</span>';
         }
         tr.append(tdTrail);
 
@@ -1723,33 +1487,58 @@ details.section-details summary, details.popular-details summary { cursor: point
 
       if (!popularPageRecords.length) {
         const emptyTr = document.createElement('tr');
-        emptyTr.innerHTML = '<td colspan="7" style="text-align:center; padding:32px; color:var(--text-dim); font-family:var(--font-mono); font-size:13px;">NO CONTENT PAGE VIEWS RECORDED YET</td>';
+        emptyTr.innerHTML = '<td colspan="7" style="text-align:center; padding:36px; color:var(--text-dim); font-size:14px;">NO CONTENT PAGE VIEWS RECORDED YET</td>';
         tbody.append(emptyTr);
+      }
+
+      // Update Top Content Leader KPI
+      if (popularPageRecords.length > 0) {
+        const topP = popularPageRecords[0];
+        const topNameEl = document.getElementById('top-content-name');
+        const topViewsEl = document.getElementById('top-content-views');
+        const topVisitorsEl = document.getElementById('top-content-visitors');
+        if (topNameEl) topNameEl.textContent = topP.section || topP.path || 'Top Page';
+        if (topViewsEl) topViewsEl.textContent = topP.visits + ' views';
+        if (topVisitorsEl) topVisitorsEl.textContent = (topP.visitors?.length || 0) + ' visitors';
       }
 
       for (const [idx, p] of popularPageRecords.entries()) {
         const tr = document.createElement('tr');
-        const tdRank = document.createElement('td'); tdRank.textContent = '#' + (idx + 1); tr.append(tdRank);
+        const tdRank = document.createElement('td');
+        tdRank.innerHTML = '<strong style="color:var(--accent-cyan); font-family:var(--font-mono);">#' + (idx + 1) + '</strong>';
+        tr.append(tdRank);
 
         const tdPage = document.createElement('td');
-        tdPage.innerHTML = '<strong style="color:#fff">' + (p.section || 'Learning Page') + '</strong><br><small style="color:var(--text-dim)">' + (p.path || '/') + '</small>';
+        tdPage.innerHTML = '<strong style="color:var(--text-pure); font-size:14px;">' + (p.section || 'Learning Page') + '</strong><br><span class="path-pill" style="font-size:11px; margin-top:3px; display:inline-block;">' + (p.path || '/') + '</span>';
         tr.append(tdPage);
 
-        const tdVisits = document.createElement('td'); tdVisits.textContent = String(p.visits); tr.append(tdVisits);
+        const tdVisits = document.createElement('td');
+        tdVisits.innerHTML = '<strong style="font-family:var(--font-mono); font-size:14px;">' + p.visits + '</strong>';
+        tr.append(tdVisits);
+
         const visitorsCount = Array.isArray(p.visitors) ? p.visitors.length : 0;
-        const tdVisitors = document.createElement('td'); tdVisitors.textContent = String(visitorsCount); tr.append(tdVisitors);
+        const tdVisitors = document.createElement('td');
+        tdVisitors.innerHTML = '<span class="ip-badge" style="font-size:12px;">' + visitorsCount + ' unique</span>';
+        tr.append(tdVisitors);
 
         const tdRatio = document.createElement('td');
+        tdRatio.style.fontFamily = 'var(--font-mono)';
         tdRatio.textContent = visitorsCount ? (p.visits / visitorsCount).toFixed(2) : '—';
         tr.append(tdRatio);
 
-        const tdLast = document.createElement('td'); tdLast.textContent = formatIST(p.lastVisit); tr.append(tdLast);
+        const tdLast = document.createElement('td');
+        tdLast.innerHTML = '<span class="time-stamp">' + formatIST(p.lastVisit) + '</span>';
+        tr.append(tdLast);
 
         const tdDetails = document.createElement('td');
-        const details = document.createElement('details'); details.className = 'popular-details';
-        const summary = document.createElement('summary'); summary.textContent = 'Inspect ' + visitorsCount + ' IPs'; details.append(summary);
+        const details = document.createElement('details');
+        details.className = 'popular-details';
+        const summary = document.createElement('summary');
+        summary.textContent = '🔍 Inspect ' + visitorsCount + ' IP' + (visitorsCount === 1 ? '' : 's');
+        details.append(summary);
         
-        const ul = document.createElement('ul'); ul.className = 'section-visit-list';
+        const ul = document.createElement('ul');
+        ul.className = 'section-visit-list';
         for (const visitor of (p.visitors || [])) {
           const li = document.createElement('li');
           const geo = visitorsByIP.get(visitor.ip);
@@ -1781,7 +1570,7 @@ details.section-details summary, details.popular-details summary { cursor: point
       grid.replaceChildren();
 
       if (!pages.length) {
-        grid.innerHTML = '<p style="color:var(--text-dim); font-family:var(--font-mono); padding:16px;">No concurrent visitors detected on learning pages in the last 90 seconds.</p>';
+        grid.innerHTML = '<p style="color:var(--text-dim); font-size:14px; padding:18px;">No concurrent visitors detected on learning pages in the last 90 seconds.</p>';
         return;
       }
 
@@ -1850,126 +1639,6 @@ details.section-details summary, details.popular-details summary { cursor: point
       }
     }
 
-    async function refreshResults() {
-      const btn = document.getElementById('refresh-results');
-      if (btn) btn.disabled = true;
-      try {
-        const res = await fetch('/api/admin/results', { cache: 'no-store', credentials: 'same-origin' });
-        if (res.status === 401) { location.href = '/admin/login'; return; }
-        const d = await res.json();
-        if (res.ok) {
-          allResults = Array.isArray(d.results) ? d.results : [];
-          repeatedIPTotal = Number(d.repeated_ip_total) || 0;
-          
-          // Populate subject filter dropdown if empty
-          const sel = document.getElementById('subject-filter');
-          if (sel && sel.options.length <= 1) {
-            for (const s of SUBJECT_GROUPS) {
-              sel.add(new Option(s, s));
-            }
-          }
-          document.getElementById('results-status').textContent = allResults.length ? ('Auditing ' + allResults.length + ' student attempts in database.') : 'No mock test attempts recorded yet.';
-        } else {
-          document.getElementById('results-status').textContent = d.error || ('Mock test service returned HTTP ' + res.status);
-          allResults = [];
-        }
-      } catch (err) {
-        console.warn('Results fetch error:', err);
-        document.getElementById('results-status').textContent = 'Network error fetching test telemetry.';
-        allResults = [];
-      } finally {
-        if (btn) btn.disabled = false;
-        renderResults();
-      }
-    }
-
-    // COMMUNITY CHAT MODERATION
-    async function loadAdminChat() {
-      const status = document.getElementById('admin-chat-status');
-      if (status) status.textContent = 'Loading community chat messages...';
-      try {
-        const res = await fetch('/api/chat', { cache: 'no-store', credentials: 'same-origin' });
-        const d = await res.json();
-        const messages = Array.isArray(d.messages) ? d.messages : [];
-        const tbody = document.getElementById('admin-chat-rows');
-        tbody.replaceChildren();
-
-        if (!messages.length) {
-          const emptyTr = document.createElement('tr');
-          emptyTr.innerHTML = '<td colspan="4" style="text-align:center; padding:32px; color:var(--text-dim); font-family:var(--font-mono); font-size:13px;">NO COMMUNITY CHAT MESSAGES STORED</td>';
-          tbody.append(emptyTr);
-        }
-
-        for (const msg of messages) {
-          const tr = document.createElement('tr');
-          const tdTime = document.createElement('td'); tdTime.textContent = formatIST(msg.createdAt); tr.append(tdTime);
-          const tdName = document.createElement('td'); tdName.innerHTML = '<strong style="color:var(--accent-cyan)">' + (msg.name || 'Student') + '</strong>'; tr.append(tdName);
-          const tdText = document.createElement('td'); tdText.textContent = msg.text || ''; tr.append(tdText);
-          
-          const tdAction = document.createElement('td');
-          const delBtn = document.createElement('button');
-          delBtn.className = 'btn btn-danger';
-          delBtn.style.padding = '4px 8px';
-          delBtn.textContent = 'DELETE';
-          delBtn.onclick = async () => {
-            if (!confirm('Delete message from student ' + (msg.name || '') + '?')) return;
-            delBtn.disabled = true;
-            try {
-              const dr = await fetch('/api/chat/delete', {
-                method: 'POST',
-                credentials: 'same-origin',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id: msg.id })
-              });
-              const data = await dr.json().catch(() => ({}));
-              if (dr.ok) {
-                await loadAdminChat();
-              } else {
-                alert('Could not delete message: ' + (data.error || ('HTTP ' + dr.status)));
-              }
-            } catch (err) {
-              alert('Network error while deleting message.');
-            } finally {
-              delBtn.disabled = false;
-            }
-          };
-          tdAction.append(delBtn);
-          tr.append(tdAction);
-
-          tbody.append(tr);
-        }
-        if (status) status.textContent = messages.length ? 'Viewing ' + messages.length + ' active student messages.' : 'No chat messages stored.';
-      } catch (err) {
-        if (status) status.textContent = 'Could not load community chat messages.';
-      }
-    }
-
-    // CSV EXPORTERS
-    function exportResultsCSV() {
-      if (!allResults.length) { alert('No test attempts to export.'); return; }
-      const headers = ['ID', 'Student Name', 'Registration', 'Subject', 'Score', 'Total', 'Percentage', 'Status', 'Wrong', 'Unanswered', 'Auto Submitted', 'Submitted Time (IST)'];
-      const rows = allResults.map(r => [
-        r.id,
-        '"' + (r.name || 'Anonymous').replace(/"/g, '""') + '"',
-        '"' + (r.reg || 'N/A').replace(/"/g, '""') + '"',
-        '"' + (r.subject || '').replace(/"/g, '""') + '"',
-        r.score,
-        r.total,
-        r.percentage != null ? r.percentage + '%' : '',
-        '"' + (r.status || '') + '"',
-        r.wrong,
-        r.unanswered,
-        r.auto_submitted ? 'Yes' : 'No',
-        '"' + formatIST(r.submitted_at) + '"'
-      ]);
-      const csv = [headers.join(','), ...rows.map(row => row.join(','))].join(String.fromCharCode(10));
-      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = 'Academic_Hub_Mock_Test_Results_' + new Date().toISOString().slice(0, 10) + '.csv';
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-    }
-
     function exportTrafficCSV() {
       if (!trafficRecords.length) { alert('No traffic records to export.'); return; }
       const headers = ['Visitor IP', 'Total Visits', 'Country', 'Region', 'City', 'Last Active (IST)', 'Latest Page Path'];
@@ -1992,11 +1661,9 @@ details.section-details summary, details.popular-details summary { cursor: point
 
     // TABS LOGIC
     const stations = [
-      { id: 'assessment', tab: 'tab-btn-assessment', panel: 'panel-assessment' },
-      { id: 'radar', tab: 'tab-btn-radar', panel: 'panel-radar' },
       { id: 'geo', tab: 'tab-btn-geo', panel: 'panel-geo' },
-      { id: 'content', tab: 'tab-btn-content', panel: 'panel-content' },
-      { id: 'chat', tab: 'tab-btn-chat', panel: 'panel-chat' }
+      { id: 'radar', tab: 'tab-btn-radar', panel: 'panel-radar' },
+      { id: 'content', tab: 'tab-btn-content', panel: 'panel-content' }
     ];
 
     function activateStation(id) {
@@ -2010,7 +1677,6 @@ details.section-details summary, details.popular-details summary { cursor: point
         }
         if (pnl) pnl.hidden = !isMatch;
       }
-      if (id === 'chat') loadAdminChat();
     }
 
     for (const s of stations) {
@@ -2018,48 +1684,27 @@ details.section-details summary, details.popular-details summary { cursor: point
       if (btn) btn.onclick = () => activateStation(s.id);
     }
 
+    // HASH NAVIGATION CHECK
+    if (location.hash === '#radar' || location.hash === '#live') {
+      activateStation('radar');
+    } else if (location.hash === '#content') {
+      activateStation('content');
+    } else {
+      activateStation('geo');
+    }
+
     // EVENTS & INITIAL LOAD
     document.getElementById('btn-force-sync').onclick = () => {
       refreshLiveVisitors();
       refreshTraffic();
-      refreshResults();
     };
 
-    document.getElementById('btn-export-results').onclick = exportResultsCSV;
     document.getElementById('btn-export-traffic').onclick = exportTrafficCSV;
-    document.getElementById('refresh-results').onclick = refreshResults;
-
-    document.getElementById('result-search-input').oninput = () => { resultsPage = 1; renderResults(); };
-    document.getElementById('subject-filter').onchange = (e) => { activeSubjectFilter = e.target.value; resultsPage = 1; renderResults(); };
-    document.getElementById('grade-filter').onchange = () => { resultsPage = 1; renderResults(); };
-    document.getElementById('identity-filter').onchange = () => { resultsPage = 1; renderResults(); };
-    document.getElementById('page-size').onchange = () => { resultsPage = 1; renderResults(); };
-    document.getElementById('prev-page').onclick = () => { resultsPage = Math.max(1, resultsPage - 1); renderResults(); };
-    document.getElementById('next-page').onclick = () => { resultsPage++; renderResults(); };
 
     document.getElementById('traffic-search-input').oninput = () => { trafficPage = 1; renderTraffic(); };
     document.getElementById('traffic-page-size').onchange = () => { trafficPage = 1; renderTraffic(); };
     document.getElementById('traffic-prev-page').onclick = () => { trafficPage = Math.max(1, trafficPage - 1); renderTraffic(); };
     document.getElementById('traffic-next-page').onclick = () => { trafficPage++; renderTraffic(); };
-
-    document.getElementById('admin-chat-refresh').onclick = loadAdminChat;
-    document.getElementById('admin-chat-clear').onclick = async () => {
-      if (!confirm('DANGER: Clear all community student chat messages permanently?')) return;
-      try {
-        const res = await fetch('/api/chat/clear', {
-          method: 'POST',
-          credentials: 'same-origin'
-        });
-        const data = await res.json().catch(() => ({}));
-        if (res.ok) {
-          await loadAdminChat();
-        } else {
-          alert('Could not clear messages: ' + (data.error || ('HTTP ' + res.status)));
-        }
-      } catch {
-        alert('Network error.');
-      }
-    };
 
     document.getElementById('logout').onclick = async () => {
       try {
@@ -2078,7 +1723,6 @@ details.section-details summary, details.popular-details summary { cursor: point
           if (!document.hidden) {
             refreshLiveVisitors();
             refreshTraffic();
-            refreshResults();
           }
         }, ms);
       }
@@ -2091,7 +1735,6 @@ details.section-details summary, details.popular-details summary { cursor: point
     // INITIAL TRIGGER
     refreshLiveVisitors();
     refreshTraffic();
-    refreshResults();
     setPollingInterval(15000);
   ` : `
     const form = document.getElementById('login');
@@ -2147,6 +1790,7 @@ ${content}
     }
   });
 }
+
 
 async function fetchMockTestResults(env) {
   if (!env.RESULTS_API || typeof env.RESULTS_API.fetch !== "function") {
