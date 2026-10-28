@@ -735,6 +735,54 @@
     }
 
     function filterModule(modId, btn) {
+      // Reliable module/chapter navigation for touch screens and desktop browsers.
+      const validIds = ['all', 'mod1', 'mod2', 'mod3', 'mod4', 'mod5'];
+      if (!validIds.includes(modId)) modId = 'all';
+
+      const buttons = document.querySelectorAll('.filter-wrapper .filter-btn');
+      buttons.forEach(b => {
+        b.classList.remove('active');
+        b.classList.remove('module-blinking');
+        b.setAttribute('aria-pressed', 'false');
+      });
+
+      const activeButton = btn || document.querySelector('.filter-wrapper .filter-btn[data-mod="' + modId + '"]');
+      if (activeButton) {
+        activeButton.classList.add('active');
+        activeButton.setAttribute('aria-pressed', 'true');
+        activeButton.style.setProperty('--mod-delay', '0s');
+        activeButton.classList.remove('module-blinking');
+        void activeButton.offsetWidth;
+        activeButton.classList.add('module-blinking');
+      }
+
+      const sections = document.querySelectorAll('#chapterContainer .module-section');
+      sections.forEach(sec => {
+        const matches = modId === 'all' || sec.getAttribute('data-mod') === modId;
+        sec.style.display = matches ? 'block' : 'none';
+        sec.setAttribute('aria-hidden', matches ? 'false' : 'true');
+      });
+
+      // Reset search so switching modules never leaves chapters hidden by an old query.
+      const search = document.getElementById('searchInput');
+      if (search) search.value = '';
+      document.querySelectorAll('#chapterContainer .chapter-card').forEach(card => {
+        card.style.display = 'grid';
+      });
+
+      if (typeof triggerChapterBlink === 'function') triggerChapterBlink(modId);
+    }
+
+    // Delegated click support ensures module tabs respond correctly to taps on mobile.
+    document.addEventListener('click', function(event) {
+      const btn = event.target.closest('.filter-wrapper .filter-btn[data-mod]');
+      if (!btn) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const modId = btn.getAttribute('data-mod') || 'all';
+      filterModule(modId, btn);
+    }, true);
+
       const buttons = document.querySelectorAll('.filter-btn');
       buttons.forEach(b => {
         b.classList.remove('active');
