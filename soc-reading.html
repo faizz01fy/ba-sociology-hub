@@ -798,14 +798,20 @@
 
 
 
-    .modal-voice-btn { display: none !important; }
-
-
+    .modal-voice-btn {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+      border: 1px solid #047857 !important;
+      color: #ffffff !important;
+      font-size: 15px;
+      cursor: pointer;
+    }
 
     .modal-voice-btn:hover {
-
       background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
-
+      transform: scale(1.05);
     }
 
 
@@ -2373,7 +2379,8 @@
           <button aria-label="Zoom Out" class="modal-action-btn" onclick="zoomModalReader(-0.25)" title="Zoom Out (ചെറുതാക്കുക)" type="button">🔍−</button>
 <button aria-label="Zoom In" class="modal-action-btn" onclick="zoomModalReader(0.25)" title="Zoom In (വലുതാക്കുക)" type="button">🔍+</button>
 <button aria-label="Reset Zoom" class="modal-action-btn" onclick="resetModalReaderZoom()" title="Reset Zoom (യഥാർത്ഥ വലുപ്പം)" type="button">↺</button>
-<a class="modal-action-btn" href="#" id="modalExternalBtn" rel="noopener" target="_blank" title="പുതിയ ടാബിൽ തുറക്കുക (Open in New Tab)">↗</a>
+<button id="modalVoiceBtn" class="modal-action-btn modal-voice-btn" type="button" title="ശബ്ദ വായന (Voice Read Aloud)" onclick="triggerModalVoice()" aria-label="Voice Read Aloud">🔊</button>
+          <a class="modal-action-btn" href="#" id="modalExternalBtn" rel="noopener" target="_blank" title="പുതിയ ടാബിൽ തുറക്കുക (Open in New Tab)">↗</a>
 <button aria-label="Close Viewer" class="close-modal" onclick="closeViewer()">✕</button>
 </div>
 </div>
@@ -2517,6 +2524,13 @@
       viewPdf(currentPdfCleanUrl, currentPdfCleanTitle);
     }
 
+    function triggerModalVoice() {
+      const frame = document.getElementById('pdfFrame');
+      if (frame && frame.contentWindow) {
+        frame.contentWindow.postMessage({ action: 'toggleVoiceReader' }, '*');
+      }
+    }
+
     function viewPdf(url, title) {
       currentPdfCleanUrl = url.split('#')[0];
       currentPdfCleanTitle = title;
@@ -2535,7 +2549,7 @@
           toggleBtn.style.background = '#4338ca';
         }
       } else {
-        const readerUrl = 'study-guide-reader.html?file=' + encodeURIComponent(currentPdfCleanUrl) + '&tab=malayalam_reading';
+        const readerUrl = 'study-guide-reader.html?file=' + encodeURIComponent(currentPdfCleanUrl) + '&tab=malayalam_reading&voice=1';
         frame.src = readerUrl;
         if (extBtn) extBtn.href = readerUrl;
         if (toggleBtn) {
