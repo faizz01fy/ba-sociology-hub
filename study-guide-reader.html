@@ -30,9 +30,15 @@
         file = 'Malayalam_Complete_Study_Guide.pdf';
       }
 
-      // Voice reading enabled by default for all study guides, LMS PDFs, and Malayalam Reading tabs
+      // Voice reading is preserved in LMS PDF ONLY (tab === 'lms').
+      // It is strictly removed from all Malayalam reading tabs and other non-LMS tabs.
+      const isLmsPdf = (tab === 'lms');
       const isVoiceExplicitlyDisabled = (
+        !isLmsPdf ||
         voice === '0' ||
+        tab === 'malayalam_reading' ||
+        tab === 'reading' ||
+        tab === 'malayalam' ||
         tab === 'mcq' ||
         tab === 'mcq_pdf' ||
         tab === 'mcq-pdf'
@@ -3247,6 +3253,18 @@
       if (tabMatch && tabMatch[1]) tabParam = tabMatch[1].toLowerCase();
       else tabParam = (new URLSearchParams(search).get('tab') || '').toLowerCase();
 
+      // Ensure voice reader is strictly disabled for all Malayalam reading tabs and preserved ONLY in LMS PDF
+      const voiceParam = new URLSearchParams(search).get('voice');
+      const isLmsTab = (tabParam === 'lms');
+      if (!isLmsTab || voiceParam === '0' || tabParam === 'malayalam_reading' || tabParam === 'reading' || tabParam === 'malayalam' || tabParam === 'mcq' || tabParam === 'mcq_pdf' || tabParam === 'mcq-pdf') {
+        document.documentElement.classList.add('hide-voice-controls');
+        window.hideVoiceReader = true;
+        if (typeof stopVoice === 'function') stopVoice();
+      } else {
+        document.documentElement.classList.remove('hide-voice-controls');
+        window.hideVoiceReader = false;
+      }
+
       // If file parameter is empty or unspecified, provide intelligent default or clean empty state
       if (!rawParam || rawParam === 'study-guide-reader.html') {
         if (tabParam === 'malayalam_reading' || tabParam === 'malayalam' || tabParam === 'reading') {
@@ -3283,7 +3301,7 @@
         document.querySelector('.toolbar').hidden = false;
         document.body.classList.add('docx-mode');
         const vGrp = el('voiceToolbarGroup');
-        if (vGrp) vGrp.style.display = 'flex';
+        if (vGrp && !window.hideVoiceReader) vGrp.style.display = 'flex';
         el('pages').textContent = '/ Docx';
         el('page').value = '1';
         el('prevPage').disabled = true;
