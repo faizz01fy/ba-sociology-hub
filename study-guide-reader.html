@@ -1571,15 +1571,16 @@
         if (oldLinks) oldLinks.remove();
 
         const canvas = document.createElement('canvas');
-        // Ultra-fast mobile rendering (1.0x ratio on phones cuts render time & memory by 55%)
-        const isMobileScreen = window.innerWidth <= 768;
         const dpr = window.devicePixelRatio || 1;
-        const ratio = isMobileScreen ? 1.0 : Math.min(Math.max(dpr, 1), 1.5);
+        // Ultra-sharp HD clarity for Hindi (Devanagari) & Malayalam scripts:
+        // Clamped between 1.8 and 2.75 for crisp vector outlines without memory exhaustion
+        const ratio = Math.min(Math.max(dpr, 1.8), 2.75);
 
         canvas.width = Math.floor(viewport.width * ratio);
         canvas.height = Math.floor(viewport.height * ratio);
         canvas.style.width = viewport.width + 'px';
         canvas.style.height = viewport.height + 'px';
+        canvas.style.display = 'block';
         canvas.setAttribute('role', 'img');
         canvas.setAttribute('aria-label', 'Study guide page ' + number + ' of ' + pdf.numPages);
 
@@ -1587,6 +1588,8 @@
         const ctx = canvas.getContext('2d', { alpha: false });
         ctx.fillStyle = '#ffffff';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
 
         section.append(canvas);
 
@@ -1865,11 +1868,18 @@
     window.addEventListener('touchstart', (e) => {
       if (e.touches.length === 2 && pdf) {
         isPinching = true;
+        e.preventDefault();
         pinchStartDist = getTouchDist(e.touches[0], e.touches[1]);
-        pinchCenter = getTouchMid(e.touches[0], e.touches[1]);
+        const mid = getTouchMid(e.touches[0], e.touches[1]);
+        const rect = readerEl.getBoundingClientRect();
+        pinchCenter = {
+          x: Math.max(0, mid.x - rect.left),
+          y: Math.max(0, mid.y - rect.top)
+        };
         pinchStartScale = getCurrentScale();
         currentPinchRatio = 1;
         readerEl.style.transition = 'none';
+        readerEl.style.transformOrigin = pinchCenter.x + 'px ' + pinchCenter.y + 'px';
         showZoomHud(pinchStartScale);
       }
     }, { passive: false });
@@ -1881,28 +1891,39 @@
         if (pinchStartDist > 0) {
           currentPinchRatio = dist / pinchStartDist;
           const candidateScale = pinchStartScale * currentPinchRatio;
-          const clampedScale = Math.max(0.35, Math.min(4.0, candidateScale));
+          const clampedScale = Math.max(0.4, Math.min(4.0, candidateScale));
           const effectiveRatio = clampedScale / pinchStartScale;
           
-          readerEl.style.transformOrigin = pinchCenter.x + 'px ' + pinchCenter.y + 'px';
           readerEl.style.transform = 'scale(' + effectiveRatio.toFixed(3) + ')';
           showZoomHud(clampedScale);
         }
       }
     }, { passive: false });
 
+    let pinchDebounceTimer = null;
     const finishPinch = () => {
       if (!isPinching) return;
       isPinching = false;
-      readerEl.style.transform = '';
-      readerEl.style.transformOrigin = '';
       
-      const targetScale = Math.max(0.35, Math.min(3.8, pinchStartScale * currentPinchRatio));
+      const targetScale = Math.max(0.4, Math.min(3.8, pinchStartScale * currentPinchRatio));
       if (Math.abs(targetScale - pinchStartScale) > 0.04) {
         customZoomScale = Math.round(targetScale * 100) / 100;
         updateZoomDropdown(customZoomScale);
         showZoomHud(customZoomScale);
-        render();
+        clearTimeout(pinchDebounceTimer);
+        pinchDebounceTimer = setTimeout(() => {
+          readerEl.style.transform = '';
+          readerEl.style.transformOrigin = '';
+          render();
+        }, 50);
+      } else {
+        readerEl.style.transition = 'transform 0.15s ease-out';
+        readerEl.style.transform = 'scale(1)';
+        setTimeout(() => {
+          readerEl.style.transform = '';
+          readerEl.style.transformOrigin = '';
+          readerEl.style.transition = '';
+        }, 150);
       }
     };
 
