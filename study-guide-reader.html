@@ -261,16 +261,14 @@
       to { transform: rotate(360deg); }
     }
 
-    /* Auto-hide loading indicators as soon as page is rendered or has canvas */
-    .pdf-page[data-rendered="true"] .page-loading,
-    .pdf-page:has(canvas) .page-loading {
+    /* Auto-hide loading indicators as soon as page is rendered */
+    .pdf-page[data-rendered="true"] .page-loading {
       display: none !important;
       visibility: hidden !important;
       opacity: 0 !important;
       pointer-events: none !important;
     }
-    .pdf-page[data-rendered="true"]::after,
-    .pdf-page:has(canvas)::after {
+    .pdf-page[data-rendered="true"]::after {
       display: none !important;
       content: none !important;
     }
@@ -1521,7 +1519,8 @@
       processRenderQueue();
     }
 
-    const CONCURRENT_RENDERS = 3;
+    const isMobileDevice = window.innerWidth <= 768 || (navigator.maxTouchPoints && navigator.maxTouchPoints > 1 && window.innerWidth <= 1024);
+    const CONCURRENT_RENDERS = isMobileDevice ? 1 : 2;
     async function processRenderQueue() {
       if (isProcessingQueue) return;
       isProcessingQueue = true;
@@ -1577,9 +1576,10 @@
 
         const canvas = document.createElement('canvas');
         const dpr = window.devicePixelRatio || 1;
-        // Ultra-sharp HD clarity for Hindi (Devanagari) & Malayalam scripts:
-        // Clamped between 1.8 and 2.75 for crisp vector outlines without memory exhaustion
-        const ratio = Math.min(Math.max(dpr, 1.8), 2.75);
+        // Optimal rendering scale without WebKit memory exhaustion:
+        // Mobile phones: clamp to Math.min(dpr, 1.25) to prevent iOS Jetsam OOM crashes.
+        // Desktop: clamp between 1.25 and 1.8 for crisp vector glyphs without GPU buffer overflow.
+        const ratio = isMobileDevice ? Math.min(dpr, 1.25) : Math.min(Math.max(dpr, 1.25), 1.8);
 
         canvas.width = Math.floor(viewport.width * ratio);
         canvas.height = Math.floor(viewport.height * ratio);
@@ -1613,9 +1613,16 @@
 
         section.dataset.rendered = 'true';
         section.querySelector('.page-loading')?.remove();
+
+        const MAX_CANVAS_CACHE = isMobileDevice ? 4 : 10;
         pageCanvasCache.set(number, canvas);
-        if (pageCanvasCache.size > 25) {
+        while (pageCanvasCache.size > MAX_CANVAS_CACHE) {
           const firstKey = pageCanvasCache.keys().next().value;
+          const oldCanvas = pageCanvasCache.get(firstKey);
+          if (oldCanvas) {
+            oldCanvas.width = 0;
+            oldCanvas.height = 0;
+          }
           pageCanvasCache.delete(firstKey);
         }
 
@@ -1721,11 +1728,12 @@
 
       if (resumeSec.dataset.rendered === 'true') {
         el('status').textContent = pdf.numPages + ' pages · Scroll or use ‹ › buttons to read';
-        // Eagerly pre-render all pages in priority order so scrolling is instantaneous with ZERO blank/empty gaps!
-        for (let idx = 0; idx < sections.length; idx++) {
-          if (idx !== (resumePage - 1)) {
-            enqueuePage(sections[idx]);
-          }
+        // Pre-warm immediate adjacent pages only (1 ahead, 1 behind)
+        if (sections[resumePage]) {
+          enqueuePage(sections[resumePage]);
+        }
+        if (resumePage > 1 && sections[resumePage - 2]) {
+          enqueuePage(sections[resumePage - 2]);
         }
       } else if (resumeSec.dataset.rendering !== 'true') {
         el('status').textContent = 'Could not display page ' + resumePage + '. Tap Retry to try again.';
@@ -1738,13 +1746,13 @@
           observer.unobserve(entry.target);
           enqueuePage(entry.target);
         }
-      }, { rootMargin: '1200px 0px' });
+      }, { rootMargin: isMobileDevice ? '600px 0px' : '1000px 0px' });
 
       sections.forEach(sec => {
         if (sec.dataset.rendered !== 'true') observer.observe(sec);
       });
 
-      // Off-main-thread active page tracker (zero layout reflow)
+      // Off-main-thread active page tracker (zero layout reflow) with mobile memory recycling
       pageTrackingObserver = new IntersectionObserver((entries) => {
         const intersecting = entries.filter(e => e.isIntersecting);
         if (intersecting.length > 0) {
@@ -1754,6 +1762,23 @@
             pageNumber = p;
             el('page').value = pageNumber;
             controls();
+
+            // Mobile memory virtualizer: recycle canvases that are > 4 pages away from current view
+            if (isMobileDevice) {
+              sections.forEach(sec => {
+                const sPage = Number(sec.dataset.page);
+                if (Math.abs(sPage - pageNumber) > 4 && sec.dataset.rendered === 'true') {
+                  const oldCanvas = sec.querySelector('canvas');
+                  if (oldCanvas) {
+                    oldCanvas.remove();
+                    oldCanvas.width = 0;
+                    oldCanvas.height = 0;
+                  }
+                  delete sec.dataset.rendered;
+                  if (observer) observer.observe(sec);
+                }
+              });
+            }
           }
         }
       }, { rootMargin: '-10% 0px -70% 0px' });
@@ -3020,9 +3045,6 @@
       panel.hidden = !shouldOpen;
       if (shouldOpen) {
         btn.classList.add('active');
-        if (!isVoicePlaying) {
-          startChapterReading();
-        }
       } else {
         btn.classList.remove('active');
       }

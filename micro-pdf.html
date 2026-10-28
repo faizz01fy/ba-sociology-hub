@@ -1653,72 +1653,72 @@
 
   <script>
     // Module Filter functionality
-    function filterModule(modId, btn) {{
+    function filterModule(modId, btn) {
       const buttons = document.querySelectorAll('.filter-btn');
       buttons.forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
 
       const sections = document.querySelectorAll('.module-section');
-      sections.forEach(sec => {{
-        if (modId === 'all' || sec.getAttribute('data-mod') === modId) {{
+      sections.forEach(sec => {
+        if (modId === 'all' || sec.getAttribute('data-mod') === modId) {
           sec.style.display = 'block';
-        }} else {{
+        } else {
           sec.style.display = 'none';
-        }}
-      }});
+        }
+      });
 
       const searchInput = document.getElementById('searchInput');
-      if (searchInput && searchInput.value) {{
+      if (searchInput && searchInput.value) {
         searchInput.value = '';
         const countBadge = document.getElementById('searchCount');
         if (countBadge) countBadge.style.display = 'none';
         const cards = document.querySelectorAll('.chapter-card');
         cards.forEach(card => card.style.display = 'grid');
-      }}
-    }}
+      }
+    }
 
     // Live search filter across all cards
-    function filterChapters() {{
+    function filterChapters() {
       const query = document.getElementById('searchInput').value.toLowerCase().trim();
       const cards = document.querySelectorAll('.chapter-card');
       const sections = document.querySelectorAll('.module-section');
       const countBadge = document.getElementById('searchCount');
       let totalVisible = 0;
 
-      if (query) {{
-        sections.forEach(sec => {{
+      if (query) {
+        sections.forEach(sec => {
           let hasVisibleCard = false;
           const sectionCards = sec.querySelectorAll('.chapter-card');
-          sectionCards.forEach(card => {{
+          sectionCards.forEach(card => {
             const text = card.innerText.toLowerCase();
-            if (text.includes(query)) {{
+            if (text.includes(query)) {
               card.style.display = 'grid';
               hasVisibleCard = true;
               totalVisible++;
-            }} else {{
+            } else {
               card.style.display = 'none';
-            }}
-          }});
+            }
+          });
           sec.style.display = hasVisibleCard ? 'block' : 'none';
-        }});
-        if (countBadge) {{
+        });
+        if (countBadge) {
           countBadge.style.display = 'block';
           countBadge.innerText = totalVisible + ' ഫലങ്ങൾ (Matches)';
-        }}
-      }} else {{
+        }
+      } else {
         if (countBadge) countBadge.style.display = 'none';
         cards.forEach(card => card.style.display = 'grid');
         const activeBtn = document.querySelector('.filter-btn.active');
         const activeMod = activeBtn ? activeBtn.getAttribute('data-filter') : 'mod1';
-        sections.forEach(sec => {{
-          if (sec.getAttribute('data-mod') === activeMod) {{
+        sections.forEach(sec => {
+          if (sec.getAttribute('data-mod') === activeMod) {
             sec.style.display = 'block';
-          }} else {{
+          } else {
             sec.style.display = 'none';
-          }}
-        }});
-      }}
-    }}
+          }
+        });
+      }
+    }
 
     // Modal PDF Viewer
     function viewPdf(url, title) {
@@ -1742,12 +1742,12 @@
       document.body.style.overflow = 'hidden';
     }
 
-    function closeExamCracker() {{
+    function closeExamCracker() {
       document.getElementById('crackerModal').style.display = 'none';
       document.body.style.overflow = 'auto';
-    }}
+    }
 
-    function switchCrackerTab(paneId, btn) {{
+    function switchCrackerTab(paneId, btn) {
       const tabBtns = document.querySelectorAll('.cracker-tab-btn');
       tabBtns.forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
@@ -1756,50 +1756,50 @@
       panes.forEach(p => p.classList.remove('active'));
       const activePane = document.getElementById(paneId);
       if (activePane) activePane.classList.add('active');
-    }}
+    }
 
     // Close on outside click
-    window.onclick = function(event) {{
+    window.onclick = function(event) {
       const viewer = document.getElementById('viewerModal');
       const cracker = document.getElementById('crackerModal');
-      if (event.target == viewer) {{
+      if (event.target == viewer) {
         closeViewer();
-      }}
-      if (event.target == cracker) {{
+      }
+      if (event.target == cracker) {
         closeExamCracker();
-      }}
-    }};
+      }
+    };
 
     // Keyboard navigation
-    document.addEventListener('keydown', function(e) {{
-      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u'].includes(e.key.toLowerCase())) {{
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u'].includes(e.key.toLowerCase())) {
         e.preventDefault();
-      }}
-      if (e.key === 'Escape') {{
+      }
+      if (e.key === 'Escape') {
         closeViewer();
         closeExamCracker();
-      }}
-    }});
+      }
+    });
 
     // Disable right click across the page
-    document.addEventListener('contextmenu', function(e) {{
+    document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
-    }});
+    });
 
     // Prevent download actions
-    document.addEventListener('click', function(e) {{
+    document.addEventListener('click', function(e) {
       const target = e.target.closest('a[download], .btn-download, .download, [download]');
-      if (target) {{
+      if (target) {
         e.preventDefault();
-      }}
-    }}, true);
+      }
+    }, true);
 
-    document.addEventListener('DOMContentLoaded', function() {{
+    document.addEventListener('DOMContentLoaded', function() {
       const mod1Btn = document.querySelector('.filter-btn[data-filter="mod1"]');
-      if (mod1Btn) {{
+      if (mod1Btn) {
         filterModule('mod1', mod1Btn);
-      }}
-    }});
+      }
+    });
   </script>
 
 <script>
