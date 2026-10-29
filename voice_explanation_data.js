@@ -265,7 +265,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 01",
             "title": "Introduction - Origin and Development of Sociology",
-            "youtubeId": "_xg3NxMCKi8",
+            "youtubeId": "",
             "duration": "24",
             "chapter": "Calicut University Official Lecture · ഓറിജിൻ ആൻഡ് ഡെവലപ്മെന്റ്",
             "studyPoints": [
@@ -278,7 +278,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 02",
             "title": "Social Forces in the Emergence of Sociology",
-            "youtubeId": "wHZkxLKJXkU",
+            "youtubeId": "",
             "duration": "18",
             "chapter": "SOCI CJ 101 M1P2 · ഫ്രഞ്ച് വിപ്ലവം, പ്രബുദ്ധത & വ്യാവസായിക വിപ്ലവം",
             "studyPoints": [
@@ -290,7 +290,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 03",
             "title": "Scientific Nature and Subject Matter of Sociology",
-            "youtubeId": "XHvG8v67RvI",
+            "youtubeId": "",
             "duration": "20",
             "chapter": "SOC1CJ101M1P3 · ശാസ്ത്രീയ സ്വഭാവവും വ്യാപ്തിയും",
             "studyPoints": [
@@ -301,7 +301,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 04",
             "title": "Scope and Perspectives of Sociology",
-            "youtubeId": "cbQ3YtgGSys",
+            "youtubeId": "",
             "duration": "19",
             "chapter": "SOC1CJ1012024M1P4 · സിന്തറ്റിക് & സ്പെഷ്യലിസ്റ്റിക് കാഴ്ചപ്പാടുകൾ",
             "studyPoints": [
@@ -312,7 +312,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 05",
             "title": "Sociological Perspectives & Human Society",
-            "youtubeId": "Wx9i79dZUqQ",
+            "youtubeId": "",
             "duration": "22",
             "chapter": "SOC1CJ2024M1P5 · സൊസൈറ്റി & കമ്മ്യൂണിറ്റി",
             "studyPoints": [
@@ -341,7 +341,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 01",
             "title": "Research Design & Methods in Sociology",
-            "youtubeId": "pFYB-p54P9s",
+            "youtubeId": "",
             "duration": "21",
             "chapter": "SOC1CJ1012024M2P1 · ഗവേഷണ രൂപരേഖയും ഘട്ടങ്ങളും",
             "studyPoints": [
@@ -352,7 +352,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 02",
             "title": "Quantitative & Qualitative Methodologies",
-            "youtubeId": "i-4YQlCWQ50",
+            "youtubeId": "",
             "duration": "20",
             "chapter": "SOC1CJ1012024M2P2 · ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ",
             "studyPoints": [
@@ -363,7 +363,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 03",
             "title": "Observation Techniques & Participant Observation",
-            "youtubeId": "as4vVhXVDGE",
+            "youtubeId": "",
             "duration": "19",
             "chapter": "SOC1CJ1012024M2P3 · പങ്കാളിത്ത നിരീക്ഷണം",
             "studyPoints": [
@@ -374,7 +374,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 04",
             "title": "Tools of Data Collection: Survey, Interview & Schedule",
-            "youtubeId": "WSLD8jEi8d0",
+            "youtubeId": "",
             "duration": "22",
             "chapter": "SOC1CJ1012024M2P4 · ചോദ്യാവലി & അഭിമുഖം",
             "studyPoints": [
@@ -385,7 +385,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 05",
             "title": "Objectivity & Ethics in Social Research",
-            "youtubeId": "QeiqhRqnc8I",
+            "youtubeId": "",
             "duration": "18",
             "chapter": "SOC1CJ1012024M2P5 · ഗവേഷണ ധാർമ്മികത & മൂല്യ നിഷ്പക്ഷത",
             "studyPoints": [
@@ -401,7 +401,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 3.1",
             "title": "Social Interaction: Cooperation",
-            "youtubeId": "ZBdgJNc4coU",
+            "youtubeId": "",
             "duration": "15",
             "chapter": "സാമൂഹിക പ്രതിപ്രവർത്തനം · സഹകരണം (Cooperation)",
             "studyPoints": [
@@ -412,7 +412,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 3.2",
             "title": "Social Interaction: Competition",
-            "youtubeId": "6uiC7ypsAYQ",
+            "youtubeId": "",
             "duration": "16",
             "chapter": "സാമൂഹിക പ്രതിപ്രവർത്തനം · മത്സരം (Competition)",
             "studyPoints": [
@@ -423,7 +423,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 3.3",
             "title": "Social Interaction: Conflict",
-            "youtubeId": "6EqooQi0qqU",
+            "youtubeId": "",
             "duration": "18",
             "chapter": "സാമൂഹിക പ്രതിപ്രവർത്തനം · സംഘർഷം (Conflict)",
             "studyPoints": [
@@ -434,7 +434,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 3.4",
             "title": "Social Interaction: Accommodation & Assimilation",
-            "youtubeId": "Cn67BausrZk",
+            "youtubeId": "",
             "duration": "17",
             "chapter": "പൊരുത്തപ്പെടലും (Accommodation) ലയനവും (Assimilation)",
             "studyPoints": [
@@ -445,7 +445,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 3.5",
             "title": "Social Groups: Meaning & Characteristics",
-            "youtubeId": "he69vQFE5LQ",
+            "youtubeId": "",
             "duration": "19",
             "chapter": "സാമൂഹിക ഗ്രൂപ്പുകൾ · അർത്ഥവും സവിശേഷതകളും",
             "studyPoints": [
@@ -455,7 +455,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 3.6",
             "title": "Types of Social Groups: Primary & Secondary",
-            "youtubeId": "SPFNYApczBg",
+            "youtubeId": "",
             "duration": "20",
             "chapter": "പ്രൈമറി & സെക്കൻഡറി ഗ്രൂപ്പുകൾ (Charles Cooley)",
             "studyPoints": [
@@ -466,7 +466,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 3.7",
             "title": "Socialization: Meaning, Scope & Theories",
-            "youtubeId": "e1IYdWbuzxA",
+            "youtubeId": "",
             "duration": "21",
             "chapter": "സാമൂഹികവൽക്കരണം · നിർവചനവും പ്രാധാന്യവും",
             "studyPoints": [
@@ -476,7 +476,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 3.8",
             "title": "Types of Socialization: Primary, Secondary & Anticipatory",
-            "youtubeId": "TD5k2Nr0CFk",
+            "youtubeId": "",
             "duration": "18",
             "chapter": "സാമൂഹികവൽക്കരണത്തിന്റെ തരങ്ങൾ",
             "studyPoints": [
@@ -486,7 +486,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 3.9",
             "title": "Agents of Socialization: Family, School & Media",
-            "youtubeId": "ii08cZJUGEA",
+            "youtubeId": "",
             "duration": "17",
             "chapter": "സാമൂഹികവൽക്കരണ ഏജൻസികൾ",
             "studyPoints": [
@@ -496,7 +496,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 3.10",
             "title": "Stages of Socialization: Infancy to Adulthood",
-            "youtubeId": "1Ts4pCj5Rb4",
+            "youtubeId": "",
             "duration": "19",
             "chapter": "വ്യക്തിവികാസത്തിന്റെ വിവിധ ഘട്ടങ്ങൾ",
             "studyPoints": [
@@ -506,7 +506,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 3.11",
             "title": "Social Control: Meaning, Need & Types",
-            "youtubeId": "iTDj8K-Q0Bs",
+            "youtubeId": "",
             "duration": "20",
             "chapter": "സാമൂഹിക നിയന്ത്രണം · ആവശ്യകതയും തരങ്ങളും",
             "studyPoints": [
@@ -516,7 +516,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 3.12",
             "title": "Agencies of Social Control: Law, State & Religion",
-            "youtubeId": "42VQBqJq3Ks",
+            "youtubeId": "",
             "duration": "18",
             "chapter": "നിയന്ത്രണ ഏജൻസികൾ",
             "studyPoints": [
@@ -532,7 +532,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.1",
             "title": "Society: Meaning, Definitions & Characteristics",
-            "youtubeId": "ENCnVQTPcDY",
+            "youtubeId": "",
             "duration": "19",
             "chapter": "സമൂഹം · സവിശേഷതകൾ",
             "studyPoints": [
@@ -542,7 +542,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.2",
             "title": "Types of Society: Agrarian, Industrial & Post-Industrial",
-            "youtubeId": "8tXZ8ySITgw",
+            "youtubeId": "",
             "duration": "22",
             "chapter": "സമൂഹത്തിന്റെ വിവിധ വകഭേദങ്ങൾ",
             "studyPoints": [
@@ -553,7 +553,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.3",
             "title": "Social Institutions: Family, Marriage & Kinship",
-            "youtubeId": "Kgo5aCYEazI",
+            "youtubeId": "",
             "duration": "24",
             "chapter": "സാമൂഹിക സ്ഥാപനങ്ങൾ",
             "studyPoints": [
@@ -563,7 +563,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.4",
             "title": "Social Structure: Components & Dimensions",
-            "youtubeId": "6zHLIl-LC10",
+            "youtubeId": "",
             "duration": "18",
             "chapter": "സാമൂഹിക ഘടന (Radcliffe-Brown)",
             "studyPoints": [
@@ -573,7 +573,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.5",
             "title": "Status: Ascribed vs Achieved Status",
-            "youtubeId": "zQXkc14ws3E",
+            "youtubeId": "",
             "duration": "17",
             "chapter": "പദവി · ആർജിത പദവി & സ്വയംനേടിയ പദവി",
             "studyPoints": [
@@ -584,7 +584,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.6",
             "title": "Role: Role Conflict, Role Set & Performance",
-            "youtubeId": "SJnQKshktn4",
+            "youtubeId": "",
             "duration": "18",
             "chapter": "പങ്ക് · റോൾ കോൺഫ്ലിക്റ്റ്",
             "studyPoints": [
@@ -595,7 +595,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.7",
             "title": "Social Change: Factors & Theories",
-            "youtubeId": "uzdNv1dqWMc",
+            "youtubeId": "",
             "duration": "23",
             "chapter": "സാമൂഹിക മാറ്റം · ഘടകങ്ങളും സിദ്ധാന്തങ്ങളും",
             "studyPoints": [
@@ -622,7 +622,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 31
+    "totalVideos": 1
   },
   "philosophy-of-ai": {
     "name": "Philosophy of AI",
