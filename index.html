@@ -269,6 +269,82 @@
 
     }
 
+    #module-dialog .module-tabs button.tab-highlight-green {
+
+      border: 2px solid #10b981 !important;
+
+      background: linear-gradient(130deg, #ffffff, #ecfdf5) !important;
+
+      color: #065f46 !important;
+
+      font-weight: 800 !important;
+
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.45) !important;
+
+    }
+
+    #module-dialog .module-tabs button.tab-highlight-green:hover {
+
+      border-color: #059669 !important;
+
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.65) !important;
+
+      transform: translateY(-1px);
+
+    }
+
+    #module-dialog .module-tabs button.tab-highlight-green[aria-selected="true"] {
+
+      background: linear-gradient(135deg, #047857, #10b981) !important;
+
+      color: #ffffff !important;
+
+      border-color: #047857 !important;
+
+      box-shadow: 0 0 22px rgba(16, 185, 129, 0.8) !important;
+
+    }
+
+    #module-dialog .module-tabs button.tab-blink-intervals {
+
+      animation: tabGreenIntervalBlink 2.4s ease-in-out infinite !important;
+
+    }
+
+    @keyframes tabGreenIntervalBlink {
+
+      0%, 100% {
+
+        transform: scale(1);
+
+        filter: brightness(1);
+
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+
+      }
+
+      20%, 30% {
+
+        transform: scale(1.08);
+
+        filter: brightness(1.28);
+
+        box-shadow: 0 0 24px 6px rgba(16, 185, 129, 0.85);
+
+      }
+
+      50% {
+
+        transform: scale(1);
+
+        filter: brightness(1);
+
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+
+      }
+
+    }
+
   
 
     .modal-action-btn {
@@ -12545,7 +12621,7 @@
 
       if(subject==='Sociology') return [
         {
-          name: 'Sociology MCQ',
+          name: 'Complete Question Bank',
           items: [
             {
               label: 'Sociology MCQs · With Answers',
@@ -12715,7 +12791,7 @@
             title: 'Sociology · Syllabus · MCQs (Bilingual)',
             href: 'Sociology_Syllabus_Introduction_to_Sociology_MCQs_Bilingual.pdf',
             medium: 'Bilingual',
-            description: '10 Multiple Choice Questions on Credits, Bloom's Taxonomy, Evaluation & Outcomes.',
+            description: "10 Multiple Choice Questions on Credits, Bloom's Taxonomy, Evaluation & Outcomes.",
             embed: true
           }]
         }
@@ -14066,6 +14142,24 @@
       ];
 
       Array.from(moduleTabs.children).forEach((btn, idx) => {
+
+        if (/complete\s*question\s*bank/i.test(btn.textContent)) {
+
+          btn.style.setProperty('--mod-c1', '#065f46');
+
+          btn.style.setProperty('--mod-c2', '#10b981');
+
+          btn.style.setProperty('--mod-border', '#10b981');
+
+          btn.style.setProperty('--mod-glow', 'rgba(16, 185, 129, 0.7)');
+
+          btn.style.setProperty('--mod-bg', '#ecfdf5');
+
+          btn.classList.add('module-colored-tab', 'tab-highlight-green', 'tab-blink-intervals');
+
+          return;
+
+        }
 
         const color = modPalette[idx % modPalette.length];
 
