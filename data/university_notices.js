@@ -1322,12 +1322,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://docs.uoc.ac.in/website/news/2026-10-16%2014:22:48_new2371.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "16 Oct 2026",
     "published_at": "2026-10-16T14:22:48+05:30",
     "timestamp": 1792140768000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "exnot11317",
@@ -6406,12 +6406,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://docs.uoc.ac.in/website/news/2025-10-13%2015:09:25_new2155.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "13 Oct 2025",
     "published_at": "2025-10-13T15:09:25+05:30",
     "timestamp": 1760348365000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "adm-470",
@@ -7680,12 +7680,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://docs.uoc.ac.in/website/news/2025-05-31%2016:19:41_new2049.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "31 May 2025",
     "published_at": "2025-05-31T16:19:41+05:30",
     "timestamp": 1748688581000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-568",
@@ -7693,12 +7693,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://docs.uoc.ac.in/website/news/2025-05-31%2016:16:15_new2048.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "31 May 2025",
     "published_at": "2025-05-31T16:16:15+05:30",
     "timestamp": 1748688375000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "adm-569",
@@ -7719,12 +7719,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://docs.uoc.ac.in/website/news/2025-05-31%2012:20:46_new2045.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "31 May 2025",
     "published_at": "2025-05-31T12:20:46+05:30",
     "timestamp": 1748674246000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-571",
@@ -7732,12 +7732,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://docs.uoc.ac.in/website/news/2025-05-31%2011:44:50_new2044.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "31 May 2025",
     "published_at": "2025-05-31T11:44:50+05:30",
     "timestamp": 1748672090000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "adm-572",
@@ -9514,12 +9514,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://docs.uoc.ac.in/website/news/2024-06-01%2011:08:26_new1805.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "01 Jun 2024",
     "published_at": "2024-06-01T11:08:26+05:30",
     "timestamp": 1717220306000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "adm-709",
@@ -11438,12 +11438,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "http://docs.uoc.ac.in/website/news/2022-09-14%2018:10:53_new1188.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "14 Sep 2022",
     "published_at": "2022-09-14T18:10:53+05:30",
     "timestamp": 1663159253000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-857",
@@ -11451,12 +11451,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "http://docs.uoc.ac.in/website/news/2022-09-14%2018:10:14_new1185.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "14 Sep 2022",
     "published_at": "2022-09-14T18:10:14+05:30",
     "timestamp": 1663159214000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "adm-858",
@@ -11594,12 +11594,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "http://docs.uoc.ac.in/website/news/2021-08-10%2014:07:33_new963.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "10 Aug 2021",
     "published_at": "2021-08-10T14:07:33+05:30",
     "timestamp": 1628584653000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-869",
@@ -11607,12 +11607,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "http://docs.uoc.ac.in/website/news/2021-08-10%2014:07:26_new962.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "10 Aug 2021",
     "published_at": "2021-08-10T14:07:26+05:30",
     "timestamp": 1628584646000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-870",
@@ -11620,12 +11620,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "http://docs.uoc.ac.in/website/news/2021-08-10%2014:07:16_new961.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "10 Aug 2021",
     "published_at": "2021-08-10T14:07:16+05:30",
     "timestamp": 1628584636000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-871",
@@ -11633,12 +11633,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "http://docs.uoc.ac.in/website/news/2021-08-10%2014:06:40_new960.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "10 Aug 2021",
     "published_at": "2021-08-10T14:06:40+05:30",
     "timestamp": 1628584600000,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "reg-872",
@@ -11660,12 +11660,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/657-cdc-inviting-applications-for-permanent-increase-of-seats-in-existing-programmes-in-affiliated-colleges-of-the-university-of-calicut-for-the-academic-years-2027-28-and-2028-29-up-to-the-limit-prescribed-by-the-statute-reg",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-874",
@@ -11673,12 +11673,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/656-selection-list-of-all-india-inter-university-arm-wrestling-women-2026-27",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-875",
@@ -11686,12 +11686,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/655-selection-list-of-all-india-inter-university-arm-wrestling-men-2026-27",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-876",
@@ -11699,12 +11699,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/654-selection-list-of-all-india-inter-university-boxing-women-2026-27",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-877",
@@ -11712,12 +11712,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/653-selection-list-of-all-india-inter-university-boxing-men-2026-27",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-878",
@@ -11725,12 +11725,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/652-university-merit-scholarship-2025-26-admission-notification",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-879",
@@ -11738,12 +11738,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/651-def-space-autumn-internship-2026-as-a-part-of-def-space-education-and-innovation-for-innovators-and-learners",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-880",
@@ -11751,12 +11751,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/650-4th-annual-conference-of-the-shsk",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-881",
@@ -11764,12 +11764,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/649-national-testing-agency-nta-ugc-net-december-2025-list-of-candidates-qualified-for-award-of-national-fellowship-for-other-backward-classes-nfobc",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-882",
@@ -11777,12 +11777,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/648-tentative-sports-calendar-2026-27",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-883",
@@ -11790,12 +11790,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/647-notification-for-the-selection-of-junior-research-fellow-project-associate",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-884",
@@ -11803,12 +11803,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/646-canteen-quotaion-notice-iet",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-885",
@@ -11816,12 +11816,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/645-forensic-science-auction-of-dogs",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-886",
@@ -11829,12 +11829,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/644-walkin-interview-postponed-school-of-drama-and-fine-arts",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-887",
@@ -11842,12 +11842,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/643-instruction-to-students-and-parents-regarding-the-affiliation-status-of-new-self-financing-programs-in-autonomous-colleges",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-888",
@@ -11855,12 +11855,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/642-radio-cu-interview",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-889",
@@ -11868,12 +11868,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/641-press-release-for-the-appointment-of-assistant-professors-on-daily-wage-basis-in-the-university-teaching-departments",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-890",
@@ -11881,12 +11881,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/640-3-day-artificial-intelligence",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-891",
@@ -11894,12 +11894,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/639-circular-regarding-the-extension-of-the-last-date-for-application-for-starting-new-programmes-in-govt-aided-colleges-for-the-academic-year-2026-27",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-892",
@@ -11907,12 +11907,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/638-sardar-vallabhbhai-patel-national-unity-award-inviting-nominations-regarding",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-893",
@@ -11920,12 +11920,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/637-ph-d-in-forensic-science-admission-2026-any-time-registration-provisional-rank-list-of-eligible-candidates",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-894",
@@ -11933,12 +11933,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/636-the-2-day-helicopter-design-workshop-3-day-artificial-intelligence-workshop",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-895",
@@ -11946,12 +11946,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/635-department-of-journalism-and-mass-communication-notification-for-phd-application",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-896",
@@ -11959,12 +11959,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/634-ph-d-rank-list-for-eligible-candidate-department-of-zoology",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-897",
@@ -11972,12 +11972,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/633-spot-admission-for-the-b-com-computer-application-programme-at-itsr-chethalayam",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-898",
@@ -11985,12 +11985,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/632-notification-last-date-extended-ma-sociology-programme-at-itsr-chethalayam",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-899",
@@ -11998,12 +11998,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/631-workshop-on-research-and-publication-ethics",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-900",
@@ -12011,12 +12011,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/630-dcms-ph-d-vacancy-notification",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-901",
@@ -12024,12 +12024,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/629-extended-the-application-deadline-for-the-prof-m-m-ghani-award-for-the-best-college-teachers-for-the-academic-years-2023-2024-and-2024-2025",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-902",
@@ -12037,12 +12037,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/628-applications-are-invited-by-emmrc-university-of-calicut-for-the-upcoming-massive-open-online-course-mooc-offered-through-the-swayam-portal-for-more-information-please-visit-www-emmrccalicut-org",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-903",
@@ -12050,12 +12050,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/627-applications-are-invited-for-one-vacant-phd-position-any-time-category-from-candidates-possessing-an-independent-fellowship-csir-ugc-jrf-in-the-department-of-botany",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-904",
@@ -12063,12 +12063,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/626-applications-are-invited-from-valid-jrf-holders-central-state-agencies-for-admission-to-the-ph-d-programme-in-the-department-of-forensic-science-university-of-calicut",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-905",
@@ -12076,12 +12076,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/625-walk-in-interview-for-intern-recruitment",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-906",
@@ -12089,12 +12089,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/624-applications-are-invited-from-jrf-holders-central-state-agencies-for-admission-to-the-phd-programme-in-the-department-of-zoology-university-of-calicut",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-907",
@@ -12102,12 +12102,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/623-applications-are-invited-for-third-semester-college-transfer-of-b-arch-students-between-colleges-affiliated-to-university-of-calicut-during-the-academic-year-2026-2027",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-908",
@@ -12115,12 +12115,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/622-admission-notification-and-application-form-for-admission-ma-sociology-programme-2026-27-itsr-chethalayam",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-909",
@@ -12128,12 +12128,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/621-def-space-summer-internship-2026",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-910",
@@ -12141,12 +12141,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/620-admission-notification-and-application-form-for-admission-to-four-year-ug-programmes-itsr-chethalayam-2026",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-911",
@@ -12154,12 +12154,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/619-provisional-selection-list-of-calicut-university-powerlifting-women-team-for-all-india-inter-university-powerlifting-w-championship-2025-26",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-912",
@@ -12167,12 +12167,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/618-the-university-of-calicut-invites-application-from-distinguished-academicians-for-appointment-as-emeritus-professor-in-the-department-of-biotechnology",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-913",
@@ -12180,12 +12180,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/617-notification-for-the-selection-of-research-assistant",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-914",
@@ -12193,12 +12193,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/616-regarding-the-correction-of-discrepancies-in-the-data-submitted-by-colleges-for-the-first-semester-fyugp-november-2024",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-915",
@@ -12206,12 +12206,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/615-notification-for-the-posting-of-guest-faculties-on-hourly-basis",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-916",
@@ -12219,12 +12219,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/614-dpe-all-india-inter-university-tug-of-war-m-w-championship-2025-26",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-917",
@@ -12232,12 +12232,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/613-dpe-all-india-inter-university-waterpolo-men-championship-2025-26",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-918",
@@ -12245,12 +12245,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/612-dpe-all-india-inter-university-tug-of-war-m-w-championship-2025-26",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-919",
@@ -12258,12 +12258,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/611-dpe-application-form-for-summer-coaching-camp-2026",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-920",
@@ -12271,12 +12271,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/610-dpe-application-form-for-summer-coaching-camp-in-swimming-2026",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-921",
@@ -12284,12 +12284,12 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/609-final-phd-entrance-rank-list-dept-of-nanoscience-and-technology",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   },
   {
     "id": "gen-922",
@@ -12297,11 +12297,11 @@ window.UNIVERSITY_NOTICES = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/608-rank-list-of-phd-2026-department-of-hindi",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "Official Order",
+    "sub_type": "University Notification",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "University of Calicut (Official)"
+    "source": "Public University Circular"
   }
 ];

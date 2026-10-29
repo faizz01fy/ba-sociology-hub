@@ -1049,7 +1049,7 @@
       <button type="button" class="sticky-btn-close" id="sticky-close" aria-label="Close Player">✕</button>
     </div>
   </aside>
-  <audio id="hub-voice-audio-element" preload="auto" playsinline style="display:none;"></audio>
+  <audio id="hub-voice-audio-element" preload="auto" playsinline style="position:fixed;bottom:-9999px;left:-9999px;opacity:0;pointer-events:none;"></audio>
 
   <!-- Load Subject Voice Data -->
   <script src="voice_explanation_data.js"></script>
@@ -1234,6 +1234,17 @@
                       <div class="vpp-status-sub">${v.chapter || mod.moduleName}</div>
                     </div>
                   </div>
+                  <!-- Native Hardware Audio Player (100% Reliable Mobile Playback) -->
+                  <div class="vpp-native-container" style="margin: 12px 0 10px; width: 100%;">
+                    <audio class="vpp-hardware-audio" controls controlslist="nodownload" playsinline preload="metadata" style="width: 100%; height: 42px; border-radius: 8px;">
+                      <source src="${v.audioUrl.startsWith('/') ? v.audioUrl : '/' + v.audioUrl}" type="audio/mpeg">
+                      Your browser does not support audio playback.
+                    </audio>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:12px;">
+                      <span style="color:#059669;font-weight:600;">● Stream: Cloudflare Edge (64kbps MP3)</span>
+                      <a href="${v.audioUrl.startsWith('/') ? v.audioUrl : '/' + v.audioUrl}" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:500;">Direct Audio Link ↗</a>
+                    </div>
+                  </div>
                   <div class="vpp-actions">
                     <button type="button" class="vpp-btn-pause" title="Pause / Resume playback">
                       <span class="vpp-pause-icon">⏸</span> Pause Voice
@@ -1333,6 +1344,7 @@
               pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
               equalizer.classList.remove('paused');
 
+              const cardNativeAudio = card.querySelector('.vpp-hardware-audio');
               if (v.audioUrl) {
                 let cleanUrl = String(v.audioUrl || '').trim();
                 if (cleanUrl && !cleanUrl.startsWith('/') && !cleanUrl.startsWith('http')) {
@@ -1342,6 +1354,9 @@
                 nativeAudio.playbackRate = speeds[speedIndex];
                 try { nativeAudio.load(); } catch(err) {}
                 const playPromise = nativeAudio.play();
+                if (cardNativeAudio && cardNativeAudio.paused) {
+                  try { cardNativeAudio.play().catch(function(){}); } catch(e) {}
+                }
                 if (playPromise !== undefined) {
                   playPromise.catch(e => {
                     console.warn('Audio play error:', e);
