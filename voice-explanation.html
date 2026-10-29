@@ -1039,7 +1039,7 @@
       <div class="sticky-icon" aria-hidden="true">▶</div>
       <div class="sticky-texts">
         <div class="sticky-title" id="sticky-title">Playing lecture...</div>
-        <div class="sticky-sub" id="sticky-sub">Calicut University Official Lecture</div>
+        <div class="sticky-sub" id="sticky-sub">Calicut University Curriculum Audio Lecture</div>
       </div>
     </div>
     <div class="sticky-actions">
@@ -1049,8 +1049,6 @@
       <button type="button" class="sticky-btn-close" id="sticky-close" aria-label="Close Player">✕</button>
     </div>
   </aside>
-  <audio id="hub-voice-audio-element" preload="auto" playsinline style="position:fixed;bottom:-9999px;left:-9999px;opacity:0;pointer-events:none;"></audio>
-
   <!-- Load Subject Voice Data -->
   <script src="voice_explanation_data.js"></script>
 
@@ -1086,23 +1084,8 @@
 
       let currentPlayingCard = null;
 
-      // Global HTML5 Audio instance bound to DOM for 100% reliable mobile speaker playback
-      let nativeAudio = (typeof document !== 'undefined') ? document.getElementById('hub-voice-audio-element') : null;
-      if (!nativeAudio) {
-        if (typeof document !== 'undefined' && typeof document.createElement === 'function') {
-          nativeAudio = document.createElement('audio');
-          nativeAudio.id = 'hub-voice-audio-element';
-          nativeAudio.preload = 'auto';
-          nativeAudio.setAttribute('playsinline', '');
-          if (document.body && typeof document.body.appendChild === 'function') {
-            document.body.appendChild(nativeAudio);
-          }
-        }
-        if (!nativeAudio && typeof Audio !== 'undefined') {
-          nativeAudio = new Audio();
-        }
-      }
-      window._activeNativeAudio = nativeAudio;
+      // Single active audio tracker across all cards
+      window._activeNativeAudio = null;
 
       // Render Subject Tab Buttons
       function renderSubjectTabs() {
@@ -1321,16 +1304,25 @@
                 });
                 navigator.mediaSession.setActionHandler('seekbackward', (details) => {
                   const skipTime = details.seekOffset || 10;
-                  nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - skipTime);
+                  if (cardNativeAudio) cardNativeAudio.currentTime = Math.max(0, cardNativeAudio.currentTime - skipTime);
                 });
                 navigator.mediaSession.setActionHandler('seekforward', (details) => {
                   const skipTime = details.seekOffset || 10;
-                  nativeAudio.currentTime = Math.min(nativeAudio.duration || 99999, nativeAudio.currentTime + skipTime);
+                  if (cardNativeAudio) cardNativeAudio.currentTime = Math.min(cardNativeAudio.duration || 99999, cardNativeAudio.currentTime + skipTime);
                 });
               }
             }
 
+            const cardNativeAudio = card.querySelector('.vpp-hardware-audio');
+
             function startPlayback() {
+              // Immediately silence all other audio elements on the entire page
+              document.querySelectorAll('audio').forEach(a => {
+                if (a !== cardNativeAudio) {
+                  try { a.pause(); a.currentTime = 0; } catch(_) {}
+                }
+              });
+
               // Deactivate any currently playing card
               if (currentPlayingCard && currentPlayingCard !== card) {
                 const prevTab = currentPlayingCard.querySelector('.mini-player-tab');
@@ -1344,81 +1336,49 @@
               pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
               equalizer.classList.remove('paused');
 
-              const cardNativeAudio = card.querySelector('.vpp-hardware-audio');
-              if (v.audioUrl) {
-                let cleanUrl = String(v.audioUrl || '').trim();
-                if (cleanUrl && !cleanUrl.startsWith('/') && !cleanUrl.startsWith('http')) {
-                  cleanUrl = '/' + cleanUrl;
-                }
-                nativeAudio.src = cleanUrl;
-                nativeAudio.playbackRate = speeds[speedIndex];
-                try { nativeAudio.load(); } catch(err) {}
-                const playPromise = nativeAudio.play();
-                if (cardNativeAudio && cardNativeAudio.paused) {
-                  try { cardNativeAudio.play().catch(function(){}); } catch(e) {}
-                }
-                if (playPromise !== undefined) {
-                  playPromise.catch(e => {
-                    console.warn('Audio play error:', e);
-                    playBtn.innerHTML = '<span aria-hidden="true">⚠️</span> Tap to play';
-                  });
-                }
-                nativeAudio.onerror = (e) => {
-                  console.error('Audio stream error for:', cleanUrl, nativeAudio.error);
-                  playBtn.innerHTML = '<span aria-hidden="true">⚠️</span> Stream error - retry';
-                };
-                nativeAudio.onended = () => {
-                  stopPlayback();
-                };
+              if (cardNativeAudio) {
+                cardNativeAudio.playbackRate = speeds[speedIndex];
+                cardNativeAudio.play().catch(e => console.warn('Audio play error:', e));
+                window._activeNativeAudio = cardNativeAudio;
               }
 
               playerTab.classList.add('active');
               card.classList.add('playing');
               playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
-              if (stickyBar) {
-                stickyBar.classList.add('visible');
-                stickyTitle.textContent = v.title;
-                stickySub.textContent = `${subject.name} • ${v.chapter || mod.moduleName}`;
-                stickyPauseIcon.textContent = '⏸';
-                stickyPauseText.textContent = 'Pause';
-              }
-              if (stickyBar) {
-                stickyBar.classList.add('visible');
-                stickyTitle.textContent = v.title;
-                stickySub.textContent = `${subject.name} • ${v.chapter || mod.moduleName}`;
-                stickyPauseIcon.textContent = '⏸';
-                stickyPauseText.textContent = 'Pause';
-              }
+
               currentPlayingCard = card;
               requestScreenWakeLock();
               setupMediaSession();
 
               // Update Bottom Sticky Bar
-              stickyTitle.textContent = v.title;
-              stickySub.textContent = `🎙️ ${subject.name} · ${v.chapter || mod.moduleName}`;
-              if (stickyYtLink && v.url) stickyYtLink.href = v.url;
-              if (stickyPauseIcon) stickyPauseIcon.textContent = '⏸';
-              if (stickyPauseText) stickyPauseText.textContent = 'Pause Voice';
-              stickyBar.classList.add('visible');
+              if (stickyBar) {
+                stickyTitle.textContent = v.title;
+                stickySub.textContent = `🎙️ ${subject.name} · ${v.chapter || mod.moduleName}`;
+                if (stickyYtLink && v.url) stickyYtLink.href = v.url;
+                if (stickyPauseIcon) stickyPauseIcon.textContent = '⏸';
+                if (stickyPauseText) stickyPauseText.textContent = 'Pause Voice';
+                stickyBar.classList.add('visible');
+              }
             }
 
             function stopPlayback() {
-              if (nativeAudio) {
-                nativeAudio.pause();
-                nativeAudio.currentTime = 0;
+              if (cardNativeAudio) {
+                cardNativeAudio.pause();
+                cardNativeAudio.currentTime = 0;
               }
               playerTab.classList.remove('active');
               card.classList.remove('playing');
               playBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
               if (currentPlayingCard === card) {
                 currentPlayingCard = null;
-                stickyBar.classList.remove('visible');
+                if (stickyBar) stickyBar.classList.remove('visible');
               }
             }
 
             function togglePause() {
-              if (isAudioPaused) {
-                nativeAudio.play().catch(e => console.warn(e));
+              if (!cardNativeAudio) return;
+              if (cardNativeAudio.paused) {
+                cardNativeAudio.play().catch(e => console.warn(e));
                 isAudioPaused = false;
                 pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
                 if (stickyPauseIcon) stickyPauseIcon.textContent = '⏸';
@@ -1426,7 +1386,7 @@
                 equalizer.classList.remove('paused');
                 playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
               } else {
-                nativeAudio.pause();
+                cardNativeAudio.pause();
                 isAudioPaused = true;
                 pauseBtn.innerHTML = '<span class="vpp-pause-icon">▶</span> Resume Voice';
                 if (stickyPauseIcon) stickyPauseIcon.textContent = '▶';
@@ -1434,6 +1394,28 @@
                 equalizer.classList.add('paused');
                 playBtn.innerHTML = '<span aria-hidden="true">▶</span> Paused';
               }
+            }
+
+            if (cardNativeAudio) {
+              cardNativeAudio.onplay = () => {
+                isAudioPaused = false;
+                equalizer.classList.remove('paused');
+                playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
+                pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
+                if (stickyPauseIcon) stickyPauseIcon.textContent = '⏸';
+                if (stickyPauseText) stickyPauseText.textContent = 'Pause Voice';
+              };
+              cardNativeAudio.onpause = () => {
+                isAudioPaused = true;
+                equalizer.classList.add('paused');
+                playBtn.innerHTML = '<span aria-hidden="true">▶</span> Paused';
+                pauseBtn.innerHTML = '<span class="vpp-pause-icon">▶</span> Resume Voice';
+                if (stickyPauseIcon) stickyPauseIcon.textContent = '▶';
+                if (stickyPauseText) stickyPauseText.textContent = 'Resume Voice';
+              };
+              cardNativeAudio.onended = () => {
+                stopPlayback();
+              };
             }
 
             playBtn.addEventListener('click', () => {
@@ -1458,27 +1440,27 @@
 
             pauseBtn.addEventListener('click', togglePause);
 
-            if (skipBackBtn) {
+                        if (skipBackBtn && cardNativeAudio) {
               skipBackBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - 10);
+                cardNativeAudio.currentTime = Math.max(0, cardNativeAudio.currentTime - 10);
               });
             }
 
-            if (skipFwdBtn) {
+            if (skipFwdBtn && cardNativeAudio) {
               skipFwdBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                nativeAudio.currentTime = Math.min(nativeAudio.duration || 99999, nativeAudio.currentTime + 10);
+                cardNativeAudio.currentTime = Math.min(cardNativeAudio.duration || 99999, cardNativeAudio.currentTime + 10);
               });
             }
 
-            if (speedBtn) {
+            if (speedBtn && cardNativeAudio) {
               speedBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 speedIndex = (speedIndex + 1) % speeds.length;
                 const newSpeed = speeds[speedIndex];
                 speedBtn.textContent = newSpeed + 'x';
-                nativeAudio.playbackRate = newSpeed;
+                cardNativeAudio.playbackRate = newSpeed;
               });
             }
 
@@ -1496,7 +1478,7 @@
             adSlot.innerHTML = `
               <span class="ad-disclaimer">SPONSORED STUDY RESOURCES</span>
               <div class="ad-placeholder-box" style="min-height:90px;display:flex;align-items:center;justify-content:center;color:#64748b;font-size:12px;background:#f8fafc;border-radius:8px;">
-                <span>📖 Calicut University FYUGP Official Study Material &amp; Exam Guide</span>
+                <span>📖 Calicut University FYUGP Study Material &amp; Exam Guide</span>
               </div>
             `;
             group.append(adSlot);
