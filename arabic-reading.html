@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
+<meta content="Calicut University BA Arabic Complete Malayalam & Arabic Study Guide (Malayalam Arabic Reading Portal)" name="description"/>
+<title>Arabic — Malayalam & Arabic Reading | Academic Hub</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Amiri:wght@400;700&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="study-guide-reader.html" rel="prefetch"/>
+<link href="assets/pdfjs/pdf.min.mjs" rel="prefetch"/>
+<link href="assets/pdfjs/pdf.worker.min.mjs" rel="prefetch"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+    :root {
+      --arabic-primary: #065f46;
+      --arabic-secondary: #047857;
+      --arabic-light: #ecfdf5;
+      --arabic-border: #a7f3d0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', 'Amiri', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #ecfdf5, #f0fdf4, #f8fafc);
+      padding: 30px 18px;
+      color: #0f172a;
+      min-height: 100vh;
+    }
+
+    .page-box {
+      max-width: 980px;
+      margin: auto;
+      background: #ffffff;
+      padding: 36px 32px;
+      border-radius: 28px;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+    }
+
+    .hero {
+      display: block !important;
+      position: relative !important;
+      min-height: 0 !important;
+      grid-template-columns: none !important;
+      gap: 0 !important;
+      margin: 0 0 28px 0 !important;
+      padding: 32px 24px 34px !important;
+      text-align: center !important;
+      background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #a7f3d0 100%) !important;
+      border: 1px solid #6ee7b7 !important;
+      border-radius: 24px !important;
+      box-shadow: 0 8px 24px rgba(4, 120, 87, 0.12) !important;
+      color: #0f172a !important;
+    }
+
+    .hero:before {
+      display: none !important;
+      content: none !important;
+    }
+
+    .uni-badge {
+      display: inline-block !important;
+      background: #d1fae5 !important;
+      color: #065f46 !important;
+      padding: 6px 18px !important;
+      border-radius: 999px !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      margin-bottom: 14px !important;
+      letter-spacing: 0.5px !important;
+      border: 1px solid #a7f3d0 !important;
+    }
+
+    .hero h1, .hero .hero-title {
+      display: block !important;
+      margin: 0 0 12px 0 !important;
+      background: transparent !important;
+      -webkit-background-clip: unset !important;
+      text-shadow: none !important;
+    }
+
+    .hero-title-ar {
+      display: block !important;
+      font-family: 'Amiri', serif !important;
+      font-size: clamp(26px, 4.2vw, 36px) !important;
+      line-height: 1.3 !important;
+      color: #065f46 !important;
+      direction: rtl;
+      margin-bottom: 6px;
+    }
+
+    .hero-title-en {
+      display: block !important;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+      font-size: clamp(22px, 3.6vw, 32px) !important;
+      line-height: 1.3 !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.01em !important;
+      margin: 0 0 6px 0 !important;
+      color: #064e3b !important;
+    }
+
+    .hero-title-ml {
+      display: block !important;
+      font-family: 'Noto Sans Malayalam', sans-serif !important;
+      font-size: clamp(15px, 2.4vw, 20px) !important;
+      line-height: 1.45 !important;
+      font-weight: 600 !important;
+      color: #047857 !important;
+    }
+
+    .reading-top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 20px;
+      padding: 10px 16px;
+      background: #ffffff;
+      border: 1.5px solid #a7f3d0;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+    }
+
+    @keyframes blink-nav-back {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1) hue-rotate(0deg);
+        box-shadow: 0 4px 14px rgba(29, 78, 216, 0.5);
+      }
+      50% {
+        transform: scale(1.05);
+        filter: brightness(1.28) hue-rotate(45deg);
+        box-shadow: 0 6px 24px rgba(124, 58, 237, 0.8), 0 0 18px 6px rgba(167, 139, 250, 0.85);
+      }
+    }
+
+    @keyframes blink-nav-home {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1) hue-rotate(0deg);
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.5);
+      }
+      50% {
+        transform: scale(1.05);
+        filter: brightness(1.28) hue-rotate(60deg);
+        box-shadow: 0 6px 24px rgba(245, 158, 11, 0.8), 0 0 18px 6px rgba(251, 191, 36, 0.85);
+      }
+    }
+
+    .reading-top-nav .btn-back,
+    .bottom-nav .nav-btn-back {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #4338ca 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+      font-weight: 850 !important;
+      text-shadow: 0 1px 2px rgba(15, 23, 42, 0.4);
+      animation: blink-nav-back 10s infinite ease-in-out !important;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      min-height: 40px;
+      padding: 8px 18px;
+      border-radius: 12px;
+      font-size: 13.5px;
+    }
+
+    .reading-top-nav .btn-home,
+    .bottom-nav .nav-btn-home {
+      background: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+      font-weight: 850 !important;
+      text-shadow: 0 1px 2px rgba(15, 23, 42, 0.4);
+      animation: blink-nav-home 10s infinite ease-in-out !important;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      min-height: 40px;
+      padding: 8px 18px;
+      border-radius: 12px;
+      font-size: 13.5px;
+    }
+
+    .filter-wrapper {
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .filter-btn {
+      padding: 11px 20px;
+      border-radius: 14px;
+      border: 2px solid var(--mod-border, #cbd5e1) !important;
+      background: linear-gradient(130deg, #ffffff, var(--mod-bg, #f8fafc)) !important;
+      color: var(--mod-c1, #334155) !important;
+      font-size: 13.5px;
+      font-weight: 750;
+      cursor: pointer;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--mod-c1, #065f46), var(--mod-c2, #047857)) !important;
+      color: #ffffff !important;
+      border-color: var(--mod-c1, #065f46) !important;
+      box-shadow: 0 4px 14px rgba(4, 120, 87, 0.35);
+    }
+
+    .search-bar {
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-bar input {
+      width: 100%;
+      max-width: 650px;
+      padding: 13px 22px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 14px;
+      font-size: 14.5px;
+      outline: none;
+      transition: all 0.2s ease;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    .search-bar input:focus {
+      border-color: #047857;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(4, 120, 87, 0.12);
+    }
+
+    .module-section {
+      margin-bottom: 32px;
+    }
+
+    .module-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .module-header h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0;
+    }
+
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 18px;
+    }
+
+    .chapter-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+
+    .chapter-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.09);
+      border-color: #047857;
+    }
+
+    .chapter-badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: #ecfdf5;
+      color: #065f46;
+      font-size: 11.5px;
+      font-weight: 750;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      border: 1px solid #a7f3d0;
+    }
+
+    .chapter-title-en {
+      font-size: 15.5px;
+      font-weight: 750;
+      color: #0f172a;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+
+    .chapter-title-ar {
+      font-family: 'Amiri', serif;
+      font-size: 17px;
+      color: #047857;
+      direction: rtl;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .chapter-title-ml {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .card-footer-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 12px;
+      margin-top: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #047857;
+    }
+
+    /* Modal Viewer */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.75);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      width: 100%;
+      max-width: 1100px;
+      height: 92vh;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background: #0f172a;
+      color: #ffffff;
+    }
+
+    .modal-title {
+      font-size: 15px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 60%;
+    }
+
+    .modal-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .modal-btn {
+      background: #334155;
+      color: #ffffff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .modal-btn:hover {
+      background: #475569;
+    }
+
+    .modal-btn-close {
+      background: #ef4444;
+    }
+
+    .modal-btn-close:hover {
+      background: #dc2626;
+    }
+
+    .modal-body {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      background: #f8fafc;
+    }
+
+    .modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+</style>
+</head>
+<body>
+
+<main class="page-box">
+  <!-- Sticky Top Navigation -->
+  <nav aria-label="Reading navigation" class="reading-top-nav">
+    <button aria-label="Go back" class="btn-back" onclick="if(window.history.length > 1){window.history.back();}else{window.location.href='index.html';}" type="button">← Back</button>
+    <a aria-label="Academic Hub Home" class="btn-home" href="index.html#top">⌂ Home</a>
+  </nav>
+
+  <!-- Hero Banner -->
+  <header class="hero">
+    <div class="uni-badge">CALICUT UNIVERSITY · CDOE · FYUGP</div>
+    <h1 class="hero-title">
+      <span class="hero-title-ar">المهارات الأساسية في اللغة العربية</span>
+      <span class="hero-title-en">Basic Arabic Language Skills (ARA1FA102) — Malayalam Arabic Reading</span>
+      <span class="hero-title-ml">അടിസ്ഥാന അറബിക് ഭാഷാ വൈദഗ്ധ്യം — മലയാളം വായന പഠന സഹായി</span>
+    </h1>
+  </header>
+
+  <!-- Module Filters -->
+  <nav aria-label="Filter by module" class="filter-wrapper">
+    <button class="filter-btn active" data-mod="all" onclick="filterModule('all', this)" style="--mod-c1:#065f46; --mod-c2:#047857; --mod-border:#a7f3d0; --mod-bg:#ecfdf5;">📚 All Modules (7 Selections)</button>
+    <button class="filter-btn" data-mod="mod1" onclick="filterModule('mod1', this)" style="--mod-c1:#0369a1; --mod-c2:#0284c7; --mod-border:#bae6fd; --mod-bg:#f0f9ff;">Module 1: Greetings & Introductions (3 Sections)</button>
+    <button class="filter-btn" data-mod="mod2" onclick="filterModule('mod2', this)" style="--mod-c1:#7c2d12; --mod-c2:#c2410c; --mod-border:#fed7aa; --mod-bg:#fff7ed;">Module 2: Poetic Dewdrops & Reading (4 Chapters)</button>
+  </nav>
+
+  <!-- Search Input -->
+  <div class="search-bar">
+    <input id="searchInput" onkeyup="filterChapters()" placeholder="Search by title, topic, Arabic phrase, or keyword..." type="text"/>
+  </div>
+
+  <!-- Module 1 Section -->
+  <section class="module-section" data-mod="mod1">
+    <div class="module-header">
+      <h2>Module 1 · Greetings and Introductions (التحيات والتعارف)</h2>
+    </div>
+    <div class="chapter-grid">
+
+      <!-- Mod 1 Item 1 -->
+      <article class="chapter-card" onclick="viewPdf('notesphere-ARABIC-module-1.pdf', 'Arabic Module 1 · Unit Overview & Learning Outcomes')">
+        <span class="chapter-badge">Unit I · Overview</span>
+        <div class="chapter-title-en">Unit I Overview, Learning Outcomes & Communicative Foundations</div>
+        <div class="chapter-title-ar">نظرة عامة على الوحدة ونتائج التعلم</div>
+        <div class="chapter-title-ml">യൂണിറ്റ് 1 ആമുഖം, പഠന ലക്ഷ്യങ്ങൾ, പ്രായോഗിക അറബിക് വിനിമയ ഘടനകൾ.</div>
+        <div class="card-footer-action">
+          <span>📖 Open Study PDF</span>
+          <span>↗</span>
+        </div>
+      </article>
+
+      <!-- Mod 1 Item 2 -->
+      <article class="chapter-card" onclick="viewPdf('notesphere-ARABIC-module-1 (1).pdf', 'Arabic Module 1 · Section 1: Self-Introduction')">
+        <span class="chapter-badge">Section 1</span>
+        <div class="chapter-title-en">Section 1: Self-Introduction & Introducing Others</div>
+        <div class="chapter-title-ar">القسم الأول : التعريف بالنفس والغير</div>
+        <div class="chapter-title-ml">സ്വയം പരിചയപ്പെടുത്തലും മറ്റുള്ളവരെ പരിചയപ്പെടുത്തലും — മോഡൽ സംഭാഷണങ്ങളും വ്യാകരണ കുറിപ്പുകളും.</div>
+        <div class="card-footer-action">
+          <span>📖 Open Study PDF</span>
+          <span>↗</span>
+        </div>
+      </article>
+
+      <!-- Mod 1 Item 3 -->
+      <article class="chapter-card" onclick="viewPdf('notesphere-ARABIC-module-1 (2).pdf', 'Arabic Module 1 · Section 2: Common Arabic Expressions')">
+        <span class="chapter-badge">Section 2</span>
+        <div class="chapter-title-en">Section 2: Common Arabic Expressions & Interrogatives</div>
+        <div class="chapter-title-ar">القسم الثاني : الكلمات الشائعة وأدوات الاستفهام</div>
+        <div class="chapter-title-ml">സാധാരണ അറബിക് സംഭാഷണ പ്രയോഗങ്ങൾ, ചോദ്യശബ്ദങ്ങൾ, വിഭക്തി പ്രത്യയങ്ങൾ.</div>
+        <div class="card-footer-action">
+          <span>📖 Open Study PDF</span>
+          <span>↗</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Module 2 Section -->
+  <section class="module-section" data-mod="mod2">
+    <div class="module-header">
+      <h2>Module 2 · Poetic Dewdrops & Arabic Reading Selections (قطرات الندى)</h2>
+    </div>
+    <div class="chapter-grid">
+
+      <!-- Mod 2 Item 1 -->
+      <article class="chapter-card" onclick="viewPdf('notesphere-ARABIC-module-2.pdf', 'Arabic Module 2 · Unit II Overview & Learning Outcomes')">
+        <span class="chapter-badge">Unit II · Overview</span>
+        <div class="chapter-title-en">Unit II: Poetic Dewdrops & Classical Arabic Reading</div>
+        <div class="chapter-title-ar">الوحدة الثانية : قطرات الندى وقراءات عربية</div>
+        <div class="chapter-title-ml">യൂണിറ്റ് 2 ആമുഖം, അറബിക് ക്ലാസിക്കൽ കവിതാ സാഹിത്യം, പഠന ലക്ഷ്യങ്ങൾ.</div>
+        <div class="card-footer-action">
+          <span>📖 Open Study PDF</span>
+          <span>↗</span>
+        </div>
+      </article>
+
+      <!-- Mod 2 Item 2 -->
+      <article class="chapter-card" onclick="viewPdf('notesphere-ARABIC-module-2 (1).pdf', 'Arabic Module 2 · Chapter 2: Work Is Wealth')">
+        <span class="chapter-badge">Chapter 2</span>
+        <div class="chapter-title-en">Chapter 2: Work Is Wealth (ثروة العمل)</div>
+        <div class="chapter-title-ar">الفصل الثاني : ثروة العمل</div>
+        <div class="chapter-title-ml">അധ്വാനത്തിന്റെ മഹത്വം വിവരിക്കുന്ന ഹൃദ്യമായ അറബിക് കഥയും പരിഭാഷയും.</div>
+        <div class="card-footer-action">
+          <span>📖 Open Study PDF</span>
+          <span>↗</span>
+        </div>
+      </article>
+
+      <!-- Mod 2 Item 3 -->
+      <article class="chapter-card" onclick="viewPdf('notesphere-ARABIC-module-2 (3).pdf', 'Arabic Module 2 · Chapter 3: Classical Anecdotes & Wit')">
+        <span class="chapter-badge">Chapter 3</span>
+        <div class="chapter-title-en">Chapter 3: Five Short Classical Anecdotes & Wit</div>
+        <div class="chapter-title-ar">طرائف عربية مختارة وفوائد أدبية</div>
+        <div class="chapter-title-ml">ഹാസ്യവും തത്ത്വചിന്തയും ചേരുന്ന 5 ക്ലാസിക്കൽ അറബിക് ചെറുകഥകൾ.</div>
+        <div class="card-footer-action">
+          <span>📖 Open Study PDF</span>
+          <span>↗</span>
+        </div>
+      </article>
+
+      <!-- Mod 2 Item 4 -->
+      <article class="chapter-card" onclick="viewPdf('notesphere-ARABIC-module-2 (4).pdf', 'Arabic Module 2 · Chapter 4: Time and Health')">
+        <span class="chapter-badge">Chapter 4</span>
+        <div class="chapter-title-en">Chapter 4: Time and Health (الوقت والصحة)</div>
+        <div class="chapter-title-ar">الفصل الرابع : الوقت والصحة</div>
+        <div class="chapter-title-ml">സമയത്തിന്റേയും ആരോഗ്യത്തിന്റേയും വിലയെക്കുറിച്ചുള്ള പഠന പ്രബന്ധം.</div>
+        <div class="card-footer-action">
+          <span>📖 Open Study PDF</span>
+          <span>↗</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- Viewer Modal -->
+<div class="modal" id="viewerModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="modal-title" id="modalTitle">Arabic PDF Viewer</span>
+      <div class="modal-header-actions">
+        <button class="modal-btn" id="modalFastToggle" onclick="toggleModalReaderEngine()">⚡ Fast</button>
+        <button class="modal-btn" onclick="zoomModalReader(0.15)">🔍 +</button>
+        <button class="modal-btn" onclick="zoomModalReader(-0.15)">🔍 -</button>
+        <button class="modal-btn" onclick="resetModalReaderZoom()">↺ 100%</button>
+        <a class="modal-btn" href="#" id="modalExternalBtn" target="_blank">↗ New Tab</a>
+        <button class="modal-btn modal-btn-close" onclick="closeViewerModal()">✕</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <iframe id="pdfFrame" src=""></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  function zoomModalReader(delta) {
+    const f = document.getElementById('pdfFrame');
+    f?.contentWindow?.postMessage({ action: 'zoom', delta: delta }, '*');
+  }
+
+  function resetModalReaderZoom() {
+    const f = document.getElementById('pdfFrame');
+    f?.contentWindow?.postMessage({ action: 'resetZoom' }, '*');
+  }
+
+  function filterModule(mod, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    const sections = document.querySelectorAll('.module-section');
+    sections.forEach(sec => {
+      if (mod === 'all' || sec.getAttribute('data-mod') === mod) {
+        sec.style.display = 'block';
+      } else {
+        sec.style.display = 'none';
+      }
+    });
+    filterChapters();
+  }
+
+  function filterChapters() {
+    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    const activeFilterBtn = document.querySelector('.filter-btn.active');
+    const activeMod = activeFilterBtn ? activeFilterBtn.getAttribute('data-mod') : 'all';
+
+    const cards = document.querySelectorAll('.chapter-card');
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      const parentSec = card.closest('.module-section');
+      const secMod = parentSec ? parentSec.getAttribute('data-mod') : 'all';
+
+      const matchesMod = (activeMod === 'all' || secMod === activeMod || !parentSec);
+      const matchesQuery = !query || text.includes(query);
+
+      if (matchesMod && matchesQuery) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  let isNativeFastMode = false;
+  let currentPdfCleanUrl = '';
+  let currentPdfCleanTitle = '';
+
+  function toggleModalReaderEngine() {
+    if (!currentPdfCleanUrl) return;
+    isNativeFastMode = !isNativeFastMode;
+    viewPdf(currentPdfCleanUrl, currentPdfCleanTitle);
+  }
+
+  function viewPdf(url, title) {
+    currentPdfCleanUrl = url.split('#')[0];
+    currentPdfCleanTitle = title;
+    const modalTitle = document.getElementById('modalTitle');
+    if (modalTitle) modalTitle.innerText = title;
+
+    const frame = document.getElementById('pdfFrame');
+    const extBtn = document.getElementById('modalExternalBtn');
+    const toggleBtn = document.getElementById('modalFastToggle');
+
+    if (isNativeFastMode) {
+      frame.src = currentPdfCleanUrl + '#toolbar=1&navpanes=1&zoom=page-width';
+      if (extBtn) extBtn.href = currentPdfCleanUrl;
+      if (toggleBtn) {
+        toggleBtn.innerText = '📖 Enhanced';
+        toggleBtn.style.background = '#047857';
+      }
+    } else {
+      const readerUrl = 'study-guide-reader.html?file=' + encodeURIComponent(currentPdfCleanUrl) + '&tab=malayalam_reading';
+      frame.src = readerUrl;
+      if (extBtn) extBtn.href = readerUrl;
+      if (toggleBtn) {
+        toggleBtn.innerText = '⚡ Fast';
+        toggleBtn.style.background = '#334155';
+      }
+    }
+
+    const modal = document.getElementById('viewerModal');
+    if (modal) modal.classList.add('active');
+  }
+
+  function closeViewerModal() {
+    const modal = document.getElementById('viewerModal');
+    if (modal) modal.classList.remove('active');
+    const frame = document.getElementById('pdfFrame');
+    if (frame) frame.src = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeViewerModal();
+  });
+</script>
+
+</body>
+</html>
