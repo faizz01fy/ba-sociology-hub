@@ -280,6 +280,21 @@
     }
 
     /* Chapter Card */
+    
+    .chapter-badge-chip {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #dc2626;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-bottom: 5px;
+    }
+
     .chapter-card {
       background: #ffffff;
       border: 1.5px solid var(--border);
@@ -956,6 +971,8 @@
             const durationText = v.duration ? `${v.duration}m` : 'Audio';
             const thumbUrl = `https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg`;
 
+            const chBadge = v.chapterNumber ? `<span class="chapter-badge-chip">${v.chapterNumber}</span>` : '';
+
             card.innerHTML = `
               <div class="card-top">
                 <div class="thumb-wrap">
@@ -964,6 +981,7 @@
                   <span class="thumb-duration">${durationText}</span>
                 </div>
                 <div class="card-info">
+                  ${chBadge}
                   <div class="card-title" title="${v.title}">${v.title}</div>
                   <div class="card-sub">${v.chapter || mod.moduleName}</div>
                 </div>
@@ -983,8 +1001,7 @@
                     <div class="vpp-mode-pill">
                       <span class="pulse-dot"></span> <span class="vpp-mode-text">Voice Mode (Audio Only)</span>
                     </div>
-                    <div class="vpp-channel-tag">
-                    </div>
+                    <div class="vpp-channel-tag"><span>🎙️ Malayalam Voice Lecture</span></div>
                   </div>
                   <div class="vpp-wave-bar">
                     <div class="vpp-equalizer">
@@ -992,7 +1009,7 @@
                     </div>
                     <div>
                       <div class="vpp-status-text">Playing Voice Lecture...</div>
-                      <div class="vpp-status-sub">Listening in Malayalam audio mode</div>
+                      <div class="vpp-status-sub">${v.chapter || mod.moduleName}</div>
                     </div>
                   </div>
                   <div class="vpp-actions">
