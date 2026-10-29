@@ -1049,6 +1049,7 @@
       <button type="button" class="sticky-btn-close" id="sticky-close" aria-label="Close Player">✕</button>
     </div>
   </aside>
+  <audio id="hub-voice-audio-element" preload="auto" playsinline style="display:none;"></audio>
 
   <!-- Load Subject Voice Data -->
   <script src="voice_explanation_data.js"></script>
@@ -1085,11 +1086,23 @@
 
       let currentPlayingCard = null;
 
-      // Global HTML5 Audio instance for Direct MP3 Audio Stream
-      if (!window._activeNativeAudio) {
-        window._activeNativeAudio = new Audio();
+      // Global HTML5 Audio instance bound to DOM for 100% reliable mobile speaker playback
+      let nativeAudio = (typeof document !== 'undefined') ? document.getElementById('hub-voice-audio-element') : null;
+      if (!nativeAudio) {
+        if (typeof document !== 'undefined' && typeof document.createElement === 'function') {
+          nativeAudio = document.createElement('audio');
+          nativeAudio.id = 'hub-voice-audio-element';
+          nativeAudio.preload = 'auto';
+          nativeAudio.setAttribute('playsinline', '');
+          if (document.body && typeof document.body.appendChild === 'function') {
+            document.body.appendChild(nativeAudio);
+          }
+        }
+        if (!nativeAudio && typeof Audio !== 'undefined') {
+          nativeAudio = new Audio();
+        }
       }
-      const nativeAudio = window._activeNativeAudio;
+      window._activeNativeAudio = nativeAudio;
 
       // Render Subject Tab Buttons
       function renderSubjectTabs() {
@@ -1321,9 +1334,24 @@
               equalizer.classList.remove('paused');
 
               if (v.audioUrl) {
-                nativeAudio.src = v.audioUrl;
+                let cleanUrl = String(v.audioUrl || '').trim();
+                if (cleanUrl && !cleanUrl.startsWith('/') && !cleanUrl.startsWith('http')) {
+                  cleanUrl = '/' + cleanUrl;
+                }
+                nativeAudio.src = cleanUrl;
                 nativeAudio.playbackRate = speeds[speedIndex];
-                nativeAudio.play().catch(e => console.warn('Audio play error:', e));
+                try { nativeAudio.load(); } catch(err) {}
+                const playPromise = nativeAudio.play();
+                if (playPromise !== undefined) {
+                  playPromise.catch(e => {
+                    console.warn('Audio play error:', e);
+                    playBtn.innerHTML = '<span aria-hidden="true">⚠️</span> Tap to play';
+                  });
+                }
+                nativeAudio.onerror = (e) => {
+                  console.error('Audio stream error for:', cleanUrl, nativeAudio.error);
+                  playBtn.innerHTML = '<span aria-hidden="true">⚠️</span> Stream error - retry';
+                };
                 nativeAudio.onended = () => {
                   stopPlayback();
                 };
@@ -1332,6 +1360,20 @@
               playerTab.classList.add('active');
               card.classList.add('playing');
               playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
+              if (stickyBar) {
+                stickyBar.classList.add('visible');
+                stickyTitle.textContent = v.title;
+                stickySub.textContent = `${subject.name} • ${v.chapter || mod.moduleName}`;
+                stickyPauseIcon.textContent = '⏸';
+                stickyPauseText.textContent = 'Pause';
+              }
+              if (stickyBar) {
+                stickyBar.classList.add('visible');
+                stickyTitle.textContent = v.title;
+                stickySub.textContent = `${subject.name} • ${v.chapter || mod.moduleName}`;
+                stickyPauseIcon.textContent = '⏸';
+                stickyPauseText.textContent = 'Pause';
+              }
               currentPlayingCard = card;
               requestScreenWakeLock();
               setupMediaSession();
@@ -1386,6 +1428,18 @@
                 startPlayback();
               }
             });
+
+            const thumbWrap = card.querySelector('.thumb-wrap');
+            if (thumbWrap) {
+              thumbWrap.style.cursor = 'pointer';
+              thumbWrap.addEventListener('click', () => {
+                if (playerTab.classList.contains('active')) {
+                  togglePause();
+                } else {
+                  startPlayback();
+                }
+              });
+            }
 
             pauseBtn.addEventListener('click', togglePause);
 
