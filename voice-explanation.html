@@ -1105,7 +1105,7 @@
         });
       }
 
-            // Render Chapters for Selected Subject
+                  // Render Chapters for Selected Subject
       function renderChapters(filterQuery = '') {
         const subject = data[currentSlug];
         if (!subject) return;
@@ -1336,7 +1336,7 @@
                   nativeAudio.onended = () => {
                     stopPlayback();
                   };
-                
+                }
 
                 playerTab.classList.add('active');
                 card.classList.add('playing');
@@ -1370,16 +1370,9 @@
               function togglePause() {
                 if (isAudioPaused) {
                   if (v.youtubeId) {
-                  frameWrap.innerHTML = `
-                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
-                            title="${v.title}"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                    </iframe>`;
-                } else if (v.audioUrl) {
-                    nativeAudio.play();
-                  } else {
                     sendCommandToYt('playVideo');
+                  } else if (v.audioUrl) {
+                    nativeAudio.play();
                   }
                   isAudioPaused = false;
                   pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
@@ -1387,16 +1380,9 @@
                   playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
                 } else {
                   if (v.youtubeId) {
-                  frameWrap.innerHTML = `
-                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
-                            title="${v.title}"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                    </iframe>`;
-                } else if (v.audioUrl) {
-                    nativeAudio.pause();
-                  } else {
                     sendCommandToYt('pauseVideo');
+                  } else if (v.audioUrl) {
+                    nativeAudio.pause();
                   }
                   isAudioPaused = true;
                   pauseBtn.innerHTML = '<span class="vpp-pause-icon">▶</span> Resume Voice';
@@ -1430,16 +1416,9 @@
                 skipBackBtn.addEventListener('click', (e) => {
                   e.stopPropagation();
                   if (v.youtubeId) {
-                  frameWrap.innerHTML = `
-                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
-                            title="${v.title}"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                    </iframe>`;
-                } else if (v.audioUrl) {
-                    nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - 10);
-                  } else {
                     sendCommandToYt('seekTo', '-10');
+                  } else if (v.audioUrl) {
+                    nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - 10);
                   }
                 });
               }
@@ -1448,16 +1427,9 @@
                 skipFwdBtn.addEventListener('click', (e) => {
                   e.stopPropagation();
                   if (v.youtubeId) {
-                  frameWrap.innerHTML = `
-                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
-                            title="${v.title}"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                    </iframe>`;
-                } else if (v.audioUrl) {
-                    nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + 10);
-                  } else {
                     sendCommandToYt('seekTo', '+10');
+                  } else if (v.audioUrl) {
+                    nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + 10);
                   }
                 });
               }
@@ -1469,15 +1441,6 @@
                   const newSpeed = speeds[speedIndex];
                   speedBtn.textContent = newSpeed + 'x';
                   if (v.youtubeId) {
-                  frameWrap.innerHTML = `
-                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
-                            title="${v.title}"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                    </iframe>`;
-                } else if (v.audioUrl) {
-                    nativeAudio.playbackRate = newSpeed;
-                  } else {
                     const iframe = frameWrap.querySelector('iframe');
                     if (iframe && iframe.contentWindow) {
                       iframe.contentWindow.postMessage(JSON.stringify({
@@ -1486,6 +1449,8 @@
                         args: [newSpeed]
                       }), '*');
                     }
+                  } else if (v.audioUrl) {
+                    nativeAudio.playbackRate = newSpeed;
                   }
                 });
               }
