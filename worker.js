@@ -45,6 +45,18 @@ function json(payload, status = 200) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if (url.pathname.startsWith("/audio/")) {
+      const audioResp = await env.ASSETS.fetch(request);
+      const newHeaders = new Headers(audioResp.headers);
+      newHeaders.set("Cache-Control", "public, max-age=31536000, immutable");
+      newHeaders.set("Accept-Ranges", "bytes");
+      newHeaders.set("Access-Control-Allow-Origin", "*");
+      return new Response(audioResp.body, {
+        status: audioResp.status,
+        statusText: audioResp.statusText,
+        headers: newHeaders
+      });
+    }
     if (url.pathname === "/api/tts") {
       const tl = url.searchParams.get("tl") || "ml";
       const q = url.searchParams.get("q") || "";
