@@ -7,7 +7,6 @@
   <meta name="robots" content="noindex, follow" />
   <meta name="googlebot" content="noindex, follow" />
   <meta name="googlebot-news" content="noindex, follow" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
   <title>Voice Explanations | YouTube Audio Classes</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -447,6 +446,36 @@
       gap: 12px;
       align-items: flex-start;
     }
+    
+    .thumb-wrap--audio {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+      border: 1px solid #fecdd3;
+    }
+    .thumb-audio-icon {
+      font-size: 26px;
+    }
+    .voice-scheduled-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+    .pulse-dot-scheduled {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #94a3b8;
+    }
+
     .thumb-wrap {
       position: relative;
       width: 110px;
@@ -812,7 +841,13 @@
     }
 
     .player-frame-wrap.voice-hidden {
-      display: none !important;
+      position: absolute !important;
+      width: 2px !important;
+      height: 2px !important;
+      opacity: 0.001 !important;
+      pointer-events: none !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
     }
 
     /* Sticky Bottom Audio Bar */
@@ -936,43 +971,6 @@
       .hero-title-group h1 { font-size: 20px; }
       .bottom-sticky-bar { padding: 10px 14px; }
     }
-  
-    /* Audio Cover Art */
-    .audio-thumb-wrap {
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .audio-cover-badge {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    .audio-mic-icon {
-      font-size: 38px;
-      filter: drop-shadow(0 4px 12px rgba(220, 38, 38, 0.45));
-      animation: floatMic 3s ease-in-out infinite;
-    }
-    @keyframes floatMic {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-    }
-    .audio-lang-pill {
-      font-size: 11px;
-      font-weight: 700;
-      color: #f87171;
-      background: rgba(220, 38, 38, 0.18);
-      border: 1px solid rgba(248, 113, 113, 0.35);
-      border-radius: 999px;
-      padding: 2px 10px;
-      letter-spacing: 0.5px;
-    }
-
   </style>
 </head>
 <body>
@@ -1039,7 +1037,7 @@
       <div class="sticky-icon" aria-hidden="true">▶</div>
       <div class="sticky-texts">
         <div class="sticky-title" id="sticky-title">Playing lecture...</div>
-        <div class="sticky-sub" id="sticky-sub">Calicut University Curriculum Audio Lecture</div>
+        <div class="sticky-sub" id="sticky-sub">Calicut University Official Lecture</div>
       </div>
     </div>
     <div class="sticky-actions">
@@ -1049,6 +1047,7 @@
       <button type="button" class="sticky-btn-close" id="sticky-close" aria-label="Close Player">✕</button>
     </div>
   </aside>
+
   <!-- Load Subject Voice Data -->
   <script src="voice_explanation_data.js"></script>
 
@@ -1058,7 +1057,7 @@
 
       // Determine initial subject from URL query param `?subject=...`
       const urlParams = new URLSearchParams(window.location.search);
-      let currentSlug = (urlParams.get('subject') || 'sociology').toLowerCase();
+      let currentSlug = (urlParams.get('subject') || 'malayalam').toLowerCase();
 
       // Fallback if slug not found
       if (!data[currentSlug]) {
@@ -1078,14 +1077,8 @@
       const stickySub = document.getElementById('sticky-sub');
       const stickyYtLink = document.getElementById('sticky-yt-link');
       const stickyClose = document.getElementById('sticky-close');
-      const stickyPauseToggle = document.getElementById('sticky-pause-toggle');
-      const stickyPauseIcon = document.getElementById('sticky-pause-icon');
-      const stickyPauseText = document.getElementById('sticky-pause-text');
 
       let currentPlayingCard = null;
-
-      // Single active audio tracker across all cards
-      window._activeNativeAudio = null;
 
       // Render Subject Tab Buttons
       function renderSubjectTabs() {
@@ -1098,7 +1091,7 @@
           btn.dataset.slug = slug;
           btn.setAttribute('role', 'tab');
           btn.setAttribute('aria-selected', slug === currentSlug ? 'true' : 'false');
-          btn.innerHTML = `<span style="font-weight:800;">${s.badge || '🎙️'}</span> ${s.name} <span class="subj-badge">${s.totalVideos || 0}</span>`;
+          btn.innerHTML = `<span style="font-weight:800;">${s.badge}</span> ${s.name} <span class="subj-badge">${s.totalVideos || 0}</span>`;
           btn.addEventListener('click', () => {
             if (currentSlug !== slug) {
               currentSlug = slug;
@@ -1112,23 +1105,26 @@
         });
       }
 
-      // Render Chapters for Selected Subject
+            // Render Chapters for Selected Subject
       function renderChapters(filterQuery = '') {
         const subject = data[currentSlug];
         if (!subject) return;
 
-        heroSubjectName.innerHTML = `${subject.badge || '🎙️'} ${subject.name}`;
-        statVideoCount.textContent = subject.totalVideos || 0;
+        heroSubjectName.innerHTML = `${subject.badge} ${subject.name}`;
+        
+        let totalChs = 0;
+        (subject.modules || []).forEach(m => totalChs += (m.videos || []).length);
+        statVideoCount.textContent = (subject.totalVideos > 0) ? `${subject.totalVideos} Live Lectures` : `${totalChs} Chapters`;
         statModuleCount.textContent = (subject.modules || []).length;
 
         chaptersContainer.innerHTML = '';
 
-        if (!subject.modules || subject.modules.length === 0 || subject.totalVideos === 0) {
+        if (!subject.modules || subject.modules.length === 0) {
           chaptersContainer.innerHTML = `
             <div class="empty-state">
               <span class="empty-icon">🎧</span>
               <div class="empty-title">Voice Explanations Coming Soon</div>
-              <div class="empty-desc">Malayalam voice lectures and chapter explanations for <strong>${subject.name}</strong> will be embedded here shortly.</div>
+              <div class="empty-desc">Malayalam voice lectures and chapter explanations for <strong>${subject.name}</strong> will be embedded here by chapter and module.</div>
             </div>`;
           return;
         }
@@ -1150,6 +1146,10 @@
           const group = document.createElement('section');
           group.className = 'module-group';
 
+          const activeCount = filteredVids.filter(v => v.youtubeId || v.audioUrl).length;
+          const totalCount = filteredVids.length;
+          const countLabel = activeCount > 0 ? `${activeCount} Live / ${totalCount} Chapters` : `${totalCount} Chapters`;
+
           const mHeader = document.createElement('div');
           mHeader.className = 'module-header';
           mHeader.innerHTML = `
@@ -1157,7 +1157,7 @@
               <span style="color:var(--primary);font-size:14px;">📁</span>
               <span>${mod.moduleName}</span>
             </div>
-            <div class="module-count">${filteredVids.length} Voice Lectures</div>
+            <div class="module-count">${countLabel}</div>
           `;
           group.append(mHeader);
 
@@ -1167,308 +1167,376 @@
           filteredVids.forEach(v => {
             const card = document.createElement('article');
             card.className = 'chapter-card';
-            card.dataset.audio = v.audioUrl || '';
+            card.dataset.ytid = v.youtubeId || '';
 
+            const hasActiveAudio = !!(v.youtubeId || v.audioUrl);
             const durationText = v.duration ? `${v.duration}m` : 'Audio';
+            const thumbUrl = v.youtubeId ? `https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg` : '';
             const chBadge = v.chapterNumber ? `<span class="chapter-badge-chip">${v.chapterNumber}</span>` : '';
 
-            const thumbMarkup = (v.youtubeId)
-              ? `<img class="thumb-img" src="https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg" alt="${v.title}" loading="lazy" />`
-              : `<div class="audio-cover-badge">
-                   <span class="audio-mic-icon">🎙️</span>
-                   <span class="audio-lang-pill">മലയാളം</span>
-                 </div>`;
-
-            card.innerHTML = `
-              <div class="card-top">
-                <div class="thumb-wrap audio-thumb-wrap">
-                  ${thumbMarkup}
-                  <span class="play-overlay-icon" aria-hidden="true">▶</span>
-                  <span class="thumb-duration">${durationText}</span>
-                </div>
-                <div class="card-info">
-                  ${chBadge}
-                  <div class="card-title" title="${v.title}">${v.title}</div>
-                  <div class="card-sub">${v.chapter || mod.moduleName}</div>
-                </div>
-              </div>
-
-              <div class="card-actions">
-                <button type="button" class="btn-play-voice">
-                  <span aria-hidden="true">▶</span> Play Voice
-                </button>
-              </div>
-
-              <!-- Compact Embedded Voice Player Tab -->
-              <div class="mini-player-tab">
-                <div class="voice-podcast-player">
-                  <div class="vpp-top">
-                    <div class="vpp-mode-pill">
-                      <span class="pulse-dot"></span> <span class="vpp-mode-text">Voice Mode (Direct Audio)</span>
-                    </div>
-                    <div class="vpp-channel-tag"><span>🎙️ Malayalam Voice Lecture</span></div>
+            if (hasActiveAudio) {
+              card.innerHTML = `
+                <div class="card-top">
+                  <div class="thumb-wrap">
+                    <img class="thumb-img" src="${thumbUrl}" alt="${v.title}" loading="lazy" />
+                    <span class="play-overlay-icon" aria-hidden="true">▶</span>
+                    <span class="thumb-duration">${durationText}</span>
                   </div>
-                  <div class="vpp-wave-bar">
-                    <div class="vpp-equalizer">
-                      <span></span><span></span><span></span><span></span><span></span><span></span>
-                    </div>
-                    <div style="flex:1;min-width:0;">
-                      <div class="vpp-status-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${v.title}</div>
-                      <div class="vpp-status-sub">${v.chapter || mod.moduleName}</div>
-                    </div>
-                  </div>
-                  <!-- Native Hardware Audio Player (100% Reliable Mobile Playback) -->
-                  <div class="vpp-native-container" style="margin: 12px 0 10px; width: 100%;">
-                    <audio class="vpp-hardware-audio" src="${v.audioUrl.startsWith('/') ? v.audioUrl : '/' + v.audioUrl}" controls controlslist="nodownload" playsinline preload="metadata" style="width: 100%; height: 42px; border-radius: 8px;">
-                      <source src="${v.audioUrl.startsWith('/') ? v.audioUrl : '/' + v.audioUrl}" type="audio/mpeg">
-                      Your browser does not support audio playback.
-                    </audio>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:12px;">
-                      <span style="color:#059669;font-weight:600;">● Stream: Cloudflare Edge (64kbps MP3)</span>
-                      <a href="${v.audioUrl.startsWith('/') ? v.audioUrl : '/' + v.audioUrl}" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:500;">Direct Audio Link ↗</a>
-                    </div>
-                  </div>
-                  <div class="vpp-actions">
-                    <button type="button" class="vpp-btn-pause" title="Pause / Resume playback">
-                      <span class="vpp-pause-icon">⏸</span> Pause Voice
-                    </button>
-                    <button type="button" class="vpp-btn-skip vpp-skip-back" title="Rewind 10 seconds">
-                      ↺ 10s
-                    </button>
-                    <button type="button" class="vpp-btn-skip vpp-skip-fwd" title="Skip 10 seconds">
-                      10s ↻
-                    </button>
-                    <button type="button" class="vpp-speed-btn" title="Playback Speed">1.0x</button>
-                    <button type="button" class="vpp-btn-close" title="Close player">✕ Close</button>
+                  <div class="card-info">
+                    ${chBadge}
+                    <div class="card-title" title="${v.title}">${v.title}</div>
+                    <div class="card-sub">${v.chapter || mod.moduleName}</div>
                   </div>
                 </div>
 
-                <div class="player-frame-wrap voice-hidden">
-                  <!-- Native audio container -->
+                <div class="card-actions">
+                  <button type="button" class="btn-play-voice">
+                    <span aria-hidden="true">▶</span> Play Voice
+                  </button>
                 </div>
-              </div>
 
-              <!-- Chapter Study Notes & Exam Points (Read Along while Listening) -->
-              ${v.studyPoints && v.studyPoints.length > 0 ? `
-              <details class="chapter-notes-box" open>
-                <summary class="notes-summary">
-                  <span class="notes-title-wrap">
-                    <span aria-hidden="true">📝</span>
-                    <span><strong>Study Notes &amp; Exam Points</strong> (മലയാളം &amp; Eng)</span>
-                  </span>
-                  <span class="notes-chevron" aria-hidden="true">▼</span>
-                </summary>
-                <div class="notes-content">
-                  <ul class="notes-list">
-                    ${v.studyPoints.map(p => `<li>${p}</li>`).join('')}
-                  </ul>
-                  ${v.examTip ? `
-                  <div class="exam-tip-badge">
-                    <strong>🎯 Exam Revision Highlight:</strong> ${v.examTip}
-                  </div>` : ''}
+                <!-- Compact Embedded Voice Player Tab -->
+                <div class="mini-player-tab">
+                  <div class="voice-podcast-player">
+                    <div class="vpp-top">
+                      <div class="vpp-mode-pill">
+                        <span class="pulse-dot"></span> <span class="vpp-mode-text">Voice Mode (Audio Only)</span>
+                      </div>
+                      <div class="vpp-channel-tag"><span>🎙️ Malayalam Voice Lecture</span></div>
+                    </div>
+                    <div class="vpp-wave-bar">
+                      <div class="vpp-equalizer">
+                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                      </div>
+                      <div>
+                        <div class="vpp-status-text">Playing Voice Lecture...</div>
+                        <div class="vpp-status-sub">${v.chapter || mod.moduleName}</div>
+                      </div>
+                    </div>
+                    <div class="vpp-actions">
+                      <button type="button" class="vpp-btn-pause" title="Pause / Resume playback">
+                        <span class="vpp-pause-icon">⏸</span> Pause Voice
+                      </button>
+                      <button type="button" class="vpp-btn-skip vpp-skip-back" title="Rewind 10 seconds">
+                        ↺ 10s
+                      </button>
+                      <button type="button" class="vpp-btn-skip vpp-skip-fwd" title="Skip 10 seconds">
+                        10s ↻
+                      </button>
+                      <button type="button" class="vpp-speed-btn" title="Playback Speed">1.0x</button>
+                      <button type="button" class="vpp-btn-close" title="Close player">✕ Close</button>
+                    </div>
+                  </div>
+
+                  <div class="player-frame-wrap voice-hidden">
+                    <!-- iframe inserted on play -->
+                  </div>
                 </div>
-              </details>` : ''}
-            `;
 
-            const playBtn = card.querySelector('.btn-play-voice');
-            const playerTab = card.querySelector('.mini-player-tab');
-            const frameWrap = card.querySelector('.player-frame-wrap');
-            const pauseBtn = card.querySelector('.vpp-btn-pause');
-            const closeBtn = card.querySelector('.vpp-btn-close');
-            const equalizer = card.querySelector('.vpp-equalizer');
-            const skipBackBtn = card.querySelector('.vpp-skip-back');
-            const skipFwdBtn = card.querySelector('.vpp-skip-fwd');
-            const speedBtn = card.querySelector('.vpp-speed-btn');
+                <!-- Chapter Study Notes & Exam Points -->
+                ${v.studyPoints && v.studyPoints.length > 0 ? `
+                <details class="chapter-notes-box" open>
+                  <summary class="notes-summary">
+                    <span class="notes-title-wrap">
+                      <span aria-hidden="true">📝</span>
+                      <span><strong>Study Notes &amp; Exam Points</strong> (മലയാളം &amp; Eng)</span>
+                    </span>
+                    <span class="notes-chevron" aria-hidden="true">▼</span>
+                  </summary>
+                  <div class="notes-content">
+                    <ul class="notes-list">
+                      ${v.studyPoints.map(p => `<li>${p}</li>`).join('')}
+                    </ul>
+                    ${v.examTip ? `
+                    <div class="exam-tip-badge">
+                      <strong>🎯 Exam Revision Highlight:</strong> ${v.examTip}
+                    </div>` : ''}
+                  </div>
+                </details>` : ''}
+              `;
 
-            const speeds = [1.0, 1.25, 1.5, 0.75];
-            let speedIndex = 0;
-            let isAudioPaused = false;
+              const playBtn = card.querySelector('.btn-play-voice');
+              const playerTab = card.querySelector('.mini-player-tab');
+              const frameWrap = card.querySelector('.player-frame-wrap');
+              const pauseBtn = card.querySelector('.vpp-btn-pause');
+              const closeBtn = card.querySelector('.vpp-btn-close');
+              const equalizer = card.querySelector('.vpp-equalizer');
 
-            // Mobile Lock-Screen & Background Playback Support (MediaSession API)
-            function setupMediaSession() {
-              if ('mediaSession' in navigator) {
-                navigator.mediaSession.metadata = new MediaMetadata({
-                  title: v.title,
-                  artist: `${subject.name} (Malayalam Voice)`,
-                  album: mod.moduleName,
-                  artwork: [
-                    { src: 'https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=512&h=512&q=80', sizes: '512x512', type: 'image/jpeg' }
-                  ]
-                });
+              let isAudioPaused = false;
 
-                navigator.mediaSession.setActionHandler('play', () => {
-                  if (isAudioPaused) togglePause();
-                });
-                navigator.mediaSession.setActionHandler('pause', () => {
-                  if (!isAudioPaused) togglePause();
-                });
-                navigator.mediaSession.setActionHandler('seekbackward', (details) => {
-                  const skipTime = details.seekOffset || 10;
-                  if (cardNativeAudio) cardNativeAudio.currentTime = Math.max(0, cardNativeAudio.currentTime - skipTime);
-                });
-                navigator.mediaSession.setActionHandler('seekforward', (details) => {
-                  const skipTime = details.seekOffset || 10;
-                  if (cardNativeAudio) cardNativeAudio.currentTime = Math.min(cardNativeAudio.duration || 99999, cardNativeAudio.currentTime + skipTime);
-                });
-              }
-            }
-
-            const cardNativeAudio = card.querySelector('.vpp-hardware-audio');
-
-            function startPlayback() {
-              // Immediately silence all other audio elements on the entire page
-              document.querySelectorAll('audio').forEach(a => {
-                if (a !== cardNativeAudio) {
-                  try { a.pause(); a.currentTime = 0; } catch(_) {}
+              function sendCommandToYt(func, args) {
+                const iframe = frameWrap.querySelector('iframe');
+                if (iframe && iframe.contentWindow) {
+                  iframe.contentWindow.postMessage(JSON.stringify({
+                    event: 'command',
+                    func: func,
+                    args: args || ''
+                  }), '*');
                 }
-              });
-
-              // Deactivate any currently playing card
-              if (currentPlayingCard && currentPlayingCard !== card) {
-                const prevTab = currentPlayingCard.querySelector('.mini-player-tab');
-                const prevPlayBtn = currentPlayingCard.querySelector('.btn-play-voice');
-                if (prevTab) prevTab.classList.remove('active');
-                if (prevPlayBtn) prevPlayBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
-                currentPlayingCard.classList.remove('playing');
               }
 
-              isAudioPaused = false;
-              pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
-              equalizer.classList.remove('paused');
+              // Mobile Lock-Screen & Background Playback Support (MediaSession API)
+              function setupMediaSession() {
+                if ('mediaSession' in navigator) {
+                  navigator.mediaSession.metadata = new MediaMetadata({
+                    title: v.title,
+                    artist: `${subject.name} (Malayalam Voice)`,
+                    album: mod.moduleName,
+                    artwork: [
+                      { src: thumbUrl, sizes: '512x512', type: 'image/jpeg' }
+                    ]
+                  });
 
-              if (cardNativeAudio) {
-                const cleanUrl = v.audioUrl.startsWith('/') ? v.audioUrl : '/' + v.audioUrl;
-                if (!cardNativeAudio.getAttribute('src')) {
-                  cardNativeAudio.src = cleanUrl;
+                  navigator.mediaSession.setActionHandler('play', () => {
+                    if (isAudioPaused) togglePause();
+                  });
+                  navigator.mediaSession.setActionHandler('pause', () => {
+                    if (!isAudioPaused) togglePause();
+                  });
+                  navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+                    const skipTime = details.seekOffset || 10;
+                    sendCommandToYt('seekTo', `-${skipTime}`);
+                  });
+                  navigator.mediaSession.setActionHandler('seekforward', (details) => {
+                    const skipTime = details.seekOffset || 10;
+                    sendCommandToYt('seekTo', `+${skipTime}`);
+                  });
                 }
-                cardNativeAudio.playbackRate = speeds[speedIndex];
-                cardNativeAudio.play().catch(e => console.warn('Audio play error:', e));
-                window._activeNativeAudio = cardNativeAudio;
               }
 
-              playerTab.classList.add('active');
-              card.classList.add('playing');
-              playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
+              function startPlayback() {
+                // Deactivate any currently playing card
+                if (currentPlayingCard && currentPlayingCard !== card) {
+                  const prevTab = currentPlayingCard.querySelector('.mini-player-tab');
+                  const prevFrame = currentPlayingCard.querySelector('.player-frame-wrap');
+                  const prevPlayBtn = currentPlayingCard.querySelector('.btn-play-voice');
+                  if (prevTab) prevTab.classList.remove('active');
+                  if (prevFrame) prevFrame.innerHTML = '';
+                  if (prevPlayBtn) prevPlayBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
+                  currentPlayingCard.classList.remove('playing');
+                }
 
-              currentPlayingCard = card;
-              requestScreenWakeLock();
-              setupMediaSession();
+                frameWrap.classList.add('voice-hidden');
+                isAudioPaused = false;
+                pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
+                equalizer.classList.remove('paused');
 
-              // Update Bottom Sticky Bar
-              if (stickyBar) {
+                if (v.youtubeId) {
+                  frameWrap.innerHTML = `
+                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
+                            title="${v.title}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                    </iframe>`;
+                } else if (v.audioUrl) {
+                  frameWrap.innerHTML = '';
+                  nativeAudio.src = v.audioUrl;
+                  nativeAudio.playbackRate = speeds[speedIndex];
+                  nativeAudio.play().catch(e => console.warn('Audio play error:', e));
+                  nativeAudio.onended = () => {
+                    stopPlayback();
+                  };
+                
+
+                playerTab.classList.add('active');
+                card.classList.add('playing');
+                playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
+                currentPlayingCard = card;
+                requestScreenWakeLock();
+                setupMediaSession();
+
+                // Update Bottom Sticky Bar
                 stickyTitle.textContent = v.title;
                 stickySub.textContent = `🎙️ ${subject.name} · ${v.chapter || mod.moduleName}`;
-                if (stickyYtLink && v.url) stickyYtLink.href = v.url;
-                if (stickyPauseIcon) stickyPauseIcon.textContent = '⏸';
-                if (stickyPauseText) stickyPauseText.textContent = 'Pause Voice';
+                if (stickyYtLink) stickyYtLink.href = v.youtubeId ? `https://www.youtube.com/watch?v=${v.youtubeId}` : '#';
                 stickyBar.classList.add('visible');
               }
-            }
 
-            function stopPlayback() {
-              if (cardNativeAudio) {
-                cardNativeAudio.pause();
-                cardNativeAudio.currentTime = 0;
+              function stopPlayback() {
+                if (v.audioUrl && window._activeNativeAudio) {
+                  window._activeNativeAudio.pause();
+                  window._activeNativeAudio.currentTime = 0;
+                }
+                frameWrap.innerHTML = '';
+                playerTab.classList.remove('active');
+                card.classList.remove('playing');
+                playBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
+                if (currentPlayingCard === card) {
+                  currentPlayingCard = null;
+                  stickyBar.classList.remove('visible');
+                }
               }
-              playerTab.classList.remove('active');
-              card.classList.remove('playing');
-              playBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
-              if (currentPlayingCard === card) {
-                currentPlayingCard = null;
-                if (stickyBar) stickyBar.classList.remove('visible');
+
+              function togglePause() {
+                if (isAudioPaused) {
+                  if (v.youtubeId) {
+                  frameWrap.innerHTML = `
+                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
+                            title="${v.title}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                    </iframe>`;
+                } else if (v.audioUrl) {
+                    nativeAudio.play();
+                  } else {
+                    sendCommandToYt('playVideo');
+                  }
+                  isAudioPaused = false;
+                  pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
+                  equalizer.classList.remove('paused');
+                  playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
+                } else {
+                  if (v.youtubeId) {
+                  frameWrap.innerHTML = `
+                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
+                            title="${v.title}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                    </iframe>`;
+                } else if (v.audioUrl) {
+                    nativeAudio.pause();
+                  } else {
+                    sendCommandToYt('pauseVideo');
+                  }
+                  isAudioPaused = true;
+                  pauseBtn.innerHTML = '<span class="vpp-pause-icon">▶</span> Resume Voice';
+                  equalizer.classList.add('paused');
+                  playBtn.innerHTML = '<span aria-hidden="true">▶</span> Paused';
+                }
               }
-            }
 
-            function togglePause() {
-              if (!cardNativeAudio) return;
-              if (cardNativeAudio.paused) {
-                cardNativeAudio.play().catch(e => console.warn(e));
-                isAudioPaused = false;
-                pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
-                if (stickyPauseIcon) stickyPauseIcon.textContent = '⏸';
-                if (stickyPauseText) stickyPauseText.textContent = 'Pause Voice';
-                equalizer.classList.remove('paused');
-                playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
-              } else {
-                cardNativeAudio.pause();
-                isAudioPaused = true;
-                pauseBtn.innerHTML = '<span class="vpp-pause-icon">▶</span> Resume Voice';
-                if (stickyPauseIcon) stickyPauseIcon.textContent = '▶';
-                if (stickyPauseText) stickyPauseText.textContent = 'Resume Voice';
-                equalizer.classList.add('paused');
-                playBtn.innerHTML = '<span aria-hidden="true">▶</span> Paused';
-              }
-            }
-
-            if (cardNativeAudio) {
-              cardNativeAudio.onplay = () => {
-                isAudioPaused = false;
-                equalizer.classList.remove('paused');
-                playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
-                pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
-                if (stickyPauseIcon) stickyPauseIcon.textContent = '⏸';
-                if (stickyPauseText) stickyPauseText.textContent = 'Pause Voice';
-              };
-              cardNativeAudio.onpause = () => {
-                isAudioPaused = true;
-                equalizer.classList.add('paused');
-                playBtn.innerHTML = '<span aria-hidden="true">▶</span> Paused';
-                pauseBtn.innerHTML = '<span class="vpp-pause-icon">▶</span> Resume Voice';
-                if (stickyPauseIcon) stickyPauseIcon.textContent = '▶';
-                if (stickyPauseText) stickyPauseText.textContent = 'Resume Voice';
-              };
-              cardNativeAudio.onended = () => {
-                stopPlayback();
-              };
-            }
-
-            playBtn.addEventListener('click', () => {
-              if (playerTab.classList.contains('active')) {
-                togglePause();
-              } else {
-                startPlayback();
-              }
-            });
-
-            const thumbWrap = card.querySelector('.thumb-wrap');
-            if (thumbWrap) {
-              thumbWrap.style.cursor = 'pointer';
-              thumbWrap.addEventListener('click', () => {
+              playBtn.addEventListener('click', () => {
                 if (playerTab.classList.contains('active')) {
                   togglePause();
                 } else {
                   startPlayback();
                 }
               });
+
+              pauseBtn.addEventListener('click', togglePause);
+
+              const skipBackBtn = card.querySelector('.vpp-skip-back');
+              const skipFwdBtn = card.querySelector('.vpp-skip-fwd');
+              const speedBtn = card.querySelector('.vpp-speed-btn');
+              const speeds = [1.0, 1.25, 1.5, 0.75];
+              let speedIndex = 0;
+
+              if (!window._activeNativeAudio) {
+                window._activeNativeAudio = new Audio();
+              }
+              const nativeAudio = window._activeNativeAudio;
+
+              if (skipBackBtn) {
+                skipBackBtn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  if (v.youtubeId) {
+                  frameWrap.innerHTML = `
+                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
+                            title="${v.title}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                    </iframe>`;
+                } else if (v.audioUrl) {
+                    nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - 10);
+                  } else {
+                    sendCommandToYt('seekTo', '-10');
+                  }
+                });
+              }
+
+              if (skipFwdBtn) {
+                skipFwdBtn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  if (v.youtubeId) {
+                  frameWrap.innerHTML = `
+                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
+                            title="${v.title}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                    </iframe>`;
+                } else if (v.audioUrl) {
+                    nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + 10);
+                  } else {
+                    sendCommandToYt('seekTo', '+10');
+                  }
+                });
+              }
+
+              if (speedBtn) {
+                speedBtn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  speedIndex = (speedIndex + 1) % speeds.length;
+                  const newSpeed = speeds[speedIndex];
+                  speedBtn.textContent = newSpeed + 'x';
+                  if (v.youtubeId) {
+                  frameWrap.innerHTML = `
+                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
+                            title="${v.title}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                    </iframe>`;
+                } else if (v.audioUrl) {
+                    nativeAudio.playbackRate = newSpeed;
+                  } else {
+                    const iframe = frameWrap.querySelector('iframe');
+                    if (iframe && iframe.contentWindow) {
+                      iframe.contentWindow.postMessage(JSON.stringify({
+                        event: 'command',
+                        func: 'setPlaybackRate',
+                        args: [newSpeed]
+                      }), '*');
+                    }
+                  }
+                });
+              }
+
+              if (closeBtn) {
+                closeBtn.addEventListener('click', stopPlayback);
+              }
+
+            } else {
+              // Chapter without video yet - Clean structured audio card
+              card.innerHTML = `
+                <div class="card-top">
+                  <div class="thumb-wrap thumb-wrap--audio">
+                    <span class="thumb-audio-icon" aria-hidden="true">🎙️</span>
+                    <span class="thumb-duration">Audio</span>
+                  </div>
+                  <div class="card-info">
+                    ${chBadge}
+                    <div class="card-title" title="${v.title}">${v.title}</div>
+                    <div class="card-sub">${v.chapter || mod.moduleName}</div>
+                  </div>
+                </div>
+
+                <div class="card-actions">
+                  <div class="voice-scheduled-pill">
+                    <span class="pulse-dot-scheduled"></span>
+                    <span>Voice Lecture in Production</span>
+                  </div>
+                </div>
+
+                ${v.studyPoints && v.studyPoints.length > 0 ? `
+                <details class="chapter-notes-box" open>
+                  <summary class="notes-summary">
+                    <span class="notes-title-wrap">
+                      <span aria-hidden="true">📝</span>
+                      <span><strong>Study Notes &amp; Exam Points</strong> (മലയാളം &amp; Eng)</span>
+                    </span>
+                    <span class="notes-chevron" aria-hidden="true">▼</span>
+                  </summary>
+                  <div class="notes-content">
+                    <ul class="notes-list">
+                      ${v.studyPoints.map(p => `<li>${p}</li>`).join('')}
+                    </ul>
+                    ${v.examTip ? `
+                    <div class="exam-tip-badge">
+                      <strong>🎯 Exam Revision Highlight:</strong> ${v.examTip}
+                    </div>` : ''}
+                  </div>
+                </details>` : ''}
+              `;
             }
-
-            pauseBtn.addEventListener('click', togglePause);
-
-                        if (skipBackBtn && cardNativeAudio) {
-              skipBackBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                cardNativeAudio.currentTime = Math.max(0, cardNativeAudio.currentTime - 10);
-              });
-            }
-
-            if (skipFwdBtn && cardNativeAudio) {
-              skipFwdBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                cardNativeAudio.currentTime = Math.min(cardNativeAudio.duration || 99999, cardNativeAudio.currentTime + 10);
-              });
-            }
-
-            if (speedBtn && cardNativeAudio) {
-              speedBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                speedIndex = (speedIndex + 1) % speeds.length;
-                const newSpeed = speeds[speedIndex];
-                speedBtn.textContent = newSpeed + 'x';
-                cardNativeAudio.playbackRate = newSpeed;
-              });
-            }
-
-            closeBtn.addEventListener('click', stopPlayback);
 
             grid.append(card);
           });
@@ -1482,7 +1550,7 @@
             adSlot.innerHTML = `
               <span class="ad-disclaimer">SPONSORED STUDY RESOURCES</span>
               <div class="ad-placeholder-box" style="min-height:90px;display:flex;align-items:center;justify-content:center;color:#64748b;font-size:12px;background:#f8fafc;border-radius:8px;">
-                <span>📖 Calicut University FYUGP Study Material &amp; Exam Guide</span>
+                <span>📖 Calicut University FYUGP Official Study Material &amp; Exam Guide</span>
               </div>
             `;
             group.append(adSlot);
@@ -1517,7 +1585,33 @@
         renderChapters(e.target.value);
       });
 
-      // Sticky Bar Pause Toggle Event
+      // Sticky Bar Close Event
+      stickyClose.addEventListener('click', () => {
+        stickyBar.classList.remove('visible');
+        if (currentPlayingCard) {
+          const frame = currentPlayingCard.querySelector('.player-frame-wrap');
+          const tab = currentPlayingCard.querySelector('.mini-player-tab');
+          const playBtn = currentPlayingCard.querySelector('.btn-play-voice');
+          if (frame) frame.innerHTML = '';
+          if (tab) tab.classList.remove('active');
+          if (playBtn) playBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
+          currentPlayingCard.classList.remove('playing');
+          currentPlayingCard = null;
+        }
+      });
+
+      // Handle popstate for back/forward navigation
+      window.addEventListener('popstate', () => {
+        const p = new URLSearchParams(window.location.search);
+        const s = (p.get('subject') || 'malayalam').toLowerCase();
+        if (data[s] && s !== currentSlug) {
+          currentSlug = s;
+          updateUI();
+        }
+      });
+
+      // Sticky Bar Pause/Resume Toggle
+      const stickyPauseToggle = document.getElementById('sticky-pause-toggle');
       if (stickyPauseToggle) {
         stickyPauseToggle.addEventListener('click', () => {
           if (currentPlayingCard) {
@@ -1527,29 +1621,10 @@
         });
       }
 
-      // Sticky Bar Close Event
-      stickyClose.addEventListener('click', () => {
-        stickyBar.classList.remove('visible');
-        if (currentPlayingCard) {
-          const closeBtn = currentPlayingCard.querySelector('.vpp-btn-close');
-          if (closeBtn) closeBtn.click();
-        }
-      });
-
-      // Handle popstate for back/forward navigation
-      window.addEventListener('popstate', () => {
-        const p = new URLSearchParams(window.location.search);
-        const s = (p.get('subject') || 'sociology').toLowerCase();
-        if (data[s] && s !== currentSlug) {
-          currentSlug = s;
-          updateUI();
-        }
-      });
-
       // Initial Mount
       renderSubjectTabs();
       updateUI();
-
+    
       // Screen WakeLock API - Keep screen awake while studying & listening
       let wakeLock = null;
       const wakeLockBtn = document.getElementById('wake-lock-toggle');
@@ -1577,35 +1652,33 @@
         }
       }
 
+      async function releaseScreenWakeLock() {
+        if (wakeLock !== null) {
+          try {
+            await wakeLock.release();
+          } catch (e) {}
+          wakeLock = null;
+        }
+      }
+
       if (wakeLockBtn) {
-        wakeLockBtn.addEventListener('click', () => {
-          if (wakeLock) {
-            wakeLock.release();
+        wakeLockBtn.addEventListener('click', async () => {
+          if (wakeLock !== null) {
+            await releaseScreenWakeLock();
           } else {
-            requestScreenWakeLock();
+            await requestScreenWakeLock();
           }
         });
       }
 
+      // Re-request wake lock if tab returns to view
+      document.addEventListener('visibilitychange', async () => {
+        if (wakeLock !== null && document.visibilityState === 'visible') {
+          await requestScreenWakeLock();
+        }
+      });
+
     })();
   </script>
-<footer class="hub-main-footer">
-    <div class="footer-primary-row">
-      <a class="footer-brand" href="index.html">Academic Hub</a>
-      <p class="footer-tagline">Independent Exam Study &amp; Active Recall Portal for Calicut University Undergraduates</p>
-    </div>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="about.html">About Academic Hub</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="sitemap.xml">XML Sitemap</a>
-    </nav>
-    <div class="footer-bottom-row">
-      <span>&copy; 2026 Academic Hub &middot; Curated for Focused Student Learning</span>
-      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top &uarr;</a>
-    </div>
-  </footer>
 </body>
 </html>
