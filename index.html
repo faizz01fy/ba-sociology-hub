@@ -3084,9 +3084,9 @@
     /* ========================================================================== */
     .univ-buttons-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 7px;
-      margin-bottom: 4px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 8px;
+      margin-bottom: 6px;
     }
     @media (max-width: 900px) {
       .univ-buttons-grid {
@@ -3221,6 +3221,9 @@
         gap: 5px;
         margin-bottom: 2px;
       }
+      .univ-btn-whatsapp {
+        grid-column: span 2 !important;
+      }
       .univ-eye-btn {
         padding: 5px 6px;
         min-height: 33px;
@@ -3325,11 +3328,15 @@
       color: #fed7aa;
       border: 1px solid rgba(249, 115, 22, 0.4);
     }
-    /* WhatsApp Broadcast Button - High-visibility Official Green */
+        /* WhatsApp Broadcast Button - High-visibility Official Green */
     .univ-btn-whatsapp {
       background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #059669 100%);
       color: #ffffff;
+      min-height: 42px;
+      padding: 7px 12px;
+      border-radius: 10px;
       box-shadow: 0 4px 14px rgba(5, 150, 105, 0.28);
+      border: 1.5px solid rgba(52, 211, 153, 0.45);
     }
     .univ-btn-whatsapp:hover {
       transform: translateY(-1px);
@@ -4138,22 +4145,31 @@
 
 
 
-    <section class="quick-stats" aria-label="Portal features">
+    <section class="quick-stats quick-stats-bilingual" aria-label="Portal features">
 
-      <div class="stat stat-notice-merged" title="Important Notice for Students: All study materials are updated periodically. Please visit this section regularly to access the latest notes, PDFs, and revision materials. Stay updated and make the most of the available resources for your studies and exam preparation.">
+      <!-- CARD 1: ENGLISH NOTICE -->
+      <div class="stat stat-notice-eng" title="Important Notice for Students: All study materials are updated periodically. Please visit this section regularly to access the latest notes, PDFs, and revision materials. Stay updated and make the most of the available resources for your studies and exam preparation.">
         <span class="stat-icon stat-purple" aria-hidden="true">&#x1F4D6;</span>
-        <div class="notice-content-wrap">
-          <div class="notice-header-row">
-            <strong class="notice-title">Important Notice for Students</strong>
-            <span class="notice-pill"><span class="notice-pill-dot"></span>UPDATED NOTICE</span>
+        <div class="notice-content">
+          <div class="notice-header">
+            <strong class="notice-title-eng">Important Notice for Students</strong>
+            <span class="pill-eng"><span class="pill-dot"></span>UPDATED</span>
           </div>
-          <p class="notice-desc">All study materials are updated periodically. Please visit this section regularly to access the latest notes, PDFs, and revision materials. Stay updated and make the most of the available resources for your studies and exam preparation.</p>
+          <p class="notice-text-eng">All study materials are updated periodically. Please visit this section regularly to access the latest notes, PDFs, and revision materials. Stay updated and make the most of the available resources for your studies and exam preparation.</p>
         </div>
       </div>
 
-      <div class="stat"><span class="stat-icon stat-orange">▶</span><div><strong>Video learning</strong><small>Review topics your way</small></div></div>
-
-      <div class="stat"><span class="stat-icon stat-green">↗</span><div><strong>Student focused</strong><small>Simple, clear navigation</small></div></div>
+      <!-- CARD 2: MALAYALAM NOTICE -->
+      <div class="stat stat-notice-mal" title="വിദ്യാർത്ഥികൾക്കുള്ള പ്രധാന അറിയിപ്പ്: എല്ലാ പഠന സാമഗ്രികളും കൃത്യമായ ഇടവേളകളിൽ പുതുക്കുന്നതാണ്. ഏറ്റവും പുതിയ നോട്ടുകൾ, പി.ഡി.എഫുകൾ, റിവിഷൻ മെറ്റീരിയലുകൾ എന്നിവ ലഭിക്കുന്നതിനായി ഈ ഭാഗം പതിവായി സന്ദർശിക്കുക. നിങ്ങളുടെ പഠനത്തിനും പരീക്ഷാ തയ്യാറെടുപ്പിനുമായി ഇവ പരമാവധി പ്രയോജനപ്പെടുത്തുക.">
+        <span class="stat-icon stat-green" aria-hidden="true">📢</span>
+        <div class="notice-content">
+          <div class="notice-header">
+            <strong class="notice-title-mal">വിദ്യാർത്ഥികൾക്കുള്ള പ്രധാന അറിയിപ്പ്</strong>
+            <span class="pill-mal"><span class="pill-dot"></span>അറിയിപ്പ്</span>
+          </div>
+          <p class="notice-text-mal">എല്ലാ പഠന സാമഗ്രികളും കൃത്യമായ ഇടവേളകളിൽ പുതുക്കുന്നതാണ്. ഏറ്റവും പുതിയ നോട്ടുകൾ, പി.ഡി.എഫുകൾ, റിവിഷൻ മെറ്റീരിയലുകൾ എന്നിവ ലഭിക്കുന്നതിനായി ഈ ഭാഗം പതിവായി സന്ദർശിക്കുക. നിങ്ങളുടെ പഠനത്തിനും പരീക്ഷാ തയ്യാറെടുപ്പിനുമായി ഇവ പരമാവധി പ്രയോജനപ്പെടുത്തുക.</p>
+        </div>
+      </div>
 
     </section>
 
@@ -4266,14 +4282,14 @@
         <!-- Button 5: Official WhatsApp Broadcast (AdSense Compliant, Verified Updates) -->
         <button id="btn-tab-whatsapp" class="univ-eye-btn univ-btn-whatsapp" data-target="whatsapp" type="button" role="tab" aria-selected="false" aria-controls="univ-drawer">
           <div class="univ-btn-left">
-            <span class="univ-btn-icon-wrap" style="background:rgba(37,211,102,0.25);color:#25d366;font-size:0.95rem;">📢</span>
+            <span class="univ-btn-icon-wrap" style="background:rgba(37,211,102,0.3);color:#25d366;font-size:0.95rem;width:24px;height:24px;">📢</span>
             <div class="univ-btn-text-wrap">
-              <span class="univ-btn-title">WhatsApp Updates</span>
-              <span class="univ-btn-sub">Official group alerts</span>
+              <span class="univ-btn-title" style="font-size:0.82rem;font-weight:750;">WhatsApp Updates</span>
+              <span class="univ-btn-sub" style="font-size:0.64rem;opacity:0.9;">CDOE Sociology 2026</span>
             </div>
           </div>
           <div class="univ-btn-right">
-            <span id="badge-count-whatsapp" class="univ-btn-count-pill" style="background:rgba(37,211,102,0.35);"><span class="badge-num">...</span><span class="badge-lbl"> Live</span></span>
+            <span id="badge-count-whatsapp" class="univ-btn-count-pill" style="background:rgba(37,211,102,0.35);font-weight:750;"><span class="badge-num">...</span><span class="badge-lbl"> Live</span></span>
             <span class="univ-btn-arrow">&#9662;</span>
           </div>
         </button>
@@ -14194,6 +14210,7 @@
 
 
   <script src="data/university_notices.js"></script>
+  <script src="data/whatsapp_announcements_data.js"></script>
 
   <script id="university-notices-engine">
 
@@ -14544,7 +14561,15 @@
       let cachedWhatsAppUpdates = null;
 
       async function fetchWhatsAppUpdates(forceRefresh = false) {
-        if (!forceRefresh && cachedWhatsAppUpdates) return cachedWhatsAppUpdates;
+        if (!forceRefresh && cachedWhatsAppUpdates && cachedWhatsAppUpdates.length > 0) return cachedWhatsAppUpdates;
+
+        // 1. Instant Global script data (100% CORS-proof even in file:/// offline)
+        if (window.__WHATSAPP_ANNOUNCEMENTS__ && Array.isArray(window.__WHATSAPP_ANNOUNCEMENTS__.updates) && window.__WHATSAPP_ANNOUNCEMENTS__.updates.length > 0) {
+          cachedWhatsAppUpdates = window.__WHATSAPP_ANNOUNCEMENTS__.updates;
+          return cachedWhatsAppUpdates;
+        }
+
+        // 2. Fetch from Cloudflare Worker API
         try {
           const res = await fetch('/api/whatsapp/updates');
           if (res.ok) {
@@ -14556,6 +14581,7 @@
           }
         } catch (e) {}
 
+        // 3. Fallback to local JSON file
         try {
           const localRes = await fetch('data/whatsapp_announcements.json');
           if (localRes.ok) {
@@ -14566,6 +14592,20 @@
         } catch (e) {}
 
         return cachedWhatsAppUpdates || [];
+      }
+
+      function formatWhatsAppText(raw) {
+        if (!raw) return '';
+        let escaped = escapeHtml(raw);
+        // *bold*
+        escaped = escaped.replace(/\*([^\*]+)\*/g, '<strong style="color:#0f172a;font-weight:700;">$1</strong>');
+        // _italic_
+        escaped = escaped.replace(/_([^_]+)_/g, '<em>$1</em>');
+        // URLs -> clickable links (AdSense safe nofollow)
+        escaped = escaped.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="nofollow noopener noreferrer" style="color:#059669;text-decoration:underline;font-weight:600;">$1</a>');
+        // Line breaks
+        escaped = escaped.replace(/\n/g, '<br>');
+        return escaped;
       }
 
       async function renderWhatsAppDrawer() {
@@ -14592,9 +14632,9 @@
         if (list.length === 0) {
           drawerList.innerHTML = `
             <div style="text-align:center;padding:32px 18px;color:#64748b;background:#f8fafc;border-radius:12px;border:1.5px dashed #cbd5e1;margin:6px 0;">
-              <span style="font-size:2rem;display:block;margin-bottom:8px;">📢</span>
-              <strong style="color:#1e293b;font-size:0.95rem;">No WhatsApp Announcements Yet</strong>
-              <p style="font-size:0.82rem;color:#64748b;margin:6px 0 0;max-width:440px;margin-inline:auto;line-height:1.45;">
+              <span style="font-size:2.2rem;display:block;margin-bottom:8px;">📢</span>
+              <strong style="color:#1e293b;font-size:1rem;">No WhatsApp Announcements Yet</strong>
+              <p style="font-size:0.84rem;color:#64748b;margin:8px 0 0;max-width:440px;margin-inline:auto;line-height:1.45;">
                 Official notifications, class alerts, and exam circulars forwarded from the WhatsApp group will appear here live with instant verified delivery.
               </p>
             </div>
@@ -14603,21 +14643,19 @@
         }
 
         drawerList.innerHTML = list.map(item => {
-          const rawText = escapeHtml(item.text || '');
-          const highlighted = searchFilter ? highlightText(item.text || '', searchFilter) : rawText;
-          const formattedText = highlighted.replace(/\n/g, '<br>');
-          const safeLinked = formattedText.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="nofollow noopener noreferrer" style="color:#059669;text-decoration:underline;font-weight:600;">$1</a>');
+          const formattedText = formatWhatsAppText(item.text || '');
+          const groupLabel = item.groupName || 'CDOE UG SOCIOLOGY 2026 FEB';
 
           return `
-            <div class="univ-card-item" style="border-left: 3.5px solid #10b981; background: #ffffff;">
-              <div class="univ-card-meta" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
-                <span class="univ-card-badge" style="background:#dcfce7;color:#065f46;font-weight:750;border:1px solid #bbf7d0;">✓ Verified Official Broadcast</span>
+            <div class="univ-card-item" style="border-left: 4px solid #10b981; background: #ffffff; padding: 12px 14px; margin-bottom: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+              <div class="univ-card-meta" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
+                <span class="univ-card-badge" style="background:#dcfce7;color:#065f46;font-weight:750;border:1px solid #bbf7d0;font-size:0.72rem;padding:2px 8px;border-radius:9999px;">✓ Official Notice</span>
                 <span class="univ-card-date" style="color:#64748b;font-size:0.75rem;">${escapeHtml(item.date || 'Recent')}</span>
-                <span style="font-size:0.72rem;color:#047857;margin-left:auto;font-weight:600;">Official Source</span>
+                <span style="font-size:0.72rem;color:#047857;margin-left:auto;font-weight:600;background:#f0fdf4;padding:2px 8px;border-radius:4px;">${escapeHtml(groupLabel)}</span>
               </div>
-              <div class="univ-card-title-row" style="margin-top:8px;">
-                <div class="univ-card-title" style="font-weight:500;font-size:0.86rem;line-height:1.5;color:#1e293b;word-break:break-word;">
-                  ${safeLinked}
+              <div class="univ-card-title-row" style="margin-top:6px;">
+                <div class="univ-card-title" style="font-weight:450;font-size:0.88rem;line-height:1.55;color:#1e293b;word-break:break-word;">
+                  ${formattedText}
                 </div>
               </div>
             </div>
@@ -14625,7 +14663,7 @@
         }).join('');
       }
 
-function closeSection() {
+      function closeSection() {
 
         activeSection = null;
 
