@@ -1058,7 +1058,7 @@
 
       // Determine initial subject from URL query param `?subject=...`
       const urlParams = new URLSearchParams(window.location.search);
-      let currentSlug = (urlParams.get('subject') || 'philosophy-of-ai').toLowerCase();
+      let currentSlug = (urlParams.get('subject') || 'sociology').toLowerCase();
 
       // Fallback if slug not found
       if (!data[currentSlug]) {
@@ -1219,7 +1219,7 @@
                   </div>
                   <!-- Native Hardware Audio Player (100% Reliable Mobile Playback) -->
                   <div class="vpp-native-container" style="margin: 12px 0 10px; width: 100%;">
-                    <audio class="vpp-hardware-audio" controls controlslist="nodownload" playsinline preload="metadata" style="width: 100%; height: 42px; border-radius: 8px;">
+                    <audio class="vpp-hardware-audio" src="${v.audioUrl.startsWith('/') ? v.audioUrl : '/' + v.audioUrl}" controls controlslist="nodownload" playsinline preload="metadata" style="width: 100%; height: 42px; border-radius: 8px;">
                       <source src="${v.audioUrl.startsWith('/') ? v.audioUrl : '/' + v.audioUrl}" type="audio/mpeg">
                       Your browser does not support audio playback.
                     </audio>
@@ -1337,6 +1337,10 @@
               equalizer.classList.remove('paused');
 
               if (cardNativeAudio) {
+                const cleanUrl = v.audioUrl.startsWith('/') ? v.audioUrl : '/' + v.audioUrl;
+                if (!cardNativeAudio.getAttribute('src')) {
+                  cardNativeAudio.src = cleanUrl;
+                }
                 cardNativeAudio.playbackRate = speeds[speedIndex];
                 cardNativeAudio.play().catch(e => console.warn('Audio play error:', e));
                 window._activeNativeAudio = cardNativeAudio;
@@ -1535,7 +1539,7 @@
       // Handle popstate for back/forward navigation
       window.addEventListener('popstate', () => {
         const p = new URLSearchParams(window.location.search);
-        const s = (p.get('subject') || 'philosophy-of-ai').toLowerCase();
+        const s = (p.get('subject') || 'sociology').toLowerCase();
         if (data[s] && s !== currentSlug) {
           currentSlug = s;
           updateUI();
