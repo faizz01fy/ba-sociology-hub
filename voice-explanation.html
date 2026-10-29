@@ -295,6 +295,130 @@
       margin-bottom: 5px;
     }
 
+    
+    /* Screen Wake Lock Button in Navbar */
+    .wake-lock-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #334155;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .wake-lock-btn:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+    .wake-lock-btn.active {
+      background: #fefce8;
+      border-color: #facc15;
+      color: #854d0e;
+      box-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
+    }
+    .wake-lock-btn.active .wake-icon {
+      filter: drop-shadow(0 0 4px #eab308);
+      animation: bulbGlow 1.8s infinite ease-in-out;
+    }
+    @keyframes bulbGlow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.15); opacity: 0.85; }
+    }
+
+    /* Chapter Study Notes Box */
+    .chapter-notes-box {
+      margin-top: 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      background: #f8fafc;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+    .chapter-notes-box[open] {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    }
+    .notes-summary {
+      padding: 10px 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #1e293b;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      user-select: none;
+      list-style: none;
+    }
+    .notes-summary::-webkit-details-marker { display: none; }
+    .notes-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .notes-chevron {
+      font-size: 11px;
+      color: #64748b;
+      transition: transform 0.2s ease;
+    }
+    .chapter-notes-box[open] .notes-chevron {
+      transform: rotate(180deg);
+    }
+    .notes-content {
+      padding: 12px 16px 14px;
+      border-top: 1px solid #e2e8f0;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #334155;
+    }
+    .notes-list {
+      margin: 0;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .notes-list li {
+      color: #1e293b;
+    }
+    .exam-tip-badge {
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      border-radius: 6px;
+      font-size: 12.5px;
+      color: #78350f;
+      line-height: 1.5;
+    }
+
+    /* AdSense In-Article Responsive Slot */
+    .study-adsense-slot {
+      margin: 28px 0;
+      padding: 16px;
+      background: #ffffff;
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .ad-disclaimer {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+      display: block;
+    }
+
     .chapter-card {
       background: #ffffff;
       border: 1.5px solid var(--border);
@@ -831,6 +955,11 @@
       <span class="search-icon" aria-hidden="true">⌕</span>
       <input type="search" id="chapter-search" class="search-input" placeholder="Search chapter or topic..." aria-label="Search voice explanations">
     </div>
+
+    <button type="button" class="wake-lock-btn" id="wake-lock-toggle" aria-pressed="false" title="Keep your phone screen awake while studying">
+      <span class="wake-icon" aria-hidden="true">💡</span>
+      <span class="wake-text">Keep Screen Awake</span>
+    </button>
   </nav>
 
   <div class="container">
@@ -1047,7 +1176,13 @@
                     <button type="button" class="vpp-btn-pause" title="Pause / Resume playback">
                       <span class="vpp-pause-icon">⏸</span> Pause Voice
                     </button>
-
+                    <button type="button" class="vpp-btn-skip vpp-skip-back" title="Rewind 10 seconds">
+                      ↺ 10s
+                    </button>
+                    <button type="button" class="vpp-btn-skip vpp-skip-fwd" title="Skip 10 seconds">
+                      10s ↻
+                    </button>
+                    <button type="button" class="vpp-speed-btn" title="Playback Speed">1.0x</button>
                     <button type="button" class="vpp-btn-close" title="Close player">✕ Close</button>
                   </div>
                 </div>
@@ -1056,6 +1191,27 @@
                   <!-- iframe inserted on play -->
                 </div>
               </div>
+
+              <!-- Chapter Study Notes & Exam Points (Read Along while Listening) -->
+              ${v.studyPoints && v.studyPoints.length > 0 ? `
+              <details class="chapter-notes-box" open>
+                <summary class="notes-summary">
+                  <span class="notes-title-wrap">
+                    <span aria-hidden="true">📝</span>
+                    <span><strong>Study Notes &amp; Exam Points</strong> (മലയാളം &amp; Eng)</span>
+                  </span>
+                  <span class="notes-chevron" aria-hidden="true">▼</span>
+                </summary>
+                <div class="notes-content">
+                  <ul class="notes-list">
+                    ${v.studyPoints.map(p => `<li>${p}</li>`).join('')}
+                  </ul>
+                  ${v.examTip ? `
+                  <div class="exam-tip-badge">
+                    <strong>🎯 Exam Revision Highlight:</strong> ${v.examTip}
+                  </div>` : ''}
+                </div>
+              </details>` : ''}
             `;
 
             const playBtn = card.querySelector('.btn-play-voice');
@@ -1125,24 +1281,36 @@
                 currentPlayingCard.classList.remove('playing');
               }
 
-              // Load iframe in Voice Mode (hidden video frame)
+              // Playback Engine: Native HTML5 Audio (Option B) or Embedded Voice
               frameWrap.classList.add('voice-hidden');
               isVideoVisible = false;
               isAudioPaused = false;
-              
               pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
               equalizer.classList.remove('paused');
 
-              frameWrap.innerHTML = `
-                <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&rel=0&modestbranding=1"
-                        title="${v.title}"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                </iframe>`;
+              if (v.audioUrl) {
+                // Option B: Direct HTML5 Audio (100% AdSense Safe & Guaranteed Lock-Screen)
+                frameWrap.innerHTML = '';
+                nativeAudio.src = v.audioUrl;
+                nativeAudio.playbackRate = speeds[speedIndex];
+                nativeAudio.play().catch(e => console.warn('Audio play error:', e));
+                nativeAudio.onended = () => {
+                  stopPlayback();
+                };
+              } else {
+                // Embedded Voice Player
+                frameWrap.innerHTML = `
+                  <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&rel=0&modestbranding=1"
+                          title="${v.title}"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen>
+                  </iframe>`;
+              }
               playerTab.classList.add('active');
               card.classList.add('playing');
               playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
               currentPlayingCard = card;
+              requestScreenWakeLock();
               setupMediaSession();
 
               // Update Bottom Sticky Bar
@@ -1153,6 +1321,10 @@
             }
 
             function stopPlayback() {
+              if (v.audioUrl && window._activeNativeAudio) {
+                window._activeNativeAudio.pause();
+                window._activeNativeAudio.currentTime = 0;
+              }
               frameWrap.innerHTML = '';
               playerTab.classList.remove('active');
               card.classList.remove('playing');
@@ -1165,13 +1337,21 @@
 
             function togglePause() {
               if (isAudioPaused) {
-                sendCommandToYt('playVideo');
+                if (v.audioUrl) {
+                  nativeAudio.play();
+                } else {
+                  sendCommandToYt('playVideo');
+                }
                 isAudioPaused = false;
                 pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
                 equalizer.classList.remove('paused');
                 playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
               } else {
-                sendCommandToYt('pauseVideo');
+                if (v.audioUrl) {
+                  nativeAudio.pause();
+                } else {
+                  sendCommandToYt('pauseVideo');
+                }
                 isAudioPaused = true;
                 pauseBtn.innerHTML = '<span class="vpp-pause-icon">▶</span> Resume Voice';
                 equalizer.classList.add('paused');
@@ -1196,6 +1376,62 @@
             });
 
             pauseBtn.addEventListener('click', togglePause);
+
+            const skipBackBtn = card.querySelector('.vpp-skip-back');
+            const skipFwdBtn = card.querySelector('.vpp-skip-fwd');
+            const speedBtn = card.querySelector('.vpp-speed-btn');
+            const speeds = [1.0, 1.25, 1.5, 0.75];
+            let speedIndex = 0;
+
+            // Global HTML5 Audio instance for Option B (Direct MP3 / Audio Stream)
+            if (!window._activeNativeAudio) {
+              window._activeNativeAudio = new Audio();
+            }
+            const nativeAudio = window._activeNativeAudio;
+
+            if (skipBackBtn) {
+              skipBackBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (v.audioUrl) {
+                  nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - 10);
+                } else {
+                  sendCommandToYt('seekTo', '-10');
+                }
+              });
+            }
+
+            if (skipFwdBtn) {
+              skipFwdBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (v.audioUrl) {
+                  nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + 10);
+                } else {
+                  sendCommandToYt('seekTo', '+10');
+                }
+              });
+            }
+
+            if (speedBtn) {
+              speedBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                speedIndex = (speedIndex + 1) % speeds.length;
+                const newSpeed = speeds[speedIndex];
+                speedBtn.textContent = newSpeed + 'x';
+                if (v.audioUrl) {
+                  nativeAudio.playbackRate = newSpeed;
+                } else {
+                  const iframe = frameWrap.querySelector('iframe');
+                  if (iframe && iframe.contentWindow) {
+                    iframe.contentWindow.postMessage(JSON.stringify({
+                      event: 'command',
+                      func: 'setPlaybackRate',
+                      args: [newSpeed]
+                    }), '*');
+                  }
+                }
+              });
+            }
+
 
             const skipBackBtn = card.querySelector('.vpp-skip-back');
             const skipFwdBtn = card.querySelector('.vpp-skip-fwd');
@@ -1239,6 +1475,21 @@
           });
 
           group.append(grid);
+
+          // In-Article Study Ad Slot between modules (AdSense Viewability)
+          if (modIdx < subject.modules.length - 1) {
+            const adSlot = document.createElement('div');
+            adSlot.className = 'study-adsense-slot';
+            adSlot.innerHTML = `
+              <span class="ad-disclaimer">SPONSORED STUDY RESOURCES</span>
+              <div class="ad-placeholder-box" style="min-height:90px;display:flex;align-items:center;justify-content:center;color:#64748b;font-size:12px;background:#f8fafc;border-radius:8px;">
+                <!-- Google AdSense In-Article Ad Unit -->
+                <span>📖 Calicut University FYUGP Official Study Material &amp; Exam Guide</span>
+              </div>
+            `;
+            group.append(adSlot);
+          }
+
           chaptersContainer.append(group);
         });
 
@@ -1296,6 +1547,60 @@
       // Initial Mount
       renderSubjectTabs();
       updateUI();
+    
+      // Screen WakeLock API - Keep screen awake while studying & listening
+      let wakeLock = null;
+      const wakeLockBtn = document.getElementById('wake-lock-toggle');
+
+      async function requestScreenWakeLock() {
+        if ('wakeLock' in navigator) {
+          try {
+            wakeLock = await navigator.wakeLock.request('screen');
+            if (wakeLockBtn) {
+              wakeLockBtn.classList.add('active');
+              wakeLockBtn.setAttribute('aria-pressed', 'true');
+              wakeLockBtn.querySelector('.wake-text').textContent = 'Screen Awake: ON';
+            }
+            wakeLock.addEventListener('release', () => {
+              if (wakeLockBtn) {
+                wakeLockBtn.classList.remove('active');
+                wakeLockBtn.setAttribute('aria-pressed', 'false');
+                wakeLockBtn.querySelector('.wake-text').textContent = 'Keep Screen Awake';
+              }
+              wakeLock = null;
+            });
+          } catch (err) {
+            console.warn('Wake Lock request error:', err);
+          }
+        }
+      }
+
+      async function releaseScreenWakeLock() {
+        if (wakeLock !== null) {
+          try {
+            await wakeLock.release();
+          } catch (e) {}
+          wakeLock = null;
+        }
+      }
+
+      if (wakeLockBtn) {
+        wakeLockBtn.addEventListener('click', async () => {
+          if (wakeLock !== null) {
+            await releaseScreenWakeLock();
+          } else {
+            await requestScreenWakeLock();
+          }
+        });
+      }
+
+      // Re-request wake lock if tab returns to view
+      document.addEventListener('visibilitychange', async () => {
+        if (wakeLock !== null && document.visibilityState === 'visible') {
+          await requestScreenWakeLock();
+        }
+      });
+
     })();
   </script>
 </body>
