@@ -3,6 +3,24 @@
 <html lang="en">
 
 <head>
+  <script>
+    (function() {
+      try {
+        var p = new URLSearchParams(window.location.search);
+        if (p.get('preview') === '0' || p.get('hide') === '1') {
+          localStorage.removeItem('hub_notices_owner');
+        } else if (p.get('preview') === '1' || p.get('preview') === 'notices' || p.get('owner') === '1' || window.location.hash === '#preview-notices') {
+          localStorage.setItem('hub_notices_owner', '1');
+        }
+        if (localStorage.getItem('hub_notices_owner') === '1') {
+          document.documentElement.classList.add('show-notices-owner');
+          window.addEventListener('DOMContentLoaded', function() {
+            if (document.body) document.body.classList.add('show-notices-owner');
+          });
+        }
+      } catch(e) {}
+    })();
+  </script>
 
   <meta charset="UTF-8">
 
@@ -32,6 +50,36 @@
   <link rel="prefetch" href="assets/pdfjs/pdf.min.mjs">
 
   <link rel="prefetch" href="assets/pdfjs/pdf.worker.min.mjs">
+
+  <script>
+    (function() {
+      try {
+        var sp = new URLSearchParams(window.location.search);
+        var preview = sp.get('preview');
+        if (preview === '0' || preview === 'off' || preview === 'hide') {
+          localStorage.removeItem('hub_preview_centre');
+        } else if (preview === '1' || preview === 'centre' || preview === 'hub' || localStorage.getItem('hub_preview_centre') === 'true') {
+          localStorage.setItem('hub_preview_centre', 'true');
+          document.documentElement.classList.add('hub-centre-preview');
+        }
+      } catch(e) {}
+    })();
+  </script>
+  <style>
+    /* Owner preview switch: hidden by default from public */
+    #student-info-centre {
+      display: none !important;
+    }
+    #original-quick-stats {
+      display: grid !important;
+    }
+    html.hub-centre-preview #student-info-centre {
+      display: grid !important;
+    }
+    html.hub-centre-preview #original-quick-stats {
+      display: none !important;
+    }
+  </style>
 
   <style id="chapter-blink-styles">
 
@@ -2851,6 +2899,26 @@
 
     /* EYE-CATCHING LIVE UNIVERSITY NOTICE CENTER (HALF-SIZE COMPACT)            */
     /* ========================================================================== */
+    
+    /* PRIVATE OWNER GATE: Hidden from general public, visible only with ?preview=1 or ?owner=1 */
+    #notices,
+    a[href="#notices"],
+    #link-notices-live-drawer {
+      display: none !important;
+    }
+    html.show-notices-owner #notices,
+    body.show-notices-owner #notices {
+      display: block !important;
+    }
+    html.show-notices-owner a[href="#notices"],
+    body.show-notices-owner a[href="#notices"] {
+      display: inline-flex !important;
+    }
+    html.show-notices-owner #link-notices-live-drawer,
+    body.show-notices-owner #link-notices-live-drawer {
+      display: inline-flex !important;
+    }
+
     .univ-notices-section {
       margin: 0 0 20px;
       padding: 12px 16px;
@@ -3974,7 +4042,42 @@
 
 
     <!-- ========================================================================== -->
+    <!-- PUBLIC PORTAL FEATURES (VISIBLE BY DEFAULT TO ALL STUDENTS)                 -->
+    <!-- ========================================================================== -->
+    <section class="quick-stats" id="original-quick-stats" aria-label="Portal features">
+      <article class="stat">
+        <span class="stat-icon stat-purple" aria-hidden="true">&#x1F4D6;</span>
+        <div class="stat-meta">
+          <h3>Study materials</h3>
+          <p>Notes, PDFs &amp; revision</p>
+        </div>
+      </article>
+      <article class="stat">
+        <span class="stat-icon stat-blue" aria-hidden="true">&#x2713;</span>
+        <div class="stat-meta">
+          <h3>MCQ practice</h3>
+          <p>Prepare for your exams</p>
+        </div>
+      </article>
+      <article class="stat">
+        <span class="stat-icon stat-gold" aria-hidden="true">&#x25B6;</span>
+        <div class="stat-meta">
+          <h3>Video learning</h3>
+          <p>Review topics your way</p>
+        </div>
+      </article>
+      <article class="stat">
+        <span class="stat-icon stat-teal" aria-hidden="true">&#x2197;</span>
+        <div class="stat-meta">
+          <h3>Student focused</h3>
+          <p>Simple, clear navigation</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ========================================================================== -->
     <!-- ACADEMICHUB FAIZ — STUDENT INFORMATION & RESOURCES CENTRE                   -->
+    <!-- (HIDDEN FROM PUBLIC UNTIL USER INSTRUCTION - UNLOCKED WITH ?preview=1)      -->
     <!-- ========================================================================== -->
     <section class="quick-stats student-info-centre" id="student-info-centre" aria-label="Student Information & Resources Centre">
 
