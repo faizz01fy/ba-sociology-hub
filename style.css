@@ -4070,3 +4070,158 @@ html, body {
     -webkit-line-clamp: 4 !important;
   }
 }
+
+
+/* ========================================================================== */
+/* MERGED NOTICE CARD (SPANS 2 COLUMNS: NOTICE + READABLE FONT SIZE)         */
+/* ========================================================================== */
+@keyframes noticeIntervalBlink {
+  0%, 72%, 100% {
+    border-color: #e0d1f7;
+    box-shadow: 0 10px 24px rgba(41,44,63,.055), inset 0 1px 0 rgba(255,255,255,.9);
+    background: linear-gradient(145deg, #ffffff 0%, #fbf9ff 60%, #f5eeff 100%);
+  }
+  78% {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 22px rgba(139, 92, 246, 0.42), 0 10px 24px rgba(41,44,63,.08), inset 0 1px 0 #ffffff;
+    background: linear-gradient(145deg, #ffffff 0%, #f3e8ff 100%);
+  }
+  84% {
+    border-color: #e0d1f7;
+    box-shadow: 0 10px 24px rgba(41,44,63,.055), inset 0 1px 0 rgba(255,255,255,.9);
+    background: linear-gradient(145deg, #ffffff 0%, #fbf9ff 60%, #f5eeff 100%);
+  }
+  90% {
+    border-color: #7c3aed;
+    box-shadow: 0 0 24px rgba(124, 58, 237, 0.48), 0 10px 24px rgba(41,44,63,.08), inset 0 1px 0 #ffffff;
+    background: linear-gradient(145deg, #ffffff 0%, #ede9fe 100%);
+  }
+}
+
+@keyframes badgeDotBlink {
+  0%, 72%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  78% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+  84% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+  90% {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+}
+
+.quick-stats .stat.stat-notice-merged {
+  grid-column: span 2 !important;
+  --feature-accent: #7c3aed !important;
+  animation: noticeIntervalBlink 6s ease-in-out infinite !important;
+  border-color: #e0d1f7 !important;
+  background: linear-gradient(145deg, #ffffff 0%, #fbf9ff 60%, #f5eeff 100%) !important;
+  padding: 14px 20px 14px 18px !important;
+  gap: 16px !important;
+  height: 104px !important;
+  max-height: 104px !important;
+  cursor: default !important;
+}
+
+.quick-stats .stat.stat-notice-merged .stat-icon {
+  flex: 0 0 48px !important;
+  width: 48px !important;
+  height: 48px !important;
+  font-size: 24px !important;
+  border-radius: 15px !important;
+  border-color: rgba(118,85,184,.14) !important;
+  background: linear-gradient(145deg, #ffffff, #ede4ff) !important;
+  color: #6b21a8 !important;
+}
+
+.quick-stats .notice-content-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  min-width: 0 !important;
+  flex: 1 !important;
+}
+
+.quick-stats .notice-header-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  line-height: 1.2 !important;
+}
+
+.quick-stats .notice-title {
+  color: #3b0764 !important;
+  font-family: 'Outfit', 'Manrope', 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 14.5px !important;
+  letter-spacing: -0.25px !important;
+}
+
+.quick-stats .notice-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 2px 7px !important;
+  background: #ede9fe !important;
+  color: #6d28d9 !important;
+  border: 1px solid #ddd6fe !important;
+  border-radius: 6px !important;
+  font-size: 8.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+}
+
+.quick-stats .notice-pill-dot {
+  display: inline-block !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: #7c3aed !important;
+  box-shadow: 0 0 6px #7c3aed !important;
+  animation: badgeDotBlink 6s ease-in-out infinite !important;
+}
+
+.quick-stats .notice-desc {
+  color: #475569 !important;
+  font-family: 'DM Sans', -apple-system, sans-serif !important;
+  font-size: 11.8px !important;
+  line-height: 1.45 !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.1px !important;
+  margin: 0 !important;
+}
+
+@media(max-width:1050px){
+  .quick-stats .stat.stat-notice-merged {
+    grid-column: span 2 !important;
+    height: auto !important;
+    min-height: 98px !important;
+    max-height: none !important;
+  }
+}
+
+@media(max-width:700px){
+  .quick-stats .stat.stat-notice-merged {
+    grid-column: span 2 !important;
+    padding: 12px 14px !important;
+    gap: 12px !important;
+    height: auto !important;
+    min-height: 92px !important;
+  }
+  .quick-stats .notice-title {
+    font-size: 12.5px !important;
+  }
+  .quick-stats .notice-desc {
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+  }
+}
