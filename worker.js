@@ -46,7 +46,26 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname.startsWith("/audio/")) {
-      const audioResp = await env.ASSETS.fetch(request);
+      let audioResp = await env.ASSETS.fetch(request);
+      if (!audioResp.ok) {
+        const filename = url.pathname.split("/").pop();
+        const candidates = [
+          "/audio\\" + filename,
+          "/audio%5C" + filename,
+          "/" + filename,
+          "/audio/" + filename
+        ];
+        for (const cand of candidates) {
+          try {
+            const altUrl = new URL(cand, request.url);
+            const tryResp = await env.ASSETS.fetch(new Request(altUrl, request));
+            if (tryResp.ok) {
+              audioResp = tryResp;
+              break;
+            }
+          } catch (_) {}
+        }
+      }
       const newHeaders = new Headers(audioResp.headers);
       newHeaders.set("Cache-Control", "public, max-age=31536000, immutable");
       newHeaders.set("Accept-Ranges", "bytes");
