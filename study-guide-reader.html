@@ -3354,7 +3354,11 @@
         let docParams = null;
         try {
           el('status').textContent = 'Fetching document data…';
-          let resp = await fetch(file.href);
+          let fetchTarget = file.href;
+          if (!fetchTarget.includes('v=')) {
+            fetchTarget += (fetchTarget.includes('?') ? '&' : '?') + 'v=' + Date.now();
+          }
+          let resp = await fetch(fetchTarget, { cache: 'no-store' });
           if (!resp.ok) {
             const altUrls = [];
             const curHref = file.href;

@@ -266,7 +266,7 @@ export default {
         } catch (_) {}
       }
     }
-    if (request.method === "GET" && response.ok && response.headers.get("Content-Type")?.includes("text/html")) {
+    if (request.method === "GET" && response.ok && (response.headers.get("Content-Type")?.includes("text/html") || response.headers.get("Content-Type")?.includes("application/pdf") || url.pathname.endsWith(".pdf"))) {
       const task = room.fetch(new Request("https://internal/internal/visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
