@@ -437,7 +437,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സഹകരണം, മത്സരം, സംഘർഷം: സമൂഹത്തിന്റെ രഹസ്യങ്ങൾ (Fundamental Social Processes: Cooperation, Competition & Conflict)",
             "chapter": "Fundamental Social Processes · Park & Burgess Analysis",
             "duration": "23",
-            "youtubeId": "",
+            "youtubeId": "spsLKSVtrJ0",
             "studyPoints": [
               "സാമൂഹിക പ്രക്രിയകൾ (Social Processes): വ്യക്തികളും ഗ്രൂപ്പുകളും പരസ്പരം പ്രതിപ്രവർത്തിക്കുന്ന അടിസ്ഥാന രൂപങ്ങൾ.",
               "സഹകരണം (Cooperation): ഒരു പൊതു ലക്ഷ്യത്തിനായി വ്യക്തികളും ഗ്രൂപ്പുകളും ഒരുമിച്ചു പ്രവർത്തിക്കുന്ന പ്രക്രിയ.",
@@ -451,7 +451,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സംഘർഷം സമൂഹത്തെ വളർത്തുന്നതെങ്ങനെ? (How Conflict Grows Society: Lewis Coser & Marx)",
             "chapter": "The Functions of Social Conflict · Coser & Marx",
             "duration": "21",
-            "youtubeId": "",
+            "youtubeId": "9eJugiiYaEU",
             "studyPoints": [
               "കാൾ മാർക്സിന്റെ വർഗ്ഗ സംഘർഷ സിദ്ധാന്തം (Karl Marx - Class Conflict): ചൂഷകരും ചൂഷിതരും തമ്മിലുള്ള ചരിത്രപരമായ വൈരുദ്ധ്യങ്ങൾ.",
               "ലൂയിസ് കോസറുടെ സംഘർഷ ധർമ്മങ്ങൾ (Lewis Coser - Functions of Social Conflict): സംഘർഷം ഗ്രൂപ്പിന്റെ ആന്തരിക ഐക്യത്തെ ശക്തിപ്പെടുത്തുന്ന വിധം.",
@@ -464,7 +464,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "നിയമം അനുസരിക്കാൻ നമ്മളെ നിർബന്ധിക്കുന്നത് എന്ത്? (Social Control & Sanctions)",
             "chapter": "Formal & Informal Social Control · E.A. Ross & Sanctions",
             "duration": "20",
-            "youtubeId": "",
+            "youtubeId": "Jxpad-uweI4",
             "studyPoints": [
               "സാമൂഹിക നിയന്ത്രണം (Social Control - E.A. Ross): സമൂഹത്തിൽ ക്രമസമാധാനവും സ്ഥിരതയും നിലനിർത്താൻ ഏർപ്പെടുത്തുന്ന സംവിധാനങ്ങൾ.",
               "അനൗപചാരിക നിയന്ത്രണം: ആചാരങ്ങൾ (Folkways), സദാചാര നിയമങ്ങൾ (Mores), മതം, പൊതുജനാഭിപ്രായം.",
