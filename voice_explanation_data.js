@@ -294,7 +294,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കാലിക്കറ്റ് സർവ്വകലാശാല സോഷ്യോളജി മൊഡ്യൂൾ 1 സമഗ്ര സംഗ്രഹം (Module 1 Masterclass)",
             "chapter": "Calicut University FYUGP Sociology Module 1 Complete Masterclass & Exam Guide",
             "duration": "34",
-            "youtubeId": "",
+            "youtubeId": "mUahYKgz1QU",
             "studyPoints": [
               "സിലബസ് രൂപരേഖ: സോഷ്യോളജിയുടെ ഉത്ഭവം, നിർവ്വചനം, വികാസം, യൂറോപ്യൻ വിജ്ഞാനോദയം എന്നിവയുടെ സമഗ്ര അവലോകനം.",
               "കോംത്, ഡർക്കൈം, വെബർ എന്നിവരുടെ അടിസ്ഥാന സൈദ്ധാന്തിക സമന്വയം.",
@@ -395,7 +395,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഫ്രോയിഡ്, മീഡ്, പിയാഷെ: സോഷ്യലൈസേഷൻ ഘട്ടങ്ങൾ (Theories of Socialization: Freud, Mead, Piaget)",
             "chapter": "Freud, Mead & Piaget · Development of the Social Self",
             "duration": "19",
-            "youtubeId": "isvdZWkDqNE",
+            "youtubeId": "uf8WYWO9-Tk",
             "studyPoints": [
               "സിഗ്മണ്ട് ഫ്രോയിഡിന്റെ മനോവിശകലന സിദ്ധാന്തം (Psychoanalytic Theory): ജൈവിക കാമനകളുടെ ഇഡ് (Id), യാഥാർത്ഥ്യബോധമുള്ള ഈഗോ (Ego), സദാചാരബോധത്തിന്റെ സൂപ്പർഈഗോ (Superego) എന്നിവ തമ്മിലുള്ള സംഘർഷം.",
               "ജോർജ്ജ് ഹെർബർട്ട് മീഡിന്റെ 'I' ഉം 'Me' യും (G.H. Mead's Social Self): വ്യക്തിയുടെ സ്വതസിദ്ധമായ പ്രതികരണമായ 'I' ഉം, സമൂഹത്തിന്റെ പ്രതീക്ഷകളെ ഉൾക്കൊണ്ട 'Me' യും തമ്മിലുള്ള വിനിമയം.",
@@ -409,7 +409,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "മനുഷ്യനെ മനുഷ്യനാക്കുന്ന സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary, Secondary & Reference Groups)",
             "chapter": "Primary vs Secondary Groups · Cooley's Theory & Reference Groups",
             "duration": "21",
-            "youtubeId": "kEN94HWq9Ac",
+            "youtubeId": "jedN-7Z72Fk",
             "studyPoints": [
               "സാമൂഹിക ഗ്രൂപ്പ് (Social Group): പരസ്പര ബന്ധവും പങ്കിട്ട മൂല്യങ്ങളും 'ഞങ്ങൾ' എന്ന ഐക്യബോധവും (We-feeling) ഉള്ള രണ്ടോ അതിലധികമോ വ്യക്തികളുടെ കൂട്ടായ്മ.",
               "പ്രാഥമിക ഗ്രൂപ്പുകൾ (Primary Groups - Charles Horton Cooley): ചെറിയ വലിപ്പം, മുഖാമുഖ സമ്പർക്കം (Face-to-face), വൈകാരിക അടുപ്പം (ഉദാ: കുടുംബം, ബാല്യകാല സൗഹൃദം).",
