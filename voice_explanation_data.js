@@ -480,42 +480,58 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 4.1",
-            "title": "സമൂഹവും സാമൂഹിക സ്ഥാപനങ്ങളും (Society & Social Institutions: Family, Marriage & Kinship)",
-            "chapter": "Social Institutions · Structure, Functions & Typology",
-            "duration": "24",
-            "youtubeId": "",
+            "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics, Evolution & Types)",
+            "chapter": "Society · Characteristics & Types (Agrarian, Industrial & Post-Industrial)",
+            "duration": "16",
+            "youtubeId": "zEagx74glsc",
             "studyPoints": [
-              "സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions): അടിസ്ഥാനപരമായ സാമൂഹിക ആവശ്യങ്ങൾ നിറവേറ്റുന്ന സുസ്ഥിരമായ നിയമവ്യവസ്ഥകൾ.",
-              "കുടുംബവും വിവാഹവും: പ്രാഥമിക സാമൂഹികീകരണവും ലൈംഗിക, വൈകാരിക നിയന്ത്രണങ്ങളും.",
-              "ബന്ധുത്വം (Kinship): രക്തബന്ധം, വൈവാഹിക ബന്ധം എന്നിവ വഴിയുള്ള സാമൂഹിക വിഭജനങ്ങൾ."
+              "സമൂഹം (Society): പരസ്പര ബന്ധങ്ങളുടെ സങ്കീർണ്ണമായ വല (MacIver & Page - 'Web of Social Relationships').",
+              "പരിണാമ ഘട്ടങ്ങൾ: നായാട്ട്-ശേഖരണ ഘട്ടം, ഇടയ സമൂഹം, കാർഷിക സമൂഹം (Agrarian), വ്യാവസായിക സമൂഹം (Industrial), ആധുനിക പോസ്റ്റ്-ഇൻഡസ്ട്രിയൽ / ഇൻഫർമേഷൻ സമൂഹം.",
+              "ഡാനിയൽ ബെല്ലിന്റെ പോസ്റ്റ്-ഇൻഡസ്ട്രിയൽ സിദ്ധാന്തം: സേവന മേഖലയുടെ വളർച്ചയും വിജ്ഞാന സാങ്കേതിക വിദ്യയും എഐയും സമൂഹത്തിൽ വരുത്തുന്ന സമൂലമായ മാറ്റങ്ങൾ."
             ],
-            "examTip": "Calicut University ചോദ്യം: 'Define Social Institution and discuss the functions of Family in modern society'."
+            "examTip": "Calicut University പ്രധാന ചോദ്യം: 'Trace the evolution of society from agrarian to post-industrial society with key characteristics'."
           },
           {
             "chapterNumber": "Chapter 4.2",
-            "title": "സാമൂഹിക ഘടന, പദവിയും പങ്കും (Social Structure: Status, Role & Role Conflict)",
-            "chapter": "Radcliffe-Brown's Social Structure · Ascribed vs Achieved Status",
+            "title": "സമൂഹത്തിന്റെ അദൃശ്യ ഓപ്പറേറ്റിംഗ് സിസ്റ്റമായ സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions: Family, Marriage & Kinship)",
+            "chapter": "Social Institutions · Nature, Types & Changing Trends",
             "duration": "20",
-            "youtubeId": "",
+            "youtubeId": "z1jXxahDWUw",
             "studyPoints": [
-              "സാമൂഹിക ഘടന (Social Structure): വ്യക്തികളും ഗ്രൂപ്പുകളും തമ്മിലുള്ള ക്രമീകൃതമായ പരസ്പര ബന്ധങ്ങളുടെ ചട്ടക്കൂട്.",
-              "പദവി (Status): ആർജിത പദവി (Ascribed - ജനനത്തിലൂടെ) vs സ്വയംനേടിയ പദവി (Achieved - പ്രയത്നത്തിലൂടെ).",
-              "പങ്ക് (Role) & റോൾ കോൺഫ്ലിക്റ്റ് (Role Conflict): പദവിക്ക് അനുസൃതമായ പെരുമാറ്റ രീതികളും ഒന്നിലധികം റോളുകൾക്കിടയിലെ സംഘർഷങ്ങളും."
+              "സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions): സമൂഹത്തിന്റെ സുസ്ഥിരമായ നിലനിൽപ്പിനും ആവശ്യങ്ങൾക്കും വേണ്ടിയുള്ള സംഘടിത നിയമവ്യവസ്ഥകളും ചട്ടക്കൂടുകളും.",
+              "കുടുംബം (Family): പ്രാഥമിക സാമൂഹികീകരണത്തിന്റെ ഉറവിടം (അണുകുടുംബം, കൂട്ടുകുടുംബം എന്നിവയും അവയിലെ സമകാലിക മാറ്റങ്ങളും).",
+              "വിവാഹം (Marriage): നിയമപരവും സാമൂഹികവുമായ ബന്ധം (ഏകഭാര്യാത്വം, ബഹുഭാര്യാത്വം, ഇൻ-ഗ്രൂപ്പ് & ഔട്ട്-ഗ്രൂപ്പ് വിവാഹ നിയമങ്ങൾ).",
+              "മതം, ഭരണകൂടം & വിദ്യാഭ്യാസം: സമൂഹത്തിൽ ക്രമവും ധാർമ്മികതയും കാത്തുസൂക്ഷിക്കുന്ന മറ്റ് അടിസ്ഥാന സ്ഥാപനങ്ങൾ."
             ],
-            "examTip": "പ്രധാന ചോദ്യം: 'Distinguish between Ascribed and Achieved Status with examples'."
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: 'Define Social Institution and examine the changing structural and functional aspects of Family'."
           },
           {
             "chapterNumber": "Chapter 4.3",
-            "title": "സാമൂഹിക മാറ്റം: ഘടകങ്ങളും സിദ്ധാന്തങ്ങളും (Social Change: Theories & Catalysts)",
-            "chapter": "Factors of Social Change · Linear vs Cyclical Theories",
-            "duration": "22",
-            "youtubeId": "",
+            "title": "പദവികളും റോളുകളും റോൾ കോൺഫ്ലിക്റ്റും (Social Structure: Status, Role & Role Conflict)",
+            "chapter": "Social Structure · Ralph Linton & Merton's Role Theory",
+            "duration": "10",
+            "youtubeId": "7Qkp0t6g9Qc",
             "studyPoints": [
-              "സാമൂഹിക മാറ്റം (Social Change): സാമൂഹിക ഘടനയിലും മൂല്യങ്ങളിലും ഉണ്ടാകുന്ന കാലാനുസൃതമായ പരിവർത്തനങ്ങൾ.",
-              "ചാലകശക്തികൾ: സാങ്കേതിക വിദ്യ, സാമ്പത്തിക ഘടകങ്ങൾ, സാംസ്കാരിക വിനിമയം, ജനസംഖ്യാപരമായ മാറ്റങ്ങൾ.",
-              "സിദ്ധാന്തങ്ങൾ: രേഖീയ സിദ്ധാന്തം (Linear Theory - Comte & Spencer) vs ചാക്രിക സിദ്ധാന്തം (Cyclical Theory - Spengler & Sorokin)."
+              "സാമൂഹിക ഘടന (Social Structure): റാഡ്ക്ലിഫ് ബ്രൗണും ടാൽകോട്ട് പാർസൺസും നിർവ്വചിച്ച സ്ഥാപനവൽക്കരിക്കപ്പെട്ട സാമൂഹിക ക്രമം.",
+              "പദവി (Status - Ralph Linton): ആർജിത പദവി (Ascribed Status - ജനനത്തിലൂടെ, ഉദാ: ജാതി, ലിംഗം) vs സ്വയംനേടിയ പദവി (Achieved Status - പ്രയത്നത്തിലൂടെ, ഉദാ: വിദ്യാഭ്യാസം, തൊഴിൽ).",
+              "റോൾ (Role) & റോൾ സെറ്റ് (Role Set): പദവിക്ക് അനുസൃതമായ പെരുമാറ്റം; റോബർട്ട് കെ. മെർട്ടന്റെ റോൾ സെറ്റ് ആശയം.",
+              "റോൾ കോൺഫ്ലിക്റ്റ് (Role Conflict): വ്യക്തികൾ ഒന്നിലധികം പരസ്പരവിരുദ്ധമായ റോളുകൾ വഹിക്കേണ്ടി വരുമ്പോഴുണ്ടാകുന്ന മാനസിക-സാമൂഹിക സംഘർഷങ്ങൾ."
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി എസ്സേ: 'Critically analyze the major factors responsible for Social Change in contemporary India'."
+            "examTip": "ഷോർട്ട് എസ്സേ ചോദ്യം: 'Distinguish between Ascribed and Achieved Status. What is Role Conflict?'"
+          },
+          {
+            "chapterNumber": "Chapter 4.4",
+            "title": "സാമൂഹിക മാറ്റവും അതിന്റെ ഘടകങ്ങളും (Social Change: Factors & Theories)",
+            "chapter": "Social Change · Catalysts, Cultural Lag & Major Theories",
+            "duration": "21",
+            "youtubeId": "jfBES35jpzw",
+            "studyPoints": [
+              "സാമൂഹിക മാറ്റം (Social Change): സാമൂഹിക വ്യവസ്ഥിതിയിലും ബന്ധങ്ങളിലും മൂല്യങ്ങളിലും വരുന്ന ഘടനാപരമായ പരിവർത്തനം.",
+              "പ്രധാന ചാലകശക്തികൾ: സാങ്കേതിക വിദ്യ (Technological), സമ്പദ്‌വ്യവസ്ഥ (Economic), സംസ്കാരം (Cultural), പരിസ്ഥിതി & ജനസംഖ്യാപരം.",
+              "വില്യം ഓഗ്ബേണിന്റെ കൾച്ചറൽ ലാഗ് (Cultural Lag): ഭൗതിക സംസ്കാരത്തിന്റെ വളർച്ചയ്ക്കൊപ്പം അഭൗതിക സംസ്കാരത്തിന് എത്തിപ്പെടാൻ സാധിക്കാതെ വരുന്ന വിടവ്.",
+              "സിദ്ധാന്തങ്ങൾ: ലീനിയർ സിദ്ധാന്തങ്ങൾ (Comte & Spencer) vs ചാക്രിക സിദ്ധാന്തങ്ങൾ (Spengler & Sorokin)."
+            ],
+            "examTip": "പരീക്ഷാ ഹൈലൈറ്റ് (10 Mark Essay): 'Critically evaluate William F. Ogburn's theory of Cultural Lag in the context of technological advancements'."
           }
         ]
       }
