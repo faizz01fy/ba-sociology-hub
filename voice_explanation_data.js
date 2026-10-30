@@ -264,10 +264,37 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 01",
+            "title": "സോഷ്യോളജിക്കൽ ഭാവനയും ശാസ്ത്രീയ ഗവേഷണ രീതികളും (Sociological Imagination & Research Methods)",
+            "chapter": "Academic Hub Special · സി. റൈറ്റ് മിൽസ് & റിസർച്ച് മെത്തേഡ്സ്",
+            "duration": "27",
+            "youtubeId": "uMxIIznPo-w",
+            "studyPoints": [
+              "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination - C. Wright Mills): വ്യക്തിഗത പ്രശ്നങ്ങളെ (Personal Troubles) വലിയ സാമൂഹിക സാഹചര്യങ്ങളുമായി (Public Issues) ബന്ധിപ്പിച്ചു വിശകലനം ചെയ്യാനുള്ള സവിശേഷ ശേഷി.",
+              "ശാസ്ത്രീയ ഗവേഷണ രീതികൾ: അനുഭവവേദ്യമായ ഡാറ്റ ശേഖരണം (Empirical Observation), സാമാന്യവൽക്കരണം, സിദ്ധാന്ത രൂപീകരണം.",
+              "ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ: ആഴത്തിലുള്ള പങ്കാളിത്ത നിരീക്ഷണങ്ങളും സ്റ്റാറ്റിസ്റ്റിക്കൽ സർവേകളും സമന്വയിപ്പിക്കുന്ന രീതി."
+            ],
+            "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Distinguish between Personal Troubles and Public Issues with examples according to C. Wright Mills'."
+          },
+          {
+            "chapterNumber": "Chapter 02",
+            "title": "മൈക്രോ-മാക്രോ സോഷ്യോളജിയും പോസിറ്റിവിസവും (Micro & Macro Sociology and Positivism)",
+            "chapter": "Micro & Macro Levels · Positivism & Auguste Comte's Scientific Inquiry",
+            "duration": "13",
+            "youtubeId": "-jf46qeJgKo",
+            "studyPoints": [
+              "മൈക്രോ vs മാക്രോ സോഷ്യോളജി: വ്യക്തികൾ തമ്മിലുള്ള മുഖാമുഖ സമ്പർക്കങ്ങളെയും ദൈനംദിന സംഭാഷണങ്ങളെയും പഠിക്കുന്ന മൈക്രോ തലവും (Micro-level), സമ്പദ്‌വ്യവസ്ഥ, ഭരണകൂടം, മതങ്ങൾ തുടങ്ങിയ വൻകിട വ്യവസ്ഥിതികളെ അപഗ്രഥിക്കുന്ന മാക്രോ തലവും (Macro-level).",
+              "ഓഗസ്റ്റ് കോംതും പോസിറ്റിവിസവും (Auguste Comte's Positivism): പ്രകൃതിശാസ്ത്രങ്ങളിലെപ്പോലെ നേരിട്ടുള്ള നിരീക്ഷണത്തിലൂടെയും ശാസ്ത്രീയ തെളിവുകളിലൂടെയും സാമൂഹിക നിയമങ്ങൾ കണ്ടെത്താൻ കഴിയുമെന്ന വാദം.",
+              "കോംതിന്റെ മൂന്ന് ഘട്ടങ്ങൾ (Law of Three Stages): തിയോളജിക്കൽ (ദൈവശാസ്ത്രപരം), മെറ്റാഫിസിക്കൽ (തത്ത്വശാസ്ത്രപരം), പോസിറ്റീവ് അഥവാ സയന്റിഫിക് (ശാസ്ത്രീയപരം) ഘട്ടങ്ങൾ.",
+              "സ്ട്രക്ചറലിസവും സിംബോളിക് ഇന്ററാക്ഷനിസവും: എമിൽ ഡർക്കൈമിന്റെ സോഷ്യൽ ഫാക്ട്സും (Social Facts) മാക്സ് വെബറുടെ വേർസ്റ്റെഹെൻ (Verstehen) കാഴ്ചപ്പാടും."
+            ],
+            "examTip": "Calicut University FYUGP ചോദ്യം: 'Distinguish between Micro and Macro Sociology with examples' & 'Discuss Auguste Comte's Positivism and Law of Three Stages'."
+          },
+          {
+            "chapterNumber": "Unit 01",
             "title": "Introduction - Origin and Development of Sociology",
-            "youtubeId": "",
-            "duration": "24",
             "chapter": "Calicut University Official Lecture · ഓറിജിൻ ആൻഡ് ഡെവലപ്മെന്റ്",
+            "duration": "24",
+            "youtubeId": "_xg3NxMCKi8",
             "studyPoints": [
               "സോഷ്യോളജിയുടെ നിർവചനം: മനുഷ്യ സമൂഹത്തെയും സാമൂഹിക സ്ഥാപനങ്ങളെയും കുറിച്ചുള്ള ശാസ്ത്രീയ പഠനമാണ് സോഷ്യോളജി.",
               "ഉത്ഭവം: യൂറോപ്പിലെ വ്യാവസായിക വിപ്ലവവും ഫ്രഞ്ച് വിപ്ലവവും സൃഷ്ടിച്ച സാമൂഹിക പരിവർത്തനങ്ങൾ.",
@@ -276,11 +303,11 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Calicut University FYUGP ചോദ്യം: 'Explain the origin and scope of Sociology as an independent discipline'."
           },
           {
-            "chapterNumber": "Chapter 02",
+            "chapterNumber": "Unit 02",
             "title": "Social Forces in the Emergence of Sociology",
-            "youtubeId": "",
-            "duration": "18",
             "chapter": "SOCI CJ 101 M1P2 · ഫ്രഞ്ച് വിപ്ലവം, പ്രബുദ്ധത & വ്യാവസായിക വിപ്ലവം",
+            "duration": "18",
+            "youtubeId": "wHZkxLKJXkU",
             "studyPoints": [
               "ബൗദ്ധിക ശക്തികൾ: പ്രബുദ്ധതാ പ്രസ്ഥാനം (Enlightenment), ശാസ്ത്രീയ ചിന്താഗതി.",
               "സാമ്പത്തിക ശക്തികൾ: കാർഷിക സമ്പദ്‌വ്യവസ്ഥയിൽ നിന്ന് വ്യാവസായിക നഗരവൽക്കരണത്തിലേക്കുള്ള മാറ്റം."
@@ -288,50 +315,37 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "ഹ്രസ്വ കുറിപ്പ്: 'Social forces that contributed to the emergence of sociology'."
           },
           {
-            "chapterNumber": "Chapter 03",
+            "chapterNumber": "Unit 03",
             "title": "Scientific Nature and Subject Matter of Sociology",
-            "youtubeId": "",
-            "duration": "20",
             "chapter": "SOC1CJ101M1P3 · ശാസ്ത്രീയ സ്വഭാവവും വ്യാപ്തിയും",
+            "duration": "20",
+            "youtubeId": "XHvG8v67RvI",
             "studyPoints": [
               "ശാസ്ത്രീയ സ്വഭാവം: അനുഭവവേദ്യമായ ഡാറ്റ ശേഖരണം (Empirical Observation), സാമാന്യവൽക്കരണം.",
               "സോഷ്യോളജി ഒരു സാങ്കൽപ്പിക ശാസ്ത്രമല്ല, മറിച്ച് വസ്തുനിഷ്ഠ ശാസ്ത്രമാണ്."
             ]
           },
           {
-            "chapterNumber": "Chapter 04",
+            "chapterNumber": "Unit 04",
             "title": "Scope and Perspectives of Sociology",
-            "youtubeId": "",
-            "duration": "19",
             "chapter": "SOC1CJ1012024M1P4 · സിന്തറ്റിക് & സ്പെഷ്യലിസ്റ്റിക് കാഴ്ചപ്പാടുകൾ",
+            "duration": "19",
+            "youtubeId": "cbQ3YtgGSys",
             "studyPoints": [
               "സ്പെഷ്യലിസ്റ്റിക് സ്കൂൾ (ജോർജ്ജ് സിമ്മൽ): സോഷ്യോളജി സാമൂഹിക ബന്ധങ്ങളുടെ രൂപങ്ങളെക്കുറിച്ച് മാത്രം പഠിക്കുന്നു.",
               "സിന്തറ്റിക് സ്കൂൾ (ദുർഖൈം, ഹോബ്‌ഹൗസ്): സമഗ്രമായ സാമൂഹിക ജീവിതത്തെക്കുറിച്ച് പഠിക്കുന്നു."
             ]
           },
           {
-            "chapterNumber": "Chapter 05",
+            "chapterNumber": "Unit 05",
             "title": "Sociological Perspectives & Human Society",
-            "youtubeId": "",
-            "duration": "22",
             "chapter": "SOC1CJ2024M1P5 · സൊസൈറ്റി & കമ്മ്യൂണിറ്റി",
+            "duration": "22",
+            "youtubeId": "Wx9i79dZUqQ",
             "studyPoints": [
               "സമൂഹം (Society): പരസ്പര ബന്ധിതമായ വ്യവസ്ഥിതി.",
               "കമ്മ്യൂണിറ്റി (Community): ഒരു പ്രത്യേക ഭൂപ്രദേശവും 'ഞങ്ങൾ' എന്ന ബോധവും (We-feeling) ഉള്ള ജനക്കൂട്ടം."
             ]
-          },
-          {
-            "chapterNumber": "Master Class",
-            "title": "സോഷ്യോളജിക്കൽ ഭാവനയും ശാസ്ത്രീയ ഗവേഷണ രീതികളും (Academic Hub Lecture)",
-            "youtubeId": "uMxIIznPo-w",
-            "duration": "27",
-            "chapter": "Academic Hub Special · സി. റൈറ്റ് മിൽസ് & റിസർച്ച് മെത്തേഡ്സ്",
-            "studyPoints": [
-              "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination - C. Wright Mills).",
-              "വ്യക്തിഗത പ്രശ്നങ്ങൾ (Personal Troubles) vs പൊതുവിഷയങ്ങൾ (Public Issues).",
-              "ഗുണാത്മക & അളവ്ശാസ്ത്ര ഗവേഷണ രീതികൾ."
-            ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Distinguish between Personal Troubles and Public Issues'."
           }
         ]
       },
@@ -341,9 +355,9 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 01",
             "title": "Research Design & Methods in Sociology",
-            "youtubeId": "",
-            "duration": "21",
             "chapter": "SOC1CJ1012024M2P1 · ഗവേഷണ രൂപരേഖയും ഘട്ടങ്ങളും",
+            "duration": "21",
+            "youtubeId": "pFYB-p54P9s",
             "studyPoints": [
               "ഗവേഷണ രൂപരേഖ (Research Design): ഡാറ്റ ശേഖരണത്തിനും വിശകലനത്തിനുമുള്ള മാസ്റ്റർ പ്ലാൻ.",
               "പ്രധാന ഘട്ടങ്ങൾ: പ്രശ്ന നിർണയം, സാഹിത്യ അവലോകനം, സാമ്പിളിംഗ്, ഡാറ്റ ശേഖരണം."
@@ -352,9 +366,9 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 02",
             "title": "Quantitative & Qualitative Methodologies",
-            "youtubeId": "",
-            "duration": "20",
             "chapter": "SOC1CJ1012024M2P2 · ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ",
+            "duration": "20",
+            "youtubeId": "i-4YQlCWQ50",
             "studyPoints": [
               "ഗുണാത്മക രീതികൾ: വികാരങ്ങൾ, അനുഭവങ്ങൾ, സംസ്കാരം എന്നിവയെ ആഴത്തിൽ പഠിക്കുന്നു.",
               "അളവ്ശാസ്ത്ര രീതികൾ: സ്ഥിതിവിവരക്കണക്കുകൾ, സംഖ്യാപരമായ വിശകലനം."
@@ -363,9 +377,9 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 03",
             "title": "Observation Techniques & Participant Observation",
-            "youtubeId": "",
-            "duration": "19",
             "chapter": "SOC1CJ1012024M2P3 · പങ്കാളിത്ത നിരീക്ഷണം",
+            "duration": "19",
+            "youtubeId": "as4vVhXVDGE",
             "studyPoints": [
               "പങ്കാളിത്ത നിരീക്ഷണം (Participant Observation): പഠന വിധേയമാകുന്ന ഗ്രൂപ്പിന്റെ ഭാഗമായി മാറി വിവരങ്ങൾ ശേഖരിക്കുന്നു.",
               "മാലിനോവ്സ്കി (Malinowski): ആന്ത്രപ്പോളജിയിലും സോഷ്യോളജിയിലും ഫീൽഡ് വർക്കിന്റെ ഉപജ്ഞാതാവ്."
@@ -374,9 +388,9 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 04",
             "title": "Tools of Data Collection: Survey, Interview & Schedule",
-            "youtubeId": "",
-            "duration": "22",
             "chapter": "SOC1CJ1012024M2P4 · ചോദ്യാവലി & അഭിമുഖം",
+            "duration": "22",
+            "youtubeId": "WSLD8jEi8d0",
             "studyPoints": [
               "ചോദ്യാവലി (Questionnaire): പ്രതികരിക്കുന്നയാൾ സ്വയം പൂരിപ്പിക്കുന്ന ചോദ്യങ്ങളുടെ പട്ടിക.",
               "അഭിമുഖ ഷെഡ്യൂൾ (Interview Schedule): ഗവേഷകൻ നേരിട്ട് ചോദിച്ച് രേഖപ്പെടുത്തുന്ന രീതി."
@@ -385,9 +399,9 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 05",
             "title": "Objectivity & Ethics in Social Research",
-            "youtubeId": "",
-            "duration": "18",
             "chapter": "SOC1CJ1012024M2P5 · ഗവേഷണ ധാർമ്മികത & മൂല്യ നിഷ്പക്ഷത",
+            "duration": "18",
+            "youtubeId": "QeiqhRqnc8I",
             "studyPoints": [
               "മൂല്യ നിഷ്പക്ഷത (Value Neutrality - Max Weber): ഗവേഷകന്റെ സ്വന്തം താല്പര്യങ്ങൾ പഠനത്തെ ബാധിക്കരുത്.",
               "ധാർമ്മികത: വിവരദാതാക്കളുടെ രഹസ്യസ്വഭാവം (Confidentiality) സൂക്ഷിക്കുക."
@@ -399,130 +413,129 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 03: INDIVIDUAL AND SOCIETY",
         "videos": [
           {
-            "chapterNumber": "Chapter 3.1",
-            "title": "Social Interaction: Cooperation",
-            "youtubeId": "",
-            "duration": "15",
-            "chapter": "സാമൂഹിക പ്രതിപ്രവർത്തനം · സഹകരണം (Cooperation)",
+            "chapterNumber": "Chapter 03",
+            "title": "സമൂഹം എങ്ങനെ നമ്മളെ മനുഷ്യരാക്കുന്നു? (How Society Makes Us Human: Process of Socialization)",
+            "chapter": "Human Socialization · Nature vs Nurture & Primary Agencies",
+            "duration": "24",
+            "youtubeId": "6VWW49UMoks",
             "studyPoints": [
-              "സഹകരണം: ഒരു പൊതു ലക്ഷ്യത്തിനായി വ്യക്തികളും ഗ്രൂപ്പുകളും ഒരുമിച്ചു പ്രവർത്തിക്കുന്ന പ്രക്രിയ.",
-              "പ്രൈമറി സഹകരണം (കുടുംബം), സെക്കൻഡറി സഹകരണം (വ്യാവസായിക സ്ഥാപനം)."
-            ]
+              "സോഷ്യലൈസേഷൻ നിർവചനം (Process of Socialization): ജൈവിക ജീവിയായി ജനിക്കുന്ന ഒരു കുഞ്ഞ് സമൂഹവുമായി ഇടപഴകി സംസ്കാരവും ഭാഷയും മൂല്യങ്ങളും പഠിച്ചെടുത്ത് സാമൂഹിക ജീവിയായി മാറുന്ന ആജീവനാന്ത പ്രക്രിയ.",
+              "Nature vs Nurture സംവാദം: മനുഷ്യ വ്യക്തിത്വത്തെയും പെരുമാറ്റത്തെയും നിശ്ചയിക്കുന്നത് ജനിതക പാരമ്പര്യമാണോ (Nature) അതോ വളർത്തുസാഹചര്യങ്ങളും സാമൂഹിക സമ്പർക്കവുമാണോ (Nurture) എന്ന അടിസ്ഥാന ചർച്ച.",
+              "ഫെറൽ കുട്ടികളും ഒറ്റപ്പെടലും (Feral & Isolated Children): കമല, അമല തുടങ്ങിയ കാട്ടുക്കുട്ടികളുടെ മനഃശാസ്ത്ര-സാമൂഹിക പഠനങ്ങൾ തെളിയിക്കുന്നത് മനുഷ്യസമ്പർക്കമില്ലാതെ മനുഷ്യന് യഥാർത്ഥ വ്യക്തിത്വമോ യുക്തിചിന്തയോ വികസിക്കില്ല എന്നാണ്.",
+              "സോഷ്യലൈസേഷന്റെ ഏജൻസികൾ: കുടുംബം (പ്രാഥമിക ഏജൻസി), സമപ്രായക്കാരുടെ കൂട്ടായ്മ (Peer Group), വിദ്യാലയങ്ങൾ, മാധ്യമങ്ങൾ എന്നിവയുടെ പങ്ക്."
+            ],
+            "examTip": "Calicut University പരീക്ഷാ ചോദ്യം: 'Explain the Nature vs Nurture debate in socialization with reference to feral children cases'."
           },
           {
-            "chapterNumber": "Chapter 3.2",
-            "title": "Social Interaction: Competition",
-            "youtubeId": "",
-            "duration": "16",
-            "chapter": "സാമൂഹിക പ്രതിപ്രവർത്തനം · മത്സരം (Competition)",
-            "studyPoints": [
-              "മത്സരം: പരിമിതമായ വിഭവങ്ങൾക്കായുള്ള സമാധാനപരമായ പോരാട്ടം.",
-              "വ്യക്തിഗത മത്സരം vs ഗ്രൂപ്പ് മത്സരം."
-            ]
-          },
-          {
-            "chapterNumber": "Chapter 3.3",
-            "title": "Social Interaction: Conflict",
-            "youtubeId": "",
-            "duration": "18",
-            "chapter": "സാമൂഹിക പ്രതിപ്രവർത്തനം · സംഘർഷം (Conflict)",
-            "studyPoints": [
-              "സംഘർഷം: എതിരാളിയെ തോൽപ്പിച്ചോ ഇല്ലാതാക്കിയോ ലക്ഷ്യം നേടാനുള്ള നേരിട്ടുള്ള പ്രക്രിയ.",
-              "വ്യക്തിഗത സംഘർഷം, വർഗ്ഗ സംഘർഷം (കാൾ മാർക്സ്)."
-            ]
-          },
-          {
-            "chapterNumber": "Chapter 3.4",
-            "title": "Social Interaction: Accommodation & Assimilation",
-            "youtubeId": "",
-            "duration": "17",
-            "chapter": "പൊരുത്തപ്പെടലും (Accommodation) ലയനവും (Assimilation)",
-            "studyPoints": [
-              "പൊരുത്തപ്പെടൽ: സംഘർഷം ഒഴിവാക്കി ഒത്തുതീർപ്പിൽ എത്തുന്ന അവസ്ഥ.",
-              "ലയനം: വ്യത്യസ്ത സംസ്കാരങ്ങൾ പരസ്പരം കലർന്ന് ഒന്നായിത്തീരുന്ന പ്രക്രിയ."
-            ]
-          },
-          {
-            "chapterNumber": "Chapter 3.5",
-            "title": "Social Groups: Meaning & Characteristics",
-            "youtubeId": "",
-            "duration": "19",
-            "chapter": "സാമൂഹിക ഗ്രൂപ്പുകൾ · അർത്ഥവും സവിശേഷതകളും",
-            "studyPoints": [
-              "സാമൂഹിക ഗ്രൂപ്പ്: പരസ്പരം ബന്ധപ്പെടുകയും പൊതുവായ താല്പര്യങ്ങൾ പങ്കിടുകയും ചെയ്യുന്ന രണ്ടോ അതിലധികമോ ആളുകൾ."
-            ]
-          },
-          {
-            "chapterNumber": "Chapter 3.6",
-            "title": "Types of Social Groups: Primary & Secondary",
-            "youtubeId": "",
+            "chapterNumber": "Chapter 04",
+            "title": "നമ്മൾ വെറും സമൂഹത്തിന്റെ നിർമ്മിതികളാണോ? (Social Construction of Reality)",
+            "chapter": "Social Construction of Reality · Agency vs Structure",
             "duration": "20",
-            "chapter": "പ്രൈമറി & സെക്കൻഡറി ഗ്രൂപ്പുകൾ (Charles Cooley)",
+            "youtubeId": "EJt-7kG_-E8",
             "studyPoints": [
-              "പ്രൈമറി ഗ്രൂപ്പ്: മുഖാമുഖ ബന്ധം (Face-to-face interaction), വൈകാരിക അടുപ്പം.",
-              "സെക്കൻഡറി ഗ്രൂപ്പ്: ലക്ഷ്യാധിഷ്ഠിതമായ ഔദ്യോഗിക ബന്ധങ്ങൾ."
-            ]
+              "സാമൂഹിക യാഥാർത്ഥ്യത്തിന്റെ നിർമ്മിതി (Berger & Luckmann - The Social Construction of Reality, 1966): നാം അനുഭവിക്കുന്ന യാഥാർത്ഥ്യങ്ങൾ പ്രകൃതിദത്തമല്ല, മറിച്ച് മനുഷ്യർ ചേർന്ന് നിർമ്മിച്ചെടുത്തതാണ്.",
+              "മൂന്ന് അടിസ്ഥാന പ്രക്രിയകൾ: ബാഹ്യവൽക്കരണം (Externalization), വസ്തുനിഷ്ഠവൽക്കരണം (Objectivation), ആന്തരികവൽക്കരണം (Internalization).",
+              "ആന്തരികവൽക്കരണം (Internalization): പുറത്തുനിൽക്കുന്ന സാമൂഹിക മൂല്യങ്ങളെയും നിയമങ്ങളെയും വ്യക്തി സ്വന്തം ചിന്തകളായും ബോധ്യങ്ങളായും സ്വീകരിക്കുന്ന ഘട്ടം.",
+              "ഏജൻസി vs സ്ട്രക്ചർ (Individual Agency vs Social Structure): വ്യക്തികൾക്ക് സ്വന്തം നിലയിൽ തീരുമാനങ്ങളെടുക്കാനുള്ള ശേഷിയും (Agency), വ്യക്തിയെ നിയന്ത്രിക്കുന്ന സാമൂഹിക വ്യവസ്ഥിതികളും (Structure)."
+            ],
+            "examTip": "പ്രധാന യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Explain Peter Berger and Thomas Luckmann's concept of Social Construction of Reality'."
           },
           {
-            "chapterNumber": "Chapter 3.7",
-            "title": "Socialization: Meaning, Scope & Theories",
-            "youtubeId": "",
+            "chapterNumber": "Chapter 05",
+            "title": "സോഷ്യലൈസേഷൻ പാളിച്ചകളും ജീവിത പ്രതിസന്ധികളും (Socialization Failures & Identity Crises)",
+            "chapter": "Socialization Failures · Anomie, Deviance & Re-socialization",
+            "duration": "22",
+            "youtubeId": "KEg51ekQTWY",
+            "studyPoints": [
+              "സോഷ്യലൈസേഷൻ പാളിച്ചകൾ (Failures in Socialization): അപര്യാപ്തമായ ശ്രദ്ധ, കുടുംബത്തിലെ താളപ്പിഴകൾ, വിരുദ്ധ സന്ദേശങ്ങൾ എന്നിവ വ്യക്തികളിൽ സൃഷ്ടിക്കുന്ന പെരുമാറ്റ വൈകല്യങ്ങളും വ്യതിയാനങ്ങളും (Deviance).",
+              "എമിൽ ഡർക്കൈമിന്റെ അനോമി (Durkheimian Anomie): അതിവേഗ സാമൂഹിക മാറ്റങ്ങൾ മൂലം സമൂഹത്തിലെ ചട്ടങ്ങളും നിയന്ത്രണങ്ങളും തകരുമ്പോൾ വ്യക്തി അനുഭവിക്കുന്ന ദിശാബോധമില്ലായ്മയും അരക്ഷിതാവസ്ഥയും.",
+              "ഐഡന്റിറ്റി ക്രൈസിസ് (Erik Erikson's Identity Crisis): കൗമാരത്തിലും യുവത്വത്തിലും സ്വന്തം സ്ഥാനവും സ്വത്വവും തിരിച്ചറിയാൻ വ്യക്തി അനുഭവിക്കുന്ന മനഃശാസ്ത്ര സംഘർഷം.",
+              "ലേബലിംഗ് തിയറിയും റീ-സോഷ്യലൈസേഷനും: ഹൊവാർഡ് ബെക്കറുടെ ലേബലിംഗ് സിദ്ധാന്തവും എർവിംഗ് ഗോഫ്മാന്റെ ടോട്ടൽ ഇൻസ്റ്റിറ്റ്യൂഷനുകളിലെ (Total Institutions) പുനർ-സാമൂഹികവൽക്കരണവും."
+            ],
+            "examTip": "Calicut University ചോദ്യം: 'Define Anomie according to Emile Durkheim and explain how socialization failures lead to social deviance'."
+          },
+          {
+            "chapterNumber": "Chapter 06",
+            "title": "ഫ്രോയിഡ്, മീഡ്, പിയാഷെ: സോഷ്യലൈസേഷൻ ഘട്ടങ്ങൾ (Theories of Socialization: Freud, Mead, Piaget)",
+            "chapter": "Freud, Mead & Piaget · Development of the Social Self",
+            "duration": "19",
+            "youtubeId": "isvdZWkDqNE",
+            "studyPoints": [
+              "സിഗ്മണ്ട് ഫ്രോയിഡിന്റെ മനോവിശകലന സിദ്ധാന്തം (Psychoanalytic Theory): ജൈവിക കാമനകളുടെ ഇഡ് (Id), യാഥാർത്ഥ്യബോധമുള്ള ഈഗോ (Ego), സദാചാരബോധത്തിന്റെ സൂപ്പർഈഗോ (Superego) എന്നിവ തമ്മിലുള്ള സംഘർഷം.",
+              "ജോർജ്ജ് ഹെർബർട്ട് മീഡിന്റെ 'I' ഉം 'Me' യും (G.H. Mead's Social Self): വ്യക്തിയുടെ സ്വതസിദ്ധമായ പ്രതികരണമായ 'I' ഉം, സമൂഹത്തിന്റെ പ്രതീക്ഷകളെ ഉൾക്കൊണ്ട 'Me' യും തമ്മിലുള്ള വിനിമയം.",
+              "മീഡിന്റെ ഘട്ടങ്ങൾ: പ്രിപ്പറേറ്ററി സ്റ്റേജ് (അനുകരണം), പ്ലേ സ്റ്റേജ് (റോളുകൾ അഭിനയിക്കൽ), ഗെയിം സ്റ്റേജ് & ജനറലൈസ്ഡ് അദർ (Generalized Other).",
+              "ജീൻ പിയാഷെയുടെ വൈജ്ഞാനിക വികാസ ഘട്ടങ്ങൾ (Jean Piaget's Cognitive Development): സെൻസറി-മോട്ടോർ, പ്രീ-ഓപ്പറേഷണൽ, കോൺക്രീറ്റ് ഓപ്പറേഷണൽ, ഫോർമൽ ഓപ്പറേഷണൽ ഘട്ടങ്ങൾ."
+            ],
+            "examTip": "പ്രധാന 10 മാർക്ക് ഉപന്യാസ ചോദ്യം: 'Critically examine G.H. Mead's theory of the development of Self (I and Me)'."
+          },
+          {
+            "chapterNumber": "Chapter 07",
+            "title": "മനുഷ്യനെ മനുഷ്യനാക്കുന്ന സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary, Secondary & Reference Groups)",
+            "chapter": "Primary vs Secondary Groups · Cooley's Theory & Reference Groups",
             "duration": "21",
-            "chapter": "സാമൂഹികവൽക്കരണം · നിർവചനവും പ്രാധാന്യവും",
+            "youtubeId": "kEN94HWq9Ac",
             "studyPoints": [
-              "സാമൂഹികവൽക്കരണം: വ്യക്തി സമൂഹത്തിന്റെ മൂല്യങ്ങൾ പഠിച്ചെടുക്കുന്ന ആജീവനാന്ത പ്രക്രിയ."
-            ]
+              "സാമൂഹിക ഗ്രൂപ്പ് (Social Group): പരസ്പര ബന്ധവും പങ്കിട്ട മൂല്യങ്ങളും 'ഞങ്ങൾ' എന്ന ഐക്യബോധവും (We-feeling) ഉള്ള രണ്ടോ അതിലധികമോ വ്യക്തികളുടെ കൂട്ടായ്മ.",
+              "പ്രാഥമിക ഗ്രൂപ്പുകൾ (Primary Groups - Charles Horton Cooley): ചെറിയ വലിപ്പം, മുഖാമുഖ സമ്പർക്കം (Face-to-face), വൈകാരിക അടുപ്പം (ഉദാ: കുടുംബം, ബാല്യകാല സൗഹൃദം).",
+              "ദ്വിതീയ ഗ്രൂപ്പുകൾ (Secondary Groups): ലക്ഷ്യാധിഷ്ഠിതമായ ഔദ്യോഗിക ബന്ധങ്ങൾ, വലിയ വലിപ്പം, കരാറുകൾക്കും ചട്ടങ്ങൾക്കും മുൻഗണന (ഉദാ: വ്യാവസായിക സ്ഥാപനങ്ങൾ, സർക്കാർ ഓഫീസുകൾ).",
+              "ഇൻ-ഗ്രൂപ്പ്, ഔട്ട്-ഗ്രൂപ്പ് & റഫറൻസ് ഗ്രൂപ്പ്: ഡബ്ല്യു.ജി. സാംനറുടെ ഇൻ/ഔട്ട് ഗ്രൂപ്പുകളും, റോബർട്ട് കെ. മെർട്ടന്റെ റഫറൻസ് ഗ്രൂപ്പ് (Reference Group) സിദ്ധാന്തവും."
+            ],
+            "examTip": "Calicut University പരീക്ഷാ ചോദ്യം: 'Distinguish between Primary and Secondary Groups as outlined by C.H. Cooley' & 'Explain Robert K. Merton's concept of Reference Group'."
           },
           {
-            "chapterNumber": "Chapter 3.8",
-            "title": "Types of Socialization: Primary, Secondary & Anticipatory",
-            "youtubeId": "",
+            "chapterNumber": "Chapter 08",
+            "title": "സംഘടിത സംഘങ്ങളും ആൾക്കൂട്ടത്തിന്റെ മനഃശാസ്ത്രവും (Formal Organizations & Crowd Psychology)",
+            "chapter": "Max Weber's Bureaucracy & Gustave Le Bon's Crowd Psychology",
             "duration": "18",
-            "chapter": "സാമൂഹികവൽക്കരണത്തിന്റെ തരങ്ങൾ",
+            "youtubeId": "uyHwUpA5Es0",
             "studyPoints": [
-              "ആന്റിസിപ്പേറ്ററി സോഷ്യലൈസേഷൻ: ഭാവിയിൽ ചേരാൻ ആഗ്രഹിക്കുന്ന ഗ്രൂപ്പിന്റെ മൂല്യങ്ങൾ മുൻകൂട്ടി പഠിക്കുന്നത്."
-            ]
+              "ഔപചാരിക സംഘടനകൾ (Formal Organizations): ആധുനിക വ്യവസായ വിപ്ലവത്തിന് ശേഷം വൻതോതിലുള്ള ജോലികൾ ഏകോപിപ്പിക്കാൻ രൂപകൽപ്പന ചെയ്ത നിയമബദ്ധമായ ഘടനകൾ.",
+              "മാക്സ് വെബറുടെ ബ്യൂറോക്രസി (Max Weber's Rational Bureaucracy): അധികാര ശ്രേണി (Hierarchy of Authority), കർശനമായ ലിഖിത നിയമങ്ങൾ, നിർവ്യക്തികത (Impersonality), സാങ്കേതിക യോഗ്യത.",
+              "ബ്യൂറോക്രസിയുടെ അയോഗ്യതകൾ (Dysfunctions): റെഡ്-ടേപ്പിസം (Red Tapism), ചട്ടക്കൂടുകളിലെ അന്ധമായ മുറുകെപ്പിടിക്കൽ, വ്യക്തിത്വമില്ലായ്മ.",
+              "ഗുസ്താവ് ലെ ബോണിന്റെ ആൾക്കൂട്ട മനഃശാസ്ത്രം (Gustave Le Bon - Crowd Psychology): ആൾക്കൂട്ടത്തിൽ വ്യക്തിഗത യുക്തി അപ്രത്യക്ഷമാവുകയും മാനസിക സംക്രമണത്തിലൂടെ (Contagion) വികാരങ്ങൾക്ക് അടിമപ്പെടുകയും ചെയ്യുന്ന അവസ്ഥ."
+            ],
+            "examTip": "പ്രധാന പരീക്ഷാ ചോദ്യം: 'Describe the key characteristics of Max Weber's Ideal Type of Bureaucracy' & 'Explain Gustave Le Bon's theory of Crowd Psychology'."
           },
           {
-            "chapterNumber": "Chapter 3.9",
-            "title": "Agents of Socialization: Family, School & Media",
+            "chapterNumber": "Chapter 09",
+            "title": "സഹകരണം, മത്സരം, സംഘർഷം: സമൂഹത്തിന്റെ രഹസ്യങ്ങൾ (Fundamental Social Processes: Cooperation, Competition & Conflict)",
+            "chapter": "Fundamental Social Processes · Park & Burgess Analysis",
+            "duration": "23",
             "youtubeId": "",
-            "duration": "17",
-            "chapter": "സാമൂഹികവൽക്കരണ ഏജൻസികൾ",
             "studyPoints": [
-              "കുടുംബം ഏറ്റവും ആദ്യത്തെയും പ്രധാനപ്പെട്ടതുമായ പ്രാഥമിക ഏജൻസിയാണ്."
-            ]
+              "സാമൂഹിക പ്രക്രിയകൾ (Social Processes): വ്യക്തികളും ഗ്രൂപ്പുകളും പരസ്പരം പ്രതിപ്രവർത്തിക്കുന്ന അടിസ്ഥാന രൂപങ്ങൾ.",
+              "സഹകരണം (Cooperation): ഒരു പൊതു ലക്ഷ്യത്തിനായി വ്യക്തികളും ഗ്രൂപ്പുകളും ഒരുമിച്ചു പ്രവർത്തിക്കുന്ന പ്രക്രിയ.",
+              "മത്സരം (Competition): പരിമിതമായ വിഭവങ്ങൾക്കായുള്ള നിയമബദ്ധമായ സമാധാനപരമായ പോരാട്ടം.",
+              "സംഘർഷം (Conflict): എതിരാളിയെ പ്രതിരോധിച്ചോ നേരിട്ടോ സ്വന്തം ലക്ഷ്യം നേടാനുള്ള പ്രക്രിയ."
+            ],
+            "examTip": "ഹ്രസ്വ ഉപന്യാസം: 'Define Social Processes and distinguish between Cooperation, Competition and Conflict'."
           },
           {
-            "chapterNumber": "Chapter 3.10",
-            "title": "Stages of Socialization: Infancy to Adulthood",
+            "chapterNumber": "Chapter 10",
+            "title": "സംഘർഷം സമൂഹത്തെ വളർത്തുന്നതെങ്ങനെ? (How Conflict Grows Society: Lewis Coser & Marx)",
+            "chapter": "The Functions of Social Conflict · Coser & Marx",
+            "duration": "21",
             "youtubeId": "",
-            "duration": "19",
-            "chapter": "വ്യക്തിവികാസത്തിന്റെ വിവിധ ഘട്ടങ്ങൾ",
             "studyPoints": [
-              "ശൈശവം, കൗമാരം, യൗവ്വനം, വാർദ്ധക്യം എന്നിവയിലെ സാമൂഹിക പങ്ക് മാറ്റങ്ങൾ."
-            ]
+              "കാൾ മാർക്സിന്റെ വർഗ്ഗ സംഘർഷ സിദ്ധാന്തം (Karl Marx - Class Conflict): ചൂഷകരും ചൂഷിതരും തമ്മിലുള്ള ചരിത്രപരമായ വൈരുദ്ധ്യങ്ങൾ.",
+              "ലൂയിസ് കോസറുടെ സംഘർഷ ധർമ്മങ്ങൾ (Lewis Coser - Functions of Social Conflict): സംഘർഷം ഗ്രൂപ്പിന്റെ ആന്തരിക ഐക്യത്തെ ശക്തിപ്പെടുത്തുന്ന വിധം.",
+              "സേഫ്റ്റി വാൽവ് ഇൻസ്റ്റിറ്റ്യൂഷനുകൾ: ചെറിയ പരാതികൾ തുറന്നുപറഞ്ഞ് വലിയ പൊട്ടിത്തെറികൾ ഒഴിവാക്കുന്ന രീതി."
+            ],
+            "examTip": "പ്രധാന ചോദ്യം: 'Discuss the positive functions of social conflict according to Lewis Coser'."
           },
           {
-            "chapterNumber": "Chapter 3.11",
-            "title": "Social Control: Meaning, Need & Types",
-            "youtubeId": "",
+            "chapterNumber": "Chapter 11",
+            "title": "നിയമം അനുസരിക്കാൻ നമ്മളെ നിർബന്ധിക്കുന്നത് എന്ത്? (Social Control & Sanctions)",
+            "chapter": "Formal & Informal Social Control · E.A. Ross & Sanctions",
             "duration": "20",
-            "chapter": "സാമൂഹിക നിയന്ത്രണം · ആവശ്യകതയും തരങ്ങളും",
-            "studyPoints": [
-              "സമൂഹത്തിൽ സമാധാനവും ക്രമവും നിലനിർത്താൻ ഏർപ്പെടുത്തുന്ന സംവിധാനങ്ങൾ."
-            ]
-          },
-          {
-            "chapterNumber": "Chapter 3.12",
-            "title": "Agencies of Social Control: Law, State & Religion",
             "youtubeId": "",
-            "duration": "18",
-            "chapter": "നിയന്ത്രണ ഏജൻസികൾ",
             "studyPoints": [
-              "ഔപചാരികം: നിയമം, പോലീസ്, ജയിൽ.",
-              "അനൗപചാരികം: പൊതുജനാഭിപ്രായം, ആചാരങ്ങൾ, സദാചാരം."
-            ]
+              "സാമൂഹിക നിയന്ത്രണം (Social Control - E.A. Ross): സമൂഹത്തിൽ ക്രമസമാധാനവും സ്ഥിരതയും നിലനിർത്താൻ ഏർപ്പെടുത്തുന്ന സംവിധാനങ്ങൾ.",
+              "അനൗപചാരിക നിയന്ത്രണം: ആചാരങ്ങൾ (Folkways), സദാചാര നിയമങ്ങൾ (Mores), മതം, പൊതുജനാഭിപ്രായം.",
+              "ഔപചാരിക നിയന്ത്രണം: ഭരണകൂടം, നിയമവാഴ്ച (Rule of Law), പോലീസും നീതിന്യായ വ്യവസ്ഥയും.",
+              "സാങ്ഷനുകൾ (Sanctions): നല്ല പെരുമാറ്റത്തിനുള്ള അംഗീകാരങ്ങളും (Rewards) തെറ്റായ പ്രവൃത്തികൾക്കുള്ള ശിക്ഷകളും (Punishments)."
+            ],
+            "examTip": "Calicut University ചോദ്യം: 'Distinguish between Formal and Informal agencies of social control'."
           }
         ]
       },
@@ -532,19 +545,20 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.1",
             "title": "Society: Meaning, Definitions & Characteristics",
-            "youtubeId": "",
-            "duration": "19",
             "chapter": "സമൂഹം · സവിശേഷതകൾ",
+            "duration": "19",
+            "youtubeId": "ENCnVQTPcDY",
             "studyPoints": [
-              "സമൂഹത്തിൽ സമത്വവും വ്യത്യാസവും ഒരുപോലെ അടങ്ങിയിരിക്കുന്നു."
+              "സമൂഹത്തിൽ സമത്വവും വ്യത്യാസവും ഒരുപോലെ അടങ്ങിയിരിക്കുന്നു.",
+              "പരസ്പര ആശ്രയത്വവും സഹകരണവുമാണ് സമൂഹത്തിന്റെ അടിത്തറ."
             ]
           },
           {
             "chapterNumber": "Chapter 4.2",
             "title": "Types of Society: Agrarian, Industrial & Post-Industrial",
-            "youtubeId": "",
-            "duration": "22",
             "chapter": "സമൂഹത്തിന്റെ വിവിധ വകഭേദങ്ങൾ",
+            "duration": "22",
+            "youtubeId": "8tXZ8ySITgw",
             "studyPoints": [
               "കാർഷിക സമൂഹം: കുടുംബ കേന്ദ്രീകൃത ഉൽപ്പാദനം.",
               "വ്യാവസായിക സമൂഹം: യന്ത്രവൽക്കരണവും നഗരവൽക്കരണവും."
@@ -553,9 +567,9 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.3",
             "title": "Social Institutions: Family, Marriage & Kinship",
-            "youtubeId": "",
-            "duration": "24",
             "chapter": "സാമൂഹിക സ്ഥാപനങ്ങൾ",
+            "duration": "24",
+            "youtubeId": "Kgo5aCYEazI",
             "studyPoints": [
               "വിവാഹം, കുടുംബം, ബന്ധുത്വം (Kinship) എന്നിവയുടെ ഘടനയും ധർമ്മങ്ങളും."
             ]
@@ -563,9 +577,9 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.4",
             "title": "Social Structure: Components & Dimensions",
-            "youtubeId": "",
-            "duration": "18",
             "chapter": "സാമൂഹിക ഘടന (Radcliffe-Brown)",
+            "duration": "18",
+            "youtubeId": "6zHLIl-LC10",
             "studyPoints": [
               "വ്യക്തികളും സ്ഥാപനങ്ങളും തമ്മിലുള്ള ക്രമീകൃതമായ പരസ്പര ബന്ധങ്ങളുടെ ശൃംഖല."
             ]
@@ -573,9 +587,9 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.5",
             "title": "Status: Ascribed vs Achieved Status",
-            "youtubeId": "",
-            "duration": "17",
             "chapter": "പദവി · ആർജിത പദവി & സ്വയംനേടിയ പദവി",
+            "duration": "17",
+            "youtubeId": "zQXkc14ws3E",
             "studyPoints": [
               "ആർജിത പദവി: ജനനത്തിലൂടെ ലഭിക്കുന്നത്.",
               "സ്വയംനേടിയ പദവി: പ്രയത്നത്തിലൂടെ നേടുന്നത്."
@@ -584,9 +598,9 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.6",
             "title": "Role: Role Conflict, Role Set & Performance",
-            "youtubeId": "",
-            "duration": "18",
             "chapter": "പങ്ക് · റോൾ കോൺഫ്ലിക്റ്റ്",
+            "duration": "18",
+            "youtubeId": "SJnQKshktn4",
             "studyPoints": [
               "പദവിക്ക് അനുയോജ്യമായ പെരുമാറ്റരീതിയാണ് പങ്ക് (Role).",
               "ഒരേ സമയം പല റോളുകൾ നിർവഹിക്കേണ്ടി വരുമ്പോൾ ഉണ്ടാകുന്ന സംഘർഷം (Role Conflict)."
@@ -595,9 +609,9 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.7",
             "title": "Social Change: Factors & Theories",
-            "youtubeId": "",
-            "duration": "23",
             "chapter": "സാമൂഹിക മാറ്റം · ഘടകങ്ങളും സിദ്ധാന്തങ്ങളും",
+            "duration": "23",
+            "youtubeId": "uzdNv1dqWMc",
             "studyPoints": [
               "സാങ്കേതിക, സാംസ്കാരിക, ജനസംഖ്യാപരമായ മാറ്റത്തിന്റെ ചാലകശക്തികൾ.",
               "രേഖീയ സിദ്ധാന്തം (Linear Theory) vs ചാക്രിക സിദ്ധാന്തം (Cyclical Theory)."
@@ -611,9 +625,9 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 01",
             "title": "Fieldwork Assignment & Practical Social Research",
-            "youtubeId": "uMxIIznPo-w",
-            "duration": "27",
             "chapter": "പ്രായോഗിക നിരീക്ഷണങ്ങൾ & ഫീൽഡ് റിപ്പോർട്ട്",
+            "duration": "27",
+            "youtubeId": "uMxIIznPo-w",
             "studyPoints": [
               "ഫീൽഡ്‌വർക്ക് അസൈൻമെന്റ്: യഥാർത്ഥ സാമൂഹിക സാഹചര്യങ്ങളിലെ പഠനം.",
               "ഡാറ്റ ക്രോഡീകരണവും പ്രസന്റേഷനും."
@@ -622,7 +636,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 1
+    "totalVideos": 29
   },
   "philosophy-of-ai": {
     "name": "Philosophy of AI",
