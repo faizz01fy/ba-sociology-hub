@@ -290,62 +290,17 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Calicut University FYUGP ചോദ്യം: 'Distinguish between Micro and Macro Sociology with examples' & 'Discuss Auguste Comte's Positivism and Law of Three Stages'."
           },
           {
-            "chapterNumber": "Unit 01",
-            "title": "Introduction - Origin and Development of Sociology",
-            "chapter": "Calicut University Official Lecture · ഓറിജിൻ ആൻഡ് ഡെവലപ്മെന്റ്",
-            "duration": "24",
-            "youtubeId": "_xg3NxMCKi8",
+            "chapterNumber": "Chapter 12",
+            "title": "കാലിക്കറ്റ് സർവ്വകലാശാല സോഷ്യോളജി മൊഡ്യൂൾ 1 സമഗ്ര സംഗ്രഹം (Module 1 Masterclass)",
+            "chapter": "Calicut University FYUGP Sociology Module 1 Complete Masterclass & Exam Guide",
+            "duration": "34",
+            "youtubeId": "",
             "studyPoints": [
-              "സോഷ്യോളജിയുടെ നിർവചനം: മനുഷ്യ സമൂഹത്തെയും സാമൂഹിക സ്ഥാപനങ്ങളെയും കുറിച്ചുള്ള ശാസ്ത്രീയ പഠനമാണ് സോഷ്യോളജി.",
-              "ഉത്ഭവം: യൂറോപ്പിലെ വ്യാവസായിക വിപ്ലവവും ഫ്രഞ്ച് വിപ്ലവവും സൃഷ്ടിച്ച സാമൂഹിക പരിവർത്തനങ്ങൾ.",
-              "സ്ഥാപക ചിന്തകർ: അഗസ്റ്റ് കോംതെ (Auguste Comte - സോഷ്യോളജിയുടെ പിതാവ്), എമിൽ ദുർഖൈം, മാക്സ് വെബർ, കാൾ മാർക്സ്."
+              "സിലബസ് രൂപരേഖ: സോഷ്യോളജിയുടെ ഉത്ഭവം, നിർവ്വചനം, വികാസം, യൂറോപ്യൻ വിജ്ഞാനോദയം എന്നിവയുടെ സമഗ്ര അവലോകനം.",
+              "കോംത്, ഡർക്കൈം, വെബർ എന്നിവരുടെ അടിസ്ഥാന സൈദ്ധാന്തിക സമന്വയം.",
+              "പരീക്ഷാ ചോദ്യോത്തര മാർഗ്ഗരേഖ: 10 മാർക്ക് എസ്സേകളും 4 മാർക്ക് ഷോർട്ട് എസ്സേകളും ഉയർന്ന സ്കോർ നേടാനുള്ള തന്ത്രങ്ങളും."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: 'Explain the origin and scope of Sociology as an independent discipline'."
-          },
-          {
-            "chapterNumber": "Unit 02",
-            "title": "Social Forces in the Emergence of Sociology",
-            "chapter": "SOCI CJ 101 M1P2 · ഫ്രഞ്ച് വിപ്ലവം, പ്രബുദ്ധത & വ്യാവസായിക വിപ്ലവം",
-            "duration": "18",
-            "youtubeId": "wHZkxLKJXkU",
-            "studyPoints": [
-              "ബൗദ്ധിക ശക്തികൾ: പ്രബുദ്ധതാ പ്രസ്ഥാനം (Enlightenment), ശാസ്ത്രീയ ചിന്താഗതി.",
-              "സാമ്പത്തിക ശക്തികൾ: കാർഷിക സമ്പദ്‌വ്യവസ്ഥയിൽ നിന്ന് വ്യാവസായിക നഗരവൽക്കരണത്തിലേക്കുള്ള മാറ്റം."
-            ],
-            "examTip": "ഹ്രസ്വ കുറിപ്പ്: 'Social forces that contributed to the emergence of sociology'."
-          },
-          {
-            "chapterNumber": "Unit 03",
-            "title": "Scientific Nature and Subject Matter of Sociology",
-            "chapter": "SOC1CJ101M1P3 · ശാസ്ത്രീയ സ്വഭാവവും വ്യാപ്തിയും",
-            "duration": "20",
-            "youtubeId": "XHvG8v67RvI",
-            "studyPoints": [
-              "ശാസ്ത്രീയ സ്വഭാവം: അനുഭവവേദ്യമായ ഡാറ്റ ശേഖരണം (Empirical Observation), സാമാന്യവൽക്കരണം.",
-              "സോഷ്യോളജി ഒരു സാങ്കൽപ്പിക ശാസ്ത്രമല്ല, മറിച്ച് വസ്തുനിഷ്ഠ ശാസ്ത്രമാണ്."
-            ]
-          },
-          {
-            "chapterNumber": "Unit 04",
-            "title": "Scope and Perspectives of Sociology",
-            "chapter": "SOC1CJ1012024M1P4 · സിന്തറ്റിക് & സ്പെഷ്യലിസ്റ്റിക് കാഴ്ചപ്പാടുകൾ",
-            "duration": "19",
-            "youtubeId": "cbQ3YtgGSys",
-            "studyPoints": [
-              "സ്പെഷ്യലിസ്റ്റിക് സ്കൂൾ (ജോർജ്ജ് സിമ്മൽ): സോഷ്യോളജി സാമൂഹിക ബന്ധങ്ങളുടെ രൂപങ്ങളെക്കുറിച്ച് മാത്രം പഠിക്കുന്നു.",
-              "സിന്തറ്റിക് സ്കൂൾ (ദുർഖൈം, ഹോബ്‌ഹൗസ്): സമഗ്രമായ സാമൂഹിക ജീവിതത്തെക്കുറിച്ച് പഠിക്കുന്നു."
-            ]
-          },
-          {
-            "chapterNumber": "Unit 05",
-            "title": "Sociological Perspectives & Human Society",
-            "chapter": "SOC1CJ2024M1P5 · സൊസൈറ്റി & കമ്മ്യൂണിറ്റി",
-            "duration": "22",
-            "youtubeId": "Wx9i79dZUqQ",
-            "studyPoints": [
-              "സമൂഹം (Society): പരസ്പര ബന്ധിതമായ വ്യവസ്ഥിതി.",
-              "കമ്മ്യൂണിറ്റി (Community): ഒരു പ്രത്യേക ഭൂപ്രദേശവും 'ഞങ്ങൾ' എന്ന ബോധവും (We-feeling) ഉള്ള ജനക്കൂട്ടം."
-            ]
+            "examTip": "ഫൈനൽ എക്സാം ഗൈഡ്: ഒന്നാം സെമസ്റ്റർ പരീക്ഷയിലെ മുഴുവൻ മൊഡ്യൂൾ 1 ചോദ്യങ്ങളുടെയും വിശകലനം."
           }
         ]
       },
@@ -353,59 +308,40 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 02: PRACTICING SOCIOLOGY",
         "videos": [
           {
-            "chapterNumber": "Chapter 01",
-            "title": "Research Design & Methods in Sociology",
-            "chapter": "SOC1CJ1012024M2P1 · ഗവേഷണ രൂപരേഖയും ഘട്ടങ്ങളും",
-            "duration": "21",
-            "youtubeId": "pFYB-p54P9s",
-            "studyPoints": [
-              "ഗവേഷണ രൂപരേഖ (Research Design): ഡാറ്റ ശേഖരണത്തിനും വിശകലനത്തിനുമുള്ള മാസ്റ്റർ പ്ലാൻ.",
-              "പ്രധാന ഘട്ടങ്ങൾ: പ്രശ്ന നിർണയം, സാഹിത്യ അവലോകനം, സാമ്പിളിംഗ്, ഡാറ്റ ശേഖരണം."
-            ]
-          },
-          {
-            "chapterNumber": "Chapter 02",
-            "title": "Quantitative & Qualitative Methodologies",
-            "chapter": "SOC1CJ1012024M2P2 · ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ",
+            "chapterNumber": "Chapter 2.1",
+            "title": "ഗവേഷണ രൂപരേഖയും ഘട്ടങ്ങളും (Research Design & Methods in Sociology)",
+            "chapter": "Research Design · Hypothesis, Sampling & Data Collection",
             "duration": "20",
-            "youtubeId": "i-4YQlCWQ50",
+            "youtubeId": "",
             "studyPoints": [
-              "ഗുണാത്മക രീതികൾ: വികാരങ്ങൾ, അനുഭവങ്ങൾ, സംസ്കാരം എന്നിവയെ ആഴത്തിൽ പഠിക്കുന്നു.",
-              "അളവ്ശാസ്ത്ര രീതികൾ: സ്ഥിതിവിവരക്കണക്കുകൾ, സംഖ്യാപരമായ വിശകലനം."
-            ]
+              "ഗവേഷണ രൂപരേഖ (Research Design): ഡാറ്റ ശേഖരണത്തിനും വിശകലനത്തിനുമുള്ള ആസൂത്രിത മാസ്റ്റർ പ്ലാൻ.",
+              "പ്രധാന ഘട്ടങ്ങൾ: പ്രശ്ന നിർണയം, സാഹിത്യ അവലോകനം, ഹൈപ്പോതിസിസ് രൂപീകരണം, സാമ്പിളിംഗ്, ഡാറ്റ ശേഖരണം."
+            ],
+            "examTip": "Calicut University ചോദ്യം: 'What is Research Design? Explain the major steps in social research'."
           },
           {
-            "chapterNumber": "Chapter 03",
-            "title": "Observation Techniques & Participant Observation",
-            "chapter": "SOC1CJ1012024M2P3 · പങ്കാളിത്ത നിരീക്ഷണം",
-            "duration": "19",
-            "youtubeId": "as4vVhXVDGE",
-            "studyPoints": [
-              "പങ്കാളിത്ത നിരീക്ഷണം (Participant Observation): പഠന വിധേയമാകുന്ന ഗ്രൂപ്പിന്റെ ഭാഗമായി മാറി വിവരങ്ങൾ ശേഖരിക്കുന്നു.",
-              "മാലിനോവ്സ്കി (Malinowski): ആന്ത്രപ്പോളജിയിലും സോഷ്യോളജിയിലും ഫീൽഡ് വർക്കിന്റെ ഉപജ്ഞാതാവ്."
-            ]
-          },
-          {
-            "chapterNumber": "Chapter 04",
-            "title": "Tools of Data Collection: Survey, Interview & Schedule",
-            "chapter": "SOC1CJ1012024M2P4 · ചോദ്യാവലി & അഭിമുഖം",
+            "chapterNumber": "Chapter 2.2",
+            "title": "ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ (Quantitative & Qualitative Methodologies)",
+            "chapter": "Methodological Approaches · Positivist vs Interpretive Research",
             "duration": "22",
-            "youtubeId": "WSLD8jEi8d0",
+            "youtubeId": "",
             "studyPoints": [
-              "ചോദ്യാവലി (Questionnaire): പ്രതികരിക്കുന്നയാൾ സ്വയം പൂരിപ്പിക്കുന്ന ചോദ്യങ്ങളുടെ പട്ടിക.",
-              "അഭിമുഖ ഷെഡ്യൂൾ (Interview Schedule): ഗവേഷകൻ നേരിട്ട് ചോദിച്ച് രേഖപ്പെടുത്തുന്ന രീതി."
-            ]
+              "ഗുണാത്മക രീതികൾ (Qualitative): അനുഭവങ്ങൾ, വികാരങ്ങൾ, സംസ്കാരം എന്നിവയെ ആഴത്തിൽ പഠിക്കുന്ന രീതി.",
+              "അളവ്ശാസ്ത്ര രീതികൾ (Quantitative): സംഖ്യാപരമായ വിവരങ്ങളും സ്റ്റാറ്റിസ്റ്റിക്കൽ വിശകലനങ്ങളും."
+            ],
+            "examTip": "പ്രധാന പരീക്ഷാ വിഷയം: 'Differentiate between Qualitative and Quantitative research methods'."
           },
           {
-            "chapterNumber": "Chapter 05",
-            "title": "Objectivity & Ethics in Social Research",
-            "chapter": "SOC1CJ1012024M2P5 · ഗവേഷണ ധാർമ്മികത & മൂല്യ നിഷ്പക്ഷത",
-            "duration": "18",
-            "youtubeId": "QeiqhRqnc8I",
+            "chapterNumber": "Chapter 2.3",
+            "title": "നിരീക്ഷണ രീതികളും ഗവേഷണ ധാർമ്മികതയും (Observation Techniques & Ethics in Social Research)",
+            "chapter": "Participant Observation & Value Neutrality (Max Weber)",
+            "duration": "19",
+            "youtubeId": "",
             "studyPoints": [
-              "മൂല്യ നിഷ്പക്ഷത (Value Neutrality - Max Weber): ഗവേഷകന്റെ സ്വന്തം താല്പര്യങ്ങൾ പഠനത്തെ ബാധിക്കരുത്.",
-              "ധാർമ്മികത: വിവരദാതാക്കളുടെ രഹസ്യസ്വഭാവം (Confidentiality) സൂക്ഷിക്കുക."
-            ]
+              "പങ്കാളിത്ത നിരീക്ഷണം (Participant Observation): പഠന വിധേയമാകുന്ന സമൂഹത്തിന്റെ ഭാഗമായി നിന്ന് വിവരങ്ങൾ ശേഖരിക്കുന്ന രീതി (Bronislaw Malinowski).",
+              "മൂല്യ നിഷ്പക്ഷത (Value Neutrality - Max Weber): ഗവേഷകന്റെ സ്വന്തം മുൻവിധികളും താല്പര്യങ്ങളും പഠനത്തെ ബാധിക്കരുത്."
+            ],
+            "examTip": "ഹ്രസ്വ കുറിപ്പ്: 'Participant Observation' & 'Ethics in Social Research'."
           }
         ]
       },
@@ -544,99 +480,47 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 4.1",
-            "title": "Society: Meaning, Definitions & Characteristics",
-            "chapter": "സമൂഹം · സവിശേഷതകൾ",
-            "duration": "19",
-            "youtubeId": "ENCnVQTPcDY",
+            "title": "സമൂഹവും സാമൂഹിക സ്ഥാപനങ്ങളും (Society & Social Institutions: Family, Marriage & Kinship)",
+            "chapter": "Social Institutions · Structure, Functions & Typology",
+            "duration": "24",
+            "youtubeId": "",
             "studyPoints": [
-              "സമൂഹത്തിൽ സമത്വവും വ്യത്യാസവും ഒരുപോലെ അടങ്ങിയിരിക്കുന്നു.",
-              "പരസ്പര ആശ്രയത്വവും സഹകരണവുമാണ് സമൂഹത്തിന്റെ അടിത്തറ."
-            ]
+              "സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions): അടിസ്ഥാനപരമായ സാമൂഹിക ആവശ്യങ്ങൾ നിറവേറ്റുന്ന സുസ്ഥിരമായ നിയമവ്യവസ്ഥകൾ.",
+              "കുടുംബവും വിവാഹവും: പ്രാഥമിക സാമൂഹികീകരണവും ലൈംഗിക, വൈകാരിക നിയന്ത്രണങ്ങളും.",
+              "ബന്ധുത്വം (Kinship): രക്തബന്ധം, വൈവാഹിക ബന്ധം എന്നിവ വഴിയുള്ള സാമൂഹിക വിഭജനങ്ങൾ."
+            ],
+            "examTip": "Calicut University ചോദ്യം: 'Define Social Institution and discuss the functions of Family in modern society'."
           },
           {
             "chapterNumber": "Chapter 4.2",
-            "title": "Types of Society: Agrarian, Industrial & Post-Industrial",
-            "chapter": "സമൂഹത്തിന്റെ വിവിധ വകഭേദങ്ങൾ",
-            "duration": "22",
-            "youtubeId": "8tXZ8ySITgw",
+            "title": "സാമൂഹിക ഘടന, പദവിയും പങ്കും (Social Structure: Status, Role & Role Conflict)",
+            "chapter": "Radcliffe-Brown's Social Structure · Ascribed vs Achieved Status",
+            "duration": "20",
+            "youtubeId": "",
             "studyPoints": [
-              "കാർഷിക സമൂഹം: കുടുംബ കേന്ദ്രീകൃത ഉൽപ്പാദനം.",
-              "വ്യാവസായിക സമൂഹം: യന്ത്രവൽക്കരണവും നഗരവൽക്കരണവും."
-            ]
+              "സാമൂഹിക ഘടന (Social Structure): വ്യക്തികളും ഗ്രൂപ്പുകളും തമ്മിലുള്ള ക്രമീകൃതമായ പരസ്പര ബന്ധങ്ങളുടെ ചട്ടക്കൂട്.",
+              "പദവി (Status): ആർജിത പദവി (Ascribed - ജനനത്തിലൂടെ) vs സ്വയംനേടിയ പദവി (Achieved - പ്രയത്നത്തിലൂടെ).",
+              "പങ്ക് (Role) & റോൾ കോൺഫ്ലിക്റ്റ് (Role Conflict): പദവിക്ക് അനുസൃതമായ പെരുമാറ്റ രീതികളും ഒന്നിലധികം റോളുകൾക്കിടയിലെ സംഘർഷങ്ങളും."
+            ],
+            "examTip": "പ്രധാന ചോദ്യം: 'Distinguish between Ascribed and Achieved Status with examples'."
           },
           {
             "chapterNumber": "Chapter 4.3",
-            "title": "Social Institutions: Family, Marriage & Kinship",
-            "chapter": "സാമൂഹിക സ്ഥാപനങ്ങൾ",
-            "duration": "24",
-            "youtubeId": "Kgo5aCYEazI",
+            "title": "സാമൂഹിക മാറ്റം: ഘടകങ്ങളും സിദ്ധാന്തങ്ങളും (Social Change: Theories & Catalysts)",
+            "chapter": "Factors of Social Change · Linear vs Cyclical Theories",
+            "duration": "22",
+            "youtubeId": "",
             "studyPoints": [
-              "വിവാഹം, കുടുംബം, ബന്ധുത്വം (Kinship) എന്നിവയുടെ ഘടനയും ധർമ്മങ്ങളും."
-            ]
-          },
-          {
-            "chapterNumber": "Chapter 4.4",
-            "title": "Social Structure: Components & Dimensions",
-            "chapter": "സാമൂഹിക ഘടന (Radcliffe-Brown)",
-            "duration": "18",
-            "youtubeId": "6zHLIl-LC10",
-            "studyPoints": [
-              "വ്യക്തികളും സ്ഥാപനങ്ങളും തമ്മിലുള്ള ക്രമീകൃതമായ പരസ്പര ബന്ധങ്ങളുടെ ശൃംഖല."
-            ]
-          },
-          {
-            "chapterNumber": "Chapter 4.5",
-            "title": "Status: Ascribed vs Achieved Status",
-            "chapter": "പദവി · ആർജിത പദവി & സ്വയംനേടിയ പദവി",
-            "duration": "17",
-            "youtubeId": "zQXkc14ws3E",
-            "studyPoints": [
-              "ആർജിത പദവി: ജനനത്തിലൂടെ ലഭിക്കുന്നത്.",
-              "സ്വയംനേടിയ പദവി: പ്രയത്നത്തിലൂടെ നേടുന്നത്."
-            ]
-          },
-          {
-            "chapterNumber": "Chapter 4.6",
-            "title": "Role: Role Conflict, Role Set & Performance",
-            "chapter": "പങ്ക് · റോൾ കോൺഫ്ലിക്റ്റ്",
-            "duration": "18",
-            "youtubeId": "SJnQKshktn4",
-            "studyPoints": [
-              "പദവിക്ക് അനുയോജ്യമായ പെരുമാറ്റരീതിയാണ് പങ്ക് (Role).",
-              "ഒരേ സമയം പല റോളുകൾ നിർവഹിക്കേണ്ടി വരുമ്പോൾ ഉണ്ടാകുന്ന സംഘർഷം (Role Conflict)."
-            ]
-          },
-          {
-            "chapterNumber": "Chapter 4.7",
-            "title": "Social Change: Factors & Theories",
-            "chapter": "സാമൂഹിക മാറ്റം · ഘടകങ്ങളും സിദ്ധാന്തങ്ങളും",
-            "duration": "23",
-            "youtubeId": "uzdNv1dqWMc",
-            "studyPoints": [
-              "സാങ്കേതിക, സാംസ്കാരിക, ജനസംഖ്യാപരമായ മാറ്റത്തിന്റെ ചാലകശക്തികൾ.",
-              "രേഖീയ സിദ്ധാന്തം (Linear Theory) vs ചാക്രിക സിദ്ധാന്തം (Cyclical Theory)."
-            ]
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 05: PERCEIVING SOCIAL DYNAMICS",
-        "videos": [
-          {
-            "chapterNumber": "Chapter 01",
-            "title": "Fieldwork Assignment & Practical Social Research",
-            "chapter": "പ്രായോഗിക നിരീക്ഷണങ്ങൾ & ഫീൽഡ് റിപ്പോർട്ട്",
-            "duration": "27",
-            "youtubeId": "uMxIIznPo-w",
-            "studyPoints": [
-              "ഫീൽഡ്‌വർക്ക് അസൈൻമെന്റ്: യഥാർത്ഥ സാമൂഹിക സാഹചര്യങ്ങളിലെ പഠനം.",
-              "ഡാറ്റ ക്രോഡീകരണവും പ്രസന്റേഷനും."
-            ]
+              "സാമൂഹിക മാറ്റം (Social Change): സാമൂഹിക ഘടനയിലും മൂല്യങ്ങളിലും ഉണ്ടാകുന്ന കാലാനുസൃതമായ പരിവർത്തനങ്ങൾ.",
+              "ചാലകശക്തികൾ: സാങ്കേതിക വിദ്യ, സാമ്പത്തിക ഘടകങ്ങൾ, സാംസ്കാരിക വിനിമയം, ജനസംഖ്യാപരമായ മാറ്റങ്ങൾ.",
+              "സിദ്ധാന്തങ്ങൾ: രേഖീയ സിദ്ധാന്തം (Linear Theory - Comte & Spencer) vs ചാക്രിക സിദ്ധാന്തം (Cyclical Theory - Spengler & Sorokin)."
+            ],
+            "examTip": "യൂണിവേഴ്സിറ്റി എസ്സേ: 'Critically analyze the major factors responsible for Social Change in contemporary India'."
           }
         ]
       }
     ],
-    "totalVideos": 29
+    "totalVideos": 18
   },
   "philosophy-of-ai": {
     "name": "Philosophy of AI",
