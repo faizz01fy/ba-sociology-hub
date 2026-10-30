@@ -484,6 +484,12 @@
       border-radius: 8px;
       overflow: hidden;
       background: #0f172a;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .thumb-wrap:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
     }
     .thumb-img {
       width: 100%;
@@ -610,15 +616,19 @@
     .player-frame-wrap {
       position: relative;
       width: 100%;
-      height: 200px;
+      aspect-ratio: 16 / 9;
+      min-height: 200px;
       border-radius: 10px;
       overflow: hidden;
       background: #000;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
     }
     .player-frame-wrap iframe {
       width: 100%;
       height: 100%;
       border: none;
+      display: block;
     }
 
     
@@ -840,15 +850,7 @@
       color: #fff;
     }
 
-    .player-frame-wrap.voice-hidden {
-      position: absolute !important;
-      width: 2px !important;
-      height: 2px !important;
-      opacity: 0.001 !important;
-      pointer-events: none !important;
-      overflow: hidden !important;
-      clip: rect(0, 0, 0, 0) !important;
-    }
+
 
     /* Sticky Bottom Audio Bar */
     .bottom-sticky-bar {
@@ -1049,7 +1051,7 @@
   </aside>
 
   <!-- Load Subject Voice Data -->
-  <script src="voice_explanation_data.js"></script>
+  <script src="voice_explanation_data.js?v=20261030_v3"></script>
 
   <script>
     (function () {
@@ -1197,12 +1199,16 @@
 
                 <!-- Compact Embedded Voice Player Tab -->
                 <div class="mini-player-tab">
+                  <div class="player-frame-wrap">
+                    <!-- iframe inserted on play -->
+                  </div>
+
                   <div class="voice-podcast-player">
                     <div class="vpp-top">
                       <div class="vpp-mode-pill">
-                        <span class="pulse-dot"></span> <span class="vpp-mode-text">Voice Mode (Audio Only)</span>
+                        <span class="pulse-dot"></span> <span class="vpp-mode-text">Voice Lecture (Academic Hub)</span>
                       </div>
-                      <div class="vpp-channel-tag"><span>🎙️ Malayalam Voice Lecture</span></div>
+                      <div class="vpp-channel-tag"><span>🎙️ Malayalam Audio Class</span></div>
                     </div>
                     <div class="vpp-wave-bar">
                       <div class="vpp-equalizer">
@@ -1226,10 +1232,6 @@
                       <button type="button" class="vpp-speed-btn" title="Playback Speed">1.0x</button>
                       <button type="button" class="vpp-btn-close" title="Close player">✕ Close</button>
                     </div>
-                  </div>
-
-                  <div class="player-frame-wrap voice-hidden">
-                    <!-- iframe inserted on play -->
                   </div>
                 </div>
 
@@ -1316,8 +1318,7 @@
                   currentPlayingCard.classList.remove('playing');
                 }
 
-                frameWrap.classList.add('voice-hidden');
-                isAudioPaused = false;
+                                isAudioPaused = false;
                 pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
                 equalizer.classList.remove('paused');
 
@@ -1389,6 +1390,17 @@
                   equalizer.classList.add('paused');
                   playBtn.innerHTML = '<span aria-hidden="true">▶</span> Paused';
                 }
+              }
+
+              const thumbWrap = card.querySelector('.thumb-wrap');
+              if (thumbWrap) {
+                thumbWrap.addEventListener('click', () => {
+                  if (playerTab.classList.contains('active')) {
+                    togglePause();
+                  } else {
+                    startPlayback();
+                  }
+                });
               }
 
               playBtn.addEventListener('click', () => {
