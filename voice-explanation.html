@@ -1059,11 +1059,19 @@
 
       // Determine initial subject from URL query param `?subject=...`
       const urlParams = new URLSearchParams(window.location.search);
-      let currentSlug = (urlParams.get('subject') || 'malayalam').toLowerCase();
+      let currentSlug = (urlParams.get('subject') || 'sociology').toLowerCase();
 
-      // Fallback if slug not found
-      if (!data[currentSlug]) {
-        currentSlug = Object.keys(data)[0] || 'malayalam';
+      // Active subjects allowed for display
+      const activeSubjects = [
+        'sociology',
+        'philosophy-of-ai',
+        'development-issues-in-indian-economy',
+        'philosophy-of-education'
+      ];
+
+      // Fallback if slug not found or not in active subjects
+      if (!data[currentSlug] || !activeSubjects.includes(currentSlug)) {
+        currentSlug = 'sociology';
       }
 
       const subjectTabsContainer = document.getElementById('subject-tabs');
@@ -1085,7 +1093,7 @@
       // Render Subject Tab Buttons
       function renderSubjectTabs() {
         subjectTabsContainer.innerHTML = '';
-        Object.keys(data).forEach(slug => {
+        activeSubjects.forEach(slug => {
           const s = data[slug];
           const btn = document.createElement('button');
           btn.type = 'button';
