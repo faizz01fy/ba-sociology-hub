@@ -42,6 +42,61 @@ function json(payload, status = 200) {
   });
 }
 
+function isLmsPdfPath(pathname) {
+  let candidate = String(pathname || "/");
+  for (let depth = 0; depth < 5; depth += 1) {
+    candidate = candidate.replace(/\\/g, "/").replace(/\/{2,}/g, "/");
+    const segments = candidate.split("/").filter(Boolean);
+    const filename = segments[segments.length - 1] || "";
+    const marked = segments.some(segment =>
+      /(?:^|[_\s-])lms(?:[_\s.-]|$)/i.test(segment) ||
+      /^downloaded_pdfs$/i.test(segment)
+    );
+    if (/\.pdf$/i.test(filename) && marked) return true;
+    try {
+      const decoded = decodeURIComponent(candidate);
+      if (decoded === candidate) return false;
+      candidate = decoded;
+    } catch {
+      return false;
+    }
+  }
+  return false;
+}
+
+function unavailableLmsPdfResponse(request) {
+  const body = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>PDF not hosted here | Academic Hub</title>
+  <style>
+    body{font:16px/1.6 system-ui,sans-serif;max-width:680px;margin:12vh auto;padding:24px;color:#18342c}
+    a{color:#205842}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>This PDF is not hosted on Academic Hub</h1>
+    <p>Please access course materials from the original LMS source. For University of Calicut courses, visit <a href="https://learnspace.uoc.ac.in/">LearnSpace</a>.</p>
+    <p>Questions about a document on Academic Hub? Email <a href="mailto:support@academichubfaiz.in">support@academichubfaiz.in</a>.</p>
+    <p><a href="/">Return to Academic Hub</a></p>
+  </main>
+</body>
+</html>`;
+  return new Response(request.method === "HEAD" ? null : body, {
+    status: 410,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-store",
+      "X-Robots-Tag": "noindex, nofollow",
+      "X-Content-Type-Options": "nosniff"
+    }
+  });
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -234,6 +289,7 @@ export default {
       return new Response(responseBody, {status:upstream.status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
     }
     if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/internal/")) return json({error:"Not found"},404);
+    if ((request.method === "GET" || request.method === "HEAD") && isLmsPdfPath(url.pathname)) return unavailableLmsPdfResponse(request);
     let response = await env.ASSETS.fetch(request);
     if (!response.ok && url.pathname.toLowerCase().endsWith('.pdf')) {
       const candidates = [];
