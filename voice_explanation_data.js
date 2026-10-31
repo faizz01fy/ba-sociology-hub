@@ -867,11 +867,20 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 01: INTRODUCTION TO ETHICS",
         "videos": [
           {
-            "chapterNumber": "Chapter 01",
-            "title": "Introduction to Ethics: Nature & Scope",
-            "chapter": "Morality, Customs, Law and Philosophy of Right Action",
-            "duration": "20",
-            "youtubeId": ""
+            "chapterNumber": "Course Overview",
+            "title": "Fundamentals of Ethics: Complete 5-Module Overview",
+            "chapter": "Overview of all five syllabus modules",
+            "duration": "4:57",
+            "youtubeId": "KsDe2ZkHrro",
+            "language": "Malayalam"
+          },
+          {
+            "chapterNumber": "Introduction",
+            "title": "Dharmashastra Introduction",
+            "chapter": "Fundamentals of Ethics · Introductory lesson",
+            "duration": "6:41",
+            "youtubeId": "s3xGsLMCY1o",
+            "language": "Malayalam"
           }
         ]
       },
@@ -879,11 +888,12 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 02: CONCEPTS OF ETHICS",
         "videos": [
           {
-            "chapterNumber": "Chapter 02",
-            "title": "Concepts of Ethics & Virtues",
-            "chapter": "Cardinal Virtues, Moral Obligation & Conscience",
-            "duration": "22",
-            "youtubeId": ""
+            "chapterNumber": "Concepts of Ethics",
+            "title": "Ethics Concepts",
+            "chapter": "Fundamentals of Ethics · Concepts of ethics",
+            "duration": "8:25",
+            "youtubeId": "Zdn4oB4SUjY",
+            "language": "Malayalam"
           }
         ]
       },
@@ -915,16 +925,25 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 05: APPLIED ETHICS",
         "videos": [
           {
-            "chapterNumber": "Chapter 05",
-            "title": "Applied Ethics & Practical Dilemmas",
-            "chapter": "Bioethics, Environmental Ethics, Cyberethics & Media Norms",
-            "duration": "24",
-            "youtubeId": ""
+            "chapterNumber": "Applied Ethics",
+            "title": "Applied Ethics: From Casuistry to Real-World Dilemmas",
+            "chapter": "Applied ethics and practical ethical reasoning",
+            "duration": "13:42",
+            "youtubeId": "6x5y4ZW2UA0",
+            "language": "English"
+          },
+          {
+            "chapterNumber": "Applied Ethics",
+            "title": "Applied Ethics: The Casebook of Dilemmas",
+            "chapter": "Applied ethics and real-world moral dilemmas",
+            "duration": "8:22",
+            "youtubeId": "9MW6gIEwWtU",
+            "language": "Malayalam"
           }
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 5
   },
   "microeconomic-foundation": {
     "name": "Microeconomic Foundation",
