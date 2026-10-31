@@ -288,19 +288,6 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സ്ട്രക്ചറലിസവും സിംബോളിക് ഇന്ററാക്ഷനിസവും: എമിൽ ഡർക്കൈമിന്റെ സോഷ്യൽ ഫാക്ട്സും (Social Facts) മാക്സ് വെബറുടെ വേർസ്റ്റെഹെൻ (Verstehen) കാഴ്ചപ്പാടും."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: 'Distinguish between Micro and Macro Sociology with examples' & 'Discuss Auguste Comte's Positivism and Law of Three Stages'."
-          },
-          {
-            "chapterNumber": "Chapter 12",
-            "title": "കാലിക്കറ്റ് സർവ്വകലാശാല സോഷ്യോളജി മൊഡ്യൂൾ 1 സമഗ്ര സംഗ്രഹം (Module 1 Masterclass)",
-            "chapter": "Calicut University FYUGP Sociology Module 1 Complete Masterclass & Exam Guide",
-            "duration": "34",
-            "youtubeId": "mUahYKgz1QU",
-            "studyPoints": [
-              "സിലബസ് രൂപരേഖ: സോഷ്യോളജിയുടെ ഉത്ഭവം, നിർവ്വചനം, വികാസം, യൂറോപ്യൻ വിജ്ഞാനോദയം എന്നിവയുടെ സമഗ്ര അവലോകനം.",
-              "കോംത്, ഡർക്കൈം, വെബർ എന്നിവരുടെ അടിസ്ഥാന സൈദ്ധാന്തിക സമന്വയം.",
-              "പരീക്ഷാ ചോദ്യോത്തര മാർഗ്ഗരേഖ: 10 മാർക്ക് എസ്സേകളും 4 മാർക്ക് ഷോർട്ട് എസ്സേകളും ഉയർന്ന സ്കോർ നേടാനുള്ള തന്ത്രങ്ങളും."
-            ],
-            "examTip": "ഫൈനൽ എക്സാം ഗൈഡ്: ഒന്നാം സെമസ്റ്റർ പരീക്ഷയിലെ മുഴുവൻ മൊഡ്യൂൾ 1 ചോദ്യങ്ങളുടെയും വിശകലനം."
           }
         ]
       },
