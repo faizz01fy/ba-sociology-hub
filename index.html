@@ -4580,7 +4580,9 @@
 
       <nav class="test-filter-tabs" aria-label="Filter mock tests by stream">
 
-        <button class="test-tab-btn active" data-test-filter="all"><span class="tab-icon">🎯</span> All Practice Tests <span class="test-tab-count">8</span></button>
+        <button class="test-tab-btn active" data-test-filter="all"><span class="tab-icon">🎯</span> All Practice Tests <span class="test-tab-count">9</span></button>
+
+        <button class="test-tab-btn" data-test-filter="ktet"><span class="tab-icon">🎓</span> K-tet 500 MCQs </button>
 
         <button class="test-tab-btn" data-test-filter="languages"><span class="tab-icon">🗣</span> Language</button>
 
@@ -4593,6 +4595,8 @@
       </nav>
 
             <div class="test-grid">
+
+        <article class="test-card" data-subject-key="ktet" data-category="ktet"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Kerala Teacher Eligibility Test K-TET 500 MCQs"><div class="test-icon test-green">🎓</div><span class="test-label">K-TET 2026</span><h3>K-tet 500 MCQs</h3><p>Child Development &amp; Pedagogy, Educational Psychology &amp; Teaching Methods across 5 structured parts.</p><a href="ktet-500-mcq-test.html">Start test <span>→</span></a></article>
 
         <article class="test-card" data-subject-key="english" data-category="languages"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Books and study materials for English"><div class="test-icon test-blue">Aa</div><span class="test-label">ENGLISH</span><h3>English MCQ Test</h3><p></p><a href="english-mcq-60q-test-final.html">Start test <span>→</span></a></article>
 
@@ -14177,15 +14181,12 @@
       async function fetchWhatsAppUpdates(forceRefresh = false) {
         if (!forceRefresh && cachedWhatsAppUpdates && cachedWhatsAppUpdates.length > 0) return cachedWhatsAppUpdates;
 
-        // 1. Instant Global script data (100% CORS-proof even in file:/// offline)
-        if (window.__WHATSAPP_ANNOUNCEMENTS__ && Array.isArray(window.__WHATSAPP_ANNOUNCEMENTS__.updates) && window.__WHATSAPP_ANNOUNCEMENTS__.updates.length > 0) {
-          cachedWhatsAppUpdates = window.__WHATSAPP_ANNOUNCEMENTS__.updates;
-          return cachedWhatsAppUpdates;
-        }
-
-        // 2. Fetch from Cloudflare Worker API
+          // 1. Fetch live from Cloudflare Worker API first
         try {
-          const res = await fetch('/api/whatsapp/updates');
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 3500);
+          const res = await fetch('/api/whatsapp/updates?_t=' + Date.now(), { signal: controller.signal });
+          clearTimeout(timeoutId);
           if (res.ok) {
             const data = await res.json();
             if (Array.isArray(data.updates) && data.updates.length > 0) {
@@ -14195,15 +14196,24 @@
           }
         } catch (e) {}
 
-        // 3. Fallback to local JSON file
+        // 2. Fetch from dynamic local JSON file
         try {
-          const localRes = await fetch('data/whatsapp_announcements.json');
+          const localRes = await fetch('data/whatsapp_announcements.json?_t=' + Date.now());
           if (localRes.ok) {
             const localData = await localRes.json();
-            cachedWhatsAppUpdates = Array.isArray(localData) ? localData : (localData.updates || []);
-            return cachedWhatsAppUpdates;
+            const list = Array.isArray(localData) ? localData : (localData.updates || []);
+            if (list.length > 0) {
+              cachedWhatsAppUpdates = list;
+              return cachedWhatsAppUpdates;
+            }
           }
         } catch (e) {}
+
+        // 3. Fallback to offline script data (file:/// offline)
+        if (window.__WHATSAPP_ANNOUNCEMENTS__ && Array.isArray(window.__WHATSAPP_ANNOUNCEMENTS__.updates) && window.__WHATSAPP_ANNOUNCEMENTS__.updates.length > 0) {
+          cachedWhatsAppUpdates = window.__WHATSAPP_ANNOUNCEMENTS__.updates;
+          return cachedWhatsAppUpdates;
+        }
 
         return cachedWhatsAppUpdates || [];
       }

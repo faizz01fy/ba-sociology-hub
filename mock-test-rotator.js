@@ -20,6 +20,12 @@
 
   // Curated, 100% verified (HTTP 200) high-resolution Unsplash photos matched strictly to subjects
   var SUBJECT_PHOTO_POOLS = {
+    ktet: [
+      { id: '1497633762265-9d179a990aa6', desc: 'Educational books and teaching practice materials' },
+      { id: '1503676260728-1c00da094a0b', desc: 'Teacher and young student engaged in classroom learning' },
+      { id: '1580582932707-520aed937b7b', desc: 'Modern classroom with teacher and engaged students' },
+      { id: '1427504494785-3a9ca7044f45', desc: 'Students collaborating in university classroom study' }
+    ],
     history: [
       { id: '1695964744922-c7d01b4761cb', desc: 'Padmanabhapuram Palace traditional Kerala timber architecture' },
       { id: '1599940824399-b87987ceb72a', desc: 'Edakkal Cave prehistoric rock petroglyphs and engravings' },
@@ -243,7 +249,8 @@
     if (!subjectKey) {
       var labelEl = card.querySelector('.test-label');
       var text = (labelEl ? labelEl.textContent : card.textContent).toLowerCase();
-      if (text.indexOf('english') !== -1) subjectKey = 'english';
+      if (text.indexOf('ktet') !== -1 || text.indexOf('k-tet') !== -1) subjectKey = 'ktet';
+      else if (text.indexOf('english') !== -1) subjectKey = 'english';
       else if (text.indexOf('sociology') !== -1) subjectKey = 'sociology';
       else if (text.indexOf('education') !== -1) subjectKey = 'education';
       else if (text.indexOf('artificial') !== -1 || text.indexOf('philosophy of ai') !== -1 || text.indexOf('ai') !== -1) subjectKey = 'ai';
