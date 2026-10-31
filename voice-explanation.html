@@ -1,1729 +1,1817 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
-  <meta name="description" content="Voice Explanations — Chapter-by-chapter YouTube audio lectures and voice classes for Calicut University syllabus." />
-  <meta name="robots" content="noindex, follow" />
-  <meta name="googlebot" content="noindex, follow" />
-  <meta name="googlebot-news" content="noindex, follow" />
-  <title>Voice Explanations | YouTube Audio Classes</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --primary: #dc2626;
-      --primary-dark: #b91c1c;
-      --primary-soft: #fef2f2;
-      --accent: #d97706;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --radius: 16px;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-      --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
-      --shadow-lg: 0 12px 30px rgba(0,0,0,0.12);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 40%, #fef2f2 100%);
-      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', -apple-system, sans-serif;
-      color: var(--text);
-      min-height: 100vh;
-      padding-bottom: 90px;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    button { font-family: inherit; cursor: pointer; }
-
-    /* Top Navigation */
-    .top-navbar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .back-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 14px;
-      border-radius: 10px;
-      background: #f1f5f9;
-      color: #334155;
-      font-weight: 700;
-      font-size: 13.5px;
-      transition: all 0.2s;
-    }
-    .back-btn:hover {
-      background: #e2e8f0;
-      color: #0f172a;
-    }
-    .brand-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 800;
-      font-size: 17px;
-      color: #0f172a;
-    }
-    .brand-icon {
-      display: inline-grid;
-      place-items: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
-      background: var(--primary);
-      color: #fff;
-      font-size: 14px;
-    }
-
-    .search-bar-wrap {
-      flex: 1;
-      max-width: 360px;
-      position: relative;
-    }
-    .search-input {
-      width: 100%;
-      padding: 9px 14px 9px 36px;
-      border-radius: 10px;
-      border: 1.5px solid var(--border);
-      font-size: 13.5px;
-      background: #f8fafc;
-      transition: all 0.2s;
-    }
-    .search-input:focus {
-      outline: none;
-      border-color: var(--primary);
-      background: #fff;
-      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
-    }
-    .search-icon {
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #94a3b8;
-      font-size: 14px;
-      pointer-events: none;
-    }
-
-    /* Container */
-    .container {
-      max-width: 1180px;
-      margin: 24px auto;
-      padding: 0 16px;
-    }
-
-    /* Subject Switcher Tabs Bar */
-    .subject-tabs-scroll {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      padding-bottom: 8px;
-      margin-bottom: 24px;
-      scrollbar-width: thin;
-    }
-    .subject-tabs-scroll::-webkit-scrollbar { height: 5px; }
-    .subject-tabs-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-
-    .subj-tab-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: 12px;
-      border: 1.5px solid var(--border);
-      background: #fff;
-      color: #334155;
-      font-size: 13.5px;
-      font-weight: 700;
-      white-space: nowrap;
-      transition: all 0.2s;
-      box-shadow: var(--shadow-sm);
-    }
-    .subj-tab-btn:hover {
-      border-color: #cbd5e1;
-      background: #f8fafc;
-      transform: translateY(-1px);
-    }
-    .subj-tab-btn.active {
-      background: #0f172a;
-      border-color: #0f172a;
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
-    }
-    .subj-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2px 7px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 800;
-      background: #f1f5f9;
-      color: #475569;
-    }
-    .subj-tab-btn.active .subj-badge {
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-    }
-
-    /* Active Subject Hero Card */
-    .hero-banner {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px 28px;
-      margin-bottom: 28px;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .hero-title-group h1 {
-      font-size: 24px;
-      font-weight: 800;
-      color: #0f172a;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 6px;
-    }
-    .hero-title-group p {
-      color: var(--text-muted);
-      font-size: 14.5px;
-      line-height: 1.5;
-    }
-    .hero-stats {
-      display: flex;
-      gap: 14px;
-    }
-    .hero-stat-pill {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      padding: 10px 16px;
-      border-radius: 12px;
-      text-align: center;
-    }
-    .hero-stat-pill strong {
-      display: block;
-      font-size: 20px;
-      color: var(--primary);
-      font-weight: 800;
-    }
-    .hero-stat-pill span {
-      font-size: 11.5px;
-      color: #64748b;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* Modules & Chapters */
-    .module-group {
-      margin-bottom: 32px;
-    }
-    .module-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 18px;
-      background: #f1f5f9;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      margin-bottom: 14px;
-    }
-    .module-title {
-      font-weight: 800;
-      font-size: 15px;
-      color: #1e293b;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .module-count {
-      font-size: 12px;
-      font-weight: 700;
-      color: #64748b;
-      background: #fff;
-      padding: 3px 9px;
-      border-radius: 999px;
-    }
-
-    /* Chapter Grid */
-    .chapters-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 16px;
-    }
-
-    /* Chapter Card */
-    
-    .chapter-badge-chip {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #dc2626;
-      background: #fef2f2;
-      border: 1px solid #fecaca;
-      padding: 2px 8px;
-      border-radius: 6px;
-      margin-bottom: 5px;
-    }
-
-    
-    /* Screen Wake Lock Button in Navbar */
-    .wake-lock-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      color: #334155;
-      font-size: 12.5px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      white-space: nowrap;
-    }
-    .wake-lock-btn:hover {
-      background: #f1f5f9;
-      border-color: #94a3b8;
-    }
-    .wake-lock-btn.active {
-      background: #fefce8;
-      border-color: #facc15;
-      color: #854d0e;
-      box-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
-    }
-    .wake-lock-btn.active .wake-icon {
-      filter: drop-shadow(0 0 4px #eab308);
-      animation: bulbGlow 1.8s infinite ease-in-out;
-    }
-    @keyframes bulbGlow {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.15); opacity: 0.85; }
-    }
-
-    /* Chapter Study Notes Box */
-    .chapter-notes-box {
-      margin-top: 12px;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      background: #f8fafc;
-      overflow: hidden;
-      transition: all 0.2s ease;
-    }
-    .chapter-notes-box[open] {
-      background: #ffffff;
-      border-color: #cbd5e1;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
-    }
-    .notes-summary {
-      padding: 10px 14px;
-      font-size: 12.5px;
-      font-weight: 700;
-      color: #1e293b;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      user-select: none;
-      list-style: none;
-    }
-    .notes-summary::-webkit-details-marker { display: none; }
-    .notes-title-wrap {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .notes-chevron {
-      font-size: 11px;
-      color: #64748b;
-      transition: transform 0.2s ease;
-    }
-    .chapter-notes-box[open] .notes-chevron {
-      transform: rotate(180deg);
-    }
-    .notes-content {
-      padding: 12px 16px 14px;
-      border-top: 1px solid #e2e8f0;
-      font-size: 13px;
-      line-height: 1.6;
-      color: #334155;
-    }
-    .notes-list {
-      margin: 0;
-      padding-left: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .notes-list li {
-      color: #1e293b;
-    }
-    .exam-tip-badge {
-      margin-top: 12px;
-      padding: 10px 12px;
-      background: #fef3c7;
-      border-left: 4px solid #f59e0b;
-      border-radius: 6px;
-      font-size: 12.5px;
-      color: #78350f;
-      line-height: 1.5;
-    }
-
-    /* AdSense In-Article Responsive Slot */
-    .study-adsense-slot {
-      margin: 28px 0;
-      padding: 16px;
-      background: #ffffff;
-      border: 1px dashed #cbd5e1;
-      border-radius: 12px;
-      text-align: center;
-    }
-    .ad-disclaimer {
-      font-size: 10.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: #94a3b8;
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .chapter-card {
-      background: #ffffff;
-      border: 1.5px solid var(--border);
-      border-radius: 14px;
-      padding: 16px;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: all 0.25s ease;
-      position: relative;
-    }
-    .chapter-card:hover {
-      border-color: #cbd5e1;
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-    .chapter-card.playing {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
-    }
-
-    .card-top {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-    
-    .thumb-wrap--audio {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
-      border: 1px solid #fecdd3;
-    }
-    .thumb-audio-icon {
-      font-size: 26px;
-    }
-    .voice-scheduled-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      color: #64748b;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 999px;
-    }
-    .pulse-dot-scheduled {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #94a3b8;
-    }
-
-    .thumb-wrap {
-      position: relative;
-      width: 110px;
-      height: 68px;
-      flex-shrink: 0;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #0f172a;
-      cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .thumb-wrap:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
-    }
-    .thumb-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .thumb-duration {
-      position: absolute;
-      bottom: 4px;
-      right: 4px;
-      background: rgba(0, 0, 0, 0.75);
-      color: #fff;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 1px 4px;
-      border-radius: 4px;
-    }
-    .play-overlay-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 28px;
-      height: 28px;
-      background: rgba(220, 38, 38, 0.9);
-      color: #fff;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 11px;
-    }
-
-    .card-info {
-      flex: 1;
-      min-width: 0;
-    }
-    .card-title {
-      font-size: 14px;
-      font-weight: 800;
-      color: #0f172a;
-      line-height: 1.4;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .card-sub {
-      font-size: 12px;
-      color: #64748b;
-      margin-top: 4px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .card-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: auto;
-    }
-    .btn-play-voice {
-      flex: 1;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 8px 14px;
-      border-radius: 9px;
-      border: 1px solid var(--primary);
-      background: var(--primary-soft);
-      color: var(--primary);
-      font-size: 13px;
-      font-weight: 700;
-      transition: all 0.2s;
-    }
-    .btn-play-voice:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-    
-    
-
-    /* Compact Embedded Player Tab inside Card */
-    .mini-player-tab {
-      display: none;
-      border-top: 1px dashed #cbd5e1;
-      padding-top: 12px;
-      margin-top: 4px;
-    }
-    .mini-player-tab.active {
-      display: block;
-      animation: fadeIn 0.25s ease;
-    }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-
-    .player-tab-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 8px;
-    }
-    .player-tab-label {
-      font-size: 12px;
-      font-weight: 700;
-      color: #dc2626;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .player-tab-close {
-      background: none;
-      border: none;
-      color: #64748b;
-      font-size: 16px;
-      padding: 2px 6px;
-      border-radius: 6px;
-    }
-    .player-tab-close:hover {
-      background: #fee2e2;
-      color: #dc2626;
-    }
-    .player-frame-wrap {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      min-height: 200px;
-      border-radius: 10px;
-      overflow: hidden;
-      background: #000;
-      margin-bottom: 10px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-    }
-    .player-frame-wrap iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    
-    /* AcademicHub Channel Header & Badges */
-    .hero-channel-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fef2f2;
-      border: 1px solid #fecaca;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      color: #991b1b;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-    .hero-channel-badge a {
-      color: #dc2626;
-      font-weight: 800;
-      text-decoration: underline;
-    }
-    .pulse-dot {
-      width: 9px;
-      height: 9px;
-      background: #dc2626;
-      border-radius: 50%;
-      display: inline-block;
-      animation: pulseDot 1.4s infinite ease-in-out;
-    }
-    @keyframes pulseDot {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.4); opacity: 0.35; }
-    }
-    .top-channel-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 14px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #ef4444, #dc2626);
-      color: #fff !important;
-      font-weight: 800;
-      font-size: 13px;
-      text-decoration: none;
-      box-shadow: 0 2px 8px rgba(220, 38, 38, 0.25);
-      transition: all 0.2s;
-    }
-    .top-channel-btn:hover {
-      background: #b91c1c;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
-    }
-
-    /* Voice Mode Audio Player UI inside Card */
-    .voice-podcast-player {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      border-radius: 12px;
-      padding: 14px 16px;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 8px;
-      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
-    }
-    .vpp-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-    .vpp-mode-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(239, 68, 68, 0.25);
-      border: 1px solid rgba(239, 68, 68, 0.45);
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 800;
-      color: #fca5a5;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .vpp-mode-pill .pulse-dot {
-      background: #ef4444;
-    }
-    .vpp-channel-tag {
-      font-size: 12px;
-      color: #cbd5e1;
-      font-weight: 600;
-    }
-    .vpp-channel-tag a {
-      color: #38bdf8;
-      text-decoration: underline;
-      font-weight: 700;
-    }
-    .vpp-wave-bar {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 10px 14px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .vpp-equalizer {
-      display: flex;
-      align-items: flex-end;
-      gap: 3.5px;
-      height: 26px;
-      flex-shrink: 0;
-    }
-    .vpp-equalizer span {
-      width: 4px;
-      background: #ef4444;
-      border-radius: 2px;
-      animation: eqWave 1.2s infinite ease-in-out;
-    }
-    .vpp-equalizer span:nth-child(1) { height: 35%; animation-delay: 0.1s; }
-    .vpp-equalizer span:nth-child(2) { height: 85%; animation-delay: 0.3s; }
-    .vpp-equalizer span:nth-child(3) { height: 60%; animation-delay: 0.15s; }
-    .vpp-equalizer span:nth-child(4) { height: 100%; animation-delay: 0.4s; }
-    .vpp-equalizer span:nth-child(5) { height: 75%; animation-delay: 0.25s; }
-    .vpp-equalizer span:nth-child(6) { height: 45%; animation-delay: 0.35s; }
-    .vpp-equalizer.paused span {
-      animation-play-state: paused !important;
-      height: 25% !important;
-      opacity: 0.5;
-    }
-    @keyframes eqWave {
-      0%, 100% { transform: scaleY(0.3); }
-      50% { transform: scaleY(1); }
-    }
-    .vpp-status-text {
-      font-size: 13.5px;
-      font-weight: 700;
-      color: #f1f5f9;
-      line-height: 1.3;
-    }
-    .vpp-status-sub {
-      font-size: 11.5px;
-      color: #94a3b8;
-    }
-    .vpp-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .vpp-btn-pause, .vpp-btn-video, .vpp-btn-close {
-      font-size: 12px;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all 0.2s;
-    }
-    .vpp-btn-pause {
-      background: #dc2626;
-      color: #fff;
-    }
-    .vpp-btn-pause:hover {
-      background: #b91c1c;
-    }
-    .vpp-btn-video {
-      background: rgba(255, 255, 255, 0.12);
-      color: #e2e8f0;
-      border: 1px solid rgba(255,255,255,0.18);
-    }
-    .vpp-btn-video:hover {
-      background: rgba(255, 255, 255, 0.24);
-      color: #fff;
-    }
-    .vpp-btn-close {
-      background: transparent;
-      color: #94a3b8;
-      margin-left: auto;
-    }
-    .vpp-btn-close:hover {
-      color: #fff;
-    }
-
-    /* Video frame wrap voice mode hiding */
-    
-    .vpp-btn-skip {
-      background: rgba(255, 255, 255, 0.12);
-      color: #e2e8f0;
-      border: 1px solid rgba(255,255,255,0.18);
-      font-size: 11.5px;
-      font-weight: 700;
-      padding: 6px 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .vpp-btn-skip:hover {
-      background: rgba(255, 255, 255, 0.22);
-      color: #fff;
-    }
-    .vpp-speed-btn {
-      background: rgba(239, 68, 68, 0.2);
-      color: #fca5a5;
-      border: 1px solid rgba(239, 68, 68, 0.35);
-      font-size: 11px;
-      font-weight: 800;
-      padding: 6px 9px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .vpp-speed-btn:hover {
-      background: rgba(239, 68, 68, 0.35);
-      color: #fff;
-    }
-
-
-
-    /* Sticky Bottom Audio Bar */
-    .bottom-sticky-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(16px);
-      color: #ffffff;
-      padding: 12px 24px;
-      display: none;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
-      z-index: 200;
-    }
-    .bottom-sticky-bar.visible {
-      display: flex;
-      animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-
-    .sticky-info {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-    .sticky-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 9px;
-      background: var(--primary);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-size: 16px;
-      flex-shrink: 0;
-    }
-    .sticky-texts {
-      min-width: 0;
-    }
-    .sticky-title {
-      font-size: 14px;
-      font-weight: 700;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .sticky-sub {
-      font-size: 12px;
-      color: #94a3b8;
-    }
-    .sticky-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-    .sticky-btn {
-      background: rgba(255, 255, 255, 0.15);
-      border: none;
-      color: #fff;
-      padding: 7px 14px;
-      border-radius: 8px;
-      font-size: 12.5px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all 0.2s;
-    }
-    .sticky-btn:hover {
-      background: rgba(255, 255, 255, 0.25);
-    }
-    .sticky-btn-close {
-      background: transparent;
-      border: none;
-      color: #94a3b8;
-      font-size: 20px;
-      padding: 4px;
-    }
-    .sticky-btn-close:hover {
-      color: #fff;
-    }
-
-    /* Empty state */
-    .empty-state {
-      text-align: center;
-      padding: 60px 20px;
-      background: #ffffff;
-      border-radius: var(--radius);
-      border: 1.5px dashed var(--border);
-    }
-    .empty-icon {
-      font-size: 40px;
-      margin-bottom: 12px;
-      display: block;
-    }
-    .empty-title {
-      font-size: 18px;
-      font-weight: 800;
-      color: #1e293b;
-      margin-bottom: 6px;
-    }
-    .empty-desc {
-      font-size: 14px;
-      color: var(--text-muted);
-      max-width: 440px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 768px) {
-      .top-navbar { padding: 10px 14px; }
-      .search-bar-wrap { max-width: 200px; }
-      .chapters-grid { grid-template-columns: 1fr; }
-      .hero-banner { padding: 18px; }
-      .hero-title-group h1 { font-size: 20px; }
-      .bottom-sticky-bar { padding: 10px 14px; }
-    }
-    /* Language labels stay visible; English editions have a separate blue palette. */
-    .video-language-label {
-      align-self: flex-start;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      width: fit-content;
-      padding: 5px 10px;
-      border: 1px solid #fecaca;
-      border-radius: 8px;
-      background: #fef2f2;
-      color: #991b1b;
-      font: 800 11px/1.5 'Plus Jakarta Sans', Arial, sans-serif;
-    }
-    .chapter-card--english {
-      --primary: #1d4ed8;
-      --primary-dark: #1e40af;
-      --primary-soft: #eff6ff;
-      border-color: #93c5fd;
-      background: linear-gradient(135deg, #eff6ff, #f8fbff);
-      font-family: 'Plus Jakarta Sans', Manrope, Arial, sans-serif;
-    }
-    .chapter-card--english:hover { border-color: #3b82f6; }
-    .chapter-card--english.playing { border-color: #2563eb; box-shadow: 0 0 0 2px rgba(37,99,235,.18); }
-    .chapter-card--english .card-title { color: #1e3a8a; font-family: Manrope, Arial, sans-serif; }
-    .chapter-card--english .card-sub { color: #334e78; }
-    .chapter-card--english .video-language-label,
-    .chapter-card--english .chapter-badge-chip { border-color: #93c5fd; background: #dbeafe; color: #1e40af; }
-    .chapter-card--english .play-overlay-icon { background: #1d4ed8; }
-    .chapter-card--english .thumb-wrap:hover { box-shadow: 0 4px 12px rgba(37,99,235,.25); }
-    .chapter-card--english .thumb-wrap--audio { background: #dbeafe; border-color: #93c5fd; }
-    .chapter-card--english .voice-scheduled-pill { border-color: #bfdbfe; background: #eff6ff; color: #1e40af; }
-    .english-video-heading {
-      font-size: 12px;
-      letter-spacing: .2px;
-      animation: englishHeadingHighlight 2s ease-in-out 3;
-    }
-    @keyframes englishHeadingHighlight {
-      0%, 100% { background: #dbeafe; box-shadow: 0 0 0 0 rgba(37,99,235,0); }
-      50% { background: #bfdbfe; box-shadow: 0 0 0 4px rgba(37,99,235,.12); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .english-video-heading { animation: none; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Top Sticky Navigation Bar -->
-  <nav class="top-navbar" aria-label="Main Navigation">
-    <div class="nav-left">
-      <a href="index.html" class="back-btn" title="Back to Academic Hub">
-        <span aria-hidden="true">←</span> Hub
-      </a>
-      <div class="brand-title">
-        <span class="brand-icon" aria-hidden="true">🎙️</span>
-        <span>Voice Explanation</span>
-      </div>
-    </div>
-
-    <div class="search-bar-wrap">
-      <span class="search-icon" aria-hidden="true">⌕</span>
-      <input type="search" id="chapter-search" class="search-input" placeholder="Search chapter or topic..." aria-label="Search voice explanations">
-    </div>
-
-    <button type="button" class="wake-lock-btn" id="wake-lock-toggle" aria-pressed="false" title="Keep your phone screen awake while studying">
-      <span class="wake-icon" aria-hidden="true">💡</span>
-      <span class="wake-text">Keep Screen Awake</span>
-    </button>
-  </nav>
-
-  <div class="container">
-
-    <!-- Subject Switcher Tabs -->
-    <div class="subject-tabs-scroll" id="subject-tabs" role="tablist" aria-label="Select Subject">
-      <!-- Generated via JavaScript -->
-    </div>
-
-    <!-- Active Subject Hero Banner -->
-    <section class="hero-banner" id="hero-banner">
-      <div class="hero-title-group">
-        <div class="hero-channel-badge"><span class="pulse-dot"></span> Malayalam Voice Classes &amp; Audio Explanations</div>
-        <h1 id="hero-subject-name">Loading Subject...</h1>
-        <p id="hero-subject-desc">Chapter-by-chapter embedded Malayalam voice lectures organized by module</p>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat-pill">
-          <strong id="stat-video-count">0</strong>
-          <span>Voice Lectures</span>
-        </div>
-        <div class="hero-stat-pill">
-          <strong id="stat-module-count">0</strong>
-          <span>Modules</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Chapters Content Container -->
-    <main id="chapters-container">
-      <!-- Populated via JavaScript -->
-    </main>
-
-  </div>
-
-  <!-- Bottom Floating Audio Bar -->
-  <aside class="bottom-sticky-bar" id="sticky-audio-bar" aria-label="Audio Playback Bar">
-    <div class="sticky-info">
-      <div class="sticky-icon" aria-hidden="true">▶</div>
-      <div class="sticky-texts">
-        <div class="sticky-title" id="sticky-title">Playing lecture...</div>
-        <div class="sticky-sub" id="sticky-sub">Calicut University Official Lecture</div>
-      </div>
-    </div>
-    <div class="sticky-actions">
-      <button type="button" class="sticky-btn" id="sticky-pause-toggle">
-        <span id="sticky-pause-icon">⏸</span> <span id="sticky-pause-text">Pause Voice</span>
-      </button>
-      <button type="button" class="sticky-btn-close" id="sticky-close" aria-label="Close Player">✕</button>
-    </div>
-  </aside>
-
-  <!-- Load Subject Voice Data -->
-  <script src="voice_explanation_data.js?v=20261031_soc_v3"></script>
-
-  <script>
-    (function () {
-      const data = (typeof window.VOICE_EXPLANATIONS_DATA !== 'undefined') ? window.VOICE_EXPLANATIONS_DATA : ((typeof VOICE_EXPLANATIONS_DATA !== 'undefined') ? VOICE_EXPLANATIONS_DATA : {});
-
-      // Determine initial subject from URL query param `?subject=...`
-      const urlParams = new URLSearchParams(window.location.search);
-      let currentSlug = (urlParams.get('subject') || 'sociology').toLowerCase();
-
-      // Active subjects allowed for display
-      const activeSubjects = [
-        'sociology',
-        'philosophy-of-ai',
-        'development-issues-in-indian-economy',
-        'philosophy-of-education',
-        'fundamentals-of-ethics'
-      ];
-
-      // Fallback if slug not found or not in active subjects
-      if (!data[currentSlug] || !activeSubjects.includes(currentSlug)) {
-        currentSlug = 'sociology';
-      }
-
-      const subjectTabsContainer = document.getElementById('subject-tabs');
-      const heroSubjectName = document.getElementById('hero-subject-name');
-      const heroSubjectDesc = document.getElementById('hero-subject-desc');
-      const statVideoCount = document.getElementById('stat-video-count');
-      const statModuleCount = document.getElementById('stat-module-count');
-      const chaptersContainer = document.getElementById('chapters-container');
-      const searchInput = document.getElementById('chapter-search');
-
-      const stickyBar = document.getElementById('sticky-audio-bar');
-      const stickyTitle = document.getElementById('sticky-title');
-      const stickySub = document.getElementById('sticky-sub');
-      const stickyYtLink = document.getElementById('sticky-yt-link');
-      const stickyClose = document.getElementById('sticky-close');
-
-      let currentPlayingCard = null;
-
-      // Render Subject Tab Buttons
-      function renderSubjectTabs() {
-        subjectTabsContainer.innerHTML = '';
-        activeSubjects.forEach(slug => {
-          const s = data[slug];
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'subj-tab-btn' + (slug === currentSlug ? ' active' : '');
-          btn.dataset.slug = slug;
-          btn.setAttribute('role', 'tab');
-          btn.setAttribute('aria-selected', slug === currentSlug ? 'true' : 'false');
-          btn.innerHTML = `<span style="font-weight:800;">${s.badge}</span> ${s.name} <span class="subj-badge">${s.totalVideos || 0}</span>`;
-          btn.addEventListener('click', () => {
-            if (currentSlug !== slug) {
-              currentSlug = slug;
-              const newUrl = new URL(window.location);
-              newUrl.searchParams.set('subject', slug);
-              window.history.pushState({}, '', newUrl);
-              updateUI();
-            }
-          });
-          subjectTabsContainer.append(btn);
-        });
-      }
-
-                  // Render Chapters for Selected Subject
-      function renderChapters(filterQuery = '') {
-        const subject = data[currentSlug];
-        if (!subject) return;
-
-        heroSubjectName.innerHTML = `${subject.badge} ${subject.name}`;
-
-        const hasEnglish = (subject.modules || []).some(mod => (mod.videos || []).some(v => v.language === 'English'));
-        const heroChannelBadge = document.querySelector('.hero-channel-badge');
-        heroChannelBadge.innerHTML = `<span class="pulse-dot"></span> ${hasEnglish ? 'Malayalam &amp; English' : 'Malayalam'} Voice Classes &amp; Video Explanations`;
-        heroSubjectDesc.textContent = hasEnglish
-          ? 'Watch Malayalam and English video explanations by module. English editions are highlighted in blue.'
-          : 'Chapter-by-chapter embedded Malayalam voice lectures organized by module';
-        
-        let totalChs = 0;
-        (subject.modules || []).forEach(m => totalChs += (m.videos || []).length);
-        statVideoCount.textContent = (subject.totalVideos > 0) ? `${subject.totalVideos} Live Lectures` : `${totalChs} Chapters`;
-        statModuleCount.textContent = (subject.modules || []).length;
-
-        chaptersContainer.innerHTML = '';
-
-        if (!subject.modules || subject.modules.length === 0) {
-          chaptersContainer.innerHTML = `
-            <div class="empty-state">
-              <span class="empty-icon">🎧</span>
-              <div class="empty-title">Voice Explanations Coming Soon</div>
-              <div class="empty-desc">Malayalam voice lectures and chapter explanations for <strong>${subject.name}</strong> will be embedded here by chapter and module.</div>
-            </div>`;
-          return;
-        }
-
-        const query = filterQuery.trim().toLowerCase();
-        let matchedTotal = 0;
-
-        subject.modules.forEach((mod, modIdx) => {
-          const filteredVids = (mod.videos || []).filter(v => {
-            if (!query) return true;
-            return (v.title && v.title.toLowerCase().includes(query)) ||
-                   (v.chapter && v.chapter.toLowerCase().includes(query)) ||
-                   (mod.moduleName && mod.moduleName.toLowerCase().includes(query)) ||
-                   (v.language || 'Malayalam').toLowerCase().includes(query);
-          });
-
-          if (filteredVids.length === 0) return;
-          matchedTotal += filteredVids.length;
-
-          const group = document.createElement('section');
-          group.className = 'module-group';
-
-          const activeCount = filteredVids.filter(v => v.youtubeId || v.audioUrl).length;
-          const totalCount = filteredVids.length;
-          const countLabel = activeCount > 0 ? `${activeCount} Live / ${totalCount} Chapters` : `${totalCount} Chapters`;
-
-          const mHeader = document.createElement('div');
-          mHeader.className = 'module-header';
-          mHeader.innerHTML = `
-            <div class="module-title">
-              <span style="color:var(--primary);font-size:14px;">📁</span>
-              <span>${mod.moduleName}</span>
-            </div>
-            <div class="module-count">${countLabel}</div>
-          `;
-          group.append(mHeader);
-
-          const grid = document.createElement('div');
-          grid.className = 'chapters-grid';
-
-          filteredVids.forEach(v => {
-            const language = v.language || 'Malayalam';
-            const isEnglish = language === 'English';
-            const card = document.createElement('article');
-            card.className = 'chapter-card' + (isEnglish ? ' chapter-card--english' : '');
-            card.lang = isEnglish ? 'en' : 'ml';
-            card.dataset.language = language;
-            card.dataset.ytid = v.youtubeId || '';
-
-            const hasActiveAudio = !!(v.youtubeId || v.audioUrl);
-            const durationText = v.duration ? (String(v.duration).includes(':') ? v.duration : `${v.duration}m`) : 'Audio';
-            const thumbUrl = v.youtubeId ? `https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg` : '';
-            const chBadge = v.chapterNumber ? `<span class="chapter-badge-chip">${v.chapterNumber}</span>` : '';
-            const languageLabel = `<div class="video-language-label${isEnglish ? ' english-video-heading' : ''}" lang="en" aria-label="${language} Video">${isEnglish ? '<strong>English Videos</strong>' : 'Malayalam Video'}</div>`;
-
-            if (hasActiveAudio) {
-              card.innerHTML = `
-                ${languageLabel}
-                <div class="card-top">
-                  <div class="thumb-wrap">
-                    <img class="thumb-img" src="${thumbUrl}" alt="${v.title}" loading="lazy" />
-                    <span class="play-overlay-icon" aria-hidden="true">▶</span>
-                    <span class="thumb-duration">${durationText}</span>
-                  </div>
-                  <div class="card-info">
-                    ${chBadge}
-                    <div class="card-title" title="${v.title}">${v.title}</div>
-                    <div class="card-sub">${v.chapter || mod.moduleName}</div>
-                  </div>
-                </div>
-
-                <div class="card-actions">
-                  <button type="button" class="btn-play-voice">
-                    <span aria-hidden="true">▶</span> Play Voice
-                  </button>
-                </div>
-
-                <!-- Compact Embedded Voice Player Tab -->
-                <div class="mini-player-tab">
-                  <div class="player-frame-wrap">
-                    <!-- iframe inserted on play -->
-                  </div>
-
-                  <div class="voice-podcast-player">
-                    <div class="vpp-top">
-                      <div class="vpp-mode-pill">
-                        <span class="pulse-dot"></span> <span class="vpp-mode-text">Voice Lecture (Academic Hub)</span>
-                      </div>
-                      <div class="vpp-channel-tag"><span>🎙️ ${language} Audio Class</span></div>
-                    </div>
-                    <div class="vpp-wave-bar">
-                      <div class="vpp-equalizer">
-                        <span></span><span></span><span></span><span></span><span></span><span></span>
-                      </div>
-                      <div>
-                        <div class="vpp-status-text">Playing Voice Lecture...</div>
-                        <div class="vpp-status-sub">${v.chapter || mod.moduleName}</div>
-                      </div>
-                    </div>
-                    <div class="vpp-actions">
-                      <button type="button" class="vpp-btn-pause" title="Pause / Resume playback">
-                        <span class="vpp-pause-icon">⏸</span> Pause Voice
-                      </button>
-                      <button type="button" class="vpp-btn-skip vpp-skip-back" title="Rewind 10 seconds">
-                        ↺ 10s
-                      </button>
-                      <button type="button" class="vpp-btn-skip vpp-skip-fwd" title="Skip 10 seconds">
-                        10s ↻
-                      </button>
-                      <button type="button" class="vpp-speed-btn" title="Playback Speed">1.0x</button>
-                      <button type="button" class="vpp-btn-close" title="Close player">✕ Close</button>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Chapter Study Notes & Exam Points -->
-                ${v.studyPoints && v.studyPoints.length > 0 ? `
-                <details class="chapter-notes-box" open>
-                  <summary class="notes-summary">
-                    <span class="notes-title-wrap">
-                      <span aria-hidden="true">📝</span>
-                      <span><strong>Study Notes &amp; Exam Points</strong> (മലയാളം &amp; Eng)</span>
-                    </span>
-                    <span class="notes-chevron" aria-hidden="true">▼</span>
-                  </summary>
-                  <div class="notes-content">
-                    <ul class="notes-list">
-                      ${v.studyPoints.map(p => `<li>${p}</li>`).join('')}
-                    </ul>
-                    ${v.examTip ? `
-                    <div class="exam-tip-badge">
-                      <strong>🎯 Exam Revision Highlight:</strong> ${v.examTip}
-                    </div>` : ''}
-                  </div>
-                </details>` : ''}
-              `;
-
-              const playBtn = card.querySelector('.btn-play-voice');
-              const playerTab = card.querySelector('.mini-player-tab');
-              const frameWrap = card.querySelector('.player-frame-wrap');
-              const pauseBtn = card.querySelector('.vpp-btn-pause');
-              const closeBtn = card.querySelector('.vpp-btn-close');
-              const equalizer = card.querySelector('.vpp-equalizer');
-
-              let isAudioPaused = false;
-
-              function sendCommandToYt(func, args) {
-                const iframe = frameWrap.querySelector('iframe');
-                if (iframe && iframe.contentWindow) {
-                  iframe.contentWindow.postMessage(JSON.stringify({
-                    event: 'command',
-                    func: func,
-                    args: args || ''
-                  }), '*');
-                }
-              }
-
-              // Mobile Lock-Screen & Background Playback Support (MediaSession API)
-              function setupMediaSession() {
-                if ('mediaSession' in navigator) {
-                  navigator.mediaSession.metadata = new MediaMetadata({
-                    title: v.title,
-                    artist: `${subject.name} (${language} Voice)`,
-                    album: mod.moduleName,
-                    artwork: [
-                      { src: thumbUrl, sizes: '512x512', type: 'image/jpeg' }
-                    ]
-                  });
-
-                  navigator.mediaSession.setActionHandler('play', () => {
-                    if (isAudioPaused) togglePause();
-                  });
-                  navigator.mediaSession.setActionHandler('pause', () => {
-                    if (!isAudioPaused) togglePause();
-                  });
-                  navigator.mediaSession.setActionHandler('seekbackward', (details) => {
-                    const skipTime = details.seekOffset || 10;
-                    sendCommandToYt('seekTo', `-${skipTime}`);
-                  });
-                  navigator.mediaSession.setActionHandler('seekforward', (details) => {
-                    const skipTime = details.seekOffset || 10;
-                    sendCommandToYt('seekTo', `+${skipTime}`);
-                  });
-                }
-              }
-
-              function startPlayback() {
-                // Deactivate any currently playing card
-                if (currentPlayingCard && currentPlayingCard !== card) {
-                  const prevTab = currentPlayingCard.querySelector('.mini-player-tab');
-                  const prevFrame = currentPlayingCard.querySelector('.player-frame-wrap');
-                  const prevPlayBtn = currentPlayingCard.querySelector('.btn-play-voice');
-                  if (prevTab) prevTab.classList.remove('active');
-                  if (prevFrame) prevFrame.innerHTML = '';
-                  if (prevPlayBtn) prevPlayBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
-                  currentPlayingCard.classList.remove('playing');
-                }
-
-                                isAudioPaused = false;
-                pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
-                equalizer.classList.remove('paused');
-
-                if (v.youtubeId) {
-                  frameWrap.innerHTML = `
-                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
-                            title="${v.title}"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                    </iframe>`;
-                } else if (v.audioUrl) {
-                  frameWrap.innerHTML = '';
-                  nativeAudio.src = v.audioUrl;
-                  nativeAudio.playbackRate = speeds[speedIndex];
-                  nativeAudio.play().catch(e => console.warn('Audio play error:', e));
-                  nativeAudio.onended = () => {
-                    stopPlayback();
-                  };
-                }
-
-                playerTab.classList.add('active');
-                card.classList.add('playing');
-                playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
-                currentPlayingCard = card;
-                requestScreenWakeLock();
-                setupMediaSession();
-
-                // Update Bottom Sticky Bar
-                stickyTitle.textContent = v.title;
-                stickySub.textContent = `🎙️ ${language} · ${subject.name} · ${v.chapter || mod.moduleName}`;
-                if (stickyYtLink) stickyYtLink.href = v.youtubeId ? `https://www.youtube.com/watch?v=${v.youtubeId}` : '#';
-                stickyBar.classList.add('visible');
-              }
-
-              function stopPlayback() {
-                if (v.audioUrl && window._activeNativeAudio) {
-                  window._activeNativeAudio.pause();
-                  window._activeNativeAudio.currentTime = 0;
-                }
-                frameWrap.innerHTML = '';
-                playerTab.classList.remove('active');
-                card.classList.remove('playing');
-                playBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
-                if (currentPlayingCard === card) {
-                  currentPlayingCard = null;
-                  stickyBar.classList.remove('visible');
-                }
-              }
-
-              function togglePause() {
-                if (isAudioPaused) {
-                  if (v.youtubeId) {
-                    sendCommandToYt('playVideo');
-                  } else if (v.audioUrl) {
-                    nativeAudio.play();
-                  }
-                  isAudioPaused = false;
-                  pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
-                  equalizer.classList.remove('paused');
-                  playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
-                } else {
-                  if (v.youtubeId) {
-                    sendCommandToYt('pauseVideo');
-                  } else if (v.audioUrl) {
-                    nativeAudio.pause();
-                  }
-                  isAudioPaused = true;
-                  pauseBtn.innerHTML = '<span class="vpp-pause-icon">▶</span> Resume Voice';
-                  equalizer.classList.add('paused');
-                  playBtn.innerHTML = '<span aria-hidden="true">▶</span> Paused';
-                }
-              }
-
-              const thumbWrap = card.querySelector('.thumb-wrap');
-              if (thumbWrap) {
-                thumbWrap.addEventListener('click', () => {
-                  if (playerTab.classList.contains('active')) {
-                    togglePause();
-                  } else {
-                    startPlayback();
-                  }
-                });
-              }
-
-              playBtn.addEventListener('click', () => {
-                if (playerTab.classList.contains('active')) {
-                  togglePause();
-                } else {
-                  startPlayback();
-                }
-              });
-
-              pauseBtn.addEventListener('click', togglePause);
-
-              const skipBackBtn = card.querySelector('.vpp-skip-back');
-              const skipFwdBtn = card.querySelector('.vpp-skip-fwd');
-              const speedBtn = card.querySelector('.vpp-speed-btn');
-              const speeds = [1.0, 1.25, 1.5, 0.75];
-              let speedIndex = 0;
-
-              if (!window._activeNativeAudio) {
-                window._activeNativeAudio = new Audio();
-              }
-              const nativeAudio = window._activeNativeAudio;
-
-              if (skipBackBtn) {
-                skipBackBtn.addEventListener('click', (e) => {
-                  e.stopPropagation();
-                  if (v.youtubeId) {
-                    sendCommandToYt('seekTo', '-10');
-                  } else if (v.audioUrl) {
-                    nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - 10);
-                  }
-                });
-              }
-
-              if (skipFwdBtn) {
-                skipFwdBtn.addEventListener('click', (e) => {
-                  e.stopPropagation();
-                  if (v.youtubeId) {
-                    sendCommandToYt('seekTo', '+10');
-                  } else if (v.audioUrl) {
-                    nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + 10);
-                  }
-                });
-              }
-
-              if (speedBtn) {
-                speedBtn.addEventListener('click', (e) => {
-                  e.stopPropagation();
-                  speedIndex = (speedIndex + 1) % speeds.length;
-                  const newSpeed = speeds[speedIndex];
-                  speedBtn.textContent = newSpeed + 'x';
-                  if (v.youtubeId) {
-                    const iframe = frameWrap.querySelector('iframe');
-                    if (iframe && iframe.contentWindow) {
-                      iframe.contentWindow.postMessage(JSON.stringify({
-                        event: 'command',
-                        func: 'setPlaybackRate',
-                        args: [newSpeed]
-                      }), '*');
-                    }
-                  } else if (v.audioUrl) {
-                    nativeAudio.playbackRate = newSpeed;
-                  }
-                });
-              }
-
-              if (closeBtn) {
-                closeBtn.addEventListener('click', stopPlayback);
-              }
-
-            } else {
-              // Chapter without video yet - Clean structured audio card
-              card.innerHTML = `
-                ${languageLabel}
-                <div class="card-top">
-                  <div class="thumb-wrap thumb-wrap--audio">
-                    <span class="thumb-audio-icon" aria-hidden="true">🎙️</span>
-                    <span class="thumb-duration">${durationText}</span>
-                  </div>
-                  <div class="card-info">
-                    ${chBadge}
-                    <div class="card-title" title="${v.title}">${v.title}</div>
-                    <div class="card-sub">${v.chapter || mod.moduleName}</div>
-                  </div>
-                </div>
-
-                <div class="card-actions">
-                  <div class="voice-scheduled-pill">
-                    <span class="pulse-dot-scheduled"></span>
-                    <span>${v.statusText || 'Voice Lecture in Production'}</span>
-                  </div>
-                </div>
-
-                ${v.studyPoints && v.studyPoints.length > 0 ? `
-                <details class="chapter-notes-box" open>
-                  <summary class="notes-summary">
-                    <span class="notes-title-wrap">
-                      <span aria-hidden="true">📝</span>
-                      <span><strong>Study Notes &amp; Exam Points</strong> (മലയാളം &amp; Eng)</span>
-                    </span>
-                    <span class="notes-chevron" aria-hidden="true">▼</span>
-                  </summary>
-                  <div class="notes-content">
-                    <ul class="notes-list">
-                      ${v.studyPoints.map(p => `<li>${p}</li>`).join('')}
-                    </ul>
-                    ${v.examTip ? `
-                    <div class="exam-tip-badge">
-                      <strong>🎯 Exam Revision Highlight:</strong> ${v.examTip}
-                    </div>` : ''}
-                  </div>
-                </details>` : ''}
-              `;
-            }
-
-            grid.append(card);
-          });
-
-          group.append(grid);
-
-          // In-Article Study Ad Slot between modules (AdSense Viewability)
-          if (modIdx < subject.modules.length - 1) {
-            const adSlot = document.createElement('div');
-            adSlot.className = 'study-adsense-slot';
-            adSlot.innerHTML = `
-              <span class="ad-disclaimer">SPONSORED STUDY RESOURCES</span>
-              <div class="ad-placeholder-box" style="min-height:90px;display:flex;align-items:center;justify-content:center;color:#64748b;font-size:12px;background:#f8fafc;border-radius:8px;">
-                <span>📖 Calicut University FYUGP Official Study Material &amp; Exam Guide</span>
-              </div>
-            `;
-            group.append(adSlot);
-          }
-
-          chaptersContainer.append(group);
-        });
-
-        if (matchedTotal === 0 && query) {
-          chaptersContainer.innerHTML = `
-            <div class="empty-state">
-              <span class="empty-icon">🔍</span>
-              <div class="empty-title">No matching chapters found</div>
-              <div class="empty-desc">No voice lectures matched "<strong>${filterQuery}</strong>" in ${subject.name}. Try a different keyword.</div>
-            </div>`;
-        }
-      }
-
-      function updateUI() {
-        // Update tab buttons active state
-        document.querySelectorAll('.subj-tab-btn').forEach(btn => {
-          const isActive = btn.dataset.slug === currentSlug;
-          btn.classList.toggle('active', isActive);
-          btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        });
-
-        renderChapters(searchInput.value);
-      }
-
-      // Search Filter Event
-      searchInput.addEventListener('input', (e) => {
-        renderChapters(e.target.value);
-      });
-
-      // Sticky Bar Close Event
-      stickyClose.addEventListener('click', () => {
-        stickyBar.classList.remove('visible');
-        if (currentPlayingCard) {
-          const frame = currentPlayingCard.querySelector('.player-frame-wrap');
-          const tab = currentPlayingCard.querySelector('.mini-player-tab');
-          const playBtn = currentPlayingCard.querySelector('.btn-play-voice');
-          if (frame) frame.innerHTML = '';
-          if (tab) tab.classList.remove('active');
-          if (playBtn) playBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
-          currentPlayingCard.classList.remove('playing');
-          currentPlayingCard = null;
-        }
-      });
-
-      // Handle popstate for back/forward navigation
-      window.addEventListener('popstate', () => {
-        const p = new URLSearchParams(window.location.search);
-        const s = (p.get('subject') || 'malayalam').toLowerCase();
-        if (data[s] && s !== currentSlug) {
-          currentSlug = s;
-          updateUI();
-        }
-      });
-
-      // Sticky Bar Pause/Resume Toggle
-      const stickyPauseToggle = document.getElementById('sticky-pause-toggle');
-      if (stickyPauseToggle) {
-        stickyPauseToggle.addEventListener('click', () => {
-          if (currentPlayingCard) {
-            const pauseBtn = currentPlayingCard.querySelector('.vpp-btn-pause');
-            if (pauseBtn) pauseBtn.click();
-          }
-        });
-      }
-
-      // Initial Mount
-      renderSubjectTabs();
-      updateUI();
-    
-      // Screen WakeLock API - Keep screen awake while studying & listening
-      let wakeLock = null;
-      const wakeLockBtn = document.getElementById('wake-lock-toggle');
-
-      async function requestScreenWakeLock() {
-        if ('wakeLock' in navigator) {
-          try {
-            wakeLock = await navigator.wakeLock.request('screen');
-            if (wakeLockBtn) {
-              wakeLockBtn.classList.add('active');
-              wakeLockBtn.setAttribute('aria-pressed', 'true');
-              wakeLockBtn.querySelector('.wake-text').textContent = 'Screen Awake: ON';
-            }
-            wakeLock.addEventListener('release', () => {
-              if (wakeLockBtn) {
-                wakeLockBtn.classList.remove('active');
-                wakeLockBtn.setAttribute('aria-pressed', 'false');
-                wakeLockBtn.querySelector('.wake-text').textContent = 'Keep Screen Awake';
-              }
-              wakeLock = null;
-            });
-          } catch (err) {
-            console.warn('Wake Lock request error:', err);
-          }
-        }
-      }
-
-      async function releaseScreenWakeLock() {
-        if (wakeLock !== null) {
-          try {
-            await wakeLock.release();
-          } catch (e) {}
-          wakeLock = null;
-        }
-      }
-
-      if (wakeLockBtn) {
-        wakeLockBtn.addEventListener('click', async () => {
-          if (wakeLock !== null) {
-            await releaseScreenWakeLock();
-          } else {
-            await requestScreenWakeLock();
-          }
-        });
-      }
-
-      // Re-request wake lock if tab returns to view
-      document.addEventListener('visibilitychange', async () => {
-        if (wakeLock !== null && document.visibilityState === 'visible') {
-          await requestScreenWakeLock();
-        }
-      });
-
-    })();
-  </script>
-</body>
-</html>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="description" content="Voice Explanations — Chapter-by-chapter YouTube audio lectures and voice classes for Calicut University syllabus." />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="googlebot" content="noindex, follow" />
+  <meta name="googlebot-news" content="noindex, follow" />
+  <title>Voice Explanations | YouTube Audio Classes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #dc2626;
+      --primary-dark: #b91c1c;
+      --primary-soft: #fef2f2;
+      --accent: #d97706;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
+      --shadow-lg: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 40%, #fef2f2 100%);
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', -apple-system, sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 90px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* Top Navigation */
+    .top-navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: #f1f5f9;
+      color: #334155;
+      font-weight: 700;
+      font-size: 13.5px;
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 17px;
+      color: #0f172a;
+    }
+    .brand-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .search-bar-wrap {
+      flex: 1;
+      max-width: 360px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 9px 14px 9px 36px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      font-size: 13.5px;
+      background: #f8fafc;
+      transition: all 0.2s;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+    }
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1180px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    /* Subject Switcher Tabs Bar */
+    .subject-tabs-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+      scrollbar-width: thin;
+    }
+    .subject-tabs-scroll::-webkit-scrollbar { height: 5px; }
+    .subject-tabs-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
+    .subj-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: #334155;
+      font-size: 13.5px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+    .subj-tab-btn:hover {
+      border-color: #cbd5e1;
+      background: #f8fafc;
+      transform: translateY(-1px);
+    }
+    .subj-tab-btn.active {
+      background: #0f172a;
+      border-color: #0f172a;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+    }
+    .subj-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      background: #f1f5f9;
+      color: #475569;
+    }
+    .subj-tab-btn.active .subj-badge {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    /* Active Subject Hero Card */
+    .hero-banner {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .hero-title-group p {
+      color: var(--text-muted);
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 14px;
+    }
+    .hero-stat-pill {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 10px 16px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .hero-stat-pill strong {
+      display: block;
+      font-size: 20px;
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .hero-stat-pill span {
+      font-size: 11.5px;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Modules & Chapters */
+    .module-group {
+      margin-bottom: 32px;
+    }
+    .module-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      margin-bottom: 14px;
+    }
+    .module-title {
+      font-weight: 800;
+      font-size: 15px;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .module-count {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      background: #fff;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    /* Chapter Grid */
+    .chapters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 16px;
+    }
+
+    /* Chapter Card */
+    
+    .chapter-badge-chip {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #dc2626;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-bottom: 5px;
+    }
+
+    
+    /* Screen Wake Lock Button in Navbar */
+    .wake-lock-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #334155;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .wake-lock-btn:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+    .wake-lock-btn.active {
+      background: #fefce8;
+      border-color: #facc15;
+      color: #854d0e;
+      box-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
+    }
+    .wake-lock-btn.active .wake-icon {
+      filter: drop-shadow(0 0 4px #eab308);
+      animation: bulbGlow 1.8s infinite ease-in-out;
+    }
+    @keyframes bulbGlow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.15); opacity: 0.85; }
+    }
+
+    /* Chapter Study Notes Box */
+    .chapter-notes-box {
+      margin-top: 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      background: #f8fafc;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+    .chapter-notes-box[open] {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    }
+    .notes-summary {
+      padding: 10px 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #1e293b;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      user-select: none;
+      list-style: none;
+    }
+    .notes-summary::-webkit-details-marker { display: none; }
+    .notes-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .notes-chevron {
+      font-size: 11px;
+      color: #64748b;
+      transition: transform 0.2s ease;
+    }
+    .chapter-notes-box[open] .notes-chevron {
+      transform: rotate(180deg);
+    }
+    .notes-content {
+      padding: 12px 16px 14px;
+      border-top: 1px solid #e2e8f0;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #334155;
+    }
+    .notes-list {
+      margin: 0;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .notes-list li {
+      color: #1e293b;
+    }
+    .exam-tip-badge {
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      border-radius: 6px;
+      font-size: 12.5px;
+      color: #78350f;
+      line-height: 1.5;
+    }
+
+    /* AdSense In-Article Responsive Slot */
+    .study-adsense-slot {
+      margin: 28px 0;
+      padding: 16px;
+      background: #ffffff;
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .ad-disclaimer {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #94a3b8;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .chapter-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .chapter-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .chapter-card.playing {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+    }
+
+    .card-top {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    
+    .thumb-wrap--audio {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+      border: 1px solid #fecdd3;
+    }
+    .thumb-audio-icon {
+      font-size: 26px;
+    }
+    .voice-scheduled-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+    .pulse-dot-scheduled {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #94a3b8;
+    }
+
+    .thumb-wrap {
+      position: relative;
+      width: 110px;
+      height: 68px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #0f172a;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .thumb-wrap:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+    }
+    .thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .thumb-duration {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+    .play-overlay-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 28px;
+      height: 28px;
+      background: rgba(220, 38, 38, 0.9);
+      color: #fff;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+    }
+
+    .card-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-sub {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .btn-play-voice {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 9px;
+      border: 1px solid var(--primary);
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .btn-play-voice:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-share-card {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 8px 12px;
+      border-radius: 9px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #334155;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-share-card:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+      color: #0f172a;
+    }
+    .btn-share-card.copied {
+      background: #10b981;
+      border-color: #059669;
+      color: #ffffff;
+    }
+    .chapter-card.highlight-target {
+      outline: 3px solid var(--primary);
+      box-shadow: 0 0 0 5px var(--primary-soft), 0 10px 25px -5px rgba(0, 0, 0, 0.12);
+      animation: pulseHighlight 1.5s ease-out;
+    }
+    @keyframes pulseHighlight {
+      0% { transform: scale(1.02); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+    
+    
+
+    /* Compact Embedded Player Tab inside Card */
+    .mini-player-tab {
+      display: none;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 12px;
+      margin-top: 4px;
+    }
+    .mini-player-tab.active {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .player-tab-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .player-tab-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #dc2626;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .player-tab-close {
+      background: none;
+      border: none;
+      color: #64748b;
+      font-size: 16px;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    .player-tab-close:hover {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .player-frame-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      min-height: 200px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+    .player-frame-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    
+    /* AcademicHub Channel Header & Badges */
+    .hero-channel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: #991b1b;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .hero-channel-badge a {
+      color: #dc2626;
+      font-weight: 800;
+      text-decoration: underline;
+    }
+    .pulse-dot {
+      width: 9px;
+      height: 9px;
+      background: #dc2626;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulseDot 1.4s infinite ease-in-out;
+    }
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.35; }
+    }
+    .top-channel-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: #fff !important;
+      font-weight: 800;
+      font-size: 13px;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(220, 38, 38, 0.25);
+      transition: all 0.2s;
+    }
+    .top-channel-btn:hover {
+      background: #b91c1c;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+    }
+
+    /* Voice Mode Audio Player UI inside Card */
+    .voice-podcast-player {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 8px;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+    }
+    .vpp-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .vpp-mode-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(239, 68, 68, 0.25);
+      border: 1px solid rgba(239, 68, 68, 0.45);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #fca5a5;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .vpp-mode-pill .pulse-dot {
+      background: #ef4444;
+    }
+    .vpp-channel-tag {
+      font-size: 12px;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+    .vpp-channel-tag a {
+      color: #38bdf8;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+    .vpp-wave-bar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .vpp-equalizer {
+      display: flex;
+      align-items: flex-end;
+      gap: 3.5px;
+      height: 26px;
+      flex-shrink: 0;
+    }
+    .vpp-equalizer span {
+      width: 4px;
+      background: #ef4444;
+      border-radius: 2px;
+      animation: eqWave 1.2s infinite ease-in-out;
+    }
+    .vpp-equalizer span:nth-child(1) { height: 35%; animation-delay: 0.1s; }
+    .vpp-equalizer span:nth-child(2) { height: 85%; animation-delay: 0.3s; }
+    .vpp-equalizer span:nth-child(3) { height: 60%; animation-delay: 0.15s; }
+    .vpp-equalizer span:nth-child(4) { height: 100%; animation-delay: 0.4s; }
+    .vpp-equalizer span:nth-child(5) { height: 75%; animation-delay: 0.25s; }
+    .vpp-equalizer span:nth-child(6) { height: 45%; animation-delay: 0.35s; }
+    .vpp-equalizer.paused span {
+      animation-play-state: paused !important;
+      height: 25% !important;
+      opacity: 0.5;
+    }
+    @keyframes eqWave {
+      0%, 100% { transform: scaleY(0.3); }
+      50% { transform: scaleY(1); }
+    }
+    .vpp-status-text {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #f1f5f9;
+      line-height: 1.3;
+    }
+    .vpp-status-sub {
+      font-size: 11.5px;
+      color: #94a3b8;
+    }
+    .vpp-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .vpp-btn-pause, .vpp-btn-video, .vpp-btn-close {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+    .vpp-btn-pause {
+      background: #dc2626;
+      color: #fff;
+    }
+    .vpp-btn-pause:hover {
+      background: #b91c1c;
+    }
+    .vpp-btn-video {
+      background: rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .vpp-btn-video:hover {
+      background: rgba(255, 255, 255, 0.24);
+      color: #fff;
+    }
+    .vpp-btn-close {
+      background: transparent;
+      color: #94a3b8;
+      margin-left: auto;
+    }
+    .vpp-btn-close:hover {
+      color: #fff;
+    }
+
+    /* Video frame wrap voice mode hiding */
+    
+    .vpp-btn-skip {
+      background: rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .vpp-btn-skip:hover {
+      background: rgba(255, 255, 255, 0.22);
+      color: #fff;
+    }
+    .vpp-speed-btn {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 6px 9px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .vpp-speed-btn:hover {
+      background: rgba(239, 68, 68, 0.35);
+      color: #fff;
+    }
+
+
+
+    /* Sticky Bottom Audio Bar */
+    .bottom-sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(16px);
+      color: #ffffff;
+      padding: 12px 24px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
+      z-index: 200;
+    }
+    .bottom-sticky-bar.visible {
+      display: flex;
+      animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+    .sticky-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .sticky-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .sticky-texts {
+      min-width: 0;
+    }
+    .sticky-title {
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sticky-sub {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .sticky-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .sticky-btn {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+    .sticky-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .sticky-btn-close {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 20px;
+      padding: 4px;
+    }
+    .sticky-btn-close:hover {
+      color: #fff;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1.5px dashed var(--border);
+    }
+    .empty-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .empty-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 6px;
+    }
+    .empty-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .top-navbar { padding: 10px 14px; }
+      .search-bar-wrap { max-width: 200px; }
+      .chapters-grid { grid-template-columns: 1fr; }
+      .hero-banner { padding: 18px; }
+      .hero-title-group h1 { font-size: 20px; }
+      .bottom-sticky-bar { padding: 10px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation Bar -->
+  <nav class="top-navbar" aria-label="Main Navigation">
+    <div class="nav-left">
+      <a href="index.html" class="back-btn" title="Back to Academic Hub">
+        <span aria-hidden="true">←</span> Hub
+      </a>
+      <div class="brand-title">
+        <span class="brand-icon" aria-hidden="true">🎙️</span>
+        <span>Voice Explanation</span>
+      </div>
+    </div>
+
+    <div class="search-bar-wrap">
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input type="search" id="chapter-search" class="search-input" placeholder="Search chapter or topic..." aria-label="Search voice explanations">
+    </div>
+
+    <button type="button" class="wake-lock-btn" id="wake-lock-toggle" aria-pressed="false" title="Keep your phone screen awake while studying">
+      <span class="wake-icon" aria-hidden="true">💡</span>
+      <span class="wake-text">Keep Screen Awake</span>
+    </button>
+  </nav>
+
+  <div class="container">
+
+    <!-- Subject Switcher Tabs -->
+    <div class="subject-tabs-scroll" id="subject-tabs" role="tablist" aria-label="Select Subject">
+      <!-- Generated via JavaScript -->
+    </div>
+
+    <!-- Active Subject Hero Banner -->
+    <section class="hero-banner" id="hero-banner">
+      <div class="hero-title-group">
+        <div class="hero-channel-badge"><span class="pulse-dot"></span> Malayalam Voice Classes &amp; Audio Explanations</div>
+        <h1 id="hero-subject-name">Loading Subject...</h1>
+        <p id="hero-subject-desc">Chapter-by-chapter embedded Malayalam voice lectures organized by module</p>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat-pill">
+          <strong id="stat-video-count">0</strong>
+          <span>Voice Lectures</span>
+        </div>
+        <div class="hero-stat-pill">
+          <strong id="stat-module-count">0</strong>
+          <span>Modules</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapters Content Container -->
+    <main id="chapters-container">
+      <!-- Populated via JavaScript -->
+    </main>
+
+  </div>
+
+  <!-- Bottom Floating Audio Bar -->
+  <aside class="bottom-sticky-bar" id="sticky-audio-bar" aria-label="Audio Playback Bar">
+    <div class="sticky-info">
+      <div class="sticky-icon" aria-hidden="true">▶</div>
+      <div class="sticky-texts">
+        <div class="sticky-title" id="sticky-title">Playing lecture...</div>
+        <div class="sticky-sub" id="sticky-sub">Calicut University Official Lecture</div>
+      </div>
+    </div>
+    <div class="sticky-actions">
+      <button type="button" class="sticky-btn" id="sticky-pause-toggle">
+        <span id="sticky-pause-icon">⏸</span> <span id="sticky-pause-text">Pause Voice</span>
+      </button>
+      <button type="button" class="sticky-btn-close" id="sticky-close" aria-label="Close Player">✕</button>
+    </div>
+  </aside>
+
+  <!-- Load Subject Voice Data -->
+  <script src="voice_explanation_data.js?v=20261031_v2"></script>
+
+  <script>
+    (function () {
+      const data = (typeof window.VOICE_EXPLANATIONS_DATA !== 'undefined') ? window.VOICE_EXPLANATIONS_DATA : ((typeof VOICE_EXPLANATIONS_DATA !== 'undefined') ? VOICE_EXPLANATIONS_DATA : {});
+
+      // Determine initial subject from URL query param `?subject=...`
+      const urlParams = new URLSearchParams(window.location.search);
+      let currentSlug = (urlParams.get('subject') || 'sociology').toLowerCase();
+
+      // Active subjects allowed for display
+      const activeSubjects = [
+        'sociology',
+        'philosophy-of-ai',
+        'development-issues-in-indian-economy',
+        'philosophy-of-education'
+      ];
+
+      // Fallback if slug not found or not in active subjects
+      if (!data[currentSlug] || !activeSubjects.includes(currentSlug)) {
+        currentSlug = 'sociology';
+      }
+
+      const subjectTabsContainer = document.getElementById('subject-tabs');
+      const heroSubjectName = document.getElementById('hero-subject-name');
+      const heroSubjectDesc = document.getElementById('hero-subject-desc');
+      const statVideoCount = document.getElementById('stat-video-count');
+      const statModuleCount = document.getElementById('stat-module-count');
+      const chaptersContainer = document.getElementById('chapters-container');
+      const searchInput = document.getElementById('chapter-search');
+
+      const stickyBar = document.getElementById('sticky-audio-bar');
+      const stickyTitle = document.getElementById('sticky-title');
+      const stickySub = document.getElementById('sticky-sub');
+      const stickyYtLink = document.getElementById('sticky-yt-link');
+      const stickyClose = document.getElementById('sticky-close');
+
+      let currentPlayingCard = null;
+
+      // Render Subject Tab Buttons
+      function renderSubjectTabs() {
+        subjectTabsContainer.innerHTML = '';
+        activeSubjects.forEach(slug => {
+          const s = data[slug];
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'subj-tab-btn' + (slug === currentSlug ? ' active' : '');
+          btn.dataset.slug = slug;
+          btn.setAttribute('role', 'tab');
+          btn.setAttribute('aria-selected', slug === currentSlug ? 'true' : 'false');
+          btn.innerHTML = `<span style="font-weight:800;">${s.badge}</span> ${s.name} <span class="subj-badge">${s.totalVideos || 0}</span>`;
+          btn.addEventListener('click', () => {
+            if (currentSlug !== slug) {
+              currentSlug = slug;
+              const newUrl = new URL(window.location);
+              newUrl.searchParams.set('subject', slug);
+              window.history.pushState({}, '', newUrl);
+              updateUI();
+            }
+          });
+          subjectTabsContainer.append(btn);
+        });
+      }
+
+                  // Render Chapters for Selected Subject
+      function renderChapters(filterQuery = '') {
+        const subject = data[currentSlug];
+        if (!subject) return;
+
+        heroSubjectName.innerHTML = `${subject.badge} ${subject.name}`;
+        
+        let totalChs = 0;
+        (subject.modules || []).forEach(m => totalChs += (m.videos || []).length);
+        statVideoCount.textContent = (subject.totalVideos > 0) ? `${subject.totalVideos} Live Lectures` : `${totalChs} Chapters`;
+        statModuleCount.textContent = (subject.modules || []).length;
+
+        chaptersContainer.innerHTML = '';
+
+        if (!subject.modules || subject.modules.length === 0) {
+          chaptersContainer.innerHTML = `
+            <div class="empty-state">
+              <span class="empty-icon">🎧</span>
+              <div class="empty-title">Voice Explanations Coming Soon</div>
+              <div class="empty-desc">Malayalam voice lectures and chapter explanations for <strong>${subject.name}</strong> will be embedded here by chapter and module.</div>
+            </div>`;
+          return;
+        }
+
+        const query = filterQuery.trim().toLowerCase();
+        let matchedTotal = 0;
+
+        subject.modules.forEach((mod, modIdx) => {
+          const filteredVids = (mod.videos || []).filter(v => {
+            if (!query) return true;
+            return (v.title && v.title.toLowerCase().includes(query)) ||
+                   (v.chapter && v.chapter.toLowerCase().includes(query)) ||
+                   (mod.moduleName && mod.moduleName.toLowerCase().includes(query));
+          });
+
+          if (filteredVids.length === 0) return;
+          matchedTotal += filteredVids.length;
+
+          const group = document.createElement('section');
+          group.className = 'module-group';
+
+          const activeCount = filteredVids.filter(v => v.youtubeId || v.audioUrl).length;
+          const totalCount = filteredVids.length;
+          const countLabel = activeCount > 0 ? `${activeCount} Live / ${totalCount} Chapters` : `${totalCount} Chapters`;
+
+          const mHeader = document.createElement('div');
+          mHeader.className = 'module-header';
+          mHeader.innerHTML = `
+            <div class="module-title">
+              <span style="color:var(--primary);font-size:14px;">📁</span>
+              <span>${mod.moduleName}</span>
+            </div>
+            <div class="module-count">${countLabel}</div>
+          `;
+          group.append(mHeader);
+
+          const grid = document.createElement('div');
+          grid.className = 'chapters-grid';
+
+          filteredVids.forEach(v => {
+            const card = document.createElement('article');
+            card.className = 'chapter-card';
+            card.dataset.ytid = v.youtubeId || '';
+            const chRaw = (v.chapterNumber || '').trim();
+            const chClean = chRaw.replace(/[^0-9.]/g, '');
+            const chNorm = chClean.replace(/^0+([1-9])/, '$1');
+            if (chClean) {
+              card.id = 'ch-' + chClean.replace(/\./g, '-');
+              card.dataset.chapter = chClean;
+              card.dataset.chapterNorm = chNorm;
+            }
+
+            const hasActiveAudio = !!(v.youtubeId || v.audioUrl);
+            const durationText = v.duration ? `${v.duration}m` : 'Audio';
+            const thumbUrl = v.youtubeId ? `https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg` : '';
+            const chBadge = v.chapterNumber ? `<span class="chapter-badge-chip">${v.chapterNumber}</span>` : '';
+
+            if (hasActiveAudio) {
+              card.innerHTML = `
+                <div class="card-top">
+                  <div class="thumb-wrap">
+                    <img class="thumb-img" src="${thumbUrl}" alt="${v.title}" loading="lazy" />
+                    <span class="play-overlay-icon" aria-hidden="true">▶</span>
+                    <span class="thumb-duration">${durationText}</span>
+                  </div>
+                  <div class="card-info">
+                    ${chBadge}
+                    <div class="card-title" title="${v.title}">${v.title}</div>
+                    <div class="card-sub">${v.chapter || mod.moduleName}</div>
+                  </div>
+                </div>
+
+                <div class="card-actions">
+                  <button type="button" class="btn-play-voice">
+                    <span aria-hidden="true">▶</span> Play Voice
+                  </button>
+                  <button type="button" class="btn-share-card" title="Copy share link for this chapter">
+                    <span aria-hidden="true">🔗</span> Share
+                  </button>
+                </div>
+
+                <!-- Compact Embedded Voice Player Tab -->
+                <div class="mini-player-tab">
+                  <div class="player-frame-wrap">
+                    <!-- iframe inserted on play -->
+                  </div>
+
+                  <div class="voice-podcast-player">
+                    <div class="vpp-top">
+                      <div class="vpp-mode-pill">
+                        <span class="pulse-dot"></span> <span class="vpp-mode-text">Voice Lecture (Academic Hub)</span>
+                      </div>
+                      <div class="vpp-channel-tag"><span>🎙️ Malayalam Audio Class</span></div>
+                    </div>
+                    <div class="vpp-wave-bar">
+                      <div class="vpp-equalizer">
+                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                      </div>
+                      <div>
+                        <div class="vpp-status-text">Playing Voice Lecture...</div>
+                        <div class="vpp-status-sub">${v.chapter || mod.moduleName}</div>
+                      </div>
+                    </div>
+                    <div class="vpp-actions">
+                      <button type="button" class="vpp-btn-pause" title="Pause / Resume playback">
+                        <span class="vpp-pause-icon">⏸</span> Pause Voice
+                      </button>
+                      <button type="button" class="vpp-btn-skip vpp-skip-back" title="Rewind 10 seconds">
+                        ↺ 10s
+                      </button>
+                      <button type="button" class="vpp-btn-skip vpp-skip-fwd" title="Skip 10 seconds">
+                        10s ↻
+                      </button>
+                      <button type="button" class="vpp-speed-btn" title="Playback Speed">1.0x</button>
+                      <button type="button" class="vpp-btn-close" title="Close player">✕ Close</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Chapter Study Notes & Exam Points -->
+                ${v.studyPoints && v.studyPoints.length > 0 ? `
+                <details class="chapter-notes-box" open>
+                  <summary class="notes-summary">
+                    <span class="notes-title-wrap">
+                      <span aria-hidden="true">📝</span>
+                      <span><strong>Study Notes &amp; Exam Points</strong> (മലയാളം &amp; Eng)</span>
+                    </span>
+                    <span class="notes-chevron" aria-hidden="true">▼</span>
+                  </summary>
+                  <div class="notes-content">
+                    <ul class="notes-list">
+                      ${v.studyPoints.map(p => `<li>${p}</li>`).join('')}
+                    </ul>
+                    ${v.examTip ? `
+                    <div class="exam-tip-badge">
+                      <strong>🎯 Exam Revision Highlight:</strong> ${v.examTip}
+                    </div>` : ''}
+                  </div>
+                </details>` : ''}
+              `;
+
+              const playBtn = card.querySelector('.btn-play-voice');
+              const playerTab = card.querySelector('.mini-player-tab');
+              const frameWrap = card.querySelector('.player-frame-wrap');
+              const pauseBtn = card.querySelector('.vpp-btn-pause');
+              const closeBtn = card.querySelector('.vpp-btn-close');
+              const equalizer = card.querySelector('.vpp-equalizer');
+
+              let isAudioPaused = false;
+
+              function sendCommandToYt(func, args) {
+                const iframe = frameWrap.querySelector('iframe');
+                if (iframe && iframe.contentWindow) {
+                  iframe.contentWindow.postMessage(JSON.stringify({
+                    event: 'command',
+                    func: func,
+                    args: args || ''
+                  }), '*');
+                }
+              }
+
+              // Mobile Lock-Screen & Background Playback Support (MediaSession API)
+              function setupMediaSession() {
+                if ('mediaSession' in navigator) {
+                  navigator.mediaSession.metadata = new MediaMetadata({
+                    title: v.title,
+                    artist: `${subject.name} (Malayalam Voice)`,
+                    album: mod.moduleName,
+                    artwork: [
+                      { src: thumbUrl, sizes: '512x512', type: 'image/jpeg' }
+                    ]
+                  });
+
+                  navigator.mediaSession.setActionHandler('play', () => {
+                    if (isAudioPaused) togglePause();
+                  });
+                  navigator.mediaSession.setActionHandler('pause', () => {
+                    if (!isAudioPaused) togglePause();
+                  });
+                  navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+                    const skipTime = details.seekOffset || 10;
+                    sendCommandToYt('seekTo', `-${skipTime}`);
+                  });
+                  navigator.mediaSession.setActionHandler('seekforward', (details) => {
+                    const skipTime = details.seekOffset || 10;
+                    sendCommandToYt('seekTo', `+${skipTime}`);
+                  });
+                }
+              }
+
+              function startPlayback() {
+                // Deactivate any currently playing card
+                if (currentPlayingCard && currentPlayingCard !== card) {
+                  const prevTab = currentPlayingCard.querySelector('.mini-player-tab');
+                  const prevFrame = currentPlayingCard.querySelector('.player-frame-wrap');
+                  const prevPlayBtn = currentPlayingCard.querySelector('.btn-play-voice');
+                  if (prevTab) prevTab.classList.remove('active');
+                  if (prevFrame) prevFrame.innerHTML = '';
+                  if (prevPlayBtn) prevPlayBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
+                  currentPlayingCard.classList.remove('playing');
+                }
+
+                                isAudioPaused = false;
+                pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
+                equalizer.classList.remove('paused');
+
+                if (v.youtubeId) {
+                  frameWrap.innerHTML = `
+                    <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&playsinline=1&rel=0&modestbranding=1"
+                            title="${v.title}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                    </iframe>`;
+                } else if (v.audioUrl) {
+                  frameWrap.innerHTML = '';
+                  nativeAudio.src = v.audioUrl;
+                  nativeAudio.playbackRate = speeds[speedIndex];
+                  nativeAudio.play().catch(e => console.warn('Audio play error:', e));
+                  nativeAudio.onended = () => {
+                    stopPlayback();
+                  };
+                }
+
+                playerTab.classList.add('active');
+                card.classList.add('playing');
+                playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
+                currentPlayingCard = card;
+                requestScreenWakeLock();
+                setupMediaSession();
+
+                // Update Bottom Sticky Bar
+                stickyTitle.textContent = v.title;
+                stickySub.textContent = `🎙️ ${subject.name} · ${v.chapter || mod.moduleName}`;
+                if (stickyYtLink) stickyYtLink.href = v.youtubeId ? `https://www.youtube.com/watch?v=${v.youtubeId}` : '#';
+                stickyBar.classList.add('visible');
+              }
+
+              function stopPlayback() {
+                if (v.audioUrl && window._activeNativeAudio) {
+                  window._activeNativeAudio.pause();
+                  window._activeNativeAudio.currentTime = 0;
+                }
+                frameWrap.innerHTML = '';
+                playerTab.classList.remove('active');
+                card.classList.remove('playing');
+                playBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
+                if (currentPlayingCard === card) {
+                  currentPlayingCard = null;
+                  stickyBar.classList.remove('visible');
+                }
+              }
+
+              function togglePause() {
+                if (isAudioPaused) {
+                  if (v.youtubeId) {
+                    sendCommandToYt('playVideo');
+                  } else if (v.audioUrl) {
+                    nativeAudio.play();
+                  }
+                  isAudioPaused = false;
+                  pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
+                  equalizer.classList.remove('paused');
+                  playBtn.innerHTML = '<span aria-hidden="true">⏸</span> Playing...';
+                } else {
+                  if (v.youtubeId) {
+                    sendCommandToYt('pauseVideo');
+                  } else if (v.audioUrl) {
+                    nativeAudio.pause();
+                  }
+                  isAudioPaused = true;
+                  pauseBtn.innerHTML = '<span class="vpp-pause-icon">▶</span> Resume Voice';
+                  equalizer.classList.add('paused');
+                  playBtn.innerHTML = '<span aria-hidden="true">▶</span> Paused';
+                }
+              }
+
+              const thumbWrap = card.querySelector('.thumb-wrap');
+              if (thumbWrap) {
+                thumbWrap.addEventListener('click', () => {
+                  if (playerTab.classList.contains('active')) {
+                    togglePause();
+                  } else {
+                    startPlayback();
+                  }
+                });
+              }
+
+              playBtn.addEventListener('click', () => {
+                if (playerTab.classList.contains('active')) {
+                  togglePause();
+                } else {
+                  startPlayback();
+                }
+              });
+
+              pauseBtn.addEventListener('click', togglePause);
+
+              const skipBackBtn = card.querySelector('.vpp-skip-back');
+              const skipFwdBtn = card.querySelector('.vpp-skip-fwd');
+              const speedBtn = card.querySelector('.vpp-speed-btn');
+              const speeds = [1.0, 1.25, 1.5, 0.75];
+              let speedIndex = 0;
+
+              if (!window._activeNativeAudio) {
+                window._activeNativeAudio = new Audio();
+              }
+              const nativeAudio = window._activeNativeAudio;
+
+              if (skipBackBtn) {
+                skipBackBtn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  if (v.youtubeId) {
+                    sendCommandToYt('seekTo', '-10');
+                  } else if (v.audioUrl) {
+                    nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - 10);
+                  }
+                });
+              }
+
+              if (skipFwdBtn) {
+                skipFwdBtn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  if (v.youtubeId) {
+                    sendCommandToYt('seekTo', '+10');
+                  } else if (v.audioUrl) {
+                    nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + 10);
+                  }
+                });
+              }
+
+              if (speedBtn) {
+                speedBtn.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  speedIndex = (speedIndex + 1) % speeds.length;
+                  const newSpeed = speeds[speedIndex];
+                  speedBtn.textContent = newSpeed + 'x';
+                  if (v.youtubeId) {
+                    const iframe = frameWrap.querySelector('iframe');
+                    if (iframe && iframe.contentWindow) {
+                      iframe.contentWindow.postMessage(JSON.stringify({
+                        event: 'command',
+                        func: 'setPlaybackRate',
+                        args: [newSpeed]
+                      }), '*');
+                    }
+                  } else if (v.audioUrl) {
+                    nativeAudio.playbackRate = newSpeed;
+                  }
+                });
+              }
+
+              if (closeBtn) {
+                closeBtn.addEventListener('click', stopPlayback);
+              }
+
+            } else {
+              // Chapter without video yet - Clean structured audio card
+              card.innerHTML = `
+                <div class="card-top">
+                  <div class="thumb-wrap thumb-wrap--audio">
+                    <span class="thumb-audio-icon" aria-hidden="true">🎙️</span>
+                    <span class="thumb-duration">Audio</span>
+                  </div>
+                  <div class="card-info">
+                    ${chBadge}
+                    <div class="card-title" title="${v.title}">${v.title}</div>
+                    <div class="card-sub">${v.chapter || mod.moduleName}</div>
+                  </div>
+                </div>
+
+                <div class="card-actions">
+                  <div class="voice-scheduled-pill">
+                    <span class="pulse-dot-scheduled"></span>
+                    <span>Voice Lecture in Production</span>
+                  </div>
+                  <button type="button" class="btn-share-card" title="Copy share link for this chapter">
+                    <span aria-hidden="true">🔗</span> Share
+                  </button>
+                </div>
+
+                ${v.studyPoints && v.studyPoints.length > 0 ? `
+                <details class="chapter-notes-box" open>
+                  <summary class="notes-summary">
+                    <span class="notes-title-wrap">
+                      <span aria-hidden="true">📝</span>
+                      <span><strong>Study Notes &amp; Exam Points</strong> (മലയാളം &amp; Eng)</span>
+                    </span>
+                    <span class="notes-chevron" aria-hidden="true">▼</span>
+                  </summary>
+                  <div class="notes-content">
+                    <ul class="notes-list">
+                      ${v.studyPoints.map(p => `<li>${p}</li>`).join('')}
+                    </ul>
+                    ${v.examTip ? `
+                    <div class="exam-tip-badge">
+                      <strong>🎯 Exam Revision Highlight:</strong> ${v.examTip}
+                    </div>` : ''}
+                  </div>
+                </details>` : ''}
+              `;
+            }
+
+            // Setup Share Button Listener
+            const shareBtn = card.querySelector('.btn-share-card');
+            if (shareBtn) {
+              shareBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const chParam = chClean || chRaw;
+                const origin = (window.location.origin && window.location.origin !== 'null' && !window.location.origin.startsWith('file:')) 
+                  ? window.location.origin 
+                  : 'https://academichubfaiz.in';
+                const path = window.location.pathname.includes('voice-explanation.html') ? window.location.pathname : '/voice-explanation.html';
+                const shareUrl = `${origin}${path}?subject=${encodeURIComponent(currentSlug)}&ch=${encodeURIComponent(chParam)}`;
+
+                if (navigator.share && /mobile|android|iphone|ipad/i.test(navigator.userAgent)) {
+                  navigator.share({
+                    title: `${v.title} - Academic Hub`,
+                    text: `Listen to Voice Lecture: ${v.title} (${v.chapter || mod.moduleName})`,
+                    url: shareUrl
+                  }).catch(() => {
+                    copyToClipboard(shareUrl, shareBtn);
+                  });
+                } else {
+                  copyToClipboard(shareUrl, shareBtn);
+                }
+              });
+            }
+
+            grid.append(card);
+          });
+
+          group.append(grid);
+
+          // In-Article Study Ad Slot between modules (AdSense Viewability)
+          if (modIdx < subject.modules.length - 1) {
+            const adSlot = document.createElement('div');
+            adSlot.className = 'study-adsense-slot';
+            adSlot.innerHTML = `
+              <span class="ad-disclaimer">SPONSORED STUDY RESOURCES</span>
+              <div class="ad-placeholder-box" style="min-height:90px;display:flex;align-items:center;justify-content:center;color:#64748b;font-size:12px;background:#f8fafc;border-radius:8px;">
+                <span>📖 Calicut University FYUGP Official Study Material &amp; Exam Guide</span>
+              </div>
+            `;
+            group.append(adSlot);
+          }
+
+          chaptersContainer.append(group);
+        });
+
+        if (matchedTotal === 0 && query) {
+          chaptersContainer.innerHTML = `
+            <div class="empty-state">
+              <span class="empty-icon">🔍</span>
+              <div class="empty-title">No matching chapters found</div>
+              <div class="empty-desc">No voice lectures matched "<strong>${filterQuery}</strong>" in ${subject.name}. Try a different keyword.</div>
+            </div>`;
+        }
+      }
+
+      function updateUI() {
+        // Update tab buttons active state
+        document.querySelectorAll('.subj-tab-btn').forEach(btn => {
+          const isActive = btn.dataset.slug === currentSlug;
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        renderChapters(searchInput.value);
+      }
+
+      // Search Filter Event
+      searchInput.addEventListener('input', (e) => {
+        renderChapters(e.target.value);
+      });
+
+      // Sticky Bar Close Event
+      stickyClose.addEventListener('click', () => {
+        stickyBar.classList.remove('visible');
+        if (currentPlayingCard) {
+          const frame = currentPlayingCard.querySelector('.player-frame-wrap');
+          const tab = currentPlayingCard.querySelector('.mini-player-tab');
+          const playBtn = currentPlayingCard.querySelector('.btn-play-voice');
+          if (frame) frame.innerHTML = '';
+          if (tab) tab.classList.remove('active');
+          if (playBtn) playBtn.innerHTML = '<span aria-hidden="true">▶</span> Play Voice';
+          currentPlayingCard.classList.remove('playing');
+          currentPlayingCard = null;
+        }
+      });
+
+      // Handle popstate for back/forward navigation
+      window.addEventListener('popstate', () => {
+        const p = new URLSearchParams(window.location.search);
+        const s = (p.get('subject') || 'malayalam').toLowerCase();
+        if (data[s] && s !== currentSlug) {
+          currentSlug = s;
+          updateUI();
+        }
+      });
+
+      // Sticky Bar Pause/Resume Toggle
+      const stickyPauseToggle = document.getElementById('sticky-pause-toggle');
+      if (stickyPauseToggle) {
+        stickyPauseToggle.addEventListener('click', () => {
+          if (currentPlayingCard) {
+            const pauseBtn = currentPlayingCard.querySelector('.vpp-btn-pause');
+            if (pauseBtn) pauseBtn.click();
+          }
+        });
+      }
+
+      function copyToClipboard(text, btn) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            showCopiedFeedback(btn);
+          }).catch(() => {
+            fallbackCopy(text, btn);
+          });
+        } else {
+          fallbackCopy(text, btn);
+        }
+      }
+
+      function fallbackCopy(text, btn) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+          showCopiedFeedback(btn);
+        } catch (e) {
+          window.prompt('Copy this lecture link:', text);
+        }
+        document.body.removeChild(ta);
+      }
+
+      function showCopiedFeedback(btn) {
+        const originalHtml = btn.innerHTML;
+        btn.innerHTML = '<span aria-hidden="true">✓</span> Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = originalHtml;
+          btn.classList.remove('copied');
+        }, 2000);
+      }
+
+      function handleDeepLink() {
+        const params = new URLSearchParams(window.location.search);
+        const targetCh = params.get('ch') || params.get('chapter') || (window.location.hash ? window.location.hash.replace('#', '') : '');
+        if (!targetCh) return;
+
+        const normalizedTarget = targetCh.replace(/[^0-9.]/g, '').replace(/^0+([1-9])/, '$1');
+        
+        const cards = document.querySelectorAll('.chapter-card');
+        for (const card of cards) {
+          const cNorm = card.dataset.chapterNorm;
+          const cRaw = card.dataset.chapter;
+          const cardId = card.id;
+
+          if (
+            (cNorm && cNorm === normalizedTarget) ||
+            (cRaw && cRaw.toLowerCase() === targetCh.toLowerCase()) ||
+            (cardId && cardId.toLowerCase() === targetCh.toLowerCase()) ||
+            (cardId && cardId.toLowerCase() === ('ch-' + targetCh.replace(/[^0-9.]/g, '').replace(/\./g, '-')).toLowerCase())
+          ) {
+            card.classList.add('highlight-target');
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            const playBtn = card.querySelector('.btn-play-voice');
+            if (playBtn) {
+              setTimeout(() => {
+                playBtn.click();
+              }, 700);
+            }
+            break;
+          }
+        }
+      }
+
+      // Initial Mount
+      renderSubjectTabs();
+      updateUI();
+      handleDeepLink();
+    
+      // Screen WakeLock API - Keep screen awake while studying & listening
+      let wakeLock = null;
+      const wakeLockBtn = document.getElementById('wake-lock-toggle');
+
+      async function requestScreenWakeLock() {
+        if ('wakeLock' in navigator) {
+          try {
+            wakeLock = await navigator.wakeLock.request('screen');
+            if (wakeLockBtn) {
+              wakeLockBtn.classList.add('active');
+              wakeLockBtn.setAttribute('aria-pressed', 'true');
+              wakeLockBtn.querySelector('.wake-text').textContent = 'Screen Awake: ON';
+            }
+            wakeLock.addEventListener('release', () => {
+              if (wakeLockBtn) {
+                wakeLockBtn.classList.remove('active');
+                wakeLockBtn.setAttribute('aria-pressed', 'false');
+                wakeLockBtn.querySelector('.wake-text').textContent = 'Keep Screen Awake';
+              }
+              wakeLock = null;
+            });
+          } catch (err) {
+            console.warn('Wake Lock request error:', err);
+          }
+        }
+      }
+
+      async function releaseScreenWakeLock() {
+        if (wakeLock !== null) {
+          try {
+            await wakeLock.release();
+          } catch (e) {}
+          wakeLock = null;
+        }
+      }
+
+      if (wakeLockBtn) {
+        wakeLockBtn.addEventListener('click', async () => {
+          if (wakeLock !== null) {
+            await releaseScreenWakeLock();
+          } else {
+            await requestScreenWakeLock();
+          }
+        });
+      }
+
+      // Re-request wake lock if tab returns to view
+      document.addEventListener('visibilitychange', async () => {
+        if (wakeLock !== null && document.visibilityState === 'visible') {
+          await requestScreenWakeLock();
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html>

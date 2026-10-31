@@ -1329,12 +1329,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://docs.uoc.ac.in/website/news/2026-10-16%2014:22:48_new2371.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "16 Oct 2026",
     "published_at": "2026-10-16T14:22:48+05:30",
     "timestamp": 1792140768000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "exnot11317",
@@ -1623,9 +1623,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Timetable",
-    "date": "Oct 2026",
-    "published_at": "2026-10-15T10:00:00+05:30",
-    "timestamp": 1792038600000,
+    "date": "28 Oct 2026",
+    "published_at": "2026-10-28T10:00:00+05:30",
+    "timestamp": 1793161800000,
     "is_new": true,
     "source": "CDOE Calicut University"
   },
@@ -1636,9 +1636,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Admission",
-    "date": "Oct 2026",
-    "published_at": "2026-10-15T10:00:00+05:30",
-    "timestamp": 1792038600000,
+    "date": "16 Oct 2026",
+    "published_at": "2026-10-16T10:00:00+05:30",
+    "timestamp": 1792125000000,
     "is_new": true,
     "source": "CDOE Calicut University"
   },
@@ -1649,9 +1649,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Admission",
-    "date": "Oct 2026",
-    "published_at": "2026-10-15T10:00:00+05:30",
-    "timestamp": 1792038600000,
+    "date": "09 Oct 2026",
+    "published_at": "2026-10-09T10:00:00+05:30",
+    "timestamp": 1791520200000,
     "is_new": true,
     "source": "CDOE Calicut University"
   },
@@ -1662,9 +1662,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Notification",
-    "date": "Oct 2026",
-    "published_at": "2026-10-15T10:00:00+05:30",
-    "timestamp": 1792038600000,
+    "date": "13 Oct 2026",
+    "published_at": "2026-10-13T11:12:00+05:30",
+    "timestamp": 1791870120000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -1675,9 +1675,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Admission",
-    "date": "Oct 2026",
-    "published_at": "2026-10-15T10:00:00+05:30",
-    "timestamp": 1792038600000,
+    "date": "09 Oct 2026",
+    "published_at": "2026-10-09T15:54:17+05:30",
+    "timestamp": 1791541457000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -1688,9 +1688,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Admission",
-    "date": "Oct 2026",
-    "published_at": "2026-10-15T10:00:00+05:30",
-    "timestamp": 1792038600000,
+    "date": "09 Oct 2026",
+    "published_at": "2026-10-09T11:03:11+05:30",
+    "timestamp": 1791523991000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -1701,9 +1701,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Internal Exam",
-    "date": "Oct 2026",
-    "published_at": "2026-10-15T10:00:00+05:30",
-    "timestamp": 1792038600000,
+    "date": "03 Oct 2026",
+    "published_at": "2026-10-03T10:00:00+05:30",
+    "timestamp": 1791001800000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -3689,9 +3689,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Notification",
-    "date": "Sep 2026",
-    "published_at": "2026-09-15T10:00:00+05:30",
-    "timestamp": 1789446600000,
+    "date": "30 Sep 2026",
+    "published_at": "2026-09-30T16:42:46+05:30",
+    "timestamp": 1790766766000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -3702,9 +3702,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Admission",
-    "date": "Sep 2026",
-    "published_at": "2026-09-15T10:00:00+05:30",
-    "timestamp": 1789446600000,
+    "date": "24 Sep 2026",
+    "published_at": "2026-09-24T16:47:05+05:30",
+    "timestamp": 1790248625000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -3715,9 +3715,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Admission",
-    "date": "Sep 2026",
-    "published_at": "2026-09-15T10:00:00+05:30",
-    "timestamp": 1789446600000,
+    "date": "18 Sep 2026",
+    "published_at": "2026-09-18T16:42:18+05:30",
+    "timestamp": 1789730538000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -3728,9 +3728,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Admission",
-    "date": "Sep 2026",
-    "published_at": "2026-09-15T10:00:00+05:30",
-    "timestamp": 1789446600000,
+    "date": "16 Sep 2026",
+    "published_at": "2026-09-16T16:50:42+05:30",
+    "timestamp": 1789557642000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -3741,9 +3741,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Admission",
-    "date": "Sep 2026",
-    "published_at": "2026-09-15T10:00:00+05:30",
-    "timestamp": 1789446600000,
+    "date": "16 Sep 2026",
+    "published_at": "2026-09-16T16:50:42+05:30",
+    "timestamp": 1789557642000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -3754,9 +3754,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Notification",
-    "date": "Sep 2026",
-    "published_at": "2026-09-15T10:00:00+05:30",
-    "timestamp": 1789446600000,
+    "date": "08 Sep 2026",
+    "published_at": "2026-09-08T10:00:00+05:30",
+    "timestamp": 1788841800000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -3767,9 +3767,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Admission",
-    "date": "Sep 2026",
-    "published_at": "2026-09-15T10:00:00+05:30",
-    "timestamp": 1789446600000,
+    "date": "05 Sep 2026",
+    "published_at": "2026-09-05T12:55:41+05:30",
+    "timestamp": 1788593141000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -3780,9 +3780,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Notification",
-    "date": "Sep 2026",
-    "published_at": "2026-09-15T10:00:00+05:30",
-    "timestamp": 1789446600000,
+    "date": "02 Sep 2026",
+    "published_at": "2026-09-02T12:36:04+05:30",
+    "timestamp": 1788332764000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -4164,9 +4164,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Notification",
-    "date": "Aug 2026",
-    "published_at": "2026-08-15T10:00:00+05:30",
-    "timestamp": 1786768200000,
+    "date": "06 Aug 2026",
+    "published_at": "2026-08-06T14:45:59+05:30",
+    "timestamp": 1786007759000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -4729,9 +4729,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Notification",
-    "date": "Jul 2026",
-    "published_at": "2026-07-15T10:00:00+05:30",
-    "timestamp": 1784089800000,
+    "date": "13 Jul 2026",
+    "published_at": "2026-07-13T10:00:00+05:30",
+    "timestamp": 1783917000000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -4742,9 +4742,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Admission",
-    "date": "Jul 2026",
-    "published_at": "2026-07-15T10:00:00+05:30",
-    "timestamp": 1784089800000,
+    "date": "07 Jul 2026",
+    "published_at": "2026-07-07T16:21:26+05:30",
+    "timestamp": 1783421486000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -4755,9 +4755,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Notification",
-    "date": "Jul 2026",
-    "published_at": "2026-07-15T10:00:00+05:30",
-    "timestamp": 1784089800000,
+    "date": "04 Jul 2026",
+    "published_at": "2026-07-04T10:00:00+05:30",
+    "timestamp": 1783139400000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -4768,9 +4768,9 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Notification",
-    "date": "Jul 2026",
-    "published_at": "2026-07-15T10:00:00+05:30",
-    "timestamp": 1784089800000,
+    "date": "04 Jul 2026",
+    "published_at": "2026-07-04T10:00:00+05:30",
+    "timestamp": 1783139400000,
     "is_new": false,
     "source": "CDOE Calicut University"
   },
@@ -4976,7 +4976,7 @@ const VERIFIED_NOTICES_DATASET = [
     "category": "cdoe",
     "category_label": "CDOE (Distance/Online)",
     "sub_type": "Admission",
-    "date": "Jul 2026",
+    "date": "06 Jul 2026",
     "published_at": "2026-07-06T10:00:00+05:30",
     "timestamp": 1783312200000,
     "is_new": false,
@@ -6413,12 +6413,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://docs.uoc.ac.in/website/news/2025-10-13%2015:09:25_new2155.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "13 Oct 2025",
     "published_at": "2025-10-13T15:09:25+05:30",
     "timestamp": 1760348365000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "adm-470",
@@ -7687,12 +7687,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://docs.uoc.ac.in/website/news/2025-05-31%2016:19:41_new2049.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "31 May 2025",
     "published_at": "2025-05-31T16:19:41+05:30",
     "timestamp": 1748688581000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-568",
@@ -7700,12 +7700,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://docs.uoc.ac.in/website/news/2025-05-31%2016:16:15_new2048.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "31 May 2025",
     "published_at": "2025-05-31T16:16:15+05:30",
     "timestamp": 1748688375000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "adm-569",
@@ -7726,12 +7726,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://docs.uoc.ac.in/website/news/2025-05-31%2012:20:46_new2045.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "31 May 2025",
     "published_at": "2025-05-31T12:20:46+05:30",
     "timestamp": 1748674246000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-571",
@@ -7739,12 +7739,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://docs.uoc.ac.in/website/news/2025-05-31%2011:44:50_new2044.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "31 May 2025",
     "published_at": "2025-05-31T11:44:50+05:30",
     "timestamp": 1748672090000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "adm-572",
@@ -9521,12 +9521,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://docs.uoc.ac.in/website/news/2024-06-01%2011:08:26_new1805.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "01 Jun 2024",
     "published_at": "2024-06-01T11:08:26+05:30",
     "timestamp": 1717220306000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "adm-709",
@@ -11445,12 +11445,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "http://docs.uoc.ac.in/website/news/2022-09-14%2018:10:53_new1188.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "14 Sep 2022",
     "published_at": "2022-09-14T18:10:53+05:30",
     "timestamp": 1663159253000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-857",
@@ -11458,12 +11458,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "http://docs.uoc.ac.in/website/news/2022-09-14%2018:10:14_new1185.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "14 Sep 2022",
     "published_at": "2022-09-14T18:10:14+05:30",
     "timestamp": 1663159214000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "adm-858",
@@ -11601,12 +11601,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "http://docs.uoc.ac.in/website/news/2021-08-10%2014:07:33_new963.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "10 Aug 2021",
     "published_at": "2021-08-10T14:07:33+05:30",
     "timestamp": 1628584653000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-869",
@@ -11614,12 +11614,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "http://docs.uoc.ac.in/website/news/2021-08-10%2014:07:26_new962.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "10 Aug 2021",
     "published_at": "2021-08-10T14:07:26+05:30",
     "timestamp": 1628584646000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-870",
@@ -11627,12 +11627,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "http://docs.uoc.ac.in/website/news/2021-08-10%2014:07:16_new961.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "10 Aug 2021",
     "published_at": "2021-08-10T14:07:16+05:30",
     "timestamp": 1628584636000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-871",
@@ -11640,12 +11640,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "http://docs.uoc.ac.in/website/news/2021-08-10%2014:06:40_new960.pdf",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "10 Aug 2021",
     "published_at": "2021-08-10T14:06:40+05:30",
     "timestamp": 1628584600000,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "reg-872",
@@ -11667,12 +11667,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/657-cdc-inviting-applications-for-permanent-increase-of-seats-in-existing-programmes-in-affiliated-colleges-of-the-university-of-calicut-for-the-academic-years-2027-28-and-2028-29-up-to-the-limit-prescribed-by-the-statute-reg",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-874",
@@ -11680,12 +11680,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/656-selection-list-of-all-india-inter-university-arm-wrestling-women-2026-27",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-875",
@@ -11693,12 +11693,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/655-selection-list-of-all-india-inter-university-arm-wrestling-men-2026-27",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-876",
@@ -11706,12 +11706,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/654-selection-list-of-all-india-inter-university-boxing-women-2026-27",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-877",
@@ -11719,12 +11719,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/653-selection-list-of-all-india-inter-university-boxing-men-2026-27",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-878",
@@ -11732,12 +11732,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/652-university-merit-scholarship-2025-26-admission-notification",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-879",
@@ -11745,12 +11745,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/651-def-space-autumn-internship-2026-as-a-part-of-def-space-education-and-innovation-for-innovators-and-learners",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-880",
@@ -11758,12 +11758,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/650-4th-annual-conference-of-the-shsk",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-881",
@@ -11771,12 +11771,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/649-national-testing-agency-nta-ugc-net-december-2025-list-of-candidates-qualified-for-award-of-national-fellowship-for-other-backward-classes-nfobc",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-882",
@@ -11784,12 +11784,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/648-tentative-sports-calendar-2026-27",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-883",
@@ -11797,12 +11797,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/647-notification-for-the-selection-of-junior-research-fellow-project-associate",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-884",
@@ -11810,12 +11810,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/646-canteen-quotaion-notice-iet",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-885",
@@ -11823,12 +11823,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/645-forensic-science-auction-of-dogs",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-886",
@@ -11836,12 +11836,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/644-walkin-interview-postponed-school-of-drama-and-fine-arts",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-887",
@@ -11849,12 +11849,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/643-instruction-to-students-and-parents-regarding-the-affiliation-status-of-new-self-financing-programs-in-autonomous-colleges",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-888",
@@ -11862,12 +11862,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/642-radio-cu-interview",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-889",
@@ -11875,12 +11875,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/641-press-release-for-the-appointment-of-assistant-professors-on-daily-wage-basis-in-the-university-teaching-departments",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-890",
@@ -11888,12 +11888,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/640-3-day-artificial-intelligence",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-891",
@@ -11901,12 +11901,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/639-circular-regarding-the-extension-of-the-last-date-for-application-for-starting-new-programmes-in-govt-aided-colleges-for-the-academic-year-2026-27",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-892",
@@ -11914,12 +11914,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/638-sardar-vallabhbhai-patel-national-unity-award-inviting-nominations-regarding",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-893",
@@ -11927,12 +11927,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/637-ph-d-in-forensic-science-admission-2026-any-time-registration-provisional-rank-list-of-eligible-candidates",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-894",
@@ -11940,12 +11940,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/636-the-2-day-helicopter-design-workshop-3-day-artificial-intelligence-workshop",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-895",
@@ -11953,12 +11953,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/635-department-of-journalism-and-mass-communication-notification-for-phd-application",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-896",
@@ -11966,12 +11966,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/634-ph-d-rank-list-for-eligible-candidate-department-of-zoology",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-897",
@@ -11979,12 +11979,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/633-spot-admission-for-the-b-com-computer-application-programme-at-itsr-chethalayam",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-898",
@@ -11992,12 +11992,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/632-notification-last-date-extended-ma-sociology-programme-at-itsr-chethalayam",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-899",
@@ -12005,12 +12005,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/631-workshop-on-research-and-publication-ethics",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-900",
@@ -12018,12 +12018,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/630-dcms-ph-d-vacancy-notification",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-901",
@@ -12031,12 +12031,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/629-extended-the-application-deadline-for-the-prof-m-m-ghani-award-for-the-best-college-teachers-for-the-academic-years-2023-2024-and-2024-2025",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-902",
@@ -12044,12 +12044,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/628-applications-are-invited-by-emmrc-university-of-calicut-for-the-upcoming-massive-open-online-course-mooc-offered-through-the-swayam-portal-for-more-information-please-visit-www-emmrccalicut-org",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-903",
@@ -12057,12 +12057,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/627-applications-are-invited-for-one-vacant-phd-position-any-time-category-from-candidates-possessing-an-independent-fellowship-csir-ugc-jrf-in-the-department-of-botany",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-904",
@@ -12070,12 +12070,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/626-applications-are-invited-from-valid-jrf-holders-central-state-agencies-for-admission-to-the-ph-d-programme-in-the-department-of-forensic-science-university-of-calicut",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-905",
@@ -12083,12 +12083,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/625-walk-in-interview-for-intern-recruitment",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-906",
@@ -12096,12 +12096,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/624-applications-are-invited-from-jrf-holders-central-state-agencies-for-admission-to-the-phd-programme-in-the-department-of-zoology-university-of-calicut",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-907",
@@ -12109,12 +12109,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/623-applications-are-invited-for-third-semester-college-transfer-of-b-arch-students-between-colleges-affiliated-to-university-of-calicut-during-the-academic-year-2026-2027",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-908",
@@ -12122,12 +12122,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/622-admission-notification-and-application-form-for-admission-ma-sociology-programme-2026-27-itsr-chethalayam",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-909",
@@ -12135,12 +12135,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/621-def-space-summer-internship-2026",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-910",
@@ -12148,12 +12148,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/620-admission-notification-and-application-form-for-admission-to-four-year-ug-programmes-itsr-chethalayam-2026",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-911",
@@ -12161,12 +12161,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/619-provisional-selection-list-of-calicut-university-powerlifting-women-team-for-all-india-inter-university-powerlifting-w-championship-2025-26",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-912",
@@ -12174,12 +12174,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/618-the-university-of-calicut-invites-application-from-distinguished-academicians-for-appointment-as-emeritus-professor-in-the-department-of-biotechnology",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-913",
@@ -12187,12 +12187,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/617-notification-for-the-selection-of-research-assistant",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-914",
@@ -12200,12 +12200,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/616-regarding-the-correction-of-discrepancies-in-the-data-submitted-by-colleges-for-the-first-semester-fyugp-november-2024",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-915",
@@ -12213,12 +12213,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/615-notification-for-the-posting-of-guest-faculties-on-hourly-basis",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-916",
@@ -12226,12 +12226,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/614-dpe-all-india-inter-university-tug-of-war-m-w-championship-2025-26",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-917",
@@ -12239,12 +12239,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/613-dpe-all-india-inter-university-waterpolo-men-championship-2025-26",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-918",
@@ -12252,12 +12252,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/612-dpe-all-india-inter-university-tug-of-war-m-w-championship-2025-26",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-919",
@@ -12265,12 +12265,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/611-dpe-application-form-for-summer-coaching-camp-2026",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-920",
@@ -12278,12 +12278,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/610-dpe-application-form-for-summer-coaching-camp-in-swimming-2026",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-921",
@@ -12291,12 +12291,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/609-final-phd-entrance-rank-list-dept-of-nanoscience-and-technology",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   },
   {
     "id": "gen-922",
@@ -12304,12 +12304,12 @@ const VERIFIED_NOTICES_DATASET = [
     "url": "https://uoc.ac.in/index.php/see-all-news/item/608-rank-list-of-phd-2026-department-of-hindi",
     "category": "general",
     "category_label": "CUC News",
-    "sub_type": "University Notification",
+    "sub_type": "Official Order",
     "date": "Recent",
     "published_at": "",
     "timestamp": 0,
     "is_new": false,
-    "source": "Public University Circular"
+    "source": "University of Calicut (Official)"
   }
 ];
 
@@ -12516,7 +12516,13 @@ async function fetchCdoeNotices() {
 
       const dm = href.match(/\/(\d{4})\/(\d{2})\//);
       const monthMap = {'01':'Jan','02':'Feb','03':'Mar','04':'Apr','05':'May','06':'Jun','07':'Jul','08':'Aug','09':'Sep','10':'Oct','11':'Nov','12':'Dec'};
-      const date = dm ? `${monthMap[dm[2]] || dm[2]} ${dm[1]}` : "Recent";
+      let day = '15';
+      const mDay = href.match(/(\d{1,2})[._-](\d{1,2})[._-](\d{2,4})/);
+      if (mDay) {
+        const dNum = parseInt(mDay[1], 10);
+        if (dNum >= 1 && dNum <= 31) day = String(dNum).padStart(2, '0');
+      }
+      const date = dm ? `${day} ${monthMap[dm[2]] || dm[2]} ${dm[1]}` : "Recent";
 
       let ts = 0;
       if (dm) {
