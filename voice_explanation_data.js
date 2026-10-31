@@ -295,6 +295,14 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 02: PRACTICING SOCIOLOGY",
         "videos": [
           {
+            "chapterNumber": "Module 2 Masterclass",
+            "title": "Social Reality & Research Orientations",
+            "chapter": "Sociology · Module 2 · Practicing Sociology",
+            "duration": "8:42",
+            "youtubeId": "YEnG1YJ_vfs",
+            "language": "English"
+          },
+          {
             "chapterNumber": "Chapter 2.1",
             "title": "ഗവേഷണ രൂപരേഖയും ഘട്ടങ്ങളും (Research Design & Methods in Sociology)",
             "chapter": "Research Design · Hypothesis, Sampling & Data Collection",
@@ -523,7 +531,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 18
+    "totalVideos": 16
   },
   "philosophy-of-ai": {
     "name": "Philosophy of AI",
@@ -539,7 +547,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "History & Foundations of Artificial Intelligence",
             "chapter": "Dartmouth Conference, Cybernetics & Early Paradigms",
             "duration": "18",
-            "youtubeId": "uiB6PFp5P_I"
+            "youtubeId": ""
           },
           {
             "chapterNumber": "Chapter 02",
@@ -565,7 +573,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "Problems in Classical GOFAI (Good Old-Fashioned AI)",
             "chapter": "Frame Problem & Heuristic Limits",
             "duration": "21",
-            "youtubeId": "uiB6PFp5P_I"
+            "youtubeId": ""
           },
           {
             "chapterNumber": "Chapter 05",
@@ -598,21 +606,30 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       },
       {
-        "moduleName": "MODULE 03: EPISTEMOLOGICAL IMPLICATIONS IN ARTIFICIAL INTELLIGENCE",
+        "moduleName": "MODULE 03: THEORIES OF KNOWLEDGE IN ARTIFICIAL INTELLIGENCE",
         "videos": [
           {
-            "chapterNumber": "Chapter 02",
+            "chapterNumber": "Chapter 01",
+            "title": "Thinking Without a Thinker: Buddhism & AI",
+            "chapter": "Chapter 01: Buddhism & Epistemology in AI",
+            "duration": "35:16",
+            "youtubeId": "Y4zhWiirJkc",
+            "language": "English"
+          },
+          {
+            "chapterNumber": "Chapter 05",
             "title": "എഐയിലെ വിജ്ഞാനശാസ്ത്രപരമായ പ്രതിഫലനങ്ങൾ (Epistemological Implications in AI)",
             "youtubeId": "uiB6PFp5P_I",
-            "duration": "18",
-            "chapter": "Chapter 02: Epistemological Implications in Artificial Intelligence",
+            "duration": "17:26",
+            "chapter": "Chapter 05: Epistemological Implications in Artificial Intelligence",
             "studyPoints": [
               "വിജ്ഞാനശാസ്ത്രം (Epistemology): അറിവ് (Knowledge), വിശ്വാസം (Belief), ന്യായീകരണം (Justification) എന്നിവയെക്കുറിച്ചുള്ള ദാർശനിക പഠനം.",
               "ബ്ലാക്ക് ബോക്സ് പ്രശ്നം (Black-Box Opacity): ആധുനിക ഡീപ് ലേണിംഗ് മോഡലുകൾ ഒരു തീരുമാനത്തിൽ എങ്ങനെ എത്തിച്ചേരുന്നു എന്നത് മനുഷ്യ മനസ്സിന് പൂർണ്ണമായി കണ്ടെത്താൻ സാധിക്കാത്ത സാഹചര്യം.",
               "മൈക്കൽ പൊലാനിയുടെ നിശബ്ദ ജ്ഞാനം (Tacit Knowledge): 'നമുക്ക് പറയാൻ സാധിക്കുന്നതിനേക്കാൾ കൂടുതൽ കാര്യങ്ങൾ നമുക്കറിയാം' എന്ന തത്വം എഐ അൽഗോരിതങ്ങളിൽ എങ്ങനെ പ്രയോഗിക്കപ്പെടുന്നു.",
               "റിലയബിലിസം (Reliabilism): എഐ തരുന്ന ഉത്തരങ്ങൾ വിശ്വസനീയമായ പ്രക്രിയയിലൂടെ ഉത്പാദിപ്പിക്കപ്പെട്ടതാണെങ്കിൽ അത് 'അറിവ്' ആയി കണക്കാക്കാമോ എന്ന ചോദ്യം."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: 'Can Machine Beliefs be Justified?' - Justification, Truth, and Belief (JTB) മാതൃക മുൻനിർത്തി ഉത്തരമെഴുതുക."
+            "examTip": "Calicut University FYUGP ചോദ്യം: 'Can Machine Beliefs be Justified?' - Justification, Truth, and Belief (JTB) മാതൃക മുൻനിർത്തി ഉത്തരമെഴുതുക.",
+            "language": "Malayalam"
           },
           {
             "chapterNumber": "Chapter 05",
@@ -696,7 +713,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 15
+    "totalVideos": 10
   },
   "philosophy-of-education": {
     "name": "Philosophy of Education",
@@ -752,6 +769,14 @@ window.VOICE_EXPLANATIONS_DATA = {
       {
         "moduleName": "MODULE 01: ചരിത്ര പശ്ചാത്തലങ്ങളും വികസന മാതൃകകളും (HISTORICAL BACKGROUND & DEVELOPMENT MODELS)",
         "videos": [
+          {
+            "chapterNumber": "MODULE 03",
+            "title": "Path Dependence and Crisis: India's Economy, 1700–1991",
+            "chapter": "MODULE 03: Economic Crises & Institutional Reforms",
+            "duration": "13:35",
+            "youtubeId": "WYtOkVjW_Wo",
+            "language": "English"
+          },
           {
             "chapterNumber": "Chapter 01",
             "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയുടെ ചരിത്രവും വികസന നയങ്ങളും (History & Development Policies of Indian Economy)",
@@ -855,7 +880,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 1
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",
