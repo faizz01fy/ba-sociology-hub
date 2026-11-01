@@ -13,7 +13,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ",
             "chapter": "കലാമണ്ഡലം ഹൈദരാലി · സംഗ്രഹം, നോട്ടുകൾ & ചർച്ച",
             "duration": "15",
-            "youtubeId": ""
+            "youtubeId": "_AH-L2-hUdw"
           },
           {
             "chapterNumber": "Chapter 02",
@@ -880,8 +880,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയുടെ ചരിത്രവും വികസന നയങ്ങളും (History & Development Policies of Indian Economy)",
             "chapter": "Academic Hub Special · കൊളോണിയൽ ചോർച്ച, നെഹ്റുവിയൻ സോഷ്യലിസം & പഞ്ചവത്സര പദ്ധതികൾ",
             "duration": "17:48",
-            "youtubeId": "",
-            "audioUrl": "/audio/econ_lecture_01.mp3",
+            "youtubeId": "AI8LbBq33xI",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "കൊളോണിയൽ സമ്പദ്‌വ്യവസ്ഥ & ചോർച്ചാ സിദ്ധാന്തം (Drain of Wealth): ദാദാഭായ് നവറോജി വിശദീകരിച്ചതുപോലെ ബ്രിട്ടീഷ് ഭരണത്തിൽ ഇന്ത്യയുടെ ദേശീയ സമ്പത്തും വിഭവങ്ങളും തിരിച്ചുനൽകാതെ ബ്രിട്ടനിലേക്ക് കടത്തപ്പെട്ടു.",
@@ -897,8 +897,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയിലെ വൈരുദ്ധ്യങ്ങളും വികസന വെല്ലുവിളികളും (Contradictions & Development Challenges)",
             "chapter": "Academic Hub Special · വളർച്ചയും മുരടിപ്പും, തൊഴിൽരഹിത വളർച്ച & മേഖലാ അസന്തുലിതാവസ്ഥ",
             "duration": "22:42",
-            "youtubeId": "",
-            "audioUrl": "/audio/econ_lecture_02.mp3",
+            "youtubeId": "zyLCEdHV08U",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "ജിഡിപി വളർച്ചയും സാമൂഹിക യാഥാർത്ഥ്യങ്ങളും: ഉയർന്ന ജിഡിപി വളർച്ച രേഖപ്പെടുത്തുമ്പോഴും പട്ടിണിയും പോഷകാഹാരക്കുറവും കുറയാത്ത ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയുടെ അടിസ്ഥാന വൈരുദ്ധ്യം.",
@@ -919,8 +919,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയവും പഠന കമ്മിറ്റികളും (Poverty Estimation & Study Committees in India)",
             "chapter": "Academic Hub Special · ദണ്ഡേക്കർ-രഥ്, അലഗ്, ലക്ഡാവാല, തെണ്ടുൽക്കർ & രംഗരാജൻ കമ്മിറ്റികൾ",
             "duration": "28:43",
-            "youtubeId": "",
-            "audioUrl": "/audio/econ_lecture_03.mp3",
+            "youtubeId": "0YWeoTqkcy8",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "ദാരിദ്ര്യരേഖ (Poverty Line): അടിസ്ഥാന ജീവിതച്ചെലവ് വഹിക്കാനും കുറഞ്ഞ കലോറി ഭക്ഷണം നേടാനും ആവശ്യമായ പ്രതിമാസ ആളോഹരി ഉപഭോഗ ചെലവ് (MPCE).",
@@ -936,8 +936,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ദാരിദ്ര്യരേഖ മുതൽ ബഹുമുഖ ദാരിദ്ര്യ സൂചിക വരെ (From Poverty Line to Multidimensional Poverty Index - MPI)",
             "chapter": "Academic Hub Special · കലോറി മാനദണ്ഡം, സുരേഷ് തെണ്ടുൽക്കർ പരിഷ്കാരം & ആഗോള MPI സൂചിക",
             "duration": "16:44",
-            "youtubeId": "",
-            "audioUrl": "/audio/econ_lecture_04.mp3",
+            "youtubeId": "LuLwWWJsLbA",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "സുരേഷ് തെണ്ടുൽക്കർ കമ്മിറ്റി (2009): കലോറി മാനദണ്ഡത്തിന് പകരം വിദ്യാഭ്യാസം, ആരോഗ്യം, പോഷകാഹാരം, വസ്ത്രം എന്നിവ ഉൾപ്പെടുത്തി നഗര-ഗ്രാമ അന്തരം കുറച്ച പരിഷ്കാരം.",
@@ -958,8 +958,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സ്വർണ്ണം പണയം വെച്ച ഇന്ത്യയുടെ സാമ്പത്തിക ചരിത്രം (Economic History of India: The 1991 BoP Crisis)",
             "chapter": "Academic Hub Special · വിദേശനാണ്യ ശേഖര തകർച്ച, സ്വർണ്ണം വിമാനത്തിൽ കയറ്റിയ കഥ & 1991 BoP പ്രതിസന്ധി",
             "duration": "22:38",
-            "youtubeId": "",
-            "audioUrl": "/audio/econ_lecture_05.mp3",
+            "youtubeId": "AxS8iSia8Uk",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "1991-ലെ ബാലൻസ് ഓഫ് പേയ്‌മെന്റ് പ്രതിസന്ധി (BoP Crisis): വെറും രണ്ടാഴ്ചത്തെ ഇറക്കുമതിക്ക് മാത്രമുള്ള (1.2 ബില്യൺ ഡോളർ) വിദേശനാണ്യ ശേഖരത്തിലേക്ക് രാജ്യം കൂപ്പുകുത്തിയ സാഹചര്യം.",
@@ -975,8 +975,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development & Economic Institutions)",
             "chapter": "Academic Hub Special · അമർത്യ സെന്നിന്റെ ക്ഷേമ സിദ്ധാന്തം, പ്ലാനിംഗ് കമ്മീഷൻ vs നീതി ആയോഗ് & സാമ്പത്തിക സ്ഥാപനങ്ങൾ",
             "duration": "13:06",
-            "youtubeId": "",
-            "audioUrl": "/audio/econ_lecture_06.mp3",
+            "youtubeId": "_AH-L2-hUdw",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "സാമ്പത്തിക വളർച്ച vs യഥാർത്ഥ വികസനം (Growth vs Development): ജിഡിപി നിരക്കുകൾ ഉയരുന്നതു മാത്രമല്ല, മനുഷ്യരുടെ ജീവിതഗുണനിലവാരവും അവസരങ്ങളും വർധിക്കുന്നതാണ് യഥാർത്ഥ വികസനം.",
