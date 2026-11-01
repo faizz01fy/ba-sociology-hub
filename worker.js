@@ -100,7 +100,10 @@ function unavailableLmsPdfResponse(request) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    const isHttp = url.protocol === "http:" || request.headers.get("x-forwarded-proto") === "http";
+    const cfVisitor = request.headers.get("cf-visitor") || "";
+    const isHttp = url.protocol === "http:" || 
+                   request.headers.get("x-forwarded-proto") === "http" || 
+                   cfVisitor.includes('"scheme":"http"');
     const isWww = url.hostname.toLowerCase() === "www.academichubfaiz.in";
     if (isHttp || isWww) {
       url.protocol = "https:";
@@ -352,7 +355,19 @@ export default {
         } catch {}
       }
 
-      response = new HTMLRewriter().on("body", {
+      let hasAdSense = false;
+      response = new HTMLRewriter()
+        .on("script[src*='pagead2.googlesyndication.com']", {
+          element() { hasAdSense = true; }
+        })
+        .on("head", {
+          element(el) {
+            if (!hasAdSense) {
+              el.append('\n  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>\n', { html: true });
+            }
+          }
+        })
+        .on("body", {
         element(el) {
           el.append('<script src="/traffic-tracker.js" defer></script>', { html: true });
           if (isOwner) {
