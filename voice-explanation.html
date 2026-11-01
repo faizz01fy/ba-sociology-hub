@@ -149,43 +149,511 @@
     .subj-tab-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: 12px;
-      border: 1.5px solid var(--border);
-      background: #fff;
-      color: #334155;
-      font-size: 13.5px;
-      font-weight: 700;
+      gap: 9px;
+      padding: 11px 20px;
+      border-radius: 14px;
+      border: 2px solid var(--border);
+      background: #ffffff;
+      color: #1e293b;
+      font-size: 14px;
+      font-weight: 800 !important;
       white-space: nowrap;
-      transition: all 0.2s;
-      box-shadow: var(--shadow-sm);
+      transition: all 0.22s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      user-select: none;
+      text-decoration: none;
+      letter-spacing: -0.01em;
     }
     .subj-tab-btn:hover {
-      border-color: #cbd5e1;
-      background: #f8fafc;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     }
-    .subj-tab-btn.active {
-      background: #0f172a;
-      border-color: #0f172a;
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+    .subj-tab-icon {
+      font-size: 16px;
+      font-weight: 900 !important;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .subj-tab-title {
+      font-weight: 800 !important;
+      letter-spacing: -0.01em;
     }
     .subj-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 2px 7px;
+      padding: 3px 9px;
       border-radius: 999px;
-      font-size: 11px;
-      font-weight: 800;
+      font-size: 12px;
+      font-weight: 900 !important;
+      min-width: 24px;
+      text-align: center;
+      line-height: 1.2;
+      transition: all 0.2s ease;
       background: #f1f5f9;
-      color: #475569;
+      color: #334155;
     }
-    .subj-tab-btn.active .subj-badge {
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
+
+    /* ==============================================================
+       Distinct Vibrant Color Themes for ALL Voice Explanation Tabs
+       ============================================================== */
+
+    /* 1. Sociology (Rich Royal Purple / Violet) */
+    .subj-tab--sociology, [data-slug="sociology"] {
+      background: #f5f3ff !important;
+      border-color: #c084fc !important;
+      color: #6b21a8 !important;
+    }
+    .subj-tab--sociology .subj-tab-icon, [data-slug="sociology"] .subj-tab-icon {
+      color: #7e22ce !important;
+    }
+    .subj-tab--sociology .subj-badge, [data-slug="sociology"] .subj-badge {
+      background: #ede9fe !important;
+      color: #6b21a8 !important;
+    }
+    .subj-tab--sociology:hover, [data-slug="sociology"]:hover {
+      background: #ede9fe !important;
+      border-color: #9333ea !important;
+      box-shadow: 0 4px 16px rgba(168, 85, 247, 0.35) !important;
+    }
+    .subj-tab--sociology.active, [data-slug="sociology"].active {
+      background: #7e22ce !important;
+      border-color: #581c87 !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 20px rgba(126, 34, 206, 0.6), 0 4px 12px rgba(126, 34, 206, 0.4) !important;
+      animation: pulseActivePurple 2s ease-in-out infinite !important;
+    }
+    .subj-tab--sociology.active .subj-tab-icon, [data-slug="sociology"].active .subj-tab-icon {
+      color: #ffffff !important;
+    }
+    .subj-tab--sociology.active .subj-badge, [data-slug="sociology"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.3) !important;
+      color: #ffffff !important;
+    }
+    .subj-tab--sociology.subj-tab--blink:not(.active) {
+      animation: blinkSociology 2.6s ease-in-out infinite !important;
+    }
+
+    /* 2. Philosophy of AI (Tech Electric Cyan / Ocean Blue) */
+    .subj-tab--philosophy-of-ai, [data-slug="philosophy-of-ai"] {
+      background: #ecfeff !important;
+      border-color: #22d3ee !important;
+      color: #0e7490 !important;
+    }
+    .subj-tab--philosophy-of-ai .subj-tab-icon, [data-slug="philosophy-of-ai"] .subj-tab-icon {
+      color: #0891b2 !important;
+    }
+    .subj-tab--philosophy-of-ai .subj-badge, [data-slug="philosophy-of-ai"] .subj-badge {
+      background: #cffafe !important;
+      color: #0e7490 !important;
+    }
+    .subj-tab--philosophy-of-ai:hover, [data-slug="philosophy-of-ai"]:hover {
+      background: #cffafe !important;
+      border-color: #0891b2 !important;
+      box-shadow: 0 4px 16px rgba(6, 182, 212, 0.35) !important;
+    }
+    .subj-tab--philosophy-of-ai.active, [data-slug="philosophy-of-ai"].active {
+      background: #0891b2 !important;
+      border-color: #0e7490 !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 20px rgba(8, 145, 178, 0.6), 0 4px 12px rgba(8, 145, 178, 0.4) !important;
+      animation: pulseActiveCyan 2s ease-in-out infinite !important;
+    }
+    .subj-tab--philosophy-of-ai.active .subj-tab-icon, [data-slug="philosophy-of-ai"].active .subj-tab-icon {
+      color: #ffffff !important;
+    }
+    .subj-tab--philosophy-of-ai.active .subj-badge, [data-slug="philosophy-of-ai"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.3) !important;
+      color: #ffffff !important;
+    }
+    .subj-tab--philosophy-of-ai.subj-tab--blink:not(.active) {
+      animation: blinkAI 2.6s ease-in-out infinite 0.4s !important;
+    }
+
+    /* 3. Development Issues in Indian Economy (Amber / Warm Saffron Gold) */
+    .subj-tab--development-issues-in-indian-economy, [data-slug="development-issues-in-indian-economy"] {
+      background: #fffbeb !important;
+      border-color: #fbbf24 !important;
+      color: #b45309 !important;
+    }
+    .subj-tab--development-issues-in-indian-economy .subj-tab-icon, [data-slug="development-issues-in-indian-economy"] .subj-tab-icon {
+      color: #d97706 !important;
+    }
+    .subj-tab--development-issues-in-indian-economy .subj-badge, [data-slug="development-issues-in-indian-economy"] .subj-badge {
+      background: #fef3c7 !important;
+      color: #92400e !important;
+    }
+    .subj-tab--development-issues-in-indian-economy:hover, [data-slug="development-issues-in-indian-economy"]:hover {
+      background: #fef3c7 !important;
+      border-color: #d97706 !important;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35) !important;
+    }
+    .subj-tab--development-issues-in-indian-economy.active, [data-slug="development-issues-in-indian-economy"].active {
+      background: #d97706 !important;
+      border-color: #b45309 !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 20px rgba(217, 119, 6, 0.6), 0 4px 12px rgba(217, 119, 6, 0.4) !important;
+      animation: pulseActiveAmber 2s ease-in-out infinite !important;
+    }
+    .subj-tab--development-issues-in-indian-economy.active .subj-tab-icon, [data-slug="development-issues-in-indian-economy"].active .subj-tab-icon {
+      color: #ffffff !important;
+    }
+    .subj-tab--development-issues-in-indian-economy.active .subj-badge, [data-slug="development-issues-in-indian-economy"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.3) !important;
+      color: #ffffff !important;
+    }
+    .subj-tab--development-issues-in-indian-economy.subj-tab--blink:not(.active) {
+      animation: blinkEconomy 2.6s ease-in-out infinite 0.8s !important;
+    }
+
+    /* 4. Philosophy of Education (Vibrant Emerald / Mint Green) */
+    .subj-tab--philosophy-of-education, [data-slug="philosophy-of-education"] {
+      background: #ecfdf5 !important;
+      border-color: #34d399 !important;
+      color: #047857 !important;
+    }
+    .subj-tab--philosophy-of-education .subj-tab-icon, [data-slug="philosophy-of-education"] .subj-tab-icon {
+      color: #059669 !important;
+    }
+    .subj-tab--philosophy-of-education .subj-badge, [data-slug="philosophy-of-education"] .subj-badge {
+      background: #d1fae5 !important;
+      color: #065f46 !important;
+    }
+    .subj-tab--philosophy-of-education:hover, [data-slug="philosophy-of-education"]:hover {
+      background: #d1fae5 !important;
+      border-color: #059669 !important;
+      box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35) !important;
+    }
+    .subj-tab--philosophy-of-education.active, [data-slug="philosophy-of-education"].active {
+      background: #059669 !important;
+      border-color: #047857 !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 20px rgba(5, 150, 105, 0.6), 0 4px 12px rgba(5, 150, 105, 0.4) !important;
+      animation: pulseActiveEmerald 2s ease-in-out infinite !important;
+    }
+    .subj-tab--philosophy-of-education.active .subj-tab-icon, [data-slug="philosophy-of-education"].active .subj-tab-icon {
+      color: #ffffff !important;
+    }
+    .subj-tab--philosophy-of-education.active .subj-badge, [data-slug="philosophy-of-education"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.3) !important;
+      color: #ffffff !important;
+    }
+    .subj-tab--philosophy-of-education.subj-tab--blink:not(.active) {
+      animation: blinkEducation 2.6s ease-in-out infinite 1.2s !important;
+    }
+
+    /* 5. Fundamentals of Ethics (Crimson Rose / Ruby Red) */
+    .subj-tab--fundamentals-of-ethics, [data-slug="fundamentals-of-ethics"] {
+      background: #fff1f2 !important;
+      border-color: #fb7185 !important;
+      color: #be123c !important;
+    }
+    .subj-tab--fundamentals-of-ethics .subj-tab-icon, [data-slug="fundamentals-of-ethics"] .subj-tab-icon {
+      color: #e11d48 !important;
+    }
+    .subj-tab--fundamentals-of-ethics .subj-badge, [data-slug="fundamentals-of-ethics"] .subj-badge {
+      background: #ffe4e6 !important;
+      color: #9f1239 !important;
+    }
+    .subj-tab--fundamentals-of-ethics:hover, [data-slug="fundamentals-of-ethics"]:hover {
+      background: #ffe4e6 !important;
+      border-color: #e11d48 !important;
+      box-shadow: 0 4px 16px rgba(244, 63, 94, 0.35) !important;
+    }
+    .subj-tab--fundamentals-of-ethics.active, [data-slug="fundamentals-of-ethics"].active {
+      background: #e11d48 !important;
+      border-color: #be123c !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 20px rgba(225, 29, 72, 0.6), 0 4px 12px rgba(225, 29, 72, 0.4) !important;
+      animation: pulseActiveRose 2s ease-in-out infinite !important;
+    }
+    .subj-tab--fundamentals-of-ethics.active .subj-tab-icon, [data-slug="fundamentals-of-ethics"].active .subj-tab-icon {
+      color: #ffffff !important;
+    }
+    .subj-tab--fundamentals-of-ethics.active .subj-badge, [data-slug="fundamentals-of-ethics"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.3) !important;
+      color: #ffffff !important;
+    }
+    .subj-tab--fundamentals-of-ethics.subj-tab--blink:not(.active) {
+      animation: blinkEthics 2.6s ease-in-out infinite 1.6s !important;
+    }
+
+    /* 6. Malayalam (Coral Sunset Orange) */
+    .subj-tab--malayalam, [data-slug="malayalam"] {
+      background: #fff7ed !important;
+      border-color: #fdba74 !important;
+      color: #c2410c !important;
+    }
+    .subj-tab--malayalam .subj-tab-icon, [data-slug="malayalam"] .subj-tab-icon { color: #ea580c !important; }
+    .subj-tab--malayalam .subj-badge, [data-slug="malayalam"] .subj-badge { background: #ffedd5 !important; color: #9a3412 !important; }
+    .subj-tab--malayalam:hover, [data-slug="malayalam"]:hover { background: #ffedd5 !important; border-color: #ea580c !important; }
+    .subj-tab--malayalam.active, [data-slug="malayalam"].active {
+      background: #ea580c !important;
+      border-color: #c2410c !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 18px rgba(234, 88, 12, 0.55), 0 4px 12px rgba(234, 88, 12, 0.35) !important;
+    }
+    .subj-tab--malayalam.active .subj-tab-icon, [data-slug="malayalam"].active .subj-tab-icon { color: #ffffff !important; }
+    .subj-tab--malayalam.active .subj-badge, [data-slug="malayalam"].active .subj-badge { background: rgba(255, 255, 255, 0.3) !important; color: #ffffff !important; }
+
+    /* 7. English (Royal Cobalt Blue) */
+    .subj-tab--english, [data-slug="english"] {
+      background: #eff6ff !important;
+      border-color: #93c5fd !important;
+      color: #1d4ed8 !important;
+    }
+    .subj-tab--english .subj-tab-icon, [data-slug="english"] .subj-tab-icon { color: #2563eb !important; }
+    .subj-tab--english .subj-badge, [data-slug="english"] .subj-badge { background: #dbeafe !important; color: #1e40af !important; }
+    .subj-tab--english:hover, [data-slug="english"]:hover { background: #dbeafe !important; border-color: #2563eb !important; }
+    .subj-tab--english.active, [data-slug="english"].active {
+      background: #2563eb !important;
+      border-color: #1d4ed8 !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 18px rgba(37, 99, 235, 0.55), 0 4px 12px rgba(37, 99, 235, 0.35) !important;
+    }
+    .subj-tab--english.active .subj-tab-icon, [data-slug="english"].active .subj-tab-icon { color: #ffffff !important; }
+    .subj-tab--english.active .subj-badge, [data-slug="english"].active .subj-badge { background: rgba(255, 255, 255, 0.3) !important; color: #ffffff !important; }
+
+    /* 8. Microeconomic Foundation (Lime / Spring Chartreuse) */
+    .subj-tab--microeconomic-foundation, [data-slug="microeconomic-foundation"] {
+      background: #f7fee7 !important;
+      border-color: #bef264 !important;
+      color: #4d7c0f !important;
+    }
+    .subj-tab--microeconomic-foundation .subj-tab-icon, [data-slug="microeconomic-foundation"] .subj-tab-icon { color: #65a30d !important; }
+    .subj-tab--microeconomic-foundation .subj-badge, [data-slug="microeconomic-foundation"] .subj-badge { background: #ecfccb !important; color: #3f6212 !important; }
+    .subj-tab--microeconomic-foundation:hover, [data-slug="microeconomic-foundation"]:hover { background: #ecfccb !important; border-color: #65a30d !important; }
+    .subj-tab--microeconomic-foundation.active, [data-slug="microeconomic-foundation"].active {
+      background: #65a30d !important;
+      border-color: #4d7c0f !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 18px rgba(101, 163, 13, 0.55), 0 4px 12px rgba(101, 163, 13, 0.35) !important;
+    }
+    .subj-tab--microeconomic-foundation.active .subj-tab-icon, [data-slug="microeconomic-foundation"].active .subj-tab-icon { color: #ffffff !important; }
+    .subj-tab--microeconomic-foundation.active .subj-badge, [data-slug="microeconomic-foundation"].active .subj-badge { background: rgba(255, 255, 255, 0.3) !important; color: #ffffff !important; }
+
+    /* 9. Arabic (Persian Teal) */
+    .subj-tab--arabic, [data-slug="arabic"] {
+      background: #f0fdfa !important;
+      border-color: #5eead4 !important;
+      color: #0f766e !important;
+    }
+    .subj-tab--arabic .subj-tab-icon, [data-slug="arabic"] .subj-tab-icon { color: #0d9488 !important; }
+    .subj-tab--arabic .subj-badge, [data-slug="arabic"] .subj-badge { background: #ccfbf1 !important; color: #115e59 !important; }
+    .subj-tab--arabic:hover, [data-slug="arabic"]:hover { background: #ccfbf1 !important; border-color: #0d9488 !important; }
+    .subj-tab--arabic.active, [data-slug="arabic"].active {
+      background: #0d9488 !important;
+      border-color: #0f766e !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 18px rgba(13, 148, 136, 0.55), 0 4px 12px rgba(13, 148, 136, 0.35) !important;
+    }
+    .subj-tab--arabic.active .subj-tab-icon, [data-slug="arabic"].active .subj-tab-icon { color: #ffffff !important; }
+    .subj-tab--arabic.active .subj-badge, [data-slug="arabic"].active .subj-badge { background: rgba(255, 255, 255, 0.3) !important; color: #ffffff !important; }
+
+    /* 10. Hindi (Deep Vermilion Red) */
+    .subj-tab--hindi, [data-slug="hindi"] {
+      background: #fef2f2 !important;
+      border-color: #fca5a5 !important;
+      color: #b91c1c !important;
+    }
+    .subj-tab--hindi .subj-tab-icon, [data-slug="hindi"] .subj-tab-icon { color: #dc2626 !important; }
+    .subj-tab--hindi .subj-badge, [data-slug="hindi"] .subj-badge { background: #fee2e2 !important; color: #991b1b !important; }
+    .subj-tab--hindi:hover, [data-slug="hindi"]:hover { background: #fee2e2 !important; border-color: #dc2626 !important; }
+    .subj-tab--hindi.active, [data-slug="hindi"].active {
+      background: #dc2626 !important;
+      border-color: #b91c1c !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 18px rgba(220, 38, 38, 0.55), 0 4px 12px rgba(220, 38, 38, 0.35) !important;
+    }
+    .subj-tab--hindi.active .subj-tab-icon, [data-slug="hindi"].active .subj-tab-icon { color: #ffffff !important; }
+    .subj-tab--hindi.active .subj-badge, [data-slug="hindi"].active .subj-badge { background: rgba(255, 255, 255, 0.3) !important; color: #ffffff !important; }
+
+    /* 11. Mathematics (Fuchsia / Vivid Magenta) */
+    .subj-tab--mathematics, [data-slug="mathematics"] {
+      background: #fdf4ff !important;
+      border-color: #f0abfc !important;
+      color: #86198f !important;
+    }
+    .subj-tab--mathematics .subj-tab-icon, [data-slug="mathematics"] .subj-tab-icon { color: #a21caf !important; }
+    .subj-tab--mathematics .subj-badge, [data-slug="mathematics"] .subj-badge { background: #fae8ff !important; color: #701a75 !important; }
+    .subj-tab--mathematics:hover, [data-slug="mathematics"]:hover { background: #fae8ff !important; border-color: #a21caf !important; }
+    .subj-tab--mathematics.active, [data-slug="mathematics"].active {
+      background: #a21caf !important;
+      border-color: #86198f !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 18px rgba(162, 28, 175, 0.55), 0 4px 12px rgba(162, 28, 175, 0.35) !important;
+    }
+    .subj-tab--mathematics.active .subj-tab-icon, [data-slug="mathematics"].active .subj-tab-icon { color: #ffffff !important; }
+    .subj-tab--mathematics.active .subj-badge, [data-slug="mathematics"].active .subj-badge { background: rgba(255, 255, 255, 0.3) !important; color: #ffffff !important; }
+
+    /* 12. History of Keralam (Ochre Gold / Heritage Bronze) */
+    .subj-tab--history-of-keralam, [data-slug="history-of-keralam"] {
+      background: #fefce8 !important;
+      border-color: #fde047 !important;
+      color: #854d0e !important;
+    }
+    .subj-tab--history-of-keralam .subj-tab-icon, [data-slug="history-of-keralam"] .subj-tab-icon { color: #ca8a04 !important; }
+    .subj-tab--history-of-keralam .subj-badge, [data-slug="history-of-keralam"] .subj-badge { background: #fef9c3 !important; color: #713f12 !important; }
+    .subj-tab--history-of-keralam:hover, [data-slug="history-of-keralam"]:hover { background: #fef9c3 !important; border-color: #ca8a04 !important; }
+    .subj-tab--history-of-keralam.active, [data-slug="history-of-keralam"].active {
+      background: #ca8a04 !important;
+      border-color: #854d0e !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 18px rgba(202, 138, 4, 0.55), 0 4px 12px rgba(202, 138, 4, 0.35) !important;
+    }
+    .subj-tab--history-of-keralam.active .subj-tab-icon, [data-slug="history-of-keralam"].active .subj-tab-icon { color: #ffffff !important; }
+    .subj-tab--history-of-keralam.active .subj-badge, [data-slug="history-of-keralam"].active .subj-badge { background: rgba(255, 255, 255, 0.3) !important; color: #ffffff !important; }
+    .subj-tab--history-of-keralam.subj-tab--blink:not(.active) {
+      animation: blinkHistory 2.6s ease-in-out infinite 2.0s !important;
+    }
+
+    /* ==============================================================
+       Keyframes for Inactive Tabs Interval Blinking (Double-Pulse Alert)
+       ============================================================== */
+    @keyframes blinkSociology {
+      0%, 55%, 100% {
+        border-color: #c084fc;
+        background-color: #f5f3ff;
+        box-shadow: 0 1px 3px rgba(168, 85, 247, 0.15);
+        transform: scale(1);
+      }
+      62%, 78% {
+        border-color: #7e22ce !important;
+        background-color: #ede9fe !important;
+        box-shadow: 0 0 18px 4px rgba(168, 85, 247, 0.65), 0 2px 8px rgba(126, 34, 206, 0.3) !important;
+        transform: translateY(-1.5px) scale(1.03);
+      }
+      70% {
+        border-color: #c084fc;
+        background-color: #f5f3ff;
+        box-shadow: 0 1px 4px rgba(168, 85, 247, 0.2);
+        transform: scale(1);
+      }
+    }
+    @keyframes blinkAI {
+      0%, 55%, 100% {
+        border-color: #22d3ee;
+        background-color: #ecfeff;
+        box-shadow: 0 1px 3px rgba(6, 182, 212, 0.15);
+        transform: scale(1);
+      }
+      62%, 78% {
+        border-color: #0891b2 !important;
+        background-color: #cffafe !important;
+        box-shadow: 0 0 18px 4px rgba(6, 182, 212, 0.65), 0 2px 8px rgba(8, 145, 178, 0.3) !important;
+        transform: translateY(-1.5px) scale(1.03);
+      }
+      70% {
+        border-color: #22d3ee;
+        background-color: #ecfeff;
+        box-shadow: 0 1px 4px rgba(6, 182, 212, 0.2);
+        transform: scale(1);
+      }
+    }
+    @keyframes blinkEconomy {
+      0%, 55%, 100% {
+        border-color: #fbbf24;
+        background-color: #fffbeb;
+        box-shadow: 0 1px 3px rgba(245, 158, 11, 0.15);
+        transform: scale(1);
+      }
+      62%, 78% {
+        border-color: #d97706 !important;
+        background-color: #fef3c7 !important;
+        box-shadow: 0 0 18px 4px rgba(245, 158, 11, 0.65), 0 2px 8px rgba(217, 119, 6, 0.3) !important;
+        transform: translateY(-1.5px) scale(1.03);
+      }
+      70% {
+        border-color: #fbbf24;
+        background-color: #fffbeb;
+        box-shadow: 0 1px 4px rgba(245, 158, 11, 0.2);
+        transform: scale(1);
+      }
+    }
+    @keyframes blinkEducation {
+      0%, 55%, 100% {
+        border-color: #34d399;
+        background-color: #ecfdf5;
+        box-shadow: 0 1px 3px rgba(16, 185, 129, 0.15);
+        transform: scale(1);
+      }
+      62%, 78% {
+        border-color: #059669 !important;
+        background-color: #d1fae5 !important;
+        box-shadow: 0 0 18px 4px rgba(16, 185, 129, 0.65), 0 2px 8px rgba(5, 150, 105, 0.3) !important;
+        transform: translateY(-1.5px) scale(1.03);
+      }
+      70% {
+        border-color: #34d399;
+        background-color: #ecfdf5;
+        box-shadow: 0 1px 4px rgba(16, 185, 129, 0.2);
+        transform: scale(1);
+      }
+    }
+    @keyframes blinkEthics {
+      0%, 55%, 100% {
+        border-color: #fb7185;
+        background-color: #fff1f2;
+        box-shadow: 0 1px 3px rgba(244, 63, 94, 0.15);
+        transform: scale(1);
+      }
+      62%, 78% {
+        border-color: #e11d48 !important;
+        background-color: #ffe4e6 !important;
+        box-shadow: 0 0 18px 4px rgba(244, 63, 94, 0.65), 0 2px 8px rgba(225, 29, 72, 0.3) !important;
+        transform: translateY(-1.5px) scale(1.03);
+      }
+      70% {
+        border-color: #fb7185;
+        background-color: #fff1f2;
+        box-shadow: 0 1px 4px rgba(244, 63, 94, 0.2);
+        transform: scale(1);
+      }
+    }
+    @keyframes blinkHistory {
+      0%, 55%, 100% {
+        border-color: #fde047;
+        background-color: #fefce8;
+        box-shadow: 0 1px 3px rgba(234, 179, 8, 0.15);
+        transform: scale(1);
+      }
+      62%, 78% {
+        border-color: #ca8a04 !important;
+        background-color: #fef9c3 !important;
+        box-shadow: 0 0 18px 4px rgba(234, 179, 8, 0.65), 0 2px 8px rgba(202, 138, 4, 0.3) !important;
+        transform: translateY(-1.5px) scale(1.03);
+      }
+      70% {
+        border-color: #fde047;
+        background-color: #fefce8;
+        box-shadow: 0 1px 4px rgba(234, 179, 8, 0.2);
+        transform: scale(1);
+      }
+    }
+
+    /* Keyframes for Active Glow Pulse */
+    @keyframes pulseActivePurple {
+      0%, 100% { box-shadow: 0 0 14px rgba(126, 34, 206, 0.5), 0 3px 8px rgba(126, 34, 206, 0.3); }
+      50% { box-shadow: 0 0 24px 4px rgba(168, 85, 247, 0.8), 0 4px 14px rgba(126, 34, 206, 0.45); }
+    }
+    @keyframes pulseActiveCyan {
+      0%, 100% { box-shadow: 0 0 14px rgba(8, 145, 178, 0.5), 0 3px 8px rgba(8, 145, 178, 0.3); }
+      50% { box-shadow: 0 0 24px 4px rgba(6, 182, 212, 0.8), 0 4px 14px rgba(8, 145, 178, 0.45); }
+    }
+    @keyframes pulseActiveAmber {
+      0%, 100% { box-shadow: 0 0 14px rgba(217, 119, 6, 0.5), 0 3px 8px rgba(217, 119, 6, 0.3); }
+      50% { box-shadow: 0 0 24px 4px rgba(245, 158, 11, 0.8), 0 4px 14px rgba(217, 119, 6, 0.45); }
+    }
+    @keyframes pulseActiveEmerald {
+      0%, 100% { box-shadow: 0 0 14px rgba(5, 150, 105, 0.5), 0 3px 8px rgba(5, 150, 105, 0.3); }
+      50% { box-shadow: 0 0 24px 4px rgba(16, 185, 129, 0.8), 0 4px 14px rgba(5, 150, 105, 0.45); }
+    }
+    @keyframes pulseActiveRose {
+      0%, 100% { box-shadow: 0 0 14px rgba(225, 29, 72, 0.5), 0 3px 8px rgba(225, 29, 72, 0.3); }
+      50% { box-shadow: 0 0 24px 4px rgba(244, 63, 94, 0.8), 0 4px 14px rgba(225, 29, 72, 0.45); }
     }
 
     /* Active Subject Hero Card */
@@ -1212,11 +1680,12 @@
           const s = data[slug];
           const btn = document.createElement('button');
           btn.type = 'button';
-          btn.className = 'subj-tab-btn' + (slug === currentSlug ? ' active' : '');
+          const hasLectures = (s.totalVideos || 0) > 0;
+          btn.className = 'subj-tab-btn subj-tab--' + slug + (hasLectures ? ' subj-tab--blink' : '') + (slug === currentSlug ? ' active' : '');
           btn.dataset.slug = slug;
           btn.setAttribute('role', 'tab');
           btn.setAttribute('aria-selected', slug === currentSlug ? 'true' : 'false');
-          btn.innerHTML = `<span style="font-weight:800;">${s.badge}</span> ${s.name} <span class="subj-badge">${s.totalVideos || 0}</span>`;
+          btn.innerHTML = `<span class="subj-tab-icon">${s.badge}</span> <span class="subj-tab-title">${s.name}</span> <span class="subj-badge">${s.totalVideos || 0}</span>`;
           btn.addEventListener('click', () => {
             if (currentSlug !== slug) {
               currentSlug = slug;
