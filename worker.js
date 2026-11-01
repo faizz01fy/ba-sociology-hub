@@ -100,6 +100,13 @@ function unavailableLmsPdfResponse(request) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    const isHttp = url.protocol === "http:" || request.headers.get("x-forwarded-proto") === "http";
+    const isWww = url.hostname.toLowerCase() === "www.academichubfaiz.in";
+    if (isHttp || isWww) {
+      url.protocol = "https:";
+      if (isWww) url.hostname = "academichubfaiz.in";
+      return Response.redirect(url.toString(), 301);
+    }
     if (url.pathname === "/api/tts") {
       const tl = url.searchParams.get("tl") || "ml";
       const q = url.searchParams.get("q") || "";

@@ -1006,8 +1006,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "എത്തിക്സ് അഥവാ ശരിതെറ്റുകളുടെ തത്ത്വശാസ്ത്രം (Ethics: Philosophy of Right & Wrong)",
             "chapter": "Academic Hub Special · സ്വഭാവം, വ്യാപ്തി, നിരുക്തം (Ethos & Mos) & ശാഖകൾ",
             "duration": "17:37",
-            "youtubeId": "",
-            "audioUrl": "/audio/ethics_lecture_01.mp3",
+            "youtubeId": "WD2oiqN3tBI",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "നിരുക്തവും നിർവ്വചനവും (Etymology & Meaning): ഗ്രീക്ക് പദമായ 'Ethos' (സ്വഭാവം), ലത്തീൻ പദമായ 'Mos/Moralis' എന്നിവയിൽ നിന്നുള്ള ഉത്ഭവം; ശരിതെറ്റുകളെയും നന്മതിന്മകളെയും കുറിച്ചുള്ള ദാർശനിക വിശകലനം.",
@@ -1024,7 +1024,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "18:30",
             "youtubeId": "KsDe2ZkHrro",
             "audioUrl": "",
-            "language": "Malayalam",
+            "language": "English",
             "studyPoints": [
               "ഋതവും ധർമ്മവും (Rta & Dharma): പ്രാപഞ്ചിക ക്രമം (Cosmic Order), ധാർമ്മിക ക്രമം (Moral Order), സാമൂഹിക ഉത്തരവാദിത്തങ്ങൾ എന്നിവയുടെ സമന്വയം.",
               "ചതുർവിധ പുരുഷാർത്ഥങ്ങൾ: ധർമ്മം, അർത്ഥം, കാമം, മോക്ഷം എന്നിവയിലൂടെയുള്ള പൂർണ്ണ മനുഷ്യജീവിത സാക്ഷാത്കാരം.",
