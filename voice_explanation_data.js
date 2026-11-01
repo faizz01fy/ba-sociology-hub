@@ -999,113 +999,163 @@ window.VOICE_EXPLANATIONS_DATA = {
     "tag": "Minor Course",
     "modules": [
       {
-        "moduleName": "MODULE 01: INTRODUCTION TO ETHICS & DHARMASHASTRA",
+        "moduleName": "MODULE 01: INTRODUCTION TO ETHICS & DHARMASHASTRA (ധാർമ്മികതയുടെ സ്വഭാവവും വ്യാപ്തിയും)",
         "videos": [
           {
-            "chapterNumber": "Module 01 Master",
-            "title": "എത്തിക്സ് സമഗ്ര സംഗ്രഹം (Fundamentals of Ethics: Complete 5-Module Overview)",
-            "chapter": "Academic Hub Special · ധാർമ്മിക തത്വങ്ങൾ, സിദ്ധാന്തങ്ങൾ & പ്രായോഗിക എത്തിക്സ് സമഗ്ര റിവിഷൻ",
-            "duration": "18:30",
-            "youtubeId": "KsDe2ZkHrro",
+            "chapterNumber": "Chapter 01",
+            "title": "എത്തിക്സ് അഥവാ ശരിതെറ്റുകളുടെ തത്ത്വശാസ്ത്രം (Ethics: Philosophy of Right & Wrong)",
+            "chapter": "Academic Hub Special · സ്വഭാവം, വ്യാപ്തി, നിരുക്തം (Ethos & Mos) & ശാഖകൾ",
+            "duration": "17:37",
+            "youtubeId": "",
+            "audioUrl": "/audio/ethics_lecture_01.mp3",
             "language": "Malayalam",
             "studyPoints": [
-              "ധാർമ്മികതയുടെ സ്വഭാവവും വ്യാപ്തിയും: ശരിയും തെറ്റും, നീതിയും അനീതിയും തമ്മിലുള്ള വ്യത്യാസം വ്യവസ്ഥാപിതമായി അപഗ്രഥിക്കുന്ന തത്ത്വശാസ്ത്ര ശാഖ.",
-              "ധർമ്മശാസ്ത്രവും പുരുഷാർത്ഥങ്ങളും: ഭാരതീയ ചിന്തയിലെ ധർമ്മം, അർത്ഥം, കാമം, മോക്ഷം എന്നീ ചതുർവിധ പുരുഷാർത്ഥങ്ങളും ധാർമ്മിക ജീവിതവും.",
-              "സദ്ഗുണങ്ങളും സിദ്ധാന്തങ്ങളും: പ്ലേറ്റോയുടെയും അരിസ്റ്റോട്ടിലിന്റെയും കാർഡിനൽ സദ്ഗുണങ്ങൾ, കാന്റിയൻ ഡിയോന്റോളജി, യൂട്ടിലിറ്റേറിയനിസം.",
-              "പ്രായോഗിക എത്തിക്സ് മേഖലകൾ: ബയോഎത്തിക്സ്, എൻവയോൺമെന്റൽ എത്തിക്സ്, സൈബർ എത്തിക്സ് എന്നിവയിലെ സമകാലിക വെല്ലുവിളികൾ."
+              "നിരുക്തവും നിർവ്വചനവും (Etymology & Meaning): ഗ്രീക്ക് പദമായ 'Ethos' (സ്വഭാവം), ലത്തീൻ പദമായ 'Mos/Moralis' എന്നിവയിൽ നിന്നുള്ള ഉത്ഭവം; ശരിതെറ്റുകളെയും നന്മതിന്മകളെയും കുറിച്ചുള്ള ദാർശനിക വിശകലനം.",
+              "ധർമ്മശാസ്ത്രത്തിന്റെ നാല് പ്രധാന ശാഖകൾ: മെറ്റാ-എത്തിക്സ് (Meta-ethics), നോർമേറ്റീവ് എത്തിക്സ് (Normative Ethics), പ്രായോഗിക എത്തിക്സ് (Applied Ethics), വിവരണാത്മക എത്തിക്സ് (Descriptive Ethics).",
+              "സ്വതന്ത്ര ഇച്ഛയും ധാർമ്മിക ബാധ്യതയും (Free Will & Moral Responsibility): പ്രവൃത്തികൾ തിരഞ്ഞെടുക്കാനുള്ള മനുഷ്യന്റെ വിവേകവും സ്വന്തം കർമ്മങ്ങളിലുള്ള ഉത്തരവാദിത്തവും."
             ],
-            "examTip": "Calicut University Focus: 'Explain the nature, scope and branches of Ethics with an outline of classical and applied moral theories'."
+            "examTip": "Calicut University Focus: 'Explain the nature, scope, and principal branches of Ethics with special emphasis on Free Will and Moral Responsibility'."
           },
           {
-            "chapterNumber": "Chapter 01",
-            "title": "ധർമ്മശാസ്ത്രം ആമുഖവും തത്വങ്ങളും (Introduction to Dharmashastra)",
-            "chapter": "Academic Hub Special · ഋതം, ധർമ്മം, പുരുഷാർത്ഥങ്ങൾ & ഭാരതീയ ധാർമ്മിക ദർശനങ്ങൾ",
-            "duration": "15:45",
-            "youtubeId": "s3xGsLMCY1o",
+            "chapterNumber": "Module 01 Masterclass",
+            "title": "ധർമ്മശാസ്ത്രം ആമുഖവും തത്വങ്ങളും (Introduction to Dharmashastra & Western Ethics)",
+            "chapter": "Academic Hub Special · ഋതം, ധർമ്മം, പുരുഷാർത്ഥങ്ങൾ & പാശ്ചാത്യ-പൗരസ്ത്യ സമന്വയം",
+            "duration": "18:30",
+            "youtubeId": "KsDe2ZkHrro",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "ഋതവും ധർമ്മവും (Rta & Dharma): പ്രാപഞ്ചിക ക്രമം (Cosmic Order), ധാർമ്മിക ക്രമം (Moral Order), സാമൂഹിക ഉത്തരവാദിത്തങ്ങൾ എന്നിവയുടെ സമന്വയം.",
-              "വർണ്ണാശ്രമ ധർമ്മങ്ങൾ: വ്യക്തിയുടെ ജീവിതഘട്ടങ്ങളുമായി (ബ്രഹ്മచర్യം, ഗൃഹസ്ഥം, വാനപ്രസ്ഥം, സന്യാസം) ബന്ധപ്പെട്ട കടമകൾ.",
-              "മൂന്ന് ഋണങ്ങൾ (Three Debts): ദേവഋണം, ഋഷിഋണം, പിതൃഋണം എന്നിവ തീർക്കാനുള്ള സാമൂഹിക ബാധ്യതകൾ."
+              "ചതുർവിധ പുരുഷാർത്ഥങ്ങൾ: ധർമ്മം, അർത്ഥം, കാമം, മോക്ഷം എന്നിവയിലൂടെയുള്ള പൂർണ്ണ മനുഷ്യജീവിത സാക്ഷാത്കാരം.",
+              "മൂന്ന് ഋണങ്ങൾ (Three Debts): ദേവഋണം, ഋഷിഋണം, പിതൃഋണം എന്നിവ തീർക്കാനുള്ള സാമൂഹിക-ധാർമ്മിക കടമകൾ."
             ],
             "examTip": "University Exam Tip: 'Critically examine the concept of Dharma and Purusharthas in Indian moral philosophy'."
           }
         ]
       },
       {
-        "moduleName": "MODULE 02: CONCEPTS OF ETHICS & VIRTUES",
+        "moduleName": "MODULE 02: CONCEPTS OF ETHICS, VIRTUES & DUTIES (സദ്ഗുണങ്ങളും അവകാശ-കടമകളും)",
         "videos": [
           {
             "chapterNumber": "Chapter 02",
-            "title": "ധാർമ്മിക സങ്കൽപ്പങ്ങളും സദ്ഗുണങ്ങളും (Concepts of Ethics & Virtues)",
-            "chapter": "Academic Hub Special · കാർഡിനൽ സദ്ഗുണങ്ങൾ, ധാർമ്മിക ബാധ്യത & മനഃസാക്ഷി",
-            "duration": "16:50",
-            "youtubeId": "Zdn4oB4SUjY",
+            "title": "സദ്ഗുണവും അവകാശങ്ങളും കടമകളും (Virtue Ethics, Moral Rights & Duties)",
+            "chapter": "Academic Hub Special · അരിസ്റ്റോട്ടിലിന്റെ ഗോൾഡൻ മീൻ, കാർഡിനൽ സദ്ഗുണങ്ങൾ & അവകാശ-കടമാ ബന്ധം",
+            "duration": "19:08",
+            "youtubeId": "",
+            "audioUrl": "/audio/ethics_lecture_02.mp3",
             "language": "Malayalam",
             "studyPoints": [
-              "കാർഡിനൽ സദ്ഗുണങ്ങൾ (Cardinal Virtues): പ്ലേറ്റോ മുന്നോട്ടുവെച്ച വിവേകം (Prudence), ധൈര്യം (Fortitude), മിതത്വം (Temperance), നീതി (Justice).",
-              "ധാർമ്മിക ബാധ്യത (Moral Obligation): ബാഹ്യമായ നിയമങ്ങൾക്കപ്പുറം സ്വന്തം കടമ തിരിച്ചറിഞ്ഞ് പ്രവർത്തിക്കാനുള്ള ആന്തരിക പ്രേരണ.",
-              "മനഃസാക്ഷി (Conscience): നന്മയും തിന്മയും വേർതിരിച്ചറിയാനുള്ള മനുഷ്യന്റെ ധാർമ്മിക വിധികർത്താവ് (Moral Guide).",
-              "നന്മയും ഉപകാരവും (Good and Right): ശരിയായ പ്രവൃത്തിയും പരമമായ നന്മയും (Summum Bonum) തമ്മിലുള്ള ദാർശനിക ബന്ധം."
+              "അരിസ്റ്റോട്ടിലിന്റെ സദ്ഗുണ സിദ്ധാന്തം (Aristotelian Virtue Ethics): സുവർണ്ണ മധ്യമാർഗ്ഗം (Golden Mean) - അമിതത്വത്തിനും ന്യൂനതയ്ക്കും ഇടയിലുള്ള സദ്ഗുണം (ഉദാ: ഭീരുത്വത്തിനും എടുത്തുചാട്ടത്തിനും ഇടയിലുള്ള ധൈര്യം).",
+              "നാല് കാർഡിനൽ സദ്ഗുണങ്ങൾ (Cardinal Virtues): പ്ലേറ്റോയും അരിസ്റ്റോട്ടിലും മുന്നോട്ടുവെച്ച വിവേകം (Prudence), ധൈര്യം (Fortitude), മിതത്വം (Temperance), നീതി (Justice).",
+              "അവകാശങ്ങളും കടമകളും തമ്മിലുള്ള പരസ്പരബന്ധം (Correlation of Rights and Duties): ഓരോ വ്യക്തിയുടെയും അവകാശം മറ്റുള്ളവരുടെ ധാർമ്മിക കടമയായി മാറുന്നു."
             ],
-            "examTip": "Calicut University Focus: 'Discuss the four Cardinal Virtues and evaluate the authority of Conscience as a moral standard'."
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 03: ETHICAL THEORIES (NORMATIVE FRAMEWORKS)",
-        "videos": [
+            "examTip": "University Exam Tip: 'Explain Aristotle's Doctrine of the Mean with suitable examples and elaborate on the four Cardinal Virtues'."
+          },
           {
             "chapterNumber": "Chapter 03",
-            "title": "ധാർമ്മിക സിദ്ധാന്തങ്ങൾ (Ethical Theories: Normative Frameworks)",
-            "chapter": "ഹെഡോണിസം, യൂട്ടിലിറ്റേറിയനിസം (ജെറമി ബെന്താം & ജെ.എസ്. മിൽ) & കാന്റിയൻ ഡിയോന്റോളജി",
-            "duration": "28",
+            "title": "സദാചാര മൂല്യങ്ങളും അവകാശ കടമകളും (Moral Values, Rights & Responsibilities)",
+            "chapter": "Academic Hub Special · സാർവ്വലൗകിക മൂല്യങ്ങൾ, മനസ്സാക്ഷി & ആന്തരിക ധാർമ്മികത",
+            "duration": "20:16",
             "youtubeId": "",
+            "audioUrl": "/audio/ethics_lecture_03.mp3",
+            "language": "Malayalam",
             "studyPoints": [
-              "സുഖവാദം (Hedonism): ആനന്ദമാണ് ജീവിതത്തിന്റെ പരമമായ ലക്ഷ്യമെന്ന സിദ്ധാന്തം (സൈക്കോളജിക്കൽ vs എത്തിക്കൽ ഹെഡോണിസം).",
-              "ഉപയോഗിതാവാദം (Utilitarianism): 'ഏറ്റവും കൂടുതൽ ആളുകൾക്ക് ഏറ്റവും കൂടുതൽ ആനന്ദം' എന്ന ജെറമി ബെന്താമിന്റെ അളവ് സിദ്ധാന്തവും ജെ.എസ്. മില്ലിന്റെ ഗുണനിലവാര സിദ്ധാന്തവും.",
-              "ഇമ്മാനുവൽ കാന്റിന്റെ കർത്തവ്യവാദം (Kantian Deontology): ഫലങ്ങളിലല്ല, ശുദ്ധമായ ഇച്ഛാശക്തിയിലും (Good Will) കടമയിലുമാണ് (Duty for Duty's Sake) ധാർമ്മികത കുടികൊള്ളുന്നത്.",
-              "കാറ്റഗറിക്കൽ ഇംപെററ്റീവ് (Categorical Imperative): ഒരു സാർവ്വത്രിക നിയമമായി മാറാൻ തക്കവിധം മാത്രമേ ഓരോ പ്രവൃത്തിയും ചെയ്യാവൂ എന്ന കാന്റിയൻ കൽപ്പന."
+              "സദാചാര മൂല്യങ്ങളുടെ സ്വഭാവം: സാർവ്വലൗകിക മൂല്യങ്ങളും (Universal Moral Values) സാംസ്കാരിക ആപേക്ഷികതയും (Cultural Relativism).",
+              "മനസ്സാക്ഷിയുടെ ശബ്ദം (Conscience as Moral Guide): ശരിതെറ്റുകൾ തിരിച്ചറിയാനുള്ള മനുഷ്യന്റെ ആന്തരിക ബോധവും മനസ്സാക്ഷിയുടെ സാധുതയും പരിമിതികളും.",
+              "നന്മയും നീതിയും (Goodness & Justice): വ്യക്തിഗത സദാചാരവും സാമൂഹിക ക്ഷേമവും തമ്മിലുള്ള ആരോഗ്യകരമായ സന്തുലിതാവസ്ഥ."
             ],
-            "examTip": "University Focus: 'Critically compare Bentham\\'s Quantitative Utilitarianism with Mill\\'s Qualitative Utilitarianism. Explain Kant\\'s Categorical Imperative'."
+            "examTip": "University Exam Tip: 'Discuss Conscience as the subjective norm of morality and evaluate its role in resolving ethical conflicts'."
           }
         ]
       },
       {
-        "moduleName": "MODULE 04: THEORIES OF PUNISHMENT",
+        "moduleName": "MODULE 03: NORMATIVE ETHICAL THEORIES (നൈതിക സിദ്ധാന്തങ്ങൾ)",
         "videos": [
           {
             "chapterNumber": "Chapter 04",
-            "title": "ശിക്ഷാ സിദ്ധാന്തങ്ങൾ (Theories of Punishment)",
-            "chapter": "പ്രതികാര സിദ്ധാന്തം, ഭയപ്പെടുത്തൽ സിദ്ധാന്തം, പ്രതിരോധ സിദ്ധാന്തം & പരിഷ്കരണ സിദ്ധാന്തം",
-            "duration": "22",
+            "title": "കൺസിക്വൻഷ്യലിസവും ഡിയോന്റോളജിക്കൽ എത്തിക്സും (Consequentialism & Deontological Ethics)",
+            "chapter": "Academic Hub Special · ടെലിയോളജിക്കൽ സിദ്ധാന്തം vs ഇമ്മാനുവൽ കാന്റിന്റെ കടമ സിദ്ധാന്തം",
+            "duration": "16:22",
             "youtubeId": "",
+            "audioUrl": "/audio/ethics_lecture_04.mp3",
+            "language": "Malayalam",
             "studyPoints": [
-              "പ്രതികാര സിദ്ധാന്തം (Retributive Theory): 'കണ്ണിനു പകരം കണ്ണ്' - ചെയ്ത കുറ്റത്തിന് ആനുപാതികമായ ശിക്ഷ കുറ്റവാളി അനുഭവിക്കണം എന്ന നീതിശാസ്ത്രം.",
-              "ഭയപ്പെടുത്തൽ സിദ്ധാന്തം (Deterrent Theory): ശിക്ഷ നൽകുന്നതിലൂടെ ഭാവിയിൽ മറ്റുള്ളവർ കുറ്റം ചെയ്യാതിരിക്കാൻ സമൂഹത്തിൽ ഭയം ഉണ്ടാക്കുക.",
-              "പ്രതിരോധ സിദ്ധാന്തം (Preventive Theory): കുറ്റവാളിയെ തടവിലാക്കുകയോ വധശിക്ഷ നൽകുകയോ ചെയ്തുകൊണ്ട് സമൂഹത്തിന് ദ്രോഹം വരുത്തുന്നത് തടയുക.",
-              "പരിഷ്കരണ സിദ്ധാന്തം (Reformative Theory): കുറ്റവാളിയെ രോഗിയായി കണ്ട് മാനസിക പരിവർത്തനത്തിലൂടെ നല്ലൊരു പൗരനാക്കി മാറ്റുക (ആധുനിക നീതിശാസ്ത്രം മുൻഗണന നൽകുന്നത്)."
+              "കൺസിക്വൻഷ്യലിസം (Consequentialism / Teleology): പ്രവൃത്തിയുടെ നന്മതിന്മകൾ നിശ്ചയിക്കപ്പെടുന്നത് അതിന്റെ അനന്തരഫലങ്ങളെ ആശ്രയിച്ചാണ്.",
+              "കാന്റിന്റെ ഡിയോന്റോളജിക്കൽ എത്തിക്സ് (Kant's Deontology): അനന്തരഫലങ്ങൾ പരിഗണിക്കാതെ സ്വന്തം കടമ പൂർണ്ണ നിസ്വാർത്ഥതയോടെ ചെയ്യുക ('Duty for Duty's Sake').",
+              "കാറ്റഗോറിക്കൽ ഇംപറേറ്റീവ് (Categorical Imperative): സാർവ്വലൗകിക നിയമമാക്കാൻ കഴിയുന്ന പരമോന്നത ധാർമ്മിക ആജ്ഞകൾ മാത്രം അനുസരിക്കുക."
             ],
-            "examTip": "University Focus: 'Analyze the ethical justifications of the Reformative Theory of punishment versus the Retributive Theory'."
+            "examTip": "Calicut University Focus: 'Distinguish between Teleological and Deontological theories with special reference to Kant's Categorical Imperative'."
+          },
+          {
+            "chapterNumber": "Chapter 05",
+            "title": "യൂട്ടിലിറ്റേറിയനിസവും ഡിയന്റോളജിയും (Utilitarianism & Deontology Deep Dive)",
+            "chapter": "Academic Hub Special · ജെറമി ബെന്താം, ജോൺ സ്റ്റുവർട്ട് മിൽ & പ്രയോജനവാദ വിശകലനം",
+            "duration": "21:07",
+            "youtubeId": "",
+            "audioUrl": "/audio/ethics_lecture_05.mp3",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ജെറമി ബെന്താമിന്റെ അളവ് യൂട്ടിലിറ്റേറിയനിസം (Quantitative Utilitarianism): 'പരമാവധി ആളുകൾക്ക് പരമാവധി സന്തോഷം' (Greatest Happiness Principle) & സുഖഗണന സമ്പ്രദായം (Hedonistic Calculus).",
+              "ജോൺ സ്റ്റുവർട്ട് മില്ലിന്റെ ഗുണപരമായ തിരുത്തൽ (Qualitative Utilitarianism): 'തൃപ്തനായ പന്നിയാകുന്നതിനേക്കാൾ നല്ലത് അതൃപ്തനായ സോക്രട്ടീസ് ആകുന്നതാണ്' - ഉന്നത ബൗദ്ധിക സുഖങ്ങൾക്ക് മുൻഗണന.",
+              "ആക്റ്റ് vs റൂൾ യൂട്ടിലിറ്റേറിയനിസം (Act vs Rule Utilitarianism): വ്യക്തിഗത പ്രവൃത്തികളുടെ ഫലം കണക്കാക്കുന്നതും പൊതുവായ നൈതിക നിയമങ്ങൾ പാലിക്കുന്നതും."
+            ],
+            "examTip": "University Exam Tip: 'Critically evaluate Utilitarianism comparing Bentham's quantitative hedonism with Mill's qualitative refinement'."
           }
         ]
       },
       {
-        "moduleName": "MODULE 05: APPLIED ETHICS & PRACTICAL DILEMMAS",
+        "moduleName": "MODULE 04: THEORIES OF PUNISHMENT (ശിക്ഷാ സിദ്ധാന്തങ്ങൾ)",
         "videos": [
           {
-            "chapterNumber": "Chapter 05",
-            "title": "പ്രായോഗിക എത്തിക്സും ധാർമ്മിക പ്രതിസന്ധികളും (Applied Ethics & Practical Dilemmas)",
-            "chapter": "Academic Hub Special · ബയോഎത്തിക്സ്, ദയാവധം, പരിസ്ഥിതി & സൈബർ എത്തിക്സ്",
-            "duration": "20:15",
-            "youtubeId": "9MW6gIEwWtU",
+            "chapterNumber": "Chapter 06",
+            "title": "കുറ്റവാളികളെ നമ്മൾ എന്തിനാണ് ശിക്ഷിക്കുന്നത്? (Theories of Punishment: Why Do We Punish?)",
+            "chapter": "Academic Hub Special · പ്രതികാരം, ഭയം, പ്രതിരോധം & പരിഷ്കരണ സിദ്ധാന്തങ്ങളുടെ ധാർമ്മിക വിശകലനം",
+            "duration": "18:57",
+            "youtubeId": "",
+            "audioUrl": "/audio/ethics_lecture_06.mp3",
             "language": "Malayalam",
             "studyPoints": [
-              "ബയോഎത്തിക്സ് (Bioethics): ദയാവധം (Active vs Passive Euthanasia), അബോർഷൻ, ജനിതക എഞ്ചിനീയറിംഗ് എന്നിവ ഉയർത്തുന്ന ചോദ്യങ്ങൾ.",
-              "പരിസ്ഥിതി എത്തിക്സ് (Environmental Ethics): പ്രകൃതിയും ജീവജാലങ്ങളും മനുഷ്യന്റെ ഉപഭോഗത്തിനു മാത്രമുള്ളതല്ലെന്ന ഇക്കോസെൻട്രിക് വീക്ഷണം.",
-              "സൈബർ എത്തിക്സ് (Cyberethics): ഡിജിറ്റൽ യുഗത്തിലെ വ്യക്തിഗത വിവര സുരക്ഷ, നിർമ്മിത ബുദ്ധിയുടെ നിഷ്പക്ഷത, പകർപ്പവകാശ സംരക്ഷണം."
+              "പ്രതികാര സിദ്ധാന്തം (Retributive Theory): 'കണ്ണിനു പകരം കണ്ണ്' - ചെയ്ത കുറ്റത്തിന് തുല്യമായ ശിക്ഷ കുറ്റവാളി അനുഭവിച്ചിരിക്കണം എന്ന കർശന നീതിശാസ്ത്രം.",
+              "ഭയപ്പെടുത്തൽ സിദ്ധാന്തം (Deterrent Theory): സമൂഹത്തിൽ മാതൃകാപരമായ ശിക്ഷ നൽകി ഭാവിയിൽ ആരും കുറ്റം ചെയ്യാൻ മുതിരാത്ത ഭയാന്തരീക്ഷം സൃഷ്ടിക്കുക.",
+              "പ്രതിരോധ സിദ്ധാന്തം (Preventive Theory): കുറ്റവാളിയെ സമൂഹത്തിൽ നിന്ന് മാറ്റിനിർത്തുക വഴി (തടവ് അല്ലെങ്കിൽ വധശിക്ഷ) കുറ്റകൃത്യങ്ങൾ തടയുക.",
+              "പരിഷ്കരണ സിദ്ധാന്തം (Reformative Theory): കുറ്റവാളിയെ മാനസിക പരിവർത്തനത്തിലൂടെ നല്ലൊരു പൗരനാക്കി മാറ്റുക (ആധുനിക നീതിശാസ്ത്രം ഏറ്റവും കൂടുതൽ മുൻഗണന നൽകുന്ന സമീപനം)."
             ],
-            "examTip": "Calicut University Focus: 'Discuss ethical dilemmas in Bioethics with special reference to Euthanasia and Surrogacy'."
+            "examTip": "Calicut University Focus: 'Critically examine the various Theories of Punishment and justify why the Reformative Theory is favored in modern jurisprudence'."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE 05: APPLIED ETHICS & CONTEMPORARY DILEMMAS (പ്രായോഗിക ധാർമ്മികതയും ആധുനിക പ്രതിസന്ധികളും)",
+        "videos": [
+          {
+            "chapterNumber": "Chapter 07",
+            "title": "ദയാവധവും ഡീപ് ഇക്കോളജിയും പ്രായോഗിക ധാർമ്മികതയിൽ (Euthanasia & Deep Ecology in Applied Ethics)",
+            "chapter": "Academic Hub Special · ബയോഎത്തിക്സ്, അന്തസ്സോടെ മരിക്കാനുള്ള അവകാശം & പരിസ്ഥിതി ധർമ്മശാസ്ത്രം",
+            "duration": "19:28",
+            "youtubeId": "",
+            "audioUrl": "/audio/ethics_lecture_07.mp3",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ദയാവധവും ജീവന്റെ വിശുദ്ധിയും (Euthanasia & Sanctity of Life): ആക്ടീവ് vs പാസീവ് ദയാവധം, അന്തസ്സോടെ മരിക്കാനുള്ള അവകാശം (Right to Die with Dignity).",
+              "ഡീപ് ഇക്കോളജി (Deep Ecology - Arne Naess): പ്രകൃതി മനുഷ്യന്റെ ആവശ്യങ്ങൾക്ക് മാത്രമുള്ളതല്ല, സമസ്ത ജീവജാലങ്ങൾക്കും ഭൂമിയിൽ തുല്യ അവകാശമുണ്ട്.",
+              "ആന്ത്രോപോസെൻട്രിക് vs ഇക്കോസെൻട്രിക് വീക്ഷണം (Anthropocentric vs Ecocentric): മനുഷ്യകേന്ദ്രീകൃത ചൂഷണത്തിനെതിരെയുള്ള പരിസ്ഥിതി നൈതികത."
+            ],
+            "examTip": "Calicut University Focus: 'Discuss ethical dilemmas surrounding Euthanasia and explain the core tenets of Deep Ecology'."
+          },
+          {
+            "chapterNumber": "Chapter 08",
+            "title": "പ്രായോഗിക നൈതികതയും ധാർമ്മിക പ്രതിസന്ധികളും (Applied Ethics & Practical Dilemmas)",
+            "chapter": "Academic Hub Special · കാഷ്വിസ്ട്രി, ട്രോളി പ്രശ്നം, പ്രൊഫഷണൽ & സൈബർ എത്തിക്സ്",
+            "duration": "14:10",
+            "youtubeId": "",
+            "audioUrl": "/audio/ethics_lecture_08.mp3",
+            "language": "Malayalam",
+            "studyPoints": [
+              "കാഷ്വിസ്ട്രി (Casuistry & Case-Based Reasoning): കേവല നിയമങ്ങൾക്കപ്പുറം സന്ദർഭോചിതമായി സദാചാര പ്രശ്നങ്ങൾ പരിഹരിക്കുന്ന രീതി.",
+              "ട്രോളി പ്രശ്നവും ധാർമ്മിക പ്രതിസന്ധികളും (Trolley Problem & Moral Dilemmas): രണ്ട് തെറ്റുകളിൽ നിന്ന് കുറഞ്ഞ ദോഷമുള്ളത് തിരഞ്ഞെടുക്കേണ്ടി വരുന്ന അവസ്ഥകൾ.",
+              "പ്രൊഫഷണൽ, മെഡിക്കൽ & സൈബർ എത്തിക്സ്: തൊഴിൽ മേഖലകളിലും ഡിജിറ്റൽ യുഗത്തിലും മനസ്സാക്ഷിയോടെയുള്ള തീരുമാനങ്ങൾ."
+            ],
+            "examTip": "Calicut University Focus: 'Explain how Casuistry and Ethical frameworks help resolve modern moral dilemmas such as the Trolley Problem'."
           },
           {
             "chapterNumber": "Module 5 Masterclass",
@@ -1113,6 +1163,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Casuistry, Professional Ethics, Bioethics & Tech Ethics",
             "duration": "14:20",
             "youtubeId": "6x5y4ZW2UA0",
+            "audioUrl": "",
             "language": "English",
             "studyPoints": [
               "Casuistry & Case-Based Moral Reasoning: Resolving complex real-world dilemmas by evaluating paradigm cases rather than rigid dogmas.",
@@ -1124,7 +1175,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 5
+    "totalVideos": 9
   },
   "microeconomic-foundation": {
     "name": "Microeconomic Foundation",
