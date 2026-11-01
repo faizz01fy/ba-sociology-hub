@@ -726,10 +726,45 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "വിദ്യാഭ്യാസ തത്ത്വശാസ്ത്രം: സ്വഭാവവും പ്രാധാന്യവും",
-            "chapter": "വിദ്യാഭ്യാസത്തിന്റെ ലക്ഷ്യങ്ങൾ, ദർശനവും വിദ്യാഭ്യാസവും തമ്മിലുള്ള ബന്ധം",
-            "duration": "20",
-            "youtubeId": ""
+            "title": "വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും (Meaning & History of Education)",
+            "chapter": "Academic Hub Special · എറ്റിമോളജി, ലക്ഷ്യങ്ങൾ & ചരിത്ര പരിണാമം",
+            "duration": "18:20",
+            "youtubeId": "657kvV7KkvE",
+            "language": "Malayalam",
+            "studyPoints": [
+              "വിദ്യാഭ്യാസത്തിന്റെ നിരുക്തം (Etymology): Educare (വളർത്തുക), Educere (പുറത്തുകൊണ്ടുവരിക), Educatum (പഠിപ്പിക്കൽ) എന്നീ ലത്തീൻ പദങ്ങൾ.",
+              "വിപുലവും സങ്കുചിതവുമായ അർത്ഥങ്ങൾ: ഔപചാരിക സ്കൂൾ പഠനം എന്ന സങ്കുചിത അർത്ഥവും ജീവിതകാലം മുഴുവൻ നീളുന്ന സമഗ്ര വികാസം എന്ന വിപുല അർത്ഥവും.",
+              "വിദ്യാഭ്യാസത്തിന്റെ ധർമ്മങ്ങൾ: വ്യക്തിത്വ വികസനം, സാമൂഹികവൽക്കരണം, മൂല്യ സംരക്ഷണം, തൊഴിൽ നൈപുണ്യം."
+            ],
+            "examTip": "Calicut University Focus: 'Explain the etymological meaning of education and distinguish between narrower and broader concepts'."
+          },
+          {
+            "chapterNumber": "Chapter 02",
+            "title": "വിദ്യാഭ്യാസത്തിന്റെ പൊരുളും മഹത്തായ ദർശനങ്ങളും (Essence & Great Philosophies)",
+            "chapter": "Academic Hub Special · ജ്ഞാനശാസ്ത്രവും വിദ്യാഭ്യാസവും തമ്മിലുള്ള ബന്ധം",
+            "duration": "19:10",
+            "youtubeId": "H041V-SUIas",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ദർശനവും വിദ്യാഭ്യാസവും: നാണയത്തിന്റെ ഇരുവശങ്ങൾ പോലെ - ഫിലോസഫി ചിന്തയും വിദ്യാഭ്യാസം അതിന്റെ പ്രായോഗിക ആവിഷ്കാരവുമാണ്.",
+              "വിദ്യാഭ്യാസ തത്ത്വശാസ്ത്രത്തിന്റെ പ്രധാന ശാഖകൾ: മെറ്റാഫിസിക്സ് (യാഥാർത്ഥ്യം), എപ്പിസ്റ്റമോളജി (അറിവ്), ആക്സിയോളജി (മൂല്യങ്ങൾ).",
+              "മൂല്യബോധനത്തിന്റെ പ്രസക്തി: മാറുന്ന സമൂഹത്തിൽ ധാർമ്മിക, സാംസ്കാരിക മൂല്യങ്ങൾ പകർന്നുനൽകൽ."
+            ],
+            "examTip": "University Exam Tip: 'Philosophy and education are two sides of the same coin - Discuss with suitable arguments'."
+          },
+          {
+            "chapterNumber": "Chapter 03",
+            "title": "വിദ്യാഭ്യാസ തത്വശാസ്ത്രം: ചരിത്രവും പ്രധാന ശാഖകളും (History & Branches of Philosophy)",
+            "chapter": "Academic Hub Special · മെറ്റാഫിസിക്സ്, എപ്പിസ്റ്റമോളജി, എത്തിക്സ് & അധ്യാപനം",
+            "duration": "17:45",
+            "youtubeId": "SAr72ixQOA0",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ജ്ഞാനശാസ്ത്രവും അധ്യാപന രീതികളും: കുട്ടി എങ്ങനെ അറിയുന്നു, അറിവ് എങ്ങനെ നിർമ്മിക്കപ്പെടുന്നു എന്ന അവബോധം.",
+              "പാഠ്യപദ്ധതി നിർണ്ണയം: സാമൂഹിക ആവശ്യങ്ങളും കുട്ടിയുടെ താല്പര്യങ്ങളും ഉൾച്ചേർത്ത പാഠ്യപദ്ധതി രൂപീകരണം.",
+              "അച്ചടക്കവും സ്വാതന്ത്ര്യവും: കഠിനമായ ശിക്ഷകൾക്ക് പകരം ആത്മനിയന്ത്രണത്തിലൂടെയുള്ള സ്വതന്ത്ര വ്യക്തിത്വ രൂപീകരണം."
+            ],
+            "examTip": "Calicut University Focus: 'How do Epistemology and Axiology influence curriculum construction and teaching methods?'"
           }
         ]
       },
@@ -737,11 +772,32 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 02: MAJOR SCHOOLS OF PHILOSOPHY",
         "videos": [
           {
-            "chapterNumber": "Chapter 02",
-            "title": "പ്രധാന ദാർശനിക പ്രസ്ഥാനങ്ങളും വിദ്യാഭ്യാസവും",
-            "chapter": "ആദർശവാദം (Idealism), പ്രകൃതിവാദം (Naturalism), പ്രായോഗികവാദം (Pragmatism)",
-            "duration": "26",
-            "youtubeId": ""
+            "chapterNumber": "Chapter 04",
+            "title": "പാശ്ചാത്യ വിദ്യാഭ്യാസത്തിലെ ആദർശവാദവും പ്രകൃതിവാദവും (Idealism & Naturalism in Western Education)",
+            "chapter": "Academic Hub Special · പ്ലേറ്റോ vs റൂസ്സോ, ആശയങ്ങൾ vs പ്രകൃതി",
+            "duration": "20:30",
+            "youtubeId": "vyPElWt5Hl4",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ആദർശവാദം (Idealism): മനസ്സിനും ആശയങ്ങൾക്കും ആത്മീയ മൂല്യങ്ങൾക്കും പരമമായ പ്രാധാന്യം (പ്ലേറ്റോ, സോക്രട്ടീസ്).",
+              "പ്രകൃതിവാദം (Naturalism): പ്രകൃതിയിലേക്ക് മടങ്ങുക - പ്രകൃതിസഹജമായ ചോദനകളെ പരിപോഷിപ്പിക്കുന്ന ശിശുകേന്ദ്രീകൃത വിദ്യാഭ്യാസം (റൂസ്സോ - എമിൽ).",
+              "പാഠ്യപദ്ധതിയും അധ്യാപകന്റെ സ്ഥാനവും: ആദർശവാദത്തിൽ അധ്യാപകൻ ആത്മീയ മാർഗ്ഗദർശി; പ്രകൃതിവാദത്തിൽ പ്രകൃതിയാണ് പരമമായ അധ്യാപകൻ."
+            ],
+            "examTip": "Calicut University Focus: 'Compare Idealism and Naturalism with reference to aims of education, curriculum and role of the teacher'."
+          },
+          {
+            "chapterNumber": "Chapter 05",
+            "title": "മനുഷ്യനെ പൂർണ്ണനാക്കുന്ന ഭാരതീയ വിദ്യാഭ്യാസ ദർശനങ്ങൾ (Indian Educational Philosophies)",
+            "chapter": "Academic Hub Special · വേദിക്, ഉപനിഷത്, ബുദ്ധിസ്റ്റ് & വിവേകാനന്ദ ദർശനങ്ങൾ",
+            "duration": "21:15",
+            "youtubeId": "A3CI9riUkGY",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ഗുരുകുല സമ്പ്രദായവും ഭാരതീയ പാരമ്പര്യവും: വിദ്യാർത്ഥിയും ഗുരുവും തമ്മിലുള്ള ആത്മബന്ധവും സമഗ്ര ജീവിത പരിശീലനവും.",
+              "സ്വാമി വിവേകാനന്ദന്റെ വിദ്യാഭ്യാസം: 'മനുഷ്യനിൽ അന്തർലീനമായിരിക്കുന്ന പൂർണ്ണതയുടെ പ്രകാശനമാണ് വിദ്യാഭ്യാസം' (Manifestation of perfection already in man).",
+              "രവീന്ദ്രനാഥ ടാഗോറും ശാന്തിനികേതനും: പ്രകൃതിയോടിണങ്ങിയുള്ള വിശ്വഭാരതി മാതൃകയും സൗന്ദര്യബോധവും ആഗോള മാനവികതയും."
+            ],
+            "examTip": "University Exam Tip: 'Explain Swami Vivekananda\\'s concept of man-making and character-building education'."
           }
         ]
       },
@@ -749,16 +805,51 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 03: THINKERS & EDUCATIONAL VISION",
         "videos": [
           {
-            "chapterNumber": "Chapter 03",
-            "title": "മഹാന്മാരായ ചിന്തകരുടെ വിദ്യാഭ്യാസ ദർശനങ്ങൾ",
-            "chapter": "മഹാത്മാഗാന്ധി (വാർധ പദ്ധതി), ടാഗോർ (ശാന്തിനികേതൻ), ജോൺ ഡ്യൂയി",
-            "duration": "25",
-            "youtubeId": ""
+            "chapterNumber": "Chapter 06",
+            "title": "ഗാന്ധിജിയുടെ നയി താലിം എന്ന വിദ്യാഭ്യാസ വിപ്ലവം (Mahatma Gandhi's Nai Talim)",
+            "chapter": "Academic Hub Special · വാർധ പദ്ധതി, തൊഴിൽധിഷ്ഠിത വിദ്യാഭ്യാസം & 3H തത്വം",
+            "duration": "22:00",
+            "youtubeId": "Axf_IV07DN0",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ബേസിക് എഡ്യൂക്കേഷൻ (നയി താലിം - 1937): തൊഴിലിലൂടെയും ഉൽപ്പാദനക്ഷമമായ പ്രവർത്തനങ്ങളിലൂടെയും കുട്ടിയെ സ്വയംപര്യാപ്തനാക്കുന്ന പദ്ധതി.",
+              "3H സമന്വയം: തലച്ചോറ് (Head), ഹൃദയം (Heart), കൈ (Hand) എന്നിവയുടെ സമീകൃത വികാസം.",
+              "മാതൃഭാഷാ മാധ്യമം: 7 മുതൽ 14 വയസ്സുവരെയുള്ള സൗജന്യ നിർബന്ധിത പ്രാഥമിക വിദ്യാഭ്യാസം മാതൃഭാഷയിൽ."
+            ],
+            "examTip": "Calicut University Focus: 'Discuss the core principles and relevance of Mahatma Gandhi\\'s Wardha Scheme (Nai Talim) in modern India'."
+          },
+          {
+            "chapterNumber": "Chapter 07",
+            "title": "അധ്യാപനത്തെ അർത്ഥവത്താക്കുന്ന വിദ്യാഭ്യാസ തത്വശാസ്ത്രം (Philosophy of Education: Making Teaching Meaningful)",
+            "chapter": "Academic Hub Special · ജോൺ ഡ്യൂയി, പ്രാഗ്മാറ്റിസം & അനുഭവങ്ങളിലൂടെയുള്ള പഠനം",
+            "duration": "18:40",
+            "youtubeId": "dhlP7Epca6I",
+            "language": "Malayalam",
+            "studyPoints": [
+              "പ്രായോഗികവാദം (Pragmatism - John Dewey): ചെയ്ത് പഠിക്കുക (Learning by Doing), ജീവിതം തന്നെയാണ് വിദ്യാഭ്യാസം.",
+              "ജനാധിപത്യവും വിദ്യാഭ്യാസവും: ക്ലാസ് മുറികൾ ജനാധിപത്യ സമൂഹത്തിന്റെ ഒരു ലഘുരൂപമായി പ്രവർത്തിക്കണം.",
+              "പ്രശ്നപരിഹാര രീതി (Problem-Solving Method): നിത്യജീവിതത്തിലെ പ്രശ്നങ്ങൾ പരിഹരിക്കാൻ കുട്ടികളെ പ്രാപ്തരാക്കുന്ന വിദ്യാഭ്യാസം."
+            ],
+            "examTip": "Calicut University Focus: 'Examine John Dewey\\'s Pragmatism and its contribution to child-centered education and learning by doing'."
+          },
+          {
+            "chapterNumber": "Chapter 08",
+            "title": "യഥാർത്ഥ വിദ്യാഭ്യാസം പരീക്ഷകൾക്കപ്പുറമുള്ള ജീവിതം (Real Education: Beyond Exams)",
+            "chapter": "Academic Hub Special · ജിദ്ദു കൃഷ്ണമൂർത്തി, വിജ്ഞാന വിപ്ലവം & വിമർശനാത്മക ചിന്ത",
+            "duration": "19:50",
+            "youtubeId": "QBLrna7iE1o",
+            "language": "Malayalam",
+            "studyPoints": [
+              "പരീക്ഷാകേന്ദ്രീകൃത സമ്പ്രദായത്തോടുള്ള വിയോജിപ്പ്: വെറും ഓർമ്മശക്തി അളക്കുന്നതിന് പകരം വിമർശനാത്മക ചിന്തയും സർഗ്ഗാത്മകതയും വളർത്തൽ.",
+              "ജിദ്ദു കൃഷ്ണമൂർത്തിയുടെ ദർശനം: ഭയമില്ലാത്ത മനസ്സും, സ്വന്തം മനസ്സിനെത്തന്നെ നിരീക്ഷിക്കാനുള്ള ഉൾക്കാഴ്ചയും.",
+              "മാനവിക മൂല്യങ്ങളും പരിസ്ഥിതി ബോധവും: ആഗോള പൗരബോധവും സാമൂഹിക പ്രതിബദ്ധതയുമുള്ള തലമുറയെ സൃഷ്ടിക്കൽ."
+            ],
+            "examTip": "University Focus: 'Discuss Jiddu Krishnamurti\\'s perspective on education as freedom from fear and conditioning'."
           }
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 8
   },
   "development-issues-in-indian-economy": {
     "name": "Development Issues in Indian Economy",
@@ -770,19 +861,26 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 01: ചരിത്ര പശ്ചാത്തലങ്ങളും വികസന മാതൃകകളും (HISTORICAL BACKGROUND & DEVELOPMENT MODELS)",
         "videos": [
           {
-            "chapterNumber": "MODULE 03",
+            "chapterNumber": "Module 01 Masterclass",
             "title": "Path Dependence and Crisis: India's Economy, 1700–1991",
-            "chapter": "MODULE 03: Economic Crises & Institutional Reforms",
+            "chapter": "Colonial Legacy, Structural Stagnation & 1991 Economic Reforms",
             "duration": "13:35",
             "youtubeId": "WYtOkVjW_Wo",
-            "language": "English"
+            "language": "English",
+            "studyPoints": [
+              "Colonial Economic Extraction: Analysis of India's de-industrialization and wealth drainage from 1700 to 1947.",
+              "Post-Independence Nehruvian-Mahalanobis Strategy: Heavy industrialization, import substitution, and public sector primacy.",
+              "Path Dependence to Crisis: Structural rigidities, fiscal deficits, and balance of payments vulnerabilities precipitating the 1991 reforms."
+            ],
+            "examTip": "University Exam Tip: 'Explain Path Dependence in India\\'s economic history and how colonial extraction shaped post-independence policy choices'."
           },
           {
             "chapterNumber": "Chapter 01",
             "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയുടെ ചരിത്രവും വികസന നയങ്ങളും (History & Development Policies of Indian Economy)",
             "chapter": "Academic Hub Special · കൊളോണിയൽ ചോർച്ച, നെഹ്റുവിയൻ സോഷ്യലിസം & പഞ്ചവത്സര പദ്ധതികൾ",
-            "duration": "18",
-            "youtubeId": "",
+            "duration": "18:45",
+            "youtubeId": "AI8LbBq33xI",
+            "language": "Malayalam",
             "studyPoints": [
               "കൊളോണിയൽ സമ്പദ്‌വ്യവസ്ഥ & ചോർച്ചാ സിദ്ധാന്തം (Drain of Wealth): ദാദാഭായ് നവറോജി വിശദീകരിച്ചതുപോലെ ബ്രിട്ടീഷ് ഭരണത്തിൽ ഇന്ത്യയുടെ ദേശീയ സമ്പത്തും വിഭവങ്ങളും തിരിച്ചുനൽകാതെ ബ്രിട്ടനിലേക്ക് കടത്തപ്പെട്ടു.",
               "പരമ്പരാഗത വ്യവസായങ്ങളുടെ തകർച്ച (De-industrialization): ഇന്ത്യയുടെ വിശ്വപ്രസിദ്ധമായ കരകൗശല-കൈത്തറി മേഖലകൾ തകർക്കപ്പെടുകയും രാജ്യം ബ്രിട്ടീഷ് ഫാക്ടറികളുടെ അസംസ്‌കൃത വസ്തു ശേഖരണശാലയായി മാറുകയും ചെയ്തു.",
@@ -790,14 +888,15 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഹരിതവിപ്ലവം (Green Revolution): ഭക്ഷ്യ സ്വയംപര്യാപ്തത കൈവരിക്കാൻ ഉയർന്ന വിളവ് തരുന്ന വിത്തുകളും (HYV seeds) രാസവളങ്ങളും ജലസേചനവും സംയോജിപ്പിച്ച സാങ്കേതിക മുന്നേറ്റം.",
               "സമ്മിശ്ര സമ്പദ്‌വ്യവസ്ഥ (Mixed Economy): പൊതുമേഖലയ്ക്ക് പ്രധാന പങ്കും ഒപ്പം സ്വകാര്യ മേഖലയ്ക്ക് നിയന്ത്രിത പങ്കാളിത്തവും നൽകിയ ഇന്ത്യൻ വികസന മാതൃക."
             ],
-            "examTip": "Calicut University Focus: 'Explain Dadabhai Naoroji's Drain of Wealth theory and evaluate the achievements of the Mahalanobis strategy in Indian Five-Year Plans'."
+            "examTip": "Calicut University Focus: 'Explain Dadabhai Naoroji\\'s Drain of Wealth theory and evaluate the achievements of the Mahalanobis strategy in Indian Five-Year Plans'."
           },
           {
             "chapterNumber": "Chapter 02",
             "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയിലെ വൈരുദ്ധ്യങ്ങളും വികസന വെല്ലുവിളികളും (Contradictions & Development Challenges)",
             "chapter": "Academic Hub Special · വളർച്ചയും മുരടിപ്പും, തൊഴിൽരഹിത വളർച്ച & മേഖലാ അസന്തുലിതാവസ്ഥ",
-            "duration": "19",
-            "youtubeId": "",
+            "duration": "19:12",
+            "youtubeId": "zyLCEdHV08U",
+            "language": "Malayalam",
             "studyPoints": [
               "ജിഡിപി വളർച്ചയും സാമൂഹിക യാഥാർത്ഥ്യങ്ങളും: ഉയർന്ന ജിഡിപി വളർച്ച രേഖപ്പെടുത്തുമ്പോഴും പട്ടിണിയും പോഷകാഹാരക്കുറവും കുറയാത്ത ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയുടെ അടിസ്ഥാന വൈരുദ്ധ്യം.",
               "തൊഴിൽരഹിത വളർച്ച (Jobless Growth): സേവന മേഖലയും ടെക്നോളജിയും നയിച്ച വളർച്ചയിൽ ഉൽപ്പാദനം വർധിച്ചെങ്കിലും ആവശ്യത്തിന് പുതിയ തൊഴിലവസരങ്ങൾ സൃഷ്ടിക്കപ്പെടാത്ത പ്രതിഭാസം.",
@@ -816,8 +915,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 03",
             "title": "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയവും പഠന കമ്മിറ്റികളും (Poverty Estimation & Study Committees in India)",
             "chapter": "Academic Hub Special · ദണ്ഡേക്കർ-രഥ്, അലഗ്, ലക്ഡാവാല, തെണ്ടുൽക്കർ & രംഗരാജൻ കമ്മിറ്റികൾ",
-            "duration": "20",
-            "youtubeId": "",
+            "duration": "20:05",
+            "youtubeId": "0YWeoTqkcy8",
+            "language": "Malayalam",
             "studyPoints": [
               "ദാരിദ്ര്യരേഖ (Poverty Line): അടിസ്ഥാന ജീവിതച്ചെലവ് വഹിക്കാനും കുറഞ്ഞ കലോറി ഭക്ഷണം നേടാനും ആവശ്യമായ പ്രതിമാസ ആളോഹരി ഉപഭോഗ ചെലവ് (MPCE).",
               "ദണ്ഡേക്കർ & രഥ് പഠനം (1971): ഗ്രാമീണ-നഗര ജനതയ്ക്ക് പ്രതിദിനം 2250 കലോറി എന്ന മാനദണ്ഡം ആദ്യമായി മുന്നോട്ടുവെച്ച ചരിത്രപരമായ പഠനം.",
@@ -831,8 +931,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 04",
             "title": "ദാരിദ്ര്യരേഖ മുതൽ ബഹുമുഖ ദാരിദ്ര്യ സൂചിക വരെ (From Poverty Line to Multidimensional Poverty Index - MPI)",
             "chapter": "Academic Hub Special · കലോറി മാനദണ്ഡം, സുരേഷ് തെണ്ടുൽക്കർ പരിഷ്കാരം & ആഗോള MPI സൂചിക",
-            "duration": "17",
-            "youtubeId": "",
+            "duration": "17:30",
+            "youtubeId": "LuLwWWJsLbA",
+            "language": "Malayalam",
             "studyPoints": [
               "സുരേഷ് തെണ്ടുൽക്കർ കമ്മിറ്റി (2009): കലോറി മാനദണ്ഡത്തിന് പകരം വിദ്യാഭ്യാസം, ആരോഗ്യം, പോഷകാഹാരം, വസ്ത്രം എന്നിവ ഉൾപ്പെടുത്തി നഗര-ഗ്രാമ അന്തരം കുറച്ച പരിഷ്കാരം.",
               "സി. രംഗരാജൻ കമ്മിറ്റി (2014): പോഷകാംശങ്ങളും (പ്രോട്ടീൻ, ഫാറ്റ്) പ്രതിദിന ചെലവും (ഗ്രാമങ്ങളിൽ ₹32, നഗരങ്ങളിൽ ₹47) പരിഗണിച്ച ആധുനിക ദാരിദ്ര്യരേഖ.",
@@ -851,8 +952,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 05",
             "title": "സ്വർണ്ണം പണയം വെച്ച ഇന്ത്യയുടെ സാമ്പത്തിക ചരിത്രം (Economic History of India: The 1991 BoP Crisis)",
             "chapter": "Academic Hub Special · വിദേശനാണ്യ ശേഖര തകർച്ച, സ്വർണ്ണം വിമാനത്തിൽ കയറ്റിയ കഥ & 1991 BoP പ്രതിസന്ധി",
-            "duration": "21",
-            "youtubeId": "",
+            "duration": "21:15",
+            "youtubeId": "AxS8iSia8Uk",
+            "language": "Malayalam",
             "studyPoints": [
               "1991-ലെ ബാലൻസ് ഓഫ് പേയ്‌മെന്റ് പ്രതിസന്ധി (BoP Crisis): വെറും രണ്ടാഴ്ചത്തെ ഇറക്കുമതിക്ക് മാത്രമുള്ള (1.2 ബില്യൺ ഡോളർ) വിദേശനാണ്യ ശേഖരത്തിലേക്ക് രാജ്യം കൂപ്പുകുത്തിയ സാഹചര്യം.",
               "ഗൾഫ് യുദ്ധവും ക്രൂഡ് ഓയിൽ ആഘാതവും: എണ്ണവില കുതിച്ചുയർന്നതും ഗൾഫിൽ നിന്നുള്ള പ്രവാസി പണവരവ് നിലച്ചതും കറന്റ് അക്കൗണ്ട് കമ്മി വൻതോതിൽ വർധിപ്പിച്ചു.",
@@ -866,8 +968,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 06",
             "title": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development & Economic Institutions)",
             "chapter": "Academic Hub Special · അമർത്യ സെന്നിന്റെ ക്ഷേമ സിദ്ധാന്തം, പ്ലാനിംഗ് കമ്മീഷൻ vs നീതി ആയോഗ് & സാമ്പത്തിക സ്ഥാപനങ്ങൾ",
-            "duration": "21",
-            "youtubeId": "",
+            "duration": "21:40",
+            "youtubeId": "_AH-L2-hUdw",
+            "language": "Malayalam",
             "studyPoints": [
               "സാമ്പത്തിക വളർച്ച vs യഥാർത്ഥ വികസനം (Growth vs Development): ജിഡിപി നിരക്കുകൾ ഉയരുന്നതു മാത്രമല്ല, മനുഷ്യരുടെ ജീവിതഗുണനിലവാരവും അവസരങ്ങളും വർധിക്കുന്നതാണ് യഥാർത്ഥ വികസനം.",
               "അമർത്യ സെന്നിന്റെ ശേഷി വികസന സിദ്ധാന്തം (Capability Approach): വിദ്യാഭ്യാസം, ആരോഗ്യം, വ്യക്തിസ്വാതന്ത്ര്യം എന്നിവ വികസിപ്പിച്ച് മനുഷ്യർക്ക് ഇഷ്ടമുള്ള ജീവിതം നയിക്കാനുള്ള ശേഷി നൽകലാണ് വികസനം.",
@@ -875,12 +978,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "റിസർവ് ബാങ്ക് ഓഫ് ഇന്ത്യയും പണനയവും (Monetary Policy & RBI): പണപ്പെരുപ്പം നിയന്ത്രിക്കാനും സാമ്പത്തിക വളർച്ചയെ ഉത്തേജിപ്പിക്കാനും പലിശ നിരക്കുകൾ ക്രമീകരിക്കുന്ന കേന്ദ്ര ബാങ്കിന്റെ ദൗത്യം.",
               "ധനകാര്യ കമ്മീഷൻ (Finance Commission): കേന്ദ്ര-സംസ്ഥാന നികുതി വിഹിതം നീതിപൂർവ്വം പങ്കിടുന്ന ഭരണഘടനാപരമായ സംവിധാനം."
             ],
-            "examTip": "University Exam Tip: 'Differentiate between Economic Growth and Development in the light of Amartya Sen's Capability Approach. Contrast Planning Commission with NITI Aayog'."
+            "examTip": "University Exam Tip: 'Differentiate between Economic Growth and Development in the light of Amartya Sen\\'s Capability Approach. Contrast Planning Commission with NITI Aayog'."
           }
         ]
       }
     ],
-    "totalVideos": 1
+    "totalVideos": 7
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",
@@ -889,38 +992,75 @@ window.VOICE_EXPLANATIONS_DATA = {
     "tag": "Minor Course",
     "modules": [
       {
-        "moduleName": "MODULE 01: INTRODUCTION TO ETHICS",
+        "moduleName": "MODULE 01: INTRODUCTION TO ETHICS & DHARMASHASTRA",
         "videos": [
           {
+            "chapterNumber": "Module 01 Master",
+            "title": "എത്തിക്സ് സമഗ്ര സംഗ്രഹം (Fundamentals of Ethics: Complete 5-Module Overview)",
+            "chapter": "Academic Hub Special · ധാർമ്മിക തത്വങ്ങൾ, സിദ്ധാന്തങ്ങൾ & പ്രായോഗിക എത്തിക്സ് സമഗ്ര റിവിഷൻ",
+            "duration": "18:30",
+            "youtubeId": "KsDe2ZkHrro",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ധാർമ്മികതയുടെ സ്വഭാവവും വ്യാപ്തിയും: ശരിയും തെറ്റും, നീതിയും അനീതിയും തമ്മിലുള്ള വ്യത്യാസം വ്യവസ്ഥാപിതമായി അപഗ്രഥിക്കുന്ന തത്ത്വശാസ്ത്ര ശാഖ.",
+              "ധർമ്മശാസ്ത്രവും പുരുഷാർത്ഥങ്ങളും: ഭാരതീയ ചിന്തയിലെ ധർമ്മം, അർത്ഥം, കാമം, മോക്ഷം എന്നീ ചതുർവിധ പുരുഷാർത്ഥങ്ങളും ധാർമ്മിക ജീവിതവും.",
+              "സദ്ഗുണങ്ങളും സിദ്ധാന്തങ്ങളും: പ്ലേറ്റോയുടെയും അരിസ്റ്റോട്ടിലിന്റെയും കാർഡിനൽ സദ്ഗുണങ്ങൾ, കാന്റിയൻ ഡിയോന്റോളജി, യൂട്ടിലിറ്റേറിയനിസം.",
+              "പ്രായോഗിക എത്തിക്സ് മേഖലകൾ: ബയോഎത്തിക്സ്, എൻവയോൺമെന്റൽ എത്തിക്സ്, സൈബർ എത്തിക്സ് എന്നിവയിലെ സമകാലിക വെല്ലുവിളികൾ."
+            ],
+            "examTip": "Calicut University Focus: 'Explain the nature, scope and branches of Ethics with an outline of classical and applied moral theories'."
+          },
+          {
             "chapterNumber": "Chapter 01",
-            "title": "Introduction to Ethics: Nature & Scope",
-            "chapter": "Morality, Customs, Law and Philosophy of Right Action",
-            "duration": "20",
-            "youtubeId": ""
+            "title": "ധർമ്മശാസ്ത്രം ആമുഖവും തത്വങ്ങളും (Introduction to Dharmashastra)",
+            "chapter": "Academic Hub Special · ഋതം, ധർമ്മം, പുരുഷാർത്ഥങ്ങൾ & ഭാരതീയ ധാർമ്മിക ദർശനങ്ങൾ",
+            "duration": "15:45",
+            "youtubeId": "s3xGsLMCY1o",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ഋതവും ധർമ്മവും (Rta & Dharma): പ്രാപഞ്ചിക ക്രമം (Cosmic Order), ധാർമ്മിക ക്രമം (Moral Order), സാമൂഹിക ഉത്തരവാദിത്തങ്ങൾ എന്നിവയുടെ സമന്വയം.",
+              "വർണ്ണാശ്രമ ധർമ്മങ്ങൾ: വ്യക്തിയുടെ ജീവിതഘട്ടങ്ങളുമായി (ബ്രഹ്മచర్യം, ഗൃഹസ്ഥം, വാനപ്രസ്ഥം, സന്യാസം) ബന്ധപ്പെട്ട കടമകൾ.",
+              "മൂന്ന് ഋണങ്ങൾ (Three Debts): ദേവഋണം, ഋഷിഋണം, പിതൃഋണം എന്നിവ തീർക്കാനുള്ള സാമൂഹിക ബാധ്യതകൾ."
+            ],
+            "examTip": "University Exam Tip: 'Critically examine the concept of Dharma and Purusharthas in Indian moral philosophy'."
           }
         ]
       },
       {
-        "moduleName": "MODULE 02: CONCEPTS OF ETHICS",
+        "moduleName": "MODULE 02: CONCEPTS OF ETHICS & VIRTUES",
         "videos": [
           {
             "chapterNumber": "Chapter 02",
-            "title": "Concepts of Ethics & Virtues",
-            "chapter": "Cardinal Virtues, Moral Obligation & Conscience",
-            "duration": "22",
-            "youtubeId": ""
+            "title": "ധാർമ്മിക സങ്കൽപ്പങ്ങളും സദ്ഗുണങ്ങളും (Concepts of Ethics & Virtues)",
+            "chapter": "Academic Hub Special · കാർഡിനൽ സദ്ഗുണങ്ങൾ, ധാർമ്മിക ബാധ്യത & മനഃസാക്ഷി",
+            "duration": "16:50",
+            "youtubeId": "Zdn4oB4SUjY",
+            "language": "Malayalam",
+            "studyPoints": [
+              "കാർഡിനൽ സദ്ഗുണങ്ങൾ (Cardinal Virtues): പ്ലേറ്റോ മുന്നോട്ടുവെച്ച വിവേകം (Prudence), ധൈര്യം (Fortitude), മിതത്വം (Temperance), നീതി (Justice).",
+              "ധാർമ്മിക ബാധ്യത (Moral Obligation): ബാഹ്യമായ നിയമങ്ങൾക്കപ്പുറം സ്വന്തം കടമ തിരിച്ചറിഞ്ഞ് പ്രവർത്തിക്കാനുള്ള ആന്തരിക പ്രേരണ.",
+              "മനഃസാക്ഷി (Conscience): നന്മയും തിന്മയും വേർതിരിച്ചറിയാനുള്ള മനുഷ്യന്റെ ധാർമ്മിക വിധികർത്താവ് (Moral Guide).",
+              "നന്മയും ഉപകാരവും (Good and Right): ശരിയായ പ്രവൃത്തിയും പരമമായ നന്മയും (Summum Bonum) തമ്മിലുള്ള ദാർശനിക ബന്ധം."
+            ],
+            "examTip": "Calicut University Focus: 'Discuss the four Cardinal Virtues and evaluate the authority of Conscience as a moral standard'."
           }
         ]
       },
       {
-        "moduleName": "MODULE 03: ETHICAL THEORIES",
+        "moduleName": "MODULE 03: ETHICAL THEORIES (NORMATIVE FRAMEWORKS)",
         "videos": [
           {
             "chapterNumber": "Chapter 03",
-            "title": "Ethical Theories: Normative Frameworks",
-            "chapter": "Hedonism, Utilitarianism (Bentham & Mill) & Kantian Deontology",
+            "title": "ധാർമ്മിക സിദ്ധാന്തങ്ങൾ (Ethical Theories: Normative Frameworks)",
+            "chapter": "ഹെഡോണിസം, യൂട്ടിലിറ്റേറിയനിസം (ജെറമി ബെന്താം & ജെ.എസ്. മിൽ) & കാന്റിയൻ ഡിയോന്റോളജി",
             "duration": "28",
-            "youtubeId": ""
+            "youtubeId": "",
+            "studyPoints": [
+              "സുഖവാദം (Hedonism): ആനന്ദമാണ് ജീവിതത്തിന്റെ പരമമായ ലക്ഷ്യമെന്ന സിദ്ധാന്തം (സൈക്കോളജിക്കൽ vs എത്തിക്കൽ ഹെഡോണിസം).",
+              "ഉപയോഗിതാവാദം (Utilitarianism): 'ഏറ്റവും കൂടുതൽ ആളുകൾക്ക് ഏറ്റവും കൂടുതൽ ആനന്ദം' എന്ന ജെറമി ബെന്താമിന്റെ അളവ് സിദ്ധാന്തവും ജെ.എസ്. മില്ലിന്റെ ഗുണനിലവാര സിദ്ധാന്തവും.",
+              "ഇമ്മാനുവൽ കാന്റിന്റെ കർത്തവ്യവാദം (Kantian Deontology): ഫലങ്ങളിലല്ല, ശുദ്ധമായ ഇച്ഛാശക്തിയിലും (Good Will) കടമയിലുമാണ് (Duty for Duty's Sake) ധാർമ്മികത കുടികൊള്ളുന്നത്.",
+              "കാറ്റഗറിക്കൽ ഇംപെററ്റീവ് (Categorical Imperative): ഒരു സാർവ്വത്രിക നിയമമായി മാറാൻ തക്കവിധം മാത്രമേ ഓരോ പ്രവൃത്തിയും ചെയ്യാവൂ എന്ന കാന്റിയൻ കൽപ്പന."
+            ],
+            "examTip": "University Focus: 'Critically compare Bentham\\'s Quantitative Utilitarianism with Mill\\'s Qualitative Utilitarianism. Explain Kant\\'s Categorical Imperative'."
           }
         ]
       },
@@ -929,27 +1069,55 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 04",
-            "title": "Theories of Punishment",
-            "chapter": "Retributive, Deterrent, Preventive & Reformative Justifications",
+            "title": "ശിക്ഷാ സിദ്ധാന്തങ്ങൾ (Theories of Punishment)",
+            "chapter": "പ്രതികാര സിദ്ധാന്തം, ഭയപ്പെടുത്തൽ സിദ്ധാന്തം, പ്രതിരോധ സിദ്ധാന്തം & പരിഷ്കരണ സിദ്ധാന്തം",
             "duration": "22",
-            "youtubeId": ""
+            "youtubeId": "",
+            "studyPoints": [
+              "പ്രതികാര സിദ്ധാന്തം (Retributive Theory): 'കണ്ണിനു പകരം കണ്ണ്' - ചെയ്ത കുറ്റത്തിന് ആനുപാതികമായ ശിക്ഷ കുറ്റവാളി അനുഭവിക്കണം എന്ന നീതിശാസ്ത്രം.",
+              "ഭയപ്പെടുത്തൽ സിദ്ധാന്തം (Deterrent Theory): ശിക്ഷ നൽകുന്നതിലൂടെ ഭാവിയിൽ മറ്റുള്ളവർ കുറ്റം ചെയ്യാതിരിക്കാൻ സമൂഹത്തിൽ ഭയം ഉണ്ടാക്കുക.",
+              "പ്രതിരോധ സിദ്ധാന്തം (Preventive Theory): കുറ്റവാളിയെ തടവിലാക്കുകയോ വധശിക്ഷ നൽകുകയോ ചെയ്തുകൊണ്ട് സമൂഹത്തിന് ദ്രോഹം വരുത്തുന്നത് തടയുക.",
+              "പരിഷ്കരണ സിദ്ധാന്തം (Reformative Theory): കുറ്റവാളിയെ രോഗിയായി കണ്ട് മാനസിക പരിവർത്തനത്തിലൂടെ നല്ലൊരു പൗരനാക്കി മാറ്റുക (ആധുനിക നീതിശാസ്ത്രം മുൻഗണന നൽകുന്നത്)."
+            ],
+            "examTip": "University Focus: 'Analyze the ethical justifications of the Reformative Theory of punishment versus the Retributive Theory'."
           }
         ]
       },
       {
-        "moduleName": "MODULE 05: APPLIED ETHICS",
+        "moduleName": "MODULE 05: APPLIED ETHICS & PRACTICAL DILEMMAS",
         "videos": [
           {
             "chapterNumber": "Chapter 05",
-            "title": "Applied Ethics & Practical Dilemmas",
-            "chapter": "Bioethics, Environmental Ethics, Cyberethics & Media Norms",
-            "duration": "24",
-            "youtubeId": ""
+            "title": "പ്രായോഗിക എത്തിക്സും ധാർമ്മിക പ്രതിസന്ധികളും (Applied Ethics & Practical Dilemmas)",
+            "chapter": "Academic Hub Special · ബയോഎത്തിക്സ്, ദയാവധം, പരിസ്ഥിതി & സൈബർ എത്തിക്സ്",
+            "duration": "20:15",
+            "youtubeId": "9MW6gIEwWtU",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ബയോഎത്തിക്സ് (Bioethics): ദയാവധം (Active vs Passive Euthanasia), അബോർഷൻ, ജനിതക എഞ്ചിനീയറിംഗ് എന്നിവ ഉയർത്തുന്ന ചോദ്യങ്ങൾ.",
+              "പരിസ്ഥിതി എത്തിക്സ് (Environmental Ethics): പ്രകൃതിയും ജീവജാലങ്ങളും മനുഷ്യന്റെ ഉപഭോഗത്തിനു മാത്രമുള്ളതല്ലെന്ന ഇക്കോസെൻട്രിക് വീക്ഷണം.",
+              "സൈബർ എത്തിക്സ് (Cyberethics): ഡിജിറ്റൽ യുഗത്തിലെ വ്യക്തിഗത വിവര സുരക്ഷ, നിർമ്മിത ബുദ്ധിയുടെ നിഷ്പക്ഷത, പകർപ്പവകാശ സംരക്ഷണം."
+            ],
+            "examTip": "Calicut University Focus: 'Discuss ethical dilemmas in Bioethics with special reference to Euthanasia and Surrogacy'."
+          },
+          {
+            "chapterNumber": "Module 5 Masterclass",
+            "title": "Applied Ethics: From Casuistry to Real-World Dilemmas",
+            "chapter": "Casuistry, Professional Ethics, Bioethics & Tech Ethics",
+            "duration": "14:20",
+            "youtubeId": "6x5y4ZW2UA0",
+            "language": "English",
+            "studyPoints": [
+              "Casuistry & Case-Based Moral Reasoning: Resolving complex real-world dilemmas by evaluating paradigm cases rather than rigid dogmas.",
+              "Bioethical Four Principles: Autonomy, Non-maleficence, Beneficence, and Justice (Beauchamp and Childress framework).",
+              "Technological & Environmental Responsibility: Obligations toward digital privacy, AI alignment, and ecological preservation."
+            ],
+            "examTip": "Calicut University Focus: 'Explain how Casuistry serves as a bridge between abstract moral theories and applied real-world decisions'."
           }
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 5
   },
   "microeconomic-foundation": {
     "name": "Microeconomic Foundation",
@@ -1365,10 +1533,10 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Physiography & Rivers)",
-            "chapter": "പശ്ചിമഘട്ടം, കടലോരം, കാലവർഷം & ചരിത്രപരമായ രൂപീകരണം",
-            "duration": "22",
-            "youtubeId": ""
+            "title": "ഭൂപ്രകൃതി എഴുതിയ കേരളത്തിന്റെ ചരിത്രം (History of Kerala Written by Geography)",
+            "chapter": "Academic Hub Special · ഭൂമിശാസ്ത്രപരമായ സവിശേഷതകളും ചരിത്ര സ്വാധീനവും",
+            "duration": "19:35",
+            "youtubeId": "Ie5Iu69-cKQ"
           }
         ]
       },
@@ -1435,6 +1603,6 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 1
   }
 };
