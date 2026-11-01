@@ -1014,7 +1014,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ധർമ്മശാസ്ത്രത്തിന്റെ നാല് പ്രധാന ശാഖകൾ: മെറ്റാ-എത്തിക്സ് (Meta-ethics), നോർമേറ്റീവ് എത്തിക്സ് (Normative Ethics), പ്രായോഗിക എത്തിക്സ് (Applied Ethics), വിവരണാത്മക എത്തിക്സ് (Descriptive Ethics).",
               "സ്വതന്ത്ര ഇച്ഛയും ധാർമ്മിക ബാധ്യതയും (Free Will & Moral Responsibility): പ്രവൃത്തികൾ തിരഞ്ഞെടുക്കാനുള്ള മനുഷ്യന്റെ വിവേകവും സ്വന്തം കർമ്മങ്ങളിലുള്ള ഉത്തരവാദിത്തവും."
             ],
-            "examTip": "Calicut University Focus: 'Explain the nature, scope, and principal branches of Ethics with special emphasis on Free Will and Moral Responsibility'."
+            "examTip": "Calicut University Focus: 'Explain the nature, scope, and principal branches of Ethics with special emphasis on Free Will and Moral Responsibility'.",
+            "thumbnail": "/thumbnails/ethics_thumb_01.jpg"
           },
           {
             "chapterNumber": "Module 01 Masterclass",
@@ -1029,7 +1030,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ചതുർവിധ പുരുഷാർത്ഥങ്ങൾ: ധർമ്മം, അർത്ഥം, കാമം, മോക്ഷം എന്നിവയിലൂടെയുള്ള പൂർണ്ണ മനുഷ്യജീവിത സാക്ഷാത്കാരം.",
               "മൂന്ന് ഋണങ്ങൾ (Three Debts): ദേവഋണം, ഋഷിഋണം, പിതൃഋണം എന്നിവ തീർക്കാനുള്ള സാമൂഹിക-ധാർമ്മിക കടമകൾ."
             ],
-            "examTip": "University Exam Tip: 'Critically examine the concept of Dharma and Purusharthas in Indian moral philosophy'."
+            "examTip": "University Exam Tip: 'Critically examine the concept of Dharma and Purusharthas in Indian moral philosophy'.",
+            "thumbnail": "/thumbnails/ethics_thumb_02.jpg"
           }
         ]
       },
@@ -1049,7 +1051,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "നാല് കാർഡിനൽ സദ്ഗുണങ്ങൾ (Cardinal Virtues): പ്ലേറ്റോയും അരിസ്റ്റോട്ടിലും മുന്നോട്ടുവെച്ച വിവേകം (Prudence), ധൈര്യം (Fortitude), മിതത്വം (Temperance), നീതി (Justice).",
               "അവകാശങ്ങളും കടമകളും തമ്മിലുള്ള പരസ്പരബന്ധം (Correlation of Rights and Duties): ഓരോ വ്യക്തിയുടെയും അവകാശം മറ്റുള്ളവരുടെ ധാർമ്മിക കടമയായി മാറുന്നു."
             ],
-            "examTip": "University Exam Tip: 'Explain Aristotle's Doctrine of the Mean with suitable examples and elaborate on the four Cardinal Virtues'."
+            "examTip": "University Exam Tip: 'Explain Aristotle's Doctrine of the Mean with suitable examples and elaborate on the four Cardinal Virtues'.",
+            "thumbnail": "/thumbnails/ethics_thumb_03.jpg"
           },
           {
             "chapterNumber": "Chapter 03",
@@ -1064,7 +1067,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "മനസ്സാക്ഷിയുടെ ശബ്ദം (Conscience as Moral Guide): ശരിതെറ്റുകൾ തിരിച്ചറിയാനുള്ള മനുഷ്യന്റെ ആന്തരിക ബോധവും മനസ്സാക്ഷിയുടെ സാധുതയും പരിമിതികളും.",
               "നന്മയും നീതിയും (Goodness & Justice): വ്യക്തിഗത സദാചാരവും സാമൂഹിക ക്ഷേമവും തമ്മിലുള്ള ആരോഗ്യകരമായ സന്തുലിതാവസ്ഥ."
             ],
-            "examTip": "University Exam Tip: 'Discuss Conscience as the subjective norm of morality and evaluate its role in resolving ethical conflicts'."
+            "examTip": "University Exam Tip: 'Discuss Conscience as the subjective norm of morality and evaluate its role in resolving ethical conflicts'.",
+            "thumbnail": "/thumbnails/ethics_thumb_04.jpg"
           }
         ]
       },
@@ -1084,7 +1088,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കാന്റിന്റെ ഡിയോന്റോളജിക്കൽ എത്തിക്സ് (Kant's Deontology): അനന്തരഫലങ്ങൾ പരിഗണിക്കാതെ സ്വന്തം കടമ പൂർണ്ണ നിസ്വാർത്ഥതയോടെ ചെയ്യുക ('Duty for Duty's Sake').",
               "കാറ്റഗോറിക്കൽ ഇംപറേറ്റീവ് (Categorical Imperative): സാർവ്വലൗകിക നിയമമാക്കാൻ കഴിയുന്ന പരമോന്നത ധാർമ്മിക ആജ്ഞകൾ മാത്രം അനുസരിക്കുക."
             ],
-            "examTip": "Calicut University Focus: 'Distinguish between Teleological and Deontological theories with special reference to Kant's Categorical Imperative'."
+            "examTip": "Calicut University Focus: 'Distinguish between Teleological and Deontological theories with special reference to Kant's Categorical Imperative'.",
+            "thumbnail": "/thumbnails/ethics_thumb_05.jpg"
           },
           {
             "chapterNumber": "Chapter 05",
@@ -1099,7 +1104,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ജോൺ സ്റ്റുവർട്ട് മില്ലിന്റെ ഗുണപരമായ തിരുത്തൽ (Qualitative Utilitarianism): 'തൃപ്തനായ പന്നിയാകുന്നതിനേക്കാൾ നല്ലത് അതൃപ്തനായ സോക്രട്ടീസ് ആകുന്നതാണ്' - ഉന്നത ബൗദ്ധിക സുഖങ്ങൾക്ക് മുൻഗണന.",
               "ആക്റ്റ് vs റൂൾ യൂട്ടിലിറ്റേറിയനിസം (Act vs Rule Utilitarianism): വ്യക്തിഗത പ്രവൃത്തികളുടെ ഫലം കണക്കാക്കുന്നതും പൊതുവായ നൈതിക നിയമങ്ങൾ പാലിക്കുന്നതും."
             ],
-            "examTip": "University Exam Tip: 'Critically evaluate Utilitarianism comparing Bentham's quantitative hedonism with Mill's qualitative refinement'."
+            "examTip": "University Exam Tip: 'Critically evaluate Utilitarianism comparing Bentham's quantitative hedonism with Mill's qualitative refinement'.",
+            "thumbnail": "/thumbnails/ethics_thumb_06.jpg"
           }
         ]
       },
@@ -1120,7 +1126,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "പ്രതിരോധ സിദ്ധാന്തം (Preventive Theory): കുറ്റവാളിയെ സമൂഹത്തിൽ നിന്ന് മാറ്റിനിർത്തുക വഴി (തടവ് അല്ലെങ്കിൽ വധശിക്ഷ) കുറ്റകൃത്യങ്ങൾ തടയുക.",
               "പരിഷ്കരണ സിദ്ധാന്തം (Reformative Theory): കുറ്റവാളിയെ മാനസിക പരിവർത്തനത്തിലൂടെ നല്ലൊരു പൗരനാക്കി മാറ്റുക (ആധുനിക നീതിശാസ്ത്രം ഏറ്റവും കൂടുതൽ മുൻഗണന നൽകുന്ന സമീപനം)."
             ],
-            "examTip": "Calicut University Focus: 'Critically examine the various Theories of Punishment and justify why the Reformative Theory is favored in modern jurisprudence'."
+            "examTip": "Calicut University Focus: 'Critically examine the various Theories of Punishment and justify why the Reformative Theory is favored in modern jurisprudence'.",
+            "thumbnail": "/thumbnails/ethics_thumb_07.jpg"
           }
         ]
       },
@@ -1140,7 +1147,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഡീപ് ഇക്കോളജി (Deep Ecology - Arne Naess): പ്രകൃതി മനുഷ്യന്റെ ആവശ്യങ്ങൾക്ക് മാത്രമുള്ളതല്ല, സമസ്ത ജീവജാലങ്ങൾക്കും ഭൂമിയിൽ തുല്യ അവകാശമുണ്ട്.",
               "ആന്ത്രോപോസെൻട്രിക് vs ഇക്കോസെൻട്രിക് വീക്ഷണം (Anthropocentric vs Ecocentric): മനുഷ്യകേന്ദ്രീകൃത ചൂഷണത്തിനെതിരെയുള്ള പരിസ്ഥിതി നൈതികത."
             ],
-            "examTip": "Calicut University Focus: 'Discuss ethical dilemmas surrounding Euthanasia and explain the core tenets of Deep Ecology'."
+            "examTip": "Calicut University Focus: 'Discuss ethical dilemmas surrounding Euthanasia and explain the core tenets of Deep Ecology'.",
+            "thumbnail": "/thumbnails/ethics_thumb_08.jpg"
           },
           {
             "chapterNumber": "Chapter 08",
@@ -1155,7 +1163,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ട്രോളി പ്രശ്നവും ധാർമ്മിക പ്രതിസന്ധികളും (Trolley Problem & Moral Dilemmas): രണ്ട് തെറ്റുകളിൽ നിന്ന് കുറഞ്ഞ ദോഷമുള്ളത് തിരഞ്ഞെടുക്കേണ്ടി വരുന്ന അവസ്ഥകൾ.",
               "പ്രൊഫഷണൽ, മെഡിക്കൽ & സൈബർ എത്തിക്സ്: തൊഴിൽ മേഖലകളിലും ഡിജിറ്റൽ യുഗത്തിലും മനസ്സാക്ഷിയോടെയുള്ള തീരുമാനങ്ങൾ."
             ],
-            "examTip": "Calicut University Focus: 'Explain how Casuistry and Ethical frameworks help resolve modern moral dilemmas such as the Trolley Problem'."
+            "examTip": "Calicut University Focus: 'Explain how Casuistry and Ethical frameworks help resolve modern moral dilemmas such as the Trolley Problem'.",
+            "thumbnail": "/thumbnails/ethics_thumb_09.jpg"
           },
           {
             "chapterNumber": "Module 5 Masterclass",
@@ -1170,12 +1179,13 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Bioethical Four Principles: Autonomy, Non-maleficence, Beneficence, and Justice (Beauchamp and Childress framework).",
               "Technological & Environmental Responsibility: Obligations toward digital privacy, AI alignment, and ecological preservation."
             ],
-            "examTip": "Calicut University Focus: 'Explain how Casuistry serves as a bridge between abstract moral theories and applied real-world decisions'."
+            "examTip": "Calicut University Focus: 'Explain how Casuistry serves as a bridge between abstract moral theories and applied real-world decisions'.",
+            "thumbnail": "/thumbnails/ethics_thumb_10.jpg"
           }
         ]
       }
     ],
-    "totalVideos": 9
+    "totalVideos": 10
   },
   "microeconomic-foundation": {
     "name": "Microeconomic Foundation",
