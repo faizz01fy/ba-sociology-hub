@@ -355,15 +355,14 @@ export default {
         } catch {}
       }
 
-      let hasAdSense = false;
+      let seenAdSense = false;
       response = new HTMLRewriter()
         .on("script[src*='pagead2.googlesyndication.com']", {
-          element() { hasAdSense = true; }
-        })
-        .on("head", {
           element(el) {
-            if (!hasAdSense) {
-              el.append('\n  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>\n', { html: true });
+            if (seenAdSense) {
+              el.remove();
+            } else {
+              seenAdSense = true;
             }
           }
         })
