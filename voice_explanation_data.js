@@ -20,21 +20,21 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സഞ്ചാരസാഹിത്യം: കിഴവനും കൊക്കാത്തുവായും",
             "chapter": "എസ്.കെ. പൊറ്റെക്കാട്ട് · യാത്രാവിവരണം & വിശകലനം",
             "duration": "18",
-            "youtubeId": ""
+            "youtubeId": "AXKs5HdTUTw"
           },
           {
             "chapterNumber": "Chapter 03",
             "title": "അഭിമുഖം: മാധവിക്കുട്ടിയുമായി നടത്തിയ അഭിമുഖം",
             "chapter": "അക്ബർ കക്കട്ടിൽ · സാഹിത്യ ദർശനം",
             "duration": "16",
-            "youtubeId": ""
+            "youtubeId": "0_peGPXEbrc"
           },
           {
             "chapterNumber": "Chapter 04",
             "title": "പോഡ്കാസ്റ്റ് / വിവർത്തനം: അർമേനിയയിലെ ശോകഗാനം",
             "chapter": "സജി മാർക്കോസ് · വിവർത്തന തത്വങ്ങൾ",
             "duration": "20",
-            "youtubeId": ""
+            "youtubeId": "GQOXm5O42R4"
           }
         ]
       },
@@ -1043,8 +1043,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സദ്ഗുണവും അവകാശങ്ങളും കടമകളും (Virtue Ethics, Moral Rights & Duties)",
             "chapter": "Academic Hub Special · അരിസ്റ്റോട്ടിലിന്റെ ഗോൾഡൻ മീൻ, കാർഡിനൽ സദ്ഗുണങ്ങൾ & അവകാശ-കടമാ ബന്ധം",
             "duration": "19:08",
-            "youtubeId": "",
-            "audioUrl": "/audio/ethics_lecture_02.mp3",
+            "youtubeId": "AXKs5HdTUTw",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "അരിസ്റ്റോട്ടിലിന്റെ സദ്ഗുണ സിദ്ധാന്തം (Aristotelian Virtue Ethics): സുവർണ്ണ മധ്യമാർഗ്ഗം (Golden Mean) - അമിതത്വത്തിനും ന്യൂനതയ്ക്കും ഇടയിലുള്ള സദ്ഗുണം (ഉദാ: ഭീരുത്വത്തിനും എടുത്തുചാട്ടത്തിനും ഇടയിലുള്ള ധൈര്യം).",
@@ -1059,8 +1059,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സദാചാര മൂല്യങ്ങളും അവകാശ കടമകളും (Moral Values, Rights & Responsibilities)",
             "chapter": "Academic Hub Special · സാർവ്വലൗകിക മൂല്യങ്ങൾ, മനസ്സാക്ഷി & ആന്തരിക ധാർമ്മികത",
             "duration": "20:16",
-            "youtubeId": "",
-            "audioUrl": "/audio/ethics_lecture_03.mp3",
+            "youtubeId": "0_peGPXEbrc",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "സദാചാര മൂല്യങ്ങളുടെ സ്വഭാവം: സാർവ്വലൗകിക മൂല്യങ്ങളും (Universal Moral Values) സാംസ്കാരിക ആപേക്ഷികതയും (Cultural Relativism).",
@@ -1080,8 +1080,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കൺസിക്വൻഷ്യലിസവും ഡിയോന്റോളജിക്കൽ എത്തിക്സും (Consequentialism & Deontological Ethics)",
             "chapter": "Academic Hub Special · ടെലിയോളജിക്കൽ സിദ്ധാന്തം vs ഇമ്മാനുവൽ കാന്റിന്റെ കടമ സിദ്ധാന്തം",
             "duration": "16:22",
-            "youtubeId": "",
-            "audioUrl": "/audio/ethics_lecture_04.mp3",
+            "youtubeId": "GQOXm5O42R4",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "കൺസിക്വൻഷ്യലിസം (Consequentialism / Teleology): പ്രവൃത്തിയുടെ നന്മതിന്മകൾ നിശ്ചയിക്കപ്പെടുന്നത് അതിന്റെ അനന്തരഫലങ്ങളെ ആശ്രയിച്ചാണ്.",
@@ -1096,8 +1096,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "യൂട്ടിലിറ്റേറിയനിസവും ഡിയന്റോളജിയും (Utilitarianism & Deontology Deep Dive)",
             "chapter": "Academic Hub Special · ജെറമി ബെന്താം, ജോൺ സ്റ്റുവർട്ട് മിൽ & പ്രയോജനവാദ വിശകലനം",
             "duration": "21:07",
-            "youtubeId": "",
-            "audioUrl": "/audio/ethics_lecture_05.mp3",
+            "youtubeId": "WU7_Bjoa5f0",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "ജെറമി ബെന്താമിന്റെ അളവ് യൂട്ടിലിറ്റേറിയനിസം (Quantitative Utilitarianism): 'പരമാവധി ആളുകൾക്ക് പരമാവധി സന്തോഷം' (Greatest Happiness Principle) & സുഖഗണന സമ്പ്രദായം (Hedonistic Calculus).",
@@ -1117,8 +1117,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കുറ്റവാളികളെ നമ്മൾ എന്തിനാണ് ശിക്ഷിക്കുന്നത്? (Theories of Punishment: Why Do We Punish?)",
             "chapter": "Academic Hub Special · പ്രതികാരം, ഭയം, പ്രതിരോധം & പരിഷ്കരണ സിദ്ധാന്തങ്ങളുടെ ധാർമ്മിക വിശകലനം",
             "duration": "18:57",
-            "youtubeId": "",
-            "audioUrl": "/audio/ethics_lecture_06.mp3",
+            "youtubeId": "4YknAHNj7x4",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "പ്രതികാര സിദ്ധാന്തം (Retributive Theory): 'കണ്ണിനു പകരം കണ്ണ്' - ചെയ്ത കുറ്റത്തിന് തുല്യമായ ശിക്ഷ കുറ്റവാളി അനുഭവിച്ചിരിക്കണം എന്ന കർശന നീതിശാസ്ത്രം.",
@@ -1139,8 +1139,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ദയാവധവും ഡീപ് ഇക്കോളജിയും പ്രായോഗിക ധാർമ്മികതയിൽ (Euthanasia & Deep Ecology in Applied Ethics)",
             "chapter": "Academic Hub Special · ബയോഎത്തിക്സ്, അന്തസ്സോടെ മരിക്കാനുള്ള അവകാശം & പരിസ്ഥിതി ധർമ്മശാസ്ത്രം",
             "duration": "19:28",
-            "youtubeId": "",
-            "audioUrl": "/audio/ethics_lecture_07.mp3",
+            "youtubeId": "EII8YGQlSAc",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "ദയാവധവും ജീവന്റെ വിശുദ്ധിയും (Euthanasia & Sanctity of Life): ആക്ടീവ് vs പാസീവ് ദയാവധം, അന്തസ്സോടെ മരിക്കാനുള്ള അവകാശം (Right to Die with Dignity).",
@@ -1155,8 +1155,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "പ്രായോഗിക നൈതികതയും ധാർമ്മിക പ്രതിസന്ധികളും (Applied Ethics & Practical Dilemmas)",
             "chapter": "Academic Hub Special · കാഷ്വിസ്ട്രി, ട്രോളി പ്രശ്നം, പ്രൊഫഷണൽ & സൈബർ എത്തിക്സ്",
             "duration": "14:10",
-            "youtubeId": "",
-            "audioUrl": "/audio/ethics_lecture_08.mp3",
+            "youtubeId": "8DFAD8HVkrs",
+            "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
               "കാഷ്വിസ്ട്രി (Casuistry & Case-Based Reasoning): കേവല നിയമങ്ങൾക്കപ്പുറം സന്ദർഭോചിതമായി സദാചാര പ്രശ്നങ്ങൾ പരിഹരിക്കുന്ന രീതി.",
