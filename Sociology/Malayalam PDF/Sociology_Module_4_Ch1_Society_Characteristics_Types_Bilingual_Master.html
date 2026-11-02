@@ -11,7 +11,7 @@
 
 @page {
   size: A4 portrait;
-  margin: 7mm 7mm 7mm 7mm;
+  margin: 10mm 10mm 10mm 10mm;
 }
 
 * {
@@ -26,114 +26,121 @@ body {
   background-color: #ffffff;
   margin: 0;
   padding: 0;
-  font-size: 7.7pt;
-  line-height: 1.35;
+  font-size: 8.4pt;
+  line-height: 1.5;
 }
 
 .document-wrapper {
   width: 100%;
 }
 
-/* Master Header on First Page */
-.master-header-bar {
+.content-page {
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(297mm - 20mm);
+  position: relative;
+}
+
+.content-page:last-child {
+  page-break-after: avoid;
+}
+
+/* LMS Official PDF Header */
+.page-top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #1e3a8a, #047857);
-  color: #ffffff;
-  padding: 6px 12px;
-  border-radius: 5px;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 4px;
   margin-bottom: 8px;
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.master-header-left {
-  font-size: 7.7pt;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+.top-brand {
+  color: #1e3a8a;
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.master-header-right {
-  font-size: 7.2pt;
+.top-brand::before {
+  content: "🏛️";
+  font-size: 8pt;
+}
+
+.top-meta {
+  color: #047857;
   font-weight: 700;
-  color: #a7f3d0;
-  text-transform: uppercase;
 }
 
 /* Unit Banner */
 .unit-hero {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 60%, #047857 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #047857 100%);
   color: #ffffff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  margin: 8px 0 5px 0;
-  break-after: avoid;
-  page-break-after: avoid;
-}
-
-.unit-hero:first-of-type {
-  margin-top: 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(30, 58, 138, 0.12);
 }
 
 .unit-code-badge {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.2);
   color: #f8fafc;
-  font-size: 6.2pt;
+  font-size: 6.8pt;
   font-weight: 800;
-  padding: 1px 5px;
-  border-radius: 3px;
+  padding: 2px 6px;
+  border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .unit-title-en {
-  font-size: 9.6pt;
+  font-size: 11pt;
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .unit-title-ml {
   font-family: 'Noto Sans Malayalam', sans-serif;
-  font-size: 8.6pt;
+  font-size: 9.8pt;
   font-weight: 700;
   color: #a7f3d0;
-  margin-top: 1px;
-  line-height: 1.25;
+  margin-top: 2px;
+  line-height: 1.3;
 }
 
 /* Bilingual Table */
 .bilingual-table {
   width: 100%;
-  border-collapse: collapse;
-  border: 1.2px solid #cbd5e1;
-  border-radius: 4px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
   overflow: hidden;
-  margin-bottom: 8px;
-}
-
-.bilingual-table thead {
-  display: table-header-group;
+  margin-bottom: 10px;
+  flex-grow: 1;
 }
 
 .bilingual-table thead th {
-  padding: 4px 8px;
-  font-size: 7.2pt;
+  padding: 6px 10px;
+  font-size: 7.8pt;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
 }
 
 .col-en {
   width: 50%;
   background: linear-gradient(135deg, #1d4ed8, #2563eb);
   color: #ffffff;
-  border-right: 1.2px solid rgba(255, 255, 255, 0.3);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.3);
   text-align: left;
 }
 
@@ -146,8 +153,6 @@ body {
 }
 
 .bilingual-table tbody tr {
-  break-inside: avoid;
-  page-break-inside: avoid;
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -155,28 +160,27 @@ body {
   border-bottom: none;
 }
 
-/* English Cell */
+/* English Cell - Colourful Royal Blue / Slate Styling */
 .cell-en {
   width: 50%;
-  padding: 4px 7px;
+  padding: 8px 10px;
   vertical-align: top;
-  border-right: 1.2px solid #cbd5e1;
+  border-right: 1.5px solid #cbd5e1;
   background-color: #f8fafc;
   color: #0f172a;
-  font-size: 7.7pt;
-  line-height: 1.42;
+  font-size: 8.1pt;
 }
 
-/* Malayalam Cell */
+/* Malayalam Cell - Colourful Emerald / Forest Green Styling */
 .cell-ml {
   width: 50%;
-  padding: 4px 7px;
+  padding: 8px 10px;
   vertical-align: top;
   background-color: #f0fdf4;
   color: #064e3b;
   font-family: 'Noto Sans Malayalam', sans-serif;
-  font-size: 7.7pt;
-  line-height: 1.48;
+  font-size: 8.1pt;
+  line-height: 1.55;
 }
 
 .bilingual-table tbody tr:nth-child(even) .cell-en {
@@ -190,13 +194,13 @@ body {
 /* Topic Tags */
 .topic-tag {
   display: inline-block;
-  font-size: 6pt;
+  font-size: 6.5pt;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
-  padding: 1px 4px;
-  border-radius: 2px;
-  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+  padding: 1.5px 5px;
+  border-radius: 3px;
+  margin-bottom: 4px;
 }
 
 .tag-en {
@@ -212,72 +216,70 @@ body {
 }
 
 .topic-title-en {
-  font-size: 8.6pt;
+  font-size: 9.2pt;
   font-weight: 800;
   color: #1e3a8a;
-  margin: 0 0 3px 0;
-  line-height: 1.2;
+  margin: 0 0 5px 0;
+  line-height: 1.25;
 }
 
 .topic-title-ml {
-  font-size: 8.6pt;
+  font-size: 9.2pt;
   font-weight: 800;
   color: #047857;
-  margin: 0 0 3px 0;
-  line-height: 1.25;
+  margin: 0 0 5px 0;
+  line-height: 1.3;
 }
 
 /* Example Callout Boxes */
 .example-box-en {
   background: #eff6ff;
-  border-left: 3px solid #2563eb;
-  padding: 3.5px 6px;
-  border-radius: 0 3px 3px 0;
-  margin-top: 4px;
-  font-size: 7.4pt;
+  border-left: 3.5px solid #2563eb;
+  padding: 5px 8px;
+  border-radius: 0 4px 4px 0;
+  margin-top: 6px;
+  font-size: 7.7pt;
   color: #1e3a8a;
-  line-height: 1.36;
 }
 
 .example-box-ml {
   background: #ecfdf5;
-  border-left: 3px solid #059669;
-  padding: 3.5px 6px;
-  border-radius: 0 3px 3px 0;
-  margin-top: 4px;
-  font-size: 7.4pt;
+  border-left: 3.5px solid #059669;
+  padding: 5px 8px;
+  border-radius: 0 4px 4px 0;
+  margin-top: 6px;
+  font-size: 7.7pt;
   color: #064e3b;
-  line-height: 1.35;
 }
 
 .example-badge-en {
-  font-size: 6.4pt;
+  font-size: 6.8pt;
   font-weight: 800;
   text-transform: uppercase;
   color: #1d4ed8;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .example-badge-ml {
-  font-size: 6.4pt;
+  font-size: 6.8pt;
   font-weight: 800;
   text-transform: uppercase;
   color: #047857;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .styled-list-en, .styled-list-ml {
-  margin: 2px 0 4px 12px;
+  margin: 4px 0 6px 14px;
   padding: 0;
 }
 
 .styled-list-en li {
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   color: #1e293b;
 }
 
 .styled-list-ml li {
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   color: #064e3b;
 }
 
@@ -285,17 +287,17 @@ body {
 .matrix-table-en, .matrix-table-ml {
   width: 100%;
   border-collapse: collapse;
-  font-size: 6.6pt;
-  margin-top: 3px;
+  font-size: 7pt;
+  margin-top: 4px;
   background: #ffffff;
-  border-radius: 3px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
 .matrix-table-en th, .matrix-table-ml th {
   background: #1e3a8a;
   color: #ffffff;
-  padding: 2.5px 4px;
+  padding: 3px 5px;
   border: 1px solid #cbd5e1;
   text-align: left;
 }
@@ -305,32 +307,34 @@ body {
 }
 
 .matrix-table-en td, .matrix-table-ml td {
-  padding: 2px 4px;
+  padding: 2.5px 5px;
   border: 1px solid #e2e8f0;
 }
 
-/* Running Section Block */
-.section-block {
-  margin-bottom: 8px;
+/* Page Footer */
+.page-footer-nav {
+  margin-top: auto;
+  padding-top: 4px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 6.8pt;
+  color: #64748b;
+  font-weight: 600;
 }
 
   </style>
 </head>
 <body>
 <div class="document-wrapper">
-  <!-- Top LMS Header Bar -->
-  <div class="master-header-bar">
-    <div class="master-header-left">
-      <span>🏛️</span>
-      <span>Module IV: SOCIOLOGY AND SOCIETY · Calicut University LMS E-Content</span>
-    </div>
-    <div class="master-header-right">
-      <span>B.A. Sociology · Core Course SOC1CJ101</span>
-    </div>
-  </div>
 
+  <!-- ==================== UNIT 1: MEANING, ORIGIN, CLASSICAL DEFINITIONS, AND SOCIOLOGICAL APPROACHES TO SOCIETY ==================== -->
+  <section class="content-page">
+    <div class="page-top-bar">
+      <span class="top-brand">Module IV: SOCIOLOGY AND SOCIETY · Calicut University LMS E-Content</span>
+      <span class="top-meta">Unit 1: Meaning, Origin, Classical Definition...</span>
+    </div>
 
-  <div class="section-block">
     <div class="unit-hero">
       <div class="unit-code-badge">Module IV — Chapter 4.1 · Academic Master Notes</div>
       <div class="unit-title-en">Unit 1: Meaning, Origin, Classical Definitions, and Sociological Approaches to Society</div>
@@ -358,7 +362,7 @@ The fourth module of this course explores the fundamental relationship between s
 <h4 class="topic-title-ml">'സൊസൈറ്റി' എന്ന പദത്തിന്റെ ഉത്ഭവവും സോഷ്യോളജിക്കൽ അർത്ഥവും</h4>
 ഈ കോഴ്‌സിന്റെ നാലാമത്തെ മൊഡ്യൂൾ സോഷ്യോളജിയും സമൂഹവും തമ്മിലുള്ള മൗലികമായ ബന്ധത്തെ വിശദമായി വിശകലനം ചെയ്യുന്നു. 'സൊസൈറ്റി' (Society) എന്ന ഇംഗ്ലീഷ് പദം ഉടലെടുത്തത് 'സോഷ്യസ്' (Socius) എന്ന ലാറ്റിൻ മൂലപദത്തിൽ നിന്നാണ്; കൂട്ടായ്മ, സൗഹൃദം, സഹവാസം, സഖ്യം എന്നാണ് ഇതിന്റെ അർത്ഥം. സോഷ്യോളജിക്കൽ പഠനങ്ങളിൽ സമൂഹം എന്നത് ഒരു ഭൂപ്രദേശത്ത് തടിച്ചുകൂടിയ ആളുകളുടെ കേവലമായ ഭൗതിക കൂട്ടായ്മയല്ല (mere physical aggregate). മറിച്ച്, പരസ്പര ബന്ധങ്ങൾ, പൊതുവായ മൂല്യങ്ങൾ, സംസ്കാരം, സാമൂഹിക സ്ഥാപനങ്ങൾ എന്നിവയാൽ മനുഷ്യരെ പരസ്പരം കോർത്തിണക്കുന്ന സങ്കീർണ്ണവും അമൂർത്തവുമായ ഒരു സാമൂഹിക ബന്ധങ്ങളുടെ വലയമാണ് (web of social relationships).
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>കേവല ആൾക്കൂട്ടവും യഥാർത്ഥ സമൂഹവും:</strong> റെയിൽവേ സ്റ്റേഷനിൽ ട്രെയിൻ കാത്തുനിൽക്കുന്ന അപരിചിതരായ യാത്രക്കാരുടെ കൂട്ടം ഒരു 'സമൂഹ'മല്ല; അത് കേവലം ഒരു ഭൗതിക ആൾക്കൂട്ടം മാത്രമാണ്. എന്നാൽ, പരസ്പരം തിരിച്ചറിയുകയും കടമകൾ പങ്കിടുകയും നിയമങ്ങൾ പാലിച്ച് ഒന്നിച്ചു പ്രവർത്തിക്കുകയും ചെയ്യുന്ന ഒരു റസിഡന്റ്സ് അസോസിയേഷനോ, ഫുട്ബോൾ ക്ലബ്ബോ, കുടുംബമോ ആണ് സോഷ്യോളജിയിലെ യഥാർത്ഥ സമൂഹത്തിന് ഉദാഹരണം.
 </div></td>
         </tr>
@@ -386,7 +390,7 @@ Prominent sociological theorists have articulated rigorous definitions highlight
   <li><strong>സ്റ്റീഫൻ ലീക്കോക്ക്:</strong> <em>'മനുഷ്യരുടെ രാഷ്ട്രീയ സംഘടന മാത്രമല്ല, അവർ ഒന്നിക്കുന്ന എല്ലാ ഔപചാരികവും അനൗപചാരികവുമായ കൂട്ടായ്മകളും ചേർന്നതാണ് സമൂഹം.'</em></li>
 </ul>
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>മാക് ഐവറുടെ 'ബന്ധങ്ങളുടെ വല' പ്രായോഗിക ജീവിതത്തിൽ:</strong> ഒരു കോളേജ് കാമ്പസ് ചിന്തിക്കുക. കോൺക്രീറ്റ് കെട്ടിടങ്ങളല്ല കോളേജിനെ നിലനിർത്തുന്നത്; അധ്യാപകരും വിദ്യാർത്ഥികളും പ്രിൻസിപ്പലും രക്ഷിതാക്കളും തമ്മിൽ പരസ്പരം പുലർത്തുന്ന അദൃശ്യമായ കടമകളും അധികാരങ്ങളും പഠന പ്രക്രിയയുമാണ് ആ കോളേജിനെ ഒരു സജീവ സമൂഹമാക്കി മാറ്റുന്നത്.
 </div></td>
         </tr>
@@ -416,7 +420,7 @@ The structural perspective conceptualizes society as an established, tangible ob
   <li><strong>5. ശീലങ്ങൾ (Habits):</strong> വ്യക്തികളുടെ ദൈനംദിന ജീവിതത്തെ ചിട്ടപ്പെടുത്തുന്ന സ്ഥിരമായ പെരുമാറ്റ രീതികൾ.</li>
 </ul>
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>ഘടനാപരമായ ഘടകങ്ങൾ നമ്മുടെ നിത്യജീവിതത്തിൽ:</strong> മുതിർന്നവരെ ബഹുമാനിക്കാൻ കൈകൂപ്പുന്നത് <em>നാട്ടുനടപ്പാണ് (Folkway)</em>; കൊലപാതകവും മോഷണവും കൊടുംപാപമായി കാണുന്നത് <em>സദാചാര നിഷ്ഠയാണ് (Mores)</em>; ഭരണഘടന വിഭാവനം ചെയ്യുന്ന സമത്വം ഒരു <em>ആദർശമാണ് (Ideal)</em>; കോടതികളും സ്കൂളുകളും സമൂഹത്തെ നിലനിർത്തുന്ന <em>സ്ഥാപനങ്ങളാണ് (Institutions)</em>.
 </div></td>
         </tr>
@@ -444,15 +448,27 @@ In contrast to the structural view, the functional perspective conceptualizes so
   <li>സഹകരണത്തിലൂടെയും ഉത്തരവാദിത്ത വിഭജനത്തിലൂടെയും സമൂഹം ഒരു സന്തുലിതാവസ്ഥ നിലനിർത്തുന്നു.</li>
 </ul>
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>ഘടനാപരവും ധർമ്മപരവുമായ കാഴ്ചപ്പാടുകളുടെ വ്യത്യാസം:</strong> ഒരു വലിയ ആശുപത്രിയുടെ കെട്ടിടം, ഭരണഘടനാ ചട്ടങ്ങൾ, ഡയറക്ടർ മുതൽ ജീവനക്കാർ വരെയുള്ള പദവികൾ എന്നിവ പരിശോധിക്കുന്നത് <em>ഘടനാപരമായ സമീപനമാണ് ('വസ്തു' / Thing)</em>. എന്നാൽ, അത്യാഹിത വിഭാഗത്തിൽ ഒരു രോഗിയെ രക്ഷിക്കാൻ ഡോക്ടർമാരും നേഴ്സുമാരും ലാബ് ടെക്നീഷ്യന്മാരും ഒരേ മനസ്സോടെ പ്രവർത്തിക്കുന്നത് കാണുന്നത് <em>ധർമ്മപരമായ സമീപനമാണ് ('പ്രക്രിയ' / Process)</em>.
 </div></td>
         </tr>
       </tbody>
     </table>
-  </div>
 
-  <div class="section-block">
+    <div class="page-footer-nav">
+      <span>University of Calicut · B.A. Sociology</span>
+      <span>Unit 1: Meaning, Origin, Classical Definitions, an</span>
+      <span>Semester 1</span>
+    </div>
+  </section>
+
+  <!-- ==================== UNIT 2: KINGSLEY DAVIS'S SOCIETAL NEEDS AND THE ELEVEN CORE CHARACTERISTICS OF SOCIETY ==================== -->
+  <section class="content-page">
+    <div class="page-top-bar">
+      <span class="top-brand">Module IV: SOCIOLOGY AND SOCIETY · Calicut University LMS E-Content</span>
+      <span class="top-meta">Unit 2: Kingsley Davis's Societal Needs and t...</span>
+    </div>
+
     <div class="unit-hero">
       <div class="unit-code-badge">Module IV — Chapter 4.1 · Academic Master Notes</div>
       <div class="unit-title-en">Unit 2: Kingsley Davis's Societal Needs and the Eleven Core Characteristics of Society</div>
@@ -492,7 +508,7 @@ Eminent sociologist Kingsley Davis established that every human society must sat
   <li><strong>4. തുടർച്ച ഉറപ്പാക്കൽ (Need for Continuity):</strong> ഭാവി തലമുറകളിലേക്ക് സംസ്കാരവും അറിവും പാരമ്പര്യങ്ങളും കൈമാറുന്നതിനായുള്ള വിദ്യാഭ്യാസവും സാമൂഹികവൽക്കരണവും നിലനിൽക്കണം.</li>
 </ol>
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>ഡേവിസിന്റെ 4 ആവശ്യങ്ങൾ കേരളത്തിൽ:</strong> പ്രസവാശുപത്രികളും കൃഷിയിടങ്ങളും <em>ജനസംഖ്യയെയും</em>; ഡോക്ടർ, എൻജിനീയർ, കർഷകൻ എന്നിവരടങ്ങുന്ന തൊഴിൽ രംഗം <em>തൊഴിൽ വിഭജനത്തെയും</em>; പ്രളയകാലത്ത് ജാതിമതഭേദമന്യേ മലയാളികൾ ഒന്നിച്ച രക്ഷാപ്രവർത്തനം <em>ഐക്യത്തെയും (Solidarity)</em>; കുട്ടികളെ അറിവും സംസ്കാരവും പഠിപ്പിക്കുന്ന വിദ്യാലയങ്ങൾ <em>തുടർച്ചയെയും (Continuity)</em> സാധ്യമാക്കുന്നു.
 </div></td>
         </tr>
@@ -522,7 +538,7 @@ The official Calicut University LMS curriculum identifies eleven distinct charac
   <li><strong>5. സമഗ്രമായ സംസ്കാരം (Comprehensive Culture):</strong> ഓരോ സമൂഹത്തിനും ഭാഷ, ആചാരങ്ങൾ, കലകൾ, വിശ്വാസങ്ങൾ എന്നിവയടങ്ങിയ തനതായ ഒരു സംസ്കാരം ഉണ്ടായിരിക്കും.</li>
 </ul>
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>1 മുതൽ 5 വരെയുള്ള സവിശേഷതകൾ:</strong> ഇന്ത്യയുടെ അല്ലെങ്കിൽ കേരളത്തിന്റെ ഭൂപ്രകൃതി (<em>പ്രദേശം</em>); 3.5 കോടി ജനങ്ങൾ (<em>ജനങ്ങൾ</em>); അധ്യാപക-വിദ്യാർത്ഥി ബഹുമാനവും കുടുംബസ്നേഹവും നേരിട്ട് കാണാൻ കഴിയില്ലെങ്കിലും അവ ജീവിതത്തെ നയിക്കുന്നു (<em>അമൂർത്ത സ്വഭാവം</em>); സുഹൃദ് വലയങ്ങൾ (<em>ബന്ധങ്ങളുടെ വല</em>); ഓണവും മലയാള ഭാഷയും സദാചാര ബോധവും ചേർന്ന പാരമ്പര്യം (<em>സമഗ്ര സംസ്കാരം</em>).
 </div></td>
         </tr>
@@ -552,15 +568,27 @@ The official Calicut University LMS curriculum identifies eleven distinct charac
   <li><strong>11. സമൂഹം നിരന്തരം മാറിക്കൊണ്ടിരിക്കുന്നു (Society is Always Changing):</strong> സമൂഹം നിശ്ചലമല്ല; പഴയ രീതികൾ മാഞ്ഞ് പുതിയ കണ്ടുപിടുത്തങ്ങളും മൂല്യങ്ങളും കടന്നുവരുന്നു.</li>
 </ul>
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>6 മുതൽ 11 വരെയുള്ള സവിശേഷതകൾ:</strong> നഗരത്തിലെ ഡോക്ടർ അരിക്ക് വേണ്ടി ഗ്രാമത്തിലെ കർഷകനെ ആശ്രയിക്കുന്നത് <em>പരസ്പരാശ്രയത്വം</em>; 1968-ൽ തുടങ്ങിയ കാലിക്കറ്റ് സർവകലാശാല വിദ്യാർത്ഥികൾ മാറുമ്പോഴും നിലനിൽക്കുന്നത് <em>ശാശ്വതത്വം</em>; തൊഴിൽ നിയമങ്ങൾക്കായി നടക്കുന്ന ചർച്ചകൾ <em>സഹകരണവും സംഘർഷവും</em>; എഞ്ചിനീയറും സംഗീതജ്ഞനും പരസ്പരം സഹായിക്കുന്നത് <em>സാമ്യതയും വ്യത്യാസവും</em>; ഓലമേഞ്ഞ വീടുകളിൽ നിന്ന് സ്മാർട്ട് സിറ്റികളിലേക്കുള്ള മാറ്റം <em>നിരന്തര മാറ്റം</em>.
 </div></td>
         </tr>
       </tbody>
     </table>
-  </div>
 
-  <div class="section-block">
+    <div class="page-footer-nav">
+      <span>University of Calicut · B.A. Sociology</span>
+      <span>Unit 2: Kingsley Davis's Societal Needs and the El</span>
+      <span>Semester 1</span>
+    </div>
+  </section>
+
+  <!-- ==================== UNIT 3: TYPOLOGIES OF SOCIETY I — THE AGRARIAN SOCIETY (ORIGIN, FEUDAL CLASSES, STRATIFICATION & COMMUNITY) ==================== -->
+  <section class="content-page">
+    <div class="page-top-bar">
+      <span class="top-brand">Module IV: SOCIOLOGY AND SOCIETY · Calicut University LMS E-Content</span>
+      <span class="top-meta">Unit 3: Typologies of Society I — The Agraria...</span>
+    </div>
+
     <div class="unit-hero">
       <div class="unit-code-badge">Module IV — Chapter 4.1 · Academic Master Notes</div>
       <div class="unit-title-en">Unit 3: Typologies of Society I — The Agrarian Society (Origin, Feudal Classes, Stratification & Community)</div>
@@ -590,7 +618,7 @@ An agrarian society represents a monumental evolutionary leap in human civilizat
 മനുഷ്യ ചരിത്രത്തിലെ നിർണ്ണായകമായ ഒരു വഴിത്തിരിവാണ് കാർഷിക സമൂഹം (Agrarian Society). ഏകദേശം 5,000 മുതൽ 6,000 വർഷങ്ങൾക്ക് മുമ്പ്, പ്രാഥമിക കൃഷിരീതികളിൽ നിന്ന് കലപ്പകളും മൃഗശക്തിയും ജലസേചനവും ഉപയോഗിച്ചുള്ള കൃഷിയിലേക്ക് മനുഷ്യൻ മാറിയതോടെയാണ് ഇത് ആരംഭിച്ചത്. മൃഗങ്ങൾ വലിക്കുന്ന കലപ്പ, കൃഷിഭൂമിയെ നവീകരിക്കുന്ന വളപ്രയോഗം (Manure), വിളപരിക്രമണം (Crop rotation) എന്നിവ ഉൽപ്പാദനക്ഷമത വൻതോതിൽ വർദ്ധിപ്പിച്ചു.<br><br>
 <strong>മിച്ചോൽപ്പാദനത്തിന്റെ പ്രത്യാഘാതങ്ങൾ (Food Surplus):</strong> കൃഷിയിലെ മിച്ചോൽപ്പാദനം കാരണം ജനസംഖ്യയിലെ എല്ലാവരും ഭക്ഷണം കണ്ടെത്താൻ കഷ്ടപ്പെടേണ്ട സാഹചര്യം ഇല്ലാതായി. ഇത് സ്ഥിരവാസ കേന്ദ്രങ്ങൾക്കും നഗരങ്ങളുടെ ആവിർഭാവത്തിനും കച്ചവടത്തിന്റെ വളർച്ചയ്ക്കും മറ്റ് തൊഴിലുകളുടെ ഉദയത്തിനും കാരണമായി.
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>മിച്ചോൽപ്പാദനവും നാഗരികതയും:</strong> പുരാതന സിന്ധുനദീതട സംസ്കാരത്തിലും മെസൊപ്പൊട്ടേമിയയിലും നദീതീരങ്ങളിലെ കൃഷിയിലൂടെ വൻതോതിൽ ധാന്യങ്ങൾ ഉൽപ്പാദിപ്പിക്കാൻ കഴിഞ്ഞു. ധാന്യം സമൃദ്ധമായതോടെ എല്ലാവരും മണ്ണിൽ പണിയെടുക്കേണ്ടി വന്നില്ല; പകരം ചിലർ ശിൽപ്പികളും, ശാസ്ത്രജ്ഞരും, ഭരണാധികാരികളും, വ്യാപാരികളുമായി മാറി സംസ്കാരം വളർന്നു.
 </div></td>
         </tr>
@@ -620,7 +648,7 @@ The division of labor in agrarian society crystallized into five distinct occupa
   <li><strong>5. പരമ്പരാഗത കരകൗശല വിദഗ്ദ്ധരും വ്യാപാരികളും (Artisans &amp; Traders):</strong> ആശാരിമാർ, കൊല്ലന്മാർ, കുശവന്മാർ, നെയ്ത്തുകാർ തുടങ്ങിയ ഗ്രാമീണ ആവശ്യങ്ങൾക്ക് വേണ്ട ഉപകരണങ്ങളും സേവനങ്ങളും നൽകുന്നവർ.</li>
 </ul>
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>പഴയ കേരളത്തിലെ കാർഷിക വർഗ്ഗങ്ങൾ:</strong> വൻതോതിൽ ഭൂസ്വത്തുള്ള <em>ജന്മിമാർ</em> (Landlords); ഭൂമി പാട്ടത്തിനെടുത്ത് മേൽനോട്ടം വഹിക്കുന്ന <em>കാണംദാർമാർ</em>; സ്വന്തം നിലങ്ങളിൽ കൃഷി ചെയ്യുന്ന <em>ചെറുകിട കർഷകർ</em>; വിളവിന്റെ പകുതി ജന്മിക്ക് നൽകാൻ ബാധ്യസ്ഥരായ <em>വെറുംപാട്ടക്കാർ (Sharecroppers)</em>; കതിരരിവാളും കലപ്പയും ഉണ്ടാക്കി നൽകിയ <em>കൊല്ലനും ആശാരിയും (Artisans)</em>.
 </div></td>
         </tr>
@@ -644,15 +672,27 @@ The division of labor in agrarian society crystallized into five distinct occupa
   <li><strong>പാരമ്പര്യവും മതവും വിധിയും:</strong> പൂർവ്വികർ ചെയ്ത രീതിയിൽ മാറ്റമില്ലാതെ കൃഷി ചെയ്തുപോന്നു. മഴയും വരൾച്ചയും വിളനാശവും ദൈവഹിതമായി കണ്ട ജനങ്ങൾ വിധിയെ അംഗീകരിച്ച് ജീവിച്ചു; മതം അവരുടെ ജീവിതത്തിന്റെ സർവ്വമേഖലകളെയും നിയന്ത്രിച്ചു.</li>
 </ul>
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>വിധിയും ഗ്രാമീണ ആചാരങ്ങളും:</strong> കഠിനമായ വരൾച്ചയോ പ്രളയമോ ഉണ്ടാകുമ്പോൾ ശാസ്ത്രീയ കാരണങ്ങൾ അന്വേഷിക്കുന്നതിന് പകരം, നാട്ടുക്ഷേത്രങ്ങളിലും ആരാധനാലയങ്ങളിലും പ്രത്യേക പൂജകളും പ്രാർത്ഥനകളും നടത്തി മഴ പെയ്യിക്കാൻ ശ്രമിക്കുന്നതും, പട്ടിണി ദൈവകോപമാണെന്ന് വിശ്വസിക്കുന്നതും കാർഷിക സമൂഹത്തിലെ പാരമ്പര്യബോധത്തിന് ഉദാഹരണമാണ്.
 </div></td>
         </tr>
       </tbody>
     </table>
-  </div>
 
-  <div class="section-block">
+    <div class="page-footer-nav">
+      <span>University of Calicut · B.A. Sociology</span>
+      <span>Unit 3: Typologies of Society I — The Agrarian Soc</span>
+      <span>Semester 1</span>
+    </div>
+  </section>
+
+  <!-- ==================== UNIT 4: TYPOLOGIES OF SOCIETY II — THE INDUSTRIAL SOCIETY (TECHNOLOGICAL REVOLUTION, BUREAUCRACY, MASS SOCIETY & SECULARIZATION) ==================== -->
+  <section class="content-page">
+    <div class="page-top-bar">
+      <span class="top-brand">Module IV: SOCIOLOGY AND SOCIETY · Calicut University LMS E-Content</span>
+      <span class="top-meta">Unit 4: Typologies of Society II — The Indust...</span>
+    </div>
+
     <div class="unit-hero">
       <div class="unit-code-badge">Module IV — Chapter 4.1 · Academic Master Notes</div>
       <div class="unit-title-en">Unit 4: Typologies of Society II — The Industrial Society (Technological Revolution, Bureaucracy, Mass Society & Secularization)</div>
@@ -682,7 +722,7 @@ An industrial society emerged in late eighteenth-century Britain and spread glob
 പതിനെട്ടാം നൂറ്റാണ്ടിന്റെ അവസാനത്തിൽ ബ്രിട്ടനിൽ ആരംഭിച്ച വ്യാവസായിക വിപ്ലവമാണ് വ്യാവസായിക സമൂഹത്തിന് (Industrial Society) വഴിയൊരുക്കിയത്. മനുഷ്യന്റെയും മൃഗങ്ങളുടെയും കായിക അധ്വാനത്തിന് പകരം നീരാവി, കൽക്കരി, വൈദ്യുതി എന്നിവയിൽ പ്രവർത്തിക്കുന്ന കൂറ്റൻ യന്ത്രങ്ങൾ നിലവിൽ വന്നു. ഉൽപ്പാദനം ഗ്രാമീണ വീടുകളിൽ നിന്ന് വൻകിട ഫാക്ടറികളിലേക്ക് മാറി; ഒരേ രൂപത്തിലുള്ള സാധനങ്ങൾ വൻതോതിൽ ഉൽപ്പാദിപ്പിക്കാൻ (Mass production) ഇത് സഹായിച്ചു.<br><br>
 <strong>പ്രധാന പ്രത്യാഘാതങ്ങൾ:</strong> മുതലാളിത്തത്തിന്റെ വളർച്ച, ഫാക്ടറി കേന്ദ്രീകൃത ജീവിതം, ഗതാഗത വാർത്താവിനിമയ രംഗത്തെ വിപ്ലവം എന്നിവ ലോകമെമ്പാടുമുള്ള മനുഷ്യബന്ധങ്ങളെ അടിമുടി മാറ്റിമറിച്ചു.
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>തറികളിൽ നിന്ന് കൂറ്റൻ ടെക്സ്റ്റൈൽ മില്ലുകളിലേക്ക്:</strong> ഒരു പരമ്പരാഗത നെയ്ത്തുകാരൻ വീട്ടിലിരുന്ന് ഒരാഴ്ചകൊണ്ട് രണ്ട് തുണി നെയ്തുണ്ടാക്കിയ സ്ഥാനത്ത്, നീരാവി യന്ത്രത്തിൽ പ്രവർത്തിക്കുന്ന ബോംബെയിലെയും മാഞ്ചസ്റ്ററിലെയും വൻകിട മില്ലുകൾ പ്രതിദിനം പതിനായിരക്കണക്കിന് തുണികൾ വൻതോതിൽ (Mass production) ഉൽപ്പാദിപ്പിച്ചു.
 </div></td>
         </tr>
@@ -708,7 +748,7 @@ An industrial society emerged in late eighteenth-century Britain and spread glob
   <li><strong>4. നഗരവൽക്കരണവും മാസ് സൊസൈറ്റിയും (Urbanization &amp; Mass Society):</strong> ഗ്രാമങ്ങളിൽ നിന്ന് നഗരങ്ങളിലേക്കുള്ള വൻതോതിലുള്ള കുടിയേറ്റം മൂലം നഗരങ്ങൾ വളർന്നു. വ്യക്തിബന്ധങ്ങൾ അയഞ്ഞുപോവുകയും ആധുനിക നഗര ജീവിതത്തിന്റെ ഏകാന്തതയും നിയമപരമായ കരാർ ബന്ധങ്ങളും (Gesellschaft) ശക്തമാവുകയും ചെയ്തു.</li>
 </ul>
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>നേടിയ പദവിയും ബ്യൂറോക്രസിയും:</strong> ഒരു സാധാരണ കർഷകന്റെ മകൾ സ്വന്തം കഠിനാധ്വാനത്തിലൂടെ സിവിൽ സർവീസ് പരീക്ഷ (IAS) വിജയിച്ച് കളക്ടറാകുന്നത് <em>നേടിയ പദവിക്ക് (Achieved status)</em> ഉദാഹരണമാണ്; അവർ വ്യക്തിതാൽപ്പര്യങ്ങൾ നോക്കാതെ സർക്കാർ ചട്ടങ്ങൾക്കനുസൃതമായി ഭരണം നടത്തുന്നത് <em>ബ്യൂറോക്രസിക്കും (Bureaucracy)</em> തെളിവാണ്.
 </div></td>
         </tr>
@@ -730,15 +770,27 @@ An industrial society emerged in late eighteenth-century Britain and spread glob
   <li><strong>ഗുരുതരമായ പാരിസ്ഥിതിക പ്രശ്നങ്ങൾ (Environmental Crisis):</strong> അമിതമായ കൽക്കരി-എണ്ണ ഉപയോഗം, വായു-ജല മലിനീകരണം, വനനശീകരണം, പ്രകൃതിവിഭവങ്ങളുടെ ചൂഷണം എന്നിവ വ്യാവസായിക സമൂഹത്തിൽ കടുത്ത ആഗോള പാരിസ്ഥിതിക ഭീഷണികൾ ഉയർത്തി.</li>
 </ul>
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>ലണ്ടൻ പുകമഞ്ഞും ബഹുസ്വര ജനാധിപത്യവും:</strong> 1952-ൽ ലണ്ടനിലെ ഫാക്ടറികളിൽ നിന്നുള്ള കൽക്കരി പുക അന്തരീക്ഷത്തിൽ നിറഞ്ഞ് ആയിരക്കണക്കിന് ആളുകൾ മരണമടഞ്ഞ സംഭവം വ്യവസായവൽക്കരണത്തിന്റെ <em>പാരിസ്ഥിതിക ദുരന്തത്തിന്</em> തെളിവാണ്; അതേസമയം വിവിധ മതങ്ങളിലും സംസ്കാരങ്ങളിലും വിശ്വസിക്കുന്നവർ ഒരേ നഗരത്തിൽ തുല്യാവകാശങ്ങളോടെ ജീവിക്കുന്നത് <em>മൂല്യബഹുസ്വരതയ്ക്കും</em> ഉദാഹരണമാണ്.
 </div></td>
         </tr>
       </tbody>
     </table>
-  </div>
 
-  <div class="section-block">
+    <div class="page-footer-nav">
+      <span>University of Calicut · B.A. Sociology</span>
+      <span>Unit 4: Typologies of Society II — The Industrial </span>
+      <span>Semester 1</span>
+    </div>
+  </section>
+
+  <!-- ==================== UNIT 5: TYPOLOGIES OF SOCIETY III — THE POST-INDUSTRIAL SOCIETY (DANIEL BELL, KNOWLEDGE ECONOMY, CYBERNETIC NETWORKS, GLOBALIZATION & THE 10-PARAMETER COMPARATIVE MATRIX) ==================== -->
+  <section class="content-page">
+    <div class="page-top-bar">
+      <span class="top-brand">Module IV: SOCIOLOGY AND SOCIETY · Calicut University LMS E-Content</span>
+      <span class="top-meta">Unit 5: Typologies of Society III — The Post-...</span>
+    </div>
+
     <div class="unit-hero">
       <div class="unit-code-badge">Module IV — Chapter 4.1 · Academic Master Notes</div>
       <div class="unit-title-en">Unit 5: Typologies of Society III — The Post-Industrial Society (Daniel Bell, Knowledge Economy, Cybernetic Networks, Globalization & The 10-Parameter Comparative Matrix)</div>
@@ -766,7 +818,7 @@ The concept of the 'Post-Industrial Society' was pioneered by American sociologi
 <h4 class="topic-title-ml">വ്യവസായന്തര സമൂഹത്തിന്റെ ഉദയവും ആശയവും (ഡാനിയൽ ബെൽ - 1973)</h4>
 അമേരിക്കൻ സോഷ്യോളജിസ്റ്റായ ഡാനിയൽ ബെല്ലാണ് 1973-ൽ 'ദി കമിംഗ് ഓഫ് പോസ്റ്റ്-ഇൻഡസ്ട്രിയൽ സൊസൈറ്റി' എന്ന വിഖ്യാത പുസ്തകത്തിലൂടെ ഈ ആശയം മുന്നോട്ട് വെച്ചത്. ഭൗതിക സാധനങ്ങൾ യന്ത്രങ്ങൾ ഉപയോഗിച്ച് ഉൽപ്പാദിപ്പിക്കുന്ന വ്യാവസായിക ഘട്ടത്തിൽ നിന്നും, വിവരസാങ്കേതികവിദ്യയും സേവനങ്ങളും കേന്ദ്രീകരിച്ചുള്ള ഒരു പുതിയ യുഗത്തിലേക്കുള്ള പരിവർത്തനമാണ് വ്യവസായന്തര സമൂഹം (Post-Industrial Society). ഇവിടെ അറിവും സാങ്കേതികവിദ്യയുമാണ് പ്രധാന സാമ്പത്തിക സ്രോതസ്സ്.
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>യന്ത്ര മൂലധനത്തിൽ നിന്ന് വിജ്ഞാന മൂലധനത്തിലേക്ക്:</strong> വ്യാവസായിക കാലത്ത് സമ്പത്ത് എന്നത് ഫാക്ടറികളും യന്ത്രങ്ങളും കൽക്കരിപ്പാടങ്ങളുമായിരുന്നു (ഉദാ: ഫോർഡ് കാർ ഫാക്ടറി). എന്നാൽ വ്യവസായന്തര സമൂഹത്തിൽ ഗൂഗിളോ മൈക്രോസോഫ്റ്റോ പോലുള്ള കമ്പനികളുടെ ഏറ്റവും വലിയ സമ്പത്ത് സോഫ്റ്റ്‌വെയർ കോഡുകളും ശാസ്ത്രജ്ഞരുടെ ചിന്താശേഷിയുമാണ്.
 </div></td>
         </tr>
@@ -794,7 +846,7 @@ The concept of the 'Post-Industrial Society' was pioneered by American sociologi
   <li><strong>5. തീവ്രമായ ആഗോളവൽക്കരണം (Globalization):</strong> അതിർത്തികൾക്കപ്പുറമുള്ള ആഗോള വിപണികളും തത്സമയ വാർത്താവിനിമയവും ലോകത്തെ ഒരു ആഗോള ഗ്രാമമാക്കി മാറ്റി.</li>
 </ul>
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>വർക്ക്-ഫ്രം-ഹോമും ആഗോള ശൃംഖലകളും:</strong> വയനാട്ടിലെ ഗ്രാമത്തിലിരുന്ന് ലണ്ടനിലെയും ടോക്കിയോയിലെയും കമ്പനികൾക്കായി ഇന്റർനെറ്റിലൂടെ ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് സോഫ്റ്റ്‌വെയർ നിർമ്മിക്കുന്ന ഒരു മലയാളി സോഫ്റ്റ്‌വെയർ എൻജിനീയർ വ്യവസായന്തര വിജ്ഞാന സമൂഹത്തിന്റെ ജീവിക്കുന്ന ഉദാഹരണമാണ്.
 </div></td>
         </tr>
@@ -852,16 +904,28 @@ The concept of the 'Post-Industrial Society' was pioneered by American sociologi
   </tbody>
 </table>
 <div class="example-box-ml">
-  <div class="example-badge-ml">📗 പ്രായോഗിക ഉദാഹരണം (Real-World Example)</div>
+  <div class="example-badge-ml">📗 ഉദാഹരണം</div>
   <strong>ഗതാഗത രംഗത്തെ യുഗമാറ്റം:</strong> മാട്ടുപെട്ടി വണ്ടിയിലും കാളവണ്ടിയിലുമുള്ള യാത്രയിൽ നിന്ന് (കാർഷികം), കൽക്കരി തീവണ്ടികളിലേക്കും ബസ്സുകളിലേക്കും (വ്യാവസായികം), ഒടുവിൽ ജി.പി.എസും ഇന്റർനെറ്റും നിയന്ത്രിക്കുന്ന ഡ്രൈവറില്ലാ ഇലക്ട്രിക് കാറുകളിലേക്കുമുള്ള (വ്യവസായന്തരം) വളർച്ച ഇതിന് ഉത്തമ ഉദാഹരണമാണ്.
 </div></td>
         </tr>
       </tbody>
     </table>
-  </div>
+
+    <div class="page-footer-nav">
+      <span>University of Calicut · B.A. Sociology</span>
+      <span>Unit 5: Typologies of Society III — The Post-Indus</span>
+      <span>Semester 1</span>
+    </div>
+  </section>
 
 
-  <div class="section-block">
+  <!-- ==================== REVIEW QUESTIONS: SHORT NOTES ==================== -->
+  <section class="content-page">
+    <div class="page-top-bar">
+      <span class="top-brand">Module IV: SOCIOLOGY AND SOCIETY · Calicut University LMS E-Content</span>
+      <span class="top-meta">Academic Examination Bank: Short Notes</span>
+    </div>
+
     <div class="unit-hero">
       <div class="unit-code-badge">Section B · Short Notes (ലഘു കുറിപ്പുകൾ)</div>
       <div class="unit-title-en">Official LMS Short Notes &amp; Definitional Model Answers</div>
@@ -879,60 +943,72 @@ The concept of the 'Post-Industrial Society' was pioneered by American sociologi
 
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">1. Define Society.</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">The term 'Society' originates from the Latin root <em>'Socius'</em> (companion, fellowship). Sociologically, society is not a physical aggregation of people, but an abstract, organized system of social relationships. In the classic words of MacIver and Page, <em>'Society is a web of social relationships'</em>—an ever-changing network of usages, procedures, authority, mutual aid, groupings, and behavioral controls.</div>
+            <strong style="color: #1e3a8a;">1. Define Society.</strong><br><br>
+            <div style="color: #0f172a;">The term 'Society' originates from the Latin root <em>'Socius'</em> (companion, fellowship). Sociologically, society is not a physical aggregation of people, but an abstract, organized system of social relationships. In the classic words of MacIver and Page, <em>'Society is a web of social relationships'</em>—an ever-changing network of usages, procedures, authority, mutual aid, groupings, and behavioral controls.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">1. സമൂഹത്തെ നിർവചിക്കുക (Define Society).</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">'സൊസൈറ്റി' എന്ന പദം ഉടലെടുത്തത് 'സോഷ്യസ്' (കൂട്ടായ്മ, സൗഹൃദം) എന്ന ലാറ്റിൻ പദത്തിൽ നിന്നാണ്. സോഷ്യോളജിയിൽ സമൂഹം എന്നത് ആളുകളുടെ ഒരു ഭൗതിക കൂട്ടമല്ല, മറിച്ച് പരസ്പര സാമൂഹിക ബന്ധങ്ങളുടെ ഒരു അമൂർത്ത വ്യവസ്ഥയാണ്. മാക് ഐവറുടെയും പേജിന്റെയും വിഖ്യാതമായ വാക്കുകളിൽ, <em>'സാമൂഹിക ബന്ധങ്ങളുടെ ഒരു സങ്കീർണ്ണ വലയാണ് സമൂഹം' (Society is a web of social relationships)</em>; കീഴ്വഴക്കങ്ങളും അധികാരങ്ങളും സ്വാതന്ത്ര്യങ്ങളും കൂടിച്ചേർന്ന നിരന്തരം മാറിക്കൊണ്ടിരിക്കുന്ന ഒരു വ്യവസ്ഥയാണിത്.</div>
+            <strong style="color: #047857;">1. സമൂഹത്തെ നിർവചിക്കുക (Define Society).</strong><br><br>
+            <div style="color: #064e3b;">'സൊസൈറ്റി' എന്ന പദം ഉടലെടുത്തത് 'സോഷ്യസ്' (കൂട്ടായ്മ, സൗഹൃദം) എന്ന ലാറ്റിൻ പദത്തിൽ നിന്നാണ്. സോഷ്യോളജിയിൽ സമൂഹം എന്നത് ആളുകളുടെ ഒരു ഭൗതിക കൂട്ടമല്ല, മറിച്ച് പരസ്പര സാമൂഹിക ബന്ധങ്ങളുടെ ഒരു അമൂർത്ത വ്യവസ്ഥയാണ്. മാക് ഐവറുടെയും പേജിന്റെയും വിഖ്യാതമായ വാക്കുകളിൽ, <em>'സാമൂഹിക ബന്ധങ്ങളുടെ ഒരു സങ്കീർണ്ണ വലയാണ് സമൂഹം' (Society is a web of social relationships)</em>; കീഴ്വഴക്കങ്ങളും അധികാരങ്ങളും സ്വാതന്ത്ര്യങ്ങളും കൂടിച്ചേർന്ന നിരന്തരം മാറിക്കൊണ്ടിരിക്കുന്ന ഒരു വ്യവസ്ഥയാണിത്.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">2. What is meant by an Agrarian Society?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">An agrarian society is a traditional societal type whose economy and social organization are fundamentally grounded in agriculture and food cultivation. Emerging approximately 5,000–6,000 years ago with the technological invention of the animal-drawn plow, irrigation, and crop rotation, it generated food surpluses that sustained permanent settlements, rigid feudal landowning hierarchies, and village communities.</div>
+            <strong style="color: #1e3a8a;">2. What is meant by an Agrarian Society?</strong><br><br>
+            <div style="color: #0f172a;">An agrarian society is a traditional societal type whose economy and social organization are fundamentally grounded in agriculture and food cultivation. Emerging approximately 5,000–6,000 years ago with the technological invention of the animal-drawn plow, irrigation, and crop rotation, it generated food surpluses that sustained permanent settlements, rigid feudal landowning hierarchies, and village communities.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">2. കാർഷിക സമൂഹം എന്നാൽ എന്താണ്? (What is meant by an Agrarian Society?)</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">കൃഷിയും ഭക്ഷ്യോൽപ്പാദനവും പ്രധാന സാമ്പത്തിക ഉപാധിയാക്കിയ പരമ്പരാഗത സമൂഹമാണ് കാർഷിക സമൂഹം (Agrarian Society). മൃഗങ്ങൾ വലിക്കുന്ന കലപ്പ, ജലസേചനം, വിളപരിക്രമണം എന്നിവയുടെ കണ്ടുപിടുത്തത്തോടെ രൂപപ്പെട്ട ഈ സമൂഹം മിച്ചോൽപ്പാദനം സാധ്യമാക്കുകയും, സ്ഥിരവാസ കേന്ദ്രങ്ങൾക്കും ഗ്രാമീണ കൂട്ടായ്മകൾക്കും ഫ്യൂഡൽ ഭൂവുടമ-കർഷക വർഗ്ഗങ്ങൾക്കും വഴിയൊരുക്കുകയും ചെയ്തു.</div>
+            <strong style="color: #047857;">2. കാർഷിക സമൂഹം എന്നാൽ എന്താണ്? (What is meant by an Agrarian Society?)</strong><br><br>
+            <div style="color: #064e3b;">കൃഷിയും ഭക്ഷ്യോൽപ്പാദനവും പ്രധാന സാമ്പത്തിക ഉപാധിയാക്കിയ പരമ്പരാഗത സമൂഹമാണ് കാർഷിക സമൂഹം (Agrarian Society). മൃഗങ്ങൾ വലിക്കുന്ന കലപ്പ, ജലസേചനം, വിളപരിക്രമണം എന്നിവയുടെ കണ്ടുപിടുത്തത്തോടെ രൂപപ്പെട്ട ഈ സമൂഹം മിച്ചോൽപ്പാദനം സാധ്യമാക്കുകയും, സ്ഥിരവാസ കേന്ദ്രങ്ങൾക്കും ഗ്രാമീണ കൂട്ടായ്മകൾക്കും ഫ്യൂഡൽ ഭൂവുടമ-കർഷക വർഗ്ഗങ്ങൾക്കും വഴിയൊരുക്കുകയും ചെയ്തു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">3. Define Industrial Society.</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">An industrial society is a modern social system characterized by the replacement of human/animal muscle power with inanimate mechanical energy (steam, electricity, fossil fuels) and the centralization of production in automated factory systems. It is distinguished by high division of labor, rational-legal bureaucracies, massive urbanization, achieved status, and mass production of goods.</div>
+            <strong style="color: #1e3a8a;">3. Define Industrial Society.</strong><br><br>
+            <div style="color: #0f172a;">An industrial society is a modern social system characterized by the replacement of human/animal muscle power with inanimate mechanical energy (steam, electricity, fossil fuels) and the centralization of production in automated factory systems. It is distinguished by high division of labor, rational-legal bureaucracies, massive urbanization, achieved status, and mass production of goods.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">3. വ്യാവസായിക സമൂഹത്തെ നിർവചിക്കുക (Define Industrial Society).</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">കായിക അധ്വാനത്തിന് പകരം നീരാവി, വൈദ്യുതി തുടങ്ങിയ യാന്ത്രിക ഊർജ്ജവും ഫാക്ടറി സംവിധാനങ്ങളും ഉപയോഗിച്ച് വൻതോതിൽ ഉൽപ്പന്നങ്ങൾ നിർമ്മിക്കുന്ന ആധുനിക സമൂഹമാണ് വ്യാവസായിക സമൂഹം. സങ്കീർണ്ണമായ തൊഴിൽ വിഭജനം, നഗരവൽക്കരണം, വെബേറിയൻ ബ്യൂറോക്രസി, വ്യക്തിഗത കഴിവിനാൽ നേടിയെടുക്കുന്ന പദവികൾ (Achieved status) എന്നിവ ഇതിന്റെ പ്രത്യേകതകളാണ്.</div>
+            <strong style="color: #047857;">3. വ്യാവസായിക സമൂഹത്തെ നിർവചിക്കുക (Define Industrial Society).</strong><br><br>
+            <div style="color: #064e3b;">കായിക അധ്വാനത്തിന് പകരം നീരാവി, വൈദ്യുതി തുടങ്ങിയ യാന്ത്രിക ഊർജ്ജവും ഫാക്ടറി സംവിധാനങ്ങളും ഉപയോഗിച്ച് വൻതോതിൽ ഉൽപ്പന്നങ്ങൾ നിർമ്മിക്കുന്ന ആധുനിക സമൂഹമാണ് വ്യാവസായിക സമൂഹം. സങ്കീർണ്ണമായ തൊഴിൽ വിഭജനം, നഗരവൽക്കരണം, വെബേറിയൻ ബ്യൂറോക്രസി, വ്യക്തിഗത കഴിവിനാൽ നേടിയെടുക്കുന്ന പദവികൾ (Achieved status) എന്നിവ ഇതിന്റെ പ്രത്യേകതകളാണ്.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">4. Define Post-Industrial Society.</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">A post-industrial society, as conceptualized by Daniel Bell (1973), is an advanced social order wherein economic primacy shifts from tangible goods manufacturing to services, information processing, and intellectual technology. It is driven by theoretical scientific knowledge, professional-technical elites, digital computer networks, and globalized economic integration.</div>
+            <strong style="color: #1e3a8a;">4. Define Post-Industrial Society.</strong><br><br>
+            <div style="color: #0f172a;">A post-industrial society, as conceptualized by Daniel Bell (1973), is an advanced social order wherein economic primacy shifts from tangible goods manufacturing to services, information processing, and intellectual technology. It is driven by theoretical scientific knowledge, professional-technical elites, digital computer networks, and globalized economic integration.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">4. വ്യവസായന്തര സമൂഹത്തെ നിർവചിക്കുക (Define Post-Industrial Society).</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">ഡാനിയൽ ബെൽ (1973) വിഭാവനം ചെയ്തതുപോലെ, ഉൽപ്പന്ന നിർമ്മാണത്തേക്കാൾ വിജ്ഞാനം, വിവരസാങ്കേതികവിദ്യ, സേവനങ്ങൾ എന്നിവയ്ക്ക് പ്രാധാന്യം നൽകുന്ന അത്യാധുനിക സമൂഹമാണ് വ്യവസായന്തര സമൂഹം (Post-Industrial Society). സൈദ്ധാന്തിക ശാസ്ത്ര അറിവുകൾ, ഐ.ടി വിദഗ്ദ്ധർ, ഡിജിറ്റൽ ശൃംഖലകൾ, ആഗോളവൽക്കരണം എന്നിവ ഇതിന്റെ മുഖമുദ്രകളാണ്.</div>
+            <strong style="color: #047857;">4. വ്യവസായന്തര സമൂഹത്തെ നിർവചിക്കുക (Define Post-Industrial Society).</strong><br><br>
+            <div style="color: #064e3b;">ഡാനിയൽ ബെൽ (1973) വിഭാവനം ചെയ്തതുപോലെ, ഉൽപ്പന്ന നിർമ്മാണത്തേക്കാൾ വിജ്ഞാനം, വിവരസാങ്കേതികവിദ്യ, സേവനങ്ങൾ എന്നിവയ്ക്ക് പ്രാധാന്യം നൽകുന്ന അത്യാധുനിക സമൂഹമാണ് വ്യവസായന്തര സമൂഹം (Post-Industrial Society). സൈദ്ധാന്തിക ശാസ്ത്ര അറിവുകൾ, ഐ.ടി വിദഗ്ദ്ധർ, ഡിജിറ്റൽ ശൃംഖലകൾ, ആഗോളവൽക്കരണം എന്നിവ ഇതിന്റെ മുഖമുദ്രകളാണ്.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">5. Point out two core features of Post-Industrial Society.</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Two distinguishing features of post-industrial society are:<br>1. <strong>Pre-eminence of the Professional and Technical Class:</strong> The dominance of scientists, software engineers, data analysts, and knowledge consultants over traditional factory laborers.<br>2. <strong>Centrality of Theoretical Knowledge:</strong> Codified scientific theory, information capital, and R&D algorithms serving as the primary drivers of economic innovation and social direction.</div>
+            <strong style="color: #1e3a8a;">5. Point out two core features of Post-Industrial Society.</strong><br><br>
+            <div style="color: #0f172a;">Two distinguishing features of post-industrial society are:<br>1. <strong>Pre-eminence of the Professional and Technical Class:</strong> The dominance of scientists, software engineers, data analysts, and knowledge consultants over traditional factory laborers.<br>2. <strong>Centrality of Theoretical Knowledge:</strong> Codified scientific theory, information capital, and R&D algorithms serving as the primary drivers of economic innovation and social direction.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">5. വ്യവസായന്തര സമൂഹത്തിന്റെ രണ്ട് പ്രധാന സവിശേഷതകൾ ചൂണ്ടിക്കാണിക്കുക.</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">വ്യവസായന്തര സമൂഹത്തിന്റെ രണ്ട് സവിശേഷതകൾ താഴെ പറയുന്നവയാണ്:<br>1. <strong>വിദഗ്ദ്ധ-സാങ്കേതിക വർഗ്ഗത്തിന്റെ ആധിപത്യം:</strong> പരമ്പരാഗത ഫാക്ടറി തൊഴിലാളികൾക്ക് പകരം ശാസ്ത്രജ്ഞരും ഐ.ടി പ്രൊഫഷണലുകളും റിസർച്ച് സ്പെഷ്യലിസ്റ്റുകളും പ്രധാന തൊഴിൽ ശക്തിയാകുന്നു.<br>2. <strong>സൈദ്ധാന്തിക വിജ്ഞാനത്തിന്റെ കേന്ദ്രസ്ഥാനം:</strong> ശാസ്ത്രീയ അറിവുകളും ഡിജിറ്റൽ വിവര ശൃംഖലകളും പുതിയ കണ്ടുപിടുത്തങ്ങളുടെയും സാമ്പത്തിക വികസനത്തിന്റെയും ചാലകശക്തിയാകുന്നു.</div>
+            <strong style="color: #047857;">5. വ്യവസായന്തര സമൂഹത്തിന്റെ രണ്ട് പ്രധാന സവിശേഷതകൾ ചൂണ്ടിക്കാണിക്കുക.</strong><br><br>
+            <div style="color: #064e3b;">വ്യവസായന്തര സമൂഹത്തിന്റെ രണ്ട് സവിശേഷതകൾ താഴെ പറയുന്നവയാണ്:<br>1. <strong>വിദഗ്ദ്ധ-സാങ്കേതിക വർഗ്ഗത്തിന്റെ ആധിപത്യം:</strong> പരമ്പരാഗത ഫാക്ടറി തൊഴിലാളികൾക്ക് പകരം ശാസ്ത്രജ്ഞരും ഐ.ടി പ്രൊഫഷണലുകളും റിസർച്ച് സ്പെഷ്യലിസ്റ്റുകളും പ്രധാന തൊഴിൽ ശക്തിയാകുന്നു.<br>2. <strong>സൈദ്ധാന്തിക വിജ്ഞാനത്തിന്റെ കേന്ദ്രസ്ഥാനം:</strong> ശാസ്ത്രീയ അറിവുകളും ഡിജിറ്റൽ വിവര ശൃംഖലകളും പുതിയ കണ്ടുപിടുത്തങ്ങളുടെയും സാമ്പത്തിക വികസനത്തിന്റെയും ചാലകശക്തിയാകുന്നു.</div>
           </td>
         </tr>
       </tbody>
     </table>
-  </div>
+
+    <div class="page-footer-nav">
+      <span>University of Calicut · B.A. Sociology</span>
+      <span>Short Notes Examination Bank</span>
+      <span>Semester 1</span>
+    </div>
+  </section>
 
 
-  <div class="section-block">
+  <!-- ==================== REVIEW QUESTIONS: SHORT ESSAYS ==================== -->
+  <section class="content-page">
+    <div class="page-top-bar">
+      <span class="top-brand">Module IV: SOCIOLOGY AND SOCIETY · Calicut University LMS E-Content</span>
+      <span class="top-meta">Academic Examination Bank: Short Essays</span>
+    </div>
+
     <div class="unit-hero">
       <div class="unit-code-badge">Section C · Short Essays (ലഘു ഉപന്യാസങ്ങൾ)</div>
       <div class="unit-title-en">Model Short Essays &amp; Comprehensive Solutions</div>
@@ -950,40 +1026,52 @@ The concept of the 'Post-Industrial Society' was pioneered by American sociologi
 
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">1. Explain the concept of society in terms of its features and different theoretical approaches.</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;"><strong>Conceptual Foundations:</strong><br>Derived from the Latin <em>'Socius'</em> (companionship), society is an abstract, organized network of human interaction. Sociologists examine it through two foundational approaches:<br>• <strong>The Structural Approach:</strong> Conceptualizes society as an objective 'Thing' or enduring architecture constructed from interrelated components—folkways (customary routines), mores (moral imperatives), ideals (shared values), institutions (family, state, school), and regularized habits.<br>• <strong>The Functional Approach:</strong> Conceptualizes society as an active living 'Process'—an ongoing conversation and cooperative mechanism where members interact, maintain mutual interdependence, and coordinate functions to preserve social equilibrium.<br><br><strong>Major Characteristics:</strong><br>Human society is characterized by: (1) defined Territory, (2) living Population, (3) Abstract relational nature, (4) Network of reciprocal relationships, (5) Comprehensive culture, (6) inescapable Interdependence, (7) institutional Permanence across generations, (8) dynamic balance between Cooperation and Conflict, (9) foundational Likeness (consciousness of kind), (10) complementary Difference (division of labor), and (11) Continuous social change.</div>
+            <strong style="color: #1e3a8a;">1. Explain the concept of society in terms of its features and different theoretical approaches.</strong><br><br>
+            <div style="color: #0f172a;"><strong>Conceptual Foundations:</strong><br>Derived from the Latin <em>'Socius'</em> (companionship), society is an abstract, organized network of human interaction. Sociologists examine it through two foundational approaches:<br>• <strong>The Structural Approach:</strong> Conceptualizes society as an objective 'Thing' or enduring architecture constructed from interrelated components—folkways (customary routines), mores (moral imperatives), ideals (shared values), institutions (family, state, school), and regularized habits.<br>• <strong>The Functional Approach:</strong> Conceptualizes society as an active living 'Process'—an ongoing conversation and cooperative mechanism where members interact, maintain mutual interdependence, and coordinate functions to preserve social equilibrium.<br><br><strong>Major Characteristics:</strong><br>Human society is characterized by: (1) defined Territory, (2) living Population, (3) Abstract relational nature, (4) Network of reciprocal relationships, (5) Comprehensive culture, (6) inescapable Interdependence, (7) institutional Permanence across generations, (8) dynamic balance between Cooperation and Conflict, (9) foundational Likeness (consciousness of kind), (10) complementary Difference (division of labor), and (11) Continuous social change.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">1. സമൂഹത്തിന്റെ സവിശേഷതകളെയും വിവിധ സോഷ്യോളജിക്കൽ സമീപനങ്ങളെയും അടിസ്ഥാനമാക്കി സമൂഹമെന്ന ആശയത്തെ വിശദീകരിക്കുക.</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;"><strong>സമൂഹമെന്ന ആശയം:</strong><br>'സോഷ്യസ്' (കൂട്ടായ്മ) എന്ന ലാറ്റിൻ പദത്തിൽ നിന്നുണ്ടായ സമൂഹം മനുഷ്യബന്ധങ്ങളുടെ അമൂർത്തമായ വലയമാണ്. സമൂഹത്തെ മനസ്സിലാക്കാൻ രണ്ട് പ്രധാന സമീപനങ്ങളുണ്ട്:<br>• <strong>ഘടനാപരമായ സമീപനം (Structural Approach):</strong> സമൂഹത്തെ സ്ഥിരതയുള്ള ഒരു 'വസ്തു'വായി (Thing) കാണുന്നു. നാട്ടുനടപ്പുകൾ (Folkways), സദാചാര നിഷ്ഠകൾ (Mores), ആദർശങ്ങൾ (Ideals), സ്ഥാപനങ്ങൾ (Institutions), ശീലങ്ങൾ (Habits) എന്നിവയാണ് ഇതിന്റെ ഘടകങ്ങൾ.<br>• <strong>ധർമ്മപരമായ സമീപനം (Functional Approach):</strong> സമൂഹത്തെ ജീവസ്സുറ്റ ഒരു 'പ്രക്രിയ'യായി (Process) കാണുന്നു. ജനങ്ങൾ പരസ്പരം ആശയവിനിമയം നടത്തുകയും സഹകരിക്കുകയും പരസ്പരാശ്രയത്തിലൂടെ (Interdependence) സന്തുലിതാവസ്ഥ നിലനിർത്തുകയും ചെയ്യുന്നു.<br><br><strong>പ്രധാന സവിശേഷതകൾ:</strong><br>11 മൗലിക സവിശേഷതകളാൽ സമൂഹം നിർവ്വചിക്കപ്പെടുന്നു: (1) പ്രദേശം, (2) ജനങ്ങൾ, (3) അമൂർത്ത സ്വഭാവം, (4) സാമൂഹിക ബന്ധങ്ങളുടെ വല, (5) സമഗ്രമായ സംസ്കാരം, (6) പരസ്പരാശ്രയത്വം, (7) ശാശ്വതത്വം, (8) സഹകരണവും സംഘർഷവും, (9) സാമ്യത, (10) വ്യത്യാസം, (11) നിരന്തര മാറ്റം.</div>
+            <strong style="color: #047857;">1. സമൂഹത്തിന്റെ സവിശേഷതകളെയും വിവിധ സോഷ്യോളജിക്കൽ സമീപനങ്ങളെയും അടിസ്ഥാനമാക്കി സമൂഹമെന്ന ആശയത്തെ വിശദീകരിക്കുക.</strong><br><br>
+            <div style="color: #064e3b;"><strong>സമൂഹമെന്ന ആശയം:</strong><br>'സോഷ്യസ്' (കൂട്ടായ്മ) എന്ന ലാറ്റിൻ പദത്തിൽ നിന്നുണ്ടായ സമൂഹം മനുഷ്യബന്ധങ്ങളുടെ അമൂർത്തമായ വലയമാണ്. സമൂഹത്തെ മനസ്സിലാക്കാൻ രണ്ട് പ്രധാന സമീപനങ്ങളുണ്ട്:<br>• <strong>ഘടനാപരമായ സമീപനം (Structural Approach):</strong> സമൂഹത്തെ സ്ഥിരതയുള്ള ഒരു 'വസ്തു'വായി (Thing) കാണുന്നു. നാട്ടുനടപ്പുകൾ (Folkways), സദാചാര നിഷ്ഠകൾ (Mores), ആദർശങ്ങൾ (Ideals), സ്ഥാപനങ്ങൾ (Institutions), ശീലങ്ങൾ (Habits) എന്നിവയാണ് ഇതിന്റെ ഘടകങ്ങൾ.<br>• <strong>ധർമ്മപരമായ സമീപനം (Functional Approach):</strong> സമൂഹത്തെ ജീവസ്സുറ്റ ഒരു 'പ്രക്രിയ'യായി (Process) കാണുന്നു. ജനങ്ങൾ പരസ്പരം ആശയവിനിമയം നടത്തുകയും സഹകരിക്കുകയും പരസ്പരാശ്രയത്തിലൂടെ (Interdependence) സന്തുലിതാവസ്ഥ നിലനിർത്തുകയും ചെയ്യുന്നു.<br><br><strong>പ്രധാന സവിശേഷതകൾ:</strong><br>11 മൗലിക സവിശേഷതകളാൽ സമൂഹം നിർവ്വചിക്കപ്പെടുന്നു: (1) പ്രദേശം, (2) ജനങ്ങൾ, (3) അമൂർത്ത സ്വഭാവം, (4) സാമൂഹിക ബന്ധങ്ങളുടെ വല, (5) സമഗ്രമായ സംസ്കാരം, (6) പരസ്പരാശ്രയത്വം, (7) ശാശ്വതത്വം, (8) സഹകരണവും സംഘർഷവും, (9) സാമ്യത, (10) വ്യത്യാസം, (11) നിരന്തര മാറ്റം.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">2. Discuss the social structure and economic activities of agrarian and industrial societies.</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;"><strong>Agrarian Society:</strong><br>• <strong>Economic Activity:</strong> Grounded in intensive plow agriculture, draft animals, irrigation, and manure fertilization, producing sustained food surpluses.<br>• <strong>Social Structure:</strong> Deeply divided along land ownership into five strata: (1) Landlords (elite owners), (2) Supervisory farmers, (3) independent Cultivators, (4) tenant Sharecroppers, and (5) village Artisans/traders. Status is rigidly ascribed by birth with severe class polarity (landed rich vs landless poor), intimate village Gemeinschaft life, and traditionalist fatalism.<br><br><strong>Industrial Society:</strong><br>• <strong>Economic Activity:</strong> Powered by inanimate energy (steam, electricity) and centralized mechanized factories engaged in standardized mass goods manufacturing.<br>• <strong>Social Structure:</strong> Characterized by segmentalized labor roles, high occupational specialization, and meritocratic achieved status. Governed by Weberian rational-legal bureaucracies and formal contractual relations (Gesellschaft). Mass urbanization created metropolitan centers, the nuclear family system, value pluralism, and heightened social anomie.</div>
+            <strong style="color: #1e3a8a;">2. Discuss the social structure and economic activities of agrarian and industrial societies.</strong><br><br>
+            <div style="color: #0f172a;"><strong>Agrarian Society:</strong><br>• <strong>Economic Activity:</strong> Grounded in intensive plow agriculture, draft animals, irrigation, and manure fertilization, producing sustained food surpluses.<br>• <strong>Social Structure:</strong> Deeply divided along land ownership into five strata: (1) Landlords (elite owners), (2) Supervisory farmers, (3) independent Cultivators, (4) tenant Sharecroppers, and (5) village Artisans/traders. Status is rigidly ascribed by birth with severe class polarity (landed rich vs landless poor), intimate village Gemeinschaft life, and traditionalist fatalism.<br><br><strong>Industrial Society:</strong><br>• <strong>Economic Activity:</strong> Powered by inanimate energy (steam, electricity) and centralized mechanized factories engaged in standardized mass goods manufacturing.<br>• <strong>Social Structure:</strong> Characterized by segmentalized labor roles, high occupational specialization, and meritocratic achieved status. Governed by Weberian rational-legal bureaucracies and formal contractual relations (Gesellschaft). Mass urbanization created metropolitan centers, the nuclear family system, value pluralism, and heightened social anomie.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">2. കാർഷിക, വ്യാവസായിക സമൂഹങ്ങളിലെ സാമൂഹിക ഘടനയെയും സാമ്പത്തിക പ്രവർത്തനങ്ങളെയും താരതമ്യം ചെയ്ത് ചർച്ച ചെയ്യുക.</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;"><strong>കാർഷിക സമൂഹം (Agrarian Society):</strong><br>• <strong>സാമ്പത്തിക പ്രവർത്തനം:</strong> മൃഗങ്ങൾ വലിക്കുന്ന കലപ്പ, ജലസേചനം, കൃഷിഭൂമിയിലെ വളപ്രയോഗം എന്നിവയിലൂടെയുള്ള ഭക്ഷ്യധാന്യ ഉൽപ്പാദനം.<br>• <strong>സാമൂഹിക ഘടന:</strong> ഭൂമിയുടെ ഉടമസ്ഥതയെ അടിസ്ഥാനമാക്കി 5 വർഗ്ഗങ്ങൾ രൂപപ്പെട്ടു: (1) ഭൂവുടമകൾ, (2) മേൽനോട്ട കർഷകർ, (3) സ്വതന്ത്ര കർഷകർ, (4) പാട്ടക്കർഷകർ, (5) ഗ്രാമീണ കരകൗശലക്കാർ. ജനനത്താൽ പദവികൾ നിർണ്ണയിക്കപ്പെടുന്ന ജന്മി-കുടിയാൻ വ്യവസ്ഥിതിയും അടുത്ത വ്യക്തിബന്ധങ്ങളുള്ള ഗ്രാമീണ ജീവിതവുമാണ് (Gemeinschaft) ഇവിടെയുണ്ടായിരുന്നത്.<br><br><strong>വ്യാവസായിക സമൂഹം (Industrial Society):</strong><br>• <strong>സാമ്പത്തിക പ്രവർത്തനം:</strong> നീരാവി, വൈദ്യുതി എന്നിവയിൽ പ്രവർത്തിക്കുന്ന വൻകിട ഫാക്ടറികളിലെ യന്ത്രവൽക്കൃത മാസ് പ്രൊഡക്ഷൻ.<br>• <strong>സാമൂഹിക ഘടന:</strong> സങ്കീർണ്ണമായ തൊഴിൽ വിഭജനവും വ്യക്തിഗത കഴിവിനാൽ നേടിയെടുക്കുന്ന പദവികളും (Achieved status). രേഖാമൂലമുള്ള നിയമങ്ങളും കാര്യക്ഷമതയും ഉള്ള ബ്യൂറോക്രസിയും, നഗരവൽക്കരണവും ആധുനിക കരാർ ബന്ധങ്ങളും (Gesellschaft) നിലവിൽ വന്നു.</div>
+            <strong style="color: #047857;">2. കാർഷിക, വ്യാവസായിക സമൂഹങ്ങളിലെ സാമൂഹിക ഘടനയെയും സാമ്പത്തിക പ്രവർത്തനങ്ങളെയും താരതമ്യം ചെയ്ത് ചർച്ച ചെയ്യുക.</strong><br><br>
+            <div style="color: #064e3b;"><strong>കാർഷിക സമൂഹം (Agrarian Society):</strong><br>• <strong>സാമ്പത്തിക പ്രവർത്തനം:</strong> മൃഗങ്ങൾ വലിക്കുന്ന കലപ്പ, ജലസേചനം, കൃഷിഭൂമിയിലെ വളപ്രയോഗം എന്നിവയിലൂടെയുള്ള ഭക്ഷ്യധാന്യ ഉൽപ്പാദനം.<br>• <strong>സാമൂഹിക ഘടന:</strong> ഭൂമിയുടെ ഉടമസ്ഥതയെ അടിസ്ഥാനമാക്കി 5 വർഗ്ഗങ്ങൾ രൂപപ്പെട്ടു: (1) ഭൂവുടമകൾ, (2) മേൽനോട്ട കർഷകർ, (3) സ്വതന്ത്ര കർഷകർ, (4) പാട്ടക്കർഷകർ, (5) ഗ്രാമീണ കരകൗശലക്കാർ. ജനനത്താൽ പദവികൾ നിർണ്ണയിക്കപ്പെടുന്ന ജന്മി-കുടിയാൻ വ്യവസ്ഥിതിയും അടുത്ത വ്യക്തിബന്ധങ്ങളുള്ള ഗ്രാമീണ ജീവിതവുമാണ് (Gemeinschaft) ഇവിടെയുണ്ടായിരുന്നത്.<br><br><strong>വ്യാവസായിക സമൂഹം (Industrial Society):</strong><br>• <strong>സാമ്പത്തിക പ്രവർത്തനം:</strong> നീരാവി, വൈദ്യുതി എന്നിവയിൽ പ്രവർത്തിക്കുന്ന വൻകിട ഫാക്ടറികളിലെ യന്ത്രവൽക്കൃത മാസ് പ്രൊഡക്ഷൻ.<br>• <strong>സാമൂഹിക ഘടന:</strong> സങ്കീർണ്ണമായ തൊഴിൽ വിഭജനവും വ്യക്തിഗത കഴിവിനാൽ നേടിയെടുക്കുന്ന പദവികളും (Achieved status). രേഖാമൂലമുള്ള നിയമങ്ങളും കാര്യക്ഷമതയും ഉള്ള ബ്യൂറോക്രസിയും, നഗരവൽക്കരണവും ആധുനിക കരാർ ബന്ധങ്ങളും (Gesellschaft) നിലവിൽ വന്നു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">3. Describe the major characteristics and structural changes of society due to the shift from industrial to post-industrial society.</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;"><strong>The Epochal Shift (Bell 1973):</strong><br>The transition from industrial to post-industrial society represents an evolutionary paradigm shift from a goods-producing economy to a knowledge- and service-producing order.<br><br><strong>Key Structural Transformations:</strong><br>• <strong>From Factory to Service & Info:</strong> The primary labor market transitions from secondary factory assembly to tertiary/quaternary sectors (finance, healthcare, software, R&D, education).<br>• <strong>From Manual Laborers to Knowledge Elites:</strong> The dominant occupational stratum is no longer the blue-collar industrial worker, but professional, technical, and scientific knowledge specialists.<br>• <strong>From Mechanical Energy to Information Capital:</strong> Theoretical scientific knowledge, intellectual property, algorithms, and data networks displace steam/electricity as the strategic catalyst of wealth creation.<br>• <strong>Cybernetic Infrastructure:</strong> Digital platforms, cloud computing, and telecommunications facilitate remote decentralized work.<br>• <strong>Intensified Globalization:</strong> Economies become integrated into real-time global financial markets and trans-border cultural exchanges.</div>
+            <strong style="color: #1e3a8a;">3. Describe the major characteristics and structural changes of society due to the shift from industrial to post-industrial society.</strong><br><br>
+            <div style="color: #0f172a;"><strong>The Epochal Shift (Bell 1973):</strong><br>The transition from industrial to post-industrial society represents an evolutionary paradigm shift from a goods-producing economy to a knowledge- and service-producing order.<br><br><strong>Key Structural Transformations:</strong><br>• <strong>From Factory to Service & Info:</strong> The primary labor market transitions from secondary factory assembly to tertiary/quaternary sectors (finance, healthcare, software, R&D, education).<br>• <strong>From Manual Laborers to Knowledge Elites:</strong> The dominant occupational stratum is no longer the blue-collar industrial worker, but professional, technical, and scientific knowledge specialists.<br>• <strong>From Mechanical Energy to Information Capital:</strong> Theoretical scientific knowledge, intellectual property, algorithms, and data networks displace steam/electricity as the strategic catalyst of wealth creation.<br>• <strong>Cybernetic Infrastructure:</strong> Digital platforms, cloud computing, and telecommunications facilitate remote decentralized work.<br>• <strong>Intensified Globalization:</strong> Economies become integrated into real-time global financial markets and trans-border cultural exchanges.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">3. വ്യാവസായിക സമൂഹത്തിൽ നിന്ന് വ്യവസായന്തര സമൂഹത്തിലേക്കുള്ള മാറ്റത്തിന്റെ പ്രധാന സവിശേഷതകളും ഘടനാപരമായ പരിവർത്തനങ്ങളും വിശദീകരിക്കുക.</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;"><strong>യുഗപരിവർത്തനം (ഡാനിയൽ ബെൽ 1973):</strong><br>വ്യാവസായിക സമൂഹത്തിൽ നിന്ന് വ്യവസായന്തര സമൂഹത്തിലേക്കുള്ള മാറ്റം ഭൗതിക ഉൽപ്പന്നങ്ങളുടെ നിർമ്മാണത്തിൽ നിന്നും വിജ്ഞാനവും സേവനങ്ങളും ഉൽപ്പാദിപ്പിക്കുന്ന പുതിയൊരു ലോകക്രമത്തിലേക്കുള്ള ചുവടുവെപ്പാണ്.<br><br><strong>പ്രധാന ഘടനാപരമായ മാറ്റങ്ങൾ:</strong><br>• <strong>ഫാക്ടറിയിൽ നിന്ന് സേവനങ്ങളിലേക്ക്:</strong> സമ്പദ്‌വ്യവസ്ഥയുടെ കേന്ദ്രം ഫാക്ടറികളിൽ നിന്ന് ഐ.ടി, ആരോഗ്യം, വിദ്യാഭ്യാസം, ബാങ്കിംഗ് തുടങ്ങിയ സേവന മേഖലകളിലേക്ക് മാറി.<br>• <strong>തൊഴിലാളികളിൽ നിന്ന് വിദഗ്ദ്ധരിലേക്ക്:</strong> ബ്ലൂ കോളർ ഫാക്ടറി തൊഴിലാളികൾക്ക് പകരം ശാസ്ത്രജ്ഞരും സോഫ്റ്റ്‌വെയർ എൻജിനീയർമാരും ഡാറ്റാ അനലിസ്റ്റുകളും നേതൃനിരയിലെത്തി.<br>• <strong>യന്ത്രങ്ങളിൽ നിന്ന് സൈദ്ധാന്തിക അറിവിലേക്ക്:</strong> കൽക്കരിക്കും വൈദ്യുതിക്കും പകരം ശാസ്ത്രീയ അറിവുകളും പേറ്റന്റുകളും അൽഗോരിതങ്ങളുമാണ് ഏറ്റവും വലിയ മൂലധനം.<br>• <strong>ഡിജിറ്റൽ ശൃംഖലകൾ:</strong> ഇന്റർനെറ്റും കമ്പ്യൂട്ടറുകളും എവിടെയിരുന്നും ജോലി ചെയ്യാവുന്ന സൈബർ സംസ്കാരം കൊണ്ടുവന്നു.<br>• <strong>ആഗോളവൽക്കരണം:</strong> രാജ്യങ്ങളുടെ അതിർത്തികൾ ഭേദിച്ച് ലോകം മുഴുവൻ വ്യാപിച്ചുകിടക്കുന്ന തത്സമയ സാമ്പത്തിക വിനിമയങ്ങൾ സാധ്യമായി.</div>
+            <strong style="color: #047857;">3. വ്യാവസായിക സമൂഹത്തിൽ നിന്ന് വ്യവസായന്തര സമൂഹത്തിലേക്കുള്ള മാറ്റത്തിന്റെ പ്രധാന സവിശേഷതകളും ഘടനാപരമായ പരിവർത്തനങ്ങളും വിശദീകരിക്കുക.</strong><br><br>
+            <div style="color: #064e3b;"><strong>യുഗപരിവർത്തനം (ഡാനിയൽ ബെൽ 1973):</strong><br>വ്യാവസായിക സമൂഹത്തിൽ നിന്ന് വ്യവസായന്തര സമൂഹത്തിലേക്കുള്ള മാറ്റം ഭൗതിക ഉൽപ്പന്നങ്ങളുടെ നിർമ്മാണത്തിൽ നിന്നും വിജ്ഞാനവും സേവനങ്ങളും ഉൽപ്പാദിപ്പിക്കുന്ന പുതിയൊരു ലോകക്രമത്തിലേക്കുള്ള ചുവടുവെപ്പാണ്.<br><br><strong>പ്രധാന ഘടനാപരമായ മാറ്റങ്ങൾ:</strong><br>• <strong>ഫാക്ടറിയിൽ നിന്ന് സേവനങ്ങളിലേക്ക്:</strong> സമ്പദ്‌വ്യവസ്ഥയുടെ കേന്ദ്രം ഫാക്ടറികളിൽ നിന്ന് ഐ.ടി, ആരോഗ്യം, വിദ്യാഭ്യാസം, ബാങ്കിംഗ് തുടങ്ങിയ സേവന മേഖലകളിലേക്ക് മാറി.<br>• <strong>തൊഴിലാളികളിൽ നിന്ന് വിദഗ്ദ്ധരിലേക്ക്:</strong> ബ്ലൂ കോളർ ഫാക്ടറി തൊഴിലാളികൾക്ക് പകരം ശാസ്ത്രജ്ഞരും സോഫ്റ്റ്‌വെയർ എൻജിനീയർമാരും ഡാറ്റാ അനലിസ്റ്റുകളും നേതൃനിരയിലെത്തി.<br>• <strong>യന്ത്രങ്ങളിൽ നിന്ന് സൈദ്ധാന്തിക അറിവിലേക്ക്:</strong> കൽക്കരിക്കും വൈദ്യുതിക്കും പകരം ശാസ്ത്രീയ അറിവുകളും പേറ്റന്റുകളും അൽഗോരിതങ്ങളുമാണ് ഏറ്റവും വലിയ മൂലധനം.<br>• <strong>ഡിജിറ്റൽ ശൃംഖലകൾ:</strong> ഇന്റർനെറ്റും കമ്പ്യൂട്ടറുകളും എവിടെയിരുന്നും ജോലി ചെയ്യാവുന്ന സൈബർ സംസ്കാരം കൊണ്ടുവന്നു.<br>• <strong>ആഗോളവൽക്കരണം:</strong> രാജ്യങ്ങളുടെ അതിർത്തികൾ ഭേദിച്ച് ലോകം മുഴുവൻ വ്യാപിച്ചുകിടക്കുന്ന തത്സമയ സാമ്പത്തിക വിനിമയങ്ങൾ സാധ്യമായി.</div>
           </td>
         </tr>
       </tbody>
     </table>
-  </div>
+
+    <div class="page-footer-nav">
+      <span>University of Calicut · B.A. Sociology</span>
+      <span>Short Essays Examination Bank</span>
+      <span>Semester 1</span>
+    </div>
+  </section>
 
 
-  <div class="section-block">
+  <!-- ==================== REVIEW QUESTIONS: LONG ESSAYS ==================== -->
+  <section class="content-page">
+    <div class="page-top-bar">
+      <span class="top-brand">Module IV: SOCIOLOGY AND SOCIETY · Calicut University LMS E-Content</span>
+      <span class="top-meta">Academic Examination Bank: Detailed Essays</span>
+    </div>
+
     <div class="unit-hero">
       <div class="unit-code-badge">Section D · Long Essays (വിശദമായ ഉപന്യാസങ്ങൾ)</div>
       <div class="unit-title-en">Comprehensive Essay Solutions &amp; Analytical Frameworks</div>
@@ -1001,40 +1089,52 @@ The concept of the 'Post-Industrial Society' was pioneered by American sociologi
 
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">1. Comprehensive Long Essay: Describe the major characteristics and evolutionary transformation of human society from agrarian to post-industrial society.</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;"><strong>Introduction:</strong><br>Human society is an evolving web of organized social relationships. Over millennia, human civilization underwent profound structural transformations, progressing through distinct technological and institutional epochs—most decisively from Agrarian, to Industrial, and ultimately to Post-Industrial society.<br><br><strong>1. The Agrarian Epoch:</strong><br>Emerging 5,000–6,000 years ago with plow technology, irrigation, and manure fertilization, agrarian society achieved sustained food surpluses. It gave rise to a rigid five-tiered occupational structure (Landlords, Supervisory farmers, Cultivators, Sharecroppers, Artisans). Social stratification was strictly ascribed by birth, polarising landed elites against landless peasants. Social cohesion was rooted in localized village solidarity (Gemeinschaft), where religion and ancestral fatalism dictated daily routines.<br><br><strong>2. The Industrial Transformation:</strong><br>The Industrial Revolution substituted mechanical energy (steam, electricity) for muscle power, centralizing production in mechanized urban factories. Key features included: extreme division of labor (Marxian alienation), shift to meritocratic achieved status, Weberian rational-legal bureaucracy, secularization, and massive rural-urban migration creating modern mass society (Gesellschaft). However, it spawned severe class inequalities and environmental pollution.<br><br><strong>3. The Post-Industrial Era (Bell 1973):</strong><br>Advanced economies transitioned into post-industrial societies organized around services, information technology, and codified theoretical science. Professional-technical knowledge workers eclipsed factory laborers. Global digital networks enabled decentralized operations, creating an interconnected knowledge economy.<br><br><strong>Conclusion:</strong><br>This evolutionary trajectory reveals a shift from direct dependence on nature (Agrarian), to dependence on fabricated machines (Industrial), to dependence on information and human intellectual capital (Post-Industrial).</div>
+            <strong style="color: #1e3a8a;">1. Comprehensive Long Essay: Describe the major characteristics and evolutionary transformation of human society from agrarian to post-industrial society.</strong><br><br>
+            <div style="color: #0f172a;"><strong>Introduction:</strong><br>Human society is an evolving web of organized social relationships. Over millennia, human civilization underwent profound structural transformations, progressing through distinct technological and institutional epochs—most decisively from Agrarian, to Industrial, and ultimately to Post-Industrial society.<br><br><strong>1. The Agrarian Epoch:</strong><br>Emerging 5,000–6,000 years ago with plow technology, irrigation, and manure fertilization, agrarian society achieved sustained food surpluses. It gave rise to a rigid five-tiered occupational structure (Landlords, Supervisory farmers, Cultivators, Sharecroppers, Artisans). Social stratification was strictly ascribed by birth, polarising landed elites against landless peasants. Social cohesion was rooted in localized village solidarity (Gemeinschaft), where religion and ancestral fatalism dictated daily routines.<br><br><strong>2. The Industrial Transformation:</strong><br>The Industrial Revolution substituted mechanical energy (steam, electricity) for muscle power, centralizing production in mechanized urban factories. Key features included: extreme division of labor (Marxian alienation), shift to meritocratic achieved status, Weberian rational-legal bureaucracy, secularization, and massive rural-urban migration creating modern mass society (Gesellschaft). However, it spawned severe class inequalities and environmental pollution.<br><br><strong>3. The Post-Industrial Era (Bell 1973):</strong><br>Advanced economies transitioned into post-industrial societies organized around services, information technology, and codified theoretical science. Professional-technical knowledge workers eclipsed factory laborers. Global digital networks enabled decentralized operations, creating an interconnected knowledge economy.<br><br><strong>Conclusion:</strong><br>This evolutionary trajectory reveals a shift from direct dependence on nature (Agrarian), to dependence on fabricated machines (Industrial), to dependence on information and human intellectual capital (Post-Industrial).</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">1. സമഗ്ര ഉപന്യാസം: കാർഷിക സമൂഹത്തിൽ നിന്ന് വ്യവസായന്തര സമൂഹത്തിലേക്കുള്ള മനുഷ്യസമൂഹത്തിന്റെ ഘടനാപരമായ വളർച്ചയും പ്രധാന പരിവർത്തനങ്ങളും വിവരിക്കുക.</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;"><strong>ആമുഖം:</strong><br>മനുഷ്യസമൂഹം പരസ്പര ബന്ധങ്ങളാൽ കോർക്കപ്പെട്ട നിരന്തരം മാറിക്കൊണ്ടിരിക്കുന്ന ഒരു വ്യവസ്ഥയാണ്. ചരിത്രത്തിലുടനീളം സാങ്കേതിക മുന്നേറ്റങ്ങൾക്ക് അനുസൃതമായി മനുഷ്യസമൂഹം കാർഷിക, വ്യാവസായിക, വ്യവസായന്തര ഘട്ടങ്ങളിലൂടെ വിപ്ലവകരമായി വളർന്നു.<br><br><strong>1. കാർഷിക യുഗം:</strong><br>ഏകദേശം 5,000–6,000 വർഷങ്ങൾക്ക് മുമ്പ് കലപ്പ, ജലസേചനം, വളപ്രയോഗം എന്നിവയിലൂടെ ആരംഭിച്ചു. ഭക്ഷ്യ മിച്ചോൽപ്പാദനം സാധ്യമായതോടെ സ്ഥിരവാസവും 5 തരം തൊഴിൽ വിഭാഗങ്ങളും (ഭൂവുടമകൾ, മേൽനോട്ടക്കാർ, കർഷകർ, പാട്ടക്കാർ, കരകൗശലക്കാർ) നിലവിൽ വന്നു. ജനനത്താൽ പദവികൾ നിർണ്ണയിക്കപ്പെട്ട ഫ്യൂഡൽ സമ്പ്രദായവും, മതവും വിധിയും നിയന്ത്രിച്ച ഗ്രാമീണ കൂട്ടായ്മയുമായിരുന്നു (Gemeinschaft) ഇതിന്റെ പ്രത്യേകത.<br><br><strong>2. വ്യാവസായിക വിപ്ലവം:</strong><br>മനുഷ്യ അധ്വാനത്തിന് പകരം നീരാവി, വൈദ്യുതി തുടങ്ങിയ യന്ത്രശക്തി വന്നതോടെ വൻകിട ഫാക്ടറികൾ വളർന്നു. സങ്കീർണ്ണമായ തൊഴിൽ വിഭജനം, കഴിവുകൾക്ക് പ്രാധാന്യം നൽകുന്ന നേടിയ പദവികൾ (Achieved status), കാര്യക്ഷമമായ ബ്യൂറോക്രസി, നഗരവൽക്കരണം, ആധുനിക കരാർ ബന്ധങ്ങൾ (Gesellschaft) എന്നിവ രൂപപ്പെട്ടു. എന്നാൽ നഗരങ്ങളിലെ ഏകാന്തതയും പ്രകൃതി മലിനീകരണവും വലിയ വെല്ലുവിളിയായി.<br><br><strong>3. വ്യവസായന്തര യുഗം (ഡാനിയൽ ബെൽ):</strong><br>ഉൽപ്പന്ന നിർമ്മാണത്തേക്കാൾ വിജ്ഞാനം, വിവരസാങ്കേതികവിദ്യ, സേവനങ്ങൾ എന്നിവ സമ്പദ്‌വ്യവസ്ഥയെ നയിക്കാൻ തുടങ്ങി. ഫാക്ടറി തൊഴിലാളികൾക്ക് പകരം സോഫ്റ്റ്‌വെയർ എൻജിനീയർമാരും ശാസ്ത്രജ്ഞരും മുന്നിലെത്തി. ഇന്റർനെറ്റും സൈബർ ശൃംഖലകളും ലോകത്തെ ആഗോളവൽക്കരണത്തിലേക്ക് നയിച്ചു.<br><br><strong>ഉപസംഹാരം:</strong><br>മനുഷ്യസമൂഹത്തിന്റെ ഈ പരിണാമം പ്രകൃതിയെ നേരിട്ട് ആശ്രയിക്കുന്ന അവസ്ഥയിൽ നിന്നും (കാർഷികം), യന്ത്രങ്ങളെ ആശ്രയിക്കുന്ന അവസ്ഥയിലേക്കും (വ്യാവസായികം), ഒടുവിൽ അറിവിനെയും വിവരസാങ്കേതികവിദ്യയെയും ആശ്രയിക്കുന്ന (വ്യവസായന്തര) ഉന്നതിയിലേക്കുമുള്ള യാത്രയാണ്.</div>
+            <strong style="color: #047857;">1. സമഗ്ര ഉപന്യാസം: കാർഷിക സമൂഹത്തിൽ നിന്ന് വ്യവസായന്തര സമൂഹത്തിലേക്കുള്ള മനുഷ്യസമൂഹത്തിന്റെ ഘടനാപരമായ വളർച്ചയും പ്രധാന പരിവർത്തനങ്ങളും വിവരിക്കുക.</strong><br><br>
+            <div style="color: #064e3b;"><strong>ആമുഖം:</strong><br>മനുഷ്യസമൂഹം പരസ്പര ബന്ധങ്ങളാൽ കോർക്കപ്പെട്ട നിരന്തരം മാറിക്കൊണ്ടിരിക്കുന്ന ഒരു വ്യവസ്ഥയാണ്. ചരിത്രത്തിലുടനീളം സാങ്കേതിക മുന്നേറ്റങ്ങൾക്ക് അനുസൃതമായി മനുഷ്യസമൂഹം കാർഷിക, വ്യാവസായിക, വ്യവസായന്തര ഘട്ടങ്ങളിലൂടെ വിപ്ലവകരമായി വളർന്നു.<br><br><strong>1. കാർഷിക യുഗം:</strong><br>ഏകദേശം 5,000–6,000 വർഷങ്ങൾക്ക് മുമ്പ് കലപ്പ, ജലസേചനം, വളപ്രയോഗം എന്നിവയിലൂടെ ആരംഭിച്ചു. ഭക്ഷ്യ മിച്ചോൽപ്പാദനം സാധ്യമായതോടെ സ്ഥിരവാസവും 5 തരം തൊഴിൽ വിഭാഗങ്ങളും (ഭൂവുടമകൾ, മേൽനോട്ടക്കാർ, കർഷകർ, പാട്ടക്കാർ, കരകൗശലക്കാർ) നിലവിൽ വന്നു. ജനനത്താൽ പദവികൾ നിർണ്ണയിക്കപ്പെട്ട ഫ്യൂഡൽ സമ്പ്രദായവും, മതവും വിധിയും നിയന്ത്രിച്ച ഗ്രാമീണ കൂട്ടായ്മയുമായിരുന്നു (Gemeinschaft) ഇതിന്റെ പ്രത്യേകത.<br><br><strong>2. വ്യാവസായിക വിപ്ലവം:</strong><br>മനുഷ്യ അധ്വാനത്തിന് പകരം നീരാവി, വൈദ്യുതി തുടങ്ങിയ യന്ത്രശക്തി വന്നതോടെ വൻകിട ഫാക്ടറികൾ വളർന്നു. സങ്കീർണ്ണമായ തൊഴിൽ വിഭജനം, കഴിവുകൾക്ക് പ്രാധാന്യം നൽകുന്ന നേടിയ പദവികൾ (Achieved status), കാര്യക്ഷമമായ ബ്യൂറോക്രസി, നഗരവൽക്കരണം, ആധുനിക കരാർ ബന്ധങ്ങൾ (Gesellschaft) എന്നിവ രൂപപ്പെട്ടു. എന്നാൽ നഗരങ്ങളിലെ ഏകാന്തതയും പ്രകൃതി മലിനീകരണവും വലിയ വെല്ലുവിളിയായി.<br><br><strong>3. വ്യവസായന്തര യുഗം (ഡാനിയൽ ബെൽ):</strong><br>ഉൽപ്പന്ന നിർമ്മാണത്തേക്കാൾ വിജ്ഞാനം, വിവരസാങ്കേതികവിദ്യ, സേവനങ്ങൾ എന്നിവ സമ്പദ്‌വ്യവസ്ഥയെ നയിക്കാൻ തുടങ്ങി. ഫാക്ടറി തൊഴിലാളികൾക്ക് പകരം സോഫ്റ്റ്‌വെയർ എൻജിനീയർമാരും ശാസ്ത്രജ്ഞരും മുന്നിലെത്തി. ഇന്റർനെറ്റും സൈബർ ശൃംഖലകളും ലോകത്തെ ആഗോളവൽക്കരണത്തിലേക്ക് നയിച്ചു.<br><br><strong>ഉപസംഹാരം:</strong><br>മനുഷ്യസമൂഹത്തിന്റെ ഈ പരിണാമം പ്രകൃതിയെ നേരിട്ട് ആശ്രയിക്കുന്ന അവസ്ഥയിൽ നിന്നും (കാർഷികം), യന്ത്രങ്ങളെ ആശ്രയിക്കുന്ന അവസ്ഥയിലേക്കും (വ്യാവസായികം), ഒടുവിൽ അറിവിനെയും വിവരസാങ്കേതികവിദ്യയെയും ആശ്രയിക്കുന്ന (വ്യവസായന്തര) ഉന്നതിയിലേക്കുമുള്ള യാത്രയാണ്.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">2. Comprehensive Long Essay: Discuss the emergence of post-industrial societies with reference to technological changes, knowledge economy, and the expansion of the service sector.</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;"><strong>Introduction & Conceptual Formulation:</strong><br>The concept of 'Post-Industrial Society' was formulated by Daniel Bell (1973) to characterize the structural transformation of advanced twentieth-century economies from goods-producing societies to information-led social orders.<br><br><strong>1. The Knowledge Economy and Theoretical Science:</strong><br>In post-industrial society, knowledge replaces financial capital and physical labor as the primary productive asset. Unlike empirical trial-and-error inventions of the industrial era, modern innovations derive from codified theoretical knowledge—mathematical algorithms, biosciences, quantum mechanics, and artificial intelligence. University laboratories, R&D institutes, and think tanks become the epicenters of power.<br><br><strong>2. Explosive Growth of the Service Sector:</strong><br>The economic center of gravity decisively shifted away from manufacturing toward tertiary and quaternary services. Over 70–80% of employment in post-industrial nations encompasses health care, education, software engineering, digital media, financial analysis, and organizational consulting.<br><br><strong>3. Technological Revolution and Cybernetic Networks:</strong><br>Microprocessing chips, optical fiber communications, cloud computing, and automated robotics transformed organizational architecture. Physical factories gave way to digital platforms. Information technology decentralized organizational hierarchies, allowing telecommuting and gig-economy flexible labor.<br><br><strong>4. Rise of the Professional-Technical Class:</strong><br>Bell identified the emergence of a new social hierarchy dominated by scientists, engineers, academics, and system analysts whose authority derives from intellectual credentials rather than hereditary property.<br><br><strong>Conclusion:</strong><br>The post-industrial paradigm establishes an interconnected world society governed by intellectual technology, symbolic manipulation, and instantaneous communication.</div>
+            <strong style="color: #1e3a8a;">2. Comprehensive Long Essay: Discuss the emergence of post-industrial societies with reference to technological changes, knowledge economy, and the expansion of the service sector.</strong><br><br>
+            <div style="color: #0f172a;"><strong>Introduction & Conceptual Formulation:</strong><br>The concept of 'Post-Industrial Society' was formulated by Daniel Bell (1973) to characterize the structural transformation of advanced twentieth-century economies from goods-producing societies to information-led social orders.<br><br><strong>1. The Knowledge Economy and Theoretical Science:</strong><br>In post-industrial society, knowledge replaces financial capital and physical labor as the primary productive asset. Unlike empirical trial-and-error inventions of the industrial era, modern innovations derive from codified theoretical knowledge—mathematical algorithms, biosciences, quantum mechanics, and artificial intelligence. University laboratories, R&D institutes, and think tanks become the epicenters of power.<br><br><strong>2. Explosive Growth of the Service Sector:</strong><br>The economic center of gravity decisively shifted away from manufacturing toward tertiary and quaternary services. Over 70–80% of employment in post-industrial nations encompasses health care, education, software engineering, digital media, financial analysis, and organizational consulting.<br><br><strong>3. Technological Revolution and Cybernetic Networks:</strong><br>Microprocessing chips, optical fiber communications, cloud computing, and automated robotics transformed organizational architecture. Physical factories gave way to digital platforms. Information technology decentralized organizational hierarchies, allowing telecommuting and gig-economy flexible labor.<br><br><strong>4. Rise of the Professional-Technical Class:</strong><br>Bell identified the emergence of a new social hierarchy dominated by scientists, engineers, academics, and system analysts whose authority derives from intellectual credentials rather than hereditary property.<br><br><strong>Conclusion:</strong><br>The post-industrial paradigm establishes an interconnected world society governed by intellectual technology, symbolic manipulation, and instantaneous communication.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">2. സമഗ്ര ഉപന്യാസം: സാങ്കേതിക മാറ്റങ്ങൾ, വിജ്ഞാന സമ്പദ്‌വ്യവസ്ഥ, സേവന മേഖലയുടെ വികാസം എന്നിവയെ മുൻനിർത്തി വ്യവസായന്തര സമൂഹത്തിന്റെ ആവിർഭാവം ചർച്ച ചെയ്യുക.</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;"><strong>ആമുഖവും സിദ്ധാന്തവും:</strong><br>1973-ൽ ഡാനിയൽ ബെൽ അവതരിപ്പിച്ച സിദ്ധാന്തമാണ് വ്യവസായന്തര സമൂഹം. ഭൗതിക സാധനങ്ങളുടെ നിർമ്മാണത്തിൽ നിന്ന് വിജ്ഞാനവും സേവനങ്ങളും നയിക്കുന്ന സമ്പദ്‌വ്യവസ്ഥയിലേക്കുള്ള വളർച്ചയാണിത്.<br><br><strong>1. വിജ്ഞാന സമ്പദ്‌വ്യവസ്ഥയും സൈദ്ധാന്തിക ശാസ്ത്രവും:</strong><br>പരമ്പരാഗത മൂലധനത്തേക്കാൾ ഉയർന്ന ശാസ്ത്രീയ അറിവുകളാണ് പ്രധാന സാമ്പത്തിക സ്രോതസ്സ്. അൽഗോരിതങ്ങൾ, ബയോടെക്നോളജി, ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് തുടങ്ങിയ സൈദ്ധാന്തിക കണ്ടുപിടുത്തങ്ങൾ വ്യവസായങ്ങളുടെ ഗതി മാറ്റുന്നു. സർവകലാശാലകളും ഗവേഷണ സ്ഥാപനങ്ങളും നവീകരണത്തിന്റെ കേന്ദ്രങ്ങളായി.<br><br><strong>2. സേവന മേഖലയുടെ വിസ്ഫോടനം:</strong><br>ഫാക്ടറി ജോലികൾ കുറയുകയും 70–80% ആളുകൾ ആരോഗ്യം, വിദ്യാഭ്യാസം, ബാങ്കിംഗ്, സോഫ്റ്റ്‌വെയർ, ടൂറിസം തുടങ്ങിയ സേവന മേഖലകളിലേക്ക് മാറുകയും ചെയ്തു.<br><br><strong>3. സൈബർ സാങ്കേതികവിദ്യയും ശൃംഖലകളും:</strong><br>കമ്പ്യൂട്ടറുകൾ, അതിവേഗ ഇന്റർനെറ്റ്, ക്ലൗഡ് കമ്പ്യൂട്ടിംഗ് എന്നിവ വിവരവിനിമയം അതിവേഗത്തിലാക്കി. ഭൗതിക ഓഫീസുകൾക്ക് പകരം എവിടെയിരുന്നും ജോലി ചെയ്യാവുന്ന സൈബർ സംസ്കാരം രൂപപ്പെട്ടു.<br><br><strong>4. പ്രൊഫഷണൽ-സാങ്കേതിക വിദഗ്ദ്ധരുടെ ആധിപത്യം:</strong><br>സാധാരണ തൊഴിലാളികൾക്ക് പകരം ഉയർന്ന വിദ്യാഭ്യാസവും പ്രാവീണ്യവുമുള്ള സോഫ്റ്റ്‌വെയർ എൻജിനീയർമാരും ശാസ്ത്രജ്ഞരും നേതൃസ്ഥാനത്ത് എത്തി.<br><br><strong>ഉപസംഹാരം:</strong><br>വിജ്ഞാന സമ്പദ്‌വ്യവസ്ഥയും സേവന മേഖലയും ചേർന്ന വ്യവസായന്തര സമൂഹം ലോകത്തെ പുതിയൊരു ഡിജിറ്റൽ യുഗത്തിലേക്ക് നയിച്ചിരിക്കുന്നു.</div>
+            <strong style="color: #047857;">2. സമഗ്ര ഉപന്യാസം: സാങ്കേതിക മാറ്റങ്ങൾ, വിജ്ഞാന സമ്പദ്‌വ്യവസ്ഥ, സേവന മേഖലയുടെ വികാസം എന്നിവയെ മുൻനിർത്തി വ്യവസായന്തര സമൂഹത്തിന്റെ ആവിർഭാവം ചർച്ച ചെയ്യുക.</strong><br><br>
+            <div style="color: #064e3b;"><strong>ആമുഖവും സിദ്ധാന്തവും:</strong><br>1973-ൽ ഡാനിയൽ ബെൽ അവതരിപ്പിച്ച സിദ്ധാന്തമാണ് വ്യവസായന്തര സമൂഹം. ഭൗതിക സാധനങ്ങളുടെ നിർമ്മാണത്തിൽ നിന്ന് വിജ്ഞാനവും സേവനങ്ങളും നയിക്കുന്ന സമ്പദ്‌വ്യവസ്ഥയിലേക്കുള്ള വളർച്ചയാണിത്.<br><br><strong>1. വിജ്ഞാന സമ്പദ്‌വ്യവസ്ഥയും സൈദ്ധാന്തിക ശാസ്ത്രവും:</strong><br>പരമ്പരാഗത മൂലധനത്തേക്കാൾ ഉയർന്ന ശാസ്ത്രീയ അറിവുകളാണ് പ്രധാന സാമ്പത്തിക സ്രോതസ്സ്. അൽഗോരിതങ്ങൾ, ബയോടെക്നോളജി, ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് തുടങ്ങിയ സൈദ്ധാന്തിക കണ്ടുപിടുത്തങ്ങൾ വ്യവസായങ്ങളുടെ ഗതി മാറ്റുന്നു. സർവകലാശാലകളും ഗവേഷണ സ്ഥാപനങ്ങളും നവീകരണത്തിന്റെ കേന്ദ്രങ്ങളായി.<br><br><strong>2. സേവന മേഖലയുടെ വിസ്ഫോടനം:</strong><br>ഫാക്ടറി ജോലികൾ കുറയുകയും 70–80% ആളുകൾ ആരോഗ്യം, വിദ്യാഭ്യാസം, ബാങ്കിംഗ്, സോഫ്റ്റ്‌വെയർ, ടൂറിസം തുടങ്ങിയ സേവന മേഖലകളിലേക്ക് മാറുകയും ചെയ്തു.<br><br><strong>3. സൈബർ സാങ്കേതികവിദ്യയും ശൃംഖലകളും:</strong><br>കമ്പ്യൂട്ടറുകൾ, അതിവേഗ ഇന്റർനെറ്റ്, ക്ലൗഡ് കമ്പ്യൂട്ടിംഗ് എന്നിവ വിവരവിനിമയം അതിവേഗത്തിലാക്കി. ഭൗതിക ഓഫീസുകൾക്ക് പകരം എവിടെയിരുന്നും ജോലി ചെയ്യാവുന്ന സൈബർ സംസ്കാരം രൂപപ്പെട്ടു.<br><br><strong>4. പ്രൊഫഷണൽ-സാങ്കേതിക വിദഗ്ദ്ധരുടെ ആധിപത്യം:</strong><br>സാധാരണ തൊഴിലാളികൾക്ക് പകരം ഉയർന്ന വിദ്യാഭ്യാസവും പ്രാവീണ്യവുമുള്ള സോഫ്റ്റ്‌വെയർ എൻജിനീയർമാരും ശാസ്ത്രജ്ഞരും നേതൃസ്ഥാനത്ത് എത്തി.<br><br><strong>ഉപസംഹാരം:</strong><br>വിജ്ഞാന സമ്പദ്‌വ്യവസ്ഥയും സേവന മേഖലയും ചേർന്ന വ്യവസായന്തര സമൂഹം ലോകത്തെ പുതിയൊരു ഡിജിറ്റൽ യുഗത്തിലേക്ക് നയിച്ചിരിക്കുന്നു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">3. Comprehensive Long Essay: Compare and contrast agrarian, industrial, and post-industrial societies in terms of economy, technology, and social relations (incorporating classical theoretical dichotomies of Tönnies and Durkheim).</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;"><strong>Introduction:</strong><br>Sociological typologies classify human societies according to their technological modes of subsistence and structural forms of human association.<br><br><strong>1. Economic Architecture & Technology:</strong><br>• <em>Agrarian:</em> Primary sector subsistence agriculture utilizing animal draft power, manual plows, and irrigation. Production centers on food crops subject to environmental vagaries.<br>• <em>Industrial:</em> Secondary sector factory production powered by steam, coal, and electricity. Massive standardized manufacture of consumer goods.<br>• <em>Post-Industrial:</em> Tertiary and quaternary sectors dominated by services, data processing, and digital intellectual capital.<br><br><strong>2. Classical Sociological Dichotomies (Tönnies & Durkheim):</strong><br>• <strong>Ferdinand Tönnies (Gemeinschaft vs. Gesellschaft):</strong><br>Agrarian society exemplifies <em>Gemeinschaft</em> (Community)—founded on emotional kinship, ancestral tradition, shared faith, and intimate personal bonds. In contrast, Industrial and Post-Industrial societies epitomize <em>Gesellschaft</em> (Society)—governed by calculated self-interest, contractual legalism, impersonal bureaucratic exchanges, and social fragmentation.<br>• <strong>Émile Durkheim (Mechanical vs. Organic Solidarity):</strong><br>Agrarian societies display <em>Mechanical Solidarity</em>—individuals perform uniform tasks, bound by an overpowering collective conscience and repressive law punishing deviance. Modern Industrial and Post-Industrial societies manifest <em>Organic Solidarity</em>—an intricate division of labor fosters functional interdependence (like organs in an organism) governed by restitutive contractual law.<br><br><strong>3. Social Stratification and Gender Dynamics:</strong><br>Status in agrarian society was strictly ascribed by birth (feudal lords vs. serfs), with women confined to unpaid domestic labor. Industrial society introduced achieved status based on occupational merit, drawing women into wage labor. Post-industrial society bases stratification on educational credentials and knowledge capital, fostering structural gender equality and professional leadership.<br><br><strong>Conclusion:</strong><br>Human society has evolved through an overarching trajectory: from nature-dependent agrarian Gemeinschaft with mechanical solidarity, through machine-driven industrial Gesellschaft, to digitally integrated post-industrial organic solidarity.</div>
+            <strong style="color: #1e3a8a;">3. Comprehensive Long Essay: Compare and contrast agrarian, industrial, and post-industrial societies in terms of economy, technology, and social relations (incorporating classical theoretical dichotomies of Tönnies and Durkheim).</strong><br><br>
+            <div style="color: #0f172a;"><strong>Introduction:</strong><br>Sociological typologies classify human societies according to their technological modes of subsistence and structural forms of human association.<br><br><strong>1. Economic Architecture & Technology:</strong><br>• <em>Agrarian:</em> Primary sector subsistence agriculture utilizing animal draft power, manual plows, and irrigation. Production centers on food crops subject to environmental vagaries.<br>• <em>Industrial:</em> Secondary sector factory production powered by steam, coal, and electricity. Massive standardized manufacture of consumer goods.<br>• <em>Post-Industrial:</em> Tertiary and quaternary sectors dominated by services, data processing, and digital intellectual capital.<br><br><strong>2. Classical Sociological Dichotomies (Tönnies & Durkheim):</strong><br>• <strong>Ferdinand Tönnies (Gemeinschaft vs. Gesellschaft):</strong><br>Agrarian society exemplifies <em>Gemeinschaft</em> (Community)—founded on emotional kinship, ancestral tradition, shared faith, and intimate personal bonds. In contrast, Industrial and Post-Industrial societies epitomize <em>Gesellschaft</em> (Society)—governed by calculated self-interest, contractual legalism, impersonal bureaucratic exchanges, and social fragmentation.<br>• <strong>Émile Durkheim (Mechanical vs. Organic Solidarity):</strong><br>Agrarian societies display <em>Mechanical Solidarity</em>—individuals perform uniform tasks, bound by an overpowering collective conscience and repressive law punishing deviance. Modern Industrial and Post-Industrial societies manifest <em>Organic Solidarity</em>—an intricate division of labor fosters functional interdependence (like organs in an organism) governed by restitutive contractual law.<br><br><strong>3. Social Stratification and Gender Dynamics:</strong><br>Status in agrarian society was strictly ascribed by birth (feudal lords vs. serfs), with women confined to unpaid domestic labor. Industrial society introduced achieved status based on occupational merit, drawing women into wage labor. Post-industrial society bases stratification on educational credentials and knowledge capital, fostering structural gender equality and professional leadership.<br><br><strong>Conclusion:</strong><br>Human society has evolved through an overarching trajectory: from nature-dependent agrarian Gemeinschaft with mechanical solidarity, through machine-driven industrial Gesellschaft, to digitally integrated post-industrial organic solidarity.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">3. സമഗ്ര ഉപന്യാസം: സമ്പദ്‌വ്യവസ്ഥ, സാങ്കേതികവിദ്യ, സാമൂഹിക ബന്ധങ്ങൾ എന്നിവയെ അടിസ്ഥാനമാക്കി കാർഷിക, വ്യാവസായിക, വ്യവസായന്തര സമൂഹങ്ങളെ താരതമ്യം ചെയ്യുക (ടോണീസ്, ഡർക്കൈം സിദ്ധാന്തങ്ങൾ ഉൾപ്പെടുത്തി).</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;"><strong>ആമുഖം:</strong><br>സാങ്കേതികവിദ്യയുടെയും സാമൂഹിക ബന്ധങ്ങളുടെയും അടിസ്ഥാനത്തിലാണ് സോഷ്യോളജിസ്റ്റുകൾ സമൂഹങ്ങളെ വർഗ്ഗീകരിക്കുന്നത്.<br><br><strong>1. സമ്പദ്‌വ്യവസ്ഥയും സാങ്കേതികവിദ്യയും:</strong><br>• <em>കാർഷികം:</em> മൃഗശക്തിയും കലപ്പയും ഉപയോഗിച്ചുള്ള ഭക്ഷ്യധാന്യ കൃഷി. പ്രകൃതിയെ നേരിട്ട് ആശ്രയിക്കുന്ന സമ്പദ്‌വ്യവസ്ഥ.<br>• <em>വ്യാവസായികം:</em> നീരാവിയും വൈദ്യുതിയും ഉപയോഗിച്ചുള്ള ഫാക്ടറി ഉൽപ്പാദനം. ഉൽപ്പന്നങ്ങളുടെ മാസ് പ്രൊഡക്ഷൻ.<br>• <em>വ്യവസായന്തരം:</em> വിവരസാങ്കേതികവിദ്യ, ഗവേഷണം, സേവനങ്ങൾ എന്നിവയിൽ അധിഷ്ഠിതമായ വിജ്ഞാന സമ്പദ്‌വ്യവസ്ഥ.<br><br><strong>2. ശാസ്ത്രീയ സിദ്ധാന്തങ്ങളുടെ വെളിച്ചത്തിൽ (ടോണീസ് & ഡർക്കൈം):</strong><br>• <strong>ഫെർഡിനാൻഡ് ടോണീസ് (ഗെമൈൻഷാഫ്റ്റ് & ഗെസൽഷാഫ്റ്റ്):</strong><br>കാർഷിക സമൂഹം <em>ഗെമൈൻഷാഫ്റ്റ്</em> (സമുദായം) ആണ്; കുടുംബബന്ധങ്ങളിലും സ്നേഹത്തിലും പരമ്പരാഗത കൂട്ടായ്മയിലും അധിഷ്ഠിതം. എന്നാൽ വ്യാവസായിക-വ്യവസായന്തര സമൂഹങ്ങൾ <em>ഗെസൽഷാഫ്റ്റ്</em> (ആധുനിക സമൂഹം) ആണ്; നിയമപരമായ കരാറുകളും വ്യക്തിപരമായ സ്വാർത്ഥ നേട്ടങ്ങളും അടിസ്ഥാനമാക്കിയുള്ളതാണ് ഇവിടുത്തെ ബന്ധങ്ങൾ.<br>• <strong>എമിലി ഡർക്കൈം (യാന്ത്രിക & ജൈവ ഐക്യം):</strong><br>കാർഷിക സമൂഹത്തിൽ <em>യാന്ത്രിക ഐക്യം (Mechanical Solidarity)</em> കാണപ്പെടുന്നു; ആളുകൾ ഒരേപോലെയുള്ള ജോലികൾ ചെയ്യുന്നു, പൊതു മനസ്സാക്ഷിയുടെ ശക്തി വളരെ കൂടുതലാണ്. എന്നാൽ വ്യാവസായിക-വ്യവസായന്തര സമൂഹങ്ങളിൽ <em>ജൈവ ഐക്യം (Organic Solidarity)</em> കാണപ്പെടുന്നു; ശരീരത്തിലെ അവയവങ്ങളെപ്പോലെ വ്യത്യസ്ത ജോലികൾ ചെയ്യുന്നവർ പരസ്പരം ആശ്രയിച്ച് ജീവിക്കുന്നു.<br><br><strong>3. ശ്രേണീകരണവും സ്ത്രീകളുടെ പങ്കും:</strong><br>കാർഷിക സമൂഹത്തിൽ ജനനം കൊണ്ട് പദവികൾ നിർണ്ണയിക്കപ്പെടുകയും സ്ത്രീകൾ വീടുകളിൽ ഒതുങ്ങുകയും ചെയ്തു. വ്യാവസായിക സമൂഹത്തിൽ കഴിവിനാൽ പദവികൾ നേടിയെടുക്കാനും സ്ത്രീകൾ തൊഴിലിടങ്ങളിൽ എത്താനും തുടങ്ങി. വ്യവസായന്തര സമൂഹത്തിലാകട്ടെ, ഉന്നത വിദ്യാഭ്യാസവും അറിവും പദവികൾ നിർണ്ണയിക്കുകയും ലിംഗസമത്വവും നേതൃത്വവും സാധ്യമാവുകയും ചെയ്യുന്നു.<br><br><strong>ഉപസംഹാരം:</strong><br>പ്രകൃതിയെ ആശ്രയിച്ച ഗ്രാമീണ കൂട്ടായ്മയിൽ നിന്നും (Gemeinschaft), യന്ത്രങ്ങൾ നയിച്ച വ്യാവസായിക നഗരങ്ങളിലൂടെ (Gesellschaft), വിജ്ഞാനവും ഡിജിറ്റൽ സാങ്കേതികവിദ്യയും നയിക്കുന്ന വ്യവസായന്തര സമൂഹത്തിലേക്കുള്ള മാറ്റം മനുഷ്യ സംസ്കാരത്തിന്റെ വിപ്ലവകരമായ വളർച്ചയാണ്.</div>
+            <strong style="color: #047857;">3. സമഗ്ര ഉപന്യാസം: സമ്പദ്‌വ്യവസ്ഥ, സാങ്കേതികവിദ്യ, സാമൂഹിക ബന്ധങ്ങൾ എന്നിവയെ അടിസ്ഥാനമാക്കി കാർഷിക, വ്യാവസായിക, വ്യവസായന്തര സമൂഹങ്ങളെ താരതമ്യം ചെയ്യുക (ടോണീസ്, ഡർക്കൈം സിദ്ധാന്തങ്ങൾ ഉൾപ്പെടുത്തി).</strong><br><br>
+            <div style="color: #064e3b;"><strong>ആമുഖം:</strong><br>സാങ്കേതികവിദ്യയുടെയും സാമൂഹിക ബന്ധങ്ങളുടെയും അടിസ്ഥാനത്തിലാണ് സോഷ്യോളജിസ്റ്റുകൾ സമൂഹങ്ങളെ വർഗ്ഗീകരിക്കുന്നത്.<br><br><strong>1. സമ്പദ്‌വ്യവസ്ഥയും സാങ്കേതികവിദ്യയും:</strong><br>• <em>കാർഷികം:</em> മൃഗശക്തിയും കലപ്പയും ഉപയോഗിച്ചുള്ള ഭക്ഷ്യധാന്യ കൃഷി. പ്രകൃതിയെ നേരിട്ട് ആശ്രയിക്കുന്ന സമ്പദ്‌വ്യവസ്ഥ.<br>• <em>വ്യാവസായികം:</em> നീരാവിയും വൈദ്യുതിയും ഉപയോഗിച്ചുള്ള ഫാക്ടറി ഉൽപ്പാദനം. ഉൽപ്പന്നങ്ങളുടെ മാസ് പ്രൊഡക്ഷൻ.<br>• <em>വ്യവസായന്തരം:</em> വിവരസാങ്കേതികവിദ്യ, ഗവേഷണം, സേവനങ്ങൾ എന്നിവയിൽ അധിഷ്ഠിതമായ വിജ്ഞാന സമ്പദ്‌വ്യവസ്ഥ.<br><br><strong>2. ശാസ്ത്രീയ സിദ്ധാന്തങ്ങളുടെ വെളിച്ചത്തിൽ (ടോണീസ് & ഡർക്കൈം):</strong><br>• <strong>ഫെർഡിനാൻഡ് ടോണീസ് (ഗെമൈൻഷാഫ്റ്റ് & ഗെസൽഷാഫ്റ്റ്):</strong><br>കാർഷിക സമൂഹം <em>ഗെമൈൻഷാഫ്റ്റ്</em> (സമുദായം) ആണ്; കുടുംബബന്ധങ്ങളിലും സ്നേഹത്തിലും പരമ്പരാഗത കൂട്ടായ്മയിലും അധിഷ്ഠിതം. എന്നാൽ വ്യാവസായിക-വ്യവസായന്തര സമൂഹങ്ങൾ <em>ഗെസൽഷാഫ്റ്റ്</em> (ആധുനിക സമൂഹം) ആണ്; നിയമപരമായ കരാറുകളും വ്യക്തിപരമായ സ്വാർത്ഥ നേട്ടങ്ങളും അടിസ്ഥാനമാക്കിയുള്ളതാണ് ഇവിടുത്തെ ബന്ധങ്ങൾ.<br>• <strong>എമിലി ഡർക്കൈം (യാന്ത്രിക & ജൈവ ഐക്യം):</strong><br>കാർഷിക സമൂഹത്തിൽ <em>യാന്ത്രിക ഐക്യം (Mechanical Solidarity)</em> കാണപ്പെടുന്നു; ആളുകൾ ഒരേപോലെയുള്ള ജോലികൾ ചെയ്യുന്നു, പൊതു മനസ്സാക്ഷിയുടെ ശക്തി വളരെ കൂടുതലാണ്. എന്നാൽ വ്യാവസായിക-വ്യവസായന്തര സമൂഹങ്ങളിൽ <em>ജൈവ ഐക്യം (Organic Solidarity)</em> കാണപ്പെടുന്നു; ശരീരത്തിലെ അവയവങ്ങളെപ്പോലെ വ്യത്യസ്ത ജോലികൾ ചെയ്യുന്നവർ പരസ്പരം ആശ്രയിച്ച് ജീവിക്കുന്നു.<br><br><strong>3. ശ്രേണീകരണവും സ്ത്രീകളുടെ പങ്കും:</strong><br>കാർഷിക സമൂഹത്തിൽ ജനനം കൊണ്ട് പദവികൾ നിർണ്ണയിക്കപ്പെടുകയും സ്ത്രീകൾ വീടുകളിൽ ഒതുങ്ങുകയും ചെയ്തു. വ്യാവസായിക സമൂഹത്തിൽ കഴിവിനാൽ പദവികൾ നേടിയെടുക്കാനും സ്ത്രീകൾ തൊഴിലിടങ്ങളിൽ എത്താനും തുടങ്ങി. വ്യവസായന്തര സമൂഹത്തിലാകട്ടെ, ഉന്നത വിദ്യാഭ്യാസവും അറിവും പദവികൾ നിർണ്ണയിക്കുകയും ലിംഗസമത്വവും നേതൃത്വവും സാധ്യമാവുകയും ചെയ്യുന്നു.<br><br><strong>ഉപസംഹാരം:</strong><br>പ്രകൃതിയെ ആശ്രയിച്ച ഗ്രാമീണ കൂട്ടായ്മയിൽ നിന്നും (Gemeinschaft), യന്ത്രങ്ങൾ നയിച്ച വ്യാവസായിക നഗരങ്ങളിലൂടെ (Gesellschaft), വിജ്ഞാനവും ഡിജിറ്റൽ സാങ്കേതികവിദ്യയും നയിക്കുന്ന വ്യവസായന്തര സമൂഹത്തിലേക്കുള്ള മാറ്റം മനുഷ്യ സംസ്കാരത്തിന്റെ വിപ്ലവകരമായ വളർച്ചയാണ്.</div>
           </td>
         </tr>
       </tbody>
     </table>
-  </div>
+
+    <div class="page-footer-nav">
+      <span>University of Calicut · B.A. Sociology</span>
+      <span>Long Essays Examination Bank</span>
+      <span>Semester 1</span>
+    </div>
+  </section>
 
 
-  <div class="section-block">
+  <!-- ==================== KNOCK YOUR BRAIN: 20 HOTS ==================== -->
+  <section class="content-page">
+    <div class="page-top-bar">
+      <span class="top-brand">Module IV: SOCIOLOGY AND SOCIETY · Calicut University LMS E-Content</span>
+      <span class="top-meta">Knock Your Brain Challenge (20 HOTS)</span>
+    </div>
+
     <div class="unit-hero">
       <div class="unit-code-badge">Knock Your Brain · High-Order Thinking Skills (HOTS)</div>
       <div class="unit-title-en">20 Critical Analytical Thinking Challenge Problems</div>
@@ -1052,266 +1152,278 @@ The concept of the 'Post-Industrial Society' was pioneered by American sociologi
 
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q1: How does MacIver's conception of society as a 'web of social relationships' challenge common-sense physicalist perceptions of society?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">MacIver proves society is fundamentally abstract and ontological. Unlike a physical crowd occupying space, society exists purely in the reciprocal expectations, mutual awareness, and institutional norms that govern human conduct.</div>
+            <strong style="color: #1e3a8a;">Q1: How does MacIver's conception of society as a 'web of social relationships' challenge common-sense physicalist perceptions of society?</strong><br><br>
+            <div style="color: #0f172a;">MacIver proves society is fundamentally abstract and ontological. Unlike a physical crowd occupying space, society exists purely in the reciprocal expectations, mutual awareness, and institutional norms that govern human conduct.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 1: 'സാമൂഹിക ബന്ധങ്ങളുടെ വലയാണ് സമൂഹം' എന്ന മാക് ഐവറുടെ നിർവചനം സമൂഹത്തെക്കുറിച്ചുള്ള സാധാരണ ധാരണകളെ എങ്ങനെയാണ് തിരുത്തുന്നത്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">സമൂഹം എന്നത് ആളുകളുടെ ഒരു ഭൗതിക ആൾക്കൂട്ടമല്ല, മറിച്ച് പരസ്പര പ്രതീക്ഷകളും നിയമങ്ങളും സംസ്കാരവും ചേർന്ന അദൃശ്യമായ സാമൂഹിക ബന്ധങ്ങളുടെ അമൂർത്ത വ്യവസ്ഥയാണെന്ന് ഇത് വ്യക്തമാക്കുന്നു.</div>
+            <strong style="color: #047857;">ചോദ്യം 1: 'സാമൂഹിക ബന്ധങ്ങളുടെ വലയാണ് സമൂഹം' എന്ന മാക് ഐവറുടെ നിർവചനം സമൂഹത്തെക്കുറിച്ചുള്ള സാധാരണ ധാരണകളെ എങ്ങനെയാണ് തിരുത്തുന്നത്?</strong><br><br>
+            <div style="color: #064e3b;">സമൂഹം എന്നത് ആളുകളുടെ ഒരു ഭൗതിക ആൾക്കൂട്ടമല്ല, മറിച്ച് പരസ്പര പ്രതീക്ഷകളും നിയമങ്ങളും സംസ്കാരവും ചേർന്ന അദൃശ്യമായ സാമൂഹിക ബന്ധങ്ങളുടെ അമൂർത്ത വ്യവസ്ഥയാണെന്ന് ഇത് വ്യക്തമാക്കുന്നു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q2: Why does Kingsley Davis prioritize 'continuity' alongside population replenishment as an irreducible societal need?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Biological reproduction alone creates animal aggregates. Human society requires cultural continuity—the institutional transmission of language, normative values, and institutional practices across generations.</div>
+            <strong style="color: #1e3a8a;">Q2: Why does Kingsley Davis prioritize 'continuity' alongside population replenishment as an irreducible societal need?</strong><br><br>
+            <div style="color: #0f172a;">Biological reproduction alone creates animal aggregates. Human society requires cultural continuity—the institutional transmission of language, normative values, and institutional practices across generations.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 2: ജനസംഖ്യ നിലനിർത്തുന്നതിനൊപ്പം 'തുടർച്ച ഉറപ്പാക്കലി'നെയും (Continuity) കിംഗ്സ്ലി ഡേവിസ് ഒരു മൗലിക ആവശ്യമായി കാണുന്നത് എന്തുകൊണ്ട്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">കേവലം കുട്ടികൾ ജനിച്ചതുകൊണ്ട് മാത്രം മനുഷ്യസമൂഹം നിലനിൽക്കില്ല; ഭാഷയും സംസ്കാരവും മൂല്യങ്ങളും തലമുറകളിലേക്ക് കൈമാറുന്ന തുടർച്ച ഉണ്ടെങ്കിൽ മാത്രമേ സാമൂഹിക വ്യവസ്ഥിതി നിലനിൽക്കൂ.</div>
+            <strong style="color: #047857;">ചോദ്യം 2: ജനസംഖ്യ നിലനിർത്തുന്നതിനൊപ്പം 'തുടർച്ച ഉറപ്പാക്കലി'നെയും (Continuity) കിംഗ്സ്ലി ഡേവിസ് ഒരു മൗലിക ആവശ്യമായി കാണുന്നത് എന്തുകൊണ്ട്?</strong><br><br>
+            <div style="color: #064e3b;">കേവലം കുട്ടികൾ ജനിച്ചതുകൊണ്ട് മാത്രം മനുഷ്യസമൂഹം നിലനിൽക്കില്ല; ഭാഷയും സംസ്കാരവും മൂല്യങ്ങളും തലമുറകളിലേക്ക് കൈമാറുന്ന തുടർച്ച ഉണ്ടെങ്കിൽ മാത്രമേ സാമൂഹിക വ്യവസ്ഥിതി നിലനിൽക്കൂ.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q3: Contrast the structural view of society as a 'thing' with the functional view of society as a 'process'.</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">The structural view conceptualizes society as an established, objective architecture (folkways, mores, institutions), whereas the functional view examines society as living, ongoing communication, reciprocal problem-solving, and equilibrium maintenance.</div>
+            <strong style="color: #1e3a8a;">Q3: Contrast the structural view of society as a 'thing' with the functional view of society as a 'process'.</strong><br><br>
+            <div style="color: #0f172a;">The structural view conceptualizes society as an established, objective architecture (folkways, mores, institutions), whereas the functional view examines society as living, ongoing communication, reciprocal problem-solving, and equilibrium maintenance.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 3: സമൂഹത്തെ ഒരു 'വസ്തു'വായി (Thing) കാണുന്ന ഘടനാപരമായ വീക്ഷണവും 'പ്രക്രിയ'യായി (Process) കാണുന്ന ധർമ്മപരമായ വീക്ഷണവും തമ്മിലുള്ള വൈരുദ്ധ്യം എന്താണ്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">ഘടനാപരമായ വീക്ഷണം സമൂഹത്തെ നിയമങ്ങളും സ്ഥാപനങ്ങളും ചേർന്ന ഉറച്ച ചട്ടക്കൂടായി കാണുമ്പോൾ, ധർമ്മപരമായ വീക്ഷണം അതിനെ മനുഷ്യർ തമ്മിലുള്ള സജീവ ഇടപെടലുകളിലൂടെയും സഹകരണത്തിലൂടെയും ചലിക്കുന്ന പ്രക്രിയയായി വിശകലനം ചെയ്യുന്നു.</div>
+            <strong style="color: #047857;">ചോദ്യം 3: സമൂഹത്തെ ഒരു 'വസ്തു'വായി (Thing) കാണുന്ന ഘടനാപരമായ വീക്ഷണവും 'പ്രക്രിയ'യായി (Process) കാണുന്ന ധർമ്മപരമായ വീക്ഷണവും തമ്മിലുള്ള വൈരുദ്ധ്യം എന്താണ്?</strong><br><br>
+            <div style="color: #064e3b;">ഘടനാപരമായ വീക്ഷണം സമൂഹത്തെ നിയമങ്ങളും സ്ഥാപനങ്ങളും ചേർന്ന ഉറച്ച ചട്ടക്കൂടായി കാണുമ്പോൾ, ധർമ്മപരമായ വീക്ഷണം അതിനെ മനുഷ്യർ തമ്മിലുള്ള സജീവ ഇടപെടലുകളിലൂടെയും സഹകരണത്തിലൂടെയും ചലിക്കുന്ന പ്രക്രിയയായി വിശകലനം ചെയ്യുന്നു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q4: Why is 'abstract nature' considered an indispensable characteristic of society rather than a methodological limitation?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">As Wright observed, while concrete human bodies are visible, the relational bonds, rights, obligations, and shared meanings linking them are non-physical, operating psychologically and sociologically.</div>
+            <strong style="color: #1e3a8a;">Q4: Why is 'abstract nature' considered an indispensable characteristic of society rather than a methodological limitation?</strong><br><br>
+            <div style="color: #0f172a;">As Wright observed, while concrete human bodies are visible, the relational bonds, rights, obligations, and shared meanings linking them are non-physical, operating psychologically and sociologically.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 4: സമൂഹത്തിന്റെ 'അമൂർത്ത സ്വഭാവം' (Abstract Nature) ഒരു ന്യൂനതയല്ലാതെ മൗലിക സവിശേഷതയായി മാറുന്നത് എന്തുകൊണ്ട്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">മനുഷ്യരെ നേരിട്ട് കാണാൻ കഴിയുമെങ്കിലും, അവരെ പരസ്പരം ബന്ധിപ്പിക്കുന്ന നിയമങ്ങളും കടമകളും പരസ്പര സ്നേഹവും ഒരു ഭൗതിക വസ്തുവല്ല, മറിച്ച് മനസ്സിലാക്കാനും അനുഭവിക്കാനും മാത്രം കഴിയുന്ന ഒന്നാണ്.</div>
+            <strong style="color: #047857;">ചോദ്യം 4: സമൂഹത്തിന്റെ 'അമൂർത്ത സ്വഭാവം' (Abstract Nature) ഒരു ന്യൂനതയല്ലാതെ മൗലിക സവിശേഷതയായി മാറുന്നത് എന്തുകൊണ്ട്?</strong><br><br>
+            <div style="color: #064e3b;">മനുഷ്യരെ നേരിട്ട് കാണാൻ കഴിയുമെങ്കിലും, അവരെ പരസ്പരം ബന്ധിപ്പിക്കുന്ന നിയമങ്ങളും കടമകളും പരസ്പര സ്നേഹവും ഒരു ഭൗതിക വസ്തുവല്ല, മറിച്ച് മനസ്സിലാക്കാനും അനുഭവിക്കാനും മാത്രം കഴിയുന്ന ഒന്നാണ്.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q5: How do cooperation and conflict operate dialectically rather than mutually exclusively in maintaining social vitality?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Cooperation guarantees harmony, stability, and collective task achievement, while conflict highlights systemic inequalities, prevents rigid ossification, and acts as the prime historical catalyst of progressive institutional reform.</div>
+            <strong style="color: #1e3a8a;">Q5: How do cooperation and conflict operate dialectically rather than mutually exclusively in maintaining social vitality?</strong><br><br>
+            <div style="color: #0f172a;">Cooperation guarantees harmony, stability, and collective task achievement, while conflict highlights systemic inequalities, prevents rigid ossification, and acts as the prime historical catalyst of progressive institutional reform.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 5: സഹകരണവും സംഘർഷവും പരസ്പര വിരുദ്ധമല്ലാതെ സമൂഹത്തിന്റെ സന്തുലിതാവസ്ഥയെ എങ്ങനെയാണ് ഒരേസമയം നിലനിർത്തുന്നത്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">സഹകരണം സമൂഹത്തിൽ സമാധാനവും ഐക്യവും ഉറപ്പാക്കുമ്പോൾ, സംഘർഷങ്ങൾ നിലവിലുള്ള അനീതികളെയും കുറവുകളെയും തുറന്നുകാട്ടുകയും പുതിയ സാമൂഹിക മാറ്റങ്ങൾക്ക് വഴിയൊരുക്കുകയും ചെയ്യുന്നു.</div>
+            <strong style="color: #047857;">ചോദ്യം 5: സഹകരണവും സംഘർഷവും പരസ്പര വിരുദ്ധമല്ലാതെ സമൂഹത്തിന്റെ സന്തുലിതാവസ്ഥയെ എങ്ങനെയാണ് ഒരേസമയം നിലനിർത്തുന്നത്?</strong><br><br>
+            <div style="color: #064e3b;">സഹകരണം സമൂഹത്തിൽ സമാധാനവും ഐക്യവും ഉറപ്പാക്കുമ്പോൾ, സംഘർഷങ്ങൾ നിലവിലുള്ള അനീതികളെയും കുറവുകളെയും തുറന്നുകാട്ടുകയും പുതിയ സാമൂഹിക മാറ്റങ്ങൾക്ക് വഴിയൊരുക്കുകയും ചെയ്യുന്നു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q6: How does F. H. Giddings's concept of 'consciousness of kind' explain the sociological necessity of likeness?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Likeness provides the socio-psychological bedrock of empathy, communication, and moral consensus. Without perceiving fundamental likeness in others, social solidarity and institutional organization cannot crystallize.</div>
+            <strong style="color: #1e3a8a;">Q6: How does F. H. Giddings's concept of 'consciousness of kind' explain the sociological necessity of likeness?</strong><br><br>
+            <div style="color: #0f172a;">Likeness provides the socio-psychological bedrock of empathy, communication, and moral consensus. Without perceiving fundamental likeness in others, social solidarity and institutional organization cannot crystallize.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 6: ഗിഡിംഗ്സിന്റെ 'നമ്മൾ എന്ന ബോധം' (Consciousness of kind) സമൂഹത്തിലെ സാമ്യതയുടെ ആവശ്യകതയെ എങ്ങനെ വ്യക്തമാക്കുന്നു?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">മറ്റുള്ളവരും നമ്മളെപ്പോലെയാണെന്ന തിരിച്ചറിവാണ് സഹാനുഭൂതിക്കും ആശയവിനിമയത്തിനും പരസ്പര സഹകരണത്തിനും കാരണമാകുന്നത്; ഇത് ഇല്ലാതെ ഐക്യം സാധ്യമല്ല.</div>
+            <strong style="color: #047857;">ചോദ്യം 6: ഗിഡിംഗ്സിന്റെ 'നമ്മൾ എന്ന ബോധം' (Consciousness of kind) സമൂഹത്തിലെ സാമ്യതയുടെ ആവശ്യകതയെ എങ്ങനെ വ്യക്തമാക്കുന്നു?</strong><br><br>
+            <div style="color: #064e3b;">മറ്റുള്ളവരും നമ്മളെപ്പോലെയാണെന്ന തിരിച്ചറിവാണ് സഹാനുഭൂതിക്കും ആശയവിനിമയത്തിനും പരസ്പര സഹകരണത്തിനും കാരണമാകുന്നത്; ഇത് ഇല്ലാതെ ഐക്യം സാധ്യമല്ല.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q7: Why would a society constructed entirely on likeness without 'difference' face immediate structural collapse?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Absolute uniformity eliminates occupational specialization, exchange, and mutual interdependence. Difference creates complementarity, driving the division of labor that sustains complex collective life.</div>
+            <strong style="color: #1e3a8a;">Q7: Why would a society constructed entirely on likeness without 'difference' face immediate structural collapse?</strong><br><br>
+            <div style="color: #0f172a;">Absolute uniformity eliminates occupational specialization, exchange, and mutual interdependence. Difference creates complementarity, driving the division of labor that sustains complex collective life.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 7: വ്യത്യാസങ്ങളില്ലാതെ കേവലം സാമ്യതകൾ (Likeness) മാത്രം ഉള്ള ഒരു സമൂഹം നിശ്ചലമായിപ്പോകുന്നത് എന്തുകൊണ്ട്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">എല്ലാവരും ഒരേ സ്വഭാവമുള്ളവരും ഒരേ ജോലി ചെയ്യുന്നവരുമായാൽ തൊഴിൽ വിഭജനമോ പരസ്പരാശ്രയത്വമോ ഉണ്ടാവില്ല; വ്യക്തികളുടെ വ്യത്യസ്ത കഴിവുകളാണ് സമൂഹത്തെ സജീവമാക്കുന്നത്.</div>
+            <strong style="color: #047857;">ചോദ്യം 7: വ്യത്യാസങ്ങളില്ലാതെ കേവലം സാമ്യതകൾ (Likeness) മാത്രം ഉള്ള ഒരു സമൂഹം നിശ്ചലമായിപ്പോകുന്നത് എന്തുകൊണ്ട്?</strong><br><br>
+            <div style="color: #064e3b;">എല്ലാവരും ഒരേ സ്വഭാവമുള്ളവരും ഒരേ ജോലി ചെയ്യുന്നവരുമായാൽ തൊഴിൽ വിഭജനമോ പരസ്പരാശ്രയത്വമോ ഉണ്ടാവില്ല; വ്യക്തികളുടെ വ്യത്യസ്ത കഴിവുകളാണ് സമൂഹത്തെ സജീവമാക്കുന്നത്.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q8: Why did the technological transition from horticultural to agrarian society dramatically amplify social inequality?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Plow cultivation generated massive food surpluses that concentrated land ownership into aristocratic hands, crystallizing hereditary, polarized classes of wealthy landowners and impoverished, landless serfs.</div>
+            <strong style="color: #1e3a8a;">Q8: Why did the technological transition from horticultural to agrarian society dramatically amplify social inequality?</strong><br><br>
+            <div style="color: #0f172a;">Plow cultivation generated massive food surpluses that concentrated land ownership into aristocratic hands, crystallizing hereditary, polarized classes of wealthy landowners and impoverished, landless serfs.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 8: പ്രാഥമിക കൃഷിയിൽ നിന്നും കാർഷിക സമൂഹത്തിലേക്കുള്ള (Agrarian Society) വളർച്ച അസമത്വങ്ങളെ ഭീമമായി വർദ്ധിപ്പിച്ചത് എന്തുകൊണ്ട്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">കലപ്പ ഉപയോഗിച്ചുള്ള കൃഷി വൻതോതിൽ മിച്ചോൽപ്പാദനം ഉണ്ടാക്കിയപ്പോൾ, ഭൂമിയുടെ ഉടമസ്ഥത ഒരു ചെറിയ വിഭാഗം ജന്മിമാരിലേക്ക് ചുരുങ്ങുകയും ഭൂരിപക്ഷം വരുന്ന കർഷകർ ഭൂമിയില്ലാത്തവരായി മാറുകയും ചെയ്തു.</div>
+            <strong style="color: #047857;">ചോദ്യം 8: പ്രാഥമിക കൃഷിയിൽ നിന്നും കാർഷിക സമൂഹത്തിലേക്കുള്ള (Agrarian Society) വളർച്ച അസമത്വങ്ങളെ ഭീമമായി വർദ്ധിപ്പിച്ചത് എന്തുകൊണ്ട്?</strong><br><br>
+            <div style="color: #064e3b;">കലപ്പ ഉപയോഗിച്ചുള്ള കൃഷി വൻതോതിൽ മിച്ചോൽപ്പാദനം ഉണ്ടാക്കിയപ്പോൾ, ഭൂമിയുടെ ഉടമസ്ഥത ഒരു ചെറിയ വിഭാഗം ജന്മിമാരിലേക്ക് ചുരുങ്ങുകയും ഭൂരിപക്ഷം വരുന്ന കർഷകർ ഭൂമിയില്ലാത്തവരായി മാറുകയും ചെയ്തു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q9: How does the five-tiered occupational structure of agrarian society explain the stagnation of social mobility?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Stratification between landlords, supervisory farmers, cultivators, sharecroppers, and artisans was anchored to hereditary land tenure. Status was ascribed at birth, rendering class mobility virtually impossible.</div>
+            <strong style="color: #1e3a8a;">Q9: How does the five-tiered occupational structure of agrarian society explain the stagnation of social mobility?</strong><br><br>
+            <div style="color: #0f172a;">Stratification between landlords, supervisory farmers, cultivators, sharecroppers, and artisans was anchored to hereditary land tenure. Status was ascribed at birth, rendering class mobility virtually impossible.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 9: കാർഷിക സമൂഹത്തിലെ 5 തൊഴിൽ വർഗ്ഗങ്ങൾ സാമൂഹികമായ ഉയർച്ചയെ (Social mobility) തടഞ്ഞുനിർത്തിയത് എങ്ങനെയാണ്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">ഭൂമിയുടെ ഉടമസ്ഥത പാരമ്പര്യമായി കൈമാറ്റം ചെയ്യപ്പെട്ടതിനാലും ജനനം കൊണ്ട് പദവികൾ നിശ്ചയിക്കപ്പെട്ടതിനാലും (Ascribed status) താഴേക്കിടയിലുള്ളവർക്ക് മുകളിലേക്ക് ഉയരാൻ കഴിഞ്ഞിരുന്നില്ല.</div>
+            <strong style="color: #047857;">ചോദ്യം 9: കാർഷിക സമൂഹത്തിലെ 5 തൊഴിൽ വർഗ്ഗങ്ങൾ സാമൂഹികമായ ഉയർച്ചയെ (Social mobility) തടഞ്ഞുനിർത്തിയത് എങ്ങനെയാണ്?</strong><br><br>
+            <div style="color: #064e3b;">ഭൂമിയുടെ ഉടമസ്ഥത പാരമ്പര്യമായി കൈമാറ്റം ചെയ്യപ്പെട്ടതിനാലും ജനനം കൊണ്ട് പദവികൾ നിശ്ചയിക്കപ്പെട്ടതിനാലും (Ascribed status) താഴേക്കിടയിലുള്ളവർക്ക് മുകളിലേക്ക് ഉയരാൻ കഴിഞ്ഞിരുന്നില്ല.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q10: Why did agrarian societies rely profoundly on fatalism and religious traditionalism to preserve social equilibrium?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Because agrarian production was profoundly vulnerable to uncontrollable natural phenomena (droughts, floods, pests), religious doctrines rationalized suffering as divine will, mitigating rebellion against feudal stratification.</div>
+            <strong style="color: #1e3a8a;">Q10: Why did agrarian societies rely profoundly on fatalism and religious traditionalism to preserve social equilibrium?</strong><br><br>
+            <div style="color: #0f172a;">Because agrarian production was profoundly vulnerable to uncontrollable natural phenomena (droughts, floods, pests), religious doctrines rationalized suffering as divine will, mitigating rebellion against feudal stratification.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 10: കാർഷിക സമൂഹങ്ങൾ സമാധാനം നിലനിർത്താൻ വിധിയെയും മതവിശ്വാസങ്ങളെയും ശക്തമായി ആശ്രയിച്ചത് എന്തുകൊണ്ട്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">മഴയും വരൾച്ചയും കൃഷിനാശവും പ്രകൃതിയുടെ കയ്യിലായിരുന്നതിനാൽ, തങ്ങളുടെ കഷ്ടപ്പാടുകൾ വിധിയാണെന്നും ദൈവഹിതമാണെന്നും വിശ്വസിച്ച് ജീവിക്കാൻ മതം ജനങ്ങളെ പഠിപ്പിച്ചു; ഇത് കലാപങ്ങൾ ഒഴിവാക്കി.</div>
+            <strong style="color: #047857;">ചോദ്യം 10: കാർഷിക സമൂഹങ്ങൾ സമാധാനം നിലനിർത്താൻ വിധിയെയും മതവിശ്വാസങ്ങളെയും ശക്തമായി ആശ്രയിച്ചത് എന്തുകൊണ്ട്?</strong><br><br>
+            <div style="color: #064e3b;">മഴയും വരൾച്ചയും കൃഷിനാശവും പ്രകൃതിയുടെ കയ്യിലായിരുന്നതിനാൽ, തങ്ങളുടെ കഷ്ടപ്പാടുകൾ വിധിയാണെന്നും ദൈവഹിതമാണെന്നും വിശ്വസിച്ച് ജീവിക്കാൻ മതം ജനങ്ങളെ പഠിപ്പിച്ചു; ഇത് കലാപങ്ങൾ ഒഴിവാക്കി.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q11: Analyze how industrialization's 'segmentalized roles' engendered Karl Marx's concept of labor alienation.</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">In factory assembly lines, workers execute repetitive, micro-tasks disconnected from the finished product, robbing labor of creative meaning and reducing the worker to an interchangeable cog in an industrial machine.</div>
+            <strong style="color: #1e3a8a;">Q11: Analyze how industrialization's 'segmentalized roles' engendered Karl Marx's concept of labor alienation.</strong><br><br>
+            <div style="color: #0f172a;">In factory assembly lines, workers execute repetitive, micro-tasks disconnected from the finished product, robbing labor of creative meaning and reducing the worker to an interchangeable cog in an industrial machine.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 11: വ്യാവസായിക സമൂഹത്തിലെ അംശീകരിക്കപ്പെട്ട റോളുകൾ (Segmentalized roles) തൊഴിലാളികളിൽ അന്യവൽക്കരണം (Alienation) ഉണ്ടാക്കിയത് എങ്ങനെയാണ്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">ഫാക്ടറികളിൽ ഒരു ഉൽപ്പന്നത്തിന്റെ ചെറിയൊരു ഭാഗം മാത്രം വീണ്ടും വീണ്ടും ചെയ്യേണ്ടി വന്നപ്പോൾ, തൊഴിലാളിക്ക് സ്വന്തം അധ്വാനത്തോടും ഉൽപ്പന്നത്തോടുമുള്ള സർഗ്ഗാത്മക ബന്ധം നഷ്ടപ്പെട്ടു.</div>
+            <strong style="color: #047857;">ചോദ്യം 11: വ്യാവസായിക സമൂഹത്തിലെ അംശീകരിക്കപ്പെട്ട റോളുകൾ (Segmentalized roles) തൊഴിലാളികളിൽ അന്യവൽക്കരണം (Alienation) ഉണ്ടാക്കിയത് എങ്ങനെയാണ്?</strong><br><br>
+            <div style="color: #064e3b;">ഫാക്ടറികളിൽ ഒരു ഉൽപ്പന്നത്തിന്റെ ചെറിയൊരു ഭാഗം മാത്രം വീണ്ടും വീണ്ടും ചെയ്യേണ്ടി വന്നപ്പോൾ, തൊഴിലാളിക്ക് സ്വന്തം അധ്വാനത്തോടും ഉൽപ്പന്നത്തോടുമുള്ള സർഗ്ഗാത്മക ബന്ധം നഷ്ടപ്പെട്ടു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q12: How does the shift from ascribed status to achieved status redefine meritocracy in industrial capitalism?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Industrial efficiency demands specialized competencies rather than aristocratic pedigree. Formal educational credentials, competitive testing, and demonstrated skill become the primary determinants of socioeconomic mobility.</div>
+            <strong style="color: #1e3a8a;">Q12: How does the shift from ascribed status to achieved status redefine meritocracy in industrial capitalism?</strong><br><br>
+            <div style="color: #0f172a;">Industrial efficiency demands specialized competencies rather than aristocratic pedigree. Formal educational credentials, competitive testing, and demonstrated skill become the primary determinants of socioeconomic mobility.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 12: ജന്മസിദ്ധ പദവിയിൽ നിന്ന് നേടിയ പദവിയിലേക്കുള്ള (Achieved status) മാറ്റം വ്യാവസായിക സമൂഹത്തിൽ യോഗ്യതയ്ക്ക് പ്രാധാന്യം നൽകിയത് എങ്ങനെ?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">കുടുംബ മഹിമയേക്കാൾ സാങ്കേതിക പ്രാവീണ്യത്തിനും വിദ്യാഭ്യാസ യോഗ്യതകൾക്കും വിപണിയിൽ മൂല്യം ലഭിച്ചതോടെ സ്വന്തം കഴിവ് കൊണ്ട് ഉയർന്ന പദവികളിൽ എത്താൻ ആളുകൾക്ക് സാധിച്ചു.</div>
+            <strong style="color: #047857;">ചോദ്യം 12: ജന്മസിദ്ധ പദവിയിൽ നിന്ന് നേടിയ പദവിയിലേക്കുള്ള (Achieved status) മാറ്റം വ്യാവസായിക സമൂഹത്തിൽ യോഗ്യതയ്ക്ക് പ്രാധാന്യം നൽകിയത് എങ്ങനെ?</strong><br><br>
+            <div style="color: #064e3b;">കുടുംബ മഹിമയേക്കാൾ സാങ്കേതിക പ്രാവീണ്യത്തിനും വിദ്യാഭ്യാസ യോഗ്യതകൾക്കും വിപണിയിൽ മൂല്യം ലഭിച്ചതോടെ സ്വന്തം കഴിവ് കൊണ്ട് ഉയർന്ന പദവികളിൽ എത്താൻ ആളുകൾക്ക് സാധിച്ചു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q13: Why did Max Weber consider rational-legal bureaucracy the defining organizational apparatus of industrial society?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Bureaucracy eliminated unpredictable personal favoritism through written rules, hierarchical jurisdiction, merit-based career paths, and impersonal efficiency, perfectly aligning with large-scale industrial capitalism.</div>
+            <strong style="color: #1e3a8a;">Q13: Why did Max Weber consider rational-legal bureaucracy the defining organizational apparatus of industrial society?</strong><br><br>
+            <div style="color: #0f172a;">Bureaucracy eliminated unpredictable personal favoritism through written rules, hierarchical jurisdiction, merit-based career paths, and impersonal efficiency, perfectly aligning with large-scale industrial capitalism.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 13: മാക്സ് വെബർ ബ്യൂറോക്രസിയെ (ഉദ്യോഗസ്ഥവൃന്ദം) വ്യാവസായിക സമൂഹത്തിന്റെ അനിവാര്യ ഘടകമായി വിശേഷിപ്പിച്ചത് എന്തുകൊണ്ട്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">വ്യക്തിപരമായ വിവേചനങ്ങൾ ഒഴിവാക്കി, നിയമങ്ങൾക്കും കാര്യക്ഷമതയ്ക്കും രേഖാമൂലമുള്ള നടപടിക്രമങ്ങൾക്കും പ്രാധാന്യം നൽകിയതിലൂടെ വൻകിട വ്യവസായങ്ങളെ കൃത്യമായി നിയന്ത്രിക്കാൻ ബ്യൂറോക്രസിക്ക് കഴിഞ്ഞു.</div>
+            <strong style="color: #047857;">ചോദ്യം 13: മാക്സ് വെബർ ബ്യൂറോക്രസിയെ (ഉദ്യോഗസ്ഥവൃന്ദം) വ്യാവസായിക സമൂഹത്തിന്റെ അനിവാര്യ ഘടകമായി വിശേഷിപ്പിച്ചത് എന്തുകൊണ്ട്?</strong><br><br>
+            <div style="color: #064e3b;">വ്യക്തിപരമായ വിവേചനങ്ങൾ ഒഴിവാക്കി, നിയമങ്ങൾക്കും കാര്യക്ഷമതയ്ക്കും രേഖാമൂലമുള്ള നടപടിക്രമങ്ങൾക്കും പ്രാധാന്യം നൽകിയതിലൂടെ വൻകിട വ്യവസായങ്ങളെ കൃത്യമായി നിയന്ത്രിക്കാൻ ബ്യൂറോക്രസിക്ക് കഴിഞ്ഞു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q14: How does Ferdinand Tönnies's distinction between Gemeinschaft and Gesellschaft illuminate the psychological impact of urbanization?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Urbanization dissolved the emotional, holistic kinship bonds of rural Gemeinschaft, forcing individuals into the competitive, contractual, and emotionally distant anonymity of urban Gesellschaft.</div>
+            <strong style="color: #1e3a8a;">Q14: How does Ferdinand Tönnies's distinction between Gemeinschaft and Gesellschaft illuminate the psychological impact of urbanization?</strong><br><br>
+            <div style="color: #0f172a;">Urbanization dissolved the emotional, holistic kinship bonds of rural Gemeinschaft, forcing individuals into the competitive, contractual, and emotionally distant anonymity of urban Gesellschaft.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 14: ടോണീസിന്റെ ഗെമൈൻഷാഫ്റ്റ്-ഗെസൽഷാഫ്റ്റ് സിദ്ധാന്തം നഗരവൽക്കരണത്തിന്റെ മാനസിക പ്രത്യാഘാതങ്ങളെ എങ്ങനെ വ്യക്തമാക്കുന്നു?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">ഗ്രാമങ്ങളിലെ സ്നേഹവും അടുപ്പവുമുള്ള കൂട്ടായ്മയിൽ (Gemeinschaft) നിന്ന് നഗരങ്ങളിലെ അപരിചിതവും കരാർ അധിഷ്ഠിതവുമായ ഒറ്റപ്പെടലിലേക്ക് (Gesellschaft) ആളുകൾ മാറിയത് ഏകാന്തതയ്ക്ക് കാരണമായി.</div>
+            <strong style="color: #047857;">ചോദ്യം 14: ടോണീസിന്റെ ഗെമൈൻഷാഫ്റ്റ്-ഗെസൽഷാഫ്റ്റ് സിദ്ധാന്തം നഗരവൽക്കരണത്തിന്റെ മാനസിക പ്രത്യാഘാതങ്ങളെ എങ്ങനെ വ്യക്തമാക്കുന്നു?</strong><br><br>
+            <div style="color: #064e3b;">ഗ്രാമങ്ങളിലെ സ്നേഹവും അടുപ്പവുമുള്ള കൂട്ടായ്മയിൽ (Gemeinschaft) നിന്ന് നഗരങ്ങളിലെ അപരിചിതവും കരാർ അധിഷ്ഠിതവുമായ ഒറ്റപ്പെടലിലേക്ക് (Gesellschaft) ആളുകൾ മാറിയത് ഏകാന്തതയ്ക്ക് കാരണമായി.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q15: Why did the industrial revolution inevitably trigger unprecedented global environmental crises?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Unlike agrarian circular nutrient recycling, industrial mass production relies on linear, fossil-fuel-driven extraction, emitting toxic air and water pollutants and exhausting finite non-renewable ecological resources.</div>
+            <strong style="color: #1e3a8a;">Q15: Why did the industrial revolution inevitably trigger unprecedented global environmental crises?</strong><br><br>
+            <div style="color: #0f172a;">Unlike agrarian circular nutrient recycling, industrial mass production relies on linear, fossil-fuel-driven extraction, emitting toxic air and water pollutants and exhausting finite non-renewable ecological resources.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 15: വ്യാവസായിക വിപ്ലവം ആഗോള പാരിസ്ഥിതിക തകർച്ചയ്ക്ക് വഴിവെച്ചത് എന്തുകൊണ്ടാണ്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">പ്രകൃതിയെ ദ്രോഹിക്കാതെയുള്ള പരമ്പരാഗത രീതികൾക്ക് പകരം കൽക്കരിയും എണ്ണയും വൻതോതിൽ കത്തിച്ചതും ഫാക്ടറി മാലിന്യങ്ങളും വനനശീകരണവും പരിസ്ഥിതിയുടെ സ്വാഭാവിക സന്തുലിതാവസ്ഥയെ തകർത്തു.</div>
+            <strong style="color: #047857;">ചോദ്യം 15: വ്യാവസായിക വിപ്ലവം ആഗോള പാരിസ്ഥിതിക തകർച്ചയ്ക്ക് വഴിവെച്ചത് എന്തുകൊണ്ടാണ്?</strong><br><br>
+            <div style="color: #064e3b;">പ്രകൃതിയെ ദ്രോഹിക്കാതെയുള്ള പരമ്പരാഗത രീതികൾക്ക് പകരം കൽക്കരിയും എണ്ണയും വൻതോതിൽ കത്തിച്ചതും ഫാക്ടറി മാലിന്യങ്ങളും വനനശീകരണവും പരിസ്ഥിതിയുടെ സ്വാഭാവിക സന്തുലിതാവസ്ഥയെ തകർത്തു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q16: Why does Daniel Bell argue that in post-industrial society, 'theoretical knowledge' supersedes financial capital as the strategic resource?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">In post-industrial society, wealth is generated not through physical machinery or raw materials, but through codified scientific principles, algorithmic software, data architecture, and intellectual property.</div>
+            <strong style="color: #1e3a8a;">Q16: Why does Daniel Bell argue that in post-industrial society, 'theoretical knowledge' supersedes financial capital as the strategic resource?</strong><br><br>
+            <div style="color: #0f172a;">In post-industrial society, wealth is generated not through physical machinery or raw materials, but through codified scientific principles, algorithmic software, data architecture, and intellectual property.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 16: വ്യവസായന്തര സമൂഹത്തിൽ പണത്തേക്കാളും യന്ത്രങ്ങളേക്കാളും 'സൈദ്ധാന്തിക അറിവാണ്' (Theoretical knowledge) ഏറ്റവും വലിയ സമ്പത്ത് എന്ന് ഡാനിയൽ ബെൽ വാദിക്കുന്നത് എന്തുകൊണ്ട്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">യന്ത്രങ്ങൾ ഉണ്ടാക്കുന്നതിനേക്കാൾ മൂല്യം പുതിയ അൽഗോരിതങ്ങൾ, ശാസ്ത്ര കണ്ടുപിടുത്തങ്ങൾ, സോഫ്റ്റ്‌വെയറുകൾ എന്നിവയ്ക്കുള്ളതുകൊണ്ട് അറിവാണ് പുതിയ സാമ്പത്തിക വികസനത്തിന്റെ കേന്ദ്രം.</div>
+            <strong style="color: #047857;">ചോദ്യം 16: വ്യവസായന്തര സമൂഹത്തിൽ പണത്തേക്കാളും യന്ത്രങ്ങളേക്കാളും 'സൈദ്ധാന്തിക അറിവാണ്' (Theoretical knowledge) ഏറ്റവും വലിയ സമ്പത്ത് എന്ന് ഡാനിയൽ ബെൽ വാദിക്കുന്നത് എന്തുകൊണ്ട്?</strong><br><br>
+            <div style="color: #064e3b;">യന്ത്രങ്ങൾ ഉണ്ടാക്കുന്നതിനേക്കാൾ മൂല്യം പുതിയ അൽഗോരിതങ്ങൾ, ശാസ്ത്ര കണ്ടുപിടുത്തങ്ങൾ, സോഫ്റ്റ്‌വെയറുകൾ എന്നിവയ്ക്കുള്ളതുകൊണ്ട് അറിവാണ് പുതിയ സാമ്പത്തിക വികസനത്തിന്റെ കേന്ദ്രം.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q17: How do cybernetic networks and IT infrastructure transform traditional geographical conceptions of society?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Digital telecommunications, cloud systems, and the internet decouple social interaction from physical co-presence, establishing virtual communities, transnational economic networks, and boundary-less collaboration.</div>
+            <strong style="color: #1e3a8a;">Q17: How do cybernetic networks and IT infrastructure transform traditional geographical conceptions of society?</strong><br><br>
+            <div style="color: #0f172a;">Digital telecommunications, cloud systems, and the internet decouple social interaction from physical co-presence, establishing virtual communities, transnational economic networks, and boundary-less collaboration.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 17: സൈബർ ശൃംഖലകളും ഐ.ടിയും സമൂഹത്തെക്കുറിച്ചുള്ള പരമ്പരാഗത ഭൂമിശാസ്ത്ര സങ്കൽപ്പങ്ങളെ മാറ്റിമറിച്ചത് എങ്ങനെ?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">ഇന്റർനെറ്റും ഡിജിറ്റൽ സംവിധാനങ്ങളും മനുഷ്യർ ഒരേ സ്ഥലത്ത് ഒരുമിച്ചുണ്ടാവണം എന്ന നിബന്ധന ഇല്ലാതാക്കി; അതിരുകളില്ലാത്ത വെർച്വൽ ലോകത്തും ഡിജിറ്റൽ കൂട്ടായ്മകളിലും ജീവിക്കാൻ ആളുകൾക്ക് സാധിക്കുന്നു.</div>
+            <strong style="color: #047857;">ചോദ്യം 17: സൈബർ ശൃംഖലകളും ഐ.ടിയും സമൂഹത്തെക്കുറിച്ചുള്ള പരമ്പരാഗത ഭൂമിശാസ്ത്ര സങ്കൽപ്പങ്ങളെ മാറ്റിമറിച്ചത് എങ്ങനെ?</strong><br><br>
+            <div style="color: #064e3b;">ഇന്റർനെറ്റും ഡിജിറ്റൽ സംവിധാനങ്ങളും മനുഷ്യർ ഒരേ സ്ഥലത്ത് ഒരുമിച്ചുണ്ടാവണം എന്ന നിബന്ധന ഇല്ലാതാക്കി; അതിരുകളില്ലാത്ത വെർച്വൽ ലോകത്തും ഡിജിറ്റൽ കൂട്ടായ്മകളിലും ജീവിക്കാൻ ആളുകൾക്ക് സാധിക്കുന്നു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q18: How has the transition to a post-industrial service economy altered structural gender equality?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">The transition away from muscle-dependent industrial labor toward brain-centric knowledge and interpersonal service occupations eliminated physical barriers, accelerating female workforce parity and managerial leadership.</div>
+            <strong style="color: #1e3a8a;">Q18: How has the transition to a post-industrial service economy altered structural gender equality?</strong><br><br>
+            <div style="color: #0f172a;">The transition away from muscle-dependent industrial labor toward brain-centric knowledge and interpersonal service occupations eliminated physical barriers, accelerating female workforce parity and managerial leadership.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 18: വ്യവസായന്തര സേവന സമ്പദ്‌വ്യവസ്ഥ സ്ത്രീ ശാക്തീകരണത്തിനും ലിംഗസമത്വത്തിനും കരുത്തായത് എങ്ങനെ?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">കായിക അധ്വാനം ആവശ്യമുള്ള ഫാക്ടറി ജോലികൾക്ക് പകരം ബുദ്ധിയും ആശയവിനിമയവും വേണ്ട ഐ.ടി-സേവന ജോലികൾ വന്നതോടെ സ്ത്രീകൾക്ക് തൊഴിലിടങ്ങളിലും നേതൃത്വത്തിലും വലിയ പ്രാതിനിധ്യം ലഭിച്ചു.</div>
+            <strong style="color: #047857;">ചോദ്യം 18: വ്യവസായന്തര സേവന സമ്പദ്‌വ്യവസ്ഥ സ്ത്രീ ശാക്തീകരണത്തിനും ലിംഗസമത്വത്തിനും കരുത്തായത് എങ്ങനെ?</strong><br><br>
+            <div style="color: #064e3b;">കായിക അധ്വാനം ആവശ്യമുള്ള ഫാക്ടറി ജോലികൾക്ക് പകരം ബുദ്ധിയും ആശയവിനിമയവും വേണ്ട ഐ.ടി-സേവന ജോലികൾ വന്നതോടെ സ്ത്രീകൾക്ക് തൊഴിലിടങ്ങളിലും നേതൃത്വത്തിലും വലിയ പ്രാതിനിധ്യം ലഭിച്ചു.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q19: Compare Émile Durkheim's 'mechanical solidarity' in agrarian societies with 'organic solidarity' in industrial/post-industrial societies.</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Agrarian mechanical solidarity rests on uniformity and an intense collective conscience enforced through repressive law. Industrial and post-industrial organic solidarity rests on complex division of labor and mutual functional dependence governed by restitutive law.</div>
+            <strong style="color: #1e3a8a;">Q19: Compare Émile Durkheim's 'mechanical solidarity' in agrarian societies with 'organic solidarity' in industrial/post-industrial societies.</strong><br><br>
+            <div style="color: #0f172a;">Agrarian mechanical solidarity rests on uniformity and an intense collective conscience enforced through repressive law. Industrial and post-industrial organic solidarity rests on complex division of labor and mutual functional dependence governed by restitutive law.</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 19: കാർഷിക സമൂഹത്തിലെ 'യാന്ത്രിക ഐക്യവും' (Mechanical Solidarity) ആധുനിക സമൂഹങ്ങളിലെ 'ജൈവ ഐക്യവും' (Organic Solidarity) തമ്മിലുള്ള അടിസ്ഥാന വ്യത്യാസം എന്താണ്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">കാർഷിക സമൂഹത്തിൽ ആളുകളെല്ലാം ഒരേപോലെ ചിന്തിക്കുകയും പ്രവർത്തിക്കുകയും ചെയ്യുമ്പോൾ (യാന്ത്രിക ഐക്യം), ആധുനിക സമൂഹത്തിൽ ശരീരത്തിലെ വ്യത്യസ്ത അവയവങ്ങളെപ്പോലെ പരസ്പരം ആശ്രയിച്ച് ജീവിക്കുന്ന ഐക്യമാണ് (ജൈവ ഐക്യം) ഉള്ളത്.</div>
+            <strong style="color: #047857;">ചോദ്യം 19: കാർഷിക സമൂഹത്തിലെ 'യാന്ത്രിക ഐക്യവും' (Mechanical Solidarity) ആധുനിക സമൂഹങ്ങളിലെ 'ജൈവ ഐക്യവും' (Organic Solidarity) തമ്മിലുള്ള അടിസ്ഥാന വ്യത്യാസം എന്താണ്?</strong><br><br>
+            <div style="color: #064e3b;">കാർഷിക സമൂഹത്തിൽ ആളുകളെല്ലാം ഒരേപോലെ ചിന്തിക്കുകയും പ്രവർത്തിക്കുകയും ചെയ്യുമ്പോൾ (യാന്ത്രിക ഐക്യം), ആധുനിക സമൂഹത്തിൽ ശരീരത്തിലെ വ്യത്യസ്ത അവയവങ്ങളെപ്പോലെ പരസ്പരം ആശ്രയിച്ച് ജീവിക്കുന്ന ഐക്യമാണ് (ജൈവ ഐക്യം) ഉള്ളത്.</div>
           </td>
         </tr>
         <tr>
           <td class="cell-en">
-            <strong style="color: #1e3a8a;">Q20: In synthesizing human evolutionary history, what is the fundamental shift in humanity's primary point of dependence across Agrarian, Industrial, and Post-Industrial societies?</strong><br>
-            <div style="color: #0f172a; margin-top: 3px;">Humanity's primary existential dependence shifted sequentially: from direct dependence on Nature and seasons (Agrarian), to dependence on fabricated Machines and fossil fuels (Industrial), to dependence on Information, Science, and Human Intellectual Capital (Post-Industrial).</div>
+            <strong style="color: #1e3a8a;">Q20: In synthesizing human evolutionary history, what is the fundamental shift in humanity's primary point of dependence across Agrarian, Industrial, and Post-Industrial societies?</strong><br><br>
+            <div style="color: #0f172a;">Humanity's primary existential dependence shifted sequentially: from direct dependence on Nature and seasons (Agrarian), to dependence on fabricated Machines and fossil fuels (Industrial), to dependence on Information, Science, and Human Intellectual Capital (Post-Industrial).</div>
           </td>
           <td class="cell-ml">
-            <strong style="color: #047857;">ചോദ്യം 20: കാർഷിക, വ്യാവസായിക, വ്യവസായന്തര സമൂഹങ്ങളിലൂടെയുള്ള വളർച്ചയിൽ മനുഷ്യന്റെ ആശ്രയത്വത്തിൽ വന്ന മൗലികമായ മാറ്റം എന്താണ്?</strong><br>
-            <div style="color: #064e3b; margin-top: 3px;">മനുഷ്യന്റെ ആശ്രയത്വം മൂന്ന് ഘട്ടങ്ങളിലൂടെ പരിണമിച്ചു: പ്രകൃതിയോടും കാലാവസ്ഥയോടുമുള്ള ആശ്രയത്വം (കാർഷികം) -> യന്ത്രങ്ങളോടും ഫോസിൽ ഇന്ധനങ്ങളോടുമുള്ള ആശ്രയത്വം (വ്യാവസായികം) -> ശാസ്ത്രീയ അറിവുകളോടും ഡിജിറ്റൽ വിവരങ്ങളോടുമുള്ള ആശ്രയത്വം (വ്യവസായന്തരം).</div>
+            <strong style="color: #047857;">ചോദ്യം 20: കാർഷിക, വ്യാവസായിക, വ്യവസായന്തര സമൂഹങ്ങളിലൂടെയുള്ള വളർച്ചയിൽ മനുഷ്യന്റെ ആശ്രയത്വത്തിൽ വന്ന മൗലികമായ മാറ്റം എന്താണ്?</strong><br><br>
+            <div style="color: #064e3b;">മനുഷ്യന്റെ ആശ്രയത്വം മൂന്ന് ഘട്ടങ്ങളിലൂടെ പരിണമിച്ചു: പ്രകൃതിയോടും കാലാവസ്ഥയോടുമുള്ള ആശ്രയത്വം (കാർഷികം) -> യന്ത്രങ്ങളോടും ഫോസിൽ ഇന്ധനങ്ങളോടുമുള്ള ആശ്രയത്വം (വ്യാവസായികം) -> ശാസ്ത്രീയ അറിവുകളോടും ഡിജിറ്റൽ വിവരങ്ങളോടുമുള്ള ആശ്രയത്വം (വ്യവസായന്തരം).</div>
           </td>
         </tr>
       </tbody>
     </table>
-  </div>
+
+    <div class="page-footer-nav">
+      <span>University of Calicut · B.A. Sociology</span>
+      <span>Knock Your Brain Challenge</span>
+      <span>Semester 1</span>
+    </div>
+  </section>
 
 
-  <div class="section-block">
+  <!-- ==================== CLOSING RECAP PAGE ==================== -->
+  <section class="content-page">
+    <div class="page-top-bar">
+      <span class="top-brand">Module IV: SOCIOLOGY AND SOCIETY · Calicut University LMS E-Content</span>
+      <span class="top-meta">Academic Synthesis &amp; Accreditation</span>
+    </div>
+
     <div class="unit-hero">
       <div class="unit-code-badge">Curricular Synthesis · അധ്യായ സംഗ്രഹം</div>
       <div class="unit-title-en">Module IV — Chapter 4.1 Comprehensive Synthesis Recap</div>
       <div class="unit-title-ml">മൊഡ്യൂൾ 4 അധ്യായം 4.1 സമഗ്ര അക്കാദമിക് സംഗ്രഹം</div>
     </div>
 
-    <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 8px 10px; margin-bottom: 8px;">
+    <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 14px; margin-bottom: 12px; flex-grow: 1;">
 
-    <div style="margin-bottom: 6px; padding-bottom: 5px; border-bottom: 1px solid #cbd5e1;">
-      <div style="font-weight: 800; color: #1e3a8a; font-size: 7.7pt;">1. Etymological & Classical Meaning · <span style="color: #047857;">1. പദോത്പത്തിയും ശാസ്ത്രീയ അർത്ഥവും</span></div>
-      <div style="font-size: 7.4pt; color: #1e293b; margin-top: 1px;">Derived from Latin 'Socius' (companion/fellowship). Society is an abstract, organized web of reciprocal social relationships (MacIver, Ginsberg, Giddings).</div>
-      <div style="font-size: 7.4pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 1px;">'സോഷ്യസ്' (കൂട്ടായ്മ) എന്ന ലാറ്റിൻ പദത്തിൽ നിന്നുണ്ടായി. പരസ്പര ബന്ധങ്ങളാൽ കോർക്കപ്പെട്ട അമൂർത്തമായ ഒരു സാമൂഹിക വലയമാണ് സമൂഹം (മാക് ഐവർ, ഗിൻസ്ബർഗ്, ഗിഡിംഗ്സ്).</div>
+    <div style="margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #cbd5e1;">
+      <div style="font-weight: 800; color: #1e3a8a; font-size: 8.4pt;">1. Etymological & Classical Meaning · <span style="color: #047857;">1. പദോത്പത്തിയും ശാസ്ത്രീയ അർത്ഥവും</span></div>
+      <div style="font-size: 8pt; color: #1e293b; margin-top: 2px;">Derived from Latin 'Socius' (companion/fellowship). Society is an abstract, organized web of reciprocal social relationships (MacIver, Ginsberg, Giddings).</div>
+      <div style="font-size: 8pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 2px;">'സോഷ്യസ്' (കൂട്ടായ്മ) എന്ന ലാറ്റിൻ പദത്തിൽ നിന്നുണ്ടായി. പരസ്പര ബന്ധങ്ങളാൽ കോർക്കപ്പെട്ട അമൂർത്തമായ ഒരു സാമൂഹിക വലയമാണ് സമൂഹം (മാക് ഐവർ, ഗിൻസ്ബർഗ്, ഗിഡിംഗ്സ്).</div>
     </div>
-    <div style="margin-bottom: 6px; padding-bottom: 5px; border-bottom: 1px solid #cbd5e1;">
-      <div style="font-weight: 800; color: #1e3a8a; font-size: 7.7pt;">2. Structural vs. Functional Approaches · <span style="color: #047857;">2. ഘടനാപരവും ധർമ്മപരവുമായ സമീപനങ്ങൾ</span></div>
-      <div style="font-size: 7.4pt; color: #1e293b; margin-top: 1px;">The Structural approach views society as an objective 'Thing' / architecture (folkways, mores, institutions). The Functional approach views society as an active, living 'Process' of interaction and equilibrium.</div>
-      <div style="font-size: 7.4pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 1px;">ഘടനാപരമായ വീക്ഷണം സമൂഹത്തെ നിയമങ്ങളും സ്ഥാപനങ്ങളും ചേർന്ന ഉറച്ചൊരു 'വസ്തു'വായി (Thing) കാണുമ്പോൾ, ധർമ്മപരമായ വീക്ഷണം അതിനെ മനുഷ്യർ തമ്മിലുള്ള സജീവ 'പ്രക്രിയ'യായി (Process) വിശകലനം ചെയ്യുന്നു.</div>
+    <div style="margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #cbd5e1;">
+      <div style="font-weight: 800; color: #1e3a8a; font-size: 8.4pt;">2. Structural vs. Functional Approaches · <span style="color: #047857;">2. ഘടനാപരവും ധർമ്മപരവുമായ സമീപനങ്ങൾ</span></div>
+      <div style="font-size: 8pt; color: #1e293b; margin-top: 2px;">The Structural approach views society as an objective 'Thing' / architecture (folkways, mores, institutions). The Functional approach views society as an active, living 'Process' of interaction and equilibrium.</div>
+      <div style="font-size: 8pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 2px;">ഘടനാപരമായ വീക്ഷണം സമൂഹത്തെ നിയമങ്ങളും സ്ഥാപനങ്ങളും ചേർന്ന ഉറച്ചൊരു 'വസ്തു'വായി (Thing) കാണുമ്പോൾ, ധർമ്മപരമായ വീക്ഷണം അതിനെ മനുഷ്യർ തമ്മിലുള്ള സജീവ 'പ്രക്രിയ'യായി (Process) വിശകലനം ചെയ്യുന്നു.</div>
     </div>
-    <div style="margin-bottom: 6px; padding-bottom: 5px; border-bottom: 1px solid #cbd5e1;">
-      <div style="font-weight: 800; color: #1e3a8a; font-size: 7.7pt;">3. Kingsley Davis's Societal Needs · <span style="color: #047857;">3. കിംഗ്സ്ലി ഡേവിസിന്റെ 4 അടിസ്ഥാന ആവശ്യങ്ങൾ</span></div>
-      <div style="font-size: 7.4pt; color: #1e293b; margin-top: 1px;">Four irreducible functional prerequisites: (1) Population replenishment, (2) Specialization of roles, (3) Internal Solidarity, and (4) Generational Continuity.</div>
-      <div style="font-size: 7.4pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 1px;">സമൂഹത്തിന് നിലനിൽക്കാൻ 4 ഘടകങ്ങൾ വേണം: (1) ജനസംഖ്യ, (2) തൊഴിൽ വിഭജനം, (3) ആഭ്യന്തര ഐക്യം, (4) തലമുറകളായുള്ള തുടർച്ച.</div>
+    <div style="margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #cbd5e1;">
+      <div style="font-weight: 800; color: #1e3a8a; font-size: 8.4pt;">3. Kingsley Davis's Societal Needs · <span style="color: #047857;">3. കിംഗ്സ്ലി ഡേവിസിന്റെ 4 അടിസ്ഥാന ആവശ്യങ്ങൾ</span></div>
+      <div style="font-size: 8pt; color: #1e293b; margin-top: 2px;">Four irreducible functional prerequisites: (1) Population replenishment, (2) Specialization of roles, (3) Internal Solidarity, and (4) Generational Continuity.</div>
+      <div style="font-size: 8pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 2px;">സമൂഹത്തിന് നിലനിൽക്കാൻ 4 ഘടകങ്ങൾ വേണം: (1) ജനസംഖ്യ, (2) തൊഴിൽ വിഭജനം, (3) ആഭ്യന്തര ഐക്യം, (4) തലമുറകളായുള്ള തുടർച്ച.</div>
     </div>
-    <div style="margin-bottom: 6px; padding-bottom: 5px; border-bottom: 1px solid #cbd5e1;">
-      <div style="font-weight: 800; color: #1e3a8a; font-size: 7.7pt;">4. Eleven Core Characteristics · <span style="color: #047857;">4. പതിനൊന്ന് മൗലിക സവിശേഷതകൾ</span></div>
-      <div style="font-size: 7.4pt; color: #1e293b; margin-top: 1px;">Territory, Population, Abstract Nature, Relational Network, Comprehensive Culture, Interdependence, Permanence, Cooperation & Conflict, Likeness, Difference, and Constant Change.</div>
-      <div style="font-size: 7.4pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 1px;">പ്രദേശം, ജനങ്ങൾ, അമൂർത്ത സ്വഭാവം, സാമൂഹിക ബന്ധങ്ങളുടെ വല, സമഗ്ര സംസ്കാരം, പരസ്പരാശ്രയം, ശാശ്വതത്വം, സഹകരണവും സംഘർഷവും, സാമ്യത, വ്യത്യാസം, നിരന്തര മാറ്റം.</div>
+    <div style="margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #cbd5e1;">
+      <div style="font-weight: 800; color: #1e3a8a; font-size: 8.4pt;">4. Eleven Core Characteristics · <span style="color: #047857;">4. പതിനൊന്ന് മൗലിക സവിശേഷതകൾ</span></div>
+      <div style="font-size: 8pt; color: #1e293b; margin-top: 2px;">Territory, Population, Abstract Nature, Relational Network, Comprehensive Culture, Interdependence, Permanence, Cooperation & Conflict, Likeness, Difference, and Constant Change.</div>
+      <div style="font-size: 8pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 2px;">പ്രദേശം, ജനങ്ങൾ, അമൂർത്ത സ്വഭാവം, സാമൂഹിക ബന്ധങ്ങളുടെ വല, സമഗ്ര സംസ്കാരം, പരസ്പരാശ്രയം, ശാശ്വതത്വം, സഹകരണവും സംഘർഷവും, സാമ്യത, വ്യത്യാസം, നിരന്തര മാറ്റം.</div>
     </div>
-    <div style="margin-bottom: 6px; padding-bottom: 5px; border-bottom: 1px solid #cbd5e1;">
-      <div style="font-weight: 800; color: #1e3a8a; font-size: 7.7pt;">5. Agrarian Feudal Architecture · <span style="color: #047857;">5. കാർഷിക സമൂഹത്തിന്റെ ഘടന</span></div>
-      <div style="font-size: 7.4pt; color: #1e293b; margin-top: 1px;">Plow cultivation generated food surpluses, establishing 5 occupational strata (Landlords, Supervisory farmers, Cultivators, Sharecroppers, Artisans), ascribed status, and village Gemeinschaft.</div>
-      <div style="font-size: 7.4pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 1px;">കലപ്പയും ജലസേചനവും വഴി മിച്ചോൽപ്പാദനം നേടി; 5 തൊഴിൽ വിഭാഗങ്ങളും, ജന്മസിദ്ധ പദവികളും, പരമ്പരാഗത ഗ്രാമീണ കൂട്ടായ്മയും (Gemeinschaft) നിലവിൽ വന്നു.</div>
+    <div style="margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #cbd5e1;">
+      <div style="font-weight: 800; color: #1e3a8a; font-size: 8.4pt;">5. Agrarian Feudal Architecture · <span style="color: #047857;">5. കാർഷിക സമൂഹത്തിന്റെ ഘടന</span></div>
+      <div style="font-size: 8pt; color: #1e293b; margin-top: 2px;">Plow cultivation generated food surpluses, establishing 5 occupational strata (Landlords, Supervisory farmers, Cultivators, Sharecroppers, Artisans), ascribed status, and village Gemeinschaft.</div>
+      <div style="font-size: 8pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 2px;">കലപ്പയും ജലസേചനവും വഴി മിച്ചോൽപ്പാദനം നേടി; 5 തൊഴിൽ വിഭാഗങ്ങളും, ജന്മസിദ്ധ പദവികളും, പരമ്പരാഗത ഗ്രാമീണ കൂട്ടായ്മയും (Gemeinschaft) നിലവിൽ വന്നു.</div>
     </div>
-    <div style="margin-bottom: 6px; padding-bottom: 5px; border-bottom: 1px solid #cbd5e1;">
-      <div style="font-weight: 800; color: #1e3a8a; font-size: 7.7pt;">6. Industrial Machine Capitalism · <span style="color: #047857;">6. വ്യാവസായിക സമൂഹവും മുതലാളിത്തവും</span></div>
-      <div style="font-size: 7.4pt; color: #1e293b; margin-top: 1px;">Inanimate mechanical energy, factory mass production, segmentalized labor roles, meritocratic achieved status, Weberian rational-legal bureaucracy, urbanization (Gesellschaft), and severe pollution.</div>
-      <div style="font-size: 7.4pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 1px;">നീരാവി-വൈദ്യുതി യന്ത്രങ്ങൾ, ഫാക്ടറി മാസ് പ്രൊഡക്ഷൻ, നേടിയ പദവികൾ (Achieved status), ബ്യൂറോക്രസി, നഗരവൽക്കരണം (Gesellschaft), കടുത്ത പാരിസ്ഥിതിക പ്രശ്നങ്ങൾ.</div>
+    <div style="margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #cbd5e1;">
+      <div style="font-weight: 800; color: #1e3a8a; font-size: 8.4pt;">6. Industrial Machine Capitalism · <span style="color: #047857;">6. വ്യാവസായിക സമൂഹവും മുതലാളിത്തവും</span></div>
+      <div style="font-size: 8pt; color: #1e293b; margin-top: 2px;">Inanimate mechanical energy, factory mass production, segmentalized labor roles, meritocratic achieved status, Weberian rational-legal bureaucracy, urbanization (Gesellschaft), and severe pollution.</div>
+      <div style="font-size: 8pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 2px;">നീരാവി-വൈദ്യുതി യന്ത്രങ്ങൾ, ഫാക്ടറി മാസ് പ്രൊഡക്ഷൻ, നേടിയ പദവികൾ (Achieved status), ബ്യൂറോക്രസി, നഗരവൽക്കരണം (Gesellschaft), കടുത്ത പാരിസ്ഥിതിക പ്രശ്നങ്ങൾ.</div>
     </div>
-    <div style="margin-bottom: 6px; padding-bottom: 5px; border-bottom: 1px solid #cbd5e1;">
-      <div style="font-weight: 800; color: #1e3a8a; font-size: 7.7pt;">7. Post-Industrial Knowledge Paradigm · <span style="color: #047857;">7. വ്യവസായന്തര വിജ്ഞാന യുഗം</span></div>
-      <div style="font-size: 7.4pt; color: #1e293b; margin-top: 1px;">Daniel Bell (1973): Tertiary/quaternary services, theoretical scientific knowledge, professional-technical class, cybernetic networks, and decentralized global integration.</div>
-      <div style="font-size: 7.4pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 1px;">ഡാനിയൽ ബെൽ (1973): ഉൽപ്പാദനത്തേക്കാൾ വിജ്ഞാനം, വിവരസാങ്കേതികവിദ്യ, സേവന മേഖല, ഐ.ടി വിദഗ്ദ്ധർ, സൈബർ ശൃംഖലകൾ, ആഗോളവൽക്കരണം.</div>
+    <div style="margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #cbd5e1;">
+      <div style="font-weight: 800; color: #1e3a8a; font-size: 8.4pt;">7. Post-Industrial Knowledge Paradigm · <span style="color: #047857;">7. വ്യവസായന്തര വിജ്ഞാന യുഗം</span></div>
+      <div style="font-size: 8pt; color: #1e293b; margin-top: 2px;">Daniel Bell (1973): Tertiary/quaternary services, theoretical scientific knowledge, professional-technical class, cybernetic networks, and decentralized global integration.</div>
+      <div style="font-size: 8pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 2px;">ഡാനിയൽ ബെൽ (1973): ഉൽപ്പാദനത്തേക്കാൾ വിജ്ഞാനം, വിവരസാങ്കേതികവിദ്യ, സേവന മേഖല, ഐ.ടി വിദഗ്ദ്ധർ, സൈബർ ശൃംഖലകൾ, ആഗോളവൽക്കരണം.</div>
     </div>
-    <div style="margin-bottom: 6px; padding-bottom: 5px; border-bottom: 1px solid #cbd5e1;">
-      <div style="font-weight: 800; color: #1e3a8a; font-size: 7.7pt;">8. Master Comparative Synthesis · <span style="color: #047857;">8. സമഗ്ര ചരിത്ര പരിണാമ സംഗ്രഹം</span></div>
-      <div style="font-size: 7.4pt; color: #1e293b; margin-top: 1px;">Historical evolution: From Nature-dependent agrarian Gemeinschaft (Mechanical solidarity), through Machine-dependent industrial Gesellschaft, to Knowledge-dependent post-industrial Organic solidarity.</div>
-      <div style="font-size: 7.4pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 1px;">പ്രകൃതിയെ ആശ്രയിച്ച ഗ്രാമീണ യാന്ത്രിക ഐക്യത്തിൽ (Gemeinschaft) നിന്ന് യന്ത്രങ്ങളെ ആശ്രയിച്ച വ്യാവസായിക ഗെസൽഷാഫ്റ്റിലൂടെ, വിജ്ഞാനത്തെ ആശ്രയിച്ച വ്യവസായന്തര ജൈവ ഐക്യത്തിലേക്കുള്ള (Organic solidarity) വളർച്ച.</div>
+    <div style="margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #cbd5e1;">
+      <div style="font-weight: 800; color: #1e3a8a; font-size: 8.4pt;">8. Master Comparative Synthesis · <span style="color: #047857;">8. സമഗ്ര ചരിത്ര പരിണാമ സംഗ്രഹം</span></div>
+      <div style="font-size: 8pt; color: #1e293b; margin-top: 2px;">Historical evolution: From Nature-dependent agrarian Gemeinschaft (Mechanical solidarity), through Machine-dependent industrial Gesellschaft, to Knowledge-dependent post-industrial Organic solidarity.</div>
+      <div style="font-size: 8pt; color: #064e3b; font-family: 'Noto Sans Malayalam', sans-serif; margin-top: 2px;">പ്രകൃതിയെ ആശ്രയിച്ച ഗ്രാമീണ യാന്ത്രിക ഐക്യത്തിൽ (Gemeinschaft) നിന്ന് യന്ത്രങ്ങളെ ആശ്രയിച്ച വ്യാവസായിക ഗെസൽഷാഫ്റ്റിലൂടെ, വിജ്ഞാനത്തെ ആശ്രയിച്ച വ്യവസായന്തര ജൈവ ഐക്യത്തിലേക്കുള്ള (Organic solidarity) വളർച്ച.</div>
     </div>
     </div>
 
-    <div style="padding-top: 4px; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; font-size: 6.8pt; color: #64748b; font-weight: 600;">
+    <div class="page-footer-nav">
       <span>Calicut University FYUGP B.A. Sociology</span>
-      <span>Core Course SOC1CJ101 · Comprehensive Master Lecture Notes</span>
+      <span>Core Course SOC1CJ101 · Comprehensive Lecture Notes</span>
       <span>Semester 1</span>
     </div>
-  </div>
+  </section>
 
 </div>
 </body>
