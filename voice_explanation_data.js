@@ -1,7 +1,7 @@
 window.VOICE_EXPLANATIONS_DATA = {
   "malayalam": {
     "name": "Malayalam",
-    "badge": "അ",
+    "badge": "മ",
     "iconClass": "icon-rose",
     "tag": "LANGUAGE",
     "modules": [
@@ -85,8 +85,16 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 03",
             "title": "ഇവനെക്കൂടി",
             "chapter": "സച്ചിദാനന്ദൻ · ആധുനിക കവിതാ പഠനം",
-            "duration": "18",
-            "youtubeId": ""
+            "duration": "9:30",
+            "youtubeId": "",
+            "videoUrl": "/videos/malayalam_chapter_ivanekkoodi_video.mp4",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>കവിതാ പശ്ചാത്തലം:</strong> കെ. സച്ചിദാനന്ദന്റെ പ്രശസ്തമായ ആധുനിക മലയാള കവിതയാണ് 'ഇവനെക്കൂടി'. സമൂഹത്തിലെ അരികുവൽക്കരിക്കപ്പെട്ടവരുടെയും സാധാരണ മനുഷ്യരുടെയും യാതനകളെയും അതിജീവന പോരാട്ടങ്ങളെയും കവിത തീക്ഷ്ണമായി അടയാളപ്പെടുത്തുന്നു.",
+              "<strong>പ്രധാന പ്രമേയങ്ങൾ:</strong> മാനവികത, സാമൂഹിക പ്രതിരോധം, പാർശ്വവൽക്കരിക്കപ്പെട്ടവരോടുള്ള ഐക്യദാർഢ്യം, അധികാര വ്യവസ്ഥകളോടുള്ള കവിയുടെ നിരന്തര കലഹം.",
+              "<strong>കാവ്യഭാഷയും ശൈലിയും:</strong> ആധുനിക കവിതയിലെ ശക്തമായ ബിംബകൽപ്പനകളും കാവ്യഭാഷയും സമകാലിക രാഷ്ട്രീയ-സാമൂഹിക യാഥാർത്ഥ്യങ്ങളുമായി നേരിട്ട് സംവദിക്കുന്നു."
+            ],
+            "examTip": "സച്ചിദാനന്ദന്റെ കാവ്യശൈലിയിലെ മാനവികതയും 'ഇവനെക്കൂടി' എന്ന ശീർഷകത്തിന്റെ ആഴത്തിലുള്ള അർത്ഥതലങ്ങളും പരീക്ഷയ്ക്ക് പ്രത്യേകം വിശകലനം ചെയ്യുക."
           }
         ]
       },
@@ -124,7 +132,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 1
   },
   "english": {
     "name": "English",
