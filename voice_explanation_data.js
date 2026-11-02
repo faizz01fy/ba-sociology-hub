@@ -1228,10 +1228,9 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Unit 01",
             "title": "Demand: Law, Determinants, Curves & Market Demand",
-            "chapter": "Module 1 · Unit 1 · LMS-based Malayalam Gemini voice review",
-            "duration": "7:27",
+            "chapter": "Module 1 · Unit 1 · Malayalam Gemini voice review",
+            "duration": "6:10",
             "youtubeId": "",
-            "audioUrl": "/audio/micro-module1-unit1-demand.mp3",
             "videoUrl": "/micro-demand-review.html",
             "thumbnail": "/thumbnails/micro-demand-review.png",
             "studyPoints": [
@@ -1244,7 +1243,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "വ്യക്തിഗത ഡിമാൻഡ് കർവുകളുടെ തിരശ്ചീനമായ കൂട്ടിച്ചേർക്കലാണ് (Horizontal Summation) മാർക്കറ്റ് ഡിമാൻഡ് കർവ് രൂപീകരിക്കുന്നത്.",
               "വിലയിലെ മാറ്റം കർവിലൂടെയുള്ള മൂവ്മെന്റിനും (Expansion/Contraction) മറ്റ് ഘടകങ്ങളിലെ മാറ്റം കർവിന്റെ ഷിഫ്റ്റിനും (Increase/Decrease) കാരണമാകുന്നു."
             ],
-            "examTip": "പരീക്ഷയിൽ 'Movement along the Demand Curve' ഉം 'Shift in Demand Curve' ഉം തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, സ്വന്തം വിലയിലെ മാറ്റം മൂലമുണ്ടാകുന്ന മാറ്റത്തെ Change in Quantity Demanded (Expansion അല്ലെങ്കിൽ Contraction) എന്നും, വിലയൊഴികെയുള്ള മറ്റ് ഘടകങ്ങളിലെ മാറ്റം വഴി കർവ് പൂർണ്ണമായി മാറുന്നതിനെ Change in Demand (Increase അല്ലെങ്കിൽ Decrease) എന്നും പ്രത്യേകം ഗ്രാഫ് വരച്ച് വ്യക്തമാക്കുക."
+            "examTip": "പരീക്ഷയിൽ 'Movement along the Demand Curve' ഉം 'Shift in Demand Curve' ഉം തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, സ്വന്തം വിലയിലെ മാറ്റം മൂലമുണ്ടാകുന്ന മാറ്റത്തെ Change in Quantity Demanded (Expansion അല്ലെങ്കിൽ Contraction) എന്നും, വിലയൊഴികെയുള്ള മറ്റ് ഘടകങ്ങളിലെ മാറ്റം വഴി കർവ് പൂർണ്ണമായി മാറുന്നതിനെ Change in Demand (Increase അല്ലെങ്കിൽ Decrease) എന്നും പ്രത്യേകം ഗ്രാഫ് വരച്ച് വ്യക്തമാക്കുക.",
+            "audioUrl": "/audio/micro-module1-unit1-demand.mp3"
           },
           {
             "chapterNumber": "Unit 02",
