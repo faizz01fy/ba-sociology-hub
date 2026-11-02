@@ -138,9 +138,19 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 01",
             "title": "I Have a Dream",
-            "chapter": "Martin Luther King Jr. · Rhetoric, Themes & Analysis",
-            "duration": "18",
-            "youtubeId": ""
+            "chapter": "English cinematic overview · Martin Luther King Jr. · Context, themes and rhetorical devices",
+            "duration": "5:20",
+            "youtubeId": "ZdrMJqXnKyE",
+            "language": "English",
+            "studyPoints": [
+              "<strong>Historical context:</strong> Martin Luther King Jr. delivered the speech at the Lincoln Memorial during the March on Washington on August 28, 1963.",
+              "<strong>Equality and justice:</strong> The speech challenges racial discrimination and calls for constitutional promises to become everyday reality.",
+              "<strong>Nonviolence and brotherhood:</strong> King argues for peaceful resistance, human dignity and solidarity across communities.",
+              "<strong>Anaphora and Metaphor:</strong> Repeated phrases build rhythm and emphasis; images such as an unfulfilled cheque make abstract injustice concrete.",
+              "<strong>Listening practice:</strong> Notice emphasis, cadence, pauses and repetition, then revisit the original speech without visuals.",
+              "<strong>About this overview:</strong> English-language cinematic study aid generated with Google NotebookLM from the AcademicHub chapter PDF for Calicut University learners."
+            ],
+            "examTip": "Connect each rhetorical device to its effect on listeners. Distinguish the historical setting, central themes and techniques of persuasion."
           },
           {
             "chapterNumber": "Chapter 02",
