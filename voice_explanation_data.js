@@ -884,7 +884,7 @@ window.VOICE_EXPLANATIONS_DATA = {
     "badge": "₹",
     "iconClass": "icon-green",
     "tag": "ECONOMICS",
-        "modules": [
+    "modules": [
       {
         "moduleName": "MODULE 01: ചരിത്ര പശ്ചാത്തലങ്ങളും വികസന മാതൃകകളും (HISTORICAL BACKGROUND & DEVELOPMENT MODELS)",
         "videos": [
@@ -1051,7 +1051,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ധർമ്മശാസ്ത്രം ആമുഖവും തത്വങ്ങളും (Introduction to Dharmashastra & Western Ethics)",
             "chapter": "Academic Hub Special · ഋതം, ധർമ്മം, പുരുഷാർത്ഥങ്ങൾ & പാശ്ചാത്യ-പൗരസ്ത്യ സമന്വയം",
             "duration": "18:30",
-            "youtubeId": "KsDe2ZkHrro",
+            "youtubeId": "s3xGsLMCY1o",
             "audioUrl": "",
             "language": "English",
             "studyPoints": [
