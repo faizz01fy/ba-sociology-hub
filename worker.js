@@ -356,14 +356,13 @@ export default {
       const pdfHeaders = new Headers(response.headers);
       pdfHeaders.set("Content-Disposition", "inline");
       pdfHeaders.set("X-Content-Type-Options", "nosniff");
-      pdfHeaders.delete("Content-Disposition: attachment");
-      response = new Response(response.body, {
+      return new Response(response.body, {
         status: response.status,
         statusText: response.statusText,
         headers: pdfHeaders
       });
     }
-    if (request.method === "GET" && response.ok && (response.headers.get("Content-Type")?.includes("text/html") || response.headers.get("Content-Type")?.includes("application/pdf") || url.pathname.endsWith(".pdf"))) {
+    if (request.method === "GET" && response.ok && response.headers.get("Content-Type")?.includes("text/html")) {
       const task = room.fetch(new Request("https://internal/internal/visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
