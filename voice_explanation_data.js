@@ -756,8 +756,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 01",
             "title": "വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും (Meaning & History of Education)",
             "chapter": "Academic Hub Special · എറ്റിമോളജി, ലക്ഷ്യങ്ങൾ & ചരിത്ര പരിണാമം",
-            "duration": "18:20",
-            "youtubeId": "657kvV7KkvE",
+            "duration": "22:18",
+            "youtubeId": "IcVqN7uFNEo",
             "language": "Malayalam",
             "studyPoints": [
               "വിദ്യാഭ്യാസത്തിന്റെ നിരുക്തം (Etymology): Educare (വളർത്തുക), Educere (പുറത്തുകൊണ്ടുവരിക), Educatum (പഠിപ്പിക്കൽ) എന്നീ ലത്തീൻ പദങ്ങൾ.",
