@@ -127,10 +127,14 @@
 
     @keyframes blink-nav-back {
       0%, 100% {
-        transform: scale(1);
-        filter: brightness(1) hue-rotate(0deg);
-        box-shadow: 0 4px 14px rgba(29, 78, 216, 0.5);
+        filter: brightness(1);
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
       }
+      50% {
+        filter: brightness(1.2);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.75);
+      }
+    }
       50% {
         transform: scale(1.05);
         filter: brightness(1.28) hue-rotate(45deg);
@@ -140,10 +144,14 @@
 
     @keyframes blink-nav-home {
       0%, 100% {
-        transform: scale(1);
-        filter: brightness(1) hue-rotate(0deg);
-        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.5);
+        filter: brightness(1);
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45);
       }
+      50% {
+        filter: brightness(1.2);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.75);
+      }
+    }
       50% {
         transform: scale(1.05);
         filter: brightness(1.28) hue-rotate(60deg);
@@ -283,6 +291,9 @@
     }
 
     .chapter-card {
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: rgba(107, 33, 168, 0.1);
       background: #ffffff;
       border: 1.5px solid #e2e8f0;
       border-radius: 18px;
@@ -441,8 +452,80 @@
       height: 100%;
       border: none;
     }
+
+    @media (max-width: 640px) {
+      .modal-zoom-btn {
+        display: none !important;
+      }
+      .modal-header, .viewer-header {
+        padding: 8px 12px !important;
+        min-height: 48px !important;
+        gap: 8px !important;
+      }
+      .modal-header h3, .viewer-title {
+        font-size: 13.5px !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+      }
+      .modal-header-actions, .viewer-actions {
+        flex-shrink: 0 !important;
+        gap: 6px !important;
+      }
+      #modalFastToggle {
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+        margin-right: 2px !important;
+        white-space: nowrap !important;
+      }
+      .modal-action-btn, .close-modal, .viewer-btn {
+        min-width: 38px !important;
+        height: 38px !important;
+        flex-shrink: 0 !important;
+      }
+    }
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
+<style id="modal-mobile-optimization">
+/* Responsive Modal Header & Touch Hit Targets */
+@media (max-width: 640px) {
+  .modal-zoom-btn, .modal-header .modal-btn-back, .viewer-actions .modal-btn-back {
+    display: none !important;
+  }
+  .modal-header, .viewer-header {
+    padding: 8px 12px !important;
+    min-height: 48px !important;
+    gap: 8px !important;
+  }
+  .modal-header h3, .modal-title, .viewer-title {
+    font-size: 13.5px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .modal-header-actions, .viewer-actions {
+    flex-shrink: 0 !important;
+    gap: 6px !important;
+  }
+  #modalFastToggle {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    margin-right: 2px !important;
+    white-space: nowrap !important;
+  }
+  .modal-action-btn, .close-modal, .viewer-btn, .modal-btn {
+    min-width: 38px !important;
+    height: 38px !important;
+    flex-shrink: 0 !important;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -622,11 +705,11 @@
       <span class="modal-title" id="modalTitle">Arabic PDF Viewer</span>
       <div class="modal-header-actions">
         <button class="modal-btn" id="modalFastToggle" onclick="toggleModalReaderEngine()">⚡ Fast</button>
-        <button class="modal-btn" onclick="zoomModalReader(0.15)">🔍 +</button>
-        <button class="modal-btn" onclick="zoomModalReader(-0.15)">🔍 -</button>
-        <button class="modal-btn" onclick="resetModalReaderZoom()">↺ 100%</button>
+        <button class="modal-btn modal-zoom-btn" onclick="zoomModalReader(0.15)">🔍 +</button>
+        <button class="modal-btn modal-zoom-btn" onclick="zoomModalReader(-0.15)">🔍 -</button>
+        <button class="modal-btn modal-zoom-btn" onclick="resetModalReaderZoom()">↺ 100%</button>
         <a class="modal-btn" href="#" id="modalExternalBtn" target="_blank">↗ New Tab</a>
-        <button class="modal-btn modal-btn-close" onclick="closeViewerModal()">✕</button>
+        <button class="modal-btn modal-btn-close close-modal" onclick="closeViewerModal()">✕</button>
       </div>
     </div>
     <div class="modal-body">
@@ -693,7 +776,19 @@
     viewPdf(currentPdfCleanUrl, currentPdfCleanTitle);
   }
 
-  function viewPdf(url, title) {
+  
+    // Card-level click handler for mobile and desktop
+    document.addEventListener('click', function(e) {
+      const card = e.target.closest('.chapter-card');
+      if (!card) return;
+      if (e.target.closest('button, a, input, select, textarea')) return;
+      const btn = card.querySelector('.btn-view, .read-online, .read-ch-btn, .action-btn');
+      if (btn) {
+        btn.click();
+      }
+    });
+
+    function viewPdf(url, title) {
     currentPdfCleanUrl = url.split('#')[0];
     const pageHash = url.includes('#') ? '#' + url.split('#')[1] : '';
     currentPdfCleanTitle = title;
