@@ -886,7 +886,7 @@ window.VOICE_EXPLANATIONS_DATA = {
     "tag": "ECONOMICS",
     "modules": [
       {
-        "moduleName": "MODULE 01: HISTORICAL PRECEDENTS & DEVELOPMENT MODELS (ചരിത്ര പശ്ചാത്തലങ്ങളും വികസന മാതൃകകളും)",
+        "moduleName": "MODULE 01: ചരിത്ര പശ്ചാത്തലങ്ങളും വികസന മാതൃകകളും (HISTORICAL BACKGROUND & DEVELOPMENT MODELS)",
         "videos": [
           {
             "chapterNumber": "Masterclass",
@@ -904,444 +904,121 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "University Exam Tip: 'Explain Path Dependence in India's economic history and how colonial extraction shaped post-independence policy choices'."
           },
           {
-            "chapterNumber": "Part 01",
-            "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥ: ആമുഖവും കൊളോണിയൽ പശ്ചാത്തലവും (Colonial Economic Background)",
-            "chapter": "Historical Precedents · കൊളോണിയൽ ഭരണവും ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയുടെ അടിത്തറയും",
-            "duration": "18",
-            "youtubeId": "httlPLN8w3s",
+            "chapterNumber": "Chapter 01",
+            "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയുടെ ചരിത്രവും വികസന നയങ്ങളും (History & Development Policies of Indian Economy)",
+            "chapter": "Academic Hub Special · കൊളോണിയൽ ചോർച്ച, നെഹ്റുവിയൻ സോഷ്യലിസം & പഞ്ചവത്സര പദ്ധതികൾ",
+            "duration": "17:48",
+            "youtubeId": "AI8LbBq33xI",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
-              "ബ്രിട്ടീഷ് ഭരണത്തിന് മുമ്പുള്ള ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥ: സ്വയംപര്യാപ്തമായ ഗ്രാമീണ വ്യവസ്ഥിതിയും പ്രശസ്തമായ കൈത്തറി-കരകൗശല ഉൽപ്പാദനവും.",
-              "കൊളോണിയൽ ചൂഷണം: ബ്രിട്ടീഷ് സാമ്രാജ്യത്തിന്റെ അസംസ്കൃത വസ്തു വിതരണ കേന്ദ്രമായി ഇന്ത്യ മാറിയ ചരിത്രം.",
-              "ഭൂവരുമാന സമ്പ്രദായങ്ങൾ: ജമീന്ദാരി, റയത്ത്വാരി, മഹൽവാരി സമ്പ്രദായങ്ങളും കർഷകരുടെ കടബാധ്യതയും."
+              "കൊളോണിയൽ സമ്പദ്‌വ്യവസ്ഥ & ചോർച്ചാ സിദ്ധാന്തം (Drain of Wealth): ദാദാഭായ് നവറോജി വിശദീകരിച്ചതുപോലെ ബ്രിട്ടീഷ് ഭരണത്തിൽ ഇന്ത്യയുടെ ദേശീയ സമ്പത്തും വിഭവങ്ങളും തിരിച്ചുനൽകാതെ ബ്രിട്ടനിലേക്ക് കടത്തപ്പെട്ടു.",
+              "പരമ്പരാഗത വ്യവസായങ്ങളുടെ തകർച്ച (De-industrialization): ഇന്ത്യയുടെ വിശ്വപ്രസിദ്ധമായ കരകൗശല-കൈത്തറി മേഖലകൾ തകർക്കപ്പെടുകയും രാജ്യം ബ്രിട്ടീഷ് ഫാക്ടറികളുടെ അസംസ്‌കൃത വസ്തു ശേഖരണശാലയായി മാറുകയും ചെയ്തു.",
+              "സ്വാതന്ത്ര്യാനന്തര ആസൂത്രണവും നെഹ്റുവിയൻ സോഷ്യലിസവും: 1950-ൽ രൂപീകരിച്ച പ്ലാനിംഗ് കമ്മീഷനും വൻകിട ഘനവ്യവസായങ്ങൾക്ക് മുൻഗണന നൽകിയ മഹലനോബിസ് മോഡലും (Mahalanobis Model).",
+              "ഹരിതവിപ്ലവം (Green Revolution): ഭക്ഷ്യ സ്വയംപര്യാപ്തത കൈവരിക്കാൻ ഉയർന്ന വിളവ് തരുന്ന വിത്തുകളും (HYV seeds) രാസവളങ്ങളും ജലസേചനവും സംയോജിപ്പിച്ച സാങ്കേതിക മുന്നേറ്റം.",
+              "സമ്മിശ്ര സമ്പദ്‌വ്യവസ്ഥ (Mixed Economy): പൊതുമേഖലയ്ക്ക് പ്രധാന പങ്കും ഒപ്പം സ്വകാര്യ മേഖലയ്ക്ക് നിയന്ത്രിത പങ്കാളിത്തവും നൽകിയ ഇന്ത്യൻ വികസന മാതൃക."
             ],
-            "examTip": "Calicut University Focus: 'Discuss the state of Indian Agriculture and Industry on the eve of Independence'."
+            "examTip": "Calicut University Focus: 'Explain Dadabhai Naoroji's Drain of Wealth theory and evaluate the achievements of the Mahalanobis strategy in Indian Five-Year Plans'."
           },
           {
-            "chapterNumber": "Part 02",
-            "title": "ചോർച്ചാ സിദ്ധാന്തവും പരമ്പരാഗത വ്യവസായ തകർച്ചയും (Drain of Wealth & De-industrialization)",
-            "chapter": "Historical Precedents · ദാദാഭായ് നവറോജിയുടെ ഡ്രെയിൻ ഓഫ് വെൽത്ത് സിദ്ധാന്തം",
-            "duration": "19",
-            "youtubeId": "Mz2iaM1C86g",
+            "chapterNumber": "Chapter 02",
+            "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയിലെ വൈരുദ്ധ്യങ്ങളും വികസന വെല്ലുവിളികളും (Contradictions & Development Challenges)",
+            "chapter": "Academic Hub Special · വളർച്ചയും മുരടിപ്പും, തൊഴിൽരഹിത വളർച്ച & മേഖലാ അസന്തുലിതാവസ്ഥ",
+            "duration": "22:42",
+            "youtubeId": "zyLCEdHV08U",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
-              "ദാദാഭായ് നവറോജിയുടെ ചോർച്ചാ സിദ്ധാന്തം (Drain of Wealth Theory): 'Poverty and Un-British Rule in India' എന്ന കൃതിയിലെ പ്രധാന കണ്ടെത്തലുകൾ.",
-              "ഹോം ചാർജ്ജുകളും വിഭവ ചോർച്ചയും: ഭരണച്ചെലവ്, സൈനിക ചെലവുകൾ, റെയിൽവേ പലിശ എന്നിവയ്ക്കായി ബ്രിട്ടനിലേക്ക് ഒഴുകിയ ദേശീയ വരുമാനം.",
-              "ഡീ-ഇൻഡസ്ട്രിയലൈസേഷൻ (De-industrialization): മാഞ്ചസ്റ്റർ തുണിത്തരങ്ങളുടെ കടന്നുവരവോടെ തകർന്ന പരമ്പരാഗത തുണി വ്യവസായം."
+              "ജിഡിപി വളർച്ചയും സാമൂഹിക യാഥാർത്ഥ്യങ്ങളും: ഉയർന്ന ജിഡിപി വളർച്ച രേഖപ്പെടുത്തുമ്പോഴും പട്ടിണിയും പോഷകാഹാരക്കുറവും കുറയാത്ത ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയുടെ അടിസ്ഥാന വൈരുദ്ധ്യം.",
+              "തൊഴിൽരഹിത വളർച്ച (Jobless Growth): സേവന മേഖലയും ടെക്നോളജിയും നയിച്ച വളർച്ചയിൽ ഉൽപ്പാദനം വർധിച്ചെങ്കിലും ആവശ്യത്തിന് പുതിയ തൊഴിലവസരങ്ങൾ സൃഷ്ടിക്കപ്പെടാത്ത പ്രതിഭാസം.",
+              "മേഖലാ അസന്തുലിതാവസ്ഥ (Sectoral Disparity): ജിഡിപിയിൽ കാർഷിക മേഖലയുടെ വിഹിതം 15-18% ആയി കുറഞ്ഞെങ്കിലും രാജ്യത്തെ 45% ത്തിലധികം തൊഴിലാളികളും ഇപ്പോഴും കൃഷിയെ ആശ്രയിച്ചു കഴിയുന്നു.",
+              "അനൗപചാരിക മേഖലയുടെ ആധിപത്യം (Informal Economy): ഇന്ത്യൻ തൊഴിൽശക്തിയുടെ 85-90% സാമൂഹിക സുരക്ഷയോ പെൻഷനോ ഇല്ലാതെ അനൗപചാരിക മേഖലയിൽ പണിയെടുക്കുന്നു.",
+              "ഡിജിറ്റൽ വിഭജനവും പ്രാദേശിക അസമത്വങ്ങളും: വികസിത സംസ്ഥാനങ്ങളും പിന്നാക്ക സംസ്ഥാനങ്ങളും തമ്മിലുള്ള അടിസ്ഥാന സൗകര്യ അന്തരം."
             ],
-            "examTip": "University Exam Tip: 'Critically examine Dadabhai Naoroji\\'s Drain of Wealth Theory and its impact on capital formation in India'."
-          },
-          {
-            "chapterNumber": "Part 03",
-            "title": "സ്വാതന്ത്ര്യാനന്തര ആസൂത്രണവും നെഹ്റുവിയൻ മാതൃകയും (Planning & Nehruvian Socialism)",
-            "chapter": "Historical Precedents · ദേശീയ വികസന മാതൃകകളും ആസൂത്രണ കമ്മീഷനും",
-            "duration": "20",
-            "youtubeId": "rCYpT3pOh4Q",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "നെഹ്റുവിയൻ വികസന മാതൃക: ജനാധിപത്യ സോഷ്യലിസവും സമ്മിശ്ര സമ്പദ്‌വ്യവസ്ഥയും അടിസ്ഥാനമാക്കിയുള്ള പുനർനിർമ്മാണം.",
-              "പ്ലാനിംഗ് കമ്മീഷൻ രൂപീകരണം (1950): കേന്ദ്രീകൃത സാമ്പത്തിക ആസൂത്രണത്തിന്റെ ലക്ഷ്യങ്ങളും ഭരണഘടനാ പശ്ചാത്തലവും.",
-              "ദേശീയ വികസന സമിതി (National Development Council - NDC) യുടെ പങ്ക്."
-            ],
-            "examTip": "Exam Focus: 'Explain the core principles of Nehruvian Socialism and the rationale behind centralized planning in India'."
-          },
-          {
-            "chapterNumber": "Part 04",
-            "title": "പഞ്ചവത്സര പദ്ധതികളും മഹലനോബിസ് തന്ത്രവും (Five-Year Plans & Mahalanobis Model)",
-            "chapter": "Historical Precedents · വൻകിട ഘനവ്യവസായങ്ങളും സാമ്പത്തിക വളർച്ചയും",
-            "duration": "18",
-            "youtubeId": "XHaTvm6mPyY",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "ഒന്നാം പഞ്ചവത്സര പദ്ധതി (1951-56): ഹരോഡ്-ഡോമർ മാതൃകയും കാർഷിക മേഖലയ്ക്ക് നൽകിയ മുൻഗണനയും.",
-              "രണ്ടാം പഞ്ചവത്സര പദ്ധതി (1956-61): പി.സി. മഹലനോബിസ് മോഡലും വൻകിട ഇരുമ്പ്-ഉരുക്ക് അടിസ്ഥാന വ്യവസായങ്ങളുടെ വളർച്ചയും.",
-              "ഇറക്കുമതി പകരമുള്ള ഉൽപ്പാദനം (Import Substitution Industrialization): സ്വയംപര്യാപ്തത കൈവരിക്കാനുള്ള നയങ്ങൾ."
-            ],
-            "examTip": "Calicut University Focus: 'Evaluate the success and limitations of the Mahalanobis strategy in the Second Five-Year Plan'."
-          },
-          {
-            "chapterNumber": "Part 05",
-            "title": "കാർഷിക പരിഷ്കാരങ്ങളും ഹരിതവിപ്ലവവും (Agrarian Reforms & Green Revolution)",
-            "chapter": "Historical Precedents · ഭൂപരിഷ്കരണങ്ങളും ഭക്ഷ്യ സ്വയംപര്യാപ്തതയും",
-            "duration": "21",
-            "youtubeId": "Hk2NNdH2Jbw",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "ഭൂപരിഷ്കരണങ്ങൾ (Land Reforms): ഇടത്തട്ടുകാരെ ഒഴിവാക്കൽ, കുടിയായ്മ സംരക്ഷണം, ഭൂപരിധി നിയമങ്ങൾ.",
-              "ഹരിതവിപ്ലവം (Green Revolution - 1960s): ഡോ. എം.എസ്. സ്വാമിനാഥന്റെ നേതൃത്വത്തിൽ ഉയർന്ന വിളവ് തരുന്ന വിത്തുകൾ (HYV), രാസവളങ്ങൾ, ജലസേചനം എന്നിവയുടെ വ്യാപനം.",
-              "ഹരിതവിപ്ലവത്തിന്റെ നേട്ടങ്ങളും പാരിസ്ഥിതിക-മേഖലാ വെല്ലുവിളികളും."
-            ],
-            "examTip": "University Exam Tip: 'Assess the economic and ecological impact of the Green Revolution in Indian Agriculture'."
-          },
-          {
-            "chapterNumber": "Part 06",
-            "title": "സമ്മിശ്ര സമ്പദ്‌വ്യവസ്ഥയും പൊതുമേഖലയുടെ പങ്കും (Mixed Economy & Public Sector)",
-            "chapter": "Historical Precedents · കമാൻഡിംഗ് ഹൈറ്റ്സ് ഓഫ് ഇക്കോണമി",
-            "duration": "17",
-            "youtubeId": "ANH5AO9RfS8",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "സമ്മിശ്ര സമ്പദ്‌വ്യവസ്ഥ (Mixed Economy): സ്വകാര്യ സംരംഭകത്വവും പൊതുമേഖലാ നിക്ഷേപവും സമന്വയിപ്പിച്ച രീതി.",
-              "പൊതുമേഖലാ സ്ഥാപനങ്ങൾ (PSUs): 'ആധുനിക ഇന്ത്യയുടെ ക്ഷേത്രങ്ങൾ' എന്ന നിലയിൽ രാജ്യത്തിന്റെ അടിസ്ഥാന സൗകര്യങ്ങൾ വികസിപ്പിച്ച പങ്ക്.",
-              "ലൈസൻസ് രാജ് (License-Permit Raj): അമിത നിയന്ത്രണങ്ങളും കാര്യക്ഷമതക്കുറവും സൃഷ്ടിച്ച വെല്ലുവിളികൾ."
-            ],
-            "examTip": "Exam Focus: 'Discuss the role of the Public Sector in India\\'s industrial development up to 1991'."
-          },
-          {
-            "chapterNumber": "Part 07",
-            "title": "1991-ലെ ബാലൻസ് ഓഫ് പേയ്‌മെന്റ് പ്രതിസന്ധി (The 1991 BoP Crisis)",
-            "chapter": "Historical Precedents · സാമ്പത്തിക തകർച്ചയും പരിഷ്കാരങ്ങളുടെ പശ്ചാത്തലവും",
-            "duration": "22",
-            "youtubeId": "tlu6ECfrBdc",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "പ്രതിസന്ധിയുടെ കാരണങ്ങൾ: ധനക്കമ്മി കുതിച്ചുയർന്നത്, ഗൾഫ് യുദ്ധം മൂലം എണ്ണവില വർധിച്ചത്, വിദേശനാണ്യ ശേഖരത്തിന്റെ ശോഷണം.",
-              "രണ്ടാഴ്ചത്തെ ഇറക്കുമതിക്ക് മാത്രമുള്ള വിദേശനാണ്യം: ഇന്ത്യ സ്വർണ്ണം പണയം വെക്കേണ്ടി വന്ന അടിയന്തര സാഹചര്യം.",
-              "IMF, ലോകബാങ്ക് നിബന്ധനകളും രൂപയുടെ മൂല്യത്തകർച്ചയും."
-            ],
-            "examTip": "Calicut University Focus: 'Analyze the domestic and international factors leading to the Balance of Payments crisis of 1991'."
-          },
-          {
-            "chapterNumber": "Part 08",
-            "title": "നവ സാമ്പത്തിക നയങ്ങൾ: എൽ.പി.ജി പരിഷ്കാരങ്ങൾ (1991 LPG Reforms)",
-            "chapter": "Historical Precedents · ഉദാരവൽക്കരണം, സ്വകാര്യവൽക്കരണം, ആഗോളവൽക്കരണം",
-            "duration": "20",
-            "youtubeId": "FV59hkvYdB4",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "നരസിംഹറാവു - മൻമോഹൻ സിംഗ് പരിഷ്കാരങ്ങൾ (New Economic Policy 1991).",
-              "ഉദാരവൽക്കരണം (Liberalization): ഇൻഡസ്ട്രിയൽ ലൈസൻസിംഗ് നിർത്തലാക്കൽ, വിദേശ നിക്ഷേപ നിയമങ്ങളിലെ ഇളവുകൾ.",
-              "സ്വകാര്യവൽക്കരണം (Privatization) & ആഗോളവൽക്കരണം (Globalization): പൊതുമേഖലാ ഓഹരി വിറ്റഴിക്കലും വിദേശ വ്യാപാര നയങ്ങളിലെ മാറ്റങ്ങളും."
-            ],
-            "examTip": "University Exam Tip: 'Explain the three pillars of LPG reforms and evaluate their impact on Indian industrial growth'."
-          },
-          {
-            "chapterNumber": "Part 09",
-            "title": "ആസൂത്രണ കമ്മീഷൻ മുതൽ നീതി ആയോഗ് വരെ (Planning Commission to NITI Aayog)",
-            "chapter": "Historical Precedents · സമകാലിക ആസൂത്രണ രീതിശാസ്ത്രം",
-            "duration": "19",
-            "youtubeId": "oZXsGN0guFk",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "പ്ലാനിംഗ് കമ്മീഷന്റെ പിരിച്ചുവിടലും നീതി ആയോഗിന്റെ രൂപീകരണവും (2015).",
-              "ടോപ്പ്-ഡൗൺ vs ബോട്ടം-അപ്പ് ആസൂത്രണം: സംസ്ഥാനങ്ങളുടെ പങ്കാളിത്തവും സഹകരണ ഫെഡറലിസവും (Cooperative Federalism).",
-              "നീതി ആയോഗിന്റെ സുപ്രധാന സൂചികകളും ഭാവി വികസന ദൗത്യങ്ങളും."
-            ],
-            "examTip": "Exam Focus: 'Contrast the philosophy and functioning of NITI Aayog with the erstwhile Planning Commission'."
+            "examTip": "University Exam Tip: 'Critically analyze the paradox of Jobless Growth and Structural Sectoral Disparity in contemporary India'."
           }
         ]
       },
       {
-        "moduleName": "MODULE 02: POVERTY ESTIMATION & ERADICATION (ദാരിദ്ര്യ നിർണ്ണയവും വെല്ലുവിളികളും)",
+        "moduleName": "MODULE 02: ദാരിദ്ര്യ നിർണ്ണയവും ബഹുമുഖ ദാരിദ്ര്യ സൂചികയും (POVERTY ESTIMATION & MEASUREMENT IN INDIA)",
         "videos": [
           {
-            "chapterNumber": "Part 01",
-            "title": "ദാരിദ്ര്യം: അടിസ്ഥാന സങ്കൽപ്പങ്ങളും മാനങ്ങളും (Poverty: Concepts & Dimensions)",
-            "chapter": "Poverty in India · ദാരിദ്ര്യത്തിന്റെ സാമൂഹിക സാമ്പത്തിക മാനങ്ങൾ",
-            "duration": "18",
-            "youtubeId": "b3RHPmaEtok",
+            "chapterNumber": "Chapter 03",
+            "title": "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയവും പഠന കമ്മിറ്റികളും (Poverty Estimation & Study Committees in India)",
+            "chapter": "Academic Hub Special · ദണ്ഡേക്കർ-രഥ്, അലഗ്, ലക്ഡാവാല, തെണ്ടുൽക്കർ & രംഗരാജൻ കമ്മിറ്റികൾ",
+            "duration": "28:43",
+            "youtubeId": "0YWeoTqkcy8",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
-              "ദാരിദ്ര്യ നിർവചനം: അടിസ്ഥാന ആവശ്യങ്ങളായ ഭക്ഷണം, വസ്ത്രം, പാർപ്പിടം, ആരോഗ്യം, വിദ്യാഭ്യാസം എന്നിവ നേടാനാവാത്ത അവസ്ഥ.",
-              "ദാരിദ്ര്യത്തിന്റെ ബഹുമുഖ സ്വഭാവം: സാമ്പത്തിക പരാധീനതയും സാമൂഹിക പാർശ്വവൽക്കരണവും.",
-              "ദാരിദ്ര്യവും സാമൂഹിക അസമത്വങ്ങളും തമ്മിലുള്ള പരസ്പര ബന്ധം."
+              "ദാരിദ്ര്യരേഖ (Poverty Line): അടിസ്ഥാന ജീവിതച്ചെലവ് വഹിക്കാനും കുറഞ്ഞ കലോറി ഭക്ഷണം നേടാനും ആവശ്യമായ പ്രതിമാസ ആളോഹരി ഉപഭോഗ ചെലവ് (MPCE).",
+              "ദണ്ഡേക്കർ & രഥ് പഠനം (1971): ഗ്രാമീണ-നഗര ജനതയ്ക്ക് പ്രതിദിനം 2250 കലോറി എന്ന മാനദണ്ഡം ആദ്യമായി മുന്നോട്ടുവെച്ച ചരിത്രപരമായ പഠനം.",
+              "വൈ.കെ. അലഗ് ടാസ്ക് ഫോഴ്സ് (1979): ഗ്രാമീണ മേഖലയിൽ പ്രതിദിനം 2400 കലോറിയും നഗരങ്ങളിൽ 2100 കലോറിയും നിശ്ചയിച്ച ദേശീയ മാനദണ്ഡം.",
+              "ഡി.ടി. ലക്ഡാവാല കമ്മിറ്റി (1993): സംസ്ഥാനതല വിലസൂചികകൾ (CPI-AL, CPI-IW) ഉപയോഗിച്ച് ഓരോ സംസ്ഥാനത്തിനും പ്രത്യേക ദാരിദ്ര്യരേഖ കണക്കാക്കിയ രീതി.",
+              "നിർണ്ണയ രീതിശാസ്ത്രത്തിലെ മാറ്റങ്ങൾ: കേവല ദാരിദ്ര്യം (Absolute Poverty) തിട്ടപ്പെടുത്തുന്നതിൽ ഇന്ത്യ കൈവരിച്ച സ്ഥിതിവിവരക്കണക്ക് ചരിത്രം."
             ],
-            "examTip": "Calicut University Focus: 'Define Poverty and explain its multidimensional socio-economic characteristics'."
+            "examTip": "Calicut University Focus: 'Trace the evolution of Poverty Estimation in India from Dandekar & Rath to the Lakdawala Committee'."
           },
           {
-            "chapterNumber": "Part 02",
-            "title": "കേവല ദാരിദ്ര്യവും ആപേക്ഷിക ദാരിദ്ര്യവും (Absolute vs Relative Poverty)",
-            "chapter": "Poverty in India · ദാരിദ്ര്യത്തിന്റെ വർഗ്ഗീകരണം",
-            "duration": "17",
-            "youtubeId": "DNEQNcQIoK4",
+            "chapterNumber": "Chapter 04",
+            "title": "ദാരിദ്ര്യരേഖ മുതൽ ബഹുമുഖ ദാരിദ്ര്യ സൂചിക വരെ (From Poverty Line to Multidimensional Poverty Index - MPI)",
+            "chapter": "Academic Hub Special · കലോറി മാനദണ്ഡം, സുരേഷ് തെണ്ടുൽക്കർ പരിഷ്കാരം & ആഗോള MPI സൂചിക",
+            "duration": "16:44",
+            "youtubeId": "LuLwWWJsLbA",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
-              "കേവല ദാരിദ്ര്യം (Absolute Poverty): അടിസ്ഥാന നിലനിൽപ്പിന് ആവശ്യമായ മിനിമം വരുമാനമോ ഉപഭോഗമോ ഇല്ലാത്ത അവസ്ഥ.",
-              "ആപേക്ഷിക ദാരിദ്ര്യം (Relative Poverty): ഒരു സമൂഹത്തിലെ ശരാശരി ജീവിതനിലവാരവുമായി താരതമ്യപ്പെടുത്തുമ്പോൾ അനുഭവപ്പെടുന്ന സാമ്പത്തിക അന്തരം.",
-              "വികസ്വര രാജ്യങ്ങളിലെ കേവല ദാരിദ്ര്യവും വികസിത രാജ്യങ്ങളിലെ ആപേക്ഷിക ദാരിദ്ര്യവും."
+              "സുരേഷ് തെണ്ടുൽക്കർ കമ്മിറ്റി (2009): കലോറി മാനദണ്ഡത്തിന് പകരം വിദ്യാഭ്യാസം, ആരോഗ്യം, പോഷകാഹാരം, വസ്ത്രം എന്നിവ ഉൾപ്പെടുത്തി നഗര-ഗ്രാമ അന്തരം കുറച്ച പരിഷ്കാരം.",
+              "സി. രംഗരാജൻ കമ്മിറ്റി (2014): പോഷകാംശങ്ങളും (പ്രോട്ടീൻ, ഫാറ്റ്) പ്രതിദിന ചെലവും (ഗ്രാമങ്ങളിൽ ₹32, നഗരങ്ങളിൽ ₹47) പരിഗണിച്ച ആധുനിക ദാരിദ്ര്യരേഖ.",
+              "ബഹുമുഖ ദാരിദ്ര്യ സൂചിക (MPI - Alkire-Foster Method): വരുമാനം മാത്രം നോക്കാതെ ആരോഗ്യം, വിദ്യാഭ്യാസം, ജീവിതനിലവാരം എന്നീ 3 തലങ്ങളിലെ 10 സൂചകങ്ങൾ അടിസ്ഥാനമാക്കിയുള്ള അളവുകോൽ.",
+              "നീതി ആയോഗിന്റെ നാഷണൽ MPI: ഇന്ത്യയിൽ പ്രസവ രക്ഷാസൗകര്യങ്ങളും ബാങ്ക് അക്കൗണ്ടുകളും കൂടി ഉൾപ്പെടുത്തി വികസിപ്പിച്ച 12 സൂചകങ്ങളുള്ള സമഗ്ര സൂചിക.",
+              "ദാരിദ്ര്യ നിർമാർജന പദ്ധതികൾ: MGNREGA, ദേശീയ ഭക്ഷ്യസുരക്ഷാ നിയമം (NFSA), PDS എന്നിവയുടെ ക്രിയാത്മക സ്വാധീനം."
             ],
-            "examTip": "University Exam Tip: 'Distinguish between Absolute and Relative Poverty with suitable examples from India'."
-          },
-          {
-            "chapterNumber": "Part 03",
-            "title": "ദാരിദ്ര്യരേഖയും കലോറി മാനദണ്ഡങ്ങളും (Poverty Line & Calorie Norms)",
-            "chapter": "Poverty in India · മിനിമം ഉപഭോഗ ചെലവും കലോറി അളവും",
-            "duration": "19",
-            "youtubeId": "SyhbND4I-j0",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "ദാരിദ്ര്യരേഖ (Poverty Line): ദരിദ്രരെയും ദരിദ്രരല്ലാത്തവരെയും വേർതിരിക്കുന്ന പ്രതിമാസ ആളോഹരി ഉപഭോഗ ചെലവ് (MPCE).",
-              "കലോറി മാനദണ്ഡം: ഗ്രാമപ്രദേശങ്ങളിൽ പ്രതിദിനം 2400 കലോറിയും നഗരപ്രദേശങ്ങളിൽ 2100 കലോറിയും നിശ്ചയിച്ച രീതിശാസ്ത്രം.",
-              "കലോറി മാനദണ്ഡം മാത്രം അടിസ്ഥാനമാക്കിയുള്ള അളവുകോലിന്റെ പരിമിതികൾ."
-            ],
-            "examTip": "Exam Focus: 'Explain how the Poverty Line is constructed in India on the basis of minimum nutritional norms'."
-          },
-          {
-            "chapterNumber": "Part 04",
-            "title": "ദണ്ഡേക്കർ-രഥ് & അലഗ് പഠന കമ്മിറ്റികൾ (Dandekar-Rath & Alagh Task Force)",
-            "chapter": "Poverty in India · ദാരിദ്ര്യ നിർണ്ണയ ചരിത്രത്തിലെ ആദ്യകാല സമിതികൾ",
-            "duration": "20",
-            "youtubeId": "xWvFdCHF104",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "ദണ്ഡേക്കർ & രഥ് പഠനം (1971): NSSO ഉപഭോഗ ഡാറ്റ ഉപയോഗിച്ച് 2250 കലോറി മാനദണ്ഡത്തിൽ ആദ്യമായി ദാരിദ്ര്യം തിട്ടപ്പെടുത്തിയത്.",
-              "വൈ.കെ. അലഗ് ടാസ്ക് ഫോഴ്സ് (1979): ഗ്രാമീണ-നഗര കലോറി അന്തരം (2400 vs 2100) ആദ്യമായി ഔദ്യോഗികമായി അംഗീകരിച്ച സമിതി.",
-              "ഉപഭോഗ ബാസ്ക്കറ്റും വിലക്കയറ്റവും ക്രമീകരിച്ച രീതികൾ."
-            ],
-            "examTip": "Calicut University Focus: 'Trace the contribution of Dandekar-Rath and Y.K. Alagh Task Force in Indian poverty estimation'."
-          },
-          {
-            "chapterNumber": "Part 05",
-            "title": "ഡി.ടി. ലക്ഡാവാല കമ്മിറ്റി റിപ്പോർട്ട് (Lakdawala Committee 1993)",
-            "chapter": "Poverty in India · സംസ്ഥാനതല ദാരിദ്ര്യരേഖാ നിർണ്ണയം",
-            "duration": "18",
-            "youtubeId": "TijrZSnIYcI",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "ലക്ഡാവാല കമ്മിറ്റി (1993): ദേശീയ തലത്തിലുള്ള ഏകീകൃത ദാരിദ്ര്യരേഖയ്ക്ക് പകരം സംസ്ഥാനതല ദാരിദ്ര്യരേഖകൾ കൊണ്ടുവന്ന പരിഷ്കാരം.",
-              "സംസ്ഥാനതല വിലസൂചികകൾ: CPI-AL (കാർഷിക തൊഴിലാളി വിലസൂചിക) ഗ്രാമങ്ങളിലും CPI-IW (വ്യാവസായിക തൊഴിലാളി വിലസൂചിക) നഗരങ്ങളിലും ഉപയോഗിച്ചത്.",
-              "സംസ്ഥാനങ്ങൾ തമ്മിലുള്ള വിലനിലവാര വ്യത്യാസങ്ങൾ പ്രതിഫലിപ്പിച്ച പ്രാധാന്യം."
-            ],
-            "examTip": "University Exam Tip: 'Explain the methodology and significance of the Lakdawala Committee recommendations'."
-          },
-          {
-            "chapterNumber": "Part 06",
-            "title": "സുരേഷ് തെണ്ടുൽക്കർ കമ്മിറ്റി പരിഷ്കാരം (Suresh Tendulkar Committee 2009)",
-            "chapter": "Poverty in India · കലോറി മാനദണ്ഡത്തിൽ നിന്നുള്ള മാറ്റം",
-            "duration": "21",
-            "youtubeId": "8Wi4e3CpYIw",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "തെണ്ടുൽക്കർ കമ്മിറ്റി (2009): കലോറി അധിഷ്ഠിത സമീപനത്തിന് പകരം ആരോഗ്യം, വിദ്യാഭ്യാസം എന്നിവ ഉൾപ്പെടുത്തിയ പുതിയ ഉപഭോഗ ബാസ്ക്കറ്റ്.",
-              "നഗര ദാരിദ്ര്യരേഖാ ബാസ്ക്കറ്റ് (URPB) അടിസ്ഥാനമാക്കി ഗ്രാമീണ ദാരിദ്ര്യരേഖ പുനർനിർണ്ണയിച്ച രീതി.",
-              "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിരക്ക് 37.2% ആയി ഉയർന്നതിന്റെ സ്ഥിതിവിവരക്കണക്ക് വിശകലനം."
-            ],
-            "examTip": "Calicut University Focus: 'Why did the Tendulkar Committee move away from calorie-based poverty estimation? Discuss'."
-          },
-          {
-            "chapterNumber": "Part 07",
-            "title": "സി. രംഗരാജൻ കമ്മിറ്റി പഠനം (C. Rangarajan Committee 2014)",
-            "chapter": "Poverty in India · സമഗ്ര പോഷകാഹാര ഉപഭോഗ മാനദണ്ഡം",
-            "duration": "19",
-            "youtubeId": "4-qToQeSDbg",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "രംഗരാജൻ സമിതി: പോഷകാംശങ്ങൾ (പ്രോട്ടീൻ, ഫാറ്റ്) കൂടി ഉൾപ്പെടുത്തി ദാരിദ്ര്യ നിർണ്ണയം കൂടുതൽ ശാസ്ത്രീയമാക്കിയ രീതി.",
-              "പ്രതിദിന ആളോഹരി ചെലവ്: ഗ്രാമങ്ങളിൽ ₹32, നഗരങ്ങളിൽ ₹47 എന്ന് നിശ്ചയിച്ച ദാരിദ്ര്യരേഖാ പരിധി.",
-              "കുടുംബത്തിന്റെ അടിസ്ഥാന ആവശ്യങ്ങൾ നിറവേറ്റാനുള്ള മിനിമം സാമ്പത്തിക ശേഷി കണക്കാക്കിയത്."
-            ],
-            "examTip": "Exam Focus: 'Compare the findings of the Suresh Tendulkar Committee with the Rangarajan Committee report'."
-          },
-          {
-            "chapterNumber": "Part 08",
-            "title": "ബഹുമുഖ ദാരിദ്ര്യ സൂചിക: ആശയം & അളവുകോൽ (Multidimensional Poverty Index - MPI)",
-            "chapter": "Poverty in India · ആൽക്കയർ-ഫോസ്റ്റർ രീതിശാസ്ത്രം",
-            "duration": "20",
-            "youtubeId": "4_f6T-GieUg",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "ആഗോള MPI (Global MPI - OPHI & UNDP): വരുമാനം മാത്രം അടിസ്ഥാനമാക്കാതെ ദാരിദ്ര്യം അളക്കുന്ന സമഗ്ര അന്താരാഷ്ട്ര സൂചിക.",
-              "3 പ്രധാന തലങ്ങൾ (Dimensions): ആരോഗ്യം (Health), വിദ്യാഭ്യാസം (Education), ജീവിതനിലവാരം (Living Standards).",
-              "10 പ്രധാന സൂചകങ്ങളും (Indicators) അവയുടെ തുല്യ പ്രാധാന്യവും."
-            ],
-            "examTip": "University Exam Tip: 'Explain the dimensions and indicators used in the Multidimensional Poverty Index (MPI)'."
-          },
-          {
-            "chapterNumber": "Part 09",
-            "title": "നീതി ആയോഗിന്റെ ദേശീയ MPI റിപ്പോർട്ട് (NITI Aayog National MPI)",
-            "chapter": "Poverty in India · ഇന്ത്യയിലെ ബഹുമുഖ ദാരിദ്ര്യ പുരോഗതി",
-            "duration": "18",
-            "youtubeId": "iSzNzB6_ftI",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "ഇന്ത്യൻ നാഷണൽ MPI: ആഗോള 10 സൂചകങ്ങൾക്ക് പുറമെ മാതൃ ആരോഗ്യം (Maternal Health), ബാങ്ക് അക്കൗണ്ട് എന്നിവ കൂടി ചേർത്ത 12 സൂചകങ്ങൾ.",
-              "ഇന്ത്യയിലെ ബഹുമുഖ ദാരിദ്ര്യം 24.8% ൽ നിന്ന് 14.96% ആയി കുറഞ്ഞതിന്റെ നേട്ടങ്ങൾ.",
-              "സംസ്ഥാനങ്ങൾ തമ്മിലുള്ള അന്തരം: കേരളത്തിലെ ഏറ്റവും കുറഞ്ഞ MPI (0.55%) യും പിന്നാക്ക സംസ്ഥാനങ്ങളിലെ വെല്ലുവിളികളും."
-            ],
-            "examTip": "Calicut University Focus: 'Analyze the performance of Kerala in NITI Aayog\\'s National Multidimensional Poverty Index'."
-          },
-          {
-            "chapterNumber": "Part 10",
-            "title": "ദാരിദ്ര്യ നിർമാർജന പദ്ധതികളും ഫലപ്രാപ്തിയും (Poverty Alleviation Programmes)",
-            "chapter": "Poverty in India · സർക്കാരിന്റെ സുപ്രധാന ക്ഷേമ പദ്ധതികൾ",
-            "duration": "22",
-            "youtubeId": "nH0iAqjXbmw",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "മഹാത്മാഗാന്ധി ദേശീയ ഗ്രാമീണ തൊഴിലുറപ്പ് പദ്ധതി (MGNREGA 2005): 100 ദിവസത്തെ വേതന തൊഴിൽ അവകാശം നൽകിയ വിപ്ലവകരമായ മാറ്റം.",
-              "ദേശീയ ഭക്ഷ്യസുരക്ഷാ നിയമം (NFSA 2013) & പൊതുവിതരണ സമ്പ്രദായം (PDS).",
-              "പി.എം ആവാസ് യോജന, ആയുഷ്മാൻ ഭാരത്, ദീൻദയാൽ അന്ത്യോദയ യോജന എന്നിവയുടെ സാമൂഹിക സുരക്ഷാ സ്വാധീനം."
-            ],
-            "examTip": "Exam Focus: 'Critically evaluate the role of MGNREGA in reducing rural poverty and distress migration in India'."
+            "examTip": "University Exam Tip: 'Compare the Suresh Tendulkar Committee recommendations with the Multidimensional Poverty Index (MPI) framework'."
           }
         ]
       },
       {
-        "moduleName": "MODULE 03: INEQUALITY IN INDIAN ECONOMY (സാമ്പത്തിക അസമത്വങ്ങൾ)",
+        "moduleName": "MODULE 03: സാമ്പത്തിക പ്രതിസന്ധികളും സ്ഥാപനപരമായ പരിഷ്കാരങ്ങളും (ECONOMIC CRISES & INSTITUTIONAL REFORMS)",
         "videos": [
           {
-            "chapterNumber": "Part 01",
-            "title": "സാമ്പത്തിക അസമത്വം: നിർവചനങ്ങളും അളവുകോലുകളും (Economic Inequality: Concepts)",
-            "chapter": "Inequality in India · വരുമാന-സമ്പത്ത് അസമത്വങ്ങളുടെ അടിസ്ഥാന ധാരണകൾ",
-            "duration": "17",
-            "youtubeId": "AOK6Do4_x5Q",
+            "chapterNumber": "Chapter 05",
+            "title": "സ്വർണ്ണം പണയം വെച്ച ഇന്ത്യയുടെ സാമ്പത്തിക ചരിത്രം (Economic History of India: The 1991 BoP Crisis)",
+            "chapter": "Academic Hub Special · വിദേശനാണ്യ ശേഖര തകർച്ച, സ്വർണ്ണം വിമാനത്തിൽ കയറ്റിയ കഥ & 1991 BoP പ്രതിസന്ധി",
+            "duration": "22:38",
+            "youtubeId": "AxS8iSia8Uk",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
-              "സാമ്പത്തിക അസമത്വം (Economic Inequality): സമൂഹത്തിലെ വ്യക്തികൾ തമ്മിലുള്ള വരുമാനത്തിലും സമ്പത്തിലുമുള്ള പ്രകടമായ അന്തരം.",
-              "വരുമാന അസമത്വം (Income Inequality) vs സമ്പത്ത് അസമത്വം (Wealth Inequality).",
-              "അസമത്വത്തിന്റെ സാമൂഹിക സാമ്പത്തിക പ്രത്യാഘാതങ്ങൾ."
+              "1991-ലെ ബാലൻസ് ഓഫ് പേയ്‌മെന്റ് പ്രതിസന്ധി (BoP Crisis): വെറും രണ്ടാഴ്ചത്തെ ഇറക്കുമതിക്ക് മാത്രമുള്ള (1.2 ബില്യൺ ഡോളർ) വിദേശനാണ്യ ശേഖരത്തിലേക്ക് രാജ്യം കൂപ്പുകുത്തിയ സാഹചര്യം.",
+              "ഗൾഫ് യുദ്ധവും ക്രൂഡ് ഓയിൽ ആഘാതവും: എണ്ണവില കുതിച്ചുയർന്നതും ഗൾഫിൽ നിന്നുള്ള പ്രവാസി പണവരവ് നിലച്ചതും കറന്റ് അക്കൗണ്ട് കമ്മി വൻതോതിൽ വർധിപ്പിച്ചു.",
+              "സ്വർണ്ണം വിമാനത്തിൽ കയറ്റി പണയം വെച്ച സംഭവം: ബാങ്ക് ഓഫ് ഇംഗ്ലണ്ടിലും ബാങ്ക് ഓഫ് സ്വിറ്റ്‌സർലൻഡിലും ഇന്ത്യയുടെ 67 ടൺ സ്വർണ്ണം പണയം വെച്ച് അടിയന്തര വായ്പ സമാഹരിച്ച നാടകീയ നിമിഷങ്ങൾ.",
+              "IMF നിബന്ധനകളും രൂപയുടെ മൂല്യത്തകർച്ചയും: രൂപയുടെ മൂല്യം രണ്ട് ഘട്ടങ്ങളിലായി 18-19% കുറയ്ക്കാനും വിപണി തുറന്നുകൊടുക്കാനും നിർബന്ധിതമായ പശ്ചാത്തലം.",
+              "നരസിംഹറാവു - മൻമോഹൻ സിംഗ് ദ്വയം: ലൈസൻസ് രാജിന് അന്ത്യം കുറിച്ചുകൊണ്ട് നവ-സാമ്പത്തിക നയങ്ങൾക്ക് (LPG Reforms) തുടക്കം കുറിച്ച വഴിത്തിരിവ്."
             ],
-            "examTip": "Calicut University Focus: 'Define Economic Inequality and distinguish between Income Inequality and Wealth Inequality'."
+            "examTip": "Calicut University Focus: 'Examine the root causes and immediate events leading to the Balance of Payments crisis of 1991 in India'."
           },
           {
-            "chapterNumber": "Part 02",
-            "title": "ലോറൻസ് വക്രവും ഗിനി ഗുണകവും (Lorenz Curve & Gini Coefficient)",
-            "chapter": "Inequality in India · അസമത്വം അളക്കുന്ന സ്ഥിതിവിവരക്കണക്ക് രീതികൾ",
-            "duration": "19",
-            "youtubeId": "aZEvtU6oNhw",
+            "chapterNumber": "Chapter 06",
+            "title": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development & Economic Institutions)",
+            "chapter": "Academic Hub Special · അമർത്യ സെന്നിന്റെ ക്ഷേമ സിദ്ധാന്തം, പ്ലാനിംഗ് കമ്മീഷൻ vs നീതി ആയോഗ് & സാമ്പത്തിക സ്ഥാപനങ്ങൾ",
+            "duration": "13:06",
+            "youtubeId": "_AH-L2-hUdw",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
-              "ലോറൻസ് വക്രം (Lorenz Curve): ജനസംഖ്യയുടെ ക്യുമുലേറ്റീവ് ശതമാനവും അവർ നേടുന്ന വരുമാനത്തിന്റെ ശതമാനവും തമ്മിലുള്ള ഗ്രാഫിക്കൽ ചിത്രീകരണം.",
-              "തുല്യതാ രേഖ (Line of Absolute Equality): 45-ഡിഗ്രി ഡയഗണൽ രേഖയിൽ നിന്നുള്ള അകലം അസമത്വത്തെ കാണിക്കുന്നു.",
-              "ഗിനി ഗുണകം (Gini Coefficient): 0 (പൂർണ്ണ സമത്വം) മുതൽ 1 (പൂർണ്ണ അസമത്വം) വരെയുള്ള ഗണിതശാസ്ത്ര അളവ്."
+              "സാമ്പത്തിക വളർച്ച vs യഥാർത്ഥ വികസനം (Growth vs Development): ജിഡിപി നിരക്കുകൾ ഉയരുന്നതു മാത്രമല്ല, മനുഷ്യരുടെ ജീവിതഗുണനിലവാരവും അവസരങ്ങളും വർധിക്കുന്നതാണ് യഥാർത്ഥ വികസനം.",
+              "അമർത്യ സെന്നിന്റെ ശേഷി വികസന സിദ്ധാന്തം (Capability Approach): വിദ്യാഭ്യാസം, ആരോഗ്യം, വ്യക്തിസ്വാതന്ത്ര്യം എന്നിവ വികസിപ്പിച്ച് മനുഷ്യർക്ക് ഇഷ്ടമുള്ള ജീവിതം നയിക്കാനുള്ള ശേഷി നൽകലാണ് വികസനം.",
+              "പ്ലാനിംഗ് കമ്മീഷനിൽ നിന്ന് നീതി ആയോഗിലേക്ക് (NITI Aayog): മുകളിൽ നിന്ന് താഴേക്കുള്ള (Top-Down) ആസൂത്രണത്തിന് പകരം സഹകരണ ഫെഡറലിസം (Cooperative Federalism) മുൻനിർത്തിയുള്ള തിങ്ക് ടാങ്ക് രൂപീകരണം.",
+              "റിസർവ് ബാങ്ക് ഓഫ് ഇന്ത്യയും പണനയവും (Monetary Policy & RBI): പണപ്പെരുപ്പം നിയന്ത്രിക്കാനും സാമ്പത്തിക വളർച്ചയെ ഉത്തേജിപ്പിക്കാനും പലിശ നിരക്കുകൾ ക്രമീകരിക്കുന്ന കേന്ദ്ര ബാങ്കിന്റെ ദൗത്യം.",
+              "ധനകാര്യ കമ്മീഷൻ (Finance Commission): കേന്ദ്ര-സംസ്ഥാന നികുതി വിഹിതം നീതിപൂർവ്വം പങ്കിടുന്ന ഭരണഘടനാപരമായ സംവിധാനം."
             ],
-            "examTip": "University Exam Tip: 'Explain the construction of the Lorenz Curve and the calculation of the Gini Coefficient with a diagram'."
-          },
-          {
-            "chapterNumber": "Part 03",
-            "title": "ഇന്ത്യയിലെ വരുമാന-സമ്പത്ത് വിതരണ അസമത്വങ്ങൾ (Income & Wealth Disparity in India)",
-            "chapter": "Inequality in India · സമകാലിക ഇന്ത്യൻ യാഥാർത്ഥ്യങ്ങൾ",
-            "duration": "18",
-            "youtubeId": "xQhKdTqCO9M",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "വേൾഡ് ഇനീക്വാലിറ്റി ലാബ് (World Inequality Lab) റിപ്പോർട്ടുകൾ: ഇന്ത്യയിലെ ഉയർന്ന 10% ജനങ്ങൾ ദേശീയ വരുമാനത്തിന്റെ 57% കൈവശം വെക്കുന്ന അവസ്ഥ.",
-              "കോർപ്പറേറ്റ് സമ്പത്തിന്റെ കേന്ദ്രീകരണവും ശതകോടീശ്വരന്മാരുടെ എണ്ണത്തിലെ കുതിച്ചുചാട്ടവും.",
-              "താഴെക്കിടയിലുള്ള 50% ജനങ്ങളുടെ ഉപഭോഗ വിഹിതത്തിലെ മുരടിപ്പ്."
-            ],
-            "examTip": "Exam Focus: 'Discuss the trends in Income and Wealth Inequality in post-reform India using recent empirical findings'."
-          },
-          {
-            "chapterNumber": "Part 04",
-            "title": "മേഖലാപരവും പ്രാദേശികവുമായ അസന്തുലിതാവസ്ഥ (Regional & Sectoral Disparities)",
-            "chapter": "Inequality in India · കാർഷിക-വ്യാവസായിക-സേവന മേഖലാ അസമത്വങ്ങൾ",
-            "duration": "20",
-            "youtubeId": "SZp94kpyI1U",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "മേഖലാ അസന്തുലിതാവസ്ഥ: കാർഷിക മേഖലയിൽ 45% തൊഴിലാളികൾ പണിയെടുക്കുമ്പോഴും ജിഡിപി വിഹിതം 15-18% മാത്രമായി ചുരുങ്ങിയത്.",
-              "സേവന മേഖല നയിച്ച വളർച്ചയിൽ സൃഷ്ടിക്കപ്പെട്ട ഗ്രാമീണ-നഗര വരുമാന വിടവ്.",
-              "വികസിത തെക്കൻ-പടിഞ്ഞാറൻ സംസ്ഥാനങ്ങളും പിന്നാക്ക കിഴക്കൻ-വടക്കൻ സംസ്ഥാനങ്ങളും തമ്മിലുള്ള ആളോഹരി വരുമാന അന്തരം."
-            ],
-            "examTip": "Calicut University Focus: 'Examine the causes and consequences of Sectoral and Regional Disparities in India'."
-          },
-          {
-            "chapterNumber": "Part 05",
-            "title": "സമ്മിശ്ര വളർച്ചയും സർക്കാരിന്റെ നികുതി നയങ്ങളും (Inclusive Growth & Fiscal Policies)",
-            "chapter": "Inequality in India · അസമത്വം കുറയ്ക്കാനുള്ള സർക്കാർ നയങ്ങൾ",
-            "duration": "21",
-            "youtubeId": "hLKf8Fqfo0o",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "സമ്മിശ്ര വളർച്ച (Inclusive Growth): സമൂഹത്തിലെ എല്ലാ വിഭാഗം ജനങ്ങളിലേക്കും സാമ്പത്തിക വളർച്ചയുടെ നേട്ടങ്ങൾ എത്തിക്കുന്ന സമീപനം.",
-              "പ്രോഗ്രസീവ് ടാക്സേഷൻ (Progressive Taxation) & വെൽത്ത് ടാക്സ് ചർച്ചകൾ.",
-              "സാമൂഹിക സുരക്ഷാ മേഖലകളിലെ (വിദ്യാഭ്യാസം, ആരോഗ്യം) സർക്കാർ ചെലവഴിക്കലിന്റെ പ്രാധാന്യം."
-            ],
-            "examTip": "University Exam Tip: 'What is Inclusive Growth? How can fiscal policy be used as an instrument to bridge economic inequality in India?'"
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 04: UNEMPLOYMENT & EMPLOYMENT POLICIES (തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും)",
-        "videos": [
-          {
-            "chapterNumber": "Part 01",
-            "title": "തൊഴിലില്ലായ്മ: സ്വഭാവവും പ്രധാന ഇനങ്ങളും (Unemployment: Nature & Types)",
-            "chapter": "Unemployment in India · ഇന്ത്യൻ തൊഴിൽ വിപണിയുടെ ഘടന",
-            "duration": "19",
-            "youtubeId": "XX9xfcjyI10",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "തൊഴിലില്ലായ്മ നിർവചനം: ജോലി ചെയ്യാൻ ആഗ്രഹവും ശേഷിയുമുണ്ടായിട്ടും നിലവിലുള്ള വേതന നിരക്കിൽ തൊഴിൽ ലഭിക്കാത്ത അവസ്ഥ.",
-              "പ്രധാന ഇനങ്ങൾ: പ്രച്ഛന്ന തൊഴിലില്ലായ്മ (Disguised Unemployment), കാലാനുസൃത തൊഴിലില്ലായ്മ (Seasonal), ഘടനാപരമായ തൊഴിലില്ലായ്മ (Structural).",
-              "വിദ്യാസമ്പന്നരുടെ തൊഴിലില്ലായ്മയും (Educated Unemployment) യുവജനങ്ങളിലെ തൊഴിലില്ലായ്മയും."
-            ],
-            "examTip": "Calicut University Focus: 'Explain the different types of Unemployment prevalent in the Indian Economy'."
-          },
-          {
-            "chapterNumber": "Part 02",
-            "title": "തൊഴിൽരഹിത വളർച്ച എന്ന ഇന്ത്യൻ പ്രതിഭാസം (Jobless Growth in India)",
-            "chapter": "Unemployment in India · ജിഡിപി വളർച്ചയും തൊഴിലവസര സൃഷ്ടിയും",
-            "duration": "18",
-            "youtubeId": "EO6_2UDzTP4",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "തൊഴിൽരഹിത വളർച്ച (Jobless Growth): ഉൽപ്പാദനവും ജിഡിപിയും വർധിക്കുമ്പോഴും ആനുപാതികമായി തൊഴിലവസരങ്ങൾ വർധിക്കാത്ത സാഹചര്യം.",
-              "മൂലധന കേന്ദ്രീകൃത ഉൽപ്പാദന രീതികളും (Capital-Intensive Techniques) ഓട്ടോമേഷനും തൊഴിൽ വിപണിയിൽ വരുത്തിയ മാറ്റങ്ങൾ.",
-              "എംപ്ലോയ്മെന്റ് ഇലാസ്റ്റിസിറ്റി (Employment Elasticity) കുത്തനെ കുറഞ്ഞതിന്റെ കാരണങ്ങൾ."
-            ],
-            "examTip": "University Exam Tip: 'Critically analyze the paradox of Jobless Growth in India in the post-reform period'."
-          },
-          {
-            "chapterNumber": "Part 03",
-            "title": "അനൗപചാരിക തൊഴിൽ മേഖലയും വെല്ലുവിളികളും (Informal Sector & Gig Economy)",
-            "chapter": "Unemployment in India · അസംഘടിത തൊഴിലാളികളുടെ യാഥാർത്ഥ്യങ്ങൾ",
-            "duration": "20",
-            "youtubeId": "CQShr18mI5I",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "അനൗപചാരിക തൊഴിൽ മേഖല (Informal Sector): ഇന്ത്യൻ തൊഴിൽശക്തിയുടെ 85%-ത്തിലധികം വരുന്ന അസംഘടിത വിഭാഗം.",
-              "സാമൂഹിക സുരക്ഷാ ആനുകൂല്യങ്ങളുടെയും മിനിമം വേതന നിയമങ്ങളുടെയും അഭാവം.",
-              "ഗിഗ് ഇക്കോണമിയും പ്ലാറ്റ്‌ഫോം തൊഴിലാളികളും (Gig Workers - Delivery, Ride-sharing) നേരിടുന്ന പുതിയ പ്രതിസന്ധികൾ."
-            ],
-            "examTip": "Exam Focus: 'Discuss the structural vulnerabilities of the Informal Labour Market and Gig Workers in contemporary India'."
-          },
-          {
-            "chapterNumber": "Part 04",
-            "title": "തൊഴിൽദാന നയങ്ങളും നൈപുണ്യ വികസന ദൗത്യങ്ങളും (Employment Policies & Skill Development)",
-            "chapter": "Unemployment in India · തൊഴിൽ സൃഷ്ടിക്കായുള്ള ദേശീയ ദൗത്യങ്ങൾ",
-            "duration": "21",
-            "youtubeId": "S8wtrp5vCF8",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "ദേശീയ നൈപുണ്യ വികസന ദൗത്യം (National Skill Development Mission - PMKVY): നൈപുണ്യ വിടവ് നികത്താനുള്ള നടപടികൾ.",
-              "സ്റ്റാർട്ടപ്പ് ഇന്ത്യ & സ്റ്റാൻഡ് അപ്പ് ഇന്ത്യ: സംരംഭകത്വ പ്രോത്സാഹനവും സ്വയംതൊഴിൽ അവസരങ്ങളും.",
-              "ഡെമോഗ്രാഫിക് ഡിവിഡന്റ് (Demographic Dividend): ഇന്ത്യയുടെ യുവാക്കളുടെ തൊഴിൽ ശേഷി പരമാവധി പ്രയോജനപ്പെടുത്താനുള്ള തന്ത്രങ്ങൾ."
-            ],
-            "examTip": "Calicut University Focus: 'Evaluate government initiatives for skill development and employment generation to reap India\\'s demographic dividend'."
+            "examTip": "University Exam Tip: 'Differentiate between Economic Growth and Development in the light of Amartya Sen\\'s Capability Approach. Contrast Planning Commission with NITI Aayog'."
           }
         ]
       }
     ],
-    "totalVideos": 29
+    "totalVideos": 7
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",
