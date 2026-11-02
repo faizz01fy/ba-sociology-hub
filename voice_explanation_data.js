@@ -153,6 +153,24 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Connect each rhetorical device to its effect on listeners. Distinguish the historical setting, central themes and techniques of persuasion."
           },
           {
+            "chapterNumber": "Chapter 01",
+            "title": "I Have a Dream",
+            "chapter": "Malayalam voice overview · Martin Luther King Jr. · Context, themes and rhetorical devices",
+            "duration": "15:24",
+            "youtubeId": "kHsueedBZdY",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Historical Context:</strong> Martin Luther King Jr. 1963 August 28-ന് Lincoln Memorial-ൽ നടത്തിയ പ്രസംഗമാണ് I Have a Dream. March on Washington ആണ് പ്രസംഗത്തിന്റെ പ്രധാന പശ്ചാത്തലം.",
+              "<strong>Equality and Justice:</strong> വംശീയ വിവേചനം അവസാനിപ്പിക്കാനും എല്ലാവർക്കും തുല്യ അവകാശങ്ങൾ ജീവിതത്തിൽ അനുഭവപ്പെടാനും പ്രസംഗം ആഹ്വാനം ചെയ്യുന്നു.",
+              "<strong>Constitutional Promises:</strong> ഭരണഘടന ഉറപ്പുനൽകുന്ന അവകാശങ്ങളും സമൂഹത്തിലെ യാഥാർത്ഥ്യവും തമ്മിലുള്ള അന്തരം King ചൂണ്ടിക്കാട്ടുന്നു.",
+              "<strong>Nonviolence and Brotherhood:</strong> വെറുപ്പിനും അക്രമത്തിനും വഴങ്ങാതെ മനുഷ്യന്റെ Dignity സംരക്ഷിച്ചുകൊണ്ട് നീതിക്കായി പ്രവർത്തിക്കണം.",
+              "<strong>Anaphora and Metaphor:</strong> ആവർത്തനം ആശയത്തിന് ഊന്നലും താളവും നൽകുന്നു. നിറവേറ്റാത്ത വാഗ്ദാനത്തെ cheque-നോട് ഉപമിക്കുന്നത് Metaphor-ന്റെ ഉദാഹരണമാണ്.",
+              "<strong>Listening Practice:</strong> പ്രസംഗത്തിലെ emphasis, cadence, pauses, repetition എന്നിവ ശ്രദ്ധിക്കുക. ആദ്യം വീഡിയോയോടെയും പിന്നീട് ഓഡിയോ മാത്രമായും യഥാർത്ഥ പ്രസംഗം കേൾക്കുക.",
+              "<strong>About this overview:</strong> Calicut University പഠിതാക്കൾക്കായി AcademicHub chapter PDF അടിസ്ഥാനമാക്കിയുള്ള NotebookLM Malayalam audio-യും animated illustrative visuals-ഉം ചേർത്ത പഠനസഹായി."
+            ],
+            "examTip": "Historical Context, central themes, rhetorical devices എന്നിവ വേർതിരിച്ച് പഠിക്കുക. ഓരോ device-ഉം കേൾവിക്കാരിൽ സൃഷ്ടിക്കുന്ന സ്വാധീനം ഉദാഹരണത്തോടെ വിശദീകരിക്കുക."
+          },
+          {
             "chapterNumber": "Chapter 02",
             "title": "Anthem for Doomed Youth",
             "chapter": "Wilfred Owen · War Poetry & Poetic Devices",
