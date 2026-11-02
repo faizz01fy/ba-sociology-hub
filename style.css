@@ -3083,14 +3083,53 @@ button[download],
   }
 }
 
-/* Disable callout, right-click menu hints and text selection on English subject card and Malayalam reading tabs */
-.subject-card[data-subject="English"] .language-tab--malayalam,
-.subject-card[data-subject="English"],
-.language-tab--malayalam,
-.subject-card {
+/* Disable callout, right-click menu hints, text selection, and drag across ALL subject cards, tabs, and PDF readers */
+.subject-card,
+.subject-card *,
+.subjects-container,
+.subjects-container *,
+.resource-list,
+.resource-list *,
+.language-tab,
+.language-tab *,
+.module-dialog,
+.module-dialog *,
+.module-pdf-reader,
+.module-pdf-frame,
+.modal,
+.modal-content,
+.modal-iframe {
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
   user-select: none !important;
+}
+
+.subject-card img,
+.subject-cover {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+  pointer-events: none !important;
+}
+
+/* Strictly hide and disable all download and save options */
+.btn-download,
+.download,
+#downloadBtn,
+#modalFastToggle,
+.fast-native-btn,
+a[download],
+button[download],
+[download],
+.module-dialog [download],
+.module-dialog .btn-download,
+.module-dialog .download,
+.language-tab [download],
+.language-tab .btn-download,
+.language-tab .download {
+  display: none !important;
+  pointer-events: none !important;
 }
 
 
@@ -4514,4 +4553,11 @@ html, body {
 .subject-card .language-tab--study-guide,
 .resource-list .language-tab--study-guide {
   display: none !important;
+}
+
+/* Strictly disable external popout and download buttons */
+#modalExternalBtn, #openExternalBtn, .btn-download, .download, #downloadBtn, [download] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }

@@ -723,7 +723,11 @@
   
     /* Voice Reading fully reinstated */
 
-  </style>
+  
+    #fastNativeBtn, .fast-native-btn { display: none !important; pointer-events: none !important; }
+    * { -webkit-touch-callout: none !important; }
+
+</style>
 <style id="sgr-pulse-nav-styles">
     /* Premium Blinking Back & Home Navigation */
     @keyframes blick-pulse-back {
@@ -1321,8 +1325,8 @@
     <!-- Extra Tools -->
     <div class="toolbar-group">
       <button id="fullscreenBtn" class="btn-icon" type="button" title="പൂർണ്ണ സ്ക്രീൻ (Toggle Fullscreen)" aria-label="Toggle Fullscreen">⛶</button>
-      <button id="fastNativeBtn" class="btn-icon fast-native-btn" title="⚡ Fast Native Reader (ഇൻസ്റ്റന്റ് വ്യൂവർ)" onclick="toggleNativeReader()" type="button" style="display:inline-flex; align-items:center; gap:4px; font-weight:800; padding:6px 12px; border-radius:10px; background:linear-gradient(135deg, #059669, #10b981); color:#fff; border:none; cursor:pointer; font-size:12px; margin-right:6px;">⚡ Fast View</button>
-      <button id="openExternalBtn" class="btn-icon" type="button" title="പുതിയ വിൻഡോയിൽ തുറക്കുക (Open in New Tab)" aria-label="Open in New Tab">↗</button>
+      
+      
       <button id="retry" type="button" hidden>Retry</button>
     </div>
   </nav>
@@ -3359,7 +3363,13 @@
           if (!fetchTarget.includes('v=')) {
             fetchTarget += (fetchTarget.includes('?') ? '&' : '?') + 'v=' + Date.now();
           }
-          let resp = await fetch(fetchTarget, { cache: 'no-store' });
+          if (!fetchTarget.includes('reader=1')) {
+            fetchTarget += (fetchTarget.includes('?') ? '&' : '?') + 'reader=1';
+          }
+          let resp = await fetch(fetchTarget, {
+            cache: 'no-store',
+            headers: { 'X-Requested-With': 'Reader' }
+          });
           if (!resp.ok) {
             const altUrls = [];
             const curHref = file.href;
@@ -3369,7 +3379,13 @@
             if (curHref.includes('LMS_PDF')) altUrls.push(curHref.replace(/LMS_PDF/g, 'LMS%20PDF'));
             for (const alt of altUrls) {
               try {
-                const altResp = await fetch(alt);
+                let altTarget = alt;
+                if (!altTarget.includes('reader=1')) {
+                  altTarget += (altTarget.includes('?') ? '&' : '?') + 'reader=1';
+                }
+                const altResp = await fetch(altTarget, {
+                  headers: { 'X-Requested-With': 'Reader' }
+                });
                 if (altResp.ok) {
                   resp = altResp;
                   break;
@@ -3392,8 +3408,13 @@
         }
 
         if (!docParams) {
+          let streamUrl = file.href;
+          if (!streamUrl.includes('reader=1')) {
+            streamUrl += (streamUrl.includes('?') ? '&' : '?') + 'reader=1';
+          }
           docParams = {
-            url: file.href,
+            url: streamUrl,
+            httpHeaders: { 'X-Requested-With': 'Reader' },
             cMapUrl: cMapUrl,
             cMapPacked: true,
             enableXfa: false,
@@ -3840,36 +3861,7 @@
     initDocument();
   
 
-    window.toggleNativeReader = function() {
-      const fileParam = new URLSearchParams(location.search).get('file');
-      if (!fileParam) return;
-      const cleanUrl = fileParam.split('#')[0];
-      const nativeContainer = document.getElementById('nativePdfContainer');
-      const customReader = document.getElementById('reader');
-      const btn = document.getElementById('fastNativeBtn');
-      
-      if (nativeContainer && nativeContainer.style.display !== 'none') {
-        nativeContainer.style.display = 'none';
-        nativeContainer.innerHTML = '';
-        if (customReader) customReader.style.display = 'flex';
-        if (btn) { btn.innerHTML = '⚡ Fast View'; btn.style.background = 'linear-gradient(135deg, #059669, #10b981)'; }
-        if (el('status')) el('status').textContent = 'Enhanced Reader active';
-      } else {
-        let nc = nativeContainer;
-        if (!nc) {
-          nc = document.createElement('div');
-          nc.id = 'nativePdfContainer';
-          nc.style.cssText = 'position:fixed; top:48px; left:0; width:100%; height:calc(100% - 48px); z-index:90; background:#525659;';
-          document.body.append(nc);
-        }
-        nc.innerHTML = '<iframe src="' + cleanUrl + '#toolbar=1&navpanes=1&zoom=page-width" style="width:100%; height:100%; border:none;" title="Fast Native PDF View"></iframe>';
-        nc.style.display = 'block';
-        if (customReader) customReader.style.display = 'none';
-        if (btn) { btn.innerHTML = '📖 Enhanced View'; btn.style.background = 'linear-gradient(135deg, #4338ca, #6366f1)'; }
-        if (el('status')) el('status').textContent = '⚡ Instant Native Reader active';
-      }
-    };
-    
+    window.toggleNativeReader = function() { /* Disabled for security - no native save */ };
 </script>
   <div id="zoomHud" role="status" aria-live="polite">🔍 100%</div>
 

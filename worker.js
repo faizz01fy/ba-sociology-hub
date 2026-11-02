@@ -300,6 +300,26 @@ export default {
     }
     if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/internal/")) return json({error:"Not found"},404);
     if ((request.method === "GET" || request.method === "HEAD") && isLmsPdfPath(url.pathname)) return unavailableLmsPdfResponse(request);
+
+    // Secure PDF Routing: Intercept any direct browser navigation/access to any .pdf file and route to reader only
+    if ((request.method === "GET" || request.method === "HEAD") && url.pathname.toLowerCase().endsWith('.pdf')) {
+      const dest = request.headers.get("Sec-Fetch-Dest");
+      const mode = request.headers.get("Sec-Fetch-Mode");
+      const accept = request.headers.get("Accept") || "";
+      const isInternalReader = dest === "empty" || 
+                               request.headers.get("X-Requested-With") === "Reader" || 
+                               url.searchParams.get("raw") === "1" || 
+                               url.searchParams.get("reader") === "1";
+      const isBrowserNavigation = dest === "document" || mode === "navigate" || accept.includes("text/html");
+
+      if (isBrowserNavigation || !isInternalReader) {
+        let cleanFile = decodeURIComponent(url.pathname.replace(/^\/+/, ''));
+        const readerUrl = new URL(`/study-guide-reader.html?file=${encodeURIComponent(cleanFile)}`, request.url);
+        if (url.searchParams.has('v')) readerUrl.searchParams.set('v', url.searchParams.get('v'));
+        return Response.redirect(readerUrl.toString(), 302);
+      }
+    }
+
     let response = await env.ASSETS.fetch(request);
     if (!response.ok && url.pathname.toLowerCase().endsWith('.pdf')) {
       const candidates = [];
@@ -332,6 +352,17 @@ export default {
         } catch (_) {}
       }
     }
+    if (response && response.ok && url.pathname.toLowerCase().endsWith('.pdf')) {
+      const pdfHeaders = new Headers(response.headers);
+      pdfHeaders.set("Content-Disposition", "inline");
+      pdfHeaders.set("X-Content-Type-Options", "nosniff");
+      pdfHeaders.delete("Content-Disposition: attachment");
+      response = new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: pdfHeaders
+      });
+    }
     if (request.method === "GET" && response.ok && (response.headers.get("Content-Type")?.includes("text/html") || response.headers.get("Content-Type")?.includes("application/pdf") || url.pathname.endsWith(".pdf"))) {
       const task = room.fetch(new Request("https://internal/internal/visit", {
         method: "POST",
@@ -355,14 +386,15 @@ export default {
         } catch {}
       }
 
-      let seenAdSense = false;
+      let hasAdSense = false;
       response = new HTMLRewriter()
         .on("script[src*='pagead2.googlesyndication.com']", {
+          element() { hasAdSense = true; }
+        })
+        .on("head", {
           element(el) {
-            if (seenAdSense) {
-              el.remove();
-            } else {
-              seenAdSense = true;
+            if (!hasAdSense) {
+              el.append('\n  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>\n', { html: true });
             }
           }
         })
