@@ -1035,7 +1035,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "എത്തിക്സ് അഥവാ ശരിതെറ്റുകളുടെ തത്ത്വശാസ്ത്രം (Ethics: Philosophy of Right & Wrong)",
             "chapter": "Academic Hub Special · സ്വഭാവം, വ്യാപ്തി, നിരുക്തം (Ethos & Mos) & ശാഖകൾ",
             "duration": "17:37",
-            "youtubeId": "WD2oiqN3tBI",
+            "youtubeId": "3AJOPvBY9KA",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -1109,7 +1109,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കൺസിക്വൻഷ്യലിസവും ഡിയോന്റോളജിക്കൽ എത്തിക്സും (Consequentialism & Deontological Ethics)",
             "chapter": "Academic Hub Special · ടെലിയോളജിക്കൽ സിദ്ധാന്തം vs ഇമ്മാനുവൽ കാന്റിന്റെ കടമ സിദ്ധാന്തം",
             "duration": "16:22",
-            "youtubeId": "GQOXm5O42R4",
+            "youtubeId": "cAI0VvuMm3o",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
