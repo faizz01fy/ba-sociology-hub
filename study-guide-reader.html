@@ -3358,6 +3358,25 @@
         throw Error('Invalid study guide');
       }
 
+      // Check title parameter
+      const titleMatch = search.match(/[?&]title=([^&#]*)/i);
+      let customTitle = '';
+      if (titleMatch && titleMatch[1]) {
+        try {
+          customTitle = decodeURIComponent(titleMatch[1]);
+        } catch (_) {
+          customTitle = titleMatch[1];
+        }
+      }
+      const defaultCleanName = decodeURIComponent(file.pathname).split('/').pop().replace(/\.pdf$/i, '').replace(/_/g, ' ');
+      const displayTitle = customTitle || defaultCleanName;
+
+      const activeBadgeEl = document.getElementById('activeDocBadge');
+      if (activeBadgeEl) {
+        activeBadgeEl.textContent = displayTitle;
+      }
+      document.title = displayTitle + ' · Academic Hub';
+
       const normPath = decodeURIComponent(file.pathname).trim().toLowerCase();
       const normParam = cleanParam.toLowerCase();
 
@@ -3494,16 +3513,11 @@
 
         pdf = await lib.getDocument(docParams).promise;
 
-                if (activeDocBadge) {
-          const cleanName = decodeURIComponent(file.pathname).split('/').pop().replace(/\.pdf$/i, '').replace(/_/g, ' ');
-          activeDocBadge.textContent = cleanName;
+        const finalBadgeEl = document.getElementById('activeDocBadge');
+        if (finalBadgeEl) {
+          finalBadgeEl.textContent = displayTitle;
         }
-        document.title = decodeURIComponent(file.pathname).split('/').pop() + ' · Academic Hub';
-                if (activeDocBadge) {
-          const cleanName = decodeURIComponent(file.pathname).split('/').pop().replace(/\.pdf$/i, '').replace(/_/g, ' ');
-          activeDocBadge.textContent = cleanName;
-        }
-        document.title = decodeURIComponent(file.pathname).split('/').pop() + ' · Academic Hub';
+        document.title = displayTitle + ' · Academic Hub';
         el('page').max = pdf.numPages;
         // Default to "fit" on mobile, takes 100% of the screen width with high-DPI crisp rendering
         if (window.innerWidth <= 768) {
