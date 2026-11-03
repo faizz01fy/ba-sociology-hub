@@ -1639,6 +1639,116 @@
       display: none !important;
     }
 
+    /* ==============================================================
+       Vivid Colorful Blinking Home & Back Navigation Tabs
+       ============================================================== */
+    @keyframes blinkPulseHome {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45), 0 0 0 0 rgba(16, 185, 129, 0.7);
+      }
+      50% {
+        opacity: 0.88;
+        transform: scale(1.05);
+        filter: brightness(1.28);
+        box-shadow: 0 6px 22px rgba(16, 185, 129, 0.8), 0 0 16px 5px rgba(52, 211, 153, 0.9);
+      }
+    }
+
+    @keyframes blinkPulseBack {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45), 0 0 0 0 rgba(59, 130, 246, 0.7);
+      }
+      50% {
+        opacity: 0.88;
+        transform: scale(1.05);
+        filter: brightness(1.28);
+        box-shadow: 0 6px 22px rgba(37, 99, 235, 0.8), 0 0 16px 5px rgba(96, 165, 250, 0.9);
+      }
+    }
+
+    .nav-actions-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .nav-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 15px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 850;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+      border: 1.5px solid rgba(255, 255, 255, 0.65);
+      text-shadow: 0 1px 2px rgba(15, 23, 42, 0.4);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-sizing: border-box;
+      line-height: 1.2;
+    }
+
+    /* Home Tab - Vivid Emerald Green */
+    .nav-tab-home {
+      background: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%) !important;
+      color: #ffffff !important;
+      animation: blinkPulseHome 2.2s infinite ease-in-out !important;
+    }
+
+    /* Back Tab - Vivid Royal Blue / Indigo */
+    .nav-tab-back {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #4338ca 100%) !important;
+      color: #ffffff !important;
+      animation: blinkPulseBack 2.2s infinite ease-in-out !important;
+    }
+
+    .nav-tab-home:hover,
+    .nav-tab-back:hover {
+      animation-play-state: paused !important;
+      transform: translateY(-2px) scale(1.05) !important;
+      filter: brightness(1.15) !important;
+    }
+    .nav-tab-home:hover {
+      box-shadow: 0 8px 26px rgba(16, 185, 129, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+    }
+    .nav-tab-back:hover {
+      box-shadow: 0 8px 26px rgba(37, 99, 235, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .nav-tab-icon {
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    @media (max-width: 600px) {
+      .nav-left {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .nav-actions-group {
+        gap: 8px;
+      }
+      .nav-tab-btn {
+        padding: 6px 12px;
+        font-size: 12.5px;
+      }
+    }
+
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
 </head>
@@ -1647,9 +1757,16 @@
   <!-- Top Sticky Navigation Bar -->
   <nav class="top-navbar" aria-label="Main Navigation">
     <div class="nav-left">
-      <a href="index.html" class="back-btn" title="Back to Academic Hub">
-        <span aria-hidden="true">←</span> Hub
-      </a>
+      <div class="nav-actions-group">
+        <a href="index.html" class="nav-tab-btn nav-tab-home" title="Academic Hub Home" aria-label="Academic Hub Home">
+          <span class="nav-tab-icon" aria-hidden="true">🏠</span>
+          <span>Home</span>
+        </a>
+        <button type="button" class="nav-tab-btn nav-tab-back" onclick="if(window.history.length>1){window.history.back();}else{window.location.href='index.html';}" title="Go Back" aria-label="Go back">
+          <span class="nav-tab-icon" aria-hidden="true">←</span>
+          <span>Back</span>
+        </button>
+      </div>
       <div class="brand-title">
         <span class="brand-icon" aria-hidden="true">🎙️</span>
         <span>Voice Explanation</span>
