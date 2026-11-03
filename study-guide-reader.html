@@ -719,6 +719,57 @@
       }
     }
     
+        /* Mobile Floating Fullscreen Button & Theater Fullscreen Mode */
+    .mobile-fullscreen-floating {
+      position: fixed;
+      top: max(10px, env(safe-area-inset-top, 10px));
+      right: max(10px, env(safe-area-inset-right, 10px));
+      z-index: 1001;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(15, 23, 42, 0.90);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      transition: all 0.2s cubic-bezier(0.2, 0.9, 0.3, 1);
+    }
+    .mobile-fullscreen-floating:active {
+      transform: scale(0.93);
+      background: #0f172a;
+    }
+    @media (max-width: 768px) {
+      .mobile-fullscreen-floating {
+        display: inline-flex;
+      }
+    }
+    body.is-fullscreen .mobile-fullscreen-floating,
+    :fullscreen .mobile-fullscreen-floating,
+    :-webkit-full-screen .mobile-fullscreen-floating {
+      background: rgba(16, 185, 129, 0.95);
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.45);
+    }
+    body.theater-fullscreen .toolbar {
+      display: none !important;
+    }
+    body.theater-fullscreen main {
+      padding: 0 !important;
+      height: 100dvh !important;
+      max-height: 100dvh !important;
+    }
+
     @media print { body { display: none !important; } }
   
     /* Voice Reading fully reinstated */
@@ -1331,6 +1382,12 @@
     </div>
   </nav>
 
+  <!-- Mobile Floating Fullscreen Control -->
+  <button id="mobileFullscreenBtn" class="mobile-fullscreen-floating" type="button" aria-label="Toggle Fullscreen" title="Full Screen (പൂർണ്ണ സ്ക്രീൻ)">
+    <span class="fs-icon">⛶</span>
+    <span class="fs-text">Full Screen</span>
+  </button>
+
   <!-- Slide-out Subjects & Chapters Drawer -->
   <div id="subjectsDrawerBackdrop"></div>
   <aside id="subjectsDrawer" aria-label="Subjects and Chapters Directory">
@@ -1587,10 +1644,9 @@
 
         const canvas = document.createElement('canvas');
         const dpr = window.devicePixelRatio || 1;
-        // Optimal rendering scale without WebKit memory exhaustion:
-        // Mobile phones: clamp to Math.min(dpr, 1.25) to prevent iOS Jetsam OOM crashes.
-        // Desktop: clamp between 1.25 and 1.8 for crisp vector glyphs without GPU buffer overflow.
-        const ratio = isMobileDevice ? Math.min(dpr, 1.25) : Math.min(Math.max(dpr, 1.25), 1.8);
+        // Ultra-clear high pixel density (retina) rendering for crystal-sharp Malayalam fonts & formulas:
+        // Clamped safely between 1.75x and 2.25x on mobile (and 2.5x desktop) to guarantee razor-sharp clarity
+        const ratio = isMobileDevice ? Math.min(Math.max(dpr, 1.75), 2.25) : Math.min(Math.max(dpr, 1.5), 2.5);
 
         canvas.width = Math.floor(viewport.width * ratio);
         canvas.height = Math.floor(viewport.height * ratio);
@@ -1884,12 +1940,15 @@
       render();
     };
 
-    // Touch Pinch-to-Zoom (2-Finger Smooth Scaling & Sharp Snapping)
+    // Touch Pinch-to-Zoom (2-Finger Ultra-Smooth Scaling & Sharp Snapping)
     let isPinching = false;
     let pinchStartDist = 0;
     let pinchStartScale = 1;
     let pinchCenter = { x: 0, y: 0 };
     let currentPinchRatio = 1;
+    let pinchRaf = null;
+    let pinchDebounceTimer = null;
+    let lastTapTime = 0;
     const readerEl = el('reader');
 
     function getTouchDist(t1, t2) {
@@ -1904,6 +1963,7 @@
     }
 
     window.addEventListener('touchstart', (e) => {
+      // 2-Finger Pinch Zoom Initiation
       if (e.touches.length === 2 && pdf) {
         isPinching = true;
         e.preventDefault();
@@ -1916,9 +1976,30 @@
         };
         pinchStartScale = getCurrentScale();
         currentPinchRatio = 1;
+        readerEl.style.willChange = 'transform';
         readerEl.style.transition = 'none';
         readerEl.style.transformOrigin = pinchCenter.x + 'px ' + pinchCenter.y + 'px';
         showZoomHud(pinchStartScale);
+      } else if (e.touches.length === 1) {
+        // Quick Double-Tap to Zoom In / Zoom Fit on Mobile
+        const now = Date.now();
+        if (now - lastTapTime < 320 && now - lastTapTime > 60) {
+          e.preventDefault();
+          const cur = getCurrentScale();
+          const target = cur > 1.25 ? 1.0 : 1.6;
+          customZoomScale = target;
+          updateZoomDropdown(target);
+          showZoomHud(target);
+          readerEl.style.transition = 'transform 0.22s cubic-bezier(0.2, 0.9, 0.3, 1)';
+          readerEl.style.transform = `scale(${(target / cur).toFixed(3)})`;
+          setTimeout(() => {
+            readerEl.style.transition = '';
+            readerEl.style.transform = '';
+            readerEl.style.transformOrigin = '';
+            render();
+          }, 210);
+        }
+        lastTapTime = now;
       }
     }, { passive: false });
 
@@ -1929,39 +2010,53 @@
         if (pinchStartDist > 0) {
           currentPinchRatio = dist / pinchStartDist;
           const candidateScale = pinchStartScale * currentPinchRatio;
-          const clampedScale = Math.max(0.4, Math.min(4.0, candidateScale));
+          const clampedScale = Math.max(0.45, Math.min(4.0, candidateScale));
           const effectiveRatio = clampedScale / pinchStartScale;
           
-          readerEl.style.transform = 'scale(' + effectiveRatio.toFixed(3) + ')';
-          showZoomHud(clampedScale);
+          if (!pinchRaf) {
+            pinchRaf = requestAnimationFrame(() => {
+              pinchRaf = null;
+              readerEl.style.transform = 'scale(' + effectiveRatio.toFixed(3) + ')';
+              showZoomHud(clampedScale);
+            });
+          }
         }
       }
     }, { passive: false });
 
-    let pinchDebounceTimer = null;
     const finishPinch = () => {
       if (!isPinching) return;
       isPinching = false;
+      if (pinchRaf) { cancelAnimationFrame(pinchRaf); pinchRaf = null; }
       
-      const targetScale = Math.max(0.4, Math.min(3.8, pinchStartScale * currentPinchRatio));
+      const targetScale = Math.max(0.45, Math.min(3.8, pinchStartScale * currentPinchRatio));
       if (Math.abs(targetScale - pinchStartScale) > 0.04) {
         customZoomScale = Math.round(targetScale * 100) / 100;
         updateZoomDropdown(customZoomScale);
         showZoomHud(customZoomScale);
+        
+        // Silky smooth glide transition to final pinch ratio
+        const finalRatio = targetScale / pinchStartScale;
+        readerEl.style.transition = 'transform 0.2s cubic-bezier(0.2, 0.9, 0.3, 1)';
+        readerEl.style.transform = 'scale(' + finalRatio.toFixed(3) + ')';
+
         clearTimeout(pinchDebounceTimer);
-        pinchDebounceTimer = setTimeout(() => {
+        pinchDebounceTimer = setTimeout(async () => {
+          readerEl.style.transition = '';
           readerEl.style.transform = '';
           readerEl.style.transformOrigin = '';
-          render();
-        }, 50);
+          readerEl.style.willChange = '';
+          await render();
+        }, 190);
       } else {
-        readerEl.style.transition = 'transform 0.15s ease-out';
+        readerEl.style.transition = 'transform 0.18s ease-out';
         readerEl.style.transform = 'scale(1)';
         setTimeout(() => {
           readerEl.style.transform = '';
           readerEl.style.transformOrigin = '';
           readerEl.style.transition = '';
-        }, 150);
+          readerEl.style.willChange = '';
+        }, 180);
       }
     };
 
@@ -1975,91 +2070,64 @@
       if (isPinching) finishPinch();
     }, { passive: false });
 
-    // Prevent iOS Safari gesture interference
+    // Prevent iOS Safari gesture conflicts
     window.addEventListener('gesturestart', (e) => e.preventDefault(), { passive: false });
     window.addEventListener('gesturechange', (e) => e.preventDefault(), { passive: false });
-    window.addEventListener('gestureend', (e) => e.preventDefault(), { passive: false });
 
-    // Trackpad Pinch / Ctrl + Wheel
-    let wheelZoomTimer = null;
-    window.addEventListener('wheel', (e) => {
-      if (e.ctrlKey) {
-        e.preventDefault();
-        if (!pdf) return;
-        const cur = getCurrentScale();
-        const factor = e.deltaY < 0 ? 1.08 : 0.92;
-        const next = Math.max(0.35, Math.min(3.8, Math.round(cur * factor * 100) / 100));
-        customZoomScale = next;
-        updateZoomDropdown(next);
-        showZoomHud(next);
-        clearTimeout(wheelZoomTimer);
-        wheelZoomTimer = setTimeout(() => { render(); }, 120);
-      }
-    }, { passive: false });
+    // Unified Fullscreen Controller (Hardware Fullscreen + Mobile Immersive Theater)
+    function toggleFullscreenMode() {
+      const doc = document;
+      const isNativeFull = !!(doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement);
+      const isTheater = document.body.classList.contains('theater-fullscreen');
 
-    // Double-Tap to Zoom / Fit
-    let lastTapTime = 0;
-    let lastTapPos = { x: 0, y: 0 };
-    readerEl.addEventListener('touchend', (e) => {
-      if (isPinching) return;
-      if (e.changedTouches.length !== 1 || !pdf) return;
-      const now = Date.now();
-      const t = e.changedTouches[0];
-      const dist = Math.hypot(t.clientX - lastTapPos.x, t.clientY - lastTapPos.y);
-      if (now - lastTapTime < 320 && dist < 32) {
-        e.preventDefault();
-        const cur = getCurrentScale();
-        if (cur > 1.35) {
-          customZoomScale = null;
-          el('zoom').value = 'fit';
-          showZoomHud(1.0, 'Fit Width');
-          render();
+      if (!isNativeFull && !isTheater) {
+        const root = doc.documentElement;
+        const req = root.requestFullscreen || root.webkitRequestFullscreen || root.mozRequestFullScreen || root.msRequestFullscreen;
+        if (req) {
+          req.call(root).catch(() => {
+            document.body.classList.add('theater-fullscreen');
+            updateFsUI(true);
+          });
         } else {
-          customZoomScale = 1.75;
-          updateZoomDropdown(1.75);
-          showZoomHud(1.75, '175%');
-          render();
+          document.body.classList.add('theater-fullscreen');
+          updateFsUI(true);
         }
-        lastTapTime = 0;
-        return;
+      } else {
+        if (isNativeFull) {
+          const exit = doc.exitFullscreen || doc.webkitExitFullscreen || doc.mozCancelFullScreen || doc.msExitFullscreen;
+          if (exit) exit.call(doc).catch(() => {});
+        }
+        document.body.classList.remove('theater-fullscreen');
+        updateFsUI(false);
       }
-      lastTapTime = now;
-      lastTapPos = { x: t.clientX, y: t.clientY };
-    }, { passive: false });
+    }
 
-    // Cross-frame messaging from parent modal zoom buttons
-    window.addEventListener('message', (event) => {
-      if (!pdf) return;
-      if (event.data?.action === 'zoom') {
-        const cur = getCurrentScale();
-        const delta = Number(event.data.delta) || 0.2;
-        const next = Math.max(0.35, Math.min(3.8, Math.round((cur + delta) * 100) / 100));
-        customZoomScale = next;
-        updateZoomDropdown(next);
-        showZoomHud(next);
-        render();
-      } else if (event.data?.action === 'resetZoom') {
-        customZoomScale = null;
-        el('zoom').value = 'fit';
-        showZoomHud(1.0, 'Fit Width');
-        render();
-      }
+    function updateFsUI(isFull) {
+      document.body.classList.toggle('is-fullscreen', isFull);
+      const icon = isFull ? '🗗' : '⛶';
+      const label = isFull ? 'Exit Full' : 'Full Screen';
+      const btns = [el('fullscreenBtn'), el('mobileFullscreenBtn')];
+      btns.forEach(b => {
+        if (!b) return;
+        const iconSpan = b.querySelector('.fs-icon');
+        const textSpan = b.querySelector('.fs-text');
+        if (iconSpan) iconSpan.textContent = icon;
+        if (textSpan) textSpan.textContent = label;
+        if (!iconSpan && !textSpan) b.textContent = icon;
+        b.title = isFull ? 'പൂർണ്ണ സ്ക്രീൻ നിർത്തുക (Exit Fullscreen)' : 'പൂർണ്ണ സ്ക്രീൻ (Toggle Fullscreen)';
+      });
+    }
+
+    ['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange'].forEach(evt => {
+      document.addEventListener(evt, () => {
+        const isFull = !!(document.fullscreenElement || document.webkitFullscreenElement);
+        updateFsUI(isFull || document.body.classList.contains('theater-fullscreen'));
+      });
     });
 
-    // Fullscreen and External New Tab
-    el('fullscreenBtn').onclick = () => {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(() => {});
-      } else {
-        document.exitFullscreen().catch(() => {});
-      }
-    };
-
-    el('openExternalBtn').onclick = () => {
-      window.open(location.href, '_blank');
-    };
-
-    // Active page tracking handled off-thread via pageTrackingObserver
+    if (el('fullscreenBtn')) el('fullscreenBtn').onclick = toggleFullscreenMode;
+    if (el('mobileFullscreenBtn')) el('mobileFullscreenBtn').onclick = toggleFullscreenMode;
+    if (el('openExternalBtn')) el('openExternalBtn').onclick = () => window.open(location.href, '_blank');
 
     // Resize listener
     let resizeTimer;
