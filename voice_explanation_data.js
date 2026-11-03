@@ -242,20 +242,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 02",
-            "title": "Anthem - Leonard Cohen",
-            "chapter": "ആന്തം - ലിയോനാർഡ് കോഹൻ | പ്രതിസന്ധികളും പ്രത്യാശയും അപൂർണ്ണതയിലെ സൗന്ദര്യവും (Leonard Cohen · Hope Amid Imperfection)",
-            "duration": "08:11",
-            "youtubeId": "tblgw8mdPms",
-            "language": "English",
-            "studyPoints": [
-              "<strong>Leonard Cohen & Background:</strong> കനേഡിയൻ ഗായകനും കവിയുമായ ലിയോനാർഡ് കോഹൻ (1934–2016) 1992-ൽ The Future എന്ന ആൽബത്തിലൂടെ പുറത്തിറക്കിയ വിശ്വപ്രസിദ്ധമായ ഗാനകവിതയാണ് 'Anthem'. ആത്മീയതയും സാഹിത്യവും രാഷ്ട്രീയ അവബോധവും ഒത്തുചേരുന്നതാണ് അദ്ദേഹത്തിന്റെ രചനാ ശൈലി.",
-              "<strong>Central Refrain:</strong> <em>'There is a crack in everything, that’s how the light gets in'</em> — പൂർണ്ണത എന്ന മിഥ്യയ്ക്ക് പിന്നാലെ പോകാതെ, ജീവിതത്തിലെയും സമൂഹത്തിലെയും വിള്ളലുകളെയും കുറവുകളെയും പുതിയ വെളിച്ചവും പ്രത്യാശയും ഉണർത്താനുള്ള അവസരങ്ങളായി കവി കാണുന്നു.",
-              "<strong>Acceptance of Imperfection:</strong> <em>'Forget your perfect offering'</em> — എല്ലാം തികഞ്ഞ ഒന്നിനായി കാത്തിരുന്ന് സമയം പാഴാക്കാതെ, ഉള്ള പരിമിതികളിൽ നിന്നുകൊണ്ട് തന്നെ കർമ്മനിരതരാകാനും നന്മ ചെയ്യാനും കവിത ഉദ്ബോധിപ്പിക്കുന്നു.",
-              "<strong>Resilience & Hope:</strong> <em>'Ring the bells that still can ring'</em> — യുദ്ധങ്ങളും പ്രതിസന്ധികളും നിരാശയും നിലനിൽക്കുമ്പോഴും, നമുക്ക് സാധ്യമായ നന്മകളും ക്രിയാത്മക പ്രതിരോധങ്ങളും ശബ്ദമുയർത്തലും തുടരുക.",
-              "<strong>Critical Breakdown:</strong> കവിതയിലെ ആലാപന താളം (Cadence), മെറ്റഫറുകൾ (Metaphors), ബിബ്ലിക്കൽ ഇമേജുകൾ, അനാഫോറ തുടങ്ങിയ സാഹിത്യ ഘടകങ്ങൾ ഗാനത്തെ അതീവ അർത്ഥവത്താക്കുന്നു.",
-              "<strong>NotebookLM Study Aid:</strong> Calicut University FYUGP ഒന്നാം സെമസ്റ്റർ വിദ്യാർത്ഥികൾക്കായി AcademicHub നൽകുന്ന ആധികാരിക ഓഡിയോ-വിഷ്വൽ പഠനസഹായി."
-            ],
-            "examTip": "ലിയോനാർഡ് കോഹന്റെ 'There is a crack in everything, that’s how the light gets in' എന്ന വിഖ്യാത വരികളുടെ തത്ത്വചിന്താപരമായ വ്യാഖ്യാനവും, കവിതയിലെ പ്രതിരോധത്തിന്റെയും പ്രത്യാശയുടെയും സന്ദേശവും പരീക്ഷയ്ക്ക് Critical Appreciation ചോദ്യങ്ങളിൽ വിശകലനം ചെയ്യുക."
+            "title": "Anthem for Doomed Youth",
+            "chapter": "Wilfred Owen · War Poetry & Poetic Devices",
+            "duration": "15",
+            "youtubeId": ""
           },
           {
             "chapterNumber": "Chapter 03",
