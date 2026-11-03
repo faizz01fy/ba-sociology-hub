@@ -1233,12 +1233,12 @@
 </header>
 <!-- Module Filters (All in English) -->
 <nav aria-label="Filter by module" class="filter-wrapper">
-<button class="filter-btn" data-mod="mod1" onclick="filterModule('mod1', this)" style="--mod-c1:#4338ca; --mod-c2:#6366f1; --mod-border:#a5b4fc; --mod-bg:#eef2ff; --mod-glow:rgba(99, 102, 241, 0.55); --mod-delay:0.0s;">Module 1: Foundations (3 Chapters)</button>
+<button class="filter-btn active" data-mod="mod1" onclick="filterModule('mod1', this)" style="--mod-c1:#4338ca; --mod-c2:#6366f1; --mod-border:#a5b4fc; --mod-bg:#eef2ff; --mod-glow:rgba(99, 102, 241, 0.55); --mod-delay:0.0s;">Module 1: Foundations (3 Chapters)</button>
 <button class="filter-btn" data-mod="mod2" onclick="filterModule('mod2', this)" style="--mod-c1:#1d4ed8; --mod-c2:#3b82f6; --mod-border:#93c5fd; --mod-bg:#eff6ff; --mod-glow:rgba(59, 130, 246, 0.55); --mod-delay:1.0s;">Module 2: Classical AI (5 Chapters)</button>
 <button class="filter-btn" data-mod="mod3" onclick="filterModule('mod3', this)" style="--mod-c1:#059669; --mod-c2:#10b981; --mod-border:#6ee7b7; --mod-bg:#ecfdf5; --mod-glow:rgba(16, 185, 129, 0.55); --mod-delay:2.0s;">Module 3: Epistemology (5 Chapters)</button>
 <button class="filter-btn" data-mod="mod4" onclick="filterModule('mod4', this)" style="--mod-c1:#7c3aed; --mod-c2:#8b5cf6; --mod-border:#c4b5fd; --mod-bg:#f5f3ff; --mod-glow:rgba(139, 92, 246, 0.55); --mod-delay:3.0s;">Module 4: Ethics of AI (7 Chapters)</button>
 <button class="filter-btn" data-mod="mod5" onclick="filterModule('mod5', this)" style="--mod-c1:#ea580c; --mod-c2:#f97316; --mod-border:#fdba74; --mod-bg:#fff7ed; --mod-glow:rgba(249, 115, 22, 0.55); --mod-delay:4.0s;">Module 5: Future &amp; Perspectives (2 Chapters)</button>
-<button class="filter-btn active" data-mod="all" onclick="filterModule('all', this)" style="--mod-c1:#be123c; --mod-c2:#f43f5e; --mod-border:#fda4af; --mod-bg:#fff1f2; --mod-glow:rgba(244, 63, 94, 0.55); --mod-delay:5.0s;">📚 All Chapters (22 Chapters)</button>
+<button class="filter-btn" data-mod="all" onclick="filterModule('all', this)" style="--mod-c1:#be123c; --mod-c2:#f43f5e; --mod-border:#fda4af; --mod-bg:#fff1f2; --mod-glow:rgba(244, 63, 94, 0.55); --mod-delay:5.0s;">📚 All Chapters (22 Chapters)</button>
 </nav>
 <!-- Search Input (English Placeholder) -->
 <div class="search-bar">
@@ -1292,7 +1292,7 @@
 </div>
 </section>
 <!-- ==================== MOD2 ==================== -->
-<section class="module-section" data-mod="mod2" style="display: block;">
+<section class="module-section" data-mod="mod2" style="display: none;">
 <div class="module-header">
 <h2>മൊഡ്യൂൾ 2: ക്ലാസിക്കൽ നിർമ്മിത ബുദ്ധിയും കമ്പ്യൂട്ടേഷൻ മാതൃകകളും</h2>
 <span class="module-tag">Module 2 (5 Chapters)</span>
@@ -1361,7 +1361,7 @@
 </div>
 </section>
 <!-- ==================== MOD3 ==================== -->
-<section class="module-section" data-mod="mod3" style="display: block;">
+<section class="module-section" data-mod="mod3" style="display: none;">
 <div class="module-header">
 <h2>മൊഡ്യൂൾ 3: നിർമ്മിത ബുദ്ധിയിലെ ജ്ഞാനമീമാംസാ സിദ്ധാന്തങ്ങൾ</h2>
 <span class="module-tag">Module 3 (5 Chapters)</span>
@@ -1430,7 +1430,7 @@
 </div>
 </section>
 <!-- ==================== MOD4 ==================== -->
-<section class="module-section" data-mod="mod4" style="display: block;">
+<section class="module-section" data-mod="mod4" style="display: none;">
 <div class="module-header">
 <h2>മൊഡ്യൂൾ 4: ധാർമ്മികത, നീതിശാസ്ത്രം, സാമൂഹിക പ്രത്യാഘാതങ്ങൾ</h2>
 <span class="module-tag">Module 4 (7 Chapters)</span>
@@ -1523,7 +1523,7 @@
 </div>
 </section>
 <!-- ==================== MOD5 ==================== -->
-<section class="module-section" data-mod="mod5" style="display: block;">
+<section class="module-section" data-mod="mod5" style="display: none;">
 <div class="module-header">
 <h2>മൊഡ്യൂൾ 5: നിർമ്മിത ബുദ്ധിയുടെ തത്ത്വചിന്തയും മാനവരാശിയുടെ ഭാവിയും</h2>
 <span class="module-tag">Module 5 (2 Chapters)</span>
@@ -1734,15 +1734,16 @@
     (function initModuleActivation() {
       function activate() {
         const hash = window.location.hash ? window.location.hash.replace('#', '') : '';
-        let targetMod = 'all';
-        if (['mod1', 'mod2', 'mod3', 'mod4', 'mod5', 'all'].includes(hash)) {
+        let targetMod = 'mod1';
+        if (['mod1', 'mod2', 'mod3', 'mod4', 'mod5'].includes(hash)) {
           targetMod = hash;
         }
-        const targetBtn = document.querySelector(`.filter-btn[data-mod="${targetMod}"]`) || document.querySelector(`.filter-btn[onclick*="${targetMod}"]`) || document.querySelector('.filter-btn');
+        const targetBtn = document.querySelector(`.filter-btn[data-mod="${targetMod}"]`) || document.querySelector(`.filter-btn[onclick*="${targetMod}"]`) || document.querySelector('.filter-btn[data-mod="mod1"]') || document.querySelector('.filter-btn');
         if (typeof filterModule === 'function' && targetBtn) {
           filterModule(targetMod, targetBtn);
         }
       }
+
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', activate);
       } else {

@@ -782,10 +782,10 @@
 </header>
 <!-- Module Filters -->
 <nav aria-label="Filter by module" class="filter-wrapper">
-<button class="filter-btn" data-mod="mod1" onclick="filterModule('mod1', this)" style="--mod-c1:#9a3412; --mod-c2:#ea580c; --mod-border:#fdba74; --mod-bg:#fff7ed; --mod-glow:rgba(234, 88, 12, 0.55); --mod-delay:0.0s;">Module 1: Samvidhan &amp; Rajbhasha (2 Chapters)</button>
+<button class="filter-btn active" data-mod="mod1" onclick="filterModule('mod1', this)" style="--mod-c1:#9a3412; --mod-c2:#ea580c; --mod-border:#fdba74; --mod-bg:#fff7ed; --mod-glow:rgba(234, 88, 12, 0.55); --mod-delay:0.0s;">Module 1: Samvidhan &amp; Rajbhasha (2 Chapters)</button>
 <button class="filter-btn" data-mod="mod2" onclick="filterModule('mod2', this)" style="--mod-c1:#1e40af; --mod-c2:#3b82f6; --mod-border:#93c5fd; --mod-bg:#eff6ff; --mod-glow:rgba(59, 130, 246, 0.55); --mod-delay:1.0s;">Module 2: Adhunik Hindi Kavita (3 Chapters)</button>
 <button class="filter-btn" data-mod="mod3" onclick="filterModule('mod3', this)" style="--mod-c1:#065f46; --mod-c2:#10b981; --mod-border:#6ee7b7; --mod-bg:#ecfdf5; --mod-glow:rgba(16, 185, 129, 0.55); --mod-delay:2.0s;">Module 3: Vakya Sanrachna &amp; Vyakaran (1 Chapter)</button>
-<button class="filter-btn active" data-mod="all" onclick="filterModule('all', this)" style="--mod-c1:#be123c; --mod-c2:#f43f5e; --mod-border:#fda4af; --mod-bg:#fff1f2; --mod-glow:rgba(244, 63, 94, 0.55); --mod-delay:3.0s;">📚 All Chapters (6 Chapters)</button>
+<button class="filter-btn" data-mod="all" onclick="filterModule('all', this)" style="--mod-c1:#be123c; --mod-c2:#f43f5e; --mod-border:#fda4af; --mod-bg:#fff1f2; --mod-glow:rgba(244, 63, 94, 0.55); --mod-delay:3.0s;">📚 All Chapters (6 Chapters)</button>
 </nav>
 <!-- Search Input -->
 <div class="search-bar">
@@ -841,7 +841,7 @@
 </div>
 </section>
 <!-- ==================== MODULE 2 ==================== -->
-<section class="module-section" data-mod="mod2" style="display: block;">
+<section class="module-section" data-mod="mod2" style="display: none;">
 <div class="module-header">
 <h2>മൊഡ്യൂൾ 2: ആധുനിക ഹിന്ദി കവിത (കവികളും കവിതകളും)</h2>
 <span class="module-tag">Module 2 (3 Chapters)</span>
@@ -886,7 +886,7 @@
 </div>
 </section>
 <!-- ==================== MODULE 3 ==================== -->
-<section class="module-section" data-mod="mod3" style="display: block;">
+<section class="module-section" data-mod="mod3" style="display: none;">
 <div class="module-header">
 <h2>മൊഡ്യൂൾ 3: വാക്യ സംരചനയും വ്യാകരണവും</h2>
 <span class="module-tag">Module 3 (1 Chapter)</span>
@@ -1052,15 +1052,16 @@
     (function initModuleActivation() {
       function activate() {
         const hash = window.location.hash ? window.location.hash.replace('#', '') : '';
-        let targetMod = 'all';
-        if (['mod1', 'mod2', 'mod3', 'all'].includes(hash)) {
+        let targetMod = 'mod1';
+        if (['mod1', 'mod2', 'mod3'].includes(hash)) {
           targetMod = hash;
         }
-        const targetBtn = document.querySelector(`.filter-btn[data-mod="${targetMod}"]`) || document.querySelector('.filter-btn');
+        const targetBtn = document.querySelector(`.filter-btn[data-mod="${targetMod}"]`) || document.querySelector('.filter-btn[data-mod="mod1"]') || document.querySelector('.filter-btn');
         if (typeof filterModule === 'function' && targetBtn) {
           filterModule(targetMod, targetBtn);
         }
       }
+
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', activate);
       } else {

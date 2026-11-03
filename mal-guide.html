@@ -1140,8 +1140,8 @@
       </p>
 </section>
 <nav aria-label="Module filters" class="filter-wrapper" style="margin-bottom:24px; display:flex; flex-wrap:wrap; gap:10px; justify-content:center; width:100%;">
-<button class="filter-btn active" data-mod="all" onclick="filterModule('all', this)" style="--mod-c1:#4338ca; --mod-c2:#6366f1; --mod-border:#a5b4fc; --mod-bg:#eef2ff; --mod-glow:rgba(99, 102, 241, 0.55); --mod-delay:0.0s;">📚 എല്ലാ അധ്യായങ്ങളും (All Chapters · 14)</button>
-<button class="filter-btn" data-mod="mod1" onclick="filterModule('mod1', this)" style="--mod-c1:#1d4ed8; --mod-c2:#3b82f6; --mod-border:#93c5fd; --mod-bg:#eff6ff; --mod-glow:rgba(59, 130, 246, 0.55); --mod-delay:1.2s;">മൊഡ്യൂൾ 1: ഗദ്യവും വിവർത്തനവും</button>
+<button class="filter-btn" data-mod="all" onclick="filterModule('all', this)" style="--mod-c1:#4338ca; --mod-c2:#6366f1; --mod-border:#a5b4fc; --mod-bg:#eef2ff; --mod-glow:rgba(99, 102, 241, 0.55); --mod-delay:0.0s;">📚 എല്ലാ അധ്യായങ്ങളും (All Chapters · 14)</button>
+<button class="filter-btn active" data-mod="mod1" onclick="filterModule('mod1', this)" style="--mod-c1:#1d4ed8; --mod-c2:#3b82f6; --mod-border:#93c5fd; --mod-bg:#eff6ff; --mod-glow:rgba(59, 130, 246, 0.55); --mod-delay:1.2s;">മൊഡ്യൂൾ 1: ഗദ്യവും വിവർത്തനവും</button>
 <button class="filter-btn" data-mod="mod2" onclick="filterModule('mod2', this)" style="--mod-c1:#059669; --mod-c2:#10b981; --mod-border:#6ee7b7; --mod-bg:#ecfdf5; --mod-glow:rgba(16, 185, 129, 0.55); --mod-delay:2.4s;">മൊഡ്യൂൾ 2: ചെറുകഥയും നോവലും</button>
 <button class="filter-btn" data-mod="mod3" onclick="filterModule('mod3', this)" style="--mod-c1:#7c3aed; --mod-c2:#8b5cf6; --mod-border:#c4b5fd; --mod-bg:#f5f3ff; --mod-glow:rgba(139, 92, 246, 0.55); --mod-delay:3.6s;">മൊഡ്യൂൾ 3: കവിത</button>
 <button class="filter-btn" data-mod="mod4" onclick="filterModule('mod4', this)" style="--mod-c1:#ea580c; --mod-c2:#f97316; --mod-border:#fdba74; --mod-bg:#fff7ed; --mod-glow:rgba(249, 115, 22, 0.55); --mod-delay:4.8s;">മൊഡ്യൂൾ 4: ദൃശ്യകല, നാടകം &amp; ചലച്ചിത്രം</button>
@@ -1286,7 +1286,7 @@
 </div>
 </section>
 <!-- ================= MODULE 2 ================= -->
-<section class="module-block" data-mod="mod2" id="mod-2" style="display: block;">
+<section class="module-block" data-mod="mod2" id="mod-2" style="display: none;">
 <header class="module-header">
 <h2>മൊഡ്യൂൾ 2: ചെറുകഥയും നോവലും (Short Story and Novel)</h2>
 <span>3 അധ്യായങ്ങൾ</span>
@@ -1364,7 +1364,7 @@
 </div>
 </section>
 <!-- ================= MODULE 3 ================= -->
-<section class="module-block" data-mod="mod3" id="mod-3" style="display: block;">
+<section class="module-block" data-mod="mod3" id="mod-3" style="display: none;">
 <header class="module-header">
 <h2>മൊഡ്യൂൾ 3: കവിത (Poetry)</h2>
 <span>3 അധ്യായങ്ങൾ</span>
@@ -1442,7 +1442,7 @@
 </div>
 </section>
 <!-- ================= MODULE 4 ================= -->
-<section class="module-block" data-mod="mod4" id="mod-4" style="display: block;">
+<section class="module-block" data-mod="mod4" id="mod-4" style="display: none;">
 <header class="module-header">
 <h2>മൊഡ്യൂൾ 4: ദൃശ്യകല, നാടകം &amp; ചലച്ചിത്രം (Theatre and Cinema)</h2>
 <span>4 അധ്യായങ്ങൾ</span>
@@ -1701,6 +1701,29 @@
       return false;
     }
   }, true);
+</script>
+<script>
+// Auto-initialize reading view directly to Module 1 ONLY
+(function initModuleActivation() {
+  function activate() {
+    const hash = window.location.hash ? window.location.hash.replace('#', '') : '';
+    let targetMod = 'mod1';
+    if (['mod1', 'mod2', 'mod3', 'mod4'].includes(hash)) {
+      targetMod = hash;
+    }
+    const targetBtn = document.querySelector(`.filter-btn[data-mod="${targetMod}"]`) ||
+                      document.querySelector('.filter-btn[data-mod="mod1"]') ||
+                      document.querySelector('.filter-btn');
+    if (typeof filterModule === 'function' && targetBtn) {
+      filterModule(targetMod, targetBtn);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', activate);
+  } else {
+    activate();
+  }
+})();
 </script>
 </body>
 </html>

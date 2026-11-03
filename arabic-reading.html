@@ -275,7 +275,7 @@
 
     .chapter-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      grid-template-columns: 1fr;
       gap: 18px;
     }
 
@@ -723,8 +723,8 @@
 </header>
 <!-- Module Filters -->
 <nav aria-label="Filter by module" class="filter-wrapper">
-<button class="filter-btn active" data-mod="all" onclick="filterModule('all', this)" style="--mod-c1:#065f46; --mod-c2:#047857; --mod-border:#a7f3d0; --mod-bg:#ecfdf5;">📚 All Modules (10 Chapters)</button>
-<button class="filter-btn" data-mod="mod1" onclick="filterModule('mod1', this)" style="--mod-c1:#0369a1; --mod-c2:#0284c7; --mod-border:#bae6fd; --mod-bg:#f0f9ff;">Module 1: Greetings &amp; Introductions (5 Chapters)</button>
+<button class="filter-btn" data-mod="all" onclick="filterModule('all', this)" style="--mod-c1:#065f46; --mod-c2:#047857; --mod-border:#a7f3d0; --mod-bg:#ecfdf5;">📚 All Modules (10 Chapters)</button>
+<button class="filter-btn active" data-mod="mod1" onclick="filterModule('mod1', this)" style="--mod-c1:#0369a1; --mod-c2:#0284c7; --mod-border:#bae6fd; --mod-bg:#f0f9ff;">Module 1: Greetings &amp; Introductions (5 Chapters)</button>
 <button class="filter-btn" data-mod="mod2" onclick="filterModule('mod2', this)" style="--mod-c1:#7c2d12; --mod-c2:#c2410c; --mod-border:#fed7aa; --mod-bg:#fff7ed;">Module 2: Poetic Dewdrops &amp; Reading (5 Chapters)</button>
 </nav>
 <!-- Search Input -->
@@ -732,7 +732,7 @@
 <input id="searchInput" onkeyup="filterChapters()" placeholder="Search by title, topic, Arabic phrase, or keyword..." type="text"/>
 </div>
 <!-- Module 1 Section -->
-<section class="module-section" data-mod="mod1">
+<section class="module-section" data-mod="mod1" style="display: block;">
 <div class="module-header">
 <h2>Module 1 · Greetings and Introductions (التحيات والتعارف) — Bilingual Lecture Notes</h2>
 </div>
@@ -775,7 +775,7 @@
 </div>
 </section>
 <!-- Module 2 Section -->
-<section class="module-section" data-mod="mod2">
+<section class="module-section" data-mod="mod2" style="display: none;">
 <div class="module-header">
 <h2>Module 2 · Poetic Dewdrops &amp; Arabic Reading Selections (قطرات الندى وقراءات عربية)</h2>
 </div>
@@ -971,6 +971,29 @@
       return false;
     }
   }, true);
+</script>
+<script>
+// Auto-initialize reading view directly to Module 1 ONLY
+(function initModuleActivation() {
+  function activate() {
+    const hash = window.location.hash ? window.location.hash.replace('#', '') : '';
+    let targetMod = 'mod1';
+    if (['mod1', 'mod2'].includes(hash)) {
+      targetMod = hash;
+    }
+    const targetBtn = document.querySelector(`.filter-btn[data-mod="${targetMod}"]`) ||
+                      document.querySelector('.filter-btn[data-mod="mod1"]') ||
+                      document.querySelector('.filter-btn');
+    if (typeof filterModule === 'function' && targetBtn) {
+      filterModule(targetMod, targetBtn);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', activate);
+  } else {
+    activate();
+  }
+})();
 </script>
 </body>
 </html>

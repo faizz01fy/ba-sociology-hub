@@ -72,8 +72,6 @@
     html {
       overflow-anchor: none;
       -webkit-text-size-adjust: 100%;
-      overscroll-behavior: none;
-      overscroll-behavior-y: none;
     }
     body {
       margin: 0;
@@ -83,12 +81,6 @@
       font-size: 14px;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
-      overscroll-behavior: none;
-      overscroll-behavior-y: none;
-    }
-    main, #reader {
-      overscroll-behavior: none;
-      overscroll-behavior-y: none;
     }
     
     /* Desktop Toolbar */
@@ -227,11 +219,8 @@
     /* Main Reader Area */
     main {
       padding: 16px 8px;
-      overflow-x: auto;
-      overflow-y: visible;
       text-align: left;
       -webkit-overflow-scrolling: touch;
-      touch-action: pan-x pan-y;
       width: 100%;
       min-width: 0;
     }
@@ -817,8 +806,6 @@
       padding: 6px 4px 28px 4px !important;
       height: auto !important;
       max-height: none !important;
-      overflow-x: auto !important;
-      touch-action: pan-x pan-y !important;
     }
 
     @media print { body { display: none !important; } }
@@ -2086,7 +2073,6 @@
       // 2-Finger Pinch Zoom Initiation
       if (e.touches.length === 2 && pdf) {
         isPinching = true;
-        e.preventDefault();
         pinchStartDist = getTouchDist(e.touches[0], e.touches[1]);
         const mid = getTouchMid(e.touches[0], e.touches[1]);
         const rect = readerEl.getBoundingClientRect();
@@ -2100,32 +2086,12 @@
         readerEl.style.transition = 'none';
         readerEl.style.transformOrigin = pinchCenter.x + 'px ' + pinchCenter.y + 'px';
         showZoomHud(pinchStartScale);
-      } else if (e.touches.length === 1) {
-        // Quick Double-Tap to Zoom In / Zoom Fit on Mobile
-        const now = Date.now();
-        if (now - lastTapTime < 320 && now - lastTapTime > 60) {
-          e.preventDefault();
-          const cur = getCurrentScale();
-          const target = cur > 1.25 ? 1.0 : 1.6;
-          customZoomScale = target;
-          updateZoomDropdown(target);
-          showZoomHud(target);
-          readerEl.style.transition = 'transform 0.22s cubic-bezier(0.2, 0.9, 0.3, 1)';
-          readerEl.style.transform = `scale(${(target / cur).toFixed(3)})`;
-          setTimeout(() => {
-            readerEl.style.transition = '';
-            readerEl.style.transform = '';
-            readerEl.style.transformOrigin = '';
-            render();
-          }, 210);
-        }
-        lastTapTime = now;
       }
-    }, { passive: false });
+    }, { passive: true });
 
     window.addEventListener('touchmove', (e) => {
       if (isPinching && e.touches.length === 2 && pdf) {
-        e.preventDefault();
+        if (e.cancelable) e.preventDefault();
         const dist = getTouchDist(e.touches[0], e.touches[1]);
         if (pinchStartDist > 0) {
           currentPinchRatio = dist / pinchStartDist;
@@ -2184,15 +2150,15 @@
       if (isPinching && e.touches.length < 2) {
         finishPinch();
       }
-    }, { passive: false });
+    }, { passive: true });
 
     window.addEventListener('touchcancel', () => {
       if (isPinching) finishPinch();
-    }, { passive: false });
+    }, { passive: true });
 
-    // Prevent iOS Safari gesture conflicts
-    window.addEventListener('gesturestart', (e) => e.preventDefault(), { passive: false });
-    window.addEventListener('gesturechange', (e) => e.preventDefault(), { passive: false });
+    // Prevent iOS Safari gesture conflicts during pinch
+    window.addEventListener('gesturestart', (e) => { if (e.cancelable) e.preventDefault(); }, { passive: false });
+    window.addEventListener('gesturechange', (e) => { if (e.cancelable) e.preventDefault(); }, { passive: false });
 
     // Unified Fullscreen Controller (Hardware Fullscreen + Mobile Immersive Theater)
     function toggleFullscreenMode() {
