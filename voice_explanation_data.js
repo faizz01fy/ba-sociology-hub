@@ -13,8 +13,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Module 1: Landscape & Environment) | Inquisitive Podcast Deep Dive",
             "chapter": "ഭൗമശാസ്ത്രം & പരീക്ഷാ സഹായി",
             "duration": "15:34",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
+            "youtubeId": "GyquVMAUNtQ",
             "thumbnail": "/thumbnails/history_keralam_mod1/15_Module_1_Landscape_and_Environment.png",
             "language": "Malayalam",
             "studyPoints": [
