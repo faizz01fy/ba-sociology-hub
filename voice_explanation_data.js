@@ -242,17 +242,35 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 02",
-            "title": "Anthem for Doomed Youth",
-            "chapter": "Wilfred Owen · War Poetry & Poetic Devices",
-            "duration": "15",
-            "youtubeId": ""
+            "title": "Anthem - Leonard Cohen",
+            "chapter": "ആന്തം - ലിയോനാർഡ് കോഹൻ | പ്രതിസന്ധികളും പ്രത്യാശയും അപൂർണ്ണതയിലെ സൗന്ദര്യവും (Leonard Cohen · Hope Amid Imperfection)",
+            "duration": "08:11",
+            "youtubeId": "tblgw8mdPms",
+            "language": "English",
+            "studyPoints": [
+              "<strong>Leonard Cohen & Background:</strong> കനേഡിയൻ ഗായകനും കവിയുമായ ലിയോനാർഡ് കോഹൻ (1934–2016) 1992-ൽ The Future എന്ന ആൽബത്തിലൂടെ പുറത്തിറക്കിയ വിശ്വപ്രസിദ്ധമായ ഗാനകവിതയാണ് 'Anthem'. ആത്മീയതയും സാഹിത്യവും രാഷ്ട്രീയ അവബോധവും ഒത്തുചേരുന്നതാണ് അദ്ദേഹത്തിന്റെ രചനാ ശൈലി.",
+              "<strong>Central Refrain:</strong> <em>'There is a crack in everything, that’s how the light gets in'</em> — പൂർണ്ണത എന്ന മിഥ്യയ്ക്ക് പിന്നാലെ പോകാതെ, ജീവിതത്തിലെയും സമൂഹത്തിലെയും വിള്ളലുകളെയും കുറവുകളെയും പുതിയ വെളിച്ചവും പ്രത്യാശയും ഉണർത്താനുള്ള അവസരങ്ങളായി കവി കാണുന്നു.",
+              "<strong>Acceptance of Imperfection:</strong> <em>'Forget your perfect offering'</em> — എല്ലാം തികഞ്ഞ ഒന്നിനായി കാത്തിരുന്ന് സമയം പാഴാക്കാതെ, ഉള്ള പരിമിതികളിൽ നിന്നുകൊണ്ട് തന്നെ കർമ്മനിരതരാകാനും നന്മ ചെയ്യാനും കവിത ഉദ്ബോധിപ്പിക്കുന്നു.",
+              "<strong>Resilience & Hope:</strong> <em>'Ring the bells that still can ring'</em> — യുദ്ധങ്ങളും പ്രതിസന്ധികളും നിരാശയും നിലനിൽക്കുമ്പോഴും, നമുക്ക് സാധ്യമായ നന്മകളും ക്രിയാത്മക പ്രതിരോധങ്ങളും ശബ്ദമുയർത്തലും തുടരുക.",
+              "<strong>Critical Breakdown:</strong> കവിതയിലെ ആലാപന താളം (Cadence), മെറ്റഫറുകൾ (Metaphors), ബിബ്ലിക്കൽ ഇമേജുകൾ, അനാഫോറ തുടങ്ങിയ സാഹിത്യ ഘടകങ്ങൾ ഗാനത്തെ അതീവ അർത്ഥവത്താക്കുന്നു.",
+              "<strong>NotebookLM Study Aid:</strong> Calicut University FYUGP ഒന്നാം സെമസ്റ്റർ വിദ്യാർത്ഥികൾക്കായി AcademicHub നൽകുന്ന ആധികാരിക ഓഡിയോ-വിഷ്വൽ പഠനസഹായി."
+            ],
+            "examTip": "ലിയോനാർഡ് കോഹന്റെ 'There is a crack in everything, that’s how the light gets in' എന്ന വിഖ്യാത വരികളുടെ തത്ത്വചിന്താപരമായ വ്യാഖ്യാനവും, കവിതയിലെ പ്രതിരോധത്തിന്റെയും പ്രത്യാശയുടെയും സന്ദേശവും പരീക്ഷയ്ക്ക് Critical Appreciation ചോദ്യങ്ങളിൽ വിശകലനം ചെയ്യുക."
           },
           {
             "chapterNumber": "Chapter 03",
-            "title": "Art as Public Service",
-            "chapter": "Critical Speech & Public Engagement",
-            "duration": "16",
-            "youtubeId": ""
+            "title": "Art as a Social Work",
+            "chapter": "ആമി മൊറാലെസ് ലാറ · കലയും സാമൂഹിക പ്രവർത്തനവും (Amy Morales Lara · Art as a Social Work)",
+            "duration": "09:47",
+            "youtubeId": "wx1wnO8QKXs",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Amy Morales Lara & Background:</strong> ബ്രോങ്ക്സിൽ നിന്നുള്ള ആർട്ടിസ്റ്റും സോഷ്യൽ വർക്കറുമായ ആമി മൊറാലെസ് ലാറയുടെ പ്രഭാഷണവും ആശയങ്ങളും.",
+              "<strong>Art as Healing & Storytelling:</strong> ട്രോമകളെ അതിജീവിക്കാനും സമൂഹത്തിലെ അടിച്ചമർത്തപ്പെട്ടവരുടെ ശബ്ദമാകാനും കല ഒരു സാമൂഹിക പ്രവർത്തനമായി മാറുന്നു.",
+              "<strong>The Bronx Project:</strong> സമൂഹത്തിലെ വിവിധ കലാകാരന്മാരുമായുള്ള സംഭാഷണങ്ങളിലൂടെ സാമൂഹിക മാറ്റത്തിനുള്ള ഉപകരണമായി കലയെ മാറ്റിയ അനുഭവം.",
+              "<strong>Empathetic Curiosity:</strong> ആരോഗ്യ പ്രവർത്തകരിലും സാധാരണക്കാരിലും കലയുണ്ടാക്കുന്ന അനുഭാവപൂർണ്ണമായ മാറ്റങ്ങൾ."
+            ],
+            "examTip": "കല എങ്ങനെയാണ് ഒരു സോഷ്യൽ വർക്ക് ആയി മാറുന്നത് എന്നും, ആമി മൊറാലെസ് ലാറയുടെ നിരീക്ഷണങ്ങളും പരീക്ഷയ്ക്ക് ചോദ്യങ്ങളായി വരാൻ സാധ്യതയുള്ളവയാണ്."
           }
         ]
       },
@@ -971,7 +989,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Post-Independence Nehruvian-Mahalanobis Strategy: Heavy industrialization, import substitution, and public sector primacy.",
               "Path Dependence to Crisis: Structural rigidities, fiscal deficits, and balance of payments vulnerabilities precipitating the 1991 reforms."
             ],
-            "examTip": "University Exam Tip: 'Explain Path Dependence in India's economic history and how colonial extraction shaped post-independence policy choices'."
+            "examTip": "University Exam Tip: 'Explain Path Dependence in India's economic history and how colonial extraction shaped post-independence policy choices'.",
+            "thumbnail": "/thumbnails/indian-economy-m1-masterclass.jpg"
           },
           {
             "chapterNumber": "Chapter 01",
@@ -988,7 +1007,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഹരിതവിപ്ലവം (Green Revolution): ഭക്ഷ്യ സ്വയംപര്യാപ്തത കൈവരിക്കാൻ ഉയർന്ന വിളവ് തരുന്ന വിത്തുകളും (HYV seeds) രാസവളങ്ങളും ജലസേചനവും സംയോജിപ്പിച്ച സാങ്കേതിക മുന്നേറ്റം.",
               "സമ്മിശ്ര സമ്പദ്‌വ്യവസ്ഥ (Mixed Economy): പൊതുമേഖലയ്ക്ക് പ്രധാന പങ്കും ഒപ്പം സ്വകാര്യ മേഖലയ്ക്ക് നിയന്ത്രിത പങ്കാളിത്തവും നൽകിയ ഇന്ത്യൻ വികസന മാതൃക."
             ],
-            "examTip": "Calicut University Focus: 'Explain Dadabhai Naoroji's Drain of Wealth theory and evaluate the achievements of the Mahalanobis strategy in Indian Five-Year Plans'."
+            "examTip": "Calicut University Focus: 'Explain Dadabhai Naoroji's Drain of Wealth theory and evaluate the achievements of the Mahalanobis strategy in Indian Five-Year Plans'.",
+            "thumbnail": "/thumbnails/indian-economy-m1-ch1.jpg"
           },
           {
             "chapterNumber": "Chapter 02",
@@ -1005,7 +1025,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "അസംഘടിത മേഖലയുടെ ആധിപത്യം (Informal Sector): ഇന്ത്യയിലെ തൊഴിലാളികളുടെ 80-90 ശതമാനവും സാമൂഹിക സുരക്ഷിതത്വമില്ലാത്ത അസംഘടിത മേഖലയിൽ പണിയെടുക്കുന്നു.",
               "പ്രാദേശിക അസമത്വങ്ങൾ (Regional Disparities): ദക്ഷിണേന്ത്യൻ-പശ്ചിമേന്ത്യൻ സംസ്ഥാനങ്ങളും BIMARU സംസ്ഥാനങ്ങളും തമ്മിലുള്ള സാമ്പത്തിക-വികസന വിടവുകൾ."
             ],
-            "examTip": "Calicut University Focus: 'Critically analyze the phenomenon of Jobless Growth and Structural Imbalance in post-reform India'."
+            "examTip": "Calicut University Focus: 'Critically analyze the phenomenon of Jobless Growth and Structural Imbalance in post-reform India'.",
+            "thumbnail": "/thumbnails/indian-economy-m1-ch2.jpg"
           }
         ]
       },
@@ -1028,7 +1049,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സുരേഷ് തെണ്ടുൽക്കർ കമ്മിറ്റി (2009): കാലറിയിൽ നിന്ന് മാറി ആരോഗ്യം, വിദ്യാഭ്യാസം, വസ്ത്രം എന്നിവ ഉൾപ്പെടുത്തി പുതിയ ബാസ്കറ്റ് (Mixed Reference Period - MRP) രൂപീകരിച്ചു (ഗ്രാമങ്ങളിൽ ₹27/ദിനം, നഗരങ്ങളിൽ ₹33/ദിനം).",
               "സി. രംഗരാജൻ കമ്മിറ്റി (2014): പോഷകാഹാരം, പ്രോട്ടീൻ, കൊഴുപ്പ് എന്നിവ കണക്കിലെടുത്ത് ഉയർന്ന ദാരിദ്ര്യരേഖ നിർദ്ദേശിച്ചു (ഗ്രാമങ്ങളിൽ ₹32/ദിനം, നഗരങ്ങളിൽ ₹47/ദിനം)."
             ],
-            "examTip": "Calicut University Focus: 'Compare the methodology of the Suresh Tendulkar Committee with the Rangarajan Committee for poverty estimation in India'."
+            "examTip": "Calicut University Focus: 'Compare the methodology of the Suresh Tendulkar Committee with the Rangarajan Committee for poverty estimation in India'.",
+            "thumbnail": "/thumbnails/indian-economy-m2-ch3.jpg"
           },
           {
             "chapterNumber": "Chapter 04",
@@ -1045,7 +1067,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "3 പ്രധാന മാനങ്ങൾ: ആരോഗ്യം (പോഷകാഹാരം, ശിശുമരണനിരക്ക്, പ്രസവ ശുശ്രൂഷ), വിദ്യാഭ്യാസം (സ്കൂൾ പഠനവർഷങ്ങൾ, സ്കൂൾ ഹാജർ), ജീവിതനിലവാരം (പാചകവാതകം, ശുചിത്വം, കുടിവെള്ളം, വൈദ്യുതി, പാർപ്പിടം, ആസ്തികൾ, ബാങ്ക് അക്കൗണ്ട്).",
               "ഹെഡ്കൗണ്ട് അനുപാതവും ദാരിദ്ര്യ തീവ്രതയും: MPI = H × A (ദാരിദ്ര്യ ബാധിതരുടെ അനുപാതവും ദാരിദ്ര്യത്തിന്റെ തീവ്രതയും ഗുണിക്കുന്നു)."
             ],
-            "examTip": "Calicut University Focus: 'Explain the three dimensions and twelve indicators of NITI Aayog's National Multidimensional Poverty Index (MPI)'."
+            "examTip": "Calicut University Focus: 'Explain the three dimensions and twelve indicators of NITI Aayog's National Multidimensional Poverty Index (MPI)'.",
+            "thumbnail": "/thumbnails/indian-economy-m2-ch4.jpg"
           }
         ]
       },
@@ -1067,7 +1090,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഐഎംഎഫ് - ലോകബാങ്ക് വ്യവസ്ഥകളും ഘടനാപരമായ പരിഷ്കാരങ്ങളും: വായ്പ ലഭിക്കുന്നതിനായി രൂപയുടെ മൂല്യത്തകർച്ചയും (Devaluation) പുതിയ സാമ്പത്തിക നയങ്ങളും നടപ്പിലാക്കാൻ ഇന്ത്യ നിർബന്ധിതമായി.",
               "എൽപിജി മാതൃക (LPG Reforms 1991): ഉദാരവൽക്കരണം (Liberalization), സ്വകാര്യവൽക്കരണം (Privatization), ആഗോളവൽക്കരണം (Globalization) വഴി ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥ തുറന്നുകൊടുത്തു."
             ],
-            "examTip": "Calicut University Focus: 'Trace the genesis of the 1991 Balance of Payments crisis and evaluate how the pledging of gold catalyzed the LPG reforms'."
+            "examTip": "Calicut University Focus: 'Trace the genesis of the 1991 Balance of Payments crisis and evaluate how the pledging of gold catalyzed the LPG reforms'.",
+            "thumbnail": "/thumbnails/indian-economy-m3-ch5.jpg"
           },
           {
             "chapterNumber": "Chapter 06",
@@ -1084,7 +1108,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ധനകാര്യ കമ്മീഷൻ (Finance Commission - Article 280): കേന്ദ്രവും സംസ്ഥാനങ്ങളും തമ്മിലുള്ള നികുതി പങ്കിടലും ഗ്രാന്റുകളും നിശ്ചയിക്കുന്ന ഭരണഘടനാ സ്ഥാപനം.",
               "സെബി (SEBI): മൂലധന വിപണിയും ഓഹരി ഇടപാടുകളും നിയന്ത്രിക്കുകയും നിക്ഷേപകരുടെ താല്പര്യങ്ങൾ സംരക്ഷിക്കുകയും ചെയ്യുന്ന നിയന്ത്രണ ഏജൻസി."
             ],
-            "examTip": "Calicut University Focus: 'Differentiate between the Planning Commission and NITI Aayog. Explain the role of NITI Aayog in promoting Cooperative Federalism'."
+            "examTip": "Calicut University Focus: 'Differentiate between the Planning Commission and NITI Aayog. Explain the role of NITI Aayog in promoting Cooperative Federalism'.",
+            "thumbnail": "/thumbnails/indian-economy-m3-ch6.jpg"
           }
         ]
       },
@@ -1097,7 +1122,6 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · Involuntary, Disguised & NSSO Measures (English Deep Dive)",
             "duration": "08:55",
             "youtubeId": "C_QjoD92wNM",
-            "audioUrl": "",
             "language": "English",
             "studyPoints": [
               "Unemployment Definition: Involuntary joblessness of capable and willing individuals at prevailing wages.",
@@ -1106,7 +1130,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "13 Root Causes in India: Rapid population growth, 61% unirrigated farmland, decline of cottage industries, low labor mobility & defective planning.",
               "Eradication Policies: MGNREGA 2005 Right to Work (100 days), PMKVY skill training, Stand Up India (10L-1Cr loans for SC/ST/Women), and National Employment Policy (NEP) 2030."
             ],
-            "examTip": "Calicut University Focus: 'Explain Disguised Unemployment with examples and compare Usual Status, Weekly Status, and Daily Status measures of NSSO'."
+            "examTip": "Calicut University Focus: 'Explain Disguised Unemployment with examples and compare Usual Status, Weekly Status, and Daily Status measures of NSSO'.",
+            "thumbnail": "/thumbnails/indian-economy-m4.jpg"
           }
         ]
       }
@@ -1324,7 +1349,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "6:10",
             "youtubeId": "Mu1Ktkzr_ME",
             "videoUrl": "/micro-demand-review.html",
-            "thumbnail": "/thumbnails/micro-demand-review.png",
+            "thumbnail": "/thumbnails/micro-unit-1-bilingual.jpg",
             "studyPoints": [
               "ഡിമാൻഡ് എന്നത് വാങ്ങാനുള്ള ആഗ്രഹവും അതോടൊപ്പം വില നൽകാനുള്ള സാമ്പത്തിക ശേഷിയും (purchasing power) ചേർന്നതാണ്.",
               "മറ്റ് ഘടകങ്ങൾ സ്ഥിരമായിരിക്കുമ്പോൾ വില കൂടുമ്പോൾ ഡിമാൻഡ് കുറയുകയും വില കുറയുമ്പോൾ ഡിമാൻഡ് കൂടുകയും ചെയ്യുന്നു (Law of Demand).",
@@ -1359,31 +1384,33 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Shift in Supply Curve (വിതരണ വക്രത്തിലെ വ്യതിചലനവും വർദ്ധനവും കുറവും)",
               "Multiple Choice Questions Review (ഒന്നിലധികം തിരഞ്ഞെടുപ്പ് ചോദ്യങ്ങൾ)"
             ],
-            "examTip": "Remember that a movement along the supply curve is caused solely by the commodity's own price changes, whereas shifts in the entire supply curve are caused by non-price determinants like technology, input costs, and taxes."
+            "examTip": "Remember that a movement along the supply curve is caused solely by the commodity's own price changes, whereas shifts in the entire supply curve are caused by non-price determinants like technology, input costs, and taxes.",
+            "language": "English + Malayalam"
           },
           {
             "chapterNumber": "Unit 03",
             "title": "Market Equilibrium — Complete LMS Review",
-            "chapter": "All LMS sections, examples & MCQs · English terms/formulas + Malayalam explanation",
+            "chapter": "Module 1 · Unit 3 · English + മലയാളം · Complete LMS explanations, examples & MCQs",
             "duration": "15:50",
             "youtubeId": "zJsY7Sbx2To",
             "videoUrl": "/micro-unit3-review.html",
             "thumbnail": "/thumbnails/micro-unit-3-bilingual.jpg",
             "studyPoints": [
-              "Market Equilibrium: Qd equals Qs",
-              "Equilibrium Price: P star and Q star",
-              "Shortage Equation: Shortage equals Qd minus Qs",
-              "Surplus Equation: Surplus equals Qs minus Qd",
-              "Demand Function: Dx equals f of Px, Py, T, Y, A, N, Ep, and U",
-              "Supply Function: SX equals f of PX, PZ, T, C, and GP",
-              "Algebraic Demand: Qd equals 160 minus 40p",
-              "Algebraic Supply: Qs equals 50 plus 15p",
-              "Market Demand: QDx equals 120,000 minus 20,000 Px",
-              "Market Supply: QSx equals 20,000 Px",
-              "Equilibrium Solution: Px equals 3 dollars",
-              "Market Equilibrium Quantity: 60,000 units"
+              "Market Equilibrium (വിപണി സന്തുലിതാവസ്ഥ): Qd = Qs — ചോദനത്തിന്റെ അളവും പ്രദാനത്തിന്റെ അളവും തുല്യമാകുന്ന സ്ഥിതി.",
+              "Equilibrium Price & Quantity (സന്തുലിത വിലയും അളവും): P* and Q* — ചോദന–പ്രദാന വക്രങ്ങൾ കൂടിച്ചേരുന്ന ബിന്ദുവിലെ വിലയും അളവും.",
+              "Shortage (അധിക ചോദനം): Qd − Qs — ചോദനം പ്രദാനത്തേക്കാൾ കൂടുതലായാൽ വില ഉയരാനുള്ള സമ്മർദം ഉണ്ടാകുന്നു.",
+              "Surplus (അധിക പ്രദാനം): Qs − Qd — പ്രദാനം ചോദനത്തേക്കാൾ കൂടുതലായാൽ വില കുറയാനുള്ള സമ്മർദം ഉണ്ടാകുന്നു.",
+              "Demand Function (ചോദന ധർമ്മം): Dx = f(Px, Py, T, Y, A, N, Ep, U) — സ്വന്തം വില, ബന്ധപ്പെട്ട സാധനങ്ങളുടെ വില, അഭിരുചി, വരുമാനം, പരസ്യം, ഉപഭോക്താക്കളുടെ എണ്ണം, വിലപ്രതീക്ഷകൾ, മറ്റ് ഘടകങ്ങൾ എന്നിവ ചോദനത്തെ ബാധിക്കുന്നു.",
+              "Supply Function (പ്രദാന ധർമ്മം): SX = f(PX, PZ, T, C, GP) — വില, ബന്ധപ്പെട്ട ഉൽപ്പന്നങ്ങളുടെ വില, സാങ്കേതികവിദ്യ, ഉൽപ്പാദനച്ചെലവ്, സർക്കാർ നയം എന്നിവ പ്രദാനത്തെ ബാധിക്കുന്നു.",
+              "Worked Example (കണക്കുദാഹരണം): Qd = 160 − 40p; Qs = 50 + 15p. Qd = Qs ആക്കുമ്പോൾ p = 2, Q = 80 ലഭിക്കുന്നു.",
+              "Market Aggregation (വിപണി ചോദനവും പ്രദാനവും): വ്യക്തിഗത അളവുകൾ ഒരേ വിലയിൽ കൂട്ടിച്ചേർക്കുന്നു. QDx = 120,000 − 20,000Px; QSx = 20,000Px.",
+              "Market Equilibrium Solution (വിപണി സന്തുലിത പരിഹാരം): QDx = QSx ആക്കുമ്പോൾ Px = $3, Q = 60,000 units ലഭിക്കുന്നു.",
+              "Demand Shifts (ചോദന വക്രത്തിലെ മാറ്റങ്ങൾ): പ്രദാനം സ്ഥിരമായിരിക്കെ ചോദനം കൂടിയാൽ വിലയും അളവും കൂടും; ചോദനം കുറഞ്ഞാൽ രണ്ടും കുറയും.",
+              "Supply Shifts (പ്രദാന വക്രത്തിലെ മാറ്റങ്ങൾ): ചോദനം സ്ഥിരമായിരിക്കെ പ്രദാനം കൂടിയാൽ വില കുറയും, അളവ് കൂടും; പ്രദാനം കുറഞ്ഞാൽ വില കൂടും, അളവ് കുറയും.",
+              "Simultaneous Shifts & MCQs (ഒരേസമയം വക്രങ്ങൾ മാറുന്നതും ചോദ്യങ്ങളും): ചോദനവും പ്രദാനവും കൂടിയാൽ അളവ് കൂടും; വിലയുടെ മാറ്റം അവയുടെ ആപേക്ഷിക മാറ്റത്തെ ആശ്രയിച്ചിരിക്കും. എല്ലാ LMS MCQs-ഉം ഉത്തരങ്ങളോടൊപ്പം ഉൾപ്പെടുത്തിയിരിക്കുന്നു."
             ],
-            "examTip": "Always remember that market equilibrium occurs strictly where quantity demanded equals quantity supplied, with no surplus or shortage creating any further pressure on price."
+            "examTip": "Exam Tip (പരീക്ഷാ സൂചന): സന്തുലിതാവസ്ഥ കണ്ടെത്താൻ Qd = Qs ഉപയോഗിക്കുക. Shortage വില ഉയർത്തുകയും Surplus വില കുറയ്ക്കുകയും ചെയ്യുന്നതെങ്ങനെ എന്ന് ഗ്രാഫിലൂടെ വിശദീകരിക്കുക. ഓരോ കണക്കുദാഹരണത്തിലെയും സമവാക്യങ്ങൾ പ്രത്യേകം ഉപയോഗിക്കുക.",
+            "language": "English + Malayalam"
           }
         ]
       },
