@@ -996,25 +996,10 @@
     });
 
         function viewPdf(url, title) {
-      const cleanUrl = (url || '').split('#')[0];
-      const targetUrl = 'study-guide-reader.html?file=' + encodeURIComponent(cleanUrl + '&fullscreen=1') + '&tab=malayalam_reading' + (title ? '&title=' + encodeURIComponent(title) : '');
+      currentPdfCleanUrl = (url || '').split('#')[0];
+      currentPdfCleanTitle = title || '';
+      const targetUrl = 'study-guide-reader.html?file=' + encodeURIComponent(currentPdfCleanUrl) + '&tab=hindi_reading&fullscreen=1' + (title ? '&title=' + encodeURIComponent(title) : '');
       window.open(targetUrl, '_blank', 'noopener');
-    }
-      const modalTitle = document.getElementById('modalTitle');
-      if (modalTitle) modalTitle.innerText = title;
-
-      const frame = document.getElementById('pdfFrame');
-      const readerUrl = 'study-guide-reader.html?file=' + encodeURIComponent(currentPdfCleanUrl + '&fullscreen=1') + '&tab=reading';
-      if (frame) frame.src = readerUrl;
-
-      const extBtn = document.getElementById('modalExternalBtn');
-      if (extBtn) extBtn.remove();
-      const fastBtn = document.getElementById('modalFastToggle');
-      if (fastBtn) fastBtn.remove();
-
-      const modal = document.getElementById('viewerModal');
-      if (modal) modal.style.display = 'block';
-      document.body.style.overflow = 'hidden';
     }
 
     function closeViewer() {

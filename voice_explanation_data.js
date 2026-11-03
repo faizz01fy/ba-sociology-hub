@@ -1344,7 +1344,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "14:51",
             "youtubeId": "CylKbnNZtm0",
             "videoUrl": "/micro-unit2-review.html",
-            "thumbnail": "/thumbnails/micro-unit-2-review.png",
+            "thumbnail": "/thumbnails/micro-unit-2-bilingual.jpg",
             "studyPoints": [
               "Supply Definition (ഏതെങ്കിലും സാധനത്തിന്റെ അളവ്, വില, സമയം)",
               "Supply Function (SX = f(PX, PZ, T, C, GP))",
@@ -1368,7 +1368,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "15:50",
             "youtubeId": "zJsY7Sbx2To",
             "videoUrl": "/micro-unit3-review.html",
-            "thumbnail": "/thumbnails/micro-unit-3-review.png",
+            "thumbnail": "/thumbnails/micro-unit-3-bilingual.jpg",
             "studyPoints": [
               "Market Equilibrium: Qd equals Qs",
               "Equilibrium Price: P star and Q star",

@@ -2147,9 +2147,9 @@
 </header>
 <!-- Filter Buttons -->
 <nav aria-label="Module filters" class="filter-wrapper">
-<button class="filter-btn" data-mod="all" onclick="filterModule('all', this)" style="--mod-c1:#4338ca; --mod-c2:#6366f1; --mod-border:#a5b4fc; --mod-bg:#eef2ff; --mod-glow:rgba(99, 102, 241, 0.55); --mod-delay:0.0s;">📚 എല്ലാ അധ്യായങ്ങളും (All Modules · Full Syllabus)</button>
+<button class="filter-btn active" data-mod="all" onclick="filterModule('all', this)" style="--mod-c1:#4338ca; --mod-c2:#6366f1; --mod-border:#a5b4fc; --mod-bg:#eef2ff; --mod-glow:rgba(99, 102, 241, 0.55); --mod-delay:0.0s;">📚 എല്ലാ അധ്യായങ്ങളും (All Modules · Full Syllabus)</button>
 <button class="filter-btn" data-mod="syllabus" onclick="filterModule('syllabus', this)" style="display: none !important;">📋 സിലബസ് രൂപരേഖ (Syllabus Structure)</button>
-<button class="filter-btn active" data-mod="mod1" onclick="filterModule('mod1', this)" style="--mod-c1:#059669; --mod-c2:#10b981; --mod-border:#6ee7b7; --mod-bg:#ecfdf5; --mod-glow:rgba(16, 185, 129, 0.55); --mod-delay:1.7s;">മൊഡ്യൂൾ 1: സോഷ്യോളജി ആമുഖം (Module 1: Introducing Sociology)</button>
+<button class="filter-btn" data-mod="mod1" onclick="filterModule('mod1', this)" style="--mod-c1:#059669; --mod-c2:#10b981; --mod-border:#6ee7b7; --mod-bg:#ecfdf5; --mod-glow:rgba(16, 185, 129, 0.55); --mod-delay:1.7s;">മൊഡ്യൂൾ 1: സോഷ്യോളജി ആമുഖം (Module 1: Introducing Sociology)</button>
 <button class="filter-btn" data-mod="mod2" onclick="filterModule('mod2', this)" style="--mod-c1:#7c3aed; --mod-c2:#8b5cf6; --mod-border:#c4b5fd; --mod-bg:#f5f3ff; --mod-glow:rgba(139, 92, 246, 0.55); --mod-delay:2.6s;">മൊഡ്യൂൾ 2: സോഷ്യോളജി പ്രയോഗം (Module 2: Practicing Sociology)</button>
 <button class="filter-btn" data-mod="mod3" onclick="filterModule('mod3', this)" style="--mod-c1:#ea580c; --mod-c2:#f97316; --mod-border:#fdba74; --mod-bg:#fff7ed; --mod-glow:rgba(249, 115, 22, 0.55); --mod-delay:3.4s;">മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Module 3: Individual &amp; Society)</button>
 <button class="filter-btn" data-mod="mod4" onclick="filterModule('mod4', this)" style="--mod-c1:#be123c; --mod-c2:#f43f5e; --mod-border:#fda4af; --mod-bg:#fff1f2; --mod-glow:rgba(244, 63, 94, 0.55); --mod-delay:4.3s;">മൊഡ്യൂൾ 4: സോഷ്യോളജിയും സമൂഹവും (Module 4: Sociology and Society)</button>
@@ -2212,7 +2212,7 @@
 </div>
 </section>
 <!-- ==================== MODULE 2 ==================== -->
-<section class="module-section" data-mod="mod2" style="display: none;">
+<section class="module-section" data-mod="mod2" style="display: block;">
 <div class="module-header">
 <h2>മൊഡ്യൂൾ 2: പ്രാക്റ്റീസിങ് സോഷ്യോളജി (Practicing Sociology)</h2>
 <span class="module-tag">Module 2</span>
@@ -2239,7 +2239,7 @@
 </div>
 </section>
 <!-- ==================== MODULE 3 ==================== -->
-<section class="module-section" data-mod="mod3" style="display: none;">
+<section class="module-section" data-mod="mod3" style="display: block;">
 <div class="module-header">
 <h2>മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Individual and Society)</h2>
 <span class="module-tag">Module 3 · 6 Chapters</span>
@@ -2361,7 +2361,7 @@
 </div>
 </section>
 <!-- ==================== MODULE 4 ==================== -->
-<section class="module-section" data-mod="mod4" style="display: none;">
+<section class="module-section" data-mod="mod4" style="display: block;">
 <div class="module-header">
 <h2>മൊഡ്യൂൾ 4: സോഷ്യോളജിയും സമൂഹവും (Sociology and Society)</h2>
 <span class="module-tag">Module 4 · 4 Chapters</span>
@@ -2446,7 +2446,7 @@
 </div>
 </section>
 <!-- ==================== MODULE 5 ==================== -->
-<section class="module-section" data-mod="mod5" style="display: none;">
+<section class="module-section" data-mod="mod5" style="display: block;">
 <div class="module-header">
 <h2>മൊഡ്യൂൾ 5: പ്രായോഗിക ഫീൽഡ് അസസ്സ്മെന്റ് (Perceiving Social Dynamics)</h2>
 <span class="module-tag">Module 5 · Practical</span>
@@ -2498,30 +2498,18 @@
 <script>
 
     function filterModule(modId, btn) {
-
       const buttons = document.querySelectorAll('.filter-btn');
-
       buttons.forEach(b => b.classList.remove('active'));
-
       
-
       if (btn) {
-
         btn.classList.add('active');
-
       } else {
-
         const found = document.querySelector(`.filter-btn[data-mod="${modId}"]`) || 
-
                       document.querySelector(`.filter-btn[onclick*="${modId}"]`);
-
         if (found) found.classList.add('active');
-
       }
 
-
-
-            const sections = document.querySelectorAll('.module-section');
+      const sections = document.querySelectorAll('.module-section');
       sections.forEach(sec => {
         if (sec.getAttribute('data-mod') === 'syllabus') {
           sec.style.display = 'none';
@@ -2534,21 +2522,19 @@
         }
       });
 
-
-
       // Clear or re-filter chapters when switching modules
-
       const searchInput = document.getElementById('searchInput');
-
       if (searchInput && searchInput.value.trim() !== '') {
-
         filterChapters();
-
+      } else {
+        const cards = document.querySelectorAll('.chapter-card');
+        cards.forEach(card => card.style.display = 'grid');
       }
 
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', '#' + modId);
+      }
     }
-
-
 
     function filterChapters() {
 
@@ -2630,28 +2616,11 @@
     });
 
         function viewPdf(url, title) {
-      const cleanUrl = (url || '').split('#')[0];
-      const targetUrl = 'study-guide-reader.html?file=' + encodeURIComponent(cleanUrl + '&fullscreen=1') + '&tab=malayalam_reading' + (title ? '&title=' + encodeURIComponent(title) : '');
+      currentPdfCleanUrl = (url || '').split('#')[0];
+      currentPdfCleanTitle = title || '';
+      const targetUrl = 'study-guide-reader.html?file=' + encodeURIComponent(currentPdfCleanUrl) + '&tab=malayalam_reading&fullscreen=1' + (title ? '&title=' + encodeURIComponent(title) : '');
       window.open(targetUrl, '_blank', 'noopener');
     }
-      const modalTitle = document.getElementById('modalTitle');
-      if (modalTitle) modalTitle.innerText = title;
-
-      const frame = document.getElementById('pdfFrame');
-      const readerUrl = 'study-guide-reader.html?file=' + encodeURIComponent(currentPdfCleanUrl) + '&tab=malayalam_reading&fullscreen=1';
-      if (frame) frame.src = readerUrl;
-
-      const extBtn = document.getElementById('modalExternalBtn');
-      if (extBtn) extBtn.remove();
-      const fastBtn = document.getElementById('modalFastToggle');
-      if (fastBtn) fastBtn.remove();
-
-      const modal = document.getElementById('viewerModal');
-      if (modal) modal.style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    }
-
-
 
     function closeViewer() {
 
@@ -2770,14 +2739,14 @@
     (function initModuleActivation() {
       function activate() {
         const hash = window.location.hash ? window.location.hash.replace('#', '') : '';
-        let targetMod = 'mod1';
-        if (['mod1', 'mod2', 'mod3', 'mod4', 'mod5'].includes(hash)) {
+        let targetMod = 'all';
+        if (['mod1', 'mod2', 'mod3', 'mod4', 'mod5', 'all'].includes(hash)) {
           targetMod = hash;
         }
 
         const targetBtn = document.querySelector(`.filter-btn[data-mod="${targetMod}"]`) || 
                           document.querySelector(`.filter-btn[onclick*="${targetMod}"]`) || 
-                          document.querySelector('.filter-btn[data-mod="mod1"]') ||
+                          document.querySelector('.filter-btn[data-mod="all"]') ||
                           document.querySelector('.filter-btn');
         if (typeof filterModule === 'function' && targetBtn) {
           filterModule(targetMod, targetBtn);
@@ -2785,15 +2754,12 @@
       }
 
       if (document.readyState === 'loading') {
-
         document.addEventListener('DOMContentLoaded', activate);
-
       } else {
-
         activate();
-
       }
 
+      window.addEventListener('hashchange', activate);
     })();
 
   </script>
