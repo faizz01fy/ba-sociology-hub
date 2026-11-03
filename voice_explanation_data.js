@@ -9,6 +9,21 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 01: ഗദ്യവും വിവർത്തനവും",
         "videos": [
           {
+            "chapterNumber": "Masterclass",
+            "title": "മലയാള പഠന സഹായി: സമഗ്ര വിശകലനം (ഭാഗം എ)",
+            "chapter": "Academic Hub Special · മലയാളം മൊഡ്യൂൾ 1 സമഗ്ര പഠന സഹായി",
+            "duration": "16:20",
+            "youtubeId": "aeHwgnDHqr8",
+            "audioUrl": "",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>ഗദ്യ സാഹിത്യ വികാസം:</strong> മലയാള ഗദ്യത്തിന്റെ ചരിത്രപരമായ പരിണാമവും ആധുനിക സാഹിത്യ പ്രസ്ഥാനങ്ങളും.",
+              "<strong>വിവർത്തന തത്വങ്ങൾ:</strong> വിവർത്തനത്തിന്റെ സിദ്ധാന്തപരമായ ചട്ടക്കൂടും പ്രായോഗിക രീതികളും.",
+              "<strong>പരീക്ഷാ സംഗ്രഹം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. മലയാളം ഒന്നാം സെമസ്റ്റർ പ്രധാന വിഷയങ്ങൾ."
+            ],
+            "examTip": "കാലിക്കറ്റ് സർവ്വകലാശാല പരീക്ഷയ്ക്ക് മലയാളം ഗദ്യത്തിലെയും വിവർത്തനത്തിലെയും പ്രധാന ചോദ്യങ്ങൾ പ്രത്യേകം ശ്രദ്ധിക്കുക."
+          },
+          {
             "chapterNumber": "Chapter 01",
             "title": "ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ",
             "chapter": "കലാമണ്ഡലം ഹൈദരാലി · സംഗ്രഹം, നോട്ടുകൾ & ചർച്ച",
@@ -83,10 +98,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 03",
-            "title": "ഇവനെക്കൂടി",
-            "chapter": "സച്ചിദാനന്ദൻ · ആധുനിക കവിതാ പഠനം",
+            "title": "ഇവനെക്കൂടി (ആധുനിക കവിതാ പഠനം)",
+            "chapter": "കെ. സച്ചിദാനന്ദൻ · സമഗ്ര കവിതാ വിശകലനം & പരീക്ഷാ സഹായി",
             "duration": "9:30",
-            "youtubeId": "",
+            "youtubeId": "LvtGhxe4n7I",
             "videoUrl": "/videos/malayalam_chapter_ivanekkoodi_video.mp4",
             "language": "Malayalam",
             "studyPoints": [
@@ -132,7 +147,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 1
+    "totalVideos": 2
   },
   "english": {
     "name": "English",
@@ -1025,9 +1040,31 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Calicut University Focus: 'Differentiate between the Planning Commission and NITI Aayog. Explain the role of NITI Aayog in promoting Cooperative Federalism'."
           }
         ]
+      },
+      {
+        "moduleName": "MODULE 04: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (UNEMPLOYMENT IN INDIA · ENGLISH DEEP DIVE)",
+        "videos": [
+          {
+            "chapterNumber": "Module 04",
+            "title": "Module 4: Unemployment in India | Inquisitive Podcast Deep Dive & Debate",
+            "chapter": "Academic Hub Special · Involuntary, Disguised & NSSO Measures (English Deep Dive)",
+            "duration": "08:55",
+            "youtubeId": "C_QjoD92wNM",
+            "audioUrl": "",
+            "language": "English",
+            "studyPoints": [
+              "Unemployment Definition: Involuntary joblessness of capable and willing individuals at prevailing wages.",
+              "Types of Unemployment: Open, Disguised (zero marginal productivity), Seasonal, Educated, Technological & Structural.",
+              "NSSO Measuring Framework: Usual Status (chronic), Current Weekly Status (1 hr/week), and Current Daily Status (comprehensive day-by-day).",
+              "13 Root Causes in India: Rapid population growth, 61% unirrigated farmland, decline of cottage industries, low labor mobility & defective planning.",
+              "Eradication Policies: MGNREGA 2005 Right to Work (100 days), PMKVY skill training, Stand Up India (10L-1Cr loans for SC/ST/Women), and National Employment Policy (NEP) 2030."
+            ],
+            "examTip": "Calicut University Focus: 'Explain Disguised Unemployment with examples and compare Usual Status, Weekly Status, and Daily Status measures of NSSO'."
+          }
+        ]
       }
     ],
-    "totalVideos": 7
+    "totalVideos": 8
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",
@@ -1651,10 +1688,20 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "ഭൂപ്രകൃതി എഴുതിയ കേരളത്തിന്റെ ചരിത്രം (History of Kerala Written by Geography)",
-            "chapter": "Academic Hub Special · ഭൂമിശാസ്ത്രപരമായ സവിശേഷതകളും ചരിത്ര സ്വാധീനവും",
-            "duration": "19:35",
-            "youtubeId": "Ie5Iu69-cKQ"
+            "title": "ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Module 1: Landscape & Environment) | Inquisitive Podcast Deep Dive",
+            "chapter": "കിര & ബോഡി (Kira & Bodi) · സമ്പൂർണ്ണ സംവാദ വിശകലനം, 12 രംഗങ്ങൾ, ഭൗമശാസ്ത്രം & പരീക്ഷാ സഹായി",
+            "duration": "15:34",
+            "youtubeId": "HOj2cQpGpIg",
+            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>ഭൂമിശാസ്ത്രപരമായ അതിരുകൾ:</strong> കേരളം 38,863 ചതുരശ്ര കിലോമീറ്റർ വിസ്തൃതിയുള്ള അസമഭുജ ത്രികോണാകൃതിയിലുള്ള (Scalene Triangle) ഭൂപ്രദേശമാണ്. കിഴക്ക് സഹ്യാദ്രിയും പടിഞ്ഞാറ് 560 കി.മീ. അറബിക്കടലും കേരളത്തെ ഒരു സ്വതന്ത്ര ഭൗമ-സാംസ്കാരിക മേഖലയാക്കി നിലനിർത്തി.",
+              "<strong>അഞ്ച് പ്രധാന ഭൂവിഭാഗങ്ങൾ:</strong> ഉയർന്ന പർവ്വത ശിഖരങ്ങൾ (>1800m, 0.64%), മലനാട് (600–1800m, 20.35%), ഇടനാട് (300–600m, 8.44%), താഴ്ന്ന സമതലങ്ങൾ (10–300m, 54.17%), തീരസമതലങ്ങളും കായലുകളും (<10m, 16.40%).",
+              "<strong>പാലക്കാട് ചുരവും സ്വാഭാവിക പാതകളും:</strong> പശ്ചിമഘട്ടത്തിലെ 30 കി.മീ. വിസ്തൃതമായ പാലക്കാട് ചുരം ചേരസാമ്രാജ്യ വികാസത്തിനും, മൈസൂർ പടയോട്ടങ്ങൾക്കും (ഹൈദരാലി കോട്ട 1776), തമിഴ്-കേരള വാണിജ്യ-സാംസ്കാരിക വിനിമയത്തിനും വഴിയൊരുക്കി.",
+              "<strong>നദികളും കായലുകളും:</strong> 44 നദികൾ (41 പടിഞ്ഞാറോട്ടും 3 കിഴക്കോട്ടും - കബനി, ഭവാനി, പാമ്പാർ). പെരിയാർ (244 കി.മീ.), ഭാരതപ്പുഴ (209 കി.മീ.). വേമ്പനാട് (83 കി.മീ.), അഷ്ടമുടി കായലുകൾ ഉൾനാടൻ ഗതാഗതത്തെ നയിച്ചു.",
+              "<strong>മൺസൂണും ആഗോള സുഗന്ധവ്യഞ്ജന വ്യാപാരവും:</strong> ഇടവപ്പാതിയും തുലാവർഷവും കൃഷിയെയും, ഹിപ്പാലസ് മൺസൂൺ കാറ്റുകൾ റോമൻ-അറബ്-ചൈനീസ് കപ്പലുകളെയും ആകർഷിച്ചു. കറുത്ത പൊന്നായ കുരുമുളകും ഊർ നഗരത്തിലെ മെസൊപ്പൊട്ടേമിയൻ കൊട്ടാരങ്ങളിൽ കണ്ടെത്തിയ കേരളത്തിലെ തേക്ക് തടിയും ലോകപ്രശസ്തമാണ്."
+            ],
+            "examTip": "സെക്ഷൻ എ (ജിയോമോർഫോളജി, സഹ്യാദ്രി, ചുരങ്ങൾ, ലാറ്ററൈറ്റ്), സെക്ഷൻ ബി (നദികളും ജനവാസവും, പത്തിനം മണ്ണുകൾ), സെക്ഷൻ സി (ഭൂപ്രകൃതി കേരള ചരിത്രത്തിൽ ചെലുത്തിയ സ്വാധീനം - 10 മാർക്ക് ഉപന്യാസം) പ്രത്യേകം പരിശീലിക്കുക."
           }
         ]
       },
