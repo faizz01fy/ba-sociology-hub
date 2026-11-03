@@ -1900,17 +1900,18 @@
       await renderPage(targetSec, anchorPage === 1 ? firstPage : null);
       if (currentGeneration !== generation) return;
 
-      if (resumeSec.dataset.rendered === 'true') {
+      const resumeSec = targetSec;
+      if (targetSec && targetSec.dataset.rendered === 'true') {
         el('status').textContent = pdf.numPages + ' pages · Scroll or use ‹ › buttons to read';
         // Pre-warm immediate adjacent pages only (1 ahead, 1 behind)
-        if (sections[resumePage]) {
-          enqueuePage(sections[resumePage]);
+        if (sections[anchorPage]) {
+          enqueuePage(sections[anchorPage]);
         }
-        if (resumePage > 1 && sections[resumePage - 2]) {
-          enqueuePage(sections[resumePage - 2]);
+        if (anchorPage > 1 && sections[anchorPage - 2]) {
+          enqueuePage(sections[anchorPage - 2]);
         }
-      } else if (resumeSec.dataset.rendering !== 'true') {
-        el('status').textContent = 'Could not display page ' + resumePage + '. Tap Retry to try again.';
+      } else if (targetSec && targetSec.dataset.rendering !== 'true') {
+        el('status').textContent = 'Could not display page ' + anchorPage + '. Tap Retry to try again.';
       }
 
       // Efficient view observer for on-demand lazy rendering
