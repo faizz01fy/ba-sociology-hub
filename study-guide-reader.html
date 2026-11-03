@@ -63,7 +63,12 @@
 
   <style>
     * { box-sizing: border-box; }
-    html { overflow-anchor: none; -webkit-text-size-adjust: 100%; }
+    html {
+      overflow-anchor: none;
+      -webkit-text-size-adjust: 100%;
+      overscroll-behavior: none;
+      overscroll-behavior-y: none;
+    }
     body {
       margin: 0;
       background: #eef2ef;
@@ -72,6 +77,12 @@
       font-size: 14px;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
+      overscroll-behavior: none;
+      overscroll-behavior-y: none;
+    }
+    main, #reader {
+      overscroll-behavior: none;
+      overscroll-behavior-y: none;
     }
     
     /* Desktop Toolbar */
@@ -1739,19 +1750,25 @@
       }
     }
 
-    async function render() {
+    async function render(keepScroll = true) {
       if (!pdf) return;
       const currentGeneration = ++generation;
-      const resumePage = Math.max(1, Math.min(pdf.numPages, pageNumber));
+      const resumePage = Math.max(1, Math.min(pdf.numPages, pageNumber || 1));
+
+      // Capture exact current scroll position before re-rendering
+      let pageOffsetRatio = 0;
+      if (keepScroll && sections && sections[resumePage - 1]) {
+        const sec = sections[resumePage - 1];
+        const rect = sec.getBoundingClientRect();
+        if (rect.height > 0) {
+          pageOffsetRatio = Math.max(0, -rect.top) / rect.height;
+        }
+      }
 
       if (observer) observer.disconnect();
       if (pageTrackingObserver) pageTrackingObserver.disconnect();
       cancelAllActiveTasks();
       pageCanvasCache.clear();
-
-      el('reader').replaceChildren();
-      sections = [];
-      el('status').textContent = 'Loading page ' + resumePage + ' of ' + pdf.numPages + '…';
 
       const firstPage = await pdf.getPage(1);
       if (currentGeneration !== generation) return;
@@ -1759,37 +1776,61 @@
       const isMobile = window.innerWidth <= 768;
       const estimate = firstPage.getViewport({ scale: fitScale(firstPage) });
 
-      // Synchronously generate placeholder cards using DocumentFragment (single reflow)
-      const fragment = document.createDocumentFragment();
-      for (let number = 1; number <= pdf.numPages; number++) {
-        const section = document.createElement('section');
-        section.className = 'pdf-page';
-        section.dataset.page = number;
-        section.setAttribute('aria-label', 'Page ' + number);
-        section.style.width = estimate.width + 'px';
-        section.style.minHeight = (estimate.height + 24) + 'px';
+      // If sections already exist, update dimensions in place without tearing down DOM or causing refreshing flash
+      if (sections && sections.length === pdf.numPages) {
+        sections.forEach(section => {
+          section.style.width = estimate.width + 'px';
+          section.style.minHeight = (estimate.height + 24) + 'px';
+          section.dataset.rendered = 'false';
+          section.dataset.rendering = 'false';
+          const canvas = section.querySelector('canvas');
+          if (canvas) canvas.remove();
+          const loading = section.querySelector('.page-loading');
+          if (loading) loading.style.display = 'block';
+        });
+      } else {
+        el('reader').replaceChildren();
+        sections = [];
+        el('status').textContent = 'Loading page ' + resumePage + ' of ' + pdf.numPages + '…';
 
-        const label = document.createElement('div');
-        label.className = 'page-label';
-        label.textContent = 'Page ' + number + ' of ' + pdf.numPages;
+        // Synchronously generate placeholder cards using DocumentFragment (single reflow)
+        const fragment = document.createDocumentFragment();
+        for (let number = 1; number <= pdf.numPages; number++) {
+          const section = document.createElement('section');
+          section.className = 'pdf-page';
+          section.dataset.page = number;
+          section.setAttribute('aria-label', 'Page ' + number);
+          section.style.width = estimate.width + 'px';
+          section.style.minHeight = (estimate.height + 24) + 'px';
 
-        const loading = document.createElement('div');
-        loading.className = 'page-loading';
-        loading.textContent = 'Loading page ' + number + '…';
+          const label = document.createElement('div');
+          label.className = 'page-label';
+          label.textContent = 'Page ' + number + ' of ' + pdf.numPages;
 
-        section.append(label, loading);
-        fragment.append(section);
-        sections.push(section);
+          const loading = document.createElement('div');
+          loading.className = 'page-loading';
+          loading.textContent = 'Loading page ' + number + '…';
+
+          section.append(label, loading);
+          fragment.append(section);
+          sections.push(section);
+        }
+        el('reader').append(fragment);
       }
-      el('reader').append(fragment);
 
       pageNumber = resumePage;
       controls();
-      pageNumber = resumePage;
-      controls();
+
+      // Immediately restore exact scroll position to the resume page with zero error
+      const resumeSec = sections[resumePage - 1];
+      if (resumeSec) {
+        resumeSec.scrollIntoView({ block: 'start', behavior: 'instant' });
+        if (pageOffsetRatio > 0 && pageOffsetRatio < 1) {
+          window.scrollBy(0, pageOffsetRatio * resumeSec.offsetHeight);
+        }
+      }
 
       // Render the current/resume page immediately with zero lag
-      const resumeSec = sections[resumePage - 1];
       await renderPage(resumeSec, resumePage === 1 ? firstPage : null);
       if (currentGeneration !== generation) return;
 
@@ -2046,8 +2087,8 @@
           readerEl.style.transform = '';
           readerEl.style.transformOrigin = '';
           readerEl.style.willChange = '';
-          await render();
-        }, 190);
+          await render(true);
+        }, 80);
       } else {
         readerEl.style.transition = 'transform 0.18s ease-out';
         readerEl.style.transform = 'scale(1)';
@@ -2129,12 +2170,18 @@
     if (el('mobileFullscreenBtn')) el('mobileFullscreenBtn').onclick = toggleFullscreenMode;
     if (el('openExternalBtn')) el('openExternalBtn').onclick = () => window.open(location.href, '_blank');
 
-    // Resize listener
+    // Resize listener (guards against mobile address-bar resize & pinch jitter)
     let resizeTimer;
+    let lastRenderWidth = window.innerWidth;
     window.addEventListener('resize', () => {
+      // Ignore mobile address-bar height changes
+      if (Math.abs(window.innerWidth - lastRenderWidth) < 25) return;
+      lastRenderWidth = window.innerWidth;
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        if (el('zoom').value === 'fit' || el('zoom').value === 'read') render();
+        if (el('zoom').value === 'fit' || el('zoom').value === 'read') {
+          render(true);
+        }
       }, 200);
     });
 
