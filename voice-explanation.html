@@ -278,15 +278,23 @@
 
       display: flex;
 
+      align-items: center;
+
       gap: 10px;
 
       overflow-x: auto;
 
-      padding-bottom: 8px;
+      overflow-y: hidden;
+
+      padding: 4px 4px 10px 4px;
 
       margin-bottom: 24px;
 
       scrollbar-width: thin;
+
+      -webkit-overflow-scrolling: touch;
+
+      scroll-behavior: smooth;
 
     }
 
@@ -304,7 +312,7 @@
 
       gap: 9px;
 
-      padding: 11px 20px;
+      padding: 10px 18px;
 
       border-radius: 14px;
 
@@ -318,7 +326,13 @@
 
       font-weight: 800 !important;
 
-      white-space: nowrap;
+      white-space: nowrap !important;
+
+      flex: 0 0 auto !important;
+
+      flex-shrink: 0 !important;
+
+      min-width: max-content !important;
 
       transition: all 0.22s ease;
 
@@ -364,9 +378,15 @@
 
       letter-spacing: -0.01em;
 
+      white-space: nowrap !important;
+
     }
 
     .subj-badge {
+
+      flex-shrink: 0 !important;
+
+      white-space: nowrap !important;
 
       display: inline-flex;
 
@@ -399,85 +419,7 @@
 
 
     /* ==============================================================
-
-
-
-/* Mobile responsive tweaks */
-
-@media (max-width: 600px) {
-
-  /* Stack top navbar items vertically */
-
-  .top-navbar {
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 8px;
-
-    padding: 10px 12px;
-
-  }
-
-  .nav-left, .nav-right {
-
-    justify-content: center;
-
-    width: 100%;
-
-  }
-
-  .back-btn {
-
-    width: 100%;
-
-    justify-content: center;
-
-  }
-
-  .search-bar-wrap {
-
-    max-width: 100%;
-
-    margin-top: 8px;
-
-  }
-
-  .subject-tabs-scroll {
-
-    gap: 6px;
-
-    padding-bottom: 6px;
-
-  }
-
-  .subj-tab-btn {
-
-    padding: 9px 12px;
-
-    font-size: 13px;
-
-    flex: 1 1 auto;
-
-    min-width: 80px;
-
-  }
-
-  .container {
-
-    margin: 12px auto;
-
-    padding: 0 8px;
-
-  }
-
-}
-
-
-
        Distinct Vibrant Color Themes for ALL Voice Explanation Tabs
-
        ============================================================== */
 
 
@@ -1101,85 +1043,7 @@
 
 
     /* ==============================================================
-
-
-
-/* Mobile responsive tweaks */
-
-@media (max-width: 600px) {
-
-  /* Stack top navbar items vertically */
-
-  .top-navbar {
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 8px;
-
-    padding: 10px 12px;
-
-  }
-
-  .nav-left, .nav-right {
-
-    justify-content: center;
-
-    width: 100%;
-
-  }
-
-  .back-btn {
-
-    width: 100%;
-
-    justify-content: center;
-
-  }
-
-  .search-bar-wrap {
-
-    max-width: 100%;
-
-    margin-top: 8px;
-
-  }
-
-  .subject-tabs-scroll {
-
-    gap: 6px;
-
-    padding-bottom: 6px;
-
-  }
-
-  .subj-tab-btn {
-
-    padding: 9px 12px;
-
-    font-size: 13px;
-
-    flex: 1 1 auto;
-
-    min-width: 80px;
-
-  }
-
-  .container {
-
-    margin: 12px auto;
-
-    padding: 0 8px;
-
-  }
-
-}
-
-
-
        Keyframes for Inactive Tabs Interval Blinking (Double-Pulse Alert)
-
        ============================================================== */
 
     @keyframes blinkSociology {
@@ -3498,6 +3362,62 @@
 
       }
 
+      .subject-tabs-scroll {
+
+        gap: 8px;
+
+        padding: 4px 2px 8px 2px;
+
+        margin-bottom: 16px;
+
+        -webkit-overflow-scrolling: touch;
+
+        scroll-snap-type: x proximity;
+
+      }
+
+      .subj-tab-btn {
+
+        padding: 8px 14px;
+
+        font-size: 13px;
+
+        gap: 7px;
+
+        flex: 0 0 auto !important;
+
+        flex-shrink: 0 !important;
+
+        min-width: max-content !important;
+
+        white-space: nowrap !important;
+
+        scroll-snap-align: start;
+
+      }
+
+      .subj-tab-title {
+
+        white-space: nowrap !important;
+
+      }
+
+      .subj-badge {
+
+        flex-shrink: 0 !important;
+
+        white-space: nowrap !important;
+
+      }
+
+      .container {
+
+        margin: 12px auto;
+
+        padding: 0 10px;
+
+      }
+
     }
 
 
@@ -4975,6 +4895,16 @@
           btn.classList.toggle('active', isActive);
 
           btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+
+          if (isActive) {
+
+            try {
+
+              btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+            } catch(e) {}
+
+          }
 
         });
 
