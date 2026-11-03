@@ -13,28 +13,28 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ",
             "chapter": "കലാമണ്ഡലം ഹൈദരാലി · സംഗ്രഹം, നോട്ടുകൾ & ചർച്ച",
             "duration": "15",
-            "youtubeId": "_AH-L2-hUdw"
+            "youtubeId": ""
           },
           {
             "chapterNumber": "Chapter 02",
             "title": "സഞ്ചാരസാഹിത്യം: കിഴവനും കൊക്കാത്തുവായും",
             "chapter": "എസ്.കെ. പൊറ്റെക്കാട്ട് · യാത്രാവിവരണം & വിശകലനം",
             "duration": "18",
-            "youtubeId": "AXKs5HdTUTw"
+            "youtubeId": ""
           },
           {
             "chapterNumber": "Chapter 03",
             "title": "അഭിമുഖം: മാധവിക്കുട്ടിയുമായി നടത്തിയ അഭിമുഖം",
             "chapter": "അക്ബർ കക്കട്ടിൽ · സാഹിത്യ ദർശനം",
             "duration": "16",
-            "youtubeId": "0_peGPXEbrc"
+            "youtubeId": ""
           },
           {
             "chapterNumber": "Chapter 04",
             "title": "പോഡ്കാസ്റ്റ് / വിവർത്തനം: അർമേനിയയിലെ ശോകഗാനം",
             "chapter": "സജി മാർക്കോസ് · വിവർത്തന തത്വങ്ങൾ",
             "duration": "20",
-            "youtubeId": "GQOXm5O42R4"
+            "youtubeId": ""
           }
         ]
       },

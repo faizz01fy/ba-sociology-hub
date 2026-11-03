@@ -2197,7 +2197,10 @@
               if (skipBackBtn) {
                 skipBackBtn.addEventListener('click', (e) => {
                   e.stopPropagation();
-                  if (v.audioUrl) {
+                  const vid = frameWrap ? frameWrap.querySelector('video') : null;
+                  if (vid) {
+                    vid.currentTime = Math.max(0, vid.currentTime - 10);
+                  } else if (v.audioUrl) {
                     nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - 10);
                   }
                 });
@@ -2206,7 +2209,10 @@
               if (skipFwdBtn) {
                 skipFwdBtn.addEventListener('click', (e) => {
                   e.stopPropagation();
-                  if (v.audioUrl) {
+                  const vid = frameWrap ? frameWrap.querySelector('video') : null;
+                  if (vid) {
+                    vid.currentTime = Math.min(vid.duration || 9999, vid.currentTime + 10);
+                  } else if (v.audioUrl) {
                     nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + 10);
                   }
                 });
@@ -2218,6 +2224,8 @@
                   speedIndex = (speedIndex + 1) % speeds.length;
                   const newSpeed = speeds[speedIndex];
                   speedBtn.textContent = newSpeed + 'x';
+                  const vid = frameWrap ? frameWrap.querySelector('video') : null;
+                  if (vid) vid.playbackRate = newSpeed;
                   if (v.audioUrl) {
                     nativeAudio.playbackRate = newSpeed;
                   } else if (v.youtubeId) {
