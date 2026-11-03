@@ -9,246 +9,37 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 01: LANDSCAPE & ENVIRONMENT (ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും)",
         "videos": [
           {
-            "chapterNumber": "Part 01",
-            "title": "കേരളത്തിന്റെ ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Kerala Landscape & Environment)",
-            "chapter": "ഭൂമിശാസ്ത്രപരമായ അതിരുകൾ, സവിശേഷതകൾ & ചരിത്രപരമായ പ്രസക്തി",
+            "chapterNumber": "Chapter 01",
+            "title": "ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Module 1: Landscape & Environment) | Inquisitive Podcast Deep Dive",
+            "chapter": "ഭൗമശാസ്ത്രം & പരീക്ഷാ സഹായി",
             "duration": "15:34",
-            "thumbnail": "/thumbnails/history_keralam_mod1/01_Kerala_Landscape_and_Environment.png",
             "youtubeId": "HOj2cQpGpIg",
             "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
+            "thumbnail": "/thumbnails/history_keralam_mod1/15_Module_1_Landscape_and_Environment.png",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>ഭൂമിശാസ്ത്രപരമായ സ്ഥാനം:</strong> കേരളം 38,863 ചതുരശ്ര കിലോമീറ്റർ വിസ്തൃതിയുള്ള അസമഭുജ ത്രികോണാകൃതിയിലുള്ള (Scalene Triangle) ഭൂപ്രദേശമാണ്. വടക്കൻ അക്ഷാംശം 8°17'30\" മുതൽ 12°27'40\" വരെയും കിഴക്കൻ രേഖാംശം 74°51'57\" മുതൽ 77°24'47\" വരെയും വ്യാപിച്ചുകിടക്കുന്നു.",
-              "<strong>സ്വാഭാവിക അതിരുകൾ:</strong> കിഴക്ക് സഹ്യാദ്രിയും പടിഞ്ഞാറ് 560 കി.മീ. അറബിക്കടലും കേരളത്തെ ബാഹ്യ അധിനിവേശങ്ങളിൽ നിന്ന് സംരക്ഷിക്കുകയും സമുദ്രവാണിജ്യത്തിന് തുറന്ന വാതിലൊരുക്കുകയും ചെയ്തു.",
-              "<strong>അതിർത്തി പ്രദേശങ്ങൾ:</strong> വടക്കും വടക്കുകിഴക്കും കർണാടകയിലെ ദക്ഷിണ കന്നഡ, കുടക്, മൈസൂർ ജില്ലകളും, കിഴക്കും തെക്കുകിഴക്കും തമിഴ്‌നാട്ടിലെ നീലഗിരി, കോയമ്പത്തൂർ, മധുര, രാമനാഥപുരം, തിരുനെൽവേലി, കന്യാകുമാരി ജില്ലകളും അതിർത്തി പങ്കിടുന്നു."
+              "<strong>ഭൂമിശാസ്ത്രപരമായ അതിരുകൾ:</strong> കേരളം 38,863 ചതുരശ്ര കിലോമീറ്റർ വിസ്തൃതിയുള്ള അസമഭുജ ത്രികോണാകൃതിയിലുള്ള (Scalene Triangle) ഭൂപ്രദേശമാണ്. കിഴക്ക് സഹ്യാദ്രിയും പടിഞ്ഞാറ് 560 കി.മീ. അറബിക്കടലും കേരളത്തെ ഒരു സ്വതന്ത്ര ഭൗമ-സാംസ്കാരിക മേഖലയാക്കി നിലനിർത്തി.",
+              "<strong>അഞ്ച് പ്രധാന ഭൂവിഭാഗങ്ങൾ:</strong> ഉയർന്ന പർവ്വത ശിഖരങ്ങൾ (>1800m, 0.64%), മലനാട് (600–1800m, 20.35%), ഇടനാട് (300–600m, 8.44%), താഴ്ന്ന സമതലങ്ങൾ (10–300m, 54.17%), തീരസമതലങ്ങളും കായലുകളും (<10m, 16.40%).",
+              "<strong>പാലക്കാട് ചുരവും സ്വാഭാവിക പാതകളും:</strong> പശ്ചിമഘട്ടത്തിലെ 30 കി.മീ. വിസ്തൃതമായ പാലക്കാട് ചുരം ചേരസാമ്രാജ്യ വികാസത്തിനും, മൈസൂർ പടയോട്ടങ്ങൾക്കും (ഹൈദരാലി കോട്ട 1776), തമിഴ്-കേരള വാണിജ്യ-സാംസ്കാരിക വിനിമയത്തിനും വഴിയൊരുക്കി.",
+              "<strong>നദികളും കായലുകളും:</strong> 44 നദികൾ (41 പടിഞ്ഞാറോട്ടും 3 കിഴക്കോട്ടും - കബനി, ഭവാനി, പാമ്പാർ). പെരിയാർ (244 കി.മീ.), ഭാരതപ്പുഴ (209 കി.മീ.). വേമ്പനാട് (83 കി.മീ.), അഷ്ടമുടി കായലുകൾ ഉൾനാടൻ ഗതാഗതത്തെ നയിച്ചു.",
+              "<strong>മൺസൂണും ആഗോള സുഗന്ധവ്യഞ്ജന വ്യാപാരവും:</strong> ഇടവപ്പാതിയും തുലാവർഷവും കൃഷിയെയും, ഹിപ്പാലസ് മൺസൂൺ കാറ്റുകൾ റോമൻ-അറബ്-ചൈനീസ് കപ്പലുകളെയും ആകർഷിച്ചു. കറുത്ത പൊന്നായ കുരുമുളകും ഊർ നഗരത്തിലെ മെസൊപ്പൊട്ടേമിയൻ കൊട്ടാരങ്ങളിൽ കണ്ടെത്തിയ കേരളത്തിലെ തേക്ക് തടിയും ലോകപ്രശസ്തമാണ്."
             ],
-            "examTip": "കേരളത്തിന്റെ ഭൂപ്രകൃതി ചരിത്രത്തെ എങ്ങനെ നിർണ്ണയിച്ചു എന്ന 10 മാർക്ക് ഉപന്യാസ ചോദ്യത്തിന് ഈ ആമുഖ വിവരങ്ങൾ കൃത്യമായി അവതരിപ്പിക്കുക."
-          },
-          {
-            "chapterNumber": "Part 02",
-            "title": "കേരളം ഒരു സവിശേഷ ഭൂപ്രദേശം (Kerala as a Geographical Region)",
-            "chapter": "ഭൗമശാസ്ത്ര അതിരുകൾ, വിസ്തൃതി & അസമഭുജ ത്രികോണാകൃതി",
-            "duration": "12:45",
-            "thumbnail": "/thumbnails/history_keralam_mod1/02_Kerala_as_Geographical_Region.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>അസമഭുജ ത്രികോണം:</strong> കേരളത്തിന്റെ ആകൃതി ഒരു സ്കെലീൻ ട്രയാംഗിൾ (Scalene Triangle) പോലെയാണ്. 560 കി.മീ. തീരപ്രദേശം അടിത്തറയായും സഹ്യാദ്രി അതിന്റെ ശീർഷമായും നിലകൊള്ളുന്നു.",
-              "<strong>വീതിയിലെ വ്യത്യാസങ്ങൾ:</strong> വടക്കൻ മേഖലയിലും തെക്കൻ മേഖലയിലും വീതി കുറവും, മധ്യകേരളത്തിൽ (പാലക്കാട് ചുരത്തിന് സമീപം) 124 കി.മീ. വരെ കൂടിയ വീതിയും കാണപ്പെടുന്നു. ഏറ്റവും കുറഞ്ഞ വീതി 11 കി.മീ. മാത്രമാണ്.",
-              "<strong>പ്രാദേശിക സ്വയംപര്യാപ്തത:</strong> ഈ സവിശേഷ രൂപം കേരളത്തിലെ കാർഷിക-സാമൂഹിക സംസ്കാരത്തിന് ഒരു സ്വതന്ത്ര സ്വഭാവം നൽകി."
-            ],
-            "examTip": "കേരളത്തിന്റെ ഭൗമശാസ്ത്ര രൂപവും (Scalene Triangle) അതിന്റെ ചരിത്രപരമായ പ്രതിഫലനങ്ങളും പ്രത്യേകം ഓർമ്മിക്കുക."
-          },
-          {
-            "chapterNumber": "Part 03",
-            "title": "അഞ്ച് പ്രധാന ഭൂവിഭാഗങ്ങൾ (Five Major Physiographic Zones)",
-            "chapter": "ഉയരവ്യത്യാസവും ചരിവും അടിസ്ഥാനമാക്കിയുള്ള ശാസ്ത്രീയ വിഭജനം",
-            "duration": "14:10",
-            "thumbnail": "/thumbnails/history_keralam_mod1/03_Five_Major_Physiographic_Zones.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>ഉയർന്ന പർവ്വത ശിഖരങ്ങൾ:</strong> >1800 മീറ്റർ ഉയരമുള്ള പർവ്വത ശിഖരങ്ങൾ കേരളത്തിന്റെ ആകെ വിസ്തൃതിയുടെ 0.64% വരുന്നു.",
-              "<strong>മലനാട് (Highlands):</strong> 600 മുതൽ 1800 മീറ്റർ വരെ ഉയരമുള്ള മലയോര മേഖല 20.35% പ്രദേശം ഉൾക്കൊള്ളുന്നു.",
-              "<strong>ഇടനാട് (Midlands):</strong> 300 മുതൽ 600 മീറ്റർ വരെ ഉയരമുള്ള പ്രദേശം 8.44% വരുന്നു.",
-              "<strong>താഴ്ന്ന സമതലങ്ങൾ (Lowlands):</strong> 10 മുതൽ 300 മീറ്റർ വരെയുള്ള പ്രദേശം കേരളത്തിന്റെ 54.17% (പകുതിയിലധികം) വിസ്തൃതി കവരുന്നു.",
-              "<strong>തീരസമതലങ്ങളും കായലുകളും:</strong> 10 മീറ്ററിൽ താഴെയുള്ള തീരദേശ മേഖല 16.40% വിസ്തൃതിയുള്ളതാണ്."
-            ],
-            "examTip": "പരീക്ഷയിൽ 5 ഭൂവിഭാഗങ്ങളുടെ ഉയരവും ശതമാന കണക്കുകളും (0.64%, 20.35%, 8.44%, 54.17%, 16.40%) കൃത്യമായി എഴുതുക."
-          },
-          {
-            "chapterNumber": "Part 04",
-            "title": "ഉയർന്ന മലനിരകളും മലനാടും (Mountains & Highlands)",
-            "chapter": "സഹ്യാദ്രിയുടെ ഭൗമശാസ്ത്ര ഘടന, ശിലാരൂപീകരണങ്ങൾ & പീഠഭൂമികൾ",
-            "duration": "13:20",
-            "thumbnail": "/thumbnails/history_keralam_mod1/04_Mountains_and_Highlands.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>സഹ്യാദ്രിയുടെ ഘടന:</strong> ഗ്രാനുലൈറ്റുകൾ (Granulites), ചാർണോക്കൈറ്റുകൾ (Charnockites), വയനാട്/അട്ടപ്പാടി ഷിസ്റ്റുകൾ തുടങ്ങിയ അതിപുരാതന രൂപാന്തര ശിലകളാൽ (Metamorphic Rocks) നിർമ്മിതം.",
-              "<strong>പ്രധാന കൊടുമുടികൾ:</strong> ആനമുടി (2695 മീറ്റർ - ദക്ഷിണേന്ത്യയിലെ ഏറ്റവും ഉയർന്ന കൊടുമുടി), മീശപ്പുലിമല, അഗസ്ത്യകൂടം.",
-              "<strong>ആന്തരിക പീഠഭൂമികൾ:</strong> വയനാട് പീഠഭൂമി (700-1000m), നെല്ലിയാമ്പതി, മൂന്നാർ പീഠഭൂമികൾ. ഇവ കാപ്പി, തേയില, ഏലം കൃഷികൾക്ക് അനുയോജ്യമാണ്."
-            ],
-            "examTip": "ആനമുടിയുടെ ഉയരവും (2695m) സഹ്യാദ്രിയുടെ പാറകളുടെ ഘടനയും (Metamorphic Rocks) ഷോർട്ട് ആൻസർ ചോദ്യങ്ങൾക്ക് പഠിക്കുക."
-          },
-          {
-            "chapterNumber": "Part 05",
-            "title": "ഇടനാട്: ലാറ്ററൈറ്റ് കുന്നുകളും ചരിവുകളും (Midlands - 300 to 600m)",
-            "chapter": "വെട്ടുകല്ല് രൂപീകരണം, കാർഷിക സംസ്കാരം & ജനവാസ വികാസം",
-            "duration": "11:50",
-            "thumbnail": "/thumbnails/history_keralam_mod1/05_Midlands.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>ഭൗമ സവിശേഷത:</strong> കുന്നിൻ ചരിവുകളും താഴ്വരകളും ഇടകലർന്ന പ്രദേശം; കേരള വിസ്തൃതിയുടെ 8.44%.",
-              "<strong>ലാറ്ററൈറ്റ് മണ്ണും വെട്ടുകല്ലും:</strong> മഴയും ഉഷ്ണവും മാറിമാറി വരുന്ന കാലാവസ്ഥ വെട്ടുകല്ല് (Laterite) കുന്നുകൾക്ക് കാരണമായി. കെട്ടിട നിർമ്മാണത്തിനും പടവുകളായുള്ള കൃഷിക്കും ഇത് പ്രയോജനപ്പെട്ടു.",
-              "<strong>കാർഷിക വിളകൾ:</strong> തെങ്ങ്, അടയ്ക്ക, കുരുമുളക്, കിഴങ്ങുവർഗ്ഗങ്ങൾ എന്നിവ സമൃദ്ധമായി വളരുന്ന പ്രദേശം."
-            ],
-            "examTip": "ഫ്രാൻസിസ് ബുക്കാനൻ കേരളത്തിൽ വെച്ച് കണ്ടെത്തി നാമകരണം ചെയ്ത ലാറ്ററൈറ്റ് (Laterite - ഇഷ്‌ടികക്കല്ല്) മണ്ണിന്റെ രൂപീകരണവും പ്രാധാന്യവും മനസ്സിലാക്കുക."
-          },
-          {
-            "chapterNumber": "Part 06",
-            "title": "താഴ്ന്ന പ്രദേശങ്ങൾ അഥവാ സമതലങ്ങൾ (Lowlands - 10 to 300m)",
-            "chapter": "കേരളത്തിന്റെ കാർഷിക നട്ടെല്ല്, നെൽവയലുകൾ & ജനസാന്ദ്രത",
-            "duration": "12:15",
-            "thumbnail": "/thumbnails/history_keralam_mod1/06_Lowlands.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>വിസ്തൃതിയുടെ ഭൂരിഭാഗം:</strong> കേരളത്തിന്റെ 54.17% പ്രദേശവും ഉൾപ്പെടുന്ന ഏറ്റവും വിശാലമായ ഫിസിയോഗ്രാഫിക് മേഖല.",
-              "<strong>നദീതട എക്കൽ മണ്ണ്:</strong> 44 നദികൾ ഒഴുക്കിക്കൊണ്ടുവരുന്ന ഫലഭൂയിഷ്ഠമായ എക്കൽ മണ്ണ് (Alluvial Soil) പുഞ്ചകൃഷിക്കും നെൽപ്പാടങ്ങൾക്കും അടിത്തറയിട്ടു.",
-              "<strong>ചരിത്രപരമായ ജനവാസം:</strong> ആദ്യകാല ഗ്രാമങ്ങളും ക്ഷേത്ര സങ്കേതങ്ങളും നഗര കേന്ദ്രങ്ങളും വികസിച്ചത് ഈ സമതലങ്ങളിലാണ്."
-            ],
-            "examTip": "കേരള ചരിത്രത്തിലെ ഏറ്റവും ഉയർന്ന ജനസാന്ദ്രതയ്ക്കും ഗ്രാമ രൂപീകരണത്തിനും ലോലാൻഡ്സ് എങ്ങനെ കാരണമായി എന്ന് വിവരിക്കുക."
-          },
-          {
-            "chapterNumber": "Part 07",
-            "title": "തീരസമതലങ്ങളും കായലുകളും (Coastal Plains & Lagoons - <10m)",
-            "chapter": "560 കി.മീ. തീരപ്രദേശം, അഴിമുഖങ്ങൾ & കായൽ ശൃംഖലകൾ",
-            "duration": "13:40",
-            "thumbnail": "/thumbnails/history_keralam_mod1/07_Coastal_Plains_and_Lagoons.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>തീരദേശ ഭൂപ്രകൃതി:</strong> 16.40% വിസ്തൃതിയുള്ള പ്രദേശം; സമുദ്രനിരപ്പിൽ നിന്നും 10 മീറ്ററിൽ താഴെ മാത്രം ഉയരം.",
-              "<strong>കായലുകളുടെ വിന്യാസം:</strong> വേമ്പനാട് കായൽ (83 കി.മീ. നീളം - ഇന്ത്യയിലെ ഏറ്റവും വലിയ തണ്ണീർത്തടങ്ങളിൽ ഒന്ന്), അഷ്ടമുടി കായൽ, ശാസ്താംകോട്ട കായൽ (ശുദ്ധജല തടാകം).",
-              "<strong>ഉൾനാടൻ ജലപാത:</strong> റോഡുകൾ വികസിക്കുന്നതിന് മുൻപ് നൂറ്റാണ്ടുകളോളം ചരക്കുനീക്കത്തിനും യാത്രയ്ക്കും ഉപയോഗിച്ച കെട്ടുവള്ളങ്ങളുടെ പ്രകൃതിദത്ത ഹൈവേ."
-            ],
-            "examTip": "വേമ്പനാട്, അഷ്ടമുടി കായലുകളുടെ സ്ഥാനവും കേരളത്തിന്റെ വാണിജ്യ ഗതാഗതത്തിൽ അവ വഹിച്ച പങ്കും വ്യക്തമാക്കുക."
-          },
-          {
-            "chapterNumber": "Part 08",
-            "title": "പാരിസ്ഥിതിക മതിൽ - പശ്ചിമഘട്ടം (Ecological Barrier: The Sahyadri)",
-            "chapter": "പ്രകൃതിദത്ത കോട്ട, ചുരങ്ങൾ & കിഴക്കൻ-പടിഞ്ഞാറൻ ചരിവിലെ വൈരുദ്ധ്യങ്ങൾ",
-            "duration": "14:50",
-            "thumbnail": "/thumbnails/history_keralam_mod1/08_Ecological_Barrier.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>പ്രകൃതിദത്ത കോട്ട:</strong> മൗര്യ, ഗുപ്ത, മുഗൾ സാമ്രാജ്യങ്ങളുടെ നേരിട്ടുള്ള അധിനിവേശത്തിൽ നിന്ന് കേരളത്തെ സംരക്ഷിച്ച പശ്ചിമഘട്ട വൻമതിൽ.",
-              "<strong>പാലക്കാട് ചുരം (Palghat Gap):</strong> പശ്ചിമഘട്ടത്തിലെ 30 കി.മീ. വിസ്തൃതമായ പ്രധാന വിടവ്. ചേരന്മാരുടെ കരവഴിയുള്ള വ്യാപാരത്തിനും ഹൈദരാലിയുടെയും ടിപ്പുവിന്റെയും സൈനിക നീക്കങ്ങൾക്കും തമിഴ് കുടിയേറ്റങ്ങൾക്കും വഴിയൊരുക്കി.",
-              "<strong>മറ്റു ചുരങ്ങൾ:</strong> താമരശ്ശേരി ചുരം (വയനാട്), പെരമ്പാടി ചുരം (കണ്ണൂർ-കുടക്), ആര്യങ്കാവ് ചുരം (കൊല്ലം-മധുര), ബോഡിനായ്ക്കന്നൂർ ചുരം, ആരുവാമൊഴി ചുരം."
-            ],
-            "examTip": "പാലക്കാട് ചുരവും ആര്യങ്കാവ് ചുരവും കേരള-തമിഴ് വാണിജ്യ, സാംസ്കാരിക വിനിമയത്തിൽ ചെലുത്തിയ സ്വാധീനം വിശകലനം ചെയ്യുക."
-          },
-          {
-            "chapterNumber": "Part 09",
-            "title": "സമുദ്ര കവാടവും വിദേശ വാണിജ്യവും (Maritime Gateway & Ocean Trade)",
-            "chapter": "അറബിക്കടൽ, മുസിരിസ് തുറമുഖം & ആഗോള വ്യാപാര ബന്ധങ്ങൾ",
-            "duration": "15:10",
-            "thumbnail": "/thumbnails/history_keralam_mod1/09_Maritime_Gateway.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>തുറന്ന സമുദ്രതീരം:</strong> 560 കി.മീറ്റർ കടൽത്തീരം ബാഹ്യലോകവുമായുള്ള വ്യാപാരത്തിന് കവാടമായി മാറി.",
-              "<strong>പുരാതന തുറമുഖങ്ങൾ:</strong> മുസിരിസ് (കൊടുങ്ങല്ലൂർ/പട്ടണം), തിണ്ടിസ് (പൊന്നാനി/കടലുണ്ടി), നെൽകിന്ദ (നിരണത്തിനടുത്ത്), ബറക്കേ (പുറക്കാട്), വിഴിഞ്ഞം.",
-              "<strong>ആഗോള വാണിജ്യ സംസ്കാരം:</strong> ഫൊനീഷ്യൻ, ഈജിപ്ഷ്യൻ, ബാബിലോണിയൻ, റോമൻ, അറബ്, ചൈനീസ്, യൂറോപ്യൻ വ്യാപാരികളുടെ സ്ഥിരം കേന്ദ്രമായി കേരളം മാറിയ ചരിത്രം."
-            ],
-            "examTip": "പെരിപ്ലസ് (Periplus of the Erythraean Sea), പ്ലിനി എന്നിവർ രേഖപ്പെടുത്തിയ മുസിരിസ് തുറമുഖത്തിന്റെ സവിശേഷതകൾ പഠിക്കുക."
-          },
-          {
-            "chapterNumber": "Part 10",
-            "title": "കാലാവസ്ഥയും പരിസ്ഥിതിയും (Climate & Monsoon Dynamics)",
-            "chapter": "ഇടവപ്പാതി (SW Monsoon), തുലാവർഷം (NE Monsoon) & ഹിപ്പാലസ് കാറ്റുകൾ",
-            "duration": "13:05",
-            "thumbnail": "/thumbnails/history_keralam_mod1/10_Climate_and_Environment.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>ഇടവപ്പാതി (തെക്കുപടിഞ്ഞാറൻ മൺസൂൺ):</strong> ജൂൺ മുതൽ ഓഗസ്റ്റ് വരെ കേരളത്തിൽ കനത്ത മഴ നൽകുന്ന മൺസൂൺ; കാർഷിക വിതയ്ക്കും നദികളുടെ ജലസമ്പത്തിനും കാരണം.",
-              "<strong>തുലാവർഷം (വടക്കുകിഴക്കൻ മൺസൂൺ):</strong> ഒക്ടോബർ-നവംബർ മാസങ്ങളിൽ ഇടിമിന്നലോടെ ലഭിക്കുന്ന മഴ; രണ്ടാം വിളവെടുപ്പിനെ സഹായിക്കുന്നു.",
-              "<strong>ഹിപ്പാലസ് കാറ്റുകൾ (Hippalus Monsoon):</strong> എ.ഡി. ഒന്നാം നൂറ്റാണ്ടിൽ മൺസൂൺ കാറ്റുകളുടെ ദിശ മനസ്സിലാക്കി റോമൻ കപ്പലുകൾ 40 ദിവസത്തിനകം കേരള തീരത്ത് എത്തിയ വിപ്ലവം."
-            ],
-            "examTip": "ഹിപ്പാലസ് കാറ്റുകളും റോമൻ കപ്പലുകളുടെ യാത്രാരീതികളും പ്രാചീന കേരള വാണിജ്യത്തെ എങ്ങനെ മാറ്റിമറിച്ചു എന്ന് പഠിക്കുക."
-          },
-          {
-            "chapterNumber": "Part 11",
-            "title": "ജൈവവൈവിധ്യവും വനസമ്പത്തും (Biodiversity & Natural Wealth)",
-            "chapter": "വനവിഭവങ്ങൾ, തേക്ക് തടികൾ, കുരുമുളക് & വന്യജീവി വൈവിധ്യം",
-            "duration": "12:30",
-            "thumbnail": "/thumbnails/history_keralam_mod1/11_Biodiversity.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>സുഗന്ധവ്യഞ്ജനങ്ങളുടെ പറുദീസ:</strong> കറുത്ത പൊന്നായ കുരുമുളക് (Black Gold), ഏലം, കറുവപ്പട്ട, ഇഞ്ചി എന്നിവ ലോകവിപണിയെ ആകർഷിച്ചു.",
-              "<strong>കപ്പൽ നിർമ്മാണ തടികൾ:</strong> മെസൊപ്പൊട്ടേമിയയിലെ ഊർ നഗരത്തിലും ഈജിപ്ഷ്യൻ പിരമിഡുകളിലും വരെ കേരളത്തിലെ തേക്ക് തടികൾ കണ്ടെത്തിയിട്ടുണ്ട്. നിലമ്പൂർ തേക്ക് പ്രശസ്തമാണ്.",
-              "<strong>നിത്യഹരിത വനങ്ങൾ:</strong> സൈലന്റ് വാലി ഉൾപ്പെടെയുള്ള സംരക്ഷിത മഴക്കാടുകളും പശ്ചിമഘട്ടത്തിലെ അപൂർവ്വ ജൈവവൈവിധ്യവും."
-            ],
-            "examTip": "കേരളത്തിലെ വനസമ്പത്തും കുരുമുളക് വ്യാപാരവും എങ്ങനെയാണ് യൂറോപ്യൻ കൊളോണിയൽ കടന്നുകയറ്റത്തിന് വഴിവെച്ചതെന്ന് വിലയിരുത്തുക."
-          },
-          {
-            "chapterNumber": "Part 12",
-            "title": "പരിസ്ഥിതി മലിനീകരണവും ആഘാതവും (Pollution & Environmental Impact)",
-            "chapter": "നദീ തടങ്ങളുടെ ശോഷണം, മണലൂറ്റ്, വനനശീകരണം & മണ്ണൊലിപ്പ്",
-            "duration": "11:45",
-            "thumbnail": "/thumbnails/history_keralam_mod1/12_Pollution_and_Its_Impact.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>നദികളുടെ പ്രതിസന്ധി:</strong> അനിയന്ത്രിതമായ മണലൂറ്റും മാലിന്യ നിക്ഷേപവും കാരണം പെരിയാർ, ഭാരതപ്പുഴ തുടങ്ങിയ ജീവനദികൾ നേരിടുന്ന ജലക്ഷാമവും ആവാസവ്യവസ്ഥാ നാശവും.",
-              "<strong>ഭൂവിനിയോഗ മാറ്റങ്ങൾ:</strong> മലയോരങ്ങളിലെ തോട്ടവിളകളുടെ വ്യാപനവും ക്വാറികളും പ്രകൃതിദുരന്തങ്ങൾക്ക് (ഉരുൾപൊട്ടൽ, മണ്ണിടിച്ചിൽ) വഴിയൊരുക്കുന്നു.",
-              "<strong>തീരദേശ ശോഷണം:</strong> കണ്ടൽക്കാടുകളുടെ നാശവും തീരശോഷണവും സമുദ്രതീരത്തെ ബാധിക്കുന്ന ആഘാതങ്ങൾ."
-            ],
-            "examTip": "കേരളത്തിന്റെ പരിസ്ഥിതി ചരിത്രത്തിലെ ആധുനിക പ്രതിസന്ധികളും ചരിത്രപരമായ പാഠങ്ങളും തമ്മിലുള്ള ബന്ധം ചർച്ച ചെയ്യുക."
-          },
-          {
-            "chapterNumber": "Part 13",
-            "title": "പരിസ്ഥിതി സംരക്ഷണ പാഠങ്ങൾ (Environmental Conservation)",
-            "chapter": "പരമ്പരാഗത കാവുകൾ, നീർത്തട സംരക്ഷണം & ആധുനിക പ്രസ്ഥാനങ്ങൾ",
-            "duration": "12:10",
-            "thumbnail": "/thumbnails/history_keralam_mod1/13_Conservation.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>സർപ്പക്കാവുകളും വനസംരക്ഷണവും:</strong> കാവുകൾ കേരളത്തിന്റെ പരമ്പരാഗത ജൈവവൈവിധ്യ സംരക്ഷണ തുരുത്തുകളായിരുന്നു. ഓരോ കാവും ഒരു ചെറിയ മഴക്കാടിന് തുല്യമാണ്.",
-              "<strong>നീർത്തട സംരക്ഷണം:</strong> നെൽപ്പാടങ്ങളും കുളങ്ങളും കായലുകളും ഭൂഗർഭജല സ്രോതസ്സുകളെ സംരക്ഷിച്ച പ്രാചീന സംവിധാനങ്ങൾ.",
-              "<strong>സൈലന്റ് വാലി പ്രസ്ഥാനം:</strong> പരിസ്ഥിതി സംരക്ഷണത്തിനായി കേരളം നടത്തിയ ജനകീയ പോരാട്ടങ്ങളുടെ ഉത്തമ മാതൃക."
-            ],
-            "examTip": "കേരളത്തിലെ പരമ്പരാഗത കാവുകളുടെ (Sacred Groves) പാരിസ്ഥിതിക ധർമ്മത്തെക്കുറിച്ച് കുറിപ്പെഴുതുക."
-          },
-          {
-            "chapterNumber": "Part 14",
-            "title": "സുസ്ഥിര ജീവിതരീതിയും ചരിത്രവും (Sustainable Living & Heritage)",
-            "chapter": "തനതു കൃഷിമുറകൾ, വാസ്തുവിദ്യ & പാരിസ്ഥിതിക സമന്വയം",
-            "duration": "13:15",
-            "thumbnail": "/thumbnails/history_keralam_mod1/14_Sustainable_Living.png",
-            "youtubeId": "HOj2cQpGpIg",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>പരമ്പരാഗത വാസ്തുവിദ്യ:</strong> കനത്ത മഴയെ പ്രതിരോധിക്കുന്ന ചരിഞ്ഞ മേൽക്കൂരകളും വെട്ടുകല്ലും തടിയും ഉപയോഗിച്ചുള്ള പ്രകൃതിസൗഹൃദ നിർമ്മാണ രീതികൾ.",
-              "<strong>കൈപ്പാട് കൃഷിയും പൊക്കാളിയും:</strong> തീരദേശ ഉപ്പുവെള്ള പ്രദേശങ്ങളിൽ മത്സ്യവും നെല്ലും മാറിമാറി കൃഷി ചെയ്യുന്ന തനതു സുസ്ഥിര കാർഷിക രീതി.",
-              "<strong>കാലാനുസൃത ആഹാര സംസ്കാരം:</strong> ആറു ഋതുക്കൾക്കനുസൃതമായ കാർഷിക വിളകളും ഔഷധ സസ്യ വിനിയോഗവും."
-            ],
-            "examTip": "പൊക്കാളി നെൽകൃഷിയും പരമ്പരാഗത കൃഷിമുറകളും സുസ്ഥിര വികസനത്തിന് നൽകുന്ന മാതൃകകൾ വിലയിരുത്തുക."
+            "examTip": "സെക്ഷൻ എ (ജിയോമോർഫോളജി, സഹ്യാദ്രി, ചുരങ്ങൾ, ലാറ്ററൈറ്റ്), സെക്ഷൻ ബി (നദികളും ജനവാസവും, പത്തിനം മണ്ണുകൾ), സെക്ഷൻ സി (ഭൂപ്രകൃതി കേരള ചരിത്രത്തിൽ ചെലുത്തിയ സ്വാധീനം - 10 മാർക്ക് ഉപന്യാസം) പ്രത്യേകം പരിശീലിക്കുക."
           },
           {
             "chapterNumber": "Masterclass",
-            "title": "മൊഡ്യൂൾ 1 സമഗ്ര സംഗ്രഹം & പരീക്ഷാ സഹായി (Module 1 Landscape & Environment Masterclass)",
-            "chapter": "ഭൗമശാസ്ത്രം, 10 പ്രധാന വിഷയങ്ങൾ & സെക്ഷൻ എ, ബി, സി ചോദ്യോത്തരങ്ങൾ",
+            "title": "ഭൂപ്രകൃതി എഴുതിയ കേരളത്തിന്റെ ചരിത്രം (History of Kerala Written by Geography)",
+            "chapter": "Academic Hub Special · ഭൂമിശാസ്ത്രപരമായ സവിശേഷതകളും ചരിത്ര സ്വാധീനവും",
             "duration": "19:35",
-            "thumbnail": "/thumbnails/history_keralam_mod1/15_Module_1_Landscape_and_Environment.png",
             "youtubeId": "Ie5Iu69-cKQ",
-            "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
+            "thumbnail": "/thumbnails/history_keralam_mod1/01_Kerala_Landscape_and_Environment.png",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>ആകെ സംഗ്രഹം:</strong> വിസ്തൃതി 38,863 ച.കി.മീ., അസമഭുജ ത്രികോണം, അഞ്ച് പ്രധാന ഭൂവിഭാഗങ്ങൾ, 44 നദികൾ, 560 കി.മീ. തീരപ്രദേശം.",
-              "<strong>പരീക്ഷാ പ്രാധാന്യം:</strong> സഹ്യാദ്രിയുടെ പ്രതിരോധം, പാലക്കാട് ചുരത്തിന്റെ വാണിജ്യ റോൾ, മൺസൂണിന്റെ സ്വാധീനം, ലാറ്ററൈറ്റ് മണ്ണിന്റെ രൂപീകരണം.",
-              "<strong>ചരിത്ര സമന്വയം:</strong> ഭൂമിശാസ്ത്രവും പരിസ്ഥിതിയും എങ്ങനെ കേരളത്തിന്റെ സാമൂഹിക രാഷ്ട്രീയ രൂപീകരണത്തെ നയിച്ചു എന്ന സമഗ്ര അവലോകനം."
+              "<strong>സ്വാഭാവിക അതിരുകൾ:</strong> പശ്ചിമഘട്ടവും അറബിക്കടലും കേരളത്തെ ഒരു സ്വതന്ത്ര ഭൂപ്രദേശമാക്കി മാറ്റിയ രീതി.",
+              "<strong>പ്രകൃതിദത്ത കോട്ട:</strong> ബാഹ്യ ആക്രമണങ്ങളിൽ നിന്നുള്ള സംരക്ഷണവും സമുദ്ര വാണിജ്യ ബന്ധങ്ങളും.",
+              "<strong>നദീതട സംസ്കാരം:</strong> പെരിയാറും ഭാരതപ്പുഴയും കേന്ദ്രീകരിച്ചുള്ള പ്രാചീന ജനവാസ വികാസം."
             ],
-            "examTip": "സെക്ഷൻ സി ഉപന്യാസത്തിന് (ഭൂപ്രകൃതി കേരള ചരിത്രത്തിൽ ചെലുത്തിയ സ്വാധീനം) 5 ഭൂവിഭാഗങ്ങളും ചുരങ്ങളും നദികളും മൺസൂണും ഉൾപ്പെടുത്തി സമഗ്രമായി ഉത്തരം രേഖപ്പെടുത്തുക."
+            "examTip": "കേരളത്തിന്റെ ഭൂപ്രകൃതി ചരിത്രത്തെ എങ്ങനെ രൂപപ്പെടുത്തി എന്ന് വിശകലനം ചെയ്യുക."
           }
         ]
       },
@@ -399,7 +190,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 24
+    "totalVideos": 11
   },
   "malayalam": {
     "name": "Malayalam",
@@ -1718,10 +1509,27 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Unit 03",
-            "title": "Market Equilibrium & Government Interventions",
-            "chapter": "Price Ceilings, Price Floors & Deadweight Loss",
-            "duration": "24",
-            "youtubeId": ""
+            "title": "Market Equilibrium — Complete LMS Review",
+            "chapter": "All LMS sections, examples & MCQs · English terms/formulas + Malayalam explanation",
+            "duration": "15:50",
+            "youtubeId": "zJsY7Sbx2To",
+            "videoUrl": "/micro-unit3-review.html",
+            "thumbnail": "/thumbnails/micro-unit-3-review.png",
+            "studyPoints": [
+              "Market Equilibrium: Qd equals Qs",
+              "Equilibrium Price: P star and Q star",
+              "Shortage Equation: Shortage equals Qd minus Qs",
+              "Surplus Equation: Surplus equals Qs minus Qd",
+              "Demand Function: Dx equals f of Px, Py, T, Y, A, N, Ep, and U",
+              "Supply Function: SX equals f of PX, PZ, T, C, and GP",
+              "Algebraic Demand: Qd equals 160 minus 40p",
+              "Algebraic Supply: Qs equals 50 plus 15p",
+              "Market Demand: QDx equals 120,000 minus 20,000 Px",
+              "Market Supply: QSx equals 20,000 Px",
+              "Equilibrium Solution: Px equals 3 dollars",
+              "Market Equilibrium Quantity: 60,000 units"
+            ],
+            "examTip": "Always remember that market equilibrium occurs strictly where quantity demanded equals quantity supplied, with no surplus or shortage creating any further pressure on price."
           }
         ]
       },
