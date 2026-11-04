@@ -496,7 +496,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സാമൂഹ്യവൽക്കരണം: നിർവ്വചനവും തരങ്ങളും (Socialization: Definition, Importance & Types)",
             "chapter": "Socialization · Nature vs Nurture, 11 Characteristics, 10 Importances, 8 Failures, Types (Merton & Goffman) & 100% Solved MCQs",
             "duration": "16:53",
-            "youtubeId": "6VWW49UMoks",
+            "youtubeId": "XkrKD5KTJjk",
             "thumbnail": "/thumbnails/sociology_socialization_mod3_ch3/thumb.png",
             "videoUrl": "/videos/Sociology_Module_3_Ch3_Socialization_Masterclass.mp4",
             "language": "Malayalam",
