@@ -583,8 +583,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 09",
             "title": "സഹകരണം, മത്സരം, സംഘർഷം: സമൂഹത്തിന്റെ രഹസ്യങ്ങൾ (Fundamental Social Processes: Cooperation, Competition & Conflict)",
             "chapter": "Fundamental Social Processes · Park & Burgess Analysis",
-            "duration": "23",
-            "youtubeId": "TN8LqpBZCGQ",
+            "duration": "14:26",
+            "youtubeId": "UoCXp0cj_1g",
             "studyPoints": [
               "സാമൂഹിക പ്രക്രിയകൾ (Social Processes): വ്യക്തികളും ഗ്രൂപ്പുകളും പരസ്പരം പ്രതിപ്രവർത്തിക്കുന്ന അടിസ്ഥാന രൂപങ്ങൾ.",
               "സഹകരണം (Cooperation): ഒരു പൊതു ലക്ഷ്യത്തിനായി വ്യക്തികളും ഗ്രൂപ്പുകളും ഒരുമിച്ചു പ്രവർത്തിക്കുന്ന പ്രക്രിയ.",
@@ -1528,7 +1528,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 09",
             "title": "Short-Run and Long-Run Cost Curves",
             "chapter": "Fixed, Variable, Marginal, Average & Envelope Curves",
-            "duration": "23",
+            "duration": "14:26",
             "youtubeId": ""
           }
         ]
@@ -1644,7 +1644,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 06",
             "title": "വിവർത്തന രീതികൾ: അറബിക് - മലയാളം - ഇംഗ്ലീഷ്",
             "chapter": "ദ്വിഭാഷാ വിവർത്തന ശൈലികൾ & പദാവലി സമ്പുഷ്ടീകരണം",
-            "duration": "23",
+            "duration": "14:26",
             "youtubeId": ""
           }
         ]
@@ -1797,7 +1797,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 08",
             "title": "Ratio, Proportion & Variation",
             "chapter": "Direct & Inverse Proportion, Mixture Problems",
-            "duration": "23",
+            "duration": "14:26",
             "youtubeId": ""
           },
           {
