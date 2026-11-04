@@ -110,6 +110,9 @@ export default {
       if (isWww) url.hostname = "academichubfaiz.in";
       return Response.redirect(url.toString(), 301);
     }
+    if (url.pathname === "/soc" || url.pathname === "/soc-mcq" || url.pathname === "/soc-notimer") {
+      return Response.redirect("https://academichubfaiz.in/sociology-without-timer.html", 302);
+    }
     if (url.pathname === "/api/tts") {
       const tl = url.searchParams.get("tl") || "ml";
       const q = url.searchParams.get("q") || "";
