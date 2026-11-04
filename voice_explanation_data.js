@@ -1424,7 +1424,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Demand & Supply Shocks, Avocado & Tomato Models (Figures 4.1 & 4.2), Katrina Oil Disruption & MCQs",
             "duration": "19:54",
             "youtubeId": "1aWH6DRymg8",
-            "videoUrl": "/videos/Shocking_the_Equilibrium_20Min_Study_Video.mp4",
+            "videoUrl": "/micro-unit4-review.html",
             "thumbnail": "/thumbnails/micro-unit-4-bilingual.jpg",
             "studyPoints": [
               "Equilibrium persists indefinitely unless an external variable shifts: at P*, quantity demanded equals quantity supplied with no price-changing pressure.",
