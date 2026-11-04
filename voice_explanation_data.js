@@ -492,18 +492,22 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 03: INDIVIDUAL AND SOCIETY",
         "videos": [
           {
-            "chapterNumber": "Chapter 03",
-            "title": "സമൂഹം എങ്ങനെ നമ്മളെ മനുഷ്യരാക്കുന്നു? (How Society Makes Us Human: Process of Socialization)",
-            "chapter": "Human Socialization · Nature vs Nurture & Primary Agencies",
-            "duration": "24",
+            "chapterNumber": "Chapter 3.3",
+            "title": "സാമൂഹ്യവൽക്കരണം: നിർവ്വചനവും തരങ്ങളും (Socialization: Definition, Importance & Types)",
+            "chapter": "Socialization · Nature vs Nurture, 11 Characteristics, 10 Importances, 8 Failures, Types (Merton & Goffman) & 100% Solved MCQs",
+            "duration": "16:53",
             "youtubeId": "6VWW49UMoks",
+            "thumbnail": "/thumbnails/sociology_socialization_mod3_ch3/thumb.png",
+            "videoUrl": "/videos/Sociology_Module_3_Ch3_Socialization_Masterclass.mp4",
+            "language": "Malayalam",
             "studyPoints": [
-              "സോഷ്യലൈസേഷൻ നിർവചനം (Process of Socialization): ജൈവിക ജീവിയായി ജനിക്കുന്ന ഒരു കുഞ്ഞ് സമൂഹവുമായി ഇടപഴകി സംസ്കാരവും ഭാഷയും മൂല്യങ്ങളും പഠിച്ചെടുത്ത് സാമൂഹിക ജീവിയായി മാറുന്ന ആജീവനാന്ത പ്രക്രിയ.",
-              "Nature vs Nurture സംവാദം: മനുഷ്യ വ്യക്തിത്വത്തെയും പെരുമാറ്റത്തെയും നിശ്ചയിക്കുന്നത് ജനിതക പാരമ്പര്യമാണോ (Nature) അതോ വളർത്തുസാഹചര്യങ്ങളും സാമൂഹിക സമ്പർക്കവുമാണോ (Nurture) എന്ന അടിസ്ഥാന ചർച്ച.",
-              "ഫെറൽ കുട്ടികളും ഒറ്റപ്പെടലും (Feral & Isolated Children): കമല, അമല തുടങ്ങിയ കാട്ടുക്കുട്ടികളുടെ മനഃശാസ്ത്ര-സാമൂഹിക പഠനങ്ങൾ തെളിയിക്കുന്നത് മനുഷ്യസമ്പർക്കമില്ലാതെ മനുഷ്യന് യഥാർത്ഥ വ്യക്തിത്വമോ യുക്തിചിന്തയോ വികസിക്കില്ല എന്നാണ്.",
-              "സോഷ്യലൈസേഷന്റെ ഏജൻസികൾ: കുടുംബം (പ്രാഥമിക ഏജൻസി), സമപ്രായക്കാരുടെ കൂട്ടായ്മ (Peer Group), വിദ്യാലയങ്ങൾ, മാധ്യമങ്ങൾ എന്നിവയുടെ പങ്ക്."
+              "<strong>അർത്ഥവും രണ്ട് തലങ്ങളും:</strong> ജൈവിക ജീവിയായി ജനിക്കുന്ന കുട്ടി സംസ്കാരവും സാമൂഹിക പെരുമാറ്റച്ചട്ടങ്ങളും പഠിച്ചെടുത്ത് സാമൂഹിക ജീവിയായി മാറുന്ന പ്രക്രിയ; ആന്തരികവൽക്കരണവും (Internalization - സ്വമേധയാ നിയമങ്ങൾ മനസ്സാക്ഷിയുടെ ഭാഗമാക്കൽ) ബന്ധപരമായ സമ്പർക്കവും (Relational factor - പരസ്പര ഇടപെടൽ).",
+              "<strong>ജെഫ്രി ജെൻസൻ ആർനെറ്റിന്റെ 3 ലക്ഷ്യങ്ങൾ & നിർവ്വചനങ്ങൾ:</strong> 1) ആഗ്രഹ നിയന്ത്രണവും മനസ്സാക്ഷി വികാസവും (Impulse control & conscience), 2) സാമൂഹിക റോൾ നിർവ്വഹണം (Role preparation), 3) ജീവിത മൂല്യങ്ങളും ലക്ഷ്യബോധവും വളർത്തൽ (Cultivation of meaning). കിംബാൽ യംഗ്, ലണ്ട്ബർഗ്, ആന്റണി ഗിഡൻസ്, ഹോർട്ടൺ & ഹണ്ട്, ജോൺ മസിയോണിസ് എന്നിവരുടെ നിർവ്വചനങ്ങൾ.",
+              "<strong>11 സവിശേഷതകളും 10 പ്രാധാന്യങ്ങളും:</strong> സ്വയം അച്ചടക്കം, പെരുമാറ്റ നിയന്ത്രണം (തൊട്ടിൽ മുതൽ ശവക്കല്ലറ വരെ), ഔപചാരിക-അനൗപചാരിക വഴികൾ, ജൈവ-പരിസ്ഥിതി പൊരുത്തം (Nature vs Nurture). ഇന്ത്യയിലെ കാട്ടുക്കുട്ടികളായ അമല, കമല എന്നിവരുടെ കേസ് തെളിയിക്കുന്നത് മനുഷ്യസമ്പർക്കമില്ലാതെ മനുഷ്യന് യഥാർത്ഥ വ്യക്തിത്വം വികസിക്കില്ല എന്നാണ്. സാംസ്കാരിക തുടർച്ചയും കിംഗ്സ്ലി ഡേവിസിന്റെ നിരീക്ഷണങ്ങളും.",
+              "<strong>8 പരാജയങ്ങളും ദൂഷ്യഫലങ്ങളും:</strong> അപൂർണ്ണമായ ആന്തരികവൽക്കരണം, സ്വയം പ്രതിച്ഛായ തകരൽ, നീൽ സ്മെൽസറുടെ പഠനവും സ്കീസോഫ്രീനിയയും, സ്നേഹമില്ലാത്ത അമിത നിയന്ത്രണം സൃഷ്ടിക്കുന്ന വിമതത്വം, ഇയാൻ റോബർട്ട്സന്റെ നിരീക്ഷണപ്രകാരമുള്ള മുതിർന്നവരിലെ മധ്യവയസ്സ് പ്രതിസന്ധികൾ, വാർദ്ധക്യത്തെയും മരണത്തെയും അഭിമുഖീകരിക്കാൻ പഠിപ്പിക്കാത്ത ആധുനിക രീതി.",
+              "<strong>തരങ്ങളും യൂണിവേഴ്സിറ്റി MCQs:</strong> പ്രൈമറി (കുടുംബം), ആന്റിസിപ്പേറ്ററി (റോബർട്ട് കെ. മെർട്ടൻ - ഭാവി റോളുകൾ മുൻകൂട്ടി ശീലിക്കൽ), ഡെവലപ്പ്മെന്റൽ, റീ-സോഷ്യലൈസേഷൻ (എർവിംഗ് ഗോഫ്മാൻ - മാനസിക ആശുപത്രികളും ജയിലുകളും പോലുള്ള ടോട്ടൽ ഇൻസ്റ്റിറ്റ്യൂഷനുകൾ), സെക്കണ്ടറി, അഡൾട്ട്, ജെൻഡർ (WHO, ആന്റണി ഗിഡൻസ്, ഹിജ്റ മൂന്നാം ലിംഗം), ഗ്രൂപ്പ് സോഷ്യലൈസേഷൻ (പിയർ പ്രഷർ). ഒപ്പം ടെക്സ്റ്റ്ബുക്കിലെ മുഴുവൻ 8 മോഡൽ MCQs സോൾവ് ചെയ്ത ഉത്തരങ്ങൾ."
             ],
-            "examTip": "Calicut University പരീക്ഷാ ചോദ്യം: 'Explain the Nature vs Nurture debate in socialization with reference to feral children cases'."
+            "examTip": "Calicut University FYUGP ചോദ്യങ്ങൾ: 1) 'Define Socialization and explain its major types with suitable examples'. 2) 'Discuss the Nature vs Nurture debate in socialization with reference to feral children'. 3) 'Explain Robert K. Merton's Anticipatory Socialization and Erving Goffman's concept of Re-socialization in Total Institutions'."
           },
           {
             "chapterNumber": "Chapter 04",
