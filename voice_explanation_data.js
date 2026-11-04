@@ -1439,10 +1439,17 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Unit 06",
-            "title": "Budget Constraint & Consumer Equilibrium",
-            "chapter": "Tangency Conditions and Corner Solutions",
-            "duration": "20",
-            "youtubeId": ""
+            "title": "Preferences, Properties of Preferences & Preference Maps",
+            "chapter": "Academic Hub 20-Min Masterclass · Axioms, Indifference Curves, Budget Constraints & Tangency Equilibrium",
+            "duration": "18:15",
+            "youtubeId": "z8tbT2SiepA",
+            "thumbnail": "/thumbnails/Consumer_Preferences_Mod2_Unit6_Thumbnail.png",
+            "studyPoints": [
+              "<strong>Core Preference Axioms:</strong> Completeness (ability to rank all bundles), Transitivity (consistency eliminating cycles), and Non-Satiation (more is strictly preferred to less).",
+              "<strong>Continuity & Convexity:</strong> Smooth indifference curves reflecting diminishing Marginal Rate of Substitution (MRS) and consumer desire for balanced mixes over extremes.",
+              "<strong>Preference Maps & Equilibrium:</strong> Family of nested utility curves combined with budget line BC yielding optimal tangency point E where MRS_xy = Px / Py."
+            ],
+            "examTip": "Calicut University Focus: 'State the five core properties of consumer preferences and explain why consumer equilibrium occurs at the tangency point MRS = Px/Py'."
           }
         ]
       },
