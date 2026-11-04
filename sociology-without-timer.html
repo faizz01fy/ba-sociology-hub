@@ -1284,7 +1284,7 @@
       <footer id="quizBottomActions" class="quiz-bottom-actions">
         <button id="prevBtn" class="btn secondary">⬅ &nbsp;Previous</button>
         <div style="display:flex; gap:8px;">
-          <button id="submitBtnEarly" class="btn danger" onclick="submitTest(false)">Finish & Submit Test</button>
+          <button id="submitBtnEarly" class="btn danger" style="display:none;" onclick="submitTest(false)">Finish & Submit Test &nbsp;🏁</button>
           <button id="nextBtn" class="btn primary">Next &nbsp;➔</button>
         </div>
       </footer>
@@ -1648,11 +1648,14 @@
       bottomActions.style.display = 'flex';
     }
 
+    const isLast = (currentPos === total - 1);
     $('prevBtn').disabled = (currentPos === 0);
-    if (currentPos === total - 1) {
+    if (isLast) {
       $('nextBtn').style.display = 'none';
+      if ($('submitBtnEarly')) $('submitBtnEarly').style.display = 'inline-flex';
     } else {
       $('nextBtn').style.display = 'inline-flex';
+      if ($('submitBtnEarly')) $('submitBtnEarly').style.display = 'none';
     }
 
     renderPalette();
