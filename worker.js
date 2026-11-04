@@ -321,6 +321,15 @@ export default {
     }
 
     let response = await env.ASSETS.fetch(request);
+    if (!response.ok && !url.pathname.includes('.')) {
+      try {
+        const cleanHtmlUrl = new URL(url.pathname + '.html' + url.search, request.url);
+        const cleanResp = await env.ASSETS.fetch(new Request(cleanHtmlUrl, request));
+        if (cleanResp.ok) {
+          response = cleanResp;
+        }
+      } catch (_) {}
+    }
     if (!response.ok && url.pathname.toLowerCase().endsWith('.pdf')) {
       const candidates = [];
       const decodedPath = decodeURIComponent(url.pathname);
