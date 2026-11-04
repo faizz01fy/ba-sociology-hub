@@ -409,7 +409,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 4
+    "totalVideos": 8
   },
   "sociology": {
     "name": "Sociology",
@@ -871,7 +871,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 10
+    "totalVideos": 12
   },
   "philosophy-of-education": {
     "name": "Philosophy of Education",
@@ -1585,7 +1585,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 5
   },
   "arabic": {
     "name": "Arabic",
