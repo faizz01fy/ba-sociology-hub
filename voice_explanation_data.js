@@ -285,24 +285,51 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "Soft Skills and Workplace Vocabulary",
-            "chapter": "Pronunciation, Fluency & Communication Techniques",
-            "duration": "20",
-            "youtubeId": ""
+            "title": "George Carlin on Soft Language",
+            "chapter": "ജോർജ്ജ് കാർലിൻ · സോഫ്റ്റ് ലാംഗ്വേജ് (George Carlin on Soft Language · Euphemisms & Public Speech)",
+            "duration": "11:37",
+            "youtubeId": "hNLY9H1czbM",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>George Carlin &amp; Critique:</strong> അമേരിക്കൻ സ്റ്റാൻഡ്-അപ്പ് കൊമേഡിയനായ ജോർജ്ജ് കാർലിൻ ആധുനിക സമൂഹത്തിൽ ഭാഷയെ വികലമാക്കുന്നതിനെതിരെ നടത്തിയ വിമർശനാത്മക വിശകലനം.",
+              "<strong>Concept of Soft Language (മയപ്പെടുത്തിയ ഭാഷ):</strong> യഥാർത്ഥ വേദനകളും കഠിന സത്യങ്ങളും മറച്ചുവെക്കാൻ സമൂഹം ഉപയോഗിക്കുന്ന യൂഫെമിസങ്ങളെ (Euphemisms) കാർലിൻ രൂക്ഷമായി വിമർശിക്കുന്നു.",
+              "<strong>Historical Evolution (Shell Shock to PTSD):</strong> ഒന്നാം ലോകമഹായുദ്ധത്തിലെ ലളിതവും മൂർച്ചയുള്ളതുമായ 'Shell Shock' എന്ന പദം പിന്നീട് 'Battle Fatigue', 'Operational Exhaustion', ഒടുവിൽ 'Post-Traumatic Stress Disorder' (PTSD) എന്നിങ്ങനെ മയപ്പെടുത്തിയപ്പോൾ സൈനികരുടെ യാഥാർത്ഥ വേദന മറയ്ക്കപ്പെട്ടു എന്ന് കാർലിൻ വ്യക്തമാക്കുന്നു.",
+              "<strong>Societal Impact:</strong> രാഷ്ട്രീയക്കാരും പരസ്യദാതാക്കളും ജനങ്ങളെ വഞ്ചിക്കാനും സത്യങ്ങൾ ലഘൂകരിക്കാനും സോഫ്റ്റ് ലാംഗ്വേജ് ഒരു ആയുധമായി ഉപയോഗിക്കുന്നു.",
+              "<strong>Exam Tips:</strong> പരീക്ഷയ്ക്ക് Shell Shock-ന്റെ പരിണാമവും, കാർലിന്റെ തത്ത്വചിന്തയും, ആധുനിക ഭരണകൂട ഭാഷയും തമ്മിലുള്ള ബന്ധം വിശദീകരിക്കുക."
+            ],
+            "examTip": "ഷെൽ ഷോക്ക് (Shell Shock) എങ്ങനെയാണ് ഘട്ടംഘട്ടമായി PTSD ആയി മാറിയതെന്നും, ഭാഷയെ മയപ്പെടുത്തുന്നത് സമൂഹത്തിൽ സൃഷ്ടിക്കുന്ന പ്രത്യാഘാതങ്ങളും കാർലിന്റെ പ്രഭാഷണത്തെ അടിസ്ഥാനമാക്കി വിശദീകരിക്കുക."
           },
           {
             "chapterNumber": "Chapter 02",
             "title": "Death of a Salesman",
-            "chapter": "Arthur Miller · Tragedy, American Dream & Character Study",
-            "duration": "24",
-            "youtubeId": ""
+            "chapter": "ആർതർ മില്ലർ · ഡെത്ത് ഓഫ് എ സെയിൽസ്മാൻ (Arthur Miller · Death of a Salesman · Willy Loman & The American Dream)",
+            "duration": "19:02",
+            "youtubeId": "OeMGI2CWtLA",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Arthur Miller &amp; Tragedy:</strong> അമേരിക്കൻ നാടകകൃത്തായ ആർതർ മില്ലറുടെ വിശ്വപ്രസിദ്ധമായ ദുരന്തനാടകം. ഒരു സാധാരണക്കാരന്റെ ജീവിതത്തെ ട്രാജഡിയുടെ കേന്ദ്രമാക്കി മാറ്റിയ മാസ്റ്റർപീസ്.",
+              "<strong>The Fallacy of American Dream:</strong> കഠിനാധ്വാനവും വ്യക്തിപ്രഭാവവും (Being well-liked) കൊണ്ട് മാത്രം വിജയം നേടാമെന്ന മുതലാളിത്ത വ്യാമോഹം വില്ലി ലോമന്റെ ജീവിതത്തെ എങ്ങനെ തകർത്തു എന്ന് പരിശോധിക്കുന്നു.",
+              "<strong>Illusion vs. Reality:</strong> യാഥാർത്ഥ്യത്തെ ഉൾക്കൊള്ളാൻ കഴിയാതെ ഓർമ്മകളിലും ദിവാസ്വപ്നങ്ങളിലും അഭയം തേടുന്ന വില്ലി ലോമൻ (Willy Loman), ഒടുവിൽ കുടുംബത്തിന് ഇൻഷുറൻസ് തുക ലഭിക്കാനായി ആത്മഹത്യ ചെയ്യുന്നു.",
+              "<strong>Family Dynamics:</strong> വില്ലിയുടെ അമിത പ്രതീക്ഷകൾക്ക് ഇരയാകുന്ന മക്കളായ ബിഫ് (Biff), ഹാപ്പി (Happy), സ്നേഹനിധിയായ ഭാര്യ ലിൻഡ (Linda) എന്നിവരുടെ വൈകാരിക സംഘർഷങ്ങൾ.",
+              "<strong>Key Themes:</strong> അന്യവൽക്കരണം (Alienation), ഐഡന്റിറ്റി പ്രതിസന്ധി (Crisis of Identity), ഉപഭോക്തൃ സംസ്കാരത്തിന്റെ ഇരയാകുന്ന മനുഷ്യജീവിതം."
+            ],
+            "examTip": "വില്ലി ലോമന്റെ കഥാപാത്ര നിരൂപണം, അമേരിക്കൻ സ്വപ്നത്തിന്റെ (American Dream) പൊള്ളത്തരം നാടകത്തിൽ എങ്ങനെ ആവിഷ്കരിക്കപ്പെടുന്നു എന്നിവ പരീക്ഷാ ചോദ്യങ്ങളിൽ പ്രധാനമാണ്."
           },
           {
             "chapterNumber": "Chapter 03",
-            "title": "Tear It Down",
-            "chapter": "Persuasive Oratory & Public Debate",
-            "duration": "17",
-            "youtubeId": ""
+            "title": "Rip It Out — Dead Poets Society",
+            "chapter": "പീറ്റർ വെയർ · ഡെഡ് പോയറ്റ്സ് സൊസൈറ്റി (Peter Weir · Dead Poets Society · Rip It Out · Conformity & Non-Conformity)",
+            "duration": "17:35",
+            "youtubeId": "UE333_P1a9A",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Context &amp; Setting:</strong> പീറ്റർ വെയർ സംവിധാനം ചെയ്ത 'ഡെഡ് പോയറ്റ്സ് സൊസൈറ്റി' എന്ന ചിത്രത്തിലെ വിഖ്യാതമായ ക്ലാസ്റൂം രംഗം. വെൽട്ടൺ അക്കാദമിയിലെ കർക്കശമായ യാഥാസ്ഥിതിക വിദ്യാഭ്യാസ രീതി.",
+              "<strong>John Keating's Philosophy:</strong> റോബിൻ വില്യംസ് അവതരിപ്പിച്ച ഇംഗ്ലീഷ് അധ്യാപകൻ ജോൺ കീറ്റിംഗ്, വിദ്യാർത്ഥികളോട് സ്വതന്ത്രമായി ചിന്തിക്കാനും സ്വന്തം ശബ്ദം കണ്ടെത്താനും ആഹ്വാനം ചെയ്യുന്നു ('Carpe Diem' — Seize the day).",
+              "<strong>'Rip It Out' Scene:</strong> ഡോ. ജെ. ഇവാൻസ് പ്രിച്ചാർഡിന്റെ കവിതയെ അളക്കാനുള്ള ഗണിതശാസ്ത്ര ഫോർമുലയുള്ള പുസ്തകത്താളുകൾ കീറിയെറിയാൻ കീറ്റിംഗ് ആവശ്യപ്പെടുന്നത് കേവലം ഒരു തമാശയല്ല, മറിച്ച് വിദ്യാഭ്യാസത്തിലെ ഔപചാരികതയ്ക്കും ചട്ടക്കൂടുകൾക്കുമെതിരെയുള്ള ശക്തമായ പ്രതീകാത്മക ചെറുത്തുനിൽപ്പാണ്.",
+              "<strong>Authenticity &amp; Passion:</strong> കവിതയും കലയും ജീവിതം അളക്കാനുള്ളതല്ല, ജീവിക്കാനുള്ള ആവേശവും മനുഷ്യവികാരങ്ങളും ഉണർത്താനുള്ളതാണെന്ന് രംഗം വ്യക്തമാക്കുന്നു.",
+              "<strong>Exam Points:</strong> പേജുകൾ കീറുന്നതിന്റെ പ്രതീകാത്മകത, വിദ്യാഭ്യാസ സമ്പ്രദായത്തോടുള്ള വിമർശനം എന്നിവ പരീക്ഷയ്ക്ക് വിശകലനം ചെയ്യുക."
+            ],
+            "examTip": "'Rip It Out' എന്ന രംഗത്തിന്റെ പ്രതീകാത്മക അർത്ഥവും, യാഥാസ്ഥിതിക വിദ്യാഭ്യാസ സമ്പ്രദായത്തെ ജോൺ കീറ്റിംഗ് എങ്ങനെ വെല്ലുവിളിക്കുന്നുവെന്നും പരീക്ഷയ്ക്ക് വിശദീകരിക്കുക."
           }
         ]
       },
@@ -332,10 +359,19 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 04",
-            "title": "Optimism",
-            "chapter": "Helen Keller · Philosophical Prose & Resilience",
-            "duration": "18",
-            "youtubeId": ""
+            "title": "Optimism: An Essay",
+            "chapter": "ഹെലൻ കെല്ലർ · ഒപ്റ്റിമിസം (Helen Keller · Optimism: An Essay · Resilience & Inner Light)",
+            "duration": "06:17",
+            "youtubeId": "_S8y6DEMYO0",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Helen Keller's Life:</strong> കാഴ്ചയും കേൾവിയും നഷ്ടപ്പെട്ടെങ്കിലും അസാമാന്യ ഇച്ഛാശക്തിയും പ്രതിഭയും കൊണ്ട് ലോകത്തെ വിസ്മയിപ്പിച്ച ഹെലൻ കെല്ലറുടെ (1880–1968) ആത്മവിശ്വാസം നിറഞ്ഞ പ്രബന്ധം.",
+              "<strong>Optimism as Faith:</strong> 'Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence' — പ്രത്യാശയാണ് നേട്ടങ്ങളിലേക്ക് നയിക്കുന്ന ശക്തിയെന്ന് കെല്ലർ പ്രഖ്യാപിക്കുന്നു.",
+              "<strong>Overcoming Darkness:</strong> ഭൗതികമായ ഇരുട്ടിലും നിശ്ശബ്ദതയിലും അകപ്പെട്ടപ്പോഴും തന്റെ ആന്തരിക വെളിച്ചം കൊണ്ട് ലോകത്തെ സ്നേഹിക്കാനും അറിവ് നേടാനും കെല്ലർക്ക് സാധിച്ചു.",
+              "<strong>Critique of Pessimism:</strong> സകല സൗകര്യങ്ങളും ഉണ്ടായിട്ടും ജീവിതത്തെ നിരാശയോടെ കാണുന്നവരെ ഹെലൻ കെല്ലർ വിമർശിക്കുന്നു. കർമ്മനിരതമായ ശുഭാപ്തിവിശ്വാസമാണ് യഥാർത്ഥ വിജയരഹസ്യം.",
+              "<strong>Exam Points:</strong> ഹെലൻ കെല്ലറുടെ ശുഭാപ്തിവിശ്വാസത്തിന്റെ നിർവചനം, ഇരുട്ടിനെ അതിജീവിച്ച അനുഭവം, സമൂഹത്തിനുള്ള സന്ദേശം എന്നിവ പഠിക്കുക."
+            ],
+            "examTip": "ഹെലൻ കെല്ലർ ശുഭാപ്തിവിശ്വാസത്തെ (Optimism) എങ്ങനെ നിർവ്വചിക്കുന്നുവെന്നും, നിരാശയ്ക്കും നിഷേധാത്മകതയ്ക്കും എതിരെ അവർ നൽകുന്ന വാദങ്ങൾ പരീക്ഷയ്ക്ക് വിശകലനം ചെയ്യുക."
           }
         ]
       },
