@@ -1418,6 +1418,30 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Exam Tip (പരീക്ഷാ സൂചന): സന്തുലിതാവസ്ഥ കണ്ടെത്താൻ Qd = Qs ഉപയോഗിക്കുക. Shortage വില ഉയർത്തുകയും Surplus വില കുറയ്ക്കുകയും ചെയ്യുന്നതെങ്ങനെ എന്ന് ഗ്രാഫിലൂടെ വിശദീകരിക്കുക. ഓരോ കണക്കുദാഹരണത്തിലെയും സമവാക്യങ്ങൾ പ്രത്യേകം ഉപയോഗിക്കുക.",
             "language": "English + Malayalam"
           }
+          {
+            "chapterNumber": "Unit 04",
+            "title": "Shocking the Equilibrium — Complete 20-Min Masterclass Review",
+            "chapter": "Demand & Supply Shocks, Avocado & Tomato Models (Figures 4.1 & 4.2), Katrina Oil Disruption & MCQs",
+            "duration": "19:54",
+            "youtubeId": "1aWH6DRymg8",
+            "videoUrl": "/videos/Shocking_the_Equilibrium_20Min_Study_Video.mp4",
+            "thumbnail": "/thumbnails/micro-unit-4-bilingual.jpg",
+            "studyPoints": [
+              "Equilibrium persists indefinitely unless an external variable shifts: at P*, quantity demanded equals quantity supplied with no price-changing pressure.",
+              "A shock is an unexpected event shifting demand, supply, or both, disrupting the balance and moving the market to a new equilibrium.",
+              "Negative demand shock: Shift inward to the left (e.g. medical journal alert on prescription drug cancer risk), resulting in lower price and lower quantity.",
+              "Positive demand shock: Shift outward to the right (e.g. nutritional study touting fish benefits boosting tartar sauce complement demand), resulting in higher price and higher quantity.",
+              "Figure 4.1 (Tomato/Avocado): Tomato price spike of $55/lb shifts avocado demand from D1 to D2; at $2.00, demand is 91M lbs vs 80M lbs supply, creating 11M lbs excess demand that drives price to $2.20 and equilibrium quantity to 83M lbs.",
+              "Key principle: A shift of the demand curve causes a movement along the stationary supply curve.",
+              "Negative supply shock: Shift inward to the left (e.g. Hurricane Katrina taking oil rigs and pipelines offline), causing quantity to fall rapidly and prices to spike.",
+              "Positive supply shock: Shift outward to the right (e.g. robotics, automation, and Wyoming Powder River Basin low-sulfur coal discovery), expanding output and lowering consumer prices.",
+              "Figure 4.2 (Fertilizer/Avocado): Fertilizer cost rise of $0.55/lb shifts supply from S1 to S2; at $2.00, supply contracts to 69M lbs against 80M lbs demand, creating 11M lbs excess demand that drives price to $2.20 while quantity contracts to 72M lbs.",
+              "Key principle: A shift of the supply curve causes a movement along the stationary demand curve.",
+              "All 5 MCQs verified: Q1 (c - curve shifts to new eq.), Q2 (c - higher quantity at higher price), Q3 (c - disrupted production, higher price), Q4 (c - demand shifts inward), Q5 (c - supply shifts right, lower price)."
+            ],
+            "examTip": "In examinations, distinguish sharply between a shift of a curve (caused by an external determinant like income, tastes, or input costs) and a movement along a curve (caused purely by a price change induced by the other curve's shift). Always compare initial equilibrium e1 to new equilibrium e2.",
+            "language": "English (Kira Voice Agent)"
+          },
         ]
       },
       {
