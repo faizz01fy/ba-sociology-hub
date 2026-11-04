@@ -66,17 +66,20 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 02",
-            "title": "ശിലാ ഗുഹകളും പ്രാചീന ശിലാകലയും (Edakkal Caves & Prehistoric Art)",
-            "chapter": "ഇടക്കൽ ഗുഹാചിത്രങ്ങൾ, പെട്രോഗ്ലിഫുകൾ & ശിലാ ആലേഖനങ്ങൾ · അമ്പലവയൽ, വയനാട്",
-            "duration": "24:00",
-            "youtubeId": "",
+            "title": "ശിലാ ഗുഹകളും പ്രാചീന ശിലാകലയും (Rock Shelters & Prehistoric Art)",
+            "chapter": "ഇടയ്ക്കൽ പെട്രോഗ്ലിഫുകൾ, മറയൂർ ചുവർച്ചിത്രങ്ങൾ, ആങ്കോട് & തെന്മല",
+            "duration": "18:16",
+            "youtubeId": "7IZKIlmfvAM",
+            "thumbnail": "/thumbnails/history_keralam_mod2/02_Rock_Shelters_Prehistoric_Art.png",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>ഇടക്കൽ ഗുഹകൾ:</strong> വയനാട്ടിലെ അമ്പുകുത്തി മലയിലെ ഇടക്കൽ ഗുഹയിൽ കണ്ടെത്തിയ അപൂർവ്വ പെട്രോഗ്ലിഫുകൾ (Petroglyphs) അഥവാ ശിലാ കൊത്തുപണികൾ.",
-              "<strong>ചിത്രങ്ങളിലെ പ്രമേയങ്ങൾ:</strong> മനുഷ്യരൂപങ്ങൾ, മൃഗങ്ങൾ, വൃത്തങ്ങൾ, ചിഹ്നങ്ങൾ എന്നിവ വ്യക്തമാക്കുന്ന നവീന ശിലായുഗ-താമ്രശിലായുഗ സംസ്കാരം.",
-              "<strong>ചരിത്രപരമായ കണ്ടെത്തലുകൾ:</strong> ഫെഡ് ഫോസറ്റ് (Fred Fawcett) 1901-ൽ കണ്ടെത്തിയ ഈ ചിത്രങ്ങൾ സിന്ധുനദീതട ലിപികളുമായി സാമ്യമുണ്ടെന്ന ചരിത്രകാരന്മാരുടെ നിരീക്ഷണം."
+              "<strong>ആഗോള & ഇന്ത്യൻ പശ്ചാത്തലം:</strong> ആൾട്ടാമിറ (സ്പെയിൻ), ലാസ്കോ (ഫ്രാൻസ്), ഭീംബേട്ക (വി.എസ്. വാകൻകർ 1957); കേരളത്തിൽ 1894-ൽ മലബാർ പോലീസ് സൂപ്രണ്ട് ഫ്രെഡ് ഫോസറ്റ് അമ്പുകുത്തി മലയിലെ ഇടയ്ക്കൽ ഗുഹ കണ്ടെത്തി.",
+              "<strong>വർഗ്ഗീകരണം:</strong> പാറയിൽ കൊത്തിയുണ്ടാക്കിയ പെട്രോഗ്ലിഫുകൾ (ഇടയ്ക്കൽ, ആങ്കോട്) vs കാവിമണ്ണും വെളുത്ത കളിമണ്ണും കൊണ്ടുള്ള പിക്ടോഗ്രാഫുകൾ (മറയൂർ അട്ടള, എഴുത്തുഗുഹ).",
+              "<strong>ഇടയ്ക്കൽ വിസ്മയങ്ങളും ബിംബങ്ങളും:</strong> 1,200 മീറ്റർ ഉയരത്തിലെ 96 അടി ശിലാ വിള്ളൽ; മുഖംമൂടി ധരിച്ച ശമൻ (മന്ത്രവാദി), ഭരണീ രൂപം, സിന്ധുനദീതട ഹാരപ്പൻ ലിപിയോടുള്ള അത്ഭുതകരമായ സാമ്യം.",
+              "<strong>സൂപ്പർ ഇമ്പോസിഷനും കാലഗണനയും:</strong> ജൈവാംശം ഇല്ലാത്തതിനാൽ പെട്രോഗ്ലിഫുകളിൽ C-14 അസാധ്യം; പാളികൾക്ക് മുകളിലെ പുനർചിത്രീകരണവും (Superimposition) നവീന ശിലാ സെൽറ്റുകളും അടിസ്ഥാനമാക്കി ബി.സി.ഇ. 2500 മുതൽ കാലഗണന.",
+              "<strong>3,000 വർഷത്തെ തീർത്ഥാടന തുടർച്ച:</strong> ഇടയ്ക്കൽ സ്ഥിരവാസ കേന്ദ്രമല്ല, ആചാരപരമായ പുണ്യകേന്ദ്രമായിരുന്നു; ക്രിസ്തുവർഷാരംഭത്തിലെ ചേര രാജാവ് ഇളം കടുങ്കോയുടെ തമിഴ്-ബ്രാഹ്മി, വട്ടെഴുത്ത് ലിഖിതങ്ങൾ വഴി തുടർച്ച തെളിയുന്നു."
             ],
-            "examTip": "ഇടക്കൽ ഗുഹാചിത്രങ്ങളുടെ സവിശേഷതകളും കേരള ചരിത്രരചനയിൽ അവയ്ക്കുള്ള പ്രാധാന്യവും വ്യക്തമാക്കുക."
+            "examTip": "സെക്ഷൻ എ (3 മാർക്ക്): പെട്രോഗ്ലിഫുകൾ vs പിക്ടോഗ്രാഫുകൾ, സൂപ്പർ ഇമ്പോസിഷൻ; സെക്ഷൻ ബി (5 മാർക്ക്): ആചാര പുണ്യകേന്ദ്രം vs വാസസ്ഥലം, നരരൂപ ചിത്രീകരണങ്ങൾ; സെക്ഷൻ സി (10 മാർക്ക്): ഇടയ്ക്കൽ ഗുഹയുടെ സമഗ്ര പുരാവസ്തു-സാംസ്കാരിക പ്രാധാന്യം."
           },
           {
             "chapterNumber": "Chapter 03",
@@ -242,25 +245,35 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 02",
-            "title": "Anthem for Doomed Youth",
-            "chapter": "Wilfred Owen · War Poetry & Poetic Devices",
-            "duration": "15",
-            "youtubeId": ""
+            "title": "Anthem",
+            "chapter": "Leonard Cohen · Module 1, Chapter 2 · Malayalam explanation",
+            "duration": "8:11",
+            "youtubeId": "qJDNqI7AoDw",
+            "language": "Malayalam",
+            "thumbnail": "/thumbnails/english-module1-chapter2-anthem.jpg",
+            "studyPoints": [
+              "Leonard Cohen (ലിയനാർഡ് കോഹൻ): Anthem എന്ന ഗാനത്തിന്റെ രചയിതാവായ Canadian singer-songwriter and poet-ന്റെ പശ്ചാത്തലം.",
+              "Hope and Imperfection (പ്രത്യാശയും അപൂർണ്ണതയും): തകർച്ചകളും പരിമിതികളും ഉണ്ടായിരിക്കുമ്പോഴും പ്രത്യാശ കണ്ടെത്തുന്നതാണ് പ്രധാന ആശയം.",
+              "Symbolism and Imagery (പ്രതീകങ്ങളും ദൃശ്യബിംബങ്ങളും): മണികൾ, വിള്ളൽ, വെളിച്ചം തുടങ്ങിയ പ്രതീകങ്ങൾ ഗാനത്തിന്റെ സന്ദേശം വ്യക്തമാക്കുന്നു.",
+              "Love and Human Suffering (സ്നേഹവും മനുഷ്യവേദനയും): മനുഷ്യബന്ധങ്ങളും സംഘർഷങ്ങളും ഗാനത്തിലെ ചിന്തകളുമായി ബന്ധിപ്പിക്കുക.",
+              "Themes and Conclusion (പ്രമേയങ്ങളും ഉപസംഹാരവും): പ്രധാന ആശയങ്ങൾ തിരിച്ചറിഞ്ഞ് ഗാനത്തിലെ ഉദാഹരണങ്ങളുമായി ബന്ധപ്പെടുത്തി വിശദീകരിക്കുക."
+            ],
+            "examTip": "Explain how Cohen connects imperfection with hope. Identify the major symbols and discuss their significance. അപൂർണ്ണതയും പ്രത്യാശയും തമ്മിലുള്ള ബന്ധം ഗാനത്തിലെ പ്രതീകങ്ങളിലൂടെ വിശദീകരിക്കുക."
           },
           {
             "chapterNumber": "Chapter 03",
             "title": "Art as a Social Work",
-            "chapter": "ആമി മൊറാലെസ് ലാറ · കലയും സാമൂഹിക പ്രവർത്തനവും (Amy Morales Lara · Art as a Social Work)",
-            "duration": "09:47",
-            "youtubeId": "wx1wnO8QKXs",
+            "chapter": "Core summary (English): Amy Morales Lara presents art as a form of social work that supports healing, storytelling, community connection, and social change. പ്രധാന സംഗ്രഹം (മലയാളം): Amy Morales Lara കലையை രോഗശാന്തിക്കും കഥപറച്ചിലിനും സമൂഹബന്ധത്തിനും സാമൂഹിക മാറ്റത്തിനും സഹായിക്കുന്ന സാമൂഹിക പ്രവർത്തനമായി അവതരിപ്പിക്കുന്നു.",
+            "duration": "7:58",
+            "youtubeId": "A9maAWgaovY",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Amy Morales Lara & Background:</strong> ബ്രോങ്ക്സിൽ നിന്നുള്ള ആർട്ടിസ്റ്റും സോഷ്യൽ വർക്കറുമായ ആമി മൊറാലെസ് ലാറയുടെ പ്രഭാഷണവും ആശയങ്ങളും.",
-              "<strong>Art as Healing & Storytelling:</strong> ട്രോമകളെ അതിജീവിക്കാനും സമൂഹത്തിലെ അടിച്ചമർത്തപ്പെട്ടവരുടെ ശബ്ദമാകാനും കല ഒരു സാമൂഹിക പ്രവർത്തനമായി മാറുന്നു.",
-              "<strong>The Bronx Project:</strong> സമൂഹത്തിലെ വിവിധ കലാകാരന്മാരുമായുള്ള സംഭാഷണങ്ങളിലൂടെ സാമൂഹിക മാറ്റത്തിനുള്ള ഉപകരണമായി കലയെ മാറ്റിയ അനുഭവം.",
-              "<strong>Empathetic Curiosity:</strong> ആരോഗ്യ പ്രവർത്തകരിലും സാധാരണക്കാരിലും കലയുണ്ടാക്കുന്ന അനുഭാവപൂർണ്ണമായ മാറ്റങ്ങൾ."
+              "<strong>Speaker &amp; Background (പ്രഭാഷകയും പശ്ചാത്തലവും):</strong> Amy Morales Lara is an artist and social worker from the Bronx. ബ്രോങ്ക്സിൽ നിന്നുള്ള ആർട്ടിസ്റ്റും സോഷ്യൽ വർക്കറുമായ Amy Morales Lara-യുടെ അനുഭവങ്ങളും ആശയങ്ങളുമാണ് പ്രഭാഷണത്തിന്റെ അടിസ്ഥാനം.",
+              "<strong>Art, Healing &amp; Storytelling (കല, രോഗശാന്തി, കഥപറച്ചിൽ):</strong> Art can help people work through trauma and express the experiences of communities whose voices are often unheard. ട്രോമകളെ അതിജീവിക്കാനും പലപ്പോഴും കേൾക്കപ്പെടാത്ത സമൂഹങ്ങളുടെ അനുഭവങ്ങൾ പങ്കുവെക്കാനും കല സഹായിക്കുന്നു.",
+              "<strong>The Bronx Project (ബ്രോങ്ക്സ് പദ്ധതി):</strong> Conversations with community artists show how art can become a tool for connection and social change. സമൂഹത്തിലെ കലാകാരന്മാരുമായുള്ള സംഭാഷണങ്ങൾ ബന്ധം വളർത്താനും സാമൂഹിക മാറ്റത്തിനും കലയെ ഉപകരണമാക്കുന്നതെങ്ങനെ എന്ന് വ്യക്തമാക്കുന്നു.",
+              "<strong>Empathetic Curiosity (അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ):</strong> Approaching people and their stories with curiosity and empathy can create meaningful change in health and community work. ജിജ്ഞാസയോടെയും അനുഭാവത്തോടെയും ആളുകളെയും അവരുടെ കഥകളെയും സമീപിക്കുന്നത് ആരോഗ്യപരിപാലനത്തിലും സാമൂഹിക പ്രവർത്തനത്തിലും അർത്ഥവത്തായ മാറ്റമുണ്ടാക്കുന്നു."
             ],
-            "examTip": "കല എങ്ങനെയാണ് ഒരു സോഷ്യൽ വർക്ക് ആയി മാറുന്നത് എന്നും, ആമി മൊറാലെസ് ലാറയുടെ നിരീക്ഷണങ്ങളും പരീക്ഷയ്ക്ക് ചോദ്യങ്ങളായി വരാൻ സാധ്യതയുള്ളവയാണ്."
+            "examTip": "Explain how Amy Morales Lara connects art with healing, storytelling, community practice, and empathetic curiosity. Amy Morales Lara കല, രോഗശാന്തി, കഥപറച്ചിൽ, സാമൂഹിക ഇടപെടൽ, അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ എന്നിവയെ എങ്ങനെ ബന്ധിപ്പിക്കുന്നു എന്ന് വിശദീകരിക്കുക."
           }
         ]
       },
@@ -357,7 +370,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 4
   },
   "sociology": {
     "name": "Sociology",
