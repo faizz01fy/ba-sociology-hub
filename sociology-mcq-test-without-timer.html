@@ -1185,7 +1185,7 @@
       <div class="spec-card">
         <div class="spec-icon">📝</div>
         <div class="spec-value">235 MCQs</div>
-        <div class="spec-label">Reshuffled Each Attempt</div>
+        <div class="spec-label">1st: PDF Order · Retake: Shuffled</div>
       </div>
       <div class="spec-card spec-card-motivation">
         <div class="spec-icon" id="motSpecIcon">✨</div>
@@ -1464,6 +1464,8 @@
     return arr;
   }
 
+  let attemptCount = 0;
+
   function startTest() {
     candidateName = $('candidateName').value.trim();
     if (!candidateName) {
@@ -1473,37 +1475,11 @@
     }
     $('startError').style.display = 'none';
 
-    // 1. Reshuffle questions into a fresh random order on each attempt
-    const shuffledQuestions = shuffle(MASTER_QUESTIONS);
+    attemptCount++;
 
-    // 2. Reshuffle options within each question while keeping Q&A 100% correct
-    testQuestions = shuffledQuestions.map((q, idx) => {
-      // Find the correct option text in the master question
-      const masterCorrect = q.options.find(o => o.value === q.answer);
-      const correctText = masterCorrect ? masterCorrect.text : '';
-
-      // Shuffle options for this attempt
-      const shuffledOpts = shuffle(q.options);
-      const remappedOptions = shuffledOpts.map((opt, oIdx) => {
-        const newLabel = ['A', 'B', 'C', 'D'][oIdx];
-        const isThisCorrect = (opt.text === correctText);
-        let whyReason = opt.whyWrong;
-        if (!whyReason || whyReason.includes('accurate factual definition') || whyReason.includes('official academic syllabus')) {
-          whyReason = isThisCorrect ? '' : `Option (${newLabel}) '${opt.text}' is not the correct answer for this question.`;
-        }
-        return {
-          value: newLabel,
-          text: opt.text,
-          whyWrong: whyReason,
-          isCorrect: isThisCorrect
-        };
-      });
-
-      // Assign the new letter where the correct option landed
-      const correctRemapped = remappedOptions.find(o => o.isCorrect);
-      const newAnswerLetter = correctRemapped ? correctRemapped.value : 'A';
-
-      return {
+    if (attemptCount === 1) {
+      // 1st Attempt: Exact sequential PDF pattern (1 to 235), exact options order (A, B, C, D)
+      testQuestions = MASTER_QUESTIONS.map((q, idx) => ({
         id: q.id,
         testIndex: idx + 1,
         question: q.question,
@@ -1512,18 +1488,67 @@
         conceptMal: q.conceptMal || q.concept,
         explanation: q.explanation,
         explanationMal: q.explanationMal || q.explanation,
-        options: remappedOptions,
-        answer: newAnswerLetter,
+        options: q.options.map(o => ({
+          value: o.value,
+          text: o.text,
+          whyWrong: o.whyWrong,
+          isCorrect: (o.value === q.answer)
+        })),
+        answer: q.answer,
         section: q.section,
         page: q.page
-      };
-    });
+      }));
+
+      $('paletteHeading').textContent = `Question Palette (Attempt #1 · Exact PDF Pattern 1–235)`;
+    } else {
+      // 2nd+ Attempts: Dynamic reshuffle of questions AND options while keeping Q&A 100% accurate
+      const shuffledQuestions = shuffle(MASTER_QUESTIONS);
+      testQuestions = shuffledQuestions.map((q, idx) => {
+        const masterCorrect = q.options.find(o => o.value === q.answer);
+        const correctText = masterCorrect ? masterCorrect.text : '';
+
+        const shuffledOpts = shuffle(q.options);
+        const remappedOptions = shuffledOpts.map((opt, oIdx) => {
+          const newLabel = ['A', 'B', 'C', 'D'][oIdx];
+          const isThisCorrect = (opt.text === correctText);
+          let whyReason = opt.whyWrong;
+          if (!whyReason || whyReason.includes('accurate factual definition') || whyReason.includes('official academic syllabus')) {
+            whyReason = isThisCorrect ? '' : `Option (${newLabel}) '${opt.text}' is not the correct answer for this question.`;
+          }
+          return {
+            value: newLabel,
+            text: opt.text,
+            whyWrong: whyReason,
+            isCorrect: isThisCorrect
+          };
+        });
+
+        const correctRemapped = remappedOptions.find(o => o.isCorrect);
+        const newAnswerLetter = correctRemapped ? correctRemapped.value : 'A';
+
+        return {
+          id: q.id,
+          testIndex: idx + 1,
+          question: q.question,
+          questionMal: q.questionMal || q.question,
+          concept: q.concept || q.section,
+          conceptMal: q.conceptMal || q.concept,
+          explanation: q.explanation,
+          explanationMal: q.explanationMal || q.explanation,
+          options: remappedOptions,
+          answer: newAnswerLetter,
+          section: q.section,
+          page: q.page
+        };
+      });
+
+      $('paletteHeading').textContent = `Question Palette (Attempt #${attemptCount} · Dynamic Shuffle)`;
+    }
 
     userAnswers = {};
     currentPos = 0;
     isSubmitted = false;
 
-    $('paletteHeading').textContent = `Question Palette (235 Questions · Reshuffled)`;
     $('filterAllBtn').textContent = `All (${testQuestions.length})`;
 
     switchScreen('test');

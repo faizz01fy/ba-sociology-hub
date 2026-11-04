@@ -110,9 +110,6 @@ export default {
       if (isWww) url.hostname = "academichubfaiz.in";
       return Response.redirect(url.toString(), 301);
     }
-    if (url.pathname === "/soc" || url.pathname === "/soc-mcq" || url.pathname === "/soc-notimer") {
-      return Response.redirect("https://academichubfaiz.in/sociology-without-timer.html", 302);
-    }
     if (url.pathname === "/api/tts") {
       const tl = url.searchParams.get("tl") || "ml";
       const q = url.searchParams.get("q") || "";
@@ -383,7 +380,8 @@ export default {
           path: url.pathname,
           country: request.cf?.country || "XX",
           region: request.cf?.region || "",
-          city: request.cf?.city || ""
+          city: request.cf?.city || "",
+          isp: request.cf?.asOrganization || ""
         })
       })).catch(() => {});
       ctx.waitUntil(task);
@@ -551,7 +549,7 @@ export class StudyHubChat {
       let records = (await this.state.storage.get("traffic")) || [];
       records = records.filter(r=>r.time > now - RETENTION_MS);
       await this.countVisit(now, String(entry.ip).slice(0,64), records);
-      records.push({time:now,ip:String(entry.ip).slice(0,64),path:String(entry.path).slice(0,200),country:typeof entry.country === "string" && /^(?:[A-Z]{2}|T1)$/.test(entry.country) ? entry.country : "XX",region:cleanText(entry.region,100),city:cleanText(entry.city,100)});
+      records.push({time:now,ip:String(entry.ip).slice(0,64),path:String(entry.path).slice(0,200),country:typeof entry.country === "string" && /^(?:[A-Z]{2}|T1)$/.test(entry.country) ? entry.country : "XX",region:cleanText(entry.region,100),city:cleanText(entry.city,100),isp:cleanText(entry.isp,100)});
       await this.state.storage.put("traffic", records.slice(-5000));
       await this.state.storage.setAlarm(now + RETENTION_MS);
       return json({ok:true});
@@ -1503,7 +1501,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
       let filtered = trafficRecords.filter(item => {
         if (!search) return true;
         const info = countryInfo(item.country);
-        const hay = [item.ip, item.country, info.name, item.region, item.city, item.path, ...(item.sections||[]).map(s=>s.name)].filter(Boolean).join(' ').toLowerCase();
+        const hay = [item.ip, item.country, info.name, item.region, item.city, item.isp, item.path, ...(item.sections||[]).map(s=>s.name)].filter(Boolean).join(' ').toLowerCase();
         return hay.includes(search);
       });
 
@@ -1571,10 +1569,24 @@ details.section-details summary:hover, details.popular-details summary:hover {
         tdC.innerHTML = '<span class="country-pill"><span class="country-flag">' + info.flag + '</span> ' + info.name + '</span>';
         tr.append(tdC);
 
-        // State / City
+        // State / City & ISP
         const tdLoc = document.createElement('td');
         tdLoc.className = 'location-text';
-        tdLoc.textContent = [v.region, v.city].filter(Boolean).join(', ') || 'Unknown';
+        const loc = [v.region, v.city].filter(Boolean).join(', ') || 'Unknown';
+        if (v.isp) {
+          const locDiv = document.createElement('div');
+          locDiv.textContent = loc;
+          const ispDiv = document.createElement('div');
+          ispDiv.style.cssText = 'font-size:11px;color:var(--text-dim);font-family:var(--font-mono);margin-top:2px;display:flex;align-items:center;gap:4px;';
+          const iconSpan = document.createElement('span');
+          iconSpan.textContent = '📶';
+          const nameSpan = document.createElement('span');
+          nameSpan.textContent = v.isp;
+          ispDiv.append(iconSpan, nameSpan);
+          tdLoc.append(locDiv, ispDiv);
+        } else {
+          tdLoc.textContent = loc;
+        }
         tr.append(tdLoc);
 
         // Current Page
@@ -1778,13 +1790,14 @@ details.section-details summary:hover, details.popular-details summary:hover {
 
     function exportTrafficCSV() {
       if (!trafficRecords.length) { alert('No traffic records to export.'); return; }
-      const headers = ['Visitor IP', 'Total Visits', 'Country', 'Region', 'City', 'Last Active (IST)', 'Latest Page Path'];
+      const headers = ['Visitor IP', 'Total Visits', 'Country', 'Region', 'City', 'Broadband / ISP', 'Last Active (IST)', 'Latest Page Path'];
       const rows = trafficRecords.map(v => [
         v.ip,
         v.visits,
         '"' + (v.country || 'XX') + '"',
         '"' + (v.region || '').replace(/"/g, '""') + '"',
         '"' + (v.city || '').replace(/"/g, '""') + '"',
+        '"' + (v.isp || '').replace(/"/g, '""') + '"',
         '"' + formatIST(v.time) + '"',
         '"' + (v.path || '/').replace(/"/g, '""') + '"'
       ]);
@@ -2047,11 +2060,12 @@ function groupTrafficByIP(records, sectionEvents = []) {
     if ((!group.country || group.country === "XX") && record.country && record.country !== "XX") group.country=record.country;
     if (!group.region && record.region) group.region=record.region;
     if (!group.city && record.city) group.city=record.city;
+    if (!group.isp && record.isp) group.isp=record.isp;
   }
   for (const event of sectionEvents) {
     let group=groups.get(event.ip);
     if (!group) {
-      group={ip:event.ip,time:event.time,path:event.path,visits:0,country:"XX",region:"",city:"",sections:new Map()};
+      group={ip:event.ip,time:event.time,path:event.path,visits:0,country:"XX",region:"",city:"",isp:"",sections:new Map()};
       groups.set(event.ip,group);
     }
     if (event.time>group.time) { group.time=event.time; group.path=event.path; }
