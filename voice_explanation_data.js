@@ -1417,7 +1417,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Exam Tip (പരീക്ഷാ സൂചന): സന്തുലിതാവസ്ഥ കണ്ടെത്താൻ Qd = Qs ഉപയോഗിക്കുക. Shortage വില ഉയർത്തുകയും Surplus വില കുറയ്ക്കുകയും ചെയ്യുന്നതെങ്ങനെ എന്ന് ഗ്രാഫിലൂടെ വിശദീകരിക്കുക. ഓരോ കണക്കുദാഹരണത്തിലെയും സമവാക്യങ്ങൾ പ്രത്യേകം ഉപയോഗിക്കുക.",
             "language": "English + Malayalam"
-          }
+          },
           {
             "chapterNumber": "Unit 04",
             "title": "Shocking the Equilibrium — Complete 20-Min Masterclass Review",
@@ -1441,7 +1441,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "In examinations, distinguish sharply between a shift of a curve (caused by an external determinant like income, tastes, or input costs) and a movement along a curve (caused purely by a price change induced by the other curve's shift). Always compare initial equilibrium e1 to new equilibrium e2.",
             "language": "English (Kira Voice Agent)"
-          },
+          }
         ]
       },
       {
