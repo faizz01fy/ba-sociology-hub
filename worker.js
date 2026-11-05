@@ -14,7 +14,7 @@ import {handleUniversityNotices} from './university-notices-backend.js';
 import {handleWhatsAppWebhook, handleWhatsAppList} from './whatsapp-webhook-backend.js';
 const CHAT_PATH = "/api/chat";
 const TRACKER_SCRIPT = "(()=>{let last=\"\";function decode(v){try{return decodeURIComponent(v)}catch(e){return v}}function title(v){return String(v||\"\").replace(/[-_]+/g,\" \").split(\" \").map(function(w){return w?w.charAt(0).toUpperCase()+w.slice(1):\"\"}).join(\" \")}function getDetailedActivity(){try{const path=location.pathname||\"/\";const search=location.search||\"\";const hash=decode((location.hash||\"\").slice(1));const params=new URLSearchParams(search);if(path.indexOf(\"voice-explanation\")!==-1){const playing=document.querySelector(\".chapter-card.playing\");const stickyBar=document.getElementById(\"sticky-audio-bar\");const stickyTitleEl=document.getElementById(\"sticky-title\");const stickyTitle=(stickyTitleEl?stickyTitleEl.textContent:\"\").trim();const hasSticky=stickyBar&&stickyBar.style.display!==\"none\"&&stickyTitle&&stickyTitle.indexOf(\"Playing lecture...\")===-1;if(playing||hasSticky){let t=\"\";if(playing){const ct=playing.querySelector(\".card-title\");if(ct)t=ct.textContent.trim()}if(!t&&hasSticky)t=stickyTitle;if(!t&&document.title&&document.title.indexOf(\"|\")!==-1){t=document.title.split(\"|\")[0].trim()}const isVid=playing&&(playing.querySelector(\"iframe\")||playing.querySelector(\"video\"));const prefix=isVid?\"\u25b6\ufe0f Watching: \":\"\ud83c\udfa7 Hearing: \";if(t)return(prefix+t).slice(0,110)}const heroSubj=document.getElementById(\"hero-subject-name\");let subj=heroSubj?heroSubj.textContent.trim():\"\";if(subj&&subj.toLowerCase().indexOf(\"loading\")!==-1)subj=\"\";if(!subj){const qSubj=params.get(\"subject\");if(qSubj)subj=title(qSubj)}if(subj){subj=subj.replace(/^[^\\w\\s\\u0D00-\\u0D7F]+/,\"\").trim();return(\"\ud83c\udfa7 Voice: \"+subj).slice(0,90)}return\"\ud83c\udfa7 Voice Explanations\"}if(path.indexOf(\"study-guide-reader\")!==-1){const badge=document.getElementById(\"activeDocBadge\");let docTitle=badge?badge.textContent.trim():\"\";if(!docTitle||docTitle===\"Study Guide\"){docTitle=params.get(\"title\")||\"\"}if(!docTitle){const f=params.get(\"file\");if(f)docTitle=title(f.split(\"/\").pop().replace(/\\.pdf$/i,\"\"))}if(!docTitle&&document.title){docTitle=document.title.replace(/[\u00b7|].*$/,\"\").trim()}let isSpeaking=false;try{isSpeaking=!!(window.speechSynthesis&&window.speechSynthesis.speaking)}catch(e){}const prefix=isSpeaking?\"\ud83d\udd0a Hearing Read-Aloud: \":\"\ud83d\udcd6 Reading: \";return(prefix+(docTitle||\"Study Guide\")).slice(0,110)}if(path.indexOf(\"test\")!==-1||path.indexOf(\"mcq\")!==-1||path.indexOf(\"quiz\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcdd \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path.indexOf(\"reading\")!==-1||path.indexOf(\"-pdf\")!==-1||path.indexOf(\"notes\")!==-1||path.endsWith(\".pdf.html\")||path.indexOf(\"Companion\")!==-1||path.indexOf(\"Bilingual\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcd6 \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path===\"/\"||path===\"/index.html\"){const labels={top:\"\ud83c\udfe0 Overview\",subjects:\"\ud83d\udcda Semester subjects\",tests:\"\ud83d\udcdd Practice tests\",\"ai-study\":\"\ud83e\udd16 AI Study Helper\",notices:\"\ud83d\udce2 Calicut Univ Notices\",support:\"\ud83d\udcac Support\"};if(labels[hash])return labels[hash];if(hash)return\"\ud83c\udfe0 Home \u00b7 \"+title(hash);return\"\ud83c\udfe0 Hub Home\"}if(document.title&&document.title.length>2){const clean=document.title.replace(/[\u00b7|].*$/,\"\").trim();if(clean&&clean.toLowerCase().indexOf(\"academic hub\")===-1&&clean.toLowerCase().indexOf(\"loading\")===-1){return clean.slice(0,90)}}return title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")).slice(0,90)||\"Academic Hub Portal\"}catch(e){return\"Academic Hub Portal\"}}function record(force){try{const path=location.pathname||\"/\";const label=getDetailedActivity();const key=path+\"::\"+label;if(!force&&key===last)return;last=key;fetch(\"/api/traffic/section\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({path:path,section:label}),keepalive:true}).catch(function(){})}catch(e){}}window.addEventListener(\"hashchange\",function(){record()});window.addEventListener(\"pageshow\",function(){setTimeout(record,250)});window.addEventListener(\"popstate\",function(){record()});window.addEventListener(\"play\",function(){setTimeout(function(){record(true)},150)},true);window.addEventListener(\"pause\",function(){setTimeout(function(){record(true)},150)},true);document.addEventListener(\"click\",function(e){if(e.target&&e.target.closest&&e.target.closest(\".btn-play-voice,.vpp-btn-pause,.vpp-skip-btn,.subj-tab-btn,#voicePlayBtn,#voiceStopBtn,.welcome-ch-btn,.drawer-subject-modules a,.drawer-subject-header\")){setTimeout(function(){record(true)},350)}},{passive:true});try{const titleEl=document.querySelector(\"title\");if(titleEl&&window.MutationObserver){new MutationObserver(function(){setTimeout(function(){record()},200)}).observe(titleEl,{subtree:true,characterData:true,childList:true})}}catch(e){}setTimeout(record,350);function livePresence(active){try{if(document.querySelector(\".hub-owner-traffic-control\"))return;let id=\"\";try{id=sessionStorage.getItem(\"hub_live_visitor\")||\"\";if(!id){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2);sessionStorage.setItem(\"hub_live_visitor\",id)}}catch(e){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2)}fetch(\"/api/traffic/presence\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({visitorId:id,path:location.pathname||\"/\",section:getDetailedActivity(),active:active!==false}),keepalive:true}).catch(function(){})}catch(e){}}setTimeout(function(){livePresence(true)},400);setInterval(function(){if(!document.hidden)livePresence(true)},25000);document.addEventListener(\"visibilitychange\",function(){if(!document.hidden)livePresence(true)});window.addEventListener(\"pagehide\",function(){livePresence(false)})})();";
-const OWNER_LIVE_SCRIPT = "(()=>{const control=document.getElementById('hub-live-control'),panel=document.getElementById('hub-live-panel'),count=document.getElementById('hub-live-count'),summary=document.getElementById('hub-live-summary'),pages=document.getElementById('hub-live-pages'),close=document.getElementById('hub-live-close');if(!control||!panel||!count||!summary||!pages||!close)return;function displayPage(item){const path=String(item.path||'/');const section=String(item.section||'').trim();if(path==='/'||path==='/index.html')return section&&section!=='Home'&&section!=='Overview'?'Home · '+section:'Home page';return section||path}async function update(){try{const response=await fetch('/api/admin/live-visitors',{cache:'no-store',credentials:'same-origin'});if(response.status===401){count.textContent='—';summary.textContent='Owner sign-in required. Sign in to the owner dashboard and reload this page.';pages.replaceChildren();return}const data=await response.json();if(!response.ok)throw Error(data.error||'Could not load live visitors.');const active=Number(data.active)||0;count.textContent=String(active);summary.textContent=active+' active tab'+(active===1?'':'s')+' seen in the last 90 seconds';pages.replaceChildren();const entries=Array.isArray(data.pages)?data.pages:[];if(!active||!entries.length){const empty=document.createElement('li');empty.className='hub-live-empty';empty.textContent='No active visitors right now.';pages.append(empty);return}for(const item of entries){const row=document.createElement('li');const path=document.createElement('span');path.textContent=displayPage(item);const total=document.createElement('strong');const visitors=Number(item.count)||0;total.textContent=visitors+' tab'+(visitors===1?'':'s');row.append(path,total);pages.append(row)}}catch(error){summary.textContent=error.message||'Could not load live visitors.'}}function setOpen(open){panel.hidden=!open;control.setAttribute('aria-expanded',String(open));if(open)update()}control.addEventListener('click',()=>setOpen(panel.hidden));close.addEventListener('click',()=>setOpen(false));document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden){setOpen(false);control.focus()}});update();setInterval(()=>{if(!document.hidden)update()},15000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update()})})();";
+const OWNER_LIVE_SCRIPT = "(()=>{const count=document.getElementById('hub-live-count');if(!count)return;async function update(){try{const response=await fetch('/api/admin/live-visitors',{cache:'no-store',credentials:'same-origin'});if(response.ok){const data=await response.json();const active=Number(data.active)||0;count.textContent=String(active)}}catch(e){}}update();setInterval(()=>{if(!document.hidden)update()},15000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update()})})();";
 const MAX_NAME = 32;
 const MAX_MESSAGE = 500;
 const MAX_STORED_MESSAGES = 100;
@@ -195,11 +195,13 @@ export default {
         if (request.method !== "GET") return json({error:"Method not allowed."},405);
         return room.fetch(await adminRequest(request, env, "https://internal/admin/api/admin/live-visitors"));
       }
-      const result = await room.fetch(await adminRequest(request, env, "https://internal/admin" + url.pathname));
       if (url.pathname === "/admin/traffic" && request.method === "GET") {
-        return result.ok ? adminPage(true) : new Response(null,{status:303,headers:{Location:"/admin/login","Cache-Control":"no-store"}});
+        const result = await room.fetch(await adminRequest(request, env, "https://internal/admin" + url.pathname));
+        if (!result.ok) return new Response(null,{status:303,headers:{Location:"/admin/login","Cache-Control":"no-store"}});
+        const initialData = await result.json().catch(() => null);
+        return adminPage(true, initialData);
       }
-      return result;
+      return room.fetch(await adminRequest(request, env, "https://internal/admin" + url.pathname));
     }
     if (url.pathname === "/api/traffic/section") {
       if (request.method !== "POST") return json({error:"Method not allowed."},405);
@@ -643,7 +645,57 @@ export class StudyHubChat {
       response.headers.set("Set-Cookie","__Host-hub_admin=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0");
       return response;
     }
-    if (path === "/admin/api/admin/session" || path === "/admin/admin/traffic") return json({ok:true});
+    if (path === "/admin/api/admin/session") return json({ok:true});
+    if (path === "/admin/admin/traffic") {
+      try {
+        const rawTraffic = (await this.state.storage.get("traffic")) || [];
+        const rawSections = (await this.state.storage.get("sectionVisits")) || [];
+        const savedLive = (await this.state.storage.get("liveVisitors")) || {};
+        const safeTraffic = Array.isArray(rawTraffic) ? rawTraffic.filter(r => r && typeof r.time === "number" && r.time > now - RETENTION_MS) : [];
+        const safeSections = Array.isArray(rawSections) ? rawSections.filter(r => r && typeof r.time === "number" && r.time > now - RETENTION_MS) : [];
+        const liveEntries = Object.entries(savedLive).filter(([,v]) => Number(v?.lastSeen) > now - 90*1000);
+        
+        let today = { day: indiaDay(now), views: safeTraffic.length, visitors: 0 };
+        try {
+          today = await this.countVisit(now, null, safeTraffic);
+        } catch (cvErr) {
+          console.error("countVisit warning:", cvErr);
+        }
+        const uniqueIPs = new Set([
+          ...safeTraffic.map(r => r && r.ip).filter(Boolean),
+          ...safeSections.map(r => r && r.ip).filter(Boolean)
+        ]);
+        const records = groupTrafficByIP(safeTraffic, safeSections);
+        const popularPages = groupPopularPages(safeSections);
+        
+        const livePages = new Map();
+        for (const [, visitor] of liveEntries) {
+          const page = typeof visitor?.path === "string" ? visitor.path : "/";
+          const section = typeof visitor?.section === "string" ? visitor.section : "";
+          const k = JSON.stringify([page, section]);
+          const g = livePages.get(k) || { path: page, section, count: 0 };
+          g.count++;
+          livePages.set(k, g);
+        }
+
+        return json({
+          ok: true,
+          records,
+          popularPages,
+          views: safeTraffic.length,
+          uniqueIPs: uniqueIPs.size,
+          today,
+          liveData: {
+            active: liveEntries.length,
+            pages: Array.from(livePages.values()).sort((a,b) => b.count - a.count)
+          },
+          updatedAt: now
+        });
+      } catch (err) {
+        console.error("Critical /admin/admin/traffic error:", err);
+        return json({ ok: true, records: [], popularPages: [], views: 0, uniqueIPs: 0, today: { day: indiaDay(now), views: 0, visitors: 0 }, liveData: { active: 0, pages: [] }, updatedAt: now });
+      }
+    }
     if (request.method !== "GET") return json({},405);
     if (path === "/admin/api/admin/live-visitors") {
       const saved=(await this.state.storage.get("liveVisitors")) || {};
@@ -788,7 +840,25 @@ function cleanText(value, maxLength) {
 async function digest(value) {
   return Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value))),v=>v.toString(16).padStart(2,"0")).join("");
 }
-function adminPage(authorized) {
+function adminPage(authorized, initialData = null) {
+  const d = initialData || {};
+  const today = d.today || {};
+  const todayDay = today.day || 'TODAY';
+  const todayVisitors = today.visitors || 0;
+  const todayViews = today.views || 0;
+  const todayRatio = todayVisitors ? (todayViews / todayVisitors).toFixed(2) : '0';
+  const bufferViews = d.views || (Array.isArray(d.records) ? d.records.length : 0);
+  const bufferIps = d.uniqueIPs || (Array.isArray(d.records) ? d.records.length : 0);
+  const records = Array.isArray(d.records) ? d.records : [];
+  const repeatIps = records.filter(v => v.visits > 1).length;
+  const repeatPct = records.length ? ((repeatIps / records.length) * 100).toFixed(1) : '0';
+  const popularPages = Array.isArray(d.popularPages) ? d.popularPages : [];
+  const topContent = popularPages.length > 0 ? popularPages[0] : null;
+  const topName = topContent ? (topContent.section || topContent.path || 'Top Page') : '—';
+  const topViews = topContent ? (topContent.visits + ' views') : '0 views';
+  const topVisitors = topContent ? ((topContent.visitors?.length || 0) + ' visitors') : '0 visitors';
+  const liveActive = d.liveData?.active || 0;
+
   const content = authorized ? `
 <header class="hud-header">
   <div class="brand-title">
@@ -840,21 +910,21 @@ function adminPage(authorized) {
       <span class="kpi-title">LIVE ACTIVE NOW</span>
       <span class="kpi-badge live">● 90s RADAR</span>
     </div>
-    <div class="kpi-val"><span id="live-active-count">0</span> <small>CONCURRENT</small></div>
+    <div class="kpi-val"><span id="live-active-count">${liveActive}</span> <small>CONCURRENT</small></div>
     <div class="kpi-foot">
       <span>Spread across</span>
-      <span class="highlight" id="live-pages-summary">checking active tabs...</span>
+      <span class="highlight" id="live-pages-summary">${liveActive ? (d.liveData?.pages?.length + ' active study page' + (d.liveData?.pages?.length === 1 ? '' : 's')) : 'checking active tabs...'}</span>
     </div>
   </div>
 
   <div class="kpi-card today">
     <div class="kpi-head">
       <span class="kpi-title">TODAY'S INGRESS (IST)</span>
-      <span class="kpi-badge today" id="today-badge">TODAY</span>
+      <span class="kpi-badge today" id="today-badge">${todayDay}</span>
     </div>
-    <div class="kpi-val"><span id="today-visitors">0</span> <small>VISITORS</small></div>
+    <div class="kpi-val"><span id="today-visitors">${todayVisitors}</span> <small>VISITORS</small></div>
     <div class="kpi-foot">
-      <span class="highlight" id="today-views">0</span> page views · <span id="today-ratio">0</span> views/user
+      <span class="highlight" id="today-views">${todayViews}</span> page views · <span id="today-ratio">${todayRatio}</span> views/user
     </div>
   </div>
 
@@ -863,9 +933,9 @@ function adminPage(authorized) {
       <span class="kpi-title">7-DAY TELEMETRY BUFFER</span>
       <span class="kpi-badge total">ROLLING</span>
     </div>
-    <div class="kpi-val"><span id="buffer-views">0</span> <small>LOGS</small></div>
+    <div class="kpi-val"><span id="buffer-views">${bufferViews}</span> <small>LOGS</small></div>
     <div class="kpi-foot">
-      <span class="highlight" id="buffer-ips">0</span> distinct IPs · <span id="buffer-repeats">0%</span> repeat
+      <span class="highlight" id="buffer-ips">${bufferIps}</span> distinct IPs · <span id="buffer-repeats">${repeatPct}%</span> repeat
     </div>
   </div>
 
@@ -874,17 +944,17 @@ function adminPage(authorized) {
       <span class="kpi-title">TOP ACCESSED CONTENT</span>
       <span class="kpi-badge popular">LEADER</span>
     </div>
-    <div class="kpi-val" style="font-size:20px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" id="top-content-name">—</div>
+    <div class="kpi-val" style="font-size:20px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" id="top-content-name">${topName}</div>
     <div class="kpi-foot">
-      <span class="highlight" id="top-content-views">0 views</span> · <span id="top-content-visitors">0 visitors</span>
+      <span class="highlight" id="top-content-views">${topViews}</span> · <span id="top-content-visitors">${topVisitors}</span>
     </div>
   </div>
 </section>
 
 <nav class="nav-tabs" role="tablist">
-  <button class="tab-btn active" id="tab-btn-geo" type="button" role="tab" aria-selected="true">👥 VISITORS & IP AUDIT <span class="badge-pill" id="badge-total-ips">0 IPs</span></button>
-  <button class="tab-btn" id="tab-btn-radar" type="button" role="tab" aria-selected="false">🛰️ LIVE RADAR PRESENCE <span class="badge-pill" id="badge-live-tabs">0 ACTIVE</span></button>
-  <button class="tab-btn" id="tab-btn-content" type="button" role="tab" aria-selected="false">📊 CONTENT LEADERBOARD <span class="badge-pill" id="badge-total-pages">0</span></button>
+  <button class="tab-btn active" id="tab-btn-geo" type="button" role="tab" aria-selected="true">👥 VISITORS & IP AUDIT <span class="badge-pill" id="badge-total-ips">${bufferIps} IPs</span></button>
+  <button class="tab-btn" id="tab-btn-radar" type="button" role="tab" aria-selected="false">🛰️ LIVE RADAR PRESENCE <span class="badge-pill" id="badge-live-tabs">${liveActive} ACTIVE</span></button>
+  <button class="tab-btn" id="tab-btn-content" type="button" role="tab" aria-selected="false">📊 CONTENT LEADERBOARD <span class="badge-pill" id="badge-total-pages">${popularPages.length}</span></button>
 </nav>
 
 <main class="control-panel">
@@ -1646,6 +1716,17 @@ details.section-details summary:hover, details.popular-details summary:hover {
     let popularPageRecords = [];
     let liveData = { active: 0, pages: [] };
     let trafficPage = 1;
+
+    // IMMEDIATE SSR HYDRATION
+    const __INITIAL__ = ${JSON.stringify(initialData || null)};
+    if (__INITIAL__) {
+      if (Array.isArray(__INITIAL__.records)) trafficRecords = __INITIAL__.records;
+      if (Array.isArray(__INITIAL__.popularPages)) popularPageRecords = __INITIAL__.popularPages;
+      if (__INITIAL__.liveData) liveData = __INITIAL__.liveData;
+      try { renderTraffic(); } catch(e) {}
+      try { renderPopularPages(); } catch(e) {}
+      try { renderLiveRadar(); } catch(e) {}
+    }
 
     function getPathFallbackActivity(path) {
       if (!path || path === '/' || path === '/index.html') return '🏠 Hub Home';
