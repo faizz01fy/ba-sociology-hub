@@ -658,11 +658,43 @@ export class StudyHubChat {
       return json({active:entries.length,pages:Array.from(pages.values()).sort((a,b)=>b.count-a.count),updatedAt:now});
     }
     if (path === "/admin/api/admin/traffic") {
-      const records=((await this.state.storage.get("traffic")) || []).filter(r=>r.time>now-RETENTION_MS);
-      const sectionVisits=((await this.state.storage.get("sectionVisits")) || []).filter(r=>r.time>now-RETENTION_MS);
-      const today = await this.countVisit(now, null, records);
-      const uniqueIPs=new Set([...records.map(r=>r.ip),...sectionVisits.map(r=>r.ip)]);
-      return json({records:groupTrafficByIP(records,sectionVisits),popularPages:groupPopularPages(sectionVisits),views:records.length,uniqueIPs:uniqueIPs.size,today,updatedAt:now});
+      try {
+        const rawTraffic = (await this.state.storage.get("traffic")) || [];
+        const rawSections = (await this.state.storage.get("sectionVisits")) || [];
+        const safeTraffic = Array.isArray(rawTraffic) ? rawTraffic.filter(r => r && typeof r.time === "number" && r.time > now - RETENTION_MS) : [];
+        const safeSections = Array.isArray(rawSections) ? rawSections.filter(r => r && typeof r.time === "number" && r.time > now - RETENTION_MS) : [];
+        let today = { day: indiaDay(now), views: safeTraffic.length, visitors: 0 };
+        try {
+          today = await this.countVisit(now, null, safeTraffic);
+        } catch (cvErr) {
+          console.error("countVisit warning:", cvErr);
+        }
+        const uniqueIPs = new Set([
+          ...safeTraffic.map(r => r && r.ip).filter(Boolean),
+          ...safeSections.map(r => r && r.ip).filter(Boolean)
+        ]);
+        const records = groupTrafficByIP(safeTraffic, safeSections);
+        const popularPages = groupPopularPages(safeSections);
+        return json({
+          records,
+          popularPages,
+          views: safeTraffic.length,
+          uniqueIPs: uniqueIPs.size,
+          today,
+          updatedAt: now
+        });
+      } catch (err) {
+        console.error("Critical /admin/api/admin/traffic error:", err);
+        return json({
+          error: "Telemetry buffer recovery: " + String(err.message || err),
+          records: [],
+          popularPages: [],
+          views: 0,
+          uniqueIPs: 0,
+          today: { day: indiaDay(now), views: 0, visitors: 0 },
+          updatedAt: now
+        }, 200);
+      }
     }
     return json({error:"Not found"},404);
   }
@@ -1943,10 +1975,18 @@ details.section-details summary:hover, details.popular-details summary:hover {
       try {
         const res = await fetch('/api/admin/traffic', { cache: 'no-store', credentials: 'same-origin' });
         if (res.status === 401) { location.href = '/admin/login'; return; }
+        if (!res.ok) {
+          console.warn('Traffic response error status:', res.status);
+          const link = document.getElementById('radar-link-status');
+          if (link) { link.textContent = '● SYNC RETRY (' + res.status + ')'; link.style.color = 'var(--accent-amber)'; }
+          return;
+        }
         const d = await res.json();
-        if (res.ok) {
-          trafficRecords = Array.isArray(d.records) ? d.records : [];
+        if (d && Array.isArray(d.records)) {
+          trafficRecords = d.records;
           popularPageRecords = Array.isArray(d.popularPages) ? d.popularPages : [];
+          const link = document.getElementById('radar-link-status');
+          if (link) { link.textContent = '● NOMINAL'; link.style.color = 'var(--accent-emerald)'; }
           
           if (d.today) {
             document.getElementById('today-badge').textContent = d.today.day || 'TODAY';
@@ -1964,6 +2004,8 @@ details.section-details summary:hover, details.popular-details summary:hover {
         }
       } catch (err) {
         console.warn('Traffic fetch error:', err);
+        const link = document.getElementById('radar-link-status');
+        if (link) { link.textContent = '● SYNC RETRY'; link.style.color = 'var(--accent-amber)'; }
       } finally {
         renderTraffic();
         renderPopularPages();
@@ -2212,46 +2254,55 @@ export class OwnerTraffic extends StudyHubChat {}
 
 function indiaDay(time) { return new Date(time + 330*60*1000).toISOString().slice(0,10); }
 
-function groupPopularPages(events) {
-  const groups=new Map();
-  for(const event of events) {
-    const key=JSON.stringify([event.path||"/",event.section||"Page"]);
-    let page=groups.get(key);
-    if(!page) {
-      page={path:event.path||"/",section:event.section||"Page",visits:0,lastVisit:0,visitors:new Map()};
-      groups.set(key,page);
+function groupPopularPages(events = []) {
+  const groups = new Map();
+  const safeEvents = Array.isArray(events) ? events : [];
+  for (const event of safeEvents) {
+    if (!event || typeof event !== "object") continue;
+    const pagePath = typeof event.path === "string" ? event.path : "/";
+    const sectionName = typeof event.section === "string" ? event.section : "Page";
+    const key = JSON.stringify([pagePath, sectionName]);
+    let page = groups.get(key);
+    if (!page) {
+      page = { path: pagePath, section: sectionName, visits: 0, lastVisit: 0, visitors: new Map() };
+      groups.set(key, page);
     }
+    const evtTime = typeof event.time === "number" ? event.time : 0;
     page.visits++;
-    page.lastVisit=Math.max(page.lastVisit,event.time||0);
-    const visitor=page.visitors.get(event.ip)||{ip:event.ip,visits:0,lastVisit:0};
+    page.lastVisit = Math.max(page.lastVisit, evtTime);
+    const ip = String(event.ip || "Unknown");
+    const visitor = page.visitors.get(ip) || { ip, visits: 0, lastVisit: 0 };
     visitor.visits++;
-    visitor.lastVisit=Math.max(visitor.lastVisit,event.time||0);
-    page.visitors.set(event.ip,visitor);
+    visitor.lastVisit = Math.max(visitor.lastVisit, evtTime);
+    page.visitors.set(ip, visitor);
   }
-  return Array.from(groups.values()).map(page=>({...page,visitors:Array.from(page.visitors.values()).sort((a,b)=>b.visits-a.visits||b.lastVisit-a.lastVisit)})).sort((a,b)=>b.visits-a.visits||b.lastVisit-a.lastVisit);
+  return Array.from(groups.values()).map(page => ({
+    ...page,
+    visitors: Array.from(page.visitors.values()).sort((a,b) => (b.visits||0) - (a.visits||0) || (b.lastVisit||0) - (a.lastVisit||0))
+  })).sort((a,b) => (b.visits||0) - (a.visits||0) || (b.lastVisit||0) - (a.lastVisit||0));
 }
 
 function groupTrafficByIP(records = [], sectionEvents = []) {
   const groups = new Map();
-  const safeRecords = Array.isArray(records) ? records : [];
-  const safeSectionEvents = Array.isArray(sectionEvents) ? sectionEvents : [];
+  const safeRecords = Array.isArray(records) ? records.filter(r => r && typeof r === "object") : [];
+  const safeSectionEvents = Array.isArray(sectionEvents) ? sectionEvents.filter(e => e && typeof e === "object") : [];
 
-  for (const record of safeRecords.slice().sort((a,b)=>(b.time||0)-(a.time||0))) {
+  for (const record of safeRecords.slice().sort((a,b) => (b.time||0) - (a.time||0))) {
     const ip = String(record.ip || "Unknown");
     let group = groups.get(ip);
     if (!group) {
       group = {
         ...record,
         ip,
-        time: record.time || 0,
-        path: record.path || "/",
+        time: typeof record.time === "number" ? record.time : 0,
+        path: typeof record.path === "string" ? record.path : "/",
         visits: 0,
-        country: record.country || "XX",
-        region: record.region || "",
-        city: record.city || "",
-        isp: record.isp || "",
-        device: record.device || "",
-        ref: record.ref || "",
+        country: typeof record.country === "string" ? record.country : "XX",
+        region: typeof record.region === "string" ? record.region : "",
+        city: typeof record.city === "string" ? record.city : "",
+        isp: typeof record.isp === "string" ? record.isp : "",
+        device: typeof record.device === "string" ? record.device : "",
+        ref: typeof record.ref === "string" ? record.ref : "",
         sections: new Map(),
         latestSection: "",
         latestSectionTime: 0
@@ -2269,12 +2320,13 @@ function groupTrafficByIP(records = [], sectionEvents = []) {
 
   for (const event of safeSectionEvents) {
     const ip = String(event.ip || "Unknown");
+    const evtTime = typeof event.time === "number" ? event.time : 0;
     let group = groups.get(ip);
     if (!group) {
       group = {
         ip,
-        time: event.time || 0,
-        path: event.path || "/",
+        time: evtTime,
+        path: typeof event.path === "string" ? event.path : "/",
         visits: 0,
         country: "XX",
         region: "",
@@ -2288,28 +2340,28 @@ function groupTrafficByIP(records = [], sectionEvents = []) {
       };
       groups.set(ip, group);
     }
-    if ((event.time || 0) > group.time) {
-      group.time = event.time;
+    if (evtTime > (group.time || 0)) {
+      group.time = evtTime;
       group.path = event.path || group.path;
     }
-    if ((event.time || 0) >= group.latestSectionTime) {
-      group.latestSectionTime = event.time || 0;
+    if (evtTime >= (group.latestSectionTime || 0)) {
+      group.latestSectionTime = evtTime;
       group.latestSection = String(event.section || "");
     }
     const secName = String(event.section || "Page");
     const section = group.sections.get(secName) || { name: secName, visits: 0, lastVisit: 0 };
     section.visits++;
-    section.lastVisit = Math.max(section.lastVisit, event.time || 0);
+    section.lastVisit = Math.max(section.lastVisit, evtTime);
     group.sections.set(secName, section);
   }
 
   return Array.from(groups.values()).map(group => {
-    const sectionList = Array.from(group.sections.values()).sort((a,b)=>(b.lastVisit||0)-(a.lastVisit||0));
+    const sectionList = Array.from(group.sections.values()).sort((a,b) => (b.lastVisit||0) - (a.lastVisit||0));
     const latestSec = group.latestSection || (sectionList.length > 0 ? sectionList[0].name : "");
     return {
       ...group,
       latestSection: latestSec,
       sections: sectionList
     };
-  }).sort((a,b)=>(b.time||0)-(a.time||0));
+  }).sort((a,b) => (b.time||0) - (a.time||0));
 }

@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<title>Can a Machine Think? (The Turing Test &amp; Church's Thesis) - Module 1: Chapter 2</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
+
+@page {
+  size: A4 portrait;
+  margin: 5.5mm 6.5mm;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+  color: #0f172a;
+  font-size: 8.3pt;
+  line-height: 1.43;
+}
+
+.page-container {
+  width: 100%;
+  box-sizing: border-box;
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 2px;
+}
+
+.page-container:last-child {
+  page-break-after: avoid;
+}
+
+/* Header banner */
+.hero-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+  color: #ffffff;
+  padding: 8.0px 12.0px;
+  border-radius: 6.5px;
+  margin-bottom: 6.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5.5px solid #f59e0b;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2.0px;
+}
+.hero-tag {
+  font-size: 6.6pt;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #fbbf24;
+  font-family: 'JetBrains Mono', monospace;
+}
+.hero-title {
+  font-size: 11.2pt;
+  font-weight: 800;
+  line-height: 1.18;
+  color: #ffffff;
+}
+.hero-subtitle {
+  font-size: 7.7pt;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+.hero-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2.5px;
+}
+.hero-badge {
+  background: rgba(245, 158, 11, 0.22);
+  border: 1px solid rgba(245, 158, 11, 0.55);
+  color: #fef3c7;
+  padding: 2.5px 8.0px;
+  border-radius: 4px;
+  font-size: 6.5pt;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+}
+.hero-page-tag {
+  font-size: 6.6pt;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* Running compact header for pages 2-10 */
+.running-header {
+  background: #f8fafc;
+  border-bottom: 1.5px solid #cbd5e1;
+  border-left: 4.5px solid #047857;
+  padding: 5.2px 10.0px;
+  margin-bottom: 6.0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4.5px;
+}
+.running-title {
+  font-size: 8.2pt;
+  font-weight: 700;
+  color: #0f172a;
+}
+.running-title span {
+  color: #047857;
+  font-weight: 800;
+}
+.running-meta {
+  font-size: 6.6pt;
+  color: #64748b;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+}
+
+/* Grid layout of content cards */
+.cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8.5px;
+  flex: 1;
+}
+
+.concept-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6.0px;
+  padding: 8.5px 10.0px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 4.5px;
+}
+
+.card-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 3.0px;
+  margin-bottom: 2.0px;
+}
+.card-num-badge {
+  background: #1e3a8a;
+  color: #ffffff;
+  font-size: 6.3pt;
+  font-weight: 800;
+  padding: 1.5px 5.8px;
+  border-radius: 3.5px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.card-topic-title {
+  font-size: 8.9pt;
+  font-weight: 800;
+  color: #0f172a;
+  flex: 1;
+  margin-left: 7px;
+}
+.card-tag-pill {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 6.0pt;
+  font-weight: 700;
+  padding: 1.5px 5.8px;
+  border-radius: 3.5px;
+  text-transform: uppercase;
+}
+
+/* Dual language layout inside card */
+.dual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6.5px;
+}
+
+.en-box {
+  background: #eff6ff;
+  border-left: 3.8px solid #1e3a8a;
+  border-radius: 4.5px;
+  padding: 6.2px 8.2px;
+  font-size: 8.25pt;
+  color: #1e293b;
+  line-height: 1.45;
+}
+.en-box strong.title-label {
+  display: block;
+  color: #1e3a8a;
+  font-size: 8.8pt;
+  font-weight: 800;
+  margin-bottom: 2.5px;
+  line-height: 1.25;
+}
+
+.ml-box {
+  background: #ecfdf5;
+  border-left: 3.8px solid #047857;
+  border-radius: 4.5px;
+  padding: 6.2px 8.2px;
+  font-size: 7.95pt;
+  color: #064e3b;
+  line-height: 1.46;
+  font-family: 'Noto Sans Malayalam', sans-serif;
+}
+.ml-box strong.title-label {
+  display: block;
+  color: #047857;
+  font-size: 8.4pt;
+  font-weight: 800;
+  margin-bottom: 2.5px;
+  line-height: 1.25;
+}
+
+/* Example box */
+.eg-box {
+  background: #fefce8;
+  border: 1px dashed #ca8a04;
+  border-radius: 4.5px;
+  padding: 4.0px 7.8px;
+  font-size: 7.6pt;
+  color: #854d0e;
+  line-height: 1.36;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.eg-label {
+  font-weight: 800;
+  color: #a16207;
+  font-family: 'Noto Sans Malayalam', sans-serif;
+  flex-shrink: 0;
+}
+
+/* Page 10 20 Exam Knock Grid */
+.knock-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.5px;
+  flex: 1;
+}
+.knock-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 4.5px;
+  padding: 3.2px 5.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+.knock-card:nth-child(4n+1) { border-left: 3.8px solid #1e3a8a; background: #fafcff; }
+.knock-card:nth-child(4n+2) { border-left: 3.8px solid #047857; background: #f7fdfa; }
+.knock-card:nth-child(4n+3) { border-left: 3.8px solid #b45309; background: #fffdf7; }
+.knock-card:nth-child(4n+4) { border-left: 3.8px solid #6b21a8; background: #faf7fd; }
+
+.knock-header {
+  display: flex;
+  align-items: center;
+  gap: 4.5px;
+}
+.knock-num {
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 5.8pt;
+  font-weight: 800;
+  padding: 1.0px 4.0px;
+  border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.knock-title {
+  font-size: 7.3pt;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.18;
+}
+.knock-desc {
+  font-size: 6.8pt;
+  line-height: 1.28;
+  color: #334155;
+  margin: 0;
+}
+.knock-desc strong {
+  color: #0f172a;
+}
+
+/* Footer */
+.page-footer {
+  border-top: 1px solid #cbd5e1;
+  padding-top: 3.2px;
+  margin-top: 4.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 6.3pt;
+  color: #64748b;
+  font-family: 'JetBrains Mono', monospace;
+}
+.footer-left {
+  font-weight: 600;
+}
+.footer-right {
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+</style>
+</head>
+<body>
+
+<div class="page-container">
+  <div class="hero-banner">
+    <div class="hero-left">
+      <span class="hero-tag">CALICUT UNIVERSITY FYUGP · MINOR PHILOSOPHY · PHL1MN102</span>
+      <span class="hero-title">Can a Machine Think? (ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ?)</span>
+      <span class="hero-subtitle">Module 1 · Chapter 2: The Turing Test, Computational Foundations &amp; Symbol Manipulation</span>
+    </div>
+    <div class="hero-right">
+      <span class="hero-badge">OFFICIAL LMS E-CONTENT</span>
+      <span class="hero-page-tag">PAGE 1 OF 10</span>
+    </div>
+  </div>
+
+  <div class="cards-stack">
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 01</span>
+        <span class="card-topic-title">The Persistent Inquiry: 'Can a Machine Think?' (Alan Turing 1950) (അടിസ്ഥാന ദാർശനിക ചോദ്യം: 'ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ?')</span>
+        <span class="card-tag-pill">CORE LMS INQUIRY</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Meticulous Examination in 'Computing Machinery and Intelligence'</strong>
+          The inquiry 'Can a machine think?' is the most essential and persistent philosophical question in the domain of Artificial Intelligence. It was initially and meticulously examined by computer pioneer Alan Turing in his key 1950 article, 'Computing Machinery and Intelligence'. Turing investigated the notion of cognition and its implications in both human and artificial realms, addressing whether a non-biological machine could genuinely possess thought, consciousness, and rational understanding.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">1950-ൽ അലൻ ട്യൂറിംഗ് ആരംഭിച്ച സമഗ്രമായ അന്വേഷണം</strong>
+          നിർമ്മിത ബുദ്ധിയിലെ ഏറ്റവും പ്രധാനപ്പെട്ടതും ശാശ്വതവുമായ ദാർശനിക അന്വേഷണമാണ് 'ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ?' എന്നത്. കമ്പ്യൂട്ടർ പയനിയറായ അലൻ ട്യൂറിംഗ് തന്റെ പ്രശസ്തമായ 1950-ലെ 'കമ്പ്യൂട്ടിംഗ് മെഷിനറിയും ഇന്റലിജൻസും' എന്ന ലേഖനത്തിലൂടെ ഈ വിഷയത്തെ സമഗ്രമായി പരിശോധിച്ചു. മനുഷ്യനിലും യന്ത്രങ്ങളിലും കോഗ്നിഷൻ അഥവാ വൈജ്ഞാനികത എങ്ങനെ പ്രവർത്തിക്കുന്നുവെന്ന് അദ്ദേഹം ആഴത്തിൽ അപഗ്രഥിച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>മനുഷ്യന്റെ ചിന്ത എന്നത് അമൂർത്തമായ ഒരു പ്രക്രിയയാണോ അതോ കൃത്യമായ യുക്തി നിയമങ്ങളിലൂടെ യന്ത്രങ്ങൾക്ക് അനുകരിക്കാൻ കഴിയുന്നതാണോ എന്നതായിരുന്നു പ്രധാന ചോദ്യം.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 02</span>
+        <span class="card-topic-title">Substitution of the Inquiry: Physical Symbol Systems (ചോദ്യത്തിന്റെ പരിവർത്തനം: ചിഹ്നങ്ങളെ അടിസ്ഥാനമാക്കിയുള്ള ചിന്ത)</span>
+        <span class="card-tag-pill">OPERATIONAL REFORMULATION</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Manipulating Physical Symbols According to Structure-Sensitive Rules</strong>
+          In the early 1950s, the ambiguous inquiry 'might a machine possess the capacity for thought?' was substituted with a more accessible and rigorous formulation: 'might a computer that manipulates physical symbols in accordance with structure-sensitive rules contain the capacity for thought?' This progression resulted from extensive research in formal logic and computational theory during the preceding fifty years, bridging abstract symbolic logic with physical automation.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">അവ്യക്തമായ ചോദ്യത്തിൽ നിന്ന് കൃത്യമായ നിയമങ്ങളിലേക്കുള്ള മാറ്റം</strong>
+          1950-കളുടെ തുടക്കത്തിൽ 'യന്ത്രത്തിന് ചിന്തിക്കാനാകുമോ' എന്ന അവ്യക്തമായ ചോദ്യത്തിന് പകരം, 'ഘടനയ്ക്ക് അനുസൃതമായ നിയമങ്ങളിലൂടെ ചിഹ്നങ്ങളെ കൈകാര്യം ചെയ്യുന്ന ഒരു കമ്പ്യൂട്ടറിന് ചിന്ത സാധ്യമാണോ?' എന്ന കൂടുതൽ വ്യക്തമായ ചോദ്യം നിലവിൽ വന്നു. കഴിഞ്ഞ അമ്പത് വർഷത്തെ ഔപചാരിക യുക്തിയുടെയും കമ്പ്യൂട്ടേഷണൽ തിയറിയുടെയും വികാസമാണ് ഈ പുതിയ മാറ്റത്തിലേക്ക് നയിച്ചത്.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>ചിന്തയെ മനസ്സിന്റെ ഒരു നിഗൂഢതയായി കാണുന്നതിന് പകരം, ചിഹ്നങ്ങളെ കൃത്യമായ നിയമങ്ങളാൽ ക്രമീകരിക്കുന്ന ഒരു യന്ത്ര പ്രക്രിയയായി പുനർനിർവചിച്ചു.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 03</span>
+        <span class="card-topic-title">Three Intellectual &amp; Technical Pillars: Von Neumann, Turing, Shannon (എഐയുടെ മൂന്ന് പ്രധാന അടിത്തറകൾ: വോൺ ന്യൂമാൻ, ട്യൂറിംഗ്, ഷാനൻ)</span>
+        <span class="card-tag-pill">FOUNDING ARCHITECTS</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Establishing the Theoretical and Technical Foundations of Artificial Intelligence</strong>
+          Three individuals are distinguished for establishing the intellectual and technical foundations of the discipline known as Artificial Intelligence: John von Neumann, Alan Turing, and Claude Shannon. Theorists recognized the significant influence of abstract symbolic systems that withstand rule-based modifications. If automated, these abstract computational skills manifest in tangible physical systems, providing the bedrock upon which all modern intelligent machines operate.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">നിർമ്മിത ബുദ്ധിയുടെ സൈദ്ധാന്തിക ശിൽപികൾ</strong>
+          നിർമ്മിത ബുദ്ധി എന്ന ശാസ്ത്രശാഖയുടെ സൈദ്ധാന്തികവും സാങ്കേതികവുമായ അടിത്തറ സ്ഥാപിച്ച മൂന്ന് പ്രധാന വ്യക്തികളാണ് ജോൺ വോൺ ന്യൂമാൻ, അലൻ ട്യൂറിംഗ്, ക്ലോഡ് ഷാനൻ എന്നിവർ. നിയമങ്ങളാൽ പ്രവർത്തിക്കുന്ന ചിഹ്ന സംവിധാനങ്ങളെ യന്ത്രവൽക്കരിച്ചാൽ അവയ്ക്ക് ബുദ്ധിപരമായ പ്രവർത്തനങ്ങൾ നടത്താൻ സാധിക്കുമെന്ന് ഇവർ തെളിയിച്ചു. ഈ കണ്ടെത്തലാണ് എഐ എന്ന ഗവേഷണ ശാഖയ്ക്ക് തുടക്കം കുറിച്ചത്.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>വോൺ ന്യൂമാന്റെ മെമ്മറി രൂപകൽപ്പനയും, ട്യൂറിംഗിന്റെ കമ്പ്യൂട്ടേഷൻ സിദ്ധാന്തവും, ഷാനന്റെ വിവര സിദ്ധാന്തവും ചേർന്നാണ് ഇന്നത്തെ ഡിജിറ്റൽ യുക്തിചിന്ത സാധ്യമാക്കിയത്.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">CALICUT UNIVERSITY · MINOR PHILOSOPHY (PHL1MN102) · MODULE 1: CHAPTER 2</span>
+    <span class="footer-right">PAGE 1 OF 10</span>
+  </div>
+</div>
+
+<div class="page-container">
+  <div class="running-header">
+    <span class="running-title">CAN A MACHINE THINK? · <span>CHURCH'S THESIS &amp; ROTE PROCEDURES</span></span>
+    <span class="running-meta">CALICUT UNIVERSITY FYUGP · PHL1MN102</span>
+  </div>
+
+  <div class="cards-stack">
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 04</span>
+        <span class="card-topic-title">The Affirmative Answer: Computational Theory Foundations (യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാം എന്ന അനുകൂല വാദത്തിന്റെ അടിസ്ഥാനം)</span>
+        <span class="card-tag-pill">COMPUTATIONAL THEORY</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Two Profound Findings Answering 'Could a Machine Think?'</strong>
+          Could a machine think? The LMS textbook asserts there were many solid reasons for saying yes. The fundamental and profound cause lies in two significant findings in computational theory: Church's Thesis and Turing's Universal Machine. These discoveries demonstrated that any cognitive or problem-solving task that can be precisely described can be fully automated using step-by-step mechanical procedures without requiring supernatural intuition.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">കമ്പ്യൂട്ടേഷണൽ തിയറിയിലെ രണ്ട് വിപ്ലവകരമായ കണ്ടെത്തലുകൾ</strong>
+          ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ? എൽ.എം.എസ് പാഠപുസ്തകം വ്യക്തമാക്കുന്നതുപോലെ, ഇതിന് 'അതെ' എന്ന് ഉത്തരം നൽകാൻ ശക്തമായ കാരണങ്ങളുണ്ടായിരുന്നു. കമ്പ്യൂട്ടേഷണൽ തിയറിയിലെ രണ്ട് പ്രധാന കണ്ടെത്തലുകളാണ് ഇതിന് ആധാരം: ചർച്ചിന്റെ സിദ്ധാന്തവും (Church's Thesis) ട്യൂറിംഗിന്റെ യൂണിവേഴ്സൽ മെഷീനും. ഏത് യുക്തിചിന്തയും കൃത്യമായ ഘട്ടങ്ങളിലൂടെ യന്ത്രങ്ങൾക്ക് നിർവ്വഹിക്കാൻ സാധിക്കുമെന്ന് ഇത് തെളിയിച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>മനുഷ്യന്റെ ബുദ്ധിപരമായ പ്രശ്നപരിഹാരങ്ങളെ പൂർണ്ണമായി യാന്ത്രികമായി നിർവ്വഹിക്കാൻ കഴിയുമെന്ന് ഗണിതശാസ്ത്രപരമായ തെളിവുകൾ വഴി സ്ഥാപിക്കപ്പെട്ടു.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 05</span>
+        <span class="card-topic-title">Church's Thesis: Effective Computability &amp; Lambda Calculus (ചർച്ചിന്റെ സിദ്ധാന്തം: ഇഫക്റ്റീവ് കമ്പ്യൂട്ടബിലിറ്റിയും ലാംബ്ഡ കാൽക്കുലസും)</span>
+        <span class="card-tag-pill">MATHEMATICAL LOGIC</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Alonzo Church's Formal Language for Mathematical Calculation</strong>
+          The first major finding was Church's thesis, which states that every effectively computable function is recursively computable. Alonzo Church posited that a function is effectively computable if and only if it can be calculated by lambda calculus, a formal language he devised to express mathematical functions and computation. Church's thesis constitutes the foundational bridge linking the intuitive concept of an algorithm with exact mathematical definitions.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">അലോൺസോ ചർച്ചും ലാംബ്ഡ കാൽക്കുലസിന്റെ നിയമങ്ങളും</strong>
+          ആദ്യത്തെ പ്രധാന കണ്ടെത്തൽ ചർച്ചിന്റെ സിദ്ധാന്തമാണ്. ഘട്ടംഘട്ടമായി കണക്കാക്കാൻ കഴിയുന്ന ഏതൊരു ഗണിത സമവാക്യവും റിക്കേഴ്‌സീവ് ആയി കമ്പ്യൂട്ട് ചെയ്യാൻ സാധിക്കുമെന്ന് ഇത് സമർത്ഥിക്കുന്നു. അലോൺസോ ചർച്ച് രൂപകൽപ്പന ചെയ്ത 'ലാംബ്ഡ കാൽക്കുലസ്' (Lambda Calculus) എന്ന ഔദ്യോഗിക ഭാഷയിലൂടെ നിർവ്വഹിക്കാൻ കഴിയുന്നവയാണ് കമ്പ്യൂട്ടബിൾ ഫംഗ്ഷനുകൾ എന്ന് അദ്ദേഹം സിദ്ധാന്തിച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>ഒരു ഇൻപുട്ടിന് കൃത്യമായ ഔട്ട്പുട്ട് നൽകുന്ന ഏതൊരു കണക്കുകൂട്ടലും ലാംബ്ഡ കാൽക്കുലസ് സമവാക്യങ്ങളിലൂടെ യാന്ത്രികമായി ചെയ്യാൻ സാധിക്കുന്നു.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 06</span>
+        <span class="card-topic-title">The Concept of 'Rote' Procedures &amp; Recursive Computability (ചിട്ടയായ നടപടിക്രമങ്ങളും (Rote Procedures) റിക്കർഷനും)</span>
+        <span class="card-tag-pill">ALGORITHMIC RIGOR</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Finite Repetitive Operations Yielding Output in Finite Time</strong>
+          'Effectively computable' means that there is a 'rote' procedure for determining, in finite time, the output of the function for a given input. 'Recursively computable' means more specifically that there is a finite set of operations that can be applied to a given input, and then applied again and again to the successive results of such applications, yielding the output in finite time. The notion of a rote procedure is intuitive and non-formal, capturing the very essence of computation.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">പരിമിതമായ ഘട്ടങ്ങളിലൂടെ കൃത്യമായ ഫലം നൽകുന്ന യാന്ത്രിക രീതി</strong>
+          'ഇഫക്റ്റീവ് കമ്പ്യൂട്ടബിൾ' എന്നാൽ ഒരു നിശ്ചിത സമയത്തിനുള്ളിൽ ഇൻപുട്ടിൽ നിന്ന് ഔട്ട്പുട്ട് നൽകുന്ന ഒരു 'ചിട്ടയായ നടപടിക്രമം' (Rote Procedure) ഉണ്ടായിരിക്കുക എന്നതാണ്. 'റിക്കേഴ്‌സീവ് കമ്പ്യൂട്ടബിലിറ്റി' എന്നാൽ പരിമിതമായ ചില അടിസ്ഥാന പ്രവർത്തനങ്ങൾ ഇൻപുട്ടിൽ പ്രയോഗിക്കുകയും, തുടർന്ന് ലഭിക്കുന്ന ഫലങ്ങളിൽ ആ പ്രവർത്തനങ്ങൾ ആവർത്തിച്ച് പ്രയോഗിച്ച് കൃത്യമായ ഫലം നേടുകയും ചെയ്യുന്ന രീതിയാണ്.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>ഒരു കണക്ക് ചെയ്യാൻ നിശ്ചിത നിയമങ്ങൾ ആവർത്തിച്ച് ഉപയോഗിച്ച് കൃത്യമായ സമയത്തിനുള്ളിൽ ഉത്തരം കണ്ടെത്തുന്ന യാന്ത്രിക പ്രക്രിയ.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">CALICUT UNIVERSITY · MINOR PHILOSOPHY (PHL1MN102) · MODULE 1: CHAPTER 2</span>
+    <span class="footer-right">PAGE 2 OF 10</span>
+  </div>
+</div>
+
+<div class="page-container">
+  <div class="running-header">
+    <span class="running-title">CAN A MACHINE THINK? · <span>UNIVERSAL TURING MACHINE (UTM)</span></span>
+    <span class="running-meta">CALICUT UNIVERSITY FYUGP · PHL1MN102</span>
+  </div>
+
+  <div class="cards-stack">
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 07</span>
+        <span class="card-topic-title">Church's Thesis: Philosophical Assertion of Computation (ചർച്ചിന്റെ സിദ്ധാന്തത്തിന്റെ ദാർശനിക പ്രസക്തി)</span>
+        <span class="card-tag-pill">PHILOSOPHY OF COMPUTATION</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Hypothesis Linking Intuitive Algorithms to Physical Embodiments</strong>
+          Church's Thesis is not a formal theorem subject to mathematical proof; instead, it constitutes a fundamental hypothesis or philosophical assertion regarding the essence of computation. The thesis constitutes the cornerstone of computer science, as all contemporary computers are fundamentally physical embodiments of Turing machines. It presents profound enquiries: if human cognition adheres to computable processes, then a machine can emulate human reasoning.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">മനസ്സും കമ്പ്യൂട്ടറും തമ്മിലുള്ള ദാർശനിക ബന്ധം</strong>
+          ചർച്ചിന്റെ സിദ്ധാന്തം എന്നത് തെളിയിക്കപ്പെട്ട ഒരു ഗണിത സിദ്ധാന്തമല്ല, മറിച്ച് കമ്പ്യൂട്ടേഷന്റെ സ്വഭാവത്തെക്കുറിച്ചുള്ള ഒരു ദാർശനിക പ്രഖ്യാപനമാണ്. ഇന്നത്തെ എല്ലാ ആധുനിക കമ്പ്യൂട്ടറുകളും ട്യൂറിംഗ് മെഷീനുകളുടെ ഭൗതിക രൂപങ്ങളാണ്. മനുഷ്യന്റെ ചിന്താ പ്രക്രിയകൾ കമ്പ്യൂട്ടർ അൽഗോരിതങ്ങൾക്ക് അനുസൃതമാണെങ്കിൽ, ഒരു യന്ത്രത്തിന് മനുഷ്യന്റെ യുക്തിചിന്തയെ പൂർണ്ണമായി അനുകരിക്കാൻ സാധിക്കും.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>മനുഷ്യന്റെ ചിന്ത എന്നത് ഘട്ടംഘട്ടമായ അൽഗോരിതമാണെങ്കിൽ, യന്ത്രങ്ങൾക്കും മനുഷ്യനെപ്പോലെ ചിന്തിക്കാൻ സാധിക്കുമെന്ന ദാർശനിക നിഗമനം.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 08</span>
+        <span class="card-topic-title">Turing's Demonstration: The Universal Turing Machine (UTM) (ട്യൂറിംഗിന്റെ കണ്ടെത്തൽ: യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീൻ)</span>
+        <span class="card-tag-pill">UNIVERSAL COMPUTATION</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">A Maximally Simple Symbol-Manipulating Machine Computing in Finite Time</strong>
+          The second important computational result was Alan M. Turing's demonstration that any recursively computable function can be computed in finite time by a maximally simple sort of symbol-manipulating machine that has come to be called a Universal Turing Machine (UTM). Simultaneously with Church, Turing conceptualised this abstract device that processes symbols on a tape in accordance with predefined operational state rules.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">ഏതൊരു പ്രോഗ്രാമും പ്രവർത്തിപ്പിക്കാൻ കഴിയുന്ന അമൂർത്ത യന്ത്രം</strong>
+          കമ്പ്യൂട്ടേഷണൽ തിയറിയിലെ രണ്ടാമത്തെ പ്രധാന കണ്ടെത്തൽ അലൻ ട്യൂറിംഗിന്റേതാണ്. റിക്കേഴ്‌സീവ് ആയി കണക്കാക്കാവുന്ന ഏതൊരു ഫംഗ്ഷനും ഒരു ലളിതമായ സിംബൽ മാനിപ്പുലേറ്റിംഗ് യന്ത്രത്തിന് (Universal Turing Machine) നിശ്ചിത സമയത്തിനുള്ളിൽ കമ്പ്യൂട്ട് ചെയ്യാൻ കഴിയുമെന്ന് അദ്ദേഹം തെളിയിച്ചു. ടേപ്പിലെ ചിഹ്നങ്ങളെ അടിസ്ഥാനമാക്കി പ്രവർത്തിക്കുന്ന ഈ അമൂർത്ത ഉപകരണം ആധുനിക കമ്പ്യൂട്ടറുകളുടെ മാതൃകയായി.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>ഒരു അനന്തമായ ടേപ്പിൽ ചിഹ്നങ്ങൾ എഴുതിയും വായിച്ചും ഏത് സങ്കീർണ്ണമായ സോഫ്റ്റ്‌വെയറും പ്രവർത്തിപ്പിക്കാൻ യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീന് സാധിക്കുന്നു.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 09</span>
+        <span class="card-topic-title">Structure-Sensitive Rules &amp; Non-Computable Operations (ഘടനാനുസൃത നിയമങ്ങളും കമ്പ്യൂട്ടേഷണൽ പരിധികളും)</span>
+        <span class="card-tag-pill">RULES & BOUNDARIES</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Rules Sensitive to Identity, Order and Arrangement of Input Symbols</strong>
+          The Universal Turing Machine is guided by a set of recursively applicable rules that are sensitive to the identity, order, and arrangement of the elementary symbols it encounters as input. However, the thesis also outlines limits: if the human mind executes non-computable operations that transcend algorithms, machines may never entirely replicate human consciousness or creativity, establishing the philosophical boundary between mechanical intelligence and genuine consciousness.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">ചിഹ്നങ്ങളുടെ ക്രമവും മനുഷ്യ മനസ്സിന്റെ കമ്പ്യൂട്ടേഷണൽ പരിധികളും</strong>
+          ഇൻപുട്ടായി ലഭിക്കുന്ന അടിസ്ഥാന ചിഹ്നങ്ങളുടെ വ്യക്തിത്വം, ക്രമം, ഘടന എന്നിവ തിരിച്ചറിഞ്ഞ് പ്രവർത്തിക്കുന്ന റിക്കേഴ്‌സീവ് നിയമങ്ങളാണ് ട്യൂറിംഗ് മെഷീനെ നയിക്കുന്നത്. എന്നാൽ മനുഷ്യ മനസ്സ് അൽഗോരിതങ്ങൾക്ക് അതീതമായ 'കമ്പ്യൂട്ട് ചെയ്യാനാവാത്ത' (Non-computable) പ്രവർത്തനങ്ങൾ നടത്തുന്നുവെങ്കിൽ, യന്ത്രങ്ങൾക്ക് ഒരിക്കലും മനുഷ്യന്റെ പൂർണ്ണ ബോധത്തെയോ സർഗ്ഗാത്മകതയെയോ പുനർനിർമ്മിക്കാൻ കഴിയില്ല.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>ചിഹ്നങ്ങളുടെ ക്രമം കൃത്യമായി പാലിച്ച് പ്രവർത്തിക്കുമ്പോഴും, യാന്ത്രിക നിയമങ്ങൾക്ക് അപ്പുറമുള്ള മനുഷ്യന്റെ സർഗ്ഗാത്മകത യന്ത്രങ്ങൾക്ക് പരിമിതിയായി മാറാം.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">CALICUT UNIVERSITY · MINOR PHILOSOPHY (PHL1MN102) · MODULE 1: CHAPTER 2</span>
+    <span class="footer-right">PAGE 3 OF 10</span>
+  </div>
+</div>
+
+<div class="page-container">
+  <div class="running-header">
+    <span class="running-title">CAN A MACHINE THINK? · <span>INTELLIGENT MACHINERY &amp; MEMORY</span></span>
+    <span class="running-meta">CALICUT UNIVERSITY FYUGP · PHL1MN102</span>
+  </div>
+
+  <div class="cards-stack">
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 10</span>
+        <span class="card-topic-title">Alan Turing's 'Intelligent Machinery' &amp; Replicating Intelligence (അലൻ ട്യൂറിംഗിന്റെ 'ഇന്റലിജന്റ് മെഷിനറി' പഠനവും ബുദ്ധി പുനർനിർമ്മാണവും)</span>
+        <span class="card-tag-pill">INTELLIGENT MACHINERY</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Formidable Challenges Considering Early Technological Constraints</strong>
+          In a significant study titled 'Intelligent Machinery', Turing examined the requirements for replicating intelligence within a machine, recognizing this as a formidable challenge considering the severe technological constraints of that era. Turing analyzed how biological cognitive faculties could be mathematically modeled, establishing the theoretical conditions required for a mechanical apparatus to simulate human problem-solving and cognitive agency.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">യന്ത്രങ്ങളിൽ ബുദ്ധി പുനർനിർമ്മിക്കാനുള്ള ട്യൂറിംഗിന്റെ ദർശനം</strong>
+          'ഇന്റലിജന്റ് മെഷിനറി' (Intelligent Machinery) എന്ന സുപ്രധാന പഠനത്തിൽ, ഒരു യന്ത്രത്തിനുള്ളിൽ ബുദ്ധി പുനർനിർമ്മിക്കുന്നതിന് ആവശ്യമായ ഘടകങ്ങളെക്കുറിച്ച് അലൻ ട്യൂറിംഗ് പരിശോധിച്ചു. അക്കാലത്തെ കടുത്ത സാങ്കേതിക പരിമിതികൾക്കിടയിലും ഇതൊരു വലിയ വെല്ലുവിളിയാണെന്ന് അദ്ദേഹം മനസ്സിലാക്കി. മനുഷ്യന്റെ ചിന്താ ശേഷികളെ ഗണിതശാസ്ത്രപരമായി മാതൃകയാക്കാനുള്ള വഴികൾ അദ്ദേഹം മുന്നോട്ടുവെച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>പ്രാഥമിക കമ്പ്യൂട്ടിംഗ് യന്ത്രങ്ങൾ മാത്രം നിലനിന്നിരുന്ന കാലത്ത് തന്നെ യന്ത്രങ്ങൾക്ക് മനുഷ്യതുല്യമായ ബുദ്ധി സാധ്യമാണെന്ന് അദ്ദേഹം സമർത്ഥിച്ചു.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 11</span>
+        <span class="card-topic-title">Human Brain Memory: Ten Billion Binary Digits (മനുഷ്യ മസ്തിഷ്കത്തിന്റെ മെമ്മറി: പത്ത് ബില്യൺ ബൈനറി അക്കങ്ങൾ)</span>
+        <span class="card-tag-pill">MEMORY CAPACITY</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Contemplating Brain Storage vs. Million Digits of Computer Memory</strong>
+          In 'Intelligent Machinery', Turing contemplated: 'The human brain's memory capacity is likely around ten billion binary digits; however, a significant portion of this is likely utilized for recalling visual impressions and other relatively inefficient methods.' Turing reasoned that one could justifiably anticipate achieving significant advancements in Artificial Intelligence with several million digits of computer memory, linking cognitive power directly to physical storage registers.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">മസ്തിഷ്ക ശേഷിയും കമ്പ്യൂട്ടർ മെമ്മറിയുടെ വികാസവും</strong>
+          മനുഷ്യ മസ്തിഷ്കത്തിന്റെ ഓർമ്മശേഷി ഏകദേശം പത്ത് ബില്യൺ (10 Billion) ബൈനറി അക്കങ്ങൾക്ക് തുല്യമായിരിക്കുമെന്ന് ട്യൂറിംഗ് കണക്കാക്കി. ഇതിൽ വലിയൊരു പങ്ക് കാഴ്ചകൾ ഓർത്തെടുക്കാനും മറ്റ് കാര്യക്ഷമമല്ലാത്ത രീതികൾക്കുമാണ് ഉപയോഗിക്കുന്നത്. കമ്പ്യൂട്ടറുകൾക്ക് ഏതാനും ദശലക്ഷം ഡിജിറ്റുകളുടെ മെമ്മറി ലഭ്യമായാൽ എഐ രംഗത്ത് വലിയ മുന്നേറ്റം കൈവരിക്കാൻ സാധിക്കുമെന്ന് അദ്ദേഹം പ്രവചിച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>മനുഷ്യന്റെ ഓർമ്മശക്തിയെ ബൈനറി ഡിജിറ്റുകളുമായി താരതമ്യം ചെയ്തതിലൂടെ കമ്പ്യൂട്ടർ മെമ്മറിയുടെ വളർച്ച ചിന്താ ശേഷി വർദ്ധിപ്പിക്കുമെന്ന് അദ്ദേഹം വ്യക്തമാക്കി.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 12</span>
+        <span class="card-topic-title">Claude Shannon, Information Theory &amp; The Dartmouth Project (ക്ലോഡ് ഷാനൻ, ഇൻഫർമേഷൻ തിയറി, ഡാർട്ട്മൗത്ത് പ്രോജക്റ്റ് (DSRPAI))</span>
+        <span class="card-tag-pill">INFORMATION FOUNDATION</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Mathematician, Inception of Information Theory &amp; Simulating Intelligence</strong>
+          The textbook highlights mathematician Claude Shannon, the progenitor of information theory, who helped design the inaugural commercial scientific computer. The purpose of the Dartmouth Summer Research Project on Artificial Intelligence (DSRPAI), organized with Shannon, was to gather academics from diverse disciplines to establish a novel research domain focused on developing machines capable of simulating every aspect of human intelligence.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">ഇൻഫർമേഷൻ തിയറിയുടെ പിതാവും ഡാർട്ട്മൗത്ത് സംരംഭവും</strong>
+          ആദ്യകാല വാണിജ്യ ശാസ്ത്രീയ കമ്പ്യൂട്ടറുകളുടെ രൂപകൽപ്പനയിലും ഇൻഫർമേഷൻ തിയറിയുടെ വികാസത്തിലും വലിയ പങ്കുവഹിച്ച ഗണിതശാസ്ത്രജ്ഞനാണ് ക്ലോഡ് ഷാനൻ. ജോൺ മക്കാർത്തി, ഷാനൻ എന്നിവരുടെ നേതൃത്വത്തിൽ നടന്ന ഡാർട്ട്മൗത്ത് സമ്മേളനത്തിന്റെ (DSRPAI) പ്രധാന ലക്ഷ്യം മനുഷ്യന്റെ ബുദ്ധിശക്തിയെ അനുകരിക്കാൻ കഴിയുന്ന യന്ത്രങ്ങളെ വികസിപ്പിക്കുന്നതിനുള്ള പുതിയൊരു ശാസ്ത്രശാഖയ്ക്ക് തുടക്കം കുറിക്കുക എന്നതായിരുന്നു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>വിവിധ ശാസ്ത്ര ശാഖകളിലെ വിദഗ്ദ്ധരെ ഒന്നിപ്പിച്ച് യന്ത്രങ്ങൾക്ക് ചിന്ത സാധ്യമാക്കാനുള്ള ആദ്യത്തെ സംഘടിത ഗവേഷണമായിരുന്നു ഡാർട്ട്മൗത്ത് ശിൽപശാല.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">CALICUT UNIVERSITY · MINOR PHILOSOPHY (PHL1MN102) · MODULE 1: CHAPTER 2</span>
+    <span class="footer-right">PAGE 4 OF 10</span>
+  </div>
+</div>
+
+<div class="page-container">
+  <div class="running-header">
+    <span class="running-title">CAN A MACHINE THINK? · <span>VON NEUMANN &amp; COMPUTER MEMORY</span></span>
+    <span class="running-meta">CALICUT UNIVERSITY FYUGP · PHL1MN102</span>
+  </div>
+
+  <div class="cards-stack">
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 13</span>
+        <span class="card-topic-title">John von Neumann: Storing Programs in Computer Memory (ജോൺ വോൺ ന്യൂമാൻ: കമ്പ്യൂട്ടർ മെമ്മറിയിൽ പ്രോഗ്രാം സൂക്ഷിക്കുന്ന രീതി)</span>
+        <span class="card-tag-pill">STORED-PROGRAM CONCEPT</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Unifying Instruction Programs and Data Inside a Shared Memory Space</strong>
+          John von Neumann's major contribution to computing was helping to establish the idea of a computer program stored in the computer memory. Rather than rewiring circuits manually for each new computation, von Neumann designed an architecture where instructions and data reside together in storage registers, allowing programs to be accessed and executed at electronic speeds, transforming computers into flexible general-purpose reasoning machines.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">പ്രോഗ്രാമുകളെ വിവരങ്ങളോടൊപ്പം മെമ്മറിയിൽ സൂക്ഷിക്കുന്ന സംവിധാനം</strong>
+          കമ്പ്യൂട്ടിംഗ് ചരിത്രത്തിൽ ജോൺ വോൺ ന്യൂമാൻ നൽകിയ ഏറ്റവും വലിയ സംഭാവന പ്രോഗ്രാം നിർദ്ദേശങ്ങൾ കമ്പ്യൂട്ടർ മെമ്മറിയിൽ തന്നെ സൂക്ഷിക്കുക എന്നതായിരുന്നു. ഓരോ കണക്കുകൂട്ടലിനും സർക്യൂട്ടുകൾ മാറ്റുന്നതിന് പകരം, നിർദ്ദേശങ്ങളും വിവരങ്ങളും ഒരേ മെമ്മറിയിൽ സൂക്ഷിക്കാൻ തുടങ്ങിയതോടെ കമ്പ്യൂട്ടറുകൾക്ക് ഏത് സങ്കീർണ്ണമായ ജോലിയും വേഗത്തിൽ ചെയ്യാൻ സാധിച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>ഇന്നത്തെ എല്ലാ കമ്പ്യൂട്ടറുകളിലും സോഫ്റ്റ്‌വെയറുകൾ മെമ്മറിയിൽ ലോഡ് ചെയ്ത് അതിവേഗം പ്രവർത്തിപ്പിക്കുന്നത് വോൺ ന്യൂമാന്റെ രൂപകൽപ്പനയിലാണ്.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 14</span>
+        <span class="card-topic-title">First to Introduce Human Terminology 'Memory' to Computers (കമ്പ്യൂട്ടറിൽ 'മെമ്മറി' എന്ന മനുഷ്യ പദം ആദ്യമായി ഉപയോഗിച്ച പ്രതിഭ)</span>
+        <span class="card-tag-pill">TERMINOLOGICAL MILESTONE</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Von Neumann's Historic Metaphor Bridging Biological and Mechanical Storage</strong>
+          The LMS textbook specifically emphasizes that John von Neumann was, in fact, the very first person to use the human terminology 'memory' when referring to a computer. By borrowing this mentalistic term from cognitive psychology and applying it to physical electronic registers, von Neumann cemented the conceptual equivalence between biological brain storage and digital machine retention, providing the vocabulary for machine cognition.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">മനുഷ്യന്റെ ഓർമ്മശക്തിയെ യന്ത്രങ്ങളിലേക്ക് ചേർത്തുവെച്ച ചരിത്ര സന്ദർഭം</strong>
+          കമ്പ്യൂട്ടറുകളിലെ വിവര ശേഖരണ സംവിധാനത്തെ സൂചിപ്പിക്കാൻ 'മെമ്മറി' (Memory) എന്ന മനുഷ്യ പദം ചരിത്രത്തിൽ ആദ്യമായി ഉപയോഗിച്ചത് ജോൺ വോൺ ന്യൂമാനാണെന്ന് എൽ.എം.എസ് പാഠപുസ്തകം പ്രത്യേകം രേഖപ്പെടുത്തുന്നു. മനുഷ്യന്റെ മനഃശാസ്ത്രപരമായ ഈ പദം ഇലക്ട്രോണിക് സർക്യൂട്ടുകൾക്ക് നൽകിയതിലൂടെ മനുഷ്യന്റെ തലച്ചോറും കമ്പ്യൂട്ടറും തമ്മിലുള്ള സാമ്യം ദാർശനികമായി ഉറപ്പിക്കപ്പെട്ടു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>കമ്പ്യൂട്ടറിലെ ചിപ്പുകൾക്ക് 'ഓർമ്മ' അഥവാ 'മെമ്മറി' എന്ന പേര് ലഭിച്ചത് വോൺ ന്യൂമാൻ നടത്തിയ ഈ ആശയപരമായ സംയോജനത്തിലൂടെയാണ്.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 15</span>
+        <span class="card-topic-title">Von Neumann Architecture &amp; The Evolution of Cognitive Speed (വോൺ ന്യൂമാൻ വാസ്തുവിദ്യയും കമ്പ്യൂട്ടിംഗ് വേഗതയുടെ വികാസവും)</span>
+        <span class="card-tag-pill">HARDWARE FOUNDATION</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Pioneering Commercial Scientific Systems and High-Speed Execution</strong>
+          The stored-program concept established by von Neumann enabled computers to execute instructions sequentially via the central processor and unified bus. This physical realization transformed abstract Church-Turing computability into industrial reality, providing the memory architecture required for early symbol-manipulating systems to run intricate algebraic routines, play board games, and prove formal theorems.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">ആധുനിക പ്രോസസ്സറുകളുടെയും ചിന്താ ശേഷിയുടെയും അടിത്തറ</strong>
+          വോൺ ന്യൂമാൻ വാസ്തുവിദ്യ ഡിജിറ്റൽ പ്രോസസ്സറുകളുടെ പ്രവർത്തനത്തിന് വഴിയൊരുക്കി. ചർച്ചിന്റെയും ട്യൂറിംഗിന്റെയും സൈദ്ധാന്തിക സമവാക്യങ്ങളെ യഥാർത്ഥ യന്ത്രങ്ങളാക്കി മാറ്റാൻ ഈ വാസ്തുവിദ്യ സഹായിച്ചു. ഉയർന്ന മെമ്മറിയും പ്രോസസ്സിംഗ് വേഗതയും ലഭ്യമായതോടെ ആദ്യകാല എഐ പ്രോഗ്രാമുകൾക്ക് ഗണിത സമവാക്യങ്ങൾ തെളിയിക്കാനും കളികളിൽ ഏർപ്പെടാനും സാധിച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>സിപിയു (CPU) മെമ്മറിയിൽ നിന്ന് ഓരോ നിർദ്ദേശമായി വായിച്ച് ചിട്ടയോടെ നടപ്പിലാക്കുന്ന ഇന്നത്തെ കമ്പ്യൂട്ടിംഗ് രീതി വോൺ ന്യൂമാന്റെ ആശയമാണ്.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">CALICUT UNIVERSITY · MINOR PHILOSOPHY (PHL1MN102) · MODULE 1: CHAPTER 2</span>
+    <span class="footer-right">PAGE 5 OF 10</span>
+  </div>
+</div>
+
+<div class="page-container">
+  <div class="running-header">
+    <span class="running-title">CAN A MACHINE THINK? · <span>THE TURING TEST &amp; CONSCIOUSNESS</span></span>
+    <span class="running-meta">CALICUT UNIVERSITY FYUGP · PHL1MN102</span>
+  </div>
+
+  <div class="cards-stack">
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 16</span>
+        <span class="card-topic-title">The Turing Test: Assessing Machine Intelligence (ട്യൂറിംഗ് ടെസ്റ്റ്: യന്ത്രബുദ്ധി അളക്കുന്ന പരീക്ഷണം)</span>
+        <span class="card-tag-pill">OPERATIONAL BENCHMARK</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Determining if Responses Can Be Differentiated from a Human</strong>
+          Turing proposed the Turing Test—a method for assessing a machine's intelligence by determining if its responses can be differentiated from those of a human during conversation. If a human interrogator cannot consistently distinguish between the two, the computer may be considered to 'think'. The Turing Test emerged as a pivotal foundational concept in the philosophy of artificial intelligence, inciting profound critical discourse regarding consciousness, machine cognition, and the operational essence of thought.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">സംഭാഷണത്തിലൂടെ യന്ത്രങ്ങൾക്ക് ചിന്തയുണ്ടോ എന്ന് പരിശോധിക്കുന്ന രീതി</strong>
+          ഒരു കമ്പ്യൂട്ടറിന്റെ ബുദ്ധി അളക്കുന്നതിനായി അലൻ ട്യൂറിംഗ് നിർദ്ദേശിച്ച രീതിയാണ് 'ട്യൂറിംഗ് ടെസ്റ്റ്'. സംഭാഷണത്തിനിടയിൽ കമ്പ്യൂട്ടറിന്റെ മറുപടികൾ ഒരു മനുഷ്യന്റേതിൽ നിന്ന് വേർതിരിച്ചറിയാൻ ഒരു മനുഷ്യ മധ്യസ്ഥന് സാധിക്കുന്നില്ലെങ്കിൽ, ആ കമ്പ്യൂട്ടർ 'ചിന്തിക്കുന്നു' എന്ന് കണക്കാക്കാം. ബോധം, മനസ്സ്, യന്ത്രങ്ങളുടെ വൈജ്ഞാനികത എന്നിവയെക്കുറിച്ചുള്ള ആധുനിക ദാർശനിക സംവാദങ്ങൾക്ക് ട്യൂറിംഗ് ടെസ്റ്റ് ശക്തമായ തുടക്കം കുറിച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>ടെർമിനലിലൂടെ ചോദ്യങ്ങൾ ചോദിക്കുമ്പോൾ ഒരു മനുഷ്യനെപ്പോലെ സ്വാഭാവികമായി മറുപടി നൽകി മധ്യസ്ഥനെ വിശ്വസിപ്പിക്കുന്ന യന്ത്രം ഈ പരീക്ഷണം വിജയിക്കുന്നു.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 17</span>
+        <span class="card-topic-title">Interrogation Setup &amp; Typewritten Responses (ടെർമിനൽ സന്ദേശങ്ങളും ബാഹ്യമായ പെരുമാറ്റ സമത്വവും)</span>
+        <span class="card-tag-pill">BEHAVIORAL INDISTINGUISHABILITY</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Eliminating Sensory Bias via Blinded Text Communication</strong>
+          The setup requires a human interrogator communicating blindly via typewritten responses with two entities in separate rooms: a real, intelligent human and a suitably programmed machine. By restricting communication strictly to text terminals, Turing eliminated sensory prejudices such as voice tone, physical appearance, or mechanical sound, focusing purely on linguistic coherence, rational justification, and intellectual responsiveness.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">ശാരീരിക രൂപഭാവങ്ങൾ ഒഴിവാക്കിയുള്ള ആശയവിനിമയം</strong>
+          വ്യത്യസ്ത മുറികളിലിരിക്കുന്ന ഒരു മനുഷ്യനെയും ഒരു കമ്പ്യൂട്ടറിനെയും ടെർമിനൽ വഴി സന്ദേശങ്ങൾ അയച്ച് വേർതിരിച്ചറിയാൻ ഒരു മനുഷ്യ മധ്യസ്ഥനോട് ആവശ്യപ്പെടുന്നതാണ് ഈ പരീക്ഷണം. സംഭാഷണം ടൈപ്പ് ചെയ്ത അക്ഷരങ്ങളിലൂടെ മാത്രമായി പരിമിതപ്പെടുത്തിയതിലൂടെ ശബ്ദമോ ബാഹ്യ രൂപമോ കണ്ടുള്ള മുൻവിധികൾ ഒഴിവാക്കി, യന്ത്രത്തിന്റെ യുക്തിചിന്തയെ മാത്രം വിലയിരുത്താൻ ട്യൂറിംഗിന് സാധിച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>കമ്പ്യൂട്ടറിന്റെ ലോഹ രൂപം കാണാതെ, അത് നൽകുന്ന ബുദ്ധിപരമായ ഉത്തരങ്ങൾ മാത്രം വിലയിരുത്തി ചിന്താശേഷി അളക്കുന്ന രീതി.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 18</span>
+        <span class="card-topic-title">Discourse on Consciousness, Cognition &amp; Operational Thought (ബോധം, വൈജ്ഞാനികത, ചിന്തയുടെ സ്വഭാവം എന്നിവയിലെ സംവാദങ്ങൾ)</span>
+        <span class="card-tag-pill">PHILOSOPHICAL IMPLICATIONS</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Functional Equivalence vs. Inward Phenomenal Experience</strong>
+          The Turing Test provoked deep debate regarding whether outward behavioral simulation equals genuine conscious understanding. Theorists questioned: does an entity that passes the test truly understand the words it produces, or is it merely simulating cognition? Turing's operationalist stance asserts that if an entity displays indistinguishable responses in every scenario, attributing thought to it is philosophically justified.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">ബാഹ്യമായ പ്രകടനവും ആന്തരികമായ ബോധവും തമ്മിലുള്ള സംവാദം</strong>
+          ഒരു മെഷീൻ ബാഹ്യമായി മനുഷ്യനെപ്പോലെ സംസാരിച്ചാൽ അതിന് യഥാർത്ഥത്തിൽ ബോധമുണ്ടെന്ന് പറയാമോ എന്ന ചോദ്യം ട്യൂറിംഗ് ടെസ്റ്റ് ഉയർത്തി. പറയുന്ന വാക്കുകളുടെ അർത്ഥം മനസ്സിലാക്കിയാണോ അതോ വെറുതെ അനുകരിക്കുകയാണോ മെഷീൻ ചെയ്യുന്നത് എന്ന സംവാദങ്ങൾ ഉണ്ടായി. ബാഹ്യമായ പെരുമാറ്റത്തിൽ വ്യത്യാസമില്ലെങ്കിൽ അതിന് ചിന്തയുണ്ടെന്ന് കണക്കാക്കണമെന്ന് ട്യൂറിംഗ് വാദിച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>മനുഷ്യനെപ്പോലെ കവിതകളെക്കുറിച്ച് സംസാരിക്കാൻ കഴിയുന്ന ഒരു യന്ത്രത്തിന് യഥാർത്ഥ കാവ്യാനുഭൂതി ഉണ്ടോ എന്ന ദാർശനിക തർക്കം.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">CALICUT UNIVERSITY · MINOR PHILOSOPHY (PHL1MN102) · MODULE 1: CHAPTER 2</span>
+    <span class="footer-right">PAGE 6 OF 10</span>
+  </div>
+</div>
+
+<div class="page-container">
+  <div class="running-header">
+    <span class="running-title">CAN A MACHINE THINK? · <span>SYMBOL-MANIPULATING (SM) MACHINES</span></span>
+    <span class="running-meta">CALICUT UNIVERSITY FYUGP · PHL1MN102</span>
+  </div>
+
+  <div class="cards-stack">
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 19</span>
+        <span class="card-topic-title">The Symbol-Manipulating (SM) Machine Hypothesis (സിംബൽ മാനിപ്പുലേറ്റിംഗ് (SM) യന്ത്രങ്ങളുടെ അനുമാനം)</span>
+        <span class="card-tag-pill">PHYSICAL SYMBOL SYSTEMS</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Suitably Programmed SM Machines Passing the Turing Test</strong>
+          The Church and Turing results implied that a suitably programmed Symbol-Manipulating Machine (SM machine) should be able to pass the Turing test for conscious intelligence. The machine passes this test if its responses cannot be discriminated from the typewritten responses of a real, intelligent person. Church and Turing results assure us that, whatever that effective function might be, a suitable SM machine could compute it.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">ചിഹ്നങ്ങളെ നിയന്ത്രിക്കുന്ന യന്ത്രങ്ങൾക്ക് ടെസ്റ്റ് വിജയിക്കാനാകും</strong>
+          ചർച്ചിന്റെയും ട്യൂറിംഗിന്റെയും കണ്ടെത്തലുകൾ പ്രകാരം, കൃത്യമായി പ്രോഗ്രാം ചെയ്യപ്പെട്ട ഒരു സിംബൽ മാനിപ്പുലേറ്റിംഗ് യന്ത്രത്തിന് (SM Machine) ട്യൂറിംഗ് ടെസ്റ്റ് വിജയിക്കാൻ സാധിക്കും. യന്ത്രത്തിന്റെ മറുപടികൾ ഒരു മനുഷ്യന്റേതിൽ നിന്ന് വേർതിരിച്ചറിയാൻ കഴിയാതെ വരുമ്പോൾ അത് പരീക്ഷ ജയിക്കുന്നു. യുക്തിസഹമായി നിർവചിക്കാവുന്ന ഏതൊരു ബുദ്ധിപരമായ പ്രവർത്തനത്തെയും ഒരു SM യന്ത്രത്തിന് കമ്പ്യൂട്ട് ചെയ്യാൻ സാധിക്കും.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>കൃത്യമായ ചിട്ടവട്ടങ്ങളോടെ ചിഹ്നങ്ങളെ പുനഃക്രമീകരിക്കുന്നതിലൂടെ ഒരു കമ്പ്യൂട്ടറിന് മനുഷ്യന്റെ ബുദ്ധിപരമായ സംഭാഷണങ്ങൾ നടത്താൻ സാധിക്കുന്നു.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 20</span>
+        <span class="card-topic-title">Early Triumphs: Arithmetic, Algebra, Checkers, Chess &amp; Theorems (ആദ്യകാല വിജയങ്ങൾ: ബീജഗണിതം, ചെസ്സ്, സിദ്ധാന്തങ്ങൾ തെളിയിക്കൽ)</span>
+        <span class="card-tag-pill">PRELIMINARY SUCCESSES</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Complex Instructions, Algebraic Problems and Basic Discussion</strong>
+          The preliminary outcomes of SM machines were highly favorable. Symbol-manipulating machine robots equipped with sophisticated algorithms executed a wide range of seemingly intelligent tasks: they addressed intricate instructions, resolved advanced arithmetic and algebraic problems, participated in checkers and chess, demonstrated formal theorems, and engaged in basic discussion, validating the classical paradigm.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">സങ്കീർണ്ണമായ ചിന്താ ജോലികൾ നിർവ്വഹിച്ച ആദ്യകാല യന്ത്രങ്ങൾ</strong>
+          സിംബൽ മാനിപ്പുലേറ്റിംഗ് യന്ത്രങ്ങളുടെ പ്രാരംഭ ഫലങ്ങൾ വളരെ മികച്ചതായിരുന്നു. ഉയർന്ന അൽഗോരിതങ്ങൾ ഉള്ള റോബോട്ടുകൾ സങ്കീർണ്ണമായ നിർദ്ദേശങ്ങൾ പാലിക്കുകയും, ബീജഗണിത സമവാക്യങ്ങൾ പരിഹരിക്കുകയും, ചെസ്സ്, ചെക്കേഴ്സ് തുടങ്ങിയ തന്ത്രപ്രധാന കളികളിൽ ഏർപ്പെടുകയും, ഗണിത സിദ്ധാന്തങ്ങൾ സ്വയം തെളിയിക്കുകയും അടിസ്ഥാന സംഭാഷണങ്ങൾ നടത്തുകയും ചെയ്തു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>ഗണിതശാസ്ത്ര സിദ്ധാന്തങ്ങൾ മനുഷ്യനേക്കാൾ വേഗത്തിൽ കൃത്യമായി തെളിയിച്ച ആദ്യകാല കമ്പ്യൂട്ടർ പ്രോഗ്രാമുകൾ ഈ വിജയത്തിന് ഉദാഹരണമാണ്.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 21</span>
+        <span class="card-topic-title">Accelerated Machines &amp; Classical Program-Writing AI (കമ്പ്യൂട്ടറുകളുടെ വളർച്ചയും ക്ലാസിക്കൽ പ്രോഗ്രാം-റൈറ്റിംഗും)</span>
+        <span class="card-tag-pill">CLASSICAL AI ENDEAVOR</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Higher Memory Capacities, Faster Processors &amp; Sophisticated Programs</strong>
+          Performance consistently enhanced with the emergence of higher memory capacities, accelerated machines, and the implementation of more extensive and sophisticated programs. Classical, or 'program-writing,' AI represented a robust and fruitful research endeavor from nearly every standpoint, reinforcing the belief that scaling memory capacities, refining recursive algorithms, and increasing computational speed would eventually replicate every systematic behavioral pattern of human cognitive intelligence.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">മെമ്മറിയും വേഗതയും വർദ്ധിച്ചതോടെ ശക്തിപ്രാപിച്ച ക്ലാസിക്കൽ എഐ</strong>
+          ഉയർന്ന മെമ്മറി ശേഷിയും വേഗതയേറിയ പ്രോസസ്സറുകളും വന്നതോടെ സിംബൽ മാനിപ്പുലേറ്റിംഗ് യന്ത്രങ്ങളുടെ പ്രകടനം ഗണ്യമായി മെച്ചപ്പെട്ടു. കൂടുതൽ വിപുലമായ പ്രോഗ്രാമുകൾ നിലവിൽ വന്നതോടെ 'പ്രോഗ്രാം-റൈറ്റിംഗ്' അഥവാ ക്ലാസിക്കൽ എഐ വലിയ വിജയമായി മാറി. മെമ്മറിയും പ്രോഗ്രാമിംഗ് നിയമങ്ങളും വർദ്ധിപ്പിച്ചാൽ മനുഷ്യന്റെ എല്ലാ ചിന്തകളും യന്ത്രങ്ങൾക്ക് സാധ്യമാകുമെന്ന് ഇക്കാലത്ത് വിശ്വസിക്കപ്പെട്ടു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>കമ്പ്യൂട്ടറുകളുടെ വേഗതയും സംഭരണശേഷിയും വർദ്ധിച്ചതോടെ സങ്കീർണ്ണമായ ഡാറ്റാബേസുകൾ കൈകാര്യം ചെയ്യാൻ സാധ്യമായത് ക്ലാസിക്കൽ എഐക്ക് കരുത്തായി.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">CALICUT UNIVERSITY · MINOR PHILOSOPHY (PHL1MN102) · MODULE 1: CHAPTER 2</span>
+    <span class="footer-right">PAGE 7 OF 10</span>
+  </div>
+</div>
+
+<div class="page-container">
+  <div class="running-header">
+    <span class="running-title">CAN A MACHINE THINK? · <span>HUBERT L. DREYFUS'S CRITIQUE (1972)</span></span>
+    <span class="running-meta">CALICUT UNIVERSITY FYUGP · PHL1MN102</span>
+  </div>
+
+  <div class="cards-stack">
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 22</span>
+        <span class="card-topic-title">Hubert L. Dreyfus (1972): Critique of Cognitive Simulations (ഹ്യൂബർട്ട് ഡ്രെയ്ഫസിന്റെ 1972-ലെ വിമർശനം: കോഗ്നിറ്റീവ് സിമുലേഷൻ പരാജയങ്ങൾ)</span>
+        <span class="card-tag-pill">DREYFUS CRITIQUE</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Publishing a Landmark Book Highly Critical of Cognitive Activity Simulations</strong>
+          In 1972, philosopher Hubert L. Dreyfus published a landmark book that was highly critical of the parade-case simulations of cognitive activity. Dreyfus contended their insufficiency as authentic representations of authentic cognition and highlighted a recurring pattern of failure in these endeavors, questioning whether intelligence could ever be reduced to purely formal symbolic manipulations.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">യന്ത്ര ചിന്തകളെക്കുറിച്ചുള്ള ശക്തമായ തത്ത്വചിന്താ വിമർശനം</strong>
+          1972-ൽ തത്ത്വചിന്തകനായ ഹ്യൂബർട്ട് എൽ. ഡ്രെയ്ഫസ് പ്രസിദ്ധീകരിച്ച പുസ്തകം കമ്പ്യൂട്ടറുകളിലെ ചിന്താ പരീക്ഷണങ്ങളെ രൂക്ഷമായി വിമർശിച്ചു. യന്ത്രങ്ങൾ നടത്തുന്ന ഇത്തരം സിമുലേഷനുകൾ യഥാർത്ഥ മനുഷ്യ ചിന്തയ്ക്ക് പകരമാവില്ലെന്നും, ഈ രംഗത്തെ പല അവകാശവാദങ്ങളും ആവർത്തിച്ചുള്ള പരാജയങ്ങളാണെന്നും അദ്ദേഹം ചൂണ്ടിക്കാണിച്ചു. ഔപചാരിക ചിഹ്നങ്ങൾ കൊണ്ട് മനുഷ്യ മനസ്സിനെ പകർത്താനാവില്ലെന്ന് അദ്ദേഹം വാദിച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>ചെസ്സ് പോലുള്ള നിശ്ചിത കളികളിൽ ജയിച്ചാലും, യഥാർത്ഥ ജീവിതത്തിലെ സ്വാഭാവിക ചിന്തകൾ പകർത്താൻ യന്ത്രങ്ങൾക്ക് കഴിയില്ലെന്ന് ഡ്രെയ്ഫസ് ചൂണ്ടിക്കാട്ടി.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 23</span>
+        <span class="card-topic-title">The Reservoir of Unexpressed Background Knowledge (മനുഷ്യന്റെ അദൃശ്യമായ സാമാന്യ അറിവിന്റെ കലവറ (Background Problem))</span>
+        <span class="card-tag-pill">COMMON-SENSE RESERVOIR</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Lacking Inherent Prior Background Information and Intuitive Salience</strong>
+          Dreyfus proposed that AI systems lacked the extensive reservoir of unexpressed prior background information inherent in every individual, as well as the intuitive ability to utilize pertinent elements of that knowledge in response to evolving situations. Humans interpret real-world contexts holistically without calculating thousands of explicit rules, a capacity entirely absent in brittle rule-based programs.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">വാക്കുകളാൽ പ്രകടിപ്പിക്കാത്ത സ്വാഭാവിക അറിവ് യന്ത്രങ്ങൾക്കില്ല</strong>
+          ഓരോ മനുഷ്യനിലും അന്തർലീനമായിക്കിടക്കുന്ന, വാക്കുകളാൽ പൂർണ്ണമായി പ്രകടിപ്പിക്കാത്ത സാമാന്യ വിജ്ഞാനത്തിന്റെ (Unexpressed Prior Information) വലിയൊരു കലവറ യന്ത്രങ്ങൾക്ക് ഇല്ലെന്ന് ഡ്രെയ്ഫസ് സമർത്ഥിച്ചു. മാറിക്കൊണ്ടിരിക്കുന്ന സാഹചര്യങ്ങളിൽ ഏത് അറിവാണ് പ്രസക്തമെന്ന് സ്വയം തിരിച്ചറിയാനുള്ള സഹജാവബോധം കമ്പ്യൂട്ടറുകൾക്കില്ല. മനുഷ്യൻ സന്ദർഭത്തെ സമഗ്രമായാണ് കാണുന്നത്.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>ഒരു സുഹൃത്തിന്റെ മുഖഭാവം കണ്ട് സങ്കടം മനസ്സിലാക്കാൻ മനുഷ്യന് മുൻകൂട്ടി എഴുതിയ നിയമങ്ങൾ ആവശ്യമില്ല; എന്നാൽ യന്ത്രങ്ങൾക്ക് ഈ സാമാന്യബോധം അസാധ്യമാണ്.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 24</span>
+        <span class="card-topic-title">Dreyfus on Physical Systems &amp; Limits of Pure Symbol Rules (ഭൗതിക സിസ്റ്റങ്ങളും കേവല ചിഹ്ന നിയന്ത്രണത്തിന്റെ പരിധികളും)</span>
+        <span class="card-tag-pill">PHILOSOPHICAL STANCE</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Critical of Achieving Thought Solely by Rule-Based Symbol Manipulation</strong>
+          Dreyfus did not deny the theoretical possibility that an artificial physical system of some kind might think; however, he was highly critical of the idea that this could ever be achieved solely by symbol manipulation at the hands of recursively applicable rules. He asserted that human understanding relies on an inherent common-sense reservoir and tacit knowing in response to evolving situations, which cannot be captured merely by cranking away on discrete symbolic rules.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">ചിഹ്ന നിയമങ്ങൾ കൊണ്ട് മാത്രം യഥാർത്ഥ ചിന്ത സാധ്യമല്ല</strong>
+          ഒരു കൃത്രിമ ഭൗതിക സംവിധാനത്തിന് ഏതെങ്കിലും തരത്തിൽ ചിന്തിക്കാൻ കഴിഞ്ഞേക്കാം എന്ന സാധ്യതയെ ഡ്രെയ്ഫസ് പൂർണ്ണമായി തള്ളിക്കളഞ്ഞില്ല; എന്നാൽ ചിഹ്നങ്ങളെ നിയമങ്ങൾക്കനുസരിച്ച് കൈകാര്യം ചെയ്യുന്നത് കൊണ്ട് മാത്രം ഇത് സാധ്യമാകുമെന്ന വാദത്തെ അദ്ദേഹം ശക്തമായി എതിർത്തു. മനുഷ്യന്റെ ചിന്ത ഭൗതിക ലോകവുമായുള്ള ശാരീരിക ഇടപെടലുകളിലൂടെയാണ് രൂപപ്പെടുന്നത്.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>ഒരു യന്ത്രത്തിന് എത്ര വലിയ നിയമപുസ്തകം നൽകിയാലും, യഥാർത്ഥ ലോകാനുഭവമില്ലാതെ അതിന് സ്വയം മനസ്സിലാക്കാൻ കഴിയില്ലെന്ന് അദ്ദേഹം വ്യക്തമാക്കി.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">CALICUT UNIVERSITY · MINOR PHILOSOPHY (PHL1MN102) · MODULE 1: CHAPTER 2</span>
+    <span class="footer-right">PAGE 8 OF 10</span>
+  </div>
+</div>
+
+<div class="page-container">
+  <div class="running-header">
+    <span class="running-title">CAN A MACHINE THINK? · <span>JOHN SEARLE'S 1980 CRITIQUE</span></span>
+    <span class="running-meta">CALICUT UNIVERSITY FYUGP · PHL1MN102</span>
+  </div>
+
+  <div class="cards-stack">
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 25</span>
+        <span class="card-topic-title">John Searle: 'Minds, Brains and Programs' (1980) (ജോൺ സിയൾ: 'മൈൻഡ്സ്, ബ്രെയിൻസ് ആൻഡ് പ്രോഗ്രാംസ്' (1980))</span>
+        <span class="card-tag-pill">SEARLE'S RADICAL CRITIQUE</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Attacking the Classical Assumption of Structure-Sensitive Rules</strong>
+          In his landmark 1980 paper 'Minds, Brains and Programs', John Searle authored a new and quite different criticism aimed at the most basic assumption of the classical research program: the idea that appropriate manipulation of structured symbols by the recursive application of structure-sensitive rules could constitute conscious intelligence. Searle demonstrated that software cannot make a computer conscious or give it a mind anything like a human mind.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">ക്ലാസിക്കൽ എഐയുടെ അടിസ്ഥാന സങ്കൽപ്പത്തിന് നേരെയുള്ള പ്രഹരം</strong>
+          1980-ൽ പ്രസിദ്ധീകരിച്ച 'മൈൻഡ്സ്, ബ്രെയിൻസ് ആൻഡ് പ്രോഗ്രാംസ്' എന്ന വിപ്ലവകരമായ ലേഖനത്തിലൂടെ ജോൺ സിയൾ ക്ലാസിക്കൽ എഐയുടെ അടിസ്ഥാന അനുമാനത്തെ ശക്തമായി വെല്ലുവിളിച്ചു. നിയമങ്ങൾക്കനുസരിച്ച് ചിഹ്നങ്ങളെ മാറ്റിമറിക്കുന്നത് കൊണ്ട് മാത്രം ഒരു കമ്പ്യൂട്ടറിന് ബോധമനസ്സ് ഉണ്ടാവില്ലെന്ന് അദ്ദേഹം തെളിയിച്ചു. കേവലം ഒരു സോഫ്റ്റ്‌വെയറിനും യന്ത്രത്തിന് മനുഷ്യന്റേതിന് തുല്യമായ മനസ്സ് നൽകാനാവില്ലെന്ന് സിയൾ വാദിച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>കമ്പ്യൂട്ടർ പ്രോഗ്രാമുകൾ പ്രവർത്തിപ്പിക്കുന്നത് വഴി മനസ്സിനെ സൃഷ്ടിക്കാൻ കഴിയില്ലെന്ന സിയളിന്റെ വാദം എഐ തത്ത്വചിന്തയെ പിടിച്ചുകുലുക്കി.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 26</span>
+        <span class="card-topic-title">Hostile Academic Reception &amp; The Chinese Room Thought Experiment (വിദഗ്ദ്ധരുടെ പ്രതികരണവും ചൈനീസ് റൂം ചിന്താ പരീക്ഷണവും)</span>
+        <span class="card-tag-pill">CONTROVERSIAL DEBATE</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Searle's Paper Provoking a Lively and Hostile Reaction Across AI</strong>
+          Searle's paper provoked a lively reaction from AI researchers, psychologists, and philosophers alike. On the whole, he was met with an even more hostile reception than Dreyfus had experienced. Through his Chinese Room thought experiment, Searle showed that an English speaker in a room matching Chinese characters via an English rulebook produces perfect answers without understanding a single word, proving that rule execution does not equal intentional comprehension.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">ഗവേഷകരുടെ എതിർപ്പും അർത്ഥബോധമില്ലാത്ത ചിഹ്ന വിനിമയവും</strong>
+          സിയളിന്റെ ലേഖനം എഐ ഗവേഷകർ, മനഃശാസ്ത്രജ്ഞർ, തത്ത്വചിന്തകർ എന്നിവർക്കിടയിൽ വലിയ തർക്കങ്ങൾക്ക് വഴിവെച്ചു. ഡ്രെയ്ഫസിനേക്കാൾ കടുത്ത എതിർപ്പാണ് സിയളിന് നേരിടേണ്ടി വന്നത്. ചൈനീസ് റൂം പരീക്ഷണത്തിലൂടെ, അർത്ഥം അറിയാതെ നിയമങ്ങൾ നോക്കി ചിഹ്നങ്ങൾ ഒത്തുനോക്കി മറുപടി നൽകുന്ന ഒരാൾക്ക് ആ ഭാഷ അറിയില്ലെന്ന് തെളിയിച്ച് കമ്പ്യൂട്ടറുകളുടെ യാന്ത്രികതയെ സിയൾ തുറന്നുകാട്ടി.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>ഒരു കമ്പ്യൂട്ടർ തെറ്റില്ലാതെ മറുപടി നൽകുമ്പോഴും, താൻ എന്താണ് പറയുന്നതെന്ന യാതൊരു തിരിച്ചറിവും അതിനില്ലെന്ന് സിയൾ വ്യക്തമാക്കി.</span>
+      </div>
+    </div>
+
+
+    
+    <div class="concept-card">
+      <div class="card-header-bar">
+        <span class="card-num-badge">TOPIC 27</span>
+        <span class="card-topic-title">Syntax vs. Semantics: 'Cranking Away on Empty Syntax' (വാക്യഘടനയും അർത്ഥബോധവും: എംപ്റ്റി സിന്റാക്സും റിയൽ സെമാന്റിക്സും)</span>
+        <span class="card-tag-pill">CORE EPISTEMIC LESSON</span>
+      </div>
+      <div class="dual-grid">
+        <div class="en-box">
+          <strong class="title-label">Impossible to Generate Real Semantics Merely by Cranking on Empty Syntax</strong>
+          The general lesson drawn from Searle's critique is that any system that merely manipulates physical symbols in accordance with structure-sensitive rules will be at best a hollow mock-up of real conscious intelligence. Searle formulated the immortal philosophical principle: 'it is impossible to generate real semantics merely by cranking away on empty syntax.' Pure symbol manipulation lacks intrinsic meaning, mental states, and intentionality.
+        </div>
+        <div class="ml-box">
+          <strong class="title-label">വെറും നിയമങ്ങൾ കൊണ്ട് യഥാർത്ഥ അർത്ഥബോധം സൃഷ്ടിക്കാനാവില്ല</strong>
+          സിയളിന്റെ വിമർശനത്തിൽ നിന്നുള്ള പ്രധാന ദാർശനിക പാഠം ഇതാണ്: നിയമങ്ങൾ അനുസരിച്ച് ചിഹ്നങ്ങൾ കൈകാര്യം ചെയ്യുന്ന ഏതൊരു യന്ത്രവും യഥാർത്ഥ ബുദ്ധിയുടെ ഒരു പൊള്ളയായ രൂപം (Hollow mock-up) മാത്രമായിരിക്കും. 'കേവല വാക്യഘടനകൾ (Empty syntax) മാത്രം കറക്കിത്തിരിച്ചുകൊണ്ട് യഥാർത്ഥ അർത്ഥബോധം (Real semantics) സൃഷ്ടിക്കാൻ കഴിയില്ല' എന്ന് അദ്ദേഹം സിദ്ധാന്തിച്ചു.
+        </div>
+      </div>
+      <div class="eg-box">
+        <span class="eg-label">ഉദാഹരണം:</span>
+        <span>വ്യാകരണ നിയമങ്ങൾ കൃത്യമായി പാലിച്ചാലും, ആ വാചകത്തിന്റെ ഭാവമോ അർത്ഥമോ യന്ത്രത്തിന് ഒരിക്കലും അനുഭവിക്കാൻ സാധിക്കില്ല.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">CALICUT UNIVERSITY · MINOR PHILOSOPHY (PHL1MN102) · MODULE 1: CHAPTER 2</span>
+    <span class="footer-right">PAGE 9 OF 10</span>
+  </div>
+</div>
+
+<div class="page-container">
+  <div class="running-header">
+    <span class="running-title">CAN A MACHINE THINK? · <span>20 HIGH-YIELD EXAM KNOCK YOUR BRAIN POINTS</span></span>
+    <span class="running-meta">CALICUT UNIVERSITY FYUGP · PHL1MN102</span>
+  </div>
+
+  <div class="knock-grid">
+    
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">01</span>
+        <span class="knock-title">Can a Machine Think? (ട്യൂറിംഗിന്റെ സെമിനൽ ചോദ്യം)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Seminal Inquiry (1950):</strong> Initially and meticulously examined by Alan Turing in Mind.<br>
+        <strong>Operational Shift:</strong> Replaced ambiguous metaphysical terms with structure-sensitive symbol rules.<br>
+        <strong>Chapter II Foundation:</strong> Forms the core inquiry governing the entire curriculum of Module 1.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">02</span>
+        <span class="knock-title">Substitution of the Inquiry (ചോദ്യത്തിന്റെ പുനർനിർവചനം)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Symbol Manipulation:</strong> Can a computer manipulating physical symbols contain the capacity for thought?<br>
+        <strong>50 Years of Research:</strong> Result of extensive developments in formal logic and computational theory.<br>
+        <strong>Rule-Based Systems:</strong> Abstract computational skills manifesting in tangible physical machines.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">03</span>
+        <span class="knock-title">Three Intellectual Pillars (എഐയുടെ മൂന്ന് സ്തംഭങ്ങൾ)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Foundational Figures:</strong> John von Neumann, Alan Turing, and Claude Shannon established AI.<br>
+        <strong>Core Integration:</strong> Von Neumann memory, Turing computation, and Shannon information theory.<br>
+        <strong>Discipline Inception:</strong> Distinguished for establishing the intellectual and technical basis of AI.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">04</span>
+        <span class="knock-title">Church's Thesis (ചർച്ചിന്റെ സിദ്ധാന്തം)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Effective Computability:</strong> Every effectively computable function is recursively computable in finite time.<br>
+        <strong>Alonzo Church:</strong> Formulated lambda calculus to express mathematical functions and computation.<br>
+        <strong>Philosophical Hypothesis:</strong> Not a formal theorem subject to proof, but the cornerstone of computer science.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">05</span>
+        <span class="knock-title">Rote Procedures (ചിട്ടയായ നടപടിക്രമങ്ങൾ)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Rote Definition:</strong> Deterministic procedure determining output for a given input in finite time.<br>
+        <strong>Finite Operations:</strong> Finite set of operations applied successively and repeatedly to intermediate states.<br>
+        <strong>Demystified Logic:</strong> Captures the non-formal intuitive heart of mechanical algorithmic computation.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">06</span>
+        <span class="knock-title">Universal Turing Machine (യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീൻ)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Alan M. Turing:</strong> Proved any recursively computable function is computable by a simple machine.<br>
+        <strong>Tape & Symbols:</strong> Abstract device processing elementary symbols on tape via predefined state rules.<br>
+        <strong>Structure-Sensitive:</strong> Guided by recursive rules sensitive to symbol identity, order, and arrangement.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">07</span>
+        <span class="knock-title">Limits of Computability (കമ്പ്യൂട്ടേഷണൽ പരിധികൾ)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Physical Embodiments:</strong> All modern computers are fundamentally physical embodiments of Turing machines.<br>
+        <strong>Non-Computable Mind:</strong> If the mind executes non-computable operations, machines cannot replicate it.<br>
+        <strong>Philosophical Divide:</strong> Boundary between algorithmic emulation and true human consciousness.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">08</span>
+        <span class="knock-title">Turing's 'Intelligent Machinery' (ഇന്റലിജന്റ് മെഷിനറി)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Notable Research:</strong> Turing examined the requirements for replicating intelligence within machines.<br>
+        <strong>Early Constraints:</strong> Addressed formidable engineering hurdles of the early computing era.<br>
+        <strong>Official MCQ Target:</strong> Featured as Question 4 in the official University LMS review examination.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">09</span>
+        <span class="knock-title">Brain Memory: 10 Billion Digits (മസ്തിഷ്ക മെമ്മറി ശേഷി)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>10 Billion Bits:</strong> Turing estimated human brain memory capacity at around ten billion binary digits.<br>
+        <strong>Inefficient Recall:</strong> Noted vast portions are consumed by visual impressions and inefficient methods.<br>
+        <strong>Million-Digit Goal:</strong> Predicted major AI breakthroughs once computers reached several million digits.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">10</span>
+        <span class="knock-title">Claude Shannon & Information (ക്ലോഡ് ഷാനൻ)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Information Progenitor:</strong> Mathematician recognized as the founder and progenitor of information theory.<br>
+        <strong>Scientific Computer:</strong> Helped design the inaugural commercial scientific digital computer.<br>
+        <strong>Official MCQ Target:</strong> Featured as Question 3 in the official University LMS review examination.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">11</span>
+        <span class="knock-title">Dartmouth Project - DSRPAI (ഡാർട്ട്മൗത്ത് സമ്മേളനം)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Summer Project 1956:</strong> Dartmouth Summer Research Project on Artificial Intelligence.<br>
+        <strong>Interdisciplinary Focus:</strong> Gathered academics from diverse disciplines to launch AI research.<br>
+        <strong>Intelligence Simulation:</strong> Dedicated to developing machines capable of simulating human intelligence.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">12</span>
+        <span class="knock-title">John von Neumann & Memory (വോൺ ന്യൂമാൻ വാസ്തുവിദ്യ)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Stored-Program Idea:</strong> Established the principle of storing computer programs in computer memory.<br>
+        <strong>First to Use 'Memory':</strong> First person in history to use the human terminology 'memory' for computers.<br>
+        <strong>Official MCQ Target:</strong> Featured as Question 2 in the official University LMS review examination.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">13</span>
+        <span class="knock-title">The Turing Test (ട്യൂറിംഗ് ടെസ്റ്റ്)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Operational Benchmark:</strong> Assesses machine intelligence by conversational indistinguishability from humans.<br>
+        <strong>Interrogator Dialogue:</strong> Human interrogator blind to whether responses come from machine or human.<br>
+        <strong>Pivotal Concept:</strong> Central operational criterion inciting discourse on machine consciousness.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">14</span>
+        <span class="knock-title">Symbol-Manipulating (SM) Machines (എസ്.എം യന്ത്രങ്ങൾ)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Systematic Responses:</strong> Suitably programmed SM machine displays any systematic pattern of responses.<br>
+        <strong>Passing the Test:</strong> Church-Turing results assure an SM machine can pass the Turing test.<br>
+        <strong>Task Execution:</strong> Solved complex algebra, checkers, chess, formal theorems, and basic discussion.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">15</span>
+        <span class="knock-title">Classical 'Program-Writing' AI (ക്ലാസിക്കൽ എഐ)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Accelerated Hardware:</strong> Performance enhanced with higher memory capacities and faster machines.<br>
+        <strong>Fruitful Endeavor:</strong> Classical program-writing AI represented a robust, triumphant research era.<br>
+        <strong>Rule Complexity:</strong> Relied on explicit hand-engineered recursive rules and symbolic manipulation.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">16</span>
+        <span class="knock-title">Hubert L. Dreyfus's Critique 1972 (ഹ്യൂബർട്ട് ഡ്രെയ്ഫസ്)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Landmark 1972 Book:</strong> Published major critique of cognitive simulations (*What Computers Can't Do*).<br>
+        <strong>Pattern of Failure:</strong> Contended simulations were insufficient representations of authentic cognition.<br>
+        <strong>LMS Essay Target:</strong> Featured in university review: 'Compose a piece on Hubert L. Dreyfus.'
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">17</span>
+        <span class="knock-title">The Background Reservoir (സാമാന്യ അറിവിന്റെ കലവറ)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Unexpressed Knowledge:</strong> Machines lack the extensive reservoir of unexpressed prior background information.<br>
+        <strong>Intuitive Salience:</strong> Lacks the intuitive ability to utilize pertinent knowledge in evolving contexts.<br>
+        <strong>Holistic Reality:</strong> Human understanding operates contextually without thousands of explicit rules.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">18</span>
+        <span class="knock-title">John Searle: 1980 Critique (ജോൺ സിയൾ 1980)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>'Minds, Brains & Programs':</strong> Landmark 1980 paper attacking the core assumption of classical AI.<br>
+        <strong>Software Deficit:</strong> Proved software cannot make a computer conscious or give it a human-like mind.<br>
+        <strong>Official MCQ Target:</strong> Featured as Question 1 in the official University LMS review examination.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">19</span>
+        <span class="knock-title">The Chinese Room Argument (ചൈനീസ് റൂം പരീക്ഷണം)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Syntactic Rule Execution:</strong> Person matching Chinese symbols via English rules understands zero Chinese.<br>
+        <strong>Hollow Mock-Up:</strong> Systems merely manipulating physical symbols are at best hollow mock-ups.<br>
+        <strong>No Intentionality:</strong> Digital computers manipulate formal tokens without intrinsic intentional awareness.
+      </p>
+    </div>
+
+    <div class="knock-card">
+      <div class="knock-header">
+        <span class="knock-num">20</span>
+        <span class="knock-title">Syntax vs. Semantics (സിന്റാക്സും സെമാന്റിക്സും)</span>
+      </div>
+      <p class="knock-desc">
+        <strong>Empty Syntax:</strong> Computers operate purely on formal grammar, structure, and token manipulation.<br>
+        <strong>Real Semantics:</strong> Meaning, understanding, and phenomenal mental states cannot be generated by rules.<br>
+        <strong>Searle's Dictum:</strong> 'It is impossible to generate real semantics merely by cranking away on empty syntax.'
+      </p>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span class="footer-left">CALICUT UNIVERSITY · MINOR PHILOSOPHY (PHL1MN102) · MODULE 1: CHAPTER 2</span>
+    <span class="footer-right">PAGE 10 OF 10</span>
+  </div>
+</div>
+
+</body>
+</html>
