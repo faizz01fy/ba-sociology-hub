@@ -212,7 +212,8 @@ export default {
       const section=cleanText(input.section,140);
       if (!path.startsWith("/") || path.startsWith("//") || !section) return json({error:"Invalid section."},400);
       const ip=request.headers.get("CF-Connecting-IP") || "Unavailable";
-      return room.fetch(new Request("https://internal/internal/section",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({ip,path,section})}));
+      const isOwner = (request.headers.get("Cookie") || "").includes("__Host-hub_admin=");
+      return room.fetch(new Request("https://internal/internal/section",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({ip,path,section,isOwner})}));
     }
     if (url.pathname === "/api/traffic/presence") {
       if (request.method !== "POST") return json({error:"Method not allowed."},405);
@@ -387,6 +388,15 @@ export default {
       });
     }
     if (request.method === "GET" && response.ok && response.headers.get("Content-Type")?.includes("text/html")) {
+      const hasAdminCookie = (request.headers.get("Cookie") || "").includes("__Host-hub_admin=");
+      let isOwner = false;
+      if (hasAdminCookie) {
+        try {
+          const session = await room.fetch(await adminRequest(request, env, "https://internal/admin/api/admin/session"));
+          isOwner = session.ok;
+        } catch {}
+      }
+
       const task = room.fetch(new Request("https://internal/internal/visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -398,19 +408,11 @@ export default {
           city: request.cf?.city || "",
           isp: request.cf?.asOrganization || "",
           device: parseDevice(request.headers.get("User-Agent"), request.headers.get("sec-ch-ua-mobile")),
-          ref: parseReferrer(request.headers.get("Referer"), url.hostname)
+          ref: parseReferrer(request.headers.get("Referer"), url.hostname),
+          isOwner
         })
       })).catch(() => {});
       ctx.waitUntil(task);
-
-      const hasAdminCookie = (request.headers.get("Cookie") || "").includes("__Host-hub_admin=");
-      let isOwner = false;
-      if (hasAdminCookie) {
-        try {
-          const session = await room.fetch(await adminRequest(request, env, "https://internal/admin/api/admin/session"));
-          isOwner = session.ok;
-        } catch {}
-      }
 
       let hasAdSense = false;
       response = new HTMLRewriter()
@@ -563,14 +565,27 @@ export class StudyHubChat {
     if (path === "/internal/visit") {
       if (request.method !== "POST") return json({},405);
       const entry = await request.json();
+      const ownerIp = (await this.state.storage.get("owner_ip")) || "";
+      const isOwner = Boolean(entry.isOwner || (ownerIp && entry.ip === ownerIp));
       let records = (await this.state.storage.get("traffic")) || [];
       records = records.filter(r=>r.time > now - RETENTION_MS);
       try {
-        await this.countVisit(now, String(entry.ip).slice(0,64), records);
+        await this.countVisit(now, String(entry.ip).slice(0,64), records, isOwner);
       } catch (cvErr) {
         console.error("internal/visit countVisit warning:", cvErr);
       }
-      records.push({time:now,ip:String(entry.ip).slice(0,64),path:String(entry.path).slice(0,200),country:typeof entry.country === "string" && /^(?:[A-Z]{2}|T1)$/.test(entry.country) ? entry.country : "XX",region:cleanText(entry.region,100),city:cleanText(entry.city,100),isp:cleanText(entry.isp,100),device:cleanText(entry.device,60),ref:cleanText(entry.ref,100)});
+      records.push({
+        time: now,
+        ip: String(entry.ip).slice(0,64),
+        path: String(entry.path).slice(0,200),
+        country: typeof entry.country === "string" && /^(?:[A-Z]{2}|T1)$/.test(entry.country) ? entry.country : "XX",
+        region: cleanText(entry.region,100),
+        city: cleanText(entry.city,100),
+        isp: cleanText(entry.isp,100),
+        device: cleanText(entry.device,60),
+        ref: cleanText(entry.ref,100),
+        isOwner
+      });
       await this.state.storage.put("traffic", records.slice(-5000));
       await this.state.storage.setAlarm(now + RETENTION_MS);
       return json({ok:true});
@@ -591,9 +606,11 @@ export class StudyHubChat {
           if (!times.some(time=>time>now-60*1000)) this.sectionRates.delete(key);
         }
       }
+      const ownerIp = (await this.state.storage.get("owner_ip")) || "";
+      const isOwner = Boolean(entry.isOwner || (ownerIp && ip === ownerIp));
       let events=(await this.state.storage.get("sectionVisits")) || [];
       events=events.filter(event=>event.time>now-RETENTION_MS);
-      events.push({time:now,ip,path:page,section});
+      events.push({time:now,ip,path:page,section,isOwner});
       await this.state.storage.put("sectionVisits",events.slice(-5000));
       await this.state.storage.setAlarm(now+RETENTION_MS);
       return json({ok:true});
@@ -630,6 +647,10 @@ export class StudyHubChat {
       if(mismatch) return json({error:"Incorrect password."},401);
       const token = Array.from(crypto.getRandomValues(new Uint8Array(32)),v=>v.toString(16).padStart(2,"0")).join("");
       await this.state.storage.put("session:" + await digest(token),{expires:now+ttl,passwordHash:expected});
+      const clientIP = request.headers.get("CF-Connecting-IP") || "";
+      if (clientIP) {
+        await this.state.storage.put("owner_ip", clientIP);
+      }
       await this.state.storage.delete(rateKey);
       const response=json({ok:true});
       response.headers.set("Set-Cookie","__Host-hub_admin="+token+"; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=28800");
@@ -639,6 +660,13 @@ export class StudyHubChat {
     const key = token ? "session:" + await digest(token) : "";
     const session = key ? await this.state.storage.get(key) : null;
     if (!session || session.expires<=now || session.passwordHash !== passwordHash) return json({error:"Owner login required."},401);
+    const clientIP = request.headers.get("CF-Connecting-IP") || "";
+    if (clientIP) {
+      const currentOwnerIp = (await this.state.storage.get("owner_ip")) || "";
+      if (currentOwnerIp !== clientIP) {
+        await this.state.storage.put("owner_ip", clientIP);
+      }
+    }
     if (path === "/admin/api/admin/logout" && request.method === "POST") {
       await this.state.storage.delete(key);
       const response=json({ok:true});
@@ -651,22 +679,26 @@ export class StudyHubChat {
         const rawTraffic = (await this.state.storage.get("traffic")) || [];
         const rawSections = (await this.state.storage.get("sectionVisits")) || [];
         const savedLive = (await this.state.storage.get("liveVisitors")) || {};
+        const ownerIp = (await this.state.storage.get("owner_ip")) || "";
         const safeTraffic = Array.isArray(rawTraffic) ? rawTraffic.filter(r => r && typeof r.time === "number" && r.time > now - RETENTION_MS) : [];
         const safeSections = Array.isArray(rawSections) ? rawSections.filter(r => r && typeof r.time === "number" && r.time > now - RETENTION_MS) : [];
         const liveEntries = Object.entries(savedLive).filter(([,v]) => Number(v?.lastSeen) > now - 90*1000);
         
-        let today = { day: indiaDay(now), views: safeTraffic.length, visitors: 0 };
+        const studentTraffic = safeTraffic.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp));
+        const studentSections = safeSections.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp));
+        
+        let today = { day: indiaDay(now), views: studentTraffic.length, visitors: 0 };
         try {
           today = await this.countVisit(now, null, safeTraffic);
         } catch (cvErr) {
           console.error("countVisit warning:", cvErr);
         }
         const uniqueIPs = new Set([
-          ...safeTraffic.map(r => r && r.ip).filter(Boolean),
-          ...safeSections.map(r => r && r.ip).filter(Boolean)
+          ...studentTraffic.map(r => r && r.ip).filter(Boolean),
+          ...studentSections.map(r => r && r.ip).filter(Boolean)
         ]);
-        const records = groupTrafficByIP(safeTraffic, safeSections);
-        const popularPages = groupPopularPages(safeSections);
+        const records = groupTrafficByIP(safeTraffic, safeSections, ownerIp);
+        const popularPages = groupPopularPages(safeSections, ownerIp);
         
         const livePages = new Map();
         for (const [, visitor] of liveEntries) {
@@ -717,20 +749,23 @@ export class StudyHubChat {
       try {
         const rawTraffic = (await this.state.storage.get("traffic")) || [];
         const rawSections = (await this.state.storage.get("sectionVisits")) || [];
+        const ownerIp = (await this.state.storage.get("owner_ip")) || "";
         const safeTraffic = Array.isArray(rawTraffic) ? rawTraffic.filter(r => r && typeof r.time === "number" && r.time > now - RETENTION_MS) : [];
         const safeSections = Array.isArray(rawSections) ? rawSections.filter(r => r && typeof r.time === "number" && r.time > now - RETENTION_MS) : [];
-        let today = { day: indiaDay(now), views: safeTraffic.length, visitors: 0 };
+        const studentTraffic = safeTraffic.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp));
+        const studentSections = safeSections.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp));
+        let today = { day: indiaDay(now), views: studentTraffic.length, visitors: 0 };
         try {
           today = await this.countVisit(now, null, safeTraffic);
         } catch (cvErr) {
           console.error("countVisit warning:", cvErr);
         }
         const uniqueIPs = new Set([
-          ...safeTraffic.map(r => r && r.ip).filter(Boolean),
-          ...safeSections.map(r => r && r.ip).filter(Boolean)
+          ...studentTraffic.map(r => r && r.ip).filter(Boolean),
+          ...studentSections.map(r => r && r.ip).filter(Boolean)
         ]);
-        const records = groupTrafficByIP(safeTraffic, safeSections);
-        const popularPages = groupPopularPages(safeSections);
+        const records = groupTrafficByIP(safeTraffic, safeSections, ownerIp);
+        const popularPages = groupPopularPages(safeSections, ownerIp);
         return json({
           records,
           popularPages,
@@ -756,19 +791,20 @@ export class StudyHubChat {
   }
 
 
-  async countVisit(now, ip, records) {
+  async countVisit(now, ip, records, isOwner = false) {
     const day = indiaDay(now);
     let totals = await this.state.storage.get("daily:" + day);
     if (!totals || typeof totals !== "object") {
       const safeRecs = Array.isArray(records) ? records : [];
-      const existing = safeRecs.filter(r => r && indiaDay(r.time) === day);
+      const existing = safeRecs.filter(r => r && !r.isOwner && indiaDay(r.time) === day);
       const ips = new Set(existing.map(r => r.ip).filter(value => value && value !== "Unavailable"));
       totals = { day, views: existing.length, visitors: ips.size };
       for (const address of ips) {
         await this.state.storage.put("visitor:" + day + ":" + await digest(address), true);
       }
     }
-    if (ip !== null) {
+    // Owner visits are recorded in the audit log but excluded from actual student count
+    if (ip !== null && !isOwner) {
       totals.views = (totals.views || 0) + 1;
       if (ip && ip !== "Unavailable") {
         const visitorKey = "visitor:" + day + ":" + await digest(ip);
@@ -1835,12 +1871,21 @@ details.section-details summary:hover, details.popular-details summary:hover {
             // Visitor IP Address
             const tdIp = document.createElement('td');
             const shortIp = formatShortIP(v.ip);
-            tdIp.innerHTML = '<span class="ip-badge" title="Full IP: ' + v.ip + '" style="font-family:var(--font-mono);font-size:11.5px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;cursor:help;">' + shortIp + '</span>';
+            let ownerBadgeHtml = '';
+            if (v.isOwner) {
+              ownerBadgeHtml = '<div style="margin-top:4px;"><span style="background:rgba(245,158,11,0.18);color:#fbbf24;border:1px solid rgba(245,158,11,0.45);border-radius:4px;padding:2px 7px;font-size:10.5px;font-weight:800;letter-spacing:0.04em;display:inline-flex;align-items:center;gap:3px;font-family:var(--font-mono);">👑 OWNER VISIT</span></div>';
+            }
+            tdIp.innerHTML = '<span class="ip-badge" title="Full IP: ' + v.ip + '" style="font-family:var(--font-mono);font-size:11.5px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;cursor:help;">' + shortIp + '</span>' + ownerBadgeHtml;
             tr.append(tdIp);
 
             // Total Visits
             const tdVisits = document.createElement('td');
-            tdVisits.innerHTML = '<span class="visits-badge ' + (v.visits > 1 ? 'multi' : 'single') + '">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
+            if (v.isOwner) {
+              tdVisits.innerHTML = '<span class="visits-badge" style="background:rgba(245,158,11,0.14);color:#fbbf24;border:1px solid rgba(245,158,11,0.3);font-size:11px;font-weight:600;">' + v.visits + ' visit' + (v.visits===1?'':'s') + ' <small style="display:block;font-size:9.5px;opacity:0.85;color:var(--text-dim);">(not counted)</small></span>';
+              tr.style.background = 'rgba(245, 158, 11, 0.03)';
+            } else {
+              tdVisits.innerHTML = '<span class="visits-badge ' + (v.visits > 1 ? 'multi' : 'single') + '">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
+            }
             tr.append(tdVisits);
 
             // Country
@@ -2396,11 +2441,13 @@ export class OwnerTraffic extends StudyHubChat {}
 
 function indiaDay(time) { return new Date(time + 330*60*1000).toISOString().slice(0,10); }
 
-function groupPopularPages(events = []) {
+function groupPopularPages(events = [], ownerIp = "") {
   const groups = new Map();
   const safeEvents = Array.isArray(events) ? events : [];
   for (const event of safeEvents) {
     if (!event || typeof event !== "object") continue;
+    // Exclude owner testing from inflating content leaderboards
+    if (event.isOwner || (ownerIp && event.ip === ownerIp)) continue;
     const pagePath = typeof event.path === "string" ? event.path : "/";
     const sectionName = typeof event.section === "string" ? event.section : "Page";
     const key = JSON.stringify([pagePath, sectionName]);
@@ -2424,7 +2471,7 @@ function groupPopularPages(events = []) {
   })).sort((a,b) => (b.visits||0) - (a.visits||0) || (b.lastVisit||0) - (a.lastVisit||0));
 }
 
-function groupTrafficByIP(records = [], sectionEvents = []) {
+function groupTrafficByIP(records = [], sectionEvents = [], ownerIp = "") {
   const groups = new Map();
   const safeRecords = Array.isArray(records) ? records.filter(r => r && typeof r === "object") : [];
   const safeSectionEvents = Array.isArray(sectionEvents) ? sectionEvents.filter(e => e && typeof e === "object") : [];
@@ -2432,10 +2479,12 @@ function groupTrafficByIP(records = [], sectionEvents = []) {
   for (const record of safeRecords.slice().sort((a,b) => (b.time||0) - (a.time||0))) {
     const ip = String(record.ip || "Unknown");
     let group = groups.get(ip);
+    const isOwner = Boolean(record.isOwner || (ownerIp && ip === ownerIp));
     if (!group) {
       group = {
         ...record,
         ip,
+        isOwner,
         time: typeof record.time === "number" ? record.time : 0,
         path: typeof record.path === "string" ? record.path : "/",
         visits: 0,
@@ -2452,6 +2501,7 @@ function groupTrafficByIP(records = [], sectionEvents = []) {
       groups.set(ip, group);
     }
     group.visits++;
+    if (record.isOwner || (ownerIp && ip === ownerIp)) group.isOwner = true;
     if ((!group.country || group.country === "XX") && record.country && record.country !== "XX") group.country = record.country;
     if (!group.region && record.region) group.region = record.region;
     if (!group.city && record.city) group.city = record.city;
@@ -2464,9 +2514,11 @@ function groupTrafficByIP(records = [], sectionEvents = []) {
     const ip = String(event.ip || "Unknown");
     const evtTime = typeof event.time === "number" ? event.time : 0;
     let group = groups.get(ip);
+    const isOwner = Boolean(event.isOwner || (ownerIp && ip === ownerIp));
     if (!group) {
       group = {
         ip,
+        isOwner,
         time: evtTime,
         path: typeof event.path === "string" ? event.path : "/",
         visits: 0,
@@ -2482,6 +2534,7 @@ function groupTrafficByIP(records = [], sectionEvents = []) {
       };
       groups.set(ip, group);
     }
+    if (event.isOwner || (ownerIp && ip === ownerIp)) group.isOwner = true;
     if (evtTime > (group.time || 0)) {
       group.time = evtTime;
       group.path = event.path || group.path;
