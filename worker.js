@@ -157,8 +157,8 @@ export default {
         return new Response("TTS fetch failed: " + err.message, { status: 502 });
       }
     }
-    if (url.pathname === "/live-owner.js" && request.method === "GET") return new Response(OWNER_LIVE_SCRIPT,{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
-    if (url.pathname === "/traffic-tracker.js" && request.method === "GET") return new Response(TRACKER_SCRIPT,{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
+    if (url.pathname === "/live-owner.js" && (request.method === "GET" || request.method === "HEAD")) return new Response(OWNER_LIVE_SCRIPT,{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
+    if (url.pathname === "/traffic-tracker.js" && (request.method === "GET" || request.method === "HEAD")) return new Response(TRACKER_SCRIPT,{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
     if (url.pathname === '/api/study-helper' || url.pathname === '/api/study-helper/status') return handleStudyHelper(request, env);
     if (url.pathname === '/api/notices') return handleUniversityNotices(request, env, ctx);
     if (url.pathname === '/api/whatsapp/webhook') return handleWhatsAppWebhook(request, env, ctx);
@@ -424,7 +424,7 @@ export default {
         })
         .on("body", {
         element(el) {
-          el.append('<script src="/traffic-tracker.js" defer></script>', { html: true });
+          el.append('<script src="/traffic-tracker.js?v=20261105_act2" defer></script>', { html: true });
           if (isOwner) {
             el.append('<style id="hub-owner-traffic-control-style">.hub-owner-traffic-control{position:fixed!important;right:max(12px,env(safe-area-inset-right,0px))!important;top:max(12px,env(safe-area-inset-top,0px))!important;z-index:2147483647!important;display:inline-flex!important;align-items:center;justify-content:center;gap:.45rem;min-height:48px;min-width:48px;max-width:calc(100vw - 24px);padding:12px 18px;box-sizing:border-box;border:2px solid #fff;border-radius:999px;background:#173b35;color:#fff!important;box-shadow:0 6px 24px rgba(0,0,0,.32);font:700 16px/1.2 system-ui,sans-serif;text-decoration:none!important;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.hub-owner-traffic-control:hover,.hub-owner-traffic-control:focus-visible{background:#225c50;outline:3px solid #f3c969;outline-offset:2px}.hub-owner-traffic-control:active{transform:translateY(1px)}@media(max-width:600px){.hub-owner-traffic-control{min-height:52px;max-width:calc(100vw - 24px);padding:14px 18px;font-size:16px}}</style>', { html: true });
             el.append('<a class="hub-owner-traffic-control" href="/admin/traffic#radar" aria-label="Open private live visitors dashboard">Live visitors <b id="hub-live-count" aria-live="polite">…</b> <span aria-hidden="true">↗</span></a>', { html: true });
