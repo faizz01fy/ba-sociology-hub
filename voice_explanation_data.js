@@ -151,138 +151,270 @@ window.VOICE_EXPLANATIONS_DATA = {
   },
   "malayalam": {
     "name": "Malayalam",
-    "badge": "മ",
-    "iconClass": "icon-rose",
-    "tag": "LANGUAGE",
+    "badge": "🌴",
+    "iconClass": "fa-feather",
+    "tag": "മലയാള സാഹിത്യാനുശീലനം (Literary Practice in Malayalam) · CUFYUGP AEC",
+    "totalVideos": 2,
     "modules": [
       {
-        "moduleName": "MODULE 01: ഗദ്യവും വിവർത്തനവും",
+        "moduleName": "MODULE 01: ഗദ്യവും വിവർത്തനവും (Prose and Translation)",
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ",
-            "chapter": "കലാമണ്ഡലം ഹൈദരാലി · സംഗ്രഹം, നോട്ടുകൾ & ചർച്ച",
-            "duration": "15",
-            "youtubeId": "QTHt_P7RIA0"
-          },
-          {
-            "chapterNumber": "Chapter 02",
-            "title": "സഞ്ചാരസാഹിത്യം: കിഴവനും കൊക്കാത്തുവായും",
-            "chapter": "എസ്.കെ. പൊറ്റെക്കാട്ട് · യാത്രാവിവരണം & വിശകലനം",
-            "duration": "18",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Chapter 03",
-            "title": "അഭിമുഖം: മാധവിക്കുട്ടിയുമായി നടത്തിയ അഭിമുഖം",
-            "chapter": "അക്ബർ കക്കട്ടിൽ · സാഹിത്യ ദർശനം",
-            "duration": "16",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Chapter 04",
-            "title": "പോഡ്കാസ്റ്റ് / വിവർത്തനം: അർമേനിയയിലെ ശോകഗാനം",
-            "chapter": "സജി മാർക്കോസ് · വിവർത്തന തത്വങ്ങൾ",
-            "duration": "20",
-            "youtubeId": ""
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 02: ചെറുകഥയും നോവലും",
-        "videos": [
-          {
-            "chapterNumber": "Chapter 01",
-            "title": "പൂവമ്പഴം",
-            "chapter": "വൈക്കം മുഹമ്മദ് ബഷീർ · പ്രമേയ വിശകലനം",
-            "duration": "18",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Chapter 02",
-            "title": "വില്ലുവണ്ടി",
-            "chapter": "സി. അയ്യപ്പൻ · ദളിത് സാഹിത്യ സൗന്ദര്യശാസ്ത്രം",
-            "duration": "22",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Chapter 03",
-            "title": "ദൈവത്തിന്റെ കണ്ണ്",
-            "chapter": "എൻ.പി. മുഹമ്മദ് · നോവൽ പഠനം",
-            "duration": "20",
-            "youtubeId": ""
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 03: കവിത",
-        "videos": [
-          {
-            "chapterNumber": "Chapter 01",
-            "title": "സമുദ്രലംഘനം",
-            "chapter": "എഴുത്തച്ഛൻ · അധ്യാത്മരാമായണം കിളിപ്പാട്ട്",
-            "duration": "20",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Chapter 02",
-            "title": "ചിന്താവിഷ്ടയായ സീത",
-            "chapter": "കുമാരനാശാൻ · ഖണ്ഡകാവ്യ നിരൂപണം",
-            "duration": "25",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Chapter 03",
-            "title": "ഇവനെക്കൂടി (ആധുനിക കവിതാ പഠനം)",
-            "chapter": "കെ. സച്ചിദാനന്ദൻ · സമഗ്ര കവിതാ വിശകലനം & പരീക്ഷാ സഹായി",
-            "duration": "9:30",
-            "youtubeId": "LvtGhxe4n7I",
-            "videoUrl": "/videos/malayalam_chapter_ivanekkoodi_video.mp4",
+            "title": "ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ — കലാമണ്ഡലം ഹൈദരാലി",
+            "chapter": "കഥകളി സംഗീതം · ആത്മകഥാ പഠനം · കലാമണ്ഡലം ചരിത്രം",
+            "duration": "14:20",
+            "youtubeId": "QTHt_P7RIA0",
+            "thumbnail": "https://i.ytimg.com/vi/QTHt_P7RIA0/hqdefault.jpg",
+            "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
-              "കവിതാ പശ്ചാത്തലം: കെ. സച്ചിദാനന്ദന്റെ പ്രശസ്തമായ ആധുനിക മലയാള കവിതയാണ് 'ഇവനെക്കൂടി'. സമൂഹത്തിലെ അരികുവൽക്കരിക്കപ്പെട്ടവരുടെയും സാധാരണ മനുഷ്യരുടെയും യാതനകളെയും അതിജീവന പോരാട്ടങ്ങളെയും കവിത തീക്ഷ്ണമായി അടയാളപ്പെടുത്തുന്നു.",
-              "പ്രധാന പ്രമേയങ്ങൾ: മാനവികത, സാമൂഹിക പ്രതിരോധം, പാർശ്വവൽക്കരിക്കപ്പെട്ടവരോടുള്ള ഐക്യദാർഢ്യം, അധികാര വ്യവസ്ഥകളോടുള്ള കവിയുടെ നിരന്തര കലഹം.",
-              "കാവ്യഭാഷയും ശൈലിയും: ആധുനിക കവിതയിലെ ശക്തമായ ബിംബകൽപ്പനകളും കാവ്യഭാഷയും സമകാലിക രാഷ്ട്രീയ-സാമൂഹിക യാഥാർത്ഥ്യങ്ങളുമായി നേരിട്ട് സംവദിക്കുന്നു."
+              "<strong>കഥകളി സംഗീതത്തിലെ വഴിത്തിരിവ്:</strong> കഥകളി രംഗത്ത് പരമ്പരാഗതമായി നിലനിന്നിരുന്ന ജാതി-മത മതിലുകൾ ഭേദിച്ച് സംഗീത പ്രതിഭ തെളിയിച്ച പ്രഥമ മുസ്ലിം കലാകാരനാണ് കലാമണ്ഡലം ഹൈദരാലി (1946-2006).",
+              "<strong>ഗുരുശിഷ്യ ബന്ധവും പ്രതിസന്ധികളും:</strong> കലാമണ്ഡലം കുഞ്ഞുനായർ, പത്മനാഭൻ നായർ, കലാമണ്ഡലം വാസുപിഷാരോടി തുടങ്ങിയ ഗുരുക്കന്മാരുടെ വാത്സല്യവും ക്ഷേത്രങ്ങളിൽ പാടാൻ അനുവാദമില്ലാത്തതിലെ മാനസിക നൊമ്പരങ്ങളും ആത്മകഥയിൽ വിവരിക്കുന്നു.",
+              "<strong>സംഗീത ശൈലിയുടെ പ്രത്യേകത:</strong> ശുദ്ധ ഭാവസാന്ദ്രമായ ശബ്ദവും കഥകളി വേഷങ്ങളോട് ഇണങ്ങിനിൽക്കുന്ന രാഗവിന്യാസവും ഹൈദരാലിയുടെ ആലാപനത്തെ വേറിട്ടുനിർത്തി.",
+              "<strong>സാമൂഹിക പ്രസക്തി:</strong> കേരളീയ കലാരംഗത്തെ മതേതരവൽക്കരണത്തിന്റെ ഏറ്റവും വലിയ പ്രതീകമാണ് ഹൈദരാലിയുടെ കലാജീവിതം."
             ],
-            "examTip": "സച്ചിദാനന്ദന്റെ കാവ്യശൈലിയിലെ മാനവികതയും 'ഇവനെക്കൂടി' എന്ന ശീർഷകത്തിന്റെ ആഴത്തിലുള്ള അർത്ഥതലങ്ങളും പരീക്ഷയ്ക്ക് പ്രത്യേകം വിശകലനം ചെയ്യുക."
+            "examTip": "ഹൈദരാലിയുടെ ആത്മകഥ മുന്നോട്ടുവെക്കുന്ന മാനവികതയും കഥകളി സംഗീതത്തിന് അദ്ദേഹം നൽകിയ ഭാവുകത്വപരമായ സംഭാവനകളും 10 മാർക്ക് ഉപന്യാസത്തിനായി വിശകലനം ചെയ്യുക."
+          },
+          {
+            "chapterNumber": "Chapter 02",
+            "title": "സഞ്ചാരസാഹിത്യം: കിഴവനും ക്രാക്കാത്തൂവയും — എസ്.കെ. പൊറ്റെക്കാട്ട്",
+            "chapter": "സഞ്ചാരസാഹിത്യം · ഇന്തോനേഷ്യൻ യാത്രാനുഭവങ്ങൾ · ക്രാക്കാത്തൂവ അഗ്നിപർവ്വതം",
+            "duration": "12:15",
+            "youtubeId": "",
+            "thumbnail": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>സഞ്ചാരസാഹിത്യ കുലപതി:</strong> മലയാള സഞ്ചാരസാഹിത്യത്തെ ലോകനിലവാരത്തിലേക്ക് ഉയർത്തിയ ജ്ഞാനപീഠ ജേതാവ് എസ്.കെ. പൊറ്റെക്കാട്ടിന്റെ 'ബാലിദ്വീപ്' എന്ന കൃതിയിൽ നിന്നുള്ള അധ്യായമാണിത്.",
+              "<strong>ക്രാക്കാത്തൂവ അഗ്നിപർവ്വതം:</strong> 1883-ൽ പൊട്ടിത്തെറിച്ച ക്രാക്കാത്തൂവ അഗ്നിപർവ്വതത്തിന്റെ ഭീതിജനകമായ ചരിത്രവും അന്നത്തെ പ്രകൃതിദുരന്തത്തിന്റെ ഭീകരതയും കപ്പൽയാത്രയിലെ ഒരു കിഴവന്റെ ഓർമ്മകളിലൂടെ അനാവരണം ചെയ്യപ്പെടുന്നു.",
+              "<strong>ഭൂമിശാസ്ത്രപരവും സാംസ്കാരികവുമായ വിവരണം:</strong> ജാവാ കടലിലെ ദ്വീപുകൾ, പവിഴപ്പുറ്റുകൾ, അവിടുത്തെ സാധാരണക്കാരുടെ ജീവിതം എന്നിവ മനോഹരമായ ചിത്രങ്ങളെന്നപോലെ പൊറ്റെക്കാട്ട് വരച്ചുകാട്ടുന്നു.",
+              "<strong>ആഖ്യാന ശൈലി:</strong> കാവ്യാത്മകമായ ഭാഷ, നർമ്മം, ചരിത്രാന്വേഷണം, മാനവികമായ സഹാനുഭൂതി എന്നിവയാണ് ഈ സഞ്ചാരക്കുറിപ്പിന്റെ മുഖമുദ്ര."
+            ],
+            "examTip": "ക്രാക്കാത്തൂവ അഗ്നിപർവ്വത സ്ഫോടനത്തിന്റെ ചരിത്രപശ്ചാത്തലവും പൊറ്റെക്കാട്ടിന്റെ വർണ്ണനാരീതിയും ചേർത്തുവെച്ച് കുറിപ്പ് തയ്യാറാക്കുക."
+          },
+          {
+            "chapterNumber": "Chapter 03",
+            "title": "അഭിമുഖം: മാധവിക്കുട്ടിയുമായി അക്ബർ കക്കട്ടിൽ നടത്തിയ അഭിമുഖം",
+            "chapter": "അഭിമുഖ സാഹിത്യം · കമല സുരയ്യ · സാഹിത്യ ദർശനം & സ്ത്രീപക്ഷം",
+            "duration": "11:50",
+            "youtubeId": "",
+            "thumbnail": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>അഭിമുഖമെന്ന സാഹിത്യശാഖ:</strong> വ്യക്തിത്വത്തിന്റെ ആഴങ്ങളിലേക്കും സാഹിത്യചിന്തകളിലേക്കും വെളിച്ചം വീശുന്ന സർഗ്ഗാത്മക മാധ്യമമാണ് അഭിമുഖം. അക്ബർ കക്കട്ടിലിന്റെ സുതാര്യമായ ചോദ്യങ്ങൾ മാധവിക്കുട്ടിയെ പൂർണ്ണമായും തുറന്നെഴുതാൻ പ്രേരിപ്പിക്കുന്നു.",
+              "<strong>'എന്റെ കഥ' ഉണ്ടാക്കിയ വിപ്ലവം:</strong> മലയാള സ്ത്രീയെഴുത്തിൽ സദാചാര സങ്കല്പങ്ങളെ ചോദ്യം ചെയ്തുകൊണ്ട് സ്വന്തം സ്വകാര്യതകളെ ധീരമായി തുറന്നെഴുതിയ മാധവിക്കുട്ടിയുടെ നിലപാടുകൾ ഇതിൽ വ്യക്തമാക്കപ്പെടുന്നു.",
+              "<strong>സ്നേഹവും ഏകാന്തതയും:</strong> സ്ത്രീയുടെ സ്വാതന്ത്ര്യം, ആത്മാഭിമാനം, പുരുഷാധിപത്യ സമൂഹത്തിലെ അന്യവൽക്കരണം എന്നിവയെക്കുറിച്ചുള്ള മാധവിക്കുട്ടിയുടെ തീക്ഷ്ണമായ നിരീക്ഷണങ്ങൾ.",
+              "<strong>കഥാകൃത്തിന്റെ ദർശനം:</strong> തന്റെ സാഹിത്യം പ്രകൃതിദത്തമായ വികാരങ്ങളുടെ പ്രകടനമാണെന്നും പുകഴ്ത്തലുകൾക്കോ കുറ്റപ്പെടുത്തലുകൾക്കോ വഴങ്ങുന്നതല്ലെന്നും മാധവിക്കുട്ടി വ്യക്തമാക്കുന്നു."
+            ],
+            "examTip": "മാധവിക്കുട്ടിയുടെ സാഹിത്യ ജീവിതത്തിലെ വിപ്ലവകരമായ നിലപാടുകളും അഭിമുഖത്തിന്റെ ഘടനാപരമായ സവിശേഷതകളും പരീക്ഷയ്ക്ക് ചോദിക്കാറുണ്ട്."
+          },
+          {
+            "chapterNumber": "Chapter 04",
+            "title": "പോഡ്കാസ്റ്റ് / വിവർത്തനം: അർമേനിയയിലെ ശോകഗാനം — സജി മാർക്കോസ്",
+            "chapter": "പോഡ്കാസ്റ്റ് ഡിജിറ്റൽ മാധ്യമം · വിവർത്തന പഠനം · അർമേനിയൻ വംശഹത്യ",
+            "duration": "13:10",
+            "youtubeId": "",
+            "thumbnail": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>ഡിജിറ്റൽ യുഗത്തിലെ പോഡ്കാസ്റ്റ്:</strong> ആധുനിക മാധ്യമ രൂപമായ പോഡ്കാസ്റ്റിലൂടെ ചരിത്രാഖ്യാനം നിർവ്വഹിക്കുന്നതിന്റെ സവിശേഷതകളും ശബ്ദസാധ്യതകളും സജി മാർക്കോസിന്റെ ഈ രചന വ്യക്തമാക്കുന്നു.",
+              "<strong>അർമേനിയൻ വംശഹത്യ (1915):</strong> ഓട്ടോമൻ തുർക്കി സാമ്രാജ്യത്തിൽ ലക്ഷക്കണക്കിന് അർമേനിയൻ ജനത ക്രൂരമായി കൂട്ടക്കൊല ചെയ്യപ്പെട്ട ചരിത്രപശ്ചാത്തലമാണ് ഇതിന്റെ വിഷയം.",
+              "<strong>സൊഗൊമോൻ തെഹ്ലിരിയന്റെ പോരാട്ടം:</strong> കുടുംബത്തെ മുഴുവൻ നഷ്ടപ്പെട്ട സൊഗൊമോൻ തെഹ്ലിരിയൻ വംശഹത്യയ്ക്ക് ഉത്തരവാദിയായ തലത്ത് പാഷയെ വധിക്കുന്നതും വിചാരണയിലൂടെ നിരപരാധിയായി വിട്ടയക്കപ്പെടുന്നതുമായ ചരിത്രസംഭവം.",
+              "<strong>വിവർത്തനത്തിലെ വെല്ലുവിളികൾ:</strong> അന്യസംസ്കാരത്തിലെ വികാരതീവ്രമായ ചരിത്രസംഭവങ്ങളെ മലയാളത്തിന്റെ ഭാവുകത്വത്തിലേക്ക് തനിമ നഷ്ടപ്പെടാതെ മാറ്റിയെഴുതിയ രീതി."
+            ],
+            "examTip": "പോഡ്കാസ്റ്റ് എന്ന ആധുനിക മാധ്യമ രൂപത്തെക്കുറിച്ചും അർമേനിയൻ വംശഹത്യയുടെ ചരിത്രത്തെക്കുറിച്ചും 5 മാർക്ക് ചോദ്യങ്ങൾ പ്രതീക്ഷിക്കാം."
           }
         ]
       },
       {
-        "moduleName": "MODULE 04: ദൃശ്യകല & സിനിമ",
+        "moduleName": "MODULE 02: ചെറുകഥയും നോവലും (Short Story and Novel)",
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "നാടകവേദി: നാടകവും ജീവിതവും",
-            "chapter": "മലയാള നാടക പ്രസ്ഥാനത്തിന്റെ നാൾവഴികൾ",
-            "duration": "18",
-            "youtubeId": ""
+            "title": "ചെറുകഥ: പൂവമ്പഴം — കാരൂർ നീലകണ്ഠപ്പിള്ള",
+            "chapter": "ചെറുകഥാ സാഹിത്യം · ദാമ്പത്യ മനഃശാസ്ത്രം · അധ്യാപക ജീവിതം",
+            "duration": "15:00",
+            "youtubeId": "",
+            "thumbnail": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>കാരൂരിന്റെ ജീവിതസ്പർശം:</strong> സാധാരണക്കാരായ പ്രൈമറി സ്കൂൾ അധ്യാപകരുടെ ദൈന്യതകളും അന്തസ്സ്സും മലയാള സാഹിത്യത്തിൽ ആദ്യമായി വരച്ചുകാട്ടിയ എഴുത്തുകാരനാണ് കാരൂർ നീലകണ്ഠപ്പിള്ള.",
+              "<strong>പ്രമേയ പരിസരം:</strong> തുച്ഛമായ ശമ്പളത്തിൽ പട്ടിണി കിടക്കുന്ന മാത്തു എന്ന അധ്യാപകനും, പണക്കാരന്റെ വീട്ടിൽ നിന്ന് വന്ന ഭാര്യ കൊച്ചുത്രേസ്യയും തമ്മിലുള്ള മാനസിക സംഘർഷങ്ങൾ.",
+              "<strong>പൂവമ്പഴം എന്ന പ്രതീകം:</strong> കൊച്ചുത്രേസ്യയ്ക്ക് കൊതിതോന്നിയ പൂവമ്പഴം വാങ്ങി നൽകാൻ സാധിക്കാത്ത മാത്തുവിന്റെ അരക്ഷിതാവസ്ഥയും, വാശിപിടിക്കുന്ന ഭാര്യയെ ശകാരിച്ച് ഒടുവിൽ സ്നേഹത്തിലൂടെ പ്രശ്നം പരിഹരിക്കുന്ന ദാമ്പത്യ മനഃശാസ്ത്രവും.",
+              "<strong>സാമൂഹിക വിമർശനം:</strong> അന്നത്തെ വിദ്യാലയ മാനേജ്‌മെന്റുകളുടെ ചൂഷണവും അധ്യാപകരുടെ അരക്ഷിതാവസ്ഥയും കാരൂർ നിർദ്ദയം വരച്ചുകാട്ടുന്നു."
+            ],
+            "examTip": "മാത്തുവിന്റെയും കൊച്ചുത്രേസ്യയുടെയും ദാമ്പത്യബന്ധത്തിലെ വികാരതലങ്ങളും 'പൂവമ്പഴം' എന്ന ശീർഷകത്തിന്റെ പ്രതീകാത്മകതയും വിശകലനം ചെയ്യുക."
           },
           {
             "chapterNumber": "Chapter 02",
-            "title": "ചലച്ചിത്രം: മലയാള സിനിമയുടെ പരിണാമം",
-            "chapter": "സിനിമ സൗന്ദര്യശാസ്ത്രവും നവതരംഗവും",
-            "duration": "22",
-            "youtubeId": ""
+            "title": "ചെറുകഥ: വില്ലുവണ്ടി — കെ. രേഖ",
+            "chapter": "ദളിത് ചരിത്രാഖ്യാനം · അയ്യങ്കാളി പ്രസ്ഥാനം · സാമൂഹിക വിപ്ലവം",
+            "duration": "14:30",
+            "youtubeId": "",
+            "thumbnail": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>അയ്യങ്കാളിയുടെ വില്ലുവണ്ടി സമരം:</strong> 1893-ൽ പൊതുവഴിയിലൂടെ സഞ്ചരിക്കാൻ അവകാശമില്ലാതിരുന്ന പുലയ ജനതയ്ക്ക് വേണ്ടി വില്ലുവണ്ടി കെട്ടി രാജവീഥിയിലൂടെ സഞ്ചരിച്ച് ചരിത്രം സൃഷ്ടിച്ച മഹാത്മാ അയ്യങ്കാളിയുടെ പോരാട്ടം.",
+              "<strong>സമകാലിക വായന:</strong> ചരിത്രപരമായ വില്ലുവണ്ടി സമരത്തെ ഒരു ആധുനിക ദളിത് സ്ത്രീയുടെ കാഴ്ചപ്പാടിലൂടെയും പ്രതിരോധത്തിലൂടെയും കെ. രേഖ പുനർവായിക്കുന്നു.",
+              "<strong>അധികാര വ്യവസ്ഥയ്ക്കെതിരെയുള്ള വെല്ലുവിളി:</strong> വസ്ത്രധാരണ സ്വാതന്ത്ര്യവും സഞ്ചാരസ്വാതന്ത്ര്യവും വിലക്കിയിരുന്ന സവർണ്ണ മാടമ്പിത്തരത്തിനെതിരെയുള്ള പ്രതീകാത്മക ചെറുത്തുനിൽപ്പ്.",
+              "<strong>ഭാഷയും സൗന്ദര്യശാസ്ത്രവും:</strong> പ്രതിരോധത്തിന്റെയും കീഴാള വർഗ്ഗത്തിന്റെ ആത്മാഭിമാനത്തിന്റെയും തീപ്പൊരി പാറുന്ന ഭാഷാരീതി."
+            ],
+            "examTip": "കേരളത്തിലെ ദളിത് നവോത്ഥാനത്തിൽ അയ്യങ്കാളിയുടെ വില്ലുവണ്ടി സമരം വഹിച്ച പങ്ക് കെ. രേഖയുടെ കഥയെ അടിസ്ഥാനമാക്കി ഉപന്യസിക്കുക."
           },
           {
             "chapterNumber": "Chapter 03",
-            "title": "ചലച്ചിത്ര ഗാനം: ഭാവഗീതങ്ങളുടെ കാവ്യഭംഗി",
-            "chapter": "പി. ഭാസ്കരൻ, വയലാർ, ഒ.എൻ.വി ഗാനപാരമ്പര്യം",
-            "duration": "15",
-            "youtubeId": ""
+            "title": "നോവൽ: ദൈവത്തിന്റെ കണ്ണ് — എൻ.പി. മുഹമ്മദ്",
+            "chapter": "നോവൽ സാഹിത്യം · ബാല്യകാല മനഃശാസ്ത്രം · മലബാർ മാപ്പിള സംസ്കാരം",
+            "duration": "16:20",
+            "youtubeId": "",
+            "thumbnail": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>അവാർഡ് നേടിയ കൃതി:</strong> കേന്ദ്ര സാഹിത്യ അക്കാദമി അവാർഡ് (1993) നേടിയ എൻ.പി. മുഹമ്മദിന്റെ മാസ്റ്റർപീസ് നോവലാണ് 'ദൈവത്തിന്റെ കണ്ണ്'.",
+              "<strong>അഹമ്മദ്കുട്ടി എന്ന കേന്ദ്രകഥാപാത്രം:</strong> അനാഥത്വവും ഏകാന്തതയും അനുഭവിക്കുന്ന അഹമ്മദ്കുട്ടി എന്ന ബാലന്റെ നിഷ്കളങ്കമായ കാഴ്ചപ്പാടിലൂടെയാണ് നോവൽ പുരോഗമിക്കുന്നത്.",
+              "<strong>മാപ്പിള ജീവിത സംസ്കാരം:</strong> കോഴിക്കോട്ടെ പരമ്പരാഗത തറവാടുകളിലെ ആചാരങ്ങൾ, വിശ്വാസങ്ങൾ, സ്ത്രീകളുടെ ജീവിതം, കുട്ടികളുടെ കളിചിരികൾ എന്നിവ തനിമയോടെ ചിത്രീകരിച്ചിരിക്കുന്നു.",
+              "<strong>ദൈവത്തിന്റെ കണ്ണ് എന്ന പ്രമേയം:</strong> എപ്പോഴും നമ്മെ വീക്ഷിച്ചുകൊണ്ടിരിക്കുന്ന അദൃശ്യനായ ദൈവത്തിന്റെ സാന്നിധ്യം ബാലമനസ്സിൽ ഉണ്ടാക്കുന്ന ഭയവും ആശ്വാസവും."
+            ],
+            "examTip": "അഹമ്മദ്കുട്ടിയുടെ ബാല്യകാല വീക്ഷണത്തിലൂടെ ഗ്രാമീണ ജീവിതം അനാവരണം ചെയ്യുന്ന രീതി നോവലിനെ മുൻനിർത്തി വിശദീകരിക്കുക."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE 03: കവിത (Poetry)",
+        "videos": [
+          {
+            "chapterNumber": "Chapter 01",
+            "title": "കവിത: സമുദ്രലംഘനം — തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ",
+            "chapter": "അധ്യാത്മരാമായണം കിളിപ്പാട്ട് · സുന്ദരകാണ്ഡം · ക്ലാസിക്കൽ കവിത",
+            "duration": "18:00",
+            "youtubeId": "",
+            "thumbnail": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>മലയാള ഭാഷാപിതാവ്:</strong> 16-ാം നൂറ്റാണ്ടിൽ ജീവിച്ച തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ കിളിപ്പാട്ട് പ്രസ്ഥാനത്തിലൂടെ മലയാള ഭാഷയ്ക്കും ഭക്തിപ്രസ്ഥാനത്തിനും പുതിയ അടിത്തറയിട്ടു.",
+              "<strong>സുന്ദരകാണ്ഡ പശ്ചാത്തലം:</strong> സീതാന്വേഷണത്തിനായി ദക്ഷിണ സമുദ്രതീരത്തെത്തിയ വാനരപ്പടയ്ക്ക് കടൽ കടക്കാൻ കഴിയാതെ വന്നപ്പോൾ, ജാംബവാൻ ഹനുമാന്റെ ഓർമ്മകളെയും ശക്തിയെയും ഉണർത്തുന്നു.",
+              "<strong>ഹനുമാന്റെ സമുദ്രലംഘനം:</strong> രാമനാമം ജപിച്ച് മഹേന്ദ്ര പർവ്വതത്തിൽ നിന്ന് ആകാശത്തിലേക്ക് ഉയർന്നുചാടുന്ന ഹനുമാന്റെ അമാനുഷിക കരുത്തും ആത്മവിശ്വാസവും വീരരസത്തിൽ വർണ്ണിക്കുന്നു.",
+              "<strong>കാവ്യഭംഗിയും ദർശനവും:</strong> അഹങ്കാരമില്ലാത്ത സേവനസന്നദ്ധത, ഭക്തിയുടെ അപാരമായ ശക്തി, പ്രകൃതിവർണ്ണനകളുടെ പ്രൗഢി എന്നിവയാണ് ഇതിന്റെ സവിശേഷതകൾ."
+            ],
+            "examTip": "സമുദ്രലംഘന സന്ദർഭത്തിലെ ഹനുമാന്റെ കഥാപാത്ര ചിത്രീകരണവും എഴുത്തച്ഛന്റെ കിളിപ്പാട്ട് വൃത്തഭംഗിയും പരീക്ഷയ്ക്ക് പ്രധാനമാണ്."
+          },
+          {
+            "chapterNumber": "Chapter 02",
+            "title": "കവിത: ചിന്താവിഷ്ടയായ സീത — മഹാകവി കുമാരനാശാൻ",
+            "chapter": "ഖണ്ഡകാവ്യം · സ്ത്രീപക്ഷ ചിന്ത · ആശാന്റെ കാവ്യദർശനം",
+            "duration": "17:40",
+            "youtubeId": "",
+            "thumbnail": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>ആധുനിക കവിത്രയത്തിലെ വിപ്ലവകാരി:</strong> കാവ്യരംഗത്ത് കാൽപ്പനിക വസന്തം വിരിയിച്ച മഹാകവി കുമാരനാശാന്റെ ഏറ്റവും ചിന്തോദ്ദീപകമായ ഖണ്ഡകാവ്യമാണ് 'ചിന്താവിഷ്ടയായ സീത' (1919).",
+              "<strong>സീതയുടെ ആത്മഗതങ്ങൾ:</strong> വാത്മീകിയുടെ ആശ്രമത്തിലിരുന്ന് സന്ധ്യാസമയത്ത് ഭൂതകാലത്തിലേക്ക് തിരിഞ്ഞുനോക്കുന്ന സീത, ശ്രീരാമന്റെ കർക്കശമായ രാജധർമ്മത്തെയും തന്നെ ഉപേക്ഷിച്ചതിനെയും ചോദ്യം ചെയ്യുന്നു.",
+              "<strong>സ്ത്രീത്വത്തിന്റെ ആത്മാഭിമാനം:</strong> കേവലം കീഴടങ്ങുന്ന ഭാരതീയ സ്ത്രീയല്ല, മറിച്ച് ചോദ്യങ്ങൾ ഉന്നയിക്കാൻ ധൈര്യമുള്ള ആത്മാഭിമാനമുള്ള ശക്തയായ സ്ത്രീരൂപമായി സീതയെ ആശാൻ മാറ്റിയെഴുതുന്നു.",
+              "<strong>കാവ്യശൈലി:</strong> വസന്തതിലകം വൃത്തത്തിൽ രചിക്കപ്പെട്ട അതിഗഹനമായ ദാർശനിക വരികളും വികാരസാന്ദ്രമായ മനഃശാസ്ത്ര വിശകലനവും."
+            ],
+            "examTip": "ശ്രീരാമന്റെ രാജനീതിയെ വിചാരണ ചെയ്യുന്ന സീതയുടെ ചോദ്യങ്ങളും ആശാന്റെ സ്ത്രീപക്ഷ നിലപാടുകളും 10 മാർക്ക് ഉപന്യാസമായി ചോദിക്കാറുണ്ട്."
+          },
+          {
+            "chapterNumber": "Chapter 03",
+            "title": "കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ",
+            "chapter": "വിലാപകാവ്യം · വൈലോപ്പിള്ളി അനുസ്മരണം · ആധുനികോത്തര കവിത",
+            "duration": "02:14",
+            "youtubeId": "PYtXGzEyPgQ",
+            "thumbnail": "https://i.ytimg.com/vi/PYtXGzEyPgQ/hqdefault.jpg",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>കവിതാ പശ്ചാത്തലം:</strong> മഹാകവി വൈലോപ്പിള്ളി ശ്രീധരമേനോന്റെ വിയോഗത്തിൽ (1985) അഗാധമായ വേദനയോടെ കെ. സച്ചിദാനന്ദൻ രചിച്ച പ്രസിദ്ധമായ അനുസ്മരണ കവിതയാണ് 'ഇവനെക്കൂടി'.",
+              "<strong>നിളാനദിയോടുള്ള അഭ്യർത്ഥന:</strong> കേരള സംസ്കാരത്തിന്റെ പ്രതീകമായ ഭാരതപ്പുഴയോട് (നിളയോട്) വൈലോപ്പിള്ളിയുടെ ചിതാഭസ്മത്തെ സ്നേഹത്തോടെ സ്വീകരിക്കാൻ കവി അപേക്ഷിക്കുന്നു ('ഇവനെക്കൂടി നിന്റെ മാറിൽ എടുക്കുക').",
+              "<strong>വൈലോപ്പിള്ളിക്കവിതയുടെ ആത്മാവ്:</strong> ഓണപ്പാട്ടിന്റെ താളവും, മുളങ്കാടിന്റെ സംഗീതവും, മലയാള നാടിന്റെ പച്ചപ്പും, കർഷകന്റെ വിയർപ്പും ഒത്തുചേർന്ന കാവ്യലോകമായിരുന്നു വൈലോപ്പിള്ളിയുടേതെന്ന് സച്ചിദാനന്ദൻ ഓർമ്മിപ്പിക്കുന്നു.",
+              "<strong>മരണത്തെ അതിജീവിക്കുന്ന കല:</strong> കവി ഭൗതികമായി വിടപറഞ്ഞാലും അദ്ദേഹത്തിന്റെ കവിതകളിലെ സാമൂഹിക പ്രതിരോധവും പ്രകൃതിസ്നേഹവും അനശ്വരമായി നിലനിൽക്കുമെന്ന് കവിത പ്രഖ്യാപിക്കുന്നു."
+            ],
+            "examTip": "പരമ്പരാഗത ചരമകവിതകളിൽ നിന്ന് 'ഇവനെക്കൂടി' എങ്ങനെ വ്യത്യസ്തമാകുന്നുവെന്നും, വൈലോപ്പിള്ളിയുടെ കാവ്യജീവിതത്തെ സച്ചിദാനന്ദൻ എങ്ങനെ വിലയിരുത്തുന്നുവെന്നും പരീക്ഷയ്ക്ക് പ്രത്യേക ശ്രദ്ധ നൽകുക."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE 04: ദൃശ്യകല, നാടകം & ചലച്ചിത്രം (Visual Arts, Theatre & Cinema)",
+        "videos": [
+          {
+            "chapterNumber": "Chapter 01",
+            "title": "നാടകവേദി: മലയാള നാടകവേദിയും സ്ത്രീപക്ഷ നാടകവേദിയും",
+            "chapter": "നാടക പ്രസ്ഥാനം · സാമൂഹിക നവോത്ഥാനം · സ്ത്രീപക്ഷ അരങ്ങ്",
+            "duration": "15:20",
+            "youtubeId": "",
+            "thumbnail": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>നവോത്ഥാന നാടകങ്ങൾ:</strong> വി.ടി. ഭട്ടതിരിപ്പാടിന്റെ 'അടുക്കളയിൽ നിന്ന് അരങ്ങത്തേക്ക്', കെ.പി.എ.സി.യുടെ 'നിങ്ങളെന്നെ കമ്മ്യൂണിസ്റ്റാക്കി' എന്നീ നാടകങ്ങൾ കേരളീയ സമൂഹത്തിൽ വിപ്ലവകരമായ മാറ്റങ്ങൾ സൃഷ്ടിച്ചു.",
+              "<strong>സ്ത്രീപക്ഷ നാടകവേദിയുടെ ഉദയം:</strong> പുരുഷാധിപത്യ അരങ്ങുകളെ ചോദ്യം ചെയ്തുകൊണ്ട് സ്ത്രീകളുടെ അനുഭവങ്ങളും പ്രശ്നങ്ങളും വേദിയിലെത്തിച്ച സ്ത്രീപക്ഷ നാടകങ്ങളുടെ പ്രാധാന്യം.",
+              "<strong>പ്രധാന പ്രവർത്തകർ:</strong> സാറാ ജോസഫ്, സി.എസ്. ചന്ദ്രിക തുടങ്ങിയവരുടെ നേതൃത്വത്തിലുള്ള 'മാനുഷി' പോലുള്ള സാംസ്കാരിക കൂട്ടായ്മകളുടെ നാടകപ്രവർത്തനങ്ങൾ.",
+              "<strong>രംഗഭാഷയുടെ രാഷ്ട്രീയം:</strong> കേവല വിനോദത്തിനപ്പുറം രാഷ്ട്രീയ ചെറുത്തുനിൽപ്പിന്റെയും സ്ത്രീ സ്വാതന്ത്ര്യത്തിന്റെയും മാധ്യമമായി നാടകവേദി മാറിയ ചരിത്രം."
+            ],
+            "examTip": "കേരളത്തിലെ സാമൂഹിക പരിഷ്കരണത്തിൽ നാടകവേദി വഹിച്ച പങ്കും സ്ത്രീപക്ഷ നാടകങ്ങളുടെ സവിശേഷതകളും വിശകലനം ചെയ്യുക."
+          },
+          {
+            "chapterNumber": "Chapter 02",
+            "title": "ചലച്ചിത്രം: ലിജോ ജോസ് പെല്ലിശ്ശേരിയുടെ 'നൻപകൽ നേരത്ത് മയക്കം'",
+            "chapter": "ചലച്ചിത്ര നിരൂപണം · മാജിക്കൽ റിയലിസം · സാംസ്കാരിക വിനിമയം",
+            "duration": "16:00",
+            "youtubeId": "",
+            "thumbnail": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>സിനിമയുടെ പ്രമേയം:</strong> വേളാങ്കണ്ണി തീർത്ഥാടനം കഴിഞ്ഞ് മടങ്ങുന്ന മലയാളിയായ ജെയിംസ്, തമിഴ്നാട്ടിലെ ഒരു ഗ്രാമത്തിലെത്തി പെട്ടെന്ന് സുന്ദരം എന്ന പഴയ തമിഴനായി മാറുന്ന വിസ്മയകരമായ കഥ.",
+              "<strong>മമ്മൂട്ടിയുടെ അഭിനയവിസ്മയം:</strong> ജെയിംസ്, സുന്ദരം എന്നീ രണ്ട് തികച്ചും വ്യത്യസ്തരായ വ്യക്തിത്വങ്ങളുടെ സൂക്ഷ്മ ഭാവമാറ്റങ്ങൾ അസാധാരണമാംവിധം അവതരിപ്പിച്ച മാസ്റ്റർക്ലാസ് പ്രകടനം.",
+              "<strong>സിനിമയിലെ മാജിക്കൽ റിയലിസം:</strong> യാഥാർത്ഥ്യത്തിനും സ്വപ്നത്തിനും മധ്യേയുള്ള നേർത്ത രേഖ. തമിഴ് സിനിമകളിലെ പഴയ ഗാനങ്ങളും സംഭാഷണങ്ങളും സിനിമയുടെ പശ്ചാത്തലമായി സമർത്ഥമായി ഉപയോഗിച്ച സംവിധാന ശൈലി.",
+              "<strong>മാനവികതയും അതിർത്തികളും:</strong> ഭാഷയ്ക്കും ഭൂപ്രദേശങ്ങൾക്കും അതീതമായി മനുഷ്യബന്ധങ്ങളെയും സ്നേഹത്തെയും അടയാളപ്പെടുത്തുന്ന സിനിമ."
+            ],
+            "examTip": "'നൻപകൽ നേരത്ത് മയക്കം' എന്ന സിനിമയിലെ മാജിക്കൽ റിയലിസത്തിന്റെ സവിശേഷതകളും മമ്മൂട്ടിയുടെ കഥാപാത്ര പരിണാമവും ഉപന്യാസമായി തയ്യാറാക്കുക."
+          },
+          {
+            "chapterNumber": "Chapter 03",
+            "title": "ചലച്ചിത്ര ഗാനം: മലയാള ചലച്ചിത്ര ഗാനശാഖയും ഗാനരചയിതാക്കളും",
+            "chapter": "ഗാനസാഹിത്യം · പി. ഭാസ്കരൻ, വയലാർ, ഒ.എൻ.വി · സംഗീത സംസ്കാരം",
+            "duration": "14:50",
+            "youtubeId": "",
+            "thumbnail": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>സുവർണ്ണ കാലഘട്ടം:</strong> പി. ഭാസ്കരൻ, വയലാർ രാമവർമ്മ, ഒ.എൻ.വി. കുറുപ്പ്, ശ്രീകുമാരൻ തമ്പി എന്നിവരിലൂടെ മലയാള ചലച്ചിത്ര ഗാനങ്ങൾ കാവ്യഭംഗിയുടെ കൊടുമുടിയിലെത്തി.",
+              "<strong>കവിതയും ഗാനവും:</strong> നാടൻ ഈണങ്ങളും ലളിതമായ ബിംബങ്ങളും ചേർത്തുവെച്ച് സാധാരണക്കാരന്റെ ഹൃദയത്തിൽ തങ്ങിനിൽക്കുന്ന വരികൾ സൃഷ്ടിച്ച ഭാസ്കരൻ മാഷിന്റെ ശൈലി.",
+              "<strong>വയലാറിന്റെ ഭാവതീവ്രത:</strong> കമ്മ്യൂണിസ്റ്റ് ദർശനങ്ങളും പ്രണയവും സൗന്ദര്യവും സമന്വയിപ്പിച്ച വയലാർ-ദേവരാജൻ കൂട്ടുകെട്ടിന്റെ അനശ്വര ഗാനങ്ങൾ.",
+              "<strong>സമകാലിക ചലച്ചിത്ര ഗാനങ്ങൾ:</strong> റാപ്പും ഇലക്ട്രോണിക് സംഗീതവും പരീക്ഷണങ്ങളും നിറഞ്ഞ പുതിയ തലമുറ ഗാനരചനകളുടെ രൂപമാറ്റങ്ങൾ."
+            ],
+            "examTip": "മലയാള ചലച്ചിത്ര ഗാനശാഖയ്ക്ക് വയലാറും പി. ഭാസ്കരനും നൽകിയ കാവ്യസംഭാവനകൾ താരതമ്യം ചെയ്യുക."
           },
           {
             "chapterNumber": "Chapter 04",
-            "title": "കീഴാള ദൃശ്യസംസ്കാരം",
-            "chapter": "ജനകീയ കലാരൂപങ്ങളും പ്രതിരോധങ്ങളും",
-            "duration": "18",
-            "youtubeId": ""
+            "title": "കീഴാള ദൃശ്യസംസ്കാരം: ‘കമ്മട്ടിപ്പാടം’, ‘അങ്കമാലി ഡയറീസ്’",
+            "chapter": "കീഴാള ദൃശ്യസംസ്കാരം · നഗരവൽക്കരണം · സമാന്തര സിനിമാ ഭാഷ",
+            "duration": "15:40",
+            "youtubeId": "",
+            "thumbnail": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>നഗരവൽക്കരണത്തിന്റെ രാഷ്ട്രീയം:</strong> രാജീവ് രവി സംവിധാനം ചെയ്ത 'കമ്മട്ടിപ്പാടം' കൊച്ചി നഗരം വളർന്നപ്പോൾ ഭൂമിയും ജീവിതവും അടിയറവ് പറയേണ്ടിവന്ന ദളിത് ജനതയുടെ വേദനയെ ആധികാരികമായി അടയാളപ്പെടുത്തുന്നു.",
+              "<strong>നാട്ടുസംസ്കാരത്തിന്റെ ആവിഷ്കാരം:</strong> ലിജോ ജോസ് പെല്ലിശ്ശേരിയുടെ 'അങ്കമാലി ഡയറീസ്' അങ്കമാലിയുടെ പ്രാദേശിക ഭക്ഷണ സംസ്കാരവും, പന്നിയിറച്ചി വ്യാപാരവും, യുവാക്കളുടെ സംഘർഷങ്ങളും ജീവസ്സുറ്റ റിയലിസത്തോടെ അവതരിപ്പിക്കുന്നു.",
+              "<strong>നാടൻ പാട്ടുകളുടെ പ്രാധാന്യം:</strong> സിനിമകളിൽ കീഴാള ജീവിതത്തിന്റെ ഊർജ്ജമായി നാടൻപാട്ടുകളും തനത് താളങ്ങളും എങ്ങനെ ഉപയോഗിക്കപ്പെടുന്നുവെന്ന് ഈ സിനിമകൾ വ്യക്തമാക്കുന്നു.",
+              "<strong>മുഖ്യധാരാ സിനിമാ സങ്കല്പങ്ങളുടെ പൊളിച്ചെഴുത്ത്:</strong> ക്ലീഷേ നായക സങ്കല്പങ്ങളെ ഉപേക്ഷിച്ച് മണ്ണിന്റെ മനുഷ്യരെ നായകന്മാരാക്കിയ മലയാള സിനിമയുടെ പുത്തൻ ഭാവുകത്വം."
+            ],
+            "examTip": "'കമ്മട്ടിപ്പാടം' ഉയർത്തുന്ന ദളിത്-ഭൂമി രാഷ്ട്രീയവും കീഴാള ദൃശ്യസംസ്കാരത്തിന്റെ പ്രാധാന്യവും പരീക്ഷയ്ക്ക് പ്രത്യേകം പഠിക്കുക."
           }
         ]
       }
-    ],
-    "totalVideos": 2
+    ]
   },
   "english": {
     "name": "English",
@@ -556,7 +688,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 01",
             "title": "സോഷ്യോളജിക്കൽ ഭാവനയും ശാസ്ത്രീയ ഗവേഷണ രീതികളും (Sociological Imagination & Research Methods)",
-            "chapter": "Academic Hub Special · സി. റൈറ്റ് മിൽസ് & റിസർച്ച് മെത്തേഡ്സ്",
+            "chapter": "Academic Hub Special · സി. റൈറ്റ് മിൽസ് & റിസർച്ച് മെത്തേഡ്സ് (C. Wright Mills & Research Methods)",
             "duration": "27",
             "youtubeId": "uMxIIznPo-w",
             "studyPoints": [
@@ -564,12 +696,13 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ശാസ്ത്രീയ ഗവേഷണ രീതികൾ: അനുഭവവേദ്യമായ ഡാറ്റ ശേഖരണം (Empirical Observation), സാമാന്യവൽക്കരണം, സിദ്ധാന്ത രൂപീകരണം.",
               "ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ: ആഴത്തിലുള്ള പങ്കാളിത്ത നിരീക്ഷണങ്ങളും സ്റ്റാറ്റിസ്റ്റിക്കൽ സർവേകളും സമന്വയിപ്പിക്കുന്ന രീതി."
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Distinguish between Personal Troubles and Public Issues with examples according to C. Wright Mills'."
+            "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Distinguish between Personal Troubles and Public Issues with examples according to C. Wright Mills'.",
+            "language": "English & Malayalam"
           },
           {
             "chapterNumber": "Chapter 02",
             "title": "മൈക്രോ-മാക്രോ സോഷ്യോളജിയും പോസിറ്റിവിസവും (Micro & Macro Sociology and Positivism)",
-            "chapter": "Micro & Macro Levels · Positivism & Auguste Comte's Scientific Inquiry",
+            "chapter": "Micro & Macro Levels · Positivism & Comte (സൂക്ഷ്മ-സ്ഥൂല തലങ്ങളും പോസിറ്റിവിസവും)",
             "duration": "13",
             "youtubeId": "-jf46qeJgKo",
             "studyPoints": [
@@ -578,7 +711,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കോംതിന്റെ മൂന്ന് ഘട്ടങ്ങൾ (Law of Three Stages): തിയോളജിക്കൽ (ദൈവശാസ്ത്രപരം), മെറ്റാഫിസിക്കൽ (തത്ത്വശാസ്ത്രപരം), പോസിറ്റീവ് അഥവാ സയന്റിഫിക് (ശാസ്ത്രീയപരം) ഘട്ടങ്ങൾ.",
               "സ്ട്രക്ചറലിസവും സിംബോളിക് ഇന്ററാക്ഷനിസവും: എമിൽ ഡർക്കൈമിന്റെ സോഷ്യൽ ഫാക്ട്സും (Social Facts) മാക്സ് വെബറുടെ വേർസ്റ്റെഹെൻ (Verstehen) കാഴ്ചപ്പാടും."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: 'Distinguish between Micro and Macro Sociology with examples' & 'Discuss Auguste Comte's Positivism and Law of Three Stages'."
+            "examTip": "Calicut University FYUGP ചോദ്യം: 'Distinguish between Micro and Macro Sociology with examples' & 'Discuss Auguste Comte's Positivism and Law of Three Stages'.",
+            "language": "English & Malayalam"
           }
         ]
       },
@@ -588,10 +722,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "FYUGP Masterclass",
             "title": "സോഷ്യോളജി പ്രയോഗത്തിൽ (Practicing Sociology: Full Syllabus Masterclass)",
-            "chapter": "Module 2 · 7 Subunits, Sociological Imagination, 7 Research Steps & Ethics",
+            "chapter": "Module 2 · 7 Subunits, Sociological Imagination, 7 Research Steps & Ethics (സോഷ്യോളജി പ്രയോഗത്തിൽ സമ്പൂർണ്ണ ക്ലാസ്)",
             "duration": "14:50",
             "youtubeId": "WyReGfMhJJs",
-            "language": "Malayalam",
+            "language": "English & Malayalam",
             "studyPoints": [
               "സി. റൈറ്റ് മിൽസിന്റെ സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination), കാപ്പി കുടിയുടെ 4 മാനങ്ങൾ, വ്യക്തിപരമായ പ്രശ്നങ്ങളും പൊതുവിഷയങ്ങളും (Personal Troubles vs Public Issues).",
               "സാമൂഹിക ഗവേഷണത്തിന്റെ 7 ഘട്ടങ്ങൾ, പി.വി. യംഗ് & സി.എ. മോസർ നിർവ്വചനങ്ങൾ, റിസർച്ച് എത്തിക്സും ഇൻഫോംഡ് കോൺസെന്റും.",
@@ -601,11 +735,11 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Module 2 Masterclass",
-            "title": "Social Reality & Research Orientations",
-            "chapter": "Sociology · Module 2 · Practicing Sociology",
+            "title": "സാമൂഹിക യാഥാർത്ഥ്യവും ഗവേഷണ രീതിശാസ്ത്രവും (Social Reality & Research Orientations)",
+            "chapter": "Sociology · Module 2 · Practicing Sociology (സോഷ്യോളജി പ്രയോഗത്തിൽ - ഗവേഷണ രീതിശാസ്ത്രം)",
             "duration": "8:42",
             "youtubeId": "YEnG1YJ_vfs",
-            "language": "English",
+            "language": "English & Malayalam",
             "studyPoints": [
               "Micro vs. Macro Sociology (സൂക്ഷ്മ-സ്ഥൂല തലങ്ങൾ): Micro sociology analyzes small-scale, everyday face-to-face interactions and subjective meanings (Herbert Blumer's Symbolic Interactionism, Erving Goffman's Dramaturgy, Alfred Schutz's Phenomenology). Macro sociology studies large-scale social systems, institutions, and structural patterns (Émile Durkheim's Social Facts, Karl Marx's Class Conflict).",
               "Positivist Orientation (പോസിറ്റിവിസ്റ്റ് ശാസ്ത്രീയ രീതി): Originating with Auguste Comte and Émile Durkheim; treats society as an objective reality governed by discoverable social laws using empirical observation, quantitative measurement, replication, and value neutrality (നിഷ്പക്ഷത).",
@@ -617,38 +751,28 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 2.1",
             "title": "ഗവേഷണ രൂപരേഖയും ഘട്ടങ്ങളും (Research Design & Methods in Sociology)",
-            "chapter": "Research Design · Hypothesis, Sampling & Data Collection",
+            "chapter": "Research Design · Hypothesis, Sampling & Data Collection (ഗവേഷണ രൂപരേഖയും ഡാറ്റ ശേഖരണവും)",
             "duration": "20",
-            "youtubeId": "WD2oiqN3tBI",
+            "youtubeId": "",
             "studyPoints": [
               "ഗവേഷണ രൂപരേഖ (Research Design): ഡാറ്റ ശേഖരണത്തിനും വിശകലനത്തിനുമുള്ള ആസൂത്രിത മാസ്റ്റർ പ്ലാൻ.",
               "പ്രധാന ഘട്ടങ്ങൾ: പ്രശ്ന നിർണയം, സാഹിത്യ അവലോകനം, ഹൈപ്പോതിസിസ് രൂപീകരണം, സാമ്പിളിംഗ്, ഡാറ്റ ശേഖരണം."
             ],
-            "examTip": "Calicut University ചോദ്യം: 'What is Research Design? Explain the major steps in social research'."
-          },
-          {
-            "chapterNumber": "Chapter 2.2",
-            "title": "ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ (Quantitative & Qualitative Methodologies)",
-            "chapter": "Methodological Approaches · Positivist vs Interpretive Research",
-            "duration": "22",
-            "youtubeId": "mUahYKgz1QU",
-            "studyPoints": [
-              "ഗുണാത്മക രീതികൾ (Qualitative): അനുഭവങ്ങൾ, വികാരങ്ങൾ, സംസ്കാരം എന്നിവയെ ആഴത്തിൽ പഠിക്കുന്ന രീതി.",
-              "അളവ്ശാസ്ത്ര രീതികൾ (Quantitative): സംഖ്യാപരമായ വിവരങ്ങളും സ്റ്റാറ്റിസ്റ്റിക്കൽ വിശകലനങ്ങളും."
-            ],
-            "examTip": "പ്രധാന പരീക്ഷാ വിഷയം: 'Differentiate between Qualitative and Quantitative research methods'."
+            "examTip": "Calicut University ചോദ്യം: 'What is Research Design? Explain the major steps in social research'.",
+            "language": "English & Malayalam"
           },
           {
             "chapterNumber": "Chapter 2.3",
             "title": "നിരീക്ഷണ രീതികളും ഗവേഷണ ധാർമ്മികതയും (Observation Techniques & Ethics in Social Research)",
-            "chapter": "Participant Observation & Value Neutrality (Max Weber)",
+            "chapter": "Participant Observation & Value Neutrality - Max Weber (പങ്കാളിത്ത നിരീക്ഷണവും മൂല്യ നിഷ്പക്ഷതയും)",
             "duration": "19",
-            "youtubeId": "IuYDyExDjuw",
+            "youtubeId": "",
             "studyPoints": [
               "പങ്കാളിത്ത നിരീക്ഷണം (Participant Observation): പഠന വിധേയമാകുന്ന സമൂഹത്തിന്റെ ഭാഗമായി നിന്ന് വിവരങ്ങൾ ശേഖരിക്കുന്ന രീതി (Bronislaw Malinowski).",
               "മൂല്യ നിഷ്പക്ഷത (Value Neutrality - Max Weber): ഗവേഷകന്റെ സ്വന്തം മുൻവിധികളും താല്പര്യങ്ങളും പഠനത്തെ ബാധിക്കരുത്."
             ],
-            "examTip": "ഹ്രസ്വ കുറിപ്പ്: 'Participant Observation' & 'Ethics in Social Research'."
+            "examTip": "ഹ്രസ്വ കുറിപ്പ്: 'Participant Observation' & 'Ethics in Social Research'.",
+            "language": "English & Malayalam"
           }
         ]
       },
@@ -658,7 +782,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 03",
             "title": "സമൂഹം എങ്ങനെ നമ്മളെ മനുഷ്യരാക്കുന്നു? (How Society Makes Us Human: Process of Socialization)",
-            "chapter": "Human Socialization · Nature vs Nurture & Primary Agencies",
+            "chapter": "Human Socialization · Nature vs Nurture & Primary Agencies (സാമൂഹികവൽക്കരണ പ്രക്രിയ)",
             "duration": "24",
             "youtubeId": "6VWW49UMoks",
             "studyPoints": [
@@ -667,16 +791,17 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഫെറൽ കുട്ടികളും ഒറ്റപ്പെടലും (Feral & Isolated Children): കമല, അമല തുടങ്ങിയ കാട്ടുക്കുട്ടികളുടെ മനഃശാസ്ത്ര-സാമൂഹിക പഠനങ്ങൾ തെളിയിക്കുന്നത് മനുഷ്യസമ്പർക്കമില്ലാതെ മനുഷ്യന് യഥാർത്ഥ വ്യക്തിത്വമോ യുക്തിചിന്തയോ വികസിക്കില്ല എന്നാണ്.",
               "സോഷ്യലൈസേഷന്റെ ഏജൻസികൾ: കുടുംബം (പ്രാഥമിക ഏജൻസി), സമപ്രായക്കാരുടെ കൂട്ടായ്മ (Peer Group), വിദ്യാലയങ്ങൾ, മാധ്യമങ്ങൾ എന്നിവയുടെ പങ്ക്."
             ],
-            "examTip": "Calicut University പരീക്ഷാ ചോദ്യം: 'Explain the Nature vs Nurture debate in socialization with reference to feral children cases'."
+            "examTip": "Calicut University പരീക്ഷാ ചോദ്യം: 'Explain the Nature vs Nurture debate in socialization with reference to feral children cases'.",
+            "language": "English & Malayalam"
           },
           {
             "chapterNumber": "Chapter 3.4",
             "title": "സാമൂഹികവൽക്കരണത്തിന്റെ ഏജൻസികൾ (Agents of Socialization)",
-            "chapter": "Agents of Socialization · Family, School, Peer Groups, Religion, State, Mass Media & Workplace",
+            "chapter": "Agents of Socialization · Family, School, Peer Groups, Media & Workplace (സാമൂഹികവൽക്കരണ ഏജൻസികൾ)",
             "duration": "16:15",
             "youtubeId": "LqhkuyEAWBM",
             "thumbnail": "/thumbnails/sociology_agents_of_socialization_mod3/thumb.png",
-            "language": "Malayalam",
+            "language": "English & Malayalam",
             "studyPoints": [
               "ആമുഖവും എച്ച്.ടി. മജുംദാർ നിർവ്വചനവും: ജൈവിക ജീവിയെ പൂർണ്ണ സാമൂഹിക വ്യക്തിത്വമാക്കി മാറ്റുന്ന ആജീവനാന്ത പ്രക്രിയ; എച്ച്.ടി. മജുംദാറിന്റെ ആധികാരിക നിർവ്വചനം.",
               "പ്രാഥമിക ഏജൻസി (കുടുംബം): കുട്ടിയുടെ ആദ്യ സാമൂഹിക ലോകം; അമ്മ പ്രഥമ അധ്യാപിക; സ്നേഹം, കരുതൽ, അച്ചടക്കം, ലിംഗപദവി പഠനം, മുഖാമുഖ സമ്പർക്കം, വൈകാരിക പിന്തുണ (8 പ്രധാന ധർമ്മങ്ങൾ).",
@@ -689,7 +814,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 04",
             "title": "നമ്മൾ വെറും സമൂഹത്തിന്റെ നിർമ്മിതികളാണോ? (Social Construction of Reality)",
-            "chapter": "Social Construction of Reality · Agency vs Structure",
+            "chapter": "Social Construction of Reality · Agency vs Structure (സാമൂഹിക യാഥാർത്ഥ്യ നിർമ്മിതി)",
             "duration": "20",
             "youtubeId": "EJt-7kG_-E8",
             "studyPoints": [
@@ -698,12 +823,13 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ആന്തരികവൽക്കരണം (Internalization): പുറത്തുനിൽക്കുന്ന സാമൂഹിക മൂല്യങ്ങളെയും നിയമങ്ങളെയും വ്യക്തി സ്വന്തം ചിന്തകളായും ബോധ്യങ്ങളായും സ്വീകരിക്കുന്ന ഘട്ടം.",
               "ഏജൻസി vs സ്ട്രക്ചർ (Individual Agency vs Social Structure): വ്യക്തികൾക്ക് സ്വന്തം നിലയിൽ തീരുമാനങ്ങളെടുക്കാനുള്ള ശേഷിയും (Agency), വ്യക്തിയെ നിയന്ത്രിക്കുന്ന സാമൂഹിക വ്യവസ്ഥിതികളും (Structure)."
             ],
-            "examTip": "പ്രധാന യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Explain Peter Berger and Thomas Luckmann's concept of Social Construction of Reality'."
+            "examTip": "പ്രധാന യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Explain Peter Berger and Thomas Luckmann's concept of Social Construction of Reality'.",
+            "language": "English & Malayalam"
           },
           {
             "chapterNumber": "Chapter 05",
             "title": "സോഷ്യലൈസേഷൻ പാളിച്ചകളും ജീവിത പ്രതിസന്ധികളും (Socialization Failures & Identity Crises)",
-            "chapter": "Socialization Failures · Anomie, Deviance & Re-socialization",
+            "chapter": "Socialization Failures · Anomie, Deviance & Re-socialization (സോഷ്യലൈസേഷൻ പാളിച്ചകളും അനോമിയും)",
             "duration": "22",
             "youtubeId": "KEg51ekQTWY",
             "studyPoints": [
@@ -712,12 +838,13 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഐഡന്റിറ്റി ക്രൈസിസ് (Erik Erikson's Identity Crisis): കൗമാരത്തിലും യുവത്വത്തിലും സ്വന്തം സ്ഥാനവും സ്വത്വവും തിരിച്ചറിയാൻ വ്യക്തി അനുഭവിക്കുന്ന മനഃശാസ്ത്ര സംഘർഷം.",
               "ലേബലിംഗ് തിയറിയും റീ-സോഷ്യലൈസേഷനും: ഹൊവാർഡ് ബെക്കറുടെ ലേബലിംഗ് സിദ്ധാന്തവും എർവിംഗ് ഗോഫ്മാന്റെ ടോട്ടൽ ഇൻസ്റ്റിറ്റ്യൂഷനുകളിലെ (Total Institutions) പുനർ-സാമൂഹികവൽക്കരണവും."
             ],
-            "examTip": "Calicut University ചോദ്യം: 'Define Anomie according to Emile Durkheim and explain how socialization failures lead to social deviance'."
+            "examTip": "Calicut University ചോദ്യം: 'Define Anomie according to Emile Durkheim and explain how socialization failures lead to social deviance'.",
+            "language": "English & Malayalam"
           },
           {
             "chapterNumber": "Chapter 06",
             "title": "ഫ്രോയിഡ്, മീഡ്, പിയാഷെ: സോഷ്യലൈസേഷൻ ഘട്ടങ്ങൾ (Theories of Socialization: Freud, Mead, Piaget)",
-            "chapter": "Freud, Mead & Piaget · Development of the Social Self",
+            "chapter": "Freud, Mead & Piaget · Development of the Social Self (സാമൂഹിക വ്യക്തിത്വ വികാസം)",
             "duration": "19",
             "youtubeId": "uf8WYWO9-Tk",
             "studyPoints": [
@@ -726,12 +853,13 @@ window.VOICE_EXPLANATIONS_DATA = {
               "മീഡിന്റെ ഘട്ടങ്ങൾ: പ്രിപ്പറേറ്ററി സ്റ്റേജ് (അനുകരണം), പ്ലേ സ്റ്റേജ് (റോളുകൾ അഭിനയിക്കൽ), ഗെയിം സ്റ്റേജ് & ജനറലൈസ്ഡ് അദർ (Generalized Other).",
               "ജീൻ പിയാഷെയുടെ വൈജ്ഞാനിക വികാസ ഘട്ടങ്ങൾ (Jean Piaget's Cognitive Development): സെൻസറി-മോട്ടോർ, പ്രീ-ഓപ്പറേഷണൽ, കോൺക്രീറ്റ് ഓപ്പറേഷണൽ, ഫോർമൽ ഓപ്പറേഷണൽ ഘട്ടങ്ങൾ."
             ],
-            "examTip": "പ്രധാന 10 മാർക്ക് ഉപന്യാസ ചോദ്യം: 'Critically examine G.H. Mead's theory of the development of Self (I and Me)'."
+            "examTip": "പ്രധാന 10 മാർക്ക് ഉപന്യാസ ചോദ്യം: 'Critically examine G.H. Mead's theory of the development of Self (I and Me)'.",
+            "language": "English & Malayalam"
           },
           {
             "chapterNumber": "Chapter 07",
             "title": "മനുഷ്യനെ മനുഷ്യനാക്കുന്ന സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary, Secondary & Reference Groups)",
-            "chapter": "Primary vs Secondary Groups · Cooley's Theory & Reference Groups",
+            "chapter": "Primary vs Secondary Groups · Cooley & Reference Groups (പ്രാഥമിക & ദ്വിതീയ ഗ്രൂപ്പുകൾ)",
             "duration": "21",
             "youtubeId": "VDASZEsOqj0",
             "studyPoints": [
@@ -740,12 +868,13 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ദ്വിതീയ ഗ്രൂപ്പുകൾ (Secondary Groups): ലക്ഷ്യാധിഷ്ഠിതമായ ഔദ്യോഗിക ബന്ധങ്ങൾ, വലിയ വലിപ്പം, കരാറുകൾക്കും ചട്ടങ്ങൾക്കും മുൻഗണന (ഉദാ: വ്യാവസായിക സ്ഥാപനങ്ങൾ, സർക്കാർ ഓഫീസുകൾ).",
               "ഇൻ-ഗ്രൂപ്പ്, ഔട്ട്-ഗ്രൂപ്പ് & റഫറൻസ് ഗ്രൂപ്പ്: ഡബ്ല്യു.ജി. സാംനറുടെ ഇൻ/ഔട്ട് ഗ്രൂപ്പുകളും, റോബർട്ട് കെ. മെർട്ടന്റെ റഫറൻസ് ഗ്രൂപ്പ് (Reference Group) സിദ്ധാന്തവും."
             ],
-            "examTip": "Calicut University പരീക്ഷാ ചോദ്യം: 'Distinguish between Primary and Secondary Groups as outlined by C.H. Cooley' & 'Explain Robert K. Merton's concept of Reference Group'."
+            "examTip": "Calicut University പരീക്ഷാ ചോദ്യം: 'Distinguish between Primary and Secondary Groups as outlined by C.H. Cooley' & 'Explain Robert K. Merton's concept of Reference Group'.",
+            "language": "English & Malayalam"
           },
           {
             "chapterNumber": "Chapter 08",
             "title": "സംഘടിത സംഘങ്ങളും ആൾക്കൂട്ടത്തിന്റെ മനഃശാസ്ത്രവും (Formal Organizations & Crowd Psychology)",
-            "chapter": "Max Weber's Bureaucracy & Gustave Le Bon's Crowd Psychology",
+            "chapter": "Max Weber's Bureaucracy & Gustave Le Bon's Crowd Psychology (ബ്യൂറോക്രസിയും ആൾക്കൂട്ട മനഃശാസ്ത്രവും)",
             "duration": "18",
             "youtubeId": "uyHwUpA5Es0",
             "studyPoints": [
@@ -754,16 +883,17 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ബ്യൂറോക്രസിയുടെ അയോഗ്യതകൾ (Dysfunctions): റെഡ്-ടേപ്പിസം (Red Tapism), ചട്ടക്കൂടുകളിലെ അന്ധമായ മുറുകെപ്പിടിക്കൽ, വ്യക്തിത്വമില്ലായ്മ.",
               "ഗുസ്താവ് ലെ ബോണിന്റെ ആൾക്കൂട്ട മനഃശാസ്ത്രം (Gustave Le Bon - Crowd Psychology): ആൾക്കൂട്ടത്തിൽ വ്യക്തിഗത യുക്തി അപ്രത്യക്ഷമാവുകയും മാനസിക സംക്രമണത്തിലൂടെ (Contagion) വികാരങ്ങൾക്ക് അടിമപ്പെടുകയും ചെയ്യുന്ന അവസ്ഥ."
             ],
-            "examTip": "പ്രധാന പരീക്ഷാ ചോദ്യം: 'Describe the key characteristics of Max Weber's Ideal Type of Bureaucracy' & 'Explain Gustave Le Bon's theory of Crowd Psychology'."
+            "examTip": "പ്രധാന പരീക്ഷാ ചോദ്യം: 'Describe the key characteristics of Max Weber's Ideal Type of Bureaucracy' & 'Explain Gustave Le Bon's theory of Crowd Psychology'.",
+            "language": "English & Malayalam"
           },
           {
             "chapterNumber": "Chapter 09",
             "title": "സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ: തരങ്ങളും പ്രക്രിയകളും (Types of Social Interaction: Cooperation, Competition, Conflict, Accommodation, Assimilation)",
-            "chapter": "Types of Social Interaction · Park & Burgess, Cooley, Mazumdar, Simmel & Baldwin Analysis",
+            "chapter": "Types of Social Interaction · Park & Burgess, Cooley, Simmel & Baldwin (സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ)",
             "duration": "14:27",
             "youtubeId": "TN8LqpBZCGQ",
             "thumbnail": "/thumbnails/sociology_sem1_mod3/thumbnail.png",
-            "language": "Malayalam",
+            "language": "English & Malayalam",
             "studyPoints": [
               "സാമൂഹിക പ്രതിപ്രവർത്തനം (Social Interaction): മനുഷ്യ ബന്ധങ്ങളുടെ അടിസ്ഥാന ശില; ഗ്രീൻ, പാർക്ക് & ബർഗസ്, ഡോസൺ & ഗെറ്റിസ് എന്നിവരുടെ നിർവ്വചനങ്ങൾ; സമ്പർക്കവും (Contact in Time & Space) ആശയവിനിമയവും.",
               "സഹകരണം (Cooperation): ലാറ്റിൻ 'co' + 'operating'; പൊതു ലക്ഷ്യവും സംഘടിത അദ്ധ്വാനവും; പ്രത്യക്ഷ, പരോക്ഷ, പ്രൈമറി, സെക്കൻഡറി, ടെർഷ്യറി സഹകരണങ്ങൾ; സി.എച്ച്. കൂലി, യംഗ് & മാക്ക്, മാക്ഐവർ വിശകലനം.",
@@ -775,7 +905,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 10",
             "title": "സംഘർഷം സമൂഹത്തെ വളർത്തുന്നതെങ്ങനെ? (How Conflict Grows Society: Lewis Coser & Marx)",
-            "chapter": "The Functions of Social Conflict · Coser & Marx",
+            "chapter": "Functions of Social Conflict · Coser & Marx (സാമൂഹിക സംഘർഷത്തിന്റെ ധർമ്മങ്ങൾ)",
             "duration": "21",
             "youtubeId": "N6XM-ScWqeo",
             "studyPoints": [
@@ -783,12 +913,13 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ലൂയിസ് കോസറുടെ സംഘർഷ ധർമ്മങ്ങൾ (Lewis Coser - Functions of Social Conflict): സംഘർഷം ഗ്രൂപ്പിന്റെ ആന്തരിക ഐക്യത്തെ ശക്തിപ്പെടുത്തുന്ന വിധം.",
               "സേഫ്റ്റി വാൽവ് ഇൻസ്റ്റിറ്റ്യൂഷനുകൾ: ചെറിയ പരാതികൾ തുറന്നുപറഞ്ഞ് വലിയ പൊട്ടിത്തെറികൾ ഒഴിവാക്കുന്ന രീതി."
             ],
-            "examTip": "പ്രധാന ചോദ്യം: 'Discuss the positive functions of social conflict according to Lewis Coser'."
+            "examTip": "പ്രധാന ചോദ്യം: 'Discuss the positive functions of social conflict according to Lewis Coser'.",
+            "language": "English & Malayalam"
           },
           {
             "chapterNumber": "Chapter 11",
             "title": "നിയമം അനുസരിക്കാൻ നമ്മളെ നിർബന്ധിക്കുന്നത് എന്ത്? (Social Control & Sanctions)",
-            "chapter": "Formal & Informal Social Control · E.A. Ross & Sanctions",
+            "chapter": "Formal & Informal Social Control · E.A. Ross & Sanctions (സാമൂഹിക നിയന്ത്രണ മാർഗ്ഗങ്ങൾ)",
             "duration": "20",
             "youtubeId": "QidpySg9v80",
             "studyPoints": [
@@ -797,7 +928,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഔപചാരിക നിയന്ത്രണം: ഭരണകൂടം, നിയമവാഴ്ച (Rule of Law), പോലീസും നീതിന്യായ വ്യവസ്ഥയും.",
               "സാങ്ഷനുകൾ (Sanctions): നല്ല പെരുമാറ്റത്തിനുള്ള അംഗീകാരങ്ങളും (Rewards) തെറ്റായ പ്രവൃത്തികൾക്കുള്ള ശിക്ഷകളും (Punishments)."
             ],
-            "examTip": "Calicut University ചോദ്യം: 'Distinguish between Formal and Informal agencies of social control'."
+            "examTip": "Calicut University ചോദ്യം: 'Distinguish between Formal and Informal agencies of social control'.",
+            "language": "English & Malayalam"
           }
         ]
       },
@@ -807,7 +939,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 4.1",
             "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics, Evolution & Types)",
-            "chapter": "Society · Characteristics & Types (Agrarian, Industrial & Post-Industrial)",
+            "chapter": "Society · Characteristics & Types: Agrarian, Industrial & Post-Industrial (സമൂഹത്തിന്റെ പരിണാമം)",
             "duration": "16",
             "youtubeId": "zEagx74glsc",
             "studyPoints": [
@@ -815,12 +947,13 @@ window.VOICE_EXPLANATIONS_DATA = {
               "പരിണാമ ഘട്ടങ്ങൾ: നായാട്ട്-ശേഖരണ ഘട്ടം, ഇടയ സമൂഹം, കാർഷിക സമൂഹം (Agrarian), വ്യാവസായിക സമൂഹം (Industrial), ആധുനിക പോസ്റ്റ്-ഇൻഡസ്ട്രിയൽ / ഇൻഫർമേഷൻ സമൂഹം.",
               "ഡാനിയൽ ബെല്ലിന്റെ പോസ്റ്റ്-ഇൻഡസ്ട്രിയൽ സിദ്ധാന്തം: സേവന മേഖലയുടെ വളർച്ചയും വിജ്ഞാന സാങ്കേതിക വിദ്യയും എഐയും സമൂഹത്തിൽ വരുത്തുന്ന സമൂലമായ മാറ്റങ്ങൾ."
             ],
-            "examTip": "Calicut University പ്രധാന ചോദ്യം: 'Trace the evolution of society from agrarian to post-industrial society with key characteristics'."
+            "examTip": "Calicut University പ്രധാന ചോദ്യം: 'Trace the evolution of society from agrarian to post-industrial society with key characteristics'.",
+            "language": "English & Malayalam"
           },
           {
             "chapterNumber": "Chapter 4.2",
             "title": "സമൂഹത്തിന്റെ അദൃശ്യ ഓപ്പറേറ്റിംഗ് സിസ്റ്റമായ സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions: Family, Marriage & Kinship)",
-            "chapter": "Social Institutions · Nature, Types & Changing Trends",
+            "chapter": "Social Institutions · Nature, Types & Changing Trends (കുടുംബം, വിവാഹം & ബന്ധുത്വം)",
             "duration": "20",
             "youtubeId": "z1jXxahDWUw",
             "studyPoints": [
@@ -829,12 +962,13 @@ window.VOICE_EXPLANATIONS_DATA = {
               "വിവാഹം (Marriage): നിയമപരവും സാമൂഹികവുമായ ബന്ധം (ഏകഭാര്യാത്വം, ബഹുഭാര്യാത്വം, ഇൻ-ഗ്രൂപ്പ് & ഔട്ട്-ഗ്രൂപ്പ് വിവാഹ നിയമങ്ങൾ).",
               "മതം, ഭരണകൂടം & വിദ്യാഭ്യാസം: സമൂഹത്തിൽ ക്രമവും ധാർമ്മികതയും കാത്തുസൂക്ഷിക്കുന്ന മറ്റ് അടിസ്ഥാന സ്ഥാപനങ്ങൾ."
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: 'Define Social Institution and examine the changing structural and functional aspects of Family'."
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: 'Define Social Institution and examine the changing structural and functional aspects of Family'.",
+            "language": "English & Malayalam"
           },
           {
             "chapterNumber": "Chapter 4.3",
             "title": "പദവികളും റോളുകളും റോൾ കോൺഫ്ലിക്റ്റും (Social Structure: Status, Role & Role Conflict)",
-            "chapter": "Social Structure · Ralph Linton & Merton's Role Theory",
+            "chapter": "Social Structure · Ralph Linton & Merton's Role Theory (സാമൂഹിക ഘടന, പദവി & റോളുകൾ)",
             "duration": "10",
             "youtubeId": "7Qkp0t6g9Qc",
             "studyPoints": [
@@ -843,12 +977,13 @@ window.VOICE_EXPLANATIONS_DATA = {
               "റോൾ (Role) & റോൾ സെറ്റ് (Role Set): പദവിക്ക് അനുസൃതമായ പെരുമാറ്റം; റോബർട്ട് കെ. മെർട്ടന്റെ റോൾ സെറ്റ് ആശയം.",
               "റോൾ കോൺഫ്ലിക്റ്റ് (Role Conflict): വ്യക്തികൾ ഒന്നിലധികം പരസ്പരവിരുദ്ധമായ റോളുകൾ വഹിക്കേണ്ടി വരുമ്പോഴുണ്ടാകുന്ന മാനസിക-സാമൂഹിക സംഘർഷങ്ങൾ."
             ],
-            "examTip": "ഷോർട്ട് എസ്സേ ചോദ്യം: 'Distinguish between Ascribed and Achieved Status. What is Role Conflict?'"
+            "examTip": "ഷോർട്ട് എസ്സേ ചോദ്യം: 'Distinguish between Ascribed and Achieved Status. What is Role Conflict?'",
+            "language": "English & Malayalam"
           },
           {
             "chapterNumber": "Chapter 4.4",
             "title": "സാമൂഹിക മാറ്റവും അതിന്റെ ഘടകങ്ങളും (Social Change: Factors & Theories)",
-            "chapter": "Social Change · Catalysts, Cultural Lag & Major Theories",
+            "chapter": "Social Change · Catalysts, Cultural Lag & Major Theories (സാമൂഹിക മാറ്റത്തിന്റെ സിദ്ധാന്തങ്ങൾ)",
             "duration": "21",
             "youtubeId": "jfBES35jpzw",
             "studyPoints": [
@@ -857,7 +992,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "വില്യം ഓഗ്ബേണിന്റെ കൾച്ചറൽ ലാഗ് (Cultural Lag): ഭൗതിക സംസ്കാരത്തിന്റെ വളർച്ചയ്ക്കൊപ്പം അഭൗതിക സംസ്കാരത്തിന് എത്തിപ്പെടാൻ സാധിക്കാതെ വരുന്ന വിടവ്.",
               "സിദ്ധാന്തങ്ങൾ: ലീനിയർ സിദ്ധാന്തങ്ങൾ (Comte & Spencer) vs ചാക്രിക സിദ്ധാന്തങ്ങൾ (Spengler & Sorokin)."
             ],
-            "examTip": "പരീക്ഷാ ഹൈലൈറ്റ് (10 Mark Essay): 'Critically evaluate William F. Ogburn's theory of Cultural Lag in the context of technological advancements'."
+            "examTip": "പരീക്ഷാ ഹൈലൈറ്റ് (10 Mark Essay): 'Critically evaluate William F. Ogburn's theory of Cultural Lag in the context of technological advancements'.",
+            "language": "English & Malayalam"
           }
         ]
       }
@@ -878,8 +1014,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "History & Foundations of Artificial Intelligence",
             "chapter": "Dartmouth Conference, Cybernetics & Early Paradigms",
             "duration": "18",
-            "youtubeId": "07BduoaqKYA",
-            "language": "Bilingual (Malayalam & English)",
+            "youtubeId": "",
+            "language": "Malayalam",
             "studyPoints": [
               "ഡാർട്ട്മൗത്ത് കോൺഫറൻസ് (Dartmouth Conference, 1956): ജോൺ മക്കാർത്തി (John McCarthy), മാർവിൻ മിൻസ്കി (Marvin Minsky) തുടങ്ങിയവർ ചേർന്ന് 'ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ്' എന്ന ശാഖയ്ക്ക് ഔദ്യോഗികമായി തുടക്കം കുറിച്ചു.",
               "സൈബർനെറ്റിക്സ് പാരമ്പര്യം (Cybernetics & Norbert Wiener): ഫീഡ്‌ബാക്ക് ലൂപ്പുകളും സ്വയംനിയന്ത്രണ സംവിധാനങ്ങളും ജീവികളിലും യന്ത്രങ്ങളിലും ഒരേപോലെ പ്രവർത്തിക്കുന്നുവെന്ന ധാരണ ആദ്യകാല കമ്പ്യൂട്ടേഷൻ ചിന്തയ്ക്ക് അടിത്തറയിട്ടു.",
@@ -1032,6 +1168,22 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: 'Can Machine Beliefs be Justified?' - JTB സിദ്ധാന്തവും ഗെറ്റിയർ പ്രശ്നവും എഐ വിജ്ഞാനശാസ്ത്രത്തിൽ വിശകലനം ചെയ്യുക.",
             "language": "Malayalam"
+          },
+          {
+            "chapterNumber": "Chapter 03 (Part 2)",
+            "title": "അറിവും മനസ്സും പിന്നെ ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസും (Knowledge, Mind & AI - Part 2)",
+            "chapter": "Epistemological Foundations & Mind · പ്ലാറ്റോയുടെ JTB, ഫങ്ഷണലിസം & എക്സ്റ്റൻഡഡ് മൈൻഡ്",
+            "duration": "18:00",
+            "youtubeId": "07BduoaqKYA",
+            "audioUrl": "",
+            "language": "Malayalam",
+            "studyPoints": [
+              "മനുഷ്യ മനസ്സ് എങ്ങനെയാണ് അറിവ് ആർജ്ജിക്കുന്നത്? പരമ്പരാഗത ജ്ഞാനശാസ്ത്ര സിദ്ധാന്തങ്ങളും (Epistemology) കോഗ്നിറ്റീവ് സയൻസും.",
+              "പ്ലാറ്റോയുടെ JTB സിദ്ധാന്തം (Justified True Belief): അറിവും കേവല വിവരങ്ങളും തമ്മിലുള്ള വ്യത്യാസം.",
+              "ഭൗതികവാദവും ഹിലരി പുട്നാമിന്റെ ഫങ്ഷണലിസവും (Functionalism & Multiple Realizability).",
+              "ആൻഡി ക്ലാർക്കിന്റെ എക്സ്റ്റൻഡഡ് മൈൻഡ് തിയറി (Extended Mind Thesis) & സെമാന്റിക് നെറ്റ്‌വർക്കുകൾ."
+            ],
+            "examTip": "University Exam Tip: 'Explain Functionalism, Multiple Realizability, and how the Extended Mind Thesis redefines Machine Cognition'."
           },
           {
             "chapterNumber": "Chapter 05",

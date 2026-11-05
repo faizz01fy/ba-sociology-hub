@@ -1,9 +1,19 @@
+function isAllowedOrigin(origin, workerOrigin) {
+  if (!origin) return true;
+  if (origin === workerOrigin) return true;
+  const o = origin.toLowerCase();
+  return o === "https://academichubfaiz.in" || 
+         o === "https://www.academichubfaiz.in" || 
+         o.endsWith(".academichubfaiz.in") || 
+         o.endsWith(".workers.dev");
+}
+
 import {handleStudyHelper} from './study-helper-backend.js';
 export {StudyHelperQuota} from './study-helper-backend.js';
 import {handleUniversityNotices} from './university-notices-backend.js';
 import {handleWhatsAppWebhook, handleWhatsAppList} from './whatsapp-webhook-backend.js';
 const CHAT_PATH = "/api/chat";
-const TRACKER_SCRIPT = "(()=>{let last=\"\";function decode(v){try{return decodeURIComponent(v)}catch(e){return v}}function title(v){return v.replace(/[-_]+/g,\" \").split(\" \").map(function(w){return w?w.charAt(0).toUpperCase()+w.slice(1):\"\"}).join(\" \")}function getDetailedActivity(){const path=location.pathname||\"/\";const search=location.search||\"\";const hash=decode((location.hash||\"\").slice(1));const params=new URLSearchParams(search);if(path.indexOf(\"voice-explanation\")!==-1){const playing=document.querySelector(\".chapter-card.playing\");const stickyBar=document.getElementById(\"sticky-audio-bar\");const stickyTitleEl=document.getElementById(\"sticky-title\");const stickyTitle=(stickyTitleEl?stickyTitleEl.textContent:\"\").trim();const hasSticky=stickyBar&&stickyBar.style.display!==\"none\"&&stickyTitle&&stickyTitle.indexOf(\"Playing lecture...\")===-1;if(playing||hasSticky){let t=\"\";if(playing){const ct=playing.querySelector(\".card-title\");if(ct)t=ct.textContent.trim()}if(!t&&hasSticky)t=stickyTitle;if(!t&&document.title&&document.title.indexOf(\"|\")!==-1){t=document.title.split(\"|\")[0].trim()}const isVid=playing&&(playing.querySelector(\"iframe\")||playing.querySelector(\"video\"));const prefix=isVid?\"\u25b6\ufe0f Watching: \":\"\ud83c\udfa7 Hearing: \";if(t)return(prefix+t).slice(0,110)}const heroSubj=document.getElementById(\"hero-subject-name\");let subj=heroSubj?heroSubj.textContent.trim():\"\";if(subj&&subj.toLowerCase().indexOf(\"loading\")!==-1)subj=\"\";if(!subj){const qSubj=params.get(\"subject\");if(qSubj)subj=title(qSubj)}if(subj){subj=subj.replace(/^[^\\w\\s\\u0D00-\\u0D7F]+/,\"\").trim();return(\"\ud83c\udfa7 Voice: \"+subj).slice(0,90)}return\"\ud83c\udfa7 Voice Explanations\"}if(path.indexOf(\"study-guide-reader\")!==-1){const badge=document.getElementById(\"activeDocBadge\");let docTitle=badge?badge.textContent.trim():\"\";if(!docTitle||docTitle===\"Study Guide\"){docTitle=params.get(\"title\")||\"\"}if(!docTitle){const f=params.get(\"file\");if(f)docTitle=title(f.split(\"/\").pop().replace(/\\.pdf$/i,\"\"))}if(!docTitle&&document.title){docTitle=document.title.replace(/[\u00b7|].*$/,\"\").trim()}const isSpeaking=window.speechSynthesis&&window.speechSynthesis.speaking;const prefix=isSpeaking?\"\ud83d\udd0a Hearing Read-Aloud: \":\"\ud83d\udcd6 Reading: \";return(prefix+(docTitle||\"Study Guide\")).slice(0,110)}if(path.indexOf(\"test\")!==-1||path.indexOf(\"mcq\")!==-1||path.indexOf(\"quiz\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcdd \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path.indexOf(\"reading\")!==-1||path.indexOf(\"-pdf\")!==-1||path.indexOf(\"notes\")!==-1||path.endsWith(\".pdf.html\")||path.indexOf(\"Companion\")!==-1||path.indexOf(\"Bilingual\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcd6 \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path===\"/\"||path===\"/index.html\"){const labels={top:\"\ud83c\udfe0 Overview\",subjects:\"\ud83d\udcda Semester subjects\",tests:\"\ud83d\udcdd Practice tests\",\"ai-study\":\"\ud83e\udd16 AI Study Helper\",notices:\"\ud83d\udce2 Calicut Univ Notices\",support:\"\ud83d\udcac Support\"};if(labels[hash])return labels[hash];if(hash)return\"\ud83c\udfe0 Home \u00b7 \"+title(hash);return\"\ud83c\udfe0 Hub Home\"}if(document.title&&document.title.length>2){const clean=document.title.replace(/[\u00b7|].*$/,\"\").trim();if(clean&&clean.toLowerCase().indexOf(\"academic hub\")===-1&&clean.toLowerCase().indexOf(\"loading\")===-1){return clean.slice(0,90)}}return title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")).slice(0,90)||\"Academic Hub Portal\"}function record(force){const path=location.pathname||\"/\";const label=getDetailedActivity();const key=path+\"::\"+label;if(!force&&key===last)return;last=key;fetch(\"/api/traffic/section\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({path:path,section:label}),keepalive:true}).catch(function(){})}window.addEventListener(\"hashchange\",function(){record()});window.addEventListener(\"pageshow\",function(){setTimeout(record,250)});window.addEventListener(\"popstate\",function(){record()});window.addEventListener(\"play\",function(){setTimeout(function(){record(true)},150)},true);window.addEventListener(\"pause\",function(){setTimeout(function(){record(true)},150)},true);document.addEventListener(\"click\",function(e){if(e.target&&e.target.closest&&e.target.closest(\".btn-play-voice,.vpp-btn-pause,.vpp-skip-btn,.subj-tab-btn,#voicePlayBtn,#voiceStopBtn,.welcome-ch-btn,.drawer-subject-modules a,.drawer-subject-header\")){setTimeout(function(){record(true)},350)}},{passive:true});const titleEl=document.querySelector(\"title\");if(titleEl&&window.MutationObserver){new MutationObserver(function(){setTimeout(function(){record()},200)}).observe(titleEl,{subtree:true,characterData:true,childList:true})}setTimeout(record,350);function livePresence(active){if(document.querySelector(\".hub-owner-traffic-control\"))return;let id=\"\";try{id=sessionStorage.getItem(\"hub_live_visitor\")||\"\";if(!id){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2);sessionStorage.setItem(\"hub_live_visitor\",id)}}catch(e){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2)}fetch(\"/api/traffic/presence\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({visitorId:id,path:location.pathname||\"/\",section:getDetailedActivity(),active:active!==false}),keepalive:true}).catch(function(){})}setTimeout(function(){livePresence(true)},400);setInterval(function(){if(!document.hidden)livePresence(true)},25000);document.addEventListener(\"visibilitychange\",function(){if(!document.hidden)livePresence(true)});window.addEventListener(\"pagehide\",function(){livePresence(false)})})();";
+const TRACKER_SCRIPT = "(()=>{let last=\"\";function decode(v){try{return decodeURIComponent(v)}catch(e){return v}}function title(v){return String(v||\"\").replace(/[-_]+/g,\" \").split(\" \").map(function(w){return w?w.charAt(0).toUpperCase()+w.slice(1):\"\"}).join(\" \")}function getDetailedActivity(){try{const path=location.pathname||\"/\";const search=location.search||\"\";const hash=decode((location.hash||\"\").slice(1));const params=new URLSearchParams(search);if(path.indexOf(\"voice-explanation\")!==-1){const playing=document.querySelector(\".chapter-card.playing\");const stickyBar=document.getElementById(\"sticky-audio-bar\");const stickyTitleEl=document.getElementById(\"sticky-title\");const stickyTitle=(stickyTitleEl?stickyTitleEl.textContent:\"\").trim();const hasSticky=stickyBar&&stickyBar.style.display!==\"none\"&&stickyTitle&&stickyTitle.indexOf(\"Playing lecture...\")===-1;if(playing||hasSticky){let t=\"\";if(playing){const ct=playing.querySelector(\".card-title\");if(ct)t=ct.textContent.trim()}if(!t&&hasSticky)t=stickyTitle;if(!t&&document.title&&document.title.indexOf(\"|\")!==-1){t=document.title.split(\"|\")[0].trim()}const isVid=playing&&(playing.querySelector(\"iframe\")||playing.querySelector(\"video\"));const prefix=isVid?\"\u25b6\ufe0f Watching: \":\"\ud83c\udfa7 Hearing: \";if(t)return(prefix+t).slice(0,110)}const heroSubj=document.getElementById(\"hero-subject-name\");let subj=heroSubj?heroSubj.textContent.trim():\"\";if(subj&&subj.toLowerCase().indexOf(\"loading\")!==-1)subj=\"\";if(!subj){const qSubj=params.get(\"subject\");if(qSubj)subj=title(qSubj)}if(subj){subj=subj.replace(/^[^\\w\\s\\u0D00-\\u0D7F]+/,\"\").trim();return(\"\ud83c\udfa7 Voice: \"+subj).slice(0,90)}return\"\ud83c\udfa7 Voice Explanations\"}if(path.indexOf(\"study-guide-reader\")!==-1){const badge=document.getElementById(\"activeDocBadge\");let docTitle=badge?badge.textContent.trim():\"\";if(!docTitle||docTitle===\"Study Guide\"){docTitle=params.get(\"title\")||\"\"}if(!docTitle){const f=params.get(\"file\");if(f)docTitle=title(f.split(\"/\").pop().replace(/\\.pdf$/i,\"\"))}if(!docTitle&&document.title){docTitle=document.title.replace(/[\u00b7|].*$/,\"\").trim()}let isSpeaking=false;try{isSpeaking=!!(window.speechSynthesis&&window.speechSynthesis.speaking)}catch(e){}const prefix=isSpeaking?\"\ud83d\udd0a Hearing Read-Aloud: \":\"\ud83d\udcd6 Reading: \";return(prefix+(docTitle||\"Study Guide\")).slice(0,110)}if(path.indexOf(\"test\")!==-1||path.indexOf(\"mcq\")!==-1||path.indexOf(\"quiz\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcdd \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path.indexOf(\"reading\")!==-1||path.indexOf(\"-pdf\")!==-1||path.indexOf(\"notes\")!==-1||path.endsWith(\".pdf.html\")||path.indexOf(\"Companion\")!==-1||path.indexOf(\"Bilingual\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcd6 \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path===\"/\"||path===\"/index.html\"){const labels={top:\"\ud83c\udfe0 Overview\",subjects:\"\ud83d\udcda Semester subjects\",tests:\"\ud83d\udcdd Practice tests\",\"ai-study\":\"\ud83e\udd16 AI Study Helper\",notices:\"\ud83d\udce2 Calicut Univ Notices\",support:\"\ud83d\udcac Support\"};if(labels[hash])return labels[hash];if(hash)return\"\ud83c\udfe0 Home \u00b7 \"+title(hash);return\"\ud83c\udfe0 Hub Home\"}if(document.title&&document.title.length>2){const clean=document.title.replace(/[\u00b7|].*$/,\"\").trim();if(clean&&clean.toLowerCase().indexOf(\"academic hub\")===-1&&clean.toLowerCase().indexOf(\"loading\")===-1){return clean.slice(0,90)}}return title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")).slice(0,90)||\"Academic Hub Portal\"}catch(e){return\"Academic Hub Portal\"}}function record(force){try{const path=location.pathname||\"/\";const label=getDetailedActivity();const key=path+\"::\"+label;if(!force&&key===last)return;last=key;fetch(\"/api/traffic/section\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({path:path,section:label}),keepalive:true}).catch(function(){})}catch(e){}}window.addEventListener(\"hashchange\",function(){record()});window.addEventListener(\"pageshow\",function(){setTimeout(record,250)});window.addEventListener(\"popstate\",function(){record()});window.addEventListener(\"play\",function(){setTimeout(function(){record(true)},150)},true);window.addEventListener(\"pause\",function(){setTimeout(function(){record(true)},150)},true);document.addEventListener(\"click\",function(e){if(e.target&&e.target.closest&&e.target.closest(\".btn-play-voice,.vpp-btn-pause,.vpp-skip-btn,.subj-tab-btn,#voicePlayBtn,#voiceStopBtn,.welcome-ch-btn,.drawer-subject-modules a,.drawer-subject-header\")){setTimeout(function(){record(true)},350)}},{passive:true});try{const titleEl=document.querySelector(\"title\");if(titleEl&&window.MutationObserver){new MutationObserver(function(){setTimeout(function(){record()},200)}).observe(titleEl,{subtree:true,characterData:true,childList:true})}}catch(e){}setTimeout(record,350);function livePresence(active){try{if(document.querySelector(\".hub-owner-traffic-control\"))return;let id=\"\";try{id=sessionStorage.getItem(\"hub_live_visitor\")||\"\";if(!id){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2);sessionStorage.setItem(\"hub_live_visitor\",id)}}catch(e){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2)}fetch(\"/api/traffic/presence\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({visitorId:id,path:location.pathname||\"/\",section:getDetailedActivity(),active:active!==false}),keepalive:true}).catch(function(){})}catch(e){}}setTimeout(function(){livePresence(true)},400);setInterval(function(){if(!document.hidden)livePresence(true)},25000);document.addEventListener(\"visibilitychange\",function(){if(!document.hidden)livePresence(true)});window.addEventListener(\"pagehide\",function(){livePresence(false)})})();";
 const OWNER_LIVE_SCRIPT = "(()=>{const control=document.getElementById('hub-live-control'),panel=document.getElementById('hub-live-panel'),count=document.getElementById('hub-live-count'),summary=document.getElementById('hub-live-summary'),pages=document.getElementById('hub-live-pages'),close=document.getElementById('hub-live-close');if(!control||!panel||!count||!summary||!pages||!close)return;function displayPage(item){const path=String(item.path||'/');const section=String(item.section||'').trim();if(path==='/'||path==='/index.html')return section&&section!=='Home'&&section!=='Overview'?'Home · '+section:'Home page';return section||path}async function update(){try{const response=await fetch('/api/admin/live-visitors',{cache:'no-store',credentials:'same-origin'});if(response.status===401){count.textContent='—';summary.textContent='Owner sign-in required. Sign in to the owner dashboard and reload this page.';pages.replaceChildren();return}const data=await response.json();if(!response.ok)throw Error(data.error||'Could not load live visitors.');const active=Number(data.active)||0;count.textContent=String(active);summary.textContent=active+' active tab'+(active===1?'':'s')+' seen in the last 90 seconds';pages.replaceChildren();const entries=Array.isArray(data.pages)?data.pages:[];if(!active||!entries.length){const empty=document.createElement('li');empty.className='hub-live-empty';empty.textContent='No active visitors right now.';pages.append(empty);return}for(const item of entries){const row=document.createElement('li');const path=document.createElement('span');path.textContent=displayPage(item);const total=document.createElement('strong');const visitors=Number(item.count)||0;total.textContent=visitors+' tab'+(visitors===1?'':'s');row.append(path,total);pages.append(row)}}catch(error){summary.textContent=error.message||'Could not load live visitors.'}}function setOpen(open){panel.hidden=!open;control.setAttribute('aria-expanded',String(open));if(open)update()}control.addEventListener('click',()=>setOpen(panel.hidden));close.addEventListener('click',()=>setOpen(false));document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden){setOpen(false);control.focus()}});update();setInterval(()=>{if(!document.hidden)update()},15000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update()})})();";
 const MAX_NAME = 32;
 const MAX_MESSAGE = 500;
@@ -193,7 +203,7 @@ export default {
     }
     if (url.pathname === "/api/traffic/section") {
       if (request.method !== "POST") return json({error:"Method not allowed."},405);
-      if (request.headers.get("Origin") !== url.origin) return json({error:"Forbidden"},403);
+      const origin = request.headers.get("Origin"); if (origin && !isAllowedOrigin(origin, url.origin)) return json({error:"Forbidden"},403);
       if (Number(request.headers.get("Content-Length")) > 2048) return json({error:"Request too large."},413);
       let input; try { input = await request.json(); } catch { return json({error:"Invalid request."},400); }
       const path=typeof input.path==="string" ? input.path.slice(0,160) : "";
@@ -204,7 +214,7 @@ export default {
     }
     if (url.pathname === "/api/traffic/presence") {
       if (request.method !== "POST") return json({error:"Method not allowed."},405);
-      if (request.headers.get("Origin") !== url.origin) return json({error:"Forbidden"},403);
+      const origin = request.headers.get("Origin"); if (origin && !isAllowedOrigin(origin, url.origin)) return json({error:"Forbidden"},403);
       if (Number(request.headers.get("Content-Length")) > 2048) return json({error:"Request too large."},413);
       let body; try { body=await request.text(); } catch { return json({error:"Invalid request."},400); }
       if (body.length>2048) return json({error:"Request too large."},413);
@@ -229,7 +239,7 @@ export default {
     }
     if (url.pathname === "/api/chat/auth") {
       if (request.method !== "POST") return json({error:"Method not allowed."},405);
-      if (request.headers.get("Origin") !== url.origin) return json({error:"Forbidden"},403);
+      const origin = request.headers.get("Origin"); if (origin && !isAllowedOrigin(origin, url.origin)) return json({error:"Forbidden"},403);
       if (!env.ADMIN_PASSWORD || env.ADMIN_PASSWORD.length < 16) return json({error:"Moderator access is not configured."},503);
       let input; try { input = await request.json(); } catch { return json({error:"Invalid request."},400); }
       const expected = await digest(env.ADMIN_PASSWORD);
@@ -278,7 +288,7 @@ export default {
     if (url.pathname === "/api/test-results/submit") {
       // Test report submissions are kept ALIVE 24/7 (lightweight 1-call submissions do not drain quota)
       if (request.method !== "POST") return json({error:"Method not allowed."},405);
-      if (request.headers.get("Origin") !== url.origin) return json({error:"Forbidden"},403);
+      const origin = request.headers.get("Origin"); if (origin && !isAllowedOrigin(origin, url.origin)) return json({error:"Forbidden"},403);
       const declaredLength = Number(request.headers.get("Content-Length") || 0);
       if (declaredLength > 16384) return json({error:"Request too large."},413);
       let body;
@@ -2221,43 +2231,85 @@ function groupPopularPages(events) {
   return Array.from(groups.values()).map(page=>({...page,visitors:Array.from(page.visitors.values()).sort((a,b)=>b.visits-a.visits||b.lastVisit-a.lastVisit)})).sort((a,b)=>b.visits-a.visits||b.lastVisit-a.lastVisit);
 }
 
-function groupTrafficByIP(records, sectionEvents = []) {
+function groupTrafficByIP(records = [], sectionEvents = []) {
   const groups = new Map();
-  for (const record of records.slice().sort((a,b)=>b.time-a.time)) {
-    let group = groups.get(record.ip);
+  const safeRecords = Array.isArray(records) ? records : [];
+  const safeSectionEvents = Array.isArray(sectionEvents) ? sectionEvents : [];
+
+  for (const record of safeRecords.slice().sort((a,b)=>(b.time||0)-(a.time||0))) {
+    const ip = String(record.ip || "Unknown");
+    let group = groups.get(ip);
     if (!group) {
-      group = {...record,visits:0,sections:new Map(),latestSection:"",latestSectionTime:0};
-      groups.set(record.ip,group);
+      group = {
+        ...record,
+        ip,
+        time: record.time || 0,
+        path: record.path || "/",
+        visits: 0,
+        country: record.country || "XX",
+        region: record.region || "",
+        city: record.city || "",
+        isp: record.isp || "",
+        device: record.device || "",
+        ref: record.ref || "",
+        sections: new Map(),
+        latestSection: "",
+        latestSectionTime: 0
+      };
+      groups.set(ip, group);
     }
     group.visits++;
-    // Older records may fill missing geo metadata; keep the latest visit and page.
-    if ((!group.country || group.country === "XX") && record.country && record.country !== "XX") group.country=record.country;
-    if (!group.region && record.region) group.region=record.region;
-    if (!group.city && record.city) group.city=record.city;
-    if (!group.isp && record.isp) group.isp=record.isp;
-    if (!group.device && record.device) group.device=record.device;
-    if (!group.ref && record.ref) group.ref=record.ref;
+    if ((!group.country || group.country === "XX") && record.country && record.country !== "XX") group.country = record.country;
+    if (!group.region && record.region) group.region = record.region;
+    if (!group.city && record.city) group.city = record.city;
+    if (!group.isp && record.isp) group.isp = record.isp;
+    if (!group.device && record.device) group.device = record.device;
+    if (!group.ref && record.ref) group.ref = record.ref;
   }
-  for (const event of sectionEvents) {
-    let group=groups.get(event.ip);
-    if (!group) {
-      group={ip:event.ip,time:event.time,path:event.path,visits:0,country:"XX",region:"",city:"",isp:"",device:"",ref:"",sections:new Map(),latestSection:"",latestSectionTime:0};
-      groups.set(event.ip,group);
-    }
-    if (event.time>group.time) { group.time=event.time; group.path=event.path; }
-    if (event.time>=group.latestSectionTime) {
-      group.latestSectionTime=event.time;
-      group.latestSection=event.section;
-    }
-    const section=group.sections.get(event.section) || {name:event.section,visits:0,lastVisit:0};
-    section.visits++;
-    section.lastVisit=Math.max(section.lastVisit,event.time);
-    group.sections.set(event.section,section);
-  }
-  return Array.from(groups.values()).map(group=>({
-    ...group,
-    latestSection: group.latestSection || (group.sections.size ? Array.from(group.sections.values()).sort((a,b)=>b.lastVisit-a.lastVisit)[0].name : ""),
-    sections:Array.from(group.sections.values()).sort((a,b)=>b.lastVisit-a.lastVisit)
-  })).sort((a,b)=>b.time-a.time);
-}
 
+  for (const event of safeSectionEvents) {
+    const ip = String(event.ip || "Unknown");
+    let group = groups.get(ip);
+    if (!group) {
+      group = {
+        ip,
+        time: event.time || 0,
+        path: event.path || "/",
+        visits: 0,
+        country: "XX",
+        region: "",
+        city: "",
+        isp: "",
+        device: "",
+        ref: "",
+        sections: new Map(),
+        latestSection: "",
+        latestSectionTime: 0
+      };
+      groups.set(ip, group);
+    }
+    if ((event.time || 0) > group.time) {
+      group.time = event.time;
+      group.path = event.path || group.path;
+    }
+    if ((event.time || 0) >= group.latestSectionTime) {
+      group.latestSectionTime = event.time || 0;
+      group.latestSection = String(event.section || "");
+    }
+    const secName = String(event.section || "Page");
+    const section = group.sections.get(secName) || { name: secName, visits: 0, lastVisit: 0 };
+    section.visits++;
+    section.lastVisit = Math.max(section.lastVisit, event.time || 0);
+    group.sections.set(secName, section);
+  }
+
+  return Array.from(groups.values()).map(group => {
+    const sectionList = Array.from(group.sections.values()).sort((a,b)=>(b.lastVisit||0)-(a.lastVisit||0));
+    const latestSec = group.latestSection || (sectionList.length > 0 ? sectionList[0].name : "");
+    return {
+      ...group,
+      latestSection: latestSec,
+      sections: sectionList
+    };
+  }).sort((a,b)=>(b.time||0)-(a.time||0));
+}
