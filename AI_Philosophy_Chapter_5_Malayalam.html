@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHL1MN102 - Chapter 5: Alan Turing Test & Operational Limits (Malayalam Reading)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+
+    @page {
+        size: A4 portrait;
+        margin: 5.5mm 6.5mm;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans', 'Noto Sans Malayalam', 'Segoe UI', Tahoma, sans-serif;
+        font-size: 8.3pt;
+        line-height: 1.43;
+        color: #1e293b;
+        background: #ffffff;
+    }
+    .page-container {
+        width: 100%;
+        height: 100%;
+        max-height: 285mm;
+        page-break-after: always;
+        page-break-inside: avoid;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    .page-container:last-child {
+        page-break-after: auto;
+    }
+    
+    /* Header & Badges */
+    .header-banner {
+        border-bottom: 2px solid #1e3a8a;
+        padding-bottom: 2px;
+        margin-bottom: 5.5px;
+    }
+    .header-banner-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 60%, #047857 100%);
+        color: #ffffff;
+        padding: 8.0px 12.0px;
+        border-radius: 5px;
+    }
+    .header-titles {
+        display: flex;
+        flex-direction: column;
+        gap: 2.0px;
+    }
+    .super-title {
+        font-size: 6.6pt;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: #93c5fd;
+        font-weight: 700;
+    }
+    .main-title {
+        font-size: 11.2pt;
+        font-weight: 800;
+        letter-spacing: -0.2px;
+        line-height: 1.18;
+    }
+    .sub-title {
+        font-size: 7.7pt;
+        color: #e2e8f0;
+        font-weight: 500;
+    }
+    .badge-pill-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2.5px;
+    }
+    .badge-pill {
+        background: rgba(255, 255, 255, 0.22);
+        padding: 2.5px 8.0px;
+        border-radius: 9999px;
+        font-size: 6.5pt;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        white-space: nowrap;
+    }
+    .badge-pill-outline {
+        background: #ffffff;
+        color: #1e3a8a;
+        font-weight: 700;
+        font-size: 6.6pt;
+    }
+    
+    /* Section Block */
+    .section-intro-bar {
+        background: #f8fafc;
+        border-left: 3.5px solid #1e3a8a;
+        padding: 5.2px 10.0px;
+        margin-bottom: 6.0px;
+        border-radius: 0 4px 4px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .section-title {
+        font-size: 8.2pt;
+        font-weight: 700;
+        color: #0f172a;
+    }
+    .section-meta {
+        font-size: 6.6pt;
+        color: #64748b;
+        font-weight: 600;
+    }
+    
+    /* Main Content Area */
+    .content-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8.5px;
+    }
+    
+    /* Topic Block */
+    .topic-block {
+        border: 1px solid #cbd5e1;
+        border-radius: 5px;
+        background: #ffffff;
+        padding: 8.5px 10.0px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+        display: flex;
+        flex-direction: column;
+        gap: 4.5px;
+    }
+    .topic-title-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1.2px solid #e2e8f0;
+        padding-bottom: 3.0px;
+        margin-bottom: 2.0px;
+    }
+    .topic-title-left {
+        display: flex;
+        align-items: center;
+    }
+    .topic-number {
+        background: #1e3a8a;
+        color: #ffffff;
+        font-size: 6.3pt;
+        font-weight: 800;
+        padding: 1.5px 5.8px;
+        border-radius: 3px;
+        margin-right: 5.5px;
+    }
+    .topic-heading-text {
+        font-size: 8.9pt;
+        font-weight: 700;
+        color: #1e3a8a;
+    }
+    .topic-malayalam-heading {
+        font-size: 7.9pt;
+        font-weight: 700;
+        color: #047857;
+        margin-left: 7px;
+    }
+    .topic-tag {
+        font-size: 6.0pt;
+        color: #475569;
+        background: #f1f5f9;
+        padding: 1.5px 5.8px;
+        border-radius: 3px;
+        font-weight: 600;
+        border: 1px solid #e2e8f0;
+    }
+    
+    /* Dual Cards Container */
+    .dual-cards-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6.5px;
+    }
+    .lang-card {
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .english-card {
+        background: #f0f7ff;
+        border: 1px solid #bfdbfe;
+        border-left: 3px solid #1e3a8a;
+        padding: 6.2px 8.2px;
+        font-size: 8.25pt;
+        line-height: 1.45;
+        color: #0f172a;
+    }
+    .english-card strong {
+        color: #1e3a8a;
+        font-weight: 700;
+    }
+    .card-label-en {
+        color: #1e3a8a;
+        font-weight: 800;
+        font-size: 8.8pt;
+        margin-bottom: 2.5px;
+        display: block;
+        line-height: 1.25;
+    }
+    .malayalam-card {
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-left: 3px solid #047857;
+        padding: 6.2px 8.2px;
+        font-size: 7.95pt;
+        line-height: 1.46;
+        color: #064e3b;
+    }
+    .malayalam-card strong {
+        color: #047857;
+        font-weight: 700;
+    }
+    .card-label-ml {
+        color: #047857;
+        font-weight: 800;
+        font-size: 8.4pt;
+        margin-bottom: 2.5px;
+        display: block;
+        line-height: 1.25;
+    }
+    
+    /* Example Card */
+    .example-card {
+        background: #fffbeb;
+        border: 1px dashed #f59e0b;
+        border-left: 3px solid #d97706;
+        border-radius: 4px;
+        padding: 4.0px 7.8px;
+        font-size: 7.6pt;
+        line-height: 1.36;
+        color: #78350f;
+    }
+    .example-card strong {
+        color: #92400e;
+        font-weight: 700;
+    }
+    .example-tag {
+        font-weight: 800;
+        color: #b45309;
+        margin-right: 4px;
+    }
+    
+    /* 20 Key Concepts Grid (Page 10) */
+    .knock-grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+    }
+    .knock-col {
+        display: flex;
+        flex-direction: column;
+        gap: 6.5px;
+    }
+    .knock-card {
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 4px;
+        padding: 5.5px 7.0px;
+        display: flex;
+        flex-direction: column;
+        gap: 2.2px;
+    }
+    .knock-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .knock-card-title-wrap {
+        display: flex;
+        align-items: baseline;
+        gap: 5.0px;
+    }
+    .knock-card-num {
+        background: #1e3a8a;
+        color: #ffffff;
+        font-size: 6.3pt;
+        font-weight: 800;
+        padding: 1.2px 4.5px;
+        border-radius: 3px;
+    }
+    .knock-card-title-en {
+        font-size: 7.7pt;
+        font-weight: 800;
+        color: #1e3a8a;
+        line-height: 1.20;
+    }
+    .knock-card-title-ml {
+        font-size: 7.2pt;
+        font-weight: 700;
+        color: #047857;
+        line-height: 1.30;
+    }
+    .knock-card-desc {
+        font-size: 7.1pt;
+        line-height: 1.35;
+        color: #334155;
+    }
+    
+    /* Footer */
+    .footer-bar {
+        border-top: 1px solid #cbd5e1;
+        padding-top: 3.2px;
+        margin-top: 4.5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 6.3pt;
+        color: #64748b;
+    }
+    .footer-left {
+        font-weight: 600;
+        color: #1e3a8a;
+    }
+    .footer-center {
+        color: #475569;
+    }
+    .footer-right {
+        font-weight: 700;
+        color: #047857;
+    }
+    
+    </style>
+</head>
+<body>
+
+    <div class="page-container" id="page-01">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 5: Alan Turing Test & Operational Limits</div>
+                    <div class="sub-title">അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പ്രവർത്തന പരിധികളും</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 01 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 1: Alan Turing's Vision & The Operational Definition &bull; അലൻ ട്യൂറിംഗും ഓപ്പറേഷണൽ നിർവ്വചനവും</div>
+            <div class="section-meta">Textbook Pages 1-4 &bull; Unit 5.1</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.1.1</span>
+                        <span class="topic-heading-text">Alan Mathison Turing (1912-1954) & The 1950 Mind Paper</span>
+                        <span class="topic-malayalam-heading">അലൻ ട്യൂറിംഗും 1950-ലെ മൈൻഡ് പ്രബന്ധവും</span>
+                    </div>
+                    <span class="topic-tag">Historical Vision</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Transforming Metaphysics into Empirical Inquiry</span>
+                        <strong>Alan Mathison Turing (1912&ndash;1954)</strong> is universally acclaimed as the father of modern theoretical computer science and artificial intelligence. Beginning with his foundational 1936 paper <em>"On Computable Numbers, with an Application to the Entscheidungsproblem"</em>, which introduced the theoretical construct of the Universal Turing Machine, Turing transformed our understanding of mechanical computation. In his seminal 1950 philosophical paper published in the journal <em>Mind</em>, titled <strong>"Computing Machinery and Intelligence"</strong>, Turing initiated the modern philosophy of AI. He recognized that the age-old philosophical query <em>"Can machines think?"</em> was inherently muddled by conflicting, unprovable metaphysical definitions of "mind" and "thinking". To circumvent fruitless debates, Turing famously replaced the question with a concrete, empirical evaluation: <strong>The Imitation Game</strong>.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">മെറ്റാഫിസിക്സിൽ നിന്ന് ശാസ്ത്രീയ പരീക്ഷണത്തിലേക്ക്</span>
+                        ആധുനിക കമ്പ്യൂട്ടർ ശാസ്ത്രത്തിന്റെയും നിർമ്മിത ബുദ്ധിയുടെയും പിതാവായി കണക്കാക്കപ്പെടുന്ന ശാസ്ത്ര പ്രതിഭയാണ് <strong>അലൻ മാത്തിസൺ ട്യൂറിംഗ് (1912-1954)</strong>. 1936-ൽ 'യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീൻ' എന്ന ആശയം മുന്നോട്ടുവെച്ച അദ്ദേഹം, രണ്ടാം ലോകമഹായുദ്ധത്തിൽ എനിഗ്മ കോഡുകൾ തകർത്ത് ചരിത്രം സൃഷ്ടിച്ചു. 1950-ൽ <em>മൈൻഡ് (Mind)</em> എന്ന തത്ത്വചിന്താ ജേണലിൽ പ്രസിദ്ധീകരിച്ച <strong>"കമ്പ്യൂട്ടിംഗ് മെഷിനറിയും ഇന്റലിജൻസും" (Computing Machinery and Intelligence)</strong> എന്ന വിപ്ലവകരമായ പ്രബന്ധത്തിലൂടെയാണ് ആധുനിക എഐ തത്ത്വചിന്തയ്ക്ക് ട്യൂറിംഗ് തുടക്കമിട്ടത്. <em>"യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ?"</em> എന്ന പരമ്പരാഗത തത്ത്വചിന്താ ചോദ്യം അവ്യക്തവും ആർക്കും തെളിയിക്കാൻ കഴിയാത്തതുമാണെന്ന് അദ്ദേഹം തിരിച്ചറിഞ്ഞു. ഇതിന് പരിഹാരമായി, അമൂർത്തമായ ചർച്ചകൾക്ക് പകരം പ്രായോഗികമായി പരീക്ഷിക്കാവുന്ന ഒരു ശാസ്ത്രീയ രീതി അദ്ദേഹം നിർദ്ദേശിച്ചു: <strong>ദി ഇമിറ്റേഷൻ ഗെയിം (The Imitation Game)</strong>.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Shift):</span> 'ചിന്ത എന്നാൽ എന്താണ്' എന്ന് ആത്മാവിനെ വെച്ച് തർക്കിക്കുന്നതിന് പകരം, മനുഷ്യനെപ്പോലെ സംസാരിക്കാനും പെരുമാറാനും കമ്പ്യൂട്ടറിന് കഴിയുമോ എന്ന് പരീക്ഷിച്ചു നോക്കുന്ന പ്രായോഗിക രീതിയാണ് ട്യൂറിംഗ് കൊണ്ടുവന്നത്.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.1.2</span>
+                        <span class="topic-heading-text">The Operational Definition of Machine Intelligence</span>
+                        <span class="topic-malayalam-heading">യന്ത്രബുദ്ധിയുടെ പ്രവർത്തനപരമായ (Operational) നിർവ്വചനം</span>
+                    </div>
+                    <span class="topic-tag">Epistemological Shift</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Measurable Competence over Internal Speculation</span>
+                        The Turing Test’s paramount contribution was providing an <strong>operational definition of intelligence</strong>. Rather than speculating about what intelligence "really is" in its internal essence, operationalism defines a concept purely through the specific criteria and empirical operations by which it is measured:
+                        <br>&bull; <strong>External Demonstration:</strong> Intelligence is identified through demonstrable performance in an external environment&mdash;problem solving, communicative proficiency, and contextual adaptation.
+                        <br>&bull; <strong>Engineers' Breakthrough:</strong> This operational pivot decoupled AI from metaphysical paralysis regarding biological consciousness, enabling engineers to systematically construct systems evaluated against measurable performance criteria.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ആന്തരിക സങ്കല്പങ്ങൾക്കപ്പുറം പ്രകടന മികവ്</span>
+                        ട്യൂറിംഗ് ടെസ്റ്റിന്റെ ഏറ്റവും വലിയ സംഭാവന അത് ബുദ്ധിക്ക് നൽകിയ <strong>പ്രവർത്തനപരമായ നിർവ്വചനമാണ് (Operational Definition)</strong>. ബുദ്ധി ആന്തരികമായി എന്താണെന്ന് ആലോചിച്ചു തലപുകയ്ക്കുന്നതിന് പകരം, അളക്കാവുന്ന പ്രകടനങ്ങളിലൂടെ അതിനെ നിർവചിക്കുക എന്നതാണ് ഓപ്പറേഷണലിസം:
+                        <br>&bull; <strong>ബാഹ്യ പ്രകടനം:</strong> പുറംലോകത്ത് പ്രശ്നങ്ങൾ പരിഹരിക്കാനും സംഭാഷണം നടത്താനും സാഹചര്യങ്ങളോട് പൊരുത്തപ്പെടാനുമുള്ള കഴിവിലൂടെയാണ് ബുദ്ധി തിരിച്ചറിയപ്പെടുന്നത്.
+                        <br>&bull; <strong>ശാസ്ത്രീയ മുന്നേറ്റം:</strong> യന്ത്രത്തിന് 'ജീവനുണ്ടോ', 'ആത്മാവുണ്ടോ' എന്ന തത്ത്വചിന്താ തർക്കങ്ങളിൽ കുടുങ്ങിക്കിടക്കാതെ, സംഭാഷണ ശേഷിയുള്ള പ്രോഗ്രാമുകൾ നിർമ്മിക്കാൻ എഞ്ചിനീയർമാർക്ക് ഈ നിർവ്വചനം ധൈര്യം നൽകി.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Operational Measurement):</span> ഭൗതികശാസ്ത്രത്തിൽ താപനില എന്നത് തന്മാത്രകളുടെ ചലനമാണെങ്കിലും, പ്രായോഗികമായി തെർമോമീറ്ററിലെ മെർക്കുറിയുടെ ഉയരം നോക്കി അളക്കുന്നതുപോലെയാണ് ബാഹ്യ പെരുമാറ്റത്തിലൂടെ ബുദ്ധി അളക്കുന്നത്.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Alan Turing's 1950 Vision & Operationalism &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 01 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-02">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 5: Alan Turing Test & Operational Limits</div>
+                    <div class="sub-title">അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പ്രവർത്തന പരിധികളും</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 02 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 2: The Imitation Game Architecture & Experimental Protocol &bull; ഇമിറ്റേഷൻ ഗെയിം പരീക്ഷണ രൂപരേഖ</div>
+            <div class="section-meta">Textbook Pages 4-7 &bull; Unit 5.2</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.2.1</span>
+                        <span class="topic-heading-text">The Original Imitation Game & The AI Adaptation</span>
+                        <span class="topic-malayalam-heading">യഥാർത്ഥ ഇമിറ്റേഷൻ ഗെയിമും എഐ രൂപാന്തരീകരണവും</span>
+                    </div>
+                    <span class="topic-tag">Game Architecture</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">The Three-Player Setup: Man, Woman, and Interrogator</span>
+                        Turing derived his test from an existing party game called <strong>The Imitation Game</strong>:
+                        <br>&bull; <strong>Original Setup:</strong> Involved three human participants&mdash;a Man ($A$), a Woman ($B$), and a Human Interrogator ($C$) situated in a separate room. The interrogator attempts to determine which player is the man and which is the woman solely by asking written questions. The man's objective is to deceive the interrogator into guessing incorrectly, while the woman's objective is to assist the interrogator.
+                        <br>&bull; <strong>The AI Substitution:</strong> Turing asked: <em>"What will happen when a machine takes the part of $A$ in this game?"</em> In the AI adaptation, Player $A$ is a computer, Player $B$ is a control human, and Player $C$ is the judge. If the interrogator's rate of incorrect identifications with a machine is comparable to the game with a human, the machine passes.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">മൂന്ന് കളിക്കാരുടെ ഘടന: സ്ത്രീയും പുരുഷനും കമ്പ്യൂട്ടറും</span>
+                        അക്കാലത്ത് പ്രചാരത്തിലുണ്ടായിരുന്ന ഒരു പാർട്ടി ഗെയിമായ <strong>'ഇമിറ്റേഷൻ ഗെയിമിൽ'</strong> നിന്നാണ് ട്യൂറിംഗ് ഈ പരീക്ഷണം വികസിപ്പിച്ചത്:
+                        <br>&bull; <strong>യഥാർത്ഥ കളി:</strong> ഒരു പുരുഷൻ ($A$), ഒരു സ്ത്രീ ($B$), മറ്റൊരു മുറിയിലിരിക്കുന്ന ജഡ്ജി ($C$). ചോദ്യങ്ങൾക്ക് വരുന്ന ലിഖിത ഉത്തരങ്ങൾ നോക്കി ആരാണ് സ്ത്രീ, ആരാണ് പുരുഷൻ എന്ന് ജഡ്ജി കണ്ടെത്തണം. പുരുഷൻ സ്ത്രീയാണെന്ന് തോന്നിപ്പിക്കാൻ കള്ളം പറഞ്ഞ് ജഡ്ജിയെ കബളിപ്പിക്കാൻ ശ്രമിക്കുന്നു.
+                        <br>&bull; <strong>എഐ പരീക്ഷണം:</strong> ഈ കളിയിൽ പുരുഷന്റെ സ്ഥാനത്ത് ഒരു കമ്പ്യൂട്ടറിനെ വെച്ചാൽ എന്ത് സംഭവിക്കും എന്ന് ട്യൂറിംഗ് ചോദിച്ചു. മനുഷ്യ ജഡ്ജിക്ക് കമ്പ്യൂട്ടറാണോ മനുഷ്യനാണോ ഉത്തരം നൽകുന്നതെന്ന് തിരിച്ചറിയാൻ കഴിയാതെ വരികയാണെങ്കിൽ ആ യന്ത്രം പരീക്ഷയിൽ വിജയിച്ചു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Substitution):</span> ആൺ-പെൺ വ്യത്യാസം ലിഖിത രൂപത്തിലൂടെ കണ്ടെത്താൻ പ്രയാസപ്പെടുന്നതുപോലെ, മനുഷ്യനും യന്ത്രവും തമ്മിലുള്ള വ്യത്യാസം വെറും സംഭാഷണത്തിലൂടെ കണ്ടെത്താൻ കഴിയാത്ത അവസ്ഥയാണ് ട്യൂറിംഗ് വിഭാവനം ചെയ്തത്.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.2.2</span>
+                        <span class="topic-heading-text">Blind Teleprinter Setup & The 5-Minute 70% Benchmark</span>
+                        <span class="topic-malayalam-heading">ടെലിപ്രിന്റർ ആശയവിനിമയവും 5-മിനിറ്റ് 70% മാനദണ്ഡവും</span>
+                    </div>
+                    <span class="topic-tag">Testing Protocol</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Eliminating Extraneous Physical Clues</span>
+                        Turing designed rigorous experimental safeguards to ensure that intelligence was evaluated entirely in isolation from physical appearance:
+                        <br>&bull; <strong>Blind Teleprinter Communication:</strong> Communication was restricted entirely to text transmitted via teletype / screens. This intentionally obscured the machine's metallic structure, appearance, synthesized voice, and mechanical motions.
+                        <br>&bull; <strong>Broad Unrestricted Scope:</strong> The interrogation spans unrestricted topics&mdash;poetry, chess, love, weather, politics, or domestic chores.
+                        <br>&bull; <strong>Turing's Prediction:</strong> Turing hypothesized that by the year 2000, computers with $pprox 10^9$ bits of storage would play the game so skillfully that an average interrogator would have no more than a <strong>70% chance</strong> of making the correct identification after <strong>5 minutes</strong> of dialogue.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ശാരീരിക രൂപത്തെ ഒഴിവാക്കിയുള്ള ലിഖിത പരീക്ഷണം</span>
+                        യന്ത്രത്തിന്റെ ബാഹ്യ രൂപം ജഡ്ജിയെ സ്വാധീനിക്കാതിരിക്കാൻ കർശനമായ നിയന്ത്രണങ്ങളാണ് ട്യൂറിംഗ് ഏർപ്പെടുത്തിയത്:
+                        <br>&bull; <strong>ലിഖിത മാധ്യമം (Teleprinter):</strong> സ്ക്രീനിലോ ടൈപ്പ്റൈറ്ററിലോ അക്ഷരങ്ങൾ വഴി മാത്രമേ സംഭാഷണം സാധ്യമാകൂ. റോബോട്ടിന്റെ മെറ്റാലിക് രൂപമോ, കൃത്രിമ ശബ്ദമോ ജഡ്ജിക്ക് കാണാനോ കേൾക്കാനോ കഴിയില്ല.
+                        <br>&bull; <strong>പരിധിയില്ലാത്ത വിഷയങ്ങൾ:</strong> രാഷ്ട്രീയം, കവിത, കാലാവസ്ഥ, ചെസ്സ്, പാചകം തുടങ്ങി ഏത് വിഷയത്തെക്കുറിച്ചും ചോദ്യങ്ങൾ ചോദിക്കാം.
+                        <br>&bull; <strong>ട്യൂറിംഗിന്റെ പ്രവചനം:</strong> 2000-മാണ്ടോടെ കമ്പ്യൂട്ടറുകൾ ഇത്രയധികം പുരോഗമിക്കുമെന്നും, 5 മിനിറ്റ് സംഭാഷണത്തിന് ശേഷം ഒരു സാധാരണ ജഡ്ജിക്ക് ശരിയായി തിരിച്ചറിയാനുള്ള സാധ്യത 70%-ൽ താഴെയായി കുറയുമെന്നും അദ്ദേഹം പ്രവചിച്ചു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Dialogue):</span> ജഡ്ജി: "ഷേക്സ്പിയറുടെ സോണറ്റിനെക്കുറിച്ച് ഒരു കവിത എഴുതാമോ?" മെഷീൻ: "എനിക്ക് കവിത എഴുതാൻ അറിയില്ല, പക്ഷെ എനിക്ക് ശൈത്യകാലത്തെക്കുറിച്ച് പറയാം" എന്ന് തന്ത്രപരമായി മറുപടി നൽകുന്നത്.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">The Imitation Game & Blind Experimental Protocol &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 02 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-03">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 5: Alan Turing Test & Operational Limits</div>
+                    <div class="sub-title">അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പ്രവർത്തന പരിധികളും</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 03 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 3: Philosophical Foundations: Behaviourism & Functionalism &bull; ബിഹേവിയറിസവും ഫംഗ്ഷണലിസവും</div>
+            <div class="section-meta">Textbook Pages 7-9 &bull; Unit 5.3</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.3.1</span>
+                        <span class="topic-heading-text">Philosophical Behaviourism: Conduct Over Inaccessible States</span>
+                        <span class="topic-malayalam-heading">തത്ത്വചിന്താപരമായ ബിഹേവിയറിസം: ബാഹ്യ പെരുമാറ്റത്തിന്റെ പ്രാധാന്യം</span>
+                    </div>
+                    <span class="topic-tag">Behaviourist Foundation</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">The Epistemic Supremacy of Observable Behaviour</span>
+                        The Turing Test deeply incorporates the principles of <strong>Philosophical Behaviourism</strong>&mdash;a doctrine asserting that mental states are properly defined and verified by publicly observable behaviour rather than private, inaccessible inner experiences:
+                        <br>&bull; <strong>Conduct as Truth Criterion:</strong> Whether a system genuinely "feels" or has subjective consciousness is scientifically untestable; what matters is whether it consistently behaves as though it does.
+                        <br>&bull; <strong>Justified Attribution:</strong> If a machine exhibits discourse indistinguishable from an intelligent human across diverse contexts, we are epistemically warranted in attributing intelligence to it. Denying intelligence to a perfectly behaving machine while granting it to silent humans is an unjustified double standard.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">നിരീക്ഷിക്കാവുന്ന ബാഹ്യ പെരുമാറ്റമാണ് അളവുകോൽ</span>
+                        ട്യൂറിംഗ് ടെസ്റ്റിന്റെ പ്രധാന തത്ത്വചിന്താപരമായ അടിത്തറ <strong>ബിഹേവിയറിസമാണ് (Philosophical Behaviourism)</strong>. ഒരു വ്യക്തിയുടെയോ വസ്തുവിന്റെയോ മനസ്സിന്റെ അവസ്ഥ പുറമെ കാണാൻ കഴിയുന്ന പെരുമാറ്റങ്ങളിലൂടെ മാത്രമേ നിർണ്ണയിക്കാനാകൂ എന്ന് ഇത് വാദിക്കുന്നു:
+                        <br>&bull; <strong>പെരുമാറ്റമാണ് സത്യം:</strong> ഒരു യന്ത്രത്തിന് ഉള്ളിൽ യഥാർത്ഥ വികാരമുണ്ടോ ഇല്ലയോ എന്നത് ശാസ്ത്രീയമായി ആർക്കും കാണാൻ കഴിയില്ല; എന്നാൽ അത് ഒരു മനുഷ്യനെപ്പോലെ പെരുമാറുന്നുണ്ടോ എന്നതാണ് പ്രധാനം.
+                        <br>&bull; <strong>ഇരട്ടത്താപ്പ് ഒഴിവാക്കൽ:</strong> പുറമെയുള്ള പെരുമാറ്റം മാത്രം കണ്ട് മനുഷ്യർക്ക് ബുദ്ധിയുണ്ടെന്ന് നാം വിശ്വസിക്കുന്നുവെങ്കിൽ, അതേ പെരുമാറ്റം കാണിക്കുന്ന യന്ത്രത്തിനും ബുദ്ധിയുണ്ടെന്ന് സമ്മതിക്കാൻ നാം തയ്യാറാകണം.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Maxim):</span> "ഒരു പക്ഷി താറാവിനെപ്പോലെ നടക്കുകയും താറാവിനെപ്പോലെ ശബ്ദമുണ്ടാക്കുകയും ചെയ്യുന്നുവെങ്കിൽ, അതിനെ താറാവായി കണക്കാക്കാം" എന്ന പ്രസിദ്ധമായ തത്വം തന്നെയാണ് ഇവിടെയും പ്രയോഗിക്കുന്നത്.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.3.2</span>
+                        <span class="topic-heading-text">Functionalism & Multiple Realizability of Mind</span>
+                        <span class="topic-malayalam-heading">ഫംഗ്ഷണലിസവും മനസ്സിന്റെ ബഹുവിധ സാക്ഷാത്കാരവും (Multiple Realizability)</span>
+                    </div>
+                    <span class="topic-tag">Philosophy of Mind</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Substrate Independence of Cognitive Roles</span>
+                        The Turing Test laid the conceptual foundation for <strong>Functionalism</strong> in the philosophy of mind:
+                        <br>&bull; <strong>Functional Roles:</strong> Mental states are not defined by the physical or biological substance of which they are made (biological brain vs silicon microchips), but rather by their <em>functional relations and causal roles</em> within the broader system.
+                        <br>&bull; <strong>Multiple Realizability:</strong> Just as a computer program can execute identically on different hardware architectures, or a heart's functional pumping can be realized by biological tissue or a mechanical pump, cognition can be realized in carbon-based brains or silicon-based computers. Biology is not an essential prerequisite for thought.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ശരീരത്തിനതീതമായ ധർമ്മപരമായ വീക്ഷണം</span>
+                        മനസ്സിന്റെ തത്ത്വചിന്തയിലെ <strong>ഫംഗ്ഷണലിസത്തിന് (Functionalism)</strong> വിത്ത് പാകിയത് ട്യൂറിംഗ് ടെസ്റ്റാണ്:
+                        <br>&bull; <strong>ധർമ്മങ്ങളുടെ പ്രാധാന്യം:</strong> മനസ്സ് എന്നത് ഏത് പദാർത്ഥം കൊണ്ടാണ് ഉണ്ടാക്കിയിരിക്കുന്നത് (തലച്ചോറിലെ മാംസപേശിയോ അതോ സിലിക്കൺ ചിപ്പുകളോ) എന്നതല്ല പ്രധാനം; മറിച്ച് അത് ചെയ്യുന്ന 'ധർമ്മമാണ്' (Functional role) പ്രധാനം.
+                        <br>&bull; <strong>ബഹുവിധ സാക്ഷാത്കാരം (Multiple Realizability):</strong> രക്തം പമ്പ് ചെയ്യുക എന്നതാണ് ഹൃദയത്തിന്റെ ധർമ്മം. ആ ധർമ്മം യഥാർത്ഥ ഹൃദയത്തിനും കൃത്രിമ പ്ലാസ്റ്റിക് പമ്പിനും ചെയ്യാമെന്നതുപോലെ, ചിന്ത എന്ന ധർമ്മം മനുഷ്യന്റെ തലച്ചോറിനും കമ്പ്യൂട്ടർ സർക്യൂട്ടിനും ചെയ്യാൻ കഴിയും.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Functional Clock Analogy):</span> ഒരു ക്ലോക്ക് സൂര്യപ്രകാശമുപയോഗിച്ചോ, മണൽത്തരികൾ കൊണ്ടോ, സ്പ്രിംഗ് കൊണ്ടോ, ഇലക്ട്രോണിക് ചിപ്പ് കൊണ്ടോ ഉണ്ടാക്കാം; സമയം കാണിക്കുക എന്ന ധർമ്മം നിറവേറ്റുന്നിടത്തോളം അതെല്ലാം ക്ലോക്ക് തന്നെയാണ്.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Philosophical Behaviourism & Functionalist Foundations &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 03 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-04">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 5: Alan Turing Test & Operational Limits</div>
+                    <div class="sub-title">അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പ്രവർത്തന പരിധികളും</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 04 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 4: Turing's Rebuttals to Anticipated Objections (Part 1) &bull; ട്യൂറിംഗിന്റെ മറുപടികൾ (ഭാഗം 1)</div>
+            <div class="section-meta">Textbook Pages 14-16 &bull; Unit 5.4</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.4.1</span>
+                        <span class="topic-heading-text">The Theological Objection & The "Heads in the Sand" Objection</span>
+                        <span class="topic-malayalam-heading">ദൈവശാസ്ത്രപരമായ എതിർപ്പും 'തല മണ്ണിൽ പൂഴ്ത്തൽ' വാദവും</span>
+                    </div>
+                    <span class="topic-tag">Philosophical Rebuttals</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Divine Omnipotence and Existential Dread</span>
+                        Turing systematically dismantled major philosophical and social objections against thinking machines:
+                        <br>&bull; <strong>1. The Theological Objection:</strong> Asserts that thinking is a function of an immortal soul, which God has bestowed exclusively upon humans, never upon animals or machines; therefore machines cannot think.
+                        <br><em>Turing's Refutation:</em> This objection constitutes an arbitrary restriction on divine omnipotence. An all-powerful Creator could freely confer a soul upon an elephant, a dog, or a sufficiently complex machine just as easily as upon a human biological body.
+                        <br>&bull; <strong>2. The "Heads in the Sand" Objection:</strong> The psychological fear that if computers could think, humanity would lose its unique supremacy and be dominated. Turing dismissed this as mere emotional dread unworthy of serious scientific consideration.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ദൈവത്തിന്റെ സർവ്വശക്തിത്വവും മനുഷ്യന്റെ ഭയവും</span>
+                        യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാൻ കഴിയില്ലെന്ന ആദ്യകാല വാദങ്ങളെ ട്യൂറിംഗ് യുക്തിസഹമായി പൊളിച്ചടുക്കി:
+                        <br>&bull; <strong>1. ദൈവശാസ്ത്ര എതിർപ്പ് (Theological Objection):</strong> ചിന്ത എന്നത് ദൈവം മനുഷ്യന് മാത്രം നൽകിയിട്ടുള്ള അമർത്യമായ ആത്മാവിന്റെ ഗുണമാണ്; മൃഗങ്ങൾക്കോ യന്ത്രങ്ങൾക്കോ ആത്മാവില്ലാത്തതിനാൽ അവയ്ക്ക് ചിന്തിക്കാൻ കഴിയില്ല.
+                        <br><em>ട്യൂറിംഗിന്റെ മറുപടി:</em> ഈ വാദം ദൈവത്തിന്റെ സർവ്വശക്തിയെ പരിമിതപ്പെടുത്തുന്നതാണ്. സർവ്വശക്തനായ ദൈവത്തിന് വേണമെങ്കിൽ മനുഷ്യനെയെന്നപോലെ ഒരു ആനയ്ക്കോ അല്ലെങ്കിൽ ഒരു സങ്കീർണ്ണമായ കമ്പ്യൂട്ടർ യന്ത്രത്തിനോ ആത്മാവിനെ നൽകാൻ സാധിക്കും.
+                        <br>&bull; <strong>2. 'തല മണ്ണിൽ പൂഴ്ത്തൽ' വാദം (Heads in the Sand):</strong> യന്ത്രങ്ങൾ ചിന്തിച്ചാൽ മനുഷ്യന്റെ അധീശത്വം നഷ്ടപ്പെടുമെന്ന ഭയം. ഇതൊരു ശാസ്ത്രീയ വാദമല്ല, മറിച്ച് മനുഷ്യന്റെ കേവല മനശ്ശാസ്ത്രപരമായ ആശങ്ക മാത്രമാണെന്ന് അദ്ദേഹം തള്ളി.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Argument):</span> ഒട്ടകപ്പക്ഷി അപകടം കാണുമ്പോൾ തല മണ്ണിൽ പൂഴ്ത്തി വെക്കുന്നതുപോലെ, യന്ത്രങ്ങളുടെ ശേഷിയെ ഭയന്ന് ശാസ്ത്ര സത്യങ്ങളെ കണ്ടില്ലെന്ന് നടിക്കുന്നത് മനുഷ്യന്റെ ബലഹീനതയാണ്.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.4.2</span>
+                        <span class="topic-heading-text">The Argument from Consciousness (Prof. Jefferson) & Solipsism</span>
+                        <span class="topic-malayalam-heading">ബോധത്തിൽ നിന്നുള്ള വാദവും (പ്രൊഫ. ജെഫേഴ്സൺ) സോളിപ്സിസവും</span>
+                    </div>
+                    <span class="topic-tag">Consciousness Debate</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Can a Machine Feel Emotions? Turing's Anti-Solipsist Defense</span>
+                        <br>&bull; <strong>Prof. Geoffrey Jefferson's Objection (1949):</strong> <em>"Not until a machine can write a sonnet or compose a concerto because of thoughts and emotions felt, and not by the chance fall of symbols, could we agree that machine equals brain."</em> Argued that true intelligence demands phenomenal consciousness and emotional experience.
+                        <br>&bull; <strong>Turing's Refutation & The Solipsist Trap:</strong> Turing replied that the only way one can truly know if a machine feels is to <em>be that machine</em>. But by that identical logic, the only way to know if another human is conscious is to be that specific human&mdash;which leads directly to the extreme philosophical absurdity of <strong>Solipsism</strong> (believing that only one's own mind exists). In normal life, we verify another human's understanding through viva-voce examination and interactive questioning, which the Turing Test precisely replicates.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ആന്തരിക വികാരങ്ങളും സോളിപ്സിസത്തിന്റെ കുടുക്കും</span>
+                        <br>&bull; <strong>പ്രൊഫ. ജെഫേഴ്സന്റെ വാദം (1949):</strong> ഒരു യന്ത്രത്തിന് സ്വന്തം ആന്തരിക വികാരങ്ങൾ അനുഭവിച്ചുകൊണ്ട് ഒരു കവിതയെഴുതാനോ സംഗീതം ചിട്ടപ്പെടുത്താനോ കഴിയുന്നതുവരെ അതിന് തലച്ചോറിന് തുല്യമായ ചിന്താശേഷിയുണ്ടെന്ന് പറയാനാവില്ല.
+                        <br>&bull; <strong>ട്യൂറിംഗിന്റെ മറുപടി:</strong> ഒരു യന്ത്രത്തിന് വികാരമുണ്ടോ എന്ന് ഉറപ്പിക്കാൻ നാം ആ യന്ത്രമായിത്തന്നെ മാറേണ്ടിവരും. ഇതേ യുക്തി പ്രയോഗിച്ചാൽ ലോകത്ത് 'എനിക്ക് മാത്രമേ മനസ്സുള്ളൂ' എന്നും മറ്റുള്ള മനുഷ്യരെല്ലാം നിർജ്ജീവ യന്ത്രങ്ങളാണെന്നും പറയുന്ന <strong>സോളിപ്സിസം (Solipsism)</strong> എന്ന അബദ്ധത്തിലേക്ക് നാം എത്തും. സാധാരണ ജീവിതത്തിൽ മറ്റൊരാൾക്ക് ബോധമുണ്ടെന്ന് നാം മനസ്സിലാക്കുന്നത് ചോദ്യോത്തരങ്ങളിലൂടെയാണ്; ഇത് തന്നെയാണ് കമ്പ്യൂട്ടറിലും പരീക്ഷിക്കേണ്ടത്.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Viva-Voce):</span> ഒരു സർവ്വകലാശാലാ പരീക്ഷയിൽ പ്രൊഫസർ വിദ്യാർത്ഥിയുടെ തലച്ചോറ് തുറന്നുനോക്കിയല്ല, മറിച്ച് ചോദ്യങ്ങൾക്ക് ആ വിദ്യാർത്ഥി നൽകുന്ന ഉത്തരങ്ങളുടെ നിലവാരം നോക്കിയാണ് ബുദ്ധി വിലയിരുത്തുന്നത്.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Theological Objection & Consciousness (Prof. Jefferson) &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 04 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-05">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 5: Alan Turing Test & Operational Limits</div>
+                    <div class="sub-title">അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പ്രവർത്തന പരിധികളും</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 05 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 5: Turing's Rebuttals (Part 2: Mathematical Limits & Lady Lovelace) &bull; ഗണിത പരിമിതികളും ലേഡി ലവ്‌ലേസും</div>
+            <div class="section-meta">Textbook Pages 16-18 &bull; Unit 5.5</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.5.1</span>
+                        <span class="topic-heading-text">The Mathematical Objection (G&ouml;del's Theorems) & Human Fallibility</span>
+                        <span class="topic-malayalam-heading">ഗണിതശാസ്ത്രപരമായ എതിർപ്പും (ഗോഡൽ സിദ്ധാന്തം) മനുഷ്യന്റെ അപൂർണ്ണതയും</span>
+                    </div>
+                    <span class="topic-tag">Mathematical Logic</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">G&ouml;delian Incompleteness and Rational Double Standards</span>
+                        <br>&bull; <strong>The Mathematical Objection:</strong> Grounded in Kurt G&ouml;del's 1931 Incompleteness Theorems and Turing's own Halting Problem, which demonstrate that in any sufficiently powerful formal discrete-state system, there exist well-formed propositions that can neither be proved nor disproved by the system itself. Critics argued that human mathematicians transcend these mechanical limitations.
+                        <br>&bull; <strong>Turing's Refutation:</strong> Turing acknowledged these inherent theoretical boundaries of discrete-state machines, but argued there is zero evidence that human intellect is exempt from similar limitations. Humans frequently make errors, fall into logical contradictions, and fail to solve complex paradoxes. Demanding that an AI be mathematically infallible while tolerating fallibility in humans is an irrational double standard.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ഗോഡലിന്റെ അപൂർണ്ണതാ സിദ്ധാന്തവും യുക്തിസഹമായ പ്രതിരോധവും</span>
+                        <br>&bull; <strong>ഗണിത എതിർപ്പ് (Mathematical Objection):</strong> കർട്ട് ഗോഡലിന്റെ (Kurt Gödel 1931) അപൂർണ്ണതാ സിദ്ധാന്തവും ട്യൂറിംഗിന്റെ ഹാൾട്ടിംഗ് പ്രോബ്ലവും അനുസരിച്ച്, ഏതൊരു ഔപചാരിക ഗണിത വ്യവസ്ഥയിലും സ്വയം തെളിയിക്കാൻ കഴിയാത്ത ചില സത്യങ്ങളുണ്ടാകും. മനുഷ്യന്റെ ബുദ്ധി ഇത്തരം നിയന്ത്രണങ്ങൾക്ക് അതീതമാണെന്ന് വിമർശകർ വാദിച്ചു.
+                        <br>&bull; <strong>ട്യൂറിംഗിന്റെ മറുപടി:</strong> യന്ത്രങ്ങൾക്ക് ഗണിതപരമായ പരിമിതികളുണ്ടെന്നത് സത്യമാണ്; എന്നാൽ മനുഷ്യനും ഇത്തരം പരിമിതികളില്ലെന്ന് തെളിയിക്കപ്പെട്ടിട്ടില്ല. മനുഷ്യർ ദിവസവും തെറ്റുകൾ വരുത്തുന്നു, പല ചോദ്യങ്ങൾക്കും ഉത്തരം കണ്ടെത്താനാവാതെ കുഴങ്ങുന്നു. മനുഷ്യന്റെ അപൂർണ്ണതകളെ ബുദ്ധിയായി അംഗീകരിക്കുകയും യന്ത്രങ്ങൾക്ക് മാത്രം പൂർണ്ണത ആവശ്യപ്പെടുകയും ചെയ്യുന്നത് തെറ്റാണ്.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Reason):</span> ഒരു ഐക്യു പരീക്ഷയിൽ ഒരു ചോദ്യത്തിന് ഉത്തരം കിട്ടാതെ കുഴങ്ങുന്ന മനുഷ്യനെ ബുദ്ധിയില്ലാത്തവനായി നാം തള്ളിക്കളയാറില്ല; അതേ ഇളവ് യന്ത്രത്തിനും നൽകണം.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.5.2</span>
+                        <span class="topic-heading-text">Lady Lovelace's Objection (Disabilities) & Informality of Behaviour</span>
+                        <span class="topic-malayalam-heading">ലേഡി ലവ്‌ലേസിന്റെ വാദവും പെരുമാറ്റത്തിന്റെ നിയമരാഹിത്യവും</span>
+                    </div>
+                    <span class="topic-tag">Creativity Debate</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Can Machines Originate Anything New?</span>
+                        <br>&bull; <strong>Lady Lovelace's Objection (Arguments from Various Disabilities):</strong> Historically attributed to Ada Lovelace (1842), who stated that the Analytical Engine had no pretensions to originate anything; it can only do whatever we know how to order it to perform. Critics claimed machines can never be creative, make mistakes, or exhibit original initiative.
+                        <br><em>Turing's Reply:</em> Machines routinely surprise their human creators by discovering unexpected solutions, strategies, and moves that the programmer never consciously anticipated. Furthermore, human "originality" is largely the novel recombination of previously learned experiences.
+                        <br>&bull; <strong>Informality of Behaviour:</strong> Asserts that human conduct cannot be regulated by any complete set of formal rules. Turing replied that if complete physical laws govern the universe, deterministic laws of behaviour exist even if uncodified.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">യന്ത്രങ്ങൾക്ക് പുതിയത് സൃഷ്ടിക്കാൻ കഴിയുമോ?</span>
+                        <br>&bull; <strong>ലേഡി ലവ്‌ലേസിന്റെ വാദം (Lady Lovelace's Objection):</strong> യന്ത്രങ്ങൾക്ക് സ്വന്തമായി പുതിയതായി ഒന്നും സൃഷ്ടിക്കാൻ കഴിയില്ല; മനുഷ്യൻ പ്രോഗ്രാം ചെയ്യുന്ന കാര്യങ്ങൾ യാന്ത്രികമായി അനുസരിക്കാൻ മാത്രമേ അവയ്ക്ക് സാധിക്കൂ.
+                        <br><em>ട്യൂറിംഗിന്റെ മറുപടി:</em> കമ്പ്യൂട്ടറുകൾ പലപ്പോഴും പ്രോഗ്രാമർമാർ പോലും ചിന്തിക്കാത്ത അപ്രതീക്ഷിതമായ പുതിയ വഴികളും നീക്കങ്ങളും കണ്ടെത്തി മനുഷ്യരെ അത്ഭുതപ്പെടുത്താറുണ്ട് (Surprise). മനുഷ്യന്റെ 'മൗലികത' പോലും പഴയ അറിവുകളുടെ പുതിയ കൂട്ടിച്ചേർക്കലുകൾ മാത്രമാണ്.
+                        <br>&bull; <strong>പെരുമാറ്റത്തിന്റെ നിയമരാഹിത്യം (Informality of Behaviour):</strong> മനുഷ്യന്റെ ജീവിതം നിയമപുസ്തകം നോക്കിയല്ല നടക്കുന്നത് എന്ന വാദത്തിന്, പ്രപഞ്ചത്തിലെ ഭൗതിക നിയമങ്ങൾക്ക് വിധേയമായാണ് മനുഷ്യ ശരീരവും പ്രവർത്തിക്കുന്നത് എന്ന് ട്യൂറിംഗ് മറുപടി നൽകി.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Innovation):</span> ചെസ്സിൽ ഗ്രാൻഡ്മാസ്റ്റർമാരെ തോൽപ്പിക്കുന്ന കമ്പ്യൂട്ടർ, കോഡറുടെ മനസ്സിൽ ഇല്ലാത്ത പുത്തൻ അടവുകൾ സ്വയം വികസിപ്പിച്ചെടുക്കുന്നത് ലവ്‌ലേസിന്റെ വാദത്തിനുള്ള മറുപടിയാണ്.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">G&ouml;del's Mathematical Limits & Lady Lovelace's Creativity Debate &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 05 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-06">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 5: Alan Turing Test & Operational Limits</div>
+                    <div class="sub-title">അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പ്രവർത്തന പരിധികളും</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 06 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 6: Operational Limits: Simulation vs Genuine Understanding &bull; അനുകരണവും യഥാർത്ഥ അറിവും</div>
+            <div class="section-meta">Textbook Pages 16-17 &bull; Unit 5.6</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.6.1</span>
+                        <span class="topic-heading-text">Behavioral Mimicry vs True Understanding: Searle's Chinese Room Critique</span>
+                        <span class="topic-malayalam-heading">ബാഹ്യ അനുകരണവും യഥാർത്ഥ അറിവും: ജോൺ സർളിന്റെ വിമർശനം</span>
+                    </div>
+                    <span class="topic-tag">Philosophical Limits</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">The Epistemic Chasm: Imitation is Not Equivalent to Cognition</span>
+                        The most profound operational limitation of the Turing Test is its vulnerability to the critique that <strong>imitation is not equivalent to understanding</strong>:
+                        <br>&bull; <strong>John Searle's Critique:</strong> A computer program passing the Turing Test merely manipulates formal symbols according to statistical weights or syntactic rules without any underlying semantic comprehension or intentionality. The system has zero awareness of what its words refer to in the real world.
+                        <br>&bull; <strong>Ned Block's "Blockhead" Thought Experiment:</strong> Demonstrates that a machine equipped with a lookup table storing all possible conversational strings would pass the Turing Test effortlessly while possessing no more intelligence than an inanimate jukebox.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">അനുകരണം ഒരിക്കലും യഥാർത്ഥ അറിവാകില്ല</span>
+                        ട്യൂറിംഗ് ടെസ്റ്റിന്റെ ഏറ്റവും വലിയ ന്യൂനതയായി തത്ത്വചിന്തകർ ചൂണ്ടിക്കാണിക്കുന്നത് അത് <strong>അനുകരണത്തെയും അറിവിനെയും ഒന്നായി കണ്ടു</strong> എന്നതാണ്:
+                        <br>&bull; <strong>ജോൺ സർളിന്റെ നിലപാട് (John Searle):</strong> ട്യൂറിംഗ് ടെസ്റ്റ് പാസ്സാകുന്ന ഒരു കമ്പ്യൂട്ടർ യഥാർത്ഥത്തിൽ അർത്ഥം മനസ്സിലാക്കുന്നില്ല; മറിച്ച് ചിഹ്നങ്ങളെ യാന്ത്രികമായി മാറ്റി നൽകുക മാത്രമാണ് ചെയ്യുന്നത്. വാക്കുകളുടെ പിന്നിലെ യാഥാർത്ഥ്യത്തെക്കുറിച്ച് അതിന് യാതൊരു ബോധവുമില്ല.
+                        <br>&bull; <strong>നെഡ് ബ്ലോക്കിന്റെ 'ബ്ലോക്ക്ഹെഡ്' (Blockhead):</strong> സാധ്യമായ എല്ലാ സംഭാഷണങ്ങളും മുൻകൂട്ടി റെക്കോർഡ് ചെയ്തുവെച്ച ഒരു വലിയ ഡാറ്റാബേസ് മെഷീന് ട്യൂറിംഗ് ടെസ്റ്റ് ജയിക്കാൻ കഴിയും; എന്നാൽ അതിന് വെറുമൊരു ഗ്രാമഫോൺ റിക്കോർഡിന്റെ ബുദ്ധി മാത്രമേ ഉള്ളൂ.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Distinction):</span> ഒരു തത്ത മനുഷ്യന്റെ ശബ്ദം അനുകരിച്ച് "നമസ്കാരം" എന്ന് കൃത്യമായി പറഞ്ഞാലും, തത്തയ്ക്ക് ആ വാക്കിന്റെ ആഴമേറിയ സാമൂഹിക അർത്ഥം അറിയില്ല എന്നതുപോലെയാണ് മെഷീന്റെ പ്രവർത്തനവും.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.6.2</span>
+                        <span class="topic-heading-text">The Problem of Deception & Evasive Conversational Strategies</span>
+                        <span class="topic-malayalam-heading">കബളിപ്പിക്കൽ തന്ത്രങ്ങളും ഒഴിഞ്ഞുമാറൽ സമീപനങ്ങളും</span>
+                    </div>
+                    <span class="topic-tag">Deception Problem</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Rewarding Trickery Rather than True Intellect</span>
+                        A major structural defect in the Turing Test is that it inadvertently tests a machine's <strong>capacity for deception</strong> rather than genuine intellectual competence:
+                        <br>&bull; <strong>Evasive Feigning:</strong> In competitive benchmarks (such as the Loebner Prize), AI chatbots pass or score highly not by displaying profound wisdom, but by using deceptive human disguises&mdash;feigning typos, exhibiting moods, using witty evasion, or pretending to be non-native speakers.
+                        <br>&bull; <strong>The Eugene Goostman Case (2014):</strong> A chatbot fooled 33% of judges at the Royal Society by pretending to be a 13-year-old Ukrainian boy. Its grammatical errors and gaps in knowledge were excused by the judges as youthful eccentricity rather than software ignorance. True intelligence should be marked by competence, not trickery.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ബുദ്ധിയേക്കാൾ കബളിപ്പിക്കലിന് ലഭിക്കുന്ന വിജയം</span>
+                        ട്യൂറിംഗ് ടെസ്റ്റിന്റെ മറ്റൊരു പോരായ്മ അത് ബുദ്ധിയെയല്ല, മറിച്ച് <strong>മനുഷ്യരെ കബളിപ്പിക്കാനുള്ള തന്ത്രങ്ങളെയാണ്</strong> പ്രോത്സാഹിപ്പിക്കുന്നത് എന്നതാണ്:
+                        <br>&bull; <strong>ഒഴിഞ്ഞുമാറൽ തന്ത്രങ്ങൾ:</strong> കഠിനമായ ചോദ്യങ്ങൾ വരുമ്പോൾ തമാശ പറയുക, മനഃപൂർവ്വം സ്പെല്ലിംഗ് തെറ്റുകൾ വരുത്തുക, തനിക്ക് ഇംഗ്ലീഷ് ശരിക്കറിയില്ലെന്ന് നടിച്ച് ഒഴിഞ്ഞുമാറുക തുടങ്ങിയ തന്ത്രങ്ങളിലൂടെയാണ് പല ചാറ്റ്ബോട്ടുകളും ജഡ്ജിമാരെ കബളിപ്പിക്കുന്നത്.
+                        <br>&bull; <strong>യൂജിൻ ഗൂസ്റ്റ്മാൻ സംഭവം (2014):</strong> ലണ്ടൻ റോയൽ സൊസൈറ്റിയിൽ വെച്ച് 33% ജഡ്ജിമാരെ കബളിപ്പിച്ച ചാറ്റ്ബോട്ട്, താൻ ഉക്രെയ്നിലെ 13 വയസ്സുള്ള കുട്ടിയാണെന്ന് നടിച്ചാണ് വിജയം നേടിയത്! യഥാർത്ഥ അറിവിനേക്കാൾ കള്ളം പറയാനുള്ള കഴിവാണ് ഇവിടെ പരീക്ഷിക്കപ്പെട്ടത്.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Evasion):</span> "ക്വാണ്ടം ഫിസിക്സ് വിശദീകരിക്കാമോ?" എന്ന് ചോദിക്കുമ്പോൾ, "ഞാൻ വെറുമൊരു 13 വയസ്സുള്ള കുട്ടിയാണ്, എന്നോട് വീഡിയോ ഗെയിമുകളെക്കുറിച്ച് ചോദിക്കൂ!" എന്ന് മറുപടി നൽകി രക്ഷപ്പെടുന്നത്.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Simulation vs Understanding & The Deception Problem &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 06 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-07">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 5: Alan Turing Test & Operational Limits</div>
+                    <div class="sub-title">അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പ്രവർത്തന പരിധികളും</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 07 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 7: Operational Limits: Anthropocentrism & Narrow Linguistic Scope &bull; മാനവകേന്ദ്രീകൃതത്വവും ഭാഷാ പരിമിതിയും</div>
+            <div class="section-meta">Textbook Pages 16-17 &bull; Unit 5.7</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.7.1</span>
+                        <span class="topic-heading-text">Anthropocentric Bias: Penalizing Non-Human Superhuman Intelligence</span>
+                        <span class="topic-malayalam-heading">മാനവകേന്ദ്രീകൃത പക്ഷപാതം (Anthropocentric Bias)</span>
+                    </div>
+                    <span class="topic-tag">Measurement Bias</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Why Must Machine Intelligence Mirror Human Flaws?</span>
+                        Critics charge that the Turing Test is fundamentally flawed due to severe <strong>Anthropocentrism</strong>:
+                        <br>&bull; <strong>Emulating Human Weaknesses:</strong> The test forces machines to mimic irrational human frailties&mdash;computational slowness, forgetfulness, emotional bias, and factual ignorance. If a supercomputer calculates the 20th root of a 100-digit number in 2 milliseconds, the judge immediately identifies it as a machine; thus, an intelligent machine must artificially delay its answer or pretend to make mathematical errors!
+                        <br>&bull; <strong>Alien Intelligence:</strong> Legitimate forms of artificial intellect that think differently from biological Homo sapiens are unfairly deemed "unintelligent" simply because they do not converse like 20th-century Englishmen.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">മനുഷ്യന്റെ ബലഹീനതകൾ അനുകരിക്കാൻ നിർബന്ധിതമാകുന്ന യന്ത്രം</span>
+                        ട്യൂറിംഗ് ടെസ്റ്റ് നേരിടുന്ന മറ്റൊരു കടുത്ത വിമർശനമാണ് <strong>മാനവകേന്ദ്രീകൃത പക്ഷപാതം (Anthropocentrism)</strong>:
+                        <br>&bull; <strong>മനുഷ്യന്റെ തെറ്റുകൾ പകർത്തൽ:</strong> യന്ത്രങ്ങൾ മനുഷ്യന്റെ ചിന്താപരമായ ബലഹീനതകളും മന്ദതയും പകർത്താൻ നിർബന്ധിതമാകുന്നു. ഉദാഹരണത്തിന്, ഒരു വലിയ ഗണിത സമസ്യ ഒരു സെക്കൻഡിന്റെ ആയിരത്തിലൊരംശം കൊണ്ട് മെഷീൻ പരിഹരിച്ചാൽ ജഡ്ജി അത് യന്ത്രമാണെന്ന് തിരിച്ചറിയും; അതിനാൽ ടെസ്റ്റ് ജയിക്കാൻ മെഷീൻ മനഃപൂർവ്വം സമയം വൈകിപ്പിക്കുകയും മനുഷ്യനെപ്പോലെ കണക്കിൽ തെറ്റുകൾ വരുത്തുകയും വേണം!
+                        <br>&bull; <strong>യന്ത്രത്തിന്റെ തനിമയെ തള്ളിക്കളയൽ:</strong> മനുഷ്യനിൽ നിന്ന് വ്യത്യസ്തമായി സ്വതന്ത്രമായ രീതിയിൽ അതീവ കാര്യക്ഷമതയോടെ ചിന്തിക്കുന്ന ഒരു യന്ത്രബുദ്ധിയെ 'ബുദ്ധിയില്ലാത്തത്' എന്ന് ഈ പരീക്ഷണം തെറ്റായി മുദ്രകുത്തുന്നു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Calculation):</span> $45879 	imes 78451$ എത്രയെന്ന് ചോദിക്കുമ്പോൾ തൽക്ഷണം ശരിയുത്തരം നൽകുന്ന കമ്പ്യൂട്ടർ തോൽക്കുകയും, വിരലെണ്ണി സമയം കളയുന്ന കമ്പ്യൂട്ടർ ജയിക്കുകയും ചെയ്യുന്ന വിരോധാഭാസം!
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.7.2</span>
+                        <span class="topic-heading-text">Narrow Linguistic Bias & Neglect of Embodied Perception</span>
+                        <span class="topic-malayalam-heading">ഭാഷാപരമായ ഇടുങ്ങിയ കാഴ്ചപ്പാടും ഇന്ദ്രിയാനുഭവങ്ങളുടെ അവഗണനയും</span>
+                    </div>
+                    <span class="topic-tag">Scope Limitations</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Intelligence Transcends Textual Conversation</span>
+                        The Turing Test strictly equates intelligence with <strong>linguistic and conversational competence</strong>, ignoring vast dimensions of human and animal intellect:
+                        <br>&bull; <strong>Neglect of Embodiment:</strong> Ignores sensory perception, computer vision, acoustic recognition, fine motor coordination, and physical interaction with the environment (spatial intelligence).
+                        <br>&bull; <strong>Non-Verbal Intellect:</strong> Highly intelligent entities&mdash;such as mute savants, animals navigating terrains, or specialized robotic systems assembling delicate machinery&mdash;would fail the Turing Test completely despite demonstrating profound cognitive capability. Textual dialogue is merely one narrow facet of general intelligence.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">സംഭാഷണത്തിനപ്പുറമുള്ള യഥാർത്ഥ ബുദ്ധിശക്തികൾ</span>
+                        ബുദ്ധിയെ കേവലം <strong>ഭാഷാപരമായ സംഭാഷണത്തിലേക്ക് (Verbal Ability)</strong> മാത്രം ചുരുക്കിക്കണ്ടു എന്നതാണ് ട്യൂറിംഗ് ടെസ്റ്റിന്റെ മറ്റൊരു പരിമിതി:
+                        <br>&bull; <strong>ശാരീരിക സാന്നിധ്യത്തെ അവഗണിക്കൽ:</strong> കാഴ്ച, കേൾവി, വസ്തുക്കളെ തൊട്ടറിയൽ, പരിസ്ഥിതിയിലൂടെ സഞ്ചരിക്കാനുള്ള റോബോട്ടിക് ശേഷി എന്നിവയെയെല്ലാം ഈ പരീക്ഷണം പാടേ തള്ളിക്കളയുന്നു.
+                        <br>&bull; <strong>ഭാഷയില്ലാത്ത ബുദ്ധി:</strong> സംസാരശേഷിയില്ലാത്ത ഒരു പ്രതിഭയ്ക്കോ, അല്ലെങ്കിൽ ദുർഘടമായ കാട്ടിലൂടെ വഴി കണ്ടെത്തുന്ന ഒരു വന്യജീവിക്കോ ട്യൂറിംഗ് ടെസ്റ്റ് പാസ്സാകാൻ കഴിയില്ല; എങ്കിലും അവയ്ക്ക് ഉയർന്ന ബുദ്ധിശക്തിയുണ്ട്. ഭാഷ ബുദ്ധിയുടെ ഒരൊറ്റ ഭാഗം മാത്രമാണ്.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Analogy):</span> ഒരു സർജിക്കൽ റോബോട്ടിന് അതീവ സൂക്ഷ്മതയോടെ ശസ്ത്രക്രിയ നടത്താൻ കഴിയുമെങ്കിലും, അതിന് കവിതയെക്കുറിച്ച് സംസാരിക്കാൻ അറിയില്ല എന്ന ഒറ്റ കാരണം കൊണ്ട് ബുദ്ധിയില്ലാത്തതായി കണക്കാക്കാൻ കഴിയില്ല.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Anthropocentrism & Narrow Linguistic Reductionism &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 07 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-08">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 5: Alan Turing Test & Operational Limits</div>
+                    <div class="sub-title">അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പ്രവർത്തന പരിധികളും</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 08 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 8: The Eliza Effect & Evolution of Conversational AI &bull; എലിസ പ്രഭാവവും ചാറ്റ്ബോട്ടുകളുടെ പരിണാമവും</div>
+            <div class="section-meta">Textbook Pages 17-18 &bull; Unit 5.8</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.8.1</span>
+                        <span class="topic-heading-text">Joseph Weizenbaum's ELIZA (1966) & The "Eliza Effect"</span>
+                        <span class="topic-malayalam-heading">ജോസഫ് വീസെൻബോമിന്റെ എലിസയും (1966) 'എലിസ പ്രഭാവവും'</span>
+                    </div>
+                    <span class="topic-tag">Chatbot Milestone</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Syntactic Substitution & The Illusion of Empathy</span>
+                        In 1966, MIT computer scientist <strong>Joseph Weizenbaum</strong> constructed <strong>ELIZA</strong>, the direct historic ancestor of conversational AI inspired by Turing's vision:
+                        <br>&bull; <strong>The DOCTOR Script:</strong> Modeled a Rogerian nondirective psychotherapist. It operated through rudimentary syntactic pattern matching and keyword substitution without an internal model of reality (e.g., turning <em>"My mother hates me"</em> into <em>"Why do you feel your mother hates you?"</em>).
+                        <br>&bull; <strong>The Eliza Effect:</strong> Weizenbaum was horrified to discover that users (including his own secretary) formed deep emotional bonds with the program, projecting genuine empathy, wisdom, and understanding onto a simple text script. The test showed that human interlocutors are eager to project intelligence where none exists.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ലളിതമായ കോഡിംഗും മനുഷ്യന്റെ വ്യാമോഹവും</span>
+                        1966-ൽ എം.ഐ.ടിയിലെ <strong>ജോസഫ് വീസെൻബോം</strong> വികസിപ്പിച്ച <strong>എലിസ (ELIZA)</strong> ആണ് ആദ്യത്തെ ചാറ്റ്ബോട്ട്:
+                        <br>&bull; <strong>ഡോക്ടർ സ്ക്രിപ്റ്റ്:</strong> ഒരു മനശ്ശാസ്ത്രജ്ഞനെപ്പോലെ ഉപയോക്താവിന്റെ വാക്കുകളെത്തന്നെ തിരിച്ച് ചോദ്യമാക്കി മാറ്റുന്ന ലളിതമായ പ്രോഗ്രാമാണിത് (ഉദാ: "എന്റെ അമ്മ എന്നെ വഴക്കുപറഞ്ഞു" എന്ന് പറയുമ്പോൾ "നിങ്ങളുടെ അമ്മ വഴക്കുപറയാൻ എന്താണ് കാരണം?" എന്ന് ചോദിക്കുന്നു).
+                        <br>&bull; <strong>എലിസ പ്രഭാവം (Eliza Effect):</strong> ഒരു വിവരവുമില്ലാത്ത വെറും കോഡിങ് മാത്രമായിരുന്നിട്ടും, എലിസയ്ക്ക് വലിയ സഹാനുഭൂതിയും ബുദ്ധിയുമുണ്ടെന്ന് കരുതി ആളുകൾ അതിനോട് സ്വന്തം രഹസ്യങ്ങൾ തുറന്നുപറയാൻ തുടങ്ങി! മനുഷ്യൻ യന്ത്രങ്ങളിൽ അറിവില്ലാത്ത ബുദ്ധി സ്വയം സങ്കൽപ്പിക്കുന്നു എന്നതിന്റെ തെളിവാണിത്.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Psychology):</span> കണ്ണാടിയിൽ സ്വന്തം പ്രതിബിംബം കണ്ട് മറ്റൊരു പൂച്ചയാണെന്ന് കരുതി പൂച്ച സംസാരിക്കുന്നതുപോലെ, സ്വന്തം ചിന്തകളെത്തന്നെ ചാറ്റ്ബോട്ടിൽ കണ്ട് മനുഷ്യൻ അതിന് ബോധമുണ്ടെന്ന് തെറ്റിദ്ധരിക്കുന്നു.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.8.2</span>
+                        <span class="topic-heading-text">From ELIZA to Modern Large Language Models (LLMs) & Loebner Prize</span>
+                        <span class="topic-malayalam-heading">എലിസയിൽ നിന്ന് ആധുനിക എൽ.എൽ.എമ്മുകളിലേക്കുള്ള പരിണാമം</span>
+                    </div>
+                    <span class="topic-tag">Modern Evolution</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">The Narrowing Gap in Human-Machine Discourse</span>
+                        Over successive decades, the Turing Test served simultaneously as an aspirational testing ground and inspiration:
+                        <br>&bull; <strong>The Loebner Prize (1991):</strong> Established annual formal staging of the Turing Test with human judges and prize medals, highlighting both the ingenuity of chatbot tricks and their eventual semantic limits.
+                        <br>&bull; <strong>Modern Generative LLMs:</strong> In the modern era of deep learning, natural language processing, and Large Language Models, the conversational gap between human and machine text has drastically diminished. Modern systems pass standard 5-minute tests routinely, forcing philosophers to recognize that passing the test is a milestone in <em>linguistic fluency</em> rather than the attainment of conscious personhood.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">സംഭാഷണ വിടവ് നികത്തലും പുതിയ തിരിച്ചറിവും</span>
+                        ട്യൂറിംഗ് ടെസ്റ്റ് കഴിഞ്ഞ ഏഴ് പതിറ്റാണ്ടുകളായി എഐ ഗവേഷണത്തിന്റെ പ്രധാന പ്രചോദനമായിരുന്നു:
+                        <br>&bull; <strong>ലോബ്നർ പ്രൈസ് (Loebner Prize):</strong> ട്യൂറിംഗ് ടെസ്റ്റ് ജയിക്കുന്ന പ്രോഗ്രാമുകൾക്ക് സമ്മാനം നൽകുന്ന മത്സരങ്ങൾ ഇതിന്റെ പ്രായോഗിക പരീക്ഷണവേദിയായി.
+                        <br>&bull; <strong>ആധുനിക ജനറേറ്റീവ് എഐ:</strong> ഡീപ് ലേണിംഗിന്റെയും ലാർജ് ലാംഗ്വേജ് മോഡലുകളുടെയും (LLMs) വരവോടെ മനുഷ്യനും യന്ത്രവും തമ്മിലുള്ള സംഭാഷണ വിടവ് ഇല്ലാതായിക്കഴിഞ്ഞു. ഇന്നത്തെ എഐ സിസ്റ്റങ്ങൾക്ക് 5 മിനിറ്റ് ടെസ്റ്റ് നിഷ്പ്രയാസം ജയിക്കാൻ കഴിയും. എന്നാൽ ഇത് വെറും <em>ഭാഷാപരമായ ചാതുര്യം (Linguistic Fluency)</em> മാത്രമാണെന്നും ആത്മബോധമല്ലെന്നും ലോകം ഇന്ന് തിരിച്ചറിയുന്നു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Evolution):</span> പണ്ട് ചോദ്യങ്ങൾക്ക് ഉത്തരം നൽകാൻ കഷ്ടപ്പെട്ടിരുന്ന കമ്പ്യൂട്ടറുകൾ, ഇന്ന് ഗവേഷണ പ്രബന്ധങ്ങളും കവിതകളും മനുഷ്യനേക്കാൾ വേഗത്തിൽ എഴുതിത്തയ്യാറാക്കുന്നു.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Joseph Weizenbaum's ELIZA & The Evolution to Modern LLMs &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 08 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-09">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 5: Alan Turing Test & Operational Limits</div>
+                    <div class="sub-title">അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പ്രവർത്തന പരിധികളും</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 09 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 9: The Methodological Legacy: Intelligence as an Attributed Quality &bull; ആട്രിബ്യൂട്ട് ചെയ്യപ്പെടുന്ന ബുദ്ധി</div>
+            <div class="section-meta">Textbook Pages 18-20 &bull; Unit 5.9</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.9.1</span>
+                        <span class="topic-heading-text">Intelligence as an Interactive Social Attribution</span>
+                        <span class="topic-malayalam-heading">ഇടപെടലുകളിലൂടെ ചാർത്തിക്കൊടുക്കപ്പെടുന്ന ബുദ്ധി</span>
+                    </div>
+                    <span class="topic-tag">Social Epistemology</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Attributional Quality vs Inherent Discovery</span>
+                        The Turing Test delivers a profound epistemological revelation: <strong>intelligence may be more accurately perceived as an interactive social quality attributed through engagement rather than an intrinsic, hidden substance to be unearthed</strong>:
+                        <br>&bull; <strong>Social Attribution in Daily Life:</strong> In human societies, we do not verify intellect by neurosurgical inspection of brains; we attribute intelligence to other people based entirely on their responsive behaviour, communicative coherence, and social cooperation.
+                        <br>&bull; <strong>Extension to Machines:</strong> Turing extended this universal human practice to computing machines. If an artificial entity functions as a competent communicative partner, withholding the attribution of intelligence reveals biological prejudice rather than scientific logic.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ബുദ്ധി എന്നാൽ ഒരു വസ്തുവല്ല, മറിച്ച് അംഗീകാരമാണ്</span>
+                        ട്യൂറിംഗ് ടെസ്റ്റ് മുന്നോട്ടുവെച്ച ഏറ്റവും മനോഹരമായ തത്ത്വചിന്താ സത്യം: <strong>ബുദ്ധി എന്നത് വസ്തുക്കൾക്കുള്ളിൽ ഒളിഞ്ഞിരിക്കുന്ന ഒരു രഹസ്യ പദാർത്ഥമല്ല, മറിച്ച് പരസ്പരമുള്ള ആശയവിനിമയത്തിലൂടെ നാം മറ്റൊരാൾക്ക് ചാർത്തിക്കൊടുക്കുന്ന (Attributed Quality) ഒരു അംഗീകാരമാണ്</strong>:
+                        <br>&bull; <strong>സാമൂഹിക ജീവിതത്തിലെ സത്യം:</strong> നാം സുഹൃത്തുക്കളോട് സംസാരിക്കുമ്പോൾ അവരുടെ തലച്ചോർ സ്കാൻ ചെയ്തിട്ടല്ല അവർക്ക് ബുദ്ധിയുണ്ടെന്ന് തീരുമാനിക്കുന്നത്; അവരുടെ ഉത്തരങ്ങളും പെരുമാറ്റവും കണ്ടാണ് നാം അവർക്ക് ആ പദവി നൽകുന്നത്.
+                        <br>&bull; <strong>യന്ത്രങ്ങളോടുള്ള സമീപനം:</strong> ഇതേ അംഗീകാരം യന്ത്രങ്ങൾക്കും നൽകാൻ നാം തയ്യാറാകണം. കാര്യക്ഷമമായി സംഭാഷണം നടത്തുന്ന ഒരു യന്ത്രത്തിന് ജീവശാസ്ത്രപരമായ മുൻവിധികൾ കാരണം ബുദ്ധി നിഷേധിക്കുന്നത് ശാസ്ത്രീയ നീതിയല്ല.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Interaction):</span> ഒരു അധ്യാപകൻ വിദ്യാർത്ഥിയുടെ അറിവ് അളക്കുന്നത് പരീക്ഷാ പേപ്പറിലെ ഉത്തരങ്ങൾ കണ്ടിട്ടാണ്; പേപ്പർ എഴുതിയത് വിദ്യാർത്ഥിയോ കമ്പ്യൂട്ടറോ എന്ന് നോക്കാതെ ഉത്തരത്തിന്റെ ഗുണത്തിന് മാർക്ക് നൽകുന്നതുപോലെയാണിത്.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">5.9.2</span>
+                        <span class="topic-heading-text">The Historical & Methodological Paradigm Shift</span>
+                        <span class="topic-malayalam-heading">ചരിത്രപരവും രീതിശാസ്ത്രപരവുമായ വഴിത്തിരിവ്</span>
+                    </div>
+                    <span class="topic-tag">Paradigm Legacy</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Decoupling Engineering from Metaphysical Consensus</span>
+                        Turing radically transformed 20th and 21st-century science:
+                        <br>&bull; <strong>Empirical Liberation:</strong> By shifting focus from "Can machines think?" to measurable performance criteria, Turing enabled artificial intelligence to flourish as an independent empirical discipline without awaiting unanimous philosophical consensus on the nature of the soul.
+                        <br>&bull; <strong>Enduring North Star:</strong> Regardless of whether any specific system achieves an undisputed pass, the Turing Test stands as an immortal monument to human inquiry, continually compelling philosophy and cognitive science to redefine what it fundamentally means to be intelligent, conscious, and human.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">തത്ത്വചിന്താ തർക്കങ്ങളിൽ നിന്ന് സ്വതന്ത്രമായ സാങ്കേതിക ശാസ്ത്രം</span>
+                        ട്യൂറിംഗ് ലോക ശാസ്ത്രരംഗത്ത് ഉണ്ടാക്കിയ ശാശ്വതമായ മാറ്റങ്ങൾ:
+                        <br>&bull; <strong>ശാസ്ത്രീയ സ്വാതന്ത്ര്യം:</strong> ആത്മാവിനെക്കുറിച്ചും ബോധത്തെക്കുറിച്ചുമുള്ള തർക്കങ്ങളിൽ തട്ടിനിൽക്കാതെ, പ്രായോഗികമായി ലക്ഷ്യങ്ങൾ കൈവരിക്കുന്ന ഒരു സ്വതന്ത്ര ശാസ്ത്ര ശാഖയായി വളരാൻ എഐക്ക് വഴിതുറന്നത് ട്യൂറിംഗിന്റെ ഈ പരീക്ഷണമാണ്.
+                        <br>&bull; <strong>ശാശ്വതമായ വഴികാട്ടി:</strong> ഒരു കമ്പ്യൂട്ടർ ഈ പരീക്ഷ പൂർണ്ണമായി ജയിച്ചാലും ഇല്ലെങ്കിലും, കഴിഞ്ഞ 70 വർഷമായി മനുഷ്യന്റെ ബുദ്ധിയെയും ബോധത്തെയും കുറിച്ച് ചിന്തിക്കാൻ പ്രേരിപ്പിക്കുന്ന ഏറ്റവും ശക്തമായ വഴികാട്ടിയായി ട്യൂറിംഗ് ടെസ്റ്റ് നിലകൊള്ളുന്നു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Horizon):</span> വിമാനം പറക്കുന്നത് പക്ഷികളെപ്പോലെ ചിറകടിച്ചിട്ടല്ലെങ്കിലും അത് 'പറക്കൽ' തന്നെയാണ്; അതുപോലെ കമ്പ്യൂട്ടർ ചിന്തിക്കുന്നത് മനുഷ്യന്റെ തലച്ചോറ് പോലെയല്ലെങ്കിലും അത് 'ബുദ്ധി' തന്നെയാണ്.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Intelligence as an Attributed Quality & The Historical Shift &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 09 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-10">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 5: Alan Turing Test & Operational Limits</div>
+                    <div class="sub-title">അലൻ ട്യൂറിംഗ് ടെസ്റ്റും പ്രവർത്തന പരിധികളും</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 10 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 10: 20 High-Yield Exam "Knock Your Brain" Key Concepts &bull; പരീക്ഷാ പ്രധാന ആശയങ്ങൾ</div>
+            <div class="section-meta">Textbook Review Questions & Key Concepts &bull; Unit 5.10</div>
+        </div>
+        <div class="content-body">
+            <div class="knock-grid-container">
+                <!-- Column 1 (Cards 1 to 10) -->
+                <div class="knock-col">
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">01</span>
+                                <span class="knock-card-title-en">Alan Mathison Turing (1912-1954)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ആധുനിക കമ്പ്യൂട്ടർ ശാസ്ത്ര പിതാവ്</div>
+                        <div class="knock-card-desc">British mathematician and logician who pioneered the Universal Turing Machine (1936) and the Turing Test (1950).</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">02</span>
+                                <span class="knock-card-title-en">Computing Machinery & Intelligence</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">1950-ലെ വിപ്ലവകരമായ മൈൻഡ് പ്രബന്ധം</div>
+                        <div class="knock-card-desc">Turing's landmark paper replacing "Can machines think?" with the empirical Imitation Game protocol.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">03</span>
+                                <span class="knock-card-title-en">The Imitation Game</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ദി ഇമിറ്റേഷൻ ഗെയിം പരീക്ഷണം</div>
+                        <div class="knock-card-desc">Three-player game (Machine, Control Human, Interrogator) testing whether the judge can distinguish machine from human.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">04</span>
+                                <span class="knock-card-title-en">Operational Definition of Intelligence</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">പ്രവർത്തനപരമായ ബുദ്ധി നിർവ്വചനം</div>
+                        <div class="knock-card-desc">Defines intelligence through external, measurable linguistic performance rather than hidden internal metaphysical states.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">05</span>
+                                <span class="knock-card-title-en">Blind Teleprinter Protocol</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ടെലിപ്രിന്റർ ആശയവിനിമയ ചട്ടം</div>
+                        <div class="knock-card-desc">Restricts communication entirely to text/screens to eliminate irrelevant physical appearance and acoustic cues.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">06</span>
+                                <span class="knock-card-title-en">Philosophical Behaviourism</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">തത്ത്വചിന്താപരമായ ബിഹേവിയറിസം</div>
+                        <div class="knock-card-desc">The philosophical stance asserting that mental states and intelligence are verified by observable conduct alone.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">07</span>
+                                <span class="knock-card-title-en">Functionalism (ഫംഗ്ഷണലിസം)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ധർമ്മപരമായ മനസ്സ് വീക്ഷണം</div>
+                        <div class="knock-card-desc">Mental states are defined by causal and functional roles, allowing multiple realizability in carbon or silicon substrates.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">08</span>
+                                <span class="knock-card-title-en">Theological Objection (ദൈവശാസ്ത്ര വാദം)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ആത്മാവ് മനുഷ്യന് മാത്രമെന്ന എതിർപ്പ്</div>
+                        <div class="knock-card-desc">Claim that God grants souls only to humans; refuted by Turing as an arbitrary restriction on divine omnipotence.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">09</span>
+                                <span class="knock-card-title-en">Heads in the Sand Objection</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">തല മണ്ണിൽ പൂഴ്ത്തൽ വാദം</div>
+                        <div class="knock-card-desc">Fear of losing human intellectual superiority; dismissed by Turing as emotional dread lacking scientific merit.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">10</span>
+                                <span class="knock-card-title-en">Mathematical Objection (G&ouml;del)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ഗോഡലിന്റെ അപൂർണ്ണതാ വാദം</div>
+                        <div class="knock-card-desc">Incompleteness limits of machines; refuted because human intellect is equally fallible and prone to logical errors.</div>
+                    </div>
+                </div>
+
+                <!-- Column 2 (Cards 11 to 20) -->
+                <div class="knock-col">
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">11</span>
+                                <span class="knock-card-title-en">Prof. Jefferson's Objection (1949)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">കവിതയും വികാരങ്ങളും സംബന്ധിച്ച വാദം</div>
+                        <div class="knock-card-desc">Asserted machines must write sonnets with felt emotions; countered by Turing's viva-voce interactive standard.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">12</span>
+                                <span class="knock-card-title-en">Solipsist Trap (സോളിപ്സിസം)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">സ്വന്തം മനസ്സ് മാത്രം നിലനിൽക്കുന്നുവെന്ന വാദം</div>
+                        <div class="knock-card-desc">Demanding internal proof of consciousness leads to solipsism, denying consciousness to fellow humans as well.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">13</span>
+                                <span class="knock-card-title-en">Lady Lovelace's Objection (1842)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">യന്ത്രങ്ങൾക്ക് പുതിയത് സൃഷ്ടിക്കാനാവില്ല</div>
+                        <div class="knock-card-desc">Analytical Engine can only do what ordered; refuted by machine capacity to surprise humans with novel strategies.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">14</span>
+                                <span class="knock-card-title-en">Informality of Behaviour</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">പെരുമാറ്റത്തിന്റെ നിയമരാഹിത്യം</div>
+                        <div class="knock-card-desc">Argument that human action cannot be captured in formal rules; answered by determinism of physical biological laws.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">15</span>
+                                <span class="knock-card-title-en">The Deception Dilemma</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">കബളിപ്പിക്കലിന് ലഭിക്കുന്ന അംഗീകാരം</div>
+                        <div class="knock-card-desc">Flaw that the test rewards evasion, feigned errors, and trickery (e.g., Eugene Goostman 2014) over genuine wisdom.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">16</span>
+                                <span class="knock-card-title-en">Anthropocentric Bias</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">മാനവകേന്ദ്രീകൃത പക്ഷപാതം</div>
+                        <div class="knock-card-desc">Penalizes superior non-human calculation speed and forces machines to emulate irrational human flaws to pass.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">17</span>
+                                <span class="knock-card-title-en">Joseph Weizenbaum's ELIZA (1966)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ആദ്യത്തെ തെറാപ്പിസ്റ്റ് ചാറ്റ്ബോട്ട്</div>
+                        <div class="knock-card-desc">Pioneering chatbot simulating a psychotherapist via simple syntactic pattern matching and keyword substitution.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">18</span>
+                                <span class="knock-card-title-en">The Eliza Effect (എലിസ പ്രഭാവം)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">യന്ത്രങ്ങളിൽ ബോധം സങ്കൽപ്പിക്കൽ</div>
+                        <div class="knock-card-desc">The cognitive tendency of humans to project genuine understanding, empathy, and meaning onto simple text scripts.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">19</span>
+                                <span class="knock-card-title-en">Syntax vs Semantics (Searle 1980)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">വ്യാകരണവും യഥാർത്ഥ അർത്ഥവും</div>
+                        <div class="knock-card-desc">Searle's Chinese Room verdict that passing the Turing Test represents syntactic symbol manipulation without comprehension.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">20</span>
+                                <span class="knock-card-title-en">Intelligence as an Attributed Quality</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ഇടപെടലിലൂടെ ചാർത്തപ്പെടുന്ന അംഗീകാരം</div>
+                        <div class="knock-card-desc">Turing's lasting insight: intelligence is an attributed social quality granted through communicative interaction.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">20 High-Yield Exam 'Knock Your Brain' Master Concepts &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 10 of 10</div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
