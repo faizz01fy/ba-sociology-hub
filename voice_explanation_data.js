@@ -748,6 +748,20 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 02: PRACTICING SOCIOLOGY",
         "videos": [
           {
+            "chapterNumber": "FYUGP Masterclass",
+            "title": "സോഷ്യോളജി പ്രയോഗത്തിൽ (Practicing Sociology: Full Syllabus Masterclass)",
+            "chapter": "Module 2 · 7 Subunits, Sociological Imagination, 7 Research Steps & Ethics",
+            "duration": "14:50",
+            "youtubeId": "WyReGfMhJJs",
+            "language": "Malayalam",
+            "studyPoints": [
+              "സി. റൈറ്റ് മിൽസിന്റെ സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination), കാപ്പി കുടിയുടെ 4 മാനങ്ങൾ, വ്യക്തിപരമായ പ്രശ്നങ്ങളും പൊതുവിഷയങ്ങളും (Personal Troubles vs Public Issues).",
+              "സാമൂഹിക ഗവേഷണത്തിന്റെ 7 ഘട്ടങ്ങൾ, പി.വി. യംഗ് & സി.എ. മോസർ നിർവ്വചനങ്ങൾ, റിസർച്ച് എത്തിക്സും ഇൻഫോംഡ് കോൺസെന്റും.",
+              "സൂക്ഷ്മ (Micro) - സ്ഥൂല (Macro) സോഷ്യോളജി, പോസിറ്റിവിസ്റ്റ്, ഇന്റർപ്രിറ്റേറ്റീവ് (Verstehen), ക്രിട്ടിക്കൽ സ്കൂൾ (Marx, Habermas) എന്നിവയും 11 മോഡൽ പരീക്ഷാ ചോദ്യോത്തരങ്ങളും."
+            ],
+            "examTip": "Calicut University 10-മാർക്ക് ഉപന്യാസ ഫോർമുല: സോഷ്യോളജിക്കൽ ഭാവനയും സാമൂഹിക ഗവേഷണത്തിലെ 7 പ്രധാന ഘട്ടങ്ങളും നിർബന്ധമായും പഠിക്കുക."
+          },
+          {
             "chapterNumber": "Module 2 Masterclass",
             "title": "Social Reality & Research Orientations",
             "chapter": "Sociology · Module 2 · Practicing Sociology",
