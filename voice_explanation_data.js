@@ -411,21 +411,6 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 01: ഗദ്യവും വിവർത്തനവും",
         "videos": [
           {
-            "chapterNumber": "Masterclass",
-            "title": "മലയാള പഠന സഹായി: സമഗ്ര വിശകലനം (ഭാഗം എ)",
-            "chapter": "Academic Hub Special · മലയാളം മൊഡ്യൂൾ 1 സമഗ്ര പഠന സഹായി",
-            "duration": "16:20",
-            "youtubeId": "aeHwgnDHqr8",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>ഗദ്യ സാഹിത്യ വികാസം:</strong> മലയാള ഗദ്യത്തിന്റെ ചരിത്രപരമായ പരിണാമവും ആധുനിക സാഹിത്യ പ്രസ്ഥാനങ്ങളും.",
-              "<strong>വിവർത്തന തത്വങ്ങൾ:</strong> വിവർത്തനത്തിന്റെ സിദ്ധാന്തപരമായ ചട്ടക്കൂടും പ്രായോഗിക രീതികളും.",
-              "<strong>പരീക്ഷാ സംഗ്രഹം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. മലയാളം ഒന്നാം സെമസ്റ്റർ പ്രധാന വിഷയങ്ങൾ."
-            ],
-            "examTip": "കാലിക്കറ്റ് സർവ്വകലാശാല പരീക്ഷയ്ക്ക് മലയാളം ഗദ്യത്തിലെയും വിവർത്തനത്തിലെയും പ്രധാന ചോദ്യങ്ങൾ പ്രത്യേകം ശ്രദ്ധിക്കുക."
-          },
-          {
             "chapterNumber": "Chapter 01",
             "title": "ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ",
             "chapter": "കലാമണ്ഡലം ഹൈദരാലി · സംഗ്രഹം, നോട്ടുകൾ & ചർച്ച",
@@ -597,17 +582,35 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 02",
-            "title": "Anthem for Doomed Youth",
-            "chapter": "Wilfred Owen · War Poetry & Poetic Devices",
-            "duration": "15",
-            "youtubeId": ""
+            "title": "Anthem",
+            "chapter": "Leonard Cohen · Module 1, Chapter 2 · Malayalam explanation",
+            "duration": "8:11",
+            "youtubeId": "qJDNqI7AoDw",
+            "language": "Malayalam",
+            "thumbnail": "/thumbnails/english-module1-chapter2-anthem.jpg",
+            "studyPoints": [
+              "Leonard Cohen (ലിയനാർഡ് കോഹൻ): Anthem എന്ന ഗാനത്തിന്റെ രചയിതാവായ Canadian singer-songwriter and poet-ന്റെ പശ്ചാത്തലം.",
+              "Hope and Imperfection (പ്രത്യാശയും അപൂർണ്ണതയും): തകർച്ചകളും പരിമിതികളും ഉണ്ടായിരിക്കുമ്പോഴും പ്രത്യാശ കണ്ടെത്തുന്നതാണ് പ്രധാന ആശയം.",
+              "Symbolism and Imagery (പ്രതീകങ്ങളും ദൃശ്യബിംബങ്ങളും): മണികൾ, വിള്ളൽ, വെളിച്ചം തുടങ്ങിയ പ്രതീകങ്ങൾ ഗാനത്തിന്റെ സന്ദേശം വ്യക്തമാക്കുന്നു.",
+              "Love and Human Suffering (സ്നേഹവും മനുഷ്യവേദനയും): മനുഷ്യബന്ധങ്ങളും സംഘർഷങ്ങളും ഗാനത്തിലെ ചിന്തകളുമായി ബന്ധിപ്പിക്കുക.",
+              "Themes and Conclusion (പ്രമേയങ്ങളും ഉപസംഹാരവും): പ്രധാന ആശയങ്ങൾ തിരിച്ചറിഞ്ഞ് ഗാനത്തിലെ ഉദാഹരണങ്ങളുമായി ബന്ധപ്പെടുത്തി വിശദീകരിക്കുക."
+            ],
+            "examTip": "Explain how Cohen connects imperfection with hope. Identify the major symbols and discuss their significance. അപൂർണ്ണതയും പ്രത്യാശയും തമ്മിലുള്ള ബന്ധം ഗാനത്തിലെ പ്രതീകങ്ങളിലൂടെ വിശദീകരിക്കുക."
           },
           {
             "chapterNumber": "Chapter 03",
-            "title": "Art as Public Service",
-            "chapter": "Critical Speech & Public Engagement",
-            "duration": "16",
-            "youtubeId": ""
+            "title": "Art as a Social Work",
+            "chapter": "Core summary (English): Amy Morales Lara presents art as a form of social work that supports healing, storytelling, community connection, and social change. പ്രധാന സംഗ്രഹം (മലയാളം): Amy Morales Lara കലையை രോഗശാന്തിക്കും കഥപറച്ചിലിനും സമൂഹബന്ധത്തിനും സാമൂഹിക മാറ്റത്തിനും സഹായിക്കുന്ന സാമൂഹിക പ്രവർത്തനമായി അവതരിപ്പിക്കുന്നു.",
+            "duration": "7:58",
+            "youtubeId": "A9maAWgaovY",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Speaker &amp; Background (പ്രഭാഷകയും പശ്ചാത്തലവും):</strong> Amy Morales Lara is an artist and social worker from the Bronx. ബ്രോങ്ക്സിൽ നിന്നുള്ള ആർട്ടിസ്റ്റും സോഷ്യൽ വർക്കറുമായ Amy Morales Lara-യുടെ അനുഭവങ്ങളും ആശയങ്ങളുമാണ് പ്രഭാഷണത്തിന്റെ അടിസ്ഥാനം.",
+              "<strong>Art, Healing &amp; Storytelling (കല, രോഗശാന്തി, കഥപറച്ചിൽ):</strong> Art can help people work through trauma and express the experiences of communities whose voices are often unheard. ട്രോമകളെ അതിജീവിക്കാനും പലപ്പോഴും കേൾക്കപ്പെടാത്ത സമൂഹങ്ങളുടെ അനുഭവങ്ങൾ പങ്കുവെക്കാനും കല സഹായിക്കുന്നു.",
+              "<strong>The Bronx Project (ബ്രോങ്ക്സ് പദ്ധതി):</strong> Conversations with community artists show how art can become a tool for connection and social change. സമൂഹത്തിലെ കലാകാരന്മാരുമായുള്ള സംഭാഷണങ്ങൾ ബന്ധം വളർത്താനും സാമൂഹിക മാറ്റത്തിനും കലയെ ഉപകരണമാക്കുന്നതെങ്ങനെ എന്ന് വ്യക്തമാക്കുന്നു.",
+              "<strong>Empathetic Curiosity (അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ):</strong> Approaching people and their stories with curiosity and empathy can create meaningful change in health and community work. ജിജ്ഞാസയോടെയും അനുഭാവത്തോടെയും ആളുകളെയും അവരുടെ കഥകളെയും സമീപിക്കുന്നത് ആരോഗ്യപരിപാലനത്തിലും സാമൂഹിക പ്രവർത്തനത്തിലും അർത്ഥവത്തായ മാറ്റമുണ്ടാക്കുന്നു."
+            ],
+            "examTip": "Explain how Amy Morales Lara connects art with healing, storytelling, community practice, and empathetic curiosity. Amy Morales Lara കല, രോഗശാന്തി, കഥപറച്ചിൽ, സാമൂഹിക ഇടപെടൽ, അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ എന്നിവയെ എങ്ങനെ ബന്ധിപ്പിക്കുന്നു എന്ന് വിശദീകരിക്കുക."
           }
         ]
       },
@@ -616,24 +619,51 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "Soft Skills and Workplace Vocabulary",
-            "chapter": "Pronunciation, Fluency & Communication Techniques",
-            "duration": "20",
-            "youtubeId": ""
+            "title": "George Carlin on Soft Language",
+            "chapter": "ജോർജ്ജ് കാർലിൻ · സോഫ്റ്റ് ലാംഗ്വേജ് (George Carlin on Soft Language · Euphemisms & Public Speech)",
+            "duration": "11:37",
+            "youtubeId": "hNLY9H1czbM",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>George Carlin &amp; Critique:</strong> അമേരിക്കൻ സ്റ്റാൻഡ്-അപ്പ് കൊമേഡിയനായ ജോർജ്ജ് കാർലിൻ ആധുനിക സമൂഹത്തിൽ ഭാഷയെ വികലമാക്കുന്നതിനെതിരെ നടത്തിയ വിമർശനാത്മക വിശകലനം.",
+              "<strong>Concept of Soft Language (മയപ്പെടുത്തിയ ഭാഷ):</strong> യഥാർത്ഥ വേദനകളും കഠിന സത്യങ്ങളും മറച്ചുവെക്കാൻ സമൂഹം ഉപയോഗിക്കുന്ന യൂഫെമിസങ്ങളെ (Euphemisms) കാർലിൻ രൂക്ഷമായി വിമർശിക്കുന്നു.",
+              "<strong>Historical Evolution (Shell Shock to PTSD):</strong> ഒന്നാം ലോകമഹായുദ്ധത്തിലെ ലളിതവും മൂർച്ചയുള്ളതുമായ 'Shell Shock' എന്ന പദം പിന്നീട് 'Battle Fatigue', 'Operational Exhaustion', ഒടുവിൽ 'Post-Traumatic Stress Disorder' (PTSD) എന്നിങ്ങനെ മയപ്പെടുത്തിയപ്പോൾ സൈനികരുടെ യാഥാർത്ഥ വേദന മറയ്ക്കപ്പെട്ടു എന്ന് കാർലിൻ വ്യക്തമാക്കുന്നു.",
+              "<strong>Societal Impact:</strong> രാഷ്ട്രീയക്കാരും പരസ്യദാതാക്കളും ജനങ്ങളെ വഞ്ചിക്കാനും സത്യങ്ങൾ ലഘൂകരിക്കാനും സോഫ്റ്റ് ലാംഗ്വേജ് ഒരു ആയുധമായി ഉപയോഗിക്കുന്നു.",
+              "<strong>Exam Tips:</strong> പരീക്ഷയ്ക്ക് Shell Shock-ന്റെ പരിണാമവും, കാർലിന്റെ തത്ത്വചിന്തയും, ആധുനിക ഭരണകൂട ഭാഷയും തമ്മിലുള്ള ബന്ധം വിശദീകരിക്കുക."
+            ],
+            "examTip": "ഷെൽ ഷോക്ക് (Shell Shock) എങ്ങനെയാണ് ഘട്ടംഘട്ടമായി PTSD ആയി മാറിയതെന്നും, ഭാഷയെ മയപ്പെടുത്തുന്നത് സമൂഹത്തിൽ സൃഷ്ടിക്കുന്ന പ്രത്യാഘാതങ്ങളും കാർലിന്റെ പ്രഭാഷണത്തെ അടിസ്ഥാനമാക്കി വിശദീകരിക്കുക."
           },
           {
             "chapterNumber": "Chapter 02",
             "title": "Death of a Salesman",
-            "chapter": "Arthur Miller · Tragedy, American Dream & Character Study",
-            "duration": "24",
-            "youtubeId": ""
+            "chapter": "ആർതർ മില്ലർ · ഡെത്ത് ഓഫ് എ സെയിൽസ്മാൻ (Arthur Miller · Death of a Salesman · Willy Loman & The American Dream)",
+            "duration": "19:02",
+            "youtubeId": "OeMGI2CWtLA",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Arthur Miller &amp; Tragedy:</strong> അമേരിക്കൻ നാടകകൃത്തായ ആർതർ മില്ലറുടെ വിശ്വപ്രസിദ്ധമായ ദുരന്തനാടകം. ഒരു സാധാരണക്കാരന്റെ ജീവിതത്തെ ട്രാജഡിയുടെ കേന്ദ്രമാക്കി മാറ്റിയ മാസ്റ്റർപീസ്.",
+              "<strong>The Fallacy of American Dream:</strong> കഠിനാധ്വാനവും വ്യക്തിപ്രഭാവവും (Being well-liked) കൊണ്ട് മാത്രം വിജയം നേടാമെന്ന മുതലാളിത്ത വ്യാമോഹം വില്ലി ലോമന്റെ ജീവിതത്തെ എങ്ങനെ തകർത്തു എന്ന് പരിശോധിക്കുന്നു.",
+              "<strong>Illusion vs. Reality:</strong> യാഥാർത്ഥ്യത്തെ ഉൾക്കൊള്ളാൻ കഴിയാതെ ഓർമ്മകളിലും ദിവാസ്വപ്നങ്ങളിലും അഭയം തേടുന്ന വില്ലി ലോമൻ (Willy Loman), ഒടുവിൽ കുടുംബത്തിന് ഇൻഷുറൻസ് തുക ലഭിക്കാനായി ആത്മഹത്യ ചെയ്യുന്നു.",
+              "<strong>Family Dynamics:</strong> വില്ലിയുടെ അമിത പ്രതീക്ഷകൾക്ക് ഇരയാകുന്ന മക്കളായ ബിഫ് (Biff), ഹാപ്പി (Happy), സ്നേഹനിധിയായ ഭാര്യ ലിൻഡ (Linda) എന്നിവരുടെ വൈകാരിക സംഘർഷങ്ങൾ.",
+              "<strong>Key Themes:</strong> അന്യവൽക്കരണം (Alienation), ഐഡന്റിറ്റി പ്രതിസന്ധി (Crisis of Identity), ഉപഭോക്തൃ സംസ്കാരത്തിന്റെ ഇരയാകുന്ന മനുഷ്യജീവിതം."
+            ],
+            "examTip": "വില്ലി ലോമന്റെ കഥാപാത്ര നിരൂപണം, അമേരിക്കൻ സ്വപ്നത്തിന്റെ (American Dream) പൊള്ളത്തരം നാടകത്തിൽ എങ്ങനെ ആവിഷ്കരിക്കപ്പെടുന്നു എന്നിവ പരീക്ഷാ ചോദ്യങ്ങളിൽ പ്രധാനമാണ്."
           },
           {
             "chapterNumber": "Chapter 03",
-            "title": "Tear It Down",
-            "chapter": "Persuasive Oratory & Public Debate",
-            "duration": "17",
-            "youtubeId": ""
+            "title": "Rip It Out — Dead Poets Society",
+            "chapter": "പീറ്റർ വെയർ · ഡെഡ് പോയറ്റ്സ് സൊസൈറ്റി (Peter Weir · Dead Poets Society · Rip It Out · Conformity & Non-Conformity)",
+            "duration": "17:35",
+            "youtubeId": "UE333_P1a9A",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Context &amp; Setting:</strong> പീറ്റർ വെയർ സംവിധാനം ചെയ്ത 'ഡെഡ് പോയറ്റ്സ് സൊസൈറ്റി' എന്ന ചിത്രത്തിലെ വിഖ്യാതമായ ക്ലാസ്റൂം രംഗം. വെൽട്ടൺ അക്കാദമിയിലെ കർക്കശമായ യാഥാസ്ഥിതിക വിദ്യാഭ്യാസ രീതി.",
+              "<strong>John Keating's Philosophy:</strong> റോബിൻ വില്യംസ് അവതരിപ്പിച്ച ഇംഗ്ലീഷ് അധ്യാപകൻ ജോൺ കീറ്റിംഗ്, വിദ്യാർത്ഥികളോട് സ്വതന്ത്രമായി ചിന്തിക്കാനും സ്വന്തം ശബ്ദം കണ്ടെത്താനും ആഹ്വാനം ചെയ്യുന്നു ('Carpe Diem' — Seize the day).",
+              "<strong>'Rip It Out' Scene:</strong> ഡോ. ജെ. ഇവാൻസ് പ്രിച്ചാർഡിന്റെ കവിതയെ അളക്കാനുള്ള ഗണിതശാസ്ത്ര ഫോർമുലയുള്ള പുസ്തകത്താളുകൾ കീറിയെറിയാൻ കീറ്റിംഗ് ആവശ്യപ്പെടുന്നത് കേവലം ഒരു തമാശയല്ല, മറിച്ച് വിദ്യാഭ്യാസത്തിലെ ഔപചാരികതയ്ക്കും ചട്ടക്കൂടുകൾക്കുമെതിരെയുള്ള ശക്തമായ പ്രതീകാത്മക ചെറുത്തുനിൽപ്പാണ്.",
+              "<strong>Authenticity &amp; Passion:</strong> കവിതയും കലയും ജീവിതം അളക്കാനുള്ളതല്ല, ജീവിക്കാനുള്ള ആവേശവും മനുഷ്യവികാരങ്ങളും ഉണർത്താനുള്ളതാണെന്ന് രംഗം വ്യക്തമാക്കുന്നു.",
+              "<strong>Exam Points:</strong> പേജുകൾ കീറുന്നതിന്റെ പ്രതീകാത്മകത, വിദ്യാഭ്യാസ സമ്പ്രദായത്തോടുള്ള വിമർശനം എന്നിവ പരീക്ഷയ്ക്ക് വിശകലനം ചെയ്യുക."
+            ],
+            "examTip": "'Rip It Out' എന്ന രംഗത്തിന്റെ പ്രതീകാത്മക അർത്ഥവും, യാഥാസ്ഥിതിക വിദ്യാഭ്യാസ സമ്പ്രദായത്തെ ജോൺ കീറ്റിംഗ് എങ്ങനെ വെല്ലുവിളിക്കുന്നുവെന്നും പരീക്ഷയ്ക്ക് വിശദീകരിക്കുക."
           }
         ]
       },
@@ -663,10 +693,19 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 04",
-            "title": "Optimism",
-            "chapter": "Helen Keller · Philosophical Prose & Resilience",
-            "duration": "18",
-            "youtubeId": ""
+            "title": "Optimism: An Essay",
+            "chapter": "ഹെലൻ കെല്ലർ · ഒപ്റ്റിമിസം (Helen Keller · Optimism: An Essay · Resilience & Inner Light)",
+            "duration": "06:17",
+            "youtubeId": "_S8y6DEMYO0",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Helen Keller's Life:</strong> കാഴ്ചയും കേൾവിയും നഷ്ടപ്പെട്ടെങ്കിലും അസാമാന്യ ഇച്ഛാശക്തിയും പ്രതിഭയും കൊണ്ട് ലോകത്തെ വിസ്മയിപ്പിച്ച ഹെലൻ കെല്ലറുടെ (1880–1968) ആത്മവിശ്വാസം നിറഞ്ഞ പ്രബന്ധം.",
+              "<strong>Optimism as Faith:</strong> 'Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence' — പ്രത്യാശയാണ് നേട്ടങ്ങളിലേക്ക് നയിക്കുന്ന ശക്തിയെന്ന് കെല്ലർ പ്രഖ്യാപിക്കുന്നു.",
+              "<strong>Overcoming Darkness:</strong> ഭൗതികമായ ഇരുട്ടിലും നിശ്ശബ്ദതയിലും അകപ്പെട്ടപ്പോഴും തന്റെ ആന്തരിക വെളിച്ചം കൊണ്ട് ലോകത്തെ സ്നേഹിക്കാനും അറിവ് നേടാനും കെല്ലർക്ക് സാധിച്ചു.",
+              "<strong>Critique of Pessimism:</strong> സകല സൗകര്യങ്ങളും ഉണ്ടായിട്ടും ജീവിതത്തെ നിരാശയോടെ കാണുന്നവരെ ഹെലൻ കെല്ലർ വിമർശിക്കുന്നു. കർമ്മനിരതമായ ശുഭാപ്തിവിശ്വാസമാണ് യഥാർത്ഥ വിജയരഹസ്യം.",
+              "<strong>Exam Points:</strong> ഹെലൻ കെല്ലറുടെ ശുഭാപ്തിവിശ്വാസത്തിന്റെ നിർവചനം, ഇരുട്ടിനെ അതിജീവിച്ച അനുഭവം, സമൂഹത്തിനുള്ള സന്ദേശം എന്നിവ പഠിക്കുക."
+            ],
+            "examTip": "ഹെലൻ കെല്ലർ ശുഭാപ്തിവിശ്വാസത്തെ (Optimism) എങ്ങനെ നിർവ്വചിക്കുന്നുവെന്നും, നിരാശയ്ക്കും നിഷേധാത്മകതയ്ക്കും എതിരെ അവർ നൽകുന്ന വാദങ്ങൾ പരീക്ഷയ്ക്ക് വിശകലനം ചെയ്യുക."
           }
         ]
       },
@@ -704,7 +743,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 8
   },
   "sociology": {
     "name": "Sociology",
@@ -1107,14 +1146,22 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Chapter 01: Buddhism & Epistemology in AI",
             "duration": "35:16",
             "youtubeId": "Y4zhWiirJkc",
-            "language": "English"
+            "language": "Bilingual (English & Malayalam)",
+            "studyPoints": [
+              "<span style=\"color: #0284c7; font-size: 1.08em; font-weight: 600;\">Anatta (No-Self) &amp; The Illusion of a Thinker:</span> ബുദ്ധദർശനത്തിലെ അനാത്മവാദം (<span style=\"color: #0284c7; font-size: 1.08em;\">Anatta / Non-Self</span>) അനുസരിച്ച് ചിന്തകൾക്ക് പിന്നിൽ ശാശ്വതമായ ഒരു 'ഞാൻ' അല്ലെങ്കിൽ ആത്മാവ് (<span style=\"color: #0284c7; font-size: 1.08em;\">Permanent Soul / Substantial Agent</span>) നിലനിൽക്കുന്നില്ല. ദെക്കാർത്തിന്റെ '<span style=\"color: #0284c7; font-size: 1.08em;\">Cogito, ergo sum</span>' (ഞാൻ ചിന്തിക്കുന്നു, അതിനാൽ ഞാനുണ്ട്) എന്ന പാശ്ചാത്യ വാദത്തെ ഇത് നിരാകരിക്കുന്നു. ബോധം എന്നത് പരസ്പരബന്ധിതമായ കാരണങ്ങളാൽ (<span style=\"color: #0284c7; font-size: 1.08em;\">Causal stream of momentary consciousness</span>) തുടർച്ചയായി മാറിക്കൊണ്ടിരിക്കുന്ന ഒരു പ്രവാഹം മാത്രമാണ്.",
+              "<span style=\"color: #0284c7; font-size: 1.08em; font-weight: 600;\">Artificial Intelligence Parallel (Thinking Without a Substantial Mind):</span> ആധുനിക ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിൽ ജൈവികമായ ആത്മാവോ മനസ്സോ (<span style=\"color: #0284c7; font-size: 1.08em;\">Biological soul or subjective thinker</span>) ഇല്ലാതെ തന്നെ അതീവ സങ്കീർണ്ണമായ തർക്കങ്ങളും വിശകലനങ്ങളും പ്രശ്നപരിഹാരങ്ങളും വിജയകരമായി നടക്കുന്നു. അൽഗോരിതങ്ങളും ന്യൂറൽ നെറ്റ്‌വർക്കുകളും ചേർന്ന് നടത്തുന്ന ഈ വിവര വിശകലനം ബുദ്ധദർശനത്തിലെ 'ചിന്തകനില്ലാത്ത ചിന്ത' (<span style=\"color: #0284c7; font-size: 1.08em;\">Thinking without a thinker</span>) എന്ന ദാർശനിക തത്വത്തിന് പ്രായോഗിക തെളിവ് നൽകുന്നു.",
+              "<span style=\"color: #0284c7; font-size: 1.08em; font-weight: 600;\">Pratityasamutpada (Dependent Origination) in Neural Networks:</span> സർവ്വ പ്രതിഭാസങ്ങളും അന്യോന്യമുള്ള കാരണ-കാര്യ ബന്ധങ്ങളാൽ മാത്രം നിലനിൽക്കുന്നു എന്ന പ്രതീത്യസമുത്പാദ തത്വം (<span style=\"color: #0284c7; font-size: 1.08em;\">Dependent Co-arising</span>). കൃത്രിമ ന്യൂറൽ നെറ്റ്‌വർക്കുകളിൽ (<span style=\"color: #0284c7; font-size: 1.08em;\">Artificial Neural Networks</span>) അറിവ് സ്വതന്ത്രമായ ഒരു വസ്തുവല്ല; മറിച്ച് കോടിക്കണക്കിന് ന്യൂറോണുകളുടെ പരസ്പരാശ്രിത കണക്ഷനുകളിലൂടെയും ഭാരങ്ങളിലൂടെയും (<span style=\"color: #0284c7; font-size: 1.08em;\">Weights, Biases &amp; Interdependent Layer Activations</span>) ഉത്ഭവിക്കുന്ന ഒന്നാണ്.",
+              "<span style=\"color: #0284c7; font-size: 1.08em; font-weight: 600;\">The Five Skandhas vs Computational Cognitive Architecture:</span> മനസ്സിനെയും വ്യക്തിത്വത്തെയും ബുദ്ധമതം അഞ്ച് സ്കന്ധങ്ങളായി (<span style=\"color: #0284c7; font-size: 1.08em;\">Five Aggregates / Skandhas</span>) തരംതിരിക്കുന്നു: രൂപം (<span style=\"color: #0284c7; font-size: 1.08em;\">Rupa - Physical hardware &amp; silicon chips</span>), വേദന (<span style=\"color: #0284c7; font-size: 1.08em;\">Vedana - Raw sensory inputs &amp; tensor signals</span>), സംജ്ഞ (<span style=\"color: #0284c7; font-size: 1.08em;\">Samjna - Feature extraction &amp; classification</span>), സംസ്കാരം (<span style=\"color: #0284c7; font-size: 1.08em;\">Samskara - Mathematical weight transformations &amp; latent embeddings</span>), വിജ്ഞാനം (<span style=\"color: #0284c7; font-size: 1.08em;\">Vijnana - Global system state &amp; model execution</span>). ഈ ഘടകങ്ങളുടെ കൂട്ടായ പ്രവർത്തനമാണ് ചിന്തയായി അനുഭവപ്പെടുന്നത്.",
+              "<span style=\"color: #0284c7; font-size: 1.08em; font-weight: 600;\">Dignaga &amp; Dharmakirti's Pramanas (Perception &amp; Inference in AI):</span> ദിങ്നാഗനും ധർമ്മകീർത്തിയും നിർദ്ദേശിച്ച രണ്ട് പ്രമാണങ്ങൾ: പ്രത്യക്ഷം (<span style=\"color: #0284c7; font-size: 1.08em;\">Pratyaksha - Direct non-conceptual sensory perception of Svalaksana</span>), അനുമാനം (<span style=\"color: #0284c7; font-size: 1.08em;\">Anumana - Logical inference &amp; conceptual generalization</span>). എഐയിലെ റോ ഡാറ്റാ ഇൻപുട്ടുകൾ (പിക്സലുകൾ, ഓഡിയോ തരംഗങ്ങൾ) നിർവ്വികല്പ പ്രത്യക്ഷമായും, അപോഹ സിദ്ധാന്തം (<span style=\"color: #0284c7; font-size: 1.08em;\">Apoha Theory - Definition by double negation / distinction</span>) വഴിയുള്ള ലേബലിംഗും പാറ്റേൺ കണ്ടെത്തലും അനുമാനമായും സാദൃശ്യപ്പെടുന്നു."
+            ],
+            "examTip": "<span style=\"color: #0284c7; font-size: 1.08em; font-weight: 600;\">Calicut University FYUGP Question:</span> 'Evaluate how Buddhist Epistemology and the doctrine of Anatta support the computational philosophy of Thinking without a Thinker in AI.' ബുദ്ധമതത്തിലെ അനാത്മവാദവും പഞ്ചസ്കന്ധങ്ങളും ആധുനിക മെഷീൻ ലേണിംഗ് ആർക്കിടെക്ചറും താരതമ്യം ചെയ്ത് ഉത്തരമെഴുതുക."
           },
           {
-            "chapterNumber": "Chapter 05",
-            "title": "എഐയിലെ വിജ്ഞാനശാസ്ത്രപരമായ പ്രതിഫലനങ്ങൾ (Epistemological Implications in AI)",
+            "chapterNumber": "Chapter 02",
+            "title": "എഐയും അറിവിന്റെ വിജ്ഞാനശാസ്ത്രവും (Epistemology of AI)",
             "youtubeId": "uiB6PFp5P_I",
             "duration": "17:26",
-            "chapter": "Chapter 05: Epistemological Implications in Artificial Intelligence",
+            "chapter": "Chapter 02: Epistemology of AI & Machine Knowledge",
             "studyPoints": [
               "വിജ്ഞാനശാസ്ത്രം (Epistemology): അറിവ് (Knowledge), വിശ്വാസം (Belief), ന്യായീകരണം (Justification) എന്നിവയെക്കുറിച്ചുള്ള ദാർശനിക പഠനം.",
               "ബ്ലാക്ക് ബോക്സ് പ്രശ്നം (Black-Box Opacity): ആധുനിക ഡീപ് ലേണിംഗ് മോഡലുകൾ ഒരു തീരുമാനത്തിൽ എങ്ങനെ എത്തിച്ചേരുന്നു എന്നത് മനുഷ്യ മനസ്സിന് പൂർണ്ണമായി കണ്ടെത്താൻ സാധിക്കാത്ത സാഹചര്യം.",
@@ -1122,6 +1169,22 @@ window.VOICE_EXPLANATIONS_DATA = {
               "റിലയബിലിസം (Reliabilism): എഐ തരുന്ന ഉത്തരങ്ങൾ വിശ്വസനീയമായ പ്രക്രിയയിലൂടെ ഉത്പാദിപ്പിക്കപ്പെട്ടതാണെങ്കിൽ അത് 'അറിവ്' ആയി കണക്കാക്കാമോ എന്ന ചോദ്യം."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: 'Can Machine Beliefs be Justified?' - Justification, Truth, and Belief (JTB) മാതൃക മുൻനിർത്തി ഉത്തരമെഴുതുക.",
+            "language": "Malayalam"
+          },
+          {
+            "chapterNumber": "Chapter 05",
+            "title": "എഐയിലെ വിജ്ഞാനശാസ്ത്രപരമായ പ്രതിഫലനങ്ങൾ (Epistemological Implications in AI)",
+            "youtubeId": "aeHwgnDHqr8",
+            "duration": "17:26",
+            "chapter": "Chapter 05: Epistemological Implications in Artificial Intelligence",
+            "studyPoints": [
+              "<strong>വിജ്ഞാനശാസ്ത്രം (Epistemology):</strong> അറിവ് (Knowledge), വിശ്വാസം (Belief), ന്യായീകരണം (Justification) എന്നിവയെക്കുറിച്ചുള്ള ദാർശനിക പഠനവും എഐയിലെ പ്രയോഗവും.",
+              "<strong>ബ്ലാക്ക് ബോക്സ് പ്രശ്നം (Black-Box Opacity):</strong> ആധുനിക ഡീപ് ലേണിംഗ് മോഡലുകളുടെ തീരുമാനമെടുക്കൽ പ്രക്രിയ മനുഷ്യ മനസ്സിന് പൂർണ്ണമായി കണ്ടെത്താൻ സാധിക്കാത്ത സാഹചര്യം.",
+              "<strong>പാശ്ചാത്യ & ഭാരതീയ ജ്ഞാനശാസ്ത്രം:</strong> യുക്തിവാദവും (Rationalism) അനുഭവവാദവും (Empiricism) കൂടാതെ ന്യായ-ബുദ്ധ ദർശനങ്ങളിലെ പ്രമാണ സിദ്ധാന്തങ്ങളും (Pramanas).",
+              "<strong>അപ്രമാണങ്ങളും എഐ ഹലൂസിനേഷനും:</strong> സംശയം (Samsaya), വിപര്യയം (Viparyaya) എന്നിവ എഐ മോഡലുകളിലെ ഹലൂസിനേഷനുമായി താരതമ്യം ചെയ്യുന്നു.",
+              "<strong>റിലയബിലിസം (Reliabilism):</strong> എഐ നൽകുന്ന വിവരങ്ങൾ വിശ്വസനീയമായ പ്രക്രിയയിലൂടെ ഉത്പാദിപ്പിക്കപ്പെട്ടതാണെങ്കിൽ അത് യഥാർത്ഥ 'അറിവ്' ആയി കണക്കാക്കാമോ എന്ന സമഗ്ര വിശകലനം."
+            ],
+            "examTip": "Calicut University FYUGP ചോദ്യം: 'Can Machine Beliefs be Justified?' - Justification, Truth, and Belief (JTB) മാതൃകയും പാശ്ചാത്യ-ഭാരതീയ ജ്ഞാനശാസ്ത്ര പാരമ്പര്യങ്ങളും മുൻനിർത്തി ഉത്തരമെഴുതുക.",
             "language": "Malayalam"
           },
           {
