@@ -3,7 +3,7 @@ export {StudyHelperQuota} from './study-helper-backend.js';
 import {handleUniversityNotices} from './university-notices-backend.js';
 import {handleWhatsAppWebhook, handleWhatsAppList} from './whatsapp-webhook-backend.js';
 const CHAT_PATH = "/api/chat";
-const TRACKER_SCRIPT = "(()=>{let last=\"\";const labels={top:\"Overview\",subjects:\"Semester subjects\",tests:\"Practice tests\",\"ai-study\":\"AI Study Helper\",support:\"Support\"};function decode(value){try{return decodeURIComponent(value)}catch{return value}}function title(value){return value.replace(/[-_]+/g,\" \").split(\" \").map(function(word){return word?word.charAt(0).toUpperCase()+word.slice(1):\"\"}).join(\" \")}function currentSection(){const path=location.pathname||\"/\";const hash=decode((location.hash||\"\").slice(1));return labels[hash]||(hash?title(hash):(path===\"/\"||path===\"/index.html\"?\"Home\":title(path.split(\"/\").filter(Boolean).map(decode).join(\" / \"))))}function record(){const path=location.pathname||\"/\";const hash=decode((location.hash||\"\").slice(1));const key=path+\"#\"+hash;if(key===last)return;last=key;const label=currentSection();fetch(\"/api/traffic/section\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({path:path,section:label}),keepalive:true}).catch(function(){});}window.addEventListener(\"hashchange\",record);window.addEventListener(\"pageshow\",record);window.addEventListener(\"popstate\",record);record();function livePresence(active){if(document.querySelector(\".hub-owner-traffic-control\"))return;let id=\"\";try{id=sessionStorage.getItem(\"hub_live_visitor\")||\"\";if(!id){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2);sessionStorage.setItem(\"hub_live_visitor\",id)}}catch{id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2)}fetch(\"/api/traffic/presence\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({visitorId:id,path:location.pathname||\"/\",section:currentSection(),active:active!==false}),keepalive:true}).catch(function(){})}livePresence(true);setInterval(function(){if(!document.hidden)livePresence(true)},25000);document.addEventListener(\"visibilitychange\",function(){if(!document.hidden)livePresence(true)});window.addEventListener(\"pagehide\",function(){livePresence(false)})})();";
+const TRACKER_SCRIPT = "(()=>{let last=\"\";function decode(v){try{return decodeURIComponent(v)}catch(e){return v}}function title(v){return v.replace(/[-_]+/g,\" \").split(\" \").map(function(w){return w?w.charAt(0).toUpperCase()+w.slice(1):\"\"}).join(\" \")}function getDetailedActivity(){const path=location.pathname||\"/\";const search=location.search||\"\";const hash=decode((location.hash||\"\").slice(1));const params=new URLSearchParams(search);if(path.indexOf(\"voice-explanation\")!==-1){const playing=document.querySelector(\".chapter-card.playing\");const stickyBar=document.getElementById(\"sticky-audio-bar\");const stickyTitleEl=document.getElementById(\"sticky-title\");const stickyTitle=(stickyTitleEl?stickyTitleEl.textContent:\"\").trim();const hasSticky=stickyBar&&stickyBar.style.display!==\"none\"&&stickyTitle&&stickyTitle.indexOf(\"Playing lecture...\")===-1;if(playing||hasSticky){let t=\"\";if(playing){const ct=playing.querySelector(\".card-title\");if(ct)t=ct.textContent.trim()}if(!t&&hasSticky)t=stickyTitle;if(!t&&document.title&&document.title.indexOf(\"|\")!==-1){t=document.title.split(\"|\")[0].trim()}const isVid=playing&&(playing.querySelector(\"iframe\")||playing.querySelector(\"video\"));const prefix=isVid?\"\u25b6\ufe0f Watching: \":\"\ud83c\udfa7 Hearing: \";if(t)return(prefix+t).slice(0,110)}const heroSubj=document.getElementById(\"hero-subject-name\");let subj=heroSubj?heroSubj.textContent.trim():\"\";if(subj&&subj.toLowerCase().indexOf(\"loading\")!==-1)subj=\"\";if(!subj){const qSubj=params.get(\"subject\");if(qSubj)subj=title(qSubj)}if(subj){subj=subj.replace(/^[^\\w\\s\\u0D00-\\u0D7F]+/,\"\").trim();return(\"\ud83c\udfa7 Voice: \"+subj).slice(0,90)}return\"\ud83c\udfa7 Voice Explanations\"}if(path.indexOf(\"study-guide-reader\")!==-1){const badge=document.getElementById(\"activeDocBadge\");let docTitle=badge?badge.textContent.trim():\"\";if(!docTitle||docTitle===\"Study Guide\"){docTitle=params.get(\"title\")||\"\"}if(!docTitle){const f=params.get(\"file\");if(f)docTitle=title(f.split(\"/\").pop().replace(/\\.pdf$/i,\"\"))}if(!docTitle&&document.title){docTitle=document.title.replace(/[\u00b7|].*$/,\"\").trim()}const isSpeaking=window.speechSynthesis&&window.speechSynthesis.speaking;const prefix=isSpeaking?\"\ud83d\udd0a Hearing Read-Aloud: \":\"\ud83d\udcd6 Reading: \";return(prefix+(docTitle||\"Study Guide\")).slice(0,110)}if(path.indexOf(\"test\")!==-1||path.indexOf(\"mcq\")!==-1||path.indexOf(\"quiz\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcdd \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path.indexOf(\"reading\")!==-1||path.indexOf(\"-pdf\")!==-1||path.indexOf(\"notes\")!==-1||path.endsWith(\".pdf.html\")||path.indexOf(\"Companion\")!==-1||path.indexOf(\"Bilingual\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcd6 \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path===\"/\"||path===\"/index.html\"){const labels={top:\"\ud83c\udfe0 Overview\",subjects:\"\ud83d\udcda Semester subjects\",tests:\"\ud83d\udcdd Practice tests\",\"ai-study\":\"\ud83e\udd16 AI Study Helper\",notices:\"\ud83d\udce2 Calicut Univ Notices\",support:\"\ud83d\udcac Support\"};if(labels[hash])return labels[hash];if(hash)return\"\ud83c\udfe0 Home \u00b7 \"+title(hash);return\"\ud83c\udfe0 Hub Home\"}if(document.title&&document.title.length>2){const clean=document.title.replace(/[\u00b7|].*$/,\"\").trim();if(clean&&clean.toLowerCase().indexOf(\"academic hub\")===-1&&clean.toLowerCase().indexOf(\"loading\")===-1){return clean.slice(0,90)}}return title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")).slice(0,90)||\"Academic Hub Portal\"}function record(force){const path=location.pathname||\"/\";const label=getDetailedActivity();const key=path+\"::\"+label;if(!force&&key===last)return;last=key;fetch(\"/api/traffic/section\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({path:path,section:label}),keepalive:true}).catch(function(){})}window.addEventListener(\"hashchange\",function(){record()});window.addEventListener(\"pageshow\",function(){setTimeout(record,250)});window.addEventListener(\"popstate\",function(){record()});window.addEventListener(\"play\",function(){setTimeout(function(){record(true)},150)},true);window.addEventListener(\"pause\",function(){setTimeout(function(){record(true)},150)},true);document.addEventListener(\"click\",function(e){if(e.target&&e.target.closest&&e.target.closest(\".btn-play-voice,.vpp-btn-pause,.vpp-skip-btn,.subj-tab-btn,#voicePlayBtn,#voiceStopBtn,.welcome-ch-btn,.drawer-subject-modules a,.drawer-subject-header\")){setTimeout(function(){record(true)},350)}},{passive:true});const titleEl=document.querySelector(\"title\");if(titleEl&&window.MutationObserver){new MutationObserver(function(){setTimeout(function(){record()},200)}).observe(titleEl,{subtree:true,characterData:true,childList:true})}setTimeout(record,350);function livePresence(active){if(document.querySelector(\".hub-owner-traffic-control\"))return;let id=\"\";try{id=sessionStorage.getItem(\"hub_live_visitor\")||\"\";if(!id){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2);sessionStorage.setItem(\"hub_live_visitor\",id)}}catch(e){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2)}fetch(\"/api/traffic/presence\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({visitorId:id,path:location.pathname||\"/\",section:getDetailedActivity(),active:active!==false}),keepalive:true}).catch(function(){})}setTimeout(function(){livePresence(true)},400);setInterval(function(){if(!document.hidden)livePresence(true)},25000);document.addEventListener(\"visibilitychange\",function(){if(!document.hidden)livePresence(true)});window.addEventListener(\"pagehide\",function(){livePresence(false)})})();";
 const OWNER_LIVE_SCRIPT = "(()=>{const control=document.getElementById('hub-live-control'),panel=document.getElementById('hub-live-panel'),count=document.getElementById('hub-live-count'),summary=document.getElementById('hub-live-summary'),pages=document.getElementById('hub-live-pages'),close=document.getElementById('hub-live-close');if(!control||!panel||!count||!summary||!pages||!close)return;function displayPage(item){const path=String(item.path||'/');const section=String(item.section||'').trim();if(path==='/'||path==='/index.html')return section&&section!=='Home'&&section!=='Overview'?'Home · '+section:'Home page';return section||path}async function update(){try{const response=await fetch('/api/admin/live-visitors',{cache:'no-store',credentials:'same-origin'});if(response.status===401){count.textContent='—';summary.textContent='Owner sign-in required. Sign in to the owner dashboard and reload this page.';pages.replaceChildren();return}const data=await response.json();if(!response.ok)throw Error(data.error||'Could not load live visitors.');const active=Number(data.active)||0;count.textContent=String(active);summary.textContent=active+' active tab'+(active===1?'':'s')+' seen in the last 90 seconds';pages.replaceChildren();const entries=Array.isArray(data.pages)?data.pages:[];if(!active||!entries.length){const empty=document.createElement('li');empty.className='hub-live-empty';empty.textContent='No active visitors right now.';pages.append(empty);return}for(const item of entries){const row=document.createElement('li');const path=document.createElement('span');path.textContent=displayPage(item);const total=document.createElement('strong');const visitors=Number(item.count)||0;total.textContent=visitors+' tab'+(visitors===1?'':'s');row.append(path,total);pages.append(row)}}catch(error){summary.textContent=error.message||'Could not load live visitors.'}}function setOpen(open){panel.hidden=!open;control.setAttribute('aria-expanded',String(open));if(open)update()}control.addEventListener('click',()=>setOpen(panel.hidden));close.addEventListener('click',()=>setOpen(false));document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden){setOpen(false);control.focus()}});update();setInterval(()=>{if(!document.hidden)update()},15000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update()})})();";
 const MAX_NAME = 32;
 const MAX_MESSAGE = 500;
@@ -105,6 +105,9 @@ export default {
                    request.headers.get("x-forwarded-proto") === "http" || 
                    cfVisitor.includes('"scheme":"http"');
     const isWww = url.hostname.toLowerCase() === "www.academichubfaiz.in";
+    if (url.pathname.includes("${") || url.pathname.includes("$%7B") || url.pathname.includes("%24%7B")) {
+      return Response.redirect("https://academichubfaiz.in/", 301);
+    }
     if (isHttp || isWww) {
       url.protocol = "https:";
       if (isWww) url.hostname = "academichubfaiz.in";
@@ -194,7 +197,7 @@ export default {
       if (Number(request.headers.get("Content-Length")) > 2048) return json({error:"Request too large."},413);
       let input; try { input = await request.json(); } catch { return json({error:"Invalid request."},400); }
       const path=typeof input.path==="string" ? input.path.slice(0,160) : "";
-      const section=cleanText(input.section,80);
+      const section=cleanText(input.section,140);
       if (!path.startsWith("/") || path.startsWith("//") || !section) return json({error:"Invalid section."},400);
       const ip=request.headers.get("CF-Connecting-IP") || "Unavailable";
       return room.fetch(new Request("https://internal/internal/section",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({ip,path,section})}));
@@ -209,7 +212,7 @@ export default {
       if (!input || typeof input!=="object" || Array.isArray(input)) return json({error:"Invalid presence."},400);
       const visitorId=typeof input.visitorId==="string" ? input.visitorId.slice(0,80) : "";
       const path=typeof input.path==="string" ? input.path.slice(0,160) : "";
-      const section=cleanText(input.section,80);
+      const section=cleanText(input.section,140);
       if (!/^[a-zA-Z0-9-]{16,80}$/.test(visitorId) || !path.startsWith("/") || path.startsWith("//")) return json({error:"Invalid presence."},400);
       const active=input.active!==false;
       return room.fetch(new Request("https://internal/internal/presence",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({visitorId,path,section,active})}));
@@ -561,7 +564,7 @@ export class StudyHubChat {
       let entry; try { entry = await request.json(); } catch { return json({error:"Invalid request."},400); }
       const ip=typeof entry.ip==="string" ? entry.ip.slice(0,64) : "Unavailable";
       const page=typeof entry.path==="string" ? entry.path.slice(0,160) : "";
-      const section=cleanText(entry.section,80);
+      const section=cleanText(entry.section,140);
       if (!page.startsWith("/") || page.startsWith("//") || !section) return json({error:"Invalid section."},400);
       const rate=this.sectionRates.get(ip) || [];
       const recent=rate.filter(time=>time>now-60*1000);
@@ -584,7 +587,7 @@ export class StudyHubChat {
       let entry; try { entry = await request.json(); } catch { return json({error:"Invalid request."},400); }
       const visitorId=typeof entry.visitorId==="string" ? entry.visitorId : "";
       const page=typeof entry.path==="string" ? entry.path.slice(0,160) : "";
-      const section=cleanText(entry.section,80);
+      const section=cleanText(entry.section,140);
       if (!/^[a-zA-Z0-9-]{16,80}$/.test(visitorId) || !page.startsWith("/") || page.startsWith("//")) return json({error:"Invalid presence."},400);
       const key=await digest(visitorId);
       const saved=(await this.state.storage.get("liveVisitors")) || {};
@@ -880,7 +883,7 @@ function adminPage(authorized) {
             <th style="min-width:120px">Country</th>
             <th style="min-width:145px">Location & ISP</th>
             <th style="min-width:130px">Device & Source</th>
-            <th style="min-width:150px">Current Page</th>
+            <th style="min-width:170px">Current Page &amp; Activity</th>
             <th style="min-width:160px">Section Trail</th>
           </tr>
         </thead>
@@ -1394,6 +1397,44 @@ tr:hover td { background: rgba(56, 189, 248, 0.07); }
   border-radius: 6px;
   word-break: break-all;
 }
+.activity-pill-sub {
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 5px;
+  line-height: 1.35;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 260px;
+  word-break: break-word;
+  padding: 3px 7px;
+  border-radius: 6px;
+}
+.activity-hearing {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+}
+.activity-watching {
+  color: #fb7185;
+  background: rgba(251, 113, 133, 0.12);
+  border: 1px solid rgba(251, 113, 133, 0.28);
+}
+.activity-reading {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+}
+.activity-test {
+  color: #fde047;
+  background: rgba(253, 224, 71, 0.12);
+  border: 1px solid rgba(253, 224, 71, 0.28);
+}
+.activity-general {
+  color: #cbd5e1;
+  background: rgba(148, 163, 184, 0.10);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+}
 
 /* DETAILS & SECTIONS IN TABLES */
 details.section-details summary, details.popular-details summary {
@@ -1552,6 +1593,25 @@ details.section-details summary:hover, details.popular-details summary:hover {
     let liveData = { active: 0, pages: [] };
     let trafficPage = 1;
 
+    function getPathFallbackActivity(path) {
+      if (!path || path === '/' || path === '/index.html') return '🏠 Hub Home';
+      const p = path.toLowerCase();
+      if (p.includes('voice-explanation')) return '🎧 Voice Explanations';
+      if (p.includes('study-guide-reader')) return '📖 Study Guide Reader';
+      if (p.includes('ktet-500-mcq-test')) return '📝 KTET 500 MCQ Test';
+      if (p.includes('sociology-without-timer') || p.includes('sociology-test') || p.includes('sociology_test')) return '📝 Sociology Practice Test';
+      if (p.includes('economictest')) return '📝 Economics MCQ Test';
+      if (p.includes('mal-pdf')) return '📖 Malayalam Study Notes';
+      if (p.includes('arabic-reading')) return '📖 Arabic Reading Room';
+      if (p.includes('hindi-reading')) return '📖 Hindi Reading Room';
+      if (p.includes('hist-reading')) return '📖 History Reading Room';
+      if (p.includes('econ-reading')) return '📖 Economics Reading Room';
+      if (p.includes('ai-reading')) return '📖 AI & Philosophy Reading';
+      if (p.includes('about')) return 'ℹ️ About Hub';
+      if (p.includes('contact')) return '📬 Contact';
+      return '📄 ' + path.replace(/^\//, '').replace(/\.html$/, '').replace(/[-_]+/g, ' ');
+    }
+
     function formatShortIP(ip) {
       if (!ip || typeof ip !== "string") return "Unknown";
       if (ip.includes(":") && ip.length > 18) {
@@ -1677,9 +1737,33 @@ details.section-details summary:hover, details.popular-details summary:hover {
         tdDev.append(devDiv, srcDiv);
         tr.append(tdDev);
 
-        // Current Page
+        // Current Page & Activity
         const tdPage = document.createElement('td');
-        tdPage.innerHTML = '<span class="path-pill">' + (v.path || '/') + '</span>';
+        const pathDiv = document.createElement('div');
+        pathDiv.innerHTML = '<span class="path-pill">' + (v.path || '/') + '</span>';
+        tdPage.append(pathDiv);
+
+        let act = v.latestSection || (Array.isArray(v.sections) && v.sections.length > 0 ? v.sections[0].name : '');
+        if (!act) {
+          act = getPathFallbackActivity(v.path);
+        }
+
+        if (act) {
+          const actDiv = document.createElement('div');
+          let actClass = 'activity-general';
+          if (act.includes('Hearing') || act.includes('🎧') || act.includes('🔊') || act.includes('🎙️')) {
+            actClass = 'activity-hearing';
+          } else if (act.includes('Watching') || act.includes('▶️')) {
+            actClass = 'activity-watching';
+          } else if (act.includes('Reading') || act.includes('📖') || act.includes('📄')) {
+            actClass = 'activity-reading';
+          } else if (act.includes('Test') || act.includes('MCQ') || act.includes('Quiz') || act.includes('📝')) {
+            actClass = 'activity-test';
+          }
+          actDiv.className = 'activity-pill-sub ' + actClass;
+          actDiv.textContent = act;
+          tdPage.append(actDiv);
+        }
         tr.append(tdPage);
 
         // Section Trail
@@ -2142,7 +2226,7 @@ function groupTrafficByIP(records, sectionEvents = []) {
   for (const record of records.slice().sort((a,b)=>b.time-a.time)) {
     let group = groups.get(record.ip);
     if (!group) {
-      group = {...record,visits:0,sections:new Map()};
+      group = {...record,visits:0,sections:new Map(),latestSection:"",latestSectionTime:0};
       groups.set(record.ip,group);
     }
     group.visits++;
@@ -2157,15 +2241,23 @@ function groupTrafficByIP(records, sectionEvents = []) {
   for (const event of sectionEvents) {
     let group=groups.get(event.ip);
     if (!group) {
-      group={ip:event.ip,time:event.time,path:event.path,visits:0,country:"XX",region:"",city:"",isp:"",device:"",ref:"",sections:new Map()};
+      group={ip:event.ip,time:event.time,path:event.path,visits:0,country:"XX",region:"",city:"",isp:"",device:"",ref:"",sections:new Map(),latestSection:"",latestSectionTime:0};
       groups.set(event.ip,group);
     }
     if (event.time>group.time) { group.time=event.time; group.path=event.path; }
+    if (event.time>=group.latestSectionTime) {
+      group.latestSectionTime=event.time;
+      group.latestSection=event.section;
+    }
     const section=group.sections.get(event.section) || {name:event.section,visits:0,lastVisit:0};
     section.visits++;
     section.lastVisit=Math.max(section.lastVisit,event.time);
     group.sections.set(event.section,section);
   }
-  return Array.from(groups.values()).map(group=>({...group,sections:Array.from(group.sections.values()).sort((a,b)=>b.lastVisit-a.lastVisit)})).sort((a,b)=>b.time-a.time);
+  return Array.from(groups.values()).map(group=>({
+    ...group,
+    latestSection: group.latestSection || (group.sections.size ? Array.from(group.sections.values()).sort((a,b)=>b.lastVisit-a.lastVisit)[0].name : ""),
+    sections:Array.from(group.sections.values()).sort((a,b)=>b.lastVisit-a.lastVisit)
+  })).sort((a,b)=>b.time-a.time);
 }
 

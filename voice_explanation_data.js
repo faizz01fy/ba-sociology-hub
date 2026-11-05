@@ -134,7 +134,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "പുരാവസ്തു കേന്ദ്രങ്ങൾ (ഇടയ്ക്കൽ, മറയൂർ, പോർക്കുളം, കൊടുങ്ങല്ലൂർ, പട്ടണം), പൈതൃക നടത്തം & ഫീൽഡ് റിപ്പോർട്ട്",
             "duration": "Syllabus Guide",
             "thumbnail": "https://images.unsplash.com/photo-1695964744922-c7d01b4761cb?auto=format&fit=crop&w=560&h=315&q=70",
-            "youtubeId": "",
+            "youtubeId": "GyquVMAUNtQ",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -163,7 +163,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ",
             "chapter": "കലാമണ്ഡലം ഹൈദരാലി · സംഗ്രഹം, നോട്ടുകൾ & ചർച്ച",
             "duration": "15",
-            "youtubeId": ""
+            "youtubeId": "QTHt_P7RIA0"
           },
           {
             "chapterNumber": "Chapter 02",
@@ -359,6 +359,23 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Empathetic Curiosity (അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ): Approaching people and their stories with curiosity and empathy can create meaningful change in health and community work. ജിജ്ഞാസയോടെയും അനുഭാവത്തോടെയും ആളുകളെയും അവരുടെ കഥകളെയും സമീപിക്കുന്നത് ആരോഗ്യപരിപാലനത്തിലും സാമൂഹിക പ്രവർത്തനത്തിലും അർത്ഥവത്തായ മാറ്റമുണ്ടാക്കുന്നു."
             ],
             "examTip": "Explain how Amy Morales Lara connects art with healing, storytelling, community practice, and empathetic curiosity. Amy Morales Lara കല, രോഗശാന്തി, കഥപറച്ചിൽ, സാമൂഹിക ഇടപെടൽ, അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ എന്നിവയെ എങ്ങനെ ബന്ധിപ്പിക്കുന്നു എന്ന് വിശദീകരിക്കുക."
+          },
+          {
+            "chapterNumber": "Chapter 03 (English Edition)",
+            "title": "The Art of Liberation: Why Social Work Needs a Paintbrush",
+            "chapter": "English cinematic overview · Amy Morales Lara · Art as a Social Work · Context, themes and healing practices",
+            "duration": "14:15",
+            "thumbnail": "https://i.ytimg.com/vi/6Pf0IvRKieI/hqdefault.jpg",
+            "youtubeId": "6Pf0IvRKieI",
+            "videoUrl": null,
+            "language": "English",
+            "studyPoints": [
+              "<strong>Speaker & Background:</strong> Amy Morales Lara, artist and social worker from the Bronx, presenting art as an instrument of community healing and social advocacy.",
+              "<strong>Art, Healing & Storytelling:</strong> How creative expression enables marginalized voices to articulate trauma and bridge emotional divides.",
+              "<strong>Empathetic Curiosity:</strong> Cultivating deep curiosity and active empathy across clinical and grassroots social work.",
+              "<strong>Exam Connection:</strong> Aligned with Calicut University ENG1B01 Listening Skills study units."
+            ],
+            "examTip": "Explain how Amy Morales Lara links art with healing, narrative storytelling, and empathetic curiosity for 10-mark examination essays."
           }
         ]
       },
@@ -412,6 +429,40 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Exam Points: പേജുകൾ കീറുന്നതിന്റെ പ്രതീകാത്മകത, വിദ്യാഭ്യാസ സമ്പ്രദായത്തോടുള്ള വിമർശനം എന്നിവ പരീക്ഷയ്ക്ക് വിശകലനം ചെയ്യുക."
             ],
             "examTip": "'Rip It Out' എന്ന രംഗത്തിന്റെ പ്രതീകാത്മക അർത്ഥവും, യാഥാസ്ഥിതിക വിദ്യാഭ്യാസ സമ്പ്രദായത്തെ ജോൺ കീറ്റിംഗ് എങ്ങനെ വെല്ലുവിളിക്കുന്നുവെന്നും പരീക്ഷയ്ക്ക് വിശദീകരിക്കുക."
+          },
+          {
+            "chapterNumber": "Chapter 01 (English Edition)",
+            "title": "The Math of Euphemisms: Adding Syllables, Subtracting Humanity",
+            "chapter": "English cinematic overview · George Carlin on Soft Language · Euphemisms, public deception and rhetoric",
+            "duration": "11:37",
+            "thumbnail": "https://i.ytimg.com/vi/TwBZX7OpWog/hqdefault.jpg",
+            "youtubeId": "TwBZX7OpWog",
+            "videoUrl": null,
+            "language": "English",
+            "studyPoints": [
+              "<strong>George Carlin's Critique:</strong> A penetrating examination of how institutional rhetoric softens language to conceal harsh realities.",
+              "<strong>Evolution from Shell Shock to PTSD:</strong> The historical progression from direct terminology (Shell Shock) to clinical bureaucratization (PTSD).",
+              "<strong>Linguistic Sanitization:</strong> How bureaucratic and commercial jargon distances society from genuine human suffering.",
+              "<strong>Exam Connection:</strong> Calicut University ENG1B01 Speaking Skills and critical rhetorical evaluation."
+            ],
+            "examTip": "Analyze the transition from Shell Shock to PTSD and explain Carlin's critique of contemporary institutional euphemisms."
+          },
+          {
+            "chapterNumber": "Chapter 02 (English Edition)",
+            "title": "More Worth Dead Than Alive: The Flawed American Dream",
+            "chapter": "English cinematic overview · Arthur Miller's Death of a Salesman · Willy Loman & The Capitalist Tragedy",
+            "duration": "19:02",
+            "thumbnail": "https://i.ytimg.com/vi/0SBovHC5y4s/hqdefault.jpg",
+            "youtubeId": "0SBovHC5y4s",
+            "videoUrl": null,
+            "language": "English",
+            "studyPoints": [
+              "<strong>Tragedy of the Common Man:</strong> Arthur Miller's depiction of ordinary struggle elevated to classic tragic proportions.",
+              "<strong>The Mirage of the American Dream:</strong> The devastating illusion that popularity and personality guarantee capitalist fulfillment.",
+              "<strong>Illusion vs. Reality:</strong> Willy Loman's psychological collapse, internal delusions, and tragic insurance gambit.",
+              "<strong>Family Dynamics:</strong> The emotional strain between Willy, Linda, and sons Biff and Happy."
+            ],
+            "examTip": "Critically assess how Willy Loman exemplifies the collapse of the American Dream in Arthur Miller's tragedy."
           }
         ]
       },
@@ -423,7 +474,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "Reading Strategies & Critical Comprehension",
             "chapter": "Skimming, Scanning, Inference & Analytical Reading",
             "duration": "16",
-            "youtubeId": ""
+            "youtubeId": "9aLkAUYFWF8"
           },
           {
             "chapterNumber": "Chapter 02",
@@ -568,7 +619,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഗവേഷണ രൂപരേഖയും ഘട്ടങ്ങളും (Research Design & Methods in Sociology)",
             "chapter": "Research Design · Hypothesis, Sampling & Data Collection",
             "duration": "20",
-            "youtubeId": "",
+            "youtubeId": "WD2oiqN3tBI",
             "studyPoints": [
               "ഗവേഷണ രൂപരേഖ (Research Design): ഡാറ്റ ശേഖരണത്തിനും വിശകലനത്തിനുമുള്ള ആസൂത്രിത മാസ്റ്റർ പ്ലാൻ.",
               "പ്രധാന ഘട്ടങ്ങൾ: പ്രശ്ന നിർണയം, സാഹിത്യ അവലോകനം, ഹൈപ്പോതിസിസ് രൂപീകരണം, സാമ്പിളിംഗ്, ഡാറ്റ ശേഖരണം."
@@ -580,7 +631,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ (Quantitative & Qualitative Methodologies)",
             "chapter": "Methodological Approaches · Positivist vs Interpretive Research",
             "duration": "22",
-            "youtubeId": "",
+            "youtubeId": "mUahYKgz1QU",
             "studyPoints": [
               "ഗുണാത്മക രീതികൾ (Qualitative): അനുഭവങ്ങൾ, വികാരങ്ങൾ, സംസ്കാരം എന്നിവയെ ആഴത്തിൽ പഠിക്കുന്ന രീതി.",
               "അളവ്ശാസ്ത്ര രീതികൾ (Quantitative): സംഖ്യാപരമായ വിവരങ്ങളും സ്റ്റാറ്റിസ്റ്റിക്കൽ വിശകലനങ്ങളും."
@@ -592,7 +643,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "നിരീക്ഷണ രീതികളും ഗവേഷണ ധാർമ്മികതയും (Observation Techniques & Ethics in Social Research)",
             "chapter": "Participant Observation & Value Neutrality (Max Weber)",
             "duration": "19",
-            "youtubeId": "",
+            "youtubeId": "IuYDyExDjuw",
             "studyPoints": [
               "പങ്കാളിത്ത നിരീക്ഷണം (Participant Observation): പഠന വിധേയമാകുന്ന സമൂഹത്തിന്റെ ഭാഗമായി നിന്ന് വിവരങ്ങൾ ശേഖരിക്കുന്ന രീതി (Bronislaw Malinowski).",
               "മൂല്യ നിഷ്പക്ഷത (Value Neutrality - Max Weber): ഗവേഷകന്റെ സ്വന്തം മുൻവിധികളും താല്പര്യങ്ങളും പഠനത്തെ ബാധിക്കരുത്."
@@ -682,7 +733,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "മനുഷ്യനെ മനുഷ്യനാക്കുന്ന സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary, Secondary & Reference Groups)",
             "chapter": "Primary vs Secondary Groups · Cooley's Theory & Reference Groups",
             "duration": "21",
-            "youtubeId": "jedN-7Z72Fk",
+            "youtubeId": "VDASZEsOqj0",
             "studyPoints": [
               "സാമൂഹിക ഗ്രൂപ്പ് (Social Group): പരസ്പര ബന്ധവും പങ്കിട്ട മൂല്യങ്ങളും 'ഞങ്ങൾ' എന്ന ഐക്യബോധവും (We-feeling) ഉള്ള രണ്ടോ അതിലധികമോ വ്യക്തികളുടെ കൂട്ടായ്മ.",
               "പ്രാഥമിക ഗ്രൂപ്പുകൾ (Primary Groups - Charles Horton Cooley): ചെറിയ വലിപ്പം, മുഖാമുഖ സമ്പർക്കം (Face-to-face), വൈകാരിക അടുപ്പം (ഉദാ: കുടുംബം, ബാല്യകാല സൗഹൃദം).",
@@ -710,7 +761,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ: തരങ്ങളും പ്രക്രിയകളും (Types of Social Interaction: Cooperation, Competition, Conflict, Accommodation, Assimilation)",
             "chapter": "Types of Social Interaction · Park & Burgess, Cooley, Mazumdar, Simmel & Baldwin Analysis",
             "duration": "14:27",
-            "youtubeId": "UoCXp0cj_1g",
+            "youtubeId": "TN8LqpBZCGQ",
             "thumbnail": "/thumbnails/sociology_sem1_mod3/thumbnail.png",
             "language": "Malayalam",
             "studyPoints": [
@@ -827,7 +878,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "History & Foundations of Artificial Intelligence",
             "chapter": "Dartmouth Conference, Cybernetics & Early Paradigms",
             "duration": "18",
-            "youtubeId": "",
+            "youtubeId": "07BduoaqKYA",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
               "ഡാർട്ട്മൗത്ത് കോൺഫറൻസ് (Dartmouth Conference, 1956): ജോൺ മക്കാർത്തി (John McCarthy), മാർവിൻ മിൻസ്കി (Marvin Minsky) തുടങ്ങിയവർ ചേർന്ന് 'ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ്' എന്ന ശാഖയ്ക്ക് ഔദ്യോഗികമായി തുടക്കം കുറിച്ചു.",
@@ -1575,7 +1626,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "Applied Ethics: From Casuistry to Real-World Dilemmas",
             "chapter": "Casuistry, Professional Ethics, Bioethics & Tech Ethics",
             "duration": "14:20",
-            "youtubeId": "6x5y4ZW2UA0",
+            "youtubeId": "9MW6gIEwWtU",
             "audioUrl": "",
             "language": "English",
             "studyPoints": [
@@ -1678,7 +1729,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "Cardinal vs Ordinal Utility Analysis",
             "chapter": "Law of Diminishing Marginal Utility & Equi-Marginal Utility",
             "duration": "21",
-            "youtubeId": ""
+            "youtubeId": "1aWH6DRymg8"
           },
           {
             "chapterNumber": "Unit 05",
@@ -1692,7 +1743,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "Budget Constraint & Consumer Equilibrium",
             "chapter": "Tangency Conditions and Corner Solutions",
             "duration": "20",
-            "youtubeId": ""
+            "youtubeId": "z8tbT2SiepA"
           }
         ]
       },
