@@ -563,7 +563,11 @@ export class StudyHubChat {
       const entry = await request.json();
       let records = (await this.state.storage.get("traffic")) || [];
       records = records.filter(r=>r.time > now - RETENTION_MS);
-      await this.countVisit(now, String(entry.ip).slice(0,64), records);
+      try {
+        await this.countVisit(now, String(entry.ip).slice(0,64), records);
+      } catch (cvErr) {
+        console.error("internal/visit countVisit warning:", cvErr);
+      }
       records.push({time:now,ip:String(entry.ip).slice(0,64),path:String(entry.path).slice(0,200),country:typeof entry.country === "string" && /^(?:[A-Z]{2}|T1)$/.test(entry.country) ? entry.country : "XX",region:cleanText(entry.region,100),city:cleanText(entry.city,100),isp:cleanText(entry.isp,100),device:cleanText(entry.device,60),ref:cleanText(entry.ref,100)});
       await this.state.storage.put("traffic", records.slice(-5000));
       await this.state.storage.setAlarm(now + RETENTION_MS);
@@ -702,27 +706,28 @@ export class StudyHubChat {
 
   async countVisit(now, ip, records) {
     const day = indiaDay(now);
-    return this.state.storage.transaction(async storage => {
-      let totals = await storage.get("daily:" + day);
-      if (!totals) {
-        const existing = records.filter(r=>indiaDay(r.time) === day);
-        const ips = new Set(existing.map(r=>r.ip).filter(value=>value && value!=="Unavailable"));
-        totals = {day,views:existing.length,visitors:ips.size};
-        for (const address of ips) await storage.put("visitor:" + day + ":" + await digest(address), true);
+    let totals = await this.state.storage.get("daily:" + day);
+    if (!totals || typeof totals !== "object") {
+      const safeRecs = Array.isArray(records) ? records : [];
+      const existing = safeRecs.filter(r => r && indiaDay(r.time) === day);
+      const ips = new Set(existing.map(r => r.ip).filter(value => value && value !== "Unavailable"));
+      totals = { day, views: existing.length, visitors: ips.size };
+      for (const address of ips) {
+        await this.state.storage.put("visitor:" + day + ":" + await digest(address), true);
       }
-      if (ip !== null) {
-        totals.views++;
-        if (ip && ip !== "Unavailable") {
-          const visitorKey = "visitor:" + day + ":" + await digest(ip);
-          if (!(await storage.get(visitorKey))) {
-            totals.visitors++;
-            await storage.put(visitorKey, true);
-          }
+    }
+    if (ip !== null) {
+      totals.views = (totals.views || 0) + 1;
+      if (ip && ip !== "Unavailable") {
+        const visitorKey = "visitor:" + day + ":" + await digest(ip);
+        if (!(await this.state.storage.get(visitorKey))) {
+          totals.visitors = (totals.visitors || 0) + 1;
+          await this.state.storage.put(visitorKey, true);
         }
       }
-      await storage.put("daily:" + day, totals);
-      return totals;
-    });
+    }
+    await this.state.storage.put("daily:" + day, totals);
+    return totals;
   }
 
   async alarm() {
@@ -1598,6 +1603,11 @@ details.section-details summary:hover, details.popular-details summary:hover {
 
   const script = authorized ? `
     // LIVE CONTROL ROOM SCRIPT
+    function setText(id, val) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = (val !== null && val !== undefined) ? String(val) : '—';
+    }
+
     function countryInfo(code){
       if(!code||code==='XX')return {flag:'🌐',name:'Unknown'};
       if(code==='T1')return {flag:'🧅',name:'Tor Network'};
@@ -1613,17 +1623,19 @@ details.section-details summary:hover, details.popular-details summary:hover {
     }
 
     function updateClocks() {
-      const now = new Date();
-      const istStr = now.toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }) + ' IST';
-      const utcStr = now.toLocaleTimeString('en-GB', { timeZone: 'UTC', hour12: false }) + ' UTC';
-      const istEl = document.getElementById('ist-clock');
-      const utcEl = document.getElementById('utc-clock');
-      if (istEl) istEl.textContent = istStr;
-      if (utcEl) utcEl.textContent = utcStr;
-      const quotaGuard = document.getElementById('quota-guard-status');
-      if (quotaGuard) {
-        quotaGuard.style.color = 'var(--accent-emerald)';
-        quotaGuard.textContent = '● ACTIVE 24/7';
+      try {
+        const now = new Date();
+        const istStr = now.toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }) + ' IST';
+        const utcStr = now.toLocaleTimeString('en-GB', { timeZone: 'UTC', hour12: false }) + ' UTC';
+        setText('ist-clock', istStr);
+        setText('utc-clock', utcStr);
+        const quotaGuard = document.getElementById('quota-guard-status');
+        if (quotaGuard) {
+          quotaGuard.style.color = 'var(--accent-emerald)';
+          quotaGuard.textContent = '● ACTIVE 24/7';
+        }
+      } catch (e) {
+        console.warn('Clock error:', e);
       }
     }
     setInterval(updateClocks, 1000);
@@ -1637,7 +1649,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
 
     function getPathFallbackActivity(path) {
       if (!path || path === '/' || path === '/index.html') return '🏠 Hub Home';
-      const p = path.toLowerCase();
+      const p = String(path).toLowerCase();
       if (p.includes('voice-explanation')) return '🎧 Voice Explanations';
       if (p.includes('study-guide-reader')) return '📖 Study Guide Reader';
       if (p.includes('ktet-500-mcq-test')) return '📝 KTET 500 MCQ Test';
@@ -1651,7 +1663,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
       if (p.includes('ai-reading')) return '📖 AI & Philosophy Reading';
       if (p.includes('about')) return 'ℹ️ About Hub';
       if (p.includes('contact')) return '📬 Contact';
-      return '📄 ' + path.replace(/^\//, '').replace(/\.html$/, '').replace(/[-_]+/g, ' ');
+      return '📄 ' + String(path).replace(/^\//, '').replace(/\.html$/, '').replace(/[-_]+/g, ' ');
     }
 
     function formatShortIP(ip) {
@@ -1668,287 +1680,308 @@ details.section-details summary:hover, details.popular-details summary:hover {
 
     // RENDER TRAFFIC (VISITORS WITH IP & DETAILS)
     function renderTraffic() {
-      const search = (document.getElementById('traffic-search-input').value || "").trim().toLowerCase();
-      const size = Math.max(1, Number(document.getElementById('traffic-page-size').value) || 25);
+      try {
+        const searchEl = document.getElementById('traffic-search-input');
+        const search = (searchEl ? searchEl.value : "").trim().toLowerCase();
+        const sizeEl = document.getElementById('traffic-page-size');
+        const size = Math.max(1, Number(sizeEl ? sizeEl.value : 25) || 25);
 
-      let filtered = trafficRecords.filter(item => {
-        if (!search) return true;
-        const info = countryInfo(item.country);
-        const hay = [item.ip, item.country, info.name, item.region, item.city, item.isp, item.device, item.ref, item.path, ...(item.sections||[]).map(s=>s.name)].filter(Boolean).join(' ').toLowerCase();
-        return hay.includes(search);
-      });
+        let filtered = trafficRecords.filter(item => {
+          if (!search) return true;
+          const info = countryInfo(item.country);
+          const hay = [item.ip, item.country, info.name, item.region, item.city, item.isp, item.device, item.ref, item.path, ...(item.sections||[]).map(s=>s.name)].filter(Boolean).join(' ').toLowerCase();
+          return hay.includes(search);
+        });
 
-      // Render Country Summary Grid
-      const countryGrid = document.getElementById('country-summary-grid');
-      countryGrid.replaceChildren();
-      const countryMap = new Map();
-      for (const item of trafficRecords) {
-        const c = item.country || 'XX';
-        const curr = countryMap.get(c) || { count: 0, visits: 0 };
-        curr.count += 1;
-        curr.visits += (item.visits || 1);
-        countryMap.set(c, curr);
-      }
-
-      const topCountries = Array.from(countryMap.entries()).sort((a,b) => b[1].count - a[1].count).slice(0, 6);
-      for (const [code, stat] of topCountries) {
-        const info = countryInfo(code);
-        const card = document.createElement('div');
-        card.className = 'country-card';
-        card.innerHTML = '<span class="flag">' + info.flag + '</span>' +
-          '<div class="c-info">' +
-            '<div class="c-name">' + info.name.split(' (')[0] + '</div>' +
-            '<div class="c-visitors">' + stat.count + ' IP' + (stat.count===1?'':'s') + ' · ' + stat.visits + ' visit' + (stat.visits===1?'':'s') + '</div>' +
-          '</div>';
-        countryGrid.append(card);
-      }
-
-      // Pagination
-      const totalPages = Math.max(1, Math.ceil(filtered.length / size));
-      trafficPage = Math.min(Math.max(1, trafficPage), totalPages);
-      const start = (trafficPage - 1) * size;
-      const pageItems = filtered.slice(start, start + size);
-
-      const rows = document.getElementById('rows');
-      rows.replaceChildren();
-
-      if (!pageItems.length) {
-        const emptyTr = document.createElement('tr');
-        emptyTr.innerHTML = '<td colspan="7" style="text-align:center; padding:36px; color:var(--text-dim); font-size:14px;">' + (trafficRecords.length ? 'NO VISITOR RECORDS FOUND FOR CURRENT FILTER' : 'NO VISITOR TRAFFIC LOGGED YET') + '</td>';
-        rows.append(emptyTr);
-      }
-
-      for (const v of pageItems) {
-        const tr = document.createElement('tr');
-        const isGoogleBot = (v.isp && /Google/i.test(v.isp)) || (v.ip && (v.ip.startsWith('66.249.') || /Google/i.test(v.ip))) || (v.device && /Google/i.test(v.device));
-        if (isGoogleBot) {
-          tr.className = 'google-bot-row';
-        }
-
-        // Last Active (IST)
-        const tdTime = document.createElement('td');
-        tdTime.innerHTML = '<span class="time-stamp">' + formatIST(v.time) + '</span>';
-        tr.append(tdTime);
-
-        // Visitor IP Address (Shortened for screen fit)
-        const tdIp = document.createElement('td');
-        const shortIp = formatShortIP(v.ip);
-        tdIp.innerHTML = '<span class="ip-badge" title="Full IP: ' + v.ip + '" style="font-family:var(--font-mono);font-size:11.5px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;cursor:help;">' + shortIp + '</span>';
-        tr.append(tdIp);
-
-        // Total Visits
-        const tdVisits = document.createElement('td');
-        tdVisits.innerHTML = '<span class="visits-badge ' + (v.visits > 1 ? 'multi' : 'single') + '">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
-        tr.append(tdVisits);
-
-        // Country
-        const tdC = document.createElement('td');
-        const info = countryInfo(v.country);
-        tdC.innerHTML = '<span class="country-pill"><span class="country-flag">' + info.flag + '</span> ' + info.name + '</span>';
-        tr.append(tdC);
-
-        // State / City & ISP
-        const tdLoc = document.createElement('td');
-        tdLoc.className = 'location-text';
-        const loc = [v.region, v.city].filter(Boolean).join(', ') || 'Unknown';
-        if (v.isp) {
-          const locDiv = document.createElement('div');
-          locDiv.textContent = loc;
-          const ispDiv = document.createElement('div');
-          ispDiv.style.cssText = 'font-size:11px;color:var(--text-dim);font-family:var(--font-mono);margin-top:2px;display:flex;align-items:center;gap:4px;';
-          const iconSpan = document.createElement('span');
-          iconSpan.textContent = '📶';
-          const nameSpan = document.createElement('span');
-          nameSpan.textContent = v.isp;
-          ispDiv.append(iconSpan, nameSpan);
-          tdLoc.append(locDiv, ispDiv);
-        } else {
-          tdLoc.textContent = loc;
-        }
-        tr.append(tdLoc);
-
-        // Device & Source
-        const tdDev = document.createElement('td');
-        tdDev.className = 'location-text';
-        const devDiv = document.createElement('div');
-        devDiv.style.cssText = 'font-weight:600;font-size:11.5px;display:flex;align-items:center;gap:3px;white-space:nowrap;';
-        devDiv.textContent = v.device || '📱 Mobile / Web';
-        const srcDiv = document.createElement('div');
-        srcDiv.style.cssText = 'font-size:10.5px;color:var(--text-dim);margin-top:2px;display:flex;align-items:center;gap:3px;white-space:nowrap;';
-        srcDiv.textContent = v.ref || '🔖 Direct / Saved';
-        tdDev.append(devDiv, srcDiv);
-        tr.append(tdDev);
-
-        // Current Page & Activity
-        const tdPage = document.createElement('td');
-        const pathDiv = document.createElement('div');
-        pathDiv.innerHTML = '<span class="path-pill">' + (v.path || '/') + '</span>';
-        tdPage.append(pathDiv);
-
-        let act = v.latestSection || (Array.isArray(v.sections) && v.sections.length > 0 ? v.sections[0].name : '');
-        if (!act) {
-          act = getPathFallbackActivity(v.path);
-        }
-
-        if (act) {
-          const actDiv = document.createElement('div');
-          let actClass = 'activity-general';
-          if (act.includes('Hearing') || act.includes('🎧') || act.includes('🔊') || act.includes('🎙️')) {
-            actClass = 'activity-hearing';
-          } else if (act.includes('Watching') || act.includes('▶️')) {
-            actClass = 'activity-watching';
-          } else if (act.includes('Reading') || act.includes('📖') || act.includes('📄')) {
-            actClass = 'activity-reading';
-          } else if (act.includes('Test') || act.includes('MCQ') || act.includes('Quiz') || act.includes('📝')) {
-            actClass = 'activity-test';
+        // Render Country Summary Grid
+        const countryGrid = document.getElementById('country-summary-grid');
+        if (countryGrid) {
+          countryGrid.replaceChildren();
+          const countryMap = new Map();
+          for (const item of trafficRecords) {
+            const c = item.country || 'XX';
+            const curr = countryMap.get(c) || { count: 0, visits: 0 };
+            curr.count += 1;
+            curr.visits += (item.visits || 1);
+            countryMap.set(c, curr);
           }
-          actDiv.className = 'activity-pill-sub ' + actClass;
-          actDiv.textContent = act;
-          tdPage.append(actDiv);
-        }
-        tr.append(tdPage);
 
-        // Section Trail
-        const tdTrail = document.createElement('td');
-        const sections = Array.isArray(v.sections) ? v.sections : [];
-        if (sections.length) {
-          const details = document.createElement('details');
-          details.className = 'section-details';
-          const summary = document.createElement('summary');
-          summary.textContent = '📂 Visited ' + sections.length + ' section' + (sections.length === 1 ? '' : 's');
-          details.append(summary);
-          const ul = document.createElement('ul');
-          ul.className = 'section-visit-list';
-          for (const s of sections) {
-            const li = document.createElement('li');
-            li.textContent = s.name + ' — ' + s.visits + ' visit' + (s.visits === 1 ? '' : 's') + ' (Last: ' + formatIST(s.lastVisit) + ')';
-            ul.append(li);
+          const topCountries = Array.from(countryMap.entries()).sort((a,b) => b[1].count - a[1].count).slice(0, 6);
+          for (const [code, stat] of topCountries) {
+            const info = countryInfo(code);
+            const card = document.createElement('div');
+            card.className = 'country-card';
+            card.innerHTML = '<span class="flag">' + info.flag + '</span>' +
+              '<div class="c-info">' +
+                '<div class="c-name">' + info.name.split(' (')[0] + '</div>' +
+                '<div class="c-visitors">' + stat.count + ' IP' + (stat.count===1?'':'s') + ' · ' + stat.visits + ' visit' + (stat.visits===1?'':'s') + '</div>' +
+              '</div>';
+            countryGrid.append(card);
           }
-          details.append(ul);
-          tdTrail.append(details);
-        } else {
-          tdTrail.innerHTML = '<span style="color:var(--text-dim); font-size:12.5px;">No section trail</span>';
         }
-        tr.append(tdTrail);
 
-        rows.append(tr);
+        // Pagination
+        const totalPages = Math.max(1, Math.ceil(filtered.length / size));
+        trafficPage = Math.min(Math.max(1, trafficPage), totalPages);
+        const start = (trafficPage - 1) * size;
+        const pageItems = filtered.slice(start, start + size);
+
+        const rows = document.getElementById('rows');
+        if (rows) {
+          rows.replaceChildren();
+
+          if (!pageItems.length) {
+            const emptyTr = document.createElement('tr');
+            emptyTr.innerHTML = '<td colspan="8" style="text-align:center; padding:36px; color:var(--text-dim); font-size:14px;">' + (trafficRecords.length ? 'NO VISITOR RECORDS FOUND FOR CURRENT FILTER' : 'NO VISITOR TRAFFIC LOGGED YET') + '</td>';
+            rows.append(emptyTr);
+          }
+
+          for (const v of pageItems) {
+            const tr = document.createElement('tr');
+            const isGoogleBot = (v.isp && /Google/i.test(v.isp)) || (v.ip && (v.ip.startsWith('66.249.') || /Google/i.test(v.ip))) || (v.device && /Google/i.test(v.device));
+            if (isGoogleBot) {
+              tr.className = 'google-bot-row';
+            }
+
+            // Last Active (IST)
+            const tdTime = document.createElement('td');
+            tdTime.innerHTML = '<span class="time-stamp">' + formatIST(v.time) + '</span>';
+            tr.append(tdTime);
+
+            // Visitor IP Address
+            const tdIp = document.createElement('td');
+            const shortIp = formatShortIP(v.ip);
+            tdIp.innerHTML = '<span class="ip-badge" title="Full IP: ' + v.ip + '" style="font-family:var(--font-mono);font-size:11.5px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;cursor:help;">' + shortIp + '</span>';
+            tr.append(tdIp);
+
+            // Total Visits
+            const tdVisits = document.createElement('td');
+            tdVisits.innerHTML = '<span class="visits-badge ' + (v.visits > 1 ? 'multi' : 'single') + '">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
+            tr.append(tdVisits);
+
+            // Country
+            const tdC = document.createElement('td');
+            const info = countryInfo(v.country);
+            tdC.innerHTML = '<span class="country-pill"><span class="country-flag">' + info.flag + '</span> ' + info.name + '</span>';
+            tr.append(tdC);
+
+            // State / City & ISP
+            const tdLoc = document.createElement('td');
+            tdLoc.className = 'location-text';
+            const loc = [v.region, v.city].filter(Boolean).join(', ') || 'Unknown';
+            if (v.isp) {
+              const locDiv = document.createElement('div');
+              locDiv.textContent = loc;
+              const ispDiv = document.createElement('div');
+              ispDiv.style.cssText = 'font-size:11px;color:var(--text-dim);font-family:var(--font-mono);margin-top:2px;display:flex;align-items:center;gap:4px;';
+              const iconSpan = document.createElement('span');
+              iconSpan.textContent = '📶';
+              const nameSpan = document.createElement('span');
+              nameSpan.textContent = v.isp;
+              ispDiv.append(iconSpan, nameSpan);
+              tdLoc.append(locDiv, ispDiv);
+            } else {
+              tdLoc.textContent = loc;
+            }
+            tr.append(tdLoc);
+
+            // Device & Source
+            const tdDev = document.createElement('td');
+            tdDev.className = 'location-text';
+            const devDiv = document.createElement('div');
+            devDiv.style.cssText = 'font-weight:600;font-size:11.5px;display:flex;align-items:center;gap:3px;white-space:nowrap;';
+            devDiv.textContent = v.device || '📱 Mobile / Web';
+            const srcDiv = document.createElement('div');
+            srcDiv.style.cssText = 'font-size:10.5px;color:var(--text-dim);margin-top:2px;display:flex;align-items:center;gap:3px;white-space:nowrap;';
+            srcDiv.textContent = v.ref || '🔖 Direct / Saved';
+            tdDev.append(devDiv, srcDiv);
+            tr.append(tdDev);
+
+            // Current Page & Activity
+            const tdPage = document.createElement('td');
+            const pathDiv = document.createElement('div');
+            pathDiv.innerHTML = '<span class="path-pill">' + (v.path || '/') + '</span>';
+            tdPage.append(pathDiv);
+
+            let act = v.latestSection || (Array.isArray(v.sections) && v.sections.length > 0 ? v.sections[0].name : '');
+            act = String(act || getPathFallbackActivity(v.path) || '');
+
+            if (act) {
+              const actDiv = document.createElement('div');
+              let actClass = 'activity-general';
+              if (act.includes('Hearing') || act.includes('🎧') || act.includes('🔊') || act.includes('🎙️')) {
+                actClass = 'activity-hearing';
+              } else if (act.includes('Watching') || act.includes('▶️')) {
+                actClass = 'activity-watching';
+              } else if (act.includes('Reading') || act.includes('📖') || act.includes('📄')) {
+                actClass = 'activity-reading';
+              } else if (act.includes('Test') || act.includes('MCQ') || act.includes('Quiz') || act.includes('📝')) {
+                actClass = 'activity-test';
+              }
+              actDiv.className = 'activity-pill-sub ' + actClass;
+              actDiv.textContent = act;
+              tdPage.append(actDiv);
+            }
+            tr.append(tdPage);
+
+            // Section Trail
+            const tdTrail = document.createElement('td');
+            const sections = Array.isArray(v.sections) ? v.sections : [];
+            if (sections.length) {
+              const details = document.createElement('details');
+              details.className = 'section-details';
+              const summary = document.createElement('summary');
+              summary.textContent = '📂 Visited ' + sections.length + ' section' + (sections.length === 1 ? '' : 's');
+              details.append(summary);
+              const ul = document.createElement('ul');
+              ul.className = 'section-visit-list';
+              for (const s of sections) {
+                const li = document.createElement('li');
+                li.textContent = (s.name || 'Page') + ' — ' + (s.visits || 1) + ' visit' + (s.visits === 1 ? '' : 's') + ' (Last: ' + formatIST(s.lastVisit) + ')';
+                ul.append(li);
+              }
+              details.append(ul);
+              tdTrail.append(details);
+            } else {
+              tdTrail.innerHTML = '<span style="color:var(--text-dim); font-size:12.5px;">No section trail</span>';
+            }
+            tr.append(tdTrail);
+
+            rows.append(tr);
+          }
+        }
+
+        const first = filtered.length ? start + 1 : 0;
+        const last = Math.min(start + pageItems.length, filtered.length);
+        setText('traffic-page-info', "Showing " + first + "–" + last + " of " + filtered.length + " IPs · Page " + trafficPage + " of " + totalPages);
+        const prevBtn = document.getElementById('traffic-prev-page');
+        if (prevBtn) prevBtn.disabled = trafficPage <= 1;
+        const nextBtn = document.getElementById('traffic-next-page');
+        if (nextBtn) nextBtn.disabled = trafficPage >= totalPages;
+        setText('badge-total-ips', trafficRecords.length + ' IPs');
+      } catch (renderErr) {
+        console.warn('renderTraffic error:', renderErr);
       }
-
-      const first = filtered.length ? start + 1 : 0;
-      const last = Math.min(start + pageItems.length, filtered.length);
-      document.getElementById('traffic-page-info').textContent = "Showing " + first + "–" + last + " of " + filtered.length + " IPs · Page " + trafficPage + " of " + totalPages;
-      document.getElementById('traffic-prev-page').disabled = trafficPage <= 1;
-      document.getElementById('traffic-next-page').disabled = trafficPage >= totalPages;
-      document.getElementById('badge-total-ips').textContent = trafficRecords.length + ' IPs';
     }
 
     // RENDER POPULAR PAGES
     function renderPopularPages() {
-      const tbody = document.getElementById('popular-page-rows');
-      tbody.replaceChildren();
-      const visitorsByIP = new Map(trafficRecords.map(v => [v.ip, v]));
+      try {
+        const tbody = document.getElementById('popular-page-rows');
+        if (!tbody) return;
+        tbody.replaceChildren();
+        const visitorsByIP = new Map(trafficRecords.map(v => [v.ip, v]));
 
-      if (!popularPageRecords.length) {
-        const emptyTr = document.createElement('tr');
-        emptyTr.innerHTML = '<td colspan="7" style="text-align:center; padding:36px; color:var(--text-dim); font-size:14px;">NO CONTENT PAGE VIEWS RECORDED YET</td>';
-        tbody.append(emptyTr);
-      }
-
-      // Update Top Content Leader KPI
-      if (popularPageRecords.length > 0) {
-        const topP = popularPageRecords[0];
-        const topNameEl = document.getElementById('top-content-name');
-        const topViewsEl = document.getElementById('top-content-views');
-        const topVisitorsEl = document.getElementById('top-content-visitors');
-        if (topNameEl) topNameEl.textContent = topP.section || topP.path || 'Top Page';
-        if (topViewsEl) topViewsEl.textContent = topP.visits + ' views';
-        if (topVisitorsEl) topVisitorsEl.textContent = (topP.visitors?.length || 0) + ' visitors';
-      }
-
-      for (const [idx, p] of popularPageRecords.entries()) {
-        const tr = document.createElement('tr');
-        const tdRank = document.createElement('td');
-        tdRank.innerHTML = '<strong style="color:var(--accent-cyan); font-family:var(--font-mono);">#' + (idx + 1) + '</strong>';
-        tr.append(tdRank);
-
-        const tdPage = document.createElement('td');
-        tdPage.innerHTML = '<strong style="color:var(--text-pure); font-size:14px;">' + (p.section || 'Learning Page') + '</strong><br><span class="path-pill" style="font-size:11px; margin-top:3px; display:inline-block;">' + (p.path || '/') + '</span>';
-        tr.append(tdPage);
-
-        const tdVisits = document.createElement('td');
-        tdVisits.innerHTML = '<strong style="font-family:var(--font-mono); font-size:14px;">' + p.visits + '</strong>';
-        tr.append(tdVisits);
-
-        const visitorsCount = Array.isArray(p.visitors) ? p.visitors.length : 0;
-        const tdVisitors = document.createElement('td');
-        tdVisitors.innerHTML = '<span class="ip-badge" style="font-size:12px;">' + visitorsCount + ' unique</span>';
-        tr.append(tdVisitors);
-
-        const tdRatio = document.createElement('td');
-        tdRatio.style.fontFamily = 'var(--font-mono)';
-        tdRatio.textContent = visitorsCount ? (p.visits / visitorsCount).toFixed(2) : '—';
-        tr.append(tdRatio);
-
-        const tdLast = document.createElement('td');
-        tdLast.innerHTML = '<span class="time-stamp">' + formatIST(p.lastVisit) + '</span>';
-        tr.append(tdLast);
-
-        const tdDetails = document.createElement('td');
-        const details = document.createElement('details');
-        details.className = 'popular-details';
-        const summary = document.createElement('summary');
-        summary.textContent = '🔍 Inspect ' + visitorsCount + ' IP' + (visitorsCount === 1 ? '' : 's');
-        details.append(summary);
-        
-        const ul = document.createElement('ul');
-        ul.className = 'section-visit-list';
-        for (const visitor of (p.visitors || [])) {
-          const li = document.createElement('li');
-          const geo = visitorsByIP.get(visitor.ip);
-          const flag = countryInfo(geo?.country).flag;
-          const loc = [geo?.city, geo?.region].filter(Boolean).join(', ');
-          li.textContent = flag + ' ' + visitor.ip + ' — ' + visitor.visits + ' visit' + (visitor.visits===1?'':'s') + ' · ' + formatIST(visitor.lastVisit) + (loc ? ' (' + loc + ')' : '');
-          ul.append(li);
+        if (!popularPageRecords.length) {
+          const emptyTr = document.createElement('tr');
+          emptyTr.innerHTML = '<td colspan="7" style="text-align:center; padding:36px; color:var(--text-dim); font-size:14px;">NO CONTENT PAGE VIEWS RECORDED YET</td>';
+          tbody.append(emptyTr);
         }
-        details.append(ul);
-        tdDetails.append(details);
-        tr.append(tdDetails);
 
-        tbody.append(tr);
+        // Update Top Content Leader KPI
+        if (popularPageRecords.length > 0) {
+          const topP = popularPageRecords[0];
+          setText('top-content-name', topP.section || topP.path || 'Top Page');
+          setText('top-content-views', (topP.visits || 0) + ' views');
+          const topVisCount = Array.isArray(topP.visitors) ? topP.visitors.length : (topP.visitors || 0);
+          setText('top-content-visitors', topVisCount + ' visitors');
+        }
+
+        for (const [idx, p] of popularPageRecords.entries()) {
+          const tr = document.createElement('tr');
+          const tdRank = document.createElement('td');
+          tdRank.innerHTML = '<strong style="color:var(--accent-cyan); font-family:var(--font-mono);">#' + (idx + 1) + '</strong>';
+          tr.append(tdRank);
+
+          const tdPage = document.createElement('td');
+          tdPage.innerHTML = '<strong style="color:var(--text-pure); font-size:14px;">' + (p.section || 'Learning Page') + '</strong><br><span class="path-pill" style="font-size:11px; margin-top:3px; display:inline-block;">' + (p.path || '/') + '</span>';
+          tr.append(tdPage);
+
+          const tdVisits = document.createElement('td');
+          tdVisits.innerHTML = '<strong style="font-family:var(--font-mono); font-size:14px;">' + (p.visits || 0) + '</strong>';
+          tr.append(tdVisits);
+
+          const visitorsCount = Array.isArray(p.visitors) ? p.visitors.length : 0;
+          const tdVisitors = document.createElement('td');
+          tdVisitors.innerHTML = '<span class="ip-badge" style="font-size:12px;">' + visitorsCount + ' unique</span>';
+          tr.append(tdVisitors);
+
+          const tdRatio = document.createElement('td');
+          tdRatio.style.fontFamily = 'var(--font-mono)';
+          tdRatio.textContent = visitorsCount ? ((p.visits || 0) / visitorsCount).toFixed(2) : '—';
+          tr.append(tdRatio);
+
+          const tdLast = document.createElement('td');
+          tdLast.innerHTML = '<span class="time-stamp">' + formatIST(p.lastVisit) + '</span>';
+          tr.append(tdLast);
+
+          const tdDetails = document.createElement('td');
+          const details = document.createElement('details');
+          details.className = 'popular-details';
+          const summary = document.createElement('summary');
+          summary.textContent = '🔍 Inspect ' + visitorsCount + ' IP' + (visitorsCount === 1 ? '' : 's');
+          details.append(summary);
+          
+          const ul = document.createElement('ul');
+          ul.className = 'section-visit-list';
+          for (const visitor of (p.visitors || [])) {
+            const vIp = typeof visitor === "object" ? String(visitor.ip || "Unknown") : String(visitor);
+            const vVisits = typeof visitor === "object" ? Number(visitor.visits || 1) : 1;
+            const vTime = typeof visitor === "object" ? visitor.lastVisit : 0;
+            const li = document.createElement('li');
+            const geo = visitorsByIP.get(vIp);
+            const flag = countryInfo(geo?.country).flag;
+            const loc = [geo?.city, geo?.region].filter(Boolean).join(', ');
+            li.textContent = flag + ' ' + vIp + ' — ' + vVisits + ' visit' + (vVisits===1?'':'s') + ' · ' + formatIST(vTime) + (loc ? ' (' + loc + ')' : '');
+            ul.append(li);
+          }
+          details.append(ul);
+          tdDetails.append(details);
+          tr.append(tdDetails);
+
+          tbody.append(tr);
+        }
+        setText('badge-total-pages', String(popularPageRecords.length));
+      } catch (popErr) {
+        console.warn('renderPopularPages error:', popErr);
       }
-      document.getElementById('badge-total-pages').textContent = String(popularPageRecords.length);
     }
 
     // RENDER LIVE RADAR
     function renderLiveRadar() {
-      const count = Number(liveData.active) || 0;
-      document.getElementById('live-active-count').textContent = String(count);
-      document.getElementById('badge-live-tabs').textContent = count + ' ACTIVE';
-      document.getElementById('radar-summary-text').textContent = '● ' + count + ' ACTIVE TABS IN 90s';
+      try {
+        const count = Number(liveData.active) || 0;
+        setText('live-active-count', count);
+        setText('badge-live-tabs', count + ' ACTIVE');
+        setText('radar-summary-text', '● ' + count + ' ACTIVE TABS IN 90s');
 
-      const pages = Array.isArray(liveData.pages) ? liveData.pages : [];
-      document.getElementById('live-pages-summary').textContent = count ? (pages.length + ' active study page' + (pages.length === 1 ? '' : 's')) : 'no active sessions';
+        const pages = Array.isArray(liveData.pages) ? liveData.pages : [];
+        setText('live-pages-summary', count ? (pages.length + ' active study page' + (pages.length === 1 ? '' : 's')) : 'no active sessions');
 
-      const grid = document.getElementById('live-pages-grid');
-      grid.replaceChildren();
+        const grid = document.getElementById('live-pages-grid');
+        if (grid) {
+          grid.replaceChildren();
 
-      if (!pages.length) {
-        grid.innerHTML = '<p style="color:var(--text-dim); font-size:14px; padding:18px;">No concurrent visitors detected on learning pages in the last 90 seconds.</p>';
-        return;
-      }
-
-      for (const p of pages) {
-        const card = document.createElement('div');
-        card.className = 'radar-card active-card';
-        card.innerHTML = '<div class="radar-card-info">' +
-            '<h4>' + (p.section || 'Academic Hub Portal') + '</h4>' +
-            '<div class="radar-card-path">' + (p.path || '/') + '</div>' +
-          '</div>' +
-          '<div class="radar-card-count">' +
-            '<div class="num">' + p.count + '</div>' +
-            '<div class="label">ACTIVE TABS</div>' +
-          '</div>';
-        grid.append(card);
+          if (!pages.length) {
+            grid.innerHTML = '<p style="color:var(--text-dim); font-size:14px; padding:18px;">No concurrent visitors detected on learning pages in the last 90 seconds.</p>';
+          } else {
+            for (const p of pages) {
+              const card = document.createElement('div');
+              card.className = 'radar-card active-card';
+              card.innerHTML = '<div class="radar-card-info">' +
+                  '<h4>' + (p.section || 'Academic Hub Portal') + '</h4>' +
+                  '<div class="radar-card-path">' + (p.path || '/') + '</div>' +
+                '</div>' +
+                '<div class="radar-card-count">' +
+                  '<div class="num">' + (p.count || 1) + '</div>' +
+                  '<div class="label">ACTIVE TABS</div>' +
+                '</div>';
+              grid.append(card);
+            }
+          }
+        }
+      } catch (err) {
+        console.warn('renderLiveRadar error:', err);
       }
     }
 
@@ -1958,7 +1991,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
         const res = await fetch('/api/admin/live-visitors', { cache: 'no-store', credentials: 'same-origin' });
         if (res.status === 401) { location.href = '/admin/login'; return; }
         const d = await res.json();
-        if (res.ok) {
+        if (res.ok && d) {
           liveData = d;
         } else {
           liveData = { active: 0, pages: [] };
@@ -1986,21 +2019,29 @@ details.section-details summary:hover, details.popular-details summary:hover {
           trafficRecords = d.records;
           popularPageRecords = Array.isArray(d.popularPages) ? d.popularPages : [];
           const link = document.getElementById('radar-link-status');
-          if (link) { link.textContent = '● NOMINAL'; link.style.color = 'var(--accent-emerald)'; }
+          if (link) {
+            if (d.error) {
+              link.textContent = '● DATA NOTICE';
+              link.style.color = 'var(--accent-amber)';
+            } else {
+              link.textContent = '● NOMINAL';
+              link.style.color = 'var(--accent-emerald)';
+            }
+          }
           
           if (d.today) {
-            document.getElementById('today-badge').textContent = d.today.day || 'TODAY';
-            document.getElementById('today-visitors').textContent = String(d.today.visitors || 0);
-            document.getElementById('today-views').textContent = String(d.today.views || 0);
-            document.getElementById('today-ratio').textContent = d.today.visitors ? (d.today.views / d.today.visitors).toFixed(2) : '0';
+            setText('today-badge', d.today.day || 'TODAY');
+            setText('today-visitors', d.today.visitors || 0);
+            setText('today-views', d.today.views || 0);
+            setText('today-ratio', d.today.visitors ? (d.today.views / d.today.visitors).toFixed(2) : '0');
           }
 
-          document.getElementById('buffer-views').textContent = String(d.views || trafficRecords.length);
-          document.getElementById('buffer-ips').textContent = String(d.uniqueIPs || trafficRecords.length);
+          setText('buffer-views', d.views !== undefined ? d.views : trafficRecords.length);
+          setText('buffer-ips', d.uniqueIPs !== undefined ? d.uniqueIPs : trafficRecords.length);
           
           const repeatIps = trafficRecords.filter(v => v.visits > 1).length;
           const repPct = trafficRecords.length ? ((repeatIps / trafficRecords.length) * 100).toFixed(1) : 0;
-          document.getElementById('buffer-repeats').textContent = repPct + '%';
+          setText('buffer-repeats', repPct + '%');
         }
       } catch (err) {
         console.warn('Traffic fetch error:', err);
@@ -2070,19 +2111,26 @@ details.section-details summary:hover, details.popular-details summary:hover {
     }
 
     // EVENTS & INITIAL LOAD
-    document.getElementById('btn-force-sync').onclick = () => {
+    const syncBtn = document.getElementById('btn-force-sync');
+    if (syncBtn) syncBtn.onclick = () => {
       refreshLiveVisitors();
       refreshTraffic();
     };
 
-    document.getElementById('btn-export-traffic').onclick = exportTrafficCSV;
+    const exportBtn = document.getElementById('btn-export-traffic');
+    if (exportBtn) exportBtn.onclick = exportTrafficCSV;
 
-    document.getElementById('traffic-search-input').oninput = () => { trafficPage = 1; renderTraffic(); };
-    document.getElementById('traffic-page-size').onchange = () => { trafficPage = 1; renderTraffic(); };
-    document.getElementById('traffic-prev-page').onclick = () => { trafficPage = Math.max(1, trafficPage - 1); renderTraffic(); };
-    document.getElementById('traffic-next-page').onclick = () => { trafficPage++; renderTraffic(); };
+    const searchInput = document.getElementById('traffic-search-input');
+    if (searchInput) searchInput.oninput = () => { trafficPage = 1; renderTraffic(); };
+    const pageSizeSelect = document.getElementById('traffic-page-size');
+    if (pageSizeSelect) pageSizeSelect.onchange = () => { trafficPage = 1; renderTraffic(); };
+    const prevPageBtn = document.getElementById('traffic-prev-page');
+    if (prevPageBtn) prevPageBtn.onclick = () => { trafficPage = Math.max(1, trafficPage - 1); renderTraffic(); };
+    const nextPageBtn = document.getElementById('traffic-next-page');
+    if (nextPageBtn) nextPageBtn.onclick = () => { trafficPage++; renderTraffic(); };
 
-    document.getElementById('logout').onclick = async () => {
+    const logoutBtn = document.getElementById('logout');
+    if (logoutBtn) logoutBtn.onclick = async () => {
       try {
         await fetch('/api/admin/logout', { method: 'POST' });
       } finally {
@@ -2104,42 +2152,52 @@ details.section-details summary:hover, details.popular-details summary:hover {
       }
     }
 
-    document.getElementById('sync-interval').onchange = (e) => {
+    const syncIntervalSelect = document.getElementById('sync-interval');
+    if (syncIntervalSelect) syncIntervalSelect.onchange = (e) => {
       setPollingInterval(Number(e.target.value));
     };
 
     // INITIAL TRIGGER
-    refreshLiveVisitors();
-    refreshTraffic();
+    try { refreshLiveVisitors(); } catch (e) { console.warn(e); }
+    try { refreshTraffic(); } catch (e) { console.warn(e); }
     setPollingInterval(15000);
   ` : `
     const form = document.getElementById('login');
     const status = document.getElementById('status');
-    form.onsubmit = async (e) => {
-      e.preventDefault();
-      status.textContent = 'AUTHENTICATING...';
-      const password = document.getElementById('password').value;
-      try {
-        const res = await fetch('/api/admin/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ password })
-        });
-        const data = await res.json();
-        if (res.ok) {
-          status.style.color = 'var(--accent-emerald)';
-          status.textContent = 'AUTHENTICATED. ENTERING CONTROL ROOM...';
-          const params = new URLSearchParams(location.search);
-          location.href = params.get('next') || '/admin/traffic';
-        } else {
-          status.style.color = 'var(--accent-rose)';
-          status.textContent = data.error || 'ACCESS DENIED: Invalid Security Key';
+    if (form) {
+      form.onsubmit = async (e) => {
+        e.preventDefault();
+        if (status) status.textContent = 'AUTHENTICATING...';
+        const passwordEl = document.getElementById('password');
+        const password = passwordEl ? passwordEl.value : '';
+        try {
+          const res = await fetch('/api/admin/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            if (status) {
+              status.style.color = 'var(--accent-emerald)';
+              status.textContent = 'AUTHENTICATED. ENTERING CONTROL ROOM...';
+            }
+            const params = new URLSearchParams(location.search);
+            location.href = params.get('next') || '/admin/traffic';
+          } else {
+            if (status) {
+              status.style.color = 'var(--accent-rose)';
+              status.textContent = data.error || 'ACCESS DENIED: Invalid Security Key';
+            }
+          }
+        } catch (err) {
+          if (status) {
+            status.style.color = 'var(--accent-rose)';
+            status.textContent = 'COMMUNICATION ERROR';
+          }
         }
-      } catch (err) {
-        status.style.color = 'var(--accent-rose)';
-        status.textContent = 'COMMUNICATION ERROR';
-      }
-    };
+      };
+    }
   `;
 
   return new Response(`<!doctype html>
