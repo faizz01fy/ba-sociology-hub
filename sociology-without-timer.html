@@ -411,6 +411,76 @@
       font-weight: 800;
     }
 
+    /* Test Delivery Mode Selector (Shuffled vs PDF Pattern) */
+    .mode-selector-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .mode-selector-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .mode-selector-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: #334155;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .mode-btn-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 520px) {
+      .mode-btn-group {
+        grid-template-columns: 1fr;
+      }
+    }
+    .mode-toggle-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 2px solid #e2e8f0;
+      background: #f8fafc;
+      color: #475569;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      text-align: left;
+    }
+    .mode-toggle-btn:hover {
+      border-color: #cbd5e1;
+      background: #f1f5f9;
+      transform: translateY(-1px);
+    }
+    .mode-toggle-btn.active {
+      background: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%);
+      border-color: #7c3aed;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
+    }
+    .mode-desc-text {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.4;
+      padding: 6px 10px;
+      background: #f8fafc;
+      border-radius: 6px;
+      border-left: 3px solid #7c3aed;
+    }
+
     .start-cta-row {
       display: flex;
       align-items: center;
@@ -1183,9 +1253,9 @@
         <div class="spec-label">No Clock / Timer</div>
       </div>
       <div class="spec-card">
-        <div class="spec-icon">📝</div>
-        <div class="spec-value">235 MCQs</div>
-        <div class="spec-label">1st: PDF Order · Retake: Shuffled</div>
+        <div class="spec-icon" id="modeSpecIcon">🔀</div>
+        <div class="spec-value" id="modeSpecValue">Shuffled</div>
+        <div class="spec-label" id="modeSpecLabel">Questions & Options Randomized</div>
       </div>
       <div class="spec-card spec-card-motivation">
         <div class="spec-icon" id="motSpecIcon">✨</div>
@@ -1196,6 +1266,33 @@
         <div class="spec-icon">💡</div>
         <div class="spec-value">Instant</div>
         <div class="spec-label">Deep Explanations</div>
+      </div>
+    </div>
+
+    <!-- Test Order Mode Selector (Shuffled vs PDF Pattern) -->
+    <div class="mode-selector-card">
+      <div class="mode-selector-header">
+        <span class="mode-selector-title">🎯 Question Delivery Pattern:</span>
+        <span class="pill-badge" style="font-size: 11px; padding: 2px 8px; background: #ede9fe; color: #6d28d9; border: 1px solid #ddd6fe;">Tap Button to Switch</span>
+      </div>
+      <div class="mode-btn-group">
+        <button type="button" id="modeShuffleBtn" class="mode-toggle-btn active" onclick="setTestMode('shuffle')">
+          <span style="font-size: 20px;">🔀</span>
+          <div>
+            <div style="font-size: 13.5px; font-weight: 800;">Shuffled Mode (Default)</div>
+            <div style="font-size: 11px; opacity: 0.88; font-weight: 500;">Questions & options randomized</div>
+          </div>
+        </button>
+        <button type="button" id="modePatternBtn" class="mode-toggle-btn" onclick="setTestMode('pattern')">
+          <span style="font-size: 20px;">📄</span>
+          <div>
+            <div style="font-size: 13.5px; font-weight: 800;">PDF Pattern</div>
+            <div style="font-size: 11px; opacity: 0.88; font-weight: 500;">Exact sequential (Q 1–235, A–D)</div>
+          </div>
+        </button>
+      </div>
+      <div id="modeDescription" class="mode-desc-text">
+        🎲 <b>Shuffled Mode active:</b> From starting, all 235 questions and all options are randomized each attempt.
       </div>
     </div>
 
@@ -1217,7 +1314,7 @@
     <!-- Call to action -->
     <div class="start-cta-row">
       <button id="startBtn" class="btn primary btn-start-large">
-        Start Test in PDF Order (Q 1–235) &nbsp;➔
+        Start Shuffled Test (235 MCQs) &nbsp;➔
       </button>
       <span class="start-notice">🔒 Instant feedback on every question with zero time restrictions.</span>
     </div>
@@ -1254,6 +1351,9 @@
           <span class="mode-label">Mode</span>
           <span class="mode-badge-txt">WITHOUT TIMER</span>
         </div>
+
+        <!-- Mode Badge (Shuffled vs PDF Pattern) -->
+        <span id="headerModeBadge" class="pill-badge" style="font-size: 11px; padding: 4px 10px; font-weight: 800; background: #ede9fe; color: #6d28d9; border: 1px solid #ddd6fe;">🔀 Shuffled</span>
       </header>
 
       <!-- Question Palette -->
@@ -1464,7 +1564,31 @@
     return arr;
   }
 
+  let currentTestMode = 'shuffle'; // 'shuffle' (default from start) or 'pattern' (exact PDF)
   let attemptCount = 0;
+
+  function setTestMode(mode) {
+    currentTestMode = mode;
+    const isShuffle = (mode === 'shuffle');
+
+    $('modeShuffleBtn').classList.toggle('active', isShuffle);
+    $('modePatternBtn').classList.toggle('active', !isShuffle);
+
+    if (isShuffle) {
+      $('modeDescription').innerHTML = '🎲 <b>Shuffled Mode active:</b> From starting, all 235 questions and all options are randomized each attempt.';
+      $('startBtn').innerHTML = 'Start Shuffled Test (235 MCQs) &nbsp;➔';
+      $('modeSpecValue').textContent = 'Shuffled';
+      $('modeSpecLabel').textContent = 'Questions & Options Randomized';
+      $('modeSpecIcon').textContent = '🔀';
+    } else {
+      $('modeDescription').innerHTML = '📄 <b>PDF Pattern active:</b> Strictly keeps same sequential order as PDF (Questions 1–235, options A–D).';
+      $('startBtn').innerHTML = 'Start Test in PDF Pattern (Q 1–235) &nbsp;➔';
+      $('modeSpecValue').textContent = 'PDF Pattern';
+      $('modeSpecLabel').textContent = 'Exact Sequential (Q 1–235)';
+      $('modeSpecIcon').textContent = '📄';
+    }
+  }
+
 
   function startTest() {
     candidateName = $('candidateName').value.trim();
@@ -1477,8 +1601,8 @@
 
     attemptCount++;
 
-    if (attemptCount === 1) {
-      // 1st Attempt: Exact sequential PDF pattern (1 to 235), exact options order (A, B, C, D)
+    if (currentTestMode === 'pattern') {
+      // PDF PATTERN: strictly 1 to 235 in PDF order, options A, B, C, D in PDF order
       testQuestions = MASTER_QUESTIONS.map((q, idx) => ({
         id: q.id,
         testIndex: idx + 1,
@@ -1499,14 +1623,21 @@
         page: q.page
       }));
 
-      $('paletteHeading').textContent = `Question Palette (Attempt #1 · Exact PDF Pattern 1–235)`;
+      $('paletteHeading').textContent = `Question Palette (PDF Pattern · Q 1–235)`;
+      if ($('headerModeBadge')) {
+        $('headerModeBadge').textContent = '📄 PDF Pattern';
+        $('headerModeBadge').style.background = '#f1f5f9';
+        $('headerModeBadge').style.color = '#334155';
+        $('headerModeBadge').style.borderColor = '#cbd5e1';
+      }
     } else {
-      // 2nd+ Attempts: Dynamic reshuffle of questions AND options while keeping Q&A 100% accurate
+      // SHUFFLE MODE (Default from starting): Shuffles both questions AND options
       const shuffledQuestions = shuffle(MASTER_QUESTIONS);
       testQuestions = shuffledQuestions.map((q, idx) => {
         const masterCorrect = q.options.find(o => o.value === q.answer);
         const correctText = masterCorrect ? masterCorrect.text : '';
 
+        // Shuffle options for this question
         const shuffledOpts = shuffle(q.options);
         const remappedOptions = shuffledOpts.map((opt, oIdx) => {
           const newLabel = ['A', 'B', 'C', 'D'][oIdx];
@@ -1542,7 +1673,13 @@
         };
       });
 
-      $('paletteHeading').textContent = `Question Palette (Attempt #${attemptCount} · Dynamic Shuffle)`;
+      $('paletteHeading').textContent = `Question Palette (235 Questions · Shuffled)`;
+      if ($('headerModeBadge')) {
+        $('headerModeBadge').textContent = '🔀 Shuffled';
+        $('headerModeBadge').style.background = '#ede9fe';
+        $('headerModeBadge').style.color = '#6d28d9';
+        $('headerModeBadge').style.borderColor = '#ddd6fe';
+      }
     }
 
     userAnswers = {};
