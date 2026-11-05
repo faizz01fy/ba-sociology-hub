@@ -14094,34 +14094,13 @@
       // =========================================================================
 
       function populateSlowTicker() {
-
         if (!marquee) return;
 
-        const cdoeItems = allNotices.filter(n => n.category === 'cdoe');
-
-        const regItems = allNotices.filter(n => n.category === 'regular');
-
-        const genItems = allNotices.filter(n => n.category === 'general');
-
-
-
-        // Pick freshest items across categories (CDOE, Regular Exam & Media News)
-
-        const topPool = [];
-
-        if (cdoeItems[0]) topPool.push(cdoeItems[0]);
-
-        if (regItems[0]) topPool.push(regItems[0]);
-
-        if (genItems[0]) topPool.push(genItems[0]);
-
-        if (cdoeItems[1]) topPool.push(cdoeItems[1]);
-
-        else if (regItems[1]) topPool.push(regItems[1]);
-
-        else if (genItems[1]) topPool.push(genItems[1]);
-
-
+        // Pick the absolute very latest alerts (indexed newest first, with NEW tag)
+        let topPool = allNotices.filter(n => n.is_new).slice(0, 4);
+        if (topPool.length < 3) {
+          topPool = allNotices.slice(0, 3);
+        }
 
         if (topPool.length === 0) return;
 
@@ -14191,7 +14170,10 @@
 
         const regCount = allNotices.filter(n => n.category === 'regular').length;
 
-        const genCount = allNotices.filter(n => n.category === 'general' && ((n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo))).length;
+        let genCount = allNotices.filter(n => n.category === 'general' && ((n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo))).length;
+        if (genCount < 5) {
+          genCount = allNotices.filter(n => n.category === 'general').slice(0, 20).length;
+        }
 
         let admCount = allNotices.filter(n => n.category === 'admission' && ((n.timestamp || 0) >= oneMonthAgo || (new Date(n.date).getTime() >= oneMonthAgo))).length;
 
@@ -14378,6 +14360,12 @@
           const fifteenDaysAgo = now - (15 * 24 * 60 * 60 * 1000);
 
           list = list.filter(n => (n.timestamp || 0) >= fifteenDaysAgo || (new Date(n.date).getTime() >= fifteenDaysAgo));
+
+          if (list.length < 5) {
+
+            list = allNotices.filter(n => n.category === 'general').slice(0, 20);
+
+          }
 
         } else if (activeSection === 'admission') {
 
