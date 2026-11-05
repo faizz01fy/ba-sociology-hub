@@ -4400,7 +4400,211 @@
       font-weight: 600 !important;
       text-decoration: none !important;
     }
-</style>
+
+  /* ========================================================================= */
+  /* MCQ CARDS & BLINKING TAB STYLING (+6 FONT & COLORFUL FONT)                 */
+  /* ========================================================================= */
+
+  /* Subject Name in MCQ Cards (+6 Font: 21px, bold, colorful) */
+  .test-card h3,
+  .test-card-subject-name {
+    font-size: 21px !important;
+    font-weight: 800 !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.3px !important;
+    margin: 6px 0 8px 0 !important;
+    transition: color 0.2s ease !important;
+  }
+
+  /* Colorful font per Subject Name in MCQ Cards */
+  .test-card[data-subject-key="ktet"] h3,
+  .test-card[data-category="ktet"] h3 { color: #047857 !important; }
+
+  .test-card[data-subject-key="english"] h3,
+  .test-card[data-category="languages"] h3 { color: #1d4ed8 !important; }
+
+  .test-card[data-subject-key="sociology"] h3,
+  .test-card[data-category="social"] h3 { color: #6d28d9 !important; }
+
+  .test-card[data-subject-key="education"] h3 { color: #c2410c !important; }
+
+  .test-card[data-subject-key="ai"] h3 { color: #0e7490 !important; }
+
+  .test-card[data-subject-key="history"] h3 { color: #b91c1c !important; }
+
+  .test-card[data-subject-key="ethics"] h3 { color: #047857 !important; }
+
+  .test-card[data-subject-key="economy"] h3 { color: #1e40af !important; }
+
+  .test-card[data-subject-key="microeconomics"] h3 { color: #15803d !important; }
+
+  /* Subject Name in Subject Cards (.subject-card h3) Colorful Font */
+  .subject-card[data-subject="Malayalam"] h3 { color: #be185d !important; }
+  .subject-card[data-subject="English"] h3 { color: #1d4ed8 !important; }
+  .subject-card[data-subject="Sociology"] h3 { color: #6d28d9 !important; }
+  .subject-card[data-subject="Philosophy of AI"] h3 { color: #0e7490 !important; }
+  .subject-card[data-subject="Philosophy of Education"] h3 { color: #c2410c !important; }
+  .subject-card[data-subject="Development Issues in Indian Economy"] h3 { color: #1e40af !important; }
+  .subject-card[data-subject="Fundamentals of Ethics"] h3 { color: #047857 !important; }
+  .subject-card[data-subject="Microeconomic Foundation"] h3 { color: #15803d !important; }
+  .subject-card[data-subject="Arabic"] h3 { color: #9a3412 !important; }
+  .subject-card[data-subject="Hindi"] h3 { color: #b45309 !important; }
+  .subject-card[data-subject="Mathematics"] h3 { color: #0f766e !important; }
+  .subject-card[data-subject="History of Keralam"] h3,
+  .subject-card[data-subject="History of Keralam up to 12th Century"] h3 { color: #b91c1c !important; }
+
+  /* Subject Label in MCQ Cards (+6 Font: 15.6px, bold, colorful) */
+  .test-card .test-label {
+    font-size: 15.6px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.6px !important;
+    margin-bottom: 4px !important;
+    display: inline-block !important;
+  }
+
+  .test-card[data-subject-key="ktet"] .test-label { color: #059669 !important; }
+  .test-card[data-subject-key="english"] .test-label { color: #2563eb !important; }
+  .test-card[data-subject-key="sociology"] .test-label { color: #7c3aed !important; }
+  .test-card[data-subject-key="education"] .test-label { color: #ea580c !important; }
+  .test-card[data-subject-key="ai"] .test-label { color: #0891b2 !important; }
+  .test-card[data-subject-key="history"] .test-label { color: #dc2626 !important; }
+  .test-card[data-subject-key="ethics"] .test-label { color: #059669 !important; }
+  .test-card[data-subject-key="economy"] .test-label { color: #2563eb !important; }
+  .test-card[data-subject-key="microeconomics"] .test-label { color: #16a34a !important; }
+
+  /* Blinking Tab for all MCQ Cards */
+  .test-card > a,
+  .test-card-mcq-tab {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    margin-top: auto !important;
+    padding: 12px 18px !important;
+    border-radius: 12px !important;
+    font-size: 14.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+    text-decoration: none !important;
+    background: #059669 !important;
+    color: #ffffff !important;
+    border: 1.5px solid #047857 !important;
+    animation: mcqTabIntervalBlink 2.4s ease-in-out infinite !important;
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
+  }
+
+  .test-card > a:hover,
+  .test-card-mcq-tab:hover {
+    background: #047857 !important;
+    border-color: #065f46 !important;
+    box-shadow: 0 6px 22px rgba(5, 150, 105, 0.6) !important;
+    transform: translateY(-2px) scale(1.02) !important;
+  }
+
+  @keyframes mcqTabIntervalBlink {
+    0%, 100% {
+      background: #059669 !important;
+      color: #ffffff !important;
+      border-color: #047857 !important;
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35) !important;
+      transform: scale(1);
+    }
+    50% {
+      background: #10b981 !important;
+      color: #ffffff !important;
+      border-color: #34d399 !important;
+      box-shadow: 0 0 22px rgba(16, 185, 129, 0.85), 0 0 35px rgba(5, 150, 105, 0.5) !important;
+      transform: scale(1.025);
+    }
+  }
+
+  .mcq-tab-pulse-dot {
+    display: inline-block !important;
+    width: 9px !important;
+    height: 9px !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.95) !important;
+    animation: mcqDotPulse 1.2s ease-in-out infinite alternate !important;
+    margin-right: 6px !important;
+    vertical-align: middle !important;
+  }
+
+  @keyframes mcqDotPulse {
+    0% { opacity: 0.35; transform: scale(0.7); }
+    100% { opacity: 1; transform: scale(1.25); }
+  }
+
+  .mcq-tab-arrow {
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    transition: transform 0.2s ease !important;
+  }
+
+  .test-card > a:hover .mcq-tab-arrow,
+  .test-card-mcq-tab:hover .mcq-tab-arrow {
+    transform: translateX(4px);
+  }
+
+  /* Blinking Tab for Mock Test in Subject Cards */
+  .resource-list a.language-tab--mock-test {
+    position: relative !important;
+    border-color: #34d399 !important;
+    animation: mcqSubjectTabBlink 2.5s ease-in-out infinite !important;
+    background: #f0fdf4 !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .resource-list a.language-tab--mock-test > .language-badge {
+    background: #dcfce7 !important;
+    color: #059669 !important;
+    font-weight: 800 !important;
+  }
+
+  .resource-list a.language-tab--mock-test:hover {
+    border-color: #059669 !important;
+    background: #dcfce7 !important;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.28) !important;
+    transform: translateY(-1.5px);
+  }
+
+  @keyframes mcqSubjectTabBlink {
+    0%, 100% {
+      border-color: #34d399;
+      box-shadow: 0 1px 4px rgba(16, 185, 129, 0.12);
+      transform: scale(1);
+    }
+    50% {
+      border-color: #059669;
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.45), 0 0 24px rgba(52, 211, 153, 0.25);
+      transform: scale(1.015);
+    }
+  }
+
+  .mcq-blink-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #ffffff;
+    background: linear-gradient(135deg, #059669, #10b981);
+    padding: 2px 7px;
+    border-radius: 999px;
+    margin-left: 6px;
+    vertical-align: middle;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
+    animation: mcqPillBlink 2s ease-in-out infinite !important;
+    letter-spacing: 0.3px;
+  }
+
+  @keyframes mcqPillBlink {
+    0%, 100% { transform: scale(1); filter: brightness(1); }
+    50% { transform: scale(1.08); filter: brightness(1.2); }
+  }
+
+  </style>
 </head>
 
 <body id="top">
@@ -4723,7 +4927,7 @@
 
 
 
-        <article class="subject-card" data-subject="Sociology" data-category="social" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1548782033-3ac3a62ece8d?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Community members gathered together outdoors" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-purple">◎</span><span class="subject-tag">CORE SUBJECT</span></div><h3>Sociology</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="soc-reading.html?v=20261103_mod1#mod1" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Sociology Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" oncontextmenu="event.preventDefault(); return false;" hidden style="display: none !important;" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="study-guide-reader.html?file=Sociology_MCQs_Answered.pdf%3Fv%3D20261105_rectified&amp;tab=mcq" class="language-tab language-tab--mcq-pdf language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Sociology MCQ PDF in Full View"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>Full View PDF Reader (235 Qs)</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="sociology-without-timer.html" class="language-tab language-tab--mock-test language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Sociology Without Timer MCQ Test"><span class="language-badge" aria-hidden="true">⚡</span><span class="language-copy"><strong>Without Timer</strong><small>Full 235 Questions · Self-Paced</small></span><span class="language-arrow" aria-hidden="true">→</span></a><a href="voice-explanation.html?subject=sociology" class="language-tab language-tab--voice-explanation language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Sociology Voice Explanation (Mal)"><span class="language-badge" aria-hidden="true">🎙️</span><span class="language-copy"><strong>Voice Explanation (Mal)<span class="voice-blink-pill">🔴 NEW (Mal)</span></strong><small>Module 1–5 Chapters Voice Lectures</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Sociology" data-category="social" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1548782033-3ac3a62ece8d?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Community members gathered together outdoors" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-purple">◎</span><span class="subject-tag">CORE SUBJECT</span></div><h3>Sociology</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="soc-reading.html?v=20261103_mod1#mod1" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Sociology Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" oncontextmenu="event.preventDefault(); return false;" hidden style="display: none !important;" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="study-guide-reader.html?file=Sociology_MCQs_Answered.pdf%3Fv%3D20261105_rectified&amp;tab=mcq" class="language-tab language-tab--mcq-pdf language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Sociology MCQ PDF in Full View"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>Full View PDF Reader (235 Qs)</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="sociology-without-timer.html" class="language-tab language-tab--mock-test language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Sociology MCQ Test"><span class="language-badge" aria-hidden="true">⚡</span><span class="language-copy"><strong>MCQ Test<span class="mcq-blink-pill">⚡ LIVE</span></strong><small>Full 235 Questions · Self-Paced</small></span><span class="language-arrow" aria-hidden="true">→</span></a><a href="voice-explanation.html?subject=sociology" class="language-tab language-tab--voice-explanation language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Sociology Voice Explanation (Mal)"><span class="language-badge" aria-hidden="true">🎙️</span><span class="language-copy"><strong>Voice Explanation (Mal)<span class="voice-blink-pill">🔴 NEW (Mal)</span></strong><small>Module 1–5 Chapters Voice Lectures</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
 
         <article class="subject-card" data-subject="Philosophy of AI" data-category="philosophy" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="AI microchip on an electronic circuit board" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-mint">✧</span><span class="subject-tag">Minor for BA Sociology</span></div><h3>Philosophy of AI</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ai-reading.html?v=20261103_mod1#mod1" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Philosophy of AI Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All 5 modules &amp; chapters complete guide</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" oncontextmenu="event.preventDefault(); return false;" hidden style="display: none !important;" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="study-guide-reader.html?file=Philosophy_of_AI_MCQ_Eng_malayalam.pdf%3Fv%3D4481d672&amp;tab=mcq" class="language-tab language-tab--mcq-pdf language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Philosophy of AI MCQ PDF in Full View"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>Full View PDF Reader (Eng &amp; Mal)</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="voice-explanation.html?subject=philosophy-of-ai" class="language-tab language-tab--voice-explanation language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Philosophy of AI Voice Explanation (Mal)"><span class="language-badge" aria-hidden="true">🎙️</span><span class="language-copy"><strong>Voice Explanation (Mal)<span class="voice-blink-pill">🔴 NEW (Mal)</span></strong><small>Module 1–5 Chapters Voice Lectures</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
 
@@ -4733,7 +4937,7 @@
 
 
 
-        <article class="subject-card" data-subject="Fundamentals of Ethics" data-category="philosophy" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Handshake representing trust and mutual respect" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-green">◇</span><span class="subject-tag">Minor Course</span></div><h3>Fundamentals of Ethics</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ethics-reading.html?v=20261103_mod1#mod1" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Fundamentals of Ethics Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" oncontextmenu="event.preventDefault(); return false;" hidden style="display: none !important;" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="study-guide-reader.html?file=Fundamentals%20of%20Ethics%2FMalayalam%20PDF%2FEthics_Exam_Cracker_Malayalam.pdf&amp;tab=mcq" class="language-tab language-tab--mcq-pdf language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Fundamentals of Ethics MCQ PDF in Full View"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>Full View PDF Reader (75 MCQs)</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ethics-without-timer.html" class="language-tab language-tab--mock-test language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Fundamentals of Ethics Without Timer MCQ Test"><span class="language-badge" aria-hidden="true">⚡</span><span class="language-copy"><strong>Without Timer</strong><small>Full 150 Questions · Self-Paced</small></span><span class="language-arrow" aria-hidden="true">→</span></a><a href="voice-explanation.html?subject=fundamentals-of-ethics" class="language-tab language-tab--voice-explanation language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Fundamentals of Ethics Voice Explanation (Mal)"><span class="language-badge" aria-hidden="true">🎙️</span><span class="language-copy"><strong>Voice Explanation (Mal)<span class="voice-blink-pill">🔴 NEW (Mal)</span></strong><small>Module 1–5 Chapters Voice Lectures</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="Fundamentals of Ethics" data-category="philosophy" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Handshake representing trust and mutual respect" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-green">◇</span><span class="subject-tag">Minor Course</span></div><h3>Fundamentals of Ethics</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ethics-reading.html?v=20261103_mod1#mod1" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Fundamentals of Ethics Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" oncontextmenu="event.preventDefault(); return false;" hidden style="display: none !important;" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="study-guide-reader.html?file=Fundamentals%20of%20Ethics%2FMalayalam%20PDF%2FEthics_Exam_Cracker_Malayalam.pdf&amp;tab=mcq" class="language-tab language-tab--mcq-pdf language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Fundamentals of Ethics MCQ PDF in Full View"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>Full View PDF Reader (75 MCQs)</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="ethics-without-timer.html" class="language-tab language-tab--mock-test language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Fundamentals of Ethics MCQ Test"><span class="language-badge" aria-hidden="true">⚡</span><span class="language-copy"><strong>MCQ Test<span class="mcq-blink-pill">⚡ LIVE</span></strong><small>Full 150 Questions · Self-Paced</small></span><span class="language-arrow" aria-hidden="true">→</span></a><a href="voice-explanation.html?subject=fundamentals-of-ethics" class="language-tab language-tab--voice-explanation language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Fundamentals of Ethics Voice Explanation (Mal)"><span class="language-badge" aria-hidden="true">🎙️</span><span class="language-copy"><strong>Voice Explanation (Mal)<span class="voice-blink-pill">🔴 NEW (Mal)</span></strong><small>Module 1–5 Chapters Voice Lectures</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
 
         <article class="subject-card" data-subject="Microeconomic Foundation" data-category="economics" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1644871913429-9ed7696180cc?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Assorted coins representing value and exchange" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-blue">₹</span><span class="subject-tag">Minor Course</span></div><h3>Microeconomic Foundation</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–5 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="micro-reading.html?v=20261103_mod1#mod1" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Microeconomics Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" oncontextmenu="event.preventDefault(); return false;" hidden style="display: none !important;" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="study-guide-reader.html?file=Microeconomics_Questions_and_Answers.pdf&amp;tab=mcq" class="language-tab language-tab--mcq-pdf language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Microeconomic Foundation MCQ PDF in Full View"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>Full View PDF Reader (Eng &amp; Mal)</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="voice-explanation.html?subject=microeconomic-foundation" class="language-tab language-tab--voice-explanation language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Microeconomic Foundation Voice Explanation (Mal)"><span class="language-badge" aria-hidden="true">🎙️</span><span class="language-copy"><strong>Voice Explanation (Mal)<span class="voice-blink-pill">🔴 NEW (Mal)</span></strong><small>Module 1–5 Chapters Voice Lectures</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
 
@@ -4743,7 +4947,7 @@
 
         <article class="subject-card" data-subject="Mathematics" data-category="maths" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1635372722656-389f87a941b7?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Blackboard covered with mathematical equations" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-mint">∑</span><span class="subject-tag">Maths</span></div><h3>Mathematics</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" oncontextmenu="event.preventDefault(); return false;" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" oncontextmenu="event.preventDefault(); return false;" hidden style="display: none !important;" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="study-guide-reader.html?file=notesphere-MATHEMATICS-chapter-15.pdf&amp;tab=mcq" class="language-tab language-tab--mcq-pdf language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Mathematics Question Bank PDF in Full View"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>Full View PDF Reader (Exam Practice)</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="voice-explanation.html?subject=mathematics" class="language-tab language-tab--voice-explanation language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open Mathematics Voice Explanation (Mal)"><span class="language-badge" aria-hidden="true">🎙️</span><span class="language-copy"><strong>Voice Explanation (Mal)<span class="voice-blink-pill">🔴 NEW (Mal)</span></strong><small>Module 1–4 Chapters Voice Lectures</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
 
-        <article class="subject-card" data-subject="History of Keralam" data-category="social" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1695964744922-c7d01b4761cb?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Historic Kerala palace with traditional tiled roofs" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-purple">🏛</span><span class="subject-tag">HISTORY</span></div><h3>History of Keralam up to 12th Century</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="hist-reading.html?v=20261103_mod1#mod1" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open History of Keralam Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" oncontextmenu="event.preventDefault(); return false;" hidden style="display: none !important;" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="study-guide-reader.html?file=History%2FLMS_PDF%2FHistory_of_Keralam_Comprehensive_MCQ_Question_Bank.pdf&amp;tab=mcq" class="language-tab language-tab--mcq-pdf language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open History of Keralam MCQ PDF in Full View"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>Full View PDF Reader (100 MCQs)</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="history-of-keralam-mcq-test.html" class="language-tab language-tab--mock-test language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open History of Keralam Mock Test"><span class="language-badge" aria-hidden="true">MT</span><span class="language-copy"><strong>Mock Test (60Q)</strong><small>30 Mins · 100 Q Bank · Instant Review</small></span><span class="language-arrow" aria-hidden="true">→</span></a><a href="voice-explanation.html?subject=history-of-keralam" class="language-tab language-tab--voice-explanation language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open History of Keralam Voice Explanation (Mal)"><span class="language-badge" aria-hidden="true">🎙️</span><span class="language-copy"><strong>Voice Explanation (Mal)<span class="voice-blink-pill">🔴 NEW (Mal)</span></strong><small>Module 1–5 Chapters Voice Lectures</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
+        <article class="subject-card" data-subject="History of Keralam" data-category="social" oncontextmenu="event.preventDefault(); return false;"><img class="subject-cover" src="https://images.unsplash.com/photo-1695964744922-c7d01b4761cb?auto=format&amp;fit=crop&amp;w=560&amp;h=315&amp;q=70" alt="Historic Kerala palace with traditional tiled roofs" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div class="subject-top"><span class="subject-icon icon-purple">🏛</span><span class="subject-tag">HISTORY</span></div><h3>History of Keralam up to 12th Century</h3><div class="resource-list"><a href="#" class="language-tab language-tab--english" role="button" aria-haspopup="dialog" aria-label="Browse English PDF modules"><span class="language-badge" aria-hidden="true">EN</span><span class="language-copy"><strong>LMS PDF</strong><small>Module 1–4 tabs</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="hist-reading.html?v=20261103_mod1#mod1" class="language-tab language-tab--malayalam language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open History of Keralam Malayalam Reading module page"><span class="language-badge" aria-hidden="true">അ</span><span class="language-copy"><strong>Malayalam Reading</strong><small>All modules in Malayalam &amp; English</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="#" class="language-tab language-tab--study-guide" oncontextmenu="event.preventDefault(); return false;" hidden style="display: none !important;" role="button" aria-haspopup="dialog" aria-label="Open English and Malayalam study guide modules"><span class="language-badge" aria-hidden="true">E/മ</span><span class="language-copy"><strong>Study guide Eng - Mal</strong><small>English + Malayalam modules</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="study-guide-reader.html?file=History%2FLMS_PDF%2FHistory_of_Keralam_Comprehensive_MCQ_Question_Bank.pdf&amp;tab=mcq" class="language-tab language-tab--mcq-pdf language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open History of Keralam MCQ PDF in Full View"><span class="language-badge" aria-hidden="true">MCQ</span><span class="language-copy"><strong>MCQ PDF</strong><small>Full View PDF Reader (100 MCQs)</small></span><span class="language-arrow" aria-hidden="true">↗</span></a><a href="history-of-keralam-mcq-test.html" class="language-tab language-tab--mock-test language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open History of Keralam MCQ Test"><span class="language-badge" aria-hidden="true">MT</span><span class="language-copy"><strong>MCQ Test<span class="mcq-blink-pill">⚡ LIVE</span></strong><small>30 Mins · 100 Q Bank · Instant Review</small></span><span class="language-arrow" aria-hidden="true">→</span></a><a href="voice-explanation.html?subject=history-of-keralam" class="language-tab language-tab--voice-explanation language-tab--navigate" oncontextmenu="event.preventDefault(); return false;" aria-label="Open History of Keralam Voice Explanation (Mal)"><span class="language-badge" aria-hidden="true">🎙️</span><span class="language-copy"><strong>Voice Explanation (Mal)<span class="voice-blink-pill">🔴 NEW (Mal)</span></strong><small>Module 1–5 Chapters Voice Lectures</small></span><span class="language-arrow" aria-hidden="true">↗</span></a></div></article>
 
       </div>
 
@@ -4827,31 +5031,30 @@
 
             <div class="test-grid">
 
-        <article class="test-card" data-subject-key="ktet" data-category="ktet"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Kerala Teacher Eligibility Test K-TET 500 MCQs"><div class="test-icon test-green">🎓</div><span class="test-label">K-TET 2026</span><h3>K-tet 500 MCQs</h3><p>Child Development &amp; Pedagogy, Educational Psychology &amp; Teaching Methods across 5 structured parts.</p><a href="ktet-500-mcq-test.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="ktet" data-category="ktet"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Kerala Teacher Eligibility Test K-TET 500 MCQs"><div class="test-icon test-green">🎓</div><span class="test-label">K-TET 2026</span><h3 class="test-card-subject-name">K-tet 500 MCQs</h3><p>Child Development &amp; Pedagogy, Educational Psychology &amp; Teaching Methods across 5 structured parts.</p><a href="ktet-500-mcq-test.html" class="test-card-mcq-tab" aria-label="Start K-tet 500 MCQs MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
 
-        <article class="test-card" data-subject-key="english" data-category="languages"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Books and study materials for English"><div class="test-icon test-blue">Aa</div><span class="test-label">ENGLISH</span><h3>English MCQ Test</h3><p></p><a href="english-mcq-60q-test-final.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="english" data-category="languages"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Books and study materials for English"><div class="test-icon test-blue">Aa</div><span class="test-label">ENGLISH</span><h3 class="test-card-subject-name">English</h3><p>Exam-oriented multiple choice practice with questions from all 4 English modules.</p><a href="english-mcq-60q-test-final.html" class="test-card-mcq-tab" aria-label="Start English MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
 
-        <article class="test-card" data-subject-key="sociology" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="People gathered together representing society"><div class="test-icon test-purple">⚡</div><span class="test-label">SOCIOLOGY · WITHOUT TIMER</span><h3>Without Timer</h3><p>Full 235 questions from university question bank. Self-paced practice without timer or clock.</p><a href="sociology-without-timer.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="sociology" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="People gathered together representing society"><div class="test-icon test-purple">⚡</div><span class="test-label">SOCIOLOGY · WITHOUT TIMER</span><h3 class="test-card-subject-name">Sociology (Without Timer)</h3><p>Full 235 questions from university question bank. Self-paced practice without timer or clock.</p><a href="sociology-without-timer.html" class="test-card-mcq-tab" aria-label="Start Sociology Without Timer MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
 
-        <article class="test-card" data-subject-key="sociology" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="People gathered together representing society"><div class="test-icon test-purple">◎</div><span class="test-label">SOCIOLOGY</span><h3>Sociology Comprehensive Test</h3><p></p><a href="sociology-mock-test-final-60q.html?v=20261017a">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="sociology" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="People gathered together representing society"><div class="test-icon test-purple">◎</div><span class="test-label">SOCIOLOGY</span><h3 class="test-card-subject-name">Sociology</h3><p>Timed mock assessment covering classical theorists, methodology, concepts &amp; societal institutions.</p><a href="sociology-mock-test-final-60q.html?v=20261017a" class="test-card-mcq-tab" aria-label="Start Sociology MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
 
-        <article class="test-card" data-subject-key="education" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Student learning for philosophy of education"><div class="test-icon test-orange">✎</div><span class="test-label">EDUCATION</span><h3>Philosophy of Education</h3><p></p><a href="philosophy-of-education-mock-test.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="education" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Student learning for philosophy of education"><div class="test-icon test-orange">✎</div><span class="test-label">EDUCATION</span><h3 class="test-card-subject-name">Philosophy of Education</h3><p>Pedagogical paradigms, educational thinkers, and philosophical foundations practice questions.</p><a href="philosophy-of-education-mock-test.html" class="test-card-mcq-tab" aria-label="Start Philosophy of Education MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
 
-        <article class="test-card" data-subject-key="ai" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Artificial intelligence and digital technology"><div class="test-icon test-mint">✧</div><span class="test-label">ARTIFICIAL INTELLIGENCE</span><h3>Philosophy of AI</h3><p></p><a href="philosophy-of-ai-mcq-test.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="ai" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Artificial intelligence and digital technology"><div class="test-icon test-mint">✧</div><span class="test-label">ARTIFICIAL INTELLIGENCE</span><h3 class="test-card-subject-name">Philosophy of AI</h3><p>Cognitive modeling, Turing test, ethics of algorithms, and philosophical AI dimensions.</p><a href="philosophy-of-ai-mcq-test.html" class="test-card-mcq-tab" aria-label="Start Philosophy of AI MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
 
-        <article class="test-card" data-subject-key="history" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1695964744922-c7d01b4761cb?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Historic Kerala palace with traditional timber and tiled architecture"><div class="test-icon test-purple">📜</div><span class="test-label">HISTORY</span><h3>History of Keralam up to 12th Century</h3><p></p><a href="history-mock-test.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="history" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1695964744922-c7d01b4761cb?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Historic Kerala palace with traditional timber and tiled architecture"><div class="test-icon test-purple">📜</div><span class="test-label">HISTORY</span><h3 class="test-card-subject-name">History of Keralam up to 12th Century</h3><p>Archaeological evidence, prehistoric settlements, megaliths, and early historic Kerala societies.</p><a href="history-mock-test.html" class="test-card-mcq-tab" aria-label="Start History of Keralam MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
 
-        <article class="test-card" data-subject-key="ethics" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Handshake representing ethical conduct and trust"><div class="test-icon test-green">◇</div><span class="test-label">ETHICS</span><h3>Fundamentals of Ethics MCQ Test</h3><p></p><a href="ethics-mock-test.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="ethics" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Handshake representing ethical conduct and trust"><div class="test-icon test-green">◇</div><span class="test-label">ETHICS</span><h3 class="test-card-subject-name">Fundamentals of Ethics</h3><p>Moral philosophy, virtue ethics, deontological &amp; utilitarian frameworks exam practice.</p><a href="ethics-mock-test.html" class="test-card-mcq-tab" aria-label="Start Fundamentals of Ethics MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
 
-        <article class="test-card" data-subject-key="ethics" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Handshake representing ethical conduct and trust"><div class="test-icon test-green">⚡</div><span class="test-label">ETHICS · WITHOUT TIMER</span><h3>Without Timer (Full 150 Qs)</h3><p>Full 150 questions displayed at once without timer pressure. Includes Shuffled and PDF Pattern modes.</p><a href="ethics-without-timer.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="ethics" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Handshake representing ethical conduct and trust"><div class="test-icon test-green">⚡</div><span class="test-label">ETHICS · WITHOUT TIMER</span><h3 class="test-card-subject-name">Fundamentals of Ethics (Without Timer)</h3><p>Full 150 questions displayed at once without timer pressure. Includes Shuffled and PDF Pattern modes.</p><a href="ethics-without-timer.html" class="test-card-mcq-tab" aria-label="Start Fundamentals of Ethics Without Timer MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
 
-        <article class="test-card" data-subject-key="economy" data-category="economics"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Economic data and charts for Indian economy"><div class="test-icon test-green">₹</div><span class="test-label">INDIAN ECONOMY</span><h3>Development Issues of Indian Economy</h3><p></p><a href="economictest.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="economy" data-category="economics"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Economic data and charts for Indian economy"><div class="test-icon test-green">₹</div><span class="test-label">INDIAN ECONOMY</span><h3 class="test-card-subject-name">Development Issues of Indian Economy</h3><p>Poverty, inequality, planning era, reforms, fiscal policies, and economic structural shifts.</p><a href="economictest.html" class="test-card-mcq-tab" aria-label="Start Development Issues of Indian Economy MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
 
-        <article class="test-card" data-subject-key="microeconomics" data-category="economics"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1644871913429-9ed7696180cc?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Coins representing microeconomics and consumer choice"><div class="test-icon test-green">₹</div><span class="test-label">MICROECONOMICS</span><h3>Microeconomic Foundation</h3><p></p><a href="microeconomics-foundation-mcq-test.html">Start test <span>→</span></a></article>
+        <article class="test-card" data-subject-key="microeconomics" data-category="economics"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1644871913429-9ed7696180cc?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Coins representing microeconomics and consumer choice"><div class="test-icon test-green">₹</div><span class="test-label">MICROECONOMICS</span><h3 class="test-card-subject-name">Microeconomic Foundation</h3><p>Consumer behavior, utility analysis, indifference curves, equilibrium, and elasticity.</p><a href="microeconomics-foundation-mcq-test.html" class="test-card-mcq-tab" aria-label="Start Microeconomic Foundation MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
 
       </div>
-
-    </section>
+</section>
 
 
 
