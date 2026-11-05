@@ -767,7 +767,14 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Sociology · Module 2 · Practicing Sociology",
             "duration": "8:42",
             "youtubeId": "YEnG1YJ_vfs",
-            "language": "English"
+            "language": "English",
+            "studyPoints": [
+              "<strong>Micro vs. Macro Sociology (സൂക്ഷ്മ-സ്ഥൂല തലങ്ങൾ):</strong> Micro sociology analyzes small-scale, everyday face-to-face interactions and subjective meanings (Herbert Blumer's Symbolic Interactionism, Erving Goffman's Dramaturgy, Alfred Schutz's Phenomenology). Macro sociology studies large-scale social systems, institutions, and structural patterns (Émile Durkheim's Social Facts, Karl Marx's Class Conflict).",
+              "<strong>Positivist Orientation (പോസിറ്റിവിസ്റ്റ് ശാസ്ത്രീയ രീതി):</strong> Originating with Auguste Comte and Émile Durkheim; treats society as an objective reality governed by discoverable social laws using empirical observation, quantitative measurement, replication, and value neutrality (നിഷ്പക്ഷത).",
+              "<strong>Interpretative Orientation &amp; Verstehen (ഫെർഷെഹൻ ഉൾക്കാഴ്ച):</strong> Pioneered by Max Weber; asserts human beings attach subjective meanings to actions, requiring <em>Verstehen</em> (empathetic understanding) to interpret reality from the actor's perspective rather than copying natural-science methods.",
+              "<strong>Critical Sociology &amp; Emancipation (വിമർശനാത്മക പഠനം):</strong> Rooted in Karl Marx and Frankfurt School theorists (Horkheimer, Adorno, Jürgen Habermas); actively uncovers hidden power hierarchies, ideological domination, and structural inequality to empower social transformation and human emancipation."
+            ],
+            "examTip": "Calicut University FYUGP Core Focus: 'Distinguish between Micro and Macro levels of sociological analysis with suitable examples' and 'Critically evaluate Positivist, Interpretative (Verstehen), and Critical orientations in sociological research' (Essential 10-Mark essay & short answer areas)."
           },
           {
             "chapterNumber": "Chapter 2.1",
