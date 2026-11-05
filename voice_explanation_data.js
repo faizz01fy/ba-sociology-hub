@@ -816,7 +816,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Agents of Socialization · Family, School, Peer Groups, Religion, State, Mass Media & Workplace",
             "duration": "16:15",
             "youtubeId": "LqhkuyEAWBM",
-            "videoUrl": "/videos/Calicut_University_FYUGP_Sociology_Sem1_Mod3_Agents_of_Socialization.mp4",
+            "thumbnail": "/thumbnails/sociology_agents_of_socialization_mod3/thumb.png",
             "language": "Malayalam",
             "studyPoints": [
               "<strong>ആമുഖവും എച്ച്.ടി. മജുംദാർ നിർവ്വചനവും:</strong> ജൈവിക ജീവിയെ പൂർണ്ണ സാമൂഹിക വ്യക്തിത്വമാക്കി മാറ്റുന്ന ആജീവനാന്ത പ്രക്രിയ; എച്ച്.ടി. മജുംദാറിന്റെ ആധികാരിക നിർവ്വചനം.",

@@ -381,7 +381,9 @@ export default {
           country: request.cf?.country || "XX",
           region: request.cf?.region || "",
           city: request.cf?.city || "",
-          isp: request.cf?.asOrganization || ""
+          isp: request.cf?.asOrganization || "",
+          device: parseDevice(request.headers.get("User-Agent"), request.headers.get("sec-ch-ua-mobile")),
+          ref: parseReferrer(request.headers.get("Referer"), url.hostname)
         })
       })).catch(() => {});
       ctx.waitUntil(task);
@@ -549,7 +551,7 @@ export class StudyHubChat {
       let records = (await this.state.storage.get("traffic")) || [];
       records = records.filter(r=>r.time > now - RETENTION_MS);
       await this.countVisit(now, String(entry.ip).slice(0,64), records);
-      records.push({time:now,ip:String(entry.ip).slice(0,64),path:String(entry.path).slice(0,200),country:typeof entry.country === "string" && /^(?:[A-Z]{2}|T1)$/.test(entry.country) ? entry.country : "XX",region:cleanText(entry.region,100),city:cleanText(entry.city,100),isp:cleanText(entry.isp,100)});
+      records.push({time:now,ip:String(entry.ip).slice(0,64),path:String(entry.path).slice(0,200),country:typeof entry.country === "string" && /^(?:[A-Z]{2}|T1)$/.test(entry.country) ? entry.country : "XX",region:cleanText(entry.region,100),city:cleanText(entry.city,100),isp:cleanText(entry.isp,100),device:cleanText(entry.device,60),ref:cleanText(entry.ref,100)});
       await this.state.storage.put("traffic", records.slice(-5000));
       await this.state.storage.setAlarm(now + RETENTION_MS);
       return json({ok:true});
@@ -690,6 +692,42 @@ export class StudyHubChat {
     await this.state.storage.setAlarm(now+24*60*60*1000);
   }
 
+}
+
+function parseDevice(ua, isSecMobile) {
+  if (typeof ua !== "string") ua = "";
+  if (/Googlebot|Mediapartners-Google|AdsBot-Google/i.test(ua)) return "🤖 Google Bot";
+  if (/Android/i.test(ua)) return "📱 Android";
+  if (/iPhone/i.test(ua)) return "🍏 iPhone";
+  if (/iPad/i.test(ua)) return "🍏 iPad";
+  if (/Windows/i.test(ua)) return "💻 Windows PC";
+  if (/Macintosh|Mac OS X/i.test(ua)) return "🖥️ Mac";
+  if (/Linux/i.test(ua)) return "🐧 Linux";
+  if (/CrOS/i.test(ua)) return "💻 Chromebook";
+  if (isSecMobile === "?1") return "📱 Mobile";
+  return "💻 Desktop / Web";
+}
+
+function parseReferrer(rawRef, host) {
+  if (!rawRef || typeof rawRef !== "string") return "🔖 Direct / Saved";
+  try {
+    const u = new URL(rawRef);
+    if (u.hostname === host || u.hostname.endsWith("academichubfaiz.in") || u.hostname.endsWith("workers.dev")) {
+      return "🔖 Internal / Saved";
+    }
+    const h = u.hostname.toLowerCase();
+    if (h.includes("youtube.com") || h.includes("youtu.be")) return "▶️ YouTube";
+    if (h.includes("google.")) return "🔍 Google Search";
+    if (h.includes("whatsapp") || h.includes("wa.me")) return "💬 WhatsApp";
+    if (h.includes("telegram") || h.includes("t.me")) return "✈️ Telegram";
+    if (h.includes("instagram")) return "📸 Instagram";
+    if (h.includes("facebook") || h.includes("fb.me")) return "📘 Facebook";
+    if (h.includes("bing.com")) return "🔍 Bing";
+    if (h.includes("uoc.ac.in")) return "🎓 Calicut Univ Portal";
+    return "🌐 " + h.replace(/^www\./, "");
+  } catch {
+    return "🔖 Direct / Link";
+  }
 }
 
 function cleanText(value, maxLength) {
@@ -836,13 +874,14 @@ function adminPage(authorized) {
       <table>
         <thead>
           <tr>
-            <th style="min-width:160px">Last Active (IST)</th>
-            <th style="min-width:160px">Visitor IP Address</th>
-            <th style="min-width:110px">Total Visits</th>
-            <th style="min-width:170px">Country / Region</th>
-            <th style="min-width:160px">State / City</th>
-            <th style="min-width:180px">Current Active Page</th>
-            <th style="min-width:240px">Section Trail History</th>
+            <th style="min-width:125px">Last Active</th>
+            <th style="min-width:110px">Visitor IP</th>
+            <th style="min-width:80px">Visits</th>
+            <th style="min-width:120px">Country</th>
+            <th style="min-width:145px">Location & ISP</th>
+            <th style="min-width:130px">Device & Source</th>
+            <th style="min-width:150px">Current Page</th>
+            <th style="min-width:160px">Section Trail</th>
           </tr>
         </thead>
         <tbody id="rows">
@@ -1270,6 +1309,26 @@ td {
 tr:nth-child(even) td { background: rgba(255, 255, 255, 0.015); }
 tr:hover td { background: rgba(56, 189, 248, 0.07); }
 
+/* GOOGLE BOT BOLD & SINGLE BLINK */
+@keyframes bot-blink-once {
+  0% { background: rgba(56, 189, 248, 0.45); }
+  50% { background: rgba(245, 158, 11, 0.45); }
+  100% { background: rgba(56, 189, 248, 0.09); }
+}
+.google-bot-row {
+  border-left: 3px solid #f59e0b !important;
+  animation: bot-blink-once 1.2s ease-out 1 forwards;
+}
+.google-bot-row td {
+  font-weight: 700 !important;
+}
+.google-bot-row .ip-badge {
+  font-weight: 800 !important;
+  color: #f59e0b !important;
+  border-color: rgba(245, 158, 11, 0.5) !important;
+  background: rgba(245, 158, 11, 0.16) !important;
+}
+
 /* VISITOR STYLED ELEMENTS */
 .time-stamp {
   font-family: var(--font-mono);
@@ -1493,6 +1552,18 @@ details.section-details summary:hover, details.popular-details summary:hover {
     let liveData = { active: 0, pages: [] };
     let trafficPage = 1;
 
+    function formatShortIP(ip) {
+      if (!ip || typeof ip !== "string") return "Unknown";
+      if (ip.includes(":") && ip.length > 18) {
+        const parts = ip.split(":").filter(Boolean);
+        if (parts.length >= 3) {
+          return parts[0] + ":" + parts[1] + ":..:" + parts[parts.length - 1];
+        }
+        return ip.slice(0, 10) + ".." + ip.slice(-4);
+      }
+      return ip;
+    }
+
     // RENDER TRAFFIC (VISITORS WITH IP & DETAILS)
     function renderTraffic() {
       const search = (document.getElementById('traffic-search-input').value || "").trim().toLowerCase();
@@ -1501,7 +1572,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
       let filtered = trafficRecords.filter(item => {
         if (!search) return true;
         const info = countryInfo(item.country);
-        const hay = [item.ip, item.country, info.name, item.region, item.city, item.isp, item.path, ...(item.sections||[]).map(s=>s.name)].filter(Boolean).join(' ').toLowerCase();
+        const hay = [item.ip, item.country, info.name, item.region, item.city, item.isp, item.device, item.ref, item.path, ...(item.sections||[]).map(s=>s.name)].filter(Boolean).join(' ').toLowerCase();
         return hay.includes(search);
       });
 
@@ -1547,15 +1618,20 @@ details.section-details summary:hover, details.popular-details summary:hover {
 
       for (const v of pageItems) {
         const tr = document.createElement('tr');
+        const isGoogleBot = (v.isp && /Google/i.test(v.isp)) || (v.ip && (v.ip.startsWith('66.249.') || /Google/i.test(v.ip))) || (v.device && /Google/i.test(v.device));
+        if (isGoogleBot) {
+          tr.className = 'google-bot-row';
+        }
 
         // Last Active (IST)
         const tdTime = document.createElement('td');
         tdTime.innerHTML = '<span class="time-stamp">' + formatIST(v.time) + '</span>';
         tr.append(tdTime);
 
-        // Visitor IP Address
+        // Visitor IP Address (Shortened for screen fit)
         const tdIp = document.createElement('td');
-        tdIp.innerHTML = '<span class="ip-badge">' + v.ip + '</span>';
+        const shortIp = formatShortIP(v.ip);
+        tdIp.innerHTML = '<span class="ip-badge" title="Full IP: ' + v.ip + '" style="font-family:var(--font-mono);font-size:11.5px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;cursor:help;">' + shortIp + '</span>';
         tr.append(tdIp);
 
         // Total Visits
@@ -1588,6 +1664,18 @@ details.section-details summary:hover, details.popular-details summary:hover {
           tdLoc.textContent = loc;
         }
         tr.append(tdLoc);
+
+        // Device & Source
+        const tdDev = document.createElement('td');
+        tdDev.className = 'location-text';
+        const devDiv = document.createElement('div');
+        devDiv.style.cssText = 'font-weight:600;font-size:11.5px;display:flex;align-items:center;gap:3px;white-space:nowrap;';
+        devDiv.textContent = v.device || '📱 Mobile / Web';
+        const srcDiv = document.createElement('div');
+        srcDiv.style.cssText = 'font-size:10.5px;color:var(--text-dim);margin-top:2px;display:flex;align-items:center;gap:3px;white-space:nowrap;';
+        srcDiv.textContent = v.ref || '🔖 Direct / Saved';
+        tdDev.append(devDiv, srcDiv);
+        tr.append(tdDev);
 
         // Current Page
         const tdPage = document.createElement('td');
@@ -1790,7 +1878,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
 
     function exportTrafficCSV() {
       if (!trafficRecords.length) { alert('No traffic records to export.'); return; }
-      const headers = ['Visitor IP', 'Total Visits', 'Country', 'Region', 'City', 'Broadband / ISP', 'Last Active (IST)', 'Latest Page Path'];
+      const headers = ['Visitor IP', 'Total Visits', 'Country', 'Region', 'City', 'Broadband / ISP', 'Device', 'Traffic Source', 'Last Active (IST)', 'Latest Page Path'];
       const rows = trafficRecords.map(v => [
         v.ip,
         v.visits,
@@ -1798,6 +1886,8 @@ details.section-details summary:hover, details.popular-details summary:hover {
         '"' + (v.region || '').replace(/"/g, '""') + '"',
         '"' + (v.city || '').replace(/"/g, '""') + '"',
         '"' + (v.isp || '').replace(/"/g, '""') + '"',
+        '"' + (v.device || '').replace(/"/g, '""') + '"',
+        '"' + (v.ref || '').replace(/"/g, '""') + '"',
         '"' + formatIST(v.time) + '"',
         '"' + (v.path || '/').replace(/"/g, '""') + '"'
       ]);
@@ -2061,11 +2151,13 @@ function groupTrafficByIP(records, sectionEvents = []) {
     if (!group.region && record.region) group.region=record.region;
     if (!group.city && record.city) group.city=record.city;
     if (!group.isp && record.isp) group.isp=record.isp;
+    if (!group.device && record.device) group.device=record.device;
+    if (!group.ref && record.ref) group.ref=record.ref;
   }
   for (const event of sectionEvents) {
     let group=groups.get(event.ip);
     if (!group) {
-      group={ip:event.ip,time:event.time,path:event.path,visits:0,country:"XX",region:"",city:"",isp:"",sections:new Map()};
+      group={ip:event.ip,time:event.time,path:event.path,visits:0,country:"XX",region:"",city:"",isp:"",device:"",ref:"",sections:new Map()};
       groups.set(event.ip,group);
     }
     if (event.time>group.time) { group.time=event.time; group.path=event.path; }
