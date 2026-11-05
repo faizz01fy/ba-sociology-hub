@@ -18,10 +18,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "videoUrl": "/videos/History_of_Keralam_Module_1_Landscape_and_Environment_DeepDive.mp4",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>ഭൂമിശാസ്ത്രപരമായ അതിരുകൾ:</strong> കേരളം 38,863 ചതുരശ്ര കിലോമീറ്റർ വിസ്തൃതിയുള്ള അസമഭുജ ത്രികോണാകൃതിയിലുള്ള (Scalene Triangle) ഭൂപ്രദേശമാണ്. കിഴക്ക് സഹ്യാദ്രിയും പടിഞ്ഞാറ് 560 കി.മീ. അറബിക്കടലും സ്വാഭാവിക അതിരുകൾ തീർക്കുന്നു.",
-              "<strong>ഭൂപ്രകൃതി വിഭജനം:</strong> ഉയര വ്യത്യാസമനുസരിച്ച് മലനാട് (Highland - >76m), ഇടനാട് (Midland - 7.6m-76m), തീരപ്രദേശം (Lowland - <7.6m) എന്നിങ്ങനെ വിഭജിച്ചിരിക്കുന്നു. ഇടനാട്ടിലെ വെട്ടുകല്ല് (Laterite) കുന്നുകൾ കേരളത്തിന്റെ പ്രത്യേകതയാണ്.",
-              "<strong>പശ്ചിമഘട്ടവും ചുരങ്ങളും:</strong> ശരാശരി 1500 മീറ്റർ ഉയരമുള്ള സഹ്യാദ്രി പ്രകൃതിദത്ത മതിൽക്കെട്ടായി നിലകൊള്ളുന്നു. പാലക്കാട് ചുരം (Palakkad Gap - 32-40 km വീതി), ആരുവാമൊഴി, ആര്യങ്കാവ്, ബോഡിനായ്ക്കന്നൂർ ചുരങ്ങൾ എന്നിവ അയൽനാടുകളുമായുള്ള വാണിജ്യ-സാംസ്കാരിക വിനിമയങ്ങൾക്ക് വഴിയൊരുക്കി.",
-              "<strong>നദികളും മൺസൂണും:</strong> 44 നദികൾ (41 പടിഞ്ഞാറോട്ടും 3 കിഴക്കോട്ടും ഒഴുകുന്നവ - കബനി, ഭവാനി, പാമ്പാർ) ജലസമൃദ്ധിയും കാർഷികാടിത്തറയും നൽകി. തെക്കുപടിഞ്ഞാറൻ കാലവർഷവും (ഇടവപ്പാതി - SW Monsoon) വടക്കുകിഴക്കൻ മൺസൂണും (തുലാവർഷം - NE Monsoon) ചരിത്രപരമായ ഹിപ്പാലസ് മൺസൂൺ വാണിജ്യ കാറ്റുകളുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു."
+              "ഭൂമിശാസ്ത്രപരമായ അതിരുകൾ: കേരളം 38,863 ചതുരശ്ര കിലോമീറ്റർ വിസ്തൃതിയുള്ള അസമഭുജ ത്രികോണാകൃതിയിലുള്ള (Scalene Triangle) ഭൂപ്രദേശമാണ്. കിഴക്ക് സഹ്യാദ്രിയും പടിഞ്ഞാറ് 560 കി.മീ. അറബിക്കടലും സ്വാഭാവിക അതിരുകൾ തീർക്കുന്നു.",
+              "ഭൂപ്രകൃതി വിഭജനം: ഉയര വ്യത്യാസമനുസരിച്ച് മലനാട് (Highland - >76m), ഇടനാട് (Midland - 7.6m-76m), തീരപ്രദേശം (Lowland - <7.6m) എന്നിങ്ങനെ വിഭജിച്ചിരിക്കുന്നു. ഇടനാട്ടിലെ വെട്ടുകല്ല് (Laterite) കുന്നുകൾ കേരളത്തിന്റെ പ്രത്യേകതയാണ്.",
+              "പശ്ചിമഘട്ടവും ചുരങ്ങളും: ശരാശരി 1500 മീറ്റർ ഉയരമുള്ള സഹ്യാദ്രി പ്രകൃതിദത്ത മതിൽക്കെട്ടായി നിലകൊള്ളുന്നു. പാലക്കാട് ചുരം (Palakkad Gap - 32-40 km വീതി), ആരുവാമൊഴി, ആര്യങ്കാവ്, ബോഡിനായ്ക്കന്നൂർ ചുരങ്ങൾ എന്നിവ അയൽനാടുകളുമായുള്ള വാണിജ്യ-സാംസ്കാരിക വിനിമയങ്ങൾക്ക് വഴിയൊരുക്കി.",
+              "നദികളും മൺസൂണും: 44 നദികൾ (41 പടിഞ്ഞാറോട്ടും 3 കിഴക്കോട്ടും ഒഴുകുന്നവ - കബനി, ഭവാനി, പാമ്പാർ) ജലസമൃദ്ധിയും കാർഷികാടിത്തറയും നൽകി. തെക്കുപടിഞ്ഞാറൻ കാലവർഷവും (ഇടവപ്പാതി - SW Monsoon) വടക്കുകിഴക്കൻ മൺസൂണും (തുലാവർഷം - NE Monsoon) ചരിത്രപരമായ ഹിപ്പാലസ് മൺസൂൺ വാണിജ്യ കാറ്റുകളുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു."
             ],
             "examTip": "കേരളത്തിന്റെ ചരിത്രത്തെ രൂപപ്പെടുത്തുന്നതിൽ പശ്ചിമഘട്ടവും (സഹ്യാദ്രി) പാലക്കാട് ചുരവും വഹിച്ച പങ്ക് വിശകലനം ചെയ്യുന്ന 10 മാർക്ക് ചോദ്യത്തിന് ഈ പോയിന്റുകൾ മുൻഗണനാടിസ്ഥാനത്തിൽ എഴുതുക."
           }
@@ -40,10 +40,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "videoUrl": "/videos/History_of_Keralam_Module_2_Ch1_Prehistoric_Settlements.mp4",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>ശിലായുഗ ഘട്ടങ്ങൾ:</strong> പാലിയോലിത്തിക് (പഴയ ശിലായുഗം), മെസോലിത്തിക് (മധ്യശിലായുഗം), നിയോലിത്തിക് (പുതിയ ശിലായുഗം) എന്നിവയാണ് കേരളത്തിലെ പ്രാഗ്ചരിത്ര ഘട്ടങ്ങൾ. റോബർട്ട് ബ്രൂസ് ഫൂട്ട് (Robert Bruce Foote), ഡോ. പി. രാജേന്ദ്രൻ എന്നിവരുടെ ഗവേഷണങ്ങൾ നിർണ്ണായകമാണ്.",
-              "<strong>പാലിയോലിത്തിക് കേന്ദ്രങ്ങൾ:</strong> പാലക്കാട് മങ്കര, വള്ളുവനാട്, നിലമ്പൂർ, വയനാട് എന്നിവിടങ്ങളിൽ നിന്ന് ക്വാർട്സൈറ്റ് കൊണ്ടുള്ള ചോപ്പർ-ചോപ്പിംഗ് ആയുധങ്ങൾ (Chopper-Chopping tools) കണ്ടെടുത്തു.",
-              "<strong>മെസോലിത്തിക് (മൈക്രോലിത്തുകൾ):</strong> തെന്മല (Tenmala Rock Shelter - തെക്കേ ഇന്ത്യയിലെ ആദ്യ മെസോലിത്തിക് ഗുഹാകേന്ദ്രം), പോത്തുണ്ടി, ചെങ്കല്ലൂർ, ഇരവിപേരൂർ എന്നിവിടങ്ങളിൽ നിന്നും ജ്യാമിതീയ ആകൃതിയിലുള്ള ചെറുകല്ലായുധങ്ങൾ (Microliths) കണ്ടെത്തി.",
-              "<strong>നിയോലിത്തിക് സംസ്കാരം:</strong> മിനുസപ്പെടുത്തിയ കല്ലുകത്തികൾ (Polished Celts), ചുറ്റികകൾ, കാർഷിക ആയുധങ്ങൾ എന്നിവ കണ്ടെടുത്തു."
+              "ശിലായുഗ ഘട്ടങ്ങൾ: പാലിയോലിത്തിക് (പഴയ ശിലായുഗം), മെസോലിത്തിക് (മധ്യശിലായുഗം), നിയോലിത്തിക് (പുതിയ ശിലായുഗം) എന്നിവയാണ് കേരളത്തിലെ പ്രാഗ്ചരിത്ര ഘട്ടങ്ങൾ. റോബർട്ട് ബ്രൂസ് ഫൂട്ട് (Robert Bruce Foote), ഡോ. പി. രാജേന്ദ്രൻ എന്നിവരുടെ ഗവേഷണങ്ങൾ നിർണ്ണായകമാണ്.",
+              "പാലിയോലിത്തിക് കേന്ദ്രങ്ങൾ: പാലക്കാട് മങ്കര, വള്ളുവനാട്, നിലമ്പൂർ, വയനാട് എന്നിവിടങ്ങളിൽ നിന്ന് ക്വാർട്സൈറ്റ് കൊണ്ടുള്ള ചോപ്പർ-ചോപ്പിംഗ് ആയുധങ്ങൾ (Chopper-Chopping tools) കണ്ടെടുത്തു.",
+              "മെസോലിത്തിക് (മൈക്രോലിത്തുകൾ): തെന്മല (Tenmala Rock Shelter - തെക്കേ ഇന്ത്യയിലെ ആദ്യ മെസോലിത്തിക് ഗുഹാകേന്ദ്രം), പോത്തുണ്ടി, ചെങ്കല്ലൂർ, ഇരവിപേരൂർ എന്നിവിടങ്ങളിൽ നിന്നും ജ്യാമിതീയ ആകൃതിയിലുള്ള ചെറുകല്ലായുധങ്ങൾ (Microliths) കണ്ടെത്തി.",
+              "നിയോലിത്തിക് സംസ്കാരം: മിനുസപ്പെടുത്തിയ കല്ലുകത്തികൾ (Polished Celts), ചുറ്റികകൾ, കാർഷിക ആയുധങ്ങൾ എന്നിവ കണ്ടെടുത്തു."
             ],
             "examTip": "ഡോ. പി. രാജേന്ദ്രന്റെ നേതൃത്വത്തിൽ തെന്മല റോക്ക് ഷെൽട്ടറിൽ നടത്തിയ മെസോലിത്തിക് കണ്ടെത്തലുകളും കാലഗണനയും (Wood Charcoal C-14 ഡേറ്റിംഗ് 5210 BP) പരീക്ഷയ്ക്ക് പ്രധാനമാണ്."
           },
@@ -57,9 +57,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "videoUrl": "/videos/History_of_Keralam_Module_2_Ch2_Rock_Shelters_Prehistoric_Art.mp4",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>ഇടയ്ക്കൽ ഗുഹകൾ (Edakkal Caves):</strong> വയനാട് ജില്ലയിലെ അമ്പലവയൽ അമ്പുകുത്തി മലനിരകളിൽ 1890-ൽ ഫ്രെഡ് ഫോസെറ്റ് (Fred Fawcett) കണ്ടെത്തി. യഥാർത്ഥത്തിൽ ഗുഹയല്ല, പ്രകൃതിദത്ത വിള്ളലിൽ (Cleft/Fissure) കൂറ്റൻ പാറ വന്നുവീണുണ്ടായ റോക്ക് ഷെൽട്ടറാണ്.",
-              "<strong>പെട്രോഗ്ലിഫുകൾ (Petroglyphs):</strong> പാറകളിൽ കൊത്തിവെച്ച രൂപങ്ങൾ. മനുഷ്യരൂപങ്ങൾ, തൊപ്പി ധരിച്ച മനുഷ്യർ, അമ്പും വില്ലും, ചക്രങ്ങൾ, ജ്യാമിതീയ ചിഹ്നങ്ങൾ, മൃഗങ്ങൾ (ആന, മാൻ). ഇൻഡസ് വാലി (ഹാരപ്പൻ) ലിപികളോട് സമാനതയുള്ള 'Man with Headgear' ചിഹ്നം ശ്രദ്ധേയമാണ്.",
-              "<strong>തോവാരിയും മറയൂരും:</strong> തോവാരിയിലെ (വയനാട്) നേർത്ത പെട്രോഗ്ലിഫുകളും മറയൂരിലെ (ഇടുക്കി) ചുവന്ന ഓക്കർ ചായം ഉപയോഗിച്ച് വരച്ച പിക്ടോഗ്രാഫുകളും (Rock Paintings) കേരളത്തിലെ പ്രാചീന കലാപാരമ്പര്യം വ്യക്തമാക്കുന്നു."
+              "ഇടയ്ക്കൽ ഗുഹകൾ (Edakkal Caves): വയനാട് ജില്ലയിലെ അമ്പലവയൽ അമ്പുകുത്തി മലനിരകളിൽ 1890-ൽ ഫ്രെഡ് ഫോസെറ്റ് (Fred Fawcett) കണ്ടെത്തി. യഥാർത്ഥത്തിൽ ഗുഹയല്ല, പ്രകൃതിദത്ത വിള്ളലിൽ (Cleft/Fissure) കൂറ്റൻ പാറ വന്നുവീണുണ്ടായ റോക്ക് ഷെൽട്ടറാണ്.",
+              "പെട്രോഗ്ലിഫുകൾ (Petroglyphs): പാറകളിൽ കൊത്തിവെച്ച രൂപങ്ങൾ. മനുഷ്യരൂപങ്ങൾ, തൊപ്പി ധരിച്ച മനുഷ്യർ, അമ്പും വില്ലും, ചക്രങ്ങൾ, ജ്യാമിതീയ ചിഹ്നങ്ങൾ, മൃഗങ്ങൾ (ആന, മാൻ). ഇൻഡസ് വാലി (ഹാരപ്പൻ) ലിപികളോട് സമാനതയുള്ള 'Man with Headgear' ചിഹ്നം ശ്രദ്ധേയമാണ്.",
+              "തോവാരിയും മറയൂരും: തോവാരിയിലെ (വയനാട്) നേർത്ത പെട്രോഗ്ലിഫുകളും മറയൂരിലെ (ഇടുക്കി) ചുവന്ന ഓക്കർ ചായം ഉപയോഗിച്ച് വരച്ച പിക്ടോഗ്രാഫുകളും (Rock Paintings) കേരളത്തിലെ പ്രാചീന കലാപാരമ്പര്യം വ്യക്തമാക്കുന്നു."
             ],
             "examTip": "ഇടയ്ക്കൽ ഗുഹകളിലെ പെട്രോഗ്ലിഫുകളും ഹാരപ്പൻ സംസ്കാരവുമായുള്ള ബന്ധത്തെക്കുറിച്ചുള്ള പണ്ഡിതവാദങ്ങളും (ഡോ. എം.ആർ. രാഘവവാരിയർ, ഫ്രെഡ് ഫോസെറ്റ്) ഉപന്യാസ ചോദ്യങ്ങൾക്ക് നിർബന്ധമായും എഴുതുക."
           },
@@ -73,9 +73,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "videoUrl": "/videos/History_of_Keralam_Module_2_Ch3_Megalithic_Culture.mp4",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>മഹാശിലായുഗ സ്മാരകങ്ങളുടെ വർഗ്ഗീകരണം:</strong> കല്ലറകൾ (Cists/Dolmens - മുനിയറകൾ), പാറയിൽ വെട്ടിയ ഗുഹകൾ (Rock-cut Caves - ഫെറിക്ക് ഗ്രാമങ്ങൾ), കുടക്കല്ല് (Umbrella Stones), തൊപ്പിക്കല്ല് (Hat Stones/Hood Stones), കൽപ്പടവുകൾ, നന്നങ്ങാടികൾ (Burial Urns), നടുക്കല്ലുകൾ (Menhirs).",
-              "<strong>ഖനന ഗവേഷണങ്ങൾ:</strong> 1823-ൽ ജെ. ബാബിംഗ്ടൺ (J. Babington) ചാത്തപ്പറമ്പിൽ നടത്തിയ ആദ്യ ഖനനം, ബി.കെ. ഥാപ്പർ പോർക്കുളത്ത് (Porkkalam, 1948) നടത്തിയ ശാസ്ത്രീയ ഖനനം, മങ്ങാട്, ഉമ്മിച്ചിപ്പൊയിൽ, ആനക്കര ഖനനങ്ങൾ.",
-              "<strong>സാംസ്കാരിക സവിശേഷതകൾ:</strong> ഇരുമ്പ് ആയുധങ്ങൾ (വാളുകൾ, കഠാരകൾ, ത്രിശൂലങ്ങൾ), കറുപ്പും ചുവപ്പും മൺപാത്രങ്ങൾ (Black and Red Ware - BRW), തകിട് മുത്തുകൾ (Etched Carnelian Beads), ആത്മാവിലുള്ള വിശ്വാസവും മരണാനന്തര ജീവിത സങ്കല്പവും."
+              "മഹാശിലായുഗ സ്മാരകങ്ങളുടെ വർഗ്ഗീകരണം: കല്ലറകൾ (Cists/Dolmens - മുനിയറകൾ), പാറയിൽ വെട്ടിയ ഗുഹകൾ (Rock-cut Caves - ഫെറിക്ക് ഗ്രാമങ്ങൾ), കുടക്കല്ല് (Umbrella Stones), തൊപ്പിക്കല്ല് (Hat Stones/Hood Stones), കൽപ്പടവുകൾ, നന്നങ്ങാടികൾ (Burial Urns), നടുക്കല്ലുകൾ (Menhirs).",
+              "ഖനന ഗവേഷണങ്ങൾ: 1823-ൽ ജെ. ബാബിംഗ്ടൺ (J. Babington) ചാത്തപ്പറമ്പിൽ നടത്തിയ ആദ്യ ഖനനം, ബി.കെ. ഥാപ്പർ പോർക്കുളത്ത് (Porkkalam, 1948) നടത്തിയ ശാസ്ത്രീയ ഖനനം, മങ്ങാട്, ഉമ്മിച്ചിപ്പൊയിൽ, ആനക്കര ഖനനങ്ങൾ.",
+              "സാംസ്കാരിക സവിശേഷതകൾ: ഇരുമ്പ് ആയുധങ്ങൾ (വാളുകൾ, കഠാരകൾ, ത്രിശൂലങ്ങൾ), കറുപ്പും ചുവപ്പും മൺപാത്രങ്ങൾ (Black and Red Ware - BRW), തകിട് മുത്തുകൾ (Etched Carnelian Beads), ആത്മാവിലുള്ള വിശ്വാസവും മരണാനന്തര ജീവിത സങ്കല്പവും."
             ],
             "examTip": "കുടക്കല്ല്, തൊപ്പിക്കല്ല് എന്നിവ തമ്മിലുള്ള വ്യത്യാസവും ബി.കെ. ഥാപ്പർ പോർക്കുളത്ത് നടത്തിയ കണ്ടെത്തലുകളും ഷോർട്ട് എസ്സേ ചോദ്യങ്ങൾക്ക് ആവർത്തിച്ചു വരാറുണ്ട്."
           }
@@ -94,10 +94,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "videoUrl": "/videos/History_of_Keralam_Module_3_Early_Historic_Keralam.mp4",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>സംഘസാഹിത്യ തെളിവുകൾ:</strong> പതിറ്റുപ്പത്ത് (Patittuppattu - ചേര രാജാക്കന്മാരുടെ ചരിത്രം), അകനാനൂറ്, പുറനാനൂറ് എന്നിവയിലെ പരാമർശങ്ങൾ. മൂവേന്തന്മാർ (ചേരർ, ചോളർ, പാണ്ഡ്യർ), കുറുനില മന്നർ (ആയ്, വേളിർ വംശങ്ങൾ).",
-              "<strong>തിണൈ സിദ്ധാന്തം (Tinai Concept):</strong> കുറിഞ്ചി (പർവ്വത മേഖല - നായാട്ട്, തേൻശേഖരണം), മുല്ലൈ (മേച്ചിൽപ്പുറം - കന്നുകാലി വളർത്തൽ), മരുതം (നദീതട സമതലം - നെൽക്കൃഷി), നെയ്തൽ (തീരപ്രദേശം - മത്സ്യബന്ധനം, ഉപ്പുണ്ടാക്കൽ), പാലൈ (വരണ്ട പ്രദേശം - കവർച്ച). കേരളം പ്രധാനമായും കുറിഞ്ചി, മരുതം, നെയ്തൽ തിണകളിൽ പെടുന്നു.",
-              "<strong>റോമൻ-ഗ്രീക്ക് സമുദ്രവാണിജ്യം:</strong> പെരിപ്ലസ് ഓഫ് ദി എറിത്രിയൻ സീ (Periplus of the Erythraean Sea), പ്ലിനിയുടെ നാച്ചുറൽ ഹിസ്റ്ററി, ടോളമിയുടെ ഭൂമിശാസ്ത്രം. മുസിരിസ് (കൊടുങ്ങള്ളൂർ/പട്ടണം), തിണ്ടിസ് (കടലുണ്ടി), നെൽകിന്ദ തുറമുഖങ്ങൾ വഴി കുരുമുളകും സുഗന്ധദ്രവ്യങ്ങളും റോമിലേക്ക് കയറ്റുമതി ചെയ്തു.",
-              "<strong>പട്ടണം ഖനനം:</strong> ഡോ. പി.ജെ. ചെറിയാന്റെ നേതൃത്വത്തിൽ നടന്ന ഖനനത്തിൽ റോമൻ ആംഫോറ പാത്രങ്ങൾ (Amphorae), ടെറാ സിഗിലേറ്റ, റോമൻ സ്വർണ്ണ-വെള്ളി നാണയങ്ങൾ, തുറമുഖ വാർഫ് എന്നിവ കണ്ടെത്തി."
+              "സംഘസാഹിത്യ തെളിവുകൾ: പതിറ്റുപ്പത്ത് (Patittuppattu - ചേര രാജാക്കന്മാരുടെ ചരിത്രം), അകനാനൂറ്, പുറനാനൂറ് എന്നിവയിലെ പരാമർശങ്ങൾ. മൂവേന്തന്മാർ (ചേരർ, ചോളർ, പാണ്ഡ്യർ), കുറുനില മന്നർ (ആയ്, വേളിർ വംശങ്ങൾ).",
+              "തിണൈ സിദ്ധാന്തം (Tinai Concept): കുറിഞ്ചി (പർവ്വത മേഖല - നായാട്ട്, തേൻശേഖരണം), മുല്ലൈ (മേച്ചിൽപ്പുറം - കന്നുകാലി വളർത്തൽ), മരുതം (നദീതട സമതലം - നെൽക്കൃഷി), നെയ്തൽ (തീരപ്രദേശം - മത്സ്യബന്ധനം, ഉപ്പുണ്ടാക്കൽ), പാലൈ (വരണ്ട പ്രദേശം - കവർച്ച). കേരളം പ്രധാനമായും കുറിഞ്ചി, മരുതം, നെയ്തൽ തിണകളിൽ പെടുന്നു.",
+              "റോമൻ-ഗ്രീക്ക് സമുദ്രവാണിജ്യം: പെരിപ്ലസ് ഓഫ് ദി എറിത്രിയൻ സീ (Periplus of the Erythraean Sea), പ്ലിനിയുടെ നാച്ചുറൽ ഹിസ്റ്ററി, ടോളമിയുടെ ഭൂമിശാസ്ത്രം. മുസിരിസ് (കൊടുങ്ങള്ളൂർ/പട്ടണം), തിണ്ടിസ് (കടലുണ്ടി), നെൽകിന്ദ തുറമുഖങ്ങൾ വഴി കുരുമുളകും സുഗന്ധദ്രവ്യങ്ങളും റോമിലേക്ക് കയറ്റുമതി ചെയ്തു.",
+              "പട്ടണം ഖനനം: ഡോ. പി.ജെ. ചെറിയാന്റെ നേതൃത്വത്തിൽ നടന്ന ഖനനത്തിൽ റോമൻ ആംഫോറ പാത്രങ്ങൾ (Amphorae), ടെറാ സിഗിലേറ്റ, റോമൻ സ്വർണ്ണ-വെള്ളി നാണയങ്ങൾ, തുറമുഖ വാർഫ് എന്നിവ കണ്ടെത്തി."
             ],
             "examTip": "ഐന്തിണകളുടെ ഭൂമിശാസ്ത്രവും ഉപജീവന മാർഗ്ഗങ്ങളും (Micro-ecozones) മുസിരിസ്-റോമൻ വാണിജ്യ ഉടമ്പടിയായ 'വിയന്ന പാപ്പിറസ്' (Vienna Papyrus) എന്നിവ വിശദമായി പഠിക്കുക."
           }
@@ -116,10 +116,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "videoUrl": "/videos/History_of_Keralam_Module_4_Keralam_Upto_12th_Century.mp4",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>ലിഖിത രേഖകൾ (Epigraphy):</strong> വാഴപ്പള്ളി ശാസനം (832 CE/AD 830 - രാജശേഖര വർമ്മൻ, വട്ടെഴുത്ത് ലിപിയിലുള്ള ആദ്യ മലയാള ശാസനം), തരിസാപ്പള്ളി ശാസനം (849 CE - സ്ഥാണു രവിവർമ്മൻ, മാർ സപീർ ഈശോയ്ക്കും ക്രിസ്ത്യൻ സമൂഹത്തിനും നൽകിയ അവകാശങ്ങൾ), പാർത്ഥിവപുരം ശാസനം (കരുനന്തടക്കൻ, ശാലാ വിദ്യാഭ്യാസം), തിരുവല്ല ചെപ്പേടുകൾ.",
-              "<strong>മഹോദയപുരത്തെ ചേര പെരുമാക്കന്മാർ (AD 800–1124):</strong> കുലശേഖര ആഴ്‌വാർ മുതൽ രാമവർമ്മ കുലശേഖരൻ വരെയുള്ള ഭരണാധികാരികൾ. നാലുതളി (തളിയാതിരിമാർ) ആസ്ഥാന ഭരണസമിതി.",
-              "<strong>നാടുകളുടെ രൂപീകരണം:</strong> 14 നാടുകൾ (കോലത്തുനാട്, ഏറനാട്, വള്ളുവനാട്, വേണാട് മുതലായവ). അതുലന്റെ 'മൂഷികവംശകാവ്യം' കോലത്തുനാടൻ രാജവംശത്തിന്റെ അപൂർവ്വ ചരിത്ര രേഖയാണ്.",
-              "<strong>ഭൂവുടമ സമ്പ്രദായവും വാണിജ്യ സംഘങ്ങളും:</strong> ചേരിക്കൽ (രാജാവിന്റെ ഭൂമി), ബ്രഹ്മസ്വം (ബ്രാഹ്മണ ഭൂമി), ദേവസ്വം (ക്ഷേത്ര ഭൂമി), കാരാൺമ അവകാശങ്ങൾ. അഞ്ചുവണ്ണം (Jewish Guild), മണിഗ്രാമം (Christian Guild), വളഞ്ചിയർ എന്നീ അന്താരാഷ്ട്ര വ്യാപാര സംഘടനകൾ."
+              "ലിഖിത രേഖകൾ (Epigraphy): വാഴപ്പള്ളി ശാസനം (832 CE/AD 830 - രാജശേഖര വർമ്മൻ, വട്ടെഴുത്ത് ലിപിയിലുള്ള ആദ്യ മലയാള ശാസനം), തരിസാപ്പള്ളി ശാസനം (849 CE - സ്ഥാണു രവിവർമ്മൻ, മാർ സപീർ ഈശോയ്ക്കും ക്രിസ്ത്യൻ സമൂഹത്തിനും നൽകിയ അവകാശങ്ങൾ), പാർത്ഥിവപുരം ശാസനം (കരുനന്തടക്കൻ, ശാലാ വിദ്യാഭ്യാസം), തിരുവല്ല ചെപ്പേടുകൾ.",
+              "മഹോദയപുരത്തെ ചേര പെരുമാക്കന്മാർ (AD 800–1124): കുലശേഖര ആഴ്‌വാർ മുതൽ രാമവർമ്മ കുലശേഖരൻ വരെയുള്ള ഭരണാധികാരികൾ. നാലുതളി (തളിയാതിരിമാർ) ആസ്ഥാന ഭരണസമിതി.",
+              "നാടുകളുടെ രൂപീകരണം: 14 നാടുകൾ (കോലത്തുനാട്, ഏറനാട്, വള്ളുവനാട്, വേണാട് മുതലായവ). അതുലന്റെ 'മൂഷികവംശകാവ്യം' കോലത്തുനാടൻ രാജവംശത്തിന്റെ അപൂർവ്വ ചരിത്ര രേഖയാണ്.",
+              "ഭൂവുടമ സമ്പ്രദായവും വാണിജ്യ സംഘങ്ങളും: ചേരിക്കൽ (രാജാവിന്റെ ഭൂമി), ബ്രഹ്മസ്വം (ബ്രാഹ്മണ ഭൂമി), ദേവസ്വം (ക്ഷേത്ര ഭൂമി), കാരാൺമ അവകാശങ്ങൾ. അഞ്ചുവണ്ണം (Jewish Guild), മണിഗ്രാമം (Christian Guild), വളഞ്ചിയർ എന്നീ അന്താരാഷ്ട്ര വ്യാപാര സംഘടനകൾ."
             ],
             "examTip": "വാഴപ്പള്ളി ശാസനത്തിന്റെയും തരിസാപ്പള്ളി ശാസനത്തിന്റെയും ചരിത്രപരമായ പ്രാധാന്യവും രണ്ടാം ചേര സാമ്രാജ്യത്തിലെ ക്ഷേത്ര കേന്ദ്രീകൃത കാർഷിക സമ്പദ്‌വ്യവസ്ഥയും പരീക്ഷാ ചോദ്യങ്ങൾക്ക് അതിപ്രധാനമാണ്."
           }
@@ -138,10 +138,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "videoUrl": "",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>ഓപ്പൺ എൻഡഡ് മൊഡ്യൂൾ (Open-Ended Module):</strong> കാലിക്കറ്റ് സർവ്വകലാശാല FYUGP ബി.എ. ഹിസ്റ്ററി സിലബസ് പ്രകാരം ഇന്റേണൽ അസസ്‌മെന്റിനായി (10 മാർക്ക്) നിർദ്ദേശിച്ചിട്ടുള്ള പ്രായോഗിക മൊഡ്യൂളാണിത്.",
-              "<strong>ഫീൽഡ് വിസിറ്റ് കേന്ദ്രങ്ങൾ:</strong> ഇടയ്ക്കൽ, മറയൂർ (ശിലാചിത്രങ്ങൾ), ചേരമാനങ്ങാട്, അരിയന്നൂർ, പോർക്കുളം (മഹാശിലായുഗ സ്മാരകങ്ങൾ), കൊടുങ്ങല്ലൂർ, മതിലകം, പട്ടണം (സമുദ്ര-തുറമുഖ ഖനന കേന്ദ്രങ്ങൾ).",
-              "<strong>ഹെറിറ്റേജ് വാക്ക് (Heritage Walk):</strong> പ്രാദേശിക ചരിത്രാന്വേഷണം, വട്ടെഴുത്ത് ലിഖിതങ്ങൾ, നാട്ടുപഴമകൾ, വാമൊഴി ചരിത്രങ്ങൾ (Oral History) എന്നിവ രേഖപ്പെടുത്തൽ.",
-              "<strong>അസൈൻമെന്റ് റിപ്പോർട്ട്:</strong> ഫീൽഡ് വിസിറ്റിന്റെ അടിസ്ഥാനത്തിൽ വിദ്യാർത്ഥികൾ സമർപ്പിക്കേണ്ട പ്രോജക്ട് റിപ്പോർട്ട് തയ്യാറാക്കുന്നതിനുള്ള മാർഗ്ഗരേഖകൾ."
+              "ഓപ്പൺ എൻഡഡ് മൊഡ്യൂൾ (Open-Ended Module): കാലിക്കറ്റ് സർവ്വകലാശാല FYUGP ബി.എ. ഹിസ്റ്ററി സിലബസ് പ്രകാരം ഇന്റേണൽ അസസ്‌മെന്റിനായി (10 മാർക്ക്) നിർദ്ദേശിച്ചിട്ടുള്ള പ്രായോഗിക മൊഡ്യൂളാണിത്.",
+              "ഫീൽഡ് വിസിറ്റ് കേന്ദ്രങ്ങൾ: ഇടയ്ക്കൽ, മറയൂർ (ശിലാചിത്രങ്ങൾ), ചേരമാനങ്ങാട്, അരിയന്നൂർ, പോർക്കുളം (മഹാശിലായുഗ സ്മാരകങ്ങൾ), കൊടുങ്ങല്ലൂർ, മതിലകം, പട്ടണം (സമുദ്ര-തുറമുഖ ഖനന കേന്ദ്രങ്ങൾ).",
+              "ഹെറിറ്റേജ് വാക്ക് (Heritage Walk): പ്രാദേശിക ചരിത്രാന്വേഷണം, വട്ടെഴുത്ത് ലിഖിതങ്ങൾ, നാട്ടുപഴമകൾ, വാമൊഴി ചരിത്രങ്ങൾ (Oral History) എന്നിവ രേഖപ്പെടുത്തൽ.",
+              "അസൈൻമെന്റ് റിപ്പോർട്ട്: ഫീൽഡ് വിസിറ്റിന്റെ അടിസ്ഥാനത്തിൽ വിദ്യാർത്ഥികൾ സമർപ്പിക്കേണ്ട പ്രോജക്ട് റിപ്പോർട്ട് തയ്യാറാക്കുന്നതിനുള്ള മാർഗ്ഗരേഖകൾ."
             ],
             "examTip": "ഇന്റേണൽ അസസ്‌മെന്റിൽ മുഴുവൻ മാർക്കും നേടാൻ ഫീൽഡ് വിസിറ്റ് നടത്തിയ സ്ഥലത്തിന്റെ ചരിത്ര പശ്ചാത്തലവും ഫോട്ടോകളും ഉൾപ്പെടുത്തി ശാസ്ത്രീയമായി റിപ്പോർട്ട് തയ്യാറാക്കുക."
           }
@@ -240,9 +240,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "videoUrl": "/videos/malayalam_chapter_ivanekkoodi_video.mp4",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>കവിതാ പശ്ചാത്തലം:</strong> കെ. സച്ചിദാനന്ദന്റെ പ്രശസ്തമായ ആധുനിക മലയാള കവിതയാണ് 'ഇവനെക്കൂടി'. സമൂഹത്തിലെ അരികുവൽക്കരിക്കപ്പെട്ടവരുടെയും സാധാരണ മനുഷ്യരുടെയും യാതനകളെയും അതിജീവന പോരാട്ടങ്ങളെയും കവിത തീക്ഷ്ണമായി അടയാളപ്പെടുത്തുന്നു.",
-              "<strong>പ്രധാന പ്രമേയങ്ങൾ:</strong> മാനവികത, സാമൂഹിക പ്രതിരോധം, പാർശ്വവൽക്കരിക്കപ്പെട്ടവരോടുള്ള ഐക്യദാർഢ്യം, അധികാര വ്യവസ്ഥകളോടുള്ള കവിയുടെ നിരന്തര കലഹം.",
-              "<strong>കാവ്യഭാഷയും ശൈലിയും:</strong> ആധുനിക കവിതയിലെ ശക്തമായ ബിംബകൽപ്പനകളും കാവ്യഭാഷയും സമകാലിക രാഷ്ട്രീയ-സാമൂഹിക യാഥാർത്ഥ്യങ്ങളുമായി നേരിട്ട് സംവദിക്കുന്നു."
+              "കവിതാ പശ്ചാത്തലം: കെ. സച്ചിദാനന്ദന്റെ പ്രശസ്തമായ ആധുനിക മലയാള കവിതയാണ് 'ഇവനെക്കൂടി'. സമൂഹത്തിലെ അരികുവൽക്കരിക്കപ്പെട്ടവരുടെയും സാധാരണ മനുഷ്യരുടെയും യാതനകളെയും അതിജീവന പോരാട്ടങ്ങളെയും കവിത തീക്ഷ്ണമായി അടയാളപ്പെടുത്തുന്നു.",
+              "പ്രധാന പ്രമേയങ്ങൾ: മാനവികത, സാമൂഹിക പ്രതിരോധം, പാർശ്വവൽക്കരിക്കപ്പെട്ടവരോടുള്ള ഐക്യദാർഢ്യം, അധികാര വ്യവസ്ഥകളോടുള്ള കവിയുടെ നിരന്തര കലഹം.",
+              "കാവ്യഭാഷയും ശൈലിയും: ആധുനിക കവിതയിലെ ശക്തമായ ബിംബകൽപ്പനകളും കാവ്യഭാഷയും സമകാലിക രാഷ്ട്രീയ-സാമൂഹിക യാഥാർത്ഥ്യങ്ങളുമായി നേരിട്ട് സംവദിക്കുന്നു."
             ],
             "examTip": "സച്ചിദാനന്ദന്റെ കാവ്യശൈലിയിലെ മാനവികതയും 'ഇവനെക്കൂടി' എന്ന ശീർഷകത്തിന്റെ ആഴത്തിലുള്ള അർത്ഥതലങ്ങളും പരീക്ഷയ്ക്ക് പ്രത്യേകം വിശകലനം ചെയ്യുക."
           }
@@ -301,12 +301,12 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "ZdrMJqXnKyE",
             "language": "English",
             "studyPoints": [
-              "<strong>Historical context:</strong> Martin Luther King Jr. delivered the speech at the Lincoln Memorial during the March on Washington on August 28, 1963.",
-              "<strong>Equality and justice:</strong> The speech challenges racial discrimination and calls for constitutional promises to become everyday reality.",
-              "<strong>Nonviolence and brotherhood:</strong> King argues for peaceful resistance, human dignity and solidarity across communities.",
-              "<strong>Anaphora and Metaphor:</strong> Repeated phrases build rhythm and emphasis; images such as an unfulfilled cheque make abstract injustice concrete.",
-              "<strong>Listening practice:</strong> Notice emphasis, cadence, pauses and repetition, then revisit the original speech without visuals.",
-              "<strong>About this overview:</strong> English-language cinematic study aid generated with Google NotebookLM from the AcademicHub chapter PDF for Calicut University learners."
+              "Historical context: Martin Luther King Jr. delivered the speech at the Lincoln Memorial during the March on Washington on August 28, 1963.",
+              "Equality and justice: The speech challenges racial discrimination and calls for constitutional promises to become everyday reality.",
+              "Nonviolence and brotherhood: King argues for peaceful resistance, human dignity and solidarity across communities.",
+              "Anaphora and Metaphor: Repeated phrases build rhythm and emphasis; images such as an unfulfilled cheque make abstract injustice concrete.",
+              "Listening practice: Notice emphasis, cadence, pauses and repetition, then revisit the original speech without visuals.",
+              "About this overview: English-language cinematic study aid generated with Google NotebookLM from the AcademicHub chapter PDF for Calicut University learners."
             ],
             "examTip": "Connect each rhetorical device to its effect on listeners. Distinguish the historical setting, central themes and techniques of persuasion."
           },
@@ -318,13 +318,13 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "kHsueedBZdY",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Historical Context:</strong> Martin Luther King Jr. 1963 August 28-ന് Lincoln Memorial-ൽ നടത്തിയ പ്രസംഗമാണ് I Have a Dream. March on Washington ആണ് പ്രസംഗത്തിന്റെ പ്രധാന പശ്ചാത്തലം.",
-              "<strong>Equality and Justice:</strong> വംശീയ വിവേചനം അവസാനിപ്പിക്കാനും എല്ലാവർക്കും തുല്യ അവകാശങ്ങൾ ജീവിതത്തിൽ അനുഭവപ്പെടാനും പ്രസംഗം ആഹ്വാനം ചെയ്യുന്നു.",
-              "<strong>Constitutional Promises:</strong> ഭരണഘടന ഉറപ്പുനൽകുന്ന അവകാശങ്ങളും സമൂഹത്തിലെ യാഥാർത്ഥ്യവും തമ്മിലുള്ള അന്തരം King ചൂണ്ടിക്കാട്ടുന്നു.",
-              "<strong>Nonviolence and Brotherhood:</strong> വെറുപ്പിനും അക്രമത്തിനും വഴങ്ങാതെ മനുഷ്യന്റെ Dignity സംരക്ഷിച്ചുകൊണ്ട് നീതിക്കായി പ്രവർത്തിക്കണം.",
-              "<strong>Anaphora and Metaphor:</strong> ആവർത്തനം ആശയത്തിന് ഊന്നലും താളവും നൽകുന്നു. നിറവേറ്റാത്ത വാഗ്ദാനത്തെ cheque-നോട് ഉപമിക്കുന്നത് Metaphor-ന്റെ ഉദാഹരണമാണ്.",
-              "<strong>Listening Practice:</strong> പ്രസംഗത്തിലെ emphasis, cadence, pauses, repetition എന്നിവ ശ്രദ്ധിക്കുക. ആദ്യം വീഡിയോയോടെയും പിന്നീട് ഓഡിയോ മാത്രമായും യഥാർത്ഥ പ്രസംഗം കേൾക്കുക.",
-              "<strong>About this overview:</strong> Calicut University പഠിതാക്കൾക്കായി AcademicHub chapter PDF അടിസ്ഥാനമാക്കിയുള്ള NotebookLM Malayalam audio-യും animated illustrative visuals-ഉം ചേർത്ത പഠനസഹായി."
+              "Historical Context: Martin Luther King Jr. 1963 August 28-ന് Lincoln Memorial-ൽ നടത്തിയ പ്രസംഗമാണ് I Have a Dream. March on Washington ആണ് പ്രസംഗത്തിന്റെ പ്രധാന പശ്ചാത്തലം.",
+              "Equality and Justice: വംശീയ വിവേചനം അവസാനിപ്പിക്കാനും എല്ലാവർക്കും തുല്യ അവകാശങ്ങൾ ജീവിതത്തിൽ അനുഭവപ്പെടാനും പ്രസംഗം ആഹ്വാനം ചെയ്യുന്നു.",
+              "Constitutional Promises: ഭരണഘടന ഉറപ്പുനൽകുന്ന അവകാശങ്ങളും സമൂഹത്തിലെ യാഥാർത്ഥ്യവും തമ്മിലുള്ള അന്തരം King ചൂണ്ടിക്കാട്ടുന്നു.",
+              "Nonviolence and Brotherhood: വെറുപ്പിനും അക്രമത്തിനും വഴങ്ങാതെ മനുഷ്യന്റെ Dignity സംരക്ഷിച്ചുകൊണ്ട് നീതിക്കായി പ്രവർത്തിക്കണം.",
+              "Anaphora and Metaphor: ആവർത്തനം ആശയത്തിന് ഊന്നലും താളവും നൽകുന്നു. നിറവേറ്റാത്ത വാഗ്ദാനത്തെ cheque-നോട് ഉപമിക്കുന്നത് Metaphor-ന്റെ ഉദാഹരണമാണ്.",
+              "Listening Practice: പ്രസംഗത്തിലെ emphasis, cadence, pauses, repetition എന്നിവ ശ്രദ്ധിക്കുക. ആദ്യം വീഡിയോയോടെയും പിന്നീട് ഓഡിയോ മാത്രമായും യഥാർത്ഥ പ്രസംഗം കേൾക്കുക.",
+              "About this overview: Calicut University പഠിതാക്കൾക്കായി AcademicHub chapter PDF അടിസ്ഥാനമാക്കിയുള്ള NotebookLM Malayalam audio-യും animated illustrative visuals-ഉം ചേർത്ത പഠനസഹായി."
             ],
             "examTip": "Historical Context, central themes, rhetorical devices എന്നിവ വേർതിരിച്ച് പഠിക്കുക. ഓരോ device-ഉം കേൾവിക്കാരിൽ സൃഷ്ടിക്കുന്ന സ്വാധീനം ഉദാഹരണത്തോടെ വിശദീകരിക്കുക."
           },
@@ -353,10 +353,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "A9maAWgaovY",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Speaker &amp; Background (പ്രഭാഷകയും പശ്ചാത്തലവും):</strong> Amy Morales Lara is an artist and social worker from the Bronx. ബ്രോങ്ക്സിൽ നിന്നുള്ള ആർട്ടിസ്റ്റും സോഷ്യൽ വർക്കറുമായ Amy Morales Lara-യുടെ അനുഭവങ്ങളും ആശയങ്ങളുമാണ് പ്രഭാഷണത്തിന്റെ അടിസ്ഥാനം.",
-              "<strong>Art, Healing &amp; Storytelling (കല, രോഗശാന്തി, കഥപറച്ചിൽ):</strong> Art can help people work through trauma and express the experiences of communities whose voices are often unheard. ട്രോമകളെ അതിജീവിക്കാനും പലപ്പോഴും കേൾക്കപ്പെടാത്ത സമൂഹങ്ങളുടെ അനുഭവങ്ങൾ പങ്കുവെക്കാനും കല സഹായിക്കുന്നു.",
-              "<strong>The Bronx Project (ബ്രോങ്ക്സ് പദ്ധതി):</strong> Conversations with community artists show how art can become a tool for connection and social change. സമൂഹത്തിലെ കലാകാരന്മാരുമായുള്ള സംഭാഷണങ്ങൾ ബന്ധം വളർത്താനും സാമൂഹിക മാറ്റത്തിനും കലയെ ഉപകരണമാക്കുന്നതെങ്ങനെ എന്ന് വ്യക്തമാക്കുന്നു.",
-              "<strong>Empathetic Curiosity (അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ):</strong> Approaching people and their stories with curiosity and empathy can create meaningful change in health and community work. ജിജ്ഞാസയോടെയും അനുഭാവത്തോടെയും ആളുകളെയും അവരുടെ കഥകളെയും സമീപിക്കുന്നത് ആരോഗ്യപരിപാലനത്തിലും സാമൂഹിക പ്രവർത്തനത്തിലും അർത്ഥവത്തായ മാറ്റമുണ്ടാക്കുന്നു."
+              "Speaker &amp; Background (പ്രഭാഷകയും പശ്ചാത്തലവും): Amy Morales Lara is an artist and social worker from the Bronx. ബ്രോങ്ക്സിൽ നിന്നുള്ള ആർട്ടിസ്റ്റും സോഷ്യൽ വർക്കറുമായ Amy Morales Lara-യുടെ അനുഭവങ്ങളും ആശയങ്ങളുമാണ് പ്രഭാഷണത്തിന്റെ അടിസ്ഥാനം.",
+              "Art, Healing &amp; Storytelling (കല, രോഗശാന്തി, കഥപറച്ചിൽ): Art can help people work through trauma and express the experiences of communities whose voices are often unheard. ട്രോമകളെ അതിജീവിക്കാനും പലപ്പോഴും കേൾക്കപ്പെടാത്ത സമൂഹങ്ങളുടെ അനുഭവങ്ങൾ പങ്കുവെക്കാനും കല സഹായിക്കുന്നു.",
+              "The Bronx Project (ബ്രോങ്ക്സ് പദ്ധതി): Conversations with community artists show how art can become a tool for connection and social change. സമൂഹത്തിലെ കലാകാരന്മാരുമായുള്ള സംഭാഷണങ്ങൾ ബന്ധം വളർത്താനും സാമൂഹിക മാറ്റത്തിനും കലയെ ഉപകരണമാക്കുന്നതെങ്ങനെ എന്ന് വ്യക്തമാക്കുന്നു.",
+              "Empathetic Curiosity (അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ): Approaching people and their stories with curiosity and empathy can create meaningful change in health and community work. ജിജ്ഞാസയോടെയും അനുഭാവത്തോടെയും ആളുകളെയും അവരുടെ കഥകളെയും സമീപിക്കുന്നത് ആരോഗ്യപരിപാലനത്തിലും സാമൂഹിക പ്രവർത്തനത്തിലും അർത്ഥവത്തായ മാറ്റമുണ്ടാക്കുന്നു."
             ],
             "examTip": "Explain how Amy Morales Lara connects art with healing, storytelling, community practice, and empathetic curiosity. Amy Morales Lara കല, രോഗശാന്തി, കഥപറച്ചിൽ, സാമൂഹിക ഇടപെടൽ, അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ എന്നിവയെ എങ്ങനെ ബന്ധിപ്പിക്കുന്നു എന്ന് വിശദീകരിക്കുക."
           }
@@ -373,11 +373,11 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "hNLY9H1czbM",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>George Carlin &amp; Critique:</strong> അമേരിക്കൻ സ്റ്റാൻഡ്-അപ്പ് കൊമേഡിയനായ ജോർജ്ജ് കാർലിൻ ആധുനിക സമൂഹത്തിൽ ഭാഷയെ വികലമാക്കുന്നതിനെതിരെ നടത്തിയ വിമർശനാത്മക വിശകലനം.",
-              "<strong>Concept of Soft Language (മയപ്പെടുത്തിയ ഭാഷ):</strong> യഥാർത്ഥ വേദനകളും കഠിന സത്യങ്ങളും മറച്ചുവെക്കാൻ സമൂഹം ഉപയോഗിക്കുന്ന യൂഫെമിസങ്ങളെ (Euphemisms) കാർലിൻ രൂക്ഷമായി വിമർശിക്കുന്നു.",
-              "<strong>Historical Evolution (Shell Shock to PTSD):</strong> ഒന്നാം ലോകമഹായുദ്ധത്തിലെ ലളിതവും മൂർച്ചയുള്ളതുമായ 'Shell Shock' എന്ന പദം പിന്നീട് 'Battle Fatigue', 'Operational Exhaustion', ഒടുവിൽ 'Post-Traumatic Stress Disorder' (PTSD) എന്നിങ്ങനെ മയപ്പെടുത്തിയപ്പോൾ സൈനികരുടെ യാഥാർത്ഥ വേദന മറയ്ക്കപ്പെട്ടു എന്ന് കാർലിൻ വ്യക്തമാക്കുന്നു.",
-              "<strong>Societal Impact:</strong> രാഷ്ട്രീയക്കാരും പരസ്യദാതാക്കളും ജനങ്ങളെ വഞ്ചിക്കാനും സത്യങ്ങൾ ലഘൂകരിക്കാനും സോഫ്റ്റ് ലാംഗ്വേജ് ഒരു ആയുധമായി ഉപയോഗിക്കുന്നു.",
-              "<strong>Exam Tips:</strong> പരീക്ഷയ്ക്ക് Shell Shock-ന്റെ പരിണാമവും, കാർലിന്റെ തത്ത്വചിന്തയും, ആധുനിക ഭരണകൂട ഭാഷയും തമ്മിലുള്ള ബന്ധം വിശദീകരിക്കുക."
+              "George Carlin &amp; Critique: അമേരിക്കൻ സ്റ്റാൻഡ്-അപ്പ് കൊമേഡിയനായ ജോർജ്ജ് കാർലിൻ ആധുനിക സമൂഹത്തിൽ ഭാഷയെ വികലമാക്കുന്നതിനെതിരെ നടത്തിയ വിമർശനാത്മക വിശകലനം.",
+              "Concept of Soft Language (മയപ്പെടുത്തിയ ഭാഷ): യഥാർത്ഥ വേദനകളും കഠിന സത്യങ്ങളും മറച്ചുവെക്കാൻ സമൂഹം ഉപയോഗിക്കുന്ന യൂഫെമിസങ്ങളെ (Euphemisms) കാർലിൻ രൂക്ഷമായി വിമർശിക്കുന്നു.",
+              "Historical Evolution (Shell Shock to PTSD): ഒന്നാം ലോകമഹായുദ്ധത്തിലെ ലളിതവും മൂർച്ചയുള്ളതുമായ 'Shell Shock' എന്ന പദം പിന്നീട് 'Battle Fatigue', 'Operational Exhaustion', ഒടുവിൽ 'Post-Traumatic Stress Disorder' (PTSD) എന്നിങ്ങനെ മയപ്പെടുത്തിയപ്പോൾ സൈനികരുടെ യാഥാർത്ഥ വേദന മറയ്ക്കപ്പെട്ടു എന്ന് കാർലിൻ വ്യക്തമാക്കുന്നു.",
+              "Societal Impact: രാഷ്ട്രീയക്കാരും പരസ്യദാതാക്കളും ജനങ്ങളെ വഞ്ചിക്കാനും സത്യങ്ങൾ ലഘൂകരിക്കാനും സോഫ്റ്റ് ലാംഗ്വേജ് ഒരു ആയുധമായി ഉപയോഗിക്കുന്നു.",
+              "Exam Tips: പരീക്ഷയ്ക്ക് Shell Shock-ന്റെ പരിണാമവും, കാർലിന്റെ തത്ത്വചിന്തയും, ആധുനിക ഭരണകൂട ഭാഷയും തമ്മിലുള്ള ബന്ധം വിശദീകരിക്കുക."
             ],
             "examTip": "ഷെൽ ഷോക്ക് (Shell Shock) എങ്ങനെയാണ് ഘട്ടംഘട്ടമായി PTSD ആയി മാറിയതെന്നും, ഭാഷയെ മയപ്പെടുത്തുന്നത് സമൂഹത്തിൽ സൃഷ്ടിക്കുന്ന പ്രത്യാഘാതങ്ങളും കാർലിന്റെ പ്രഭാഷണത്തെ അടിസ്ഥാനമാക്കി വിശദീകരിക്കുക."
           },
@@ -389,11 +389,11 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "OeMGI2CWtLA",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Arthur Miller &amp; Tragedy:</strong> അമേരിക്കൻ നാടകകൃത്തായ ആർതർ മില്ലറുടെ വിശ്വപ്രസിദ്ധമായ ദുരന്തനാടകം. ഒരു സാധാരണക്കാരന്റെ ജീവിതത്തെ ട്രാജഡിയുടെ കേന്ദ്രമാക്കി മാറ്റിയ മാസ്റ്റർപീസ്.",
-              "<strong>The Fallacy of American Dream:</strong> കഠിനാധ്വാനവും വ്യക്തിപ്രഭാവവും (Being well-liked) കൊണ്ട് മാത്രം വിജയം നേടാമെന്ന മുതലാളിത്ത വ്യാമോഹം വില്ലി ലോമന്റെ ജീവിതത്തെ എങ്ങനെ തകർത്തു എന്ന് പരിശോധിക്കുന്നു.",
-              "<strong>Illusion vs. Reality:</strong> യാഥാർത്ഥ്യത്തെ ഉൾക്കൊള്ളാൻ കഴിയാതെ ഓർമ്മകളിലും ദിവാസ്വപ്നങ്ങളിലും അഭയം തേടുന്ന വില്ലി ലോമൻ (Willy Loman), ഒടുവിൽ കുടുംബത്തിന് ഇൻഷുറൻസ് തുക ലഭിക്കാനായി ആത്മഹത്യ ചെയ്യുന്നു.",
-              "<strong>Family Dynamics:</strong> വില്ലിയുടെ അമിത പ്രതീക്ഷകൾക്ക് ഇരയാകുന്ന മക്കളായ ബിഫ് (Biff), ഹാപ്പി (Happy), സ്നേഹനിധിയായ ഭാര്യ ലിൻഡ (Linda) എന്നിവരുടെ വൈകാരിക സംഘർഷങ്ങൾ.",
-              "<strong>Key Themes:</strong> അന്യവൽക്കരണം (Alienation), ഐഡന്റിറ്റി പ്രതിസന്ധി (Crisis of Identity), ഉപഭോക്തൃ സംസ്കാരത്തിന്റെ ഇരയാകുന്ന മനുഷ്യജീവിതം."
+              "Arthur Miller &amp; Tragedy: അമേരിക്കൻ നാടകകൃത്തായ ആർതർ മില്ലറുടെ വിശ്വപ്രസിദ്ധമായ ദുരന്തനാടകം. ഒരു സാധാരണക്കാരന്റെ ജീവിതത്തെ ട്രാജഡിയുടെ കേന്ദ്രമാക്കി മാറ്റിയ മാസ്റ്റർപീസ്.",
+              "The Fallacy of American Dream: കഠിനാധ്വാനവും വ്യക്തിപ്രഭാവവും (Being well-liked) കൊണ്ട് മാത്രം വിജയം നേടാമെന്ന മുതലാളിത്ത വ്യാമോഹം വില്ലി ലോമന്റെ ജീവിതത്തെ എങ്ങനെ തകർത്തു എന്ന് പരിശോധിക്കുന്നു.",
+              "Illusion vs. Reality: യാഥാർത്ഥ്യത്തെ ഉൾക്കൊള്ളാൻ കഴിയാതെ ഓർമ്മകളിലും ദിവാസ്വപ്നങ്ങളിലും അഭയം തേടുന്ന വില്ലി ലോമൻ (Willy Loman), ഒടുവിൽ കുടുംബത്തിന് ഇൻഷുറൻസ് തുക ലഭിക്കാനായി ആത്മഹത്യ ചെയ്യുന്നു.",
+              "Family Dynamics: വില്ലിയുടെ അമിത പ്രതീക്ഷകൾക്ക് ഇരയാകുന്ന മക്കളായ ബിഫ് (Biff), ഹാപ്പി (Happy), സ്നേഹനിധിയായ ഭാര്യ ലിൻഡ (Linda) എന്നിവരുടെ വൈകാരിക സംഘർഷങ്ങൾ.",
+              "Key Themes: അന്യവൽക്കരണം (Alienation), ഐഡന്റിറ്റി പ്രതിസന്ധി (Crisis of Identity), ഉപഭോക്തൃ സംസ്കാരത്തിന്റെ ഇരയാകുന്ന മനുഷ്യജീവിതം."
             ],
             "examTip": "വില്ലി ലോമന്റെ കഥാപാത്ര നിരൂപണം, അമേരിക്കൻ സ്വപ്നത്തിന്റെ (American Dream) പൊള്ളത്തരം നാടകത്തിൽ എങ്ങനെ ആവിഷ്കരിക്കപ്പെടുന്നു എന്നിവ പരീക്ഷാ ചോദ്യങ്ങളിൽ പ്രധാനമാണ്."
           },
@@ -405,11 +405,11 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "UE333_P1a9A",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Context &amp; Setting:</strong> പീറ്റർ വെയർ സംവിധാനം ചെയ്ത 'ഡെഡ് പോയറ്റ്സ് സൊസൈറ്റി' എന്ന ചിത്രത്തിലെ വിഖ്യാതമായ ക്ലാസ്റൂം രംഗം. വെൽട്ടൺ അക്കാദമിയിലെ കർക്കശമായ യാഥാസ്ഥിതിക വിദ്യാഭ്യാസ രീതി.",
-              "<strong>John Keating's Philosophy:</strong> റോബിൻ വില്യംസ് അവതരിപ്പിച്ച ഇംഗ്ലീഷ് അധ്യാപകൻ ജോൺ കീറ്റിംഗ്, വിദ്യാർത്ഥികളോട് സ്വതന്ത്രമായി ചിന്തിക്കാനും സ്വന്തം ശബ്ദം കണ്ടെത്താനും ആഹ്വാനം ചെയ്യുന്നു ('Carpe Diem' — Seize the day).",
-              "<strong>'Rip It Out' Scene:</strong> ഡോ. ജെ. ഇവാൻസ് പ്രിച്ചാർഡിന്റെ കവിതയെ അളക്കാനുള്ള ഗണിതശാസ്ത്ര ഫോർമുലയുള്ള പുസ്തകത്താളുകൾ കീറിയെറിയാൻ കീറ്റിംഗ് ആവശ്യപ്പെടുന്നത് കേവലം ഒരു തമാശയല്ല, മറിച്ച് വിദ്യാഭ്യാസത്തിലെ ഔപചാരികതയ്ക്കും ചട്ടക്കൂടുകൾക്കുമെതിരെയുള്ള ശക്തമായ പ്രതീകാത്മക ചെറുത്തുനിൽപ്പാണ്.",
-              "<strong>Authenticity &amp; Passion:</strong> കവിതയും കലയും ജീവിതം അളക്കാനുള്ളതല്ല, ജീവിക്കാനുള്ള ആവേശവും മനുഷ്യവികാരങ്ങളും ഉണർത്താനുള്ളതാണെന്ന് രംഗം വ്യക്തമാക്കുന്നു.",
-              "<strong>Exam Points:</strong> പേജുകൾ കീറുന്നതിന്റെ പ്രതീകാത്മകത, വിദ്യാഭ്യാസ സമ്പ്രദായത്തോടുള്ള വിമർശനം എന്നിവ പരീക്ഷയ്ക്ക് വിശകലനം ചെയ്യുക."
+              "Context &amp; Setting: പീറ്റർ വെയർ സംവിധാനം ചെയ്ത 'ഡെഡ് പോയറ്റ്സ് സൊസൈറ്റി' എന്ന ചിത്രത്തിലെ വിഖ്യാതമായ ക്ലാസ്റൂം രംഗം. വെൽട്ടൺ അക്കാദമിയിലെ കർക്കശമായ യാഥാസ്ഥിതിക വിദ്യാഭ്യാസ രീതി.",
+              "John Keating's Philosophy: റോബിൻ വില്യംസ് അവതരിപ്പിച്ച ഇംഗ്ലീഷ് അധ്യാപകൻ ജോൺ കീറ്റിംഗ്, വിദ്യാർത്ഥികളോട് സ്വതന്ത്രമായി ചിന്തിക്കാനും സ്വന്തം ശബ്ദം കണ്ടെത്താനും ആഹ്വാനം ചെയ്യുന്നു ('Carpe Diem' — Seize the day).",
+              "'Rip It Out' Scene: ഡോ. ജെ. ഇവാൻസ് പ്രിച്ചാർഡിന്റെ കവിതയെ അളക്കാനുള്ള ഗണിതശാസ്ത്ര ഫോർമുലയുള്ള പുസ്തകത്താളുകൾ കീറിയെറിയാൻ കീറ്റിംഗ് ആവശ്യപ്പെടുന്നത് കേവലം ഒരു തമാശയല്ല, മറിച്ച് വിദ്യാഭ്യാസത്തിലെ ഔപചാരികതയ്ക്കും ചട്ടക്കൂടുകൾക്കുമെതിരെയുള്ള ശക്തമായ പ്രതീകാത്മക ചെറുത്തുനിൽപ്പാണ്.",
+              "Authenticity &amp; Passion: കവിതയും കലയും ജീവിതം അളക്കാനുള്ളതല്ല, ജീവിക്കാനുള്ള ആവേശവും മനുഷ്യവികാരങ്ങളും ഉണർത്താനുള്ളതാണെന്ന് രംഗം വ്യക്തമാക്കുന്നു.",
+              "Exam Points: പേജുകൾ കീറുന്നതിന്റെ പ്രതീകാത്മകത, വിദ്യാഭ്യാസ സമ്പ്രദായത്തോടുള്ള വിമർശനം എന്നിവ പരീക്ഷയ്ക്ക് വിശകലനം ചെയ്യുക."
             ],
             "examTip": "'Rip It Out' എന്ന രംഗത്തിന്റെ പ്രതീകാത്മക അർത്ഥവും, യാഥാസ്ഥിതിക വിദ്യാഭ്യാസ സമ്പ്രദായത്തെ ജോൺ കീറ്റിംഗ് എങ്ങനെ വെല്ലുവിളിക്കുന്നുവെന്നും പരീക്ഷയ്ക്ക് വിശദീകരിക്കുക."
           }
@@ -447,11 +447,11 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "_S8y6DEMYO0",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Helen Keller's Life:</strong> കാഴ്ചയും കേൾവിയും നഷ്ടപ്പെട്ടെങ്കിലും അസാമാന്യ ഇച്ഛാശക്തിയും പ്രതിഭയും കൊണ്ട് ലോകത്തെ വിസ്മയിപ്പിച്ച ഹെലൻ കെല്ലറുടെ (1880–1968) ആത്മവിശ്വാസം നിറഞ്ഞ പ്രബന്ധം.",
-              "<strong>Optimism as Faith:</strong> 'Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence' — പ്രത്യാശയാണ് നേട്ടങ്ങളിലേക്ക് നയിക്കുന്ന ശക്തിയെന്ന് കെല്ലർ പ്രഖ്യാപിക്കുന്നു.",
-              "<strong>Overcoming Darkness:</strong> ഭൗതികമായ ഇരുട്ടിലും നിശ്ശബ്ദതയിലും അകപ്പെട്ടപ്പോഴും തന്റെ ആന്തരിക വെളിച്ചം കൊണ്ട് ലോകത്തെ സ്നേഹിക്കാനും അറിവ് നേടാനും കെല്ലർക്ക് സാധിച്ചു.",
-              "<strong>Critique of Pessimism:</strong> സകല സൗകര്യങ്ങളും ഉണ്ടായിട്ടും ജീവിതത്തെ നിരാശയോടെ കാണുന്നവരെ ഹെലൻ കെല്ലർ വിമർശിക്കുന്നു. കർമ്മനിരതമായ ശുഭാപ്തിവിശ്വാസമാണ് യഥാർത്ഥ വിജയരഹസ്യം.",
-              "<strong>Exam Points:</strong> ഹെലൻ കെല്ലറുടെ ശുഭാപ്തിവിശ്വാസത്തിന്റെ നിർവചനം, ഇരുട്ടിനെ അതിജീവിച്ച അനുഭവം, സമൂഹത്തിനുള്ള സന്ദേശം എന്നിവ പഠിക്കുക."
+              "Helen Keller's Life: കാഴ്ചയും കേൾവിയും നഷ്ടപ്പെട്ടെങ്കിലും അസാമാന്യ ഇച്ഛാശക്തിയും പ്രതിഭയും കൊണ്ട് ലോകത്തെ വിസ്മയിപ്പിച്ച ഹെലൻ കെല്ലറുടെ (1880–1968) ആത്മവിശ്വാസം നിറഞ്ഞ പ്രബന്ധം.",
+              "Optimism as Faith: 'Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence' — പ്രത്യാശയാണ് നേട്ടങ്ങളിലേക്ക് നയിക്കുന്ന ശക്തിയെന്ന് കെല്ലർ പ്രഖ്യാപിക്കുന്നു.",
+              "Overcoming Darkness: ഭൗതികമായ ഇരുട്ടിലും നിശ്ശബ്ദതയിലും അകപ്പെട്ടപ്പോഴും തന്റെ ആന്തരിക വെളിച്ചം കൊണ്ട് ലോകത്തെ സ്നേഹിക്കാനും അറിവ് നേടാനും കെല്ലർക്ക് സാധിച്ചു.",
+              "Critique of Pessimism: സകല സൗകര്യങ്ങളും ഉണ്ടായിട്ടും ജീവിതത്തെ നിരാശയോടെ കാണുന്നവരെ ഹെലൻ കെല്ലർ വിമർശിക്കുന്നു. കർമ്മനിരതമായ ശുഭാപ്തിവിശ്വാസമാണ് യഥാർത്ഥ വിജയരഹസ്യം.",
+              "Exam Points: ഹെലൻ കെല്ലറുടെ ശുഭാപ്തിവിശ്വാസത്തിന്റെ നിർവചനം, ഇരുട്ടിനെ അതിജീവിച്ച അനുഭവം, സമൂഹത്തിനുള്ള സന്ദേശം എന്നിവ പഠിക്കുക."
             ],
             "examTip": "ഹെലൻ കെല്ലർ ശുഭാപ്തിവിശ്വാസത്തെ (Optimism) എങ്ങനെ നിർവ്വചിക്കുന്നുവെന്നും, നിരാശയ്ക്കും നിഷേധാത്മകതയ്ക്കും എതിരെ അവർ നൽകുന്ന വാദങ്ങൾ പരീക്ഷയ്ക്ക് വിശകലനം ചെയ്യുക."
           }
@@ -556,10 +556,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "YEnG1YJ_vfs",
             "language": "English",
             "studyPoints": [
-              "<strong>Micro vs. Macro Sociology (സൂക്ഷ്മ-സ്ഥൂല തലങ്ങൾ):</strong> Micro sociology analyzes small-scale, everyday face-to-face interactions and subjective meanings (Herbert Blumer's Symbolic Interactionism, Erving Goffman's Dramaturgy, Alfred Schutz's Phenomenology). Macro sociology studies large-scale social systems, institutions, and structural patterns (Émile Durkheim's Social Facts, Karl Marx's Class Conflict).",
-              "<strong>Positivist Orientation (പോസിറ്റിവിസ്റ്റ് ശാസ്ത്രീയ രീതി):</strong> Originating with Auguste Comte and Émile Durkheim; treats society as an objective reality governed by discoverable social laws using empirical observation, quantitative measurement, replication, and value neutrality (നിഷ്പക്ഷത).",
-              "<strong>Interpretative Orientation &amp; Verstehen (ഫെർഷെഹൻ ഉൾക്കാഴ്ച):</strong> Pioneered by Max Weber; asserts human beings attach subjective meanings to actions, requiring <em>Verstehen</em> (empathetic understanding) to interpret reality from the actor's perspective rather than copying natural-science methods.",
-              "<strong>Critical Sociology &amp; Emancipation (വിമർശനാത്മക പഠനം):</strong> Rooted in Karl Marx and Frankfurt School theorists (Horkheimer, Adorno, Jürgen Habermas); actively uncovers hidden power hierarchies, ideological domination, and structural inequality to empower social transformation and human emancipation."
+              "Micro vs. Macro Sociology (സൂക്ഷ്മ-സ്ഥൂല തലങ്ങൾ): Micro sociology analyzes small-scale, everyday face-to-face interactions and subjective meanings (Herbert Blumer's Symbolic Interactionism, Erving Goffman's Dramaturgy, Alfred Schutz's Phenomenology). Macro sociology studies large-scale social systems, institutions, and structural patterns (Émile Durkheim's Social Facts, Karl Marx's Class Conflict).",
+              "Positivist Orientation (പോസിറ്റിവിസ്റ്റ് ശാസ്ത്രീയ രീതി): Originating with Auguste Comte and Émile Durkheim; treats society as an objective reality governed by discoverable social laws using empirical observation, quantitative measurement, replication, and value neutrality (നിഷ്പക്ഷത).",
+              "Interpretative Orientation &amp; Verstehen (ഫെർഷെഹൻ ഉൾക്കാഴ്ച): Pioneered by Max Weber; asserts human beings attach subjective meanings to actions, requiring <em>Verstehen</em> (empathetic understanding) to interpret reality from the actor's perspective rather than copying natural-science methods.",
+              "Critical Sociology &amp; Emancipation (വിമർശനാത്മക പഠനം): Rooted in Karl Marx and Frankfurt School theorists (Horkheimer, Adorno, Jürgen Habermas); actively uncovers hidden power hierarchies, ideological domination, and structural inequality to empower social transformation and human emancipation."
             ],
             "examTip": "Calicut University FYUGP Core Focus: 'Distinguish between Micro and Macro levels of sociological analysis with suitable examples' and 'Critically evaluate Positivist, Interpretative (Verstehen), and Critical orientations in sociological research' (Essential 10-Mark essay & short answer areas)."
           },
@@ -627,11 +627,11 @@ window.VOICE_EXPLANATIONS_DATA = {
             "thumbnail": "/thumbnails/sociology_agents_of_socialization_mod3/thumb.png",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>ആമുഖവും എച്ച്.ടി. മജുംദാർ നിർവ്വചനവും:</strong> ജൈവിക ജീവിയെ പൂർണ്ണ സാമൂഹിക വ്യക്തിത്വമാക്കി മാറ്റുന്ന ആജീവനാന്ത പ്രക്രിയ; എച്ച്.ടി. മജുംദാറിന്റെ ആധികാരിക നിർവ്വചനം.",
-              "<strong>പ്രാഥമിക ഏജൻസി (കുടുംബം):</strong> കുട്ടിയുടെ ആദ്യ സാമൂഹിക ലോകം; അമ്മ പ്രഥമ അധ്യാപിക; സ്നേഹം, കരുതൽ, അച്ചടക്കം, ലിംഗപദവി പഠനം, മുഖാമുഖ സമ്പർക്കം, വൈകാരിക പിന്തുണ (8 പ്രധാന ധർമ്മങ്ങൾ).",
-              "<strong>ഔപചാരിക ഏജൻസി (വിദ്യാലയവും അധ്യാപകരും):</strong> ചിട്ടയായ ബൗദ്ധിക വിദ്യാഭ്യാസം, അച്ചടക്കം, സംഘടിത മത്സരം; ജാതി-മത വിവേചനമില്ലാത്ത തുല്യതയും പൗരബോധവും അധ്യാപകരുടെ പെരുമാറ്റ മാതൃകയും.",
-              "<strong>സമപ്രായക്കാരുടെ കൂട്ടായ്മ (Peer Groups):</strong> തുല്യതയിൽ അധിഷ്ഠിതമായ ബന്ധങ്ങൾ; ഹാരലംബോസിന്റെ 3 വ്യതിരിക്ത സവിശേഷതകൾ (കുട്ടികൾ നിയമങ്ങൾ ഉണ്ടാക്കുന്നു, ഉടനടി ആനന്ദം, വിരുദ്ധ മൂല്യങ്ങൾ); പിയർ പ്രഷർ & കൗമാര സ്വാതന്ത്ര്യം.",
-              "<strong>മതം, ഭരണകൂടം, മാധ്യമങ്ങൾ & തൊഴിലിടം:</strong> വിശുദ്ധ ആചാരങ്ങളും ധാർമ്മികതയും (മതം); 4 ഘടകങ്ങൾ, നിയമവാഴ്ച, ശിശു-ആരോഗ്യ ക്ഷേമ ചുമതലകൾ (ഭരണകൂടം); 6 ചാനലുകൾ, യാഥാർത്ഥ്യ നിർമ്മിതി, സ്റ്റാറ്റസ് കോയെ വെല്ലുവിളിക്കൽ (മാധ്യമങ്ങൾ); ഒക്യുപേഷണൽ സോഷ്യലൈസേഷൻ & ചെറുസമൂഹം (തൊഴിലിടം). ഒപ്പം 5 മോഡൽ MCQs & 10 മാർക്ക് ഉപന്യാസ സഹായി."
+              "ആമുഖവും എച്ച്.ടി. മജുംദാർ നിർവ്വചനവും: ജൈവിക ജീവിയെ പൂർണ്ണ സാമൂഹിക വ്യക്തിത്വമാക്കി മാറ്റുന്ന ആജീവനാന്ത പ്രക്രിയ; എച്ച്.ടി. മജുംദാറിന്റെ ആധികാരിക നിർവ്വചനം.",
+              "പ്രാഥമിക ഏജൻസി (കുടുംബം): കുട്ടിയുടെ ആദ്യ സാമൂഹിക ലോകം; അമ്മ പ്രഥമ അധ്യാപിക; സ്നേഹം, കരുതൽ, അച്ചടക്കം, ലിംഗപദവി പഠനം, മുഖാമുഖ സമ്പർക്കം, വൈകാരിക പിന്തുണ (8 പ്രധാന ധർമ്മങ്ങൾ).",
+              "ഔപചാരിക ഏജൻസി (വിദ്യാലയവും അധ്യാപകരും): ചിട്ടയായ ബൗദ്ധിക വിദ്യാഭ്യാസം, അച്ചടക്കം, സംഘടിത മത്സരം; ജാതി-മത വിവേചനമില്ലാത്ത തുല്യതയും പൗരബോധവും അധ്യാപകരുടെ പെരുമാറ്റ മാതൃകയും.",
+              "സമപ്രായക്കാരുടെ കൂട്ടായ്മ (Peer Groups): തുല്യതയിൽ അധിഷ്ഠിതമായ ബന്ധങ്ങൾ; ഹാരലംബോസിന്റെ 3 വ്യതിരിക്ത സവിശേഷതകൾ (കുട്ടികൾ നിയമങ്ങൾ ഉണ്ടാക്കുന്നു, ഉടനടി ആനന്ദം, വിരുദ്ധ മൂല്യങ്ങൾ); പിയർ പ്രഷർ & കൗമാര സ്വാതന്ത്ര്യം.",
+              "മതം, ഭരണകൂടം, മാധ്യമങ്ങൾ & തൊഴിലിടം: വിശുദ്ധ ആചാരങ്ങളും ധാർമ്മികതയും (മതം); 4 ഘടകങ്ങൾ, നിയമവാഴ്ച, ശിശു-ആരോഗ്യ ക്ഷേമ ചുമതലകൾ (ഭരണകൂടം); 6 ചാനലുകൾ, യാഥാർത്ഥ്യ നിർമ്മിതി, സ്റ്റാറ്റസ് കോയെ വെല്ലുവിളിക്കൽ (മാധ്യമങ്ങൾ); ഒക്യുപേഷണൽ സോഷ്യലൈസേഷൻ & ചെറുസമൂഹം (തൊഴിലിടം). ഒപ്പം 5 മോഡൽ MCQs & 10 മാർക്ക് ഉപന്യാസ സഹായി."
             ],
             "examTip": "Calicut University FYUGP പരീക്ഷാ ചോദ്യങ്ങൾ: 1) 'Define Socialization and explain the major agents of socialization in detail' (10 Marks). 2) 'Analyse the role of different agents of socialization in the development of personality and social behaviour' (10 Marks). 3) 'Explain Haralambos and colleagues' three major aspects of peer group socialization'."
           },
@@ -714,10 +714,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "thumbnail": "/thumbnails/sociology_sem1_mod3/thumbnail.png",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>സാമൂഹിക പ്രതിപ്രവർത്തനം (Social Interaction):</strong> മനുഷ്യ ബന്ധങ്ങളുടെ അടിസ്ഥാന ശില; ഗ്രീൻ, പാർക്ക് & ബർഗസ്, ഡോസൺ & ഗെറ്റിസ് എന്നിവരുടെ നിർവ്വചനങ്ങൾ; സമ്പർക്കവും (Contact in Time & Space) ആശയവിനിമയവും.",
-              "<strong>സഹകരണം (Cooperation):</strong> ലാറ്റിൻ 'co' + 'operating'; പൊതു ലക്ഷ്യവും സംഘടിത അദ്ധ്വാനവും; പ്രത്യക്ഷ, പരോക്ഷ, പ്രൈമറി, സെക്കൻഡറി, ടെർഷ്യറി സഹകരണങ്ങൾ; സി.എച്ച്. കൂലി, യംഗ് & മാക്ക്, മാക്ഐവർ വിശകലനം.",
-              "<strong>മത്സരം (Competition):</strong> പരിമിതമായ വിഭവങ്ങൾ നേടാനായുള്ള അവ്യക്തിക സമാധാനപരമായ പോരാട്ടം; പാർക്ക് & ബർഗസ് ('Interaction without social contact'); എച്ച്.ടി. മജുംദാറിന്റെ 5 ഗുണധർമ്മങ്ങളും 3 ദോഷങ്ങളും.",
-              "<strong>സംഘർഷം, അനുരഞ്ജനം & സ്വാംശീകരണം:</strong> സംഘർഷത്തിന്റെ കാരണങ്ങൾ, ജോർജ്ജ് സിമ്മലിന്റെ 4 തരങ്ങൾ, ഗില്ലിന്റെ 5 രൂപങ്ങൾ, ലൂയിസ് കോസറുടെ സേഫ്റ്റി വാൽവ് ധർമ്മങ്ങൾ; ജെ.എം. ബാൾഡ്വിന്റെ അക്കോമഡേഷനും 7 രീതികളും; പാർക്ക് & ബർഗസിന്റെ അസിമിലേഷനും തടസ്സങ്ങളും. ഒപ്പം 31 സോൾവ്ഡ് MCQs & യൂണിവേഴ്സിറ്റി ഉപന്യാസ സഹായി."
+              "സാമൂഹിക പ്രതിപ്രവർത്തനം (Social Interaction): മനുഷ്യ ബന്ധങ്ങളുടെ അടിസ്ഥാന ശില; ഗ്രീൻ, പാർക്ക് & ബർഗസ്, ഡോസൺ & ഗെറ്റിസ് എന്നിവരുടെ നിർവ്വചനങ്ങൾ; സമ്പർക്കവും (Contact in Time & Space) ആശയവിനിമയവും.",
+              "സഹകരണം (Cooperation): ലാറ്റിൻ 'co' + 'operating'; പൊതു ലക്ഷ്യവും സംഘടിത അദ്ധ്വാനവും; പ്രത്യക്ഷ, പരോക്ഷ, പ്രൈമറി, സെക്കൻഡറി, ടെർഷ്യറി സഹകരണങ്ങൾ; സി.എച്ച്. കൂലി, യംഗ് & മാക്ക്, മാക്ഐവർ വിശകലനം.",
+              "മത്സരം (Competition): പരിമിതമായ വിഭവങ്ങൾ നേടാനായുള്ള അവ്യക്തിക സമാധാനപരമായ പോരാട്ടം; പാർക്ക് & ബർഗസ് ('Interaction without social contact'); എച്ച്.ടി. മജുംദാറിന്റെ 5 ഗുണധർമ്മങ്ങളും 3 ദോഷങ്ങളും.",
+              "സംഘർഷം, അനുരഞ്ജനം & സ്വാംശീകരണം: സംഘർഷത്തിന്റെ കാരണങ്ങൾ, ജോർജ്ജ് സിമ്മലിന്റെ 4 തരങ്ങൾ, ഗില്ലിന്റെ 5 രൂപങ്ങൾ, ലൂയിസ് കോസറുടെ സേഫ്റ്റി വാൽവ് ധർമ്മങ്ങൾ; ജെ.എം. ബാൾഡ്വിന്റെ അക്കോമഡേഷനും 7 രീതികളും; പാർക്ക് & ബർഗസിന്റെ അസിമിലേഷനും തടസ്സങ്ങളും. ഒപ്പം 31 സോൾവ്ഡ് MCQs & യൂണിവേഴ്സിറ്റി ഉപന്യാസ സഹായി."
             ],
             "examTip": "Calicut University 10-മാർക്ക് ഉപന്യാസം: 'Define Social Interaction and explain the major forms: Cooperation, Competition, Conflict, Accommodation and Assimilation with examples' & 31 മോഡൽ MCQs."
           },
@@ -830,10 +830,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
-              "<strong>ഡാർട്ട്മൗത്ത് കോൺഫറൻസ് (Dartmouth Conference, 1956):</strong> ജോൺ മക്കാർത്തി (John McCarthy), മാർവിൻ മിൻസ്കി (Marvin Minsky), ക്ലോഡ് ഷാനൻ (Claude Shannon) എന്നിവർ ചേർന്ന് 'ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ്' എന്ന ശാസ്ത്രശാഖയ്ക്ക് ഔദ്യോഗികമായി തുടക്കം കുറിച്ചു.",
-              "<strong>സൈബർനെറ്റിക്സ് പാരമ്പര്യം (Cybernetics & Norbert Wiener):</strong> ഫീഡ്‌ബാക്ക് ലൂപ്പുകളും സ്വയംനിയന്ത്രിത സംവിധാനങ്ങളും ജൈവിക-സാങ്കേതിക പ്രക്രിയകളിൽ എങ്ങനെ പ്രവർത്തിക്കുന്നു എന്ന ആദ്യകാല അടിത്തറ.",
-              "<strong>ദാർശനിക വേരുകൾ (Philosophical Roots - Aristotle & Leibniz):</strong> അരിസ്റ്റോട്ടിലിന്റെ യുക്തിശാസ്ത്ര സിദ്ധാന്തങ്ങളും (Syllogistic Logic), ലെബ്നീസിന്റെ ചിന്തയെ കണക്കുകൂട്ടലുകളിലൂടെ നിർവചിക്കാനുള്ള ശ്രമങ്ങളും (Calculus Ratiocinator).",
-              "<strong>റാഷണലിസ്റ്റ് അടിത്തറ (Rationalist Epistemology):</strong> മാനുഷിക ബുദ്ധിയെയും വിജ്ഞാനത്തെയും ഔപചാരിക ചിഹ്നങ്ങളിലൂടെയും നിയമങ്ങളിലൂടെയും (Formal Rules & Logical Symbols) മെഷീനുകളിൽ പകർത്താനുള്ള പ്രാരംഭ മാതൃക."
+              "ഡാർട്ട്മൗത്ത് കോൺഫറൻസ് (Dartmouth Conference, 1956): ജോൺ മക്കാർത്തി (John McCarthy), മാർവിൻ മിൻസ്കി (Marvin Minsky), ക്ലോഡ് ഷാനൻ (Claude Shannon) എന്നിവർ ചേർന്ന് 'ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ്' എന്ന ശാസ്ത്രശാഖയ്ക്ക് ഔദ്യോഗികമായി തുടക്കം കുറിച്ചു.",
+              "സൈബർനെറ്റിക്സ് പാരമ്പര്യം (Cybernetics & Norbert Wiener): ഫീഡ്‌ബാക്ക് ലൂപ്പുകളും സ്വയംനിയന്ത്രിത സംവിധാനങ്ങളും ജൈവിക-സാങ്കേതിക പ്രക്രിയകളിൽ എങ്ങനെ പ്രവർത്തിക്കുന്നു എന്ന ആദ്യകാല അടിത്തറ.",
+              "ദാർശനിക വേരുകൾ (Philosophical Roots - Aristotle & Leibniz): അരിസ്റ്റോട്ടിലിന്റെ യുക്തിശാസ്ത്ര സിദ്ധാന്തങ്ങളും (Syllogistic Logic), ലെബ്നീസിന്റെ ചിന്തയെ കണക്കുകൂട്ടലുകളിലൂടെ നിർവചിക്കാനുള്ള ശ്രമങ്ങളും (Calculus Ratiocinator).",
+              "റാഷണലിസ്റ്റ് അടിത്തറ (Rationalist Epistemology): മാനുഷിക ബുദ്ധിയെയും വിജ്ഞാനത്തെയും ഔപചാരിക ചിഹ്നങ്ങളിലൂടെയും നിയമങ്ങളിലൂടെയും (Formal Rules & Logical Symbols) മെഷീനുകളിൽ പകർത്താനുള്ള പ്രാരംഭ മാതൃക."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: ഡാർട്ട്മൗത്ത് കോൺഫറൻസിന്റെ ചരിത്രപരമായ പ്രാധാന്യവും ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിന്റെ ദാർശനിക വേരുകളും സംഗ്രഹിച്ച് ഉത്തരമെഴുതുക."
           },
@@ -845,10 +845,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "Vq-Bc0TI7L0",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
-              "<strong>അലൻ ട്യൂറിംഗിന്റെ പ്രശ്നമുന്നയിക്കൽ (Turing's 1950 Question):</strong> 'Computing Machinery and Intelligence' എന്ന പ്രബന്ധത്തിലൂടെ 'ചിന്ത' എന്ന സങ്കൽപ്പത്തെ ബാഹ്യമായ ഇമിറ്റേഷൻ ഗെയിം (The Imitation Game) വഴി അളക്കാനുള്ള വിപ്ലവകരമായ നിർദ്ദേശം.",
-              "<strong>സിംബോളിക് പ്രോസസ്സിംഗ് (Symbolic Processing Hypothesis):</strong> ചിന്ത എന്നാൽ ചിഹ്നങ്ങളെ കൃത്യമായ നിയമങ്ങൾക്കനുസരിച്ച് കൈകാര്യം ചെയ്യൽ (Rule-governed Symbol Manipulation) മാത്രമാണോ എന്ന ദാർശനിക വിശകലനം.",
-              "<strong>ബിഹേവിയറിസവും മനശാസ്ത്രവും (Behaviorism vs Mentalism):</strong> ഒരു യന്ത്രം മനുഷ്യനെപ്പോലെ സംഭാഷണത്തിൽ പെരുമാറിയാൽ അതിന് യഥാർത്ഥ ആന്തരിക ബോധം (Subjective Consciousness) ഉണ്ടെന്ന് സ്ഥിരീകരിക്കാനാകുമോ?",
-              "<strong>ചർച്ച്-ട്യൂറിംഗ് തീസിസ് (Church-Turing Thesis):</strong> അൽഗോരിത രൂപത്തിൽ നിർവ്വചിക്കാൻ കഴിയുന്ന ഏത് ചിന്താപരമായ ഗണിത പ്രക്രിയയും ഒരു യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീന് നിർവ്വഹിക്കാൻ സാധിക്കും."
+              "അലൻ ട്യൂറിംഗിന്റെ പ്രശ്നമുന്നയിക്കൽ (Turing's 1950 Question): 'Computing Machinery and Intelligence' എന്ന പ്രബന്ധത്തിലൂടെ 'ചിന്ത' എന്ന സങ്കൽപ്പത്തെ ബാഹ്യമായ ഇമിറ്റേഷൻ ഗെയിം (The Imitation Game) വഴി അളക്കാനുള്ള വിപ്ലവകരമായ നിർദ്ദേശം.",
+              "സിംബോളിക് പ്രോസസ്സിംഗ് (Symbolic Processing Hypothesis): ചിന്ത എന്നാൽ ചിഹ്നങ്ങളെ കൃത്യമായ നിയമങ്ങൾക്കനുസരിച്ച് കൈകാര്യം ചെയ്യൽ (Rule-governed Symbol Manipulation) മാത്രമാണോ എന്ന ദാർശനിക വിശകലനം.",
+              "ബിഹേവിയറിസവും മനശാസ്ത്രവും (Behaviorism vs Mentalism): ഒരു യന്ത്രം മനുഷ്യനെപ്പോലെ സംഭാഷണത്തിൽ പെരുമാറിയാൽ അതിന് യഥാർത്ഥ ആന്തരിക ബോധം (Subjective Consciousness) ഉണ്ടെന്ന് സ്ഥിരീകരിക്കാനാകുമോ?",
+              "ചർച്ച്-ട്യൂറിംഗ് തീസിസ് (Church-Turing Thesis): അൽഗോരിത രൂപത്തിൽ നിർവ്വചിക്കാൻ കഴിയുന്ന ഏത് ചിന്താപരമായ ഗണിത പ്രക്രിയയും ഒരു യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീന് നിർവ്വഹിക്കാൻ സാധിക്കും."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: 'Can a Machine Think?' എന്ന ട്യൂറിംഗിന്റെ ചോദ്യത്തിന് പ്രവർത്തനപരമായ നിർവ്വചനവും (Operational Definition) അതിന്റെ ദാർശനിക പരിമിതികളും വ്യക്തമാക്കുക."
           },
@@ -860,10 +860,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "2_RbQ7y-uHE",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
-              "<strong>മനസ്സ്-ശരീര പ്രശ്നം (Mind-Body Problem in AI):</strong> ചിന്ത എന്നത് തലച്ചോറ് അല്ലെങ്കിൽ കമ്പ്യൂട്ടർ എന്ന ഭൗതിക ഉപകരണത്തിന്റെ പ്രവർത്തനഫലമാണോ അതോ അതിനപ്പുറമുള്ള സ്വതന്ത്ര സത്തയാണോ?",
-              "<strong>കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡ് (Computational Theory of Mind - CTM):</strong> ഹിലരി പുട്ട്‌നാമും (Hilary Putnam) ജെറി ഫോഡറും (Jerry Fodor) മുന്നോട്ടുവെച്ച സിദ്ധാന്തം - മനസ്സ് ഒരു സോഫ്റ്റ്‌വെയറും തലച്ചോറ് ഒരു ഹാർഡ്‌വെയറുമാണ്.",
-              "<strong>ഫങ്ഷണലിസം (Functionalism):</strong> ഒരു മാനസിക അവസ്ഥയെ നിർണ്ണയിക്കുന്നത് അതിന്റെ ഭൗതിക ഘടനയല്ല (Organic Neurons vs Silicon Chips), മറിച്ച് അത് നിർവ്വഹിക്കുന്ന കാര്യക്ഷമമായ ധർമ്മങ്ങളാണ്.",
-              "<strong>ബോധത്തിന്റെ കഠിന പ്രശ്നം (Hard Problem of Consciousness - Chalmers):</strong> വിവരങ്ങൾ പ്രോസസ്സ് ചെയ്യുന്നതിനപ്പുറം വ്യക്തിപരമായ അനുഭവ ഗുണങ്ങൾ (Qualia) കൃത്രിമ സിസ്റ്റങ്ങൾക്ക് നേടാൻ സാധിക്കുമോ എന്ന സങ്കീർണ്ണ ചോദ്യം."
+              "മനസ്സ്-ശരീര പ്രശ്നം (Mind-Body Problem in AI): ചിന്ത എന്നത് തലച്ചോറ് അല്ലെങ്കിൽ കമ്പ്യൂട്ടർ എന്ന ഭൗതിക ഉപകരണത്തിന്റെ പ്രവർത്തനഫലമാണോ അതോ അതിനപ്പുറമുള്ള സ്വതന്ത്ര സത്തയാണോ?",
+              "കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡ് (Computational Theory of Mind - CTM): ഹിലരി പുട്ട്‌നാമും (Hilary Putnam) ജെറി ഫോഡറും (Jerry Fodor) മുന്നോട്ടുവെച്ച സിദ്ധാന്തം - മനസ്സ് ഒരു സോഫ്റ്റ്‌വെയറും തലച്ചോറ് ഒരു ഹാർഡ്‌വെയറുമാണ്.",
+              "ഫങ്ഷണലിസം (Functionalism): ഒരു മാനസിക അവസ്ഥയെ നിർണ്ണയിക്കുന്നത് അതിന്റെ ഭൗതിക ഘടനയല്ല (Organic Neurons vs Silicon Chips), മറിച്ച് അത് നിർവ്വഹിക്കുന്ന കാര്യക്ഷമമായ ധർമ്മങ്ങളാണ്.",
+              "ബോധത്തിന്റെ കഠിന പ്രശ്നം (Hard Problem of Consciousness - Chalmers): വിവരങ്ങൾ പ്രോസസ്സ് ചെയ്യുന്നതിനപ്പുറം വ്യക്തിപരമായ അനുഭവ ഗുണങ്ങൾ (Qualia) കൃത്രിമ സിസ്റ്റങ്ങൾക്ക് നേടാൻ സാധിക്കുമോ എന്ന സങ്കീർണ്ണ ചോദ്യം."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡും (CTM) ഫങ്ഷണലിസവും എഐ തത്വശാസ്ത്രത്തിൽ എങ്ങനെ ന്യായീകരിക്കപ്പെടുന്നു എന്ന് പരിശോധിക്കുക."
           }
@@ -880,10 +880,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
-              "<strong>ക്ലാസിക്കൽ GOFAI (Good Old-Fashioned AI):</strong> അറിവിനെ ചിഹ്നങ്ങളായും യുക്തിനിയമങ്ങളായും പ്രതിനിധാനം ചെയ്യുന്ന ഫിസിക്കൽ സിംബൽ സിസ്റ്റം ഹൈപ്പോതിസിസ് (Newell & Simon).",
-              "<strong>ഫ്രെയിം പ്രോബ്ലം (The Frame Problem - McCarthy & Hayes):</strong> ഒരു പ്രവർത്തനം ലോകത്തിൽ നടക്കുമ്പോൾ എന്തൊക്കെ മാറി, മാറ്റമില്ലാതെ തുടരുന്ന അനന്തമായ മറ്റ് യാഥാർത്ഥ്യങ്ങൾ എന്തൊക്കെ എന്ന് മുൻകൂട്ടി തിട്ടപ്പെടുത്താനുള്ള പ്രതിസന്ധി.",
-              "<strong>കോംബിനേറ്റോറിയൽ എക്സ്പ്ലോഷൻ (Combinatorial Explosion):</strong> യഥാർത്ഥ ലോകത്തിലെ പ്രശ്നങ്ങൾ വലുതാകുമ്പോൾ സിംബോളിക് സെർച്ച് ട്രീകൾ കമ്പ്യൂട്ടേഷണൽ പരിധിക്കപ്പുറം പരാജയപ്പെടുന്ന സാഹചര്യം.",
-              "<strong>ഹ്യൂറിസ്റ്റിക്സിന്റെ പരിമിതികൾ (Limits of Heuristics):</strong> കൃത്യമായ അൽഗോരിതമില്ലാത്തപ്പോൾ ഉപയോഗിക്കുന്ന താൽക്കാലിക നിയമങ്ങൾക്ക് (Rules of Thumb) യഥാർത്ഥ ലോക അനിശ്ചിതത്വങ്ങളെ ഉൾക്കൊള്ളാനുള്ള പരിമിതി."
+              "ക്ലാസിക്കൽ GOFAI (Good Old-Fashioned AI): അറിവിനെ ചിഹ്നങ്ങളായും യുക്തിനിയമങ്ങളായും പ്രതിനിധാനം ചെയ്യുന്ന ഫിസിക്കൽ സിംബൽ സിസ്റ്റം ഹൈപ്പോതിസിസ് (Newell & Simon).",
+              "ഫ്രെയിം പ്രോബ്ലം (The Frame Problem - McCarthy & Hayes): ഒരു പ്രവർത്തനം ലോകത്തിൽ നടക്കുമ്പോൾ എന്തൊക്കെ മാറി, മാറ്റമില്ലാതെ തുടരുന്ന അനന്തമായ മറ്റ് യാഥാർത്ഥ്യങ്ങൾ എന്തൊക്കെ എന്ന് മുൻകൂട്ടി തിട്ടപ്പെടുത്താനുള്ള പ്രതിസന്ധി.",
+              "കോംബിനേറ്റോറിയൽ എക്സ്പ്ലോഷൻ (Combinatorial Explosion): യഥാർത്ഥ ലോകത്തിലെ പ്രശ്നങ്ങൾ വലുതാകുമ്പോൾ സിംബോളിക് സെർച്ച് ട്രീകൾ കമ്പ്യൂട്ടേഷണൽ പരിധിക്കപ്പുറം പരാജയപ്പെടുന്ന സാഹചര്യം.",
+              "ഹ്യൂറിസ്റ്റിക്സിന്റെ പരിമിതികൾ (Limits of Heuristics): കൃത്യമായ അൽഗോരിതമില്ലാത്തപ്പോൾ ഉപയോഗിക്കുന്ന താൽക്കാലിക നിയമങ്ങൾക്ക് (Rules of Thumb) യഥാർത്ഥ ലോക അനിശ്ചിതത്വങ്ങളെ ഉൾക്കൊള്ളാനുള്ള പരിമിതി."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: ക്ലാസിക്കൽ GOFAI നേരിട്ട പ്രധാന പ്രതിസന്ധിയായ 'The Frame Problem' വിശദീകരിച്ച് കോമൺസെൻസ് റീസണിംഗിലെ വെല്ലുവിളികൾ ചർച്ച ചെയ്യുക."
           },
@@ -895,10 +895,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "Vq-Bc0TI7L0",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
-              "<strong>ഇമിറ്റേഷൻ ഗെയിം ഘടന (The 3-Player Imitation Game):</strong> ചോദ്യകർത്താവ് ടെർമിനലിലൂടെ മനുഷ്യനോടും കമ്പ്യൂട്ടറിനോടും സംവദിച്ച് ആരെയാണ് മനുഷ്യനെന്ന് തിരിച്ചറിയാൻ ശ്രമിക്കുന്ന പരീക്ഷണ മാതൃക.",
-              "<strong>പ്രവർത്തനപരമായ മാനദണ്ഡം (Operational Criterion of Intelligence):</strong> ആന്തരിക ബോധത്തെ നേരിട്ട് പരിശോധിക്കാൻ കഴിയാത്തതിനാൽ മനുഷ്യ സമാനമായ പെരുമാറ്റത്തെ ബുദ്ധിയുടെ മാനദണ്ഡമാക്കുന്ന രീതി.",
-              "<strong>ലേഡി ലവ്‌ലേസിന്റെ ആക്ഷേപം (Lady Lovelace’s Objection):</strong> മെഷീനുകൾ ഒരിക്കലും സ്വയം മൗലികമായ യാതൊന്നും നിർമ്മിക്കുന്നില്ല; മനുഷ്യൻ കൽപ്പിക്കുന്ന പ്രോഗ്രാം മാത്രമേ നിർവ്വഹിക്കുന്നുള്ളൂ എന്ന ചരിത്രപരമായ വാദം.",
-              "<strong>ദൈവശാസ്ത്ര-ഗോഡലിയൻ തടസ്സങ്ങൾ (Theological & Mathematical Objections):</strong> ആത്മാവ് മനുഷ്യന് മാത്രമെന്ന ദൈവശാസ്ത്ര വാദവും, മെഷീൻ റീസണിംഗിന്റെ പരിമിതി വ്യക്തമാക്കുന്ന ഗോഡലിന്റെ അപൂർണ്ണതാ സിദ്ധാന്തവും (Incompleteness Theorem)."
+              "ഇമിറ്റേഷൻ ഗെയിം ഘടന (The 3-Player Imitation Game): ചോദ്യകർത്താവ് ടെർമിനലിലൂടെ മനുഷ്യനോടും കമ്പ്യൂട്ടറിനോടും സംവദിച്ച് ആരെയാണ് മനുഷ്യനെന്ന് തിരിച്ചറിയാൻ ശ്രമിക്കുന്ന പരീക്ഷണ മാതൃക.",
+              "പ്രവർത്തനപരമായ മാനദണ്ഡം (Operational Criterion of Intelligence): ആന്തരിക ബോധത്തെ നേരിട്ട് പരിശോധിക്കാൻ കഴിയാത്തതിനാൽ മനുഷ്യ സമാനമായ പെരുമാറ്റത്തെ ബുദ്ധിയുടെ മാനദണ്ഡമാക്കുന്ന രീതി.",
+              "ലേഡി ലവ്‌ലേസിന്റെ ആക്ഷേപം (Lady Lovelace’s Objection): മെഷീനുകൾ ഒരിക്കലും സ്വയം മൗലികമായ യാതൊന്നും നിർമ്മിക്കുന്നില്ല; മനുഷ്യൻ കൽപ്പിക്കുന്ന പ്രോഗ്രാം മാത്രമേ നിർവ്വഹിക്കുന്നുള്ളൂ എന്ന ചരിത്രപരമായ വാദം.",
+              "ദൈവശാസ്ത്ര-ഗോഡലിയൻ തടസ്സങ്ങൾ (Theological & Mathematical Objections): ആത്മാവ് മനുഷ്യന് മാത്രമെന്ന ദൈവശാസ്ത്ര വാദവും, മെഷീൻ റീസണിംഗിന്റെ പരിമിതി വ്യക്തമാക്കുന്ന ഗോഡലിന്റെ അപൂർണ്ണതാ സിദ്ധാന്തവും (Incompleteness Theorem)."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: ട്യൂറിംഗ് ടെസ്റ്റിന്റെ അടിസ്ഥാന മാനദണ്ഡങ്ങളും അതിനെതിരെ ലേഡി ലവ്‌ലേസ് മുന്നോട്ടുവെച്ച പ്രധാന വിമർശനങ്ങളും വിശദമാക്കുക."
           },
@@ -910,10 +910,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "OBl1S1edYyU",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
-              "<strong>ജോൺ സിയറലിന്റെ ചിന്താപരീക്ഷണം (John Searle's 1980 Argument):</strong> ചൈനീസ് ഭാഷയറിയാത്ത ഒരാൾ മുറിക്കുള്ളിലിരുന്ന് ഇംഗ്ലീഷ് റൂൾബുക്ക് പ്രകാരം ചിഹ്നങ്ങൾ മാറ്റിനൽകി പുറത്തുള്ള ചൈനീസ് പണ്ഡിതരെ കബളിപ്പിക്കുന്ന സാഹചര്യം.",
-              "<strong>സിന്റാക്സ് സിമാന്റിക്സ് അല്ല (Syntax is not Semantics):</strong> കമ്പ്യൂട്ടർ പ്രോഗ്രാമുകൾക്ക് ചിഹ്നങ്ങളുടെ രൂപം (Syntax) കൈകാര്യം ചെയ്യാൻ മാത്രമേ കഴിയൂ; അവയ്ക്ക് യാതൊരുവിധ അർത്ഥമോ (Semantics) ഇന്റൻഷണാലിറ്റിയോ (Intentionality) ഇല്ല.",
-              "<strong>സ്ട്രോങ് AI vs വീക്ക് AI (Strong AI vs Weak AI):</strong> ശരിയായി പ്രോഗ്രാം ചെയ്ത കമ്പ്യൂട്ടർ ഒരു യഥാർത്ഥ മനസ്സാണ് എന്ന സ്ട്രോങ് AI വാദത്തെ സിയറൽ പൂർണ്ണമായി നിരാകരിക്കുന്നു.",
-              "<strong>സിസ്റ്റംസ് റിപ്ലൈയും റോബോട്ട് റിപ്ലൈയും (Systems & Robot Replies):</strong> വ്യക്തിക്കല്ലെങ്കിലും മുറി മുഴുവനുമുള്ള സിസ്റ്റത്തിന് അറിവുണ്ടെന്ന വാദത്തെയും, റോബോട്ട് ശരീരമുണ്ടെങ്കിൽ അർത്ഥം ലഭിക്കുമെന്ന വാദത്തെയും സിയറൽ പ്രതിരോധിക്കുന്ന രീതി."
+              "ജോൺ സിയറലിന്റെ ചിന്താപരീക്ഷണം (John Searle's 1980 Argument): ചൈനീസ് ഭാഷയറിയാത്ത ഒരാൾ മുറിക്കുള്ളിലിരുന്ന് ഇംഗ്ലീഷ് റൂൾബുക്ക് പ്രകാരം ചിഹ്നങ്ങൾ മാറ്റിനൽകി പുറത്തുള്ള ചൈനീസ് പണ്ഡിതരെ കബളിപ്പിക്കുന്ന സാഹചര്യം.",
+              "സിന്റാക്സ് സിമാന്റിക്സ് അല്ല (Syntax is not Semantics): കമ്പ്യൂട്ടർ പ്രോഗ്രാമുകൾക്ക് ചിഹ്നങ്ങളുടെ രൂപം (Syntax) കൈകാര്യം ചെയ്യാൻ മാത്രമേ കഴിയൂ; അവയ്ക്ക് യാതൊരുവിധ അർത്ഥമോ (Semantics) ഇന്റൻഷണാലിറ്റിയോ (Intentionality) ഇല്ല.",
+              "സ്ട്രോങ് AI vs വീക്ക് AI (Strong AI vs Weak AI): ശരിയായി പ്രോഗ്രാം ചെയ്ത കമ്പ്യൂട്ടർ ഒരു യഥാർത്ഥ മനസ്സാണ് എന്ന സ്ട്രോങ് AI വാദത്തെ സിയറൽ പൂർണ്ണമായി നിരാകരിക്കുന്നു.",
+              "സിസ്റ്റംസ് റിപ്ലൈയും റോബോട്ട് റിപ്ലൈയും (Systems & Robot Replies): വ്യക്തിക്കല്ലെങ്കിലും മുറി മുഴുവനുമുള്ള സിസ്റ്റത്തിന് അറിവുണ്ടെന്ന വാദത്തെയും, റോബോട്ട് ശരീരമുണ്ടെങ്കിൽ അർത്ഥം ലഭിക്കുമെന്ന വാദത്തെയും സിയറൽ പ്രതിരോധിക്കുന്ന രീതി."
             ],
             "examTip": "Calicut University FYUGP പ്രിയപ്പെട്ട ചോദ്യം: 'Syntax is not Semantics' - ജോൺ സിയറലിന്റെ ചൈനീസ് റൂം ആർഗ്യുമെന്റ് മുൻനിർത്തി സ്ട്രോങ് എഐ സങ്കൽപ്പത്തെ വിമർശനാത്മകമായി വിലയിരുത്തുക."
           },
@@ -925,10 +925,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "ZIoG5kcVyk4",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
-              "<strong>കാർട്ടീഷ്യൻ ഡ്യുവലിസം (Cartesian Dualism):</strong> പ്രപഞ്ചത്തിൽ ചിന്തയുള്ള മനസ്സും (Res Cogitans) ഭൗതിക സ്ഥലവിസ്തൃതിയുള്ള ശരീരവും (Res Extensa) എന്ന രണ്ട് അടിസ്ഥാന സത്തകളുണ്ടെന്ന ദെക്കാർത്തിന്റെ സിദ്ധാന്തം.",
-              "<strong>ശരീരം ഒരു യന്ത്രം (Body as an Automaton):</strong> ജീവികളുടെയും മനുഷ്യന്റെയും ഭൗതിക ശരീരം ക്ലോക്ക് വർക്ക് പോലെയുള്ള സങ്കീർണ്ണമായ യന്ത്രമാണെന്നും എന്നാൽ മനസ്സ് ഭൗതിക നിയമങ്ങൾക്ക് അതീതമാണെന്നുമുള്ള വീക്ഷണം.",
-              "<strong>ഇന്ററാക്ഷനിസം പ്രതിസന്ധി (Interaction Problem):</strong> ഭൗതികമല്ലാത്ത ഒരു മനസ്സിന് ഭൗതികമായ ശരീരവുമായി (Pineal Gland വഴി) എങ്ങനെ പ്രതിപ്രവർത്തിക്കാൻ സാധിക്കും എന്ന കാർട്ടീഷ്യൻ പ്രതിസന്ധി.",
-              "<strong>ഡിജിറ്റൽ യുഗത്തിലെ പുനർവായന (Cartesian Ghost in the Machine):</strong> ആധുനിക എഐ തലച്ചോറിനെയും കമ്പ്യൂട്ടറിനെയും ഭൗതിക മെഷീനായി കാണുമ്പോൾ ആത്മനിഷ്ഠമായ മനസ്സ് എവിടെ സ്ഥിതിചെയ്യുന്നു എന്ന സമകാലിക ചോദ്യം."
+              "കാർട്ടീഷ്യൻ ഡ്യുവലിസം (Cartesian Dualism): പ്രപഞ്ചത്തിൽ ചിന്തയുള്ള മനസ്സും (Res Cogitans) ഭൗതിക സ്ഥലവിസ്തൃതിയുള്ള ശരീരവും (Res Extensa) എന്ന രണ്ട് അടിസ്ഥാന സത്തകളുണ്ടെന്ന ദെക്കാർത്തിന്റെ സിദ്ധാന്തം.",
+              "ശരീരം ഒരു യന്ത്രം (Body as an Automaton): ജീവികളുടെയും മനുഷ്യന്റെയും ഭൗതിക ശരീരം ക്ലോക്ക് വർക്ക് പോലെയുള്ള സങ്കീർണ്ണമായ യന്ത്രമാണെന്നും എന്നാൽ മനസ്സ് ഭൗതിക നിയമങ്ങൾക്ക് അതീതമാണെന്നുമുള്ള വീക്ഷണം.",
+              "ഇന്ററാക്ഷനിസം പ്രതിസന്ധി (Interaction Problem): ഭൗതികമല്ലാത്ത ഒരു മനസ്സിന് ഭൗതികമായ ശരീരവുമായി (Pineal Gland വഴി) എങ്ങനെ പ്രതിപ്രവർത്തിക്കാൻ സാധിക്കും എന്ന കാർട്ടീഷ്യൻ പ്രതിസന്ധി.",
+              "ഡിജിറ്റൽ യുഗത്തിലെ പുനർവായന (Cartesian Ghost in the Machine): ആധുനിക എഐ തലച്ചോറിനെയും കമ്പ്യൂട്ടറിനെയും ഭൗതിക മെഷീനായി കാണുമ്പോൾ ആത്മനിഷ്ഠമായ മനസ്സ് എവിടെ സ്ഥിതിചെയ്യുന്നു എന്ന സമകാലിക ചോദ്യം."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: റെനെ ദെക്കാർത്തിന്റെ മൈൻഡ്-ബോഡി ഡ്യുവലിസവും ആധുനിക കമ്പ്യൂട്ടേഷണൽ ഫിലോസഫിയും തമ്മിലുള്ള അടിസ്ഥാനപരമായ വൈരുദ്ധ്യങ്ങൾ വിശദമാക്കുക."
           },
@@ -940,10 +940,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "ZIoG5kcVyk4",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
-              "<strong>ശരീരരഹിത ബുദ്ധി (Disembodied Intelligence in GOFAI):</strong> ബുദ്ധിയെ ശരീരത്തിൽ നിന്നും ബാഹ്യ പരിസ്ഥിതിയിൽ നിന്നും പൂർണ്ണമായി വേർപെട്ട അമൂർത്തമായ ഒരു ചിഹ്നപ്രക്രിയയായി കണ്ട ക്ലാസിക്കൽ ധാരണ.",
-              "<strong>ഹ്യൂബർട്ട് ഡ്രൈഫസിന്റെ വിമർശനം (Hubert Dreyfus's Phenomenological Critique):</strong> മനുഷ്യ ബുദ്ധി എന്നത് നിയമങ്ങൾ നടപ്പിലാക്കലല്ല; അത് ശരീരത്തിലൂടെ ലോകത്തിൽ അനുഭവിച്ചറിയുന്ന (Heideggerian Being-in-the-world) ഒരു ജൈവിക ശേഷിയാണ്.",
-              "<strong>ആൻഡി ക്ലാർക്കും വികസിത മനസ്സും (Andy Clark & The Extended Mind):</strong> തലച്ചോറും ശരീരവും ബാഹ്യ ഉപകരണങ്ങളും ഒത്തുചേർന്നാണ് ചിന്ത സാധ്യമാക്കുന്നത് എന്ന എംബോഡീഡ് കോഗ്നിഷൻ സിദ്ധാന്തം.",
-              "<strong>സിറ്റുവേറ്റഡ് റോബോട്ടിക്സ് (Situated & Enactive AI):</strong> റോഡ്‌നി ബ്രൂക്സ് (Rodney Brooks) വികസിപ്പിച്ച മാതൃക - വലിയ ലോക വിവരണം കമ്പ്യൂട്ടറിലിരുത്താതെ ബാഹ്യ ലോകത്തോട് നേരിട്ട് പ്രതിപ്രവർത്തിച്ച് പഠിക്കുന്ന യന്ത്രങ്ങൾ."
+              "ശരീരരഹിത ബുദ്ധി (Disembodied Intelligence in GOFAI): ബുദ്ധിയെ ശരീരത്തിൽ നിന്നും ബാഹ്യ പരിസ്ഥിതിയിൽ നിന്നും പൂർണ്ണമായി വേർപെട്ട അമൂർത്തമായ ഒരു ചിഹ്നപ്രക്രിയയായി കണ്ട ക്ലാസിക്കൽ ധാരണ.",
+              "ഹ്യൂബർട്ട് ഡ്രൈഫസിന്റെ വിമർശനം (Hubert Dreyfus's Phenomenological Critique): മനുഷ്യ ബുദ്ധി എന്നത് നിയമങ്ങൾ നടപ്പിലാക്കലല്ല; അത് ശരീരത്തിലൂടെ ലോകത്തിൽ അനുഭവിച്ചറിയുന്ന (Heideggerian Being-in-the-world) ഒരു ജൈവിക ശേഷിയാണ്.",
+              "ആൻഡി ക്ലാർക്കും വികസിത മനസ്സും (Andy Clark & The Extended Mind): തലച്ചോറും ശരീരവും ബാഹ്യ ഉപകരണങ്ങളും ഒത്തുചേർന്നാണ് ചിന്ത സാധ്യമാക്കുന്നത് എന്ന എംബോഡീഡ് കോഗ്നിഷൻ സിദ്ധാന്തം.",
+              "സിറ്റുവേറ്റഡ് റോബോട്ടിക്സ് (Situated & Enactive AI): റോഡ്‌നി ബ്രൂക്സ് (Rodney Brooks) വികസിപ്പിച്ച മാതൃക - വലിയ ലോക വിവരണം കമ്പ്യൂട്ടറിലിരുത്താതെ ബാഹ്യ ലോകത്തോട് നേരിട്ട് പ്രതിപ്രവർത്തിച്ച് പഠിക്കുന്ന യന്ത്രങ്ങൾ."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: ക്ലാസിക്കൽ AI മാതൃകകൾക്കെതിരെ ഹ്യൂബർട്ട് ഡ്രൈഫസും ആൻഡി ക്ലാർക്കും മുന്നോട്ടുവെച്ച 'Embodied Cognition' വാദങ്ങൾ വിശകലനം ചെയ്യുക."
           }
@@ -990,11 +990,11 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "17:26",
             "chapter": "Chapter 05: Epistemological Implications in Artificial Intelligence",
             "studyPoints": [
-              "<strong>വിജ്ഞാനശാസ്ത്രം (Epistemology):</strong> അറിവ് (Knowledge), വിശ്വാസം (Belief), ന്യായീകരണം (Justification) എന്നിവയെക്കുറിച്ചുള്ള ദാർശനിക പഠനവും എഐയിലെ പ്രയോഗവും.",
-              "<strong>ബ്ലാക്ക് ബോക്സ് പ്രശ്നം (Black-Box Opacity):</strong> ആധുനിക ഡീപ് ലേണിംഗ് മോഡലുകളുടെ തീരുമാനമെടുക്കൽ പ്രക്രിയ മനുഷ്യ മനസ്സിന് പൂർണ്ണമായി കണ്ടെത്താൻ സാധിക്കാത്ത സാഹചര്യം.",
-              "<strong>പാശ്ചാത്യ & ഭാരതീയ ജ്ഞാനശാസ്ത്രം:</strong> യുക്തിവാദവും (Rationalism) അനുഭവവാദവും (Empiricism) കൂടാതെ ന്യായ-ബുദ്ധ ദർശനങ്ങളിലെ പ്രമാണ സിദ്ധാന്തങ്ങളും (Pramanas).",
-              "<strong>അപ്രമാണങ്ങളും എഐ ഹലൂസിനേഷനും:</strong> സംശയം (Samsaya), വിപര്യയം (Viparyaya) എന്നിവ എഐ മോഡലുകളിലെ ഹലൂസിനേഷനുമായി താരതമ്യം ചെയ്യുന്നു.",
-              "<strong>റിലയബിലിസം (Reliabilism):</strong> എഐ നൽകുന്ന വിവരങ്ങൾ വിശ്വസനീയമായ പ്രക്രിയയിലൂടെ ഉത്പാദിപ്പിക്കപ്പെട്ടതാണെങ്കിൽ അത് യഥാർത്ഥ 'അറിവ്' ആയി കണക്കാക്കാമോ എന്ന സമഗ്ര വിശകലനം."
+              "വിജ്ഞാനശാസ്ത്രം (Epistemology): അറിവ് (Knowledge), വിശ്വാസം (Belief), ന്യായീകരണം (Justification) എന്നിവയെക്കുറിച്ചുള്ള ദാർശനിക പഠനവും എഐയിലെ പ്രയോഗവും.",
+              "ബ്ലാക്ക് ബോക്സ് പ്രശ്നം (Black-Box Opacity): ആധുനിക ഡീപ് ലേണിംഗ് മോഡലുകളുടെ തീരുമാനമെടുക്കൽ പ്രക്രിയ മനുഷ്യ മനസ്സിന് പൂർണ്ണമായി കണ്ടെത്താൻ സാധിക്കാത്ത സാഹചര്യം.",
+              "പാശ്ചാത്യ & ഭാരതീയ ജ്ഞാനശാസ്ത്രം: യുക്തിവാദവും (Rationalism) അനുഭവവാദവും (Empiricism) കൂടാതെ ന്യായ-ബുദ്ധ ദർശനങ്ങളിലെ പ്രമാണ സിദ്ധാന്തങ്ങളും (Pramanas).",
+              "അപ്രമാണങ്ങളും എഐ ഹലൂസിനേഷനും: സംശയം (Samsaya), വിപര്യയം (Viparyaya) എന്നിവ എഐ മോഡലുകളിലെ ഹലൂസിനേഷനുമായി താരതമ്യം ചെയ്യുന്നു.",
+              "റിലയബിലിസം (Reliabilism): എഐ നൽകുന്ന വിവരങ്ങൾ വിശ്വസനീയമായ പ്രക്രിയയിലൂടെ ഉത്പാദിപ്പിക്കപ്പെട്ടതാണെങ്കിൽ അത് യഥാർത്ഥ 'അറിവ്' ആയി കണക്കാക്കാമോ എന്ന സമഗ്ര വിശകലനം."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: 'Can Machine Beliefs be Justified?' - Justification, Truth, and Belief (JTB) മാതൃകയും പാശ്ചാത്യ-ഭാരതീയ ജ്ഞാനശാസ്ത്ര പാരമ്പര്യങ്ങളും മുൻനിർത്തി ഉത്തരമെഴുതുക.",
             "language": "Malayalam"

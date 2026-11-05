@@ -1320,10 +1320,10 @@ tr:hover td { background: rgba(56, 189, 248, 0.07); }
   animation: bot-blink-once 1.2s ease-out 1 forwards;
 }
 .google-bot-row td {
-  font-weight: 700 !important;
+  font-weight: normal !important;
 }
 .google-bot-row .ip-badge {
-  font-weight: 800 !important;
+  font-weight: normal !important;
   color: #f59e0b !important;
   border-color: rgba(245, 158, 11, 0.5) !important;
   background: rgba(245, 158, 11, 0.16) !important;
