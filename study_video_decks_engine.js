@@ -1,7 +1,7 @@
 /**
  * Academic Hub - 3-Card Rotating Video Decks Engine
- * 100% AdSense Safe (Pure static thumbnails, zero autoplay, zero iframe overhead)
- * Built-in Dead Video Detection Guard (Auto-skips 404s and YouTube placeholder thumbnails)
+ * 100% On-Platform: Links directly to voice-explanation.html with embedded video & audio
+ * 100% AdSense Safe (Pure static thumbnails on index.html, zero autoplay overhead)
  */
 (function() {
   'use strict';
@@ -51,10 +51,7 @@
 
       function applyData() {
         if (thumbImg) {
-          // Dead video detection guards
           thumbImg.onerror = function() {
-            // Thumbnail failed to load / 404 -> Prune dead video from memory & skip to next
-            console.warn('[Video Deck] Removing dead video:', item.id);
             s.list.splice(s.idx, 1);
             if (s.list.length > 0) {
               s.idx = getRandomIndex(s.list, -1);
@@ -63,9 +60,7 @@
           };
 
           thumbImg.onload = function() {
-            // YouTube placeholder thumbnail for deleted/private videos is 120x90
             if (thumbImg.naturalWidth === 120 && thumbImg.naturalHeight === 90) {
-              console.warn('[Video Deck] Detected placeholder 120x90 for dead video:', item.id);
               s.list.splice(s.idx, 1);
               if (s.list.length > 0) {
                 s.idx = getRandomIndex(s.list, -1);
@@ -81,10 +76,12 @@
         if (modTag) modTag.textContent = item.module || '';
         if (titleMal) titleMal.textContent = item.titleMal || '';
         if (titleEn) titleEn.textContent = item.titleEn || '';
-        if (watchLink) watchLink.href = item.url;
+        if (watchLink) {
+          watchLink.href = item.url;
+        }
         if (thumbContainer) {
           thumbContainer.onclick = function() {
-            window.open(item.url, '_blank', 'noopener,noreferrer');
+            window.location.href = item.url;
           };
         }
       }
@@ -114,10 +111,8 @@
       shuffleStream(3, animate);
     }
 
-    // Initialize all 3 streams with random active picks
     shuffleAll(false);
 
-    // Bind Stream 1 button
     var btn1 = document.getElementById('btn-shuffle-stream-1');
     if (btn1) {
       btn1.addEventListener('click', function(e) {
@@ -126,7 +121,6 @@
       });
     }
 
-    // Bind Stream 2 button
     var btn2 = document.getElementById('btn-shuffle-stream-2');
     if (btn2) {
       btn2.addEventListener('click', function(e) {
@@ -135,7 +129,6 @@
       });
     }
 
-    // Bind Stream 3 button
     var btn3 = document.getElementById('btn-shuffle-stream-3');
     if (btn3) {
       btn3.addEventListener('click', function(e) {
@@ -144,7 +137,6 @@
       });
     }
 
-    // Bind Global Shuffle button
     var btnAll = document.getElementById('btn-shuffle-all-streams');
     if (btnAll) {
       btnAll.addEventListener('click', function(e) {
@@ -153,7 +145,6 @@
       });
     }
 
-    // Gentle auto-rotation (rotates one card every 16 seconds if user is idle)
     var currentRotateStream = 1;
     var container = document.getElementById('study-lounge');
     var isHovered = false;

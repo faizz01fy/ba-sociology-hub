@@ -5199,11 +5199,15 @@
 
         const targetCh = params.get('ch') || params.get('chapter') || (window.location.hash ? window.location.hash.replace('#', '') : '');
 
-        if (!targetCh) return;
+        const targetYt = (params.get('yt') || params.get('v') || params.get('videoId') || '').trim();
 
 
 
-        const normalizedTarget = targetCh.replace(/[^0-9.]/g, '').replace(/^0+([1-9])/, '$1');
+        if (!targetCh && !targetYt) return;
+
+
+
+        const normalizedTarget = targetCh ? targetCh.replace(/[^0-9.]/g, '').replace(/^0+([1-9])/, '$1') : '';
 
         
 
@@ -5217,19 +5221,27 @@
 
           const cardId = card.id;
 
+          const cardYt = (card.dataset.ytid || '').trim();
 
 
-          if (
 
-            (cNorm && cNorm === normalizedTarget) ||
+          const isMatch = (targetYt && cardYt && cardYt.toLowerCase() === targetYt.toLowerCase()) ||
 
-            (cRaw && cRaw.toLowerCase() === targetCh.toLowerCase()) ||
+            (targetCh && (
 
-            (cardId && cardId.toLowerCase() === targetCh.toLowerCase()) ||
+              (cNorm && cNorm === normalizedTarget) ||
 
-            (cardId && cardId.toLowerCase() === ('ch-' + targetCh.replace(/[^0-9.]/g, '').replace(/\./g, '-')).toLowerCase())
+              (cRaw && cRaw.toLowerCase() === targetCh.toLowerCase()) ||
 
-          ) {
+              (cardId && cardId.toLowerCase() === targetCh.toLowerCase()) ||
+
+              (cardId && cardId.toLowerCase() === ('ch-' + targetCh.replace(/[^0-9.]/g, '').replace(/\./g, '-')).toLowerCase())
+
+            ));
+
+
+
+          if (isMatch) {
 
             card.classList.add('highlight-target');
 
@@ -5241,7 +5253,7 @@
 
             if (cardTitle) {
 
-              document.title = `${targetCh}: ${cardTitle} | Academic Hub Voice Explanation`;
+              document.title = `${cardTitle} | Academic Hub Voice Explanation`;
 
             }
 
