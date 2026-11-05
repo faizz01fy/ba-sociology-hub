@@ -154,7 +154,7 @@ window.VOICE_EXPLANATIONS_DATA = {
     "badge": "🌴",
     "iconClass": "fa-feather",
     "tag": "മലയാള സാഹിത്യാനുശീലനം (Literary Practice in Malayalam) · CUFYUGP AEC",
-    "totalVideos": 2,
+    "totalVideos": 1,
     "modules": [
       {
         "moduleName": "MODULE 01: ഗദ്യവും വിവർത്തനവും (Prose and Translation)",
@@ -163,9 +163,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 01",
             "title": "ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ — കലാമണ്ഡലം ഹൈദരാലി",
             "chapter": "കഥകളി സംഗീതം · ആത്മകഥാ പഠനം · കലാമണ്ഡലം ചരിത്രം",
-            "duration": "14:20",
-            "youtubeId": "QTHt_P7RIA0",
-            "thumbnail": "https://i.ytimg.com/vi/QTHt_P7RIA0/hqdefault.jpg",
+            "duration": "14",
+            "youtubeId": "",
+            "thumbnail": "",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -426,8 +426,8 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 01: LISTENING SKILLS",
         "videos": [
           {
-            "chapterNumber": "Chapter 01",
-            "title": "I Have a Dream",
+            "chapterNumber": "Chapter 01 (English Edition)",
+            "title": "I Have a Dream (English Edition)",
             "chapter": "English cinematic overview · Martin Luther King Jr. · Context, themes and rhetorical devices",
             "duration": "5:20",
             "youtubeId": "ZdrMJqXnKyE",
@@ -611,16 +611,34 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 02",
             "title": "The Second Coming",
-            "chapter": "W.B. Yeats · Modernism, Apocalypse & Symbolism",
-            "duration": "22",
-            "youtubeId": ""
+            "chapter": "English cinematic overview · W.B. Yeats · Modernist apocalyptic vision, anarchy and symbolism",
+            "duration": "07:38",
+            "youtubeId": "XLSDEwNzank",
+            "language": "English",
+            "thumbnail": "https://i.ytimg.com/vi/XLSDEwNzank/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>Core Context:</strong> Comprehensive academic exploration of The Second Coming by W. B. Yeats.",
+              "<strong>Key Themes:</strong> Textual analysis focused on the Calicut University FYUGP English syllabus.",
+              "<strong>Literary Critique:</strong> Breakdown of symbolism, stylistic devices, and character development.",
+              "<strong>Exam Preparation:</strong> High-yield definitions and critical arguments for semester examinations."
+            ],
+            "examTip": "Synthesize central themes, historical context, and stylistic devices of The Second Coming for 10-mark examination essays."
           },
           {
             "chapterNumber": "Chapter 03",
             "title": "The Frog Prince",
-            "chapter": "Stevie Smith · Irony, Subversion & Form",
-            "duration": "15",
-            "youtubeId": ""
+            "chapter": "English cinematic overview · Stevie Smith · Subversion of fairy tale, contentment and identity",
+            "duration": "08:23",
+            "youtubeId": "WzAkFzGx7CE",
+            "language": "English",
+            "thumbnail": "https://i.ytimg.com/vi/WzAkFzGx7CE/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>Author & Modernist Reimagining:</strong> Stevie Smith (1902–1971), British poet renowned for subverting classical fairy tales with wit, dark irony, and psychological realism.",
+              "<strong>Disenchantment vs. Contentment:</strong> The frog narrator rejects the conventional transformation into a human prince, finding peace and spiritual contentment in the quiet simplicity of the enchanted bog.",
+              "<strong>Themes of Conformity & Identity:</strong> A critique of societal pressure to conform to socially approved ideals of success, romance, and mortal turmoil.",
+              "<strong>Exam Connection:</strong> Calicut University FYUGP ENG1B01 Module 3 Reading Skills textual analysis."
+            ],
+            "examTip": "Discuss Stevie Smith's subversion of the traditional fairy tale trope and analyze the poem as a celebration of self-acceptance and quiet contentment for 10-mark examination essays."
           },
           {
             "chapterNumber": "Chapter 04",
@@ -646,9 +664,18 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 01",
             "title": "Academic & Professional Writing Mechanics",
-            "chapter": "Paragraph Architecture, Cohesion & Clarity",
-            "duration": "18",
-            "youtubeId": ""
+            "chapter": "English cinematic overview · The Writing Process · Pre-writing, drafting, revising and mechanics",
+            "duration": "07:52",
+            "youtubeId": "wEMncXZ5tjM",
+            "language": "English",
+            "thumbnail": "https://i.ytimg.com/vi/wEMncXZ5tjM/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>Stages of the Writing Process:</strong> Pre-writing (brainstorming, outlining), drafting, revising for logic, editing for clarity, and proofreading.",
+              "<strong>Paragraph Cohesion & Unity:</strong> Crafting clear topic sentences, maintaining transition signals, and ensuring academic rigor across scholarly papers.",
+              "<strong>Style, Tone & Mechanics:</strong> Active vs. passive voice conventions, punctuation precision, formal register, and standard citation ethics.",
+              "<strong>Exam Connection:</strong> Calicut University FYUGP ENG1B01 Module 4 Writing Skills foundational mechanics."
+            ],
+            "examTip": "Explain the sequential stages of the writing process (Pre-writing to Proofreading) and outline rules of paragraph coherence for semester examination essays."
           },
           {
             "chapterNumber": "Chapter 02",
@@ -660,9 +687,18 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 03",
             "title": "The World Renowned Nose",
-            "chapter": "Vaikom Muhammad Basheer · Satire, Irony & Allegory",
-            "duration": "20",
-            "youtubeId": ""
+            "chapter": "English cinematic overview · Vaikom Muhammad Basheer · Political satire, media sensation and absurdism",
+            "duration": "06:48",
+            "youtubeId": "_g7fyD5mLPo",
+            "language": "English",
+            "thumbnail": "https://i.ytimg.com/vi/_g7fyD5mLPo/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>Vaikom Muhammad Basheer's Masterpiece:</strong> Translated from Malayalam ('Viswavikhyathamaya Mookku'), a world-class political satire on human gullibility and mass media hysteria.",
+              "<strong>The Absurdity of Modern Fame:</strong> A humble 24-year-old cook becomes an international celebrity simply because his nose grows past his mouth down to his chest.",
+              "<strong>Political Exploitation & Factionalism:</strong> Rival political factions, intellectuals, journalists, and world leaders exploit the nose to manipulate public sentiment and incite riots.",
+              "<strong>Exam Connection:</strong> Calicut University FYUGP ENG1B01 Module 4 Writing Skills / Reading Literature satire analysis."
+            ],
+            "examTip": "Examine how Basheer uses the absurdist metaphor of the growing nose to satirize sensationalist media, opportunistic politics, and public gullibility for 10-mark examination essays."
           },
           {
             "chapterNumber": "Chapter 04",
@@ -1079,7 +1115,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "Alan Turing Test & Operational Limits of Thought",
             "chapter": "Imitation Game & Behavioural Criterion",
             "duration": "24",
-            "youtubeId": "Vq-Bc0TI7L0",
+            "youtubeId": "",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
               "ട്യൂറിംഗ് ടെസ്റ്റിന്റെ പ്രവർത്തനരീതി (The Operational Method): ഒരു വിധികർത്താവ് (Judge) ടെർമിനലിലൂടെ മനുഷ്യനോടും മെഷീനോടും സംവദിച്ച് ആര് മനുഷ്യൻ ആര് മെഷീൻ എന്ന് വേർതിരിച്ചറിയാൻ ശ്രമിക്കുന്ന രീതി.",
@@ -1109,7 +1145,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "Descartes & Philosophy of Mind in the Digital Age",
             "chapter": "Cartesian Dualism & Physical Mechanism",
             "duration": "19",
-            "youtubeId": "ZIoG5kcVyk4",
+            "youtubeId": "",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
               "റെനെ ഡെക്കാർട്ടിന്റെ ദാർശനിക ദ്വൈതവാദം (Cartesian Substance Dualism): ചിന്തിക്കുന്ന വസ്തുവായ മനസ്സും (Res Cogitans), വിസ്തൃതിയുള്ള ഭൗതിക ശരീരവും (Res Extensa) തമ്മിൽ വേർതിരിക്കപ്പെട്ടിരിക്കുന്നു എന്ന വാദം.",
@@ -1499,6 +1535,21 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 02: ദാരിദ്ര്യ നിർണ്ണയവും ബഹുമുഖ ദാരിദ്ര്യ സൂചികയും (POVERTY ESTIMATION & MEASUREMENT IN INDIA)",
         "videos": [
           {
+            "chapterNumber": "Module 2 Masterclass",
+            "title": "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയം: രീതികളും സമിതികളും (Poverty Estimation in India: Methods & Committees)",
+            "chapter": "Academic Hub Special · ദാരിദ്ര്യ നിർണ്ണയ രീതികളും പഠന സമിതികളും (Tendulkar & Rangarajan Analysis)",
+            "duration": "14:20",
+            "youtubeId": "QTHt_P7RIA0",
+            "thumbnail": "https://i.ytimg.com/vi/QTHt_P7RIA0/hqdefault.jpg",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയ രീതിശാസ്ത്രം: കേവല ദാരിദ്ര്യവും ആപേക്ഷിക ദാരിദ്ര്യവും (Absolute vs Relative Poverty).",
+              "പ്രധാന പഠന സമിതികൾ: ദണ്ഡേക്കർ-രഥ് (1971), ലക്ഡാവാല (1993), സുരേഷ് തെണ്ടുൽക്കർ (2009), സി. രംഗരാജൻ (2014) കമ്മിറ്റികളുടെ ശുപാർശകൾ.",
+              "കാലറി മാനദണ്ഡത്തിൽ നിന്നുള്ള മാറ്റം: ആളോഹരി ഉപഭോഗച്ചെലവും (MPCE) ജീവിതനിലവാര സൂചികകളും സമഗ്രമായി വിലയിരുത്തുന്നു."
+            ],
+            "examTip": "Calicut University പരീക്ഷാ ഫോക്കസ്: ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയ സമിതികളുടെ ചരിത്രവും തെണ്ടുൽക്കർ-രംഗരാജൻ കമ്മിറ്റികളുടെ താരതമ്യവും 10 മാർക്ക് ഉപന്യാസത്തിനായി പഠിക്കുക."
+          },
+          {
             "chapterNumber": "Chapter 03",
             "title": "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയവും പഠന കമ്മിറ്റികളും (Poverty Estimation & Study Committees in India)",
             "chapter": "Academic Hub Special · ദണ്ഡേക്കർ-രഥ്, തെണ്ടുൽക്കർ & രംഗരാജൻ കമ്മിറ്റികൾ",
@@ -1597,7 +1648,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 8
+    "totalVideos": 9
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",
