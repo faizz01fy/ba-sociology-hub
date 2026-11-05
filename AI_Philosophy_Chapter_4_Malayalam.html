@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHL1MN102 - Chapter 4: Problems in the Classical Model of AI (Malayalam Reading)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+
+    @page {
+        size: A4 portrait;
+        margin: 5.5mm 6.5mm;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans', 'Noto Sans Malayalam', 'Segoe UI', Tahoma, sans-serif;
+        font-size: 8.3pt;
+        line-height: 1.43;
+        color: #1e293b;
+        background: #ffffff;
+    }
+    .page-container {
+        width: 100%;
+        height: 100%;
+        max-height: 285mm;
+        page-break-after: always;
+        page-break-inside: avoid;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    .page-container:last-child {
+        page-break-after: auto;
+    }
+    
+    /* Header & Badges */
+    .header-banner {
+        border-bottom: 2px solid #1e3a8a;
+        padding-bottom: 2px;
+        margin-bottom: 5.5px;
+    }
+    .header-banner-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 60%, #047857 100%);
+        color: #ffffff;
+        padding: 8.0px 12.0px;
+        border-radius: 5px;
+    }
+    .header-titles {
+        display: flex;
+        flex-direction: column;
+        gap: 2.0px;
+    }
+    .super-title {
+        font-size: 6.6pt;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: #93c5fd;
+        font-weight: 700;
+    }
+    .main-title {
+        font-size: 11.2pt;
+        font-weight: 800;
+        letter-spacing: -0.2px;
+        line-height: 1.18;
+    }
+    .sub-title {
+        font-size: 7.7pt;
+        color: #e2e8f0;
+        font-weight: 500;
+    }
+    .badge-pill-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2.5px;
+    }
+    .badge-pill {
+        background: rgba(255, 255, 255, 0.22);
+        padding: 2.5px 8.0px;
+        border-radius: 9999px;
+        font-size: 6.5pt;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        white-space: nowrap;
+    }
+    .badge-pill-outline {
+        background: #ffffff;
+        color: #1e3a8a;
+        font-weight: 700;
+        font-size: 6.6pt;
+    }
+    
+    /* Section Block */
+    .section-intro-bar {
+        background: #f8fafc;
+        border-left: 3.5px solid #1e3a8a;
+        padding: 5.2px 10.0px;
+        margin-bottom: 6.0px;
+        border-radius: 0 4px 4px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .section-title {
+        font-size: 8.2pt;
+        font-weight: 700;
+        color: #0f172a;
+    }
+    .section-meta {
+        font-size: 6.6pt;
+        color: #64748b;
+        font-weight: 600;
+    }
+    
+    /* Main Content Area */
+    .content-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8.5px;
+    }
+    
+    /* Topic Block */
+    .topic-block {
+        border: 1px solid #cbd5e1;
+        border-radius: 5px;
+        background: #ffffff;
+        padding: 8.5px 10.0px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+        display: flex;
+        flex-direction: column;
+        gap: 4.5px;
+    }
+    .topic-title-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1.2px solid #e2e8f0;
+        padding-bottom: 3.0px;
+        margin-bottom: 2.0px;
+    }
+    .topic-title-left {
+        display: flex;
+        align-items: center;
+    }
+    .topic-number {
+        background: #1e3a8a;
+        color: #ffffff;
+        font-size: 6.3pt;
+        font-weight: 800;
+        padding: 1.5px 5.8px;
+        border-radius: 3px;
+        margin-right: 5.5px;
+    }
+    .topic-heading-text {
+        font-size: 8.9pt;
+        font-weight: 700;
+        color: #1e3a8a;
+    }
+    .topic-malayalam-heading {
+        font-size: 7.9pt;
+        font-weight: 700;
+        color: #047857;
+        margin-left: 7px;
+    }
+    .topic-tag {
+        font-size: 6.0pt;
+        color: #475569;
+        background: #f1f5f9;
+        padding: 1.5px 5.8px;
+        border-radius: 3px;
+        font-weight: 600;
+        border: 1px solid #e2e8f0;
+    }
+    
+    /* Dual Cards Container */
+    .dual-cards-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6.5px;
+    }
+    .lang-card {
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .english-card {
+        background: #f0f7ff;
+        border: 1px solid #bfdbfe;
+        border-left: 3px solid #1e3a8a;
+        padding: 6.2px 8.2px;
+        font-size: 8.25pt;
+        line-height: 1.45;
+        color: #0f172a;
+    }
+    .english-card strong {
+        color: #1e3a8a;
+        font-weight: 700;
+    }
+    .card-label-en {
+        color: #1e3a8a;
+        font-weight: 800;
+        font-size: 8.8pt;
+        margin-bottom: 2.5px;
+        display: block;
+        line-height: 1.25;
+    }
+    .malayalam-card {
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-left: 3px solid #047857;
+        padding: 6.2px 8.2px;
+        font-size: 7.95pt;
+        line-height: 1.46;
+        color: #064e3b;
+    }
+    .malayalam-card strong {
+        color: #047857;
+        font-weight: 700;
+    }
+    .card-label-ml {
+        color: #047857;
+        font-weight: 800;
+        font-size: 8.4pt;
+        margin-bottom: 2.5px;
+        display: block;
+        line-height: 1.25;
+    }
+    
+    /* Example Card */
+    .example-card {
+        background: #fffbeb;
+        border: 1px dashed #f59e0b;
+        border-left: 3px solid #d97706;
+        border-radius: 4px;
+        padding: 4.0px 7.8px;
+        font-size: 7.6pt;
+        line-height: 1.36;
+        color: #78350f;
+    }
+    .example-card strong {
+        color: #92400e;
+        font-weight: 700;
+    }
+    .example-tag {
+        font-weight: 800;
+        color: #b45309;
+        margin-right: 4px;
+    }
+    
+    /* 20 Key Concepts Grid (Page 10) */
+    .knock-grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+    }
+    .knock-col {
+        display: flex;
+        flex-direction: column;
+        gap: 6.5px;
+    }
+    .knock-card {
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 4px;
+        padding: 5.5px 7.0px;
+        display: flex;
+        flex-direction: column;
+        gap: 2.2px;
+    }
+    .knock-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .knock-card-title-wrap {
+        display: flex;
+        align-items: baseline;
+        gap: 5.0px;
+    }
+    .knock-card-num {
+        background: #1e3a8a;
+        color: #ffffff;
+        font-size: 6.3pt;
+        font-weight: 800;
+        padding: 1.2px 4.5px;
+        border-radius: 3px;
+    }
+    .knock-card-title-en {
+        font-size: 7.7pt;
+        font-weight: 800;
+        color: #1e3a8a;
+        line-height: 1.20;
+    }
+    .knock-card-title-ml {
+        font-size: 7.2pt;
+        font-weight: 700;
+        color: #047857;
+        line-height: 1.30;
+    }
+    .knock-card-desc {
+        font-size: 7.1pt;
+        line-height: 1.35;
+        color: #334155;
+    }
+    
+    /* Footer */
+    .footer-bar {
+        border-top: 1px solid #cbd5e1;
+        padding-top: 3.2px;
+        margin-top: 4.5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 6.3pt;
+        color: #64748b;
+    }
+    .footer-left {
+        font-weight: 600;
+        color: #1e3a8a;
+    }
+    .footer-center {
+        color: #475569;
+    }
+    .footer-right {
+        font-weight: 700;
+        color: #047857;
+    }
+    
+    </style>
+</head>
+<body>
+
+    <div class="page-container" id="page-01">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 4: Problems in the Classical Model of AI (GOFAI)</div>
+                    <div class="sub-title">ക്ലാസിക്കൽ എഐ മാതൃകയിലെ പ്രതിസന്ധികൾ</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 01 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 1: Foundations of Classical / Symbolic AI & Core Paradigms &bull; ക്ലാസിക്കൽ എഐയുടെ അടിസ്ഥാനം</div>
+            <div class="section-meta">Textbook Pages 1-3 &bull; Unit 4.1</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.1.1</span>
+                        <span class="topic-heading-text">Historical Origins & Foundational Assumptions of Symbolic AI</span>
+                        <span class="topic-malayalam-heading">സിംബോളിക് എഐയുടെ ചരിത്രപരമായ ഉത്ഭവവും അടിസ്ഥാന അനുമാനങ്ങളും</span>
+                    </div>
+                    <span class="topic-tag">Historical Foundations</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Symbol Manipulation & The Macroscopic Perspective</span>
+                        The foundational phases of the <strong>classical artificial intelligence (AI) model</strong> emerged during the 1950s and 1960s, universally designated as <em>symbolic AI</em> or <em>rule-based intelligent systems</em> (also historically known as GOFAI &mdash; Good Old-Fashioned AI). The foundational premise was the assumption that <strong>human intellect could be fully simulated through logical reasoning and physical symbol manipulation</strong>. Initially, researchers believed that artificial systems could solve any real-world intellectual problem through formal logic, predefined rules, and explicit symbolic representations (as demonstrated by early programs such as the <em>Logic Theorist</em> and the <em>General Problem Solver</em>). This approach is termed the <strong>macroscopic perspective of artificial intelligence</strong> because it models high-level thought via mathematical, algebraic, and logical abstractions, comparing the mind to a computing program rather than a biological organ.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">പ്രതീകങ്ങളുടെ കൈകാര്യവും സ്ഥൂല വീക്ഷണവും</span>
+                        1950-കളിലും 1960-കളിലുമാണ് <strong>ക്ലാസിക്കൽ നിർമ്മിത ബുദ്ധി മാതൃക (Classical Model of AI)</strong> രൂപംകൊണ്ടത്. ഇത് <em>സിംബോളിക് എഐ (Symbolic AI)</em> അല്ലെങ്കിൽ <em>നിയമാധിഷ്ഠിത ബുദ്ധി വ്യവസ്ഥ (Rule-Based AI)</em> എന്ന് അറിയപ്പെടുന്നു. മനുഷ്യന്റെ ബുദ്ധിയെയും ചിന്താശേഷിയെയും <strong>യുക്തിസഹമായ ചിന്തയിലൂടെയും പ്രതീകങ്ങളെ (Symbols) വ്യവസ്ഥാപിതമായി കൈകാര്യം ചെയ്യുന്നതിലൂടെയും പൂർണ്ണമായി പുനർനിർമ്മിക്കാൻ കഴിയും</strong> എന്നതായിരുന്നു ഇതിന്റെ അടിസ്ഥാന അനുമാനം. കൃത്യമായ ഗണിത നിയമങ്ങളും മുൻകൂട്ടി നിർവചിച്ച പ്രതീകാത്മക രൂപങ്ങളും ഉപയോഗിച്ച് ഏതൊരു ബുദ്ധിപരമായ പ്രശ്നവും കമ്പ്യൂട്ടറുകൾക്ക് പരിഹരിക്കാൻ കഴിയുമെന്ന് ശാസ്ത്രജ്ഞർ കരുതി. ഇതിനെ നിർമ്മിത ബുദ്ധിയുടെ <strong>സ്ഥൂല വീക്ഷണം (Macroscopic Perspective)</strong> എന്ന് വിളിക്കുന്നു; കാരണം തലച്ചോറിലെ കോശങ്ങളെ അനുകരിക്കുന്നതിന് പകരം ചിന്തയുടെ ഉയർന്ന തലങ്ങളെ ഗണിത-യുക്തി സൂത്രവാക്യങ്ങളിലൂടെയാണ് ഇത് മാതൃകയാക്കിയത്.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Milestone):</span> അലൻ നെവലും ഹെർബർട്ട് സൈമണും വികസിപ്പിച്ച <em>ലോജിക് തിയറിസ്റ്റ് (Logic Theorist - 1956)</em> റസ്സലിന്റെയും വൈറ്റ്ഹെഡിന്റെയും 'പ്രിൻസിപ്പിയ മാത്തമാറ്റിക്ക'യിലെ ഗണിത സിദ്ധാന്തങ്ങൾ കമ്പ്യൂട്ടറിലൂടെ സ്വയം തെളിയിച്ചതാണ് ക്ലാസിക്കൽ സിംബോളിക് എഐയുടെ ആദ്യ വിജയം.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.1.2</span>
+                        <span class="topic-heading-text">The Two Principal Subcategories of Symbolic AI</span>
+                        <span class="topic-malayalam-heading">സിംബോളിക് എഐയിലെ രണ്ട് പ്രധാന ഉപവിഭാഗങ്ങൾ</span>
+                    </div>
+                    <span class="topic-tag">Methodological Division</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Cognitive Simulation vs Logic-Based Approaches</span>
+                        Within the symbolic tradition, artificial intelligence research historically diverged into two principal methodological subcategories:
+                        <br>&bull; <strong>1. Cognitive Simulation (Newell & Simon):</strong> Aims to emulate the empirical psychological processes and heuristics employed by human problem solvers. Exemplified by the <em>General Problem Solver (GPS)</em>, this approach models human cognitive protocols, working memory limits, and subgoaling mechanisms.
+                        <br>&bull; <strong>2. Logic-Based AI (John McCarthy):</strong> Emphasizes normative mathematical rationality over human psychological imitation. McCarthy contended that AI systems should be grounded in codified models of logical reasoning (First-Order Logic) and automated deduction, specifying <em>what</em> a solution requires rather than mimicking how human brains think.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">കോഗ്നിറ്റീവ് സിമുലേഷനും ലോജിക് അധിഷ്ഠിത എഐയും</span>
+                        ക്ലാസിക്കൽ സിംബോളിക് സമീപനത്തിൽ രണ്ട് പ്രധാന ശാഖകളാണുണ്ടായിരുന്നത്:
+                        <br>&bull; <strong>1. കോഗ്നിറ്റീവ് സിമുലേഷൻ (Cognitive Simulation):</strong> അലൻ നെവലും ഹെർബർട്ട് സൈമണും നയിച്ച ഈ സമീപനം, ഒരു പ്രശ്നം പരിഹരിക്കുമ്പോൾ മനുഷ്യന്റെ മനശ്ശാസ്ത്രപരമായ ചിന്താരീതികളെയും തന്ത്രങ്ങളെയും (Heuristics) കമ്പ്യൂട്ടറിലേക്ക് അതേപടി പകർത്താൻ ശ്രമിച്ചു. ഇതിന്റെ ഉത്തമ ഉദാഹരണമാണ് <em>ജനറൽ പ്രോബ്ലം സോൾവർ (GPS)</em>.
+                        <br>&bull; <strong>2. ലോജിക് അധിഷ്ഠിത സമീപനം (Logic-Based AI):</strong> ജോൺ മക്കാർത്തി (John McCarthy) മുന്നോട്ടുവെച്ച ഈ രീതി, മനുഷ്യ മനസ്സിനെ അതേപടി അനുകരിക്കുന്നതിന് പകരം കർശനമായ ഗണിത-യുക്തി നിയമങ്ങളിൽ (Formal Logic) അധിഷ്ഠിതമായി പ്രവർത്തിക്കണമെന്ന് വാദിച്ചു. പ്രശ്നം പരിഹരിക്കുന്നതിന്റെ രീതിക്കപ്പുറം ഉത്തരത്തിന്റെ യുക്തിസഹമായ സ്വഭാവം നിർവചിക്കാനാണ് ഇത് മുൻഗണന നൽകിയത്.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Distinction):</span> ഒരു ഗണിത സമസ്യ പരിഹരിക്കാൻ ഒരു വിദ്യാർത്ഥി മനസ്സിൽ ചിന്തിക്കുന്ന പടവുകളെ അനുകരിക്കുന്നത് Cognitive Simulation; എന്നാൽ ഔപചാരിക ലോജിക് സമവാക്യങ്ങൾ (First-Order Logic) വെച്ച് നേരിട്ട് ഉത്തരം കണ്ടെത്തുന്നത് Logic-Based സമീപനവുമാണ്.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Classical Symbolic AI & Methodological Division &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 01 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-02">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 4: Problems in the Classical Model of AI (GOFAI)</div>
+                    <div class="sub-title">ക്ലാസിക്കൽ എഐ മാതൃകയിലെ പ്രതിസന്ധികൾ</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 02 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 2: Problem Solving as State Space Search & Heuristics &bull; സ്റ്റേറ്റ് സ്പേസ് സെർച്ചും ഹ്യൂറിസ്റ്റിക്സും</div>
+            <div class="section-meta">Textbook Pages 3-6 &bull; Unit 4.2</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.2.1</span>
+                        <span class="topic-heading-text">The Architecture of State Space Problem Formulation</span>
+                        <span class="topic-malayalam-heading">സ്റ്റേറ്റ് സ്പേസ് പ്രശ്നപരിഹാര രൂപരേഖ</span>
+                    </div>
+                    <span class="topic-tag">Search Methodology</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">States, Operators, Transitions and Goal Configurations</span>
+                        The concept of a <strong>state space</strong> is foundational to classical artificial intelligence, particularly in conceptualizing problem-solving as navigation through a structured landscape of states:
+                        <br>&bull; <strong>Current State:</strong> A precise mathematical description of the environment or system at any given moment.
+                        <br>&bull; <strong>Initial State:</strong> The starting configuration of the problem.
+                        <br>&bull; <strong>Goal State:</strong> The desired terminal configuration that satisfies the mission objectives.
+                        <br>&bull; <strong>Operators (Actions):</strong> Set of permissible, legal actions or rules that transform one state into a successor state.
+                        <br>&bull; <strong>State Space:</strong> The complete graph of all possible configurations reachable from the initial state by applying legal operators. Problem solving consists of traversing this graph to discover an optimal sequence of operators forming a path to the goal.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">അവസ്ഥകൾ, ഓപ്പറേറ്ററുകൾ, ലക്ഷ്യസ്ഥാനങ്ങൾ</span>
+                        ക്ലാസിക്കൽ എഐയിൽ ഒരു പ്രശ്നപരിഹാരത്തെ കാണുന്നത് വിവിധ അവസ്ഥകളിലൂടെയുള്ള (States) ഒരു സഞ്ചാരമായാണ്:
+                        <br>&bull; <strong>നിലവിലെ അവസ്ഥ (Current State):</strong> ഒരു പ്രത്യേക ഘട്ടത്തിൽ പ്രശ്നത്തിന്റെ സമഗ്രമായ സാഹചര്യം.
+                        <br>&bull; <strong>പ്രാരംഭ അവസ്ഥ (Initial State):</strong> പ്രശ്നം ആരംഭിക്കുന്ന ആദ്യ ഘടന.
+                        <br>&bull; <strong>ലക്ഷ്യ അവസ്ഥ (Goal State):</strong> പരിഹാരമായി എത്തിച്ചേരേണ്ട അന്തിമ ഘടന.
+                        <br>&bull; <strong>ഓപ്പറേറ്ററുകൾ (Operators):</strong> ഒരു അവസ്ഥയിൽ നിന്ന് മറ്റൊന്നിലേക്ക് മാറ്റാൻ നിയമപരമായി അനുവദിക്കപ്പെട്ട നീക്കങ്ങൾ അഥവാ പ്രവർത്തനങ്ങൾ.
+                        <br>&bull; <strong>സ്റ്റേറ്റ് സ്പേസ് (State Space):</strong> പ്രാരംഭ ഘട്ടത്തിൽ നിന്ന് സാധ്യമായ എല്ലാ നീക്കങ്ങളിലൂടെയും എത്തിച്ചേരാവുന്ന അവസ്ഥകളുടെ പൂർണ്ണ ശൃംഖല. പ്രാരംഭത്തിൽ നിന്ന് ലക്ഷ്യത്തിലേക്ക് നയിക്കുന്ന ഏറ്റവും അനുയോജ്യമായ പാത കണ്ടെത്തുകയാണ് എഐ സിസ്റ്റം ചെയ്യുന്നത്.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Application):</span> ഒരു റോബോട്ടിന്റെ പരിസ്ഥിതിയിൽ റോബോട്ടിന്റെ സ്ഥാനവും തടസ്സങ്ങളും ഒരു 'സ്റ്റേറ്റ്' ആണ്; മുന്നോട്ട് നീങ്ങലും തിരിയലും 'ഓപ്പറേറ്ററുകൾ' ആണ്; ലക്ഷ്യസ്ഥാനത്ത് എത്തുന്നതാണ് 'ഗോൾ സ്റ്റേറ്റ്'.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.2.2</span>
+                        <span class="topic-heading-text">The 8-Puzzle Problem & The Necessity of Heuristic Functions</span>
+                        <span class="topic-malayalam-heading">8-പസിൽ പ്രശ്നവും ഹ്യൂറിസ്റ്റിക് ഫംഗ്ഷനുകളുടെ ആവശ്യകതയും</span>
+                    </div>
+                    <span class="topic-tag">Search & Heuristics</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Combinatorial Space & Informed Search Guidance</span>
+                        The classic <strong>8-puzzle</strong> provides an iconic benchmark of state space search in AI. Consisting of a $3 	imes 3$ board containing 8 numbered sliding tiles and one blank space, the system must rearrange tiles from a scrambled initial configuration to a target goal:
+                        <br>&bull; <strong>Combinatorial Explosion:</strong> Even this modest puzzle possesses $9! / 2 = 181,440$ reachable states; in more complex games like chess, states explode past $10^120$. Exhaustive, blind brute-force search is computationally infeasible.
+                        <br>&bull; <strong>Heuristic Functions:</strong> Classical AI employs <em>heuristic evaluations</em> ($h(n)$)&mdash;domain-specific rules of thumb estimating the numerical distance or cost remaining between a candidate state and the goal (e.g., counting misplaced tiles or Manhattan distance), allowing algorithms to prune irrelevant paths.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">സാധ്യതകളുടെ വിസ്ഫോടനവും ഹ്യൂറിസ്റ്റിക് മാർഗ്ഗനിർദ്ദേശവും</span>
+                        സ്റ്റേറ്റ് സ്പേസ് തിരച്ചിലിന്റെ ഏറ്റവും പ്രസിദ്ധമായ മാതൃകയാണ് <strong>8-പസിൽ (8-puzzle)</strong>. ഒരു $3 	imes 3$ ഫലകത്തിൽ 1 മുതൽ 8 വരെയുള്ള സംഖ്യകളും ഒരു ഒഴിഞ്ഞ കളവുമുണ്ട്. ടൈലുകൾ തെന്നിച്ച് ലക്ഷ്യ ക്രമീകരണത്തിൽ എത്തിക്കുകയാണ് ലക്ഷ്യം:
+                        <br>&bull; <strong>സാധ്യതകളുടെ പെരുപ്പം (Combinatorial Explosion):</strong> കേവലം 8 സംഖ്യകൾ ഉള്ളപ്പോൾ പോലും 1,81,440 വ്യത്യസ്ത അവസ്ഥകൾ ഉണ്ടാകാം! ചെസ്സ് പോലുള്ള കളികളിൽ ഇത് $10^120$ ന് മുകളിലാണ്. സാധ്യമായ എല്ലാ വഴികളും ഒന്നൊന്നായി പരിശോധിക്കുന്നത് അസാധ്യമാണ്.
+                        <br>&bull; <strong>ഹ്യൂറിസ്റ്റിക് ഫംഗ്ഷനുകൾ (Heuristics):</strong> ലക്ഷ്യത്തിലേക്ക് ഇനി എത്രമാത്രം അകലമുണ്ടെന്ന് മുൻകൂട്ടി വിലയിരുത്തുന്ന ഗണിത തന്ത്രങ്ങളാണ് ഹ്യൂറിസ്റ്റിക്സ് (ഉദാ: തെറ്റായ സ്ഥാനത്തിരിക്കുന്ന ടൈലുകളുടെ എണ്ണം കണക്കാക്കൽ). ഇത് വഴി എഐ അനാവശ്യമായ പാതകളെ ഒഴിവാക്കി കൃത്യമായ വഴി തിരഞ്ഞെടുക്കുന്നു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Heuristic in 8-Puzzle):</span> 8-പസിലിൽ ലക്ഷ്യസ്ഥാനത്ത് എത്താൻ ഓരോ ടൈലും എത്ര കളം മാറണം എന്ന് കൂട്ടിയെടുക്കുന്ന 'മാൻഹാട്ടൻ ദൂരം' (Manhattan distance) ഏറ്റവും കുറവുള്ള നീക്കം തിരഞ്ഞെടുക്കുന്നതാണ് ഹ്യൂറിസ്റ്റിക് സെർച്ച്.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">State Space Search, 8-Puzzle & Heuristic Evaluation &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 02 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-03">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 4: Problems in the Classical Model of AI (GOFAI)</div>
+                    <div class="sub-title">ക്ലാസിക്കൽ എഐ മാതൃകയിലെ പ്രതിസന്ധികൾ</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 03 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 3: Means-Ends Analysis & The General Problem Solver &bull; ലക്ഷ്യ-മാർഗ്ഗ വിശകലനവും ജി.പി.എസും</div>
+            <div class="section-meta">Textbook Pages 6-10 &bull; Unit 4.3</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.3.1</span>
+                        <span class="topic-heading-text">Means-Ends Analysis (MEA): Principle & Algorithmic Cycle</span>
+                        <span class="topic-malayalam-heading">ലക്ഷ്യ-മാർഗ്ഗ വിശകലനം (MEA): തത്വവും പ്രവർത്തന രീതിയും</span>
+                    </div>
+                    <span class="topic-tag">Search Strategy</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Difference Reduction & Operator Selection</span>
+                        <strong>Means-Ends Analysis (MEA)</strong> is regarded as one of the most significant and elegant heuristic strategies in classical symbolic AI:
+                        <br>&bull; <strong>Core Mechanism:</strong> Rather than blindly searching forward from the start or backward from the goal, MEA continuously compares the <em>current state</em> with the <em>goal state</em> to detect specific differences between them.
+                        <br>&bull; <strong>Operator Matching:</strong> It searches its operator library for an action whose primary effect is to eliminate or reduce the largest identified difference.
+                        <br>&bull; <strong>Precondition Handling:</strong> If the selected operator cannot be applied because its preconditions are not met in the current state, MEA sets up an intermediate subgoal to achieve those preconditions. Once achieved, the operator is executed, systematically advancing closer to the final goal.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">വ്യത്യാസം കുറയ്ക്കലും ഓപ്പറേറ്റർ തിരഞ്ഞെടുപ്പും</span>
+                        ക്ലാസിക്കൽ സിംബോളിക് എഐയിലെ ഏറ്റവും പ്രധാനപ്പെട്ട പ്രശ്നപരിഹാര തന്ത്രമാണ് <strong>ലക്ഷ്യ-മാർഗ്ഗ വിശകലനം (Means-Ends Analysis - MEA)</strong>:
+                        <br>&bull; <strong>പ്രധാന തത്വം:</strong> തുടക്കത്തിൽ നിന്ന് അന്ധമായി തിരയുന്നതിന് പകരം, നിലവിലെ അവസ്ഥയും അന്തിമ ലക്ഷ്യവും തമ്മിലുള്ള കൃത്യമായ വ്യത്യാസങ്ങളെ (Differences) ഇത് നിരന്തരം കണ്ടെത്തുന്നു.
+                        <br>&bull; <strong>ഓപ്പറേറ്റർ പ്രയോഗം:</strong> കണ്ടെത്തിയ ഏറ്റവും വലിയ വ്യത്യാസത്തെ ഇല്ലാതാക്കാൻ അനുയോജ്യമായ ഓപ്പറേറ്ററെ (പ്രവൃത്തിയെ) ഇത് തിരഞ്ഞെടുക്കുന്നു.
+                        <br>&bull; <strong>നിബന്ധനകൾ പാലിക്കൽ:</strong> തിരഞ്ഞെടുത്ത ഓപ്പറേറ്റർ പ്രയോഗിക്കാൻ ആവശ്യമായ മുൻവ്യവസ്ഥകൾ നിലവിലില്ലെങ്കിൽ, ആ വ്യവസ്ഥകൾ ഉണ്ടാക്കിയെടുക്കുക എന്നതിനെ ഒരു ഇടക്കാല ലക്ഷ്യമാക്കി (Subgoal) മാറ്റി MEA ഘട്ടംഘട്ടമായി പ്രശ്നം പരിഹരിക്കുന്നു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook MEA Analogy):</span> നിങ്ങളുടെ കാറിന്റെ ടയർ പഞ്ചറാണെങ്കിൽ (Current state), യാത്ര പോകാൻ (Goal state) പുതിയ ടയർ മാറ്റണം. ജാക്കി ഇല്ലെങ്കിൽ 'ജാക്കി വാങ്ങുക' എന്നത് ഇടക്കാല ലക്ഷ്യമാക്കി മാറ്റി പരിഹരിക്കുന്നതാണ് MEA തത്വം.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.3.2</span>
+                        <span class="topic-heading-text">The General Problem Solver (GPS) & Problem Reduction</span>
+                        <span class="topic-malayalam-heading">ജനറൽ പ്രോബ്ലം സോൾവറും (GPS) പ്രശ്ന വിഭജനവും</span>
+                    </div>
+                    <span class="topic-tag">Cognitive Architecture</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Hierarchical Subgoaling & Algorithmic Transparency</span>
+                        Developed in 1957 by <strong>Allen Newell and Herbert Simon</strong>, the <strong>General Problem Solver (GPS)</strong> served as the premier tangible implementation of MEA and cognitive simulation:
+                        <br>&bull; <strong>Problem Reduction:</strong> Deconstructs a complex, seemingly intractable problem into a hierarchy of smaller, manageable subproblems. Upon resolving each subproblem, the overarching objective becomes directly attainable.
+                        <br>&bull; <strong>Transparency & Explainability:</strong> Because MEA relies on explicit comparisons and distinct rule applications, its reasoning trajectory is fully transparent. The system can trace step-by-step why an operator was chosen and which subgoals were formulated, providing auditability unmatched by modern connectionist models.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ശ്രേണീകൃത ഉപലക്ഷ്യങ്ങളും സുതാര്യതയും</span>
+                        1957-ൽ <strong>അലൻ നെവലും ഹെർബർട്ട് സൈമണും</strong> നിർമ്മിച്ച <strong>ജനറൽ പ്രോബ്ലം സോൾവർ (GPS)</strong> ആണ് MEA-യുടെ ആദ്യ പ്രായോഗിക മാതൃക:
+                        <br>&bull; <strong>പ്രശ്ന വിഭജനം (Problem Reduction):</strong> അതീവ സങ്കീർണ്ണമായ ഒരു വലിയ പ്രശ്നത്തെ എളുപ്പത്തിൽ പരിഹരിക്കാവുന്ന ചെറിയ ഉപലക്ഷ്യങ്ങളുടെ (Subgoals) ഒരു ശ്രേണിയാക്കി മാറ്റുന്നു. ഓരോ ചെറിയ ലക്ഷ്യങ്ങളും പൂർത്തിയാകുമ്പോൾ പ്രധാന ലക്ഷ്യം സ്വയമേവ കൈവരിക്കപ്പെടുന്നു.
+                        <br>&bull; <strong>സുതാര്യത (Transparency):</strong> വ്യക്തമായ നിയമങ്ങളും വ്യവസ്ഥകളും അടിസ്ഥാനമാക്കി പ്രവർത്തിക്കുന്നതിനാൽ, ഒരു തീരുമാനം എന്തിനാണ് എടുത്തതെന്നും ഏതൊക്കെ ഘട്ടങ്ങളിലൂടെയാണ് പരിഹാരത്തിലെത്തിയതെന്നും പൂർണ്ണമായി വിശദീകരിക്കാൻ GPS-ന് സാധിക്കുന്നു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Application):</span> വലിയൊരു വീട് നിർമ്മിക്കുന്നതിനെ 'തറയിടൽ', 'ഭിത്തികെട്ടൽ', 'മേൽക്കൂര പണിയൽ' എന്നിങ്ങനെ ഘട്ടങ്ങളായി തിരിച്ച് ഓരോന്നായി പൂർത്തിയാക്കുന്നതുപോലെയാണ് GPS പ്രവർത്തിക്കുന്നത്.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Means-Ends Analysis (MEA) & Newell-Simon's GPS &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 03 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-04">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 4: Problems in the Classical Model of AI (GOFAI)</div>
+                    <div class="sub-title">ക്ലാസിക്കൽ എഐ മാതൃകയിലെ പ്രതിസന്ധികൾ</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 04 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 4: Logic-Based AI & The Declarative Paradigm &bull; ലോജിക് അധിഷ്ഠിത എഐയും പ്രഖ്യാപന രീതിയും</div>
+            <div class="section-meta">Textbook Pages 11-13 &bull; Unit 4.4</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.4.1</span>
+                        <span class="topic-heading-text">John McCarthy's Declarative Paradigm vs Imperative Programming</span>
+                        <span class="topic-malayalam-heading">ജോൺ മക്കാർത്തിയുടെ പ്രഖ്യാപന മാതൃകയും നിർദ്ദേശാത്മക രീതിയും</span>
+                    </div>
+                    <span class="topic-tag">Logic Paradigm</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Specifying "What" vs "How" in Intelligent Systems</span>
+                        <strong>John McCarthy</strong>, pioneer of logic-based AI, fundamentally transformed computer science by arguing that intelligent systems should be built on codified mathematical models of logic rather than psychological imitations:
+                        <br>&bull; <strong>Imperative Paradigm:</strong> The conventional methodology where programs are expressed as step-by-step procedural sequences of instructions specifying <em>how</em> a computer must compute.
+                        <br>&bull; <strong>Declarative Paradigm:</strong> McCarthy asserted that a programmer should specify solely <strong>what</strong> the essential logical properties of a solution are, rather than dictating how to find it. A universal problem-solving inference engine is tasked with deducing the actual solution using formal logic rules.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">പരിഹാരത്തിന്റെ നിർവ്വചനവും നിർവ്വഹണ യുക്തിയും</span>
+                        ലോജിക് അധിഷ്ഠിത എഐയുടെ ഉപജ്ഞാതാവായ <strong>ജോൺ മക്കാർത്തി (John McCarthy)</strong> പ്രഖ്യാപന മാതൃകയിലൂടെ (Declarative Paradigm) ഒരു പുതിയ തത്ത്വചിന്ത മുന്നോട്ടുവെച്ചു:
+                        <br>&bull; <strong>നിർദ്ദേശാത്മക രീതി (Imperative Paradigm):</strong> ഒരു പ്രശ്നം എങ്ങനെ ഓരോ പടിയായി പരിഹരിക്കണമെന്ന് (How to solve) കമ്പ്യൂട്ടറിന് ആജ്ഞകൾ നൽകുന്ന പരമ്പരാഗത പ്രോഗ്രാമിംഗ് രീതി.
+                        <br>&bull; <strong>പ്രഖ്യാപന രീതി (Declarative Paradigm):</strong> കമ്പ്യൂട്ടർ എങ്ങനെ ചെയ്യണം എന്നല്ല, മറിച്ച് പരിഹാരം <strong>എന്തായിരിക്കണം (What the solution is)</strong> എന്നതിന്റെ യുക്തിസഹമായ സത്യങ്ങൾ മാത്രം നിർവചിച്ചു കൊടുക്കുക. ബാക്കി കാര്യങ്ങൾ കമ്പ്യൂട്ടറിലെ ഇൻഫറൻസ് എഞ്ചിൻ തന്നെ സ്വയം ലോജിക് ഉപയോഗിച്ച് തെളിയിച്ചെടുക്കും.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Code Rule):</span> സഹോദരങ്ങളെ കണ്ടെത്താൻ: `siblings(X, Y) :- parent(Z, X) and parent(Z, Y)` എന്ന് നിർവചിച്ചാൽ മതി; ജോണും മേരിയും സഹോദരങ്ങളാണോ എന്ന് സിസ്റ്റം വിവരങ്ങൾ പരിശോധിച്ച് സ്വയം തെളിയിക്കും.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.4.2</span>
+                        <span class="topic-heading-text">First-Order Logic (FOL) & Church-Kleene Lambda Calculus</span>
+                        <span class="topic-malayalam-heading">ഫസ്റ്റ്-ഓർഡർ ലോജിക്കും ചർച്ച്-ക്ലീനി ലാംഡ കാൽക്കുലസും</span>
+                    </div>
+                    <span class="topic-tag">Formal Systems</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Propositional vs Predicate Logic & Functional Foundations</span>
+                        Logical systems provide the formal language for representing domain knowledge and automated deduction:
+                        <br>&bull; <strong>Propositional vs Predicate Logic:</strong> Propositional logic handles only flat assertions (True/False). <em>First-Order Logic (FOL) / Predicate Logic</em> surpasses it by expressing entities, properties, predicates, and quantifiers ($orall, \exists$), enabling the formalisation of complex knowledge like "All humans are mortal; Socrates is human $\implies$ Socrates is mortal."
+                        <br>&bull; <strong>Lambda Calculus:</strong> Originating from Alonzo Church and Stephen C. Kleene, lambda calculus underpins functional programming, formalizing computation through structured mathematical function evaluations.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">പ്രൊപ്പോസിഷണൽ, പ്രെഡിക്കേറ്റ് ലോജിക്കും ലാംഡ കാൽക്കുലസും</span>
+                        അറിവിനെ ഔപചാരികമായി ഉൾക്കൊള്ളാൻ എഐ പ്രധാനമായും ഉപയോഗിക്കുന്നത് രണ്ട് ലോജിക് ശാഖകളാണ്:
+                        <br>&bull; <strong>ഫസ്റ്റ്-ഓർഡർ ലോജിക് (Predicate Logic):</strong> പ്രൊപ്പോസിഷണൽ ലോജിക് വെറും ശരി/തെറ്റ് വാക്യങ്ങളെ മാത്രം നോക്കുമ്പോൾ, പ്രെഡിക്കേറ്റ് ലോജിക് വസ്തുക്കളെയും അവയുടെ ഗുണങ്ങളെയും തമ്മിലുള്ള ബന്ധങ്ങളെയും കൃത്യമായി ഗണിത രൂപത്തിലാക്കുന്നു (ഉദാ: "എല്ലാ മനുഷ്യരും മരണമുള്ളവരാണ്; സോക്രട്ടീസ് മനുഷ്യനാണ്; അതിനാൽ സോക്രട്ടീസ് മരണമുള്ളവനാണ്").
+                        <br>&bull; <strong>ലാംഡ കാൽക്കുലസ് (Lambda Calculus):</strong> അലോൺസോ ചർച്ചും സ്റ്റീഫൻ ക്ലീനിയും വികസിപ്പിച്ച ലാംഡ കാൽക്കുലസ് ഫംഗ്ഷണൽ പ്രോഗ്രാമിംഗിന്റെയും തിയറം പ്രൂവിംഗിന്റെയും ഗണിത അടിത്തറയായി വർത്തിക്കുന്നു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Application):</span> ഗണിത ശാസ്ത്രത്തിലെ സിദ്ധാന്തങ്ങൾ മനുഷ്യന്റെ സഹായമില്ലാതെ യാന്ത്രികമായി തെളിയിക്കുന്ന ഓട്ടോമേറ്റഡ് തിയറം പ്രൂവിംഗ് (Automated Theorem Proving) സാധ്യമാക്കിയത് ഫസ്റ്റ്-ഓർഡർ ലോജിക്കാണ്.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">John McCarthy's Declarative Logic & Lambda Calculus &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 04 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-05">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 4: Problems in the Classical Model of AI (GOFAI)</div>
+                    <div class="sub-title">ക്ലാസിക്കൽ എഐ മാതൃകയിലെ പ്രതിസന്ധികൾ</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 05 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 5: Rule-Based Systems & Inference Engines &bull; നിയമാധിഷ്ഠിത വ്യവസ്ഥകളും ഇൻഫറൻസ് എഞ്ചിനുകളും</div>
+            <div class="section-meta">Textbook Pages 13-14 &bull; Unit 4.5</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.5.1</span>
+                        <span class="topic-heading-text">Production Rules & Memory Architecture: Production vs Working Memory</span>
+                        <span class="topic-malayalam-heading">പ്രൊഡക്ഷൻ റൂളുകളും മെമ്മറി ഘടനയും: ദീർഘകാല-ഹ്രസ്വകാല മെമ്മറി</span>
+                    </div>
+                    <span class="topic-tag">Expert Systems</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">IF-THEN Rules and Cognitive Memory Systems</span>
+                        In cognitive architectures developed by Newell and Simon, rule-based systems are modeled on human psychological memory:
+                        <br>&bull; <strong>Production Memory (Long-Term Memory):</strong> Stores permanent domain knowledge in the form of production rules: <em>IF [Antecedent Condition] THEN [Consequent Action/Conclusion]</em>.
+                        <br>&bull; <strong>Working Memory (Short-Term Memory):</strong> Retains temporary facts and data regarding the specific problem instance being processed.
+                        <br>&bull; <strong>Expert Systems (e.g., MYCIN):</strong> Encoded human specialist expertise into vast rule repositories. In medicine, MYCIN employed thousands of IF-THEN rules to diagnose bacterial infections and prescribe antibiotic treatments with expert-level proficiency.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">നിബന്ധനാ നിയമങ്ങളും വിദഗ്ദ്ധ സിസ്റ്റങ്ങളും</span>
+                        മനുഷ്യന്റെ മനശ്ശാസ്ത്രപരമായ ഓർമ്മശക്തിയെ മാതൃകയാക്കിയാണ് റൂൾ-ബേസ്ഡ് സിസ്റ്റങ്ങൾ രൂപകൽപ്പന ചെയ്തിരിക്കുന്നത്:
+                        <br>&bull; <strong>പ്രൊഡക്ഷൻ മെമ്മറി (ദീർഘകാല ഓർമ്മ):</strong> സ്ഥിരമായ നിയമങ്ങൾ ഇതിൽ സൂക്ഷിക്കുന്നു. ഇവയുടെ രൂപം: <em>IF [ഒരു പ്രത്യേക നിബന്ധന] THEN [ചെയ്യേണ്ട പ്രവൃത്തി അല്ലെങ്കിൽ നിഗമനം]</em>.
+                        <br>&bull; <strong>വർക്കിംഗ് മെമ്മറി (ഹ്രസ്വകാല ഓർമ്മ):</strong> നിലവിലെ പ്രശ്നത്തെക്കുറിച്ചുള്ള താൽക്കാലിക വിവരങ്ങളും വസ്തുതകളും ഇതിൽ രേഖപ്പെടുത്തുന്നു.
+                        <br>&bull; <strong>വിദഗ്ദ്ധ സിസ്റ്റങ്ങൾ (ഉദാ: MYCIN):</strong> ഡോക്ടർമാരുടെ അനുഭവപരിജ്ഞാനം ആയിരക്കണക്കിന് IF-THEN നിയമങ്ങളാക്കി മാറ്റി ബാക്ടീരിയൽ അണുബാധകൾക്ക് മരുന്ന് നിർദ്ദേശിക്കാൻ MYCIN വിജയകരമായി ഉപയോഗിച്ചു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Medical Rule):</span> IF രോഗിക്ക് ചുമയും ഉയർന്ന പനിയുമുണ്ട് THEN സാധ്യതയുള്ള രോഗം 'ശ്വാസകോശ അണുബാധ' ആകാം എന്ന റൂൾ അടിസ്ഥാനമാക്കി MYCIN പ്രവർത്തിക്കുന്നു.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.5.2</span>
+                        <span class="topic-heading-text">Inference Engine Reasoning: Forward Chaining vs Backward Chaining</span>
+                        <span class="topic-malayalam-heading">ഇൻഫറൻസ് എഞ്ചിൻ രീതികൾ: ഫോർവേഡ് ചെയിനിംഗും ബാക്ക്‌വേർഡ് ചെയിനിംഗും</span>
+                    </div>
+                    <span class="topic-tag">Inference Engine</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Data-Driven vs Goal-Driven Reasoning</span>
+                        The <strong>inference engine</strong> is the computational brain of a rule-based system, deciding which rules fire via two fundamental reasoning strategies:
+                        <br>&bull; <strong>1. Forward Chaining (Data-Driven):</strong> Begins with known facts currently in working memory, matches them against antecedents, fires active rules, and asserts new conclusions until the final goal is reached.
+                        <br>&bull; <strong>2. Backward Chaining (Goal-Driven):</strong> Starts with a hypothetical goal statement and works backwards, identifying which rules could prove that goal and checking whether current working memory contains the requisite facts.
+                        <br>&bull; <strong>Modularity & Interpretability:</strong> Rules can be added incrementally without rewriting the system; execution traces offer complete explanation logs.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">വസ്തുതാധിഷ്ഠിതവും ലക്ഷ്യാധിഷ്ഠിതവുമായ നിഗമനങ്ങൾ</span>
+                        ഒരു റൂൾ-ബേസ്ഡ് സിസ്റ്റത്തിലെ പ്രധാന ഘടകമാണ് <strong>ഇൻഫറൻസ് എഞ്ചിൻ (Inference Engine)</strong>. ഇതിന് രണ്ട് നിഗമന രീതികളുണ്ട്:
+                        <br>&bull; <strong>1. ഫോർവേഡ് ചെയിനിംഗ് (Forward Chaining - Data-Driven):</strong> കയ്യിലുള്ള വസ്തുതകളിൽ നിന്ന് ആരംഭിച്ച് നിയമങ്ങൾ ഓരോന്നായി പ്രയോഗിച്ച് പുതിയ നിഗമനങ്ങളിലെത്തുകയും ഒടുവിൽ ലക്ഷ്യം കൈവരിക്കുകയും ചെയ്യുന്നു.
+                        <br>&bull; <strong>2. ബാക്ക്‌വേർഡ് ചെയിനിംഗ് (Backward Chaining - Goal-Driven):</strong> ഒരു അന്തിമ ലക്ഷ്യം മുൻകൂട്ടി നിശ്ചയിച്ച്, അത് തെളിയിക്കാൻ ആവശ്യമായ വസ്തുതകൾ കയ്യിലുണ്ടോ എന്ന് പിന്നോട്ട് പരിശോധിച്ചു വരുന്നു.
+                        <br>&bull; <strong>സവിശേഷത:</strong> പുതിയ നിയമങ്ങൾ സിസ്റ്റത്തിലേക്ക് എളുപ്പത്തിൽ ചേർക്കാം; ഓരോ തീരുമാനത്തിന്റെയും കാരണം കൃത്യമായി ഉപയോക്താവിന് വിശദീകരിച്ചു നൽകാനും ഇതിന് സാധിക്കുന്നു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Distinction):</span> രക്തപരിശോധനാ ഫലങ്ങൾ വെച്ച് രോഗം കണ്ടെത്തുന്നത് Forward Chaining; ഒരു രോഗമുണ്ടോ എന്ന് സംശയിച്ച് ലക്ഷണങ്ങൾ ഒത്തുനോക്കുന്നത് Backward Chaining.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Production Memory, Expert Systems & Inference Engines &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 05 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-06">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 4: Problems in the Classical Model of AI (GOFAI)</div>
+                    <div class="sub-title">ക്ലാസിക്കൽ എഐ മാതൃകയിലെ പ്രതിസന്ധികൾ</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 06 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 6: Structural Knowledge Representation &bull; ഘടനാപരമായ അറിവ് പ്രതിനിധാനം</div>
+            <div class="section-meta">Textbook Pages 14-16 &bull; Unit 4.6</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.6.1</span>
+                        <span class="topic-heading-text">Gilbert Ryle's Distinction & Semantic Networks</span>
+                        <span class="topic-malayalam-heading">ഗിൽബർട്ട് റൈലിന്റെ അറിവ് വിഭജനവും സെമാന്റിക് നെറ്റ്‌വർക്കുകളും</span>
+                    </div>
+                    <span class="topic-tag">Knowledge Structures</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Declarative vs Procedural Knowledge & Inheritance Graphs</span>
+                        Philosopher Gilbert Ryle distinguished human knowledge into:
+                        <br>&bull; <strong>Declarative Knowledge ("Knowing That"):</strong> Static descriptive facts about the world (e.g., a genealogical family tree).
+                        <br>&bull; <strong>Procedural Knowledge ("Knowing How"):</strong> Dynamic knowledge of how to perform actions (e.g., heuristic algorithms).
+                        <br>&bull; <strong>Semantic Networks:</strong> One of the earliest structural models, representing declarative concepts as <strong>nodes</strong> and their relationships as directed <strong>links</strong> (e.g., <em>"Dog &mdash;[is-a]&rarr; Creature"</em>, <em>"Dog &mdash;[has]&rarr; Four Limbs"</em>). Enables <strong>property inheritance</strong>: because a Creature breathes, a Dog automatically inherits the property of breathing, preventing redundant storage and streamlining deduction.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">വസ്തുതാപരമായ അറിവും സെമാന്റിക് ബന്ധങ്ങളും</span>
+                        തത്ത്വചിന്തകനായ ഗിൽബർട്ട് റൈൽ (Gilbert Ryle) അറിവിനെ രണ്ടായി തിരിച്ചു:
+                        <br>&bull; <strong>ഡിക്ലറേറ്റീവ് അറിവ് (Knowing That):</strong> ലോകത്തെക്കുറിച്ചുള്ള വസ്തുതാപരമായ അറിവുകൾ (ഉദാ: കുടുംബ വൃക്ഷം).
+                        <br>&bull; <strong>പ്രൊസീജറൽ അറിവ് (Knowing How):</strong> ഒരു കാര്യം എങ്ങനെ ചെയ്യണമെന്നുള്ള പ്രായോഗിക അറിവ് (ഉദാ: അൽഗോരിതങ്ങൾ).
+                        <br>&bull; <strong>സെമാന്റിക് നെറ്റ്‌വർക്കുകൾ (Semantic Networks):</strong> ആശയങ്ങളെ ബിന്ദുക്കളായും (Nodes), അവ തമ്മിലുള്ള ബന്ധങ്ങളെ വരകളായും (Links) കാണിക്കുന്ന ഗ്രാഫ് രീതിയാണിത് (ഉദാ: "നായ &mdash;[ആണ്]&rarr; ഒരു ജീവി", "നായ &mdash;[ഉണ്ട്]&rarr; നാല് കാലുകൾ"). ജീവികൾ ശ്വസിക്കുന്നതിനാൽ നായയും ശ്വസിക്കുന്നു എന്ന ഗുണം പാരമ്പര്യമായി സിസ്റ്റം ഉൾക്കൊള്ളുന്നു (Property Inheritance).
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Inheritance):</span> 'പക്ഷി പറക്കുന്നു' എന്ന നിയമം നെറ്റ്‌വർക്കിൽ രേഖപ്പെടുത്തിയാൽ, 'കുരുവി ഒരു പക്ഷിയാണ്' എന്ന് ബന്ധിപ്പിച്ചയുടൻ കുരുവി പറക്കുമെന്ന് സിസ്റ്റം സ്വയം മനസ്സിലാക്കുന്നു.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.6.2</span>
+                        <span class="topic-heading-text">Marvin Minsky's Frames & Roger Schank's Scripts</span>
+                        <span class="topic-malayalam-heading">മാർവിൻ മിൻസ്കിയുടെ ഫ്രെയിമുകളും റോജർ ഷാങ്കിന്റെ സ്ക്രിപ്റ്റുകളും</span>
+                    </div>
+                    <span class="topic-tag">Schema Representations</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Prototypical Data Structures and Stereotypical Action Sequences</span>
+                        <br>&bull; <strong>Marvin Minsky's Frames (1974):</strong> Data structures representing prototypical objects or situations. A frame contains named slots holding attributes and values (e.g., a "Vehicle" frame has slots for owner, engine type, speed, colour). Critically, frames support <strong>default values</strong> (e.g., defaulting to 4 wheels unless explicitly contradicted), enabling fast commonsense assumptions without exhaustive detail.
+                        <br>&bull; <strong>Roger Schank's Scripts:</strong> Schema structures representing standard, stereotypical sequences of events in everyday human life. For example, a <em>Restaurant Script</em> encapsulates: entry $	o$ seating $	o$ ordering $	o$ dining $	o$ paying $	o$ exiting. AI uses scripts to predict future events and interpret implicit conversational context.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">മാതൃകാ ഘടനകളും സ്വാഭാവിക സംഭവവികാസങ്ങളും</span>
+                        <br>&bull; <strong>മാർവിൻ മിൻസ്കിയുടെ ഫ്രെയിമുകൾ (Frames):</strong> ഒരു മാതൃകാ വസ്തുവിനെക്കുറിച്ചുള്ള വിവരങ്ങൾ സൂക്ഷിക്കുന്ന അറകളുള്ള ഘടന (Slots). ഉദാഹരണത്തിന്, 'കാർ' എന്ന ഫ്രെയിമിൽ നിറം, എൻജിൻ, വേഗത എന്നിവയ്ക്ക് പ്രത്യേക അറകളുണ്ടാകും. വ്യക്തമായി പറഞ്ഞിട്ടില്ലെങ്കിലും ഒരു കാറിന് 4 ചക്രങ്ങളുണ്ടെന്ന് ഡിഫോൾട്ടായി (Default Value) സിസ്റ്റം സ്വയം അനുമാനിക്കുന്നു.
+                        <br>&bull; <strong>റോജർ ഷാങ്കിന്റെ സ്ക്രിപ്റ്റുകൾ (Scripts):</strong> ദൈനംദിന ജീവിതത്തിലെ സ്വാഭാവിക സംഭവങ്ങളുടെ ക്രമത്തെ സൂചിപ്പിക്കുന്ന മാതൃകയാണിത്. ഉദാഹരണത്തിന്, ഒരു റസ്റ്റോറന്റിൽ പോയാൽ: പ്രവേശിക്കുക $	o$ ഇരിക്കുക $	o$ ഓർഡർ നൽകുക $	o$ ഭക്ഷണം കഴിക്കുക $	o$ പണം നൽകുക $	o$ പുറത്തിറങ്ങുക. ഇത്തരം സ്ക്രിപ്റ്റുകൾ മനുഷ്യന്റെ സാധാരണ പെരുമാറ്റങ്ങൾ മുൻകൂട്ടി പ്രവചിക്കാൻ എഐയെ സഹായിക്കുന്നു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Application):</span> "ജോൺ റസ്റ്റോറന്റിൽ പോയി ബിരിയാണി കഴിച്ചു, പണം നൽകി മടങ്ങി" എന്ന് കേൾക്കുമ്പോൾ ജോൺ ഭക്ഷണം ഓർഡർ ചെയ്തിരുന്നുവെന്ന് സ്ക്രിപ്റ്റ് സിസ്റ്റം സ്വയം അനുമാനിക്കുന്നു.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Gilbert Ryle, Semantic Networks, Frames & Scripts &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 06 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-07">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 4: Problems in the Classical Model of AI (GOFAI)</div>
+                    <div class="sub-title">ക്ലാസിക്കൽ എഐ മാതൃകയിലെ പ്രതിസന്ധികൾ</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 07 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 7: Mathematical Linguistics & Early Connectionism &bull; ഗണിത ഭാഷാശാസ്ത്രവും ആദ്യകാല ന്യൂറൽ ശൃംഖലകളും</div>
+            <div class="section-meta">Textbook Pages 16-18 &bull; Unit 4.7</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.7.1</span>
+                        <span class="topic-heading-text">Mathematical Linguistics & Noam Chomsky's Formal Grammars</span>
+                        <span class="topic-malayalam-heading">ഗണിത ഭാഷാശാസ്ത്രവും നോം ചോംസ്കിയുടെ ഔപചാരിക വ്യാകരണവും</span>
+                    </div>
+                    <span class="topic-tag">Computational Linguistics</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Automata Theory & Hierarchical Phrase Structures</span>
+                        To represent and process human natural language, classical AI turned to formal automata and mathematical linguistics:
+                        <br>&bull; <strong>Automata Hierarchy:</strong> Employs Finite-State Automata (linear strings), Pushdown Automata (stack memory), and Universal Turing Machines to validate syntactic correctness.
+                        <br>&bull; <strong>Noam Chomsky's Phrase Structure Grammars:</strong> Proposed that language is governed by hierarchical rule systems of rewrite rules. A sentence is not a mere linear chain of words, but a structured hierarchy composed of <strong>Noun Phrases (NP)</strong> and <strong>Verb Phrases (VP)</strong> (e.g., $S 	o NP + VP$). This syntactic rigor formed the foundation of early Natural Language Processing (NLP), syntactic parsing, and machine translation.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ഓട്ടോമാറ്റ തിയറിയും ഘടനാപരമായ വാക്യ വിശകലനവും</span>
+                        മനുഷ്യന്റെ സ്വാഭാവിക ഭാഷയെ കമ്പ്യൂട്ടറിന് മനസ്സിലാക്കാൻ ക്ലാസിക്കൽ എഐ ഉപയോഗിച്ചത് ഗണിത ഭാഷാശാസ്ത്രമാണ്:
+                        <br>&bull; <strong>ഓട്ടോമാറ്റ സിദ്ധാന്തം (Automata Theory):</strong> ഫിനൈറ്റ് സ്റ്റേറ്റ് മെഷീനുകൾ, പുഷ്ഡൗൺ ഓട്ടോമാറ്റ, ട്യൂറിംഗ് മെഷീൻ എന്നിവ വഴി ഭാഷാ വാക്യങ്ങളുടെ വ്യാകരണ സാധുത പരിശോധിക്കുന്നു.
+                        <br>&bull; <strong>നോം ചോംസ്കിയുടെ ഫ്രെയ്സ് സ്ട്രക്ചർ ഗ്രാമർ (Chomsky):</strong> ഒരു ഭാഷാ വാക്യം കേവലം വാക്കുകൾ കൂട്ടിയിണക്കിയതല്ല, മറിച്ച് കൃത്യമായ ഒരു ശ്രേണിയാണെന്ന് ചോംസ്കി സമർത്ഥിച്ചു. വാക്യത്തെ നാമപദം (Noun Phrase), ക്രിയാപദം (Verb Phrase) എന്നിങ്ങനെ നിയമങ്ങളിലൂടെ വിഭജിക്കുന്ന ഈ രീതി early NLP-യുടെ നട്ടെല്ലായി മാറി.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Grammar):</span> 'The boy ate an apple' എന്ന വാക്യത്തെ $S 	o NP + VP$ എന്ന ചോംസ്കിയുടെ റീറൈറ്റ് റൂളിലൂടെ കമ്പ്യൂട്ടർ വ്യാകരണപരമായി ശരിയാണെന്ന് അപഗ്രഥിക്കുന്നു.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.7.2</span>
+                        <span class="topic-heading-text">Early Connectionism: The 1951 SNARC Neural Calculator</span>
+                        <span class="topic-malayalam-heading">ആദ്യകാല കണക്ഷനിസം: 1951-ലെ സ്നാർക്ക് (SNARC) മെഷീൻ</span>
+                    </div>
+                    <span class="topic-tag">Connectionist Origins</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">The Brain Analogy vs The Computer Analogy</span>
+                        Parallel to symbolic systems, cognitive scientists developed <strong>connectionism</strong>, which models intelligence through interconnected nodes simulating biological neurons:
+                        <br>&bull; <strong>Node & Weight Mechanics:</strong> Nodes receive real-numbered inputs, multiply them by adjustable numerical link weights, sum them, and yield an output ($1$ or $0$) based on whether the sum exceeds an activation threshold.
+                        <br>&bull; <strong>The SNARC (1951):</strong> Constructed by <strong>Marvin Minsky and Dean Edmonds</strong>, the <em>Stochastic Neural Analogue Reinforcement Calculator (SNARC)</em> was the world's first artificial neural network machine. Simulating a rat navigating a maze, it used vacuum tubes to model synaptic learning, forming the basis of Minsky's 1954 Princeton dissertation before he pivoted to symbolic frames.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">തലച്ചോറിന്റെ മാതൃകയും ആദ്യ ന്യൂറൽ നെറ്റ്‌വർക്കും</span>
+                        പ്രതീകാത്മക കമ്പ്യൂട്ടർ രീതികൾക്ക് പുറമെ തലച്ചോറിലെ ന്യൂറോണുകളെ അനുകരിക്കുന്ന <strong>കണക്ഷനിസം (Connectionism)</strong> അക്കാലത്ത് ഉടലെടുത്തു:
+                        <br>&bull; <strong>ന്യൂറൽ നോഡുകളുടെ പ്രവർത്തനം:</strong> തലച്ചോറിലെ ന്യൂറോണുകളെപ്പോലെ ഇൻപുട്ടുകൾ സ്വീകരിച്ച്, അവയെ വെയ്റ്റുകൾ (Weights) കൊണ്ട് ഗുണിച്ച്, ത്രെഷോൾഡിന് മുകളിലാണെങ്കിൽ സിഗ്നൽ പുറത്തുവിടുന്ന രീതി.
+                        <br>&bull; <strong>സ്നാർക്ക് (SNARC - 1951):</strong> <strong>മാർവിൻ മിൻസ്കിയും ഡീൻ എഡ്മണ്ട്സും</strong> ചേർന്ന് 1951-ൽ നിർമ്മിച്ച SNARC ആണ് ലോകത്തിലെ ആദ്യത്തെ കൃത്രിമ ന്യൂറൽ നെറ്റ്‌വർക്ക് മെഷീൻ. ഒരു എലി വഴി തിരിഞ്ഞ് ഭക്ഷണം കണ്ടെത്തുന്നത് വാക്വം ട്യൂബുകൾ ഉപയോഗിച്ച് അനുകരിച്ച ഈ കണ്ടുപിടുത്തമാണ് മിൻസ്കിയുടെ പ്രിൻസ്റ്റൺ ഡോക്ടറേറ്റിന് ആധാരമായത്.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Distinction):</span> സിംബോളിക് എഐ ചിന്തയെ സോഫ്റ്റ്‌വെയർ കോഡായി കണ്ടപ്പോൾ, SNARC പോലുള്ള ആദ്യകാല മെഷീനുകൾ തലച്ചോറിലെ സിനാപ്റ്റിക് ബന്ധങ്ങളെ അനുകരിക്കാനാണ് ശ്രമിച്ചത്.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Chomsky's Grammars & Minsky's 1951 SNARC Connectionism &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 07 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-08">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 4: Problems in the Classical Model of AI (GOFAI)</div>
+                    <div class="sub-title">ക്ലാസിക്കൽ എഐ മാതൃകയിലെ പ്രതിസന്ധികൾ</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 08 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 8: The Physical Symbol System Hypothesis & The Semantic Crisis &bull; പി.എസ്.എസ്.എച്ചും അർത്ഥപ്രതിസന്ധിയും</div>
+            <div class="section-meta">Textbook Pages 18-20 &bull; Unit 4.8</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.8.1</span>
+                        <span class="topic-heading-text">The Physical Symbol System Hypothesis (PSSH - Newell & Simon 1976)</span>
+                        <span class="topic-malayalam-heading">ഫിസിക്കൽ സിംബൽ സിസ്റ്റം ഹൈപ്പോത്തിസിസ് (PSSH - 1976)</span>
+                    </div>
+                    <span class="topic-tag">Philosophical Foundation</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Necessary and Sufficient Conditions for General Intelligence</span>
+                        In 1976, Turing Award winners <strong>Allen Newell and Herbert Simon</strong> formally articulated the cornerstone philosophical thesis of classical AI:
+                        <br>&bull; <strong>The Hypothesis:</strong> <em>"A physical symbol system has the necessary and sufficient means for general intelligent action."</em>
+                        <br>&bull; <strong>Core Tenet:</strong> Intelligence consists fundamentally of physical symbol manipulation governed by formal, programmatic rules. The biological brain is merely hardware; cognition is the software executing algorithmic processes over abstract tokens.
+                        <br>&bull; <strong>Syntactic Operation:</strong> Reasoning is purely syntactic&mdash;driven exclusively by the physical shapes, configurations, and locations of symbols rather than their semantic meaning.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ബുദ്ധിപരമായ പ്രവർത്തനത്തിന്റെ പരമമായ മാനദണ്ഡം</span>
+                        1976-ൽ <strong>അലൻ നെവലും ഹെർബർട്ട് സൈമണും</strong> ആവിഷ്കരിച്ച സിംബോളിക് എഐയുടെ പരമോന്നത തത്ത്വമാണ് <strong>PSSH (Physical Symbol System Hypothesis)</strong>:
+                        <br>&bull; <strong>സിദ്ധാന്തം:</strong> <em>"ഏതൊരു പൊതുവായ ബുദ്ധിപരമായ പ്രവർത്തനത്തിനും ആവശ്യമായതും പര്യാപ്തമായതുമായ ഉപാധി ഒരു ഫിസിക്കൽ സിംബൽ സിസ്റ്റമാണ്."</em>
+                        <br>&bull; <strong>പ്രധാന വാദം:</strong> ബുദ്ധി എന്നാൽ വ്യക്തമായ നിയമങ്ങൾക്കനുസരിച്ച് ചിഹ്നങ്ങളെയും പ്രതീകങ്ങളെയും കൈകാര്യം ചെയ്യൽ മാത്രമാണ്. മനുഷ്യന്റെ തലച്ചോറ് കേവലം ഒരു ഹാർഡ്‌വെയറും, മനസ്സ് അതിൽ പ്രവർത്തിക്കുന്ന കമ്പ്യൂട്ടർ പ്രോഗ്രാമുമാണ്.
+                        <br>&bull; <strong>രൂപപരമായ പ്രവർത്തനം (Syntax):</strong> ചിഹ്നങ്ങളുടെ അർത്ഥം നോക്കാതെ അവയുടെ ബാഹ്യ രൂപവും വ്യാകരണ ക്രമവും മാത്രം നോക്കിയാണ് സിസ്റ്റം ചിന്തിക്കുന്നത്.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Formal Deductions):</span> "സോക്രട്ടീസ് ഒരു മനുഷ്യനാണ്", "എല്ലാ മനുഷ്യരും മരണമുള്ളവരാണ്" എന്ന വാക്കുകൾ പ്രോസസ്സ് ചെയ്യുമ്പോൾ മെഷീന് 'മനുഷ്യൻ' എന്തെന്നോ 'മരണം' എന്തെന്നോ ഉള്ള അർത്ഥം അറിയില്ലെങ്കിലും അത് ശരിയായ ഉത്തരം നൽകുന്നു.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.8.2</span>
+                        <span class="topic-heading-text">The Semantic Crisis & John Searle's Chinese Room Argument (1980)</span>
+                        <span class="topic-malayalam-heading">അർത്ഥ പ്രതിസന്ധിയും ജോൺ സർളിന്റെ ചൈനീസ് റൂം പരീക്ഷണവും (1980)</span>
+                    </div>
+                    <span class="topic-tag">Philosophical Critique</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Syntax is Not Sufficient for Semantics</span>
+                        The fatal vulnerability of the classical model is its total disregard for <strong>intentionality</strong>&mdash;the inherent "aboutness" and subjective comprehension characterizing the human mind. Philosopher <strong>John Searle (1980)</strong> exposed this chasm through the famous <strong>Chinese Room Argument</strong>:
+                        <br>&bull; <strong>The Argument:</strong> An English-speaking human locked in a room manipulating Chinese symbols according to an English rulebook produces indistinguishable Chinese outputs without understanding a single word of Chinese.
+                        <br>&bull; <strong>The Philosophical Verdict:</strong> <em>"Syntax alone is neither constitutive of, nor sufficient for, semantics."</em> Classical AI merely mimics functional problem-solving while remaining oblivious to meaning, intentionality, and consciousness.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">വ്യാകരണം അർത്ഥത്തിന് പകരമാകില്ല</span>
+                        ക്ലാസിക്കൽ എഐയുടെ ഏറ്റവും വലിയ പരാജയം അത് മനുഷ്യന്റെ മനസ്സിനുള്ള <strong>ഇന്റൻഷണാലിറ്റിയെ (Intentionality - കാര്യങ്ങളെക്കുറിച്ചുള്ള ആന്തരിക ബോധം)</strong> അവഗണിച്ചു എന്നതാണ്. തത്ത്വചിന്തകനായ <strong>ജോൺ സർൾ (John Searle 1980)</strong> തന്റെ പ്രസിദ്ധമായ <strong>ചൈനീസ് റൂം (Chinese Room)</strong> പരീക്ഷണത്തിലൂടെ ഇത് തെളിയിച്ചു:
+                        <br>&bull; <strong>പരീക്ഷണം:</strong> ചൈനീസ് ഭാഷയറിയാത്ത ഒരാൾ ഒരു മുറിയിലിരുന്ന് നിയമപുസ്തകം നോക്കി ചൈനീസ് അക്ഷരങ്ങൾ മാറ്റി നൽകി പുറത്തുനിൽക്കുന്ന ആളുകൾക്ക് കൃത്യമായ മറുപടി കൊടുക്കുന്നു. പുറത്തുനിൽക്കുന്നവർക്ക് അയാൾക്ക് ചൈനീസ് അറിയാമെന്ന് തോന്നുമെങ്കിലും ഉള്ളിലിരിക്കുന്നയാൾക്ക് ഒരു വാക്കിന്റെയും അർത്ഥം അറിയില്ല!
+                        <br>&bull; <strong>തത്ത്വചിന്താ നിഗമനം:</strong> <em>"കേവലം വ്യാകരണപരമായ പ്രതീക കൈകാര്യം (Syntax) യഥാർത്ഥ അർത്ഥബോധത്തിന് (Semantics) പര്യാപ്തമല്ല."</em> ക്ലാസിക്കൽ എഐ ചെയ്യുന്നത് വെറും അഭിനയം മാത്രമാണ്.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Metaphor):</span> ഒരു വിദേശഭാഷാ നിഘണ്ടു നോക്കി അക്ഷരങ്ങൾ പകർത്തി എഴുതി പരീക്ഷയിൽ മുഴുവൻ മാർക്ക് വാങ്ങിയാലും, ആ വ്യക്തിക്ക് ആ ഭാഷ മനസ്സിലായി എന്ന് പറയാൻ കഴിയില്ല.
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">Newell-Simon's PSSH & John Searle's Chinese Room Critique &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 08 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-09">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 4: Problems in the Classical Model of AI (GOFAI)</div>
+                    <div class="sub-title">ക്ലാസിക്കൽ എഐ മാതൃകയിലെ പ്രതിസന്ധികൾ</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 09 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 9: Foundational Obstacles of Classical AI &bull; ക്ലാസിക്കൽ എഐ നേരിട്ട പ്രധാന തടസ്സങ്ങൾ</div>
+            <div class="section-meta">Textbook Pages 19-21 &bull; Unit 4.9</div>
+        </div>
+        <div class="content-body">
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.9.1</span>
+                        <span class="topic-heading-text">The Frame Problem & Inability to Learn from Experience</span>
+                        <span class="topic-malayalam-heading">ഫ്രെയിം പ്രോബ്ലവും അനുഭവങ്ങളിൽ നിന്ന് പഠിക്കാനുള്ള അപ്രാപ്തിയും</span>
+                    </div>
+                    <span class="topic-tag">Epistemological Limits</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">John McCarthy & Patrick Hayes (1969) & The Knowledge Bottleneck</span>
+                        <br>&bull; <strong>The Frame Problem:</strong> In a continuously evolving dynamic world, how can a formal logical system determine which facts remain <em>unchanged</em> when an action occurs? For example, when moving a cup from the table, the color of the wall or the temperature does not change; yet classical logic requires endless axioms to assert what stayed the same, causing computational paralysis.
+                        <br>&bull; <strong>The Knowledge Bottleneck & Inflexibility:</strong> Classical systems required human programmers to painstakingly hand-code all domain facts and rules in advance. Lacking autonomous learning capabilities, they could not evolve through data, rendering them fragile when encountering unforeseen inputs.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">മാറ്റമില്ലാത്ത വസ്തുതകൾ തിരിച്ചറിയാനുള്ള പ്രതിസന്ധി</span>
+                        <br>&bull; <strong>ഫ്രെയിം പ്രോബ്ലം (Frame Problem - 1969):</strong> നിരന്തരം മാറിക്കൊണ്ടിരിക്കുന്ന ഒരു ലോകത്ത്, ഒരു പ്രവർത്തനം നടക്കുമ്പോൾ അതിൽ <em>മാറ്റമില്ലാതെ തുടരുന്ന</em> വസ്തുതകൾ ഏതെല്ലാമാണെന്ന് നിർണ്ണയിക്കാൻ ലോജിക് സിസ്റ്റങ്ങൾക്ക് കഴിയാതെ വരുന്നു. ഉദാഹരണത്തിന്, മേശപ്പുറത്തുനിന്ന് ഒരു ചായക്കപ്പ് എടുത്തു മാറ്റുമ്പോൾ മുറിയുടെ ചുവരിന്റെ നിറം മാറിയിട്ടില്ല എന്ന് തെളിയിക്കാൻ പോലും ആയിരക്കണക്കിന് ലോജിക് നിയമങ്ങൾ വേണ്ടി വരുന്നു.
+                        <br>&bull; <strong>പഠനശേഷിയില്ലായ്മ (Inability to Learn):</strong> എല്ലാ വിവരങ്ങളും നിയമങ്ങളും മനുഷ്യ പ്രോഗ്രാമർമാർ മുൻകൂട്ടി കോഡ് ചെയ്തു നൽകണമായിരുന്നു. സ്വന്തമായി ഡാറ്റയിൽ നിന്ന് പഠിച്ച് സ്വയം തിരുത്താനുള്ള ശേഷി ഇല്ലാത്തതിനാൽ മുൻകൂട്ടി കാണാത്ത സാഹചര്യങ്ങളിൽ ഈ സിസ്റ്റങ്ങൾ പാടേ പരാജയപ്പെട്ടു.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Dilemma):</span> റോബോട്ട് ഒരു വാതിൽ തുറക്കുമ്പോൾ ലോകത്തിലെ മറ്റെല്ലാ കാര്യങ്ങളും പഴയതുപോലെയാണെന്ന് ഉറപ്പുവരുത്താൻ അനന്തമായ നിയമങ്ങൾ പരിശോധിക്കേണ്ടി വന്ന് സിസ്റ്റം നിശ്ചലമാകുന്ന അവസ്ഥ.
+                </div>
+            </div>
+
+            <div class="topic-block">
+                <div class="topic-title-bar">
+                    <div class="topic-title-left">
+                        <span class="topic-number">4.9.2</span>
+                        <span class="topic-heading-text">Commonsense Reasoning, Brittleness & Mechanistic Reductionism</span>
+                        <span class="topic-malayalam-heading">സാധാരണ ബോധത്തിന്റെ (Commonsense) അഭാവവും ദുർബലതയും (Brittleness)</span>
+                    </div>
+                    <span class="topic-tag">Theoretical Flaws</span>
+                </div>
+                <div class="dual-cards-row">
+                    <div class="lang-card english-card">
+                        <span class="card-label-en">Linguistic Ambiguity, Metaphor & Neglect of Biology</span>
+                        <br>&bull; <strong>Lack of Commonsense & Brittleness:</strong> While classical systems excelled in closed, formal micro-worlds (like chess), they broke down catastrophically in open real-world environments when faced with ambiguity, context-dependent nuances, and metaphorical language (e.g., distinguishing between a river bank and a financial bank).
+                        <br>&bull; <strong>Slow Sensory Processing:</strong> Explicit symbolic manipulation proved far too sluggish for real-time perceptual tasks like computer vision and robotic navigation where humans excel effortlessly.
+                        <br>&bull; <strong>Mechanistic Reductionism:</strong> Classical AI reduced intelligence purely to verbal-logical calculations, ignoring emotions, intuition, embodiment, and biological neurology, presenting an impoverished view of cognition.
+                    </div>
+                    <div class="lang-card malayalam-card">
+                        <span class="card-label-ml">ഭാഷാപരമായ അവ്യക്തതയും യാന്ത്രിക വാദവും</span>
+                        <br>&bull; <strong>കോമൺസെൻസിന്റെ കുറവും ദുർബലതയും (Brittleness):</strong> ചെസ്സ് പോലുള്ള കൃത്യമായ നിയമങ്ങളുള്ള അടഞ്ഞ സാഹചര്യങ്ങളിൽ ഇവ മികച്ച വിജയം നേടിയെങ്കിലും, ദൈനംദിന ജീവിതത്തിലെ അവ്യക്തതകളും ഉപമകളും സന്ദർഭോചിത അർത്ഥങ്ങളും മനസ്സിലാക്കാൻ ഇതിന് കഴിഞ്ഞില്ല (ഉദാ: നദിക്കരയും സാമ്പത്തിക ബാങ്കും തമ്മിലുള്ള വ്യത്യാസം).
+                        <br>&bull; <strong>സെൻസറി പരിമിതികൾ:</strong> കാഴ്ചയും ശബ്ദവും പോലുള്ള ഇന്ദ്രിയ വിവരങ്ങൾ വേഗത്തിൽ പ്രോസസ്സ് ചെയ്യാൻ പ്രതീകാത്മക യുക്തി വളരെ മന്ദഗതിയിലായിരുന്നു.
+                        <br>&bull; <strong>ജീവശാസ്ത്രത്തെ അവഗണിക്കൽ:</strong> വികാരങ്ങൾ, ആന്തരിക പ്രേരണകൾ, സഹജാവബോധം എന്നിവയെ പാടേ തള്ളിക്കളഞ്ഞ് ബുദ്ധിയെ കേവലം യാന്ത്രികമായ കണക്കുകൂട്ടലായി കണ്ടതാണ് ഇതിന്റെ പതനത്തിന് വഴിവെച്ചത്.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <span class="example-tag">ഉദാഹരണം (Textbook Metaphor):</span> "ബാങ്കിൽ പണം നിക്ഷേപിച്ചു" എന്നതിലെ ബാങ്കിനെ നദിയുടെ തീരമായി സിസ്റ്റം തെറ്റിദ്ധരിക്കുന്നത് പോലെ സന്ദർഭബോധമില്ലാത്ത ക്ലാസിക്കൽ എഐയുടെ ദുർബലത (Brittleness).
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">The Frame Problem, Commonsense Deficiency & Systemic Brittleness &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 09 of 10</div>
+        </div>
+        
+    </div>
+    
+    <div class="page-container" id="page-10">
+        
+        <div class="header-banner">
+            <div class="header-banner-inner">
+                <div class="header-titles">
+                    <div class="super-title">Module 2: Classical Version of Artificial Intelligence &bull; University of Calicut Syllabus</div>
+                    <div class="main-title">Chapter 4: Problems in the Classical Model of AI (GOFAI)</div>
+                    <div class="sub-title">ക്ലാസിക്കൽ എഐ മാതൃകയിലെ പ്രതിസന്ധികൾ</div>
+                </div>
+                <div class="badge-pill-container">
+                    <div class="badge-pill badge-pill-outline">PHL1MN102 &bull; Core Reading</div>
+                    <div class="badge-pill">Strictly 100% Calicut University LMS</div>
+                    <div class="badge-pill">Master Page 10 / 10</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-intro-bar">
+            <div class="section-title">Section 10: 20 High-Yield Exam "Knock Your Brain" Key Concepts &bull; പരീക്ഷാ പ്രധാന ആശയങ്ങൾ</div>
+            <div class="section-meta">Textbook Review Questions & Key Concepts &bull; Unit 4.10</div>
+        </div>
+        <div class="content-body">
+            <div class="knock-grid-container">
+                <!-- Column 1 (Cards 1 to 10) -->
+                <div class="knock-col">
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">01</span>
+                                <span class="knock-card-title-en">Classical AI Model (GOFAI)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">സിംബോളിക് അല്ലെങ്കിൽ റൂൾ-ബേസ്ഡ് എഐ</div>
+                        <div class="knock-card-desc">1950s-1960s paradigm assuming intelligence can be replicated via formal logic and physical symbol manipulation.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">02</span>
+                                <span class="knock-card-title-en">Macroscopic Perspective</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">എഐയുടെ സ്ഥൂല വീക്ഷണം</div>
+                        <div class="knock-card-desc">Models cognition through high-level mathematical and algebraic abstraction, comparing the mind to computer software.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">03</span>
+                                <span class="knock-card-title-en">Cognitive Simulation</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">മനശ്ശാസ്ത്രപരമായ ചിന്താ അനുകരണം</div>
+                        <div class="knock-card-desc">Newell and Simon's paradigm seeking to emulate human psychological heuristics and problem-solving steps.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">04</span>
+                                <span class="knock-card-title-en">Logic-Based AI</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ജോൺ മക്കാർത്തിയുടെ ലോജിക് സമീപനം</div>
+                        <div class="knock-card-desc">Constructs intelligent systems based on codified mathematical logic and automated deduction rather than human mimicry.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">05</span>
+                                <span class="knock-card-title-en">State Space Search</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">സ്റ്റേറ്റ് സ്പേസ് സെർച്ച് രീതി</div>
+                        <div class="knock-card-desc">Problem solving formulated as navigating a graph of states from an initial configuration to a goal state using operators.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">06</span>
+                                <span class="knock-card-title-en">The 8-Puzzle Problem</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">8-പസിൽ ക്ലാസിക്കൽ സമസ്യ</div>
+                        <div class="knock-card-desc">Classic benchmark illustrating combinatorial explosion (181,440 states) and the vital necessity of heuristic pruning.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">07</span>
+                                <span class="knock-card-title-en">Heuristic Functions</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ഹ്യൂറിസ്റ്റിക് കണക്കുകൂട്ടലുകൾ</div>
+                        <div class="knock-card-desc">Domain-specific rules of thumb estimating proximity or remaining cost to the goal (e.g., misplaced tiles, Manhattan distance).</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">08</span>
+                                <span class="knock-card-title-en">Means-Ends Analysis (MEA)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ലക്ഷ്യ-മാർഗ്ഗ വിശകലനം</div>
+                        <div class="knock-card-desc">Heuristic strategy continuously comparing current state to goal state to select operators that reduce the largest difference.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">09</span>
+                                <span class="knock-card-title-en">General Problem Solver (GPS)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ജനറൽ പ്രോബ്ലം സോൾവർ (1957)</div>
+                        <div class="knock-card-desc">Pioneering program by Newell and Simon implementing MEA, problem reduction, and transparent hierarchical subgoaling.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">10</span>
+                                <span class="knock-card-title-en">Declarative Paradigm</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">പ്രഖ്യാപന പ്രോഗ്രാമിംഗ് രീതി</div>
+                        <div class="knock-card-desc">Specifying what properties a solution must have rather than how to compute it, delegating proof to an inference engine.</div>
+                    </div>
+                </div>
+
+                <!-- Column 2 (Cards 11 to 20) -->
+                <div class="knock-col">
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">11</span>
+                                <span class="knock-card-title-en">First-Order Logic (FOL)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">പ്രെഡിക്കേറ്റ് ലോജിക്</div>
+                        <div class="knock-card-desc">Expressive formal language handling objects, predicates, and quantifiers, powering automated deduction and theorem proving.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">12</span>
+                                <span class="knock-card-title-en">Production Rules (IF-THEN)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">പ്രൊഡക്ഷൻ നിയമങ്ങൾ</div>
+                        <div class="knock-card-desc">Knowledge stored as condition-action pairs: IF antecedent condition is met, THEN execute consequent action or assertion.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">13</span>
+                                <span class="knock-card-title-en">Forward vs Backward Chaining</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ഡാറ്റാ-ഡ്രൈവൻ vs ഗോൾ-ഡ്രൈവൻ രീതികൾ</div>
+                        <div class="knock-card-desc">Forward chaining reasons from known facts to conclusions; Backward chaining reasons backward from a goal hypothesis.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">14</span>
+                                <span class="knock-card-title-en">Semantic Networks</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">സെമാന്റിക് നെറ്റ്‌വർക്കുകൾ</div>
+                        <div class="knock-card-desc">Graph structures representing concepts as nodes and relations as links, facilitating rapid property inheritance.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">15</span>
+                                <span class="knock-card-title-en">Marvin Minsky's Frames (1974)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">മിൻസ്കിയുടെ ഫ്രെയിമുകൾ</div>
+                        <div class="knock-card-desc">Schema data structures containing named slots and default values, allowing swift commonsense inferences about objects.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">16</span>
+                                <span class="knock-card-title-en">Roger Schank's Scripts</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">റോജർ ഷാങ്കിന്റെ സ്ക്രിപ്റ്റുകൾ</div>
+                        <div class="knock-card-desc">Structures representing stereotypical sequences of everyday human events (e.g., entering, ordering, dining in a restaurant).</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">17</span>
+                                <span class="knock-card-title-en">SNARC Neural Network (1951)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ആദ്യത്തെ ന്യൂറൽ നെറ്റ്‌വർക്ക് മെഷീൻ</div>
+                        <div class="knock-card-desc">Minsky and Edmonds built the first artificial neural network using vacuum tubes to simulate a maze-navigating rat.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">18</span>
+                                <span class="knock-card-title-en">PSSH (Newell & Simon 1976)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">ഫിസിക്കൽ സിംബൽ സിസ്റ്റം സിദ്ധാന്തം</div>
+                        <div class="knock-card-desc">Physical Symbol System Hypothesis: a physical symbol system has the necessary and sufficient means for general intelligent action.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">19</span>
+                                <span class="knock-card-title-en">The Frame Problem (1969)</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">മക്കാർത്തി-ഹെയ്സ് ഫ്രെയിം പ്രതിസന്ധി</div>
+                        <div class="knock-card-desc">The computational dilemma of efficiently identifying which facts in a changing environment remain unaffected by actions.</div>
+                    </div>
+
+                    <div class="knock-card">
+                        <div class="knock-card-header">
+                            <div class="knock-card-title-wrap">
+                                <span class="knock-card-num">20</span>
+                                <span class="knock-card-title-en">Brittleness of Classical AI</span>
+                            </div>
+                        </div>
+                        <div class="knock-card-title-ml">കോമൺസെൻസ് ഇല്ലായ്മയും തകർച്ചയും</div>
+                        <div class="knock-card-desc">Inability to handle context, ambiguity, metaphors, or dynamic change, causing catastrophic breakdown in real-world settings.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bar">
+            <div class="footer-left">PHL1MN102: Philosophy of AI &bull; Calicut University LMS Study Guide</div>
+            <div class="footer-center">20 High-Yield Exam 'Knock Your Brain' Master Concepts &bull; Dual Bilingual Comprehensive Analysis</div>
+            <div class="footer-right">Page 10 of 10</div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
