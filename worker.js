@@ -1744,7 +1744,10 @@ details.section-details summary:hover, details.popular-details summary:hover {
       if (p.includes('ai-reading')) return '📖 AI & Philosophy Reading';
       if (p.includes('about')) return 'ℹ️ About Hub';
       if (p.includes('contact')) return '📬 Contact';
-      return '📄 ' + String(path).replace(/^\//, '').replace(/\.html$/, '').replace(/[-_]+/g, ' ');
+      let clean = String(path || '');
+      if (clean.startsWith('/')) clean = clean.slice(1);
+      if (clean.endsWith('.html')) clean = clean.slice(0, -5);
+      return '📄 ' + clean.split(/[-_]+/).join(' ');
     }
 
     function formatShortIP(ip) {
