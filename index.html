@@ -1899,31 +1899,254 @@
     }
 
     .study-decks-grid {
-
       display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-
     }
 
-    @media(max-width: 900px) {
-
+    @media(max-width: 1024px) {
       .study-decks-grid {
-
         grid-template-columns: 1fr;
-
         gap: 18px;
-
       }
-
       .study-lounge-section {
-
         padding: 16px;
-
       }
+    }
 
+    /* 3-Card Video Decks Styling */
+    .study-video-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .study-video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.09);
+      border-color: #cbd5e1;
+    }
+    .video-card-header {
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f8fafc;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .stream-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .tag-soc { background: #eff6ff; color: #1d4ed8; border: 1px solid #dbeafe; }
+    .tag-econ { background: #ecfdf5; color: #047857; border: 1px solid #d1fae5; }
+    .tag-eth { background: #faf5ff; color: #7e22ce; border: 1px solid #f3e8ff; }
+    .btn-card-shuffle {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 4px 9px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+    .btn-card-shuffle:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+      border-color: #94a3b8;
+    }
+    .video-deck-thumb-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #0f172a;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .video-deck-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .video-deck-thumb-wrap:hover .video-deck-thumb {
+      transform: scale(1.04);
+    }
+    .play-btn-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 36px;
+      background: rgba(220, 38, 38, 0.95);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, background 0.2s ease;
+      pointer-events: none;
+    }
+    .play-btn-overlay::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7px 0 7px 12px;
+      border-color: transparent transparent transparent #ffffff;
+      margin-left: 2px;
+    }
+    .video-deck-thumb-wrap:hover .play-btn-overlay {
+      transform: translate(-50%, -50%) scale(1.12);
+      background: #ef4444;
+    }
+    .duration-pill {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(15, 23, 42, 0.88);
+      color: #f8fafc;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 5px;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(4px);
+    }
+    .live-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 3px 7px;
+      border-radius: 4px;
+    }
+    .video-card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .video-meta-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .video-deck-module {
+      font-size: 11px;
+      font-weight: 700;
+      color: #d97706;
+      margin-bottom: 2px;
+      display: block;
+    }
+    .video-deck-title-mal {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .video-deck-title-en {
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .video-deck-watch-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 9px 12px;
+      border-radius: 10px;
+      background: #f8fafc;
+      color: #1e293b;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s ease;
+    }
+    .video-deck-watch-link:hover {
+      background: #fee2e2;
+      color: #dc2626;
+      border-color: #fca5a5;
+    }
+    .top-action-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-shuffle-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #92400e;
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-shuffle-all:hover {
+      background: #fde68a;
+    }
+    .btn-yt-channel {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffffff;
+      background: #dc2626;
+      border: 1px solid #b91c1c;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(220, 38, 38, 0.2);
+      transition: all 0.2s ease;
+    }
+    .btn-yt-channel:hover {
+      background: #b91c1c;
     }
 
 
@@ -4822,219 +5045,105 @@
     <section id="study-lounge" class="study-lounge-section" aria-labelledby="study-lounge-title">
 
       <div class="study-lounge-top">
-
         <div class="study-lounge-heading">
-
-          <div class="study-lounge-eyebrow"><span aria-hidden="true">✦</span> INTERACTIVE REVISION DECKS</div>
-
-          <h2 id="study-lounge-title">Active Recall &amp; Learning Hub</h2>
-
-          <p>Bilingual flashcards for core degree subjects &amp; languages, plus interactive English grammar challenges.</p>
-
+          <div class="study-lounge-eyebrow"><span aria-hidden="true">✦</span> REVISION VIDEO DECKS · ACADEMIC HUB</div>
+          <h2 id="study-lounge-title">Active Recall &amp; Video Learning Hub</h2>
+          <p>Curated degree video masterclasses from our official channel. 3 random lectures rotating across core subjects.</p>
         </div>
-
+        
+        <div class="top-action-bar">
+          <button id="btn-shuffle-all-streams" class="btn-shuffle-all" type="button" title="Shuffle all 3 streams">↻ Shuffle All 3</button>
+          <a href="https://www.youtube.com/@AcademicHub" target="_blank" rel="noopener noreferrer" class="btn-yt-channel">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Channel Home ↗
+          </a>
+        </div>
       </div>
 
-
-
       <div class="study-decks-grid">
-
-        <!-- CARD 1: SUBJECTS & LANGUAGES DECK -->
-
-        <div class="flashcard-deck deck-subjects" aria-label="Subjects & Languages Revision Cards">
-
-          <div class="flashcard-deck-header">
-
-            <div class="deck-title-wrap">
-
-              <span class="deck-icon" aria-hidden="true">🏛</span>
-
-              <div>
-
-                <h3 class="deck-title">Subjects &amp; Languages</h3>
-
-                <div class="deck-subtitle-row">
-
-                  <div class="filter-wrap">
-
-                    <select id="subject-filter" class="filter-select subject-filter-select" aria-label="Filter Subject or Language">
-
-                      <option value="all">All Subjects &amp; Languages</option>
-
-                      <option value="sociology">Sociology</option>
-
-                      <option value="history">History of Keralam</option>
-
-                      <option value="philosophy">Philosophy &amp; Ethics</option>
-
-                      <option value="economics">Economics &amp; Indian Economy</option>
-
-                      <option value="english">English (ENG1FA101)</option>
-
-                      <option value="malayalam">Malayalam (AEC സാഹിത്യം)</option>
-
-                      <option value="arabic">Arabic (ARA1FA102 Basic Skills)</option>
-
-                      <option value="hindi">Hindi (BA Hindi Sahitya)</option>
-
-                      <option value="mathematics">Mathematics</option>
-
-                    </select>
-
-                  </div>
-
-                  <span class="flashcard-tag tag-sub" id="soc-card-subject">Sociology</span>
-
-                </div>
-
-              </div>
-
+        
+        <!-- CARD 1: Sociology & History -->
+        <div class="study-video-card" id="video-card-stream-1" aria-label="Sociology and History Video Deck">
+          <div class="video-card-header">
+            <span class="stream-tag tag-soc">🏛 Sociology &amp; History</span>
+            <button id="btn-shuffle-stream-1" class="btn-card-shuffle" type="button" title="Next video in Sociology & History">↻ Next</button>
+          </div>
+          
+          <div class="video-deck-thumb-wrap" tabindex="0" role="button" aria-label="Play on YouTube">
+            <img class="video-deck-thumb" src="https://img.youtube.com/vi/zEagx74glsc/hqdefault.jpg" alt="Sociology lecture thumbnail">
+            <div class="live-badge">HD Masterclass</div>
+            <div class="play-btn-overlay"></div>
+            <div class="duration-pill">Malayalam / Eng</div>
+          </div>
+          
+          <div class="video-card-body">
+            <div class="video-meta-block">
+              <span class="video-deck-module">Module 4 · Sociology</span>
+              <div class="video-deck-title-mal">കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം</div>
+              <div class="video-deck-title-en">Society: Types &amp; Evolution | FYUGP</div>
             </div>
-
-            <span class="flashcard-counter" id="soc-card-counter" style="display:none;" aria-hidden="true"></span>
-
+            
+            <a href="https://www.youtube.com/watch?v=zEagx74glsc" target="_blank" rel="noopener noreferrer" class="video-deck-watch-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#dc2626"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              Watch on YouTube ↗
+            </a>
           </div>
-
-
-
-          <div class="flashcard-box" id="soc-flashcard-box" tabindex="0" role="button" aria-label="Click to flip Subjects card">
-
-            <div class="flashcard-inner" id="soc-flashcard-inner">
-
-              <div class="flashcard-front">
-
-                <span class="flashcard-badge sub-badge">TAP TO FLIP ↻</span>
-
-                <h4 id="soc-card-front-title">Socialisation</h4>
-
-                <h5 id="soc-card-front-mal" lang="ml">സാമൂഹികവൽക്കരണം</h5>
-
-                <p id="soc-card-front-hint">What is the core sociological definition &amp; key agents?</p>
-
-              </div>
-
-              <div class="flashcard-back">
-
-                <span class="flashcard-badge sub-badge-back">EXAM SUMMARY ✓</span>
-
-                <p id="soc-card-back-en">The lifelong process of acquiring culture, values, and norms to become a functioning member of society. Key agents: Family, School, Peer Groups, and Media.</p>
-
-                <p id="soc-card-back-ml" lang="ml">വ്യക്തി സമൂഹത്തിന്റെ സംസ്കാരവും മൂല്യങ്ങളും പെരുമാറ്റച്ചട്ടങ്ങളും പഠിച്ചെടുത്ത് ഒരു സാമൂഹിക ജീവിയായി മാറുന്ന പ്രക്രിയ. പ്രധാന ഘടകങ്ങൾ: കുടുംബം, സ്കൂൾ, കൂട്ടുകാർ, മാധ്യമങ്ങൾ.</p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-          <div class="flashcard-nav">
-
-            <button type="button" id="soc-prev-card" class="lounge-btn-sm" aria-label="Previous card">← Prev</button>
-
-            <button type="button" id="soc-flip-card-btn" class="lounge-btn-sm lounge-btn-sub">Flip Card ↻</button>
-
-            <button type="button" id="soc-next-card" class="lounge-btn-sm" aria-label="Next card">Next →</button>
-
-          </div>
-
         </div>
 
-
-
-        <!-- CARD 2: ENGLISH LEARNING CARDS -->
-
-        <div class="flashcard-deck deck-english" aria-label="English Learning and Grammar Cards">
-
-          <div class="flashcard-deck-header">
-
-            <div class="deck-title-wrap">
-
-              <span class="deck-icon" aria-hidden="true">📖</span>
-
-              <div>
-
-                <h3 class="deck-title">English Learning Cards</h3>
-
-                <div class="deck-subtitle-row">
-
-                  <div class="filter-wrap">
-
-                    <select id="grammar-type-filter" class="filter-select grammar-filter-select" aria-label="Filter English Grammar Type">
-
-                      <option value="all">All Grammar Topics</option>
-
-                      <option value="tenses">Tenses &amp; Forms</option>
-
-                      <option value="voice">Active &amp; Passive Voice</option>
-
-                      <option value="speech">Direct &amp; Indirect Speech</option>
-
-                      <option value="prepositions">Prepositions &amp; Phrasals</option>
-
-                      <option value="agreement">Subject-Verb Agreement</option>
-
-                      <option value="errors">Common Errors &amp; Fixes</option>
-
-                    </select>
-
-                  </div>
-
-                </div>
-
-              </div>
-
+        <!-- CARD 2: Economics & Microeconomics -->
+        <div class="study-video-card" id="video-card-stream-2" aria-label="Economics and Microeconomics Video Deck">
+          <div class="video-card-header">
+            <span class="stream-tag tag-econ">📈 Economics &amp; Microeconomics</span>
+            <button id="btn-shuffle-stream-2" class="btn-card-shuffle" type="button" title="Next video in Economics & Microeconomics">↻ Next</button>
+          </div>
+          
+          <div class="video-deck-thumb-wrap" tabindex="0" role="button" aria-label="Play on YouTube">
+            <img class="video-deck-thumb" src="https://img.youtube.com/vi/WYtOkVjW_Wo/hqdefault.jpg" alt="Economics lecture thumbnail">
+            <div class="live-badge">HD Masterclass</div>
+            <div class="play-btn-overlay"></div>
+            <div class="duration-pill">Malayalam / Eng</div>
+          </div>
+          
+          <div class="video-card-body">
+            <div class="video-meta-block">
+              <span class="video-deck-module">Module 2 · Indian Economy</span>
+              <div class="video-deck-title-mal">സ്വർണ്ണം പണയം വെച്ച ഇന്ത്യയുടെ സാമ്പത്തിക ചരിത്രം (1991)</div>
+              <div class="video-deck-title-en">Path Dependence &amp; Crisis: India's Economy 1700–1991</div>
             </div>
-
-            <span class="flashcard-counter" id="eng-card-counter" style="display:none;" aria-hidden="true"></span>
-
+            
+            <a href="https://www.youtube.com/watch?v=WYtOkVjW_Wo" target="_blank" rel="noopener noreferrer" class="video-deck-watch-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#dc2626"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              Watch on YouTube ↗
+            </a>
           </div>
+        </div>
 
-
-
-          <div class="flashcard-box" id="eng-flashcard-box" tabindex="0" role="button" aria-label="Click to flip English Learning card">
-
-            <div class="flashcard-inner" id="eng-flashcard-inner">
-
-              <div class="flashcard-front">
-
-                <span class="flashcard-badge eng-badge">TAP TO CHECK RULE ↻</span>
-
-                <h4 id="eng-card-front-title">She _____ (live) in Calicut since 2018.</h4>
-
-                <h5 id="eng-card-front-mal" lang="ml">മുൻപ് തുടങ്ങി ഇപ്പോഴും തുടരുന്ന കാര്യത്തിന് ഏത് ടെൻസ്?</h5>
-
-                <p id="eng-card-front-hint">Choose: has lived OR lived?</p>
-
-              </div>
-
-              <div class="flashcard-back">
-
-                <span class="flashcard-badge eng-badge-back">GRAMMAR RULE &amp; ANSWER ✓</span>
-
-                <p id="eng-card-back-en"><strong>Answer: has lived</strong><br>Use Present Perfect (has/have + V3) for actions that began in the past and continue into the present with 'since' or 'for'.</p>
-
-                <p id="eng-card-back-ml" lang="ml">കഴിഞ്ഞ കാലത്ത് ആരംഭിച്ച് ഇപ്പോഴും തുടരുന്ന പ്രവർത്തനങ്ങൾക്ക് Present Perfect Tense (has lived) ഉപയോഗിക്കണം.</p>
-
-              </div>
-
+        <!-- CARD 3: Ethics, Philosophy of Education -->
+        <div class="study-video-card" id="video-card-stream-3" aria-label="Ethics and Philosophy of Education Video Deck">
+          <div class="video-card-header">
+            <span class="stream-tag tag-eth">⚖️ Ethics, Philosophy of Education</span>
+            <button id="btn-shuffle-stream-3" class="btn-card-shuffle" type="button" title="Next video in Ethics & Philosophy">↻ Next</button>
+          </div>
+          
+          <div class="video-deck-thumb-wrap" tabindex="0" role="button" aria-label="Play on YouTube">
+            <img class="video-deck-thumb" src="https://img.youtube.com/vi/vyPElWt5Hl4/hqdefault.jpg" alt="Philosophy lecture thumbnail">
+            <div class="live-badge">HD Masterclass</div>
+            <div class="play-btn-overlay"></div>
+            <div class="duration-pill">Malayalam / Eng</div>
+          </div>
+          
+          <div class="video-card-body">
+            <div class="video-meta-block">
+              <span class="video-deck-module">Module 1 · Philosophy of Education</span>
+              <div class="video-deck-title-mal">പാശ്ചാത്യ വിദ്യാഭ്യാസത്തിലെ ആദർശവാദവും പ്രകൃതിവാദവും</div>
+              <div class="video-deck-title-en">Idealism &amp; Naturalism in Western Education</div>
             </div>
-
+            
+            <a href="https://www.youtube.com/watch?v=vyPElWt5Hl4" target="_blank" rel="noopener noreferrer" class="video-deck-watch-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#dc2626"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              Watch on YouTube ↗
+            </a>
           </div>
-
-
-
-          <div class="flashcard-nav">
-
-            <button type="button" id="eng-prev-card" class="lounge-btn-sm" aria-label="Previous card">← Prev</button>
-
-            <button type="button" id="eng-flip-card-btn" class="lounge-btn-sm lounge-btn-eng">Flip Card ↻</button>
-
-            <button type="button" id="eng-next-card" class="lounge-btn-sm" aria-label="Next card">Next →</button>
-
-          </div>
-
         </div>
 
       </div>
@@ -5043,7 +5152,8 @@
 
 
 
-    <script defer src="active-recall-engine.js"></script>
+    <script defer src="study_video_decks_data.js"></script>
+    <script defer src="study_video_decks_engine.js"></script>
 
 
 
