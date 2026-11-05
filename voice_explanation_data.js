@@ -958,14 +958,14 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Chapter 01: Buddhism & Epistemology in AI",
             "duration": "35:16",
             "youtubeId": "Y4zhWiirJkc",
-            "language": "Bilingual (English & Malayalam)",
+            "language": "English",
             "studyPoints": [
-              "അനാത്മവാദം (Anatta / No-Self): ശാശ്വത ചിന്തകനില്ലാതെ ചിന്ത സാധ്യമാണെന്ന ബുദ്ധദർശനം എഐ സാധൂകരിക്കുന്നു; അഹംബോധമില്ലാതെ ഡാറ്റ പ്രോസസ്സ് ചെയ്യുന്ന കമ്പ്യൂട്ടേഷണൽ പ്രക്രിയയാണിത്.",
-              "പ്രതീയത്യസമുത്പാദം (Dependent Origination): പരസ്പര കാരണ-കാര്യ ബന്ധങ്ങളിലൂടെ പ്രതിഭാസങ്ങൾ ഉണ്ടാകുന്നു എന്ന തത്വം എഐ ന്യൂറൽ നെറ്റ്‌വർക്കിലെ കണക്റ്റഡ് നോഡുകളുടെ പ്രവർത്തനത്തിന് സമാനമാണ്.",
-              "പഞ്ചസ്കന്ധങ്ങൾ (Five Skandhas): രൂപം, വേദനാ, സംജ്ഞ, സംസ്‌കാര, വിജ്ഞാന എന്നിവയുടെ സങ്കലനമാണ് മനസ്സ്; ഇത് എഐയിലെ ഡാറ്റ, അൽഗോരിതം, മെമ്മറി എന്നിവയുടെ സമന്വയത്തിന് തുല്യമാണ്.",
-              "ദിങ്നാഗ-ധർമ്മകീർത്തി പ്രമാണങ്ങൾ: പ്രത്യക്ഷവും (Perception) അനുമാനവും (Inference) മാത്രമാണ് അറിവിന്റെ ഉറവിടങ്ങൾ; എഐ സെൻസർ ഇൻപുട്ടും ഇൻഫറൻസ് പ്രക്രിയകളും ഇതിനെ ആധാരമാക്കുന്നു."
+              "Anatta (No-Self Doctrine): Buddhism argues there is no permanent thinker or ego; consciousness is a flow of mental states, mirroring AI where thinking occurs without a metaphysical self.",
+              "Pratityasamutpada (Dependent Origination): Phenomena arise through interconnected causes and conditions; this principle directly parallels computational neural networks and connected nodes.",
+              "The Five Skandhas (Pancha Skandha): Mind consists of form, feeling, perception, dispositions, and consciousness; this modular decomposition reflects computational cognitive architectures.",
+              "Buddhist Epistemology (Dignaga & Dharmakirti): Perception (Pratyaksha) and Inference (Anumana) are the valid sources of knowledge, providing the conceptual foundation for machine learning."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: ബുദ്ധമത അനാത്മവാദവും പഞ്ചസ്കന്ധങ്ങളും മെഷീൻ ലേണിംഗുമായി താരതമ്യം ചെയ്ത് 'Thinking without a Thinker' വിശകലനം ചെയ്യുക."
+            "examTip": "Calicut University FYUGP Question: Explain the concept of 'Thinking without a Thinker' in AI by comparing Buddhist Anatta and the Five Skandhas with modern computational cognitive systems."
           },
           {
             "chapterNumber": "Chapter 02",
