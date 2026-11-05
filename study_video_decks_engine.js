@@ -1,6 +1,7 @@
 /**
  * Academic Hub - 3-Card Rotating Video Decks Engine
  * 100% AdSense Safe (Pure static thumbnails, zero autoplay, zero iframe overhead)
+ * Built-in Dead Video Detection Guard (Auto-skips 404s and YouTube placeholder thumbnails)
  */
 (function() {
   'use strict';
@@ -10,26 +11,33 @@
     if (!data) return;
 
     var streams = {
-      1: { list: data.sociology_history || [], idx: -1, elId: 'video-card-stream-1' },
-      2: { list: data.economics_micro || [], idx: -1, elId: 'video-card-stream-2' },
-      3: { list: data.ethics_philosophy || [], idx: -1, elId: 'video-card-stream-3' }
+      1: { list: (data.sociology_history || []).slice(), idx: -1, elId: 'video-card-stream-1' },
+      2: { list: (data.economics_micro || []).slice(), idx: -1, elId: 'video-card-stream-2' },
+      3: { list: (data.ethics_philosophy || []).slice(), idx: -1, elId: 'video-card-stream-3' }
     };
 
     function getRandomIndex(list, currentIdx) {
-      if (!list || list.length <= 1) return 0;
+      if (!list || list.length === 0) return -1;
+      if (list.length === 1) return 0;
       var newIdx = Math.floor(Math.random() * list.length);
-      while (newIdx === currentIdx) {
+      var tries = 0;
+      while (newIdx === currentIdx && tries < 10) {
         newIdx = Math.floor(Math.random() * list.length);
+        tries++;
       }
       return newIdx;
     }
 
     function renderCard(streamNum, animate) {
       var s = streams[streamNum];
-      if (!s || !s.list.length) return;
+      if (!s || !s.list || !s.list.length) return;
 
       var cardEl = document.getElementById(s.elId);
       if (!cardEl) return;
+
+      if (s.idx < 0 || s.idx >= s.list.length) {
+        s.idx = getRandomIndex(s.list, -1);
+      }
 
       var item = s.list[s.idx];
       if (!item) return;
@@ -43,9 +51,33 @@
 
       function applyData() {
         if (thumbImg) {
+          // Dead video detection guards
+          thumbImg.onerror = function() {
+            // Thumbnail failed to load / 404 -> Prune dead video from memory & skip to next
+            console.warn('[Video Deck] Removing dead video:', item.id);
+            s.list.splice(s.idx, 1);
+            if (s.list.length > 0) {
+              s.idx = getRandomIndex(s.list, -1);
+              renderCard(streamNum, false);
+            }
+          };
+
+          thumbImg.onload = function() {
+            // YouTube placeholder thumbnail for deleted/private videos is 120x90
+            if (thumbImg.naturalWidth === 120 && thumbImg.naturalHeight === 90) {
+              console.warn('[Video Deck] Detected placeholder 120x90 for dead video:', item.id);
+              s.list.splice(s.idx, 1);
+              if (s.list.length > 0) {
+                s.idx = getRandomIndex(s.list, -1);
+                renderCard(streamNum, false);
+              }
+            }
+          };
+
           thumbImg.src = item.thumb;
           thumbImg.alt = item.titleEn || 'Lecture Video';
         }
+
         if (modTag) modTag.textContent = item.module || '';
         if (titleMal) titleMal.textContent = item.titleMal || '';
         if (titleEn) titleEn.textContent = item.titleEn || '';
@@ -58,12 +90,12 @@
       }
 
       if (animate) {
-        cardEl.style.transition = 'opacity 0.22s ease';
+        cardEl.style.transition = 'opacity 0.2s ease';
         cardEl.style.opacity = '0.35';
         setTimeout(function() {
           applyData();
           cardEl.style.opacity = '1';
-        }, 220);
+        }, 200);
       } else {
         applyData();
       }
@@ -71,7 +103,7 @@
 
     function shuffleStream(num, animate) {
       var s = streams[num];
-      if (!s || !s.list.length) return;
+      if (!s || !s.list || !s.list.length) return;
       s.idx = getRandomIndex(s.list, s.idx);
       renderCard(num, animate);
     }
@@ -82,7 +114,7 @@
       shuffleStream(3, animate);
     }
 
-    // Initialize all 3 streams with random picks
+    // Initialize all 3 streams with random active picks
     shuffleAll(false);
 
     // Bind Stream 1 button
@@ -121,7 +153,7 @@
       });
     }
 
-    // Optional gentle idle auto-rotation (rotates one card every 16 seconds if user isn't hovering)
+    // Gentle auto-rotation (rotates one card every 16 seconds if user is idle)
     var currentRotateStream = 1;
     var container = document.getElementById('study-lounge');
     var isHovered = false;

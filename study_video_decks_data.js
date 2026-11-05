@@ -1,4 +1,4 @@
-/* Auto-generated YouTube video deck data for Academic Hub */
+/* Auto-generated VERIFIED ACTIVE YouTube video deck data for Academic Hub */
 window.ACADEMIC_HUB_VIDEO_DECKS = {
   "sociology_history": [
     {
@@ -34,30 +34,6 @@ window.ACADEMIC_HUB_VIDEO_DECKS = {
       "thumb": "https://img.youtube.com/vi/Ie5Iu69-cKQ/hqdefault.jpg"
     },
     {
-      "id": "Jxpad-uweI4",
-      "titleMal": "മനുഷ്യനെ നിയമം പാലിക്കാൻ പ്രേരിപ്പിക്കുന്ന സാമൂഹിക നിയന്ത്രണം",
-      "titleEn": "Social Control & Norms",
-      "module": "Module 2 · Sociology",
-      "url": "https://www.youtube.com/watch?v=Jxpad-uweI4",
-      "thumb": "https://img.youtube.com/vi/Jxpad-uweI4/hqdefault.jpg"
-    },
-    {
-      "id": "9eJugiiYaEU",
-      "titleMal": "സംഘർഷങ്ങൾ എങ്ങനെ സമൂഹത്തെ വളർത്തുന്നു?",
-      "titleEn": "Conflict Theory & Social Change",
-      "module": "Module 3 · Sociology",
-      "url": "https://www.youtube.com/watch?v=9eJugiiYaEU",
-      "thumb": "https://img.youtube.com/vi/9eJugiiYaEU/hqdefault.jpg"
-    },
-    {
-      "id": "spsLKSVtrJ0",
-      "titleMal": "സഹകരണം, മത്സരം, സംഘർഷം: സമൂഹത്തിന്റെ രഹസ്യങ്ങൾ",
-      "titleEn": "Social Processes: Cooperation & Conflict",
-      "module": "Module 2 · Sociology",
-      "url": "https://www.youtube.com/watch?v=spsLKSVtrJ0",
-      "thumb": "https://img.youtube.com/vi/spsLKSVtrJ0/hqdefault.jpg"
-    },
-    {
       "id": "7Qkp0t6g9Qc",
       "titleMal": "പദവികളും റോളുകളും റോൾ കോൺഫ്ലിക്റ്റും",
       "titleEn": "Status, Role & Role Conflict",
@@ -80,14 +56,6 @@ window.ACADEMIC_HUB_VIDEO_DECKS = {
       "module": "Module 1 · Sociology",
       "url": "https://www.youtube.com/watch?v=uf8WYWO9-Tk",
       "thumb": "https://img.youtube.com/vi/uf8WYWO9-Tk/hqdefault.jpg"
-    },
-    {
-      "id": "mUahYKgz1QU",
-      "titleMal": "കാലിക്കറ്റ് സർവ്വകലാശാല സോഷ്യോളജി മൊഡ്യൂൾ 1 സമഗ്ര സംഗ്രഹം",
-      "titleEn": "Calicut University FYUGP Sociology Overview",
-      "module": "Module 1 · Comprehensive",
-      "url": "https://www.youtube.com/watch?v=mUahYKgz1QU",
-      "thumb": "https://img.youtube.com/vi/mUahYKgz1QU/hqdefault.jpg"
     },
     {
       "id": "uyHwUpA5Es0",
@@ -154,46 +122,6 @@ window.ACADEMIC_HUB_VIDEO_DECKS = {
       "module": "Module 3 · Indian Economy",
       "url": "https://www.youtube.com/watch?v=QTHt_P7RIA0",
       "thumb": "https://img.youtube.com/vi/QTHt_P7RIA0/hqdefault.jpg"
-    },
-    {
-      "id": "LuLwWWJsLbA",
-      "titleMal": "ദാരിദ്ര്യരേഖ മുതൽ ബഹുമുഖ ദാരിദ്ര്യ സൂചിക വരെ",
-      "titleEn": "Poverty Line to Multidimensional Poverty Index",
-      "module": "Module 3 · Development Econ",
-      "url": "https://www.youtube.com/watch?v=LuLwWWJsLbA",
-      "thumb": "https://img.youtube.com/vi/LuLwWWJsLbA/hqdefault.jpg"
-    },
-    {
-      "id": "0YWeoTqkcy8",
-      "titleMal": "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയവും പഠന കമ്മിറ്റികളും",
-      "titleEn": "Poverty Estimation & Expert Study Committees",
-      "module": "Module 3 · Indian Economy",
-      "url": "https://www.youtube.com/watch?v=0YWeoTqkcy8",
-      "thumb": "https://img.youtube.com/vi/0YWeoTqkcy8/hqdefault.jpg"
-    },
-    {
-      "id": "zyLCEdHV08U",
-      "titleMal": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയിലെ വൈരുദ്ധ്യങ്ങളും വെല്ലുവിളികളും",
-      "titleEn": "Contradictions & Development Challenges",
-      "module": "Module 2 · Indian Economy",
-      "url": "https://www.youtube.com/watch?v=zyLCEdHV08U",
-      "thumb": "https://img.youtube.com/vi/zyLCEdHV08U/hqdefault.jpg"
-    },
-    {
-      "id": "AI8LbBq33xI",
-      "titleMal": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയുടെ ചരിത്രവും വികസന നയങ്ങളും",
-      "titleEn": "Indian Economy History & Development Policies",
-      "module": "Module 1 · Indian Economy",
-      "url": "https://www.youtube.com/watch?v=AI8LbBq33xI",
-      "thumb": "https://img.youtube.com/vi/AI8LbBq33xI/hqdefault.jpg"
-    },
-    {
-      "id": "_AH-L2-hUdw",
-      "titleMal": "യഥാർത്ഥ വികസനവും സാമ്പത്തിക സ്ഥാപനങ്ങളും",
-      "titleEn": "Real Development & Economic Institutions",
-      "module": "Module 2 · Institutions",
-      "url": "https://www.youtube.com/watch?v=_AH-L2-hUdw",
-      "thumb": "https://img.youtube.com/vi/_AH-L2-hUdw/hqdefault.jpg"
     },
     {
       "id": "j49jvbn7bz4",
@@ -348,14 +276,6 @@ window.ACADEMIC_HUB_VIDEO_DECKS = {
       "module": "Module 1 · Essence",
       "url": "https://www.youtube.com/watch?v=H041V-SUIas",
       "thumb": "https://img.youtube.com/vi/H041V-SUIas/hqdefault.jpg"
-    },
-    {
-      "id": "657kvV7KkvE",
-      "titleMal": "വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും",
-      "titleEn": "Meaning & Historical Perspectives of Education",
-      "module": "Module 1 · Historical",
-      "url": "https://www.youtube.com/watch?v=657kvV7KkvE",
-      "thumb": "https://img.youtube.com/vi/657kvV7KkvE/hqdefault.jpg"
     },
     {
       "id": "OBl1S1edYyU",
