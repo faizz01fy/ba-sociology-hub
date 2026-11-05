@@ -913,17 +913,19 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 09",
-            "title": "സഹകരണം, മത്സരം, സംഘർഷം: സമൂഹത്തിന്റെ രഹസ്യങ്ങൾ (Fundamental Social Processes: Cooperation, Competition & Conflict)",
-            "chapter": "Fundamental Social Processes · Park & Burgess Analysis",
-            "duration": "23",
-            "youtubeId": "TN8LqpBZCGQ",
+            "title": "സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ: തരങ്ങളും പ്രക്രിയകളും (Types of Social Interaction: Cooperation, Competition, Conflict, Accommodation, Assimilation)",
+            "chapter": "Types of Social Interaction · Park & Burgess, Cooley, Mazumdar, Simmel & Baldwin Analysis",
+            "duration": "14:27",
+            "youtubeId": "UoCXp0cj_1g",
+            "thumbnail": "/thumbnails/sociology_sem1_mod3/thumbnail.png",
+            "language": "Malayalam",
             "studyPoints": [
-              "സാമൂഹിക പ്രക്രിയകൾ (Social Processes): വ്യക്തികളും ഗ്രൂപ്പുകളും പരസ്പരം പ്രതിപ്രവർത്തിക്കുന്ന അടിസ്ഥാന രൂപങ്ങൾ.",
-              "സഹകരണം (Cooperation): ഒരു പൊതു ലക്ഷ്യത്തിനായി വ്യക്തികളും ഗ്രൂപ്പുകളും ഒരുമിച്ചു പ്രവർത്തിക്കുന്ന പ്രക്രിയ.",
-              "മത്സരം (Competition): പരിമിതമായ വിഭവങ്ങൾക്കായുള്ള നിയമബദ്ധമായ സമാധാനപരമായ പോരാട്ടം.",
-              "സംഘർഷം (Conflict): എതിരാളിയെ പ്രതിരോധിച്ചോ നേരിട്ടോ സ്വന്തം ലക്ഷ്യം നേടാനുള്ള പ്രക്രിയ."
+              "<strong>സാമൂഹിക പ്രതിപ്രവർത്തനം (Social Interaction):</strong> മനുഷ്യ ബന്ധങ്ങളുടെ അടിസ്ഥാന ശില; ഗ്രീൻ, പാർക്ക് & ബർഗസ്, ഡോസൺ & ഗെറ്റിസ് എന്നിവരുടെ നിർവ്വചനങ്ങൾ; സമ്പർക്കവും (Contact in Time & Space) ആശയവിനിമയവും.",
+              "<strong>സഹകരണം (Cooperation):</strong> ലാറ്റിൻ 'co' + 'operating'; പൊതു ലക്ഷ്യവും സംഘടിത അദ്ധ്വാനവും; പ്രത്യക്ഷ, പരോക്ഷ, പ്രൈമറി, സെക്കൻഡറി, ടെർഷ്യറി സഹകരണങ്ങൾ; സി.എച്ച്. കൂലി, യംഗ് & മാക്ക്, മാക്ഐവർ വിശകലനം.",
+              "<strong>മത്സരം (Competition):</strong> പരിമിതമായ വിഭവങ്ങൾ നേടാനായുള്ള അവ്യക്തിക സമാധാനപരമായ പോരാട്ടം; പാർക്ക് & ബർഗസ് ('Interaction without social contact'); എച്ച്.ടി. മജുംദാറിന്റെ 5 ഗുണധർമ്മങ്ങളും 3 ദോഷങ്ങളും.",
+              "<strong>സംഘർഷം, അനുരഞ്ജനം & സ്വാംശീകരണം:</strong> സംഘർഷത്തിന്റെ കാരണങ്ങൾ, ജോർജ്ജ് സിമ്മലിന്റെ 4 തരങ്ങൾ, ഗില്ലിന്റെ 5 രൂപങ്ങൾ, ലൂയിസ് കോസറുടെ സേഫ്റ്റി വാൽവ് ധർമ്മങ്ങൾ; ജെ.എം. ബാൾഡ്വിന്റെ അക്കോമഡേഷനും 7 രീതികളും; പാർക്ക് & ബർഗസിന്റെ അസിമിലേഷനും തടസ്സങ്ങളും. ഒപ്പം 31 സോൾവ്ഡ് MCQs & യൂണിവേഴ്സിറ്റി ഉപന്യാസ സഹായി."
             ],
-            "examTip": "ഹ്രസ്വ ഉപന്യാസം: 'Define Social Processes and distinguish between Cooperation, Competition and Conflict'."
+            "examTip": "Calicut University 10-മാർക്ക് ഉപന്യാസം: 'Define Social Interaction and explain the major forms: Cooperation, Competition, Conflict, Accommodation and Assimilation with examples' & 31 മോഡൽ MCQs."
           },
           {
             "chapterNumber": "Chapter 10",
