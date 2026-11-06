@@ -717,6 +717,7 @@ export class StudyHubChat {
           livePages.set(k, g);
         }
 
+        const yesterday = await this.getYesterdayStats(now, safeTraffic, safeSections, ownerIp);
         return json({
           ok: true,
           records,
@@ -724,6 +725,7 @@ export class StudyHubChat {
           views: safeTraffic.length,
           uniqueIPs: uniqueIPs.size,
           today,
+          yesterday,
           liveData: {
             active: liveEntries.length,
             pages: Array.from(livePages.values()).sort((a,b) => b.count - a.count)
@@ -773,12 +775,14 @@ export class StudyHubChat {
         ]);
         const records = groupTrafficByIP(safeTraffic, safeSections, ownerIp);
         const popularPages = groupPopularPages(safeSections, ownerIp);
+        const yesterday = await this.getYesterdayStats(now, safeTraffic, safeSections, ownerIp);
         return json({
           records,
           popularPages,
           views: safeTraffic.length,
           uniqueIPs: uniqueIPs.size,
           today,
+          yesterday,
           updatedAt: now
         });
       } catch (err) {
@@ -797,6 +801,59 @@ export class StudyHubChat {
     return json({error:"Not found"},404);
   }
 
+
+  async getYesterdayStats(now, safeTraffic, safeSections, ownerIp = "") {
+    const yesterdayDay = indiaDay(now - 24 * 60 * 60 * 1000);
+    let yesterdayDaily = null;
+    try {
+      yesterdayDaily = await this.state.storage.get("daily:" + yesterdayDay);
+    } catch (e) {}
+    const yesterdayTraffic = safeTraffic.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp) && indiaDay(r.time) === yesterdayDay);
+    const yesterdaySections = safeSections.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp) && indiaDay(r.time) === yesterdayDay);
+    const yesterdayIPs = new Set([
+      ...yesterdayTraffic.map(r => r && r.ip).filter(Boolean),
+      ...yesterdaySections.map(r => r && r.ip).filter(Boolean)
+    ]);
+    const yesterdayViews = Math.max(yesterdayDaily?.views || 0, yesterdayTraffic.length);
+    const yesterdayVisitors = Math.max(yesterdayDaily?.visitors || 0, yesterdayIPs.size);
+    const yesterdayRecords = groupTrafficByIP(yesterdayTraffic, yesterdaySections, ownerIp);
+    const yesterdayPopular = groupPopularPages(yesterdaySections, ownerIp);
+
+    const yesterdayHourly = Array(24).fill(0);
+    for (const r of yesterdayTraffic) {
+      const h = new Date(r.time + 330 * 60 * 1000).getUTCHours();
+      if (h >= 0 && h < 24) yesterdayHourly[h]++;
+    }
+    let yPeakHour = 0, yPeakViews = 0;
+    yesterdayHourly.forEach((cnt, h) => {
+      if (cnt > yPeakViews) { yPeakViews = cnt; yPeakHour = h; }
+    });
+
+    const devices = {};
+    const referrers = {};
+    const locations = {};
+    for (const r of yesterdayRecords) {
+      const dev = r.device || "Mobile / Web";
+      devices[dev] = (devices[dev] || 0) + (r.visits || 1);
+      const src = r.ref || "Direct / Saved";
+      referrers[src] = (referrers[src] || 0) + (r.visits || 1);
+      const loc = [r.city, r.region].filter(Boolean).join(", ") || (r.country && r.country !== "XX" ? r.country : "Unknown");
+      locations[loc] = (locations[loc] || 0) + (r.visits || 1);
+    }
+
+    return {
+      day: yesterdayDay,
+      views: yesterdayViews,
+      visitors: yesterdayVisitors,
+      records: yesterdayRecords,
+      popularPages: yesterdayPopular,
+      hourly: yesterdayHourly,
+      peakHour: { hour: yPeakHour, views: yPeakViews },
+      devices,
+      referrers,
+      locations
+    };
+  }
 
   async countVisit(now, ip, records, isOwner = false) {
     const day = indiaDay(now);
@@ -901,13 +958,16 @@ function adminPage(authorized, initialData = null) {
   const topViews = topContent ? (topContent.visits + ' views') : '0 views';
   const topVisitors = topContent ? ((topContent.visitors?.length || 0) + ' visitors') : '0 visitors';
   const liveActive = d.liveData?.active || 0;
+  const yesterday = d.yesterday || {};
+  const yesterdayViews = yesterday.views || 0;
+  const yesterdayVisitors = yesterday.visitors || 0;
 
   const content = authorized ? `
 <header class="hud-header">
   <div class="brand-title">
     <div class="brand-radar"></div>
     <div class="brand-text">
-      <h1>ACADEMIC HUB // CONTROL ROOM <span>TRAFFIC WATCH</span></h1>
+      <h1>ACADEMIC HUB // CONTROL ROOM <span>TRAFFIC TERMINAL</span></h1>
       <div class="brand-sub">OPERATIONS WATCH & VISITOR TELEMETRY · SECURE OWNER CONSOLE</div>
     </div>
   </div>
@@ -987,17 +1047,35 @@ function adminPage(authorized, initialData = null) {
       <span class="kpi-title">TOP ACCESSED CONTENT</span>
       <span class="kpi-badge popular">LEADER</span>
     </div>
-    <div class="kpi-val" style="font-size:20px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" id="top-content-name">${topName}</div>
+    <div class="kpi-val" style="font-size:18px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" id="top-content-name">${topName}</div>
     <div class="kpi-foot">
       <span class="highlight" id="top-content-views">${topViews}</span> · <span id="top-content-visitors">${topVisitors}</span>
     </div>
   </div>
 </section>
 
+<!-- ULTRA-PREMIUM NAVIGATION TABS -->
 <nav class="nav-tabs" role="tablist">
-  <button class="tab-btn active" id="tab-btn-geo" type="button" role="tab" aria-selected="true">👥 VISITORS & IP AUDIT <span class="badge-pill" id="badge-total-ips">${bufferIps} IPs</span></button>
-  <button class="tab-btn" id="tab-btn-radar" type="button" role="tab" aria-selected="false">🛰️ LIVE RADAR PRESENCE <span class="badge-pill" id="badge-live-tabs">${liveActive} ACTIVE</span></button>
-  <button class="tab-btn" id="tab-btn-content" type="button" role="tab" aria-selected="false">📊 CONTENT LEADERBOARD <span class="badge-pill" id="badge-total-pages">${popularPages.length}</span></button>
+  <button class="tab-btn active" id="tab-btn-geo" type="button" role="tab" aria-selected="true">
+    <span class="tab-icon">👥</span>
+    <span class="tab-title">VISITORS & IP AUDIT</span>
+    <span class="badge-pill cyan" id="badge-total-ips">${bufferIps} IPs</span>
+  </button>
+  <button class="tab-btn" id="tab-btn-yesterday" type="button" role="tab" aria-selected="false">
+    <span class="tab-icon">⏮️</span>
+    <span class="tab-title">YESTERDAY'S RECAP</span>
+    <span class="badge-pill gold" id="badge-yesterday-views">${yesterdayViews} VIEWS</span>
+  </button>
+  <button class="tab-btn" id="tab-btn-radar" type="button" role="tab" aria-selected="false">
+    <span class="tab-icon">🛰️</span>
+    <span class="tab-title">LIVE RADAR PRESENCE</span>
+    <span class="badge-pill emerald" id="badge-live-tabs">${liveActive} ACTIVE</span>
+  </button>
+  <button class="tab-btn" id="tab-btn-content" type="button" role="tab" aria-selected="false">
+    <span class="tab-icon">📊</span>
+    <span class="tab-title">CONTENT LEADERBOARD</span>
+    <span class="badge-pill purple" id="badge-total-pages">${popularPages.length}</span>
+  </button>
 </nav>
 
 <main class="control-panel">
@@ -1005,7 +1083,7 @@ function adminPage(authorized, initialData = null) {
   <section class="station-card" id="panel-geo">
     <div class="station-header">
       <div>
-        <h2><span class="station-dot"></span> VISITOR AUDIT & INGRESS TELEMETRY</h2>
+        <h2><span class="station-dot cyan"></span> VISITOR AUDIT & INGRESS TELEMETRY</h2>
         <p class="station-desc">Deep telemetry records by visitor IP, regional geolocations, visit velocity, and chronological section breadcrumbs.</p>
       </div>
       <div>
@@ -1062,11 +1140,187 @@ function adminPage(authorized, initialData = null) {
     </div>
   </section>
 
-  <!-- TAB 2: LIVE AUDIENCE RADAR -->
+  <!-- TAB 2: YESTERDAY TELEMETRY & KNOWLEDGE RECAP (NEW TAB!) -->
+  <section class="station-card" id="panel-yesterday" hidden>
+    <div class="station-header">
+      <div>
+        <h2><span class="station-dot gold"></span> YESTERDAY TELEMETRY & KNOWLEDGE RECAP</h2>
+        <p class="station-desc">24-hour retrospective of yesterday's student ingress, popular study assets, traffic velocity, and platform demographics.</p>
+      </div>
+      <div class="header-action-group">
+        <span class="date-chip" id="yesterday-date-chip">📅 YESTERDAY (IST)</span>
+        <button class="btn btn-gold" id="btn-export-yesterday" type="button">📥 EXPORT YESTERDAY CSV</button>
+      </div>
+    </div>
+
+    <!-- EXECUTIVE BRIEFING / KNOWLEDGE DIGEST -->
+    <div class="yesterday-digest-card">
+      <div class="digest-header">
+        <div class="digest-badge">⚡ EXECUTIVE TELEMETRY BRIEF</div>
+        <div class="digest-time" id="yesterday-range-text">24-HOUR IST WINDOW (00:00 – 23:59 IST)</div>
+      </div>
+      <div class="digest-summary-text" id="yesterday-brief-text">
+        Synthesizing yesterday's learning telemetry...
+      </div>
+      <div class="digest-quick-grid">
+        <div class="dq-item">
+          <span class="dq-label">TOP STUDY CONTENT</span>
+          <span class="dq-value highlight-cyan" id="yd-top-content">—</span>
+        </div>
+        <div class="dq-item">
+          <span class="dq-label">PEAK STUDY RUSH</span>
+          <span class="dq-value highlight-gold" id="yd-peak-hour">—</span>
+        </div>
+        <div class="dq-item">
+          <span class="dq-label">PRIMARY DEVICE</span>
+          <span class="dq-value highlight-emerald" id="yd-primary-device">—</span>
+        </div>
+        <div class="dq-item">
+          <span class="dq-label">MAIN INGRESS SOURCE</span>
+          <span class="dq-value highlight-purple" id="yd-primary-source">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 YESTERDAY METRIC CARDS -->
+    <div class="yesterday-kpi-grid">
+      <div class="ykpi-card views">
+        <div class="ykpi-label">TOTAL VIEWS YESTERDAY</div>
+        <div class="ykpi-val"><span id="yd-kpi-views">${yesterdayViews}</span> <small>VIEWS</small></div>
+        <div class="ykpi-sub">Total page requests logged</div>
+      </div>
+      <div class="ykpi-card visitors">
+        <div class="ykpi-label">UNIQUE STUDENT VISITORS</div>
+        <div class="ykpi-val"><span id="yd-kpi-visitors">${yesterdayVisitors}</span> <small>STUDENTS</small></div>
+        <div class="ykpi-sub">Distinct client IP addresses</div>
+      </div>
+      <div class="ykpi-card ratio">
+        <div class="ykpi-label">STUDY DEPTH RATIO</div>
+        <div class="ykpi-val"><span id="yd-kpi-ratio">0.0</span> <small>VIEWS/USER</small></div>
+        <div class="ykpi-sub">Average materials read per student</div>
+      </div>
+      <div class="ykpi-card repeats">
+        <div class="ykpi-label">REPEAT STUDY SESSIONS</div>
+        <div class="ykpi-val"><span id="yd-kpi-repeats">0%</span> <small>LOYAL</small></div>
+        <div class="ykpi-sub"><span id="yd-kpi-repeat-count">0</span> repeat learners returned</div>
+      </div>
+    </div>
+
+    <!-- 24-HOUR TRAFFIC VELOCITY HOURLY INGRESS BAR CHART -->
+    <div class="yesterday-chart-card">
+      <div class="chart-header">
+        <div>
+          <h3 class="chart-title">
+            <span class="chart-icon">📊</span> 24-HOUR TRAFFIC VELOCITY (IST HOURLY INGRESS)
+          </h3>
+          <p class="chart-desc">Visual distribution of student requests from 00:00 to 23:00 IST yesterday.</p>
+        </div>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-dot normal"></span> Standard Hour</span>
+          <span class="legend-item"><span class="legend-dot peak"></span> Peak Rush Hour</span>
+        </div>
+      </div>
+      <div class="chart-bars-wrap" id="yesterday-hourly-chart">
+        <!-- 24 hourly bars rendered dynamically -->
+      </div>
+      <div class="chart-time-labels">
+        <span>00:00</span>
+        <span>04:00</span>
+        <span>08:00</span>
+        <span>12:00</span>
+        <span>16:00</span>
+        <span>20:00</span>
+        <span>23:00</span>
+      </div>
+    </div>
+
+    <!-- DUAL SPLIT GRID: TOP CONTENT & AUDIENCE DEMOGRAPHICS -->
+    <div class="yesterday-split-grid">
+      <!-- Left: Top Content Studied Yesterday -->
+      <div class="station-subcard">
+        <div class="subcard-head">
+          <h4><span class="subcard-icon">🏆</span> TOP CONTENT STUDIED YESTERDAY</h4>
+          <span class="subcard-badge" id="yd-content-count">0 ITEMS</span>
+        </div>
+        <div class="table-wrapper mini">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:48px">#</th>
+                <th>Study Page / Section</th>
+                <th style="width:80px">Views</th>
+                <th style="width:90px">Students</th>
+              </tr>
+            </thead>
+            <tbody id="yesterday-popular-rows">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Right: Devices, Channels & Regions -->
+      <div class="station-subcard">
+        <div class="subcard-head">
+          <h4><span class="subcard-icon">📱</span> AUDIENCE CHANNELS & PLATFORMS</h4>
+          <span class="subcard-badge">DEMOGRAPHICS</span>
+        </div>
+        <div class="demo-section">
+          <div class="demo-title">DEVICE TYPES</div>
+          <div class="demo-bars" id="yesterday-device-bars">
+            <!-- Progress bars rendered dynamically -->
+          </div>
+        </div>
+        <div class="demo-section" style="margin-top:16px;">
+          <div class="demo-title">TRAFFIC SOURCES / REFERRERS</div>
+          <div class="demo-bars" id="yesterday-referrer-bars">
+            <!-- Progress bars rendered dynamically -->
+          </div>
+        </div>
+        <div class="demo-section" style="margin-top:16px;">
+          <div class="demo-title">TOP GEOGRAPHIC LOCATIONS</div>
+          <div class="demo-pills" id="yesterday-location-pills">
+            <!-- Country/City pills rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- YESTERDAY VISITOR LOGS TABLE -->
+    <div class="yesterday-visitors-section" style="margin-top:22px;">
+      <div class="filter-row">
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" id="yd-search-input" placeholder="Search yesterday's visitors by IP, city, device, page...">
+        </div>
+        <span class="page-info" id="yd-visitor-count-info">0 Visitors Logged</span>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th style="min-width:115px">Time (IST)</th>
+              <th style="min-width:110px">Visitor IP</th>
+              <th style="min-width:75px">Visits</th>
+              <th style="min-width:110px">Country</th>
+              <th style="min-width:145px">Location & ISP</th>
+              <th style="min-width:130px">Device & Source</th>
+              <th style="min-width:170px">Materials Studied</th>
+            </tr>
+          </thead>
+          <tbody id="yesterday-visitor-rows">
+            <!-- Rendered dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 3: LIVE AUDIENCE RADAR -->
   <section class="station-card" id="panel-radar" hidden>
     <div class="station-header">
       <div>
-        <h2><span class="station-dot"></span> LIVE AUDIENCE RADAR (CONCURRENT TABS STREAM)</h2>
+        <h2><span class="station-dot emerald"></span> LIVE AUDIENCE RADAR (CONCURRENT TABS STREAM)</h2>
         <p class="station-desc">Telemetry active within the last 90 seconds. Highlights concurrent study clusters and live student sessions.</p>
       </div>
       <div>
@@ -1079,11 +1333,11 @@ function adminPage(authorized, initialData = null) {
     </div>
   </section>
 
-  <!-- TAB 3: CONTENT LEADERBOARD -->
+  <!-- TAB 4: CONTENT LEADERBOARD -->
   <section class="station-card" id="panel-content" hidden>
     <div class="station-header">
       <div>
-        <h2><span class="station-dot"></span> CONTENT POPULARITY & ACCESS LEADERBOARD</h2>
+        <h2><span class="station-dot purple"></span> CONTENT POPULARITY & ACCESS LEADERBOARD</h2>
         <p class="station-desc">Ranked by section visits and unique student readers since tracking began.</p>
       </div>
     </div>
@@ -1131,18 +1385,20 @@ function adminPage(authorized, initialData = null) {
 
   const styles = `
 :root {
-  --bg-core: #090d16;
-  --bg-surface: #0f172a;
-  --bg-surface-elevated: #1e293b;
-  --bg-card: rgba(17, 24, 39, 0.9);
-  --border-subtle: rgba(56, 189, 248, 0.22);
+  --bg-core: #060912;
+  --bg-surface: #0c1424;
+  --bg-surface-elevated: #142036;
+  --bg-card: rgba(14, 22, 38, 0.85);
+  --border-subtle: rgba(56, 189, 248, 0.24);
   --border-card: rgba(148, 163, 184, 0.16);
   --accent-cyan: #38bdf8;
-  --accent-cyan-glow: rgba(56, 189, 248, 0.25);
+  --accent-cyan-glow: rgba(56, 189, 248, 0.3);
   --accent-emerald: #10b981;
-  --accent-emerald-glow: rgba(16, 185, 129, 0.25);
+  --accent-emerald-glow: rgba(16, 185, 129, 0.3);
   --accent-purple: #c084fc;
-  --accent-purple-glow: rgba(192, 132, 252, 0.25);
+  --accent-purple-glow: rgba(192, 132, 252, 0.3);
+  --accent-gold: #f59e0b;
+  --accent-gold-glow: rgba(245, 158, 11, 0.35);
   --accent-amber: #fbbf24;
   --accent-rose: #f43f5e;
   --accent-indigo: #818cf8;
@@ -1157,10 +1413,11 @@ function adminPage(authorized, initialData = null) {
 body {
   background-color: var(--bg-core);
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.12), transparent),
+    radial-gradient(ellipse 90% 60% at 50% -20%, rgba(56, 189, 248, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 85% 15%, rgba(245, 158, 11, 0.08), transparent),
     linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 100% 100%, 32px 32px, 32px 32px;
+  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
   color: var(--text-main);
   font-family: var(--font-sans);
   font-size: 14px;
@@ -1179,8 +1436,8 @@ body {
   padding: 16px 22px;
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
   margin-bottom: 22px;
 }
 .brand-title { display: flex; align-items: center; gap: 14px; }
@@ -1238,7 +1495,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.4);
   padding: 8px 18px;
   border-radius: 8px;
   border: 1px solid var(--border-card);
@@ -1256,7 +1513,7 @@ body {
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 700;
-  padding: 5px 8px;
+  padding: 6px 10px;
   border-radius: 6px;
   cursor: pointer;
 }
@@ -1265,7 +1522,7 @@ body {
   font-size: 12.5px;
   font-weight: 700;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid var(--border-card);
   background: var(--bg-surface-elevated);
   color: var(--text-main);
@@ -1274,16 +1531,24 @@ body {
   align-items: center;
   gap: 6px;
   text-decoration: none;
-  transition: all 0.15s ease;
+  transition: all 0.18s ease;
 }
 .btn:hover { background: rgba(56, 189, 248, 0.15); border-color: var(--accent-cyan); color: var(--text-pure); }
 .btn-primary {
   background: linear-gradient(135deg, #0284c7, #06b6d4);
   border-color: #38bdf8;
   color: #fff;
-  box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 0 14px rgba(6, 182, 212, 0.35);
 }
-.btn-primary:hover { background: linear-gradient(135deg, #0369a1, #0891b2); color: #fff; }
+.btn-primary:hover { background: linear-gradient(135deg, #0369a1, #0891b2); color: #fff; box-shadow: 0 0 18px rgba(6, 182, 212, 0.5); }
+.btn-gold {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+  border-color: #fbbf24;
+  color: #1e1302;
+  font-weight: 800;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.35);
+}
+.btn-gold:hover { background: linear-gradient(135deg, #b45309, #d97706); color: #fff; box-shadow: 0 0 18px rgba(245, 158, 11, 0.55); }
 .btn-danger {
   background: rgba(244, 63, 94, 0.15);
   border-color: rgba(244, 63, 94, 0.4);
@@ -1296,17 +1561,17 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 16px;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 .kpi-card {
   background: var(--bg-card);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--border-card);
   border-radius: 12px;
-  padding: 16px 20px;
+  padding: 18px 20px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 .kpi-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
 .kpi-card.live::before { background: var(--accent-emerald); }
@@ -1327,52 +1592,97 @@ body {
 .kpi-foot { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--text-muted); }
 .kpi-foot span.highlight { color: var(--text-pure); font-weight: 700; }
 
-/* NAVIGATION TABS */
+/* ULTRA-PREMIUM NAVIGATION TABS */
 .nav-tabs {
-  display: flex;
-  gap: 8px;
-  border-bottom: 1px solid var(--border-card);
-  margin-bottom: 22px;
-  overflow-x: auto;
-  padding-bottom: 2px;
-}
-.tab-btn {
-  font-family: var(--font-sans);
-  font-size: 13.5px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  padding: 12px 20px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-card);
-  border-bottom: none;
-  border-radius: 8px 8px 0 0;
-  color: var(--text-dim);
-  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
+  background: rgba(13, 20, 36, 0.88);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 6px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.tab-btn {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 10px 18px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   white-space: nowrap;
-  transition: all 0.15s ease;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
 }
-.tab-btn:hover { color: var(--text-pure); background: var(--bg-surface-elevated); }
-.tab-btn.active {
-  background: var(--bg-surface-elevated);
+.tab-btn:hover {
   color: var(--text-pure);
-  border-color: var(--accent-cyan);
-  border-bottom: 3px solid var(--accent-cyan);
-  box-shadow: 0 -3px 12px rgba(56, 189, 248, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
 }
-.tab-btn .badge-pill { font-size: 11px; font-family: var(--font-mono); padding: 2px 7px; border-radius: 999px; background: rgba(255, 255, 255, 0.1); color: var(--text-muted); font-weight: 700; }
-.tab-btn.active .badge-pill { background: var(--accent-cyan); color: #04101e; font-weight: 800; }
+.tab-icon { font-size: 15px; display: inline-flex; align-items: center; justify-content: center; }
+
+/* TAB THEMES */
+.tab-btn#tab-btn-geo.active {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(6, 182, 212, 0.08));
+  color: #fff;
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.tab-btn#tab-btn-yesterday.active {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.26), rgba(217, 119, 6, 0.1));
+  color: #fff;
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.tab-btn#tab-btn-radar.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.24), rgba(5, 150, 105, 0.08));
+  color: #fff;
+  border-color: rgba(16, 185, 129, 0.55);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.tab-btn#tab-btn-content.active {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.24), rgba(147, 51, 234, 0.08));
+  color: #fff;
+  border-color: rgba(192, 132, 252, 0.55);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.tab-btn .badge-pill {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-dim);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.tab-btn#tab-btn-geo.active .badge-pill.cyan { background: #38bdf8; color: #04101e; font-weight: 800; box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
+.tab-btn#tab-btn-yesterday .badge-pill.gold { background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); }
+.tab-btn#tab-btn-yesterday.active .badge-pill.gold { background: #f59e0b; color: #1e1302; font-weight: 800; box-shadow: 0 0 12px rgba(245, 158, 11, 0.6); }
+.tab-btn#tab-btn-radar .badge-pill.emerald { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }
+.tab-btn#tab-btn-radar.active .badge-pill.emerald { background: #10b981; color: #032117; font-weight: 800; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6); }
+.tab-btn#tab-btn-content .badge-pill.purple { background: rgba(192, 132, 252, 0.18); color: #d8b4fe; border: 1px solid rgba(192, 132, 252, 0.35); }
+.tab-btn#tab-btn-content.active .badge-pill.purple { background: #c084fc; color: #200438; font-weight: 800; box-shadow: 0 0 12px rgba(192, 132, 252, 0.6); }
 
 /* CONTROL ROOM PANELS */
-.control-panel { display: grid; gap: 20px; }
+.control-panel { display: grid; gap: 24px; }
 .station-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-card);
-  border-radius: 12px;
-  padding: 22px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 .station-card[hidden] { display: none !important; }
 .station-header {
@@ -1380,14 +1690,271 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 18px;
-  padding-bottom: 14px;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--border-card);
 }
 .station-header h2 { font-size: 16px; font-weight: 800; letter-spacing: 0.03em; color: var(--text-pure); display: flex; align-items: center; gap: 10px; }
-.station-header h2 .station-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan); }
+.station-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.station-dot.cyan { background: var(--accent-cyan); box-shadow: 0 0 12px var(--accent-cyan); }
+.station-dot.gold { background: var(--accent-gold); box-shadow: 0 0 12px var(--accent-gold); }
+.station-dot.emerald { background: var(--accent-emerald); box-shadow: 0 0 12px var(--accent-emerald); }
+.station-dot.purple { background: var(--accent-purple); box-shadow: 0 0 12px var(--accent-purple); }
 .station-desc { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+.header-action-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.date-chip {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: rgba(245, 158, 11, 0.14);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* YESTERDAY EXECUTIVE BRIEFING BANNER */
+.yesterday-digest-card {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(15, 23, 42, 0.85) 60%), var(--bg-card);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+.yesterday-digest-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 5px; height: 100%;
+  background: linear-gradient(180deg, #f59e0b, #fbbf24);
+}
+.digest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.digest-badge {
+  font-size: 11.5px;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  color: #fbbf24;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.digest-time {
+  font-size: 11.5px;
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+}
+.digest-summary-text {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-pure);
+  margin-bottom: 18px;
+}
+.digest-summary-text strong {
+  color: #fde047;
+  font-weight: 700;
+}
+.digest-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+}
+.dq-item { display: flex; flex-direction: column; }
+.dq-label { font-size: 10.5px; font-weight: 700; font-family: var(--font-mono); color: var(--text-dim); letter-spacing: 0.04em; }
+.dq-value { font-size: 13.5px; font-weight: 700; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.highlight-cyan { color: var(--accent-cyan); }
+.highlight-gold { color: #fbbf24; }
+.highlight-emerald { color: #34d399; }
+.highlight-purple { color: #c084fc; }
+
+/* YESTERDAY 4-KPI GRID */
+.yesterday-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.ykpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 16px 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+.ykpi-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
+.ykpi-card.views::before { background: #f59e0b; }
+.ykpi-card.visitors::before { background: #38bdf8; }
+.ykpi-card.ratio::before { background: #10b981; }
+.ykpi-card.repeats::before { background: #c084fc; }
+.ykpi-label { font-size: 11.5px; font-weight: 700; font-family: var(--font-mono); color: var(--text-dim); text-transform: uppercase; }
+.ykpi-val { font-size: 28px; font-weight: 800; font-family: var(--font-mono); color: var(--text-pure); line-height: 1.1; margin: 6px 0; }
+.ykpi-val small { font-size: 12.5px; font-weight: 600; color: var(--text-dim); margin-left: 4px; }
+.ykpi-sub { font-size: 12px; color: var(--text-muted); }
+
+/* 24-HOUR HOURLY INGRESS BAR CHART */
+.yesterday-chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 22px;
+}
+.chart-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.chart-title { font-size: 14px; font-weight: 800; color: var(--text-pure); display: flex; align-items: center; gap: 8px; }
+.chart-desc { font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
+.chart-legend { display: flex; align-items: center; gap: 16px; font-size: 12px; color: var(--text-muted); }
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-dot { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+.legend-dot.normal { background: #38bdf8; }
+.legend-dot.peak { background: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
+
+.chart-bars-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 130px;
+  padding: 16px 8px 6px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: 14px;
+}
+.chart-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  position: relative;
+  cursor: pointer;
+}
+.chart-bar-fill {
+  width: 100%;
+  min-height: 4px;
+  border-radius: 3px 3px 1px 1px;
+  background: linear-gradient(180deg, #38bdf8, rgba(56, 189, 248, 0.25));
+  transition: all 0.2s ease;
+}
+.chart-bar-col:hover .chart-bar-fill {
+  background: linear-gradient(180deg, #7dd3fc, rgba(56, 189, 248, 0.6));
+  filter: drop-shadow(0 0 8px #38bdf8);
+}
+.chart-bar-col.peak .chart-bar-fill {
+  background: linear-gradient(180deg, #f59e0b, rgba(245, 158, 11, 0.35));
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.45);
+}
+.chart-bar-col.peak:hover .chart-bar-fill {
+  background: linear-gradient(180deg, #fbbf24, rgba(245, 158, 11, 0.7));
+  filter: drop-shadow(0 0 10px #f59e0b);
+}
+.chart-bar-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  border: 1px solid var(--accent-cyan);
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: #fff;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.chart-bar-col:hover .chart-bar-tooltip { display: block; }
+.chart-time-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  padding: 0 4px;
+}
+
+/* DUAL SPLIT GRID */
+.yesterday-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.station-subcard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.subcard-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.subcard-head h4 { font-size: 13.5px; font-weight: 800; color: var(--text-pure); display: flex; align-items: center; gap: 8px; }
+.subcard-badge { font-size: 11px; font-family: var(--font-mono); font-weight: 700; color: var(--accent-gold); background: rgba(245, 158, 11, 0.15); padding: 2px 7px; border-radius: 999px; }
+
+.table-wrapper.mini { max-height: 290px; overflow-y: auto; }
+.rank-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+}
+.rank-1 { background: rgba(245, 158, 11, 0.25); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.5); }
+.rank-2 { background: rgba(148, 163, 184, 0.25); color: #e2e8f0; border: 1px solid rgba(148, 163, 184, 0.4); }
+.rank-3 { background: rgba(217, 119, 6, 0.25); color: #f97316; border: 1px solid rgba(217, 119, 6, 0.4); }
+.rank-norm { color: var(--text-dim); }
+
+/* DEMOGRAPHICS BARS */
+.demo-section { display: flex; flex-direction: column; gap: 6px; }
+.demo-title { font-size: 11px; font-family: var(--font-mono); font-weight: 700; color: var(--text-dim); letter-spacing: 0.04em; }
+.demo-bars { display: flex; flex-direction: column; gap: 8px; }
+.demo-row { display: flex; flex-direction: column; gap: 3px; }
+.demo-row-head { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--text-main); }
+.demo-track { height: 6px; background: rgba(255, 255, 255, 0.08); border-radius: 999px; overflow: hidden; }
+.demo-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #d97706, #fbbf24); }
+.demo-fill.cyan { background: linear-gradient(90deg, #0284c7, #38bdf8); }
+.demo-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.demo-pill {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-pure);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
 
 /* FILTERS & SEARCH ROW */
 .filter-row {
@@ -1397,7 +1964,7 @@ body {
   flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 16px;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.3);
   padding: 12px 16px;
   border-radius: 8px;
   border: 1px solid var(--border-card);
@@ -1472,7 +2039,7 @@ td {
 tr:nth-child(even) td { background: rgba(255, 255, 255, 0.015); }
 tr:hover td { background: rgba(56, 189, 248, 0.07); }
 
-/* GOOGLE BOT BOLD & SINGLE BLINK */
+/* GOOGLE BOT HIGHLIGHT */
 @keyframes bot-blink-once {
   0% { background: rgba(56, 189, 248, 0.45); }
   50% { background: rgba(245, 158, 11, 0.45); }
@@ -1482,9 +2049,7 @@ tr:hover td { background: rgba(56, 189, 248, 0.07); }
   border-left: 3px solid #f59e0b !important;
   animation: bot-blink-once 1.2s ease-out 1 forwards;
 }
-.google-bot-row td {
-  font-weight: normal !important;
-}
+.google-bot-row td { font-weight: normal !important; }
 .google-bot-row .ip-badge {
   font-weight: normal !important;
   color: #f59e0b !important;
@@ -1542,10 +2107,7 @@ tr:hover td { background: rgba(56, 189, 248, 0.07); }
   color: var(--text-pure);
 }
 .country-flag { font-size: 15px; }
-.location-text {
-  font-size: 13px;
-  color: var(--text-muted);
-}
+.location-text { font-size: 13px; color: var(--text-muted); }
 .path-pill {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -1570,33 +2132,13 @@ tr:hover td { background: rgba(56, 189, 248, 0.07); }
   padding: 3px 7px;
   border-radius: 6px;
 }
-.activity-hearing {
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.28);
-}
-.activity-watching {
-  color: #fb7185;
-  background: rgba(251, 113, 133, 0.12);
-  border: 1px solid rgba(251, 113, 133, 0.28);
-}
-.activity-reading {
-  color: #34d399;
-  background: rgba(52, 211, 153, 0.12);
-  border: 1px solid rgba(52, 211, 153, 0.28);
-}
-.activity-test {
-  color: #fde047;
-  background: rgba(253, 224, 71, 0.12);
-  border: 1px solid rgba(253, 224, 71, 0.28);
-}
-.activity-general {
-  color: #cbd5e1;
-  background: rgba(148, 163, 184, 0.10);
-  border: 1px solid rgba(148, 163, 184, 0.22);
-}
+.activity-hearing { color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.28); }
+.activity-watching { color: #fb7185; background: rgba(251, 113, 133, 0.12); border: 1px solid rgba(251, 113, 133, 0.28); }
+.activity-reading { color: #34d399; background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.28); }
+.activity-test { color: #fde047; background: rgba(253, 224, 71, 0.12); border: 1px solid rgba(253, 224, 71, 0.28); }
+.activity-general { color: #cbd5e1; background: rgba(148, 163, 184, 0.10); border: 1px solid rgba(148, 163, 184, 0.22); }
 
-/* DETAILS & SECTIONS IN TABLES */
+/* DETAILS & SECTIONS */
 details.section-details summary, details.popular-details summary {
   cursor: pointer;
   color: var(--accent-cyan);
@@ -1610,21 +2152,11 @@ details.section-details summary:hover, details.popular-details summary:hover {
   background: rgba(56, 189, 248, 0.12);
   color: #7dd3fc;
 }
-.section-visit-list {
-  margin: 6px 0 0;
-  padding-left: 16px;
-  font-size: 12px;
-  color: var(--text-muted);
-}
+.section-visit-list { margin: 6px 0 0; padding-left: 16px; font-size: 12px; color: var(--text-muted); }
 .section-visit-list li { margin: 3px 0; }
 
 /* RADAR GRID */
-.radar-live-badge {
-  font-size: 13px;
-  font-family: var(--font-mono);
-  font-weight: 700;
-  color: var(--accent-emerald);
-}
+.radar-live-badge { font-size: 13px; font-family: var(--font-mono); font-weight: 700; color: var(--accent-emerald); }
 .radar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
 .radar-card {
   background: var(--bg-card);
@@ -1709,8 +2241,9 @@ details.section-details summary:hover, details.popular-details summary:hover {
   .hud-header { flex-direction: column; align-items: stretch; gap: 14px; padding: 14px 16px; }
   .hud-clocks { justify-content: space-between; flex-wrap: wrap; }
   .kpi-grid { grid-template-columns: 1fr 1fr; }
-  .nav-tabs { gap: 4px; }
-  .tab-btn { padding: 10px 14px; font-size: 12px; }
+  .yesterday-split-grid { grid-template-columns: 1fr; }
+  .nav-tabs { gap: 4px; padding: 4px; }
+  .tab-btn { padding: 9px 12px; font-size: 12px; }
 }
   `;
 
@@ -1733,6 +2266,10 @@ details.section-details summary:hover, details.popular-details summary:hover {
       const d=new Date(val);
       if(Number.isNaN(d.getTime()))return String(val||"Unknown");
       return d.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',dateStyle:'medium',timeStyle:'medium'});
+    }
+
+    function indiaDayStr(time) {
+      return new Date(time + 330 * 60 * 1000).toISOString().slice(0, 10);
     }
 
     function updateClocks() {
@@ -1758,6 +2295,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
     let trafficRecords = [];
     let popularPageRecords = [];
     let liveData = { active: 0, pages: [] };
+    let yesterdayData = null;
     let trafficPage = 1;
 
     // IMMEDIATE SSR HYDRATION
@@ -1766,9 +2304,11 @@ details.section-details summary:hover, details.popular-details summary:hover {
       if (Array.isArray(__INITIAL__.records)) trafficRecords = __INITIAL__.records;
       if (Array.isArray(__INITIAL__.popularPages)) popularPageRecords = __INITIAL__.popularPages;
       if (__INITIAL__.liveData) liveData = __INITIAL__.liveData;
+      if (__INITIAL__.yesterday) yesterdayData = __INITIAL__.yesterday;
       try { renderTraffic(); } catch(e) {}
       try { renderPopularPages(); } catch(e) {}
       try { renderLiveRadar(); } catch(e) {}
+      try { renderYesterday(); } catch(e) {}
     }
 
     function getPathFallbackActivity(path) {
@@ -1820,7 +2360,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
           return hay.includes(search);
         });
 
-        // Render Country Summary Grid
+        // Country Summary Grid
         const countryGrid = document.getElementById('country-summary-grid');
         if (countryGrid) {
           countryGrid.replaceChildren();
@@ -2014,7 +2554,6 @@ details.section-details summary:hover, details.popular-details summary:hover {
           tbody.append(emptyTr);
         }
 
-        // Update Top Content Leader KPI
         if (popularPageRecords.length > 0) {
           const topP = popularPageRecords[0];
           setText('top-content-name', topP.section || topP.path || 'Top Page');
@@ -2121,6 +2660,262 @@ details.section-details summary:hover, details.popular-details summary:hover {
       }
     }
 
+    // RENDER YESTERDAY'S RECAP & INTELLIGENCE (NEW!)
+    function renderYesterday() {
+      try {
+        const now = Date.now();
+        const yesterdayTime = now - 24 * 60 * 60 * 1000;
+        const yDate = new Date(yesterdayTime + 330 * 60 * 1000);
+        const yDayStr = yDate.toISOString().slice(0, 10);
+        const yDateDisplay = yDate.toLocaleDateString('en-IN', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' });
+        setText('yesterday-date-chip', '📅 ' + yDateDisplay);
+
+        // Filter yesterday records from trafficRecords or yesterdayData
+        let yRecords = [];
+        if (yesterdayData && Array.isArray(yesterdayData.records) && yesterdayData.records.length > 0) {
+          yRecords = yesterdayData.records;
+        } else {
+          yRecords = trafficRecords.filter(r => !r.isOwner && indiaDayStr(r.time) === yDayStr);
+        }
+
+        const totalViews = yesterdayData?.views || yRecords.reduce((acc, r) => acc + (r.visits || 1), 0);
+        const uniqueVisitors = yesterdayData?.visitors || yRecords.length;
+        const ratio = uniqueVisitors ? (totalViews / uniqueVisitors).toFixed(2) : '0';
+        const repeatCount = yRecords.filter(r => r.visits > 1).length;
+        const repeatPct = yRecords.length ? Math.round((repeatCount / yRecords.length) * 100) : 0;
+
+        // Update Tab Badge & KPI Cards
+        setText('badge-yesterday-views', totalViews + ' VIEWS');
+        setText('yd-kpi-views', totalViews);
+        setText('yd-kpi-visitors', uniqueVisitors);
+        setText('yd-kpi-ratio', ratio);
+        setText('yd-kpi-repeats', repeatPct + '%');
+        setText('yd-kpi-repeat-count', repeatCount);
+
+        // Hourly Array & Peak
+        let hourly = yesterdayData?.hourly;
+        if (!Array.isArray(hourly) || hourly.length !== 24) {
+          hourly = Array(24).fill(0);
+          for (const r of yRecords) {
+            const h = new Date(r.time + 330 * 60 * 1000).getUTCHours();
+            if (h >= 0 && h < 24) hourly[h] += (r.visits || 1);
+          }
+        }
+        let peakH = yesterdayData?.peakHour?.hour ?? 0;
+        let peakViews = yesterdayData?.peakHour?.views ?? 0;
+        if (!peakViews) {
+          hourly.forEach((cnt, idx) => {
+            if (cnt > peakViews) { peakViews = cnt; peakH = idx; }
+          });
+        }
+
+        function formatHour(h) {
+          const ampm = h >= 12 ? 'PM' : 'AM';
+          const h12 = h % 12 || 12;
+          const nextH = (h + 1) % 24;
+          const nextAmpm = nextH >= 12 ? 'PM' : 'AM';
+          const nextH12 = nextH % 12 || 12;
+          return h12 + ':00 ' + ampm + ' – ' + nextH12 + ':00 ' + nextAmpm + ' IST';
+        }
+
+        const peakHourStr = peakViews > 0 ? (formatHour(peakH) + ' (' + peakViews + ' views)') : 'Low Ingress';
+        setText('yd-peak-hour', peakHourStr);
+
+        // Popular Pages for Yesterday
+        let yPopular = [];
+        if (yesterdayData && Array.isArray(yesterdayData.popularPages) && yesterdayData.popularPages.length > 0) {
+          yPopular = yesterdayData.popularPages;
+        } else {
+          const map = new Map();
+          for (const r of yRecords) {
+            for (const s of (r.sections || [])) {
+              const name = s.name || r.path || 'Study Material';
+              const curr = map.get(name) || { section: name, path: r.path, visits: 0, visitors: new Set() };
+              curr.visits += (s.visits || 1);
+              curr.visitors.add(r.ip);
+              map.set(name, curr);
+            }
+          }
+          yPopular = Array.from(map.values()).map(item => ({
+            ...item,
+            visitors: Array.from(item.visitors)
+          })).sort((a,b) => b.visits - a.visits);
+        }
+
+        const topYContent = yPopular.length > 0 ? (yPopular[0].section || yPopular[0].path) : '—';
+        const topYViews = yPopular.length > 0 ? (yPopular[0].visits + ' views') : '';
+        setText('yd-top-content', topYContent + (topYViews ? ' · ' + topYViews : ''));
+        setText('yd-content-count', yPopular.length + ' ITEMS');
+
+        // Demographics: Devices & Sources & Locations
+        const devMap = yesterdayData?.devices || {};
+        const refMap = yesterdayData?.referrers || {};
+        const locMap = yesterdayData?.locations || {};
+
+        if (!yesterdayData?.devices) {
+          for (const r of yRecords) {
+            const dev = r.device || 'Mobile / Web';
+            devMap[dev] = (devMap[dev] || 0) + (r.visits || 1);
+            const ref = r.ref || 'Direct / Saved';
+            refMap[ref] = (refMap[ref] || 0) + (r.visits || 1);
+            const loc = [r.city, r.region].filter(Boolean).join(', ') || (r.country && r.country !== 'XX' ? r.country : 'Unknown');
+            locMap[loc] = (locMap[loc] || 0) + (r.visits || 1);
+          }
+        }
+
+        const topDevEntries = Object.entries(devMap).sort((a,b) => b[1] - a[1]);
+        const topRefEntries = Object.entries(refMap).sort((a,b) => b[1] - a[1]);
+        const topLocEntries = Object.entries(locMap).sort((a,b) => b[1] - a[1]);
+
+        const topDevice = topDevEntries.length > 0 ? topDevEntries[0][0] : 'Mobile';
+        const topSource = topRefEntries.length > 0 ? topRefEntries[0][0] : 'Direct';
+        setText('yd-primary-device', topDevice);
+        setText('yd-primary-source', topSource);
+
+        // Synthesize Executive Brief Text
+        const briefEl = document.getElementById('yesterday-brief-text');
+        if (briefEl) {
+          if (totalViews === 0 && uniqueVisitors === 0) {
+            briefEl.innerHTML = 'Yesterday on <strong>' + yDateDisplay + '</strong>, the hub experienced a quiet cycle with <strong>0 public ingress requests</strong> recorded in the active buffer. Radar and tracking remain operational.';
+          } else {
+            const devPct = totalViews ? Math.round(((topDevEntries[0]?.[1] || 0) / totalViews) * 100) : 0;
+            briefEl.innerHTML = 'Yesterday on <strong>' + yDateDisplay + '</strong>, Academic Hub recorded <strong>' + totalViews + ' total page views</strong> across <strong>' + uniqueVisitors + ' unique student' + (uniqueVisitors === 1 ? '' : 's') + '</strong> with an average engagement of <strong>' + ratio + ' views/student</strong>. ' +
+              'Peak study rush transpired at <strong>' + (peakViews > 0 ? formatHour(peakH) : 'spread throughout the day') + '</strong>' + (peakViews > 0 ? ' (' + peakViews + ' views)' : '') + '. ' +
+              'The most accessed learning material was <strong>' + (topYContent !== '—' ? topYContent : 'the Course Hub Portal') + '</strong>' + (topYViews ? ' (' + topYViews + ')' : '') + '. ' +
+              'Learners connected predominantly using <strong>' + topDevice + '</strong> (~' + devPct + '%) via <strong>' + topSource + '</strong>, with <strong>' + repeatPct + '%</strong> repeat visitors returning for revision.';
+          }
+        }
+
+        // Render 24-Hour Bar Chart
+        const chartWrap = document.getElementById('yesterday-hourly-chart');
+        if (chartWrap) {
+          chartWrap.replaceChildren();
+          const maxVal = Math.max(...hourly, 1);
+          for (let h = 0; h < 24; h++) {
+            const v = hourly[h] || 0;
+            const pct = Math.max(3, Math.round((v / maxVal) * 100));
+            const col = document.createElement('div');
+            col.className = 'chart-bar-col' + (h === peakH && v > 0 ? ' peak' : '');
+            
+            const fill = document.createElement('div');
+            fill.className = 'chart-bar-fill';
+            fill.style.height = pct + '%';
+
+            const tip = document.createElement('div');
+            tip.className = 'chart-bar-tooltip';
+            tip.textContent = String(h).padStart(2,'0') + ':00 IST · ' + v + ' view' + (v === 1 ? '' : 's');
+
+            col.append(tip, fill);
+            chartWrap.append(col);
+          }
+        }
+
+        // Render Popular Content List (Yesterday)
+        const popTbody = document.getElementById('yesterday-popular-rows');
+        if (popTbody) {
+          popTbody.replaceChildren();
+          if (!yPopular.length) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = '<td colspan="4" style="text-align:center; padding:22px; color:var(--text-dim); font-size:13px;">No study assets accessed yesterday</td>';
+            popTbody.append(tr);
+          } else {
+            for (const [idx, p] of yPopular.slice(0, 15).entries()) {
+              const tr = document.createElement('tr');
+              const rankCls = idx === 0 ? 'rank-1' : (idx === 1 ? 'rank-2' : (idx === 2 ? 'rank-3' : 'rank-norm'));
+              const vCount = Array.isArray(p.visitors) ? p.visitors.length : (typeof p.visitors === 'number' ? p.visitors : 0);
+              tr.innerHTML = '<td><span class="rank-badge ' + rankCls + '">#' + (idx + 1) + '</span></td>' +
+                '<td><strong style="color:var(--text-pure); font-size:13px;">' + (p.section || 'Learning Material') + '</strong><br><span class="path-pill" style="font-size:10.5px; margin-top:2px; display:inline-block;">' + (p.path || '/') + '</span></td>' +
+                '<td><strong style="font-family:var(--font-mono); color:#fbbf24;">' + (p.visits || 0) + '</strong></td>' +
+                '<td><span class="ip-badge" style="font-size:11px;">' + vCount + '</span></td>';
+              popTbody.append(tr);
+            }
+          }
+        }
+
+        // Render Devices Progress Bars
+        const devContainer = document.getElementById('yesterday-device-bars');
+        if (devContainer) {
+          devContainer.replaceChildren();
+          const devTotal = topDevEntries.reduce((acc, [, val]) => acc + val, 0) || 1;
+          for (const [name, val] of topDevEntries.slice(0, 5)) {
+            const pct = Math.round((val / devTotal) * 100);
+            const row = document.createElement('div');
+            row.className = 'demo-row';
+            row.innerHTML = '<div class="demo-row-head"><span>' + name + '</span><strong>' + pct + '% <small style="color:var(--text-dim); font-weight:normal;">(' + val + ')</small></strong></div>' +
+              '<div class="demo-track"><div class="demo-fill" style="width:' + pct + '%"></div></div>';
+            devContainer.append(row);
+          }
+        }
+
+        // Render Referrers Progress Bars
+        const refContainer = document.getElementById('yesterday-referrer-bars');
+        if (refContainer) {
+          refContainer.replaceChildren();
+          const refTotal = topRefEntries.reduce((acc, [, val]) => acc + val, 0) || 1;
+          for (const [name, val] of topRefEntries.slice(0, 5)) {
+            const pct = Math.round((val / refTotal) * 100);
+            const row = document.createElement('div');
+            row.className = 'demo-row';
+            row.innerHTML = '<div class="demo-row-head"><span>' + name + '</span><strong>' + pct + '% <small style="color:var(--text-dim); font-weight:normal;">(' + val + ')</small></strong></div>' +
+              '<div class="demo-track"><div class="demo-fill cyan" style="width:' + pct + '%"></div></div>';
+            refContainer.append(row);
+          }
+        }
+
+        // Render Top Locations Pills
+        const locContainer = document.getElementById('yesterday-location-pills');
+        if (locContainer) {
+          locContainer.replaceChildren();
+          for (const [name, val] of topLocEntries.slice(0, 8)) {
+            const pill = document.createElement('span');
+            pill.className = 'demo-pill';
+            pill.innerHTML = '📍 ' + name + ' <strong style="color:var(--accent-cyan);">' + val + '</strong>';
+            locContainer.append(pill);
+          }
+        }
+
+        // Render Yesterday Visitors Table (with filter)
+        const ydSearchEl = document.getElementById('yd-search-input');
+        const ydSearch = (ydSearchEl ? ydSearchEl.value : "").trim().toLowerCase();
+        let filteredYd = yRecords.filter(item => {
+          if (!ydSearch) return true;
+          const info = countryInfo(item.country);
+          const hay = [item.ip, item.country, info.name, item.region, item.city, item.isp, item.device, item.ref, item.path, ...(item.sections||[]).map(s=>s.name)].filter(Boolean).join(' ').toLowerCase();
+          return hay.includes(ydSearch);
+        });
+
+        setText('yd-visitor-count-info', filteredYd.length + ' of ' + yRecords.length + ' Visitors');
+
+        const yRows = document.getElementById('yesterday-visitor-rows');
+        if (yRows) {
+          yRows.replaceChildren();
+          if (!filteredYd.length) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = '<td colspan="7" style="text-align:center; padding:32px; color:var(--text-dim); font-size:13.5px;">No yesterday visitor sessions found matching filter</td>';
+            yRows.append(tr);
+          } else {
+            for (const v of filteredYd) {
+              const tr = document.createElement('tr');
+              const info = countryInfo(v.country);
+              const loc = [v.region, v.city].filter(Boolean).join(', ') || 'Unknown';
+              const acts = (v.sections || []).map(s => s.name).slice(0, 3).join(', ') || getPathFallbackActivity(v.path);
+              
+              tr.innerHTML = '<td><span class="time-stamp">' + formatIST(v.time) + '</span></td>' +
+                '<td><span class="ip-badge" title="' + v.ip + '">' + formatShortIP(v.ip) + '</span></td>' +
+                '<td><span class="visits-badge ' + (v.visits > 1 ? 'multi' : 'single') + '">' + v.visits + ' visit' + (v.visits===1?'':'s') + '</span></td>' +
+                '<td><span class="country-pill"><span class="country-flag">' + info.flag + '</span> ' + info.name.split(' (')[0] + '</span></td>' +
+                '<td><div class="location-text">' + loc + '</div>' + (v.isp ? '<div style="font-size:11px; color:var(--text-dim); font-family:var(--font-mono);">📶 ' + v.isp + '</div>' : '') + '</td>' +
+                '<td><div style="font-size:12px; font-weight:600;">' + (v.device || '📱 Mobile') + '</div><div style="font-size:11px; color:var(--text-dim);">' + (v.ref || '🔖 Direct') + '</div></td>' +
+                '<td><div class="path-pill">' + (v.path || '/') + '</div><div style="font-size:11px; color:#cbd5e1; margin-top:3px;">' + acts + '</div></td>';
+              yRows.append(tr);
+            }
+          }
+        }
+      } catch (yErr) {
+        console.warn('renderYesterday error:', yErr);
+      }
+    }
+
     // DATA FETCHING
     async function refreshLiveVisitors() {
       try {
@@ -2154,6 +2949,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
         if (d && Array.isArray(d.records)) {
           trafficRecords = d.records;
           popularPageRecords = Array.isArray(d.popularPages) ? d.popularPages : [];
+          if (d.yesterday) yesterdayData = d.yesterday;
           const link = document.getElementById('radar-link-status');
           if (link) {
             if (d.error) {
@@ -2186,6 +2982,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
       } finally {
         renderTraffic();
         renderPopularPages();
+        renderYesterday();
       }
     }
 
@@ -2212,9 +3009,39 @@ details.section-details summary:hover, details.popular-details summary:hover {
       setTimeout(() => URL.revokeObjectURL(url), 1000);
     }
 
+    function exportYesterdayCSV() {
+      const now = Date.now();
+      const yDayStr = new Date(now - 24 * 60 * 60 * 1000 + 330 * 60 * 1000).toISOString().slice(0, 10);
+      const yRecs = (yesterdayData && Array.isArray(yesterdayData.records) && yesterdayData.records.length > 0)
+        ? yesterdayData.records
+        : trafficRecords.filter(r => !r.isOwner && indiaDayStr(r.time) === yDayStr);
+
+      if (!yRecs.length) { alert('No yesterday traffic records to export.'); return; }
+      const headers = ['Visitor IP', 'Visits Yesterday', 'Country', 'Region', 'City', 'ISP', 'Device', 'Traffic Source', 'Timestamp (IST)', 'Latest Page'];
+      const rows = yRecs.map(v => [
+        v.ip,
+        v.visits,
+        '"' + (v.country || 'XX') + '"',
+        '"' + (v.region || '').replace(/"/g, '""') + '"',
+        '"' + (v.city || '').replace(/"/g, '""') + '"',
+        '"' + (v.isp || '').replace(/"/g, '""') + '"',
+        '"' + (v.device || '').replace(/"/g, '""') + '"',
+        '"' + (v.ref || '').replace(/"/g, '""') + '"',
+        '"' + formatIST(v.time) + '"',
+        '"' + (v.path || '/').replace(/"/g, '""') + '"'
+      ]);
+      const csv = [headers.join(','), ...rows.map(row => row.join(','))].join(String.fromCharCode(10));
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'Academic_Hub_Yesterday_Audit_' + yDayStr + '.csv';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
     // TABS LOGIC
     const stations = [
       { id: 'geo', tab: 'tab-btn-geo', panel: 'panel-geo' },
+      { id: 'yesterday', tab: 'tab-btn-yesterday', panel: 'panel-yesterday' },
       { id: 'radar', tab: 'tab-btn-radar', panel: 'panel-radar' },
       { id: 'content', tab: 'tab-btn-content', panel: 'panel-content' }
     ];
@@ -2230,6 +3057,9 @@ details.section-details summary:hover, details.popular-details summary:hover {
         }
         if (pnl) pnl.hidden = !isMatch;
       }
+      if (id === 'yesterday') {
+        renderYesterday();
+      }
     }
 
     for (const s of stations) {
@@ -2238,7 +3068,9 @@ details.section-details summary:hover, details.popular-details summary:hover {
     }
 
     // HASH NAVIGATION CHECK
-    if (location.hash === '#radar' || location.hash === '#live') {
+    if (location.hash === '#yesterday' || location.hash === '#recap') {
+      activateStation('yesterday');
+    } else if (location.hash === '#radar' || location.hash === '#live') {
       activateStation('radar');
     } else if (location.hash === '#content') {
       activateStation('content');
@@ -2256,6 +3088,9 @@ details.section-details summary:hover, details.popular-details summary:hover {
     const exportBtn = document.getElementById('btn-export-traffic');
     if (exportBtn) exportBtn.onclick = exportTrafficCSV;
 
+    const exportYdBtn = document.getElementById('btn-export-yesterday');
+    if (exportYdBtn) exportYdBtn.onclick = exportYesterdayCSV;
+
     const searchInput = document.getElementById('traffic-search-input');
     if (searchInput) searchInput.oninput = () => { trafficPage = 1; renderTraffic(); };
     const pageSizeSelect = document.getElementById('traffic-page-size');
@@ -2264,6 +3099,9 @@ details.section-details summary:hover, details.popular-details summary:hover {
     if (prevPageBtn) prevPageBtn.onclick = () => { trafficPage = Math.max(1, trafficPage - 1); renderTraffic(); };
     const nextPageBtn = document.getElementById('traffic-next-page');
     if (nextPageBtn) nextPageBtn.onclick = () => { trafficPage++; renderTraffic(); };
+
+    const ydSearchInput = document.getElementById('yd-search-input');
+    if (ydSearchInput) ydSearchInput.oninput = renderYesterday;
 
     const logoutBtn = document.getElementById('logout');
     if (logoutBtn) logoutBtn.onclick = async () => {
@@ -2360,6 +3198,7 @@ ${content}
     }
   });
 }
+
 
 
 async function fetchMockTestResults(env) {

@@ -274,8 +274,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "നോവൽ: ദൈവത്തിന്റെ കണ്ണ് — എൻ.പി. മുഹമ്മദ്",
             "chapter": "നോവൽ സാഹിത്യം · പരപ്പനങ്ങാടിയിലെ നാരകത്ത് തറവാട്, അന്ധവിശ്വാസങ്ങൾ & ബാല്യവീക്ഷണം (Child's Point of View)",
             "duration": "16:20",
-            "youtubeId": "",
-            "thumbnail": "",
+            "youtubeId": "snYLroXbSDI",
+            "thumbnail": "https://i.ytimg.com/vi/snYLroXbSDI/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
