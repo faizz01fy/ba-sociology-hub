@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<title>അധ്യായം 21: മെഷീൻ കോഗ്നിഷനും ക്ലാസിക്കൽ AI സമന്വയവും</title>
+<style>
+@page {
+    size: A4 portrait;
+    margin: 12mm 14mm 12mm 14mm;
+}
+* {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+body {
+    font-family: 'Gayathri', 'Manjari', 'Meera', 'Noto Sans Malayalam', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #111827;
+    background: #ffffff;
+    font-size: 8.35pt;
+    line-height: 1.45;
+}
+.page-container {
+    width: 100%;
+    height: 100%;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    box-sizing: border-box;
+}
+.page-container:last-child {
+    page-break-after: avoid;
+}
+.header-box {
+    border-bottom: 2px solid #1e3a8a;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.header-title-area {
+    flex: 1;
+}
+.header-badge {
+    font-size: 6.8pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+.header-title-ml {
+    font-size: 11.2pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.25;
+}
+.header-title-en {
+    font-size: 8.0pt;
+    font-weight: 600;
+    color: #475569;
+    margin-top: 1px;
+}
+.header-page-num {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 4px;
+    padding: 2px 7px;
+    white-space: nowrap;
+}
+.content-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 8.0px;
+}
+.card-unit {
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #f8fafc;
+    overflow: hidden;
+}
+.card-unit-header {
+    background: #e2e8f0;
+    padding: 3.5px 8px;
+    font-size: 7.7pt;
+    font-weight: 700;
+    color: #1e293b;
+    border-bottom: 1px solid #cbd5e1;
+    display: flex;
+    justify-content: space-between;
+}
+.card-bilingual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.0px;
+    padding: 6.0px 8.0px;
+}
+.card-en {
+    background: #eff6ff;
+    border-left: 3.5px solid #1e3a8a;
+    border-radius: 4px;
+    padding: 6.5px 8.5px;
+}
+.card-ml {
+    background: #f0fdf4;
+    border-left: 3.5px solid #047857;
+    border-radius: 4px;
+    padding: 6.5px 8.5px;
+}
+.card-title-en {
+    font-size: 8.4pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 3.0px;
+}
+.card-title-ml {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #047857;
+    margin-bottom: 3.0px;
+}
+.card-desc-en {
+    font-size: 8.15pt;
+    line-height: 1.47;
+    color: #1e293b;
+    text-align: justify;
+}
+.card-desc-ml {
+    font-size: 8.00pt;
+    line-height: 1.49;
+    color: #0f172a;
+    text-align: justify;
+}
+.card-example {
+    background: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-left: 3.5px solid #d97706;
+    border-radius: 4px;
+    padding: 5.0px 8.0px;
+    margin-top: 5.0px;
+    font-size: 7.65pt;
+    line-height: 1.44;
+    color: #92400e;
+}
+.card-example strong {
+    color: #b45309;
+}
+.footer-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #cbd5e1;
+    padding-top: 3.5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 6.8pt;
+    color: #64748b;
+}
+
+/* Page 10 20 Knock Concepts */
+.grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.5px;
+}
+.knock-card {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 3.5px solid #1e3a8a;
+    border-radius: 4px;
+    padding: 4.5px 6.5px;
+}
+.knock-card:nth-child(even) {
+    border-left-color: #047857;
+    background: #f0fdf4;
+}
+.knock-num {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 7.0pt;
+    color: #ffffff;
+    background: #1e3a8a;
+    border-radius: 3px;
+    padding: 1px 4.5px;
+    margin-right: 3px;
+}
+.knock-card:nth-child(even) .knock-num {
+    background: #047857;
+}
+.knock-title {
+    font-weight: 700;
+    font-size: 7.4pt;
+    color: #0f172a;
+}
+.knock-desc-en {
+    font-size: 7.15pt;
+    line-height: 1.34;
+    color: #334155;
+    margin-top: 1.5px;
+    text-align: justify;
+}
+.knock-desc-ml {
+    font-size: 7.05pt;
+    line-height: 1.36;
+    color: #064e3b;
+    margin-top: 1.5px;
+    text-align: justify;
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page-container">
+  <div class="header-box">
+    <div class="header-title-area">
+      <div class="header-badge">Philosophy of Artificial Intelligence &bull; Module 5 &bull; Chapter 21</div>
+      <h1 class="header-title-ml">മെഷീൻ കോഗ്നിഷനും ചിന്തയുടെ അനുകരണവും</h1>
+      <div class="header-title-en">Machine Cognition &amp; The Simulation vs Genuine Thinking Debate</div>
+    </div>
+    <div class="header-page-num">പേജ് 1 / 10</div>
+  </div>
+  <div class="content-flow">
+    <!-- Unit 1.1 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.1: Genuine Cognitive Abilities vs Simulation of Thinking</span>
+        <span>യഥാർത്ഥ ചിന്താശേഷിയും അനുകരണവും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Authentic Cognition vs Behavioral Replication</div>
+          <div class="card-desc-en">A foundational query in philosophy of AI asks whether machines possess authentic cognitive capacities or merely execute sophisticated simulations of human thought processes. Authentic cognition requires subjective awareness, intentionality (mental states being directed at real-world meanings), and genuine comprehension. In contrast, computational systems operate through algorithmic execution and statistical correlation over uninterpreted formal symbols, successfully mirroring behavioral outputs without experiencing mental states.</div>
+          <div class="card-example"><strong>Example:</strong> A chess engine evaluating millions of node branches calculates winning moves through mathematical optimization without understanding the emotional thrill or cultural history of chess.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">യഥാർത്ഥ ജ്ഞാനവും പെരുമാറ്റപരമായ അനുകരണവും</div>
+          <div class="card-desc-ml">യന്ത്രങ്ങൾക്ക് യഥാർത്ഥ ജ്ഞാനബോധം (authentic cognition) ഉണ്ടോ അതോ അവ മനുഷ്യന്റെ ചിന്താപ്രക്രിയകളെ കൃത്യമായി അനുകരിക്കുക (simulation) മാത്രമാണോ ചെയ്യുന്നത് എന്നത് AI തത്ത്വചിന്തയിലെ പ്രധാന ചോദ്യമാണ്. യഥാർത്ഥ ചിന്തയ്ക്ക് ആന്തരിക ബോധവും (consciousness), അർത്ഥബോധമുള്ള ഇന്റൻഷണാലിറ്റിയും (intentionality), യഥാർത്ഥ ധാരണയും ആവശ്യമാണ്. എന്നാൽ കമ്പ്യൂട്ടറുകൾ അർത്ഥമറിയാതെ ചിഹ്നങ്ങളെ ഗണിതശാസ്ത്രപരമായി അപഗ്രഥിച്ച് പെരുമാറ്റം അനുകരിക്കുക മാത്രമാണ് ചെയ്യുന്നത്.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ദശലക്ഷക്കണക്കിന് നീക്കങ്ങൾ കണക്കുകൂട്ടി ചെസ്സ് ജയിക്കുന്ന കമ്പ്യൂട്ടർ പ്രോഗ്രാമിന് കളിയുടെ ആവേശമോ വിജയത്തിന്റെ ആനന്ദമോ സംബന്ധിച്ച ആന്തരിക ബോധമില്ല.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 1.2 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.2: Human vs Machine Intelligence Parity Debate</span>
+        <span>മനുഷ്യ ബുദ്ധിയും യന്ത്ര ബുദ്ധിയും: സമാനതാ വാദങ്ങൾ</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Arguments For and Against Human-Machine Parity</div>
+          <div class="card-desc-en">Proponents of machine intelligence argue functionally: if an AI system accomplishes complex problem-solving, abstract mathematics, and natural language communication, it exhibits functional equivalence to human intellect. Skeptics counter that human intelligence is grounded in organic biology, emotional valence, qualitative experience (qualia), and moral accountability. Computing power operates strictly on syntax and execution rules, lacking lived embodiment and spontaneous existential purpose.</div>
+          <div class="card-example"><strong>Example:</strong> An AI medical diagnostic system matches a physician's accuracy in identifying tumors, yet it lacks empathy, moral conscience, and the existential duty felt toward a suffering patient.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">ബുദ്ധിപരമായ തുല്യതയ്ക്കുള്ള വാദങ്ങളും പ്രതിവാദങ്ങളും</div>
+          <div class="card-desc-ml">AI സംവിധാനങ്ങളെ മനുഷ്യരെപ്പോലെ ബുദ്ധിയുള്ളവരായി കണക്കാക്കണമോ എന്നതിൽ രണ്ട് പ്രധാന ധാരകളുണ്ട്. പ്രവർത്തനപരമായ സമീപനം (functionalism) അനുസരിച്ച് മനുഷ്യൻ ചെയ്യുന്ന സങ്കീർണ്ണമായ പ്രശ്നപരിഹാരങ്ങളും ഭാഷാപ്രയോഗങ്ങളും നടത്തുന്നതിനാൽ AI ബുദ്ധിപരമാണ്. എന്നാൽ പ്രതിവാദക്കാർ ചൂണ്ടിക്കാട്ടുന്നത് മനുഷ്യന്റെ ബുദ്ധി ജൈവിക അനുഭവങ്ങളിലും വികാരങ്ങളിലും അനുഭവപരമായ ബോധത്തിലും (qualia) അധിഷ്ഠിതമാണെന്നും യന്ത്രത്തിന് ജീവനനുഭവങ്ങളോ സ്വതന്ത്ര ഇച്ഛയോ ഇല്ലെന്നുമാണ്.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> രോഗം കൃത്യമായി നിർണ്ണയിക്കുന്ന AI സംവിധാനത്തിന് രോഗിയുടെ വേദനയോട് കാരുണ്യം പ്രകടിപ്പിക്കാനോ ധാർമ്മികമായ ആശ്വാസം പകരാനോ സാധ്യമല്ല.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 1.3 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.3: Plant Intelligence Analogy: Perception, Analysis & Response</span>
+        <span>സസ്യങ്ങളിലെ ബുദ്ധി: പ്രതികരണവും വിശകലനവും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Defining Intelligence Beyond Central Nervous Systems</div>
+          <div class="card-desc-en">If intelligence is fundamentally defined as the capacity for environmental perception, data analysis, and adaptive behavioral response, philosophical discourse extends intelligence beyond humans and machines to flora. Plants perceive sunlight, soil moisture, and chemical warnings from neighbors, analyzing biochemical signals to adapt their root architecture and phototropic growth. However, this raises the critical philosophical distinction between non-conscious adaptive reaction and cognitive intentionality.</div>
+          <div class="card-example"><strong>Example:</strong> A sunflower turning toward the solar path demonstrates environmental sensitivity and adaptive reaction, illustrating decentralized biological response without brain-based conceptual thought.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">പ്രതികരണശേഷി ബുദ്ധിയാണോ എന്ന തത്ത്വചിന്താ വിശകലനം</div>
+          <div class="card-desc-ml">ബാഹ്യസാഹചര്യങ്ങളെ അറിയൽ (perception), അപഗ്രഥിക്കൽ (analysis), പ്രതികരിക്കൽ (response) എന്നിവയാണ് ബുദ്ധിയുടെ നിർവചനമെങ്കിൽ സസ്യങ്ങളെ ബുദ്ധിയുള്ള ജീവികളായി കാണാമോ എന്ന ദാർശനിക സംവാദം പ്രസക്തമാണ്. ചെടികൾ സൂര്യപ്രകാശം തിരിച്ചറിയുകയും വേരുകൾ വഴി ജലം കണ്ടെത്തുകയും കീടങ്ങൾക്കെതിരെ രാസസന്ദേശങ്ങൾ അയക്കുകയും ചെയ്യുന്നു. എന്നാൽ ഇത് ആന്തരിക ബോധമുള്ള ചിന്തയല്ല, മറിച്ച് നിലനിൽപ്പിനായുള്ള ജൈവികമായ യാന്ത്രിക പ്രതികരണമാണ്.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> സൂര്യകാന്തിപ്പൂവ് സൂര്യനുനേരെ തിരിയുന്നത് ബാഹ്യ ഉത്തേജനത്തോടുള്ള അഡാപ്റ്റീവ് പ്രതികരണമാണ്, മറിച്ച് മസ്തിഷ്ക അധിഷ്ഠിത ചിന്തയോ ആസൂത്രണമോ അല്ല.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>Philosophy of Artificial Intelligence &bull; PHL1MN102</span>
+    <span>Calicut University E-Content Pure Syllabus</span>
+    <span>Page 1</span>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page-container">
+  <div class="header-box">
+    <div class="header-title-area">
+      <div class="header-badge">Philosophy of Artificial Intelligence &bull; Module 5 &bull; Chapter 21</div>
+      <h1 class="header-title-ml">മാനുഷിക ബുദ്ധിയെ AI മറികടക്കുമോ?</h1>
+      <div class="header-title-en">Will AI Exceed Human Intelligence? Epistemology &amp; Agency</div>
+    </div>
+    <div class="header-page-num">പേജ് 2 / 10</div>
+  </div>
+  <div class="content-flow">
+    <!-- Unit 2.1 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.4: The Trajectory Towards Artificial Superintelligence</span>
+        <span>അതിബുദ്ധിയിലേക്കുള്ള പ്രയാണം: സാധ്യതകളും പരിധികളും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Quantitative Processing vs Qualitative General Intelligence</div>
+          <div class="card-desc-en">The question of whether AI will ultimately exceed human intelligence hinges on differentiating quantitative computational prowess from qualitative general reasoning. AI systems drastically outperform humans in data throughput, combinatorial search, and domain-specific pattern recognition. However, human intellect uniquely integrates common-sense metaphysics, contextual wisdom, emotional intuition, and normative moral judgment—faculties that do not automatically emerge from raw computational scale.</div>
+          <div class="card-example"><strong>Example:</strong> An AI can analyze terabytes of genomic sequences in seconds, yet it cannot comprehend what it means to lead a fulfilling human life or cope with personal mortality.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">ഗണിതശേഷിയും ഗുണപരമായ പൊതുബുദ്ധിയും തമ്മിലുള്ള വ്യത്യാസം</div>
+          <div class="card-desc-ml">നിർമ്മിത ബുദ്ധി ആത്യന്തികമായി മനുഷ്യ ബുദ്ധിയെ മറികടക്കുമോ എന്ന ചോദ്യം അളവുപരമായ കമ്പ്യൂട്ടിംഗ് ശേഷിയും സമഗ്രമായ സാമാന്യബുദ്ധിയും തമ്മിലുള്ള വ്യത്യാസത്തെ അടിസ്ഥാനമാക്കിയുള്ളതാണ്. വിവരങ്ങൾ അപഗ്രഥിക്കുന്നതിലും കണക്കുകൂട്ടലുകളിലും AI മനുഷ്യനെക്കാൾ വളരെ മുന്നിലാണ്. എന്നാൽ ജീവിതാനുഭവങ്ങളിൽ നിന്നുള്ള സാമാന്യബോധം, ധാർമ്മിക വിവേചനബുദ്ധി, സർഗ്ഗാത്മകത എന്നിവ കേവലമായ അൽഗോരിതങ്ങൾ വർദ്ധിപ്പിച്ചതുകൊണ്ട് മാത്രം കമ്പ്യൂട്ടറുകളിൽ രൂപപ്പെടുകയില്ല.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ലക്ഷക്കണക്കിന് ശാസ്ത്രലേഖനങ്ങൾ നിമിഷങ്ങൾക്കകം വായിച്ച് സംഗ്രഹിക്കുന്ന AI-ക്ക് ജീവിതത്തിന്റെ അർത്ഥത്തെക്കുറിച്ചോ മരണഭയത്തെക്കുറിച്ചോ സ്വന്തം ബോധമില്ല.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 2.2 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.5: Consciousness and Free Agency Confronted by AI</span>
+        <span>ബോധവും സ്വതന്ത്ര ഇച്ഛയും: AI ഉയർത്തുന്ന ചോദ്യങ്ങൾ</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Determinism, Computational Functionalism & Moral Agency</div>
+          <div class="card-desc-en">AI directly challenges classical notions of human consciousness and free will. If human mental faculties can be replicated via computational algorithms, materialist determinism is reinforced, implying human choices are mechanically caused rather than spontaneously autonomous. Furthermore, if artificial systems operate without subjective phenomenal experience (first-person qualia), they lack moral agency, functioning as deterministic instruments regardless of how autonomous their outputs appear.</div>
+          <div class="card-example"><strong>Example:</strong> A self-driving navigation algorithm choosing between rerouting paths acts entirely on deterministic penalty functions, lacking any genuine subjective free choice.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">യാന്ത്രിക നിർണ്ണയവാദവും മനുഷ്യന്റെ സ്വതന്ത്ര ഇച്ഛയും</div>
+          <div class="card-desc-ml">മനുഷ്യന്റെ ബോധത്തെയും സ്വതന്ത്ര ഇച്ഛയെയും കുറിച്ചുള്ള പരമ്പരാഗത സങ്കൽപ്പങ്ങളെ AI ശക്തമായി വെല്ലുവിളിക്കുന്നു. മനുഷ്യന്റെ ചിന്തകൾ ഭൗതികമായ കണക്കുകൂട്ടലുകൾ മാത്രമാണെങ്കിൽ സ്വതന്ത്ര ഇച്ഛ എന്നത് ഒരു മിഥ്യയാണെന്ന വാദം ഉയർന്നുവരുന്നു. കൂടാതെ, വ്യക്തിപരമായ ആന്തരിക അനുഭവങ്ങളില്ലാത്ത (qualia) യന്ത്രങ്ങൾ ബാഹ്യമായി എത്ര സ്വയംഭരണത്തോടെ പ്രവർത്തിച്ചാലും അവ പൂർണ്ണമായും അൽഗോരിതങ്ങളാൽ മുൻകൂട്ടി നിർണ്ണയിക്കപ്പെട്ടവയാണ്.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ട്രാഫിക് ഒഴിവാക്കാൻ വഴി മാറ്റുന്ന ഒരു സ്വയംനിയന്ത്രിത കാർ കണക്കുകൂട്ടിയ ഗണിത സമവാക്യങ്ങൾ അനുസരിക്കുക മാത്രമാണ് ചെയ്യുന്നത്, സ്വന്തം ഇഷ്ടപ്രകാരമല്ല തീരുമാനമെടുക്കുന്നത്.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 2.3 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.6: Multidisciplinary Nexus: Philosophy, Computer Science & AI</span>
+        <span>തത്ത്വചിന്തയും കമ്പ്യൂട്ടർ സയൻസും തമ്മിലുള്ള ബഹുമുഖ ബന്ധം</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Epistemological & Ontological Cross-Pollination</div>
+          <div class="card-desc-en">The development of artificial intelligence represents an inseparable convergence of philosophy, logic, linguistics, cognitive neuroscience, and computer science. Philosophy supplies foundational epistemological queries regarding what knowledge is, ontological inquiries regarding what entities exist, and ethical boundaries for action. Computer science translates these conceptual models into formal symbolic representations, state-space search architectures, and verifiable mathematical programs.</div>
+          <div class="card-example"><strong>Example:</strong> Philosophical knowledge representation theories directly laid the framework for semantic web ontologies and knowledge graphs used by search engines today.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">ജ്ഞാനശാസ്ത്രവും പ്രോഗ്രാമിംഗ് അടിത്തറയും തമ്മിലുള്ള ഐക്യം</div>
+          <div class="card-desc-ml">നിർമ്മിത ബുദ്ധിയുടെ വളർച്ച എന്നത് തത്ത്വചിന്ത, കമ്പ്യൂട്ടർ സയൻസ്, ഭാഷാശാസ്ത്രം, കൊഗ്നിറ്റീവ് സയൻസ് എന്നിവയുടെ സംയോജനമാണ്. ജ്ഞാനം എന്നാൽ എന്ത്, അറിവ് എങ്ങനെ നേടുന്നു എന്ന തത്ത്വചിന്താപരമായ അന്വേഷണങ്ങളാണ് AI-യുടെ വിജ്ഞാന പ്രാതിനിധ്യ (knowledge representation) അൽഗോരിതങ്ങൾക്ക് അടിസ്ഥാനമായത്. ദാർശനിക ആശയങ്ങളെ യന്ത്രങ്ങൾക്ക് പ്രവർത്തിപ്പിക്കാൻ കഴിയുന്ന ലോജിക്കൽ കോഡുകളാക്കി മാറ്റുകയാണ് കമ്പ്യൂട്ടർ ശാസ്ത്രം ചെയ്യുന്നത്.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ദാർശനികമായ വർഗ്ഗീകരണ സിദ്ധാന്തങ്ങളാണ് ആധുനിക സേർച്ച് എഞ്ചിനുകൾ ഉപയോഗിക്കുന്ന നോളഡ്ജ് ഗ്രാഫുകളുടെയും ഡാറ്റാബേസുകളുടെയും ഘടനയ്ക്ക് രൂപം നൽകിയത്.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>Philosophy of Artificial Intelligence &bull; PHL1MN102</span>
+    <span>Calicut University E-Content Pure Syllabus</span>
+    <span>Page 2</span>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page-container">
+  <div class="header-box">
+    <div class="header-title-area">
+      <div class="header-badge">Philosophy of Artificial Intelligence &bull; Module 5 &bull; Chapter 21</div>
+      <h1 class="header-title-ml">AI-യുടെ ചരിത്രപരമായ വികാസം: ഓട്ടോമാറ്റ മുതൽ ആധുനിക കമ്പ്യൂട്ടിംഗ് വരെ</h1>
+      <div class="header-title-en">Evolution of AI: From Historical Automata to Modern Computing</div>
+    </div>
+    <div class="header-page-num">പേജ് 3 / 10</div>
+  </div>
+  <div class="content-flow">
+    <!-- Unit 3.1 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.7: Historical Automata & 17th Century Mechanical Calculators</span>
+        <span>ഓട്ടോമാറ്റകളും പതിനേഴാം നൂറ്റാണ്ടിലെ മെക്കാനിക്കൽ കാൽക്കുലേറ്ററുകളും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Early Mechanization of Calculation & Reasoning</div>
+          <div class="card-desc-en">The lineage of artificial intelligence traces back to ancient and early modern automata—mechanical devices mimicking life—and the 17th-century mechanization of thought. Blaise Pascal invented the Pascaline (1642) to automate arithmetic addition and subtraction. Gottfried Wilhelm Leibniz expanded this with the Stepped Reckoner (1673), envisioning the Characteristica Universalis and Calculus Ratiocinator—a universal formal language and mechanical calculus to resolve all human debates through computation.</div>
+          <div class="card-example"><strong>Example:</strong> Leibniz proclaimed that when disputes arise, philosophers need simply say 'Calculemus' (Let us calculate) and compute the exact truth via formal arithmetic.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">കണക്കുകൂട്ടലുകളുടെയും ചിന്തയുടെയും യാന്ത്രികവൽക്കരണം</div>
+          <div class="card-desc-ml">മനുഷ്യന്റെ ശാരീരിക ചലനങ്ങളെ അനുകരിച്ച പുരാതന ഓട്ടോമാറ്റകളിൽ നിന്നും 17-ാം നൂറ്റാണ്ടിലെ മെക്കാനിക്കൽ കാൽക്കുലേറ്ററുകളിൽ നിന്നുമാണ് AI-യുടെ ഉത്ഭവം. 1642-ൽ ബ്ലെയ്സ് പാസ്കൽ ആദ്യത്തെ കൂട്ടിച്ചേർക്കൽ യന്ത്രമായ പാസ്കലിൻ (Pascaline) നിർമ്മിച്ചു. തുടർന്ന് ഗോട്ട്ഫ്രീഡ് ലൈബ്നിസ് 'സ്റ്റെപ്പ്ഡ് റെക്കണർ' വികസിപ്പിക്കുകയും ചിന്തകളെ ഒരു സാർവ്വത്രിക ഗണിത ഭാഷയാക്കി മാറ്റി ഏത് തർക്കവും കണക്കുകൂട്ടലുകളിലൂടെ പരിഹരിക്കാമെന്ന് വാദിക്കുകയും ചെയ്തു.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> മനുഷ്യരുടെ ആശയക്കുഴപ്പങ്ങൾ പരിഹരിക്കാൻ പണ്ഡിതന്മാർ തർക്കിക്കുന്നതിന് പകരം പേപ്പറും പേനയും യന്ത്രവും ഉപയോഗിച്ച് 'നമുക്ക് കണക്കുകൂട്ടാം' എന്ന് ലൈബ്നിസ് പ്രസ്താവിച്ചു.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 3.2 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.8: Alan Turing, The British Bombe & Universal Computation</span>
+        <span>അലൻ ട്യൂറിംഗും ബ്രിട്ടീഷ് ബോംബെയും കമ്പ്യൂട്ടിംഗിന്റെ ജനനവും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Turing Machines, Cryptanalysis & Algorithmic Foundations</div>
+          <div class="card-desc-en">Alan Mathison Turing revolutionized intellectual history by formalizing the mathematical concept of computation through the Universal Turing Machine (1936). During World War II at Bletchley Park, Turing designed the electromechanical 'Bombe', an automated machine that rapidly deciphered the military Enigma cipher of Nazi Germany. Turing proved that physical machines could systematically outperform human minds in high-speed symbolic logic and cryptanalysis, laying the empirical foundation for digital computers.</div>
+          <div class="card-example"><strong>Example:</strong> The British Bombe tested thousands of rotor wire permutations per minute, breaking military ciphers that would have taken human mathematicians months to calculate.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">ട്യൂറിംഗ് മെഷീനും യുദ്ധകാലത്തെ നിർണ്ണായക കണ്ടുപിടുത്തങ്ങളും</div>
+          <div class="card-desc-ml">1936-ൽ അലൻ ട്യൂറിംഗ് വിഭാവനം ചെയ്ത 'യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീൻ' ആധുനിക കമ്പ്യൂട്ടറുകളുടെ സൈദ്ധാന്തിക അടിത്തറയായി. രണ്ടാം ലോകമഹായുദ്ധകാലത്ത് ബ്ലെറ്റ്‌ച്‌ലി പാർക്കിൽ വെച്ച് ജർമ്മനിയുടെ എനിഗ്മ രഹസ്യകോഡുകൾ തകർക്കാൻ ട്യൂറിംഗ് രൂപകൽപ്പന ചെയ്ത ഇലക്ട്രോമെക്കാനിക്കൽ യന്ത്രമാണ് 'ബ്രിട്ടീഷ് ബോംബെ' (Bombe). ചിഹ്നങ്ങളെ വേഗത്തിൽ പരിശോധിച്ച് യുക്തിപരമായ നിഗമനങ്ങളിലെത്താൻ യന്ത്രങ്ങൾക്ക് കഴിയുമെന്ന് ഈ പരീക്ഷണം തെളിയിച്ചു.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> മനുഷ്യ ഗണിതശാസ്ത്രജ്ഞർക്ക് മാസങ്ങൾ വേണ്ടിവരുന്ന സങ്കീർണ്ണമായ കോഡ് പരിശോധനകൾ ട്യൂറിംഗിന്റെ ബോംബെ യന്ത്രം ഏതാനും മിനിറ്റുകൾക്കുള്ളിൽ പൂർത്തിയാക്കി.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 3.3 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.9: The 1956 Dartmouth Conference & Logic Theorist</span>
+        <span>1956-ലെ ഡാർട്ട്മൗത്ത് കോൺഫറൻസും ലോജിക് തിയറിസ്റ്റും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Formal Inception of Artificial Intelligence as a Discipline</div>
+          <div class="card-desc-en">In the summer of 1956, John McCarthy, Marvin Minsky, Nathaniel Rochester, and Claude Shannon organized the Dartmouth Summer Research Project on Artificial Intelligence, formally coining the term 'Artificial Intelligence'. At this historic conference, Allen Newell, Herbert Simon, and Cliff Shaw demonstrated the 'Logic Theorist'—the first functional AI software program. It proved 38 of the first 52 theorems in Russell and Whitehead's Principia Mathematica, utilizing heuristic search to emulate human deduction.</div>
+          <div class="card-example"><strong>Example:</strong> Logic Theorist discovered an elegant, shorter mathematical proof for theorem 2.85 in Principia Mathematica than Russell and Whitehead had originally published.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">AI എന്ന ശാസ്ത്രശാഖയുടെ ഔദ്യോഗിക പിറവി</div>
+          <div class="card-desc-ml">1956-ൽ ജോൺ മക്കാർത്തി, മാർവിൻ മിൻസ്കി, ക്ലോഡ് ഷാനൻ എന്നിവർ ചേർന്ന് സംഘടിപ്പിച്ച ഡാർട്ട്മൗത്ത് കോൺഫറൻസിലാണ് 'ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ്' എന്ന പദം ആദ്യമായി ഔദ്യോഗികമായി നാമകരണം ചെയ്യപ്പെട്ടത്. ഈ കോൺഫറൻസിൽ അലൻ നെവലും ഹെർബർട്ട് സൈമണും ചേർന്ന് ആദ്യത്തെ AI പ്രോഗ്രാമായ 'ലോജിക് തിയറിസ്റ്റ്' (Logic Theorist) അവതരിപ്പിച്ചു. ഗണിതശാസ്ത്ര സിദ്ധാന്തങ്ങൾ മനുഷ്യരെപ്പോലെ യുക്തിപരമായി തെളിയിക്കാൻ ഈ പ്രോഗ്രാമിന് കഴിഞ്ഞു.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> പ്രിൻസിപ്പിയ മാത്തമാറ്റിക്കയിലെ സങ്കീർണ്ണമായ സിദ്ധാന്തങ്ങൾ സ്വയം തെളിയിച്ച് യന്ത്രങ്ങൾക്ക് യുക്തിപരമായി ചിന്തിക്കാനാകും എന്ന് ലോജിക് തിയറിസ്റ്റ് പ്രകടമാക്കി.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>Philosophy of Artificial Intelligence &bull; PHL1MN102</span>
+    <span>Calicut University E-Content Pure Syllabus</span>
+    <span>Page 3</span>
+  </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page-container">
+  <div class="header-box">
+    <div class="header-title-area">
+      <div class="header-badge">Philosophy of Artificial Intelligence &bull; Module 5 &bull; Chapter 21</div>
+      <h1 class="header-title-ml">ക്ലാസിക്കൽ AI-യും പ്രതീകാത്മക യുക്തിയും</h1>
+      <div class="header-title-en">Classical AI &amp; Foundations of Symbolic Logic</div>
+    </div>
+    <div class="header-page-num">പേജ് 4 / 10</div>
+  </div>
+  <div class="content-flow">
+    <!-- Unit 4.1 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.10: Aristotle's Logic & Syllogistic Inference in Automated Thinking</span>
+        <span>അരിസ്റ്റോട്ടിലിന്റെ യുക്തിശാസ്ത്രവും സിലോഗിസവും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Syllogisms as Mechanical Blueprints for Computation</div>
+          <div class="card-desc-en">Classical AI owes its foundational architecture to Aristotle's term logic and syllogistic structures. Aristotle demonstrated that deductive validity depends entirely on formal syntax rather than empirical content. A categorical syllogism comprises a major premise, minor premise, and necessary conclusion. Because the relationship between propositions can be mechanized without human bias, Aristotelian formal logic established the exact operational mechanics utilized in automated theorem provers and rule-based inference engines.</div>
+          <div class="card-example"><strong>Example:</strong> Major premise: All humans are mortal; Minor premise: Socrates is human; Valid conclusion: Socrates is mortal. This syntactic deduction executes mechanically in AI code.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">നിഗമന യുക്തിയും ഓട്ടോമേറ്റഡ് തിങ്കിംഗിന്റെ അടിത്തറയും</div>
+          <div class="card-desc-ml">ക്ലാസിക്കൽ AI-യുടെ ഏറ്റവും വലിയ അടിത്തറ അരിസ്റ്റോട്ടിലിന്റെ യുക്തിശാസ്ത്രവും സിലോഗിസവുമാണ് (syllogism). ഒരു കാര്യത്തിന്റെ സാധുത നിർണ്ണയിക്കുന്നത് അതിന്റെ ഉള്ളടക്കമല്ല, മറിച്ച് ചിട്ടയായ യുക്തിപരമായ ഘടനയാണെന്ന് അദ്ദേഹം തെളിയിച്ചു. പ്രധാന വാക്യം, ഉപവാക്യം എന്നിവയിൽ നിന്നും അനിവാര്യമായ നിഗമനത്തിലെത്തുന്ന ഈ ഘടനയാണ് കമ്പ്യൂട്ടറുകളിലെ ഓട്ടോമേറ്റഡ് തിങ്കിംഗിനും (automated thinking) റൂൾ-ബേസ്ഡ് സിസ്റ്റങ്ങൾക്കും മാതൃകയായത്.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> എല്ലാ മനുഷ്യരും മർത്യരാണ്; സോക്രട്ടീസ് ഒരു മനുഷ്യനാണ്; അതിനാൽ സോക്രട്ടീസ് മർത്യനാണ് എന്ന അരിസ്റ്റോട്ടിലിയൻ യുക്തി യന്ത്രങ്ങൾക്ക് കൃത്യമായി പ്രോഗ്രാം ചെയ്യാം.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 4.2 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.11: Symbolic Representation & Physical Symbol System Hypothesis</span>
+        <span>പ്രതീകാത്മക പ്രാതിനിധ്യവും സിംബോളിക് സിസ്റ്റം സിദ്ധാന്തവും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Manipulation of Discrete Formal Tokens</div>
+          <div class="card-desc-en">Classical AI (GOFAI - Good Old-Fashioned Artificial Intelligence) posits that intelligence is grounded in symbolic representation. According to Newell and Simon's Physical Symbol System Hypothesis (PSSH), a physical symbol system possesses the necessary and sufficient means for general intelligent action. Symbols represent real-world entities, properties, and relations, and cognitive computation consists of manipulating these discrete formal tokens according to explicit, deterministic syntactic rules.</div>
+          <div class="card-example"><strong>Example:</strong> Representing knowledge as `Parent(John, Mary)` and `Parent(Mary, Alice)` allows an inference engine to deduce `Grandparent(John, Alice)` via symbolic rule lookup.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">ചിഹ്നങ്ങളുടെ ഘടനാപരമായ അപഗ്രഥനവും പൊതുബുദ്ധിയും</div>
+          <div class="card-desc-ml">ക്ലാസിക്കൽ AI-യുടെ അടിസ്ഥാന സിദ്ധാന്തം ഫിസിക്കൽ സിംബൽ സിസ്റ്റം ഹൈപ്പോതെസിസ് (PSSH) ആണ്. നെവലും സൈമണും വ്യക്തമാക്കിയത് ചിഹ്നങ്ങളെ പ്രതീകാത്മകമായി ക്രമീകരിച്ച് കൈകാര്യം ചെയ്യുന്ന ഒരു ഭൗതിക സിംബൽ സംവിധാനത്തിന് പൊതുവായ ബുദ്ധിപരമായ പ്രവർത്തികൾ ചെയ്യാനുള്ള ശേഷിയുണ്ടെന്നാണ്. പുറംലോകത്തെ വസ്തുക്കളെയും ആശയങ്ങളെയും ചിഹ്നങ്ങളായി മാറ്റി നിയമങ്ങൾക്കനുസരിച്ച് കൈകാര്യം ചെയ്ത് യന്ത്രങ്ങൾ ഉത്തരങ്ങൾ കണ്ടെത്തുന്നു.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> 'ജോൺ മേരിയുടെ പിതാവാണ്', 'മേരി ആലീസിന്റെ മാതാവാണ്' എന്ന ചിഹ്നവാക്യങ്ങളിൽ നിന്ന് 'ജോൺ ആലീസിന്റെ മുത്തശ്ശനാണ്' എന്ന് നിയമങ്ങൾ വഴി AI കണ്ടെത്തുന്നു.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 4.3 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.12: John McCarthy's Contributions & Deductive Problem Solving</span>
+        <span>ജോൺ മക്കാർത്തിയുടെ സംഭാവനകളും ഡിഡക്റ്റീവ് പ്രശ്നപരിഹാരവും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">LISP, Situation Calculus & Knowledge Engineering</div>
+          <div class="card-desc-en">John McCarthy made monumental contributions to Classical AI by establishing formal mathematical logic as the language of machine intellect. He invented the LISP programming language (1958), the dominant language of AI research for decades, and developed Situation Calculus to model actions, states, and changes over time. Early classical systems utilized pure deductive reasoning—progressing from universal premises to particular truths—to solve complex logic puzzles and game configurations.</div>
+          <div class="card-example"><strong>Example:</strong> LISP's symbolic list processing allowed recursive function manipulation of nested data trees, becoming the standard tool for symbolic AI knowledge representation.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">ലിസ്പ് പ്രോഗ്രാമിംഗും സാഹചര്യ കലനവും</div>
+          <div class="card-desc-ml">ജോൺ മക്കാർത്തി മാത്തമാറ്റിക്കൽ ലോജിക്കിനെ AI-യുടെ പ്രധാന ഉപകരണമാക്കി മാറ്റിയ പ്രതിഭയാണ്. പ്രതീകാത്മക പ്രോസസ്സിംഗിനായി അദ്ദേഹം 1958-ൽ ലിസ്പ് (LISP) പ്രോഗ്രാമിംഗ് ഭാഷ വികസിപ്പിച്ചു. ലോകത്തിലെ മാറ്റങ്ങളെയും പ്രവർത്തനങ്ങളെയും ലോജിക്കലായി മാതൃകയാക്കാൻ സിറ്റുവേഷൻ കാൽക്കുലസ് (Situation Calculus) എന്ന സങ്കേതം കൊണ്ടുവന്നു. സാർവ്വത്രിക നിയമങ്ങളിൽ നിന്ന് പ്രത്യേക നിഗമനങ്ങളിലെത്തുന്ന നിഗമന യുക്തിയാണ് (deductive reasoning) ഈ സംവിധാനങ്ങളിൽ ഉപയോഗിച്ചത്.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ലിസ്പ് പ്രോഗ്രാമിംഗിലെ ലിസ്റ്റ് പ്രോസസ്സിംഗ് സംവിധാനമുപയോഗിച്ച് ഗണിതശാസ്ത്രപരമായ തെളിവുകളും യുക്തിപരമായ പസിലുകളും എളുപ്പത്തിൽ പരിഹരിക്കാൻ സാധിച്ചു.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>Philosophy of Artificial Intelligence &bull; PHL1MN102</span>
+    <span>Calicut University E-Content Pure Syllabus</span>
+    <span>Page 4</span>
+  </div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page-container">
+  <div class="header-box">
+    <div class="header-title-area">
+      <div class="header-badge">Philosophy of Artificial Intelligence &bull; Module 5 &bull; Chapter 21</div>
+      <h1 class="header-title-ml">ക്ലാസിക്കൽ AI വേഴ്സസ് മെഷീൻ ലേണിംഗ്</h1>
+      <div class="header-title-en">Classical Artificial Intelligence vs Machine Learning</div>
+    </div>
+    <div class="header-page-num">പേജ് 5 / 10</div>
+  </div>
+  <div class="content-flow">
+    <!-- Unit 5.1 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.13: Deductive Rule Logic vs Inductive Statistical Learning</span>
+        <span>ഡിഡക്റ്റീവ് യുക്തിയും ഇൻഡക്റ്റീവ് മെഷീൻ ലേണിംഗും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Top-Down Knowledge Engineering vs Bottom-Up Data Learning</div>
+          <div class="card-desc-en">Classical AI operates via top-down deductive logic: human domain experts manually hardcode explicit axioms, decision trees, and inference rules into the system. In stark contrast, modern Machine Learning operates via bottom-up induction: statistical algorithms adjust numerical connection weights through exposure to massive datasets without explicit programming. Where Classical AI reasons from established universal principles to specific conclusions, Machine Learning infers probabilistic patterns from empirical data observations.</div>
+          <div class="card-example"><strong>Example:</strong> Classical spam filters check explicit keywords (`IF sender contains "free cash" THEN spam`), whereas ML neural networks analyze billions of statistical token weights.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">മുകളിൽ നിന്നുള്ള നിയമങ്ങളും താഴെ നിന്നുള്ള ഡാറ്റാ പഠനവും</div>
+          <div class="card-desc-ml">ക്ലാസിക്കൽ AI-യും ആധുനിക മെഷീൻ ലേണിംഗും തികച്ചും വിഭിന്നമായ ജ്ഞാനശാസ്ത്ര സമീപനങ്ങളാണ് സ്വീകരിക്കുന്നത്. ക്ലാസിക്കൽ AI വിദഗ്ദ്ധർ നേരിട്ട് എഴുതിച്ചേർക്കുന്ന നിയമങ്ങളിലൂടെയും ഡിഡക്റ്റീവ് യുക്തിയിലൂടെയും മുകളിൽ നിന്ന് താഴേക്ക് (top-down) പ്രവർത്തിക്കുന്നു. എന്നാൽ മെഷീൻ ലേണിംഗ് വലിയ അളവിലുള്ള ഡാറ്റകളിൽ നിന്ന് സ്ഥിതിവിവരക്കണക്കുകൾ വഴി ക്രമങ്ങൾ സ്വയം കണ്ടെത്തി താഴെ നിന്ന് മുകളിലേക്ക് (bottom-up inductive learning) പഠിച്ചെടുക്കുന്നു.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ക്ലാസിക്കൽ സിസ്റ്റം നിശ്ചിത വാക്കുകൾ കണ്ട് സ്പാം മെയിൽ തരംതിരിക്കുമ്പോൾ, മെഷീൻ ലേണിംഗ് ദശലക്ഷക്കണക്കിന് മെയിലുകൾ വിശകലനം ചെയ്ത് സ്വയം പഠിക്കുന്നു.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 5.2 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.14: Advantages and Drawbacks of Classical Symbolic AI</span>
+        <span>ക്ലാസിക്കൽ AI-യുടെ ഗുണങ്ങളും ദോഷങ്ങളും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Auditable Transparency vs Brittleness in Unstructured Worlds</div>
+          <div class="card-desc-en">The primary advantage of Classical AI is rigorous transparency, explainability, and determinism: every step in a deductive inference chain is mathematically auditable and provably verifiable. However, its profound drawback is extreme brittleness: if an input deviates slightly from defined logical ontologies, the system crashes or yields absurd contradictions. Furthermore, it completely fails at perceptual tasks like computer vision, auditory recognition, and noisy sensor interpretation.</div>
+          <div class="card-example"><strong>Example:</strong> A medical expert system clearly states the exact deductive rule used to recommend a drug, but cannot recognize a handwritten prescription slip.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">സുതാര്യതയും ക്രമരഹിത ലോകത്തിലെ ബലഹീനതയും</div>
+          <div class="card-desc-ml">ക്ലാസിക്കൽ AI-യുടെ പ്രധാന നേട്ടം അതിന്റെ സുതാര്യതയും വിശദീകരണക്ഷമതയുമാണ് (explainability); തീരുമാനങ്ങൾ എടുത്തതിന്റെ ഓരോ പടിയും കൃത്യമായി പരിശോധിക്കാം. എന്നാൽ ഇതിന്റെ വലിയ ന്യൂനത അതിന്റെ വഴക്കമില്ലായ്മയാണ് (brittleness). നിയമങ്ങളിൽ നേരിയ വ്യത്യാസമുണ്ടായാൽ സിസ്റ്റം സ്തംഭിക്കുന്നു. ശബ്ദങ്ങൾ കേൾക്കുക, ചിത്രങ്ങൾ തിരിച്ചറിയുക തുടങ്ങിയ സ്വാഭാവികമായ ഇന്ദ്രിയപരമായ കാര്യങ്ങൾ ചെയ്യാൻ ക്ലാസിക്കൽ AI-ക്ക് സാധിക്കില്ല.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ഒരു മെഡിക്കൽ എക്സ്പർട്ട് സിസ്റ്റത്തിന് മരുന്ന് നൽകിയതിന്റെ യുക്തി കൃത്യമായി പറയാനാകും, എന്നാൽ ഡോക്ടറുടെ കൈയക്ഷരത്തിലുള്ള കുറിപ്പ് വായിച്ചെടുക്കാൻ അതിന് കഴിയില്ല.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 5.3 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.15: Common-Sense Reasoning & The Brittleness Barrier</span>
+        <span>സാമാന്യബോധവും ക്ലാസിക്കൽ AI-യുടെ പരിമിതികളും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">The Inability of Symbolic Rules to Capture Tacit Background Knowledge</div>
+          <div class="card-desc-en">A decisive failure of Symbolic AI was its inability to model human common-sense reasoning. Common sense relies on vast, unstated, context-sensitive tacit knowledge that humans absorb effortlessly through embodied life. Formalizing millions of everyday axioms (e.g., 'water makes things wet', 'objects fall if dropped') encounters the combinatorial explosion and the Frame Problem—knowing which facts remain unchanged when an action occurs. Symbolic logic proved too rigid for everyday real-world ambiguity.</div>
+          <div class="card-example"><strong>Example:</strong> In Cyc and early knowledge bases, codifying billions of everyday human facts proved impossibly massive and perpetually vulnerable to logical contradictions.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">സാഹചര്യബോധവും പ്രതീകാത്മക യുക്തിയുടെ തകർച്ചയും</div>
+          <div class="card-desc-ml">മനുഷ്യരുടെ സാമാന്യബോധം (common-sense) കൃത്യമായി പ്രോഗ്രാം ചെയ്യാൻ സിംബോളിക് AI-ക്ക് കഴിഞ്ഞില്ല. മനുഷ്യർ ജീവിതാവസ്ഥകളിൽ നിന്ന് സ്വയമേവ നേടുന്ന അലിഖിതമായ ലക്ഷക്കണക്കിന് അനുഭവജ്ഞാനങ്ങൾ നിയമങ്ങളാക്കി മാറ്റുക അസാധ്യമാണ് (ഉദാ: വെള്ളത്തിൽ വീണാൽ നനയും). ഒരു പ്രവർത്തനം നടക്കുമ്പോൾ ഏതൊക്കെ കാര്യങ്ങൾ മാറുന്നു, ഏതൊക്കെ മാറുന്നില്ല എന്ന് തീരുമാനിക്കുന്ന 'ഫ്രെയിം പ്രോബ്ലം' (Frame Problem) പരിഹരിക്കാൻ പ്രതീകാത്മക യുക്തിക്ക് കഴിഞ്ഞില്ല.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> Cyc പോലുള്ള പദ്ധതികളിൽ മനുഷ്യന്റെ സാമാന്യബോധ വിവരങ്ങൾ നിയമങ്ങളായി എഴുതിച്ചേർക്കാൻ ശ്രമിച്ചെങ്കിലും പ്രായോഗിക ലോകത്ത് അവ പരാജയപ്പെട്ടു.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>Philosophy of Artificial Intelligence &bull; PHL1MN102</span>
+    <span>Calicut University E-Content Pure Syllabus</span>
+    <span>Page 5</span>
+  </div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page-container">
+  <div class="header-box">
+    <div class="header-title-area">
+      <div class="header-badge">Philosophy of Artificial Intelligence &bull; Module 5 &bull; Chapter 21</div>
+      <h1 class="header-title-ml">അലൻ ട്യൂറിംഗ് ടെസ്റ്റും ദാർശനിക പരിമിതികളും</h1>
+      <div class="header-title-en">The Alan Turing Test: Operational Mimicry &amp; Limits</div>
+    </div>
+    <div class="header-page-num">പേജ് 6 / 10</div>
+  </div>
+  <div class="content-flow">
+    <!-- Unit 6.1 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.16: Framework of the Turing Test & Behavioral Assessment</span>
+        <span>ട്യൂറിംഗ് ടെസ്റ്റിന്റെ ചട്ടക്കൂടും പെരുമാറ്റപരമായ വിലയിരുത്തലും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">The Imitation Game Operational Paradigm</div>
+          <div class="card-desc-en">In his seminal 1950 paper 'Computing Machinery and Intelligence', Alan Turing replaced the metaphysical question 'Can machines think?' with an operational, empirical benchmark: The Imitation Game. A human interrogator communicates via text terminals with an unseen human and an unseen machine. If the interrogator cannot reliably distinguish between the machine and the human after sustained blind dialogue, the machine has passed the test. It establishes behavior as the sole metric of cognitive presence.</div>
+          <div class="card-example"><strong>Example:</strong> If a chatbot generates humorous, hesitant, and natural English answers indistinguishable from a human participant, it satisfies Turing's test criteria.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">ഇമിറ്റേഷൻ ഗെയിമും പ്രവർത്തനപരമായ മാനദണ്ഡവും</div>
+          <div class="card-desc-ml">1950-ൽ അലൻ ട്യൂറിംഗ് അവതരിപ്പിച്ച വിപ്ലവകരമായ ആശയമാണ് 'ട്യൂറിംഗ് ടെസ്റ്റ്' അഥവാ 'ഇമിറ്റേഷൻ ഗെയിം'. യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ എന്ന ദാർശനിക തർക്കത്തിന് പകരം പ്രായോഗികമായ പെരുമാറ്റ പരീക്ഷണം അദ്ദേഹം നിർദ്ദേശിച്ചു. ഒരു മനുഷ്യ വിധികർത്താവ് രണ്ട് വ്യത്യസ്ത മുറികളിലിരിക്കുന്ന ഒരു മനുഷ്യനോടും മെഷീനോടും ടെർമിനലിലൂടെ സംവദിക്കുന്നു. ഏതാണ് മനുഷ്യൻ, ഏതാണ് മെഷീൻ എന്ന് വിധികർത്താവിന് തിരിച്ചറിയാൻ കഴിഞ്ഞില്ലെങ്കിൽ യന്ത്രം ബുദ്ധി തെളിയിച്ചതായി കണക്കാക്കാം.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ഒരു മനുഷ്യനെപ്പോലെ ചിരിപ്പിക്കാനും തെറ്റുകൾ വരുത്താനും സ്വാഭാവികമായി മറുപടി പറയാനും കഴിയുന്ന ചാറ്റ്ബോട്ട് ട്യൂറിംഗ് ടെസ്റ്റ് വിജയിക്കുന്നു.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 6.2 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.17: Mimicry vs Cognitive Ability in Philosophy of Mind</span>
+        <span>അനുകരണവും യഥാർത്ഥ ജ്ഞാനവും: മനസ്സിന്റെ തത്ത്വചിന്തയിലെ പ്രതിസന്ധി</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Behaviorism's Blind Spot: Intelligence Without Consciousness</div>
+          <div class="card-desc-en">The core philosophical critique of the Turing Test is that it measures mimicry rather than authentic cognition. By relying strictly on external behavioral outputs, the test reflects psychological behaviorism—ignoring internal mental states, subjective qualia, and genuine understanding. A system can deceptively mimic human linguistic quirks, hesitations, and emotions without possessing any conscious awareness of the words it generates, confounding conversational deceit with true intellect.</div>
+          <div class="card-example"><strong>Example:</strong> An actor reciting medical terminology convincingly mimics a surgeon's dialogue without possessing clinical understanding or performing surgical operations.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">ബിഹേവിയറിസത്തിന്റെ പരിമിതികളും ആന്തരിക ബോധത്തിന്റെ അഭാവവും</div>
+          <div class="card-desc-ml">ട്യൂറിംഗ് ടെസ്റ്റ് യഥാർത്ഥ ചിന്താശേഷിയെ അളക്കുന്നില്ല, മറിച്ച് ബാഹ്യമായ അനുകരണത്തെ (mimicry) മാത്രമാണ് അളക്കുന്നത് എന്നതാണ് ഫിലോസഫി ഓഫ് മൈൻഡിലെ പ്രധാന വിമർശനം. ബിഹേവിയറിസ്റ്റ് വീക്ഷണകോണിൽ അധിഷ്ഠിതമായതിനാൽ ആന്തരിക മാനസികാവസ്ഥകൾ, ബോധം, അനുഭവങ്ങൾ എന്നിവ ഇവിടെ അവഗണിക്കപ്പെടുന്നു. വാക്കുകളുടെ അർത്ഥം തെല്ലും മനസ്സിലാക്കാതെ കേവലം വാചകങ്ങൾ ഭംഗിയായി പറഞ്ഞുഫലിപ്പിക്കാൻ കഴിയുന്ന ഒരു സംവിധാനത്തെ ബുദ്ധിയുള്ള മനസ്സായി കാണാനാവില്ല.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ഡോക്ടറുടെ ഡയലോഗുകൾ ഭംഗിയായി കാണാതെ പഠിച്ചു പറയുന്ന നടന് രോഗത്തെക്കുറിച്ചോ ശസ്ത്രക്രിയയെക്കുറിച്ചോ യഥാർത്ഥ അറിവില്ലാത്തതുപോലെയാണിത്.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 6.3 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.18: Adequacy of the Turing Test in the Age of Modern AI</span>
+        <span>ആധുനിക AI കാലഘട്ടത്തിൽ ട്യൂറിംഗ് ടെസ്റ്റിന്റെ പ്രസക്തി</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Obsolescence of Behavioral Deception as an Intelligence Benchmark</div>
+          <div class="card-desc-en">In contemporary artificial intelligence, passing the Turing Test is no longer recognized as an adequate criterion for true intelligence. Large language models (LLMs) effortlessly generate highly convincing human-like prose through statistical next-token prediction, regularly deceiving human evaluators. Yet, they exhibit hallucinations, logical inconsistencies, and complete absence of conscious agency. Consequently, modern cognitive science evaluates multi-step reasoning, real-world autonomy, and scientific synthesis over conversational mimicry.</div>
+          <div class="card-example"><strong>Example:</strong> Chatbots easily fool users in brief five-minute exchanges, yet fail fundamental physical common-sense tests or mathematical proofs over long horizons.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">ഭാഷാ മോഡലുകളുടെ കാലത്ത് പരീക്ഷണത്തിന്റെ പര്യാപ്തതയില്ലായ്മ</div>
+          <div class="card-desc-ml">ആധുനിക AI കാലഘട്ടത്തിൽ ട്യൂറിംഗ് ടെസ്റ്റ് ബുദ്ധിയുടെ സമ്പൂർണ്ണ മാനദണ്ഡമായി അംഗീകരിക്കപ്പെടുന്നില്ല. ഇന്നത്തെ ലാർജ് ലാംഗ്വേജ് മോഡലുകൾക്ക് മനുഷ്യരെപ്പോലെ സംസാരിക്കാനും മനുഷ്യരെ കബളിപ്പിക്കാനും വളരെ എളുപ്പം സാധിക്കുന്നുണ്ട്. എന്നാൽ ഇത് സ്ഥിതിവിവരക്കണക്കുകൾ അനുസരിച്ചുള്ള വാക്ക് പ്രവചനം മാത്രമാണ്; അവയ്ക്ക് ബോധമോ യഥാർത്ഥ യുക്തിയോ ഇല്ല. അതിനാൽ സംഭാഷണ അനുകരണത്തിന് പകരം സ്വതന്ത്ര പ്രശ്നപരിഹാര ശേഷിയും സാമാന്യബോധവുമാണ് ആധുനിക ശാസ്ത്രം പരിശോധിക്കുന്നത്.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ഏതാനും മിനിറ്റ് സംസാരിച്ച് മനുഷ്യരെ തെറ്റിദ്ധരിപ്പിക്കുന്ന ഒരു ചാറ്റ്ബോട്ടിന് ലളിതമായ ഭൗതികശാസ്ത്ര സാമാന്യബോധ ചോദ്യങ്ങളിൽ തെറ്റുപറ്റുന്നു.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>Philosophy of Artificial Intelligence &bull; PHL1MN102</span>
+    <span>Calicut University E-Content Pure Syllabus</span>
+    <span>Page 6</span>
+  </div>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page-container">
+  <div class="header-box">
+    <div class="header-title-area">
+      <div class="header-badge">Philosophy of Artificial Intelligence &bull; Module 5 &bull; Chapter 21</div>
+      <h1 class="header-title-ml">ജോൺ സിയോളിന്റെ ചൈനീസ് റൂം പരീക്ഷണം</h1>
+      <div class="header-title-en">John Searle's Chinese Room: Syntax vs Semantics</div>
+    </div>
+    <div class="header-page-num">പേജ് 7 / 10</div>
+  </div>
+  <div class="content-flow">
+    <!-- Unit 7.1 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.19: The Chinese Room Thought Experiment Mechanics</span>
+        <span>ചൈനീസ് റൂം പരീക്ഷണത്തിന്റെ ഘടനയും പ്രവർത്തനരീതിയും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">John Searle's Thought Experiment on Mechanical Computation</div>
+          <div class="card-desc-en">In 1980, American philosopher John Searle formulated the Chinese Room thought experiment to decisively refute Strong AI. An English-speaking person who knows zero Chinese is locked in a room with a rulebook written in English. Chinese native speakers slip questions written in Chinese characters under the door. Following strictly syntactic match-and-replace rules from the English rulebook, the person manipulates the characters and slips out fluent, correct Chinese responses, convincing the outside speakers of native fluency.</div>
+          <div class="card-example"><strong>Example:</strong> Matching the symbol `日` with `月` according to a lookup chart generates fluent Chinese text without the operator knowing what either word signifies.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">യന്ത്രവത്കൃത പ്രതീക ക്രമീകരണത്തിന്റെ ഉദാഹരണം</div>
+          <div class="card-desc-ml">സ്ട്രോംഗ് AI (Strong AI) സങ്കൽപ്പത്തെ ഖണ്ഡിക്കാൻ 1980-ൽ ജോൺ സിയോൾ അവതരിപ്പിച്ച ചിന്താപരീക്ഷണമാണ് 'ചൈനീസ് റൂം'. ചൈനീസ് ഭാഷ ഒട്ടും അറിയാത്ത ഒരാൾ ഒരു മുറിക്കുള്ളിലിരുന്ന് ഇംഗ്ലീഷിലുള്ള ഒരു റൂൾബുക്ക് ഉപയോഗിക്കുന്നു. പുറത്തുനിന്നും ചൈനീസ് ഭാഷയിലുള്ള ചോദ്യങ്ങൾ കടലാസിൽ വരുമ്പോൾ, ആ ചിഹ്നങ്ങളുടെ രൂപം നോക്കി റൂൾബുക്കിലെ നിർദ്ദേശങ്ങൾ പാലിച്ച് മറുപടി ചിഹ്നങ്ങൾ പുറത്തേക്ക് നൽകുന്നു. പുറത്തുള്ളവർക്ക് അകത്തിരിക്കുന്നയാൾക്ക് ചൈനീസ് അറിയാമെന്ന് തോന്നും, എന്നാൽ അയാൾക്ക് യാതൊരു അറിവുമില്ല.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ഒരു നിഘണ്ടുവിലെ നിയമങ്ങൾ നോക്കി ചിഹ്നങ്ങൾ പരസ്പരം മാറ്റിസ്ഥാപിക്കുന്നയാൾക്ക് ആ വാക്കുകൾ സൂര്യനെയോ ചന്ദ്രനെയോ കുറിക്കുന്നു എന്ന യാഥാർത്ഥ്യം അറിയില്ല.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 7.2 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.20: Syntax vs Semantics & The Demolition of Strong AI</span>
+        <span>വാക്യഘടനയും അർത്ഥബോധവും: സ്ട്രോംഗ് AI തകരുന്നത് എങ്ങനെ?</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Syntactic Manipulation Can Never Produce Semantic Understanding</div>
+          <div class="card-desc-en">The core philosophical lesson of the Chinese Room is Searle's axiom: 'Syntax is not sufficient for semantics.' Formal computer programs operate entirely on syntactic manipulation of ungrounded formal symbols (shapes and grammar rules). Minds, by contrast, possess semantic content—they understand the actual meanings, experiential contexts, and real-world referents of words. Therefore, running a program, no matter how flawlessly it mimics conversation, can never generate a conscious, understanding mind.</div>
+          <div class="card-example"><strong>Example:</strong> A machine can process the dictionary definition of 'water' (`H2O`), but it does not experience the physical thirst or refreshing wetness of real water.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">ചിഹ്ന ക്രമീകരണം കൊണ്ട് മാത്രം അർത്ഥബോധം ഉണ്ടാകില്ല</div>
+          <div class="card-desc-ml">സിയോളിന്റെ സുപ്രധാന തത്ത്വചിന്താ വാക്യമാണിത്: "സിന്റാക്സ് (syntax - വാക്യഘടന) ഒരിക്കലും സിമാന്റിക്സിന് (semantics - അർത്ഥബോധം) തുല്യമാകില്ല". കമ്പ്യൂട്ടറുകൾ ചെയ്യുന്നത് അർത്ഥമറിയാതെ ചിഹ്നങ്ങളെ വ്യാകരണ നിയമങ്ങൾക്കനുസരിച്ച് ക്രമീകരിക്കുക മാത്രമാണ്. എന്നാൽ മനുഷ്യ മനസ്സ് വാക്കുകളുടെ അർത്ഥവും ഭാവവും അനുഭവപരമായി മനസ്സിലാക്കുന്നു. അതിനാൽ എത്ര കൃത്യമായി പ്രവർത്തിക്കുന്ന പ്രോഗ്രാമിനും യഥാർത്ഥ ബോധമോ മനസ്സോ ഉള്ളതായി അവകാശപ്പെടാനാവില്ല.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> 'വെള്ളം' എന്ന വാക്കിന്റെ ഗണിത സമവാക്യം പ്രോസസ്സ് ചെയ്യുന്ന കമ്പ്യൂട്ടറിന് ദാഹത്തിന്റെ അനുഭവമോ വെള്ളത്തിന്റെ തണുപ്പോ മനസ്സിലാക്കാൻ കഴിയില്ല.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 7.3 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.21: The Systems Reply & Searle's Decisive Rebuttal</span>
+        <span>സിസ്റ്റംസ് മറുപടിയും സിയോളിന്റെ പ്രതിരോധവും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Does Understanding Belong to the Holistic Architecture?</div>
+          <div class="card-desc-en">Critics formulated the 'Systems Reply': while the individual person in the room does not understand Chinese, the entire system—the person, rulebook, input slips, and room architecture combined—does understand Chinese. Searle famously rebutted: imagine the person memorizes the entire rulebook and all symbol lookups, doing all calculations mentally in the open air. The person still possesses zero understanding of Chinese. Whole systems of uninterpreted syntax remain devoid of semantics.</div>
+          <div class="card-example"><strong>Example:</strong> Memorizing all 50,000 Chinese character transform codes allows perfect translation output, yet the memorizer still cannot read a Chinese newspaper comprehendingly.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">മുഴുവൻ സംവിധാനത്തിനും അറിവുണ്ടോ എന്ന ചോദ്യം</div>
+          <div class="card-desc-ml">ചൈനീസ് റൂമിനെതിരെ ഉയർന്ന പ്രധാന വാദമാണ് 'സിസ്റ്റംസ് റിപ്ലൈ' (Systems Reply). മുറിക്കുള്ളിലിരിക്കുന്ന വ്യക്തിക്ക് ചൈനീസ് അറിയില്ലെങ്കിലും ആ മുറിയും റൂൾബുക്കും ആ വ്യക്തിയും ചേരുന്ന സമഗ്ര സംവിധാനത്തിന് (entire system) ചൈനീസ് അറിയാം എന്ന് വിമർശകർ വാദിച്ചു. എന്നാൽ സിയോൾ ഇതിനെ ശക്തമായി എതിർത്തു: ആ വ്യക്തി റൂൾബുക്ക് മുഴുവൻ മനഃപാഠമാക്കിയാലും അയാൾക്ക് ചൈനീസ് മനസ്സിലാകില്ല. അർത്ഥമില്ലാത്ത ചിഹ്നങ്ങളുടെ വലിയൊരു കൂമ്പാരം ഒന്നിച്ചുചേർന്നാലും അവിടെ ബോധമുണ്ടാകില്ല.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ഒരു റൂൾബുക്ക് മുഴുവൻ കാണാതെ പഠിച്ച് ചിഹ്നങ്ങൾ മാറ്റിയെഴുതുന്ന ഒരാൾക്ക് ചൈനീസ് പത്രം വായിച്ച് അതിലെ വാർത്ത ആസ്വദിക്കാൻ സാധ്യമല്ല.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>Philosophy of Artificial Intelligence &bull; PHL1MN102</span>
+    <span>Calicut University E-Content Pure Syllabus</span>
+    <span>Page 7</span>
+  </div>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page-container">
+  <div class="header-box">
+    <div class="header-title-area">
+      <div class="header-badge">Philosophy of Artificial Intelligence &bull; Module 5 &bull; Chapter 21</div>
+      <h1 class="header-title-ml">റെനെ ദെക്കാർത്തും കർത്തീഷ്യൻ ദ്വൈതവാദവും</h1>
+      <div class="header-title-en">Descartes' Dualism &amp; Foundations of Cognitive Science</div>
+    </div>
+    <div class="header-page-num">പേജ് 8 / 10</div>
+  </div>
+  <div class="content-flow">
+    <!-- Unit 8.1 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.22: Cogito, Ergo Sum & The Mind-Body Problem</span>
+        <span>'ഞാൻ ചിന്തിക്കുന്നു, അതിനാൽ ഞാനുണ്ട്': മൈൻഡ്-ബോഡി പ്രശ്നം</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Foundations of Modern Philosophy of Mind</div>
+          <div class="card-desc-en">17th-century French philosopher René Descartes established the groundwork of modern philosophy of mind through his method of radical doubt, culminating in the immortal maxim 'Cogito, ergo sum' (I think, therefore I am). Descartes realized he could doubt the existence of his physical body and the physical world, but could never doubt the existence of his doubting, thinking self. This created the classical Mind-Body Problem: how an immaterial thinking mind interacts with a physical extended body.</div>
+          <div class="card-example"><strong>Example:</strong> A person under sensory illusion can doubt whether their limbs exist, but the very act of experiencing doubt confirms the undeniable reality of conscious awareness.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">മനസ്സും ശരീരവും തമ്മിലുള്ള ബന്ധത്തെക്കുറിച്ചുള്ള അന്വേഷണം</div>
+          <div class="card-desc-ml">പതിനേഴാം നൂറ്റാണ്ടിലെ ഫ്രഞ്ച് തത്ത്വചിന്തകനായ റെനെ ദെക്കാർത്ത് (René Descartes) ആധുനിക മനസ്സിന്റെ തത്ത്വചിന്തയ്ക്ക് അടിത്തറയിട്ടത് 'കോഗിറ്റോ എർഗോ സം' (ഞാൻ ചിന്തിക്കുന്നു, അതിനാൽ ഞാനുണ്ട്) എന്ന പ്രഖ്യാപനത്തിലൂടെയാണ്. ബാഹ്യലോകത്തെയും സ്വന്തം ശരീരത്തെയും സംശയിക്കാൻ കഴിഞ്ഞാലും സംശയിക്കുന്ന സ്വന്തം മനസ്സിനെ സംശയിക്കാൻ കഴിയില്ലെന്ന് അദ്ദേഹം കണ്ടെത്തി. ഇത് ഭൗതിക ശരീരവും അഭൗതിക മനസ്സും തമ്മിലുള്ള ബന്ധത്തെക്കുറിച്ചുള്ള മൈൻഡ്-ബോഡി പ്രശ്നത്തിന് (Mind-Body Problem) തുടക്കമിട്ടു.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> സ്വപ്നത്തിലോ മായയിലോ സ്വന്തം ശരീരത്തെക്കുറിച്ച് സംശയമുണ്ടായാലും, 'ഞാൻ ഇപ്പോൾ ചിന്തിക്കുന്നുണ്ട്' എന്ന ബോധത്തെ നിഷേധിക്കാൻ ആർക്കും സാധ്യമല്ല.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 8.2 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.23: Cartesian Substance Dualism vs Materialism</span>
+        <span>കർത്തീഷ്യൻ സബ്സ്റ്റൻസ് ദ്വൈതവാദവും ഭൗതികവാദവും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Res Cogitans vs Res Extensa in Artificial Intelligence</div>
+          <div class="card-desc-en">Descartes bifurcated reality into two distinct fundamental substances: 'Res Cogitans' (thinking, immaterial, indivisible mental substance) and 'Res Extensa' (extended, physical, divisible material substance). In Descartes' view, animals and physical bodies were sophisticated biological automata, whereas humans possessed an immortal soul. Artificial Intelligence and modern cognitive science reject dualism, adopting materialism and physicalism—arguing mental processes are purely computational operations realized in physical brain hardware.</div>
+          <div class="card-example"><strong>Example:</strong> For Descartes, a clockwork duck is merely physical machinery (Res Extensa); AI theorists argue human thinking is similarly algorithmic computation on organic hardware.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">ചിന്തിക്കുന്ന മനസ്സും ഭൗതിക വസ്തുവും തമ്മിലുള്ള വിഭജനം</div>
+          <div class="card-desc-ml">പ്രപഞ്ചത്തെ രണ്ട് അടിസ്ഥാന ഘടകങ്ങളായി ദെക്കാർത്ത് തിരിച്ചിരിക്കുന്നു: ചിന്തിക്കുന്ന അഭൗതിക മനസ്സായ 'റെസ് കോഗിറ്റൻസ്' (Res Cogitans), ഇടം കൈയ്യടക്കുന്ന ഭൗതിക വസ്തുവായ 'റെസ് എക്സ്റ്റൻസ' (Res Extensa). മൃഗങ്ങളും ഭൗതിക വസ്തുക്കളും യാന്ത്രിക ഓട്ടോമാറ്റകളാണെന്നും മനുഷ്യർക്ക് മാത്രമാണ് ആത്മാവുള്ളതെന്നും അദ്ദേഹം കരുതി. എന്നാൽ ആധുനിക AI ശാസ്ത്രം ഈ ദ്വൈതവാദത്തെ തള്ളിക്കളഞ്ഞ് മനസ്സ് എന്നത് മസ്തിഷ്കത്തിലെ ഭൗതികമായ കമ്പ്യൂട്ടേഷൻ മാത്രമാണെന്ന ഭൗതികവാദത്തെ സ്വീകരിക്കുന്നു.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ദെക്കാർത്തിന്റെ വീക്ഷണത്തിൽ ഒരു മെക്കാനിക്കൽ യന്ത്രം വെറും ഭൗതികവസ്തു മാത്രമാണ്; എന്നാൽ AI ഭൗതികമായ ചിപ്പുകളിലൂടെ ചിന്തയെ സൃഷ്ടിക്കാൻ ശ്രമിക്കുന്നു.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 8.3 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.24: Innate Ideas Hypothesis & Descartes' Legacy on Cognitive Science</span>
+        <span>ജന്മസിദ്ധമായ ആശയങ്ങളും കൊഗ്നിറ്റീവ് സയൻസിലെ സ്വാധീനവും</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Rationalism, A Priori Knowledge & Generative Grammar</div>
+          <div class="card-desc-en">Descartes championed the doctrine of innate ideas—the thesis that fundamental truths (mathematics, geometric principles, the concept of perfection) are stamped upon the mind a priori rather than derived from sensory experience. This rationalist thesis profoundly influenced cognitive science, Noam Chomsky's universal generative grammar, and Classical AI's architectural presumption that computational intellect requires built-in axiomatic structures prior to empirical learning.</div>
+          <div class="card-example"><strong>Example:</strong> Geometric truths like `the sum of triangle angles equals 180°` are grasped through rational intuition rather than measuring physical drawn shapes.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">റാഷണലിസവും കമ്പ്യൂട്ടിംഗിലെ ഇൻബിൽറ്റ് ഘടനകളും</div>
+          <div class="card-desc-ml">മനുഷ്യന്റെ മനസ്സിൽ ഗണിതശാസ്ത്രപരമായ ചില ആശയങ്ങളും യുക്തികളും അനുഭവങ്ങളിൽ നിന്നല്ലാതെ ജന്മനാ തന്നെ നിലനിൽക്കുന്നുണ്ടെന്ന് (innate ideas) ദെക്കാർത്ത് വാദിച്ചു. ഈ റാഷണലിസ്റ്റ് വീക്ഷണം കൊഗ്നിറ്റീവ് സയൻസിനെയും നോം ചോംസ്കിയുടെ ഭാഷാശാസ്ത്രത്തെയും സ്വാധീനിച്ചു. AI സംവിധാനങ്ങളിലും അനുഭവങ്ങളിൽ നിന്ന് പഠിക്കുന്നതിന് മുമ്പ് തന്നെ യുക്തിപരമായ അടിസ്ഥാന പ്രോഗ്രാമുകളും നിയമങ്ങളും (axioms) മുൻകൂട്ടി നൽകണമെന്ന ആശയത്തിന് ഇത് അടിത്തറയായി.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ത്രികോണത്തിന്റെ മൂന്ന് കോണുകളുടെ തുക 180 ഡിഗ്രിയാണ് എന്ന സത്യം വരച്ചുനോക്കി പഠിക്കുന്നതിനേക്കാൾ യുക്തിപരമായ ആന്തരിക ബോധത്തിലൂടെ ഗ്രഹിക്കപ്പെടുന്നു.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>Philosophy of Artificial Intelligence &bull; PHL1MN102</span>
+    <span>Calicut University E-Content Pure Syllabus</span>
+    <span>Page 8</span>
+  </div>
+</div>
+
+<!-- PAGE 9 -->
+<div class="page-container">
+  <div class="header-box">
+    <div class="header-title-area">
+      <div class="header-badge">Philosophy of Artificial Intelligence &bull; Module 5 &bull; Chapter 21</div>
+      <h1 class="header-title-ml">ശരീരമില്ലാത്ത ബുദ്ധി: പരിമിതികളും ന്യൂറോസയൻസ് വെല്ലുവിളികളും</h1>
+      <div class="header-title-en">Disembodied Intelligence: Embodiment Limits &amp; Neuroscience</div>
+    </div>
+    <div class="header-page-num">പേജ് 9 / 10</div>
+  </div>
+  <div class="content-flow">
+    <!-- Unit 9.1 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.25: The Concept of Disembodied Intelligence</span>
+        <span>ശരീരമില്ലാത്ത ബുദ്ധിയുടെ സങ്കല്പം: അമൂർത്ത യുക്തിയുടെ സാധ്യതകൾ</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Mind as Abstract Software Independent of Substrate</div>
+          <div class="card-desc-en">Classical AI embraced the premise of disembodied intelligence—the idea that thinking is purely logical computation over formal representations, operating completely independent of an organic biological body or physical embodiment. Intelligence was conceptualized as substrate-independent software: just as an algorithm runs identically on silicon, vacuum tubes, or optical processors, cognitive intellect was presumed capable of existing as an abstract, unembodied cloud of symbolic operations.</div>
+          <div class="card-example"><strong>Example:</strong> An automated theorem proving program running in a server farm solves advanced topology equations with zero awareness of physical gravity or space.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">ഭൗതിക ശരീരമില്ലാതെ നിലനിൽക്കുന്ന ചിന്താ പ്രക്രിയ</div>
+          <div class="card-desc-ml">ചിന്ത എന്നത് കേവലം അമൂർത്തമായ ചിഹ്നങ്ങളുടെ കണക്കുകൂട്ടൽ മാത്രമാണെന്നും അതിന് ജൈവികമായ ശരീരത്തിന്റെ ആവശ്യമില്ലെന്നുമുള്ള വാദമാണ് ശരീരമില്ലാത്ത ബുദ്ധി (disembodied intelligence). സോഫ്റ്റ്‌വെയർ ഏത് കമ്പ്യൂട്ടറിലും പ്രവർത്തിക്കുന്നതുപോലെ ബുദ്ധിയും ശരീരത്തിൽ നിന്നും സ്വതന്ത്രമായി നിലനിൽക്കാവുന്ന ഒന്നാണെന്ന് ക്ലാസിക്കൽ AI കരുതി. ഭൗതികമായ ലോകത്തെ സ്പർശിക്കാതെ തന്നെ അമൂർത്തമായ സമവാക്യങ്ങൾ വഴി ലോകത്തെ മനസ്സിലാക്കാൻ യന്ത്രങ്ങൾക്ക് കഴിയുമെന്നായിരുന്നു ധാരണ.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ഒരു സെർവറിലിരുന്ന് സങ്കീർണ്ണമായ കണക്കുകൾ പൂർത്തിയാക്കുന്ന അൽഗോരിതത്തിന് ഭൂഗുരുത്വത്തെക്കുറിച്ചോ ഭൗതിക അന്തരീക്ഷത്തെക്കുറിച്ചോ ഉള്ള യാതൊരു ശാരീരിക അനുഭവവുമില്ല.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 9.2 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.26: Benefits and Drawbacks of Disembodied Architecture</span>
+        <span>ശരീരമില്ലാത്ത ബുദ്ധിയുടെ ഗുണദോഷങ്ങൾ</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Pure Scalability vs The Symbol Grounding Problem</div>
+          <div class="card-desc-en">The benefit of disembodied intelligence is immense processing speed, frictionless digital replication, and liberation from biological fatigue, illness, and physical constraints. However, its fatal drawback is the 'Symbol Grounding Problem' (Stevan Harnad): abstract symbols remain ungrounded dictionary loops without sensory coupling to real objects. A disembodied AI manipulating the word 'heat' has no thermal sensors, no nervous system, and no empirical grasp of burning, leaving its knowledge entirely parasitic on human-defined data.</div>
+          <div class="card-example"><strong>Example:</strong> An AI reading every culinary recipe on the internet can optimize ingredient ratios perfectly, but can never taste, smell, or burn its tongue on soup.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">പ്രോസസ്സിംഗ് വേഗതയും സിംബൽ ഗ്രൗണ്ടിംഗ് പ്രതിസന്ധിയും</div>
+          <div class="card-desc-ml">ശരീരമില്ലാത്ത ബുദ്ധിയുടെ നേട്ടം അതിന് ക്ഷീണമോ അസുഖങ്ങളോ ബാധിക്കില്ല എന്നതും ഡിജിറ്റലായി എത്രവേണമെങ്കിലും വികസിപ്പിക്കാം എന്നതുമാണ്. എന്നാൽ ഇതിന്റെ ഏറ്റവും വലിയ ന്യൂനത 'സിംബൽ ഗ്രൗണ്ടിംഗ് പ്രശ്നമാണ്' (Symbol Grounding Problem). ശരീരവും ഇന്ദ്രിയങ്ങളുമില്ലാത്തതിനാൽ 'ചൂട്' എന്ന് ചിഹ്നത്തിൽ പറയുമ്പോഴും എന്താണ് ചൂട് എന്ന യാഥാർത്ഥ്യം യന്ത്രത്തിന് അനുഭവവേദ്യമാകുന്നില്ല. മനുഷ്യൻ നിർവ്വചിച്ചു നൽകിയ ചിഹ്നങ്ങളിൽ തളയ്ക്കപ്പെട്ട ഒന്നായി അത് മാറുന്നു.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ലോകത്തിലെ മുഴുവൻ പാചകക്കുറിപ്പുകളും വിശകലനം ചെയ്യുന്ന AI-ക്ക് ഭക്ഷണത്തിന്റെ രുചിയോ മണമോ ചൂടോ സ്വന്തമായി അനുഭവിക്കാൻ സാധ്യമല്ല.</div>
+        </div>
+      </div>
+    </div>
+    <!-- Unit 9.3 -->
+    <div class="card-unit">
+      <div class="card-unit-header">
+        <span>Unit 21.27: Neuroscientific & Embodied Cognition Challenges</span>
+        <span>ന്യൂറോസയൻസും എംബോഡിഡ് കോഗ്നിഷനും ഉയർത്തുന്ന വെല്ലുവിളികൾ</span>
+      </div>
+      <div class="card-bilingual">
+        <div class="card-en">
+          <div class="card-title-en">Brain, Body & Environment: The Inseparable Triad</div>
+          <div class="card-desc-en">Modern neuroscience and embodied cognitive science (Varela, Thompson, Clark) thoroughly refute the disembodied paradigm. Human cognition did not evolve for abstract theorem proving, but to guide a physical organism through a dynamic, hazardous environment. Thinking is intrinsically intertwined with bodily homeostasis, autonomic nervous states, endocrine hormones, and motor interaction with physical objects. True intelligence requires an embodied presence situated in active reciprocal feedback with the world.</div>
+          <div class="card-example"><strong>Example:</strong> A toddler learns the concept of gravity by dropping cups and falling, acquiring deep sensorimotor understanding that symbolic code cannot replicate.</div>
+        </div>
+        <div class="card-ml">
+          <div class="card-title-ml">മസ്തിഷ്കവും ശരീരവും പരിസ്ഥിതിയും തമ്മിലുള്ള അഭേദ്യമായ ബന്ധം</div>
+          <div class="card-desc-ml">ആധുനിക ന്യൂറോസയൻസും എംബോഡിഡ് കോഗ്നിഷൻ സിദ്ധാന്തങ്ങളും ശരീരമില്ലാത്ത ബുദ്ധി എന്ന സങ്കൽപ്പത്തെ പൂർണ്ണമായും തള്ളിക്കളയുന്നു. മനുഷ്യന്റെ മനസ്സ് എന്നത് മസ്തിഷ്കവും ശരീരവും പുറംലോകവുമായുള്ള സമ്പർക്കത്തിലൂടെ രൂപപ്പെടുന്ന ഒന്നാണ്. പേശികളുടെ ചലനം, ഹോർമോണുകൾ, സംവേദനങ്ങൾ എന്നിവയിലൂടെയാണ് ചിന്ത സാധ്യമാകുന്നത്. അമൂർത്തമായ ഒരു ചിപ്പിലിരുന്ന് കണക്കുകൂട്ടുന്നതിനേക്കാൾ ലോകവുമായി സംവദിക്കുന്ന ഒരു ഭൗതിക ശരീരത്തിലൂടെ മാത്രമേ സമ്പൂർണ്ണ ബുദ്ധി രൂപപ്പെടുകയുള്ളൂ.</div>
+          <div class="card-example"><strong>ഉദാഹരണം:</strong> ഒരു കുട്ടി വസ്തുക്കൾ താഴെയിട്ടും വീണും തട്ടിയും സ്വയം പഠിക്കുന്ന അനുഭവജ്ഞാനമാണ് യഥാർത്ഥ ലോകത്തെക്കുറിച്ചുള്ള ധാരണ നൽകുന്നത്.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>Philosophy of Artificial Intelligence &bull; PHL1MN102</span>
+    <span>Calicut University E-Content Pure Syllabus</span>
+    <span>Page 9</span>
+  </div>
+</div>
+
+<!-- PAGE 10 -->
+<div class="page-container">
+  <div class="header-box">
+    <div class="header-title-area">
+      <div class="header-badge">Philosophy of Artificial Intelligence &bull; Module 5 &bull; Chapter 21</div>
+      <h1 class="header-title-ml">20 പരീക്ഷാ പ്രധാന ആശയങ്ങൾ</h1>
+      <div class="header-title-en">20 High-Yield Exam "Knock Your Brain" Concepts &amp; Seminar Review</div>
+    </div>
+    <div class="header-page-num">പേജ് 10 / 10</div>
+  </div>
+  <div class="content-flow">
+    <div class="grid-2col">
+      <!-- 1 -->
+      <div class="knock-card">
+        <div><span class="knock-num">01</span><span class="knock-title">Authentic Cognition vs Simulation</span></div>
+        <div class="knock-desc-en">Cognition entails conscious understanding and intentionality, while simulation merely mimics behavioral outcomes via statistical or rule manipulation.</div>
+        <div class="knock-desc-ml">യഥാർത്ഥ ജ്ഞാനം ആന്തരിക ബോധവും അർത്ഥഗ്രഹണവുമാണ്; അനുകരണം എന്നത് ബാഹ്യ പെരുമാറ്റം വ്യാകരണ നിയമങ്ങളിലൂടെ പ്രദർശിപ്പിക്കൽ മാത്രമാണ്.</div>
+      </div>
+      <!-- 2 -->
+      <div class="knock-card">
+        <div><span class="knock-num">02</span><span class="knock-title">Plant Intelligence Analogy</span></div>
+        <div class="knock-desc-en">Plants perceive, analyze, and respond to soil moisture and sunlight, proving biological adaptiveness without conscious brain-based intentionality.</div>
+        <div class="knock-desc-ml">സസ്യങ്ങൾ പ്രകാശത്തോടും മണ്ണിലെ ഈർപ്പത്തോടും പ്രതികരിക്കുന്നത് ജീവശാസ്ത്രപരമായ അഡാപ്റ്റേഷനാണ്, മസ്തിഷ്ക ചിന്തയല്ല.</div>
+      </div>
+      <!-- 3 -->
+      <div class="knock-card">
+        <div><span class="knock-num">03</span><span class="knock-title">Blaise Pascal's Pascaline (1642)</span></div>
+        <div class="knock-desc-en">The first mechanical calculator, automating arithmetic addition and subtraction via geared wheels, sparking mechanical cognition.</div>
+        <div class="knock-desc-ml">1642-ൽ പാസ്കൽ നിർമ്മിച്ച പാസ്കലിൻ ഗിയറുകൾ വഴി സങ്കലനവും വ്യവകലനവും യാന്ത്രികമായി നിർവ്വഹിച്ച ആദ്യ കാൽക്കുലേറ്ററാണ്.</div>
+      </div>
+      <!-- 4 -->
+      <div class="knock-card">
+        <div><span class="knock-num">04</span><span class="knock-title">Leibniz's Stepped Reckoner (1673)</span></div>
+        <div class="knock-desc-en">Envisioned Characteristica Universalis and Calculus Ratiocinator, proposing all philosophical disputes could be resolved by calculating.</div>
+        <div class="knock-desc-ml">ലൈബ്നിസിന്റെ കണക്കുകൂട്ടൽ യന്ത്രവും സാർവ്വത്രിക ഭാഷയും തത്ത്വചിന്താ തർക്കങ്ങൾ ഗണിതത്തിലൂടെ പരിഹരിക്കാമെന്ന് വിഭാവനം ചെയ്തു.</div>
+      </div>
+      <!-- 5 -->
+      <div class="knock-card">
+        <div><span class="knock-num">05</span><span class="knock-title">Alan Turing's Bombe Machine (WWII)</span></div>
+        <div class="knock-desc-en">Electromechanical cryptanalysis device at Bletchley Park that decrypted Nazi Enigma ciphers, proving physical machines execute symbolic logic.</div>
+        <div class="knock-desc-ml">രണ്ടാം ലോകമഹായുദ്ധത്തിൽ എനിഗ്മ കോഡുകൾ തകർത്ത ട്യൂറിംഗിന്റെ ബോംബെ യന്ത്രം പ്രതീകാത്മക യുക്തി യന്ത്രങ്ങൾക്ക് സാധ്യമാണെന്ന് തെളിയിച്ചു.</div>
+      </div>
+      <!-- 6 -->
+      <div class="knock-card">
+        <div><span class="knock-num">06</span><span class="knock-title">1956 Dartmouth Conference</span></div>
+        <div class="knock-desc-en">Organized by John McCarthy, Marvin Minsky, and Claude Shannon; officially coined the term 'Artificial Intelligence' as a distinct discipline.</div>
+        <div class="knock-desc-ml">1956-ൽ ജോൺ മക്കാർത്തി അടക്കമുള്ളവർ സംഘടിപ്പിച്ച ഡാർട്ട്മൗത്ത് കോൺഫറൻസിലാണ് 'ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ്' എന്ന ശാസ്ത്രശാഖ പിറവിയെടുത്തത്.</div>
+      </div>
+      <!-- 7 -->
+      <div class="knock-card">
+        <div><span class="knock-num">07</span><span class="knock-title">Logic Theorist (1956)</span></div>
+        <div class="knock-desc-en">Created by Newell, Shaw, and Simon; proved 38 theorems of Russell's Principia Mathematica, the first operational symbolic AI program.</div>
+        <div class="knock-desc-ml">നെവലും സൈമണും വികസിപ്പിച്ച ലോജിക് തിയറിസ്റ്റ് ഗണിത സിദ്ധാന്തങ്ങൾ സ്വയം തെളിയിച്ച ആദ്യത്തെ AI സോഫ്റ്റ്‌വെയറാണ്.</div>
+      </div>
+      <!-- 8 -->
+      <div class="knock-card">
+        <div><span class="knock-num">08</span><span class="knock-title">Aristotle's Syllogistic Framework</span></div>
+        <div class="knock-desc-en">Deductive structures where true premises guarantee a true conclusion purely based on syntactic form, inspiring automated reasoning.</div>
+        <div class="knock-desc-ml">വാക്യഘടനയുടെ ശുദ്ധമായ നിയമങ്ങൾ വഴി നിഗമനങ്ങളിലെത്തുന്ന അരിസ്റ്റോട്ടിലിന്റെ സിലോഗിസമാണ് ഓട്ടോമേറ്റഡ് തിങ്കിംഗിന്റെ മാതൃക.</div>
+      </div>
+      <!-- 9 -->
+      <div class="knock-card">
+        <div><span class="knock-num">09</span><span class="knock-title">Physical Symbol System Hypothesis (PSSH)</span></div>
+        <div class="knock-desc-en">Newell and Simon's thesis that a physical symbol system possesses the necessary and sufficient means for general intelligent action.</div>
+        <div class="knock-desc-ml">ചിഹ്നങ്ങളെ ചിട്ടയായി കൈകാര്യം ചെയ്യുന്ന ഒരു ഫിസിക്കൽ സിംബൽ സിസ്റ്റത്തിന് പൂർണ്ണ ബുദ്ധിപരമായ പ്രവർത്തനങ്ങൾ നടത്താനാകുമെന്ന സിദ്ധാന്തം.</div>
+      </div>
+      <!-- 10 -->
+      <div class="knock-card">
+        <div><span class="knock-num">10</span><span class="knock-title">John McCarthy's LISP & Situation Calculus</span></div>
+        <div class="knock-desc-en">Pioneered symbolic list processing (LISP) and situation calculus to represent dynamic states, knowledge, and actions in early AI.</div>
+        <div class="knock-desc-ml">ലിസ്പ് (LISP) പ്രോഗ്രാമിംഗ് ഭാഷയും ലോകത്തിലെ മാറ്റങ്ങൾ രേഖപ്പെടുത്താൻ സിറ്റുവേഷൻ കാൽക്കുലസും അവതരിപ്പിച്ച AI ആചാര്യൻ.</div>
+      </div>
+      <!-- 11 -->
+      <div class="knock-card">
+        <div><span class="knock-num">11</span><span class="knock-title">Classical AI vs Machine Learning</span></div>
+        <div class="knock-desc-en">Classical AI is top-down, hand-coded deductive logic; Machine Learning is bottom-up, data-driven inductive statistical training.</div>
+        <div class="knock-desc-ml">ക്ലാസിക്കൽ AI മുകളിൽ നിന്നുള്ള ഡിഡക്റ്റീവ് നിയമങ്ങളാണെങ്കിൽ, മെഷീൻ ലേണിംഗ് താഴെ നിന്നുള്ള സ്ഥിതിവിവരക്കണക്കുകളിലൂടെ സ്വയം പഠിക്കുന്നു.</div>
+      </div>
+      <!-- 12 -->
+      <div class="knock-card">
+        <div><span class="knock-num">12</span><span class="knock-title">Brittleness of Symbolic AI</span></div>
+        <div class="knock-desc-en">Symbolic systems collapse when encountering unexpected real-world noise or ambiguity outside their strictly defined formal ontologies.</div>
+        <div class="knock-desc-ml">മുൻകൂട്ടി നൽകിയ നിയമങ്ങളിൽ നേരിയ വ്യത്യാസമുണ്ടായാൽ ക്ലാസിക്കൽ AI സിസ്റ്റം പൂർണ്ണമായും സ്തംഭിച്ചുപോകുന്ന ബലഹീനത.</div>
+      </div>
+      <!-- 13 -->
+      <div class="knock-card">
+        <div><span class="knock-num">13</span><span class="knock-title">The Frame Problem & Common Sense</span></div>
+        <div class="knock-desc-en">The combinatorial challenge of defining which background environmental facts remain unchanged when a specific action is performed.</div>
+        <div class="knock-desc-ml">ഒരു പ്രവർത്തനം നടക്കുമ്പോൾ ലോകത്തിൽ ഏതൊക്കെ കാര്യങ്ങൾ മാറ്റമില്ലാതെ തുടരുന്നു എന്ന് മുൻകൂട്ടി നിശ്ചയിക്കുന്നതിലെ വെല്ലുവിളി.</div>
+      </div>
+      <!-- 14 -->
+      <div class="knock-card">
+        <div><span class="knock-num">14</span><span class="knock-title">Turing Test / Imitation Game (1950)</span></div>
+        <div class="knock-desc-en">An operational behavioral benchmark evaluating whether a machine's text dialogue is indistinguishable from a human participant.</div>
+        <div class="knock-desc-ml">ഒരു യന്ത്രത്തിന്റെ സംഭാഷണം മനുഷ്യന്റേതിൽ നിന്ന് തിരിച്ചറിയാൻ വിധികർത്താവിന് കഴിയുന്നില്ലെങ്കിൽ അത് ബുദ്ധിയായി കണക്കാക്കുന്ന പരീക്ഷണം.</div>
+      </div>
+      <!-- 15 -->
+      <div class="knock-card">
+        <div><span class="knock-num">15</span><span class="knock-title">Behaviorism's Blind Spot</span></div>
+        <div class="knock-desc-en">The Turing Test evaluates external behavioral mimicry rather than internal consciousness, subjective qualia, or genuine comprehension.</div>
+        <div class="knock-desc-ml">ട്യൂറിംഗ് ടെസ്റ്റ് ബാഹ്യ പെരുമാറ്റത്തെ മാത്രമാണ് നോക്കുന്നത്; ആന്തരിക ബോധത്തെയോ അനുഭവങ്ങളെയോ അത് പരിഗണിക്കുന്നില്ല.</div>
+      </div>
+      <!-- 16 -->
+      <div class="knock-card">
+        <div><span class="knock-num">16</span><span class="knock-title">Searle's Chinese Room Argument (1980)</span></div>
+        <div class="knock-desc-en">Proves syntax is not sufficient for semantics; an operator translating symbols via rulebooks understands zero Chinese.</div>
+        <div class="knock-desc-ml">വാക്യഘടന അർത്ഥബോധത്തിന് തുല്യമാകില്ല; ചിഹ്നങ്ങൾ നിയമപ്രകാരം മാറ്റിയെഴുതുന്നയാൾക്ക് ഭാഷയുടെ അർത്ഥം മനസ്സിലാകുന്നില്ല.</div>
+      </div>
+      <!-- 17 -->
+      <div class="knock-card">
+        <div><span class="knock-num">17</span><span class="knock-title">Refutation of Strong AI</span></div>
+        <div class="knock-desc-en">Strong AI claims appropriately programmed computers are minds with true understanding; Searle proves programs are syntactically empty.</div>
+        <div class="knock-desc-ml">കമ്പ്യൂട്ടറുകൾക്ക് യഥാർത്ഥ മനസ്സുണ്ടെന്ന സ്ട്രോംഗ് AI വാദത്തെ ചൈനീസ് റൂം പരീക്ഷണം പൂർണ്ണമായി ഖണ്ഡിക്കുന്നു.</div>
+      </div>
+      <!-- 18 -->
+      <div class="knock-card">
+        <div><span class="knock-num">18</span><span class="knock-title">Descartes' Cogito, Ergo Sum (1637)</span></div>
+        <div class="knock-desc-en">Foundational premise establishing the undeniable existence of conscious thought, creating the classical Mind-Body Problem.</div>
+        <div class="knock-desc-ml">'ഞാൻ ചിന്തിക്കുന്നു, അതിനാൽ ഞാനുണ്ട്'; ബോധം ഒരു അനിഷേധ്യ യാഥാർത്ഥ്യമാണെന്ന് പ്രഖ്യാപിച്ച ദെക്കാർത്തിന്റെ തത്ത്വം.</div>
+      </div>
+      <!-- 19 -->
+      <div class="knock-card">
+        <div><span class="knock-num">19</span><span class="knock-title">Cartesian Dualism vs Materialism</span></div>
+        <div class="knock-desc-en">Dualism divides reality into Res Cogitans (mind) and Res Extensa (matter); AI adopts materialism, viewing mind as physical computation.</div>
+        <div class="knock-desc-ml">മനസ്സും ശരീരവും രണ്ടാണെന്ന ദ്വൈതവാദം; എന്നാൽ AI മനസ്സിനെ ഭൗതിക കമ്പ്യൂട്ടേഷനായി കാണുന്ന ഭൗതികവാദത്തെ സ്വീകരിക്കുന്നു.</div>
+      </div>
+      <!-- 20 -->
+      <div class="knock-card">
+        <div><span class="knock-num">20</span><span class="knock-title">Embodied Cognition vs Disembodiment</span></div>
+        <div class="knock-desc-en">Cognition evolved for physical environmental interaction; intelligence cannot be separated from sensorimotor embodiment and biological grounding.</div>
+        <div class="knock-desc-ml">ശരീരവും ഇന്ദ്രിയാനുഭവങ്ങളുമില്ലാതെ ചിന്ത സാധ്യമല്ല; യഥാർത്ഥ ബുദ്ധിക്ക് ഭൗതിക ലോകവുമായുള്ള നിരന്തര സമ്പർക്കം അനിവാര്യമാണ്.</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>Philosophy of Artificial Intelligence &bull; PHL1MN102</span>
+    <span>Calicut University E-Content Pure Syllabus</span>
+    <span>Page 10</span>
+  </div>
+</div>
+
+</body>
+</html>
