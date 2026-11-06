@@ -2366,6 +2366,24 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "ബജറ്റ് രേഖയുടെ ചെരിവ് -Px/Py നിർണ്ണയിക്കുന്ന രീതിയും വിലമാറ്റവും വരുമാന മാറ്റവും തമ്മിലുള്ള ഗ്രാഫിക്കൽ വ്യത്യാസവും 6/10 മാർക്ക് ചോദ്യങ്ങളായി ആവർത്തിച്ചു വരാറുണ്ട്.",
             "videoUrl": "https://www.youtube.com/watch?v=9H8683I4Ad8",
             "language": "Malayalam"
+          },
+          {
+            "chapterNumber": "Unit 09",
+            "title": "Unit 9: Constrained Consumer Choice (ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ്)",
+            "chapter": "Optimal Bundle, Tangency MRS = Px/Py, Convexity & Demand Derivation",
+            "duration": "12:18",
+            "youtubeId": "3j8tc5c3vrg",
+            "videoUrl": "https://www.youtube.com/watch?v=3j8tc5c3vrg",
+            "thumbnail": "https://i.ytimg.com/vi/3j8tc5c3vrg/hqdefault.jpg",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>ഒപ്റ്റിമൽ ബണ്ടിൽ (Optimal Bundle):</strong> തന്നിരിക്കുന്ന ബജറ്റിൽ പരമാവധി സംതൃപ്തി നൽകുന്ന സാധനക്കൂട്ടം. ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ ലഭിക്കുന്നു.",
+              "<strong>കോൺവെക്സിറ്റിയുടെ പങ്ക്:</strong> ഡിമിനിഷിംഗ് എം.ആർ.എസ് ഉള്ള കോൺവെക്സ് ഇൻഡിഫറൻസ് കർവുകൾ മാത്രമേ സ്ഥിരതയുള്ള ആന്തരിക സന്തുലിതാവസ്ഥ (Stable Interior Equilibrium) ഉറപ്പാക്കുന്നുള്ളൂ.",
+              "<strong>കോർണർ സൊല്യൂഷനുകൾ:</strong> സാധനങ്ങൾ പെർഫെക്റ്റ് സബ്സ്റ്റിറ്റ്യൂട്ടുകൾ ആകുമ്പോൾ ഒരു സാധനത്തിൽ മാത്രമായി കൺസംപ്ഷൻ ഒതുങ്ങുന്നു.",
+              "<strong>കൂടുതൽ ലഭിക്കുന്നത് നല്ലതാണ് (Non-Satiation):</strong> പോസിറ്റീവ് മാർജിനൽ യൂട്ടിലിറ്റി ഉള്ളതിനാൽ ഒപ്റ്റിമൽ ബണ്ടിൽ എപ്പോഴും ബജറ്റ് രേഖയ്ക്ക് മുകളിൽ തന്നെ സ്ഥിതിചെയ്യുന്നു.",
+              "<strong>ഡിമാൻഡ് കർവ് രൂപീകരണം:</strong> പ്രൈസ് കൺസംപ്ഷൻ കർവിലെ (PCC) ടാൻജൻസി പോയിന്റുകൾ വഴി താഴോട്ട് ചരിഞ്ഞ വ്യക്തിഗത ഡിമാൻഡ് രേഖ ഉരുത്തിരിയുന്നു."
+            ],
+            "examTip": "ടാൻജൻസി ഫോർമുല MRS = Px/Py, കോൺവെക്സിറ്റിയുടെ പ്രാധാന്യം, കോർണർ സൊല്യൂഷനുകൾ എന്നിവ 10 മാർക്ക് ഉപന്യാസ ചോദ്യമായി പതിവായി വരാറുണ്ട്."
           }
         ]
       },
