@@ -2523,8 +2523,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 01",
             "title": "संविधान एवं राजभाषा : संवैधानिक प्रावधान",
             "chapter": "अनुच्छेद 343-351, राजभाषा अधिनियम 1963 एवं राजभाषा नियम",
-            "duration": "20",
-            "youtubeId": ""
+            "duration": "17",
+            "youtubeId": "RDXXw4nZ-xo"
           },
           {
             "chapterNumber": "Chapter 02",
