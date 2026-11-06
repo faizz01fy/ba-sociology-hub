@@ -926,7 +926,27 @@
 
     /* Voice Reading fully reinstated */
 
-  </style>
+  
+    .mcq-nav-guide-chip {
+      display: none;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      font-weight: 750;
+      color: #1e3a8a;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 1.5px solid #93c5fd;
+      padding: 4px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.12);
+      letter-spacing: 0.01em;
+    }
+    body.is-mcq-view .mcq-nav-guide-chip {
+      display: inline-flex !important;
+    }
+
+</style>
 <style>
     /* --- BLAZING FAST SUBJECTS DRAWER & HUB STYLES --- */
     .btn-subjects {
@@ -1375,6 +1395,7 @@
         <span>📚</span> Subjects
       </button>
       <span id="activeDocBadge" class="active-doc-badge" title="Current Document">Study Guide</span>
+      <span id="mcqNavGuideChip" class="mcq-nav-guide-chip" title="Use the blinking ← Back or ⌂ Home buttons anytime to return to Academic Hub">💡 Use ← Back or ⌂ Home to return</span>
     </div>
 
     <!-- Page Navigation -->
@@ -3430,6 +3451,24 @@
         document.documentElement.classList.remove('hide-voice-controls');
         window.hideVoiceReader = false;
       }
+      
+      // Guide navigation for MCQ PDF in full view
+      const rawParamLower = (rawParam || '').toLowerCase();
+      if (tabParam === 'mcq' || tabParam === 'mcq_pdf' || tabParam === 'mcq-pdf' || rawParamLower.includes('mcq')) {
+        document.body.classList.add('is-mcq-view');
+        const guideEl = document.getElementById('mcqNavGuideChip');
+        if (guideEl) guideEl.style.display = 'inline-flex';
+        const backBtn = document.getElementById('readerBackBtn');
+        if (backBtn) {
+          backBtn.title = '← Back to Subject Cards (Academic Hub)';
+          backBtn.setAttribute('aria-label', 'Back to Subject Cards');
+        }
+        const homeBtn = document.querySelector('.btn-home');
+        if (homeBtn) {
+          homeBtn.title = '⌂ Academic Hub Home Page';
+          homeBtn.setAttribute('aria-label', 'Academic Hub Home Page');
+        }
+      }
 
       // If file parameter is empty or unspecified, provide intelligent default or clean empty state
       if (!rawParam || rawParam === 'study-guide-reader.html') {
@@ -3840,13 +3879,24 @@
     
     // Smart Back Controller (reliably returns to specific subject portal or hub)
     function handleBackNavigation() {
+      const searchStr = (location.search || '').toLowerCase();
+      const titleStr = (document.title || '').toLowerCase();
+      const combined = searchStr + ' ' + titleStr;
+      
+      // When viewing an MCQ PDF, prioritize returning to index.html#subjects
+      if (searchStr.includes('tab=mcq') || searchStr.includes('mcq') || combined.includes('mcq')) {
+        if (document.referrer && (document.referrer.includes('index.html') || document.referrer.includes('-reading.html') || document.referrer.includes('mal-pdf.html'))) {
+          window.location.href = document.referrer;
+          return;
+        }
+        window.location.href = 'index.html#subjects';
+        return;
+      }
+
       if (document.referrer && (document.referrer.includes('-reading.html') || document.referrer.includes('index.html'))) {
         window.location.href = document.referrer;
         return;
       }
-      const searchStr = (location.search || '').toLowerCase();
-      const titleStr = (document.title || '').toLowerCase();
-      const combined = searchStr + ' ' + titleStr;
       
       const subjectMapping = [
         { patterns: ['english', 'dr. martin', 'anthem', 'salesman'], url: 'eng-reading.html' },

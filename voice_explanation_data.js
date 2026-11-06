@@ -24,6 +24,187 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>നദികളും മൺസൂണും:</strong> 44 നദികൾ (41 പടിഞ്ഞാറോട്ടും 3 കിഴക്കോട്ടും ഒഴുകുന്നവ - കബനി, ഭവാനി, പാമ്പാർ) ജലസമൃദ്ധിയും കാർഷികാടിത്തറയും നൽകി. തെക്കുപടിഞ്ഞാറൻ കാലവർഷവും (ഇടവപ്പാതി - SW Monsoon) വടക്കുകിഴക്കൻ മൺസൂണും (തുലാവർഷം - NE Monsoon) ചരിത്രപരമായ ഹിപ്പാലസ് മൺസൂൺ വാണിജ്യ കാറ്റുകളുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു."
             ],
             "examTip": "കേരളത്തിന്റെ ചരിത്രത്തെ രൂപപ്പെടുത്തുന്നതിൽ പശ്ചിമഘട്ടവും (സഹ്യാദ്രി) പാലക്കാട് ചുരവും വഹിച്ച പങ്ക് വിശകലനം ചെയ്യുന്ന 10 മാർക്ക് ചോദ്യത്തിന് ഈ പോയിന്റുകൾ മുൻഗണനാടിസ്ഥാനത്തിൽ എഴുതുക."
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "The Frog Prince",
+            "chapter": "Malayalam study overview · The Frog Prince",
+            "duration": "08:23",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of The Frog Prince.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "sjcW0SP7IYA",
+            "thumbnail": "https://i.ytimg.com/vi/sjcW0SP7IYA/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "ദി സെക്കൻഡ് കമിങ്",
+            "chapter": "ഭൂപ്രകൃതിയും ചരിത്രപരമായ ഇടപെടലുകളും - സമഗ്ര പാഠഭാഗ വിശകലനം",
+            "duration": "07:38",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>പ്രധാന ആശയം:</strong> കേരളത്തിന്റെ ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും ചരിത്ര നിർമ്മിതിയിൽ ചെലുത്തിയ സ്വാധീനത്തെക്കുറിച്ചുള്ള സമഗ്ര വിശകലനം.",
+              "<strong>പാരിസ്ഥിതിക പശ്ചാത്തലം:</strong> പ്രകൃതിവിഭവങ്ങളും ഭൂമിശാസ്ത്രപരമായ സവിശേഷതകളും ചരിത്രഗതിയെ രൂപപ്പെടുത്തിയ രീതി.",
+              "<strong>പരീക്ഷാ സഹായി:</strong> മൊഡ്യൂൾ 1-ൽ നിന്നുള്ള പ്രധാന ആശയങ്ങൾ, സംജ്ഞകൾ, മുൻവർഷ പരീക്ഷകളിൽ ചോദിക്കാൻ സാധ്യതയുള്ള ചോദ്യങ്ങൾ."
+            ],
+            "examTip": "ഭൂപ്രകൃതിയും ചരിത്രപരമായ പരിണാമങ്ങളും തമ്മിലുള്ള പരസ്പരബന്ധം വ്യക്തമാക്കുന്ന ഉദാഹരണങ്ങൾ ഉത്തരങ്ങളിൽ ഉൾപ്പെടുത്തുന്നത് ഉയർന്ന മാർക്ക് നേടാൻ സഹായിക്കും.",
+            "youtubeId": "aUYCqc6TnME",
+            "thumbnail": "https://i.ytimg.com/vi/aUYCqc6TnME/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "വിശ്വവിഖ്യാതമായ മൂക്ക്",
+            "chapter": "Malayalam study overview · വിശ്വവിഖ്യാതമായ മൂക്ക്",
+            "duration": "06:48",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of വിശ്വവിഖ്യാതമായ മൂക്ക്.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "N53VW_gQpCI",
+            "thumbnail": "https://i.ytimg.com/vi/N53VW_gQpCI/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "ഫലപ്രദമായ എഴുത്തുപ്രക്രിയ",
+            "chapter": "Malayalam study overview · ഫലപ്രദമായ എഴുത്തുപ്രക്രിയ",
+            "duration": "07:52",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of ഫലപ്രദമായ എഴുത്തുപ്രക്രിയ.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "uY4uBI8-GmQ",
+            "thumbnail": "https://i.ytimg.com/vi/uY4uBI8-GmQ/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "യൂട്ടിലിറ്റേറിയനിസവും ഡിയന്റോളജിയും",
+            "chapter": "Malayalam study overview · യൂട്ടിലിറ്റേറിയനിസവും ഡിയന്റോളജിയും",
+            "duration": "21:07",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of യൂട്ടിലിറ്റേറിയനിസവും ഡിയന്റോളജിയും.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "kg9uwbha3T8",
+            "thumbnail": "https://i.ytimg.com/vi/kg9uwbha3T8/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "സദാചാര മൂല്യങ്ങളും അവകാശ കടമകളും",
+            "chapter": "Malayalam study overview · സദാചാര മൂല്യങ്ങളും അവകാശ കടമകളും",
+            "duration": "20:16",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of സദാചാര മൂല്യങ്ങളും അവകാശ കടമകളും.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "-W4SRdaDCK8",
+            "thumbnail": "https://i.ytimg.com/vi/-W4SRdaDCK8/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "ദയാവധവും ഡീപ് ഇക്കോളജിയും പ്രായോഗിക ധാർമ്മികതയിൽ",
+            "chapter": "Malayalam study overview · ദയാവധവും ഡീപ് ഇക്കോളജിയും പ്രായോഗിക ധാർമ്മികതയിൽ",
+            "duration": "19:28",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of ദയാവധവും ഡീപ് ഇക്കോളജിയും പ്രായോഗിക ധാർമ്മികതയിൽ.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "x41Alz6fcgY",
+            "thumbnail": "https://i.ytimg.com/vi/x41Alz6fcgY/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "സദ്ഗുണവും അവകാശങ്ങളും കടമകളും",
+            "chapter": "Malayalam study overview · സദ്ഗുണവും അവകാശങ്ങളും കടമകളും",
+            "duration": "19:08",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of സദ്ഗുണവും അവകാശങ്ങളും കടമകളും.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "so1OPNlFl0c",
+            "thumbnail": "https://i.ytimg.com/vi/so1OPNlFl0c/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "കുറ്റവാളികളെ നമ്മൾ എന്തിനാണ് ശിക്ഷിക്കുന്നത്",
+            "chapter": "Malayalam study overview · കുറ്റവാളികളെ നമ്മൾ എന്തിനാണ് ശിക്ഷിക്കുന്നത്",
+            "duration": "18:57",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of കുറ്റവാളികളെ നമ്മൾ എന്തിനാണ് ശിക്ഷിക്കുന്നത്.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "wLggYsLxNcI",
+            "thumbnail": "https://i.ytimg.com/vi/wLggYsLxNcI/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "എത്തിക്സ് അഥവാ ശരിതെറ്റുകളുടെ തത്ത്വശാസ്ത്രം",
+            "chapter": "Malayalam study overview · എത്തിക്സ് അഥവാ ശരിതെറ്റുകളുടെ തത്ത്വശാസ്ത്രം",
+            "duration": "17:37",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of എത്തിക്സ് അഥവാ ശരിതെറ്റുകളുടെ തത്ത്വശാസ്ത്രം.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "jhpGus3aft4",
+            "thumbnail": "https://i.ytimg.com/vi/jhpGus3aft4/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "കൺസിക്വൻഷ്യലിസവും ഡിയോന്റോളജിക്കൽ എത്തിക്സും",
+            "chapter": "Malayalam study overview · കൺസിക്വൻഷ്യലിസവും ഡിയോന്റോളജിക്കൽ എത്തിക്സും",
+            "duration": "16:22",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of കൺസിക്വൻഷ്യലിസവും ഡിയോന്റോളജിക്കൽ എത്തിക്സും.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "L-ADMdvSJ94",
+            "thumbnail": "https://i.ytimg.com/vi/L-ADMdvSJ94/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "മിനിറ്റ് കൊണ്ട് ചരിത്രം തിരുത്തിയ പ്രസംഗം",
+            "chapter": "Malayalam study overview · മിനിറ്റ് കൊണ്ട് ചരിത്രം തിരുത്തിയ പ്രസംഗം",
+            "duration": "15:58",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of മിനിറ്റ് കൊണ്ട് ചരിത്രം തിരുത്തിയ പ്രസംഗം.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "edy_RlVWrhc",
+            "thumbnail": "https://i.ytimg.com/vi/edy_RlVWrhc/hqdefault.jpg",
+            "videoUrl": null
           }
         ]
       },
@@ -493,21 +674,65 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Explain how Amy Morales Lara connects art with healing, storytelling, community practice, and empathetic curiosity. Amy Morales Lara കല, രോഗശാന്തി, കഥപറച്ചിൽ, സാമൂഹിക ഇടപെടൽ, അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ എന്നിവയെ എങ്ങനെ ബന്ധിപ്പിക്കുന്നു എന്ന് വിശദീകരിക്കുക."
           },
           {
-            "chapterNumber": "Chapter 03 (English Edition)",
+            "chapterNumber": "English Edition",
             "title": "The Art of Liberation: Why Social Work Needs a Paintbrush",
-            "chapter": "English cinematic overview · Amy Morales Lara · Art as a Social Work · Context, themes and healing practices",
-            "duration": "14:15",
-            "thumbnail": "https://i.ytimg.com/vi/6Pf0IvRKieI/hqdefault.jpg",
-            "youtubeId": "6Pf0IvRKieI",
-            "videoUrl": null,
+            "chapter": "English audio overview · The Art of Liberation: Why Social Work Needs a Paintbrush · Thematic analysis & listening practice",
+            "duration": "05:35",
             "language": "English",
             "studyPoints": [
-              "<strong>Speaker & Background:</strong> Amy Morales Lara, artist and social worker from the Bronx, presenting art as an instrument of community healing and social advocacy.",
-              "<strong>Art, Healing & Storytelling:</strong> How creative expression enables marginalized voices to articulate trauma and bridge emotional divides.",
-              "<strong>Empathetic Curiosity:</strong> Cultivating deep curiosity and active empathy across clinical and grassroots social work.",
-              "<strong>Exam Connection:</strong> Aligned with Calicut University ENG1B01 Listening Skills study units."
+              "<strong>Intersection of Art and Social Justice:</strong> Explores how creative expression acts as a therapeutic tool and a vehicle for community liberation in social work.",
+              "<strong>Rhetorical & Analytical Structure:</strong> Breaks down key arguments regarding marginalized voices, participatory art, and transformative healing.",
+              "<strong>Active Listening Strategies:</strong> Focuses on identifying the speaker's main thesis, transitions, tonal nuances, and supporting empirical evidence."
             ],
-            "examTip": "Explain how Amy Morales Lara links art with healing, narrative storytelling, and empathetic curiosity for 10-mark examination essays."
+            "examTip": "Pay close attention to key transitional markers and vocabulary related to liberation and community practice to answer short-answer comprehension and critical summary questions.",
+            "youtubeId": "zn7OMOiK69w",
+            "thumbnail": "https://i.ytimg.com/vi/zn7OMOiK69w/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "English Edition",
+            "title": "The Art of Liberation Why Social Work Needs a Paintbrush",
+            "chapter": "English study overview · The Art of Liberation Why Social Work Needs a Paintbrush",
+            "duration": "05:35",
+            "language": "English",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of The Art of Liberation Why Social Work Needs a Paintbrush.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "3vioPOxeouc",
+            "thumbnail": "https://i.ytimg.com/vi/3vioPOxeouc/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "English Edition",
+            "title": "More Worth Dead Than Alive The Flawed American Dream",
+            "chapter": "English study overview · More Worth Dead Than Alive The Flawed American Dream",
+            "duration": "05:30",
+            "language": "English",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of More Worth Dead Than Alive The Flawed American Dream.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "BaxO-Omyanc",
+            "thumbnail": "https://i.ytimg.com/vi/BaxO-Omyanc/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "English Edition",
+            "title": "Art as Social Work The Power of Partnership",
+            "chapter": "English study overview · Art as Social Work The Power of Partnership",
+            "duration": "05:15",
+            "language": "English",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of Art as Social Work The Power of Partnership.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "LKarv83N4CE",
+            "thumbnail": "https://i.ytimg.com/vi/LKarv83N4CE/hqdefault.jpg",
+            "videoUrl": null
           }
         ]
       },
@@ -595,6 +820,36 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>Family Dynamics:</strong> The emotional strain between Willy, Linda, and sons Biff and Happy."
             ],
             "examTip": "Critically assess how Willy Loman exemplifies the collapse of the American Dream in Arthur Miller's tragedy."
+          },
+          {
+            "chapterNumber": "English Edition",
+            "title": "The Math of Euphemisms Adding Syllables, Subtracting Humanity",
+            "chapter": "English study overview · The Math of Euphemisms Adding Syllables, Subtracting Humanity",
+            "duration": "05:00",
+            "language": "English",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of The Math of Euphemisms Adding Syllables, Subtracting Humanity.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "n5I3noYdy5Q",
+            "thumbnail": "https://i.ytimg.com/vi/n5I3noYdy5Q/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "English Edition",
+            "title": "George Carlin s Soft Language (ENG1B01)",
+            "chapter": "English study overview · George Carlin s Soft Language (ENG1B01)",
+            "duration": "04:40",
+            "language": "English",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of George Carlin s Soft Language (ENG1B01).",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "GMM5a8hO_XA",
+            "thumbnail": "https://i.ytimg.com/vi/GMM5a8hO_XA/hqdefault.jpg",
+            "videoUrl": null
           }
         ]
       },

@@ -580,7 +580,39 @@
       }
     }
 
-  </style>
+  
+    /* Security: Disable right-click, save options, and callouts */
+
+    #modalExternalBtn, #openExternalBtn, #modalFastToggle, .fast-native-btn, .btn-download, .download, #downloadBtn, a[download], button[download], [download] {
+      display: none !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+    * {
+      -webkit-touch-callout: none !important;
+      -webkit-user-select: none !important;
+      user-select: none !important;
+    }
+    @media print {
+      body, .modal, .modal-iframe, #viewerModal, #pdfFrame {
+        display: none !important;
+      }
+    }
+
+    #modalFastToggle, .fast-native-btn, .btn-download, .download, #downloadBtn, a[download], button[download], [download] {
+      display: none !important;
+      pointer-events: none !important;
+    }
+    * {
+      -webkit-touch-callout: none !important;
+    }
+    @media print {
+      body, .modal, .modal-iframe, #viewerModal, #pdfFrame {
+        display: none !important;
+      }
+    }
+
+</style>
 <style id="pdf-pulse-nav-styles">
     /* Premium Blinking Back & Home Navigation */
     @keyframes blick-pulse-back {
@@ -699,9 +731,98 @@
     }
   </style>
   
+<style>
+    /* Premium Navigation: Back and Home Buttons */
+    @keyframes blink-nav-back {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+      }
+      50% {
+        transform: scale(1.04);
+        filter: brightness(1.2);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.75);
+      }
+    }
+    @keyframes blink-nav-home {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45);
+      }
+      50% {
+        transform: scale(1.04);
+        filter: brightness(1.2);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.75);
+      }
+    }
+    .reading-top-nav .btn-back,
+    .bottom-nav .nav-btn-back,
+    .modal-action-btn.modal-btn-back {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #4338ca 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+      font-weight: 850 !important;
+      text-shadow: 0 1px 2px rgba(15, 23, 42, 0.4);
+      animation: blink-nav-back 2.2s infinite ease-in-out !important;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .reading-top-nav .btn-home,
+    .bottom-nav .nav-btn-home,
+    .modal-action-btn.modal-btn-home {
+      background: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+      font-weight: 850 !important;
+      text-shadow: 0 1px 2px rgba(15, 23, 42, 0.4);
+      animation: blink-nav-home 2.2s infinite ease-in-out !important;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .reading-top-nav .btn-back:hover,
+    .bottom-nav .nav-btn-back:hover,
+    .modal-action-btn.modal-btn-back:hover,
+    .reading-top-nav .btn-home:hover,
+    .bottom-nav .nav-btn-home:hover,
+    .modal-action-btn.modal-btn-home:hover {
+      animation-play-state: paused !important;
+      transform: translateY(-2px) scale(1.04) !important;
+    }
+    .bottom-nav {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1.5px solid #e2e8f0;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .bottom-nav .nav-btn-back,
+    .bottom-nav .nav-btn-home {
+      min-height: 48px;
+      padding: 12px 28px;
+      border-radius: 14px;
+      font-size: 15px;
+      min-width: 170px;
+    }
+</style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
 </head>
-<body>
+<body oncontextmenu="event.preventDefault(); return false;">
   <main class="page-box">
     <!-- Premium Sticky Top Back & Home Navigation -->
     <nav class="reading-top-nav" aria-label="Reading navigation">
@@ -720,6 +841,7 @@
       <a href="#module-2">മൊഡ്യൂൾ 2</a>
       <a href="#module-3">മൊഡ്യൂൾ 3</a>
       <a href="#module-4">മൊഡ്യൂൾ 4</a>
+      <a href="voice-explanation.html?subject=malayalam" style="background: linear-gradient(135deg, #ea580c, #c2410c); color: #fff; font-weight: 700; box-shadow: 0 2px 8px rgba(234, 88, 12, 0.4);">🎙️ Voice Classes</a>
     </nav>
 
     <div class="modules-grid">
@@ -986,6 +1108,10 @@
     </section>
     </div>
     <a class="back" href="index.html">ഹോം പേജിലേക്ക് മടങ്ങുക</a>
+      <footer class="bottom-nav">
+      <button type="button" class="nav-btn nav-btn-back" onclick="if(window.history.length>1){window.history.back();}else{window.location.href='index.html#subjects';}" aria-label="Go back">← Back</button>
+      <a class="nav-btn nav-btn-home" href="index.html#top" aria-label="Academic Hub Home">⌂ Home</a>
+    </footer>
   </main>
 
   <!-- ========================================================================= -->
@@ -1510,5 +1636,32 @@
     })();
   </script>
 
+<script>
+  // Security interaction controls across reader modal and cards
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    return false;
+  }, true);
+
+  document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+    return false;
+  }, true);
+
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u'].includes(e.key.toLowerCase())) {
+      e.preventDefault();
+      return false;
+    }
+  }, true);
+
+  document.addEventListener('click', function(e) {
+    const target = e.target.closest('a[download], .btn-download, .download, [download]');
+    if (target) {
+      e.preventDefault();
+      return false;
+    }
+  }, true);
+</script>
 </body>
 </html>
