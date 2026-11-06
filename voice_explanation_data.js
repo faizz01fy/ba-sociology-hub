@@ -1052,9 +1052,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "The World Renowned Nose",
             "chapter": "English cinematic overview · Vaikom Muhammad Basheer · Political satire, media sensation and absurdism",
             "duration": "06:48",
-            "youtubeId": "_g7fyD5mLPo",
+            "youtubeId": "N53VW_gQpCI",
             "language": "English",
-            "thumbnail": "https://i.ytimg.com/vi/_g7fyD5mLPo/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/N53VW_gQpCI/hqdefault.jpg",
             "studyPoints": [
               "<strong>Vaikom Muhammad Basheer's Masterpiece:</strong> Translated from Malayalam ('Viswavikhyathamaya Mookku'), a world-class political satire on human gullibility and mass media hysteria.",
               "<strong>The Absurdity of Modern Fame:</strong> A humble 24-year-old cook becomes an international celebrity simply because his nose grows past his mouth down to his chest.",
