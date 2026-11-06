@@ -58,6 +58,8 @@ function isLmsPdfPath(pathname) {
     candidate = candidate.replace(/\\/g, "/").replace(/\/{2,}/g, "/");
     const segments = candidate.split("/").filter(Boolean);
     const filename = segments[segments.length - 1] || "";
+    // Academic Hub question banks, MCQs, study guides, and summary documents are always served
+    if (/(?:mcq|question[-_]?bank|exam[-_]?cracker|study[-_]?guide|summary)/i.test(filename)) return false;
     const marked = segments.some(segment =>
       /(?:^|[_\s-])lms(?:[_\s.-]|$)/i.test(segment) ||
       /^downloaded_pdfs$/i.test(segment)
@@ -315,22 +317,27 @@ export default {
       return new Response(responseBody, {status:upstream.status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
     }
     if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/internal/")) return json({error:"Not found"},404);
-    if ((request.method === "GET" || request.method === "HEAD") && isLmsPdfPath(url.pathname)) return unavailableLmsPdfResponse(request);
+    const dest = request.headers.get("Sec-Fetch-Dest");
+    const mode = request.headers.get("Sec-Fetch-Mode");
+    const accept = request.headers.get("Accept") || "";
+    const isInternalReader = dest === "empty" || 
+                             request.headers.get("X-Requested-With") === "Reader" || 
+                             url.searchParams.get("raw") === "1" || 
+                             url.searchParams.get("reader") === "1";
+    const isBrowserNavigation = dest === "document" || mode === "navigate" || accept.includes("text/html");
+
+    if ((request.method === "GET" || request.method === "HEAD") && isLmsPdfPath(url.pathname)) {
+      if (!isInternalReader) {
+        return unavailableLmsPdfResponse(request);
+      }
+    }
 
     // Secure PDF Routing: Intercept any direct browser navigation/access to any .pdf file and route to reader only
     if ((request.method === "GET" || request.method === "HEAD") && url.pathname.toLowerCase().endsWith('.pdf')) {
-      const dest = request.headers.get("Sec-Fetch-Dest");
-      const mode = request.headers.get("Sec-Fetch-Mode");
-      const accept = request.headers.get("Accept") || "";
-      const isInternalReader = dest === "empty" || 
-                               request.headers.get("X-Requested-With") === "Reader" || 
-                               url.searchParams.get("raw") === "1" || 
-                               url.searchParams.get("reader") === "1";
-      const isBrowserNavigation = dest === "document" || mode === "navigate" || accept.includes("text/html");
-
       if (isBrowserNavigation || !isInternalReader) {
         let cleanFile = decodeURIComponent(url.pathname.replace(/^\/+/, ''));
         const readerUrl = new URL(`/study-guide-reader.html?file=${encodeURIComponent(cleanFile)}`, request.url);
+        if (cleanFile.toLowerCase().includes('mcq')) readerUrl.searchParams.set('tab', 'mcq');
         if (url.searchParams.has('v')) readerUrl.searchParams.set('v', url.searchParams.get('v'));
         return Response.redirect(readerUrl.toString(), 302);
       }
