@@ -384,18 +384,6 @@ export default {
         } catch (_) {}
       }
     }
-        if (url.pathname.endsWith('/voice_explanation_data.js') || url.pathname === '/voice_explanation_data.js') {
-      const jsHeaders = new Headers(response.headers);
-      jsHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate");
-      jsHeaders.set("Pragma", "no-cache");
-      jsHeaders.set("Expires", "0");
-      return new Response(response.body, {
-        status: response.status,
-        statusText: response.statusText,
-        headers: jsHeaders
-      });
-    }
-
     if (response && response.ok && url.pathname.toLowerCase().endsWith('.pdf')) {
       const pdfHeaders = new Headers(response.headers);
       pdfHeaders.set("Content-Disposition", "inline");
