@@ -154,7 +154,7 @@ window.VOICE_EXPLANATIONS_DATA = {
     "badge": "🌴",
     "iconClass": "fa-feather",
     "tag": "മലയാള സാഹിത്യാനുശീലനം (Literary Practice in Malayalam) · CUFYUGP AEC",
-    "totalVideos": 8,
+    "totalVideos": 10,
     "modules": [
       {
         "moduleName": "MODULE 01: ഗദ്യവും വിവർത്തനവും (Prose and Translation)",
@@ -312,10 +312,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 02",
             "title": "കവിത: ചിന്താവിഷ്ടയായ സീത — മഹാകവി കുമാരനാശാൻ",
-            "chapter": "ഖണ്ഡകാവ്യം · സ്ത്രീപക്ഷ ചിന്ത · ആശാന്റെ കാവ്യദർശനം",
-            "duration": "17:40",
-            "youtubeId": "",
-            "thumbnail": "",
+            "chapter": "റൊമാന്റിക് കാവ്യപ്രസ്ഥാനം · സ്ത്രീപക്ഷ നവോത്ഥാനം · മനഃശാസ്ത്രപരമായ ആഴം (Kumaran Asan's Masterpiece)",
+            "duration": "19:45",
+            "youtubeId": "EVfXGBMY3T8",
+            "thumbnail": "https://i.ytimg.com/vi/EVfXGBMY3T8/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
