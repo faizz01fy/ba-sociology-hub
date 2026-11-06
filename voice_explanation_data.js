@@ -297,8 +297,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കവിത: സമുദ്രലംഘനം — തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ",
             "chapter": "അദ്ധ്യാത്മരാമായണം കിളിപ്പാട്ട് · സുന്ദരകാണ്ഡം · ക്ലാസിക്കൽ കവിത (Ezhuthachan's Kilippattu Masterpiece)",
             "duration": "14:15",
-            "youtubeId": "VVvI3IRWguM",
-            "thumbnail": "https://i.ytimg.com/vi/VVvI3IRWguM/hqdefault.jpg",
+            "youtubeId": "WHAarsaeR3A",
+            "thumbnail": "https://i.ytimg.com/vi/WHAarsaeR3A/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [

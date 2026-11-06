@@ -2066,6 +2066,51 @@ tr:hover td { background: rgba(56, 189, 248, 0.07); }
   background: rgba(245, 158, 11, 0.16) !important;
 }
 
+/* RIFI VISITOR HIGHLIGHT & BLINK */
+@keyframes rifi-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.97); }
+}
+@keyframes rifi-dot-pulse {
+  0% { transform: scale(0.7); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7); }
+  70% { transform: scale(1.25); box-shadow: 0 0 0 6px rgba(236, 72, 153, 0); }
+  100% { transform: scale(0.7); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+}
+.rifi-row {
+  border-left: 3px solid #ec4899 !important;
+  background: rgba(236, 72, 153, 0.04) !important;
+}
+.rifi-badge {
+  background: rgba(236, 72, 153, 0.18) !important;
+  color: #f472b6 !important;
+  border: 1px solid rgba(236, 72, 153, 0.5) !important;
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  box-shadow: 0 0 8px rgba(236, 72, 153, 0.25);
+  animation: rifi-blink 1.4s ease-in-out infinite;
+}
+.rifi-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ec4899;
+  display: inline-block;
+  box-shadow: 0 0 6px #ec4899;
+  animation: rifi-dot-pulse 1.4s infinite;
+}
+.ip-badge.rifi-ip {
+  color: #f472b6 !important;
+  border-color: rgba(236, 72, 153, 0.5) !important;
+  background: rgba(236, 72, 153, 0.12) !important;
+}
+
 /* VISITOR STYLED ELEMENTS */
 .time-stamp {
   font-family: var(--font-mono);
@@ -2354,6 +2399,15 @@ details.section-details summary:hover, details.popular-details summary:hover {
       return ip;
     }
 
+    function isRifiVisitor(ip) {
+      if (!ip || typeof ip !== "string") return false;
+      const clean = ip.trim().toLowerCase();
+      if (clean === "2401:4900:..:13a9") return true;
+      if (clean.includes("2401:4900") && clean.endsWith("13a9")) return true;
+      if (formatShortIP(clean) === "2401:4900:..:13a9") return true;
+      return false;
+    }
+
     // RENDER TRAFFIC (VISITORS WITH IP & DETAILS)
     function renderTraffic() {
       try {
@@ -2365,7 +2419,8 @@ details.section-details summary:hover, details.popular-details summary:hover {
         let filtered = trafficRecords.filter(item => {
           if (!search) return true;
           const info = countryInfo(item.country);
-          const hay = [item.ip, item.country, info.name, item.region, item.city, item.isp, item.device, item.ref, item.path, ...(item.sections||[]).map(s=>s.name)].filter(Boolean).join(' ').toLowerCase();
+          const isRifi = isRifiVisitor(item.ip);
+          const hay = [item.ip, (isRifi ? 'rifi' : ''), item.country, info.name, item.region, item.city, item.isp, item.device, item.ref, item.path, ...(item.sections||[]).map(s=>s.name)].filter(Boolean).join(' ').toLowerCase();
           return hay.includes(search);
         });
 
@@ -2415,13 +2470,18 @@ details.section-details summary:hover, details.popular-details summary:hover {
           for (const v of pageItems) {
             const tr = document.createElement('tr');
             const isGoogleBot = (v.isp && /Google/i.test(v.isp)) || (v.ip && (v.ip.startsWith('66.249.') || /Google/i.test(v.ip))) || (v.device && /Google/i.test(v.device));
+            const isRifi = isRifiVisitor(v.ip);
             if (isGoogleBot) {
               tr.className = 'google-bot-row';
+            } else if (isRifi) {
+              tr.className = 'rifi-row';
             }
 
             // Last Active (IST)
             const tdTime = document.createElement('td');
-            tdTime.innerHTML = '<span class="time-stamp">' + formatIST(v.time) + '</span>';
+            const isLiveRecent = (Date.now() - v.time) < 90 * 1000;
+            const liveBadgeHtml = (isRifi && isLiveRecent) ? ' <span class="rifi-badge" style="font-size:9px;padding:1px 5px;margin-left:4px;"><span class="rifi-dot"></span>ACTIVE NOW</span>' : '';
+            tdTime.innerHTML = '<span class="time-stamp">' + formatIST(v.time) + '</span>' + liveBadgeHtml;
             tr.append(tdTime);
 
             // Visitor IP Address
@@ -2430,8 +2490,10 @@ details.section-details summary:hover, details.popular-details summary:hover {
             let ownerBadgeHtml = '';
             if (v.isOwner) {
               ownerBadgeHtml = '<div style="margin-top:4px;"><span style="background:rgba(245,158,11,0.18);color:#fbbf24;border:1px solid rgba(245,158,11,0.45);border-radius:4px;padding:2px 7px;font-size:10.5px;font-weight:800;letter-spacing:0.04em;display:inline-flex;align-items:center;gap:3px;font-family:var(--font-mono);">👑 OWNER VISIT</span></div>';
+            } else if (isRifi) {
+              ownerBadgeHtml = '<div style="margin-top:4px;"><span class="rifi-badge"><span class="rifi-dot"></span>🎯 rifi</span></div>';
             }
-            tdIp.innerHTML = '<span class="ip-badge" title="Full IP: ' + v.ip + '" style="font-family:var(--font-mono);font-size:11.5px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;cursor:help;">' + shortIp + '</span>' + ownerBadgeHtml;
+            tdIp.innerHTML = '<span class="ip-badge' + (isRifi ? ' rifi-ip' : '') + '" title="Full IP: ' + v.ip + '" style="font-family:var(--font-mono);font-size:11.5px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;cursor:help;">' + shortIp + '</span>' + ownerBadgeHtml;
             tr.append(tdIp);
 
             // Total Visits
@@ -2439,6 +2501,8 @@ details.section-details summary:hover, details.popular-details summary:hover {
             if (v.isOwner) {
               tdVisits.innerHTML = '<span class="visits-badge" style="background:rgba(245,158,11,0.14);color:#fbbf24;border:1px solid rgba(245,158,11,0.3);font-size:11px;font-weight:600;">' + v.visits + ' visit' + (v.visits===1?'':'s') + ' <small style="display:block;font-size:9.5px;opacity:0.85;color:var(--text-dim);">(not counted)</small></span>';
               tr.style.background = 'rgba(245, 158, 11, 0.03)';
+            } else if (isRifi) {
+              tdVisits.innerHTML = '<span class="visits-badge multi" style="background:rgba(236,72,153,0.15);color:#f472b6;border:1px solid rgba(236,72,153,0.35);font-size:11px;font-weight:700;">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
             } else {
               tdVisits.innerHTML = '<span class="visits-badge ' + (v.visits > 1 ? 'multi' : 'single') + '">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
             }
@@ -2616,7 +2680,12 @@ details.section-details summary:hover, details.popular-details summary:hover {
             const geo = visitorsByIP.get(vIp);
             const flag = countryInfo(geo?.country).flag;
             const loc = [geo?.city, geo?.region].filter(Boolean).join(', ');
-            li.textContent = flag + ' ' + vIp + ' — ' + vVisits + ' visit' + (vVisits===1?'':'s') + ' · ' + formatIST(vTime) + (loc ? ' (' + loc + ')' : '');
+            const isRifiAudit = isRifiVisitor(vIp);
+            if (isRifiAudit) {
+              li.innerHTML = flag + ' <span class="rifi-badge" style="font-size:9.5px;padding:1px 5px;margin-right:3px;"><span class="rifi-dot"></span>🎯 rifi</span> <span style="color:#f472b6;font-family:var(--font-mono);">' + formatShortIP(vIp) + '</span> · ' + vVisits + ' visit' + (vVisits===1?'':'s') + ' · ' + formatIST(vTime) + (loc ? ' (' + loc + ')' : '');
+            } else {
+              li.textContent = flag + ' ' + vIp + ' — ' + vVisits + ' visit' + (vVisits===1?'':'s') + ' · ' + formatIST(vTime) + (loc ? ' (' + loc + ')' : '');
+            }
             ul.append(li);
           }
           details.append(ul);
