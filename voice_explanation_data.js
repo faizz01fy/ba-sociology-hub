@@ -2037,18 +2037,21 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Unit 04",
-            "title": "Cardinal vs Ordinal Utility Analysis",
-            "chapter": "Law of Diminishing Marginal Utility & Equi-Marginal Utility",
-            "duration": "20:45",
-            "youtubeId": "1aWH6DRymg8",
-            "videoUrl": "/micro-unit4-review.html",
-            "thumbnail": "/thumbnails/micro-unit-4-bilingual.jpg",
+            "title": "Cardinal vs Ordinal Utility Analysis (പ്രയോജന സിദ്ധാന്തങ്ങൾ)",
+            "chapter": "Law of Diminishing Marginal Utility & Equi-Marginal Utility (Full Masterclass)",
+            "duration": "23:25",
+            "youtubeId": "Jj-JWuNJjRU",
+            "videoUrl": "https://www.youtube.com/watch?v=Jj-JWuNJjRU",
+            "thumbnail": "https://i.ytimg.com/vi/Jj-JWuNJjRU/hqdefault.jpg",
             "studyPoints": [
-              "<strong>Cardinal vs Ordinal Utility:</strong> Marshallian cardinal utility measures satisfaction in quantitative utils, whereas Hicks-Allen ordinal utility ranks bundles by consumer preference orders.",
-              "<strong>Law of Diminishing Marginal Utility:</strong> As additional units of a good are consumed, the marginal utility (MU = dU/dq) derived from each successive unit declines.",
-              "<strong>Equi-Marginal Principle:</strong> Consumer allocation rule where ratio of marginal utility to price is equal across all purchased commodities: MUx / Px = MUy / Py."
+              "<strong>കാർഡിനൽ പ്രയോജന സിദ്ധാന്തം:</strong> സംതൃപ്തിയെ യൂട്ടിൽസ് എന്ന സംഖ്യാ രൂപത്തിൽ അളക്കാമെന്ന് ആൽഫ്രഡ് മാർഷൽ സമർത്ഥിക്കുന്നു.",
+              "<strong>സീമാന്ത പ്രയോജന ക്ഷയ നിയമം (Law of DMU):</strong> തുടർച്ചയായ ഉപഭോഗം നടക്കുമ്പോൾ ഓരോ അധിക യൂണിറ്റിൽ നിന്നും ലഭിക്കുന്ന സംതൃപ്തി (MU) കുറഞ്ഞുവരുന്നു. MU പൂജ്യമാകുമ്പോൾ TU പരമാവധിയിലെത്തുന്നു.",
+              "<strong>സമ-സീമാന്ത പ്രയോജന നിയമം (Equi-Marginal Utility):</strong> വരുമാനം വിവിധ സാധനങ്ങൾക്കായി വിഭജിക്കുമ്പോൾ <code>MU_x / Px = MU_y / Py</code> ആകുമ്പോൾ പരമാവധി സംതൃപ്തി ലഭിക്കുന്നു (Gossen's 2nd Law).",
+              "<strong>ഓർഡിനൽ സമീപനവും ഉദാസീന വക്രങ്ങളും:</strong> ഹിക്സും അലനും വികസിപ്പിച്ച ഓർഡിനൽ സിദ്ധാന്തത്തിൽ സംതൃപ്തിയെ റാങ്ക് ചെയ്യുന്നു. ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ സന്തുലിതാവസ്ഥ കൈവരുന്നു.",
+              "<strong>സീമാന്ത പ്രതിസ്ഥാപന നിരക്ക് (MRS):</strong> ഡിമിനിഷിംഗ് എം.ആർ.എസ് നിയമം കാരണം ഉദാസീന വക്രങ്ങൾ ഒറിജിനിലേക്ക് കോൺവെക്സ് ആയിരിക്കുന്നു."
             ],
-            "examTip": "Focus on the transition from cardinal to ordinal analysis and state the equilibrium condition MUx/Px = MUy/Py."
+            "examTip": "ആൽഫ്രഡ് മാർഷലിന്റെ ഡിമിനിഷിംഗ് മാർജിനൽ യൂട്ടിലിറ്റി നിയമം, ഗോസ്സന്റെ രണ്ടാം നിയമം, TU-വും MU-വും തമ്മിലുള്ള ഗ്രാഫിക്കൽ ബന്ധം എന്നിവ പരീക്ഷയ്ക്ക് 6 മാർക്കിനും 10 മാർക്കിനും നിർബന്ധമായും ചോദിക്കുന്ന ഭാഗങ്ങളാണ്.",
+            "language": "Malayalam"
           },
           {
             "chapterNumber": "Unit 05",
