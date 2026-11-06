@@ -3849,7 +3849,7 @@
         if (Array.isArray(s.modules)) {
           s.modules.forEach(m => {
             (m.videos || []).forEach(v => {
-              if (v && (v.youtubeId || v.audioSrc || v.videoUrl)) liveCount++;
+              if (v && (v.youtubeId || v.audioSrc || v.audioUrl || v.videoUrl)) liveCount++;
             });
           });
         }
@@ -3978,16 +3978,23 @@
 
         const hasEnglish = (subject.modules || []).some(mod => (mod.videos || []).some(v => v.language === 'English'));
         const isBilingualSubject = (currentSlug === 'sociology') || (subject.modules || []).some(mod => (mod.videos || []).some(v => (v.language && v.language.includes('English') && v.language.includes('Malayalam'))));
+        const isHindiSubject = (currentSlug === 'hindi') || (subject.name && subject.name.toLowerCase().includes('hindi'));
+        const isArabicSubject = (currentSlug === 'arabic') || (subject.name && subject.name.toLowerCase().includes('arabic'));
 
         const heroChannelBadge = document.querySelector('.hero-channel-badge');
 
-        heroChannelBadge.innerHTML = `<span class="pulse-dot"></span> ${isBilingualSubject ? 'English &amp; Malayalam' : (hasEnglish ? 'Malayalam &amp; English' : 'Malayalam')} Voice Classes &amp; Video Explanations`;
-
-        heroSubjectDesc.textContent = hasEnglish
-
-          ? 'Watch Malayalam and English video explanations by module. English editions are highlighted in blue.'
-
-          : 'Chapter-by-chapter embedded Malayalam voice lectures organized by module';
+        if (isHindiSubject) {
+          heroChannelBadge.innerHTML = `<span class="pulse-dot"></span> Hindi Voice Classes &amp; Video Explanations`;
+          heroSubjectDesc.textContent = 'Chapter-by-chapter embedded Hindi voice lectures and video explanations organized by module';
+        } else if (isArabicSubject) {
+          heroChannelBadge.innerHTML = `<span class="pulse-dot"></span> Arabic Voice Classes &amp; Video Explanations`;
+          heroSubjectDesc.textContent = 'Chapter-by-chapter embedded Arabic voice lectures and video explanations organized by module';
+        } else {
+          heroChannelBadge.innerHTML = `<span class="pulse-dot"></span> ${isBilingualSubject ? 'English &amp; Malayalam' : (hasEnglish ? 'Malayalam &amp; English' : 'Malayalam')} Voice Classes &amp; Video Explanations`;
+          heroSubjectDesc.textContent = hasEnglish
+            ? 'Watch Malayalam and English video explanations by module. English editions are highlighted in blue.'
+            : 'Chapter-by-chapter embedded Malayalam voice lectures organized by module';
+        }
 
         
 
@@ -4099,7 +4106,7 @@
 
           filteredVids.forEach(v => {
 
-            const defaultLang = (currentSlug === 'sociology') ? 'English & Malayalam' : 'Malayalam';
+            const defaultLang = (currentSlug === 'hindi') ? 'Hindi' : ((currentSlug === 'arabic') ? 'Arabic' : ((currentSlug === 'sociology') ? 'English & Malayalam' : 'Malayalam'));
             const language = (currentSlug === 'sociology') ? 'English & Malayalam' : (v.language || defaultLang);
 
             const isEnglish = language === 'English';
@@ -4312,7 +4319,7 @@
 
                       <span aria-hidden="true">📝</span>
 
-                      <span><strong>Study Notes &amp; Exam Points</strong> ${isEnglish ? '(English Edition)' : '(മലയാളം &amp; Eng)'}</span>
+                      <span><strong>Study Notes &amp; Exam Points</strong> ${isEnglish ? '(English Edition)' : (isHindi ? '(हिन्दी संस्करण)' : (isArabic ? '(النسخة العربية)' : '(മലയാളം &amp; Eng)'))}</span>
 
                     </span>
 
@@ -4882,7 +4889,7 @@
 
                       <span aria-hidden="true">📝</span>
 
-                      <span><strong>Study Notes &amp; Exam Points</strong> ${isEnglish ? '(English Edition)' : '(മലയാളം &amp; Eng)'}</span>
+                      <span><strong>Study Notes &amp; Exam Points</strong> ${isEnglish ? '(English Edition)' : (isHindi ? '(हिन्दी संस्करण)' : (isArabic ? '(النسخة العربية)' : '(മലയാളം &amp; Eng)'))}</span>
 
                     </span>
 

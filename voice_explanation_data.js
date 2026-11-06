@@ -2528,6 +2528,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "संविधान एवं राजभाषा : संवैधानिक प्रावधान",
             "chapter": "अनुच्छेद 343-351, राजभाषा अधिनियम 1963 एवं राजभाषा नियम",
             "duration": "17",
+            "language": "Hindi",
             "youtubeId": "RDXXw4nZ-xo",
             "audioUrl": "audio/hindi_lecture_01.mp3",
             "videoUrl": "videos/hindi_lecture_01.mp4",
@@ -2539,7 +2540,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "राजभाषा कार्यान्वयन एवं पत्राचार",
             "chapter": "कार्यालयीन हिन्दी, टिप्पणी एवं प्रारूपण",
             "duration": "18",
-            "youtubeId": ""
+            "youtubeId": "",
+            "language": "Hindi"
           }
         ]
       },
@@ -2551,21 +2553,24 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "सुमित्रानंदन पंत : प्रथम रश्मि",
             "chapter": "छायावादी काव्य सौंदर्य एवं प्रकृति चित्रण",
             "duration": "22",
-            "youtubeId": ""
+            "youtubeId": "",
+            "language": "Hindi"
           },
           {
             "chapterNumber": "Chapter 02",
             "title": "कुँवर नारायण : कविता की ज़रूरत",
             "chapter": "समकालीन कविता में मानवीय संवेदना",
             "duration": "19",
-            "youtubeId": ""
+            "youtubeId": "",
+            "language": "Hindi"
           },
           {
             "chapterNumber": "Chapter 03",
             "title": "असंगघोष : मैं दूँगा माकूल जवाब",
             "chapter": "दलित चेतना एवं सामाजिक प्रतिरोध का काव्य",
             "duration": "21",
-            "youtubeId": ""
+            "youtubeId": "",
+            "language": "Hindi"
           }
         ]
       },
@@ -2577,19 +2582,21 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "वाक्य संरचना : उद्देश्य, विधेय एवं वाक्य के भेद",
             "chapter": "सरल, संयुक्त एवं मिश्र वाक्य, वाक्य शुद्धि",
             "duration": "24",
-            "youtubeId": ""
+            "youtubeId": "",
+            "language": "Hindi"
           },
           {
             "chapterNumber": "Chapter 02",
             "title": "व्यावहारिक हिन्दी व्याकरण एवं मुहावरे",
             "chapter": "कारक, काल, लिंग, वचन एवं लोकोक्तियाँ",
             "duration": "20",
-            "youtubeId": ""
+            "youtubeId": "",
+            "language": "Hindi"
           }
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 1
   },
   "mathematics": {
     "name": "Mathematics",
