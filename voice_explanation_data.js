@@ -2524,7 +2524,11 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "संविधान एवं राजभाषा : संवैधानिक प्रावधान",
             "chapter": "अनुच्छेद 343-351, राजभाषा अधिनियम 1963 एवं राजभाषा नियम",
             "duration": "17",
-            "youtubeId": "RDXXw4nZ-xo"
+            "youtubeId": "RDXXw4nZ-xo",
+            "audioUrl": "audio/hindi_lecture_01.mp3",
+            "videoUrl": "videos/hindi_lecture_01.mp4",
+            "thumbnail": "thumbnails/hindi/hindi_sec_01.png",
+            "examTip": "अनुच्छेद 343(1) के अनुसार संघ की राजभाषा हिन्दी और लिपि देवनागरी है। अनुच्छेद 351 हिन्दी भाषा के विकास एवं सामासिक संस्कृति के संवर्धन का निदेश देता है।"
           },
           {
             "chapterNumber": "Chapter 02",
