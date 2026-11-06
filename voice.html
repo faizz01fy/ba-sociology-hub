@@ -4141,9 +4141,17 @@
 
             const chBadge = v.chapterNumber ? `<span class="chapter-badge-chip">${v.chapterNumber}</span>` : '';
 
+            let isHindi = (currentSlug === 'hindi' || (v.language && v.language.toLowerCase() === 'hindi'));
+            let isArabic = (currentSlug === 'arabic' || (v.language && v.language.toLowerCase() === 'arabic'));
             let langHeading = 'Malayalam Video';
             let langClass = '';
-            if (isEnglish) {
+            if (isHindi) {
+              langHeading = '<strong>Hindi Video</strong>';
+              langClass = ' hindi-video-heading';
+            } else if (isArabic) {
+              langHeading = '<strong>Arabic Video</strong>';
+              langClass = ' arabic-video-heading';
+            } else if (isEnglish) {
               langHeading = '<strong>English Video</strong>';
               langClass = ' english-video-heading';
             } else if (isBilingual) {
