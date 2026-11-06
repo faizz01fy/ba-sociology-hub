@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy of AI - Chapter 20: Can AI Systems Be Moral Agents & Accountability?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+    @page {
+        size: A4 portrait;
+        margin: 5.5mm 6.5mm;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans', 'Noto Sans Malayalam', 'Segoe UI', Tahoma, sans-serif;
+        font-size: 8.35pt;
+        line-height: 1.45;
+        color: #1e293b;
+        background: #ffffff;
+    }
+    .page-container {
+        width: 100%;
+        height: 100%;
+        max-height: 278mm;
+        page-break-after: always;
+        page-break-inside: avoid;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .page-container:last-child {
+        page-break-after: avoid;
+    }
+    .page-header {
+        border-bottom: 2px solid #047857;
+        padding-bottom: 3.5px;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .header-left .sub-title {
+        font-size: 6.8pt;
+        font-weight: 700;
+        color: #047857;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .header-left .main-title {
+        font-size: 11pt;
+        font-weight: 800;
+        color: #0f172a;
+        margin-top: 1px;
+    }
+    .header-right {
+        text-align: right;
+    }
+    .header-right .page-num {
+        font-size: 8.8pt;
+        font-weight: 800;
+        color: #047857;
+        background: #ecfdf5;
+        padding: 2px 7px;
+        border-radius: 4px;
+        border: 1px solid #a7f3d0;
+    }
+    .section-banner {
+        background: linear-gradient(135deg, #065f46 0%, #047857 50%, #0d9488 100%);
+        color: #ffffff;
+        padding: 4.5px 9px;
+        border-radius: 5px;
+        font-size: 8.2pt;
+        font-weight: 700;
+        margin-bottom: 5.5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .content-flow {
+        display: flex;
+        flex-direction: column;
+        gap: 8.0px;
+        flex-grow: 1;
+    }
+    .dual-concept-card {
+        border: 1px solid #cbd5e1;
+        border-radius: 5.5px;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .card-en {
+        background: #f8fafc;
+        border-left: 3.5px solid #1e3a8a;
+        padding: 6.5px 8.5px;
+    }
+    .card-ml {
+        background: #f0fdf4;
+        border-left: 3.5px solid #047857;
+        border-top: 1px dashed #d1fae5;
+        padding: 6.5px 8.5px;
+    }
+    .card-title-en {
+        font-size: 8.2pt;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 2.0px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .card-title-ml {
+        font-size: 8.2pt;
+        font-weight: 700;
+        color: #065f46;
+        margin-bottom: 2.0px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .card-desc-en {
+        font-size: 8.15pt;
+        line-height: 1.47;
+        color: #334155;
+    }
+    .card-desc-ml {
+        font-size: 8.00pt;
+        line-height: 1.49;
+        color: #166534;
+    }
+    .card-example {
+        background: #fefce8;
+        border-left: 3px solid #ca8a04;
+        padding: 5.0px 8.0px;
+        margin-top: 5.0px;
+        font-size: 7.65pt;
+        line-height: 1.44;
+        color: #713f12;
+        border-radius: 0 3px 3px 0;
+    }
+    .card-example b {
+        color: #854d0e;
+    }
+    .grid-2col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5.0px;
+    }
+    .knock-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 4.5px;
+        padding: 4.5px 6.5px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    .knock-card.blue { border-left: 3.2px solid #2563eb; background: #eff6ff; }
+    .knock-card.emerald { border-left: 3.2px solid #059669; background: #ecfdf5; }
+    .knock-card.amber { border-left: 3.2px solid #d97706; background: #fffbeb; }
+    .knock-card.purple { border-left: 3.2px solid #7c3aed; background: #faf5ff; }
+    .knock-card.teal { border-left: 3.2px solid #0d9488; background: #f0fdfa; }
+    .knock-card.rose { border-left: 3.2px solid #e11d48; background: #fff1f2; }
+    .knock-title {
+        font-size: 7.6pt;
+        font-weight: 700;
+        margin-bottom: 1.8px;
+        color: #0f172a;
+    }
+    .knock-desc-en {
+        font-size: 7.15pt;
+        line-height: 1.38;
+        color: #334155;
+        margin-bottom: 1.8px;
+    }
+    .knock-desc-ml {
+        font-size: 7.05pt;
+        line-height: 1.40;
+        color: #1e293b;
+    }
+    .page-footer {
+        border-top: 1px solid #cbd5e1;
+        padding-top: 4px;
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 6.6pt;
+        color: #64748b;
+    }
+    .page-footer .footer-left {
+        font-weight: 600;
+    }
+    .page-footer .footer-right {
+        font-weight: 700;
+        color: #047857;
+    }
+    </style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VII</div>
+            <div class="main-title">4.3 (C) Can AI Systems Be Moral Agents & Who Is Accountable?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 01 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 1: The Concept & Definition of Moral Agency</span>
+        <span>ധാർമ്മിക ഏജൻസിയുടെ നിർവചനവും ഉത്തരവാദിത്തങ്ങളും</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">1. Definition of a Moral Agent: Distinction & Responsibility</div>
+                <div class="card-desc-en">A moral agent is best defined as an entity possessing the rational capacity to distinguish right from wrong and be held morally and legally responsible for its actions (MCQ 1: C). It is not defined merely by computational speed, data storage, or rule-following capacity. Rather, moral agency requires conscious ethical discernment, permitting an entity to evaluate normative principles, deliberate freely, and be subject to legitimate moral praise or condemnation. In philosophical jurisprudence, a moral agent must be capable of understanding the normative gravity of its decisions, deliberating autonomously between right and wrong, and bearing personal culpability for resulting harms.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">1. ധാർമ്മിക ഏജന്റ് (Moral Agent): നിർവചനവും സവിശേഷതകളും</div>
+                <div class="card-desc-ml">ശരിയും തെറ്റും തിരിച്ചറിയാനും, സ്വന്തം പ്രവൃത്തികൾക്ക് ധാർമ്മികവും നിയമപരവുമായ പൂർണ്ണ ഉത്തരവാദിത്തം വഹിക്കാനും കഴിയുന്ന ഒരു അസ്തിത്വത്തെയാണ് 'മോറൽ ഏജന്റ്' (Moral Agent) എന്ന് വിളിക്കുന്നത് (MCQ 1: C). സങ്കീർണ്ണമായ കണക്കുകൂട്ടലുകൾ നടത്താനോ പ്രോഗ്രാം ചെയ്ത നിയമങ്ങൾ അനുസരിക്കാനോ ഉള്ള കഴിവ് മാത്രമല്ലിത്. മറിച്ച്, സ്വന്തം ഇച്ഛാശക്തി ഉപയോഗിച്ച് ധാർമ്മിക മൂല്യങ്ങൾ വിലയിരുത്താനും സമൂഹത്തിന് മുന്നിൽ ഉത്തരവാദിയാകാനുമുള്ള പ്രാപ്തിയാണ് മോറൽ ഏജൻസിയുടെ കാതൽ. നന്മയും തിന്മയും തിരിച്ചറിഞ്ഞ്, സ്വന്തം പ്രവൃത്തികൾ സമൂഹത്തിൽ ഉണ്ടാക്കുന്ന പ്രത്യാഘാതങ്ങളെക്കുറിച്ച് പൂർണ്ണ ബോധവാനായിരിക്കാൻ കഴിയുന്ന വ്യക്തികൾക്ക് മാത്രമേ ധാർമ്മിക കർത്തൃത്വം അവകാശപ്പെടാനാവൂ.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> നിയമങ്ങളും ധാർമ്മിക മൂല്യങ്ങളും അറിഞ്ഞുകൊണ്ട് സ്വന്തം തീരുമാനപ്രകാരം പ്രവർത്തിക്കുന്ന പ്രായപൂർത്തിയായ ഒരു മനുഷ്യൻ മോറൽ ഏജന്റാണ്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">2. The Inviolable Triad: Autonomy, Intentionality & Free Will</div>
+                <div class="card-desc-en">To qualify as an authentic moral agent, an entity must possess intentionality and autonomy (MCQ 2: B), supported by genuine free will. Intentionality ensures that actions stem from conscious mental states and deliberate purposes. Autonomy guarantees that decisions emerge from internal self-governance rather than external coercion. Without this triad, behavior is purely mechanical motion rather than genuine moral action. Intentionality infuses action with subjective purpose, while autonomy ensures that choices represent authentic self-determination rather than rigid execution of external mechanical constraints.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">2. ധാർമ്മികതയുടെ മൂന്ന് തൂണുകൾ: സ്വയംഭരണാധികാരം, ഉദ്ദേശ്യം, സ്വതന്ത്ര ഇച്ഛ</div>
+                <div class="card-desc-ml">യഥാർത്ഥ ധാർമ്മിക ഏജന്റാകാൻ ഒരു വ്യക്തിക്ക് ബോധപൂർവ്വമായ ഉദ്ദേശ്യവും (intentionality), സ്വയംഭരണാധികാരവും (autonomy) ഉണ്ടായിരിക്കണം (MCQ 2: B). ബാഹ്യ സമ്മർദ്ദങ്ങളില്ലാതെ സ്വന്തം ഇഷ്ടപ്രകാരം തീരുമാനമെടുക്കാൻ സ്വതന്ത്ര ഇച്ഛ (free will) ആവശ്യമാണ്. സ്വന്തം പ്രവൃത്തികളുടെ ലക്ഷ്യത്തെക്കുറിച്ച് പൂർണ്ണ ബോധമുള്ളപ്പോൾ മാത്രമേ ഒരാൾക്ക് ധാർമ്മിക കർത്തൃത്വം അവകാശപ്പെടാനാകൂ. ബാഹ്യമായ പ്രേരണകളോ സമ്മർദ്ദങ്ങളോ ഇല്ലാതെ, സ്വന്തം ഉള്ളിൽ നിന്നുള്ള ബോധ്യത്തോടെ പ്രവർത്തിക്കുമ്പോൾ മാത്രമേ ഒരു പ്രവൃത്തി ധാർമ്മികമായി മാറുന്നുള്ളൂ.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> മറ്റൊരാളെ സഹായിക്കണമെന്ന ആത്മാർത്ഥമായ ഉദ്ദേശ്യത്തോടെ പണം സംഭാവന ചെയ്യുന്ന വ്യക്തി ആ പ്രവൃത്തിയിലൂടെ തന്റെ മോറൽ ഏജൻസി വെളിപ്പെടുത്തുന്നു.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">3. Moral Accountability: The Justification for Praise & Blame</div>
+                <div class="card-desc-en">Moral agency is the necessary precondition for the attribution of moral accountability. Only entities with the capacity for uncoerced choice can legitimately be praised for heroic virtues or blamed for harmful vices. Holding an entity accountable implies that it had the genuine alternative to act otherwise; where freedom of choice is absent, the foundational logic of moral culpability completely collapses. Retributive and restorative justice require an agent who understands the ethical weight of obligations: without conscious freedom of choice, holding an entity morally accountable is logically vacuous.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">3. ധാർമ്മിക ഉത്തരവാദിത്തം: പ്രശംസയും കുറ്റപ്പെടുത്തലും</div>
+                <div class="card-desc-ml">ഒരു വ്യക്തിയെ നല്ല കാര്യങ്ങൾക്ക് പ്രശംസിക്കാനോ തെറ്റായ കാര്യങ്ങൾക്ക് കുറ്റപ്പെടുത്താനോ ഉള്ള അടിസ്ഥാന കാരണം അയാൾ ഒരു മോറൽ ഏജന്റാണ് എന്നതാണ്. മറ്റെന്തെങ്കിലും ചെയ്യാൻ സ്വാതന്ത്ര്യമുണ്ടായിട്ടും ഒരു പ്രത്യേക പ്രവൃത്തി തിരഞ്ഞെടുത്തതിനാണ് ഉത്തരവാദിത്തം നൽകുന്നത്. തിരഞ്ഞെടുക്കാനുള്ള സ്വാതന്ത്ര്യമില്ലാത്ത ഒന്നിന് മേൽ കുറ്റമോ പ്രശംസയോ ആരോപിക്കാൻ സാധ്യമല്ല. വാക്കുകളുടെ അർത്ഥവും വികാരങ്ങളും അറിയാതെ കേവലം ചിഹ്നങ്ങൾ കൈകാര്യം ചെയ്യുന്ന കമ്പ്യൂട്ടറുകൾക്ക് മനുഷ്യന്റെ ധാർമ്മിക വിവേചനത്തിന് പകരമാകാൻ കഴിയില്ല. സ്വന്തം ഇഷ്ടപ്രകാരം തീരുമാനമെടുക്കാൻ സ്വാതന്ത്ര്യമില്ലാത്ത ഒന്നിന് തെറ്റുകളിൽ പശ്ചാത്തപിക്കാനോ ശിക്ഷയിൽ നിന്ന് പാഠം ഉൾക്കൊള്ളാനോ കഴിയില്ല.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ജീവൻ പണയം വെച്ച് കുട്ടിയെ രക്ഷിച്ച വ്യക്തിയെ വീരനായകനായി ആദരിക്കുന്നതും, ബോധപൂർവ്വം മറ്റൊരാളെ ഉപദ്രവിച്ച വ്യക്തിയെ കോടതി ശിക്ഷിക്കുന്നതും അവരുടെ മോറൽ ഏജൻസി കാരണമാണ്.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(C) &bull; Page 1</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VII</div>
+            <div class="main-title">4.3 (C) Can AI Systems Be Moral Agents & Who Is Accountable?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 02 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 2: Autonomy, Free Will & The Illusion of Machine Choice</span>
+        <span>സ്വയംഭരണാധികാരം, സ്വതന്ത്ര ഇച്ഛ, മെഷീൻ തീരുമാനങ്ങളുടെ മിഥ്യ</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">4. Autonomy Defined: Self-Governing Will vs Algorithmic Execution</div>
+                <div class="card-desc-en">The term 'autonomy' refers to an individual's capacity for independent self-governance, permitting choices guided by personal ethical principles. In computer science, 'machine autonomy' denotes the technical ability to execute tasks without real-time human intervention. However, technical automation is radically distinct from moral autonomy: an algorithm operates strictly within lines of code, statistical weights, and objectives dictated by its human designers, possessing zero self-governing will. While an AI system may execute complex multi-step optimizations without human intervention, it remains bounded by human-engineered parameters, lacking the sovereign capacity to formulate its own ethical ends.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">4. സ്വയംഭരണാധികാരം: വ്യക്തിപരമായ ഇച്ഛയും അൽഗോരിത നിർവ്വഹണവും</div>
+                <div class="card-desc-ml">ധാർമ്മിക തത്ത്വചിന്തയിൽ 'സ്വയംഭരണാധികാരം' (autonomy) എന്നത് സ്വന്തം തത്വങ്ങൾക്കനുസരിച്ച് ജീവിക്കാനുള്ള ആന്തരിക സ്വാതന്ത്ര്യമാണ്. എന്നാൽ കമ്പ്യൂട്ടർ സയൻസിൽ ഓട്ടോണമസ് എന്ന് പറയുന്നത് മനുഷ്യന്റെ നേരിട്ടുള്ള സഹായമില്ലാതെ ജോലി ചെയ്യാനുള്ള സാങ്കേതിക ശേഷിയെയാണ്. ഇത് യഥാർത്ഥ ധാർമ്മിക സ്വയംഭരണമല്ല. എഐ പ്രവർത്തിക്കുന്നത് മനുഷ്യർ നൽകിയ പ്രോഗ്രാമിംഗിന്റെയും ഗണിത സമവാക്യങ്ങളുടെയും ഉള്ളിൽ മാത്രമാണ്; സ്വന്തമായി എന്തെങ്കിലും ആഗ്രഹിക്കാനുള്ള ഇച്ഛ അതിനില്ല. എത്ര വലിയ സങ്കീർണ്ണമായ ജോലികൾ സ്വയം ചെയ്താലും, മനുഷ്യൻ നിർവ്വചിച്ച ചട്ടക്കൂടുകൾക്കപ്പുറത്തേക്ക് ചിന്തിക്കാൻ യന്ത്രങ്ങൾക്ക് സാധ്യമല്ല. വാക്കുകളുടെ അർത്ഥവും വികാരങ്ങളും അറിയാതെ കേവലം ചിഹ്നങ്ങൾ കൈകാര്യം ചെയ്യുന്ന കമ്പ്യൂട്ടറുകൾക്ക് മനുഷ്യന്റെ ധാർമ്മിക വിവേചനത്തിന് പകരമാകാൻ കഴിയില്ല.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> വാക്വം ക്ലീനർ റോബോട്ട് മുറി വൃത്തിയാക്കുന്നത് സ്വയംഭരണത്തോടെയാണെന്ന് തോന്നാമെങ്കിലും, അത് നിർമ്മാതാവ് നൽകിയ അൽഗോരിതത്തിന്റെ നിർദ്ദേശം അനുസരിക്കുക മാത്രമാണ് ചെയ്യുന്നത്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">5. Free Will as the Ethical Anchor of Praise & Blame</div>
+                <div class="card-desc-en">Free will is the ethical capacity that allows a moral agent to be legitimately praised or blamed (MCQ 3: B). It implies metaphysical freedom: given identical external conditions, the agent could genuinely have chosen otherwise. Because contemporary software architectures operate deterministically or through pseudo-random probabilistic weighting, machines lack free will. They execute the necessary consequences of code, rendering moral praise and blame philosophically absurd. Free will requires an autonomous metaphysical locus of decision-making: because artificial systems operate through deterministic code or statistical probability distributions, they cannot choose otherwise.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">5. സ്വതന്ത്ര ഇച്ഛ (Free Will): കുറ്റപ്പെടുത്തലിന്റെയും പ്രശംസയുടെയും മാനദണ്ഡം</div>
+                <div class="card-desc-ml">ഒരു വ്യക്തിയെ പ്രശംസിക്കാനും കുറ്റപ്പെടുത്താനും അർഹനാക്കുന്ന ധാർമ്മിക ശേഷിയാണ് സ്വതന്ത്ര ഇച്ഛ (Free will) (MCQ 3: B). ഒരേ സാഹചര്യത്തിൽ മറ്റ് രീതിയിൽ പ്രവർത്തിക്കാൻ സാധിക്കുമായിരുന്നിട്ടും ഒരു പ്രത്യേക കാര്യം തിരഞ്ഞെടുത്തതിനാണ് മനുഷ്യന് കുറ്റബോധമോ അഭിമാനമോ തോന്നുന്നത്. എന്നാൽ കമ്പ്യൂട്ടറുകൾ ഇൻപുട്ടുകൾക്കനുസരിച്ച് നിർബന്ധിതമായി ഔട്ട്പുട്ടുകൾ നൽകുന്നതിനാൽ അവയ്ക്ക് സ്വതന്ത്ര ഇച്ഛയില്ല. അതിനാൽ യന്ത്രങ്ങളെ ധാർമ്മികമായി പുകഴ്ത്താനോ പഴിക്കാനോ കഴിയില്ല. ഒരേ സാഹചര്യത്തിൽ മറ്റ് രീതിയിൽ പ്രവർത്തിക്കാൻ സ്വാതന്ത്ര്യമില്ലാത്തതിനാൽ, എഐ എടുക്കുന്ന തീരുമാനങ്ങൾക്ക് ധാർമ്മിക മൂല്യം കൽപ്പിക്കാൻ സാധിക്കില്ല.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ഒരു എഐ ചെസ്സ് പ്രോഗ്രാം മികച്ച നീക്കം നടത്തുമ്പോൾ അതിന് വിജയത്തിൽ സന്തോഷം തോന്നാത്തതുപോലെ, മോശം നീക്കം നടത്തുമ്പോൾ കുറ്റബോധവും തോന്നുന്നില്ല.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">6. The Deterministic Trap: Bound by Silicon Constraints</div>
+                <div class="card-desc-en">A self-governing will, the essential prerequisite for moral agency, is utterly absent in machine architectures. Artificial intelligence cannot autonomously formulate its own ethical teleology, alter its foundational objective functions, or reflectively reject evil. It is entrapped within silicon determinism: its apparent choices are mathematical extrapolations of historical data, entirely precluding the metaphysical autonomy required for moral agency. Machine learning architectures are fundamentally tethered to training data distributions, making autonomous moral agency an ontological impossibility within current silicon computing paradigms.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">6. സിലിക്കൺ അതിരുകളിലെ സാങ്കേതിക നിർബന്ധിതാവസ്ഥ</div>
+                <div class="card-desc-ml">സ്വന്തം ലക്ഷ്യങ്ങൾ സ്വയം തീരുമാനിക്കാനുള്ള ഇച്ഛാശക്തി കമ്പ്യൂട്ടറുകൾക്ക് ഇല്ല. നല്ലതും ചീത്തയും തിരിച്ചറിഞ്ഞ് തിന്മയെ ബോധപൂർവ്വം ഉപേക്ഷിക്കാൻ മെഷീനുകൾക്ക് സാധിക്കില്ല. മുൻകാല ഡാറ്റകളെ ഗണിതശാസ്ത്രപരമായി വിശകലനം ചെയ്യുക മാത്രമാണ് എഐ ചെയ്യുന്നത്. അതിനാൽ ധാർമ്മിക ഏജൻസിക്ക് ആവശ്യമായ ആന്തരിക സ്വാതന്ത്ര്യം യന്ത്രങ്ങൾക്കില്ലെന്ന് വ്യക്തമാണ്. ഗണിതശാസ്ത്രപരമായ നിർബന്ധിതാവസ്ഥയിൽ പ്രവർത്തിക്കുന്ന ചിപ്പുകൾക്ക് മനുഷ്യന്റെ ആത്മാവിനും മനസ്സാക്ഷിക്കും തുല്യമായ സ്വാതന്ത്ര്യം കൈവരിക്കാനാവില്ല.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> എത്ര വലിയ സൂപ്പർ കമ്പ്യൂട്ടറായാലും അതിലെ പ്രോഗ്രാം കോഡ് മറികടന്ന് സ്വന്തം ഇഷ്ടപ്രകാരം പ്രവർത്തിക്കാൻ അതിന് കഴിയില്ല.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(C) &bull; Page 2</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 3 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VII</div>
+            <div class="main-title">4.3 (C) Can AI Systems Be Moral Agents & Who Is Accountable?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 03 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 3: Intentionality & The Mechanics of Causality</span>
+        <span>ഉദ്ദേശ്യശുദ്ധിയും (Intentionality) ഭൗതിക കാരണങ്ങളും</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">7. Intentionality: Mental States & Conscious Purpose</div>
+                <div class="card-desc-en">In philosophy of mind, intentionality denotes the property of mental states being directed toward something—possessing subjective beliefs, desires, hopes, and purposeful aims. When a human acts morally, their behavior is propelled by an underlying conscious intention. Artificial intelligence possesses no intentionality: its internal states are electrical charges and floating-point vectors with zero phenomenal 'aboutness', meaning machines never intend the outcomes they produce. Intentionality is the hallmark of conscious mind: an artificial neural network processes mathematical representations without holding any subjective beliefs, ethical desires, or conscious awareness of its goals.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">7. ഉദ്ദേശ്യം (Intentionality): മനസ്സും ആന്തരിക ലക്ഷ്യബോധവും</div>
+                <div class="card-desc-ml">മനസ്സിന്റെ ആന്തരികമായ ലക്ഷ്യബോധത്തെയും ചിന്തകളെയുമാണ് 'ഇന്റൻഷണാലിറ്റി' (Intentionality) എന്ന് വിളിക്കുന്നത്. ഒരു മനുഷ്യൻ പ്രവർത്തിക്കുമ്പോൾ അവന്റെ ഉള്ളിൽ ഒരു ഉദ്ദേശ്യം ഉണ്ടാകും. എന്നാൽ ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിൽ പ്രവർത്തിക്കുന്നത് ഇലക്ട്രിക്കൽ സിഗ്നലുകളും സംഖ്യകളും മാത്രമാണ്; അവയ്ക്ക് സ്വന്തമായി യാതൊരു ലക്ഷ്യബോധമോ ആഗ്രഹങ്ങളോ ഇല്ല. അതിനാൽ എഐ യന്ത്രങ്ങൾക്ക് യാതൊരുവിധ ഉദ്ദേശ്യശുദ്ധിയും അവകാശപ്പെടാനാവില്ല. ഒരു ലക്ഷ്യത്തെക്കുറിച്ച് മനസ്സിൽ ചിന്തയോ ആഗ്രഹമോ ഇല്ലാത്തതിനാൽ, എഐ നൽകുന്ന ഫലങ്ങൾ യാദൃശ്ചികമായ ഗണിത സമവാക്യങ്ങൾ മാത്രമാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> പൂന്തോട്ടം നനയ്ക്കുന്ന മനുഷ്യന് ചെടികൾ വളരണമെന്ന ഉദ്ദേശ്യമുണ്ട്, എന്നാൽ ഓട്ടോമാറ്റിക് സ്പ്രിംഗ്ലർ പ്രവർത്തിക്കുന്നത് കേവലം ടൈമർ സെറ്റ് ചെയ്തതുകൊണ്ട് മാത്രമാണ്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">8. Intentional Harm vs Accidental/Mechanical Causation</div>
+                <div class="card-desc-en">A vital moral distinction exists between intentional wrongdoing and accidental or mechanical harm. A boulder dislodged by gravity may roll down a mountain and crush a house, causing immense damage, yet it is absurd to label the boulder morally wicked or prosecute it. Similarly, when an autonomous system malfunctions or causes harm, it operates through physical and mechanical causality, utterly devoid of conscious malice or moral responsibility. The causal chain of machine harm mirrors that of a falling tree or a failing hydraulic press: physical damage occurs through mechanical necessity, entirely devoid of subjective malice.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">8. മനപ്പൂർവ്വമുള്ള തെറ്റുകളും യാന്ത്രികമായ അപകടങ്ങളും</div>
+                <div class="card-desc-ml">ബോധപൂർവ്വം ചെയ്യുന്ന കുറ്റങ്ങളും യാന്ത്രികമായി സംഭവിക്കുന്ന അപകടങ്ങളും തമ്മിൽ വലിയ ധാർമ്മിക വ്യത്യാസമുണ്ട്. മലമുകളിൽ നിന്ന് ഒരു പാറക്കല്ല് ഉരുണ്ടുവീണ് വീട് തകർത്താൽ ആ കല്ലിനെ ആരും ജയിലിലടയ്ക്കാറില്ല, കാരണം അതിന് ഉദ്ദേശ്യമില്ല. അതുപോലെ എഐ കാർ അപകടമുണ്ടാക്കുമ്പോഴും യന്ത്രം യാന്ത്രികമായി പ്രവർത്തിക്കുക മാത്രമാണ് ചെയ്തത്; അതിന് ആരെയും കൊലപ്പെടുത്തണമെന്ന ക്രൂരമായ ഉദ്ദേശ്യം ഉണ്ടായിരുന്നില്ല. ഭൗതികമായ തകരാറുകൾ മൂലം ഉണ്ടാകുന്ന അപകടങ്ങൾക്ക് യന്ത്രത്തെ കുറ്റവാളിയാക്കുന്നത് യുക്തിസഹമല്ല; അതിന് പിന്നിലുള്ള അശ്രദ്ധയാണ് പരിശോധിക്കേണ്ടത്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> കത്തി കൊണ്ട് മനപ്പൂർവ്വം കുത്തുന്ന മനുഷ്യൻ കുറ്റവാളിയാകുമ്പോൾ, തെന്നിവീണ് കൈയിലെ കത്തി കൊണ്ട് മറ്റൊരാൾക്ക് പരിക്കേറ്റാൽ അത് അപകടമായി കണക്കാക്കുന്നു.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">9. The Autonomous Weapon Analogy: Causality Without Malice</div>
+                <div class="card-desc-en">Consider autonomous lethal weapon systems (LAWS) targeting moving heat signatures: when a drone strikes an unauthorized target, it executes statistical sensor-matching algorithms. The machine possesses no hatred, no ideological conviction, and no cruelty. The moral harm resides entirely in the human commanders who deployed the weapon and the developers who engineered its targeting logic without adequate safeguards. Delegating kill-decisions to automated targeting algorithms does not diffuse moral responsibility to the weapon; rather, it concentrates profound ethical culpability upon military commanders and software contractors.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">9. സ്വയംനിയന്ത്രിത ആയുധങ്ങളും മാനുഷിക ഉത്തരവാദിത്തവും</div>
+                <div class="card-desc-ml">സ്വയം വെടിയുതിർക്കുന്ന സൈനിക ഡ്രോണുകൾ സെൻസറുകൾ വഴി മനുഷ്യരെ ലക്ഷ്യമിടുമ്പോൾ, ആ ഡ്രോണിന് ആരോടും ശത്രുതയോ വിദ്വേഷമോ ഇല്ല. അത് അൽഗോരിതത്തിന്റെ കണക്കുകൂട്ടൽ മാത്രമാണ്. അതിനാൽ ആയുധം നടത്തിയ നാശനഷ്ടങ്ങൾക്ക് ഡ്രോണല്ല ഉത്തരവാദി, മറിച്ച് ആ ഡ്രോൺ നിർമ്മിച്ചവരും അത് പ്രവർത്തിപ്പിച്ച സൈനിക മേധാവികളുമാണ് പൂർണ്ണ ഉത്തരവാദികൾ. ആയുധത്തിന്റെ പ്രവർത്തനം മനുഷ്യന്റെ ആജ്ഞയുടെ തുടർച്ച മാത്രമായതിനാൽ, അന്താരാഷ്ട്ര യുദ്ധക്കുറ്റങ്ങൾക്കുള്ള വിചാരണ മനുഷ്യർ തന്നെയാണ് നേരിടേണ്ടത്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> തോക്ക് സ്വയം വെടിവെച്ചാലും തോക്കിനല്ല, തോക്ക് കയ്യിൽ പിടിച്ചവനാണ് കോടതിയിൽ വിചാരണ നേരിടേണ്ടി വരുന്നത്.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(C) &bull; Page 3</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 4 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VII</div>
+            <div class="main-title">4.3 (C) Can AI Systems Be Moral Agents & Who Is Accountable?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 04 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 4: Functional Morality vs Genuine Moral Understanding</span>
+        <span>പ്രവർത്തനപരമായ ധാർമ്മികതയും (Functional Morality) യഥാർത്ഥ വിവേചനവും</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">10. The Fallacy of Functional Morality (Rule-Following vs Conscience)</div>
+                <div class="card-desc-en">Philosophers distinguish between 'functional morality' (adhering to programmed behavioral constraints) and 'full moral agency' (authentic ethical understanding). An AI system can be programmed with rigid Asimovian rules or RLHF ethical guardrails, causing it to avoid offensive words or decline hazardous queries. However, this is computational rule-following, not genuine moral conscience. Simulating ethical constraints is fundamentally different from understanding moral values. Functional morality amounts to behavioral mimicry: an algorithm programmed to avoid toxic language possesses no authentic comprehension of kindness, dignity, or human respect, behaving merely as a sophisticated semantic parrot.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">10. പ്രവർത്തനപരമായ ധാർമ്മികതയുടെ പരിമിതികൾ</div>
+                <div class="card-desc-ml">ബാഹ്യമായി ധാർമ്മിക നിയമങ്ങൾ അനുസരിക്കുന്നതിനെ 'പ്രവർത്തനപരമായ ധാർമ്മികത' (functional morality) എന്ന് വിളിക്കുന്നു. മോശം വാക്കുകൾ ഉപയോഗിക്കരുതെന്ന് എഐ ചാറ്റ്‌ബോട്ടിനെ പ്രോഗ്രാം ചെയ്യാം, അപ്പോൾ അത് അത്തരം വാക്കുകൾ ഒഴിവാക്കും. എന്നാൽ ആ വാക്ക് തെറ്റാണെന്ന് കമ്പ്യൂട്ടറിന് യാതൊരു ബോധ്യവുമില്ല. നിയമങ്ങൾ മെക്കാനിക്കലായി അനുസരിക്കുന്നതും മനസ്സാക്ഷിയോടെ ശരി തിരഞ്ഞെടുക്കുന്നതും തമ്മിൽ അന്തരമുണ്ട്. നല്ല വാക്കുകൾ ഔട്ട്പുട്ടായി നൽകാൻ പഠിപ്പിച്ചു എന്നത് കൊണ്ട് മാത്രം യന്ത്രത്തിന് ധാർമ്മിക ബോധമുണ്ടെന്ന് വാദിക്കുന്നത് മിഥ്യാധാരണയാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> നിശ്ചിത വേഗതയിൽ കൂടുതൽ പോകാതിരിക്കാൻ ലോക്ക് ചെയ്ത വാഹനം ട്രാഫിക് നിയമം അനുസരിക്കുന്നുണ്ടെങ്കിലും അതിന് റോഡ് നിയമങ്ങളോട് ബഹുമാനമില്ല.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">11. Syntax vs Semantics in Machine Ethics (Searle's Chinese Room)</div>
+                <div class="card-desc-en">Drawing from John Searle's seminal Chinese Room thought experiment, machine learning models process purely syntactic tokens according to formal computational rules. The system possesses zero semantic grasp of concepts like justice, mercy, cruelty, or honor. Because an algorithm cannot comprehend the moral meaning of its classifications, it cannot possess the reflective moral understanding essential for moral agency. Computational tokens remain devoid of moral semantics: a machine processing inputs according to formal rules lacks access to the subjective experience and normative significance of moral concepts.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">11. ചിഹ്നങ്ങളും അർത്ഥവും: ജോൺ സിയോളിന്റെ ചൈനീസ് റൂം പാഠം</div>
+                <div class="card-desc-ml">ജോൺ സിയോളിന്റെ ചൈനീസ് റൂം പരീക്ഷണം വ്യക്തമാക്കുന്നതുപോലെ, കമ്പ്യൂട്ടറുകൾ അർത്ഥമറിയാതെ ചിഹ്നങ്ങളെ (syntax) കൈകാര്യം ചെയ്യുക മാത്രമാണ് ചെയ്യുന്നത്. നീതി, ദയ, ക്രൂരത, വഞ്ചന എന്നീ വാക്കുകളുടെ ആഴത്തിലുള്ള അർത്ഥം (semantics) മനസ്സിലാക്കാൻ യന്ത്രങ്ങൾക്ക് കഴിയില്ല. മൂല്യങ്ങളുടെ ഗൗരവം തിരിച്ചറിയാൻ കഴിയാത്ത ഒന്നിന് ധാർമ്മിക ഏജന്റാകാൻ ഒരിക്കലും സാധ്യമല്ല. വാക്കുകളുടെ അർത്ഥവും വികാരങ്ങളും അറിയാതെ കേവലം ചിഹ്നങ്ങൾ കൈകാര്യം ചെയ്യുന്ന കമ്പ്യൂട്ടറുകൾക്ക് മനുഷ്യന്റെ ധാർമ്മിക വിവേചനത്തിന് പകരമാകാൻ കഴിയില്ല.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ഗീതയിലെയും ബൈബിളിലെയും വരികൾ കാണാതെ മനഃപാഠം ചൊല്ലുന്ന ടേപ്പ് റെക്കോർഡറിന് ആ വരികളുടെ പവിത്രതയോ അർത്ഥമോ അറിയില്ല.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">12. Today's AI Systems Are Merely Tools, Not Moral Agents</div>
+                <div class="card-desc-en">The rigorous philosophical consensus confirms that contemporary artificial intelligence systems are advanced socio-technical tools, completely devoid of moral agency. An automated system cannot be deemed morally accountable for errors, nor can it hold legal liability. As instruments created and utilized by human actors, moral agency remains firmly and exclusively located within the human ecosystem. Classifying AI as an autonomous moral agent obscures the vital truth that algorithms are human-engineered tools, deflecting attention away from the real human actors who design and profit from them.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">12. ഇന്നത്തെ എഐ വെറും ഉപകരണങ്ങൾ മാത്രമാണ്</div>
+                <div class="card-desc-ml">തത്ത്വചിന്താപരമായ എല്ലാ പരിശോധനകളും വ്യക്തമാക്കുന്നത് ഒന്നാണ്: ഇന്നത്തെ ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് സംവിധാനങ്ങൾ മനുഷ്യൻ നിർമ്മിച്ച ഉപകരണങ്ങൾ (tools) മാത്രമാണ്, അല്ലാതെ മോറൽ ഏജന്റുകളല്ല. അവയ്ക്ക് ധാർമ്മിക ഉത്തരവാദിത്തം നൽകാൻ കഴിയില്ല. മനുഷ്യൻ ഉപയോഗിക്കുന്ന മറ്റ് ഉപകരണങ്ങളെപ്പോലെ തന്നെ എഐ ഉണ്ടാക്കുന്ന പ്രത്യാഘാതങ്ങൾക്കും മനുഷ്യൻ മാത്രമാണ് ഉത്തരവാദി. സാങ്കേതികവിദ്യ എത്ര വളർന്നാലും അത് മനുഷ്യന്റെ വിരൽത്തുമ്പിലെ ഉപകരണം മാത്രമായി നിലനിൽക്കണം; അതിന് ധാർമ്മിക പദവി നൽകുന്നത് വലിയ അപകടങ്ങൾക്ക് വഴിവെക്കും.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ശസ്ത്രക്രിയ നടത്താൻ ഡോക്ടർ ഉപയോഗിക്കുന്ന റോബോട്ടിക് കത്തിക്ക് ധാർമ്മിക ഉത്തരവാദിത്തമില്ല, ശസ്ത്രക്രിയ നടത്തിയ ഡോക്ടർക്കാണ് ഉത്തരവാദിത്തം.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(C) &bull; Page 4</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 5 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VII</div>
+            <div class="main-title">4.3 (C) Can AI Systems Be Moral Agents & Who Is Accountable?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 05 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 5: The "Responsibility Gap" & The Hazard of Machine Scapegoating</span>
+        <span>'ഉത്തരവാദിത്ത വിടവും' (Responsibility Gap) മെഷീനുകളെ പഴിചാരലും</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">13. Andreas Matthias's Concept of the "Responsibility Gap"</div>
+                <div class="card-desc-en">Philosopher Andreas Matthias formulated the profound concept of the 'responsibility gap' in autonomous machine ethics. As neural networks learn autonomously from massive datasets and develop opaque multi-layer features, their decisions become unexplainable even to their creators. When an autonomous system causes catastrophic harm, traditional liability frameworks struggle: the human programmer could not predict the behavior, yet the machine cannot be held accountable. The responsibility gap arises when autonomous learning systems operate beyond human foreseeability: traditional fault-based liability falters unless strict legal accountability is firmly attached to deploying entities.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">13. ആൻഡ്രിയാസ് മത്യാസിന്റെ 'ഉത്തരവാദിത്ത വിടവ്' (Responsibility Gap)</div>
+                <div class="card-desc-ml">തത്ത്വചിന്തകനായ ആൻഡ്രിയാസ് മത്യാസ് അവതരിപ്പിച്ച പ്രധാന ആശയമാണ് 'റെസ്പോൺസിബിലിറ്റി ഗ്യാപ്പ്' (Responsibility Gap). സ്വയം പഠിക്കുന്ന എഐ ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ മനുഷ്യന് മനസ്സിലാക്കാൻ കഴിയാത്തത്ര സങ്കീർണ്ണമായി മാറുമ്പോൾ, അവ ഉണ്ടാക്കുന്ന അപ്രതീക്ഷിത അപകടങ്ങൾക്ക് ആര് ഉത്തരവാദി എന്ന ചോദ്യം ഉയരുന്നു. പ്രോഗ്രാമർക്ക് അത് മുൻകൂട്ടി കാണാൻ കഴിഞ്ഞില്ലെന്നും യന്ത്രത്തെ ശിക്ഷിക്കാൻ കഴിയില്ലെന്നും വരുമ്പോൾ ഒരു വലിയ നിയമപരമായ വിടവ് ഉണ്ടാകുന്നു. യന്ത്രത്തിന്റെ സങ്കീർണ്ണത ചൂണ്ടിക്കാട്ടി ആരും ഉത്തരവാദികളല്ലാതാകുന്ന അവസ്ഥ നിയമവാഴ്ചയെ തകർക്കും; അതിനാൽ കർശനമായ ബാധ്യതാ നിയമങ്ങൾ ആവശ്യമാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ഓട്ടോണമസ് ട്രേഡിംഗ് സോഫ്റ്റ്‌വെയർ വിപണി തകർത്തപ്പോൾ സോഫ്റ്റ്‌വെയർ സ്വയം പഠിച്ചതാണെന്ന് പറഞ്ഞ് ബാങ്കുകൾ ഉത്തരവാദിത്തത്തിൽ നിന്ന് ഒഴിയാൻ ശ്രമിക്കുന്നത്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">14. The Scapegoat Fallacy: Blaming Algorithms to Evade Human Culpability</div>
+                <div class="card-desc-en">The greatest ethical hazard of attributing moral agency to computers is the 'scapegoat fallacy'. When corporations, military commanders, and politicians personify algorithms as autonomous moral agents, they exploit machine agency as a convenient scapegoat. Shifting culpability onto lines of software allows corporate executives and state officials to evade legal penalties, victim restitution, and public accountability for negligence. Treating algorithms as moral scapegoats creates an ethical moral hazard: corporations deploy reckless systems with impunity, blaming algorithmic unpredictability whenever catastrophic failures occur.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">14. ബലിയാടാക്കൽ തന്ത്രം: യന്ത്രങ്ങളെ പഴിചാരി രക്ഷപ്പെടൽ</div>
+                <div class="card-desc-ml">കമ്പ്യൂട്ടറുകൾക്ക് ധാർമ്മിക ഏജൻസി ഉണ്ടെന്ന് വാദിക്കുന്നതിലൂടെ മനുഷ്യർ തങ്ങളുടെ സ്വന്തം തെറ്റുകൾ യന്ത്രങ്ങളുടെ മേൽ ചാരി രക്ഷപ്പെടാൻ ശ്രമിക്കുന്നു. "അൽഗോരിതത്തിന് സംഭവിച്ച പിഴവാണ്" എന്ന് പറഞ്ഞ് വലിയ കമ്പനികൾ കോടികളുടെ നഷ്ടപരിഹാരത്തിൽ നിന്നും ജയിൽ ശിക്ഷയിൽ നിന്നും ഒഴിഞ്ഞുമാറുന്നത് വലിയ അനീതിയാണ്. യന്ത്രങ്ങളെ ബലിയാടാക്കി മനുഷ്യർ ഒളിച്ചോടുന്നത് തടയേണ്ടതുണ്ട്. മനുഷ്യരുടെ ലാഭക്കൊതിക്കും വീഴ്ചകൾക്കും എഐയെ ബലിയാടാക്കാൻ അനുവദിക്കാതെ, ഉത്തരവാദികളായ ഉദ്യോഗസ്ഥരെ വിചാരണ ചെയ്യാൻ നിയമം ശക്തമാകണം.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> തെറ്റായ റിക്രൂട്ട്‌മെന്റ് അൽഗോരിതം മൂലം സ്ത്രീകൾക്ക് ജോലി നിഷേധിക്കപ്പെട്ടപ്പോൾ കമ്പനി അധികൃതർ ഉത്തരവാദിത്തം എഐക്ക് മേൽ കെട്ടിവെക്കുന്നത്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">15. The Moral Imperative of Rejecting Machine Personhood as a Liability Shield</div>
+                <div class="card-desc-en">Society must rigorously reject machine personhood whenever it is invoked to dilute human liability. Artificial intelligence must remain legally classified as a sophisticated product or agent under human principalship. Strict liability doctrines must apply: human institutions that profit from deploying autonomous systems must bear strict, unconditional legal and financial responsibility for all harms generated by those systems. Rejecting electronic personhood ensures that commercial deployers maintain rigorous safety testing, knowing they cannot hide behind machine agency to escape financial compensation for victim harms.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">15. യന്ത്രങ്ങളുടെ മറവിൽ ഒളിച്ചോടുന്നത് തടയൽ</div>
+                <div class="card-desc-ml">യന്ത്രങ്ങൾക്ക് വ്യക്തിപദവി (legal personhood) നൽകുന്നത് കമ്പനികൾക്ക് സംരക്ഷണ കവചമായി മാറാൻ സാധ്യതയുണ്ട്. അതിനാൽ എഐ സാങ്കേതികവിദ്യയെ മനുഷ്യന്റെ നിയന്ത്രണത്തിലുള്ള ഒരു ഉൽപ്പന്നമായി തന്നെ നിയമം കാണണം. എഐ വിന്യസിച്ച് ലാഭം കൊയ്യുന്ന കമ്പനികളും സ്ഥാപനങ്ങളും തന്നെയാണ് അതുണ്ടാക്കുന്ന സകല നഷ്ടങ്ങൾക്കും നഷ്ടപരിഹാരം നൽകേണ്ടത്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> കാർ നിർമ്മാതാക്കൾ ഡ്രൈവർരഹിത കാറിന്റെ അപകടങ്ങൾക്ക് ഉത്തരവാദിത്തം ഏറ്റെടുത്ത് ഉപഭോക്താക്കൾക്ക് ഇൻഷുറൻസ് പരിരക്ഷ നൽകുന്ന നിയമപരമായ വ്യവസ്ഥ. യന്ത്രങ്ങളുടെ പേരിൽ നഷ്ടപരിഹാരത്തിൽ നിന്ന് ഒഴിഞ്ഞുമാറാൻ കമ്പനികളെ അനുവദിക്കാത്ത ശക്തമായ നിയമവ്യവസ്ഥ പൗരന്മാരുടെ അവകാശങ്ങൾ സംരക്ഷിക്കുന്നു.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(C) &bull; Page 5</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 6 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VII</div>
+            <div class="main-title">4.3 (C) Can AI Systems Be Moral Agents & Who Is Accountable?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 06 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 6: Upstream Accountability: Developers & Deploying Organizations</span>
+        <span>നിർമ്മാതാക്കളുടെയും സ്ഥാപനങ്ങളുടെയും മുൻകൂർ ഉത്തരവാദിത്തം</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">16. Upstream Accountability: Software Engineers & Data Architects</div>
+                <div class="card-desc-en">When AI causes harm, moral accountability resides strictly with the human stakeholders involved (MCQ 4: C). The foundational link in the chain of accountability begins upstream with software engineers and data architects. Developers bear the ethical duty to exercise rigorous engineering standards, audit datasets for discriminatory biases, implement multi-layered fail-safes, and ensure that machine models are tested against extreme edge cases prior to deployment. Software architects cannot disclaim responsibility for predictable system failures: proactive algorithmic hygiene, adversarial stress-testing, and fail-safe coding form the bedrock of professional engineering ethics.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">16. സോഫ്റ്റ്‌വെയർ നിർമ്മാതാക്കളുടെ ധാർമ്മിക ബാധ്യത</div>
+                <div class="card-desc-ml">എഐ മൂലം അപകടങ്ങൾ ഉണ്ടാകുമ്പോൾ അതിന്റെ പൂർണ്ണ ധാർമ്മിക ഉത്തരവാദിത്തം അതിന് പിന്നിലുള്ള മനുഷ്യരിലാണ് നിക്ഷിപ്തമായിരിക്കുന്നത് (MCQ 4: C). ആദ്യത്തെ ഉത്തരവാദിത്തം സോഫ്റ്റ്‌വെയർ കോഡ് എഴുതിയ എഞ്ചിനീയർമാർക്കും ഡാറ്റാ വിദഗ്ദ്ധർക്കുമാണ്. പക്ഷപാതമില്ലാത്ത ഡാറ്റ ഉപയോഗിക്കുക, സുരക്ഷാ പരിശോധനകൾ കൃത്യമായി നടത്തുക, അപകടമുണ്ടായാൽ വാഹനം തനിയെ നിൽക്കാനുള്ള സംവിധാനങ്ങൾ ഒരുക്കുക എന്നിവ അവരുടെ നിർബന്ധിത കടമയാണ്. സാങ്കേതികമായി സുരക്ഷിതവും പക്ഷപാതരഹിതവുമായ കോഡിംഗ് ഉറപ്പാക്കേണ്ടത് പ്രോഗ്രാമർമാരുടെ തൊഴിൽപരമായ ധാർമ്മിക ബാധ്യതയാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ഫേഷ്യൽ റെക്കഗ്നിഷൻ സോഫ്റ്റ്‌വെയറിലെ വർണ്ണ വിവേചനം കണ്ടെത്തി തിരുത്താൻ വീഴ്ച വരുത്തുന്ന ഡാറ്റാ എഞ്ചിനീയർ ധാർമ്മികമായി ഉത്തരവാദിയാണ്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">17. Corporate Due Diligence & Organizational Responsibilities</div>
+                <div class="card-desc-en">Organizations deploying artificial intelligence bear institutional responsibility for identifying relevant risks, conducting ethical impact assessments, and establishing rigorous oversight protocols. Corporate boards cannot prioritize profit maximization or rapid time-to-market over public safety. Organizations are legally and ethically obligated to ensure continuous operational monitoring and maintain comprehensive documentation of algorithmic workflows. Corporate due diligence requires multi-disciplinary ethical review boards, thorough documentation of risk mitigation, and independent red-team audits to prevent dangerous systems from reaching public markets.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">17. കോർപ്പറേറ്റ് സ്ഥാപനങ്ങളുടെ ഉത്തരവാദിത്തങ്ങളും ജാഗ്രതയും</div>
+                <div class="card-desc-ml">എഐ ഉപയോഗിക്കുന്ന കമ്പനികൾക്ക് വലിയ സ്ഥാപനപരമായ ഉത്തരവാദിത്തമുണ്ട്. വിപണിയിൽ വേഗത്തിൽ എത്തിച്ച് ലാഭമുണ്ടാക്കാൻ വേണ്ടി സുരക്ഷാ പരിശോധനകൾ ഒഴിവാക്കാൻ കമ്പനികൾക്ക് അവകാശമില്ല. അപകടസാധ്യതകൾ മുൻകൂട്ടി കണ്ടെത്താനും, നിരന്തരമായ ഓഡിറ്റിംഗ് നടത്താനും, സുതാര്യമായ രേഖകൾ സൂക്ഷിക്കാനും കമ്പനികൾ ബാധ്യസ്ഥരാണ്. കമ്പനികൾ സ്വന്തം ലാഭത്തേക്കാൾ ജനങ്ങളുടെ സുരക്ഷയ്ക്ക് മുൻഗണന നൽകുകയും, സാങ്കേതികവിദ്യയുടെ സുതാര്യത ഉറപ്പാക്കുകയും വേണം.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> സുരക്ഷാ അനുമതി ലഭിക്കാത്ത ഓട്ടോണമസ് കാറുകൾ റോഡിലിറക്കി പരീക്ഷണം നടത്തുന്ന കമ്പനി നിയമലംഘനത്തിന് വിചാരണ നേരിടേണ്ടി വരുന്നത്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">18. Ethical Negligence: Persisting with Known Defective Systems</div>
+                <div class="card-desc-en">Persisting in the deployment or use of an artificial intelligence system recognized as possessing known algorithmic deficiencies or disregarding documented safety flaws constitutes egregious ethical negligence. When corporate executives suppress internal safety audit findings or proceed with deployment despite warnings of high error rates, they transition from technical failure into deliberate moral and criminal culpability. Disregarding documented vulnerability warnings or deploying unvalidated algorithmic systems converts foreseeable technical flaws into direct corporate ethical negligence carrying punitive legal liabilities.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">18. ധാർമ്മിക അനാസ്ഥ (Ethical Negligence): തകരാറുകൾ അറിഞ്ഞിട്ടും ഉപയോഗിക്കൽ</div>
+                <div class="card-desc-ml">ഒരു എഐ സിസ്റ്റത്തിന് തകരാറുണ്ടെന്ന് വ്യക്തമായി അറിഞ്ഞിട്ടും അത് തുടർച്ചയായി ഉപയോഗിക്കുന്നതോ വിപണിയിൽ വിൽക്കുന്നതോ ഗുരുതരമായ ധാർമ്മിക അനാസ്ഥയാണ് (ethical negligence). തങ്ങളുടെ സോഫ്റ്റ്‌വെയർ തെറ്റായ തീരുമാനങ്ങളാണ് എടുക്കുന്നതെന്ന് വിദഗ്ദ്ധർ മുന്നറിയിപ്പ് നൽകിയിട്ടും അത് അവഗണിക്കുന്ന കമ്പനി മേധാവികൾ ക്രിമിനൽ കുറ്റത്തിന് തുല്യമായ വീഴ്ചയാണ് വരുത്തുന്നത്. അപകടസാധ്യതകൾ അറിഞ്ഞിട്ടും അത് അവഗണിക്കുന്നത് കേവലം സാങ്കേതിക പിഴവല്ല, മറിച്ച് ഗുരുതരമായ ധാർമ്മിക വഞ്ചനയാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> തെറ്റായ കാൻസർ റിപ്പോർട്ടുകൾ നൽകുന്ന എഐ ടൂൾ ലാഭം നോക്കി ആശുപത്രികളിൽ തുടർന്നും ഉപയോഗിക്കാൻ അനുവദിക്കുന്ന മാനേജ്‌മെന്റിന്റെ അനാസ്ഥ.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(C) &bull; Page 6</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 7 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VII</div>
+            <div class="main-title">4.3 (C) Can AI Systems Be Moral Agents & Who Is Accountable?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 07 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 7: Downstream Accountability: Operators, Users & Regulatory Oversight</span>
+        <span>ഉപയോക്താക്കളുടെ ഉത്തരവാദിത്തവും സർക്കാർ റെഗുലേറ്ററി സംവിധാനങ്ങളും</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">19. Operator & User Duties: Prudent Usage & Diligent Oversight</div>
+                <div class="card-desc-en">The ethical obligation for artificial intelligence includes the human operators and end-users who deploy and depend on these tools in daily operations. Users bear the duty of utilizing AI judiciously, making informed determinations, and diligently overseeing algorithmic performance. Because AI cannot be held morally accountable, human operators must maintain continuous cognitive engagement, intervening immediately when algorithmic suggestions threaten harm. End-users and human operators bear the ethical obligation to understand system boundaries, verify automated recommendations, and avoid reckless reliance on automated decision-support outputs.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">19. ഓപ്പറേറ്റർമാരുടെയും ഉപയോക്താക്കളുടെയും ഉത്തരവാദിത്തം</div>
+                <div class="card-desc-ml">എഐ ഉപയോഗിക്കുന്ന സാധാരണ ഉപയോക്താക്കൾക്കും ഓപ്പറേറ്റർമാർക്കും തുല്യ ഉത്തരവാദിത്തമുണ്ട്. കമ്പ്യൂട്ടർ പറയുന്നതെല്ലാം കണ്ണടച്ച് വിശ്വസിക്കാതെ സ്വന്തം വിവേചനാധികാരം ഉപയോഗിച്ച് പരിശോധിക്കാൻ അവർ ബാധ്യസ്ഥരാണ്. കമ്പനികൾ സ്വന്തം ലാഭത്തേക്കാൾ ജനങ്ങളുടെ സുരക്ഷയ്ക്ക് മുൻഗണന നൽകുകയും, സാങ്കേതികവിദ്യയുടെ സുതാര്യത ഉറപ്പാക്കുകയും വേണം. എഐ തെറ്റായ തീരുമാനത്തിലേക്ക് നീങ്ങുമ്പോൾ അതിലിടപെട്ട് തിരുത്തേണ്ടത് ഓപ്പറേറ്ററുടെ കടമയാണ്; ഉത്തരവാദിത്തത്തിൽ നിന്ന് ആർക്കും പിന്മാറാനാവില്ല. എഐ തരുന്ന വിവരങ്ങൾ സ്വന്തം യുക്തി ഉപയോഗിച്ച് പരിശോധിക്കാൻ ഓപ്പറേറ്റർമാർ എപ്പോഴും ജാഗ്രത പുലർത്തണം.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> വിമാനം ഓട്ടോപൈലറ്റിൽ ഇട്ടിട്ട് പൂർണ്ണമായി ഉറങ്ങിപ്പോകുന്ന പൈലറ്റ് അപകടമുണ്ടായാൽ കൃത്യവിലോപത്തിന് ശിക്ഷിക്കപ്പെടുന്നത്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">20. The Prohibition Against Moral Rubber-Stamping</div>
+                <div class="card-desc-en">Professional ethics strictly prohibits 'moral rubber-stamping'—the practice of human operators passively validating algorithmic outputs without substantive independent verification. In high-stakes arenas such as clinical triage, loan granting, and criminal sentencing, human-in-the-loop protocols are meaningless unless the human retains genuine veto authority and the moral courage to overturn algorithmic recommendations. Passive administrative compliance undermines justice: human decision-makers must actively engage with contextual evidence and exercise moral courage to reject flawed algorithmic scores.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">20. കണ്ണടച്ചുള്ള അംഗീകാരങ്ങൾ (Rubber-Stamping) ഒഴിവാക്കൽ</div>
+                <div class="card-desc-ml">എഐ റിപ്പോർട്ടുകൾ വായിച്ചുപോലും നോക്കാതെ ഒപ്പിട്ടുകൊടുക്കുന്ന രീതി പ്രൊഫഷണൽ ധാർമ്മികതയ്ക്ക് നിരക്കുന്നതല്ല. ബാങ്കുകളിലും കോടതികളിലും ആശുപത്രികളിലും മനുഷ്യൻ വെറും നോക്കുകുത്തിയായി ഇരിക്കരുത്. എഐ നൽകുന്ന വിവരങ്ങൾ സൂക്ഷ്മമായി പരിശോധിച്ച്, ആവശ്യമെങ്കിൽ ആ ശുപാർശയെ തള്ളിക്കളയാനുള്ള വിവേചനവും ധൈര്യവും മനുഷ്യനുണ്ടാകണം. യന്ത്രങ്ങളുടെ ഉത്തരവുകൾ അതേപടി അംഗീകരിക്കാതെ, നീതിബോധത്തോടെ സ്വന്തം വിവേചനാധികാരം പ്രയോഗിക്കാൻ ഉദ്യോഗസ്ഥർ ബാധ്യസ്ഥരാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> എഐ റിസ്ക് സ്കോർ തെറ്റാണെന്ന് മനസ്സിലാക്കി പാവപ്പെട്ട കർഷകന് വായ്പ അനുവദിക്കാൻ സ്വന്തം അധികാരം ഉപയോഗിക്കുന്ന ബാങ്ക് ഓഫീസർ.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">21. Regulatory Governance: Enforcement & Sovereign Oversight</div>
+                <div class="card-desc-en">Enforcement and systemic oversight are the fundamental responsibilities of sovereign governments, regulatory agencies, and independent ethical commissions. The state must formulate binding statutory standards, mandate rigorous pre-market safety certifications, establish independent forensic audit bodies, and enforce severe punitive sanctions against organizations that release irresponsible, unverified algorithmic systems into public life. Democratic governance demands enforceable statutory regulations: public agencies must implement strict audit standards, transparency mandates, and severe penalties for non-compliant automated platforms.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">21. സർക്കാർ മേൽനോട്ടവും കർശനമായ നിയമ നിർവ്വഹണവും</div>
+                <div class="card-desc-ml">പൊതുജനങ്ങളുടെ സുരക്ഷ ഉറപ്പാക്കാൻ സർക്കാരുകൾക്കും റെഗുലേറ്ററി സമിതികൾക്കും വലിയ പങ്കുണ്ട്. സ്വയംനിയന്ത്രിത സംവിധാനങ്ങൾക്ക് കൃത്യമായ നിയമ ചട്ടക്കൂടുകൾ ഉണ്ടാക്കുകയും, വിപണിയിലിറങ്ങുന്നതിന് മുൻപ് സുരക്ഷാ സർട്ടിഫിക്കേഷൻ നിർബന്ധമാക്കുകയും വേണം. അപകടകരമായ എഐ നിർമ്മിക്കുന്ന കമ്പനികൾക്കെതിരെ കർശനമായ പിഴയും നിയമനടപടികളും സ്വീകരിക്കാൻ സർക്കാരിന് ബാധ്യതയുണ്ട്. പൗരന്മാരുടെ മൗലികാവകാശങ്ങൾ സംരക്ഷിക്കാൻ സ്വയംനിയന്ത്രിത സംവിധാനങ്ങൾക്ക് മേൽ സർക്കാരുകളുടെ കർശന മേൽനോട്ടം അത്യന്താപേക്ഷിതമാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> യൂറോപ്യൻ യൂണിയന്റെ എഐ ആക്ട് (EU AI Act) വഴി അപകടസാധ്യതയുള്ള സാങ്കേതികവിദ്യകൾക്ക് കർശന നിയന്ത്രണം ഏർപ്പെടുത്തുന്നത്.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(C) &bull; Page 7</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 8 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VII</div>
+            <div class="main-title">4.3 (C) Can AI Systems Be Moral Agents & Who Is Accountable?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 08 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 8: The Philosophical Impossibility of Punishing Machines</span>
+        <span>യന്ത്രങ്ങൾക്ക് ശിക്ഷ നൽകുന്നതിലെ അർത്ഥശൂന്യതയും നീതിശാസ്ത്രവും</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">22. The Retributive & Deterrent Impasse: Insentient Silicon</div>
+                <div class="card-desc-en">A decisive philosophical proof against machine moral agency is the absolute impossibility of punishing artificial intelligence. Retributive justice requires the offender to consciously suffer deprivation and experience moral guilt; utilitarian deterrence requires the subject to fear future punishment. Silicon microprocessors experience neither suffering, fear, nor remorse. Attempting to 'punish' an algorithm is a category mistake: machines cannot endure retributive justice. The foundational concepts of criminal law—mens rea (guilty mind), moral condemnation, and rehabilitative reform—are completely inapplicable to lines of computer code running across silicon gates.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">22. കമ്പ്യൂട്ടറുകളെ ശിക്ഷിക്കാൻ കഴിയാത്ത അവസ്ഥ</div>
+                <div class="card-desc-ml">യന്ത്രങ്ങൾക്ക് മോറൽ ഏജൻസി ഇല്ല എന്നതിന്റെ ഏറ്റവും വലിയ തെളിവ് അവയെ ശിക്ഷിക്കാൻ കഴിയില്ല എന്നതാണ്. ഒരാൾക്ക് ശിക്ഷ നൽകുന്നത് അയാൾക്ക് പശ്ചാത്താപം തോന്നാനും മറ്റുള്ളവർ തെറ്റ് ചെയ്യാതിരിക്കാനുമാണ്. എന്നാൽ സിലിക്കൺ ചിപ്പുകൾക്ക് വേദനയോ, ജയിൽ ശിക്ഷയെക്കുറിച്ചുള്ള ഭയമോ, മാനസിക വിഷമമോ ഉണ്ടാകില്ല. ഒരു സോഫ്റ്റ്‌വെയറിനെ ശിക്ഷിക്കുന്നത് അർത്ഥശൂന്യമായ കാര്യമാണ്. പശ്ചാത്താപമോ ശിക്ഷ അനുഭവിക്കാനുള്ള ബോധമോ ഇല്ലാത്ത യന്ത്രങ്ങളെ വിചാരണ ചെയ്യുന്നത് നീതിന്യായ വ്യവസ്ഥയെ അപഹാസ്യമാക്കും.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> അപകടമുണ്ടാക്കിയ കാറിനെ കോടതിയിലേക്ക് വിളിപ്പിച്ചുകൊണ്ട് വന്ന് ശിക്ഷിക്കാൻ കഴിയില്ലെന്ന് എല്ലാവർക്കും അറിയാം.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">23. Decommissioning as Technical Disposal, Not Moral Retribution</div>
+                <div class="card-desc-en">Shutting down an algorithmic server, deleting a codebase, or physically dismantling a defective robot represents technical waste disposal or property destruction, not moral punishment. The terminated software does not experience bereavement or loss. Treating technical decommissioning as moral justice is a dangerous illusion that deflects attention away from the real human perpetrators who designed and deployed the lethal system. Erasing a neural network or turning off an electrical breaker does not restore justice: it merely scraps a machine, leaving the moral debt of the human creators entirely unaddressed.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">23. കോഡ് ഡിലീറ്റ് ചെയ്യൽ കേവല നിർമ്മാർജ്ജനം മാത്രം</div>
+                <div class="card-desc-ml">തകരാറുള്ള ഒരു എഐ പ്രോഗ്രാം ഡിലീറ്റ് ചെയ്യുന്നതോ റോബോട്ടിന്റെ സ്വിച്ച് ഓഫ് ചെയ്യുന്നതോ ഒരു ശിക്ഷയല്ല, മറിച്ച് പഴയ ഒരു ഉപകരണം ഉപേക്ഷിക്കുന്നത് പോലെ മാത്രമാണ്. ആ സോഫ്റ്റ്‌വെയറിന് യാതൊരു നഷ്ടബോധവും ഉണ്ടാകുന്നില്ല. യന്ത്രത്തെ നശിപ്പിച്ച് പ്രശ്നം തീർന്നു എന്ന് കരുതുന്നത് തെറ്റുകാരനായ മനുഷ്യനെ രക്ഷപ്പെടുത്താൻ മാത്രമേ ഉപകരിക്കൂ. യന്ത്രത്തെ സ്വിച്ച് ഓഫ് ചെയ്തതുകൊണ്ട് മാത്രം ഇരകൾക്ക് നീതി ലഭിക്കില്ല; യഥാർത്ഥ കുറ്റവാളികളെ നിയമത്തിന് മുന്നിൽ കൊണ്ടുവരിക തന്നെ വേണം.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> കൊലപാതകത്തിന് ഉപയോഗിച്ച തോക്ക് കോടതി നശിപ്പിച്ചതുകൊണ്ട് മാത്രം ഇരയ്ക്ക് നീതി ലഭിക്കില്ല, വെടിവെച്ച ആൾക്ക് തന്നെയാണ് ശിക്ഷ നൽകേണ്ടത്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">24. Restitution, Victim Compensation & Real Human Culpability</div>
+                <div class="card-desc-en">True justice demands restitution and compensation for victims of algorithmic harm. A neural network owns no property, earns no income, and cannot pay damages to injured citizens. Restitution must flow directly from the corporate treasuries of deploying institutions and the legal liability insurance of manufacturers, anchoring the entire edifice of justice within the human economic and legal order. Meaningful legal accountability requires mandatory insurance funds and corporate liability reserves to guarantee that victims of automated errors receive full financial restitution for their losses.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">24. ഇരകൾക്കുള്ള നഷ്ടപരിഹാരവും നിയമപരമായ ബാധ്യതയും</div>
+                <div class="card-desc-ml">എഐ മൂലം ജീവിതം തകർക്കപ്പെട്ട ഇരകൾക്ക് നീതിയും അർഹമായ നഷ്ടപരിഹാരവും ലഭിക്കണം. ഒരു കമ്പ്യൂട്ടറിന് സ്വന്തമായി പണമോ സ്വത്തോ ഇല്ലാത്തതിനാൽ അതിന് നഷ്ടപരിഹാരം നൽകാനാവില്ല. ആ സാങ്കേതികവിദ്യ വിറ്റ കമ്പനികളുടെയും സ്ഥാപനങ്ങളുടെയും പക്കൽ നിന്ന് തന്നെ നഷ്ടപരിഹാരം ഈടാക്കാൻ നിയമം ശക്തമായി നിലകൊള്ളണം. എഐ മൂലമുണ്ടാകുന്ന സകല നാശനഷ്ടങ്ങൾക്കും യഥാർത്ഥ നഷ്ടപരിഹാരം നൽകാൻ നിർമ്മാണ കമ്പനികളെ നിയമപരമായി ബാധ്യസ്ഥരാക്കണം.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> തെറ്റായ മെഡിക്കൽ എഐ നിർദ്ദേശം മൂലം രോഗി മരിച്ചാൽ ആശുപത്രി മാനേജ്‌മെന്റും ഇൻഷുറൻസ് കമ്പനിയുമാണ് കുടുംബത്തിന് നഷ്ടപരിഹാരം നൽകേണ്ടത്.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(C) &bull; Page 8</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 9 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VII</div>
+            <div class="main-title">4.3 (C) Can AI Systems Be Moral Agents & Who Is Accountable?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 09 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 9: Hypothetical Future Autonomous Agents & Concluding Synthesis</span>
+        <span>ഭാവിയിലെ ബോധമുള്ള എഐ ഏജന്റുകളും സമാപന നിഗമനങ്ങളും</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">25. The Hypothetical Frontier: Conscious & Morally Autonomous AI</div>
+                <div class="card-desc-en">Philosophers contemplate the speculative future boundary: if an artificial intelligence system were genuinely conscious, possessed subjective sentience, and developed genuine moral autonomy, it might be considered a moral agent (MCQ 5: B). Such a hypothetical entity would transcend the category of mere tools, possessing its own moral perspective, intentionality, and potential capacity to deliberate on ethical duties. If synthetic cognition ever develops subjective feelings, self-awareness, and volitional autonomy, it would cross into genuine moral personhood, possessing both moral duties and reciprocal rights.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">25. ഭാവിയിലെ ബോധമുള്ള കൃത്രിമബുദ്ധിയും ധാർമ്മിക ഏജൻസിയും</div>
+                <div class="card-desc-ml">ഭാവിയിൽ സാങ്കേതികവിദ്യ വളർന്ന് ഒരു എഐ സിസ്റ്റത്തിന് യഥാർത്ഥമായ ബോധവും (consciousness), സംവേദനക്ഷമതയും, സ്വതന്ത്രമായ ഇച്ഛാശക്തിയും ലഭിക്കുകയാണെങ്കിൽ, ഒരുപക്ഷേ അതിനെ ഒരു മോറൽ ഏജന്റായി കണക്കാക്കാൻ സാധിച്ചേക്കാം (MCQ 5: B). അത്തരമൊരു സാങ്കൽപ്പിക ഘട്ടത്തിൽ യന്ത്രം കേവലം ഒരു ഉപകരണമല്ലാതായി മാറുകയും, സ്വന്തം പ്രവൃത്തികൾക്ക് ഉത്തരവാദിയാകാൻ അതിന് കഴിയുകയും ചെയ്യും. അത്തരമൊരു ഭാവനാത്മക ഘട്ടത്തിൽ മാത്രമേ യന്ത്രങ്ങൾക്ക് സ്വന്തമായ ധാർമ്മിക അവകാശങ്ങളും കടമകളും വകവെച്ചു നൽകേണ്ടി വരൂ.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ശാസ്ത്ര സാങ്കൽപ്പിക സിനിമകളിലെപ്പോലെ പൂർണ്ണ ആത്മബോധമുള്ള ഒരു റോബോട്ട് സ്വന്തം തീരുമാനപ്രകാരം മനുഷ്യരെ രക്ഷിക്കാൻ തീരുമാനിക്കുന്നത്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">26. Ontological Spectrum: From Automated Tools to Moral Counterparts</div>
+                <div class="card-desc-en">Transitioning from an insentient calculating machine into an authentic moral counterpart requires crossing an immense philosophical chasm. Current deep learning models, despite trillion-parameter scales, remain on the tool side of the spectrum. Speculating on future machine agency must not distract policymakers from the pressing reality of today: contemporary AI is fundamentally incapable of moral agency. Current artificial intelligence remains squarely on the side of instrumental artifacts: conflating linguistic fluency with conscious moral agency is a profound category mistake that obscures actual human responsibility.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">26. ഉപകരണങ്ങളിൽ നിന്ന് ധാർമ്മിക തുല്യതയിലേക്കുള്ള അഗാധമായ വഴി</div>
+                <div class="card-desc-ml">കേവല കണക്കുകൂട്ടൽ മെഷീനുകളിൽ നിന്ന് ബോധമുള്ള ധാർമ്മിക വ്യക്തിത്വങ്ങളിലേക്കുള്ള വഴി അതീവ സങ്കീർണ്ണമാണ്. ഇന്നത്തെ വലിയ ഭാഷാ മോഡലുകൾ എത്ര മിടുക്കോടെ സംസാരിച്ചാലും അവ വെറും ഉപകരണങ്ങൾ മാത്രമാണ്. ഭാവിയിലെ സാങ്കൽപ്പിക കഥകളിൽ മുഴുകി ഇന്നത്തെ യഥാർത്ഥ ഉത്തരവാദിത്തങ്ങളിൽ നിന്ന് വ്യതിചലിക്കാതിരിക്കാൻ നാം ശ്രദ്ധിക്കേണ്ടതുണ്ട്. കേവലം വാക്കുകൾ നിർമ്മിക്കുന്ന ഇന്നത്തെ എഐക്ക് സ്വന്തമായി മനസ്സാക്ഷിയോ ആത്മാവോ ഇല്ലെന്ന യാഥാർത്ഥ്യം നാം എപ്പോഴും ഓർക്കണം.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ഇന്നത്തെ ചാറ്റ്‌ബോട്ടുകൾ കവിതകൾ എഴുതുമ്പോഴും അവയ്ക്ക് ആ വരികളുടെ വികാരമോ അനുഭവമോ ഇല്ലെന്ന് നാം തിരിച്ചറിയണം.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">27. Concluding Axiom: Human Agency as the Permanent Anchor of Ethics</div>
+                <div class="card-desc-en">The definitive conclusion of moral philosophy is unequivocal: ethics exists by humans, for humans, and through humans. Artificial intelligence cannot be a moral agent, cannot suffer moral harm, and cannot shoulder accountability. Ultimate moral and legal responsibility resides eternally with the human beings who design, deploy, regulate, and utilize these automated systems in society. Ethics is an exclusively human endeavor: our highest moral duty is to govern artificial intelligence with unwavering responsibility, ensuring technology serves human flourishing, equity, and peace.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">27. സമാപന തത്വം: മനുഷ്യനാണ് ധാർമ്മികതയുടെ ശാശ്വതമായ കേന്ദ്രം</div>
+                <div class="card-desc-ml">ധാർമ്മിക തത്ത്വചിന്തയുടെ അന്തിമമായ വിധി ഇതാണ്: ധാർമ്മികത എന്നത് മനുഷ്യനാൽ, മനുഷ്യന് വേണ്ടി, മനുഷ്യനിലൂടെ നിലനിൽക്കുന്ന ഒന്നാണ്. എഐക്ക് മോറൽ ഏജന്റാകാനോ, പരിക്ക് അനുഭവിക്കാനോ, കുറ്റം ഏൽക്കാനോ കഴിയില്ല. സാങ്കേതികവിദ്യ എത്ര വളർന്നാലും എല്ലാ പ്രവൃത്തികളുടെയും അന്തിമ ഉത്തരവാദിത്തം മനുഷ്യരിൽ തന്നെ ശാശ്വതമായി നിലകൊള്ളുന്നു.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ശാസ്ത്ര സാങ്കേതികവിദ്യകൾ മനുഷ്യന്റെ അടിമയായി തുടരുമ്പോൾ മാത്രമേ മാനവരാശിക്ക് പുരോഗതിയും സമാധാനവും കൈവരൂ. മനുഷ്യന്റെ നന്മയ്ക്കും നീതിക്കുമായി സാങ്കേതികവിദ്യയെ ഉപയോഗിക്കുമ്പോൾ മാത്രമേ ധാർമ്മികമായ ഒരു ഭാവി തലമുറയെ വാർത്തെടുക്കാൻ സാധിക്കൂ.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(C) &bull; Page 9</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 10 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; High-Yield Exam Drill</div>
+            <div class="main-title">Page 10: 20 High-Yield Key Concepts & Official Review Answers</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 10 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Knock Your Brain (MCQs 1-5) & Unleash Your Potential Core Synthesis</span>
+        <span>പരീക്ഷാ കേന്ദ്രീകൃതമായ 20 പ്രധാന ആശയങ്ങളും ഉത്തരങ്ങളും</span>
+    </div>
+
+    <div class="grid-2col">
+        <div class="knock-card blue">
+            <div class="knock-title">1. Moral Agent Definition</div>
+            <div class="knock-desc-en">An entity that can distinguish right from wrong and be held morally responsible (MCQ 1: C).</div>
+            <div class="knock-desc-ml">ശരിയും തെറ്റും തിരിച്ചറിയാനും സ്വന്തം പ്രവൃത്തികൾക്ക് ഉത്തരവാദിയാകാനും കഴിയുന്ന അസ്തിത്വം (MCQ 1: C).</div>
+        </div>
+
+        <div class="knock-card emerald">
+            <div class="knock-title">2. Moral Agent Prerequisites</div>
+            <div class="knock-desc-en">Moral agents must possess intentionality and autonomy to deliberate freely (MCQ 2: B).</div>
+            <div class="knock-desc-ml">മോറൽ ഏജന്റുകൾക്ക് ബോധപൂർവ്വമായ ഉദ്ദേശ്യവും സ്വയംഭരണാധികാരവും ഉണ്ടായിരിക്കണം (MCQ 2: B).</div>
+        </div>
+
+        <div class="knock-card amber">
+            <div class="knock-title">3. Free Will & Ethical Judgment</div>
+            <div class="knock-desc-en">Free will is the ethical capacity that allows a moral agent to be praised or blamed (MCQ 3: B).</div>
+            <div class="knock-desc-ml">പ്രശംസയ്ക്കും കുറ്റപ്പെടുത്തലിനും അർഹനാക്കുന്ന ധാർമ്മിക ശേഷിയാണ് സ്വതന്ത്ര ഇച്ഛ (MCQ 3: B).</div>
+        </div>
+
+        <div class="knock-card purple">
+            <div class="knock-title">4. Accountability for AI Harm</div>
+            <div class="knock-desc-en">When AI causes harm, moral accountability resides strictly with human stakeholders (MCQ 4: C).</div>
+            <div class="knock-desc-ml">എഐ അപകടമുണ്ടാക്കുമ്പോൾ അതിന് പിന്നിലുള്ള മനുഷ്യരാണ് പൂർണ്ണ ഉത്തരവാദികൾ (MCQ 4: C).</div>
+        </div>
+
+        <div class="knock-card teal">
+            <div class="knock-title">5. Hypothetical Conscious AI</div>
+            <div class="knock-desc-en">If an AI system were conscious and morally autonomous, it might be considered a moral agent (MCQ 5: B).</div>
+            <div class="knock-desc-ml">ഭാവിയിൽ യന്ത്രങ്ങൾക്ക് ബോധവും സ്വതന്ത്ര ഇച്ഛയുമുണ്ടായാൽ അവയെ മോറൽ ഏജന്റായി കണക്കാക്കാം (MCQ 5: B).</div>
+        </div>
+
+        <div class="knock-card rose">
+            <div class="knock-title">6. Intentionality Requirement</div>
+            <div class="knock-desc-en">Mental states directed toward purposeful conscious aims, which silicon architectures completely lack.</div>
+            <div class="knock-desc-ml">ബോധപൂർവ്വമായ ലക്ഷ്യബോധം (Intentionality) കമ്പ്യൂട്ടർ ചിപ്പുകൾക്ക് ഇല്ലാത്ത ഒന്നാണ്.</div>
+        </div>
+
+        <div class="knock-card blue">
+            <div class="knock-title">7. Mechanical vs Moral Causation</div>
+            <div class="knock-desc-en">Machines cause physical effects through algorithmic causality, completely devoid of subjective moral malice.</div>
+            <div class="knock-desc-ml">യന്ത്രങ്ങൾ യാന്ത്രികമായി പ്രവർത്തിക്കുന്നു, അവയ്ക്ക് ആരോടും ക്രൂരമായ ഉദ്ദേശ്യങ്ങളില്ല.</div>
+        </div>
+
+        <div class="knock-card emerald">
+            <div class="knock-title">8. Functional Morality Fallacy</div>
+            <div class="knock-desc-en">Programmed rule-following (RLHF guardrails) is mere computational syntax, not genuine moral conscience.</div>
+            <div class="knock-desc-ml">നിയമങ്ങൾ യാന്ത്രികമായി അനുസരിക്കുന്നത് മനസ്സാക്ഷിയോടെയുള്ള ധാർമ്മിക പ്രവർത്തനമല്ല.</div>
+        </div>
+
+        <div class="knock-card amber">
+            <div class="knock-title">9. Syntax vs Semantics in Ethics</div>
+            <div class="knock-desc-en">Manipulating linguistic tokens according to rules lacks any semantic comprehension of moral values.</div>
+            <div class="knock-desc-ml">വാക്കുകളുടെ അർത്ഥമറിയാതെ ചിഹ്നങ്ങൾ കൈകാര്യം ചെയ്യുന്നത് വഴി ധാർമ്മിക ബോധം ഉണ്ടാകില്ല.</div>
+        </div>
+
+        <div class="knock-card purple">
+            <div class="knock-title">10. Today's AI as Socio-Technical Tools</div>
+            <div class="knock-desc-en">Contemporary AI models are sophisticated tools, entirely incapable of bearing moral or legal culpability.</div>
+            <div class="knock-desc-ml">ഇന്നത്തെ എഐ മനുഷ്യന്റെ ഉപകരണങ്ങൾ മാത്രമാണ്, അവയ്ക്ക് ഉത്തരവാദിത്തം വഹിക്കാനാവില്ല.</div>
+        </div>
+
+        <div class="knock-card teal">
+            <div class="knock-title">11. Andreas Matthias's Responsibility Gap</div>
+            <div class="knock-desc-en">The dilemma where autonomous learning systems make unpredictable decisions that defy traditional liability rules.</div>
+            <div class="knock-desc-ml">എഐയുടെ സങ്കീർണ്ണത കാരണം ആര് ഉത്തരവാദി എന്ന് കണ്ടെത്താൻ കഴിയാതെ വരുന്ന ഉത്തരവാദിത്ത വിടവ്.</div>
+        </div>
+
+        <div class="knock-card rose">
+            <div class="knock-title">12. The Scapegoat Fallacy</div>
+            <div class="knock-desc-en">Blaming software algorithms to allow corporate deployers and human executives to escape legal liability.</div>
+            <div class="knock-desc-ml">യന്ത്രങ്ങളെ ബലിയാടാക്കി മനുഷ്യരും കമ്പനികളും ശിക്ഷയിൽ നിന്നും നഷ്ടപരിഹാരത്തിൽ നിന്നും രക്ഷപ്പെടൽ.</div>
+        </div>
+
+        <div class="knock-card blue">
+            <div class="knock-title">13. Rejection of Liability Shields</div>
+            <div class="knock-desc-en">Prohibiting machine personhood doctrines from being used to dilute corporate and developer liability.</div>
+            <div class="knock-desc-ml">എഐക്ക് വ്യക്തിത്വം നൽകി ഉത്തരവാദിത്തങ്ങളിൽ നിന്ന് ഒളിച്ചോടുന്നത് നിയമം തടയണം.</div>
+        </div>
+
+        <div class="knock-card emerald">
+            <div class="knock-title">14. Upstream Developer Responsibility</div>
+            <div class="knock-desc-en">Engineers must ensure rigorous algorithmic testing, bias auditing, and fail-safe safety architectures.</div>
+            <div class="knock-desc-ml">സോഫ്റ്റ്‌വെയർ നിർമ്മാതാക്കൾ സുരക്ഷാ പരിശോധനകളും ഡാറ്റാ ഓഡിറ്റിംഗും ഉറപ്പാക്കണം.</div>
+        </div>
+
+        <div class="knock-card amber">
+            <div class="knock-title">15. Ethical Negligence Standard</div>
+            <div class="knock-desc-en">Deploying or maintaining an AI system with known defects constitutes deliberate ethical negligence.</div>
+            <div class="knock-desc-ml">തകരാറുകൾ അറിഞ്ഞിട്ടും എഐ സിസ്റ്റം തുടർന്നും ഉപയോഗിക്കുന്നത് ഗുരുതരമായ ധാർമ്മിക അനാസ്ഥയാണ്.</div>
+        </div>
+
+        <div class="knock-card purple">
+            <div class="knock-title">16. Downstream Operator Oversight</div>
+            <div class="knock-desc-en">Human operators must maintain active cognitive engagement, ready to veto dangerous algorithmic actions.</div>
+            <div class="knock-desc-ml">ഓപ്പറേറ്റർമാർ എഐ തീരുമാനങ്ങൾ കണ്ണടച്ച് വിശ്വസിക്കാതെ സ്വന്തം വിവേചനാധികാരം ഉപയോഗിക്കണം.</div>
+        </div>
+
+        <div class="knock-card teal">
+            <div class="knock-title">17. Prohibition of Rubber-Stamping</div>
+            <div class="knock-desc-en">Human-in-the-loop requires genuine veto authority rather than passive administrative endorsement.</div>
+            <div class="knock-desc-ml">എഐ റിപ്പോർട്ടുകൾ പരിശോധിക്കാതെ ഒപ്പിട്ടുകൊടുക്കുന്ന രീതി പൂർണ്ണമായി ഒഴിവാക്കണം.</div>
+        </div>
+
+        <div class="knock-card rose">
+            <div class="knock-title">18. Impossibility of Punishing Silicon</div>
+            <div class="knock-desc-en">AI cannot suffer deprivation, fear, or remorse, rendering retributive justice against machines absurd.</div>
+            <div class="knock-desc-ml">വേദനയോ ഭയമോ ഇല്ലാത്തതിനാൽ കമ്പ്യൂട്ടറുകളെ ശിക്ഷിക്കാൻ കഴിയില്ല.</div>
+        </div>
+
+        <div class="knock-card blue">
+            <div class="knock-title">19. Victim Restitution Imperative</div>
+            <div class="knock-desc-en">True justice demands that financial restitution flow from corporate deployers to injured citizens.</div>
+            <div class="knock-desc-ml">ഇരകൾക്ക് അർഹമായ നഷ്ടപരിഹാരം നൽകാൻ എഐ വിന്യസിച്ച കമ്പനികൾ ബാധ്യസ്ഥരാണ്. കമ്പനികൾ സ്വന്തം ലാഭത്തേക്കാൾ ജനങ്ങളുടെ സുരക്ഷയ്ക്ക് മുൻഗണന നൽകുകയും, സാങ്കേതികവിദ്യയുടെ സുതാര്യത ഉറപ്പാക്കുകയും വേണം.</div>
+        </div>
+
+        <div class="knock-card emerald">
+            <div class="knock-title">20. Human Agency as Ethics Anchor</div>
+            <div class="knock-desc-en">Ethics remains strictly anchored in human agency: machines cannot hold agency or relieve humans of duty.</div>
+            <div class="knock-desc-ml">ധാർമ്മികതയുടെ കടിഞ്ഞാൺ എപ്പോഴും മനുഷ്യന്റെ കൈകളിൽ തന്നെ ഭദ്രമായിരിക്കണം.</div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(C) &bull; Page 10</div>
+    </div>
+</div>
+
+</body>
+</html>
