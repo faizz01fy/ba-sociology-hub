@@ -368,6 +368,15 @@ export default {
       if (decodedPath.includes('/LMS_PDF/')) {
         candidates.push(decodedPath.replace('/LMS_PDF/', '/LMS PDF/'));
       }
+      if (decodedPath.includes('/Philosophy of AI/')) {
+        candidates.push(decodedPath.replace('/Philosophy of AI/', '/philosophy of AI/'));
+      }
+      if (decodedPath.includes('/philosophy of AI/')) {
+        candidates.push(decodedPath.replace('/philosophy of AI/', '/Philosophy of AI/'));
+      }
+      if (decodedPath.includes('/History of Keralam/')) {
+        candidates.push(decodedPath.replace('/History of Keralam/', '/History/'));
+      }
       const parts = decodedPath.split('/');
       const filename = parts[parts.length - 1];
       candidates.push('/pdfs/' + filename);
