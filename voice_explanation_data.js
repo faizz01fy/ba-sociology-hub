@@ -521,10 +521,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 01",
             "title": "ചെറുകഥ: പൂവമ്പഴം — കാരൂർ നീലകണ്ഠപ്പിള്ള",
-            "chapter": "ചെറുകഥാ പഠനം · ജന്മി-കുടിയാൻ ബന്ധം, ഫ്യൂഡൽ ജീർണ്ണത & സ്ത്രീ മനശ്ശാസ്ത്രം (Karoor's Short Story Masterpiece)",
-            "duration": "17:50",
-            "youtubeId": "jSPK1aHW1MY",
-            "thumbnail": "https://i.ytimg.com/vi/jSPK1aHW1MY/hqdefault.jpg",
+            "chapter": "മലയാള ചെറുകഥാ ചരിത്രം · ജന്മി-കുടിയാൻ ബന്ധം · ആത്തേരമ്മയുടെ ആത്മസംഘർഷങ്ങൾ",
+            "duration": "15:34",
+            "youtubeId": "yS7Z8-7CQJ8",
+            "thumbnail": "https://i.ytimg.com/vi/yS7Z8-7CQJ8/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
