@@ -135,15 +135,15 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Part 01",
             "title": "സദ്ഗുണവും അവകാശങ്ങളും കടമകളും",
             "chapter": "Malayalam study overview · സദ്ഗുണവും അവകാശങ്ങളും കടമകളും",
-            "duration": "19:08",
+            "duration": "13:23",
             "language": "Malayalam",
             "studyPoints": [
               "<strong>Core Topic:</strong> Comprehensive academic exploration of സദ്ഗുണവും അവകാശങ്ങളും കടമകളും.",
               "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
             ],
             "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
-            "youtubeId": "so1OPNlFl0c",
-            "thumbnail": "https://i.ytimg.com/vi/so1OPNlFl0c/hqdefault.jpg",
+            "youtubeId": "j4I2rRPrlnM",
+            "thumbnail": "https://i.ytimg.com/vi/j4I2rRPrlnM/hqdefault.jpg",
             "videoUrl": null
           },
           {
@@ -219,6 +219,96 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
             "youtubeId": "XdtCAYUtbLA",
             "thumbnail": "https://i.ytimg.com/vi/XdtCAYUtbLA/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "പ്രായോഗിക നൈതികതയും ധാർമ്മിക പ്രതിസന്ധികളും",
+            "chapter": "Malayalam study overview · പ്രായോഗിക നൈതികതയും ധാർമ്മിക പ്രതിസന്ധികളും",
+            "duration": "14:10",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of പ്രായോഗിക നൈതികതയും ധാർമ്മിക പ്രതിസന്ധികളും.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "tTnnYePk71M",
+            "thumbnail": "https://i.ytimg.com/vi/tTnnYePk71M/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "എത്തിക്സ് സങ്കൽപ്പങ്ങൾ",
+            "chapter": "Malayalam study overview · എത്തിക്സ് സങ്കൽപ്പങ്ങൾ",
+            "duration": "08:24",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of എത്തിക്സ് സങ്കൽപ്പങ്ങൾ.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "y7dTy8U-0Zk",
+            "thumbnail": "https://i.ytimg.com/vi/y7dTy8U-0Zk/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "സമൂഹത്തിന്റെ അദൃശ്യ ഓപ്പറേറ്റിംഗ് സിസ്റ്റമായ സാമൂഹിക സ്ഥാപനങ്ങൾ",
+            "chapter": "Malayalam study overview · സമൂഹത്തിന്റെ അദൃശ്യ ഓപ്പറേറ്റിംഗ് സിസ്റ്റമായ സാമൂഹിക സ്ഥാപനങ്ങൾ",
+            "duration": "20:12",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of സമൂഹത്തിന്റെ അദൃശ്യ ഓപ്പറേറ്റിംഗ് സിസ്റ്റമായ സാമൂഹിക സ്ഥാപനങ്ങൾ.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "HbEgpgtxgYU",
+            "thumbnail": "https://i.ytimg.com/vi/HbEgpgtxgYU/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "ധർമ്മശാസ്ത്ര ആമുഖം",
+            "chapter": "Malayalam study overview · ധർമ്മശാസ്ത്ര ആമുഖം",
+            "duration": "06:40",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of ധർമ്മശാസ്ത്ര ആമുഖം.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "5DYMw7p9BMU",
+            "thumbnail": "https://i.ytimg.com/vi/5DYMw7p9BMU/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക് സമൂഹത്തിന്റെ പരിണാമം",
+            "chapter": "Malayalam study overview · കലപ്പയിൽ നിന്ന് എഐയിലേക്ക് സമൂഹത്തിന്റെ പരിണാമം",
+            "duration": "15:49",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of കലപ്പയിൽ നിന്ന് എഐയിലേക്ക് സമൂഹത്തിന്റെ പരിണാമം.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "OSwpBI8XWYk",
+            "thumbnail": "https://i.ytimg.com/vi/OSwpBI8XWYk/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "പദവികളും റോളുകളും റോൾ കോൺഫ്ലിക്റ്റും",
+            "chapter": "Malayalam study overview · പദവികളും റോളുകളും റോൾ കോൺഫ്ലിക്റ്റും",
+            "duration": "10:18",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of പദവികളും റോളുകളും റോൾ കോൺഫ്ലിക്റ്റും.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "DNXeh_xKjPI",
+            "thumbnail": "https://i.ytimg.com/vi/DNXeh_xKjPI/hqdefault.jpg",
             "videoUrl": null
           }
         ]
@@ -1963,6 +2053,36 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "University Exam Tip: 'Critically examine the concept of Dharma and Purusharthas in Indian moral philosophy'.",
             "thumbnail": "/thumbnails/ethics_thumb_02.jpg"
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "Fundamentals of Ethics Complete 5-Module Masterclass",
+            "chapter": "Malayalam study overview · Fundamentals of Ethics Complete 5-Module Masterclass",
+            "duration": "04:56",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of Fundamentals of Ethics Complete 5-Module Masterclass.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "j0Rh56DJMYw",
+            "thumbnail": "https://i.ytimg.com/vi/j0Rh56DJMYw/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "Applied Ethics The Casebook of Dilemmas",
+            "chapter": "Malayalam study overview · Applied Ethics The Casebook of Dilemmas",
+            "duration": "08:21",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of Applied Ethics The Casebook of Dilemmas.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "zIvRoe-he-8",
+            "thumbnail": "https://i.ytimg.com/vi/zIvRoe-he-8/hqdefault.jpg",
+            "videoUrl": null
           }
         ]
       },
@@ -2204,22 +2324,44 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 04",
             "title": "Cardinal vs Ordinal Utility Analysis",
             "chapter": "Law of Diminishing Marginal Utility & Equi-Marginal Utility",
-            "duration": "21",
-            "youtubeId": "1aWH6DRymg8"
+            "duration": "20:45",
+            "youtubeId": "1aWH6DRymg8",
+            "videoUrl": "/micro-unit4-review.html",
+            "thumbnail": "/thumbnails/micro-unit-4-bilingual.jpg",
+            "studyPoints": [
+              "<strong>Cardinal vs Ordinal Utility:</strong> Marshallian cardinal utility measures satisfaction in quantitative utils, whereas Hicks-Allen ordinal utility ranks bundles by consumer preference orders.",
+              "<strong>Law of Diminishing Marginal Utility:</strong> As additional units of a good are consumed, the marginal utility (MU = dU/dq) derived from each successive unit declines.",
+              "<strong>Equi-Marginal Principle:</strong> Consumer allocation rule where ratio of marginal utility to price is equal across all purchased commodities: MUx / Px = MUy / Py."
+            ],
+            "examTip": "Focus on the transition from cardinal to ordinal analysis and state the equilibrium condition MUx/Px = MUy/Py."
           },
           {
             "chapterNumber": "Unit 05",
             "title": "Indifference Curve Analysis & Marginal Rate of Substitution",
-            "chapter": "Properties of IC Curves, Income & Substitution Effects",
-            "duration": "25",
-            "youtubeId": ""
+            "chapter": "Properties of IC Curves, Marginal Rate of Substitution & Preference Maps",
+            "duration": "18:15",
+            "youtubeId": "z8tbT2SiepA",
+            "thumbnail": "/thumbnails/Consumer_Preferences_Mod2_Unit6_Thumbnail.png",
+            "studyPoints": [
+              "<strong>Indifference Curve (IC):</strong> Represents locus of all commodity bundles providing identical levels of overall satisfaction.",
+              "<strong>Marginal Rate of Substitution (MRS):</strong> The rate at which a consumer trades good Y for good X: MRS_xy = -dy/dx = MUx/MUy.",
+              "<strong>Four Properties of ICs:</strong> Downward sloping, convex to the origin due to diminishing MRS, non-intersecting due to transitivity, and higher curves denote greater utility."
+            ],
+            "examTip": "Calicut University Core: 'Explain why two indifference curves cannot intersect by utilizing the axioms of transitivity and non-satiation'."
           },
           {
             "chapterNumber": "Unit 06",
             "title": "Budget Constraint & Consumer Equilibrium",
-            "chapter": "Tangency Conditions and Corner Solutions",
-            "duration": "20",
-            "youtubeId": "z8tbT2SiepA"
+            "chapter": "Axioms of Choice, Feasible Sets & Tangency Equilibrium (MRS = Px/Py)",
+            "duration": "18:15",
+            "youtubeId": "z8tbT2SiepA",
+            "thumbnail": "/thumbnails/Consumer_Preferences_Mod2_Unit6_Thumbnail.png",
+            "studyPoints": [
+              "<strong>Budget Constraint & Line:</strong> All consumption combinations affordable with income Y: Px*Qx + Py*Qy = Y, with slope -Px/Py.",
+              "<strong>Consumer Equilibrium:</strong> Optimum consumption bundle occurs at the point of tangency between the budget line and highest reachable indifference curve where MRS_xy = Px / Py.",
+              "<strong>Corner Solutions:</strong> Arise when goods are perfect substitutes or preferences lead to consumption of only one commodity at an axis."
+            ],
+            "examTip": "Tangency Condition formula MRS = Px/Py and the graphical derivation of budget slope are mandatory questions in university exams."
           }
         ]
       },
