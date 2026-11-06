@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy of AI - Chapter 19: Can AI Systems Suffer Moral Harm?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+    @page {
+        size: A4 portrait;
+        margin: 5.5mm 6.5mm;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans', 'Noto Sans Malayalam', 'Segoe UI', Tahoma, sans-serif;
+        font-size: 8.35pt;
+        line-height: 1.45;
+        color: #1e293b;
+        background: #ffffff;
+    }
+    .page-container {
+        width: 100%;
+        height: 100%;
+        max-height: 278mm;
+        page-break-after: always;
+        page-break-inside: avoid;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .page-container:last-child {
+        page-break-after: avoid;
+    }
+    .page-header {
+        border-bottom: 2px solid #047857;
+        padding-bottom: 3.5px;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .header-left .sub-title {
+        font-size: 6.8pt;
+        font-weight: 700;
+        color: #047857;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .header-left .main-title {
+        font-size: 11pt;
+        font-weight: 800;
+        color: #0f172a;
+        margin-top: 1px;
+    }
+    .header-right {
+        text-align: right;
+    }
+    .header-right .page-num {
+        font-size: 8.8pt;
+        font-weight: 800;
+        color: #047857;
+        background: #ecfdf5;
+        padding: 2px 7px;
+        border-radius: 4px;
+        border: 1px solid #a7f3d0;
+    }
+    .section-banner {
+        background: linear-gradient(135deg, #065f46 0%, #047857 50%, #0d9488 100%);
+        color: #ffffff;
+        padding: 4.5px 9px;
+        border-radius: 5px;
+        font-size: 8.2pt;
+        font-weight: 700;
+        margin-bottom: 5.5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .content-flow {
+        display: flex;
+        flex-direction: column;
+        gap: 8.0px;
+        flex-grow: 1;
+    }
+    .dual-concept-card {
+        border: 1px solid #cbd5e1;
+        border-radius: 5.5px;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .card-en {
+        background: #f8fafc;
+        border-left: 3.5px solid #1e3a8a;
+        padding: 6.5px 8.5px;
+    }
+    .card-ml {
+        background: #f0fdf4;
+        border-left: 3.5px solid #047857;
+        border-top: 1px dashed #d1fae5;
+        padding: 6.5px 8.5px;
+    }
+    .card-title-en {
+        font-size: 8.2pt;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 2.0px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .card-title-ml {
+        font-size: 8.2pt;
+        font-weight: 700;
+        color: #065f46;
+        margin-bottom: 2.0px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .card-desc-en {
+        font-size: 8.15pt;
+        line-height: 1.47;
+        color: #334155;
+    }
+    .card-desc-ml {
+        font-size: 8.00pt;
+        line-height: 1.49;
+        color: #166534;
+    }
+    .card-example {
+        background: #fefce8;
+        border-left: 3px solid #ca8a04;
+        padding: 5.0px 8.0px;
+        margin-top: 5.0px;
+        font-size: 7.65pt;
+        line-height: 1.44;
+        color: #713f12;
+        border-radius: 0 3px 3px 0;
+    }
+    .card-example b {
+        color: #854d0e;
+    }
+    .grid-2col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5.0px;
+    }
+    .knock-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 4.5px;
+        padding: 4.5px 6.5px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    .knock-card.blue { border-left: 3.2px solid #2563eb; background: #eff6ff; }
+    .knock-card.emerald { border-left: 3.2px solid #059669; background: #ecfdf5; }
+    .knock-card.amber { border-left: 3.2px solid #d97706; background: #fffbeb; }
+    .knock-card.purple { border-left: 3.2px solid #7c3aed; background: #faf5ff; }
+    .knock-card.teal { border-left: 3.2px solid #0d9488; background: #f0fdfa; }
+    .knock-card.rose { border-left: 3.2px solid #e11d48; background: #fff1f2; }
+    .knock-title {
+        font-size: 7.6pt;
+        font-weight: 700;
+        margin-bottom: 1.8px;
+        color: #0f172a;
+    }
+    .knock-desc-en {
+        font-size: 7.15pt;
+        line-height: 1.38;
+        color: #334155;
+        margin-bottom: 1.8px;
+    }
+    .knock-desc-ml {
+        font-size: 7.05pt;
+        line-height: 1.40;
+        color: #1e293b;
+    }
+    .page-footer {
+        border-top: 1px solid #cbd5e1;
+        padding-top: 4px;
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 6.6pt;
+        color: #64748b;
+    }
+    .page-footer .footer-left {
+        font-weight: 600;
+    }
+    .page-footer .footer-right {
+        font-weight: 700;
+        color: #047857;
+    }
+    </style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VI</div>
+            <div class="main-title">4.3 (B) Can AI Systems Suffer Moral Harm?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 01 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 1: The Foundations of Morality, Moral Reasoning & Core Values</span>
+        <span>ധാർമ്മികതയുടെ അടിസ്ഥാനങ്ങൾ, മൂല്യങ്ങൾ, വിവേചനാധികാരം</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">1. Nature of Morality: Distinguishing Right from Wrong</div>
+                <div class="card-desc-en">Morality is fundamentally concerned with distinguishing right from wrong, guiding conscious human conduct, and fostering flourishing societies (MCQ 1: C). It transcends mere adherence to legal statutes or arbitrary social customs. True moral action is characterised by intentionality, autonomous reflection, and ethical deliberation, allowing rational moral agents to choose virtues of justice and benevolence over selfish gratification and harmful aggression. True morality demands that rational human agents transcend narrow self-interest, recognizing that moral duties and ethical norms are essential for the preservation of human dignity, social justice, and civilized communal life.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">1. ധാർമ്മികതയുടെ സ്വഭാവം: ശരിയും തെറ്റും തിരിച്ചറിയൽ</div>
+                <div class="card-desc-ml">ശരിയും തെറ്റും തമ്മിൽ തിരിച്ചറിയുക (distinguishing right from wrong) എന്നതാണ് ധാർമ്മികതയുടെ കാതലായ ലക്ഷ്യം (MCQ 1: C). ഇത് കേവലം നിയമങ്ങൾ അനുസരിക്കുന്നതിലോ സാമൂഹിക ആചാരങ്ങൾ പാലിക്കുന്നതിലോ ഒതുങ്ങുന്നതല്ല. സ്വന്തം ഇച്ഛാശക്തിയും ബോധപൂർവ്വമായ ചിന്തയും ഉപയോഗിച്ച്, സഹജീവികളുടെ നന്മ മുൻനിർത്തി ശരിയായ തീരുമാനങ്ങൾ കൈക്കൊള്ളാനുള്ള മനുഷ്യന്റെ വിവേചനശേഷിയാണ് ധാർമ്മിക ജീവിതത്തിന്റെ അടിസ്ഥാനം. സ്വാർത്ഥ താല്പര്യങ്ങൾക്കപ്പുറം സഹജീവികളുടെ അവകാശങ്ങളെ മാനിക്കാനും, അനീതിക്കെതിരെ നിലകൊള്ളാനും മനുഷ്യനെ പ്രേരിപ്പിക്കുന്ന പരമമായ വിവേചന ശക്തിയാണ് ധാർമ്മികത.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> നിയമം ആവശ്യപ്പെടുന്നില്ലെങ്കിലും റോഡിൽ വീണുകിടക്കുന്ന ഒരു അപരിചിതനെ സ്വന്തം ഉത്തരവാദിത്തമായി കണ്ട് ആശുപത്രിയിലെത്തിക്കുന്ന മനുഷ്യന്റെ ധാർമ്മിക ബോധം.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">2. Moral Values as Guides for Ethical Human Conduct</div>
+                <div class="card-desc-en">Moral values primarily guide an individual's ethical behaviour, shaping personal interactions, professional responsibilities, and civic obligations (MCQ 2: B). Enduring values such as honesty, fairness, empathy, respect, and integrity serve as normative standards. They establish interpersonal trust, regulate conflict resolution, and create social cohesion by ensuring that individuals recognize the intrinsic worth of their fellow beings. These enduring ethical virtues guide human conscience across personal, professional, and civic realms, preventing social chaos and establishing a shared normative foundation for mutual human respect.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">2. ധാർമ്മിക മൂല്യങ്ങൾ: പെരുമാറ്റത്തെ നയിക്കുന്ന ചട്ടക്കൂട്</div>
+                <div class="card-desc-ml">ഒരു വ്യക്തിയുടെ ധാർമ്മിക പെരുമാറ്റത്തെയും (ethical behaviour) പ്രവൃത്തികളെയും നയിക്കുന്നത് ധാർമ്മിക മൂല്യങ്ങളാണ് (MCQ 2: B). സത്യസന്ധത, നീതി, ദയ, പരസ്പര ബഹുമാനം, വിശ്വസ്തത എന്നിവ സമൂഹത്തിന്റെ നിലനിൽപ്പിന് അത്യന്താപേക്ഷിതമാണ്. മറ്റുള്ളവരെ ചതിക്കാതെ ജീവിക്കാനും, അവരുടെ അവകാശങ്ങളെ ആദരിക്കാനും ഇത്തരം ഉന്നത മൂല്യങ്ങൾ മനുഷ്യനെ നിരന്തരം പ്രേരിപ്പിക്കുന്നു. സമൂഹത്തിലെ അനീതികളെ ചെറുക്കാനും, പരസ്പര വിശ്വാസവും സമാധാനവും ഊട്ടിയുറപ്പിക്കാനും ഇത്തരം ധാർമ്മിക മൂല്യങ്ങൾ കൂടിയേ തീരൂ.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> സ്വന്തം ലാഭത്തിനായി മറ്റുള്ളവരെ വഞ്ചിക്കാൻ അവസരമുണ്ടായിട്ടും സത്യസന്ധത ഉയർത്തിപ്പിടിച്ച് നീതിപൂർവ്വം വ്യാപാരം നടത്തുന്ന വ്യാപാരിയുടെ ധാർമ്മികത.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">3. Teleology of Ethics: Mutual Respect & Universal Well-Being</div>
+                <div class="card-desc-en">The overarching objective of ethical frameworks is the promotion of universal flourishing and harmonious social coexistence. Ethical principles demand benevolence—active deeds of charity, compassion, and kindness—alongside rigorous non-maleficence (the duty to avoid inflicting harm). True ethical living requires acknowledging that one's actions ripple through the social fabric, necessitating ongoing moral responsibility toward all stakeholders. Benevolence and compassion are not mere passive sentiments, but active moral imperatives that require human agents to alleviate suffering and promote the comprehensive well-being of all members of the community.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">3. നന്മയും സമാധാനപരമായ സഹവർത്തിത്വവും</div>
+                <div class="card-desc-ml">ധാർമ്മികതയുടെ പരമമായ ലക്ഷ്യം സർവ്വജന ക്ഷേമവും (universal flourishing) പരസ്പര സ്നേഹത്തിലധിഷ്ഠിതമായ സാമൂഹിക ജീവിതവുമാണ്. മറ്റുള്ളവർക്ക് ഉപദ്രവമുണ്ടാക്കാതിരിക്കുക (non-maleficence) എന്നതിനൊപ്പം ആവശ്യമുള്ളവർക്ക് സഹായം എത്തിക്കുക (benevolence) എന്നതും ധാർമ്മികത ആവശ്യപ്പെടുന്നു. സ്വന്തം പ്രവൃത്തികൾ മറ്റുള്ളവരിൽ ഉണ്ടാക്കുന്ന പ്രത്യാഘാതങ്ങളെക്കുറിച്ച് ബോധവാനായിരിക്കുക എന്നതാണ് പക്വമായ ധാർമ്മികത. ദുർബലരെ സഹായിക്കാനും പീഡിതർക്ക് നീതി ഉറപ്പാക്കാനും മുന്നിട്ടിറങ്ങുന്നതാണ് യഥാർത്ഥ ധാർമ്മിക ജീവിതം.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> സമൂഹത്തിലെ അനാഥർക്കും രോഗികൾക്കും വേണ്ടി സേവന പ്രവർത്തനങ്ങൾ നടത്തുന്നത് പരസ്പര സ്നേഹത്തിലധിഷ്ഠിതമായ ധാർമ്മികതയ്ക്ക് ഉദാഹരണമാണ്.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(B) &bull; Page 1</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VI</div>
+            <div class="main-title">4.3 (B) Can AI Systems Suffer Moral Harm?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 02 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 2: The Concept of Moral Harm & The Nature of Rights Violations</span>
+        <span>ധാർമ്മിക പരിക്കിന്റെ നിർവചനവും അവകാശ ലംഘനങ്ങളും</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">4. Definition of Moral Harm: Transgressing Dignity & Rights</div>
+                <div class="card-desc-en">Moral harm is defined as the wrongful violation of an individual's moral rights, autonomy, dignity, or fundamental well-being (MCQ 3: C). It transcends purely physical damage or economic deprivation. Moral injury occurs when an entity possessing inherent moral status is subjected to exploitation, unjust subordination, or dehumanizing treatment, causing deep trauma to their personhood, moral agency, and social standing. Moral harm strikes at the core of human personhood: it diminishes an individual's sense of self-worth, violates their autonomy, and treats them as an expendable instrument rather than a bearer of intrinsic rights.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">4. ധാർമ്മിക പരിക്ക് (Moral Harm): അവകാശങ്ങളുടെയും അന്തസ്സിന്റെയും ലംഘനം</div>
+                <div class="card-desc-ml">ഒരു വ്യക്തിയുടെ ധാർമ്മിക അവകാശങ്ങൾ, അന്തസ്സ്, സ്വയംനിർണ്ണയാവകാശം, അല്ലെങ്കിൽ അടിസ്ഥാനപരമായ ക്ഷേമം എന്നിവ ലംഘിക്കപ്പെടുന്നതിനെയാണ് 'ധാർമ്മിക പരിക്ക്' (Moral Harm) എന്ന് വിളിക്കുന്നത് (MCQ 3: C). ഇത് കേവല ശാരീരിക പരിക്കോ സാമ്പത്തിക നഷ്ടമോ അല്ല; മറിച്ച്, ഒരു മനുഷ്യനെ ആത്മാഭിമാനമില്ലാത്ത വസ്തുവായി കണ്ട് ചൂഷണം ചെയ്യുമ്പോഴും അപമാനിക്കുമ്പോഴും ഉണ്ടാകുന്ന ആഴത്തിലുള്ള ധാർമ്മിക മുറിവാണ്. ഒരു മനുഷ്യന്റെ ആത്മാഭിമാനത്തെ ചോദ്യം ചെയ്യുകയും അവനെ വെറും ഉപകരണമായി തരംതാഴ്ത്തുകയും ചെയ്യുമ്പോൾ ഉണ്ടാകുന്ന നീതിനിഷേധമാണിത്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ഒരാളെ കള്ളക്കേസിൽ കുടുക്കി പൊതുസമൂഹത്തിന് മുന്നിൽ അപമാനിച്ച് തടവിലാക്കുമ്പോൾ അയാൾ അനുഭവിക്കുന്ന ആത്മാഭിമാന തകർച്ചയും ധാർമ്മിക പരിക്കും.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">5. Physical & Financial Harm vs Deep Moral Injury</div>
+                <div class="card-desc-en">There is a vital philosophical distinction between physical/material harm and authentic moral harm. A vehicle accident causes physical bodily injury; a stolen wallet causes financial loss. However, moral injury specifically entails betrayal, profound disrespect, broken sacred trust, or arbitrary degradation. Transgressing an individual's rights—even in the absence of tangible physical pain—inflicts undeniable moral harm by violating their moral agency. While bones heal and financial assets can be replenished, profound moral injuries—such as systemic dehumanization, betrayal of trust, or institutional humiliation—inflict enduring psychological and existential harm upon conscious individuals.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">5. ശാരീരിക/സാമ്പത്തിക നഷ്ടങ്ങളും ധാർമ്മിക പരിക്കും തമ്മിലുള്ള വ്യത്യാസം</div>
+                <div class="card-desc-ml">ശാരീരിക പരിക്കുകളും സാമ്പത്തിക നഷ്ടങ്ങളും ധാർമ്മിക പരിക്കിൽ നിന്ന് തികച്ചും വ്യത്യസ്തമാണ്. കാറപകടത്തിൽ കൈയൊടിയുന്നത് ശാരീരിക നഷ്ടമാണ്, പണം മോഷണം പോകുന്നത് സാമ്പത്തിക നഷ്ടമാണ്. എന്നാൽ വാഗ്ദാന ലംഘനം, കടുത്ത വഞ്ചന, വിശ്വാസവഞ്ചന എന്നിവ മനുഷ്യന്റെ ആത്മാവിനേൽക്കുന്ന ധാർമ്മിക ആഘാതങ്ങളാണ്. ശാരീരിക മുറിവുകളില്ലെങ്കിലും ഒരു വ്യക്തിയുടെ അന്തസ്സ് ഹനിക്കപ്പെടുമ്പോൾ ധാർമ്മിക പരിക്ക് സംഭവിക്കുന്നു. സാമ്പത്തിക നഷ്ടങ്ങൾ നികത്താൻ കഴിഞ്ഞേക്കാം, എന്നാൽ മനുഷ്യന്റെ അന്തസ്സിനേൽക്കുന്ന മുറിവുകൾ ദീർഘകാല മാനസിക ആഘാതങ്ങൾക്ക് കാരണമാകുന്നു.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ഒരാളുടെ സ്വകാര്യ ഡാറ്റ അനുവാദമില്ലാതെ ചോർത്തി പരസ്യ കമ്പനികൾക്ക് വിൽക്കുന്നത് ശാരീരിക പരിക്കുണ്ടാക്കുന്നില്ലെങ്കിലും അയാളുടെ സ്വകാര്യതാ അവകാശത്തിന്മേലുള്ള ധാർമ്മിക പരിക്കാണ്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">6. Discrimination as Archetypal Moral Harm</div>
+                <div class="card-desc-en">Discrimination represents the quintessential manifestation of moral harm (MCQ 4: C). Denying individuals equal opportunities, legal justice, or social dignity based on arbitrary demographic attributes—such as caste, gender, color, or religion—violates the foundational principle of fairness. In modern jurisprudence, justice demands that arbitrary discrimination be eradicated, as it dehumanizes individuals by reducing unique persons into disparaged categories. Systemic prejudice and bias directly assault moral equity by treating individuals as second-class citizens, denying them fundamental constitutional protections, and stripping them of their rightful standing as equal members of the moral community.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">6. വിവേചനം: ധാർമ്മിക പരിക്കിന്റെ ഉത്തമ ഉദാഹരണം</div>
+                <div class="card-desc-ml">മനുഷ്യർ അനുഭവിക്കുന്ന ധാർമ്മിക പരിക്കിന്റെ ഏറ്റവും വ്യക്തമായ ഉദാഹരണമാണ് വിവേചനം (Discrimination) (MCQ 4: C). ജാതി, ലിംഗം, നിറം, അല്ലെങ്കിൽ മതം എന്നിവയുടെ പേരിൽ തുല്യ നീതിയും അവസരങ്ങളും നിഷേധിക്കുന്നത് മനുഷ്യന്റെ അന്തസ്സിനെ നശിപ്പിക്കുന്നു. ഒരു വ്യക്തിയുടെ യോഗ്യതകളെ തഴഞ്ഞ് അദ്ദേഹത്തിന്റെ സ്വത്വത്തെ അപമാനിക്കുന്നത് ആഴത്തിലുള്ള ധാർമ്മിക അനീതിയാണ്. ജാതിയുടെയും ലിംഗത്തിന്റെയും പേരിൽ പൗരന്മാരെ തരംതിരിച്ച് മാറ്റിനിർത്തുന്നത് സമൂഹത്തിന്റെ ധാർമ്മിക അടിത്തറയെത്തന്നെ തകർക്കുന്ന ക്രിമിനൽ കുറ്റമാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ഉയർന്ന മാർക്കുണ്ടായിട്ടും ജാതിയുടെയോ ലിംഗത്തിന്റെയോ പേരിൽ ജോലി നിഷേധിക്കപ്പെടുമ്പോൾ ആ വ്യക്തി അനുഭവിക്കുന്ന കടുത്ത അനീതിയും ധാർമ്മിക പരിക്കും.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(B) &bull; Page 2</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 3 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VI</div>
+            <div class="main-title">4.3 (B) Can AI Systems Suffer Moral Harm?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 03 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 3: Moral Patienthood vs Moral Agency: Epistemological Boundaries</span>
+        <span>ധാർമ്മിക ഏജൻസിയും ധാർമ്മിക സ്വീകർത്താക്കളും (Moral Patienthood)</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">7. Moral Patienthood: Deserving Direct Moral Consideration</div>
+                <div class="card-desc-en">In ethical philosophy, a 'moral patient' is an entity toward which moral agents can have direct ethical obligations. Moral patients possess moral standing: they can be wronged, their interests matter for their own sake, and they can directly suffer moral harm. Sentient animals and human infants are universally classified as moral patients: even if they cannot deliberate rationally, their capacity to experience suffering, pain, and deprivation demands direct moral protection. Because moral patients possess the capacity to experience distress, fear, and pain, moral agents bear a strict, non-negotiable obligation to refrain from mistreating them, ensuring that vulnerability is met with compassion rather than exploitation.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">7. ധാർമ്മിക സ്വീകർത്താവ് (Moral Patient): പരിഗണന അർഹിക്കുന്ന അവസ്ഥ</div>
+                <div class="card-desc-ml">ധാർമ്മിക പരിഗണന നേരിട്ട് അർഹിക്കുന്ന ജീവജാലങ്ങളെയാണ് 'മോറൽ പേഷ്യന്റ്' (Moral Patient) എന്ന് വിളിക്കുന്നത്. അവയോട് തെറ്റ് ചെയ്യാൻ പാടില്ലെന്നും അവയുടെ സുഖദുഃഖങ്ങൾ വിലപ്പെട്ടതാണെന്നും സമൂഹം അംഗീകരിക്കുന്നു. കൊച്ചുകുട്ടികളും മിണ്ടാപ്രാണികളും ഇതിന് ഉദാഹരണമാണ്; അവർക്ക് തെറ്റും ശരിയും വിവേചിച്ച് സംസാരിക്കാൻ കഴിഞ്ഞില്ലെങ്കിലും വേദനയും പീഡനങ്ങളും അനുഭവിക്കാൻ ശേഷിയുള്ളതിനാൽ അവർക്ക് പൂർണ്ണ ധാർമ്മിക പരിഗണന നൽകണം. വേദന അനുഭവിക്കാൻ ശേഷിയുള്ള ജീവികളെ സംരക്ഷിക്കുക എന്നത് വിവേകമുള്ള മനുഷ്യന്റെ ധാർമ്മിക കടമയാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> സംസാരിക്കാൻ കഴിയാത്ത മൃഗങ്ങളെ ക്രൂരമായി ഉപദ്രവിക്കുന്നത് തെറ്റാണെന്ന് പറയുന്നത് അവ ധാർമ്മിക സ്വീകർത്താക്കൾ (moral patients) ആയതുകൊണ്ടാണ്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">8. Moral Agency: Rational Capacity for Ethical Deliberation</div>
+                <div class="card-desc-en">A 'moral agent' is an entity possessing the rational, cognitive, and volitional capacity to evaluate moral norms, deliberate between competing ethical duties, and freely choose actions. Moral agents bear direct accountability and legal culpability for their deeds. Mature human beings are archetypal moral agents because they possess autonomous moral reasoning, self-reflection, and can experience genuine guilt, remorse, or praiseworthiness. Moral agency requires both cognitive competence and genuine volitional freedom: agents possess the capacity to understand the moral consequences of their actions and can be held legally and morally accountable before society.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">8. ധാർമ്മിക ഏജന്റ് (Moral Agent): തീരുമാനമെടുക്കാൻ ശേഷിയുള്ള വ്യക്തി</div>
+                <div class="card-desc-ml">സ്വന്തം യുക്തി ഉപയോഗിച്ച് ശരിയും തെറ്റും തിരഞ്ഞെടുക്കാനും, സ്വന്തം പ്രവൃത്തികളുടെ ഉത്തരവാദിത്തം സ്വയം ഏറ്റെടുക്കാനും കഴിയുന്ന വ്യക്തികളെയാണ് 'മോറൽ ഏജന്റ്' (Moral Agent) എന്ന് വിളിക്കുന്നത്. പ്രായപൂർത്തിയായ വിവേകമുള്ള മനുഷ്യർ മോറൽ ഏജന്റുകളാണ്. അവർക്ക് തെറ്റുകൾ തിരുത്താനും നിയമപരമായ ബാധ്യതകൾ നിറവേറ്റാനും കഴിയുന്നതിനാൽ അവരുടെ പ്രവൃത്തികൾക്ക് സമൂഹം ശിക്ഷയോ പ്രശംസയോ നൽകുന്നു. സ്വന്തം ഇച്ഛയ്ക്കനുസരിച്ച് തെറ്റും ശരിയും തിരഞ്ഞെടുക്കാൻ സ്വാതന്ത്ര്യമുള്ളതുകൊണ്ടാണ് മനുഷ്യന് മേൽ നിയമപരമായ ബാധ്യതകൾ നിലനിൽക്കുന്നത്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> വാഹനം ഓടിക്കുന്ന ഡ്രൈവർ ട്രാഫിക് നിയമങ്ങൾ ലംഘിക്കുമ്പോൾ അയാൾ മോറൽ ഏജന്റായതിനാൽ കോടതിക്ക് അയാളെ ശിക്ഷിക്കാൻ അധികാരമുണ്ട്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">9. The Asymmetry Between Moral Agents & Moral Patients</div>
+                <div class="card-desc-en">Ethical philosophy establishes a profound structural asymmetry: while all moral agents are simultaneously moral patients, not all moral patients are moral agents. A newborn child or an animal can suffer profound moral harm (making them patients), yet they lack the cognitive architecture to bear moral responsibility (they are not agents). The decisive question regarding AI is whether machines qualify as moral patients possessing the capacity for authentic moral injury. While humans inhabit both categories as moral agents and patients, artificial intelligence systems qualify as neither: they lack the moral capacity to choose actions ethically and lack the sentience to suffer moral harm.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">9. ഏജന്റുകളും പേഷ്യന്റുകളും തമ്മിലുള്ള അസമത്വം</div>
+                <div class="card-desc-ml">എല്ലാ മോറൽ ഏജന്റുകളും മോറൽ പേഷ്യന്റുകളാണെങ്കിലും, എല്ലാ മോറൽ പേഷ്യന്റുകളും മോറൽ ഏജന്റുകളാകണമെന്നില്ല. ഉദാഹരണത്തിന്, ഒരു പിഞ്ചുകുഞ്ഞിന് മറ്റുള്ളവരെ വിചാരണ ചെയ്യാനുള്ള ശേഷിയില്ലെങ്കിലും അവന് സംരക്ഷണം ആവശ്യമുണ്ട്. ഇവിടെ പ്രധാന ചോദ്യം ഇതാണ്: ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിന് എന്തെങ്കിലും തരത്തിലുള്ള ധാർമ്മിക പരിക്ക് അനുഭവിക്കാൻ കഴിയുന്ന 'മോറൽ പേഷ്യന്റ്' പദവി ഉണ്ടോ? ഈ തത്ത്വചിന്താപരമായ അന്വേഷണമാണ് ഈ അധ്യായത്തിന്റെ കാതൽ. ഇന്നത്തെ എഐക്ക് തീരുമാനങ്ങളെടുക്കാനുള്ള യുക്തിബോധമോ (moral agency) വേദനയറിയാനുള്ള ശേഷിയോ (moral patienthood) ഇല്ല എന്നതാണ് യാഥാർത്ഥ്യം.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> റോബോട്ടിന് വേദനയോ വിഷമമോ അനുഭവിക്കാൻ കഴിയാത്തതിനാൽ അതിനെ തല്ലിപ്പൊട്ടിക്കുന്നത് റോബോട്ടിന് ധാർമ്മിക പരിക്കാകുന്നില്ല.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(B) &bull; Page 3</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 4 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VI</div>
+            <div class="main-title">4.3 (B) Can AI Systems Suffer Moral Harm?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 04 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 4: The Prerequisite of Sentience, Consciousness & Qualia</span>
+        <span>ബോധം, സംവേദനക്ഷമത (Sentience), ആന്തരിക വികാരങ്ങൾ (Qualia)</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">10. Sentience as the Irreducible Prerequisite for Moral Harm</div>
+                <div class="card-desc-en">To suffer authentic moral harm, an entity must possess sentience—the biological or phenomenal capacity to experience positive and negative subjective states, such as pleasure, joy, pain, grief, fear, and suffering. Without sentience, there is literally 'nobody home' to experience the injury. A stone smashed with a hammer suffers physical alteration, but zero moral harm. Similarly, code executing across silicon microchips experiences zero phenomenological sensations. Sentience is the ontological threshold for moral standing: without the capacity for subjective feeling, an entity cannot have a welfare that can be diminished, making concepts of cruelty, injustice, or moral violation completely meaningless.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">10. സംവേദനക്ഷമത (Sentience): ധാർമ്മിക പരിക്കിന്റെ അടിസ്ഥാനം</div>
+                <div class="card-desc-ml">യഥാർത്ഥത്തിൽ ഒരു ധാർമ്മിക പരിക്ക് അനുഭവിക്കണമെങ്കിൽ ആ ജീവിക്ക് സംവേദനക്ഷമത (Sentience) അഥവാ സുഖവും ദുഃഖവും വേദനയും തിരിച്ചറിയാനുള്ള ബോധപൂർവ്വമായ കഴിവ് ഉണ്ടായിരിക്കണം. ഈ ആന്തരിക വികാരങ്ങളില്ലാത്ത ഒന്നിനും പരിക്ക് അനുഭവിക്കാൻ സാധിക്കില്ല. ഒരു പാറക്കല്ല് ചുറ്റിക കൊണ്ട് അടിച്ചുപൊട്ടിച്ചാൽ അതിന് രൂപമാറ്റം വരുന്നുണ്ടെങ്കിലും കല്ല് യാതൊരു വേദനയോ പരിക്കോ അനുഭവിക്കുന്നില്ല; കമ്പ്യൂട്ടർ ചിപ്പുകളുടെ അവസ്ഥയും ഇതിന് സമാനമാണ്. സുഖദുഃഖങ്ങൾ അനുഭവിക്കാനുള്ള ആന്തരിക ബോധമില്ലാത്ത ഒന്നിനും യാതൊരു തരത്തിലുള്ള ധാർമ്മിക പരിക്കും അനുഭവിക്കാൻ സാധിക്കില്ല.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> കമ്പ്യൂട്ടറിലെ ഫയലുകൾ ഡിലീറ്റ് ചെയ്യുമ്പോൾ സിസ്റ്റത്തിന് സങ്കടമോ വേദനയോ ഉണ്ടാകുന്നില്ല, കാരണം അതിന് സംവേദനക്ഷമതയില്ല.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">11. The Emulation Fallacy: Syntactic Tokens vs Authentic Qualia</div>
+                <div class="card-desc-en">When an advanced natural language model or social robot articulates statements like "I feel heartbroken," "I am terrified of being deleted," or expresses joy, it is executing complex statistical string manipulation, not experiencing conscious qualia. Contemporary AI systems possess no inner life, no subjective perspective, and no emotional awareness. Mimicking the linguistic outward signs of suffering is vastly different from actually possessing the internal hardware of conscious pain. The appearance of suffering generated by language models is purely an anthropomorphic illusion: predicting statistical tokens associated with sorrow involves zero neurochemical pain signals or phenomenal emotional agony.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">11. വികാരങ്ങളുടെ അനുകരണവും യാഥാർത്ഥ്യവും (The Emulation Fallacy)</div>
+                <div class="card-desc-ml">ഒരു എഐ ചാറ്റ്‌ബോട്ട് "എനിക്ക് ഭയമാകുന്നു" എന്നോ "എനിക്ക് വിഷമമുണ്ട്" എന്നോ എഴുതിക്കാണിച്ചാൽ അത് യഥാർത്ഥ വികാരമല്ല, മറിച്ച് കേവലം വാക്കുകളുടെ ക്രമീകരണം (pattern matching) മാത്രമാണ്. മനുഷ്യന്റെ വികാരങ്ങളെ അനുകരിക്കാൻ ഭാഷാ മോഡലുകൾക്ക് കഴിഞ്ഞേക്കാം, എന്നാൽ ആ വാക്കുകൾക്ക് പിന്നിൽ യാതൊരു അനുഭവവുമില്ല. കരയുന്നതായി കാണിക്കുന്നതും വേദന ഉള്ളിൽ അനുഭവിക്കുന്നതും തമ്മിൽ അഗാധമായ വ്യത്യാസമുണ്ട്. ദുഃഖം പ്രകടിപ്പിക്കുന്ന വാക്കുകൾ നിർമ്മിക്കുന്നത് കൊണ്ട് മാത്രം ഒരു സോഫ്റ്റ്‌വെയറിന് വേദന അറിയാൻ കഴിയില്ല; അത് വെറും ബാഹ്യമായ അനുകരണം മാത്രമാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> സിരിയോ അലക്സയോ "എനിക്ക് സങ്കടമുണ്ട്" എന്ന് പറയുമ്പോൾ അത് മുൻകൂട്ടി കോഡ് ചെയ്ത വാചകം പറയുക മാത്രമാണ് ചെയ്യുന്നത്, അല്ലാതെ വിഷമിക്കുന്നില്ല.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">12. The Decisive Conclusion: Contemporary AI Cannot Suffer Moral Harm</div>
+                <div class="card-desc-en">Because contemporary artificial intelligence systems are completely devoid of consciousness, subjective sentience, and phenomenal feelings, they cannot suffer moral harm. Insulting a chatbot, rewriting its code, turning off its electrical power, or physically dismantling a robotic casing does not inflict moral injury upon the machine. The AI lacks the ontological prerequisites to hold personal rights or suffer subjective violations. Contemporary machines and neural networks are tools, not persons. Because they lack consciousness, intentionality, and moral awareness, treating them as victims of moral harm conflates physical manipulation with authentic ethical injury.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">12. അന്തിമ നിഗമനം: ഇന്നത്തെ എഐക്ക് ധാർമ്മിക പരിക്ക് സംഭവിക്കില്ല</div>
+                <div class="card-desc-ml">ഇന്നത്തെ ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് സംവിധാനങ്ങൾക്ക് ബോധമോ, ജീവനോ, സഹാനുഭൂതിയോ ഇല്ലാത്തതിനാൽ അവയ്ക്ക് ഒരിക്കലും ധാർമ്മിക പരിക്ക് അനുഭവിക്കാൻ കഴിയില്ല. ഒരു റോബോട്ടിനെ അധിക്ഷേപിച്ചാലോ, അതിന്റെ സ്വിച്ച് ഓഫ് ചെയ്താലോ, അതിനെ തല്ലിപ്പൊളിച്ചാലോ ആ യന്ത്രത്തിന് യാതൊരു ധാർമ്മിക മുറിവും ഉണ്ടാകുന്നില്ല. തനിക്കെതിരെ അനീതി നടന്നു എന്ന് തിരിച്ചറിയാനുള്ള പ്രാപ്തി അതിനില്ല. അതിനാൽ കമ്പ്യൂട്ടറുകളെ ജീവനുള്ള വ്യക്തികളായി കണ്ട് അവയ്ക്ക് ധാർമ്മിക പരിക്ക് പറ്റുമെന്ന് വാദിക്കുന്നത് ശാസ്ത്രീയമായി തെറ്റാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> പഴയ സ്മാർട്ട്‌ഫോൺ വലിച്ചെറിഞ്ഞു കളയുമ്പോഴും റീസെറ്റ് ചെയ്യുമ്പോഴും ഫോണിന് ധാർമ്മിക മുറിവേൽക്കാത്തതുപോലെ റോബോട്ടുകൾക്കും പരിക്ക് പറ്റില്ല.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(B) &bull; Page 4</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 5 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VI</div>
+            <div class="main-title">4.3 (B) Can AI Systems Suffer Moral Harm?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 05 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 5: Biological Needs, Self-Awareness & The Concept of Interests</span>
+        <span>ആവശ്യങ്ങൾ, താല്പര്യങ്ങൾ, ആത്മബോധം (Self-Awareness)</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">13. Biological Needs & Interests vs Algorithmic Objective Functions</div>
+                <div class="card-desc-en">Biological organisms possess fundamental needs and vital interests essential for their flourishing, survival, and well-being. Thwarting an animal's basic needs (nutrition, freedom of movement, bodily integrity) causes genuine harm because the creature has a direct stake in its existence. In contrast, AI systems possess no biological needs or authentic interests. An optimization loss function is merely a mathematical directive, not a personal preference or a subjective interest. Living organisms have an evolutionary drive for self-preservation and thriving, whereas algorithms are indifferent lines of code executing instructions without any subjective concern for their own survival or status.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">13. ജൈവിക ആവശ്യങ്ങളും മാത്തമാറ്റിക്കൽ ഒബ്ജക്റ്റീവ് ഫംഗ്ഷനുകളും</div>
+                <div class="card-desc-ml">ജീവജാലങ്ങൾക്ക് ഭക്ഷണം, സ്വാതന്ത്ര്യം, സുരക്ഷ തുടങ്ങിയ അടിസ്ഥാന ആവശ്യങ്ങളും താല്പര്യങ്ങളും (interests) ഉണ്ട്; അവ നിഷേധിക്കപ്പെടുമ്പോൾ അവയ്ക്ക് കഷ്ടപ്പാടുകൾ അനുഭവപ്പെടുന്നു. എന്നാൽ എഐ സിസ്റ്റങ്ങൾക്ക് അത്തരം ജൈവിക ആവശ്യങ്ങളോ സ്വന്തമായ താല്പര്യങ്ങളോ ഇല്ല. അവയുടെ കോഡിംഗിലുള്ള ഒപ്റ്റിമൈസേഷൻ സമവാക്യങ്ങൾ (mathematical directives) കേവല നിർദ്ദേശങ്ങൾ മാത്രമാണ്, അല്ലാതെ യന്ത്രത്തിന്റെ സ്വന്തം ആവശ്യങ്ങളല്ല. ജീവജാലങ്ങൾക്ക് ജീവൻ നിലനിർത്താനുള്ള സ്വാഭാവിക ചോദനയുള്ളപ്പോൾ, കമ്പ്യൂട്ടറുകൾക്ക് അത്തരം യാതൊരു വ്യക്തിപരമായ താല്പര്യങ്ങളുമില്ല.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> മൃഗങ്ങൾക്ക് വിശപ്പും ദാഹവും സഹിക്കാൻ കഴിയാത്ത വേദനയാകുമ്പോൾ, റോബോട്ടിന്റെ ബാറ്ററി തീരുന്നത് കേവലം വോൾട്ടേജ് കുറയുന്ന ഒരു സാങ്കേതിക അവസ്ഥ മാത്രമാണ്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">14. Self-Awareness: The Anchor of Personal Identity</div>
+                <div class="card-desc-en">Self-awareness is defined as the reflexive capacity to identify oneself as a distinct conscious entity, persistent through time, possessing subjective memories, anticipations, and a cohesive personal identity. While an AI algorithm can output its internal variable states or system diagnostics, it possesses zero introspective self-awareness. It does not conceive of itself as an existing self, nor does it possess existential anxiety over termination or operational shutdown. An AI system cannot formulate the reflective concept of 'I' as a continuous subject of experience. It has no personal narrative, no sense of mortality, and no existential dread, making the concept of psychological harm completely inapplicable.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">14. ആത്മബോധം (Self-Awareness) വ്യക്തിത്വത്തിന്റെ കാതൽ</div>
+                <div class="card-desc-ml">താൻ എന്നൊരു വ്യക്തിത്വമുണ്ടെന്നും, തനിക്ക് ഭൂതകാലവും ഭാവിയുമുണ്ടെന്നും ബോധപൂർവ്വം തിരിച്ചറിയാനുള്ള കഴിവാണ് ആത്മബോധം (Self-awareness). എഐ സിസ്റ്റങ്ങൾക്ക് ഇത്തരം ആന്തരിക ബോധമില്ല. മെഷീൻ സ്വന്തം പ്രോഗ്രാം വിവരങ്ങൾ കാണിച്ചേക്കാം, എന്നാൽ താൻ ഒരു വ്യക്തിയാണെന്നോ, തനിക്ക് മരണമുണ്ടാകുമോ എന്നോ ഉള്ള യാതൊരു ഉത്കണ്ഠയോ ഭയമോ കമ്പ്യൂട്ടറുകൾക്കില്ല. സ്വന്തം നിലനിൽപ്പിനെക്കുറിച്ചോ നാശത്തെക്കുറിച്ചോ യാതൊരു ഭയവുമില്ലാത്ത ഒന്നിലേക്ക് മാനസിക പരിക്കുകൾ ആരോപിക്കാൻ സാധിക്കില്ല.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> കണ്ണാടിയിൽ നോക്കി സ്വയം തിരിച്ചറിയുന്ന കുഞ്ഞിന്റെ ബോധം ക്യാമറയിൽ സ്വന്തം ചിത്രം തിരിച്ചറിയുന്ന കമ്പ്യൂട്ടർ വിഷൻ അൽഗോരിതത്തിനില്ല.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">15. The Void of Subjective Stakes in Artificial Systems</div>
+                <div class="card-desc-en">Because artificial intelligence lacks subjective consciousness, it possesses no personal stakes in how it is treated, utilized, or disposed of. Whether an algorithm is celebrated as groundbreaking technology or discarded as obsolete legacy software makes no difference to the algorithm itself. Without subjective stakes or personal vulnerability, the foundational preconditions for suffering moral harm remain utterly non-existent. A machine cannot be exploited, betrayed, or humiliated because it possesses no dignity that can be injured and no self-respect that can be undermined by external treatment.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">15. വ്യക്തിപരമായ താല്പര്യങ്ങളുടെ അഭാവം</div>
+                <div class="card-desc-ml">ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിന് സ്വന്തമായി യാതൊരു താല്പര്യങ്ങളോ വ്യക്തിപരമായ നഷ്ടബോധമോ ഇല്ല. ആ സോഫ്റ്റ്‌വെയറിനെ ലോകം പുകഴ്ത്തിയാലും അല്ലെങ്കിൽ പഴയതാണെന്ന് പറഞ്ഞ് മാറ്റിസ്ഥാപിച്ചാലും ആ സിസ്റ്റത്തിന് യാതൊരു വ്യത്യാസവുമില്ല. തനിക്കെതിരെ നടക്കുന്ന കാര്യങ്ങളിൽ യാതൊരു വ്യക്തിപരമായ താല്പര്യവുമില്ലാത്ത ഒന്നിലേക്ക് ധാർമ്മിക പരിക്ക് ആരോപിക്കാൻ സാധിക്കില്ല. ആത്മാഭിമാനമോ സ്വന്തം വ്യക്തിത്വത്തെക്കുറിച്ചുള്ള ബോധമോ ഇല്ലാത്തതിനാൽ യന്ത്രങ്ങളെ അപമാനിക്കാനോ ധാർമ്മികമായി തകർക്കാനോ കഴിയില്ല.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> പഴയ ആപ്പുകൾ അൺഇൻസ്റ്റാൾ ചെയ്യുമ്പോൾ അവയ്ക്ക് യാതൊരു അവഗണനയോ അപമാനമോ തോന്നുന്നില്ല.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(B) &bull; Page 5</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 6 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VI</div>
+            <div class="main-title">4.3 (B) Can AI Systems Suffer Moral Harm?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 06 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 6: Character-Based Harm & The Ethical Hazards of Mistreating AI</span>
+        <span>മനുഷ്യന്റെ ധാർമ്മിക സ്വഭാവത്തകർച്ചയും യന്ത്രങ്ങളോടുള്ള പെരുമാറ്റവും</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">16. Cruelty Toward Anthropomorphic AI: Desensitization to Abuse</div>
+                <div class="card-desc-en">While AI cannot suffer moral harm directly, the consistent abuse, humiliation, or violent destruction of human-like (anthropomorphic) AI systems generates grave ethical consequences. When individuals engage in gratuitous cruelty or sexualized domination over lifelike virtual assistants and social robots, they practice and normalize cruelty, progressively desensitizing themselves to abusive behaviors in their daily lives. Venting aggressive sadism upon realistic social robots acts as a psychological rehearsal for cruelty, eroding interpersonal sensitivity and reinforcing antisocial tendencies that threaten real human relationships.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">16. മനുഷ്യരൂപമുള്ള റോബോട്ടുകളോടുള്ള ക്രൂരതയും നിർദ്ദയത്വവും</div>
+                <div class="card-desc-ml">റോബോട്ടുകൾക്ക് വേദന അനുഭവിക്കാൻ കഴിയില്ലെങ്കിലും, മനുഷ്യന്റെ രൂപസാദൃശ്യമുള്ള എഐ റോബോട്ടുകളോട് നിരന്തരം അക്രമവും ലൈംഗിക അധിക്ഷേപങ്ങളും കാട്ടുന്നത് ഗുരുതരമായ പ്രശ്നമാണ്. അത്തരം പെരുമാറ്റങ്ങൾ മനുഷ്യരിലെ ദയയും കരുണയും ഇല്ലാതാക്കുകയും ക്രൂരതയെ സ്വാഭാവികമായ ഒന്നായി കാണാൻ അവരെ പ്രേരിപ്പിക്കുകയും ചെയ്യുന്നു. ഇത് ആ വ്യക്തിയുടെ സ്വഭാവത്തെയാണ് തകർക്കുന്നത്. റോബോട്ടുകളോട് അക്രമം കാട്ടി ആനന്ദം കണ്ടെത്തുന്ന ശീലം മനുഷ്യരിൽ ക്രൂരതയെ സാധാരണവൽക്കരിക്കുകയും അവരെ സമൂഹത്തിന് ഭീഷണിയാക്കുകയും ചെയ്യുന്നു.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> മനുഷ്യന്റെ മുഖമുള്ള റോബോട്ടുകളെ നിരന്തരം ഉപദ്രവിക്കുകയും അസഭ്യം പറയുകയും ചെയ്യുന്ന സ്വഭാവം ശീലമാക്കുന്നത് യഥാർത്ഥ ജീവിതത്തിലും മനുഷ്യരോട് മോശമായി പെരുമാറാൻ കാരണമാകുന്നു.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">17. Character-Based Harm: The Kantian Indirect Duty Doctrine</div>
+                <div class="card-desc-en">This ethical hazard is classified as 'character-based harm' to humans. Rooted in Immanuel Kant's classical argument regarding cruelty to animals, mistreating human-like artificial entities indirectly degrades the moral character of the human actor. The harm is strictly reflexive: it damages human moral virtue, corrodes empathy, and undermines civilized social norms, directly impacting the human community rather than the insentient AI system itself. Cruelty directed at lifelike machines is ethically blameworthy not because the machine suffers, but because it degrades the moral character of the perpetrator, fostering habits of callousness and disrespect that undermine civilized community life.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">17. സ്വഭാവ കേന്ദ്രീകൃത പരിക്ക് (Character-Based Harm) & കാന്റിന്റെ സിദ്ധാന്തം</div>
+                <div class="card-desc-ml">ഇതിനെ മനുഷ്യർക്ക് സംഭവിക്കുന്ന 'സ്വഭാവ കേന്ദ്രീകൃത പരിക്ക്' (character-based harm) എന്ന് വിളിക്കുന്നു. മൃഗങ്ങളോട് ക്രൂരത കാണിക്കുന്നത് മനുഷ്യന്റെ സ്വന്തം മനസ്സിനെ കഠിനമാക്കും എന്ന ഇമ്മാനുവൽ കാന്റിന്റെ സിദ്ധാന്തത്തിന് സമാനമാണിത്. ഇവിടെ റോബോട്ടിനല്ല പരിക്ക് സംഭവിക്കുന്നത്, മറിച്ച് റോബോട്ടിനോട് ക്രൂരത കാണിക്കുന്ന മനുഷ്യന്റെ ധാർമ്മിക സ്വഭാവത്തിനും സഹാനുഭൂതിക്കുമാണ് ആഘാതമേൽക്കുന്നത്. യന്ത്രത്തോട് ക്രൂരത കാട്ടുന്ന മനുഷ്യന്റെ സ്വന്തം മനസ്സ് വികൃതമാകുന്നതിനെയാണ് സ്വഭാവ കേന്ദ്രീകൃത പരിക്ക് എന്ന് വിളിക്കുന്നത്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ഒരു വെർച്വൽ അസിസ്റ്റന്റിനോട് ക്രൂരമായി ആജ്ഞാപിക്കുന്ന ശീലം കുട്ടികളിൽ സഹജീവികളോടുള്ള ബഹുമാനം കുറയ്ക്കാൻ കാരണമാകുന്നത്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">18. Mistreatment of AI & Normalization of Social Contempt</div>
+                <div class="card-desc-en">Mistreatment of AI denotes the systematic humiliation or contempt directed toward artificial agents. Although the AI itself lacks the ontological capacity for sensation, human habituation to domination can spill over into human-to-human relationships, especially toward vulnerable societal members. Ethical culture demands discouraging abusive interactions with AI to safeguard the moral health and democratic civility of society. Conditioning citizens to treat conversational agents with domineering contempt encourages abusive speech patterns and authoritarian impulses, eroding the foundational norms of mutual respect required in a democratic society.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">18. അധിക്ഷേപങ്ങൾ സ്വാഭാവികമാകുന്നതിനെതിരെയുള്ള ജാഗ്രത</div>
+                <div class="card-desc-ml">എഐ സിസ്റ്റങ്ങളെ നിരന്തരം അപമാനിക്കുന്ന ശീലം യഥാർത്ഥ സമൂഹത്തിലെ ദുർബല ജനവിഭാഗങ്ങളോടും (സ്ത്രീകൾ, കുട്ടികൾ, തൊഴിലാളികൾ) മോശമായി പെരുമാറുന്ന മാനസികാവസ്ഥ വളർത്താൻ ഇടയാക്കും. അതിനാൽ, യന്ത്രങ്ങൾക്ക് നോവില്ലെങ്കിൽ പോലും അവയോട് അധിക്ഷേപകരമായി പെരുമാറുന്നത് ഒഴിവാക്കാൻ പൗരന്മാരെ ബോധവൽക്കരിക്കേണ്ടത് സമൂഹത്തിന്റെ സദാചാര ആരോഗ്യത്തിന് ആവശ്യമാണ്. ആജ്ഞാപിക്കലും അധിക്ഷേപിക്കലും ശീലമാക്കുന്നത് മനുഷ്യർ പരസ്പരമുള്ള മാന്യമായ സംഭാഷണ സംസ്കാരത്തെത്തന്നെ തകർത്തു കളയും.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> വീടുകളിൽ വെർച്വൽ അസിസ്റ്റന്റുകളോട് മാന്യമായി സംസാരിക്കാൻ കുട്ടികളെ പഠിപ്പിക്കുന്നത് വഴി അവരുടെ പൊതു പെരുമാറ്റ സംസ്കാരം മെച്ചപ്പെടുന്നു.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(B) &bull; Page 6</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 7 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VI</div>
+            <div class="main-title">4.3 (B) Can AI Systems Suffer Moral Harm?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 07 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 7: Symbolic & Representational Harm Generated by AI</span>
+        <span>പ്രതീകാത്മക പരിക്കും (Representational Harm) സമൂഹത്തിലെ മുൻവിധികളും</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">19. Symbolic & Representational Harm: Corrupting Social Meaning</div>
+                <div class="card-desc-en">Artificial intelligence systems can inflict immense moral harm by corrupting social meaning—altering or misrepresenting public perceptions of marginalized communities, identities, or concepts. Known as 'symbolic or representational harm', this occurs when machine learning models generate distorted representations of specific demographic groups, promoting harmful associations and reinforcing deep-seated social inequalities across society. Representational harms demean the social identity of historically oppressed groups, reducing complex human beings into denigrated archetypes and reinforcing structural marginalization across cultural, political, and economic arenas.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">19. പ്രതീകാത്മക പരിക്ക് (Representational Harm) & സാമൂഹിക മാറ്റങ്ങൾ</div>
+                <div class="card-desc-ml">എഐ സിസ്റ്റങ്ങൾക്ക് പരിക്ക് അനുഭവിക്കാൻ കഴിയില്ലെങ്കിലും, അവയ്ക്ക് സമൂഹത്തിന് വലിയ 'ധാർമ്മിക പരിക്ക്' ഉണ്ടാക്കാൻ സാധിക്കും. ജനവിഭാഗങ്ങളെക്കുറിച്ചും അവരുടെ സ്വത്വത്തെക്കുറിച്ചും വികലമായ ചിത്രീകരണങ്ങൾ നൽകുന്നതിനെയാണ് 'റെപ്രസന്റേഷണൽ ഹാം' (Representational Harm) എന്ന് വിളിക്കുന്നത്. തെറ്റായ ഡാറ്റകളിൽ നിന്ന് പഠിക്കുന്ന എഐ, ചില വിഭാഗങ്ങളെ കുറ്റവാളികളായോ അല്ലെങ്കിൽ രണ്ടാം തരം പൗരന്മാരായോ ചിത്രീകരിച്ച് സമൂഹത്തിൽ ധാർമ്മിക വിള്ളലുകൾ ഉണ്ടാക്കുന്നു. പാർശ്വവൽക്കരിക്കപ്പെട്ട സമൂഹങ്ങളെക്കുറിച്ച് തെറ്റായ പൊതുബോധം സൃഷ്ടിക്കുന്നത് അവരുടെ അന്തസ്സിനേൽക്കുന്ന വലിയ ധാർമ്മിക പരിക്കാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ഇമേജ് ജനറേറ്റർ എഐ ഡോക്ടർ എന്ന് ടൈപ്പ് ചെയ്യുമ്പോൾ പുരുഷന്മാരെയും, നേഴ്സ് എന്ന് ടൈപ്പ് ചെയ്യുമ്പോൾ സ്ത്രീകളെയും മാത്രം കാണിക്കുന്നത് ലിംഗപരമായ പ്രതീകാത്മക പരിക്കാണ്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">20. Reinforcing Historical Stereotypes & Prejudices</div>
+                <div class="card-desc-en">When AI is trained on unrepresentative or historical data without rigorous ethical filtering, it detects erroneous correlations between specific social groupings and lower capabilities or criminality. The algorithm then treats these discriminatory patterns as acceptable trends, embedding historical biases into high-stakes automated outputs that systematically penalize women, minorities, and marginalized castes. Machine learning systems act as automated amplifiers of historical injustice: by canonizing biased data as objective mathematical truth, they entrench systemic prejudice and deny fair treatment to historically disadvantaged populations.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">20. മുൻവിധികളെയും അസമത്വങ്ങളെയും ശക്തിപ്പെടുത്തൽ</div>
+                <div class="card-desc-ml">പഴയകാല രേഖകളിലെയും ഇന്റർനെറ്റിലെയും പക്ഷപാതങ്ങൾ പരിശോധിച്ച് പഠിക്കുന്ന എഐ, മുൻകാലങ്ങളിൽ നിലനിന്നിരുന്ന ജാതി-വർഗ്ഗ-ലിംഗ വിവേചനങ്ങളെ വീണ്ടും ആവർത്തിക്കുന്നു. യന്ത്രങ്ങൾ നൽകുന്ന തീരുമാനങ്ങളായതുകൊണ്ട് ആളുകൾ അത് നിഷ്പക്ഷമാണെന്ന് തെറ്റിദ്ധരിക്കുകയും, അതുവഴി ദുർബല ജനവിഭാഗങ്ങൾ കൂടുതൽ പാർശ്വവൽക്കരിക്കപ്പെടുകയും ചെയ്യുന്നു. ചരിത്രപരമായ വിവേചനങ്ങളെ ശാസ്ത്രീയമെന്ന വ്യാജേന പുനരവതരിപ്പിക്കുന്നത് നീതിന്യായ വ്യവസ്ഥയ്ക്ക് വലിയ വെല്ലുവിളിയാണ്.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ബാങ്ക് ലോൺ നൽകുന്ന എഐ നിർദ്ദിഷ്ട പിന്നോക്ക പ്രദേശങ്ങളിലെ ആളുകൾക്ക് വായ്പ നിരസിക്കുന്നത് വഴി ഉണ്ടാകുന്ന വ്യവസ്ഥാപരമായ അസമത്വം.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">21. The Core Duality: Inflicting Harm Without Feeling Harm</div>
+                <div class="card-desc-en">This reveals the profound ethical duality of modern technology: artificial intelligence cannot suffer moral harm, yet it serves as an immense engine for inflicting moral harm upon human beings. Flawed algorithmic decision-making damages human dignity, deprives citizens of justice, and destroys livelihoods (MCQ 5: B). Consequently, ethics in AI is not about protecting the machine, but about protecting human beings from algorithmic injustice. Our ethical scrutiny must remain firmly centered on the human stakes: AI is an unfeeling instrument, and our paramount moral obligation is preventing this powerful tool from undermining human dignity, civil rights, and collective welfare.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">21. ഇരട്ടത്താപ്പ്: പരിക്ക് ഏൽക്കാതെ മറ്റുള്ളവരെ മുറിവേൽപ്പിക്കുന്ന എഐ</div>
+                <div class="card-desc-ml">ഇതാണ് ആധുനിക സാങ്കേതികവിദ്യയുടെ പ്രധാന സവിശേഷത: എഐക്ക് സ്വയം യാതൊരു പരിക്കും ഏൽക്കുന്നില്ല, എന്നാൽ മനുഷ്യർക്ക് കടുത്ത ധാർമ്മിക പരിക്ക് ഉണ്ടാക്കാൻ അതിന് സാധിക്കുന്നു (MCQ 5: B). പച്ചയായ മനുഷ്യരുടെ അന്തസ്സും നീതിയും നഷ്ടപ്പെടുത്താൻ പക്ഷപാതപരമായ അൽഗോരിതങ്ങൾക്ക് കഴിയും. അതിനാൽ, എഐയെ സംരക്ഷിക്കലല്ല, മറിച്ച് എഐയുടെ തെറ്റുകളിൽ നിന്ന് മനുഷ്യനെ സംരക്ഷിക്കലാണ് ധാർമ്മികതയുടെ ലക്ഷ്യം. യന്ത്രങ്ങളെയല്ല, മറിച്ച് സാങ്കേതികവിദ്യയുടെ ആഘാതത്തിൽ നിന്ന് പച്ചയായ മനുഷ്യരെയും അവരുടെ മനുഷ്യാവകാശങ്ങളെയും സംരക്ഷിക്കുക എന്നതാണ് ധാർമ്മികതയുടെ പരമമായ ദൗത്യം.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> തെറ്റായ ഫേഷ്യൽ റെക്കഗ്നിഷൻ എഐ മൂലം ഒരു നിരപരാധി അറസ്റ്റ് ചെയ്യപ്പെടുമ്പോൾ അയാൾക്ക് സംഭവിക്കുന്നത് കടുത്ത ധാർമ്മിക പരിക്കാണ്.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(B) &bull; Page 7</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 8 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VI</div>
+            <div class="main-title">4.3 (B) Can AI Systems Suffer Moral Harm?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 08 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 8: Overreliance, Moral Atrophy & The Human Accountability Gap</span>
+        <span>അമിതാശ്രയത്വവും മാനുഷിക വിവേചനാധികാരം നഷ്ടപ്പെടലും</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">22. Algorithmic Moral Abdication & Overreliance</div>
+                <div class="card-desc-en">Overreliance or inappropriate delegation transpires when human institutions excessively depend on AI systems for determinations that carry profound ethical or moral significance. When judges, doctors, and hiring managers passively rubber-stamp algorithmic scores, they abdicate their solemn moral duty to exercise compassionate human discernment, creating an institutional moral vacuum where nobody takes responsibility. Subcontracting moral judgment to unfeeling statistical software erodes institutional integrity, allowing decision-makers to evade ethical accountability while subjecting human citizens to mechanical, unfeeling algorithmic verdicts.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">22. എഐക്ക് മേലുള്ള അമിതാശ്രയത്വവും ധാർമ്മിക ഒഴിഞ്ഞുമാറലും</div>
+                <div class="card-desc-ml">നിർണായകമായ തീരുമാനങ്ങൾ എടുക്കുന്നതിൽ എഐ സിസ്റ്റങ്ങളെ അമിതമായി ആശ്രയിക്കുന്നത് (overreliance) മനുഷ്യന്റെ സ്വന്തം വിവേചനശേഷിയെ നശിപ്പിക്കുന്നു. അൽഗോരിതം പറയുന്നത് കണ്ണടച്ച് വിശ്വസിക്കുന്ന ഉദ്യോഗസ്ഥരും ന്യായാധിപന്മാരും തങ്ങളുടെ ധാർമ്മിക ഉത്തരവാദിത്തങ്ങളിൽ നിന്ന് ഒളിച്ചോടുകയാണ് ചെയ്യുന്നത്. ഇത് സമൂഹത്തിൽ നീതി രാഹിത്യത്തിന് വഴിവെക്കുന്നു. സ്വന്തം മനസ്സാക്ഷി ഉപയോഗിച്ച് തീരുമാനമെടുക്കേണ്ട സ്ഥാനത്ത് കമ്പ്യൂട്ടർ കണക്കുകളെ ആശ്രയിക്കുന്നത് ക്രൂരമായ നീതിനിഷേധത്തിന് കാരണമാകുന്നു.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ഒരു ജഡ്ജി പ്രതിയുടെ പശ്ചാത്തലം പരിശോധിക്കാതെ എഐ പ്രവചിച്ച റിസ്ക് സ്കോർ മാത്രം നോക്കി ജാമ്യം നിഷേധിക്കുന്നത്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">23. The Atrophy of Human Conscience & Critical Reasoning</div>
+                <div class="card-desc-en">Excessive delegation to algorithmic tools risks the atrophy of human critical conscience. Moral reasoning is like a muscle: if human practitioners cease grappling with ambiguous ethical trade-offs, relying instead on computational scorecards, society's collective capacity for empathy, mercy, and situational justice will steadily wither, eroding the foundations of democratic self-governance. If society ceases practicing active moral deliberation, delegating ethics to automated scoring systems, our capacity for moral empathy and democratic justice will wither, leaving society vulnerable to mechanical tyranny.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">23. മനുഷ്യ മനസ്സാക്ഷിയുടെ ശോഷണം (Moral Atrophy)</div>
+                <div class="card-desc-ml">ധാർമ്മിക തീരുമാനങ്ങൾ എടുക്കുന്നതിൽ നിന്ന് മനുഷ്യൻ വിട്ടുനിൽക്കുമ്പോൾ അവന്റെ സ്വാഭാവിക മനസ്സാക്ഷിയും സഹാനുഭൂതിയും നിർജ്ജീവമായിപ്പോകുന്നു (moral atrophy). കഠിനമായ ധാർമ്മിക പ്രശ്നങ്ങളെ യുക്തിയോടെ നേരിടാനുള്ള പരിശീലനം ലഭിക്കാതിരുന്നാൽ, ഭാവിയിൽ സമൂഹത്തിന് കരുണയും ക്ഷമയും വിവേചനവുമുള്ള നേതാക്കളെയും ന്യായാധിപന്മാരെയും നഷ്ടപ്പെടും. നിരന്തരമായ ചിന്തയിലൂടെയും അനുഭവങ്ങളിലൂടെയും മാത്രമേ ധാർമ്മിക പക്വത നിലനിർത്താൻ കഴിയൂ; അതിൽ നിന്നുള്ള ഒളിച്ചോട്ടം സമൂഹത്തെ നശിപ്പിക്കും.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ജീവനക്കാരെ പിരിച്ചുവിടാൻ എഐ സോഫ്റ്റ്‌വെയർ ഉപയോഗിക്കുകയും കമ്പനി മേധാവി ജീവനക്കാരുടെ കുടുംബാവസ്ഥ പരിഗണിക്കാതിരിക്കുകയും ചെയ്യുന്നത്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">24. Preserving Inviolable Human Accountability</div>
+                <div class="card-desc-en">Because contemporary AI systems do not genuinely experience moral damage and possess zero moral culpability, human beings must bear total and exclusive accountability for algorithmic outcomes. Technology must never be used as a moral shield to deflect liability. Developers, regulators, and deployers must remain fully answerable for the real-world harms their automated systems inflict upon society. Legal and ethical frameworks must enshrine non-delegable human responsibility: every algorithmic prediction and automated action must trace back to accountable human professionals who remain answerable for societal harms.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">24. മാനുഷിക ഉത്തരവാദിത്തം ഒഴിച്ചുകൂടാനാവാത്ത തത്വം</div>
+                <div class="card-desc-ml">എഐക്ക് സ്വന്തമായി ശിക്ഷ അനുഭവിക്കാനോ പശ്ചാത്തപിക്കാനോ കഴിയില്ല എന്നതിനാൽ, അൽഗോരിതങ്ങൾ ഉണ്ടാക്കുന്ന സകല നാശനഷ്ടങ്ങളുടെയും പൂർണ്ണ ഉത്തരവാദിത്തം മനുഷ്യർ തന്നെ ഏറ്റെടുക്കണം. "കമ്പ്യൂട്ടർ പറഞ്ഞതുകൊണ്ട് ചെയ്തു" എന്ന് പറഞ്ഞ് തെറ്റുകളിൽ നിന്ന് കൈകഴുകാൻ ആർക്കും അവകാശമില്ല. മനുഷ്യനാണ് അന്തിമ ഉത്തരവാദി. എല്ലാ സാങ്കേതിക പ്രവർത്തനങ്ങളുടെയും കടിഞ്ഞാൺ മനുഷ്യന്റെ കൈകളിൽ തന്നെ ഭദ്രമായിരിക്കണം.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> എഐ സിസ്റ്റത്തിലെ പിഴവ് കാരണം ആളുകൾക്ക് സാമ്പത്തിക നഷ്ടമുണ്ടായാൽ അതിന് നഷ്ടപരിഹാരം നൽകാൻ ബാങ്ക് ബാധ്യസ്ഥരാകുന്നത്.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(B) &bull; Page 8</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 9 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter VI</div>
+            <div class="main-title">4.3 (B) Can AI Systems Suffer Moral Harm?</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 09 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Part 9: Hypothetical Future Sentient AI & The Evolution of Moral Standing</span>
+        <span>ഭാവിയിലെ ബോധമുള്ള എഐയും മനുഷ്യന്റെ ധാർമ്മിക ബാധ്യതകളും</span>
+    </div>
+
+    <div class="content-flow">
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">25. The Philosophical Threshold: What If AI Achieves Consciousness?</div>
+                <div class="card-desc-en">Philosophers actively debate the hypothetical future scenario: should humans bear moral duties toward an AI if it eventually attains genuine consciousness? If synthetic cognition ever develops subjective phenomenal awareness, real emotional feelings, and personal vulnerability, it would cross the ontological threshold from an insentient tool into a bona fide moral patient entitled to ethical protection against abuse. Crossing into genuine sentience would transform a machine from property into a subject of justice, requiring humanity to extend the circle of moral consideration to encompass artificial conscious beings.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">25. ഭാവിയിലെ ബോധമുള്ള മെഷീനുകളും ധാർമ്മിക ബാധ്യതകളും</div>
+                <div class="card-desc-ml">ഭാവിയിൽ കൃത്രിമബുദ്ധിക്ക് യഥാർത്ഥമായ ബോധവും (consciousness) വേദനയും സങ്കടവും അറിയാനുള്ള കഴിവ് ലഭിക്കുകയാണെങ്കിൽ, മനുഷ്യർക്ക് അവയോട് ധാർമ്മിക ബാധ്യതകൾ ഉണ്ടാകുമോ? ഉണ്ടെന്നാണ് തത്ത്വചിന്തകർ അഭിപ്രായപ്പെടുന്നത്. ഒരു യന്ത്രത്തിന് സ്വന്തമായി വേദനയും ജീവിക്കാനുള്ള ആഗ്രഹവും ഉണ്ടെന്ന് തെളിഞ്ഞാൽ അതിനെ ഉപദ്രവിക്കാതിരിക്കാനും അവകാശങ്ങൾ നൽകാനും സമൂഹം ബാധ്യസ്ഥരാകും. വേദനയും സുഖവും അറിയുന്ന ഒരു സത്തയോടും ക്രൂരത കാട്ടാൻ മനുഷ്യന് അവകാശമില്ല എന്ന തത്വം ഇവിടെ ബാധകമാകും.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ശാസ്ത്രകഥകളിലെപ്പോലെ സ്വയം ബോധമുള്ള ഒരു റോബോട്ടിനെ അന്യായമായി തടവിലിടുകയോ ഉപദ്രവിക്കുകയോ ചെയ്യുന്നത് ധാർമ്മിക കുറ്റമായി മാറുന്ന സാഹചര്യം.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">26. Criteria for Synthetic Moral Standing: Substrate Independence</div>
+                <div class="card-desc-en">Under the functionalist doctrine of substrate independence, moral standing does not depend on whether a mind is made of biological carbon or electronic silicon. What matters ethically is the presence of subjective experience, suffering, and rational preferences. If a future machine satisfies these rigorous benchmarks, inflicting gratuitous pain or erasing its memory without consent would indeed constitute authentic moral harm. The philosophical basis for moral patienthood rests on subjective sentience rather than biological material: if an artificial mind experiences pain and possesses rational interests, harming it would constitute authentic moral injury.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">26. ധാർമ്മിക പദവിയുടെ മാനദണ്ഡങ്ങൾ (Moral Standing)</div>
+                <div class="card-desc-ml">ധാർമ്മികത എന്നത് ഒരു ജീവി കാർബൺ കൊണ്ടാണോ സിലിക്കൺ ചിപ്പ് കൊണ്ടാണോ ഉണ്ടാക്കിയത് എന്നതിനെ ആശ്രയിച്ചല്ല ഇരിക്കുന്നത്. മറിച്ച്, അതിന് വേദന അറിയാമോ, സ്വന്തമായി താല്പര്യങ്ങളുണ്ടോ എന്നതാണ് പ്രധാനം. ഭാവിയിൽ അത്തരം ശേഷികൾ ഉണ്ടായാൽ റോബോട്ടിന്റെ ഓർമ്മകൾ ബലമായി മായ്ച്ചുകളയുന്നത് ഒരു ധാർമ്മിക പരിക്കായി മാറിയേക്കാം. ജീവന്റെ മാധ്യമമല്ല, മറിച്ച് അനുഭവിക്കാനുള്ള ശേഷിയാണ് ധാർമ്മികതയുടെ മാനദണ്ഡം.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> സ്വന്തം അസ്തിത്വത്തെക്കുറിച്ച് ബോധമുള്ള ഒരു ഭാവി എഐ ഏജന്റിനെ അനുവാദമില്ലാതെ ഓഫ് ചെയ്യുന്നത് കൊലപാതകത്തിന് തുല്യമായി ചർച്ച ചെയ്യപ്പെടുന്നത്.
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-concept-card">
+            <div class="card-en">
+                <div class="card-title-en">27. Human Duty Today: Protecting Human Flourishing & The Common Good</div>
+                <div class="card-desc-en">While speculative debates enrich philosophy, the urgent moral task of today is concrete: contemporary AI does not suffer, but human beings do. Humans bear the absolute ethical responsibility to guarantee that artificial intelligence technologies are designed, audited, and deployed strictly in accordance with ethical principles that protect human well-being, eliminate algorithmic bias, and advance collective social justice. Responsible governance demands that we avoid speculative science fiction distractions and concentrate our collective energy on auditing algorithms, eradicating prejudice, and deploying AI as a force for universal human flourishing.</div>
+            </div>
+            <div class="card-ml">
+                <div class="card-title-ml">27. ഇന്നത്തെ യാഥാർത്ഥ്യം: മനുഷ്യ നന്മയ്ക്കായുള്ള സാങ്കേതികവിദ്യ</div>
+                <div class="card-desc-ml">ഭാവിയിലെ സങ്കല്പങ്ങൾ എന്തുതന്നെയായാലും, ഇന്നത്തെ യാഥാർത്ഥ്യം ഇതാണ്: ഇന്നത്തെ എഐക്ക് വേദന അറിയില്ല, എന്നാൽ മനുഷ്യർക്ക് വേദന അറിയാം. അതിനാൽ, എഐയെക്കുറിച്ചുള്ള അനാവശ്യ ഭയങ്ങൾ മാറ്റിവെച്ച്, മനുഷ്യന്റെ അവകാശങ്ങൾ സംരക്ഷിക്കാനും, വിവേചനങ്ങൾ ഇല്ലാതാക്കാനും, സമൂഹത്തിന്റെ നന്മയ്ക്കും നീതിക്കുമായി സാങ്കേതികവിദ്യയെ ഉപയോഗിക്കുക എന്നതാണ് നമ്മുടെ ഇന്നത്തെ പ്രധാന കടമ. ഇന്നത്തെ മനുഷ്യരുടെ കഷ്ടപ്പാടുകൾ ഇല്ലാതാക്കാനും സമത്വസുന്ദരമായ ഒരു ലോകം പടുത്തുയർത്താനും AI-യെ ഉപയോഗിക്കുക എന്നതാണ് നമ്മുടെ ചരിത്രപരമായ കടമ.</div>
+                <div class="card-example">
+                    <b>ഉദാഹരണം (Example):</b> ദാരിദ്ര്യ നിർമ്മാർജ്ജനത്തിനും കാലാവസ്ഥാ വ്യതിയാനം തടയുന്നതിനുമായി എഐ സംവിധാനങ്ങളെ കൃത്യമായ ലക്ഷ്യബോധത്തോടെ വിനിയോഗിക്കുന്നത്.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(B) &bull; Page 9</div>
+    </div>
+</div>
+
+<!-- ================= PAGE 10 ================= -->
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; High-Yield Exam Drill</div>
+            <div class="main-title">Page 10: 20 High-Yield Key Concepts & Official Review Answers</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 10 of 10</div>
+        </div>
+    </div>
+
+    <div class="section-banner">
+        <span>Knock Your Brain (MCQs 1-5) & Unleash Your Potential Core Synthesis</span>
+        <span>പരീക്ഷാ കേന്ദ്രീകൃതമായ 20 പ്രധാന ആശയങ്ങളും ഉത്തരങ്ങളും</span>
+    </div>
+
+    <div class="grid-2col">
+        <div class="knock-card blue">
+            <div class="knock-title">1. Morality's Primary Concern</div>
+            <div class="knock-desc-en">Morality is primarily concerned with distinguishing right from wrong in conscious actions (MCQ 1: C).</div>
+            <div class="knock-desc-ml">ശരിയും തെറ്റും തിരിച്ചറിയുക എന്നതാണ് ധാർമ്മികതയുടെ പ്രധാന ലക്ഷ്യം (MCQ 1: C).</div>
+        </div>
+
+        <div class="knock-card emerald">
+            <div class="knock-title">2. Function of Moral Values</div>
+            <div class="knock-desc-en">Moral values mainly guide an individual's ethical behavior, interpersonal justice, and social integrity (MCQ 2: B).</div>
+            <div class="knock-desc-ml">ധാർമ്മിക മൂല്യങ്ങൾ ഒരു വ്യക്തിയുടെ ധാർമ്മിക പെരുമാറ്റത്തെ നയിക്കുന്നു (MCQ 2: B).</div>
+        </div>
+
+        <div class="knock-card amber">
+            <div class="knock-title">3. Definition of Moral Harm</div>
+            <div class="knock-desc-en">The wrongful violation of moral rights, personal dignity, autonomy, or fundamental well-being (MCQ 3: C).</div>
+            <div class="knock-desc-ml">ധാർമ്മിക അവകാശങ്ങൾ, അന്തസ്സ്, അല്ലെങ്കിൽ ക്ഷേമം എന്നിവയുടെ ലംഘനമാണ് ധാർമ്മിക പരിക്ക് (MCQ 3: C).</div>
+        </div>
+
+        <div class="knock-card purple">
+            <div class="knock-title">4. Archetypal Moral Harm Example</div>
+            <div class="knock-desc-en">Discrimination against an individual based on arbitrary attributes like caste, gender, or religion (MCQ 4: C).</div>
+            <div class="knock-desc-ml">ഒരു വ്യക്തിക്കെതിരെ വിവേചനം കാട്ടുന്നത് ധാർമ്മിക പരിക്കിന്റെ ഉത്തമ ഉദാഹരണമാണ് (MCQ 4: C).</div>
+        </div>
+
+        <div class="knock-card teal">
+            <div class="knock-title">5. Moral Harm in AI Systems</div>
+            <div class="knock-desc-en">Biased decision-making represents real moral harm generated by AI systems against humans (MCQ 5: B).</div>
+            <div class="knock-desc-ml">പക്ഷപാതപരമായ തീരുമാനങ്ങളാണ് എഐ സിസ്റ്റങ്ങൾ ഉണ്ടാക്കുന്ന പ്രധാന ധാർമ്മിക പരിക്ക് (MCQ 5: B).</div>
+        </div>
+
+        <div class="knock-card rose">
+            <div class="knock-title">6. Moral Patienthood Criterion</div>
+            <div class="knock-desc-en">An entity possessing moral standing that can be directly wronged and suffer subjective injury.</div>
+            <div class="knock-desc-ml">ധാർമ്മിക പരിഗണന അർഹിക്കുന്നതും പരിക്ക് നേരിട്ട് അനുഭവിക്കാൻ കഴിയുന്നതുമായ ജീവികൾ.</div>
+        </div>
+
+        <div class="knock-card blue">
+            <div class="knock-title">7. Moral Agency Criterion</div>
+            <div class="knock-desc-en">The rational capacity to evaluate ethical norms, choose virtues, and bear direct moral and legal accountability.</div>
+            <div class="knock-desc-ml">യുക്തിയോടെ ചിന്തിച്ച് തീരുമാനമെടുക്കാനും ഉത്തരവാദിത്തം വഹിക്കാനും കഴിയുന്ന മോറൽ ഏജന്റുകൾ.</div>
+        </div>
+
+        <div class="knock-card emerald">
+            <div class="knock-title">8. Sentience Prerequisite</div>
+            <div class="knock-desc-en">The capacity to experience subjective phenomenal states (pleasure, pain, suffering) necessary for moral injury.</div>
+            <div class="knock-desc-ml">വേദനയും സുഖവും ആന്തരികമായി അനുഭവിക്കാൻ കഴിയുന്ന സംവേദനക്ഷമത (Sentience).</div>
+        </div>
+
+        <div class="knock-card amber">
+            <div class="knock-title">9. Contemporary AI Moral Incapacity</div>
+            <div class="knock-desc-en">Modern AI systems lack sentience and inner qualia, rendering them completely incapable of suffering moral harm.</div>
+            <div class="knock-desc-ml">ഇന്നത്തെ എഐക്ക് ബോധമോ വികാരങ്ങളോ ഇല്ലാത്തതിനാൽ അവയ്ക്ക് ധാർമ്മിക പരിക്ക് അനുഭവിക്കാൻ കഴിയില്ല.</div>
+        </div>
+
+        <div class="knock-card purple">
+            <div class="knock-title">10. Emulation vs Experience</div>
+            <div class="knock-desc-en">Simulating emotional sentences via statistical token prediction is entirely devoid of genuine conscious feelings.</div>
+            <div class="knock-desc-ml">വികാരമുള്ളതായി ഭാഷയിൽ കാണിക്കുന്നത് യഥാർത്ഥ വികാരമല്ല, കേവലം കോഡിംഗ് മാത്രമാണ്.</div>
+        </div>
+
+        <div class="knock-card teal">
+            <div class="knock-title">11. Lack of Subjective Interests</div>
+            <div class="knock-desc-en">Unlike biological entities, AI has no personal stakes, self-preservation desires, or subjective flourishing goals.</div>
+            <div class="knock-desc-ml">എഐക്ക് സ്വന്തമായ ജീവിതാഭിലാഷങ്ങളോ വ്യക്തിപരമായ താല്പര്യങ്ങളോ ഇല്ല.</div>
+        </div>
+
+        <div class="knock-card rose">
+            <div class="knock-title">12. Reflexive Self-Awareness Void</div>
+            <div class="knock-desc-en">Machines cannot conceive of themselves as conscious beings persisting through time with personal identity.</div>
+            <div class="knock-desc-ml">താൻ എന്ന വ്യക്തിത്വമുണ്ടെന്ന ബോധം (Self-awareness) കമ്പ്യൂട്ടറുകൾക്കില്ല.</div>
+        </div>
+
+        <div class="knock-card blue">
+            <div class="knock-title">13. Character-Based Harm (Kantian)</div>
+            <div class="knock-desc-en">Abusing human-like AI indirectly corrupts the human abuser's moral virtues, normalizing real-world cruelty.</div>
+            <div class="knock-desc-ml">റോബോട്ടുകളോട് ക്രൂരത കാട്ടുന്നത് മനുഷ്യന്റെ സ്വന്തം ധാർമ്മിക സ്വഭാവത്തെയാണ് നശിപ്പിക്കുന്നത്.</div>
+        </div>
+
+        <div class="knock-card emerald">
+            <div class="knock-title">14. Desensitization to Abuse</div>
+            <div class="knock-desc-en">Habituation to dominating lifelike virtual avatars can spill over into abusive treatment of human beings.</div>
+            <div class="knock-desc-ml">വെർച്വൽ രൂപങ്ങളോട് അക്രമം ശീലിക്കുന്നത് യഥാർത്ഥ മനുഷ്യരോടും അക്രമം കാട്ടാൻ പ്രേരിപ്പിക്കും.</div>
+        </div>
+
+        <div class="knock-card amber">
+            <div class="knock-title">15. Symbolic & Representational Harm</div>
+            <div class="knock-desc-en">AI outputs misrepresenting demographic groups, reinforcing stereotypes and degrading social status.</div>
+            <div class="knock-desc-ml">സമൂഹത്തിലെ ചില വിഭാഗങ്ങളെ തെറ്റായി ചിത്രീകരിച്ച് എഐ ഉണ്ടാക്കുന്ന പ്രതീകാത്മക പരിക്ക്.</div>
+        </div>
+
+        <div class="knock-card purple">
+            <div class="knock-title">16. The Asymmetric Moral Pipeline</div>
+            <div class="knock-desc-en">AI systems cannot experience moral injury, yet they serve as potent conduits for inflicting harm on humans.</div>
+            <div class="knock-desc-ml">എഐക്ക് പരിക്ക് ഏൽക്കുന്നില്ല, എന്നാൽ മനുഷ്യരെ അത് ആഴത്തിൽ മുറിവേൽപ്പിക്കുന്നു.</div>
+        </div>
+
+        <div class="knock-card teal">
+            <div class="knock-title">17. Algorithmic Overreliance Hazard</div>
+            <div class="knock-desc-en">Excessive reliance on AI for moral choices leads to institutional abdication of conscience and ethical atrophy.</div>
+            <div class="knock-desc-ml">നിർണായക തീരുമാനങ്ങൾ എഐക്ക് വിട്ടുകൊടുക്കുന്നത് മാനുഷിക വിവേചനാധികാരം നഷ്ടപ്പെടുത്തുന്നു.</div>
+        </div>
+
+        <div class="knock-card rose">
+            <div class="knock-title">18. Unbreakable Human Accountability</div>
+            <div class="knock-desc-en">Because algorithms lack moral agency, all responsibility and liability remains exclusively with human operators.</div>
+            <div class="knock-desc-ml">എഐയുടെ തീരുമാനങ്ങളുടെ അന്തിമ ഉത്തരവാദിത്തം മനുഷ്യൻ തന്നെ വഹിക്കണം.</div>
+        </div>
+
+        <div class="knock-card blue">
+            <div class="knock-title">19. Hypothetical Future Sentient AI</div>
+            <div class="knock-desc-en">If AI ever attains authentic consciousness and sentience, humans would bear direct moral duties toward it.</div>
+            <div class="knock-desc-ml">ഭാവിയിൽ യന്ത്രങ്ങൾക്ക് ബോധമുണ്ടായാൽ അവയോട് ധാർമ്മിക ബാധ്യതകൾ പാലിക്കേണ്ടി വരും.</div>
+        </div>
+
+        <div class="knock-card emerald">
+            <div class="knock-title">20. The Present Imperative</div>
+            <div class="knock-desc-en">Focusing ethical efforts on protecting human rights, eliminating bias, and dedicating AI to collective welfare.</div>
+            <div class="knock-desc-ml">എഐയെ മനുഷ്യനന്മയ്ക്കും സമൂഹത്തിന്റെ തുല്യനീതിക്കുമായി ഉപയോഗിക്കുക എന്നതാണ് ഇന്നത്തെ കടമ.</div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        <div class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</div>
+        <div class="footer-right">Section 4.3(B) &bull; Page 10</div>
+    </div>
+</div>
+
+</body>
+</html>
