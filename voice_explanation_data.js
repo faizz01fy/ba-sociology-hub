@@ -2350,18 +2350,22 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Calicut University Core: 'Explain why two indifference curves cannot intersect by utilizing the axioms of transitivity and non-satiation'."
           },
           {
-            "chapterNumber": "Unit 06",
-            "title": "Budget Constraint & Consumer Equilibrium",
-            "chapter": "Axioms of Choice, Feasible Sets & Tangency Equilibrium (MRS = Px/Py)",
-            "duration": "18:15",
-            "youtubeId": "z8tbT2SiepA",
-            "thumbnail": "/thumbnails/Consumer_Preferences_Mod2_Unit6_Thumbnail.png",
+            "chapterNumber": "Unit 08",
+            "title": "Unit 8: Budget Constraint (ബജറ്റ് പരിമിതി) & Consumer Equilibrium",
+            "chapter": "Slope (-Px/Py), Opportunity Set, Price & Income Shifts, MRS Tangency",
+            "duration": "10:34",
+            "youtubeId": "9H8683I4Ad8",
+            "thumbnail": "https://i.ytimg.com/vi/9H8683I4Ad8/hqdefault.jpg",
             "studyPoints": [
-              "<strong>Budget Constraint & Line:</strong> All consumption combinations affordable with income Y: Px*Qx + Py*Qy = Y, with slope -Px/Py.",
-              "<strong>Consumer Equilibrium:</strong> Optimum consumption bundle occurs at the point of tangency between the budget line and highest reachable indifference curve where MRS_xy = Px / Py.",
-              "<strong>Corner Solutions:</strong> Arise when goods are perfect substitutes or preferences lead to consumption of only one commodity at an axis."
+              "<strong>ബജറ്റ് സമവാക്യവും ഇന്റർസെപ്റ്റുകളും:</strong> <code>Px·Qx + Py·Qy = M</code>. വെർട്ടിക്കൽ ഇന്റർസെപ്റ്റ് <code>M/Py</code>, ഹൊറിസോണ്ടൽ ഇന്റർസെപ്റ്റ് <code>M/Px</code>.",
+              "<strong>ചെരിവും അവസരച്ചെലവും:</strong> <code>Slope = -Px/Py</code>. വില അനുപാതം വിപണിയിലെ പ്രതിസ്ഥാപന നിരക്കിനെയും അവസരച്ചെലവിനെയും സൂചിപ്പിക്കുന്നു.",
+              "<strong>വിലമാറ്റങ്ങൾ (Rotation):</strong> ഒരു സാധനത്തിന്റെ വില മാറുമ്പോൾ ബജറ്റ് രേഖ റൊട്ടേറ്റ് ചെയ്യുകയും ചെരിവ് മാറുകയും ചെയ്യുന്നു.",
+              "<strong>വരുമാന മാറ്റങ്ങൾ (Parallel Shift):</strong> വരുമാനം മാറുമ്പോൾ ബജറ്റ് രേഖ സമാന്തരമായി ഷിഫ്റ്റ് ചെയ്യുന്നു; ചെരിവിൽ മാറ്റമില്ല.",
+              "<strong>ഉപഭോക്തൃ സന്തുലിതാവസ്ഥ:</strong> ഇൻഡിഫറൻസ് കർവിന്റെ ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ പരമാവധി സംതൃപ്തി ലഭിക്കുന്നു."
             ],
-            "examTip": "Tangency Condition formula MRS = Px/Py and the graphical derivation of budget slope are mandatory questions in university exams."
+            "examTip": "ബജറ്റ് രേഖയുടെ ചെരിവ് -Px/Py നിർണ്ണയിക്കുന്ന രീതിയും വിലമാറ്റവും വരുമാന മാറ്റവും തമ്മിലുള്ള ഗ്രാഫിക്കൽ വ്യത്യാസവും 6/10 മാർക്ക് ചോദ്യങ്ങളായി ആവർത്തിച്ചു വരാറുണ്ട്.",
+            "videoUrl": "https://www.youtube.com/watch?v=9H8683I4Ad8",
+            "language": "Malayalam"
           }
         ]
       },
