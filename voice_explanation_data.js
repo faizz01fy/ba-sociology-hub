@@ -329,10 +329,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 03",
             "title": "കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ",
-            "chapter": "വിലാപകാവ്യം · വൈലോപ്പിള്ളി അനുസ്മരണം · ആധുനികോത്തര കവിത",
-            "duration": "02:14",
-            "youtubeId": "PYtXGzEyPgQ",
-            "thumbnail": "https://i.ytimg.com/vi/PYtXGzEyPgQ/hqdefault.jpg",
+            "chapter": "മഹാകവി വൈലോപ്പിള്ളിയുടെ നിര്യാണത്തിലുള്ള അനുസ്മരണ കാവ്യം · രാഷ്ട്രീയ ആധുനികത · പ്രത്യാശയുടെ പൂർണ്ണചന്ദ്രൻ",
+            "duration": "19:50",
+            "youtubeId": "pB_mXjJ7ivg",
+            "thumbnail": "https://i.ytimg.com/vi/pB_mXjJ7ivg/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
