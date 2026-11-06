@@ -4182,10 +4182,10 @@
   /* MCQ CARDS & BLINKING TAB STYLING (+6 FONT & COLORFUL FONT)                 */
   /* ========================================================================= */
 
-  /* Subject Name in MCQ Cards (+6 Font: 21px, bold, colorful) */
+  /* Subject Name in MCQ Cards (-3 Font: 18px, bold, colorful) */
   .test-card h3,
   .test-card-subject-name {
-    font-size: 21px !important;
+    font-size: 18px !important;
     font-weight: 800 !important;
     line-height: 1.35 !important;
     letter-spacing: -0.3px !important;
@@ -4230,9 +4230,9 @@
   .subject-card[data-subject="History of Keralam"] h3,
   .subject-card[data-subject="History of Keralam up to 12th Century"] h3 { color: #b91c1c !important; }
 
-  /* Subject Label in MCQ Cards (+6 Font: 15.6px, bold, colorful) */
+  /* Subject Label in MCQ Cards (-3 Font: 12.6px, bold, colorful) */
   .test-card .test-label {
-    font-size: 15.6px !important;
+    font-size: 12.6px !important;
     font-weight: 800 !important;
     letter-spacing: 0.6px !important;
     margin-bottom: 4px !important;
@@ -4248,8 +4248,27 @@
   .test-card[data-subject-key="ethics"] .test-label { color: #059669 !important; }
   .test-card[data-subject-key="economy"] .test-label { color: #2563eb !important; }
   .test-card[data-subject-key="microeconomics"] .test-label { color: #16a34a !important; }
+  .test-card p {
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 10px !important;
+  }
 
-  /* Blinking Tab for all MCQ Cards */
+
+  
+  /* ========================================================================= */
+  /* MCQ TABS - LIGHT ELEGANT STYLING WITH DISTINCT SOFT PASTELS & NICE FONT   */
+  /* ========================================================================= */
+
+  .test-card-mcq-options {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: auto !important;
+  }
+
+  /* Base styling for all MCQ tabs: Light, clean, refined typography */
   .test-card > a,
   .test-card-mcq-tab {
     display: flex !important;
@@ -4257,59 +4276,181 @@
     justify-content: space-between !important;
     width: 100% !important;
     margin-top: auto !important;
-    padding: 12px 18px !important;
-    border-radius: 12px !important;
-    font-size: 14.5px !important;
-    font-weight: 800 !important;
-    letter-spacing: 0.5px !important;
+    padding: 8px 12px !important;
+    border-radius: 9px !important;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2px !important;
     text-decoration: none !important;
-    background: #059669 !important;
-    color: #ffffff !important;
-    border: 1.5px solid #047857 !important;
-    animation: mcqTabIntervalBlink 2.4s ease-in-out infinite !important;
-    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35) !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    line-height: 1.3 !important;
   }
 
-  .test-card > a:hover,
-  .test-card-mcq-tab:hover {
-    background: #047857 !important;
-    border-color: #065f46 !important;
-    box-shadow: 0 6px 22px rgba(5, 150, 105, 0.6) !important;
-    transform: translateY(-2px) scale(1.02) !important;
+  .test-card-mcq-options .test-card-mcq-tab {
+    margin-top: 0 !important;
   }
 
-  @keyframes mcqTabIntervalBlink {
-    0%, 100% {
-      background: #059669 !important;
-      color: #ffffff !important;
-      border-color: #047857 !important;
-      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35) !important;
-      transform: scale(1);
+  /* ------------------------------------------------------------- */
+  /* TAB 1: ⏱️ WITH TIMER - LIGHT EMERALD / FRESH MINT THEME        */
+  /* ------------------------------------------------------------- */
+  .test-card-mcq-tab--timer {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+    color: #047857 !important;
+    border: 1.5px solid #86efac !important;
+    box-shadow: 0 2px 10px rgba(16, 185, 129, 0.16) !important;
+    animation: lightTabPulseTimer 2.8s ease-in-out infinite alternate !important;
+  }
+
+  .test-card-mcq-tab--timer .mcq-tab-pulse-dot {
+    background: #10b981 !important;
+    box-shadow: 0 0 7px rgba(16, 185, 129, 0.8) !important;
+  }
+
+  .test-card-mcq-tab--timer .mcq-tab-arrow {
+    color: #059669 !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    transition: transform 0.2s ease !important;
+  }
+
+  .test-card-mcq-tab--timer:hover {
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%) !important;
+    color: #065f46 !important;
+    border-color: #4ade80 !important;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.28) !important;
+    transform: translateY(-1.5px) !important;
+  }
+
+  .test-card-mcq-tab--timer:hover .mcq-tab-arrow {
+    transform: translateX(4px) !important;
+  }
+
+  @keyframes lightTabPulseTimer {
+    0% {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+      border-color: #86efac !important;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.14) !important;
     }
-    50% {
-      background: #10b981 !important;
-      color: #ffffff !important;
-      border-color: #34d399 !important;
-      box-shadow: 0 0 22px rgba(16, 185, 129, 0.85), 0 0 35px rgba(5, 150, 105, 0.5) !important;
-      transform: scale(1.025);
+    100% {
+      background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%) !important;
+      border-color: #4ade80 !important;
+      box-shadow: 0 3px 14px rgba(16, 185, 129, 0.26) !important;
     }
   }
 
+  /* ------------------------------------------------------------- */
+  /* TAB 2: ⚡ WITHOUT TIMER - LIGHT LAVENDER / SOFT VIOLET THEME   */
+  /* ------------------------------------------------------------- */
+  .test-card-mcq-tab--notimer {
+    background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%) !important;
+    color: #6d28d9 !important;
+    border: 1.5px solid #c4b5fd !important;
+    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.16) !important;
+    animation: lightTabPulseNoTimer 2.8s ease-in-out infinite alternate !important;
+  }
+
+  .test-card-mcq-tab--notimer .mcq-tab-pulse-dot {
+    background: #8b5cf6 !important;
+    box-shadow: 0 0 7px rgba(139, 92, 246, 0.8) !important;
+  }
+
+  .test-card-mcq-tab--notimer .mcq-tab-arrow {
+    color: #7c3aed !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    transition: transform 0.2s ease !important;
+  }
+
+  .test-card-mcq-tab--notimer:hover {
+    background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%) !important;
+    color: #5b21b6 !important;
+    border-color: #a78bfa !important;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.28) !important;
+    transform: translateY(-1.5px) !important;
+  }
+
+  .test-card-mcq-tab--notimer:hover .mcq-tab-arrow {
+    transform: translateX(4px) !important;
+  }
+
+  @keyframes lightTabPulseNoTimer {
+    0% {
+      background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%) !important;
+      border-color: #c4b5fd !important;
+      box-shadow: 0 2px 8px rgba(124, 58, 237, 0.14) !important;
+    }
+    100% {
+      background: linear-gradient(135deg, #f5f3ff 0%, #e0e7ff 100%) !important;
+      border-color: #a78bfa !important;
+      box-shadow: 0 3px 14px rgba(124, 58, 237, 0.26) !important;
+    }
+  }
+
+  /* ------------------------------------------------------------- */
+  /* SINGLE KTET TAB - LIGHT TEAL / CYAN REFINED THEME             */
+  /* ------------------------------------------------------------- */
+  .test-card > a:not(.test-card-mcq-tab--notimer):not(.test-card-mcq-tab--timer),
+  .test-card-mcq-tab:not(.test-card-mcq-tab--notimer):not(.test-card-mcq-tab--timer) {
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%) !important;
+    color: #0f766e !important;
+    border: 1.5px solid #5eead4 !important;
+    box-shadow: 0 2px 10px rgba(13, 148, 136, 0.16) !important;
+    animation: lightTabPulseTeal 2.8s ease-in-out infinite alternate !important;
+  }
+
+  .test-card > a:not(.test-card-mcq-tab--notimer):not(.test-card-mcq-tab--timer) .mcq-tab-pulse-dot,
+  .test-card-mcq-tab:not(.test-card-mcq-tab--notimer):not(.test-card-mcq-tab--timer) .mcq-tab-pulse-dot {
+    background: #14b8a6 !important;
+    box-shadow: 0 0 7px rgba(20, 184, 166, 0.8) !important;
+  }
+
+  .test-card > a:not(.test-card-mcq-tab--notimer):not(.test-card-mcq-tab--timer) .mcq-tab-arrow,
+  .test-card-mcq-tab:not(.test-card-mcq-tab--notimer):not(.test-card-mcq-tab--timer) .mcq-tab-arrow {
+    color: #0d9488 !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    transition: transform 0.2s ease !important;
+  }
+
+  .test-card > a:not(.test-card-mcq-tab--notimer):not(.test-card-mcq-tab--timer):hover,
+  .test-card-mcq-tab:not(.test-card-mcq-tab--notimer):not(.test-card-mcq-tab--timer):hover {
+    background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%) !important;
+    color: #115e59 !important;
+    border-color: #2dd4bf !important;
+    box-shadow: 0 4px 16px rgba(13, 148, 136, 0.28) !important;
+    transform: translateY(-1.5px) !important;
+  }
+
+  @keyframes lightTabPulseTeal {
+    0% {
+      background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%) !important;
+      border-color: #5eead4 !important;
+      box-shadow: 0 2px 8px rgba(13, 148, 136, 0.14) !important;
+    }
+    100% {
+      background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%) !important;
+      border-color: #2dd4bf !important;
+      box-shadow: 0 3px 14px rgba(13, 148, 136, 0.26) !important;
+    }
+  }
+
+  /* Pulse Dot Base */
   .mcq-tab-pulse-dot {
     display: inline-block !important;
-    width: 9px !important;
-    height: 9px !important;
+    width: 8px !important;
+    height: 8px !important;
     border-radius: 50% !important;
-    background: #ffffff !important;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.95) !important;
-    animation: mcqDotPulse 1.2s ease-in-out infinite alternate !important;
-    margin-right: 6px !important;
+    animation: mcqDotPulse 1.4s ease-in-out infinite alternate !important;
+    margin-right: 7px !important;
     vertical-align: middle !important;
+    flex-shrink: 0 !important;
   }
 
   @keyframes mcqDotPulse {
-    0% { opacity: 0.35; transform: scale(0.7); }
+    0% { opacity: 0.55; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1.15); }
+  }
     100% { opacity: 1; transform: scale(1.25); }
   }
 
@@ -4806,32 +4947,27 @@
 
       </nav>
 
-            <div class="test-grid">
+                  <div class="test-grid">
 
         <article class="test-card" data-subject-key="ktet" data-category="ktet"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Kerala Teacher Eligibility Test K-TET 500 MCQs"><div class="test-icon test-green">🎓</div><span class="test-label">K-TET 2026</span><h3 class="test-card-subject-name">K-tet 500 MCQs</h3><p>Child Development &amp; Pedagogy, Educational Psychology &amp; Teaching Methods across 5 structured parts.</p><a href="ktet-500-mcq-test.html" class="test-card-mcq-tab" aria-label="Start K-tet 500 MCQs MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
 
-        <article class="test-card" data-subject-key="english" data-category="languages"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Books and study materials for English"><div class="test-icon test-blue">Aa</div><span class="test-label">ENGLISH</span><h3 class="test-card-subject-name">English</h3><p>Exam-oriented multiple choice practice with questions from all 4 English modules.</p><a href="english-mcq-60q-test-final.html" class="test-card-mcq-tab" aria-label="Start English MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
+        <article class="test-card" data-subject-key="english" data-category="languages"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Books and study materials for English"><div class="test-icon test-blue">Aa</div><span class="test-label">ENGLISH</span><h3 class="test-card-subject-name">English Language Skills</h3><p>Exam-oriented multiple choice practice with questions from all 4 English modules.</p><div class="test-card-mcq-options"><a href="english-mcq-60q-test-final.html" class="test-card-mcq-tab test-card-mcq-tab--timer" aria-label="Start English MCQ Test With Timer"><span class="mcq-tab-pulse-dot"></span> ⏱️ With Timer (60 Qs) <span class="mcq-tab-arrow">→</span></a><a href="english-without-timer.html" class="test-card-mcq-tab test-card-mcq-tab--notimer" aria-label="Start English MCQ Test Without Timer Full Question Bank"><span class="mcq-tab-pulse-dot"></span> ⚡ Without Timer (Full 121 Qs) <span class="mcq-tab-arrow">→</span></a></div></article>
 
-        <article class="test-card" data-subject-key="sociology" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="People gathered together representing society"><div class="test-icon test-purple">⚡</div><span class="test-label">SOCIOLOGY · WITHOUT TIMER</span><h3 class="test-card-subject-name">Sociology (Without Timer)</h3><p>Full 235 questions from university question bank. Self-paced practice without timer or clock.</p><a href="sociology-without-timer.html" class="test-card-mcq-tab" aria-label="Start Sociology Without Timer MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
+        <article class="test-card" data-subject-key="sociology" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="People gathered together representing society"><div class="test-icon test-purple">◎</div><span class="test-label">SOCIOLOGY</span><h3 class="test-card-subject-name">Sociology</h3><p>Classical theorists, sociological imagination, methodology, concepts &amp; societal institutions.</p><div class="test-card-mcq-options"><a href="sociology-mock-test-final-60q.html?v=20261017a" class="test-card-mcq-tab test-card-mcq-tab--timer" aria-label="Start Sociology MCQ Test With Timer"><span class="mcq-tab-pulse-dot"></span> ⏱️ With Timer (60 Qs) <span class="mcq-tab-arrow">→</span></a><a href="sociology-without-timer.html" class="test-card-mcq-tab test-card-mcq-tab--notimer" aria-label="Start Sociology MCQ Test Without Timer Full Question Bank"><span class="mcq-tab-pulse-dot"></span> ⚡ Without Timer (Full 235 Qs) <span class="mcq-tab-arrow">→</span></a></div></article>
 
-        <article class="test-card" data-subject-key="sociology" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="People gathered together representing society"><div class="test-icon test-purple">◎</div><span class="test-label">SOCIOLOGY</span><h3 class="test-card-subject-name">Sociology</h3><p>Timed mock assessment covering classical theorists, methodology, concepts &amp; societal institutions.</p><a href="sociology-mock-test-final-60q.html?v=20261017a" class="test-card-mcq-tab" aria-label="Start Sociology MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
+        <article class="test-card" data-subject-key="education" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Student learning for philosophy of education"><div class="test-icon test-orange">✎</div><span class="test-label">EDUCATION</span><h3 class="test-card-subject-name">Philosophy of Education</h3><p>Pedagogical paradigms, educational thinkers, and philosophical foundations practice questions.</p><div class="test-card-mcq-options"><a href="philosophy-of-education-mock-test.html" class="test-card-mcq-tab test-card-mcq-tab--timer" aria-label="Start Philosophy of Education MCQ Test With Timer"><span class="mcq-tab-pulse-dot"></span> ⏱️ With Timer (60 Qs) <span class="mcq-tab-arrow">→</span></a><a href="philosophy-of-education-without-timer.html" class="test-card-mcq-tab test-card-mcq-tab--notimer" aria-label="Start Philosophy of Education MCQ Test Without Timer Full Question Bank"><span class="mcq-tab-pulse-dot"></span> ⚡ Without Timer (Full 121 Qs) <span class="mcq-tab-arrow">→</span></a></div></article>
 
-        <article class="test-card" data-subject-key="education" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Student learning for philosophy of education"><div class="test-icon test-orange">✎</div><span class="test-label">EDUCATION</span><h3 class="test-card-subject-name">Philosophy of Education</h3><p>Pedagogical paradigms, educational thinkers, and philosophical foundations practice questions.</p><a href="philosophy-of-education-mock-test.html" class="test-card-mcq-tab" aria-label="Start Philosophy of Education MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
+        <article class="test-card" data-subject-key="ai" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Artificial intelligence and digital technology"><div class="test-icon test-mint">✧</div><span class="test-label">ARTIFICIAL INTELLIGENCE</span><h3 class="test-card-subject-name">Philosophy of AI</h3><p>Cognitive modeling, Turing test, ethics of algorithms, and philosophical AI dimensions.</p><div class="test-card-mcq-options"><a href="philosophy-of-ai-mcq-test.html" class="test-card-mcq-tab test-card-mcq-tab--timer" aria-label="Start Philosophy of AI MCQ Test With Timer"><span class="mcq-tab-pulse-dot"></span> ⏱️ With Timer (60 Qs) <span class="mcq-tab-arrow">→</span></a><a href="philosophy-of-ai-without-timer.html" class="test-card-mcq-tab test-card-mcq-tab--notimer" aria-label="Start Philosophy of AI MCQ Test Without Timer Full Question Bank"><span class="mcq-tab-pulse-dot"></span> ⚡ Without Timer (Full 110 Qs) <span class="mcq-tab-arrow">→</span></a></div></article>
 
-        <article class="test-card" data-subject-key="ai" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Artificial intelligence and digital technology"><div class="test-icon test-mint">✧</div><span class="test-label">ARTIFICIAL INTELLIGENCE</span><h3 class="test-card-subject-name">Philosophy of AI</h3><p>Cognitive modeling, Turing test, ethics of algorithms, and philosophical AI dimensions.</p><a href="philosophy-of-ai-mcq-test.html" class="test-card-mcq-tab" aria-label="Start Philosophy of AI MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
+        <article class="test-card" data-subject-key="history" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1695964744922-c7d01b4761cb?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Historic Kerala palace with traditional timber and tiled architecture"><div class="test-icon test-purple">📜</div><span class="test-label">HISTORY</span><h3 class="test-card-subject-name">History of Keralam up to 12th Century</h3><p>Archaeological evidence, prehistoric settlements, megaliths, and early historic Kerala societies.</p><div class="test-card-mcq-options"><a href="history-mock-test.html" class="test-card-mcq-tab test-card-mcq-tab--timer" aria-label="Start History of Keralam MCQ Test With Timer"><span class="mcq-tab-pulse-dot"></span> ⏱️ With Timer (60 Qs) <span class="mcq-tab-arrow">→</span></a><a href="history-of-keralam-without-timer.html" class="test-card-mcq-tab test-card-mcq-tab--notimer" aria-label="Start History of Keralam MCQ Test Without Timer Full Question Bank"><span class="mcq-tab-pulse-dot"></span> ⚡ Without Timer (Full 100 Qs) <span class="mcq-tab-arrow">→</span></a></div></article>
 
-        <article class="test-card" data-subject-key="history" data-category="social"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1695964744922-c7d01b4761cb?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Historic Kerala palace with traditional timber and tiled architecture"><div class="test-icon test-purple">📜</div><span class="test-label">HISTORY</span><h3 class="test-card-subject-name">History of Keralam up to 12th Century</h3><p>Archaeological evidence, prehistoric settlements, megaliths, and early historic Kerala societies.</p><a href="history-mock-test.html" class="test-card-mcq-tab" aria-label="Start History of Keralam MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
+        <article class="test-card" data-subject-key="ethics" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Handshake representing ethical conduct and trust"><div class="test-icon test-green">◇</div><span class="test-label">ETHICS</span><h3 class="test-card-subject-name">Fundamentals of Ethics</h3><p>Moral philosophy, virtue ethics, deontological &amp; utilitarian frameworks exam practice.</p><div class="test-card-mcq-options"><a href="ethics-mock-test.html" class="test-card-mcq-tab test-card-mcq-tab--timer" aria-label="Start Fundamentals of Ethics MCQ Test With Timer"><span class="mcq-tab-pulse-dot"></span> ⏱️ With Timer (60 Qs) <span class="mcq-tab-arrow">→</span></a><a href="ethics-without-timer.html" class="test-card-mcq-tab test-card-mcq-tab--notimer" aria-label="Start Fundamentals of Ethics MCQ Test Without Timer Full Question Bank"><span class="mcq-tab-pulse-dot"></span> ⚡ Without Timer (Full 150 Qs) <span class="mcq-tab-arrow">→</span></a></div></article>
 
-        <article class="test-card" data-subject-key="ethics" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Handshake representing ethical conduct and trust"><div class="test-icon test-green">◇</div><span class="test-label">ETHICS</span><h3 class="test-card-subject-name">Fundamentals of Ethics</h3><p>Moral philosophy, virtue ethics, deontological &amp; utilitarian frameworks exam practice.</p><a href="ethics-mock-test.html" class="test-card-mcq-tab" aria-label="Start Fundamentals of Ethics MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
+        <article class="test-card" data-subject-key="economy" data-category="economics"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Economic data and charts for Indian economy"><div class="test-icon test-green">₹</div><span class="test-label">INDIAN ECONOMY</span><h3 class="test-card-subject-name">Development Issues of Indian Economy</h3><p>Poverty, inequality, planning era, reforms, fiscal policies, and economic structural shifts.</p><div class="test-card-mcq-options"><a href="economictest.html" class="test-card-mcq-tab test-card-mcq-tab--timer" aria-label="Start Development Issues of Indian Economy MCQ Test With Timer"><span class="mcq-tab-pulse-dot"></span> ⏱️ With Timer (60 Qs) <span class="mcq-tab-arrow">→</span></a><a href="indian-economy-without-timer.html" class="test-card-mcq-tab test-card-mcq-tab--notimer" aria-label="Start Development Issues of Indian Economy MCQ Test Without Timer Full Question Bank"><span class="mcq-tab-pulse-dot"></span> ⚡ Without Timer (Full 201 Qs) <span class="mcq-tab-arrow">→</span></a></div></article>
 
-        <article class="test-card" data-subject-key="ethics" data-category="philosophy"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Handshake representing ethical conduct and trust"><div class="test-icon test-green">⚡</div><span class="test-label">ETHICS · WITHOUT TIMER</span><h3 class="test-card-subject-name">Fundamentals of Ethics (Without Timer)</h3><p>Full 150 questions displayed at once without timer pressure. Includes Shuffled and PDF Pattern modes.</p><a href="ethics-without-timer.html" class="test-card-mcq-tab" aria-label="Start Fundamentals of Ethics Without Timer MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
+        <article class="test-card" data-subject-key="microeconomics" data-category="economics"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1644871913429-9ed7696180cc?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Coins representing microeconomics and consumer choice"><div class="test-icon test-green">₹</div><span class="test-label">MICROECONOMICS</span><h3 class="test-card-subject-name">Microeconomic Foundation</h3><p>Consumer behavior, utility analysis, indifference curves, equilibrium, and elasticity.</p><div class="test-card-mcq-options"><a href="microeconomics-foundation-mcq-test.html" class="test-card-mcq-tab test-card-mcq-tab--timer" aria-label="Start Microeconomic Foundation MCQ Test With Timer"><span class="mcq-tab-pulse-dot"></span> ⏱️ With Timer (60 Qs) <span class="mcq-tab-arrow">→</span></a><a href="microeconomics-without-timer.html" class="test-card-mcq-tab test-card-mcq-tab--notimer" aria-label="Start Microeconomic Foundation MCQ Test Without Timer Full Question Bank"><span class="mcq-tab-pulse-dot"></span> ⚡ Without Timer (Full 83 Qs) <span class="mcq-tab-arrow">→</span></a></div></article>
 
-        <article class="test-card" data-subject-key="economy" data-category="economics"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Economic data and charts for Indian economy"><div class="test-icon test-green">₹</div><span class="test-label">INDIAN ECONOMY</span><h3 class="test-card-subject-name">Development Issues of Indian Economy</h3><p>Poverty, inequality, planning era, reforms, fiscal policies, and economic structural shifts.</p><a href="economictest.html" class="test-card-mcq-tab" aria-label="Start Development Issues of Indian Economy MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
-
-        <article class="test-card" data-subject-key="microeconomics" data-category="economics"><img class="test-image" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1644871913429-9ed7696180cc?auto=format&amp;fit=crop&amp;w=480&amp;q=70" alt="Coins representing microeconomics and consumer choice"><div class="test-icon test-green">₹</div><span class="test-label">MICROECONOMICS</span><h3 class="test-card-subject-name">Microeconomic Foundation</h3><p>Consumer behavior, utility analysis, indifference curves, equilibrium, and elasticity.</p><a href="microeconomics-foundation-mcq-test.html" class="test-card-mcq-tab" aria-label="Start Microeconomic Foundation MCQ Test"><span class="mcq-tab-pulse-dot"></span> MCQ Test <span class="mcq-tab-arrow">→</span></a></article>
-
-      </div>
-</section>
+      </div></section>
 
 
 
