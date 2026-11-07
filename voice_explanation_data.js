@@ -1136,7 +1136,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "മെഷീനുകൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ? ട്യൂറിംഗ് ടെസ്റ്റ് (Can a Machine Think? & Turing Test)",
             "chapter": "Unit 1.5: Foundations of AI · Turing Test · Chinese Room · Dreyfus's Critique",
             "duration": "18:19",
-            "youtubeId": "4EcWGNwIT2I",
+            "youtubeId": "1Va07j8OQSA",
             "language": "Malayalam",
             "studyPoints": [
               "ട്യൂറിംഗിന്റെ ഇമിറ്റേഷൻ ഗെയിം (1950): 'യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ?' എന്ന ചോദ്യത്തിന് പ്രവർത്തനപരമായ മറുപടി നൽകിയ പരീക്ഷണം.",
@@ -1145,8 +1145,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ട്യൂറിംഗ് ടെസ്റ്റിനെതിരെയുള്ള ആദ്യകാല ദാർശനിക വിമർശനങ്ങൾ: ലേഡി ലവ്‌ലേസിന്റെ ആക്ഷേപം (യന്ത്രങ്ങൾക്ക് സ്വന്തമായി ഒന്നും പുതുതായി സൃഷ്ടിക്കാനാവില്ല)."
             ],
             "examTip": "Calicut University ചോദ്യം: അലൻ ട്യൂറിംഗിന്റെ 'ഇമിറ്റേഷൻ ഗെയിം' സിദ്ധാന്തവും അതിനെതിരെയുള്ള പ്രധാന ദാർശനിക വിമർശനങ്ങളും വിലയിരുത്തുക.",
-            "thumbnail": "https://i.ytimg.com/vi/4EcWGNwIT2I/hqdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=4EcWGNwIT2I"
+            "thumbnail": "https://i.ytimg.com/vi/1Va07j8OQSA/hqdefault.jpg",
+            "videoUrl": "https://www.youtube.com/watch?v=1Va07j8OQSA"
           }
         ]
       },
