@@ -1412,7 +1412,7 @@
       </div>
 
       <!-- Floating Quick Re-Shuffle Button (Active in MCQ view) -->
-      <button id="floating-shuffle-btn" class="floating-shuffle-btn" type="button" onclick="reshuffleQuiz()" title="Re-Shuffle 15 Questions in this chapter" aria-label="Re-Shuffle Questions">
+      <button id="floating-shuffle-btn" class="floating-shuffle-btn" type="button" onclick="reshuffleQuiz()" title="Re-Shuffle 25 Questions in this chapter" aria-label="Re-Shuffle Questions">
         <span>🔀</span> <span>Re-Shuffle</span>
       </button>
 
@@ -1441,11 +1441,11 @@
         <div id="pane-mcq" class="study-pane" style="display:none;">
           <div class="quiz-control-bar">
             <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-              <span class="stat-badge">🎯 15 Questions per Session · Sourced from official Course PDF</span>
-              <span id="quiz-score-badge" class="quiz-score-badge">സ്കോർ: 0 / 15</span>
+              <span class="stat-badge">🎯 25 Questions per Session · Sourced from official Course PDF</span>
+              <span id="quiz-score-badge" class="quiz-score-badge">സ്കോർ: 0 / 25</span>
             </div>
             <button type="button" class="btn-shuffle" onclick="reshuffleQuiz()">
-              <span>🔀</span> Re-Shuffle / പുതിയ 15 ചോദ്യങ്ങൾ
+              <span>🔀</span> Re-Shuffle / പുതിയ 25 ചോദ്യങ്ങൾ
             </button>
           </div>
           <div id="quiz-questions-list" class="quiz-questions-list"></div>
@@ -1799,7 +1799,7 @@
 
     function loadChapterQuiz(ch) {
       const pool = ch.quizPool || [];
-      const shuffled = shuffleArray(pool).slice(0, 15);
+      const shuffled = shuffleArray(pool).slice(0, 25);
       currentQuizState = { questions: shuffled, score: 0, answered: 0 };
       updateQuizScore();
       renderQuizCards();
@@ -1813,7 +1813,7 @@
         toast.className = 'shuffle-toast';
         document.body.appendChild(toast);
       }
-      toast.innerHTML = `<span>✓</span> 15 പുതിയ ചോദ്യങ്ങൾ ഷഫിൾ ചെയ്തു!`;
+      toast.innerHTML = `<span>✓</span> 25 പുതിയ ചോദ്യങ്ങൾ ഷഫിൾ ചെയ്തു!`;
       toast.classList.add('show');
       clearTimeout(window._toastTimer);
       window._toastTimer = setTimeout(() => {
@@ -1918,11 +1918,11 @@
           <span style="font-size:30px;">🔀</span>
           <div>
             <h4>സെഷൻ പൂർത്തിയായി! കൂടുതൽ ചോദ്യങ്ങൾ പരിശീലിക്കാം</h4>
-            <p>ഈ അധ്യായത്തിലെ പുതിയ 15 ചോദ്യങ്ങൾക്കായി താഴെ ക്ലിക്ക് ചെയ്യുക (Re-Shuffle).</p>
+            <p>ഈ അധ്യായത്തിലെ പുതിയ 25 ചോദ്യങ്ങൾക്കായി താഴെ ക്ലിക്ക് ചെയ്യുക (Re-Shuffle).</p>
           </div>
         </div>
         <button type="button" class="btn-shuffle btn-shuffle-lg" onclick="reshuffleQuiz()">
-          <span>🔀</span> Re-Shuffle / പുതിയ 15 ചോദ്യങ്ങൾ
+          <span>🔀</span> Re-Shuffle / പുതിയ 25 ചോദ്യങ്ങൾ
         </button>
       `;
       list.appendChild(bottomCard);
