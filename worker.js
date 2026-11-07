@@ -332,8 +332,15 @@ export default {
       }
     }
 
-    // Redirect legacy/unverified Carlin PDF requests to the original euphemisms study guide
-    if (url.pathname.toLowerCase().includes('georgecarlin') || (url.searchParams.get('file') && url.searchParams.get('file').toLowerCase().includes('georgecarlin'))) {
+    // Redirect legacy/unverified Carlin / Soft Language PDF or reader requests to the original euphemisms study guide
+    const fileParam = (url.searchParams.get('file') || '').toLowerCase();
+    const pathLower = url.pathname.toLowerCase();
+    if (pathLower.includes('carlin') || 
+        pathLower.includes('softlanguage') || 
+        pathLower.includes('soft_language') ||
+        fileParam.includes('carlin') || 
+        fileParam.includes('softlanguage') || 
+        fileParam.includes('soft_language')) {
       return Response.redirect(new URL('/euphemisms-and-soft-language-study-guide.html', request.url).toString(), 301);
     }
 
@@ -435,11 +442,12 @@ export default {
       })).catch(() => {});
       ctx.waitUntil(task);
 
+      const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader)(?:\.html)?$/i.test(url.pathname);
       let hasAdSense = false;
       response = new HTMLRewriter()
         .on("script[src*='pagead2.googlesyndication.com']", {
           element(el) {
-            if (hasAdSense) {
+            if (isUtilityPath || hasAdSense) {
               el.remove();
             } else {
               hasAdSense = true;
