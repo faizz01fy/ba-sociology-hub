@@ -424,10 +424,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 02",
             "title": "ചലച്ചിത്രം: ലിജോ ജോസ് പെല്ലിശ്ശേരിയുടെ 'നൻപകൽ നേരത്ത് മയക്കം'",
-            "chapter": "സിനിമ ചരിത്രം · സങ്കരകല · ഇരട്ട വ്യക്തിത്വം · മിസ്-എൻ-സീനും മോണ്ടാഷും · മാന്ത്രിക റിയലിസം",
-            "duration": "16:00",
-            "youtubeId": "ZpBPAU4GH3c",
-            "thumbnail": "",
+          "chapter": "സിനിമ ചരിത്രം · സങ്കരകല · ഇരട്ട വ്യക്തിത്വം · മിസ്-എൻ-സീനും മോണ്ടാഷും · മാന്ത്രിക റിയലിസം",
+          "duration": "11:30",
+          "youtubeId": "ZpBPAU4GH3c",
+          "thumbnail": "https://i.ytimg.com/vi/ZpBPAU4GH3c/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -456,10 +456,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 03",
             "title": "ചലച്ചിത്ര ഗാനം: മലയാള ചലച്ചിത്ര ഗാനശാഖയും ഗാനരചയിതാക്കളും",
-            "chapter": "ഗാനശാഖയുടെ ഉത്ഭവം · സുവർണ്ണ കാലം · സംഗീത സംവിധായകർ · അള്ളിയാമ്പൽ കടവിൽ · സൂര്യകിരീടം · തനിയെ മിഴികൾ",
-            "duration": "14:50",
-            "youtubeId": "_fwb_tS8xvw",
-            "thumbnail": "",
+          "chapter": "ഗാനശാഖയുടെ ഉത്ഭവം · സുവർണ്ണ കാലം · സംഗീത സംവിധായകർ · അള്ളിയാമ്പൽ കടവിൽ · സൂര്യകിരീടം · തനിയെ മിഴികൾ",
+          "duration": "11:06",
+          "youtubeId": "_fwb_tS8xvw",
+          "thumbnail": "https://i.ytimg.com/vi/_fwb_tS8xvw/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
