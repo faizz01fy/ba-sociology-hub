@@ -3556,7 +3556,133 @@
       box-shadow: none !important;
     }
 
-</style>
+
+    /* Floating Awake Pill - Noticeable pill appearing when scrolling or playing */
+    .floating-awake-pill {
+      position: fixed;
+      right: 18px;
+      bottom: 24px;
+      z-index: 250;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 15px;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #93c5fd;
+      border: 1.5px solid #3b82f6;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(37, 99, 235, 0.35);
+      opacity: 0;
+      transform: translateY(20px) scale(0.92);
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      touch-action: manipulation;
+    }
+
+    .floating-awake-pill.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+      animation: blueIdleBlink 2.5s infinite ease-in-out;
+    }
+
+    /* Shift floating awake pill up when bottom sticky audio bar is active */
+    body.sticky-active .floating-awake-pill {
+      bottom: 84px;
+    }
+
+    .floating-awake-pill:hover {
+      background: #1e3a8a;
+      border-color: #60a5fa;
+      color: #ffffff;
+    }
+
+    .floating-awake-pill.active {
+      background: #2563eb !important;
+      border-color: #93c5fd !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.75) !important;
+      animation: bluePulseBlink 1.4s infinite ease-in-out !important;
+    }
+
+    /* Awake button in card mini-player-tab */
+    .vpp-btn-awake {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 11px;
+      background: #eff6ff;
+      border: 1.5px solid #3b82f6;
+      color: #1d4ed8;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .vpp-btn-awake:hover {
+      background: #dbeafe;
+      border-color: #2563eb;
+    }
+    .vpp-btn-awake.active {
+      background: #2563eb !important;
+      border-color: #1d4ed8 !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 10px rgba(37, 99, 235, 0.45) !important;
+    }
+
+    /* Awake button in sticky bottom bar */
+    .sticky-btn-awake {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(37, 99, 235, 0.2);
+      border: 1.5px solid #3b82f6;
+      color: #93c5fd;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sticky-btn-awake:hover {
+      background: rgba(37, 99, 235, 0.35);
+      color: #ffffff;
+    }
+    .sticky-btn-awake.active {
+      background: #2563eb !important;
+      border-color: #93c5fd !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 12px rgba(37, 99, 235, 0.5) !important;
+    }
+
+    @media (max-width: 600px) {
+      .floating-awake-pill {
+        right: 12px;
+        bottom: 20px;
+        padding: 8px 13px;
+        font-size: 11.5px;
+      }
+      body.sticky-active .floating-awake-pill {
+        bottom: 76px;
+      }
+      .vpp-btn-awake {
+        padding: 5px 9px !important;
+        font-size: 11.5px !important;
+      }
+      .sticky-btn-awake {
+        padding: 5px 9px !important;
+        font-size: 11.5px !important;
+      }
+    }
+    
+  </style>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
 
@@ -3714,6 +3840,9 @@
 
     <div class="sticky-actions">
 
+      <button type="button" class="sticky-btn-awake" id="sticky-awake-toggle" title="Keep Screen Awake while listening">
+        <span>💡</span> <span id="sticky-awake-text">Awake</span>
+      </button>
       <button type="button" class="sticky-btn" id="sticky-pause-toggle">
 
         <span id="sticky-pause-icon">⏸</span> <span id="sticky-pause-text">Pause Voice</span>
@@ -3725,6 +3854,12 @@
     </div>
 
   </aside>
+
+  <!-- Floating Awake Pill: Noticeable button appearing when scrolling or playing -->
+  <button type="button" class="floating-awake-pill" id="floating-awake-toggle" aria-pressed="false" title="Keep screen awake while reading or listening">
+    <span class="wake-icon" aria-hidden="true">💡</span>
+    <span class="floating-wake-text">Keep Awake</span>
+  </button>
 
 
 
@@ -4181,6 +4316,7 @@
 
                       <button type="button" class="vpp-speed-btn" title="Playback Speed">1.0x</button>
 
+                      <button type="button" class="vpp-btn-awake" title="Keep Screen Awake while playing">💡 <span class="vpp-awake-text">Awake</span></button>
                       <button type="button" class="vpp-btn-close" title="Close player">✕ Close</button>
 
                     </div>
@@ -4252,6 +4388,13 @@
               const skipFwdBtn = card.querySelector('.vpp-skip-fwd');
 
               const speedBtn = card.querySelector('.vpp-speed-btn');
+              const cardAwakeBtn = card.querySelector('.vpp-btn-awake');
+              if (cardAwakeBtn) {
+                cardAwakeBtn.addEventListener('click', async (e) => {
+                  e.stopPropagation();
+                  await toggleScreenWakeLock();
+                });
+              }
 
 
 
@@ -4491,7 +4634,7 @@
 
                 }
 
-                stickyBar.classList.add('visible');
+                stickyBar.classList.add('visible'); document.body.classList.add('sticky-active'); if (typeof updateAwakePillVisibility === 'function') updateAwakePillVisibility(); document.body.classList.add('sticky-active'); if (typeof updateAwakePillVisibility === 'function') updateAwakePillVisibility();
 
               }
 
@@ -4525,7 +4668,7 @@
 
                   currentPlayingCard = null;
 
-                  stickyBar.classList.remove('visible');
+                  stickyBar.classList.remove('visible'); document.body.classList.remove('sticky-active'); if (typeof updateAwakePillVisibility === 'function') updateAwakePillVisibility(); document.body.classList.remove('sticky-active'); if (typeof updateAwakePillVisibility === 'function') updateAwakePillVisibility();
 
                 }
 
@@ -4977,7 +5120,7 @@
 
       stickyClose.addEventListener('click', () => {
 
-        stickyBar.classList.remove('visible');
+        stickyBar.classList.remove('visible'); document.body.classList.remove('sticky-active'); if (typeof updateAwakePillVisibility === 'function') updateAwakePillVisibility(); document.body.classList.remove('sticky-active'); if (typeof updateAwakePillVisibility === 'function') updateAwakePillVisibility();
 
         if (currentPlayingCard) {
 
@@ -5203,119 +5346,135 @@
 
     
 
-      // Screen WakeLock API - Keep screen awake while studying & listening
-
+      // Screen WakeLock API - Synchronized controller across navbar, floating pill, sticky bar, and cards
       let wakeLock = null;
 
-      const wakeLockBtn = document.getElementById('wake-lock-toggle');
-
-
-
-      async function requestScreenWakeLock() {
-
-        if ('wakeLock' in navigator) {
-
-          try {
-
-            wakeLock = await navigator.wakeLock.request('screen');
-
-            if (wakeLockBtn) {
-
-              wakeLockBtn.classList.add('active');
-
-              wakeLockBtn.setAttribute('aria-pressed', 'true');
-
-              wakeLockBtn.querySelector('.wake-text').textContent = 'Screen Awake: ON';
-
-            }
-
-            wakeLock.addEventListener('release', () => {
-
-              if (wakeLockBtn) {
-
-                wakeLockBtn.classList.remove('active');
-
-                wakeLockBtn.setAttribute('aria-pressed', 'false');
-
-                wakeLockBtn.querySelector('.wake-text').textContent = 'Keep Screen Awake';
-
-              }
-
-              wakeLock = null;
-
-            });
-
-          } catch (err) {
-
-            console.warn('Wake Lock request error:', err);
-
-          }
-
-        }
-
+      function getFloatWakeBtn() {
+        return document.getElementById('floating-awake-toggle');
       }
 
-
-
-      async function releaseScreenWakeLock() {
-
-        if (wakeLock !== null) {
-
-          try {
-
-            await wakeLock.release();
-
-          } catch (e) {}
-
-          wakeLock = null;
-
-        }
-
+      function getAllAwakeButtons() {
+        const btns = [];
+        const nav = document.getElementById('wake-lock-toggle');
+        const floatB = getFloatWakeBtn();
+        const stickyB = document.getElementById('sticky-awake-toggle');
+        if (nav) btns.push(nav);
+        if (floatB) btns.push(floatB);
+        if (stickyB) btns.push(stickyB);
+        document.querySelectorAll('.vpp-btn-awake').forEach(b => btns.push(b));
+        return btns;
       }
 
-
-
-      if (wakeLockBtn) {
-
-        wakeLockBtn.addEventListener('click', async () => {
-
-          if (wakeLock !== null) {
-
-            await releaseScreenWakeLock();
-
+      function syncWakeLockUI(isActive) {
+        getAllAwakeButtons().forEach(btn => {
+          if (isActive) {
+            btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
           } else {
-
-            await requestScreenWakeLock();
-
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
           }
-
         });
 
+        const nav = document.getElementById('wake-lock-toggle');
+        if (nav) {
+          const t = nav.querySelector('.wake-text');
+          if (t) t.textContent = isActive ? 'Screen Awake: ON' : 'Keep Screen Awake';
+        }
+        const floatB = getFloatWakeBtn();
+        if (floatB) {
+          const t = floatB.querySelector('.floating-wake-text');
+          if (t) t.textContent = isActive ? 'Screen Awake: ON' : 'Keep Awake';
+        }
+        const stickyText = document.getElementById('sticky-awake-text');
+        if (stickyText) {
+          stickyText.textContent = isActive ? 'Awake ON' : 'Awake';
+        }
+        document.querySelectorAll('.vpp-awake-text').forEach(t => {
+          t.textContent = isActive ? 'Awake ON' : 'Awake';
+        });
       }
 
+      async function requestScreenWakeLock() {
+        if ('wakeLock' in navigator) {
+          try {
+            wakeLock = await navigator.wakeLock.request('screen');
+            syncWakeLockUI(true);
 
+            wakeLock.addEventListener('release', () => {
+              syncWakeLockUI(false);
+              wakeLock = null;
+            });
+          } catch (err) {
+            console.warn('Wake Lock request error:', err);
+          }
+        }
+      }
+
+      async function releaseScreenWakeLock() {
+        if (wakeLock !== null) {
+          try {
+            await wakeLock.release();
+          } catch (e) {}
+          wakeLock = null;
+          syncWakeLockUI(false);
+        }
+      }
+
+      async function toggleScreenWakeLock() {
+        if (wakeLock !== null) {
+          await releaseScreenWakeLock();
+        } else {
+          await requestScreenWakeLock();
+        }
+      }
+
+      // Attach click listeners to static buttons
+      const navBtn = document.getElementById('wake-lock-toggle');
+      if (navBtn) navBtn.addEventListener('click', toggleScreenWakeLock);
+
+      const floatBtn = getFloatWakeBtn();
+      if (floatBtn) floatBtn.addEventListener('click', toggleScreenWakeLock);
+
+      const stickyBtn = document.getElementById('sticky-awake-toggle');
+      if (stickyBtn) stickyBtn.addEventListener('click', toggleScreenWakeLock);
+
+      // Scroll & Playback Detection for floating awake button
+      function updateAwakePillVisibility() {
+        const pill = getFloatWakeBtn();
+        if (!pill) return;
+        const scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const isUserScrolled = scrollY > 120;
+        const isPlaying = !!currentPlayingCard;
+        // Show floating awake button if scrolled down > 120px OR any video/voice is playing
+        if (isUserScrolled || isPlaying) {
+          pill.classList.add('visible');
+        } else {
+          pill.classList.remove('visible');
+        }
+      }
+
+      window.addEventListener('scroll', updateAwakePillVisibility, { passive: true });
+      document.addEventListener('scroll', updateAwakePillVisibility, { passive: true });
+
+      // Expose for external calls
+      window.requestScreenWakeLock = requestScreenWakeLock;
+      window.releaseScreenWakeLock = releaseScreenWakeLock;
+      window.toggleScreenWakeLock = toggleScreenWakeLock;
+      window.updateAwakePillVisibility = updateAwakePillVisibility;
 
       // Re-request wake lock if tab returns to view
-
       document.addEventListener('visibilitychange', async () => {
-
         if (wakeLock !== null && document.visibilityState === 'visible') {
-
           await requestScreenWakeLock();
-
         }
-
       });
-
-
 
     })();
 
   </script>
 
-<script src="/traffic-tracker.js" defer></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"f1d9854b68a34dce8311af723f34737b","r":1,"spa":2}' crossorigin="anonymous"></script>
-
-</body>
+<script src="/traffic-tracker.js" defer></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"f1d9854b68a34dce8311af723f34737b","r":1,"spa":2}' crossorigin="anonymous"></script></body>
 
 </html>
 
