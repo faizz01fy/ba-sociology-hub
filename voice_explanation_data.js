@@ -311,11 +311,11 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 02",
-            "title": "കവിത: ചിന്താവിഷ്ടയായ സീത — മഹാകവി കുമാരനാശാൻ",
-            "chapter": "റൊമാന്റിക് കാവ്യപ്രസ്ഥാനം · സ്ത്രീപക്ഷ നവോത്ഥാനം · മനഃശാസ്ത്രപരമായ ആഴം (Kumaran Asan's Masterpiece)",
-            "duration": "16:18",
-            "youtubeId": "EVfXGBMY3T8",
-            "thumbnail": "https://i.ytimg.com/vi/EVfXGBMY3T8/hqdefault.jpg",
+          "title": "കവിത: ചിന്താവിഷ്ടയായ സീത — മഹാകവി കുമാരനാശാൻ",
+          "chapter": "റൊമാന്റിക് കാവ്യപ്രസ്ഥാനം · സ്ത്രീപക്ഷ നവോത്ഥാനം · മനഃശാസ്ത്രപരമായ ആഴം (Kumaran Asan's Masterpiece)",
+          "duration": "16:11",
+          "youtubeId": "gPFUxbfGKwM",
+          "thumbnail": "https://i.ytimg.com/vi/gPFUxbfGKwM/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -328,11 +328,11 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 03",
-            "title": "കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ",
-            "chapter": "മഹാകവി വൈലോപ്പിള്ളിയുടെ നിര്യാണത്തിലുള്ള അനുസ്മരണ കാവ്യം · രാഷ്ട്രീയ ആധുനികത · പ്രത്യാശയുടെ പൂർണ്ണചന്ദ്രൻ (Vailoppilli Memorial Masterpiece)",
-            "duration": "16:53",
-            "youtubeId": "pB_mXjJ7ivg",
-            "thumbnail": "https://i.ytimg.com/vi/pB_mXjJ7ivg/hqdefault.jpg",
+          "title": "കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ",
+          "chapter": "മഹാകവി വൈലോപ്പിള്ളിയുടെ നിര്യാണത്തിലുള്ള അനുസ്മരണ കാവ്യം · രാഷ്ട്രീയ ആധുനികത · പ്രത്യാശയുടെ പൂർണ്ണചന്ദ്രൻ (Vailoppilli Memorial Masterpiece)",
+          "duration": "16:53",
+          "youtubeId": "PYtXGzEyPgQ",
+          "thumbnail": "https://i.ytimg.com/vi/PYtXGzEyPgQ/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
