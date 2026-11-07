@@ -1424,6 +1424,14 @@
     </div>
 
     <!-- Voice Reading Controls -->
+        <!-- Masterclass Video Link (Appears when Video is available for this document) -->
+    <div class="toolbar-group" id="videoToolbarGroup" style="display:none;">
+      <a id="masterclassVideoBtn" href="https://www.youtube.com/watch?v=1Va07j8OQSA" target="_blank" rel="noopener noreferrer" class="btn-masterclass-link" style="display:inline-flex; align-items:center; gap:6px; background:linear-gradient(135deg, #ef4444, #dc2626); color:#fff; padding:6px 12px; border-radius:8px; font-weight:700; font-size:12px; text-decoration:none; box-shadow:0 2px 8px rgba(239,68,68,0.35); transition:transform 0.15s ease;" title="Watch 18-minute Masterclass Video on YouTube">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="#ffffff" style="vertical-align:-2px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        <span>▶ Video Masterclass</span>
+      </a>
+    </div>
+
     <div class="toolbar-group" id="voiceToolbarGroup">
       <button id="voiceToggleBtn" class="voice-btn" type="button" title="ശബ്ദ വായന (Voice Read: Male / Female)" aria-label="Voice Read Aloud">
         <span class="voice-icon">🔊</span>
@@ -4145,5 +4153,18 @@
   <div id="zoomHud" role="status" aria-live="polite">🔍 100%</div>
 
 
+<script>
+    // Masterclass Video Detection for Philosophy of AI Module 1
+    (function checkMasterclassVideo() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const f = (params.get('file') || '').toLowerCase();
+        if (f.includes('philosophy') || f.includes('module_1') || f.includes('ai_philosophy')) {
+          const vGroup = document.getElementById('videoToolbarGroup');
+          if (vGroup) vGroup.style.display = 'inline-flex';
+        }
+      } catch(e) {}
+    })();
+</script>
 </body>
 </html>

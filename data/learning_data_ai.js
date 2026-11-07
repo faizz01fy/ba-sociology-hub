@@ -3,6 +3,15 @@
 window.aiLearningData = {
   "ai_mod_1_complete": {
     "title": "Philosophy of AI · Module 1 · Introduction to Artificial Intelligence · Complete LMS",
+    "videoResources": [
+      {
+        "title": "മെഷീനുകൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ? (Can a Machine Think? & Turing Test)",
+        "unit": "Module 1 · Unit 1.5",
+        "url": "https://www.youtube.com/watch?v=1Va07j8OQSA",
+        "duration": "18:19",
+        "thumbnail": "https://i.ytimg.com/vi/1Va07j8OQSA/hqdefault.jpg"
+      }
+    ],
     "titleMal": "മൊഡ്യൂൾ 1 · ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിന് ഒരു ആമുഖം · സമ്പൂർണ്ണ LMS സംഗ്രഹം",
     "filename": "Philosophy_of_AI_Module_1_Complete.pdf",
     "summary": {
@@ -875,6 +884,15 @@ window.aiLearningData = {
   },
   "ai_mod_1_ch1": {
     "title": "Module 1 · Chapter 1 · Can a Machine Think?",
+    "videoResources": [
+      {
+        "title": "മെഷീനുകൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ? (Can a Machine Think? & Turing Test)",
+        "unit": "Module 1 · Chapter 1",
+        "url": "https://www.youtube.com/watch?v=1Va07j8OQSA",
+        "duration": "18:19",
+        "thumbnail": "https://i.ytimg.com/vi/1Va07j8OQSA/hqdefault.jpg"
+      }
+    ],
     "titleMal": "മൊഡ്യൂൾ 1 · അധ്യായം 1 · ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ?",
     "filename": "Module_1_Chapter_1_Can_a_Machine_Think.pdf",
     "summary": {
