@@ -353,8 +353,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "നാടകം: ഓരോരോ കാലത്തിലും — ശ്രീജ കെ.വി.",
             "chapter": "മലയാള നാടകവേദി ചരിത്രാവലോകനം · കുറിയേടത്ത് താത്രി സ്മാർത്ഥവിചാരം · സ്ത്രീപക്ഷ നാടകവേദി",
             "duration": "15:04",
-            "youtubeId": "CANzq3pLHMg",
-            "thumbnail": "",
+            "youtubeId": "_IN_U-38aIo",
+            "thumbnail": "https://i.ytimg.com/vi/_IN_U-38aIo/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -424,10 +424,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 02",
             "title": "ചലച്ചിത്രം: ലിജോ ജോസ് പെല്ലിശ്ശേരിയുടെ 'നൻപകൽ നേരത്ത് മയക്കം'",
-          "chapter": "സിനിമ ചരിത്രം · സങ്കരകല · ഇരട്ട വ്യക്തിത്വം · മിസ്-എൻ-സീനും മോണ്ടാഷും · മാന്ത്രിക റിയലിസം",
-          "duration": "11:30",
-          "youtubeId": "ZpBPAU4GH3c",
-          "thumbnail": "https://i.ytimg.com/vi/ZpBPAU4GH3c/hqdefault.jpg",
+            "chapter": "സിനിമ ചരിത്രം · സങ്കരകല · ഇരട്ട വ്യക്തിത്വം · മിസ്-എൻ-സീനും മോണ്ടാഷും · മാന്ത്രിക റിയലിസം",
+            "duration": "11:30",
+            "youtubeId": "ZpBPAU4GH3c",
+            "thumbnail": "https://i.ytimg.com/vi/ZpBPAU4GH3c/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -456,10 +456,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 03",
             "title": "ചലച്ചിത്ര ഗാനം: മലയാള ചലച്ചിത്ര ഗാനശാഖയും ഗാനരചയിതാക്കളും",
-          "chapter": "ഗാനശാഖയുടെ ഉത്ഭവം · സുവർണ്ണ കാലം · സംഗീത സംവിധായകർ · അള്ളിയാമ്പൽ കടവിൽ · സൂര്യകിരീടം · തനിയെ മിഴികൾ",
-          "duration": "11:06",
-          "youtubeId": "_fwb_tS8xvw",
-          "thumbnail": "https://i.ytimg.com/vi/_fwb_tS8xvw/hqdefault.jpg",
+            "chapter": "ഗാനശാഖയുടെ ഉത്ഭവം · സുവർണ്ണ കാലം · സംഗീത സംവിധായകർ · അള്ളിയാമ്പൽ കടവിൽ · സൂര്യകിരീടം · തനിയെ മിഴികൾ",
+            "duration": "11:06",
+            "youtubeId": "_fwb_tS8xvw",
+            "thumbnail": "https://i.ytimg.com/vi/_fwb_tS8xvw/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
