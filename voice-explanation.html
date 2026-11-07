@@ -2328,6 +2328,128 @@
 
     }
 
+    
+    /* Professional In-Page Next Module CTA Button */
+    .btn-sub-next {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 8px 12px;
+      border-radius: 9px;
+      border: 1px solid #fecaca;
+      background: #fff5f5;
+      color: #b91c1c;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+    }
+
+    .btn-sub-next:hover {
+      background: #fee2e2;
+      border-color: #f87171;
+      color: #991b1b;
+      transform: translateY(-1px);
+    }
+
+    .btn-sub-next:active {
+      transform: translateY(0);
+    }
+
+    /* Embedded In-Player Next Module Banner (Stays completely inside) */
+    .vpp-next-module-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+      padding: 9px 12px;
+      background: linear-gradient(135deg, #fff7f7 0%, #fff1f2 100%);
+      border: 1px solid #fecdd3;
+      border-radius: 11px;
+      box-sizing: border-box;
+    }
+
+    .vpp-nmb-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .vpp-nmb-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #dc2626;
+      background: #ffffff;
+      border: 1px solid #fecaca;
+      padding: 2.5px 7px;
+      border-radius: 999px;
+      white-space: nowrap;
+      letter-spacing: 0.2px;
+    }
+
+    .vpp-nmb-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: #374151;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .vpp-nmb-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: #dc2626;
+      color: #ffffff !important;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none !important;
+      box-shadow: 0 1px 3px rgba(220, 38, 38, 0.25);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .vpp-nmb-btn:hover {
+      background: #b91c1c;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 6px rgba(220, 38, 38, 0.35);
+    }
+
+    /* Sticky Audio Bar Subscribe Pill */
+    .sticky-btn-sub {
+      background: rgba(239, 68, 68, 0.22);
+      border: 1px solid rgba(239, 68, 68, 0.5);
+      color: #fecaca;
+      padding: 6px 11px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .sticky-btn-sub:hover {
+      background: rgba(239, 68, 68, 0.4);
+      color: #ffffff;
+      border-color: #ef4444;
+    }
+
     .btn-share-card.copied {
 
       background: #10b981;
@@ -3737,19 +3859,30 @@
 
       .card-actions {
         display: flex !important;
-        flex-direction: column !important;
+        flex-wrap: wrap !important;
         gap: 8px !important;
         width: 100% !important;
         box-sizing: border-box !important;
       }
 
-      .card-actions .btn-play-voice,
-      .card-actions .btn-share-card {
+      .card-actions .btn-play-voice {
         width: 100% !important;
+        flex: 1 1 100% !important;
         box-sizing: border-box !important;
         justify-content: center !important;
-        padding: 9px 12px !important;
-        font-size: 12.5px !important;
+        padding: 10px 14px !important;
+        font-size: 13.5px !important;
+        white-space: nowrap !important;
+      }
+
+      .card-actions .btn-sub-next,
+      .card-actions .btn-share-card {
+        flex: 1 1 calc(50% - 4px) !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        justify-content: center !important;
+        padding: 8px 10px !important;
+        font-size: 12px !important;
       }
 
       .vpp-wave-bar {
@@ -4219,6 +4352,214 @@
       }
     }
 
+  
+    /* In-Page Zero-Exit Subscription Modal */
+    .sub-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .sub-modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+      display: flex !important;
+    }
+    .sub-modal-card {
+      position: relative;
+      background: #ffffff;
+      width: 100%;
+      max-width: 460px;
+      border-radius: 20px;
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      padding: 24px 22px;
+      box-sizing: border-box;
+      transform: translateY(20px) scale(0.96);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .sub-modal-backdrop.active .sub-modal-card {
+      transform: translateY(0) scale(1);
+    }
+    .sub-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      border: none;
+      color: #64748b;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .sub-modal-close:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .sub-modal-header {
+      text-align: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .sub-modal-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: #fef2f2;
+      border: 1px solid #fee2e2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .sub-modal-channel-tag {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #dc2626;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .sub-modal-heading {
+      margin: 0 0 6px 0;
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+    .sub-modal-topic-sub {
+      margin: 0;
+      font-size: 12.5px;
+      color: #64748b;
+      font-weight: 500;
+    }
+    .sub-modal-body {
+      padding: 16px 0;
+    }
+    .sub-modal-info-box {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 12px 14px;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .sub-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .sub-info-icon {
+      font-size: 18px;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+    .sub-info-item strong {
+      display: block;
+      font-size: 13px;
+      color: #1e293b;
+      margin-bottom: 2px;
+    }
+    .sub-info-item p {
+      margin: 0;
+      font-size: 11.5px;
+      color: #64748b;
+      line-height: 1.4;
+    }
+    .sub-modal-note {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      font-size: 11.5px;
+      color: #166534;
+      line-height: 1.35;
+    }
+    .sub-note-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+    }
+    .sub-modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .sub-modal-btn-confirm {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: #dc2626;
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none !important;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+    .sub-modal-btn-confirm:hover {
+      background: #b91c1c;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35);
+    }
+    .sub-modal-btn-cancel {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: transparent;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sub-modal-btn-cancel:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+    @media (max-width: 480px) {
+      .sub-modal-card {
+        padding: 20px 16px;
+        border-radius: 18px;
+      }
+      .sub-modal-heading {
+        font-size: 16.5px;
+      }
+    }
+
   </style>
 
 </head>
@@ -4373,6 +4714,10 @@
 
     <div class="sticky-actions">
 
+      <button type="button" class="sticky-btn-sub" id="sticky-sub-toggle" title="Subscribe for Next Module">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="#ef4444" style="vertical-align:-2px; margin-right:3px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> <span>Next Module</span>
+      </button>
+
       <button type="button" class="sticky-btn-awake" id="sticky-awake-toggle" title="Keep Screen Awake while listening">
         <span>💡</span> <span id="sticky-awake-text">Awake</span>
       </button>
@@ -4395,6 +4740,58 @@
   </button>
 
 
+
+  
+  <!-- In-Page YouTube & Next Module Modal (Zero-Exit Modal) -->
+  <div id="sub-next-modal" class="sub-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="sub-modal-title" style="display:none;">
+    <div class="sub-modal-card">
+      <button type="button" class="sub-modal-close" id="sub-modal-close-btn" aria-label="Close dialog">✕</button>
+      
+      <div class="sub-modal-header">
+        <div class="sub-modal-icon-wrap">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="#ef4444"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </div>
+        <div class="sub-modal-channel-tag">Academic Hub · Official FYUGP Channel</div>
+        <h3 id="sub-modal-title" class="sub-modal-heading">Subscribe for Next Module Lectures</h3>
+        <p class="sub-modal-topic-sub" id="sub-modal-topic-sub">Calicut University Semester 1 Masterclasses</p>
+      </div>
+
+      <div class="sub-modal-body">
+        <div class="sub-modal-info-box">
+          <div class="sub-info-item">
+            <span class="sub-info-icon">🎙️</span>
+            <div>
+              <strong>അടുത്ത മൊഡ്യൂൾ ക്ലാസുകൾ ഉടൻ വരുന്നു</strong>
+              <p>Module 2 &amp; 3 line-by-line Malayalam lectures are in active production.</p>
+            </div>
+          </div>
+          <div class="sub-info-item">
+            <span class="sub-info-icon">📝</span>
+            <div>
+              <strong>എക്സാം സ്പെഷ്യൽ റിവിഷൻ &amp; ചോദ്യോത്തരങ്ങൾ</strong>
+              <p>Previous years' question papers &amp; 4-mark short note discussions before exams.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-modal-note">
+          <span class="sub-note-dot"></span>
+          <span>Tapping Subscribe opens YouTube in a <strong>new tab</strong>. Your current page, notes, and audio <strong>stay completely open</strong>.</span>
+        </div>
+      </div>
+
+      <div class="sub-modal-actions">
+        <a href="https://www.youtube.com/channel/UCP3FZYRZrRQVFblaj-Ls1mw?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="sub-modal-btn-confirm" id="sub-modal-yt-link">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <span>Subscribe on YouTube</span>
+          <span class="sub-arrow">↗</span>
+        </a>
+        <button type="button" class="sub-modal-btn-cancel" id="sub-modal-cancel-btn">
+          <span>Stay on this Page &amp; Continue Notes</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Load Subject Voice Data -->
 
@@ -4478,6 +4875,56 @@
       const stickySub = document.getElementById('sticky-sub');
       const stickyYtLink = document.getElementById('sticky-yt-link');
       const stickyClose = document.getElementById('sticky-close');
+
+      // In-Page Zero-Exit Subscription Modal Handlers
+      const subModal = document.getElementById('sub-next-modal');
+      const subModalCloseBtn = document.getElementById('sub-modal-close-btn');
+      const subModalCancelBtn = document.getElementById('sub-modal-cancel-btn');
+      const subModalTopicSub = document.getElementById('sub-modal-topic-sub');
+
+      function openSubModal(topicText) {
+        if (!subModal) return;
+        if (subModalTopicSub && topicText) {
+          subModalTopicSub.textContent = topicText;
+        }
+        subModal.style.display = 'flex';
+        // Force reflow
+        void subModal.offsetHeight;
+        subModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSubModal() {
+        if (!subModal) return;
+        subModal.classList.remove('active');
+        setTimeout(() => {
+          subModal.style.display = 'none';
+          document.body.style.overflow = '';
+        }, 220);
+      }
+
+      if (subModalCloseBtn) subModalCloseBtn.addEventListener('click', closeSubModal);
+      if (subModalCancelBtn) subModalCancelBtn.addEventListener('click', closeSubModal);
+      if (subModal) {
+        subModal.addEventListener('click', (e) => {
+          if (e.target === subModal) closeSubModal();
+        });
+      }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && subModal && subModal.classList.contains('active')) {
+          closeSubModal();
+        }
+      });
+
+      const stickySubToggle = document.getElementById('sticky-sub-toggle');
+      if (stickySubToggle) {
+        stickySubToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const title = (stickyTitle && stickyTitle.textContent) ? stickyTitle.textContent : 'FYUGP Next Module';
+          openSubModal(`${title} · Calicut University`);
+        });
+      }
+
 
       let currentPlayingCard = null;
 
@@ -4785,14 +5232,17 @@
 
                 <div class="card-actions">
 
-                  
-
                   <button type="button" class="btn-play-voice">
 
                     <span aria-hidden="true">▶</span> ${v.videoUrl || v.youtubeId ? 'Play Video' : 'Play Voice'}
 
                   </button>
                   
+                  <button type="button" class="btn-sub-next" data-topic="${v.title}" title="Next Module lecture updates">
+
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="#ef4444" style="vertical-align:-1px; margin-right:3px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> <span>Next Module</span>
+
+                  </button>
 
                   <button type="button" class="btn-share-card" title="Share this chapter lecture">
 
@@ -4873,6 +5323,17 @@
                       <button type="button" class="vpp-btn-awake" title="Keep Screen Awake while playing">💡 <span class="vpp-awake-text">Awake</span></button>
                       <button type="button" class="vpp-btn-close" title="Close player">✕ Close</button>
 
+                    </div>
+
+                    <!-- Embedded In-Player Next Module Banner (Zero Exit) -->
+                    <div class="vpp-next-module-banner">
+                      <div class="vpp-nmb-left">
+                        <span class="vpp-nmb-badge">🔴 Next Module</span>
+                        <span class="vpp-nmb-text">അടുത്ത മൊഡ്യൂൾ ലെക്ചറുകൾ ഉടൻ ലഭിക്കാൻ ചാനൽ സബ്സ്ക്രൈബ് ചെയ്യുക</span>
+                      </div>
+                      <a href="https://www.youtube.com/channel/UCP3FZYRZrRQVFblaj-Ls1mw?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="vpp-nmb-btn" title="Subscribe on YouTube (Opens in new tab without interrupting playback)">
+                        <span>Subscribe</span> ↗
+                      </a>
                     </div>
 
                   </div>
@@ -5515,7 +5976,11 @@
 
                 <div class="card-actions">
 
-                  <button type="button" class="btn-share-card btn-share-card--frozen" disabled aria-disabled="true" title="Lecture access frozen: In production"><span aria-hidden="true">🔒</span> Video Access Frozen</button>
+                  <button type="button" class="btn-sub-next" data-topic="${v.title}" title="Notify on YouTube when live">
+
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="#ef4444" style="vertical-align:-1px; margin-right:3px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> <span>Notify When Live</span>
+
+                  </button>
 
                   <div class="voice-scheduled-pill">
 
@@ -5580,6 +6045,16 @@
 
 
             // Setup Share Button Listener with Full Module & Chapter Details
+
+            // Wire In-Page Next Module Modal Trigger
+            const subNextBtns = card.querySelectorAll('.btn-sub-next');
+            subNextBtns.forEach(btn => {
+              btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const topic = btn.dataset.topic || v.title || `${subject.name} Next Module`;
+                openSubModal(`${topic} · Calicut University FYUGP`);
+              });
+            });
 
             const shareBtn = card.querySelector('button.btn-share-card');
 
