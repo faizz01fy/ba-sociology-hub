@@ -2248,6 +2248,14 @@
 
     }
 
+    .card-actions .btn-play-voice {
+      flex: 1;
+    }
+
+    .card-actions .btn-exam-revision {
+      flex: 1.25;
+    }
+
     .btn-play-voice {
 
       flex: 1;
@@ -3887,41 +3895,21 @@
 
       .card-actions {
         display: flex !important;
-        flex-wrap: wrap !important;
+        flex-direction: column !important;
         gap: 8px !important;
         width: 100% !important;
         box-sizing: border-box !important;
       }
 
-      
-      .card-actions .btn-watch-youtube {
-        flex: 1 1 calc(50% - 4px) !important;
-        min-width: 120px !important;
-        box-sizing: border-box !important;
-        justify-content: center !important;
-        padding: 10px 12px !important;
-        font-size: 13px !important;
-        white-space: nowrap !important;
-      }
-
-      .card-actions .btn-play-voice {
+      .card-actions .btn-play-voice,
+      .card-actions .btn-exam-revision {
         width: 100% !important;
         flex: 1 1 100% !important;
         box-sizing: border-box !important;
         justify-content: center !important;
         padding: 10px 14px !important;
-        font-size: 13.5px !important;
+        font-size: 13px !important;
         white-space: nowrap !important;
-      }
-
-      .card-actions .btn-sub-next,
-      .card-actions .btn-share-card {
-        flex: 1 1 calc(50% - 4px) !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
-        justify-content: center !important;
-        padding: 8px 10px !important;
-        font-size: 12px !important;
       }
 
       .vpp-wave-bar {
@@ -4631,6 +4619,118 @@
       }
     }
 
+  
+    /* Exam Revision Voice Note Blinking Button */
+    @keyframes revButtonBlink {
+      0%, 100% {
+        background: #fff5f5;
+        border-color: #fecaca;
+        color: #dc2626;
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+      }
+      50% {
+        background: #fee2e2;
+        border-color: #f87171;
+        color: #991b1b;
+        box-shadow: 0 0 10px 2px rgba(220, 38, 38, 0.25);
+      }
+    }
+
+    .btn-exam-revision {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 13px;
+      border-radius: 10px;
+      border: 1.5px solid #fecaca;
+      background: #fff5f5;
+      color: #dc2626;
+      font-size: 12.5px;
+      font-weight: 800;
+      cursor: pointer;
+      animation: revButtonBlink 1.8s infinite ease-in-out;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .btn-exam-revision:hover {
+      background: #fecdd3;
+      border-color: #ef4444;
+      color: #7f1d1d;
+      transform: translateY(-1px);
+    }
+
+    .btn-exam-revision:active {
+      transform: translateY(0);
+    }
+
+    .rev-blink-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ef4444;
+      display: inline-block;
+      box-shadow: 0 0 6px #ef4444;
+      animation: bulbBlinkRed 1s infinite alternate;
+      flex-shrink: 0;
+    }
+
+    /* Modal Colorful Same-Size Typography */
+    .cracker-lang-box {
+      border-radius: 10px;
+      padding: 8px 10px;
+      margin-bottom: 6px;
+    }
+    .cracker-lang-box--malayalam {
+      background: #f5f3ff;
+      border: 1px solid #ddd6fe;
+    }
+    .cracker-lang-box--english {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      margin-bottom: 0;
+    }
+    .lang-badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 1.5px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 4px;
+    }
+    .lang-badge--malayalam {
+      background: #ede9fe;
+      color: #6b21a8;
+      border: 1px solid #c4b5fd;
+    }
+    .lang-badge--english {
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #86efac;
+    }
+    .cracker-malayalam-text {
+      margin: 0;
+      font-size: 12px !important;
+      line-height: 1.5 !important;
+      color: #4338ca !important;
+      font-weight: 700 !important;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Malayalam', sans-serif;
+    }
+    .cracker-english-text {
+      margin: 0;
+      font-size: 12px !important;
+      line-height: 1.5 !important;
+      color: #047857 !important;
+      font-weight: 600 !important;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+
   </style>
 
 </head>
@@ -4786,7 +4886,7 @@
     <div class="sticky-actions">
 
       <button type="button" class="sticky-btn-sub" id="sticky-sub-toggle" title="Subscribe for Next Module">
-        <svg viewBox="0 0 24 24" width="13" height="13" fill="#ef4444" style="vertical-align:-2px; margin-right:3px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> <span>Next Module</span>
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="#ef4444" style="vertical-align:-2px; margin-right:3px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> <span class="rev-blink-dot" aria-hidden="true" style="margin-right:2px;"></span><span>Exam Revision</span>
       </button>
 
       <button type="button" class="sticky-btn-awake" id="sticky-awake-toggle" title="Keep Screen Awake while listening">
@@ -4823,7 +4923,7 @@
           <span class="cracker-dot"></span>
           <span>🎙️ Coming Soon: Detailed Exam Cracker</span>
         </div>
-        <h3 id="sub-modal-title" class="sub-modal-heading">Subscribe for Next Module</h3>
+        <h3 id="sub-modal-title" class="sub-modal-heading">Subscribe for Exam Revision</h3>
         <p class="sub-modal-topic-sub" id="sub-modal-topic-sub">Calicut University Semester 1</p>
       </div>
 
@@ -4838,12 +4938,21 @@
           </div>
           
           <div class="cracker-dual-text">
-            <p class="cracker-malayalam">
-              മുൻവർഷങ്ങളിലെ ചോദ്യപേപ്പർ റിവിഷൻ, ഷോർട്ട് എസ്സേകൾ, എസ്സേകൾ എന്നിവ പരീക്ഷാ ദിവസങ്ങൾക്ക് മുൻപായി വിശദമായ വോയ്‌സ് ഉത്തരങ്ങളോടെ ചർച്ച ചെയ്യുന്നു.
-            </p>
-            <p class="cracker-english">
-              Previous years' question papers revision &amp; short Essays, Essays, discussions before exams days in detailed voice.
-            </p>
+            <!-- Colorful Malayalam Block (Same 12px Size) -->
+            <div class="cracker-lang-box cracker-lang-box--malayalam">
+              <span class="lang-badge lang-badge--malayalam">മലയാളം</span>
+              <p class="cracker-malayalam-text">
+                മുൻവർഷങ്ങളിലെ ചോദ്യപേപ്പർ റിവിഷൻ, ഷോർട്ട് എസ്സേകൾ, എസ്സേകൾ എന്നിവ പരീക്ഷാ ദിവസങ്ങൾക്ക് മുൻപായി വിശദമായ വോയ്‌സ് ഉത്തരങ്ങളോടെ ചർച്ച ചെയ്യുന്നു.
+              </p>
+            </div>
+            
+            <!-- Colorful English Block (Same 12px Size) -->
+            <div class="cracker-lang-box cracker-lang-box--english">
+              <span class="lang-badge lang-badge--english">English</span>
+              <p class="cracker-english-text">
+                Previous years' question papers revision &amp; short Essays, Essays, discussions before exams days in detailed voice.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -5309,21 +5418,11 @@
                     <span aria-hidden="true">▶</span> ${v.videoUrl || v.youtubeId ? 'Play Video' : 'Play Voice'}
 
                   </button>
-
-                  ${(v.youtubeId || v.videoUrl) ? `
-                  <a href="${v.youtubeId ? `https://www.youtube.com/watch?v=${v.youtubeId}` : v.videoUrl}" target="_blank" rel="noopener noreferrer" class="btn-watch-youtube" title="Watch on YouTube (App / Full Screen)">
-                    <svg viewBox="0 0 24 24" width="15" height="15" fill="#ef4444" style="vertical-align:-2px; margin-right:3px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span>YouTube</span>
-                  </a>` : ''}
                   
-                  <button type="button" class="btn-sub-next" data-topic="${v.title}" title="Next Module lecture updates">
+                  <button type="button" class="btn-exam-revision btn-sub-next" data-topic="${v.title}" title="Exam revision voice notes with answers">
 
-                    <svg viewBox="0 0 24 24" width="13" height="13" fill="#ef4444" style="vertical-align:-1px; margin-right:3px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> <span>Next Module</span>
-
-                  </button>
-
-                  <button type="button" class="btn-share-card" title="Share this chapter lecture">
-
-                    <span aria-hidden="true">🔗</span> Share
+                    <span class="rev-blink-dot" aria-hidden="true"></span>
+                    <span>🎙️ Exam Revision Voice Note</span>
 
                   </button>
 
@@ -5405,7 +5504,7 @@
                     <!-- Embedded In-Player Next Module Banner (Zero Exit) -->
                     <div class="vpp-next-module-banner">
                       <div class="vpp-nmb-left">
-                        <span class="vpp-nmb-badge">🔴 Next Module</span>
+                        <span class="vpp-nmb-badge"><span class="rev-blink-dot" aria-hidden="true"></span> Exam Revision</span>
                         <span class="vpp-nmb-text">അടുത്ത മൊഡ്യൂൾ ലെക്ചറുകൾ ഉടൻ ലഭിക്കാൻ ചാനൽ സബ്സ്ക്രൈബ് ചെയ്യുക</span>
                       </div>
                       <a href="https://www.youtube.com/channel/UCP3FZYRZrRQVFblaj-Ls1mw?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="vpp-nmb-btn" title="Subscribe on YouTube (Opens in new tab without interrupting playback)">
@@ -6053,9 +6152,10 @@
 
                 <div class="card-actions">
 
-                  <button type="button" class="btn-sub-next" data-topic="${v.title}" title="Notify on YouTube when live">
+                  <button type="button" class="btn-exam-revision btn-sub-next" data-topic="${v.title}" title="Exam revision voice notes with answers">
 
-                    <svg viewBox="0 0 24 24" width="13" height="13" fill="#ef4444" style="vertical-align:-1px; margin-right:3px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> <span>Notify When Live</span>
+                    <span class="rev-blink-dot" aria-hidden="true"></span>
+                    <span>🎙️ Exam Revision Voice Note</span>
 
                   </button>
 
@@ -6066,12 +6166,6 @@
                     <span>${v.statusText || 'Voice Lecture in Production'}</span>
 
                   </div>
-
-                  <button type="button" class="btn-share-card" title="Share this chapter lecture">
-
-                    <span aria-hidden="true">🔗</span> Share
-
-                  </button>
 
                 </div>
 
