@@ -433,12 +433,11 @@ export default {
       let hasAdSense = false;
       response = new HTMLRewriter()
         .on("script[src*='pagead2.googlesyndication.com']", {
-          element() { hasAdSense = true; }
-        })
-        .on("head", {
           element(el) {
-            if (!hasAdSense) {
-              el.append('\n  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>\n', { html: true });
+            if (hasAdSense) {
+              el.remove();
+            } else {
+              hasAdSense = true;
             }
           }
         })
