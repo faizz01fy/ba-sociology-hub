@@ -332,6 +332,11 @@ export default {
       }
     }
 
+    // Redirect legacy/unverified Carlin PDF requests to the original euphemisms study guide
+    if (url.pathname.toLowerCase().includes('georgecarlin') || (url.searchParams.get('file') && url.searchParams.get('file').toLowerCase().includes('georgecarlin'))) {
+      return Response.redirect(new URL('/euphemisms-and-soft-language-study-guide.html', request.url).toString(), 301);
+    }
+
     // Secure PDF Routing: Intercept any direct browser navigation/access to any .pdf file and route to reader only
     if ((request.method === "GET" || request.method === "HEAD") && url.pathname.toLowerCase().endsWith('.pdf')) {
       if (isBrowserNavigation || !isInternalReader) {
