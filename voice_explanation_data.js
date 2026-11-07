@@ -1258,11 +1258,11 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 05",
-            "title": "Alan Turing Test & Operational Limits of Thought",
+            "title": "English Videos: Alan Turing Test & Operational Limits of Thought",
             "chapter": "Imitation Game & Behavioural Criterion",
             "duration": "24",
-            "youtubeId": "",
-            "language": "Bilingual (Malayalam & English)",
+            "youtubeId": "Y4zhWiirJkc",
+            "language": "English",
             "studyPoints": [
               "ട്യൂറിംഗ് ടെസ്റ്റിന്റെ പ്രവർത്തനരീതി (The Operational Method): ഒരു വിധികർത്താവ് (Judge) ടെർമിനലിലൂടെ മനുഷ്യനോടും മെഷീനോടും സംവദിച്ച് ആര് മനുഷ്യൻ ആര് മെഷീൻ എന്ന് വേർതിരിച്ചറിയാൻ ശ്രമിക്കുന്ന രീതി.",
               "പ്രവർത്തനപരമായ നിർവ്വചനം (Operational Definition of Intelligence): ചിന്തയുടെ ആന്തരിക തലങ്ങളെ അളക്കുന്നതിന് പകരം, മനുഷ്യന് സമാനമായി ഭാഷ കൈകാര്യം ചെയ്യാനുള്ള ബാഹ്യ ശേഷിയെ അടിസ്ഥാനമാക്കുന്നു.",
@@ -1323,7 +1323,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "Thinking Without a Thinker: Buddhism & AI",
+            "title": "English Videos: Thinking Without a Thinker: Buddhism & AI",
             "chapter": "Chapter 01: Buddhism & Epistemology in AI",
             "duration": "35:16",
             "youtubeId": "Y4zhWiirJkc",
@@ -1479,7 +1479,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 10
+    "totalVideos": 13
   },
   "philosophy-of-education": {
     "name": "Philosophy of Education",

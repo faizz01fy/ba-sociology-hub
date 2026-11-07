@@ -3656,7 +3656,19 @@
       font-weight: 600 !important;
       font-size: 13px !important;
     }
-  </style>
+  
+    /* Frozen state for empty cards without uploaded files */
+    .btn-share-card--frozen {
+      opacity: 0.55 !important;
+      cursor: not-allowed !important;
+      pointer-events: none !important;
+      background: #f8fafc !important;
+      color: #94a3b8 !important;
+      border: 1px dashed #cbd5e1 !important;
+      box-shadow: none !important;
+    }
+
+</style>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
 
@@ -4159,7 +4171,7 @@
               langHeading = '<strong>Arabic Video</strong>';
               langClass = ' arabic-video-heading';
             } else if (isEnglish) {
-              langHeading = '<strong>English Video</strong>';
+              langHeading = '<strong>English Videos</strong>';
               langClass = ' english-video-heading';
             } else if (isBilingual) {
               langHeading = '<strong>English &amp; Malayalam Video</strong>';
@@ -4167,7 +4179,7 @@
             }
             const languageLabel = `<div class="video-language-label${langClass}" lang="en" aria-label="${language} Video">${langHeading}</div>`;
 
-            const fullVideoUrl = v.videoUrl || (v.youtubeId ? `https://www.youtube.com/watch?v=${v.youtubeId}` : `https://www.youtube.com/results?search_query=${encodeURIComponent('Calicut University ' + (subject.name || '') + ' ' + (v.title || ''))}`);
+            const fullVideoUrl = (v.youtubeId || v.videoUrl) ? (v.videoUrl || `https://www.youtube.com/watch?v=${v.youtubeId}`) : "";
 
 
 
@@ -4213,7 +4225,7 @@
 
                 <div class="card-actions">
 
-                  <a class="btn-share-card" href="${fullVideoUrl}" target="_blank" rel="noopener noreferrer">▶ Watch Full Video</a>
+                  <button type="button" class="btn-share-card btn-share-card--frozen" disabled aria-disabled="true" title="YouTube video access frozen: No file uploaded yet"><span aria-hidden="true">🔒</span> Video Access Frozen</button>
 
                   <button type="button" class="btn-play-voice">
 
@@ -4311,7 +4323,7 @@
 
                 ${v.studyPoints && v.studyPoints.length > 0 ? `
 
-                <details class="chapter-notes-box" open>
+                <details class="chapter-notes-box">
 
                   <summary class="notes-summary">
 
@@ -4859,7 +4871,7 @@
 
                 <div class="card-actions">
 
-                  <a class="btn-share-card" href="${fullVideoUrl}" target="_blank" rel="noopener noreferrer">▶ Watch Full Video</a>
+                  <button type="button" class="btn-share-card btn-share-card--frozen" disabled aria-disabled="true" title="YouTube video access frozen: No file uploaded yet"><span aria-hidden="true">🔒</span> Video Access Frozen</button>
 
                   <div class="voice-scheduled-pill">
 
@@ -4881,7 +4893,7 @@
 
                 ${v.studyPoints && v.studyPoints.length > 0 ? `
 
-                <details class="chapter-notes-box" open>
+                <details class="chapter-notes-box">
 
                   <summary class="notes-summary">
 
@@ -5291,17 +5303,7 @@
 
 
 
-            const playBtn = card.querySelector('.btn-play-voice');
-
-            if (playBtn) {
-
-              setTimeout(() => {
-
-                playBtn.click();
-
-              }, 700);
-
-            }
+            /* Voice player tab auto-open disabled */
 
             break;
 
