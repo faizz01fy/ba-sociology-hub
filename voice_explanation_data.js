@@ -311,11 +311,11 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 02",
-          "title": "കവിത: ചിന്താവിഷ്ടയായ സീത — മഹാകവി കുമാരനാശാൻ",
-          "chapter": "റൊമാന്റിക് കാവ്യപ്രസ്ഥാനം · സ്ത്രീപക്ഷ നവോത്ഥാനം · മനഃശാസ്ത്രപരമായ ആഴം (Kumaran Asan's Masterpiece)",
-          "duration": "16:11",
-          "youtubeId": "gPFUxbfGKwM",
-          "thumbnail": "https://i.ytimg.com/vi/gPFUxbfGKwM/hqdefault.jpg",
+            "title": "കവിത: ചിന്താവിഷ്ടയായ സീത — മഹാകവി കുമാരനാശാൻ",
+            "chapter": "റൊമാന്റിക് കാവ്യപ്രസ്ഥാനം · സ്ത്രീപക്ഷ നവോത്ഥാനം · മനഃശാസ്ത്രപരമായ ആഴം (Kumaran Asan's Masterpiece)",
+            "duration": "16:11",
+            "youtubeId": "gPFUxbfGKwM",
+            "thumbnail": "https://i.ytimg.com/vi/gPFUxbfGKwM/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -328,11 +328,11 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 03",
-          "title": "കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ",
-          "chapter": "മഹാകവി വൈലോപ്പിള്ളിയുടെ നിര്യാണത്തിലുള്ള അനുസ്മരണ കാവ്യം · രാഷ്ട്രീയ ആധുനികത · പ്രത്യാശയുടെ പൂർണ്ണചന്ദ്രൻ (Vailoppilli Memorial Masterpiece)",
-          "duration": "16:53",
-          "youtubeId": "PYtXGzEyPgQ",
-          "thumbnail": "https://i.ytimg.com/vi/PYtXGzEyPgQ/hqdefault.jpg",
+            "title": "കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ",
+            "chapter": "മഹാകവി വൈലോപ്പിള്ളിയുടെ നിര്യാണത്തിലുള്ള അനുസ്മരണ കാവ്യം · രാഷ്ട്രീയ ആധുനികത · പ്രത്യാശയുടെ പൂർണ്ണചന്ദ്രൻ (Vailoppilli Memorial Masterpiece)",
+            "duration": "16:53",
+            "youtubeId": "PYtXGzEyPgQ",
+            "thumbnail": "https://i.ytimg.com/vi/PYtXGzEyPgQ/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -352,9 +352,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 01",
             "title": "നാടകം: ഓരോരോ കാലത്തിലും — ശ്രീജ കെ.വി.",
             "chapter": "മലയാള നാടകവേദി ചരിത്രാവലോകനം · കുറിയേടത്ത് താത്രി സ്മാർത്ഥവിചാരം · സ്ത്രീപക്ഷ നാടകവേദി",
-            "duration": "15:04",
-            "youtubeId": "_IN_U-38aIo",
-            "thumbnail": "https://i.ytimg.com/vi/_IN_U-38aIo/hqdefault.jpg",
+            "duration": "14:09",
+            "youtubeId": "hKD8dXAAGjU",
+            "thumbnail": "https://i.ytimg.com/vi/hKD8dXAAGjU/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -364,7 +364,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>രംഗഭാഷയുടെ രാഷ്ട്രീയം:</strong> കേവല വിനോദത്തിനപ്പുറം രാഷ്ട്രീയ ചെറുത്തുനിൽപ്പിന്റെയും സ്ത്രീ സ്വാതന്ത്ര്യത്തിന്റെയും മാധ്യമമായി നാടകവേദി മാറിയ ചരിത്രം."
             ],
             "examTip": "കേരളത്തിലെ സാമൂഹിക പരിഷ്കരണത്തിൽ നാടകവേദി വഹിച്ച പങ്കും സ്ത്രീപക്ഷ നാടകങ്ങളുടെ സവിശേഷതകളും വിശകലനം ചെയ്യുക.",
-            "audioLength": "15 മിനിറ്റ് സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്",
+            "audioLength": "14 മിനിറ്റ് സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്",
             "description": "മലയാള നാടകവേദിയുടെ ചരിത്രപരമായ ഉത്ഭവം മുതൽ സ്ത്രീ നാടകവേദിയുടെ ഉദയവും, കുറിയേടത്ത് താത്രി സ്മാർത്ഥവിചാരത്തെ സമകാലിക പെൺജീവിതവുമായി ഇഴചേർക്കുന്ന ശ്രീജ കെ.വിയുടെ വിഖ്യാതമായ 'ഓരോരോ കാലത്തിലും' എന്ന നാടകത്തിന്റെയും പാഠപുസ്തക ചോദ്യോത്തരങ്ങളുടെയും സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്.",
             "keyLearningPoints": [
               "മലയാള നാടകവേദിയുടെ ഉത്ഭവം (1882 മണിപ്രവാള ശാകുന്തളം, ചവിട്ടുനാടകം, നാടക കമ്പനികൾ)",
@@ -424,10 +424,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 02",
             "title": "ചലച്ചിത്രം: ലിജോ ജോസ് പെല്ലിശ്ശേരിയുടെ 'നൻപകൽ നേരത്ത് മയക്കം'",
-            "chapter": "സിനിമ ചരിത്രം · സങ്കരകല · ഇരട്ട വ്യക്തിത്വം · മിസ്-എൻ-സീനും മോണ്ടാഷും · മാന്ത്രിക റിയലിസം",
-            "duration": "11:30",
-            "youtubeId": "ZpBPAU4GH3c",
-            "thumbnail": "https://i.ytimg.com/vi/ZpBPAU4GH3c/hqdefault.jpg",
+            "chapter": "സിനിമാ ചരിത്രം · തിരക്കഥാ സാഹിത്യം · മിസ്-എൻ-സീൻ · മാന്ത്രിക റിയലിസം",
+            "duration": "10:53",
+            "youtubeId": "U7KtVJwJ6fc",
+            "thumbnail": "https://i.ytimg.com/vi/U7KtVJwJ6fc/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -437,7 +437,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>മാനവികതയും അതിർത്തികളും:</strong> ഭാഷയ്ക്കും ഭൂപ്രദേശങ്ങൾക്കും അതീതമായി മനുഷ്യബന്ധങ്ങളെയും സ്നേഹത്തെയും അടയാളപ്പെടുത്തുന്ന സിനിമ."
             ],
             "examTip": "'നൻപകൽ നേരത്ത് മയക്കം' എന്ന സിനിമയിലെ മാജിക്കൽ റിയലിസത്തിന്റെ സവിശേഷതകളും മമ്മൂട്ടിയുടെ കഥാപാത്ര പരിണാമവും ഉപന്യാസമായി തയ്യാറാക്കുക.",
-            "audioLength": "സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്",
+            "audioLength": "11 മിനിറ്റ് സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്",
             "description": "ലോക സിനിമയുടെ ഉത്ഭവം മുതൽ മലയാള സിനിമയുടെ വികാസവും, ലിജോ ജോസ് പെല്ലിശ്ശേരി സംവിധാനം ചെയ്ത് മമ്മൂട്ടി അനശ്വരമാക്കിയ 'നൻപകൽ നേരത്ത് മയക്കം' എന്ന ചലച്ചിത്രത്തിന്റെ സൗന്ദര്യശാസ്ത്രവും പാഠപുസ്തക ചോദ്യോത്തരങ്ങളും ഉൾക്കൊള്ളുന്ന സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്.",
             "keyLearningPoints": [
               "സിനിമ എന്ന കല — ലൂമിയർ സഹോദരന്മാർ മുതൽ ദാദാ സാഹിബ് ഫാൽക്കെ വരെ",
@@ -456,10 +456,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 03",
             "title": "ചലച്ചിത്ര ഗാനം: മലയാള ചലച്ചിത്ര ഗാനശാഖയും ഗാനരചയിതാക്കളും",
-            "chapter": "ഗാനശാഖയുടെ ഉത്ഭവം · സുവർണ്ണ കാലം · സംഗീത സംവിധായകർ · അള്ളിയാമ്പൽ കടവിൽ · സൂര്യകിരീടം · തനിയെ മിഴികൾ",
-            "duration": "11:06",
-            "youtubeId": "_fwb_tS8xvw",
-            "thumbnail": "https://i.ytimg.com/vi/_fwb_tS8xvw/hqdefault.jpg",
+            "chapter": "അള്ളിയാമ്പൽ കടവിൽ · സൂര്യകിരീടം വീണുടഞ്ഞു · തനിയെ മിഴികൾ തുളുമ്പിയോ",
+            "duration": "10:07",
+            "youtubeId": "oXxVutN2BOw",
+            "thumbnail": "https://i.ytimg.com/vi/oXxVutN2BOw/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -469,7 +469,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>സമകാലിക ചലച്ചിത്ര ഗാനങ്ങൾ:</strong> റാപ്പും ഇലക്ട്രോണിക് സംഗീതവും പരീക്ഷണങ്ങളും നിറഞ്ഞ പുതിയ തലമുറ ഗാനരചനകളുടെ രൂപമാറ്റങ്ങൾ."
             ],
             "examTip": "മലയാള ചലച്ചിത്ര ഗാനശാഖയ്ക്ക് വയലാറും പി. ഭാസ്കരനും നൽകിയ കാവ്യസംഭാവനകൾ താരതമ്യം ചെയ്യുക.",
-            "audioLength": "സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്",
+            "audioLength": "10 മിനിറ്റ് സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്",
             "description": "മലയാള ചലച്ചിത്ര ഗാനശാഖയുടെ ചരിത്രപരമായ ഉത്ഭവം മുതൽ സുവർണ്ണ കാലഘട്ടവും ഭാവുകത്വ പരിണാമങ്ങളും, ഒപ്പം പാഠഭാഗങ്ങളായ 'അള്ളിയാമ്പൽ കടവിൽ', 'സൂര്യകിരീടം വീണുടഞ്ഞു', 'തനിയെ മിഴികൾ തുളുമ്പിയോ' എന്നീ ഗാനങ്ങളുടെ സമഗ്ര കാവ്യ-സംഗീത വിശകലനവും പാഠപുസ്തക ചോദ്യോത്തരങ്ങളും ഉൾക്കൊള്ളുന്ന സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്.",
             "keyLearningPoints": [
               "ചലച്ചിത്ര സംഗീതത്തിന്റെ ചരിത്രപരമായ ഉത്ഭവം — നാടകഗാന പാരമ്പര്യം",
