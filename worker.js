@@ -344,6 +344,11 @@ export default {
       return Response.redirect(new URL('/euphemisms-and-soft-language-study-guide.html', request.url).toString(), 301);
     }
 
+    // Redirect duplicate history test route to canonical test URL
+    if (url.pathname === '/history-of-keralam-mcq-test' || url.pathname === '/history-of-keralam-mcq-test.html') {
+      return Response.redirect(new URL('/history-mock-test', request.url).toString(), 301);
+    }
+
     // Secure PDF Routing: Intercept any direct browser navigation/access to any .pdf file and route to reader only
     if ((request.method === "GET" || request.method === "HEAD") && url.pathname.toLowerCase().endsWith('.pdf')) {
       if (isBrowserNavigation || !isInternalReader) {
