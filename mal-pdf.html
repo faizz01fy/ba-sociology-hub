@@ -285,7 +285,174 @@
     .stat-badge{font-size:12px;font-weight:700;color:#475569;background:#ffffff;padding:4px 10px;border-radius:6px;border:1px solid #cbd5e1}
     .quiz-score-badge{font-size:14px;font-weight:800;color:var(--active-mod-color,#0f766e);background:var(--active-mod-tint,#edf9f5);padding:4px 12px;border-radius:8px;border:1px solid var(--active-mod-color,#0f766e)}
     .btn-shuffle{appearance:none;background:var(--active-mod-color,#0f766e);color:#ffffff;border:none;padding:8px 16px;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:filter .2s;font-family:inherit}
-    .btn-shuffle:hover{filter:brightness(0.9)}
+    .btn-shuffle {
+      appearance: none;
+      background: linear-gradient(135deg, var(--active-mod-color, #0f766e) 0%, #0d9488 100%);
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 8px 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 3px 10px rgba(15, 118, 110, 0.25);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: inherit;
+    }
+    .btn-shuffle:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.08);
+      box-shadow: 0 5px 14px rgba(15, 118, 110, 0.4);
+    }
+    .btn-shuffle:active {
+      transform: scale(0.96);
+    }
+    .bar-shuffle-btn {
+      appearance: none;
+      background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 12.5px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: inherit;
+      flex-shrink: 0;
+    }
+    .bar-shuffle-btn:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.5);
+      filter: brightness(1.1);
+    }
+    .bar-shuffle-btn:active {
+      transform: scale(0.96);
+    }
+    .floating-shuffle-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 10000;
+      background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+      color: #ffffff !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.6);
+      padding: 11px 20px;
+      border-radius: 9999px;
+      font-size: 13.5px;
+      font-weight: 800;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 20px rgba(15, 118, 110, 0.45);
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: inherit;
+      animation: pulse-fab 2.5s infinite ease-in-out;
+    }
+    @keyframes pulse-fab {
+      0%, 100% { transform: scale(1); box-shadow: 0 6px 20px rgba(15, 118, 110, 0.45); }
+      50% { transform: scale(1.04); box-shadow: 0 8px 24px rgba(15, 118, 110, 0.7); }
+    }
+    .floating-shuffle-btn:hover {
+      transform: translateY(-2px) scale(1.06);
+      animation-play-state: paused;
+    }
+    .floating-shuffle-btn:active {
+      transform: scale(0.95);
+    }
+    @media(max-width: 600px) {
+      .floating-shuffle-btn {
+        bottom: 16px;
+        right: 14px;
+        padding: 9px 15px;
+        font-size: 12.5px;
+      }
+    }
+    .quiz-bottom-card {
+      margin-top: 24px;
+      padding: 22px;
+      background: #ffffff;
+      border: 2px dashed #cbd5e1;
+      border-radius: 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    }
+    .quiz-bottom-card h4 {
+      margin: 0 0 4px;
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .quiz-bottom-card p {
+      margin: 0;
+      font-size: 13px;
+      color: #64748b;
+      font-weight: 600;
+    }
+    .btn-shuffle-lg {
+      padding: 10px 24px;
+      font-size: 14px;
+      border-radius: 12px;
+    }
+    .summary-mcq-banner {
+      margin-top: 24px;
+      padding: 18px 20px;
+      background: linear-gradient(135deg, var(--active-mod-tint, #edf9f5) 0%, #ffffff 100%);
+      border: 1.5px solid #cbd5e1;
+      border-left: 5px solid var(--active-mod-color, #0f766e);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .shuffle-toast {
+      position: fixed;
+      top: 65px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);
+      z-index: 100000;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .shuffle-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    .shuffle-toast span {
+      display: inline-grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      background: #10b981;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 900;
+    }
 
     .quiz-questions-list{display:flex;flex-direction:column;gap:14px}
     .question-card{background:#ffffff;border:1.5px solid #e2e8f0;border-radius:14px;padding:16px 18px;box-shadow:0 2px 6px rgba(0,0,0,0.03);transition:border-color .2s}
@@ -1239,7 +1406,15 @@
           <button type="button" class="mode-btn" data-mode="summary" onclick="switchMode('summary')"><span>📝</span> Chapter Summary</button>
           <button type="button" class="mode-btn" data-mode="mcq" onclick="switchMode('mcq')"><span>🎯</span> Random MCQs</button>
         </div>
+        <button id="bar-shuffle-btn" type="button" class="bar-shuffle-btn" onclick="reshuffleQuiz()" title="Re-Shuffle Questions in this chapter (പുതിയ ചോദ്യങ്ങൾ)" aria-label="Re-Shuffle Questions">
+          <span>🔀</span> <span class="bar-shuffle-label">Re-Shuffle</span>
+        </button>
       </div>
+
+      <!-- Floating Quick Re-Shuffle Button (Active in MCQ view) -->
+      <button id="floating-shuffle-btn" class="floating-shuffle-btn" type="button" onclick="reshuffleQuiz()" title="Re-Shuffle 15 Questions in this chapter" aria-label="Re-Shuffle Questions">
+        <span>🔀</span> <span>Re-Shuffle</span>
+      </button>
 
       <!-- Panes Container -->
       <div class="study-panes-body">
@@ -1379,6 +1554,8 @@
       modal.hidden = true;
       document.body.style.overflow = '';
       document.documentElement.classList.remove('theater-fullscreen', 'is-fullscreen');
+      const floatBtn = document.getElementById('floating-shuffle-btn');
+      if (floatBtn) floatBtn.style.display = 'none';
       const iframe = document.getElementById('modal-pdf-frame');
       if (iframe) iframe.src = '';
       if (document.fullscreenElement || document.webkitFullscreenElement) {
@@ -1495,6 +1672,11 @@
       document.getElementById('pane-summary').style.display = mode === 'summary' ? 'block' : 'none';
       document.getElementById('pane-mcq').style.display = mode === 'mcq' ? 'block' : 'none';
 
+      const floatBtn = document.getElementById('floating-shuffle-btn');
+      if (floatBtn) {
+        floatBtn.style.display = (mode === 'mcq') ? 'inline-flex' : 'none';
+      }
+
       if (mode === 'pdf') {
         const modData = getModuleData(activeModuleNumber);
         const pdfFrame = document.getElementById('modal-pdf-frame');
@@ -1590,6 +1772,20 @@
       }
 
       container.appendChild(grid);
+
+      // Chapter MCQ Practice & Re-Shuffle Banner
+      const mcqBanner = document.createElement('div');
+      mcqBanner.className = 'summary-mcq-banner';
+      mcqBanner.innerHTML = `
+        <div style="min-width:0; flex:1;">
+          <div style="font-weight:800; font-size:14.5px; color:#0f172a; margin-bottom:4px;">🎯 ${ch.chapterTitle} — MCQs പരിശീലിക്കാം</div>
+          <p style="margin:0; font-size:12.5px; color:#64748b; font-weight:600;">ഈ അധ്യായത്തിലെ പ്രധാന ചോദ്യങ്ങൾ റാൻഡം ആയി ക്രമീകരിച്ച് പരിശീലിക്കുക.</p>
+        </div>
+        <button type="button" class="btn-shuffle" onclick="switchMode('mcq'); reshuffleQuiz();">
+          <span>🔀</span> Re-Shuffle & Practice MCQs
+        </button>
+      `;
+      container.appendChild(mcqBanner);
     }
 
     function shuffleArray(arr) {
@@ -1609,10 +1805,34 @@
       renderQuizCards();
     }
 
+    function showShuffleToast() {
+      let toast = document.getElementById('shuffle-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'shuffle-toast';
+        toast.className = 'shuffle-toast';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `<span>✓</span> 15 പുതിയ ചോദ്യങ്ങൾ ഷഫിൾ ചെയ്തു!`;
+      toast.classList.add('show');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 1600);
+    }
+
     function reshuffleQuiz() {
+      if (activeMode !== 'mcq') {
+        switchMode('mcq');
+      }
       const modData = getModuleData(activeModuleNumber);
       if (modData && modData.chapters && modData.chapters[activeChapterIndex]) {
         loadChapterQuiz(modData.chapters[activeChapterIndex]);
+        const body = document.querySelector('.study-panes-body');
+        if (body) {
+          body.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        showShuffleToast();
       }
     }
 
@@ -1689,6 +1909,23 @@
         card.appendChild(expBox);
         list.appendChild(card);
       });
+
+      // Bottom Completion & Re-Shuffle Card for all chapters
+      const bottomCard = document.createElement('div');
+      bottomCard.className = 'quiz-bottom-card';
+      bottomCard.innerHTML = `
+        <div class="quiz-bottom-info">
+          <span style="font-size:30px;">🔀</span>
+          <div>
+            <h4>സെഷൻ പൂർത്തിയായി! കൂടുതൽ ചോദ്യങ്ങൾ പരിശീലിക്കാം</h4>
+            <p>ഈ അധ്യായത്തിലെ പുതിയ 15 ചോദ്യങ്ങൾക്കായി താഴെ ക്ലിക്ക് ചെയ്യുക (Re-Shuffle).</p>
+          </div>
+        </div>
+        <button type="button" class="btn-shuffle btn-shuffle-lg" onclick="reshuffleQuiz()">
+          <span>🔀</span> Re-Shuffle / പുതിയ 15 ചോദ്യങ്ങൾ
+        </button>
+      `;
+      list.appendChild(bottomCard);
     }
   </script>
   <script>
