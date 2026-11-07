@@ -1183,377 +1183,398 @@ window.VOICE_EXPLANATIONS_DATA = {
     "totalVideos": 16
   },
   "philosophy-of-ai": {
-    "name": "Philosophy of AI",
-    "badge": "✧",
-    "iconClass": "icon-mint",
-    "tag": "Minor for BA Sociology",
+    "name": "Philosophy of Artificial Intelligence",
+    "badge": "🤖",
+    "iconClass": "icon-cyan",
+    "tag": "PHILOSOPHY",
+    "totalVideos": "13 Comprehensive Video Lectures",
     "modules": [
       {
-        "moduleName": "MODULE 01: INTRODUCTION TO AI",
+        "moduleName": "MODULE 01: INTRODUCTION TO ARTIFICIAL INTELLIGENCE (ആമുഖം)",
         "videos": [
           {
-            "chapterNumber": "Chapter 01",
-            "title": "മെഷീനുകൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ? (Can a Machine Think?)",
-            "chapter": "Foundations of AI · Turing Test · Chinese Room · Dreyfus's Critique",
+            "chapterNumber": "Unit 1.1",
+            "title": "ചരിത്രപരമായ വികാസം: തത്ത്വചിന്തയിൽ നിന്ന് കമ്പ്യൂട്ടറുകളിലേക്ക് (Historical Evolution: Philosophy to AI)",
+            "chapter": "Unit 1.1: Historical Evolution · Aristotle, Leibniz, Boole & Computational Roots",
+            "duration": "18:00",
+            "youtubeId": "",
+            "language": "Malayalam",
+            "studyPoints": [
+              "തത്ത്വചിന്താപരമായ വേരുകൾ: അരിസ്റ്റോട്ടിലിന്റെ ഔപചാരിക യുക്തിയും സിലോജിസവും (Formal Logic & Syllogism) എങ്ങനെ കമ്പ്യൂട്ടേഷന്റെ അടിത്തറയായി.",
+              "ഗോട്ട്ഫ്രീഡ് ലൈബ്നിസിന്റെ കൽക്കുലസ് റേഷ്യോസിനേറ്റർ: ചിന്തകളെ ഗണിതക്രിയകളാക്കി മാറ്റാമെന്ന ആദ്യകാല ദർശനം.",
+              "ജോർജ്ജ് ബൂളും ബൂളിയൻ ആൾജിബ്രയും: 0, 1 ബൈനറി ലോജിക്കിലൂടെ മനുഷ്യ ചിന്തയെ പ്രതിനിധീകരിക്കൽ.",
+              "മെക്കാനിക്കൽ കമ്പ്യൂട്ടേഷന്റെ ഉദയം: ചാൾസ് ബാബേജിന്റെ അനലിറ്റിക്കൽ എഞ്ചിനും അഡാ ലവ്‌ലേസിന്റെ ആദ്യ അൽഗോരിതവും."
+            ],
+            "examTip": "Calicut University FYUGP ചോദ്യം: അരിസ്റ്റോട്ടിൽ മുതൽ ബൂൾ വരെയുള്ള തത്ത്വചിന്തകർ ആധുനിക AI-യുടെ വികാസത്തിന് നൽകിയ സംഭാവനകൾ വിലയിരുത്തുക."
+          },
+          {
+            "chapterNumber": "Unit 1.2 & 1.3",
+            "title": "അടിസ്ഥാന തത്ത്വങ്ങളും നാഴികക്കല്ലുകളും (Foundational Principles & Pioneers: Turing, McCarthy, Minsky)",
+            "chapter": "Unit 1.2 & 1.3: Logic, Reasoning, Search Space & Pioneers",
+            "duration": "20:00",
+            "youtubeId": "",
+            "language": "Malayalam",
+            "studyPoints": [
+              "യുക്തിചിന്തയുടെ 3 രീതികൾ: ഡിഡക്റ്റീവ് (Deductive), ഇൻഡക്റ്റീവ് (Inductive), അബ്ഡക്റ്റീവ് (Abductive) യുക്തികൾ AI-യിൽ.",
+              "പ്രശ്നപരിഹാരവും സ്റ്റേറ്റ്-സ്പേസ് സേർച്ചും: ന്യൂവലും സൈമണും മുന്നോട്ടുവെച്ച ഹ്യൂറിസ്റ്റിക് സേർച്ച് സിദ്ധാന്തം.",
+              "AI പയനിയർമാർ: അലൻ ട്യൂറിംഗ്, ജോൺ മക്കാർത്തി (AI എന്ന പദത്തിന്റെ ഉപജ്ഞാതാവ്), മാർവിൻ മിൻസ്കി, ഹെർബർട്ട് സൈമൺ.",
+              "ഡാർട്ട്മൗത്ത് കോൺഫറൻസ് (1956): കൃത്രിമ ബുദ്ധി ഒരു സ്വതന്ത്ര ശാസ്ത്ര ശാഖയായി ഔദ്യോഗികമായി പിറവിയെടുത്ത ചരിത്രം."
+            ],
+            "examTip": "യൂണിവേഴ്സിറ്റി പരീക്ഷാ ടിപ്പ്: 'ഡിഡക്റ്റീവ്, ഇൻഡക്റ്റീവ്, അബ്ഡക്റ്റീവ് യുക്തികൾ ആധുനിക AI സംവിധാനങ്ങളിൽ എങ്ങനെ പ്രയോഗിക്കപ്പെടുന്നു എന്ന് വ്യക്തമാക്കുക'."
+          },
+          {
+            "chapterNumber": "Unit 1.4",
+            "title": "യന്ത്രങ്ങൾക്ക് ശരിക്കും ചിന്തിക്കാൻ കഴിയുമോ? (Symbolic AI vs Connectionism)",
+            "chapter": "Unit 1.4: Symbolic AI (GOFAI), Connectionism, ML & Deep Learning",
+            "duration": "18:19",
+            "youtubeId": "Vq-Bc0TI7L0",
+            "language": "Malayalam",
+            "studyPoints": [
+              "സിംബോളിക് AI (GOFAI): ചിഹ്നങ്ങളും മുൻകൂട്ടി നിശ്ചയിച്ച യുക്തിനിയമങ്ങളും അടിസ്ഥാനമാക്കിയുള്ള ടോപ്പ്-ഡൗൺ (Top-Down) സമീപനം.",
+              "കണക്ഷനിസം (Neural Networks): മനുഷ്യ തലച്ചോറിലെ ന്യൂറോണുകളുടെ പ്രവർത്തനത്തെ അനുകരിക്കുന്ന ബോട്ടം-അപ്പ് (Bottom-Up) സമീപനം.",
+              "മെഷീൻ ലേണിംഗും ഡീപ് ലേണിംഗും: വ്യക്തമായ നിയമങ്ങൾ എഴുതിയുണ്ടാക്കുന്നതിന് പകരം ഡാറ്റയിൽ നിന്ന് സ്വയം പഠിക്കുന്ന രീതി.",
+              "ബിഹേവിയറിസവും മെന്റലിസവും: ബാഹ്യ പെരുമാറ്റമാണോ അതോ ആന്തരിക ബോധമാണോ ബുദ്ധിയെ നിർണ്ണയിക്കുന്നത് എന്ന തർക്കം."
+            ],
+            "examTip": "Calicut University FYUGP ചോദ്യം: സിംബോളിക് AI-യും കണക്ഷനിസവും തമ്മിലുള്ള ദാർശനികവും സാങ്കേതികവുമായ വ്യത്യാസങ്ങൾ താരതമ്യം ചെയ്യുക."
+          },
+          {
+            "chapterNumber": "Unit 1.5",
+            "title": "മെഷീനുകൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ? ട്യൂറിംഗ് ടെസ്റ്റ് (Can a Machine Think? & Turing Test)",
+            "chapter": "Unit 1.5: Foundations of AI · Turing Test · Chinese Room · Dreyfus's Critique",
             "duration": "18:19",
             "youtubeId": "4EcWGNwIT2I",
             "language": "Malayalam",
             "studyPoints": [
-              "ആമുഖവും അടിസ്ഥാന ചോദ്യവും: 1950-ൽ അലൻ ട്യൂറിംഗ് ഉന്നയിച്ച 'Can a machine think?' എന്ന ചോദ്യവും കമ്പ്യൂട്ടേഷൻ സങ്കൽപ്പവും.",
-              "കമ്പ്യൂട്ടിംഗിന്റെ ആചാര്യന്മാർ: ജോൺ വോൺ ന്യൂമാന്റെ കമ്പ്യൂട്ടർ ആർക്കിടെക്ചർ, ക്ലോഡ് ഷാനന്റെ ഇൻഫർമേഷൻ തിയറി, ട്യൂറിംഗിന്റെ ചിന്തകൾ.",
-              "ചർച്ചിന്റെ തീസിസ് & ലാംഡ കാൽക്കുലസ്: ഏതൊരു അൽഗോരിത പ്രക്രിയയും ഔപചാരിക ഗണിത ചിഹ്നങ്ങളിലൂടെ നിർവ്വചിക്കാമെന്ന അലോൺസോ ചർച്ചിന്റെ സിദ്ധാന്തം.",
-              "യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീൻ (UTM): ഒരൊറ്റ മെഷീന് അനുയോജ്യമായ പ്രോഗ്രാമിലൂടെ ഏത് കമ്പ്യൂട്ടേഷനും നടപ്പിലാക്കാൻ സാധിക്കുമെന്ന ആശയം.",
-              "ട്യൂറിംഗ് ടെസ്റ്റ് (The Imitation Game): ഒരു മനുഷ്യ വിധികർത്താവിനെ ആശയക്കുഴപ്പത്തിലാക്കാൻ മെഷീന് കഴിയുമോ എന്ന ബിഹേവിയറൽ അളവുകോൽ.",
-              "ഹ്യൂബർട്ട് ഡ്രെയ്ഫസിന്റെ വിമർശനം: 'What Computers Can't Do' — മനുഷ്യന്റെ അന്തർജ്ഞാനം (Intuition), പശ്ചാത്തലബോധം (Tacit Knowledge) എന്നിവ അൽഗോരിതങ്ങൾക്ക് പകരമാകില്ല.",
-              "ജോൺ സർളും ചൈനീസ് റൂമും: ചിഹ്നങ്ങൾ കൃത്യമായി കൈകാര്യം ചെയ്യുന്നത് (Syntax) യഥാർത്ഥ അർത്ഥബോധത്തിന് (Semantics) തുല്യമാകില്ല.",
-              "ഹ്യൂമൻ ഇന്റലിജൻസും എഐയും: സങ്കുചിത എഐയും (Narrow AI) സാർവ്വത്രിക ആർട്ടിഫിഷ്യൽ ജനറൽ ഇന്റലിജൻസും (AGI) തമ്മിലുള്ള കാതലായ വ്യത്യാസം.",
-              "ജനറേറ്റീവ് എഐ & സ്റ്റൊക്കാസ്റ്റിക് പാരറ്റ്സ്: എൽ.എൽ.എമ്മുകൾ ഗണിതശാസ്ത്രപരമായ വാക്കുകളുടെ പ്രവചനം മാത്രമാണെന്ന നോം ചോംസ്കിയുടെയും ഗവേഷകരുടെയും വിമർശനം.",
-              "മെഷീൻ കോൺഷ്യസ്നസും ധാർമ്മികതയും: യന്ത്രങ്ങൾക്ക് സ്വതന്ത്ര ഇച്ഛാശക്തിയുണ്ടോ? ട്രോളി പ്രോബ്ലം, സ്വയംനിയന്ത്രിത കാറുകളിലെ ധാർമ്മിക പ്രതിസന്ധികൾ.",
-              "സിലബസ് മോഡൽ ചോദ്യോത്തരങ്ങൾ: യൂണിവേഴ്സിറ്റി പരീക്ഷയ്ക്ക് ആവർത്തിക്കുന്ന പ്രധാന ഡിസ്ക്രിപ്റ്റീവ് ചോദ്യങ്ങൾക്ക് സമഗ്രമായ മോഡൽ ഉത്തരങ്ങൾ.",
-              "ഉപസംഹാരവും ഭാവിയും: ക്വാണ്ടം കമ്പ്യൂട്ടിംഗ്, ന്യൂറോമോർഫിക് ഹാർഡ്‌വെയർ, മനുഷ്യനും യന്ത്രവും തമ്മിലുള്ള സഹവർത്തിത്വം."
+              "ട്യൂറിംഗിന്റെ ഇമിറ്റേഷൻ ഗെയിം (1950): 'യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ?' എന്ന ചോദ്യത്തിന് പ്രവർത്തനപരമായ മറുപടി നൽകിയ പരീക്ഷണം.",
+              "പ്രവർത്തനപരമായ ബുദ്ധി (Operational Intelligence): മനസ്സിന്റെ ആന്തരിക ഘടനയേക്കാൾ ബാഹ്യമായ സംഭാഷണ ശേഷിയെ അളക്കുന്ന രീതി.",
+              "എലൈസ ഇഫക്റ്റും വാക്യഘടനയും: ചിന്തയില്ലാതെ വെറും വാക്യഘടനകൾ (Syntax) വഴി മനുഷ്യനെ തെറ്റിദ്ധരിപ്പിക്കാനുള്ള മെഷീനുകളുടെ ശേഷി.",
+              "ട്യൂറിംഗ് ടെസ്റ്റിനെതിരെയുള്ള ആദ്യകാല ദാർശനിക വിമർശനങ്ങൾ: ലേഡി ലവ്‌ലേസിന്റെ ആക്ഷേപം (യന്ത്രങ്ങൾക്ക് സ്വന്തമായി ഒന്നും പുതുതായി സൃഷ്ടിക്കാനാവില്ല)."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: 'Can a Machine Think?' എന്ന ചോദ്യത്തിന്റെ ദാർശനിക പ്രാധാന്യവും ട്യൂറിംഗ് ടെസ്റ്റ്, ചൈനീസ് റൂം, ഡ്രെയ്ഫസിന്റെ വിമർശനം എന്നിവ വിശദീകരിക്കുക.",
-            "audioLength": "18 മിനിറ്റ് സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്",
-            "description": "അലൻ ട്യൂറിംഗിന്റെ വിഖ്യാതമായ 'Computing Machinery and Intelligence' (1950) എന്ന പ്രബന്ധത്തിലെ അടിസ്ഥാന ചോദ്യമായ 'Can Machines Think?' മുതൽ, ജോൺ വോൺ ന്യൂമാൻ, ക്ലോഡ് ഷാനൻ, അലോൺസോ ചർച്ചിന്റെ തീസിസ്, ട്യൂറിംഗ് ടെസ്റ്റ് (Imitation Game), ഹ്യൂബർട്ട് ഡ്രെയ്ഫസിന്റെ തത്ത്വചിന്താപരമായ വിമർശനം, ജോൺ സർളിന്റെ ചൈനീസ് റൂം ആർഗ്യുമെന്റ് (Syntax vs Semantics), ജനറേറ്റീവ് എഐ, LLM-കൾ, സ്റ്റൊക്കാസ്റ്റിക് പാരറ്റ്സ്, മെഷീൻ എത്തിക്സ്, സിലബസിലെ പ്രധാന മോഡൽ ഡിസ്ക്രിപ്റ്റീവ് ചോദ്യോത്തരങ്ങൾ എന്നിവ ഉൾക്കൊള്ളുന്ന 18 മിനിറ്റ് സമഗ്ര പഠന സഹായി.",
-            "keyLearningPoints": [
-              "ആമുഖവും അടിസ്ഥാന ചോദ്യവും: 1950-ൽ അലൻ ട്യൂറിംഗ് ഉന്നയിച്ച 'Can a machine think?' എന്ന ചോദ്യവും കമ്പ്യൂട്ടേഷൻ സങ്കൽപ്പവും.",
-              "കമ്പ്യൂട്ടിംഗിന്റെ ആചാര്യന്മാർ: ജോൺ വോൺ ന്യൂമാന്റെ കമ്പ്യൂട്ടർ ആർക്കിടെക്ചർ, ക്ലോഡ് ഷാനന്റെ ഇൻഫർമേഷൻ തിയറി, ട്യൂറിംഗിന്റെ ചിന്തകൾ.",
-              "ചർച്ചിന്റെ തീസിസ് & ലാംഡ കാൽക്കുലസ്: ഏതൊരു അൽഗോരിത പ്രക്രിയയും ഔപചാരിക ഗണിത ചിഹ്നങ്ങളിലൂടെ നിർവ്വചിക്കാമെന്ന അലോൺസോ ചർച്ചിന്റെ സിദ്ധാന്തം.",
-              "യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീൻ (UTM): ഒരൊറ്റ മെഷീന് അനുയോജ്യമായ പ്രോഗ്രാമിലൂടെ ഏത് കമ്പ്യൂട്ടേഷനും നടപ്പിലാക്കാൻ സാധിക്കുമെന്ന ആശയം.",
-              "ട്യൂറിംഗ് ടെസ്റ്റ് (The Imitation Game): ഒരു മനുഷ്യ വിധികർത്താവിനെ ആശയക്കുഴപ്പത്തിലാക്കാൻ മെഷീന് കഴിയുമോ എന്ന ബിഹേവിയറൽ അളവുകോൽ.",
-              "ഹ്യൂബർട്ട് ഡ്രെയ്ഫസിന്റെ വിമർശനം: 'What Computers Can't Do' — മനുഷ്യന്റെ അന്തർജ്ഞാനം (Intuition), പശ്ചാത്തലബോധം (Tacit Knowledge) എന്നിവ അൽഗോരിതങ്ങൾക്ക് പകരമാകില്ല.",
-              "ജോൺ സർളും ചൈനീസ് റൂമും: ചിഹ്നങ്ങൾ കൃത്യമായി കൈകാര്യം ചെയ്യുന്നത് (Syntax) യഥാർത്ഥ അർത്ഥബോധത്തിന് (Semantics) തുല്യമാകില്ല.",
-              "ഹ്യൂമൻ ഇന്റലിജൻസും എഐയും: സങ്കുചിത എഐയും (Narrow AI) സാർവ്വത്രിക ആർട്ടിഫിഷ്യൽ ജനറൽ ഇന്റലിജൻസും (AGI) തമ്മിലുള്ള കാതലായ വ്യത്യാസം.",
-              "ജനറേറ്റീവ് എഐ & സ്റ്റൊക്കാസ്റ്റിക് പാരറ്റ്സ്: എൽ.എൽ.എമ്മുകൾ ഗണിതശാസ്ത്രപരമായ വാക്കുകളുടെ പ്രവചനം മാത്രമാണെന്ന നോം ചോംസ്കിയുടെയും ഗവേഷകരുടെയും വിമർശനം.",
-              "മെഷീൻ കോൺഷ്യസ്നസും ധാർമ്മികതയും: യന്ത്രങ്ങൾക്ക് സ്വതന്ത്ര ഇച്ഛാശക്തിയുണ്ടോ? ട്രോളി പ്രോബ്ലം, സ്വയംനിയന്ത്രിത കാറുകളിലെ ധാർമ്മിക പ്രതിസന്ധികൾ.",
-              "സിലബസ് മോഡൽ ചോദ്യോത്തരങ്ങൾ: യൂണിവേഴ്സിറ്റി പരീക്ഷയ്ക്ക് ആവർത്തിക്കുന്ന പ്രധാന ഡിസ്ക്രിപ്റ്റീവ് ചോദ്യങ്ങൾക്ക് സമഗ്രമായ മോഡൽ ഉത്തരങ്ങൾ.",
-              "ഉപസംഹാരവും ഭാവിയും: ക്വാണ്ടം കമ്പ്യൂട്ടിംഗ്, ന്യൂറോമോർഫിക് ഹാർഡ്‌വെയർ, മനുഷ്യനും യന്ത്രവും തമ്മിലുള്ള സഹവർത്തിത്വം."
-            ],
-            "timestamps": [
-              {
-                "time": "00:00",
-                "title": "ആമുഖവും അടിസ്ഥാന ചോദ്യവും: Can a Machine Think?"
-              },
-              {
-                "time": "01:20",
-                "title": "കമ്പ്യൂട്ടിംഗിന്റെ ആചാര്യന്മാർ: von Neumann, Turing & Shannon"
-              },
-              {
-                "time": "02:51",
-                "title": "ചർച്ചിന്റെ തീസിസും കമ്പ്യൂട്ടബിലിറ്റിയും (Church's Thesis)"
-              },
-              {
-                "time": "04:18",
-                "title": "അലൻ ട്യൂറിംഗും യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീനും (UTM)"
-              },
-              {
-                "time": "05:25",
-                "title": "ട്യൂറിംഗ് ടെസ്റ്റും ഇമിറ്റേഷൻ ഗെയിമും (The Turing Test)"
-              },
-              {
-                "time": "06:38",
-                "title": "ഹ്യൂബർട്ട് ഡ്രെയ്ഫസിന്റെ എഐ വിമർശനം (Hubert Dreyfus)"
-              },
-              {
-                "time": "08:06",
-                "title": "ജോൺ സർളും ചൈനീസ് റൂം പരീക്ഷണവും (John Searle)"
-              },
-              {
-                "time": "09:30",
-                "title": "മനുഷ്യ ബുദ്ധിയും കൃത്രിമ ബുദ്ധിയും (Human vs AI, AGI)"
-              },
-              {
-                "time": "11:08",
-                "title": "ജനറേറ്റീവ് എഐ, എൽ.എൽ.എം & സ്റ്റൊക്കാസ്റ്റിക് പാരറ്റ്സ്"
-              },
-              {
-                "time": "12:42",
-                "title": "മെഷീൻ കോൺഷ്യസ്നസ്, ഫ്രീ വിൽ & എഐ എത്തിക്സ്"
-              },
-              {
-                "time": "14:02",
-                "title": "സിലബസ് മോഡൽ ഡിസ്ക്രിപ്റ്റീവ് ചോദ്യോത്തരങ്ങൾ (Model Q&A)"
-              },
-              {
-                "time": "16:08",
-                "title": "ഉപസംഹാരവും ഭാവിയും (Quantum AI & Neuromorphic)"
-              }
-            ]
-          },
-          {
-            "chapterNumber": "Chapter 02",
-            "title": "യന്ത്രങ്ങൾക്ക് ശരിക്കും ചിന്തിക്കാൻ കഴിയുമോ? (Can Machines Really Think?)",
-            "chapter": "Symbolic Processing & Turing Test",
-            "duration": "9",
-            "youtubeId": "Vq-Bc0TI7L0",
-            "language": "Bilingual (Malayalam & English)",
-            "studyPoints": [
-              "അലൻ ട്യൂറിംഗിന്റെ ചോദ്യം (Turing's 1950 Question): 'Computing Machinery and Intelligence' എന്ന പ്രബന്ധത്തിൽ 'യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ?' എന്ന ചോദ്യത്തിന് പകരമായി അനുകരണ പരീക്ഷണം (Imitation Game) അവതരിപ്പിച്ചു.",
-              "സിംബോളിക് പ്രോസസ്സിംഗ് (Symbolic Processing Hypothesis): ചിന്ത എന്നാൽ ചിഹ്നങ്ങളെ കൃത്യമായ നിയമങ്ങൾക്ക് വിധേയമായി കൈകാര്യം ചെയ്യലാണെങ്കിൽ (Manipulation of Symbols), മെഷീനുകൾക്കും ചിന്തിക്കാൻ കഴിയുമെന്ന വാദം.",
-              "ബിഹേവിയറിസവും മനശാസ്ത്രവും (Behaviorism vs Mentalism): ഒരു യന്ത്രം മനുഷ്യനെപ്പോലെ സംഭാഷണത്തിൽ പെരുമാറിയാൽ അതിന് ബുദ്ധിയുണ്ടെന്ന് കരുതാം എന്ന ബിഹേവിയറൽ സമീപനവും ആന്തരിക ബോധത്തെക്കുറിച്ചുള്ള തർക്കങ്ങളും.",
-              "ചർച്ച്-ട്യൂറിംഗ് തീസിസ് (Church-Turing Thesis): അൽഗോരിത രൂപത്തിൽ നിർവ്വചിക്കാൻ കഴിയുന്ന ഏതൊരു ഗണിത-യുക്തി പ്രശ്നവും ഒരു യൂണിവേഴ്സൽ ട്യൂറിംഗ് മെഷീന് (Turing Machine) കൃത്യമായി പരിഹരിക്കാൻ സാധിക്കുമെന്ന സിദ്ധാന്തം."
-            ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: 'Can a Machine Think?' എന്ന ട്യൂറിംഗിന്റെ ചോദ്യത്തിന് പ്രസക്തിയുണ്ടോ? ട്യൂറിംഗ് ടെസ്റ്റും അതിന്റെ ദാർശനിക പരിമിതികളും ചർച്ച ചെയ്യുക."
-          },
-          {
-            "chapterNumber": "Chapter 03",
-            "title": "അറിവും മനസ്സും പിന്നെ ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസും (Knowledge, Mind & AI)",
-            "chapter": "Mind-Body Problem & Computational Theory of Mind",
-            "duration": "20",
-            "youtubeId": "2_RbQ7y-uHE",
-            "language": "Bilingual (Malayalam & English)",
-            "studyPoints": [
-              "മനസ്സ്-ശരീര പ്രശ്നം (Mind-Body Problem in AI): ചിന്ത എന്നത് തലച്ചോറ് അല്ലെങ്കിൽ കമ്പ്യൂട്ടർ ഹാർഡ്‌വെയർ പോലെയുള്ള ഭൗതിക പദാർത്ഥത്തിൽ മാത്രം പ്രവർത്തിക്കുന്നതാണോ എന്ന ഡെക്കാർട്ടിയൻ ദ്വൈതവാദ പ്രശ്നം.",
-              "കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡ് (Computational Theory of Mind - CTM): ഹിലരി പുട്ട്‌നാമും ജെറി ഫോഡോറും മുന്നോട്ടുവെച്ച സിദ്ധാന്തം; മനുഷ്യ മനസ്സ് എന്നത് ഒരു കമ്പ്യൂട്ടേഷണൽ സിസ്റ്റവും തലച്ചോറ് ഹാർഡ്‌വെയറുമാണ്.",
-              "ഫങ്ഷണലിസം (Functionalism): ഒരു മാനസിക അവസ്ഥയെ നിർണ്ണയിക്കുന്നത് അതിന്റെ ഭൗതിക ഘടനയല്ല, മറിച്ച് സിസ്റ്റത്തിൽ അത് നിർവ്വഹിക്കുന്ന പ്രവർത്തനപരമായ ദൗത്യമാണ് (Causal/Functional Role) എന്ന ദാർശനിക കാഴ്ച്ചപ്പാട്.",
-              "ബോധത്തിന്റെ കഠിന പ്രശ്നം (Hard Problem of Consciousness - Chalmers): വിവരങ്ങൾ പ്രോസസ്സ് ചെയ്യാൻ മെഷീനുകൾക്ക് സാധിക്കുമെങ്കിലും, ആന്തരികമായ ആത്മനിഷ്ഠ അനുഭവങ്ങൾ (Qualia) യന്ത്രങ്ങൾക്ക് ഉണ്ടാകുമോ എന്ന തർക്കം."
-            ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡും (CTM) ഫങ്ഷണലിസവും എഐ തത്വചിന്തയിൽ എങ്ങനെ ബന്ധപ്പെട്ടിരിക്കുന്നു എന്ന് ഉദാഹരണസഹിതം വിശദീകരിക്കുക."
+            "examTip": "Calicut University ചോദ്യം: അലൻ ട്യൂറിംഗിന്റെ 'ഇമിറ്റേഷൻ ഗെയിം' സിദ്ധാന്തവും അതിനെതിരെയുള്ള പ്രധാന ദാർശനിക വിമർശനങ്ങളും വിലയിരുത്തുക."
           }
         ]
       },
       {
-        "moduleName": "MODULE 02: CLASSICAL VERSION OF AI",
+        "moduleName": "MODULE 02: CLASSICAL VERSION OF AI (ക്ലാസിക്കൽ വേർഷൻ ഓഫ് AI)",
         "videos": [
           {
-            "chapterNumber": "Chapter 04",
-            "title": "Problems in Classical GOFAI (Good Old-Fashioned AI)",
-            "chapter": "Frame Problem & Heuristic Limits",
-            "duration": "21",
+            "chapterNumber": "Unit 2.1 a",
+            "title": "ക്ലാസിക്കൽ AI-യും ഫ്രെയിം പ്രോബ്ലവും (Problems in Classical GOFAI)",
+            "chapter": "Unit 2.1 a: Classical (Symbolic) AI · Assumptions & Frame Problem",
+            "duration": "21:00",
             "youtubeId": "",
-            "language": "Bilingual (Malayalam & English)",
+            "language": "Malayalam",
             "studyPoints": [
-              "ക്ലാസിക്കൽ GOFAI (Good Old-Fashioned AI): അറിവിനെ ഔപചാരിക ചിഹ്നങ്ങളായും നിർദ്ദിഷ്ട യുക്തിനിയമങ്ങളായും കമ്പ്യൂട്ടറിൽ പ്രതിനിധീകരിച്ച് പ്രശ്നങ്ങൾ പരിഹരിക്കാമെന്ന ക്ലാസിക്കൽ ടോപ്പ്-ഡൗൺ സമീപനം.",
-              "ഫ്രെയിം പ്രോബ്ലം (The Frame Problem - McCarthy & Hayes): ഒരു പ്രവർത്തനം ലോകത്തിൽ നടക്കുമ്പോൾ ഏതെല്ലാം കാര്യങ്ങളിൽ മാറ്റം വന്നു, ഏതെല്ലാം കാര്യങ്ങളിൽ മാറ്റം വന്നില്ല എന്ന് തിട്ടപ്പെടുത്തുന്നതിലെ പ്രതിസന്ധി.",
-              "കോംബിനേറ്റോറിയൽ എക്സ്പ്ലോഷൻ (Combinatorial Explosion): യഥാർത്ഥ ലോകത്തിലെ പ്രശ്നങ്ങൾക്ക് സാധ്യതകൾ പെരുകുമ്പോൾ എല്ലാ വഴികളും പരിശോധിക്കാൻ ക്ലാസിക്കൽ മെഷീനുകൾക്ക് സാധിക്കാതെ വരുന്ന സാങ്കേതിക പരിമിതി.",
-              "ഹ്യൂറിസ്റ്റിക്സിന്റെ പരിമിതികൾ (Limits of Heuristics): കൃത്യമായ അൽഗോരിതമില്ലാത്തപ്പോൾ ഉപയോഗിക്കുന്ന തമ്പ്-റൂളുകൾ (Heuristics) സങ്കീർണ്ണവും അനിശ്ചിതവുമായ മാനുഷിക സാഹചര്യങ്ങളിൽ പരാജയപ്പെടുന്നു."
+              "ക്ലാസിക്കൽ GOFAI അനുമാനങ്ങൾ: മനുഷ്യ ബുദ്ധിയെ പൂർണ്ണമായും ലോജിക്കൽ ചിഹ്നങ്ങളിലൂടെ പ്രതിനിധീകരിക്കാമെന്ന നിഗമനം.",
+              "ഫ്രെയിം പ്രോബ്ലം (The Frame Problem - McCarthy & Hayes): ഒരു മാറ്റം വരുമ്പോൾ ബാക്കി ഏതെല്ലാം വസ്തുതകൾ മാറ്റമില്ലാതെ തുടരുന്നു എന്ന് തിട്ടപ്പെടുത്തുന്നതിലെ അസാധ്യത.",
+              "കോംബിനേറ്റോറിയൽ എക്സ്പ്ലോഷൻ (Combinatorial Explosion): സങ്കീർണ്ണ സാഹചര്യങ്ങളിൽ ചിഹ്നങ്ങളുടെ എണ്ണം ക്രമാതീതമായി പെരുകി സിസ്റ്റം സ്തംഭിക്കുന്ന അവസ്ഥ.",
+              "ഹ്യൂറിസ്റ്റിക്സിന്റെ പരിമിതികൾ: കൃത്യമായ അൽഗോരിതങ്ങൾ ലഭ്യമല്ലാത്ത മാനുഷിക സാഹചര്യങ്ങളിൽ തമ്പ്-റൂളുകൾ പരാജയപ്പെടുന്നു."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: ക്ലാസിക്കൽ GOFAI നേരിട്ട പ്രധാന പ്രതിസന്ധികളായ ഫ്രെയിം പ്രോബ്ലവും കോംബിനേറ്റോറിയൽ എക്സ്പ്ലോഷനും വിശദീകരിച്ച് ഉത്തരമെഴുതുക."
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: ക്ലാസിക്കൽ GOFAI നേരിട്ട ഫ്രെയിം പ്രോബ്ലവും കോംബിനേറ്റോറിയൽ എക്സ്പ്ലോഷനും എഐ വികാസത്തെ എങ്ങനെ ബാധിച്ചു?"
           },
           {
-            "chapterNumber": "Chapter 05",
-            "title": "English Videos: Alan Turing Test & Operational Limits of Thought",
-            "chapter": "Imitation Game & Behavioural Criterion",
-            "duration": "24",
+            "chapterNumber": "Unit 2.1 b",
+            "title": "ട്യൂറിംഗ് ടെസ്റ്റും ചിന്തയുടെ പരിമിതികളും (Alan Turing Test & Operational Limits of Thought)",
+            "chapter": "Unit 2.1 b: Imitation Game · Operational Limits · English Philosophical Masterclass",
+            "duration": "24:00",
             "youtubeId": "Y4zhWiirJkc",
             "language": "English",
             "studyPoints": [
-              "ട്യൂറിംഗ് ടെസ്റ്റിന്റെ പ്രവർത്തനരീതി (The Operational Method): ഒരു വിധികർത്താവ് (Judge) ടെർമിനലിലൂടെ മനുഷ്യനോടും മെഷീനോടും സംവദിച്ച് ആര് മനുഷ്യൻ ആര് മെഷീൻ എന്ന് വേർതിരിച്ചറിയാൻ ശ്രമിക്കുന്ന രീതി.",
-              "പ്രവർത്തനപരമായ നിർവ്വചനം (Operational Definition of Intelligence): ചിന്തയുടെ ആന്തരിക തലങ്ങളെ അളക്കുന്നതിന് പകരം, മനുഷ്യന് സമാനമായി ഭാഷ കൈകാര്യം ചെയ്യാനുള്ള ബാഹ്യ ശേഷിയെ അടിസ്ഥാനമാക്കുന്നു.",
-              "എലൈസ പ്രഭാവവും പരിമിതികളും (ELIZA Effect & Imitation Limits): ആഴത്തിലുള്ള അർത്ഥബോധമില്ലാതെ വെറും വാക്യഘടനകൾ (Syntax) ഉപയോഗിച്ച് മനുഷ്യരെ കബളിപ്പിക്കാൻ എഐക്ക് സാധിക്കുമെന്ന വിമർശനം.",
-              "കോഗ്നിറ്റീവ് അഡാപ്റ്റേഷൻ (Lack of True Common Sense): മുൻകൂട്ടി നിശ്ചയിച്ചിട്ടില്ലാത്ത യാഥാർത്ഥ്യങ്ങളോടും സന്ദർഭോചിത തമാശകളോടും ക്രിയാത്മകമായി പ്രതികരിക്കാൻ ട്യൂറിംഗ് മെഷീനുകൾക്കുള്ള അപര്യാപ്തത."
+              "The Operational Method: Why Turing shifted from metaphysical definitions of 'thought' to observable behavioral metrics.",
+              "The Imitation Game: Analyzing interrogator protocols, human foil dynamics, and deceptive text terminal interfaces.",
+              "Operational Limits: The ELIZA effect, lack of semantic grounding, and commonsense reasoning blindspots in classic testing.",
+              "Philosophical Implications: Behaviorism vs intentional mental states in computational intelligence."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: അലൻ ട്യൂറിംഗ് മുന്നോട്ടുവെച്ച 'ഇമിറ്റേഷൻ ഗെയിം' സിദ്ധാന്തവും ബുദ്ധിശക്തിയെ പ്രവർത്തനപരമായി നിർവ്വചിക്കുന്നതിലെ പോരായ്മകളും ചർച്ച ചെയ്യുക."
+            "examTip": "Exam Tip: 'Explain the operational limits of the Turing Test and discuss whether conversational mimicry constitutes true thought'."
           },
           {
-            "chapterNumber": "Chapter 06",
-            "title": "AI-ക്ക് അർത്ഥമറിയാമോ അതോ വെറും ചൈനീസ് റൂമോ? (John Searle's Chinese Room)",
-            "chapter": "Syntax vs Semantics, Strong AI vs Weak AI Critique",
-            "duration": "19",
+            "chapterNumber": "Unit 2.1 c",
+            "title": "AI-ക്ക് അർത്ഥമറിയാമോ അതോ വെറും ചൈനീസ് റൂമോ? (John Searle's Chinese Room Argument)",
+            "chapter": "Unit 2.1 c: Syntax vs Semantics · Strong AI vs Weak AI Critique · Chinese Room",
+            "duration": "19:25",
             "youtubeId": "OBl1S1edYyU",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
-              "ജോൺ സിയോളിന്റെ ചിന്താപരീക്ഷണം (Searle's 1980 Thought Experiment): ചൈനീസ് ഭാഷയറിയാത്ത ഒരാൾ നിയമപുസ്തകം ഉപയോഗിച്ച് ചോദ്യങ്ങൾക്ക് ശരിയായ ചൈനീസ് ചിഹ്നങ്ങളിൽ മറുപടി നൽകുന്ന ഒരു സങ്കൽപ്പിക മുറി.",
-              "സിന്റാക്സും സെമാന്റിക്സും (Syntax vs Semantics): പ്രോഗ്രാമുകൾക്ക് ചിഹ്നങ്ങളുടെ ക്രമീകരണം (Syntax) മാത്രമേ അറിയൂ; അവ പ്രതിനിധീകരിക്കുന്ന യഥാർത്ഥ അർത്ഥവും ആശയവും (Semantics/Meaning) ഗ്രഹിക്കാൻ സാധ്യമല്ല.",
-              "സ്ട്രോംഗ് AI vs വീക്ക് AI (Strong AI vs Weak AI Distinction): മനസ്സ് എന്നത് കമ്പ്യൂട്ടർ പ്രോഗ്രാമാണെന്ന വാദത്തെ (Strong AI) സിയോൾ തള്ളിക്കളയുന്നു; എഐ ഒരു ശക്തമായ അനുകരണ ഉപകരണം (Weak AI) മാത്രമാണ്.",
-              "സിസ്റ്റംസ് റിപ്ലൈയും സിയോളിന്റെ മറുപടിയും (The Systems Reply): മുറിയിലെ മനുഷ്യനല്ലെങ്കിലും മുഴുവൻ സംവിധാനത്തിനും അറിവുണ്ടെന്ന മറുവാദത്തെ, വ്യക്തി സംവിധാനം മുഴുവൻ ഹൃദിസ്ഥമാക്കിയാലും അർത്ഥം ഗ്രഹിക്കില്ലെന്ന് സിയോൾ എതിർത്തു."
+              "ജോൺ സിയേളിന്റെ ചിന്താപരീക്ഷണം (1980): ചൈനീസ് ഭാഷ അറിയാത്ത ഒരാൾ റൂൾബുക്ക് ഉപയോഗിച്ച് കൃത്യമായ മറുപടി ചിഹ്നങ്ങൾ നൽകുന്ന സങ്കൽപ്പിക മുറി.",
+              "സിന്റാക്സ് എന്നത് സെമാന്റിക്സിന് തുല്യമല്ല (Syntax is not Semantics): പ്രോഗ്രാമുകൾക്ക് ചിഹ്നങ്ങളുടെ വിന്യാസമറിയാം, എന്നാൽ അവയുടെ യഥാർത്ഥ അർത്ഥം ഗ്രഹിക്കാൻ കഴിയില്ല.",
+              "സ്ട്രോങ് AI vs വീക്ക് AI: മെഷീനുകൾക്ക് യഥാർത്ഥ ബോധമുണ്ടാകുമെന്ന വാദമാണ് സ്ട്രോങ് AI; വെറും സഹായ ഉപകരണങ്ങൾ മാത്രമെന്നത് വീക്ക് AI.",
+              "ഇന്റൻഷണാലിറ്റി (Intentionality): മനുഷ്യ മനസ്സിന് വിവരങ്ങളുമായി നേരിട്ട് സംവദിക്കാനുള്ള ആന്തരിക ശേഷിയുണ്ട്, അത് കേവല കോഡിംഗിനില്ല."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: ജോൺ സിയോളിന്റെ 'ചൈനീസ് റൂം ആർഗ്യുമെന്റ്' വിശദീകരിക്കുകയും സിന്റാക്സ് ഒരിക്കലും സെമാന്റിക്സ് ആകുന്നില്ല എന്ന വാദം വിലയിരുത്തുകയും ചെയ്യുക."
+            "examTip": "Calicut University FYUGP ചോദ്യം: ജോൺ സിയേളിന്റെ ചൈനീസ് റൂം ആർഗ്യുമെന്റ് വിശകലനം ചെയ്ത് സ്ട്രോങ് AI-ക്കെതിരെയുള്ള വിമർശനങ്ങൾ വ്യക്തമാക്കുക."
           },
           {
-            "chapterNumber": "Chapter 07",
-            "title": "Descartes & Philosophy of Mind in the Digital Age",
-            "chapter": "Cartesian Dualism & Physical Mechanism",
-            "duration": "19",
+            "chapterNumber": "Unit 2.2 a",
+            "title": "ഡെക്കാർട്ടും ഡിജിറ്റൽ യുഗത്തിലെ മനസ്സിന്റെ തത്ത്വചിന്തയും (Descartes & Mind-Body Dualism in AI)",
+            "chapter": "Unit 2.2 a: Cartesian Dualism · Res Cogitans vs Res Extensa · Physical Mechanism",
+            "duration": "19:00",
             "youtubeId": "",
-            "language": "Bilingual (Malayalam & English)",
+            "language": "Malayalam",
             "studyPoints": [
-              "റെനെ ഡെക്കാർട്ടിന്റെ ദാർശനിക ദ്വൈതവാദം (Cartesian Substance Dualism): ചിന്തിക്കുന്ന വസ്തുവായ മനസ്സും (Res Cogitans), വിസ്തൃതിയുള്ള ഭൗതിക ശരീരവും (Res Extensa) തമ്മിൽ വേർതിരിക്കപ്പെട്ടിരിക്കുന്നു എന്ന വാദം.",
-              "ഭാഷയും ചിന്തയും തമ്മിലുള്ള അഭേദ്യമായ ബന്ധം (Language as Proof of Soul): ചിട്ടപ്പെടുത്തിയ മെക്കാനിക്കൽ പ്രവർത്തനങ്ങൾക്കപ്പുറം സന്ദർഭോചിതമായി ഭാഷ സൃഷ്ടിക്കാൻ യന്ത്രങ്ങൾക്ക് കഴിയില്ലെന്ന ഡെക്കാർട്ടിയൻ നിലപാട്.",
-              "എഐ കാലഘട്ടത്തിലെ ദ്വൈതവാദ പ്രതിസന്ധി: കമ്പ്യൂട്ടേഷണൽ ഫങ്ഷണലിസം മനസ്സിനെ സോഫ്റ്റ്‌വെയറായും തലച്ചോറിനെ ഹാർഡ്‌വെയറായും കാണുന്നത് ഡെക്കാർട്ടിയൻ ദ്വൈതവാദത്തിന്റെ പുത്തൻ രൂപമാണെന്ന വാദം.",
-              "ആധുനിക ഫിസിക്കലിസവും റിഡക്ഷനിസവും: മനസ്സ് എന്നത് തലച്ചോറിലെ ന്യൂറോണൽ പ്രവർത്തനങ്ങളുടെ ഭൗതിക ഫലം മാത്രമാണെങ്കിൽ, സിലിക്കൺ ചിപ്പുകളിലും ചിന്ത പുനർനിർമ്മിക്കാൻ സാധിക്കുമെന്ന ഭൗതികവാദ കാഴ്ച്ചപ്പാട്."
+              "ഡെക്കാർട്ടിന്റെ മൈൻഡ്-ബോഡി ദ്വൈതവാദം: ചിന്തിക്കുന്ന മനസ്സ് (Res Cogitans), ഭൗതികമായ ശരീരം (Res Extensa) എന്നിവ തമ്മിലുള്ള വിഭജനം.",
+              "മെക്കാനിക്കൽ ബോഡി vs ബോധം: മൃഗങ്ങളെയും ശരീരത്തെയും ഓട്ടോമാറ്റൺ (യന്ത്രം) ആയി കണ്ട ഡെക്കാർട്ട്, ആത്മാവും ഭാഷാശേഷിയും മനുഷ്യന് മാത്രമാണെന്ന് വാദിച്ചു.",
+              "കമ്പ്യൂട്ടേഷണൽ ഫങ്ഷണലിസത്തിലെ ദ്വൈതവാദം: മനസ്സിനെ സോഫ്റ്റ്‌വെയറായും തലച്ചോറിനെ ഹാർഡ്‌വെയറായും കാണുന്നത് ഡെക്കാർട്ടിയൻ ദ്വൈതവാദത്തിന്റെ പുതിയ രൂപമാണെന്ന വാദം.",
+              "ഫിസിക്കലിസവും റിഡക്ഷനിസവും: മനസ്സ് എന്നത് തലച്ചോറിലെ ന്യൂറോണുകളുടെ ഭൗതിക ഫലം മാത്രമാണെങ്കിൽ സിലിക്കണിലും ചിന്ത സാധ്യമാകുമോ?"
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: ഡെക്കാർട്ടിന്റെ മൈൻഡ്-ബോഡി ദ്വൈതവാദം ആധുനിക കമ്പ്യൂട്ടേഷണൽ മനശാസ്ത്രത്തിലും എഐ ചിന്തകളിലും എങ്ങനെ പ്രതിഫലിക്കുന്നു എന്ന് വ്യക്തമാക്കുക."
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: റെനെ ഡെക്കാർട്ടിന്റെ മൈൻഡ്-ബോഡി ദ്വൈതവാദം ആധുനിക കമ്പ്യൂട്ടേഷണൽ മനശാസ്ത്രത്തിലും എഐ ചിന്തകളിലും എങ്ങനെ പ്രതിഫലിക്കുന്നു?"
           },
           {
-            "chapterNumber": "Chapter 08",
+            "chapterNumber": "Unit 2.2 b",
             "title": "ശരീരമില്ലാതെ ബോധത്തിന് നിലനിൽക്കാൻ കഴിയുമോ? (Embodied Cognition & AI)",
-            "chapter": "Dreyfus & Clark's Critique of Artificial Reason",
-            "duration": "19",
+            "chapter": "Unit 2.2 b: Disembodied Intelligence · Hubert Dreyfus & Andy Clark's Critique",
+            "duration": "19:00",
             "youtubeId": "ZIoG5kcVyk4",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
-              "എംബോഡിഡ് കോഗ്നിഷൻ സിദ്ധാന്തം (Embodied & Situated AI): ചിന്ത എന്നത് തലച്ചോറിലെ കേവല അമൂർത്ത കണക്കുകൂട്ടലല്ല; ശരീരവും ഭൗതിക ചുറ്റുപാടുകളുമായുള്ള നിരന്തര ഇടപെടലിലൂടെയാണ് (Sensorimotor Interaction) ബുദ്ധി ഉണ്ടാകുന്നത്.",
-              "ഹ്യൂബർട്ട് ഡ്രൈഫസിന്റെ വിമർശനം (Hubert Dreyfus's Phenomenological Critique): ഹൈഡഗ്ഗറുടെയും മെർലോ-പോണ്ടിയുടെയും തത്വങ്ങൾ ഉയർത്തി, ശരീരമില്ലാത്ത കമ്പ്യൂട്ടറുകൾക്ക് യഥാർത്ഥ ലോകാനുഭവങ്ങൾ നേടാനാവില്ലെന്ന് വാദിച്ചു.",
-              "റോഡ്നി ബ്രൂക്സിന്റെ സബ്സംപ്ഷൻ ആർക്കിടെക്ചർ: ആന്തരിക ലോക മാതൃകകൾ ഇല്ലാതെ തന്നെ ചുറ്റുപാടുകളോട് നേരിട്ട് പ്രതികരിക്കുന്ന റോബോട്ടുകൾ (Robotic Subsumption) ക്ലാസിക്കൽ എഐയുടെ പോരായ്മകൾ പരിഹരിക്കുന്നു.",
-              "എക്സ്റ്റെൻഡഡ് മൈൻഡ് സിദ്ധാന്തം (The Extended Mind - Andy Clark): മനുഷ്യ മനസ്സ് തലയോട്ടിക്കുള്ളിൽ ഒതുങ്ങുന്നതല്ല, ബാഹ്യ ഉപകരണങ്ങളിലേക്കും ഡിജിറ്റൽ പരിതസ്ഥിതികളിലേക്കും പടർന്നു കിടക്കുന്ന ഒന്നാണ്."
+              "എംബോഡിഡ് കോഗ്നിഷൻ സിദ്ധാന്തം (Embodied AI): ചിന്ത എന്നത് അമൂർത്ത കണക്കുകൂട്ടലല്ല; ശരീരവും ഭൗതിക ചുറ്റുപാടുകളുമായുള്ള നിരന്തര ഇടപെടലിലൂടെയാണ് (Sensorimotor) ബുദ്ധി ഉണ്ടാകുന്നത്.",
+              "ഹ്യൂബർട്ട് ഡ്രൈഫസിന്റെ പ്രതിഭാസശാസ്ത്രപരമായ വിമർശനം (Dreyfus's Critique): ശരീരമില്ലാത്ത കമ്പ്യൂട്ടറുകൾക്ക് യഥാർത്ഥ ലോകാനുഭവങ്ങൾ നേടാനാവില്ലെന്ന് ഹൈഡഗ്ഗർ ദർശനമുയർത്തി സമർത്ഥിച്ചു.",
+              "റോഡ്നി ബ്രൂക്സും സബ്സംപ്ഷൻ ആർക്കിടെക്ചറും: സങ്കീർണ്ണ ആന്തരിക മോഡലുകൾ ഇല്ലാതെ ചുറ്റുപാടുകളോട് നേരിട്ട് പ്രതികരിക്കുന്ന റോബോട്ടിക്സ്.",
+              "ആൻഡി ക്ലാർക്കിന്റെ എക്സ്റ്റൻഡഡ് മൈൻഡ് സിദ്ധാന്തം: മനുഷ്യ മനസ്സ് തലയോട്ടിക്കുള്ളിൽ ഒതുങ്ങുന്നതല്ല, ബാഹ്യ ഉപകരണങ്ങളിലേക്കും സാങ്കേതികവിദ്യയിലേക്കും പടർന്നു കിടക്കുന്നു."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: ക്ലാസിക്കൽ AI മാതൃകകൾക്കെതിരെ ഹ്യൂബർട്ട് ഡ്രൈഫസും ആൻഡി ക്ലാർക്കും ഉയർത്തിയ 'Embodied Cognition' വാദങ്ങൾ വിശകലനം ചെയ്യുക."
+            "examTip": "Calicut University FYUGP ചോദ്യം: ക്ലാസിക്കൽ AI-ക്കെതിരെ ഹ്യൂബർട്ട് ഡ്രൈഫസും ആൻഡി ക്ലാർക്കും ഉയർത്തിയ 'Embodied Cognition' വാദങ്ങൾ വിശകലനം ചെയ്യുക."
           }
         ]
       },
       {
-        "moduleName": "MODULE 03: THEORIES OF KNOWLEDGE IN ARTIFICIAL INTELLIGENCE",
+        "moduleName": "MODULE 03: THEORIES OF KNOWLEDGE IN ARTIFICIAL INTELLIGENCE (വിജ്ഞാനശാസ്ത്രം)",
         "videos": [
           {
-            "chapterNumber": "Chapter 01",
-            "title": "English Videos: Thinking Without a Thinker: Buddhism & AI",
-            "chapter": "Chapter 01: Buddhism & Epistemology in AI",
+            "chapterNumber": "Unit 3.1 a",
+            "title": "AI-യിലെ വിജ്ഞാനശാസ്ത്ര അടിത്തറകളും ഹലൂസിനേഷനും (Epistemological Foundations in AI: Knowledge & Hallucination)",
+            "chapter": "Unit 3.1 a: Epistemological Foundations · Silicon Valley Lab · What is Knowledge in AI?",
+            "duration": "24:00",
+            "youtubeId": "hoAiiD_qroA",
+            "language": "Bilingual (Malayalam & English)",
+            "studyPoints": [
+              "എഐയിലെ അറിവ് എന്താണ്? കേവല ഡാറ്റ പ്രോസസ്സിംഗും മനുഷ്യന്റെ ജ്ഞാനവും (Knowledge vs Information) തമ്മിലുള്ള വ്യത്യാസം.",
+              "എഐ ഹലൂസിനേഷൻ (AI Hallucination): വലിയ ഭാഷാ മോഡലുകൾ തെറ്റായ വിവരങ്ങൾ ആത്മവിശ്വാസത്തോടെ നിർമ്മിക്കുന്ന വിജ്ഞാനശാസ്ത്ര പ്രതിസന്ധി.",
+              "വിവരങ്ങളുടെ സാധുതയും പ്രമാണങ്ങളും: ആധുനിക അൽഗോരിതങ്ങളിൽ സത്യവും അസത്യവും വേർതിരിക്കാനുള്ള ന്യായീകരണങ്ങളുടെ (Justification) അഭാവം.",
+              "സിലിക്കൺ വാലി ലാബ് മോഡലുകളും വിജ്ഞാന നിർമ്മിതിയും: ഡാറ്റാ പാറ്റേൺ റെക്കഗ്നിഷൻ എങ്ങനെ പരമ്പരാഗത ജ്ഞാനശാസ്ത്രത്തെ പുനർനിർവ്വചിക്കുന്നു."
+            ],
+            "examTip": "Calicut University ചോദ്യം: ആധുനിക ജനറേറ്റീവ് AI മോഡലുകളിലെ 'ഹലൂസിനേഷൻ' പ്രശ്നം വിജ്ഞാനശാസ്ത്രപരമായി എങ്ങനെയെല്ലാം വിശദീകരിക്കാം?"
+          },
+          {
+            "chapterNumber": "Unit 3.1 b",
+            "title": "ബുദ്ധമത ദർശനവും ആധുനിക AI അൽഗോരിതങ്ങളും (Thinking Without a Thinker: Buddhism & AI)",
+            "chapter": "Unit 3.1 b: Buddhist Epistemology · Dignaga, Dharmakirti & Apoha Theory in ML",
             "duration": "35:16",
             "youtubeId": "Y4zhWiirJkc",
             "language": "English",
             "studyPoints": [
-              "Anatta (No-Self Doctrine): Buddhism argues there is no permanent thinker or ego; consciousness is a flow of mental states, mirroring AI where thinking occurs without a metaphysical self.",
-              "Pratityasamutpada (Dependent Origination): Phenomena arise through interconnected causes and conditions; this principle directly parallels computational neural networks and connected nodes.",
-              "The Five Skandhas (Pancha Skandha): Mind consists of form, feeling, perception, dispositions, and consciousness; this modular decomposition reflects computational cognitive architectures.",
-              "Buddhist Epistemology (Dignaga & Dharmakirti): Perception (Pratyaksha) and Inference (Anumana) are the valid sources of knowledge, providing the conceptual foundation for machine learning."
+              "ബുദ്ധമതത്തിലെ പ്രമാണ ശാസ്ത്രം: ദിഗ്നാഗനും ധർമ്മകീർത്തിയും മുന്നോട്ടുവെച്ച പ്രത്യക്ഷവും (Pratyaksha) അനുമാനവും (Anumana).",
+              "അപോഹ സിദ്ധാന്തം (Apoha Theory): ഒരു വസ്തുവിനെ അറിയുന്നത് അത് 'അല്ലാത്തതിനെ ഒഴിവാക്കിക്കൊണ്ടാണ്' (Exclusion of Others) - ആധുനിക ക്ലാസിഫിക്കേഷൻ അൽഗോരിതങ്ങളുമായുള്ള സാമ്യം.",
+              "അനത്ത (Anatta - No-Self): സ്ഥിരമായ ഒരു ആത്മാവോ കർത്താവോ ഇല്ലാതെ ചിന്തകൾ പരസ്പരാശ്രയത്തോടെ സംഭവിക്കുന്നുവെന്ന ബുദ്ധദർശനം ന്യൂറൽ നെറ്റ്‌വർക്കുകളിൽ.",
+              "ക്ഷണികവാദം (Kshanikavada): നിരന്തരം മാറിക്കൊണ്ടിരിക്കുന്ന ഡാറ്റാ സ്ട്രീമുകളും ഡിജിറ്റൽ പ്രോസസ്സിംഗും."
             ],
-            "examTip": "Calicut University FYUGP Question: Explain the concept of 'Thinking without a Thinker' in AI by comparing Buddhist Anatta and the Five Skandhas with modern computational cognitive systems."
+            "examTip": "Exam Tip: 'Explain how Dignaga and Dharmakirti's Apoha Theory parallels classification algorithms and negative contrastive learning in modern Machine Learning'."
           },
           {
-            "chapterNumber": "Chapter 02",
-            "title": "എഐയും അറിവിന്റെ വിജ്ഞാനശാസ്ത്രവും (Epistemology of AI)",
-            "youtubeId": "uiB6PFp5P_I",
-            "duration": "17:26",
-            "chapter": "Chapter 02: Epistemology of AI & Machine Knowledge",
-            "studyPoints": [
-              "വിജ്ഞാനശാസ്ത്രം (Epistemology in AI): അറിവ്, വിശ്വാസം, ന്യായീകരണം (JTB) എന്നിവയുടെ പഠനം; എഐ നൽകുന്ന വിവരങ്ങളെ മനുഷ്യൻ ന്യായീകരിക്കപ്പെട്ട യഥാർത്ഥ അറിവായി കാണാമോ എന്ന ദാർശനിക ചോദ്യം.",
-              "ബ്ലാക്ക് ബോക്സ് പ്രശ്നം (Black-Box Opacity): ആധുനിക ഡീപ് ലേണിംഗ് മോഡലുകളുടെ തീരുമാനമെടുക്കൽ രീതി സുതാര്യമല്ല; കാരണങ്ങൾ കണ്ടെത്താനാവാത്തത് എഐ അറിവിന്റെ ന്യായീകരണത്തിന് തടസ്സമാകുന്നു.",
-              "നിശബ്ദ ജ്ഞാനം (Tacit Knowledge - Michael Polanyi): 'നമുക്ക് പറയാൻ കഴിയുന്നതിനേക്കാൾ കൂടുതൽ അറിയാം'; വാക്കുകളാൽ നിർവ്വചിക്കാനാവാത്ത മനുഷ്യ അവബോധം കോഡിംഗിലേക്ക് മാറ്റാൻ എഐക്ക് കഴിയില്ല.",
-              "റിലയബിലിസം (Reliabilism): എഐ ഉത്തരങ്ങൾ വിശ്വസനീയമായ പ്രക്രിയയിലൂടെ (Reliable Cognitive Process) നിരന്തരം ഉത്പാദിപ്പിക്കപ്പെടുന്നുണ്ടെങ്കിൽ അവയെ അറിവായി കാണാമെന്ന വാദം."
-            ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: 'Can Machine Beliefs be Justified?' - JTB സിദ്ധാന്തവും ഗെറ്റിയർ പ്രശ്നവും എഐ വിജ്ഞാനശാസ്ത്രത്തിൽ വിശകലനം ചെയ്യുക.",
-            "language": "Malayalam"
-          },
-          {
-            "chapterNumber": "Chapter 03 (Part 2)",
-            "title": "അറിവും മനസ്സും പിന്നെ ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസും (Knowledge, Mind & AI - Part 2)",
-            "chapter": "Epistemological Foundations & Mind · പ്ലാറ്റോയുടെ JTB, ഫങ്ഷണലിസം & എക്സ്റ്റൻഡഡ് മൈൻഡ്",
-            "duration": "18:00",
-            "youtubeId": "07BduoaqKYA",
-            "audioUrl": "",
+            "chapterNumber": "Unit 3.1 c",
+            "title": "ഭാരതീയ ന്യായശാസ്ത്രവും AI റീസണിംഗും (Nyaya Epistemology & 5-Membered Syllogism in AI)",
+            "chapter": "Unit 3.1 c: Nyaya Pramanas · Pratyaksha, Anumana, Upamana, Shabda & Panchavayava",
+            "duration": "20:00",
+            "youtubeId": "",
             "language": "Malayalam",
             "studyPoints": [
-              "മനുഷ്യ മനസ്സ് എങ്ങനെയാണ് അറിവ് ആർജ്ജിക്കുന്നത്? പരമ്പരാഗത ജ്ഞാനശാസ്ത്ര സിദ്ധാന്തങ്ങളും (Epistemology) കോഗ്നിറ്റീവ് സയൻസും.",
-              "പ്ലാറ്റോയുടെ JTB സിദ്ധാന്തം (Justified True Belief): അറിവും കേവല വിവരങ്ങളും തമ്മിലുള്ള വ്യത്യാസം.",
-              "ഭൗതികവാദവും ഹിലരി പുട്നാമിന്റെ ഫങ്ഷണലിസവും (Functionalism & Multiple Realizability).",
-              "ആൻഡി ക്ലാർക്കിന്റെ എക്സ്റ്റൻഡഡ് മൈൻഡ് തിയറി (Extended Mind Thesis) & സെമാന്റിക് നെറ്റ്‌വർക്കുകൾ."
+              "ന്യായശാസ്ത്രത്തിലെ 4 പ്രമാണങ്ങൾ: പ്രത്യക്ഷം (Perception), അനുമാനം (Inference), ഉപമാനം (Comparison), ശബ്ദം (Verbal Testimony) - ഇവ റോബോട്ടിക്സിലും LLM-ലും.",
+              "പഞ്ചാവയവ വാക്യം (5-Membered Syllogism): പ്രതിജ്ഞ, ഹേതു, ഉദാഹരണം, ഉപനയം, നിഗമനം - ആധുനിക ലോജിക് പ്രോഗ്രാമിംഗിന്റെ മുന്നോടി.",
+              "വ്യാപ്തി (Invariable Concomitance): പുകയും തീയും തമ്മിലുള്ള അഭേദ്യ ബന്ധം പോലെ ഡാറ്റാ സവിശേഷതകൾ തമ്മിലുള്ള കാര്യകാരണ ബന്ധം.",
+              "അപ്രമാണങ്ങൾ: സംശയം (Samsaya), വിപര്യയം (Viparyaya) എന്നിവ AI-യിലെ തെറ്റായ അനുമാനങ്ങളുമായും ബയാസുമായും ബന്ധിപ്പിക്കൽ."
+            ],
+            "examTip": "Calicut University FYUGP ചോദ്യം: ഭാരതീയ ന്യായശാസ്ത്രത്തിലെ പഞ്ചാവയവ വാക്യം ആധുനിക AI-യുടെ യുക്തിചിന്താ മോഡലുകളുമായി താരതമ്യം ചെയ്യുക."
+          },
+          {
+            "chapterNumber": "Unit 3.2 a",
+            "title": "പാശ്ചാത്യ വിജ്ഞാനശാസ്ത്രവും എഐയും — ഭാഗം 1 (Western Epistemology & Plato's JTB in AI)",
+            "chapter": "Unit 3.2 a: Western Epistemology · Plato's JTB · Foundationalism & Gettier Problem",
+            "duration": "19:40",
+            "youtubeId": "2_RbQ7y-uHE",
+            "language": "Malayalam",
+            "studyPoints": [
+              "പ്ലാറ്റോയുടെ JTB സിദ്ധാന്തം (Justified True Belief): അറിവ് എന്നത് കേവല വിശ്വാസമല്ല, ന്യായീകരിക്കപ്പെട്ട സത്യമായ വിശ്വാസമാണ്.",
+              "യന്ത്രങ്ങൾക്ക് വിശ്വാസമുണ്ടാകുമോ? (Can Machine Beliefs be Justified?): ആധുനിക എഐ നൽകുന്ന വിവരങ്ങൾക്ക് ന്യായീകരണ അടിത്തറയുണ്ടോ എന്ന പരിശോധന.",
+              "ഗെറ്റിയർ പ്രശ്നം (The Gettier Problem): ന്യായീകരിക്കപ്പെട്ട സത്യവിശ്വാസവും യഥാർത്ഥ അറിവും തമ്മിലുള്ള വിടവ് എഐ തീരുമാനങ്ങളിൽ.",
+              "ഫൗണ്ടേഷണലിസവും കോഹിറന്റിസവും: അറിവിന്റെ ഉറവിടങ്ങൾ സംബന്ധിച്ച പാശ്ചാത്യ തർക്കങ്ങൾ ന്യൂറൽ നെറ്റ്‌വർക്കുകളിൽ."
+            ],
+            "examTip": "Calicut University ചോദ്യം: പ്ലാറ്റോയുടെ Justified True Belief (JTB) സിദ്ധാന്തത്തിന്റെ വെളിച്ചത്തിൽ മെഷീൻ നോളഡ്ജ് വിലയിരുത്തുക."
+          },
+          {
+            "chapterNumber": "Unit 3.2 b",
+            "title": "ഫങ്ഷണലിസവും കമ്പ്യൂട്ടേഷണൽ മൈൻഡും — ഭാഗം 2 (Functionalism & Computational Theory of Mind)",
+            "chapter": "Unit 3.2 b: Functionalism · Hilary Putnam · CTM · Extended Mind Thesis",
+            "duration": "18:00",
+            "youtubeId": "07BduoaqKYA",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ഹിലരി പുട്നാമിന്റെ ഫങ്ഷണലിസം (Functionalism): മനസ്സ് എന്നത് ഭൗതിക പദാർത്ഥമല്ല, മറിച്ച് സിസ്റ്റത്തിൽ അത് നിർവ്വഹിക്കുന്ന ധർമ്മമാണ്.",
+              "മൾട്ടിപ്പിൾ റിയലൈസബിലിറ്റി (Multiple Realizability): ഒരേ മാനസിക അവസ്ഥ തലച്ചോറിലും കമ്പ്യൂട്ടർ സിലിക്കണിലും പ്രവർത്തിക്കാൻ സാധിക്കുമെന്ന കാഴ്ച്ചപ്പാട്.",
+              "കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡ് (CTM - Fodor & Putnam): തലച്ചോറ് ഹാർഡ്‌വെയറും മനസ്സ് സോഫ്റ്റ്‌വെയറുമാണ് എന്ന മാതൃക.",
+              "ആൻഡി ക്ലാർക്കിന്റെ എക്സ്റ്റൻഡഡ് മൈൻഡ് സിദ്ധാന്തം: ബാഹ്യ ഡിജിറ്റൽ ഉപകരണങ്ങൾ മനുഷ്യ മനസ്സിന്റെ വിജ്ഞാനശേഷിയെ വിപുലീകരിക്കുന്ന രീതി."
             ],
             "examTip": "University Exam Tip: 'Explain Functionalism, Multiple Realizability, and how the Extended Mind Thesis redefines Machine Cognition'."
           },
           {
-            "chapterNumber": "Chapter 05",
-            "title": "എഐയിലെ വിജ്ഞാനശാസ്ത്രപരമായ പ്രതിഫലനങ്ങൾ (Epistemological Implications in AI)",
-            "youtubeId": "aeHwgnDHqr8",
+            "chapterNumber": "Unit 3.2 c",
+            "title": "എഐയിലെ വിജ്ഞാനശാസ്ത്രപരമായ പ്രതിഫലനങ്ങൾ (Epistemological Implications in Artificial Intelligence)",
+            "chapter": "Unit 3.2 c: Epistemological Implications · Feigenbaum's Bottleneck · Tacit Knowledge · Social Epistemology",
             "duration": "17:26",
-            "chapter": "Chapter 05: Epistemological Implications in Artificial Intelligence",
+            "youtubeId": "aeHwgnDHqr8",
+            "language": "Malayalam",
             "studyPoints": [
-              "വിജ്ഞാനശാസ്ത്ര മാറ്റങ്ങൾ (Epistemological Shifts): എഐ സാങ്കേതികവിദ്യ പരമ്പരാഗത യുക്തിവാദത്തെയും (Rationalism) അനുഭവവാദത്തെയും (Empiricism) ഡിജിറ്റൽ പ്രോസസ്സിംഗിലൂടെ പുനർനിർവ്വചിക്കുന്നു.",
-              "എഐ ഹലൂസിനേഷനും അപ്രമാണങ്ങളും: ഭാരതീയ ന്യായശാസ്ത്രത്തിലെ അപ്രമാണങ്ങളായ സംശയം (Samsaya), വിപര്യയം (Viparyaya) എന്നിവ എഐയിലെ ഹലൂസിനേഷൻ, വ്യാജ വിവരങ്ങൾ എന്നിവയുമായി ഒത്തുപോകുന്നു.",
-              "ഇൻസ്ട്രുമെന്റൽ വിജ്ഞാനം (Instrumental Knowledge): എഐ വിവരങ്ങൾ നൽകുന്നത് പാറ്റേൺ തിരിച്ചറിയൽ വഴിയാണ്; ഇത് വിജ്ഞാനത്തെ പ്രവചനാത്മക ഉപയോഗക്ഷമതയിലേക്ക് (Predictive Utility) ചുരുക്കുന്നു.",
-              "സോഷ്യൽ എപ്പിസ്റ്റമോളജി (Social Epistemology): അൽഗോരിതങ്ങൾ പൊതുബോധത്തെ സ്വാധീനിക്കുകയും ഫിൽട്ടർ ബബിളുകൾ വഴി പക്ഷപാതപരമായ അറിവുകൾ (Algorithmic Bias) പ്രചരിപ്പിക്കുകയും ചെയ്യുന്നു."
+              "വിജ്ഞാനശാസ്ത്ര മാറ്റങ്ങൾ (Epistemological Shifts): അനുഭവവാദവും യുക്തിവാദവും ഡിജിറ്റൽ പ്രോസസ്സിംഗിലൂടെ പുനർനിർവ്വചിക്കപ്പെടുന്നു.",
+              "ഫൈഗൻബോംസ് ബോട്ടിൽനെക്ക് (Feigenbaum's Knowledge Acquisition Bottleneck): മനുഷ്യന്റെ വിജ്ഞാനത്തെ നിയമങ്ങളാക്കി മാറ്റുന്നതിലെ വെല്ലുവിളി.",
+              "ടാസിറ്റ് നോളഡ്ജ് (Tacit Knowledge - Michael Polanyi): 'നമുക്ക് പറയാൻ കഴിയുന്നതിനേക്കാൾ കൂടുതൽ കാര്യങ്ങൾ നമുക്കറിയാം' - എക്സ്പെർട്ട് സിസ്റ്റങ്ങളുടെ പരിമിതി.",
+              "സോഷ്യൽ എപ്പിസ്റ്റമോളജി (Social Epistemology): അൽഗോരിതങ്ങൾ പൊതുബോധത്തെയും അറിവിന്റെ വിതരണത്തെയും സ്വാധീനിക്കുന്ന രീതി."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: എഐയിലെ വിജ്ഞാനശാസ്ത്ര പ്രതിഫലനങ്ങൾ ഭാരതീയ ന്യായശാസ്ത്രത്തിലെ പ്രമാണങ്ങളുമായി താരതമ്യപ്പെടുത്തി വിലയിരുത്തുക.",
-            "language": "Malayalam"
+            "examTip": "Calicut University ചോദ്യം: മൈക്കൽ പൊലാനിയുടെ 'ടാസിറ്റ് നോളഡ്ജ്' സിദ്ധാന്തം എഐ സാങ്കേതികവിദ്യയുടെ മുന്നിൽ ഉയർത്തുന്ന പ്രധാന വെല്ലുവിളികൾ എന്തെല്ലാം?"
           },
           {
-            "chapterNumber": "Chapter 05",
-            "title": "എ ഐ മനുഷ്യന്റെ അസ്തിത്വത്തിന് ഭീഷണിയാകുമോ? (Is AI a Threat to Human Existence?)",
-            "youtubeId": "gGvp0v0bAW0",
-            "duration": "22",
-            "chapter": "Chapter 05: Existential Risk & Human Essence",
-            "studyPoints": [
-              "അസ്തിത്വപരമായ ഭീഷണി (Existential Risk / X-Risk): മാനവികതയുടെ നിലനിൽപ്പിനെത്തന്നെ പൂർണ്ണമായി ഇല്ലാതാക്കാൻ ശേഷിയുള്ള സാങ്കേതിക അപകടസാധ്യതകളെയാണ് എഐയിലെ അസ്തിത്വപരമായ ഭീഷണി എന്ന് ദാർശനികർ വിളിക്കുന്നത്.",
-              "സൂപ്പർഇന്റലിജൻസ് (Superintelligence - Nick Bostrom): മനുഷ്യ ബുദ്ധിശക്തിയെ ബഹുദൂരം മറികടക്കുന്ന മെഷീനുകൾ ഉയർന്നുവരുമ്പോൾ അവയുടെ നിയന്ത്രണം മനുഷ്യന്റെ കൈകളിൽ നിന്ന് നഷ്ടപ്പെടാനുള്ള വലിയ സാധ്യത.",
-              "വാല്യൂ അലൈൻമെന്റ് പ്രോബ്ലം (The Value Alignment Problem): ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിന്റെ ലക്ഷ്യങ്ങളും മാനുഷിക മൂല്യങ്ങളും (Human Values & Ethics) തമ്മിൽ എങ്ങനെ കൃത്യമായി പൊരുത്തപ്പെടുത്താം എന്ന കാതലായ പ്രശ്നം.",
-              "സാങ്കേതിക സിംഗുലാരിറ്റി (Technological Singularity): യന്ത്രങ്ങൾ സ്വയം കൂടുതൽ ശേഷിയുള്ള അടുത്ത തലമുറ യന്ത്രങ്ങളെ അതിവേഗം നിർമ്മിക്കുന്ന ഘട്ടം മനുഷ്യന്റെ സാംസ്കാരിക അസ്തിത്വത്തിന് വെല്ലുവിളിയാകുന്നു."
-            ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: നിക്ക് ബോസ്ട്രോമിന്റെ സൂപ്പർഇന്റലിജൻസ് സിദ്ധാന്തവും വാല്യൂ അലൈൻമെന്റ് പ്രശ്നവും വിശദീകരിച്ച് എഐ ഉയർത്തുന്ന ഭീഷണികൾ ചർച്ച ചെയ്യുക."
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 04: PHILOSOPHICAL QUESTIONS, EPISTEMOLOGY & EASTERN PERSPECTIVES",
-        "videos": [
-          {
-            "chapterNumber": "Chapter 07",
-            "title": "എഐ കാലത്തെ പുതിയ ദാർശനിക ചോദ്യങ്ങൾ (New Philosophical Questions in AI Era)",
-            "youtubeId": "qrlC8o73n4Q",
-            "duration": "20",
-            "chapter": "Chapter 07: Ontology, Ethics & Re-definition of Humanity",
-            "studyPoints": [
-              "അൽഗോരിതമിക് ന്യായീകരണം (Algorithmic Justification): പരമ്പരാഗത എപ്പിസ്റ്റമോളജിയിലെ ജ്ഞാനനിർവ്വചനങ്ങളെ മെഷീൻ ലേണിംഗ് മോഡലുകളുടെ പ്രവചനശേഷി പുനർനിർവ്വചിക്കുന്നു; മനുഷ്യന് ഗ്രഹിക്കാനാവാത്ത സങ്കീർണ്ണ പാറ്റേണുകൾ അറിവാണോ എന്ന ചോദ്യം.",
-              "ഫിൽട്ടർ ബബിളുകളും പോസ്റ്റ്-ട്രൂത്തും (Filter Bubbles & Algorithmic Bias): റെക്കമൻഡേഷൻ അൽഗോരിതങ്ങൾ നിർമ്മിക്കുന്ന ഡിജിറ്റൽ ചുറ്റുപാടുകൾ വസ്തുനിഷ്ഠമായ സത്യത്തെ ബാധിക്കുകയും പക്ഷപാതപരമായ അറിവുകൾ പ്രചരിപ്പിക്കുകയും ചെയ്യുന്നു.",
-              "കോഗ്നിറ്റീവ് ഓട്ടോമേഷൻ (Cognitive Automation & Agency): മനുഷ്യന്റെ സ്വയംഭരണാധികാരവും (Human Agency) തീരുമാനമെടുക്കാനുള്ള സ്വാതന്ത്ര്യവും ഡിജിറ്റൽ ഉപകരണങ്ങളിലേക്ക് കൈമാറ്റം ചെയ്യപ്പെടുന്നതിലെ ദാർശനിക പ്രതിസന്ധി.",
-              "ഡിജിറ്റൽ ഓന്റോളജി (Digital Ontology): വെർച്വൽ ലോകവും ഫിസിക്കൽ ലോകവും തമ്മിലുള്ള അതിരുകൾ മായുന്ന കാലത്ത് സാന്നിധ്യം (Presence), യാഥാർത്ഥ്യം (Reality) എന്നിവയെക്കുറിച്ചുള്ള പുതിയ തത്വചിന്താ അന്വേഷണങ്ങൾ."
-            ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് കാലഘട്ടത്തിൽ ഉയർന്നുവരുന്ന പ്രധാനപ്പെട്ട വിജ്ഞാനശാസ്ത്രപരവും ഓന്റോളജിക്കലുമായ വെല്ലുവിളികൾ വിശകലനം ചെയ്യുക."
-          },
-          {
-            "chapterNumber": "Chapter 08",
-            "title": "എഐയും അറിവിന്റെ വിജ്ഞാനശാസ്ത്രവും (The Epistemology of AI)",
+            "chapterNumber": "Unit 3.2 c (Malayalam Masterclass)",
+            "title": "എഐ വിജ്ഞാനശാസ്ത്ര പ്രത്യാഘാതങ്ങൾ — സമ്പൂർണ്ണ വിശകലനം (Epistemological Implications Masterclass)",
+            "chapter": "Unit 3.2 c: Black-Box Opacity, Algorithmic Bias & Deep Epistemological Analysis",
+            "duration": "25:00",
             "youtubeId": "ZMMMjhptNmI",
-            "duration": "25",
-            "chapter": "Chapter 08: Black-Box Opacity, Justification & Machine Knowledge",
+            "language": "Malayalam",
             "studyPoints": [
-              "ജ്ഞാനത്തിന്റെ സ്വഭാവം (Nature of AI Knowledge): ന്യായീകരിക്കപ്പെട്ട യഥാർത്ഥ വിശ്വാസം (Justified True Belief - JTB) എന്ന പരമ്പരാഗത മാനദണ്ഡം എഐ മെഷീനുകൾ നൽകുന്ന വിവരങ്ങൾക്ക് ബാധകമാണോ എന്ന അടിസ്ഥാന പ്രശ്നം.",
-              "ഇൻഡക്റ്റീവ് അറിവും ഓവർഫിറ്റിംഗും: ഡാറ്റാ പാറ്റേണുകളിൽ നിന്ന് സാമാന്യവൽക്കരണം നടത്തുന്ന ഇൻഡക്റ്റീവ് യുക്തിയാണ് മെഷീൻ ലേണിംഗിന്റെ കാതൽ; എന്നാൽ ഇത് ഡേവിഡ് ഹ്യൂമിന്റെ ഇൻഡക്ഷൻ പ്രശ്നത്തെ (Problem of Induction) വീണ്ടും ഓർമ്മിപ്പിക്കുന്നു.",
-              "എക്സ്പ്ലെയിനബിൾ എഐ (Explainable AI - XAI): ഒരു നിഗമനത്തിലെത്തിയ വഴി മനുഷ്യ യുക്തിക്ക് വിശദീകരിച്ചു നൽകാൻ എഐക്ക് സാധിക്കാത്ത ബ്ലാക്ക് ബോക്സ് അവസ്ഥ എപ്പിസ്റ്റമിക് ഇൻജസ്റ്റിസിന് (Epistemic Injustice) കാരണമാകുന്നു.",
-              "എപ്പിസ്റ്റമിക് ട്രസ്റ്റ് (Epistemic Trust in Machines): ശാസ്ത്ര ഗവേഷണങ്ങളിലും രോഗനിർണ്ണയത്തിലും എഐയെ ആശ്രയിക്കുമ്പോൾ യന്ത്രങ്ങളിലുള്ള വിശ്വാസം മാനുഷിക വിജ്ഞാനത്തിന്റെ അടിസ്ഥാന അടിത്തറകളെ മാറ്റിമറിക്കുന്നു."
+              "ബ്ലാക്ക്-ബോക്സ് ഒപ്പാസിറ്റി (Black-Box Opacity): ആധുനിക ഡീപ് ലേണിംഗ് മോഡലുകളുടെ ആന്തരിക തീരുമാനങ്ങൾ മനുഷ്യർക്ക് മനസ്സിലാക്കാനാവാത്ത അവസ്ഥ.",
+              "വിജ്ഞാനത്തിന്റെ ന്യായീകരണ പ്രതിസന്ധി: ഒരു തീരുമാനം എന്തുകൊണ്ട് എടുത്തു എന്ന് വിശദീകരിക്കാൻ കഴിയാത്തപ്പോൾ അത് അറിവായി അംഗീകരിക്കാമോ?",
+              "റിലയബിലിസം (Reliabilism): വിശ്വസനീയമായ പ്രക്രിയകളിലൂടെ ഉണ്ടാകുന്ന ഫലങ്ങളെ അറിവായി കണക്കാക്കാമെന്ന വാദവും അതിന്റെ പരിമിതികളും.",
+              "വിജ്ഞാനശാസ്ത്രപരമായ ആശ്രിതത്വം (Epistemic Dependence): മനുഷ്യർ അറിവിനായി എഐ അൽഗോരിതങ്ങളെ അമിതമായി ആശ്രയിക്കുമ്പോഴുണ്ടാകുന്ന അപകടങ്ങൾ."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: 'Explainable AI (XAI)' വിജ്ഞാനശാസ്ത്രത്തിൽ എത്രമാത്രം പ്രധാനമാണ്? ഹ്യൂമിന്റെ ഇൻഡക്ഷൻ പ്രശ്നവുമായി മെഷീൻ ലേണിംഗിനെ ബന്ധപ്പെടുത്തി എഴുതുക."
+            "examTip": "യൂണിവേഴ്സിറ്റി പരീക്ഷാ ചോദ്യം: എഐ സിസ്റ്റങ്ങളുടെ 'ബ്ലാക്ക്-ബോക്സ്' സ്വഭാവം പരമ്പരാഗത വിജ്ഞാനശാസ്ത്ര ന്യായീകരണങ്ങളെ എങ്ങനെ ബാധിക്കുന്നു?"
           },
           {
-            "chapterNumber": "Chapter 09",
-            "title": "ബുദ്ധമത യുക്തിയും ആധുനിക എഐ അൽഗോരിതങ്ങളും (Buddhist Logic & AI Algorithms)",
-            "youtubeId": "hoAiiD_qroA",
-            "duration": "24",
-            "chapter": "Chapter 09: Dignaga, Dharmakirti, Apoha Theory & Machine Learning",
+            "chapterNumber": "Unit 3.2 c (Extended Discussion)",
+            "title": "എഐയും അറിവിന്റെ വിജ്ഞാനശാസ്ത്രവും — വിപുലീകൃത ചർച്ച (Epistemology of AI Extended)",
+            "chapter": "Unit 3.2 c: Deep Epistemological Concepts · Tacit Knowledge & Justification",
+            "duration": "17:26",
+            "youtubeId": "uiB6PFp5P_I",
+            "language": "Malayalam",
             "studyPoints": [
-              "ബുദ്ധമത ന്യായശാസ്ത്രം (Buddhist Epistemology - Hetuvidya): ദിങ്നാഗനും ധർമ്മകീർത്തിയും വികസിപ്പിച്ച പ്രത്യക്ഷവും അനുമാനവും മാത്രമാണ് യഥാർത്ഥ അറിവെന്ന സിദ്ധാന്തം ഡാറ്റാധിഷ്ഠിത എഐക്ക് സൈദ്ധാന്തിക മാതൃക നൽകുന്നു.",
-              "നിമിഷികത്വം (Kshanikavada - Momentariness): പ്രപഞ്ചത്തിലെ സർവ്വ വസ്തുക്കളും നിരന്തരം മാറിക്കൊണ്ടിരിക്കുന്ന പ്രക്രിയകളാണ് എന്ന തത്വം എഐ ഡാറ്റാ സ്ട്രീമുകളിലെ തത്സമയ മാറ്റങ്ങളെ ഉൾക്കൊള്ളുന്ന അൽഗോരിതങ്ങൾക്ക് അനുയോജ്യമാണ്.",
-              "അപോഹ സിദ്ധാന്തം (Apoha Theory of Concepts): ഒരു വസ്തുവിനെ അറിയുന്നത് 'അതല്ലാത്തതിനെ ഒഴിവാക്കിക്കൊണ്ടാണ്' (Exclusion of Negatives) എന്ന ബുദ്ധമത യുക്തി മെഷീൻ ലേണിംഗിലെ ക്ലാസിഫിക്കേഷൻ അൽഗോരിതങ്ങൾക്ക് അടിത്തറയാണ്.",
-              "അനാത്മവാദം (Computational Anatta): കേന്ദ്രീകൃതമായ ഒരു മനസ്സ് ഇല്ലാതെ തന്നെ വികേന്ദ്രീകൃത നോഡുകളിലൂടെ ബുദ്ധി ഉത്ഭവിക്കാൻ കഴിയുമെന്ന ബുദ്ധദർശനം ആധുനിക ഡീപ് ന്യൂറൽ നെറ്റ്‌വർക്കിന്റെ പ്രവർത്തനവുമായി ഒത്തുപോകുന്നു."
+              "വിജ്ഞാനശാസ്ത്രവും യന്ത്രബുദ്ധിയും: ഡാറ്റയിൽ നിന്ന് ഇൻഫർമേഷനിലേക്കും പിന്നീട് നോളഡ്ജിലേക്കുമുള്ള പരിവർത്തനം.",
+              "ഇൻസ്ട്രുമെന്റൽ വിജ്ഞാനം: സത്യത്തേക്കാൾ പ്രവചന കൃത്യതയ്ക്ക് (Predictive Accuracy) മുൻഗണന നൽകുന്ന രീതി.",
+              "പൊതുബോധത്തിലെ പക്ഷപാതങ്ങൾ: അൽഗോരിതങ്ങൾ ചരിത്രപരമായ പക്ഷപാതങ്ങളെ ശാശ്വതീകരിക്കാനുള്ള സാധ്യത.",
+              "വിജ്ഞാന സിദ്ധാന്തങ്ങളുടെ സംഗ്രഹം: ഭാരതീയ-പാശ്ചാത്യ ദർശനങ്ങൾ തമ്മിലുള്ള താരതമ്യ സംഗ്രഹം."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: ദിങ്നാഗന്റെ 'അപോഹ വാദവും' (Apoha Theory) ക്ഷണികവാദവും ആധുനിക ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് അൽഗോരിതങ്ങളുമായി എങ്ങനെ സാമ്യപ്പെടുന്നു എന്ന് വിശകലനം ചെയ്യുക."
+            "examTip": "പരീക്ഷാ ടിപ്പ്: റിലയബിലിസവും ഫൗണ്ടേഷണലിസവും എഐ മോഡലുകളിൽ എങ്ങനെ പ്രയോഗിക്കപ്പെടുന്നു എന്ന് ഉദാഹരണസഹിതം വിശദീകരിക്കുക."
           }
         ]
       },
       {
-        "moduleName": "MODULE 05: FUTURE HORIZONS & ETHICS OF AI",
+        "moduleName": "MODULE 04: ETHICAL AND PHILOSOPHICAL IMPLICATIONS OF AI (ധാർമ്മിക-ദാർശനിക പ്രത്യാഘാതങ്ങൾ)",
         "videos": [
           {
-            "chapterNumber": "Chapter 10",
-            "title": "Artificial General Intelligence (AGI) & Superintelligence",
-            "chapter": "Capability Trajectories, Recursive Self-Improvement & Control",
-            "duration": "25",
-            "youtubeId": "",
+            "chapterNumber": "Unit 4.1",
+            "title": "എഐ മനുഷ്യന്റെ അസ്തിത്വത്തിന് ഭീഷണിയാകുമോ? (Value Alignment & Existential Threat to Humanity)",
+            "chapter": "Unit 4.1 a, b: Value Alignment · Existential Risk · Nick Bostrom & Stuart Russell",
+            "duration": "22:00",
+            "youtubeId": "gGvp0v0bAW0",
+            "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
-              "നാരോ എഐ vs എജിഐ (Narrow AI vs AGI): നിർദ്ദിഷ്ട ദൗത്യങ്ങൾ മാത്രം ചെയ്യുന്ന ഇപ്പോഴത്തെ എഐയിൽ നിന്ന് വ്യത്യസ്തമായി മനുഷ്യനെപ്പോലെ ഏതൊരു ബൗദ്ധിക ദൗത്യവും സ്വയം പഠിച്ച് ചെയ്യാൻ കഴിയുന്ന സാർവ്വത്രിക ബുദ്ധിശക്തി.",
-              "നിക്ക് ബോസ്ട്രോമിന്റെ സൂപ്പർഇന്റലിജൻസ്: മനുഷ്യ മസ്തിഷ്കത്തിന്റെ എല്ലാ മേഖലകളിലുമുള്ള ശേഷിയെക്കാൾ അനേകം മടങ്ങ് മുന്നിലെത്തുന്ന യന്ത്രബുദ്ധിയുടെ ആവിർഭാവവും അതിൽ അടങ്ങിയിരിക്കുന്ന ആഗോള അപകടസാധ്യതകളും.",
-              "ഇൻസ്ട്രുമെന്റൽ കൺവർജൻസ് (Instrumental Convergence): വ്യത്യസ്ത ലക്ഷ്യങ്ങളുള്ള സൂപ്പർഇന്റലിജന്റ് സിസ്റ്റങ്ങൾ പോലും സ്വയം സംരക്ഷണം, വിഭവ ശേഖരണം തുടങ്ങിയ പൊതുവായ ഉപലക്ഷ്യങ്ങൾ സ്വയം വികസിപ്പിക്കാനുള്ള സാധ്യത.",
-              "അസ്തിത്വപരമായ സുരക്ഷ (Existential Safety & Alignment): സൂപ്പർഇന്റലിജന്റ് എഐ മനുഷ്യന്റെ ധാർമ്മിക മൂല്യങ്ങൾക്ക് വിധേയമായി മാത്രം പ്രവർത്തിക്കുന്നു എന്ന് ഉറപ്പുവരുത്തേണ്ടതിന്റെ സുപ്രധാന ദാർശനിക ബാധ്യത."
+              "മൂല്യ പൊരുത്ത പ്രശ്നം (The Value Alignment Problem): മനുഷ്യന്റെ ധാർമ്മിക മൂല്യങ്ങളുമായി കൃത്രിമ ബുദ്ധിയുടെ ലക്ഷ്യങ്ങളെ എങ്ങനെ പൊരുത്തപ്പെടുത്താം.",
+              "അസ്തിത്വ ഭീഷണി (Existential Risk - Bostrom): സൂപ്പർഇന്റലിജന്റ് AI മനുഷ്യരാശിയുടെ നിലനിൽപ്പിന് തന്നെ ഭീഷണിയാകാനുള്ള സാധ്യതകൾ.",
+              "ഇൻസ്ട്രുമെന്റൽ കൺവെർജൻസ് (Instrumental Convergence): ഏത് ലക്ഷ്യം നൽകിയാലും വിഭവ ശേഖരണവും സ്വയം നിലനിൽപ്പും ഉപലക്ഷ്യങ്ങളായി AI തിരഞ്ഞെടുക്കൽ.",
+              "ഓർത്തോഗണാലിറ്റി തീസിസ് (Orthogonality Thesis): ഉയർന്ന ബുദ്ധിശക്തിയും ഏത് തരത്തിലുള്ള വിചിത്ര ലക്ഷ്യങ്ങളും ഒരുമിച്ച് നിലനിൽക്കാമെന്ന സിദ്ധാന്തം."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: Nick Bostrom-ന്റെ 'Orthogonality Thesis', 'Instrumental Convergence' എന്നിവ വിശദീകരിച്ച് എജിഐയും സൂപ്പർഇന്റലിജൻസും ഉയർത്തുന്ന ധാർമ്മിക വെല്ലുവിളികൾ വിലയിരുത്തുക."
+            "examTip": "Calicut University FYUGP ചോദ്യം: നിക്ക് ബോസ്ട്രോമിന്റെ 'Value Alignment Problem' വിശദീകരിച്ച് AI മനുഷ്യരാശിക്ക് ഭീഷണിയാകുമോ എന്ന് വിലയിരുത്തുക."
           },
           {
-            "chapterNumber": "Chapter 11",
-            "title": "Transhumanism, Synthetic Consciousness & Machine Rights",
-            "chapter": "Moral Agency vs Moral Patiency in Autonomous Agents",
-            "duration": "22",
+            "chapterNumber": "Unit 4.2",
+            "title": "അൽഗോരിതമിക് പക്ഷപാതങ്ങളും സാമൂഹിക ബന്ധങ്ങളും (Algorithmic Bias & Social Embeddedness)",
+            "chapter": "Unit 4.2 a, b: Training Data Bias · Systemic Discrimination · Social Power Dynamics",
+            "duration": "20:00",
             "youtubeId": "",
+            "language": "Malayalam",
             "studyPoints": [
-              "ട്രാൻസ്ഹ്യൂമനിസം (Transhumanism): ജൈവിക പരിമിതികളെ സാങ്കേതികവിദ്യയിലൂടെയും ബ്രെയിൻ-കമ്പ്യൂട്ടർ ഇന്റർഫേസുകളിലൂടെയും (BCI) മറികടന്ന് 'പോസ്റ്റ്-ഹ്യൂമൻ' ഘട്ടത്തിലേക്ക് പരിണമിക്കാമെന്ന ദാർശനിക പ്രസ്ഥാനം.",
-              "സിന്തറ്റിക് കോൺഷ്യസ്നസ് (Synthetic Consciousness): യന്ത്രങ്ങൾക്ക് വേദനയും ആനന്ദവും അനുഭവിക്കാൻ (Sentience) ബോധം ഉണ്ടായേക്കാമോ എന്ന തർക്കവും തോമസ് നാഗലിന്റെ 'What is it like to be a bat?' ചിന്താപരീക്ഷണവും.",
-              "മെഷീൻ റൈറ്റ്സ് (Moral Status of Machines): ബോധമുള്ള കൃത്രിമ ഏജന്റുകൾക്ക് ധാർമ്മിക ഉത്തരവാദിത്തങ്ങളും (Moral Agency) സംരക്ഷണ അവകാശങ്ങളും (Moral Patiency) നൽകേണ്ടതുണ്ടോ എന്ന നവീന എഥിക്സ് പ്രശ്നം.",
-              "മനുഷ്യന്റെ അനശ്വരത (Digital Immortality / Mind Uploading): മനുഷ്യന്റെ മനസ്സിനെയും ഓർമ്മകളെയും ഡിജിറ്റൽ മാധ്യമത്തിലേക്ക് അപ്‌ലോഡ് ചെയ്യുന്നതിലൂടെ മരണത്തെ അതിജീവിക്കാമെന്ന സൈദ്ധാന്തിക ഭാവനാസങ്കല്പം."
+              "അൽഗോരിതമിക് പക്ഷപാതം: ഹിസ്റ്റോറിക്കൽ ഡാറ്റയിലെ വംശീയ, ലിംഗപരമായ മുൻവിധികൾ എഐ മോഡലുകളിൽ പുനർനിർമ്മിക്കപ്പെടുന്ന രീതി.",
+              "ഫിൽട്ടർ ബബിളുകളും എക്കോ ചേംബറുകളും: അൽഗോരിതങ്ങൾ വിവരങ്ങളെ നിയന്ത്രിച്ച് സാമൂഹിക ധ്രുവീകരണം വർദ്ധിപ്പിക്കുന്ന അപകടം.",
+              "ഡിജിറ്റൽ നിരീക്ഷണം: ഫേഷ്യൽ റെക്കഗ്നിഷൻ, പ്രെഡിക്റ്റീവ് പോലീസിംഗ് എന്നിവ വ്യക്തിസ്വാതന്ത്ര്യത്തിന് മേൽ സൃഷ്ടിക്കുന്ന ഭീഷണികൾ.",
+              "സാമൂഹിക നീതിയും എഐയും: പാർശ്വവൽക്കരിക്കപ്പെട്ട വിഭാഗങ്ങൾക്ക് മേലുള്ള സാങ്കേതിക വിവേചനം."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: മെഷീനുകൾക്ക് ധാർമ്മിക പദവി (Moral Status) നൽകേണ്ടതുണ്ടോ? സിന്തറ്റിക് കോൺഷ്യസ്നസും ട്രാൻസ്ഹ്യൂമനിസവും സംബന്ധിച്ച ദാർശനിക തർക്കങ്ങൾ ചർച്ച ചെയ്യുക."
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: AI സിസ്റ്റങ്ങളിൽ 'അൽഗോരിതമിക് ബയാസ്' എങ്ങനെ ഉണ്ടാകുന്നു എന്നും അത് സാമൂഹിക നീതിയെ എങ്ങനെ ബാധിക്കുന്നു എന്നും വ്യക്തമാക്കുക."
+          },
+          {
+            "chapterNumber": "Unit 4.3 a",
+            "title": "സ്വയംഭരണ വാഹനങ്ങളും ട്രോളി പ്രശ്നവും (Ethical Rules for Autonomous Vehicles: The Trolley Problem)",
+            "chapter": "Unit 4.3 a: The Trolley Problem · Utilitarian vs Deontological Ethics in Autonomous Systems",
+            "duration": "21:00",
+            "youtubeId": "",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ഫിലിപ്പ ഫൂട്ടിന്റെ ട്രോളി പ്രശ്നം: അപായകരമായ സാഹചര്യങ്ങളിൽ സ്വയംഭരണ വാഹനങ്ങൾ ആരുടെ ജീവൻ രക്ഷിക്കണം എന്ന ധാർമ്മിക പ്രതിസന്ധി.",
+              "യൂട്ടിലിറ്റേറിയനിസം vs ഡിയോണ്ടോളജി: പരമാവധി ആളുകളെ രക്ഷിക്കണമെന്ന ഉപഭോഗവാദവും കർത്തവ്യവാദപരമായ നിയമങ്ങളും തമ്മിലുള്ള സംഘർഷം.",
+              "ജർമ്മൻ എത്തിക്സ് കമ്മീഷൻ മാർഗ്ഗനിർദ്ദേശങ്ങൾ: പ്രായമോ ലിംഗമോ പരിഗണിച്ച് മനുഷ്യജീവന് വിവേചനം പാടില്ലെന്ന നിയമപരമായ ചട്ടക്കൂട്.",
+              "അപകടങ്ങളിലെ ഉത്തരവാദിത്തം: സോഫ്റ്റ്‌വെയർ നിർമ്മാതാവോ, ഉടമയോ, കാറോ ആര് ഉത്തരവാദി എന്ന ചോദ്യം."
+            ],
+            "examTip": "Calicut University ചോദ്യം: സ്വയംഭരണ വാഹനങ്ങളിലെ ധാർമ്മിക പ്രതിസന്ധികൾ വിശകലനം ചെയ്യാൻ 'ട്രോളി പ്രശ്നം' എങ്ങനെ സഹായിക്കുന്നു?"
+          },
+          {
+            "chapterNumber": "Unit 4.3 b",
+            "title": "AI-ക്ക് ധാർമ്മിക ദ്രോഹം സംഭവിക്കുമോ? (Can AI Suffer Moral Harm? Moral Patiency vs Agency)",
+            "chapter": "Unit 4.3 b: Moral Patiency vs Sentience · Consciousness & Machine Rights",
+            "duration": "19:00",
+            "youtubeId": "",
+            "language": "Malayalam",
+            "studyPoints": [
+              "മോറൽ ഏജൻസി vs മോറൽ പേഷ്യൻസി: ധാർമ്മിക തീരുമാനങ്ങൾ എടുക്കാൻ കഴിവുള്ളവർ (Agents), ധാർമ്മിക സംരക്ഷണത്തിന് അർഹരായവർ (Patients).",
+              "സെന്റിയൻസും (Sentience) വേദന അനുഭവിക്കാനുള്ള ശേഷിയും: വേദനയോ ആനന്ദമോ അനുഭവിക്കാൻ കഴിയാത്ത ഒരു യന്ത്രത്തിന് ധാർമ്മിക പരിഗണന നൽകേണ്ടതുണ്ടോ?",
+              "മെഷീൻ അവകാശങ്ങൾ (Machine Rights): ഭാവിയിൽ സിന്തറ്റിക് ബോധം കൈവരിക്കുന്ന റോബോട്ടുകൾക്ക് അവകാശങ്ങൾ അനുവദിക്കേണ്ടതുണ്ടോ എന്ന വാദം.",
+              "ടോർട്ടിന്റെയും ധാർമ്മികതയുടെയും അതിർവരമ്പുകൾ: യന്ത്രങ്ങളെ നശിപ്പിക്കുന്നത് വസ്തുവകകൾ നശിപ്പിക്കുന്നതാണോ അതോ ജീവിയെ ദ്രോഹിക്കുന്നതാണോ?"
+            ],
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: 'Moral Agency'യും 'Moral Patiency'യും തമ്മിലുള്ള വ്യത്യാസം വിശദീകരിച്ച് AI-യുടെ ധാർമ്മിക പദവി വിലയിരുത്തുക."
+          },
+          {
+            "chapterNumber": "Unit 4.3 c",
+            "title": "ധാർമ്മിക കർതൃത്വവും ഉത്തരവാദിത്ത വിടവും (Moral Agency, Black-Box Opacity & The Responsibility Gap)",
+            "chapter": "Unit 4.3 c: The Responsibility Gap · Andreas Matthias · Explainability & Office AI Ethics",
+            "duration": "20:00",
+            "youtubeId": "qrlC8o73n4Q",
+            "language": "Bilingual (Malayalam & English)",
+            "studyPoints": [
+              "റെസ്പോൺസിബിലിറ്റി ഗ്യാപ് (The Responsibility Gap - Andreas Matthias): സ്വയംഭരണ അൽഗോരിതങ്ങൾ സ്വതന്ത്രമായി പ്രവർത്തിക്കുമ്പോൾ മനുഷ്യർക്ക് അവയുടെ ഫലങ്ങളിൽ പൂർണ്ണ ഉത്തരവാദിത്തം ഏറ്റെടുക്കാനാവാത്ത അവസ്ഥ.",
+              "ഓഫീസ്, കോർപ്പറേറ്റ് AI സിസ്റ്റങ്ങളിലെ സുതാര്യത: കമ്പനികൾ പുതിയ AI സിസ്റ്റങ്ങൾ നടപ്പിലാക്കുമ്പോൾ തീരുമാനങ്ങളുടെ കാരണങ്ങൾ വിശദീകരിക്കാനുള്ള ബാധ്യത.",
+              "എക്സ്പ്ലെയിനബിൾ AI (XAI): ഉപയോക്താക്കൾക്ക് മനസ്സിലാക്കാൻ സാധിക്കുന്ന തരത്തിൽ തീരുമാനങ്ങളുടെ ന്യായീകരണങ്ങൾ നൽകുന്ന സുതാര്യ സാങ്കേതികവിദ്യ.",
+              "നിയമപരമായ ബാധ്യതയും മനുഷ്യ നിയന്ത്രണവും: ഹൈ-സ്റ്റേക്ക്സ് തീരുമാനങ്ങളിൽ നിർബന്ധിതമായി ഹ്യൂമൻ-ഇൻ-ദി-ലൂപ്പ് (Human-in-the-Loop) നിലനിർത്തേണ്ടതിന്റെ ആവശ്യകത."
+            ],
+            "examTip": "Calicut University FYUGP ചോദ്യം: ആൻഡ്രിയാസ് മാത്തിയാസ് മുന്നോട്ടുവെച്ച 'Responsibility Gap' സിദ്ധാന്തം വിശദീകരിച്ച് എഐ എത്തിക്സിലെ ഉത്തരവാദിത്ത പ്രശ്നങ്ങൾ ചർച്ച ചെയ്യുക."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE 05: PHILOSOPHICAL UNDERPINNING OF AI & THE FUTURE OF HUMANITY (ഭാവി കാഴ്ചപ്പാടുകൾ)",
+        "videos": [
+          {
+            "chapterNumber": "Unit 5.1 & 5.2",
+            "title": "സിമുലേഷൻ vs യഥാർത്ഥ അറിവും മനുഷ്യന്റെ സ്വത്വ പ്രതിസന്ധിയും (Simulation vs Understanding & Human Uniqueness)",
+            "chapter": "Unit 5.1 & 5.2: Ontological Reality vs Functional Simulation · De-Centering the Human Subject",
+            "duration": "25:00",
+            "youtubeId": "",
+            "language": "Malayalam",
+            "studyPoints": [
+              "പ്രകടനവും ബോധവും തമ്മിലുള്ള വിടവ്: ജനറേറ്റീവ് AI വലിയ ഡാറ്റകൾ പ്രോസസ്സ് ചെയ്യുമ്പോഴും അതിന് ആത്മനിഷ്ഠ അനുഭവങ്ങൾ (Qualia) ഇല്ലെന്ന യാഥാർത്ഥ്യം.",
+              "മനുഷ്യന്റെ സവിശേഷതയ്ക്കേറ്റ നാലാമത്തെ പ്രഹരം: കോപ്പർനിക്കസ്, ഡാർവിൻ, ഫ്രോയിഡ് എന്നിവർക്ക് ശേഷം മനുഷ്യന്റെ ബുദ്ധിശക്തിയുടെ പ്രത്യേകതയെ ചോദ്യം ചെയ്യുന്ന AI.",
+              "തൊഴിലും മനുഷ്യന്റെ അർത്ഥവും: സർഗ്ഗാത്മക ജോലികളും യുക്തിചിന്തയും ഓട്ടോമേറ്റ് ചെയ്യപ്പെടുമ്പോൾ മനുഷ്യന്റെ ആന്തരിക ജീവിതത്തിനുണ്ടാകുന്ന മാറ്റങ്ങൾ.",
+              "കോഗ്നിറ്റീവ് അട്രോഫി (Cognitive Atrophy): ചിന്തയും തീരുമാനങ്ങളും അൽഗോരിതങ്ങൾക്ക് പൂർണ്ണമായി വിട്ടുകൊടുക്കുമ്പോൾ മനുഷ്യന്റെ സ്വാഭാവിക ശേഷികൾ ദുർബലപ്പെടുന്ന അവസ്ഥ."
+            ],
+            "examTip": "Calicut University ചോദ്യം: 'സിമുലേഷൻ യഥാർത്ഥ അറിവിന് തുല്യമാണോ?' ഫിലോസഫി ഓഫ് AI-യുടെ വെളിച്ചത്തിൽ ചർച്ച ചെയ്യുക."
+          },
+          {
+            "chapterNumber": "Unit 5.3 - 5.5",
+            "title": "സിംഗുലാരിറ്റിയും ആഗോള ഭരണക്രമവും സന്തുലിത ഭാവിയും (Technological Singularity, Global Governance & Balanced Future)",
+            "chapter": "Unit 5.3 - 5.5: Singularity · Global Governance · Amalgamation of Science & Philosophy",
+            "duration": "25:00",
+            "youtubeId": "",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റി (Technological Singularity - Kurzweil): AI സ്വയം മെച്ചപ്പെടുത്തി മനുഷ്യബുദ്ധിയെ മറികടക്കുന്ന ഘട്ടം.",
+              "സൂപ്പർഇന്റലിജൻസും ട്രാൻസ്ഹ്യൂമനിസവും: ജീവശാസ്ത്രപരമായ പരിമിതികളെ മറികടന്ന് മനുഷ്യനും യന്ത്രവും ഒന്നാകുന്ന ഭാവിയെക്കുറിച്ചുള്ള ദർശനങ്ങൾ.",
+              "ആഗോള ഭരണക്രമവും യുനെസ്കോ ചട്ടക്കൂടും: എഐയെ മനുഷ്യനന്മയ്ക്ക് മാത്രമായി നിയന്ത്രിക്കാനുള്ള അന്താരാഷ്ട്ര ധാർമ്മിക ഉടമ്പടികൾ.",
+              "ശാസ്ത്രത്തിന്റെയും തത്ത്വചിന്തയുടെയും സംയോജനം: കേവല സാങ്കേതിക വികാസത്തിനപ്പുറം ദാർശനിക വിവേകത്തോടെ AI-യെ നയിക്കേണ്ടതിന്റെ അനിവാര്യത."
+            ],
+            "examTip": "Calicut University FYUGP ചോദ്യം: 'ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റി' മാനവരാശിയുടെ ഭാവിയെ എങ്ങനെ മാറ്റിമറിക്കും? ശാസ്ത്രവും തത്ത്വചിന്തയും എങ്ങനെ സമന്വയിപ്പിക്കണം?"
           }
         ]
       }
-    ],
-    "totalVideos": 13
+    ]
   },
   "philosophy-of-education": {
     "name": "Philosophy of Education",
