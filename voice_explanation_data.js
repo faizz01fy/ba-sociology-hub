@@ -1250,18 +1250,21 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Unit 3.1 b",
-            "title": "ബുദ്ധമത ദർശനവും ആധുനിക AI അൽഗോരിതങ്ങളും (Thinking Without a Thinker: Buddhism & AI)",
-            "chapter": "Unit 3.1 b: Buddhist Epistemology · Dignaga, Dharmakirti & Apoha Theory in ML",
-            "duration": "35:16",
-            "youtubeId": "Y4zhWiirJkc",
-            "language": "English",
+            "title": "ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Sources of Valid Knowledge in Indian Philosophy & AI: Epistemology, Pratyakṣa & Anumāna)",
+            "chapter": "Unit 3.1 b: Epistemology & AI · Dignāga, Dharmakīrti & Apoha Theory · Two-Speaker Conversational Masterclass",
+            "duration": "13:06",
+            "youtubeId": "N6WyLBGqVk0",
+            "thumbnail": "https://i.ytimg.com/vi/N6WyLBGqVk0/hqdefault.jpg",
+            "videoUrl": "https://www.youtube.com/watch?v=N6WyLBGqVk0",
+            "language": "Malayalam (Two-Speaker Conversational Masterclass)",
             "studyPoints": [
-              "ബുദ്ധമതത്തിലെ പ്രമാണ ശാസ്ത്രം: ദിഗ്നാഗനും ധർമ്മകീർത്തിയും മുന്നോട്ടുവെച്ച പ്രത്യക്ഷവും (Pratyaksha) അനുമാനവും (Anumana).",
-              "അപോഹ സിദ്ധാന്തം (Apoha Theory): ഒരു വസ്തുവിനെ അറിയുന്നത് അത് 'അല്ലാത്തതിനെ ഒഴിവാക്കിക്കൊണ്ടാണ്' (Exclusion of Others) - ആധുനിക ക്ലാസിഫിക്കേഷൻ അൽഗോരിതങ്ങളുമായുള്ള സാമ്യം.",
-              "അനത്ത (Anatta - No-Self): സ്ഥിരമായ ഒരു ആത്മാവോ കർത്താവോ ഇല്ലാതെ ചിന്തകൾ പരസ്പരാശ്രയത്തോടെ സംഭവിക്കുന്നുവെന്ന ബുദ്ധദർശനം ന്യൂറൽ നെറ്റ്‌വർക്കുകളിൽ.",
-              "ക്ഷണികവാദം (Kshanikavada): നിരന്തരം മാറിക്കൊണ്ടിരിക്കുന്ന ഡാറ്റാ സ്ട്രീമുകളും ഡിജിറ്റൽ പ്രോസസ്സിംഗും."
+              "ബുദ്ധമതത്തിലെ രണ്ട് പ്രമാണങ്ങൾ: ദിങ്നാഗനും (Pramāṇasamuccaya) ധർമ്മകീർത്തിയും (Nyāyabindu) ശബ്ദപ്രമാണത്തെ നിരാകരിച്ച് പ്രത്യക്ഷവും (Pratyakṣa) അനുമാനവും (Anumāna) മാത്രം അംഗീകരിച്ചു.",
+              "നിർവികല്പക പ്രത്യക്ഷവും സ്വലക്ഷണവും (Svalakṣaṇa): അമൂർത്ത സങ്കല്പങ്ങളില്ലാത്ത ശുദ്ധമായ സെൻസറി ഗ്രഹണം; ടെസ്‌ല കമ്പ്യൂട്ടർ വിഷൻ, LiDAR, ക്യാമറ റോ പിക്സൽ ഡാറ്റാ സ്ട്രീമുകളുമായുള്ള തുല്യത.",
+              "അനുമാനവും വ്യാപ്തിയും (Vyāpti): ലിംഗവും (Sign/Feature) സാദ്ധ്യവും തമ്മിലുള്ള അഭേദ്യ ബന്ധം വഴി പ്രവർത്തിക്കുന്ന പ്രെഡിക്ടീവ് മെഷീൻ ലേണിംഗ് ഇൻഫറൻസ് എഞ്ചിനുകൾ.",
+              "ധർമ്മകീർത്തിയുടെ അർത്ഥക്രിയാസാമർത്ഥ്യം (Arthakriyāsāmarthya): പ്രായോഗികമായി ലക്ഷ്യം നേടിത്തരുന്ന അറിവ് സാധുവാണ്; ക്യാൻസർ ഡിറ്റക്ഷൻ എഐ ജീവൻ രക്ഷിക്കുമ്പോൾ ലഭിക്കുന്ന പ്രായോഗിക സാധൂകരണം.",
+              "ദിങ്നാഗന്റെ അപോഹ സിദ്ധാന്തം (Apoha Theory): 'അല്ലാത്തതിനെ ഒഴിവാക്കിക്കൊണ്ട്' (Anyāpoha) അർത്ഥം നിർണ്ണയിക്കൽ; മോഡേൺ കോൺട്രാസ്റ്റീവ് ലേണിംഗും (CLIP / Contrastive Embeddings) വെക്ടർ ക്ലാസിഫിക്കേഷനും."
             ],
-            "examTip": "Exam Tip: 'Explain how Dignaga and Dharmakirti's Apoha Theory parallels classification algorithms and negative contrastive learning in modern Machine Learning'."
+            "examTip": "Calicut University FYUGP ചോദ്യം: ബുദ്ധ ജ്ഞാനശാസ്ത്രത്തിലെ രണ്ട് പ്രമാണങ്ങളായ പ്രത്യക്ഷവും അനുമാനവും വിശദീകരിച്ച്, അവ ആധുനിക AI ഇൻഫറൻസിലും കമ്പ്യൂട്ടർ വിഷനിലും എങ്ങനെ പ്രതിഫലിക്കുന്നു എന്ന് വിശകലനം ചെയ്യുക."
           },
           {
             "chapterNumber": "Unit 3.1 c",

@@ -6776,6 +6776,16 @@ window.aiLearningData = {
     ]
   },
   "ai_mod_3_complete": {
+    "videoResources": [
+      {
+        "title": "ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Sources of Valid Knowledge in Indian Philosophy & AI: Epistemology, Pratyakṣa & Anumāna)",
+        "unit": "Module 3 · Unit 3.1 b",
+        "url": "https://www.youtube.com/watch?v=N6WyLBGqVk0",
+        "duration": "13:06",
+        "youtubeId": "N6WyLBGqVk0",
+        "thumbnail": "https://i.ytimg.com/vi/N6WyLBGqVk0/hqdefault.jpg"
+      }
+    ],
     "title": "Philosophy of AI · Module 3 · Theories of Knowledge in AI · Complete LMS",
     "titleMal": "മൊഡ്യൂൾ 3 · AI-യിലെ ജ്ഞാനശാസ്ത്ര സിദ്ധാന്തങ്ങൾ · സമ്പൂർണ്ണ LMS സംഗ്രഹം",
     "filename": "Philosophy_of_AI_Module_3_Complete.pdf",
@@ -7412,6 +7422,16 @@ window.aiLearningData = {
     ]
   },
   "ai_mod_3_ch1": {
+    "videoResources": [
+      {
+        "title": "ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Sources of Valid Knowledge in Indian Philosophy & AI: Epistemology, Pratyakṣa & Anumāna)",
+        "unit": "Module 3 · Chapter 1",
+        "url": "https://www.youtube.com/watch?v=N6WyLBGqVk0",
+        "duration": "13:06",
+        "youtubeId": "N6WyLBGqVk0",
+        "thumbnail": "https://i.ytimg.com/vi/N6WyLBGqVk0/hqdefault.jpg"
+      }
+    ],
     "title": "Module 3 · Chapter 1 · Sources of Valid Knowledge in Indian Philosophy",
     "titleMal": "മൊഡ്യൂൾ 3 · അധ്യായം 1 · ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങൾ",
     "filename": "Module_3_Chapter_1_Sources_of_Knowledge.pdf",
