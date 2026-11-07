@@ -447,7 +447,7 @@ export default {
       })).catch(() => {});
       ctx.waitUntil(task);
 
-      const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader)(?:\.html)?$/i.test(url.pathname);
+      const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|voice-explanation|voice|econ_voice)(?:\.html)?$/i.test(url.pathname);
       let hasAdSense = false;
       response = new HTMLRewriter()
         .on("script[src*='pagead2.googlesyndication.com']", {
