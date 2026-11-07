@@ -563,67 +563,6 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Empathetic Curiosity (അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ): Approaching people and their stories with curiosity and empathy can create meaningful change in health and community work. ജിജ്ഞാസയോടെയും അനുഭാവത്തോടെയും ആളുകളെയും അവരുടെ കഥകളെയും സമീപിക്കുന്നത് ആരോഗ്യപരിപാലനത്തിലും സാമൂഹിക പ്രവർത്തനത്തിലും അർത്ഥവത്തായ മാറ്റമുണ്ടാക്കുന്നു."
             ],
             "examTip": "Explain how Amy Morales Lara connects art with healing, storytelling, community practice, and empathetic curiosity. Amy Morales Lara കല, രോഗശാന്തി, കഥപറച്ചിൽ, സാമൂഹിക ഇടപെടൽ, അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ എന്നിവയെ എങ്ങനെ ബന്ധിപ്പിക്കുന്നു എന്ന് വിശദീകരിക്കുക."
-          },
-          {
-            "chapterNumber": "English Edition",
-            "title": "The Art of Liberation: Why Social Work Needs a Paintbrush",
-            "chapter": "English audio overview · The Art of Liberation: Why Social Work Needs a Paintbrush · Thematic analysis & listening practice",
-            "duration": "05:35",
-            "language": "English",
-            "studyPoints": [
-              "<strong>Intersection of Art and Social Justice:</strong> Explores how creative expression acts as a therapeutic tool and a vehicle for community liberation in social work.",
-              "<strong>Rhetorical & Analytical Structure:</strong> Breaks down key arguments regarding marginalized voices, participatory art, and transformative healing.",
-              "<strong>Active Listening Strategies:</strong> Focuses on identifying the speaker's main thesis, transitions, tonal nuances, and supporting empirical evidence."
-            ],
-            "examTip": "Pay close attention to key transitional markers and vocabulary related to liberation and community practice to answer short-answer comprehension and critical summary questions.",
-            "youtubeId": "zn7OMOiK69w",
-            "thumbnail": "https://i.ytimg.com/vi/zn7OMOiK69w/hqdefault.jpg",
-            "videoUrl": null
-          },
-          {
-            "chapterNumber": "English Edition",
-            "title": "The Art of Liberation Why Social Work Needs a Paintbrush",
-            "chapter": "English study overview · The Art of Liberation Why Social Work Needs a Paintbrush",
-            "duration": "05:35",
-            "language": "English",
-            "studyPoints": [
-              "<strong>Core Topic:</strong> Comprehensive academic exploration of The Art of Liberation Why Social Work Needs a Paintbrush.",
-              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
-            ],
-            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
-            "youtubeId": "3vioPOxeouc",
-            "thumbnail": "https://i.ytimg.com/vi/3vioPOxeouc/hqdefault.jpg",
-            "videoUrl": null
-          },
-          {
-            "chapterNumber": "English Edition",
-            "title": "More Worth Dead Than Alive The Flawed American Dream",
-            "chapter": "English study overview · More Worth Dead Than Alive The Flawed American Dream",
-            "duration": "05:30",
-            "language": "English",
-            "studyPoints": [
-              "<strong>Core Topic:</strong> Comprehensive academic exploration of More Worth Dead Than Alive The Flawed American Dream.",
-              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
-            ],
-            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
-            "youtubeId": "BaxO-Omyanc",
-            "thumbnail": "https://i.ytimg.com/vi/BaxO-Omyanc/hqdefault.jpg",
-            "videoUrl": null
-          },
-          {
-            "chapterNumber": "English Edition",
-            "title": "Art as Social Work The Power of Partnership",
-            "chapter": "English study overview · Art as Social Work The Power of Partnership",
-            "duration": "05:15",
-            "language": "English",
-            "studyPoints": [
-              "<strong>Core Topic:</strong> Comprehensive academic exploration of Art as Social Work The Power of Partnership.",
-              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
-            ],
-            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
-            "youtubeId": "LKarv83N4CE",
-            "thumbnail": "https://i.ytimg.com/vi/LKarv83N4CE/hqdefault.jpg",
-            "videoUrl": null
           }
         ]
       },
@@ -694,53 +633,6 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>Exam Connection:</strong> Calicut University ENG1B01 Speaking Skills and critical rhetorical evaluation."
             ],
             "examTip": "Analyze the transition from Shell Shock to PTSD and explain Carlin's critique of contemporary institutional euphemisms."
-          },
-          {
-            "chapterNumber": "Chapter 02 (English Edition)",
-            "title": "More Worth Dead Than Alive: The Flawed American Dream",
-            "chapter": "English cinematic overview · Arthur Miller's Death of a Salesman · Willy Loman & The Capitalist Tragedy",
-            "duration": "19:02",
-            "thumbnail": "https://i.ytimg.com/vi/0SBovHC5y4s/hqdefault.jpg",
-            "youtubeId": "0SBovHC5y4s",
-            "videoUrl": null,
-            "language": "English",
-            "studyPoints": [
-              "<strong>Tragedy of the Common Man:</strong> Arthur Miller's depiction of ordinary struggle elevated to classic tragic proportions.",
-              "<strong>The Mirage of the American Dream:</strong> The devastating illusion that popularity and personality guarantee capitalist fulfillment.",
-              "<strong>Illusion vs. Reality:</strong> Willy Loman's psychological collapse, internal delusions, and tragic insurance gambit.",
-              "<strong>Family Dynamics:</strong> The emotional strain between Willy, Linda, and sons Biff and Happy."
-            ],
-            "examTip": "Critically assess how Willy Loman exemplifies the collapse of the American Dream in Arthur Miller's tragedy."
-          },
-          {
-            "chapterNumber": "English Edition",
-            "title": "The Math of Euphemisms Adding Syllables, Subtracting Humanity",
-            "chapter": "English study overview · The Math of Euphemisms Adding Syllables, Subtracting Humanity",
-            "duration": "05:00",
-            "language": "English",
-            "studyPoints": [
-              "<strong>Core Topic:</strong> Comprehensive academic exploration of The Math of Euphemisms Adding Syllables, Subtracting Humanity.",
-              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
-            ],
-            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
-            "youtubeId": "n5I3noYdy5Q",
-            "thumbnail": "https://i.ytimg.com/vi/n5I3noYdy5Q/hqdefault.jpg",
-            "videoUrl": null
-          },
-          {
-            "chapterNumber": "English Edition",
-            "title": "George Carlin s Soft Language (ENG1B01)",
-            "chapter": "English study overview · George Carlin s Soft Language (ENG1B01)",
-            "duration": "04:40",
-            "language": "English",
-            "studyPoints": [
-              "<strong>Core Topic:</strong> Comprehensive academic exploration of George Carlin s Soft Language (ENG1B01).",
-              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
-            ],
-            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
-            "youtubeId": "GMM5a8hO_XA",
-            "thumbnail": "https://i.ytimg.com/vi/GMM5a8hO_XA/hqdefault.jpg",
-            "videoUrl": null
           }
         ]
       },
@@ -856,7 +748,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 8
+    "totalVideos": 13
   },
   "sociology": {
     "name": "Sociology",
@@ -1235,7 +1127,9 @@ window.VOICE_EXPLANATIONS_DATA = {
               "മെഷീൻ ലേണിംഗും ഡീപ് ലേണിംഗും: വ്യക്തമായ നിയമങ്ങൾ എഴുതിയുണ്ടാക്കുന്നതിന് പകരം ഡാറ്റയിൽ നിന്ന് സ്വയം പഠിക്കുന്ന രീതി.",
               "ബിഹേവിയറിസവും മെന്റലിസവും: ബാഹ്യ പെരുമാറ്റമാണോ അതോ ആന്തരിക ബോധമാണോ ബുദ്ധിയെ നിർണ്ണയിക്കുന്നത് എന്ന തർക്കം."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: സിംബോളിക് AI-യും കണക്ഷനിസവും തമ്മിലുള്ള ദാർശനികവും സാങ്കേതികവുമായ വ്യത്യാസങ്ങൾ താരതമ്യം ചെയ്യുക."
+            "examTip": "Calicut University FYUGP ചോദ്യം: സിംബോളിക് AI-യും കണക്ഷനിസവും തമ്മിലുള്ള ദാർശനികവും സാങ്കേതികവുമായ വ്യത്യാസങ്ങൾ താരതമ്യം ചെയ്യുക.",
+            "thumbnail": "https://i.ytimg.com/vi/Vq-Bc0TI7L0/hqdefault.jpg",
+            "videoUrl": "https://www.youtube.com/watch?v=Vq-Bc0TI7L0"
           },
           {
             "chapterNumber": "Unit 1.5",
@@ -1250,7 +1144,9 @@ window.VOICE_EXPLANATIONS_DATA = {
               "എലൈസ ഇഫക്റ്റും വാക്യഘടനയും: ചിന്തയില്ലാതെ വെറും വാക്യഘടനകൾ (Syntax) വഴി മനുഷ്യനെ തെറ്റിദ്ധരിപ്പിക്കാനുള്ള മെഷീനുകളുടെ ശേഷി.",
               "ട്യൂറിംഗ് ടെസ്റ്റിനെതിരെയുള്ള ആദ്യകാല ദാർശനിക വിമർശനങ്ങൾ: ലേഡി ലവ്‌ലേസിന്റെ ആക്ഷേപം (യന്ത്രങ്ങൾക്ക് സ്വന്തമായി ഒന്നും പുതുതായി സൃഷ്ടിക്കാനാവില്ല)."
             ],
-            "examTip": "Calicut University ചോദ്യം: അലൻ ട്യൂറിംഗിന്റെ 'ഇമിറ്റേഷൻ ഗെയിം' സിദ്ധാന്തവും അതിനെതിരെയുള്ള പ്രധാന ദാർശനിക വിമർശനങ്ങളും വിലയിരുത്തുക."
+            "examTip": "Calicut University ചോദ്യം: അലൻ ട്യൂറിംഗിന്റെ 'ഇമിറ്റേഷൻ ഗെയിം' സിദ്ധാന്തവും അതിനെതിരെയുള്ള പ്രധാന ദാർശനിക വിമർശനങ്ങളും വിലയിരുത്തുക.",
+            "thumbnail": "https://i.ytimg.com/vi/4EcWGNwIT2I/hqdefault.jpg",
+            "videoUrl": "https://www.youtube.com/watch?v=4EcWGNwIT2I"
           }
         ]
       },

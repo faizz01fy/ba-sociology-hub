@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <meta charset="utf-8" />
 
@@ -3860,7 +3861,28 @@
       box-shadow: none !important;
     }
 
-</style>
+
+    .btn-yt-direct {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 8px 14px;
+      background: #dc2626 !important;
+      color: #ffffff !important;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-yt-direct:hover {
+      background: #b91c1c !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+    }
+
+  </style>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
 
@@ -4034,7 +4056,7 @@
 
   <!-- Load Subject Voice Data -->
 
-  <script src="voice_explanation_data.js?v=1794011260"></script>
+  <script src="voice_explanation_data.js?v=1794073390"></script>
 
 
 
@@ -4417,13 +4439,19 @@
 
                 <div class="card-actions">
 
-                  <button type="button" class="btn-share-card btn-share-card--frozen" disabled aria-disabled="true" title="YouTube video access frozen: No file uploaded yet"><span aria-hidden="true">🔒</span> Video Access Frozen</button>
+                  
 
                   <button type="button" class="btn-play-voice">
 
                     <span aria-hidden="true">▶</span> ${(v.videoUrl || v.youtubeId) ? 'Play Video' : 'Play Voice'}
 
                   </button>
+
+                  ${(v.youtubeId || v.videoUrl) ? `
+                    <a href="${fullVideoUrl}" target="_blank" rel="noopener noreferrer" class="btn-yt-direct" title="Watch full video on YouTube">
+                      <span aria-hidden="true">▶</span> YouTube
+                    </a>
+                  ` : ''}
 
                   <button type="button" class="btn-share-card" title="Share this chapter lecture">
 
@@ -4775,6 +4803,7 @@
 
                               title="${v.title}"
 
+                              referrerpolicy="strict-origin-when-cross-origin"
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 
                               allowfullscreen>
