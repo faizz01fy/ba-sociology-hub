@@ -752,7 +752,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "Reading Strategies & Critical Comprehension",
             "chapter": "Skimming, Scanning, Inference & Analytical Reading",
             "duration": "16",
-            "youtubeId": "9aLkAUYFWF8"
+            "youtubeId": ""
           },
           {
             "chapterNumber": "Chapter 02",
@@ -835,9 +835,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "The World Renowned Nose",
             "chapter": "English cinematic overview · Vaikom Muhammad Basheer · Political satire, media sensation and absurdism",
             "duration": "06:48",
-            "youtubeId": "N53VW_gQpCI",
+            "youtubeId": "_g7fyD5mLPo",
             "language": "English",
-            "thumbnail": "https://i.ytimg.com/vi/N53VW_gQpCI/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/_g7fyD5mLPo/hqdefault.jpg",
             "studyPoints": [
               "<strong>Vaikom Muhammad Basheer's Masterpiece:</strong> Translated from Malayalam ('Viswavikhyathamaya Mookku'), a world-class political satire on human gullibility and mass media hysteria.",
               "<strong>The Absurdity of Modern Fame:</strong> A humble 24-year-old cook becomes an international celebrity simply because his nose grows past his mouth down to his chest.",
@@ -966,7 +966,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സമൂഹം എങ്ങനെ നമ്മളെ മനുഷ്യരാക്കുന്നു? (How Society Makes Us Human: Process of Socialization)",
             "chapter": "Human Socialization · Nature vs Nurture & Primary Agencies (സാമൂഹികവൽക്കരണ പ്രക്രിയ)",
             "duration": "24",
-            "youtubeId": "6VWW49UMoks",
+            "youtubeId": "",
             "studyPoints": [
               "സോഷ്യലൈസേഷൻ നിർവചനം (Process of Socialization): ജൈവിക ജീവിയായി ജനിക്കുന്ന ഒരു കുഞ്ഞ് സമൂഹവുമായി ഇടപഴകി സംസ്കാരവും ഭാഷയും മൂല്യങ്ങളും പഠിച്ചെടുത്ത് സാമൂഹിക ജീവിയായി മാറുന്ന ആജീവനാന്ത പ്രക്രിയ.",
               "Nature vs Nurture സംവാദം: മനുഷ്യ വ്യക്തിത്വത്തെയും പെരുമാറ്റത്തെയും നിശ്ചയിക്കുന്നത് ജനിതക പാരമ്പര്യമാണോ (Nature) അതോ വളർത്തുസാഹചര്യങ്ങളും സാമൂഹിക സമ്പർക്കവുമാണോ (Nurture) എന്ന അടിസ്ഥാന ചർച്ച.",
