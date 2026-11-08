@@ -2,12 +2,12 @@ window.mathLearningData = {
   "math_mod_1_syllabus": {
     "title": "Mathematics · Detailed Syllabus & Examination Blueprint",
     "description": "Calicut University 4-Module Structure · Course Objectives · External Examination Weightage · Textbooks",
-    "docUrl": "notesphere-MATHEMATICS-chapter-0.pdf"
+    "docUrl": "https://sde.uoc.ac.in/"
   },
   "math_ch_1": {
     "title": "Mathematics · Chapter 1 · Number System",
     "description": "Place Value & Face Value · Types of Numbers · Divisibility Rules (2 to 11) · Prime & Composite Numbers",
-    "docUrl": "notesphere-MATHEMATICS-chapter-1.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 1 establishes the fundamental architecture of arithmetic: the Hindu-Arabic decimal system using digits 0 through 9. It distinguishes between the intrinsic Face Value of a digit and its positional Place Value (determined by multiplying the digit by 10^n according to units, tens, hundreds, thousands, etc.). It classifies numbers into Natural Numbers (N = 1, 2, 3...), Whole Numbers (W = 0, 1, 2...), Integers (Z = ...-2, -1, 0, 1, 2...), Rational Numbers (p/q, q≠0), and Real Numbers. It provides rigorous divisibility shortcuts for 2, 3, 4, 5, 6, 8, 9, 10, and 11, and explores the properties of Prime and Coprime pairs.",
       "overviewMal": "ഗണിതശാസ്ത്രത്തിന്റെ അടിത്തറയായ സംഖ്യാസമ്പ്രദായത്തെക്കുറിച്ചുള്ള സമഗ്ര അധ്യായം. ഹിന്ദു-അറബിക് ദശാംശ വ്യവസ്ഥയിലെ 0 മുതൽ 9 വരെയുള്ള അക്കങ്ങൾ, ഒരു അക്കത്തിന്റെ സ്ഥാനം അനുസരിച്ചുള്ള 'സ്ഥാനവില' (Place Value), അതിന്റെ സ്വന്തം മൂല്യമായ 'മുഖവില' (Face Value) എന്നിവ തമ്മിലുള്ള വ്യത്യാസം വ്യക്തമാക്കുന്നു. എണ്ണൽ സംഖ്യകൾ (Natural numbers), അഖണ്ഡ സംഖ്യകൾ (Whole numbers), പൂർണ്ണസംഖ്യകൾ (Integers), ഭിന്നക സംഖ്യകൾ (Rational numbers) എന്നിവയെ തരംതിരിക്കുന്നു. 2 മുതൽ 11 വരെയുള്ള സംഖ്യകളുടെ ഹരണനിയമങ്ങളും (Divisibility tests), അഭാജ്യ സംഖ്യകളുടെയും (Prime numbers) സഹ-അഭാജ്യ സംഖ്യകളുടെയും (Coprime) സവിശേഷതകളും വിശദീകരിക്കുന്നു.",
@@ -563,7 +563,7 @@ window.mathLearningData = {
   "math_ch_2": {
     "title": "Mathematics · Chapter 2 · Number Sequence & Series",
     "description": "Arithmetic Progression (AP) · Geometric Progression (GP) · Pattern Recognition · Missing & Wrong Term Identification",
-    "docUrl": "notesphere-MATHEMATICS-chapter-2.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 2 explores mathematical sequences where terms are ordered from left to right following defined operational logic. It covers Arithmetic Progressions (AP), where each successive term differs by a constant common difference 'd' (nth term Tn = a + (n-1)d; Sum Sn = n/2 [2a + (n-1)d]); Geometric Progressions (GP), where terms multiply by a constant ratio 'r' (Tn = a·r^(n-1)); and hybrid sequences including alternating step series, square/cube number patterns, and difference-of-differences logic. Students learn rapid algorithmic pattern recognition to pinpoint missing terms or detect anomalous rogue numbers.",
       "overviewMal": "നിശ്ചിത ഗണിത ക്രമങ്ങൾക്കനുസരിച്ച് ക്രമീകരിച്ചിരിക്കുന്ന സംഖ്യാ ശ്രേണികളെക്കുറിച്ചുള്ള (Number Sequence & Series) അധ്യായം. ഒരു നിശ്ചിത പൊതുവ്യത്യാസം 'd' കൂട്ടി മുന്നോട്ട് പോകുന്ന സമാന്തര ശ്രേണി (Arithmetic Progression - AP), പൊതു അനുപാതം 'r' ഗുണിച്ചു മുന്നോട്ട് പോകുന്ന ഗുണോത്തര ശ്രേണി (Geometric Progression - GP) എന്നിവയുടെ സൂത്രവാക്യങ്ങളും തത്വങ്ങളും പ്രതിപാദിക്കുന്നു. കൂടാതെ വർഗ്ഗങ്ങൾ, ഘനങ്ങൾ, ഒന്നിടവിട്ട ശ്രേണികൾ എന്നിവയിലെ ക്രമങ്ങൾ വേഗത്തിൽ കണ്ടെത്തി വിട്ടുപോയ സംഖ്യകളോ തെറ്റായ സംഖ്യകളോ കണ്ടെത്താനുള്ള എളുപ്പവഴികളും ചർച്ച ചെയ്യുന്നു.",
@@ -1103,7 +1103,7 @@ window.mathLearningData = {
   "math_ch_3": {
     "title": "Mathematics · Chapter 3 · Simple & Decimal Fractions",
     "description": "Proper, Improper & Mixed Fractions · Decimal Operations · Recurring Decimals · Cross-Multiplication Comparison",
-    "docUrl": "notesphere-MATHEMATICS-chapter-3.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 3 analyzes fractions as representations of proportional parts of a whole in the form p/q (where q ≠ 0; p is numerator, q is denominator). It classifies fractions into Proper Fractions (p < q), Improper Fractions (p ≥ q), and Mixed Fractions (integer + proper fraction). It details four arithmetic operations on fractions using Least Common Multiple (LCM) denominator equalization, investigates decimal conversions, and formalizes recurring decimals into vulgar fraction form (0.ā = a/9; 0.ab̄ = ab/99; 0.ab̄c = (abc - a)/990). Furthermore, it provides the rapid cross-multiplication comparison rule (a/b > c/d iff a·d > b·c).",
       "overviewMal": "ഒരു പൂർണ്ണവസ്തുവിന്റെ ഭാഗങ്ങളെ പ്രതിനിധീകരിക്കുന്ന p/q രൂപത്തിലുള്ള ഭിന്നസംഖ്യകളെക്കുറിച്ചുള്ള (Fractions) അധ്യായം (ഇവിടെ q ≠ 0, p അംശവും q ഛേദവുമാണ്). ക്രമഭിന്നം (Proper fraction - p < q), വിഷമഭിന്നം (Improper fraction - p ≥ q), മിശ്രഭിന്നം (Mixed fraction) എന്നിവയെ തരംതിരിക്കുന്നു. ല.സാ.ഗു (LCM) ഉപയോഗിച്ചുള്ള സങ്കലനം, വ്യവകലനം, ഗുണനം, ഹരണം എന്നിവയും, ദശാംശ രൂപത്തിലേക്കുള്ള മാറ്റവും ആവർത്തന ദശാംശങ്ങളെ (Recurring decimals) സാധാരണ ഭിന്നസംഖ്യകളാക്കി മാറ്റുന്ന രീതികളും വിശദീകരിക്കുന്നു. കൂടാതെ ക്രോസ്-മൾട്ടിപ്ലിക്കേഷൻ വഴി ഭിന്നസംഖ്യകളെ താരതമ്യം ചെയ്യാനുള്ള എളുപ്പവഴികളും ചർച്ച ചെയ്യുന്നു.",
@@ -1643,7 +1643,7 @@ window.mathLearningData = {
   "math_mod_1_practice": {
     "title": "Mathematics · Module 1 · Numbers Practice Question Bank",
     "description": "Comprehensive Practice Problems from Chapter 15 Official PDF · Place Values · Coprimes · Prime Factors · Word Problems",
-    "docUrl": "notesphere-MATHEMATICS-chapter-15.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Module 1 Practice Bank is sourced directly from the official Chapter 15 repository (covering 22 comprehensive pages of multi-tiered examination problems). It features high-frequency questions on large-number place values (e.g., place value of 6 in 65,489,203), prime and coprime classifications, remainder theorem applications, and integer word problems. Solutions are rigorously explained with full algorithmic workings in English and Malayalam.",
       "overviewMal": "ഔദ്യോഗിക 22 പേജുള്ള ചാപ്റ്റർ 15 ചോദ്യബാങ്കിൽ നിന്നും തെരഞ്ഞെടുത്ത പ്രധാന പരീക്ഷാ ചോദ്യങ്ങളുടെ സമാഹാരം. വലിയ സംഖ്യകളിലെ പ്ലേസ് വാല്യൂ കണക്കുകൾ, കോപ്രൈം ജോടികൾ, ശിഷ്ടം കാണുന്ന രീതികൾ, വാക്ക് കണക്കുകൾ (Word problems) എന്നിവ ഇതിൽ അടങ്ങിയിരിക്കുന്നു. ഓരോ ചോദ്യത്തിനും കൃത്യമായ ഗണിത വിശദീകരണങ്ങൾ ഇംഗ്ലീഷിലും മലയാളത്തിലും നൽകിയിട്ടുണ്ട്.",
@@ -2153,7 +2153,7 @@ window.mathLearningData = {
   "math_ch_4": {
     "title": "Mathematics · Chapter 4 · HCF and LCM",
     "description": "Highest Common Factor · Least Common Multiple · Prime Factorization & Division Methods · Fractions HCF/LCM · Product Formula",
-    "docUrl": "notesphere-MATHEMATICS-chapter-4.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 4 details the concepts of Factors and Multiples. If x divides y without leaving a remainder, x is a factor of y and y is a multiple of x. The Highest Common Factor (HCF or GCD) is the largest integer dividing all given numbers. The Least Common Multiple (LCM) is the smallest positive integer divisible by each of the given numbers. The chapter establishes the fundamental Product Rule: Product of two numbers = HCF × LCM. It also develops fraction formulas: HCF of Fractions = HCF of Numerators / LCM of Denominators; LCM of Fractions = LCM of Numerators / HCF of Denominators.",
       "overviewMal": "ഘടകങ്ങളും (Factors) ഗുണിതങ്ങളും (Multiples) വിശദീകരിക്കുന്ന പ്രധാന അധ്യായം. ഒരു സംഖ്യയെ മറ്റൊരു സംഖ്യ കൊണ്ട് ശിഷ്ടമില്ലാതെ ഹരിക്കാമെങ്കിൽ അതിനെ ഘടകമെന്നും, തിരിച്ച് ഗുണിതമെന്നും വിളിക്കുന്നു. തന്നിരിക്കുന്ന സംഖ്യകളെ പൂർണ്ണമായി ഹരിക്കാൻ കഴിയുന്ന ഏറ്റവും വലിയ സംഖ്യയാണ് ഉത്തമ സാധാരണ ഘടകം (ഉ.സാ.ഘ - HCF / GCD). തന്നിരിക്കുന്ന സംഖ്യകളുടെ ഗുണിതങ്ങളിൽ ഏറ്റവും ചെറിയ പൊതുസംഖ്യയാണ് ലഘുതമ സാധാരണ ഗുണിതം (ല.സാ.ഗു - LCM). രണ്ട് സംഖ്യകളുടെ ഗുണനഫലം = ഉ.സാ.ഘ × ല.സാ.ഗു എന്ന സുപ്രധാന സൂത്രവാക്യവും, ഭിന്നസംഖ്യകളുടെ ഉ.സാ.ഘ, ല.സാ.ഗു കാണാനുള്ള സമവാക്യങ്ങളും ഈ അധ്യായത്തിൽ വിശദീകരിക്കുന്നു.",
@@ -2697,7 +2697,7 @@ window.mathLearningData = {
   "math_ch_5": {
     "title": "Mathematics · Chapter 5 · Square Root & Cube Root",
     "description": "Properties of Perfect Squares · Factorization & Division Methods · Cube Roots · Mathematical Shortcuts",
-    "docUrl": "notesphere-MATHEMATICS-chapter-5.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 5 explores the exponential powers of 2 and 3 and their inverses. If a number is multiplied by itself, the result is its Square (x²). Conversely, the Square Root (√x) is the non-negative value whose square equals x. A number is a Perfect Square if its square root is an integer. Perfect squares never terminate in 2, 3, 7, or 8, and must end in an even number of zeroes. The chapter demonstrates Prime Factorization and Long Division methods for extracting roots, explores properties such as √(a·b) = √a·√b and √(a/b) = √a/√b, and extends these techniques to Cube Roots (∛x).",
       "overviewMal": "വർഗ്ഗവും (Square) വർഗ്ഗമൂലവും (Square Root), ഘനവും (Cube) ഘനമൂലവും (Cube Root) വിശദീകരിക്കുന്ന അധ്യായം. ഒരു സംഖ്യയെ അതേ സംഖ്യ കൊണ്ട് ഗുണിച്ചാൽ വർഗ്ഗം ലഭിക്കുന്നു. പൂർണ്ണ വർഗ്ഗ സംഖ്യകളുടെ (Perfect Squares) അവസാന അക്കം ഒരിക്കലും 2, 3, 7, 8 എന്നിവ ആകില്ലെന്നും, പൂജ്യങ്ങളുടെ എണ്ണം ഇരട്ടയായിരിക്കുമെന്നും ഈ പാഠം വ്യക്തമാക്കുന്നു. പ്രൈം ഫാക്ടറൈസേഷൻ, ലോംഗ് ഡിവിഷൻ രീതികൾ വഴി വർഗ്ഗമൂലം കണ്ടെത്തുന്നതും, ഘനമൂലം (∛x) കണക്കാക്കുന്ന എളുപ്പവഴികളും സൂത്രവാക്യങ്ങളും സമഗ്രമായി ചർച്ച ചെയ്യുന്നു.",
@@ -3226,7 +3226,7 @@ window.mathLearningData = {
   "math_ch_6": {
     "title": "Mathematics · Chapter 6 · Simplifications & VBODMAS",
     "description": "Hierarchy of Operations (VBODMAS) · Vinculum & Brackets · Algebraic Identities · Mental Arithmetic",
-    "docUrl": "notesphere-MATHEMATICS-chapter-6.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 6 establishes the rigorous operational hierarchy required to reduce multi-operator mathematical expressions into their unique numerical values. It formalizes the VBODMAS convention: Vinculum (horizontal bar line over terms), Brackets (parentheses (), curly brackets {}, square brackets []), Of (multiplication with higher precedence than division), Division, Multiplication, Addition, and Subtraction. It also equips students with standard algebraic expansions ((a+b)², (a-b)², a²-b², (a+b)³) to simplify complex numerical products and quotients mentally in split seconds.",
       "overviewMal": "സങ്കീർണ്ണമായ ഗണിത വാക്യങ്ങളെ ലഘൂകരിക്കുന്നതിനുള്ള (Simplifications) അടിസ്ഥാന അധ്യായം. ക്രിയകളുടെ മുൻഗണന നിശ്ചയിക്കുന്ന VBODMAS നിയമം (വിൻകുലം/ബാർ ബ്രാക്കറ്റ്, ബ്രാക്കറ്റുകൾ, 'Of' ക്രിയ, ഹരണം, ഗുണനം, സങ്കലനം, വ്യവകലനം) സമഗ്രമായി പ്രതിപാദിക്കുന്നു. കൂടാതെ ബീജഗണിത സൂത്രവാക്യങ്ങൾ ((a+b)², (a-b)², a²-b²) ഉപയോഗിച്ച് വലിയ ഗുണന കണക്കുകളെ മനക്കണക്കായി വളരെ വേഗത്തിൽ പരിഹരിക്കാനുള്ള കുറുക്കുവഴികളും ഇതിൽ വിശദീകരിക്കുന്നു.",
@@ -3744,7 +3744,7 @@ window.mathLearningData = {
   "math_mod_2_practice": {
     "title": "Mathematics · Module 2 · Basic Operations Practice Question Bank",
     "description": "Comprehensive Practice Problems from Chapter 16 Official PDF · Advanced LCM & HCF · Algebraic Terms · Remainder Word Problems",
-    "docUrl": "notesphere-MATHEMATICS-chapter-16.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Module 2 Practice Bank draws directly from the official 22-page Chapter 16 examination repository. It features applied problems on LCM of decimal and fractional values (e.g. 0.25, 0.1, and 0.125), algebraic terms (LCM of 2a, 5a, 7a), coprime properties (product = 117), step synchronization problems (e.g., three people stepping together at 68 cm, 72 cm, 84 cm), and work remuneration algebra. Solutions are fully unpacked with step-by-step arithmetic proofs.",
       "overviewMal": "ചാപ്റ്റർ 16 ഔദ്യോഗിക ചോദ്യബാങ്കിൽ നിന്നുള്ള പ്രധാന പരീക്ഷാ ചോദ്യങ്ങളുടെ സമഗ്ര ശേഖരം. ദശാംശ സംഖ്യകളുടെ ല.സാ.ഗു, ബീജഗണിത പദങ്ങളുടെ ഉ.സാ.ഘ, രണ്ട് സംഖ്യകളുടെ തുകയും ല.സാ.ഗുവും തന്നാലുള്ള ചോദ്യങ്ങൾ, പ്രായോഗിക ചുവടുവെപ്പ് കണക്കുകൾ എന്നിവ ഇതിൽ ഉൾപ്പെടുത്തിയിരിക്കുന്നു. ഓരോ ചോദ്യത്തിനും വിശദമായ ഉത്തരവഴികൾ നൽകിയിട്ടുണ്ട്.",
@@ -4239,7 +4239,7 @@ window.mathLearningData = {
   "math_ch_7": {
     "title": "Mathematics · Chapter 7 · Average",
     "description": "Arithmetic Mean · Consecutive Numbers Properties · Weighted Average · Speed Averages · Member Addition/Removal",
-    "docUrl": "notesphere-MATHEMATICS-chapter-7.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 7 formalizes the concept of Average (or Arithmetic Mean) as the single representative quantity obtained by dividing the sum of all given observations by the total number of observations: Average = Sum / n. It provides high-speed shortcuts for consecutive integers (Average = (First + Last) / 2), average of first n natural numbers ((n+1)/2), first n even numbers (n+1), and first n odd numbers (n). It develops formulas for average speed across identical distances (2xy / (x+y)), weighted averages, and replacement analysis when new members join or leave a group.",
       "overviewMal": "ഒരു കൂട്ടം സംഖ്യകളുടെ ആകെത്തുകയെ സംഖ്യകളുടെ എണ്ണം കൊണ്ട് ഹരിച്ചാൽ ലഭിക്കുന്ന ശരാശരിയെക്കുറിച്ചുള്ള (Average / Arithmetic Mean) അധ്യായം. ക്രമാനുഗത സംഖ്യകളുടെ ശരാശരി കാണാനുള്ള കുറുക്കുവഴികൾ (ആദ്യപദം + അവസാനപദം)/2, ആദ്യത്തെ n എണ്ണൽ സംഖ്യകളുടെ ശരാശരി (n+1)/2, ആദ്യത്തെ n ഇരട്ടസംഖ്യകളുടെ ശരാശരി (n+1), ഒറ്റസംഖ്യകളുടെ ശരാശരി (n) എന്നിവ ഇതിൽ ഉൾപ്പെടുന്നു. തുല്യ ദൂരം സഞ്ചരിക്കുമ്പോഴുള്ള ശരാശരി വേഗത കാണാനുള്ള സമവാക്യം (2xy/(x+y)), ഭാരപ്പെടുത്തിയ ശരാശരി (Weighted average), ഒരു ഗ്രൂപ്പിൽ പുതിയ ആൾ വരുമ്പോഴും പോകുമ്പോഴും ശരാശരിയിൽ ഉണ്ടാകുന്ന മാറ്റങ്ങൾ എന്നിവ സമഗ്രമായി ചർച്ച ചെയ്യുന്നു.",
@@ -4768,7 +4768,7 @@ window.mathLearningData = {
   "math_ch_8": {
     "title": "Mathematics · Chapter 8 · Ratio & Proportion",
     "description": "Comparison of Quantities · Compounding Ratios · Direct & Inverse Proportion · Mean & Fourth Proportional",
-    "docUrl": "notesphere-MATHEMATICS-chapter-8.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 8 examines proportional relationships between quantities of identical dimensions. A Ratio a:b represents the fraction a/b in simplest coprime form. The chapter analyzes Duplicate Ratios (a²:b²), Sub-duplicate Ratios (√a:√b), Triplicate Ratios (a³:b³), and Compound Ratios (ac:bd). A Proportion a:b :: c:d asserts equality between two ratios, anchored by the Fundamental Theorem of Proportions: Product of Extremes equals Product of Means (a · d = b · c). It develops analytical formulas for Fourth Proportional (d = bc/a), Third Proportional (c = b²/a), and Mean Proportional between a and b (√ab).",
       "overviewMal": "ഒരേ ഇനത്തിൽപ്പെട്ട അളവുകൾ തമ്മിലുള്ള താരതമ്യമായ അംശബന്ധത്തെയും (Ratio) അനുപാതത്തെയും (Proportion) കുറിച്ചുള്ള അധ്യായം. a:b എന്ന അംശബന്ധം a/b എന്ന ലഘുരൂപത്തിലാണ് സൂചിപ്പിക്കുന്നത്. വർഗ്ഗാനുപാതം (Duplicate ratio - a²:b²), വർഗ്ഗമൂലാനുപാതം (Sub-duplicate ratio - √a:√b), സംയുക്ത അംശബന്ധം (Compound ratio) എന്നിവ ഇതിൽ ഉൾപ്പെടുന്നു. a:b :: c:d എന്ന അനുപാതത്തിൽ അഗ്രപദങ്ങളുടെ ഗുണനഫലം മധ്യപദങ്ങളുടെ ഗുണനഫലത്തിന് തുല്യമായിരിക്കും (a × d = b × c). നാലാം അനുപാതം (Fourth proportional), മൂന്നാം അനുപാതം, മധ്യ അനുപാതം (Mean proportional = √ab) എന്നിവ കാണാനുള്ള സൂത്രവാക്യങ്ങളും വിശദീകരിക്കുന്നു.",
@@ -5282,7 +5282,7 @@ window.mathLearningData = {
   "math_ch_9": {
     "title": "Mathematics · Chapter 9 · Problems Based on Ages",
     "description": "Linear Age Equations · Past, Present & Future Time Travel · Invariant Age Difference · Ratio Transformations",
-    "docUrl": "notesphere-MATHEMATICS-chapter-9.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 9 addresses word problems concerning chronological age relationships across past, present, and future timelines. The fundamental mathematical axiom of age problems is that the absolute difference in age between any two individuals remains strictly constant across all time. If current age is x, age n years ago was (x - n), and age n years hence will be (x + n). The chapter shows how to translate verbal descriptions involving ratios and multiple periods into systems of simple linear algebraic equations.",
       "overviewMal": "വ്യക്തികളുടെ പ്രായവും സമയവും തമ്മിലുള്ള ബന്ധങ്ങൾ വിശകലനം ചെയ്യുന്ന അധ്യായം (Problems Based on Ages). രണ്ട് വ്യക്തികൾ തമ്മിലുള്ള പ്രായവ്യത്യാസം കാലമെത്ര കഴിഞ്ഞാലും മാറ്റമില്ലാതെ തുടരുന്നു എന്നതാണ് ഇതിന്റെ അടിസ്ഥാന തത്വം. ഇപ്പോഴത്തെ പ്രായം x ആയാൽ, n വർഷം മുൻപുള്ള പ്രായം (x - n) എന്നും, n വർഷത്തിന് ശേഷമുള്ള പ്രായം (x + n) എന്നും അടയാളപ്പെടുത്തുന്നു. പ്രായം സംബന്ധിച്ച വാക്ക് കണക്കുകളെ ഒന്നാം ഡിഗ്രി സമവാക്യങ്ങളാക്കി മാറ്റി വേഗത്തിൽ ഉത്തരം കണ്ടെത്താനുള്ള രീതികൾ ഈ അധ്യായം പഠിപ്പിക്കുന്നു.",
@@ -5792,7 +5792,7 @@ window.mathLearningData = {
   "math_ch_10": {
     "title": "Mathematics · Chapter 10 · Percentage",
     "description": "Per Cent Meaning · Fraction/Percentage Conversions · Successive Percentage Changes · Population & Depreciation",
-    "docUrl": "notesphere-MATHEMATICS-chapter-10.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 10 investigates the term 'per cent' (meaning 'for every hundred'), formalizing percentage as a fraction whose denominator is fixed at 100: x% = x/100. It presents high-speed fractional equivalents (1/2 = 50%, 1/3 = 33 1/3%, 1/4 = 25%, 1/5 = 20%, 1/6 = 16 2/3%, 1/8 = 12.5%, etc.) and formulas for percentage increase and decrease. It covers the successive percentage change identity (Net % = a + b + ab/100), commodity expenditure adjustment when price rises by r% ((r / (100 + r)) × 100%), and compound population growth/depreciation over n years: A = P(1 ± R/100)^n.",
       "overviewMal": "'നൂറിൽ എത്ര' എന്ന് അർത്ഥം വരുന്ന ശതമാനത്തെക്കുറിച്ചുള്ള (Percentage) അടിസ്ഥാന അധ്യായം. ഛേദം 100 ആയ ഭിന്നസംഖ്യയെയാണ് ശതമാനം എന്ന് പറയുന്നത് (x% = x/100). പ്രധാനപ്പെട്ട ഭിന്നസംഖ്യാ-ശതമാന തുല്യതകൾ (1/2 = 50%, 1/3 = 33 1/3%, 1/4 = 25%, 1/5 = 20% മുതലായവ) വേഗത്തിൽ കണക്കുകൂട്ടാൻ സഹായിക്കുന്നു. തുടർച്ചയായ ശതമാന മാറ്റങ്ങൾക്കുള്ള സമവാക്യം (Net % = a + b + ab/100), ഒരു സാധനത്തിന്റെ വില കൂടുമ്പോൾ ഉപഭോഗം എത്ര കുറയ്ക്കണം എന്ന കണക്കുകൾ, ജനസംഖ്യാ വളർച്ചയും ആസ്തികളുടെ തേയ്മാനവും (Depreciation) കണക്കാക്കുന്ന സൂത്രവാക്യങ്ങൾ എന്നിവ ഇതിൽ വിശദീകരിക്കുന്നു.",
@@ -6306,7 +6306,7 @@ window.mathLearningData = {
   "math_mod_3_practice": {
     "title": "Mathematics · Module 3 · Averages & Ratios Practice Question Bank",
     "description": "Comprehensive Practice Problems from Chapter 17 Official PDF · Score Averages · Batting Statistics · Partnership Ratios",
-    "docUrl": "notesphere-MATHEMATICS-chapter-17.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Module 3 Practice Bank is drawn from the official 33-page Chapter 17 repository. It compiles real examination questions covering score set averages (e.g., scores 253, 124, 255, 534, 836, 375, 101, 443, 760 with average 413), bowling and batting averages, television inventory weighted averages, multi-student missing score problems, and multi-class pass rate comparative analysis. Every question is fully resolved with step-by-step arithmetic proofs.",
       "overviewMal": "ചാപ്റ്റർ 17-ലെ 33 പേജുള്ള ഔദ്യോഗിക ചോദ്യബാങ്കിൽ നിന്നും തെരഞ്ഞെടുത്ത പ്രധാന പരീക്ഷാ ചോദ്യങ്ങൾ. ക്രിക്കറ്റ് സ്കോറുകളുടെ ശരാശരി, വലിയ സംഖ്യാ ഗണങ്ങളുടെ ശരാശരി, വിട്ടുപോയ മാർക്ക് കണ്ടെത്തൽ, ഇൻവെന്ററി വാങ്ങൽ ശരാശരി എന്നിവ ഇതിൽ വിശദീകരിക്കുന്നു.",
@@ -6801,7 +6801,7 @@ window.mathLearningData = {
   "math_ch_11": {
     "title": "Mathematics · Chapter 11 · Profit & Loss",
     "description": "Cost Price & Selling Price · Profit/Loss Percentages on Cost Price · False Weights & Dishonest Dealers · Break-Even",
-    "docUrl": "notesphere-MATHEMATICS-chapter-11.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 11 analyzes commercial monetary transactions in trade and business. When an article is purchased or manufactured, the expenditure is its Cost Price (CP). The price at which it is transferred is its Selling Price (SP). If SP > CP, the trader makes a Profit = SP - CP (Profit % = (Profit/CP) × 100). If SP < CP, a Loss is incurred: Loss = CP - SP (Loss % = (Loss/CP) × 100). Crucially, profit and loss percentages are ALWAYS calculated on Cost Price unless explicitly stated otherwise. The chapter also covers dishonest merchants using false weights (Gain % = [Error / (True Weight - Error)] × 100).",
       "overviewMal": "വ്യാപാര വാണിജ്യ രംഗങ്ങളിലെ സാമ്പത്തിക ഇടപാടുകളെ വിശകലനം ചെയ്യുന്ന അധ്യായം (Profit & Loss). സാധനം വാങ്ങുന്നതിനോ നിർമ്മിക്കുന്നതിനോ ആകുന്ന ചെലവാണ് വാങ്ങിയ വില (Cost Price - CP). വിൽക്കുന്ന വിലയാണ് വിറ്റ വില (Selling Price - SP). വിറ്റ വില വാങ്ങിയ വിലയേക്കാൾ കൂടുതലായാൽ ലാഭവും (Profit = SP - CP), കുറവായാൽ നഷ്ടവും (Loss = CP - SP) സംഭവിക്കുന്നു. ലാഭ-നഷ്ട ശതമാനങ്ങൾ എപ്പോഴും വാങ്ങിയ വിലയെ (CP) അടിസ്ഥാനമാക്കിയാണ് കണക്കാക്കുന്നത്. വ്യാജ തൂക്കക്കട്ടകൾ ഉപയോഗിച്ച് നടത്തുന്ന വ്യാപാരങ്ങളിലെ ലാഭം കാണാനുള്ള സമവാക്യങ്ങളും ഇതിൽ വിശദീകരിക്കുന്നു.",
@@ -7311,7 +7311,7 @@ window.mathLearningData = {
   "math_ch_12": {
     "title": "Mathematics · Chapter 12 · Discount",
     "description": "Marked Price (List Price) · Cash & Trade Discount · Successive Discounts Equivalent Single Rate · Profit with Discount",
-    "docUrl": "notesphere-MATHEMATICS-chapter-12.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 12 covers price concessions and rebates known as Discount. Goods display a printed tag or catalogue rate designated as Marked Price (MP) or List Price. Discount is the rebate deducted from the Marked Price by merchants: Discount = Marked Price - Selling Price (Discount % = (Discount/MP) × 100). The chapter focuses heavily on Successive Discounts (d1% and d2%), deriving the single equivalent discount formula: Net D% = d1 + d2 - (d1 · d2 / 100). It teaches students how traders mark up cost price so that even after allowing discounts, a target profit margin is secured.",
       "overviewMal": "വ്യാപാര രംഗത്തെ വിലക്കിഴിവുകളെയും (Discount) രേഖപ്പെടുത്തിയ വിലയെയും (Marked Price / List Price) കുറിച്ചുള്ള അധ്യായം. രേഖപ്പെടുത്തിയ വിലയിൽ നിന്ന് നൽകുന്ന ഇളവാണ് ഡിസ്കൗണ്ട്: ഡിസ്കൗണ്ട് = രേഖപ്പെടുത്തിയ വില - വിറ്റ വില (ഡിസ്കൗണ്ട്% = (ഡിസ്കൗണ്ട് / MP) × 100). തുടർച്ചയായ ഡിസ്കൗണ്ടുകൾക്ക് (Successive Discounts - d1%, d2%) തുല്യമായ ഒറ്റ ഡിസ്കൗണ്ട് കാണാനുള്ള സൂത്രവാക്യം (Net D% = d1 + d2 - (d1 × d2 / 100)) ഇതിൽ വിശദീകരിക്കുന്നു. കൂടാതെ ഡിസ്കൗണ്ട് നൽകിയ ശേഷവും നിശ്ചിത ലാഭം നേടാൻ സാധനങ്ങളുടെ വില എത്ര കൂട്ടി രേഖപ്പെടുത്തണം എന്ന പ്രായോഗിക കണക്കുകളും ചർച്ച ചെയ്യുന്നു.",
@@ -7821,7 +7821,7 @@ window.mathLearningData = {
   "math_ch_13": {
     "title": "Mathematics · Chapter 13 · Simple Interest",
     "description": "Principal, Rate & Time · Master Formula I = (P×R×T)/100 · Amount Accrual · Doubling Time Shortcuts",
-    "docUrl": "notesphere-MATHEMATICS-chapter-13.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 13 investigates the financial mechanics of debt, borrowing, and credit under the Simple Interest convention. The sum borrowed or invested is the Principal (P). The extra remuneration paid by the borrower for the use of the funds over Time (T in years) at an annual Rate percent (R% p.a.) is the Simple Interest (SI). The master formula is SI = (P · R · T) / 100. The total sum returned at maturity is the Amount: A = P + SI = P(1 + RT/100). The chapter covers derivations for Rate (R = 100·SI / PT), Time (T = 100·SI / PR), and doubling shortcuts (R = 100/T % p.a.).",
       "overviewMal": "വായ്പകളുടെയും നിക്ഷേപങ്ങളുടെയും സാധാരണ പലിശയെക്കുറിച്ചുള്ള (Simple Interest) അധ്യായം. കടം വാങ്ങുകയോ നിക്ഷേപിക്കുകയോ ചെയ്യുന്ന മുതലാണ് പ്രിൻസിപ്പൽ (Principal - P). പണം ഉപയോഗിച്ചതിന് നിശ്ചിത സമയത്തേക്ക് (Time - T വർഷങ്ങളിൽ) നിശ്ചിത പലിശ നിരക്കിൽ (Rate - R%) നൽകുന്ന അധിക തുകയാണ് സാധാരണ പലിശ (SI). പ്രധാന സൂത്രവാക്യം: SI = (P × R × T) / 100. തിരിച്ചടയ്ക്കുന്ന ആകെ തുക Amount A = P + SI ആണ്. പലിശ നിരക്ക്, സമയം എന്നിവ കാണാനുള്ള സമവാക്യങ്ങളും, ഒരു തുക ഇരട്ടിയാകാൻ വേണ്ട സമയം (T = 100 / R) കണക്കാക്കുന്ന കുറുക്കുവഴികളും ഇതിൽ വിശദീകരിക്കുന്നു.",
@@ -8335,7 +8335,7 @@ window.mathLearningData = {
   "math_ch_14": {
     "title": "Mathematics · Chapter 14 · Compound Interest",
     "description": "Compounding Periods (Annual, Half-Yearly, Quarterly) · Formula A = P(1 + R/100)ᵀ · CI vs SI Difference for 2 & 3 Years",
-    "docUrl": "notesphere-MATHEMATICS-chapter-14.pdf",
+    "docUrl": "https://sde.uoc.ac.in/",
     "summary": {
       "overview": "Chapter 14 formalizes Compound Interest (CI), where interest accrued during each conversion period is added back to the Principal, thereby earning 'interest on interest' in all subsequent periods. If interest is compounded annually, the Maturity Amount is A = P(1 + R/100)^T, and Compound Interest is CI = A - P. When compounded semi-annually (half-yearly), Rate becomes R/2 and periods become 2T: A = P(1 + R/200)^(2T). For quarterly compounding, Rate is R/4 and periods are 4T. Crucially, the chapter establishes the difference between CI and SI for 2 years: Difference D = P(R/100)².",
       "overviewMal": "മുതലിന്മേൽ ലഭിക്കുന്ന പലിശ മുതലിനോട് ചേർത്ത് അടുത്ത കാലയളവിലേക്ക് പലിശ കണക്കാക്കുന്ന കൂട്ടുപലിശയെക്കുറിച്ചുള്ള (Compound Interest - CI) അധ്യായം. വാർഷിക കൂട്ടുപലിശയിൽ തിരിച്ചടവ് തുക A = P(1 + R/100)ᵀ ആണ്; കൂട്ടുപലിശ CI = A - P. പലിശ 6 മാസം കൂടുമ്പോൾ കൂട്ടുമ്പോൾ (Half-yearly): നിരക്ക് പകുതിയാകുകയും (R/2), സമയം ഇരട്ടിയാകുകയും (2T) ചെയ്യുന്നു. 2 വർഷത്തെ കൂട്ടുപലിശയും സാധാരണ പലിശയും തമ്മിലുള്ള വ്യത്യാസം കാണാനുള്ള നിർണ്ണായക സൂത്രവാക്യം Difference = P(R/100)² വിശദീകരിക്കുന്നു.",

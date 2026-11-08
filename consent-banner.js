@@ -1,6 +1,6 @@
 /**
  * Academic Hub - Certified GDPR / Regional Consent & Basic Consent Mode Controller
- * Compliant with Google AdSense, IAB TCF requirements, and ePrivacy Directive.
+ * Integrated with Google Privacy & Messaging (Funding Choices / IAB TCF v2.2)
  */
 (function() {
   window.dataLayer = window.dataLayer || [];
@@ -37,7 +37,7 @@
       }
     } catch(e) {}
 
-    // 2. Google AdSense (on monetized content pages only, if not already present in head)
+    // 2. Google AdSense (on monetized content pages only, if not already in head)
     try {
       if (!isAdExemptPath() && !document.querySelector('script[src*="pagead2.googlesyndication.com"]')) {
         var adScript = document.createElement('script');
@@ -65,8 +65,8 @@
     }
   }
 
+  // Non-European visitors (India, US, etc.): Immediate grant, zero modal disruption
   if (!isEurope) {
-    // Non-European visitors (India, US, etc.): Immediate grant, zero modal disruption
     gtag('consent', 'default', {
       'analytics_storage': 'granted',
       'ad_storage': 'granted',
@@ -113,6 +113,24 @@
   window.hubOpenConsent = function() {
     showModal();
   };
+
+  // Listen to Google Funding Choices / IAB TCF v2.2 callback
+  window.googlefc = window.googlefc || {};
+  window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+  window.googlefc.callbackQueue.push({
+    'CONSENT_DATA_READY': function() {
+      if (typeof window.__tcfapi === 'function') {
+        window.__tcfapi('addEventListener', 2.2, function(tcData, success) {
+          if (success && (tcData.eventStatus === 'useractioncomplete' || tcData.eventStatus === 'tcloaded')) {
+            if (tcData.gdprApplies) {
+              var hasConsent = tcData.purpose && tcData.purpose.consents && tcData.purpose.consents[1];
+              hubApplyConsent(!!hasConsent);
+            }
+          }
+        });
+      }
+    }
+  });
 
   function initConsent() {
     var saved = null;

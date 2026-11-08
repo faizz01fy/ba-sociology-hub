@@ -494,13 +494,18 @@ export default {
         .on("head", {
           element(el) {
             el.append(`<script>window.HUB_IS_EUROPE = ${isEuropeanVisitor ? 'true' : 'false'};</script>`, { html: true });
-            if (!isUtilityPath && !/test|mock/i.test(url.pathname)) {
-              el.append('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>', { html: true });
-            }
             if (isEuropeanVisitor) {
-              el.append('<link rel="stylesheet" href="/consent-banner.css?v=20261109_fc">', { html: true });
+              // Connect to Google-certified CMP (Funding Choices / IAB TCF v2.2)
+              el.append('<script async src="https://fundingchoicesmessages.google.com/i/pub-6526381938888583?ers=1"></script>', { html: true });
+              el.append('<script>(function(){function s(){if(!window.frames["googlefcPresent"]){if(document.body){var i=document.createElement("iframe");i.style="display:none;height:0;width:0;border:0;position:absolute;";i.src="javascript:void(\"\")";i.name="googlefcPresent";document.body.appendChild(i);}else{setTimeout(s,0);}}}s();})();</script>', { html: true });
+              el.append('<link rel="stylesheet" href="/consent-banner.css?v=20261109_tcf">', { html: true });
+            } else {
+              // Indian and non-EEA visitors: instant ad delivery
+              if (!isUtilityPath && !/test|mock/i.test(url.pathname)) {
+                el.append('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>', { html: true });
+              }
             }
-            el.append('<script src="/consent-banner.js?v=20261109_fc"></script>', { html: true });
+            el.append('<script src="/consent-banner.js?v=20261109_tcf"></script>', { html: true });
           }
         })
         .on("script[src*='googletagmanager.com/gtag/js']", {
