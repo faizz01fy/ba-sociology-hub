@@ -17,7 +17,7 @@
 
   <meta name="googlebot-news" content="noindex, follow" />
 
-  <title>Voice Explanations | YouTube Audio Classes</title>
+  <title>Voice Explanations | Audio Classes</title>
 
 
 
@@ -4860,6 +4860,59 @@
       }
     }
 
+  
+    /* High Clarity Typography for English & Malayalam (Windows & Mobile) */
+    .card-title {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-size: 14.5px !important;
+      font-weight: 800 !important;
+      line-height: 1.45 !important;
+      color: #0f172a !important;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      text-rendering: optimizeLegibility !important;
+      letter-spacing: -0.01em !important;
+    }
+
+    .chapter-card--english .card-title {
+      color: #0369a1 !important; /* High contrast Deep Sky Blue for perfect readability */
+      font-family: 'Plus Jakarta Sans', Manrope, -apple-system, sans-serif !important;
+      font-weight: 800 !important;
+    }
+
+    .card-sub {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-size: 12.5px !important;
+      font-weight: 600 !important;
+      color: #334155 !important;
+      line-height: 1.4 !important;
+      -webkit-font-smoothing: antialiased !important;
+      text-rendering: optimizeLegibility !important;
+    }
+
+    .chapter-card--english .card-sub {
+      color: #1e3a8a !important;
+      font-weight: 600 !important;
+    }
+
+    .chapter-badge-chip {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+      font-size: 11.5px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.3px !important;
+    }
+
+    @media (max-width: 600px) {
+      .card-title {
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+      }
+      .card-sub {
+        font-size: 12px !important;
+        line-height: 1.35 !important;
+      }
+    }
+
   </style>
 
 </head>
@@ -5022,8 +5075,8 @@
 
     <div class="sticky-actions">
 
-      <button type="button" class="sticky-btn-sub" id="sticky-sub-toggle" title="Subscribe for Next Module">
-        <svg viewBox="0 0 24 24" width="13" height="13" fill="#ef4444" style="vertical-align:-2px; margin-right:3px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> <span class="rev-blink-dot" aria-hidden="true" style="margin-right:2px;"></span><span>Exam Revision</span>
+      <button type="button" class="sticky-btn-sub" id="sticky-sub-toggle" title="Exam Q&amp;A Voice Notes">
+        <span aria-hidden="true" style="font-size:13px; margin-right:2px;">🎙️</span> <span class="rev-blink-dot" aria-hidden="true" style="margin-right:2px;"></span><span>Exam Q&amp;A</span>
       </button>
 
       <button type="button" class="sticky-btn-awake" id="sticky-awake-toggle" title="Keep Screen Awake while listening">
@@ -5589,16 +5642,11 @@
                     <span aria-hidden="true">▶</span> ${v.videoUrl || v.youtubeId ? 'Play Video' : 'Play Voice'}
 
                   </button>
-
-                  ${(v.youtubeId || v.videoUrl) ? `
-                  <a href="${v.youtubeId ? `https://www.youtube.com/watch?v=${v.youtubeId}` : v.videoUrl}" target="_blank" rel="noopener noreferrer" class="btn-watch-youtube" title="Watch on YouTube (App / Full Screen)">
-                    <svg viewBox="0 0 24 24" width="15" height="15" fill="#ef4444" style="vertical-align:-2px; margin-right:3px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span>YouTube</span>
-                  </a>` : ''}
                   
-                  <button type="button" class="btn-exam-revision btn-sub-next" data-topic="${v.title}" title="Exam revision voice notes with answers">
+                  <button type="button" class="btn-exam-revision btn-sub-next" data-topic="${v.title}" title="Exam Q&amp;A Voice Notes with Answers">
 
                     <span class="rev-blink-dot" aria-hidden="true"></span>
-                    <span>🎙️ Exam Revision Voice Note</span>
+                    <span>🎙️ Exam Q&amp;A Voice Note</span>
 
                   </button>
 
@@ -5680,12 +5728,9 @@
                     <!-- Embedded In-Player Next Module Banner (Zero Exit) -->
                     <div class="vpp-next-module-banner">
                       <div class="vpp-nmb-left">
-                        <span class="vpp-nmb-badge"><span class="rev-blink-dot" aria-hidden="true"></span> Exam Revision</span>
-                        <span class="vpp-nmb-text">അടുത്ത മൊഡ്യൂൾ ലെക്ചറുകൾ ഉടൻ ലഭിക്കാൻ ചാനൽ സബ്സ്ക്രൈബ് ചെയ്യുക</span>
+                        <span class="vpp-nmb-badge"><span class="rev-blink-dot" aria-hidden="true"></span> Exam Q&amp;A Voice Note</span>
+                        <span class="vpp-nmb-text">അടുത്ത മൊഡ്യൂൾ ലെക്ചറുകളും എക്സാം റിവിഷനും ഉടൻ ലഭിക്കും</span>
                       </div>
-                      <a href="https://www.youtube.com/channel/UCP3FZYRZrRQVFblaj-Ls1mw?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="vpp-nmb-btn" title="Subscribe on YouTube (Opens in new tab without interrupting playback)">
-                        <span>Subscribe</span> ↗
-                      </a>
                     </div>
 
                   </div>
@@ -6020,9 +6065,7 @@
                           <span style="width:8px; height:8px; border-radius:50%; background:#22c55e; display:inline-block;"></span>
                           <span>Playing Masterclass</span>
                         </span>
-                        <a href="https://www.youtube.com/watch?v=${v.youtubeId}" target="_blank" rel="noopener noreferrer" style="color:#f87171; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:4px; padding:3px 8px; border-radius:6px; background:rgba(239,68,68,0.15);">
-                          <span>Watch on YouTube App ↗</span>
-                        </a>
+                        <span style="color:#94a3b8; font-size:11.5px; font-weight:600;">Calicut University Masterclass</span>
                       </div>`;
 
                   }
@@ -6336,7 +6379,7 @@
                   <button type="button" class="btn-exam-revision btn-sub-next" data-topic="${v.title}" title="Exam revision voice notes with answers">
 
                     <span class="rev-blink-dot" aria-hidden="true"></span>
-                    <span>🎙️ Exam Revision Voice Note</span>
+                    <span>🎙️ Exam Q&amp;A Voice Note</span>
 
                   </button>
 
@@ -6344,7 +6387,7 @@
 
                     <span class="pulse-dot-scheduled"></span>
 
-                    <span>${v.statusText || 'Voice Lecture in Production'}</span>
+                    <span>${v.statusText || 'Loading...'}</span>
 
                   </div>
 

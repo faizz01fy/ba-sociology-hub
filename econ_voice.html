@@ -16,7 +16,7 @@
 
   <meta name="googlebot-news" content="noindex, follow" />
 
-  <title>Voice Explanations | YouTube Audio Classes</title>
+  <title>Voice Explanations | Audio Classes</title>
 
 
 
@@ -4082,6 +4082,78 @@
       }
     }
 
+  
+    /* High Clarity Typography for English & Malayalam (Windows & Mobile) */
+    .card-title {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-size: 14.5px !important;
+      font-weight: 800 !important;
+      line-height: 1.45 !important;
+      color: #0f172a !important;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      text-rendering: optimizeLegibility !important;
+      letter-spacing: -0.01em !important;
+    }
+
+    .chapter-card--english .card-title {
+      color: #0369a1 !important;
+      font-family: 'Plus Jakarta Sans', Manrope, -apple-system, sans-serif !important;
+      font-weight: 800 !important;
+    }
+
+    .card-sub {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      font-size: 12.5px !important;
+      font-weight: 600 !important;
+      color: #334155 !important;
+      line-height: 1.4 !important;
+      -webkit-font-smoothing: antialiased !important;
+      text-rendering: optimizeLegibility !important;
+    }
+
+    .chapter-card--english .card-sub {
+      color: #1e3a8a !important;
+      font-weight: 600 !important;
+    }
+
+    .btn-exam-revision {
+      flex: 1.25;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 8px 12px;
+      border-radius: 9px;
+      border: 1px solid #fecaca;
+      background: #fff5f5;
+      color: #b91c1c;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .card-title {
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+      }
+      .card-sub {
+        font-size: 12px !important;
+        line-height: 1.35 !important;
+      }
+      .btn-exam-revision {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        box-sizing: border-box !important;
+        justify-content: center !important;
+        padding: 10px 14px !important;
+        font-size: 13px !important;
+        white-space: nowrap !important;
+      }
+    }
+
   </style>
 
 <link rel="stylesheet" media="(max-width: 600px)" href="mobile.css">
@@ -4672,7 +4744,7 @@
 
                 <div class="card-actions">
 
-                  <button type="button" class="btn-share-card btn-share-card--frozen" disabled aria-disabled="true" title="Lecture access frozen: In production"><span aria-hidden="true">🔒</span> Video Access Frozen</button>
+                  ${v.isFrozen ? '<button type="button" class="btn-share-card btn-share-card--frozen" disabled aria-disabled="true" title="Lecture access frozen: In production"><span aria-hidden="true">🔒</span> Video Access Frozen</button>' : ''}
 
                   <button type="button" class="btn-play-voice">
 
@@ -4680,9 +4752,10 @@
 
                   </button>
 
-                  <button type="button" class="btn-share-card" title="Share this chapter lecture">
+                  <button type="button" class="btn-exam-revision btn-sub-next" data-topic="${v.title}" title="Exam Q&amp;A Voice Notes with Answers">
 
-                    <span aria-hidden="true">🔗</span> Share
+                    <span class="rev-blink-dot" aria-hidden="true"></span>
+                    <span>🎙️ Exam Q&amp;A Voice Note</span>
 
                   </button>
 
@@ -5328,12 +5401,13 @@
 
                   <button type="button" class="btn-share-card btn-share-card--frozen" disabled aria-disabled="true" title="Lecture access frozen: In production"><span aria-hidden="true">🔒</span> Video Access Frozen</button>
 
+                  <button type="button" class="btn-exam-revision btn-sub-next" data-topic="${v.title}" title="Exam Q&amp;A Voice Notes with Answers">
+                    <span class="rev-blink-dot" aria-hidden="true"></span>
+                    <span>🎙️ Exam Q&amp;A Voice Note</span>
+                  </button>
                   <div class="voice-scheduled-pill">
-
                     <span class="pulse-dot-scheduled"></span>
-
-                    <span>${v.statusText || 'Voice Lecture in Production'}</span>
-
+                    <span>${v.statusText || 'Loading...'}</span>
                   </div>
 
                   <button type="button" class="btn-share-card" title="Share this chapter lecture">
