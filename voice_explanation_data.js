@@ -1252,7 +1252,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 3.1 b",
             "title": "ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Sources of Valid Knowledge in Indian Philosophy & AI: Epistemology, Pratyakṣa & Anumāna)",
             "chapter": "Unit 3.1 b: Epistemology & AI · Dignāga, Dharmakīrti & Apoha Theory · Two-Speaker Conversational Masterclass",
-            "duration": "13:06",
+            "duration": "15:02",
             "youtubeId": "626Pz--vDxk",
             "thumbnail": "https://i.ytimg.com/vi/626Pz--vDxk/hqdefault.jpg",
             "videoUrl": "https://www.youtube.com/watch?v=626Pz--vDxk",
