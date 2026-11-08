@@ -7,8 +7,9 @@
   function gtag() { dataLayer.push(arguments); }
   window.gtag = gtag;
 
-  const isEurope = typeof window.HUB_IS_EUROPE !== 'undefined' ? window.HUB_IS_EUROPE : false;
   const CONSENT_KEY = 'hub_consent_state_v1';
+  var isDeniedCookie = document.cookie.indexOf('hub_consent=denied') !== -1;
+  const isEurope = typeof window.HUB_IS_EUROPE !== 'undefined' ? window.HUB_IS_EUROPE : isDeniedCookie;
 
   function isAdExemptPath() {
     var p = location.pathname.toLowerCase();
@@ -22,6 +23,12 @@
   }
 
   function loadServices() {
+    var currentSaved = null;
+    try { currentSaved = localStorage.getItem(CONSENT_KEY); } catch(e) {}
+    if (currentSaved === 'denied' || document.cookie.indexOf('hub_consent=denied') !== -1) {
+      return; // Strictly blocked on rejection
+    }
+
     if (window._hubServicesLoaded) return;
     window._hubServicesLoaded = true;
 
@@ -66,7 +73,7 @@
   }
 
   // Non-European visitors (India, US, etc.): Immediate grant, zero modal disruption
-  if (!isEurope) {
+  if (!isEurope && !isDeniedCookie) {
     gtag('consent', 'default', {
       'analytics_storage': 'granted',
       'ad_storage': 'granted',
@@ -90,6 +97,7 @@
     try {
       if (granted) {
         localStorage.setItem(CONSENT_KEY, 'granted');
+        document.cookie = "hub_consent=granted; path=/; max-age=31536000; SameSite=Lax";
         gtag('consent', 'update', {
           'analytics_storage': 'granted',
           'ad_storage': 'granted',
@@ -99,6 +107,7 @@
         loadServices();
       } else {
         localStorage.setItem(CONSENT_KEY, 'denied');
+        document.cookie = "hub_consent=denied; path=/; max-age=31536000; SameSite=Lax";
         gtag('consent', 'update', {
           'analytics_storage': 'denied',
           'ad_storage': 'denied',
@@ -140,7 +149,7 @@
 
     if (saved === 'granted') {
       hubApplyConsent(true);
-    } else if (saved === 'denied') {
+    } else if (saved === 'denied' || isDeniedCookie) {
       hubApplyConsent(false);
     } else {
       // First-time European visitor or Google preview URL: show modal on page load!

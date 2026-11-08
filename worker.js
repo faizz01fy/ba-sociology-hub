@@ -471,6 +471,10 @@ export default {
 
       const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|voice-explanation|voice|econ_voice)(?:\.html)?$/i.test(url.pathname);
       
+      const cookieHeader = request.headers.get("Cookie") || "";
+      const isConsentDenied = cookieHeader.includes("hub_consent=denied");
+      const isConsentGranted = cookieHeader.includes("hub_consent=granted");
+
       const isEU = request.cf?.isEUCountry === "1" || request.cf?.isEUCountry === true;
       const euCountries = new Set([
         "AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE",
@@ -488,7 +492,7 @@ export default {
                         glParam === "EEA" || 
                         euCountries.has(glParam);
 
-      const isEuropeanVisitor = isEU || euCountries.has(visitorCountry) || isPreview;
+      const isEuropeanVisitor = isEU || euCountries.has(visitorCountry) || isPreview || isConsentDenied;
 
       response = new HTMLRewriter()
         .on("head", {
@@ -500,8 +504,8 @@ export default {
               el.append('<script>(function(){function s(){if(!window.frames["googlefcPresent"]){if(document.body){var i=document.createElement("iframe");i.style="display:none;height:0;width:0;border:0;position:absolute;";i.src="javascript:void(\"\")";i.name="googlefcPresent";document.body.appendChild(i);}else{setTimeout(s,0);}}}s();})();</script>', { html: true });
               el.append('<link rel="stylesheet" href="/consent-banner.css?v=20261109_tcf">', { html: true });
             } else {
-              // Indian and non-EEA visitors: instant ad delivery
-              if (!isUtilityPath && !/test|mock/i.test(url.pathname)) {
+              // Indian and non-EEA visitors: instant ad delivery (unless consent was denied)
+              if (!isConsentDenied && !isUtilityPath && !/test|mock/i.test(url.pathname)) {
                 el.append('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>', { html: true });
               }
             }
