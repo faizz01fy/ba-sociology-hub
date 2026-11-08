@@ -1407,7 +1407,7 @@
       #reviewContainer { max-height: none !important; overflow: visible !important; }
     }
   </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 <div class="wrap">
@@ -1474,7 +1474,7 @@
       <label class="input-label" for="candidateName">Candidate Full Name</label>
       <div class="name-input-wrapper">
         <span class="name-input-icon">👤</span>
-        <input id="candidateName" type="text" autocomplete="off" maxlength="40" placeholder="Enter your full name to generate official report">
+        <input id="candidateName" type="text" autocomplete="off" maxlength="40" placeholder="Enter your full name to generate your practice report">
       </div>
       <div id="startError" class="start-error-msg">⚠️ Please enter your name to begin the assessment.</div>
 
@@ -1565,13 +1565,13 @@
 
 
   <!-- ==========================================
-       PAGE 3: LAST PAGE (OFFICIAL RESULTS & REVIEW)
+       PAGE 3: LAST PAGE (PRACTICE RESULTS & REVIEW)
        ========================================== -->
   <section id="result" class="card hidden">
     <!-- Top Floating Toolbar -->
     <div class="result-top-toolbar">
       <div style="display:flex; gap:8px;">
-        <button id="saveReportBtn" class="btn primary">📥 Save Official Report</button>
+        <button id="saveReportBtn" class="btn primary">📥 Save Practice Report</button>
         <button id="printReportBtn" class="btn secondary">🖨️ Print / PDF</button>
       </div>
       <button id="restartBtn" class="btn danger">🔄 Retake Test</button>
@@ -1607,7 +1607,7 @@
 
       <!-- Grand Performance Scorecard -->
       <div class="grand-score-card">
-        <div class="grand-score-label">Official Aggregate Score</div>
+        <div class="grand-score-label">Practice Aggregate Score</div>
         <div class="grand-score-value">
           <span id="resScore">0</span>
           <span class="divider">/</span>
@@ -1654,7 +1654,7 @@
       <div id="reviewContainer"></div>
     </div>
 
-    <!-- Official Report Footer -->
+    <!-- Practice Report Footer -->
     <footer class="result-footer">
       <strong>ACADEMIC HUB EVALUATION SYSTEM</strong>
       Verified Institutional Test Transcript · Keep learning and excelling in your university studies!
@@ -1924,7 +1924,7 @@
 
     if (!isCorrect) {
       const whyWrongReason = (chosenOpt && chosenOpt.whyWrong) ? chosenOpt.whyWrong : 
-        `Option (${chosenOpt ? chosenOpt.value : ''}) is incorrect based on official academic syllabus standards.`;
+        `Option (${chosenOpt ? chosenOpt.value : ''}) is incorrect based on syllabus practice standards.`;
 
       let conceptHeader = q.concept;
       let explText = q.explanation;
@@ -2034,12 +2034,12 @@
     const pct = (correct / N) * 100;
     const accuracy = attempted > 0 ? (correct / attempted) * 100 : 0;
 
-    showOfficialReport(correct, wrong, unanswered, attempted, pct, accuracy, auto);
+    showPracticeReport(correct, wrong, unanswered, attempted, pct, accuracy, auto);
     syncCloudflare(correct, wrong, unanswered, pct, auto);
   }
 
-  // OFFICIAL RESULTS DISPLAY
-  function showOfficialReport(correct, wrong, unanswered, attempted, pct, accuracy, auto) {
+  // PRACTICE RESULTS DISPLAY
+  function showPracticeReport(correct, wrong, unanswered, attempted, pct, accuracy, auto) {
     switchScreen('result');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
