@@ -6780,10 +6780,10 @@ window.aiLearningData = {
       {
         "title": "ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Sources of Valid Knowledge in Indian Philosophy & AI: Epistemology, Pratyakṣa & Anumāna)",
         "unit": "Module 3 · Unit 3.1 b",
-        "url": "https://www.youtube.com/watch?v=N6WyLBGqVk0",
+        "url": "https://www.youtube.com/watch?v=qU_l4FoBF6s",
         "duration": "13:06",
-        "youtubeId": "N6WyLBGqVk0",
-        "thumbnail": "https://i.ytimg.com/vi/N6WyLBGqVk0/hqdefault.jpg"
+        "youtubeId": "qU_l4FoBF6s",
+        "thumbnail": "https://i.ytimg.com/vi/qU_l4FoBF6s/hqdefault.jpg"
       }
     ],
     "title": "Philosophy of AI · Module 3 · Theories of Knowledge in AI · Complete LMS",
@@ -7426,10 +7426,10 @@ window.aiLearningData = {
       {
         "title": "ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Sources of Valid Knowledge in Indian Philosophy & AI: Epistemology, Pratyakṣa & Anumāna)",
         "unit": "Module 3 · Chapter 1",
-        "url": "https://www.youtube.com/watch?v=N6WyLBGqVk0",
+        "url": "https://www.youtube.com/watch?v=qU_l4FoBF6s",
         "duration": "13:06",
-        "youtubeId": "N6WyLBGqVk0",
-        "thumbnail": "https://i.ytimg.com/vi/N6WyLBGqVk0/hqdefault.jpg"
+        "youtubeId": "qU_l4FoBF6s",
+        "thumbnail": "https://i.ytimg.com/vi/qU_l4FoBF6s/hqdefault.jpg"
       }
     ],
     "title": "Module 3 · Chapter 1 · Sources of Valid Knowledge in Indian Philosophy",
