@@ -479,7 +479,9 @@ export default {
       ]);
       const visitorCountry = (request.cf?.country || "").toUpperCase();
       const glParam = (url.searchParams.get("gl") || "").toUpperCase();
-      const isPreview = url.searchParams.has("preview_cmp") || 
+      const isPreview = url.searchParams.has("fc") || 
+                        url.searchParams.has("fctype") || 
+                        url.searchParams.has("preview_cmp") || 
                         url.searchParams.has("fc_preview") || 
                         url.searchParams.has("preview") || 
                         url.searchParams.has("test_consent") || 
@@ -492,15 +494,13 @@ export default {
         .on("head", {
           element(el) {
             el.append(`<script>window.HUB_IS_EUROPE = ${isEuropeanVisitor ? 'true' : 'false'};</script>`, { html: true });
-            if (isEuropeanVisitor) {
-              el.append('<link rel="stylesheet" href="/consent-banner.css?v=20261109_geo">', { html: true });
+            if (!isUtilityPath && !/test|mock/i.test(url.pathname)) {
+              el.append('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>', { html: true });
             }
-            el.append('<script src="/consent-banner.js?v=20261109_geo"></script>', { html: true });
-          }
-        })
-        .on("script[src*='pagead2.googlesyndication.com']", {
-          element(el) {
-            el.remove();
+            if (isEuropeanVisitor) {
+              el.append('<link rel="stylesheet" href="/consent-banner.css?v=20261109_fc">', { html: true });
+            }
+            el.append('<script src="/consent-banner.js?v=20261109_fc"></script>', { html: true });
           }
         })
         .on("script[src*='googletagmanager.com/gtag/js']", {

@@ -27,18 +27,19 @@
 
     // 1. Google Analytics (GA4)
     try {
-      var gaScript = document.createElement('script');
-      gaScript.async = true;
-      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-5WRBVFQK55';
-      document.head.appendChild(gaScript);
-      gtag('js', new Date());
-      gtag('config', 'G-5WRBVFQK55');
+      if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-5WRBVFQK55';
+        document.head.appendChild(gaScript);
+        gtag('js', new Date());
+        gtag('config', 'G-5WRBVFQK55');
+      }
     } catch(e) {}
 
-    // 2. Google AdSense (on monetized content pages only)
+    // 2. Google AdSense (on monetized content pages only, if not already present in head)
     try {
-      if (!isAdExemptPath() && !window._hubAdScriptLoaded) {
-        window._hubAdScriptLoaded = true;
+      if (!isAdExemptPath() && !document.querySelector('script[src*="pagead2.googlesyndication.com"]')) {
         var adScript = document.createElement('script');
         adScript.async = true;
         adScript.crossOrigin = 'anonymous';
@@ -76,7 +77,7 @@
     return;
   }
 
-  // European visitors & preview test mode: Basic Consent Mode (default denied)
+  // European visitors & preview test mode (?fc=alwaysshow, ?gl=EEA, etc.): Basic Consent Mode
   gtag('consent', 'default', {
     'analytics_storage': 'denied',
     'ad_storage': 'denied',
@@ -124,7 +125,7 @@
     } else if (saved === 'denied') {
       hubApplyConsent(false);
     } else {
-      // First-time European visitor: show modal immediately on page load!
+      // First-time European visitor or Google preview URL: show modal on page load!
       showModal();
     }
   }
