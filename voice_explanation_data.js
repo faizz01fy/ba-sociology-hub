@@ -5,155 +5,155 @@ window.VOICE_EXPLANATIONS_DATA = {
     "iconClass": "icon-purple",
     "tag": "BA HISTORY HONOURS · HIS1CJ101/HIS1MN100",
     "modules": [
-        {
-            "moduleName": "MODULE I: KERALAM: LANDSCAPE AND ENVIRONMENT (8 Hours · 12 Marks)",
-            "videos": [
-                {
-                    "chapterNumber": "Unit 1 - 5",
-                    "title": "കേരളത്തിന്റെ ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Kerala Landscape & Environment) · Masterclass",
-                    "chapter": "Unit 1: Region · Unit 2: Western Ghats & Passes · Unit 3: Indian Ocean, Rivers, Backwaters, Beaches · Unit 4: Soils & Monsoons · Unit 5: Flora & Fauna",
-                    "duration": "18:32",
-                    "thumbnail": "https://i.ytimg.com/vi/hIw0qglyEUA/hqdefault.jpg",
-                    "youtubeId": "hIw0qglyEUA",
-                    "videoUrl": null,
-                    "language": "Malayalam",
-                    "studyPoints": [
-                        "<strong>Unit 1 · Keralam as a Region:</strong> 38,863 ചതുരശ്ര കിലോമീറ്റർ വിസ്തൃതിയുള്ള അസമഭുജ ത്രികോണാകൃതിയിലുള്ള (Scalene Triangle) ഭൂപ്രദേശം. കിഴക്ക് സഹ്യാദ്രിയും പടിഞ്ഞാറ് 560 കി.മീ. അറബിക്കടലും സ്വാഭാവിക അതിരുകൾ തീർക്കുന്നു.",
-                        "<strong>Unit 2 · Geographical Features - Western Ghats & Passes:</strong> ശരാശരി 1500 മീറ്റർ ഉയരമുള്ള പശ്ചിമഘട്ടം പ്രകൃതിദത്ത മതിൽക്കെട്ടായി നിലകൊള്ളുന്നു. പാലക്കാട് ചുരം (Palakkad Gap - 32-40 km വീതി), ആരുവാമൊഴി, ആര്യങ്കാവ്, ബോഡിനായ്ക്കന്നൂർ ചുരങ്ങൾ എന്നിവ അയൽനാടുകളുമായുള്ള വാണിജ്യ-സാംസ്കാരിക വിനിമയങ്ങൾക്ക് വഴിയൊരുക്കി.",
-                        "<strong>Unit 3 · Indian Ocean, Rivers, Backwaters & Beaches:</strong> 44 നദികൾ (41 പടിഞ്ഞാറോട്ടും 3 കിഴക്കോട്ടും ഒഴുകുന്നവ - കബനി, ഭവാനി, പാമ്പാർ), കായലുകൾ, തീരപ്രദേശങ്ങൾ എന്നിവ സമുദ്രവാണിജ്യത്തിനും ഉൾനാടൻ ഗതാഗതത്തിനും വഴിയൊരുക്കി.",
-                        "<strong>Unit 4 · Types of Soil & Climate-Monsoons:</strong> ലാറ്ററൈറ്റ് (വെട്ടുകല്ല്), എക്കൽ മണ്ണ് എന്നിവയും; തെക്കുപടിഞ്ഞാറൻ കാലവർഷവും (SW Monsoon - ഇടവപ്പാതി), വടക്കുകിഴക്കൻ മൺസൂണും (NE Monsoon - തുലാവർഷം) ചരിത്രപരമായ ഹിപ്പാലസ് വാണിജ്യ കാറ്റുകളുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു.",
-                        "<strong>Unit 5 · Flora & Fauna:</strong> സുഗന്ധവ്യഞ്ജന സമ്പത്ത് (കുരുമുളക്, ഏലം, ഇഞ്ചി, കറുവപ്പട്ട) പ്രാചീന കാലം മുതലുള്ള വിദേശ സമുദ്രവാണിജ്യത്തിന് പ്രധാന കാരണമായി."
-                    ],
-                    "examTip": "കേരളത്തിന്റെ ചരിത്രത്തെ രൂപപ്പെടുത്തുന്നതിൽ പശ്ചിമഘട്ടവും (സഹ്യാദ്രി), പാലക്കാട് ചുരവും, തെക്കുപടിഞ്ഞാറൻ മൺസൂണും വഹിച്ച പങ്കിനെക്കുറിച്ചുള്ള പ്രധാന പരീക്ഷാ ചോദ്യങ്ങൾക്ക് ഈ പോയിന്റുകൾ മുൻഗണനാടിസ്ഥാനത്തിൽ എഴുതുക."
-                }
-            ]
-        },
-        {
-            "moduleName": "MODULE II: KERALAM UPTO IRON AGE (12 Hours · 18 Marks)",
-            "videos": [
-                {
-                    "chapterNumber": "Unit 6",
-                    "title": "പ്രാചീന ശിലായുഗ മനുഷ്യവാസ കേന്ദ്രങ്ങൾ: പാലിയോലിത്തിക്, മെസോലിത്തിക്, നിയോലിത്തിക് · Masterclass",
-                    "chapter": "Unit 6: Pre-historic Settlements – Palaeolithic, Mesolithic, Neolithic Centres in Kerala · Two-Speaker Natural Dialogue",
-                    "duration": "13:15",
-                    "thumbnail": "https://i.ytimg.com/vi/0g9YiJ86L7k/hqdefault.jpg",
-                    "youtubeId": "0g9YiJ86L7k",
-                    "videoUrl": "https://www.youtube.com/watch?v=0g9YiJ86L7k",
-                    "language": "Malayalam",
-                    "studyPoints": [
-                        "<strong>ശിലായുഗ ഘട്ടങ്ങൾ:</strong> പാലിയോലിത്തിക് (പഴയ ശിലായുഗം), മെസോലിത്തിക് (മധ്യശിലായുഗം), നിയോലിത്തിക് (നവീന ശിലായുഗം) എന്നിവയുടെ കേരളത്തിലെ സാന്നിധ്യം. ശാസ്ത്രീയ പഠനങ്ങളിലൂടെ യൂറോസെൻട്രിക് തെറ്റിദ്ധാരണകൾ തിരുത്തപ്പെട്ടു.",
-                        "<strong>പാലിയോലിത്തിക് കണ്ടെത്തലുകൾ:</strong> വാളയാർ, കാഞ്ഞിരപ്പുഴ, അട്ടപ്പാടി, പാലക്കാട് ചുരം തടങ്ങളിൽ നിന്ന് കണ്ടെത്തിയ ക്വാർട്സ് ചോപ്പർ ടൂളുകൾ (Pebble & Flake Tools).",
-                        "<strong>മെസോലിത്തിക് സൂക്ഷ്മ ശിലായുധങ്ങൾ (Microliths):</strong> കൊല്ലം തെന്മല റോക്ക് ഷെൽട്ടർ (Dr. P. Rajendran, 5200 BP), ഭാരതപ്പുഴ തടങ്ങൾ, ക്വാർട്സ് ഫ്ലിന്റുകൾ കൊണ്ട് നിർമ്മിച്ച കമ്പോസിറ്റ് ആയുധങ്ങൾ.",
-                        "<strong>നിയോലിത്തിക് വിപ്ലവവും കാർഷിക തുടക്കവും:</strong> 1891-ൽ ഫിലിപ്പ് ലേക്ക് (Philip Lake) വയനാട്ടിൽ കണ്ടെത്തിയ മിനുസപ്പെടുത്തിയ കൽക്കോടാലികൾ (Polished Celts), പുൽപ്പള്ളി, കുന്നൂർമേട്, മറയൂരിലെ കന്നുകാലി വളർത്തൽ ശിലാചിത്രങ്ങൾ.",
-                        "<strong>സാംസ്കാരിക തുടർച്ച & ശിലാചിത്രങ്ങൾ:</strong> എടയ്ക്കൽ, മറയൂർ എന്നിവിടങ്ങളിലെ മെസോലിത്തിക്, നിയോലിത്തിക്, മഹാശിലായുഗ ഘട്ടങ്ങളുടെ ബഹുതല സങ്കലനം (Rock Art Overlap)."
-                    ],
-                    "examTip": "കാലിക്കറ്റ് സർവ്വകലാശാല BA ഹിസ്റ്ററി പരീക്ഷയിലെ 3 മാർക്ക് (Pleistocene, Microliths), 6 മാർക്ക് (Rock Art significance), 10 മാർക്ക് എസ്സേ (Prehistoric evidence in Keralam) എന്നിവയ്ക്ക് ഉദ്ധരണികളും പുരാവസ്തു കേന്ദ്രങ്ങളും സഹിതം എഴുതുക."
-                },
-                {
-                    "chapterNumber": "Unit 7",
-                    "title": "ശിലാ ഗുഹകളും പ്രാചീന ശിലാകലയും: എടയ്ക്കൽ, മറയൂർ, തെന്മല · Masterclass",
-                    "chapter": "Unit 7: Rockshelters & Prehistoric Art: Edakkal, Marayur, Tenmala · Natural Two-Speaker Dialogue",
-                    "duration": "13:26",
-                    "thumbnail": "https://i.ytimg.com/vi/iAeENlFpYtk/hqdefault.jpg",
-                    "youtubeId": "iAeENlFpYtk",
-                    "videoUrl": "https://www.youtube.com/watch?v=iAeENlFpYtk",
-                    "language": "Malayalam",
-                    "studyPoints": [
-                        "<strong>എടയ്ക്കൽ ശിലാ വിള്ളൽ (Ambukuthi Fissure):</strong> ഫ്രെഡ് ഫോസെറ്റ് (1896-1901) കണ്ടെത്തിയ പെട്രോഗ്ലിഫുകൾ (Petroglyphs). മുഖംമൂടി ധരിച്ച രൂപങ്ങൾ (Masked Shamans), അലങ്കാര കിരീടങ്ങൾ, ചക്രങ്ങൾ, ജ്യാമിതീയ ചതുരങ്ങൾ.",
-                        "<strong>വാസസ്ഥലമോ അനുഷ്ഠാന കേന്ദ്രമോ?:</strong> ഗാർഹിക അടുപ്പുകളുടെയും ചാരത്തിന്റെയും കുറവ് എടയ്ക്കൽ നിത്യജീവിത വാസസ്ഥലമല്ലെന്നും വേട്ടയാടൽ അനുഷ്ഠാന കേന്ദ്രമാണെന്നും വ്യക്തമാക്കുന്നു.",
-                        "<strong>മറയൂർ പിക്ടോഗ്രാഫുകൾ (Idukki Pictographs):</strong> പാമ്പാർ മഴനിഴൽ താഴ്‌വരയിലെ ചുവന്ന ഹേമറ്റൈറ്റ്-ഓക്കർ ചിത്രങ്ങൾ, തിമിപ്പുള്ള കാളകൾ (Domesticated Cattle), തൊഴുത്തുകൾ, കൈപ്പത്തി മുദ്രകൾ (Hand Stencils).",
-                        "<strong>ശിലാചിത്രങ്ങളും മുനിയറകളും (Dolmens):</strong> മറയൂരിലെ ശിലാചിത്രങ്ങളും സമീപത്തെ മഹാശിലായുഗ മുനിയറകളും തമ്മിലുള്ള സാംസ്കാരിക തുടർച്ച.",
-                        "<strong>തെക്കൻ കേന്ദ്രങ്ങളും സൂപ്പർഇംപോസിഷനും:</strong> അങ്കോട്ടെ ജ്യാമിതീയ രൂപങ്ങൾ, തെന്മലയിലെ റേഡിയോകാർബൺ ഡേറ്റിംഗ് (5200 BP), ശിലാപാളികളുടെ മുൻഗണനാ ക്രമം (Superimposition)."
-                    ],
-                    "examTip": "കാലിക്കറ്റ് സർവ്വകലാശാല BA ഹിസ്റ്ററി പരീക്ഷയിലെ 3 മാർക്ക് (Petroglyphs vs Pictographs), 6 മാർക്ക് (Edakkal ritual debate), 10 മാർക്ക് എസ്സേ (Significance of Edakkal & Marayur) എന്നിവയ്ക്ക് ഈ പോയിന്റുകൾ മുൻഗണനാടിസ്ഥാനത്തിൽ എഴുതുക."
-                },
-                {
-                    "chapterNumber": "Unit 8 - 10",
-                    "title": "മഹാശിലായുഗ സംസ്കാരം: ടൈപ്പോളജി & ഖനനങ്ങൾ (Megaliths, Excavations & Iron Age Society)",
-                    "chapter": "Unit 8: Megaliths-typology-Grave goods · Unit 9: Excavations (Babington, Porkkalam, Mangad, Ummichipoyil, Anakkara) · Unit 10: Belief, Economy & Society",
-                    "duration": "09:47",
-                    "thumbnail": "https://i.ytimg.com/vi/CrpK5EnETwQ/hqdefault.jpg",
-                    "youtubeId": "CrpK5EnETwQ",
-                    "videoUrl": null,
-                    "language": "Malayalam",
-                    "studyPoints": [
-                        "<strong>Unit 8 · മെഗാലിത്തിക് ശ്മശാന സ്മാരക രൂപങ്ങൾ (Typology):</strong> കുടക്കല്ല് (Umbrella Stones), തൊപ്പിക്കല്ല് (Hat Stones), വെട്ടുഗുഹകൾ (Rock-cut Caves), മുനിയറകൾ (Dolmens), സിസ്റ്റ് (Cists), നന്നങ്ങാടികൾ (Burial Urns), നാട്ടുകല്ലുകൾ (Menhirs). ശവസംസ്കാര പാത്രങ്ങളും ഇരുമ്പ് ആയുധങ്ങളും (Grave goods).",
-                        "<strong>Unit 9 · പ്രമുഖ ഖനനങ്ങൾ (Excavations):</strong> ഡോ. ജെ. ബാബിംഗ്ടൺ (J. Babington 1823 - ചാത്തപ്പറമ്പ് ആദ്യ ശാസ്ത്രീയ പഠനം), ബി.കെ. ഥാപ്പർ (B.K. Thapar - പോർക്കുളം ഖനനം 1948), മാങ്ങാട്, ഉമ്മിച്ചിപ്പൊയിൽ, ആനക്കര (ഇരുമ്പ് യുഗ പണിശാലകൾ).",
-                        "<strong>Unit 10 · വിശ്വാസം, സമ്പദ്‌വ്യവസ്ഥ & സമൂഹം:</strong> ഇരുമ്പുപകരണങ്ങളുടെ ഉപയോഗം, കൃഷിയും വേട്ടയും സംയോജിപ്പിച്ച സമ്പദ്‌വ്യവസ്ഥ, മരണാനന്തര ജീവിതത്തിലുള്ള ആഴത്തിലുള്ള വിശ്വാസവും പൂർവ്വികാരാധനയും."
-                    ],
-                    "examTip": "മെഗാലിത്തിക് ടൈപ്പോളജി (കുടക്കല്ല്, തൊപ്പിക്കല്ല്, മുനിയറ, വെട്ടുഗുഹകൾ) തമ്മിലുള്ള വ്യത്യാസങ്ങളും ജെ. ബാബിംഗ്ടൺ, പോർക്കുളം ബി.കെ. ഥാപ്പർ ഖനനങ്ങളും വിശദമാക്കുക."
-                }
-            ]
-        },
-        {
-            "moduleName": "MODULE III: KERALAM DURING EARLY HISTORIC (300 BCE–500 CE) (12 Hours · 18 Marks)",
-            "videos": [
-                {
-                    "chapterNumber": "Unit 11 - 15",
-                    "title": "സംഘകാല കേരളവും സമുദ്ര വാണിജ്യവും (Early Historic Keralam: Tamil Literature, Tinai & Indo-Roman Trade)",
-                    "chapter": "Unit 11: Sangam Literature (Akananuru, Purananuru, Patittuppattu) · Unit 12: Tinai Landscape · Unit 13: Greco-Roman Trade · Unit 14: Pattanam & Vizhinjam · Unit 15: Muvendar & Kurunila Mannar",
-                    "duration": "12:56",
-                    "thumbnail": "https://i.ytimg.com/vi/W3NR_IX70qg/hqdefault.jpg",
-                    "youtubeId": "W3NR_IX70qg",
-                    "videoUrl": null,
-                    "language": "Malayalam",
-                    "studyPoints": [
-                        "<strong>Unit 11 · ആദ്യകാല തമിഴ് സാഹിത്യം:</strong> പതിറ്റുപ്പത്ത് (ചേര രാജാക്കന്മാരെക്കുറിച്ചുള്ള സ്തുതിഗീതങ്ങൾ), അകനാനൂറ്, പുറനാനൂറ്, ചിലപ്പതികാരം. ആദ്യകാല കേരളത്തിന്റെ രാഷ്ട്രീയ-സാമൂഹിക ചരിത്രരചനയുടെ പ്രധാന സ്രോതസ്സ്.",
-                        "<strong>Unit 12 · തിണൈ സങ്കല്പം (Tinai Concept):</strong> കുറിഞ്ചി (മലയോര മേഖല - വേട്ട, തേനശേഖരണം), മുല്ലൈ (കാട്ടുപ്രദേശം - കന്നുകാലി വളർത്തൽ), മരുതം (വയൽപ്രദേശം - നെൽകൃഷി), നെയ്തൽ (തീരപ്രദേശം - മത്സ്യബന്ധനം, ഉപ്പുണ്ടാക്കൽ), പാലൈ (വരണ്ട പ്രദേശം).",
-                        "<strong>Unit 13 · ഗ്രീക്കോ-റോമൻ കുറിപ്പുകളും വിദേശ വ്യാപാരവും:</strong> പെരിപ്ലസ് ഓഫ് ദി എറിത്രിയൻ സീ, പ്ലിനിയുടെ നാച്ചുറൽ ഹിസ്റ്ററി, ടോളമിയുടെ ജിയോഗ്രഫി. മുസിരിസ് (Muziris), തിണ്ടിസ്, നെൽകിണ്ട തുറമുഖങ്ങൾ വഴിയുള്ള റോമൻ കുരുമുളക് വ്യാപാരം.",
-                        "<strong>Unit 14 · പട്ടണം & വിഴിഞ്ഞം പുരാവസ്തു ഖനനങ്ങൾ:</strong> ഡോ. പി.ജെ. ചെറിയാന്റെ നേതൃത്വത്തിൽ നടന്ന പട്ടണം ഖനനത്തിൽ റോമൻ ആംഫോറ പാത്രങ്ങൾ, ടെറക്കോട്ട, കാർണിലിയൻ മുത്തുകൾ, ബോട്ട് ജെട്ടി എന്നിവ കണ്ടെത്തി മുസിരിസിന്റെ അന്താരാഷ്ട്ര വ്യാപാര ബന്ധം തെളിയിച്ചു; വിഴിഞ്ഞം തുറമുഖ തെളിവുകൾ.",
-                        "<strong>Unit 15 · ആദ്യകാല രാഷ്ട്രീയ ഘടന:</strong> മൂവേന്തർ (ചേരർ, ചോളർ, പാണ്ഡ്യർ) എന്നിവരുടെ അധീശത്വവും; ആയ്, ഏഴിമല (നന്ദൻ) തുടങ്ങിയ കുറുനില മന്നരുടെ ഭരണവും."
-                    ],
-                    "examTip": "ഐന്തിണകൾ (Five Tinais) അടിസ്ഥാനമാക്കിയുള്ള ഉപജീവന രീതികളും, പെരിപ്ലസ് രേഖപ്പെടുത്തിയ മുസിരിസ്-റോമൻ സുഗന്ധവ്യഞ്ജന വ്യാപാരവും സംഘകാല ചോദ്യങ്ങൾക്ക് നിർബന്ധമായും പഠിക്കുക."
-                }
-            ]
-        },
-        {
-            "moduleName": "MODULE IV: KERALAM UPTO 12TH CENTURY (16 Hours · 22 Marks)",
-            "videos": [
-                {
-                    "chapterNumber": "Unit 16 - 17",
-                    "title": "പന്ത്രണ്ടാം നൂറ്റാണ്ട് വരെയുള്ള കേരളം: ശാസനങ്ങളും ക്ഷേത്ര വാസ്തുവിദ്യയും (Epigraphy, Architecture & Chera Polity)",
-                    "chapter": "Unit 16: Epigraphic Evidences (Vazhappalli, Tarisappalli, Parthivapuram, Thiruvalla) · Unit 17: Archaeology & Temple Architecture (Cheramanparambu, Matilakam, Nadus)",
-                    "duration": "19:10",
-                    "thumbnail": "https://i.ytimg.com/vi/l1xQTyBb13g/hqdefault.jpg",
-                    "youtubeId": "l1xQTyBb13g",
-                    "videoUrl": null,
-                    "language": "Malayalam",
-                    "studyPoints": [
-                        "<strong>Unit 16 · എപ്പിഗ്രാഫിക് തെളിവുകൾ (Epigraphy):</strong> വാഴപ്പള്ളി ശാസനം (832 CE - രാജശേഖര വർമ്മൻ, വട്ടെഴുത്ത് ലിപിയിലെ ആദ്യ രേഖ), തരിസാപ്പള്ളി ശാസനം (849 CE - അയ്യാനടികൾ തിരുവടികൾ ക്രിസ്ത്യൻ വ്യാപാരി മാർ സപീർ ഈശോയ്ക്ക് നൽകിയ അവകാശങ്ങൾ), പാർത്ഥിവപുരം ശാസനം (വിദ്യാകേന്ദ്രമായ ശാല), തിരുവല്ല ചെപ്പേടുകൾ.",
-                        "<strong>മഹോദയപുരത്തെ ചേര പെരുമാക്കന്മാർ (AD 800–1124):</strong> കുലശേഖര ആഴ്‌വാർ സ്ഥാപിച്ച രണ്ടാം ചേര സാമ്രാജ്യം. തലസ്ഥാനം മഹോദയപുരം (കൊടുങ്ങല്ലൂർ). ഭാസ്കര രവിവർമ്മൻ, രാമവർമ്മ കുലശേഖരൻ തുടങ്ങിയ പ്രമുഖ ഭരണാധികാരികൾ.",
-                        "<strong>Unit 17 · പുരാവസ്തു & ക്ഷേത്ര വാസ്തുവിദ്യ:</strong> ചേരമാൻപറമ്പ്, മതിലകം, തൃക്കുലശേഖരപുരം ക്ഷേത്രങ്ങൾ. ദ്രാവിഡ ശൈലിയും തദ്ദേശീയ തച്ചുശാസ്ത്രവും ഇഴചേർന്ന വൃത്താകാര-ചതുരാകാര ശ്രീകോവിലുകൾ, നമസ്കാര മണ്ഡപങ്ങൾ, ചുമർചിത്രങ്ങൾ.",
-                        "<strong>നാടുകളും വാണിജ്യ സംഘങ്ങളും:</strong> 14 നാടുകൾ (കോലത്തുനാട്, ഏറനാട്, വള്ളുവനാട്, വേണാട് മുതലായവ) രൂപപ്പെട്ടതും; അഞ്ചുവണ്ണം, മണിഗ്രാമം, വളഞ്ചിയർ തുടങ്ങിയ വ്യാപാര ഗിൽഡുകളും (Merchant Guilds); ചേരിക്കൽ, ബ്രഹ്മസ്വം, ദേവസ്വം ഭൂവുടമ വ്യവസ്ഥയും."
-                    ],
-                    "examTip": "വാഴപ്പള്ളി, തരിസാപ്പള്ളി ശാസനങ്ങളുടെ പ്രാധാന്യവും; ചേര പെരുമാക്കന്മാരുടെ കാലത്തെ കാർഷിക വികാസവും ക്ഷേത്ര കേന്ദ്രീകൃത സമൂഹവും എസ്സേ ചോദ്യങ്ങൾക്ക് തയ്യാറാക്കുക."
-                }
-            ]
-        },
-        {
-            "moduleName": "MODULE V: DOING HISTORY & ARCHAEOLOGICAL FIELD EXPLORATION (Practical Component)",
-            "videos": [
-                {
-                    "chapterNumber": "Practical Guide",
-                    "title": "പ്രായോഗിക ചരിത്ര പഠനവും പുരാവസ്തു ഫീൽഡ് വിസിറ്റും (Doing History & Field Exploration)",
-                    "chapter": "Archaeological Sites (Edakkal, Marayur, Porkkalam, Kodungallur, Pattanam) · Heritage Walk, Epigraphy & Field Report",
-                    "duration": "Syllabus Guide",
-                    "thumbnail": "https://i.ytimg.com/vi/GyquVMAUNtQ/hqdefault.jpg",
-                    "youtubeId": "GyquVMAUNtQ",
-                    "videoUrl": null,
-                    "language": "Malayalam",
-                    "studyPoints": [
-                        "<strong>ഓപ്പൺ എൻഡഡ് പ്രായോഗിക പഠനം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാല BA ഹിസ്റ്ററി ഒന്നാം സെമസ്റ്റർ സിലബസിലെ പ്രായോഗിക ഘടകം. ചരിത്രാന്വേഷണ രീതിശാസ്ത്രം നേരിട്ട് മനസ്സിലാക്കാനുള്ള പഠനപ്രവർത്തനം.",
-                        "<strong>ഫീൽഡ് വിസിറ്റ് കേന്ദ്രങ്ങൾ:</strong> എടയ്ക്കൽ, മറയൂർ (ശിലാചിത്രങ്ങൾ); ചേരമാനങ്ങാട്, അരിയന്നൂർ, പോർക്കുളം (കുടക്കല്ലുകൾ & മെഗാലിത്തുകൾ); പട്ടണം, കൊടുങ്ങല്ലൂർ (തുറമുഖ-നഗര അവശിഷ്ടങ്ങൾ).",
-                        "<strong>ഹെറിറ്റേജ് വാക്ക് (Heritage Walk):</strong> പ്രാദേശിക ചരിത്രാന്വേഷണം, വട്ടെഴുത്ത് ലിഖിതങ്ങൾ, സ്മാരകങ്ങൾ, പ്രാദേശിക വാമൊഴി ചരിത്രം എന്നിവ ശേഖരിക്കൽ.",
-                        "<strong>അസൈൻമെന്റ് & ഫീൽഡ് റിപ്പോർട്ട്:</strong> ഫീൽഡ് വിസിറ്റിന്റെ അടിസ്ഥാനത്തിൽ വിദ്യാർത്ഥികൾ സമർപ്പിക്കേണ്ട പ്രോജക്ട് റിപ്പോർട്ട് ഘടനയും ഇന്റേണൽ അസസ്‌മെന്റ് മാർഗ്ഗനിർദ്ദേശങ്ങളും."
-                    ],
-                    "examTip": "ഇന്റേണൽ അസസ്‌മെന്റിൽ മുഴുവൻ മാർക്കും നേടാൻ ഫീൽഡ് വിസിറ്റ് നടത്തിയ സ്ഥലത്തിന്റെ ചരിത്ര പശ്ചാത്തലവും ഫോട്ടോകളും ഉൾപ്പെടുത്തി ശാസ്ത്രീയമായി റിപ്പോർട്ട് തയ്യാറാക്കുക."
-                }
-            ]
-        }
+      {
+        "moduleName": "MODULE I: KERALAM: LANDSCAPE AND ENVIRONMENT (8 Hours · 12 Marks)",
+        "videos": [
+          {
+            "chapterNumber": "Unit 1 - 5",
+            "title": "കേരളത്തിന്റെ ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Kerala Landscape & Environment) · Masterclass",
+            "chapter": "Unit 1: Region · Unit 2: Western Ghats & Passes · Unit 3: Indian Ocean, Rivers, Backwaters, Beaches · Unit 4: Soils & Monsoons · Unit 5: Flora & Fauna",
+            "duration": "18:32",
+            "thumbnail": "https://i.ytimg.com/vi/hIw0qglyEUA/hqdefault.jpg",
+            "youtubeId": "hIw0qglyEUA",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Unit 1 · Keralam as a Region:</strong> 38,863 ചതുരശ്ര കിലോമീറ്റർ വിസ്തൃതിയുള്ള അസമഭുജ ത്രികോണാകൃതിയിലുള്ള (Scalene Triangle) ഭൂപ്രദേശം. കിഴക്ക് സഹ്യാദ്രിയും പടിഞ്ഞാറ് 560 കി.മീ. അറബിക്കടലും സ്വാഭാവിക അതിരുകൾ തീർക്കുന്നു.",
+              "<strong>Unit 2 · Geographical Features - Western Ghats & Passes:</strong> ശരാശരി 1500 മീറ്റർ ഉയരമുള്ള പശ്ചിമഘട്ടം പ്രകൃതിദത്ത മതിൽക്കെട്ടായി നിലകൊള്ളുന്നു. പാലക്കാട് ചുരം (Palakkad Gap - 32-40 km വീതി), ആരുവാമൊഴി, ആര്യങ്കാവ്, ബോഡിനായ്ക്കന്നൂർ ചുരങ്ങൾ എന്നിവ അയൽനാടുകളുമായുള്ള വാണിജ്യ-സാംസ്കാരിക വിനിമയങ്ങൾക്ക് വഴിയൊരുക്കി.",
+              "<strong>Unit 3 · Indian Ocean, Rivers, Backwaters & Beaches:</strong> 44 നദികൾ (41 പടിഞ്ഞാറോട്ടും 3 കിഴക്കോട്ടും ഒഴുകുന്നവ - കബനി, ഭവാനി, പാമ്പാർ), കായലുകൾ, തീരപ്രദേശങ്ങൾ എന്നിവ സമുദ്രവാണിജ്യത്തിനും ഉൾനാടൻ ഗതാഗതത്തിനും വഴിയൊരുക്കി.",
+              "<strong>Unit 4 · Types of Soil & Climate-Monsoons:</strong> ലാറ്ററൈറ്റ് (വെട്ടുകല്ല്), എക്കൽ മണ്ണ് എന്നിവയും; തെക്കുപടിഞ്ഞാറൻ കാലവർഷവും (SW Monsoon - ഇടവപ്പാതി), വടക്കുകിഴക്കൻ മൺസൂണും (NE Monsoon - തുലാവർഷം) ചരിത്രപരമായ ഹിപ്പാലസ് വാണിജ്യ കാറ്റുകളുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു.",
+              "<strong>Unit 5 · Flora & Fauna:</strong> സുഗന്ധവ്യഞ്ജന സമ്പത്ത് (കുരുമുളക്, ഏലം, ഇഞ്ചി, കറുവപ്പട്ട) പ്രാചീന കാലം മുതലുള്ള വിദേശ സമുദ്രവാണിജ്യത്തിന് പ്രധാന കാരണമായി."
+            ],
+            "examTip": "കേരളത്തിന്റെ ചരിത്രത്തെ രൂപപ്പെടുത്തുന്നതിൽ പശ്ചിമഘട്ടവും (സഹ്യാദ്രി), പാലക്കാട് ചുരവും, തെക്കുപടിഞ്ഞാറൻ മൺസൂണും വഹിച്ച പങ്കിനെക്കുറിച്ചുള്ള പ്രധാന പരീക്ഷാ ചോദ്യങ്ങൾക്ക് ഈ പോയിന്റുകൾ മുൻഗണനാടിസ്ഥാനത്തിൽ എഴുതുക."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE II: KERALAM UPTO IRON AGE (12 Hours · 18 Marks)",
+        "videos": [
+          {
+            "chapterNumber": "Unit 6",
+            "title": "പ്രാചീന ശിലായുഗ മനുഷ്യവാസ കേന്ദ്രങ്ങൾ: പാലിയോലിത്തിക്, മെസോലിത്തിക്, നിയോലിത്തിക് · Masterclass",
+            "chapter": "Unit 6: Pre-historic Settlements – Palaeolithic, Mesolithic, Neolithic Centres in Kerala · Two-Speaker Natural Dialogue",
+            "duration": "13:15",
+            "thumbnail": "https://i.ytimg.com/vi/0g9YiJ86L7k/hqdefault.jpg",
+            "youtubeId": "0g9YiJ86L7k",
+            "videoUrl": "https://www.youtube.com/watch?v=0g9YiJ86L7k",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>ശിലായുഗ ഘട്ടങ്ങൾ:</strong> പാലിയോലിത്തിക് (പഴയ ശിലായുഗം), മെസോലിത്തിക് (മധ്യശിലായുഗം), നിയോലിത്തിക് (നവീന ശിലായുഗം) എന്നിവയുടെ കേരളത്തിലെ സാന്നിധ്യം. ശാസ്ത്രീയ പഠനങ്ങളിലൂടെ യൂറോസെൻട്രിക് തെറ്റിദ്ധാരണകൾ തിരുത്തപ്പെട്ടു.",
+              "<strong>പാലിയോലിത്തിക് കണ്ടെത്തലുകൾ:</strong> വാളയാർ, കാഞ്ഞിരപ്പുഴ, അട്ടപ്പാടി, പാലക്കാട് ചുരം തടങ്ങളിൽ നിന്ന് കണ്ടെത്തിയ ക്വാർട്സ് ചോപ്പർ ടൂളുകൾ (Pebble & Flake Tools).",
+              "<strong>മെസോലിത്തിക് സൂക്ഷ്മ ശിലായുധങ്ങൾ (Microliths):</strong> കൊല്ലം തെന്മല റോക്ക് ഷെൽട്ടർ (Dr. P. Rajendran, 5200 BP), ഭാരതപ്പുഴ തടങ്ങൾ, ക്വാർട്സ് ഫ്ലിന്റുകൾ കൊണ്ട് നിർമ്മിച്ച കമ്പോസിറ്റ് ആയുധങ്ങൾ.",
+              "<strong>നിയോലിത്തിക് വിപ്ലവവും കാർഷിക തുടക്കവും:</strong> 1891-ൽ ഫിലിപ്പ് ലേക്ക് (Philip Lake) വയനാട്ടിൽ കണ്ടെത്തിയ മിനുസപ്പെടുത്തിയ കൽക്കോടാലികൾ (Polished Celts), പുൽപ്പള്ളി, കുന്നൂർമേട്, മറയൂരിലെ കന്നുകാലി വളർത്തൽ ശിലാചിത്രങ്ങൾ.",
+              "<strong>സാംസ്കാരിക തുടർച്ച & ശിലാചിത്രങ്ങൾ:</strong> എടയ്ക്കൽ, മറയൂർ എന്നിവിടങ്ങളിലെ മെസോലിത്തിക്, നിയോലിത്തിക്, മഹാശിലായുഗ ഘട്ടങ്ങളുടെ ബഹുതല സങ്കലനം (Rock Art Overlap)."
+            ],
+            "examTip": "കാലിക്കറ്റ് സർവ്വകലാശാല BA ഹിസ്റ്ററി പരീക്ഷയിലെ 3 മാർക്ക് (Pleistocene, Microliths), 6 മാർക്ക് (Rock Art significance), 10 മാർക്ക് എസ്സേ (Prehistoric evidence in Keralam) എന്നിവയ്ക്ക് ഉദ്ധരണികളും പുരാവസ്തു കേന്ദ്രങ്ങളും സഹിതം എഴുതുക."
+          },
+          {
+            "chapterNumber": "Unit 7",
+            "title": "ശിലാ ഗുഹകളും പ്രാചീന ശിലാകലയും: എടയ്ക്കൽ, മറയൂർ, തെന്മല · Masterclass",
+            "chapter": "Unit 7: Rockshelters & Prehistoric Art: Edakkal, Marayur, Tenmala · Natural Two-Speaker Dialogue",
+            "duration": "13:26",
+            "thumbnail": "https://i.ytimg.com/vi/iAeENlFpYtk/hqdefault.jpg",
+            "youtubeId": "iAeENlFpYtk",
+            "videoUrl": "https://www.youtube.com/watch?v=iAeENlFpYtk",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>എടയ്ക്കൽ ശിലാ വിള്ളൽ (Ambukuthi Fissure):</strong> ഫ്രെഡ് ഫോസെറ്റ് (1896-1901) കണ്ടെത്തിയ പെട്രോഗ്ലിഫുകൾ (Petroglyphs). മുഖംമൂടി ധരിച്ച രൂപങ്ങൾ (Masked Shamans), അലങ്കാര കിരീടങ്ങൾ, ചക്രങ്ങൾ, ജ്യാമിതീയ ചതുരങ്ങൾ.",
+              "<strong>വാസസ്ഥലമോ അനുഷ്ഠാന കേന്ദ്രമോ?:</strong> ഗാർഹിക അടുപ്പുകളുടെയും ചാരത്തിന്റെയും കുറവ് എടയ്ക്കൽ നിത്യജീവിത വാസസ്ഥലമല്ലെന്നും വേട്ടയാടൽ അനുഷ്ഠാന കേന്ദ്രമാണെന്നും വ്യക്തമാക്കുന്നു.",
+              "<strong>മറയൂർ പിക്ടോഗ്രാഫുകൾ (Idukki Pictographs):</strong> പാമ്പാർ മഴനിഴൽ താഴ്‌വരയിലെ ചുവന്ന ഹേമറ്റൈറ്റ്-ഓക്കർ ചിത്രങ്ങൾ, തിമിപ്പുള്ള കാളകൾ (Domesticated Cattle), തൊഴുത്തുകൾ, കൈപ്പത്തി മുദ്രകൾ (Hand Stencils).",
+              "<strong>ശിലാചിത്രങ്ങളും മുനിയറകളും (Dolmens):</strong> മറയൂരിലെ ശിലാചിത്രങ്ങളും സമീപത്തെ മഹാശിലായുഗ മുനിയറകളും തമ്മിലുള്ള സാംസ്കാരിക തുടർച്ച.",
+              "<strong>തെക്കൻ കേന്ദ്രങ്ങളും സൂപ്പർഇംപോസിഷനും:</strong> അങ്കോട്ടെ ജ്യാമിതീയ രൂപങ്ങൾ, തെന്മലയിലെ റേഡിയോകാർബൺ ഡേറ്റിംഗ് (5200 BP), ശിലാപാളികളുടെ മുൻഗണനാ ക്രമം (Superimposition)."
+            ],
+            "examTip": "കാലിക്കറ്റ് സർവ്വകലാശാല BA ഹിസ്റ്ററി പരീക്ഷയിലെ 3 മാർക്ക് (Petroglyphs vs Pictographs), 6 മാർക്ക് (Edakkal ritual debate), 10 മാർക്ക് എസ്സേ (Significance of Edakkal & Marayur) എന്നിവയ്ക്ക് ഈ പോയിന്റുകൾ മുൻഗണനാടിസ്ഥാനത്തിൽ എഴുതുക."
+          },
+          {
+            "chapterNumber": "Unit 8 - 10",
+            "title": "മഹാശിലായുഗ സംസ്കാരം: ടൈപ്പോളജി & ഖനനങ്ങൾ (Megaliths, Excavations & Iron Age Society)",
+            "chapter": "Unit 8: Megaliths-typology-Grave goods · Unit 9: Excavations (Babington, Porkkalam, Mangad, Ummichipoyil, Anakkara) · Unit 10: Belief, Economy & Society",
+            "duration": "09:47",
+            "thumbnail": "https://i.ytimg.com/vi/CrpK5EnETwQ/hqdefault.jpg",
+            "youtubeId": "CrpK5EnETwQ",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Unit 8 · മെഗാലിത്തിക് ശ്മശാന സ്മാരക രൂപങ്ങൾ (Typology):</strong> കുടക്കല്ല് (Umbrella Stones), തൊപ്പിക്കല്ല് (Hat Stones), വെട്ടുഗുഹകൾ (Rock-cut Caves), മുനിയറകൾ (Dolmens), സിസ്റ്റ് (Cists), നന്നങ്ങാടികൾ (Burial Urns), നാട്ടുകല്ലുകൾ (Menhirs). ശവസംസ്കാര പാത്രങ്ങളും ഇരുമ്പ് ആയുധങ്ങളും (Grave goods).",
+              "<strong>Unit 9 · പ്രമുഖ ഖനനങ്ങൾ (Excavations):</strong> ഡോ. ജെ. ബാബിംഗ്ടൺ (J. Babington 1823 - ചാത്തപ്പറമ്പ് ആദ്യ ശാസ്ത്രീയ പഠനം), ബി.കെ. ഥാപ്പർ (B.K. Thapar - പോർക്കുളം ഖനനം 1948), മാങ്ങാട്, ഉമ്മിച്ചിപ്പൊയിൽ, ആനക്കര (ഇരുമ്പ് യുഗ പണിശാലകൾ).",
+              "<strong>Unit 10 · വിശ്വാസം, സമ്പദ്‌വ്യവസ്ഥ & സമൂഹം:</strong> ഇരുമ്പുപകരണങ്ങളുടെ ഉപയോഗം, കൃഷിയും വേട്ടയും സംയോജിപ്പിച്ച സമ്പദ്‌വ്യവസ്ഥ, മരണാനന്തര ജീവിതത്തിലുള്ള ആഴത്തിലുള്ള വിശ്വാസവും പൂർവ്വികാരാധനയും."
+            ],
+            "examTip": "മെഗാലിത്തിക് ടൈപ്പോളജി (കുടക്കല്ല്, തൊപ്പിക്കല്ല്, മുനിയറ, വെട്ടുഗുഹകൾ) തമ്മിലുള്ള വ്യത്യാസങ്ങളും ജെ. ബാബിംഗ്ടൺ, പോർക്കുളം ബി.കെ. ഥാപ്പർ ഖനനങ്ങളും വിശദമാക്കുക."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE III: KERALAM DURING EARLY HISTORIC (300 BCE–500 CE) (12 Hours · 18 Marks)",
+        "videos": [
+          {
+            "chapterNumber": "Unit 11 - 15",
+            "title": "സംഘകാല കേരളവും സമുദ്ര വാണിജ്യവും (Early Historic Keralam: Tamil Literature, Tinai & Indo-Roman Trade)",
+            "chapter": "Unit 11: Sangam Literature (Akananuru, Purananuru, Patittuppattu) · Unit 12: Tinai Landscape · Unit 13: Greco-Roman Trade · Unit 14: Pattanam & Vizhinjam · Unit 15: Muvendar & Kurunila Mannar",
+            "duration": "12:56",
+            "thumbnail": "https://i.ytimg.com/vi/W3NR_IX70qg/hqdefault.jpg",
+            "youtubeId": "W3NR_IX70qg",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Unit 11 · ആദ്യകാല തമിഴ് സാഹിത്യം:</strong> പതിറ്റുപ്പത്ത് (ചേര രാജാക്കന്മാരെക്കുറിച്ചുള്ള സ്തുതിഗീതങ്ങൾ), അകനാനൂറ്, പുറനാനൂറ്, ചിലപ്പതികാരം. ആദ്യകാല കേരളത്തിന്റെ രാഷ്ട്രീയ-സാമൂഹിക ചരിത്രരചനയുടെ പ്രധാന സ്രോതസ്സ്.",
+              "<strong>Unit 12 · തിണൈ സങ്കല്പം (Tinai Concept):</strong> കുറിഞ്ചി (മലയോര മേഖല - വേട്ട, തേനശേഖരണം), മുല്ലൈ (കാട്ടുപ്രദേശം - കന്നുകാലി വളർത്തൽ), മരുതം (വയൽപ്രദേശം - നെൽകൃഷി), നെയ്തൽ (തീരപ്രദേശം - മത്സ്യബന്ധനം, ഉപ്പുണ്ടാക്കൽ), പാലൈ (വരണ്ട പ്രദേശം).",
+              "<strong>Unit 13 · ഗ്രീക്കോ-റോമൻ കുറിപ്പുകളും വിദേശ വ്യാപാരവും:</strong> പെരിപ്ലസ് ഓഫ് ദി എറിത്രിയൻ സീ, പ്ലിനിയുടെ നാച്ചുറൽ ഹിസ്റ്ററി, ടോളമിയുടെ ജിയോഗ്രഫി. മുസിരിസ് (Muziris), തിണ്ടിസ്, നെൽകിണ്ട തുറമുഖങ്ങൾ വഴിയുള്ള റോമൻ കുരുമുളക് വ്യാപാരം.",
+              "<strong>Unit 14 · പട്ടണം & വിഴിഞ്ഞം പുരാവസ്തു ഖനനങ്ങൾ:</strong> ഡോ. പി.ജെ. ചെറിയാന്റെ നേതൃത്വത്തിൽ നടന്ന പട്ടണം ഖനനത്തിൽ റോമൻ ആംഫോറ പാത്രങ്ങൾ, ടെറക്കോട്ട, കാർണിലിയൻ മുത്തുകൾ, ബോട്ട് ജെട്ടി എന്നിവ കണ്ടെത്തി മുസിരിസിന്റെ അന്താരാഷ്ട്ര വ്യാപാര ബന്ധം തെളിയിച്ചു; വിഴിഞ്ഞം തുറമുഖ തെളിവുകൾ.",
+              "<strong>Unit 15 · ആദ്യകാല രാഷ്ട്രീയ ഘടന:</strong> മൂവേന്തർ (ചേരർ, ചോളർ, പാണ്ഡ്യർ) എന്നിവരുടെ അധീശത്വവും; ആയ്, ഏഴിമല (നന്ദൻ) തുടങ്ങിയ കുറുനില മന്നരുടെ ഭരണവും."
+            ],
+            "examTip": "ഐന്തിണകൾ (Five Tinais) അടിസ്ഥാനമാക്കിയുള്ള ഉപജീവന രീതികളും, പെരിപ്ലസ് രേഖപ്പെടുത്തിയ മുസിരിസ്-റോമൻ സുഗന്ധവ്യഞ്ജന വ്യാപാരവും സംഘകാല ചോദ്യങ്ങൾക്ക് നിർബന്ധമായും പഠിക്കുക."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE IV: KERALAM UPTO 12TH CENTURY (16 Hours · 22 Marks)",
+        "videos": [
+          {
+            "chapterNumber": "Unit 16 - 17",
+            "title": "പന്ത്രണ്ടാം നൂറ്റാണ്ട് വരെയുള്ള കേരളം: ശാസനങ്ങളും ക്ഷേത്ര വാസ്തുവിദ്യയും (Epigraphy, Architecture & Chera Polity)",
+            "chapter": "Unit 16: Epigraphic Evidences (Vazhappalli, Tarisappalli, Parthivapuram, Thiruvalla) · Unit 17: Archaeology & Temple Architecture (Cheramanparambu, Matilakam, Nadus)",
+            "duration": "19:10",
+            "thumbnail": "https://i.ytimg.com/vi/l1xQTyBb13g/hqdefault.jpg",
+            "youtubeId": "l1xQTyBb13g",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Unit 16 · എപ്പിഗ്രാഫിക് തെളിവുകൾ (Epigraphy):</strong> വാഴപ്പള്ളി ശാസനം (832 CE - രാജശേഖര വർമ്മൻ, വട്ടെഴുത്ത് ലിപിയിലെ ആദ്യ രേഖ), തരിസാപ്പള്ളി ശാസനം (849 CE - അയ്യാനടികൾ തിരുവടികൾ ക്രിസ്ത്യൻ വ്യാപാരി മാർ സപീർ ഈശോയ്ക്ക് നൽകിയ അവകാശങ്ങൾ), പാർത്ഥിവപുരം ശാസനം (വിദ്യാകേന്ദ്രമായ ശാല), തിരുവല്ല ചെപ്പേടുകൾ.",
+              "<strong>മഹോദയപുരത്തെ ചേര പെരുമാക്കന്മാർ (AD 800–1124):</strong> കുലശേഖര ആഴ്‌വാർ സ്ഥാപിച്ച രണ്ടാം ചേര സാമ്രാജ്യം. തലസ്ഥാനം മഹോദയപുരം (കൊടുങ്ങല്ലൂർ). ഭാസ്കര രവിവർമ്മൻ, രാമവർമ്മ കുലശേഖരൻ തുടങ്ങിയ പ്രമുഖ ഭരണാധികാരികൾ.",
+              "<strong>Unit 17 · പുരാവസ്തു & ക്ഷേത്ര വാസ്തുവിദ്യ:</strong> ചേരമാൻപറമ്പ്, മതിലകം, തൃക്കുലശേഖരപുരം ക്ഷേത്രങ്ങൾ. ദ്രാവിഡ ശൈലിയും തദ്ദേശീയ തച്ചുശാസ്ത്രവും ഇഴചേർന്ന വൃത്താകാര-ചതുരാകാര ശ്രീകോവിലുകൾ, നമസ്കാര മണ്ഡപങ്ങൾ, ചുമർചിത്രങ്ങൾ.",
+              "<strong>നാടുകളും വാണിജ്യ സംഘങ്ങളും:</strong> 14 നാടുകൾ (കോലത്തുനാട്, ഏറനാട്, വള്ളുവനാട്, വേണാട് മുതലായവ) രൂപപ്പെട്ടതും; അഞ്ചുവണ്ണം, മണിഗ്രാമം, വളഞ്ചിയർ തുടങ്ങിയ വ്യാപാര ഗിൽഡുകളും (Merchant Guilds); ചേരിക്കൽ, ബ്രഹ്മസ്വം, ദേവസ്വം ഭൂവുടമ വ്യവസ്ഥയും."
+            ],
+            "examTip": "വാഴപ്പള്ളി, തരിസാപ്പള്ളി ശാസനങ്ങളുടെ പ്രാധാന്യവും; ചേര പെരുമാക്കന്മാരുടെ കാലത്തെ കാർഷിക വികാസവും ക്ഷേത്ര കേന്ദ്രീകൃത സമൂഹവും എസ്സേ ചോദ്യങ്ങൾക്ക് തയ്യാറാക്കുക."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE V: DOING HISTORY & ARCHAEOLOGICAL FIELD EXPLORATION (Practical Component)",
+        "videos": [
+          {
+            "chapterNumber": "Practical Guide",
+            "title": "പ്രായോഗിക ചരിത്ര പഠനവും പുരാവസ്തു ഫീൽഡ് വിസിറ്റും (Doing History & Field Exploration)",
+            "chapter": "Archaeological Sites (Edakkal, Marayur, Porkkalam, Kodungallur, Pattanam) · Heritage Walk, Epigraphy & Field Report",
+            "duration": "Syllabus Guide",
+            "thumbnail": "https://i.ytimg.com/vi/GyquVMAUNtQ/hqdefault.jpg",
+            "youtubeId": "GyquVMAUNtQ",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>ഓപ്പൺ എൻഡഡ് പ്രായോഗിക പഠനം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാല BA ഹിസ്റ്ററി ഒന്നാം സെമസ്റ്റർ സിലബസിലെ പ്രായോഗിക ഘടകം. ചരിത്രാന്വേഷണ രീതിശാസ്ത്രം നേരിട്ട് മനസ്സിലാക്കാനുള്ള പഠനപ്രവർത്തനം.",
+              "<strong>ഫീൽഡ് വിസിറ്റ് കേന്ദ്രങ്ങൾ:</strong> എടയ്ക്കൽ, മറയൂർ (ശിലാചിത്രങ്ങൾ); ചേരമാനങ്ങാട്, അരിയന്നൂർ, പോർക്കുളം (കുടക്കല്ലുകൾ & മെഗാലിത്തുകൾ); പട്ടണം, കൊടുങ്ങല്ലൂർ (തുറമുഖ-നഗര അവശിഷ്ടങ്ങൾ).",
+              "<strong>ഹെറിറ്റേജ് വാക്ക് (Heritage Walk):</strong> പ്രാദേശിക ചരിത്രാന്വേഷണം, വട്ടെഴുത്ത് ലിഖിതങ്ങൾ, സ്മാരകങ്ങൾ, പ്രാദേശിക വാമൊഴി ചരിത്രം എന്നിവ ശേഖരിക്കൽ.",
+              "<strong>അസൈൻമെന്റ് & ഫീൽഡ് റിപ്പോർട്ട്:</strong> ഫീൽഡ് വിസിറ്റിന്റെ അടിസ്ഥാനത്തിൽ വിദ്യാർത്ഥികൾ സമർപ്പിക്കേണ്ട പ്രോജക്ട് റിപ്പോർട്ട് ഘടനയും ഇന്റേണൽ അസസ്‌മെന്റ് മാർഗ്ഗനിർദ്ദേശങ്ങളും."
+            ],
+            "examTip": "ഇന്റേണൽ അസസ്‌മെന്റിൽ മുഴുവൻ മാർക്കും നേടാൻ ഫീൽഡ് വിസിറ്റ് നടത്തിയ സ്ഥലത്തിന്റെ ചരിത്ര പശ്ചാത്തലവും ഫോട്ടോകളും ഉൾപ്പെടുത്തി ശാസ്ത്രീയമായി റിപ്പോർട്ട് തയ്യാറാക്കുക."
+          }
+        ]
+      }
     ]
-},
+  },
   "malayalam": {
     "name": "Malayalam",
     "badge": "🌴",
@@ -2379,6 +2379,23 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "21",
             "youtubeId": "",
             "language": "Hindi"
+          },
+          {
+            "chapterNumber": "Chapter 04",
+            "title": "आधुनिक हिन्दी कविता : भाव और संरचना",
+            "chapter": "काव्य का भाव-सौंदर्य, कथ्य, शिल्प एवं संरचना-विधान",
+            "duration": "07:43",
+            "language": "Hindi",
+            "studyPoints": [
+              "<strong>भाव पक्ष (Thematic & Emotional Dimension):</strong> आधुनिक हिन्दी कविता में कवि की अनुभूति, सामाजिक यथार्थ, मानवीय संवेदना और विचारों की गहन अभिव्यक्ति। भाव कविता की आत्मा है जो पाठक के हृदय में रसानुभूति उत्पन्न करती है।",
+              "<strong>संरचना पक्ष (Formal & Structural Dimension):</strong> कविता का बाह्य कलेवर, छंद-विधान, लय, तुक, बिंब, प्रतीक और भाषा शैली। आधुनिक काल में मुक्त छंद (Free Verse) के आगमन के साथ संरचना अधिक लचीली और विचार-प्रधान बनी।",
+              "<strong>कथ्य और शिल्प का समन्वय:</strong> आधुनिक कविता केवल रीतिकालीन अलंकरण नहीं बल्कि समकालीन जीवन के द्वंद्व और संघर्षों को नए प्रतीकों और बोलचाल की भाषा में ढालने का सशक्त माध्यम है।",
+              "<strong>छायावाद से समकालीन कविता तक का विकास:</strong> छायावादी प्रकृति-चित्रण और वैयक्तिकता से लेकर प्रगतिवाद, प्रयोगवाद और नई कविता में सामाजिक सरोकारों और जन-चेतना का विकास।"
+            ],
+            "examTip": "Calicut University FYUGP परीक्षा के लिए आधुनिक कविता के 'भाव पक्ष' (विषयवस्तु, संवेदना) और 'शिल्प/संरचना पक्ष' (भाषा, बिंब, मुक्त छंद) के बीच अंतर और परस्पर संबंधों पर 10 अंक का प्रश्न विशेष रूप से तैयार करें।",
+            "youtubeId": "-wA__gVCqyA",
+            "thumbnail": "https://i.ytimg.com/vi/-wA__gVCqyA/hqdefault.jpg",
+            "videoUrl": null
           }
         ]
       },
@@ -2404,7 +2421,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 1
+    "totalVideos": 8
   },
   "mathematics": {
     "name": "Mathematics",

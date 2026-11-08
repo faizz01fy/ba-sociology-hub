@@ -17,7 +17,7 @@
 
   <meta name="googlebot-news" content="noindex, follow" />
 
-  <title>Voice Explanations | Academic Hub</title>
+  <title>Voice Explanations | Audio Classes</title>
 
 
 
@@ -5166,7 +5166,7 @@
   </div>
   <!-- Load Subject Voice Data -->
 
-  <script src="voice_explanation_data.js?v=1794132622"></script>
+  <script src="voice_explanation_data.js?v=1794165800"></script>
 
 
 
@@ -5390,8 +5390,6 @@
 
         if (!subject) return;
 
-        document.title = `${subject.courseTitle || subject.name} | Voice Explanations | Academic Hub`;
-
 
 
         heroSubjectName.innerHTML = `${subject.badge} ${subject.name}`;
@@ -5411,9 +5409,6 @@
         } else if (isArabicSubject) {
           heroChannelBadge.innerHTML = `<span class="pulse-dot"></span> Arabic Voice Classes &amp; Video Explanations`;
           heroSubjectDesc.textContent = 'Chapter-by-chapter embedded Arabic voice lectures and video explanations organized by module';
-        } else if (currentSlug === 'sociology') {
-          heroChannelBadge.innerHTML = `<span class="pulse-dot"></span> English &amp; Malayalam · FYUGP Sociology`;
-          heroSubjectDesc.textContent = 'Five official syllabus modules, with bilingual chapter lectures and a practical fieldwork guide.';
         } else {
           heroChannelBadge.innerHTML = `<span class="pulse-dot"></span> ${isBilingualSubject ? 'English &amp; Malayalam' : (hasEnglish ? 'Malayalam &amp; English' : 'Malayalam')} Voice Classes &amp; Video Explanations`;
           heroSubjectDesc.textContent = hasEnglish
@@ -5497,7 +5492,7 @@
 
           const totalCount = filteredVids.length;
 
-          const countLabel = mod.moduleType === 'practical' ? 'Syllabus Practical' : (activeCount > 0 ? `${activeCount} Live / ${totalCount} Chapters` : `${totalCount} Chapters`);
+          const countLabel = activeCount > 0 ? `${activeCount} Live / ${totalCount} Chapters` : `${totalCount} Chapters`;
 
 
 
@@ -5608,37 +5603,7 @@
 
 
 
-            if (v.syllabusOnly) {
-
-              card.classList.add('chapter-card--syllabus');
-              card.innerHTML = `
-                <div class="video-language-label bilingual-video-heading" lang="en"><strong>FYUGP Practical Module</strong></div>
-                <div class="card-top">
-                  <div class="thumb-wrap thumb-wrap--audio" style="background:linear-gradient(135deg,#fff7d6,#d9f8ff);border-color:#f0bd34;">
-                    <span class="thumb-audio-icon" aria-hidden="true" style="color:#735000;">📋</span>
-                    <span class="thumb-duration">12 Hours</span>
-                  </div>
-                  <div class="card-info">
-                    ${chBadge}
-                    <div class="card-title" title="${v.title}">${v.title}</div>
-                    <div class="card-sub">${v.chapter || mod.moduleName}</div>
-                  </div>
-                </div>
-                <div class="card-actions">
-                  <a class="btn-watch-youtube" href="${v.resourceUrl}" target="_blank" rel="noopener noreferrer" style="flex:1;text-decoration:none;">📄 Open Assignment Guide</a>
-                </div>
-                ${v.studyPoints && v.studyPoints.length ? `
-                  <details class="chapter-notes-box" open>
-                    <summary class="notes-summary">
-                      <span class="notes-title-wrap"><span aria-hidden="true">📝</span><span><strong>Practical Focus</strong> (English &amp; Malayalam)</span></span>
-                      <span class="notes-chevron" aria-hidden="true">▼</span>
-                    </summary>
-                    <div class="notes-content"><ul class="notes-list">${v.studyPoints.map(p => `<li>${p}</li>`).join('')}</ul></div>
-                  </details>
-                ` : ''}
-              `;
-
-            } else if (hasActiveAudio) {
+            if (hasActiveAudio) {
 
               card.innerHTML = `
 
