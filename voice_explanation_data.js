@@ -13,7 +13,7 @@ window.VOICE_EXPLANATIONS_DATA = {
                     "title": "കേരളത്തിന്റെ ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Kerala Landscape & Environment) · Masterclass",
                     "chapter": "Unit 1: Region · Unit 2: Western Ghats & Passes · Unit 3: Indian Ocean, Rivers, Backwaters, Beaches · Unit 4: Soils & Monsoons · Unit 5: Flora & Fauna",
                     "duration": "18:32",
-                    "thumbnail": "https://i.ytimg.com/vi/hIw0qglyEUA/maxresdefault.jpg",
+                    "thumbnail": "https://i.ytimg.com/vi/hIw0qglyEUA/hqdefault.jpg",
                     "youtubeId": "hIw0qglyEUA",
                     "videoUrl": null,
                     "language": "Malayalam",
