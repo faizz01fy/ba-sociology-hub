@@ -7,16 +7,19 @@
   function gtag() { dataLayer.push(arguments); }
   window.gtag = gtag;
 
-  // Basic Consent Mode: Default denied for all measurement and ad storage
-  gtag('consent', 'default', {
-    'analytics_storage': 'denied',
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'wait_for_update': 500
-  });
-
+  const isEurope = typeof window.HUB_IS_EUROPE !== 'undefined' ? window.HUB_IS_EUROPE : false;
   const CONSENT_KEY = 'hub_consent_state_v1';
+
+  function isAdExemptPath() {
+    var p = location.pathname.toLowerCase();
+    if (/^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|voice-explanation|voice|econ_voice)/i.test(p)) {
+      return true;
+    }
+    if (/test|mock/i.test(p)) {
+      return true;
+    }
+    return false;
+  }
 
   function loadServices() {
     if (window._hubServicesLoaded) return;
@@ -32,10 +35,9 @@
       gtag('config', 'G-5WRBVFQK55');
     } catch(e) {}
 
-    // 2. Google AdSense (on monetized content pages)
+    // 2. Google AdSense (on monetized content pages only)
     try {
-      var isUtility = /^\/(?:privacy-policy|terms|disclaimer|contact|about)(?:\.html)?$/i.test(location.pathname);
-      if (!isUtility && !window._hubAdScriptLoaded) {
+      if (!isAdExemptPath() && !window._hubAdScriptLoaded) {
         window._hubAdScriptLoaded = true;
         var adScript = document.createElement('script');
         adScript.async = true;
@@ -45,6 +47,43 @@
       }
     } catch(e) {}
   }
+
+  function showModal() {
+    var modal = document.getElementById('hub-consent-modal');
+    if (modal) {
+      modal.classList.remove('hub-hidden');
+      modal.style.display = 'block';
+    }
+  }
+
+  function hideModal() {
+    var modal = document.getElementById('hub-consent-modal');
+    if (modal) {
+      modal.classList.add('hub-hidden');
+      modal.style.display = 'none';
+    }
+  }
+
+  if (!isEurope) {
+    // Non-European visitors (India, US, etc.): Immediate grant, zero modal disruption
+    gtag('consent', 'default', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted'
+    });
+    loadServices();
+    return;
+  }
+
+  // European visitors & preview test mode: Basic Consent Mode (default denied)
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'wait_for_update': 500
+  });
 
   window.hubApplyConsent = function(granted) {
     try {
@@ -67,14 +106,11 @@
         });
       }
     } catch(e) {}
-
-    var modal = document.getElementById('hub-consent-modal');
-    if (modal) modal.classList.add('hub-hidden');
+    hideModal();
   };
 
   window.hubOpenConsent = function() {
-    var modal = document.getElementById('hub-consent-modal');
-    if (modal) modal.classList.remove('hub-hidden');
+    showModal();
   };
 
   function initConsent() {
@@ -88,9 +124,8 @@
     } else if (saved === 'denied') {
       hubApplyConsent(false);
     } else {
-      // First-time or unconsented visitor: show modal on page load!
-      var modal = document.getElementById('hub-consent-modal');
-      if (modal) modal.classList.remove('hub-hidden');
+      // First-time European visitor: show modal immediately on page load!
+      showModal();
     }
   }
 

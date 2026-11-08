@@ -470,12 +470,32 @@ export default {
       ctx.waitUntil(task);
 
       const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|voice-explanation|voice|econ_voice)(?:\.html)?$/i.test(url.pathname);
-      let hasAdSense = false;
+      
+      const isEU = request.cf?.isEUCountry === "1" || request.cf?.isEUCountry === true;
+      const euCountries = new Set([
+        "AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE",
+        "IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE",
+        "GB","UK","CH","IS","LI","NO","GI","GG","JE","IM"
+      ]);
+      const visitorCountry = (request.cf?.country || "").toUpperCase();
+      const glParam = (url.searchParams.get("gl") || "").toUpperCase();
+      const isPreview = url.searchParams.has("preview_cmp") || 
+                        url.searchParams.has("fc_preview") || 
+                        url.searchParams.has("preview") || 
+                        url.searchParams.has("test_consent") || 
+                        glParam === "EEA" || 
+                        euCountries.has(glParam);
+
+      const isEuropeanVisitor = isEU || euCountries.has(visitorCountry) || isPreview;
+
       response = new HTMLRewriter()
         .on("head", {
           element(el) {
-            el.append('<link rel="stylesheet" href="/consent-banner.css?v=20261109">', { html: true });
-            el.append('<script src="/consent-banner.js?v=20261109"></script>', { html: true });
+            el.append(`<script>window.HUB_IS_EUROPE = ${isEuropeanVisitor ? 'true' : 'false'};</script>`, { html: true });
+            if (isEuropeanVisitor) {
+              el.append('<link rel="stylesheet" href="/consent-banner.css?v=20261109_geo">', { html: true });
+            }
+            el.append('<script src="/consent-banner.js?v=20261109_geo"></script>', { html: true });
           }
         })
         .on("script[src*='pagead2.googlesyndication.com']", {
@@ -489,9 +509,10 @@ export default {
           }
         })
         .on("body", {
-        element(el) {
-          el.append(`
-<div id="hub-consent-modal" class="hub-hidden" role="dialog" aria-modal="true" aria-labelledby="hub-consent-heading">
+          element(el) {
+            if (isEuropeanVisitor) {
+              el.append(`
+<div id="hub-consent-modal" class="hub-hidden" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="hub-consent-heading">
   <div class="hub-consent-header">
     <div class="hub-consent-logo" aria-hidden="true">🎓</div>
     <div class="hub-consent-title" id="hub-consent-heading">Academic Hub · Privacy &amp; Cookie Choices</div>
@@ -509,6 +530,7 @@ export default {
   🛡️ Cookie &amp; Ad Choices
 </button>
 `, { html: true });
+            }
           el.append('<script src="/traffic-tracker.js?v=20261105_act2" defer></script>', { html: true });
           if (isOwner) {
             el.append('<style id="hub-owner-traffic-control-style">.hub-owner-traffic-control{position:fixed!important;right:max(12px,env(safe-area-inset-right,0px))!important;top:max(12px,env(safe-area-inset-top,0px))!important;z-index:2147483647!important;display:inline-flex!important;align-items:center;justify-content:center;gap:.45rem;min-height:48px;min-width:48px;max-width:calc(100vw - 24px);padding:12px 18px;box-sizing:border-box;border:2px solid #fff;border-radius:999px;background:#173b35;color:#fff!important;box-shadow:0 6px 24px rgba(0,0,0,.32);font:700 16px/1.2 system-ui,sans-serif;text-decoration:none!important;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.hub-owner-traffic-control:hover,.hub-owner-traffic-control:focus-visible{background:#225c50;outline:3px solid #f3c969;outline-offset:2px}.hub-owner-traffic-control:active{transform:translateY(1px)}@media(max-width:600px){.hub-owner-traffic-control{min-height:52px;max-width:calc(100vw - 24px);padding:14px 18px;font-size:16px}}</style>', { html: true });
