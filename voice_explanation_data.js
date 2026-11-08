@@ -51,20 +51,21 @@ window.VOICE_EXPLANATIONS_DATA = {
                 },
                 {
                     "chapterNumber": "Unit 7",
-                    "title": "ശിലാ ഗുഹകളും പ്രാചീന ശിലാകലയും (Rockshelters: Edakkal, Marayur & Tenmala)",
-                    "chapter": "Unit 7: Rockshelters – Edakkal, Marayur, Tenmala, Tovari Cave Paintings & Engravings",
-                    "duration": "08:14",
-                    "thumbnail": "https://i.ytimg.com/vi/7IZKIlmfvAM/hqdefault.jpg",
-                    "youtubeId": "7IZKIlmfvAM",
-                    "videoUrl": null,
+                    "title": "ശിലാ ഗുഹകളും പ്രാചീന ശിലാകലയും: എടയ്ക്കൽ, മറയൂർ, തെന്മല · Masterclass",
+                    "chapter": "Unit 7: Rockshelters & Prehistoric Art: Edakkal, Marayur, Tenmala · Natural Two-Speaker Dialogue",
+                    "duration": "13:26",
+                    "thumbnail": "https://i.ytimg.com/vi/iAeENlFpYtk/hqdefault.jpg",
+                    "youtubeId": "iAeENlFpYtk",
+                    "videoUrl": "https://www.youtube.com/watch?v=iAeENlFpYtk",
                     "language": "Malayalam",
                     "studyPoints": [
-                        "<strong>എടയ്ക്കൽ ഗുഹകൾ (വയനാട് അമ്പുകുത്തി മല):</strong> ഫ്രെഡ് ഫോസെറ്റ് (Fred Fawcett, 1894) കണ്ടെത്തിയ ചരിത്രാതീത കൊത്തുപണികൾ (Petroglyphs). മനുഷ്യ രൂപങ്ങൾ, ചക്രവർത്തി ചിഹ്നം, മൃഗങ്ങൾ, സിന്ധുനദീതട ലിപിയോട് സാമ്യമുള്ള ചിഹ്നങ്ങൾ.",
-                        "<strong>തോവാരി ഗുഹ (വയനാട്):</strong> ജ്യാമിതീയ രൂപങ്ങളും (Geometric Motifs) കൊത്തുപണികളും. നിയോലിത്തിക്-മെഗാലിത്തിക് സംക്രമണഘട്ടത്തിന്റെ തെളിവ്.",
-                        "<strong>മറയൂർ റോക്ക് ആർട്ട് (ഇടുക്കി):</strong> ചുവന്ന ഓക്കർ ചായം (Red Ochre) ഉപയോഗിച്ച് വരച്ച പ്രകൃതിദത്ത ഗുഹാചിത്രങ്ങൾ. വേട്ടയാടൽ ദൃശ്യങ്ങളും വന്യമൃഗങ്ങളും.",
-                        "<strong>തെന്മല റോക്ക് ഷെൽട്ടർ (കൊല്ലം):</strong> ശിലായുഗ മനുഷ്യന്റെ ആവാസ കേന്ദ്രവും മൈക്രോലിത്തിക് സംസ്കാര തെളിവുകളും."
+                        "<strong>എടയ്ക്കൽ ശിലാ വിള്ളൽ (Ambukuthi Fissure):</strong> ഫ്രെഡ് ഫോസെറ്റ് (1896-1901) കണ്ടെത്തിയ പെട്രോഗ്ലിഫുകൾ (Petroglyphs). മുഖംമൂടി ധരിച്ച രൂപങ്ങൾ (Masked Shamans), അലങ്കാര കിരീടങ്ങൾ, ചക്രങ്ങൾ, ജ്യാമിതീയ ചതുരങ്ങൾ.",
+                        "<strong>വാസസ്ഥലമോ അനുഷ്ഠാന കേന്ദ്രമോ?:</strong> ഗാർഹിക അടുപ്പുകളുടെയും ചാരത്തിന്റെയും കുറവ് എടയ്ക്കൽ നിത്യജീവിത വാസസ്ഥലമല്ലെന്നും വേട്ടയാടൽ അനുഷ്ഠാന കേന്ദ്രമാണെന്നും വ്യക്തമാക്കുന്നു.",
+                        "<strong>മറയൂർ പിക്ടോഗ്രാഫുകൾ (Idukki Pictographs):</strong> പാമ്പാർ മഴനിഴൽ താഴ്‌വരയിലെ ചുവന്ന ഹേമറ്റൈറ്റ്-ഓക്കർ ചിത്രങ്ങൾ, തിമിപ്പുള്ള കാളകൾ (Domesticated Cattle), തൊഴുത്തുകൾ, കൈപ്പത്തി മുദ്രകൾ (Hand Stencils).",
+                        "<strong>ശിലാചിത്രങ്ങളും മുനിയറകളും (Dolmens):</strong> മറയൂരിലെ ശിലാചിത്രങ്ങളും സമീപത്തെ മഹാശിലായുഗ മുനിയറകളും തമ്മിലുള്ള സാംസ്കാരിക തുടർച്ച.",
+                        "<strong>തെക്കൻ കേന്ദ്രങ്ങളും സൂപ്പർഇംപോസിഷനും:</strong> അങ്കോട്ടെ ജ്യാമിതീയ രൂപങ്ങൾ, തെന്മലയിലെ റേഡിയോകാർബൺ ഡേറ്റിംഗ് (5200 BP), ശിലാപാളികളുടെ മുൻഗണനാ ക്രമം (Superimposition)."
                     ],
-                    "examTip": "ഫ്രെഡ് ഫോസെറ്റ് എടയ്ക്കൽ ഗുഹകളിൽ നിന്ന് കണ്ടെത്തിയ പെട്രോഗ്ലിഫുകളെക്കുറിച്ചും സിന്ധുനദീതട ചിഹ്നങ്ങളുമായുള്ള സമാനതകളെക്കുറിച്ചും ഷോർട്ട് എസ്സേ ചോദിക്കാറുണ്ട്."
+                    "examTip": "കാലിക്കറ്റ് സർവ്വകലാശാല BA ഹിസ്റ്ററി പരീക്ഷയിലെ 3 മാർക്ക് (Petroglyphs vs Pictographs), 6 മാർക്ക് (Edakkal ritual debate), 10 മാർക്ക് എസ്സേ (Significance of Edakkal & Marayur) എന്നിവയ്ക്ക് ഈ പോയിന്റുകൾ മുൻഗണനാടിസ്ഥാനത്തിൽ എഴുതുക."
                 },
                 {
                     "chapterNumber": "Unit 8 - 10",
