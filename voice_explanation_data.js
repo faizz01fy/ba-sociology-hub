@@ -1253,9 +1253,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Sources of Valid Knowledge in Indian Philosophy & AI: Epistemology, Pratyakṣa & Anumāna)",
             "chapter": "Unit 3.1 b: Epistemology & AI · Dignāga, Dharmakīrti & Apoha Theory · Two-Speaker Conversational Masterclass",
             "duration": "13:06",
-            "youtubeId": "qU_l4FoBF6s",
-            "thumbnail": "https://i.ytimg.com/vi/qU_l4FoBF6s/hqdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=qU_l4FoBF6s",
+            "youtubeId": "626Pz--vDxk",
+            "thumbnail": "https://i.ytimg.com/vi/626Pz--vDxk/hqdefault.jpg",
+            "videoUrl": "https://www.youtube.com/watch?v=626Pz--vDxk",
             "language": "Malayalam (Two-Speaker Conversational Masterclass)",
             "studyPoints": [
               "ബുദ്ധമതത്തിലെ രണ്ട് പ്രമാണങ്ങൾ: ദിങ്നാഗനും (Pramāṇasamuccaya) ധർമ്മകീർത്തിയും (Nyāyabindu) ശബ്ദപ്രമാണത്തെ നിരാകരിച്ച് പ്രത്യക്ഷവും (Pratyakṣa) അനുമാനവും (Anumāna) മാത്രം അംഗീകരിച്ചു.",
