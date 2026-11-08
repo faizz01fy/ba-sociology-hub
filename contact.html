@@ -357,17 +357,23 @@
 
       if (!name || !email || !message) return;
 
-      submitBtn.disabled = true;
-      submitBtn.innerText = "Submitting...";
+      // Construct genuine mailto URL
+      const subject = encodeURIComponent("[Academic Hub - " + category + "] Message from " + name);
+      const body = encodeURIComponent(
+        "Sender Name: " + name + "\n" +
+        "Sender Email: " + email + "\n" +
+        "Topic / Category: " + category + "\n\n" +
+        "Message:\n" + message
+      );
+      const mailtoUrl = "mailto:academichubfaiz@gmail.com?subject=" + subject + "&body=" + body;
 
-      // Friendly fallback to mailto + WhatsApp if needed
-      setTimeout(function() {
-        statusMsg.className = "status-msg success";
-        statusMsg.innerHTML = "<strong>Thank you, " + name + "!</strong> Your message has been received. Our editorial team will review your note and respond to <em>" + email + "</em> within 24-48 hours. If urgent, feel free to connect via WhatsApp.";
-        document.getElementById('contactForm').reset();
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = "<span>Message Sent</span> <span aria-hidden='true'>✓</span>";
-      }, 600);
+      // Provide immediate delivery options
+      statusMsg.className = "status-msg success";
+      statusMsg.innerHTML = "<strong>Opening your email app to send...</strong><br>If your email app didn't open automatically, <a href='" + mailtoUrl + "' style='color:#2563eb; font-weight:bold; text-decoration:underline;'>click here to send directly</a> or chat with us on <a href='https://wa.me/919496102026?text=" + encodeURIComponent("Hi Academic Hub, my name is " + name + ". " + message) + "' target='_blank' rel='noopener' style='color:#16a34a; font-weight:bold; text-decoration:underline;'>WhatsApp Support</a>.";
+      
+      // Trigger the mail client
+      window.location.href = mailtoUrl;
+      submitBtn.innerHTML = "<span>Email Drafted</span> <span aria-hidden='true'>✓</span>";
     }
   </script>
 </body>

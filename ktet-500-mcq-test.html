@@ -1354,7 +1354,7 @@
       K-TET <span>500 MCQs</span> Mega Practice Test
     </h1>
     <p class="hero-subtitle">
-      Complete, official exam-pattern assessment spanning all 5 structured parts with detailed pedagogical rationales, developmental theories, inclusive education, teaching methods, and subject pedagogies.
+      Complete independent exam-pattern practice test spanning all 5 structured parts with detailed pedagogical rationales, developmental theories, inclusive education, teaching methods, and subject pedagogies.
     </p>
 
     <!-- PARTS SELECTION TABS -->
@@ -1442,13 +1442,13 @@
       <label class="input-label" for="candidateName">Candidate Full Name</label>
       <div class="name-input-wrapper">
         <span class="name-input-icon">👤</span>
-        <input id="candidateName" type="text" autocomplete="off" maxlength="40" placeholder="Enter your full name to generate official K-TET report">
+        <input id="candidateName" type="text" autocomplete="off" maxlength="40" placeholder="Enter your full name to generate your practice report">
       </div>
       <div id="startError" class="start-error-msg">⚠️ Please enter your name to begin the assessment.</div>
 
       <div class="subject-pill-row">
         <span>Selected Scope: <b id="startScopeLabel">Complete 500 MCQs Mega Practice Pack</b></span>
-        <span class="subject-active-tag">✨ K-TET 2026 Certified</span>
+        <span class="subject-active-tag">✨ K-TET 2026 Practice Pack</span>
       </div>
     </div>
 
@@ -1457,7 +1457,7 @@
       <button id="startBtn" class="btn primary btn-start-large">
         Start K-TET Mock Test &nbsp;➔
       </button>
-      <span class="start-notice">🔒 Instant feedback on every question with official pedagogical rationale.</span>
+      <span class="start-notice">🔒 Instant feedback on every question with detailed pedagogical rationale.</span>
     </div>
   </section>
 
@@ -1540,13 +1540,13 @@
 
 
   <!-- ==========================================
-       PAGE 3: LAST PAGE (OFFICIAL RESULTS & REVIEW)
+       PAGE 3: LAST PAGE (PRACTICE RESULTS & REVIEW)
        ========================================== -->
   <section id="result" class="card hidden">
     <!-- Top Floating Toolbar -->
     <div class="result-top-toolbar">
       <div style="display:flex; gap:8px;">
-        <button id="saveReportBtn" class="btn primary">📥 Save Official Report</button>
+        <button id="saveReportBtn" class="btn primary">📥 Save Practice Report</button>
         <button id="printReportBtn" class="btn secondary">🖨️ Print / PDF</button>
       </div>
       <button id="restartBtn" class="btn danger">🔄 Retake Test</button>
@@ -1555,7 +1555,7 @@
     <!-- Prestigious Academic Header -->
     <header class="result-academic-header">
       <div class="report-brand-tag">Academic Hub · Kerala Teacher Eligibility Test</div>
-      <div class="report-sub-tag">KTET 2026 OFFICIAL MEGA PRACTICE PACK ASSESSMENT TRANSCRIPT</div>
+      <div class="report-sub-tag">KTET 2026 INDEPENDENT MEGA PRACTICE ASSESSMENT TRANSCRIPT</div>
       <h1 class="report-main-heading">K-TET PERFORMANCE RESULTS</h1>
     </header>
 
@@ -1576,13 +1576,13 @@
         </div>
         <div class="dossier-item">
           <span class="dossier-label">Qualifying Benchmark</span>
-          <span class="dossier-value">60% (Official Pass)</span>
+          <span class="dossier-value">60% (Practice Benchmark)</span>
         </div>
       </div>
 
       <!-- Grand Performance Scorecard -->
       <div class="grand-score-card">
-        <div class="grand-score-label">Official Aggregate Score</div>
+        <div class="grand-score-label">Practice Aggregate Score</div>
         <div class="grand-score-value">
           <span id="resScore">0</span>
           <span class="divider">/</span>
@@ -1629,7 +1629,7 @@
       <div id="reviewContainer"></div>
     </div>
 
-    <!-- Official Report Footer -->
+    <!-- Practice Report Footer -->
     <footer class="result-footer">
       <strong>ACADEMIC HUB K-TET EVALUATION SYSTEM</strong>
       Verified Teacher Eligibility Practice Assessment · Standardized across Kerala SCERT / Pareeksha Bhavan syllabus benchmarks.
@@ -2026,7 +2026,7 @@
         <div class="expl-section">
           <div class="expl-section-title expl-why-right-title">✅ Correct Answer: (${correctOpt.value}) ${correctText}</div>
           <div class="expl-highlight-correct">
-            <b>Official Pedagogical Explanation:</b><br>${explText}
+            <b>Pedagogical Explanation:</b><br>${explText}
           </div>
         </div>
 
@@ -2117,10 +2117,10 @@
     const pct = (correct / totalQ) * 100;
     const accuracy = attempted > 0 ? (correct / attempted) * 100 : 0;
 
-    showOfficialReport(correct, wrong, unanswered, attempted, pct, accuracy, auto);
+    showPracticeReport(correct, wrong, unanswered, attempted, pct, accuracy, auto);
   }
 
-  function showOfficialReport(correct, wrong, unanswered, attempted, pct, accuracy, auto) {
+  function showPracticeReport(correct, wrong, unanswered, attempted, pct, accuracy, auto) {
     switchScreen('result');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -2147,7 +2147,7 @@
       statusBadge.textContent = '🌟 DISTINCTION · HIGHLY QUALIFIED';
       statusBadge.className = 'status-badge-lg status-excellent';
     } else if (pct >= 60) {
-      statusBadge.textContent = '🏅 QUALIFIED (OFFICIAL PASS)';
+      statusBadge.textContent = '🏅 QUALIFIED (BENCHMARK MET)';
       statusBadge.className = 'status-badge-lg status-good';
     } else if (pct >= 55) {
       statusBadge.textContent = '⚠️ RESERVED CATEGORY PASS';
@@ -2255,7 +2255,7 @@
   $('printReportBtn').addEventListener('click', () => window.print());
 
   $('saveReportBtn').addEventListener('click', () => {
-    const reportText = `ACADEMIC HUB — K-TET 500 MCQs OFFICIAL REPORT
+    const reportText = `ACADEMIC HUB — K-TET 500 MCQs PRACTICE REPORT
 Candidate Name: ${candidateName}
 Scope: ${$('resScope').textContent}
 Score: ${$('resScore').textContent} / ${$('resTotal').textContent} (${$('resPct').textContent})
