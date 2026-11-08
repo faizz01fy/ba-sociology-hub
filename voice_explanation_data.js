@@ -33,20 +33,21 @@ window.VOICE_EXPLANATIONS_DATA = {
             "videos": [
                 {
                     "chapterNumber": "Unit 6",
-                    "title": "പ്രാചീന ശിലായുഗ മനുഷ്യവാസ കേന്ദ്രങ്ങൾ (Pre-Historic Settlements in Kerala)",
-                    "chapter": "Unit 6: Pre-historic settlements – Palaeolithic, Mesolithic, Neolithic Centers in Kerala",
-                    "duration": "07:08",
-                    "thumbnail": "https://i.ytimg.com/vi/rgGBW5NKUgc/hqdefault.jpg",
-                    "youtubeId": "rgGBW5NKUgc",
-                    "videoUrl": null,
+                    "title": "പ്രാചീന ശിലായുഗ മനുഷ്യവാസ കേന്ദ്രങ്ങൾ: പാലിയോലിത്തിക്, മെസോലിത്തിക്, നിയോലിത്തിക് · Masterclass",
+                    "chapter": "Unit 6: Pre-historic Settlements – Palaeolithic, Mesolithic, Neolithic Centres in Kerala · Two-Speaker Natural Dialogue",
+                    "duration": "13:15",
+                    "thumbnail": "https://i.ytimg.com/vi/0g9YiJ86L7k/hqdefault.jpg",
+                    "youtubeId": "0g9YiJ86L7k",
+                    "videoUrl": "https://www.youtube.com/watch?v=0g9YiJ86L7k",
                     "language": "Malayalam",
                     "studyPoints": [
-                        "<strong>ശിലായുഗ ഘട്ടങ്ങൾ:</strong> പാലിയോലിത്തിക് (പഴയ ശിലായുഗം), മെസോലിത്തിക് (മധ്യശിലായുഗം), നിയോലിത്തിക് (നവീന ശിലായുഗം) എന്നിവയുടെ കേരളത്തിലെ സാന്നിധ്യം.",
-                        "<strong>പാലിയോലിത്തിക് കേന്ദ്രങ്ങൾ:</strong> പാലക്കാട് മങ്കര, വള്ളുവനാട്, നിലമ്പൂർ, വയനാട് എന്നിവിടങ്ങളിൽ നിന്ന് ക്വാർട്സൈറ്റ് നിർമ്മിത കല്ലുരുളൻ ആയുധങ്ങൾ (Pebble Tools, Handaxes, Choppers) കണ്ടെത്തി.",
-                        "<strong>മെസോലിത്തിക് (മൈക്രോലിത്തുകൾ):</strong> തെന്മല (Tenmala Rock Shelter - തെക്കേ ഇന്ത്യയിലെ ആദ്യത്തെ സ്ഥിരീകരിക്കപ്പെട്ട മെസോലിത്തിക് വാസസ്ഥലം, ഡോ. പി. രാജേന്ദ്രൻ), ചെമ്പ്രാമ്പീടിക എന്നിവിടങ്ങളിലെ സൂക്ഷ്മ ശിലായുധങ്ങൾ.",
-                        "<strong>നിയോലിത്തിക് സംസ്കാരം:</strong> മിനുസപ്പെടുത്തിയ കല്ലുകത്തികൾ (Polished Celts), ചുറ്റികകൾ, കൽക്കോടാലികൾ. പുല്ലൂർ, ആലുവ, എടയ്ക്കൽ താഴ്‌വര എന്നിവിടങ്ങളിലെ കാർഷികോല്പാദനത്തിന്റെ തുടക്കം."
+                        "<strong>ശിലായുഗ ഘട്ടങ്ങൾ:</strong> പാലിയോലിത്തിക് (പഴയ ശിലായുഗം), മെസോലിത്തിക് (മധ്യശിലായുഗം), നിയോലിത്തിക് (നവീന ശിലായുഗം) എന്നിവയുടെ കേരളത്തിലെ സാന്നിധ്യം. ശാസ്ത്രീയ പഠനങ്ങളിലൂടെ യൂറോസെൻട്രിക് തെറ്റിദ്ധാരണകൾ തിരുത്തപ്പെട്ടു.",
+                        "<strong>പാലിയോലിത്തിക് കണ്ടെത്തലുകൾ:</strong> വാളയാർ, കാഞ്ഞിരപ്പുഴ, അട്ടപ്പാടി, പാലക്കാട് ചുരം തടങ്ങളിൽ നിന്ന് കണ്ടെത്തിയ ക്വാർട്സ് ചോപ്പർ ടൂളുകൾ (Pebble & Flake Tools).",
+                        "<strong>മെസോലിത്തിക് സൂക്ഷ്മ ശിലായുധങ്ങൾ (Microliths):</strong> കൊല്ലം തെന്മല റോക്ക് ഷെൽട്ടർ (Dr. P. Rajendran, 5200 BP), ഭാരതപ്പുഴ തടങ്ങൾ, ക്വാർട്സ് ഫ്ലിന്റുകൾ കൊണ്ട് നിർമ്മിച്ച കമ്പോസിറ്റ് ആയുധങ്ങൾ.",
+                        "<strong>നിയോലിത്തിക് വിപ്ലവവും കാർഷിക തുടക്കവും:</strong> 1891-ൽ ഫിലിപ്പ് ലേക്ക് (Philip Lake) വയനാട്ടിൽ കണ്ടെത്തിയ മിനുസപ്പെടുത്തിയ കൽക്കോടാലികൾ (Polished Celts), പുൽപ്പള്ളി, കുന്നൂർമേട്, മറയൂരിലെ കന്നുകാലി വളർത്തൽ ശിലാചിത്രങ്ങൾ.",
+                        "<strong>സാംസ്കാരിക തുടർച്ച & ശിലാചിത്രങ്ങൾ:</strong> എടയ്ക്കൽ, മറയൂർ എന്നിവിടങ്ങളിലെ മെസോലിത്തിക്, നിയോലിത്തിക്, മഹാശിലായുഗ ഘട്ടങ്ങളുടെ ബഹുതല സങ്കലനം (Rock Art Overlap)."
                     ],
-                    "examTip": "ഡോ. പി. രാജേന്ദ്രന്റെ നേതൃത്വത്തിൽ തെന്മല റോക്ക് ഷെൽട്ടറിൽ നടത്തിയ മെസോലിത്തിക് കണ്ടെത്തലുകളും കാലഗണനയും (Wood Charcoal C-14 ഡേറ്റിംഗ് 5210 BP) പരീക്ഷയ്ക്ക് പ്രധാനമാണ്."
+                    "examTip": "കാലിക്കറ്റ് സർവ്വകലാശാല BA ഹിസ്റ്ററി പരീക്ഷയിലെ 3 മാർക്ക് (Pleistocene, Microliths), 6 മാർക്ക് (Rock Art significance), 10 മാർക്ക് എസ്സേ (Prehistoric evidence in Keralam) എന്നിവയ്ക്ക് ഉദ്ധരണികളും പുരാവസ്തു കേന്ദ്രങ്ങളും സഹിതം എഴുതുക."
                 },
                 {
                     "chapterNumber": "Unit 7",
