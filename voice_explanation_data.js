@@ -12,9 +12,9 @@ window.VOICE_EXPLANATIONS_DATA = {
                     "chapterNumber": "Unit 1 - 5",
                     "title": "കേരളത്തിന്റെ ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Kerala Landscape & Environment) · Masterclass",
                     "chapter": "Unit 1: Region · Unit 2: Western Ghats & Passes · Unit 3: Indian Ocean, Rivers, Backwaters, Beaches · Unit 4: Soils & Monsoons · Unit 5: Flora & Fauna",
-                    "duration": "15:34",
-                    "thumbnail": "https://i.ytimg.com/vi/f78OKry81CA/hqdefault.jpg",
-                    "youtubeId": "f78OKry81CA",
+                    "duration": "18:32",
+                    "thumbnail": "https://i.ytimg.com/vi/hIw0qglyEUA/maxresdefault.jpg",
+                    "youtubeId": "hIw0qglyEUA",
                     "videoUrl": null,
                     "language": "Malayalam",
                     "studyPoints": [
@@ -239,7 +239,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 01",
             "title": "ചെറുകഥ: പൂവമ്പഴം — കാരൂർ നീലകണ്ഠപ്പിള്ള",
             "chapter": "മലയാള ചെറുകഥാ ചരിത്രം · ജന്മി-കുടിയാൻ ബന്ധം · ആത്തേരമ്മയുടെ ആത്മസംഘർഷങ്ങൾ",
-            "duration": "15:34",
+            "duration": "18:32",
             "youtubeId": "yS7Z8-7CQJ8",
             "thumbnail": "https://i.ytimg.com/vi/yS7Z8-7CQJ8/hqdefault.jpg",
             "videoUrl": null,
@@ -1132,7 +1132,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: സിംബോളിക് AI-യും കണക്ഷനിസവും തമ്മിലുള്ള ദാർശനികവും സാങ്കേതികവുമായ വ്യത്യാസങ്ങൾ താരതമ്യം ചെയ്യുക.",
             "thumbnail": "https://i.ytimg.com/vi/Vq-Bc0TI7L0/hqdefault.jpg",
-            "videoUrl": "Vq-Bc0TI7L0"
+            "videoUrl": "https://www.youtube.com/watch?v=Vq-Bc0TI7L0"
           },
           {
             "chapterNumber": "Unit 1.5",
@@ -1149,7 +1149,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University ചോദ്യം: അലൻ ട്യൂറിംഗിന്റെ 'ഇമിറ്റേഷൻ ഗെയിം' സിദ്ധാന്തവും അതിനെതിരെയുള്ള പ്രധാന ദാർശനിക വിമർശനങ്ങളും വിലയിരുത്തുക.",
             "thumbnail": "https://i.ytimg.com/vi/1Va07j8OQSA/hqdefault.jpg",
-            "videoUrl": "1Va07j8OQSA"
+            "videoUrl": "https://www.youtube.com/watch?v=1Va07j8OQSA"
           }
         ]
       },
@@ -1255,10 +1255,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 3.1 b",
             "title": "ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Sources of Valid Knowledge in Indian Philosophy & AI: Epistemology, Pratyakṣa & Anumāna)",
             "chapter": "Unit 3.1 b: Epistemology & AI · Dignāga, Dharmakīrti & Apoha Theory · Two-Speaker Conversational Masterclass",
-            "duration": "",
-            "youtubeId": "",
-            "thumbnail": "",
-            "videoUrl": "",
+            "duration": "15:02",
+            "youtubeId": "626Pz--vDxk",
+            "thumbnail": "https://i.ytimg.com/vi/626Pz--vDxk/hqdefault.jpg",
+            "videoUrl": "https://www.youtube.com/watch?v=626Pz--vDxk",
             "language": "Malayalam (Two-Speaker Conversational Masterclass)",
             "studyPoints": [
               "ബുദ്ധമതത്തിലെ രണ്ട് പ്രമാണങ്ങൾ: ദിങ്നാഗനും (Pramāṇasamuccaya) ധർമ്മകീർത്തിയും (Nyāyabindu) ശബ്ദപ്രമാണത്തെ നിരാകരിച്ച് പ്രത്യക്ഷവും (Pratyakṣa) അനുമാനവും (Anumāna) മാത്രം അംഗീകരിച്ചു.",
@@ -2106,7 +2106,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Law of Diminishing Marginal Utility & Equi-Marginal Utility (Full Masterclass)",
             "duration": "23:25",
             "youtubeId": "Jj-JWuNJjRU",
-            "videoUrl": "Jj-JWuNJjRU",
+            "videoUrl": "https://www.youtube.com/watch?v=Jj-JWuNJjRU",
             "thumbnail": "https://i.ytimg.com/vi/Jj-JWuNJjRU/hqdefault.jpg",
             "studyPoints": [
               "<strong>കാർഡിനൽ പ്രയോജന സിദ്ധാന്തം:</strong> സംതൃപ്തിയെ യൂട്ടിൽസ് എന്ന സംഖ്യാ രൂപത്തിൽ അളക്കാമെന്ന് ആൽഫ്രഡ് മാർഷൽ സമർത്ഥിക്കുന്നു.",
@@ -2147,7 +2147,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>ഉപഭോക്തൃ സന്തുലിതാവസ്ഥ:</strong> ഇൻഡിഫറൻസ് കർവിന്റെ ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ പരമാവധി സംതൃപ്തി ലഭിക്കുന്നു."
             ],
             "examTip": "ബജറ്റ് രേഖയുടെ ചെരിവ് -Px/Py നിർണ്ണയിക്കുന്ന രീതിയും വിലമാറ്റവും വരുമാന മാറ്റവും തമ്മിലുള്ള ഗ്രാഫിക്കൽ വ്യത്യാസവും 6/10 മാർക്ക് ചോദ്യങ്ങളായി ആവർത്തിച്ചു വരാറുണ്ട്.",
-            "videoUrl": "9H8683I4Ad8",
+            "videoUrl": "https://www.youtube.com/watch?v=9H8683I4Ad8",
             "language": "Malayalam"
           },
           {
@@ -2156,7 +2156,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Optimal Bundle, Tangency MRS = Px/Py, Convexity & Demand Derivation",
             "duration": "12:18",
             "youtubeId": "3j8tc5c3vrg",
-            "videoUrl": "3j8tc5c3vrg",
+            "videoUrl": "https://www.youtube.com/watch?v=3j8tc5c3vrg",
             "thumbnail": "https://i.ytimg.com/vi/3j8tc5c3vrg/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
