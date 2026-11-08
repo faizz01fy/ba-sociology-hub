@@ -113,20 +113,20 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     // Option A: Prune/Externalize third-party and raw university LMS PDFs
-    const pathLower = url.pathname.toLowerCase();
-    if (pathLower.endsWith('.pdf')) {
-      if (pathLower.includes('notesphere') || 
-          pathLower.includes('literarypracticeinmalayalam') || 
-          pathLower.includes('microeconomics_questions_and_answers') ||
-          pathLower.includes('module4_t1783445288761')) {
+    const pdfPathLower = url.pathname.toLowerCase();
+    if (pdfPathLower.endsWith('.pdf')) {
+      if (pdfPathLower.includes('notesphere') || 
+          pdfPathLower.includes('literarypracticeinmalayalam') || 
+          pdfPathLower.includes('microeconomics_questions_and_answers') ||
+          pdfPathLower.includes('module4_t1783445288761')) {
         
-        if (pathLower.includes('literarypracticeinmalayalam') || pathLower.includes('module4_t1783445288761')) {
+        if (pdfPathLower.includes('literarypracticeinmalayalam') || pdfPathLower.includes('module4_t1783445288761')) {
           return Response.redirect("https://academichubfaiz.in/mal-guide", 301);
-        } else if (pathLower.includes('microeconomics_questions_and_answers')) {
+        } else if (pdfPathLower.includes('microeconomics_questions_and_answers')) {
           return Response.redirect("https://academichubfaiz.in/micro-reading", 301);
-        } else if (pathLower.includes('notesphere-history')) {
+        } else if (pdfPathLower.includes('notesphere-history')) {
           return Response.redirect("https://academichubfaiz.in/hist-reading", 301);
-        } else if (pathLower.includes('notesphere-arabic')) {
+        } else if (pdfPathLower.includes('notesphere-arabic')) {
           return Response.redirect("https://academichubfaiz.in/arabic-reading", 301);
         } else {
           return Response.redirect("https://sde.uoc.ac.in/", 302);
