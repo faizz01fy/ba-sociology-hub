@@ -112,6 +112,28 @@ function unavailableLmsPdfResponse(request) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    // Option A: Prune/Externalize third-party and raw university LMS PDFs
+    const pathLower = url.pathname.toLowerCase();
+    if (pathLower.endsWith('.pdf')) {
+      if (pathLower.includes('notesphere') || 
+          pathLower.includes('literarypracticeinmalayalam') || 
+          pathLower.includes('microeconomics_questions_and_answers') ||
+          pathLower.includes('module4_t1783445288761')) {
+        
+        if (pathLower.includes('literarypracticeinmalayalam') || pathLower.includes('module4_t1783445288761')) {
+          return Response.redirect("https://academichubfaiz.in/mal-guide", 301);
+        } else if (pathLower.includes('microeconomics_questions_and_answers')) {
+          return Response.redirect("https://academichubfaiz.in/micro-reading", 301);
+        } else if (pathLower.includes('notesphere-history')) {
+          return Response.redirect("https://academichubfaiz.in/hist-reading", 301);
+        } else if (pathLower.includes('notesphere-arabic')) {
+          return Response.redirect("https://academichubfaiz.in/arabic-reading", 301);
+        } else {
+          return Response.redirect("https://sde.uoc.ac.in/", 302);
+        }
+      }
+    }
+
     const cfVisitor = request.headers.get("cf-visitor") || "";
     const isHttp = url.protocol === "http:" || 
                    request.headers.get("x-forwarded-proto") === "http" || 
