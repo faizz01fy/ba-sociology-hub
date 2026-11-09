@@ -2262,6 +2262,25 @@ window.VOICE_EXPLANATIONS_DATA = {
       "moduleName": "MODULE 03: PRODUCTION AND COST FUNCTIONS",
       "videos": [
         {
+          "chapterNumber": "Unit 10",
+          "title": "Unit 10: The Ownership & Management of Firms (ഉടമസ്ഥതയും മാനേജ്‌മെന്റും)",
+          "chapter": "Sole Proprietorship, Partnership, Corporation, Limited Liability, Principal-Agent Problem & Profit Maximization",
+          "duration": "15:37",
+          "youtubeId": "W6b1q1WUJbo",
+          "videoUrl": "https://www.youtube.com/watch?v=W6b1q1WUJbo",
+          "thumbnail": "https://i.ytimg.com/vi/W6b1q1WUJbo/hqdefault.jpg",
+          "language": "Malayalam",
+          "studyPoints": [
+            "<strong>സ്ഥാപനത്തിന്റെ നിർവചനം (A Firm):</strong> ഉത്പാദനോപാധികളായ ഭൂമി, അധ്വാനം, മൂലധനം എന്നിവ സംയോജിപ്പിച്ച് വിപണിയിൽ വിൽക്കാനായി സാധനങ്ങളും സേവനങ്ങളും നിർമ്മിക്കുന്ന അടിസ്ഥാന സാമ്പത്തിക യൂണിറ്റാണ് സ്ഥാപനം.",
+            "<strong>ഉടമസ്ഥതയുടെ 3 മേഖലകൾ:</strong> സ്വകാര്യ ഫോർ-പ്രോഫിറ്റ് സ്ഥാപനങ്ങൾ (Private), പൊതു ജനക്ഷേമ സംരംഭങ്ങൾ (Public), ലാഭ വിതരണ നിരോധനമുള്ള ചാരിറ്റബിൾ സ്ഥാപനങ്ങൾ (Non-profit Organizations).",
+            "<strong>ഏകാംഗ ഉടമസ്ഥത (Sole Proprietorship):</strong> ഒറ്റ വ്യക്തിയുടെ പൂർണ്ണ നിയന്ത്രണവും തീരുമാനങ്ങളിലെ വേഗതയും; എന്നാൽ പരിധിയില്ലാത്ത ബാധ്യതയും (Unlimited Liability) പരിമിതമായ മൂലധനവും ഇതിന്റെ പോരായ്മകളാണ്.",
+            "<strong>കോർപ്പറേഷനും പരിമിത ബാധ്യതയും (Limited Liability):</strong> ഉടമകളിൽ നിന്ന് സ്വതന്ത്രമായ നിയമപരമായ വ്യക്തിത്വവും (Separate Legal Entity), ശാശ്വത നിലനിൽപ്പും (Perpetual Succession). ഓഹരി ഉടമകളുടെ ബാധ്യത നിക്ഷേപിച്ച തുകയിൽ മാത്രമായി പരിമിതപ്പെടുത്തിയിരിക്കുന്നു.",
+            "<strong>പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രശ്നം:</strong> ഓഹരി ഉടമകളും (Principals) പ്രൊഫഷണൽ മാനേജർമാരും (Agents) തമ്മിൽ ഉടമസ്ഥതയും നിയന്ത്രണവും വേർതിരിയുമ്പോൾ ഉടലെടുക്കുന്ന താൽപ്പര്യ വൈരുദ്ധ്യം; സ്റ്റോക്ക് ഓപ്ഷനുകളിലൂടെയും ബോണസുകളിലൂടെയും ഇത് ലഘൂകരിക്കപ്പെടുന്നു.",
+            "<strong>ലാഭം പരമാവധിയാക്കൽ (Profit Maximization):</strong> സാമ്പത്തിക സിദ്ധാന്തത്തിൽ സ്ഥാപനങ്ങളുടെ പ്രാഥമിക ലക്ഷ്യം. ആകെ വരുമാനത്തിൽ നിന്ന് ആകെ ചെലവ് കുറയ്ക്കുമ്പോൾ ലഭിക്കുന്ന ലാഭം (π = TR - TC) വിഭവ കാര്യക്ഷമതയുടെ അളവുകോലാണ്."
+          ],
+          "examTip": "ലിമിറ്റഡ് ലയബിലിറ്റിയുടെ പ്രാധാന്യം, സോൾ പ്രൊപ്രൈറ്റർഷിപ്പും കോർപ്പറേഷനും തമ്മിലുള്ള വ്യത്യാസം, പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രതിസന്ധി, ലാഭ സമവാക്യം (π = TR - TC) എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന പ്രധാന ചോദ്യങ്ങളാണ്."
+        },
+        {
           "chapterNumber": "Unit 07",
           "title": "Production with One Variable Input",
           "chapter": "Law of Variable Proportions & Three Stages of Production",
