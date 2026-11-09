@@ -510,7 +510,7 @@ export default {
           element(el) {
             const pauseAds = requiresConsent ? ' (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;' : '';
             el.prepend(`<script>window.HUB_IS_EUROPE = ${requiresConsent};${pauseAds}</script>`, { html: true });
-            el.append('<script src="/consent-banner.js?v=20261110"></script>', { html: true });
+            el.append('<script src="/consent-banner.js?v=20261110b"></script>', { html: true });
 
 
             // Standard AdSense script on all monetized content pages (loads published Google CMP message & ads)

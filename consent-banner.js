@@ -9,7 +9,7 @@
   }
 
   window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
+  function gtag() { window.dataLayer.push(arguments); }
   window.gtag = gtag;
 
   const isEurope = typeof window.HUB_IS_EUROPE !== 'undefined' ? window.HUB_IS_EUROPE : false;
@@ -50,8 +50,7 @@
     'wait_for_update': 500
   });
 
-  const ads = window.adsbygoogle = window.adsbygoogle || [];
-  ads.pauseAdRequests = 1;
+  (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
   let listening = false;
 
   function connectCMP() {
@@ -63,6 +62,7 @@
 
         const purposes = tcData.purpose?.consents;
         const allowsStorage = tcData.vendor?.consents?.[755] === true && purposes?.[1] === true;
+        const ads = window.adsbygoogle = window.adsbygoogle || [];
         ads.pauseAdRequests = 1;
         if (allowsStorage) {
           ads.requestNonPersonalizedAds = purposes[3] === true && purposes[4] === true ? 0 : 1;
@@ -75,7 +75,7 @@
     if (!button || typeof window.googlefc?.showRevocationMessage !== 'function') return false;
     if (button.hidden) {
       button.addEventListener('click', function() {
-        ads.pauseAdRequests = 1;
+        (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
         window.googlefc.showRevocationMessage();
       });
       button.hidden = false;
