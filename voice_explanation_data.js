@@ -2107,231 +2107,231 @@ window.VOICE_EXPLANATIONS_DATA = {
     "totalVideos": 16
   },
   "microeconomic-foundation": {
-    "name": "Microeconomic Foundation",
-    "badge": "₹",
-    "iconClass": "icon-blue",
-    "tag": "Minor Course",
-    "modules": [
-      {
-        "moduleName": "MODULE 01: SUPPLY AND DEMAND ANALYSIS",
-        "videos": [
-          {
-            "chapterNumber": "Unit 01",
-            "title": "Demand: Law, Determinants, Curves & Market Demand",
-            "chapter": "Module 1 · Unit 1 · Malayalam Gemini voice review",
-            "duration": "6:10",
-            "youtubeId": "Mu1Ktkzr_ME",
-            "videoUrl": "/micro-demand-review.html",
-            "thumbnail": "/thumbnails/micro-demand-review.png",
-            "studyPoints": [
-              "ഡിമാൻഡ് എന്നത് വാങ്ങാനുള്ള ആഗ്രഹവും അതോടൊപ്പം വില നൽകാനുള്ള സാമ്പത്തിക ശേഷിയും (purchasing power) ചേർന്നതാണ്.",
-              "മറ്റ് ഘടകങ്ങൾ സ്ഥിരമായിരിക്കുമ്പോൾ വില കൂടുമ്പോൾ ഡിമാൻഡ് കുറയുകയും വില കുറയുമ്പോൾ ഡിമാൻഡ് കൂടുകയും ചെയ്യുന്നു (Law of Demand).",
-              "ഇൻകം ഇഫക്ട്, സബ്സ്റ്റിറ്റ്യൂഷൻ ഇഫക്ട്, ഡിമിനിഷിംഗ് മാർജിനൽ യൂട്ടിലിറ്റി എന്നിവയാണ് ഡിമാൻഡ് കർവിന്റെ നെഗറ്റീവ് സ്ലോപ്പിന് കാരണം.",
-              "കൺസ്പിക്വസ് ഗുഡ്സ്, ഗിഫൻ ഗുഡ്സ്, ഭാവിയിലെ വിലയെക്കുറിച്ചുള്ള പ്രതീക്ഷകൾ എന്നിവ ഡിമാൻഡ് നിയമത്തിനുള്ള അപവാദങ്ങളാണ്.",
-              "സബ്സ്റ്റിറ്റ്യൂട്ട് സാധനങ്ങളുടെ വില കൂടിയാൽ ഡിമാൻഡ് കർവ് വലത്തോട്ടും, കോംപ്ലിമെന്ററി സാധനങ്ങളുടെ വില കൂടിയാൽ ഡിമാൻഡ് കർവ് ഇടത്തോട്ടും ഷിഫ്റ്റ് ചെയ്യുന്നു.",
-              "വരുമാനം കൂടുമ്പോൾ നോർമൽ ഗുഡ്സിന്റെ ഡിമാൻഡ് വർദ്ധിക്കുകയും ഇൻഫീരിയർ ഗുഡ്സിന്റെ ഡിമാൻഡ് കുറയുകയും ചെയ്യുന്നു.",
-              "വ്യക്തിഗത ഡിമാൻഡ് കർവുകളുടെ തിരശ്ചീനമായ കൂട്ടിച്ചേർക്കലാണ് (Horizontal Summation) മാർക്കറ്റ് ഡിമാൻഡ് കർവ് രൂപീകരിക്കുന്നത്.",
-              "വിലയിലെ മാറ്റം കർവിലൂടെയുള്ള മൂവ്മെന്റിനും (Expansion/Contraction) മറ്റ് ഘടകങ്ങളിലെ മാറ്റം കർവിന്റെ ഷിഫ്റ്റിനും (Increase/Decrease) കാരണമാകുന്നു."
-            ],
-            "examTip": "പരീക്ഷയിൽ 'Movement along the Demand Curve' ഉം 'Shift in Demand Curve' ഉം തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, സ്വന്തം വിലയിലെ മാറ്റം മൂലമുണ്ടാകുന്ന മാറ്റത്തെ Change in Quantity Demanded (Expansion അല്ലെങ്കിൽ Contraction) എന്നും, വിലയൊഴികെയുള്ള മറ്റ് ഘടകങ്ങളിലെ മാറ്റം വഴി കർവ് പൂർണ്ണമായി മാറുന്നതിനെ Change in Demand (Increase അല്ലെങ്കിൽ Decrease) എന്നും പ്രത്യേകം ഗ്രാഫ് വരച്ച് വ്യക്തമാക്കുക."
-          },
-          {
-            "chapterNumber": "Unit 02",
-            "title": "Supply — Complete LMS Review",
-            "chapter": "All LMS sections, examples & MCQs · English terms/formulas + Malayalam explanation",
-            "duration": "14:51",
-            "youtubeId": "CylKbnNZtm0",
-            "videoUrl": "/micro-unit2-review.html",
-            "thumbnail": "/thumbnails/micro-unit-2-review.png",
-            "studyPoints": [
-              "Supply Definition (ഏതെങ്കിലും സാധനത്തിന്റെ അളവ്, വില, സമയം)",
-              "Supply Function (SX = f(PX, PZ, T, C, GP))",
-              "Substitute Goods in Production (ഉൽപ്പാദനത്തിലെ പകരക്കാർ)",
-              "Technological Progress & Marginal Cost (സാങ്കേതിക പുരോഗതിയും ഉൽപ്പാദനച്ചെലവും)",
-              "Input Prices & Government Policy (ഉൽപ്പാദന ഘടകങ്ങളുടെ വിലയും സർക്കാറിന്റെ നികുതി നയവും)",
-              "Law of Supply & Ceteris Paribus (വിതരണ നിയമം)",
-              "Supply Schedule & Curve (വിതരണ പട്ടികയും ഗ്രാഫും)",
-              "Upward Sloping Curve Reasons (കുത്തനെ ഉയരുന്ന വിതരണ വക്രത്തിന് കാരണങ്ങൾ)",
-              "Market Supply & Horizontal Summation (വിപണി വിതരണം)",
-              "Movement Along Curve (വിതരണ വക്രത്തിലെ ചലനങ്ങളും വിപുലീകരണവും ചുരുങ്ങലും)",
-              "Shift in Supply Curve (വിതരണ വക്രത്തിലെ വ്യതിചലനവും വർദ്ധനവും കുറവും)",
-              "Multiple Choice Questions Review (ഒന്നിലധികം തിരഞ്ഞെടുപ്പ് ചോദ്യങ്ങൾ)"
-            ],
-            "examTip": "Remember that a movement along the supply curve is caused solely by the commodity's own price changes, whereas shifts in the entire supply curve are caused by non-price determinants like technology, input costs, and taxes."
-          },
-          {
-            "chapterNumber": "Unit 03",
-            "title": "Market Equilibrium — Complete LMS Review",
-            "chapter": "All LMS sections, examples & MCQs · English terms/formulas + Malayalam explanation",
-            "duration": "15:50",
-            "youtubeId": "zJsY7Sbx2To",
-            "videoUrl": "/micro-unit3-review.html",
-            "thumbnail": "/thumbnails/micro-unit-3-review.png",
-            "studyPoints": [
-              "Market Equilibrium: Qd equals Qs",
-              "Equilibrium Price: P star and Q star",
-              "Shortage Equation: Shortage equals Qd minus Qs",
-              "Surplus Equation: Surplus equals Qs minus Qd",
-              "Demand Function: Dx equals f of Px, Py, T, Y, A, N, Ep, and U",
-              "Supply Function: SX equals f of PX, PZ, T, C, and GP",
-              "Algebraic Demand: Qd equals 160 minus 40p",
-              "Algebraic Supply: Qs equals 50 plus 15p",
-              "Market Demand: QDx equals 120,000 minus 20,000 Px",
-              "Market Supply: QSx equals 20,000 Px",
-              "Equilibrium Solution: Px equals 3 dollars",
-              "Market Equilibrium Quantity: 60,000 units"
-            ],
-            "examTip": "Always remember that market equilibrium occurs strictly where quantity demanded equals quantity supplied, with no surplus or shortage creating any further pressure on price."
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 02: CONSUMER CHOICE THEORY",
-        "videos": [
-          {
-            "chapterNumber": "Unit 04",
-            "title": "Cardinal vs Ordinal Utility Analysis (പ്രയോജന സിദ്ധാന്തങ്ങൾ)",
-            "chapter": "Law of Diminishing Marginal Utility & Equi-Marginal Utility (Full Masterclass)",
-            "duration": "23:25",
-            "youtubeId": "Jj-JWuNJjRU",
-            "videoUrl": "https://www.youtube.com/watch?v=Jj-JWuNJjRU",
-            "thumbnail": "https://i.ytimg.com/vi/Jj-JWuNJjRU/hqdefault.jpg",
-            "studyPoints": [
-              "<strong>കാർഡിനൽ പ്രയോജന സിദ്ധാന്തം:</strong> സംതൃപ്തിയെ യൂട്ടിൽസ് എന്ന സംഖ്യാ രൂപത്തിൽ അളക്കാമെന്ന് ആൽഫ്രഡ് മാർഷൽ സമർത്ഥിക്കുന്നു.",
-              "<strong>സീമാന്ത പ്രയോജന ക്ഷയ നിയമം (Law of DMU):</strong> തുടർച്ചയായ ഉപഭോഗം നടക്കുമ്പോൾ ഓരോ അധിക യൂണിറ്റിൽ നിന്നും ലഭിക്കുന്ന സംതൃപ്തി (MU) കുറഞ്ഞുവരുന്നു. MU പൂജ്യമാകുമ്പോൾ TU പരമാവധിയിലെത്തുന്നു.",
-              "<strong>സമ-സീമാന്ത പ്രയോജന നിയമം (Equi-Marginal Utility):</strong> വരുമാനം വിവിധ സാധനങ്ങൾക്കായി വിഭജിക്കുമ്പോൾ <code>MU_x / Px = MU_y / Py</code> ആകുമ്പോൾ പരമാവധി സംതൃപ്തി ലഭിക്കുന്നു (Gossen's 2nd Law).",
-              "<strong>ഓർഡിനൽ സമീപനവും ഉദാസീന വക്രങ്ങളും:</strong> ഹിക്സും അലനും വികസിപ്പിച്ച ഓർഡിനൽ സിദ്ധാന്തത്തിൽ സംതൃപ്തിയെ റാങ്ക് ചെയ്യുന്നു. ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ സന്തുലിതാവസ്ഥ കൈവരുന്നു.",
-              "<strong>സീമാന്ത പ്രതിസ്ഥാപന നിരക്ക് (MRS):</strong> ഡിമിനിഷിംഗ് എം.ആർ.എസ് നിയമം കാരണം ഉദാസീന വക്രങ്ങൾ ഒറിജിനിലേക്ക് കോൺവെക്സ് ആയിരിക്കുന്നു."
-            ],
-            "examTip": "ആൽഫ്രഡ് മാർഷലിന്റെ ഡിമിനിഷിംഗ് മാർജിനൽ യൂട്ടിലിറ്റി നിയമം, ഗോസ്സന്റെ രണ്ടാം നിയമം, TU-വും MU-വും തമ്മിലുള്ള ഗ്രാഫിക്കൽ ബന്ധം എന്നിവ പരീക്ഷയ്ക്ക് 6 മാർക്കിനും 10 മാർക്കിനും നിർബന്ധമായും ചോദിക്കുന്ന ഭാഗങ്ങളാണ്.",
-            "language": "Malayalam"
-          },
-          {
-            "chapterNumber": "Unit 05",
-            "title": "Indifference Curve Analysis & Marginal Rate of Substitution",
-            "chapter": "Properties of IC Curves, Marginal Rate of Substitution & Preference Maps",
-            "duration": "18:15",
-            "youtubeId": "z8tbT2SiepA",
-            "thumbnail": "/thumbnails/Consumer_Preferences_Mod2_Unit6_Thumbnail.png",
-            "studyPoints": [
-              "<strong>Indifference Curve (IC):</strong> Represents locus of all commodity bundles providing identical levels of overall satisfaction.",
-              "<strong>Marginal Rate of Substitution (MRS):</strong> The rate at which a consumer trades good Y for good X: MRS_xy = -dy/dx = MUx/MUy.",
-              "<strong>Four Properties of ICs:</strong> Downward sloping, convex to the origin due to diminishing MRS, non-intersecting due to transitivity, and higher curves denote greater utility."
-            ],
-            "examTip": "Calicut University Core: 'Explain why two indifference curves cannot intersect by utilizing the axioms of transitivity and non-satiation'."
-          },
-          {
-            "chapterNumber": "Unit 08",
-            "title": "Unit 8: Budget Constraint (ബജറ്റ് പരിമിതി) & Consumer Equilibrium",
-            "chapter": "Slope (-Px/Py), Opportunity Set, Price & Income Shifts, MRS Tangency",
-            "duration": "10:34",
-            "youtubeId": "9H8683I4Ad8",
-            "thumbnail": "https://i.ytimg.com/vi/9H8683I4Ad8/hqdefault.jpg",
-            "studyPoints": [
-              "<strong>ബജറ്റ് സമവാക്യവും ഇന്റർസെപ്റ്റുകളും:</strong> <code>Px·Qx + Py·Qy = M</code>. വെർട്ടിക്കൽ ഇന്റർസെപ്റ്റ് <code>M/Py</code>, ഹൊറിസോണ്ടൽ ഇന്റർസെപ്റ്റ് <code>M/Px</code>.",
-              "<strong>ചെരിവും അവസരച്ചെലവും:</strong> <code>Slope = -Px/Py</code>. വില അനുപാതം വിപണിയിലെ പ്രതിസ്ഥാപന നിരക്കിനെയും അവസരച്ചെലവിനെയും സൂചിപ്പിക്കുന്നു.",
-              "<strong>വിലമാറ്റങ്ങൾ (Rotation):</strong> ഒരു സാധനത്തിന്റെ വില മാറുമ്പോൾ ബജറ്റ് രേഖ റൊട്ടേറ്റ് ചെയ്യുകയും ചെരിവ് മാറുകയും ചെയ്യുന്നു.",
-              "<strong>വരുമാന മാറ്റങ്ങൾ (Parallel Shift):</strong> വരുമാനം മാറുമ്പോൾ ബജറ്റ് രേഖ സമാന്തരമായി ഷിഫ്റ്റ് ചെയ്യുന്നു; ചെരിവിൽ മാറ്റമില്ല.",
-              "<strong>ഉപഭോക്തൃ സന്തുലിതാവസ്ഥ:</strong> ഇൻഡിഫറൻസ് കർവിന്റെ ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ പരമാവധി സംതൃപ്തി ലഭിക്കുന്നു."
-            ],
-            "examTip": "ബജറ്റ് രേഖയുടെ ചെരിവ് -Px/Py നിർണ്ണയിക്കുന്ന രീതിയും വിലമാറ്റവും വരുമാന മാറ്റവും തമ്മിലുള്ള ഗ്രാഫിക്കൽ വ്യത്യാസവും 6/10 മാർക്ക് ചോദ്യങ്ങളായി ആവർത്തിച്ചു വരാറുണ്ട്.",
-            "videoUrl": "https://www.youtube.com/watch?v=9H8683I4Ad8",
-            "language": "Malayalam"
-          },
-          {
-            "chapterNumber": "Unit 09",
-            "title": "Unit 9: Constrained Consumer Choice (ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ്)",
-            "chapter": "Optimal Bundle, Tangency MRS = Px/Py, Convexity & Demand Derivation",
-            "duration": "12:18",
-            "youtubeId": "3j8tc5c3vrg",
-            "videoUrl": "https://www.youtube.com/watch?v=3j8tc5c3vrg",
-            "thumbnail": "https://i.ytimg.com/vi/3j8tc5c3vrg/hqdefault.jpg",
-            "language": "Malayalam",
-            "studyPoints": [
-              "<strong>ഒപ്റ്റിമൽ ബണ്ടിൽ (Optimal Bundle):</strong> തന്നിരിക്കുന്ന ബജറ്റിൽ പരമാവധി സംതൃപ്തി നൽകുന്ന സാധനക്കൂട്ടം. ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ ലഭിക്കുന്നു.",
-              "<strong>കോൺവെക്സിറ്റിയുടെ പങ്ക്:</strong> ഡിമിനിഷിംഗ് എം.ആർ.എസ് ഉള്ള കോൺവെക്സ് ഇൻഡിഫറൻസ് കർവുകൾ മാത്രമേ സ്ഥിരതയുള്ള ആന്തരിക സന്തുലിതാവസ്ഥ (Stable Interior Equilibrium) ഉറപ്പാക്കുന്നുള്ളൂ.",
-              "<strong>കോർണർ സൊല്യൂഷനുകൾ:</strong> സാധനങ്ങൾ പെർഫെക്റ്റ് സബ്സ്റ്റിറ്റ്യൂട്ടുകൾ ആകുമ്പോൾ ഒരു സാധനത്തിൽ മാത്രമായി കൺസംപ്ഷൻ ഒതുങ്ങുന്നു.",
-              "<strong>കൂടുതൽ ലഭിക്കുന്നത് നല്ലതാണ് (Non-Satiation):</strong> പോസിറ്റീവ് മാർജിനൽ യൂട്ടിലിറ്റി ഉള്ളതിനാൽ ഒപ്റ്റിമൽ ബണ്ടിൽ എപ്പോഴും ബജറ്റ് രേഖയ്ക്ക് മുകളിൽ തന്നെ സ്ഥിതിചെയ്യുന്നു.",
-              "<strong>ഡിമാൻഡ് കർവ് രൂപീകരണം:</strong> പ്രൈസ് കൺസംപ്ഷൻ കർവിലെ (PCC) ടാൻജൻസി പോയിന്റുകൾ വഴി താഴോട്ട് ചരിഞ്ഞ വ്യക്തിഗത ഡിമാൻഡ് രേഖ ഉരുത്തിരിയുന്നു."
-            ],
-            "examTip": "ടാൻജൻസി ഫോർമുല MRS = Px/Py, കോൺവെക്സിറ്റിയുടെ പ്രാധാന്യം, കോർണർ സൊല്യൂഷനുകൾ എന്നിവ 10 മാർക്ക് ഉപന്യാസ ചോദ്യമായി പതിവായി വരാറുണ്ട്."
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 03: PRODUCTION AND COST FUNCTIONS",
-        "videos": [
-          {
-            "chapterNumber": "Unit 07",
-            "title": "Production with One Variable Input",
-            "chapter": "Law of Variable Proportions & Three Stages of Production",
-            "duration": "22",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Unit 08",
-            "title": "Isoquants, Isocosts & Long-Run Production",
-            "chapter": "Returns to Scale & Cobb-Douglas Production Function",
-            "duration": "24",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Unit 09",
-            "title": "Short-Run and Long-Run Cost Curves",
-            "chapter": "Fixed, Variable, Marginal, Average & Envelope Curves",
-            "duration": "23",
-            "youtubeId": ""
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 04: MARKET STRUCTURES",
-        "videos": [
-          {
-            "chapterNumber": "Unit 10",
-            "title": "Perfect Competition: Short-Run & Long-Run Equilibrium",
-            "chapter": "Price-taking Firm, Profit Maximization MR=MC",
-            "duration": "22",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Unit 11",
-            "title": "Monopoly: Pricing & Degree of Monopoly Power",
-            "chapter": "Lerner Index, Natural Monopoly & Price Discrimination",
-            "duration": "25",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Unit 12",
-            "title": "Monopolistic Competition & Oligopoly",
-            "chapter": "Product Differentiation, Kinked Demand Curve & Cournot Model",
-            "duration": "24",
-            "youtubeId": ""
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 05: FACTOR PRICING & MARKET FAILURE",
-        "videos": [
-          {
-            "chapterNumber": "Unit 13",
-            "title": "Marginal Productivity Theory of Distribution",
-            "chapter": "Rent (Ricardian & Modern), Wages, Interest & Profit Theories",
-            "duration": "22",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Unit 14",
-            "title": "Externalities, Public Goods & Market Failure",
-            "chapter": "Pigouvian Taxes, Coase Theorem & Social Optimum",
-            "duration": "20",
-            "youtubeId": ""
-          }
-        ]
-      }
-    ],
-    "totalVideos": 0
-  },
+  "name": "Microeconomic Foundation",
+  "badge": "₹",
+  "iconClass": "icon-blue",
+  "tag": "Minor Course",
+  "modules": [
+    {
+      "moduleName": "MODULE 01: SUPPLY AND DEMAND ANALYSIS",
+      "videos": [
+        {
+          "chapterNumber": "Unit 01",
+          "title": "Demand: Law, Determinants, Curves & Market Demand",
+          "chapter": "Module 1 · Unit 1 · Malayalam Gemini voice review",
+          "duration": "6:10",
+          "youtubeId": "Mu1Ktkzr_ME",
+          "videoUrl": "/micro-demand-review.html",
+          "thumbnail": "/thumbnails/micro-demand-review.png",
+          "studyPoints": [
+            "ഡിമാൻഡ് എന്നത് വാങ്ങാനുള്ള ആഗ്രഹവും അതോടൊപ്പം വില നൽകാനുള്ള സാമ്പത്തിക ശേഷിയും (purchasing power) ചേർന്നതാണ്.",
+            "മറ്റ് ഘടകങ്ങൾ സ്ഥിരമായിരിക്കുമ്പോൾ വില കൂടുമ്പോൾ ഡിമാൻഡ് കുറയുകയും വില കുറയുമ്പോൾ ഡിമാൻഡ് കൂടുകയും ചെയ്യുന്നു (Law of Demand).",
+            "ഇൻകം ഇഫക്ട്, സബ്സ്റ്റിറ്റ്യൂഷൻ ഇഫക്ട്, ഡിമിനിഷിംഗ് മാർജിനൽ യൂട്ടിലിറ്റി എന്നിവയാണ് ഡിമാൻഡ് കർവിന്റെ നെഗറ്റീവ് സ്ലോപ്പിന് കാരണം.",
+            "കൺസ്പിക്വസ് ഗുഡ്സ്, ഗിഫൻ ഗുഡ്സ്, ഭാവിയിലെ വിലയെക്കുറിച്ചുള്ള പ്രതീക്ഷകൾ എന്നിവ ഡിമാൻഡ് നിയമത്തിനുള്ള അപവാദങ്ങളാണ്.",
+            "സബ്സ്റ്റിറ്റ്യൂട്ട് സാധനങ്ങളുടെ വില കൂടിയാൽ ഡിമാൻഡ് കർവ് വലത്തോട്ടും, കോംപ്ലിമെന്ററി സാധനങ്ങളുടെ വില കൂടിയാൽ ഡിമാൻഡ് കർവ് ഇടത്തോട്ടും ഷിഫ്റ്റ് ചെയ്യുന്നു.",
+            "വരുമാനം കൂടുമ്പോൾ നോർമൽ ഗുഡ്സിന്റെ ഡിമാൻഡ് വർദ്ധിക്കുകയും ഇൻഫീരിയർ ഗുഡ്സിന്റെ ഡിമാൻഡ് കുറയുകയും ചെയ്യുന്നു.",
+            "വ്യക്തിഗത ഡിമാൻഡ് കർവുകളുടെ തിരശ്ചീനമായ കൂട്ടിച്ചേർക്കലാണ് (Horizontal Summation) മാർക്കറ്റ് ഡിമാൻഡ് കർവ് രൂപീകരിക്കുന്നത്.",
+            "വിലയിലെ മാറ്റം കർവിലൂടെയുള്ള മൂവ്മെന്റിനും (Expansion/Contraction) മറ്റ് ഘടകങ്ങളിലെ മാറ്റം കർവിന്റെ ഷിഫ്റ്റിനും (Increase/Decrease) കാരണമാകുന്നു."
+          ],
+          "examTip": "പരീക്ഷയിൽ 'Movement along the Demand Curve' ഉം 'Shift in Demand Curve' ഉം തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, സ്വന്തം വിലയിലെ മാറ്റം മൂലമുണ്ടാകുന്ന മാറ്റത്തെ Change in Quantity Demanded (Expansion അല്ലെങ്കിൽ Contraction) എന്നും, വിലയൊഴികെയുള്ള മറ്റ് ഘടകങ്ങളിലെ മാറ്റം വഴി കർവ് പൂർണ്ണമായി മാറുന്നതിനെ Change in Demand (Increase അല്ലെങ്കിൽ Decrease) എന്നും പ്രത്യേകം ഗ്രാഫ് വരച്ച് വ്യക്തമാക്കുക."
+        },
+        {
+          "chapterNumber": "Unit 02",
+          "title": "Supply — Complete LMS Review",
+          "chapter": "All LMS sections, examples & MCQs · English terms/formulas + Malayalam explanation",
+          "duration": "14:51",
+          "youtubeId": "CylKbnNZtm0",
+          "videoUrl": "/micro-unit2-review.html",
+          "thumbnail": "/thumbnails/micro-unit-2-review.png",
+          "studyPoints": [
+            "Supply Definition (ഏതെങ്കിലും സാധനത്തിന്റെ അളവ്, വില, സമയം)",
+            "Supply Function (SX = f(PX, PZ, T, C, GP))",
+            "Substitute Goods in Production (ഉൽപ്പാദനത്തിലെ പകരക്കാർ)",
+            "Technological Progress & Marginal Cost (സാങ്കേതിക പുരോഗതിയും ഉൽപ്പാദനച്ചെലവും)",
+            "Input Prices & Government Policy (ഉൽപ്പാദന ഘടകങ്ങളുടെ വിലയും സർക്കാറിന്റെ നികുതി നയവും)",
+            "Law of Supply & Ceteris Paribus (വിതരണ നിയമം)",
+            "Supply Schedule & Curve (വിതരണ പട്ടികയും ഗ്രാഫും)",
+            "Upward Sloping Curve Reasons (കുത്തനെ ഉയരുന്ന വിതരണ വക്രത്തിന് കാരണങ്ങൾ)",
+            "Market Supply & Horizontal Summation (വിപണി വിതരണം)",
+            "Movement Along Curve (വിതരണ വക്രത്തിലെ ചലനങ്ങളും വിപുലീകരണവും ചുരുങ്ങലും)",
+            "Shift in Supply Curve (വിതരണ വക്രത്തിലെ വ്യതിചലനവും വർദ്ധനവും കുറവും)",
+            "Multiple Choice Questions Review (ഒന്നിലധികം തിരഞ്ഞെടുപ്പ് ചോദ്യങ്ങൾ)"
+          ],
+          "examTip": "Remember that a movement along the supply curve is caused solely by the commodity's own price changes, whereas shifts in the entire supply curve are caused by non-price determinants like technology, input costs, and taxes."
+        },
+        {
+          "chapterNumber": "Unit 03",
+          "title": "Market Equilibrium — Complete LMS Review",
+          "chapter": "All LMS sections, examples & MCQs · English terms/formulas + Malayalam explanation",
+          "duration": "15:50",
+          "youtubeId": "zJsY7Sbx2To",
+          "videoUrl": "/micro-unit3-review.html",
+          "thumbnail": "/thumbnails/micro-unit-3-review.png",
+          "studyPoints": [
+            "Market Equilibrium: Qd equals Qs",
+            "Equilibrium Price: P star and Q star",
+            "Shortage Equation: Shortage equals Qd minus Qs",
+            "Surplus Equation: Surplus equals Qs minus Qd",
+            "Demand Function: Dx equals f of Px, Py, T, Y, A, N, Ep, and U",
+            "Supply Function: SX equals f of PX, PZ, T, C, and GP",
+            "Algebraic Demand: Qd equals 160 minus 40p",
+            "Algebraic Supply: Qs equals 50 plus 15p",
+            "Market Demand: QDx equals 120,000 minus 20,000 Px",
+            "Market Supply: QSx equals 20,000 Px",
+            "Equilibrium Solution: Px equals 3 dollars",
+            "Market Equilibrium Quantity: 60,000 units"
+          ],
+          "examTip": "Always remember that market equilibrium occurs strictly where quantity demanded equals quantity supplied, with no surplus or shortage creating any further pressure on price."
+        }
+      ]
+    },
+    {
+      "moduleName": "MODULE 02: CONSUMER CHOICE THEORY",
+      "videos": [
+        {
+          "chapterNumber": "Unit 04",
+          "title": "Cardinal vs Ordinal Utility Analysis (പ്രയോജന സിദ്ധാന്തങ്ങൾ)",
+          "chapter": "Law of Diminishing Marginal Utility & Equi-Marginal Utility (Full Masterclass)",
+          "duration": "23:25",
+          "youtubeId": "Jj-JWuNJjRU",
+          "videoUrl": "https://www.youtube.com/watch?v=Jj-JWuNJjRU",
+          "thumbnail": "https://i.ytimg.com/vi/Jj-JWuNJjRU/hqdefault.jpg",
+          "studyPoints": [
+            "<strong>കാർഡിനൽ പ്രയോജന സിദ്ധാന്തം:</strong> സംതൃപ്തിയെ യൂട്ടിൽസ് എന്ന സംഖ്യാ രൂപത്തിൽ അളക്കാമെന്ന് ആൽഫ്രഡ് മാർഷൽ സമർത്ഥിക്കുന്നു.",
+            "<strong>സീമാന്ത പ്രയോജന ക്ഷയ നിയമം (Law of DMU):</strong> തുടർച്ചയായ ഉപഭോഗം നടക്കുമ്പോൾ ഓരോ അധിക യൂണിറ്റിൽ നിന്നും ലഭിക്കുന്ന സംതൃപ്തി (MU) കുറഞ്ഞുവരുന്നു. MU പൂജ്യമാകുമ്പോൾ TU പരമാവധിയിലെത്തുന്നു.",
+            "<strong>സമ-സീമാന്ത പ്രയോജന നിയമം (Equi-Marginal Utility):</strong> വരുമാനം വിവിധ സാധനങ്ങൾക്കായി വിഭജിക്കുമ്പോൾ <code>MU_x / Px = MU_y / Py</code> ആകുമ്പോൾ പരമാവധി സംതൃപ്തി ലഭിക്കുന്നു (Gossen's 2nd Law).",
+            "<strong>ഓർഡിനൽ സമീപനവും ഉദാസീന വക്രങ്ങളും:</strong> ഹിക്സും അലനും വികസിപ്പിച്ച ഓർഡിനൽ സിദ്ധാന്തത്തിൽ സംതൃപ്തിയെ റാങ്ക് ചെയ്യുന്നു. ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ സന്തുലിതാവസ്ഥ കൈവരുന്നു.",
+            "<strong>സീമാന്ത പ്രതിസ്ഥാപന നിരക്ക് (MRS):</strong> ഡിമിനിഷിംഗ് എം.ആർ.എസ് നിയമം കാരണം ഉദാസീന വക്രങ്ങൾ ഒറിജിനിലേക്ക് കോൺവെക്സ് ആയിരിക്കുന്നു."
+          ],
+          "examTip": "ആൽഫ്രഡ് മാർഷലിന്റെ ഡിമിനിഷിംഗ് മാർജിനൽ യൂട്ടിലിറ്റി നിയമം, ഗോസ്സന്റെ രണ്ടാം നിയമം, TU-വും MU-വും തമ്മിലുള്ള ഗ്രാഫിക്കൽ ബന്ധം എന്നിവ പരീക്ഷയ്ക്ക് 6 മാർക്കിനും 10 മാർക്കിനും നിർബന്ധമായും ചോദിക്കുന്ന ഭാഗങ്ങളാണ്.",
+          "language": "Malayalam"
+        },
+        {
+          "chapterNumber": "Unit 05",
+          "title": "Indifference Curve Analysis & Marginal Rate of Substitution",
+          "chapter": "Properties of IC Curves, Marginal Rate of Substitution & Preference Maps",
+          "duration": "18:15",
+          "youtubeId": "z8tbT2SiepA",
+          "thumbnail": "/thumbnails/Consumer_Preferences_Mod2_Unit6_Thumbnail.png",
+          "studyPoints": [
+            "<strong>Indifference Curve (IC):</strong> Represents locus of all commodity bundles providing identical levels of overall satisfaction.",
+            "<strong>Marginal Rate of Substitution (MRS):</strong> The rate at which a consumer trades good Y for good X: MRS_xy = -dy/dx = MUx/MUy.",
+            "<strong>Four Properties of ICs:</strong> Downward sloping, convex to the origin due to diminishing MRS, non-intersecting due to transitivity, and higher curves denote greater utility."
+          ],
+          "examTip": "Calicut University Core: 'Explain why two indifference curves cannot intersect by utilizing the axioms of transitivity and non-satiation'."
+        },
+        {
+          "chapterNumber": "Unit 08",
+          "title": "Unit 8: Budget Constraint (ബജറ്റ് പരിമിതി) & Consumer Equilibrium",
+          "chapter": "Slope (-Px/Py), Opportunity Set, Price & Income Shifts, MRS Tangency",
+          "duration": "10:34",
+          "youtubeId": "9H8683I4Ad8",
+          "thumbnail": "https://i.ytimg.com/vi/9H8683I4Ad8/hqdefault.jpg",
+          "studyPoints": [
+            "<strong>ബജറ്റ് സമവാക്യവും ഇന്റർസെപ്റ്റുകളും:</strong> <code>Px·Qx + Py·Qy = M</code>. വെർട്ടിക്കൽ ഇന്റർസെപ്റ്റ് <code>M/Py</code>, ഹൊറിസോണ്ടൽ ഇന്റർസെപ്റ്റ് <code>M/Px</code>.",
+            "<strong>ചെരിവും അവസരച്ചെലവും:</strong> <code>Slope = -Px/Py</code>. വില അനുപാതം വിപണിയിലെ പ്രതിസ്ഥാപന നിരക്കിനെയും അവസരച്ചെലവിനെയും സൂചിപ്പിക്കുന്നു.",
+            "<strong>വിലമാറ്റങ്ങൾ (Rotation):</strong> ഒരു സാധനത്തിന്റെ വില മാറുമ്പോൾ ബജറ്റ് രേഖ റൊട്ടേറ്റ് ചെയ്യുകയും ചെരിവ് മാറുകയും ചെയ്യുന്നു.",
+            "<strong>വരുമാന മാറ്റങ്ങൾ (Parallel Shift):</strong> വരുമാനം മാറുമ്പോൾ ബജറ്റ് രേഖ സമാന്തരമായി ഷിഫ്റ്റ് ചെയ്യുന്നു; ചെരിവിൽ മാറ്റമില്ല.",
+            "<strong>ഉപഭോക്തൃ സന്തുലിതാവസ്ഥ:</strong> ഇൻഡിഫറൻസ് കർവിന്റെ ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ പരമാവധി സംതൃപ്തി ലഭിക്കുന്നു."
+          ],
+          "examTip": "ബജറ്റ് രേഖയുടെ ചെരിവ് -Px/Py നിർണ്ണയിക്കുന്ന രീതിയും വിലമാറ്റവും വരുമാന മാറ്റവും തമ്മിലുള്ള ഗ്രാഫിക്കൽ വ്യത്യാസവും 6/10 മാർക്ക് ചോദ്യങ്ങളായി ആവർത്തിച്ചു വരാറുണ്ട്.",
+          "videoUrl": "https://www.youtube.com/watch?v=9H8683I4Ad8",
+          "language": "Malayalam"
+        },
+        {
+          "chapterNumber": "Unit 09",
+          "title": "Unit 9: Constrained Consumer Choice (ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ്)",
+          "chapter": "The Optimal Bundle, Tangency MRS = Px/Py, Convexity & Demand Derivation",
+          "duration": "14:14",
+          "youtubeId": "J6hBbtao1ms",
+          "videoUrl": "https://www.youtube.com/watch?v=J6hBbtao1ms",
+          "thumbnail": "https://i.ytimg.com/vi/J6hBbtao1ms/hqdefault.jpg",
+          "language": "Malayalam",
+          "studyPoints": [
+            "<strong>ഒപ്റ്റിമൽ ബണ്ടിൽ (The Optimal Bundle):</strong> പരിമിതമായ വരുമാനത്തിൽ നിന്ന് പരമാവധി സംതൃപ്തി നൽകുന്ന സാധനക്കൂട്ടം. ബജറ്റ് രേഖയും ഏറ്റവും ഉയർന്ന ഇൻഡിഫറൻസ് കർവും സ്പർശിക്കുന്ന ടാൻജൻസി ബിന്ദുവിൽ (MRSxy = Px / Py) സന്തുലിതാവസ്ഥ രൂപപ്പെടുന്നു.",
+            "<strong>ഇക്വി-മാർജിനൽ സമവാക്യം:</strong> MUx / Px = MUy / Py. രണ്ട് സാധനങ്ങൾക്കുമായി ചെലവഴിക്കുന്ന അവസാന രൂപയിൽ നിന്നും ലഭിക്കുന്ന മാർജിനൽ യൂട്ടിലിറ്റി തുല്യമാകുമ്പോൾ മാത്രമേ സംതൃപ്തി പരമാവധിയിലെത്തൂ.",
+            "<strong>കോൺവെക്സിറ്റിയുടെ പങ്ക്:</strong> ഡിമിനിഷിങ് മാർജിനൽ റേറ്റ് ഓഫ് സബ്സ്റ്റിറ്റ്യൂഷൻ (Diminishing MRS) ഉള്ള കോൺവെക്സ് കർവുകൾ മാത്രമേ രണ്ട് സാധനങ്ങളും അടങ്ങിയ സ്ഥിരതയുള്ള ആന്തരിക സന്തുലിതാവസ്ഥ (Stable Interior Solution) ഉറപ്പുനൽകുന്നുള്ളൂ.",
+            "<strong>കോൺകേവ് കർവുകളും കോർണർ സൊല്യൂഷനുകളും:</strong> കർവുകൾ ഒറിജിനിലേക്ക് കോൺകേവ് ആയാൽ ടാൻജൻസി ബിന്ദുവിൽ സംതൃപ്തി ഏറ്റവും കുറയുന്നു (Minimization). അപ്പോൾ ഉപഭോക്താവ് ഒരു സാധനം മാത്രം മുഴുവനായി വാങ്ങി കോർണർ സൊല്യൂഷൻ തിരഞ്ഞെടുക്കുന്നു.",
+            "<strong>നോൺ-സാഷിയേഷൻ തത്വം (More is Better):</strong> പോസിറ്റീവ് മാർജിനൽ യൂട്ടിലിറ്റി (MU > 0) നിലനിൽക്കുന്നതിനാൽ ഉപഭോക്താവ് മുഴുവൻ പണവും ചെലവഴിക്കുന്നു; ഒപ്റ്റിമൽ ബണ്ടിൽ എപ്പോഴും ബജറ്റ് രേഖയ്ക്ക് മുകളിൽ തന്നെ സ്ഥിതിചെയ്യുന്നു."
+          ],
+          "examTip": "ടാൻജൻസി സമവാക്യം (MRS = Px/Py), ഇക്വി-മാർജിനൽ നിയമം (MUx/Px = MUy/Py), കോൺവെക്സിറ്റിയുടെ പ്രാധാന്യം, കോർണർ സൊല്യൂഷനുകൾ എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ 10 മാർക്ക് ഉപന്യാസ ചോദ്യമായി ആവർത്തിക്കുന്നവയാണ്."
+        }
+      ]
+    },
+    {
+      "moduleName": "MODULE 03: PRODUCTION AND COST FUNCTIONS",
+      "videos": [
+        {
+          "chapterNumber": "Unit 07",
+          "title": "Production with One Variable Input",
+          "chapter": "Law of Variable Proportions & Three Stages of Production",
+          "duration": "22",
+          "youtubeId": ""
+        },
+        {
+          "chapterNumber": "Unit 08",
+          "title": "Isoquants, Isocosts & Long-Run Production",
+          "chapter": "Returns to Scale & Cobb-Douglas Production Function",
+          "duration": "24",
+          "youtubeId": ""
+        },
+        {
+          "chapterNumber": "Unit 09",
+          "title": "Short-Run and Long-Run Cost Curves",
+          "chapter": "Fixed, Variable, Marginal, Average & Envelope Curves",
+          "duration": "23",
+          "youtubeId": ""
+        }
+      ]
+    },
+    {
+      "moduleName": "MODULE 04: MARKET STRUCTURES",
+      "videos": [
+        {
+          "chapterNumber": "Unit 10",
+          "title": "Perfect Competition: Short-Run & Long-Run Equilibrium",
+          "chapter": "Price-taking Firm, Profit Maximization MR=MC",
+          "duration": "22",
+          "youtubeId": ""
+        },
+        {
+          "chapterNumber": "Unit 11",
+          "title": "Monopoly: Pricing & Degree of Monopoly Power",
+          "chapter": "Lerner Index, Natural Monopoly & Price Discrimination",
+          "duration": "25",
+          "youtubeId": ""
+        },
+        {
+          "chapterNumber": "Unit 12",
+          "title": "Monopolistic Competition & Oligopoly",
+          "chapter": "Product Differentiation, Kinked Demand Curve & Cournot Model",
+          "duration": "24",
+          "youtubeId": ""
+        }
+      ]
+    },
+    {
+      "moduleName": "MODULE 05: FACTOR PRICING & MARKET FAILURE",
+      "videos": [
+        {
+          "chapterNumber": "Unit 13",
+          "title": "Marginal Productivity Theory of Distribution",
+          "chapter": "Rent (Ricardian & Modern), Wages, Interest & Profit Theories",
+          "duration": "22",
+          "youtubeId": ""
+        },
+        {
+          "chapterNumber": "Unit 14",
+          "title": "Externalities, Public Goods & Market Failure",
+          "chapter": "Pigouvian Taxes, Coase Theorem & Social Optimum",
+          "duration": "20",
+          "youtubeId": ""
+        }
+      ]
+    }
+  ],
+  "totalVideos": 0
+},
   "arabic": {
     "name": "Arabic",
     "badge": "ع",
