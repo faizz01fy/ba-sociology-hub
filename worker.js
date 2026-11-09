@@ -530,7 +530,7 @@ export default {
       }).transform(response);
 
       const htmlHeaders = new Headers(response.headers);
-      htmlHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate");
+      htmlHeaders.set("Cache-Control", "private, no-cache, no-store, max-age=0, must-revalidate");
       htmlHeaders.set("Pragma", "no-cache");
       htmlHeaders.set("Expires", "0");
       htmlHeaders.set("CDN-Cache-Control", "no-store");
