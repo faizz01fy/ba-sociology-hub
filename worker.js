@@ -532,6 +532,8 @@ export default {
       htmlHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate");
       htmlHeaders.set("Pragma", "no-cache");
       htmlHeaders.set("Expires", "0");
+      htmlHeaders.set("CDN-Cache-Control", "no-store");
+      htmlHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
       return new Response(response.body, {
         status: response.status,
         statusText: response.statusText,

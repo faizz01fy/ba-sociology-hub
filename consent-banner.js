@@ -61,18 +61,16 @@
         'ad_user_data': 'denied',
         'ad_personalization': 'denied'
       });
-      // GA4 remains strictly unloaded
     }
   }
 
-  // Connect to Google-certified CMP (IAB TCF v2.2)
+  // Connect to Google-certified CMP via standard IAB TCF v2.2 API
   function attachTCFListener() {
     if (typeof window.__tcfapi === 'function') {
       window.__tcfapi('addEventListener', 2.2, function(tcData, success) {
         if (success && tcData) {
           if (tcData.eventStatus === 'useractioncomplete' || tcData.eventStatus === 'tcloaded') {
             if (tcData.gdprApplies) {
-              // Purpose 1 is device storage / cookies; check if consent was granted
               var hasConsent = !!(tcData.purpose && tcData.purpose.consents && tcData.purpose.consents[1]);
               handleConsentUpdate(hasConsent);
             } else {
@@ -90,26 +88,18 @@
     var checkCount = 0;
     var tcfInterval = setInterval(function() {
       checkCount++;
-      if (attachTCFListener() || checkCount > 30) {
+      if (attachTCFListener() || checkCount > 50) {
         clearInterval(tcfInterval);
       }
     }, 200);
   }
 
-  window.googlefc = window.googlefc || {};
-  window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
-  window.googlefc.callbackQueue.push({
-    'CONSENT_DATA_READY': function() {
-      attachTCFListener();
-    }
-  });
-
-  // Reopen Google's certified privacy settings message
+  // Reopen Google's certified privacy settings message on demand
   window.hubOpenConsent = function() {
     if (window.googlefc && typeof window.googlefc.showRevocationMessage === 'function') {
       window.googlefc.showRevocationMessage();
-    } else if (window.googlefc && window.googlefc.callbackQueue) {
-      window.googlefc.callbackQueue.push(window.googlefc.showRevocationMessage);
+    } else if (typeof window.__tcfapi === 'function') {
+      window.__tcfapi('displayConsentUi', 2, function() {});
     }
   };
 })();
