@@ -152,7 +152,8 @@ window.VOICE_EXPLANATIONS_DATA = {
           }
         ]
       }
-    ]
+    ],
+    "totalVideos": 10
   },
   "malayalam": {
     "name": "Malayalam",
@@ -648,8 +649,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 01",
             "title": "Reading Strategies & Critical Comprehension",
             "chapter": "Skimming, Scanning, Inference & Analytical Reading",
-            "duration": "16",
-            "youtubeId": ""
+            "duration": "14:15",
+            "youtubeId": "9aLkAUYFWF8",
+            "thumbnail": "https://i.ytimg.com/vi/9aLkAUYFWF8/hqdefault.jpg",
+            "language": "English"
           },
           {
             "chapterNumber": "Chapter 02",
@@ -747,8 +750,16 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 04",
             "title": "Cinema Paradiso",
             "chapter": "Film Review, Cinematic Elements & Critical Appreciation",
-            "duration": "19",
-            "youtubeId": ""
+            "duration": "05:13",
+            "youtubeId": "3xKSAOUYjFE",
+            "thumbnail": "https://i.ytimg.com/vi/3xKSAOUYjFE/hqdefault.jpg",
+            "language": "English",
+            "studyPoints": [
+              "<strong>Core Cinematics:</strong> Giuseppe Tornatore's nostalgic masterpiece celebrating cinema, memory, and youth.",
+              "<strong>Toto & Alfredo:</strong> The transformative father-son dynamic between the village projectionist and a passionate boy.",
+              "<strong>Critical Appreciation:</strong> Ennio Morricone's score, censorship themes, and the loss of classic communal cinema."
+            ],
+            "examTip": "Analyze the symbolic role of the cinema hall in post-war Sicilian society for 10-mark examination essays."
           }
         ]
       }
@@ -1077,7 +1088,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 16
+    "totalVideos": 21
   },
   "philosophy-of-ai": {
     "name": "Philosophy of Artificial Intelligence",
@@ -1093,8 +1104,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 1.1",
             "title": "ചരിത്രപരമായ വികാസം: തത്ത്വചിന്തയിൽ നിന്ന് കമ്പ്യൂട്ടറുകളിലേക്ക് (Historical Evolution: Philosophy to AI)",
             "chapter": "Unit 1.1: Historical Evolution · Aristotle, Leibniz, Boole & Computational Roots",
-            "duration": "18:00",
-            "youtubeId": "",
+            "duration": "18:40",
+            "youtubeId": "6VWW49UMoks",
             "language": "Malayalam",
             "studyPoints": [
               "തത്ത്വചിന്താപരമായ വേരുകൾ: അരിസ്റ്റോട്ടിലിന്റെ ഔപചാരിക യുക്തിയും സിലോജിസവും (Formal Logic & Syllogism) എങ്ങനെ കമ്പ്യൂട്ടേഷന്റെ അടിത്തറയായി.",
@@ -1102,7 +1113,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ജോർജ്ജ് ബൂളും ബൂളിയൻ ആൾജിബ്രയും: 0, 1 ബൈനറി ലോജിക്കിലൂടെ മനുഷ്യ ചിന്തയെ പ്രതിനിധീകരിക്കൽ.",
               "മെക്കാനിക്കൽ കമ്പ്യൂട്ടേഷന്റെ ഉദയം: ചാൾസ് ബാബേജിന്റെ അനലിറ്റിക്കൽ എഞ്ചിനും അഡാ ലവ്‌ലേസിന്റെ ആദ്യ അൽഗോരിതവും."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: അരിസ്റ്റോട്ടിൽ മുതൽ ബൂൾ വരെയുള്ള തത്ത്വചിന്തകർ ആധുനിക AI-യുടെ വികാസത്തിന് നൽകിയ സംഭാവനകൾ വിലയിരുത്തുക."
+            "examTip": "Calicut University FYUGP ചോദ്യം: അരിസ്റ്റോട്ടിൽ മുതൽ ബൂൾ വരെയുള്ള തത്ത്വചിന്തകർ ആധുനിക AI-യുടെ വികാസത്തിന് നൽകിയ സംഭാവനകൾ വിലയിരുത്തുക.",
+            "thumbnail": "https://i.ytimg.com/vi/6VWW49UMoks/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 1.2 & 1.3",
@@ -1275,8 +1287,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 3.1 c",
             "title": "ഭാരതീയ ന്യായശാസ്ത്രവും AI റീസണിംഗും (Nyaya Epistemology & 5-Membered Syllogism in AI)",
             "chapter": "Unit 3.1 c: Nyaya Pramanas · Pratyaksha, Anumana, Upamana, Shabda & Panchavayava",
-            "duration": "20:00",
-            "youtubeId": "",
+            "duration": "16:25",
+            "youtubeId": "NPbHpX8kOZs",
             "language": "Malayalam",
             "studyPoints": [
               "ന്യായശാസ്ത്രത്തിലെ 4 പ്രമാണങ്ങൾ: പ്രത്യക്ഷം (Perception), അനുമാനം (Inference), ഉപമാനം (Comparison), ശബ്ദം (Verbal Testimony) - ഇവ റോബോട്ടിക്സിലും LLM-ലും.",
@@ -1284,7 +1296,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "വ്യാപ്തി (Invariable Concomitance): പുകയും തീയും തമ്മിലുള്ള അഭേദ്യ ബന്ധം പോലെ ഡാറ്റാ സവിശേഷതകൾ തമ്മിലുള്ള കാര്യകാരണ ബന്ധം.",
               "അപ്രമാണങ്ങൾ: സംശയം (Samsaya), വിപര്യയം (Viparyaya) എന്നിവ AI-യിലെ തെറ്റായ അനുമാനങ്ങളുമായും ബയാസുമായും ബന്ധിപ്പിക്കൽ."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: ഭാരതീയ ന്യായശാസ്ത്രത്തിലെ പഞ്ചാവയവ വാക്യം ആധുനിക AI-യുടെ യുക്തിചിന്താ മോഡലുകളുമായി താരതമ്യം ചെയ്യുക."
+            "examTip": "Calicut University FYUGP ചോദ്യം: ഭാരതീയ ന്യായശാസ്ത്രത്തിലെ പഞ്ചാവയവ വാക്യം ആധുനിക AI-യുടെ യുക്തിചിന്താ മോഡലുകളുമായി താരതമ്യം ചെയ്യുക.",
+            "thumbnail": "https://i.ytimg.com/vi/NPbHpX8kOZs/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 3.2 a",
@@ -1367,7 +1380,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 04: ETHICAL AND PHILOSOPHICAL IMPLICATIONS OF AI (ധാർമ്മിക-ദാർശനിക പ്രത്യാഘാതങ്ങൾ)",
         "videos": [
           {
-            "chapterNumber": "Unit 4.1",
+            "chapterNumber": "Unit 4.1 a",
             "title": "എഐ മനുഷ്യന്റെ അസ്തിത്വത്തിന് ഭീഷണിയാകുമോ? (Value Alignment & Existential Threat to Humanity)",
             "chapter": "Unit 4.1 a, b: Value Alignment · Existential Risk · Nick Bostrom & Stuart Russell",
             "duration": "22:00",
@@ -1382,11 +1395,20 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Calicut University FYUGP ചോദ്യം: നിക്ക് ബോസ്ട്രോമിന്റെ 'Value Alignment Problem' വിശദീകരിച്ച് AI മനുഷ്യരാശിക്ക് ഭീഷണിയാകുമോ എന്ന് വിലയിരുത്തുക."
           },
           {
+            "chapterNumber": "Unit 4.1 b",
+            "title": "AI-യുടെ ധാർമ്മിക തത്വങ്ങൾ (Foundational Ethical Principles of AI)",
+            "chapter": "Unit 4.1 b: 5 Core Ethical Principles · Value Alignment & Governance",
+            "duration": "14:15",
+            "language": "Bilingual (Malayalam & English)",
+            "youtubeId": "_6n810PKN9c",
+            "thumbnail": "https://i.ytimg.com/vi/_6n810PKN9c/hqdefault.jpg"
+          },
+          {
             "chapterNumber": "Unit 4.2",
             "title": "അൽഗോരിതമിക് പക്ഷപാതങ്ങളും സാമൂഹിക ബന്ധങ്ങളും (Algorithmic Bias & Social Embeddedness)",
             "chapter": "Unit 4.2 a, b: Training Data Bias · Systemic Discrimination · Social Power Dynamics",
             "duration": "20:00",
-            "youtubeId": "",
+            "youtubeId": "ReMCiz7ckYs",
             "language": "Malayalam",
             "studyPoints": [
               "അൽഗോരിതമിക് പക്ഷപാതം: ഹിസ്റ്റോറിക്കൽ ഡാറ്റയിലെ വംശീയ, ലിംഗപരമായ മുൻവിധികൾ എഐ മോഡലുകളിൽ പുനർനിർമ്മിക്കപ്പെടുന്ന രീതി.",
@@ -1394,14 +1416,15 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഡിജിറ്റൽ നിരീക്ഷണം: ഫേഷ്യൽ റെക്കഗ്നിഷൻ, പ്രെഡിക്റ്റീവ് പോലീസിംഗ് എന്നിവ വ്യക്തിസ്വാതന്ത്ര്യത്തിന് മേൽ സൃഷ്ടിക്കുന്ന ഭീഷണികൾ.",
               "സാമൂഹിക നീതിയും എഐയും: പാർശ്വവൽക്കരിക്കപ്പെട്ട വിഭാഗങ്ങൾക്ക് മേലുള്ള സാങ്കേതിക വിവേചനം."
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: AI സിസ്റ്റങ്ങളിൽ 'അൽഗോരിതമിക് ബയാസ്' എങ്ങനെ ഉണ്ടാകുന്നു എന്നും അത് സാമൂഹിക നീതിയെ എങ്ങനെ ബാധിക്കുന്നു എന്നും വ്യക്തമാക്കുക."
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: AI സിസ്റ്റങ്ങളിൽ 'അൽഗോരിതമിക് ബയാസ്' എങ്ങനെ ഉണ്ടാകുന്നു എന്നും അത് സാമൂഹിക നീതിയെ എങ്ങനെ ബാധിക്കുന്നു എന്നും വ്യക്തമാക്കുക.",
+            "thumbnail": "https://i.ytimg.com/vi/ReMCiz7ckYs/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 4.3 a",
             "title": "സ്വയംഭരണ വാഹനങ്ങളും ട്രോളി പ്രശ്നവും (Ethical Rules for Autonomous Vehicles: The Trolley Problem)",
             "chapter": "Unit 4.3 a: The Trolley Problem · Utilitarian vs Deontological Ethics in Autonomous Systems",
             "duration": "21:00",
-            "youtubeId": "",
+            "youtubeId": "oTEhOh_z5NA",
             "language": "Malayalam",
             "studyPoints": [
               "ഫിലിപ്പ ഫൂട്ടിന്റെ ട്രോളി പ്രശ്നം: അപായകരമായ സാഹചര്യങ്ങളിൽ സ്വയംഭരണ വാഹനങ്ങൾ ആരുടെ ജീവൻ രക്ഷിക്കണം എന്ന ധാർമ്മിക പ്രതിസന്ധി.",
@@ -1409,14 +1432,15 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ജർമ്മൻ എത്തിക്സ് കമ്മീഷൻ മാർഗ്ഗനിർദ്ദേശങ്ങൾ: പ്രായമോ ലിംഗമോ പരിഗണിച്ച് മനുഷ്യജീവന് വിവേചനം പാടില്ലെന്ന നിയമപരമായ ചട്ടക്കൂട്.",
               "അപകടങ്ങളിലെ ഉത്തരവാദിത്തം: സോഫ്റ്റ്‌വെയർ നിർമ്മാതാവോ, ഉടമയോ, കാറോ ആര് ഉത്തരവാദി എന്ന ചോദ്യം."
             ],
-            "examTip": "Calicut University ചോദ്യം: സ്വയംഭരണ വാഹനങ്ങളിലെ ധാർമ്മിക പ്രതിസന്ധികൾ വിശകലനം ചെയ്യാൻ 'ട്രോളി പ്രശ്നം' എങ്ങനെ സഹായിക്കുന്നു?"
+            "examTip": "Calicut University ചോദ്യം: സ്വയംഭരണ വാഹനങ്ങളിലെ ധാർമ്മിക പ്രതിസന്ധികൾ വിശകലനം ചെയ്യാൻ 'ട്രോളി പ്രശ്നം' എങ്ങനെ സഹായിക്കുന്നു?",
+            "thumbnail": "https://i.ytimg.com/vi/oTEhOh_z5NA/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 4.3 b",
-            "title": "AI-ക്ക് ധാർമ്മിക ദ്രോഹം സംഭവിക്കുമോ? (Can AI Suffer Moral Harm? Moral Patiency vs Agency)",
-            "chapter": "Unit 4.3 b: Moral Patiency vs Sentience · Consciousness & Machine Rights",
+            "title": "AI കോടതിയും നൈതിക ഉത്തരവാദിത്തവും (AI as Legal Agent & Moral Patiency)",
+            "chapter": "Unit 4.3 b: AI in Judicial Systems · Algorithmic Jurisprudence & Moral Agency",
             "duration": "19:00",
-            "youtubeId": "",
+            "youtubeId": "cND0PVx_Jdk",
             "language": "Malayalam",
             "studyPoints": [
               "മോറൽ ഏജൻസി vs മോറൽ പേഷ്യൻസി: ധാർമ്മിക തീരുമാനങ്ങൾ എടുക്കാൻ കഴിവുള്ളവർ (Agents), ധാർമ്മിക സംരക്ഷണത്തിന് അർഹരായവർ (Patients).",
@@ -1424,7 +1448,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "മെഷീൻ അവകാശങ്ങൾ (Machine Rights): ഭാവിയിൽ സിന്തറ്റിക് ബോധം കൈവരിക്കുന്ന റോബോട്ടുകൾക്ക് അവകാശങ്ങൾ അനുവദിക്കേണ്ടതുണ്ടോ എന്ന വാദം.",
               "ടോർട്ടിന്റെയും ധാർമ്മികതയുടെയും അതിർവരമ്പുകൾ: യന്ത്രങ്ങളെ നശിപ്പിക്കുന്നത് വസ്തുവകകൾ നശിപ്പിക്കുന്നതാണോ അതോ ജീവിയെ ദ്രോഹിക്കുന്നതാണോ?"
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: 'Moral Agency'യും 'Moral Patiency'യും തമ്മിലുള്ള വ്യത്യാസം വിശദീകരിച്ച് AI-യുടെ ധാർമ്മിക പദവി വിലയിരുത്തുക."
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: 'Moral Agency'യും 'Moral Patiency'യും തമ്മിലുള്ള വ്യത്യാസം വിശദീകരിച്ച് AI-യുടെ ധാർമ്മിക പദവി വിലയിരുത്തുക.",
+            "thumbnail": "https://i.ytimg.com/vi/cND0PVx_Jdk/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 4.3 c",
@@ -1865,6 +1890,52 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "zIvRoe-he-8",
             "thumbnail": "https://i.ytimg.com/vi/zIvRoe-he-8/hqdefault.jpg",
             "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "Introduction to Ethics Nature  Scope",
+            "chapter": "Malayalam study overview · Introduction to Ethics Nature  Scope",
+            "duration": "06:02",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of Introduction to Ethics Nature  Scope.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "m_ZvZ5Xl8e8",
+            "thumbnail": "https://i.ytimg.com/vi/m_ZvZ5Xl8e8/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "Fundamentals of Ethics Axioms to Application",
+            "chapter": "സമഗ്ര പാഠഭാഗ വിശകലനം, പ്രധാന ആശയങ്ങൾ & പരീക്ഷാ നോട്ടുകൾ",
+            "duration": "09:37",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>ധാർമ്മികതയുടെ അടിസ്ഥാന സൂത്രവാക്യങ്ങൾ (Ethical Axioms):</strong> മൂല്യങ്ങൾ, നീതി, ധാർമ്മിക ഉത്തരവാദിത്തം എന്നിവയെക്കുറിച്ചുള്ള അടിസ്ഥാന തത്വങ്ങൾ.",
+              "<strong>പ്രായോഗിക തലങ്ങൾ (Application of Ethics):</strong> സിദ്ധാന്തങ്ങളിൽ നിന്നും വ്യക്തിജീവിതത്തിലേക്കും സമൂഹത്തിലേക്കും ധാർമ്മിക തത്വങ്ങളുടെ പ്രായോഗിക മാറ്റം.",
+              "<strong>ധർമ്മശാസ്ത്രവുമായുള്ള ബന്ധം:</strong> ഭാരതീയ ചിന്താധാരയിലെ ധർമ്മവും പാശ്ചാത്യ ധാർമ്മിക സങ്കൽപ്പങ്ങളും തമ്മിലുള്ള താരതമ്യം."
+            ],
+            "examTip": "Axioms (സ്വയംസിദ്ധ പ്രമാണങ്ങൾ) എങ്ങനെയാണ് നിത്യജീവിതത്തിലെ ധാർമ്മിക പ്രതിസന്ധികൾ (Ethical Dilemmas) പരിഹരിക്കാൻ ഉപയോഗിക്കുന്നത് എന്ന ഉദാഹരണ സഹിതമുള്ള ചോദ്യങ്ങൾ പരീക്ഷയ്ക്ക് പ്രതീക്ഷിക്കാം.",
+            "youtubeId": "KkcAMQxeMsY",
+            "thumbnail": "https://i.ytimg.com/vi/KkcAMQxeMsY/hqdefault.jpg",
+            "videoUrl": null
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "Applied Ethics From Casuistry to Real-World Dilemmas",
+            "chapter": "Malayalam study overview · Applied Ethics From Casuistry to Real-World Dilemmas",
+            "duration": "13:41",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of Applied Ethics From Casuistry to Real-World Dilemmas.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "zz0d8u3N2aw",
+            "thumbnail": "https://i.ytimg.com/vi/zz0d8u3N2aw/hqdefault.jpg",
+            "videoUrl": null
           }
         ]
       },
@@ -1902,6 +1973,21 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "University Exam Tip: 'Discuss Conscience as the subjective norm of morality and evaluate its role in resolving ethical conflicts'.",
             "thumbnail": "/thumbnails/ethics_thumb_04.jpg"
+          },
+          {
+            "chapterNumber": "Part 01",
+            "title": "Concepts of Ethics Virtue, Rights, and Duties",
+            "chapter": "Malayalam study overview · Concepts of Ethics Virtue, Rights, and Duties",
+            "duration": "06:29",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Topic:</strong> Comprehensive academic exploration of Concepts of Ethics Virtue, Rights, and Duties.",
+              "<strong>Examination Takeaway:</strong> Focus on core concepts, context, and analytical evaluation."
+            ],
+            "examTip": "Synthesize central themes and structural context for 10-mark examination essays.",
+            "youtubeId": "5Sa6S_-Z6WA",
+            "thumbnail": "https://i.ytimg.com/vi/5Sa6S_-Z6WA/hqdefault.jpg",
+            "videoUrl": null
           }
         ]
       },
@@ -2018,7 +2104,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 10
+    "totalVideos": 16
   },
   "microeconomic-foundation": {
     "name": "Microeconomic Foundation",
@@ -2358,11 +2444,19 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "सुमित्रानंदन पंत : प्रथम रश्मि",
-            "chapter": "छायावादी काव्य सौंदर्य एवं प्रकृति चित्रण",
-            "duration": "22",
-            "youtubeId": "",
-            "language": "Hindi"
+            "title": "सुमित्रानंदन पंत : प्रथम रश्मि (काव्य सौंदर्य व विस्मय-बोध)",
+            "chapter": "छायावादी प्रकृति सौंदर्य, उषाकालीन बिंब-विधान एवं संगीतात्मकता",
+            "duration": "20:20",
+            "language": "Hindi",
+            "youtubeId": "-f5H3lZR9SQ",
+            "thumbnail": "https://i.ytimg.com/vi/-f5H3lZR9SQ/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>कवि परिचय एवं छायावादी दृष्टि:</strong> सुमित्रानंदन पंत छायावाद के प्रमुख स्तंभ हैं जिन्हें 'प्रकृति का सुकुमार कवि' कहा जाता है। 'प्रथम रश्मि' उनकी प्रसिद्ध कविता है जिसमें प्रकृति के सौंदर्य और उषाकाल का अलौकिक वर्णन है।",
+              "<strong>विस्मय-बोध एवं जिज्ञासा:</strong> कवि पक्षियों और प्रकृति के जागरण पर आश्चर्य व्यक्त करता है कि प्रभात की पहली किरण का आभास चिड़िया को सबसे पहले कैसे हुआ—'प्रथम रश्मि का आना रंगिणि! तूने कैसे पहचाना?'",
+              "<strong>प्रकृति का मानवीकरण एवं बिंब-विधान:</strong> रात के अंधकार से प्रकृति के जागरण तक के दृश्य को कोमलकांत पदावली, सजीव ध्वन्यात्मक बिंबों और लाक्षणिक भाषा में प्रस्तुत किया गया है।",
+              "<strong>काव्यात्मक सौंदर्य एवं शिल्प:</strong> कविता में गेयता (संगीतात्मकता), अनुप्रास व रूपक अलंकारों का मनोहारी प्रयोग और तत्सम प्रधान परिष्कृत खड़ी बोली का सौंदर्य दर्शनीय है।"
+            ],
+            "examTip": "विश्वविद्यालय परीक्षा के लिए 'प्रथम रश्मि' कविता में व्यक्त विस्मय-बोध, प्रकृति-चित्रण की विशेषताएं और पंत की लाक्षणिक काव्य-भाषा पर 10 अंक का आलोचनात्मक प्रश्न अवश्य तैयार करें।"
           },
           {
             "chapterNumber": "Chapter 02",
@@ -2374,11 +2468,19 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Chapter 03",
-            "title": "असंगघोष : मैं दूँगा माकूल जवाब",
-            "chapter": "दलित चेतना एवं सामाजिक प्रतिरोध का काव्य",
-            "duration": "21",
-            "youtubeId": "",
-            "language": "Hindi"
+            "title": "असंगघोष : मैं दूँगा माकूल जवाब (दलित चेतना व सामाजिक प्रतिरोध)",
+            "chapter": "समकालीन दलित कविता, सामाजिक विषमता का विरोध एवं प्रतिरोध चेतना",
+            "duration": "20:20",
+            "language": "Hindi",
+            "youtubeId": "-f5H3lZR9SQ",
+            "thumbnail": "https://i.ytimg.com/vi/-f5H3lZR9SQ/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>समकालीन दलित कविता एवं असंगघोष:</strong> असंगघोष हिन्दी दलित साहित्य के प्रमुख कवि हैं जिनकी कविताएं सदियों से शोषित और उपेक्षित वर्ग की पीड़ा व आक्रोश को स्वर देती हैं।",
+              "<strong>प्रतिरोध का सशक्त स्वर:</strong> 'मैं दूँगा माकूल जवाब' में कवि केवल याचना या लाचारी व्यक्त नहीं करता, बल्कि सामाजिक अन्याय, जातिवादी उत्पीड़न और पाखंड के विरुद्ध निर्भीक प्रत्युत्तर (माकूल जवाब) देने का संकल्प लेता है।",
+              "<strong>कथ्य और भाषा का आक्रामक शिल्प:</strong> कविता में बनावटी अलंकरण के स्थान पर जनसाधारण की सीधी, सपाट और चोट करने वाली यथार्थवादी भाषा का प्रयोग हुआ है, जो पाठक के भीतर सामाजिक चेतना जगाती है।",
+              "<strong>समानता एवं आत्मसम्मान की मांग:</strong> कविता सामंती मानसिकता पर सीधा प्रहार करती है और मानवीय गरिमा, समानता व संवैधानिक अधिकारों की पुनःस्थापना पर बल देती है।"
+            ],
+            "examTip": "Calicut University FYUGP परीक्षा के लिए 'मैं दूँगा माकूल जवाब' कविता के मूल भाव, दलित चेतना के स्वरूप तथा सामाजिक यथार्थ के चित्रण पर 5 व 10 अंक के प्रश्नों की तैयारी करें।"
           },
           {
             "chapterNumber": "Chapter 04",
