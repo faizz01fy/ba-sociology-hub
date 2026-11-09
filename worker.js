@@ -492,24 +492,20 @@ export default {
                         glParam === "EEA" || 
                         euCountries.has(glParam);
 
-      const isEuropeanVisitor = isEU || euCountries.has(visitorCountry) || isPreview || isConsentDenied;
+      const isEuropeanVisitor = isEU || euCountries.has(visitorCountry) || isPreview;
 
       response = new HTMLRewriter()
         .on("head", {
           element(el) {
             el.append(`<script>window.HUB_IS_EUROPE = ${isEuropeanVisitor ? 'true' : 'false'};</script>`, { html: true });
-            if (isEuropeanVisitor) {
-              // Connect to Google-certified CMP (Funding Choices / IAB TCF v2.2)
-              el.append('<script async src="https://fundingchoicesmessages.google.com/i/pub-6526381938888583?ers=1"></script>', { html: true });
-              el.append('<script>(function(){function s(){if(!window.frames["googlefcPresent"]){if(document.body){var i=document.createElement("iframe");i.style="display:none;height:0;width:0;border:0;position:absolute;";i.src="javascript:void(\"\")";i.name="googlefcPresent";document.body.appendChild(i);}else{setTimeout(s,0);}}}s();})();</script>', { html: true });
-              el.append('<link rel="stylesheet" href="/consent-banner.css?v=20261109_tcf">', { html: true });
-            } else {
-              // Indian and non-EEA visitors: instant ad delivery (unless consent was denied)
-              if (!isConsentDenied && !isUtilityPath && !/test|mock/i.test(url.pathname)) {
-                el.append('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>', { html: true });
-              }
+            
+            // Basic Consent Mode controller for GA4 + IAB TCF listener
+            el.append('<script src="/consent-banner.js?v=20261109_official"></script>', { html: true });
+
+            // Standard AdSense script on all monetized content pages (loads published Google CMP message & ads)
+            if (!isUtilityPath && !/test|mock/i.test(url.pathname)) {
+              el.append('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>', { html: true });
             }
-            el.append('<script src="/consent-banner.js?v=20261109_tcf"></script>', { html: true });
           }
         })
         .on("script[src*='googletagmanager.com/gtag/js']", {
@@ -520,25 +516,8 @@ export default {
         .on("body", {
           element(el) {
             if (isEuropeanVisitor) {
-              el.append(`
-<div id="hub-consent-modal" class="hub-hidden" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="hub-consent-heading">
-  <div class="hub-consent-header">
-    <div class="hub-consent-logo" aria-hidden="true">🎓</div>
-    <div class="hub-consent-title" id="hub-consent-heading">Academic Hub · Privacy &amp; Cookie Choices</div>
-  </div>
-  <p class="hub-consent-desc">
-    We and our advertising partners use cookies and data to measure study usage and deliver relevant academic ads. 
-    You can consent or reject below. Review our <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Notice</a> for details.
-  </p>
-  <div class="hub-consent-actions">
-    <button type="button" class="hub-consent-btn hub-consent-btn-accept" onclick="hubApplyConsent(true)">Accept All</button>
-    <button type="button" class="hub-consent-btn hub-consent-btn-reject" onclick="hubApplyConsent(false)">Do Not Consent</button>
-  </div>
-</div>
-<button id="hub-consent-reopen" type="button" onclick="hubOpenConsent()" aria-label="Cookie &amp; Ad Choices">
-  🛡️ Cookie &amp; Ad Choices
-</button>
-`, { html: true });
+              // Discreet button to reopen Google certified privacy choices if needed
+              el.append('<button id="hub-consent-reopen" type="button" onclick="window.hubOpenConsent()" aria-label="Privacy and Cookie Settings" style="position:fixed;bottom:12px;left:12px;z-index:9999;background:rgba(23,59,53,0.92);color:#fff;border:1px solid rgba(255,255,255,0.4);border-radius:6px;padding:6px 12px;font:500 12px system-ui,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.25);">🛡️ Privacy &amp; Cookie Settings</button>', { html: true });
             }
           el.append('<script src="/traffic-tracker.js?v=20261105_act2" defer></script>', { html: true });
           if (isOwner) {
