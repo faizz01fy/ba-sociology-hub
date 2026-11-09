@@ -383,6 +383,17 @@ export default {
     }
 
     let response = await env.ASSETS.fetch(request);
+    if ((request.method === "GET" || request.method === "HEAD") &&
+        response.status === 307 && url.pathname.endsWith(".html")) {
+      const location = response.headers.get("Location");
+      if (location) {
+        const target = new URL(location, url);
+        if (target.origin === url.origin && !target.pathname.endsWith(".html")) {
+          target.search = url.search;
+          return Response.redirect(target, 308);
+        }
+      }
+    }
     if (!response.ok && !url.pathname.includes('.')) {
       try {
         const cleanHtmlUrl = new URL(url.pathname + '.html' + url.search, request.url);
@@ -471,10 +482,6 @@ export default {
 
       const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|voice-explanation|voice|econ_voice)(?:\.html)?$/i.test(url.pathname);
       
-      const cookieHeader = request.headers.get("Cookie") || "";
-      const isConsentDenied = cookieHeader.includes("hub_consent=denied");
-      const isConsentGranted = cookieHeader.includes("hub_consent=granted");
-
       const isEU = request.cf?.isEUCountry === "1" || request.cf?.isEUCountry === true;
       const euCountries = new Set([
         "AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE",
@@ -492,7 +499,8 @@ export default {
                         glParam === "EEA" || 
                         euCountries.has(glParam);
 
-      const isEuropeanVisitor = isEU || euCountries.has(visitorCountry) || isPreview;
+      const requiresConsent = isEU || euCountries.has(visitorCountry) || isPreview ||
+        !/^[A-Z]{2}$/.test(visitorCountry) || visitorCountry === "XX";
 
       const isPrivacyPolicy = /^\/privacy-policy(?:\.html)?$/i.test(url.pathname);
 
@@ -500,10 +508,9 @@ export default {
         response = new HTMLRewriter()
         .on("head", {
           element(el) {
-            el.append(`<script>window.HUB_IS_EUROPE = ${isEuropeanVisitor ? 'true' : 'false'};</script>`, { html: true });
-            
-            // Basic Consent Mode controller for GA4 + IAB TCF listener
-            el.append('<script src="/consent-banner.js?v=20261109_official"></script>', { html: true });
+            const pauseAds = requiresConsent ? ' (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;' : '';
+            el.prepend(`<script>window.HUB_IS_EUROPE = ${requiresConsent};${pauseAds}</script>`, { html: true });
+            el.append('<script src="/consent-banner.js?v=20261110"></script>', { html: true });
 
 
             // Standard AdSense script on all monetized content pages (loads published Google CMP message & ads)
@@ -519,9 +526,9 @@ export default {
         })
         .on("body", {
           element(el) {
-            if (isEuropeanVisitor) {
+            if (requiresConsent && !isUtilityPath && !/test|mock/i.test(url.pathname)) {
               // Discreet button to reopen Google certified privacy choices if needed
-              el.append('<button id="hub-consent-reopen" type="button" onclick="window.hubOpenConsent()" aria-label="Privacy and Cookie Settings" style="position:fixed;bottom:12px;left:12px;z-index:9999;background:rgba(23,59,53,0.92);color:#fff;border:1px solid rgba(255,255,255,0.4);border-radius:6px;padding:6px 12px;font:500 12px system-ui,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.25);">🛡️ Privacy &amp; Cookie Settings</button>', { html: true });
+              el.append('<button hidden id="hub-consent-reopen" type="button" aria-label="Privacy and Cookie Settings" style="position:fixed;bottom:12px;left:12px;z-index:9999;background:rgba(23,59,53,0.92);color:#fff;border:1px solid rgba(255,255,255,0.4);border-radius:6px;padding:6px 12px;font:500 12px system-ui,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.25);">🛡️ Privacy &amp; Cookie Settings</button>', { html: true });
             }
           el.append('<script src="/traffic-tracker.js?v=20261105_act2" defer></script>', { html: true });
           if (isOwner) {

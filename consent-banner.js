@@ -1,6 +1,6 @@
 /**
  * Academic Hub - Official AdSense & Google-Certified CMP Integration
- * Basic Consent Mode for GA4 + Native IAB TCF v2.2 compliance via AdSense
+ * Basic Consent Mode for GA4 and Google's IAB TCF consent signal
  */
 (function() {
   // Google AdSense CMP Requirement: Privacy policy must be 100% free of scripts requiring consent
@@ -41,7 +41,7 @@
     return;
   }
 
-  // European visitors & preview test mode: Basic Consent Mode (denied until explicit choice)
+  // Keep GA4 off in consent-required regions until it has its own consent integration.
   gtag('consent', 'default', {
     'analytics_storage': 'denied',
     'ad_storage': 'denied',
@@ -50,61 +50,45 @@
     'wait_for_update': 500
   });
 
-  function handleConsentUpdate(hasConsent) {
-    if (hasConsent) {
-      gtag('consent', 'update', {
-        'analytics_storage': 'granted',
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted'
-      });
-      loadGA4();
-    } else {
-      gtag('consent', 'update', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied'
-      });
-    }
-  }
+  const ads = window.adsbygoogle = window.adsbygoogle || [];
+  ads.pauseAdRequests = 1;
+  let listening = false;
 
-  // Connect to Google-certified CMP via standard IAB TCF v2.2 API
-  function attachTCFListener() {
-    if (typeof window.__tcfapi === 'function') {
-      window.__tcfapi('addEventListener', 2.2, function(tcData, success) {
-        if (success && tcData) {
-          if (tcData.eventStatus === 'useractioncomplete' || tcData.eventStatus === 'tcloaded') {
-            if (tcData.gdprApplies) {
-              var hasConsent = !!(tcData.purpose && tcData.purpose.consents && tcData.purpose.consents[1]);
-              handleConsentUpdate(hasConsent);
-            } else {
-              handleConsentUpdate(true);
-            }
-          }
+  function connectCMP() {
+    if (!listening && typeof window.__tcfapi === 'function') {
+      listening = true;
+      window.__tcfapi('addEventListener', 2, function(tcData, success) {
+        if (!success || tcData?.cmpStatus !== 'loaded' || tcData.gdprApplies !== true ||
+            !tcData.tcString || !['useractioncomplete', 'tcloaded'].includes(tcData.eventStatus)) return;
+
+        const purposes = tcData.purpose?.consents;
+        const allowsStorage = tcData.vendor?.consents?.[755] === true && purposes?.[1] === true;
+        ads.pauseAdRequests = 1;
+        if (allowsStorage) {
+          ads.requestNonPersonalizedAds = purposes[3] === true && purposes[4] === true ? 0 : 1;
+          ads.pauseAdRequests = 0;
         }
       });
-      return true;
     }
-    return false;
+
+    const button = document.getElementById('hub-consent-reopen');
+    if (!button || typeof window.googlefc?.showRevocationMessage !== 'function') return false;
+    if (button.hidden) {
+      button.addEventListener('click', function() {
+        ads.pauseAdRequests = 1;
+        window.googlefc.showRevocationMessage();
+      });
+      button.hidden = false;
+    }
+    return listening;
   }
 
-  if (!attachTCFListener()) {
-    var checkCount = 0;
-    var tcfInterval = setInterval(function() {
-      checkCount++;
-      if (attachTCFListener() || checkCount > 50) {
-        clearInterval(tcfInterval);
+  if (!connectCMP()) {
+    let checks = 0;
+    const interval = setInterval(function() {
+      if (connectCMP() || ++checks >= 150) {
+        clearInterval(interval);
       }
     }, 200);
   }
-
-  // Reopen Google's certified privacy settings message on demand
-  window.hubOpenConsent = function() {
-    if (window.googlefc && typeof window.googlefc.showRevocationMessage === 'function') {
-      window.googlefc.showRevocationMessage();
-    } else if (typeof window.__tcfapi === 'function') {
-      window.__tcfapi('displayConsentUi', 2, function() {});
-    }
-  };
 })();
