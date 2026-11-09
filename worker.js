@@ -502,6 +502,12 @@ export default {
             // Basic Consent Mode controller for GA4 + IAB TCF listener
             el.append('<script src="/consent-banner.js?v=20261109_official"></script>', { html: true });
 
+            if (isEuropeanVisitor) {
+              // Official Google Funding Choices CMP for European regulations & IAB TCF v2.2
+              el.append('<script>(function(){function s(){if(!window.frames["googlefcPresent"]){if(document.body){var i=document.createElement("iframe");i.style="display:none;height:0;width:0;border:0;position:absolute;";i.src="javascript:void(\"\")";i.name="googlefcPresent";document.body.appendChild(i);}else{setTimeout(s,0);}}}s();})();</script>', { html: true });
+              el.append('<script async src="https://fundingchoicesmessages.google.com/i/pub-6526381938888583"></script>', { html: true });
+            }
+
             // Standard AdSense script on all monetized content pages (loads published Google CMP message & ads)
             if (!isUtilityPath && !/test|mock/i.test(url.pathname)) {
               el.append('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>', { html: true });
