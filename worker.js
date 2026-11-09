@@ -535,6 +535,7 @@ export default {
       htmlHeaders.set("Expires", "0");
       htmlHeaders.set("CDN-Cache-Control", "no-store");
       htmlHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
+      htmlHeaders.set("Referrer-Policy", "strict-origin-when-cross-origin");
       return new Response(response.body, {
         status: response.status,
         statusText: response.statusText,
