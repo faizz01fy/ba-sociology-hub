@@ -494,7 +494,10 @@ export default {
 
       const isEuropeanVisitor = isEU || euCountries.has(visitorCountry) || isPreview;
 
-      response = new HTMLRewriter()
+      const isPrivacyPolicy = /^\/privacy-policy(?:\.html)?$/i.test(url.pathname);
+
+      if (!isPrivacyPolicy) {
+        response = new HTMLRewriter()
         .on("head", {
           element(el) {
             el.append(`<script>window.HUB_IS_EUROPE = ${isEuropeanVisitor ? 'true' : 'false'};</script>`, { html: true });
@@ -528,6 +531,7 @@ export default {
           }
         }
       }).transform(response);
+      }
 
       const htmlHeaders = new Headers(response.headers);
       htmlHeaders.set("Cache-Control", "private, no-cache, no-store, max-age=0, must-revalidate");

@@ -3,6 +3,11 @@
  * Basic Consent Mode for GA4 + Native IAB TCF v2.2 compliance via AdSense
  */
 (function() {
+  // Google AdSense CMP Requirement: Privacy policy must be 100% free of scripts requiring consent
+  if (typeof location !== 'undefined' && /^\/privacy-policy(?:\.html)?$/i.test(location.pathname)) {
+    return;
+  }
+
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   window.gtag = gtag;
