@@ -2311,6 +2311,25 @@ window.VOICE_EXPLANATIONS_DATA = {
           "examTip": "TP, MP, AP എന്നിവ തമ്മിലുള്ള ഗണിതശാസ്ത്ര ബന്ധങ്ങൾ, ഉത്പാദനത്തിന്റെ മൂന്ന് ഘട്ടങ്ങൾ (Stage I, II, III), എന്തുകൊണ്ട് ഫേം സ്റ്റേജ് II ൽ പ്രവർത്തിക്കുന്നു, ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമത്തിന്റെ പ്രാധാന്യം എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന ചോദ്യങ്ങളാണ്."
         },
         {
+          "chapterNumber": "Unit 13",
+          "title": "Unit 13: Long-Run Production (ദീർഘകാല ഉത്പാദന സിദ്ധാന്തം)",
+          "chapter": "Two Variable Inputs: Isoquants, Movement vs Shift, 4 Properties of Isoquants, Shapes (Perfect Substitutes, Fixed Proportions, Convex), MRTS = -MPL/MPK, Diminishing MRTS & Cobb-Douglas q = AL^αK^β",
+          "duration": "22:59",
+          "youtubeId": null,
+          "videoUrl": "https://www.youtube.com/watch?v=None",
+          "thumbnail": "https://i.ytimg.com/vi/None/hqdefault.jpg",
+          "language": "Malayalam",
+          "studyPoints": [
+            "<strong>ദീർഘകാല ഉത്പാദനം (Long-Run Production):</strong> എല്ലാ ഉത്പാദന ഘടകങ്ങളും മാറുന്ന ഘടകങ്ങളായി (Variable Inputs) മാറുന്ന കാലയളവ്: q = f(L, K). ഇവിടെ തൊഴിലും മൂലധനവും പരസ്പരം പ്രതിസ്ഥാപിക്കാൻ പൂർണ്ണ വഴക്കം ലഭിക്കുന്നു.",
+            "<strong>ഐസോക്വാണ്ട് (Isoquant):</strong> ഒരേ അളവ് ഉത്പന്നം നിർമ്മിക്കുന്ന സാങ്കേതികമായി കാര്യക്ഷമമായ തൊഴിലിന്റെയും മൂലധനത്തിന്റെയും എല്ലാ കൂട്ടുകളെയും കാണിക്കുന്ന വക്രരേഖ: q̄ = f(L, K).",
+            "<strong>ഐസോക്വാണ്ടിന്റെ 4 സവിശേഷതകൾ:</strong> (1) ഉദ്ഭവത്തിൽ നിന്ന് അകലെയുള്ളവ ഉയർന്ന ഉത്പാദനത്തെ സൂചിപ്പിക്കുന്നു, (2) പരസ്പരം ഛേദിക്കുന്നില്ല, (3) ഇടത്തുനിന്ന് വലത്തോട്ട് താഴേക്ക് ചരിഞ്ഞിരിക്കുന്നു (Downwards sloping), (4) കാര്യക്ഷമമായ കൂട്ടുകളെ മാത്രം പ്രതിനിധീകരിക്കുന്നതിനാൽ കനംകുറഞ്ഞ രേഖകളാണ് (Thin curves).",
+            "<strong>ഐസോക്വാണ്ടിന്റെ ആകൃതികൾ:</strong> (1) സമ്പൂർണ്ണ പ്രതിസ്ഥാപനങ്ങൾ (Perfect Substitutes) - നേർരേഖ (q = x + y, MRTS = -1), (2) സ്ഥിര അനുപാതം (Perfect Complements) - L-ആകൃതിയിലുള്ള വക്രങ്ങൾ, (3) സാധാരണ സാഹചര്യം - ഉദ്ഭവസ്ഥാനത്തേക്ക് കോൺവെക്സ് (Convex).",
+            "<strong>MRTS (Marginal Rate of Technical Substitution):</strong> ഒരു ഐസോക്വാണ്ടിന്റെ ചരിവ്: MRTS = ΔK / ΔL = - MPL / MPK. താഴേക്ക് പോകുന്തോറും നിരക്ക് കുറയുന്നതിനാൽ (Diminishing MRTS) ഐസോക്വാണ്ടുകൾ കോൺവെക്സ് ആകുന്നു.",
+            "<strong>കോബ്ബ്-ഡഗ്ലസ് ഫംഗ്ഷൻ (Cobb-Douglas):</strong> q = A L^α K^β. ഇവിടെ A = സാങ്കേതിക പാരാമീറ്റർ (Total Factor Productivity), α = തൊഴിലിന്റെ ഇലാസ്തികത, β = മൂലധന ഇലാസ്തികത. MPL = α(q/L) = α APL; MPK = β(q/K) = β APK; MRTS = - (α/β)(K/L)."
+          ],
+          "examTip": "ഐസോക്വാണ്ടിന്റെ നിർവചനം, നാല് പ്രധാന സവിശേഷതകൾ, MRTS = - MPL / MPK കണ്ടെത്തൽ, ഡിമിനിഷിംഗ് MRTS തത്വം, കോബ്ബ്-ഡഗ്ലസ് ഫംഗ്ഷനിലെ പാരാമീറ്ററുകൾ എന്നിവ യൂണിവേഴ്സിറ്റി പരീക്ഷകളിൽ സ്ഥിരമായി വരുന്ന ചോദ്യങ്ങളാണ്."
+        },
+        {
           "chapterNumber": "Unit 07",
           "title": "Production with One Variable Input",
           "chapter": "Law of Variable Proportions & Three Stages of Production",
