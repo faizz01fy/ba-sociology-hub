@@ -480,7 +480,7 @@ export default {
       })).catch(() => {});
       ctx.waitUntil(task);
 
-      const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|voice-explanation|voice|econ_voice)(?:\.html)?$/i.test(url.pathname);
+      const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|voice-explanation|voice|econ_voice|ai-pdf|mal-pdf)(?:\.html)?$/i.test(url.pathname);
       
       const isEU = request.cf?.isEUCountry === "1" || request.cf?.isEUCountry === true;
       const euCountries = new Set([
@@ -517,6 +517,11 @@ export default {
             if (!isUtilityPath && !/test|mock/i.test(url.pathname)) {
               el.append('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>', { html: true });
             }
+          }
+        })
+        .on("script[src*='pagead2.googlesyndication.com']", {
+          element(el) {
+            el.remove();
           }
         })
         .on("script[src*='googletagmanager.com/gtag/js']", {
