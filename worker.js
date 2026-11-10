@@ -13,7 +13,7 @@ export {StudyHelperQuota} from './study-helper-backend.js';
 import {handleUniversityNotices} from './university-notices-backend.js';
 import {handleWhatsAppWebhook, handleWhatsAppList} from './whatsapp-webhook-backend.js';
 const CHAT_PATH = "/api/chat";
-const TRACKER_SCRIPT = "(()=>{let last=\"\";function decode(v){try{return decodeURIComponent(v)}catch(e){return v}}function title(v){return String(v||\"\").replace(/[-_]+/g,\" \").split(\" \").map(function(w){return w?w.charAt(0).toUpperCase()+w.slice(1):\"\"}).join(\" \")}function getDetailedActivity(){try{const path=location.pathname||\"/\";const search=location.search||\"\";const hash=decode((location.hash||\"\").slice(1));const params=new URLSearchParams(search);if(path.indexOf(\"voice-explanation\")!==-1){const playing=document.querySelector(\".chapter-card.playing\");const stickyBar=document.getElementById(\"sticky-audio-bar\");const stickyTitleEl=document.getElementById(\"sticky-title\");const stickyTitle=(stickyTitleEl?stickyTitleEl.textContent:\"\").trim();const hasSticky=stickyBar&&stickyBar.style.display!==\"none\"&&stickyTitle&&stickyTitle.indexOf(\"Playing lecture...\")===-1;if(playing||hasSticky){let t=\"\";if(playing){const ct=playing.querySelector(\".card-title\");if(ct)t=ct.textContent.trim()}if(!t&&hasSticky)t=stickyTitle;if(!t&&document.title&&document.title.indexOf(\"|\")!==-1){t=document.title.split(\"|\")[0].trim()}const isVid=playing&&(playing.querySelector(\"iframe\")||playing.querySelector(\"video\"));const prefix=isVid?\"\u25b6\ufe0f Watching: \":\"\ud83c\udfa7 Hearing: \";if(t)return(prefix+t).slice(0,110)}const heroSubj=document.getElementById(\"hero-subject-name\");let subj=heroSubj?heroSubj.textContent.trim():\"\";if(subj&&subj.toLowerCase().indexOf(\"loading\")!==-1)subj=\"\";if(!subj){const qSubj=params.get(\"subject\");if(qSubj)subj=title(qSubj)}if(subj){subj=subj.replace(/^[^\\w\\s\\u0D00-\\u0D7F]+/,\"\").trim();return(\"\ud83c\udfa7 Voice: \"+subj).slice(0,90)}return\"\ud83c\udfa7 Voice Explanations\"}if(path.indexOf(\"study-guide-reader\")!==-1){const badge=document.getElementById(\"activeDocBadge\");let docTitle=badge?badge.textContent.trim():\"\";if(!docTitle||docTitle===\"Study Guide\"){docTitle=params.get(\"title\")||\"\"}if(!docTitle){const f=params.get(\"file\");if(f)docTitle=title(f.split(\"/\").pop().replace(/\\.pdf$/i,\"\"))}if(!docTitle&&document.title){docTitle=document.title.replace(/[\u00b7|].*$/,\"\").trim()}let isSpeaking=false;try{isSpeaking=!!(window.speechSynthesis&&window.speechSynthesis.speaking)}catch(e){}const prefix=isSpeaking?\"\ud83d\udd0a Hearing Read-Aloud: \":\"\ud83d\udcd6 Reading: \";return(prefix+(docTitle||\"Study Guide\")).slice(0,110)}if(path.indexOf(\"test\")!==-1||path.indexOf(\"mcq\")!==-1||path.indexOf(\"quiz\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcdd \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path.indexOf(\"reading\")!==-1||path.indexOf(\"-pdf\")!==-1||path.indexOf(\"notes\")!==-1||path.endsWith(\".pdf.html\")||path.indexOf(\"Companion\")!==-1||path.indexOf(\"Bilingual\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcd6 \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path===\"/\"||path===\"/index.html\"){const labels={top:\"\ud83c\udfe0 Overview\",subjects:\"\ud83d\udcda Semester subjects\",tests:\"\ud83d\udcdd Practice tests\",\"ai-study\":\"\ud83e\udd16 AI Study Helper\",notices:\"\ud83d\udce2 Calicut Univ Notices\",support:\"\ud83d\udcac Support\"};if(labels[hash])return labels[hash];if(hash)return\"\ud83c\udfe0 Home \u00b7 \"+title(hash);return\"\ud83c\udfe0 Hub Home\"}if(document.title&&document.title.length>2){const clean=document.title.replace(/[\u00b7|].*$/,\"\").trim();if(clean&&clean.toLowerCase().indexOf(\"academic hub\")===-1&&clean.toLowerCase().indexOf(\"loading\")===-1){return clean.slice(0,90)}}return title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")).slice(0,90)||\"Academic Hub Portal\"}catch(e){return\"Academic Hub Portal\"}}function record(force){try{const path=location.pathname||\"/\";const label=getDetailedActivity();const key=path+\"::\"+label;if(!force&&key===last)return;last=key;fetch(\"/api/traffic/section\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({path:path,section:label}),keepalive:true}).catch(function(){})}catch(e){}}window.addEventListener(\"hashchange\",function(){record()});window.addEventListener(\"pageshow\",function(){setTimeout(record,250)});window.addEventListener(\"popstate\",function(){record()});window.addEventListener(\"play\",function(){setTimeout(function(){record(true)},150)},true);window.addEventListener(\"pause\",function(){setTimeout(function(){record(true)},150)},true);document.addEventListener(\"click\",function(e){if(e.target&&e.target.closest&&e.target.closest(\".btn-play-voice,.vpp-btn-pause,.vpp-skip-btn,.subj-tab-btn,#voicePlayBtn,#voiceStopBtn,.welcome-ch-btn,.drawer-subject-modules a,.drawer-subject-header\")){setTimeout(function(){record(true)},350)}},{passive:true});try{const titleEl=document.querySelector(\"title\");if(titleEl&&window.MutationObserver){new MutationObserver(function(){setTimeout(function(){record()},200)}).observe(titleEl,{subtree:true,characterData:true,childList:true})}}catch(e){}setTimeout(record,350);function livePresence(active){try{if(document.querySelector(\".hub-owner-traffic-control\"))return;let id=\"\";try{id=sessionStorage.getItem(\"hub_live_visitor\")||\"\";if(!id){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2);sessionStorage.setItem(\"hub_live_visitor\",id)}}catch(e){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2)}fetch(\"/api/traffic/presence\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({visitorId:id,path:location.pathname||\"/\",section:getDetailedActivity(),active:active!==false}),keepalive:true}).catch(function(){})}catch(e){}}setTimeout(function(){livePresence(true)},400);setInterval(function(){if(!document.hidden)livePresence(true)},25000);document.addEventListener(\"visibilitychange\",function(){if(!document.hidden)livePresence(true)});window.addEventListener(\"pagehide\",function(){livePresence(false)})})();";
+const TRACKER_SCRIPT = "(()=>{let last=\"\";function decode(v){try{return decodeURIComponent(v)}catch(e){return v}}function title(v){return String(v||\"\").replace(/[-_]+/g,\" \").split(\" \").map(function(w){return w?w.charAt(0).toUpperCase()+w.slice(1):\"\"}).join(\" \")}function getDetailedActivity(){try{const path=location.pathname||\"/\";const search=location.search||\"\";const hash=decode((location.hash||\"\").slice(1));const params=new URLSearchParams(search);if(path.indexOf(\"voice-explanation\")!==-1){const playing=document.querySelector(\".chapter-card.playing\");const stickyBar=document.getElementById(\"sticky-audio-bar\");const stickyTitleEl=document.getElementById(\"sticky-title\");const stickyTitle=(stickyTitleEl?stickyTitleEl.textContent:\"\").trim();const hasSticky=stickyBar&&stickyBar.style.display!==\"none\"&&stickyTitle&&stickyTitle.indexOf(\"Playing lecture...\")===-1;if(playing||hasSticky){let t=\"\";if(playing){const ct=playing.querySelector(\".card-title\");if(ct)t=ct.textContent.trim()}if(!t&&hasSticky)t=stickyTitle;if(!t&&document.title&&document.title.indexOf(\"|\")!==-1){t=document.title.split(\"|\")[0].trim()}const isVid=playing&&(playing.querySelector(\"iframe\")||playing.querySelector(\"video\"));const prefix=isVid?\"\u25b6\ufe0f Watching: \":\"\ud83c\udfa7 Hearing: \";if(t)return(prefix+t).slice(0,110)}const heroSubj=document.getElementById(\"hero-subject-name\");let subj=heroSubj?heroSubj.textContent.trim():\"\";if(subj&&subj.toLowerCase().indexOf(\"loading\")!==-1)subj=\"\";if(!subj){const qSubj=params.get(\"subject\");if(qSubj)subj=title(qSubj)}if(subj){subj=subj.replace(/^[^\\w\\s\\u0D00-\\u0D7F]+/,\"\").trim();return(\"\ud83c\udfa7 Voice: \"+subj).slice(0,90)}return\"\ud83c\udfa7 Voice Explanations\"}if(path.indexOf(\"study-guide-reader\")!==-1){const badge=document.getElementById(\"activeDocBadge\");let docTitle=badge?badge.textContent.trim():\"\";if(!docTitle||docTitle===\"Study Guide\"){docTitle=params.get(\"title\")||\"\"}if(!docTitle){const f=params.get(\"file\");if(f)docTitle=title(f.split(\"/\").pop().replace(/\\.pdf$/i,\"\"))}if(!docTitle&&document.title){docTitle=document.title.replace(/[\u00b7|].*$/,\"\").trim()}let isSpeaking=false;try{isSpeaking=!!(window.speechSynthesis&&window.speechSynthesis.speaking)}catch(e){}const prefix=isSpeaking?\"\ud83d\udd0a Hearing Read-Aloud: \":\"\ud83d\udcd6 Reading: \";return(prefix+(docTitle||\"Study Guide\")).slice(0,110)}if(path.indexOf(\"test\")!==-1||path.indexOf(\"mcq\")!==-1||path.indexOf(\"quiz\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcdd \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path.indexOf(\"reading\")!==-1||path.indexOf(\"-pdf\")!==-1||path.indexOf(\"notes\")!==-1||path.endsWith(\".pdf.html\")||path.indexOf(\"Companion\")!==-1||path.indexOf(\"Bilingual\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcd6 \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path===\"/\"||path===\"/index.html\"){const labels={top:\"\ud83c\udfe0 Overview\",subjects:\"\ud83d\udcda Semester subjects\",tests:\"\ud83d\udcdd Practice tests\",\"ai-study\":\"\ud83e\udd16 AI Study Helper\",notices:\"\ud83d\udce2 Calicut Univ Notices\",support:\"\ud83d\udcac Support\"};if(labels[hash])return labels[hash];if(hash)return\"\ud83c\udfe0 Home \u00b7 \"+title(hash);return\"\ud83c\udfe0 Hub Home\"}if(document.title&&document.title.length>2){const clean=document.title.replace(/[\u00b7|].*$/,\"\").trim();if(clean&&clean.toLowerCase().indexOf(\"academic hub\")===-1&&clean.toLowerCase().indexOf(\"loading\")===-1){return clean.slice(0,90)}}return title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")).slice(0,90)||\"Academic Hub Portal\"}catch(e){return\"Academic Hub Portal\"}}function record(force){try{const path=location.pathname||\"/\";const label=getDetailedActivity();const key=path+\"::\"+label;if(!force&&key===last)return;last=key;fetch(\"/api/traffic/section\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({path:path,section:label}),keepalive:true}).catch(function(){})}catch(e){}}window.addEventListener(\"hashchange\",function(){record()});window.addEventListener(\"pageshow\",function(){setTimeout(record,250)});window.addEventListener(\"popstate\",function(){record()});window.addEventListener(\"play\",function(){setTimeout(function(){record(true)},150)},true);window.addEventListener(\"pause\",function(){setTimeout(function(){record(true)},150)},true);document.addEventListener(\"click\",function(e){if(e.target&&e.target.closest&&e.target.closest(\".btn-play-voice,.vpp-btn-pause,.vpp-skip-btn,.subj-tab-btn,#voicePlayBtn,#voiceStopBtn,.welcome-ch-btn,.drawer-subject-modules a,.drawer-subject-header\")){setTimeout(function(){record(true)},350)}},{passive:true});try{const titleEl=document.querySelector(\"title\");if(titleEl&&window.MutationObserver){new MutationObserver(function(){setTimeout(function(){record()},200)}).observe(titleEl,{subtree:true,characterData:true,childList:true})}}catch(e){}setTimeout(record,350);function livePresence(active){try{/* owner-beacon enabled */let id=\"\";try{id=sessionStorage.getItem(\"hub_live_visitor\")||\"\";if(!id){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2);sessionStorage.setItem(\"hub_live_visitor\",id)}}catch(e){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2)}fetch(\"/api/traffic/presence\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({visitorId:id,path:location.pathname||\"/\",section:getDetailedActivity(),active:active!==false}),keepalive:true}).catch(function(){})}catch(e){}}setTimeout(function(){livePresence(true)},400);setInterval(function(){if(!document.hidden)livePresence(true)},25000);document.addEventListener(\"visibilitychange\",function(){if(!document.hidden)livePresence(true)});window.addEventListener(\"pagehide\",function(){livePresence(false)})})();";
 const OWNER_LIVE_SCRIPT = "(()=>{const count=document.getElementById('hub-live-count');if(!count)return;async function update(){try{const response=await fetch('/api/admin/live-visitors',{cache:'no-store',credentials:'same-origin'});if(response.ok){const data=await response.json();const active=Number(data.active)||0;count.textContent=String(active)}}catch(e){}}update();setInterval(()=>{if(!document.hidden)update()},15000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update()})})();";
 const MAX_NAME = 32;
 const MAX_MESSAGE = 500;
@@ -887,6 +887,7 @@ export class StudyHubChat {
           uniqueIPs: uniqueIPs.size,
           today,
           yesterday,
+          ownerIp: ownerIp ? (ownerIp.slice(0, 7) + '***') : null,
           updatedAt: now
         });
       } catch (err) {
@@ -898,6 +899,7 @@ export class StudyHubChat {
           views: 0,
           uniqueIPs: 0,
           today: { day: indiaDay(now), views: 0, visitors: 0 },
+          yesterday: { views: 0, visitors: 0, hourly: Array(24).fill(0), popularPages: [], records: [] },
           updatedAt: now
         }, 200);
       }
@@ -1093,6 +1095,13 @@ function adminPage(authorized, initialData = null) {
       <span class="clock-label">TRAFFIC WATCH</span>
       <span class="clock-time" id="quota-guard-status" style="color:var(--accent-emerald)">● ACTIVE 24/7</span>
     </div>
+    <div class="clock-item" id="hud-last-sync-box">
+      <span class="clock-label">DATA RADAR SYNC</span>
+      <span class="clock-time" id="last-sync-time" style="color:var(--accent-cyan); display:flex; align-items:center; gap:6px;">
+        <span class="sync-pulse-dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent-cyan);box-shadow:0 0 8px var(--accent-cyan);"></span>
+        <span>Connecting...</span>
+      </span>
+    </div>
   </div>
 
   <div class="hud-actions">
@@ -1157,6 +1166,22 @@ function adminPage(authorized, initialData = null) {
     </div>
   </div>
 </section>
+
+<!-- TELEMETRY & OWNER SHIELD STATUS BANNER -->
+<div class="telemetry-hud-strip">
+  <div class="hud-strip-left">
+    <span class="engine-live-pulse"></span>
+    <span class="strip-label">RADAR ENGINE:</span>
+    <strong id="strip-engine-status" style="color:var(--accent-emerald);">LIVE & STREAMING</strong>
+    <span class="strip-sep">·</span>
+    <span class="strip-sub" id="strip-sync-info">Telemetry active (updates in real-time)</span>
+  </div>
+  <div class="hud-strip-right">
+    <span class="shield-icon">🛡️</span>
+    <span class="shield-text">Owner Protection:</span>
+    <span class="owner-ip-pill" id="owner-shield-pill">Active (Admin IP excluded from student counts)</span>
+  </div>
+</div>
 
 <!-- ULTRA-PREMIUM NAVIGATION TABS -->
 <nav class="nav-tabs" role="tablist">
@@ -1660,7 +1685,62 @@ body {
 }
 .btn-danger:hover { background: rgba(244, 63, 94, 0.3); color: #fff; }
 
-/* TOP KPI METRICS GRID */
+/* LIVE HEARTBEAT & TELEMETRY STRIP */
+    .sync-pulse-dot {
+      animation: pulse-glow 2s infinite ease-in-out;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.45; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    .telemetry-hud-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 12px;
+      padding: 10px 18px;
+      margin-bottom: 22px;
+      font-size: 12.5px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+    .hud-strip-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dim);
+    }
+    .engine-live-pulse {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      box-shadow: 0 0 10px var(--accent-emerald);
+      animation: pulse-glow 1.5s infinite ease-in-out;
+    }
+    .strip-sep { opacity: 0.4; }
+    .hud-strip-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dim);
+    }
+    .owner-ip-pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #a7f3d0;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 3px 9px;
+      border-radius: 6px;
+    }
+
+    /* TOP KPI METRICS GRID */
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -2421,6 +2501,23 @@ details.section-details summary:hover, details.popular-details summary:hover {
       return new Date(time + 330 * 60 * 1000).toISOString().slice(0, 10);
     }
 
+    let lastSyncTimestamp = Date.now();
+    function updateSyncTicker() {
+      const el = document.getElementById('last-sync-time');
+      if (!el) return;
+      if (!lastSyncTimestamp) {
+        el.innerHTML = '<span class="sync-pulse-dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent-amber);box-shadow:0 0 8px var(--accent-amber);"></span><span>Connecting...</span>';
+        return;
+      }
+      const diffSec = Math.floor((Date.now() - lastSyncTimestamp) / 1000);
+      const timeStr = new Date(lastSyncTimestamp).toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }) + ' IST';
+      let color = 'var(--accent-emerald)';
+      let label = diffSec <= 1 ? 'Just now' : (diffSec < 60 ? (diffSec + 's ago') : (Math.floor(diffSec / 60) + 'm ' + (diffSec % 60) + 's ago'));
+      if (diffSec >= 60) color = 'var(--accent-amber)';
+      if (diffSec >= 180) color = 'var(--accent-rose)';
+      el.innerHTML = '<span class="sync-pulse-dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:' + color + ';box-shadow:0 0 8px ' + color + ';"></span><span>● ' + label + '</span> <span style="font-size:0.75rem;opacity:0.7;font-weight:normal;">(' + timeStr + ')</span>';
+    }
+
     function updateClocks() {
       try {
         const now = new Date();
@@ -2433,6 +2530,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
           quotaGuard.style.color = 'var(--accent-emerald)';
           quotaGuard.textContent = '● ACTIVE 24/7';
         }
+        updateSyncTicker();
       } catch (e) {
         console.warn('Clock error:', e);
       }
@@ -3089,14 +3187,15 @@ details.section-details summary:hover, details.popular-details summary:hover {
       }
     }
 
-    // DATA FETCHING
+    // DATA FETCHING (CACHE BUSTED & DEFENSIVE)
     async function refreshLiveVisitors() {
       try {
-        const res = await fetch('/api/admin/live-visitors', { cache: 'no-store', credentials: 'same-origin' });
+        const res = await fetch('/api/admin/live-visitors?_t=' + Date.now(), { cache: 'no-store', credentials: 'same-origin' });
         if (res.status === 401) { location.href = '/admin/login'; return; }
         const d = await res.json();
         if (res.ok && d) {
           liveData = d;
+          lastSyncTimestamp = Date.now();
         } else {
           liveData = { active: 0, pages: [] };
         }
@@ -3104,13 +3203,13 @@ details.section-details summary:hover, details.popular-details summary:hover {
         console.warn('Live visitors fetch error:', err);
         liveData = { active: 0, pages: [] };
       } finally {
-        renderLiveRadar();
+        try { renderLiveRadar(); } catch (e) { console.error('renderLiveRadar error:', e); }
       }
     }
 
     async function refreshTraffic() {
       try {
-        const res = await fetch('/api/admin/traffic', { cache: 'no-store', credentials: 'same-origin' });
+        const res = await fetch('/api/admin/traffic?_t=' + Date.now(), { cache: 'no-store', credentials: 'same-origin' });
         if (res.status === 401) { location.href = '/admin/login'; return; }
         if (!res.ok) {
           console.warn('Traffic response error status:', res.status);
@@ -3123,6 +3222,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
           trafficRecords = d.records;
           popularPageRecords = Array.isArray(d.popularPages) ? d.popularPages : [];
           if (d.yesterday) yesterdayData = d.yesterday;
+          lastSyncTimestamp = Date.now();
           const link = document.getElementById('radar-link-status');
           if (link) {
             if (d.error) {
@@ -3132,6 +3232,9 @@ details.section-details summary:hover, details.popular-details summary:hover {
               link.textContent = '● NOMINAL';
               link.style.color = 'var(--accent-emerald)';
             }
+          }
+          if (d.ownerIp) {
+            setText('owner-shield-pill', 'Active (Admin IP ' + d.ownerIp + ' excluded)');
           }
           
           if (d.today) {
@@ -3153,9 +3256,9 @@ details.section-details summary:hover, details.popular-details summary:hover {
         const link = document.getElementById('radar-link-status');
         if (link) { link.textContent = '● SYNC RETRY'; link.style.color = 'var(--accent-amber)'; }
       } finally {
-        renderTraffic();
-        renderPopularPages();
-        renderYesterday();
+        try { renderTraffic(); } catch (e) { console.error('renderTraffic error:', e); }
+        try { renderPopularPages(); } catch (e) { console.error('renderPopularPages error:', e); }
+        try { renderYesterday(); } catch (e) { console.error('renderYesterday error:', e); }
       }
     }
 
@@ -3251,12 +3354,69 @@ details.section-details summary:hover, details.popular-details summary:hover {
       activateStation('geo');
     }
 
-    // EVENTS & INITIAL LOAD
+    // EVENTS & INTERACTIVE MANUAL SYNC
+    let isManualSyncing = false;
+    async function triggerManualSync() {
+      if (isManualSyncing) return;
+      isManualSyncing = true;
+      const syncBtn = document.getElementById('btn-force-sync');
+      const radarLink = document.getElementById('radar-link-status');
+      if (syncBtn) {
+        syncBtn.disabled = true;
+        syncBtn.style.opacity = '0.75';
+        syncBtn.innerHTML = '🔄 SYNCING...';
+      }
+      if (radarLink) {
+        radarLink.textContent = '● SYNCING...';
+        radarLink.style.color = 'var(--accent-cyan)';
+      }
+      try {
+        await Promise.allSettled([refreshLiveVisitors(), refreshTraffic()]);
+        if (syncBtn) {
+          syncBtn.innerHTML = '✓ SYNCED!';
+          syncBtn.style.boxShadow = '0 0 16px rgba(16, 185, 129, 0.7)';
+          syncBtn.style.borderColor = 'var(--accent-emerald)';
+          syncBtn.style.color = '#fff';
+        }
+        if (radarLink) {
+          radarLink.textContent = '● SYNCED NOW';
+          radarLink.style.color = 'var(--accent-emerald)';
+        }
+      } catch (err) {
+        console.warn('Manual sync failed:', err);
+        if (syncBtn) {
+          syncBtn.innerHTML = '⚠️ RETRY';
+          syncBtn.style.color = 'var(--accent-amber)';
+        }
+      } finally {
+        setTimeout(() => {
+          isManualSyncing = false;
+          if (syncBtn) {
+            syncBtn.disabled = false;
+            syncBtn.style.opacity = '1';
+            syncBtn.innerHTML = '⚡ FORCE REFRESH';
+            syncBtn.style.boxShadow = '';
+            syncBtn.style.borderColor = '';
+            syncBtn.style.color = '';
+          }
+        }, 1200);
+      }
+    }
+
     const syncBtn = document.getElementById('btn-force-sync');
-    if (syncBtn) syncBtn.onclick = () => {
+    if (syncBtn) syncBtn.onclick = triggerManualSync;
+
+    // IMMEDIATE AUTO-REFRESH ON VISIBILITY & FOCUS (NO FREEZE)
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        refreshLiveVisitors();
+        refreshTraffic();
+      }
+    });
+    window.addEventListener('focus', () => {
       refreshLiveVisitors();
       refreshTraffic();
-    };
+    });
 
     const exportBtn = document.getElementById('btn-export-traffic');
     if (exportBtn) exportBtn.onclick = exportTrafficCSV;
