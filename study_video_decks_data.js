@@ -240,29 +240,83 @@ window.ACADEMIC_HUB_VIDEO_DECKS = {
     {
       "id": "Mu1Ktkzr_ME",
       "slug": "microeconomic-foundation",
-      "titleMal": "Demand: Law, Determinants, Curves & Market Demand",
-      "titleEn": "Module 1 · Unit 1 · Malayalam Gemini voice review",
-      "module": "Microeconomic Foundation · Module 1 · Unit 1 · Malayala",
+      "titleMal": "ഡിമാൻഡ് നിയമവും സവിശേഷതകളും",
+      "titleEn": "Theory of Demand: Law, Determinants, Curves & Market Demand",
+      "module": "Microeconomic Foundation · Module 1 Unit 01",
       "url": "voice-explanation.html?subject=microeconomic-foundation&yt=Mu1Ktkzr_ME",
       "thumb": "https://img.youtube.com/vi/Mu1Ktkzr_ME/hqdefault.jpg"
     },
     {
       "id": "CylKbnNZtm0",
       "slug": "microeconomic-foundation",
-      "titleMal": "Supply — Complete LMS Review",
-      "titleEn": "All LMS sections, examples & MCQs · English terms/formulas + Malayalam explanation",
-      "module": "Microeconomic Foundation · All LMS sections, examples &",
+      "titleMal": "സപ്ലൈ സിദ്ധാന്തവും വിപണി സവിശേഷതകളും",
+      "titleEn": "Theory of Supply: LMS Comprehensive Review",
+      "module": "Microeconomic Foundation · Module 1 Unit 02",
       "url": "voice-explanation.html?subject=microeconomic-foundation&yt=CylKbnNZtm0",
       "thumb": "https://img.youtube.com/vi/CylKbnNZtm0/hqdefault.jpg"
     },
     {
       "id": "zJsY7Sbx2To",
       "slug": "microeconomic-foundation",
-      "titleMal": "Market Equilibrium — Complete LMS Review",
-      "titleEn": "All LMS sections, examples & MCQs · English terms/formulas + Malayalam explanation",
-      "module": "Microeconomic Foundation · All LMS sections, examples &",
+      "titleMal": "വിപണി സന്തുലിതാവസ്ഥ",
+      "titleEn": "Market Equilibrium & Price Determination",
+      "module": "Microeconomic Foundation · Module 1 Unit 03",
       "url": "voice-explanation.html?subject=microeconomic-foundation&yt=zJsY7Sbx2To",
       "thumb": "https://img.youtube.com/vi/zJsY7Sbx2To/hqdefault.jpg"
+    },
+    {
+      "id": "Jj-JWuNJjRU",
+      "slug": "microeconomic-foundation",
+      "titleMal": "യൂട്ടിലിറ്റി വിശകലനം",
+      "titleEn": "Utility Analysis: Cardinal vs Ordinal & DMU",
+      "module": "Microeconomic Foundation · Module 2 Unit 04",
+      "url": "voice-explanation.html?subject=microeconomic-foundation&yt=Jj-JWuNJjRU",
+      "thumb": "https://img.youtube.com/vi/Jj-JWuNJjRU/hqdefault.jpg"
+    },
+    {
+      "id": "z8tbT2SiepA",
+      "slug": "microeconomic-foundation",
+      "titleMal": "ഉപഭോക്തൃ മുൻഗണനകളും ഇൻഡിഫറൻസ് കർവുകളും",
+      "titleEn": "Consumer Preferences & Indifference Curves",
+      "module": "Microeconomic Foundation · Module 2 Unit 05",
+      "url": "voice-explanation.html?subject=microeconomic-foundation&yt=z8tbT2SiepA",
+      "thumb": "https://img.youtube.com/vi/z8tbT2SiepA/hqdefault.jpg"
+    },
+    {
+      "id": "9H8683I4Ad8",
+      "slug": "microeconomic-foundation",
+      "titleMal": "ബജറ്റ് പരിമിതിയും ഉപഭോക്തൃ സമനിലയും",
+      "titleEn": "Budget Constraint & Consumer Equilibrium",
+      "module": "Microeconomic Foundation · Module 2 Unit 08",
+      "url": "voice-explanation.html?subject=microeconomic-foundation&yt=9H8683I4Ad8",
+      "thumb": "https://img.youtube.com/vi/9H8683I4Ad8/hqdefault.jpg"
+    },
+    {
+      "id": "J6hBbtao1ms",
+      "slug": "microeconomic-foundation",
+      "titleMal": "നിയന്ത്രിത ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ്",
+      "titleEn": "Constrained Consumer Choice",
+      "module": "Microeconomic Foundation · Module 2 Unit 09",
+      "url": "voice-explanation.html?subject=microeconomic-foundation&yt=J6hBbtao1ms",
+      "thumb": "https://img.youtube.com/vi/J6hBbtao1ms/hqdefault.jpg"
+    },
+    {
+      "id": "W6b1q1WUJbo",
+      "slug": "microeconomic-foundation",
+      "titleMal": "സ്ഥാപനങ്ങളുടെ ഉടമസ്ഥതയും മാനേജ്‌മെന്റും",
+      "titleEn": "The Ownership & Management of Firms",
+      "module": "Microeconomic Foundation · Module 3 Unit 10",
+      "url": "voice-explanation.html?subject=microeconomic-foundation&yt=W6b1q1WUJbo",
+      "thumb": "https://img.youtube.com/vi/W6b1q1WUJbo/hqdefault.jpg"
+    },
+    {
+      "id": "9gX0HzBZ0Bc",
+      "slug": "microeconomic-foundation",
+      "titleMal": "റിട്ടേൺസ് ടു സ്കെയിൽ",
+      "titleEn": "Returns to Scale & Production Function",
+      "module": "Microeconomic Foundation · Module 3 Unit 14",
+      "url": "voice-explanation.html?subject=microeconomic-foundation&yt=9gX0HzBZ0Bc",
+      "thumb": "https://img.youtube.com/vi/9gX0HzBZ0Bc/hqdefault.jpg"
     }
   ],
   "ethics_philosophy": [

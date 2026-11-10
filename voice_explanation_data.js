@@ -2144,9 +2144,9 @@ window.VOICE_EXPLANATIONS_DATA = {
       "videos": [
         {
           "chapterNumber": "Unit 01",
-          "title": "Demand: Law, Determinants, Curves & Market Demand",
-          "chapter": "Module 1 · Unit 1 · Malayalam Gemini voice review",
-          "duration": "6:10",
+          "title": "ഡിമാൻഡ് നിയമവും സവിശേഷതകളും (Demand: Law, Determinants, Curves & Market Demand)",
+          "chapter": "Academic Hub Special · വ്യക്തിഗത & മാർക്കറ്റ് ഡിമാൻഡ്, ഡിമാൻഡ് ഷിഫ്റ്റുകൾ",
+          "duration": "06:21",
           "youtubeId": "Mu1Ktkzr_ME",
           "videoUrl": "/micro-demand-review.html",
           "thumbnail": "/thumbnails/micro-demand-review.png",
@@ -2164,9 +2164,9 @@ window.VOICE_EXPLANATIONS_DATA = {
         },
         {
           "chapterNumber": "Unit 02",
-          "title": "Supply — Complete LMS Review",
-          "chapter": "All LMS sections, examples & MCQs · English terms/formulas + Malayalam explanation",
-          "duration": "14:51",
+          "title": "സപ്ലൈ സിദ്ധാന്തവും വിപണി സവിശേഷതകളും (Supply: Law, Determinants & LMS Review)",
+          "chapter": "Academic Hub Special · സപ്ലൈ നിയമം, സപ്ലൈ ഫംഗ്ഷൻ & ഷിഫ്റ്റുകൾ",
+          "duration": "14:52",
           "youtubeId": "CylKbnNZtm0",
           "videoUrl": "/micro-unit2-review.html",
           "thumbnail": "/thumbnails/micro-unit-2-review.png",
@@ -2188,9 +2188,9 @@ window.VOICE_EXPLANATIONS_DATA = {
         },
         {
           "chapterNumber": "Unit 03",
-          "title": "Market Equilibrium — Complete LMS Review",
-          "chapter": "All LMS sections, examples & MCQs · English terms/formulas + Malayalam explanation",
-          "duration": "15:50",
+          "title": "വിപണി സന്തുലിതാവസ്ഥ (Market Equilibrium & Price Determination)",
+          "chapter": "Academic Hub Special · സന്തുലിത വിലയും അളവും, സർപ്ലസ് & ഷോർട്ടേജ്",
+          "duration": "15:51",
           "youtubeId": "zJsY7Sbx2To",
           "videoUrl": "/micro-unit3-review.html",
           "thumbnail": "/thumbnails/micro-unit-3-review.png",
@@ -2217,9 +2217,9 @@ window.VOICE_EXPLANATIONS_DATA = {
       "videos": [
         {
           "chapterNumber": "Unit 04",
-          "title": "Cardinal vs Ordinal Utility Analysis (പ്രയോജന സിദ്ധാന്തങ്ങൾ)",
-          "chapter": "Law of Diminishing Marginal Utility & Equi-Marginal Utility (Full Masterclass)",
-          "duration": "23:25",
+          "title": "യൂട്ടിലിറ്റി വിശകലനം (Utility Analysis: Cardinal vs Ordinal & DMU)",
+          "chapter": "Academic Hub Special · അപചയ സീമാന്ത പ്രയോജന നിയമവും സമ-സീമാന്ത പ്രയോജനവും",
+          "duration": "23:26",
           "youtubeId": "Jj-JWuNJjRU",
           "videoUrl": "https://www.youtube.com/watch?v=Jj-JWuNJjRU",
           "thumbnail": "https://i.ytimg.com/vi/Jj-JWuNJjRU/hqdefault.jpg",
@@ -2235,9 +2235,9 @@ window.VOICE_EXPLANATIONS_DATA = {
         },
         {
           "chapterNumber": "Unit 05",
-          "title": "Indifference Curve Analysis & Marginal Rate of Substitution",
-          "chapter": "Properties of IC Curves, Marginal Rate of Substitution & Preference Maps",
-          "duration": "18:15",
+          "title": "ഉപഭോക്തൃ മുൻഗണനകളും ഇൻഡിഫറൻസ് കർവുകളും (Consumer Preferences & Indifference Curves)",
+          "chapter": "Academic Hub Special · ഇൻഡിഫറൻസ് കർവ് പ്രത്യേകതകൾ, MRS & മുൻഗണനാ ഭൂപടം",
+          "duration": "18:16",
           "youtubeId": "z8tbT2SiepA",
           "thumbnail": "/thumbnails/Consumer_Preferences_Mod2_Unit6_Thumbnail.png",
           "studyPoints": [
@@ -2249,9 +2249,9 @@ window.VOICE_EXPLANATIONS_DATA = {
         },
         {
           "chapterNumber": "Unit 08",
-          "title": "Unit 8: Budget Constraint (ബജറ്റ് പരിമിതി) & Consumer Equilibrium",
-          "chapter": "Slope (-Px/Py), Opportunity Set, Price & Income Shifts, MRS Tangency",
-          "duration": "10:34",
+          "title": "ബജറ്റ് പരിമിതിയും ഉപഭോക്തൃ സമനിലയും (Budget Constraint & Consumer Equilibrium)",
+          "chapter": "Academic Hub Special · ബജറ്റ് രേഖ (-Px/Py), അവസര ഗണം, വില-വരുമാന മാറ്റങ്ങൾ",
+          "duration": "10:35",
           "youtubeId": "9H8683I4Ad8",
           "thumbnail": "https://i.ytimg.com/vi/9H8683I4Ad8/hqdefault.jpg",
           "studyPoints": [
@@ -2267,8 +2267,8 @@ window.VOICE_EXPLANATIONS_DATA = {
         },
         {
           "chapterNumber": "Unit 09",
-          "title": "Unit 9: Constrained Consumer Choice (ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ്)",
-          "chapter": "The Optimal Bundle, Tangency MRS = Px/Py, Convexity & Demand Derivation",
+          "title": "നിയന്ത്രിത ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ് (Constrained Consumer Choice)",
+          "chapter": "Academic Hub Special · ഒപ്റ്റിമൽ ബണ്ടിൽ, ടാൻജൻസി നിബന്ധന (MRS = Px/Py)",
           "duration": "14:14",
           "youtubeId": "J6hBbtao1ms",
           "videoUrl": "https://www.youtube.com/watch?v=J6hBbtao1ms",
@@ -2290,9 +2290,9 @@ window.VOICE_EXPLANATIONS_DATA = {
       "videos": [
         {
           "chapterNumber": "Unit 10",
-          "title": "Unit 10: The Ownership & Management of Firms (ഉടമസ്ഥതയും മാനേജ്‌മെന്റും)",
-          "chapter": "Sole Proprietorship, Partnership, Corporation, Limited Liability, Principal-Agent Problem & Profit Maximization",
-          "duration": "24:37",
+          "title": "സ്ഥാപനങ്ങളുടെ ഉടമസ്ഥതയും മാനേജ്‌മെന്റും (The Ownership & Management of Firms)",
+          "chapter": "Academic Hub Special · സോൾ പ്രൊപ്രൈറ്റർഷിപ്പ്, പാർട്ണർഷിപ്പ്, കോർപ്പറേഷൻ & പ്രിൻസിപ്പൽ-ഏജന്റ്",
+          "duration": "15:38",
           "youtubeId": "W6b1q1WUJbo",
           "videoUrl": "https://www.youtube.com/watch?v=W6b1q1WUJbo",
           "thumbnail": "https://i.ytimg.com/vi/W6b1q1WUJbo/hqdefault.jpg",
@@ -2330,9 +2330,9 @@ window.VOICE_EXPLANATIONS_DATA = {
         },
         {
           "chapterNumber": "Unit 14",
-          "title": "Unit 14: Returns to Scale (റിട്ടേൺസ് ടു സ്കെയിൽ)",
-          "chapter": "Constant (CRS), Increasing (IRS), Decreasing Returns (DRS) & Varying Returns (അഞ്ജലി & കിരൺ ഡീപ് ഡിസ്കഷൻ)",
-          "duration": "25:19",
+          "title": "റിട്ടേൺസ് ടു സ്കെയിൽ (Returns to Scale & Production Function)",
+          "chapter": "Academic Hub Special · കോൺസ്റ്റന്റ് (CRS), ഇൻക്രീസിംഗ് (IRS), ഡിമിനിഷിംഗ് (DRS)",
+          "duration": "25:20",
           "youtubeId": "9gX0HzBZ0Bc",
           "videoUrl": "https://www.youtube.com/watch?v=9gX0HzBZ0Bc",
           "thumbnail": "https://i.ytimg.com/vi/9gX0HzBZ0Bc/hqdefault.jpg",
