@@ -1795,6 +1795,22 @@ window.VOICE_EXPLANATIONS_DATA = {
               "അസമത്വത്തിന്റെ കാരണങ്ങൾ: തൊഴിൽരഹിത വളർച്ച (Jobless Growth), പരോക്ഷ നികുതികളുടെ (GST) ആധിക്യം, അസംഘടിത മേഖലയിലെ വേതന മുരടിപ്പ്."
             ],
             "examTip": "Calicut University Focus: 'Explain the concepts of Income and Wealth Inequality in India. How are Lorenz Curve and Gini Coefficient used to measure economic inequality?'."
+          },
+          {
+            "chapterNumber": "Chapter 06",
+            "title": "അസമത്വം മനസ്സിലാക്കാം: ലോറൻസ് കർവും ഗിനി ഗുണകവും (Understanding Inequality · Animated Masterclass)",
+            "chapter": "ലോറൻസ് കർവ് ഡയഗ്രം · ഗിനി ഗുണകം സമവാക്യം G=A/(A+B) · സാമ്പത്തിക വ്യാഖ്യാനം",
+            "duration": "06:57",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ലോറൻസ് കർവ് ഡയഗ്രം: X-അക്ഷത്തിൽ ജനസംഖ്യയുടെ സഞ്ചിത ശതമാനവും Y-അക്ഷത്തിൽ വരുമാനത്തിന്റെ സഞ്ചിത ശതമാനവും പ്ലോട്ട് ചെയ്യുന്നു.",
+              "പൂർണ്ണ സമത്വ രേഖ (Line of Perfect Equality): 45 ഡിഗ്രി നേർരേഖ; ഈ രേഖയിൽ നിന്ന് ലോറൻസ് കർവ് താഴേക്ക് വീഴുമ്പോൾ അസമത്വം കൂടുന്നു.",
+              "ഗിനി ഗുണകം സമവാക്യം: G = A / (A + B). ഇവിടെ A എന്നത് സമത്വ രേഖയ്ക്കും ലോറൻസ് കർവിനും ഇടയിലുള്ള വിസ്തീർണ്ണമാണ്.",
+              "സൂചികയുടെ വ്യാഖ്യാനം: G = 0 എന്നാൽ സമ്പൂർണ്ണ സമത്വം; G = 1 എന്നാൽ പരമമായ കുത്തക അസമത്വം."
+            ],
+            "examTip": "Calicut University Focus: 'Draw the Lorenz Curve and derive the Gini Coefficient formula G=A/(A+B). Explain its economic significance'.",
+            "youtubeId": "JWDBMSBYd1M",
+            "thumbnail": "https://i.ytimg.com/vi/JWDBMSBYd1M/hqdefault.jpg"
           }
         ]
       },
@@ -1827,11 +1843,27 @@ window.VOICE_EXPLANATIONS_DATA = {
             "language": "English",
             "youtubeId": "C_QjoD92wNM",
             "thumbnail": "https://i.ytimg.com/vi/C_QjoD92wNM/hqdefault.jpg"
+          },
+          {
+            "chapterNumber": "Chapter 08",
+            "title": "12 തരം തൊഴിലില്ലായ്മകൾ (12 Types of Unemployment in India · Visual Masterclass)",
+            "chapter": "ഘടനാപരവും ഘർഷണപരവും പ്രച്ഛന്നവുമായ 12 തരം തൊഴിലില്ലായ്മകൾ · സമഗ്ര വിശകലനം",
+            "duration": "06:52",
+            "language": "Malayalam",
+            "studyPoints": [
+              "തൊഴിലില്ലായ്മയുടെ 12 പ്രധാന വർഗ്ഗീകരണങ്ങൾ: ഘടനാപരം (Structural), ഘർഷണപരം (Frictional), ചക്രിയം (Cyclical), പ്രച്ഛന്നം (Disguised), സീസണൽ (Seasonal).",
+              "സാങ്കേതിക തൊഴിലില്ലായ്മ (Technological), തുറന്ന തൊഴിലില്ലായ്മ (Open), വിദ്യാസമ്പന്ന തൊഴിലില്ലായ്മ (Educated), സ്വമേധയാ ഉള്ള തൊഴിലില്ലായ്മ (Voluntary).",
+              "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയിലെ പ്രാധാന്യം: കാർഷിക മേഖലയിലെ പ്രച്ഛന്ന തൊഴിലില്ലായ്മയും വ്യവസായ-സേവന മേഖലകളിലെ നൈപുണ്യ വിടവും (Skill Gap).",
+              "നയപരമായ പരിഹാരങ്ങൾ: തൊഴിൽ കേന്ദ്രീകൃത വികസന മാതൃകകൾ, നൈപുണ്യ വികസനം (Skill Development), MSME പ്രോത്സാഹനം."
+            ],
+            "examTip": "Calicut University Focus: 'Explain the 12 major types of unemployment with special reference to developing economies like India'.",
+            "youtubeId": "Za9o3cHz_uQ",
+            "thumbnail": "https://i.ytimg.com/vi/Za9o3cHz_uQ/hqdefault.jpg"
           }
         ]
       }
     ],
-    "totalVideos": 11
+    "totalVideos": 13
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",
@@ -2196,6 +2228,30 @@ window.VOICE_EXPLANATIONS_DATA = {
             "Market Equilibrium Quantity: 60,000 units"
           ],
           "examTip": "Always remember that market equilibrium occurs strictly where quantity demanded equals quantity supplied, with no surplus or shortage creating any further pressure on price."
+        },
+        {
+          "chapterNumber": "Unit 04",
+          "title": "ഷോക്കിങ് ദി ഇക്വിലിബ്രിയം (Shocking the Equilibrium: Demand & Supply Shifts)",
+          "chapter": "Academic Hub Special · ഡിമാൻഡ്-സപ്ലൈ ഷിഫ്റ്റുകൾ, വിപണി സന്തുലിതാവസ്ഥയിലെ മാറ്റങ്ങൾ",
+          "duration": "19:54",
+          "youtubeId": null,
+          "videoUrl": null,
+          "audioUrl": "/audio/micro_unit04_mod1_masterclass.mp3",
+          "thumbnail": "https://i.ytimg.com/vi/Mu1Ktkzr_ME/hqdefault.jpg",
+          "language": "Malayalam",
+          "examTip": "ഡിമാൻഡ്, സപ്ലൈ കർവുകളുടെ ഒരേസമയത്തുള്ള മാറ്റങ്ങൾ (Simultaneous shifts) വിലയിലും അളവിലും വരുത്തുന്ന സ്വാധീനം വ്യക്തമായി പഠിക്കുക."
+        },
+        {
+          "chapterNumber": "Unit 05",
+          "title": "സന്തുലിതാവസ്ഥയിലെ മാറ്റങ്ങളും ഇലാസ്തികതയും (Equilibrium Effects & Elasticity)",
+          "chapter": "Academic Hub Special · ഇലാസ്തികതയുടെ സ്വാധീനം, വില നിയന്ത്രണങ്ങളും വിപണി ഫലങ്ങളും",
+          "duration": "19:46",
+          "youtubeId": null,
+          "videoUrl": null,
+          "audioUrl": "/audio/micro_unit05_mod1_masterclass.mp3",
+          "thumbnail": "https://i.ytimg.com/vi/CylKbnNZtm0/hqdefault.jpg",
+          "language": "Malayalam",
+          "examTip": "വില ഇലാസ്തികത സന്തുലിത വിലയെയും അളവിനെയും എങ്ങനെ സ്വാധീനിക്കുന്നുവെന്ന് ഗ്രാഫിക്കലായി വരച്ചു പരിശീലിക്കുക."
         }
       ]
     },
@@ -2379,6 +2435,30 @@ window.VOICE_EXPLANATIONS_DATA = {
           ],
           "examTip": "CRS, IRS, DRS എന്നിവയുടെ ഗണിത സമവാക്യങ്ങൾ, ഐസോക്വാന്റ് അകലങ്ങൾ (Fig 14.1, 14.2, 14.3), വേരിയിംഗ് റിട്ടേൺസ് ഗ്രാഫ് (Fig 14.4), വൻകിട കമ്പനികളിലെ ഇക്കണോമിസ് ഓഫ് സ്കെയിൽ എന്നിവ 10 മാർക്ക് ഉപന്യാസ ചോദ്യമായി കാലിക്കറ്റ് സർവ്വകലാശാലയിൽ ചോദിക്കുന്നവയാണ്.",
           "audioUrl": "/audio/micro_unit14_masterclass.mp3"
+        },
+        {
+          "chapterNumber": "Unit 15",
+          "title": "ചെലവുകളുടെ സ്വഭാവം (Nature of Costs: Explicit, Implicit & Opportunity Cost)",
+          "chapter": "Academic Hub Special · വ്യക്തമായ ചെലവുകൾ, അവ്യക്തമായ ചെലവുകൾ, അവസരച്ചെലവ് (Opportunity Cost)",
+          "duration": "22:35",
+          "youtubeId": null,
+          "videoUrl": null,
+          "audioUrl": "/audio/micro_unit15_masterclass.mp3",
+          "thumbnail": "https://i.ytimg.com/vi/9gX0HzBZ0Bc/hqdefault.jpg",
+          "language": "Malayalam",
+          "examTip": "സാമ്പത്തിക ലാഭവും അക്കൗണ്ടിംഗ് ലാഭവും തമ്മിലുള്ള വ്യത്യാസം അവസരച്ചെലവ് അടിസ്ഥാനമാക്കി വിശദീകരിക്കുക."
+        },
+        {
+          "chapterNumber": "Unit 16",
+          "title": "ഹ്രസ്വകാല ചെലവ് കർവുകൾ (Short-Run Costs: TFC, TVC, TC, AFC, AVC, ATC, MC)",
+          "chapter": "Academic Hub Special · സ്ഥിര-വ്യതിയാന ചെലവുകൾ, ശരാശരി ചെലവുകൾ, U-ആകൃതിയിലുള്ള കോസ്റ്റ് കർവുകൾ",
+          "duration": "28:57",
+          "youtubeId": null,
+          "videoUrl": null,
+          "audioUrl": "/audio/micro_unit16_masterclass.mp3",
+          "thumbnail": "https://i.ytimg.com/vi/9gX0HzBZ0Bc/hqdefault.jpg",
+          "language": "Malayalam",
+          "examTip": "എന്തുകൊണ്ടാണ് MC കർവ് AVC, ATC കർവുകളുടെ ഏറ്റവും താഴ്ന്ന ബിന്ദുവിൽ കൂടി കടന്നുപോകുന്നത് എന്ന് തെളിയിക്കുക."
         }
       ]
     },
@@ -2428,7 +2508,7 @@ window.VOICE_EXPLANATIONS_DATA = {
       ]
     }
   ],
-  "totalVideos": 12
+  "totalVideos": 16
 },
   "arabic": {
     "name": "Arabic",
