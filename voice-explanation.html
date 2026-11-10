@@ -4913,6 +4913,132 @@
       }
     }
 
+
+    /* Mobile Persistent Exam Q&A Floating Bar / Button - Maximizes YouTube Subscribers */
+    @keyframes pulseExamGlow {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 4px 18px rgba(220, 38, 38, 0.45), 0 0 0 0 rgba(239, 68, 68, 0.6);
+      }
+      50% {
+        transform: scale(1.02);
+        filter: brightness(1.15);
+        box-shadow: 0 6px 24px rgba(220, 38, 38, 0.8), 0 0 16px 4px rgba(248, 113, 113, 0.7);
+      }
+    }
+    @keyframes examLiveBadgeBlink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.82; transform: scale(1.08); }
+    }
+
+    .mobile-bottom-exam-bar {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-bottom-exam-bar {
+        display: block !important;
+        position: fixed !important;
+        bottom: 12px !important;
+        left: 12px !important;
+        right: 12px !important;
+        z-index: 180 !important;
+        pointer-events: auto !important;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), bottom 0.3s ease !important;
+      }
+
+      /* When sticky audio bar is playing/visible, lift exam bar smoothly right above it */
+      body.sticky-active .mobile-bottom-exam-bar {
+        bottom: 74px !important;
+      }
+      body.sticky-active .floating-awake-pill {
+        bottom: 136px !important;
+      }
+
+      .btn-floating-exam-sub {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 9px 14px !important;
+        border-radius: 14px !important;
+        background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #991b1b 100%) !important;
+        color: #ffffff !important;
+        border: 1.5px solid rgba(255, 255, 255, 0.7) !important;
+        cursor: pointer !important;
+        text-align: left !important;
+        font-family: inherit !important;
+        animation: pulseExamGlow 2.2s infinite ease-in-out !important;
+        touch-action: manipulation !important;
+      }
+
+      .btn-floating-exam-sub:hover,
+      .btn-floating-exam-sub:active {
+        animation-play-state: paused !important;
+        transform: scale(0.99) !important;
+      }
+
+      .exam-icon-wrap {
+        font-size: 20px !important;
+        line-height: 1 !important;
+        flex-shrink: 0 !important;
+      }
+
+      .exam-text-col {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1px !important;
+      }
+
+      .exam-main-text {
+        font-size: 13px !important;
+        font-weight: 850 !important;
+        color: #ffffff !important;
+        letter-spacing: 0.02em !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+
+      .exam-live-badge {
+        background: #fef08a !important;
+        color: #854d0e !important;
+        font-size: 10px !important;
+        font-weight: 900 !important;
+        padding: 2px 6px !important;
+        border-radius: 6px !important;
+        letter-spacing: 0.04em !important;
+        animation: examLiveBadgeBlink 1.4s infinite ease-in-out !important;
+      }
+
+      .exam-sub-text {
+        font-size: 10.5px !important;
+        color: #fecaca !important;
+        font-weight: 600 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+
+      .exam-arrow-pill {
+        flex-shrink: 0 !important;
+        background: rgba(255, 255, 255, 0.22) !important;
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
+        color: #ffffff !important;
+        font-size: 11px !important;
+        font-weight: 800 !important;
+        padding: 4px 9px !important;
+        border-radius: 999px !important;
+        white-space: nowrap !important;
+      }
+    }
+
   </style>
 
 </head>
@@ -5094,6 +5220,18 @@
 
   </aside>
 
+    <!-- Floating Exam Q&A Bar/Pill: Always Active in Mobile to Boost YouTube Subscribers -->
+  <aside class="mobile-bottom-exam-bar" id="mobile-bottom-exam-bar" aria-label="Exam Q&A Quick Action">
+    <button type="button" class="btn-floating-exam-sub" id="floating-exam-sub-btn" title="Open Exam Q&A Notes & Subscribe">
+      <span class="exam-icon-wrap" aria-hidden="true">🎙️</span>
+      <div class="exam-text-col">
+        <span class="exam-main-text">Exam Q&amp;A Voice Notes <span class="exam-live-badge">⚡ LIVE</span></span>
+        <small class="exam-sub-text">ചോദ്യോത്തരങ്ങൾ &amp; എക്സാം റിവിഷൻ · Subscribe YouTube</small>
+      </div>
+      <span class="exam-arrow-pill">Join ↗</span>
+    </button>
+  </aside>
+
   <!-- Floating Awake Pill: Noticeable button appearing when scrolling or playing -->
   <button type="button" class="floating-awake-pill" id="floating-awake-toggle" aria-pressed="false" title="Keep screen awake while reading or listening">
     <span class="wake-icon" aria-hidden="true">💡</span>
@@ -5166,7 +5304,7 @@
   </div>
   <!-- Load Subject Voice Data -->
 
-  <script src="voice_explanation_data.js?v=1794310206"></script>
+  <script src="voice_explanation_data.js?v=1794321169"></script>
 
 
 
@@ -5286,6 +5424,16 @@
           closeSubModal();
         }
       });
+
+      
+      const floatingExamBtn = document.getElementById('floating-exam-sub-btn');
+      if (floatingExamBtn) {
+        floatingExamBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const currentSubName = (heroSubjectName && heroSubjectName.textContent) ? heroSubjectName.textContent : 'Calicut University';
+          openSubModal(`${currentSubName} · Exam Q&A Revision`);
+        });
+      }
 
       const stickySubToggle = document.getElementById('sticky-sub-toggle');
       if (stickySubToggle) {
