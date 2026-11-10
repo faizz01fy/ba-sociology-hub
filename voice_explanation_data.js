@@ -2146,7 +2146,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "വ്യക്തിഗത ഡിമാൻഡ് കർവുകളുടെ തിരശ്ചീനമായ കൂട്ടിച്ചേർക്കലാണ് (Horizontal Summation) മാർക്കറ്റ് ഡിമാൻഡ് കർവ് രൂപീകരിക്കുന്നത്.",
             "വിലയിലെ മാറ്റം കർവിലൂടെയുള്ള മൂവ്മെന്റിനും (Expansion/Contraction) മറ്റ് ഘടകങ്ങളിലെ മാറ്റം കർവിന്റെ ഷിഫ്റ്റിനും (Increase/Decrease) കാരണമാകുന്നു."
           ],
-          "examTip": "പരീക്ഷയിൽ 'Movement along the Demand Curve' ഉം 'Shift in Demand Curve' ഉം തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, സ്വന്തം വിലയിലെ മാറ്റം മൂലമുണ്ടാകുന്ന മാറ്റത്തെ Change in Quantity Demanded (Expansion അല്ലെങ്കിൽ Contraction) എന്നും, വിലയൊഴികെയുള്ള മറ്റ് ഘടകങ്ങളിലെ മാറ്റം വഴി കർവ് പൂർണ്ണമായി മാറുന്നതിനെ Change in Demand (Increase അല്ലെങ്കിൽ Decrease) എന്നും പ്രത്യേകം ഗ്രാഫ് വരച്ച് വ്യക്തമാക്കുക."
+          "examTip": "പരീക്ഷയിൽ 'Movement along the Demand Curve' ഉം 'Shift in Demand Curve' ഉം തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, സ്വന്തം വിലയിലെ മാറ്റം മൂലമുണ്ടാകുന്ന മാറ്റത്തെ Change in Quantity Demanded (Expansion അല്ലെങ്കിൽ Contraction) എന്നും, വിലയൊഴികെയുള്ള മറ്റ് ഘടകങ്ങളിലെ മാറ്റം വഴി കർവ് പൂർണ്ണമായി മാറുന്നതിനെ Change in Demand (Increase അല്ലെങ്കിൽ Decrease) എന്നും പ്രത്യേകം ഗ്രാഫ് വരച്ച് വ്യക്തമാക്കുക.",
+          "audioUrl": "/audio/micro-module1-unit1-demand.mp3"
         },
         {
           "chapterNumber": "Unit 02",
@@ -2217,7 +2218,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "<strong>സീമാന്ത പ്രതിസ്ഥാപന നിരക്ക് (MRS):</strong> ഡിമിനിഷിംഗ് എം.ആർ.എസ് നിയമം കാരണം ഉദാസീന വക്രങ്ങൾ ഒറിജിനിലേക്ക് കോൺവെക്സ് ആയിരിക്കുന്നു."
           ],
           "examTip": "ആൽഫ്രഡ് മാർഷലിന്റെ ഡിമിനിഷിംഗ് മാർജിനൽ യൂട്ടിലിറ്റി നിയമം, ഗോസ്സന്റെ രണ്ടാം നിയമം, TU-വും MU-വും തമ്മിലുള്ള ഗ്രാഫിക്കൽ ബന്ധം എന്നിവ പരീക്ഷയ്ക്ക് 6 മാർക്കിനും 10 മാർക്കിനും നിർബന്ധമായും ചോദിക്കുന്ന ഭാഗങ്ങളാണ്.",
-          "language": "Malayalam"
+          "language": "Malayalam",
+          "audioUrl": "/audio/micro_unit04_masterclass.mp3"
         },
         {
           "chapterNumber": "Unit 05",
@@ -2249,7 +2251,8 @@ window.VOICE_EXPLANATIONS_DATA = {
           ],
           "examTip": "ബജറ്റ് രേഖയുടെ ചെരിവ് -Px/Py നിർണ്ണയിക്കുന്ന രീതിയും വിലമാറ്റവും വരുമാന മാറ്റവും തമ്മിലുള്ള ഗ്രാഫിക്കൽ വ്യത്യാസവും 6/10 മാർക്ക് ചോദ്യങ്ങളായി ആവർത്തിച്ചു വരാറുണ്ട്.",
           "videoUrl": "https://www.youtube.com/watch?v=9H8683I4Ad8",
-          "language": "Malayalam"
+          "language": "Malayalam",
+          "audioUrl": "/audio/micro_unit08_masterclass.mp3"
         },
         {
           "chapterNumber": "Unit 09",
@@ -2257,7 +2260,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           "chapter": "Consumer's Optimal Bundle, Tangency Condition (MRSxy = Px/Py), Equi-Marginal Principle (MUx/Px = MUy/Py), Convex Sections of IC vs Corner Solutions & Non-Satiation (Buying Where More Is Better)",
           "duration": "22:20",
           "youtubeId": null,
-          "videoUrl": "https://www.youtube.com/watch?v=None",
+          "videoUrl": null,
           "thumbnail": "https://i.ytimg.com/vi/None/hqdefault.jpg",
           "language": "Malayalam",
           "studyPoints": [
@@ -2268,7 +2271,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "<strong>കോൺവെക്സ് ഭാഗങ്ങളിലെ ഒപ്റ്റിമൽ ബണ്ടിൽ:</strong> കർവുകൾ ഉദ്ഭവത്തിലേക്ക് കോൺവെക്സ് ആയിരിക്കുമ്പോൾ മാത്രമേ സന്തുലിതാവസ്ഥ സ്ഥിരവും യഥാർത്ഥ പരമാവധിയും ആകുന്നുള്ളൂ (Second-Order Condition). കോൺകേവ് അല്ലെങ്കിൽ ലീനിയർ കർവുകൾ കോർണർ സൊല്യൂഷനിലേക്കും അപ്രായോഗിക സ്പെഷ്യലൈസേഷനിലേക്കും നയിക്കുന്നു.",
             "<strong>കൂടുതൽ ഉള്ളത് കൂടുതൽ നല്ലത് (Non-Satiation):</strong> പോസിറ്റീവ് മാർജിനൽ യൂട്ടിലിറ്റി (MUx > 0, MUy > 0) ഉള്ളതിനാൽ ഒപ്റ്റിമൽ ബണ്ടിൽ എപ്പോഴും ബജറ്റ് രേഖയിൽ തന്നെയായിരിക്കും; വരുമാനം മുഴുവൻ ചിലവഴിക്കപ്പെടുന്നു."
           ],
-          "examTip": "ഉപഭോക്താവിന്റെ ഒപ്റ്റിമൽ ബണ്ടിലിന്റെ ഗ്രാഫിക്കൽ ജ്യാമിതി (Figure 9.1), ടാൻജൻസി സമവാക്യം MRSxy = Px/Py, MUx/Px = MUy/Py സമ-സീമാന്ത നിയമം, എന്തുകൊണ്ട് ഒപ്റ്റിമൽ ബണ്ടിൽ കോൺവെക്സ് ഭാഗത്ത് വരുന്നു (Figure 9.2), നോൺ-സാറ്റിയേഷൻ തത്വം എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിലെ പ്രധാന എസ്സേ, ഷോർട്ട് എസ്സേ ചോദ്യങ്ങളാണ്."
+          "examTip": "ഉപഭോക്താവിന്റെ ഒപ്റ്റിമൽ ബണ്ടിലിന്റെ ഗ്രാഫിക്കൽ ജ്യാമിതി (Figure 9.1), ടാൻജൻസി സമവാക്യം MRSxy = Px/Py, MUx/Px = MUy/Py സമ-സീമാന്ത നിയമം, എന്തുകൊണ്ട് ഒപ്റ്റിമൽ ബണ്ടിൽ കോൺവെക്സ് ഭാഗത്ത് വരുന്നു (Figure 9.2), നോൺ-സാറ്റിയേഷൻ തത്വം എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിലെ പ്രധാന എസ്സേ, ഷോർട്ട് എസ്സേ ചോദ്യങ്ങളാണ്.",
+          "audioUrl": "/audio/micro_unit09_masterclass.mp3"
         }
       ]
     },
@@ -2292,7 +2296,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "<strong>പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രശ്നം:</strong> ഓഹരി ഉടമകളും (Principals) പ്രൊഫഷണൽ മാനേജർമാരും (Agents) തമ്മിൽ ഉടമസ്ഥതയും നിയന്ത്രണവും വേർതിരിയുമ്പോൾ ഉടലെടുക്കുന്ന താൽപ്പര്യ വൈരുദ്ധ്യം; സ്റ്റോക്ക് ഓപ്ഷനുകളിലൂടെയും ബോണസുകളിലൂടെയും ഇത് ലഘൂകരിക്കപ്പെടുന്നു.",
             "<strong>ലാഭം പരമാവധിയാക്കൽ (Profit Maximization):</strong> സാമ്പത്തിക സിദ്ധാന്തത്തിൽ സ്ഥാപനങ്ങളുടെ പ്രാഥമിക ലക്ഷ്യം. ആകെ വരുമാനത്തിൽ നിന്ന് ആകെ ചെലവ് കുറയ്ക്കുമ്പോൾ ലഭിക്കുന്ന ലാഭം (π = TR - TC) വിഭവ കാര്യക്ഷമതയുടെ അളവുകോലാണ്."
           ],
-          "examTip": "ലിമിറ്റഡ് ലയബിലിറ്റിയുടെ പ്രാധാന്യം, സോൾ പ്രൊപ്രൈറ്റർഷിപ്പും കോർപ്പറേഷനും തമ്മിലുള്ള വ്യത്യാസം, പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രതിസന്ധി, ലാഭ സമവാക്യം (π = TR - TC) എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന പ്രധാന ചോദ്യങ്ങളാണ്."
+          "examTip": "ലിമിറ്റഡ് ലയബിലിറ്റിയുടെ പ്രാധാന്യം, സോൾ പ്രൊപ്രൈറ്റർഷിപ്പും കോർപ്പറേഷനും തമ്മിലുള്ള വ്യത്യാസം, പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രതിസന്ധി, ലാഭ സമവാക്യം (π = TR - TC) എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന പ്രധാന ചോദ്യങ്ങളാണ്.",
+          "audioUrl": "/audio/micro_unit10_masterclass.mp3"
         },
         {
           "chapterNumber": "Unit 11",
@@ -2300,7 +2305,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           "chapter": "Production Concept, Factors (K, L, M), Q = f(L, K), Technical Efficiency, Short Run vs Long Run, Law of Diminishing Returns, Returns to Scale & Exam MCQs",
           "duration": "28:57",
           "youtubeId": null,
-          "videoUrl": "https://www.youtube.com/watch?v=None",
+          "videoUrl": null,
           "thumbnail": "https://i.ytimg.com/vi/None/hqdefault.jpg",
           "language": "Malayalam",
           "studyPoints": [
@@ -2312,7 +2317,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "<strong>റിട്ടേൺസ് ടു സ്കെയിൽ (Returns to Scale):</strong> ദീർഘകാലത്തിൽ എല്ലാ ഇൻപുട്ടുകളും ഒരേ അനുപാതത്തിൽ കൂട്ടുമ്പോൾ ഔട്ട്പുട്ട് ഇരട്ടിയിലധികമായാൽ IRS, തുല്യമായാൽ CRS, കുറഞ്ഞാൽ DRS.",
             "<strong>സാങ്കേതിക പുരോഗതി:</strong> പുതിയ സാങ്കേതികവിദ്യ പ്രൊഡക്ഷൻ ഫ്രോണ്ടിയറിനെ മുകളിലേക്ക് ഉയർത്തുന്നു (Upward Shift); ഒരേ ഇൻപുട്ടുകളിൽ നിന്ന് കൂടുതൽ ഔട്ട്പുട്ട് ഉണ്ടാക്കാൻ ഫേമുകളെ പ്രാപ്തമാക്കുന്നു."
           ],
-          "examTip": "പ്രൊഡക്ഷൻ ഫംഗ്ഷൻ സമവാക്യം Q = f(L, K), ഹ്രസ്വകാലവും ദീർഘകാലവും തമ്മിലുള്ള വ്യത്യാസം, സ്ഥിര-മാറ്റ ഘടകങ്ങൾ (Fixed vs Variable Inputs), ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമം, ടെക്നോളജിക്കൽ ഷിഫ്റ്റ് എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന ചോദ്യങ്ങളാണ്."
+          "examTip": "പ്രൊഡക്ഷൻ ഫംഗ്ഷൻ സമവാക്യം Q = f(L, K), ഹ്രസ്വകാലവും ദീർഘകാലവും തമ്മിലുള്ള വ്യത്യാസം, സ്ഥിര-മാറ്റ ഘടകങ്ങൾ (Fixed vs Variable Inputs), ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമം, ടെക്നോളജിക്കൽ ഷിഫ്റ്റ് എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന ചോദ്യങ്ങളാണ്.",
+          "audioUrl": "/audio/micro_unit11_masterclass.mp3"
         },
         {
           "chapterNumber": "Unit 12",
@@ -2320,7 +2326,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           "chapter": "Total Product (TP), Marginal Product (MPL), Average Product (APL), Graphing Product Curves, Three Stages of Production & Law of Diminishing Marginal Returns",
           "duration": "26:48",
           "youtubeId": null,
-          "videoUrl": "https://www.youtube.com/watch?v=None",
+          "videoUrl": null,
           "thumbnail": "https://i.ytimg.com/vi/None/hqdefault.jpg",
           "language": "Malayalam",
           "studyPoints": [
@@ -2332,7 +2338,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "<strong>ഏക യുക്തിസഹമായ ഘട്ടം:</strong> ഒരു വിവേകിയായ ഫേം എപ്പോഴും സ്റ്റേജ് II ൽ മാത്രമേ പ്രവർത്തിക്കൂ; സ്റ്റേജ് I ൽ മൂലധനം പാഴാകുന്നു, സ്റ്റേജ് III ൽ തൊഴിലാളികൾ ഉത്പാദനത്തെ നശിപ്പിക്കുന്നു.",
             "<strong>ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമം:</strong> സ്ഥിര മൂലധനത്തിലേക്ക് കൂടുതൽ തൊഴിലാളികളെ ചേർക്കുമ്പോൾ ക്രമേണ ഓരോ അധിക തൊഴിലാളിയുടെയും മാർജിനൽ സംഭാവന കുറഞ്ഞുവരുന്നു."
           ],
-          "examTip": "TP, MP, AP എന്നിവ തമ്മിലുള്ള ഗണിതശാസ്ത്ര ബന്ധങ്ങൾ, ഉത്പാദനത്തിന്റെ മൂന്ന് ഘട്ടങ്ങൾ (Stage I, II, III), എന്തുകൊണ്ട് ഫേം സ്റ്റേജ് II ൽ പ്രവർത്തിക്കുന്നു, ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമത്തിന്റെ പ്രാധാന്യം എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന ചോദ്യങ്ങളാണ്."
+          "examTip": "TP, MP, AP എന്നിവ തമ്മിലുള്ള ഗണിതശാസ്ത്ര ബന്ധങ്ങൾ, ഉത്പാദനത്തിന്റെ മൂന്ന് ഘട്ടങ്ങൾ (Stage I, II, III), എന്തുകൊണ്ട് ഫേം സ്റ്റേജ് II ൽ പ്രവർത്തിക്കുന്നു, ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമത്തിന്റെ പ്രാധാന്യം എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന ചോദ്യങ്ങളാണ്.",
+          "audioUrl": "/audio/micro_unit12_masterclass.mp3"
         },
         {
           "chapterNumber": "Unit 13",
@@ -2340,7 +2347,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           "chapter": "Two Variable Inputs: Isoquants, Movement vs Shift, 4 Properties of Isoquants, Shapes (Perfect Substitutes, Fixed Proportions, Convex), MRTS = -MPL/MPK, Diminishing MRTS & Cobb-Douglas q = AL^αK^β",
           "duration": "22:59",
           "youtubeId": null,
-          "videoUrl": "https://www.youtube.com/watch?v=None",
+          "videoUrl": null,
           "thumbnail": "https://i.ytimg.com/vi/None/hqdefault.jpg",
           "language": "Malayalam",
           "studyPoints": [
@@ -2351,28 +2358,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "<strong>MRTS (Marginal Rate of Technical Substitution):</strong> ഒരു ഐസോക്വാണ്ടിന്റെ ചരിവ്: MRTS = ΔK / ΔL = - MPL / MPK. താഴേക്ക് പോകുന്തോറും നിരക്ക് കുറയുന്നതിനാൽ (Diminishing MRTS) ഐസോക്വാണ്ടുകൾ കോൺവെക്സ് ആകുന്നു.",
             "<strong>കോബ്ബ്-ഡഗ്ലസ് ഫംഗ്ഷൻ (Cobb-Douglas):</strong> q = A L^α K^β. ഇവിടെ A = സാങ്കേതിക പാരാമീറ്റർ (Total Factor Productivity), α = തൊഴിലിന്റെ ഇലാസ്തികത, β = മൂലധന ഇലാസ്തികത. MPL = α(q/L) = α APL; MPK = β(q/K) = β APK; MRTS = - (α/β)(K/L)."
           ],
-          "examTip": "ഐസോക്വാണ്ടിന്റെ നിർവചനം, നാല് പ്രധാന സവിശേഷതകൾ, MRTS = - MPL / MPK കണ്ടെത്തൽ, ഡിമിനിഷിംഗ് MRTS തത്വം, കോബ്ബ്-ഡഗ്ലസ് ഫംഗ്ഷനിലെ പാരാമീറ്ററുകൾ എന്നിവ യൂണിവേഴ്സിറ്റി പരീക്ഷകളിൽ സ്ഥിരമായി വരുന്ന ചോദ്യങ്ങളാണ്."
-        },
-        {
-          "chapterNumber": "Unit 07",
-          "title": "Production with One Variable Input",
-          "chapter": "Law of Variable Proportions & Three Stages of Production",
-          "duration": "22",
-          "youtubeId": ""
-        },
-        {
-          "chapterNumber": "Unit 08",
-          "title": "Isoquants, Isocosts & Long-Run Production",
-          "chapter": "Returns to Scale & Cobb-Douglas Production Function",
-          "duration": "24",
-          "youtubeId": ""
-        },
-        {
-          "chapterNumber": "Unit 09",
-          "title": "Short-Run and Long-Run Cost Curves",
-          "chapter": "Fixed, Variable, Marginal, Average & Envelope Curves",
-          "duration": "23",
-          "youtubeId": ""
+          "examTip": "ഐസോക്വാണ്ടിന്റെ നിർവചനം, നാല് പ്രധാന സവിശേഷതകൾ, MRTS = - MPL / MPK കണ്ടെത്തൽ, ഡിമിനിഷിംഗ് MRTS തത്വം, കോബ്ബ്-ഡഗ്ലസ് ഫംഗ്ഷനിലെ പാരാമീറ്ററുകൾ എന്നിവ യൂണിവേഴ്സിറ്റി പരീക്ഷകളിൽ സ്ഥിരമായി വരുന്ന ചോദ്യങ്ങളാണ്.",
+          "audioUrl": "/audio/micro_unit13_masterclass.mp3"
         },
         {
           "chapterNumber": "Unit 14",
@@ -2390,7 +2377,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "<strong>ഡിക്രീസിംഗ് റിട്ടേൺസ് ടു സ്കെയിൽ (DRS):</strong> f(2L, 2K) < 2f(L, K). ഇൻപുട്ടുകൾ ഇരട്ടിയാക്കുമ്പോൾ ഉത്പാദനം ഇരട്ടിയിലും താഴെ മാത്രം കൂടുന്നു. ഐസോക്വാന്റുകൾ അകന്നുപോകുന്നു. മാനേജീരിയൽ സങ്കീർണ്ണതകൾ, ഏകോപന നഷ്ടം (Coordination Failure), ഉദ്യോഗസ്ഥ മേധാവിത്വം (Bureaucracy), മറഞ്ഞിരിക്കുന്ന സ്ഥിര ഘടകങ്ങൾ (Hidden Fixed Factors) എന്നിവ കാരണങ്ങളാണ്.",
             "<strong>വേരിയിംഗ് റിട്ടേൺസ് ടു സ്കെയിൽ:</strong> യഥാർത്ഥ ജീവിതത്തിൽ ഒരു സ്ഥാപനം വളരുമ്പോൾ ആദ്യം IRS (A to K), പിന്നീട് കാര്യക്ഷമമായ ഒപ്റ്റിമൽ സ്കെയിലിൽ CRS (K to C), തുടർന്ന് അധികവളർച്ചയിൽ DRS (C to H) എന്നിങ്ങനെ മൂന്ന് ഘട്ടങ്ങളിലൂടെ കടന്നുപോകുന്നു."
           ],
-          "examTip": "CRS, IRS, DRS എന്നിവയുടെ ഗണിത സമവാക്യങ്ങൾ, ഐസോക്വാന്റ് അകലങ്ങൾ (Fig 14.1, 14.2, 14.3), വേരിയിംഗ് റിട്ടേൺസ് ഗ്രാഫ് (Fig 14.4), വൻകിട കമ്പനികളിലെ ഇക്കണോമിസ് ഓഫ് സ്കെയിൽ എന്നിവ 10 മാർക്ക് ഉപന്യാസ ചോദ്യമായി കാലിക്കറ്റ് സർവ്വകലാശാലയിൽ ചോദിക്കുന്നവയാണ്."
+          "examTip": "CRS, IRS, DRS എന്നിവയുടെ ഗണിത സമവാക്യങ്ങൾ, ഐസോക്വാന്റ് അകലങ്ങൾ (Fig 14.1, 14.2, 14.3), വേരിയിംഗ് റിട്ടേൺസ് ഗ്രാഫ് (Fig 14.4), വൻകിട കമ്പനികളിലെ ഇക്കണോമിസ് ഓഫ് സ്കെയിൽ എന്നിവ 10 മാർക്ക് ഉപന്യാസ ചോദ്യമായി കാലിക്കറ്റ് സർവ്വകലാശാലയിൽ ചോദിക്കുന്നവയാണ്.",
+          "audioUrl": "/audio/micro_unit14_masterclass.mp3"
         }
       ]
     },
@@ -2440,7 +2428,7 @@ window.VOICE_EXPLANATIONS_DATA = {
       ]
     }
   ],
-  "totalVideos": 0
+  "totalVideos": 12
 },
   "arabic": {
     "name": "Arabic",
