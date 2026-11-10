@@ -1465,6 +1465,24 @@ window.VOICE_EXPLANATIONS_DATA = {
               "നിയമപരമായ ബാധ്യതയും മനുഷ്യ നിയന്ത്രണവും: ഹൈ-സ്റ്റേക്ക്സ് തീരുമാനങ്ങളിൽ നിർബന്ധിതമായി ഹ്യൂമൻ-ഇൻ-ദി-ലൂപ്പ് (Human-in-the-Loop) നിലനിർത്തേണ്ടതിന്റെ ആവശ്യകത."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: ആൻഡ്രിയാസ് മാത്തിയാസ് മുന്നോട്ടുവെച്ച 'Responsibility Gap' സിദ്ധാന്തം വിശദീകരിച്ച് എഐ എത്തിക്സിലെ ഉത്തരവാദിത്ത പ്രശ്നങ്ങൾ ചർച്ച ചെയ്യുക."
+          },
+          {
+            "chapterNumber": "എ.ഐ എന്ന കണ്ണാടി",
+            "title": "എ.ഐ എന്ന കണ്ണാടി: സാമൂഹിക പ്രതിഫലനങ്ങൾ (AI as a Mirror)",
+            "chapter": "Unit 4.2 b: AI as a Mirror · Cultural Reflection & Algorithmic Embeddedness",
+            "duration": "Visual Lecture",
+            "language": "Malayalam",
+            "youtubeId": "5vaYMdGdu4g",
+            "thumbnail": "https://i.ytimg.com/vi/5vaYMdGdu4g/hqdefault.jpg"
+          },
+          {
+            "chapterNumber": "Masterclass",
+            "title": "അൽഗോരിതങ്ങളിലെ വിവേചനം തടയാനാകുമോ? (Mitigating Algorithmic Discrimination)",
+            "chapter": "Unit 4.2 c: Technical Mitigation of Bias · Fairness Metrics & Debias Algorithms",
+            "duration": "Visual Lecture",
+            "language": "Malayalam",
+            "youtubeId": "qKwbadC7jes",
+            "thumbnail": "https://i.ytimg.com/vi/qKwbadC7jes/hqdefault.jpg"
           }
         ]
       },
@@ -1814,6 +1832,15 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Eradication Policies: MGNREGA 2005 Right to Work (100 days), PMKVY skill training, Stand Up India (10L-1Cr loans for SC/ST/Women), and National Employment Policy (NEP) 2030."
             ],
             "examTip": "Calicut University Focus: 'Explain Disguised Unemployment with examples and compare Usual Status, Weekly Status, and Daily Status measures of NSSO'."
+          },
+          {
+            "chapterNumber": "മൊഡ്യൂൾ 4",
+            "title": "മൊഡ്യൂൾ 4: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India)",
+            "chapter": "Module 04: Types of Unemployment · Measurement & Govt Policies",
+            "duration": "Visual Lecture",
+            "language": "Malayalam",
+            "youtubeId": "PDRbbOLxj4k",
+            "thumbnail": "https://i.ytimg.com/vi/PDRbbOLxj4k/hqdefault.jpg"
           }
         ]
       }
@@ -2265,7 +2292,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           "chapterNumber": "Unit 10",
           "title": "Unit 10: The Ownership & Management of Firms (ഉടമസ്ഥതയും മാനേജ്‌മെന്റും)",
           "chapter": "Sole Proprietorship, Partnership, Corporation, Limited Liability, Principal-Agent Problem & Profit Maximization",
-          "duration": "15:37",
+          "duration": "24:37",
           "youtubeId": "W6b1q1WUJbo",
           "videoUrl": "https://www.youtube.com/watch?v=W6b1q1WUJbo",
           "thumbnail": "https://i.ytimg.com/vi/W6b1q1WUJbo/hqdefault.jpg",
