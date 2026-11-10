@@ -1687,7 +1687,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയിലെ വൈരുദ്ധ്യങ്ങളും വികസന വെല്ലുവിളികളും (Contradictions & Development Challenges)",
             "chapter": "Academic Hub Special · വളർച്ചയും മുരടിപ്പും, തൊഴിൽരഹിത വളർച്ച & മേഖലാ അസന്തുലിതാവസ്ഥ",
             "duration": "22:45",
-            "youtubeId": "KsDe2ZkHrro",
+            "youtubeId": "FpHhWggjeIg",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -1742,7 +1742,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ദാരിദ്ര്യരേഖ മുതൽ ബഹുമുഖ ദാരിദ്ര്യ സൂചിക വരെ (From Poverty Line to Multidimensional Poverty Index - MPI)",
             "chapter": "Academic Hub Special · NITI Aayog നാഷണൽ MPI, ആരോഗ്യ-വിദ്യാഭ്യാസ-ജീവിതനിലവാര മാനങ്ങൾ",
             "duration": "16:44",
-            "youtubeId": "QTHt_P7RIA0",
+            "youtubeId": "sh2tt7d07PM",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -1764,7 +1764,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സ്വർണ്ണം പണയം വെച്ച ഇന്ത്യയുടെ സാമ്പത്തിക ചരിത്രം (The 1991 Balance of Payments Crisis & Gold Pledging)",
             "chapter": "Academic Hub Special · 1991 ബാലൻസ് ഓഫ് പേയ്മെന്റ്സ് പ്രതിസന്ധി & ധനകാര്യ നയ വ്യതിയാനങ്ങൾ",
             "duration": "22:38",
-            "youtubeId": "WYtOkVjW_Wo",
+            "youtubeId": "BQffX1nDUjw",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -1781,7 +1781,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development & Economic Institutions in India)",
             "chapter": "Academic Hub Special · പ്ലാനിംഗ് കമ്മീഷൻ മുതൽ നീതി ആയോഗ് വരെ, ഭരണഘടനാ സ്ഥാപനങ്ങൾ",
             "duration": "13:06",
-            "youtubeId": "j49jvbn7bz4",
+            "youtubeId": "x8npIOpPvas",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
