@@ -268,11 +268,11 @@ window.ACADEMIC_HUB_VIDEO_DECKS = {
   "ethics_philosophy": [
     {
       "id": "aeHwgnDHqr8",
-      "slug": "malayalam",
-      "titleMal": "മലയാള പഠന സഹായി: സമഗ്ര വിശകലനം",
-      "titleEn": "ഭാഗം എ",
-      "module": "Malayalam · Academic Hub Special · മലയാള",
-      "url": "voice-explanation.html?subject=malayalam&yt=aeHwgnDHqr8",
+      "slug": "philosophy-of-ai",
+      "titleMal": "വിജ്ഞാനശാസ്ത്രപരമായ പ്രതിഫലനങ്ങൾ",
+      "titleEn": "Epistemological Implications in Artificial Intelligence",
+      "module": "Philosophy of AI · Module 3 Chapter 5",
+      "url": "voice-explanation.html?subject=philosophy-of-ai&yt=aeHwgnDHqr8",
       "thumb": "https://img.youtube.com/vi/aeHwgnDHqr8/hqdefault.jpg"
     },
     {
@@ -332,9 +332,9 @@ window.ACADEMIC_HUB_VIDEO_DECKS = {
     {
       "id": "Y4zhWiirJkc",
       "slug": "philosophy-of-ai",
-      "titleMal": "Thinking Without a Thinker: Buddhism & AI",
-      "titleEn": "Chapter 01: Buddhism & Epistemology in AI",
-      "module": "Philosophy of AI · Chapter 01: Buddhism & Epist",
+      "titleMal": "ചൈനീസ് റൂം ആർഗ്യുമെന്റ് & ട്യൂറിംഗ് [ENG Video]",
+      "titleEn": "John Searle's Chinese Room [ENG Video]",
+      "module": "Philosophy of AI · Syntax vs Semantics · English Discussion",
       "url": "voice-explanation.html?subject=philosophy-of-ai&yt=Y4zhWiirJkc",
       "thumb": "https://img.youtube.com/vi/Y4zhWiirJkc/hqdefault.jpg"
     },

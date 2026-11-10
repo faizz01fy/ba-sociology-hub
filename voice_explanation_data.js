@@ -243,7 +243,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ചെറുകഥ: പൂവമ്പഴം — കാരൂർ നീലകണ്ഠപ്പിള്ള",
             "chapter": "മലയാള ചെറുകഥാ ചരിത്രം · ജന്മി-കുടിയാൻ ബന്ധം · ആത്തേരമ്മയുടെ ആത്മസംഘർഷങ്ങൾ",
             "duration": "18:32",
-            "youtubeId": "yS7Z8-7CQJ8",
+            "youtubeId": "snYLroXbSDI",
             "thumbnail": "https://i.ytimg.com/vi/yS7Z8-7CQJ8/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
@@ -303,7 +303,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കവിത: സമുദ്രലംഘനം — തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ",
             "chapter": "അദ്ധ്യാത്മരാമായണം കിളിപ്പാട്ട് · സുന്ദരകാണ്ഡം · ക്ലാസിക്കൽ കവിത (Ezhuthachan's Kilippattu Masterpiece)",
             "duration": "14:28",
-            "youtubeId": "WHAarsaeR3A",
+            "youtubeId": "ievP3epTaVQ",
             "thumbnail": "https://i.ytimg.com/vi/WHAarsaeR3A/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
@@ -320,7 +320,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കവിത: ചിന്താവിഷ്ടയായ സീത — മഹാകവി കുമാരനാശാൻ",
             "chapter": "റൊമാന്റിക് കാവ്യപ്രസ്ഥാനം · സ്ത്രീപക്ഷ നവോത്ഥാനം · മനഃശാസ്ത്രപരമായ ആഴം (Kumaran Asan's Masterpiece)",
             "duration": "16:11",
-            "youtubeId": "gPFUxbfGKwM",
+            "youtubeId": "PYtXGzEyPgQ",
             "thumbnail": "https://i.ytimg.com/vi/gPFUxbfGKwM/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
@@ -432,7 +432,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ചലച്ചിത്രം: ലിജോ ജോസ് പെല്ലിശ്ശേരിയുടെ 'നൻപകൽ നേരത്ത് മയക്കം'",
             "chapter": "സിനിമാ ചരിത്രം · തിരക്കഥാ സാഹിത്യം · മിസ്-എൻ-സീൻ · മാന്ത്രിക റിയലിസം",
             "duration": "10:53",
-            "youtubeId": "U7KtVJwJ6fc",
+            "youtubeId": "oXxVutN2BOw",
             "thumbnail": "https://i.ytimg.com/vi/U7KtVJwJ6fc/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
@@ -508,7 +508,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "I Have a Dream (English Edition)",
             "chapter": "English cinematic overview · Martin Luther King Jr. · Context, themes and rhetorical devices",
             "duration": "5:20",
-            "youtubeId": "ZdrMJqXnKyE",
+            "youtubeId": "OeMGI2CWtLA",
             "language": "English",
             "studyPoints": [
               "Historical context: Martin Luther King Jr. delivered the speech at the Lincoln Memorial during the March on Washington on August 28, 1963.",
@@ -543,7 +543,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "Anthem",
             "chapter": "Leonard Cohen · Module 1, Chapter 2 · Malayalam explanation",
             "duration": "8:11",
-            "youtubeId": "qJDNqI7AoDw",
+            "youtubeId": "A9maAWgaovY",
             "language": "Malayalam",
             "thumbnail": "/thumbnails/english-module1-chapter2-anthem.jpg",
             "studyPoints": [
@@ -612,7 +612,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "Rip It Out — Dead Poets Society",
             "chapter": "പീറ്റർ വെയർ · ഡെഡ് പോയറ്റ്സ് സൊസൈറ്റി (Peter Weir · Dead Poets Society · Rip It Out · Conformity & Non-Conformity)",
             "duration": "17:35",
-            "youtubeId": "UE333_P1a9A",
+            "youtubeId": "hNLY9H1czbM",
             "language": "Malayalam",
             "studyPoints": [
               "Context &amp; Setting: പീറ്റർ വെയർ സംവിധാനം ചെയ്ത 'ഡെഡ് പോയറ്റ്സ് സൊസൈറ്റി' എന്ന ചിത്രത്തിലെ വിഖ്യാതമായ ക്ലാസ്റൂം രംഗം. വെൽട്ടൺ അക്കാദമിയിലെ കർക്കശമായ യാഥാസ്ഥിതിക വിദ്യാഭ്യാസ രീതി.",
@@ -659,7 +659,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "The Second Coming",
             "chapter": "English cinematic overview · W.B. Yeats · Modernist apocalyptic vision, anarchy and symbolism",
             "duration": "07:38",
-            "youtubeId": "XLSDEwNzank",
+            "youtubeId": "_S8y6DEMYO0",
             "language": "English",
             "thumbnail": "https://i.ytimg.com/vi/XLSDEwNzank/hqdefault.jpg",
             "studyPoints": [
@@ -712,7 +712,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "Academic & Professional Writing Mechanics",
             "chapter": "English cinematic overview · The Writing Process · Pre-writing, drafting, revising and mechanics",
             "duration": "07:52",
-            "youtubeId": "wEMncXZ5tjM",
+            "youtubeId": "cTlb6K9fD2o",
             "language": "English",
             "thumbnail": "https://i.ytimg.com/vi/wEMncXZ5tjM/hqdefault.jpg",
             "studyPoints": [
@@ -794,7 +794,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "മൈക്രോ-മാക്രോ സോഷ്യോളജിയും പോസിറ്റിവിസവും (Micro & Macro Sociology and Positivism)",
             "chapter": "Micro & Macro Levels · Positivism & Comte (സൂക്ഷ്മ-സ്ഥൂല തലങ്ങളും പോസിറ്റിവിസവും)",
             "duration": "13",
-            "youtubeId": "-jf46qeJgKo",
+            "youtubeId": "WyReGfMhJJs",
             "studyPoints": [
               "മൈക്രോ vs മാക്രോ സോഷ്യോളജി: വ്യക്തികൾ തമ്മിലുള്ള മുഖാമുഖ സമ്പർക്കങ്ങളെയും ദൈനംദിന സംഭാഷണങ്ങളെയും പഠിക്കുന്ന മൈക്രോ തലവും (Micro-level), സമ്പദ്‌വ്യവസ്ഥ, ഭരണകൂടം, മതങ്ങൾ തുടങ്ങിയ വൻകിട വ്യവസ്ഥിതികളെ അപഗ്രഥിക്കുന്ന മാക്രോ തലവും (Macro-level).",
               "ഓഗസ്റ്റ് കോംതും പോസിറ്റിവിസവും (Auguste Comte's Positivism): പ്രകൃതിശാസ്ത്രങ്ങളിലെപ്പോലെ നേരിട്ടുള്ള നിരീക്ഷണത്തിലൂടെയും ശാസ്ത്രീയ തെളിവുകളിലൂടെയും സാമൂഹിക നിയമങ്ങൾ കണ്ടെത്താൻ കഴിയുമെന്ന വാദം.",
@@ -889,7 +889,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സാമൂഹികവൽക്കരണത്തിന്റെ ഏജൻസികൾ (Agents of Socialization)",
             "chapter": "Agents of Socialization · Family, School, Peer Groups, Media & Workplace (സാമൂഹികവൽക്കരണ ഏജൻസികൾ)",
             "duration": "16:15",
-            "youtubeId": "LqhkuyEAWBM",
+            "youtubeId": "uf8WYWO9-Tk",
             "thumbnail": "/thumbnails/sociology_agents_of_socialization_mod3/thumb.png",
             "language": "English & Malayalam",
             "studyPoints": [
@@ -951,7 +951,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "മനുഷ്യനെ മനുഷ്യനാക്കുന്ന സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary, Secondary & Reference Groups)",
             "chapter": "Primary vs Secondary Groups · Cooley & Reference Groups (പ്രാഥമിക & ദ്വിതീയ ഗ്രൂപ്പുകൾ)",
             "duration": "21",
-            "youtubeId": "VDASZEsOqj0",
+            "youtubeId": "YEnG1YJ_vfs",
             "studyPoints": [
               "സാമൂഹിക ഗ്രൂപ്പ് (Social Group): പരസ്പര ബന്ധവും പങ്കിട്ട മൂല്യങ്ങളും 'ഞങ്ങൾ' എന്ന ഐക്യബോധവും (We-feeling) ഉള്ള രണ്ടോ അതിലധികമോ വ്യക്തികളുടെ കൂട്ടായ്മ.",
               "പ്രാഥമിക ഗ്രൂപ്പുകൾ (Primary Groups - Charles Horton Cooley): ചെറിയ വലിപ്പം, മുഖാമുഖ സമ്പർക്കം (Face-to-face), വൈകാരിക അടുപ്പം (ഉദാ: കുടുംബം, ബാല്യകാല സൗഹൃദം).",
@@ -966,7 +966,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സംഘടിത സംഘങ്ങളും ആൾക്കൂട്ടത്തിന്റെ മനഃശാസ്ത്രവും (Formal Organizations & Crowd Psychology)",
             "chapter": "Max Weber's Bureaucracy & Gustave Le Bon's Crowd Psychology (ബ്യൂറോക്രസിയും ആൾക്കൂട്ട മനഃശാസ്ത്രവും)",
             "duration": "18",
-            "youtubeId": "uyHwUpA5Es0",
+            "youtubeId": "uMxIIznPo-w",
             "studyPoints": [
               "ഔപചാരിക സംഘടനകൾ (Formal Organizations): ആധുനിക വ്യവസായ വിപ്ലവത്തിന് ശേഷം വൻതോതിലുള്ള ജോലികൾ ഏകോപിപ്പിക്കാൻ രൂപകൽപ്പന ചെയ്ത നിയമബദ്ധമായ ഘടനകൾ.",
               "മാക്സ് വെബറുടെ ബ്യൂറോക്രസി (Max Weber's Rational Bureaucracy): അധികാര ശ്രേണി (Hierarchy of Authority), കർശനമായ ലിഖിത നിയമങ്ങൾ, നിർവ്യക്തികത (Impersonality), സാങ്കേതിക യോഗ്യത.",
@@ -981,7 +981,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ: തരങ്ങളും പ്രക്രിയകളും (Types of Social Interaction: Cooperation, Competition, Conflict, Accommodation, Assimilation)",
             "chapter": "Types of Social Interaction · Park & Burgess, Cooley, Simmel & Baldwin (സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ)",
             "duration": "14:27",
-            "youtubeId": "TN8LqpBZCGQ",
+            "youtubeId": "KEg51ekQTWY",
             "thumbnail": "/thumbnails/sociology_sem1_mod3/thumbnail.png",
             "language": "English & Malayalam",
             "studyPoints": [
@@ -997,7 +997,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സംഘർഷം സമൂഹത്തെ വളർത്തുന്നതെങ്ങനെ? (How Conflict Grows Society: Lewis Coser & Marx)",
             "chapter": "Functions of Social Conflict · Coser & Marx (സാമൂഹിക സംഘർഷത്തിന്റെ ധർമ്മങ്ങൾ)",
             "duration": "21",
-            "youtubeId": "N6XM-ScWqeo",
+            "youtubeId": "QidpySg9v80",
             "studyPoints": [
               "കാൾ മാർക്സിന്റെ വർഗ്ഗ സംഘർഷ സിദ്ധാന്തം (Karl Marx - Class Conflict): ചൂഷകരും ചൂഷിതരും തമ്മിലുള്ള ചരിത്രപരമായ വൈരുദ്ധ്യങ്ങൾ.",
               "ലൂയിസ് കോസറുടെ സംഘർഷ ധർമ്മങ്ങൾ (Lewis Coser - Functions of Social Conflict): സംഘർഷം ഗ്രൂപ്പിന്റെ ആന്തരിക ഐക്യത്തെ ശക്തിപ്പെടുത്തുന്ന വിധം.",
@@ -1031,7 +1031,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics, Evolution & Types)",
             "chapter": "Society · Characteristics & Types: Agrarian, Industrial & Post-Industrial (സമൂഹത്തിന്റെ പരിണാമം)",
             "duration": "16",
-            "youtubeId": "zEagx74glsc",
+            "youtubeId": "EJt-7kG_-E8",
             "studyPoints": [
               "സമൂഹം (Society): പരസ്പര ബന്ധങ്ങളുടെ സങ്കീർണ്ണമായ വല (MacIver & Page - 'Web of Social Relationships').",
               "പരിണാമ ഘട്ടങ്ങൾ: നായാട്ട്-ശേഖരണ ഘട്ടം, ഇടയ സമൂഹം, കാർഷിക സമൂഹം (Agrarian), വ്യാവസായിക സമൂഹം (Industrial), ആധുനിക പോസ്റ്റ്-ഇൻഡസ്ട്രിയൽ / ഇൻഫർമേഷൻ സമൂഹം.",
@@ -1075,7 +1075,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സാമൂഹിക മാറ്റവും അതിന്റെ ഘടകങ്ങളും (Social Change: Factors & Theories)",
             "chapter": "Social Change · Catalysts, Cultural Lag & Major Theories (സാമൂഹിക മാറ്റത്തിന്റെ സിദ്ധാന്തങ്ങൾ)",
             "duration": "21",
-            "youtubeId": "jfBES35jpzw",
+            "youtubeId": "z1jXxahDWUw",
             "studyPoints": [
               "സാമൂഹിക മാറ്റം (Social Change): സാമൂഹിക വ്യവസ്ഥിതിയിലും ബന്ധങ്ങളിലും മൂല്യങ്ങളിലും വരുന്ന ഘടനാപരമായ പരിവർത്തനം.",
               "പ്രധാന ചാലകശക്തികൾ: സാങ്കേതിക വിദ്യ (Technological), സമ്പദ്‌വ്യവസ്ഥ (Economic), സംസ്കാരം (Cultural), പരിസ്ഥിതി & ജനസംഖ്യാപരം.",
@@ -1187,26 +1187,26 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Unit 2.1 b",
-            "title": "ട്യൂറിംഗ് ടെസ്റ്റും ചിന്തയുടെ പരിമിതികളും (Alan Turing Test & Operational Limits of Thought)",
-            "chapter": "Unit 2.1 b: Imitation Game · Operational Limits · English Philosophical Masterclass",
-            "duration": "24:00",
+            "title": "ചൈനീസ് റൂം ആർഗ്യുമെന്റും ട്യൂറിംഗ് ടെസ്റ്റും (Chinese Room & Alan Turing Test) [ENG Video]",
+            "chapter": "Unit 2.1 b: Chinese Room · Turing Test · English Academic Masterclass",
+            "duration": "35:16",
             "youtubeId": "Y4zhWiirJkc",
-            "language": "English",
+            "language": "English (ENG Video) with Bilingual Notes",
             "studyPoints": [
-              "The Operational Method: Why Turing shifted from metaphysical definitions of 'thought' to observable behavioral metrics.",
-              "The Imitation Game: Analyzing interrogator protocols, human foil dynamics, and deceptive text terminal interfaces.",
-              "Operational Limits: The ELIZA effect, lack of semantic grounding, and commonsense reasoning blindspots in classic testing.",
-              "Philosophical Implications: Behaviorism vs intentional mental states in computational intelligence."
+              "John Searle's Chinese Room Argument: Why syntactic symbol manipulation differs from semantic understanding.",
+              "Alan Turing's Imitation Game: Analyzing the operational limits of behavioral testing in machine intelligence.",
+              "Strong AI vs Weak AI: Can a computer program ever possess authentic conscious mental states?",
+              "Syntax vs Semantics: Why modern LLMs process information without subjective intentionality or meaning."
             ],
-            "examTip": "Exam Tip: 'Explain the operational limits of the Turing Test and discuss whether conversational mimicry constitutes true thought'."
+            "examTip": "Exam Tip: 'Explain John Searle's Chinese Room Argument and evaluate whether AI systems can truly possess semantic understanding'."
           },
           {
             "chapterNumber": "Unit 2.1 c",
             "title": "AI-ക്ക് അർത്ഥമറിയാമോ അതോ വെറും ചൈനീസ് റൂമോ? (John Searle's Chinese Room Argument)",
             "chapter": "Unit 2.1 c: Syntax vs Semantics · Strong AI vs Weak AI Critique · Chinese Room",
-            "duration": "19:25",
+            "duration": "18:38",
             "youtubeId": "OBl1S1edYyU",
-            "language": "Bilingual (Malayalam & English)",
+            "language": "Malayalam with Bilingual Notes",
             "studyPoints": [
               "ജോൺ സിയേളിന്റെ ചിന്താപരീക്ഷണം (1980): ചൈനീസ് ഭാഷ അറിയാത്ത ഒരാൾ റൂൾബുക്ക് ഉപയോഗിച്ച് കൃത്യമായ മറുപടി ചിഹ്നങ്ങൾ നൽകുന്ന സങ്കൽപ്പിക മുറി.",
               "സിന്റാക്സ് എന്നത് സെമാന്റിക്സിന് തുല്യമല്ല (Syntax is not Semantics): പ്രോഗ്രാമുകൾക്ക് ചിഹ്നങ്ങളുടെ വിന്യാസമറിയാം, എന്നാൽ അവയുടെ യഥാർത്ഥ അർത്ഥം ഗ്രഹിക്കാൻ കഴിയില്ല.",
@@ -1235,7 +1235,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ശരീരമില്ലാതെ ബോധത്തിന് നിലനിൽക്കാൻ കഴിയുമോ? (Embodied Cognition & AI)",
             "chapter": "Unit 2.2 b: Disembodied Intelligence · Hubert Dreyfus & Andy Clark's Critique",
             "duration": "19:00",
-            "youtubeId": "ZIoG5kcVyk4",
+            "youtubeId": "2_RbQ7y-uHE",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
               "എംബോഡിഡ് കോഗ്നിഷൻ സിദ്ധാന്തം (Embodied AI): ചിന്ത എന്നത് അമൂർത്ത കണക്കുകൂട്ടലല്ല; ശരീരവും ഭൗതിക ചുറ്റുപാടുകളുമായുള്ള നിരന്തര ഇടപെടലിലൂടെയാണ് (Sensorimotor) ബുദ്ധി ഉണ്ടാകുന്നത്.",
@@ -1319,7 +1319,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഫങ്ഷണലിസവും കമ്പ്യൂട്ടേഷണൽ മൈൻഡും — ഭാഗം 2 (Functionalism & Computational Theory of Mind)",
             "chapter": "Unit 3.2 b: Functionalism · Hilary Putnam · CTM · Extended Mind Thesis",
             "duration": "18:00",
-            "youtubeId": "07BduoaqKYA",
+            "youtubeId": "Y4zhWiirJkc",
             "language": "Malayalam",
             "studyPoints": [
               "ഹിലരി പുട്നാമിന്റെ ഫങ്ഷണലിസം (Functionalism): മനസ്സ് എന്നത് ഭൗതിക പദാർത്ഥമല്ല, മറിച്ച് സിസ്റ്റത്തിൽ അത് നിർവ്വഹിക്കുന്ന ധർമ്മമാണ്.",
@@ -1334,7 +1334,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "എഐയിലെ വിജ്ഞാനശാസ്ത്രപരമായ പ്രതിഫലനങ്ങൾ (Epistemological Implications in Artificial Intelligence)",
             "chapter": "Unit 3.2 c: Epistemological Implications · Feigenbaum's Bottleneck · Tacit Knowledge · Social Epistemology",
             "duration": "17:26",
-            "youtubeId": "aeHwgnDHqr8",
+            "youtubeId": "hoAiiD_qroA",
             "language": "Malayalam",
             "studyPoints": [
               "വിജ്ഞാനശാസ്ത്ര മാറ്റങ്ങൾ (Epistemological Shifts): അനുഭവവാദവും യുക്തിവാദവും ഡിജിറ്റൽ പ്രോസസ്സിംഗിലൂടെ പുനർനിർവ്വചിക്കപ്പെടുന്നു.",
@@ -1349,7 +1349,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "എഐ വിജ്ഞാനശാസ്ത്ര പ്രത്യാഘാതങ്ങൾ — സമ്പൂർണ്ണ വിശകലനം (Epistemological Implications Masterclass)",
             "chapter": "Unit 3.2 c: Black-Box Opacity, Algorithmic Bias & Deep Epistemological Analysis",
             "duration": "25:00",
-            "youtubeId": "ZMMMjhptNmI",
+            "youtubeId": "qrlC8o73n4Q",
             "language": "Malayalam",
             "studyPoints": [
               "ബ്ലാക്ക്-ബോക്സ് ഒപ്പാസിറ്റി (Black-Box Opacity): ആധുനിക ഡീപ് ലേണിംഗ് മോഡലുകളുടെ ആന്തരിക തീരുമാനങ്ങൾ മനുഷ്യർക്ക് മനസ്സിലാക്കാനാവാത്ത അവസ്ഥ.",
@@ -1384,7 +1384,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "എഐ മനുഷ്യന്റെ അസ്തിത്വത്തിന് ഭീഷണിയാകുമോ? (Value Alignment & Existential Threat to Humanity)",
             "chapter": "Unit 4.1 a, b: Value Alignment · Existential Risk · Nick Bostrom & Stuart Russell",
             "duration": "22:00",
-            "youtubeId": "gGvp0v0bAW0",
+            "youtubeId": "uiB6PFp5P_I",
             "language": "Bilingual (Malayalam & English)",
             "studyPoints": [
               "മൂല്യ പൊരുത്ത പ്രശ്നം (The Value Alignment Problem): മനുഷ്യന്റെ ധാർമ്മിക മൂല്യങ്ങളുമായി കൃത്രിമ ബുദ്ധിയുടെ ലക്ഷ്യങ്ങളെ എങ്ങനെ പൊരുത്തപ്പെടുത്താം.",
@@ -1533,7 +1533,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "വിദ്യാഭ്യാസത്തിന്റെ പൊരുളും മഹത്തായ ദർശനങ്ങളും (Essence & Great Philosophies)",
             "chapter": "Academic Hub Special · ജ്ഞാനശാസ്ത്രവും വിദ്യാഭ്യാസവും തമ്മിലുള്ള ബന്ധം",
             "duration": "19:10",
-            "youtubeId": "H041V-SUIas",
+            "youtubeId": "A3CI9riUkGY",
             "language": "Malayalam",
             "studyPoints": [
               "ദർശനവും വിദ്യാഭ്യാസവും: നാണയത്തിന്റെ ഇരുവശങ്ങൾ പോലെ - ഫിലോസഫി ചിന്തയും വിദ്യാഭ്യാസം അതിന്റെ പ്രായോഗിക ആവിഷ്കാരവുമാണ്.",
@@ -1547,7 +1547,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "വിദ്യാഭ്യാസ തത്വശാസ്ത്രം: ചരിത്രവും പ്രധാന ശാഖകളും (History & Branches of Philosophy)",
             "chapter": "Academic Hub Special · മെറ്റാഫിസിക്സ്, എപ്പിസ്റ്റമോളജി, എത്തിക്സ് & അധ്യാപനം",
             "duration": "17:45",
-            "youtubeId": "SAr72ixQOA0",
+            "youtubeId": "IcVqN7uFNEo",
             "language": "Malayalam",
             "studyPoints": [
               "ജ്ഞാനശാസ്ത്രവും അധ്യാപന രീതികളും: കുട്ടി എങ്ങനെ അറിയുന്നു, അറിവ് എങ്ങനെ നിർമ്മിക്കപ്പെടുന്നു എന്ന അവബോധം.",
@@ -1566,7 +1566,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "പാശ്ചാത്യ വിദ്യാഭ്യാസത്തിലെ ആദർശവാദവും പ്രകൃതിവാദവും (Idealism & Naturalism in Western Education)",
             "chapter": "Academic Hub Special · പ്ലേറ്റോ vs റൂസ്സോ, ആശയങ്ങൾ vs പ്രകൃതി",
             "duration": "20:30",
-            "youtubeId": "vyPElWt5Hl4",
+            "youtubeId": "Axf_IV07DN0",
             "language": "Malayalam",
             "studyPoints": [
               "ആദർശവാദം (Idealism): മനസ്സിനും ആശയങ്ങൾക്കും ആത്മീയ മൂല്യങ്ങൾക്കും പരമമായ പ്രാധാന്യം (പ്ലേറ്റോ, സോക്രട്ടീസ്).",
@@ -1613,7 +1613,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "അധ്യാപനത്തെ അർത്ഥവത്താക്കുന്ന വിദ്യാഭ്യാസ തത്വശാസ്ത്രം (Philosophy of Education: Making Teaching Meaningful)",
             "chapter": "Academic Hub Special · ജോൺ ഡ്യൂയി, പ്രാഗ്മാറ്റിസം & അനുഭവങ്ങളിലൂടെയുള്ള പഠനം",
             "duration": "18:40",
-            "youtubeId": "dhlP7Epca6I",
+            "youtubeId": "QBLrna7iE1o",
             "language": "Malayalam",
             "studyPoints": [
               "പ്രായോഗികവാദം (Pragmatism - John Dewey): ചെയ്ത് പഠിക്കുക (Learning by Doing), ജീവിതം തന്നെയാണ് വിദ്യാഭ്യാസം.",
@@ -1687,7 +1687,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയിലെ വൈരുദ്ധ്യങ്ങളും വികസന വെല്ലുവിളികളും (Contradictions & Development Challenges)",
             "chapter": "Academic Hub Special · വളർച്ചയും മുരടിപ്പും, തൊഴിൽരഹിത വളർച്ച & മേഖലാ അസന്തുലിതാവസ്ഥ",
             "duration": "22:45",
-            "youtubeId": "FpHhWggjeIg",
+            "youtubeId": "KsDe2ZkHrro",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -1742,7 +1742,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ദാരിദ്ര്യരേഖ മുതൽ ബഹുമുഖ ദാരിദ്ര്യ സൂചിക വരെ (From Poverty Line to Multidimensional Poverty Index - MPI)",
             "chapter": "Academic Hub Special · NITI Aayog നാഷണൽ MPI, ആരോഗ്യ-വിദ്യാഭ്യാസ-ജീവിതനിലവാര മാനങ്ങൾ",
             "duration": "16:44",
-            "youtubeId": "sh2tt7d07PM",
+            "youtubeId": "QTHt_P7RIA0",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -1764,7 +1764,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സ്വർണ്ണം പണയം വെച്ച ഇന്ത്യയുടെ സാമ്പത്തിക ചരിത്രം (The 1991 Balance of Payments Crisis & Gold Pledging)",
             "chapter": "Academic Hub Special · 1991 ബാലൻസ് ഓഫ് പേയ്മെന്റ്സ് പ്രതിസന്ധി & ധനകാര്യ നയ വ്യതിയാനങ്ങൾ",
             "duration": "22:38",
-            "youtubeId": "BQffX1nDUjw",
+            "youtubeId": "WYtOkVjW_Wo",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -1781,7 +1781,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development & Economic Institutions in India)",
             "chapter": "Academic Hub Special · പ്ലാനിംഗ് കമ്മീഷൻ മുതൽ നീതി ആയോഗ് വരെ, ഭരണഘടനാ സ്ഥാപനങ്ങൾ",
             "duration": "13:06",
-            "youtubeId": "x8npIOpPvas",
+            "youtubeId": "j49jvbn7bz4",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -1999,7 +1999,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കൺസിക്വൻഷ്യലിസവും ഡിയോന്റോളജിക്കൽ എത്തിക്സും (Consequentialism & Deontological Ethics)",
             "chapter": "Academic Hub Special · ടെലിയോളജിക്കൽ സിദ്ധാന്തം vs ഇമ്മാനുവൽ കാന്റിന്റെ കടമ സിദ്ധാന്തം",
             "duration": "16:22",
-            "youtubeId": "cAI0VvuMm3o",
+            "youtubeId": "AXKs5HdTUTw",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -2036,7 +2036,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കുറ്റവാളികളെ നമ്മൾ എന്തിനാണ് ശിക്ഷിക്കുന്നത്? (Theories of Punishment: Why Do We Punish?)",
             "chapter": "Academic Hub Special · പ്രതികാരം, ഭയം, പ്രതിരോധം & പരിഷ്കരണ സിദ്ധാന്തങ്ങളുടെ ധാർമ്മിക വിശകലനം",
             "duration": "18:57",
-            "youtubeId": "4YknAHNj7x4",
+            "youtubeId": "AXKs5HdTUTw",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -2058,7 +2058,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ദയാവധവും ഡീപ് ഇക്കോളജിയും പ്രായോഗിക ധാർമ്മികതയിൽ (Euthanasia & Deep Ecology in Applied Ethics)",
             "chapter": "Academic Hub Special · ബയോഎത്തിക്സ്, അന്തസ്സോടെ മരിക്കാനുള്ള അവകാശം & പരിസ്ഥിതി ധർമ്മശാസ്ത്രം",
             "duration": "19:28",
-            "youtubeId": "EII8YGQlSAc",
+            "youtubeId": "1Va07j8OQSA",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -2074,7 +2074,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "പ്രായോഗിക നൈതികതയും ധാർമ്മിക പ്രതിസന്ധികളും (Applied Ethics & Practical Dilemmas)",
             "chapter": "Academic Hub Special · കാഷ്വിസ്ട്രി, ട്രോളി പ്രശ്നം, പ്രൊഫഷണൽ & സൈബർ എത്തിക്സ്",
             "duration": "14:10",
-            "youtubeId": "8DFAD8HVkrs",
+            "youtubeId": "9MW6gIEwWtU",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -2318,42 +2318,6 @@ window.VOICE_EXPLANATIONS_DATA = {
             "<strong>വേരിയിംഗ് റിട്ടേൺസ് ടു സ്കെയിൽ:</strong> യഥാർത്ഥ ജീവിതത്തിൽ ഒരു സ്ഥാപനം വളരുമ്പോൾ ആദ്യം IRS (A to K), പിന്നീട് കാര്യക്ഷമമായ ഒപ്റ്റിമൽ സ്കെയിലിൽ CRS (K to C), തുടർന്ന് അധികവളർച്ചയിൽ DRS (C to H) എന്നിങ്ങനെ മൂന്ന് ഘട്ടങ്ങളിലൂടെ കടന്നുപോകുന്നു."
           ],
           "examTip": "CRS, IRS, DRS എന്നിവയുടെ ഗണിത സമവാക്യങ്ങൾ, ഐസോക്വാന്റ് അകലങ്ങൾ (Fig 14.1, 14.2, 14.3), വേരിയിംഗ് റിട്ടേൺസ് ഗ്രാഫ് (Fig 14.4), വൻകിട കമ്പനികളിലെ ഇക്കണോമിസ് ഓഫ് സ്കെയിൽ എന്നിവ 10 മാർക്ക് ഉപന്യാസ ചോദ്യമായി കാലിക്കറ്റ് സർവ്വകലാശാലയിൽ ചോദിക്കുന്നവയാണ്."
-        },
-        {
-          "chapterNumber": "Unit 15",
-          "title": "Unit 15: The Nature of Costs (കോസ്റ്റിന്റെ സ്വഭാവം)",
-          "chapter": "Opportunity Costs, Sunk Costs, Durable Inputs, Explicit & Implicit Costs (കൊളീജിയറ്റ് ഡീപ് ഡിസ്കഷൻ)",
-          "duration": "22:35",
-          "youtubeId": "",
-          "videoUrl": "",
-          "thumbnail": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=60",
-          "language": "Malayalam",
-          "studyPoints": [
-            "<strong>അക്കൗണ്ടിംഗ് കോസ്റ്റും സാമ്പത്തിക കോസ്റ്റും:</strong> അക്കൗണ്ടന്റുകൾ രേഖപ്പെടുത്തുന്നത് പണമായി ചെലവഴിക്കുന്ന കഴിഞ്ഞകാല പ്രത്യക്ഷ ചിലവുകളാണ് (Explicit Costs). എന്നാൽ സാമ്പത്തിക ശാസ്ത്രജ്ഞർ വിഭവങ്ങളുടെ ദൗർലഭ്യവും കൈവിട്ടുപോയ ബദൽ അവസരങ്ങളും (Implicit Costs) കൂടി ഉൾപ്പെടുത്തി സമഗ്രമായി കോസ്റ്റ് നിർണ്ണയിക്കുന്നു.",
-            "<strong>പ്രത്യക്ഷവും പരോക്ഷവുമായ ചിലവുകൾ:</strong> തൊഴിലാളികളുടെ വേതനം, അസംസ്കൃത വസ്തുക്കൾ, വാടക എന്നിവ എക്സ്പ്ലിസിറ്റ് കോസ്റ്റുകളാണ്. എന്നാൽ സംരംഭകന്റെ സ്വന്തം അധ്വാനം, സ്വന്തം കെട്ടിടത്തിന്റെ വാടക മൂല്യം, സ്വന്തം പണത്തിന്റെ പലിശ എന്നിവ ഇംപ്ലിസിറ്റ് കോസ്റ്റുകളാണ്.",
-            "<strong>അവസരച്ചിലവ് (Opportunity Cost):</strong> ഒരു വിഭവം ഏറ്റവും മികച്ച അടുത്ത ബദൽ ആവശ്യത്തിന് ഉപയോഗിച്ചിരുന്നെങ്കിൽ ലഭിക്കുമായിരുന്ന മൂല്യമാണ് അവസരച്ചിലവ്. വിഭവങ്ങൾ പരിമിതമായതിനാലാണ് അവസരച്ചിലവ് ഉണ്ടാകുന്നത്.",
-            "<strong>മുങ്ങിപ്പോയ ചിലവുകൾ (Sunk Costs):</strong> ഒരിക്കൽ ചെലവഴിച്ചുകഴിഞ്ഞാൽ ഒരു കാരണവശാലും തിരിച്ചുപിടിക്കാൻ സാധിക്കാത്ത പഴയ ചെലവുകളാണ് സങ്ക് കോസ്റ്റുകൾ. ഭാവിയിലെ തീരുമാനങ്ങളിലോ ലാഭവിഹിത കണക്കുകൂട്ടലുകളിലോ സങ്ക് കോസ്റ്റുകൾ സ്വാധീനം ചെലുത്താൻ പാടില്ല.",
-            "<strong>ദീർഘകാല ആസ്തികളുടെ ചിലവ് (Durable Goods):</strong> ഒന്നിലധികം വർഷം സേവനം നൽകുന്ന യന്ത്രങ്ങളുടെയും കെട്ടിടങ്ങളുടെയും ചിലവ് അവയുടെ ഉപയോഗകാലയളവിലേക്ക് വാടക നിരക്കായി (Rental Rate / User Cost of Capital) ഭാഗിച്ചാണ് കണക്കാക്കുന്നത്."
-          ],
-          "examTip": "അക്കൗണ്ടിംഗ് കോസ്റ്റും ഇക്കണോമിക് കോസ്റ്റും തമ്മിലുള്ള വ്യത്യാസം, അവസരച്ചിലവ്, സങ്ക് കോസ്റ്റ്, ഡ്യൂറബിൾ ഗുഡ്സിന്റെ ക്യാപിറ്റൽ ചിലവ് എന്നിവ 4 മാർക്കിനും 10 മാർക്കിനും സ്ഥിരമായി ചോദിക്കുന്നവയാണ്."
-        },
-        {
-          "chapterNumber": "Unit 16",
-          "title": "Unit 16: Short-Run Costs (ഹ്രസ്വകാല ഉത്പാദനച്ചെലവുകൾ)",
-          "chapter": "FC, VC, TC, MC, AFC, AVC, ATC, MP_L & AP_L Duality, Specific vs Franchise Taxes (കൊളീജിയറ്റ് ഡീപ് ഡിസ്കഷൻ)",
-          "duration": "28:57",
-          "youtubeId": "",
-          "videoUrl": "",
-          "thumbnail": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=60",
-          "language": "Malayalam",
-          "studyPoints": [
-            "<strong>സ്ഥിരച്ചെലവുകളും മാറ്റച്ചെലവുകളും (FC vs VC):</strong> ഹ്രസ്വകാലത്ത് ഉത്പാദനത്തിനനുസരിച്ച് മാറാതെ നിലനിൽക്കുന്നവയാണ് സ്ഥിരച്ചെലവുകൾ (rent, salaries, depreciation). ഉത്പാദനത്തിനനുസരിച്ച് മാറുന്നവയാണ് മാറ്റച്ചെലവുകൾ (raw materials, wages, fuel). C = VC + F.",
-            "<strong>സീമാന്തച്ചെലവും ഉത്പാദനക്ഷമതയും (MC = w / MP_L):</strong> ഒരു അധിക യൂണിറ്റ് ഉത്പാദിപ്പിക്കാനുള്ള ചെലവാണ് സീമാന്തച്ചെലവ് (MC). ഇത് തൊഴിലാളികളുടെ സീമാന്ത ഉത്പാദനക്ഷമതയ്ക്ക് (MP_L) വിപരീത അനുപാതത്തിലാണ് (MC = w / MP_L). ഉത്പാദനക്ഷമത കൂടുമ്പോൾ MC കുറയുകയും, കുറയുമ്പോൾ MC കൂടുകയും ചെയ്യുന്നു.",
-            "<strong>ശരാശരി ചെലവ് രേഖകളുടെ U-രൂപം:</strong> പ്രാരംഭ ഘട്ടത്തിൽ സ്പെഷ്യലൈസേഷനും കാര്യക്ഷമതയും മൂലം AC യും AVC യും താഴുന്നു. തുടർന്ന് കുറഞ്ഞുവരുന്ന റിട്ടേൺസ് (Law of Diminishing Returns) പ്രവർത്തിക്കുന്നതോടെ കർവുകൾ മിനിമം പോയിന്റിന് ശേഷം കുത്തനെ ഉയർന്ന് U-രൂപം കൈവരിക്കുന്നു.",
-            "<strong>സ്പെസിഫിക് ടാക്സും ഫ്രാഞ്ചൈസി ടാക്സും:</strong> പ്രതി യൂണിറ്റ് സ്പെസിഫിക് ടാക്സ് VC, AVC, AC, MC എന്നിവയെ തുല്യമായി ഉയർത്തുന്നു (എന്നാൽ മിനിമം AC ഉത്പാദന അളവ് മാറുന്നില്ല). ലൈസൻസ് ഫീസ് പോലെയുള്ള ഫ്രാഞ്ചൈസി ടാക്സ് സ്ഥിരച്ചെലവിനെ (FC, AFC, AC) മാത്രമേ വർദ്ധിപ്പിക്കുന്നുള്ളൂ; MC മാറാത്തതിനാൽ ഹ്രസ്വകാല ഉത്പാദന അളവ് മാറുന്നില്ല.",
-            "<strong>ഷട്ട്ഡൗൺ റൂളും മാനേജീരിയൽ തീരുമാനങ്ങളും:</strong> വിപണി വില ശരാശരി മാറ്റച്ചെലവിനേക്കാൾ താഴെയായാൽ (P < min AVC) ഉത്പാദനം നിർത്തിവെക്കണം. MC = MR ആകുന്ന ബിന്ദുവിലാണ് പരമാവധി ലാഭത്തിനായുള്ള ഉത്പാദന അളവ് നിശ്ചയിക്കുന്നത്."
-          ],
-          "examTip": "TC = VC + F സമവാക്യം, MC = w/MPL ഡെറിവേഷൻ, MC രേഖ AC യുടെ മിനിമത്തിൽ ഛേദിക്കുന്ന കാരണം (Fig 16.8), ഷട്ട്ഡൗൺ പോയിന്റ് (P < min AVC), സ്പെസിഫിക് ടാക്സിന്റെ പ്രത്യാഘാതങ്ങൾ എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷകളിൽ ആവർത്തിക്കുന്ന പ്രധാന ചോദ്യങ്ങളാണ്."
         }
       ]
     },
