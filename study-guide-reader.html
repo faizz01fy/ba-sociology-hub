@@ -4047,54 +4047,1027 @@
     }
   })();
 
-  // Masterclass Video Dynamic Detection & Embedding
+  // Masterclass Video Dynamic Detection & Embedding (Audited Multi-Subject Reader Engine)
   (function checkMasterclassVideo() {
     try {
       const params = new URLSearchParams(window.location.search);
-      const f = (params.get('file') || '').toLowerCase();
-      if (!f) return;
+      const rawFile = (params.get('file') || '').replace(/\\/g, '/').toLowerCase().trim();
+      const rawTitle = (params.get('title') || '').toLowerCase().trim();
+      if (!rawFile && !rawTitle) return;
 
-      const videoMap = [
-        // Module 3: Pramanas & AI (Buddhism, Dignaga, Dharmakirti, Apoha)
-        {
-          match: function(file) {
-            return file.includes('module_3') || file.includes('module 3') || file.includes('moduleiii') || 
-                   file.includes('buddhism') || file.includes('pramana') || file.includes('epistemology') ||
-                   file.includes('sources_of_knowledge');
-          },
-          ytId: '626Pz--vDxk',
-          label: '▶ Mod 3 Masterclass',
-          title: 'ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും · Module 3 Chapter 1 Masterclass'
-        },
-        // Module 1: Turing Test & Can a Machine Think?
-        {
-          match: function(file) {
-            return file.includes('module_1') || file.includes('module 1') || file.includes('modulei') || 
-                   file.includes('introduction_to_artificial_intelligence') || file.includes('turing') || 
-                   file.includes('can_a_machine_think') || (file.includes('philosophy') && !file.includes('module_2') && !file.includes('module_3') && !file.includes('module_4') && !file.includes('module_5'));
-          },
-          ytId: '1Va07j8OQSA',
-          label: '▶ Mod 1 Masterclass',
-          title: 'മെഷീനുകൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ? ട്യൂറിംഗ് ടെസ്റ്റ് · Module 1 Chapter 1 Masterclass'
+      const exactFileMap = {
+  "malayalam_complete_study_guide.pdf": {
+    "ytId": "hKD8dXAAGjU",
+    "title": "നാടകം: ഓരോരോ കാലത്തിലും — ശ്രീജ കെ.വി. · Malayalam Module 4 · Drishya Kalasahithyam & Cinema",
+    "label": "▶ Module 4 Video"
+  },
+  "malayalam_exam_notes_final.pdf": {
+    "ytId": "igCq6grUF0g",
+    "title": "സഞ്ചാരസാഹിത്യം: കിഴവനും ക്രാക്കാത്തൂവയും — എസ്.കെ. പൊറ്റെക്കാട്ട് · Malayalam Module 1 · Gadyam & Vivarthanam",
+    "label": "▶ Module 1 Video"
+  },
+  "malayalam_notes_chapter_1_final.pdf": {
+    "ytId": "ievP3epTaVQ",
+    "title": "അഭിമുഖം: മാധവിക്കുട്ടിയുമായി അക്ബർ കക്കട്ടിൽ നടത്തിയ അഭിമുഖം — സർഗ്ഗസമീക്ഷ · Malayalam Module 1 · Gadyam & Vivarthanam",
+    "label": "▶ Module 1 Video"
+  },
+  "sk_pottekkatt_study notes_chap2.pdf": {
+    "ytId": "Yjk3owbUQrQ",
+    "title": "ചരിത്രപാഠം / ലേഖനം: അർമേനിയയിലെ ഷോഗോമാൻ തെലിരിയനെ അറിയാമോ? — സജി മാർക്കോസ് · Malayalam Module 1 · Gadyam & Vivarthanam",
+    "label": "▶ Module 1 Video"
+  },
+  "malayalam_chapter4_notes.pdf": {
+    "ytId": "cTlb6K9fD2o",
+    "title": "ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ — കലാമണ്ഡലം ഹൈദരാലി · Malayalam Module 1 · Gadyam & Vivarthanam",
+    "label": "▶ Module 1 Video"
+  },
+  "poovampazham_class_notes.pdf": {
+    "ytId": "RCCr4zyAUcw",
+    "title": "ചെറുകഥ: വില്ലുവണ്ടി — കെ. രേഖ · Malayalam Module 2 · Kadha & Novel",
+    "label": "▶ Module 2 Video"
+  },
+  "module2_chapter3_ദൈവത്തിന്റെ_കണ്ണ് .pdf": {
+    "ytId": "snYLroXbSDI",
+    "title": "നോവൽ: ദൈവത്തിന്റെ കണ്ണ് — എൻ.പി. മുഹമ്മദ് · Malayalam Module 2 · Kadha & Novel",
+    "label": "▶ Module 2 Video"
+  },
+  "സമുദ്രലംഘനം _chp1_module3.pdf": {
+    "ytId": "PYtXGzEyPgQ",
+    "title": "കവിത: ചിന്താവിഷ്ടയായ സീത — മഹാകവി കുമാരനാശാൻ · Malayalam Module 3 · Kavitha",
+    "label": "▶ Module 3 Video"
+  },
+  "ചിന്താവിഷ്ടയായ സീത_chap2module3..pdf": {
+    "ytId": "PYtXGzEyPgQ",
+    "title": "കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ · Malayalam Module 3 · Kavitha",
+    "label": "▶ Module 3 Video"
+  },
+  "ഇവനെ കൂടി chap3 _module3.pdf": {
+    "ytId": "ievP3epTaVQ",
+    "title": "കവിത: സമുദ്രലംഘനം — തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ · Malayalam Module 3 · Kavitha",
+    "label": "▶ Module 3 Video"
+  },
+  "module3മലയാളസാഹിത്യാനുശീലനം_t1781936346875 (1).pdf": {
+    "ytId": "ievP3epTaVQ",
+    "title": "കവിത: സമുദ്രലംഘനം — തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ · Malayalam Module 3 · Kavitha",
+    "label": "▶ Module 3 Video"
+  },
+  "english/malayalam pdf/english_module_1_ch1_i_have_a_dream_malayalam.pdf": {
+    "ytId": "OeMGI2CWtLA",
+    "title": "I Have a Dream (English Edition) · English Module 1 · Listening",
+    "label": "▶ Module 1 Video"
+  },
+  "english/malayalam pdf/english_module_1_ch2_anthem_malayalam.pdf": {
+    "ytId": "A9maAWgaovY",
+    "title": "Anthem · English Module 1 · Listening",
+    "label": "▶ Module 1 Video"
+  },
+  "english/malayalam pdf/english_module_1_ch3_art_as_social_work_malayalam.pdf": {
+    "ytId": "A9maAWgaovY",
+    "title": "Art as a Social Work · English Module 1 · Listening",
+    "label": "▶ Module 1 Video"
+  },
+  "english_mcq_full_module.pdf": {
+    "ytId": "A9maAWgaovY",
+    "title": "Art as a Social Work · English Module 1 · Listening",
+    "label": "▶ Module 1 Video"
+  },
+  "euphemisms-and-soft-language-study-guide.html": {
+    "ytId": "hNLY9H1czbM",
+    "title": "George Carlin on Soft Language · English Module 2 · Speaking",
+    "label": "▶ Module 2 Video"
+  },
+  "english/malayalam pdf/english_module_2_ch2_death_of_a_salesman_malayalam.pdf": {
+    "ytId": "OeMGI2CWtLA",
+    "title": "Death of a Salesman · English Module 2 · Speaking",
+    "label": "▶ Module 2 Video"
+  },
+  "english/malayalam pdf/english_module_2_ch3_rip_it_out_malayalam.pdf": {
+    "ytId": "hNLY9H1czbM",
+    "title": "Rip It Out — Dead Poets Society · English Module 2 · Speaking",
+    "label": "▶ Module 2 Video"
+  },
+  "english/malayalam pdf/english_module_3_ch1_reading_skills_intro_malayalam.pdf": {
+    "ytId": "9aLkAUYFWF8",
+    "title": "Reading Strategies & Critical Comprehension · English Module 3 · Reading",
+    "label": "▶ Module 3 Video"
+  },
+  "english/malayalam pdf/english_module_3_ch2_the_second_coming_malayalam.pdf": {
+    "ytId": "_S8y6DEMYO0",
+    "title": "The Second Coming · English Module 3 · Reading",
+    "label": "▶ Module 3 Video"
+  },
+  "english/malayalam pdf/english_module_3_ch3_the_frog_prince_malayalam.pdf": {
+    "ytId": "WzAkFzGx7CE",
+    "title": "The Frog Prince · English Module 3 · Reading",
+    "label": "▶ Module 3 Video"
+  },
+  "english/malayalam pdf/english_module_3_ch4_optimism_helen_keller_malayalam.pdf": {
+    "ytId": "_S8y6DEMYO0",
+    "title": "Optimism: An Essay · English Module 3 · Reading",
+    "label": "▶ Module 3 Video"
+  },
+  "english/malayalam pdf/english_module_4_ch1_writing_skills_intro_malayalam.pdf": {
+    "ytId": "cTlb6K9fD2o",
+    "title": "Academic & Professional Writing Mechanics · English Module 4 · Writing",
+    "label": "▶ Module 4 Video"
+  },
+  "english/malayalam pdf/english_module_4_ch2_ambedkar_1936_speech_malayalam.pdf": {
+    "ytId": "_g7fyD5mLPo",
+    "title": "The World Renowned Nose · English Module 4 · Writing",
+    "label": "▶ Module 4 Video"
+  },
+  "english/malayalam pdf/english_module_4_ch3_basheer_world_renowned_nose_malayalam.pdf": {
+    "ytId": "3xKSAOUYjFE",
+    "title": "Cinema Paradiso · English Module 4 · Writing",
+    "label": "▶ Module 4 Video"
+  },
+  "english/malayalam pdf/english_module_4_ch4_cinema_paradiso_review_malayalam.pdf": {
+    "ytId": "cTlb6K9fD2o",
+    "title": "Academic & Professional Writing Mechanics · English Module 4 · Writing",
+    "label": "▶ Module 4 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_1_introducing_sociology_malayalam.pdf": {
+    "ytId": "uMxIIznPo-w",
+    "title": "സോഷ്യോളജിക്കൽ ഭാവനയും ശാസ്ത്രീയ ഗവേഷണ രീതികളും (Sociological Imagination & Research Methods) · Sociology Module 1 · Introducing Sociology",
+    "label": "▶ Module 1 Video"
+  },
+  "sociology/lms_pdf/module_1_introducing_sociology.pdf": {
+    "ytId": "WyReGfMhJJs",
+    "title": "മൈക്രോ-മാക്രോ സോഷ്യോളജിയും പോസിറ്റിവിസവും (Micro & Macro Sociology and Positivism) · Sociology Module 1 · Introducing Sociology",
+    "label": "▶ Module 1 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_2_practicing_sociology_malayalam.pdf": {
+    "ytId": "WyReGfMhJJs",
+    "title": "സോഷ്യോളജി പ്രയോഗത്തിൽ (Practicing Sociology: Full Syllabus Masterclass) · Sociology Module 2 · Practicing Sociology",
+    "label": "▶ Module 2 Video"
+  },
+  "sociology/lms_pdf/module_2_practicing_sociology.pdf": {
+    "ytId": "YEnG1YJ_vfs",
+    "title": "സാമൂഹിക യാഥാർത്ഥ്യവും ഗവേഷണ രീതിശാസ്ത്രവും (Social Reality & Research Orientations) · Sociology Module 2 · Practicing Sociology",
+    "label": "▶ Module 2 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_3_ch1_social_interaction_types_malayalam.pdf": {
+    "ytId": "uf8WYWO9-Tk",
+    "title": "സാമൂഹികവൽക്കരണത്തിന്റെ ഏജൻസികൾ (Agents of Socialization) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_3_ch2_social_groups_types_malayalam.pdf": {
+    "ytId": "EJt-7kG_-E8",
+    "title": "നമ്മൾ വെറും സമൂഹത്തിന്റെ നിർമ്മിതികളാണോ? (Social Construction of Reality) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_3_ch3_socialization_definition_types_malayalam.pdf": {
+    "ytId": "YEnG1YJ_vfs",
+    "title": "മനുഷ്യനെ മനുഷ്യനാക്കുന്ന സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary, Secondary & Reference Groups) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_3_ch4_agents_of_socialization_malayalam.pdf": {
+    "ytId": "uf8WYWO9-Tk",
+    "title": "സാമൂഹികവൽക്കരണത്തിന്റെ ഏജൻസികൾ (Agents of Socialization) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_3_ch5_stages_of_socialization_malayalam.pdf": {
+    "ytId": "YEnG1YJ_vfs",
+    "title": "മനുഷ്യനെ മനുഷ്യനാക്കുന്ന സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary, Secondary & Reference Groups) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_3_ch6_social_control_types_agencies_malayalam.pdf": {
+    "ytId": "uMxIIznPo-w",
+    "title": "സംഘടിത സംഘങ്ങളും ആൾക്കൂട്ടത്തിന്റെ മനഃശാസ്ത്രവും (Formal Organizations & Crowd Psychology) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "module_iii_individual_and_society_.pdf": {
+    "ytId": "KEg51ekQTWY",
+    "title": "സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ: തരങ്ങളും പ്രക്രിയകളും (Types of Social Interaction: Cooperation, Competition, Conflict, Accommodation, Assimilation) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "sociology/lms_pdf/module_3_1_social_interaction_types.pdf": {
+    "ytId": "QidpySg9v80",
+    "title": "സംഘർഷം സമൂഹത്തെ വളർത്തുന്നതെങ്ങനെ? (How Conflict Grows Society: Lewis Coser & Marx) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "sociology/lms_pdf/module_3_2_social_groups_types.pdf": {
+    "ytId": "QidpySg9v80",
+    "title": "നിയമം അനുസരിക്കാൻ നമ്മളെ നിർബന്ധിക്കുന്നത് എന്ത്? (Social Control & Sanctions) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "sociology/lms_pdf/module_3_3_socialization_definition_and_types.pdf": {
+    "ytId": "uf8WYWO9-Tk",
+    "title": "സാമൂഹികവൽക്കരണത്തിന്റെ ഏജൻസികൾ (Agents of Socialization) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "sociology/lms_pdf/module_3_4_agents_of_socialization.pdf": {
+    "ytId": "uf8WYWO9-Tk",
+    "title": "സാമൂഹികവൽക്കരണത്തിന്റെ ഏജൻസികൾ (Agents of Socialization) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "sociology/lms_pdf/module_3_5_stages_of_socialization.pdf": {
+    "ytId": "uf8WYWO9-Tk",
+    "title": "സാമൂഹികവൽക്കരണത്തിന്റെ ഏജൻസികൾ (Agents of Socialization) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "sociology/lms_pdf/module_3_6_social_control_types_and_agencies.pdf": {
+    "ytId": "uf8WYWO9-Tk",
+    "title": "സാമൂഹികവൽക്കരണത്തിന്റെ ഏജൻസികൾ (Agents of Socialization) · Sociology Module 3 · Individual and Society",
+    "label": "▶ Module 3 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_4_ch1_society_characteristics_types_malayalam.pdf": {
+    "ytId": "EJt-7kG_-E8",
+    "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics, Evolution & Types) · Sociology Module 4 · Sociology and Society",
+    "label": "▶ Module 4 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_4_ch2_social_institutions_malayalam.pdf": {
+    "ytId": "z1jXxahDWUw",
+    "title": "സമൂഹത്തിന്റെ അദൃശ്യ ഓപ്പറേറ്റിംഗ് സിസ്റ്റമായ സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions: Family, Marriage & Kinship) · Sociology Module 4 · Sociology and Society",
+    "label": "▶ Module 4 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_4_ch3_social_structure_status_role_malayalam.pdf": {
+    "ytId": "7Qkp0t6g9Qc",
+    "title": "പദവികളും റോളുകളും റോൾ കോൺഫ്ലിക്റ്റും (Social Structure: Status, Role & Role Conflict) · Sociology Module 4 · Sociology and Society",
+    "label": "▶ Module 4 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_4_ch4_social_change_factors_malayalam.pdf": {
+    "ytId": "z1jXxahDWUw",
+    "title": "സാമൂഹിക മാറ്റവും അതിന്റെ ഘടകങ്ങളും (Social Change: Factors & Theories) · Sociology Module 4 · Sociology and Society",
+    "label": "▶ Module 4 Video"
+  },
+  "sociology/lms_pdf/module_4_1_society_characteristics_and_types.pdf": {
+    "ytId": "EJt-7kG_-E8",
+    "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics, Evolution & Types) · Sociology Module 4 · Sociology and Society",
+    "label": "▶ Module 4 Video"
+  },
+  "sociology/lms_pdf/module_4_2_social_institutions_definition_and_characteristics.pdf": {
+    "ytId": "EJt-7kG_-E8",
+    "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics, Evolution & Types) · Sociology Module 4 · Sociology and Society",
+    "label": "▶ Module 4 Video"
+  },
+  "sociology/lms_pdf/module_4_3_social_structure_status_and_role.pdf": {
+    "ytId": "EJt-7kG_-E8",
+    "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics, Evolution & Types) · Sociology Module 4 · Sociology and Society",
+    "label": "▶ Module 4 Video"
+  },
+  "sociology/lms_pdf/module_4_4_social_change_factors.pdf": {
+    "ytId": "EJt-7kG_-E8",
+    "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics, Evolution & Types) · Sociology Module 4 · Sociology and Society",
+    "label": "▶ Module 4 Video"
+  },
+  "sociology/malayalam pdf/sociology_module_5_perceiving_social_dynamics_assignment_malayalam.pdf": {
+    "ytId": "EJt-7kG_-E8",
+    "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics, Evolution & Types) · Sociology Module 5 · Perceiving Social Dynamics",
+    "label": "▶ Module 5 Video"
+  },
+  "sociology_mcqs_answered.pdf": {
+    "ytId": "z1jXxahDWUw",
+    "title": "സമൂഹത്തിന്റെ അദൃശ്യ ഓപ്പറേറ്റിംഗ് സിസ്റ്റമായ സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions: Family, Marriage & Kinship) · Sociology Module 5 · Perceiving Social Dynamics",
+    "label": "▶ Module 5 Video"
+  },
+  "sociology_mcqs_practice.pdf": {
+    "ytId": "7Qkp0t6g9Qc",
+    "title": "പദവികളും റോളുകളും റോൾ കോൺഫ്ലിക്റ്റും (Social Structure: Status, Role & Role Conflict) · Sociology Module 5 · Perceiving Social Dynamics",
+    "label": "▶ Module 5 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_1_malayalam.pdf": {
+    "ytId": "1Va07j8OQSA",
+    "title": "മെഷീനുകൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ? ട്യൂറിംഗ് ടെസ്റ്റ് · Philosophy of AI Module 1",
+    "label": "▶ Module 1 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_2_malayalam.pdf": {
+    "ytId": "Vq-Bc0TI7L0",
+    "title": "യന്ത്രങ്ങൾക്ക് ശരിക്കും ചിന്തിക്കാൻ കഴിയുമോ? (Symbolic AI vs Connectionism) · Philosophy of AI Module 1 · Introduction to AI",
+    "label": "▶ Module 1 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_3_malayalam.pdf": {
+    "ytId": "1Va07j8OQSA",
+    "title": "മെഷീനുകൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ? ട്യൂറിംഗ് ടെസ്റ്റ് (Can a Machine Think? & Turing Test) · Philosophy of AI Module 1 · Introduction to AI",
+    "label": "▶ Module 1 Video"
+  },
+  "philosophy of ai/lms pdf/module_1_introduction_to_artificial_intelligence.pdf": {
+    "ytId": "1Va07j8OQSA",
+    "title": "മെഷീനുകൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ? ട്യൂറിംഗ് ടെസ്റ്റ് (Can a Machine Think? & Turing Test) · Philosophy of AI Module 1 · Introduction to AI",
+    "label": "▶ Module 1 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_4_malayalam.pdf": {
+    "ytId": "Y4zhWiirJkc",
+    "title": "ചൈനീസ് റൂം ആർഗ്യുമെന്റും ട്യൂറിംഗ് ടെസ്റ്റും (Chinese Room & Alan Turing Test) [ENG Video] · Philosophy of AI Module 2 · Classical Version of AI",
+    "label": "▶ Module 2 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_5_malayalam.pdf": {
+    "ytId": "OBl1S1edYyU",
+    "title": "AI-ക്ക് അർത്ഥമറിയാമോ അതോ വെറും ചൈനീസ് റൂമോ? (John Searle's Chinese Room Argument) · Philosophy of AI Module 2 · Classical Version of AI",
+    "label": "▶ Module 2 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_6_malayalam.pdf": {
+    "ytId": "2_RbQ7y-uHE",
+    "title": "ശരീരമില്ലാതെ ബോധത്തിന് നിലനിൽക്കാൻ കഴിയുമോ? (Embodied Cognition & AI) · Philosophy of AI Module 2 · Classical Version of AI",
+    "label": "▶ Module 2 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_7_malayalam.pdf": {
+    "ytId": "Y4zhWiirJkc",
+    "title": "ചൈനീസ് റൂം ആർഗ്യുമെന്റും ട്യൂറിംഗ് ടെസ്റ്റും (Chinese Room & Alan Turing Test) [ENG Video] · Philosophy of AI Module 2 · Classical Version of AI",
+    "label": "▶ Module 2 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_8_malayalam.pdf": {
+    "ytId": "Y4zhWiirJkc",
+    "title": "ചൈനീസ് റൂം ആർഗ്യുമെന്റും ട്യൂറിംഗ് ടെസ്റ്റും (Chinese Room & Alan Turing Test) [ENG Video] · Philosophy of AI Module 2 · Classical Version of AI",
+    "label": "▶ Module 2 Video"
+  },
+  "philosophy of ai/lms pdf/module_2_classical_version_of_artificial_intelligence.pdf": {
+    "ytId": "Y4zhWiirJkc",
+    "title": "ചൈനീസ് റൂം ആർഗ്യുമെന്റും ട്യൂറിംഗ് ടെസ്റ്റും (Chinese Room & Alan Turing Test) [ENG Video] · Philosophy of AI Module 2 · Classical Version of AI",
+    "label": "▶ Module 2 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_9_malayalam.pdf": {
+    "ytId": "hoAiiD_qroA",
+    "title": "AI-യിലെ വിജ്ഞാനശാസ്ത്ര അടിത്തറകളും ഹലൂസിനേഷനും (Epistemological Foundations in AI: Knowledge & Hallucination) · Philosophy of AI Module 3 · Theories of Knowledge in AI",
+    "label": "▶ Module 3 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_10_malayalam.pdf": {
+    "ytId": "626Pz--vDxk",
+    "title": "ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും · Philosophy of AI Module 3",
+    "label": "▶ Module 3 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_11_malayalam.pdf": {
+    "ytId": "NPbHpX8kOZs",
+    "title": "ഭാരതീയ ന്യായശാസ്ത്രവും AI റീസണിംഗും (Nyaya Epistemology & 5-Membered Syllogism in AI) · Philosophy of AI Module 3 · Theories of Knowledge in AI",
+    "label": "▶ Module 3 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_12_malayalam.pdf": {
+    "ytId": "2_RbQ7y-uHE",
+    "title": "പാശ്ചാത്യ വിജ്ഞാനശാസ്ത്രവും എഐയും — ഭാഗം 1 (Western Epistemology & Plato's JTB in AI) · Philosophy of AI Module 3 · Theories of Knowledge in AI",
+    "label": "▶ Module 3 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_13_malayalam.pdf": {
+    "ytId": "Y4zhWiirJkc",
+    "title": "ഫങ്ഷണലിസവും കമ്പ്യൂട്ടേഷണൽ മൈൻഡും — ഭാഗം 2 (Functionalism & Computational Theory of Mind) · Philosophy of AI Module 3 · Theories of Knowledge in AI",
+    "label": "▶ Module 3 Video"
+  },
+  "philosophy of ai/lms pdf/module_3_theories_of_knowledge_in_artificial_intelligence.pdf": {
+    "ytId": "626Pz--vDxk",
+    "title": "ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Sources of Valid Knowledge in Indian Philosophy & AI: Epistemology, Pratyakṣa & Anumāna) · Philosophy of AI Module 3 · Theories of Knowledge in AI",
+    "label": "▶ Module 3 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_14_malayalam.pdf": {
+    "ytId": "uiB6PFp5P_I",
+    "title": "എഐ മനുഷ്യന്റെ അസ്തിത്വത്തിന് ഭീഷണിയാകുമോ? (Value Alignment & Existential Threat to Humanity) · Philosophy of AI Module 4 · Ethical & Philosophical Implications",
+    "label": "▶ Module 4 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_15_malayalam.pdf": {
+    "ytId": "_6n810PKN9c",
+    "title": "AI-യുടെ ധാർമ്മിക തത്വങ്ങൾ (Foundational Ethical Principles of AI) · Philosophy of AI Module 4 · Ethical & Philosophical Implications",
+    "label": "▶ Module 4 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_16_malayalam.pdf": {
+    "ytId": "ReMCiz7ckYs",
+    "title": "അൽഗോരിതമിക് പക്ഷപാതങ്ങളും സാമൂഹിക ബന്ധങ്ങളും (Algorithmic Bias & Social Embeddedness) · Philosophy of AI Module 4 · Ethical & Philosophical Implications",
+    "label": "▶ Module 4 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_17_malayalam.pdf": {
+    "ytId": "5vaYMdGdu4g",
+    "title": "എ.ഐ എന്ന കണ്ണാടി: സാമൂഹിക പ്രതിഫലനങ്ങൾ (AI as a Mirror: Society & Algorithmic Reflection) · Philosophy of AI Module 4 · Ethical & Philosophical Implications",
+    "label": "▶ Module 4 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_18_malayalam.pdf": {
+    "ytId": "uQOdA1he-iE",
+    "title": "അൽഗോരിതങ്ങളിലെ വിവേചനം തടയാനാകുമോ? (Mitigating Algorithmic Discrimination & Technical Fairness) · Philosophy of AI Module 4 · Ethical & Philosophical Implications",
+    "label": "▶ Module 4 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_19_malayalam.pdf": {
+    "ytId": "oTEhOh_z5NA",
+    "title": "സ്വയംഭരണ വാഹനങ്ങളും ട്രോളി പ്രശ്നവും (Ethical Rules for Autonomous Vehicles: The Trolley Problem) · Philosophy of AI Module 4 · Ethical & Philosophical Implications",
+    "label": "▶ Module 4 Video"
+  },
+  "philosophy of ai/malayalam pdf/ai_philosophy_chapter_20_malayalam.pdf": {
+    "ytId": "cND0PVx_Jdk",
+    "title": "AI കോടതിയും നൈതിക ഉത്തരവാദിത്തവും (AI as Legal Agent & Moral Patiency) · Philosophy of AI Module 4 · Ethical & Philosophical Implications",
+    "label": "▶ Module 4 Video"
+  },
+  "philosophy of ai/lms pdf/module_4_ethical_and_philosophical_implications_of_ai_system.pdf": {
+    "ytId": "qrlC8o73n4Q",
+    "title": "ധാർമ്മിക കർതൃത്വവും ഉത്തരവാദിത്ത വിടവും (Moral Agency, Black-Box Opacity & The Responsibility Gap) · Philosophy of AI Module 4 · Ethical & Philosophical Implications",
+    "label": "▶ Module 4 Video"
+  },
+  "philosophy of education/lms_pdf/syllabus_philosophy_of_education.pdf": {
+    "ytId": "IcVqN7uFNEo",
+    "title": "വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും (Meaning & History of Education) · Philosophy of Education Module 4 · Micro Teaching Practice",
+    "label": "▶ Module 4 Video"
+  },
+  "philosophy of education/malayalam pdf/edu_chapter_1_malayalam.pdf": {
+    "ytId": "IcVqN7uFNEo",
+    "title": "വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും (Meaning & History of Education) · Philosophy of Education Module 1 · Philosophical Basis of Education",
+    "label": "▶ Module 1 Video"
+  },
+  "philosophy of education/malayalam pdf/edu_chapter_2_malayalam.pdf": {
+    "ytId": "A3CI9riUkGY",
+    "title": "വിദ്യാഭ്യാസത്തിന്റെ പൊരുളും മഹത്തായ ദർശനങ്ങളും (Essence & Great Philosophies) · Philosophy of Education Module 1 · Philosophical Basis of Education",
+    "label": "▶ Module 1 Video"
+  },
+  "philosophy of education/malayalam pdf/edu_chapter_3_malayalam.pdf": {
+    "ytId": "IcVqN7uFNEo",
+    "title": "വിദ്യാഭ്യാസ തത്വശാസ്ത്രം: ചരിത്രവും പ്രധാന ശാഖകളും (History & Branches of Philosophy) · Philosophy of Education Module 1 · Philosophical Basis of Education",
+    "label": "▶ Module 1 Video"
+  },
+  "philosophy of education/lms_pdf/module_1_philosophical_basis_of_education.pdf": {
+    "ytId": "IcVqN7uFNEo",
+    "title": "വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും (Meaning & History of Education) · Philosophy of Education Module 1 · Philosophical Basis of Education",
+    "label": "▶ Module 1 Video"
+  },
+  "philosophy of education/malayalam pdf/philosophy_education_malayalam_module_1.pdf": {
+    "ytId": "IcVqN7uFNEo",
+    "title": "വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും (Meaning & History of Education) · Philosophy of Education Module 1 · Philosophical Basis of Education",
+    "label": "▶ Module 1 Video"
+  },
+  "philosophy of education/malayalam pdf/edu_chapter_4_malayalam.pdf": {
+    "ytId": "Axf_IV07DN0",
+    "title": "പാശ്ചാത്യ വിദ്യാഭ്യാസത്തിലെ ആദർശവാദവും പ്രകൃതിവാദവും (Idealism & Naturalism in Western Education) · Philosophy of Education Module 2 · Western Approach",
+    "label": "▶ Module 2 Video"
+  },
+  "philosophy of education/malayalam pdf/edu_chapter_5_malayalam.pdf": {
+    "ytId": "A3CI9riUkGY",
+    "title": "മനുഷ്യനെ പൂർണ്ണനാക്കുന്ന ഭാരതീയ വിദ്യാഭ്യാസ ദർശനങ്ങൾ (Indian Educational Philosophies) · Philosophy of Education Module 2 · Western Approach",
+    "label": "▶ Module 2 Video"
+  },
+  "philosophy of education/malayalam pdf/edu_chapter_6_malayalam.pdf": {
+    "ytId": "Axf_IV07DN0",
+    "title": "പാശ്ചാത്യ വിദ്യാഭ്യാസത്തിലെ ആദർശവാദവും പ്രകൃതിവാദവും (Idealism & Naturalism in Western Education) · Philosophy of Education Module 2 · Western Approach",
+    "label": "▶ Module 2 Video"
+  },
+  "philosophy of education/lms_pdf/module_2_western_approach_to_educational_philosophy.pdf": {
+    "ytId": "Axf_IV07DN0",
+    "title": "പാശ്ചാത്യ വിദ്യാഭ്യാസത്തിലെ ആദർശവാദവും പ്രകൃതിവാദവും (Idealism & Naturalism in Western Education) · Philosophy of Education Module 2 · Western Approach",
+    "label": "▶ Module 2 Video"
+  },
+  "philosophy of education/malayalam pdf/philosophy_education_malayalam_module_2.pdf": {
+    "ytId": "Axf_IV07DN0",
+    "title": "പാശ്ചാത്യ വിദ്യാഭ്യാസത്തിലെ ആദർശവാദവും പ്രകൃതിവാദവും (Idealism & Naturalism in Western Education) · Philosophy of Education Module 2 · Western Approach",
+    "label": "▶ Module 2 Video"
+  },
+  "philosophy of education/malayalam pdf/edu_chapter_7_malayalam.pdf": {
+    "ytId": "Axf_IV07DN0",
+    "title": "ഗാന്ധിജിയുടെ നയി താലിം എന്ന വിദ്യാഭ്യാസ വിപ്ലവം (Mahatma Gandhi's Nai Talim) · Philosophy of Education Module 3 · Indian Approach",
+    "label": "▶ Module 3 Video"
+  },
+  "philosophy of education/malayalam pdf/edu_chapter_8_malayalam.pdf": {
+    "ytId": "QBLrna7iE1o",
+    "title": "അധ്യാപനത്തെ അർത്ഥവത്താക്കുന്ന വിദ്യാഭ്യാസ തത്വശാസ്ത്രം (Philosophy of Education: Making Teaching Meaningful) · Philosophy of Education Module 3 · Indian Approach",
+    "label": "▶ Module 3 Video"
+  },
+  "philosophy of education/malayalam pdf/edu_chapter_9_malayalam.pdf": {
+    "ytId": "QBLrna7iE1o",
+    "title": "യഥാർത്ഥ വിദ്യാഭ്യാസം പരീക്ഷകൾക്കപ്പുറമുള്ള ജീവിതം (Real Education: Beyond Exams) · Philosophy of Education Module 3 · Indian Approach",
+    "label": "▶ Module 3 Video"
+  },
+  "philosophy of education/lms_pdf/module_3_indian_approach_to_educational_philosophy.pdf": {
+    "ytId": "Axf_IV07DN0",
+    "title": "ഗാന്ധിജിയുടെ നയി താലിം എന്ന വിദ്യാഭ്യാസ വിപ്ലവം (Mahatma Gandhi's Nai Talim) · Philosophy of Education Module 3 · Indian Approach",
+    "label": "▶ Module 3 Video"
+  },
+  "philosophy of education/malayalam pdf/philosophy_education_malayalam_module_3.pdf": {
+    "ytId": "Axf_IV07DN0",
+    "title": "ഗാന്ധിജിയുടെ നയി താലിം എന്ന വിദ്യാഭ്യാസ വിപ്ലവം (Mahatma Gandhi's Nai Talim) · Philosophy of Education Module 3 · Indian Approach",
+    "label": "▶ Module 3 Video"
+  },
+  "philosophy of education mcqs.pdf": {
+    "ytId": "Axf_IV07DN0",
+    "title": "ഗാന്ധിജിയുടെ നയി താലിം എന്ന വിദ്യാഭ്യാസ വിപ്ലവം (Mahatma Gandhi's Nai Talim) · Philosophy of Education Module 3 · Indian Approach",
+    "label": "▶ Module 3 Video"
+  },
+  "development issues in indian economy/malayalam pdf/econ_module_1_ch1_meaning_of_development_malayalam.pdf": {
+    "ytId": "WYtOkVjW_Wo",
+    "title": "Path Dependence and Crisis: India's Economy, 1700–1991 · Development Issues in Indian Economy Module 1 · Historical Precedents",
+    "label": "▶ Module 1 Video"
+  },
+  "development issues in indian economy/malayalam pdf/econ_module_1_ch2_colonial_period_history_malayalam.pdf": {
+    "ytId": "j49jvbn7bz4",
+    "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയുടെ ചരിത്രവും വികസന നയങ്ങളും (History & Development Policies of Indian Economy) · Development Issues in Indian Economy Module 1 · Historical Precedents",
+    "label": "▶ Module 1 Video"
+  },
+  "development issues in indian economy/malayalam pdf/econ_module_1_ch3_planning_era_1951_1991_malayalam.pdf": {
+    "ytId": "FpHhWggjeIg",
+    "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയിലെ വൈരുദ്ധ്യങ്ങളും വികസന വെല്ലുവിളികളും (Contradictions & Development Challenges) · Development Issues in Indian Economy Module 1 · Historical Precedents",
+    "label": "▶ Module 1 Video"
+  },
+  "development issues in indian economy/malayalam pdf/econ_module_1_ch4_liberalisation_era_1991_malayalam.pdf": {
+    "ytId": "x8npIOpPvas",
+    "title": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development & Economic Institutions in India) · Development Issues in Indian Economy Module 1 · Historical Precedents",
+    "label": "▶ Module 1 Video"
+  },
+  "development issues in indian economy/malayalam pdf/econ_module_1_ch5_real_income_indicator_malayalam.pdf": {
+    "ytId": "BQffX1nDUjw",
+    "title": "സ്വർണ്ണം പണയം വെച്ച ഇന്ത്യയുടെ സാമ്പത്തിക ചരിത്രം (The 1991 Balance of Payments Crisis & Gold Pledging) · Development Issues in Indian Economy Module 1 · Historical Precedents",
+    "label": "▶ Module 1 Video"
+  },
+  "development issues in indian economy/malayalam pdf/econ_module_1_ch6_health_and_education_malayalam.pdf": {
+    "ytId": "WYtOkVjW_Wo",
+    "title": "Path Dependence and Crisis: India's Economy, 1700–1991 · Development Issues in Indian Economy Module 1 · Historical Precedents",
+    "label": "▶ Module 1 Video"
+  },
+  "development issues in indian economy/malayalam pdf/econ_module_1_ch7_basic_issues_in_development_malayalam.pdf": {
+    "ytId": "WYtOkVjW_Wo",
+    "title": "Path Dependence and Crisis: India's Economy, 1700–1991 · Development Issues in Indian Economy Module 1 · Historical Precedents",
+    "label": "▶ Module 1 Video"
+  },
+  "development issues in indian economy/malayalam pdf/econ_module_1_ch8_historical_precedents_overview_malayalam.pdf": {
+    "ytId": "WYtOkVjW_Wo",
+    "title": "Path Dependence and Crisis: India's Economy, 1700–1991 · Development Issues in Indian Economy Module 1 · Historical Precedents",
+    "label": "▶ Module 1 Video"
+  },
+  "development issues in indian economy/lms_pdf/module_1_historical_precedents_of_development_issues.pdf": {
+    "ytId": "WYtOkVjW_Wo",
+    "title": "Path Dependence and Crisis: India's Economy, 1700–1991 · Development Issues in Indian Economy Module 1 · Historical Precedents",
+    "label": "▶ Module 1 Video"
+  },
+  "development issues in indian economy/malayalam pdf/econ_module_2_ch1_poverty_in_india_malayalam.pdf": {
+    "ytId": "QTHt_P7RIA0",
+    "title": "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയം: രീതികളും സമിതികളും (Poverty Estimation in India: Methods & Committees) · Development Issues in Indian Economy Module 2 · Poverty",
+    "label": "▶ Module 2 Video"
+  },
+  "development issues in indian economy/lms_pdf/module_2_poverty.pdf": {
+    "ytId": "QTHt_P7RIA0",
+    "title": "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയം: രീതികളും സമിതികളും (Poverty Estimation in India: Methods & Committees) · Development Issues in Indian Economy Module 2 · Poverty",
+    "label": "▶ Module 2 Video"
+  },
+  "development issues in indian economy/malayalam pdf/econ_module_3_ch1_inequality_in_india_malayalam.pdf": {
+    "ytId": "niiXnw88Fzg",
+    "title": "ഇന്ത്യയിലെ വർദ്ധിച്ചുവരുന്ന സാമ്പത്തിക അസമത്വം (Economic Inequality in India · Masterclass) · Development Issues in Indian Economy Module 3 · Inequality",
+    "label": "▶ Module 3 Video"
+  },
+  "development issues in indian economy/lms_pdf/module_3_inequality.pdf": {
+    "ytId": "niiXnw88Fzg",
+    "title": "ഇന്ത്യയിലെ വർദ്ധിച്ചുവരുന്ന സാമ്പത്തിക അസമത്വം (Economic Inequality in India · Masterclass) · Development Issues in Indian Economy Module 3 · Inequality",
+    "label": "▶ Module 3 Video"
+  },
+  "development issues in indian economy/malayalam pdf/econ_module_4_ch1_unemployment_in_india_malayalam.pdf": {
+    "ytId": "PDRbbOLxj4k",
+    "title": "മൊഡ്യൂൾ 4: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India · Comprehensive Masterclass) · Development Issues in Indian Economy Module 4 · Unemployment",
+    "label": "▶ Module 4 Video"
+  },
+  "development issues in indian economy/lms_pdf/module_4_unemployment.pdf": {
+    "ytId": "PDRbbOLxj4k",
+    "title": "മൊഡ്യൂൾ 4: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India · Comprehensive Masterclass) · Development Issues in Indian Economy Module 4 · Unemployment",
+    "label": "▶ Module 4 Video"
+  },
+  "development issues in indian economy/malayalam pdf/econ_module_5_ch1_open_ended_issues_fiscal_inflation_malayalam.pdf": {
+    "ytId": "PDRbbOLxj4k",
+    "title": "മൊഡ്യൂൾ 4: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India · Comprehensive Masterclass) · Development Issues in Indian Economy Module 5 & Question Banks",
+    "label": "▶ Module 5 & Question Banks Video"
+  },
+  "development issues in indian economy/lms_pdf/module_5_open_ended_issues.pdf": {
+    "ytId": "C_QjoD92wNM",
+    "title": "Module 4: Unemployment in India | Inquisitive Podcast Deep Dive & Debate · Development Issues in Indian Economy Module 5 & Question Banks",
+    "label": "▶ Module 5 & Question Banks Video"
+  },
+  "development__indian_economy_mcqs.pdf": {
+    "ytId": "Za9o3cHz_uQ",
+    "title": "12 തരം തൊഴിലില്ലായ്മകൾ (12 Types of Unemployment in India · Visual Masterclass) · Development Issues in Indian Economy Module 5 & Question Banks",
+    "label": "▶ Module 5 & Question Banks Video"
+  },
+  "fundamentals of ethics/malayalam pdf/ethics_chapter_1_malayalam.pdf": {
+    "ytId": "3AJOPvBY9KA",
+    "title": "എത്തിക്സ് അഥവാ ശരിതെറ്റുകളുടെ തത്ത്വശാസ്ത്രം (Ethics: Philosophy of Right & Wrong) · Fundamentals of Ethics Module 1 · Introduction to Ethics",
+    "label": "▶ Module 1 Video"
+  },
+  "fundamentals of ethics/lms_pdf/syllabus_fundamentals_of_ethics.pdf": {
+    "ytId": "s3xGsLMCY1o",
+    "title": "ധർമ്മശാസ്ത്രം ആമുഖവും തത്വങ്ങളും (Introduction to Dharmashastra & Western Ethics) · Fundamentals of Ethics Module 1 · Introduction to Ethics",
+    "label": "▶ Module 1 Video"
+  },
+  "fundamentals of ethics/malayalam pdf/ethics_chapter_2_malayalam.pdf": {
+    "ytId": "AXKs5HdTUTw",
+    "title": "സദ്ഗുണവും അവകാശങ്ങളും കടമകളും (Virtue Ethics, Moral Rights & Duties) · Fundamentals of Ethics Module 2 · Concepts of Ethics",
+    "label": "▶ Module 2 Video"
+  },
+  "fundamentals of ethics/malayalam pdf/ethics_chapter_3_malayalam.pdf": {
+    "ytId": "AXKs5HdTUTw",
+    "title": "കൺസിക്വൻഷ്യലിസവും ഡിയോന്റോളജിക്കൽ എത്തിക്സും (Consequentialism & Deontological Ethics) · Fundamentals of Ethics Module 3 · Theories of Ethics",
+    "label": "▶ Module 3 Video"
+  },
+  "fundamentals of ethics/malayalam pdf/ethics_chapter_4_malayalam.pdf": {
+    "ytId": "AXKs5HdTUTw",
+    "title": "കുറ്റവാളികളെ നമ്മൾ എന്തിനാണ് ശിക്ഷിക്കുന്നത്? (Theories of Punishment: Why Do We Punish?) · Fundamentals of Ethics Module 4 · Normative & Applied Ethics",
+    "label": "▶ Module 4 Video"
+  },
+  "fundamentals of ethics/malayalam pdf/ethics_chapter_5_malayalam.pdf": {
+    "ytId": "AXKs5HdTUTw",
+    "title": "കുറ്റവാളികളെ നമ്മൾ എന്തിനാണ് ശിക്ഷിക്കുന്നത്? (Theories of Punishment: Why Do We Punish?) · Fundamentals of Ethics Module 4 · Normative & Applied Ethics",
+    "label": "▶ Module 4 Video"
+  },
+  "fundamentals of ethics/malayalam pdf/ethics_exam_cracker_malayalam.pdf": {
+    "ytId": "1Va07j8OQSA",
+    "title": "ദയാവധവും ഡീപ് ഇക്കോളജിയും പ്രായോഗിക ധാർമ്മികതയിൽ (Euthanasia & Deep Ecology in Applied Ethics) · Fundamentals of Ethics Exam Preparation & Special Guides",
+    "label": "▶ Exam Preparation & Special Guides Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_1_demand_malayalam.pdf": {
+    "ytId": "Mu1Ktkzr_ME",
+    "title": "ഡിമാൻഡ് നിയമവും സവിശേഷതകളും (Demand: Law, Determinants, Curves & Market Demand) · Microeconomic Foundation Module 1 · Supply and Demand",
+    "label": "▶ Module 1 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_2_supply_malayalam.pdf": {
+    "ytId": "CylKbnNZtm0",
+    "title": "സപ്ലൈ സിദ്ധാന്തവും വിപണി സവിശേഷതകളും (Supply: Law, Determinants & LMS Review) · Microeconomic Foundation Module 1 · Supply and Demand",
+    "label": "▶ Module 1 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_3_market_equilibrium_malayalam.pdf": {
+    "ytId": "zJsY7Sbx2To",
+    "title": "വിപണി സന്തുലിതാവസ്ഥ (Market Equilibrium & Price Determination) · Microeconomic Foundation Module 1 · Supply and Demand",
+    "label": "▶ Module 1 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_4_shocking_equilibrium_malayalam.pdf": {
+    "ytId": "Mu1Ktkzr_ME",
+    "title": "ഡിമാൻഡ് നിയമവും സവിശേഷതകളും (Demand: Law, Determinants, Curves & Market Demand) · Microeconomic Foundation Module 1 · Supply and Demand",
+    "label": "▶ Module 1 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_5_equilibrium_effects_malayalam.pdf": {
+    "ytId": "Mu1Ktkzr_ME",
+    "title": "ഡിമാൻഡ് നിയമവും സവിശേഷതകളും (Demand: Law, Determinants, Curves & Market Demand) · Microeconomic Foundation Module 1 · Supply and Demand",
+    "label": "▶ Module 1 Video"
+  },
+  "microeconomics/lms_pdf/microeconomics_module_1_unit_1_demand.pdf": {
+    "ytId": "Mu1Ktkzr_ME",
+    "title": "ഡിമാൻഡ് നിയമവും സവിശേഷതകളും (Demand: Law, Determinants, Curves & Market Demand) · Microeconomic Foundation Module 1 · Supply and Demand",
+    "label": "▶ Module 1 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_6_consumer_preferences_malayalam.pdf": {
+    "ytId": "Jj-JWuNJjRU",
+    "title": "യൂട്ടിലിറ്റി വിശകലനം (Utility Analysis: Cardinal vs Ordinal & DMU) · Microeconomic Foundation Module 2 · Consumer Theory",
+    "label": "▶ Module 2 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_7_utility_malayalam.pdf": {
+    "ytId": "z8tbT2SiepA",
+    "title": "ഉപഭോക്തൃ മുൻഗണനകളും ഇൻഡിഫറൻസ് കർവുകളും (Consumer Preferences & Indifference Curves) · Microeconomic Foundation Module 2 · Consumer Theory",
+    "label": "▶ Module 2 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_8_budget_constraint_malayalam.pdf": {
+    "ytId": "9H8683I4Ad8",
+    "title": "ബജറ്റ് പരിമിതിയും ഉപഭോക്തൃ സമനിലയും (Budget Constraint & Consumer Equilibrium) · Microeconomic Foundation Module 2 · Consumer Theory",
+    "label": "▶ Module 2 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_9_constrained_choice_malayalam.pdf": {
+    "ytId": "Jj-JWuNJjRU",
+    "title": "യൂട്ടിലിറ്റി വിശകലനം (Utility Analysis: Cardinal vs Ordinal & DMU) · Microeconomic Foundation Module 2 · Consumer Theory",
+    "label": "▶ Module 2 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_10_ownership_firms_malayalam.pdf": {
+    "ytId": "W6b1q1WUJbo",
+    "title": "സ്ഥാപനങ്ങളുടെ ഉടമസ്ഥതയും മാനേജ്‌മെന്റും (The Ownership & Management of Firms) · Microeconomic Foundation Module 3 · Production and Costs",
+    "label": "▶ Module 3 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_11_production_functions_malayalam.pdf": {
+    "ytId": "9gX0HzBZ0Bc",
+    "title": "റിട്ടേൺസ് ടു സ്കെയിൽ (Returns to Scale & Production Function) · Microeconomic Foundation Module 3 · Production and Costs",
+    "label": "▶ Module 3 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_12_short_run_production_malayalam.pdf": {
+    "ytId": "W6b1q1WUJbo",
+    "title": "സ്ഥാപനങ്ങളുടെ ഉടമസ്ഥതയും മാനേജ്‌മെന്റും (The Ownership & Management of Firms) · Microeconomic Foundation Module 3 · Production and Costs",
+    "label": "▶ Module 3 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_13_long_run_production_malayalam.pdf": {
+    "ytId": "W6b1q1WUJbo",
+    "title": "സ്ഥാപനങ്ങളുടെ ഉടമസ്ഥതയും മാനേജ്‌മെന്റും (The Ownership & Management of Firms) · Microeconomic Foundation Module 3 · Production and Costs",
+    "label": "▶ Module 3 Video"
+  },
+  "microeconomics/malayalam pdf/micro_unit_15_nature_of_costs_malayalam.pdf": {
+    "ytId": "W6b1q1WUJbo",
+    "title": "സ്ഥാപനങ്ങളുടെ ഉടമസ്ഥതയും മാനേജ്‌മെന്റും (The Ownership & Management of Firms) · Microeconomic Foundation Module 3 · Production and Costs",
+    "label": "▶ Module 3 Video"
+  },
+  "history/malayalam pdf/history_module_1_landscape_and_environment_malayalam.pdf": {
+    "ytId": "hIw0qglyEUA",
+    "title": "കേരളത്തിന്റെ ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Kerala Landscape & Environment) · Masterclass · History of Keralam Module 1 · Landscape and Environment",
+    "label": "▶ Module 1 Video"
+  },
+  "history/lms_pdf/history_of_keralam_module_1_landscape_and_environment.pdf": {
+    "ytId": "hIw0qglyEUA",
+    "title": "കേരളത്തിന്റെ ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Kerala Landscape & Environment) · Masterclass · History of Keralam Module 1 · Landscape and Environment",
+    "label": "▶ Module 1 Video"
+  },
+  "kerala_history_upto_12th_century.pdf": {
+    "ytId": "hIw0qglyEUA",
+    "title": "കേരളത്തിന്റെ ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Kerala Landscape & Environment) · Masterclass · History of Keralam Module 1 · Landscape and Environment",
+    "label": "▶ Module 1 Video"
+  },
+  "history/malayalam pdf/history_module_2_ch1_prehistoric_settlements_malayalam.pdf": {
+    "ytId": "0g9YiJ86L7k",
+    "title": "പ്രാചീന ശിലായുഗ മനുഷ്യവാസ കേന്ദ്രങ്ങൾ: പാലിയോലിത്തിക്, മെസോലിത്തിക്, നിയോലിത്തിക് · Masterclass · History of Keralam Module 2 · Prehistoric Settlements & Art",
+    "label": "▶ Module 2 Video"
+  },
+  "history/malayalam pdf/history_module_2_ch2_rock_shelters_prehistoric_art_malayalam.pdf": {
+    "ytId": "iAeENlFpYtk",
+    "title": "ശിലാ ഗുഹകളും പ്രാചീന ശിലാകലയും: എടയ്ക്കൽ, മറയൂർ, തെന്മല · Masterclass · History of Keralam Module 2 · Prehistoric Settlements & Art",
+    "label": "▶ Module 2 Video"
+  },
+  "history/malayalam pdf/history_module_2_ch3_megalithic_culture_malayalam.pdf": {
+    "ytId": "CrpK5EnETwQ",
+    "title": "മഹാശിലായുഗ സംസ്കാരം: ടൈപ്പോളജി & ഖനനങ്ങൾ (Megaliths, Excavations & Iron Age Society) · History of Keralam Module 2 · Prehistoric Settlements & Art",
+    "label": "▶ Module 2 Video"
+  },
+  "history/lms_pdf/history_of_keralam_module_2_ch1_prehistoric_settlements.pdf": {
+    "ytId": "0g9YiJ86L7k",
+    "title": "പ്രാചീന ശിലായുഗ മനുഷ്യവാസ കേന്ദ്രങ്ങൾ: പാലിയോലിത്തിക്, മെസോലിത്തിക്, നിയോലിത്തിക് · Masterclass · History of Keralam Module 2 · Prehistoric Settlements & Art",
+    "label": "▶ Module 2 Video"
+  },
+  "history/malayalam pdf/history_module_3_early_historic_keralam_malayalam.pdf": {
+    "ytId": "W3NR_IX70qg",
+    "title": "സംഘകാല കേരളവും സമുദ്ര വാണിജ്യവും (Early Historic Keralam: Tamil Literature, Tinai & Indo-Roman Trade) · History of Keralam Module 3 · Early Historic Keralam",
+    "label": "▶ Module 3 Video"
+  },
+  "history/lms_pdf/history_of_keralam_module_3_early_historic_keralam.pdf": {
+    "ytId": "W3NR_IX70qg",
+    "title": "സംഘകാല കേരളവും സമുദ്ര വാണിജ്യവും (Early Historic Keralam: Tamil Literature, Tinai & Indo-Roman Trade) · History of Keralam Module 3 · Early Historic Keralam",
+    "label": "▶ Module 3 Video"
+  },
+  "history/malayalam pdf/history_module_4_keralam_upto_12th_century_malayalam.pdf": {
+    "ytId": "l1xQTyBb13g",
+    "title": "പന്ത്രണ്ടാം നൂറ്റാണ്ട് വരെയുള്ള കേരളം: ശാസനങ്ങളും ക്ഷേത്ര വാസ്തുവിദ്യയും (Epigraphy, Architecture & Chera Polity) · History of Keralam Module 4 · Medieval Keralam & Field Study",
+    "label": "▶ Module 4 Video"
+  },
+  "history/lms_pdf/history_of_keralam_module_4_keralam_upto_12th_century.pdf": {
+    "ytId": "l1xQTyBb13g",
+    "title": "പന്ത്രണ്ടാം നൂറ്റാണ്ട് വരെയുള്ള കേരളം: ശാസനങ്ങളും ക്ഷേത്ര വാസ്തുവിദ്യയും (Epigraphy, Architecture & Chera Polity) · History of Keralam Module 4 · Medieval Keralam & Field Study",
+    "label": "▶ Module 4 Video"
+  },
+  "history/malayalam pdf/history_module_5_doing_history_field_visit_malayalam.pdf": {
+    "ytId": "l1xQTyBb13g",
+    "title": "പന്ത്രണ്ടാം നൂറ്റാണ്ട് വരെയുള്ള കേരളം: ശാസനങ്ങളും ക്ഷേത്ര വാസ്തുവിദ്യയും (Epigraphy, Architecture & Chera Polity) · History of Keralam Module 4 · Medieval Keralam & Field Study",
+    "label": "▶ Module 4 Video"
+  }
+};
+      const moduleFallbackMap = {
+  "malayalam": {
+    "1": {
+      "ytId": "cTlb6K9fD2o",
+      "title": "ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ — കലാമണ്ഡലം ഹൈദരാലി · Malayalam Module 1 · Gadyam & Vivarthanam",
+      "label": "▶ Module 1 Video"
+    },
+    "2": {
+      "ytId": "snYLroXbSDI",
+      "title": "ചെറുകഥ: പൂവമ്പഴം — കാരൂർ നീലകണ്ഠപ്പിള്ള · Malayalam Module 2 · Kadha & Novel",
+      "label": "▶ Module 2 Video"
+    },
+    "3": {
+      "ytId": "ievP3epTaVQ",
+      "title": "കവിത: സമുദ്രലംഘനം — തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ · Malayalam Module 3 · Kavitha",
+      "label": "▶ Module 3 Video"
+    },
+    "4": {
+      "ytId": "hKD8dXAAGjU",
+      "title": "നാടകം: ഓരോരോ കാലത്തിലും — ശ്രീജ കെ.വി. · Malayalam Module 4 · Drishya Kalasahithyam & Cinema",
+      "label": "▶ Module 4 Video"
+    }
+  },
+  "english": {
+    "1": {
+      "ytId": "OeMGI2CWtLA",
+      "title": "I Have a Dream (English Edition) · English Module 1 · Listening",
+      "label": "▶ Module 1 Video"
+    },
+    "2": {
+      "ytId": "hNLY9H1czbM",
+      "title": "George Carlin on Soft Language · English Module 2 · Speaking",
+      "label": "▶ Module 2 Video"
+    },
+    "3": {
+      "ytId": "9aLkAUYFWF8",
+      "title": "Reading Strategies & Critical Comprehension · English Module 3 · Reading",
+      "label": "▶ Module 3 Video"
+    },
+    "4": {
+      "ytId": "cTlb6K9fD2o",
+      "title": "Academic & Professional Writing Mechanics · English Module 4 · Writing",
+      "label": "▶ Module 4 Video"
+    }
+  },
+  "sociology": {
+    "1": {
+      "ytId": "uMxIIznPo-w",
+      "title": "സോഷ്യോളജിക്കൽ ഭാവനയും ശാസ്ത്രീയ ഗവേഷണ രീതികളും (Sociological Imagination & Research Methods) · Sociology Module 1 · Introducing Sociology",
+      "label": "▶ Module 1 Video"
+    },
+    "2": {
+      "ytId": "WyReGfMhJJs",
+      "title": "സോഷ്യോളജി പ്രയോഗത്തിൽ (Practicing Sociology: Full Syllabus Masterclass) · Sociology Module 2 · Practicing Sociology",
+      "label": "▶ Module 2 Video"
+    },
+    "3": {
+      "ytId": "uf8WYWO9-Tk",
+      "title": "സാമൂഹികവൽക്കരണത്തിന്റെ ഏജൻസികൾ (Agents of Socialization) · Sociology Module 3 · Individual and Society",
+      "label": "▶ Module 3 Video"
+    },
+    "4": {
+      "ytId": "EJt-7kG_-E8",
+      "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics, Evolution & Types) · Sociology Module 4 · Sociology and Society",
+      "label": "▶ Module 4 Video"
+    },
+    "5": {
+      "ytId": "EJt-7kG_-E8",
+      "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics, Evolution & Types) · Sociology Module 5 · Perceiving Social Dynamics",
+      "label": "▶ Module 5 Video"
+    }
+  },
+  "philosophy-of-ai": {
+    "1": {
+      "ytId": "6VWW49UMoks",
+      "title": "ചരിത്രപരമായ വികാസം: തത്ത്വചിന്തയിൽ നിന്ന് കമ്പ്യൂട്ടറുകളിലേക്ക് (Historical Evolution: Philosophy to AI) · Philosophy of AI Module 1 · Introduction to AI",
+      "label": "▶ Module 1 Video"
+    },
+    "2": {
+      "ytId": "Y4zhWiirJkc",
+      "title": "ചൈനീസ് റൂം ആർഗ്യുമെന്റും ട്യൂറിംഗ് ടെസ്റ്റും (Chinese Room & Alan Turing Test) [ENG Video] · Philosophy of AI Module 2 · Classical Version of AI",
+      "label": "▶ Module 2 Video"
+    },
+    "3": {
+      "ytId": "qrlC8o73n4Q",
+      "title": "എഐ വിജ്ഞാനശാസ്ത്ര പ്രത്യാഘാതങ്ങൾ — സമ്പൂർണ്ണ വിശകലനം (Epistemological Implications Masterclass) · Philosophy of AI Module 3 · Theories of Knowledge in AI",
+      "label": "▶ Module 3 Video"
+    },
+    "4": {
+      "ytId": "uiB6PFp5P_I",
+      "title": "എഐ മനുഷ്യന്റെ അസ്തിത്വത്തിന് ഭീഷണിയാകുമോ? (Value Alignment & Existential Threat to Humanity) · Philosophy of AI Module 4 · Ethical & Philosophical Implications",
+      "label": "▶ Module 4 Video"
+    }
+  },
+  "philosophy-of-education": {
+    "1": {
+      "ytId": "IcVqN7uFNEo",
+      "title": "വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും (Meaning & History of Education) · Philosophy of Education Syllabus & Course Structure",
+      "label": "▶ Syllabus & Course Structure Video"
+    },
+    "2": {
+      "ytId": "IcVqN7uFNEo",
+      "title": "വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും (Meaning & History of Education) · Philosophy of Education Module 1 · Philosophical Basis of Education",
+      "label": "▶ Module 1 Video"
+    },
+    "3": {
+      "ytId": "Axf_IV07DN0",
+      "title": "പാശ്ചാത്യ വിദ്യാഭ്യാസത്തിലെ ആദർശവാദവും പ്രകൃതിവാദവും (Idealism & Naturalism in Western Education) · Philosophy of Education Module 2 · Western Approach",
+      "label": "▶ Module 2 Video"
+    },
+    "4": {
+      "ytId": "Axf_IV07DN0",
+      "title": "ഗാന്ധിജിയുടെ നയി താലിം എന്ന വിദ്യാഭ്യാസ വിപ്ലവം (Mahatma Gandhi's Nai Talim) · Philosophy of Education Module 3 · Indian Approach",
+      "label": "▶ Module 3 Video"
+    },
+    "5": {
+      "ytId": "IcVqN7uFNEo",
+      "title": "വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും (Meaning & History of Education) · Philosophy of Education Module 4 · Micro Teaching Practice",
+      "label": "▶ Module 4 Video"
+    }
+  },
+  "development-issues-in-indian-economy": {
+    "1": {
+      "ytId": "WYtOkVjW_Wo",
+      "title": "Path Dependence and Crisis: India's Economy, 1700–1991 · Development Issues in Indian Economy Module 1 · Historical Precedents",
+      "label": "▶ Module 1 Video"
+    },
+    "2": {
+      "ytId": "QTHt_P7RIA0",
+      "title": "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയം: രീതികളും സമിതികളും (Poverty Estimation in India: Methods & Committees) · Development Issues in Indian Economy Module 2 · Poverty",
+      "label": "▶ Module 2 Video"
+    },
+    "3": {
+      "ytId": "niiXnw88Fzg",
+      "title": "ഇന്ത്യയിലെ വർദ്ധിച്ചുവരുന്ന സാമ്പത്തിക അസമത്വം (Economic Inequality in India · Masterclass) · Development Issues in Indian Economy Module 3 · Inequality",
+      "label": "▶ Module 3 Video"
+    },
+    "4": {
+      "ytId": "PDRbbOLxj4k",
+      "title": "മൊഡ്യൂൾ 4: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India · Comprehensive Masterclass) · Development Issues in Indian Economy Module 4 · Unemployment",
+      "label": "▶ Module 4 Video"
+    },
+    "5": {
+      "ytId": "PDRbbOLxj4k",
+      "title": "മൊഡ്യൂൾ 4: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India · Comprehensive Masterclass) · Development Issues in Indian Economy Module 5 & Question Banks",
+      "label": "▶ Module 5 & Question Banks Video"
+    }
+  },
+  "fundamentals-of-ethics": {
+    "1": {
+      "ytId": "j0Rh56DJMYw",
+      "title": "Fundamentals of Ethics Complete 5-Module Masterclass · Fundamentals of Ethics Module 1 · Introduction to Ethics",
+      "label": "▶ Module 1 Video"
+    },
+    "2": {
+      "ytId": "AXKs5HdTUTw",
+      "title": "സദ്ഗുണവും അവകാശങ്ങളും കടമകളും (Virtue Ethics, Moral Rights & Duties) · Fundamentals of Ethics Module 2 · Concepts of Ethics",
+      "label": "▶ Module 2 Video"
+    },
+    "3": {
+      "ytId": "AXKs5HdTUTw",
+      "title": "കൺസിക്വൻഷ്യലിസവും ഡിയോന്റോളജിക്കൽ എത്തിക്സും (Consequentialism & Deontological Ethics) · Fundamentals of Ethics Module 3 · Theories of Ethics",
+      "label": "▶ Module 3 Video"
+    },
+    "4": {
+      "ytId": "AXKs5HdTUTw",
+      "title": "കുറ്റവാളികളെ നമ്മൾ എന്തിനാണ് ശിക്ഷിക്കുന്നത്? (Theories of Punishment: Why Do We Punish?) · Fundamentals of Ethics Module 4 · Normative & Applied Ethics",
+      "label": "▶ Module 4 Video"
+    },
+    "5": {
+      "ytId": "1Va07j8OQSA",
+      "title": "ദയാവധവും ഡീപ് ഇക്കോളജിയും പ്രായോഗിക ധാർമ്മികതയിൽ (Euthanasia & Deep Ecology in Applied Ethics) · Fundamentals of Ethics Exam Preparation & Special Guides",
+      "label": "▶ Exam Preparation & Special Guides Video"
+    }
+  },
+  "microeconomic-foundation": {
+    "1": {
+      "ytId": "Mu1Ktkzr_ME",
+      "title": "ഡിമാൻഡ് നിയമവും സവിശേഷതകളും (Demand: Law, Determinants, Curves & Market Demand) · Microeconomic Foundation Module 1 · Supply and Demand",
+      "label": "▶ Module 1 Video"
+    },
+    "2": {
+      "ytId": "Jj-JWuNJjRU",
+      "title": "യൂട്ടിലിറ്റി വിശകലനം (Utility Analysis: Cardinal vs Ordinal & DMU) · Microeconomic Foundation Module 2 · Consumer Theory",
+      "label": "▶ Module 2 Video"
+    },
+    "3": {
+      "ytId": "W6b1q1WUJbo",
+      "title": "സ്ഥാപനങ്ങളുടെ ഉടമസ്ഥതയും മാനേജ്‌മെന്റും (The Ownership & Management of Firms) · Microeconomic Foundation Module 3 · Production and Costs",
+      "label": "▶ Module 3 Video"
+    }
+  },
+  "arabic": {},
+  "history-of-keralam": {
+    "1": {
+      "ytId": "hIw0qglyEUA",
+      "title": "കേരളത്തിന്റെ ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Kerala Landscape & Environment) · Masterclass · History of Keralam Module 1 · Landscape and Environment",
+      "label": "▶ Module 1 Video"
+    },
+    "2": {
+      "ytId": "0g9YiJ86L7k",
+      "title": "പ്രാചീന ശിലായുഗ മനുഷ്യവാസ കേന്ദ്രങ്ങൾ: പാലിയോലിത്തിക്, മെസോലിത്തിക്, നിയോലിത്തിക് · Masterclass · History of Keralam Module 2 · Prehistoric Settlements & Art",
+      "label": "▶ Module 2 Video"
+    },
+    "3": {
+      "ytId": "W3NR_IX70qg",
+      "title": "സംഘകാല കേരളവും സമുദ്ര വാണിജ്യവും (Early Historic Keralam: Tamil Literature, Tinai & Indo-Roman Trade) · History of Keralam Module 3 · Early Historic Keralam",
+      "label": "▶ Module 3 Video"
+    },
+    "4": {
+      "ytId": "l1xQTyBb13g",
+      "title": "പന്ത്രണ്ടാം നൂറ്റാണ്ട് വരെയുള്ള കേരളം: ശാസനങ്ങളും ക്ഷേത്ര വാസ്തുവിദ്യയും (Epigraphy, Architecture & Chera Polity) · History of Keralam Module 4 · Medieval Keralam & Field Study",
+      "label": "▶ Module 4 Video"
+    }
+  }
+};
+
+      let matched = exactFileMap[rawFile] || null;
+
+      if (!matched) {
+        try {
+          const decoded = decodeURIComponent(rawFile);
+          matched = exactFileMap[decoded] || null;
+        } catch(e) {}
+      }
+
+      if (!matched) {
+        const fullStr = rawFile + ' ' + rawTitle;
+        let subId = null;
+
+        if (fullStr.includes('development issues in indian economy') || fullStr.includes('econ_') || fullStr.includes('indian economy') || fullStr.includes('indian_economy')) {
+          subId = 'development-issues-in-indian-economy';
+        } else if (fullStr.includes('philosophy of ai') || fullStr.includes('ai_philosophy') || fullStr.includes('artificial intelligence')) {
+          subId = 'philosophy-of-ai';
+        } else if (fullStr.includes('philosophy of education') || fullStr.includes('philosophy_of_education')) {
+          subId = 'philosophy-of-education';
+        } else if (fullStr.includes('history of keralam') || fullStr.includes('history_of_keralam') || fullStr.startsWith('history/') || fullStr.includes('/history/')) {
+          subId = 'history-of-keralam';
+        } else if (fullStr.includes('sociology') || fullStr.includes('individual_and_society')) {
+          subId = 'sociology';
+        } else if (fullStr.includes('fundamentals of ethics') || fullStr.includes('ethics_') || fullStr.includes('/ethics/')) {
+          subId = 'fundamentals-of-ethics';
+        } else if (fullStr.includes('microeconomic') || fullStr.includes('micro_')) {
+          subId = 'microeconomic-foundation';
+        } else if (fullStr.includes('english') || fullStr.includes('euphemisms')) {
+          subId = 'english';
+        } else if (fullStr.includes('malayalam') || fullStr.includes('poovampazham') || fullStr.includes('pottekkatt')) {
+          subId = 'malayalam';
         }
-      ];
 
-      let matched = null;
-      for (let i = 0; i < videoMap.length; i++) {
-        if (videoMap[i].match(f)) {
-          matched = videoMap[i];
-          break;
+        if (subId && moduleFallbackMap[subId]) {
+          let modNum = 1;
+          const mMatch = fullStr.match(/module[_\s-]*0?([1-5])/);
+          if (mMatch) {
+            modNum = parseInt(mMatch[1], 10);
+          } else if (subId === 'development-issues-in-indian-economy') {
+            if (fullStr.includes('inequality') || fullStr.includes('അസമത്വം')) modNum = 3;
+            else if (fullStr.includes('poverty') || fullStr.includes('ദാരിദ്ര്യം')) modNum = 2;
+            else if (fullStr.includes('unemployment') || fullStr.includes('തൊഴിലില്ലായ്മ')) modNum = 4;
+            else if (fullStr.includes('inflation') || fullStr.includes('open_ended')) modNum = 5;
+            else modNum = 1;
+          }
+
+          const subMods = moduleFallbackMap[subId];
+          matched = subMods[modNum] || subMods[String(modNum)] || subMods[1] || subMods['1'] || null;
         }
       }
 
-      if (matched) {
+      if (matched && matched.ytId) {
         const vGroup = document.getElementById('videoToolbarGroup');
         const vBtn = document.getElementById('masterclassVideoBtn');
         if (vGroup && vBtn) {
           vBtn.href = 'https://www.youtube.com/watch?v=' + matched.ytId;
           vBtn.title = matched.title;
           const span = vBtn.querySelector('span');
-          if (span) span.textContent = matched.label;
+          if (span) span.textContent = matched.label || '▶ Video Masterclass';
           vGroup.style.display = 'inline-flex';
 
           vBtn.addEventListener('click', function(e) {
