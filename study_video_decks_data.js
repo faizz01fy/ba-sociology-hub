@@ -224,7 +224,7 @@ window.ACADEMIC_HUB_VIDEO_DECKS = {
       "slug": "development-issues-in-indian-economy",
       "titleMal": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും",
       "titleEn": "Real Development & Economic Institutions in India",
-      "module": "Development Issues in Indian Economy · Module 1 Part 8",
+      "module": "Development Issues in Indian Economy · Module 1 Part 5.6.7",
       "url": "voice-explanation.html?subject=development-issues-in-indian-economy&yt=x8npIOpPvas",
       "thumb": "https://img.youtube.com/vi/x8npIOpPvas/hqdefault.jpg"
     },

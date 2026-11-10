@@ -1685,6 +1685,23 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Calicut University Focus: 'Critically analyze the phenomenon of Jobless Growth and Structural Imbalance in post-reform India'."
           },
           {
+            "chapterNumber": "Part 5.6.7",
+            "title": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development & Economic Institutions in India)",
+            "chapter": "Academic Hub Special · Module 1 Part 5.6.7 · പ്ലാനിംഗ് കമ്മീഷൻ മുതൽ നീതി ആയോഗ് വരെ, ഭരണഘടനാ സ്ഥാപനങ്ങൾ",
+            "duration": "13:06",
+            "youtubeId": "x8npIOpPvas",
+            "audioUrl": "",
+            "language": "Malayalam",
+            "studyPoints": [
+              "പ്ലാനിംഗ് കമ്മീഷൻ (1950 - 2014): കേന്ദ്രീകൃത ടോപ്പ്-ഡൗൺ (Top-down) ആസൂത്രണവും വിഭവ വിതരണവും നടത്തിയ മുൻകാല സ്ഥാപനം.",
+              "നീതി ആയോഗിന്റെ ഉദയം (2015): 'ടീം ഇന്ത്യ' എന്ന സഹകരണ ഫെഡറലിസത്തിലൂന്നിയ (Cooperative Federalism) ബോട്ടം-അപ്പ് (Bottom-up) തിങ്ക് ടാങ്ക്.",
+              "റിസർവ് ബാങ്ക് ഓഫ് ഇന്ത്യ (RBI): ധനനയ രൂപീകരണം, പണപ്പെരുപ്പ നിയന്ത്രണം (Inflation Targeting), ബാങ്കിംഗ് മേൽനോട്ടം വഹിക്കുന്ന പരമോന്നത ധനകാര്യ സ്ഥാപനം.",
+              "ധനകാര്യ കമ്മീഷൻ (Finance Commission - Article 280): കേന്ദ്രവും സംസ്ഥാനങ്ങളും തമ്മിലുള്ള നികുതി പങ്കിടലും ഗ്രാന്റുകളും നിശ്ചയിക്കുന്ന ഭരണഘടനാ സ്ഥാപനം.",
+              "സെബി (SEBI): മൂലധന വിപണിയും ഓഹരി ഇടപാടുകളും നിയന്ത്രിക്കുകയും നിക്ഷേപകരുടെ താല്പര്യങ്ങൾ സംരക്ഷിക്കുകയും ചെയ്യുന്ന നിയന്ത്രണ ഏജൻസി."
+            ],
+            "examTip": "Calicut University Focus: 'Differentiate between the Planning Commission and NITI Aayog. Explain the role of NITI Aayog in promoting Cooperative Federalism'."
+          },
+          {
             "chapterNumber": "Part 8",
             "title": "സ്വർണ്ണം പണയം വെച്ച ഇന്ത്യയുടെ സാമ്പത്തിക ചരിത്രം (The 1991 Balance of Payments Crisis & Gold Pledging)",
             "chapter": "Academic Hub Special · Module 1 Part 8 · 1991 ബാലൻസ് ഓഫ് പേയ്മെന്റ്സ് പ്രതിസന്ധി & ധനകാര്യ നയ വ്യതിയാനങ്ങൾ",
@@ -1700,23 +1717,6 @@ window.VOICE_EXPLANATIONS_DATA = {
               "എൽപിജി മാതൃക (LPG Reforms 1991): ഉദാരവൽക്കരണം (Liberalization), സ്വകാര്യവൽക്കരണം (Privatization), ആഗോളവൽക്കരണം (Globalization) വഴി ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥ തുറന്നുകൊടുത്തു."
             ],
             "examTip": "Calicut University Focus: 'Trace the genesis of the 1991 Balance of Payments crisis and evaluate how the pledging of gold catalyzed the LPG reforms'."
-          },
-          {
-            "chapterNumber": "Part 8",
-            "title": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development & Economic Institutions in India)",
-            "chapter": "Academic Hub Special · Module 1 Part 8 · പ്ലാനിംഗ് കമ്മീഷൻ മുതൽ നീതി ആയോഗ് വരെ, ഭരണഘടനാ സ്ഥാപനങ്ങൾ",
-            "duration": "13:06",
-            "youtubeId": "x8npIOpPvas",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "പ്ലാനിംഗ് കമ്മീഷൻ (1950 - 2014): കേന്ദ്രീകൃത ടോപ്പ്-ഡൗൺ (Top-down) ആസൂത്രണവും വിഭവ വിതരണവും നടത്തിയ മുൻകാല സ്ഥാപനം.",
-              "നീതി ആയോഗിന്റെ ഉദയം (2015): 'ടീം ഇന്ത്യ' എന്ന സഹകരണ ഫെഡറലിസത്തിലൂന്നിയ (Cooperative Federalism) ബോട്ടം-അപ്പ് (Bottom-up) തിങ്ക് ടാങ്ക്.",
-              "റിസർവ് ബാങ്ക് ഓഫ് ഇന്ത്യ (RBI): ധനനയ രൂപീകരണം, പണപ്പെരുപ്പ നിയന്ത്രണം (Inflation Targeting), ബാങ്കിംഗ് മേൽനോട്ടം വഹിക്കുന്ന പരമോന്നത ധനകാര്യ സ്ഥാപനം.",
-              "ധനകാര്യ കമ്മീഷൻ (Finance Commission - Article 280): കേന്ദ്രവും സംസ്ഥാനങ്ങളും തമ്മിലുള്ള നികുതി പങ്കിടലും ഗ്രാന്റുകളും നിശ്ചയിക്കുന്ന ഭരണഘടനാ സ്ഥാപനം.",
-              "സെബി (SEBI): മൂലധന വിപണിയും ഓഹരി ഇടപാടുകളും നിയന്ത്രിക്കുകയും നിക്ഷേപകരുടെ താല്പര്യങ്ങൾ സംരക്ഷിക്കുകയും ചെയ്യുന്ന നിയന്ത്രണ ഏജൻസി."
-            ],
-            "examTip": "Calicut University Focus: 'Differentiate between the Planning Commission and NITI Aayog. Explain the role of NITI Aayog in promoting Cooperative Federalism'."
           }
         ]
       },
