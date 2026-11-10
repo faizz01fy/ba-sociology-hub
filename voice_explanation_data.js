@@ -1683,6 +1683,40 @@ window.VOICE_EXPLANATIONS_DATA = {
               "പ്രാദേശിക അസമത്വങ്ങൾ (Regional Disparities): ദക്ഷിണേന്ത്യൻ-പശ്ചിമേന്ത്യൻ സംസ്ഥാനങ്ങളും BIMARU സംസ്ഥാനങ്ങളും തമ്മിലുള്ള സാമ്പത്തിക-വികസന വിടവുകൾ."
             ],
             "examTip": "Calicut University Focus: 'Critically analyze the phenomenon of Jobless Growth and Structural Imbalance in post-reform India'."
+          },
+          {
+            "chapterNumber": "Part 8",
+            "title": "സ്വർണ്ണം പണയം വെച്ച ഇന്ത്യയുടെ സാമ്പത്തിക ചരിത്രം (The 1991 Balance of Payments Crisis & Gold Pledging)",
+            "chapter": "Academic Hub Special · Module 1 Part 8 · 1991 ബാലൻസ് ഓഫ് പേയ്മെന്റ്സ് പ്രതിസന്ധി & ധനകാര്യ നയ വ്യതിയാനങ്ങൾ",
+            "duration": "22:38",
+            "youtubeId": "BQffX1nDUjw",
+            "audioUrl": "",
+            "language": "Malayalam",
+            "studyPoints": [
+              "1991-ലെ ബാലൻസ് ഓഫ് പേയ്മെന്റ്സ് പ്രതിസന്ധി (BOP Crisis): വിദേശനാണ്യ ശേഖരം കേവലം രണ്ടാഴ്ചത്തെ ഇറക്കുമതിക്ക് മാത്രമായി (ഏകദേശം $1.2 ബില്യൺ) കൂപ്പുകുത്തി.",
+              "പ്രതിസന്ധിയുടെ കാരണങ്ങൾ: ഗൾഫ് യുദ്ധം (എണ്ണവില കുതിച്ചുയരലും പ്രവാസി വരുമാനം നിലയ്ക്കലും), ഉയർന്ന ധനക്കമ്മി (Fiscal Deficit), രാഷ്ട്രീയ അസ്ഥിരത.",
+              "സ്വർണ്ണം പണയം വെക്കൽ (Pledging Gold): അടിയന്തര വിദേശ വായ്പയ്ക്കായി ബാങ്ക് ഓഫ് ഇംഗ്ലണ്ടിലേക്കും ബാങ്ക് ഓഫ് സ്വിറ്റ്സർലണ്ടിലേക്കും ഇന്ത്യക്ക് ടൺ കണക്കിന് സ്വർണ്ണം വിമാനമാർഗ്ഗം അയക്കേണ്ടി വന്ന നാടകീയ ചരിത്രം.",
+              "ഐഎംഎഫ് - ലോകബാങ്ക് വ്യവസ്ഥകളും ഘടനാപരമായ പരിഷ്കാരങ്ങളും: വായ്പ ലഭിക്കുന്നതിനായി രൂപയുടെ മൂല്യത്തകർച്ചയും (Devaluation) പുതിയ സാമ്പത്തിക നയങ്ങളും നടപ്പിലാക്കാൻ ഇന്ത്യ നിർബന്ധിതമായി.",
+              "എൽപിജി മാതൃക (LPG Reforms 1991): ഉദാരവൽക്കരണം (Liberalization), സ്വകാര്യവൽക്കരണം (Privatization), ആഗോളവൽക്കരണം (Globalization) വഴി ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥ തുറന്നുകൊടുത്തു."
+            ],
+            "examTip": "Calicut University Focus: 'Trace the genesis of the 1991 Balance of Payments crisis and evaluate how the pledging of gold catalyzed the LPG reforms'."
+          },
+          {
+            "chapterNumber": "Part 8",
+            "title": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development & Economic Institutions in India)",
+            "chapter": "Academic Hub Special · Module 1 Part 8 · പ്ലാനിംഗ് കമ്മീഷൻ മുതൽ നീതി ആയോഗ് വരെ, ഭരണഘടനാ സ്ഥാപനങ്ങൾ",
+            "duration": "13:06",
+            "youtubeId": "x8npIOpPvas",
+            "audioUrl": "",
+            "language": "Malayalam",
+            "studyPoints": [
+              "പ്ലാനിംഗ് കമ്മീഷൻ (1950 - 2014): കേന്ദ്രീകൃത ടോപ്പ്-ഡൗൺ (Top-down) ആസൂത്രണവും വിഭവ വിതരണവും നടത്തിയ മുൻകാല സ്ഥാപനം.",
+              "നീതി ആയോഗിന്റെ ഉദയം (2015): 'ടീം ഇന്ത്യ' എന്ന സഹകരണ ഫെഡറലിസത്തിലൂന്നിയ (Cooperative Federalism) ബോട്ടം-അപ്പ് (Bottom-up) തിങ്ക് ടാങ്ക്.",
+              "റിസർവ് ബാങ്ക് ഓഫ് ഇന്ത്യ (RBI): ധനനയ രൂപീകരണം, പണപ്പെരുപ്പ നിയന്ത്രണം (Inflation Targeting), ബാങ്കിംഗ് മേൽനോട്ടം വഹിക്കുന്ന പരമോന്നത ധനകാര്യ സ്ഥാപനം.",
+              "ധനകാര്യ കമ്മീഷൻ (Finance Commission - Article 280): കേന്ദ്രവും സംസ്ഥാനങ്ങളും തമ്മിലുള്ള നികുതി പങ്കിടലും ഗ്രാന്റുകളും നിശ്ചയിക്കുന്ന ഭരണഘടനാ സ്ഥാപനം.",
+              "സെബി (SEBI): മൂലധന വിപണിയും ഓഹരി ഇടപാടുകളും നിയന്ത്രിക്കുകയും നിക്ഷേപകരുടെ താല്പര്യങ്ങൾ സംരക്ഷിക്കുകയും ചെയ്യുന്ന നിയന്ത്രണ ഏജൻസി."
+            ],
+            "examTip": "Calicut University Focus: 'Differentiate between the Planning Commission and NITI Aayog. Explain the role of NITI Aayog in promoting Cooperative Federalism'."
           }
         ]
       },
@@ -1742,49 +1776,28 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       },
       {
-        "moduleName": "MODULE 03: സാമ്പത്തിക പ്രതിസന്ധികളും സ്ഥാപനപരമായ പരിഷ്കാരങ്ങളും (ECONOMIC CRISES & INSTITUTIONAL REFORMS)",
+        "moduleName": "MODULE 04: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (UNEMPLOYMENT IN INDIA)",
         "videos": [
           {
-            "chapterNumber": "Chapter 05",
-            "title": "സ്വർണ്ണം പണയം വെച്ച ഇന്ത്യയുടെ സാമ്പത്തിക ചരിത്രം (The 1991 Balance of Payments Crisis & Gold Pledging)",
-            "chapter": "Academic Hub Special · 1991 ബാലൻസ് ഓഫ് പേയ്മെന്റ്സ് പ്രതിസന്ധി & ധനകാര്യ നയ വ്യതിയാനങ്ങൾ",
-            "duration": "22:38",
-            "youtubeId": "BQffX1nDUjw",
-            "audioUrl": "",
+            "chapterNumber": "Chapter 07",
+            "title": "മൊഡ്യൂൾ 4: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India · Comprehensive Masterclass)",
+            "chapter": "തൊഴിലില്ലായ്മയുടെ നിർവചനവും തരങ്ങളും · NSSO/PLFS കണക്കെടുപ്പ് · തൊഴിൽ നയങ്ങൾ",
+            "duration": "09:06",
             "language": "Malayalam",
+            "youtubeId": "PDRbbOLxj4k",
+            "thumbnail": "https://i.ytimg.com/vi/PDRbbOLxj4k/hqdefault.jpg",
+            "audioUrl": "",
             "studyPoints": [
-              "1991-ലെ ബാലൻസ് ഓഫ് പേയ്മെന്റ്സ് പ്രതിസന്ധി (BOP Crisis): വിദേശനാണ്യ ശേഖരം കേവലം രണ്ടാഴ്ചത്തെ ഇറക്കുമതിക്ക് മാത്രമായി (ഏകദേശം $1.2 ബില്യൺ) കൂപ്പുകുത്തി.",
-              "പ്രതിസന്ധിയുടെ കാരണങ്ങൾ: ഗൾഫ് യുദ്ധം (എണ്ണവില കുതിച്ചുയരലും പ്രവാസി വരുമാനം നിലയ്ക്കലും), ഉയർന്ന ധനക്കമ്മി (Fiscal Deficit), രാഷ്ട്രീയ അസ്ഥിരത.",
-              "സ്വർണ്ണം പണയം വെക്കൽ (Pledging Gold): അടിയന്തര വിദേശ വായ്പയ്ക്കായി ബാങ്ക് ഓഫ് ഇംഗ്ലണ്ടിലേക്കും ബാങ്ക് ഓഫ് സ്വിറ്റ്സർലണ്ടിലേക്കും ഇന്ത്യക്ക് ടൺ കണക്കിന് സ്വർണ്ണം വിമാനമാർഗ്ഗം അയക്കേണ്ടി വന്ന നാടകീയ ചരിത്രം.",
-              "ഐഎംഎഫ് - ലോകബാങ്ക് വ്യവസ്ഥകളും ഘടനാപരമായ പരിഷ്കാരങ്ങളും: വായ്പ ലഭിക്കുന്നതിനായി രൂപയുടെ മൂല്യത്തകർച്ചയും (Devaluation) പുതിയ സാമ്പത്തിക നയങ്ങളും നടപ്പിലാക്കാൻ ഇന്ത്യ നിർബന്ധിതമായി.",
-              "എൽപിജി മാതൃക (LPG Reforms 1991): ഉദാരവൽക്കരണം (Liberalization), സ്വകാര്യവൽക്കരണം (Privatization), ആഗോളവൽക്കരണം (Globalization) വഴി ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥ തുറന്നുകൊടുത്തു."
+              "തൊഴിലില്ലായ്മയുടെ നിർവചനം: ജോലി ചെയ്യാൻ സന്നദ്ധതയും പ്രാപ്തിയുമുണ്ടായിട്ടും അനുയോജ്യമായ വേതനത്തിൽ തൊഴിൽ ലഭിക്കാത്ത അവസ്ഥ.",
+              "തൊഴിലില്ലായ്മയുടെ പ്രധാന തരങ്ങൾ: ഘടനാപരമായ തൊഴിലില്ലായ്മ (Structural), ഘർഷണപരമായ തൊഴിലില്ലായ്മ (Frictional), ചക്രിയ തൊഴിലില്ലായ്മ (Cyclical), പ്രച്ഛന്ന തൊഴിലില്ലായ്മ (Disguised - കാർഷിക മേഖലയിലെ അധിക തൊഴിലാളികൾ).",
+              "അളവുകോലുകൾ (NSSO / PLFS Approaches): Usual Principal and Subsidiary Status (UPSS), Current Weekly Status (CWS), Current Daily Status (CDS).",
+              "ഇന്ത്യയിലെ തൊഴിൽ വെല്ലുവിളികൾ: തൊഴിൽരഹിത വളർച്ച (Jobless Growth), തൊഴിൽ നൈപുണ്യത്തിലെ വിടവ് (Skill Deficit), അസംഘടിത മേഖലയിലെ അനിശ്ചിതത്വം.",
+              "സർക്കാർ തൊഴിൽ പദ്ധതികൾ: മഹാത്മാഗാന്ധി ദേശീയ ഗ്രാമീണ തൊഴിലുറപ്പ് പദ്ധതി (MGNREGA), പ്രധാനമന്ത്രി കൗശൽ വികാസ് യോജന (PMKVY), മേക്ക് ഇൻ ഇന്ത്യ."
             ],
-            "examTip": "Calicut University Focus: 'Trace the genesis of the 1991 Balance of Payments crisis and evaluate how the pledging of gold catalyzed the LPG reforms'."
+            "examTip": "Calicut University Focus: 'Explain the different types of unemployment in India with special reference to disguised unemployment. Critically evaluate MGNREGA as an employment generation scheme'."
           },
           {
-            "chapterNumber": "Chapter 06",
-            "title": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development & Economic Institutions in India)",
-            "chapter": "Academic Hub Special · പ്ലാനിംഗ് കമ്മീഷൻ മുതൽ നീതി ആയോഗ് വരെ, ഭരണഘടനാ സ്ഥാപനങ്ങൾ",
-            "duration": "13:06",
-            "youtubeId": "x8npIOpPvas",
-            "audioUrl": "",
-            "language": "Malayalam",
-            "studyPoints": [
-              "പ്ലാനിംഗ് കമ്മീഷൻ (1950 - 2014): കേന്ദ്രീകൃത ടോപ്പ്-ഡൗൺ (Top-down) ആസൂത്രണവും വിഭവ വിതരണവും നടത്തിയ മുൻകാല സ്ഥാപനം.",
-              "നീതി ആയോഗിന്റെ ഉദയം (2015): 'ടീം ഇന്ത്യ' എന്ന സഹകരണ ഫെഡറലിസത്തിലൂന്നിയ (Cooperative Federalism) ബോട്ടം-അപ്പ് (Bottom-up) തിങ്ക് ടാങ്ക്.",
-              "റിസർവ് ബാങ്ക് ഓഫ് ഇന്ത്യ (RBI): ധനനയ രൂപീകരണം, പണപ്പെരുപ്പ നിയന്ത്രണം (Inflation Targeting), ബാങ്കിംഗ് മേൽനോട്ടം വഹിക്കുന്ന പരമോന്നത ധനകാര്യ സ്ഥാപനം.",
-              "ധനകാര്യ കമ്മീഷൻ (Finance Commission - Article 280): കേന്ദ്രവും സംസ്ഥാനങ്ങളും തമ്മിലുള്ള നികുതി പങ്കിടലും ഗ്രാന്റുകളും നിശ്ചയിക്കുന്ന ഭരണഘടനാ സ്ഥാപനം.",
-              "സെബി (SEBI): മൂലധന വിപണിയും ഓഹരി ഇടപാടുകളും നിയന്ത്രിക്കുകയും നിക്ഷേപകരുടെ താല്പര്യങ്ങൾ സംരക്ഷിക്കുകയും ചെയ്യുന്ന നിയന്ത്രണ ഏജൻസി."
-            ],
-            "examTip": "Calicut University Focus: 'Differentiate between the Planning Commission and NITI Aayog. Explain the role of NITI Aayog in promoting Cooperative Federalism'."
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 04: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (UNEMPLOYMENT IN INDIA · ENGLISH DEEP DIVE)",
-        "videos": [
-          {
-            "chapterNumber": "Module 04",
+            "chapterNumber": "Chapter 08",
             "title": "Module 4: Unemployment in India | Inquisitive Podcast Deep Dive & Debate",
             "chapter": "Module 04: Structural Unemployment · Informality · Demographic Dividend & Policy Reform",
             "duration": "08:56",
@@ -1795,7 +1808,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 9
+    "totalVideos": 10
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",

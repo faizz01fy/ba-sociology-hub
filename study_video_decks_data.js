@@ -215,7 +215,7 @@ window.ACADEMIC_HUB_VIDEO_DECKS = {
       "slug": "development-issues-in-indian-economy",
       "titleMal": "സ്വർണ്ണം പണയം വെച്ച ഇന്ത്യയുടെ സാമ്പത്തിക ചരിത്രം",
       "titleEn": "The 1991 Balance of Payments Crisis & Gold Pledging",
-      "module": "Development Issues in Indian Economy · Academic Hub Special · 1991 ",
+      "module": "Development Issues in Indian Economy · Module 1 Part 8",
       "url": "voice-explanation.html?subject=development-issues-in-indian-economy&yt=BQffX1nDUjw",
       "thumb": "https://img.youtube.com/vi/BQffX1nDUjw/hqdefault.jpg"
     },
@@ -224,7 +224,7 @@ window.ACADEMIC_HUB_VIDEO_DECKS = {
       "slug": "development-issues-in-indian-economy",
       "titleMal": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും",
       "titleEn": "Real Development & Economic Institutions in India",
-      "module": "Development Issues in Indian Economy · Academic Hub Special · പ്ലാന",
+      "module": "Development Issues in Indian Economy · Module 1 Part 8",
       "url": "voice-explanation.html?subject=development-issues-in-indian-economy&yt=x8npIOpPvas",
       "thumb": "https://img.youtube.com/vi/x8npIOpPvas/hqdefault.jpg"
     },
