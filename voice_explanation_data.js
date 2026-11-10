@@ -1382,17 +1382,11 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Unit 4.1 a",
             "title": "എഐ മനുഷ്യന്റെ അസ്തിത്വത്തിന് ഭീഷണിയാകുമോ? (Value Alignment & Existential Threat to Humanity)",
-            "chapter": "Unit 4.1 a, b: Value Alignment · Existential Risk · Nick Bostrom & Stuart Russell",
+            "chapter": "Unit 4.1 a: Value Alignment · Existential Risk · Nick Bostrom & Stuart Russell",
             "duration": "22:00",
-            "youtubeId": "uiB6PFp5P_I",
             "language": "Bilingual (Malayalam & English)",
-            "studyPoints": [
-              "മൂല്യ പൊരുത്ത പ്രശ്നം (The Value Alignment Problem): മനുഷ്യന്റെ ധാർമ്മിക മൂല്യങ്ങളുമായി കൃത്രിമ ബുദ്ധിയുടെ ലക്ഷ്യങ്ങളെ എങ്ങനെ പൊരുത്തപ്പെടുത്താം.",
-              "അസ്തിത്വ ഭീഷണി (Existential Risk - Bostrom): സൂപ്പർഇന്റലിജന്റ് AI മനുഷ്യരാശിയുടെ നിലനിൽപ്പിന് തന്നെ ഭീഷണിയാകാനുള്ള സാധ്യതകൾ.",
-              "ഇൻസ്ട്രുമെന്റൽ കൺവെർജൻസ് (Instrumental Convergence): ഏത് ലക്ഷ്യം നൽകിയാലും വിഭവ ശേഖരണവും സ്വയം നിലനിൽപ്പും ഉപലക്ഷ്യങ്ങളായി AI തിരഞ്ഞെടുക്കൽ.",
-              "ഓർത്തോഗണാലിറ്റി തീസിസ് (Orthogonality Thesis): ഉയർന്ന ബുദ്ധിശക്തിയും ഏത് തരത്തിലുള്ള വിചിത്ര ലക്ഷ്യങ്ങളും ഒരുമിച്ച് നിലനിൽക്കാമെന്ന സിദ്ധാന്തം."
-            ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: നിക്ക് ബോസ്ട്രോമിന്റെ 'Value Alignment Problem' വിശദീകരിച്ച് AI മനുഷ്യരാശിക്ക് ഭീഷണിയാകുമോ എന്ന് വിലയിരുത്തുക."
+            "youtubeId": "uiB6PFp5P_I",
+            "thumbnail": "https://i.ytimg.com/vi/uiB6PFp5P_I/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 4.1 b",
@@ -1404,85 +1398,58 @@ window.VOICE_EXPLANATIONS_DATA = {
             "thumbnail": "https://i.ytimg.com/vi/_6n810PKN9c/hqdefault.jpg"
           },
           {
-            "chapterNumber": "Unit 4.2",
+            "chapterNumber": "Unit 4.2 a",
             "title": "അൽഗോരിതമിക് പക്ഷപാതങ്ങളും സാമൂഹിക ബന്ധങ്ങളും (Algorithmic Bias & Social Embeddedness)",
-            "chapter": "Unit 4.2 a, b: Training Data Bias · Systemic Discrimination · Social Power Dynamics",
-            "duration": "20:00",
+            "chapter": "Unit 4.2 a: Data Poisoning · Historical Discrimination · Situated Power",
+            "duration": "16:45",
+            "language": "Bilingual (Malayalam & English)",
             "youtubeId": "ReMCiz7ckYs",
-            "language": "Malayalam",
-            "studyPoints": [
-              "അൽഗോരിതമിക് പക്ഷപാതം: ഹിസ്റ്റോറിക്കൽ ഡാറ്റയിലെ വംശീയ, ലിംഗപരമായ മുൻവിധികൾ എഐ മോഡലുകളിൽ പുനർനിർമ്മിക്കപ്പെടുന്ന രീതി.",
-              "ഫിൽട്ടർ ബബിളുകളും എക്കോ ചേംബറുകളും: അൽഗോരിതങ്ങൾ വിവരങ്ങളെ നിയന്ത്രിച്ച് സാമൂഹിക ധ്രുവീകരണം വർദ്ധിപ്പിക്കുന്ന അപകടം.",
-              "ഡിജിറ്റൽ നിരീക്ഷണം: ഫേഷ്യൽ റെക്കഗ്നിഷൻ, പ്രെഡിക്റ്റീവ് പോലീസിംഗ് എന്നിവ വ്യക്തിസ്വാതന്ത്ര്യത്തിന് മേൽ സൃഷ്ടിക്കുന്ന ഭീഷണികൾ.",
-              "സാമൂഹിക നീതിയും എഐയും: പാർശ്വവൽക്കരിക്കപ്പെട്ട വിഭാഗങ്ങൾക്ക് മേലുള്ള സാങ്കേതിക വിവേചനം."
-            ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: AI സിസ്റ്റങ്ങളിൽ 'അൽഗോരിതമിക് ബയാസ്' എങ്ങനെ ഉണ്ടാകുന്നു എന്നും അത് സാമൂഹിക നീതിയെ എങ്ങനെ ബാധിക്കുന്നു എന്നും വ്യക്തമാക്കുക.",
             "thumbnail": "https://i.ytimg.com/vi/ReMCiz7ckYs/hqdefault.jpg"
+          },
+          {
+            "chapterNumber": "Unit 4.2 b",
+            "title": "എ.ഐ എന്ന കണ്ണാടി: സാമൂഹിക പ്രതിഫലനങ്ങൾ (AI as a Mirror: Society & Algorithmic Reflection)",
+            "chapter": "Unit 4.2 b: Cultural Reflection · Algorithmic Embeddedness & Power Dynamics",
+            "duration": "08:24",
+            "language": "Malayalam",
+            "youtubeId": "5vaYMdGdu4g",
+            "thumbnail": "https://i.ytimg.com/vi/5vaYMdGdu4g/hqdefault.jpg"
+          },
+          {
+            "chapterNumber": "Unit 4.2 c",
+            "title": "അൽഗോരിതങ്ങളിലെ വിവേചനം തടയാനാകുമോ? (Mitigating Algorithmic Discrimination & Technical Fairness)",
+            "chapter": "Unit 4.2 c: Fairness Metrics · Impossibility Theorem · Debias Techniques",
+            "duration": "12:15",
+            "language": "Malayalam",
+            "youtubeId": "uQOdA1he-iE",
+            "thumbnail": "https://i.ytimg.com/vi/uQOdA1he-iE/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 4.3 a",
             "title": "സ്വയംഭരണ വാഹനങ്ങളും ട്രോളി പ്രശ്നവും (Ethical Rules for Autonomous Vehicles: The Trolley Problem)",
-            "chapter": "Unit 4.3 a: The Trolley Problem · Utilitarian vs Deontological Ethics in Autonomous Systems",
-            "duration": "21:00",
-            "youtubeId": "oTEhOh_z5NA",
+            "chapter": "Unit 4.3 a: Trolley Problem · Moral Machine Experiment · Utilitarian vs Deontology",
+            "duration": "15:30",
             "language": "Malayalam",
-            "studyPoints": [
-              "ഫിലിപ്പ ഫൂട്ടിന്റെ ട്രോളി പ്രശ്നം: അപായകരമായ സാഹചര്യങ്ങളിൽ സ്വയംഭരണ വാഹനങ്ങൾ ആരുടെ ജീവൻ രക്ഷിക്കണം എന്ന ധാർമ്മിക പ്രതിസന്ധി.",
-              "യൂട്ടിലിറ്റേറിയനിസം vs ഡിയോണ്ടോളജി: പരമാവധി ആളുകളെ രക്ഷിക്കണമെന്ന ഉപഭോഗവാദവും കർത്തവ്യവാദപരമായ നിയമങ്ങളും തമ്മിലുള്ള സംഘർഷം.",
-              "ജർമ്മൻ എത്തിക്സ് കമ്മീഷൻ മാർഗ്ഗനിർദ്ദേശങ്ങൾ: പ്രായമോ ലിംഗമോ പരിഗണിച്ച് മനുഷ്യജീവന് വിവേചനം പാടില്ലെന്ന നിയമപരമായ ചട്ടക്കൂട്.",
-              "അപകടങ്ങളിലെ ഉത്തരവാദിത്തം: സോഫ്റ്റ്‌വെയർ നിർമ്മാതാവോ, ഉടമയോ, കാറോ ആര് ഉത്തരവാദി എന്ന ചോദ്യം."
-            ],
-            "examTip": "Calicut University ചോദ്യം: സ്വയംഭരണ വാഹനങ്ങളിലെ ധാർമ്മിക പ്രതിസന്ധികൾ വിശകലനം ചെയ്യാൻ 'ട്രോളി പ്രശ്നം' എങ്ങനെ സഹായിക്കുന്നു?",
+            "youtubeId": "oTEhOh_z5NA",
             "thumbnail": "https://i.ytimg.com/vi/oTEhOh_z5NA/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 4.3 b",
             "title": "AI കോടതിയും നൈതിക ഉത്തരവാദിത്തവും (AI as Legal Agent & Moral Patiency)",
             "chapter": "Unit 4.3 b: AI in Judicial Systems · Algorithmic Jurisprudence & Moral Agency",
-            "duration": "19:00",
-            "youtubeId": "cND0PVx_Jdk",
+            "duration": "11:40",
             "language": "Malayalam",
-            "studyPoints": [
-              "മോറൽ ഏജൻസി vs മോറൽ പേഷ്യൻസി: ധാർമ്മിക തീരുമാനങ്ങൾ എടുക്കാൻ കഴിവുള്ളവർ (Agents), ധാർമ്മിക സംരക്ഷണത്തിന് അർഹരായവർ (Patients).",
-              "സെന്റിയൻസും (Sentience) വേദന അനുഭവിക്കാനുള്ള ശേഷിയും: വേദനയോ ആനന്ദമോ അനുഭവിക്കാൻ കഴിയാത്ത ഒരു യന്ത്രത്തിന് ധാർമ്മിക പരിഗണന നൽകേണ്ടതുണ്ടോ?",
-              "മെഷീൻ അവകാശങ്ങൾ (Machine Rights): ഭാവിയിൽ സിന്തറ്റിക് ബോധം കൈവരിക്കുന്ന റോബോട്ടുകൾക്ക് അവകാശങ്ങൾ അനുവദിക്കേണ്ടതുണ്ടോ എന്ന വാദം.",
-              "ടോർട്ടിന്റെയും ധാർമ്മികതയുടെയും അതിർവരമ്പുകൾ: യന്ത്രങ്ങളെ നശിപ്പിക്കുന്നത് വസ്തുവകകൾ നശിപ്പിക്കുന്നതാണോ അതോ ജീവിയെ ദ്രോഹിക്കുന്നതാണോ?"
-            ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: 'Moral Agency'യും 'Moral Patiency'യും തമ്മിലുള്ള വ്യത്യാസം വിശദീകരിച്ച് AI-യുടെ ധാർമ്മിക പദവി വിലയിരുത്തുക.",
+            "youtubeId": "cND0PVx_Jdk",
             "thumbnail": "https://i.ytimg.com/vi/cND0PVx_Jdk/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 4.3 c",
             "title": "ധാർമ്മിക കർതൃത്വവും ഉത്തരവാദിത്ത വിടവും (Moral Agency, Black-Box Opacity & The Responsibility Gap)",
-            "chapter": "Unit 4.3 c: The Responsibility Gap · Andreas Matthias · Explainability & Office AI Ethics",
-            "duration": "20:00",
+            "chapter": "Unit 4.3 c: Responsibility Gap · Moral Patiency vs Moral Agency · Legal Liability",
+            "duration": "18:20",
+            "language": "Malayalam",
             "youtubeId": "qrlC8o73n4Q",
-            "language": "Bilingual (Malayalam & English)",
-            "studyPoints": [
-              "റെസ്പോൺസിബിലിറ്റി ഗ്യാപ് (The Responsibility Gap - Andreas Matthias): സ്വയംഭരണ അൽഗോരിതങ്ങൾ സ്വതന്ത്രമായി പ്രവർത്തിക്കുമ്പോൾ മനുഷ്യർക്ക് അവയുടെ ഫലങ്ങളിൽ പൂർണ്ണ ഉത്തരവാദിത്തം ഏറ്റെടുക്കാനാവാത്ത അവസ്ഥ.",
-              "ഓഫീസ്, കോർപ്പറേറ്റ് AI സിസ്റ്റങ്ങളിലെ സുതാര്യത: കമ്പനികൾ പുതിയ AI സിസ്റ്റങ്ങൾ നടപ്പിലാക്കുമ്പോൾ തീരുമാനങ്ങളുടെ കാരണങ്ങൾ വിശദീകരിക്കാനുള്ള ബാധ്യത.",
-              "എക്സ്പ്ലെയിനബിൾ AI (XAI): ഉപയോക്താക്കൾക്ക് മനസ്സിലാക്കാൻ സാധിക്കുന്ന തരത്തിൽ തീരുമാനങ്ങളുടെ ന്യായീകരണങ്ങൾ നൽകുന്ന സുതാര്യ സാങ്കേതികവിദ്യ.",
-              "നിയമപരമായ ബാധ്യതയും മനുഷ്യ നിയന്ത്രണവും: ഹൈ-സ്റ്റേക്ക്സ് തീരുമാനങ്ങളിൽ നിർബന്ധിതമായി ഹ്യൂമൻ-ഇൻ-ദി-ലൂപ്പ് (Human-in-the-Loop) നിലനിർത്തേണ്ടതിന്റെ ആവശ്യകത."
-            ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: ആൻഡ്രിയാസ് മാത്തിയാസ് മുന്നോട്ടുവെച്ച 'Responsibility Gap' സിദ്ധാന്തം വിശദീകരിച്ച് എഐ എത്തിക്സിലെ ഉത്തരവാദിത്ത പ്രശ്നങ്ങൾ ചർച്ച ചെയ്യുക."
-          },
-          {
-            "chapterNumber": "എ.ഐ എന്ന കണ്ണാടി",
-            "title": "എ.ഐ എന്ന കണ്ണാടി: സാമൂഹിക പ്രതിഫലനങ്ങൾ (AI as a Mirror)",
-            "chapter": "Unit 4.2 b: AI as a Mirror · Cultural Reflection & Algorithmic Embeddedness",
-            "duration": "Visual Lecture",
-            "language": "Malayalam",
-            "youtubeId": "5vaYMdGdu4g",
-            "thumbnail": "https://i.ytimg.com/vi/5vaYMdGdu4g/hqdefault.jpg"
-          },
-          {
-            "chapterNumber": "Masterclass",
-            "title": "അൽഗോരിതങ്ങളിലെ വിവേചനം തടയാനാകുമോ? (Mitigating Algorithmic Discrimination)",
-            "chapter": "Unit 4.2 c: Technical Mitigation of Bias · Fairness Metrics & Debias Algorithms",
-            "duration": "Visual Lecture",
-            "language": "Malayalam",
-            "youtubeId": "qKwbadC7jes",
-            "thumbnail": "https://i.ytimg.com/vi/qKwbadC7jes/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/qrlC8o73n4Q/hqdefault.jpg"
           }
         ]
       },
@@ -1817,30 +1784,22 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 04: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (UNEMPLOYMENT IN INDIA · ENGLISH DEEP DIVE)",
         "videos": [
           {
-            "chapterNumber": "Module 04",
-            "title": "Module 4: Unemployment in India | Inquisitive Podcast Deep Dive & Debate",
-            "chapter": "Academic Hub Special · Involuntary, Disguised & NSSO Measures (English Deep Dive)",
-            "duration": "08:55",
-            "youtubeId": "C_QjoD92wNM",
-            "audioUrl": "",
-            "language": "English",
-            "studyPoints": [
-              "Unemployment Definition: Involuntary joblessness of capable and willing individuals at prevailing wages.",
-              "Types of Unemployment: Open, Disguised (zero marginal productivity), Seasonal, Educated, Technological & Structural.",
-              "NSSO Measuring Framework: Usual Status (chronic), Current Weekly Status (1 hr/week), and Current Daily Status (comprehensive day-by-day).",
-              "13 Root Causes in India: Rapid population growth, 61% unirrigated farmland, decline of cottage industries, low labor mobility & defective planning.",
-              "Eradication Policies: MGNREGA 2005 Right to Work (100 days), PMKVY skill training, Stand Up India (10L-1Cr loans for SC/ST/Women), and National Employment Policy (NEP) 2030."
-            ],
-            "examTip": "Calicut University Focus: 'Explain Disguised Unemployment with examples and compare Usual Status, Weekly Status, and Daily Status measures of NSSO'."
-          },
-          {
-            "chapterNumber": "മൊഡ്യൂൾ 4",
-            "title": "മൊഡ്യൂൾ 4: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India)",
-            "chapter": "Module 04: Types of Unemployment · Measurement & Govt Policies",
-            "duration": "Visual Lecture",
+            "chapterNumber": "Chapter 07",
+            "title": "മൊഡ്യൂൾ 4: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India · Comprehensive Masterclass)",
+            "chapter": "Module 04: Types of Unemployment · NSSO / PLFS Measurement · Jobless Growth & Govt Policies",
+            "duration": "09:05",
             "language": "Malayalam",
             "youtubeId": "PDRbbOLxj4k",
             "thumbnail": "https://i.ytimg.com/vi/PDRbbOLxj4k/hqdefault.jpg"
+          },
+          {
+            "chapterNumber": "Chapter 08",
+            "title": "Module 4: Unemployment in India | Inquisitive Podcast Deep Dive & Debate",
+            "chapter": "Module 04: Structural Unemployment · Informality · Demographic Dividend & Policy Reform",
+            "duration": "24:30",
+            "language": "English",
+            "youtubeId": "C_QjoD92wNM",
+            "thumbnail": "https://i.ytimg.com/vi/C_QjoD92wNM/hqdefault.jpg"
           }
         ]
       }
@@ -2306,6 +2265,26 @@ window.VOICE_EXPLANATIONS_DATA = {
             "<strong>ലാഭം പരമാവധിയാക്കൽ (Profit Maximization):</strong> സാമ്പത്തിക സിദ്ധാന്തത്തിൽ സ്ഥാപനങ്ങളുടെ പ്രാഥമിക ലക്ഷ്യം. ആകെ വരുമാനത്തിൽ നിന്ന് ആകെ ചെലവ് കുറയ്ക്കുമ്പോൾ ലഭിക്കുന്ന ലാഭം (π = TR - TC) വിഭവ കാര്യക്ഷമതയുടെ അളവുകോലാണ്."
           ],
           "examTip": "ലിമിറ്റഡ് ലയബിലിറ്റിയുടെ പ്രാധാന്യം, സോൾ പ്രൊപ്രൈറ്റർഷിപ്പും കോർപ്പറേഷനും തമ്മിലുള്ള വ്യത്യാസം, പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രതിസന്ധി, ലാഭ സമവാക്യം (π = TR - TC) എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന പ്രധാന ചോദ്യങ്ങളാണ്."
+        },
+        {
+          "chapterNumber": "Unit 11",
+          "title": "Unit 11: Production Functions, Time & Input Variability (ഉത്പാദന ധർമ്മവും ഘടകങ്ങളും)",
+          "chapter": "Production Concept, Factors (K, L, M), Q = f(L, K), Technical Efficiency, Short Run vs Long Run, Law of Diminishing Returns, Returns to Scale & Exam MCQs",
+          "duration": "28:57",
+          "youtubeId": null,
+          "videoUrl": "https://www.youtube.com/watch?v=None",
+          "thumbnail": "https://i.ytimg.com/vi/None/hqdefault.jpg",
+          "language": "Malayalam",
+          "studyPoints": [
+            "<strong>ഉത്പാദന ധർമ്മം (Production Function):</strong> ലഭ്യമായ സാങ്കേതികവിദ്യയിൽ നൽകിയിട്ടുള്ള ഇൻപുട്ടുകളിൽ നിന്ന് (K, L, M) ഉത്പാദിപ്പിക്കാവുന്ന പരമാവധി ഔട്ട്പുട്ടിനെ കാണിക്കുന്ന സാങ്കേതിക ബന്ധമാണ് ഉത്പാദന ധർമ്മം: Q = f(L, K).",
+            "<strong>ഉത്പാദന ഘടകങ്ങൾ:</strong> ദീർഘകാലം ആവർത്തിച്ചുപയോഗിക്കുന്ന ഭൗതിക മൂലധനം (Capital - K), കായികവും മാനസികവുമായ അധ്വാനം (Labor - L), ഉത്പാദനത്തിൽ പൂർണ്ണമായി ഉപയോഗിച്ചുതീരുന്ന അസംസ്കൃത വസ്തുക്കളും ഇടനില ഉത്പന്നങ്ങളും (Materials - M).",
+            "<strong>ഹ്രസ്വകാലവും സ്ഥിര ഘടകങ്ങളും (Short Run):</strong> കുറഞ്ഞത് ഒരു ഉത്പാദന ഘടകമെങ്കിലും (മൂലധനം/പ്ലാന്റ്) മാറ്റമില്ലാതെ സ്ഥിരമായി നിൽക്കുന്ന സമയപരിധി; ഉത്പാദനം കൂട്ടാൻ വേരിയബിൾ ഇൻപുട്ടുകൾ (തൊഴിലാളികൾ, റോ മെറ്റീരിയൽസ്) മാത്രമേ മാറ്റാൻ സാധിക്കൂ.",
+            "<strong>ദീർഘകാലം (Long Run):</strong> എല്ലാ ഉത്പാദന ഘടകങ്ങളും മാറ്റാൻ സാധിക്കുന്നത്ര ദൈർഘ്യമേറിയ സമയം. ഇവിടെ സ്ഥിര ഘടകങ്ങൾ ഇല്ല; പുതിയ ഫാക്ടറികൾ സ്ഥാപിക്കാനും പൂർണ്ണ സാങ്കേതിക പുനഃസംഘടനയ്ക്കും സ്വാതന്ത്ര്യം ലഭിക്കുന്നു.",
+            "<strong>ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമം:</strong> ഹ്രസ്വകാലത്ത് സ്ഥിരമായ മൂലധനത്തിലേക്ക് കൂടുതൽ തൊഴിലാളികളെ ചേർക്കുമ്പോൾ ആദ്യഘട്ടത്തിൽ ഉത്പാദനം കൂടുമെങ്കിലും പിന്നീട് ഓരോ അധിക തൊഴിലാളിയുടെയും മാർജിനൽ പ്രൊഡക്റ്റ് കുറഞ്ഞുവരുന്നു.",
+            "<strong>റിട്ടേൺസ് ടു സ്കെയിൽ (Returns to Scale):</strong> ദീർഘകാലത്തിൽ എല്ലാ ഇൻപുട്ടുകളും ഒരേ അനുപാതത്തിൽ കൂട്ടുമ്പോൾ ഔട്ട്പുട്ട് ഇരട്ടിയിലധികമായാൽ IRS, തുല്യമായാൽ CRS, കുറഞ്ഞാൽ DRS.",
+            "<strong>സാങ്കേതിക പുരോഗതി:</strong> പുതിയ സാങ്കേതികവിദ്യ പ്രൊഡക്ഷൻ ഫ്രോണ്ടിയറിനെ മുകളിലേക്ക് ഉയർത്തുന്നു (Upward Shift); ഒരേ ഇൻപുട്ടുകളിൽ നിന്ന് കൂടുതൽ ഔട്ട്പുട്ട് ഉണ്ടാക്കാൻ ഫേമുകളെ പ്രാപ്തമാക്കുന്നു."
+          ],
+          "examTip": "പ്രൊഡക്ഷൻ ഫംഗ്ഷൻ സമവാക്യം Q = f(L, K), ഹ്രസ്വകാലവും ദീർഘകാലവും തമ്മിലുള്ള വ്യത്യാസം, സ്ഥിര-മാറ്റ ഘടകങ്ങൾ (Fixed vs Variable Inputs), ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമം, ടെക്നോളജിക്കൽ ഷിഫ്റ്റ് എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന ചോദ്യങ്ങളാണ്."
         },
         {
           "chapterNumber": "Unit 07",
