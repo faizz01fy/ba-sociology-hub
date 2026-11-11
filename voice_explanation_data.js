@@ -2707,7 +2707,7 @@ window.VOICE_EXPLANATIONS_DATA = {
     "name": "Mathematics",
     "badge": "📐",
     "iconClass": "icon-blue",
-    "tag": "MDC 1 / BA Sociology",
+    "tag": "MDC 1 / BA Sociology / FYUGP",
     "modules": [
       {
         "moduleName": "MODULE 01: FUNDAMENTALS OF ARITHMETIC",
@@ -2716,22 +2716,52 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 01",
             "title": "Number System & Properties of Numbers",
             "chapter": "Divisibility Rules, Prime Numbers & Real Numbers",
-            "duration": "22",
-            "youtubeId": ""
+            "duration": "22:00",
+            "thumbnail": "math_ch01_production/thumbnails/Math_Ch01_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": "math_ch01_production/videos/Math_Mod1_Ch01_Number_System_Masterclass.mp4",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Place Value vs. Face Value:</strong> ഒരു അക്കത്തിന്റെ മാറ്റമില്ലാത്ത യഥാർത്ഥ മൂല്യമാണ് മുഖവില (ഉദാ: 837218-ൽ 7-ന്റെ മുഖവില 7 ആണ്).",
+              "<strong>Classification of Number Sets:</strong> എണ്ണൽ സംഖ്യകൾ 1 മുതൽ തുടങ്ങുന്നു; 0 കൂടി ഉൾപ്പെടുന്നതാണ് അഖണ്ഡ സംഖ്യകൾ.",
+              "<strong>Essential Divisibility Shortcuts:</strong> അക്കങ്ങളുടെ തുക 3 അല്ലെങ്കിൽ 9 ന്റെ ഗുണിതമാണെങ്കിൽ ആ സംഖ്യ യഥാക്രമം 3, 9 എന്നിവ കൊണ്ട് പൂർണ്ണമായി ഹരിക്കാം.",
+              "<strong>Division Algorithm & Remainder Properties:</strong> ഭാജ്യം = (ഭാജകം × ഹരണഫലം) + ശിഷ്ടം; ശിഷ്ടം എപ്പോഴും ഭാജകത്തേക്കാൾ ചെറുതായിരിക്കും."
+            ],
+            "examTip": "സ്ഥാനവിലയും ഹരണ നിയമങ്ങളും കൃത്യമായി മനസ്സിലാക്കുന്നത് കണക്കുകൂട്ടലുകൾ അതിവേഗത്തിൽ പൂർത്തിയാക്കാൻ സഹായിക്കുന്നു."
           },
           {
             "chapterNumber": "Chapter 02",
             "title": "Sequence and Series (AP & GP)",
             "chapter": "nth term formula, Sum of n terms & Applications",
-            "duration": "25",
-            "youtubeId": ""
+            "duration": "25:00",
+            "thumbnail": "math_ch02_production/thumbnails/Math_Ch02_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": "math_ch02_production/videos/Math_Mod1_Ch02_Sequence_Series_Masterclass.mp4",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Arithmetic Progression (AP) Fundamentals:</strong> തൊട്ടടുത്ത പദങ്ങൾ തമ്മിലുള്ള വ്യത്യാസം തുല്യമായിരിക്കുന്ന ശ്രേണിയാണ് സമാന്തര ശ്രേണി (ഉദാ: 3, 7, 11, 15... ഇവിടെ a = 3, d = 4).",
+              "<strong>Geometric Progression (GP) Principles:</strong> ഓരോ പദത്തെയും ഒരു നിശ്ചിത സംഖ്യ 'r' കൊണ്ട് ഗുണിച്ചുണ്ടാക്കുന്ന ശ്രേണിയാണ് ഗുണോത്തര ശ്രേണി (ഉദാ: 2, 6, 18, 54... ഇവിടെ r = 3).",
+              "<strong>Square & Cube Sequence Patterns:</strong> സംഖ്യകളുടെ വർഗ്ഗങ്ങളോ (n²) വർഗ്ഗത്തോടൊപ്പം ഒരു നിശ്ചിത സംഖ്യ കൂട്ടിയതോ കുറച്ചതോ ആയ ശ്രേണികൾ.",
+              "<strong>Two-Tier / Difference of Differences Strategy:</strong> നേരിട്ട് ക്രമം കാണാൻ സാധിക്കാത്ത ശ്രേണികളിൽ, പദങ്ങൾ തമ്മിലുള്ള വ്യത്യാസങ്ങളുടെ വ്യത്യാസം കാണുമ്പോൾ സമാന്തര ശ്രേണി തെളിഞ്ഞുവരുന്നു."
+            ],
+            "examTip": "ശ്രേണിയിലെ അടുത്തടുത്ത പദങ്ങൾ തമ്മിലുള്ള വ്യത്യാസം ആദ്യം കണ്ടെത്തുക; മിക്ക പരീക്ഷാ ചോദ്യങ്ങളും ഈ രീതിയിലൂടെ എളുപ്പത്തിൽ പരിഹരിക്കാം."
           },
           {
             "chapterNumber": "Chapter 03",
             "title": "Fractions, Decimals and Rational Numbers",
             "chapter": "Fraction Operations & Recurring Decimals",
-            "duration": "18",
-            "youtubeId": ""
+            "duration": "18:00",
+            "thumbnail": "math_ch03_production/thumbnails/Math_Ch03_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": "math_ch03_production/videos/Math_Mod1_Ch03_Fractions_Decimals_Masterclass.mp4",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Taxonomy of Fraction Types:</strong> അംശം ഛേദത്തേക്കാൾ ചെറുതായ ഭിന്നസംഖ്യകളാണ് ക്രമഭിന്നങ്ങൾ (ഉദാ: 2/3, 5/8); ഇതിന്റെ വില എപ്പോഴും 1-ൽ കുറവായിരിക്കും.",
+              "<strong>Arithmetic Operations on Fractions:</strong> സങ്കലനത്തിനും വ്യവകലനത്തിനും ഛേദങ്ങളുടെ ല.സാ.ഗു കണ്ട് ഛേദം തുല്യമാക്കണം.",
+              "<strong>Converting Recurring Decimals to Fractions:</strong> പൂർണ്ണ ആവർത്തന ദശാംശങ്ങളെ 9, 99 എന്നീ സംഖ്യകൾ ഛേദമാക്കി മാറ്റാം (0.777... = 7/9; 0.2323... = 23/99).",
+              "<strong>Rapid Fraction Comparison:</strong> 5/7, 7/9 താരതമ്യം ചെയ്യാൻ: 5 × 9 = 45, 7 × 7 = 49; 45 < 49 ആയതിനാൽ 5/7 < 7/9."
+            ],
+            "examTip": "ഭിന്നസംഖ്യകളെ ആരോഹണ-അവരോഹണ ക്രമത്തിൽ എഴുതാൻ ല.സാ.ഗു കാണാതെ ക്രോസ് ഗുണനം വഴി അതിവേഗം ഉത്തരം കണ്ടെത്താം."
           }
         ]
       },
@@ -2742,22 +2772,49 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 04",
             "title": "HCF and LCM Methods & Shortcut Techniques",
             "chapter": "Prime Factorization, Division Method & Word Problems",
-            "duration": "24",
-            "youtubeId": ""
+            "duration": "24:00",
+            "thumbnail": "math_ch04_production/thumbnails/Math_Ch04_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": "math_ch04_production/videos/Math_Mod2_Ch04_HCF_and_LCM_Masterclass.mp4",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>HCF (Highest Common Factor) Methods:</strong> പ്രൈം ഫാക്ടറൈസേഷൻ രീതി: സംഖ്യകളെ അഭാജ്യ ഘടകങ്ങളുടെ ഘാതങ്ങളായി എഴുതി ഏറ്റവും ചെറിയ കൃതികളുടെ ഗുണനഫലം കാണുന്നു.",
+              "<strong>LCM (Least Common Multiple) Methods:</strong> എല്ലാ അഭാജ്യ ഘടകങ്ങളുടെയും ഏറ്റവും വലിയ കൃതികൾ തമ്മിൽ ഗുണിച്ചാൽ ല.സാ.ഗു ലഭിക്കും.",
+              "<strong>HCF and LCM of Fractions:</strong> ഭിന്നസംഖ്യകളുടെ ഉ.സാ.ഘ = അംശങ്ങളുടെ ഉ.സാ.ഘ / ഛേദങ്ങളുടെ ല.സാ.ഗു.",
+              "<strong>Real-World Applications of LCM & HCF:</strong> വ്യത്യസ്ത ഇടവേളകളിൽ അടിക്കുന്ന മണികൾ ഒന്നിച്ച് അടിക്കുന്ന സമയം കണ്ടെത്താൻ ല.സാ.ഗു ഉപയോഗിക്കുന്നു."
+            ],
+            "examTip": "ഓർക്കുക: രണ്ട് സംഖ്യകളുടെ ഗുണനഫലം എപ്പോഴും അവയുടെ ഉ.സാ.ഘയുടെയും ല.സാ.ഗുവിന്റെയും ഗുണനഫലത്തിന് തുല്യമായിരിക്കും (a × b = HCF × LCM)."
           },
           {
             "chapterNumber": "Chapter 05",
             "title": "Square Roots, Cube Roots & Laws of Indices",
             "chapter": "Radicals, Exponential Identities & Surds",
-            "duration": "20",
-            "youtubeId": ""
+            "duration": "20:00",
+            "thumbnail": "math_ch05_production/thumbnails/Math_Ch05_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": "math_ch05_production/videos/Math_Mod2_Ch05_Square_Cube_Root_Masterclass.mp4",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Properties of Perfect Squares:</strong> ഇരട്ട സംഖ്യയുടെ വർഗ്ഗം ഇരട്ട സംഖ്യയും, ഒറ്റ സംഖ്യയുടെ വർഗ്ഗം ഒറ്റ സംഖ്യയുമായിരിക്കും.",
+              "<strong>Methods for Extracting Square Roots:</strong> അഭാജ്യ ഘടകങ്ങളെ ഈരണ്ടെണ്ണത്തിന്റെ ജോടികളാക്കി മാറ്റി ഗുണിക്കുന്നു (√576 = 24).",
+              "<strong>Cube and Cube Roots:</strong> ഒരു സംഖ്യയെ മൂന്ന് തവണ പരസ്പരം ഗുണിച്ചാൽ ഘനവും, മൂന്നെണ്ണത്തിന്റെ ഗ്രൂപ്പുകളിൽ നിന്ന് ഒന്ന് എടുത്താൽ ഘനമൂലവും ലഭിക്കും."
+            ],
+            "examTip": "ഒറ്റയുടെ സ്ഥാനത്തെ അക്കം നോക്കി ഉത്തരം കണ്ടെത്താം: 2, 3, 7, 8 എന്നിവയിൽ അവസാനിക്കുന്ന സംഖ്യകൾ ഒരിക്കലും പൂർണ്ണ വർഗ്ഗമാകില്ല."
           },
           {
             "chapterNumber": "Chapter 06",
             "title": "Simplification & BODMAS Rule Applications",
             "chapter": "Complex Expressions, Brackets & Order of Operations",
-            "duration": "22",
-            "youtubeId": ""
+            "duration": "22:00",
+            "thumbnail": "math_ch06_production/thumbnails/Math_Ch06_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": "math_ch06_production/videos/Math_Mod2_Ch06_Simplification_VBODMAS_Masterclass.mp4",
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>The VBODMAS Precedence Rule:</strong> V = വിൻകുലം (സംഖ്യകൾക്ക് മുകളിലുള്ള ബാർ വര ആദ്യം ചെയ്യണം).",
+              "<strong>Algebraic Shortcuts for Simplification:</strong> (a + b)² = a² + 2ab + b²; (a - b)² = a² - 2ab + b²."
+            ],
+            "examTip": "ക്രിയകളുടെ മുൻഗണനാ ക്രമം തെറ്റിക്കരുത്: ഹരണത്തിനും ഗുണനത്തിനും മുൻപ് ബ്രാക്കറ്റുകളും 'Of' ക്രിയയും ചെയ്തു തീർക്കണം."
           }
         ]
       },
@@ -2768,29 +2825,62 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 07",
             "title": "Averages & Weighted Mean Formulations",
             "chapter": "Arithmetic Mean, Properties & Exam Shortcuts",
-            "duration": "20",
-            "youtubeId": ""
+            "duration": "20:00",
+            "thumbnail": "math_ch07_production/thumbnails/Math_Ch07_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Core Formula & Consecutive Properties:</strong> ശരാശരി = തുക / എണ്ണം => തുക = ശരാശരി × എണ്ണം.",
+              "<strong>Even, Odd, and Consecutive Series Shortcuts:</strong> ആദ്യത്തെ n ഇരട്ട സംഖ്യകളുടെ ശരാശരി = n + 1.",
+              "<strong>Speed & Replacement Problems:</strong> തുല്യ ദൂരം x, y വേഗതകളിൽ സഞ്ചരിച്ചാൽ ശരാശരി വേഗത = 2xy / (x + y)."
+            ],
+            "examTip": "സമാന്തര ശ്രേണിയുടെ ശരാശരി കാണാൻ എല്ലാ സംഖ്യകളും കൂട്ടേണ്ടതില്ല: ആദ്യത്തെയും അവസാനത്തെയും സംഖ്യകളുടെ ശരാശരി കണ്ടാൽ മതിയാകും."
           },
           {
             "chapterNumber": "Chapter 08",
             "title": "Ratio, Proportion & Variation",
             "chapter": "Direct & Inverse Proportion, Mixture Problems",
-            "duration": "23",
-            "youtubeId": ""
+            "duration": "23:00",
+            "thumbnail": "math_ch08_production/thumbnails/Math_Ch08_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Ratio Properties and Compounding:</strong> അംശബന്ധത്തിലെ രണ്ട് സംഖ്യകളെയും ഒരേ സംഖ്യ കൊണ്ട് ഗുണിച്ചാലോ ഹരിച്ചാലോ അനുപാതത്തിന് മാറ്റം വരില്ല.",
+              "<strong>Types of Proportional Quantities:</strong> a, b, c എന്നിവയുടെ നാലാം അനുപാതം d = (b × c) / a."
+            ],
+            "examTip": "അനുപാത ചോദ്യങ്ങളിൽ അഗ്രപദങ്ങളുടെ ഗുണനഫലം = മധ്യപദങ്ങളുടെ ഗുണനഫലം (a × d = b × c) എന്ന സമവാക്യം ഉപയോഗിച്ച് വേഗത്തിൽ ഉത്തരം കണ്ടെത്താം."
           },
           {
             "chapterNumber": "Chapter 09",
             "title": "Problems on Ages & Partnerships",
             "chapter": "Linear Equations, Ratio Sharing of Profits",
-            "duration": "22",
-            "youtubeId": ""
+            "duration": "22:00",
+            "thumbnail": "math_ch09_production/thumbnails/Math_Ch09_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Algebraic Modeling of Chronological Age:</strong> ഇപ്പോഴത്തെ പ്രായത്തെ x എന്നോ അനുപാതമനുസരിച്ച് 3x, 4x എന്നോ എടുക്കുക.",
+              "<strong>Ratio-Based Age Transformations:</strong> ഇപ്പോഴത്തെ അനുപാതം a : b-യും t വർഷങ്ങൾക്ക് ശേഷം c : d-യും ആയാൽ: (ax + t) / (bx + t) = c / d."
+            ],
+            "examTip": "പ്രായവ്യത്യാസം എപ്പോഴും തുല്യമായിരിക്കും എന്ന തത്വം ഉപയോഗിച്ചാൽ വലിയ സമവാക്യങ്ങൾ നിർദ്ധാരണം ചെയ്യാതെ തന്നെ മനക്കണക്കായി ഉത്തരം കണ്ടെത്താം."
           },
           {
             "chapterNumber": "Chapter 10",
             "title": "Percentage Calculation & Base Conversions",
             "chapter": "Successive Percentage Changes & Exam Techniques",
-            "duration": "24",
-            "youtubeId": ""
+            "duration": "24:00",
+            "thumbnail": "math_ch10_production/thumbnails/Math_Ch10_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Fraction to Percentage Conversions:</strong> ഭിന്നസംഖ്യയെ ശതമാനമാക്കാൻ 100 കൊണ്ട് ഗുണിക്കുക (3/4 × 100 = 75%).",
+              "<strong>Successive Changes & Price-Consumption Balance:</strong> തുടർച്ചയായ രണ്ട് മാറ്റങ്ങളുടെ ആകെ ഫലം = a + b + ab/100 %."
+            ],
+            "examTip": "പ്രധാന ഭിന്നസംഖ്യാ ശതമാനങ്ങൾ മനഃപാഠമാക്കുന്നത് കണക്കുകൂട്ടലുകളുടെ സമയം പകുതിയായി കുറയ്ക്കുന്നു."
           }
         ]
       },
@@ -2801,33 +2891,65 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 11",
             "title": "Profit and Loss & Marked Price Formulae",
             "chapter": "Cost Price, Selling Price & Margin Percentage",
-            "duration": "24",
-            "youtubeId": ""
+            "duration": "24:00",
+            "thumbnail": "math_ch11_production/thumbnails/Math_Ch11_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Basic Relationships and Valuation:</strong> വിറ്റവില = വാങ്ങിയവില × (100 + ലാഭം%)/100; വാങ്ങിയവില = വിറ്റവില × 100 / (100 + ലാഭം%).",
+              "<strong>Two-Article Equal SP with Equal Gain & Loss:</strong> രണ്ട് സാധനങ്ങൾ തുല്യ വിലയ്ക്ക് വിൽക്കുകയും ഒന്നിൽ x% ലാഭവും മറ്റേതിൽ x% നഷ്ടവും ഉണ്ടായാൽ, മൊത്തത്തിൽ എപ്പോഴും നഷ്ടമായിരിക്കും: നഷ്ടം% = (x/10)²%."
+            ],
+            "examTip": "ലാഭനഷ്ട ശതമാനങ്ങൾ എപ്പോഴും വാങ്ങിയ വിലയുടെ (CP) അടിസ്ഥാനത്തിൽ മാത്രം കണക്കാക്കുക."
           },
           {
             "chapterNumber": "Chapter 12",
             "title": "Discounts & Successive Discounts",
             "chapter": "Trade Discount, Cash Discount & Equivalent Rates",
-            "duration": "19",
-            "youtubeId": ""
+            "duration": "19:00",
+            "thumbnail": "math_ch12_production/thumbnails/Math_Ch12_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Marked Price & Selling Price Relationship:</strong> ഡിസ്കൗണ്ട് ശതമാനം എപ്പോഴും രേഖപ്പെടുത്തിയ വിലയെ (MP) അടിസ്ഥാനമാക്കിയാണ് കണക്കാക്കുന്നത്.",
+              "<strong>Successive Discounts Equivalent Rule:</strong> 20%, 10% എന്നീ തുടർച്ചയായ ഡിസ്കൗണ്ടുകൾക്ക് തുല്യമായ ഒറ്റ ഡിസ്കൗണ്ട് = 20 + 10 - 2 = 28%."
+            ],
+            "examTip": "തുടർച്ചയായ ഡിസ്കൗണ്ടുകൾ നേരിട്ട് കൂട്ടരുത് (20% + 10% എന്നത് 30% അല്ല, 28% ആണ്)."
           },
           {
             "chapterNumber": "Chapter 13",
             "title": "Simple Interest Formula & Applications",
             "chapter": "Principal, Rate, Time & Amount Calculations",
-            "duration": "21",
-            "youtubeId": ""
+            "duration": "21:00",
+            "thumbnail": "math_ch13_production/thumbnails/Math_Ch13_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Simple Interest Formula & Parameter Isolation:</strong> SI = (P × R × T) / 100; സമയം T എപ്പോഴും വർഷങ്ങളിലായിരിക്കണം (മാസങ്ങളെ 12 കൊണ്ടും ദിവസങ്ങളെ 365 കൊണ്ടും ഹരിക്കുക).",
+              "<strong>Sum Multiplication Principles:</strong> ഒരു തുക T വർഷം കൊണ്ട് ഇരട്ടിയായാൽ പലിശ നിരക്ക് R = 100 / T % ആയിരിക്കും."
+            ],
+            "examTip": "കണക്കുകൂട്ടുന്നതിന് മുൻപ് സമയം T വർഷങ്ങളിലാണെന്ന് ഉറപ്പുവരുത്തുക."
           },
           {
             "chapterNumber": "Chapter 14",
             "title": "Compound Interest & Annual Depreciation",
             "chapter": "Compounding Frequencies & Growth Models",
-            "duration": "25",
-            "youtubeId": ""
+            "duration": "25:00",
+            "thumbnail": "math_ch14_production/thumbnails/Math_Ch14_Thumbnail.png",
+            "youtubeId": "",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "studyPoints": [
+              "<strong>Compound Interest Formula & Frequency Adjustments:</strong> വാർഷിക കൂട്ടുപലിശ: A = P(1 + R/100)ᵀ; CI = A - P.",
+              "<strong>CI vs SI Differential Shortcuts:</strong> ആദ്യത്തെ 1 വർഷത്തേക്ക് സാധാരണ പലിശയും കൂട്ടുപലിശയും തുല്യമാണ് (വ്യത്യാസം = 0)."
+            ],
+            "examTip": "2 വർഷത്തെ CI - SI വ്യത്യാസം കാണാൻ രണ്ട് പലിശകളും വെവ്വേറെ കാണാതെ D = P(R/100)² എന്ന സമവാക്യം നേരിട്ട് ഉപയോഗിക്കുക."
           }
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 6
   }
 };
