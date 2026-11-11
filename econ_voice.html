@@ -4343,7 +4343,7 @@
 
   <!-- Load Subject Voice Data -->
 
-  <script src="voice_explanation_data.js?v=1794324369"></script>
+  <script src="voice_explanation_data.js?v=1794331000"></script>
 
 
 
@@ -4991,7 +4991,7 @@
 
                     const skipTime = details.seekOffset || 10;
 
-                    if (v.audioUrl) {
+                    if (!v.youtubeId && v.audioUrl) {
 
                       nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - skipTime);
 
@@ -5003,7 +5003,7 @@
 
                     const skipTime = details.seekOffset || 10;
 
-                    if (v.audioUrl) {
+                    if (!v.youtubeId && v.audioUrl) {
 
                       nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + skipTime);
 
@@ -5065,29 +5065,7 @@
 
 
 
-                if (v.audioUrl) {
-
-                  if (frameWrap) {
-
-                    frameWrap.innerHTML = '';
-
-                    frameWrap.style.display = 'none';
-
-                  }
-
-                  nativeAudio.src = v.audioUrl;
-
-                  nativeAudio.playbackRate = speeds[speedIndex];
-
-                  nativeAudio.play().catch(e => console.warn('Audio play error:', e));
-
-                  nativeAudio.onended = () => {
-
-                    stopPlayback();
-
-                  };
-
-                } else if (v.youtubeId) {
+                if (v.youtubeId) {
 
                   if (nativeAudio) {
 
@@ -5118,6 +5096,28 @@
                       </iframe>`;
 
                   }
+
+                } else if (v.audioUrl) {
+
+                  if (frameWrap) {
+
+                    frameWrap.innerHTML = '';
+
+                    frameWrap.style.display = 'none';
+
+                  }
+
+                  nativeAudio.src = v.audioUrl;
+
+                  nativeAudio.playbackRate = speeds[speedIndex];
+
+                  nativeAudio.play().catch(e => console.warn('Audio play error:', e));
+
+                  nativeAudio.onended = () => {
+
+                    stopPlayback();
+
+                  };
 
                 }
 
@@ -5193,13 +5193,13 @@
 
                 if (isAudioPaused) {
 
-                  if (v.audioUrl) {
-
-                    nativeAudio.play().catch(e => console.warn('Audio resume error:', e));
-
-                  } else if (v.youtubeId) {
+                  if (v.youtubeId) {
 
                     sendCommandToYt('playVideo');
+
+                  } else if (v.audioUrl) {
+
+                    nativeAudio.play().catch(e => console.warn('Audio resume error:', e));
 
                   }
 
@@ -5213,13 +5213,13 @@
 
                 } else {
 
-                  if (v.audioUrl) {
-
-                    nativeAudio.pause();
-
-                  } else if (v.youtubeId) {
+                  if (v.youtubeId) {
 
                     sendCommandToYt('pauseVideo');
+
+                  } else if (v.audioUrl) {
+
+                    nativeAudio.pause();
 
                   }
 
@@ -5285,7 +5285,7 @@
 
                   e.stopPropagation();
 
-                  if (v.audioUrl) {
+                  if (!v.youtubeId && v.audioUrl) {
 
                     nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - 10);
 
@@ -5303,7 +5303,7 @@
 
                   e.stopPropagation();
 
-                  if (v.audioUrl) {
+                  if (!v.youtubeId && v.audioUrl) {
 
                     nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + 10);
 
@@ -5327,11 +5327,7 @@
 
                   speedBtn.textContent = newSpeed + 'x';
 
-                  if (v.audioUrl) {
-
-                    nativeAudio.playbackRate = newSpeed;
-
-                  } else if (v.youtubeId) {
+                  if (v.youtubeId) {
 
                     const iframe = frameWrap.querySelector('iframe');
 
@@ -5348,6 +5344,10 @@
                       }), '*');
 
                     }
+
+                  } else if (v.audioUrl) {
+
+                    nativeAudio.playbackRate = newSpeed;
 
                   }
 

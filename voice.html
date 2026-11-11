@@ -4679,7 +4679,7 @@
 
   <!-- Load Subject Voice Data -->
 
-  <script src="voice_explanation_data.js?v=1794330840"></script>
+  <script src="voice_explanation_data.js?v=1794331000"></script>
 
 
 
@@ -5343,7 +5343,7 @@
 
                     const skipTime = details.seekOffset || 10;
 
-                    if (v.audioUrl) {
+                    if (!v.youtubeId && v.audioUrl) {
 
                       nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - skipTime);
 
@@ -5355,7 +5355,7 @@
 
                     const skipTime = details.seekOffset || 10;
 
-                    if (v.audioUrl) {
+                    if (!v.youtubeId && v.audioUrl) {
 
                       nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + skipTime);
 
@@ -5417,7 +5417,43 @@
 
 
 
-                if (v.audioUrl) {
+                if (v.youtubeId) {
+
+                  if (nativeAudio) {
+
+                    nativeAudio.pause();
+
+                  }
+
+                  if (frameWrap) {
+
+                    frameWrap.style.display = 'block';
+
+                    const currentOrigin = (window.location.origin && window.location.origin !== 'null' && !window.location.origin.startsWith('file:')) 
+
+                      ? window.location.origin 
+
+                      : 'https://academichubfaiz.in';
+
+                    frameWrap.innerHTML = `
+                      <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&origin=${encodeURIComponent(currentOrigin)}&playsinline=1&rel=0&modestbranding=1"
+                              title="${v.title}"
+                              style="width:100%; aspect-ratio:16/9; border:none; border-radius:10px 10px 0 0; display:block;"
+                              referrerpolicy="strict-origin-when-cross-origin"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowfullscreen>
+                      </iframe>
+                      <div style="display:flex; justify-content:space-between; align-items:center; padding:7px 12px; background:#0f172a; color:#cbd5e1; font-size:12px; border-radius:0 0 10px 10px; border-top:1px solid #334155;">
+                        <span style="display:inline-flex; align-items:center; gap:6px;">
+                          <span style="width:8px; height:8px; border-radius:50%; background:#22c55e; display:inline-block;"></span>
+                          <span>Playing Masterclass</span>
+                        </span>
+                        <span style="color:#94a3b8; font-size:11.5px; font-weight:600;">Calicut University Masterclass</span>
+                      </div>`;
+
+                  }
+
+                } else if (v.audioUrl) {
 
                   if (frameWrap) {
 
@@ -5438,42 +5474,6 @@
                     stopPlayback();
 
                   };
-
-                } else if (v.youtubeId) {
-
-                  if (nativeAudio) {
-
-                    nativeAudio.pause();
-
-                  }
-
-                  if (frameWrap) {
-
-                    frameWrap.style.display = 'block';
-
-                    const currentOrigin = (window.location.origin && window.location.origin !== 'null' && !window.location.origin.startsWith('file:')) 
-
-                      ? window.location.origin 
-
-                      : 'https://academichubfaiz.in';
-
-                    frameWrap.innerHTML = `
-                      <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1"
-                              title="${v.title}"
-                              style="width:100%; aspect-ratio:16/9; border:none; border-radius:10px 10px 0 0; display:block;"
-                              referrerpolicy="strict-origin-when-cross-origin"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                              allowfullscreen>
-                      </iframe>
-                      <div style="display:flex; justify-content:space-between; align-items:center; padding:7px 12px; background:#0f172a; color:#cbd5e1; font-size:12px; border-radius:0 0 10px 10px; border-top:1px solid #334155;">
-                        <span style="display:inline-flex; align-items:center; gap:6px;">
-                          <span style="width:8px; height:8px; border-radius:50%; background:#22c55e; display:inline-block;"></span>
-                          <span>Playing Masterclass</span>
-                        </span>
-                        <span style="color:#94a3b8; font-size:11.5px; font-weight:600;">Calicut University Masterclass</span>
-                      </div>`;
-
-                  }
 
                 }
 
@@ -5549,13 +5549,13 @@
 
                 if (isAudioPaused) {
 
-                  if (v.audioUrl) {
-
-                    nativeAudio.play().catch(e => console.warn('Audio resume error:', e));
-
-                  } else if (v.youtubeId) {
+                  if (v.youtubeId) {
 
                     sendCommandToYt('playVideo');
+
+                  } else if (v.audioUrl) {
+
+                    nativeAudio.play().catch(e => console.warn('Audio resume error:', e));
 
                   }
 
@@ -5569,13 +5569,13 @@
 
                 } else {
 
-                  if (v.audioUrl) {
-
-                    nativeAudio.pause();
-
-                  } else if (v.youtubeId) {
+                  if (v.youtubeId) {
 
                     sendCommandToYt('pauseVideo');
+
+                  } else if (v.audioUrl) {
+
+                    nativeAudio.pause();
 
                   }
 
@@ -5641,7 +5641,7 @@
 
                   e.stopPropagation();
 
-                  if (v.audioUrl) {
+                  if (!v.youtubeId && v.audioUrl) {
 
                     nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - 10);
 
@@ -5659,7 +5659,7 @@
 
                   e.stopPropagation();
 
-                  if (v.audioUrl) {
+                  if (!v.youtubeId && v.audioUrl) {
 
                     nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + 10);
 
@@ -5683,11 +5683,7 @@
 
                   speedBtn.textContent = newSpeed + 'x';
 
-                  if (v.audioUrl) {
-
-                    nativeAudio.playbackRate = newSpeed;
-
-                  } else if (v.youtubeId) {
+                  if (v.youtubeId) {
 
                     const iframe = frameWrap.querySelector('iframe');
 
@@ -5704,6 +5700,10 @@
                       }), '*');
 
                     }
+
+                  } else if (v.audioUrl) {
+
+                    nativeAudio.playbackRate = newSpeed;
 
                   }
 

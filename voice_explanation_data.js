@@ -726,9 +726,19 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 02",
             "title": "Dr. B.R. Ambedkar's Historic Speech",
-            "chapter": "Constitutional Vision, Social Justice & Grammar",
-            "duration": "22",
-            "youtubeId": ""
+            "chapter": "Constitutional Vision, Social Justice & Annihilation of Caste (മലയാളം വിശദീകരണം)",
+            "duration": "07:23",
+            "youtubeId": "9jh28iFtS9U",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/9jh28iFtS9U/hqdefault.jpg",
+            "language": "Malayalam",
+            "studyPoints": [
+              "1936-ൽ ലാഹോറിലെ ജാത്-പാത്-തോഡക് മണ്ഡൽ സമ്മേളനത്തിനായി ഡോ. ബി.ആർ. അംബേദ്കർ തയ്യാറാക്കിയതും പിന്നീട് 'Annihilation of Caste' ആയി പ്രസിദ്ധീകരിച്ചതുമായ ചരിത്ര പ്രസംഗം.",
+              "കേവല തൊഴിൽ വിഭജനമല്ല (Division of Labour), മറിച്ച് തൊഴിലാളികളെ ജന്മത്തിന്റെ അടിസ്ഥാനത്തിൽ തട്ടുകളായി തിരിക്കുന്ന വിഭജനമാണ് (Division of Labourers) ജാതിവ്യവസ്ഥ.",
+              "'ജലനിബദ്ധമായ അറകൾ' (Watertight Compartments) തൊഴിൽ മാറ്റത്തെ തടഞ്ഞ് തൊഴിലില്ലായ്മയ്ക്കും സാമ്പത്തിക തകർച്ചയ്ക്കും വഴിവെക്കുന്നു.",
+              "അന്തസ്സില്ലാത്ത തൊഴിലുകൾ തൊഴിലാളികളിൽ വെറുപ്പും (Aversion) വിമുഖതയും ഉണ്ടാക്കുന്നു; സമത്വം, സ്വാതന്ത്ര്യം, സാഹോദര്യം എന്നിവയാണ് ജനാധിപത്യ അടിത്തറ."
+            ],
+            "examTip": "Calicut University BA AEC English 10/5 മാർക്ക് ചോദ്യം: 'How does Ambedkar distinguish between Division of Labour and Division of Labourers?' — 'Watertight compartments', 'Occupational mobility', 'Subordination of natural powers' എന്നീ പ്രയോഗങ്ങൾ നിർബന്ധമായും ഉൾപ്പെടുത്തുക!"
           },
           {
             "chapterNumber": "Chapter 03",
@@ -1479,8 +1489,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 5.1 & 5.2",
             "title": "സിമുലേഷൻ vs യഥാർത്ഥ അറിവും മനുഷ്യന്റെ സ്വത്വ പ്രതിസന്ധിയും (Simulation vs Understanding & Human Uniqueness)",
             "chapter": "Unit 5.1 & 5.2: Ontological Reality vs Functional Simulation · De-Centering the Human Subject",
-            "duration": "25:00",
-            "youtubeId": "",
+            "duration": "06:17",
+            "youtubeId": "g-yJW2jZPkU",
             "language": "Malayalam",
             "studyPoints": [
               "പ്രകടനവും ബോധവും തമ്മിലുള്ള വിടവ്: ജനറേറ്റീവ് AI വലിയ ഡാറ്റകൾ പ്രോസസ്സ് ചെയ്യുമ്പോഴും അതിന് ആത്മനിഷ്ഠ അനുഭവങ്ങൾ (Qualia) ഇല്ലെന്ന യാഥാർത്ഥ്യം.",
@@ -1488,14 +1498,16 @@ window.VOICE_EXPLANATIONS_DATA = {
               "തൊഴിലും മനുഷ്യന്റെ അർത്ഥവും: സർഗ്ഗാത്മക ജോലികളും യുക്തിചിന്തയും ഓട്ടോമേറ്റ് ചെയ്യപ്പെടുമ്പോൾ മനുഷ്യന്റെ ആന്തരിക ജീവിതത്തിനുണ്ടാകുന്ന മാറ്റങ്ങൾ.",
               "കോഗ്നിറ്റീവ് അട്രോഫി (Cognitive Atrophy): ചിന്തയും തീരുമാനങ്ങളും അൽഗോരിതങ്ങൾക്ക് പൂർണ്ണമായി വിട്ടുകൊടുക്കുമ്പോൾ മനുഷ്യന്റെ സ്വാഭാവിക ശേഷികൾ ദുർബലപ്പെടുന്ന അവസ്ഥ."
             ],
-            "examTip": "Calicut University ചോദ്യം: 'സിമുലേഷൻ യഥാർത്ഥ അറിവിന് തുല്യമാണോ?' ഫിലോസഫി ഓഫ് AI-യുടെ വെളിച്ചത്തിൽ ചർച്ച ചെയ്യുക."
+            "examTip": "Calicut University ചോദ്യം: 'സിമുലേഷൻ യഥാർത്ഥ അറിവിന് തുല്യമാണോ?' ഫിലോസഫി ഓഫ് AI-യുടെ വെളിച്ചത്തിൽ ചർച്ച ചെയ്യുക.",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/g-yJW2jZPkU/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 5.3 - 5.5",
             "title": "സിംഗുലാരിറ്റിയും ആഗോള ഭരണക്രമവും സന്തുലിത ഭാവിയും (Technological Singularity, Global Governance & Balanced Future)",
             "chapter": "Unit 5.3 - 5.5: Singularity · Global Governance · Amalgamation of Science & Philosophy",
-            "duration": "25:00",
-            "youtubeId": "",
+            "duration": "06:35",
+            "youtubeId": "SoVrQ6Z_BqU",
             "language": "Malayalam",
             "studyPoints": [
               "ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റി (Technological Singularity - Kurzweil): AI സ്വയം മെച്ചപ്പെടുത്തി മനുഷ്യബുദ്ധിയെ മറികടക്കുന്ന ഘട്ടം.",
@@ -1503,7 +1515,9 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ആഗോള ഭരണക്രമവും യുനെസ്കോ ചട്ടക്കൂടും: എഐയെ മനുഷ്യനന്മയ്ക്ക് മാത്രമായി നിയന്ത്രിക്കാനുള്ള അന്താരാഷ്ട്ര ധാർമ്മിക ഉടമ്പടികൾ.",
               "ശാസ്ത്രത്തിന്റെയും തത്ത്വചിന്തയുടെയും സംയോജനം: കേവല സാങ്കേതിക വികാസത്തിനപ്പുറം ദാർശനിക വിവേകത്തോടെ AI-യെ നയിക്കേണ്ടതിന്റെ അനിവാര്യത."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: 'ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റി' മാനവരാശിയുടെ ഭാവിയെ എങ്ങനെ മാറ്റിമറിക്കും? ശാസ്ത്രവും തത്ത്വചിന്തയും എങ്ങനെ സമന്വയിപ്പിക്കണം?"
+            "examTip": "Calicut University FYUGP ചോദ്യം: 'ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റി' മാനവരാശിയുടെ ഭാവിയെ എങ്ങനെ മാറ്റിമറിക്കും? ശാസ്ത്രവും തത്ത്വചിന്തയും എങ്ങനെ സമന്വയിപ്പിക്കണം?",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/SoVrQ6Z_BqU/hqdefault.jpg"
           }
         ]
       }
@@ -2185,7 +2199,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · വ്യക്തിഗത & മാർക്കറ്റ് ഡിമാൻഡ്, ഡിമാൻഡ് ഷിഫ്റ്റുകൾ",
             "duration": "06:21",
             "youtubeId": "Mu1Ktkzr_ME",
-            "videoUrl": "/micro-demand-review.html",
+            "videoUrl": null,
             "thumbnail": "/thumbnails/micro-demand-review.png",
             "studyPoints": [
               "ഡിമാൻഡ് എന്നത് വാങ്ങാനുള്ള ആഗ്രഹവും അതോടൊപ്പം വില നൽകാനുള്ള സാമ്പത്തിക ശേഷിയും (purchasing power) ചേർന്നതാണ്.",
@@ -2197,8 +2211,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "വ്യക്തിഗത ഡിമാൻഡ് കർവുകളുടെ തിരശ്ചീനമായ കൂട്ടിച്ചേർക്കലാണ് (Horizontal Summation) മാർക്കറ്റ് ഡിമാൻഡ് കർവ് രൂപീകരിക്കുന്നത്.",
               "വിലയിലെ മാറ്റം കർവിലൂടെയുള്ള മൂവ്മെന്റിനും (Expansion/Contraction) മറ്റ് ഘടകങ്ങളിലെ മാറ്റം കർവിന്റെ ഷിഫ്റ്റിനും (Increase/Decrease) കാരണമാകുന്നു."
             ],
-            "examTip": "പരീക്ഷയിൽ 'Movement along the Demand Curve' ഉം 'Shift in Demand Curve' ഉം തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, സ്വന്തം വിലയിലെ മാറ്റം മൂലമുണ്ടാകുന്ന മാറ്റത്തെ Change in Quantity Demanded (Expansion അല്ലെങ്കിൽ Contraction) എന്നും, വിലയൊഴികെയുള്ള മറ്റ് ഘടകങ്ങളിലെ മാറ്റം വഴി കർവ് പൂർണ്ണമായി മാറുന്നതിനെ Change in Demand (Increase അല്ലെങ്കിൽ Decrease) എന്നും പ്രത്യേകം ഗ്രാഫ് വരച്ച് വ്യക്തമാക്കുക.",
-            "audioUrl": "/audio/micro-module1-unit1-demand.mp3"
+            "examTip": "പരീക്ഷയിൽ 'Movement along the Demand Curve' ഉം 'Shift in Demand Curve' ഉം തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, സ്വന്തം വിലയിലെ മാറ്റം മൂലമുണ്ടാകുന്ന മാറ്റത്തെ Change in Quantity Demanded (Expansion അല്ലെങ്കിൽ Contraction) എന്നും, വിലയൊഴികെയുള്ള മറ്റ് ഘടകങ്ങളിലെ മാറ്റം വഴി കർവ് പൂർണ്ണമായി മാറുന്നതിനെ Change in Demand (Increase അല്ലെങ്കിൽ Decrease) എന്നും പ്രത്യേകം ഗ്രാഫ് വരച്ച് വ്യക്തമാക്കുക."
           },
           {
             "chapterNumber": "Unit 02",
@@ -2206,7 +2219,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · സപ്ലൈ നിയമം, സപ്ലൈ ഫംഗ്ഷൻ & ഷിഫ്റ്റുകൾ",
             "duration": "14:52",
             "youtubeId": "CylKbnNZtm0",
-            "videoUrl": "/micro-unit2-review.html",
+            "videoUrl": null,
             "thumbnail": "/thumbnails/micro-unit-2-review.png",
             "studyPoints": [
               "Supply Definition (ഏതെങ്കിലും സാധനത്തിന്റെ അളവ്, വില, സമയം)",
@@ -2230,7 +2243,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · സന്തുലിത വിലയും അളവും, സർപ്ലസ് & ഷോർട്ടേജ്",
             "duration": "15:51",
             "youtubeId": "zJsY7Sbx2To",
-            "videoUrl": "/micro-unit3-review.html",
+            "videoUrl": null,
             "thumbnail": "/thumbnails/micro-unit-3-review.png",
             "studyPoints": [
               "Market Equilibrium: Qd equals Qs",
@@ -2281,7 +2294,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · അപചയ സീമാന്ത പ്രയോജന നിയമവും സമ-സീമാന്ത പ്രയോജനവും",
             "duration": "23:26",
             "youtubeId": "Jj-JWuNJjRU",
-            "videoUrl": "https://www.youtube.com/watch?v=Jj-JWuNJjRU",
+            "videoUrl": null,
             "thumbnail": "https://i.ytimg.com/vi/Jj-JWuNJjRU/hqdefault.jpg",
             "studyPoints": [
               "<strong>കാർഡിനൽ പ്രയോജന സിദ്ധാന്തം:</strong> സംതൃപ്തിയെ യൂട്ടിൽസ് എന്ന സംഖ്യാ രൂപത്തിൽ അളക്കാമെന്ന് ആൽഫ്രഡ് മാർഷൽ സമർത്ഥിക്കുന്നു.",
@@ -2291,8 +2304,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>സീമാന്ത പ്രതിസ്ഥാപന നിരക്ക് (MRS):</strong> ഡിമിനിഷിംഗ് എം.ആർ.എസ് നിയമം കാരണം ഉദാസീന വക്രങ്ങൾ ഒറിജിനിലേക്ക് കോൺവെക്സ് ആയിരിക്കുന്നു."
             ],
             "examTip": "ആൽഫ്രഡ് മാർഷലിന്റെ ഡിമിനിഷിംഗ് മാർജിനൽ യൂട്ടിലിറ്റി നിയമം, ഗോസ്സന്റെ രണ്ടാം നിയമം, TU-വും MU-വും തമ്മിലുള്ള ഗ്രാഫിക്കൽ ബന്ധം എന്നിവ പരീക്ഷയ്ക്ക് 6 മാർക്കിനും 10 മാർക്കിനും നിർബന്ധമായും ചോദിക്കുന്ന ഭാഗങ്ങളാണ്.",
-            "language": "Malayalam",
-            "audioUrl": "/audio/micro_unit04_masterclass.mp3"
+            "language": "Malayalam"
           },
           {
             "chapterNumber": "Unit 05",
@@ -2323,9 +2335,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>ഉപഭോക്തൃ സന്തുലിതാവസ്ഥ:</strong> ഇൻഡിഫറൻസ് കർവിന്റെ ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ പരമാവധി സംതൃപ്തി ലഭിക്കുന്നു."
             ],
             "examTip": "ബജറ്റ് രേഖയുടെ ചെരിവ് -Px/Py നിർണ്ണയിക്കുന്ന രീതിയും വിലമാറ്റവും വരുമാന മാറ്റവും തമ്മിലുള്ള ഗ്രാഫിക്കൽ വ്യത്യാസവും 6/10 മാർക്ക് ചോദ്യങ്ങളായി ആവർത്തിച്ചു വരാറുണ്ട്.",
-            "videoUrl": "https://www.youtube.com/watch?v=9H8683I4Ad8",
-            "language": "Malayalam",
-            "audioUrl": "/audio/micro_unit08_masterclass.mp3"
+            "videoUrl": null,
+            "language": "Malayalam"
           },
           {
             "chapterNumber": "Unit 09",
@@ -2357,7 +2368,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · സോൾ പ്രൊപ്രൈറ്റർഷിപ്പ്, പാർട്ണർഷിപ്പ്, കോർപ്പറേഷൻ & പ്രിൻസിപ്പൽ-ഏജന്റ്",
             "duration": "15:38",
             "youtubeId": "W6b1q1WUJbo",
-            "videoUrl": "https://www.youtube.com/watch?v=W6b1q1WUJbo",
+            "videoUrl": null,
             "thumbnail": "https://i.ytimg.com/vi/W6b1q1WUJbo/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
@@ -2368,8 +2379,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രശ്നം:</strong> ഓഹരി ഉടമകളും (Principals) പ്രൊഫഷണൽ മാനേജർമാരും (Agents) തമ്മിൽ ഉടമസ്ഥതയും നിയന്ത്രണവും വേർതിരിയുമ്പോൾ ഉടലെടുക്കുന്ന താൽപ്പര്യ വൈരുദ്ധ്യം; സ്റ്റോക്ക് ഓപ്ഷനുകളിലൂടെയും ബോണസുകളിലൂടെയും ഇത് ലഘൂകരിക്കപ്പെടുന്നു.",
               "<strong>ലാഭം പരമാവധിയാക്കൽ (Profit Maximization):</strong> സാമ്പത്തിക സിദ്ധാന്തത്തിൽ സ്ഥാപനങ്ങളുടെ പ്രാഥമിക ലക്ഷ്യം. ആകെ വരുമാനത്തിൽ നിന്ന് ആകെ ചെലവ് കുറയ്ക്കുമ്പോൾ ലഭിക്കുന്ന ലാഭം (π = TR - TC) വിഭവ കാര്യക്ഷമതയുടെ അളവുകോലാണ്."
             ],
-            "examTip": "ലിമിറ്റഡ് ലയബിലിറ്റിയുടെ പ്രാധാന്യം, സോൾ പ്രൊപ്രൈറ്റർഷിപ്പും കോർപ്പറേഷനും തമ്മിലുള്ള വ്യത്യാസം, പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രതിസന്ധി, ലാഭ സമവാക്യം (π = TR - TC) എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന പ്രധാന ചോദ്യങ്ങളാണ്.",
-            "audioUrl": "/audio/micro_unit10_masterclass.mp3"
+            "examTip": "ലിമിറ്റഡ് ലയബിലിറ്റിയുടെ പ്രാധാന്യം, സോൾ പ്രൊപ്രൈറ്റർഷിപ്പും കോർപ്പറേഷനും തമ്മിലുള്ള വ്യത്യാസം, പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രതിസന്ധി, ലാഭ സമവാക്യം (π = TR - TC) എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന പ്രധാന ചോദ്യങ്ങളാണ്."
           },
           {
             "chapterNumber": "Unit 11",
@@ -2438,7 +2448,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · കോൺസ്റ്റന്റ് (CRS), ഇൻക്രീസിംഗ് (IRS), ഡിമിനിഷിംഗ് (DRS)",
             "duration": "25:20",
             "youtubeId": "9gX0HzBZ0Bc",
-            "videoUrl": "https://www.youtube.com/watch?v=9gX0HzBZ0Bc",
+            "videoUrl": null,
             "thumbnail": "https://i.ytimg.com/vi/9gX0HzBZ0Bc/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
@@ -2448,8 +2458,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>ഡിക്രീസിംഗ് റിട്ടേൺസ് ടു സ്കെയിൽ (DRS):</strong> f(2L, 2K) < 2f(L, K). ഇൻപുട്ടുകൾ ഇരട്ടിയാക്കുമ്പോൾ ഉത്പാദനം ഇരട്ടിയിലും താഴെ മാത്രം കൂടുന്നു. ഐസോക്വാന്റുകൾ അകന്നുപോകുന്നു. മാനേജീരിയൽ സങ്കീർണ്ണതകൾ, ഏകോപന നഷ്ടം (Coordination Failure), ഉദ്യോഗസ്ഥ മേധാവിത്വം (Bureaucracy), മറഞ്ഞിരിക്കുന്ന സ്ഥിര ഘടകങ്ങൾ (Hidden Fixed Factors) എന്നിവ കാരണങ്ങളാണ്.",
               "<strong>വേരിയിംഗ് റിട്ടേൺസ് ടു സ്കെയിൽ:</strong> യഥാർത്ഥ ജീവിതത്തിൽ ഒരു സ്ഥാപനം വളരുമ്പോൾ ആദ്യം IRS (A to K), പിന്നീട് കാര്യക്ഷമമായ ഒപ്റ്റിമൽ സ്കെയിലിൽ CRS (K to C), തുടർന്ന് അധികവളർച്ചയിൽ DRS (C to H) എന്നിങ്ങനെ മൂന്ന് ഘട്ടങ്ങളിലൂടെ കടന്നുപോകുന്നു."
             ],
-            "examTip": "CRS, IRS, DRS എന്നിവയുടെ ഗണിത സമവാക്യങ്ങൾ, ഐസോക്വാന്റ് അകലങ്ങൾ (Fig 14.1, 14.2, 14.3), വേരിയിംഗ് റിട്ടേൺസ് ഗ്രാഫ് (Fig 14.4), വൻകിട കമ്പനികളിലെ ഇക്കണോമിസ് ഓഫ് സ്കെയിൽ എന്നിവ 10 മാർക്ക് ഉപന്യാസ ചോദ്യമായി കാലിക്കറ്റ് സർവ്വകലാശാലയിൽ ചോദിക്കുന്നവയാണ്.",
-            "audioUrl": "/audio/micro_unit14_masterclass.mp3"
+            "examTip": "CRS, IRS, DRS എന്നിവയുടെ ഗണിത സമവാക്യങ്ങൾ, ഐസോക്വാന്റ് അകലങ്ങൾ (Fig 14.1, 14.2, 14.3), വേരിയിംഗ് റിട്ടേൺസ് ഗ്രാഫ് (Fig 14.4), വൻകിട കമ്പനികളിലെ ഇക്കണോമിസ് ഓഫ് സ്കെയിൽ എന്നിവ 10 മാർക്ക് ഉപന്യാസ ചോദ്യമായി കാലിക്കറ്റ് സർവ്വകലാശാലയിൽ ചോദിക്കുന്നവയാണ്."
           },
           {
             "chapterNumber": "Unit 15",
