@@ -339,6 +339,17 @@ export default {
       return new Response(responseBody, {status:upstream.status,headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
     }
     if (url.pathname.startsWith("/api/") || url.pathname.startsWith("/internal/")) return json({error:"Not found"},404);
+    // Hide unpublished Kerala PSC Cracker portal until ready for compliance release
+    if (/^\/(?:psc-cracker(?:\.html)?|data\/psc_cracker_data\.js)$/i.test(url.pathname)) {
+      return new Response("Not Found", {
+        status: 404,
+        headers: {
+          "Content-Type": "text/plain; charset=utf-8",
+          "X-Robots-Tag": "noindex, nofollow",
+          "Cache-Control": "no-store, no-cache, must-revalidate"
+        }
+      });
+    }
     const dest = request.headers.get("Sec-Fetch-Dest");
     const mode = request.headers.get("Sec-Fetch-Mode");
     const accept = request.headers.get("Accept") || "";
@@ -480,7 +491,7 @@ export default {
       })).catch(() => {});
       ctx.waitUntil(task);
 
-      const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|voice-explanation|voice|econ_voice|ai-pdf|mal-pdf)(?:\.html)?$/i.test(url.pathname);
+      const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|voice-explanation|voice|econ_voice|ai-pdf|mal-pdf|psc-cracker)(?:\.html)?$/i.test(url.pathname);
       
       const isEU = request.cf?.isEUCountry === "1" || request.cf?.isEUCountry === true;
       const euCountries = new Set([
