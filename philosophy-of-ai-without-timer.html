@@ -1454,6 +1454,28 @@
       }
     }
 
+  
+
+    /* MOBILE_OVERFLOW_FIX_MCQ */
+    html, body { max-width: 100%; overflow-x: hidden; }
+    .sg-preview-wrap, .sg-syllabus-grid, .sg-mod-box, .sample-q-grid, .sample-q-card, .sample-q-opts, .sample-opt, .sg-related-bar, .sg-related-links {
+      min-width: 0;
+      max-width: 100%;
+      box-sizing: border-box;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    @media (max-width: 640px) {
+      .sg-syllabus-grid, .sample-q-opts {
+        grid-template-columns: 1fr !important;
+      }
+      .sg-related-links .btn {
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -3273,6 +3295,37 @@
       ${rows}
     </tbody>
   </table>
+</body>
+</html>`;
+
+    const blob = new Blob([reportDoc], { type: 'text/html;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `AcademicHub_Sociology_PDF_Order_${candidateName.replace(/\s+/g, '_')}.html`;
+    a.click();
+  }
+
+  function restartTest() {
+    isSubmitted = false;
+    userAnswers = {};
+    currentPos = 0;
+    candidateName = '';
+    $('candidateName').value = '';
+    initMotivationalCard();
+    switchScreen('start');
+  }
+
+  $('startBtn').onclick = startTest;
+  $('prevBtn').onclick = goPrev;
+  $('nextBtn').onclick = goNext;
+  $('saveReportBtn').onclick = saveReportHTML;
+  $('printReportBtn').onclick = () => window.print();
+  $('restartBtn').onclick = restartTest;
+
+  $('candidateName').addEventListener('keydown', e => {
+    if (e.key === 'Enter') startTest();
+  });
+</script>
 
 <!-- NO_SAVE_MCQ_GUARD -->
 <script>
@@ -3333,38 +3386,6 @@
     }
   });
 })();
-</script>
-
-</body>
-</html>`;
-
-    const blob = new Blob([reportDoc], { type: 'text/html;charset=utf-8' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `AcademicHub_Sociology_PDF_Order_${candidateName.replace(/\s+/g, '_')}.html`;
-    a.click();
-  }
-
-  function restartTest() {
-    isSubmitted = false;
-    userAnswers = {};
-    currentPos = 0;
-    candidateName = '';
-    $('candidateName').value = '';
-    initMotivationalCard();
-    switchScreen('start');
-  }
-
-  $('startBtn').onclick = startTest;
-  $('prevBtn').onclick = goPrev;
-  $('nextBtn').onclick = goNext;
-  $('saveReportBtn').onclick = saveReportHTML;
-  $('printReportBtn').onclick = () => window.print();
-  $('restartBtn').onclick = restartTest;
-
-  $('candidateName').addEventListener('keydown', e => {
-    if (e.key === 'Enter') startTest();
-  });
 </script>
 </body>
 </html>
