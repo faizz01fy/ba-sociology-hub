@@ -841,28 +841,38 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 2.1",
             "title": "ഗവേഷണ രൂപരേഖയും ഘട്ടങ്ങളും (Research Design & Methods in Sociology)",
-            "chapter": "Research Design · Hypothesis, Sampling & Data Collection (ഗവേഷണ രൂപരേഖയും ഡാറ്റ ശേഖരണവും)",
-            "duration": "20",
-            "youtubeId": "",
+            "chapter": "Module 02 · ഗവേഷണ തരങ്ങൾ, 7 ഘട്ടങ്ങൾ, ഹൈപ്പോതിസിസ്, സാമ്പിളിംഗ് & ഡാറ്റ ശേഖരണം",
+            "duration": "05:56",
+            "youtubeId": "3VcFATaXWFI",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/3VcFATaXWFI/hqdefault.jpg",
+            "language": "Malayalam",
             "studyPoints": [
-              "ഗവേഷണ രൂപരേഖ (Research Design): ഡാറ്റ ശേഖരണത്തിനും വിശകലനത്തിനുമുള്ള ആസൂത്രിത മാസ്റ്റർ പ്ലാൻ.",
-              "പ്രധാന ഘട്ടങ്ങൾ: പ്രശ്ന നിർണയം, സാഹിത്യ അവലോകനം, ഹൈപ്പോതിസിസ് രൂപീകരണം, സാമ്പിളിംഗ്, ഡാറ്റ ശേഖരണം."
+              "സാമൂഹിക ഗവേഷണത്തിന്റെ സ്വഭാവവും തരങ്ങളും: Pure (അടിസ്ഥാനം) vs Applied (പ്രായോഗികം), Qualitative vs Quantitative, Descriptive vs Analytical.",
+              "7 ഗവേഷണ ഘട്ടങ്ങൾ: 1. പ്രശ്ന നിർണ്ണയം, 2. സാഹിത്യ അവലോകനം (Literature Review), 3. ഹൈപ്പോതിസിസ് (Workable vs Null Hypothesis), 4. ഗവേഷണ രൂപരേഖ (Research Design).",
+              "ഗവേഷണ രൂപരേഖയുടെ 4 തരങ്ങൾ: Exploratory (അന്വേഷണാത്മകം), Descriptive (വിവരണാത്മകം), Analytical/Explanatory, Experimental.",
+              "5. ഡാറ്റ ശേഖരണം: Primary Data (അഭിമുഖം, ചോദ്യാവലി, സർവ്വേ, നിരീക്ഷണം) & Secondary Data (പുസ്തകങ്ങൾ, ജേണലുകൾ, രേഖകൾ).",
+              "6. വിശകലനവും വ്യാഖ്യാനവും (Analysis, Interpretation & Findings) & 7. വസ്തുനിഷ്ഠമായ റിപ്പോർട്ട് തയ്യാറാക്കൽ (Report Writing)."
             ],
-            "examTip": "Calicut University ചോദ്യം: 'What is Research Design? Explain the major steps in social research'.",
-            "language": "English & Malayalam"
+            "examTip": "Calicut University 10-മാർക്ക് ചോദ്യം: 'What is Research Design? Explain the major types and 7 systematic stages in social research' — ഏഴ് ഘട്ടങ്ങൾ കൃത്യമായ ക്രമത്തിൽ (1 മുതൽ 7 വരെ) എഴുതണം!"
           },
           {
             "chapterNumber": "Chapter 2.3",
             "title": "നിരീക്ഷണ രീതികളും ഗവേഷണ ധാർമ്മികതയും (Observation Techniques & Ethics in Social Research)",
-            "chapter": "Participant Observation & Value Neutrality - Max Weber (പങ്കാളിത്ത നിരീക്ഷണവും മൂല്യ നിഷ്പക്ഷതയും)",
-            "duration": "19",
-            "youtubeId": "",
+            "chapter": "Module 02 · പങ്കാളിത്ത നിരീക്ഷണം (Malinowski), മൂല്യ നിഷ്പക്ഷത (Max Weber), IRB & ഗവേഷണ ധാർമ്മികത",
+            "duration": "05:52",
+            "youtubeId": "JmgL66yjgDg",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/JmgL66yjgDg/hqdefault.jpg",
+            "language": "Malayalam",
             "studyPoints": [
-              "പങ്കാളിത്ത നിരീക്ഷണം (Participant Observation): പഠന വിധേയമാകുന്ന സമൂഹത്തിന്റെ ഭാഗമായി നിന്ന് വിവരങ്ങൾ ശേഖരിക്കുന്ന രീതി (Bronislaw Malinowski).",
-              "മൂല്യ നിഷ്പക്ഷത (Value Neutrality - Max Weber): ഗവേഷകന്റെ സ്വന്തം മുൻവിധികളും താല്പര്യങ്ങളും പഠനത്തെ ബാധിക്കരുത്."
+              "നിരീക്ഷണ രീതികൾ (Observation): സ്വാഭാവിക സാഹചര്യങ്ങളിൽ (Natural Settings) മനുഷ്യരുടെ പെരുമാറ്റം നേരിട്ട് പഠിക്കുന്ന പ്രായോഗിക ഗുണാത്മക രീതി.",
+              "പങ്കാളിത്ത നിരീക്ഷണം (Participant Observation - Bronislaw Malinowski): പഠിക്കുന്ന സമൂഹത്തിന്റെ ഭാഗമായി ജീവിച്ചു കൊണ്ട് ഉള്ളിൽ നിന്ന് വിവരങ്ങൾ ശേഖരിക്കൽ.",
+              "വസ്തുനിഷ്ഠതയും മൂല്യ നിഷ്പക്ഷതയും (Value Neutrality - Max Weber): വ്യക്തിപരമായ മുൻവിധികൾ പഠനത്തെ ബാധിക്കാതെ സത്യസന്ധമായി രേഖപ്പെടുത്തൽ.",
+              "ഗവേഷണ ധാർമ്മികത (Research Ethics): സ്വതന്ത്രവും അറിഞ്ഞുകൊണ്ടുമുള്ള സമ്മതം (Free & Informed Consent), Belmont Report (1979) ദുർബല വിഭാഗങ്ങളുടെ സംരക്ഷണം, രഹസ്യാത്മകതയും പേരുവെളിപ്പെടുത്താതിരിക്കലും (Anonymity & Confidentiality).",
+              "വിലക്കപ്പെട്ട പ്രവൃത്തികൾ & ധാർമ്മിക സ്രോതസ്സുകൾ: Falsification, Fabrication, Plagiarism, Misleading Authorship എന്നിവ ഒഴിവാക്കൽ; IRB / Ethics Committees, സർവ്വകലാശാലകൾ, പ്രൊഫഷണൽ അസോസിയേഷനുകൾ, നിയമങ്ങൾ."
             ],
-            "examTip": "ഹ്രസ്വ കുറിപ്പ്: 'Participant Observation' & 'Ethics in Social Research'.",
-            "language": "English & Malayalam"
+            "examTip": "Calicut University ഹ്രസ്വ/ഉപന്യാസ ചോദ്യങ്ങൾ: 'Participant Observation (Malinowski)', 'Value Neutrality (Max Weber)', കൂടാതെ 'Importance of Ethics in Sociological Research' (Informed Consent, Anonymity vs Confidentiality, Plagiarism/Fabrication, Belmont Report 1979) എന്നിവ ഉറപ്പായും പഠിക്കുക!"
           }
         ]
       },
@@ -872,17 +882,20 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 03",
             "title": "സമൂഹം എങ്ങനെ നമ്മളെ മനുഷ്യരാക്കുന്നു? (How Society Makes Us Human: Process of Socialization)",
-            "chapter": "Human Socialization · Nature vs Nurture & Primary Agencies (സാമൂഹികവൽക്കരണ പ്രക്രിയ)",
-            "duration": "24",
-            "youtubeId": "",
+            "chapter": "Module 03 · Unit 3.3 · നിർവ്വചനങ്ങൾ, 11 സവിശേഷതകൾ, അമല-കമല, 8 തരങ്ങൾ & LMS MCQs",
+            "duration": "07:08",
+            "youtubeId": "NpA6uopiRYk",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/NpA6uopiRYk/hqdefault.jpg",
+            "language": "Malayalam",
             "studyPoints": [
-              "സോഷ്യലൈസേഷൻ നിർവചനം (Process of Socialization): ജൈവിക ജീവിയായി ജനിക്കുന്ന ഒരു കുഞ്ഞ് സമൂഹവുമായി ഇടപഴകി സംസ്കാരവും ഭാഷയും മൂല്യങ്ങളും പഠിച്ചെടുത്ത് സാമൂഹിക ജീവിയായി മാറുന്ന ആജീവനാന്ത പ്രക്രിയ.",
-              "Nature vs Nurture സംവാദം: മനുഷ്യ വ്യക്തിത്വത്തെയും പെരുമാറ്റത്തെയും നിശ്ചയിക്കുന്നത് ജനിതക പാരമ്പര്യമാണോ (Nature) അതോ വളർത്തുസാഹചര്യങ്ങളും സാമൂഹിക സമ്പർക്കവുമാണോ (Nurture) എന്ന അടിസ്ഥാന ചർച്ച.",
-              "ഫെറൽ കുട്ടികളും ഒറ്റപ്പെടലും (Feral & Isolated Children): കമല, അമല തുടങ്ങിയ കാട്ടുക്കുട്ടികളുടെ മനഃശാസ്ത്ര-സാമൂഹിക പഠനങ്ങൾ തെളിയിക്കുന്നത് മനുഷ്യസമ്പർക്കമില്ലാതെ മനുഷ്യന് യഥാർത്ഥ വ്യക്തിത്വമോ യുക്തിചിന്തയോ വികസിക്കില്ല എന്നാണ്.",
-              "സോഷ്യലൈസേഷന്റെ ഏജൻസികൾ: കുടുംബം (പ്രാഥമിക ഏജൻസി), സമപ്രായക്കാരുടെ കൂട്ടായ്മ (Peer Group), വിദ്യാലയങ്ങൾ, മാധ്യമങ്ങൾ എന്നിവയുടെ പങ്ക്."
+              "അർത്ഥവും ലക്ഷ്യങ്ങളും (Jeffrey Jensen Arnett): സ്വയം നിയന്ത്രണം (Self-Regulation), സാമൂഹിക റോളുകൾ (Role Preparation), അർത്ഥവും മൂല്യങ്ങളും (Meaning & Values); Internalization പ്രക്രിയ.",
+              "പ്രമുഖ നിർവ്വചനങ്ങൾ: Kimball Young, Lundberg, Macionis, Horton & Hunt, Anthony Giddens, Bogardus, Peter Worsley.",
+              "സവിശേഷതകളും പ്രാധാന്യവും (11 & 10 പോയിന്റുകൾ): ഔപചാരിക-അനൗപചാരിക മാർഗ്ഗങ്ങൾ, ആജീവനാന്ത പ്രക്രിയ, Nature vs Nurture, അമല-കമല (Feral Children) പഠനം.",
+              "പരാജയങ്ങളും പ്രശ്നങ്ങളും: Smelser & Ian Robertson നിരീക്ഷണങ്ങൾ, അമിത നിയന്ത്രണം, വാർദ്ധക്യ-മരണ തയ്യാറെടുപ്പില്ലായ്മ, വിരുദ്ധ സന്ദേശങ്ങൾ.",
+              "സാമൂഹികവൽക്കരണത്തിന്റെ 8 തരങ്ങൾ (Ian Robertson & Orville Brim): Primary, Secondary, Anticipatory (Robert K. Merton), Developmental, Re-socialization (Erving Goffman Total Institutions), Adult, Gender, Group Socialization + Check Your Progress MCQs."
             ],
-            "examTip": "Calicut University പരീക്ഷാ ചോദ്യം: 'Explain the Nature vs Nurture debate in socialization with reference to feral children cases'.",
-            "language": "English & Malayalam"
+            "examTip": "Calicut University 10-മാർക്ക് ചോദ്യങ്ങൾ: 'Explain the Meaning, Importance & Nature-Nurture (Feral Children) in Socialization' കൂടാതെ 'Compare Primary, Secondary, Anticipatory (Merton) and Re-socialization (Goffman)' — പണ്ഡിതന്മാരുടെ പേരുകൾ പ്രത്യേകം അണ്ടർലൈൻ ചെയ്യുക!"
           },
           {
             "chapterNumber": "Chapter 3.4",
@@ -1120,8 +1133,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 1.2 & 1.3",
             "title": "അടിസ്ഥാന തത്ത്വങ്ങളും നാഴികക്കല്ലുകളും (Foundational Principles & Pioneers: Turing, McCarthy, Minsky)",
             "chapter": "Unit 1.2 & 1.3: Logic, Reasoning, Search Space & Pioneers",
-            "duration": "20:00",
-            "youtubeId": "",
+            "duration": "06:32",
+            "youtubeId": "MniIlxa7sjo",
             "language": "Malayalam",
             "studyPoints": [
               "യുക്തിചിന്തയുടെ 3 രീതികൾ: ഡിഡക്റ്റീവ് (Deductive), ഇൻഡക്റ്റീവ് (Inductive), അബ്ഡക്റ്റീവ് (Abductive) യുക്തികൾ AI-യിൽ.",
@@ -1129,7 +1142,9 @@ window.VOICE_EXPLANATIONS_DATA = {
               "AI പയനിയർമാർ: അലൻ ട്യൂറിംഗ്, ജോൺ മക്കാർത്തി (AI എന്ന പദത്തിന്റെ ഉപജ്ഞാതാവ്), മാർവിൻ മിൻസ്കി, ഹെർബർട്ട് സൈമൺ.",
               "ഡാർട്ട്മൗത്ത് കോൺഫറൻസ് (1956): കൃത്രിമ ബുദ്ധി ഒരു സ്വതന്ത്ര ശാസ്ത്ര ശാഖയായി ഔദ്യോഗികമായി പിറവിയെടുത്ത ചരിത്രം."
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി പരീക്ഷാ ടിപ്പ്: 'ഡിഡക്റ്റീവ്, ഇൻഡക്റ്റീവ്, അബ്ഡക്റ്റീവ് യുക്തികൾ ആധുനിക AI സംവിധാനങ്ങളിൽ എങ്ങനെ പ്രയോഗിക്കപ്പെടുന്നു എന്ന് വ്യക്തമാക്കുക'."
+            "examTip": "യൂണിവേഴ്സിറ്റി പരീക്ഷാ ടിപ്പ്: 'ഡിഡക്റ്റീവ്, ഇൻഡക്റ്റീവ്, അബ്ഡക്റ്റീവ് യുക്തികൾ ആധുനിക AI സംവിധാനങ്ങളിൽ എങ്ങനെ പ്രയോഗിക്കപ്പെടുന്നു എന്ന് വ്യക്തമാക്കുക'.",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/MniIlxa7sjo/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 1.4",
@@ -1174,8 +1189,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 2.1 a",
             "title": "ക്ലാസിക്കൽ AI-യും ഫ്രെയിം പ്രോബ്ലവും (Problems in Classical GOFAI)",
             "chapter": "Unit 2.1 a: Classical (Symbolic) AI · Assumptions & Frame Problem",
-            "duration": "21:00",
-            "youtubeId": "",
+            "duration": "06:20",
+            "youtubeId": "cVbNy9v0R7E",
             "language": "Malayalam",
             "studyPoints": [
               "ക്ലാസിക്കൽ GOFAI അനുമാനങ്ങൾ: മനുഷ്യ ബുദ്ധിയെ പൂർണ്ണമായും ലോജിക്കൽ ചിഹ്നങ്ങളിലൂടെ പ്രതിനിധീകരിക്കാമെന്ന നിഗമനം.",
@@ -1183,7 +1198,9 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കോംബിനേറ്റോറിയൽ എക്സ്പ്ലോഷൻ (Combinatorial Explosion): സങ്കീർണ്ണ സാഹചര്യങ്ങളിൽ ചിഹ്നങ്ങളുടെ എണ്ണം ക്രമാതീതമായി പെരുകി സിസ്റ്റം സ്തംഭിക്കുന്ന അവസ്ഥ.",
               "ഹ്യൂറിസ്റ്റിക്സിന്റെ പരിമിതികൾ: കൃത്യമായ അൽഗോരിതങ്ങൾ ലഭ്യമല്ലാത്ത മാനുഷിക സാഹചര്യങ്ങളിൽ തമ്പ്-റൂളുകൾ പരാജയപ്പെടുന്നു."
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: ക്ലാസിക്കൽ GOFAI നേരിട്ട ഫ്രെയിം പ്രോബ്ലവും കോംബിനേറ്റോറിയൽ എക്സ്പ്ലോഷനും എഐ വികാസത്തെ എങ്ങനെ ബാധിച്ചു?"
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: ക്ലാസിക്കൽ GOFAI നേരിട്ട ഫ്രെയിം പ്രോബ്ലവും കോംബിനേറ്റോറിയൽ എക്സ്പ്ലോഷനും എഐ വികാസത്തെ എങ്ങനെ ബാധിച്ചു?",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/cVbNy9v0R7E/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 2.1 b",
@@ -1219,8 +1236,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 2.2 a",
             "title": "ഡെക്കാർട്ടും ഡിജിറ്റൽ യുഗത്തിലെ മനസ്സിന്റെ തത്ത്വചിന്തയും (Descartes & Mind-Body Dualism in AI)",
             "chapter": "Unit 2.2 a: Cartesian Dualism · Res Cogitans vs Res Extensa · Physical Mechanism",
-            "duration": "19:00",
-            "youtubeId": "",
+            "duration": "06:22",
+            "youtubeId": "PAbcoT4_w8w",
             "language": "Malayalam",
             "studyPoints": [
               "ഡെക്കാർട്ടിന്റെ മൈൻഡ്-ബോഡി ദ്വൈതവാദം: ചിന്തിക്കുന്ന മനസ്സ് (Res Cogitans), ഭൗതികമായ ശരീരം (Res Extensa) എന്നിവ തമ്മിലുള്ള വിഭജനം.",
@@ -1228,7 +1245,9 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കമ്പ്യൂട്ടേഷണൽ ഫങ്ഷണലിസത്തിലെ ദ്വൈതവാദം: മനസ്സിനെ സോഫ്റ്റ്‌വെയറായും തലച്ചോറിനെ ഹാർഡ്‌വെയറായും കാണുന്നത് ഡെക്കാർട്ടിയൻ ദ്വൈതവാദത്തിന്റെ പുതിയ രൂപമാണെന്ന വാദം.",
               "ഫിസിക്കലിസവും റിഡക്ഷനിസവും: മനസ്സ് എന്നത് തലച്ചോറിലെ ന്യൂറോണുകളുടെ ഭൗതിക ഫലം മാത്രമാണെങ്കിൽ സിലിക്കണിലും ചിന്ത സാധ്യമാകുമോ?"
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: റെനെ ഡെക്കാർട്ടിന്റെ മൈൻഡ്-ബോഡി ദ്വൈതവാദം ആധുനിക കമ്പ്യൂട്ടേഷണൽ മനശാസ്ത്രത്തിലും എഐ ചിന്തകളിലും എങ്ങനെ പ്രതിഫലിക്കുന്നു?"
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: റെനെ ഡെക്കാർട്ടിന്റെ മൈൻഡ്-ബോഡി ദ്വൈതവാദം ആധുനിക കമ്പ്യൂട്ടേഷണൽ മനശാസ്ത്രത്തിലും എഐ ചിന്തകളിലും എങ്ങനെ പ്രതിഫലിക്കുന്നു?",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/PAbcoT4_w8w/hqdefault.jpg"
           },
           {
             "chapterNumber": "Unit 2.2 b",
@@ -2233,11 +2252,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 04",
             "title": "ഷോക്കിങ് ദി ഇക്വിലിബ്രിയം (Shocking the Equilibrium: Demand & Supply Shifts)",
             "chapter": "Academic Hub Special · ഡിമാൻഡ്-സപ്ലൈ ഷിഫ്റ്റുകൾ, വിപണി സന്തുലിതാവസ്ഥയിലെ മാറ്റങ്ങൾ",
-            "duration": "19:54",
-            "youtubeId": null,
+            "duration": "09:10",
+            "youtubeId": "xfR7G1s4Iks",
             "videoUrl": null,
-            "audioUrl": "/audio/micro_unit04_mod1_masterclass.mp3",
-            "thumbnail": "https://i.ytimg.com/vi/Mu1Ktkzr_ME/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/xfR7G1s4Iks/hqdefault.jpg",
             "language": "Malayalam",
             "examTip": "ഡിമാൻഡ്, സപ്ലൈ കർവുകളുടെ ഒരേസമയത്തുള്ള മാറ്റങ്ങൾ (Simultaneous shifts) വിലയിലും അളവിലും വരുത്തുന്ന സ്വാധീനം വ്യക്തമായി പഠിക്കുക."
           },
@@ -2245,11 +2263,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 05",
             "title": "സന്തുലിതാവസ്ഥയിലെ മാറ്റങ്ങളും ഇലാസ്തികതയും (Equilibrium Effects & Elasticity)",
             "chapter": "Academic Hub Special · ഇലാസ്തികതയുടെ സ്വാധീനം, വില നിയന്ത്രണങ്ങളും വിപണി ഫലങ്ങളും",
-            "duration": "19:46",
-            "youtubeId": null,
+            "duration": "09:01",
+            "youtubeId": "nnn3uhL8Kf4",
             "videoUrl": null,
-            "audioUrl": "/audio/micro_unit05_mod1_masterclass.mp3",
-            "thumbnail": "https://i.ytimg.com/vi/CylKbnNZtm0/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/nnn3uhL8Kf4/hqdefault.jpg",
             "language": "Malayalam",
             "examTip": "വില ഇലാസ്തികത സന്തുലിത വിലയെയും അളവിനെയും എങ്ങനെ സ്വാധീനിക്കുന്നുവെന്ന് ഗ്രാഫിക്കലായി വരച്ചു പരിശീലിക്കുക."
           }
@@ -2312,23 +2329,22 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Unit 09",
-            "title": "Unit 09: Constrained Consumer Choice (നിയന്ത്രിത ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ്)",
-            "chapter": "Consumer's Optimal Bundle, Tangency Condition (MRSxy = Px/Py), Equi-Marginal Principle (MUx/Px = MUy/Py), Convex Sections of IC vs Corner Solutions & Non-Satiation (Buying Where More Is Better)",
-            "duration": "22:20",
-            "youtubeId": null,
+            "title": "നിയന്ത്രിത ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ് (Constrained Consumer Choice: Optimal Bundle & Tangency)",
+            "chapter": "Academic Hub Special · ഒപ്റ്റിമൽ ബണ്ടിൽ, ടാൻജൻസി സമവാക്യം (MRS = Px/Py), സമ-സീമാന്ത യൂട്ടിലിറ്റി",
+            "duration": "14:14",
+            "youtubeId": "J6hBbtao1ms",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/None/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/J6hBbtao1ms/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>നിയന്ത്രിത ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ് (Constrained Choice):</strong> വരുമാനത്തിന്റെയും സാധനവിലകളുടെയും പരിമിതിക്കുള്ളിൽ നിന്ന് (Px X + Py Y = M) ഉപഭോക്താവ് പരമാവധി സംതൃപ്തി നേടുന്ന തിരഞ്ഞെടുപ്പ് പ്രക്രിയ.",
-              "<strong>ഒപ്റ്റിമൽ ബണ്ടിൽ / സന്തുലിതാവസ്ഥ:</strong> ബജറ്റ് ലൈൻ ഏറ്റവും ഉയർന്ന ഇൻഡിഫറൻസ് കർവിനെ (IC) സ്പർശിക്കുന്ന ടാൻജൻസി ബിന്ദു (Point E). ഇവിടെ ബജറ്റ് ലൈനിന്റെ ചരിവും ഇൻഡിഫറൻസ് കർവിന്റെ ചരിവും തുല്യമാകുന്നു.",
-              "<strong>സ്പർശരേഖാ നിബന്ധന (Tangency Condition):</strong> MRSxy = Px / Py. അതായത്, ഉപഭോക്താവ് സാധനങ്ങൾ മാറ്റിവെക്കാൻ തയ്യാറുള്ള ആത്മനിഷ്ഠ നിരക്കും (MRS) വിപണി അനുവദിക്കുന്ന നിരക്കും (Px/Py) തുല്യമാകുന്നു.",
-              "<strong>സമ-സീമാന്ത യൂട്ടിലിറ്റി സമവാക്യം:</strong> MUx / Px = MUy / Py. ചിലവഴിക്കുന്ന അവസാനത്തെ ഓരോ രൂപയും എല്ലാ സാധനങ്ങളിലും ഒരേ അളവ് സീമാന്ത സംതൃപ്തി നൽകണം. MUx/Px > MUy/Py ആയാൽ X കൂടുതൽ വാങ്ങിയും, നേരെ മറിച്ചായാൽ Y കൂടുതൽ വാങ്ങിയും സമനില പാലിക്കുന്നു.",
-              "<strong>കോൺവെക്സ് ഭാഗങ്ങളിലെ ഒപ്റ്റിമൽ ബണ്ടിൽ:</strong> കർവുകൾ ഉദ്ഭവത്തിലേക്ക് കോൺവെക്സ് ആയിരിക്കുമ്പോൾ മാത്രമേ സന്തുലിതാവസ്ഥ സ്ഥിരവും യഥാർത്ഥ പരമാവധിയും ആകുന്നുള്ളൂ (Second-Order Condition). കോൺകേവ് അല്ലെങ്കിൽ ലീനിയർ കർവുകൾ കോർണർ സൊല്യൂഷനിലേക്കും അപ്രായോഗിക സ്പെഷ്യലൈസേഷനിലേക്കും നയിക്കുന്നു.",
-              "<strong>കൂടുതൽ ഉള്ളത് കൂടുതൽ നല്ലത് (Non-Satiation):</strong> പോസിറ്റീവ് മാർജിനൽ യൂട്ടിലിറ്റി (MUx > 0, MUy > 0) ഉള്ളതിനാൽ ഒപ്റ്റിമൽ ബണ്ടിൽ എപ്പോഴും ബജറ്റ് രേഖയിൽ തന്നെയായിരിക്കും; വരുമാനം മുഴുവൻ ചിലവഴിക്കപ്പെടുന്നു."
+              "നിയന്ത്രിത ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ് (Constrained Choice): വരുമാനത്തിന്റെയും വിലകളുടെയും പരിമിതിക്കുള്ളിൽ നിന്ന് പരമാവധി സംതൃപ്തി നേടുന്ന പ്രക്രിയ.",
+              "ഒപ്റ്റിമൽ ബണ്ടിൽ / സന്തുലിതാവസ്ഥ: ബജറ്റ് ലൈൻ ഏറ്റവും ഉയർന്ന ഇൻഡിഫറൻസ് കർവിനെ (IC) സ്പർശിക്കുന്ന ടാൻജൻസി ബിന്ദു.",
+              "സ്പർശരേഖാ നിബന്ധന (Tangency Condition): MRSxy = Px / Py. ആത്മനിഷ്ഠ നിരക്കും വിപണി നിരക്കും തുല്യമാകുന്നു.",
+              "സമ-സീമാന്ത യൂട്ടിലിറ്റി സമവാക്യം: MUx / Px = MUy / Py. ചിലവഴിക്കുന്ന അവസാനത്തെ ഓരോ രൂപയും ഒരേ അളവ് സീമാന്ത സംതൃപ്തി നൽകണം.",
+              "കോൺവെക്സ് ഭാഗങ്ങളിലെ ഒപ്റ്റിമൽ ബണ്ടിൽ: കർവുകൾ ഉദ്ഭവത്തിലേക്ക് കോൺവെക്സ് ആയിരിക്കുമ്പോൾ മാത്രമേ സന്തുലിതാവസ്ഥ സ്ഥിരമാകുന്നുള്ളൂ (Second-Order Condition).",
+              "കൂടുതൽ ഉള്ളത് കൂടുതൽ നല്ലത് (Non-Satiation): പോസിറ്റീവ് മാർജിനൽ യൂട്ടിലിറ്റി ഉള്ളതിനാൽ ഒപ്റ്റിമൽ ബണ്ടിൽ എപ്പോഴും ബജറ്റ് രേഖയിൽ തന്നെയായിരിക്കും."
             ],
-            "examTip": "ഉപഭോക്താവിന്റെ ഒപ്റ്റിമൽ ബണ്ടിലിന്റെ ഗ്രാഫിക്കൽ ജ്യാമിതി (Figure 9.1), ടാൻജൻസി സമവാക്യം MRSxy = Px/Py, MUx/Px = MUy/Py സമ-സീമാന്ത നിയമം, എന്തുകൊണ്ട് ഒപ്റ്റിമൽ ബണ്ടിൽ കോൺവെക്സ് ഭാഗത്ത് വരുന്നു (Figure 9.2), നോൺ-സാറ്റിയേഷൻ തത്വം എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിലെ പ്രധാന എസ്സേ, ഷോർട്ട് എസ്സേ ചോദ്യങ്ങളാണ്.",
-            "audioUrl": "/audio/micro_unit09_masterclass.mp3"
+            "examTip": "ഉപഭോക്താവിന്റെ ഒപ്റ്റിമൽ ബണ്ടിലിന്റെ ഗ്രാഫിക്കൽ ജ്യാമിതി, ടാൻജൻസി സമവാക്യം MRSxy = Px/Py, MUx/Px = MUy/Py സമ-സീമാന്ത നിയമം, എന്തുകൊണ്ട് ഒപ്റ്റിമൽ ബണ്ടിൽ കോൺവെക്സ് ഭാഗത്ത് വരുന്നു എന്നിവ എസ്സേ ചോദ്യങ്ങളായി ചോദിക്കാറുണ്ട്."
           }
         ]
       },
@@ -2357,65 +2373,64 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Unit 11",
-            "title": "Unit 11: Production Functions, Time & Input Variability (ഉത്പാദന ധർമ്മവും ഘടകങ്ങളും)",
-            "chapter": "Production Concept, Factors (K, L, M), Q = f(L, K), Technical Efficiency, Short Run vs Long Run, Law of Diminishing Returns, Returns to Scale & Exam MCQs",
-            "duration": "28:57",
-            "youtubeId": null,
+            "title": "ഉത്പാദന ഫലനവും ഇൻപുട്ടുകളുടെ വ്യതിയാനവും (Production Functions: Q = f(L, K) & Time Horizons)",
+            "chapter": "Academic Hub Special · ഉത്പാദന ഘടകങ്ങൾ (K, L, M), സാങ്കേതിക കാര്യക്ഷമത, ഹ്രസ്വകാലവും ദീർഘകാലവും",
+            "duration": "08:42",
+            "youtubeId": "PB4Dmlu5ueg",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/None/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/PB4Dmlu5ueg/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>ഉത്പാദന ധർമ്മം (Production Function):</strong> ലഭ്യമായ സാങ്കേതികവിദ്യയിൽ നൽകിയിട്ടുള്ള ഇൻപുട്ടുകളിൽ നിന്ന് (K, L, M) ഉത്പാദിപ്പിക്കാവുന്ന പരമാവധി ഔട്ട്പുട്ടിനെ കാണിക്കുന്ന സാങ്കേതിക ബന്ധമാണ് ഉത്പാദന ധർമ്മം: Q = f(L, K).",
-              "<strong>ഉത്പാദന ഘടകങ്ങൾ:</strong> ദീർഘകാലം ആവർത്തിച്ചുപയോഗിക്കുന്ന ഭൗതിക മൂലധനം (Capital - K), കായികവും മാനസികവുമായ അധ്വാനം (Labor - L), ഉത്പാദനത്തിൽ പൂർണ്ണമായി ഉപയോഗിച്ചുതീരുന്ന അസംസ്കൃത വസ്തുക്കളും ഇടനില ഉത്പന്നങ്ങളും (Materials - M).",
-              "<strong>ഹ്രസ്വകാലവും സ്ഥിര ഘടകങ്ങളും (Short Run):</strong> കുറഞ്ഞത് ഒരു ഉത്പാദന ഘടകമെങ്കിലും (മൂലധനം/പ്ലാന്റ്) മാറ്റമില്ലാതെ സ്ഥിരമായി നിൽക്കുന്ന സമയപരിധി; ഉത്പാദനം കൂട്ടാൻ വേരിയബിൾ ഇൻപുട്ടുകൾ (തൊഴിലാളികൾ, റോ മെറ്റീരിയൽസ്) മാത്രമേ മാറ്റാൻ സാധിക്കൂ.",
-              "<strong>ദീർഘകാലം (Long Run):</strong> എല്ലാ ഉത്പാദന ഘടകങ്ങളും മാറ്റാൻ സാധിക്കുന്നത്ര ദൈർഘ്യമേറിയ സമയം. ഇവിടെ സ്ഥിര ഘടകങ്ങൾ ഇല്ല; പുതിയ ഫാക്ടറികൾ സ്ഥാപിക്കാനും പൂർണ്ണ സാങ്കേതിക പുനഃസംഘടനയ്ക്കും സ്വാതന്ത്ര്യം ലഭിക്കുന്നു.",
-              "<strong>ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമം:</strong> ഹ്രസ്വകാലത്ത് സ്ഥിരമായ മൂലധനത്തിലേക്ക് കൂടുതൽ തൊഴിലാളികളെ ചേർക്കുമ്പോൾ ആദ്യഘട്ടത്തിൽ ഉത്പാദനം കൂടുമെങ്കിലും പിന്നീട് ഓരോ അധിക തൊഴിലാളിയുടെയും മാർജിനൽ പ്രൊഡക്റ്റ് കുറഞ്ഞുവരുന്നു.",
-              "<strong>റിട്ടേൺസ് ടു സ്കെയിൽ (Returns to Scale):</strong> ദീർഘകാലത്തിൽ എല്ലാ ഇൻപുട്ടുകളും ഒരേ അനുപാതത്തിൽ കൂട്ടുമ്പോൾ ഔട്ട്പുട്ട് ഇരട്ടിയിലധികമായാൽ IRS, തുല്യമായാൽ CRS, കുറഞ്ഞാൽ DRS.",
-              "<strong>സാങ്കേതിക പുരോഗതി:</strong> പുതിയ സാങ്കേതികവിദ്യ പ്രൊഡക്ഷൻ ഫ്രോണ്ടിയറിനെ മുകളിലേക്ക് ഉയർത്തുന്നു (Upward Shift); ഒരേ ഇൻപുട്ടുകളിൽ നിന്ന് കൂടുതൽ ഔട്ട്പുട്ട് ഉണ്ടാക്കാൻ ഫേമുകളെ പ്രാപ്തമാക്കുന്നു."
+              "ഉത്പാദനം എന്നത് വിഭവങ്ങളുടെ ഉപയോഗക്ഷമത വർദ്ധിപ്പിച്ച് യൂട്ടിലിറ്റി സൃഷ്ടിക്കുന്ന പ്രക്രിയയാണ് (Utility Creation).",
+              "ഉത്പാദന ഘടകങ്ങൾ: Physical Capital (K), Labor (L), Materials (M). മൂലധനം എന്നത് പണമല്ല, ദീർഘകാല ഭൗതിക ആസ്തികളാണ്.",
+              "മാനവ മൂലധനം (Human Capital): വിദ്യാഭ്യാസം, പരിശീലനം എന്നിവയിലൂടെ തൊഴിലാളികൾ നേടുന്ന ഉത്പാദനക്ഷമത.",
+              "ഉത്പാദന ഫലനം Q = f(L, K): നൽകിയിരിക്കുന്ന സാങ്കേതികവിദ്യയിൽ നിശ്ചിത ഇൻപുട്ടുകൾ വഴി ഉത്പാദിപ്പിക്കാവുന്ന പരമാവധി ഔട്ട്പുട്ട്.",
+              "സാങ്കേതിക കാര്യക്ഷമത: വിഭവ പാഴാക്കലുകളില്ലാതെ പ്രൊഡക്ഷൻ ഫ്രോണ്ടിയറിൽ പ്രവർത്തിക്കൽ.",
+              "സാമ്പത്തിക കാര്യക്ഷമത: ഒരു നിശ്ചിത ഔട്ട്പുട്ട് ഏറ്റവും കുറഞ്ഞ ചിലവിൽ (Least-cost combination) ഉത്പാദിപ്പിക്കൽ.",
+              "ഹ്രസ്വകാലം (Short Run): കുറഞ്ഞത് ഒരു ഘടകമെങ്കിലും (Capital) സ്ഥിരമായിരിക്കുന്ന കാലയളവ്; ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമം ഇവിടെ പ്രവർത്തിക്കുന്നു.",
+              "ദീർഘകാലം (Long Run): എല്ലാ ഘടകങ്ങളും വേരിയബിൾ ആകുന്ന ആസൂത്രണ കാലയളവ്; പുതിയ പ്ലാന്റുകൾ നിർമ്മിക്കാൻ സാധിക്കുന്നു."
             ],
-            "examTip": "പ്രൊഡക്ഷൻ ഫംഗ്ഷൻ സമവാക്യം Q = f(L, K), ഹ്രസ്വകാലവും ദീർഘകാലവും തമ്മിലുള്ള വ്യത്യാസം, സ്ഥിര-മാറ്റ ഘടകങ്ങൾ (Fixed vs Variable Inputs), ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമം, ടെക്നോളജിക്കൽ ഷിഫ്റ്റ് എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന ചോദ്യങ്ങളാണ്.",
-            "audioUrl": "/audio/micro_unit11_masterclass.mp3"
+            "examTip": "ഉത്പാദന ഫലനത്തിന്റെ സമവാക്യം Q = f(L, K) വിശദീകരിക്കാനും, സാങ്കേതിക കാര്യക്ഷമതയും സാമ്പത്തിക കാര്യക്ഷമതയും തമ്മിലുള്ള വ്യത്യാസം എഴുതാനും, ഹ്രസ്വകാലവും ദീർഘകാലവും തമ്മിലുള്ള താരതമ്യം വരയ്ക്കാനും പരീക്ഷയിൽ പതിവായി ചോദിക്കാറുണ്ട്."
           },
           {
             "chapterNumber": "Unit 12",
-            "title": "Unit 12: Short-Run Production (ഹ്രസ്വകാല ഉത്പാദന സിദ്ധാന്തം)",
-            "chapter": "Total Product (TP), Marginal Product (MPL), Average Product (APL), Graphing Product Curves, Three Stages of Production & Law of Diminishing Marginal Returns",
-            "duration": "26:48",
-            "youtubeId": null,
+            "title": "ഹ്രസ്വകാല ഉത്പാദനവും കുറഞ്ഞുവരുന്ന ആദായ നിയമവും (Short-Run Production: TP, MP, AP & Law of Returns)",
+            "chapter": "Academic Hub Special · ആകെ, ശരാശരി, സീമാന്ത ഉത്പാദനം, ഉത്പാദനത്തിന്റെ 3 ഘട്ടങ്ങൾ, യുക്തിസഹമായ ഘട്ടം 2",
+            "duration": "08:49",
+            "youtubeId": "n-5A7cQpaWc",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/None/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/n-5A7cQpaWc/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>ഹ്രസ്വകാല ഉത്പാദനം (Short-Run Production):</strong> കുറഞ്ഞത് ഒരു ഘടകമെങ്കിലും (മൂലധനം K̄) സ്ഥിരമായിരിക്കുകയും തൊഴിൽ (L) മാറുന്ന ഘടകമായി നിലനിൽക്കുകയും ചെയ്യുന്ന അവസ്ഥ: Q = f(L, K̄).",
-              "<strong>ഉത്പന്ന സങ്കൽപ്പങ്ങൾ:</strong> ആകെ ഉത്പന്നം (Total Product - TP), സീമാന്ത ഉത്പന്നം (Marginal Product of Labor - MPL = ΔTP / ΔL), ശരാശരി ഉത്പന്നം (Average Product of Labor - APL = TP / L).",
-              "<strong>MPL ഉം APL ഉം തമ്മിലുള്ള ബന്ധം:</strong> MPL > APL ആയിരിക്കുമ്പോൾ APL ഉയരുന്നു; MPL < APL ആകുമ്പോൾ APL കുറയുന്നു; APL പരമാവധിയിലെത്തുമ്പോൾ MPL = APL ആകുന്നു (MPL കർവ് APL നെ മുകളിൽ നിന്ന് ഛേദിക്കുന്നു).",
-              "<strong>TP യും MPL ഉം തമ്മിലുള്ള ബന്ധം:</strong> MPL പോസിറ്റീവായിരിക്കുമ്പോൾ TP കൂടുന്നു; MPL = 0 ആകുമ്പോൾ TP പരമാവധിയിലെത്തുന്നു; MPL < 0 (നെഗറ്റീവ്) ആകുമ്പോൾ TP താഴേക്ക് കുറയുന്നു.",
-              "<strong>ഉത്പാദനത്തിന്റെ മൂന്ന് ഘട്ടങ്ങൾ:</strong> സ്റ്റേജ് I (വർദ്ധിക്കുന്ന റിട്ടേൺസ് - ഉത്ഭവം മുതൽ പരമാവധി APL വരെ), സ്റ്റേജ് II (കുറയുന്ന റിട്ടേൺസ് - പരമാവധി APL മുതൽ പരമാവധി TP വരെ), സ്റ്റേജ് III (നെഗറ്റീവ് റിട്ടേൺസ് - TP കുറയുന്ന ഘട്ടം).",
-              "<strong>ഏക യുക്തിസഹമായ ഘട്ടം:</strong> ഒരു വിവേകിയായ ഫേം എപ്പോഴും സ്റ്റേജ് II ൽ മാത്രമേ പ്രവർത്തിക്കൂ; സ്റ്റേജ് I ൽ മൂലധനം പാഴാകുന്നു, സ്റ്റേജ് III ൽ തൊഴിലാളികൾ ഉത്പാദനത്തെ നശിപ്പിക്കുന്നു.",
-              "<strong>ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമം:</strong> സ്ഥിര മൂലധനത്തിലേക്ക് കൂടുതൽ തൊഴിലാളികളെ ചേർക്കുമ്പോൾ ക്രമേണ ഓരോ അധിക തൊഴിലാളിയുടെയും മാർജിനൽ സംഭാവന കുറഞ്ഞുവരുന്നു."
+              "ഹ്രസ്വകാല ഉത്പാദന ഫലനം Q = f(L, K̄): മൂലധനം സ്ഥിരമായിരിക്കുമ്പോൾ അധ്വാനത്തിന്റെ അളവ് മാറ്റിക്കൊണ്ട് ഉത്പാദനം ക്രമീകരിക്കുന്നു.",
+              "ആകെ ഉത്പാദനം (Total Product - TP): നിശ്ചിത ഇൻപുട്ടുകളിൽ നിന്ന് ലഭിക്കുന്ന ആകെ ഭൗതിക ഉൽപ്പന്നം.",
+              "സീമാന്ത ഉത്പാദനം (Marginal Product - MPL): ഒരു അധിക തൊഴിലാളി നൽകുന്ന അധിക ഉൽപ്പന്നം (MPL = ΔTP / ΔL = dTP/dL).",
+              "ശരാശരി ഉത്പാദനം (Average Product - APL): തൊഴിലാളിയൊന്നിന് ലഭിക്കുന്ന ശരാശരി ഉൽപ്പന്നം (APL = TP / L).",
+              "കർവുകളുടെ ബന്ധം: MPL = 0 ആകുമ്പോൾ TP പരമാവധിയിൽ എത്തുന്നു. MPL കർവ് APL-ന്റെ പരമാവധി ബിന്ദുവിൽ അതിനെ ഛേദിക്കുന്നു.",
+              "കുറഞ്ഞുവരുന്ന ആദായ നിയമം (Law of Diminishing Returns): സ്ഥിര മൂലധനത്തിലേക്ക് കൂടുതൽ തൊഴിലാളികൾ ചേർക്കുമ്പോൾ ക്രമേണ MPL കുറയുന്നു.",
+              "ഉത്പാദനത്തിന്റെ 3 ഘട്ടങ്ങൾ: ഘട്ടം 1 (APL ഉയരുന്നു), ഘട്ടം 2 (യുക്തിസഹമായ ഘട്ടം - APL-ഉം MPL-ഉം കുറയുന്നുണ്ടെങ്കിലും പോസിറ്റീവ്), ഘട്ടം 3 (നെഗറ്റീവ് MPL - അപ്രായോഗികം)."
             ],
-            "examTip": "TP, MP, AP എന്നിവ തമ്മിലുള്ള ഗണിതശാസ്ത്ര ബന്ധങ്ങൾ, ഉത്പാദനത്തിന്റെ മൂന്ന് ഘട്ടങ്ങൾ (Stage I, II, III), എന്തുകൊണ്ട് ഫേം സ്റ്റേജ് II ൽ പ്രവർത്തിക്കുന്നു, ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമത്തിന്റെ പ്രാധാന്യം എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന ചോദ്യങ്ങളാണ്.",
-            "audioUrl": "/audio/micro_unit12_masterclass.mp3"
+            "examTip": "ഹ്രസ്വകാല ഉത്പാദനത്തെക്കുറിച്ചോ കുറഞ്ഞുവരുന്ന ആദായ നിയമത്തെക്കുറിച്ചോ എസ്സേ ചോദിച്ചാൽ, മുകളിൽ TP കർവും താഴെ ലംബമായി APL, MPL കർവുകളും വരച്ച് മൂന്ന് ഘട്ടങ്ങൾ കൃത്യമായി വേർതിരിച്ച് കാണിക്കുക. എന്തുകൊണ്ട് സ്ഥാപനങ്ങൾ ഘട്ടം രണ്ടിൽ മാത്രം പ്രവർത്തിക്കുന്നു എന്ന് ന്യായീകരിക്കുക."
           },
           {
             "chapterNumber": "Unit 13",
-            "title": "Unit 13: Long-Run Production (ദീർഘകാല ഉത്പാദന സിദ്ധാന്തം)",
-            "chapter": "Two Variable Inputs: Isoquants, Movement vs Shift, 4 Properties of Isoquants, Shapes (Perfect Substitutes, Fixed Proportions, Convex), MRTS = -MPL/MPK, Diminishing MRTS & Cobb-Douglas q = AL^αK^β",
-            "duration": "22:59",
-            "youtubeId": null,
+            "title": "ദീർഘകാല ഉത്പാദനവും ഐസോക്വാണ്ട് വക്രങ്ങളും (Long-Run Production: Isoquants & MRTS)",
+            "chapter": "Academic Hub Special · സമ-ഉത്പാദന വക്രങ്ങൾ, MRTS = MPL/MPK, ലിയോൺറ്റിഫ് & ലീനിയർ ഐസോക്വാണ്ടുകൾ",
+            "duration": "08:34",
+            "youtubeId": "snZ7fkjWLHY",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/None/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/snZ7fkjWLHY/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>ദീർഘകാല ഉത്പാദനം (Long-Run Production):</strong> എല്ലാ ഉത്പാദന ഘടകങ്ങളും മാറുന്ന ഘടകങ്ങളായി (Variable Inputs) മാറുന്ന കാലയളവ്: q = f(L, K). ഇവിടെ തൊഴിലും മൂലധനവും പരസ്പരം പ്രതിസ്ഥാപിക്കാൻ പൂർണ്ണ വഴക്കം ലഭിക്കുന്നു.",
-              "<strong>ഐസോക്വാണ്ട് (Isoquant):</strong> ഒരേ അളവ് ഉത്പന്നം നിർമ്മിക്കുന്ന സാങ്കേതികമായി കാര്യക്ഷമമായ തൊഴിലിന്റെയും മൂലധനത്തിന്റെയും എല്ലാ കൂട്ടുകളെയും കാണിക്കുന്ന വക്രരേഖ: q̄ = f(L, K).",
-              "<strong>ഐസോക്വാണ്ടിന്റെ 4 സവിശേഷതകൾ:</strong> (1) ഉദ്ഭവത്തിൽ നിന്ന് അകലെയുള്ളവ ഉയർന്ന ഉത്പാദനത്തെ സൂചിപ്പിക്കുന്നു, (2) പരസ്പരം ഛേദിക്കുന്നില്ല, (3) ഇടത്തുനിന്ന് വലത്തോട്ട് താഴേക്ക് ചരിഞ്ഞിരിക്കുന്നു (Downwards sloping), (4) കാര്യക്ഷമമായ കൂട്ടുകളെ മാത്രം പ്രതിനിധീകരിക്കുന്നതിനാൽ കനംകുറഞ്ഞ രേഖകളാണ് (Thin curves).",
-              "<strong>ഐസോക്വാണ്ടിന്റെ ആകൃതികൾ:</strong> (1) സമ്പൂർണ്ണ പ്രതിസ്ഥാപനങ്ങൾ (Perfect Substitutes) - നേർരേഖ (q = x + y, MRTS = -1), (2) സ്ഥിര അനുപാതം (Perfect Complements) - L-ആകൃതിയിലുള്ള വക്രങ്ങൾ, (3) സാധാരണ സാഹചര്യം - ഉദ്ഭവസ്ഥാനത്തേക്ക് കോൺവെക്സ് (Convex).",
-              "<strong>MRTS (Marginal Rate of Technical Substitution):</strong> ഒരു ഐസോക്വാണ്ടിന്റെ ചരിവ്: MRTS = ΔK / ΔL = - MPL / MPK. താഴേക്ക് പോകുന്തോറും നിരക്ക് കുറയുന്നതിനാൽ (Diminishing MRTS) ഐസോക്വാണ്ടുകൾ കോൺവെക്സ് ആകുന്നു.",
-              "<strong>കോബ്ബ്-ഡഗ്ലസ് ഫംഗ്ഷൻ (Cobb-Douglas):</strong> q = A L^α K^β. ഇവിടെ A = സാങ്കേതിക പാരാമീറ്റർ (Total Factor Productivity), α = തൊഴിലിന്റെ ഇലാസ്തികത, β = മൂലധന ഇലാസ്തികത. MPL = α(q/L) = α APL; MPK = β(q/K) = β APK; MRTS = - (α/β)(K/L)."
+              "ദീർഘകാല ഉത്പാദനം Q = f(L, K): എല്ലാ ഘടകങ്ങളും വേരിയബിൾ ആണ്; സ്ഥിര ഘടകങ്ങൾ ഇല്ല.",
+              "ഐസോക്വാണ്ട് (Isoquant): ഒരേ അളവ് ഉൽപ്പന്നം നിർമ്മിക്കാൻ കഴിയുന്ന മൂലധനത്തിന്റെയും അധ്വാനത്തിന്റെയും എല്ലാ സംയോജനങ്ങളും (Equal-Product Curve).",
+              "ഐസോക്വാണ്ട് മാപ്പ്: വ്യത്യസ്ത ഉത്പാദന അളവുകൾ (q1 < q2 < q3) കാണിക്കുന്ന വക്രങ്ങളുടെ കൂട്ടം.",
+              "സവിശേഷതകൾ: താഴേക്ക് ചരിഞ്ഞിരിക്കുന്നു, ഉദ്ഭവത്തിലേക്ക് കോൺവെക്സ് ആണ്, പരസ്പരം ഛേദിക്കില്ല, ഉയർന്ന ഐസോക്വാണ്ട് ഉയർന്ന ഉത്പാദനം നൽകുന്നു.",
+              "സാങ്കേതിക പകരക്കാരനാക്കൽ നിരക്ക് (MRTS): MRTS = -ΔK / ΔL = MPL / MPK (ഐസോക്വാണ്ടിന്റെ ചരിവ്).",
+              "കുറഞ്ഞുവരുന്ന MRTS തത്വം: വക്രത്തിലൂടെ താഴേക്ക് പോകുംതോറും MPL കുറയുകയും MPK കൂടുകയും ചെയ്യുന്നതിനാൽ MRTS കുറയുന്നു.",
+              "പ്രത്യേക രൂപങ്ങൾ: Linear Isoquants (Perfect Substitutes), L-Shaped / Leontief (Fixed Proportions), Cobb-Douglas (Smooth Convex)."
             ],
-            "examTip": "ഐസോക്വാണ്ടിന്റെ നിർവചനം, നാല് പ്രധാന സവിശേഷതകൾ, MRTS = - MPL / MPK കണ്ടെത്തൽ, ഡിമിനിഷിംഗ് MRTS തത്വം, കോബ്ബ്-ഡഗ്ലസ് ഫംഗ്ഷനിലെ പാരാമീറ്ററുകൾ എന്നിവ യൂണിവേഴ്സിറ്റി പരീക്ഷകളിൽ സ്ഥിരമായി വരുന്ന ചോദ്യങ്ങളാണ്.",
-            "audioUrl": "/audio/micro_unit13_masterclass.mp3"
+            "examTip": "ഐസോക്വാണ്ടിന്റെ നിർവചനവും നാല് പ്രധാന സവിശേഷതകളും ഡയഗ്രം സഹിതം വിശദീകരിക്കാനും, MRTS = MPL/MPK സമവാക്യം തെളിയിക്കാനും, ലീനിയർ, ലിയോൺറ്റിഫ് ഐസോക്വാണ്ടുകൾ താരതമ്യം ചെയ്യാനും പരീക്ഷയിൽ പതിവായി ചോദിക്കാറുണ്ട്."
           },
           {
             "chapterNumber": "Unit 14",
@@ -2438,27 +2453,62 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Unit 15",
-            "title": "ചെലവുകളുടെ സ്വഭാവം (Nature of Costs: Explicit, Implicit & Opportunity Cost)",
-            "chapter": "Academic Hub Special · വ്യക്തമായ ചെലവുകൾ, അവ്യക്തമായ ചെലവുകൾ, അവസരച്ചെലവ് (Opportunity Cost)",
-            "duration": "22:35",
-            "youtubeId": null,
+            "title": "ചെലവുകളുടെ സ്വഭാവം (Nature of Costs: Explicit, Implicit & Sunk Costs)",
+            "chapter": "Academic Hub Special · സാമ്പത്തിക vs അക്കൗണ്ടിംഗ് ചിലവ്, അവസരച്ചെലവ്, മുങ്ങിയ ചിലവുകൾ (Sunk Costs)",
+            "duration": "07:44",
+            "youtubeId": "LEvGpu6LHC0",
             "videoUrl": null,
-            "audioUrl": "/audio/micro_unit15_masterclass.mp3",
-            "thumbnail": "https://i.ytimg.com/vi/9gX0HzBZ0Bc/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/LEvGpu6LHC0/hqdefault.jpg",
             "language": "Malayalam",
-            "examTip": "സാമ്പത്തിക ലാഭവും അക്കൗണ്ടിംഗ് ലാഭവും തമ്മിലുള്ള വ്യത്യാസം അവസരച്ചെലവ് അടിസ്ഥാനമാക്കി വിശദീകരിക്കുക."
+            "studyPoints": [
+              "പ്രത്യക്ഷ ചെലവുകൾ (Explicit Costs): ബാഹ്യ വ്യക്തികൾക്ക് പണമായി നൽകുന്ന വേതനം, അസംസ്കൃത വസ്തുക്കളുടെ വില, വാടക മുതലായവ.",
+              "പരോക്ഷ ചെലവുകൾ (Implicit Costs): ഉടമസ്ഥന്റെ സ്വന്തം കെട്ടിടം, അധ്വാനം, മൂലധനം എന്നിവയുടെ അവസരച്ചെലവ് (Opportunity Cost).",
+              "സാമ്പത്തിക ചിലവ് (Economic Cost) = എക്സ്പ്ലിസിറ്റ് കോസ്റ്റ് + ഇംപ്ലിസിറ്റ് കോസ്റ്റ്.",
+              "സാമ്പത്തിക ലാഭം (Economic Profit) = ആകെ വരുമാനം - സാമ്പത്തിക ചെലവ് (അക്കൗണ്ടിംഗ് ലാഭത്തേക്കാൾ കുറവായിരിക്കും).",
+              "അവസരച്ചെലവ് തത്വം (Opportunity Cost Principle): വിഭവങ്ങൾ ഒരു കാര്യത്തിനായി വിനിയോഗിക്കുമ്പോൾ ത്യജിക്കേണ്ടി വരുന്ന രണ്ടാമത്തെ മികച്ച ബദലിന്റെ മൂല്യം.",
+              "മുങ്ങിയ ചിലവുകൾ (Sunk Costs): ഒരിക്കൽ ചെലവഴിച്ചുകഴിഞ്ഞതും തിരിച്ചുപിടിക്കാൻ കഴിയാത്തതുമായ മുൻകാല ചെലവുകൾ. യുക്തിസഹമായ സാമ്പത്തിക തീരുമാനങ്ങളിൽ ഇത് പൂർണ്ണമായും അവഗണിക്കണം."
+            ],
+            "examTip": "അക്കൗണ്ടിംഗ് ചെലവും സാമ്പത്തിക ചെലവും തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, ഇക്കണോമിക് കോസ്റ്റ് = എക്സ്പ്ലിസിറ്റ് കോസ്റ്റ് + ഇംപ്ലിസിറ്റ് കോസ്റ്റ് എന്ന സമവാക്യവും, എന്തുകൊണ്ട് സാമ്പത്തിക ലാഭം അക്കൗണ്ടിംഗ് ലാഭത്തേക്കാൾ കുറവാകുന്നു എന്നതും കൃത്യമായി വിശദീകരിക്കുക. സങ്ക് കോസ്റ്റുകൾ ഭാവി തീരുമാനങ്ങളെ ബാധിക്കരുതെന്നും വ്യക്തമാക്കുക."
           },
           {
             "chapterNumber": "Unit 16",
-            "title": "ഹ്രസ്വകാല ചെലവ് കർവുകൾ (Short-Run Costs: TFC, TVC, TC, AFC, AVC, ATC, MC)",
-            "chapter": "Academic Hub Special · സ്ഥിര-വ്യതിയാന ചെലവുകൾ, ശരാശരി ചെലവുകൾ, U-ആകൃതിയിലുള്ള കോസ്റ്റ് കർവുകൾ",
-            "duration": "28:57",
-            "youtubeId": null,
+            "title": "ഹ്രസ്വകാല ചെലവ് കർവുകൾ (Short-Run Costs: TC, MC, AVC & ATC)",
+            "chapter": "Academic Hub Special · സ്ഥിര, മാറുന്ന ചെലവുകൾ, U-ആകൃതിയിലുള്ള ചെലവ് കർവുകൾ, MC Cuts AVC/ATC at Min",
+            "duration": "07:51",
+            "youtubeId": "662lL8_DLds",
             "videoUrl": null,
-            "audioUrl": "/audio/micro_unit16_masterclass.mp3",
-            "thumbnail": "https://i.ytimg.com/vi/9gX0HzBZ0Bc/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/662lL8_DLds/hqdefault.jpg",
             "language": "Malayalam",
-            "examTip": "എന്തുകൊണ്ടാണ് MC കർവ് AVC, ATC കർവുകളുടെ ഏറ്റവും താഴ്ന്ന ബിന്ദുവിൽ കൂടി കടന്നുപോകുന്നത് എന്ന് തെളിയിക്കുക."
+            "studyPoints": [
+              "സ്ഥിരച്ചെലവ് (Fixed Cost: F): ഉത്പാദനത്തിനനുസരിച്ച് മാറാത്ത ചെലവ്. കർവ് തിരശ്ചീന നേര്രേഖയാണ്.",
+              "മാറുന്ന ചെലവ് (Variable Cost: VC): ഉത്പാദനത്തിനനുസരിച്ച് മാറുന്ന ചെലവ്. പൂജ്യത്തിൽ നിന്ന് ആരംഭിച്ച് മുകളിലേക്ക് ഉയരുന്നു.",
+              "ആകെ ചെലവ് (Total Cost): C = VC + F. TC കർവും VC കർവും പരസ്പരം സമാന്തരമാണ് (ലംബ അകലം = F).",
+              "ശരാശരി സ്ഥിരച്ചെലവ് (AFC = F / q): ഉത്പാദനം കൂടുംതോറും AFC തുടർച്ചയായി താഴുന്നു (റെക്റ്റാംഗുലർ ഹൈപ്പർബോള).",
+              "ശരാശരി മാറുന്ന ചെലവ് (AVC) & ശരാശരി ആകെ ചെലവ് (ATC): രണ്ടും U-ആകൃതിയിലുള്ള കർവുകളാണ്.",
+              "സീമാന്ത ചെലവ് (Marginal Cost: MC = ΔC / Δq = dC/dq): ഒരു അധിക യൂണിറ്റിന് വരുന്ന അധികച്ചെലവ്.",
+              "MC - ശരാശരി ബന്ധം: MC കർവ് AVC-യെയും ATC-യെയും അവയുടെ ഏറ്റവും താഴ്ന്ന ബിന്ദുക്കളിൽ (Minimum Points) താഴെനിന്ന് ഛേദിക്കുന്നു.",
+              "U-ആകൃതിക്ക് കാരണം: കുറഞ്ഞുവരുന്ന ആദായ നിയമം (Law of Diminishing Returns)."
+            ],
+            "examTip": "ഹ്രസ്വകാല ചെലവ് കർവുകളുടെ ജ്യാമിതി ചോദിച്ചാൽ, ഒരൊറ്റ ഡയഗ്രത്തിൽ താഴെ AFC-യും മുകളിലായി AVC, ATC, MC കർവുകളും വരയ്ക്കുക. MC കർവ് AVC-യുടെയും ATC-യുടെയും ഏറ്റവും താഴ്ന്ന ബിന്ദുവിൽ കൂടി കടന്നുപോകുന്നു എന്ന് കൃത്യമായി അടയാളപ്പെടുത്തുക."
+          },
+          {
+            "chapterNumber": "Unit 17",
+            "title": "ദീർഘകാല ചെലവുകളും എൻവലപ്പ് കർവും (Long-Run Costs: LRTC, LRAC, LRMC & Envelope Curve)",
+            "chapter": "Academic Hub Special · എക്കണോമീസ് ഓഫ് സ്കെയിൽ, മിനിമം എഫിഷ്യന്റ് സ്കെയിൽ (MES), പ്ലാനിംഗ് കർവ്",
+            "duration": "15:51",
+            "youtubeId": "BYjuAF87aH8",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/BYjuAF87aH8/hqdefault.jpg",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ഹ്രസ്വകാലവും ദീർഘകാലവും തമ്മിലുള്ള വ്യത്യാസം: ദീർഘകാലത്തിൽ എല്ലാ ഇൻപുട്ടുകളും വേരിയബിൾ ആണ്, ഫിക്സഡ് കോസ്റ്റുകൾ ഇല്ല.",
+              "ചെലവ് കുറയ്ക്കൽ തത്വം (Cost Minimization): Isoquants & Isocost ലൈനുകൾ വഴി Least-Cost Combination കണ്ടെത്തുന്നു.",
+              "സാങ്കേതിക പകരക്കാരനാക്കൽ നിരക്ക് (MRTS = MPL / MPK) ഇൻപുട്ട് വിലാനുപാതത്തിന് തുല്യമാകുന്നു (MRTS = w/r).",
+              "ദീർഘകാല ശരാശരി ചെലവ് വക്രം (U-Shaped LRAC Curve) എക്കണോമീസ് ഓഫ് സ്കെയിൽ കാരണമാണ് താഴേക്ക് വരുന്നത്.",
+              "മിനിമം എഫിഷ്യന്റ് സ്കെയിൽ (MES): ഒരു സ്ഥാപനത്തിന് ഏറ്റവും കുറഞ്ഞ ചെലവിൽ ഉത്പാദിപ്പിക്കാൻ കഴിയുന്ന ഏറ്റവും ചെറിയ അളവ്.",
+              "എൻവലപ്പ് കർവ് അഥവാ പ്ലാനിംഗ് കർവ്: വിവിധ ഹ്രസ്വകാല SRAC കർവുകളെ താഴെനിന്ന് പൊതിയുന്ന വക്രമാണ് LRAC."
+            ],
+            "examTip": "ദീർഘകാല ശരാശരി ചെലവ് വക്രത്തെക്കുറിച്ച് (LRAC) എസ്സേ ചോദിച്ചാൽ, അത് വിവിധ ഹ്രസ്വകാല ശരാശരി ചെലവ് (SRAC) കർവുകളെ താഴെനിന്ന് പൊതിയുന്ന ഒരു 'എൻവലപ്പ് കർവ്' (Envelope Curve) അഥവാ പ്ലാനിംഗ് കർവ് ആണെന്ന് വ്യക്തമാക്കി ഡയഗ്രം വരയ്ക്കുക."
           }
         ]
       },
@@ -2467,48 +2517,88 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Unit 10",
-            "title": "Perfect Competition: Short-Run & Long-Run Equilibrium",
-            "chapter": "Price-taking Firm, Profit Maximization MR=MC",
-            "duration": "22",
-            "youtubeId": ""
+            "title": "പൂർണ്ണമത്സര വിപണി (Perfect Competition: Short-Run & Long-Run Equilibrium)",
+            "chapter": "Academic Hub Special · വില സ്വീകർത്താക്കൾ, തിരശ്ചീന ഡിമാൻഡ് കർവ്, MR=MC, ഷട്ട്ഡൗൺ നിയമം",
+            "duration": "08:35",
+            "youtubeId": "afGuh5f2ypk",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/afGuh5f2ypk/hqdefault.jpg",
+            "language": "Malayalam",
+            "studyPoints": [
+              "വില സ്വീകർത്താക്കൾ (Price Takers): ധാരാളം സ്ഥാപനങ്ങൾ സമാന ഉൽപ്പന്നങ്ങൾ വിൽക്കുന്നതിനാൽ ഒരു സ്ഥാപനത്തിനും വിലയെ സ്വാധീനിക്കാൻ കഴിയില്ല.",
+              "തിരശ്ചീന ഡിമാൻഡ് കർവ്: പൂർണ്ണ ഇലാസ്തിക ഡിമാൻഡ് (Ed = ∞); ഇവിടെ P = AR = MR.",
+              "ലാഭ പരമാവധി നിബന്ധന: ഒന്നാം നിബന്ധന MR = MC (അതായത് P = MC), രണ്ടാം നിബന്ധന MC കർവ് താഴെനിന്ന് മുകളിലേക്ക് ഉയരണം.",
+              "ഹ്രസ്വകാല ഷട്ട്ഡൗൺ തീരുമാനം: വില മിനിമം ശരാശരി മാറുന്ന ചെലവിനേക്കാൾ താഴെയായാൽ (P < min AVC) സ്ഥാപനം ഉത്പാദനം നിർത്തണം.",
+              "ഹ്രസ്വകാല സപ്ലൈ കർവ്: മിനിമം AVC-ക്ക് മുകളിലുള്ള സീമാന്ത ചെലവ് കർവിന്റെ (SMC) ഭാഗമാണ് സ്ഥാപനത്തിന്റെ സപ്ലൈ കർവ്.",
+              "ദീർഘകാല സന്തുലിതാവസ്ഥ: പ്രവേശന-പിന്മാറ്റ സ്വാതന്ത്ര്യം മൂലം സാമ്പത്തിക ലാഭം പൂജ്യമാകുന്നു (P = LRMC = min LRAC)."
+            ],
+            "examTip": "ഹ്രസ്വകാല ഷട്ട്ഡൗൺ പോയിന്റ് (P < min AVC), ദീർഘകാല സീറോ ഇക്കണോമിക് പ്രോഫിറ്റ് സമവാക്യം (P = LRMC = min LRAC) എന്നിവ ഗ്രാഫ് സഹിതം വിശദീകരിക്കുക."
           },
           {
             "chapterNumber": "Unit 11",
-            "title": "Monopoly: Pricing & Degree of Monopoly Power",
-            "chapter": "Lerner Index, Natural Monopoly & Price Discrimination",
-            "duration": "25",
-            "youtubeId": ""
+            "title": "കുത്തക വിപണിയും ക്ഷേമ നഷ്ടവും (Monopoly: Pricing, Market Power & Deadweight Loss)",
+            "chapter": "Academic Hub Special · പ്രൈസ് മേക്കർ, MR < P, ലെർണർ സൂചിക, ഡെഡ്‌വെയ്റ്റ് ലോസ്",
+            "duration": "09:03",
+            "youtubeId": "sh-7a1b7vpE",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/sh-7a1b7vpE/hqdefault.jpg",
+            "language": "Malayalam",
+            "studyPoints": [
+              "കുത്തക (Monopoly): അടുത്ത പകരക്കാരില്ലാത്ത ഉൽപ്പന്നത്തിന്റെ ഏക വിതരണക്കാരൻ (Price Maker).",
+              "സീമാന്ത വരുമാനം (MR < Price): ഡിമാൻഡ് കർവ് താഴേക്ക് ചരിഞ്ഞിരിക്കുന്നതിനാൽ MR കർവ് ഡിമാൻഡ് കർവിന് താഴെയായിരിക്കും (ലീനിയർ കർവിൽ ഇരട്ടി ചരിവ്).",
+              "MR = P(1 + 1/ε): സീമാന്ത ചെലവ് പോസിറ്റീവായതിനാൽ കുത്തക ഡിമാൻഡ് കർവിന്റെ ഇലാസ്തിക മേഖലയിൽ (|ε| > 1) മാത്രമേ ഉത്പാദനം നടത്തൂ.",
+              "ലാഭ പരമാവധി: MR = MC ആകുന്ന ഉത്പാദന അളവിൽ (Q*), ഡിമാൻഡ് കർവിലെ ഉയർന്ന വില (P* > MC) നിശ്ചയിക്കുന്നു.",
+              "വിപണി ശക്തി & ലെർണർ സൂചിക: (P - MC)/P = -1/ε; ഡിമാൻഡ് ഇലാസ്തികത കുറയുന്തോറും കുത്തകയുടെ വില നിശ്ചയിക്കാനുള്ള ശക്തി കൂടുന്നു.",
+              "ഡെഡ്‌വെയ്റ്റ് ലോസ് (Deadweight Loss): ഉത്പാദന നിയന്ത്രണവും ഉയർന്ന വിലയും കാരണം സാമൂഹിക ക്ഷേമത്തിൽ സ്ഥിരമായ നഷ്ടം (ΔW = -C - E) ഉണ്ടാകുന്നു."
+            ],
+            "examTip": "കുത്തകയുടെ ലാഭ പരമാവധി സമവാക്യവും (P = 24 - Q, C = Q² + 12), പൂർണ്ണമത്സരവുമായി താരതമ്യം ചെയ്തുകൊണ്ടുള്ള ഡെഡ്‌വെയ്റ്റ് ലോസ് ഡയഗ്രവും കൃത്യമായി വരയ്ക്കുക."
           },
           {
             "chapterNumber": "Unit 12",
-            "title": "Monopolistic Competition & Oligopoly",
-            "chapter": "Product Differentiation, Kinked Demand Curve & Cournot Model",
-            "duration": "24",
-            "youtubeId": ""
+            "title": "ഏകാധിപത്യ മത്സരവും ഒളിഗോപൊളിയും (Monopolistic Competition & Oligopoly)",
+            "chapter": "Academic Hub Special · ഉൽപ്പന്ന വൈവിധ്യവൽക്കരണം, എക്സസ് കപ്പാസിറ്റി, കൂട്ട്‌നോ, കിങ്ക്ഡ് ഡിമാൻഡ്",
+            "duration": "08:12",
+            "youtubeId": "yAFmskolNFk",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/yAFmskolNFk/hqdefault.jpg",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ഏകാധിപത്യ മത്സരം: ധാരാളം സ്ഥാപനങ്ങൾ, ഉൽപ്പന്ന വൈവിധ്യവൽക്കരണം, ചേംബർലിന്റെ സെല്ലിംഗ് കോസ്റ്റുകൾ.",
+              "ദീർഘകാല സന്തുലിതാവസ്ഥ: AR = ATC ടാൻജൻസിയിൽ സാധാരണ ലാഭം മാത്രം; പൂർണ്ണ ശേഷിയേക്കാൾ കുറഞ്ഞ ഉത്പാദനം (Excess Capacity).",
+              "ഒളിഗോപൊളി (Oligopoly): പരസ്പരാശ്രിതത്വം (Interdependence), ഉയർന്ന കോൺസെൻട്രേഷൻ റേഷ്യോ, പ്രവേശന തടസ്സങ്ങൾ.",
+              "കാർട്ടലുകൾ (OPEC): സംയുക്ത ലാഭ പരമാവധിയാക്കൽ; പക്ഷേ ചീറ്റിംഗ് ഇൻസെന്റീവും ആന്റിട്രസ്റ്റ് നിയമങ്ങളും തകർച്ചയുണ്ടാക്കുന്നു.",
+              "കൂട്ട്‌നോ & സ്റ്റാക്കൽബെർഗ്: അളവ് മത്സരത്തിലെ റിയാക്ഷൻ കർവുകൾ; ബെർട്രാൻഡ് മോഡലിൽ വില മത്സരം കാരണം P = MC.",
+              "സ്വീസി കിങ്ക്ഡ് ഡിമാൻഡ്: വില കൂട്ടിയാൽ പിന്തുടരില്ല, കുറച്ചാൽ പിന്തുടരും — അതിനാൽ ഒളിഗോപൊളിയിൽ വില സ്ഥിരത (Price Rigidity) ഉണ്ടാകുന്നു."
+            ],
+            "examTip": "ഏകാധിപത്യ മത്സരത്തിലെ ദീർഘകാല എക്സസ് കപ്പാസിറ്റിയും, കൂട്ട്‌നോ റിയാക്ഷൻ കർവുകൾ, സ്വീസിയുടെ കിങ്ക്ഡ് ഡിമാൻഡ് വക്രം എന്നിവയുടെ ഡയഗ്രങ്ങൾ പരീക്ഷയ്ക്ക് ഉറപ്പായും വരയ്ക്കുക."
           }
         ]
       },
       {
-        "moduleName": "MODULE 05: FACTOR PRICING & MARKET FAILURE",
+        "moduleName": "MODULE 05: GLOBAL MARKET STRUCTURES & DECISION MAKING (OPEN ENDED)",
         "videos": [
           {
-            "chapterNumber": "Unit 13",
-            "title": "Marginal Productivity Theory of Distribution",
-            "chapter": "Rent (Ricardian & Modern), Wages, Interest & Profit Theories",
-            "duration": "22",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Unit 14",
-            "title": "Externalities, Public Goods & Market Failure",
-            "chapter": "Pigouvian Taxes, Coase Theorem & Social Optimum",
-            "duration": "20",
-            "youtubeId": ""
+            "chapterNumber": "Unit 23",
+            "title": "ആഗോള വിപണി ഘടനകളും തീരുമാനമെടുക്കലും (Global Market Structures & Decision Making)",
+            "chapter": "Academic Hub Special · ഡിജിറ്റൽ പ്ലാറ്റ്‌ഫോമുകൾ, നെറ്റ്‌വർക്ക് ഇഫക്റ്റുകൾ, CCI ആന്റിട്രസ്റ്റ്, കേസ് സ്റ്റഡീസ്",
+            "duration": "06:36",
+            "youtubeId": "_HJ6ezj1khA",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/_HJ6ezj1khA/hqdefault.jpg",
+            "language": "Malayalam",
+            "studyPoints": [
+              "4 വിപണി ഘടനകളുടെ താരതമ്യം: പൂർണ്ണമത്സരം മുതൽ കുത്തക വരെ സ്ഥാപനങ്ങളുടെ എണ്ണം, ഉൽപ്പന്ന സ്വഭാവം, വില നിയന്ത്രണം, ദീർഘകാല ലാഭം.",
+              "ഡിജിറ്റൽ പ്ലാറ്റ്‌ഫോമുകൾ: Two-Sided Markets (Google, Amazon, Uber), Network Externalities, Winner-Take-Most, Near-Zero Marginal Cost (MC ≈ 0).",
+              "കേസ് സ്റ്റഡീസ്: എയർലൈൻ ഡൈനാമിക് പ്രൈസിംഗ് & കണ്ടസ്റ്റബിൾ വിപണികൾ (IndiGo/Ryanair), ഫാർമ പേറ്റന്റ് ക്ലിഫ്, ഒപെക് ക്വാട്ടകൾ, ടെലികോം സ്പെക്ട്രം.",
+              "കുത്തക ദുരുപയോഗം: പ്രിഡേറ്ററി പ്രൈസിംഗ് (P < MC), ടൈയിംഗ്-ബണ്ടിലിംഗ്, ഹോറിസോണ്ടൽ മെർജറുകളിലെ HHI പരിശോധന.",
+              "ആഗോള ആന്റിട്രസ്റ്റ് നയങ്ങൾ: ഇന്ത്യയുടെ CCI (Competition Act 2002), അമേരിക്കയിലെ FTC/DoJ, യൂറോപ്യൻ യൂണിയൻ DMA, കാർട്ടൽ ലീനിയൻസി നയങ്ങൾ."
+            ],
+            "examTip": "നാല് വിപണി ഘടനകളുടെ 7-മാനദണ്ഡ താരതമ്യ പട്ടികയും, ഡിജിറ്റൽ പ്ലാറ്റ്‌ഫോമുകളിലെ നെറ്റ്‌വർക്ക് എക്സ്റ്റേണാലിറ്റികളും, ഇന്ത്യയിലെ CCI-യുടെ പങ്കും പരീക്ഷയ്ക്ക് ഉറപ്പായും പഠിക്കുക."
           }
         ]
       }
     ],
-    "totalVideos": 16
+    "totalVideos": 21
   },
   "arabic": {
     "name": "Arabic",
@@ -2707,61 +2797,64 @@ window.VOICE_EXPLANATIONS_DATA = {
     "name": "Mathematics",
     "badge": "📐",
     "iconClass": "icon-blue",
-    "tag": "MDC 1 / BA Sociology / FYUGP",
+    "tag": "MDC 1 / BA Sociology",
     "modules": [
       {
         "moduleName": "MODULE 01: FUNDAMENTALS OF ARITHMETIC",
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "Number System & Properties of Numbers",
-            "chapter": "Divisibility Rules, Prime Numbers & Real Numbers",
-            "duration": "22:00",
-            "thumbnail": "math_ch01_production/thumbnails/Math_Ch01_Thumbnail.png",
-            "youtubeId": "",
-            "videoUrl": "math_ch01_production/videos/Math_Mod1_Ch01_Number_System_Masterclass.mp4",
+            "title": "സംഖ്യാ സമ്പ്രദായം (Number System & Properties of Numbers)",
+            "chapter": "Academic Hub Special · പ്ലേസ് വാല്യൂ, അഭാജ്യ സംഖ്യകൾ, ഹരണ നിയമങ്ങൾ",
+            "duration": "07:53",
+            "youtubeId": "7ysFGq5TDmU",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/7ysFGq5TDmU/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Place Value vs. Face Value:</strong> ഒരു അക്കത്തിന്റെ മാറ്റമില്ലാത്ത യഥാർത്ഥ മൂല്യമാണ് മുഖവില (ഉദാ: 837218-ൽ 7-ന്റെ മുഖവില 7 ആണ്).",
-              "<strong>Classification of Number Sets:</strong> എണ്ണൽ സംഖ്യകൾ 1 മുതൽ തുടങ്ങുന്നു; 0 കൂടി ഉൾപ്പെടുന്നതാണ് അഖണ്ഡ സംഖ്യകൾ.",
-              "<strong>Essential Divisibility Shortcuts:</strong> അക്കങ്ങളുടെ തുക 3 അല്ലെങ്കിൽ 9 ന്റെ ഗുണിതമാണെങ്കിൽ ആ സംഖ്യ യഥാക്രമം 3, 9 എന്നിവ കൊണ്ട് പൂർണ്ണമായി ഹരിക്കാം.",
-              "<strong>Division Algorithm & Remainder Properties:</strong> ഭാജ്യം = (ഭാജകം × ഹരണഫലം) + ശിഷ്ടം; ശിഷ്ടം എപ്പോഴും ഭാജകത്തേക്കാൾ ചെറുതായിരിക്കും."
+              "സ്ഥാനവിലയും മുഖവിലയും: Place Value = Digit × 10ⁿ, Face Value മാറില്ല.",
+              "സംഖ്യാ ഗണങ്ങൾ: Natural (1,2..), Whole (0,1,2..), Integers, Rational (p/q, q≠0).",
+              "അഭാജ്യ സംഖ്യകൾ: 2 മാത്രമാണ് ഇരട്ട സംഖ്യയായ ഏക അഭാജ്യ സംഖ്യ; 1 അഭാജ്യവുമല്ല ഭാജ്യവുമല്ല.",
+              "സഹ-അഭാജ്യ സംഖ്യകൾ (Coprime): ഉ.സാ.ഘ (HCF) 1 വരുന്ന ജോഡികൾ (ഉദാ: 8, 15; 92, 85).",
+              "ഹരണ നിയമങ്ങൾ: 3/9 (അക്കങ്ങളുടെ തുക), 4/8 (അവസാന 2/3 അക്കങ്ങൾ), 11 (ഒറ്റ-ഇരട്ട സ്ഥാന വ്യത്യാസം = 0/11k)."
             ],
-            "examTip": "സ്ഥാനവിലയും ഹരണ നിയമങ്ങളും കൃത്യമായി മനസ്സിലാക്കുന്നത് കണക്കുകൂട്ടലുകൾ അതിവേഗത്തിൽ പൂർത്തിയാക്കാൻ സഹായിക്കുന്നു."
+            "examTip": "പരീക്ഷയ്ക്ക് 11-ന്റെ ഹരണ നിയമം, 100 വരെയുള്ള 25 അഭാജ്യ സംഖ്യകൾ, സ്ഥാനവില-മുഖവില വ്യത്യാസങ്ങൾ എന്നിവ സ്ഥിരമായി ചോദിക്കാറുണ്ട്."
           },
           {
             "chapterNumber": "Chapter 02",
-            "title": "Sequence and Series (AP & GP)",
-            "chapter": "nth term formula, Sum of n terms & Applications",
-            "duration": "25:00",
-            "thumbnail": "math_ch02_production/thumbnails/Math_Ch02_Thumbnail.png",
-            "youtubeId": "",
-            "videoUrl": "math_ch02_production/videos/Math_Mod1_Ch02_Sequence_Series_Masterclass.mp4",
+            "title": "സംഖ്യാ ശ്രേണികൾ (Sequence & Series: AP & GP)",
+            "chapter": "Academic Hub Special · സമാന്തര ശ്രേണി, ഗുണോത്തര ശ്രേണി, പരീക്ഷാ പാറ്റേണുകൾ",
+            "duration": "07:36",
+            "youtubeId": "wRbxHgD3vvM",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/wRbxHgD3vvM/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Arithmetic Progression (AP) Fundamentals:</strong> തൊട്ടടുത്ത പദങ്ങൾ തമ്മിലുള്ള വ്യത്യാസം തുല്യമായിരിക്കുന്ന ശ്രേണിയാണ് സമാന്തര ശ്രേണി (ഉദാ: 3, 7, 11, 15... ഇവിടെ a = 3, d = 4).",
-              "<strong>Geometric Progression (GP) Principles:</strong> ഓരോ പദത്തെയും ഒരു നിശ്ചിത സംഖ്യ 'r' കൊണ്ട് ഗുണിച്ചുണ്ടാക്കുന്ന ശ്രേണിയാണ് ഗുണോത്തര ശ്രേണി (ഉദാ: 2, 6, 18, 54... ഇവിടെ r = 3).",
-              "<strong>Square & Cube Sequence Patterns:</strong> സംഖ്യകളുടെ വർഗ്ഗങ്ങളോ (n²) വർഗ്ഗത്തോടൊപ്പം ഒരു നിശ്ചിത സംഖ്യ കൂട്ടിയതോ കുറച്ചതോ ആയ ശ്രേണികൾ.",
-              "<strong>Two-Tier / Difference of Differences Strategy:</strong> നേരിട്ട് ക്രമം കാണാൻ സാധിക്കാത്ത ശ്രേണികളിൽ, പദങ്ങൾ തമ്മിലുള്ള വ്യത്യാസങ്ങളുടെ വ്യത്യാസം കാണുമ്പോൾ സമാന്തര ശ്രേണി തെളിഞ്ഞുവരുന്നു."
+              "സമാന്തര ശ്രേണി (AP): പൊതുവ്യത്യാസം d = Tn − Tn−1; n-ാം പദം Tn = a + (n − 1)d.",
+              "സമാന്തര ശ്രേണി തുക: Sn = (n / 2) × [2a + (n − 1)d] അല്ലെങ്കിൽ (n / 2) × (ആദ്യപദം + അവസാനപദം).",
+              "ഗുണോത്തര ശ്രേണി (GP): പൊതു അനുപാതം r = Tn / Tn−1; n-ാം പദം Tn = a · rⁿ⁻¹.",
+              "വർഗ്ഗ-ഘന ശ്രേണികൾ: n², n² ± k, n³, n³ ± k എന്നീ പാറ്റേണുകൾ വേഗത്തിൽ തിരിച്ചറിയൽ.",
+              "വ്യത്യാസങ്ങളുടെ വ്യത്യാസം (Two-Tier Difference): ഒറ്റ നോട്ടത്തിൽ ക്രമം കാണാത്ത ശ്രേണികൾക്ക് രണ്ടാം നിര വ്യത്യാസം കാണുക."
             ],
-            "examTip": "ശ്രേണിയിലെ അടുത്തടുത്ത പദങ്ങൾ തമ്മിലുള്ള വ്യത്യാസം ആദ്യം കണ്ടെത്തുക; മിക്ക പരീക്ഷാ ചോദ്യങ്ങളും ഈ രീതിയിലൂടെ എളുപ്പത്തിൽ പരിഹരിക്കാം."
+            "examTip": "പരീക്ഷയ്ക്ക് സമാന്തര ശ്രേണിയുടെ n-ാം പദവും തുകയും കാണുന്ന ചോദ്യങ്ങളും, വിട്ടുപോയതോ തെറ്റായതോ ആയ സംഖ്യ കണ്ടെത്തുന്ന ശ്രേണി ചോദ്യങ്ങളും കൃത്യമായി പരിശീലിക്കുക."
           },
           {
             "chapterNumber": "Chapter 03",
-            "title": "Fractions, Decimals and Rational Numbers",
-            "chapter": "Fraction Operations & Recurring Decimals",
-            "duration": "18:00",
-            "thumbnail": "math_ch03_production/thumbnails/Math_Ch03_Thumbnail.png",
-            "youtubeId": "",
-            "videoUrl": "math_ch03_production/videos/Math_Mod1_Ch03_Fractions_Decimals_Masterclass.mp4",
+            "title": "ഭിന്നസംഖ്യകളും ദശാംശങ്ങളും (Fractions, Decimals & Rational Numbers)",
+            "chapter": "Academic Hub Special · ക്രമഭിന്നം, ആവർത്തന ദശാംശം, ക്രോസ് ഗുണനം",
+            "duration": "06:32",
+            "youtubeId": "e6otJTrEVtw",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/e6otJTrEVtw/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Taxonomy of Fraction Types:</strong> അംശം ഛേദത്തേക്കാൾ ചെറുതായ ഭിന്നസംഖ്യകളാണ് ക്രമഭിന്നങ്ങൾ (ഉദാ: 2/3, 5/8); ഇതിന്റെ വില എപ്പോഴും 1-ൽ കുറവായിരിക്കും.",
-              "<strong>Arithmetic Operations on Fractions:</strong> സങ്കലനത്തിനും വ്യവകലനത്തിനും ഛേദങ്ങളുടെ ല.സാ.ഗു കണ്ട് ഛേദം തുല്യമാക്കണം.",
-              "<strong>Converting Recurring Decimals to Fractions:</strong> പൂർണ്ണ ആവർത്തന ദശാംശങ്ങളെ 9, 99 എന്നീ സംഖ്യകൾ ഛേദമാക്കി മാറ്റാം (0.777... = 7/9; 0.2323... = 23/99).",
-              "<strong>Rapid Fraction Comparison:</strong> 5/7, 7/9 താരതമ്യം ചെയ്യാൻ: 5 × 9 = 45, 7 × 7 = 49; 45 < 49 ആയതിനാൽ 5/7 < 7/9."
+              "ഭിന്നസംഖ്യാ രൂപങ്ങൾ: ക്രമഭിന്നം (Proper: p < q), വിഷമഭിന്നം (Improper: p ≥ q), മിശ്രഭിന്നം.",
+              "ഗണിതക്രിയകൾ: ല.സാ.ഗു (LCM) വഴി കൂട്ടലും കുറയ്ക്കലും; ഹരണം = വ്യുൽക്രമം (Reciprocal) കൊണ്ട് ഗുണിക്കൽ.",
+              "പൂർണ്ണ ആവർത്തന ദശാംശം: 0.ā = a/9, 0.ab̄ = ab/99 (ഉദാ: 0.333... = 3/9 = 1/3).",
+              "ഭാഗിക ആവർത്തന ദശാംശം: 0.ab̄ = (ab − a)/90 (ഉദാ: 0.1666... = (16−1)/90 = 15/90 = 1/6).",
+              "ക്രോസ് ഗുണന താരതമ്യം: a/b > c/d എങ്കിൽ a·d > b·c (ല.സാ.ഗു കാണാതെ അതിവേഗ താരതമ്യം)."
             ],
-            "examTip": "ഭിന്നസംഖ്യകളെ ആരോഹണ-അവരോഹണ ക്രമത്തിൽ എഴുതാൻ ല.സാ.ഗു കാണാതെ ക്രോസ് ഗുണനം വഴി അതിവേഗം ഉത്തരം കണ്ടെത്താം."
+            "examTip": "ആവർത്തന ദശാംശങ്ങളെ സാധാരണ ഭിന്നസംഖ്യകളാക്കി മാറ്റുന്ന സൂത്രവാക്യവും (9, 99, 90 നിയമങ്ങൾ), ക്രോസ് ഗുണനം വഴിയുള്ള ആരോഹണ-അവരോഹണ ക്രമീകരണവും പരീക്ഷയ്ക്ക് ഉറപ്പായും പഠിക്കുക."
           }
         ]
       },
@@ -2770,51 +2863,57 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 04",
-            "title": "HCF and LCM Methods & Shortcut Techniques",
-            "chapter": "Prime Factorization, Division Method & Word Problems",
-            "duration": "24:00",
-            "thumbnail": "math_ch04_production/thumbnails/Math_Ch04_Thumbnail.png",
-            "youtubeId": "",
-            "videoUrl": "math_ch04_production/videos/Math_Mod2_Ch04_HCF_and_LCM_Masterclass.mp4",
+            "title": "ഉ.സാ.ഘ & ല.സാ.ഗു (HCF and LCM — Methods, Rules & Word Problems)",
+            "chapter": "Academic Hub Special · പ്രൈം ഫാക്ടറൈസേഷൻ, ഭിന്നസംഖ്യകൾ, a×b = HCF×LCM നിയമം",
+            "duration": "06:55",
+            "youtubeId": "mmtgfQJFbew",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/mmtgfQJFbew/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>HCF (Highest Common Factor) Methods:</strong> പ്രൈം ഫാക്ടറൈസേഷൻ രീതി: സംഖ്യകളെ അഭാജ്യ ഘടകങ്ങളുടെ ഘാതങ്ങളായി എഴുതി ഏറ്റവും ചെറിയ കൃതികളുടെ ഗുണനഫലം കാണുന്നു.",
-              "<strong>LCM (Least Common Multiple) Methods:</strong> എല്ലാ അഭാജ്യ ഘടകങ്ങളുടെയും ഏറ്റവും വലിയ കൃതികൾ തമ്മിൽ ഗുണിച്ചാൽ ല.സാ.ഗു ലഭിക്കും.",
-              "<strong>HCF and LCM of Fractions:</strong> ഭിന്നസംഖ്യകളുടെ ഉ.സാ.ഘ = അംശങ്ങളുടെ ഉ.സാ.ഘ / ഛേദങ്ങളുടെ ല.സാ.ഗു.",
-              "<strong>Real-World Applications of LCM & HCF:</strong> വ്യത്യസ്ത ഇടവേളകളിൽ അടിക്കുന്ന മണികൾ ഒന്നിച്ച് അടിക്കുന്ന സമയം കണ്ടെത്താൻ ല.സാ.ഗു ഉപയോഗിക്കുന്നു."
+              "പ്രൊഡക്റ്റ് റൂൾ: രണ്ട് സംഖ്യകളുടെ ഗുണനഫലം a × b = HCF × LCM.",
+              "സഹ-അഭാജ്യ സംഖ്യകൾ (Coprime): ഉ.സാ.ഘ = 1; ല.സാ.ഗു = സംഖ്യകളുടെ ഗുണനഫലം.",
+              "ഭിന്നസംഖ്യകളുടെ ഉ.സാ.ഘ: HCF(അംശങ്ങൾ) / LCM(ഛേദങ്ങൾ); ല.സാ.ഗു: LCM(അംശങ്ങൾ) / HCF(ഛേദങ്ങൾ).",
+              "മണി അടിക്കുന്ന/ലൈറ്റ് തെളിയുന്ന ഇടവേള ചോദ്യങ്ങൾക്ക് LCM; ഏറ്റവും വലിയ അളവുപാത്രം കാണാൻ HCF.",
+              "പ്രൈം ഫാക്ടറൈസേഷനിൽ പൊതു ഘടകങ്ങളുടെ ഏറ്റവും ചെറിയ കൃതി HCF-ഉം, എല്ലാ ഘടകങ്ങളുടെയും വലിയ കൃതി LCM-ഉം."
             ],
-            "examTip": "ഓർക്കുക: രണ്ട് സംഖ്യകളുടെ ഗുണനഫലം എപ്പോഴും അവയുടെ ഉ.സാ.ഘയുടെയും ല.സാ.ഗുവിന്റെയും ഗുണനഫലത്തിന് തുല്യമായിരിക്കും (a × b = HCF × LCM)."
+            "examTip": "പരീക്ഷയിൽ ഭിന്നസംഖ്യകളുടെ HCF/LCM സൂത്രവാക്യങ്ങൾ പരസ്പരം മാറിപ്പോകരുത്: ഉ.സാ.ഘ കാണുമ്പോൾ അംശങ്ങളുടെ ഉ.സാ.ഘ മുകളിലും ല.സാ.ഗു താഴെയുമാണ്."
           },
           {
             "chapterNumber": "Chapter 05",
-            "title": "Square Roots, Cube Roots & Laws of Indices",
-            "chapter": "Radicals, Exponential Identities & Surds",
-            "duration": "20:00",
-            "thumbnail": "math_ch05_production/thumbnails/Math_Ch05_Thumbnail.png",
-            "youtubeId": "",
-            "videoUrl": "math_ch05_production/videos/Math_Mod2_Ch05_Square_Cube_Root_Masterclass.mp4",
+            "title": "വർഗ്ഗമൂലവും ഘനമൂലവും (Square Root & Cube Root — Tricks & Properties)",
+            "chapter": "Academic Hub Special · പൂർണ്ണ വർഗ്ഗ നിയമങ്ങൾ, ദശാംശ ഷോർട്ട്കട്ട്, ഘനമൂലം",
+            "duration": "06:49",
+            "youtubeId": "9R0jxumt78Q",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/9R0jxumt78Q/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Properties of Perfect Squares:</strong> ഇരട്ട സംഖ്യയുടെ വർഗ്ഗം ഇരട്ട സംഖ്യയും, ഒറ്റ സംഖ്യയുടെ വർഗ്ഗം ഒറ്റ സംഖ്യയുമായിരിക്കും.",
-              "<strong>Methods for Extracting Square Roots:</strong> അഭാജ്യ ഘടകങ്ങളെ ഈരണ്ടെണ്ണത്തിന്റെ ജോടികളാക്കി മാറ്റി ഗുണിക്കുന്നു (√576 = 24).",
-              "<strong>Cube and Cube Roots:</strong> ഒരു സംഖ്യയെ മൂന്ന് തവണ പരസ്പരം ഗുണിച്ചാൽ ഘനവും, മൂന്നെണ്ണത്തിന്റെ ഗ്രൂപ്പുകളിൽ നിന്ന് ഒന്ന് എടുത്താൽ ഘനമൂലവും ലഭിക്കും."
+              "ഒരു പൂർണ്ണ വർഗ്ഗ സംഖ്യ ഒരിക്കലും 2, 3, 7, 8 എന്നീ അക്കങ്ങളിലോ, ഒറ്റയെണ്ണം പൂജ്യങ്ങളിലോ അവസാനിക്കില്ല.",
+              "ഇരട്ട സംഖ്യയുടെ വർഗ്ഗം എപ്പോഴും ഇരട്ട സംഖ്യയും, ഒറ്റ സംഖ്യയുടെ വർഗ്ഗം എപ്പോഴും ഒറ്റ സംഖ്യയുമാണ്.",
+              "പ്രൈം ഫാക്ടറൈസേഷൻ: വർഗ്ഗമൂലത്തിൽ ഈരണ്ട് ജോടികളും (pairs), ഘനമൂലത്തിൽ മൂന്ന് ഗ്രൂപ്പുകളും (triplets) എടുക്കുന്നു.",
+              "ദശാംശ വർഗ്ഗമൂലം: ദശാംശ സ്ഥാനങ്ങൾ ഇരട്ട എണ്ണമാണെങ്കിൽ, ഉത്തരത്തിൽ ദശാംശ സ്ഥാനം കൃത്യം പകുതിയാകും (√0.0009 = 0.03).",
+              "നെഗറ്റീവ് ഘനമൂലം: ∛(−x) = −∛x, √(a × b) = √a × √b."
             ],
-            "examTip": "ഒറ്റയുടെ സ്ഥാനത്തെ അക്കം നോക്കി ഉത്തരം കണ്ടെത്താം: 2, 3, 7, 8 എന്നിവയിൽ അവസാനിക്കുന്ന സംഖ്യകൾ ഒരിക്കലും പൂർണ്ണ വർഗ്ഗമാകില്ല."
+            "examTip": "പരീക്ഷയ്ക്ക് 1² മുതൽ 20² വരെയുള്ള വർഗ്ഗങ്ങളും 1³ മുതൽ 10³ വരെയുള്ള ഘനങ്ങളും കൂടാതെ 2, 3, 7, 8 അവസാന അക്ക നിയമവും (Last Digit Rule) നേരിട്ട് ഉത്തരത്തിലെത്താൻ സഹായിക്കും."
           },
           {
             "chapterNumber": "Chapter 06",
-            "title": "Simplification & BODMAS Rule Applications",
-            "chapter": "Complex Expressions, Brackets & Order of Operations",
-            "duration": "22:00",
-            "thumbnail": "math_ch06_production/thumbnails/Math_Ch06_Thumbnail.png",
-            "youtubeId": "",
-            "videoUrl": "math_ch06_production/videos/Math_Mod2_Ch06_Simplification_VBODMAS_Masterclass.mp4",
+            "title": "ലഘൂകരണവും VBODMAS നിയമവും (Simplifications, Operator Priority & Identities)",
+            "chapter": "Academic Hub Special · വിൻകുലം, ബ്രാക്കറ്റുകൾ, 'Of' ഓപ്പറേറ്റർ, ബീജഗണിത സമവാക്യങ്ങൾ",
+            "duration": "06:40",
+            "youtubeId": "zqC-NRyKEvo",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/zqC-NRyKEvo/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>The VBODMAS Precedence Rule:</strong> V = വിൻകുലം (സംഖ്യകൾക്ക് മുകളിലുള്ള ബാർ വര ആദ്യം ചെയ്യണം).",
-              "<strong>Algebraic Shortcuts for Simplification:</strong> (a + b)² = a² + 2ab + b²; (a - b)² = a² - 2ab + b²."
+              "ക്രിയകളുടെ കൃത്യമായ മുൻഗണനാ ക്രമം: V (വിൻകുലം) → B (ബ്രാക്കറ്റുകൾ) → O (Of) → D (ഹരണം) → M (ഗുണനം) → A (സങ്കലനം) → S (വ്യവകലനം).",
+              "ബ്രാക്കറ്റുകൾ ഉള്ളിൽ നിന്ന് പുറത്തേക്ക്: ആദ്യം ( ), പിന്നീട് { }, അവസാനം [ ].",
+              "'Of' ഓപ്പറേറ്ററിന് സാധാരണ ഹരണത്തേക്കാൾ (Division) ഉയർന്ന മുൻഗണനയുണ്ട്: 16 ÷ 4 of 2 = 16 ÷ 8 = 2.",
+              "ഹരണവും (D) ഗുണനവും (M) ഒരേ മുൻഗണനയുള്ളതിനാൽ ഇടത്തു നിന്ന് വലത്തോട്ട് ചെയ്യുക: 8 ÷ 2 × 4 = 4 × 4 = 16.",
+              "പ്രധാന ബീജഗണിത സൂത്രവാക്യങ്ങൾ: a² − b² = (a − b)(a + b), (a ± b)² = a² ± 2ab + b²."
             ],
-            "examTip": "ക്രിയകളുടെ മുൻഗണനാ ക്രമം തെറ്റിക്കരുത്: ഹരണത്തിനും ഗുണനത്തിനും മുൻപ് ബ്രാക്കറ്റുകളും 'Of' ക്രിയയും ചെയ്തു തീർക്കണം."
+            "examTip": "പരീക്ഷയ്ക്ക് ഏറ്റവും കൂടുതൽ ആളുകൾക്ക് തെറ്റുന്നത് 'Of' vs Division-ഉം, 8 ÷ 2 × (2+2) പോലെ ഇടത്തുനിന്ന് വലത്തോട്ടുള്ള D/M മുൻഗണനയുമാണ് — ഇവ പ്രത്യേകം ശ്രദ്ധിക്കുക."
           }
         ]
       },
@@ -2823,64 +2922,75 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 07",
-            "title": "Averages & Weighted Mean Formulations",
-            "chapter": "Arithmetic Mean, Properties & Exam Shortcuts",
-            "duration": "20:00",
-            "thumbnail": "math_ch07_production/thumbnails/Math_Ch07_Thumbnail.png",
-            "youtubeId": "",
+            "title": "ശരാശരി (Average — Natural Numbers, Replaced Weight & Harmonic Speed)",
+            "chapter": "Academic Hub Special · തുടർച്ചയായ സംഖ്യകൾ, ശരാശരി വേഗത 2xy/(x+y), മാറുന്ന അംഗങ്ങൾ",
+            "duration": "06:51",
+            "youtubeId": "tD3-kq_FFvA",
             "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/tD3-kq_FFvA/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Core Formula & Consecutive Properties:</strong> ശരാശരി = തുക / എണ്ണം => തുക = ശരാശരി × എണ്ണം.",
-              "<strong>Even, Odd, and Consecutive Series Shortcuts:</strong> ആദ്യത്തെ n ഇരട്ട സംഖ്യകളുടെ ശരാശരി = n + 1.",
-              "<strong>Speed & Replacement Problems:</strong> തുല്യ ദൂരം x, y വേഗതകളിൽ സഞ്ചരിച്ചാൽ ശരാശരി വേഗത = 2xy / (x + y)."
+              "അടിസ്ഥാന സൂത്രവാക്യം: ശരാശരി = ആകെ തുക / എണ്ണം ⇒ തുക = ശരാശരി × എണ്ണം.",
+              "ആദ്യത്തെ n എണ്ണൽ സംഖ്യകളുടെ ശരാശരി = (n+1)/2; n ഇരട്ട സംഖ്യകൾ = (n+1); n ഒറ്റ സംഖ്യകൾ = n.",
+              "സമാന്തര ശ്രേണിയിലെ (Consecutive Numbers) ശരാശരി = (ആദ്യപദം + അവസാനപദം) / 2.",
+              "തുല്യ ദൂരം x, y വേഗതകളിൽ സഞ്ചരിച്ചാൽ ശരാശരി വേഗത = 2xy / (x + y).",
+              "പുതിയ ആളുടെ ഭാരം = പോയ ആളുടെ ഭാരം ± (ആകെ എണ്ണം × ശരാശരിയിലെ മാറ്റം)."
             ],
-            "examTip": "സമാന്തര ശ്രേണിയുടെ ശരാശരി കാണാൻ എല്ലാ സംഖ്യകളും കൂട്ടേണ്ടതില്ല: ആദ്യത്തെയും അവസാനത്തെയും സംഖ്യകളുടെ ശരാശരി കണ്ടാൽ മതിയാകും."
+            "examTip": "ശരാശരി വേഗതയ്ക്ക് (x + y) / 2 എന്ന സാധാരണ ശരാശരി എടുക്കരുത്! തുല്യ ദൂരത്തിന് എപ്പോഴും 2xy / (x + y) എന്ന ഹാർമോണിക് ശരാശരിയാണ് ഉപയോഗിക്കേണ്ടത്."
           },
           {
             "chapterNumber": "Chapter 08",
-            "title": "Ratio, Proportion & Variation",
-            "chapter": "Direct & Inverse Proportion, Mixture Problems",
-            "duration": "23:00",
-            "thumbnail": "math_ch08_production/thumbnails/Math_Ch08_Thumbnail.png",
-            "youtubeId": "",
+            "title": "അംശബന്ധവും അനുപാതവും (Ratio & Proportion — Mean, Third & Fourth Proportional)",
+            "chapter": "Academic Hub Special · സംയുക്ത അനുപാതം, മധ്യ അനുപാതം √ab, നാലാം അനുപാതം",
+            "duration": "06:21",
+            "youtubeId": "WrEqemI9Zas",
             "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/WrEqemI9Zas/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Ratio Properties and Compounding:</strong> അംശബന്ധത്തിലെ രണ്ട് സംഖ്യകളെയും ഒരേ സംഖ്യ കൊണ്ട് ഗുണിച്ചാലോ ഹരിച്ചാലോ അനുപാതത്തിന് മാറ്റം വരില്ല.",
-              "<strong>Types of Proportional Quantities:</strong> a, b, c എന്നിവയുടെ നാലാം അനുപാതം d = (b × c) / a."
+              "അടിസ്ഥാന അനുപാത നിയമം: a : b :: c : d ആണെങ്കിൽ അഗ്രപദങ്ങളുടെ ഗുണനഫലം (a × d) = മധ്യപദങ്ങളുടെ ഗുണനഫലം (b × c).",
+              "മധ്യ അനുപാതം (Mean Proportional): a, b എന്നിവയുടെ മധ്യ അനുപാതം x = √(a × b).",
+              "നാലാം അനുപാതം (Fourth Proportional): d = (b × c) / a; മൂന്നാം അനുപാതം (Third Proportional): c = b² / a.",
+              "സംയുക്ത അംശബന്ധം (Compounded Ratio): (a:b), (c:d) എന്നിവയുടെ സംയുക്തം = (a·c) : (b·d).",
+              "A:B ഉം B:C ഉം ചേർത്ത് A:B:C കണ്ടെത്താൻ പൊതുപദമായ B-യെ തുല്യമാക്കുക."
             ],
-            "examTip": "അനുപാത ചോദ്യങ്ങളിൽ അഗ്രപദങ്ങളുടെ ഗുണനഫലം = മധ്യപദങ്ങളുടെ ഗുണനഫലം (a × d = b × c) എന്ന സമവാക്യം ഉപയോഗിച്ച് വേഗത്തിൽ ഉത്തരം കണ്ടെത്താം."
+            "examTip": "പരീക്ഷയ്ക്ക് Third Proportional (b²/a), Fourth Proportional (bc/a), Mean Proportional (√ab) എന്നിവ തമ്മിൽ മാറിപ്പോകാതെ കൃത്യമായി വേർതിരിച്ച് പഠിക്കുക."
           },
           {
             "chapterNumber": "Chapter 09",
-            "title": "Problems on Ages & Partnerships",
-            "chapter": "Linear Equations, Ratio Sharing of Profits",
-            "duration": "22:00",
-            "thumbnail": "math_ch09_production/thumbnails/Math_Ch09_Thumbnail.png",
-            "youtubeId": "",
+            "title": "പ്രായാധിഷ്ഠിത ചോദ്യങ്ങൾ (Problems Based on Ages — Linear & Ratio Methods)",
+            "chapter": "Academic Hub Special · മുൻപ് (x−n), ശേഷം (x+n), മാറ്റമില്ലാത്ത വയസ്സു വ്യത്യാസം",
+            "duration": "06:28",
+            "youtubeId": "1kvqzSGO8os",
             "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/1kvqzSGO8os/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Algebraic Modeling of Chronological Age:</strong> ഇപ്പോഴത്തെ പ്രായത്തെ x എന്നോ അനുപാതമനുസരിച്ച് 3x, 4x എന്നോ എടുക്കുക.",
-              "<strong>Ratio-Based Age Transformations:</strong> ഇപ്പോഴത്തെ അനുപാതം a : b-യും t വർഷങ്ങൾക്ക് ശേഷം c : d-യും ആയാൽ: (ax + t) / (bx + t) = c / d."
+              "ഇപ്പോഴത്തെ പ്രായത്തെ എപ്പോഴും 'x' എന്നോ അനുപാത പ്രകാരം 'ax, bx' എന്നോ എടുക്കുക.",
+              "n വർഷം മുൻപ് = (x − n) വയസ്സ്; n വർഷങ്ങൾക്ക് ശേഷം = (x + n) വയസ്സ്.",
+              "രണ്ട് ആളുകളുടെ പ്രായങ്ങൾ തമ്മിലുള്ള വ്യത്യാസം (A − B) ഏത് കാലഘട്ടത്തിലും എപ്പോഴും സ്ഥിരമായിരിക്കും!",
+              "രണ്ട് കാലഘട്ടങ്ങളിലെ അനുപാതം a:b ഉം t വർഷം ശേഷം c:d ഉം ആയാൽ: (ax + t)/(bx + t) = c/d.",
+              "നിലവിലെ അനുപാതത്തിൽ നിന്നും ക്രോസ്-മൾട്ടിപ്ലിക്കേഷൻ അല്ലെങ്കിൽ യൂണിറ്റ് വ്യത്യാസ ഷോർട്ട്കട്ട് ഉപയോഗിച്ച് വേഗം ഉത്തരം കാണാം."
             ],
-            "examTip": "പ്രായവ്യത്യാസം എപ്പോഴും തുല്യമായിരിക്കും എന്ന തത്വം ഉപയോഗിച്ചാൽ വലിയ സമവാക്യങ്ങൾ നിർദ്ധാരണം ചെയ്യാതെ തന്നെ മനക്കണക്കായി ഉത്തരം കണ്ടെത്താം."
+            "examTip": "രണ്ട് പേരുടെ വയസ്സുകൾ തമ്മിലുള്ള വ്യത്യാസം ഒരിക്കലും മാറില്ല (Constant Difference)! ഈ തത്വം ഉപയോഗിച്ച് രണ്ട് അനുപാതങ്ങളിലെ വ്യത്യാസങ്ങൾ തുല്യമാക്കിയാൽ 'x' ഇല്ലാതെ തന്നെ സെക്കൻഡുകൾക്കുള്ളിൽ ഉത്തരം ലഭിക്കും."
           },
           {
             "chapterNumber": "Chapter 10",
-            "title": "Percentage Calculation & Base Conversions",
-            "chapter": "Successive Percentage Changes & Exam Techniques",
-            "duration": "24:00",
-            "thumbnail": "math_ch10_production/thumbnails/Math_Ch10_Thumbnail.png",
-            "youtubeId": "",
+            "title": "ശതമാനം (Percentages — Fraction Shortcuts, Successive % & Consumption Rule)",
+            "chapter": "Academic Hub Special · ഭിന്നസംഖ്യാ പട്ടിക, തുടർച്ചയായ ശതമാനം a+b+ab/100, ഉപഭോഗ നിയമം",
+            "duration": "06:13",
+            "youtubeId": "1DAnnifmf1E",
             "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/1DAnnifmf1E/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Fraction to Percentage Conversions:</strong> ഭിന്നസംഖ്യയെ ശതമാനമാക്കാൻ 100 കൊണ്ട് ഗുണിക്കുക (3/4 × 100 = 75%).",
-              "<strong>Successive Changes & Price-Consumption Balance:</strong> തുടർച്ചയായ രണ്ട് മാറ്റങ്ങളുടെ ആകെ ഫലം = a + b + ab/100 %."
+              "ഭിന്നസംഖ്യയെ ശതമാനമാക്കാൻ × 100 (ഉദാ: 3/8 = 37.5%); ശതമാനത്തെ ഭിന്നസംഖ്യയാക്കാൻ ÷ 100 (20% = 1/5).",
+              "തുടർച്ചയായ രണ്ട് ശതമാന മാറ്റങ്ങൾ (a%, b%): ആകെ മാറ്റം = a + b + (ab / 100) %.",
+              "തുല്യ ശതമാനം (+x%, −x%) കൂട്ടലും കുറയ്ക്കലും എപ്പോഴും (x² / 100)% നഷ്ടം (Decrease) നൽകും (+10%, −10% → −1%).",
+              "വില r% കൂടിയാൽ ചെലവ് കൂടാതിരിക്കാൻ ഉപഭോഗം കുറയ്ക്കേണ്ട ശതമാനം = [r / (100 + r)] × 100% (25% വർദ്ധനവ് → 20% കുറയ്ക്കണം).",
+              "ജനസംഖ്യ/മൂല്യത്തേയ്മാനം (Compounded Growth / Depreciation): A = P(1 ± R/100)ⁿ."
             ],
-            "examTip": "പ്രധാന ഭിന്നസംഖ്യാ ശതമാനങ്ങൾ മനഃപാഠമാക്കുന്നത് കണക്കുകൂട്ടലുകളുടെ സമയം പകുതിയായി കുറയ്ക്കുന്നു."
+            "examTip": "1/2 = 50% മുതൽ 1/12 = 8⅓% വരെയുള്ള ഭിന്നസംഖ്യ-ശതമാന പട്ടികയും, തുടർച്ചയായ മാറ്റങ്ങൾക്കുള്ള a + b + (ab/100) സൂത്രവാക്യവും മൊഡ്യൂൾ 04 ലാഭ-നഷ്ട-പലിശ അധ്യായങ്ങളുടെയും നട്ടെല്ലാണ്!"
           }
         ]
       },
@@ -2889,67 +2999,80 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 11",
-            "title": "Profit and Loss & Marked Price Formulae",
-            "chapter": "Cost Price, Selling Price & Margin Percentage",
-            "duration": "24:00",
-            "thumbnail": "math_ch11_production/thumbnails/Math_Ch11_Thumbnail.png",
-            "youtubeId": "",
+            "title": "ലാഭവും നഷ്ടവും (Profit & Loss — CP/SP, Equal SP Loss & False Weights)",
+            "chapter": "Academic Hub Special · വാങ്ങിയവില, വിറ്റവില, കള്ളത്തൂക്കം, (x/10)²% നഷ്ടനിയമം",
+            "duration": "06:09",
+            "youtubeId": "DXNCo6aP1MI",
             "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/DXNCo6aP1MI/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Basic Relationships and Valuation:</strong> വിറ്റവില = വാങ്ങിയവില × (100 + ലാഭം%)/100; വാങ്ങിയവില = വിറ്റവില × 100 / (100 + ലാഭം%).",
-              "<strong>Two-Article Equal SP with Equal Gain & Loss:</strong> രണ്ട് സാധനങ്ങൾ തുല്യ വിലയ്ക്ക് വിൽക്കുകയും ഒന്നിൽ x% ലാഭവും മറ്റേതിൽ x% നഷ്ടവും ഉണ്ടായാൽ, മൊത്തത്തിൽ എപ്പോഴും നഷ്ടമായിരിക്കും: നഷ്ടം% = (x/10)²%."
+              "ലാഭശതമാനവും നഷ്ടശതമാനവും എപ്പോഴും വാങ്ങിയവിലയെ (CP) അടിസ്ഥാനമാക്കിയാണ് കാണേണ്ടത്: Profit % = (Profit / CP) × 100.",
+              "SP = CP × (100 + Profit %)/100; CP = SP × 100 / (100 ± Profit/Loss %).",
+              "രണ്ട് സാധനങ്ങൾ ഒരേ വിറ്റവിലയ്ക്ക് (Same SP) വിൽക്കുമ്പോൾ ഒന്നിൽ x% ലാഭവും മറ്റേതിൽ x% നഷ്ടവും വന്നാൽ എപ്പോഴും നഷ്ടമായിരിക്കും: Loss % = (x / 10)² %.",
+              "15 പേനകളുടെ CP = 12 പേനകളുടെ SP ആയാൽ ലാഭം % = [(15 − 12) / 12] × 100 = 25%.",
+              "കള്ളത്തൂക്ക ലാഭം (False Weight Gain %) = [Error / (True Weight − Error)] × 100."
             ],
-            "examTip": "ലാഭനഷ്ട ശതമാനങ്ങൾ എപ്പോഴും വാങ്ങിയ വിലയുടെ (CP) അടിസ്ഥാനത്തിൽ മാത്രം കണക്കാക്കുക."
+            "examTip": "പരീക്ഷയ്ക്ക് എപ്പോഴും CP-യാണ് അടിസ്ഥാന വില (Base) എന്നോർക്കുക; എന്നാൽ കള്ളത്തൂക്ക (False Weight) ചോദ്യങ്ങളിൽ കച്ചവടക്കാരൻ കൊടുക്കുന്ന യഥാർത്ഥ ഭാരം (900 ഗ്രാം പോലെ) ആണ് ഛേദത്തിൽ വരേണ്ടത്!"
           },
           {
             "chapterNumber": "Chapter 12",
-            "title": "Discounts & Successive Discounts",
-            "chapter": "Trade Discount, Cash Discount & Equivalent Rates",
-            "duration": "19:00",
-            "thumbnail": "math_ch12_production/thumbnails/Math_Ch12_Thumbnail.png",
-            "youtubeId": "",
+            "title": "ഡിസ്കൗണ്ട് / വിലക്കിഴിവ് (Discount, Marked Price & Successive Discounts)",
+            "chapter": "Academic Hub Special · രേഖപ്പെടുത്തിയ വില (MP), തുടർച്ചയായ ഡിസ്കൗണ്ടുകൾ d₁+d₂−d₁d₂/100",
+            "duration": "05:47",
+            "youtubeId": "rWRWDJ75Epo",
             "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/rWRWDJ75Epo/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Marked Price & Selling Price Relationship:</strong> ഡിസ്കൗണ്ട് ശതമാനം എപ്പോഴും രേഖപ്പെടുത്തിയ വിലയെ (MP) അടിസ്ഥാനമാക്കിയാണ് കണക്കാക്കുന്നത്.",
-              "<strong>Successive Discounts Equivalent Rule:</strong> 20%, 10% എന്നീ തുടർച്ചയായ ഡിസ്കൗണ്ടുകൾക്ക് തുല്യമായ ഒറ്റ ഡിസ്കൗണ്ട് = 20 + 10 - 2 = 28%."
+              "ഡിസ്കൗണ്ട് ശതമാനം എപ്പോഴും രേഖപ്പെടുത്തിയ വിലയെ (Marked Price - MP) അടിസ്ഥാനമാക്കിയാണ് കണക്കാക്കുന്നത്: Discount % = [(MP − SP) / MP] × 100.",
+              "വിറ്റവില SP = MP × (100 − D%) / 100; തിരിച്ച് MP = SP × 100 / (100 − D%).",
+              "തുടർച്ചയായ രണ്ട് ഡിസ്കൗണ്ടുകൾ d₁%, d₂% നൽകിയാൽ തുല്യമായ ഒറ്റ ഡിസ്കൗണ്ട് = d₁ + d₂ − (d₁d₂ / 100) %.",
+              "ഉദാഹരണം: 20%, 10% തുടർ ഡിസ്കൗണ്ടുകൾ 30% അല്ല, 20 + 10 − 2 = 28% ആണ്!",
+              "ലാഭവും (CP അടിസ്ഥാനം) ഡിസ്കൗണ്ടും (MP അടിസ്ഥാനം) ബന്ധിപ്പിക്കുന്ന മാന്ത്രിക അനുപാതം: CP / MP = (100 − Discount %) / (100 + Profit %)."
             ],
-            "examTip": "തുടർച്ചയായ ഡിസ്കൗണ്ടുകൾ നേരിട്ട് കൂട്ടരുത് (20% + 10% എന്നത് 30% അല്ല, 28% ആണ്)."
+            "examTip": "CP / MP = (100 − D%) / (100 + P%) എന്ന ഈ ഒരൊറ്റ സൂത്രവാക്യം പഠിച്ചാൽ Marked Price, Cost Price, Profit% എന്നിവ ഒരുമിച്ച് വരുന്ന കഠിന ചോദ്യങ്ങൾ 5 സെക്കൻഡിൽ ചെയ്യാം!"
           },
           {
             "chapterNumber": "Chapter 13",
-            "title": "Simple Interest Formula & Applications",
-            "chapter": "Principal, Rate, Time & Amount Calculations",
-            "duration": "21:00",
-            "thumbnail": "math_ch13_production/thumbnails/Math_Ch13_Thumbnail.png",
-            "youtubeId": "",
+            "title": "സാധാരണ പലിശ (Simple Interest — PRT/100, Doubling Time & Rate Tricks)",
+            "chapter": "Academic Hub Special · മുതൽ (P), നിരക്ക് (R), സമയം (T), ഇരട്ടിക്കുന്ന സൂത്രവാക്യങ്ങൾ",
+            "duration": "05:40",
+            "youtubeId": "O5hYWUfEAJQ",
             "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/O5hYWUfEAJQ/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Simple Interest Formula & Parameter Isolation:</strong> SI = (P × R × T) / 100; സമയം T എപ്പോഴും വർഷങ്ങളിലായിരിക്കണം (മാസങ്ങളെ 12 കൊണ്ടും ദിവസങ്ങളെ 365 കൊണ്ടും ഹരിക്കുക).",
-              "<strong>Sum Multiplication Principles:</strong> ഒരു തുക T വർഷം കൊണ്ട് ഇരട്ടിയായാൽ പലിശ നിരക്ക് R = 100 / T % ആയിരിക്കും."
+              "അടിസ്ഥാന സൂത്രവാക്യം: SI = (P × R × T) / 100; ആകെ തുക (Amount) A = P + SI.",
+              "സമയം T എപ്പോഴും വർഷങ്ങളിലായിരിക്കണം: മാസങ്ങൾ = M / 12; ദിവസങ്ങൾ = D / 365.",
+              "വിപരീത സൂത്രങ്ങൾ: P = (100×SI)/(R×T), R = (100×SI)/(P×T), T = (100×SI)/(P×R).",
+              "സാധാരണ പലിശയിൽ ഒരു തുക T വർഷം കൊണ്ട് n മടങ്ങായാൽ: R × T = (n − 1) × 100!",
+              "ഇരട്ടിയാകാൻ (n=2): T = 100 / R; മൂന്നിരട്ടിയാകാൻ (n=3): R = 200 / T."
             ],
-            "examTip": "കണക്കുകൂട്ടുന്നതിന് മുൻപ് സമയം T വർഷങ്ങളിലാണെന്ന് ഉറപ്പുവരുത്തുക."
+            "examTip": "സാധാരണ പലിശയിൽ ഒരു തുക n മടങ്ങാകാൻ പലിശ (n−1) × P ആയിരിക്കും! അതിനാൽ R × T = (n − 1) × 100 എന്ന ഒറ്റ സൂത്രവാക്യം ഇരട്ടി, മൂന്നിരട്ടി, അഞ്ചിരട്ടി ചോദ്യങ്ങളെല്ലാം അനായാസം തീർക്കും."
           },
           {
             "chapterNumber": "Chapter 14",
-            "title": "Compound Interest & Annual Depreciation",
-            "chapter": "Compounding Frequencies & Growth Models",
-            "duration": "25:00",
-            "thumbnail": "math_ch14_production/thumbnails/Math_Ch14_Thumbnail.png",
-            "youtubeId": "",
+            "title": "കൂട്ടുപലിശയും മൂല്യത്തേയ്മാനവും (Compound Interest & CI–SI Difference)",
+            "chapter": "Academic Hub Special · വാർഷിക-അർദ്ധവാർഷിക-ത്രൈമാസിക കൂട്ടുപലിശ, 2-വർഷ CI−SI വ്യത്യാസം",
+            "duration": "05:19",
+            "youtubeId": "Vc5t74FIdU0",
             "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/Vc5t74FIdU0/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
-              "<strong>Compound Interest Formula & Frequency Adjustments:</strong> വാർഷിക കൂട്ടുപലിശ: A = P(1 + R/100)ᵀ; CI = A - P.",
-              "<strong>CI vs SI Differential Shortcuts:</strong> ആദ്യത്തെ 1 വർഷത്തേക്ക് സാധാരണ പലിശയും കൂട്ടുപലിശയും തുല്യമാണ് (വ്യത്യാസം = 0)."
+              "വാർഷിക കൂട്ടുപലിശ (Annual): A = P(1 + R/100)ᵀ; CI = A − P = P[(1 + R/100)ᵀ − 1].",
+              "അർദ്ധവാർഷികം (Half-Yearly): നിരക്ക് R/2, സമയം 2T; ത്രൈമാസികം (Quarterly): നിരക്ക് R/4, സമയം 4T.",
+              "ആദ്യ 1 വർഷത്തേക്ക് (വാർഷികം) സാധാരണ പലിശയും കൂട്ടുപലിശയും തുല്യമാണ് (വ്യത്യാസം = 0).",
+              "2 വർഷത്തെ CI − SI വ്യത്യാസം D = P(R / 100)²; 3 വർഷത്തെ വ്യത്യാസം D = P(R/100)² × (3 + R/100).",
+              "കൂട്ടുപലിശയിൽ ഒരു തുക T വർഷം കൊണ്ട് x മടങ്ങായാൽ, n×T വർഷം കൊണ്ട് xⁿ മടങ്ങാകും (4 വർഷത്തിൽ 2x → 12 വർഷത്തിൽ 8x!)."
             ],
-            "examTip": "2 വർഷത്തെ CI - SI വ്യത്യാസം കാണാൻ രണ്ട് പലിശകളും വെവ്വേറെ കാണാതെ D = P(R/100)² എന്ന സമവാക്യം നേരിട്ട് ഉപയോഗിക്കുക."
+            "examTip": "2 വർഷത്തെ CI − SI വ്യത്യാസ സൂത്രവാക്യം D = P(R/100)² പരീക്ഷകളിൽ ഏറ്റവും കൂടുതൽ ആവർത്തിക്കുന്ന ചോദ്യമാണ് — കൂടാതെ 4 വർഷത്തിൽ ഇരട്ടിയാകുന്ന തുക 12 വർഷത്തിൽ 8 മടങ്ങാകുന്ന എക്സ്പോണൻഷ്യൽ നിയമവും ഉറപ്പിക്കുക!"
           }
         ]
       }
     ],
-    "totalVideos": 6
+    "totalVideos": 0
   }
 };
+
