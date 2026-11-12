@@ -182,7 +182,7 @@ Rules:
 Ensure criterion marks add up to awardedMarks and never exceed 10.`;
 
       try {
-        const aiResponse = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent, {
+        const aiResponse = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent", {
           method: "POST",
           headers: { "Content-Type": "application/json", "x-goog-api-key": env.GEMINI_API_KEY },
           body: JSON.stringify({
