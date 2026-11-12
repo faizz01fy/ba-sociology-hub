@@ -3409,6 +3409,6 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 14
   }
 };
