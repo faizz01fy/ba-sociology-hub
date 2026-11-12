@@ -530,6 +530,8 @@ export default {
             const pauseAds = requiresConsent ? ' (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;' : '';
             el.prepend(`<script>window.HUB_IS_EUROPE = ${requiresConsent};${pauseAds}</script>`, { html: true });
             el.append('<script src="/consent-banner.js?v=20261110b"></script>', { html: true });
+            el.append('<style id="hub-protection-global">*,*::before,*::after{-webkit-touch-callout:none!important;-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important}@media print{html,body{display:none!important}}a[download],button[download],[download],.btn-download,.download,#downloadBtn,#saveBtn,.save{display:none!important}</style>', { html: true });
+
 
 
             // Standard AdSense script on all monetized content pages (loads published Google CMP message & ads)
@@ -555,6 +557,8 @@ export default {
               el.append('<button hidden id="hub-consent-reopen" type="button" aria-label="Privacy and Cookie Settings" style="position:fixed;bottom:12px;left:12px;z-index:9999;background:rgba(23,59,53,0.92);color:#fff;border:1px solid rgba(255,255,255,0.4);border-radius:6px;padding:6px 12px;font:500 12px system-ui,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.25);">🛡️ Privacy &amp; Cookie Settings</button>', { html: true });
             }
           el.append('<script src="/traffic-tracker.js?v=20261105_act2" defer></script>', { html: true });
+          el.append('<script id="hub-universal-protection-worker">(function(){window.addEventListener("contextmenu",function(e){e.preventDefault();e.stopPropagation();return false;},true);window.addEventListener("keydown",function(e){var k=e.key?e.key.toLowerCase():"";if((e.ctrlKey||e.metaKey)&&["s","p","u","c","a","x"].indexOf(k)!==-1){e.preventDefault();e.stopPropagation();return false;}if(e.key==="F12"||((e.ctrlKey||e.metaKey)&&e.shiftKey&&["i","j","c"].indexOf(k)!==-1)){e.preventDefault();e.stopPropagation();return false;}},true);window.addEventListener("dragstart",function(e){e.preventDefault();return false;},true);window.addEventListener("copy",function(e){e.preventDefault();return false;},true);document.addEventListener("contextmenu",function(e){e.preventDefault();return false;},true);})();</script>', { html: true });
+
           if (isOwner) {
             el.append('<style id="hub-owner-traffic-control-style">.hub-owner-traffic-control{position:fixed!important;right:max(12px,env(safe-area-inset-right,0px))!important;top:max(12px,env(safe-area-inset-top,0px))!important;z-index:2147483647!important;display:inline-flex!important;align-items:center;justify-content:center;gap:.45rem;min-height:48px;min-width:48px;max-width:calc(100vw - 24px);padding:12px 18px;box-sizing:border-box;border:2px solid #fff;border-radius:999px;background:#173b35;color:#fff!important;box-shadow:0 6px 24px rgba(0,0,0,.32);font:700 16px/1.2 system-ui,sans-serif;text-decoration:none!important;touch-action:manipulation;-webkit-tap-highlight-color:transparent}.hub-owner-traffic-control:hover,.hub-owner-traffic-control:focus-visible{background:#225c50;outline:3px solid #f3c969;outline-offset:2px}.hub-owner-traffic-control:active{transform:translateY(1px)}@media(max-width:600px){.hub-owner-traffic-control{min-height:52px;max-width:calc(100vw - 24px);padding:14px 18px;font-size:16px}}</style>', { html: true });
             el.append('<a class="hub-owner-traffic-control" href="/admin/traffic#radar" aria-label="Open private live visitors dashboard">Live visitors <b id="hub-live-count" aria-live="polite">…</b> <span aria-hidden="true">↗</span></a>', { html: true });
@@ -1023,7 +1027,36 @@ export class StudyHubChat {
 
 function parseDevice(ua, isSecMobile) {
   if (typeof ua !== "string") ua = "";
-  if (/Googlebot|Mediapartners-Google|AdsBot-Google/i.test(ua)) return "🤖 Google Bot";
+  // Search Engine & AI Crawler classification
+  if (/google-inspectiontool/i.test(ua)) return "🔍 Google InspectionTool";
+  if (/adsbot-google/i.test(ua)) return "📢 Google AdsBot";
+  if (/mediapartners-google/i.test(ua)) return "💰 Google AdSense Bot";
+  if (/googlebot-image/i.test(ua)) return "🖼️ Googlebot Image";
+  if (/googlebot-mobile/i.test(ua)) return "🤖 Googlebot Smartphone";
+  if (/googlebot/i.test(ua)) return "🤖 Googlebot";
+  if (/bingbot/i.test(ua)) return "🌐 Bingbot (Microsoft)";
+  if (/msnbot/i.test(ua)) return "🌐 MSN Bot";
+  if (/duckduckbot/i.test(ua)) return "🦆 DuckDuckBot";
+  if (/baiduspider/i.test(ua)) return "🔴 Baiduspider";
+  if (/yandexbot|yandex/i.test(ua)) return "🟡 YandexBot";
+  if (/sogou/i.test(ua)) return "🔍 Sogou Spider";
+  if (/applebot/i.test(ua)) return "🍏 Applebot";
+  if (/gptbot/i.test(ua)) return "🤖 OpenAI GPTBot";
+  if (/chatgpt-user/i.test(ua)) return "🤖 ChatGPT-User";
+  if (/oai-searchbot/i.test(ua)) return "🤖 OpenAI SearchBot";
+  if (/claudebot|claude-web|anthropic/i.test(ua)) return "🧠 ClaudeBot (Anthropic)";
+  if (/perplexitybot/i.test(ua)) return "🔮 PerplexityBot";
+  if (/cohere-ai/i.test(ua)) return "🧩 Cohere AI Crawler";
+  if (/meta-externalagent|facebookexternalhit/i.test(ua)) return "📘 Meta / FB Crawler";
+  if (/ahrefsbot/i.test(ua)) return "📊 AhrefsBot";
+  if (/semrushbot/i.test(ua)) return "📊 SemrushBot";
+  if (/dotbot/i.test(ua)) return "📊 Moz DotBot";
+  if (/screaming frog/i.test(ua)) return "🐸 Screaming Frog SEO";
+  if (/mj12bot/i.test(ua)) return "📊 Majestic-12 Bot";
+  if (/petalbot/i.test(ua)) return "🌸 PetalBot";
+  if (/bytespider/i.test(ua)) return "🎵 ByteSpider";
+  if (/bot|crawler|spider|slurp|archiver|transcoder/i.test(ua)) return "🤖 Web Crawler";
+  
   if (/Android/i.test(ua)) return "📱 Android";
   if (/iPhone/i.test(ua)) return "🍏 iPhone";
   if (/iPad/i.test(ua)) return "🍏 iPad";
@@ -1223,6 +1256,11 @@ function adminPage(authorized, initialData = null) {
     <span class="tab-icon">📊</span>
     <span class="tab-title">CONTENT LEADERBOARD</span>
     <span class="badge-pill purple" id="badge-total-pages">${popularPages.length}</span>
+  </button>
+  <button class="tab-btn" id="tab-btn-bots" type="button" role="tab" aria-selected="false">
+    <span class="tab-icon">🤖</span>
+    <span class="tab-title">BOTS VISIT</span>
+    <span class="badge-pill orange" id="badge-total-bots">0 BOTS</span>
   </button>
 </nav>
 
@@ -1504,6 +1542,75 @@ function adminPage(authorized, initialData = null) {
           </tr>
         </thead>
         <tbody id="popular-page-rows">
+          <!-- Rendered dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TAB 5: BOTS VISIT (SEARCH ENGINE & AI CRAWLER TELEMETRY) -->
+  <section class="station-card" id="panel-bots" hidden>
+    <div class="station-header">
+      <div>
+        <h2><span class="station-dot orange"></span> BOTS &amp; SEARCH ENGINE CRAWLER TELEMETRY</h2>
+        <p class="station-desc">Complete census of indexed search engines, AI models, and automated spiders visiting Academic Hub. Tracks yesterday's crawl rate, lifetime crawl count, and all sections visited.</p>
+      </div>
+      <div class="header-action-group">
+        <span class="date-chip" id="bots-date-chip">🤖 ACTIVE CRAWLERS</span>
+        <button class="btn btn-primary" id="btn-export-bots" type="button">📥 EXPORT BOTS CSV</button>
+      </div>
+    </div>
+
+    <!-- BOT SUMMARY KPI CARDS -->
+    <div class="yesterday-kpi-grid">
+      <div class="ykpi-card views">
+        <div class="ykpi-label">TOTAL BOT HITS</div>
+        <div class="ykpi-val"><span id="bot-kpi-hits">0</span> <small>CRAWLS</small></div>
+        <div class="ykpi-sub">Total page and section requests by bots</div>
+      </div>
+      <div class="ykpi-card visitors">
+        <div class="ykpi-label">DISTINCT BOT FAMILIES</div>
+        <div class="ykpi-val"><span id="bot-kpi-count">0</span> <small>CRAWLERS</small></div>
+        <div class="ykpi-sub">Googlebot, Bingbot, GPTBot, Claude, etc.</div>
+      </div>
+      <div class="ykpi-card ratio">
+        <div class="ykpi-label">SECTIONS CRAWLED</div>
+        <div class="ykpi-val"><span id="bot-kpi-sections">0</span> <small>SECTIONS</small></div>
+        <div class="ykpi-sub">Unique study materials indexed</div>
+      </div>
+      <div class="ykpi-card repeats">
+        <div class="ykpi-label">YESTERDAY CRAWLS</div>
+        <div class="ykpi-val"><span id="bot-kpi-yesterday">0</span> <small>YESTERDAY</small></div>
+        <div class="ykpi-sub">Bot ingress logged in yesterday's window</div>
+      </div>
+    </div>
+
+    <!-- FILTER & SEARCH BAR -->
+    <div class="filter-row">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="bots-search-input" placeholder="Search Bot Name, IP, Crawled Section, or ISP..." value="">
+      </div>
+      <div class="filter-group">
+        <span class="filter-label" id="bot-table-summary">0 Bot Crawlers Logged</span>
+      </div>
+    </div>
+
+    <!-- BOT ROSTER & CRAWL TRAIL TABLE -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th style="min-width:180px">Bot Name &amp; Identity</th>
+            <th style="min-width:100px">Total Crawls</th>
+            <th style="min-width:110px">Sections Crawled</th>
+            <th style="min-width:140px">Yesterday Visit</th>
+            <th style="min-width:140px">Until Last Visit</th>
+            <th style="min-width:140px">IP &amp; Network (ISP)</th>
+            <th style="min-width:240px">Sections &amp; URLs Crawled</th>
+          </tr>
+        </thead>
+        <tbody id="bot-visitor-rows">
           <!-- Rendered dynamically -->
         </tbody>
       </table>
@@ -1877,6 +1984,15 @@ body {
 .tab-btn#tab-btn-radar.active .badge-pill.emerald { background: #10b981; color: #032117; font-weight: 800; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6); }
 .tab-btn#tab-btn-content .badge-pill.purple { background: rgba(192, 132, 252, 0.18); color: #d8b4fe; border: 1px solid rgba(192, 132, 252, 0.35); }
 .tab-btn#tab-btn-content.active .badge-pill.purple { background: #c084fc; color: #200438; font-weight: 800; box-shadow: 0 0 12px rgba(192, 132, 252, 0.6); }
+.tab-btn#tab-btn-bots.active {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.24), rgba(194, 65, 12, 0.08));
+  color: #fff;
+  border-color: rgba(249, 115, 22, 0.55);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.tab-btn#tab-btn-bots .badge-pill.orange { background: rgba(249, 115, 22, 0.18); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.35); }
+.tab-btn#tab-btn-bots.active .badge-pill.orange { background: #f97316; color: #1c0a00; font-weight: 800; box-shadow: 0 0 12px rgba(249, 115, 22, 0.6); }
+.station-dot.orange { background: #f97316; box-shadow: 0 0 12px #f97316; }
 
 /* CONTROL ROOM PANELS */
 .control-panel { display: grid; gap: 24px; }
@@ -3278,7 +3394,259 @@ details.section-details summary:hover, details.popular-details summary:hover {
         try { renderTraffic(); } catch (e) { console.error('renderTraffic error:', e); }
         try { renderPopularPages(); } catch (e) { console.error('renderPopularPages error:', e); }
         try { renderYesterday(); } catch (e) { console.error('renderYesterday error:', e); }
+        try { renderBots(); } catch (e) { console.error('renderBots error:', e); }
       }
+
+    // BOTS & SEARCH CRAWLERS LOGIC
+    function identifyBotName(v) {
+      if (!v) return null;
+      const dev = v.device || '';
+      const isp = v.isp || '';
+      const ip = v.ip || '';
+
+      if (/Google InspectionTool/i.test(dev)) return 'Google InspectionTool';
+      if (/Google AdsBot/i.test(dev)) return 'Google AdsBot';
+      if (/Google AdSense/i.test(dev)) return 'Google AdSense Bot';
+      if (/Googlebot Image/i.test(dev)) return 'Googlebot Image';
+      if (/Googlebot Smartphone/i.test(dev)) return 'Googlebot Smartphone';
+      if (/Googlebot|Google Bot/i.test(dev)) return 'Googlebot';
+      if (/Bingbot/i.test(dev)) return 'Bingbot (Microsoft)';
+      if (/MSN Bot/i.test(dev)) return 'MSN Bot';
+      if (/DuckDuckBot/i.test(dev)) return 'DuckDuckBot';
+      if (/Baiduspider/i.test(dev)) return 'Baiduspider';
+      if (/YandexBot|Yandex/i.test(dev)) return 'YandexBot';
+      if (/Sogou/i.test(dev)) return 'Sogou Spider';
+      if (/Applebot/i.test(dev)) return 'Applebot';
+      if (/GPTBot/i.test(dev)) return 'OpenAI GPTBot';
+      if (/ChatGPT-User/i.test(dev)) return 'ChatGPT-User';
+      if (/SearchBot/i.test(dev)) return 'OpenAI SearchBot';
+      if (/ClaudeBot|Anthropic/i.test(dev)) return 'ClaudeBot (Anthropic)';
+      if (/PerplexityBot/i.test(dev)) return 'PerplexityBot';
+      if (/Cohere/i.test(dev)) return 'Cohere AI Crawler';
+      if (/Meta|FB Crawler/i.test(dev)) return 'Meta / FB Crawler';
+      if (/Ahrefs/i.test(dev)) return 'AhrefsBot';
+      if (/Semrush/i.test(dev)) return 'SemrushBot';
+      if (/DotBot/i.test(dev)) return 'Moz DotBot';
+      if (/Screaming Frog/i.test(dev)) return 'Screaming Frog SEO';
+      if (/Majestic/i.test(dev)) return 'Majestic-12 Bot';
+      if (/PetalBot/i.test(dev)) return 'PetalBot';
+      if (/ByteSpider/i.test(dev)) return 'ByteSpider';
+      if (/Crawler|spider|bot/i.test(dev)) return dev.replace(/^[^a-zA-Z0-9]+/, '').trim() || 'Web Crawler';
+
+      // Check ISP Heuristic
+      if (/Google/i.test(isp) || ip.startsWith('66.249.')) return 'Googlebot (Verified Network)';
+      if (/Microsoft/i.test(isp) && /bot|crawl/i.test(dev)) return 'Bingbot (Verified Network)';
+      return null;
+    }
+
+    function getAggregatedBots() {
+      const now = Date.now();
+      const yDayStr = indiaDayStr(now - 24 * 60 * 60 * 1000);
+      const botGroups = new Map();
+
+      // Look across all trafficRecords (and yesterday records)
+      const allRecords = [...trafficRecords];
+      if (yesterdayData && Array.isArray(yesterdayData.records)) {
+        for (const yr of yesterdayData.records) {
+          if (!allRecords.some(r => r.ip === yr.ip && r.time === yr.time)) {
+            allRecords.push(yr);
+          }
+        }
+      }
+
+      for (const rec of allRecords) {
+        const botName = identifyBotName(rec);
+        if (!botName) continue;
+
+        let b = botGroups.get(botName);
+        if (!b) {
+          b = {
+            name: botName,
+            totalCrawls: 0,
+            yesterdayCrawls: 0,
+            lastVisitTime: 0,
+            yesterdayLastVisitTime: 0,
+            ips: new Set(),
+            isps: new Set(),
+            sections: new Map(),
+            pages: new Set()
+          };
+          botGroups.set(botName, b);
+        }
+
+        const visits = rec.visits || 1;
+        b.totalCrawls += visits;
+        b.ips.add(rec.ip);
+        if (rec.isp) b.isps.add(rec.isp);
+        if (rec.path) b.pages.add(rec.path);
+
+        const recTime = rec.time || 0;
+        if (recTime > b.lastVisitTime) b.lastVisitTime = recTime;
+
+        const isYesterday = indiaDayStr(recTime) === yDayStr;
+        if (isYesterday) {
+          b.yesterdayCrawls += visits;
+          if (recTime > b.yesterdayLastVisitTime) b.yesterdayLastVisitTime = recTime;
+        }
+
+        // Aggregate sections visited
+        for (const s of (rec.sections || [])) {
+          const secName = s.name || rec.path || 'Page';
+          const prev = b.sections.get(secName) || { name: secName, count: 0, lastVisit: 0 };
+          prev.count += (s.visits || 1);
+          prev.lastVisit = Math.max(prev.lastVisit, s.lastVisit || recTime);
+          b.sections.set(secName, prev);
+        }
+      }
+
+      return Array.from(botGroups.values()).map(b => ({
+        ...b,
+        ipList: Array.from(b.ips),
+        ispList: Array.from(b.isps),
+        pageList: Array.from(b.pages),
+        sectionList: Array.from(b.sections.values()).sort((a,b) => b.count - a.count || b.lastVisit - a.lastVisit)
+      })).sort((a,b) => b.lastVisitTime - a.lastVisitTime);
+    }
+
+    function renderBots() {
+      try {
+        const bots = getAggregatedBots();
+        setText('badge-total-bots', bots.length + ' BOT' + (bots.length === 1 ? '' : 'S'));
+
+        let totalHits = 0;
+        let totalSections = new Set();
+        let totalYesterday = 0;
+
+        for (const b of bots) {
+          totalHits += b.totalCrawls;
+          totalYesterday += b.yesterdayCrawls;
+          b.sectionList.forEach(s => totalSections.add(s.name));
+          b.pageList.forEach(p => totalSections.add(p));
+        }
+
+        setText('bot-kpi-hits', totalHits);
+        setText('bot-kpi-count', bots.length);
+        setText('bot-kpi-sections', totalSections.size);
+        setText('bot-kpi-yesterday', totalYesterday);
+
+        const searchInput = document.getElementById('bots-search-input');
+        const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+
+        const filtered = bots.filter(b => {
+          if (!query) return true;
+          const hay = [b.name, ...b.ipList, ...b.ispList, ...b.pageList, ...b.sectionList.map(s=>s.name)].join(' ').toLowerCase();
+          return hay.includes(query);
+        });
+
+        setText('bot-table-summary', filtered.length + ' of ' + bots.length + ' Bots Matching');
+
+        const tbody = document.getElementById('bot-visitor-rows');
+        if (!tbody) return;
+        tbody.replaceChildren();
+
+        if (!filtered.length) {
+          const emptyTr = document.createElement('tr');
+          emptyTr.innerHTML = '<td colspan="7" style="text-align:center; padding:36px; color:var(--text-dim); font-size:14px;">' + (bots.length ? 'NO BOT CRAWLERS MATCH FILTER' : 'NO BOT TRAFFIC REGISTERED IN ACTIVE BUFFER') + '</td>';
+          tbody.append(emptyTr);
+          return;
+        }
+
+        for (const b of filtered) {
+          const tr = document.createElement('tr');
+
+          // 1. Bot Name & Identity
+          const tdName = document.createElement('td');
+          tdName.innerHTML = '<div style="font-weight:700; font-size:14px; color:#f97316; display:flex; align-items:center; gap:6px;">' + b.name + '</div>' +
+            '<div style="font-size:11px; color:var(--text-dim); margin-top:2px;">' + b.ipList.length + ' IP address' + (b.ipList.length === 1 ? '' : 'es') + '</div>';
+          tr.append(tdName);
+
+          // 2. Total Crawls
+          const tdHits = document.createElement('td');
+          tdHits.innerHTML = '<span class="visits-badge multi" style="background:rgba(249,115,22,0.16); color:#fb923c; border-color:rgba(249,115,22,0.4); font-size:12px; font-weight:700;">' + b.totalCrawls + ' crawl' + (b.totalCrawls === 1 ? '' : 's') + '</span>';
+          tr.append(tdHits);
+
+          // 3. Sections Crawled Count
+          const tdSecCount = document.createElement('td');
+          const secCount = b.sectionList.length || b.pageList.length;
+          tdSecCount.innerHTML = '<span style="font-family:var(--font-mono); font-size:13px; font-weight:700; color:var(--text-pure);">' + secCount + '</span> <small style="color:var(--text-dim);">section' + (secCount === 1 ? '' : 's') + '</small>';
+          tr.append(tdSecCount);
+
+          // 4. Yesterday Visit
+          const tdYesterday = document.createElement('td');
+          if (b.yesterdayCrawls > 0) {
+            tdYesterday.innerHTML = '<div style="color:#fbbf24; font-weight:700; font-size:12px;">⚡ ' + b.yesterdayCrawls + ' crawl' + (b.yesterdayCrawls === 1 ? '' : 's') + '</div>' +
+              '<div style="font-size:11px; color:var(--text-dim); font-family:var(--font-mono);">' + (b.yesterdayLastVisitTime ? formatIST(b.yesterdayLastVisitTime) : 'Yesterday') + '</div>';
+          } else {
+            tdYesterday.innerHTML = '<span style="color:var(--text-dim); font-size:12px;">0 visits yesterday</span>';
+          }
+          tr.append(tdYesterday);
+
+          // 5. Until Last Visit (Most Recent Crawl)
+          const tdLast = document.createElement('td');
+          tdLast.innerHTML = '<span class="time-stamp" style="font-size:12px; font-family:var(--font-mono);">' + (b.lastVisitTime ? formatIST(b.lastVisitTime) : 'Unknown') + '</span>';
+          tr.append(tdLast);
+
+          // 6. IP & Network / ISP
+          const tdNet = document.createElement('td');
+          const primaryIp = b.ipList[0] || 'Unknown';
+          const primaryIsp = b.ispList[0] || 'Internet Provider';
+          tdNet.innerHTML = '<span class="ip-badge" title="All IPs: ' + b.ipList.join(', ') + '">' + formatShortIP(primaryIp) + (b.ipList.length > 1 ? ' <small style="color:#f97316;">+' + (b.ipList.length - 1) + '</small>' : '') + '</span>' +
+            '<div style="font-size:11px; color:var(--text-dim); font-family:var(--font-mono); margin-top:3px; max-width:140px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="' + b.ispList.join(' · ') + '">📶 ' + primaryIsp + '</div>';
+          tr.append(tdNet);
+
+          // 7. Crawled Sections & Details
+          const tdSections = document.createElement('td');
+          if (b.sectionList.length) {
+            const details = document.createElement('details');
+            details.className = 'section-details';
+            const summary = document.createElement('summary');
+            summary.textContent = '📑 ' + b.sectionList.length + ' crawled section' + (b.sectionList.length === 1 ? '' : 's') + ' (Click to inspect)';
+            details.append(summary);
+            const ul = document.createElement('ul');
+            ul.className = 'section-visit-list';
+            for (const s of b.sectionList) {
+              const li = document.createElement('li');
+              li.textContent = s.name + ' — ' + s.count + ' crawl' + (s.count === 1 ? '' : 's') + ' (Last: ' + formatIST(s.lastVisit) + ')';
+              ul.append(li);
+            }
+            details.append(ul);
+            tdSections.append(details);
+          } else if (b.pageList.length) {
+            tdSections.innerHTML = '<div class="path-pill">' + Array.from(b.pageList).slice(0, 2).join(', ') + (b.pageList.length > 2 ? ' ...' : '') + '</div>';
+          } else {
+            tdSections.innerHTML = '<span style="color:var(--text-dim); font-size:12px;">No section details</span>';
+          }
+          tr.append(tdSections);
+
+          tbody.append(tr);
+        }
+      } catch (botErr) {
+        console.warn('renderBots error:', botErr);
+      }
+    }
+
+    function exportBotsCSV() {
+      const bots = getAggregatedBots();
+      if (!bots.length) { alert('No bot telemetry records to export.'); return; }
+      const headers = ['Bot Name', 'Total Crawls', 'Sections Crawled Count', 'Yesterday Crawls', 'Until Last Visit (IST)', 'IP Addresses', 'ISPs / Networks', 'Crawled Sections List'];
+      const rows = bots.map(b => [
+        b.name,
+        b.totalCrawls,
+        b.sectionList.length || b.pageList.length,
+        b.yesterdayCrawls,
+        b.lastVisitTime ? formatIST(b.lastVisitTime) : '',
+        b.ipList.join('; '),
+        b.ispList.join('; '),
+        b.sectionList.map(s => s.name + ' (' + s.count + ' hits)').join('; ')
+      ]);
+      const csv = [headers.join(','), ...rows.map(r => r.map(x => '"' + String(x).replace(/"/g, '""') + '"').join(','))].join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'Academic_Hub_Bots_Crawl_Audit_' + new Date().toISOString().slice(0, 10) + '.csv';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
     }
 
     function exportTrafficCSV() {
@@ -3338,7 +3706,8 @@ details.section-details summary:hover, details.popular-details summary:hover {
       { id: 'geo', tab: 'tab-btn-geo', panel: 'panel-geo' },
       { id: 'yesterday', tab: 'tab-btn-yesterday', panel: 'panel-yesterday' },
       { id: 'radar', tab: 'tab-btn-radar', panel: 'panel-radar' },
-      { id: 'content', tab: 'tab-btn-content', panel: 'panel-content' }
+      { id: 'content', tab: 'tab-btn-content', panel: 'panel-content' },
+      { id: 'bots', tab: 'tab-btn-bots', panel: 'panel-bots' }
     ];
 
     function activateStation(id) {
@@ -3354,6 +3723,8 @@ details.section-details summary:hover, details.popular-details summary:hover {
       }
       if (id === 'yesterday') {
         renderYesterday();
+      } else if (id === 'bots') {
+        renderBots();
       }
     }
 
@@ -3369,6 +3740,8 @@ details.section-details summary:hover, details.popular-details summary:hover {
       activateStation('radar');
     } else if (location.hash === '#content') {
       activateStation('content');
+    } else if (location.hash === '#bots' || location.hash === '#crawlers') {
+      activateStation('bots');
     } else {
       activateStation('geo');
     }
@@ -3442,6 +3815,12 @@ details.section-details summary:hover, details.popular-details summary:hover {
 
     const exportYdBtn = document.getElementById('btn-export-yesterday');
     if (exportYdBtn) exportYdBtn.onclick = exportYesterdayCSV;
+
+    const exportBotsBtn = document.getElementById('btn-export-bots');
+    if (exportBotsBtn) exportBotsBtn.onclick = exportBotsCSV;
+
+    const botsSearchInput = document.getElementById('bots-search-input');
+    if (botsSearchInput) botsSearchInput.oninput = renderBots;
 
     const searchInput = document.getElementById('traffic-search-input');
     if (searchInput) searchInput.oninput = () => { trafficPage = 1; renderTraffic(); };
