@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 8: Jamaican Fragments (ജമൈക്കൻ ഫ്രാഗ്മെന്റ്സ്) — Bilingual Companion</title>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 12mm 12mm 12mm;
+    @top-center {
+      content: "B.COM SEMESTER I — ADDITIONAL ENGLISH | WORDS TO WORLDS (ഇംഗ്ലീഷ് - മലയാളം സമഗ്ര പഠന സഹായി)";
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      font-weight: 700;
+      color: #64748b;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* FRONT COVER */
+  .cover-page {
+    height: 268mm;
+    max-height: 268mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+    break-after: page;
+    background: linear-gradient(135deg, #090d16 0%, #0f172a 45%, #1e1b4b 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 24mm 18mm 20mm 18mm;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-page:before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 8.5pt;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #38bdf8;
+    margin-bottom: 12px;
+  }
+
+  .cover-title {
+    font-size: 28pt;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+  }
+
+  .cover-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 16pt;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #a7f3d0;
+    margin: 0 0 16px 0;
+  }
+
+  .cover-subtitle {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #cbd5e1;
+    font-weight: 600;
+    border-left: 3.5px solid #06b6d4;
+    padding-left: 14px;
+    margin-bottom: 22px;
+  }
+
+  .cover-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 9pt;
+  }
+
+  .cover-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e2e8f0;
+  }
+
+  .cover-feature-item span.icon {
+    font-size: 12pt;
+  }
+
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: 14px;
+    font-size: 8.5pt;
+    color: #94a3b8;
+  }
+
+  /* TOC PAGE */
+  .toc-page {
+    page-break-after: always;
+    break-after: page;
+    padding: 6mm 0;
+  }
+
+  .toc-header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .toc-title {
+    font-size: 20pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .toc-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    color: #0f766e;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .toc-card {
+    background: #f8fafc;
+    border: 1.2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .toc-num {
+    font-size: 8pt;
+    font-weight: 800;
+    color: #0f766e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-en {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.35;
+  }
+
+  .toc-author {
+    font-size: 8pt;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* CHAPTER STYLING */
+  .chapter-wrapper {
+    page-break-before: always;
+    break-before: page;
+    padding-top: 2mm;
+  }
+
+  .ch-hero {
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border: 1.5px solid var(--ch-border);
+    background: linear-gradient(135deg, var(--ch-tint) 0%, #ffffff 100%);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .ch-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 7.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    background: var(--ch-primary);
+    margin-bottom: 4px;
+  }
+
+  .ch-title-en {
+    font-size: 15pt;
+    font-weight: 900;
+    color: var(--ch-primary);
+    line-height: 1.25;
+    margin: 0 0 2px 0;
+  }
+
+  .ch-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .ch-author-row {
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* SECTION BANNERS */
+  .section-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--ch-border);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .section-banner h3 {
+    margin: 0;
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: var(--ch-primary);
+  }
+
+  .section-banner .ml-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* BILINGUAL PAIRED BLOCKS */
+  .bilingual-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .bilingual-pair .en-block {
+    font-size: 9pt;
+    line-height: 1.55;
+    color: #1e293b;
+    border-left: 3px solid var(--ch-primary);
+    padding-left: 8px;
+  }
+
+  .bilingual-pair .ml-block {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.8pt;
+    line-height: 1.65;
+    color: #0f172a;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+
+  .ml-tag {
+    display: inline-block;
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--ch-primary);
+    background: #ffffff;
+    border: 1px solid var(--ch-border);
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+  }
+
+  /* GLOSSARY TABLE */
+  .glossary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 8.6pt;
+    break-inside: avoid;
+  }
+
+  .glossary-table th {
+    background: var(--ch-primary);
+    color: #ffffff;
+    padding: 6px 10px;
+    text-align: left;
+    font-weight: 800;
+  }
+
+  .glossary-table td {
+    padding: 5px 10px;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+
+  .glossary-table tr:nth-child(even) {
+    background: var(--ch-tint);
+  }
+
+  .ml-font {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+  }
+
+  /* QA CARDS */
+  .qa-card {
+    border: 1.2px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+
+  .qa-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  .q-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 7pt;
+    font-weight: 800;
+    background: var(--ch-primary);
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  .q-text-en {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .q-text-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--ch-primary);
+    line-height: 1.45;
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
+
+  .ans-box {
+    margin-top: 4px;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 6px;
+  }
+
+  .ans-en {
+    font-size: 8.8pt;
+    line-height: 1.55;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+
+  .ans-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.65;
+    color: #047857;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 5px;
+    padding: 6px 8px;
+  }
+
+  /* KNOCK POINTS (Page 12 Style full grid) */
+  .knock-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 6px;
+    break-inside: avoid;
+  }
+
+  .knock-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .knock-num {
+    font-size: 6.8pt;
+    font-weight: 800;
+    color: #ffffff;
+    background: var(--ch-primary);
+    padding: 1px 5px;
+    border-radius: 3px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 2px;
+  }
+
+  .knock-en {
+    font-size: 7.8pt;
+    font-weight: 750;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+
+  .knock-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 7.4pt;
+    font-weight: 700;
+    color: #047857;
+    line-height: 1.3;
+  }
+
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
+
+<style id="ah-universal-reader-protection">
+  /* Academic Hub Content Protection & Clean Reading Mode */
+  * {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+  @media print {
+    html, body {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  /* Suppress download / save buttons, external open buttons, or save triggers */
+  a[download], button[download], [download], .btn-download, .download, #downloadBtn,
+  #modalExternalBtn, #openExternalBtn, .fast-native-btn {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+</style>
+
+</head>
+<body>
+<div class="chapter-wrapper" style="--ch-primary: #c2410c; --ch-tint: #fff7ed; --ch-border: #fed7aa;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 8 · Personal Essay (വ്യക്തിഗത ഉപന്യാസം)</span>
+        <h1 class="ch-title-en">8. Jamaican Fragments</h1>
+        <h2 class="ch-title-ml">8. ജമൈക്കൻ ഫ്രാഗ്മെന്റ്സ്</h2>
+        <div class="ch-author-row">✍️ A.L. Hendricks &nbsp;·&nbsp; <span class="ml-font">എ.എൽ. ഹെൻഡ്രിക്സ്</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Arthur L. Hendricks (1922–1992) was a distinguished Jamaican poet, short story writer, and broadcaster. A founding member of the Jamaican branch of PEN and manager of the Jamaica Broadcasting Corporation, his writing explores Caribbean identity, human equality, and cross-racial understanding.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>പ്രശസ്ത ജമൈക്കൻ കവിയും എഴുത്തുകാരനും മാധ്യമപ്രവർത്തകനുമാണ് എ.എൽ. ഹെൻഡ്രിക്സ് (1922-1992). കരീബിയൻ സംസ്കാരം, വംശീയ ഐക്യം, മാനവ സമത്വം എന്നിവ ഉയർത്തിപ്പിടിച്ച പ്രമുഖ സാഹിത്യകാരനാണ് അദ്ദേഹം.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Prejudice, racial conditioning, and the folly of rushing to judgmental conclusions. It contrasts adult racial anxieties with the innocent, egalitarian nature of childhood.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>വംശീയ മുൻവിധികളും തെറ്റായ അനുമാനങ്ങളും മനുഷ്യന്റെ ചിന്തയെ എങ്ങനെ സ്വാധീനിക്കുന്നുവെന്ന് വ്യക്തമാക്കുന്ന രചന. മുതിർന്നവരുടെ സങ്കുചിത ചിന്തകളും കുട്ടികളുടെ നിഷ്കളങ്കമായ ലോകവും തമ്മിലുള്ള വ്യത്യാസം ഇതിൽ തെളിയുന്നു.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Disturbing Morning Scene / <span class="ml-font">പ്രഭാതത്തിലെ അസ്വസ്ഥജനകമായ കാഴ്ച</span></strong>
+            <div class="en-block" style="margin-top:4px;">During a routine morning walk in Kingston, Jamaica, the narrator observes two small boys playing in a garden: a fair-skinned, sturdy four-year-old white boy and a smaller five-year-old dark-skinned boy. The white child imperiously commands the Black child, who obeys submissively.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>ജമൈക്കയിലെ കിംഗ്സ്റ്റണിൽ പ്രഭാത സവാരി നടത്തവേ, ഒരു വീട്ടുതോട്ടത്തിൽ രണ്ട് കുട്ടികൾ കളിക്കുന്നത് ആഖ്യാതാവ് കാണുന്നു: വെളുത്ത നിറമുള്ള നാലു വയസ്സുകാരനും, കറുത്ത നിറമുള്ള അഞ്ചു വയസ്സുകാരനും. വെളുത്ത കുട്ടി യജമാനനെപ്പോലെ ആജ്ഞാപിക്കുകയും കറുത്ത കുട്ടി അത് അനുസരിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Narrator&#x27;s Agony Over Racial Inferiority / <span class="ml-font">വംശീയ അപകർഷതാബോധത്തെക്കുറിച്ചുള്ള കവിയുടെ ആധി</span></strong>
+            <div class="en-block" style="margin-top:4px;">The scene deeply torments the narrator. Has the ancient curse of racial inferiority infested even tiny children? Is the Black race doomed to servitude? He spends the day troubled by the thought that his proud island nation remains mentally enslaved.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>ഈ കാഴ്ച ആഖ്യാതാവിനെ വല്ലാതെ വേദനിപ്പിക്കുന്നു. ഇത്ര ചെറിയ പ്രായത്തിൽ തന്നെ അടിമത്ത മനോഭാവം ഈ കുട്ടികളിലേക്ക് പടർന്നുവോ? കറുത്ത വർഗ്ഗം എന്നെന്നും വെളുത്തവരുടെ അടിമകളായി കഴിയാൻ വിധിക്കപ്പെട്ടവരാണോ എന്ന് ചിന്തിച്ച് അദ്ദേഹം അസ്വസ്ഥനാകുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Illuminating Revelation Next Day / <span class="ml-font">അടുത്ത ദിവസത്തെ അത്ഭുതകരമായ വെളിപ്പെടുത്തൽ</span></strong>
+            <div class="en-block" style="margin-top:4px;">The following morning, the roles are completely reversed: the Black boy imperiously rides the white boy like a horse! It was merely a game of boss-and-servant where they took turns. A white man smiling nearby turns out to be their father, and the mother is a brown Jamaican woman. The narrator laughs at his own foolish prejudice, celebrating the beauty of multiracial harmony.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>എന്നാൽ അടുത്ത ദിവസം ആ കാഴ്ച തികച്ചും വിപരീതമായിരുന്നു: കറുത്ത കുട്ടി വെളുത്ത കുട്ടിയുടെ മേൽ കുതിര കയറുകയും ആജ്ഞാപിക്കുകയും ചെയ്യുന്നു! മാറിമാറി യജമാനനും സേവകനുമാകുന്ന കുട്ടികളുടെ ഒരു കളി മാത്രമായിരുന്നു അത്. സമീപം നിൽക്കുന്ന വെളുത്ത വർഗ്ഗക്കാരനായ അവരുടെ അച്ഛനും, ജമൈക്കക്കാരിയായ അമ്മയും ഇത് കണ്ട് പുഞ്ചിരിക്കുന്നു. തന്റെ മുൻവിധികളെ ഓർത്ത് ലജ്ജിച്ച ആഖ്യാതാവ്, വംശീയ സൗഹാർദ്ദത്തിന്റെ ഭംഗി കണ്ട് ആശ്വസിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Imperious</strong></td>
+                <td>Assuming power or authority without justification; arrogant</td>
+                <td class="ml-font">യജമാനഭാവത്തോടെയുള്ള / അധികാരപൂർണ്ണമായ</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Subservience</strong></td>
+                <td>Willingness to obey others unquestioningly</td>
+                <td class="ml-font">വിധേയത്വം / ദാസ്യഭാവം</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Inferiority</strong></td>
+                <td>The condition of being lower in status or quality</td>
+                <td class="ml-font">അപകർഷത / താഴ്ന്ന നില</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Magnificent</strong></td>
+                <td>Extremely beautiful, elaborate, or impressive</td>
+                <td class="ml-font">മനോഹരമായ / പ്രൗഢമായ</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What game were the two boys playing in &#x27;Jamaican Fragments&#x27;?</div>
+                <div class="q-text-ml">&#x27;ജമൈക്കൻ ഫ്രാഗ്മെന്റ്സ്&#x27; എന്ന കൃതിയിൽ കുട്ടികൾ കളിച്ചിരുന്ന കളി എന്തായിരുന്നു?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> The two boys were taking turns playing a simple game of master and servant, where one acted as the boss and the other obeyed orders.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ഒരാൾ യജമാനനും മറ്റൊരാൾ സേവകനുമായി മാറിമാറി അഭിനയിക്കുന്ന ഒരു സാധാരണ കളിയാണ് അവർ കളിച്ചിരുന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Who were the parents of the two boys?</div>
+                <div class="q-text-ml">ആ രണ്ട് കുട്ടികളുടെ മാതാപിതാക്കൾ ആരായിരുന്നു?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> Their father was a white Englishman and their mother was a brown Jamaican woman, making the children mixed-race brothers.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> അവരുടെ അച്ഛൻ വെളുത്ത വർഗ്ഗക്കാരനായ ഇംഗ്ലീഷുകാരനും, അമ്മ തവിട്ടുനിറമുള്ള ജമൈക്കൻ സ്ത്രീയുമായിരുന്നു; അവർ സഹോദരന്മാരായിരുന്നു.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Why was the narrator filled with despair on the first morning in &#x27;Jamaican Fragments&#x27;?</div>
+                    <div class="q-text-ml">ആദ്യത്തെ ദിവസം രാവിലെ ആ കാഴ്ച കണ്ട് ആഖ്യാതാവ് നിരാശനായത് എന്തുകൊണ്ട്?</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> On seeing a small white boy command a slightly older Black boy, the narrator assumed that racial prejudice and a submissive slave mentality had infected Jamaican children at infancy. As a proud Jamaican, he felt sickened by the thought that his people were naturally prone to servitude.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> വെളുത്ത കുട്ടി കറുത്ത കുട്ടിയോട് ആജ്ഞാപിക്കുന്നത് കണ്ടപ്പോൾ, അടിമത്ത മനോഭാവവും അപകർഷതാബോധവും കുഞ്ഞുനാളിൽ തന്നെ തന്റെ ജനതയിലേക്ക് കടന്നുകൂടിയിരിക്കുന്നുവെന്ന് ആഖ്യാതാവ് ഭയന്നു. ഈ ചിന്ത അദ്ദേഹത്തെ വല്ലാതെ വേദനിപ്പിച്ചു.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Analyze &#x27;Jamaican Fragments&#x27; as a commentary on racial prejudice, subjective perception, and human unity.</div>
+                    <div class="q-text-ml">വംശീയ മുൻവിധികൾ, മനുഷ്യന്റെ തെറ്റായ ധാരണകൾ, മാനവ ഐക്യം എന്നിവ മുൻനിർത്തി &#x27;ജമൈക്കൻ ഫ്രാഗ്മെന്റ്സ്&#x27; സമഗ്രമായി വിലയിരുത്തുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>A.L. Hendricks&#x27;s autobiographical essay &#x27;Jamaican Fragments&#x27; is a compelling critique of how adults project their own historical baggage and racial prejudices onto innocent children.<br><br>The essay begins with a troubling observation in a suburban Kingston yard. When the narrator sees a four-year-old white child bossing an older Black child, he immediately constructs an elaborate sociological catastrophe. He worries that centuries of slavery have genetically or culturally doomed Black people to inferiority.<br><br>The following morning shatters his delusion. The boys have swapped roles: the Black child commands while the white child gallops cheerfully. Watching them, the narrator realizes the children were completely unburdened by racial awareness; they were simply playing a game of turn-taking. When the father explains that the boys are brothers born to a mixed-race couple, the narrator smiles at his own silliness.<br><br>Hendricks delivers an inspiring conclusion: children are born pure, without racial prejudice. It is the adult world that injects division and bigotry. In Jamaica&#x27;s vibrant multiracial melting pot, true human brotherhood is achievable.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>മുതിർന്നവരുടെ മനസ്സിനെ ബാധിച്ചിരിക്കുന്ന വംശീയ മുൻവിധികളും ഭയങ്ങളും നിരപരാധികളായ കുട്ടികളുടെ മേൽ എങ്ങനെ ആരോപിക്കപ്പെടുന്നു എന്ന് വ്യക്തമാക്കുന്ന കൃതിയാണ് ഹെൻഡ്രിക്സിന്റെ &#x27;ജമൈക്കൻ ഫ്രാഗ്മെന്റ്സ്&#x27;.<br><br>ആദ്യ ദിവസം കുട്ടികളുടെ കളി കാണുമ്പോൾ, അടിമത്തത്തിന്റെ കറുത്ത ഓർമ്മകൾ കാരണം കറുത്ത വർഗ്ഗം എന്നും താഴ്ന്നവരായിരിക്കുമോ എന്ന് ആഖ്യാതാവ് ഭയപ്പെടുന്നു. വംശീയമായ ഒരു ദുരന്തമായാണ് അദ്ദേഹം ആ കളിയെ കാണുന്നത്.<br><br>എന്നാൽ അടുത്ത ദിവസം കുട്ടികൾ റോൾ മാറ്റി കളിക്കുന്നത് കണ്ടപ്പോൾ അദ്ദേഹം ഞെട്ടുന്നു. കുഞ്ഞുങ്ങളുടെ മനസ്സിൽ വർണ്ണവെറിയോ വംശീയതയോ ഇല്ലെന്നും, അത് മുതിർന്നവരുടെ കപട സങ്കല്പങ്ങൾ മാത്രമാണെന്നും അദ്ദേഹം തിരിച്ചറിയുന്നു. ആ കുട്ടികൾ ഒരേ മാതാപിതാക്കളുടെ മക്കളാണെന്നറിയുമ്പോൾ അദ്ദേഹത്തിന്റെ ലജ്ജ ഇരട്ടിക്കുന്നു. കുട്ടികളെപ്പോലെ സ്നേഹത്തോടെയും സമത്വത്തോടെയും ജീവിക്കാൻ മുതിർന്നവർ പഠിക്കണമെന്നാണ് ഹെൻഡ്രിക്സ് നൽകുന്ന സന്ദേശം.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">The narrator observes two young boys playing in a suburban Jamaican garden.</div>
+            <div class="knock-ml">ജമൈക്കയിലെ ഒരു തോട്ടത്തിൽ രണ്ട് കുട്ടികൾ കളിക്കുന്നത് ആഖ്യാതാവ് കാണുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">A 4-year-old white boy imperiously bosses an older 5-year-old Black child.</div>
+            <div class="knock-ml">നാലു വയസ്സുള്ള വെളുത്ത കുട്ടി അഞ്ചു വയസ്സുള്ള കറുത്ത കുട്ടിയോട് ആജ്ഞാപിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">The narrator despairs that racial servitude has contaminated Jamaican children.</div>
+            <div class="knock-ml">വംശീയ അടിമത്തം കുട്ടികളിൽ പോലും ബാധിച്ചിരിക്കുന്നുവെന്ന് കണ്ട് ആഖ്യാതാവ് വേദനിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">Next morning, the roles are fully reversed as the Black child commands.</div>
+            <div class="knock-ml">അടുത്ത ദിവസം കറുത്ത കുട്ടി ആജ്ഞാപിക്കുകയും വെളുത്ത കുട്ടി അനുസരിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">It was merely an innocent childhood game of taking turns.</div>
+            <div class="knock-ml">മാറിമാറി യജമാനനും സേവകനുമാകുന്ന കുട്ടികളുടെ ഒരു നിഷ്കളങ്ക കളി മാത്രമായിരുന്നു അത്.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">The boys are brothers, born to a white father and a brown Jamaican mother.</div>
+            <div class="knock-ml">വെളുത്ത അച്ഛന്റെയും ജമൈക്കൻ അമ്മയുടെയും മക്കളായ സഹോദരന്മാരായിരുന്നു അവർ.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">Hendricks concludes that prejudice lives only in adult minds, not in children.</div>
+            <div class="knock-ml">വംശീയ മുൻവിധികൾ മുതിർന്നവരുടെ മനസ്സിൽ മാത്രമാണെന്നും കുട്ടികൾ പരിശുദ്ധരാണെന്നും ലേഖകൻ തെളിയിക്കുന്നു.</div>
+          </div>
+        
+</div>
+</div>
+
+<script id="ah-universal-reader-protection-script">
+  (function() {
+    // Disable right click / context menu
+    window.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+
+    // Disable Save (Ctrl+S), Print (Ctrl+P), View-Source (Ctrl+U), DevTools (F12, Ctrl+Shift+I)
+    window.addEventListener('keydown', function(e) {
+      var k = e.key ? e.key.toLowerCase() : '';
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+      if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }, true);
+
+    // Disable dragging
+    window.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+
+    // Disable copy
+    window.addEventListener('copy', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 2: Still I Rise (എന്നിട്ടും ഞാൻ ഉയർത്തെഴുന്നേൽക്കും) — Bilingual Companion</title>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 12mm 12mm 12mm;
+    @top-center {
+      content: "B.COM SEMESTER I — ADDITIONAL ENGLISH | WORDS TO WORLDS (ഇംഗ്ലീഷ് - മലയാളം സമഗ്ര പഠന സഹായി)";
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      font-weight: 700;
+      color: #64748b;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* FRONT COVER */
+  .cover-page {
+    height: 268mm;
+    max-height: 268mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+    break-after: page;
+    background: linear-gradient(135deg, #090d16 0%, #0f172a 45%, #1e1b4b 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 24mm 18mm 20mm 18mm;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-page:before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 8.5pt;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #38bdf8;
+    margin-bottom: 12px;
+  }
+
+  .cover-title {
+    font-size: 28pt;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+  }
+
+  .cover-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 16pt;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #a7f3d0;
+    margin: 0 0 16px 0;
+  }
+
+  .cover-subtitle {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #cbd5e1;
+    font-weight: 600;
+    border-left: 3.5px solid #06b6d4;
+    padding-left: 14px;
+    margin-bottom: 22px;
+  }
+
+  .cover-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 9pt;
+  }
+
+  .cover-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e2e8f0;
+  }
+
+  .cover-feature-item span.icon {
+    font-size: 12pt;
+  }
+
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: 14px;
+    font-size: 8.5pt;
+    color: #94a3b8;
+  }
+
+  /* TOC PAGE */
+  .toc-page {
+    page-break-after: always;
+    break-after: page;
+    padding: 6mm 0;
+  }
+
+  .toc-header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .toc-title {
+    font-size: 20pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .toc-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    color: #0f766e;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .toc-card {
+    background: #f8fafc;
+    border: 1.2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .toc-num {
+    font-size: 8pt;
+    font-weight: 800;
+    color: #0f766e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-en {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.35;
+  }
+
+  .toc-author {
+    font-size: 8pt;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* CHAPTER STYLING */
+  .chapter-wrapper {
+    page-break-before: always;
+    break-before: page;
+    padding-top: 2mm;
+  }
+
+  .ch-hero {
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border: 1.5px solid var(--ch-border);
+    background: linear-gradient(135deg, var(--ch-tint) 0%, #ffffff 100%);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .ch-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 7.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    background: var(--ch-primary);
+    margin-bottom: 4px;
+  }
+
+  .ch-title-en {
+    font-size: 15pt;
+    font-weight: 900;
+    color: var(--ch-primary);
+    line-height: 1.25;
+    margin: 0 0 2px 0;
+  }
+
+  .ch-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .ch-author-row {
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* SECTION BANNERS */
+  .section-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--ch-border);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .section-banner h3 {
+    margin: 0;
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: var(--ch-primary);
+  }
+
+  .section-banner .ml-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* BILINGUAL PAIRED BLOCKS */
+  .bilingual-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .bilingual-pair .en-block {
+    font-size: 9pt;
+    line-height: 1.55;
+    color: #1e293b;
+    border-left: 3px solid var(--ch-primary);
+    padding-left: 8px;
+  }
+
+  .bilingual-pair .ml-block {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.8pt;
+    line-height: 1.65;
+    color: #0f172a;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+
+  .ml-tag {
+    display: inline-block;
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--ch-primary);
+    background: #ffffff;
+    border: 1px solid var(--ch-border);
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+  }
+
+  /* GLOSSARY TABLE */
+  .glossary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 8.6pt;
+    break-inside: avoid;
+  }
+
+  .glossary-table th {
+    background: var(--ch-primary);
+    color: #ffffff;
+    padding: 6px 10px;
+    text-align: left;
+    font-weight: 800;
+  }
+
+  .glossary-table td {
+    padding: 5px 10px;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+
+  .glossary-table tr:nth-child(even) {
+    background: var(--ch-tint);
+  }
+
+  .ml-font {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+  }
+
+  /* QA CARDS */
+  .qa-card {
+    border: 1.2px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+
+  .qa-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  .q-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 7pt;
+    font-weight: 800;
+    background: var(--ch-primary);
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  .q-text-en {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .q-text-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--ch-primary);
+    line-height: 1.45;
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
+
+  .ans-box {
+    margin-top: 4px;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 6px;
+  }
+
+  .ans-en {
+    font-size: 8.8pt;
+    line-height: 1.55;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+
+  .ans-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.65;
+    color: #047857;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 5px;
+    padding: 6px 8px;
+  }
+
+  /* KNOCK POINTS (Page 12 Style full grid) */
+  .knock-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 6px;
+    break-inside: avoid;
+  }
+
+  .knock-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .knock-num {
+    font-size: 6.8pt;
+    font-weight: 800;
+    color: #ffffff;
+    background: var(--ch-primary);
+    padding: 1px 5px;
+    border-radius: 3px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 2px;
+  }
+
+  .knock-en {
+    font-size: 7.8pt;
+    font-weight: 750;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+
+  .knock-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 7.4pt;
+    font-weight: 700;
+    color: #047857;
+    line-height: 1.3;
+  }
+
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
+
+<style id="ah-universal-reader-protection">
+  /* Academic Hub Content Protection & Clean Reading Mode */
+  * {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+  @media print {
+    html, body {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  /* Suppress download / save buttons, external open buttons, or save triggers */
+  a[download], button[download], [download], .btn-download, .download, #downloadBtn,
+  #modalExternalBtn, #openExternalBtn, .fast-native-btn {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+</style>
+
+</head>
+<body>
+<div class="chapter-wrapper" style="--ch-primary: #4338ca; --ch-tint: #eef2ff; --ch-border: #c7d2fe;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 2 · Poem (കവിത)</span>
+        <h1 class="ch-title-en">2. Still I Rise</h1>
+        <h2 class="ch-title-ml">2. എന്നിട്ടും ഞാൻ ഉയർത്തെഴുന്നേൽക്കും</h2>
+        <div class="ch-author-row">✍️ Maya Angelou &nbsp;·&nbsp; <span class="ml-font">മായ ആഞ്ചലോ</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Maya Angelou (1928–2014) was a monumental American poet, memoirist, and civil rights activist. Born in St. Louis, Missouri, she overcame racial segregation, childhood trauma, and selective mutism to become one of the most resonant voices for human dignity, gender equality, and racial justice.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>അമേരിക്കൻ സാഹിത്യത്തിലെയും പൗരാവകാശ പ്രസ്ഥാനത്തിലെയും ഇതിഹാസ സാന്നിധ്യമാണ് മായ ആഞ്ചലോ (1928-2014). വംശീയ വിവേചനങ്ങളെയും ബാല്യകാലത്തെ ക്രൂരമായ അനുഭവങ്ങളെയും അതിജീവിച്ച്, സ്ത്രീ ശാക്തീകരണത്തിന്റെയും മാനവ സമത്വത്തിന്റെയും പ്രതിരൂപമായി അവർ മാറി.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">An anthem of indefatigable resilience, self-worth, and victory over systemic racism and oppression. The speaker celebrates her Black identity, femininity, and historic endurance against historical lies, hatred, and attempts to break her spirit.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>വംശീയ വിവേചനത്തിനും അടിച്ചമർത്തലുകൾക്കും എതിരെ ആത്മാഭിമാനത്തിന്റെയും അതിജീവനത്തിന്റെയും ഉജ്ജ്വലമായ പ്രഖ്യാപനമാണ് ഈ കവിത. ചരിത്രത്തിലെ നുണകളെയും വിദ്വേഷങ്ങളെയും മറികടന്ന് ഉയർത്തെഴുന്നേൽക്കുന്ന കറുത്ത വർഗ്ഗക്കാരിയുടെ വിജയഗാഥയാണിത്.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Confronting Historical Falsehoods with Natural Power / <span class="ml-font">ചരിത്രത്തിലെ നുണകളെ പ്രകൃതിശക്തിയാൽ നേരിടുന്നു</span></strong>
+            <div class="en-block" style="margin-top:4px;">The speaker challenges racists and oppressors who write bitter, twisted lies into history. Regardless of being trodden into the dirt, she declares with supreme confidence: like dust, I will rise.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>ചരിത്രത്തിൽ കയ്പുനിറഞ്ഞ നുണകൾ എഴുതിച്ചേർക്കുന്ന വംശീയവാദികളെ കവയിത്രി വെല്ലുവിളിക്കുന്നു. തന്നെ ചെളിയിൽ ചവിട്ടിത്താഴ്ത്തിയാലും, പറന്നുയരുന്ന പൊടിപടലങ്ങളെപ്പോലെ താൻ ഉയർത്തെഴുന്നേൽക്കുമെന്ന് അവർ പ്രഖ്യാപിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Celebrating Bodily Autonomy, Sauciness, and Dignity / <span class="ml-font">ശരീരത്തിന്റെ സ്വാതന്ത്യ്രവും അഹങ്കാരവും ആത്മാഭിമാനവും</span></strong>
+            <div class="en-block" style="margin-top:4px;">She confronts those disturbed by her boldness, audacity, and feminine pride. Does her joyous laugh offend them as though she possesses oil wells in her living room? Like moons and suns with the certainty of tides, high hope guarantees her ascension.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>തന്റെ ആത്മവിശ്വാസവും സ്ത്രീസഹജമായ അഭിമാനവും മറ്റുള്ളവരെ പ്രകോപിപ്പിക്കുന്നുണ്ടോ എന്ന് അവർ ചോദിക്കുന്നു. സ്വീകരണമുറിയിൽ എണ്ണക്കിണറുള്ളതുപോലെ തലയുയർത്തി ചിരിക്കുന്നതിൽ അവർ അസൂയപ്പെടുന്നു. ചന്ദ്രനെയും സൂര്യനെയും കടൽത്തിരകളെയും പോലെ നിശ്ചയദാർഢ്യത്തോടെ താൻ ഉയരും.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Embodying the Dream and Hope of the Enslaved / <span class="ml-font">അടിമകളുടെ സ്വപ്നവും പ്രത്യാശയുമായി മാറുന്നു</span></strong>
+            <div class="en-block" style="margin-top:4px;">Leaving behind the dark huts of history&#x27;s shame and roots of rooted pain, the speaker rises as a black ocean leaping wide. She embodies &#x27;the dream and the hope of the slave,&#x27; triumphing over centuries of brutal subjugation.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>ചരിത്രത്തിന്റെ നാണംകെട്ട ചരിത്രവും അടിമത്തത്തിന്റെ കറുത്ത ദിനങ്ങളും ഉപേക്ഷിച്ച്, ആഞ്ഞടിക്കുന്ന കറുത്ത സമുദ്രമായി താൻ മുന്നേറുന്നു. തലമുറകളായി പീഡിപ്പിക്കപ്പെട്ട അടിമകളുടെ സ്വപ്നവും പ്രത്യാശയുമായി മാറിക്കൊണ്ട് താൻ ഉയർത്തെഴുന്നേൽക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Sassiness</strong></td>
+                <td>Lively, bold, and spirited confidence</td>
+                <td class="ml-font">ധീരവും പ്രസരിപ്പുള്ളതുമായ ആത്മവിശ്വാസം</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Beset</strong></td>
+                <td>Troubled or threatened persistently</td>
+                <td class="ml-font">നിരന്തരം വേട്ടയാടപ്പെടുന്ന / വലയം ചെയ്യപ്പെട്ട</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Haughty</strong></td>
+                <td>Arrogantly superior and disdainful</td>
+                <td class="ml-font">അഹങ്കാരപൂർണ്ണമായ / പുച്ഛത്തോടെയുള്ള</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Tides</strong></td>
+                <td>The alternate rising and falling of the sea</td>
+                <td class="ml-font">കടൽത്തിരമാലകൾ / വേലിയേറ്റങ്ങൾ</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What natural elements does Maya Angelou compare her rising to?</div>
+                <div class="q-text-ml">തന്റെ ഉയർത്തെഴുന്നേൽപ്പിനെ മായ ആഞ്ചലോ ഏതെല്ലാം പ്രകൃതി പ്രതിഭാസങ്ങളോടാണ് ഉപമിക്കുന്നത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> Maya Angelou compares her rising to dust rising from the ground, the suns and moons in the sky, and the inevitable certainty of ocean tides.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ഭൂമിയിൽ നിന്ന് പറന്നുയരുന്ന പൊടിയോടും, ആകാശത്തിലെ സൂര്യചന്ദ്രന്മാരോടും, സമുദ്രത്തിലെ മാറ്റമില്ലാത്ത വേലിയേറ്റങ്ങളോടുമാണ് കവയിത്രി തന്റെ ഉയർച്ചയെ ഉപമിക്കുന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What does the line &#x27;I am the dream and the hope of the slave&#x27; mean?</div>
+                <div class="q-text-ml">&#x27;ഞാൻ അടിമയുടെ സ്വപ്നവും പ്രത്യാശയുമാണ്&#x27; എന്ന വരിയുടെ അർത്ഥമെന്ത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> It means the speaker represents the realized freedom, dignity, and triumph that her enslaved African ancestors dreamed of and suffered for.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> നൂറ്റാണ്ടുകളോളം അടിമത്തത്തിൽ കഴിഞ്ഞ തന്റെ പൂർവ്വികർ സ്വപ്നം കണ്ട സ്വാതന്ത്ര്യത്തിന്റെയും അന്തസ്സിന്റെയും സാക്ഷാത്കാരമാണ് താനെന്ന് കവയിത്രി വ്യക്തമാക്കുന്നു.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q3</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Why does the speaker walk as if she has oil wells in her living room?</div>
+                <div class="q-text-ml">സ്വീകരണമുറിയിൽ എണ്ണക്കിണറുള്ളതുപോലെ കവയിത്രി നടക്കുന്നത് എന്തുകൊണ്ടാണ്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> She walks with immense pride, wealth of spirit, and regal confidence to show that oppression cannot crush her self-worth.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> അടിച്ചമർത്തലുകൾക്ക് തന്റെ ആത്മാഭിമാനത്തെ തകർക്കാൻ കഴിയില്ലെന്ന് പ്രഖ്യാപിച്ചുകൊണ്ട്, അപാരമായ ആത്മവിശ്വാസത്തോടെയും രാജകീയ പ്രൗഢിയോടെയുമാണ് അവർ നടക്കുന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">How does Maya Angelou use rhetorical questions to challenge racial oppression in &#x27;Still I Rise&#x27;?</div>
+                    <div class="q-text-ml">&#x27;സ്റ്റിൽ ഐ റൈസ്&#x27; എന്ന കവിതയിൽ വംശീയ അടിച്ചമർത്തലുകളെ വെല്ലുവിളിക്കാൻ മായ ആഞ്ചലോ എങ്ങനെയാണ് ചോദ്യങ്ങൾ ഉപയോഗിക്കുന്നത്?</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> Angelou repeatedly uses sharp rhetorical questions such as &#x27;Does my sassiness upset you?&#x27; and &#x27;Did you want to see me broken?&#x27; These questions confront the oppressor directly, exposing their discomfort with a Black woman standing tall and refusing to perform servitude. The questions invert the power dynamic, making the oppressor appear cowardly and small before her unstoppable radiance.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> &#x27;എന്റെ ആത്മവിശ്വാസം നിങ്ങളെ അലട്ടുന്നുണ്ടോ?&#x27;, &#x27;ഞാൻ തകർന്നു കാണാനാണോ നിങ്ങൾ ആഗ്രഹിച്ചത്?&#x27; തുടങ്ങിയ മൂർച്ചയേറിയ ചോദ്യങ്ങളിലൂടെ കവയിത്രി അടിച്ചമർത്തുന്നവരെ നേരിട്ട് വിചാരണ ചെയ്യുന്നു. ഒരു കറുത്ത വർഗ്ഗക്കാരി തലയുയർത്തി നിൽക്കുന്നത് കണ്ട് ഭയപ്പെടുന്ന മേധാവിത്വ മനോഭാവത്തെ ഈ ചോദ്യങ്ങൾ തുറന്നുകാട്ടുന്നു.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Examine &#x27;Still I Rise&#x27; as a universal manifesto of human dignity and resistance against marginalization.</div>
+                    <div class="q-text-ml">പാർശ്വവൽക്കരണത്തിനെതിരെയുള്ള ചെറുത്തുനിൽപ്പിന്റെയും മാനവ അന്തസ്സിന്റെയും സാർവത്രിക പ്രഖ്യാപനമായി &#x27;സ്റ്റിൽ ഐ റൈസ്&#x27; എന്ന കവിതയെ വിലയിരുത്തുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>Maya Angelou&#x27;s &#x27;Still I Rise&#x27; transcends its immediate context of African-American liberation to become a timeless anthem for anyone fighting marginalization, discrimination, or despair.<br><br>From the outset, Angelou confronts historical revisionism, stating that even if oppressors write bitter lies into the history books, truth and resilience will rise like dust. Her imagery draws deeply from elemental forces—suns, moons, tides, and oceans—signaling that human resilience is as natural and inevitable as cosmic law.<br><br>Furthermore, she celebrates intersectional strength—embracing both Black racial identity and female beauty. By asking why her laughter and confidence cause bitterness among critics, she dismantles the expectation that the oppressed should remain mournful and apologetic. She enters the poem&#x27;s climax carrying the pain of past centuries, yet stepping into a wondrous morning, declaring herself &#x27;the dream and the hope of the slave.&#x27; The repeated, triumphant refrain &#x27;I rise, I rise, I rise&#x27; remains one of the most powerful affirmations of human spirit in modern literature.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>കറുത്ത വർഗ്ഗക്കാരുടെ വിമോചന പോരാട്ടങ്ങൾക്കുമപ്പുറം, അനീതിക്കും വിവേചനത്തിനുമെതിരെ പോരാടുന്ന ഏതൊരാൾക്കും കരുത്ത് പകരുന്ന സാർവത്രിക ഗീതമാണ് മായ ആഞ്ചലോയുടെ &#x27;സ്റ്റിൽ ഐ റൈസ്&#x27;.<br><br>ചരിത്ര പുസ്തകങ്ങളിൽ ഭരണാധികാരികൾ എത്രതന്നെ നുണകൾ എഴുതിപ്പിടിപ്പിച്ചാലും, മണ്ണിൽ നിന്നുയരുന്ന പൊടിപടലങ്ങളെപ്പോലെ സത്യം ഉയർത്തെഴുന്നേൽക്കുമെന്ന് കവി ഉറപ്പിച്ചു പറയുന്നു. സൂര്യനും ചന്ദ്രനും വേലിയേറ്റങ്ങളും പോലെ മനുഷ്യന്റെ പോരാട്ടവീര്യവും പ്രകൃതിയുടെ മാറ്റമില്ലാത്ത നിയമമാണ്.<br><br>തന്റെ വംശീയ സ്വത്വത്തെയും സ്ത്രീത്വത്തെയും ഒരേസമയം ആഘോഷിച്ചുകൊണ്ട്, അടിച്ചമർത്തപ്പെട്ടവർ എപ്പോഴും കണ്ണീരൊഴുക്കി കഴിയണം എന്ന പൊതുധാരണയെ അവർ തച്ചുടയ്ക്കുന്നു. ചരിത്രത്തിന്റെ ഇരുണ്ട നാണക്കേടുകളിൽ നിന്ന് പുലരിയുടെ പ്രകാശത്തിലേക്ക് നടന്നു കയറുന്ന കറുത്ത സമുദ്രമായി അവർ മാറുന്നു. &#x27;ഞാൻ ഉയരും, ഞാൻ ഉയരും&#x27; എന്ന ആവർത്തിച്ചുള്ള പ്രഖ്യാപനം മനുഷ്യ മനസ്സിന്റെ തോൽക്കാൻ മനസ്സില്ലാത്ത നിശ്ചയദാർഢ്യത്തിന്റെ പ്രതീകമാണ്.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">The poem directly confronts racists who record distorted lies in history.</div>
+            <div class="knock-ml">ചരിത്രത്തിൽ വളച്ചൊടിച്ച നുണകൾ രേഖപ്പെടുത്തുന്ന വംശീയവാദികളെ കവിത നേരിട്ട് വെല്ലുവിളിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">Resilience is compared to natural inevitabilities: dust, tides, moons, and suns.</div>
+            <div class="knock-ml">അതിജീവനത്തെ പൊടിപടലങ്ങൾ, വേലിയേറ്റങ്ങൾ, സൂര്യചന്ദ്രന്മാർ എന്നിവയുടെ സ്വാഭാവികതയോട് ഉപമിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">The speaker refuses to bow her head or show broken tearful eyes.</div>
+            <div class="knock-ml">തലകുനിക്കാനോ കണ്ണീരൊഴുക്കി തളർന്നു വീഴാനോ കവയിത്രി തയ്യാറാകുന്നില്ല.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">She claims rich internal wealth as though possessing gold mines and diamonds.</div>
+            <div class="knock-ml">സ്വർണ്ണഖനികളും വജ്രങ്ങളും സ്വന്തമായുള്ളതുപോലെയുള്ള ആന്തരിക സമ്പന്നത അവർ പ്രകടിപ്പിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">She identifies herself as a black ocean leaping wide in high tides.</div>
+            <div class="knock-ml">ആഞ്ഞടിക്കുന്ന കറുത്ത സമുദ്രമായി സ്വയം പ്രഖ്യാപിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">She fulfills the deferred dream and hope of her enslaved ancestors.</div>
+            <div class="knock-ml">അടിമകളാക്കപ്പെട്ട തന്റെ പൂർവ്വികരുടെ സാക്ഷാത്കരിക്കപ്പെടാത്ത സ്വപ്നങ്ങളെ അവർ പൂർത്തീകരിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">The triple refrain &#x27;I rise, I rise, I rise&#x27; signifies unconquerable victory.</div>
+            <div class="knock-ml">&#x27;ഞാൻ ഉയരും&#x27; എന്ന മൂന്ന് തവണയുള്ള മന്ത്രം പരാജയപ്പെടുത്താനാവാത്ത വിജയത്തെ കുറിക്കുന്നു.</div>
+          </div>
+        
+</div>
+</div>
+
+<script id="ah-universal-reader-protection-script">
+  (function() {
+    // Disable right click / context menu
+    window.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+
+    // Disable Save (Ctrl+S), Print (Ctrl+P), View-Source (Ctrl+U), DevTools (F12, Ctrl+Shift+I)
+    window.addEventListener('keydown', function(e) {
+      var k = e.key ? e.key.toLowerCase() : '';
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+      if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }, true);
+
+    // Disable dragging
+    window.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+
+    // Disable copy
+    window.addEventListener('copy', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+  })();
+</script>
+
+</body>
+</html>

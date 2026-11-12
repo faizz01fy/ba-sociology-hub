@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 5: A Hanging (ഒരു തൂക്കിലേറ്റൽ) — Bilingual Companion</title>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 12mm 12mm 12mm;
+    @top-center {
+      content: "B.COM SEMESTER I — ADDITIONAL ENGLISH | WORDS TO WORLDS (ഇംഗ്ലീഷ് - മലയാളം സമഗ്ര പഠന സഹായി)";
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      font-weight: 700;
+      color: #64748b;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* FRONT COVER */
+  .cover-page {
+    height: 268mm;
+    max-height: 268mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+    break-after: page;
+    background: linear-gradient(135deg, #090d16 0%, #0f172a 45%, #1e1b4b 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 24mm 18mm 20mm 18mm;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-page:before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 8.5pt;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #38bdf8;
+    margin-bottom: 12px;
+  }
+
+  .cover-title {
+    font-size: 28pt;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+  }
+
+  .cover-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 16pt;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #a7f3d0;
+    margin: 0 0 16px 0;
+  }
+
+  .cover-subtitle {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #cbd5e1;
+    font-weight: 600;
+    border-left: 3.5px solid #06b6d4;
+    padding-left: 14px;
+    margin-bottom: 22px;
+  }
+
+  .cover-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 9pt;
+  }
+
+  .cover-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e2e8f0;
+  }
+
+  .cover-feature-item span.icon {
+    font-size: 12pt;
+  }
+
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: 14px;
+    font-size: 8.5pt;
+    color: #94a3b8;
+  }
+
+  /* TOC PAGE */
+  .toc-page {
+    page-break-after: always;
+    break-after: page;
+    padding: 6mm 0;
+  }
+
+  .toc-header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .toc-title {
+    font-size: 20pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .toc-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    color: #0f766e;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .toc-card {
+    background: #f8fafc;
+    border: 1.2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .toc-num {
+    font-size: 8pt;
+    font-weight: 800;
+    color: #0f766e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-en {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.35;
+  }
+
+  .toc-author {
+    font-size: 8pt;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* CHAPTER STYLING */
+  .chapter-wrapper {
+    page-break-before: always;
+    break-before: page;
+    padding-top: 2mm;
+  }
+
+  .ch-hero {
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border: 1.5px solid var(--ch-border);
+    background: linear-gradient(135deg, var(--ch-tint) 0%, #ffffff 100%);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .ch-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 7.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    background: var(--ch-primary);
+    margin-bottom: 4px;
+  }
+
+  .ch-title-en {
+    font-size: 15pt;
+    font-weight: 900;
+    color: var(--ch-primary);
+    line-height: 1.25;
+    margin: 0 0 2px 0;
+  }
+
+  .ch-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .ch-author-row {
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* SECTION BANNERS */
+  .section-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--ch-border);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .section-banner h3 {
+    margin: 0;
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: var(--ch-primary);
+  }
+
+  .section-banner .ml-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* BILINGUAL PAIRED BLOCKS */
+  .bilingual-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .bilingual-pair .en-block {
+    font-size: 9pt;
+    line-height: 1.55;
+    color: #1e293b;
+    border-left: 3px solid var(--ch-primary);
+    padding-left: 8px;
+  }
+
+  .bilingual-pair .ml-block {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.8pt;
+    line-height: 1.65;
+    color: #0f172a;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+
+  .ml-tag {
+    display: inline-block;
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--ch-primary);
+    background: #ffffff;
+    border: 1px solid var(--ch-border);
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+  }
+
+  /* GLOSSARY TABLE */
+  .glossary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 8.6pt;
+    break-inside: avoid;
+  }
+
+  .glossary-table th {
+    background: var(--ch-primary);
+    color: #ffffff;
+    padding: 6px 10px;
+    text-align: left;
+    font-weight: 800;
+  }
+
+  .glossary-table td {
+    padding: 5px 10px;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+
+  .glossary-table tr:nth-child(even) {
+    background: var(--ch-tint);
+  }
+
+  .ml-font {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+  }
+
+  /* QA CARDS */
+  .qa-card {
+    border: 1.2px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+
+  .qa-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  .q-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 7pt;
+    font-weight: 800;
+    background: var(--ch-primary);
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  .q-text-en {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .q-text-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--ch-primary);
+    line-height: 1.45;
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
+
+  .ans-box {
+    margin-top: 4px;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 6px;
+  }
+
+  .ans-en {
+    font-size: 8.8pt;
+    line-height: 1.55;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+
+  .ans-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.65;
+    color: #047857;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 5px;
+    padding: 6px 8px;
+  }
+
+  /* KNOCK POINTS (Page 12 Style full grid) */
+  .knock-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 6px;
+    break-inside: avoid;
+  }
+
+  .knock-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .knock-num {
+    font-size: 6.8pt;
+    font-weight: 800;
+    color: #ffffff;
+    background: var(--ch-primary);
+    padding: 1px 5px;
+    border-radius: 3px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 2px;
+  }
+
+  .knock-en {
+    font-size: 7.8pt;
+    font-weight: 750;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+
+  .knock-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 7.4pt;
+    font-weight: 700;
+    color: #047857;
+    line-height: 1.3;
+  }
+
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
+
+<style id="ah-universal-reader-protection">
+  /* Academic Hub Content Protection & Clean Reading Mode */
+  * {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+  @media print {
+    html, body {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  /* Suppress download / save buttons, external open buttons, or save triggers */
+  a[download], button[download], [download], .btn-download, .download, #downloadBtn,
+  #modalExternalBtn, #openExternalBtn, .fast-native-btn {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+</style>
+
+</head>
+<body>
+<div class="chapter-wrapper" style="--ch-primary: #6d28d9; --ch-tint: #faf5ff; --ch-border: #ddd6fe;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 5 · Essay / Narrative (ഉപന്യാസം / ആഖ്യാനം)</span>
+        <h1 class="ch-title-en">5. A Hanging</h1>
+        <h2 class="ch-title-ml">5. ഒരു തൂക്കിലേറ്റൽ</h2>
+        <div class="ch-author-row">✍️ George Orwell &nbsp;·&nbsp; <span class="ml-font">ജോർജ്ജ് ഓർവെൽ</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">George Orwell (1903–1950), pen name of Eric Arthur Blair, was an iconic English essayist, journalist, and novelist born in Motihari, India. Famous for &#x27;Animal Farm&#x27; and &#x27;1984&#x27;, he served as an Imperial Police officer in Burma (1922–1927), an experience that turned him into an uncompromising anti-imperialist.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>ഇംഗ്ലീഷ് സാഹിത്യത്തിലെ എക്കാലത്തെയും മികച്ച നോവലിസ്റ്റും ഉപന്യാസകാരനുമാണ് ജോർജ്ജ് ഓർവെൽ (1903-1950). ഇന്ത്യയിലെ മോത്തിഹാരിയിൽ ജനിച്ച അദ്ദേഹം, ബർമ്മയിൽ ഇംപീരിയൽ പോലീസ് ഉദ്യോഗസ്ഥനായി സേവനമനുഷ്ഠിച്ച അനുഭവങ്ങളിൽ നിന്നാണ് സാമ്രാജ്യത്വത്തിനെതിരെയും ഫാസിസത്തിനെതിരെയും ശക്തമായ രചനകൾ നടത്തിയത്.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">A harrowing anti-capital punishment manifesto exposing the sheer moral atrocity of taking a conscious human life. It reveals how systemic cruelty dehumanizes both the victim and the executioners.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>വധശിക്ഷ എന്ന ക്രൂരമായ സമ്പ്രദായത്തിനെതിരെയുള്ള ശക്തമായ വിചാരണ. ജീവനുള്ള ഒരു മനുഷ്യന്റെ ജീവൻ അപഹരിക്കുന്നത് എത്ര വലിയ പാപമാണെന്നും, ഈ ക്രൂരത ഇരയെ മാത്രമല്ല ശിക്ഷ നടപ്പാക്കുന്നവരെക്കൂടി മനുഷ്യത്വമില്ലാത്തവരാക്കുന്നുവെന്നും തുറന്നുകാട്ടുന്നു.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Dreary Burmese Prison Yard / <span class="ml-font">ബർമ്മീസ് ജയിലിലെ ഇരുണ്ട പ്രഭാതം</span></strong>
+            <div class="en-block" style="margin-top:4px;">On a sodden, sickly yellow morning in a Burmese prison, a puny Hindu prisoner is led from his cage to the gallows. Guarded heavily by six tall Indian warders with bayonets, the condemned man walks submissively toward his execution.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>മഴ തോരാത്ത ഒരു മഞ്ഞ പ്രഭാതത്തിൽ, ബർമ്മയിലെ ജയിലിൽ ഒരു പാവം തടവുകാരനെ തൂക്കുമരത്തിലേക്ക് നയിക്കുന്നു. ആയുധമേന്തിയ ആറ് ഭീമാകാരന്മാരായ വാർഡൻമാർക്ക് നടുവിലൂടെ ശിരസ്സ് കുനിച്ച് അവൻ നടന്നുനീങ്ങുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Epiphany: Stepping Aside to Avoid a Puddle / <span class="ml-font">വെള്ളക്കെട്ട് ഒഴിഞ്ഞുമാറുന്ന നിമിഷം: തിരിച്ചറിവിന്റെ ആഘാതം</span></strong>
+            <div class="en-block" style="margin-top:4px;">As they march, the prisoner instinctively swerves aside to avoid a puddle of mud. This small, trivial action strikes Orwell with overwhelming force: this man is completely alive, his brain working, his skin renewing, his heart pumping. Taking the life of a fellow conscious human being is an unspeakable wrong.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>നടന്നുപോകുന്നതിനിടയിൽ, വഴിയിലെ ഒരു ചെറിയ ചെളിവെള്ളക്കെട്ടിൽ ചവിട്ടാതെ ആ തടവുകാരൻ സ്വാഭാവികമായി ഒഴിഞ്ഞുമാറുന്നു. ഈ നിസ്സാര പ്രവൃത്തി ഓർവെലിന്റെ മനസ്സിനെ പിടിച്ചുലയ്ക്കുന്നു: അവൻ ഇപ്പോഴും പൂർണ്ണമായും ജീവനുള്ള മനുഷ്യനാണ്; അവന്റെ ചിന്തകളും ഇന്ദ്രിയങ്ങളും സജീവമാണ്. ഒരു മനുഷ്യന്റെ ജീവനറുക്കുന്നത് എത്ര വലിയ പാതകമാണെന്ന് കവി തിരിച്ചറിയുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Execution and the Hollow Nervous Laughter / <span class="ml-font">തൂക്കിലേറ്റലും ഭയാനകമായ ചിരികളും</span></strong>
+            <div class="en-block" style="margin-top:4px;">The prisoner cries &#x27;Ram! Ram!&#x27; until the drop falls with a resounding clatter. Once he is dead, an immense wave of relief sweeps over the superintendent, warders, and Orwell. To cope with their suppressed horror, they share whisky, make nervous jokes, and laugh hysterically.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>തൂക്കുമരത്തിന് മുകളിൽ നിന്ന് ആ തടവുകാരൻ &#x27;റാം! റാം!&#x27; എന്ന് നിലവിളിക്കുന്നു. നിമിഷങ്ങൾക്കകം കഴുമരം വീഴുന്നു. മരണം ഉറപ്പായതോടെ എല്ലാവരിലും വലിയൊരു ആശ്വാസം പരക്കുന്നു. ആ പാപഭാരം മറക്കാൻ വാർഡൻമാരും ഉദ്യോഗസ്ഥരും മദ്യം പങ്കുവെക്കുകയും ഭ്രാന്തമായി പൊട്ടിച്ചിരിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Gallows</strong></td>
+                <td>A wooden structure used for the hanging of criminals</td>
+                <td class="ml-font">തൂക്കുമരം</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Puny</strong></td>
+                <td>Small and weak in appearance</td>
+                <td class="ml-font">മെലിഞ്ഞുണങ്ങിയ / ബലഹീനനായ</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Sodden</strong></td>
+                <td>Saturated with liquid; thoroughly soaked</td>
+                <td class="ml-font">നനഞ്ഞു കുതിർന്ന</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Atrocity</strong></td>
+                <td>An extremely wicked or cruel act</td>
+                <td class="ml-font">ക്രൂരകൃത്യം / കൊടുംപാതകം</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">How was the condemned prisoner described by Orwell?</div>
+                <div class="q-text-ml">വധശിക്ഷയ്ക്ക് വിധിക്കപ്പെട്ട തടവുകാരനെ ഓർവെൽ എങ്ങനെയാണ് വിവരിക്കുന്നത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> He was described as a puny Hindu man with a shaven head and vague, liquid eyes, yielding passively to his warders.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> തല മുണ്ഡനം ചെയ്ത, ശാന്തമായ കണ്ണുകളുള്ള, മെലിഞ്ഞുണങ്ങിയ ഒരു പാവം ഹിന്ദു യുവാവായാണ് ഓർവെൽ അവനെ വിവരിക്കുന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What did the stray dog do when it ran into the prison yard?</div>
+                <div class="q-text-ml">ജയിൽ മുറ്റത്തേക്ക് ഓടിയെത്തിയ നായ എന്താണ് ചെയ്തത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> The friendly dog bounded toward the prisoner and tried to lick his face, treating the condemned man with natural affection.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ഓടിയെത്തിയ ആ തെരുവ് നായ തടവുകാരന്റെ അടുത്തേക്ക് ചാടിച്ചെന്ന് അവന്റെ മുഖം നക്കാൻ തുടങ്ങി; അവനെ ഒരു മനുഷ്യനായി സ്നേഹത്തോടെ കണ്ടു.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q3</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What words did the prisoner repeat before being hanged?</div>
+                <div class="q-text-ml">തൂക്കിലേറ്റുന്നതിന് തൊട്ടുമുമ്പ് തടവുകാരൻ ആവർത്തിച്ചുരുവിട്ട വാക്ക് എന്തായിരുന്നു?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> He repeatedly chanted the holy name &#x27;Ram! Ram! Ram!&#x27; with steady, rhythmic desperation until the trapdoor opened.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> കഴുമരത്തിന്റെ പലക താഴേക്ക് വീഴുന്ന നിമിഷം വരെ അവൻ &#x27;റാം! റാം! റാം!&#x27; എന്ന് ഭക്തിയോടെ വിളിച്ചുകൊണ്ടിരുന്നു.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Explain the significance of the puddle of water in Orwell&#x27;s &#x27;A Hanging&#x27;.</div>
+                    <div class="q-text-ml">ഓർവെലിന്റെ &#x27;എ ഹാങ്ങിങ്&#x27; എന്ന ഉപന്യാസത്തിലെ ചെളിവെള്ളക്കെട്ടിന്റെ പ്രാധാന്യം വിശദീകരിക്കുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> The puddle is the philosophical turning point of the essay. When walking to the gallows, the prisoner steps aside instinctively to avoid stepping into muddy water. This mundane bodily reflex shows his nervous system and mind are fully active. It triggers Orwell&#x27;s sudden moral realization: destroying a living, thinking human being in the prime of life is an unnatural, monstrous act of state violence.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> ഈ കൃതിയിലെ ഏറ്റവും നിർണ്ണായകമായ ദാർശനിക നിമിഷമാണ് വെള്ളക്കെട്ട്. മരണത്തിലേക്ക് നടക്കുമ്പോഴും ചെളിയിൽ ചവിട്ടാതിരിക്കാൻ ആ തടവുകാരൻ ഒഴിഞ്ഞുമാറുന്നു. അവന്റെ ജീവനും ബോധവും എത്രത്തോളം സജീവമാണെന്ന് ഈ ചെറിയ പ്രവൃത്തി വ്യക്തമാക്കുന്നു. ജീവനുള്ള ഒരു മനുഷ്യന്റെ ആയുസ്സ് ഭരണകൂടം ബലമായി കവർന്നെടുക്കുന്നത് എത്ര വലിയ പാതകമാണെന്ന് ഓർവെൽ ഇവിടെ തിരിച്ചറിയുന്നു.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Critically evaluate George Orwell&#x27;s essay &#x27;A Hanging&#x27; as an indictment of capital punishment and colonial bureaucracy.</div>
+                    <div class="q-text-ml">വധശിക്ഷയ്ക്കും കൊളോണിയൽ ഉദ്യോഗസ്ഥ വൃന്ദത്തിനുമെതിരെയുള്ള കുറ്റപത്രമായി ജോർജ്ജ് ഓർവെലിന്റെ &#x27;എ ഹാങ്ങിങ്&#x27; എന്ന കൃതിയെ സമഗ്രമായി വിലയിരുത്തുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>George Orwell&#x27;s &#x27;A Hanging&#x27; is one of the most powerful anti-capital punishment texts in English literature. Drawing on his real-life observations as a police officer in colonial Burma, Orwell avoids abstract political speeches, opting instead for sensory realism to expose the horror of legalized murder.<br><br>The setting is grim: a damp prison yard under a sickly yellow light. Orwell portrays the execution not as justice, but as an awkward bureaucratic chore. The superintendent looks at his watch, worrying that the execution is taking too long because breakfast is getting cold. This callous efficiency underscores how colonial institutions reduce human beings to mere numbers.<br><br>The essay&#x27;s moral core is encapsulated in the prisoner dodging the puddle. Orwell realizes that in ten minutes, this vibrant mind, with memories, emotions, and sensations, will be extinguished forever. The post-execution scene is equally telling: the hangman, superintendent, and guards engage in hysterical laughter and drink whisky together. This collective hysteria is a desperate psychological defense mechanism to drown out their complicity in murder. Through spare, precise prose, Orwell forces society to confront the barbarity of the death penalty.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>വധശിക്ഷയുടെ ക്രൂരതയെയും കൊളോണിയൽ ഭരണകൂടത്തിന്റെ മനുഷ്യത്വമില്ലായ്മയെയും അതിശക്തമായി അപലപിക്കുന്ന ഉജ്ജ്വല കൃതിയാണ് &#x27;എ ഹാങ്ങിങ്&#x27;. ബർമ്മയിൽ പോലീസ് ഉദ്യോഗസ്ഥനായിരുന്ന കാലത്തെ സ്വന്തം അനുഭവങ്ങളെയാണ് ഓർവെൽ ഇതിൽ പകർത്തിവെച്ചിരിക്കുന്നത്.<br><br>ജയിലിലെ ഇരുണ്ട അന്തരീക്ഷവും, പ്രാതൽ തണുത്തുപോകുമെന്ന ഭയത്താൽ വാച്ചിലേക്ക് നോക്കി ധൃതികൂട്ടുന്ന ജയിൽ സൂപ്രണ്ടും കൊളോണിയൽ ഭരണകൂടത്തിന്റെ നിർദ്ദയമായ മുഖമാണ് കാട്ടിത്തരുന്നത്. മനുഷ്യജീവനേക്കാൾ അവർ വില കൽപ്പിക്കുന്നത് സമയക്രമത്തിനാണ്.<br><br>തടവുകാരൻ ചെളിവെള്ളക്കെട്ട് ഒഴിഞ്ഞുമാറുന്ന നിമിഷത്തിലാണ് മനുഷ്യജീവന്റെ മഹത്വം ഓർവെൽ തിരിച്ചറിയുന്നത്. ഏതാനും നിമിഷങ്ങൾക്കുള്ളിൽ ഇല്ലാതാകാൻ പോകുന്ന ആ ബോധമനസ്സിനെക്കുറിച്ചുള്ള ചിന്ത അദ്ദേഹത്തെ നടുക്കുന്നു. വധശിക്ഷയ്ക്ക് ശേഷം ഉദ്യോഗസ്ഥർ പൊട്ടിച്ചിരിക്കുന്നതും മദ്യം കഴിക്കുന്നതും ചെയ്ത തെറ്റിന്റെ ഭാരം മറക്കാനുള്ള വെപ്രാളമാണ്. വധശിക്ഷ എന്നത് നിയമപരമായ കൊലപാതകം മാത്രമാണെന്ന് ഓർവെൽ തെളിയിക്കുന്നു.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">Set in a damp, yellow morning in a colonial Burmese prison yard.</div>
+            <div class="knock-ml">കൊളോണിയൽ ബർമ്മയിലെ ഒരു നനഞ്ഞ ജയിൽ മുറ്റത്താണ് സംഭവം നടക്കുന്നത്.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">A frail Hindu prisoner is marched to the gallows by armed warders.</div>
+            <div class="knock-ml">മെലിഞ്ഞുണങ്ങിയ ഒരു തടവുകാരനെ തൂക്കുമരത്തിലേക്ക് നയിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">A stray dog bounds in and innocently licks the prisoner&#x27;s face.</div>
+            <div class="knock-ml">ഒരു തെരുവ് നായ ഓടിയെത്തി സ്നേഹത്തോടെ തടവുകാരന്റെ മുഖം നക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">The prisoner swerves around a puddle, revealing his fully active consciousness.</div>
+            <div class="knock-ml">ചെളിവെള്ളത്തിൽ ചവിട്ടാതെ ഒഴിഞ്ഞുമാറുന്ന തടവുകാരൻ അവന്റെ സജീവമായ ജീവനെ സാക്ഷ്യപ്പെടുത്തുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">Orwell experiences an epiphany: taking a conscious life is morally unspeakable.</div>
+            <div class="knock-ml">ജീവനുള്ള ഒരു മനുഷ്യനെ ഇല്ലാതാക്കുന്നത് കൊടുംക്രൂരതയാണെന്ന് ഓർവെൽ തിരിച്ചറിയുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">The prisoner chants &#x27;Ram!&#x27; repeatedly until the drop falls.</div>
+            <div class="knock-ml">കഴുമരം വീഴുന്നതുവരെ തടവുകാരൻ &#x27;റാം!&#x27; എന്ന് പ്രാർത്ഥിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">Executioners drink and laugh nervously to suppress their subconscious guilt.</div>
+            <div class="knock-ml">ഉദ്യോഗസ്ഥർ മദ്യപിക്കുകയും പൊട്ടിച്ചിരിക്കുകയും ചെയ്യുന്നത് കുറ്റബോധം മറയ്ക്കാനാണ്.</div>
+          </div>
+        
+</div>
+</div>
+
+<script id="ah-universal-reader-protection-script">
+  (function() {
+    // Disable right click / context menu
+    window.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+
+    // Disable Save (Ctrl+S), Print (Ctrl+P), View-Source (Ctrl+U), DevTools (F12, Ctrl+Shift+I)
+    window.addEventListener('keydown', function(e) {
+      var k = e.key ? e.key.toLowerCase() : '';
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+      if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }, true);
+
+    // Disable dragging
+    window.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+
+    // Disable copy
+    window.addEventListener('copy', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+  })();
+</script>
+
+</body>
+</html>

@@ -234,6 +234,31 @@
   }
 
 </style>
+
+<style id="ah-universal-reader-protection">
+  /* Academic Hub Content Protection & Clean Reading Mode */
+  * {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+  @media print {
+    html, body {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  /* Suppress download / save buttons, external open buttons, or save triggers */
+  a[download], button[download], [download], .btn-download, .download, #downloadBtn,
+  #modalExternalBtn, #openExternalBtn, .fast-native-btn {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+</style>
+
 </head>
 <body>
 
@@ -1640,6 +1665,45 @@
     സ്ത്രീകൾക്കും പെൺകുട്ടികൾക്കുമെതിരെയുള്ള അതിക്രമങ്ങളുടെ തുടർച്ചയുടെ ഭാഗമാണ് CVAWG, കൂടാതെ നിലവിലുള്ള ലിംഗാധിഷ്ഠിത അധികാര ഘടനകളിൽ ഉൾച്ചേർത്തിട്ടുള്ള പീഡനത്തിന്റെയും നിശബ്ദമാക്കലിന്റെയും മറ്റൊരു രൂപത്തെ ഇത് പ്രതിനിധീകരിക്കുന്നു. സാങ്കേതികവിദ്യയിലൂടെ നടക്കുന്ന അതിക്രമങ്ങൾ സ്ത്രീകൾക്കും പെൺകുട്ടികൾക്കും അവരുടെ ലിംഗഭേദവുമായി ബന്ധപ്പെട്ട കാരണങ്ങളാൽ ശാരീരിക ലോകത്ത് അനുഭവപ്പെടുന്ന അതേ അതിക്രമത്തിന്റെ ഒരു പ്രധാന ഭാഗമാണ്5. കൂടാതെ, സ്ത്രുകളെയും പെൺകുട്ടികളെയും മാത്രം ലക്ഷ്യമിടുന്ന നിരവധി സൈബർ അതിക്രമ രൂപങ്ങളുമുണ്ട്. സൈബർ ഫ്ലാഷിങ്, സെക്സ്ടോർഷൻ, അതുപോലെ തന്നെ വെർച്വൽ റേപ്പ് പോലുള്ള സമ്മതമില്ലാത്ത അന്തരംഗ ചിത്രങ്ങളുടെ ദുരുപയോഗം എന്നിവ ഇതിൽ ഉൾപ്പെടുന്നു. യൂറോപ്യൻ യൂണിയനിലെ ലിംഗസമത്വത്തെയും ഡിജിറ്റലൈസേഷനെയും കുറിച്ചുള്ള ഒരു EIGE പഠനം, വളരെ ചെറിയ പ്രായത്തിൽ തന്നെ സ്ത്രീകൾ CVAWG-ന്റെ സാധ്യതയുള്ള ലക്ഷ്യങ്ങളായി മാറുന്നത് ഉൾപ്പെടെയുള്ള ഡിജിറ്റലൈസേഷന്റെ പുതിയ ലിംഗാധിഷ്ഠിത വെല്ലുവിളികളെ എടുത്തുപറഞ്ഞു6. പലപ്പോഴും ഡിജിറ്റൽ ഇടങ്ങൾ ഉപേക്ഷിക്കുന്നതിൽ കലാശിക്കുന്ന CVAWG, സാങ്കേതികവിദ്യയുടെ കാര്യത്തിൽ സ്ത്രീകളുടെ ആത്മവിശ്വാസത്തിൽ തകർപ്പൻ ആഘാതം ഏൽപ്പിക്കുന്നു, ഇത് STEM/ICT ലിംഗ വേർതിരിവ്, ലിംഗ വേതന അന്തരം തുടങ്ങിയ വഷളായിക്കൊണ്ടിരിക്കുന്ന ലിംഗസമത്വ പ്രശ്നങ്ങൾക്ക് കൂടുതൽ കാരണമാകുന്നു.
   </div>
 </div>
+
+
+<script id="ah-universal-reader-protection-script">
+  (function() {
+    // Disable right click / context menu
+    window.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+
+    // Disable Save (Ctrl+S), Print (Ctrl+P), View-Source (Ctrl+U), DevTools (F12, Ctrl+Shift+I)
+    window.addEventListener('keydown', function(e) {
+      var k = e.key ? e.key.toLowerCase() : '';
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+      if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }, true);
+
+    // Disable dragging
+    window.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+
+    // Disable copy
+    window.addEventListener('copy', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+  })();
+</script>
 
 </body>
 </html>

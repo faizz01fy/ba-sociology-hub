@@ -5042,6 +5042,399 @@
 
   </style>
 
+
+  <style id="voice-tabs-2row-responsive">
+
+    /* Premium Mobile Screen Optimization (< 768px) */
+    @media (max-width: 767px) {
+      /* Hide single dropdown accordion button to reveal instant screen-fitted subject grid */
+      .mobile-subj-toggle {
+        display: none !important;
+      }
+
+      /* Balanced 2-column full screen subject tabs grid */
+      .subject-tabs-scroll {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 6px !important;
+        padding: 2px 0 14px 0 !important;
+        margin-bottom: 14px !important;
+        overflow-x: visible !important;
+        overflow-y: visible !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Compact, high-end subject tab buttons */
+      .subj-tab-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 5px !important;
+        padding: 6.5px 8px !important;
+        min-height: 38px !important;
+        border-radius: 11px !important;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+        font-size: 11px !important;
+        font-weight: 750 !important;
+        letter-spacing: -0.01em !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        box-shadow: 0 1.5px 5px rgba(15, 23, 42, 0.05) !important;
+        border-width: 1.5px !important;
+        border-style: solid !important;
+        transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+      }
+      .subj-tab-btn:active {
+        transform: scale(0.97) !important;
+      }
+
+      .subj-tab-btn .subj-tab-icon {
+        font-size: 13px !important;
+        flex: 0 0 auto !important;
+        line-height: 1 !important;
+      }
+
+      .subj-tab-btn .subj-tab-title {
+        flex: 1 1 auto !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        text-align: left !important;
+        font-size: 11px !important;
+        line-height: 1.15 !important;
+      }
+
+      .subj-tab-btn .subj-badge {
+        font-size: 9px !important;
+        font-weight: 800 !important;
+        padding: 1.5px 5px !important;
+        border-radius: 999px !important;
+        flex: 0 0 auto !important;
+        margin-left: 2px !important;
+      }
+
+      /* Floating Awake pill positioning - stay comfortably above floating bottom bar */
+      .floating-awake-pill {
+        bottom: 84px !important;
+        right: 12px !important;
+        z-index: 220 !important;
+      }
+      body.sticky-active .floating-awake-pill {
+        bottom: 142px !important;
+      }
+    }
+
+    /* Screen-covering 2-row layout on desktop/tablet (>= 768px) */
+    @media (min-width: 768px) {
+      .subject-tabs-scroll {
+        display: grid !important;
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        overflow-x: visible !important;
+        overflow-y: visible !important;
+        padding: 6px 2px 18px 2px !important;
+        margin-bottom: 20px !important;
+        width: 100% !important;
+      }
+      @media (min-width: 1300px) {
+        .subject-tabs-scroll {
+          grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+          gap: 10px !important;
+        }
+      }
+      .subj-tab-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 6px !important;
+        padding: 9px 12px !important;
+        border-radius: 12px !important;
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+        font-size: 12.5px !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.01em !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
+        transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease !important;
+        border-width: 1.5px !important;
+        border-style: solid !important;
+      }
+      .subj-tab-btn:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12) !important;
+      }
+      .subj-tab-btn .subj-tab-icon {
+        font-size: 14.5px !important;
+        flex: 0 0 auto !important;
+      }
+      .subj-tab-btn .subj-tab-title {
+        flex: 1 1 auto !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        text-align: left !important;
+      }
+      .subj-tab-btn .subj-badge {
+        font-size: 10.5px !important;
+        font-weight: 800 !important;
+        padding: 2px 6px !important;
+        border-radius: 999px !important;
+        flex: 0 0 auto !important;
+        margin-left: 2px !important;
+      }
+    }
+
+    /* Mathematics */
+    .subj-tab--mathematics, [data-slug="mathematics"] {
+      background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%) !important;
+      border-color: #5eead4 !important;
+      color: #0f766e !important;
+    }
+    .subj-tab--mathematics .subj-badge, [data-slug="mathematics"] .subj-badge {
+      background: #99f6e4 !important;
+      color: #115e59 !important;
+    }
+    .subj-tab--mathematics.active, [data-slug="mathematics"].active {
+      background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%) !important;
+      border-color: #0f766e !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35) !important;
+    }
+    .subj-tab--mathematics.active .subj-badge, [data-slug="mathematics"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    /* Hindi */
+    .subj-tab--hindi, [data-slug="hindi"] {
+      background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%) !important;
+      border-color: #fb923c !important;
+      color: #c2410c !important;
+    }
+    .subj-tab--hindi .subj-badge, [data-slug="hindi"] .subj-badge {
+      background: #fed7aa !important;
+      color: #9a3412 !important;
+    }
+    .subj-tab--hindi.active, [data-slug="hindi"].active {
+      background: linear-gradient(135deg, #ea580c 0%, #f97316 100%) !important;
+      border-color: #c2410c !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(234, 88, 12, 0.35) !important;
+    }
+    .subj-tab--hindi.active .subj-badge, [data-slug="hindi"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    /* Vibrant Brand Colors & Gradients for each Subject */
+    .subj-tab--philosophy-of-ai, [data-slug="philosophy-of-ai"] {
+      background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%) !important;
+      border-color: #c4b5fd !important;
+      color: #5b21b6 !important;
+    }
+    .subj-tab--philosophy-of-ai .subj-badge, [data-slug="philosophy-of-ai"] .subj-badge {
+      background: #ddd6fe !important;
+      color: #4c1d95 !important;
+    }
+    .subj-tab--philosophy-of-ai.active, [data-slug="philosophy-of-ai"].active {
+      background: linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%) !important;
+      border-color: #5b21b6 !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(109, 40, 217, 0.35) !important;
+    }
+    .subj-tab--philosophy-of-ai.active .subj-badge, [data-slug="philosophy-of-ai"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    .subj-tab--microeconomic-foundation, [data-slug="microeconomic-foundation"] {
+      background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%) !important;
+      border-color: #67e8f9 !important;
+      color: #0e7490 !important;
+    }
+    .subj-tab--microeconomic-foundation .subj-badge, [data-slug="microeconomic-foundation"] .subj-badge {
+      background: #a5f3fc !important;
+      color: #155e75 !important;
+    }
+    .subj-tab--microeconomic-foundation.active, [data-slug="microeconomic-foundation"].active {
+      background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%) !important;
+      border-color: #0e7490 !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(8, 145, 178, 0.35) !important;
+    }
+    .subj-tab--microeconomic-foundation.active .subj-badge, [data-slug="microeconomic-foundation"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    .subj-tab--sociology, [data-slug="sociology"] {
+      background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%) !important;
+      border-color: #f472b6 !important;
+      color: #9d174d !important;
+    }
+    .subj-tab--sociology .subj-badge, [data-slug="sociology"] .subj-badge {
+      background: #fbcfe8 !important;
+      color: #831843 !important;
+    }
+    .subj-tab--sociology.active, [data-slug="sociology"].active {
+      background: linear-gradient(135deg, #db2777 0%, #ec4899 100%) !important;
+      border-color: #be185d !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(219, 39, 119, 0.35) !important;
+    }
+    .subj-tab--sociology.active .subj-badge, [data-slug="sociology"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    .subj-tab--english, [data-slug="english"] {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
+      border-color: #93c5fd !important;
+      color: #1e40af !important;
+    }
+    .subj-tab--english .subj-badge, [data-slug="english"] .subj-badge {
+      background: #bfdbfe !important;
+      color: #1e3a8a !important;
+    }
+    .subj-tab--english.active, [data-slug="english"].active {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
+      border-color: #1e40af !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(29, 78, 216, 0.35) !important;
+    }
+    .subj-tab--english.active .subj-badge, [data-slug="english"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    .subj-tab--fundamentals-of-ethics, [data-slug="fundamentals-of-ethics"] {
+      background: linear-gradient(135deg, #f7fee7 0%, #ecfccb 100%) !important;
+      border-color: #bef264 !important;
+      color: #3f6212 !important;
+    }
+    .subj-tab--fundamentals-of-ethics .subj-badge, [data-slug="fundamentals-of-ethics"] .subj-badge {
+      background: #d9f99d !important;
+      color: #365314 !important;
+    }
+    .subj-tab--fundamentals-of-ethics.active, [data-slug="fundamentals-of-ethics"].active {
+      background: linear-gradient(135deg, #4d7c0f 0%, #65a30d 100%) !important;
+      border-color: #3f6212 !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(77, 124, 15, 0.35) !important;
+    }
+    .subj-tab--fundamentals-of-ethics.active .subj-badge, [data-slug="fundamentals-of-ethics"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    .subj-tab--philosophy-of-education, [data-slug="philosophy-of-education"] {
+      background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%) !important;
+      border-color: #7dd3fc !important;
+      color: #0369a1 !important;
+    }
+    .subj-tab--philosophy-of-education .subj-badge, [data-slug="philosophy-of-education"] .subj-badge {
+      background: #7dd3fc !important;
+      color: #0c4a6e !important;
+    }
+    .subj-tab--philosophy-of-education.active, [data-slug="philosophy-of-education"].active {
+      background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%) !important;
+      border-color: #0369a1 !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35) !important;
+    }
+    .subj-tab--philosophy-of-education.active .subj-badge, [data-slug="philosophy-of-education"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    .subj-tab--malayalam, [data-slug="malayalam"] {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+      border-color: #86efac !important;
+      color: #15803d !important;
+    }
+    .subj-tab--malayalam .subj-badge, [data-slug="malayalam"] .subj-badge {
+      background: #bbf7d0 !important;
+      color: #166534 !important;
+    }
+    .subj-tab--malayalam.active, [data-slug="malayalam"].active {
+      background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%) !important;
+      border-color: #15803d !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(22, 163, 74, 0.35) !important;
+    }
+    .subj-tab--malayalam.active .subj-badge, [data-slug="malayalam"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    .subj-tab--history-of-keralam, [data-slug="history-of-keralam"] {
+      background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%) !important;
+      border-color: #fda4af !important;
+      color: #be123c !important;
+    }
+    .subj-tab--history-of-keralam .subj-badge, [data-slug="history-of-keralam"] .subj-badge {
+      background: #fecdd3 !important;
+      color: #9f1239 !important;
+    }
+    .subj-tab--history-of-keralam.active, [data-slug="history-of-keralam"].active {
+      background: linear-gradient(135deg, #e11d48 0%, #f43f5e 100%) !important;
+      border-color: #be123c !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(225, 29, 72, 0.35) !important;
+    }
+    .subj-tab--history-of-keralam.active .subj-badge, [data-slug="history-of-keralam"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    .subj-tab--development-issues-in-indian-economy, [data-slug="development-issues-in-indian-economy"] {
+      background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%) !important;
+      border-color: #fdba74 !important;
+      color: #c2410c !important;
+    }
+    .subj-tab--development-issues-in-indian-economy .subj-badge, [data-slug="development-issues-in-indian-economy"] .subj-badge {
+      background: #fed7aa !important;
+      color: #9a3412 !important;
+    }
+    .subj-tab--development-issues-in-indian-economy.active, [data-slug="development-issues-in-indian-economy"].active {
+      background: linear-gradient(135deg, #ea580c 0%, #f97316 100%) !important;
+      border-color: #c2410c !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(234, 88, 12, 0.35) !important;
+    }
+    .subj-tab--development-issues-in-indian-economy.active .subj-badge, [data-slug="development-issues-in-indian-economy"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+
+    .subj-tab--arabic, [data-slug="arabic"] {
+      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%) !important;
+      border-color: #d8b4fe !important;
+      color: #7e22ce !important;
+    }
+    .subj-tab--arabic .subj-badge, [data-slug="arabic"] .subj-badge {
+      background: #e9d5ff !important;
+      color: #6b21a8 !important;
+    }
+    .subj-tab--arabic.active, [data-slug="arabic"].active {
+      background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%) !important;
+      border-color: #7e22ce !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.35) !important;
+    }
+    .subj-tab--arabic.active .subj-badge, [data-slug="arabic"].active .subj-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -7150,3 +7543,8 @@
 
 </html>
 
+
+<!-- v_bump_1794492481 -->
+<!-- voice_mobile_optimized_v2_1794496040 -->
+
+<!-- force_upload_1794497597.846322 -->

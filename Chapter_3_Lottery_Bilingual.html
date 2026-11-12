@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 3: Lottery (ലോട്ടറി) — Bilingual Companion</title>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 12mm 12mm 12mm;
+    @top-center {
+      content: "B.COM SEMESTER I — ADDITIONAL ENGLISH | WORDS TO WORLDS (ഇംഗ്ലീഷ് - മലയാളം സമഗ്ര പഠന സഹായി)";
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      font-weight: 700;
+      color: #64748b;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* FRONT COVER */
+  .cover-page {
+    height: 268mm;
+    max-height: 268mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+    break-after: page;
+    background: linear-gradient(135deg, #090d16 0%, #0f172a 45%, #1e1b4b 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 24mm 18mm 20mm 18mm;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-page:before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 8.5pt;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #38bdf8;
+    margin-bottom: 12px;
+  }
+
+  .cover-title {
+    font-size: 28pt;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+  }
+
+  .cover-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 16pt;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #a7f3d0;
+    margin: 0 0 16px 0;
+  }
+
+  .cover-subtitle {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #cbd5e1;
+    font-weight: 600;
+    border-left: 3.5px solid #06b6d4;
+    padding-left: 14px;
+    margin-bottom: 22px;
+  }
+
+  .cover-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 9pt;
+  }
+
+  .cover-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e2e8f0;
+  }
+
+  .cover-feature-item span.icon {
+    font-size: 12pt;
+  }
+
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: 14px;
+    font-size: 8.5pt;
+    color: #94a3b8;
+  }
+
+  /* TOC PAGE */
+  .toc-page {
+    page-break-after: always;
+    break-after: page;
+    padding: 6mm 0;
+  }
+
+  .toc-header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .toc-title {
+    font-size: 20pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .toc-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    color: #0f766e;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .toc-card {
+    background: #f8fafc;
+    border: 1.2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .toc-num {
+    font-size: 8pt;
+    font-weight: 800;
+    color: #0f766e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-en {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.35;
+  }
+
+  .toc-author {
+    font-size: 8pt;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* CHAPTER STYLING */
+  .chapter-wrapper {
+    page-break-before: always;
+    break-before: page;
+    padding-top: 2mm;
+  }
+
+  .ch-hero {
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border: 1.5px solid var(--ch-border);
+    background: linear-gradient(135deg, var(--ch-tint) 0%, #ffffff 100%);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .ch-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 7.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    background: var(--ch-primary);
+    margin-bottom: 4px;
+  }
+
+  .ch-title-en {
+    font-size: 15pt;
+    font-weight: 900;
+    color: var(--ch-primary);
+    line-height: 1.25;
+    margin: 0 0 2px 0;
+  }
+
+  .ch-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .ch-author-row {
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* SECTION BANNERS */
+  .section-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--ch-border);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .section-banner h3 {
+    margin: 0;
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: var(--ch-primary);
+  }
+
+  .section-banner .ml-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* BILINGUAL PAIRED BLOCKS */
+  .bilingual-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .bilingual-pair .en-block {
+    font-size: 9pt;
+    line-height: 1.55;
+    color: #1e293b;
+    border-left: 3px solid var(--ch-primary);
+    padding-left: 8px;
+  }
+
+  .bilingual-pair .ml-block {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.8pt;
+    line-height: 1.65;
+    color: #0f172a;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+
+  .ml-tag {
+    display: inline-block;
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--ch-primary);
+    background: #ffffff;
+    border: 1px solid var(--ch-border);
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+  }
+
+  /* GLOSSARY TABLE */
+  .glossary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 8.6pt;
+    break-inside: avoid;
+  }
+
+  .glossary-table th {
+    background: var(--ch-primary);
+    color: #ffffff;
+    padding: 6px 10px;
+    text-align: left;
+    font-weight: 800;
+  }
+
+  .glossary-table td {
+    padding: 5px 10px;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+
+  .glossary-table tr:nth-child(even) {
+    background: var(--ch-tint);
+  }
+
+  .ml-font {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+  }
+
+  /* QA CARDS */
+  .qa-card {
+    border: 1.2px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+
+  .qa-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  .q-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 7pt;
+    font-weight: 800;
+    background: var(--ch-primary);
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  .q-text-en {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .q-text-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--ch-primary);
+    line-height: 1.45;
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
+
+  .ans-box {
+    margin-top: 4px;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 6px;
+  }
+
+  .ans-en {
+    font-size: 8.8pt;
+    line-height: 1.55;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+
+  .ans-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.65;
+    color: #047857;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 5px;
+    padding: 6px 8px;
+  }
+
+  /* KNOCK POINTS (Page 12 Style full grid) */
+  .knock-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 6px;
+    break-inside: avoid;
+  }
+
+  .knock-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .knock-num {
+    font-size: 6.8pt;
+    font-weight: 800;
+    color: #ffffff;
+    background: var(--ch-primary);
+    padding: 1px 5px;
+    border-radius: 3px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 2px;
+  }
+
+  .knock-en {
+    font-size: 7.8pt;
+    font-weight: 750;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+
+  .knock-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 7.4pt;
+    font-weight: 700;
+    color: #047857;
+    line-height: 1.3;
+  }
+
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
+
+<style id="ah-universal-reader-protection">
+  /* Academic Hub Content Protection & Clean Reading Mode */
+  * {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+  @media print {
+    html, body {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  /* Suppress download / save buttons, external open buttons, or save triggers */
+  a[download], button[download], [download], .btn-download, .download, #downloadBtn,
+  #modalExternalBtn, #openExternalBtn, .fast-native-btn {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+</style>
+
+</head>
+<body>
+<div class="chapter-wrapper" style="--ch-primary: #b45309; --ch-tint: #fffbeb; --ch-border: #fde68a;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 3 · Short Story (ചെറുകഥ)</span>
+        <h1 class="ch-title-en">3. Lottery</h1>
+        <h2 class="ch-title-ml">3. ലോട്ടറി</h2>
+        <div class="ch-author-row">✍️ Munshi Premchand &nbsp;·&nbsp; <span class="ml-font">മുൻഷി പ്രേംചന്ദ്</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Munshi Premchand (1880–1936), born Dhanpat Rai Srivastava near Varanasi, is celebrated as the &#x27;Upanyas Samrat&#x27; (Emperor of Novels) in modern Hindi and Urdu literature. A profound social realist, his works depict the hardships of ordinary peasants, moral dilemmas, and the corrupting power of greed.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>ആധുനിക ഹിന്ദി-ഉർദ്ദു സാഹിത്യത്തിലെ &#x27;ഉപന്യാസ് സമ്രാട്ട്&#x27; (നോവലുകളുടെ ചക്രവർത്തി) എന്നറിയപ്പെടുന്ന എഴുത്തുകാരനാണ് മുൻഷി പ്രേംചന്ദ് (1880-1936). സാധാരണക്കാരുടെ കഷ്ടപ്പാടുകൾ, ധാർമ്മിക പ്രതിസന്ധികൾ, അത്യാഗ്രഹത്തിന്റെ ദുരന്തങ്ങൾ എന്നിവയെ പച്ചയായി വരച്ചുകാട്ടിയ സാമൂഹിക യാഥാർത്ഥ്യവാദിയാണ് അദ്ദേഹം.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">The devastating psychological impact of greed, money illusion, and unearned wealth on human relationships. The mere possibility of winning a fortune dismantles family loyalty, creates suspicion, and turns intimate friends into cautious adversaries.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>അധ്വാനിക്കാതെ കിട്ടുന്ന പണത്തോടുള്ള അത്യാഗ്രഹവും വ്യാമോഹങ്ങളും മനുഷ്യബന്ധങ്ങളെ എങ്ങനെ തകിടം മറിക്കുന്നുവെന്ന് കഥ വ്യക്തമാക്കുന്നു. ലോട്ടറി അടിക്കുമെന്ന വെറും സങ്കല്പം പോലും കുടുംബബന്ധങ്ങളെയും സുഹൃദ്ബന്ധങ്ങളെയും തകർത്തു കളയുന്നു.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Joint Purchase of a Single Lottery Ticket / <span class="ml-font">ഒരു ലോട്ടറി ടിക്കറ്റിന്റെ സംയുക്ത വാങ്ങൽ</span></strong>
+            <div class="en-block" style="margin-top:4px;">The narrator, a modest schoolteacher, and his unemployed friend Vikram decide to pool five rupees each to buy a single 10-rupee lottery ticket with a grand prize of five lakh rupees. They agree to share the winnings equally.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>സാധാരണ സ്കൂൾ അധ്യാപകനായ ആഖ്യാതാവും തൊഴിൽരഹിതനായ സുഹൃത്ത് വിക്രമും ചേർന്ന് അഞ്ച് രൂപ വീതം എടുത്ത് പത്ത് രൂപയുടെ ഒരു ലോട്ടറി ടിക്കറ്റ് വാങ്ങുന്നു. അഞ്ച് ലക്ഷം രൂപ സമ്മാനത്തുക ലഭിച്ചാൽ തുല്യമായി വീതിക്കാമെന്ന് അവർ സമ്മതിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Daydreams of Grandeur and Growing Distrust / <span class="ml-font">വലിയ സ്വപ്നങ്ങളും വളരുന്ന അവിശ്വാസവും</span></strong>
+            <div class="en-block" style="margin-top:4px;">Before the result is announced, both men become intoxicated with imaginary wealth. Vikram dreams of traveling the world and buying lavish estates, while the narrator plans a quiet, intellectual life. Soon, suspicion creeps in: Vikram demands written agreements and legal clauses, fearing the narrator might cheat him.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>ഫലം വരുന്നതിനുമുമ്പ് തന്നെ ഇരുവരും ഭാവനാ സമ്പത്തിൽ മതിമറക്കുന്നു. വിക്രം ലോകം ചുറ്റിക്കാണാനും വലിയ കൊട്ടാരങ്ങൾ വാങ്ങാനും സ്വപ്നം കാണുമ്പോൾ, ആഖ്യാതാവ് ശാന്തമായ ജീവിതം ആഗ്രഹിക്കുന്നു. എന്നാൽ ഉടൻ തന്നെ പരസ്പര അവിശ്വാസം ഉടലെടുക്കുകയും വിക്രം മുദ്രപ്പത്രത്തിൽ കരാർ എഴുതിവാങ്ങാൻ നിർബന്ധിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Family Turmoil and the Reality Check / <span class="ml-font">കുടുംബകലഹവും യാഥാർത്ഥ്യത്തിന്റെ ആഘാതവും</span></strong>
+            <div class="en-block" style="margin-top:4px;">Vikram&#x27;s family falls into fierce disputes. His father, mother, and uncle argue violently over their shares, threatening court cases over non-existent money. When the results arrive, neither of them wins. The illusion evaporates, leaving behind shattered peace and bitter embarrassment.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>വിക്രമിന്റെ കുടുംബത്തിൽ ഭയാനകമായ വഴക്കുകൾ ഉണ്ടാകുന്നു. അച്ഛനും അമ്മയും അമ്മാവനും കിട്ടാത്ത പണത്തെച്ചൊല്ലി കോടതി കയറുമെന്ന് ഭീഷണിപ്പെടുത്തുന്നു. ഒടുവിൽ ലോട്ടറി ഫലം വരുമ്പോൾ രണ്ടുപേർക്കും ഒന്നും ലഭിക്കുന്നില്ല. അതോടെ വ്യാമോഹങ്ങളെല്ലാം തകരുകയും ചെയ്ത തെറ്റുകൾ ഓർത്ത് അവർ ലജ്ജിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Humiliating</strong></td>
+                <td>Causing someone to feel ashamed and foolish</td>
+                <td class="ml-font">അപമാനകരമായ / നാണംകെടുത്തുന്ന</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Speculation</strong></td>
+                <td>Forming theories or taking financial gambles</td>
+                <td class="ml-font">ഊഹാപോഹങ്ങൾ / ചൂതാട്ടം</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Miser</strong></td>
+                <td>A person who hoards wealth and spends as little as possible</td>
+                <td class="ml-font">പിശുക്കൻ / അത്യാഗ്രഹി</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Distrust</strong></td>
+                <td>The feeling that someone cannot be relied upon</td>
+                <td class="ml-font">അവിശ്വാസം / സംശയം</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What was the prize money of the lottery ticket in the story?</div>
+                <div class="q-text-ml">കഥയിലെ ലോട്ടറി ടിക്കറ്റിന്റെ സമ്മാനത്തുക എത്രയായിരുന്നു?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> The grand prize money of the lottery ticket was five lakh rupees (₹5,00,000).</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ലോട്ടറി ടിക്കറ്റിന്റെ ഒന്നാം സമ്മാനത്തുക അഞ്ച് ലക്ഷം രൂപയായിരുന്നു.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">How did Vikram and the narrator manage to purchase the ticket?</div>
+                <div class="q-text-ml">വിക്രമും ആഖ്യാതാവും എങ്ങനെയാണ് ടിക്കറ്റ് വാങ്ങാനുള്ള പണം കണ്ടെത്തിയത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> Neither had ten rupees alone, so they partnered up and contributed five rupees each to buy a single ticket together.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ഒറ്റയ്ക്ക് പത്ത് രൂപയില്ലാത്തതിനാൽ, ഇരുവരും അഞ്ച് രൂപ വീതം പങ്കിട്ടെടുത്ത് ഒരു ടിക്കറ്റ് സംയുക്തമായി വാങ്ങി.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q3</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What did Kunti pray for in the story?</div>
+                <div class="q-text-ml">കഥയിൽ കുന്തി എന്താണ് പ്രാർത്ഥിച്ചത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> Kunti prayed to God twice every day for her mother to win the lottery, because her mother promised her ₹50,000.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> അമ്മയ്ക്ക് ലോട്ടറിയടിച്ചാൽ തനിക്ക് 50,000 രൂപ തരാമെന്ന് പറഞ്ഞിരുന്നതിനാൽ, അമ്മയ്ക്ക് തന്നെ ലോട്ടറിയടിക്കണമെന്ന് കുന്തി ദിവസവും രണ്ടുനേരം പ്രാർത്ഥിച്ചു.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">How does the anticipation of unearned wealth destroy trust between Vikram and the narrator?</div>
+                    <div class="q-text-ml">കിട്ടാത്ത പണത്തെക്കുറിച്ചുള്ള പ്രതീക്ഷ വിക്രമും ആഖ്യാതാവും തമ്മിലുള്ള വിശ്വാസത്തെ എങ്ങനെയാണ് തകർത്തത്?</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> Initially, Vikram and the narrator shared genuine camaraderie. However, as the draw date approached, the thought of possessing ₹2.5 lakhs corrupted Vikram&#x27;s mind. He started suspecting the narrator would run away with the money if the ticket was kept in the narrator&#x27;s name. Vikram demanded legal stamps, witnesses, and harsh contract conditions. The warmth of friendship was replaced by cold paranoia and greed.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> തുടക്കത്തിൽ അടുത്ത സുഹൃത്തുക്കളായിരുന്നെങ്കിലും, രണ്ടര ലക്ഷം രൂപ കൈവരുമെന്ന ചിന്ത വിക്രമിന്റെ മനസ്സിനെ വിഷലിപ്തമാക്കി. ടിക്കറ്റ് ആഖ്യാതാവിന്റെ പേരിലായതിനാൽ പണവുമായി അയാൾ മുങ്ങുമോ എന്ന് വിക്രം സംശയിച്ചു. മുദ്രപ്പത്രത്തിൽ എഴുതിക്കൊടുക്കണമെന്നും സാക്ഷികൾ വേണമെന്നും അയാൾ നിർബന്ധിച്ചു. ആത്മാർത്ഥമായ സൗഹൃദത്തിന്റെ സ്ഥാനത്ത് കടുത്ത അവിശ്വാസവും അത്യാഗ്രഹവും നിറഞ്ഞു.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Analyze Premchand&#x27;s &#x27;Lottery&#x27; as a satirical critique of human greed and bourgeois middle-class illusions.</div>
+                    <div class="q-text-ml">മനുഷ്യന്റെ അത്യാഗ്രഹത്തെയും മധ്യവർഗ്ഗ വ്യാമോഹങ്ങളെയും കുറിച്ചുള്ള ആക്ഷേപഹാസ്യമായി പ്രേംചന്ദിന്റെ &#x27;ലോട്ടറി&#x27; എന്ന കഥയെ വിശകലനം ചെയ്യുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>Munshi Premchand&#x27;s &#x27;Lottery&#x27; is a masterclass in psychological realism and social satire. It lays bare how the mere anticipation of sudden, unearned wealth strips away civil decorum and exposes raw, predatory human instincts.<br><br>The story centers on the lower-middle-class yearning for a miraculous escape from financial hardships. The narrator, a humble teacher, and Vikram, an unemployed youth, see the 10-rupee ticket as their salvation. Yet, before a single rupee enters their hands, the imaginary money poisons every relationship.<br><br>Premchand brilliantly portrays how greed spreads like a contagion through Vikram&#x27;s household. His parents and uncle begin fighting over property and shares that do not exist. Filial love turns into venomous hostility, with family members consulting lawyers and planning deceit. Even innocent little Kunti is co-opted into this greed, praying selfishly for her mother to win so she can secure fifty thousand rupees.<br><br>The climax delivers a classic ironic deflation. Neither wins the prize. The towering castles in the air instantly collapse. Premchand leaves the reader with a poignant moral: real dignity lies in honest labor, whereas chasing unearned wealth creates moral degradation and emotional ruin.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>മനുഷ്യന്റെ അത്യാഗ്രഹത്തെയും സാമ്പത്തിക വ്യാമോഹങ്ങളെയും അതിസൂക്ഷ്മമായി തുറന്നുകാട്ടുന്ന ക്ലാസിക് കഥയാണ് പ്രേംചന്ദിന്റെ &#x27;ലോട്ടറി&#x27;. അധ്വാനിക്കാതെ കിട്ടുന്ന പണം മനുഷ്യബന്ധങ്ങളിലെ സ്നേഹവും മര്യാദയും എങ്ങനെ ഇല്ലാതാക്കുന്നുവെന്ന് കഥ വ്യക്തമാക്കുന്നു.<br><br>ദാരിദ്ര്യത്തിൽ നിന്ന് പെട്ടെന്ന് രക്ഷപ്പെടാനുള്ള സാധാരണക്കാരുടെ ആഗ്രഹമാണ് കഥയുടെ കേന്ദ്രബിന്ദു. ആഖ്യാതാവും വിക്രമും ടിക്കറ്റ് വാങ്ങുന്നതോടെ ആരംഭിക്കുന്ന ഭാവനാ ലോകം ക്രമേണ കുടുംബത്തിലെ മുഴുവൻ ആളുകളിലേക്കും പടരുന്നു. വിക്രമിന്റെ മാതാപിതാക്കളും അമ്മാവനും തമ്മിൽ സ്വത്തിനെച്ചൊല്ലി വലിയ വഴക്കുകൾ നടക്കുന്നു. സ്നേഹത്തിന് പകരം വഞ്ചനയും കോടതി കേസുകളും ചർച്ചയാകുന്നു.<br><br>ഒടുവിൽ ലോട്ടറി ഫലം വരുമ്പോൾ ആർക്കും ഒന്നും ലഭിക്കുന്നില്ല. ഉണ്ടാക്കിയെടുത്ത വ്യാമോഹങ്ങളുടെ കൊട്ടാരം ചീട്ടുകൊട്ടാരം പോലെ തകർന്നുവീഴുന്നു. കഠിനാധ്വാനത്തിലൂടെയുള്ള ജീവിതമാണ് ശ്രേഷ്ഠമെന്നും, എളുപ്പവഴികളിലൂടെയുള്ള ധനസമ്പാദനം മനുഷ്യനെ ആത്മീയമായും ധാർമ്മികമായും തകർക്കുമെന്നും പ്രേംചന്ദ് ഓർമ്മിപ്പിക്കുന്നു.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">A 10-rupee lottery ticket with a 5-lakh prize is bought jointly by two friends.</div>
+            <div class="knock-ml">അഞ്ച് ലക്ഷം സമ്മാനത്തുകയുള്ള 10 രൂപയുടെ ലോട്ടറി ടിക്കറ്റ് രണ്ട് സുഹൃത്തുക്കൾ ചേർന്ന് വാങ്ങുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">Vikram dreams of global luxury travel; the narrator dreams of a massive library.</div>
+            <div class="knock-ml">വിക്രം ആഡംബര യാത്രകളും, ആഖ്യാതാവ് വലിയൊരു ലൈബ്രറിയും സ്വപ്നം കാണുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">Mutual trust degrades into suspicion, leading to demands for legal stamped contracts.</div>
+            <div class="knock-ml">പരസ്പര വിശ്വാസം സംശയമായി മാറുകയും മുദ്രപ്പത്ര കരാറിനായി വാശിപിടിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">Vikram&#x27;s family descends into chaos, threatening lawsuits over non-existent wealth.</div>
+            <div class="knock-ml">കിട്ടാത്ത പണത്തെച്ചൊല്ലി വിക്രമിന്റെ കുടുംബം കോടതി കയറുമെന്ന് ഭീഷണിപ്പെടുത്തുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">Little Kunti&#x27;s prayer highlights how greed corrupts even innocent minds.</div>
+            <div class="knock-ml">കുട്ടികളിൽ പോലും അത്യാഗ്രഹം വിഷം കലർത്തുന്നുവെന്ന് കുന്തിയുടെ പ്രാർത്ഥന വ്യക്തമാക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">Neither friend wins any prize, causing their illusory castles to collapse.</div>
+            <div class="knock-ml">ലോട്ടറി അടിക്കാതിരുന്നതോടെ അവരുടെ ഭാവനാ കൊട്ടാരം പൂർണ്ണമായി നിലംപൊത്തുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">Premchand highlights that unearned wealth causes moral rot and destruction of ties.</div>
+            <div class="knock-ml">അധ്വാനമില്ലാത്ത ധനസമ്പാദനം മനുഷ്യബന്ധങ്ങളെയും ധാർമ്മികതയെയും നശിപ്പിക്കുമെന്ന് കഥ സമർത്ഥിക്കുന്നു.</div>
+          </div>
+        
+</div>
+</div>
+
+<script id="ah-universal-reader-protection-script">
+  (function() {
+    // Disable right click / context menu
+    window.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+
+    // Disable Save (Ctrl+S), Print (Ctrl+P), View-Source (Ctrl+U), DevTools (F12, Ctrl+Shift+I)
+    window.addEventListener('keydown', function(e) {
+      var k = e.key ? e.key.toLowerCase() : '';
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+      if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }, true);
+
+    // Disable dragging
+    window.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+
+    // Disable copy
+    window.addEventListener('copy', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+  })();
+</script>
+
+</body>
+</html>

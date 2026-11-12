@@ -1,0 +1,2880 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>WORDS TO WORLDS - 1 — Bilingual Study Companion</title>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 12mm 12mm 12mm;
+    @top-center {
+      content: "B.COM SEMESTER I — ADDITIONAL ENGLISH | WORDS TO WORLDS (ഇംഗ്ലീഷ് - മലയാളം സമഗ്ര പഠന സഹായി)";
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      font-weight: 700;
+      color: #64748b;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* FRONT COVER */
+  .cover-page {
+    height: 268mm;
+    max-height: 268mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+    break-after: page;
+    background: linear-gradient(135deg, #090d16 0%, #0f172a 45%, #1e1b4b 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 24mm 18mm 20mm 18mm;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-page:before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 8.5pt;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #38bdf8;
+    margin-bottom: 12px;
+  }
+
+  .cover-title {
+    font-size: 28pt;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+  }
+
+  .cover-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 16pt;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #a7f3d0;
+    margin: 0 0 16px 0;
+  }
+
+  .cover-subtitle {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #cbd5e1;
+    font-weight: 600;
+    border-left: 3.5px solid #06b6d4;
+    padding-left: 14px;
+    margin-bottom: 22px;
+  }
+
+  .cover-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 9pt;
+  }
+
+  .cover-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e2e8f0;
+  }
+
+  .cover-feature-item span.icon {
+    font-size: 12pt;
+  }
+
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: 14px;
+    font-size: 8.5pt;
+    color: #94a3b8;
+  }
+
+  /* TOC PAGE */
+  .toc-page {
+    page-break-after: always;
+    break-after: page;
+    padding: 6mm 0;
+  }
+
+  .toc-header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .toc-title {
+    font-size: 20pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .toc-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    color: #0f766e;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .toc-card {
+    background: #f8fafc;
+    border: 1.2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .toc-num {
+    font-size: 8pt;
+    font-weight: 800;
+    color: #0f766e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-en {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.35;
+  }
+
+  .toc-author {
+    font-size: 8pt;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* CHAPTER STYLING */
+  .chapter-wrapper {
+    page-break-before: always;
+    break-before: page;
+    padding-top: 2mm;
+  }
+
+  .ch-hero {
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border: 1.5px solid var(--ch-border);
+    background: linear-gradient(135deg, var(--ch-tint) 0%, #ffffff 100%);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .ch-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 7.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    background: var(--ch-primary);
+    margin-bottom: 4px;
+  }
+
+  .ch-title-en {
+    font-size: 15pt;
+    font-weight: 900;
+    color: var(--ch-primary);
+    line-height: 1.25;
+    margin: 0 0 2px 0;
+  }
+
+  .ch-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .ch-author-row {
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* SECTION BANNERS */
+  .section-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--ch-border);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .section-banner h3 {
+    margin: 0;
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: var(--ch-primary);
+  }
+
+  .section-banner .ml-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* BILINGUAL PAIRED BLOCKS */
+  .bilingual-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .bilingual-pair .en-block {
+    font-size: 9pt;
+    line-height: 1.55;
+    color: #1e293b;
+    border-left: 3px solid var(--ch-primary);
+    padding-left: 8px;
+  }
+
+  .bilingual-pair .ml-block {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.8pt;
+    line-height: 1.65;
+    color: #0f172a;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+
+  .ml-tag {
+    display: inline-block;
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--ch-primary);
+    background: #ffffff;
+    border: 1px solid var(--ch-border);
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+  }
+
+  /* GLOSSARY TABLE */
+  .glossary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 8.6pt;
+    break-inside: avoid;
+  }
+
+  .glossary-table th {
+    background: var(--ch-primary);
+    color: #ffffff;
+    padding: 6px 10px;
+    text-align: left;
+    font-weight: 800;
+  }
+
+  .glossary-table td {
+    padding: 5px 10px;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+
+  .glossary-table tr:nth-child(even) {
+    background: var(--ch-tint);
+  }
+
+  .ml-font {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+  }
+
+  /* QA CARDS */
+  .qa-card {
+    border: 1.2px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+
+  .qa-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  .q-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 7pt;
+    font-weight: 800;
+    background: var(--ch-primary);
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  .q-text-en {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .q-text-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--ch-primary);
+    line-height: 1.45;
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
+
+  .ans-box {
+    margin-top: 4px;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 6px;
+  }
+
+  .ans-en {
+    font-size: 8.8pt;
+    line-height: 1.55;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+
+  .ans-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.65;
+    color: #047857;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 5px;
+    padding: 6px 8px;
+  }
+
+  /* KNOCK POINTS (Page 12 Style full grid) */
+  .knock-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 6px;
+    break-inside: avoid;
+  }
+
+  .knock-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .knock-num {
+    font-size: 6.8pt;
+    font-weight: 800;
+    color: #ffffff;
+    background: var(--ch-primary);
+    padding: 1px 5px;
+    border-radius: 3px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 2px;
+  }
+
+  .knock-en {
+    font-size: 7.8pt;
+    font-weight: 750;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+
+  .knock-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 7.4pt;
+    font-weight: 700;
+    color: #047857;
+    line-height: 1.3;
+  }
+
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
+
+<style id="ah-universal-reader-protection">
+  /* Academic Hub Content Protection & Clean Reading Mode */
+  * {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+  @media print {
+    html, body {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  /* Suppress download / save buttons, external open buttons, or save triggers */
+  a[download], button[download], [download], .btn-download, .download, #downloadBtn,
+  #modalExternalBtn, #openExternalBtn, .fast-native-btn {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+</style>
+
+</head>
+<body>
+
+  <div class="cover-page">
+    <div>
+      <span class="cover-badge">ACADEMIC EXCELLENCE EDITION · 2026</span>
+      <h1 class="cover-title">WORDS TO WORLDS - 1</h1>
+      <h2 class="cover-title-ml">ഇംഗ്ലീഷ് – മലയാളം സമഗ്ര പഠന സഹായി (Comprehensive Bilingual Study Companion)</h2>
+      <div class="cover-subtitle">Additional English · Semester I · B.Com / BBA / BA<br>Bangalore University &amp; Calicut University Study Companion</div>
+      
+      <div class="cover-features">
+        <div class="cover-feature-item"><span class="icon">✨</span> 100% Complete Textbook Syllabus</div>
+        <div class="cover-feature-item"><span class="icon">🌐</span> Full English – Malayalam Side-by-Side</div>
+        <div class="cover-feature-item"><span class="icon">🎯</span> Solved 2-Mark, 5-Mark &amp; 10-Mark Questions</div>
+        <div class="cover-feature-item"><span class="icon">⚡</span> 20 Knock Your Brain Points Per Chapter</div>
+        <div class="cover-feature-item"><span class="icon">📚</span> All 8 Literary Chapters Fully Analyzed</div>
+        <div class="cover-feature-item"><span class="icon">📝</span> Complete Grammar &amp; Model Question Paper</div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div><strong>BANGALORE UNIVERSITY / B.COM SEMESTER I</strong><br>Additional English · Complete Bilingual Companion</div>
+      <div style="text-align:right;"><strong>Print-Ready A4 Edition</strong><br>Standard Academic Curriculum</div>
+    </div>
+  </div>
+
+  <div class="toc-page">
+    <div class="toc-header">
+      <h2 class="toc-title">TABLE OF CONTENTS</h2>
+      <p class="toc-sub">സമ്പൂർണ്ണ ഉള്ളടക്ക സൂചിക (All 8 Chapters &amp; Language Components)</p>
+    </div>
+    <div class="toc-grid">
+
+      <div class="toc-card">
+        <div>
+          <span class="toc-num">CHAPTER 1 · Poem (കവിത)</span>
+          <div class="toc-name-en">1. Stammer</div>
+          <div class="toc-name-ml">1. വിക്ക് (സ്തംഭനം)</div>
+        </div>
+        <div class="toc-author">✍️ K. Satchidanandan (കെ. സച്ചിദാനന്ദൻ)</div>
+      </div>
+    
+      <div class="toc-card">
+        <div>
+          <span class="toc-num">CHAPTER 2 · Poem (കവിത)</span>
+          <div class="toc-name-en">2. Still I Rise</div>
+          <div class="toc-name-ml">2. എന്നിട്ടും ഞാൻ ഉയർത്തെഴുന്നേൽക്കും</div>
+        </div>
+        <div class="toc-author">✍️ Maya Angelou (മായ ആഞ്ചലോ)</div>
+      </div>
+    
+      <div class="toc-card">
+        <div>
+          <span class="toc-num">CHAPTER 3 · Short Story (ചെറുകഥ)</span>
+          <div class="toc-name-en">3. Lottery</div>
+          <div class="toc-name-ml">3. ലോട്ടറി</div>
+        </div>
+        <div class="toc-author">✍️ Munshi Premchand (മുൻഷി പ്രേംചന്ദ്)</div>
+      </div>
+    
+      <div class="toc-card">
+        <div>
+          <span class="toc-num">CHAPTER 4 · Short Story (ചെറുകഥ)</span>
+          <div class="toc-name-en">4. The Woman on Platform 8</div>
+          <div class="toc-name-ml">4. പ്ലാറ്റ്‌ഫോം 8-ലെ സ്ത്രീ</div>
+        </div>
+        <div class="toc-author">✍️ Ruskin Bond (റസ്കിൻ ബോണ്ട്)</div>
+      </div>
+    
+      <div class="toc-card">
+        <div>
+          <span class="toc-num">CHAPTER 5 · Essay / Narrative (ഉപന്യാസം / ആഖ്യാനം)</span>
+          <div class="toc-name-en">5. A Hanging</div>
+          <div class="toc-name-ml">5. ഒരു തൂക്കിലേറ്റൽ</div>
+        </div>
+        <div class="toc-author">✍️ George Orwell (ജോർജ്ജ് ഓർവെൽ)</div>
+      </div>
+    
+      <div class="toc-card">
+        <div>
+          <span class="toc-num">CHAPTER 6 · Jungle Narrative / Adventure (സാഹസിക വനകഥ)</span>
+          <div class="toc-name-en">6. The Ramapuram Tiger</div>
+          <div class="toc-name-ml">6. രാമപുരം കടുവ</div>
+        </div>
+        <div class="toc-author">✍️ Kenneth Anderson (കെന്നത്ത് ആൻഡേഴ്സൺ)</div>
+      </div>
+    
+      <div class="toc-card">
+        <div>
+          <span class="toc-num">CHAPTER 7 · Short Story (ചെറുകഥ)</span>
+          <div class="toc-name-en">7. Birthday Girl</div>
+          <div class="toc-name-ml">7. ബർത്ത്ഡേ ഗേൾ</div>
+        </div>
+        <div class="toc-author">✍️ Haruki Murakami (ഹാറുകി മുറകാമി)</div>
+      </div>
+    
+      <div class="toc-card">
+        <div>
+          <span class="toc-num">CHAPTER 8 · Personal Essay (വ്യക്തിഗത ഉപന്യാസം)</span>
+          <div class="toc-name-en">8. Jamaican Fragments</div>
+          <div class="toc-name-ml">8. ജമൈക്കൻ ഫ്രാഗ്മെന്റ്സ്</div>
+        </div>
+        <div class="toc-author">✍️ A.L. Hendricks (എ.എൽ. ഹെൻഡ്രിക്സ്)</div>
+      </div>
+    
+      <div class="toc-card" style="grid-column: 1 / -1; background:#edf9f5; border-color:#99f6e4;">
+        <span class="toc-num" style="color:#0f766e;">SECTION B · LANGUAGE COMPONENTS</span>
+        <div class="toc-name-en">Comprehension, Figures of Speech, Error Correction &amp; Punctuation</div>
+        <div class="toc-name-ml">വായനാ ഗ്രഹണം, അലങ്കാരങ്ങൾ, വാക്യ തെറ്റുതിരുത്തൽ &amp; വിരാമ ചിഹ്നങ്ങൾ (Full Solutions)</div>
+      </div>
+    </div>
+  </div>
+<div class="chapter-wrapper" style="--ch-primary: #0f766e; --ch-tint: #f0fdfa; --ch-border: #99f6e4;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 1 · Poem (കവിത)</span>
+        <h1 class="ch-title-en">1. Stammer</h1>
+        <h2 class="ch-title-ml">1. വിക്ക് (സ്തംഭനം)</h2>
+        <div class="ch-author-row">✍️ K. Satchidanandan &nbsp;·&nbsp; <span class="ml-font">കെ. സച്ചിദാനന്ദൻ</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">K. Satchidanandan (born 1946) is an acclaimed Indian poet, literary critic, translator, and playwright writing in Malayalam and English. A former Secretary of the Sahitya Akademi and President of Kerala Sahitya Akademi, he is a pioneer of modern Malayalam poetry known for philosophical depth and social commitment.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>മലയാളത്തിലെയും ഇംഗ്ലീഷിലെയും പ്രമുഖ ഇന്ത്യൻ കവിയും നിരൂപകനും നാടകകൃത്തുമാണ് കെ. സച്ചിദാനന്ദൻ (ജനനം 1946). കേന്ദ്ര സാഹിത്യ അക്കാദമി മുൻ സെക്രട്ടറിയും കേരള സാഹിത്യ അക്കാദമി മുൻ പ്രസിഡന്റുമായ അദ്ദേഹം, സാമൂഹിക പ്രതിബദ്ധതയും ദാർശനിക ആഴവുമുള്ള നവകവിതാ പ്രസ്ഥാനത്തിന്റെ അമരക്കാരനാണ്.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">The poem deconstructs stammer not as a physical defect or disability, but as an essential condition of human language and social existence. Stammer represents the inherent gap between thought and expression, word and meaning. It symbolizes the stuttering nature of social history, politics, and divine creation itself.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>വിക്കിനെ ഒരു ശാരീരിക വൈകല്യമായല്ല, മറിച്ച് മനുഷ്യ ഭാഷയുടെയും സാമൂഹിക ജീവിതത്തിന്റെയും അടിസ്ഥാന സ്വഭാവമായാണ് കവിത വിലയിരുത്തുന്നത്. ചിന്തയും വാക്കും, വാക്കും അർത്ഥവും തമ്മിലുള്ള അകലത്തെ വിക്ക് പ്രതിനിധീകരിക്കുന്നു. ചരിത്രത്തിന്റെയും നീതിയുടെയും ദൈവിക സൃഷ്ടിയുടെയും അപൂർണ്ണതയുടെ പ്രതീകമാണ് വിക്ക്.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Stammer as a Mode of Speech, Not a Handicap / <span class="ml-font">വിക്ക് ഒരു വൈകല്യമല്ല, സംസാര രീതിയാണ്</span></strong>
+            <div class="en-block" style="margin-top:4px;">The poet opens with a revolutionary thesis: stammer is not a handicap, but a mode of speech, just as lameness is merely a mode of walking. Just as silence resides between word and word, stammer resides between word and its meaning.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>വിക്ക് ഒരു ശാരീരിക വൈകല്യമല്ല, മറിച്ച് അത് ഒരു പ്രത്യേക സംസാര രീതിയാണെന്ന വിപ്ലവകരമായ ചിന്തയോടെയാണ് കവി ആരംഭിക്കുന്നത്; മുടന്ത് എന്നത് നടത്തത്തിന്റെ ഒരു രീതി മാത്രമായിരിക്കുന്നതുപോലെ. വാക്കിനും വാക്കിനും ഇടയിൽ നിശബ്ദത നിലകൊള്ളുന്നതുപോലെ, വാക്കിനും അതിന്റെ അർത്ഥത്തിനും ഇടയിലാണ് വിക്ക് സ്ഥിതിചെയ്യുന്നത്.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Universal Nature of Linguistic Imperfection / <span class="ml-font">ഭാഷാപരമായ അപൂർണ്ണതയുടെ സാർവത്രിക സ്വഭാവം</span></strong>
+            <div class="en-block" style="margin-top:4px;">The poet questions whether stammer preceded language or succeeded it. Is it a dialect or a feature of language? When an individual stammers, society brands it a personal defect. But when an entire community or nation stammers—unable to speak clear truth—it becomes an accepted norm or mother tongue.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>ഭാഷയ്ക്ക് മുൻപാണോ ശേഷമാണോ വിക്ക് ഉണ്ടായതെന്ന് കവി ചിന്തിക്കുന്നു. അതൊരു നാട്ടുഭാഷയാണോ അതോ ഭാഷയുടെ തന്നെ സ്വഭാവമാണോ? ഒരാൾ വിറച്ചു സംസാരിക്കുമ്പോൾ സമൂഹം അതിനെ വൈകല്യമെന്ന് വിളിക്കുന്നു. എന്നാൽ ഒരു ജനത മുഴുവൻ സത്യം പറയാനാവാതെ പതറുമ്പോൾ അത് അംഗീകരിക്കപ്പെട്ട സമ്പ്രദായമോ മാതൃഭാഷയോ ആയി മാറുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Divine Creation and Poetry as a Stammer / <span class="ml-font">ദൈവിക സൃഷ്ടിയും കവിതയും ഒരു വിക്ക്</span></strong>
+            <div class="en-block" style="margin-top:4px;">The poet extends the metaphor to cosmology: God Himself must have stammered when creating humankind. That divine stammer explains the profound disconnect between what human beings desire to say and what they actually express. Poetry, too, is a stammer—an imperfect yet earnest struggle to voice eternal truths.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>ദൈവം മനുഷ്യനെ സൃഷ്ടിച്ചപ്പോഴും ഒരുപക്ഷേ വിക്കിയിരിക്കണം എന്ന് കവി നിരീക്ഷിക്കുന്നു. അതുകൊണ്ടാണ് മനുഷ്യൻ പറയാൻ ആഗ്രഹിക്കുന്നതും യഥാർത്ഥത്തിൽ പറയുന്നതും തമ്മിൽ ഇത്രയും വലിയ അന്തരം ഉണ്ടാകുന്നത്. കവിതയും ഒരു വിക്കാണ്—ശാശ്വതമായ സത്യങ്ങൾ പ്രകടിപ്പിക്കാനുള്ള അപൂർണ്ണവും എന്നാൽ ആത്മാർത്ഥവുമായ പോരാട്ടമാണത്.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Stammer</strong></td>
+                <td>Involuntary pause or repetition while speaking</td>
+                <td class="ml-font">സംസാരിക്കുമ്പോൾ വരുന്ന തടസ്സം / വിക്ക്</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Handicap</strong></td>
+                <td>Physical or mental limitation / disadvantage</td>
+                <td class="ml-font">വൈകല്യം / ന്യൂനത</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Lameness</strong></td>
+                <td>Impaired ability to walk easily</td>
+                <td class="ml-font">മുടന്ത് / നടത്തത്തിലെ പരിമിതി</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Dialect</strong></td>
+                <td>A particular form of a language specific to a region or group</td>
+                <td class="ml-font">പ്രാദേശിക വകഭേദം / ഉപഭാഷ</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Sacrifice</strong></td>
+                <td>Giving up something valued for a higher cause</td>
+                <td class="ml-font">ബലിദാനം / ത്യാഗം</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">How does the poet define &#x27;stammer&#x27; in the opening line?</div>
+                <div class="q-text-ml">കവിതയുടെ ആദ്യ വരിയിൽ കവി &#x27;വിക്കി&#x27;നെ എങ്ങനെയാണ് നിർവ്വചിക്കുന്നത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> The poet defines stammer not as a handicap or physical defect, but as an alternative, legitimate mode of speech, comparing it to lameness as a mode of walking.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> വിക്കിനെ ഒരു വൈകല്യമായല്ല, മറിച്ച് സംസാരത്തിന്റെ മറ്റൊരു സ്വാഭാവിക ശൈലിയായാണ് കവി നിർവ്വചിക്കുന്നത്; മുടന്ത് നടത്തത്തിന്റെ ഒരു ശൈലിയായിരിക്കുന്നതുപോലെ.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Where does stammer reside according to the poet?</div>
+                <div class="q-text-ml">കവിയുടെ അഭിപ്രായത്തിൽ വിക്ക് എവിടെയാണ് സ്ഥിതി ചെയ്യുന്നത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> According to the poet, stammer resides in the silent gap between the word and its intended meaning.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> വാക്കിനും അത് ഉദ്ദേശിക്കുന്ന യഥാർത്ഥ അർത്ഥത്തിനും ഇടയിലുള്ള നിശബ്ദമായ വിടവിലാണ് വിക്ക് സ്ഥിതി ചെയ്യുന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q3</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Why does the poet say that God stammered when creating man?</div>
+                <div class="q-text-ml">മനുഷ്യനെ സൃഷ്ടിച്ചപ്പോൾ ദൈവം വിക്കിയിരുന്നു എന്ന് കവി പറയാൻ കാരണമെന്ത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> The poet suggests God stammered because human life and communication are full of contradictions, imperfections, and a gap between intention and action.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> മനുഷ്യന്റെ ചിന്തകളും പ്രവൃത്തികളും തമ്മിലുള്ള പൊരുത്തക്കേടുകളും ആശയവിനിമയത്തിലെ വൈകല്യങ്ങളും അപൂർണ്ണതകളും കാണുമ്പോൾ, സൃഷ്ടിയുടെ വേളയിൽ ദൈവവും വിക്കിയിട്ടുണ്ടാകാം എന്ന് കവി കരുതുന്നു.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q4</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What happens when an entire community stammers?</div>
+                <div class="q-text-ml">ഒരു ജനത മുഴുവൻ വിക്കി സംസാരിക്കുമ്പോൾ എന്ത് സംഭവിക്കുന്നു?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> When everyone stammers, it ceases to be seen as a defect; instead, it becomes the accepted norm and is celebrated as the mother tongue.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> എല്ലാവരും വിക്കി സംസാരിക്കുമ്പോൾ അതൊരു ന്യൂനതയല്ലാതായി മാറുകയും, പകരം പൊതുവായി അംഗീകരിക്കപ്പെട്ട രീതിയും മാതൃഭാഷയുമായി മാറുകയും ചെയ്യുന്നു.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q5</span>
+              <div style="flex:1;">
+                <div class="q-text-en">How does the poet connect poetry with stammer?</div>
+                <div class="q-text-ml">കവി കവിതയെ വിക്കുമായി എങ്ങനെയാണ് ബന്ധിപ്പിക്കുന്നത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> The poet views poetry as a form of stammer because every poem is an imperfect attempt by language to express deep, elusive truths.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ഏതൊരു കവിതയും അഗാധമായ സത്യങ്ങളെ പൂർണ്ണമായി ആവിഷ്കരിക്കാനുള്ള ഭാഷയുടെ അപൂർണ്ണവും തടസ്സങ്ങൾ നിറഞ്ഞതുമായ ശ്രമമായതിനാൽ, കവിതയെയും ഒരു വിക്കായി കവി കാണുന്നു.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Explain the philosophical significance of the gap between word and meaning in &#x27;Stammer&#x27;.</div>
+                    <div class="q-text-ml">&#x27;സ്റ്റാമർ&#x27; എന്ന കവിതയിലെ വാക്കും അർത്ഥവും തമ്മിലുള്ള വിടവിന്റെ ദാർശനിക പ്രാധാന്യം വിശദീകരിക്കുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> In &#x27;Stammer&#x27;, K. Satchidanandan argues that language is never transparent or absolute. Silence resides between words, and stammer resides between the utterance of a word and the realization of its meaning. This gap represents the failure of human expression to capture pure thought. Language constantly fumbles, hesitates, and stumbles. Thus, stammer is not an acoustic defect of the vocal cords, but an ontological truth of human communication.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> ഭാഷ ഒരിക്കലും പൂർണ്ണമോ സുതാര്യമോ അല്ലെന്നാണ് സച്ചിദാനന്ദൻ വാദിക്കുന്നത്. വാക്കുകൾക്കിടയിൽ നിശബ്ദത നിലനിൽക്കുന്നതുപോലെ, ഒരു വാക്കിന്റെ ഉച്ചാരണത്തിനും അതിന്റെ അർത്ഥത്തിനുമിടയിലാണ് വിക്ക് സ്ഥിതിചെയ്യുന്നത്. ചിന്തകളെ പൂർണ്ണമായി പ്രതിഫലിപ്പിക്കാൻ ഭാഷയ്ക്ക് കഴിയാതെ വരുന്നതിനെയാണ് ഈ വിടവ് സൂചിപ്പിക്കുന്നത്. അതിനാൽ, വിക്ക് എന്നത് ശബ്ദതന്തുക്കളുടെ ന്യൂനതയല്ല, മറിച്ച് മാനവ ആശയവിനിമയത്തിന്റെ അനിവാര്യമായ അപൂർണ്ണതയാണ്.</div>
+                </div>
+              </div>
+            
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q2</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Discuss how &#x27;Stammer&#x27; functions as a socio-political critique of contemporary society.</div>
+                    <div class="q-text-ml">സമകാലിക സമൂഹത്തോടുള്ള സാമൂഹിക-രാഷ്ട്രീയ വിമർശനമായി &#x27;സ്റ്റാമർ&#x27; എങ്ങനെ പ്രവർത്തിക്കുന്നു എന്ന് ചർച്ച ചെയ്യുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> The poem transitions from a linguistic metaphor into a powerful socio-political critique. When a single individual stammers, society mocks them. However, when an entire collective, political system, or nation stutters—failing to speak out against injustice, totalitarianism, and oppression—it is normalized. The political establishment stammers when asked for accountability, and this collective silence is elevated into a national discourse.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> ഭാഷാപരമായ ഉപമയിൽ നിന്ന് ശക്തമായ സാമൂഹിക-രാഷ്ട്രീയ വിമർശനത്തിലേക്കാണ് കവിത വളരുന്നത്. ഒരു വ്യക്തി വിക്കുമ്പോൾ സമൂഹം പരിഹസിക്കുന്നു. എന്നാൽ ഒരു ജനതയോ രാഷ്ട്രീയ സംവിധാനമോ അനീതിക്കും അടിച്ചമർത്തലിനുമെതിരെ സംസാരിക്കാനാവാതെ പതറുമ്പോൾ അത് സാധാരണവൽക്കരിക്കപ്പെടുന്നു. ഭരണകൂടങ്ങൾ ഉത്തരവാദിത്തം പറയേണ്ട ഘട്ടങ്ങളിൽ വിക്കി നിൽക്കുകയും, ആ ഭീരുത്വത്തെ മാതൃഭാഷയെന്ന പോലെ വാഴ്ത്തുകയും ചെയ്യുന്നു.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Critically analyze K. Satchidanandan&#x27;s poem &#x27;Stammer&#x27; highlighting its themes, metaphors, and worldview.</div>
+                    <div class="q-text-ml">കെ. സച്ചിദാനന്ദന്റെ &#x27;സ്റ്റാമർ&#x27; എന്ന കവിതയിലെ പ്രമേയങ്ങൾ, രൂപകങ്ങൾ, ലോകവീക്ഷണം എന്നിവ മുൻനിർത്തി സമഗ്രമായി വിശകലനം ചെയ്യുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>K. Satchidanandan&#x27;s &#x27;Stammer&#x27; is an extraordinary philosophical inquiry into human language, identity, and existential imperfection. By inverting traditional perceptions of physical disability, Satchidanandan strips &#x27;stammer&#x27; of its stigma and elevates it into a universal condition.<br><br>First, the poet establishes an analogy between stammer and lameness, asserting that both are valid modes of expression rather than handicaps. He identifies the core location of stammer: it is the mysterious chasm between what is spoken and what is meant.<br><br>Second, the poem addresses the social construction of normalcy. When practiced alone, hesitation is labeled abnormal; when shared by the multitude, it becomes the dominant dialect. This sharp insight reflects how political systems normalize corruption and evasive speech.<br><br>Finally, the poem achieves a cosmic dimension. God Himself is imagined as a stammerer who stumbled while uttering the word of creation, resulting in a flawed human world. Poetry, too, is a noble stammer—an eternal reach toward the unspeakable. Through rich imagery and subversive irony, Satchidanandan presents stammer as an emblem of honesty in an age of deceptive fluency.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>മനുഷ്യന്റെ ഭാഷ, സ്വത്വം, അപൂർണ്ണത എന്നിവയെക്കുറിച്ചുള്ള അസാധാരണമായ ദാർശനിക അന്വേഷണമാണ് സച്ചിദാനന്ദന്റെ &#x27;സ്റ്റാമർ&#x27;. ശാരീരിക വൈകല്യത്തെക്കുറിച്ചുള്ള പരമ്പരാഗത മുൻവിധികളെ പൊളിച്ചെഴുതിക്കൊണ്ട് വിക്കിനെ ഒരു സാർവത്രിക അവസ്ഥയായി കവി മാറ്റുന്നു.<br><br>ആദ്യമായി, വിക്കിനെയും മുടന്തിനെയും നടത്തത്തിന്റെയും സംസാരത്തിന്റെയും വ്യത്യസ്ത ശൈലികളായി കവി വിശേഷിപ്പിക്കുന്നു. വാക്കിനും അത് ഉളവാക്കുന്ന അർത്ഥത്തിനുമിടയിലുള്ള നിശബ്ദ വിടവിലാണ് വിക്കിന്റെ യഥാർത്ഥ ഇരിപ്പിടം.<br><br>രണ്ടാമതായി, സാധാരണത്വത്തെ സമൂഹം എങ്ങനെ നിർമ്മിക്കുന്നു എന്ന് കവിത വ്യക്തമാക്കുന്നു. ഒരാൾ പതറുമ്പോൾ അത് വൈകല്യവും, ഒരു സമൂഹം മുഴുവൻ സത്യത്തിന് മുന്നിൽ പതറുമ്പോൾ അത് മാതൃഭാഷയുമായി മാറുന്നു. സമകാലിക രാഷ്ട്രീയ ഭരണകൂടങ്ങൾ തങ്ങളുടെ ജനങ്ങളോട് സത്യം പറയാതെ ഒഴിഞ്ഞുമാറുന്ന കപടതയെ ഇത് തുറന്നുകാട്ടുന്നു.<br><br>അവസാനമായി, കവിത പ്രപഞ്ച സൃഷ്ടിയോളം വളരുന്നു. മനുഷ്യനെ സൃഷ്ടിക്കുമ്പോൾ ദൈവവും വിക്കിയിരുന്നു എന്ന സങ്കല്പം ലോകത്തിന്റെ അപൂർണ്ണതകളെ ന്യായീകരിക്കുന്നു. കവിതയും പൂർണ്ണത തേടുന്ന ഒരു വിക്കാണ്. വഞ്ചനാപരമായ വാചാലതയേക്കാൾ സത്യസന്ധമായ പതർച്ചയാണ് ശ്രേഷ്ഠമെന്ന് കവി സമർത്ഥിക്കുന്നു.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">Stammer is defined as a natural mode of speech, not a physical handicap.</div>
+            <div class="knock-ml">വിക്ക് എന്നത് ഒരു ശാരീരിക വൈകല്യമല്ല, മറിച്ച് സംസാരത്തിന്റെ മറ്റൊരു സ്വാഭാവിക ശൈലിയാണ്.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">Lameness is similarly re-framed as an alternative way of walking.</div>
+            <div class="knock-ml">മുടന്ത് എന്നത് നടത്തത്തിന്റെ ഒരു പ്രത്യേക ശൈലി മാത്രമായി വിശേഷിപ്പിക്കപ്പെടുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">Silence resides between words; stammer resides between word and meaning.</div>
+            <div class="knock-ml">വാക്കുകൾക്കിടയിൽ നിശബ്ദതയും, വാക്കിനും അർത്ഥത്തിനും ഇടയിൽ വിക്കും നിലകൊള്ളുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">The poet ponders whether stammer originated before or after the advent of language.</div>
+            <div class="knock-ml">ഭാഷയ്ക്ക് മുൻപാണോ ശേഷമാണോ വിക്ക് ജനിച്ചതെന്ന് കവി ചിന്തിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">When an entire nation stammers in fear, it is normalized as the mother tongue.</div>
+            <div class="knock-ml">ഒരു രാജ്യം മുഴുവൻ ഭയത്താൽ പതറുമ്പോൾ, അത് മാതൃഭാഷയായി അംഗീകരിക്കപ്പെടുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">God Himself stammered during creation, explaining human contradictions.</div>
+            <div class="knock-ml">സൃഷ്ടിവേളയിൽ ദൈവം വിക്കിയത് കൊണ്ടാണ് മനുഷ്യൻ വൈരുദ്ധ്യങ്ങൾ നിറഞ്ഞവനായത്.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">Poetry is an ongoing, sacred stammer striving to voice elusive truths.</div>
+            <div class="knock-ml">അഗാധമായ സത്യങ്ങൾ വെളിപ്പെടുത്താൻ നിരന്തരം പൊരുതുന്ന ഒരു വിശുദ്ധ വിക്കാണ് കവിത.</div>
+          </div>
+        
+</div>
+</div><div class="chapter-wrapper" style="--ch-primary: #4338ca; --ch-tint: #eef2ff; --ch-border: #c7d2fe;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 2 · Poem (കവിത)</span>
+        <h1 class="ch-title-en">2. Still I Rise</h1>
+        <h2 class="ch-title-ml">2. എന്നിട്ടും ഞാൻ ഉയർത്തെഴുന്നേൽക്കും</h2>
+        <div class="ch-author-row">✍️ Maya Angelou &nbsp;·&nbsp; <span class="ml-font">മായ ആഞ്ചലോ</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Maya Angelou (1928–2014) was a monumental American poet, memoirist, and civil rights activist. Born in St. Louis, Missouri, she overcame racial segregation, childhood trauma, and selective mutism to become one of the most resonant voices for human dignity, gender equality, and racial justice.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>അമേരിക്കൻ സാഹിത്യത്തിലെയും പൗരാവകാശ പ്രസ്ഥാനത്തിലെയും ഇതിഹാസ സാന്നിധ്യമാണ് മായ ആഞ്ചലോ (1928-2014). വംശീയ വിവേചനങ്ങളെയും ബാല്യകാലത്തെ ക്രൂരമായ അനുഭവങ്ങളെയും അതിജീവിച്ച്, സ്ത്രീ ശാക്തീകരണത്തിന്റെയും മാനവ സമത്വത്തിന്റെയും പ്രതിരൂപമായി അവർ മാറി.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">An anthem of indefatigable resilience, self-worth, and victory over systemic racism and oppression. The speaker celebrates her Black identity, femininity, and historic endurance against historical lies, hatred, and attempts to break her spirit.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>വംശീയ വിവേചനത്തിനും അടിച്ചമർത്തലുകൾക്കും എതിരെ ആത്മാഭിമാനത്തിന്റെയും അതിജീവനത്തിന്റെയും ഉജ്ജ്വലമായ പ്രഖ്യാപനമാണ് ഈ കവിത. ചരിത്രത്തിലെ നുണകളെയും വിദ്വേഷങ്ങളെയും മറികടന്ന് ഉയർത്തെഴുന്നേൽക്കുന്ന കറുത്ത വർഗ്ഗക്കാരിയുടെ വിജയഗാഥയാണിത്.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Confronting Historical Falsehoods with Natural Power / <span class="ml-font">ചരിത്രത്തിലെ നുണകളെ പ്രകൃതിശക്തിയാൽ നേരിടുന്നു</span></strong>
+            <div class="en-block" style="margin-top:4px;">The speaker challenges racists and oppressors who write bitter, twisted lies into history. Regardless of being trodden into the dirt, she declares with supreme confidence: like dust, I will rise.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>ചരിത്രത്തിൽ കയ്പുനിറഞ്ഞ നുണകൾ എഴുതിച്ചേർക്കുന്ന വംശീയവാദികളെ കവയിത്രി വെല്ലുവിളിക്കുന്നു. തന്നെ ചെളിയിൽ ചവിട്ടിത്താഴ്ത്തിയാലും, പറന്നുയരുന്ന പൊടിപടലങ്ങളെപ്പോലെ താൻ ഉയർത്തെഴുന്നേൽക്കുമെന്ന് അവർ പ്രഖ്യാപിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Celebrating Bodily Autonomy, Sauciness, and Dignity / <span class="ml-font">ശരീരത്തിന്റെ സ്വാതന്ത്യ്രവും അഹങ്കാരവും ആത്മാഭിമാനവും</span></strong>
+            <div class="en-block" style="margin-top:4px;">She confronts those disturbed by her boldness, audacity, and feminine pride. Does her joyous laugh offend them as though she possesses oil wells in her living room? Like moons and suns with the certainty of tides, high hope guarantees her ascension.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>തന്റെ ആത്മവിശ്വാസവും സ്ത്രീസഹജമായ അഭിമാനവും മറ്റുള്ളവരെ പ്രകോപിപ്പിക്കുന്നുണ്ടോ എന്ന് അവർ ചോദിക്കുന്നു. സ്വീകരണമുറിയിൽ എണ്ണക്കിണറുള്ളതുപോലെ തലയുയർത്തി ചിരിക്കുന്നതിൽ അവർ അസൂയപ്പെടുന്നു. ചന്ദ്രനെയും സൂര്യനെയും കടൽത്തിരകളെയും പോലെ നിശ്ചയദാർഢ്യത്തോടെ താൻ ഉയരും.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Embodying the Dream and Hope of the Enslaved / <span class="ml-font">അടിമകളുടെ സ്വപ്നവും പ്രത്യാശയുമായി മാറുന്നു</span></strong>
+            <div class="en-block" style="margin-top:4px;">Leaving behind the dark huts of history&#x27;s shame and roots of rooted pain, the speaker rises as a black ocean leaping wide. She embodies &#x27;the dream and the hope of the slave,&#x27; triumphing over centuries of brutal subjugation.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>ചരിത്രത്തിന്റെ നാണംകെട്ട ചരിത്രവും അടിമത്തത്തിന്റെ കറുത്ത ദിനങ്ങളും ഉപേക്ഷിച്ച്, ആഞ്ഞടിക്കുന്ന കറുത്ത സമുദ്രമായി താൻ മുന്നേറുന്നു. തലമുറകളായി പീഡിപ്പിക്കപ്പെട്ട അടിമകളുടെ സ്വപ്നവും പ്രത്യാശയുമായി മാറിക്കൊണ്ട് താൻ ഉയർത്തെഴുന്നേൽക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Sassiness</strong></td>
+                <td>Lively, bold, and spirited confidence</td>
+                <td class="ml-font">ധീരവും പ്രസരിപ്പുള്ളതുമായ ആത്മവിശ്വാസം</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Beset</strong></td>
+                <td>Troubled or threatened persistently</td>
+                <td class="ml-font">നിരന്തരം വേട്ടയാടപ്പെടുന്ന / വലയം ചെയ്യപ്പെട്ട</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Haughty</strong></td>
+                <td>Arrogantly superior and disdainful</td>
+                <td class="ml-font">അഹങ്കാരപൂർണ്ണമായ / പുച്ഛത്തോടെയുള്ള</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Tides</strong></td>
+                <td>The alternate rising and falling of the sea</td>
+                <td class="ml-font">കടൽത്തിരമാലകൾ / വേലിയേറ്റങ്ങൾ</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What natural elements does Maya Angelou compare her rising to?</div>
+                <div class="q-text-ml">തന്റെ ഉയർത്തെഴുന്നേൽപ്പിനെ മായ ആഞ്ചലോ ഏതെല്ലാം പ്രകൃതി പ്രതിഭാസങ്ങളോടാണ് ഉപമിക്കുന്നത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> Maya Angelou compares her rising to dust rising from the ground, the suns and moons in the sky, and the inevitable certainty of ocean tides.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ഭൂമിയിൽ നിന്ന് പറന്നുയരുന്ന പൊടിയോടും, ആകാശത്തിലെ സൂര്യചന്ദ്രന്മാരോടും, സമുദ്രത്തിലെ മാറ്റമില്ലാത്ത വേലിയേറ്റങ്ങളോടുമാണ് കവയിത്രി തന്റെ ഉയർച്ചയെ ഉപമിക്കുന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What does the line &#x27;I am the dream and the hope of the slave&#x27; mean?</div>
+                <div class="q-text-ml">&#x27;ഞാൻ അടിമയുടെ സ്വപ്നവും പ്രത്യാശയുമാണ്&#x27; എന്ന വരിയുടെ അർത്ഥമെന്ത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> It means the speaker represents the realized freedom, dignity, and triumph that her enslaved African ancestors dreamed of and suffered for.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> നൂറ്റാണ്ടുകളോളം അടിമത്തത്തിൽ കഴിഞ്ഞ തന്റെ പൂർവ്വികർ സ്വപ്നം കണ്ട സ്വാതന്ത്ര്യത്തിന്റെയും അന്തസ്സിന്റെയും സാക്ഷാത്കാരമാണ് താനെന്ന് കവയിത്രി വ്യക്തമാക്കുന്നു.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q3</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Why does the speaker walk as if she has oil wells in her living room?</div>
+                <div class="q-text-ml">സ്വീകരണമുറിയിൽ എണ്ണക്കിണറുള്ളതുപോലെ കവയിത്രി നടക്കുന്നത് എന്തുകൊണ്ടാണ്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> She walks with immense pride, wealth of spirit, and regal confidence to show that oppression cannot crush her self-worth.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> അടിച്ചമർത്തലുകൾക്ക് തന്റെ ആത്മാഭിമാനത്തെ തകർക്കാൻ കഴിയില്ലെന്ന് പ്രഖ്യാപിച്ചുകൊണ്ട്, അപാരമായ ആത്മവിശ്വാസത്തോടെയും രാജകീയ പ്രൗഢിയോടെയുമാണ് അവർ നടക്കുന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">How does Maya Angelou use rhetorical questions to challenge racial oppression in &#x27;Still I Rise&#x27;?</div>
+                    <div class="q-text-ml">&#x27;സ്റ്റിൽ ഐ റൈസ്&#x27; എന്ന കവിതയിൽ വംശീയ അടിച്ചമർത്തലുകളെ വെല്ലുവിളിക്കാൻ മായ ആഞ്ചലോ എങ്ങനെയാണ് ചോദ്യങ്ങൾ ഉപയോഗിക്കുന്നത്?</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> Angelou repeatedly uses sharp rhetorical questions such as &#x27;Does my sassiness upset you?&#x27; and &#x27;Did you want to see me broken?&#x27; These questions confront the oppressor directly, exposing their discomfort with a Black woman standing tall and refusing to perform servitude. The questions invert the power dynamic, making the oppressor appear cowardly and small before her unstoppable radiance.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> &#x27;എന്റെ ആത്മവിശ്വാസം നിങ്ങളെ അലട്ടുന്നുണ്ടോ?&#x27;, &#x27;ഞാൻ തകർന്നു കാണാനാണോ നിങ്ങൾ ആഗ്രഹിച്ചത്?&#x27; തുടങ്ങിയ മൂർച്ചയേറിയ ചോദ്യങ്ങളിലൂടെ കവയിത്രി അടിച്ചമർത്തുന്നവരെ നേരിട്ട് വിചാരണ ചെയ്യുന്നു. ഒരു കറുത്ത വർഗ്ഗക്കാരി തലയുയർത്തി നിൽക്കുന്നത് കണ്ട് ഭയപ്പെടുന്ന മേധാവിത്വ മനോഭാവത്തെ ഈ ചോദ്യങ്ങൾ തുറന്നുകാട്ടുന്നു.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Examine &#x27;Still I Rise&#x27; as a universal manifesto of human dignity and resistance against marginalization.</div>
+                    <div class="q-text-ml">പാർശ്വവൽക്കരണത്തിനെതിരെയുള്ള ചെറുത്തുനിൽപ്പിന്റെയും മാനവ അന്തസ്സിന്റെയും സാർവത്രിക പ്രഖ്യാപനമായി &#x27;സ്റ്റിൽ ഐ റൈസ്&#x27; എന്ന കവിതയെ വിലയിരുത്തുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>Maya Angelou&#x27;s &#x27;Still I Rise&#x27; transcends its immediate context of African-American liberation to become a timeless anthem for anyone fighting marginalization, discrimination, or despair.<br><br>From the outset, Angelou confronts historical revisionism, stating that even if oppressors write bitter lies into the history books, truth and resilience will rise like dust. Her imagery draws deeply from elemental forces—suns, moons, tides, and oceans—signaling that human resilience is as natural and inevitable as cosmic law.<br><br>Furthermore, she celebrates intersectional strength—embracing both Black racial identity and female beauty. By asking why her laughter and confidence cause bitterness among critics, she dismantles the expectation that the oppressed should remain mournful and apologetic. She enters the poem&#x27;s climax carrying the pain of past centuries, yet stepping into a wondrous morning, declaring herself &#x27;the dream and the hope of the slave.&#x27; The repeated, triumphant refrain &#x27;I rise, I rise, I rise&#x27; remains one of the most powerful affirmations of human spirit in modern literature.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>കറുത്ത വർഗ്ഗക്കാരുടെ വിമോചന പോരാട്ടങ്ങൾക്കുമപ്പുറം, അനീതിക്കും വിവേചനത്തിനുമെതിരെ പോരാടുന്ന ഏതൊരാൾക്കും കരുത്ത് പകരുന്ന സാർവത്രിക ഗീതമാണ് മായ ആഞ്ചലോയുടെ &#x27;സ്റ്റിൽ ഐ റൈസ്&#x27;.<br><br>ചരിത്ര പുസ്തകങ്ങളിൽ ഭരണാധികാരികൾ എത്രതന്നെ നുണകൾ എഴുതിപ്പിടിപ്പിച്ചാലും, മണ്ണിൽ നിന്നുയരുന്ന പൊടിപടലങ്ങളെപ്പോലെ സത്യം ഉയർത്തെഴുന്നേൽക്കുമെന്ന് കവി ഉറപ്പിച്ചു പറയുന്നു. സൂര്യനും ചന്ദ്രനും വേലിയേറ്റങ്ങളും പോലെ മനുഷ്യന്റെ പോരാട്ടവീര്യവും പ്രകൃതിയുടെ മാറ്റമില്ലാത്ത നിയമമാണ്.<br><br>തന്റെ വംശീയ സ്വത്വത്തെയും സ്ത്രീത്വത്തെയും ഒരേസമയം ആഘോഷിച്ചുകൊണ്ട്, അടിച്ചമർത്തപ്പെട്ടവർ എപ്പോഴും കണ്ണീരൊഴുക്കി കഴിയണം എന്ന പൊതുധാരണയെ അവർ തച്ചുടയ്ക്കുന്നു. ചരിത്രത്തിന്റെ ഇരുണ്ട നാണക്കേടുകളിൽ നിന്ന് പുലരിയുടെ പ്രകാശത്തിലേക്ക് നടന്നു കയറുന്ന കറുത്ത സമുദ്രമായി അവർ മാറുന്നു. &#x27;ഞാൻ ഉയരും, ഞാൻ ഉയരും&#x27; എന്ന ആവർത്തിച്ചുള്ള പ്രഖ്യാപനം മനുഷ്യ മനസ്സിന്റെ തോൽക്കാൻ മനസ്സില്ലാത്ത നിശ്ചയദാർഢ്യത്തിന്റെ പ്രതീകമാണ്.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">The poem directly confronts racists who record distorted lies in history.</div>
+            <div class="knock-ml">ചരിത്രത്തിൽ വളച്ചൊടിച്ച നുണകൾ രേഖപ്പെടുത്തുന്ന വംശീയവാദികളെ കവിത നേരിട്ട് വെല്ലുവിളിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">Resilience is compared to natural inevitabilities: dust, tides, moons, and suns.</div>
+            <div class="knock-ml">അതിജീവനത്തെ പൊടിപടലങ്ങൾ, വേലിയേറ്റങ്ങൾ, സൂര്യചന്ദ്രന്മാർ എന്നിവയുടെ സ്വാഭാവികതയോട് ഉപമിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">The speaker refuses to bow her head or show broken tearful eyes.</div>
+            <div class="knock-ml">തലകുനിക്കാനോ കണ്ണീരൊഴുക്കി തളർന്നു വീഴാനോ കവയിത്രി തയ്യാറാകുന്നില്ല.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">She claims rich internal wealth as though possessing gold mines and diamonds.</div>
+            <div class="knock-ml">സ്വർണ്ണഖനികളും വജ്രങ്ങളും സ്വന്തമായുള്ളതുപോലെയുള്ള ആന്തരിക സമ്പന്നത അവർ പ്രകടിപ്പിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">She identifies herself as a black ocean leaping wide in high tides.</div>
+            <div class="knock-ml">ആഞ്ഞടിക്കുന്ന കറുത്ത സമുദ്രമായി സ്വയം പ്രഖ്യാപിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">She fulfills the deferred dream and hope of her enslaved ancestors.</div>
+            <div class="knock-ml">അടിമകളാക്കപ്പെട്ട തന്റെ പൂർവ്വികരുടെ സാക്ഷാത്കരിക്കപ്പെടാത്ത സ്വപ്നങ്ങളെ അവർ പൂർത്തീകരിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">The triple refrain &#x27;I rise, I rise, I rise&#x27; signifies unconquerable victory.</div>
+            <div class="knock-ml">&#x27;ഞാൻ ഉയരും&#x27; എന്ന മൂന്ന് തവണയുള്ള മന്ത്രം പരാജയപ്പെടുത്താനാവാത്ത വിജയത്തെ കുറിക്കുന്നു.</div>
+          </div>
+        
+</div>
+</div><div class="chapter-wrapper" style="--ch-primary: #b45309; --ch-tint: #fffbeb; --ch-border: #fde68a;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 3 · Short Story (ചെറുകഥ)</span>
+        <h1 class="ch-title-en">3. Lottery</h1>
+        <h2 class="ch-title-ml">3. ലോട്ടറി</h2>
+        <div class="ch-author-row">✍️ Munshi Premchand &nbsp;·&nbsp; <span class="ml-font">മുൻഷി പ്രേംചന്ദ്</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Munshi Premchand (1880–1936), born Dhanpat Rai Srivastava near Varanasi, is celebrated as the &#x27;Upanyas Samrat&#x27; (Emperor of Novels) in modern Hindi and Urdu literature. A profound social realist, his works depict the hardships of ordinary peasants, moral dilemmas, and the corrupting power of greed.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>ആധുനിക ഹിന്ദി-ഉർദ്ദു സാഹിത്യത്തിലെ &#x27;ഉപന്യാസ് സമ്രാട്ട്&#x27; (നോവലുകളുടെ ചക്രവർത്തി) എന്നറിയപ്പെടുന്ന എഴുത്തുകാരനാണ് മുൻഷി പ്രേംചന്ദ് (1880-1936). സാധാരണക്കാരുടെ കഷ്ടപ്പാടുകൾ, ധാർമ്മിക പ്രതിസന്ധികൾ, അത്യാഗ്രഹത്തിന്റെ ദുരന്തങ്ങൾ എന്നിവയെ പച്ചയായി വരച്ചുകാട്ടിയ സാമൂഹിക യാഥാർത്ഥ്യവാദിയാണ് അദ്ദേഹം.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">The devastating psychological impact of greed, money illusion, and unearned wealth on human relationships. The mere possibility of winning a fortune dismantles family loyalty, creates suspicion, and turns intimate friends into cautious adversaries.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>അധ്വാനിക്കാതെ കിട്ടുന്ന പണത്തോടുള്ള അത്യാഗ്രഹവും വ്യാമോഹങ്ങളും മനുഷ്യബന്ധങ്ങളെ എങ്ങനെ തകിടം മറിക്കുന്നുവെന്ന് കഥ വ്യക്തമാക്കുന്നു. ലോട്ടറി അടിക്കുമെന്ന വെറും സങ്കല്പം പോലും കുടുംബബന്ധങ്ങളെയും സുഹൃദ്ബന്ധങ്ങളെയും തകർത്തു കളയുന്നു.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Joint Purchase of a Single Lottery Ticket / <span class="ml-font">ഒരു ലോട്ടറി ടിക്കറ്റിന്റെ സംയുക്ത വാങ്ങൽ</span></strong>
+            <div class="en-block" style="margin-top:4px;">The narrator, a modest schoolteacher, and his unemployed friend Vikram decide to pool five rupees each to buy a single 10-rupee lottery ticket with a grand prize of five lakh rupees. They agree to share the winnings equally.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>സാധാരണ സ്കൂൾ അധ്യാപകനായ ആഖ്യാതാവും തൊഴിൽരഹിതനായ സുഹൃത്ത് വിക്രമും ചേർന്ന് അഞ്ച് രൂപ വീതം എടുത്ത് പത്ത് രൂപയുടെ ഒരു ലോട്ടറി ടിക്കറ്റ് വാങ്ങുന്നു. അഞ്ച് ലക്ഷം രൂപ സമ്മാനത്തുക ലഭിച്ചാൽ തുല്യമായി വീതിക്കാമെന്ന് അവർ സമ്മതിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Daydreams of Grandeur and Growing Distrust / <span class="ml-font">വലിയ സ്വപ്നങ്ങളും വളരുന്ന അവിശ്വാസവും</span></strong>
+            <div class="en-block" style="margin-top:4px;">Before the result is announced, both men become intoxicated with imaginary wealth. Vikram dreams of traveling the world and buying lavish estates, while the narrator plans a quiet, intellectual life. Soon, suspicion creeps in: Vikram demands written agreements and legal clauses, fearing the narrator might cheat him.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>ഫലം വരുന്നതിനുമുമ്പ് തന്നെ ഇരുവരും ഭാവനാ സമ്പത്തിൽ മതിമറക്കുന്നു. വിക്രം ലോകം ചുറ്റിക്കാണാനും വലിയ കൊട്ടാരങ്ങൾ വാങ്ങാനും സ്വപ്നം കാണുമ്പോൾ, ആഖ്യാതാവ് ശാന്തമായ ജീവിതം ആഗ്രഹിക്കുന്നു. എന്നാൽ ഉടൻ തന്നെ പരസ്പര അവിശ്വാസം ഉടലെടുക്കുകയും വിക്രം മുദ്രപ്പത്രത്തിൽ കരാർ എഴുതിവാങ്ങാൻ നിർബന്ധിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Family Turmoil and the Reality Check / <span class="ml-font">കുടുംബകലഹവും യാഥാർത്ഥ്യത്തിന്റെ ആഘാതവും</span></strong>
+            <div class="en-block" style="margin-top:4px;">Vikram&#x27;s family falls into fierce disputes. His father, mother, and uncle argue violently over their shares, threatening court cases over non-existent money. When the results arrive, neither of them wins. The illusion evaporates, leaving behind shattered peace and bitter embarrassment.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>വിക്രമിന്റെ കുടുംബത്തിൽ ഭയാനകമായ വഴക്കുകൾ ഉണ്ടാകുന്നു. അച്ഛനും അമ്മയും അമ്മാവനും കിട്ടാത്ത പണത്തെച്ചൊല്ലി കോടതി കയറുമെന്ന് ഭീഷണിപ്പെടുത്തുന്നു. ഒടുവിൽ ലോട്ടറി ഫലം വരുമ്പോൾ രണ്ടുപേർക്കും ഒന്നും ലഭിക്കുന്നില്ല. അതോടെ വ്യാമോഹങ്ങളെല്ലാം തകരുകയും ചെയ്ത തെറ്റുകൾ ഓർത്ത് അവർ ലജ്ജിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Humiliating</strong></td>
+                <td>Causing someone to feel ashamed and foolish</td>
+                <td class="ml-font">അപമാനകരമായ / നാണംകെടുത്തുന്ന</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Speculation</strong></td>
+                <td>Forming theories or taking financial gambles</td>
+                <td class="ml-font">ഊഹാപോഹങ്ങൾ / ചൂതാട്ടം</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Miser</strong></td>
+                <td>A person who hoards wealth and spends as little as possible</td>
+                <td class="ml-font">പിശുക്കൻ / അത്യാഗ്രഹി</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Distrust</strong></td>
+                <td>The feeling that someone cannot be relied upon</td>
+                <td class="ml-font">അവിശ്വാസം / സംശയം</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What was the prize money of the lottery ticket in the story?</div>
+                <div class="q-text-ml">കഥയിലെ ലോട്ടറി ടിക്കറ്റിന്റെ സമ്മാനത്തുക എത്രയായിരുന്നു?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> The grand prize money of the lottery ticket was five lakh rupees (₹5,00,000).</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ലോട്ടറി ടിക്കറ്റിന്റെ ഒന്നാം സമ്മാനത്തുക അഞ്ച് ലക്ഷം രൂപയായിരുന്നു.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">How did Vikram and the narrator manage to purchase the ticket?</div>
+                <div class="q-text-ml">വിക്രമും ആഖ്യാതാവും എങ്ങനെയാണ് ടിക്കറ്റ് വാങ്ങാനുള്ള പണം കണ്ടെത്തിയത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> Neither had ten rupees alone, so they partnered up and contributed five rupees each to buy a single ticket together.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ഒറ്റയ്ക്ക് പത്ത് രൂപയില്ലാത്തതിനാൽ, ഇരുവരും അഞ്ച് രൂപ വീതം പങ്കിട്ടെടുത്ത് ഒരു ടിക്കറ്റ് സംയുക്തമായി വാങ്ങി.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q3</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What did Kunti pray for in the story?</div>
+                <div class="q-text-ml">കഥയിൽ കുന്തി എന്താണ് പ്രാർത്ഥിച്ചത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> Kunti prayed to God twice every day for her mother to win the lottery, because her mother promised her ₹50,000.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> അമ്മയ്ക്ക് ലോട്ടറിയടിച്ചാൽ തനിക്ക് 50,000 രൂപ തരാമെന്ന് പറഞ്ഞിരുന്നതിനാൽ, അമ്മയ്ക്ക് തന്നെ ലോട്ടറിയടിക്കണമെന്ന് കുന്തി ദിവസവും രണ്ടുനേരം പ്രാർത്ഥിച്ചു.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">How does the anticipation of unearned wealth destroy trust between Vikram and the narrator?</div>
+                    <div class="q-text-ml">കിട്ടാത്ത പണത്തെക്കുറിച്ചുള്ള പ്രതീക്ഷ വിക്രമും ആഖ്യാതാവും തമ്മിലുള്ള വിശ്വാസത്തെ എങ്ങനെയാണ് തകർത്തത്?</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> Initially, Vikram and the narrator shared genuine camaraderie. However, as the draw date approached, the thought of possessing ₹2.5 lakhs corrupted Vikram&#x27;s mind. He started suspecting the narrator would run away with the money if the ticket was kept in the narrator&#x27;s name. Vikram demanded legal stamps, witnesses, and harsh contract conditions. The warmth of friendship was replaced by cold paranoia and greed.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> തുടക്കത്തിൽ അടുത്ത സുഹൃത്തുക്കളായിരുന്നെങ്കിലും, രണ്ടര ലക്ഷം രൂപ കൈവരുമെന്ന ചിന്ത വിക്രമിന്റെ മനസ്സിനെ വിഷലിപ്തമാക്കി. ടിക്കറ്റ് ആഖ്യാതാവിന്റെ പേരിലായതിനാൽ പണവുമായി അയാൾ മുങ്ങുമോ എന്ന് വിക്രം സംശയിച്ചു. മുദ്രപ്പത്രത്തിൽ എഴുതിക്കൊടുക്കണമെന്നും സാക്ഷികൾ വേണമെന്നും അയാൾ നിർബന്ധിച്ചു. ആത്മാർത്ഥമായ സൗഹൃദത്തിന്റെ സ്ഥാനത്ത് കടുത്ത അവിശ്വാസവും അത്യാഗ്രഹവും നിറഞ്ഞു.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Analyze Premchand&#x27;s &#x27;Lottery&#x27; as a satirical critique of human greed and bourgeois middle-class illusions.</div>
+                    <div class="q-text-ml">മനുഷ്യന്റെ അത്യാഗ്രഹത്തെയും മധ്യവർഗ്ഗ വ്യാമോഹങ്ങളെയും കുറിച്ചുള്ള ആക്ഷേപഹാസ്യമായി പ്രേംചന്ദിന്റെ &#x27;ലോട്ടറി&#x27; എന്ന കഥയെ വിശകലനം ചെയ്യുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>Munshi Premchand&#x27;s &#x27;Lottery&#x27; is a masterclass in psychological realism and social satire. It lays bare how the mere anticipation of sudden, unearned wealth strips away civil decorum and exposes raw, predatory human instincts.<br><br>The story centers on the lower-middle-class yearning for a miraculous escape from financial hardships. The narrator, a humble teacher, and Vikram, an unemployed youth, see the 10-rupee ticket as their salvation. Yet, before a single rupee enters their hands, the imaginary money poisons every relationship.<br><br>Premchand brilliantly portrays how greed spreads like a contagion through Vikram&#x27;s household. His parents and uncle begin fighting over property and shares that do not exist. Filial love turns into venomous hostility, with family members consulting lawyers and planning deceit. Even innocent little Kunti is co-opted into this greed, praying selfishly for her mother to win so she can secure fifty thousand rupees.<br><br>The climax delivers a classic ironic deflation. Neither wins the prize. The towering castles in the air instantly collapse. Premchand leaves the reader with a poignant moral: real dignity lies in honest labor, whereas chasing unearned wealth creates moral degradation and emotional ruin.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>മനുഷ്യന്റെ അത്യാഗ്രഹത്തെയും സാമ്പത്തിക വ്യാമോഹങ്ങളെയും അതിസൂക്ഷ്മമായി തുറന്നുകാട്ടുന്ന ക്ലാസിക് കഥയാണ് പ്രേംചന്ദിന്റെ &#x27;ലോട്ടറി&#x27;. അധ്വാനിക്കാതെ കിട്ടുന്ന പണം മനുഷ്യബന്ധങ്ങളിലെ സ്നേഹവും മര്യാദയും എങ്ങനെ ഇല്ലാതാക്കുന്നുവെന്ന് കഥ വ്യക്തമാക്കുന്നു.<br><br>ദാരിദ്ര്യത്തിൽ നിന്ന് പെട്ടെന്ന് രക്ഷപ്പെടാനുള്ള സാധാരണക്കാരുടെ ആഗ്രഹമാണ് കഥയുടെ കേന്ദ്രബിന്ദു. ആഖ്യാതാവും വിക്രമും ടിക്കറ്റ് വാങ്ങുന്നതോടെ ആരംഭിക്കുന്ന ഭാവനാ ലോകം ക്രമേണ കുടുംബത്തിലെ മുഴുവൻ ആളുകളിലേക്കും പടരുന്നു. വിക്രമിന്റെ മാതാപിതാക്കളും അമ്മാവനും തമ്മിൽ സ്വത്തിനെച്ചൊല്ലി വലിയ വഴക്കുകൾ നടക്കുന്നു. സ്നേഹത്തിന് പകരം വഞ്ചനയും കോടതി കേസുകളും ചർച്ചയാകുന്നു.<br><br>ഒടുവിൽ ലോട്ടറി ഫലം വരുമ്പോൾ ആർക്കും ഒന്നും ലഭിക്കുന്നില്ല. ഉണ്ടാക്കിയെടുത്ത വ്യാമോഹങ്ങളുടെ കൊട്ടാരം ചീട്ടുകൊട്ടാരം പോലെ തകർന്നുവീഴുന്നു. കഠിനാധ്വാനത്തിലൂടെയുള്ള ജീവിതമാണ് ശ്രേഷ്ഠമെന്നും, എളുപ്പവഴികളിലൂടെയുള്ള ധനസമ്പാദനം മനുഷ്യനെ ആത്മീയമായും ധാർമ്മികമായും തകർക്കുമെന്നും പ്രേംചന്ദ് ഓർമ്മിപ്പിക്കുന്നു.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">A 10-rupee lottery ticket with a 5-lakh prize is bought jointly by two friends.</div>
+            <div class="knock-ml">അഞ്ച് ലക്ഷം സമ്മാനത്തുകയുള്ള 10 രൂപയുടെ ലോട്ടറി ടിക്കറ്റ് രണ്ട് സുഹൃത്തുക്കൾ ചേർന്ന് വാങ്ങുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">Vikram dreams of global luxury travel; the narrator dreams of a massive library.</div>
+            <div class="knock-ml">വിക്രം ആഡംബര യാത്രകളും, ആഖ്യാതാവ് വലിയൊരു ലൈബ്രറിയും സ്വപ്നം കാണുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">Mutual trust degrades into suspicion, leading to demands for legal stamped contracts.</div>
+            <div class="knock-ml">പരസ്പര വിശ്വാസം സംശയമായി മാറുകയും മുദ്രപ്പത്ര കരാറിനായി വാശിപിടിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">Vikram&#x27;s family descends into chaos, threatening lawsuits over non-existent wealth.</div>
+            <div class="knock-ml">കിട്ടാത്ത പണത്തെച്ചൊല്ലി വിക്രമിന്റെ കുടുംബം കോടതി കയറുമെന്ന് ഭീഷണിപ്പെടുത്തുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">Little Kunti&#x27;s prayer highlights how greed corrupts even innocent minds.</div>
+            <div class="knock-ml">കുട്ടികളിൽ പോലും അത്യാഗ്രഹം വിഷം കലർത്തുന്നുവെന്ന് കുന്തിയുടെ പ്രാർത്ഥന വ്യക്തമാക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">Neither friend wins any prize, causing their illusory castles to collapse.</div>
+            <div class="knock-ml">ലോട്ടറി അടിക്കാതിരുന്നതോടെ അവരുടെ ഭാവനാ കൊട്ടാരം പൂർണ്ണമായി നിലംപൊത്തുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">Premchand highlights that unearned wealth causes moral rot and destruction of ties.</div>
+            <div class="knock-ml">അധ്വാനമില്ലാത്ത ധനസമ്പാദനം മനുഷ്യബന്ധങ്ങളെയും ധാർമ്മികതയെയും നശിപ്പിക്കുമെന്ന് കഥ സമർത്ഥിക്കുന്നു.</div>
+          </div>
+        
+</div>
+</div><div class="chapter-wrapper" style="--ch-primary: #0284c7; --ch-tint: #f0f9ff; --ch-border: #bae6fd;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 4 · Short Story (ചെറുകഥ)</span>
+        <h1 class="ch-title-en">4. The Woman on Platform 8</h1>
+        <h2 class="ch-title-ml">4. പ്ലാറ്റ്‌ഫോം 8-ലെ സ്ത്രീ</h2>
+        <div class="ch-author-row">✍️ Ruskin Bond &nbsp;·&nbsp; <span class="ml-font">റസ്കിൻ ബോണ്ട്</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Ruskin Bond (born 1934 in Kasauli) is an eminent Indian author of British descent living in Landour, Mussoorie. A recipient of the Sahitya Akademi Award, Padma Shri, and Padma Bhushan, his stories capture the simplicity of Indian railway stations, childhood innocence, and compassionate human bonds.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>മസൂറിയിലെ ലാൻഡോറിൽ താമസിക്കുന്ന പ്രശസ്തനായ ഇന്ത്യൻ എഴുത്തുകാരനാണ് റസ്കിൻ ബോണ്ട് (ജനനം 1934). കേന്ദ്ര സാഹിത്യ അക്കാദമി അവാർഡ്, പത്മശ്രീ, പത്മഭൂഷൺ എന്നിവ ലഭിച്ചിട്ടുള്ള അദ്ദേഹത്തിന്റെ രചനകൾ ഇന്ത്യൻ റെയിൽവേ സ്റ്റേഷനുകളുടെ ജീവസ്സുറ്റ അന്തരീക്ഷവും നിഷ്കളങ്കമായ മാനുഷിക ബന്ധങ്ങളും വരച്ചുകാട്ടുന്നു.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">The beauty of instinctive human kindness and empathy that transcends biological ties and social barriers. It contrasts pure maternal warmth from a stranger with the snobbish, judgmental paranoia of elite society.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>രക്തബന്ധങ്ങൾക്കും സാമൂഹിക വേർതിരിവുകൾക്കും അതീതമായ നിസ്വാർത്ഥ സ്നേഹത്തിന്റെയും കാരുണ്യത്തിന്റെയും മഹത്വം. അപരിചിതയായ ഒരു സ്ത്രീയുടെ അമ്മമനസ്സും, വരേണ്യവർഗ്ഗത്തിന്റെ മുൻവിധികളും തമ്മിലുള്ള താരതമ്യമാണിത്.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">A Solitary Boy on Ambala Station / <span class="ml-font">അംബാല സ്റ്റേഷനിലെ ഏകാകിയായ ബാലൻ</span></strong>
+            <div class="en-block" style="margin-top:4px;">Arun, a 12-year-old boarding school student, waits alone at midnight on Platform 8 of Ambala station for the northern express. Amidst the noisy bustle of porters and vendors, a serene woman dressed in a simple white sari approaches him with gentle kindness.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>അംബാല റെയിൽവേ സ്റ്റേഷനിലെ എട്ടാം നമ്പർ പ്ലാറ്റ്‌ഫോമിൽ അർദ്ധരാത്രിയിൽ നോർത്തേൺ എക്സ്പ്രസ് കാത്തുനിൽക്കുകയാണ് പന്ത്രണ്ടുകാരനായ അരുൺ. ബഹളങ്ങൾക്കിടയിൽ, ലളിതമായ വെള്ള സാരി ധരിച്ച ശാന്തയായ ഒരു സ്ത്രീ അവനെ സമീപിച്ച് വാത്സല്യത്തോടെ സംസാരിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Warm Hospitality and Shared Trust / <span class="ml-font">ആതിഥ്യ മര്യാദയും പരസ്പര വിശ്വാസവും</span></strong>
+            <div class="en-block" style="margin-top:4px;">Sensing his hunger, she takes him to the station canteen and feeds him samosas, jalebis, and sweet tea. Her quiet dignity and attentive listening earn Arun&#x27;s complete trust, allowing him to open up without hesitation.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>അവൻ വിശന്നിരിക്കുകയാണെന്ന് മനസ്സിലാക്കിയ ആ സ്ത്രീ അവനെ കാന്റീനിലേക്ക് കൊണ്ടുപോയി സമോസയും ജിലേബിയും ചായയും വാങ്ങി നൽകുന്നു. അവരുടെ സ്നേഹപൂർണ്ണമായ പെരുമാറ്റം അരുണിന്റെ ഹൃദയം കീഴടക്കുകയും അവൻ അവരെ പൂർണ്ണമായി വിശ്വസിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Encounter with Satish&#x27;s Haughty Mother / <span class="ml-font">സതീഷിന്റെ അഹങ്കാരിയായ അമ്മയുമായുള്ള കൂടിക്കാഴ്ച</span></strong>
+            <div class="en-block" style="margin-top:4px;">Arun meets his schoolmate Satish and Satish&#x27;s arrogant mother. The mother rudely warns against trusting strangers and questions Arun&#x27;s companion. Defending her, Arun proudly acknowledges the woman as his mother. As the train pulls away, Arun bids an affectionate farewell: &#x27;Goodbye, Mother!&#x27;</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>അരുണിന്റെ സഹപാഠിയായ സതീഷും അവന്റെ അമ്മയും അവിടെയെത്തുന്നു. അപരിചിതരെ വിശ്വസിക്കരുതെന്ന് ഉപദേശിക്കുകയും ആ സ്ത്രീയെ പുച്ഛത്തോടെ നോക്കുകയും ചെയ്യുന്ന സതീഷിന്റെ അമ്മയെ തിരുത്തിക്കൊണ്ട്, &#x27;ഇത് എന്റെ അമ്മയാണ്&#x27; എന്ന് അരുൺ അഭിമാനത്തോടെ പറയുന്നു. ട്രെയിൻ നീങ്ങുമ്പോൾ &#x27;വിട, അമ്മേ!&#x27; എന്ന് അവൻ ആ സ്ത്രീയെ സ്നേഹത്തോടെ വിളിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Serene</strong></td>
+                <td>Calm, peaceful, and untroubled</td>
+                <td class="ml-font">ശാന്തമായ / പ്രശാന്തമായ</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Patronizing</strong></td>
+                <td>Apparent kindness that betrays a feeling of superiority</td>
+                <td class="ml-font">മറ്റുള്ളവരെ ചെറുതായി കാണുന്ന ഭാവം</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Snobbish</strong></td>
+                <td>Condescending or haughty towards lower classes</td>
+                <td class="ml-font">അഹങ്കാരപൂർണ്ണമായ / വരേണ്യ മനോഭാവം</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Instinctive</strong></td>
+                <td>Prompted by natural impulse rather than conscious reasoning</td>
+                <td class="ml-font">സഹജമായ / സ്വാഭാവികമായ</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Where was Arun waiting and for what train?</div>
+                <div class="q-text-ml">അരുൺ എവിടെയാണ് കാത്തുനിന്നത്, ഏത് ട്രെയിനിന് വേണ്ടിയായിരുന്നു?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> Arun was waiting on Platform No. 8 of Ambala railway station for the midnight train to his boarding school.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> തന്റെ ബോർഡിംഗ് സ്കൂളിലേക്ക് പോകാനുള്ള അർദ്ധരാത്രിയിലെ ട്രെയിൻ കാത്ത് അംബാല റെയിൽവേ സ്റ്റേഷനിലെ എട്ടാം നമ്പർ പ്ലാറ്റ്‌ഫോമിലാണ് അരുൺ നിന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What did the mysterious woman offer Arun at the station canteen?</div>
+                <div class="q-text-ml">സ്റ്റേഷൻ കാന്റീനിൽ വെച്ച് ആ സ്ത്രീ അരുണിന് എന്താണ് വാങ്ങി നൽകിയത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> She generously bought him samosas, hot sweet jalebis, and tea.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> അവർ അവന് ചൂടുള്ള സമോസകളും ജിലേബിയും ചായയും വാങ്ങി നൽകി.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q3</span>
+              <div style="flex:1;">
+                <div class="q-text-en">How did Satish&#x27;s mother view strangers at railway stations?</div>
+                <div class="q-text-ml">റെയിൽവേ സ്റ്റേഷനിലെ അപരിചിതരെ സതീഷിന്റെ അമ്മ എങ്ങനെയാണ് കണ്ടിരുന്നത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> She viewed all strangers with deep suspicion, considering them thieves and untrustworthy scoundrels.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> സ്റ്റേഷനിലെ അപരിചിതരെല്ലാം കള്ളന്മാരും വിശ്വസിക്കാൻ കൊള്ളാത്തവരുമാണെന്ന് അവജ്ഞയോടെയാണ് അവർ കണ്ടിരുന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Contrast the character of Satish&#x27;s mother with the mysterious woman in white.</div>
+                    <div class="q-text-ml">സതീഷിന്റെ അമ്മയുടെ സ്വഭാവവും വെള്ള സാരി ധരിച്ച സ്ത്രീയുടെ സ്വഭാവവും തമ്മിൽ താരതമ്യം ചെയ്യുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> The mysterious woman in white embodies quiet grace, instinctive maternal affection, and simplicity. She asks for nothing, offers food to a lonely boy, and listens without judgment. In stark contrast, Satish&#x27;s mother is loud, judgmental, wealthy, and condescending. She treats Arun with pity, lectures him aggressively about strangers, and views society through classist paranoia.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> വെള്ള സാരി ധരിച്ച സ്ത്രീ നിസ്വാർത്ഥ സ്നേഹത്തിന്റെയും വാത്സല്യത്തിന്റെയും പ്രതീകമാണ്. ഒറ്റപ്പെട്ടുപോയ ബാലന് ഭക്ഷണം നൽകുകയും അവന്റെ വാക്കുകൾ ശ്രദ്ധയോടെ കേൾക്കുകയും ചെയ്യുന്നു. നേരെമറിച്ച്, സതീഷിന്റെ അമ്മ അഹങ്കാരിയും മറ്റുള്ളവരെ പുച്ഛത്തോടെ കാണുന്നവളുമാണ്. ധനികയായ അവർ അപരിചിതരെല്ലാം കൊള്ളക്കാരാണെന്ന മുൻവിധിയോടെ സംസാരിക്കുന്നു.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Discuss how Ruskin Bond explores the theme of unconditional maternal love in &#x27;The Woman on Platform 8&#x27;.</div>
+                    <div class="q-text-ml">&#x27;പ്ലാറ്റ്‌ഫോം 8-ലെ സ്ത്രീ&#x27; എന്ന കഥയിൽ നിരുപാധികമായ മാതൃസ്നേഹം റസ്കിൻ ബോണ്ട് എങ്ങനെയാണ് ആവിഷ്കരിക്കുന്നത് എന്ന് ചർച്ച ചെയ്യുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>Ruskin Bond&#x27;s &#x27;The Woman on Platform 8&#x27; is a touching affirmation that love and emotional bonding are not restricted by biological relationships. Set in the nostalgic, transient atmosphere of Ambala railway junction, the narrative explores an encounter between a vulnerable young boy and an anonymous woman.<br><br>Arun is accustomed to independence, but he feels fundamentally lonely in the crowded station. The woman does not interrogate him or introduce herself; she simply recognizes his hunger and quiet loneliness. By taking him to the canteen and treating him with gentle hospitality, she establishes an immediate emotional connection. Her eyes reflect deep sorrow and boundless tenderness.<br><br>When Satish&#x27;s mother intrudes with her haughty, suspicious demeanor, Arun feels an intense surge of protective loyalty toward the woman. When Satish&#x27;s mother instructs him never to speak to strangers, Arun boldly touches the woman&#x27;s hand and says, &#x27;I like strangers.&#x27; In the story&#x27;s emotional climax, Arun claims her as his mother and waves goodbye, calling her &#x27;Mother.&#x27; Bond thus proves that genuine empathy bridges all divides of blood, class, and social status.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>രക്തബന്ധങ്ങൾക്കുമപ്പുറം മനുഷ്യഹൃദയങ്ങളെ ഒന്നിപ്പിക്കുന്ന സ്നേഹത്തിന്റെ വിശുദ്ധിയാണ് റസ്കിൻ ബോണ്ടിന്റെ ഈ കഥയിലെ പ്രധാന പ്രമേയം. അംബാല സ്റ്റേഷന്റെ തിരക്കുകൾക്കിടയിൽ നടക്കുന്ന ഒരു കൂടിക്കാഴ്ച അവിസ്മരണീയമായ അനുഭവമായി മാറുന്നു.<br><br>പന്ത്രണ്ടുകാരനായ അരുൺ ധൈര്യശാലിയാണെങ്കിലും രാത്രിയിലെ ഏകാന്തത അവനെ വിഷമിപ്പിക്കുന്നു. അപ്പോഴാണ് ശാന്തയായ ആ സ്ത്രീ അവനെ സമീപിക്കുന്നത്. ചോദ്യം ചെയ്യലുകളൊന്നുമില്ലാതെ അവന് ആഹാരം നൽകി ആശ്വസിപ്പിക്കുന്നതിലൂടെ അവർ അവന്റെ അമ്മയുടെ സ്ഥാനം നേടുന്നു.<br><br>സതീഷിന്റെ അമ്മയുടെ കുറ്റപ്പെടുത്തലുകൾക്ക് മുന്നിൽ ആ സ്ത്രീ അപമാനിതയാകാതിരിക്കാൻ അരുൺ ധീരമായി നിലകൊള്ളുന്നു. അപരിചിതരെ തനിക്ക് ഇഷ്ടമാണെന്ന് പ്രഖ്യാപിക്കുന്ന അവൻ, ട്രെയിൻ പുറപ്പെടുമ്പോൾ അവരെ &#x27;അമ്മേ&#x27; എന്ന് വിളിക്കുന്നു. മനുഷ്യബന്ധങ്ങളിൽ രക്തബന്ധത്തേക്കാൾ വലുത് നിസ്വാർത്ഥമായ സ്നേഹമാണെന്ന് ബോണ്ട് തെളിയിക്കുന്നു.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">Arun is a 12-year-old schoolboy waiting alone at Ambala station.</div>
+            <div class="knock-ml">അംബാല സ്റ്റേഷനിൽ ഒറ്റയ്ക്ക് കാത്തുനിൽക്കുന്ന പന്ത്രണ്ടുകാരനായ സ്കൂൾ വിദ്യാർത്ഥിയാണ് അരുൺ.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">A woman in a white sari offers him gentle warmth, samosas, and tea.</div>
+            <div class="knock-ml">വെള്ള സാരി ധരിച്ച അപരിചിതയായ സ്ത്രീ അവന് സമോസയും ചായയും സ്നേഹവും നൽകുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">She listens quietly without imposing intrusive questions or superiority.</div>
+            <div class="knock-ml">അനാവശ്യ ചോദ്യങ്ങളൊന്നുമില്ലാതെ അവർ അവന്റെ വാക്കുകൾ വാത്സല്യത്തോടെ കേൾക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">Satish&#x27;s mother displays elitist suspicion, cautioning against all strangers.</div>
+            <div class="knock-ml">സതീഷിന്റെ അമ്മ വരേണ്യവർഗ്ഗത്തിന്റെ മുൻവിധിയോടെ അപരിചിതരെ മുഴുവൻ സംശയിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">Arun defends the woman in white and boldly holds her hand.</div>
+            <div class="knock-ml">ആ സ്ത്രീയെ സംരക്ഷിച്ചുകൊണ്ട് അരുൺ അവരുടെ കൈകളിൽ സ്നേഹത്തോടെ പിടിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">Arun calls the mysterious woman &#x27;Mother&#x27; as the train pulls away.</div>
+            <div class="knock-ml">ട്രെയിൻ യാത്രയാകുമ്പോൾ അവൻ ആ സ്ത്രീയെ &#x27;അമ്മേ&#x27; എന്ന് സ്നേഹപൂർവ്വം വിളിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">Bond shows that selfless empathy transcends all biological and social barriers.</div>
+            <div class="knock-ml">നിസ്വാർത്ഥമായ കാരുണ്യം രക്തബന്ധങ്ങൾക്കും സാമൂഹിക വേലിക്കെട്ടുകൾക്കും അതീതമാണെന്ന് കഥ വ്യക്തമാക്കുന്നു.</div>
+          </div>
+        
+</div>
+</div><div class="chapter-wrapper" style="--ch-primary: #6d28d9; --ch-tint: #faf5ff; --ch-border: #ddd6fe;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 5 · Essay / Narrative (ഉപന്യാസം / ആഖ്യാനം)</span>
+        <h1 class="ch-title-en">5. A Hanging</h1>
+        <h2 class="ch-title-ml">5. ഒരു തൂക്കിലേറ്റൽ</h2>
+        <div class="ch-author-row">✍️ George Orwell &nbsp;·&nbsp; <span class="ml-font">ജോർജ്ജ് ഓർവെൽ</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">George Orwell (1903–1950), pen name of Eric Arthur Blair, was an iconic English essayist, journalist, and novelist born in Motihari, India. Famous for &#x27;Animal Farm&#x27; and &#x27;1984&#x27;, he served as an Imperial Police officer in Burma (1922–1927), an experience that turned him into an uncompromising anti-imperialist.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>ഇംഗ്ലീഷ് സാഹിത്യത്തിലെ എക്കാലത്തെയും മികച്ച നോവലിസ്റ്റും ഉപന്യാസകാരനുമാണ് ജോർജ്ജ് ഓർവെൽ (1903-1950). ഇന്ത്യയിലെ മോത്തിഹാരിയിൽ ജനിച്ച അദ്ദേഹം, ബർമ്മയിൽ ഇംപീരിയൽ പോലീസ് ഉദ്യോഗസ്ഥനായി സേവനമനുഷ്ഠിച്ച അനുഭവങ്ങളിൽ നിന്നാണ് സാമ്രാജ്യത്വത്തിനെതിരെയും ഫാസിസത്തിനെതിരെയും ശക്തമായ രചനകൾ നടത്തിയത്.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">A harrowing anti-capital punishment manifesto exposing the sheer moral atrocity of taking a conscious human life. It reveals how systemic cruelty dehumanizes both the victim and the executioners.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>വധശിക്ഷ എന്ന ക്രൂരമായ സമ്പ്രദായത്തിനെതിരെയുള്ള ശക്തമായ വിചാരണ. ജീവനുള്ള ഒരു മനുഷ്യന്റെ ജീവൻ അപഹരിക്കുന്നത് എത്ര വലിയ പാപമാണെന്നും, ഈ ക്രൂരത ഇരയെ മാത്രമല്ല ശിക്ഷ നടപ്പാക്കുന്നവരെക്കൂടി മനുഷ്യത്വമില്ലാത്തവരാക്കുന്നുവെന്നും തുറന്നുകാട്ടുന്നു.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Dreary Burmese Prison Yard / <span class="ml-font">ബർമ്മീസ് ജയിലിലെ ഇരുണ്ട പ്രഭാതം</span></strong>
+            <div class="en-block" style="margin-top:4px;">On a sodden, sickly yellow morning in a Burmese prison, a puny Hindu prisoner is led from his cage to the gallows. Guarded heavily by six tall Indian warders with bayonets, the condemned man walks submissively toward his execution.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>മഴ തോരാത്ത ഒരു മഞ്ഞ പ്രഭാതത്തിൽ, ബർമ്മയിലെ ജയിലിൽ ഒരു പാവം തടവുകാരനെ തൂക്കുമരത്തിലേക്ക് നയിക്കുന്നു. ആയുധമേന്തിയ ആറ് ഭീമാകാരന്മാരായ വാർഡൻമാർക്ക് നടുവിലൂടെ ശിരസ്സ് കുനിച്ച് അവൻ നടന്നുനീങ്ങുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Epiphany: Stepping Aside to Avoid a Puddle / <span class="ml-font">വെള്ളക്കെട്ട് ഒഴിഞ്ഞുമാറുന്ന നിമിഷം: തിരിച്ചറിവിന്റെ ആഘാതം</span></strong>
+            <div class="en-block" style="margin-top:4px;">As they march, the prisoner instinctively swerves aside to avoid a puddle of mud. This small, trivial action strikes Orwell with overwhelming force: this man is completely alive, his brain working, his skin renewing, his heart pumping. Taking the life of a fellow conscious human being is an unspeakable wrong.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>നടന്നുപോകുന്നതിനിടയിൽ, വഴിയിലെ ഒരു ചെറിയ ചെളിവെള്ളക്കെട്ടിൽ ചവിട്ടാതെ ആ തടവുകാരൻ സ്വാഭാവികമായി ഒഴിഞ്ഞുമാറുന്നു. ഈ നിസ്സാര പ്രവൃത്തി ഓർവെലിന്റെ മനസ്സിനെ പിടിച്ചുലയ്ക്കുന്നു: അവൻ ഇപ്പോഴും പൂർണ്ണമായും ജീവനുള്ള മനുഷ്യനാണ്; അവന്റെ ചിന്തകളും ഇന്ദ്രിയങ്ങളും സജീവമാണ്. ഒരു മനുഷ്യന്റെ ജീവനറുക്കുന്നത് എത്ര വലിയ പാതകമാണെന്ന് കവി തിരിച്ചറിയുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Execution and the Hollow Nervous Laughter / <span class="ml-font">തൂക്കിലേറ്റലും ഭയാനകമായ ചിരികളും</span></strong>
+            <div class="en-block" style="margin-top:4px;">The prisoner cries &#x27;Ram! Ram!&#x27; until the drop falls with a resounding clatter. Once he is dead, an immense wave of relief sweeps over the superintendent, warders, and Orwell. To cope with their suppressed horror, they share whisky, make nervous jokes, and laugh hysterically.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>തൂക്കുമരത്തിന് മുകളിൽ നിന്ന് ആ തടവുകാരൻ &#x27;റാം! റാം!&#x27; എന്ന് നിലവിളിക്കുന്നു. നിമിഷങ്ങൾക്കകം കഴുമരം വീഴുന്നു. മരണം ഉറപ്പായതോടെ എല്ലാവരിലും വലിയൊരു ആശ്വാസം പരക്കുന്നു. ആ പാപഭാരം മറക്കാൻ വാർഡൻമാരും ഉദ്യോഗസ്ഥരും മദ്യം പങ്കുവെക്കുകയും ഭ്രാന്തമായി പൊട്ടിച്ചിരിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Gallows</strong></td>
+                <td>A wooden structure used for the hanging of criminals</td>
+                <td class="ml-font">തൂക്കുമരം</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Puny</strong></td>
+                <td>Small and weak in appearance</td>
+                <td class="ml-font">മെലിഞ്ഞുണങ്ങിയ / ബലഹീനനായ</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Sodden</strong></td>
+                <td>Saturated with liquid; thoroughly soaked</td>
+                <td class="ml-font">നനഞ്ഞു കുതിർന്ന</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Atrocity</strong></td>
+                <td>An extremely wicked or cruel act</td>
+                <td class="ml-font">ക്രൂരകൃത്യം / കൊടുംപാതകം</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">How was the condemned prisoner described by Orwell?</div>
+                <div class="q-text-ml">വധശിക്ഷയ്ക്ക് വിധിക്കപ്പെട്ട തടവുകാരനെ ഓർവെൽ എങ്ങനെയാണ് വിവരിക്കുന്നത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> He was described as a puny Hindu man with a shaven head and vague, liquid eyes, yielding passively to his warders.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> തല മുണ്ഡനം ചെയ്ത, ശാന്തമായ കണ്ണുകളുള്ള, മെലിഞ്ഞുണങ്ങിയ ഒരു പാവം ഹിന്ദു യുവാവായാണ് ഓർവെൽ അവനെ വിവരിക്കുന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What did the stray dog do when it ran into the prison yard?</div>
+                <div class="q-text-ml">ജയിൽ മുറ്റത്തേക്ക് ഓടിയെത്തിയ നായ എന്താണ് ചെയ്തത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> The friendly dog bounded toward the prisoner and tried to lick his face, treating the condemned man with natural affection.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ഓടിയെത്തിയ ആ തെരുവ് നായ തടവുകാരന്റെ അടുത്തേക്ക് ചാടിച്ചെന്ന് അവന്റെ മുഖം നക്കാൻ തുടങ്ങി; അവനെ ഒരു മനുഷ്യനായി സ്നേഹത്തോടെ കണ്ടു.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q3</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What words did the prisoner repeat before being hanged?</div>
+                <div class="q-text-ml">തൂക്കിലേറ്റുന്നതിന് തൊട്ടുമുമ്പ് തടവുകാരൻ ആവർത്തിച്ചുരുവിട്ട വാക്ക് എന്തായിരുന്നു?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> He repeatedly chanted the holy name &#x27;Ram! Ram! Ram!&#x27; with steady, rhythmic desperation until the trapdoor opened.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> കഴുമരത്തിന്റെ പലക താഴേക്ക് വീഴുന്ന നിമിഷം വരെ അവൻ &#x27;റാം! റാം! റാം!&#x27; എന്ന് ഭക്തിയോടെ വിളിച്ചുകൊണ്ടിരുന്നു.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Explain the significance of the puddle of water in Orwell&#x27;s &#x27;A Hanging&#x27;.</div>
+                    <div class="q-text-ml">ഓർവെലിന്റെ &#x27;എ ഹാങ്ങിങ്&#x27; എന്ന ഉപന്യാസത്തിലെ ചെളിവെള്ളക്കെട്ടിന്റെ പ്രാധാന്യം വിശദീകരിക്കുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> The puddle is the philosophical turning point of the essay. When walking to the gallows, the prisoner steps aside instinctively to avoid stepping into muddy water. This mundane bodily reflex shows his nervous system and mind are fully active. It triggers Orwell&#x27;s sudden moral realization: destroying a living, thinking human being in the prime of life is an unnatural, monstrous act of state violence.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> ഈ കൃതിയിലെ ഏറ്റവും നിർണ്ണായകമായ ദാർശനിക നിമിഷമാണ് വെള്ളക്കെട്ട്. മരണത്തിലേക്ക് നടക്കുമ്പോഴും ചെളിയിൽ ചവിട്ടാതിരിക്കാൻ ആ തടവുകാരൻ ഒഴിഞ്ഞുമാറുന്നു. അവന്റെ ജീവനും ബോധവും എത്രത്തോളം സജീവമാണെന്ന് ഈ ചെറിയ പ്രവൃത്തി വ്യക്തമാക്കുന്നു. ജീവനുള്ള ഒരു മനുഷ്യന്റെ ആയുസ്സ് ഭരണകൂടം ബലമായി കവർന്നെടുക്കുന്നത് എത്ര വലിയ പാതകമാണെന്ന് ഓർവെൽ ഇവിടെ തിരിച്ചറിയുന്നു.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Critically evaluate George Orwell&#x27;s essay &#x27;A Hanging&#x27; as an indictment of capital punishment and colonial bureaucracy.</div>
+                    <div class="q-text-ml">വധശിക്ഷയ്ക്കും കൊളോണിയൽ ഉദ്യോഗസ്ഥ വൃന്ദത്തിനുമെതിരെയുള്ള കുറ്റപത്രമായി ജോർജ്ജ് ഓർവെലിന്റെ &#x27;എ ഹാങ്ങിങ്&#x27; എന്ന കൃതിയെ സമഗ്രമായി വിലയിരുത്തുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>George Orwell&#x27;s &#x27;A Hanging&#x27; is one of the most powerful anti-capital punishment texts in English literature. Drawing on his real-life observations as a police officer in colonial Burma, Orwell avoids abstract political speeches, opting instead for sensory realism to expose the horror of legalized murder.<br><br>The setting is grim: a damp prison yard under a sickly yellow light. Orwell portrays the execution not as justice, but as an awkward bureaucratic chore. The superintendent looks at his watch, worrying that the execution is taking too long because breakfast is getting cold. This callous efficiency underscores how colonial institutions reduce human beings to mere numbers.<br><br>The essay&#x27;s moral core is encapsulated in the prisoner dodging the puddle. Orwell realizes that in ten minutes, this vibrant mind, with memories, emotions, and sensations, will be extinguished forever. The post-execution scene is equally telling: the hangman, superintendent, and guards engage in hysterical laughter and drink whisky together. This collective hysteria is a desperate psychological defense mechanism to drown out their complicity in murder. Through spare, precise prose, Orwell forces society to confront the barbarity of the death penalty.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>വധശിക്ഷയുടെ ക്രൂരതയെയും കൊളോണിയൽ ഭരണകൂടത്തിന്റെ മനുഷ്യത്വമില്ലായ്മയെയും അതിശക്തമായി അപലപിക്കുന്ന ഉജ്ജ്വല കൃതിയാണ് &#x27;എ ഹാങ്ങിങ്&#x27;. ബർമ്മയിൽ പോലീസ് ഉദ്യോഗസ്ഥനായിരുന്ന കാലത്തെ സ്വന്തം അനുഭവങ്ങളെയാണ് ഓർവെൽ ഇതിൽ പകർത്തിവെച്ചിരിക്കുന്നത്.<br><br>ജയിലിലെ ഇരുണ്ട അന്തരീക്ഷവും, പ്രാതൽ തണുത്തുപോകുമെന്ന ഭയത്താൽ വാച്ചിലേക്ക് നോക്കി ധൃതികൂട്ടുന്ന ജയിൽ സൂപ്രണ്ടും കൊളോണിയൽ ഭരണകൂടത്തിന്റെ നിർദ്ദയമായ മുഖമാണ് കാട്ടിത്തരുന്നത്. മനുഷ്യജീവനേക്കാൾ അവർ വില കൽപ്പിക്കുന്നത് സമയക്രമത്തിനാണ്.<br><br>തടവുകാരൻ ചെളിവെള്ളക്കെട്ട് ഒഴിഞ്ഞുമാറുന്ന നിമിഷത്തിലാണ് മനുഷ്യജീവന്റെ മഹത്വം ഓർവെൽ തിരിച്ചറിയുന്നത്. ഏതാനും നിമിഷങ്ങൾക്കുള്ളിൽ ഇല്ലാതാകാൻ പോകുന്ന ആ ബോധമനസ്സിനെക്കുറിച്ചുള്ള ചിന്ത അദ്ദേഹത്തെ നടുക്കുന്നു. വധശിക്ഷയ്ക്ക് ശേഷം ഉദ്യോഗസ്ഥർ പൊട്ടിച്ചിരിക്കുന്നതും മദ്യം കഴിക്കുന്നതും ചെയ്ത തെറ്റിന്റെ ഭാരം മറക്കാനുള്ള വെപ്രാളമാണ്. വധശിക്ഷ എന്നത് നിയമപരമായ കൊലപാതകം മാത്രമാണെന്ന് ഓർവെൽ തെളിയിക്കുന്നു.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">Set in a damp, yellow morning in a colonial Burmese prison yard.</div>
+            <div class="knock-ml">കൊളോണിയൽ ബർമ്മയിലെ ഒരു നനഞ്ഞ ജയിൽ മുറ്റത്താണ് സംഭവം നടക്കുന്നത്.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">A frail Hindu prisoner is marched to the gallows by armed warders.</div>
+            <div class="knock-ml">മെലിഞ്ഞുണങ്ങിയ ഒരു തടവുകാരനെ തൂക്കുമരത്തിലേക്ക് നയിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">A stray dog bounds in and innocently licks the prisoner&#x27;s face.</div>
+            <div class="knock-ml">ഒരു തെരുവ് നായ ഓടിയെത്തി സ്നേഹത്തോടെ തടവുകാരന്റെ മുഖം നക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">The prisoner swerves around a puddle, revealing his fully active consciousness.</div>
+            <div class="knock-ml">ചെളിവെള്ളത്തിൽ ചവിട്ടാതെ ഒഴിഞ്ഞുമാറുന്ന തടവുകാരൻ അവന്റെ സജീവമായ ജീവനെ സാക്ഷ്യപ്പെടുത്തുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">Orwell experiences an epiphany: taking a conscious life is morally unspeakable.</div>
+            <div class="knock-ml">ജീവനുള്ള ഒരു മനുഷ്യനെ ഇല്ലാതാക്കുന്നത് കൊടുംക്രൂരതയാണെന്ന് ഓർവെൽ തിരിച്ചറിയുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">The prisoner chants &#x27;Ram!&#x27; repeatedly until the drop falls.</div>
+            <div class="knock-ml">കഴുമരം വീഴുന്നതുവരെ തടവുകാരൻ &#x27;റാം!&#x27; എന്ന് പ്രാർത്ഥിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">Executioners drink and laugh nervously to suppress their subconscious guilt.</div>
+            <div class="knock-ml">ഉദ്യോഗസ്ഥർ മദ്യപിക്കുകയും പൊട്ടിച്ചിരിക്കുകയും ചെയ്യുന്നത് കുറ്റബോധം മറയ്ക്കാനാണ്.</div>
+          </div>
+        
+</div>
+</div><div class="chapter-wrapper" style="--ch-primary: #be185d; --ch-tint: #fdf2f8; --ch-border: #fbcfe8;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 6 · Jungle Narrative / Adventure (സാഹസിക വനകഥ)</span>
+        <h1 class="ch-title-en">6. The Ramapuram Tiger</h1>
+        <h2 class="ch-title-ml">6. രാമപുരം കടുവ</h2>
+        <div class="ch-author-row">✍️ Kenneth Anderson &nbsp;·&nbsp; <span class="ml-font">കെന്നത്ത് ആൻഡേഴ്സൺ</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Kenneth Anderson (1910–1974) was an iconic Indian-born British hunter, naturalist, and writer. Living in Bangalore, he authored numerous classic memoirs chronicling his adventures in the jungles of South India, including Kollegal, Bandipur, and Annamalai, known for his deep respect for wildlife and local forest dwellers.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>ബാംഗ്ലൂരിൽ ജനിച്ചു ജീവിച്ച പ്രശസ്തനായ വേട്ടക്കാരനും പരിസ്ഥിതി സ്നേഹിയുമാണ് കെന്നത്ത് ആൻഡേഴ്സൺ (1910-1974). ദക്ഷിണേന്ത്യൻ കാടുകളിൽ, പ്രത്യേകിച്ച് കൊള്ളെഗാൽ, ബന്ദിപ്പൂർ വനമേഖലകളിൽ ആളെക്കൊല്ലി കടുവകളെയും പുലികളെയും തുരത്താൻ നിയോഗിക്കപ്പെട്ട അദ്ദേഹം, വന്യജീവികളോടുള്ള ബഹുമാനവും ആദിവാസികളുടെ ജീവിതവും ചേർത്തുവെച്ചാണ് പുസ്തകങ്ങൾ എഴുതിയത്.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Man-versus-nature conflict in rural South India, emphasizing the ecological triggers that force magnificent predators to become man-eaters, and the deep courage and fieldcraft required to protect vulnerable villagers.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>ദക്ഷിണേന്ത്യൻ ഗ്രാമങ്ങളിലെ മനുഷ്യനും വന്യമൃഗങ്ങളും തമ്മിലുള്ള സംഘർഷം. സ്വാഭാവിക ഇരകൾ നഷ്ടപ്പെടുമ്പോഴും പരിക്കേൽക്കുമ്പോഴും മാത്രമാണ് കടുവകൾ ആളെക്കൊല്ലികളാകുന്നത് എന്ന പരിസ്ഥിതി യാഥാർത്ഥ്യവും ഇതിൽ ചർച്ച ചെയ്യപ്പെടുന്നു.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Terror in Kollegal and the Ramapuram Outpost / <span class="ml-font">കൊള്ളെഗാലിലെ ഭീതിയും രാമപുരം ഫോറസ്റ്റ് ഔട്ട്പോസ്റ്റും</span></strong>
+            <div class="en-block" style="margin-top:4px;">In the remote forested terrain of Kollegal near the Cauvery river, a terrifying man-eating tiger terrorizes local cattle-graziers and villagers around Ramapuram. Anderson receives urgent distress calls after several woodcutters and women are slain.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>കാവേരി നദിക്കടുത്തുള്ള കൊള്ളെഗാൽ വനമേഖലയിലെ രാമപുരം ഗ്രാമത്തിൽ ഒരു ആളെക്കൊല്ലി കടുവ ഭീതി പരത്തുന്നു. വിറകുവെട്ടുകാരും സ്ത്രീകളും കൊല്ലപ്പെട്ടതിനെ തുടർന്ന് നാട്ടുകാരെ രക്ഷിക്കാൻ കെന്നത്ത് ആൻഡേഴ്സൺ കാട്ടിലേക്ക് പുറപ്പെടുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Tracking and Investigating the Tragic Kills / <span class="ml-font">കാലടികൾ പിന്തുടരലും ദാരുണമായ കൊലപാതകങ്ങളും</span></strong>
+            <div class="en-block" style="margin-top:4px;">Anderson arrives at the spot and investigates the kill sites. He learns of a tragic attack on an elderly woman and herdsman. Analyzing the pugmarks, he notes that the tiger is injured or aging, compelling it to hunt slower human prey.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>സംഭവസ്ഥലത്തെത്തിയ ആൻഡേഴ്സൺ കടുവയുടെ കാൽപ്പാടുകൾ പരിശോധിക്കുന്നു. പ്രായമായ സ്ത്രീയെയടക്കം ക്രൂരമായി കൊലപ്പെടുത്തിയ കടുവയ്ക്ക് പരിക്കേറ്റിട്ടുണ്ടാകാമെന്നും, അതുകൊണ്ടാണ് വേഗത്തിൽ ഓടാൻ കഴിയാത്ത മനുഷ്യരെ അത് ഇരയാക്കുന്നതെന്നും അദ്ദേഹം മനസ്സിലാക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Deadly Night Stalk and the Final Shot / <span class="ml-font">അപകടകരമായ രാത്രി വേട്ടയും അന്തിമ വെടിയൊച്ചയും</span></strong>
+            <div class="en-block" style="margin-top:4px;">Anderson sets up a perilous ground-level hideout near the tiger&#x27;s trail. In pitch darkness, relying on jungle acoustics and an electric torch, he waits through nerve-shredding hours. When the massive predator charges, Anderson fires with razor precision, freeing the villagers from reign of terror.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>കടുവ വരുന്ന വഴിയിൽ അതിസാഹസികമായി തറനിരപ്പിൽ പതിയിരുന്ന് ആൻഡേഴ്സൺ കാത്തിരിക്കുന്നു. കൂരിരുട്ടിൽ ഇലയനക്കങ്ങൾ ശ്രദ്ധിച്ച്, ടോർച്ചിന്റെ വെളിച്ചത്തിൽ നേർക്കുനേർ ചാടിവീഴാൻ വന്ന ഭീമാകാരനായ കടുവയെ കൃത്യമായ ലക്ഷ്യത്തോടെ അദ്ദേഹം വെടിവെച്ചു വീഴ്ത്തുന്നു.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Pugmark</strong></td>
+                <td>The footprint of an animal, especially a large cat</td>
+                <td class="ml-font">കടുവയുടെയോ മൃഗങ്ങളുടെയോ കാൽപ്പാട്</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Grazier</strong></td>
+                <td>A person who feeds or grazes cattle on pasture</td>
+                <td class="ml-font">കന്നുകാലികളെ മേയ്ക്കുന്നയാൾ</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Man-eater</strong></td>
+                <td>A wild animal that has developed a habit of hunting humans</td>
+                <td class="ml-font">ആളെക്കൊല്ലി മൃഗം</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Machan</strong></td>
+                <td>A platform erected in a tree for tiger hunting or observation</td>
+                <td class="ml-font">മരത്തിന് മുകളിൽ കെട്ടിയുണ്ടാക്കുന്ന ഏറുമാടം</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Where is Ramapuram located according to the story?</div>
+                <div class="q-text-ml">കഥയനുസരിച്ച് രാമപുരം എവിടെയാണ് സ്ഥിതി ചെയ്യുന്നത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> Ramapuram is located in the rugged Kollegal forest tract, about eight miles from the Cauvery River, near the Karnataka-Tamil Nadu border.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> കർണാടക-തമിഴ്നാട് അതിർത്തിയിലെ കാവേരി നദിയിൽ നിന്ന് എട്ട് മൈൽ അകലെ, കൊള്ളെഗാൽ വനമേഖലയിലാണ് രാമപുരം സ്ഥിതി ചെയ്യുന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Why do normal tigers turn into man-eaters according to Kenneth Anderson?</div>
+                <div class="q-text-ml">കെന്നത്ത് ആൻഡേഴ്സന്റെ അഭിപ്രായത്തിൽ കടുവകൾ ആളെക്കൊല്ലികളാകാൻ കാരണമെന്ത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> Tigers turn into man-eaters only due to old age, disability, porcupine quill wounds, or severe injury that prevents them from hunting swift wild game.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> വാർദ്ധക്യം, പരിക്കുകൾ, അല്ലെങ്കിൽ മുള്ളൻപന്നിയുടെ മുള്ള് തറച്ചുണ്ടാകുന്ന മുറിവുകൾ കാരണം കാട്ടു മൃഗങ്ങളെ വേട്ടയാടാൻ കഴിയാതെ വരുമ്പോഴാണ് കടുവകൾ മനുഷ്യരെ പിടിക്കുന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Describe Kenneth Anderson&#x27;s thrilling nocturnal encounter with the Ramapuram tiger.</div>
+                    <div class="q-text-ml">രാമപുരം കടുവയുമായുള്ള കെന്നത്ത് ആൻഡേഴ്സന്റെ ഉദ്വേഗജനകമായ രാത്രി ഏറ്റുമുട്ടൽ വിവരിക്കുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> Anderson chose not to sit safely atop a high tree but waited on the ground in a rudimentary screen of bushes. As night deepened, an eerie silence settled over the jungle. Suddenly, the deep rumbling breathing of the tiger echoed behind him. Using his sixth sense, Anderson spun around, flashed his rifle torch, and spotted two glowing green eyes charging at him. With split-second reflex, he fired directly between the eyes, killing the beast instantly.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> മരത്തിന് മുകളിൽ സുരക്ഷിതമായി ഇരിക്കുന്നതിന് പകരം, നിലത്ത് കാട്ടുപൊന്തകൾക്ക് പിന്നിലാണ് ആൻഡേഴ്സൺ കാത്തിരുന്നത്. രാത്രിയുടെ നിശബ്ദതയിൽ കടുവയുടെ ഭയാനകമായ ശ്വാസോച്ഛ്വാസം അദ്ദേഹം കേട്ടു. പെട്ടെന്ന് തിരിഞ്ഞ് റൈഫിളിലെ ടോർച്ച് തെളിച്ചപ്പോൾ തന്നെ ലക്ഷ്യമാക്കി പാഞ്ഞുവരുന്ന കടുവയുടെ തിളങ്ങുന്ന കണ്ണുകൾ കണ്ടു. ഒട്ടും സമയം പാഴാക്കാതെ നെറ്റിത്തടത്തിലേക്ക് വെടിയുതിർത്ത് അദ്ദേഹം കടുവയെ വകവരുത്തി.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Discuss Kenneth Anderson&#x27;s narrative art and deep ecological insight in &#x27;The Ramapuram Tiger&#x27;.</div>
+                    <div class="q-text-ml">&#x27;രാമപുരം കടുവ&#x27; എന്ന രചനയിലെ കെന്നത്ത് ആൻഡേഴ്സന്റെ ആഖ്യാന കലയും പരിസ്ഥിതി കാഴ്ചപ്പാടുകളും വിലയിരുത്തുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>Kenneth Anderson&#x27;s jungle narratives are celebrated not merely for their pulse-pounding adventure, but for their profound naturalist wisdom and empathy for both forest communities and wildlife.<br><br>In &#x27;The Ramapuram Tiger&#x27;, Anderson captures the visceral dread that grips an isolated rural settlement when a man-eater is on the prowl. Daily routines halt; women cannot fetch water, and men dare not enter the woods. Anderson&#x27;s arrival brings relief, but his method is scientific. He tracks pugmarks, examines the terrain, and reads the language of alarm calls given by langurs, spotted deer, and jungle fowl.<br><br>Importantly, Anderson never paints the tiger as a villain. He repeatedly reminds the reader that tigers are noble lords of the jungle forced into man-eating by human encroachment, bullet wounds inflicted by poachers, or bodily infirmities. The climax is a testament to immense physical courage and marksmanship. By eliminating the predator, Anderson saves human lives while honoring the tragedy of a fallen majestic beast.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>സാഹസികത മാത്രമല്ല, വനത്തോടും വന്യജീവികളോടുമുള്ള അഗാധമായ ബഹുമാനവുമാണ് കെന്നത്ത് ആൻഡേഴ്സന്റെ രചനകളുടെ പ്രത്യേകത. ആളെക്കൊല്ലി കടുവ വരുത്തുന്ന ഭീതിയെ അദ്ദേഹം അതിമനോഹരമായി ചിത്രീകരിക്കുന്നു.<br><br>കടുവയുടെ സാന്നിധ്യം മൂലം നിശ്ചലമാകുന്ന ഗ്രാമജീവിതത്തെ അദ്ദേഹം വരച്ചുകാട്ടുന്നു. എന്നാൽ കടുവയെ ഒരു വില്ലനായി ചിത്രീകരിക്കാൻ അദ്ദേഹം തയ്യാറാകുന്നില്ല. കാടുകൾ വെട്ടിത്തെളിക്കുന്നതും, വേട്ടക്കാരുടെ വെടിയേറ്റ് പരിക്കേൽക്കുന്നതുമാണ് വന്യമൃഗങ്ങളെ ആളെക്കൊല്ലികളാക്കുന്നതെന്ന് അദ്ദേഹം സമർത്ഥിക്കുന്നു.<br><br>കാടിന്റെ സ്പന്ദനങ്ങളും മറ്റ് മൃഗങ്ങളുടെ മുന്നറിയിപ്പ് ശബ്ദങ്ങളും തിരിച്ചറിഞ്ഞുകൊണ്ടുള്ള ആൻഡേഴ്സന്റെ വേട്ട അതീവ ഉദ്വേഗജനകമാണ്. ഒടുവിൽ കടുവയെ കൊന്ന് ഗ്രാമവാസികളെ രക്ഷിക്കുമ്പോഴും, കാടിന്റെ പ്രതാപിയായ ഒരു ജീവിയുടെ അന്ത്യത്തിൽ അദ്ദേഹം വേദനിക്കുന്നു.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">Ramapuram is a forested settlement in Kollegal near the Cauvery river.</div>
+            <div class="knock-ml">കാവേരി നദിക്കടുത്തുള്ള കൊള്ളെഗാലിലെ വനഗ്രാമമാണ് രാമപുരം.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">The man-eating tiger had killed multiple cattle-herders and woodcutters.</div>
+            <div class="knock-ml">നിരവധി കർഷകരെയും വിറകുവെട്ടുകാരെയും ആളെക്കൊല്ലി കടുവ കൊലപ്പെടുത്തിയിരുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">Anderson clarifies that tigers hunt humans only when crippled or starved.</div>
+            <div class="knock-ml">പരിക്കേൽക്കുകയോ പട്ടിണിയാവുകയോ ചെയ്യുമ്പോൾ മാത്രമാണ് കടുവകൾ മനുഷ്യരെ വേട്ടയാടുന്നത്.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">Pugmark analysis helped identify the tiger&#x27;s size, limp, and regular trails.</div>
+            <div class="knock-ml">കാൽപ്പാടുകൾ പരിശോധിച്ച് കടുവയുടെ വലുപ്പവും പരിക്കും അദ്ദേഹം മനസ്സിലാക്കി.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">Anderson waited on ground level at night rather than on an elevated machan.</div>
+            <div class="knock-ml">മരത്തിന് മുകളിലല്ലാതെ അതിസാഹസികമായി നിലത്ത് പതിയിരുന്നാണ് അദ്ദേഹം വേട്ട നടത്തിയത്.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">He illuminated the charging predator with a gun torch and fired decisively.</div>
+            <div class="knock-ml">പാഞ്ഞടുത്ത കടുവയെ തോക്കിലെ ടോർച്ച് വെളിച്ചത്തിൽ കൃത്യമായി വെടിവെച്ചു വീഴ്ത്തി.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">The narrative balances pulse-pounding suspense with deep ecological respect.</div>
+            <div class="knock-ml">സാഹസികതയോടൊപ്പം പരിസ്ഥിതി സ്നേഹവും വന്യജീവി സംരക്ഷണവും ഇതിൽ തെളിയുന്നു.</div>
+          </div>
+        
+</div>
+</div><div class="chapter-wrapper" style="--ch-primary: #047857; --ch-tint: #ecfdf5; --ch-border: #a7f3d0;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 7 · Short Story (ചെറുകഥ)</span>
+        <h1 class="ch-title-en">7. Birthday Girl</h1>
+        <h2 class="ch-title-ml">7. ബർത്ത്ഡേ ഗേൾ</h2>
+        <div class="ch-author-row">✍️ Haruki Murakami &nbsp;·&nbsp; <span class="ml-font">ഹാറുകി മുറകാമി</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Haruki Murakami (born 1949 in Kyoto, Japan) is a globally acclaimed contemporary novelist and translator. Known for works like &#x27;Norwegian Wood&#x27; and &#x27;Kafka on the Shore&#x27;, his minimalist surrealism blends ordinary mundane life with metaphysical, dreamlike mystery.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>ആഗോള പ്രശസ്തനായ ജാപ്പനീസ് എഴുത്തുകാരനാണ് ഹാറുകി മുറകാമി (ജനനം 1949). സാധാരണ മനുഷ്യരുടെ ദൈനംദിന ജീവിതത്തിൽ മാന്ത്രിക യാഥാർത്ഥ്യവും ദാർശനിക നിഗൂഢതകളും കൂട്ടിയിണക്കുന്ന സവിശേഷമായ രചനാശൈലിയാണ് അദ്ദേഹത്തിന്റേത്.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">The mystery of choices, aging, destiny, and the irrevocable nature of wishes. It explores how a single moment in youth can shape the psychological trajectory of an entire life.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>വിധിയും തിരഞ്ഞെടുപ്പുകളും മനുഷ്യജീവിതത്തെ എങ്ങനെ മാറ്റിമറിക്കുന്നുവെന്ന അന്വേഷണം. ഇരുപതാം വയസ്സിൽ മനസ്സിൽ തോന്നുന്ന ഒരു ആഗ്രഹം ജീവിതത്തെ മുഴുവൻ സ്വാധീനിക്കുന്നതെങ്ങനെയെന്ന് കഥ വ്യക്തമാക്കുന്നു.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">A Rainy Twentieth Birthday on Shift / <span class="ml-font">മഴയുള്ള ഒരു ഇരുപതാം പിറന്നാൾ ദിനത്തിലെ ജോലി</span></strong>
+            <div class="en-block" style="margin-top:4px;">On her twentieth birthday, a young Japanese woman has to work her usual shift as a waitress in an upscale Italian restaurant in Tokyo&#x27;s Roppongi district after quarreling with her boyfriend. It rains incessantly, and everything feels mundane and melancholic.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>തന്റെ ഇരുപതാം ജന്മദിനത്തിൽ, കാമുകനുമായി വഴക്കിട്ടതിനെ തുടർന്ന് ടോക്കിയോയിലെ റോപ്പോംഗിയിലുള്ള ഇറ്റാലിയൻ റെസ്റ്റോറന്റിൽ വെയിട്രസ്സായി ജോലി ചെയ്യുകയാണ് ഒരു പെൺകുട്ടി. തോരാത്ത മഴയുള്ള ആ ദിവസം തികച്ചും വിരസമായി അവൾക്ക് തോന്നുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Meeting the Reclusive Owner on the Sixth Floor / <span class="ml-font">ആറാം നിലയിലെ നിഗൂഢനായ ഉടമസ്ഥനുമായുള്ള കൂടിക്കാഴ്ച</span></strong>
+            <div class="en-block" style="margin-top:4px;">The floor manager suddenly suffers agonizing stomach cramps and is hospitalized. The waitress is tasked with carrying the mysterious 70-year-old restaurant owner&#x27;s dinner up to Room 604 on the sixth floor. The eccentric, well-dressed gentleman invites her in, pours fine red wine, and learns it is her 20th birthday.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>മാനേജർക്ക് പെട്ടെന്ന് വയറുവേദന വന്ന് ആശുപത്രിയിലായതിനെ തുടർന്ന്, റെസ്റ്റോറന്റ് ഉടമസ്ഥനായ എഴുപതുകാരനായ വൃദ്ധന് ഭക്ഷണം എത്തിക്കാൻ അവൾ ആറാം നിലയിലെ 604-ാം മുറിയിലേക്ക് പോകുന്നു. അവളെ സ്നേഹത്തോടെ സ്വീകരിച്ച ആ വയോധികൻ വീഞ്ഞ് നൽകുകയും ഇന്ന് അവളുടെ ജന്മദിനമാണെന്ന് അറിയുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Single Irrevocable Wish / <span class="ml-font">ഒരിക്കലും തിരിച്ചെടുക്കാനാവാത്ത ഒരൊറ്റ ആഗ്രഹം</span></strong>
+            <div class="en-block" style="margin-top:4px;">To commemorate her milestone birthday, the owner offers to grant her one single wish, warning that it cannot be taken back or altered. She closes her eyes and makes her wish. Decades later, happily married with two children and an Audi, she reflects with a friend—refusing to reveal the wish, but asking: &#x27;What would you have wished for?&#x27;</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>അവളുടെ ഇരുപതാം പിറന്നാളിന്റെ സ്മരണയ്ക്കായി, ഒരിക്കലും തിരിച്ചെടുക്കാനാവാത്ത ഒരൊറ്റ ആഗ്രഹം സാധിച്ചുതരാമെന്ന് വൃദ്ധൻ വാഗ്ദാനം ചെയ്യുന്നു. അവൾ കണ്ണടച്ച് ആഗ്രഹിക്കുന്നു. വർഷങ്ങൾക്ക് ശേഷം, രണ്ട് കുട്ടികളും കാറുമുള്ള കുടുംബസ്ഥയായി മാറുമ്പോഴും അവൾ ആ ആഗ്രഹം ആരോടും പറയുന്നില്ല; പകരം &#x27;നിങ്ങളായിരുന്നുവെങ്കിൽ എന്ത് ആഗ്രഹിക്കുമായിരുന്നു?&#x27; എന്ന് ചോദിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Mundane</strong></td>
+                <td>Lacking interest or excitement; dull</td>
+                <td class="ml-font">വിരസമായ / സാധാരണമായ</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Reclusive</strong></td>
+                <td>Avoiding the company of other people; solitary</td>
+                <td class="ml-font">ഏകാന്തവാസിയായ / പൊതുസമൂഹത്തിൽ നിന്ന് അകന്നുനിൽക്കുന്ന</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Irrevocable</strong></td>
+                <td>Not able to be changed, reversed, or recovered</td>
+                <td class="ml-font">ഒരിക്കലും മാറ്റാനാവാത്ത / തിരിച്ചെടുക്കാനാവാത്ത</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Metaphysical</strong></td>
+                <td>Transcending physical matter or the laws of nature</td>
+                <td class="ml-font">ഭൗതികത്തിനപ്പുറമുള്ള / ദാർശനികമായ</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Where was the protagonist working on her twentieth birthday?</div>
+                <div class="q-text-ml">തന്റെ ഇരുപതാം ജന്മദിനത്തിൽ നായിക എവിടെയാണ് ജോലി ചെയ്തിരുന്നത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> She was working as a waitress in an upscale Italian restaurant in the Roppongi district of Tokyo.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ടോക്കിയോയിലെ റോപ്പോംഗിയിലുള്ള ഒരു പ്രശസ്ത ഇറ്റാലിയൻ റെസ്റ്റോറന്റിൽ വെയിട്രസ്സായി ജോലി ചെയ്യുകയായിരുന്നു അവൾ.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Why did the waitress have to deliver dinner to the owner?</div>
+                <div class="q-text-ml">റെസ്റ്റോറന്റ് ഉടമയ്ക്ക് ഭക്ഷണം എത്തിക്കാൻ വെയിട്രസ്സിന് പോകേണ്ടി വന്നത് എന്തുകൊണ്ട്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> The regular floor manager fell severely ill with acute stomach cramps and was taken to the hospital.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> പതിവായി ഭക്ഷണം എത്തിക്കാറുള്ള മാനേജർക്ക് കഠിനമായ വയറുവേദന വന്ന് ആശുപത്രിയിലായതിനാലാണ് അവൾക്ക് പോകേണ്ടി വന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q3</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What condition did the elderly owner put on the wish he offered?</div>
+                <div class="q-text-ml">ആഗ്രഹം സാധിച്ചുനൽകുന്നതിന് ആ വയോധികൻ മുന്നോട്ട് വെച്ച വ്യവസ്ഥ എന്തായിരുന്നു?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> He stipulated that she could make only one wish, and it could never be taken back, cancelled, or altered.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ഒരൊറ്റ ആഗ്രഹം മാത്രമേ ചോദിക്കാവൂ എന്നും, അത് ഒരിക്കലും മാറ്റാനോ പിൻവലിക്കാനോ കഴിയില്ലെന്നുമായിരുന്നു അദ്ദേഹത്തിന്റെ വ്യവസ്ഥ.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Examine the philosophical ambiguity surrounding the protagonist&#x27;s wish in &#x27;Birthday Girl&#x27;.</div>
+                    <div class="q-text-ml">&#x27;ബർത്ത്ഡേ ഗേൾ&#x27; എന്ന കഥയിലെ നായികയുടെ ആഗ്രഹത്തെ ചുറ്റിപ്പറ്റിയുള്ള ദാർശനിക നിഗൂഢതകൾ വിലയിരുത്തുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> Murakami intentionally conceals the exact nature of the woman&#x27;s wish. Years later, when conversing with the narrator, she appears content with her life—married with children and financially comfortable. Yet, she hints that getting what one wishes for does not automatically solve the enigma of existence. Her final question, &#x27;No matter what they wish for, can people truly become someone other than who they are?&#x27;, leaves the meaning open to existential reflection.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> നായിക എന്താണ് ആഗ്രഹിച്ചതെന്ന് മുറകാമി വെളിപ്പെടുത്തുന്നില്ല. വർഷങ്ങൾക്ക് ശേഷം സംതൃപ്തമായ കുടുംബജീവിതം നയിക്കുമ്പോഴും, മനുഷ്യൻ എന്ത് ആഗ്രഹിച്ചാലും സ്വന്തം വിധിയെ മറികടക്കാനാവുമോ എന്നൊരു ചോദ്യം അവളിൽ ബാക്കിയാകുന്നു. മനുഷ്യജീവിതത്തിലെ തിരഞ്ഞെടുപ്പുകളുടെയും അനിശ്ചിതത്വങ്ങളുടെയും ആഴം കൂട്ടാൻ ഈ നിഗൂഢത സഹായിക്കുന്നു.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Critically analyze Haruki Murakami&#x27;s &#x27;Birthday Girl&#x27; as an exploration of youth, fate, and the passage of time.</div>
+                    <div class="q-text-ml">യൗവ്വനം, വിധി, കാലത്തിന്റെ പ്രയാണം എന്നിവയുടെ പശ്ചാത്തലത്തിൽ ഹാറുകി മുറകാമിയുടെ &#x27;ബർത്ത്ഡേ ഗേൾ&#x27; സമഗ്രമായി വിശകലനം ചെയ്യുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>Haruki Murakami&#x27;s &#x27;Birthday Girl&#x27; masterfully blends everyday realism with surreal fairy-tale elements. The story takes place on a young woman&#x27;s twentieth birthday—a crucial rite of passage marking the legal and psychological entrance into adulthood in Japanese culture.<br><br>The setting is mundane: an Italian restaurant where orders are delayed and the rain pours outside. The unexpected hospitalization of the manager forces the heroine into the private sanctuary of the restaurant&#x27;s mysterious owner on the sixth floor. Room 604 feels cut off from ordinary reality. The owner behaves like an ancient wizard disguised in a tailored suit.<br><br>When he offers her one irrevocable wish, the girl does not choose childish desires like wealth or beauty. She pauses and reflects deeply. Decades later, she looks back at that rainy evening. Has her life unfolded as a result of that magical wish, or simply through the inevitable flow of time? Murakami refuses to offer cheap answers, turning the story into a profound meditation on human destiny.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>സാധാരണ ജീവിതവും മാന്ത്രികതയും ഇഴചേർത്തു വെച്ച മുറകാമിയുടെ മികച്ച രചനയാണ് &#x27;ബർത്ത്ഡേ ഗേൾ&#x27;. ജപ്പാനിൽ പ്രായപൂർത്തിയാകുന്ന സുപ്രധാന ദിനമായ ഇരുപതാം ജന്മദിനത്തിലാണ് കഥ നടക്കുന്നത്.<br><br>മഴയുള്ള ഒരു രാത്രിയിൽ റെസ്റ്റോറന്റിൽ നടക്കുന്ന വിരസമായ ജോലികൾക്കിടയിലാണ് അപ്രതീക്ഷിതമായി അവൾ ആറാം നിലയിലെ ഉടമസ്ഥന്റെ മുറിയിലെത്തുന്നത്. പുറംലോകവുമായി ബന്ധമില്ലാത്ത ആ മുറിയിലെ വയോധികൻ ഒരു മാന്ത്രികനെപ്പോലെ അവൾക്ക് ഒരൊറ്റ വരം വാഗ്ദാനം ചെയ്യുന്നു.<br><br>പണത്തിനോ സൗന്ദര്യത്തിനോ വേണ്ടിയല്ലാതെ, പക്വതയോടെയാണ് അവൾ ആഗ്രഹിക്കുന്നത്. വർഷങ്ങൾക്ക് ശേഷം തിരിഞ്ഞുനോക്കുമ്പോൾ, തന്റെ ജീവിതം ആ ആഗ്രഹത്തിന്റെ ഫലമാണോ അതോ വിധിയുടെ സ്വാഭാവിക ഒഴുക്കാണോ എന്ന് അവൾ അത്ഭുതപ്പെടുന്നു. മനുഷ്യന്റെ അസ്തിത്വത്തെക്കുറിച്ചുള്ള ഗഹനമായ ചിന്തകളാണ് ഈ കഥ സമ്മാനിക്കുന്നത്.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">The story occurs on the protagonist&#x27;s 20th birthday—the Japanese threshold to adulthood.</div>
+            <div class="knock-ml">ജപ്പാനിൽ പ്രായപൂർത്തിയാകുന്ന 20-ാം ജന്മദിനത്തിലാണ് കഥ നടക്കുന്നത്.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">She works as a waitress in an upscale Tokyo restaurant on a rainy evening.</div>
+            <div class="knock-ml">മഴയുള്ള ഒരു സായാഹ്നത്തിൽ ടോക്കിയോയിലെ റെസ്റ്റോറന്റിൽ വെയിട്രസ്സായി അവൾ ജോലി ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">The manager falls ill, sending her to the eccentric owner on the 6th floor.</div>
+            <div class="knock-ml">മാനേജർക്ക് അസുഖം വന്നതിനെ തുടർന്ന് ആറാം നിലയിലെ വിചിത്രനായ ഉടമസ്ഥന്റെ അടുക്കൽ അവൾ എത്തുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">The owner grants her one single wish that can never be undone.</div>
+            <div class="knock-ml">ഒരിക്കലും തിരിച്ചെടുക്കാനാവാത്ത ഒരു വരം ആ വയോധികൻ അവൾക്ക് നൽകുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">Decades later, she is happily married with children and drives an Audi.</div>
+            <div class="knock-ml">വർഷങ്ങൾക്ക് ശേഷം രണ്ട് കുട്ടികളും കാറുമുള്ള സന്തുഷ്ട കുടുംബസ്ഥയായി അവൾ മാറുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">She never reveals what she wished for, keeping the mystery intact.</div>
+            <div class="knock-ml">താൻ എന്താണ് ആഗ്രഹിച്ചതെന്ന് അവൾ ഒരിക്കലും ആരോടും വെളിപ്പെടുത്തുന്നില്ല.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">Murakami questions whether humans can ever escape their core nature through wishes.</div>
+            <div class="knock-ml">ആഗ്രഹങ്ങൾ കൊണ്ട് മനുഷ്യന് സ്വന്തം സ്വഭാവത്തെ മാറ്റാനാവുമോ എന്ന് കഥ ചോദിക്കുന്നു.</div>
+          </div>
+        
+</div>
+</div><div class="chapter-wrapper" style="--ch-primary: #c2410c; --ch-tint: #fff7ed; --ch-border: #fed7aa;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 8 · Personal Essay (വ്യക്തിഗത ഉപന്യാസം)</span>
+        <h1 class="ch-title-en">8. Jamaican Fragments</h1>
+        <h2 class="ch-title-ml">8. ജമൈക്കൻ ഫ്രാഗ്മെന്റ്സ്</h2>
+        <div class="ch-author-row">✍️ A.L. Hendricks &nbsp;·&nbsp; <span class="ml-font">എ.എൽ. ഹെൻഡ്രിക്സ്</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Arthur L. Hendricks (1922–1992) was a distinguished Jamaican poet, short story writer, and broadcaster. A founding member of the Jamaican branch of PEN and manager of the Jamaica Broadcasting Corporation, his writing explores Caribbean identity, human equality, and cross-racial understanding.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>പ്രശസ്ത ജമൈക്കൻ കവിയും എഴുത്തുകാരനും മാധ്യമപ്രവർത്തകനുമാണ് എ.എൽ. ഹെൻഡ്രിക്സ് (1922-1992). കരീബിയൻ സംസ്കാരം, വംശീയ ഐക്യം, മാനവ സമത്വം എന്നിവ ഉയർത്തിപ്പിടിച്ച പ്രമുഖ സാഹിത്യകാരനാണ് അദ്ദേഹം.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Prejudice, racial conditioning, and the folly of rushing to judgmental conclusions. It contrasts adult racial anxieties with the innocent, egalitarian nature of childhood.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>വംശീയ മുൻവിധികളും തെറ്റായ അനുമാനങ്ങളും മനുഷ്യന്റെ ചിന്തയെ എങ്ങനെ സ്വാധീനിക്കുന്നുവെന്ന് വ്യക്തമാക്കുന്ന രചന. മുതിർന്നവരുടെ സങ്കുചിത ചിന്തകളും കുട്ടികളുടെ നിഷ്കളങ്കമായ ലോകവും തമ്മിലുള്ള വ്യത്യാസം ഇതിൽ തെളിയുന്നു.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Disturbing Morning Scene / <span class="ml-font">പ്രഭാതത്തിലെ അസ്വസ്ഥജനകമായ കാഴ്ച</span></strong>
+            <div class="en-block" style="margin-top:4px;">During a routine morning walk in Kingston, Jamaica, the narrator observes two small boys playing in a garden: a fair-skinned, sturdy four-year-old white boy and a smaller five-year-old dark-skinned boy. The white child imperiously commands the Black child, who obeys submissively.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>ജമൈക്കയിലെ കിംഗ്സ്റ്റണിൽ പ്രഭാത സവാരി നടത്തവേ, ഒരു വീട്ടുതോട്ടത്തിൽ രണ്ട് കുട്ടികൾ കളിക്കുന്നത് ആഖ്യാതാവ് കാണുന്നു: വെളുത്ത നിറമുള്ള നാലു വയസ്സുകാരനും, കറുത്ത നിറമുള്ള അഞ്ചു വയസ്സുകാരനും. വെളുത്ത കുട്ടി യജമാനനെപ്പോലെ ആജ്ഞാപിക്കുകയും കറുത്ത കുട്ടി അത് അനുസരിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Narrator&#x27;s Agony Over Racial Inferiority / <span class="ml-font">വംശീയ അപകർഷതാബോധത്തെക്കുറിച്ചുള്ള കവിയുടെ ആധി</span></strong>
+            <div class="en-block" style="margin-top:4px;">The scene deeply torments the narrator. Has the ancient curse of racial inferiority infested even tiny children? Is the Black race doomed to servitude? He spends the day troubled by the thought that his proud island nation remains mentally enslaved.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>ഈ കാഴ്ച ആഖ്യാതാവിനെ വല്ലാതെ വേദനിപ്പിക്കുന്നു. ഇത്ര ചെറിയ പ്രായത്തിൽ തന്നെ അടിമത്ത മനോഭാവം ഈ കുട്ടികളിലേക്ക് പടർന്നുവോ? കറുത്ത വർഗ്ഗം എന്നെന്നും വെളുത്തവരുടെ അടിമകളായി കഴിയാൻ വിധിക്കപ്പെട്ടവരാണോ എന്ന് ചിന്തിച്ച് അദ്ദേഹം അസ്വസ്ഥനാകുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Illuminating Revelation Next Day / <span class="ml-font">അടുത്ത ദിവസത്തെ അത്ഭുതകരമായ വെളിപ്പെടുത്തൽ</span></strong>
+            <div class="en-block" style="margin-top:4px;">The following morning, the roles are completely reversed: the Black boy imperiously rides the white boy like a horse! It was merely a game of boss-and-servant where they took turns. A white man smiling nearby turns out to be their father, and the mother is a brown Jamaican woman. The narrator laughs at his own foolish prejudice, celebrating the beauty of multiracial harmony.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>എന്നാൽ അടുത്ത ദിവസം ആ കാഴ്ച തികച്ചും വിപരീതമായിരുന്നു: കറുത്ത കുട്ടി വെളുത്ത കുട്ടിയുടെ മേൽ കുതിര കയറുകയും ആജ്ഞാപിക്കുകയും ചെയ്യുന്നു! മാറിമാറി യജമാനനും സേവകനുമാകുന്ന കുട്ടികളുടെ ഒരു കളി മാത്രമായിരുന്നു അത്. സമീപം നിൽക്കുന്ന വെളുത്ത വർഗ്ഗക്കാരനായ അവരുടെ അച്ഛനും, ജമൈക്കക്കാരിയായ അമ്മയും ഇത് കണ്ട് പുഞ്ചിരിക്കുന്നു. തന്റെ മുൻവിധികളെ ഓർത്ത് ലജ്ജിച്ച ആഖ്യാതാവ്, വംശീയ സൗഹാർദ്ദത്തിന്റെ ഭംഗി കണ്ട് ആശ്വസിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Imperious</strong></td>
+                <td>Assuming power or authority without justification; arrogant</td>
+                <td class="ml-font">യജമാനഭാവത്തോടെയുള്ള / അധികാരപൂർണ്ണമായ</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Subservience</strong></td>
+                <td>Willingness to obey others unquestioningly</td>
+                <td class="ml-font">വിധേയത്വം / ദാസ്യഭാവം</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Inferiority</strong></td>
+                <td>The condition of being lower in status or quality</td>
+                <td class="ml-font">അപകർഷത / താഴ്ന്ന നില</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Magnificent</strong></td>
+                <td>Extremely beautiful, elaborate, or impressive</td>
+                <td class="ml-font">മനോഹരമായ / പ്രൗഢമായ</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What game were the two boys playing in &#x27;Jamaican Fragments&#x27;?</div>
+                <div class="q-text-ml">&#x27;ജമൈക്കൻ ഫ്രാഗ്മെന്റ്സ്&#x27; എന്ന കൃതിയിൽ കുട്ടികൾ കളിച്ചിരുന്ന കളി എന്തായിരുന്നു?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> The two boys were taking turns playing a simple game of master and servant, where one acted as the boss and the other obeyed orders.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ഒരാൾ യജമാനനും മറ്റൊരാൾ സേവകനുമായി മാറിമാറി അഭിനയിക്കുന്ന ഒരു സാധാരണ കളിയാണ് അവർ കളിച്ചിരുന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Who were the parents of the two boys?</div>
+                <div class="q-text-ml">ആ രണ്ട് കുട്ടികളുടെ മാതാപിതാക്കൾ ആരായിരുന്നു?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> Their father was a white Englishman and their mother was a brown Jamaican woman, making the children mixed-race brothers.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> അവരുടെ അച്ഛൻ വെളുത്ത വർഗ്ഗക്കാരനായ ഇംഗ്ലീഷുകാരനും, അമ്മ തവിട്ടുനിറമുള്ള ജമൈക്കൻ സ്ത്രീയുമായിരുന്നു; അവർ സഹോദരന്മാരായിരുന്നു.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Why was the narrator filled with despair on the first morning in &#x27;Jamaican Fragments&#x27;?</div>
+                    <div class="q-text-ml">ആദ്യത്തെ ദിവസം രാവിലെ ആ കാഴ്ച കണ്ട് ആഖ്യാതാവ് നിരാശനായത് എന്തുകൊണ്ട്?</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> On seeing a small white boy command a slightly older Black boy, the narrator assumed that racial prejudice and a submissive slave mentality had infected Jamaican children at infancy. As a proud Jamaican, he felt sickened by the thought that his people were naturally prone to servitude.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> വെളുത്ത കുട്ടി കറുത്ത കുട്ടിയോട് ആജ്ഞാപിക്കുന്നത് കണ്ടപ്പോൾ, അടിമത്ത മനോഭാവവും അപകർഷതാബോധവും കുഞ്ഞുനാളിൽ തന്നെ തന്റെ ജനതയിലേക്ക് കടന്നുകൂടിയിരിക്കുന്നുവെന്ന് ആഖ്യാതാവ് ഭയന്നു. ഈ ചിന്ത അദ്ദേഹത്തെ വല്ലാതെ വേദനിപ്പിച്ചു.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Analyze &#x27;Jamaican Fragments&#x27; as a commentary on racial prejudice, subjective perception, and human unity.</div>
+                    <div class="q-text-ml">വംശീയ മുൻവിധികൾ, മനുഷ്യന്റെ തെറ്റായ ധാരണകൾ, മാനവ ഐക്യം എന്നിവ മുൻനിർത്തി &#x27;ജമൈക്കൻ ഫ്രാഗ്മെന്റ്സ്&#x27; സമഗ്രമായി വിലയിരുത്തുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>A.L. Hendricks&#x27;s autobiographical essay &#x27;Jamaican Fragments&#x27; is a compelling critique of how adults project their own historical baggage and racial prejudices onto innocent children.<br><br>The essay begins with a troubling observation in a suburban Kingston yard. When the narrator sees a four-year-old white child bossing an older Black child, he immediately constructs an elaborate sociological catastrophe. He worries that centuries of slavery have genetically or culturally doomed Black people to inferiority.<br><br>The following morning shatters his delusion. The boys have swapped roles: the Black child commands while the white child gallops cheerfully. Watching them, the narrator realizes the children were completely unburdened by racial awareness; they were simply playing a game of turn-taking. When the father explains that the boys are brothers born to a mixed-race couple, the narrator smiles at his own silliness.<br><br>Hendricks delivers an inspiring conclusion: children are born pure, without racial prejudice. It is the adult world that injects division and bigotry. In Jamaica&#x27;s vibrant multiracial melting pot, true human brotherhood is achievable.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>മുതിർന്നവരുടെ മനസ്സിനെ ബാധിച്ചിരിക്കുന്ന വംശീയ മുൻവിധികളും ഭയങ്ങളും നിരപരാധികളായ കുട്ടികളുടെ മേൽ എങ്ങനെ ആരോപിക്കപ്പെടുന്നു എന്ന് വ്യക്തമാക്കുന്ന കൃതിയാണ് ഹെൻഡ്രിക്സിന്റെ &#x27;ജമൈക്കൻ ഫ്രാഗ്മെന്റ്സ്&#x27;.<br><br>ആദ്യ ദിവസം കുട്ടികളുടെ കളി കാണുമ്പോൾ, അടിമത്തത്തിന്റെ കറുത്ത ഓർമ്മകൾ കാരണം കറുത്ത വർഗ്ഗം എന്നും താഴ്ന്നവരായിരിക്കുമോ എന്ന് ആഖ്യാതാവ് ഭയപ്പെടുന്നു. വംശീയമായ ഒരു ദുരന്തമായാണ് അദ്ദേഹം ആ കളിയെ കാണുന്നത്.<br><br>എന്നാൽ അടുത്ത ദിവസം കുട്ടികൾ റോൾ മാറ്റി കളിക്കുന്നത് കണ്ടപ്പോൾ അദ്ദേഹം ഞെട്ടുന്നു. കുഞ്ഞുങ്ങളുടെ മനസ്സിൽ വർണ്ണവെറിയോ വംശീയതയോ ഇല്ലെന്നും, അത് മുതിർന്നവരുടെ കപട സങ്കല്പങ്ങൾ മാത്രമാണെന്നും അദ്ദേഹം തിരിച്ചറിയുന്നു. ആ കുട്ടികൾ ഒരേ മാതാപിതാക്കളുടെ മക്കളാണെന്നറിയുമ്പോൾ അദ്ദേഹത്തിന്റെ ലജ്ജ ഇരട്ടിക്കുന്നു. കുട്ടികളെപ്പോലെ സ്നേഹത്തോടെയും സമത്വത്തോടെയും ജീവിക്കാൻ മുതിർന്നവർ പഠിക്കണമെന്നാണ് ഹെൻഡ്രിക്സ് നൽകുന്ന സന്ദേശം.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">The narrator observes two young boys playing in a suburban Jamaican garden.</div>
+            <div class="knock-ml">ജമൈക്കയിലെ ഒരു തോട്ടത്തിൽ രണ്ട് കുട്ടികൾ കളിക്കുന്നത് ആഖ്യാതാവ് കാണുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">A 4-year-old white boy imperiously bosses an older 5-year-old Black child.</div>
+            <div class="knock-ml">നാലു വയസ്സുള്ള വെളുത്ത കുട്ടി അഞ്ചു വയസ്സുള്ള കറുത്ത കുട്ടിയോട് ആജ്ഞാപിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">The narrator despairs that racial servitude has contaminated Jamaican children.</div>
+            <div class="knock-ml">വംശീയ അടിമത്തം കുട്ടികളിൽ പോലും ബാധിച്ചിരിക്കുന്നുവെന്ന് കണ്ട് ആഖ്യാതാവ് വേദനിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">Next morning, the roles are fully reversed as the Black child commands.</div>
+            <div class="knock-ml">അടുത്ത ദിവസം കറുത്ത കുട്ടി ആജ്ഞാപിക്കുകയും വെളുത്ത കുട്ടി അനുസരിക്കുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">It was merely an innocent childhood game of taking turns.</div>
+            <div class="knock-ml">മാറിമാറി യജമാനനും സേവകനുമാകുന്ന കുട്ടികളുടെ ഒരു നിഷ്കളങ്ക കളി മാത്രമായിരുന്നു അത്.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">The boys are brothers, born to a white father and a brown Jamaican mother.</div>
+            <div class="knock-ml">വെളുത്ത അച്ഛന്റെയും ജമൈക്കൻ അമ്മയുടെയും മക്കളായ സഹോദരന്മാരായിരുന്നു അവർ.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">Hendricks concludes that prejudice lives only in adult minds, not in children.</div>
+            <div class="knock-ml">വംശീയ മുൻവിധികൾ മുതിർന്നവരുടെ മനസ്സിൽ മാത്രമാണെന്നും കുട്ടികൾ പരിശുദ്ധരാണെന്നും ലേഖകൻ തെളിയിക്കുന്നു.</div>
+          </div>
+        
+</div>
+</div><div class="chapter-wrapper" style="--ch-primary:#047857; --ch-tint:#ecfdf5; --ch-border:#a7f3d0;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">SECTION B · LANGUAGE COMPONENTS</span>
+        <h1 class="ch-title-en">Language Skills &amp; Grammar</h1>
+        <h2 class="ch-title-ml">ഭാഷാ നൈപുണ്യവും വ്യാകരണവും</h2>
+        <div class="ch-author-row">Comprehension · Figures of Speech · Error Correction · Punctuation</div>
+      </div>
+    
+
+          <div class="section-banner">
+            <h3>Comprehension</h3>
+            <span class="ml-sub">പാഠ്യഭാഗ ഗ്രഹണ ശേഷി (Comprehension)</span>
+          </div>
+        
+
+              <div class="bilingual-pair">
+                <strong>Reading Comprehension Passage (വായനാ ഭാഗം):</strong>
+                <div class="en-block" style="margin-top:4px;">In the year 1945, the United Nations Organization (UNO) came into being as the successor of the League of Nations. It began with fifty nations as its members, but now it has 193 member states accounting for almost all the sovereign countries of the world. The UN General Assembly is the world body&#x27;s chief deliberative organ. All the other principal organs are answerable to it through annual and special periodical reports. The General Assembly discusses these reports, approves the budget, elects the UN Secretary-General, and selects the non-permanent members of the Security Council. Alongside the main organs, specialized agencies like UNESCO, WHO, ILO, and UNICEF work towards global health, education, labor rights, and cultural heritage.</div>
+                <div class="ml-block"><span class="ml-tag">മലയാള തർജ്ജമ</span><br>1945-ൽ ലീഗ് ഓഫ് നേഷൻസിന്റെ പിൻഗാമിയായാണ് ഐക്യരാഷ്ട്രസഭ (UNO) രൂപീകൃതമായത്. തുടക്കത്തിൽ 50 അംഗരാജ്യങ്ങളുണ്ടായിരുന്ന സഭയിൽ ഇന്ന് ലോകത്തിലെ മിക്ക സ്വതന്ത്ര രാജ്യങ്ങളുമുൾപ്പെടെ 193 അംഗങ്ങളുണ്ട്. ജനറൽ അസംബ്ലിയാണ് യു.എന്നിന്റെ പ്രധാന നയരൂപീകരണ വേദി. യുനെസ്കോ (UNESCO), ലോകാരോഗ്യ സംഘടന (WHO), അന്താരാഷ്ട്ര തൊഴിലാളി സംഘടന (ILO), യുനിസെഫ് (UNICEF) തുടങ്ങിയ ഏജൻസികൾ വിദ്യാഭ്യാസം, ആരോഗ്യം, തൊഴിൽ അവകാശങ്ങൾ എന്നിവയ്ക്കായി പ്രവർത്തിക്കുന്നു.</div>
+              </div>
+            
+
+                  <div class="qa-card">
+                    <div class="q-text-en">Q: When did the United Nations Organization come into existence?</div>
+                    <div class="q-text-ml">ഐക്യരാഷ്ട്രസഭ നിലവിൽ വന്നത് ഏത് വർഷത്തിലാണ്?</div>
+                    <div class="ans-box">
+                      <div class="ans-en"><strong>Answer:</strong> The United Nations Organization came into being in the year 1945.</div>
+                      <div class="ans-ml"><strong>ഉത്തരം:</strong> 1945-ലാണ് ഐക്യരാഷ്ട്രസഭ നിലവിൽ വന്നത്.</div>
+                    </div>
+                  </div>
+                
+
+                  <div class="qa-card">
+                    <div class="q-text-en">Q: Which organization preceded the UNO?</div>
+                    <div class="q-text-ml">യു.എൻ.ഒയ്ക്ക് മുൻപുണ്ടായിരുന്ന സംഘടന ഏതാണ്?</div>
+                    <div class="ans-box">
+                      <div class="ans-en"><strong>Answer:</strong> The League of Nations was the predecessor to the United Nations Organization.</div>
+                      <div class="ans-ml"><strong>ഉത്തരം:</strong> ലീഗ് ഓഫ് നേഷൻസ് (League of Nations) ആണ് യു.എന്നിന് മുൻപുണ്ടായിരുന്ന അന്താരാഷ്ട്ര സംഘടന.</div>
+                    </div>
+                  </div>
+                
+
+                  <div class="qa-card">
+                    <div class="q-text-en">Q: What is the chief deliberative organ of the United Nations?</div>
+                    <div class="q-text-ml">ഐക്യരാഷ്ട്രസഭയുടെ പ്രധാന നയരൂപീകരണ വേദി ഏതാണ്?</div>
+                    <div class="ans-box">
+                      <div class="ans-en"><strong>Answer:</strong> The UN General Assembly is the chief deliberative organ of the United Nations.</div>
+                      <div class="ans-ml"><strong>ഉത്തരം:</strong> യു.എൻ ജനറൽ അസംബ്ലിയാണ് (General Assembly) പ്രധാന നയരൂപീകരണ വേദി.</div>
+                    </div>
+                  </div>
+                
+
+                  <div class="qa-card">
+                    <div class="q-text-en">Q: What does the abbreviation UNESCO stand for?</div>
+                    <div class="q-text-ml">യുനെസ്കോ (UNESCO) എന്നതിന്റെ പൂർണ്ണരൂപം എന്താണ്?</div>
+                    <div class="ans-box">
+                      <div class="ans-en"><strong>Answer:</strong> UNESCO stands for United Nations Educational, Scientific and Cultural Organization.</div>
+                      <div class="ans-ml"><strong>ഉത്തരം:</strong> യുണൈറ്റഡ് നേഷൻസ് എജ്യുക്കേഷണൽ, സയന്റിഫിക് ആൻഡ് കൾച്ചറൽ ഓർഗനൈസേഷൻ (UNESCO).</div>
+                    </div>
+                  </div>
+                
+
+          <div class="section-banner">
+            <h3>Figures of Speech</h3>
+            <span class="ml-sub">അലങ്കാരങ്ങൾ (Figures of Speech)</span>
+          </div>
+        
+
+                  <div class="bilingual-pair">
+                    <strong style="color:#047857;">Simile (ഉപമ)</strong>
+                    <div class="en-block"><strong>Definition:</strong> A direct comparison between two distinct things using &#x27;like&#x27; or &#x27;as&#x27;.<br><strong>Example:</strong> <em>She sings like an angel. / He is as brave as a lion.</em></div>
+                    <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br><strong>നിർവ്വചനം:</strong> &#x27;Like&#x27; അല്ലെങ്കിൽ &#x27;As&#x27; ഉപയോഗിച്ച് രണ്ട് വ്യത്യസ്ത വസ്തുക്കളെ നേരിട്ട് താരതമ്യം ചെയ്യുന്നത്.<br><strong>ഉദാഹരണം:</strong> <em>അവൾ ഒരു മാലാഖയെപ്പോലെ പാടുന്നു. / അവൻ സിംഹത്തെപ്പോലെ ധീരനാണ്.</em></div>
+                  </div>
+                
+
+                  <div class="bilingual-pair">
+                    <strong style="color:#047857;">Metaphor (രൂപകം)</strong>
+                    <div class="en-block"><strong>Definition:</strong> An implicit comparison stating that one thing is another without using &#x27;like&#x27; or &#x27;as&#x27;.<br><strong>Example:</strong> <em>The camel is the ship of the desert. / Time is money.</em></div>
+                    <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br><strong>നിർവ്വചനം:</strong> &#x27;Like&#x27;, &#x27;as&#x27; എന്നിവ ഇല്ലാതെ ഒരു വസ്തുവിനെ മറ്റൊന്നായി നേരിട്ട് സങ്കല്പിക്കുന്നത്.<br><strong>ഉദാഹരണം:</strong> <em>ഒട്ടകം മരുഭൂമിയിലെ കപ്പലാണ്. / സമയം പണമാണ്.</em></div>
+                  </div>
+                
+
+                  <div class="bilingual-pair">
+                    <strong style="color:#047857;">Personification (ആരോപിത സ്വഭാവം / വ്യക്തിത്വം ചാർത്തൽ)</strong>
+                    <div class="en-block"><strong>Definition:</strong> Giving human qualities, emotions, or actions to inanimate objects or abstract ideas.<br><strong>Example:</strong> <em>The wind whispered through the dark trees.</em></div>
+                    <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br><strong>നിർവ്വചനം:</strong> ജീവില്ലാത്ത വസ്തുക്കൾക്കോ ആശയങ്ങൾക്കോ മനുഷ്യസഹജമായ ഗുണങ്ങൾ നൽകുന്നത്.<br><strong>ഉദാഹരണം:</strong> <em>കാറ്റ് മരങ്ങളിലൂടെ മന്ത്രിച്ചു.</em></div>
+                  </div>
+                
+
+                  <div class="bilingual-pair">
+                    <strong style="color:#047857;">Hyperbole (അതിശയോക്തി)</strong>
+                    <div class="en-block"><strong>Definition:</strong> Deliberate and extravagant exaggeration for emotional emphasis or dramatic effect.<br><strong>Example:</strong> <em>I am so hungry I could eat a horse! / She wept an ocean of tears.</em></div>
+                    <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br><strong>നിർവ്വചനം:</strong> നാടകീയമായ അനുഭവത്തിനായി വസ്തുതകളെ അത്യധികം പെരുപ്പിച്ചു കാട്ടുന്നത്.<br><strong>ഉദാഹരണം:</strong> <em>എനിക്ക് അത്ര വിശപ്പാണ്, ഒരു കുതിരയെപ്പോലും ഞാൻ തിന്നും!</em></div>
+                  </div>
+                
+
+                  <div class="bilingual-pair">
+                    <strong style="color:#047857;">Alliteration (അനുപ്രാസം)</strong>
+                    <div class="en-block"><strong>Definition:</strong> The repetition of identical consonant sounds at the beginning of adjacent words.<br><strong>Example:</strong> <em>She sells sea shells on the sea shore.</em></div>
+                    <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br><strong>നിർവ്വചനം:</strong> അടുത്തടുത്ത വാക്കുകളുടെ തുടക്കത്തിൽ ഒരേ വ്യഞ്ജനാക്ഷര ശബ്ദം ആവർത്തിച്ചുവരുന്നത്.<br><strong>ഉദാഹരണം:</strong> <em>ഷീ സെൽസ് സീ ഷെൽസ് ഓൺ ദ സീ ഷോർ.</em></div>
+                  </div>
+                
+
+          <div class="section-banner">
+            <h3>Correction of Errors</h3>
+            <span class="ml-sub">വാക്യ തെറ്റുതിരുത്തൽ (Correction of Errors)</span>
+          </div>
+        
+
+                      <div class="qa-card">
+                        <div style="font-size:8.8pt;"><span style="color:#dc2626; font-weight:800;">✗ Incorrect:</span> She eat ice cream everyday.</div>
+                        <div style="font-size:9pt; font-weight:800; color:#16a34a; margin:2px 0;"><span style="color:#16a34a;">✓ Correct:</span> She eats ice cream every day.</div>
+                        <div style="font-size:8pt; color:#475569; border-top:1px dashed #e2e8f0; padding-top:3px; margin-top:2px;"><strong>Grammar Rule:</strong> Third-person singular subject (She) takes a singular verb (-s/es in simple present).</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.8pt;"><span style="color:#dc2626; font-weight:800;">✗ Incorrect:</span> He dont have any siblings.</div>
+                        <div style="font-size:9pt; font-weight:800; color:#16a34a; margin:2px 0;"><span style="color:#16a34a;">✓ Correct:</span> He doesn&#x27;t have any siblings.</div>
+                        <div style="font-size:8pt; color:#475569; border-top:1px dashed #e2e8f0; padding-top:3px; margin-top:2px;"><strong>Grammar Rule:</strong> Use &#x27;doesn&#x27;t&#x27; (does not) with third-person singular subjects (He/She/It).</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.8pt;"><span style="color:#dc2626; font-weight:800;">✗ Incorrect:</span> I visits my grandmother every weekend.</div>
+                        <div style="font-size:9pt; font-weight:800; color:#16a34a; margin:2px 0;"><span style="color:#16a34a;">✓ Correct:</span> I visit my grandmother every weekend.</div>
+                        <div style="font-size:8pt; color:#475569; border-top:1px dashed #e2e8f0; padding-top:3px; margin-top:2px;"><strong>Grammar Rule:</strong> First-person pronoun &#x27;I&#x27; takes the base verb form &#x27;visit&#x27;.</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.8pt;"><span style="color:#dc2626; font-weight:800;">✗ Incorrect:</span> Carry umbrella, it will rain today.</div>
+                        <div style="font-size:9pt; font-weight:800; color:#16a34a; margin:2px 0;"><span style="color:#16a34a;">✓ Correct:</span> Carry an umbrella, it will rain today.</div>
+                        <div style="font-size:8pt; color:#475569; border-top:1px dashed #e2e8f0; padding-top:3px; margin-top:2px;"><strong>Grammar Rule:</strong> Singular countable nouns beginning with a vowel sound take the indefinite article &#x27;an&#x27;.</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.8pt;"><span style="color:#dc2626; font-weight:800;">✗ Incorrect:</span> One of my friend is a doctor.</div>
+                        <div style="font-size:9pt; font-weight:800; color:#16a34a; margin:2px 0;"><span style="color:#16a34a;">✓ Correct:</span> One of my friends is a doctor.</div>
+                        <div style="font-size:8pt; color:#475569; border-top:1px dashed #e2e8f0; padding-top:3px; margin-top:2px;"><strong>Grammar Rule:</strong> The phrase &#x27;one of&#x27; is always followed by a plural noun (&#x27;friends&#x27;).</div>
+                      </div>
+                    
+
+          <div class="section-banner">
+            <h3>Punctuation</h3>
+            <span class="ml-sub">വിരാമ ചിഹ്നങ്ങൾ (Punctuation Rules &amp; Solved Sentences)</span>
+          </div>
+        
+
+                      <div class="qa-card">
+                        <div style="font-size:8.6pt; color:#64748b;"><strong>Unpunctuated:</strong> the physician said your majesty im sorry but there is no medicine for baldness it is hereditary</div>
+                        <div style="font-size:9pt; font-weight:800; color:#0f766e; margin-top:3px;"><strong>Punctuated:</strong> The physician said, &quot;Your Majesty, I&#x27;m sorry, but there is no medicine for baldness. It is hereditary.&quot;</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.6pt; color:#64748b;"><strong>Unpunctuated:</strong> alas my cat died yesterday</div>
+                        <div style="font-size:9pt; font-weight:800; color:#0f766e; margin-top:3px;"><strong>Punctuated:</strong> Alas! My cat died yesterday.</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.6pt; color:#64748b;"><strong>Unpunctuated:</strong> did you know penny topped her exam</div>
+                        <div style="font-size:9pt; font-weight:800; color:#0f766e; margin-top:3px;"><strong>Punctuated:</strong> Did you know Penny topped her exam?</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.6pt; color:#64748b;"><strong>Unpunctuated:</strong> ouch that is very hot</div>
+                        <div style="font-size:9pt; font-weight:800; color:#0f766e; margin-top:3px;"><strong>Punctuated:</strong> Ouch! That is very hot.</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.6pt; color:#64748b;"><strong>Unpunctuated:</strong> leonardo da vinci painted the mona lisa</div>
+                        <div style="font-size:9pt; font-weight:800; color:#0f766e; margin-top:3px;"><strong>Punctuated:</strong> Leonardo da Vinci painted the Mona Lisa.</div>
+                      </div>
+                    
+</div>
+
+<script id="ah-universal-reader-protection-script">
+  (function() {
+    // Disable right click / context menu
+    window.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+
+    // Disable Save (Ctrl+S), Print (Ctrl+P), View-Source (Ctrl+U), DevTools (F12, Ctrl+Shift+I)
+    window.addEventListener('keydown', function(e) {
+      var k = e.key ? e.key.toLowerCase() : '';
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+      if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }, true);
+
+    // Disable dragging
+    window.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+
+    // Disable copy
+    window.addEventListener('copy', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+  })();
+</script>
+
+</body>
+</html>

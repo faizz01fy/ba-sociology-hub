@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Language Components &amp; Grammar — Bilingual Study Guide</title>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 12mm 12mm 12mm;
+    @top-center {
+      content: "B.COM SEMESTER I — ADDITIONAL ENGLISH | WORDS TO WORLDS (ഇംഗ്ലീഷ് - മലയാളം സമഗ്ര പഠന സഹായി)";
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      font-weight: 700;
+      color: #64748b;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* FRONT COVER */
+  .cover-page {
+    height: 268mm;
+    max-height: 268mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+    break-after: page;
+    background: linear-gradient(135deg, #090d16 0%, #0f172a 45%, #1e1b4b 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 24mm 18mm 20mm 18mm;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-page:before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 8.5pt;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #38bdf8;
+    margin-bottom: 12px;
+  }
+
+  .cover-title {
+    font-size: 28pt;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+  }
+
+  .cover-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 16pt;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #a7f3d0;
+    margin: 0 0 16px 0;
+  }
+
+  .cover-subtitle {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #cbd5e1;
+    font-weight: 600;
+    border-left: 3.5px solid #06b6d4;
+    padding-left: 14px;
+    margin-bottom: 22px;
+  }
+
+  .cover-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 9pt;
+  }
+
+  .cover-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e2e8f0;
+  }
+
+  .cover-feature-item span.icon {
+    font-size: 12pt;
+  }
+
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: 14px;
+    font-size: 8.5pt;
+    color: #94a3b8;
+  }
+
+  /* TOC PAGE */
+  .toc-page {
+    page-break-after: always;
+    break-after: page;
+    padding: 6mm 0;
+  }
+
+  .toc-header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .toc-title {
+    font-size: 20pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .toc-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    color: #0f766e;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .toc-card {
+    background: #f8fafc;
+    border: 1.2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .toc-num {
+    font-size: 8pt;
+    font-weight: 800;
+    color: #0f766e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-en {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.35;
+  }
+
+  .toc-author {
+    font-size: 8pt;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* CHAPTER STYLING */
+  .chapter-wrapper {
+    page-break-before: always;
+    break-before: page;
+    padding-top: 2mm;
+  }
+
+  .ch-hero {
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border: 1.5px solid var(--ch-border);
+    background: linear-gradient(135deg, var(--ch-tint) 0%, #ffffff 100%);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .ch-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 7.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    background: var(--ch-primary);
+    margin-bottom: 4px;
+  }
+
+  .ch-title-en {
+    font-size: 15pt;
+    font-weight: 900;
+    color: var(--ch-primary);
+    line-height: 1.25;
+    margin: 0 0 2px 0;
+  }
+
+  .ch-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .ch-author-row {
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* SECTION BANNERS */
+  .section-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--ch-border);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .section-banner h3 {
+    margin: 0;
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: var(--ch-primary);
+  }
+
+  .section-banner .ml-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* BILINGUAL PAIRED BLOCKS */
+  .bilingual-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .bilingual-pair .en-block {
+    font-size: 9pt;
+    line-height: 1.55;
+    color: #1e293b;
+    border-left: 3px solid var(--ch-primary);
+    padding-left: 8px;
+  }
+
+  .bilingual-pair .ml-block {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.8pt;
+    line-height: 1.65;
+    color: #0f172a;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+
+  .ml-tag {
+    display: inline-block;
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--ch-primary);
+    background: #ffffff;
+    border: 1px solid var(--ch-border);
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+  }
+
+  /* GLOSSARY TABLE */
+  .glossary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 8.6pt;
+    break-inside: avoid;
+  }
+
+  .glossary-table th {
+    background: var(--ch-primary);
+    color: #ffffff;
+    padding: 6px 10px;
+    text-align: left;
+    font-weight: 800;
+  }
+
+  .glossary-table td {
+    padding: 5px 10px;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+
+  .glossary-table tr:nth-child(even) {
+    background: var(--ch-tint);
+  }
+
+  .ml-font {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+  }
+
+  /* QA CARDS */
+  .qa-card {
+    border: 1.2px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+
+  .qa-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  .q-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 7pt;
+    font-weight: 800;
+    background: var(--ch-primary);
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  .q-text-en {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .q-text-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--ch-primary);
+    line-height: 1.45;
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
+
+  .ans-box {
+    margin-top: 4px;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 6px;
+  }
+
+  .ans-en {
+    font-size: 8.8pt;
+    line-height: 1.55;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+
+  .ans-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.65;
+    color: #047857;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 5px;
+    padding: 6px 8px;
+  }
+
+  /* KNOCK POINTS (Page 12 Style full grid) */
+  .knock-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 6px;
+    break-inside: avoid;
+  }
+
+  .knock-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .knock-num {
+    font-size: 6.8pt;
+    font-weight: 800;
+    color: #ffffff;
+    background: var(--ch-primary);
+    padding: 1px 5px;
+    border-radius: 3px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 2px;
+  }
+
+  .knock-en {
+    font-size: 7.8pt;
+    font-weight: 750;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+
+  .knock-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 7.4pt;
+    font-weight: 700;
+    color: #047857;
+    line-height: 1.3;
+  }
+
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
+
+<style id="ah-universal-reader-protection">
+  /* Academic Hub Content Protection & Clean Reading Mode */
+  * {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+  @media print {
+    html, body {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  /* Suppress download / save buttons, external open buttons, or save triggers */
+  a[download], button[download], [download], .btn-download, .download, #downloadBtn,
+  #modalExternalBtn, #openExternalBtn, .fast-native-btn {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+</style>
+
+</head>
+<body>
+<div class="chapter-wrapper" style="--ch-primary:#047857; --ch-tint:#ecfdf5; --ch-border:#a7f3d0;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">SECTION B · LANGUAGE COMPONENTS</span>
+        <h1 class="ch-title-en">Language Skills &amp; Grammar</h1>
+        <h2 class="ch-title-ml">ഭാഷാ നൈപുണ്യവും വ്യാകരണവും</h2>
+        <div class="ch-author-row">Comprehension · Figures of Speech · Error Correction · Punctuation</div>
+      </div>
+    
+
+          <div class="section-banner">
+            <h3>Comprehension</h3>
+            <span class="ml-sub">പാഠ്യഭാഗ ഗ്രഹണ ശേഷി (Comprehension)</span>
+          </div>
+        
+
+              <div class="bilingual-pair">
+                <strong>Reading Comprehension Passage (വായനാ ഭാഗം):</strong>
+                <div class="en-block" style="margin-top:4px;">In the year 1945, the United Nations Organization (UNO) came into being as the successor of the League of Nations. It began with fifty nations as its members, but now it has 193 member states accounting for almost all the sovereign countries of the world. The UN General Assembly is the world body&#x27;s chief deliberative organ. All the other principal organs are answerable to it through annual and special periodical reports. The General Assembly discusses these reports, approves the budget, elects the UN Secretary-General, and selects the non-permanent members of the Security Council. Alongside the main organs, specialized agencies like UNESCO, WHO, ILO, and UNICEF work towards global health, education, labor rights, and cultural heritage.</div>
+                <div class="ml-block"><span class="ml-tag">മലയാള തർജ്ജമ</span><br>1945-ൽ ലീഗ് ഓഫ് നേഷൻസിന്റെ പിൻഗാമിയായാണ് ഐക്യരാഷ്ട്രസഭ (UNO) രൂപീകൃതമായത്. തുടക്കത്തിൽ 50 അംഗരാജ്യങ്ങളുണ്ടായിരുന്ന സഭയിൽ ഇന്ന് ലോകത്തിലെ മിക്ക സ്വതന്ത്ര രാജ്യങ്ങളുമുൾപ്പെടെ 193 അംഗങ്ങളുണ്ട്. ജനറൽ അസംബ്ലിയാണ് യു.എന്നിന്റെ പ്രധാന നയരൂപീകരണ വേദി. യുനെസ്കോ (UNESCO), ലോകാരോഗ്യ സംഘടന (WHO), അന്താരാഷ്ട്ര തൊഴിലാളി സംഘടന (ILO), യുനിസെഫ് (UNICEF) തുടങ്ങിയ ഏജൻസികൾ വിദ്യാഭ്യാസം, ആരോഗ്യം, തൊഴിൽ അവകാശങ്ങൾ എന്നിവയ്ക്കായി പ്രവർത്തിക്കുന്നു.</div>
+              </div>
+            
+
+                  <div class="qa-card">
+                    <div class="q-text-en">Q: When did the United Nations Organization come into existence?</div>
+                    <div class="q-text-ml">ഐക്യരാഷ്ട്രസഭ നിലവിൽ വന്നത് ഏത് വർഷത്തിലാണ്?</div>
+                    <div class="ans-box">
+                      <div class="ans-en"><strong>Answer:</strong> The United Nations Organization came into being in the year 1945.</div>
+                      <div class="ans-ml"><strong>ഉത്തരം:</strong> 1945-ലാണ് ഐക്യരാഷ്ട്രസഭ നിലവിൽ വന്നത്.</div>
+                    </div>
+                  </div>
+                
+
+                  <div class="qa-card">
+                    <div class="q-text-en">Q: Which organization preceded the UNO?</div>
+                    <div class="q-text-ml">യു.എൻ.ഒയ്ക്ക് മുൻപുണ്ടായിരുന്ന സംഘടന ഏതാണ്?</div>
+                    <div class="ans-box">
+                      <div class="ans-en"><strong>Answer:</strong> The League of Nations was the predecessor to the United Nations Organization.</div>
+                      <div class="ans-ml"><strong>ഉത്തരം:</strong> ലീഗ് ഓഫ് നേഷൻസ് (League of Nations) ആണ് യു.എന്നിന് മുൻപുണ്ടായിരുന്ന അന്താരാഷ്ട്ര സംഘടന.</div>
+                    </div>
+                  </div>
+                
+
+                  <div class="qa-card">
+                    <div class="q-text-en">Q: What is the chief deliberative organ of the United Nations?</div>
+                    <div class="q-text-ml">ഐക്യരാഷ്ട്രസഭയുടെ പ്രധാന നയരൂപീകരണ വേദി ഏതാണ്?</div>
+                    <div class="ans-box">
+                      <div class="ans-en"><strong>Answer:</strong> The UN General Assembly is the chief deliberative organ of the United Nations.</div>
+                      <div class="ans-ml"><strong>ഉത്തരം:</strong> യു.എൻ ജനറൽ അസംബ്ലിയാണ് (General Assembly) പ്രധാന നയരൂപീകരണ വേദി.</div>
+                    </div>
+                  </div>
+                
+
+                  <div class="qa-card">
+                    <div class="q-text-en">Q: What does the abbreviation UNESCO stand for?</div>
+                    <div class="q-text-ml">യുനെസ്കോ (UNESCO) എന്നതിന്റെ പൂർണ്ണരൂപം എന്താണ്?</div>
+                    <div class="ans-box">
+                      <div class="ans-en"><strong>Answer:</strong> UNESCO stands for United Nations Educational, Scientific and Cultural Organization.</div>
+                      <div class="ans-ml"><strong>ഉത്തരം:</strong> യുണൈറ്റഡ് നേഷൻസ് എജ്യുക്കേഷണൽ, സയന്റിഫിക് ആൻഡ് കൾച്ചറൽ ഓർഗനൈസേഷൻ (UNESCO).</div>
+                    </div>
+                  </div>
+                
+
+          <div class="section-banner">
+            <h3>Figures of Speech</h3>
+            <span class="ml-sub">അലങ്കാരങ്ങൾ (Figures of Speech)</span>
+          </div>
+        
+
+                  <div class="bilingual-pair">
+                    <strong style="color:#047857;">Simile (ഉപമ)</strong>
+                    <div class="en-block"><strong>Definition:</strong> A direct comparison between two distinct things using &#x27;like&#x27; or &#x27;as&#x27;.<br><strong>Example:</strong> <em>She sings like an angel. / He is as brave as a lion.</em></div>
+                    <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br><strong>നിർവ്വചനം:</strong> &#x27;Like&#x27; അല്ലെങ്കിൽ &#x27;As&#x27; ഉപയോഗിച്ച് രണ്ട് വ്യത്യസ്ത വസ്തുക്കളെ നേരിട്ട് താരതമ്യം ചെയ്യുന്നത്.<br><strong>ഉദാഹരണം:</strong> <em>അവൾ ഒരു മാലാഖയെപ്പോലെ പാടുന്നു. / അവൻ സിംഹത്തെപ്പോലെ ധീരനാണ്.</em></div>
+                  </div>
+                
+
+                  <div class="bilingual-pair">
+                    <strong style="color:#047857;">Metaphor (രൂപകം)</strong>
+                    <div class="en-block"><strong>Definition:</strong> An implicit comparison stating that one thing is another without using &#x27;like&#x27; or &#x27;as&#x27;.<br><strong>Example:</strong> <em>The camel is the ship of the desert. / Time is money.</em></div>
+                    <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br><strong>നിർവ്വചനം:</strong> &#x27;Like&#x27;, &#x27;as&#x27; എന്നിവ ഇല്ലാതെ ഒരു വസ്തുവിനെ മറ്റൊന്നായി നേരിട്ട് സങ്കല്പിക്കുന്നത്.<br><strong>ഉദാഹരണം:</strong> <em>ഒട്ടകം മരുഭൂമിയിലെ കപ്പലാണ്. / സമയം പണമാണ്.</em></div>
+                  </div>
+                
+
+                  <div class="bilingual-pair">
+                    <strong style="color:#047857;">Personification (ആരോപിത സ്വഭാവം / വ്യക്തിത്വം ചാർത്തൽ)</strong>
+                    <div class="en-block"><strong>Definition:</strong> Giving human qualities, emotions, or actions to inanimate objects or abstract ideas.<br><strong>Example:</strong> <em>The wind whispered through the dark trees.</em></div>
+                    <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br><strong>നിർവ്വചനം:</strong> ജീവില്ലാത്ത വസ്തുക്കൾക്കോ ആശയങ്ങൾക്കോ മനുഷ്യസഹജമായ ഗുണങ്ങൾ നൽകുന്നത്.<br><strong>ഉദാഹരണം:</strong> <em>കാറ്റ് മരങ്ങളിലൂടെ മന്ത്രിച്ചു.</em></div>
+                  </div>
+                
+
+                  <div class="bilingual-pair">
+                    <strong style="color:#047857;">Hyperbole (അതിശയോക്തി)</strong>
+                    <div class="en-block"><strong>Definition:</strong> Deliberate and extravagant exaggeration for emotional emphasis or dramatic effect.<br><strong>Example:</strong> <em>I am so hungry I could eat a horse! / She wept an ocean of tears.</em></div>
+                    <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br><strong>നിർവ്വചനം:</strong> നാടകീയമായ അനുഭവത്തിനായി വസ്തുതകളെ അത്യധികം പെരുപ്പിച്ചു കാട്ടുന്നത്.<br><strong>ഉദാഹരണം:</strong> <em>എനിക്ക് അത്ര വിശപ്പാണ്, ഒരു കുതിരയെപ്പോലും ഞാൻ തിന്നും!</em></div>
+                  </div>
+                
+
+                  <div class="bilingual-pair">
+                    <strong style="color:#047857;">Alliteration (അനുപ്രാസം)</strong>
+                    <div class="en-block"><strong>Definition:</strong> The repetition of identical consonant sounds at the beginning of adjacent words.<br><strong>Example:</strong> <em>She sells sea shells on the sea shore.</em></div>
+                    <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br><strong>നിർവ്വചനം:</strong> അടുത്തടുത്ത വാക്കുകളുടെ തുടക്കത്തിൽ ഒരേ വ്യഞ്ജനാക്ഷര ശബ്ദം ആവർത്തിച്ചുവരുന്നത്.<br><strong>ഉദാഹരണം:</strong> <em>ഷീ സെൽസ് സീ ഷെൽസ് ഓൺ ദ സീ ഷോർ.</em></div>
+                  </div>
+                
+
+          <div class="section-banner">
+            <h3>Correction of Errors</h3>
+            <span class="ml-sub">വാക്യ തെറ്റുതിരുത്തൽ (Correction of Errors)</span>
+          </div>
+        
+
+                      <div class="qa-card">
+                        <div style="font-size:8.8pt;"><span style="color:#dc2626; font-weight:800;">✗ Incorrect:</span> She eat ice cream everyday.</div>
+                        <div style="font-size:9pt; font-weight:800; color:#16a34a; margin:2px 0;"><span style="color:#16a34a;">✓ Correct:</span> She eats ice cream every day.</div>
+                        <div style="font-size:8pt; color:#475569; border-top:1px dashed #e2e8f0; padding-top:3px; margin-top:2px;"><strong>Grammar Rule:</strong> Third-person singular subject (She) takes a singular verb (-s/es in simple present).</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.8pt;"><span style="color:#dc2626; font-weight:800;">✗ Incorrect:</span> He dont have any siblings.</div>
+                        <div style="font-size:9pt; font-weight:800; color:#16a34a; margin:2px 0;"><span style="color:#16a34a;">✓ Correct:</span> He doesn&#x27;t have any siblings.</div>
+                        <div style="font-size:8pt; color:#475569; border-top:1px dashed #e2e8f0; padding-top:3px; margin-top:2px;"><strong>Grammar Rule:</strong> Use &#x27;doesn&#x27;t&#x27; (does not) with third-person singular subjects (He/She/It).</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.8pt;"><span style="color:#dc2626; font-weight:800;">✗ Incorrect:</span> I visits my grandmother every weekend.</div>
+                        <div style="font-size:9pt; font-weight:800; color:#16a34a; margin:2px 0;"><span style="color:#16a34a;">✓ Correct:</span> I visit my grandmother every weekend.</div>
+                        <div style="font-size:8pt; color:#475569; border-top:1px dashed #e2e8f0; padding-top:3px; margin-top:2px;"><strong>Grammar Rule:</strong> First-person pronoun &#x27;I&#x27; takes the base verb form &#x27;visit&#x27;.</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.8pt;"><span style="color:#dc2626; font-weight:800;">✗ Incorrect:</span> Carry umbrella, it will rain today.</div>
+                        <div style="font-size:9pt; font-weight:800; color:#16a34a; margin:2px 0;"><span style="color:#16a34a;">✓ Correct:</span> Carry an umbrella, it will rain today.</div>
+                        <div style="font-size:8pt; color:#475569; border-top:1px dashed #e2e8f0; padding-top:3px; margin-top:2px;"><strong>Grammar Rule:</strong> Singular countable nouns beginning with a vowel sound take the indefinite article &#x27;an&#x27;.</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.8pt;"><span style="color:#dc2626; font-weight:800;">✗ Incorrect:</span> One of my friend is a doctor.</div>
+                        <div style="font-size:9pt; font-weight:800; color:#16a34a; margin:2px 0;"><span style="color:#16a34a;">✓ Correct:</span> One of my friends is a doctor.</div>
+                        <div style="font-size:8pt; color:#475569; border-top:1px dashed #e2e8f0; padding-top:3px; margin-top:2px;"><strong>Grammar Rule:</strong> The phrase &#x27;one of&#x27; is always followed by a plural noun (&#x27;friends&#x27;).</div>
+                      </div>
+                    
+
+          <div class="section-banner">
+            <h3>Punctuation</h3>
+            <span class="ml-sub">വിരാമ ചിഹ്നങ്ങൾ (Punctuation Rules &amp; Solved Sentences)</span>
+          </div>
+        
+
+                      <div class="qa-card">
+                        <div style="font-size:8.6pt; color:#64748b;"><strong>Unpunctuated:</strong> the physician said your majesty im sorry but there is no medicine for baldness it is hereditary</div>
+                        <div style="font-size:9pt; font-weight:800; color:#0f766e; margin-top:3px;"><strong>Punctuated:</strong> The physician said, &quot;Your Majesty, I&#x27;m sorry, but there is no medicine for baldness. It is hereditary.&quot;</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.6pt; color:#64748b;"><strong>Unpunctuated:</strong> alas my cat died yesterday</div>
+                        <div style="font-size:9pt; font-weight:800; color:#0f766e; margin-top:3px;"><strong>Punctuated:</strong> Alas! My cat died yesterday.</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.6pt; color:#64748b;"><strong>Unpunctuated:</strong> did you know penny topped her exam</div>
+                        <div style="font-size:9pt; font-weight:800; color:#0f766e; margin-top:3px;"><strong>Punctuated:</strong> Did you know Penny topped her exam?</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.6pt; color:#64748b;"><strong>Unpunctuated:</strong> ouch that is very hot</div>
+                        <div style="font-size:9pt; font-weight:800; color:#0f766e; margin-top:3px;"><strong>Punctuated:</strong> Ouch! That is very hot.</div>
+                      </div>
+                    
+
+                      <div class="qa-card">
+                        <div style="font-size:8.6pt; color:#64748b;"><strong>Unpunctuated:</strong> leonardo da vinci painted the mona lisa</div>
+                        <div style="font-size:9pt; font-weight:800; color:#0f766e; margin-top:3px;"><strong>Punctuated:</strong> Leonardo da Vinci painted the Mona Lisa.</div>
+                      </div>
+                    
+</div>
+
+<script id="ah-universal-reader-protection-script">
+  (function() {
+    // Disable right click / context menu
+    window.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+
+    // Disable Save (Ctrl+S), Print (Ctrl+P), View-Source (Ctrl+U), DevTools (F12, Ctrl+Shift+I)
+    window.addEventListener('keydown', function(e) {
+      var k = e.key ? e.key.toLowerCase() : '';
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+      if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }, true);
+
+    // Disable dragging
+    window.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+
+    // Disable copy
+    window.addEventListener('copy', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+  })();
+</script>
+
+</body>
+</html>

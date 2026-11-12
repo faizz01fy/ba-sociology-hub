@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 7: Birthday Girl (ബർത്ത്ഡേ ഗേൾ) — Bilingual Companion</title>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Malayalam:wght@400;500;600;700;800;900&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 12mm 12mm 12mm;
+    @top-center {
+      content: "B.COM SEMESTER I — ADDITIONAL ENGLISH | WORDS TO WORLDS (ഇംഗ്ലീഷ് - മലയാളം സമഗ്ര പഠന സഹായി)";
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+      font-size: 7.8pt;
+      font-weight: 700;
+      color: #64748b;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+    }
+    @bottom-center {
+      content: "Page " counter(page);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+  }
+
+  *, *:before, *:after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* FRONT COVER */
+  .cover-page {
+    height: 268mm;
+    max-height: 268mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+    break-after: page;
+    background: linear-gradient(135deg, #090d16 0%, #0f172a 45%, #1e1b4b 100%);
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 24mm 18mm 20mm 18mm;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-page:before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 8.5pt;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #38bdf8;
+    margin-bottom: 12px;
+  }
+
+  .cover-title {
+    font-size: 28pt;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+  }
+
+  .cover-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 16pt;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #a7f3d0;
+    margin: 0 0 16px 0;
+  }
+
+  .cover-subtitle {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #cbd5e1;
+    font-weight: 600;
+    border-left: 3.5px solid #06b6d4;
+    padding-left: 14px;
+    margin-bottom: 22px;
+  }
+
+  .cover-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 9pt;
+  }
+
+  .cover-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e2e8f0;
+  }
+
+  .cover-feature-item span.icon {
+    font-size: 12pt;
+  }
+
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: 14px;
+    font-size: 8.5pt;
+    color: #94a3b8;
+  }
+
+  /* TOC PAGE */
+  .toc-page {
+    page-break-after: always;
+    break-after: page;
+    padding: 6mm 0;
+  }
+
+  .toc-header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .toc-title {
+    font-size: 20pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .toc-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    color: #0f766e;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .toc-card {
+    background: #f8fafc;
+    border: 1.2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .toc-num {
+    font-size: 8pt;
+    font-weight: 800;
+    color: #0f766e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-en {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .toc-name-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.35;
+  }
+
+  .toc-author {
+    font-size: 8pt;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  /* CHAPTER STYLING */
+  .chapter-wrapper {
+    page-break-before: always;
+    break-before: page;
+    padding-top: 2mm;
+  }
+
+  .ch-hero {
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border: 1.5px solid var(--ch-border);
+    background: linear-gradient(135deg, var(--ch-tint) 0%, #ffffff 100%);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .ch-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 7.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    background: var(--ch-primary);
+    margin-bottom: 4px;
+  }
+
+  .ch-title-en {
+    font-size: 15pt;
+    font-weight: 900;
+    color: var(--ch-primary);
+    line-height: 1.25;
+    margin: 0 0 2px 0;
+  }
+
+  .ch-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 11pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+  }
+
+  .ch-author-row {
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* SECTION BANNERS */
+  .section-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--ch-border);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .section-banner h3 {
+    margin: 0;
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: var(--ch-primary);
+  }
+
+  .section-banner .ml-sub {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  /* BILINGUAL PAIRED BLOCKS */
+  .bilingual-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .bilingual-pair .en-block {
+    font-size: 9pt;
+    line-height: 1.55;
+    color: #1e293b;
+    border-left: 3px solid var(--ch-primary);
+    padding-left: 8px;
+  }
+
+  .bilingual-pair .ml-block {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.8pt;
+    line-height: 1.65;
+    color: #0f172a;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+
+  .ml-tag {
+    display: inline-block;
+    font-size: 6.8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--ch-primary);
+    background: #ffffff;
+    border: 1px solid var(--ch-border);
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+  }
+
+  /* GLOSSARY TABLE */
+  .glossary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 8.6pt;
+    break-inside: avoid;
+  }
+
+  .glossary-table th {
+    background: var(--ch-primary);
+    color: #ffffff;
+    padding: 6px 10px;
+    text-align: left;
+    font-weight: 800;
+  }
+
+  .glossary-table td {
+    padding: 5px 10px;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+
+  .glossary-table tr:nth-child(even) {
+    background: var(--ch-tint);
+  }
+
+  .ml-font {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+  }
+
+  /* QA CARDS */
+  .qa-card {
+    border: 1.2px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+
+  .qa-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  .q-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 7pt;
+    font-weight: 800;
+    background: var(--ch-primary);
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  .q-text-en {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.35;
+  }
+
+  .q-text-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--ch-primary);
+    line-height: 1.45;
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
+
+  .ans-box {
+    margin-top: 4px;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 6px;
+  }
+
+  .ans-en {
+    font-size: 8.8pt;
+    line-height: 1.55;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+
+  .ans-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.65;
+    color: #047857;
+    background: var(--ch-tint);
+    border: 1px solid var(--ch-border);
+    border-radius: 5px;
+    padding: 6px 8px;
+  }
+
+  /* KNOCK POINTS (Page 12 Style full grid) */
+  .knock-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 6px;
+    break-inside: avoid;
+  }
+
+  .knock-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .knock-num {
+    font-size: 6.8pt;
+    font-weight: 800;
+    color: #ffffff;
+    background: var(--ch-primary);
+    padding: 1px 5px;
+    border-radius: 3px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 2px;
+  }
+
+  .knock-en {
+    font-size: 7.8pt;
+    font-weight: 750;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+
+  .knock-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 7.4pt;
+    font-weight: 700;
+    color: #047857;
+    line-height: 1.3;
+  }
+
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
+
+<style id="ah-universal-reader-protection">
+  /* Academic Hub Content Protection & Clean Reading Mode */
+  * {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    -webkit-touch-callout: none !important;
+  }
+  @media print {
+    html, body {
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+  /* Suppress download / save buttons, external open buttons, or save triggers */
+  a[download], button[download], [download], .btn-download, .download, #downloadBtn,
+  #modalExternalBtn, #openExternalBtn, .fast-native-btn {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+</style>
+
+</head>
+<body>
+<div class="chapter-wrapper" style="--ch-primary: #047857; --ch-tint: #ecfdf5; --ch-border: #a7f3d0;">
+
+      <div class="ch-hero">
+        <span class="ch-badge">CHAPTER 7 · Short Story (ചെറുകഥ)</span>
+        <h1 class="ch-title-en">7. Birthday Girl</h1>
+        <h2 class="ch-title-ml">7. ബർത്ത്ഡേ ഗേൾ</h2>
+        <div class="ch-author-row">✍️ Haruki Murakami &nbsp;·&nbsp; <span class="ml-font">ഹാറുകി മുറകാമി</span></div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>About the Author</h3>
+        <span class="ml-sub">ഗ്രന്ഥകാരനെക്കുറിച്ച്</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">Haruki Murakami (born 1949 in Kyoto, Japan) is a globally acclaimed contemporary novelist and translator. Known for works like &#x27;Norwegian Wood&#x27; and &#x27;Kafka on the Shore&#x27;, his minimalist surrealism blends ordinary mundane life with metaphysical, dreamlike mystery.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള വിവരണം</span><br>ആഗോള പ്രശസ്തനായ ജാപ്പനീസ് എഴുത്തുകാരനാണ് ഹാറുകി മുറകാമി (ജനനം 1949). സാധാരണ മനുഷ്യരുടെ ദൈനംദിന ജീവിതത്തിൽ മാന്ത്രിക യാഥാർത്ഥ്യവും ദാർശനിക നിഗൂഢതകളും കൂട്ടിയിണക്കുന്ന സവിശേഷമായ രചനാശൈലിയാണ് അദ്ദേഹത്തിന്റേത്.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Theme &amp; Central Message</h3>
+        <span class="ml-sub">പ്രമേയവും ദാർശനിക ആശയവും</span>
+      </div>
+      <div class="bilingual-pair">
+        <div class="en-block">The mystery of choices, aging, destiny, and the irrevocable nature of wishes. It explores how a single moment in youth can shape the psychological trajectory of an entire life.</div>
+        <div class="ml-block"><span class="ml-tag">മലയാള സാരം</span><br>വിധിയും തിരഞ്ഞെടുപ്പുകളും മനുഷ്യജീവിതത്തെ എങ്ങനെ മാറ്റിമറിക്കുന്നുവെന്ന അന്വേഷണം. ഇരുപതാം വയസ്സിൽ മനസ്സിൽ തോന്നുന്ന ഒരു ആഗ്രഹം ജീവിതത്തെ മുഴുവൻ സ്വാധീനിക്കുന്നതെങ്ങനെയെന്ന് കഥ വ്യക്തമാക്കുന്നു.</div>
+      </div>
+    
+
+      <div class="section-banner">
+        <h3>Detailed Critical Summary &amp; Analysis</h3>
+        <span class="ml-sub">സമഗ്ര പാഠ്യവിശകലനവും സംഗ്രഹവും</span>
+      </div>
+    
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">A Rainy Twentieth Birthday on Shift / <span class="ml-font">മഴയുള്ള ഒരു ഇരുപതാം പിറന്നാൾ ദിനത്തിലെ ജോലി</span></strong>
+            <div class="en-block" style="margin-top:4px;">On her twentieth birthday, a young Japanese woman has to work her usual shift as a waitress in an upscale Italian restaurant in Tokyo&#x27;s Roppongi district after quarreling with her boyfriend. It rains incessantly, and everything feels mundane and melancholic.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>തന്റെ ഇരുപതാം ജന്മദിനത്തിൽ, കാമുകനുമായി വഴക്കിട്ടതിനെ തുടർന്ന് ടോക്കിയോയിലെ റോപ്പോംഗിയിലുള്ള ഇറ്റാലിയൻ റെസ്റ്റോറന്റിൽ വെയിട്രസ്സായി ജോലി ചെയ്യുകയാണ് ഒരു പെൺകുട്ടി. തോരാത്ത മഴയുള്ള ആ ദിവസം തികച്ചും വിരസമായി അവൾക്ക് തോന്നുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">Meeting the Reclusive Owner on the Sixth Floor / <span class="ml-font">ആറാം നിലയിലെ നിഗൂഢനായ ഉടമസ്ഥനുമായുള്ള കൂടിക്കാഴ്ച</span></strong>
+            <div class="en-block" style="margin-top:4px;">The floor manager suddenly suffers agonizing stomach cramps and is hospitalized. The waitress is tasked with carrying the mysterious 70-year-old restaurant owner&#x27;s dinner up to Room 604 on the sixth floor. The eccentric, well-dressed gentleman invites her in, pours fine red wine, and learns it is her 20th birthday.</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>മാനേജർക്ക് പെട്ടെന്ന് വയറുവേദന വന്ന് ആശുപത്രിയിലായതിനെ തുടർന്ന്, റെസ്റ്റോറന്റ് ഉടമസ്ഥനായ എഴുപതുകാരനായ വൃദ്ധന് ഭക്ഷണം എത്തിക്കാൻ അവൾ ആറാം നിലയിലെ 604-ാം മുറിയിലേക്ക് പോകുന്നു. അവളെ സ്നേഹത്തോടെ സ്വീകരിച്ച ആ വയോധികൻ വീഞ്ഞ് നൽകുകയും ഇന്ന് അവളുടെ ജന്മദിനമാണെന്ന് അറിയുകയും ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="bilingual-pair">
+            <strong style="color:var(--ch-primary); font-size:9pt;">The Single Irrevocable Wish / <span class="ml-font">ഒരിക്കലും തിരിച്ചെടുക്കാനാവാത്ത ഒരൊറ്റ ആഗ്രഹം</span></strong>
+            <div class="en-block" style="margin-top:4px;">To commemorate her milestone birthday, the owner offers to grant her one single wish, warning that it cannot be taken back or altered. She closes her eyes and makes her wish. Decades later, happily married with two children and an Audi, she reflects with a friend—refusing to reveal the wish, but asking: &#x27;What would you have wished for?&#x27;</div>
+            <div class="ml-block"><span class="ml-tag">മലയാള പരിഭാഷ</span><br>അവളുടെ ഇരുപതാം പിറന്നാളിന്റെ സ്മരണയ്ക്കായി, ഒരിക്കലും തിരിച്ചെടുക്കാനാവാത്ത ഒരൊറ്റ ആഗ്രഹം സാധിച്ചുതരാമെന്ന് വൃദ്ധൻ വാഗ്ദാനം ചെയ്യുന്നു. അവൾ കണ്ണടച്ച് ആഗ്രഹിക്കുന്നു. വർഷങ്ങൾക്ക് ശേഷം, രണ്ട് കുട്ടികളും കാറുമുള്ള കുടുംബസ്ഥയായി മാറുമ്പോഴും അവൾ ആ ആഗ്രഹം ആരോടും പറയുന്നില്ല; പകരം &#x27;നിങ്ങളായിരുന്നുവെങ്കിൽ എന്ത് ആഗ്രഹിക്കുമായിരുന്നു?&#x27; എന്ന് ചോദിക്കുന്നു.</div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Key Glossary &amp; Academic Vocabulary</h3>
+            <span class="ml-sub">പ്രധാന പദാവലിയും അർത്ഥങ്ങളും</span>
+          </div>
+          <table class="glossary-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">Word / Term</th>
+                <th style="width:39%;">English Meaning</th>
+                <th style="width:39%;">മലയാള അർത്ഥം (Malayalam)</th>
+              </tr>
+            </thead>
+            <tbody>
+        
+
+              <tr>
+                <td><strong>Mundane</strong></td>
+                <td>Lacking interest or excitement; dull</td>
+                <td class="ml-font">വിരസമായ / സാധാരണമായ</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Reclusive</strong></td>
+                <td>Avoiding the company of other people; solitary</td>
+                <td class="ml-font">ഏകാന്തവാസിയായ / പൊതുസമൂഹത്തിൽ നിന്ന് അകന്നുനിൽക്കുന്ന</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Irrevocable</strong></td>
+                <td>Not able to be changed, reversed, or recovered</td>
+                <td class="ml-font">ഒരിക്കലും മാറ്റാനാവാത്ത / തിരിച്ചെടുക്കാനാവാത്ത</td>
+              </tr>
+            
+
+              <tr>
+                <td><strong>Metaphysical</strong></td>
+                <td>Transcending physical matter or the laws of nature</td>
+                <td class="ml-font">ഭൗതികത്തിനപ്പുറമുള്ള / ദാർശനികമായ</td>
+              </tr>
+            
+</tbody></table>
+
+      <div class="section-banner">
+        <h3>Part A: Two-Mark Questions and Answers</h3>
+        <span class="ml-sub">ഹ്രസ്വ ചോദ്യോത്തരങ്ങൾ (2 മാർക്ക്)</span>
+      </div>
+    
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q1</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Where was the protagonist working on her twentieth birthday?</div>
+                <div class="q-text-ml">തന്റെ ഇരുപതാം ജന്മദിനത്തിൽ നായിക എവിടെയാണ് ജോലി ചെയ്തിരുന്നത്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> She was working as a waitress in an upscale Italian restaurant in the Roppongi district of Tokyo.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ടോക്കിയോയിലെ റോപ്പോംഗിയിലുള്ള ഒരു പ്രശസ്ത ഇറ്റാലിയൻ റെസ്റ്റോറന്റിൽ വെയിട്രസ്സായി ജോലി ചെയ്യുകയായിരുന്നു അവൾ.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q2</span>
+              <div style="flex:1;">
+                <div class="q-text-en">Why did the waitress have to deliver dinner to the owner?</div>
+                <div class="q-text-ml">റെസ്റ്റോറന്റ് ഉടമയ്ക്ക് ഭക്ഷണം എത്തിക്കാൻ വെയിട്രസ്സിന് പോകേണ്ടി വന്നത് എന്തുകൊണ്ട്?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> The regular floor manager fell severely ill with acute stomach cramps and was taken to the hospital.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> പതിവായി ഭക്ഷണം എത്തിക്കാറുള്ള മാനേജർക്ക് കഠിനമായ വയറുവേദന വന്ന് ആശുപത്രിയിലായതിനാലാണ് അവൾക്ക് പോകേണ്ടി വന്നത്.</div>
+            </div>
+          </div>
+        
+
+          <div class="qa-card">
+            <div class="qa-head">
+              <span class="q-badge">2 MARKS · Q3</span>
+              <div style="flex:1;">
+                <div class="q-text-en">What condition did the elderly owner put on the wish he offered?</div>
+                <div class="q-text-ml">ആഗ്രഹം സാധിച്ചുനൽകുന്നതിന് ആ വയോധികൻ മുന്നോട്ട് വെച്ച വ്യവസ്ഥ എന്തായിരുന്നു?</div>
+              </div>
+            </div>
+            <div class="ans-box">
+              <div class="ans-en"><strong>Answer:</strong> He stipulated that she could make only one wish, and it could never be taken back, cancelled, or altered.</div>
+              <div class="ans-ml"><strong>ഉത്തരം:</strong> ഒരൊറ്റ ആഗ്രഹം മാത്രമേ ചോദിക്കാവൂ എന്നും, അത് ഒരിക്കലും മാറ്റാനോ പിൻവലിക്കാനോ കഴിയില്ലെന്നുമായിരുന്നു അദ്ദേഹത്തിന്റെ വ്യവസ്ഥ.</div>
+            </div>
+          </div>
+        
+
+          <div class="section-banner">
+            <h3>Part B: Five-Mark Paragraph Questions</h3>
+            <span class="ml-sub">ഖണ്ഡിക ചോദ്യോത്തരങ്ങൾ (5 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#4338ca;">5 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Examine the philosophical ambiguity surrounding the protagonist&#x27;s wish in &#x27;Birthday Girl&#x27;.</div>
+                    <div class="q-text-ml">&#x27;ബർത്ത്ഡേ ഗേൾ&#x27; എന്ന കഥയിലെ നായികയുടെ ആഗ്രഹത്തെ ചുറ്റിപ്പറ്റിയുള്ള ദാർശനിക നിഗൂഢതകൾ വിലയിരുത്തുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong> Murakami intentionally conceals the exact nature of the woman&#x27;s wish. Years later, when conversing with the narrator, she appears content with her life—married with children and financially comfortable. Yet, she hints that getting what one wishes for does not automatically solve the enigma of existence. Her final question, &#x27;No matter what they wish for, can people truly become someone other than who they are?&#x27;, leaves the meaning open to existential reflection.</div>
+                  <div class="ans-ml"><strong>ഉത്തരം:</strong> നായിക എന്താണ് ആഗ്രഹിച്ചതെന്ന് മുറകാമി വെളിപ്പെടുത്തുന്നില്ല. വർഷങ്ങൾക്ക് ശേഷം സംതൃപ്തമായ കുടുംബജീവിതം നയിക്കുമ്പോഴും, മനുഷ്യൻ എന്ത് ആഗ്രഹിച്ചാലും സ്വന്തം വിധിയെ മറികടക്കാനാവുമോ എന്നൊരു ചോദ്യം അവളിൽ ബാക്കിയാകുന്നു. മനുഷ്യജീവിതത്തിലെ തിരഞ്ഞെടുപ്പുകളുടെയും അനിശ്ചിതത്വങ്ങളുടെയും ആഴം കൂട്ടാൻ ഈ നിഗൂഢത സഹായിക്കുന്നു.</div>
+                </div>
+              </div>
+            
+
+          <div class="section-banner">
+            <h3>Part C: Ten-Mark Essay Questions</h3>
+            <span class="ml-sub">പ്രബന്ധ ചോദ്യോത്തരങ്ങൾ (10 മാർക്ക്)</span>
+          </div>
+        
+
+              <div class="qa-card">
+                <div class="qa-head">
+                  <span class="q-badge" style="background:#b45309;">10 MARKS · Q1</span>
+                  <div style="flex:1;">
+                    <div class="q-text-en">Critically analyze Haruki Murakami&#x27;s &#x27;Birthday Girl&#x27; as an exploration of youth, fate, and the passage of time.</div>
+                    <div class="q-text-ml">യൗവ്വനം, വിധി, കാലത്തിന്റെ പ്രയാണം എന്നിവയുടെ പശ്ചാത്തലത്തിൽ ഹാറുകി മുറകാമിയുടെ &#x27;ബർത്ത്ഡേ ഗേൾ&#x27; സമഗ്രമായി വിശകലനം ചെയ്യുക.</div>
+                  </div>
+                </div>
+                <div class="ans-box">
+                  <div class="ans-en"><strong>Answer:</strong><br>Haruki Murakami&#x27;s &#x27;Birthday Girl&#x27; masterfully blends everyday realism with surreal fairy-tale elements. The story takes place on a young woman&#x27;s twentieth birthday—a crucial rite of passage marking the legal and psychological entrance into adulthood in Japanese culture.<br><br>The setting is mundane: an Italian restaurant where orders are delayed and the rain pours outside. The unexpected hospitalization of the manager forces the heroine into the private sanctuary of the restaurant&#x27;s mysterious owner on the sixth floor. Room 604 feels cut off from ordinary reality. The owner behaves like an ancient wizard disguised in a tailored suit.<br><br>When he offers her one irrevocable wish, the girl does not choose childish desires like wealth or beauty. She pauses and reflects deeply. Decades later, she looks back at that rainy evening. Has her life unfolded as a result of that magical wish, or simply through the inevitable flow of time? Murakami refuses to offer cheap answers, turning the story into a profound meditation on human destiny.</div>
+                  <div class="ans-ml" style="margin-top:6px;"><strong>ഉത്തരം:</strong><br>സാധാരണ ജീവിതവും മാന്ത്രികതയും ഇഴചേർത്തു വെച്ച മുറകാമിയുടെ മികച്ച രചനയാണ് &#x27;ബർത്ത്ഡേ ഗേൾ&#x27;. ജപ്പാനിൽ പ്രായപൂർത്തിയാകുന്ന സുപ്രധാന ദിനമായ ഇരുപതാം ജന്മദിനത്തിലാണ് കഥ നടക്കുന്നത്.<br><br>മഴയുള്ള ഒരു രാത്രിയിൽ റെസ്റ്റോറന്റിൽ നടക്കുന്ന വിരസമായ ജോലികൾക്കിടയിലാണ് അപ്രതീക്ഷിതമായി അവൾ ആറാം നിലയിലെ ഉടമസ്ഥന്റെ മുറിയിലെത്തുന്നത്. പുറംലോകവുമായി ബന്ധമില്ലാത്ത ആ മുറിയിലെ വയോധികൻ ഒരു മാന്ത്രികനെപ്പോലെ അവൾക്ക് ഒരൊറ്റ വരം വാഗ്ദാനം ചെയ്യുന്നു.<br><br>പണത്തിനോ സൗന്ദര്യത്തിനോ വേണ്ടിയല്ലാതെ, പക്വതയോടെയാണ് അവൾ ആഗ്രഹിക്കുന്നത്. വർഷങ്ങൾക്ക് ശേഷം തിരിഞ്ഞുനോക്കുമ്പോൾ, തന്റെ ജീവിതം ആ ആഗ്രഹത്തിന്റെ ഫലമാണോ അതോ വിധിയുടെ സ്വാഭാവിക ഒഴുക്കാണോ എന്ന് അവൾ അത്ഭുതപ്പെടുന്നു. മനുഷ്യന്റെ അസ്തിത്വത്തെക്കുറിച്ചുള്ള ഗഹനമായ ചിന്തകളാണ് ഈ കഥ സമ്മാനിക്കുന്നത്.</div>
+                </div>
+              </div>
+            
+
+      <div class="section-banner" style="margin-top:14px;">
+        <h3>⚡ Key Revision &amp; Knock Your Brain Points</h3>
+        <span class="ml-sub">അതിവേഗ പുനരവലോകന പോയിന്റുകൾ</span>
+      </div>
+      <div class="knock-grid">
+    
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 01</span>
+            <div class="knock-en">The story occurs on the protagonist&#x27;s 20th birthday—the Japanese threshold to adulthood.</div>
+            <div class="knock-ml">ജപ്പാനിൽ പ്രായപൂർത്തിയാകുന്ന 20-ാം ജന്മദിനത്തിലാണ് കഥ നടക്കുന്നത്.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 02</span>
+            <div class="knock-en">She works as a waitress in an upscale Tokyo restaurant on a rainy evening.</div>
+            <div class="knock-ml">മഴയുള്ള ഒരു സായാഹ്നത്തിൽ ടോക്കിയോയിലെ റെസ്റ്റോറന്റിൽ വെയിട്രസ്സായി അവൾ ജോലി ചെയ്യുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 03</span>
+            <div class="knock-en">The manager falls ill, sending her to the eccentric owner on the 6th floor.</div>
+            <div class="knock-ml">മാനേജർക്ക് അസുഖം വന്നതിനെ തുടർന്ന് ആറാം നിലയിലെ വിചിത്രനായ ഉടമസ്ഥന്റെ അടുക്കൽ അവൾ എത്തുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 04</span>
+            <div class="knock-en">The owner grants her one single wish that can never be undone.</div>
+            <div class="knock-ml">ഒരിക്കലും തിരിച്ചെടുക്കാനാവാത്ത ഒരു വരം ആ വയോധികൻ അവൾക്ക് നൽകുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 05</span>
+            <div class="knock-en">Decades later, she is happily married with children and drives an Audi.</div>
+            <div class="knock-ml">വർഷങ്ങൾക്ക് ശേഷം രണ്ട് കുട്ടികളും കാറുമുള്ള സന്തുഷ്ട കുടുംബസ്ഥയായി അവൾ മാറുന്നു.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 06</span>
+            <div class="knock-en">She never reveals what she wished for, keeping the mystery intact.</div>
+            <div class="knock-ml">താൻ എന്താണ് ആഗ്രഹിച്ചതെന്ന് അവൾ ഒരിക്കലും ആരോടും വെളിപ്പെടുത്തുന്നില്ല.</div>
+          </div>
+        
+
+          <div class="knock-card">
+            <span class="knock-num">POINT 07</span>
+            <div class="knock-en">Murakami questions whether humans can ever escape their core nature through wishes.</div>
+            <div class="knock-ml">ആഗ്രഹങ്ങൾ കൊണ്ട് മനുഷ്യന് സ്വന്തം സ്വഭാവത്തെ മാറ്റാനാവുമോ എന്ന് കഥ ചോദിക്കുന്നു.</div>
+          </div>
+        
+</div>
+</div>
+
+<script id="ah-universal-reader-protection-script">
+  (function() {
+    // Disable right click / context menu
+    window.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+
+    // Disable Save (Ctrl+S), Print (Ctrl+P), View-Source (Ctrl+U), DevTools (F12, Ctrl+Shift+I)
+    window.addEventListener('keydown', function(e) {
+      var k = e.key ? e.key.toLowerCase() : '';
+      if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+      if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }, true);
+
+    // Disable dragging
+    window.addEventListener('dragstart', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+
+    // Disable copy
+    window.addEventListener('copy', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+  })();
+</script>
+
+</body>
+</html>
