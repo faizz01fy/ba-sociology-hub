@@ -1836,14 +1836,14 @@ window.VOICE_EXPLANATIONS_DATA = {
     "name": "Development Issues in Indian Economy",
     "badge": "₹",
     "iconClass": "icon-green",
-    "tag": "ECONOMICS",
+    "tag": "BA ECONOMICS HONOURS · ECO1CJ101 / FYUGP",
     "modules": [
       {
-        "moduleName": "MODULE 01: ചരിത്ര പശ്ചാത്തലങ്ങളും വികസന മാതൃകകളും (HISTORICAL BACKGROUND & DEVELOPMENT MODELS)",
+        "moduleName": "MODULE 01: HISTORICAL PERSPECTIVES & DEVELOPMENT POLICIES (FYUGP)",
         "videos": [
           {
             "chapterNumber": "Masterclass",
-            "title": "Path Dependence and Crisis: India's Economy, 1700–1991",
+            "title": "ഇന്ത്യൻ സാമ്പത്തിക ചരിത്രവും പ്രതിസന്ധിയും (India's Economy 1700–1991) | Calicut Univ",
             "chapter": "Academic Hub Special · Colonial Legacy, Structural Stagnation & 1991 Economic Reforms",
             "duration": "13:35",
             "youtubeId": "WYtOkVjW_Wo",
@@ -1854,11 +1854,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Post-Independence Nehruvian-Mahalanobis Strategy: Heavy industrialization, import substitution, and public sector primacy.",
               "Path Dependence to Crisis: Structural rigidities, fiscal deficits, and balance of payments vulnerabilities precipitating the 1991 reforms."
             ],
-            "examTip": "University Exam Tip: 'Explain Path Dependence in India's economic history and how colonial extraction shaped post-independence policy choices'."
+            "examTip": "University Exam Tip: 'Explain Path Dependence in India's economic history and how colonial extraction shaped post-independence policy choices'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 01",
-            "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയുടെ ചരിത്രവും വികസന നയങ്ങളും (History & Development Policies of Indian Economy)",
+            "title": "ഇന്ത്യൻ സാമ്പത്തിക ചരിത്രവും വികസന നയങ്ങളും (History & Development Policies) | Calicut Univ",
             "chapter": "Academic Hub Special · കൊളോണിയൽ ചോർച്ച, നെഹ്റുവിയൻ സോഷ്യലിസം & പഞ്ചവത്സര പദ്ധതികൾ",
             "duration": "17:48",
             "youtubeId": "j49jvbn7bz4",
@@ -1871,11 +1872,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഹരിതവിപ്ലവം (Green Revolution): ഭക്ഷ്യ സ്വയംപര്യാപ്തത കൈവരിക്കാൻ ഉയർന്ന വിളവ് തരുന്ന വിത്തുകളും (HYV seeds) രാസവളങ്ങളും ജലസേചനവും സംയോജിപ്പിച്ച സാങ്കേതിക മുന്നേറ്റം.",
               "സമ്മിശ്ര സമ്പദ്‌വ്യവസ്ഥ (Mixed Economy): പൊതുമേഖലയ്ക്ക് പ്രധാന പങ്കും ഒപ്പം സ്വകാര്യ മേഖലയ്ക്ക് നിയന്ത്രിത പങ്കാളിത്തവും നൽകിയ ഇന്ത്യൻ വികസന മാതൃക."
             ],
-            "examTip": "Calicut University Focus: 'Explain Dadabhai Naoroji's Drain of Wealth theory and evaluate the achievements of the Mahalanobis strategy in Indian Five-Year Plans'."
+            "examTip": "Calicut University Focus: 'Explain Dadabhai Naoroji's Drain of Wealth theory and evaluate the achievements of the Mahalanobis strategy in Indian Five-Year Plans'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 02",
-            "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയിലെ വൈരുദ്ധ്യങ്ങളും വികസന വെല്ലുവിളികളും (Contradictions & Development Challenges)",
+            "title": "ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയിലെ വൈരുദ്ധ്യങ്ങൾ (Contradictions & Challenges) | Calicut Univ",
             "chapter": "Academic Hub Special · വളർച്ചയും മുരടിപ്പും, തൊഴിൽരഹിത വളർച്ച & മേഖലാ അസന്തുലിതാവസ്ഥ",
             "duration": "22:45",
             "youtubeId": "FpHhWggjeIg",
@@ -1888,11 +1890,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "അസംഘടിത മേഖലയുടെ ആധിപത്യം (Informal Sector): ഇന്ത്യയിലെ തൊഴിലാളികളുടെ 80-90 ശതമാനവും സാമൂഹിക സുരക്ഷിതത്വമില്ലാത്ത അസംഘടിത മേഖലയിൽ പണിയെടുക്കുന്നു.",
               "പ്രാദേശിക അസമത്വങ്ങൾ (Regional Disparities): ദക്ഷിണേന്ത്യൻ-പശ്ചിമേന്ത്യൻ സംസ്ഥാനങ്ങളും BIMARU സംസ്ഥാനങ്ങളും തമ്മിലുള്ള സാമ്പത്തിക-വികസന വിടവുകൾ."
             ],
-            "examTip": "Calicut University Focus: 'Critically analyze the phenomenon of Jobless Growth and Structural Imbalance in post-reform India'."
+            "examTip": "Calicut University Focus: 'Critically analyze the phenomenon of Jobless Growth and Structural Imbalance in post-reform India'.",
+            "malayalam_cc": true
           },
           {
-            "chapterNumber": "Part 5.6.7",
-            "title": "യഥാർത്ഥ വികസനവും രാജ്യത്തെ സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development & Economic Institutions in India)",
+            "chapterNumber": "Chapter 03",
+            "title": "യഥാർത്ഥ വികസനവും സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development & Institutions) | Calicut Univ",
             "chapter": "Academic Hub Special · Module 1 Part 5.6.7 · പ്ലാനിംഗ് കമ്മീഷൻ മുതൽ നീതി ആയോഗ് വരെ, ഭരണഘടനാ സ്ഥാപനങ്ങൾ",
             "duration": "13:06",
             "youtubeId": "x8npIOpPvas",
@@ -1905,11 +1908,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ധനകാര്യ കമ്മീഷൻ (Finance Commission - Article 280): കേന്ദ്രവും സംസ്ഥാനങ്ങളും തമ്മിലുള്ള നികുതി പങ്കിടലും ഗ്രാന്റുകളും നിശ്ചയിക്കുന്ന ഭരണഘടനാ സ്ഥാപനം.",
               "സെബി (SEBI): മൂലധന വിപണിയും ഓഹരി ഇടപാടുകളും നിയന്ത്രിക്കുകയും നിക്ഷേപകരുടെ താല്പര്യങ്ങൾ സംരക്ഷിക്കുകയും ചെയ്യുന്ന നിയന്ത്രണ ഏജൻസി."
             ],
-            "examTip": "Calicut University Focus: 'Differentiate between the Planning Commission and NITI Aayog. Explain the role of NITI Aayog in promoting Cooperative Federalism'."
+            "examTip": "Calicut University Focus: 'Differentiate between the Planning Commission and NITI Aayog. Explain the role of NITI Aayog in promoting Cooperative Federalism'.",
+            "malayalam_cc": true
           },
           {
-            "chapterNumber": "Part 8",
-            "title": "സ്വർണ്ണം പണയം വെച്ച ഇന്ത്യയുടെ സാമ്പത്തിക ചരിത്രം (The 1991 Balance of Payments Crisis & Gold Pledging)",
+            "chapterNumber": "Chapter 04",
+            "title": "1991 സാമ്പത്തിക പ്രതിസന്ധിയും സ്വർണ്ണ പണയവും (1991 BOP Crisis & Gold) | Calicut Univ",
             "chapter": "Academic Hub Special · Module 1 Part 8 · 1991 ബാലൻസ് ഓഫ് പേയ്മെന്റ്സ് പ്രതിസന്ധി & ധനകാര്യ നയ വ്യതിയാനങ്ങൾ",
             "duration": "22:38",
             "youtubeId": "BQffX1nDUjw",
@@ -1922,16 +1926,17 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഐഎംഎഫ് - ലോകബാങ്ക് വ്യവസ്ഥകളും ഘടനാപരമായ പരിഷ്കാരങ്ങളും: വായ്പ ലഭിക്കുന്നതിനായി രൂപയുടെ മൂല്യത്തകർച്ചയും (Devaluation) പുതിയ സാമ്പത്തിക നയങ്ങളും നടപ്പിലാക്കാൻ ഇന്ത്യ നിർബന്ധിതമായി.",
               "എൽപിജി മാതൃക (LPG Reforms 1991): ഉദാരവൽക്കരണം (Liberalization), സ്വകാര്യവൽക്കരണം (Privatization), ആഗോളവൽക്കരണം (Globalization) വഴി ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥ തുറന്നുകൊടുത്തു."
             ],
-            "examTip": "Calicut University Focus: 'Trace the genesis of the 1991 Balance of Payments crisis and evaluate how the pledging of gold catalyzed the LPG reforms'."
+            "examTip": "Calicut University Focus: 'Trace the genesis of the 1991 Balance of Payments crisis and evaluate how the pledging of gold catalyzed the LPG reforms'.",
+            "malayalam_cc": true
           }
         ]
       },
       {
-        "moduleName": "MODULE 02: ദാരിദ്ര്യ നിർണ്ണയവും ബഹുമുഖ ദാരിദ്ര്യ സൂചികയും (POVERTY ESTIMATION & MEASUREMENT IN INDIA)",
+        "moduleName": "MODULE 02: POVERTY ESTIMATION & MULTIDIMENSIONAL POVERTY (FYUGP)",
         "videos": [
           {
-            "chapterNumber": "Module 2 Masterclass",
-            "title": "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയം: രീതികളും സമിതികളും (Poverty Estimation in India: Methods & Committees)",
+            "chapterNumber": "Masterclass (V1)",
+            "title": "ദാരിദ്ര്യ നിർണ്ണയ രീതികളും സമിതികളും (Poverty Estimation & Committees) | Calicut Univ",
             "chapter": "Academic Hub Special · ദാരിദ്ര്യ നിർണ്ണയ രീതികളും പഠന സമിതികളും (Tendulkar & Rangarajan Analysis)",
             "duration": "14:20",
             "youtubeId": "QTHt_P7RIA0",
@@ -1942,11 +1947,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "പ്രധാന പഠന സമിതികൾ: ദണ്ഡേക്കർ-രഥ് (1971), ലക്ഡാവാല (1993), സുരേഷ് തെണ്ടുൽക്കർ (2009), സി. രംഗരാജൻ (2014) കമ്മിറ്റികളുടെ ശുപാർശകൾ.",
               "കാലറി മാനദണ്ഡത്തിൽ നിന്നുള്ള മാറ്റം: ആളോഹരി ഉപഭോഗച്ചെലവും (MPCE) ജീവിതനിലവാര സൂചികകളും സമഗ്രമായി വിലയിരുത്തുന്നു."
             ],
-            "examTip": "Calicut University പരീക്ഷാ ഫോക്കസ്: ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയ സമിതികളുടെ ചരിത്രവും തെണ്ടുൽക്കർ-രംഗരാജൻ കമ്മിറ്റികളുടെ താരതമ്യവും 10 മാർക്ക് ഉപന്യാസത്തിനായി പഠിക്കുക."
+            "examTip": "Calicut University പരീക്ഷാ ഫോക്കസ്: ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയ സമിതികളുടെ ചരിത്രവും തെണ്ടുൽക്കർ-രംഗരാജൻ കമ്മിറ്റികളുടെ താരതമ്യവും 10 മാർക്ക് ഉപന്യാസത്തിനായി പഠിക്കുക.",
+            "malayalam_cc": true
           },
           {
-            "chapterNumber": "Chapter 03",
-            "title": "ഇന്ത്യയിലെ ദാരിദ്ര്യ നിർണ്ണയവും പഠന കമ്മിറ്റികളും (Poverty Estimation & Study Committees in India)",
+            "chapterNumber": "Chapter 01",
+            "title": "ദാരിദ്ര്യ പഠന കമ്മിറ്റികൾ (Poverty Study Committees in India) | Calicut Univ",
             "chapter": "Academic Hub Special · ദണ്ഡേക്കർ-രഥ്, തെണ്ടുൽക്കർ & രംഗരാജൻ കമ്മിറ്റികൾ",
             "duration": "28:43",
             "youtubeId": "0KQZ7Kv-5bs",
@@ -1960,11 +1966,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സുരേഷ് തെണ്ടുൽക്കർ കമ്മിറ്റി (2009): കാലറിയിൽ നിന്ന് മാറി ആരോഗ്യം, വിദ്യാഭ്യാസം, വസ്ത്രം എന്നിവ ഉൾപ്പെടുത്തി പുതിയ ബാസ്കറ്റ് (Mixed Reference Period - MRP) രൂപീകരിച്ചു (ഗ്രാമങ്ങളിൽ ₹27/ദിനം, നഗരങ്ങളിൽ ₹33/ദിനം).",
               "സി. രംഗരാജൻ കമ്മിറ്റി (2014): പോഷകാഹാരം, പ്രോട്ടീൻ, കൊഴുപ്പ് എന്നിവ കണക്കിലെടുത്ത് ഉയർന്ന ദാരിദ്ര്യരേഖ നിർദ്ദേശിച്ചു (ഗ്രാമങ്ങളിൽ ₹32/ദിനം, നഗരങ്ങളിൽ ₹47/ദിനം)."
             ],
-            "examTip": "Calicut University Focus: 'Compare the methodology of the Suresh Tendulkar Committee with the Rangarajan Committee for poverty estimation in India'."
+            "examTip": "Calicut University Focus: 'Compare the methodology of the Suresh Tendulkar Committee with the Rangarajan Committee for poverty estimation in India'.",
+            "malayalam_cc": true
           },
           {
-            "chapterNumber": "Chapter 04",
-            "title": "ദാരിദ്ര്യരേഖ മുതൽ ബഹുമുഖ ദാരിദ്ര്യ സൂചിക വരെ (From Poverty Line to Multidimensional Poverty Index - MPI)",
+            "chapterNumber": "Chapter 02",
+            "title": "ദാരിദ്ര്യരേഖ മുതൽ ബഹുമുഖ ദാരിദ്ര്യ സൂചിക വരെ (Poverty Line to MPI) | Calicut Univ",
             "chapter": "Academic Hub Special · NITI Aayog നാഷണൽ MPI, ആരോഗ്യ-വിദ്യാഭ്യാസ-ജീവിതനിലവാര മാനങ്ങൾ",
             "duration": "16:44",
             "youtubeId": "sh2tt7d07PM",
@@ -1977,16 +1984,17 @@ window.VOICE_EXPLANATIONS_DATA = {
               "3 പ്രധാന മാനങ്ങൾ: ആരോഗ്യം (പോഷകാഹാരം, ശിശുമരണനിരക്ക്, പ്രസവ ശുശ്രൂഷ), വിദ്യാഭ്യാസം (സ്കൂൾ പഠനവർഷങ്ങൾ, സ്കൂൾ ഹാജർ), ജീവിതനിലവാരം (പാചകവാതകം, ശുചിത്വം, കുടിവെള്ളം, വൈദ്യുതി, പാർപ്പിടം, ആസ്തികൾ, ബാങ്ക് അക്കൗണ്ട്).",
               "ഹെഡ്കൗണ്ട് അനുപാതവും ദാരിദ്ര്യ തീവ്രതയും: MPI = H × A (ദാരിദ്ര്യ ബാധിതരുടെ അനുപാതവും ദാരിദ്ര്യത്തിന്റെ തീവ്രതയും ഗുണിക്കുന്നു)."
             ],
-            "examTip": "Calicut University Focus: 'Explain the three dimensions and twelve indicators of NITI Aayog's National Multidimensional Poverty Index (MPI)'."
+            "examTip": "Calicut University Focus: 'Explain the three dimensions and twelve indicators of NITI Aayog's National Multidimensional Poverty Index (MPI)'.",
+            "malayalam_cc": true
           }
         ]
       },
       {
-        "moduleName": "MODULE 03: സാമ്പത്തിക അസമത്വവും സ്ഥാപനപരമായ പരിഷ്കാരങ്ങളും (ECONOMIC INEQUALITY & REFORMS)",
+        "moduleName": "MODULE 03: ECONOMIC INEQUALITY & STRUCTURAL CHALLENGES (FYUGP)",
         "videos": [
           {
             "chapterNumber": "Chapter 05",
-            "title": "ഇന്ത്യയിലെ വർദ്ധിച്ചുവരുന്ന സാമ്പത്തിക അസമത്വം (Economic Inequality in India · Masterclass)",
+            "title": "ഇന്ത്യയിലെ സാമ്പത്തിക അസമത്വം (Economic Inequality in India) | Calicut Univ",
             "chapter": "വരുമാനവും സമ്പത്തിലെ അസമത്വവും · ലോറൻസ് കർവ് & ഗിനി ഗുണകം (Lorenz Curve & Gini)",
             "duration": "10:53",
             "language": "Malayalam",
@@ -2000,11 +2008,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഗിനി ഗുണകം (Corrado Gini - 1912): അസമത്വത്തിന്റെ സംഖ്യാ മൂല്യം; 0 (പൂർണ്ണ സമത്വം) മുതൽ 1 (പരമമായ കുത്തക കേന്ദ്രീകരണം) വരെ വ്യത്യാസപ്പെടുന്നു.",
               "അസമത്വത്തിന്റെ കാരണങ്ങൾ: തൊഴിൽരഹിത വളർച്ച (Jobless Growth), പരോക്ഷ നികുതികളുടെ (GST) ആധിക്യം, അസംഘടിത മേഖലയിലെ വേതന മുരടിപ്പ്."
             ],
-            "examTip": "Calicut University Focus: 'Explain the concepts of Income and Wealth Inequality in India. How are Lorenz Curve and Gini Coefficient used to measure economic inequality?'."
+            "examTip": "Calicut University Focus: 'Explain the concepts of Income and Wealth Inequality in India. How are Lorenz Curve and Gini Coefficient used to measure economic inequality?'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 06",
-            "title": "അസമത്വം മനസ്സിലാക്കാം: ലോറൻസ് കർവും ഗിനി ഗുണകവും (Understanding Inequality · Animated Masterclass)",
+            "title": "ലോറൻസ് കർവും ഗിനി ഗുണകവും (Inequality: Lorenz Curve & Gini) | Calicut Univ",
             "chapter": "ലോറൻസ് കർവ് ഡയഗ്രം · ഗിനി ഗുണകം സമവാക്യം G=A/(A+B) · സാമ്പത്തിക വ്യാഖ്യാനം",
             "duration": "06:57",
             "language": "Malayalam",
@@ -2016,16 +2025,17 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University Focus: 'Draw the Lorenz Curve and derive the Gini Coefficient formula G=A/(A+B). Explain its economic significance'.",
             "youtubeId": "JWDBMSBYd1M",
-            "thumbnail": "https://i.ytimg.com/vi/JWDBMSBYd1M/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/JWDBMSBYd1M/hqdefault.jpg",
+            "malayalam_cc": true
           }
         ]
       },
       {
-        "moduleName": "MODULE 04: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (UNEMPLOYMENT IN INDIA)",
+        "moduleName": "MODULE 04: UNEMPLOYMENT & EMPLOYMENT POLICIES IN INDIA (FYUGP)",
         "videos": [
           {
             "chapterNumber": "Chapter 07",
-            "title": "മൊഡ്യൂൾ 4: തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India · Comprehensive Masterclass)",
+            "title": "തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India) | Calicut Univ",
             "chapter": "തൊഴിലില്ലായ്മയുടെ നിർവചനവും തരങ്ങളും · NSSO/PLFS കണക്കെടുപ്പ് · തൊഴിൽ നയങ്ങൾ",
             "duration": "09:06",
             "language": "Malayalam",
@@ -2039,20 +2049,22 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഇന്ത്യയിലെ തൊഴിൽ വെല്ലുവിളികൾ: തൊഴിൽരഹിത വളർച്ച (Jobless Growth), തൊഴിൽ നൈപുണ്യത്തിലെ വിടവ് (Skill Deficit), അസംഘടിത മേഖലയിലെ അനിശ്ചിതത്വം.",
               "സർക്കാർ തൊഴിൽ പദ്ധതികൾ: മഹാത്മാഗാന്ധി ദേശീയ ഗ്രാമീണ തൊഴിലുറപ്പ് പദ്ധതി (MGNREGA), പ്രധാനമന്ത്രി കൗശൽ വികാസ് യോജന (PMKVY), മേക്ക് ഇൻ ഇന്ത്യ."
             ],
-            "examTip": "Calicut University Focus: 'Explain the different types of unemployment in India with special reference to disguised unemployment. Critically evaluate MGNREGA as an employment generation scheme'."
+            "examTip": "Calicut University Focus: 'Explain the different types of unemployment in India with special reference to disguised unemployment. Critically evaluate MGNREGA as an employment generation scheme'.",
+            "malayalam_cc": true
           },
           {
-            "chapterNumber": "Chapter 08",
-            "title": "Module 4: Unemployment in India | Inquisitive Podcast Deep Dive & Debate",
+            "chapterNumber": "Chapter 08 (V1)",
+            "title": "ഇന്ത്യൻ തൊഴിൽ മേഖലയിലെ വെല്ലുവിളികൾ (Unemployment Debate) - V1 | Calicut Univ",
             "chapter": "Module 04: Structural Unemployment · Informality · Demographic Dividend & Policy Reform",
             "duration": "08:56",
             "language": "English",
             "youtubeId": "C_QjoD92wNM",
-            "thumbnail": "https://i.ytimg.com/vi/C_QjoD92wNM/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/C_QjoD92wNM/hqdefault.jpg",
+            "malayalam_cc": true
           },
           {
-            "chapterNumber": "Chapter 08",
-            "title": "12 തരം തൊഴിലില്ലായ്മകൾ (12 Types of Unemployment in India · Visual Masterclass)",
+            "chapterNumber": "Chapter 08 (V2)",
+            "title": "12 തരം തൊഴിലില്ലായ്മകൾ (12 Types of Unemployment in India) - V2 | Calicut Univ",
             "chapter": "ഘടനാപരവും ഘർഷണപരവും പ്രച്ഛന്നവുമായ 12 തരം തൊഴിലില്ലായ്മകൾ · സമഗ്ര വിശകലനം",
             "duration": "06:52",
             "language": "Malayalam",
@@ -2064,7 +2076,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University Focus: 'Explain the 12 major types of unemployment with special reference to developing economies like India'.",
             "youtubeId": "Za9o3cHz_uQ",
-            "thumbnail": "https://i.ytimg.com/vi/Za9o3cHz_uQ/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/Za9o3cHz_uQ/hqdefault.jpg",
+            "malayalam_cc": true
           }
         ]
       }
@@ -2361,7 +2374,7 @@ window.VOICE_EXPLANATIONS_DATA = {
     "name": "Microeconomic Foundation",
     "badge": "₹",
     "iconClass": "icon-blue",
-    "tag": "Minor Course",
+    "tag": "BA ECONOMICS HONOURS · ECO1CJ102 / FYUGP",
     "modules": [
       {
         "moduleName": "MODULE 01: SUPPLY AND DEMAND ANALYSIS",
@@ -2385,7 +2398,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "വിലയിലെ മാറ്റം കർവിലൂടെയുള്ള മൂവ്മെന്റിനും (Expansion/Contraction) മറ്റ് ഘടകങ്ങളിലെ മാറ്റം കർവിന്റെ ഷിഫ്റ്റിനും (Increase/Decrease) കാരണമാകുന്നു."
             ],
             "examTip": "പരീക്ഷയിൽ 'Movement along the Demand Curve' ഉം 'Shift in Demand Curve' ഉം തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, സ്വന്തം വിലയിലെ മാറ്റം മൂലമുണ്ടാകുന്ന മാറ്റത്തെ Change in Quantity Demanded (Expansion അല്ലെങ്കിൽ Contraction) എന്നും, വിലയൊഴികെയുള്ള മറ്റ് ഘടകങ്ങളിലെ മാറ്റം വഴി കർവ് പൂർണ്ണമായി മാറുന്നതിനെ Change in Demand (Increase അല്ലെങ്കിൽ Decrease) എന്നും പ്രത്യേകം ഗ്രാഫ് വരച്ച് വ്യക്തമാക്കുക.",
-            "audioUrl": "/audio/micro-module1-unit1-demand.mp3"
+            "audioUrl": "/audio/micro-module1-unit1-demand.mp3",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 02",
@@ -2409,7 +2423,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Shift in Supply Curve (വിതരണ വക്രത്തിലെ വ്യതിചലനവും വർദ്ധനവും കുറവും)",
               "Multiple Choice Questions Review (ഒന്നിലധികം തിരഞ്ഞെടുപ്പ് ചോദ്യങ്ങൾ)"
             ],
-            "examTip": "Remember that a movement along the supply curve is caused solely by the commodity's own price changes, whereas shifts in the entire supply curve are caused by non-price determinants like technology, input costs, and taxes."
+            "examTip": "Remember that a movement along the supply curve is caused solely by the commodity's own price changes, whereas shifts in the entire supply curve are caused by non-price determinants like technology, input costs, and taxes.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 03",
@@ -2433,7 +2448,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Equilibrium Solution: Px equals 3 dollars",
               "Market Equilibrium Quantity: 60,000 units"
             ],
-            "examTip": "Always remember that market equilibrium occurs strictly where quantity demanded equals quantity supplied, with no surplus or shortage creating any further pressure on price."
+            "examTip": "Always remember that market equilibrium occurs strictly where quantity demanded equals quantity supplied, with no surplus or shortage creating any further pressure on price.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 04",
@@ -2444,7 +2460,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "videoUrl": null,
             "thumbnail": "https://i.ytimg.com/vi/xfR7G1s4Iks/hqdefault.jpg",
             "language": "Malayalam",
-            "examTip": "ഡിമാൻഡ്, സപ്ലൈ കർവുകളുടെ ഒരേസമയത്തുള്ള മാറ്റങ്ങൾ (Simultaneous shifts) വിലയിലും അളവിലും വരുത്തുന്ന സ്വാധീനം വ്യക്തമായി പഠിക്കുക."
+            "examTip": "ഡിമാൻഡ്, സപ്ലൈ കർവുകളുടെ ഒരേസമയത്തുള്ള മാറ്റങ്ങൾ (Simultaneous shifts) വിലയിലും അളവിലും വരുത്തുന്ന സ്വാധീനം വ്യക്തമായി പഠിക്കുക.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 05",
@@ -2455,7 +2472,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "videoUrl": null,
             "thumbnail": "https://i.ytimg.com/vi/nnn3uhL8Kf4/hqdefault.jpg",
             "language": "Malayalam",
-            "examTip": "വില ഇലാസ്തികത സന്തുലിത വിലയെയും അളവിനെയും എങ്ങനെ സ്വാധീനിക്കുന്നുവെന്ന് ഗ്രാഫിക്കലായി വരച്ചു പരിശീലിക്കുക."
+            "examTip": "വില ഇലാസ്തികത സന്തുലിത വിലയെയും അളവിനെയും എങ്ങനെ സ്വാധീനിക്കുന്നുവെന്ന് ഗ്രാഫിക്കലായി വരച്ചു പരിശീലിക്കുക.",
+            "malayalam_cc": true
           }
         ]
       },
@@ -2479,7 +2497,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "ആൽഫ്രഡ് മാർഷലിന്റെ ഡിമിനിഷിംഗ് മാർജിനൽ യൂട്ടിലിറ്റി നിയമം, ഗോസ്സന്റെ രണ്ടാം നിയമം, TU-വും MU-വും തമ്മിലുള്ള ഗ്രാഫിക്കൽ ബന്ധം എന്നിവ പരീക്ഷയ്ക്ക് 6 മാർക്കിനും 10 മാർക്കിനും നിർബന്ധമായും ചോദിക്കുന്ന ഭാഗങ്ങളാണ്.",
             "language": "Malayalam",
-            "audioUrl": "/audio/micro_unit04_masterclass.mp3"
+            "audioUrl": "/audio/micro_unit04_masterclass.mp3",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 05",
@@ -2493,7 +2512,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>Marginal Rate of Substitution (MRS):</strong> The rate at which a consumer trades good Y for good X: MRS_xy = -dy/dx = MUx/MUy.",
               "<strong>Four Properties of ICs:</strong> Downward sloping, convex to the origin due to diminishing MRS, non-intersecting due to transitivity, and higher curves denote greater utility."
             ],
-            "examTip": "Calicut University Core: 'Explain why two indifference curves cannot intersect by utilizing the axioms of transitivity and non-satiation'."
+            "examTip": "Calicut University Core: 'Explain why two indifference curves cannot intersect by utilizing the axioms of transitivity and non-satiation'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 08",
@@ -2512,7 +2532,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "ബജറ്റ് രേഖയുടെ ചെരിവ് -Px/Py നിർണ്ണയിക്കുന്ന രീതിയും വിലമാറ്റവും വരുമാന മാറ്റവും തമ്മിലുള്ള ഗ്രാഫിക്കൽ വ്യത്യാസവും 6/10 മാർക്ക് ചോദ്യങ്ങളായി ആവർത്തിച്ചു വരാറുണ്ട്.",
             "videoUrl": "https://www.youtube.com/watch?v=9H8683I4Ad8",
             "language": "Malayalam",
-            "audioUrl": "/audio/micro_unit08_masterclass.mp3"
+            "audioUrl": "/audio/micro_unit08_masterclass.mp3",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 09",
@@ -2531,7 +2552,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കോൺവെക്സ് ഭാഗങ്ങളിലെ ഒപ്റ്റിമൽ ബണ്ടിൽ: കർവുകൾ ഉദ്ഭവത്തിലേക്ക് കോൺവെക്സ് ആയിരിക്കുമ്പോൾ മാത്രമേ സന്തുലിതാവസ്ഥ സ്ഥിരമാകുന്നുള്ളൂ (Second-Order Condition).",
               "കൂടുതൽ ഉള്ളത് കൂടുതൽ നല്ലത് (Non-Satiation): പോസിറ്റീവ് മാർജിനൽ യൂട്ടിലിറ്റി ഉള്ളതിനാൽ ഒപ്റ്റിമൽ ബണ്ടിൽ എപ്പോഴും ബജറ്റ് രേഖയിൽ തന്നെയായിരിക്കും."
             ],
-            "examTip": "ഉപഭോക്താവിന്റെ ഒപ്റ്റിമൽ ബണ്ടിലിന്റെ ഗ്രാഫിക്കൽ ജ്യാമിതി, ടാൻജൻസി സമവാക്യം MRSxy = Px/Py, MUx/Px = MUy/Py സമ-സീമാന്ത നിയമം, എന്തുകൊണ്ട് ഒപ്റ്റിമൽ ബണ്ടിൽ കോൺവെക്സ് ഭാഗത്ത് വരുന്നു എന്നിവ എസ്സേ ചോദ്യങ്ങളായി ചോദിക്കാറുണ്ട്."
+            "examTip": "ഉപഭോക്താവിന്റെ ഒപ്റ്റിമൽ ബണ്ടിലിന്റെ ഗ്രാഫിക്കൽ ജ്യാമിതി, ടാൻജൻസി സമവാക്യം MRSxy = Px/Py, MUx/Px = MUy/Py സമ-സീമാന്ത നിയമം, എന്തുകൊണ്ട് ഒപ്റ്റിമൽ ബണ്ടിൽ കോൺവെക്സ് ഭാഗത്ത് വരുന്നു എന്നിവ എസ്സേ ചോദ്യങ്ങളായി ചോദിക്കാറുണ്ട്.",
+            "malayalam_cc": true
           }
         ]
       },
@@ -2556,7 +2578,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>ലാഭം പരമാവധിയാക്കൽ (Profit Maximization):</strong> സാമ്പത്തിക സിദ്ധാന്തത്തിൽ സ്ഥാപനങ്ങളുടെ പ്രാഥമിക ലക്ഷ്യം. ആകെ വരുമാനത്തിൽ നിന്ന് ആകെ ചെലവ് കുറയ്ക്കുമ്പോൾ ലഭിക്കുന്ന ലാഭം (π = TR - TC) വിഭവ കാര്യക്ഷമതയുടെ അളവുകോലാണ്."
             ],
             "examTip": "ലിമിറ്റഡ് ലയബിലിറ്റിയുടെ പ്രാധാന്യം, സോൾ പ്രൊപ്രൈറ്റർഷിപ്പും കോർപ്പറേഷനും തമ്മിലുള്ള വ്യത്യാസം, പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രതിസന്ധി, ലാഭ സമവാക്യം (π = TR - TC) എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന പ്രധാന ചോദ്യങ്ങളാണ്.",
-            "audioUrl": "/audio/micro_unit10_masterclass.mp3"
+            "audioUrl": "/audio/micro_unit10_masterclass.mp3",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 11",
@@ -2577,11 +2600,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഹ്രസ്വകാലം (Short Run): കുറഞ്ഞത് ഒരു ഘടകമെങ്കിലും (Capital) സ്ഥിരമായിരിക്കുന്ന കാലയളവ്; ഡിമിനിഷിംഗ് റിട്ടേൺസ് നിയമം ഇവിടെ പ്രവർത്തിക്കുന്നു.",
               "ദീർഘകാലം (Long Run): എല്ലാ ഘടകങ്ങളും വേരിയബിൾ ആകുന്ന ആസൂത്രണ കാലയളവ്; പുതിയ പ്ലാന്റുകൾ നിർമ്മിക്കാൻ സാധിക്കുന്നു."
             ],
-            "examTip": "ഉത്പാദന ഫലനത്തിന്റെ സമവാക്യം Q = f(L, K) വിശദീകരിക്കാനും, സാങ്കേതിക കാര്യക്ഷമതയും സാമ്പത്തിക കാര്യക്ഷമതയും തമ്മിലുള്ള വ്യത്യാസം എഴുതാനും, ഹ്രസ്വകാലവും ദീർഘകാലവും തമ്മിലുള്ള താരതമ്യം വരയ്ക്കാനും പരീക്ഷയിൽ പതിവായി ചോദിക്കാറുണ്ട്."
+            "examTip": "ഉത്പാദന ഫലനത്തിന്റെ സമവാക്യം Q = f(L, K) വിശദീകരിക്കാനും, സാങ്കേതിക കാര്യക്ഷമതയും സാമ്പത്തിക കാര്യക്ഷമതയും തമ്മിലുള്ള വ്യത്യാസം എഴുതാനും, ഹ്രസ്വകാലവും ദീർഘകാലവും തമ്മിലുള്ള താരതമ്യം വരയ്ക്കാനും പരീക്ഷയിൽ പതിവായി ചോദിക്കാറുണ്ട്.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 12",
-            "title": "ഹ്രസ്വകാല ഉത്പാദനവും കുറഞ്ഞുവരുന്ന ആദായ നിയമവും (Short-Run Production: TP, MP, AP & Law of Returns)",
+            "title": "ഹ്രസ്വകാല ഉത്പാദനവും ആദായ നിയമവും (Short-Run Production: TP, MP, AP) | Calicut Univ",
             "chapter": "Academic Hub Special · ആകെ, ശരാശരി, സീമാന്ത ഉത്പാദനം, ഉത്പാദനത്തിന്റെ 3 ഘട്ടങ്ങൾ, യുക്തിസഹമായ ഘട്ടം 2",
             "duration": "08:49",
             "youtubeId": "n-5A7cQpaWc",
@@ -2597,7 +2621,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കുറഞ്ഞുവരുന്ന ആദായ നിയമം (Law of Diminishing Returns): സ്ഥിര മൂലധനത്തിലേക്ക് കൂടുതൽ തൊഴിലാളികൾ ചേർക്കുമ്പോൾ ക്രമേണ MPL കുറയുന്നു.",
               "ഉത്പാദനത്തിന്റെ 3 ഘട്ടങ്ങൾ: ഘട്ടം 1 (APL ഉയരുന്നു), ഘട്ടം 2 (യുക്തിസഹമായ ഘട്ടം - APL-ഉം MPL-ഉം കുറയുന്നുണ്ടെങ്കിലും പോസിറ്റീവ്), ഘട്ടം 3 (നെഗറ്റീവ് MPL - അപ്രായോഗികം)."
             ],
-            "examTip": "ഹ്രസ്വകാല ഉത്പാദനത്തെക്കുറിച്ചോ കുറഞ്ഞുവരുന്ന ആദായ നിയമത്തെക്കുറിച്ചോ എസ്സേ ചോദിച്ചാൽ, മുകളിൽ TP കർവും താഴെ ലംബമായി APL, MPL കർവുകളും വരച്ച് മൂന്ന് ഘട്ടങ്ങൾ കൃത്യമായി വേർതിരിച്ച് കാണിക്കുക. എന്തുകൊണ്ട് സ്ഥാപനങ്ങൾ ഘട്ടം രണ്ടിൽ മാത്രം പ്രവർത്തിക്കുന്നു എന്ന് ന്യായീകരിക്കുക."
+            "examTip": "ഹ്രസ്വകാല ഉത്പാദനത്തെക്കുറിച്ചോ കുറഞ്ഞുവരുന്ന ആദായ നിയമത്തെക്കുറിച്ചോ എസ്സേ ചോദിച്ചാൽ, മുകളിൽ TP കർവും താഴെ ലംബമായി APL, MPL കർവുകളും വരച്ച് മൂന്ന് ഘട്ടങ്ങൾ കൃത്യമായി വേർതിരിച്ച് കാണിക്കുക. എന്തുകൊണ്ട് സ്ഥാപനങ്ങൾ ഘട്ടം രണ്ടിൽ മാത്രം പ്രവർത്തിക്കുന്നു എന്ന് ന്യായീകരിക്കുക.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 13",
@@ -2617,7 +2642,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കുറഞ്ഞുവരുന്ന MRTS തത്വം: വക്രത്തിലൂടെ താഴേക്ക് പോകുംതോറും MPL കുറയുകയും MPK കൂടുകയും ചെയ്യുന്നതിനാൽ MRTS കുറയുന്നു.",
               "പ്രത്യേക രൂപങ്ങൾ: Linear Isoquants (Perfect Substitutes), L-Shaped / Leontief (Fixed Proportions), Cobb-Douglas (Smooth Convex)."
             ],
-            "examTip": "ഐസോക്വാണ്ടിന്റെ നിർവചനവും നാല് പ്രധാന സവിശേഷതകളും ഡയഗ്രം സഹിതം വിശദീകരിക്കാനും, MRTS = MPL/MPK സമവാക്യം തെളിയിക്കാനും, ലീനിയർ, ലിയോൺറ്റിഫ് ഐസോക്വാണ്ടുകൾ താരതമ്യം ചെയ്യാനും പരീക്ഷയിൽ പതിവായി ചോദിക്കാറുണ്ട്."
+            "examTip": "ഐസോക്വാണ്ടിന്റെ നിർവചനവും നാല് പ്രധാന സവിശേഷതകളും ഡയഗ്രം സഹിതം വിശദീകരിക്കാനും, MRTS = MPL/MPK സമവാക്യം തെളിയിക്കാനും, ലീനിയർ, ലിയോൺറ്റിഫ് ഐസോക്വാണ്ടുകൾ താരതമ്യം ചെയ്യാനും പരീക്ഷയിൽ പതിവായി ചോദിക്കാറുണ്ട്.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 14",
@@ -2636,7 +2662,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>വേരിയിംഗ് റിട്ടേൺസ് ടു സ്കെയിൽ:</strong> യഥാർത്ഥ ജീവിതത്തിൽ ഒരു സ്ഥാപനം വളരുമ്പോൾ ആദ്യം IRS (A to K), പിന്നീട് കാര്യക്ഷമമായ ഒപ്റ്റിമൽ സ്കെയിലിൽ CRS (K to C), തുടർന്ന് അധികവളർച്ചയിൽ DRS (C to H) എന്നിങ്ങനെ മൂന്ന് ഘട്ടങ്ങളിലൂടെ കടന്നുപോകുന്നു."
             ],
             "examTip": "CRS, IRS, DRS എന്നിവയുടെ ഗണിത സമവാക്യങ്ങൾ, ഐസോക്വാന്റ് അകലങ്ങൾ (Fig 14.1, 14.2, 14.3), വേരിയിംഗ് റിട്ടേൺസ് ഗ്രാഫ് (Fig 14.4), വൻകിട കമ്പനികളിലെ ഇക്കണോമിസ് ഓഫ് സ്കെയിൽ എന്നിവ 10 മാർക്ക് ഉപന്യാസ ചോദ്യമായി കാലിക്കറ്റ് സർവ്വകലാശാലയിൽ ചോദിക്കുന്നവയാണ്.",
-            "audioUrl": "/audio/micro_unit14_masterclass.mp3"
+            "audioUrl": "/audio/micro_unit14_masterclass.mp3",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 15",
@@ -2655,7 +2682,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "അവസരച്ചെലവ് തത്വം (Opportunity Cost Principle): വിഭവങ്ങൾ ഒരു കാര്യത്തിനായി വിനിയോഗിക്കുമ്പോൾ ത്യജിക്കേണ്ടി വരുന്ന രണ്ടാമത്തെ മികച്ച ബദലിന്റെ മൂല്യം.",
               "മുങ്ങിയ ചിലവുകൾ (Sunk Costs): ഒരിക്കൽ ചെലവഴിച്ചുകഴിഞ്ഞതും തിരിച്ചുപിടിക്കാൻ കഴിയാത്തതുമായ മുൻകാല ചെലവുകൾ. യുക്തിസഹമായ സാമ്പത്തിക തീരുമാനങ്ങളിൽ ഇത് പൂർണ്ണമായും അവഗണിക്കണം."
             ],
-            "examTip": "അക്കൗണ്ടിംഗ് ചെലവും സാമ്പത്തിക ചെലവും തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, ഇക്കണോമിക് കോസ്റ്റ് = എക്സ്പ്ലിസിറ്റ് കോസ്റ്റ് + ഇംപ്ലിസിറ്റ് കോസ്റ്റ് എന്ന സമവാക്യവും, എന്തുകൊണ്ട് സാമ്പത്തിക ലാഭം അക്കൗണ്ടിംഗ് ലാഭത്തേക്കാൾ കുറവാകുന്നു എന്നതും കൃത്യമായി വിശദീകരിക്കുക. സങ്ക് കോസ്റ്റുകൾ ഭാവി തീരുമാനങ്ങളെ ബാധിക്കരുതെന്നും വ്യക്തമാക്കുക."
+            "examTip": "അക്കൗണ്ടിംഗ് ചെലവും സാമ്പത്തിക ചെലവും തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, ഇക്കണോമിക് കോസ്റ്റ് = എക്സ്പ്ലിസിറ്റ് കോസ്റ്റ് + ഇംപ്ലിസിറ്റ് കോസ്റ്റ് എന്ന സമവാക്യവും, എന്തുകൊണ്ട് സാമ്പത്തിക ലാഭം അക്കൗണ്ടിംഗ് ലാഭത്തേക്കാൾ കുറവാകുന്നു എന്നതും കൃത്യമായി വിശദീകരിക്കുക. സങ്ക് കോസ്റ്റുകൾ ഭാവി തീരുമാനങ്ങളെ ബാധിക്കരുതെന്നും വ്യക്തമാക്കുക.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 16",
@@ -2676,7 +2704,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "MC - ശരാശരി ബന്ധം: MC കർവ് AVC-യെയും ATC-യെയും അവയുടെ ഏറ്റവും താഴ്ന്ന ബിന്ദുക്കളിൽ (Minimum Points) താഴെനിന്ന് ഛേദിക്കുന്നു.",
               "U-ആകൃതിക്ക് കാരണം: കുറഞ്ഞുവരുന്ന ആദായ നിയമം (Law of Diminishing Returns)."
             ],
-            "examTip": "ഹ്രസ്വകാല ചെലവ് കർവുകളുടെ ജ്യാമിതി ചോദിച്ചാൽ, ഒരൊറ്റ ഡയഗ്രത്തിൽ താഴെ AFC-യും മുകളിലായി AVC, ATC, MC കർവുകളും വരയ്ക്കുക. MC കർവ് AVC-യുടെയും ATC-യുടെയും ഏറ്റവും താഴ്ന്ന ബിന്ദുവിൽ കൂടി കടന്നുപോകുന്നു എന്ന് കൃത്യമായി അടയാളപ്പെടുത്തുക."
+            "examTip": "ഹ്രസ്വകാല ചെലവ് കർവുകളുടെ ജ്യാമിതി ചോദിച്ചാൽ, ഒരൊറ്റ ഡയഗ്രത്തിൽ താഴെ AFC-യും മുകളിലായി AVC, ATC, MC കർവുകളും വരയ്ക്കുക. MC കർവ് AVC-യുടെയും ATC-യുടെയും ഏറ്റവും താഴ്ന്ന ബിന്ദുവിൽ കൂടി കടന്നുപോകുന്നു എന്ന് കൃത്യമായി അടയാളപ്പെടുത്തുക.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 17",
@@ -2695,7 +2724,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "മിനിമം എഫിഷ്യന്റ് സ്കെയിൽ (MES): ഒരു സ്ഥാപനത്തിന് ഏറ്റവും കുറഞ്ഞ ചെലവിൽ ഉത്പാദിപ്പിക്കാൻ കഴിയുന്ന ഏറ്റവും ചെറിയ അളവ്.",
               "എൻവലപ്പ് കർവ് അഥവാ പ്ലാനിംഗ് കർവ്: വിവിധ ഹ്രസ്വകാല SRAC കർവുകളെ താഴെനിന്ന് പൊതിയുന്ന വക്രമാണ് LRAC."
             ],
-            "examTip": "ദീർഘകാല ശരാശരി ചെലവ് വക്രത്തെക്കുറിച്ച് (LRAC) എസ്സേ ചോദിച്ചാൽ, അത് വിവിധ ഹ്രസ്വകാല ശരാശരി ചെലവ് (SRAC) കർവുകളെ താഴെനിന്ന് പൊതിയുന്ന ഒരു 'എൻവലപ്പ് കർവ്' (Envelope Curve) അഥവാ പ്ലാനിംഗ് കർവ് ആണെന്ന് വ്യക്തമാക്കി ഡയഗ്രം വരയ്ക്കുക."
+            "examTip": "ദീർഘകാല ശരാശരി ചെലവ് വക്രത്തെക്കുറിച്ച് (LRAC) എസ്സേ ചോദിച്ചാൽ, അത് വിവിധ ഹ്രസ്വകാല ശരാശരി ചെലവ് (SRAC) കർവുകളെ താഴെനിന്ന് പൊതിയുന്ന ഒരു 'എൻവലപ്പ് കർവ്' (Envelope Curve) അഥവാ പ്ലാനിംഗ് കർവ് ആണെന്ന് വ്യക്തമാക്കി ഡയഗ്രം വരയ്ക്കുക.",
+            "malayalam_cc": true
           }
         ]
       },
@@ -2719,7 +2749,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഹ്രസ്വകാല സപ്ലൈ കർവ്: മിനിമം AVC-ക്ക് മുകളിലുള്ള സീമാന്ത ചെലവ് കർവിന്റെ (SMC) ഭാഗമാണ് സ്ഥാപനത്തിന്റെ സപ്ലൈ കർവ്.",
               "ദീർഘകാല സന്തുലിതാവസ്ഥ: പ്രവേശന-പിന്മാറ്റ സ്വാതന്ത്ര്യം മൂലം സാമ്പത്തിക ലാഭം പൂജ്യമാകുന്നു (P = LRMC = min LRAC)."
             ],
-            "examTip": "ഹ്രസ്വകാല ഷട്ട്ഡൗൺ പോയിന്റ് (P < min AVC), ദീർഘകാല സീറോ ഇക്കണോമിക് പ്രോഫിറ്റ് സമവാക്യം (P = LRMC = min LRAC) എന്നിവ ഗ്രാഫ് സഹിതം വിശദീകരിക്കുക."
+            "examTip": "ഹ്രസ്വകാല ഷട്ട്ഡൗൺ പോയിന്റ് (P < min AVC), ദീർഘകാല സീറോ ഇക്കണോമിക് പ്രോഫിറ്റ് സമവാക്യം (P = LRMC = min LRAC) എന്നിവ ഗ്രാഫ് സഹിതം വിശദീകരിക്കുക.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 11",
@@ -2738,7 +2769,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "വിപണി ശക്തി & ലെർണർ സൂചിക: (P - MC)/P = -1/ε; ഡിമാൻഡ് ഇലാസ്തികത കുറയുന്തോറും കുത്തകയുടെ വില നിശ്ചയിക്കാനുള്ള ശക്തി കൂടുന്നു.",
               "ഡെഡ്‌വെയ്റ്റ് ലോസ് (Deadweight Loss): ഉത്പാദന നിയന്ത്രണവും ഉയർന്ന വിലയും കാരണം സാമൂഹിക ക്ഷേമത്തിൽ സ്ഥിരമായ നഷ്ടം (ΔW = -C - E) ഉണ്ടാകുന്നു."
             ],
-            "examTip": "കുത്തകയുടെ ലാഭ പരമാവധി സമവാക്യവും (P = 24 - Q, C = Q² + 12), പൂർണ്ണമത്സരവുമായി താരതമ്യം ചെയ്തുകൊണ്ടുള്ള ഡെഡ്‌വെയ്റ്റ് ലോസ് ഡയഗ്രവും കൃത്യമായി വരയ്ക്കുക."
+            "examTip": "കുത്തകയുടെ ലാഭ പരമാവധി സമവാക്യവും (P = 24 - Q, C = Q² + 12), പൂർണ്ണമത്സരവുമായി താരതമ്യം ചെയ്തുകൊണ്ടുള്ള ഡെഡ്‌വെയ്റ്റ് ലോസ് ഡയഗ്രവും കൃത്യമായി വരയ്ക്കുക.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 12",
@@ -2757,7 +2789,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കൂട്ട്‌നോ & സ്റ്റാക്കൽബെർഗ്: അളവ് മത്സരത്തിലെ റിയാക്ഷൻ കർവുകൾ; ബെർട്രാൻഡ് മോഡലിൽ വില മത്സരം കാരണം P = MC.",
               "സ്വീസി കിങ്ക്ഡ് ഡിമാൻഡ്: വില കൂട്ടിയാൽ പിന്തുടരില്ല, കുറച്ചാൽ പിന്തുടരും — അതിനാൽ ഒളിഗോപൊളിയിൽ വില സ്ഥിരത (Price Rigidity) ഉണ്ടാകുന്നു."
             ],
-            "examTip": "ഏകാധിപത്യ മത്സരത്തിലെ ദീർഘകാല എക്സസ് കപ്പാസിറ്റിയും, കൂട്ട്‌നോ റിയാക്ഷൻ കർവുകൾ, സ്വീസിയുടെ കിങ്ക്ഡ് ഡിമാൻഡ് വക്രം എന്നിവയുടെ ഡയഗ്രങ്ങൾ പരീക്ഷയ്ക്ക് ഉറപ്പായും വരയ്ക്കുക."
+            "examTip": "ഏകാധിപത്യ മത്സരത്തിലെ ദീർഘകാല എക്സസ് കപ്പാസിറ്റിയും, കൂട്ട്‌നോ റിയാക്ഷൻ കർവുകൾ, സ്വീസിയുടെ കിങ്ക്ഡ് ഡിമാൻഡ് വക്രം എന്നിവയുടെ ഡയഗ്രങ്ങൾ പരീക്ഷയ്ക്ക് ഉറപ്പായും വരയ്ക്കുക.",
+            "malayalam_cc": true
           }
         ]
       },
@@ -2780,7 +2813,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കുത്തക ദുരുപയോഗം: പ്രിഡേറ്ററി പ്രൈസിംഗ് (P < MC), ടൈയിംഗ്-ബണ്ടിലിംഗ്, ഹോറിസോണ്ടൽ മെർജറുകളിലെ HHI പരിശോധന.",
               "ആഗോള ആന്റിട്രസ്റ്റ് നയങ്ങൾ: ഇന്ത്യയുടെ CCI (Competition Act 2002), അമേരിക്കയിലെ FTC/DoJ, യൂറോപ്യൻ യൂണിയൻ DMA, കാർട്ടൽ ലീനിയൻസി നയങ്ങൾ."
             ],
-            "examTip": "നാല് വിപണി ഘടനകളുടെ 7-മാനദണ്ഡ താരതമ്യ പട്ടികയും, ഡിജിറ്റൽ പ്ലാറ്റ്‌ഫോമുകളിലെ നെറ്റ്‌വർക്ക് എക്സ്റ്റേണാലിറ്റികളും, ഇന്ത്യയിലെ CCI-യുടെ പങ്കും പരീക്ഷയ്ക്ക് ഉറപ്പായും പഠിക്കുക."
+            "examTip": "നാല് വിപണി ഘടനകളുടെ 7-മാനദണ്ഡ താരതമ്യ പട്ടികയും, ഡിജിറ്റൽ പ്ലാറ്റ്‌ഫോമുകളിലെ നെറ്റ്‌വർക്ക് എക്സ്റ്റേണാലിറ്റികളും, ഇന്ത്യയിലെ CCI-യുടെ പങ്കും പരീക്ഷയ്ക്ക് ഉറപ്പായും പഠിക്കുക.",
+            "malayalam_cc": true
           }
         ]
       }
@@ -2793,135 +2827,135 @@ window.VOICE_EXPLANATIONS_DATA = {
     "iconClass": "icon-orange",
     "tag": "LANGUAGE / AEC 2",
     "modules": [
-        {
-            "moduleName": "MODULE 01: BASIC ARABIC GRAMMAR & CONVERSATION (التحيات والتعارف)",
-            "videos": [
-                {
-                    "chapterNumber": "Chapter 01",
-                    "title": "അറബിക് അക്ഷരമാലയും അടിസ്ഥാന വ്യാകരണവും (Arabic Alphabet & Basic Grammar)",
-                    "chapter": "അക്ഷരമാല, മഖാരിജ്, ഹറകത്ത്, ഇസ്മ്-ഫിഅ്ല്-ഹർഫ്, മഅ്രിഫ-നകിറ, ശംസിയ്യ-ഖമരിയ്യ, ലിംഗ-വചന നിയമങ്ങൾ",
-                    "duration": "18:00",
-                    "youtubeId": "rb5CfCS7mT0",
-                    "videoUrl": null,
-                    "thumbnail": "https://i.ytimg.com/vi/rb5CfCS7mT0/hqdefault.jpg",
-                    "language": "Arabic",
-                    "studyPoints": [
-                        "<strong>അക്ഷരമാലയും ഉച്ചാരണ സ്ഥാനങ്ങളും (Makharīj):</strong> 28 വ്യഞ്ജനാക്ഷരങ്ങൾ. ഓരോ അക്ഷരത്തിന്റെയും കൃത്യമായ സ്വരസ്ഥാനം (തൊണ്ട, നാവ്, ചുണ്ടുകൾ).",
-                        "<strong>ഹ്രസ്വ-ദീർഘ സ്വരങ്ങൾ (Harakat & Madd):</strong> ഫത്‌ഹ (a), കസ്ര (i), ളമ്മ (u) എന്നിവ ഹ്രസ്വ സ്വരങ്ങളും; അലിഫ്, വാവ്, യാഅ് എന്നിവ ദീർഘസ്വരങ്ങളുമാണ്.",
-                        "<strong>കലിമയുടെ വിഭജനം (Ism, Fi‘l, Ḥarf):</strong> അറബി പദങ്ങൾ മൂന്ന് വിധം — നാമം (Ism), ക്രിയ (Fi‘l), അവ്യയം (Ḥarf).",
-                        "<strong>മഅ്രിഫയും നകിറയും (Definiteness):</strong> തൻവീൻ ഉള്ളവ അനിശ്ചിത നാമവും (Nakirah), 'അൽ-' (ال) ചേർത്താൽ നിശ്ചിത നാമവുമാണ് (Ma‘rifah).",
-                        "<strong>ശംസിയ്യ & ഖമരിയ്യ അക്ഷരങ്ങൾ:</strong> 14 ശംസിയ്യ അക്ഷരങ്ങളിൽ ലാം ലയിച്ചു ഷദ്ദ് വരുന്നു; 14 ഖമരിയ്യ അക്ഷരങ്ങളിൽ ലാം സ്പഷ്ടമായി ഉച്ചരിക്കപ്പെടുന്നു.",
-                        "<strong>ലിംഗവും വചനവും (Gender & Number):</strong> താഉൽ മർബൂത്വ (ة) സ്ത്രീലിംഗ അടയാളം. മുഫ്റദ് (ഏകവചനം), മുഥന്ന (ദ്വിവചനം - ആനി/ഐനി), ജംഅ് (ബഹുവചനം - സാലിം & തക്സീർ).",
-                        "<strong>സിഫത്തും ഇളാഫത്തും:</strong> സിഫത്ത്-മൗസൂഫ് നാല് കാര്യങ്ങളിലും (ലിംഗം, വചനം, വിഭക്തി, നിശ്ചിതത്വം) പൊരുത്തപ്പെടുന്നു. ഇളാഫത്തിൽ ആദ്യ പദം (മുളാഫ്) തൻവീനും 'അൽ'ഉം സ്വീകരിക്കില്ല; രണ്ടാമത്തെ പദം (മുളാഫുൻ ഇലൈഹി) മജ്റൂറായിരിക്കും."
-                    ],
-                    "examTip": "യൂണിവേഴ്സിറ്റി പരീക്ഷയ്ക്ക് സിഫത്ത്-മൗസൂഫ് വ്യത്യാസം, ഇളാഫത്ത് നിയമങ്ങൾ, ശംസിയ്യ-ഖമരിയ്യ അക്ഷരങ്ങളുടെ പട്ടിക, തൻവീൻ പ്രയോഗങ്ങൾ എന്നിവ 5 & 10 മാർക്ക് വിഭാഗത്തിൽ ചോദിക്കാറുണ്ട്."
-                },
-                {
-                    "chapterNumber": "Chapter 02",
-                    "title": "ക്രിയാപദങ്ങളും വാക്യഘടനയും (Arabic Verbal Sentences & Tenses)",
-                    "chapter": "മാളീ (ഭൂതകാലം), മുളാരിഅ് (വർത്തമാനം/ഭാവി), അംറ് (ആജ്ഞാ ക്രിയകൾ), ജുംല ഫിഅ്ലിയ്യ & നാമവിശേഷണ വാക്യങ്ങൾ",
-                    "duration": "20:00",
-                    "youtubeId": "USLqNTABWVI",
-                    "videoUrl": null,
-                    "thumbnail": "https://i.ytimg.com/vi/USLqNTABWVI/hqdefault.jpg",
-                    "language": "Arabic",
-                    "studyPoints": [
-                        "<strong>അൽ-ഫിഅ്ലുൽ മാളീ (Past Tense):</strong> അടിസ്ഥാന ത്രിയക്ഷര രൂപം (ഉദാ: കതബ, ഫഅല, ദഹബ). കർത്താവിന്റെ ലിംഗ-വചനത്തിനനുസരിച്ചുള്ള 14 സംയോജന രൂപങ്ങൾ (Conjugation).",
-                        "<strong>അൽ-ഫിഅ്ലുൽ മുളാരിഅ് (Present/Future Tense):</strong> അത്തീന (أ، ت، ي، ن) എന്നീ മുളാരിഇന്റെ അടയാളങ്ങൾ മുൻപിൽ ചേർത്ത് രൂപീകരിക്കുന്നു (ഉദാ: യക്തുബു, തക്തുബു).",
-                        "<strong>ഫിഅ്ലുൽ അംറ് (Imperative Verbs):</strong> രണ്ടാം പുരുഷനിൽ നിന്ന് കൽപ്പന/അഭ്യർത്ഥന രൂപീകരണം (ഉദാ: ഉക്തുബ്, ഇജ്‌ലിസ്).",
-                        "<strong>ജുംല ഫിഅ്ലിയ്യ ഘടന:</strong> ഫിഅ്ല് (ക്രിയ) + ഫാഇൽ (കർത്താവ് - മർഫൂഅ്) + മഫ്ഊൽ ബിഹീ (കർമ്മം - മൻസൂബ്). ക്രിയ മുന്നിൽ വരുമ്പോൾ എപ്പോഴും ഏകവചനമായിരിക്കും.",
-                        "<strong>ജുംല ഇസ്മിയ്യ & ഖബർ:</strong> മുബ്തദഅ് (ആദ്യ നാമം - മർഫൂഅ്) + ഖബർ (വാർത്ത - മർഫൂഅ്). ജുംല ഇസ്മിയ്യയെ ഫിഅ്ലിയ്യയാക്കി മാറ്റുന്ന രീതികൾ."
-                    ],
-                    "examTip": "കാലിക്കറ്റ് പരീക്ഷയിൽ ക്രിയകളുടെ 14 രൂപങ്ങളിലുള്ള രൂപാന്തരണം (തസ്റീഫ്), ജുംല ഫിഅ്ലിയ്യയെ ഇസ്മിയ്യയാക്കൽ, ഫാഇൽ-മഫ്ഊൽ വിഭക്തി ചിഹ്നങ്ങൾ എന്നിവ നിർബന്ധമായും പഠിക്കുക."
-                }
-            ]
-        },
-        {
-            "moduleName": "MODULE 02: READING COMPREHENSION & TEXTS (قطرات الندى وقراءات عربية)",
-            "videos": [
-                {
-                    "chapterNumber": "Chapter 03",
-                    "title": "ക്ലാസിക്കൽ & ആധുനിക പാഠഭാഗങ്ങൾ (Classical & Modern Arabic Texts)",
-                    "chapter": "അധ്വാനത്തിന്റെ മഹത്വം (ഥർവത്തുൽ അമൽ), പിതാവിന്റെ ഉപദേശങ്ങൾ, ക്ലാസിക്കൽ അറബിക് സാഹിത്യ വിശകലനം",
-                    "duration": "22:00",
-                    "youtubeId": "aOgymHqbK8k",
-                    "videoUrl": null,
-                    "thumbnail": "https://i.ytimg.com/vi/aOgymHqbK8k/hqdefault.jpg",
-                    "language": "Arabic",
-                    "studyPoints": [
-                        "<strong>ഥർവത്തുൽ അമൽ (Work Is Wealth):</strong> തൊഴിലിന്റെ മഹത്വവും സ്വാശ്രയത്വവും വ്യക്തമാക്കുന്ന അറബിക് പാഠഭാഗം. പിതാവ് മകന് നൽകുന്ന മൂന്ന് അമൂല്യ ഉപദേശങ്ങൾ.",
-                        "<strong>ക്ലാസിക്കൽ ശൈലികൾ:</strong> ഖുർആനിക സൂക്തങ്ങളും തിരുവചനങ്ങളും ഉദ്ധരിച്ചുകൊണ്ടുള്ള ഭാഷാ ശൈലി.",
-                        "<strong>ആശയഗ്രഹണ വ്യായാമങ്ങൾ:</strong> പാഠഭാഗത്തെ ആസ്പദമാക്കിയുള്ള ചോദ്യോത്തരങ്ങൾ, സംഗ്രഹ രചന, ശരി/തെറ്റ് കണ്ടെത്തൽ.",
-                        "<strong>പദാവലി സമ്പുഷ്ടീകരണം (Vocabulary):</strong> ക്ലാസിക്കൽ അറബിക് സാഹിത്യത്തിൽ ഉപയോഗിക്കുന്ന ഉന്നത പദങ്ങളും അവയുടെ മലയാള/ഇംഗ്ലീഷ് അർത്ഥങ്ങളും."
-                    ],
-                    "examTip": "ഥർവത്തുൽ അമൽ പാഠത്തിലെ ഉപദേശങ്ങൾ, പാഠസംഗ്രഹം, അനുബന്ധ വ്യാകരണ ചോദ്യങ്ങൾ എന്നിവ ഉപന്യാസ രൂപത്തിൽ തയ്യാറാക്കുക."
-                },
-                {
-                    "chapterNumber": "Chapter 04",
-                    "title": "ദൈനംദിന അറബി സംഭാഷണങ്ങൾ (Conversational Arabic in Daily Life)",
-                    "chapter": "മാർക്കറ്റ്, വിമാനത്താവളം, ആശുപത്രി, ഓഫീസ് സംഭാഷണങ്ങൾ, സമയവും ആരോഗ്യവും (അൽ-വഖ്തു വസ്സിഹ്ഹ)",
-                    "duration": "19:00",
-                    "youtubeId": "OKnXFgDqFug",
-                    "videoUrl": null,
-                    "thumbnail": "https://i.ytimg.com/vi/OKnXFgDqFug/hqdefault.jpg",
-                    "language": "Arabic",
-                    "studyPoints": [
-                        "<strong>അൽ-ഹിവാറാത്തുൽ യൗമിയ്യ (Daily Dialogues):</strong> വിപണിയിലെ വിലപേശലുകൾ, വിമാനത്താവളത്തിലെ ചെക്ക്-ഇൻ, ഇമിഗ്രേഷൻ സംഭാഷണങ്ങൾ.",
-                        "<strong>ആശുപത്രിയും ആരോഗ്യവും:</strong> രോഗലക്ഷണങ്ങൾ വിവരിക്കൽ, ഡോക്ടറുമായുള്ള ആശയവിനിമയം, മരുന്നുകളുടെ കുറിപ്പടി മനസ്സിലാക്കൽ.",
-                        "<strong>അൽ-വഖ്തു വസ്സിഹ്ഹ (Time and Health):</strong> സമയത്തിന്റെ വില, ആരോഗ്യ സംരക്ഷണം, പ്രവാചക വചനങ്ങളുടെ വെളിച്ചത്തിലുള്ള ചർച്ചകൾ.",
-                        "<strong>ചോദ്യശബ്ദങ്ങൾ (Adawāt al-Istifhām):</strong> മാ, മാദാ, മൻ, ഐന, മതാ, കൈഫ, കമ്, ലിമാദാ, ഹൽ എന്നിവയുടെ പ്രായോഗിക വാക്യങ്ങൾ."
-                    ],
-                    "examTip": "മാർക്കറ്റിലോ വിമാനത്താവളത്തിലോ നടക്കുന്ന ഒരു സംഭാഷണം തയ്യാറാക്കാൻ (10 മാർക്ക് ഡയലോഗ് റൈറ്റിംഗ്) പരീക്ഷയ്ക്ക് ചോദിക്കാറുണ്ട്."
-                }
-            ]
-        },
-        {
-            "moduleName": "MODULE 03: FUNCTIONAL & COMMERCIAL ARABIC (العربية الوظيفية والتجارية)",
-            "videos": [
-                {
-                    "chapterNumber": "Chapter 05",
-                    "title": "ഔദ്യോഗിക എഴുത്തുകുത്തുകളും വാണിജ്യ അറബിയും (Commercial Arabic & Business Letters)",
-                    "chapter": "ബിസിനസ് കത്തുകൾ, ബാങ്കിംഗ്, ഓർഡർ ഫോമുകൾ, ഇൻവോയ്സ്, ഔദ്യോഗിക മെമ്മോകൾ & വാണിജ്യ സാങ്കേതിക പദാവലി",
-                    "duration": "21:00",
-                    "youtubeId": "OQfXlhCslBY",
-                    "videoUrl": null,
-                    "thumbnail": "https://i.ytimg.com/vi/OQfXlhCslBY/hqdefault.jpg",
-                    "language": "Arabic",
-                    "studyPoints": [
-                        "<strong>വാണിജ്യ അറബിയുടെ സ്വഭാവം:</strong> വ്യക്തത, കൃത്യത, സംക്ഷിപ്തത എന്നിവയാർന്ന പ്രൊഫഷണൽ അറബിക് എഴുത്തുരീതികൾ.",
-                        "<strong>ഔദ്യോഗിക കത്തുകളുടെ ഘടന:</strong> തലക്കെട്ട്, ബിസ്മില്ലാഹി, സംബോധന (അസ്സയ്യിദ് / അൽ-മുഹതറം), വിഷയ സൂചിക (അൽ-മൗളൂഅ്), സമാപനം (വത്തഖദ്ദലൂ ബിഖബൂലി ഫാഇഖിൽ ഇഹ്തിറാം).",
-                        "<strong>തൊഴിൽ അപേക്ഷകളും സി.വി.യും (Job Applications & CV):</strong> ബയോഡാറ്റ തയ്യാറാക്കൽ, കവർ ലെറ്റർ, യോഗ്യതകളും പ്രവൃത്തിപരിചയവും രേഖപ്പെടുത്തൽ.",
-                        "<strong>വാണിജ്യ പദാവലി (Commercial Lexicon):</strong> ബാങ്ക് (ബങ്ക്), അക്കൗണ്ട് (ഹിസാബ്), ചെക്ക് (ശീക്ക്), കമ്പോളം (സൂഖ്), ലാഭം (രിബ്ഹ്), കരാർ (അഖ്ദ്), ഇറക്കുമതി/കയറ്റുമതി (ഇസ്തീറാദ്/തസ്ദീർ)."
-                    ],
-                    "examTip": "തൊഴിൽ അപേക്ഷ (ത്വലബുൽ വളീഫ) അല്ലെങ്കിൽ സാധനങ്ങൾ ഓർഡർ ചെയ്തുകൊണ്ടുള്ള വാണിജ്യ കത്ത് പരീക്ഷയിലെ സ്ഥിരം 10/15 മാർക്ക് ചോദ്യമാണ്."
-                }
-            ]
-        },
-        {
-            "moduleName": "MODULE 04: TRANSLATION & CREATIVE EXPRESSION (الترجمة والتعبير الإبداعي)",
-            "videos": [
-                {
-                    "chapterNumber": "Chapter 06",
-                    "title": "വിവർത്തന രീതികൾ: അറബിക് - മലയാളം - ഇംഗ്ലീഷ് (Translation Methods: Arabic-Mal-Eng)",
-                    "chapter": "വിവർത്തന തത്ത്വങ്ങൾ, സാങ്കേതിക വാക്യങ്ങൾ, ശൈലികൾ, പഴഞ്ചൊല്ലുകൾ (അംഥാൽ) & ദ്വിഭാഷാ പരിശീലനങ്ങൾ",
-                    "duration": "23:00",
-                    "youtubeId": "xmmSpkecMCk",
-                    "videoUrl": null,
-                    "thumbnail": "https://i.ytimg.com/vi/xmmSpkecMCk/hqdefault.jpg",
-                    "language": "Arabic",
-                    "studyPoints": [
-                        "<strong>വിവർത്തന സിദ്ധാന്തങ്ങൾ:</strong> വാചിക വിവർത്തനം (Literal) vs ആശയ വിവർത്തനം (Dynamic/Idiomatic). അറബി-മലയാളം വാക്യഘടനകളിലെ വ്യത്യാസങ്ങൾ (VSO vs SOV).",
-                        "<strong>വാക്യ വിവർത്തന തന്ത്രങ്ങൾ:</strong> നാമവിശേഷണ വാക്യങ്ങൾ, സർവ്വനാമങ്ങൾ, അവ്യയങ്ങൾ എന്നിവ മലയാളത്തിലേക്കും ഇംഗ്ലീഷിലേക്കും തർജ്ജമ ചെയ്യുന്ന രീതി.",
-                        "<strong>പഴഞ്ചൊല്ലുകളും ശൈലികളും (Amthāl & Proverbs):</strong> 'അൽ-വഖ്തു കസ്സൈഫ്' (Time is like a sword), 'അൽ-ഇൽമു നൂറുൻ' (Knowledge is light) തുടങ്ങിയവയുടെ വിവർത്തന ചാരുത.",
-                        "<strong>സാങ്കേതിക-വാർത്താ വിവർത്തനം:</strong> വാർത്താ ശകലങ്ങൾ, ഔദ്യോഗിക സർക്കുലറുകൾ, പത്രക്കുറിപ്പുകൾ എന്നിവയുടെ തർജ്ജമ."
-                    ],
-                    "examTip": "അറബിയിൽ നിന്ന് മലയാളത്തിലേക്കും തിരിച്ചും 5 വീതം വാക്യങ്ങൾ വിവർത്തനം ചെയ്യാനുള്ള ചോദ്യത്തിന് 10 മാർക്ക് ലഭിക്കും; ക്രിയാ-കർത്താ പൊരുത്തം സൂക്ഷ്മമായി ശ്രദ്ധിക്കുക."
-                }
-            ]
-        }
+      {
+        "moduleName": "MODULE 01: BASIC ARABIC GRAMMAR & CONVERSATION (التحيات والتعارف)",
+        "videos": [
+          {
+            "chapterNumber": "Chapter 01",
+            "title": "അറബിക് അക്ഷരമാലയും അടിസ്ഥാന വ്യാകരണവും (Arabic Alphabet & Basic Grammar)",
+            "chapter": "അക്ഷരമാല, മഖാരിജ്, ഹറകത്ത്, ഇസ്മ്-ഫിഅ്ല്-ഹർഫ്, മഅ്രിഫ-നകിറ, ശംസിയ്യ-ഖമരിയ്യ, ലിംഗ-വചന നിയമങ്ങൾ",
+            "duration": "18:00",
+            "youtubeId": "rb5CfCS7mT0",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/rb5CfCS7mT0/hqdefault.jpg",
+            "language": "Arabic",
+            "studyPoints": [
+              "<strong>അക്ഷരമാലയും ഉച്ചാരണ സ്ഥാനങ്ങളും (Makharīj):</strong> 28 വ്യഞ്ജനാക്ഷരങ്ങൾ. ഓരോ അക്ഷരത്തിന്റെയും കൃത്യമായ സ്വരസ്ഥാനം (തൊണ്ട, നാവ്, ചുണ്ടുകൾ).",
+              "<strong>ഹ്രസ്വ-ദീർഘ സ്വരങ്ങൾ (Harakat & Madd):</strong> ഫത്‌ഹ (a), കസ്ര (i), ളമ്മ (u) എന്നിവ ഹ്രസ്വ സ്വരങ്ങളും; അലിഫ്, വാവ്, യാഅ് എന്നിവ ദീർഘസ്വരങ്ങളുമാണ്.",
+              "<strong>കലിമയുടെ വിഭജനം (Ism, Fi‘l, Ḥarf):</strong> അറബി പദങ്ങൾ മൂന്ന് വിധം — നാമം (Ism), ക്രിയ (Fi‘l), അവ്യയം (Ḥarf).",
+              "<strong>മഅ്രിഫയും നകിറയും (Definiteness):</strong> തൻവീൻ ഉള്ളവ അനിശ്ചിത നാമവും (Nakirah), 'അൽ-' (ال) ചേർത്താൽ നിശ്ചിത നാമവുമാണ് (Ma‘rifah).",
+              "<strong>ശംസിയ്യ & ഖമരിയ്യ അക്ഷരങ്ങൾ:</strong> 14 ശംസിയ്യ അക്ഷരങ്ങളിൽ ലാം ലയിച്ചു ഷദ്ദ് വരുന്നു; 14 ഖമരിയ്യ അക്ഷരങ്ങളിൽ ലാം സ്പഷ്ടമായി ഉച്ചരിക്കപ്പെടുന്നു.",
+              "<strong>ലിംഗവും വചനവും (Gender & Number):</strong> താഉൽ മർബൂത്വ (ة) സ്ത്രീലിംഗ അടയാളം. മുഫ്റദ് (ഏകവചനം), മുഥന്ന (ദ്വിവചനം - ആനി/ഐനി), ജംഅ് (ബഹുവചനം - സാലിം & തക്സീർ).",
+              "<strong>സിഫത്തും ഇളാഫത്തും:</strong> സിഫത്ത്-മൗസൂഫ് നാല് കാര്യങ്ങളിലും (ലിംഗം, വചനം, വിഭക്തി, നിശ്ചിതത്വം) പൊരുത്തപ്പെടുന്നു. ഇളാഫത്തിൽ ആദ്യ പദം (മുളാഫ്) തൻവീനും 'അൽ'ഉം സ്വീകരിക്കില്ല; രണ്ടാമത്തെ പദം (മുളാഫുൻ ഇലൈഹി) മജ്റൂറായിരിക്കും."
+            ],
+            "examTip": "യൂണിവേഴ്സിറ്റി പരീക്ഷയ്ക്ക് സിഫത്ത്-മൗസൂഫ് വ്യത്യാസം, ഇളാഫത്ത് നിയമങ്ങൾ, ശംസിയ്യ-ഖമരിയ്യ അക്ഷരങ്ങളുടെ പട്ടിക, തൻവീൻ പ്രയോഗങ്ങൾ എന്നിവ 5 & 10 മാർക്ക് വിഭാഗത്തിൽ ചോദിക്കാറുണ്ട്."
+          },
+          {
+            "chapterNumber": "Chapter 02",
+            "title": "ക്രിയാപദങ്ങളും വാക്യഘടനയും (Arabic Verbal Sentences & Tenses)",
+            "chapter": "മാളീ (ഭൂതകാലം), മുളാരിഅ് (വർത്തമാനം/ഭാവി), അംറ് (ആജ്ഞാ ക്രിയകൾ), ജുംല ഫിഅ്ലിയ്യ & നാമവിശേഷണ വാക്യങ്ങൾ",
+            "duration": "20:00",
+            "youtubeId": "GkEW0h43nAs",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/GkEW0h43nAs/hqdefault.jpg",
+            "language": "Arabic",
+            "studyPoints": [
+              "<strong>അൽ-ഫിഅ്ലുൽ മാളീ (Past Tense):</strong> അടിസ്ഥാന ത്രിയക്ഷര രൂപം (ഉദാ: കതബ, ഫഅല, ദഹബ). കർത്താവിന്റെ ലിംഗ-വചനത്തിനനുസരിച്ചുള്ള 14 സംയോജന രൂപങ്ങൾ (Conjugation).",
+              "<strong>അൽ-ഫിഅ്ലുൽ മുളാരിഅ് (Present/Future Tense):</strong> അത്തീന (أ، ت، ي، ن) എന്നീ മുളാരിഇന്റെ അടയാളങ്ങൾ മുൻപിൽ ചേർത്ത് രൂപീകരിക്കുന്നു (ഉദാ: യക്തുബു, തക്തുബു).",
+              "<strong>ഫിഅ്ലുൽ അംറ് (Imperative Verbs):</strong> രണ്ടാം പുരുഷനിൽ നിന്ന് കൽപ്പന/അഭ്യർത്ഥന രൂപീകരണം (ഉദാ: ഉക്തുബ്, ഇജ്‌ലിസ്).",
+              "<strong>ജുംല ഫിഅ്ലിയ്യ ഘടന:</strong> ഫിഅ്ല് (ക്രിയ) + ഫാഇൽ (കർത്താവ് - മർഫൂഅ്) + മഫ്ഊൽ ബിഹീ (കർമ്മം - മൻസൂബ്). ക്രിയ മുന്നിൽ വരുമ്പോൾ എപ്പോഴും ഏകവചനമായിരിക്കും.",
+              "<strong>ജുംല ഇസ്മിയ്യ & ഖബർ:</strong> മുബ്തദഅ് (ആദ്യ നാമം - മർഫൂഅ്) + ഖബർ (വാർത്ത - മർഫൂഅ്). ജുംല ഇസ്മിയ്യയെ ഫിഅ്ലിയ്യയാക്കി മാറ്റുന്ന രീതികൾ."
+            ],
+            "examTip": "കാലിക്കറ്റ് പരീക്ഷയിൽ ക്രിയകളുടെ 14 രൂപങ്ങളിലുള്ള രൂപാന്തരണം (തസ്റീഫ്), ജുംല ഫിഅ്ലിയ്യയെ ഇസ്മിയ്യയാക്കൽ, ഫാഇൽ-മഫ്ഊൽ വിഭക്തി ചിഹ്നങ്ങൾ എന്നിവ നിർബന്ധമായും പഠിക്കുക."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE 02: READING COMPREHENSION & TEXTS (قطرات الندى وقراءات عربية)",
+        "videos": [
+          {
+            "chapterNumber": "Chapter 03",
+            "title": "ക്ലാസിക്കൽ & ആധുനിക പാഠഭാഗങ്ങൾ (Classical & Modern Arabic Texts)",
+            "chapter": "അധ്വാനത്തിന്റെ മഹത്വം (ഥർവത്തുൽ അമൽ), പിതാവിന്റെ ഉപദേശങ്ങൾ, ക്ലാസിക്കൽ അറബിക് സാഹിത്യ വിശകലനം",
+            "duration": "22:00",
+            "youtubeId": "aOgymHqbK8k",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/aOgymHqbK8k/hqdefault.jpg",
+            "language": "Arabic",
+            "studyPoints": [
+              "<strong>ഥർവത്തുൽ അമൽ (Work Is Wealth):</strong> തൊഴിലിന്റെ മഹത്വവും സ്വാശ്രയത്വവും വ്യക്തമാക്കുന്ന അറബിക് പാഠഭാഗം. പിതാവ് മകന് നൽകുന്ന മൂന്ന് അമൂല്യ ഉപദേശങ്ങൾ.",
+              "<strong>ക്ലാസിക്കൽ ശൈലികൾ:</strong> ഖുർആനിക സൂക്തങ്ങളും തിരുവചനങ്ങളും ഉദ്ധരിച്ചുകൊണ്ടുള്ള ഭാഷാ ശൈലി.",
+              "<strong>ആശയഗ്രഹണ വ്യായാമങ്ങൾ:</strong> പാഠഭാഗത്തെ ആസ്പദമാക്കിയുള്ള ചോദ്യോത്തരങ്ങൾ, സംഗ്രഹ രചന, ശരി/തെറ്റ് കണ്ടെത്തൽ.",
+              "<strong>പദാവലി സമ്പുഷ്ടീകരണം (Vocabulary):</strong> ക്ലാസിക്കൽ അറബിക് സാഹിത്യത്തിൽ ഉപയോഗിക്കുന്ന ഉന്നത പദങ്ങളും അവയുടെ മലയാള/ഇംഗ്ലീഷ് അർത്ഥങ്ങളും."
+            ],
+            "examTip": "ഥർവത്തുൽ അമൽ പാഠത്തിലെ ഉപദേശങ്ങൾ, പാഠസംഗ്രഹം, അനുബന്ധ വ്യാകരണ ചോദ്യങ്ങൾ എന്നിവ ഉപന്യാസ രൂപത്തിൽ തയ്യാറാക്കുക."
+          },
+          {
+            "chapterNumber": "Chapter 04",
+            "title": "ദൈനംദിന അറബി സംഭാഷണങ്ങൾ (Conversational Arabic in Daily Life)",
+            "chapter": "മാർക്കറ്റ്, വിമാനത്താവളം, ആശുപത്രി, ഓഫീസ് സംഭാഷണങ്ങൾ, സമയവും ആരോഗ്യവും (അൽ-വഖ്തു വസ്സിഹ്ഹ)",
+            "duration": "19:00",
+            "youtubeId": "OKnXFgDqFug",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/OKnXFgDqFug/hqdefault.jpg",
+            "language": "Arabic",
+            "studyPoints": [
+              "<strong>അൽ-ഹിവാറാത്തുൽ യൗമിയ്യ (Daily Dialogues):</strong> വിപണിയിലെ വിലപേശലുകൾ, വിമാനത്താവളത്തിലെ ചെക്ക്-ഇൻ, ഇമിഗ്രേഷൻ സംഭാഷണങ്ങൾ.",
+              "<strong>ആശുപത്രിയും ആരോഗ്യവും:</strong> രോഗലക്ഷണങ്ങൾ വിവരിക്കൽ, ഡോക്ടറുമായുള്ള ആശയവിനിമയം, മരുന്നുകളുടെ കുറിപ്പടി മനസ്സിലാക്കൽ.",
+              "<strong>അൽ-വഖ്തു വസ്സിഹ്ഹ (Time and Health):</strong> സമയത്തിന്റെ വില, ആരോഗ്യ സംരക്ഷണം, പ്രവാചക വചനങ്ങളുടെ വെളിച്ചത്തിലുള്ള ചർച്ചകൾ.",
+              "<strong>ചോദ്യശബ്ദങ്ങൾ (Adawāt al-Istifhām):</strong> മാ, മാദാ, മൻ, ഐന, മതാ, കൈഫ, കമ്, ലിമാദാ, ഹൽ എന്നിവയുടെ പ്രായോഗിക വാക്യങ്ങൾ."
+            ],
+            "examTip": "മാർക്കറ്റിലോ വിമാനത്താവളത്തിലോ നടക്കുന്ന ഒരു സംഭാഷണം തയ്യാറാക്കാൻ (10 മാർക്ക് ഡയലോഗ് റൈറ്റിംഗ്) പരീക്ഷയ്ക്ക് ചോദിക്കാറുണ്ട്."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE 03: FUNCTIONAL & COMMERCIAL ARABIC (العربية الوظيفية والتجارية)",
+        "videos": [
+          {
+            "chapterNumber": "Chapter 05",
+            "title": "ഔദ്യോഗിക എഴുത്തുകുത്തുകളും വാണിജ്യ അറബിയും (Commercial Arabic & Business Letters)",
+            "chapter": "ബിസിനസ് കത്തുകൾ, ബാങ്കിംഗ്, ഓർഡർ ഫോമുകൾ, ഇൻവോയ്സ്, ഔദ്യോഗിക മെമ്മോകൾ & വാണിജ്യ സാങ്കേതിക പദാവലി",
+            "duration": "21:00",
+            "youtubeId": "OQfXlhCslBY",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/OQfXlhCslBY/hqdefault.jpg",
+            "language": "Arabic",
+            "studyPoints": [
+              "<strong>വാണിജ്യ അറബിയുടെ സ്വഭാവം:</strong> വ്യക്തത, കൃത്യത, സംക്ഷിപ്തത എന്നിവയാർന്ന പ്രൊഫഷണൽ അറബിക് എഴുത്തുരീതികൾ.",
+              "<strong>ഔദ്യോഗിക കത്തുകളുടെ ഘടന:</strong> തലക്കെട്ട്, ബിസ്മില്ലാഹി, സംബോധന (അസ്സയ്യിദ് / അൽ-മുഹതറം), വിഷയ സൂചിക (അൽ-മൗളൂഅ്), സമാപനം (വത്തഖദ്ദലൂ ബിഖബൂലി ഫാഇഖിൽ ഇഹ്തിറാം).",
+              "<strong>തൊഴിൽ അപേക്ഷകളും സി.വി.യും (Job Applications & CV):</strong> ബയോഡാറ്റ തയ്യാറാക്കൽ, കവർ ലെറ്റർ, യോഗ്യതകളും പ്രവൃത്തിപരിചയവും രേഖപ്പെടുത്തൽ.",
+              "<strong>വാണിജ്യ പദാവലി (Commercial Lexicon):</strong> ബാങ്ക് (ബങ്ക്), അക്കൗണ്ട് (ഹിസാബ്), ചെക്ക് (ശീക്ക്), കമ്പോളം (സൂഖ്), ലാഭം (രിബ്ഹ്), കരാർ (അഖ്ദ്), ഇറക്കുമതി/കയറ്റുമതി (ഇസ്തീറാദ്/തസ്ദീർ)."
+            ],
+            "examTip": "തൊഴിൽ അപേക്ഷ (ത്വലബുൽ വളീഫ) അല്ലെങ്കിൽ സാധനങ്ങൾ ഓർഡർ ചെയ്തുകൊണ്ടുള്ള വാണിജ്യ കത്ത് പരീക്ഷയിലെ സ്ഥിരം 10/15 മാർക്ക് ചോദ്യമാണ്."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE 04: TRANSLATION & CREATIVE EXPRESSION (الترجمة والتعبير الإبداعي)",
+        "videos": [
+          {
+            "chapterNumber": "Chapter 06",
+            "title": "വിവർത്തന രീതികൾ: അറബിക് - മലയാളം - ഇംഗ്ലീഷ് (Translation Methods: Arabic-Mal-Eng)",
+            "chapter": "വിവർത്തന തത്ത്വങ്ങൾ, സാങ്കേതിക വാക്യങ്ങൾ, ശൈലികൾ, പഴഞ്ചൊല്ലുകൾ (അംഥാൽ) & ദ്വിഭാഷാ പരിശീലനങ്ങൾ",
+            "duration": "23:00",
+            "youtubeId": "xmmSpkecMCk",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/xmmSpkecMCk/hqdefault.jpg",
+            "language": "Arabic",
+            "studyPoints": [
+              "<strong>വിവർത്തന സിദ്ധാന്തങ്ങൾ:</strong> വാചിക വിവർത്തനം (Literal) vs ആശയ വിവർത്തനം (Dynamic/Idiomatic). അറബി-മലയാളം വാക്യഘടനകളിലെ വ്യത്യാസങ്ങൾ (VSO vs SOV).",
+              "<strong>വാക്യ വിവർത്തന തന്ത്രങ്ങൾ:</strong> നാമവിശേഷണ വാക്യങ്ങൾ, സർവ്വനാമങ്ങൾ, അവ്യയങ്ങൾ എന്നിവ മലയാളത്തിലേക്കും ഇംഗ്ലീഷിലേക്കും തർജ്ജമ ചെയ്യുന്ന രീതി.",
+              "<strong>പഴഞ്ചൊല്ലുകളും ശൈലികളും (Amthāl & Proverbs):</strong> 'അൽ-വഖ്തു കസ്സൈഫ്' (Time is like a sword), 'അൽ-ഇൽമു നൂറുൻ' (Knowledge is light) തുടങ്ങിയവയുടെ വിവർത്തന ചാരുത.",
+              "<strong>സാങ്കേതിക-വാർത്താ വിവർത്തനം:</strong> വാർത്താ ശകലങ്ങൾ, ഔദ്യോഗിക സർക്കുലറുകൾ, പത്രക്കുറിപ്പുകൾ എന്നിവയുടെ തർജ്ജമ."
+            ],
+            "examTip": "അറബിയിൽ നിന്ന് മലയാളത്തിലേക്കും തിരിച്ചും 5 വീതം വാക്യങ്ങൾ വിവർത്തനം ചെയ്യാനുള്ള ചോദ്യത്തിന് 10 മാർക്ക് ലഭിക്കും; ക്രിയാ-കർത്താ പൊരുത്തം സൂക്ഷ്മമായി ശ്രദ്ധിക്കുക."
+          }
+        ]
+      }
     ],
     "totalVideos": 6
-},
+  },
   "hindi": {
     "name": "Hindi",
     "badge": "हि",
