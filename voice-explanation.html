@@ -5304,7 +5304,7 @@
   </div>
   <!-- Load Subject Voice Data -->
 
-  <script src="voice_explanation_data.js?v=1794331000"></script>
+  <script src="voice_explanation_data.js?v=1794330900"></script>
 
 
 
@@ -6043,7 +6043,7 @@
 
                     const skipTime = details.seekOffset || 10;
 
-                    if (!hasValidYt && !hasDirectVideo && hasAudio) {
+                    if (v.audioUrl) {
 
                       nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - skipTime);
 
@@ -6055,7 +6055,7 @@
 
                     const skipTime = details.seekOffset || 10;
 
-                    if (!hasValidYt && !hasDirectVideo && hasAudio) {
+                    if (v.audioUrl) {
 
                       nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + skipTime);
 
@@ -6111,7 +6111,7 @@
 
                 isAudioPaused = false;
 
-                pauseBtn.innerHTML = `<span class="vpp-pause-icon">⏸</span> ${(hasDirectVideo || hasValidYt) ? 'Pause Video' : 'Pause Voice'}`;
+                pauseBtn.innerHTML = '<span class="vpp-pause-icon">⏸</span> Pause Voice';
 
                 equalizer.classList.remove('paused');
 
@@ -6181,8 +6181,10 @@
 
                       : 'https://academichubfaiz.in';
 
+                    const autoMlCc = (v.malayalam_cc || v.language === 'English') ? '&cc_load_policy=1&cc_lang_pref=ml&hl=ml' : '';
+
                     frameWrap.innerHTML = `
-                      <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&enablejsapi=1&origin=${encodeURIComponent(currentOrigin)}&playsinline=1&rel=0&modestbranding=1"
+                      <iframe src="https://www.youtube-nocookie.com/embed/${v.youtubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1${autoMlCc}"
                               title="${v.title}"
                               style="width:100%; aspect-ratio:16/9; border:none; border-radius:10px 10px 0 0; display:block;"
                               referrerpolicy="strict-origin-when-cross-origin"
@@ -6409,7 +6411,7 @@
 
                     vid.currentTime = Math.max(0, vid.currentTime - 10);
 
-                  } else if (!hasValidYt && hasAudio) {
+                  } else if (v.audioUrl) {
 
                     nativeAudio.currentTime = Math.max(0, nativeAudio.currentTime - 10);
 
@@ -6433,7 +6435,7 @@
 
                     vid.currentTime = Math.min(vid.duration || 9999, vid.currentTime + 10);
 
-                  } else if (!hasValidYt && hasAudio) {
+                  } else if (v.audioUrl) {
 
                     nativeAudio.currentTime = Math.min(nativeAudio.duration || 9999, nativeAudio.currentTime + 10);
 
@@ -6459,11 +6461,13 @@
 
                   const vid = frameWrap ? frameWrap.querySelector('video') : null;
 
-                  if (vid) {
+                  if (vid) vid.playbackRate = newSpeed;
 
-                    vid.playbackRate = newSpeed;
+                  if (v.audioUrl) {
 
-                  } else if (hasValidYt) {
+                    nativeAudio.playbackRate = newSpeed;
+
+                  } else if (v.youtubeId) {
 
                     const iframe = frameWrap.querySelector('iframe');
 
@@ -6480,10 +6484,6 @@
                       }), '*');
 
                     }
-
-                  } else if (hasAudio) {
-
-                    nativeAudio.playbackRate = newSpeed;
 
                   }
 

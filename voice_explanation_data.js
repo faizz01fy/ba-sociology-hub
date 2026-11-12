@@ -495,281 +495,347 @@ window.VOICE_EXPLANATIONS_DATA = {
     ]
   },
   "english": {
-    "name": "English",
+    "name": "English Language & Literature",
     "badge": "Aa",
     "iconClass": "icon-blue",
-    "tag": "LANGUAGE",
+    "tag": "BA / B.SC / B.COM FYUGP · AEC1-ENGLISH",
     "modules": [
       {
-        "moduleName": "MODULE 01: LISTENING SKILLS",
+        "moduleName": "MODULE 01: LISTENING SKILLS (FYUGP English)",
         "videos": [
           {
-            "chapterNumber": "Chapter 01 (English Edition)",
-            "title": "I Have a Dream (English Edition)",
-            "chapter": "English cinematic overview · Martin Luther King Jr. · Context, themes and rhetorical devices",
-            "duration": "5:20",
-            "youtubeId": "OeMGI2CWtLA",
-            "language": "English",
+            "chapterNumber": "Chapter 01 (V1)",
+            "title": "ഐ ഹാവ് എ ഡ്രീം (I Have a Dream) - V1 | Listening Skills | Calicut Univ",
+            "chapter": "Martin Luther King Jr. · Historical Context, Themes & Rhetorical Devices",
+            "duration": "15:25",
+            "thumbnail": "https://i.ytimg.com/vi/kHsueedBZdY/hqdefault.jpg",
+            "youtubeId": "kHsueedBZdY",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "malayalam_cc": false,
             "studyPoints": [
-              "Historical context: Martin Luther King Jr. delivered the speech at the Lincoln Memorial during the March on Washington on August 28, 1963.",
-              "Equality and justice: The speech challenges racial discrimination and calls for constitutional promises to become everyday reality.",
-              "Nonviolence and brotherhood: King argues for peaceful resistance, human dignity and solidarity across communities.",
-              "Anaphora and Metaphor: Repeated phrases build rhythm and emphasis; images such as an unfulfilled cheque make abstract injustice concrete.",
-              "Listening practice: Notice emphasis, cadence, pauses and repetition, then revisit the original speech without visuals.",
-              "About this overview: English-language cinematic study aid generated with Google NotebookLM from the AcademicHub chapter PDF for Calicut University learners."
+              "<strong>Historical Context:</strong> Martin Luther King Jr. 1963 August 28-ന് Lincoln Memorial-ൽ നടത്തിയ വിശ്വപ്രസിദ്ധമായ പൗരാവകാശ പ്രസംഗം (Civil Rights Movement).",
+              "<strong>Central Themes:</strong> വംശീയ സമത്വം (Racial Equality), അനീതിക്കെതിരായ അഹിംസാ സമരം (Nonviolent Resistance), അമേരിക്കൻ ഭരണഘടന വാഗ്ദാനം ചെയ്ത സ്വാതന്ത്ര്യ സാക്ഷാത്കാരം.",
+              "<strong>Rhetorical Devices:</strong> ആവർത്തനം (Repetition / Anaphora — 'I have a dream', 'Let freedom ring'), പ്രതീകങ്ങൾ (Metaphors — 'cashing a check', 'promissory note').",
+              "<strong>Audience & Impact:</strong> 250,000-ലധികം വരുന്ന സദസ്സിനോടും ലോകത്തോടുമായി നടത്തിയ ഹൃദയസ്പർശിയായ സംവാദം; 1964-ലെ Civil Rights Act പാസാക്കാൻ വഴിതെളിച്ചു."
             ],
-            "examTip": "Connect each rhetorical device to its effect on listeners. Distinguish the historical setting, central themes and techniques of persuasion."
+            "examTip": "Historical Context, central themes, rhetorical devices (Anaphora, Metaphor) എന്നിവ വേർതിരിച്ച് 10 മാർക്കിന്റെ ഉപന്യാസ ചോദ്യങ്ങൾക്ക് പഠിക്കുക."
           },
           {
-            "chapterNumber": "Chapter 01",
-            "title": "I Have a Dream",
-            "chapter": "Malayalam voice overview · Martin Luther King Jr. · Context, themes and rhetorical devices",
-            "duration": "15:24",
-            "youtubeId": "kHsueedBZdY",
-            "language": "Malayalam",
+            "chapterNumber": "Chapter 01 (V2)",
+            "title": "I Have a Dream (MLK Speech Analysis) - V2 | Listening Skills | Calicut Univ",
+            "chapter": "English Edition · Martin Luther King Jr. · Context, Themes & Rhetoric",
+            "duration": "5:20",
+            "thumbnail": "https://i.ytimg.com/vi/ZdrMJqXnKyE/hqdefault.jpg",
+            "youtubeId": "ZdrMJqXnKyE",
+            "videoUrl": null,
+            "language": "English",
+            "malayalam_cc": true,
             "studyPoints": [
-              "Historical Context: Martin Luther King Jr. 1963 August 28-ന് Lincoln Memorial-ൽ നടത്തിയ പ്രസംഗമാണ് I Have a Dream. March on Washington ആണ് പ്രസംഗത്തിന്റെ പ്രധാന പശ്ചാത്തലം.",
-              "Equality and Justice: വംശീയ വിവേചനം അവസാനിപ്പിക്കാനും എല്ലാവർക്കും തുല്യ അവകാശങ്ങൾ ജീവിതത്തിൽ അനുഭവപ്പെടാനും പ്രസംഗം ആഹ്വാനം ചെയ്യുന്നു.",
-              "Constitutional Promises: ഭരണഘടന ഉറപ്പുനൽകുന്ന അവകാശങ്ങളും സമൂഹത്തിലെ യാഥാർത്ഥ്യവും തമ്മിലുള്ള അന്തരം King ചൂണ്ടിക്കാട്ടുന്നു.",
-              "Nonviolence and Brotherhood: വെറുപ്പിനും അക്രമത്തിനും വഴങ്ങാതെ മനുഷ്യന്റെ Dignity സംരക്ഷിച്ചുകൊണ്ട് നീതിക്കായി പ്രവർത്തിക്കണം.",
-              "Anaphora and Metaphor: ആവർത്തനം ആശയത്തിന് ഊന്നലും താളവും നൽകുന്നു. നിറവേറ്റാത്ത വാഗ്ദാനത്തെ cheque-നോട് ഉപമിക്കുന്നത് Metaphor-ന്റെ ഉദാഹരണമാണ്.",
-              "Listening Practice: പ്രസംഗത്തിലെ emphasis, cadence, pauses, repetition എന്നിവ ശ്രദ്ധിക്കുക. ആദ്യം വീഡിയോയോടെയും പിന്നീട് ഓഡിയോ മാത്രമായും യഥാർത്ഥ പ്രസംഗം കേൾക്കുക.",
-              "About this overview: Calicut University പഠിതാക്കൾക്കായി AcademicHub chapter PDF അടിസ്ഥാനമാക്കിയുള്ള NotebookLM Malayalam audio-യും animated illustrative visuals-ഉം ചേർത്ത പഠനസഹായി."
+              "<strong>Historical Milestones:</strong> Delivered during the March on Washington for Jobs and Freedom in August 1963.",
+              "<strong>Core Philosophy:</strong> Rooted in the American Dream and the Declaration of Independence guaranteeing unalienable rights.",
+              "<strong>Rhetorical Craft:</strong> Masterful cadence, biblical allusions, and persistent emotional refrains.",
+              "<strong>Global Resonance:</strong> Became a universal hymn for nonviolent protest and human dignity across the globe."
             ],
-            "examTip": "Historical Context, central themes, rhetorical devices എന്നിവ വേർതിരിച്ച് പഠിക്കുക. ഓരോ device-ഉം കേൾവിക്കാരിൽ സൃഷ്ടിക്കുന്ന സ്വാധീനം ഉദാഹരണത്തോടെ വിശദീകരിക്കുക."
+            "examTip": "Focus on the promissory note metaphor and explain how non-violence is framed as a moral imperative in the English edition."
           },
           {
             "chapterNumber": "Chapter 02",
-            "title": "Anthem",
-            "chapter": "Leonard Cohen · Module 1, Chapter 2 · Malayalam explanation",
+            "title": "ആന്തം - ലിയനാർഡ് കോഹൻ (Anthem) | Listening Skills | Calicut Univ",
+            "chapter": "Leonard Cohen · Imperfection, Hope & Societal Fragility",
             "duration": "8:11",
-            "youtubeId": "A9maAWgaovY",
+            "thumbnail": "https://i.ytimg.com/vi/qJDNqI7AoDw/hqdefault.jpg",
+            "youtubeId": "qJDNqI7AoDw",
+            "videoUrl": null,
             "language": "Malayalam",
-            "thumbnail": "/thumbnails/english-module1-chapter2-anthem.jpg",
+            "malayalam_cc": false,
             "studyPoints": [
-              "Leonard Cohen (ലിയനാർഡ് കോഹൻ): Anthem എന്ന ഗാനത്തിന്റെ രചയിതാവായ Canadian singer-songwriter and poet-ന്റെ പശ്ചാത്തലം.",
-              "Hope and Imperfection (പ്രത്യാശയും അപൂർണ്ണതയും): തകർച്ചകളും പരിമിതികളും ഉണ്ടായിരിക്കുമ്പോഴും പ്രത്യാശ കണ്ടെത്തുന്നതാണ് പ്രധാന ആശയം.",
-              "Symbolism and Imagery (പ്രതീകങ്ങളും ദൃശ്യബിംബങ്ങളും): മണികൾ, വിള്ളൽ, വെളിച്ചം തുടങ്ങിയ പ്രതീകങ്ങൾ ഗാനത്തിന്റെ സന്ദേശം വ്യക്തമാക്കുന്നു.",
-              "Love and Human Suffering (സ്നേഹവും മനുഷ്യവേദനയും): മനുഷ്യബന്ധങ്ങളും സംഘർഷങ്ങളും ഗാനത്തിലെ ചിന്തകളുമായി ബന്ധിപ്പിക്കുക.",
-              "Themes and Conclusion (പ്രമേയങ്ങളും ഉപസംഹാരവും): പ്രധാന ആശയങ്ങൾ തിരിച്ചറിഞ്ഞ് ഗാനത്തിലെ ഉദാഹരണങ്ങളുമായി ബന്ധപ്പെടുത്തി വിശദീകരിക്കുക."
+              "<strong>Author Background:</strong> കനേഡിയൻ ഗായകനും കവിയുമായ ലിയനാർഡ് കോഹന്റെ (Leonard Cohen) വിശ്വപ്രസിദ്ധമായ കാവ്യാത്മക ഗാനം (1992 Album 'The Future').",
+              "<strong>Central Refrain:</strong> 'There is a crack in everything, that\\'s how the light gets in' — അപൂർണ്ണതകളാണ് പ്രത്യാശയിലേക്കും മാനുഷിക വളർച്ചയിലേക്കും വെളിച്ചം പകരുന്നത്.",
+              "<strong>Major Themes:</strong> യുദ്ധം, രാഷ്ട്രീയ അനിശ്ചിതത്വം, ആത്മീയ രക്ഷ, മാനവികതയുടെ അപൂർണ്ണതകൾ.",
+              "<strong>Symbolism:</strong> മണിനാദം (The Bells that still can ring), വിള്ളലുകൾ (Cracks as conduits of enlightenment), പ്രാവ് (The Dove)."
             ],
-            "examTip": "Explain how Cohen connects imperfection with hope. Identify the major symbols and discuss their significance. അപൂർണ്ണതയും പ്രത്യാശയും തമ്മിലുള്ള ബന്ധം ഗാനത്തിലെ പ്രതീകങ്ങളിലൂടെ വിശദീകരിക്കുക."
+            "examTip": "കോഹന്റെ അപൂർണ്ണതയും പ്രത്യാശയും തമ്മിലുള്ള ബന്ധം ('There is a crack in everything') വിശദീകരിക്കാൻ ചോദിക്കാറുണ്ട്."
           },
           {
-            "chapterNumber": "Chapter 03",
-            "title": "Art as a Social Work",
-            "chapter": "Core summary (English): Amy Morales Lara presents art as a form of social work that supports healing, storytelling, community connection, and social change. പ്രധാന സംഗ്രഹം (മലയാളം): Amy Morales Lara കലையை രോഗശാന്തിക്കും കഥപറച്ചിലിനും സമൂഹബന്ധത്തിനും സാമൂഹിക മാറ്റത്തിനും സഹായിക്കുന്ന സാമൂഹിക പ്രവർത്തനമായി അവതരിപ്പിക്കുന്നു.",
+            "chapterNumber": "Chapter 03 (V1)",
+            "title": "ആർട്ട് ആസ് എ സോഷ്യൽ വർക്ക് (Art as Social Work) - V1 | Calicut Univ",
+            "chapter": "Amy Morales Lara · Healing, Community Empowerment & Storytelling",
             "duration": "7:58",
+            "thumbnail": "https://i.ytimg.com/vi/A9maAWgaovY/hqdefault.jpg",
             "youtubeId": "A9maAWgaovY",
+            "videoUrl": null,
             "language": "Malayalam",
+            "malayalam_cc": false,
             "studyPoints": [
-              "Speaker &amp; Background (പ്രഭാഷകയും പശ്ചാത്തലവും): Amy Morales Lara is an artist and social worker from the Bronx. ബ്രോങ്ക്സിൽ നിന്നുള്ള ആർട്ടിസ്റ്റും സോഷ്യൽ വർക്കറുമായ Amy Morales Lara-യുടെ അനുഭവങ്ങളും ആശയങ്ങളുമാണ് പ്രഭാഷണത്തിന്റെ അടിസ്ഥാനം.",
-              "Art, Healing &amp; Storytelling (കല, രോഗശാന്തി, കഥപറച്ചിൽ): Art can help people work through trauma and express the experiences of communities whose voices are often unheard. ട്രോമകളെ അതിജീവിക്കാനും പലപ്പോഴും കേൾക്കപ്പെടാത്ത സമൂഹങ്ങളുടെ അനുഭവങ്ങൾ പങ്കുവെക്കാനും കല സഹായിക്കുന്നു.",
-              "The Bronx Project (ബ്രോങ്ക്സ് പദ്ധതി): Conversations with community artists show how art can become a tool for connection and social change. സമൂഹത്തിലെ കലാകാരന്മാരുമായുള്ള സംഭാഷണങ്ങൾ ബന്ധം വളർത്താനും സാമൂഹിക മാറ്റത്തിനും കലയെ ഉപകരണമാക്കുന്നതെങ്ങനെ എന്ന് വ്യക്തമാക്കുന്നു.",
-              "Empathetic Curiosity (അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ): Approaching people and their stories with curiosity and empathy can create meaningful change in health and community work. ജിജ്ഞാസയോടെയും അനുഭാവത്തോടെയും ആളുകളെയും അവരുടെ കഥകളെയും സമീപിക്കുന്നത് ആരോഗ്യപരിപാലനത്തിലും സാമൂഹിക പ്രവർത്തനത്തിലും അർത്ഥവത്തായ മാറ്റമുണ്ടാക്കുന്നു."
+              "<strong>Speaker & Philosophy:</strong> ആർട്ടിസ്റ്റും സോഷ്യൽ വർക്കറുമായ എമി മൊറേൽസ് ലാറ (Amy Morales Lara) കലയെ സാമൂഹിക വിമോചനത്തിനുള്ള ഉപകരണമായി കാണുന്നു.",
+              "<strong>Art as Healing:</strong> ട്രോമ, മാനസിക സംഘർഷങ്ങൾ എന്നിവയിൽ നിന്ന് മോചനം നേടാനും ആത്മപ്രകാശനം സാധ്യമാക്കാനും കല സഹായിക്കുന്നു.",
+              "<strong>Community Connection:</strong> പ്രാന്തവൽക്കരിക്കപ്പെട്ട സമൂഹങ്ങൾക്ക് അവരുടെ ശബ്ദം രേഖപ്പെടുത്താനും കൂട്ടായ്മ ശക്തിപ്പെടുത്താനും ഉള്ള സർഗ്ഗാത്മക വേദി.",
+              "<strong>Social Transformation:</strong> കേവല സൗന്ദര്യശാസ്ത്രത്തിനപ്പുറം സാമൂഹിക നീതിക്കും അവകാശ പോരാട്ടങ്ങൾക്കും കലയെ എങ്ങനെ പ്രയോജനപ്പെടുത്താം എന്ന് വിശദീകരിക്കുന്നു."
             ],
-            "examTip": "Explain how Amy Morales Lara connects art with healing, storytelling, community practice, and empathetic curiosity. Amy Morales Lara കല, രോഗശാന്തി, കഥപറച്ചിൽ, സാമൂഹിക ഇടപെടൽ, അനുഭാവപൂർണ്ണമായ ജിജ്ഞാസ എന്നിവയെ എങ്ങനെ ബന്ധിപ്പിക്കുന്നു എന്ന് വിശദീകരിക്കുക."
+            "examTip": "കലയും സോഷ്യൽ വർക്കും തമ്മിലുള്ള പരസ്പര ബന്ധം, കമ്മ്യൂണിറ്റി ഹീലിംഗിൽ ആർട്ടിന്റെ പങ്ക് എന്നിവ പ്രധാനമാണ്."
+          },
+          {
+            "chapterNumber": "Chapter 03 (V2)",
+            "title": "The Art of Liberation (Social Work) - V2 | Listening Skills | Calicut Univ",
+            "chapter": "English Edition · Amy Morales Lara · Why Social Work Needs a Paintbrush",
+            "duration": "5:36",
+            "thumbnail": "https://i.ytimg.com/vi/zn7OMOiK69w/hqdefault.jpg",
+            "youtubeId": "zn7OMOiK69w",
+            "videoUrl": null,
+            "language": "English",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "<strong>Creative Therapy:</strong> Explores how non-verbal artistic expression bypasses linguistic trauma to foster genuine recovery.",
+              "<strong>Grassroots Agency:</strong> Giving marginalized communities ownership of their narratives through participatory murals and workshops.",
+              "<strong>Bridging Theory & Practice:</strong> Unifying classical clinical social work with radical grassroots artistic intervention."
+            ],
+            "examTip": "Highlight the concept of 'participatory art as restorative justice' for 5-mark short essays."
           }
         ]
       },
       {
-        "moduleName": "MODULE 02: SPEAKING SKILLS",
+        "moduleName": "MODULE 02: SPEAKING SKILLS (FYUGP English)",
         "videos": [
           {
-            "chapterNumber": "Chapter 01",
-            "title": "George Carlin on Soft Language",
-            "chapter": "ജോർജ്ജ് കാർലിൻ · സോഫ്റ്റ് ലാംഗ്വേജ് (George Carlin on Soft Language · Euphemisms & Public Speech)",
+            "chapterNumber": "Chapter 01 (V1)",
+            "title": "മൃദുഭാഷാ പ്രയോഗങ്ങൾ (Soft Language - Carlin) - V1 | Speaking | Calicut Univ",
+            "chapter": "George Carlin on Soft Language · Euphemisms & Public Deception",
             "duration": "11:37",
+            "thumbnail": "https://i.ytimg.com/vi/hNLY9H1czbM/hqdefault.jpg",
             "youtubeId": "hNLY9H1czbM",
+            "videoUrl": null,
             "language": "Malayalam",
+            "malayalam_cc": false,
             "studyPoints": [
-              "George Carlin &amp; Critique: അമേരിക്കൻ സ്റ്റാൻഡ്-അപ്പ് കൊമേഡിയനായ ജോർജ്ജ് കാർലിൻ ആധുനിക സമൂഹത്തിൽ ഭാഷയെ വികലമാക്കുന്നതിനെതിരെ നടത്തിയ വിമർശനാത്മക വിശകലനം.",
-              "Concept of Soft Language (മയപ്പെടുത്തിയ ഭാഷ): യഥാർത്ഥ വേദനകളും കഠിന സത്യങ്ങളും മറച്ചുവെക്കാൻ സമൂഹം ഉപയോഗിക്കുന്ന യൂഫെമിസങ്ങളെ (Euphemisms) കാർലിൻ രൂക്ഷമായി വിമർശിക്കുന്നു.",
-              "Historical Evolution (Shell Shock to PTSD): ഒന്നാം ലോകമഹായുദ്ധത്തിലെ ലളിതവും മൂർച്ചയുള്ളതുമായ 'Shell Shock' എന്ന പദം പിന്നീട് 'Battle Fatigue', 'Operational Exhaustion', ഒടുവിൽ 'Post-Traumatic Stress Disorder' (PTSD) എന്നിങ്ങനെ മയപ്പെടുത്തിയപ്പോൾ സൈനികരുടെ യാഥാർത്ഥ വേദന മറയ്ക്കപ്പെട്ടു എന്ന് കാർലിൻ വ്യക്തമാക്കുന്നു.",
-              "Societal Impact: രാഷ്ട്രീയക്കാരും പരസ്യദാതാക്കളും ജനങ്ങളെ വഞ്ചിക്കാനും സത്യങ്ങൾ ലഘൂകരിക്കാനും സോഫ്റ്റ് ലാംഗ്വേജ് ഒരു ആയുധമായി ഉപയോഗിക്കുന്നു.",
-              "Exam Tips: പരീക്ഷയ്ക്ക് Shell Shock-ന്റെ പരിണാമവും, കാർലിന്റെ തത്ത്വചിന്തയും, ആധുനിക ഭരണകൂട ഭാഷയും തമ്മിലുള്ള ബന്ധം വിശദീകരിക്കുക."
+              "<strong>George Carlin & Critique:</strong> അമേരിക്കൻ സ്റ്റാൻഡ്-അപ്പ് കൊമേഡിയനായ ജോർജ്ജ് കാർലിൻ ആധുനിക സമൂഹം ഭാഷയെ എങ്ങനെ മൂടിവെക്കലിനായി ഉപയോഗിക്കുന്നു എന്ന് പരിഹസിക്കുന്നു.",
+              "<strong>Evolution of Terms:</strong> Shell Shock (WWI) -> Battle Fatigue (WWII) -> Operational Exhaustion (Korea) -> Post-Traumatic Stress Disorder / PTSD (Vietnam).",
+              "<strong>Soft Language vs Direct Language:</strong> വേദനാജനകമായ യാഥാർത്ഥ്യങ്ങളെ മറയ്ക്കാനും വികാരശൂന്യമാക്കാനും ഉദ്യോഗസ്ഥവൃന്ദം കൃത്രിമ പദങ്ങൾ നിർമ്മിക്കുന്നു.",
+              "<strong>Linguistic Concealment:</strong> മൃദുവാക്കുകൾ (Euphemisms) വഴി സമൂഹത്തിന് യാഥാർത്ഥ്യങ്ങളോടുള്ള പ്രതികരണശേഷി നഷ്ടപ്പെടുന്നു."
             ],
-            "examTip": "ഷെൽ ഷോക്ക് (Shell Shock) എങ്ങനെയാണ് ഘട്ടംഘട്ടമായി PTSD ആയി മാറിയതെന്നും, ഭാഷയെ മയപ്പെടുത്തുന്നത് സമൂഹത്തിൽ സൃഷ്ടിക്കുന്ന പ്രത്യാഘാതങ്ങളും കാർലിന്റെ പ്രഭാഷണത്തെ അടിസ്ഥാനമാക്കി വിശദീകരിക്കുക."
+            "examTip": "'Shell Shock' എങ്ങനെയാണ് ഘട്ടംഘട്ടമായി സങ്കീർണ്ണമായ PTSD ആയി മാറിയതെന്ന് ഉദാഹരണസഹിതം വിശദീകരിക്കാൻ പതിവായി ചോദിക്കാറുണ്ട്."
           },
           {
-            "chapterNumber": "Chapter 02",
-            "title": "Death of a Salesman",
-            "chapter": "ആർതർ മില്ലർ · ഡെത്ത് ഓഫ് എ സെയിൽസ്മാൻ (Arthur Miller · Death of a Salesman · Willy Loman & The American Dream)",
-            "duration": "19:02",
-            "youtubeId": "OeMGI2CWtLA",
-            "language": "Malayalam",
-            "studyPoints": [
-              "Arthur Miller &amp; Tragedy: അമേരിക്കൻ നാടകകൃത്തായ ആർതർ മില്ലറുടെ വിശ്വപ്രസിദ്ധമായ ദുരന്തനാടകം. ഒരു സാധാരണക്കാരന്റെ ജീവിതത്തെ ട്രാജഡിയുടെ കേന്ദ്രമാക്കി മാറ്റിയ മാസ്റ്റർപീസ്.",
-              "The Fallacy of American Dream: കഠിനാധ്വാനവും വ്യക്തിപ്രഭാവവും (Being well-liked) കൊണ്ട് മാത്രം വിജയം നേടാമെന്ന മുതലാളിത്ത വ്യാമോഹം വില്ലി ലോമന്റെ ജീവിതത്തെ എങ്ങനെ തകർത്തു എന്ന് പരിശോധിക്കുന്നു.",
-              "Illusion vs. Reality: യാഥാർത്ഥ്യത്തെ ഉൾക്കൊള്ളാൻ കഴിയാതെ ഓർമ്മകളിലും ദിവാസ്വപ്നങ്ങളിലും അഭയം തേടുന്ന വില്ലി ലോമൻ (Willy Loman), ഒടുവിൽ കുടുംബത്തിന് ഇൻഷുറൻസ് തുക ലഭിക്കാനായി ആത്മഹത്യ ചെയ്യുന്നു.",
-              "Family Dynamics: വില്ലിയുടെ അമിത പ്രതീക്ഷകൾക്ക് ഇരയാകുന്ന മക്കളായ ബിഫ് (Biff), ഹാപ്പി (Happy), സ്നേഹനിധിയായ ഭാര്യ ലിൻഡ (Linda) എന്നിവരുടെ വൈകാരിക സംഘർഷങ്ങൾ.",
-              "Key Themes: അന്യവൽക്കരണം (Alienation), ഐഡന്റിറ്റി പ്രതിസന്ധി (Crisis of Identity), ഉപഭോക്തൃ സംസ്കാരത്തിന്റെ ഇരയാകുന്ന മനുഷ്യജീവിതം."
-            ],
-            "examTip": "വില്ലി ലോമന്റെ കഥാപാത്ര നിരൂപണം, അമേരിക്കൻ സ്വപ്നത്തിന്റെ (American Dream) പൊള്ളത്തരം നാടകത്തിൽ എങ്ങനെ ആവിഷ്കരിക്കപ്പെടുന്നു എന്നിവ പരീക്ഷാ ചോദ്യങ്ങളിൽ പ്രധാനമാണ്."
-          },
-          {
-            "chapterNumber": "Chapter 03",
-            "title": "Rip It Out — Dead Poets Society",
-            "chapter": "പീറ്റർ വെയർ · ഡെഡ് പോയറ്റ്സ് സൊസൈറ്റി (Peter Weir · Dead Poets Society · Rip It Out · Conformity & Non-Conformity)",
-            "duration": "17:35",
-            "youtubeId": "hNLY9H1czbM",
-            "language": "Malayalam",
-            "studyPoints": [
-              "Context &amp; Setting: പീറ്റർ വെയർ സംവിധാനം ചെയ്ത 'ഡെഡ് പോയറ്റ്സ് സൊസൈറ്റി' എന്ന ചിത്രത്തിലെ വിഖ്യാതമായ ക്ലാസ്റൂം രംഗം. വെൽട്ടൺ അക്കാദമിയിലെ കർക്കശമായ യാഥാസ്ഥിതിക വിദ്യാഭ്യാസ രീതി.",
-              "John Keating's Philosophy: റോബിൻ വില്യംസ് അവതരിപ്പിച്ച ഇംഗ്ലീഷ് അധ്യാപകൻ ജോൺ കീറ്റിംഗ്, വിദ്യാർത്ഥികളോട് സ്വതന്ത്രമായി ചിന്തിക്കാനും സ്വന്തം ശബ്ദം കണ്ടെത്താനും ആഹ്വാനം ചെയ്യുന്നു ('Carpe Diem' — Seize the day).",
-              "'Rip It Out' Scene: ഡോ. ജെ. ഇവാൻസ് പ്രിച്ചാർഡിന്റെ കവിതയെ അളക്കാനുള്ള ഗണിതശാസ്ത്ര ഫോർമുലയുള്ള പുസ്തകത്താളുകൾ കീറിയെറിയാൻ കീറ്റിംഗ് ആവശ്യപ്പെടുന്നത് കേവലം ഒരു തമാശയല്ല, മറിച്ച് വിദ്യാഭ്യാസത്തിലെ ഔപചാരികതയ്ക്കും ചട്ടക്കൂടുകൾക്കുമെതിരെയുള്ള ശക്തമായ പ്രതീകാത്മക ചെറുത്തുനിൽപ്പാണ്.",
-              "Authenticity &amp; Passion: കവിതയും കലയും ജീവിതം അളക്കാനുള്ളതല്ല, ജീവിക്കാനുള്ള ആവേശവും മനുഷ്യവികാരങ്ങളും ഉണർത്താനുള്ളതാണെന്ന് രംഗം വ്യക്തമാക്കുന്നു.",
-              "Exam Points: പേജുകൾ കീറുന്നതിന്റെ പ്രതീകാത്മകത, വിദ്യാഭ്യാസ സമ്പ്രദായത്തോടുള്ള വിമർശനം എന്നിവ പരീക്ഷയ്ക്ക് വിശകലനം ചെയ്യുക."
-            ],
-            "examTip": "'Rip It Out' എന്ന രംഗത്തിന്റെ പ്രതീകാത്മക അർത്ഥവും, യാഥാസ്ഥിതിക വിദ്യാഭ്യാസ സമ്പ്രദായത്തെ ജോൺ കീറ്റിംഗ് എങ്ങനെ വെല്ലുവിളിക്കുന്നുവെന്നും പരീക്ഷയ്ക്ക് വിശദീകരിക്കുക."
-          },
-          {
-            "chapterNumber": "Chapter 01 (English Edition)",
-            "title": "The Math of Euphemisms: Adding Syllables, Subtracting Humanity",
-            "chapter": "English cinematic overview · George Carlin on Soft Language · Euphemisms, public deception and rhetoric",
-            "duration": "11:37",
+            "chapterNumber": "Chapter 01 (V2)",
+            "title": "The Math of Euphemisms (Soft Language) - V2 | Speaking Skills | Calicut Univ",
+            "chapter": "English Edition · Adding Syllables, Subtracting Humanity · George Carlin",
+            "duration": "5:00",
             "thumbnail": "https://i.ytimg.com/vi/TwBZX7OpWog/hqdefault.jpg",
             "youtubeId": "TwBZX7OpWog",
             "videoUrl": null,
             "language": "English",
+            "malayalam_cc": true,
             "studyPoints": [
-              "<strong>George Carlin's Critique:</strong> A penetrating examination of how institutional rhetoric softens language to conceal harsh realities.",
-              "<strong>Evolution from Shell Shock to PTSD:</strong> The historical progression from direct terminology (Shell Shock) to clinical bureaucratization (PTSD).",
-              "<strong>Linguistic Sanitization:</strong> How bureaucratic and commercial jargon distances society from genuine human suffering.",
-              "<strong>Exam Connection:</strong> Calicut University ENG1B01 Speaking Skills and critical rhetorical evaluation."
+              "<strong>Institutional Bureaucracy:</strong> How corporations and governments sanitize unpleasant facts by creating polysyllabic jargon.",
+              "<strong>Psychological Shielding:</strong> Euphemisms insulate the speaker from empathy and accountability.",
+              "<strong>The Math Equation:</strong> Adding syllables directly subtracts visceral emotional resonance and human truth."
             ],
-            "examTip": "Analyze the transition from Shell Shock to PTSD and explain Carlin's critique of contemporary institutional euphemisms."
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 03: READING SKILLS",
-        "videos": [
-          {
-            "chapterNumber": "Chapter 01",
-            "title": "Reading Strategies & Critical Comprehension",
-            "chapter": "Skimming, Scanning, Inference & Analytical Reading",
-            "duration": "14:15",
-            "youtubeId": "9aLkAUYFWF8",
-            "thumbnail": "https://i.ytimg.com/vi/9aLkAUYFWF8/hqdefault.jpg",
-            "language": "English"
+            "examTip": "Critically analyze how soft language diminishes moral outrage in corporate and military communications."
           },
           {
-            "chapterNumber": "Chapter 02",
-            "title": "The Second Coming",
-            "chapter": "English cinematic overview · W.B. Yeats · Modernist apocalyptic vision, anarchy and symbolism",
-            "duration": "07:38",
-            "youtubeId": "_S8y6DEMYO0",
-            "language": "English",
-            "thumbnail": "https://i.ytimg.com/vi/XLSDEwNzank/hqdefault.jpg",
-            "studyPoints": [
-              "<strong>Core Context:</strong> Comprehensive academic exploration of The Second Coming by W. B. Yeats.",
-              "<strong>Key Themes:</strong> Textual analysis focused on the Calicut University FYUGP English syllabus.",
-              "<strong>Literary Critique:</strong> Breakdown of symbolism, stylistic devices, and character development.",
-              "<strong>Exam Preparation:</strong> High-yield definitions and critical arguments for semester examinations."
-            ],
-            "examTip": "Synthesize central themes, historical context, and stylistic devices of The Second Coming for 10-mark examination essays."
-          },
-          {
-            "chapterNumber": "Chapter 03",
-            "title": "The Frog Prince",
-            "chapter": "English cinematic overview · Stevie Smith · Subversion of fairy tale, contentment and identity",
-            "duration": "08:23",
-            "youtubeId": "WzAkFzGx7CE",
-            "language": "English",
-            "thumbnail": "https://i.ytimg.com/vi/WzAkFzGx7CE/hqdefault.jpg",
-            "studyPoints": [
-              "<strong>Author & Modernist Reimagining:</strong> Stevie Smith (1902–1971), British poet renowned for subverting classical fairy tales with wit, dark irony, and psychological realism.",
-              "<strong>Disenchantment vs. Contentment:</strong> The frog narrator rejects the conventional transformation into a human prince, finding peace and spiritual contentment in the quiet simplicity of the enchanted bog.",
-              "<strong>Themes of Conformity & Identity:</strong> A critique of societal pressure to conform to socially approved ideals of success, romance, and mortal turmoil.",
-              "<strong>Exam Connection:</strong> Calicut University FYUGP ENG1B01 Module 3 Reading Skills textual analysis."
-            ],
-            "examTip": "Discuss Stevie Smith's subversion of the traditional fairy tale trope and analyze the poem as a celebration of self-acceptance and quiet contentment for 10-mark examination essays."
-          },
-          {
-            "chapterNumber": "Chapter 04",
-            "title": "Optimism: An Essay",
-            "chapter": "ഹെലൻ കെല്ലർ · ഒപ്റ്റിമിസം (Helen Keller · Optimism: An Essay · Resilience & Inner Light)",
-            "duration": "06:17",
-            "youtubeId": "_S8y6DEMYO0",
-            "language": "Malayalam",
-            "studyPoints": [
-              "Helen Keller's Life: കാഴ്ചയും കേൾവിയും നഷ്ടപ്പെട്ടെങ്കിലും അസാമാന്യ ഇച്ഛാശക്തിയും പ്രതിഭയും കൊണ്ട് ലോകത്തെ വിസ്മയിപ്പിച്ച ഹെലൻ കെല്ലറുടെ (1880–1968) ആത്മവിശ്വാസം നിറഞ്ഞ പ്രബന്ധം.",
-              "Optimism as Faith: 'Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence' — പ്രത്യാശയാണ് നേട്ടങ്ങളിലേക്ക് നയിക്കുന്ന ശക്തിയെന്ന് കെല്ലർ പ്രഖ്യാപിക്കുന്നു.",
-              "Overcoming Darkness: ഭൗതികമായ ഇരുട്ടിലും നിശ്ശബ്ദതയിലും അകപ്പെട്ടപ്പോഴും തന്റെ ആന്തരിക വെളിച്ചം കൊണ്ട് ലോകത്തെ സ്നേഹിക്കാനും അറിവ് നേടാനും കെല്ലർക്ക് സാധിച്ചു.",
-              "Critique of Pessimism: സകല സൗകര്യങ്ങളും ഉണ്ടായിട്ടും ജീവിതത്തെ നിരാശയോടെ കാണുന്നവരെ ഹെലൻ കെല്ലർ വിമർശിക്കുന്നു. കർമ്മനിരതമായ ശുഭാപ്തിവിശ്വാസമാണ് യഥാർത്ഥ വിജയരഹസ്യം.",
-              "Exam Points: ഹെലൻ കെല്ലറുടെ ശുഭാപ്തിവിശ്വാസത്തിന്റെ നിർവചനം, ഇരുട്ടിനെ അതിജീവിച്ച അനുഭവം, സമൂഹത്തിനുള്ള സന്ദേശം എന്നിവ പഠിക്കുക."
-            ],
-            "examTip": "ഹെലൻ കെല്ലർ ശുഭാപ്തിവിശ്വാസത്തെ (Optimism) എങ്ങനെ നിർവ്വചിക്കുന്നുവെന്നും, നിരാശയ്ക്കും നിഷേധാത്മകതയ്ക്കും എതിരെ അവർ നൽകുന്ന വാദങ്ങൾ പരീക്ഷയ്ക്ക് വിശകലനം ചെയ്യുക."
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 04: WRITING SKILLS",
-        "videos": [
-          {
-            "chapterNumber": "Chapter 01",
-            "title": "Academic & Professional Writing Mechanics",
-            "chapter": "English cinematic overview · The Writing Process · Pre-writing, drafting, revising and mechanics",
-            "duration": "07:52",
-            "youtubeId": "cTlb6K9fD2o",
-            "language": "English",
-            "thumbnail": "https://i.ytimg.com/vi/wEMncXZ5tjM/hqdefault.jpg",
-            "studyPoints": [
-              "<strong>Stages of the Writing Process:</strong> Pre-writing (brainstorming, outlining), drafting, revising for logic, editing for clarity, and proofreading.",
-              "<strong>Paragraph Cohesion & Unity:</strong> Crafting clear topic sentences, maintaining transition signals, and ensuring academic rigor across scholarly papers.",
-              "<strong>Style, Tone & Mechanics:</strong> Active vs. passive voice conventions, punctuation precision, formal register, and standard citation ethics.",
-              "<strong>Exam Connection:</strong> Calicut University FYUGP ENG1B01 Module 4 Writing Skills foundational mechanics."
-            ],
-            "examTip": "Explain the sequential stages of the writing process (Pre-writing to Proofreading) and outline rules of paragraph coherence for semester examination essays."
-          },
-          {
-            "chapterNumber": "Chapter 02",
-            "title": "Dr. B.R. Ambedkar's Historic Speech",
-            "chapter": "Constitutional Vision, Social Justice & Annihilation of Caste (മലയാളം വിശദീകരണം)",
-            "duration": "07:23",
-            "youtubeId": "9jh28iFtS9U",
+            "chapterNumber": "Chapter 02 (V1)",
+            "title": "ഡെത്ത് ഓഫ് എ സെയിൽസ്മാൻ (Death of a Salesman) - V1 | Calicut Univ",
+            "chapter": "Arthur Miller · Willy Loman & The Flawed American Dream",
+            "duration": "19:02",
+            "thumbnail": "https://i.ytimg.com/vi/OeMGI2CWtLA/hqdefault.jpg",
+            "youtubeId": "OeMGI2CWtLA",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/9jh28iFtS9U/hqdefault.jpg",
             "language": "Malayalam",
+            "malayalam_cc": false,
             "studyPoints": [
-              "1936-ൽ ലാഹോറിലെ ജാത്-പാത്-തോഡക് മണ്ഡൽ സമ്മേളനത്തിനായി ഡോ. ബി.ആർ. അംബേദ്കർ തയ്യാറാക്കിയതും പിന്നീട് 'Annihilation of Caste' ആയി പ്രസിദ്ധീകരിച്ചതുമായ ചരിത്ര പ്രസംഗം.",
-              "കേവല തൊഴിൽ വിഭജനമല്ല (Division of Labour), മറിച്ച് തൊഴിലാളികളെ ജന്മത്തിന്റെ അടിസ്ഥാനത്തിൽ തട്ടുകളായി തിരിക്കുന്ന വിഭജനമാണ് (Division of Labourers) ജാതിവ്യവസ്ഥ.",
-              "'ജലനിബദ്ധമായ അറകൾ' (Watertight Compartments) തൊഴിൽ മാറ്റത്തെ തടഞ്ഞ് തൊഴിലില്ലായ്മയ്ക്കും സാമ്പത്തിക തകർച്ചയ്ക്കും വഴിവെക്കുന്നു.",
-              "അന്തസ്സില്ലാത്ത തൊഴിലുകൾ തൊഴിലാളികളിൽ വെറുപ്പും (Aversion) വിമുഖതയും ഉണ്ടാക്കുന്നു; സമത്വം, സ്വാതന്ത്ര്യം, സാഹോദര്യം എന്നിവയാണ് ജനാധിപത്യ അടിത്തറ."
+              "<strong>Arthur Miller & Tragedy:</strong> അമേരിക്കൻ നാടകകൃത്തായ ആർതർ മില്ലറുടെ വിശ്വപ്രസിദ്ധമായ ദുരന്തനാടകം (1949 Pulitzer Prize).",
+              "<strong>Willy Loman's Character:</strong> കേവലം ആകർഷകത്വവും ജനപ്രീതിയും ഉണ്ടെങ്കിൽ വിജയിക്കാമെന്ന് വ്യാമോഹിക്കുന്ന ഒരു സാധാരണ സെയിൽസ്മാന്റെ തകർച്ച.",
+              "<strong>Flawed American Dream:</strong> മുതലാളിത്ത മത്സരലോകത്ത് വ്യക്തിയുടെ മൂല്യം അവന്റെ സാമ്പത്തിക ഉൽപാദനക്ഷമതയിൽ മാത്രം കണക്കാക്കപ്പെടുന്നതിനെതിരെയുള്ള വിമർശനം.",
+              "<strong>Key Symbols:</strong> വിത്തുകൾ (Seeds - ഉപജീവനവും ഭാവിയും കണ്ടെത്താനുള്ള ശ്രമം), സ്റ്റോക്കിംഗ്സ് (Stockings - കുറ്റബോധം), കാർ അപകടങ്ങൾ (Car accidents)."
             ],
-            "examTip": "Calicut University BA AEC English 10/5 മാർക്ക് ചോദ്യം: 'How does Ambedkar distinguish between Division of Labour and Division of Labourers?' — 'Watertight compartments', 'Occupational mobility', 'Subordination of natural powers' എന്നീ പ്രയോഗങ്ങൾ നിർബന്ധമായും ഉൾപ്പെടുത്തുക!"
+            "examTip": "വില്ലി ലോമന്റെ കഥാപാത്ര നിരൂപണം, അമേരിക്കൻ സ്വപ്നത്തിന്റെ (American Dream) പൊള്ളത്തരം നാടകത്തിൽ എങ്ങനെ ചിത്രീകരിച്ചിരിക്കുന്നു എന്നത് പ്രധാന ചോദ്യമാണ്."
+          },
+          {
+            "chapterNumber": "Chapter 02 (V2)",
+            "title": "Death of a Salesman (American Dream) - V2 | Speaking Skills | Calicut Univ",
+            "chapter": "English Edition · More Worth Dead Than Alive · Tragic Flaw Analysis",
+            "duration": "5:30",
+            "thumbnail": "https://i.ytimg.com/vi/0SBovHC5y4s/hqdefault.jpg",
+            "youtubeId": "0SBovHC5y4s",
+            "videoUrl": null,
+            "language": "English",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "<strong>Tragic Economics:</strong> Willy's bitter conclusion that he is worth more dead (through insurance payout) than alive as an aging salesman.",
+              "<strong>Father-Son Conflict:</strong> The strained ideological collision between Willy's illusions and Biff's refusal to live a lie.",
+              "<strong>Critique of Capitalist Alienation:</strong> Discarding loyal workers once their youth and utility are depleted."
+            ],
+            "examTip": "Discuss Miller's definition of the 'Tragedy of the Common Man' as illustrated through Willy Loman."
           },
           {
             "chapterNumber": "Chapter 03",
-            "title": "The World Renowned Nose",
-            "chapter": "English cinematic overview · Vaikom Muhammad Basheer · Political satire, media sensation and absurdism",
-            "duration": "06:48",
-            "youtubeId": "_g7fyD5mLPo",
-            "language": "English",
-            "thumbnail": "https://i.ytimg.com/vi/_g7fyD5mLPo/hqdefault.jpg",
+            "title": "റിപ് ഇറ്റ് ഔട്ട് (Rip It Out - Dead Poets Society) | Speaking | Calicut Univ",
+            "chapter": "Peter Weir · Conformity, Free Thought & Academic Rebellion",
+            "duration": "17:35",
+            "thumbnail": "https://i.ytimg.com/vi/UE333_P1a9A/hqdefault.jpg",
+            "youtubeId": "UE333_P1a9A",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "malayalam_cc": false,
             "studyPoints": [
-              "<strong>Vaikom Muhammad Basheer's Masterpiece:</strong> Translated from Malayalam ('Viswavikhyathamaya Mookku'), a world-class political satire on human gullibility and mass media hysteria.",
-              "<strong>The Absurdity of Modern Fame:</strong> A humble 24-year-old cook becomes an international celebrity simply because his nose grows past his mouth down to his chest.",
-              "<strong>Political Exploitation & Factionalism:</strong> Rival political factions, intellectuals, journalists, and world leaders exploit the nose to manipulate public sentiment and incite riots.",
-              "<strong>Exam Connection:</strong> Calicut University FYUGP ENG1B01 Module 4 Writing Skills / Reading Literature satire analysis."
+              "<strong>Context & Setting:</strong> പീറ്റർ വെയർ സംവിധാനം ചെയ്ത 'ഡെഡ് പോയറ്റ്സ് സൊസൈറ്റി' (1989) എന്ന ചിത്രത്തിലെ ക്ലാസിക് രംഗം (Mr. John Keating).",
+              "<strong>Pritchard's Scale:</strong> കവിതയെ ഗണിതശാസ്ത്ര സമവാക്യങ്ങൾ കൊണ്ട് അളക്കാൻ ശ്രമിക്കുന്ന യാന്ത്രികമായ പഠനരീതിയെ തള്ളിക്കളയുന്നു.",
+              "<strong>Rip It Out Act:</strong> പാഠപുസ്തകത്തിലെ താളുകൾ കീറിയെറിയുന്നത് സ്വാതന്ത്ര്യത്തിന്റെയും സ്വതന്ത്ര ചിന്തയുടെയും (Non-Conformity) പ്രതീകാത്മകമായ വിളംബരമാണ്.",
+              "<strong>Carpe Diem:</strong> 'സീർ ദി ഡേ' — ഇന്നിൽ ജീവിക്കുക, സ്വന്തം ശബ്ദവും വ്യക്തിത്വവും കണ്ടെത്തുക എന്ന ജീവിതസന്ദേശം."
             ],
-            "examTip": "Examine how Basheer uses the absurdist metaphor of the growing nose to satirize sensationalist media, opportunistic politics, and public gullibility for 10-mark examination essays."
+            "examTip": "'Rip It Out' എന്ന രംഗത്തിന്റെ പ്രതീകാത്മക അർത്ഥവും, യാഥാസ്ഥിതിക വിദ്യാഭ്യാസ സമ്പ്രദായത്തെ ചോദ്യം ചെയ്യുന്നതിലുള്ള പങ്കും പരീക്ഷയ്ക്ക് പ്രധാനമാണ്."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE 03: READING SKILLS (FYUGP English)",
+        "videos": [
+          {
+            "chapterNumber": "Chapter 01",
+            "title": "വായനാ രീതികൾ (Reading Strategies & Comprehension) | Calicut Univ",
+            "chapter": "Introduction to Reading Skills · Skimming, Scanning & Critical Inference",
+            "duration": "14:15",
+            "thumbnail": "https://i.ytimg.com/vi/9aLkAUYFWF8/hqdefault.jpg",
+            "youtubeId": "9aLkAUYFWF8",
+            "videoUrl": null,
+            "language": "English",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "<strong>Core Reading Techniques:</strong> Skimming for main gist, Scanning for specific data points, Intensive and Extensive reading.",
+              "<strong>Critical Comprehension:</strong> Evaluating author bias, differentiating fact from opinion, and deducing implicit contextual assumptions.",
+              "<strong>Textual Annotation:</strong> Active margin notes, highlighting thesis markers, and concept-mapping academic passages."
+            ],
+            "examTip": "Distinguish between skimming and scanning with clear situational examples for 5-mark short answers."
+          },
+          {
+            "chapterNumber": "Chapter 02",
+            "title": "ദ് സെക്കൻഡ് കമിങ് (The Second Coming - Yeats) | Reading | Calicut Univ",
+            "chapter": "W.B. Yeats · Modernist Apocalypse, The Gyre & Historical Fracture",
+            "duration": "7:39",
+            "thumbnail": "https://i.ytimg.com/vi/XLSDEwNzank/hqdefault.jpg",
+            "youtubeId": "XLSDEwNzank",
+            "videoUrl": null,
+            "language": "English",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "<strong>Historical Backdrop:</strong> Written in 1919 after the devastation of World War I, the Russian Revolution, and the Irish Independence struggles.",
+              "<strong>The Gyre & Anarchy:</strong> 'Turning and turning in the widening gyre / The falcon cannot hear the falconer' — breakdown of civilization and moral order.",
+              "<strong>The Rough Beast:</strong> The menacing sphinx-like creature slouching towards Bethlehem to be born as an omen of a frightening new cycle.",
+              "<strong>Famous Lines:</strong> 'The best lack all conviction, while the worst / Are full of passionate intensity.'"
+            ],
+            "examTip": "Analyze Yeats's apocalyptic imagery and explain the philosophical significance of the 'Widening Gyre'."
+          },
+          {
+            "chapterNumber": "Chapter 03",
+            "title": "ദ് ഫ്രോഗ് പ്രിൻസ് (The Frog Prince - Stevie Smith) | Reading | Calicut Univ",
+            "chapter": "Stevie Smith · Subversion of Fairy Tale, Contentment & Transformation",
+            "duration": "8:24",
+            "thumbnail": "https://i.ytimg.com/vi/WzAkFzGx7CE/hqdefault.jpg",
+            "youtubeId": "WzAkFzGx7CE",
+            "videoUrl": null,
+            "language": "English",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "<strong>Modernist Subversion:</strong> Stevie Smith inverts the Grimm Brothers fairy tale — the frog is happy being a frog in his enchanted quiet pond.",
+              "<strong>Reluctance to Conform:</strong> The prince questions whether human adulthood and societal pressures are superior to simple contented existence.",
+              "<strong>Existential Acceptance:</strong> Contemplation on mortality, quietude, and the mysterious divine call to eventual metamorphosis.",
+              "<strong>Tone & Rhyme:</strong> Conversational, deceptive nursery-rhyme simplicity concealing profound philosophical inquiry."
+            ],
+            "examTip": "Discuss how Stevie Smith subverts the fairy-tale concept of 'happy ending' and societal transformation."
           },
           {
             "chapterNumber": "Chapter 04",
-            "title": "Cinema Paradiso",
-            "chapter": "Film Review, Cinematic Elements & Critical Appreciation",
-            "duration": "05:13",
-            "youtubeId": "3xKSAOUYjFE",
-            "thumbnail": "https://i.ytimg.com/vi/3xKSAOUYjFE/hqdefault.jpg",
-            "language": "English",
+            "title": "ശുഭാപ്തിവിശ്വാസം (Helen Keller's Optimism: An Essay) | Calicut Univ",
+            "chapter": "Helen Keller · Resilience, Inner Light & Triumphant Human Spirit",
+            "duration": "6:16",
+            "thumbnail": "https://i.ytimg.com/vi/_S8y6DEMYO0/hqdefault.jpg",
+            "youtubeId": "_S8y6DEMYO0",
+            "videoUrl": null,
+            "language": "Malayalam",
+            "malayalam_cc": false,
             "studyPoints": [
-              "<strong>Core Cinematics:</strong> Giuseppe Tornatore's nostalgic masterpiece celebrating cinema, memory, and youth.",
-              "<strong>Toto & Alfredo:</strong> The transformative father-son dynamic between the village projectionist and a passionate boy.",
-              "<strong>Critical Appreciation:</strong> Ennio Morricone's score, censorship themes, and the loss of classic communal cinema."
+              "<strong>Helen Keller's Life:</strong> കാഴ്ചയും കേൾവിയും നഷ്ടപ്പെട്ടെങ്കിലും അസാമാന്യ ഇച്ഛാശക്തിയും അധ്വാനവും കൊണ്ട് ലോകപ്രശസ്ത എഴുത്തുകാരിയും പ്രഭാഷകയുമായി മാറിയ വ്യക്തിത്വം.",
+              "<strong>Optimism as Faith:</strong> ശുഭാപ്തിവിശ്വാസം എന്നത് നിഷ്ക്രിയമായ ആഗ്രഹമല്ല, മറിച്ച് കർമ്മത്തിലൂടെ ലക്ഷ്യം കൈവരിക്കാനുള്ള അചഞ്ചലമായ വിശ്വാസമാണ്.",
+              "<strong>Inner Light vs External Senses:</strong> ബാഹ്യലോകത്തിന്റെ വൈകല്യങ്ങളെ മറികടക്കുന്ന ആന്തരിക വെളിച്ചമാണ് മനുഷ്യന്റെ യഥാർത്ഥ ശക്തി.",
+              "<strong>Critique of Cynicism:</strong> നിരാശയും അശുഭാപ്തിവിശ്വാസവും ഒന്നിനും പരിഹാരമല്ല; ചരിത്രത്തിലെ എല്ലാ മഹത്തായ നേട്ടങ്ങളും ശുഭാപ്തിവിശ്വാസികളുടെ സംഭാവനയാണ്."
             ],
-            "examTip": "Analyze the symbolic role of the cinema hall in post-war Sicilian society for 10-mark examination essays."
+            "examTip": "ഹെലൻ കെല്ലർ ശുഭാപ്തിവിശ്വാസത്തെ (Optimism) എങ്ങനെ നിർവ്വചിക്കുന്നുവെന്നും, നിരാശയ്ക്കും നിസ്സഹായാവസ്ഥയ്ക്കും എതിരെയുള്ള അവളുടെ പ്രതിരോധം എന്താണെന്നും വിശകലനം ചെയ്യുക."
+          }
+        ]
+      },
+      {
+        "moduleName": "MODULE 04: WRITING SKILLS (FYUGP English)",
+        "videos": [
+          {
+            "chapterNumber": "Chapter 01",
+            "title": "എഴുത്തുരീതികൾ (Effective Academic Writing Process) | Calicut Univ",
+            "chapter": "Introduction to Writing Skills · Pre-writing, Drafting & Revision",
+            "duration": "7:52",
+            "thumbnail": "https://i.ytimg.com/vi/wEMncXZ5tjM/hqdefault.jpg",
+            "youtubeId": "wEMncXZ5tjM",
+            "videoUrl": null,
+            "language": "English",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "<strong>Stages of Writing:</strong> Pre-writing (brainstorming, clustering, freewriting) -> Outlining -> Drafting -> Revising -> Proofreading.",
+              "<strong>Paragraph Coherence:</strong> The vital role of topic sentences, supporting evidence, unified transitions, and concluding reflections.",
+              "<strong>Academic Tone & Mechanics:</strong> Avoiding informal slang, ensuring subject-verb agreement, and maintaining active voice precision."
+            ],
+            "examTip": "Describe the five stages of the academic writing process in chronological sequence with practical tips."
+          },
+          {
+            "chapterNumber": "Chapter 02",
+            "title": "ഡോ. അംബേദ്കറുടെ ചരിത്ര പ്രസംഗം (Dr. B.R. Ambedkar's Speech) | Calicut Univ",
+            "chapter": "Dr. B.R. Ambedkar · Constitutional Vision, Liberty & Social Justice",
+            "duration": "22:00",
+            "thumbnail": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
+            "youtubeId": null,
+            "videoUrl": null,
+            "language": "Malayalam",
+            "malayalam_cc": false,
+            "studyPoints": [
+              "<strong>Historical Context:</strong> ഭരണഘടനാ അസംബ്ലിയിലെ ഡോ. ബി.ആർ. അംബേദ്കറുടെ ചരിത്രപരമായ അവസാന പ്രസംഗം (1949 November 25).",
+              "<strong>Three Warnings:</strong> ഭരണഘടനാ മാർഗ്ഗങ്ങൾ മാത്രം പിന്തുടരുക (Bloody revolution ഉപേക്ഷിക്കുക), വ്യക്തിപൂജയും ഹീറോ-വർഷിപ്പും ഒഴിവാക്കുക, കേവലം രാഷ്ട്രീയ ജനാധിപത്യമല്ല സാമൂഹിക-സാമ്പത്തിക ജനാധിപത്യം സ്ഥാപിക്കുക.",
+              "<strong>Trinity of Democracy:</strong> സമത്വം (Equality), സ്വാതന്ത്ര്യം (Liberty), സാഹോദര്യം (Fraternity) എന്നിവ പരസ്പരബന്ധിതമായ ഒരു ത്രിത്വമാണ്.",
+              "<strong>Contradiction Warning:</strong> 'ജനുവരി 26 ന് നാം വൈരുദ്ധ്യങ്ങളുടെ ഒരു ജീവിതത്തിലേക്ക് പ്രവേശിക്കാൻ പോകുന്നു' — രാഷ്ട്രീയ സമത്വവും സാമൂഹിക അസമത്വവും തമ്മിലുള്ള വൈരുദ്ധ്യം."
+            ],
+            "examTip": "ഡോ. അംബേദ്കർ ഇന്ത്യൻ ജനാധിപത്യത്തിന്റെ ഭാവിയെക്കുറിച്ച് നൽകിയ 3 സുപ്രധാന മുന്നറിയിപ്പുകൾ 10 മാർക്കിന്റെ പ്രധാന ഉപന്യാസ ചോദ്യമാണ്."
+          },
+          {
+            "chapterNumber": "Chapter 03",
+            "title": "വിശ്വവിഖ്യാതമായ മൂക്ക് (The World Renowned Nose) | Calicut Univ",
+            "chapter": "Vaikom Muhammad Basheer · Media Sensationalism, Politics & Absurdity",
+            "duration": "6:48",
+            "thumbnail": "https://i.ytimg.com/vi/_g7fyD5mLPo/hqdefault.jpg",
+            "youtubeId": "_g7fyD5mLPo",
+            "videoUrl": null,
+            "language": "English",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "<strong>Basheer's Classic Satire:</strong> 'വിശ്വവിഖ്യാതമായ മൂക്ക്' — A simple cook whose nose inexplicably grows past his mouth down to his navel.",
+              "<strong>Media & Commercial Circus:</strong> Exploitation by newspapers, politicians, and intellectuals turning a grotesque bodily deformity into a national industry.",
+              "<strong>Political Weaponization:</strong> Government vs opposition factions weaponizing the nose, culminating in the protagonist being appointed to parliament.",
+              "<strong>Absurdist Critique:</strong> Piercing indictment of herd mentality, public gullibility, and sensationalist yellow journalism."
+            ],
+            "examTip": "Examine how Basheer uses the absurdist metaphor of the growing nose to satirize sensationalist media and opportunistic politics."
+          },
+          {
+            "chapterNumber": "Chapter 04",
+            "title": "സിനിമ പാരഡീസോ നിരൂപണം (Cinema Paradiso Film Review) | Calicut Univ",
+            "chapter": "Giuseppe Tornatore · Film Appreciation, Nostalgia & Cinematic Form",
+            "duration": "5:13",
+            "thumbnail": "https://i.ytimg.com/vi/3xKSAOUYjFE/hqdefault.jpg",
+            "youtubeId": "3xKSAOUYjFE",
+            "videoUrl": null,
+            "language": "English",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "<strong>Film Background:</strong> Giuseppe Tornatore's Oscar-winning cinematic masterpiece (1988) set in post-war Giancaldo, Sicily.",
+              "<strong>Cinematic Friendship:</strong> The deep bond between young Toto (Salvatore) and Alfredo, the cinema projectionist who mentors him.",
+              "<strong>Review Writing Mechanics:</strong> Analyzing direction, cinematography, Ennio Morricone's evocative score, and thematic resonance.",
+              "<strong>The Kiss Montage:</strong> The poignant climactic reel of censored kisses celebrating cinema as the ultimate archive of human passion."
+            ],
+            "examTip": "Write a critical review of Cinema Paradiso focusing on how Alfredo's mentorship shapes Salvatore's artistic trajectory."
           }
         ]
       }
@@ -1246,8 +1312,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 2.2 a",
             "title": "ഡെക്കാർട്ടും ഡിജിറ്റൽ യുഗത്തിലെ മനസ്സിന്റെ തത്ത്വചിന്തയും (Descartes & Mind-Body Dualism in AI)",
             "chapter": "Unit 2.2 a: Cartesian Dualism · Res Cogitans vs Res Extensa · Physical Mechanism",
-            "duration": "06:22",
-            "youtubeId": "PAbcoT4_w8w",
+            "duration": "19:00",
+            "youtubeId": "",
             "language": "Malayalam",
             "studyPoints": [
               "ഡെക്കാർട്ടിന്റെ മൈൻഡ്-ബോഡി ദ്വൈതവാദം: ചിന്തിക്കുന്ന മനസ്സ് (Res Cogitans), ഭൗതികമായ ശരീരം (Res Extensa) എന്നിവ തമ്മിലുള്ള വിഭജനം.",
@@ -1255,9 +1321,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കമ്പ്യൂട്ടേഷണൽ ഫങ്ഷണലിസത്തിലെ ദ്വൈതവാദം: മനസ്സിനെ സോഫ്റ്റ്‌വെയറായും തലച്ചോറിനെ ഹാർഡ്‌വെയറായും കാണുന്നത് ഡെക്കാർട്ടിയൻ ദ്വൈതവാദത്തിന്റെ പുതിയ രൂപമാണെന്ന വാദം.",
               "ഫിസിക്കലിസവും റിഡക്ഷനിസവും: മനസ്സ് എന്നത് തലച്ചോറിലെ ന്യൂറോണുകളുടെ ഭൗതിക ഫലം മാത്രമാണെങ്കിൽ സിലിക്കണിലും ചിന്ത സാധ്യമാകുമോ?"
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: റെനെ ഡെക്കാർട്ടിന്റെ മൈൻഡ്-ബോഡി ദ്വൈതവാദം ആധുനിക കമ്പ്യൂട്ടേഷണൽ മനശാസ്ത്രത്തിലും എഐ ചിന്തകളിലും എങ്ങനെ പ്രതിഫലിക്കുന്നു?",
-            "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/PAbcoT4_w8w/hqdefault.jpg"
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: റെനെ ഡെക്കാർട്ടിന്റെ മൈൻഡ്-ബോഡി ദ്വൈതവാദം ആധുനിക കമ്പ്യൂട്ടേഷണൽ മനശാസ്ത്രത്തിലും എഐ ചിന്തകളിലും എങ്ങനെ പ്രതിഫലിക്കുന്നു?"
           },
           {
             "chapterNumber": "Unit 2.2 b",
@@ -1489,8 +1553,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 5.1 & 5.2",
             "title": "സിമുലേഷൻ vs യഥാർത്ഥ അറിവും മനുഷ്യന്റെ സ്വത്വ പ്രതിസന്ധിയും (Simulation vs Understanding & Human Uniqueness)",
             "chapter": "Unit 5.1 & 5.2: Ontological Reality vs Functional Simulation · De-Centering the Human Subject",
-            "duration": "06:17",
-            "youtubeId": "g-yJW2jZPkU",
+            "duration": "25:00",
+            "youtubeId": "",
             "language": "Malayalam",
             "studyPoints": [
               "പ്രകടനവും ബോധവും തമ്മിലുള്ള വിടവ്: ജനറേറ്റീവ് AI വലിയ ഡാറ്റകൾ പ്രോസസ്സ് ചെയ്യുമ്പോഴും അതിന് ആത്മനിഷ്ഠ അനുഭവങ്ങൾ (Qualia) ഇല്ലെന്ന യാഥാർത്ഥ്യം.",
@@ -1498,16 +1562,14 @@ window.VOICE_EXPLANATIONS_DATA = {
               "തൊഴിലും മനുഷ്യന്റെ അർത്ഥവും: സർഗ്ഗാത്മക ജോലികളും യുക്തിചിന്തയും ഓട്ടോമേറ്റ് ചെയ്യപ്പെടുമ്പോൾ മനുഷ്യന്റെ ആന്തരിക ജീവിതത്തിനുണ്ടാകുന്ന മാറ്റങ്ങൾ.",
               "കോഗ്നിറ്റീവ് അട്രോഫി (Cognitive Atrophy): ചിന്തയും തീരുമാനങ്ങളും അൽഗോരിതങ്ങൾക്ക് പൂർണ്ണമായി വിട്ടുകൊടുക്കുമ്പോൾ മനുഷ്യന്റെ സ്വാഭാവിക ശേഷികൾ ദുർബലപ്പെടുന്ന അവസ്ഥ."
             ],
-            "examTip": "Calicut University ചോദ്യം: 'സിമുലേഷൻ യഥാർത്ഥ അറിവിന് തുല്യമാണോ?' ഫിലോസഫി ഓഫ് AI-യുടെ വെളിച്ചത്തിൽ ചർച്ച ചെയ്യുക.",
-            "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/g-yJW2jZPkU/hqdefault.jpg"
+            "examTip": "Calicut University ചോദ്യം: 'സിമുലേഷൻ യഥാർത്ഥ അറിവിന് തുല്യമാണോ?' ഫിലോസഫി ഓഫ് AI-യുടെ വെളിച്ചത്തിൽ ചർച്ച ചെയ്യുക."
           },
           {
             "chapterNumber": "Unit 5.3 - 5.5",
             "title": "സിംഗുലാരിറ്റിയും ആഗോള ഭരണക്രമവും സന്തുലിത ഭാവിയും (Technological Singularity, Global Governance & Balanced Future)",
             "chapter": "Unit 5.3 - 5.5: Singularity · Global Governance · Amalgamation of Science & Philosophy",
-            "duration": "06:35",
-            "youtubeId": "SoVrQ6Z_BqU",
+            "duration": "25:00",
+            "youtubeId": "",
             "language": "Malayalam",
             "studyPoints": [
               "ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റി (Technological Singularity - Kurzweil): AI സ്വയം മെച്ചപ്പെടുത്തി മനുഷ്യബുദ്ധിയെ മറികടക്കുന്ന ഘട്ടം.",
@@ -1515,9 +1577,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ആഗോള ഭരണക്രമവും യുനെസ്കോ ചട്ടക്കൂടും: എഐയെ മനുഷ്യനന്മയ്ക്ക് മാത്രമായി നിയന്ത്രിക്കാനുള്ള അന്താരാഷ്ട്ര ധാർമ്മിക ഉടമ്പടികൾ.",
               "ശാസ്ത്രത്തിന്റെയും തത്ത്വചിന്തയുടെയും സംയോജനം: കേവല സാങ്കേതിക വികാസത്തിനപ്പുറം ദാർശനിക വിവേകത്തോടെ AI-യെ നയിക്കേണ്ടതിന്റെ അനിവാര്യത."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: 'ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റി' മാനവരാശിയുടെ ഭാവിയെ എങ്ങനെ മാറ്റിമറിക്കും? ശാസ്ത്രവും തത്ത്വചിന്തയും എങ്ങനെ സമന്വയിപ്പിക്കണം?",
-            "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/SoVrQ6Z_BqU/hqdefault.jpg"
+            "examTip": "Calicut University FYUGP ചോദ്യം: 'ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റി' മാനവരാശിയുടെ ഭാവിയെ എങ്ങനെ മാറ്റിമറിക്കും? ശാസ്ത്രവും തത്ത്വചിന്തയും എങ്ങനെ സമന്വയിപ്പിക്കണം?"
           }
         ]
       }
@@ -2199,7 +2259,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · വ്യക്തിഗത & മാർക്കറ്റ് ഡിമാൻഡ്, ഡിമാൻഡ് ഷിഫ്റ്റുകൾ",
             "duration": "06:21",
             "youtubeId": "Mu1Ktkzr_ME",
-            "videoUrl": null,
+            "videoUrl": "/micro-demand-review.html",
             "thumbnail": "/thumbnails/micro-demand-review.png",
             "studyPoints": [
               "ഡിമാൻഡ് എന്നത് വാങ്ങാനുള്ള ആഗ്രഹവും അതോടൊപ്പം വില നൽകാനുള്ള സാമ്പത്തിക ശേഷിയും (purchasing power) ചേർന്നതാണ്.",
@@ -2211,7 +2271,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "വ്യക്തിഗത ഡിമാൻഡ് കർവുകളുടെ തിരശ്ചീനമായ കൂട്ടിച്ചേർക്കലാണ് (Horizontal Summation) മാർക്കറ്റ് ഡിമാൻഡ് കർവ് രൂപീകരിക്കുന്നത്.",
               "വിലയിലെ മാറ്റം കർവിലൂടെയുള്ള മൂവ്മെന്റിനും (Expansion/Contraction) മറ്റ് ഘടകങ്ങളിലെ മാറ്റം കർവിന്റെ ഷിഫ്റ്റിനും (Increase/Decrease) കാരണമാകുന്നു."
             ],
-            "examTip": "പരീക്ഷയിൽ 'Movement along the Demand Curve' ഉം 'Shift in Demand Curve' ഉം തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, സ്വന്തം വിലയിലെ മാറ്റം മൂലമുണ്ടാകുന്ന മാറ്റത്തെ Change in Quantity Demanded (Expansion അല്ലെങ്കിൽ Contraction) എന്നും, വിലയൊഴികെയുള്ള മറ്റ് ഘടകങ്ങളിലെ മാറ്റം വഴി കർവ് പൂർണ്ണമായി മാറുന്നതിനെ Change in Demand (Increase അല്ലെങ്കിൽ Decrease) എന്നും പ്രത്യേകം ഗ്രാഫ് വരച്ച് വ്യക്തമാക്കുക."
+            "examTip": "പരീക്ഷയിൽ 'Movement along the Demand Curve' ഉം 'Shift in Demand Curve' ഉം തമ്മിലുള്ള വ്യത്യാസം ചോദിച്ചാൽ, സ്വന്തം വിലയിലെ മാറ്റം മൂലമുണ്ടാകുന്ന മാറ്റത്തെ Change in Quantity Demanded (Expansion അല്ലെങ്കിൽ Contraction) എന്നും, വിലയൊഴികെയുള്ള മറ്റ് ഘടകങ്ങളിലെ മാറ്റം വഴി കർവ് പൂർണ്ണമായി മാറുന്നതിനെ Change in Demand (Increase അല്ലെങ്കിൽ Decrease) എന്നും പ്രത്യേകം ഗ്രാഫ് വരച്ച് വ്യക്തമാക്കുക.",
+            "audioUrl": "/audio/micro-module1-unit1-demand.mp3"
           },
           {
             "chapterNumber": "Unit 02",
@@ -2219,7 +2280,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · സപ്ലൈ നിയമം, സപ്ലൈ ഫംഗ്ഷൻ & ഷിഫ്റ്റുകൾ",
             "duration": "14:52",
             "youtubeId": "CylKbnNZtm0",
-            "videoUrl": null,
+            "videoUrl": "/micro-unit2-review.html",
             "thumbnail": "/thumbnails/micro-unit-2-review.png",
             "studyPoints": [
               "Supply Definition (ഏതെങ്കിലും സാധനത്തിന്റെ അളവ്, വില, സമയം)",
@@ -2243,7 +2304,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · സന്തുലിത വിലയും അളവും, സർപ്ലസ് & ഷോർട്ടേജ്",
             "duration": "15:51",
             "youtubeId": "zJsY7Sbx2To",
-            "videoUrl": null,
+            "videoUrl": "/micro-unit3-review.html",
             "thumbnail": "/thumbnails/micro-unit-3-review.png",
             "studyPoints": [
               "Market Equilibrium: Qd equals Qs",
@@ -2294,7 +2355,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · അപചയ സീമാന്ത പ്രയോജന നിയമവും സമ-സീമാന്ത പ്രയോജനവും",
             "duration": "23:26",
             "youtubeId": "Jj-JWuNJjRU",
-            "videoUrl": null,
+            "videoUrl": "https://www.youtube.com/watch?v=Jj-JWuNJjRU",
             "thumbnail": "https://i.ytimg.com/vi/Jj-JWuNJjRU/hqdefault.jpg",
             "studyPoints": [
               "<strong>കാർഡിനൽ പ്രയോജന സിദ്ധാന്തം:</strong> സംതൃപ്തിയെ യൂട്ടിൽസ് എന്ന സംഖ്യാ രൂപത്തിൽ അളക്കാമെന്ന് ആൽഫ്രഡ് മാർഷൽ സമർത്ഥിക്കുന്നു.",
@@ -2304,7 +2365,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>സീമാന്ത പ്രതിസ്ഥാപന നിരക്ക് (MRS):</strong> ഡിമിനിഷിംഗ് എം.ആർ.എസ് നിയമം കാരണം ഉദാസീന വക്രങ്ങൾ ഒറിജിനിലേക്ക് കോൺവെക്സ് ആയിരിക്കുന്നു."
             ],
             "examTip": "ആൽഫ്രഡ് മാർഷലിന്റെ ഡിമിനിഷിംഗ് മാർജിനൽ യൂട്ടിലിറ്റി നിയമം, ഗോസ്സന്റെ രണ്ടാം നിയമം, TU-വും MU-വും തമ്മിലുള്ള ഗ്രാഫിക്കൽ ബന്ധം എന്നിവ പരീക്ഷയ്ക്ക് 6 മാർക്കിനും 10 മാർക്കിനും നിർബന്ധമായും ചോദിക്കുന്ന ഭാഗങ്ങളാണ്.",
-            "language": "Malayalam"
+            "language": "Malayalam",
+            "audioUrl": "/audio/micro_unit04_masterclass.mp3"
           },
           {
             "chapterNumber": "Unit 05",
@@ -2335,8 +2397,9 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>ഉപഭോക്തൃ സന്തുലിതാവസ്ഥ:</strong> ഇൻഡിഫറൻസ് കർവിന്റെ ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ പരമാവധി സംതൃപ്തി ലഭിക്കുന്നു."
             ],
             "examTip": "ബജറ്റ് രേഖയുടെ ചെരിവ് -Px/Py നിർണ്ണയിക്കുന്ന രീതിയും വിലമാറ്റവും വരുമാന മാറ്റവും തമ്മിലുള്ള ഗ്രാഫിക്കൽ വ്യത്യാസവും 6/10 മാർക്ക് ചോദ്യങ്ങളായി ആവർത്തിച്ചു വരാറുണ്ട്.",
-            "videoUrl": null,
-            "language": "Malayalam"
+            "videoUrl": "https://www.youtube.com/watch?v=9H8683I4Ad8",
+            "language": "Malayalam",
+            "audioUrl": "/audio/micro_unit08_masterclass.mp3"
           },
           {
             "chapterNumber": "Unit 09",
@@ -2368,7 +2431,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · സോൾ പ്രൊപ്രൈറ്റർഷിപ്പ്, പാർട്ണർഷിപ്പ്, കോർപ്പറേഷൻ & പ്രിൻസിപ്പൽ-ഏജന്റ്",
             "duration": "15:38",
             "youtubeId": "W6b1q1WUJbo",
-            "videoUrl": null,
+            "videoUrl": "https://www.youtube.com/watch?v=W6b1q1WUJbo",
             "thumbnail": "https://i.ytimg.com/vi/W6b1q1WUJbo/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
@@ -2379,7 +2442,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രശ്നം:</strong> ഓഹരി ഉടമകളും (Principals) പ്രൊഫഷണൽ മാനേജർമാരും (Agents) തമ്മിൽ ഉടമസ്ഥതയും നിയന്ത്രണവും വേർതിരിയുമ്പോൾ ഉടലെടുക്കുന്ന താൽപ്പര്യ വൈരുദ്ധ്യം; സ്റ്റോക്ക് ഓപ്ഷനുകളിലൂടെയും ബോണസുകളിലൂടെയും ഇത് ലഘൂകരിക്കപ്പെടുന്നു.",
               "<strong>ലാഭം പരമാവധിയാക്കൽ (Profit Maximization):</strong> സാമ്പത്തിക സിദ്ധാന്തത്തിൽ സ്ഥാപനങ്ങളുടെ പ്രാഥമിക ലക്ഷ്യം. ആകെ വരുമാനത്തിൽ നിന്ന് ആകെ ചെലവ് കുറയ്ക്കുമ്പോൾ ലഭിക്കുന്ന ലാഭം (π = TR - TC) വിഭവ കാര്യക്ഷമതയുടെ അളവുകോലാണ്."
             ],
-            "examTip": "ലിമിറ്റഡ് ലയബിലിറ്റിയുടെ പ്രാധാന്യം, സോൾ പ്രൊപ്രൈറ്റർഷിപ്പും കോർപ്പറേഷനും തമ്മിലുള്ള വ്യത്യാസം, പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രതിസന്ധി, ലാഭ സമവാക്യം (π = TR - TC) എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന പ്രധാന ചോദ്യങ്ങളാണ്."
+            "examTip": "ലിമിറ്റഡ് ലയബിലിറ്റിയുടെ പ്രാധാന്യം, സോൾ പ്രൊപ്രൈറ്റർഷിപ്പും കോർപ്പറേഷനും തമ്മിലുള്ള വ്യത്യാസം, പ്രിൻസിപ്പൽ-ഏജന്റ് പ്രതിസന്ധി, ലാഭ സമവാക്യം (π = TR - TC) എന്നിവ കാലിക്കറ്റ് സർവ്വകലാശാലാ പരീക്ഷയിൽ ആവർത്തിക്കുന്ന പ്രധാന ചോദ്യങ്ങളാണ്.",
+            "audioUrl": "/audio/micro_unit10_masterclass.mp3"
           },
           {
             "chapterNumber": "Unit 11",
@@ -2448,7 +2512,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · കോൺസ്റ്റന്റ് (CRS), ഇൻക്രീസിംഗ് (IRS), ഡിമിനിഷിംഗ് (DRS)",
             "duration": "25:20",
             "youtubeId": "9gX0HzBZ0Bc",
-            "videoUrl": null,
+            "videoUrl": "https://www.youtube.com/watch?v=9gX0HzBZ0Bc",
             "thumbnail": "https://i.ytimg.com/vi/9gX0HzBZ0Bc/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
@@ -2458,7 +2522,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>ഡിക്രീസിംഗ് റിട്ടേൺസ് ടു സ്കെയിൽ (DRS):</strong> f(2L, 2K) < 2f(L, K). ഇൻപുട്ടുകൾ ഇരട്ടിയാക്കുമ്പോൾ ഉത്പാദനം ഇരട്ടിയിലും താഴെ മാത്രം കൂടുന്നു. ഐസോക്വാന്റുകൾ അകന്നുപോകുന്നു. മാനേജീരിയൽ സങ്കീർണ്ണതകൾ, ഏകോപന നഷ്ടം (Coordination Failure), ഉദ്യോഗസ്ഥ മേധാവിത്വം (Bureaucracy), മറഞ്ഞിരിക്കുന്ന സ്ഥിര ഘടകങ്ങൾ (Hidden Fixed Factors) എന്നിവ കാരണങ്ങളാണ്.",
               "<strong>വേരിയിംഗ് റിട്ടേൺസ് ടു സ്കെയിൽ:</strong> യഥാർത്ഥ ജീവിതത്തിൽ ഒരു സ്ഥാപനം വളരുമ്പോൾ ആദ്യം IRS (A to K), പിന്നീട് കാര്യക്ഷമമായ ഒപ്റ്റിമൽ സ്കെയിലിൽ CRS (K to C), തുടർന്ന് അധികവളർച്ചയിൽ DRS (C to H) എന്നിങ്ങനെ മൂന്ന് ഘട്ടങ്ങളിലൂടെ കടന്നുപോകുന്നു."
             ],
-            "examTip": "CRS, IRS, DRS എന്നിവയുടെ ഗണിത സമവാക്യങ്ങൾ, ഐസോക്വാന്റ് അകലങ്ങൾ (Fig 14.1, 14.2, 14.3), വേരിയിംഗ് റിട്ടേൺസ് ഗ്രാഫ് (Fig 14.4), വൻകിട കമ്പനികളിലെ ഇക്കണോമിസ് ഓഫ് സ്കെയിൽ എന്നിവ 10 മാർക്ക് ഉപന്യാസ ചോദ്യമായി കാലിക്കറ്റ് സർവ്വകലാശാലയിൽ ചോദിക്കുന്നവയാണ്."
+            "examTip": "CRS, IRS, DRS എന്നിവയുടെ ഗണിത സമവാക്യങ്ങൾ, ഐസോക്വാന്റ് അകലങ്ങൾ (Fig 14.1, 14.2, 14.3), വേരിയിംഗ് റിട്ടേൺസ് ഗ്രാഫ് (Fig 14.4), വൻകിട കമ്പനികളിലെ ഇക്കണോമിസ് ഓഫ് സ്കെയിൽ എന്നിവ 10 മാർക്ക് ഉപന്യാസ ചോദ്യമായി കാലിക്കറ്റ് സർവ്വകലാശാലയിൽ ചോദിക്കുന്നവയാണ്.",
+            "audioUrl": "/audio/micro_unit14_masterclass.mp3"
           },
           {
             "chapterNumber": "Unit 15",
@@ -2613,73 +2678,137 @@ window.VOICE_EXPLANATIONS_DATA = {
     "name": "Arabic",
     "badge": "ع",
     "iconClass": "icon-orange",
-    "tag": "LANGUAGE",
+    "tag": "LANGUAGE / AEC 2",
     "modules": [
-      {
-        "moduleName": "MODULE 01: BASIC ARABIC GRAMMAR & CONVERSATION",
-        "videos": [
-          {
-            "chapterNumber": "Chapter 01",
-            "title": "അറബിക് അക്ഷരമാലയും അടിസ്ഥാന വ്യാകരണവും (Basic Grammar)",
-            "chapter": "നാമവിശേഷണങ്ങൾ, സർവ്വനാമങ്ങൾ & സംഭാഷണ ശൈലികൾ",
-            "duration": "18",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Chapter 02",
-            "title": "ക്രിയാപദങ്ങളും വാക്യഘടനയും (Arabic Verbal Sentences)",
-            "chapter": "ഭൂതകാല, വർത്തമാന കാല രൂപങ്ങൾ",
-            "duration": "20",
-            "youtubeId": ""
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 02: READING COMPREHENSION & TEXTS",
-        "videos": [
-          {
-            "chapterNumber": "Chapter 03",
-            "title": "ക്ലാസിക്കൽ & ആധുനിക അറബിക് പാഠഭാഗങ്ങൾ",
-            "chapter": "ലഘു കഥകൾ, ഗദ്യഭാഗങ്ങൾ & ആശയഗ്രഹണ വ്യായാമങ്ങൾ",
-            "duration": "22",
-            "youtubeId": ""
-          },
-          {
-            "chapterNumber": "Chapter 04",
-            "title": "ദൈനംദിന അറബി സംഭാഷണങ്ങൾ (Conversational Arabic)",
-            "chapter": "വിപണി, വിമാനത്താവളം, ഓഫീസ് സംഭാഷണങ്ങൾ",
-            "duration": "19",
-            "youtubeId": ""
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 03: FUNCTIONAL & COMMERCIAL ARABIC",
-        "videos": [
-          {
-            "chapterNumber": "Chapter 05",
-            "title": "ഔദ്യോഗിക എഴുത്തുകുത്തുകളും വാണിജ്യ അറബിയും",
-            "chapter": "ബിസിനസ് കത്തുകൾ, ഔദ്യോഗിക ഫോമുകൾ & സാങ്കേതിക പദങ്ങൾ",
-            "duration": "21",
-            "youtubeId": ""
-          }
-        ]
-      },
-      {
-        "moduleName": "MODULE 04: TRANSLATION & CREATIVE EXPRESSION",
-        "videos": [
-          {
-            "chapterNumber": "Chapter 06",
-            "title": "വിവർത്തന രീതികൾ: അറബിക് - മലയാളം - ഇംഗ്ലീഷ്",
-            "chapter": "ദ്വിഭാഷാ വിവർത്തന ശൈലികൾ & പദാവലി സമ്പുഷ്ടീകരണം",
-            "duration": "23",
-            "youtubeId": ""
-          }
-        ]
-      }
+        {
+            "moduleName": "MODULE 01: BASIC ARABIC GRAMMAR & CONVERSATION (التحيات والتعارف)",
+            "videos": [
+                {
+                    "chapterNumber": "Chapter 01",
+                    "title": "അറബിക് അക്ഷരമാലയും അടിസ്ഥാന വ്യാകരണവും (Arabic Alphabet & Basic Grammar)",
+                    "chapter": "അക്ഷരമാല, മഖാരിജ്, ഹറകത്ത്, ഇസ്മ്-ഫിഅ്ല്-ഹർഫ്, മഅ്രിഫ-നകിറ, ശംസിയ്യ-ഖമരിയ്യ, ലിംഗ-വചന നിയമങ്ങൾ",
+                    "duration": "18:00",
+                    "youtubeId": "",
+                    "videoUrl": null,
+                    "thumbnail": "arabic_mod1_ch01_production/thumbnails/Arabic_Mod1_Ch01_Thumbnail.png",
+                    "language": "Arabic",
+                    "studyPoints": [
+                        "<strong>അക്ഷരമാലയും ഉച്ചാരണ സ്ഥാനങ്ങളും (Makharīj):</strong> 28 വ്യഞ്ജനാക്ഷരങ്ങൾ. ഓരോ അക്ഷരത്തിന്റെയും കൃത്യമായ സ്വരസ്ഥാനം (തൊണ്ട, നാവ്, ചുണ്ടുകൾ).",
+                        "<strong>ഹ്രസ്വ-ദീർഘ സ്വരങ്ങൾ (Harakat & Madd):</strong> ഫത്‌ഹ (a), കസ്ര (i), ളമ്മ (u) എന്നിവ ഹ്രസ്വ സ്വരങ്ങളും; അലിഫ്, വാവ്, യാഅ് എന്നിവ ദീർഘസ്വരങ്ങളുമാണ്.",
+                        "<strong>കലിമയുടെ വിഭജനം (Ism, Fi‘l, Ḥarf):</strong> അറബി പദങ്ങൾ മൂന്ന് വിധം — നാമം (Ism), ക്രിയ (Fi‘l), അവ്യയം (Ḥarf).",
+                        "<strong>മഅ്രിഫയും നകിറയും (Definiteness):</strong> തൻവീൻ ഉള്ളവ അനിശ്ചിത നാമവും (Nakirah), 'അൽ-' (ال) ചേർത്താൽ നിശ്ചിത നാമവുമാണ് (Ma‘rifah).",
+                        "<strong>ശംസിയ്യ & ഖമരിയ്യ അക്ഷരങ്ങൾ:</strong> 14 ശംസിയ്യ അക്ഷരങ്ങളിൽ ലാം ലയിച്ചു ഷദ്ദ് വരുന്നു; 14 ഖമരിയ്യ അക്ഷരങ്ങളിൽ ലാം സ്പഷ്ടമായി ഉച്ചരിക്കപ്പെടുന്നു.",
+                        "<strong>ലിംഗവും വചനവും (Gender & Number):</strong> താഉൽ മർബൂത്വ (ة) സ്ത്രീലിംഗ അടയാളം. മുഫ്റദ് (ഏകവചനം), മുഥന്ന (ദ്വിവചനം - ആനി/ഐനി), ജംഅ് (ബഹുവചനം - സാലിം & തക്സീർ).",
+                        "<strong>സിഫത്തും ഇളാഫത്തും:</strong> സിഫത്ത്-മൗസൂഫ് നാല് കാര്യങ്ങളിലും (ലിംഗം, വചനം, വിഭക്തി, നിശ്ചിതത്വം) പൊരുത്തപ്പെടുന്നു. ഇളാഫത്തിൽ ആദ്യ പദം (മുളാഫ്) തൻവീനും 'അൽ'ഉം സ്വീകരിക്കില്ല; രണ്ടാമത്തെ പദം (മുളാഫുൻ ഇലൈഹി) മജ്റൂറായിരിക്കും."
+                    ],
+                    "examTip": "യൂണിവേഴ്സിറ്റി പരീക്ഷയ്ക്ക് സിഫത്ത്-മൗസൂഫ് വ്യത്യാസം, ഇളാഫത്ത് നിയമങ്ങൾ, ശംസിയ്യ-ഖമരിയ്യ അക്ഷരങ്ങളുടെ പട്ടിക, തൻവീൻ പ്രയോഗങ്ങൾ എന്നിവ 5 & 10 മാർക്ക് വിഭാഗത്തിൽ ചോദിക്കാറുണ്ട്."
+                },
+                {
+                    "chapterNumber": "Chapter 02",
+                    "title": "ക്രിയാപദങ്ങളും വാക്യഘടനയും (Arabic Verbal Sentences & Tenses)",
+                    "chapter": "മാളീ (ഭൂതകാലം), മുളാരിഅ് (വർത്തമാനം/ഭാവി), അംറ് (ആജ്ഞാ ക്രിയകൾ), ജുംല ഫിഅ്ലിയ്യ & നാമവിശേഷണ വാക്യങ്ങൾ",
+                    "duration": "20:00",
+                    "youtubeId": "",
+                    "videoUrl": null,
+                    "thumbnail": "arabic_mod1_ch02_production/thumbnails/Arabic_Mod1_Ch02_Thumbnail.png",
+                    "language": "Arabic",
+                    "studyPoints": [
+                        "<strong>അൽ-ഫിഅ്ലുൽ മാളീ (Past Tense):</strong> അടിസ്ഥാന ത്രിയക്ഷര രൂപം (ഉദാ: കതബ, ഫഅല, ദഹബ). കർത്താവിന്റെ ലിംഗ-വചനത്തിനനുസരിച്ചുള്ള 14 സംയോജന രൂപങ്ങൾ (Conjugation).",
+                        "<strong>അൽ-ഫിഅ്ലുൽ മുളാരിഅ് (Present/Future Tense):</strong> അത്തീന (أ، ت، ي، ن) എന്നീ മുളാരിഇന്റെ അടയാളങ്ങൾ മുൻപിൽ ചേർത്ത് രൂപീകരിക്കുന്നു (ഉദാ: യക്തുബു, തക്തുബു).",
+                        "<strong>ഫിഅ്ലുൽ അംറ് (Imperative Verbs):</strong> രണ്ടാം പുരുഷനിൽ നിന്ന് കൽപ്പന/അഭ്യർത്ഥന രൂപീകരണം (ഉദാ: ഉക്തുബ്, ഇജ്‌ലിസ്).",
+                        "<strong>ജുംല ഫിഅ്ലിയ്യ ഘടന:</strong> ഫിഅ്ല് (ക്രിയ) + ഫാഇൽ (കർത്താവ് - മർഫൂഅ്) + മഫ്ഊൽ ബിഹീ (കർമ്മം - മൻസൂബ്). ക്രിയ മുന്നിൽ വരുമ്പോൾ എപ്പോഴും ഏകവചനമായിരിക്കും.",
+                        "<strong>ജുംല ഇസ്മിയ്യ & ഖബർ:</strong> മുബ്തദഅ് (ആദ്യ നാമം - മർഫൂഅ്) + ഖബർ (വാർത്ത - മർഫൂഅ്). ജുംല ഇസ്മിയ്യയെ ഫിഅ്ലിയ്യയാക്കി മാറ്റുന്ന രീതികൾ."
+                    ],
+                    "examTip": "കാലിക്കറ്റ് പരീക്ഷയിൽ ക്രിയകളുടെ 14 രൂപങ്ങളിലുള്ള രൂപാന്തരണം (തസ്റീഫ്), ജുംല ഫിഅ്ലിയ്യയെ ഇസ്മിയ്യയാക്കൽ, ഫാഇൽ-മഫ്ഊൽ വിഭക്തി ചിഹ്നങ്ങൾ എന്നിവ നിർബന്ധമായും പഠിക്കുക."
+                }
+            ]
+        },
+        {
+            "moduleName": "MODULE 02: READING COMPREHENSION & TEXTS (قطرات الندى وقراءات عربية)",
+            "videos": [
+                {
+                    "chapterNumber": "Chapter 03",
+                    "title": "ക്ലാസിക്കൽ & ആധുനിക പാഠഭാഗങ്ങൾ (Classical & Modern Arabic Texts)",
+                    "chapter": "അധ്വാനത്തിന്റെ മഹത്വം (ഥർവത്തുൽ അമൽ), പിതാവിന്റെ ഉപദേശങ്ങൾ, ക്ലാസിക്കൽ അറബിക് സാഹിത്യ വിശകലനം",
+                    "duration": "22:00",
+                    "youtubeId": "",
+                    "videoUrl": null,
+                    "thumbnail": "arabic_mod2_ch03_production/thumbnails/Arabic_Mod2_Ch03_Thumbnail.png",
+                    "language": "Arabic",
+                    "studyPoints": [
+                        "<strong>ഥർവത്തുൽ അമൽ (Work Is Wealth):</strong> തൊഴിലിന്റെ മഹത്വവും സ്വാശ്രയത്വവും വ്യക്തമാക്കുന്ന അറബിക് പാഠഭാഗം. പിതാവ് മകന് നൽകുന്ന മൂന്ന് അമൂല്യ ഉപദേശങ്ങൾ.",
+                        "<strong>ക്ലാസിക്കൽ ശൈലികൾ:</strong> ഖുർആനിക സൂക്തങ്ങളും തിരുവചനങ്ങളും ഉദ്ധരിച്ചുകൊണ്ടുള്ള ഭാഷാ ശൈലി.",
+                        "<strong>ആശയഗ്രഹണ വ്യായാമങ്ങൾ:</strong> പാഠഭാഗത്തെ ആസ്പദമാക്കിയുള്ള ചോദ്യോത്തരങ്ങൾ, സംഗ്രഹ രചന, ശരി/തെറ്റ് കണ്ടെത്തൽ.",
+                        "<strong>പദാവലി സമ്പുഷ്ടീകരണം (Vocabulary):</strong> ക്ലാസിക്കൽ അറബിക് സാഹിത്യത്തിൽ ഉപയോഗിക്കുന്ന ഉന്നത പദങ്ങളും അവയുടെ മലയാള/ഇംഗ്ലീഷ് അർത്ഥങ്ങളും."
+                    ],
+                    "examTip": "ഥർവത്തുൽ അമൽ പാഠത്തിലെ ഉപദേശങ്ങൾ, പാഠസംഗ്രഹം, അനുബന്ധ വ്യാകരണ ചോദ്യങ്ങൾ എന്നിവ ഉപന്യാസ രൂപത്തിൽ തയ്യാറാക്കുക."
+                },
+                {
+                    "chapterNumber": "Chapter 04",
+                    "title": "ദൈനംദിന അറബി സംഭാഷണങ്ങൾ (Conversational Arabic in Daily Life)",
+                    "chapter": "മാർക്കറ്റ്, വിമാനത്താവളം, ആശുപത്രി, ഓഫീസ് സംഭാഷണങ്ങൾ, സമയവും ആരോഗ്യവും (അൽ-വഖ്തു വസ്സിഹ്ഹ)",
+                    "duration": "19:00",
+                    "youtubeId": "",
+                    "videoUrl": null,
+                    "thumbnail": "arabic_mod2_ch04_production/thumbnails/Arabic_Mod2_Ch04_Thumbnail.png",
+                    "language": "Arabic",
+                    "studyPoints": [
+                        "<strong>അൽ-ഹിവാറാത്തുൽ യൗമിയ്യ (Daily Dialogues):</strong> വിപണിയിലെ വിലപേശലുകൾ, വിമാനത്താവളത്തിലെ ചെക്ക്-ഇൻ, ഇമിഗ്രേഷൻ സംഭാഷണങ്ങൾ.",
+                        "<strong>ആശുപത്രിയും ആരോഗ്യവും:</strong> രോഗലക്ഷണങ്ങൾ വിവരിക്കൽ, ഡോക്ടറുമായുള്ള ആശയവിനിമയം, മരുന്നുകളുടെ കുറിപ്പടി മനസ്സിലാക്കൽ.",
+                        "<strong>അൽ-വഖ്തു വസ്സിഹ്ഹ (Time and Health):</strong> സമയത്തിന്റെ വില, ആരോഗ്യ സംരക്ഷണം, പ്രവാചക വചനങ്ങളുടെ വെളിച്ചത്തിലുള്ള ചർച്ചകൾ.",
+                        "<strong>ചോദ്യശബ്ദങ്ങൾ (Adawāt al-Istifhām):</strong> മാ, മാദാ, മൻ, ഐന, മതാ, കൈഫ, കമ്, ലിമാദാ, ഹൽ എന്നിവയുടെ പ്രായോഗിക വാക്യങ്ങൾ."
+                    ],
+                    "examTip": "മാർക്കറ്റിലോ വിമാനത്താവളത്തിലോ നടക്കുന്ന ഒരു സംഭാഷണം തയ്യാറാക്കാൻ (10 മാർക്ക് ഡയലോഗ് റൈറ്റിംഗ്) പരീക്ഷയ്ക്ക് ചോദിക്കാറുണ്ട്."
+                }
+            ]
+        },
+        {
+            "moduleName": "MODULE 03: FUNCTIONAL & COMMERCIAL ARABIC (العربية الوظيفية والتجارية)",
+            "videos": [
+                {
+                    "chapterNumber": "Chapter 05",
+                    "title": "ഔദ്യോഗിക എഴുത്തുകുത്തുകളും വാണിജ്യ അറബിയും (Commercial Arabic & Business Letters)",
+                    "chapter": "ബിസിനസ് കത്തുകൾ, ബാങ്കിംഗ്, ഓർഡർ ഫോമുകൾ, ഇൻവോയ്സ്, ഔദ്യോഗിക മെമ്മോകൾ & വാണിജ്യ സാങ്കേതിക പദാവലി",
+                    "duration": "21:00",
+                    "youtubeId": "",
+                    "videoUrl": null,
+                    "thumbnail": "arabic_mod3_ch05_production/thumbnails/Arabic_Mod3_Ch05_Thumbnail.png",
+                    "language": "Arabic",
+                    "studyPoints": [
+                        "<strong>വാണിജ്യ അറബിയുടെ സ്വഭാവം:</strong> വ്യക്തത, കൃത്യത, സംക്ഷിപ്തത എന്നിവയാർന്ന പ്രൊഫഷണൽ അറബിക് എഴുത്തുരീതികൾ.",
+                        "<strong>ഔദ്യോഗിക കത്തുകളുടെ ഘടന:</strong> തലക്കെട്ട്, ബിസ്മില്ലാഹി, സംബോധന (അസ്സയ്യിദ് / അൽ-മുഹതറം), വിഷയ സൂചിക (അൽ-മൗളൂഅ്), സമാപനം (വത്തഖദ്ദലൂ ബിഖബൂലി ഫാഇഖിൽ ഇഹ്തിറാം).",
+                        "<strong>തൊഴിൽ അപേക്ഷകളും സി.വി.യും (Job Applications & CV):</strong> ബയോഡാറ്റ തയ്യാറാക്കൽ, കവർ ലെറ്റർ, യോഗ്യതകളും പ്രവൃത്തിപരിചയവും രേഖപ്പെടുത്തൽ.",
+                        "<strong>വാണിജ്യ പദാവലി (Commercial Lexicon):</strong> ബാങ്ക് (ബങ്ക്), അക്കൗണ്ട് (ഹിസാബ്), ചെക്ക് (ശീക്ക്), കമ്പോളം (സൂഖ്), ലാഭം (രിബ്ഹ്), കരാർ (അഖ്ദ്), ഇറക്കുമതി/കയറ്റുമതി (ഇസ്തീറാദ്/തസ്ദീർ)."
+                    ],
+                    "examTip": "തൊഴിൽ അപേക്ഷ (ത്വലബുൽ വളീഫ) അല്ലെങ്കിൽ സാധനങ്ങൾ ഓർഡർ ചെയ്തുകൊണ്ടുള്ള വാണിജ്യ കത്ത് പരീക്ഷയിലെ സ്ഥിരം 10/15 മാർക്ക് ചോദ്യമാണ്."
+                }
+            ]
+        },
+        {
+            "moduleName": "MODULE 04: TRANSLATION & CREATIVE EXPRESSION (الترجمة والتعبير الإبداعي)",
+            "videos": [
+                {
+                    "chapterNumber": "Chapter 06",
+                    "title": "വിവർത്തന രീതികൾ: അറബിക് - മലയാളം - ഇംഗ്ലീഷ് (Translation Methods: Arabic-Mal-Eng)",
+                    "chapter": "വിവർത്തന തത്ത്വങ്ങൾ, സാങ്കേതിക വാക്യങ്ങൾ, ശൈലികൾ, പഴഞ്ചൊല്ലുകൾ (അംഥാൽ) & ദ്വിഭാഷാ പരിശീലനങ്ങൾ",
+                    "duration": "23:00",
+                    "youtubeId": "",
+                    "videoUrl": null,
+                    "thumbnail": "arabic_mod4_ch06_production/thumbnails/Arabic_Mod4_Ch06_Thumbnail.png",
+                    "language": "Arabic",
+                    "studyPoints": [
+                        "<strong>വിവർത്തന സിദ്ധാന്തങ്ങൾ:</strong> വാചിക വിവർത്തനം (Literal) vs ആശയ വിവർത്തനം (Dynamic/Idiomatic). അറബി-മലയാളം വാക്യഘടനകളിലെ വ്യത്യാസങ്ങൾ (VSO vs SOV).",
+                        "<strong>വാക്യ വിവർത്തന തന്ത്രങ്ങൾ:</strong> നാമവിശേഷണ വാക്യങ്ങൾ, സർവ്വനാമങ്ങൾ, അവ്യയങ്ങൾ എന്നിവ മലയാളത്തിലേക്കും ഇംഗ്ലീഷിലേക്കും തർജ്ജമ ചെയ്യുന്ന രീതി.",
+                        "<strong>പഴഞ്ചൊല്ലുകളും ശൈലികളും (Amthāl & Proverbs):</strong> 'അൽ-വഖ്തു കസ്സൈഫ്' (Time is like a sword), 'അൽ-ഇൽമു നൂറുൻ' (Knowledge is light) തുടങ്ങിയവയുടെ വിവർത്തന ചാരുത.",
+                        "<strong>സാങ്കേതിക-വാർത്താ വിവർത്തനം:</strong> വാർത്താ ശകലങ്ങൾ, ഔദ്യോഗിക സർക്കുലറുകൾ, പത്രക്കുറിപ്പുകൾ എന്നിവയുടെ തർജ്ജമ."
+                    ],
+                    "examTip": "അറബിയിൽ നിന്ന് മലയാളത്തിലേക്കും തിരിച്ചും 5 വീതം വാക്യങ്ങൾ വിവർത്തനം ചെയ്യാനുള്ള ചോദ്യത്തിന് 10 മാർക്ക് ലഭിക്കും; ക്രിയാ-കർത്താ പൊരുത്തം സൂക്ഷ്മമായി ശ്രദ്ധിക്കുക."
+                }
+            ]
+        }
     ],
-    "totalVideos": 0
-  },
+    "totalVideos": 6
+},
   "hindi": {
     "name": "Hindi",
     "badge": "हि",
@@ -3084,4 +3213,3 @@ window.VOICE_EXPLANATIONS_DATA = {
     "totalVideos": 0
   }
 };
-
