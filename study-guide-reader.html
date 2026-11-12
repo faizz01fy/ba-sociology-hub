@@ -1397,6 +1397,36 @@
       display: none !important;
     }
 </style>
+  <style id="silent-protection-guard">
+    @media print {
+      html, body { display: none !important; visibility: hidden !important; }
+    }
+    html, body {
+      -webkit-user-select: none !important;
+      user-select: none !important;
+      -webkit-touch-callout: none !important;
+    }
+  </style>
+  <script id="silent-protection-script">
+    (function () {
+      document.addEventListener('contextmenu', function (e) { e.preventDefault(); return false; }, { capture: true });
+      document.addEventListener('dragstart', function (e) { e.preventDefault(); return false; }, { capture: true });
+      document.addEventListener('keydown', function (e) {
+        var k = (e.key || '').toLowerCase();
+        if ((e.ctrlKey || e.metaKey) && (k === 's' || k === 'p' || k === 'u' || k === 'c' || k === 'a')) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (k === 'i' || k === 'j' || k === 'c'))) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+      }, { capture: true });
+    })();
+  </script>
+
 </head>
 <body oncontextmenu="event.preventDefault(); return false;">
 

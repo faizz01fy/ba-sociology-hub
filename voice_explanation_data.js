@@ -843,17 +843,17 @@ window.VOICE_EXPLANATIONS_DATA = {
     "totalVideos": 13
   },
   "sociology": {
-    "name": "Sociology",
+    "name": "Sociology (Introduction to Sociology)",
     "badge": "◎",
     "iconClass": "icon-purple",
-    "tag": "CORE SUBJECT",
+    "tag": "BA SOCIOLOGY HONOURS · SOU1CJ101 / FYUGP",
     "modules": [
       {
-        "moduleName": "MODULE 01: INTRODUCING SOCIOLOGY",
+        "moduleName": "MODULE 01: INTRODUCING SOCIOLOGY (FYUGP SOU1CJ101)",
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "സോഷ്യോളജിക്കൽ ഭാവനയും ശാസ്ത്രീയ ഗവേഷണ രീതികളും (Sociological Imagination & Research Methods)",
+            "title": "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination & Research) | Sociology | Calicut Univ",
             "chapter": "Academic Hub Special · സി. റൈറ്റ് മിൽസ് & റിസർച്ച് മെത്തേഡ്സ് (C. Wright Mills & Research Methods)",
             "duration": "27",
             "youtubeId": "uMxIIznPo-w",
@@ -863,11 +863,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ: ആഴത്തിലുള്ള പങ്കാളിത്ത നിരീക്ഷണങ്ങളും സ്റ്റാറ്റിസ്റ്റിക്കൽ സർവേകളും സമന്വയിപ്പിക്കുന്ന രീതി."
             ],
             "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Distinguish between Personal Troubles and Public Issues with examples according to C. Wright Mills'.",
-            "language": "English & Malayalam"
+            "language": "English & Malayalam",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 02",
-            "title": "മൈക്രോ-മാക്രോ സോഷ്യോളജിയും പോസിറ്റിവിസവും (Micro & Macro Sociology and Positivism)",
+            "title": "പോസിറ്റിവിസവും സോഷ്യോളജിയും (Positivism & Micro-Macro Sociology) | Calicut Univ",
             "chapter": "Micro & Macro Levels · Positivism & Comte (സൂക്ഷ്മ-സ്ഥൂല തലങ്ങളും പോസിറ്റിവിസവും)",
             "duration": "13",
             "youtubeId": "WyReGfMhJJs",
@@ -878,16 +879,17 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സ്ട്രക്ചറലിസവും സിംബോളിക് ഇന്ററാക്ഷനിസവും: എമിൽ ഡർക്കൈമിന്റെ സോഷ്യൽ ഫാക്ട്സും (Social Facts) മാക്സ് വെബറുടെ വേർസ്റ്റെഹെൻ (Verstehen) കാഴ്ചപ്പാടും."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: 'Distinguish between Micro and Macro Sociology with examples' & 'Discuss Auguste Comte's Positivism and Law of Three Stages'.",
-            "language": "English & Malayalam"
+            "language": "English & Malayalam",
+            "malayalam_cc": true
           }
         ]
       },
       {
-        "moduleName": "MODULE 02: PRACTICING SOCIOLOGY",
+        "moduleName": "MODULE 02: PRACTICING SOCIOLOGY (FYUGP SOU1CJ101)",
         "videos": [
           {
-            "chapterNumber": "FYUGP Masterclass",
-            "title": "സോഷ്യോളജി പ്രയോഗത്തിൽ (Practicing Sociology: Full Syllabus Masterclass)",
+            "chapterNumber": "Masterclass (V1)",
+            "title": "സോഷ്യോളജി പ്രയോഗത്തിൽ (Practicing Sociology) - V1 | Sociology | Calicut Univ",
             "chapter": "Module 2 · 7 Subunits, Sociological Imagination, 7 Research Steps & Ethics (സോഷ്യോളജി പ്രയോഗത്തിൽ സമ്പൂർണ്ണ ക്ലാസ്)",
             "duration": "14:50",
             "youtubeId": "WyReGfMhJJs",
@@ -897,11 +899,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സാമൂഹിക ഗവേഷണത്തിന്റെ 7 ഘട്ടങ്ങൾ, പി.വി. യംഗ് & സി.എ. മോസർ നിർവ്വചനങ്ങൾ, റിസർച്ച് എത്തിക്സും ഇൻഫോംഡ് കോൺസെന്റും.",
               "സൂക്ഷ്മ (Micro) - സ്ഥൂല (Macro) സോഷ്യോളജി, പോസിറ്റിവിസ്റ്റ്, ഇന്റർപ്രിറ്റേറ്റീവ് (Verstehen), ക്രിട്ടിക്കൽ സ്കൂൾ (Marx, Habermas) എന്നിവയും 11 മോഡൽ പരീക്ഷാ ചോദ്യോത്തരങ്ങളും."
             ],
-            "examTip": "Calicut University 10-മാർക്ക് ഉപന്യാസ ഫോർമുല: സോഷ്യോളജിക്കൽ ഭാവനയും സാമൂഹിക ഗവേഷണത്തിലെ 7 പ്രധാന ഘട്ടങ്ങളും നിർബന്ധമായും പഠിക്കുക."
+            "examTip": "Calicut University 10-മാർക്ക് ഉപന്യാസ ഫോർമുല: സോഷ്യോളജിക്കൽ ഭാവനയും സാമൂഹിക ഗവേഷണത്തിലെ 7 പ്രധാന ഘട്ടങ്ങളും നിർബന്ധമായും പഠിക്കുക.",
+            "malayalam_cc": true
           },
           {
-            "chapterNumber": "Module 2 Masterclass",
-            "title": "സാമൂഹിക യാഥാർത്ഥ്യവും ഗവേഷണ രീതിശാസ്ത്രവും (Social Reality & Research Orientations)",
+            "chapterNumber": "Masterclass (V2)",
+            "title": "സാമൂഹിക യാഥാർത്ഥ്യം (Social Reality & Orientations) - V2 | Sociology | Calicut Univ",
             "chapter": "Sociology · Module 2 · Practicing Sociology (സോഷ്യോളജി പ്രയോഗത്തിൽ - ഗവേഷണ രീതിശാസ്ത്രം)",
             "duration": "8:42",
             "youtubeId": "YEnG1YJ_vfs",
@@ -912,11 +915,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Interpretative Orientation &amp; Verstehen (ഫെർഷെഹൻ ഉൾക്കാഴ്ച): Pioneered by Max Weber; asserts human beings attach subjective meanings to actions, requiring <em>Verstehen</em> (empathetic understanding) to interpret reality from the actor's perspective rather than copying natural-science methods.",
               "Critical Sociology &amp; Emancipation (വിമർശനാത്മക പഠനം): Rooted in Karl Marx and Frankfurt School theorists (Horkheimer, Adorno, Jürgen Habermas); actively uncovers hidden power hierarchies, ideological domination, and structural inequality to empower social transformation and human emancipation."
             ],
-            "examTip": "Calicut University FYUGP Core Focus: 'Distinguish between Micro and Macro levels of sociological analysis with suitable examples' and 'Critically evaluate Positivist, Interpretative (Verstehen), and Critical orientations in sociological research' (Essential 10-Mark essay & short answer areas)."
+            "examTip": "Calicut University FYUGP Core Focus: 'Distinguish between Micro and Macro levels of sociological analysis with suitable examples' and 'Critically evaluate Positivist, Interpretative (Verstehen), and Critical orientations in sociological research' (Essential 10-Mark essay & short answer areas).",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 2.1",
-            "title": "ഗവേഷണ രൂപരേഖയും ഘട്ടങ്ങളും (Research Design & Methods in Sociology)",
+            "title": "ഗവേഷണ രൂപരേഖയും ഘട്ടങ്ങളും (Research Design & Methods) | Sociology | Calicut Univ",
             "chapter": "Module 02 · ഗവേഷണ തരങ്ങൾ, 7 ഘട്ടങ്ങൾ, ഹൈപ്പോതിസിസ്, സാമ്പിളിംഗ് & ഡാറ്റ ശേഖരണം",
             "duration": "05:56",
             "youtubeId": "3VcFATaXWFI",
@@ -930,11 +934,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "5. ഡാറ്റ ശേഖരണം: Primary Data (അഭിമുഖം, ചോദ്യാവലി, സർവ്വേ, നിരീക്ഷണം) & Secondary Data (പുസ്തകങ്ങൾ, ജേണലുകൾ, രേഖകൾ).",
               "6. വിശകലനവും വ്യാഖ്യാനവും (Analysis, Interpretation & Findings) & 7. വസ്തുനിഷ്ഠമായ റിപ്പോർട്ട് തയ്യാറാക്കൽ (Report Writing)."
             ],
-            "examTip": "Calicut University 10-മാർക്ക് ചോദ്യം: 'What is Research Design? Explain the major types and 7 systematic stages in social research' — ഏഴ് ഘട്ടങ്ങൾ കൃത്യമായ ക്രമത്തിൽ (1 മുതൽ 7 വരെ) എഴുതണം!"
+            "examTip": "Calicut University 10-മാർക്ക് ചോദ്യം: 'What is Research Design? Explain the major types and 7 systematic stages in social research' — ഏഴ് ഘട്ടങ്ങൾ കൃത്യമായ ക്രമത്തിൽ (1 മുതൽ 7 വരെ) എഴുതണം!",
+            "malayalam_cc": true
           },
           {
-            "chapterNumber": "Chapter 2.3",
-            "title": "നിരീക്ഷണ രീതികളും ഗവേഷണ ധാർമ്മികതയും (Observation Techniques & Ethics in Social Research)",
+            "chapterNumber": "Chapter 2.2",
+            "title": "നിരീക്ഷണ രീതികളും ധാർമ്മികതയും (Observation & Ethics) | Sociology | Calicut Univ",
             "chapter": "Module 02 · പങ്കാളിത്ത നിരീക്ഷണം (Malinowski), മൂല്യ നിഷ്പക്ഷത (Max Weber), IRB & ഗവേഷണ ധാർമ്മികത",
             "duration": "05:52",
             "youtubeId": "JmgL66yjgDg",
@@ -948,16 +953,17 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഗവേഷണ ധാർമ്മികത (Research Ethics): സ്വതന്ത്രവും അറിഞ്ഞുകൊണ്ടുമുള്ള സമ്മതം (Free & Informed Consent), Belmont Report (1979) ദുർബല വിഭാഗങ്ങളുടെ സംരക്ഷണം, രഹസ്യാത്മകതയും പേരുവെളിപ്പെടുത്താതിരിക്കലും (Anonymity & Confidentiality).",
               "വിലക്കപ്പെട്ട പ്രവൃത്തികൾ & ധാർമ്മിക സ്രോതസ്സുകൾ: Falsification, Fabrication, Plagiarism, Misleading Authorship എന്നിവ ഒഴിവാക്കൽ; IRB / Ethics Committees, സർവ്വകലാശാലകൾ, പ്രൊഫഷണൽ അസോസിയേഷനുകൾ, നിയമങ്ങൾ."
             ],
-            "examTip": "Calicut University ഹ്രസ്വ/ഉപന്യാസ ചോദ്യങ്ങൾ: 'Participant Observation (Malinowski)', 'Value Neutrality (Max Weber)', കൂടാതെ 'Importance of Ethics in Sociological Research' (Informed Consent, Anonymity vs Confidentiality, Plagiarism/Fabrication, Belmont Report 1979) എന്നിവ ഉറപ്പായും പഠിക്കുക!"
+            "examTip": "Calicut University ഹ്രസ്വ/ഉപന്യാസ ചോദ്യങ്ങൾ: 'Participant Observation (Malinowski)', 'Value Neutrality (Max Weber)', കൂടാതെ 'Importance of Ethics in Sociological Research' (Informed Consent, Anonymity vs Confidentiality, Plagiarism/Fabrication, Belmont Report 1979) എന്നിവ ഉറപ്പായും പഠിക്കുക!",
+            "malayalam_cc": true
           }
         ]
       },
       {
-        "moduleName": "MODULE 03: INDIVIDUAL AND SOCIETY",
+        "moduleName": "MODULE 03: INDIVIDUAL AND SOCIETY (FYUGP SOU1CJ101)",
         "videos": [
           {
             "chapterNumber": "Chapter 03",
-            "title": "സമൂഹം എങ്ങനെ നമ്മളെ മനുഷ്യരാക്കുന്നു? (How Society Makes Us Human: Process of Socialization)",
+            "title": "സമൂഹം നമ്മളെ മനുഷ്യരാക്കുന്നു (How Society Makes Us Human) | Calicut Univ",
             "chapter": "Module 03 · Unit 3.3 · നിർവ്വചനങ്ങൾ, 11 സവിശേഷതകൾ, അമല-കമല, 8 തരങ്ങൾ & LMS MCQs",
             "duration": "07:08",
             "youtubeId": "NpA6uopiRYk",
@@ -971,11 +977,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "പരാജയങ്ങളും പ്രശ്നങ്ങളും: Smelser & Ian Robertson നിരീക്ഷണങ്ങൾ, അമിത നിയന്ത്രണം, വാർദ്ധക്യ-മരണ തയ്യാറെടുപ്പില്ലായ്മ, വിരുദ്ധ സന്ദേശങ്ങൾ.",
               "സാമൂഹികവൽക്കരണത്തിന്റെ 8 തരങ്ങൾ (Ian Robertson & Orville Brim): Primary, Secondary, Anticipatory (Robert K. Merton), Developmental, Re-socialization (Erving Goffman Total Institutions), Adult, Gender, Group Socialization + Check Your Progress MCQs."
             ],
-            "examTip": "Calicut University 10-മാർക്ക് ചോദ്യങ്ങൾ: 'Explain the Meaning, Importance & Nature-Nurture (Feral Children) in Socialization' കൂടാതെ 'Compare Primary, Secondary, Anticipatory (Merton) and Re-socialization (Goffman)' — പണ്ഡിതന്മാരുടെ പേരുകൾ പ്രത്യേകം അണ്ടർലൈൻ ചെയ്യുക!"
+            "examTip": "Calicut University 10-മാർക്ക് ചോദ്യങ്ങൾ: 'Explain the Meaning, Importance & Nature-Nurture (Feral Children) in Socialization' കൂടാതെ 'Compare Primary, Secondary, Anticipatory (Merton) and Re-socialization (Goffman)' — പണ്ഡിതന്മാരുടെ പേരുകൾ പ്രത്യേകം അണ്ടർലൈൻ ചെയ്യുക!",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 3.4",
-            "title": "സാമൂഹികവൽക്കരണത്തിന്റെ ഏജൻസികൾ (Agents of Socialization)",
+            "title": "സാമൂഹികവൽക്കരണ ഏജൻസികൾ (Agents of Socialization) | Sociology | Calicut Univ",
             "chapter": "Agents of Socialization · Family, School, Peer Groups, Media & Workplace (സാമൂഹികവൽക്കരണ ഏജൻസികൾ)",
             "duration": "16:15",
             "youtubeId": "uf8WYWO9-Tk",
@@ -988,11 +995,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സമപ്രായക്കാരുടെ കൂട്ടായ്മ (Peer Groups): തുല്യതയിൽ അധിഷ്ഠിതമായ ബന്ധങ്ങൾ; ഹാരലംബോസിന്റെ 3 വ്യതിരിക്ത സവിശേഷതകൾ (കുട്ടികൾ നിയമങ്ങൾ ഉണ്ടാക്കുന്നു, ഉടനടി ആനന്ദം, വിരുദ്ധ മൂല്യങ്ങൾ); പിയർ പ്രഷർ & കൗമാര സ്വാതന്ത്ര്യം.",
               "മതം, ഭരണകൂടം, മാധ്യമങ്ങൾ & തൊഴിലിടം: വിശുദ്ധ ആചാരങ്ങളും ധാർമ്മികതയും (മതം); 4 ഘടകങ്ങൾ, നിയമവാഴ്ച, ശിശു-ആരോഗ്യ ക്ഷേമ ചുമതലകൾ (ഭരണകൂടം); 6 ചാനലുകൾ, യാഥാർത്ഥ്യ നിർമ്മിതി, സ്റ്റാറ്റസ് കോയെ വെല്ലുവിളിക്കൽ (മാധ്യമങ്ങൾ); ഒക്യുപേഷണൽ സോഷ്യലൈസേഷൻ & ചെറുസമൂഹം (തൊഴിലിടം). ഒപ്പം 5 മോഡൽ MCQs & 10 മാർക്ക് ഉപന്യാസ സഹായി."
             ],
-            "examTip": "Calicut University FYUGP പരീക്ഷാ ചോദ്യങ്ങൾ: 1) 'Define Socialization and explain the major agents of socialization in detail' (10 Marks). 2) 'Analyse the role of different agents of socialization in the development of personality and social behaviour' (10 Marks). 3) 'Explain Haralambos and colleagues' three major aspects of peer group socialization'."
+            "examTip": "Calicut University FYUGP പരീക്ഷാ ചോദ്യങ്ങൾ: 1) 'Define Socialization and explain the major agents of socialization in detail' (10 Marks). 2) 'Analyse the role of different agents of socialization in the development of personality and social behaviour' (10 Marks). 3) 'Explain Haralambos and colleagues' three major aspects of peer group socialization'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 04",
-            "title": "നമ്മൾ വെറും സമൂഹത്തിന്റെ നിർമ്മിതികളാണോ? (Social Construction of Reality)",
+            "title": "സമൂഹത്തിന്റെ നിർമ്മിതികൾ (Social Construction of Reality) | Calicut Univ",
             "chapter": "Social Construction of Reality · Agency vs Structure (സാമൂഹിക യാഥാർത്ഥ്യ നിർമ്മിതി)",
             "duration": "20",
             "youtubeId": "EJt-7kG_-E8",
@@ -1003,11 +1011,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഏജൻസി vs സ്ട്രക്ചർ (Individual Agency vs Social Structure): വ്യക്തികൾക്ക് സ്വന്തം നിലയിൽ തീരുമാനങ്ങളെടുക്കാനുള്ള ശേഷിയും (Agency), വ്യക്തിയെ നിയന്ത്രിക്കുന്ന സാമൂഹിക വ്യവസ്ഥിതികളും (Structure)."
             ],
             "examTip": "പ്രധാന യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Explain Peter Berger and Thomas Luckmann's concept of Social Construction of Reality'.",
-            "language": "English & Malayalam"
+            "language": "English & Malayalam",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 05",
-            "title": "സോഷ്യലൈസേഷൻ പാളിച്ചകളും ജീവിത പ്രതിസന്ധികളും (Socialization Failures & Identity Crises)",
+            "title": "സോഷ്യലൈസേഷൻ പാളിച്ചകൾ (Socialization Failures & Identity) | Calicut Univ",
             "chapter": "Socialization Failures · Anomie, Deviance & Re-socialization (സോഷ്യലൈസേഷൻ പാളിച്ചകളും അനോമിയും)",
             "duration": "22",
             "youtubeId": "KEg51ekQTWY",
@@ -1018,11 +1027,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ലേബലിംഗ് തിയറിയും റീ-സോഷ്യലൈസേഷനും: ഹൊവാർഡ് ബെക്കറുടെ ലേബലിംഗ് സിദ്ധാന്തവും എർവിംഗ് ഗോഫ്മാന്റെ ടോട്ടൽ ഇൻസ്റ്റിറ്റ്യൂഷനുകളിലെ (Total Institutions) പുനർ-സാമൂഹികവൽക്കരണവും."
             ],
             "examTip": "Calicut University ചോദ്യം: 'Define Anomie according to Emile Durkheim and explain how socialization failures lead to social deviance'.",
-            "language": "English & Malayalam"
+            "language": "English & Malayalam",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 06",
-            "title": "ഫ്രോയിഡ്, മീഡ്, പിയാഷെ: സോഷ്യലൈസേഷൻ ഘട്ടങ്ങൾ (Theories of Socialization: Freud, Mead, Piaget)",
+            "title": "ഫ്രോയിഡ്, മീഡ്, പിയാഷെ (Theories of Socialization) | Sociology | Calicut Univ",
             "chapter": "Freud, Mead & Piaget · Development of the Social Self (സാമൂഹിക വ്യക്തിത്വ വികാസം)",
             "duration": "19",
             "youtubeId": "uf8WYWO9-Tk",
@@ -1033,45 +1043,50 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ജീൻ പിയാഷെയുടെ വൈജ്ഞാനിക വികാസ ഘട്ടങ്ങൾ (Jean Piaget's Cognitive Development): സെൻസറി-മോട്ടോർ, പ്രീ-ഓപ്പറേഷണൽ, കോൺക്രീറ്റ് ഓപ്പറേഷണൽ, ഫോർമൽ ഓപ്പറേഷണൽ ഘട്ടങ്ങൾ."
             ],
             "examTip": "പ്രധാന 10 മാർക്ക് ഉപന്യാസ ചോദ്യം: 'Critically examine G.H. Mead's theory of the development of Self (I and Me)'.",
-            "language": "English & Malayalam"
+            "language": "English & Malayalam",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 07",
-            "title": "മനുഷ്യനെ മനുഷ്യനാക്കുന്ന സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary, Secondary & Reference Groups)",
-            "chapter": "Primary vs Secondary Groups · Cooley & Reference Groups (പ്രാഥമിക & ദ്വിതീയ ഗ്രൂപ്പുകൾ)",
+            "title": "സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary & Secondary) | Sociology | Calicut Univ",
+            "chapter": "C.H. Cooley's Primary Groups · Secondary Groups · Sumner's In/Out Groups · Merton's Reference Groups",
             "duration": "21",
-            "youtubeId": "YEnG1YJ_vfs",
+            "youtubeId": "jedN-7Z72Fk",
             "studyPoints": [
-              "സാമൂഹിക ഗ്രൂപ്പ് (Social Group): പരസ്പര ബന്ധവും പങ്കിട്ട മൂല്യങ്ങളും 'ഞങ്ങൾ' എന്ന ഐക്യബോധവും (We-feeling) ഉള്ള രണ്ടോ അതിലധികമോ വ്യക്തികളുടെ കൂട്ടായ്മ.",
-              "പ്രാഥമിക ഗ്രൂപ്പുകൾ (Primary Groups - Charles Horton Cooley): ചെറിയ വലിപ്പം, മുഖാമുഖ സമ്പർക്കം (Face-to-face), വൈകാരിക അടുപ്പം (ഉദാ: കുടുംബം, ബാല്യകാല സൗഹൃദം).",
-              "ദ്വിതീയ ഗ്രൂപ്പുകൾ (Secondary Groups): ലക്ഷ്യാധിഷ്ഠിതമായ ഔദ്യോഗിക ബന്ധങ്ങൾ, വലിയ വലിപ്പം, കരാറുകൾക്കും ചട്ടങ്ങൾക്കും മുൻഗണന (ഉദാ: വ്യാവസായിക സ്ഥാപനങ്ങൾ, സർക്കാർ ഓഫീസുകൾ).",
-              "ഇൻ-ഗ്രൂപ്പ്, ഔട്ട്-ഗ്രൂപ്പ് & റഫറൻസ് ഗ്രൂപ്പ്: ഡബ്ല്യു.ജി. സാംനറുടെ ഇൻ/ഔട്ട് ഗ്രൂപ്പുകളും, റോബർട്ട് കെ. മെർട്ടന്റെ റഫറൻസ് ഗ്രൂപ്പ് (Reference Group) സിദ്ധാന്തവും."
+              "<strong>00:00 - 04:36 | സോഷ്യൽ ഗ്രൂപ്പുകളുടെ സ്വഭാവം:</strong> പരസ്പര ബന്ധവും 'ഞങ്ങൾ' എന്ന ഐക്യബോധവും (We-feeling) ഉള്ള കൂട്ടായ്മകൾ (Harry M. Johnson, Ogburn).",
+              "<strong>04:36 - 09:12 | പ്രാഥമിക ഗ്രൂപ്പുകൾ (C.H. Cooley, 1909):</strong> മുഖാമുഖ സമ്പർക്കം (Face-to-face), ഗാഢമായ വൈകാരിക അടുപ്പം (കുടുംബം, കളിക്കൂട്ടുകാർ).",
+              "<strong>09:12 - 13:48 | ദ്വിതീയ ഗ്രൂപ്പുകൾ (Secondary Groups):</strong> ലക്ഷ്യാധിഷ്ഠിത ഔദ്യോഗിക ബന്ധങ്ങൾ, വലിയ വലിപ്പം, കരാർ സ്വഭാവം (ഓഫീസുകൾ, യൂണിയനുകൾ).",
+              "<strong>13:48 - 18:24 | ഇൻ-ഗ്രൂപ്പും ഔട്ട്-ഗ്രൂപ്പും (W.G. Sumner, 1906):</strong> 'ഞങ്ങൾ' (In-group) vs 'അവർ' (Out-group) വിവേചനം, എത്‌നോസെൻട്രിസം (Folkways).",
+              "<strong>18:24 - 21:00 | റഫറൻസ് ഗ്രൂപ്പുകൾ (Herbert Hyman & Robert K. Merton):</strong> വ്യക്തികൾ തങ്ങളുടെ നിലപാടുകൾ വിലയിരുത്താൻ മാതൃകയാക്കുന്ന താരതമ്യ ഗ്രൂപ്പുകൾ."
             ],
-            "examTip": "Calicut University പരീക്ഷാ ചോദ്യം: 'Distinguish between Primary and Secondary Groups as outlined by C.H. Cooley' & 'Explain Robert K. Merton's concept of Reference Group'.",
-            "language": "English & Malayalam"
+            "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Distinguish between Primary and Secondary Groups as outlined by C.H. Cooley' & 'Explain Robert K. Merton's concept of Reference Group'.",
+            "language": "English & Malayalam",
+            "thumbnail": "https://i.ytimg.com/vi/jedN-7Z72Fk/hqdefault.jpg",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 08",
-            "title": "സംഘടിത സംഘങ്ങളും ആൾക്കൂട്ടത്തിന്റെ മനഃശാസ്ത്രവും (Formal Organizations & Crowd Psychology)",
-            "chapter": "Max Weber's Bureaucracy & Gustave Le Bon's Crowd Psychology (ബ്യൂറോക്രസിയും ആൾക്കൂട്ട മനഃശാസ്ത്രവും)",
+            "title": "ബ്യൂറോക്രസിയും ആൾക്കൂട്ടവും (Formal Organizations & Crowds) | Calicut Univ",
+            "chapter": "Max Weber's Bureaucracy & Gustave Le Bon's Crowd Psychology (ഔപചാരിക സംഘടനകളും ആൾക്കൂട്ടവും)",
             "duration": "18",
             "youtubeId": "uMxIIznPo-w",
             "studyPoints": [
-              "ഔപചാരിക സംഘടനകൾ (Formal Organizations): ആധുനിക വ്യവസായ വിപ്ലവത്തിന് ശേഷം വൻതോതിലുള്ള ജോലികൾ ഏകോപിപ്പിക്കാൻ രൂപകൽപ്പന ചെയ്ത നിയമബദ്ധമായ ഘടനകൾ.",
-              "മാക്സ് വെബറുടെ ബ്യൂറോക്രസി (Max Weber's Rational Bureaucracy): അധികാര ശ്രേണി (Hierarchy of Authority), കർശനമായ ലിഖിത നിയമങ്ങൾ, നിർവ്യക്തികത (Impersonality), സാങ്കേതിക യോഗ്യത.",
-              "ബ്യൂറോക്രസിയുടെ അയോഗ്യതകൾ (Dysfunctions): റെഡ്-ടേപ്പിസം (Red Tapism), ചട്ടക്കൂടുകളിലെ അന്ധമായ മുറുകെപ്പിടിക്കൽ, വ്യക്തിത്വമില്ലായ്മ.",
-              "ഗുസ്താവ് ലെ ബോണിന്റെ ആൾക്കൂട്ട മനഃശാസ്ത്രം (Gustave Le Bon - Crowd Psychology): ആൾക്കൂട്ടത്തിൽ വ്യക്തിഗത യുക്തി അപ്രത്യക്ഷമാവുകയും മാനസിക സംക്രമണത്തിലൂടെ (Contagion) വികാരങ്ങൾക്ക് അടിമപ്പെടുകയും ചെയ്യുന്ന അവസ്ഥ."
+              "<strong>00:00 - 03:37 | ഔപചാരിക സംഘടനകൾ:</strong> ആധുനിക സമൂഹത്തിലെ സങ്കീർണ്ണമായ തൊഴിൽ വിഭജനവും പ്രത്യേക ലക്ഷ്യങ്ങൾക്കായുള്ള വലിയ കൂട്ടായ്മകളും.",
+              "<strong>03:37 - 07:15 | മാക്സ് വെബറുടെ ഉദ്യോഗസ്ഥവൃന്ദം (Max Weber's Bureaucracy):</strong> അധികാരശ്രേണി (Hierarchy), എഴുതപ്പെട്ട നിയമങ്ങൾ, നിഷ്പക്ഷത, യോഗ്യതയ്ക്കുള്ള മുൻഗണന.",
+              "<strong>07:15 - 10:52 | ഗുസ്താവ് ലെ ബോണിന്റെ ആൾക്കൂട്ട മനഃശാസ്ത്രം (Gustave Le Bon, 1895):</strong> കൂട്ടായ മനസ്സ് (Collective Mind), മാനസിക പകർച്ചവ്യാധി (Mental Contagion), വ്യക്തിത്വ ശോഷണം.",
+              "<strong>10:52 - 14:30 | ആൾക്കൂട്ട തരങ്ങൾ (Herbert Blumer):</strong> കാഷ്വൽ, കൺവെൻഷണൽ, എക്സ്പ്രസീവ്, ആക്റ്റിംഗ് ക്രൗഡുകൾ; ജനക്കൂട്ട അക്രമങ്ങളും പരിഭ്രാന്തിയും (Panics & Mobs)."
             ],
-            "examTip": "പ്രധാന പരീക്ഷാ ചോദ്യം: 'Describe the key characteristics of Max Weber's Ideal Type of Bureaucracy' & 'Explain Gustave Le Bon's theory of Crowd Psychology'.",
-            "language": "English & Malayalam"
+            "examTip": "പ്രധാന 10-മാർക്ക് ചോദ്യം: 'Describe the key characteristics of Bureaucracy as formulated by Max Weber' & 'Examine Le Bon's theory of Crowd Psychology'.",
+            "language": "English & Malayalam",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 09",
-            "title": "സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ: തരങ്ങളും പ്രക്രിയകളും (Types of Social Interaction: Cooperation, Competition, Conflict, Accommodation, Assimilation)",
+            "title": "സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ (Types of Social Interaction) | Sociology | Calicut Univ",
             "chapter": "Types of Social Interaction · Park & Burgess, Cooley, Simmel & Baldwin (സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ)",
             "duration": "14:27",
-            "youtubeId": "KEg51ekQTWY",
-            "thumbnail": "/thumbnails/sociology_sem1_mod3/thumbnail.png",
+            "youtubeId": "TN8LqpBZCGQ",
+            "thumbnail": "https://i.ytimg.com/vi/TN8LqpBZCGQ/hqdefault.jpg",
             "language": "English & Malayalam",
             "studyPoints": [
               "സാമൂഹിക പ്രതിപ്രവർത്തനം (Social Interaction): മനുഷ്യ ബന്ധങ്ങളുടെ അടിസ്ഥാന ശില; ഗ്രീൻ, പാർക്ക് & ബർഗസ്, ഡോസൺ & ഗെറ്റിസ് എന്നിവരുടെ നിർവ്വചനങ്ങൾ; സമ്പർക്കവും (Contact in Time & Space) ആശയവിനിമയവും.",
@@ -1079,92 +1094,103 @@ window.VOICE_EXPLANATIONS_DATA = {
               "മത്സരം (Competition): പരിമിതമായ വിഭവങ്ങൾ നേടാനായുള്ള അവ്യക്തിക സമാധാനപരമായ പോരാട്ടം; പാർക്ക് & ബർഗസ് ('Interaction without social contact'); എച്ച്.ടി. മജുംദാറിന്റെ 5 ഗുണധർമ്മങ്ങളും 3 ദോഷങ്ങളും.",
               "സംഘർഷം, അനുരഞ്ജനം & സ്വാംശീകരണം: സംഘർഷത്തിന്റെ കാരണങ്ങൾ, ജോർജ്ജ് സിമ്മലിന്റെ 4 തരങ്ങൾ, ഗില്ലിന്റെ 5 രൂപങ്ങൾ, ലൂയിസ് കോസറുടെ സേഫ്റ്റി വാൽവ് ധർമ്മങ്ങൾ; ജെ.എം. ബാൾഡ്വിന്റെ അക്കോമഡേഷനും 7 രീതികളും; പാർക്ക് & ബർഗസിന്റെ അസിമിലേഷനും തടസ്സങ്ങളും. ഒപ്പം 31 സോൾവ്ഡ് MCQs & യൂണിവേഴ്സിറ്റി ഉപന്യാസ സഹായി."
             ],
-            "examTip": "Calicut University 10-മാർക്ക് ഉപന്യാസം: 'Define Social Interaction and explain the major forms: Cooperation, Competition, Conflict, Accommodation and Assimilation with examples' & 31 മോഡൽ MCQs."
+            "examTip": "Calicut University 10-മാർക്ക് ഉപന്യാസം: 'Define Social Interaction and explain the major forms: Cooperation, Competition, Conflict, Accommodation and Assimilation with examples' & 31 മോഡൽ MCQs.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 10",
-            "title": "സംഘർഷം സമൂഹത്തെ വളർത്തുന്നതെങ്ങനെ? (How Conflict Grows Society: Lewis Coser & Marx)",
+            "title": "സംഘർഷവും സമൂഹവും (Social Conflict: Lewis Coser & Marx) | Sociology | Calicut Univ",
             "chapter": "Functions of Social Conflict · Coser & Marx (സാമൂഹിക സംഘർഷത്തിന്റെ ധർമ്മങ്ങൾ)",
             "duration": "21",
-            "youtubeId": "QidpySg9v80",
+            "youtubeId": "N6XM-ScWqeo",
             "studyPoints": [
               "കാൾ മാർക്സിന്റെ വർഗ്ഗ സംഘർഷ സിദ്ധാന്തം (Karl Marx - Class Conflict): ചൂഷകരും ചൂഷിതരും തമ്മിലുള്ള ചരിത്രപരമായ വൈരുദ്ധ്യങ്ങൾ.",
               "ലൂയിസ് കോസറുടെ സംഘർഷ ധർമ്മങ്ങൾ (Lewis Coser - Functions of Social Conflict): സംഘർഷം ഗ്രൂപ്പിന്റെ ആന്തരിക ഐക്യത്തെ ശക്തിപ്പെടുത്തുന്ന വിധം.",
               "സേഫ്റ്റി വാൽവ് ഇൻസ്റ്റിറ്റ്യൂഷനുകൾ: ചെറിയ പരാതികൾ തുറന്നുപറഞ്ഞ് വലിയ പൊട്ടിത്തെറികൾ ഒഴിവാക്കുന്ന രീതി."
             ],
             "examTip": "പ്രധാന ചോദ്യം: 'Discuss the positive functions of social conflict according to Lewis Coser'.",
-            "language": "English & Malayalam"
+            "language": "English & Malayalam",
+            "thumbnail": "https://i.ytimg.com/vi/N6XM-ScWqeo/hqdefault.jpg",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 11",
-            "title": "നിയമം അനുസരിക്കാൻ നമ്മളെ നിർബന്ധിക്കുന്നത് എന്ത്? (Social Control & Sanctions)",
-            "chapter": "Formal & Informal Social Control · E.A. Ross & Sanctions (സാമൂഹിക നിയന്ത്രണ മാർഗ്ഗങ്ങൾ)",
+            "title": "സാമൂഹിക നിയന്ത്രണ മാർഗങ്ങൾ (Social Control & Sanctions) | Sociology | Calicut Univ",
+            "chapter": "Formal & Informal Social Control · E.A. Ross & Sanctions (സാമൂഹിക നിയന്ത്രണ മാർഗ്ഗങ്ങൾ & സാങ്ഷനുകൾ)",
             "duration": "20",
             "youtubeId": "QidpySg9v80",
             "studyPoints": [
-              "സാമൂഹിക നിയന്ത്രണം (Social Control - E.A. Ross): സമൂഹത്തിൽ ക്രമസമാധാനവും സ്ഥിരതയും നിലനിർത്താൻ ഏർപ്പെടുത്തുന്ന സംവിധാനങ്ങൾ.",
-              "അനൗപചാരിക നിയന്ത്രണം: ആചാരങ്ങൾ (Folkways), സദാചാര നിയമങ്ങൾ (Mores), മതം, പൊതുജനാഭിപ്രായം.",
-              "ഔപചാരിക നിയന്ത്രണം: ഭരണകൂടം, നിയമവാഴ്ച (Rule of Law), പോലീസും നീതിന്യായ വ്യവസ്ഥയും.",
-              "സാങ്ഷനുകൾ (Sanctions): നല്ല പെരുമാറ്റത്തിനുള്ള അംഗീകാരങ്ങളും (Rewards) തെറ്റായ പ്രവൃത്തികൾക്കുള്ള ശിക്ഷകളും (Punishments)."
+              "<strong>00:00 - 03:52 | സാമൂഹിക നിയന്ത്രണത്തിന്റെ സ്വഭാവം:</strong> ഇ.എ. റോസ് (E.A. Ross, 1901); സമൂഹത്തിൽ അരാജകത്വം ഒഴിവാക്കാനും ഐക്യം നിലനിർത്താനുമുള്ള സംവിധാനങ്ങൾ.",
+              "<strong>03:52 - 07:45 | അനൗപചാരിക നിയന്ത്രണം (Informal Control):</strong> ആചാരങ്ങൾ, ഫോക്വേസ്, മോർസ്, മതം, കുടുംബം, പൊതുജനാഭിപ്രായം, സാമൂഹിക ബഹിഷ്കരണം.",
+              "<strong>07:45 - 11:38 | ഔപചാരിക നിയന്ത്രണം (Formal Control):</strong> നിയമം (Codified Law), പോലീസ്, കോടതികൾ, ഭരണകൂടം, ശിക്ഷാ സ്ഥാപനങ്ങൾ.",
+              "<strong>11:38 - 15:31 | സാങ്ഷനുകൾ (Positive & Negative Sanctions):</strong> പ്രശംസയും പ്രതിഫലങ്ങളും (പോസിറ്റീവ്) vs പിഴയും ജയിൽശിക്ഷയും ബഹിഷ്കരണവും (നെഗറ്റീവ്)."
             ],
-            "examTip": "Calicut University ചോദ്യം: 'Distinguish between Formal and Informal agencies of social control'.",
-            "language": "English & Malayalam"
+            "examTip": "പ്രധാന 10-മാർക്ക് ചോദ്യം: 'Distinguish between Formal and Informal Means of Social Control with suitable examples'.",
+            "language": "English & Malayalam",
+            "thumbnail": "https://i.ytimg.com/vi/QidpySg9v80/hqdefault.jpg",
+            "malayalam_cc": true
           }
         ]
       },
       {
-        "moduleName": "MODULE 04: SOCIOLOGY AND SOCIETY",
+        "moduleName": "MODULE 04: SOCIOLOGY AND SOCIETY (FYUGP SOU1CJ101)",
         "videos": [
           {
             "chapterNumber": "Chapter 4.1",
-            "title": "കലപ്പയിൽ നിന്ന് എഐയിലേക്ക്: സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics, Evolution & Types)",
+            "title": "സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics & Evolution) | Calicut Univ",
             "chapter": "Society · Characteristics & Types: Agrarian, Industrial & Post-Industrial (സമൂഹത്തിന്റെ പരിണാമം)",
             "duration": "16",
-            "youtubeId": "EJt-7kG_-E8",
+            "youtubeId": "zEagx74glsc",
             "studyPoints": [
               "സമൂഹം (Society): പരസ്പര ബന്ധങ്ങളുടെ സങ്കീർണ്ണമായ വല (MacIver & Page - 'Web of Social Relationships').",
               "പരിണാമ ഘട്ടങ്ങൾ: നായാട്ട്-ശേഖരണ ഘട്ടം, ഇടയ സമൂഹം, കാർഷിക സമൂഹം (Agrarian), വ്യാവസായിക സമൂഹം (Industrial), ആധുനിക പോസ്റ്റ്-ഇൻഡസ്ട്രിയൽ / ഇൻഫർമേഷൻ സമൂഹം.",
               "ഡാനിയൽ ബെല്ലിന്റെ പോസ്റ്റ്-ഇൻഡസ്ട്രിയൽ സിദ്ധാന്തം: സേവന മേഖലയുടെ വളർച്ചയും വിജ്ഞാന സാങ്കേതിക വിദ്യയും എഐയും സമൂഹത്തിൽ വരുത്തുന്ന സമൂലമായ മാറ്റങ്ങൾ."
             ],
             "examTip": "Calicut University പ്രധാന ചോദ്യം: 'Trace the evolution of society from agrarian to post-industrial society with key characteristics'.",
-            "language": "English & Malayalam"
+            "language": "English & Malayalam",
+            "thumbnail": "https://i.ytimg.com/vi/zEagx74glsc/hqdefault.jpg",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 4.2",
-            "title": "സമൂഹത്തിന്റെ അദൃശ്യ ഓപ്പറേറ്റിംഗ് സിസ്റ്റമായ സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions: Family, Marriage & Kinship)",
-            "chapter": "Social Institutions · Nature, Types & Changing Trends (കുടുംബം, വിവാഹം & ബന്ധുത്വം)",
+            "title": "സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions: Family & Marriage) | Calicut Univ",
+            "chapter": "Social Institutions: Family, Marriage & Kinship (കുടുംബം, വിവാഹം, ബന്ധുത്വം & മതം)",
             "duration": "20",
             "youtubeId": "z1jXxahDWUw",
             "studyPoints": [
-              "സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions): സമൂഹത്തിന്റെ സുസ്ഥിരമായ നിലനിൽപ്പിനും ആവശ്യങ്ങൾക്കും വേണ്ടിയുള്ള സംഘടിത നിയമവ്യവസ്ഥകളും ചട്ടക്കൂടുകളും.",
-              "കുടുംബം (Family): പ്രാഥമിക സാമൂഹികീകരണത്തിന്റെ ഉറവിടം (അണുകുടുംബം, കൂട്ടുകുടുംബം എന്നിവയും അവയിലെ സമകാലിക മാറ്റങ്ങളും).",
-              "വിവാഹം (Marriage): നിയമപരവും സാമൂഹികവുമായ ബന്ധം (ഏകഭാര്യാത്വം, ബഹുഭാര്യാത്വം, ഇൻ-ഗ്രൂപ്പ് & ഔട്ട്-ഗ്രൂപ്പ് വിവാഹ നിയമങ്ങൾ).",
-              "മതം, ഭരണകൂടം & വിദ്യാഭ്യാസം: സമൂഹത്തിൽ ക്രമവും ധാർമ്മികതയും കാത്തുസൂക്ഷിക്കുന്ന മറ്റ് അടിസ്ഥാന സ്ഥാപനങ്ങൾ."
+              "<strong>00:00 - 04:02 | എന്താണ് സാമൂഹിക സ്ഥാപനം?:</strong> സമൂഹത്തിന്റെ സുസ്ഥിരമായ നിലനിൽപ്പിനും ആവശ്യങ്ങൾക്കും വേണ്ടിയുള്ള സംഘടിത ചട്ടക്കൂടുകളും ആചാരങ്ങളും.",
+              "<strong>04:02 - 08:04 | കുടുംബം (Family):</strong> അണുകുടുംബവും കൂട്ടുകുടുംബവും; പ്രാഥമിക സാമൂഹികീകരണവും സാമ്പത്തിക ധർമ്മങ്ങളിലെ സമകാലിക മാറ്റങ്ങളും.",
+              "<strong>08:04 - 12:07 | വിവാഹം (Marriage):</strong> ഏകഭാര്യാത്വം (Monogamy), ബഹുഭാര്യാത്വം (Polygamy), ഇൻ-ഗ്രൂപ്പ് (Endogamy) & ഔട്ട്-ഗ്രൂപ്പ് (Exogamy) നിയമങ്ങൾ.",
+              "<strong>12:07 - 16:09 | ബന്ധുത്വവും മതവും (Kinship & Religion):</strong> രക്തബന്ധവും (Consanguineous) വിവാഹബന്ധവും (Affinal); സാമൂഹിക സദാചാരവും നിയന്ത്രണവും."
             ],
             "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: 'Define Social Institution and examine the changing structural and functional aspects of Family'.",
-            "language": "English & Malayalam"
+            "language": "English & Malayalam",
+            "thumbnail": "https://i.ytimg.com/vi/z1jXxahDWUw/hqdefault.jpg",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 4.3",
-            "title": "പദവികളും റോളുകളും റോൾ കോൺഫ്ലിക്റ്റും (Social Structure: Status, Role & Role Conflict)",
-            "chapter": "Social Structure · Ralph Linton & Merton's Role Theory (സാമൂഹിക ഘടന, പദവി & റോളുകൾ)",
+            "title": "പദവികളും റോളുകളും (Social Structure: Status & Role Conflict) | Calicut Univ",
+            "chapter": "Social Structure: Ralph Linton's Status & Merton's Role Theory (പദവി, റോൾ & റോൾ കോൺഫ്ലിക്റ്റ്)",
             "duration": "10",
             "youtubeId": "7Qkp0t6g9Qc",
             "studyPoints": [
-              "സാമൂഹിക ഘടന (Social Structure): റാഡ്ക്ലിഫ് ബ്രൗണും ടാൽകോട്ട് പാർസൺസും നിർവ്വചിച്ച സ്ഥാപനവൽക്കരിക്കപ്പെട്ട സാമൂഹിക ക്രമം.",
-              "പദവി (Status - Ralph Linton): ആർജിത പദവി (Ascribed Status - ജനനത്തിലൂടെ, ഉദാ: ജാതി, ലിംഗം) vs സ്വയംനേടിയ പദവി (Achieved Status - പ്രയത്നത്തിലൂടെ, ഉദാ: വിദ്യാഭ്യാസം, തൊഴിൽ).",
-              "റോൾ (Role) & റോൾ സെറ്റ് (Role Set): പദവിക്ക് അനുസൃതമായ പെരുമാറ്റം; റോബർട്ട് കെ. മെർട്ടന്റെ റോൾ സെറ്റ് ആശയം.",
-              "റോൾ കോൺഫ്ലിക്റ്റ് (Role Conflict): വ്യക്തികൾ ഒന്നിലധികം പരസ്പരവിരുദ്ധമായ റോളുകൾ വഹിക്കേണ്ടി വരുമ്പോഴുണ്ടാകുന്ന മാനസിക-സാമൂഹിക സംഘർഷങ്ങൾ."
+              "<strong>00:00 - 02:03 | സാമൂഹിക ഘടന (Social Structure):</strong> റാഡ്ക്ലിഫ് ബ്രൗണും പാർസൺസും നിർവ്വചിച്ച പദവികളുടെയും റോളുകളുടെയും പരസ്പരബന്ധിതമായ ചട്ടക്കൂട്.",
+              "<strong>02:03 - 04:07 | പദവി (Status - Ralph Linton, 1936):</strong> ആർജിത പദവി (Ascribed Status - ജനനത്തിലൂടെ) vs സ്വയംനേടിയ പദവി (Achieved Status - പ്രയത്നത്തിലൂടെ).",
+              "<strong>04:07 - 06:10 | റോൾ & റോൾ സെറ്റ് (Role & Role Set - Robert K. Merton):</strong> ഒരു പദവിയുമായി ബന്ധപ്പെട്ട് ഒരേസമയം നിർവഹിക്കേണ്ടി വരുന്ന റോളുകളുടെ ശൃംഖല.",
+              "<strong>06:10 - 08:14 | റോൾ കോൺഫ്ലിക്റ്റും റോൾ സ്ട്രെയിനും (Role Conflict & Role Strain):</strong> ഒന്നിലധികം വിരുദ്ധ പദവികൾ വഹിക്കുമ്പോഴുണ്ടാകുന്ന സംഘർഷങ്ങൾ (ഉദാ: ജോലി ചെയ്യുന്ന അമ്മ)."
             ],
-            "examTip": "ഷോർട്ട് എസ്സേ ചോദ്യം: 'Distinguish between Ascribed and Achieved Status. What is Role Conflict?'",
-            "language": "English & Malayalam"
+            "examTip": "ഷോർട്ട് എസ്സേ ചോദ്യം: 'Distinguish between Ascribed and Achieved Status. Explain Role Conflict with suitable examples'.",
+            "language": "English & Malayalam",
+            "thumbnail": "https://i.ytimg.com/vi/7Qkp0t6g9Qc/hqdefault.jpg",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Chapter 4.4",
-            "title": "സാമൂഹിക മാറ്റവും അതിന്റെ ഘടകങ്ങളും (Social Change: Factors & Theories)",
+            "title": "സാമൂഹിക മാറ്റവും ഘടകങ്ങളും (Social Change: Factors & Theories) | Calicut Univ",
             "chapter": "Social Change · Catalysts, Cultural Lag & Major Theories (സാമൂഹിക മാറ്റത്തിന്റെ സിദ്ധാന്തങ്ങൾ)",
             "duration": "21",
-            "youtubeId": "z1jXxahDWUw",
+            "youtubeId": "jfBES35jpzw",
             "studyPoints": [
               "സാമൂഹിക മാറ്റം (Social Change): സാമൂഹിക വ്യവസ്ഥിതിയിലും ബന്ധങ്ങളിലും മൂല്യങ്ങളിലും വരുന്ന ഘടനാപരമായ പരിവർത്തനം.",
               "പ്രധാന ചാലകശക്തികൾ: സാങ്കേതിക വിദ്യ (Technological), സമ്പദ്‌വ്യവസ്ഥ (Economic), സംസ്കാരം (Cultural), പരിസ്ഥിതി & ജനസംഖ്യാപരം.",
@@ -1172,7 +1198,9 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സിദ്ധാന്തങ്ങൾ: ലീനിയർ സിദ്ധാന്തങ്ങൾ (Comte & Spencer) vs ചാക്രിക സിദ്ധാന്തങ്ങൾ (Spengler & Sorokin)."
             ],
             "examTip": "പരീക്ഷാ ഹൈലൈറ്റ് (10 Mark Essay): 'Critically evaluate William F. Ogburn's theory of Cultural Lag in the context of technological advancements'.",
-            "language": "English & Malayalam"
+            "language": "English & Malayalam",
+            "thumbnail": "https://i.ytimg.com/vi/jfBES35jpzw/hqdefault.jpg",
+            "malayalam_cc": true
           }
         ]
       }
@@ -1183,15 +1211,15 @@ window.VOICE_EXPLANATIONS_DATA = {
     "name": "Philosophy of Artificial Intelligence",
     "badge": "🤖",
     "iconClass": "icon-cyan",
-    "tag": "PHILOSOPHY",
+    "tag": "BA PHILOSOPHY HONOURS · PHI1CJ101 / FYUGP",
     "totalVideos": "13 Comprehensive Video Lectures",
     "modules": [
       {
-        "moduleName": "MODULE 01: INTRODUCTION TO ARTIFICIAL INTELLIGENCE (ആമുഖം)",
+        "moduleName": "MODULE 01: HISTORICAL & FOUNDATIONAL PERSPECTIVES (FYUGP PHI1CJ101)",
         "videos": [
           {
             "chapterNumber": "Unit 1.1",
-            "title": "ചരിത്രപരമായ വികാസം: തത്ത്വചിന്തയിൽ നിന്ന് കമ്പ്യൂട്ടറുകളിലേക്ക് (Historical Evolution: Philosophy to AI)",
+            "title": "തത്ത്വചിന്തയിൽ നിന്ന് AI-യിലേക്ക് (Historical Evolution: Philosophy to AI) | Calicut Univ",
             "chapter": "Unit 1.1: Historical Evolution · Aristotle, Leibniz, Boole & Computational Roots",
             "duration": "18:40",
             "youtubeId": "6VWW49UMoks",
@@ -1203,11 +1231,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "മെക്കാനിക്കൽ കമ്പ്യൂട്ടേഷന്റെ ഉദയം: ചാൾസ് ബാബേജിന്റെ അനലിറ്റിക്കൽ എഞ്ചിനും അഡാ ലവ്‌ലേസിന്റെ ആദ്യ അൽഗോരിതവും."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: അരിസ്റ്റോട്ടിൽ മുതൽ ബൂൾ വരെയുള്ള തത്ത്വചിന്തകർ ആധുനിക AI-യുടെ വികാസത്തിന് നൽകിയ സംഭാവനകൾ വിലയിരുത്തുക.",
-            "thumbnail": "https://i.ytimg.com/vi/6VWW49UMoks/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/6VWW49UMoks/hqdefault.jpg",
+            "malayalam_cc": true
           },
           {
-            "chapterNumber": "Unit 1.2 & 1.3",
-            "title": "അടിസ്ഥാന തത്ത്വങ്ങളും നാഴികക്കല്ലുകളും (Foundational Principles & Pioneers: Turing, McCarthy, Minsky)",
+            "chapterNumber": "Unit 1.2",
+            "title": "AI അടിസ്ഥാന തത്ത്വങ്ങളും നാഴികക്കല്ലുകളും (Foundations & Pioneers in AI) | Calicut Univ",
             "chapter": "Unit 1.2 & 1.3: Logic, Reasoning, Search Space & Pioneers",
             "duration": "06:32",
             "youtubeId": "MniIlxa7sjo",
@@ -1220,11 +1249,12 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "യൂണിവേഴ്സിറ്റി പരീക്ഷാ ടിപ്പ്: 'ഡിഡക്റ്റീവ്, ഇൻഡക്റ്റീവ്, അബ്ഡക്റ്റീവ് യുക്തികൾ ആധുനിക AI സംവിധാനങ്ങളിൽ എങ്ങനെ പ്രയോഗിക്കപ്പെടുന്നു എന്ന് വ്യക്തമാക്കുക'.",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/MniIlxa7sjo/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/MniIlxa7sjo/hqdefault.jpg",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 1.4",
-            "title": "യന്ത്രങ്ങൾക്ക് ശരിക്കും ചിന്തിക്കാൻ കഴിയുമോ? (Symbolic AI vs Connectionism)",
+            "title": "യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാനാകുമോ? (Symbolic AI vs Connectionism) | Calicut Univ",
             "chapter": "Unit 1.4: Symbolic AI (GOFAI), Connectionism, ML & Deep Learning",
             "duration": "18:19",
             "youtubeId": "Vq-Bc0TI7L0",
@@ -1237,11 +1267,12 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: സിംബോളിക് AI-യും കണക്ഷനിസവും തമ്മിലുള്ള ദാർശനികവും സാങ്കേതികവുമായ വ്യത്യാസങ്ങൾ താരതമ്യം ചെയ്യുക.",
             "thumbnail": "https://i.ytimg.com/vi/Vq-Bc0TI7L0/hqdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=Vq-Bc0TI7L0"
+            "videoUrl": "https://www.youtube.com/watch?v=Vq-Bc0TI7L0",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 1.5",
-            "title": "മെഷീനുകൾക്ക് ചിന്തിക്കാൻ കഴിയുമോ? ട്യൂറിംഗ് ടെസ്റ്റ് (Can a Machine Think? & Turing Test)",
+            "title": "ട്യൂറിംഗ് ടെസ്റ്റും മെഷീൻ ചിന്തയും (Can Machines Think? Turing Test) | Calicut Univ",
             "chapter": "Unit 1.5: Foundations of AI · Turing Test · Chinese Room · Dreyfus's Critique",
             "duration": "18:19",
             "youtubeId": "1Va07j8OQSA",
@@ -1254,16 +1285,17 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University ചോദ്യം: അലൻ ട്യൂറിംഗിന്റെ 'ഇമിറ്റേഷൻ ഗെയിം' സിദ്ധാന്തവും അതിനെതിരെയുള്ള പ്രധാന ദാർശനിക വിമർശനങ്ങളും വിലയിരുത്തുക.",
             "thumbnail": "https://i.ytimg.com/vi/1Va07j8OQSA/hqdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=1Va07j8OQSA"
+            "videoUrl": "https://www.youtube.com/watch?v=1Va07j8OQSA",
+            "malayalam_cc": true
           }
         ]
       },
       {
-        "moduleName": "MODULE 02: CLASSICAL VERSION OF AI (ക്ലാസിക്കൽ വേർഷൻ ഓഫ് AI)",
+        "moduleName": "MODULE 02: PHILOSOPHY OF MIND AND COMPUTATION (FYUGP PHI1CJ101)",
         "videos": [
           {
             "chapterNumber": "Unit 2.1 a",
-            "title": "ക്ലാസിക്കൽ AI-യും ഫ്രെയിം പ്രോബ്ലവും (Problems in Classical GOFAI)",
+            "title": "ക്ലാസിക്കൽ AI-യും ഫ്രെയിം പ്രോബ്ലവും (Problems in Classical GOFAI) | Calicut Univ",
             "chapter": "Unit 2.1 a: Classical (Symbolic) AI · Assumptions & Frame Problem",
             "duration": "06:20",
             "youtubeId": "cVbNy9v0R7E",
@@ -1276,11 +1308,12 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: ക്ലാസിക്കൽ GOFAI നേരിട്ട ഫ്രെയിം പ്രോബ്ലവും കോംബിനേറ്റോറിയൽ എക്സ്പ്ലോഷനും എഐ വികാസത്തെ എങ്ങനെ ബാധിച്ചു?",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/cVbNy9v0R7E/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/cVbNy9v0R7E/hqdefault.jpg",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 2.1 b",
-            "title": "ചൈനീസ് റൂം ആർഗ്യുമെന്റും ട്യൂറിംഗ് ടെസ്റ്റും (Chinese Room & Alan Turing Test) [ENG Video]",
+            "title": "ചൈനീസ് റൂമും ട്യൂറിംഗ് ടെസ്റ്റും (Chinese Room & Turing Test) | Calicut Univ",
             "chapter": "Unit 2.1 b: Chinese Room · Turing Test · English Academic Masterclass",
             "duration": "35:16",
             "youtubeId": "Y4zhWiirJkc",
@@ -1291,11 +1324,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Strong AI vs Weak AI: Can a computer program ever possess authentic conscious mental states?",
               "Syntax vs Semantics: Why modern LLMs process information without subjective intentionality or meaning."
             ],
-            "examTip": "Exam Tip: 'Explain John Searle's Chinese Room Argument and evaluate whether AI systems can truly possess semantic understanding'."
+            "examTip": "Exam Tip: 'Explain John Searle's Chinese Room Argument and evaluate whether AI systems can truly possess semantic understanding'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 2.1 c",
-            "title": "AI-ക്ക് അർത്ഥമറിയാമോ അതോ വെറും ചൈനീസ് റൂമോ? (John Searle's Chinese Room Argument)",
+            "title": "ജോൺ സിയേളിന്റെ ചൈനീസ് റൂം (Searle's Chinese Room Argument) | Calicut Univ",
             "chapter": "Unit 2.1 c: Syntax vs Semantics · Strong AI vs Weak AI Critique · Chinese Room",
             "duration": "18:38",
             "youtubeId": "OBl1S1edYyU",
@@ -1306,11 +1340,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സ്ട്രോങ് AI vs വീക്ക് AI: മെഷീനുകൾക്ക് യഥാർത്ഥ ബോധമുണ്ടാകുമെന്ന വാദമാണ് സ്ട്രോങ് AI; വെറും സഹായ ഉപകരണങ്ങൾ മാത്രമെന്നത് വീക്ക് AI.",
               "ഇന്റൻഷണാലിറ്റി (Intentionality): മനുഷ്യ മനസ്സിന് വിവരങ്ങളുമായി നേരിട്ട് സംവദിക്കാനുള്ള ആന്തരിക ശേഷിയുണ്ട്, അത് കേവല കോഡിംഗിനില്ല."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: ജോൺ സിയേളിന്റെ ചൈനീസ് റൂം ആർഗ്യുമെന്റ് വിശകലനം ചെയ്ത് സ്ട്രോങ് AI-ക്കെതിരെയുള്ള വിമർശനങ്ങൾ വ്യക്തമാക്കുക."
+            "examTip": "Calicut University FYUGP ചോദ്യം: ജോൺ സിയേളിന്റെ ചൈനീസ് റൂം ആർഗ്യുമെന്റ് വിശകലനം ചെയ്ത് സ്ട്രോങ് AI-ക്കെതിരെയുള്ള വിമർശനങ്ങൾ വ്യക്തമാക്കുക.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 2.2 a",
-            "title": "ഡെക്കാർട്ടും ഡിജിറ്റൽ യുഗത്തിലെ മനസ്സിന്റെ തത്ത്വചിന്തയും (Descartes & Mind-Body Dualism in AI)",
+            "title": "ഡെക്കാർട്ടിന്റെ ഡ്യൂവലിസവും എഐയും (Descartes, Mind & Digital Dualism) | Calicut Univ",
             "chapter": "Unit 2.2 a: Cartesian Dualism · Res Cogitans vs Res Extensa · Physical Mechanism",
             "duration": "19:00",
             "youtubeId": "",
@@ -1321,31 +1356,34 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കമ്പ്യൂട്ടേഷണൽ ഫങ്ഷണലിസത്തിലെ ദ്വൈതവാദം: മനസ്സിനെ സോഫ്റ്റ്‌വെയറായും തലച്ചോറിനെ ഹാർഡ്‌വെയറായും കാണുന്നത് ഡെക്കാർട്ടിയൻ ദ്വൈതവാദത്തിന്റെ പുതിയ രൂപമാണെന്ന വാദം.",
               "ഫിസിക്കലിസവും റിഡക്ഷനിസവും: മനസ്സ് എന്നത് തലച്ചോറിലെ ന്യൂറോണുകളുടെ ഭൗതിക ഫലം മാത്രമാണെങ്കിൽ സിലിക്കണിലും ചിന്ത സാധ്യമാകുമോ?"
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: റെനെ ഡെക്കാർട്ടിന്റെ മൈൻഡ്-ബോഡി ദ്വൈതവാദം ആധുനിക കമ്പ്യൂട്ടേഷണൽ മനശാസ്ത്രത്തിലും എഐ ചിന്തകളിലും എങ്ങനെ പ്രതിഫലിക്കുന്നു?"
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: റെനെ ഡെക്കാർട്ടിന്റെ മൈൻഡ്-ബോഡി ദ്വൈതവാദം ആധുനിക കമ്പ്യൂട്ടേഷണൽ മനശാസ്ത്രത്തിലും എഐ ചിന്തകളിലും എങ്ങനെ പ്രതിഫലിക്കുന്നു?",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 2.2 b",
-            "title": "ശരീരമില്ലാതെ ബോധത്തിന് നിലനിൽക്കാൻ കഴിയുമോ? (Embodied Cognition & AI)",
-            "chapter": "Unit 2.2 b: Disembodied Intelligence · Hubert Dreyfus & Andy Clark's Critique",
+            "title": "ശരീരമില്ലാതെ ബോധത്തിന് നിലനിൽക്കാൻ കഴിയുമോ? (Embodied Cognition & AI) | Calicut Univ",
+            "chapter": "Embodied Cognition · 4E Framework · Hubert Dreyfus · Qualia & Nagel",
             "duration": "19:00",
             "youtubeId": "2_RbQ7y-uHE",
-            "language": "Bilingual (Malayalam & English)",
+            "language": "English & Malayalam",
             "studyPoints": [
-              "എംബോഡിഡ് കോഗ്നിഷൻ സിദ്ധാന്തം (Embodied AI): ചിന്ത എന്നത് അമൂർത്ത കണക്കുകൂട്ടലല്ല; ശരീരവും ഭൗതിക ചുറ്റുപാടുകളുമായുള്ള നിരന്തര ഇടപെടലിലൂടെയാണ് (Sensorimotor) ബുദ്ധി ഉണ്ടാകുന്നത്.",
-              "ഹ്യൂബർട്ട് ഡ്രൈഫസിന്റെ പ്രതിഭാസശാസ്ത്രപരമായ വിമർശനം (Dreyfus's Critique): ശരീരമില്ലാത്ത കമ്പ്യൂട്ടറുകൾക്ക് യഥാർത്ഥ ലോകാനുഭവങ്ങൾ നേടാനാവില്ലെന്ന് ഹൈഡഗ്ഗർ ദർശനമുയർത്തി സമർത്ഥിച്ചു.",
-              "റോഡ്നി ബ്രൂക്സും സബ്സംപ്ഷൻ ആർക്കിടെക്ചറും: സങ്കീർണ്ണ ആന്തരിക മോഡലുകൾ ഇല്ലാതെ ചുറ്റുപാടുകളോട് നേരിട്ട് പ്രതികരിക്കുന്ന റോബോട്ടിക്സ്.",
-              "ആൻഡി ക്ലാർക്കിന്റെ എക്സ്റ്റൻഡഡ് മൈൻഡ് സിദ്ധാന്തം: മനുഷ്യ മനസ്സ് തലയോട്ടിക്കുള്ളിൽ ഒതുങ്ങുന്നതല്ല, ബാഹ്യ ഉപകരണങ്ങളിലേക്കും സാങ്കേതികവിദ്യയിലേക്കും പടർന്നു കിടക്കുന്നു."
+              "<strong>00:00 - 03:44 | മനസ്സ്-ശരീര പ്രശ്നം (Mind-Body Problem):</strong> ശരീരമില്ലാത്ത കമ്പ്യൂട്ടറുകൾക്ക് മനുഷ്യന്റെ സ്വാഭാവിക ബോധം ആർജ്ജിക്കാനാവില്ലെന്ന വാദം; ഡെക്കാർട്ടിയൻ ചിന്തകൾക്കെതിരെയുള്ള പ്രതിരോധം.",
+              "<strong>03:44 - 07:29 | ദി 4E കോഗ്നിഷൻ ചട്ടക്കൂട് (The 4E Cognition):</strong> ബുദ്ധി എന്നത് വെറും അൽഗോരിതമല്ല; എംബോഡിഡ് (ശരീരാധിഷ്ഠിതം), എംബഡഡ് (പരിസ്ഥിതി ബന്ധിതം), ഇനാക്റ്റീവ് (പ്രവർത്തനാധിഷ്ഠിതം), എക്സ്റ്റൻഡഡ് (ബാഹ്യ ഉപകരണങ്ങളിലേക്ക് പടർന്നത്).",
+              "<strong>07:29 - 11:14 | ഹ്യൂബർട്ട് ഡ്രേഫസിന്റെ ദാർശനിക വിമർശനം (Hubert Dreyfus):</strong> മാർട്ടിൻ ഹൈഡഗ്ഗറുടെ 'Dasein' ദർശനമുയർത്തി കമ്പ്യൂട്ടറുകൾക്ക് യഥാർത്ഥ ലോകാനുഭവങ്ങൾ നേടാനാവില്ലെന്ന് സമർത്ഥിച്ചു.",
+              "<strong>11:14 - 14:59 | ക്വാലിയ അനുഭവിക്കാൻ യന്ത്രങ്ങൾക്ക് കഴിയുമോ? (Qualia):</strong> തോമസ് നാഗലിന്റെ 'ബാറ്റ്' ഉദാഹരണവും ഫ്രാങ്ക് ജാക്സന്റെ 'മേരീസ് റൂമും'; ആന്തരിക വൈകാരികാനുഭവങ്ങൾ കോഡ് ചെയ്യാൻ കഴിയില്ലെന്ന വാദം.",
+              "<strong>14:59 - 19:00 | സർവ്വകലാശാലാ അവലോകനം (Calicut Univ Focus):</strong> 'Critically examine Hubert Dreyfus's critique of AI based on Embodied Cognition and 4E Cognition'."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: ക്ലാസിക്കൽ AI-ക്കെതിരെ ഹ്യൂബർട്ട് ഡ്രൈഫസും ആൻഡി ക്ലാർക്കും ഉയർത്തിയ 'Embodied Cognition' വാദങ്ങൾ വിശകലനം ചെയ്യുക."
+            "examTip": "കാലിക്കറ്റ് യൂണിവേഴ്സിറ്റി പ്രധാന 10 മാർക്ക് ഉപന്യാസം: 'Explain the 4E Cognition model and evaluate Hubert Dreyfus's phenomenological critique of AI'.",
+            "malayalam_cc": true
           }
         ]
       },
       {
-        "moduleName": "MODULE 03: THEORIES OF KNOWLEDGE IN ARTIFICIAL INTELLIGENCE (വിജ്ഞാനശാസ്ത്രം)",
+        "moduleName": "MODULE 03: EPISTEMOLOGY AND ARTIFICIAL INTELLIGENCE (FYUGP PHI1CJ101)",
         "videos": [
           {
             "chapterNumber": "Unit 3.1 a",
-            "title": "AI-യിലെ വിജ്ഞാനശാസ്ത്ര അടിത്തറകളും ഹലൂസിനേഷനും (Epistemological Foundations in AI: Knowledge & Hallucination)",
+            "title": "AI-യിലെ വിജ്ഞാനശാസ്ത്ര അടിത്തറകൾ (Epistemological Foundations in AI) | Calicut Univ",
             "chapter": "Unit 3.1 a: Epistemological Foundations · Silicon Valley Lab · What is Knowledge in AI?",
             "duration": "24:00",
             "youtubeId": "hoAiiD_qroA",
@@ -1356,11 +1394,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "വിവരങ്ങളുടെ സാധുതയും പ്രമാണങ്ങളും: ആധുനിക അൽഗോരിതങ്ങളിൽ സത്യവും അസത്യവും വേർതിരിക്കാനുള്ള ന്യായീകരണങ്ങളുടെ (Justification) അഭാവം.",
               "സിലിക്കൺ വാലി ലാബ് മോഡലുകളും വിജ്ഞാന നിർമ്മിതിയും: ഡാറ്റാ പാറ്റേൺ റെക്കഗ്നിഷൻ എങ്ങനെ പരമ്പരാഗത ജ്ഞാനശാസ്ത്രത്തെ പുനർനിർവ്വചിക്കുന്നു."
             ],
-            "examTip": "Calicut University ചോദ്യം: ആധുനിക ജനറേറ്റീവ് AI മോഡലുകളിലെ 'ഹലൂസിനേഷൻ' പ്രശ്നം വിജ്ഞാനശാസ്ത്രപരമായി എങ്ങനെയെല്ലാം വിശദീകരിക്കാം?"
+            "examTip": "Calicut University ചോദ്യം: ആധുനിക ജനറേറ്റീവ് AI മോഡലുകളിലെ 'ഹലൂസിനേഷൻ' പ്രശ്നം വിജ്ഞാനശാസ്ത്രപരമായി എങ്ങനെയെല്ലാം വിശദീകരിക്കാം?",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 3.1 b",
-            "title": "ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Sources of Valid Knowledge in Indian Philosophy & AI: Epistemology, Pratyakṣa & Anumāna)",
+            "title": "ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Indian Epistemology & AI) | Calicut Univ",
             "chapter": "Unit 3.1 b: Epistemology & AI · Dignāga, Dharmakīrti & Apoha Theory · Two-Speaker Conversational Masterclass",
             "duration": "15:02",
             "youtubeId": "626Pz--vDxk",
@@ -1374,11 +1413,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ധർമ്മകീർത്തിയുടെ അർത്ഥക്രിയാസാമർത്ഥ്യം (Arthakriyāsāmarthya): പ്രായോഗികമായി ലക്ഷ്യം നേടിത്തരുന്ന അറിവ് സാധുവാണ്; ക്യാൻസർ ഡിറ്റക്ഷൻ എഐ ജീവൻ രക്ഷിക്കുമ്പോൾ ലഭിക്കുന്ന പ്രായോഗിക സാധൂകരണം.",
               "ദിങ്നാഗന്റെ അപോഹ സിദ്ധാന്തം (Apoha Theory): 'അല്ലാത്തതിനെ ഒഴിവാക്കിക്കൊണ്ട്' (Anyāpoha) അർത്ഥം നിർണ്ണയിക്കൽ; മോഡേൺ കോൺട്രാസ്റ്റീവ് ലേണിംഗും (CLIP / Contrastive Embeddings) വെക്ടർ ക്ലാസിഫിക്കേഷനും."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: ബുദ്ധ ജ്ഞാനശാസ്ത്രത്തിലെ രണ്ട് പ്രമാണങ്ങളായ പ്രത്യക്ഷവും അനുമാനവും വിശദീകരിച്ച്, അവ ആധുനിക AI ഇൻഫറൻസിലും കമ്പ്യൂട്ടർ വിഷനിലും എങ്ങനെ പ്രതിഫലിക്കുന്നു എന്ന് വിശകലനം ചെയ്യുക."
+            "examTip": "Calicut University FYUGP ചോദ്യം: ബുദ്ധ ജ്ഞാനശാസ്ത്രത്തിലെ രണ്ട് പ്രമാണങ്ങളായ പ്രത്യക്ഷവും അനുമാനവും വിശദീകരിച്ച്, അവ ആധുനിക AI ഇൻഫറൻസിലും കമ്പ്യൂട്ടർ വിഷനിലും എങ്ങനെ പ്രതിഫലിക്കുന്നു എന്ന് വിശകലനം ചെയ്യുക.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 3.1 c",
-            "title": "ഭാരതീയ ന്യായശാസ്ത്രവും AI റീസണിംഗും (Nyaya Epistemology & 5-Membered Syllogism in AI)",
+            "title": "ഭാരതീയ ന്യായശാസ്ത്രവും AI-യും (Nyaya Epistemology & AI Reasoning) | Calicut Univ",
             "chapter": "Unit 3.1 c: Nyaya Pramanas · Pratyaksha, Anumana, Upamana, Shabda & Panchavayava",
             "duration": "16:25",
             "youtubeId": "NPbHpX8kOZs",
@@ -1390,26 +1430,28 @@ window.VOICE_EXPLANATIONS_DATA = {
               "അപ്രമാണങ്ങൾ: സംശയം (Samsaya), വിപര്യയം (Viparyaya) എന്നിവ AI-യിലെ തെറ്റായ അനുമാനങ്ങളുമായും ബയാസുമായും ബന്ധിപ്പിക്കൽ."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: ഭാരതീയ ന്യായശാസ്ത്രത്തിലെ പഞ്ചാവയവ വാക്യം ആധുനിക AI-യുടെ യുക്തിചിന്താ മോഡലുകളുമായി താരതമ്യം ചെയ്യുക.",
-            "thumbnail": "https://i.ytimg.com/vi/NPbHpX8kOZs/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/NPbHpX8kOZs/hqdefault.jpg",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 3.2 a",
-            "title": "പാശ്ചാത്യ വിജ്ഞാനശാസ്ത്രവും എഐയും — ഭാഗം 1 (Western Epistemology & Plato's JTB in AI)",
-            "chapter": "Unit 3.2 a: Western Epistemology · Plato's JTB · Foundationalism & Gettier Problem",
+            "title": "പാശ്ചാത്യ വിജ്ഞാനശാസ്ത്രവും എഐയും (Western Epistemology & AI) | Calicut Univ",
+            "chapter": "Western Epistemology · Rationalism, Empiricism & Kant's Synthesis in AI",
             "duration": "19:40",
-            "youtubeId": "2_RbQ7y-uHE",
+            "youtubeId": null,
             "language": "Malayalam",
             "studyPoints": [
-              "പ്ലാറ്റോയുടെ JTB സിദ്ധാന്തം (Justified True Belief): അറിവ് എന്നത് കേവല വിശ്വാസമല്ല, ന്യായീകരിക്കപ്പെട്ട സത്യമായ വിശ്വാസമാണ്.",
-              "യന്ത്രങ്ങൾക്ക് വിശ്വാസമുണ്ടാകുമോ? (Can Machine Beliefs be Justified?): ആധുനിക എഐ നൽകുന്ന വിവരങ്ങൾക്ക് ന്യായീകരണ അടിത്തറയുണ്ടോ എന്ന പരിശോധന.",
-              "ഗെറ്റിയർ പ്രശ്നം (The Gettier Problem): ന്യായീകരിക്കപ്പെട്ട സത്യവിശ്വാസവും യഥാർത്ഥ അറിവും തമ്മിലുള്ള വിടവ് എഐ തീരുമാനങ്ങളിൽ.",
-              "ഫൗണ്ടേഷണലിസവും കോഹിറന്റിസവും: അറിവിന്റെ ഉറവിടങ്ങൾ സംബന്ധിച്ച പാശ്ചാത്യ തർക്കങ്ങൾ ന്യൂറൽ നെറ്റ്‌വർക്കുകളിൽ."
+              "<strong>പ്ലേറ്റോയുടെ ജ്ഞാനമീമാംസ (Platonic Epistemology):</strong> ന്യായീകരിക്കപ്പെട്ട സത്യവിശ്വാസം (Justified True Belief - JTB) എന്ന പരമ്പരാഗത അറിവിന്റെ നിർവ്വചനം.",
+              "<strong>യുക്തിവാദവും അനുഭവവാദവും (Rationalism vs Empiricism):</strong> സിംബോളിക് AI-യിലെ ഡിഡക്റ്റീവ് യുക്തി (ഡെക്കാർട്ട്, ലൈബ്നിസ്) vs മെഷീൻ ലേണിംഗിലെ ഇൻഡക്റ്റീവ് ഡാറ്റാ ലേണിംഗ് (ലോക്ക്, ഹ്യൂം).",
+              "<strong>ഇമ്മാനുവൽ കാന്റിന്റെ സിന്തസിസ് (Kant's Synthetic A Priori):</strong> ഇന്ദ്രിയാനുഭവങ്ങളും ആന്തരിക ബുദ്ധിയുടെ കാറ്റഗറികളും ചേരുമ്പോഴാണ് അറിവ് ഉണ്ടാകുന്നത്; AI സിസ്റ്റങ്ങൾക്ക് ഇത്തരം ആന്തരിക കാറ്റഗറികൾ ഉണ്ടോ?",
+              "<strong>ഗെറ്റിയർ പ്രോബ്ലം (Gettier Problem):</strong> യഥാർത്ഥ അറിവും ആകസ്മികമായ ശരികളും തമ്മിലുള്ള വ്യത്യാസം ആധുനിക LLM ഹലൂസിനേഷനുകളിലേക്ക് വിരൽചൂണ്ടുന്നു."
             ],
-            "examTip": "Calicut University ചോദ്യം: പ്ലാറ്റോയുടെ Justified True Belief (JTB) സിദ്ധാന്തത്തിന്റെ വെളിച്ചത്തിൽ മെഷീൻ നോളഡ്ജ് വിലയിരുത്തുക."
+            "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: 'Examine the rationalist and empiricist philosophical traditions and their influence on classical AI and Machine Learning'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 3.2 b",
-            "title": "ഫങ്ഷണലിസവും കമ്പ്യൂട്ടേഷണൽ മൈൻഡും — ഭാഗം 2 (Functionalism & Computational Theory of Mind)",
+            "title": "ഫങ്ഷണലിസവും കമ്പ്യൂട്ടേഷണൽ മൈൻഡും (Functionalism & Mind) - V2 | Calicut Univ",
             "chapter": "Unit 3.2 b: Functionalism · Hilary Putnam · CTM · Extended Mind Thesis",
             "duration": "18:00",
             "youtubeId": "Y4zhWiirJkc",
@@ -1420,11 +1462,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കമ്പ്യൂട്ടേഷണൽ തിയറി ഓഫ് മൈൻഡ് (CTM - Fodor & Putnam): തലച്ചോറ് ഹാർഡ്‌വെയറും മനസ്സ് സോഫ്റ്റ്‌വെയറുമാണ് എന്ന മാതൃക.",
               "ആൻഡി ക്ലാർക്കിന്റെ എക്സ്റ്റൻഡഡ് മൈൻഡ് സിദ്ധാന്തം: ബാഹ്യ ഡിജിറ്റൽ ഉപകരണങ്ങൾ മനുഷ്യ മനസ്സിന്റെ വിജ്ഞാനശേഷിയെ വിപുലീകരിക്കുന്ന രീതി."
             ],
-            "examTip": "University Exam Tip: 'Explain Functionalism, Multiple Realizability, and how the Extended Mind Thesis redefines Machine Cognition'."
+            "examTip": "University Exam Tip: 'Explain Functionalism, Multiple Realizability, and how the Extended Mind Thesis redefines Machine Cognition'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 3.2 c",
-            "title": "എഐയിലെ വിജ്ഞാനശാസ്ത്രപരമായ പ്രതിഫലനങ്ങൾ (Epistemological Implications in Artificial Intelligence)",
+            "title": "എഐയിലെ വിജ്ഞാനശാസ്ത്ര പ്രത്യാഘാതങ്ങൾ (Epistemological Implications in AI) | Calicut Univ",
             "chapter": "Unit 3.2 c: Epistemological Implications · Feigenbaum's Bottleneck · Tacit Knowledge · Social Epistemology",
             "duration": "17:26",
             "youtubeId": "hoAiiD_qroA",
@@ -1435,11 +1478,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ടാസിറ്റ് നോളഡ്ജ് (Tacit Knowledge - Michael Polanyi): 'നമുക്ക് പറയാൻ കഴിയുന്നതിനേക്കാൾ കൂടുതൽ കാര്യങ്ങൾ നമുക്കറിയാം' - എക്സ്പെർട്ട് സിസ്റ്റങ്ങളുടെ പരിമിതി.",
               "സോഷ്യൽ എപ്പിസ്റ്റമോളജി (Social Epistemology): അൽഗോരിതങ്ങൾ പൊതുബോധത്തെയും അറിവിന്റെ വിതരണത്തെയും സ്വാധീനിക്കുന്ന രീതി."
             ],
-            "examTip": "Calicut University ചോദ്യം: മൈക്കൽ പൊലാനിയുടെ 'ടാസിറ്റ് നോളഡ്ജ്' സിദ്ധാന്തം എഐ സാങ്കേതികവിദ്യയുടെ മുന്നിൽ ഉയർത്തുന്ന പ്രധാന വെല്ലുവിളികൾ എന്തെല്ലാം?"
+            "examTip": "Calicut University ചോദ്യം: മൈക്കൽ പൊലാനിയുടെ 'ടാസിറ്റ് നോളഡ്ജ്' സിദ്ധാന്തം എഐ സാങ്കേതികവിദ്യയുടെ മുന്നിൽ ഉയർത്തുന്ന പ്രധാന വെല്ലുവിളികൾ എന്തെല്ലാം?",
+            "malayalam_cc": true
           },
           {
-            "chapterNumber": "Unit 3.2 c (Malayalam Masterclass)",
-            "title": "എഐ വിജ്ഞാനശാസ്ത്ര പ്രത്യാഘാതങ്ങൾ — സമ്പൂർണ്ണ വിശകലനം (Epistemological Implications Masterclass)",
+            "chapterNumber": "Masterclass (V1)",
+            "title": "എഐ വിജ്ഞാനശാസ്ത്ര സമഗ്ര അവലോകനം (Epistemological Implications Masterclass) | Calicut Univ",
             "chapter": "Unit 3.2 c: Black-Box Opacity, Algorithmic Bias & Deep Epistemological Analysis",
             "duration": "25:00",
             "youtubeId": "qrlC8o73n4Q",
@@ -1450,11 +1494,12 @@ window.VOICE_EXPLANATIONS_DATA = {
               "റിലയബിലിസം (Reliabilism): വിശ്വസനീയമായ പ്രക്രിയകളിലൂടെ ഉണ്ടാകുന്ന ഫലങ്ങളെ അറിവായി കണക്കാക്കാമെന്ന വാദവും അതിന്റെ പരിമിതികളും.",
               "വിജ്ഞാനശാസ്ത്രപരമായ ആശ്രിതത്വം (Epistemic Dependence): മനുഷ്യർ അറിവിനായി എഐ അൽഗോരിതങ്ങളെ അമിതമായി ആശ്രയിക്കുമ്പോഴുണ്ടാകുന്ന അപകടങ്ങൾ."
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി പരീക്ഷാ ചോദ്യം: എഐ സിസ്റ്റങ്ങളുടെ 'ബ്ലാക്ക്-ബോക്സ്' സ്വഭാവം പരമ്പരാഗത വിജ്ഞാനശാസ്ത്ര ന്യായീകരണങ്ങളെ എങ്ങനെ ബാധിക്കുന്നു?"
+            "examTip": "യൂണിവേഴ്സിറ്റി പരീക്ഷാ ചോദ്യം: എഐ സിസ്റ്റങ്ങളുടെ 'ബ്ലാക്ക്-ബോക്സ്' സ്വഭാവം പരമ്പരാഗത വിജ്ഞാനശാസ്ത്ര ന്യായീകരണങ്ങളെ എങ്ങനെ ബാധിക്കുന്നു?",
+            "malayalam_cc": true
           },
           {
-            "chapterNumber": "Unit 3.2 c (Extended Discussion)",
-            "title": "എഐയും അറിവിന്റെ വിജ്ഞാനശാസ്ത്രവും — വിപുലീകൃത ചർച്ച (Epistemology of AI Extended)",
+            "chapterNumber": "Masterclass (V2)",
+            "title": "എഐയും അറിവിന്റെ വിജ്ഞാനശാസ്ത്രവും (Epistemology of AI Discussion) | Calicut Univ",
             "chapter": "Unit 3.2 c: Deep Epistemological Concepts · Tacit Knowledge & Justification",
             "duration": "17:26",
             "youtubeId": "uiB6PFp5P_I",
@@ -1465,108 +1510,175 @@ window.VOICE_EXPLANATIONS_DATA = {
               "പൊതുബോധത്തിലെ പക്ഷപാതങ്ങൾ: അൽഗോരിതങ്ങൾ ചരിത്രപരമായ പക്ഷപാതങ്ങളെ ശാശ്വതീകരിക്കാനുള്ള സാധ്യത.",
               "വിജ്ഞാന സിദ്ധാന്തങ്ങളുടെ സംഗ്രഹം: ഭാരതീയ-പാശ്ചാത്യ ദർശനങ്ങൾ തമ്മിലുള്ള താരതമ്യ സംഗ്രഹം."
             ],
-            "examTip": "പരീക്ഷാ ടിപ്പ്: റിലയബിലിസവും ഫൗണ്ടേഷണലിസവും എഐ മോഡലുകളിൽ എങ്ങനെ പ്രയോഗിക്കപ്പെടുന്നു എന്ന് ഉദാഹരണസഹിതം വിശദീകരിക്കുക."
+            "examTip": "പരീക്ഷാ ടിപ്പ്: റിലയബിലിസവും ഫൗണ്ടേഷണലിസവും എഐ മോഡലുകളിൽ എങ്ങനെ പ്രയോഗിക്കപ്പെടുന്നു എന്ന് ഉദാഹരണസഹിതം വിശദീകരിക്കുക.",
+            "malayalam_cc": true
           }
         ]
       },
       {
-        "moduleName": "MODULE 04: ETHICAL AND PHILOSOPHICAL IMPLICATIONS OF AI (ധാർമ്മിക-ദാർശനിക പ്രത്യാഘാതങ്ങൾ)",
+        "moduleName": "MODULE 04: ETHICS OF ARTIFICIAL INTELLIGENCE (FYUGP PHI1CJ101)",
         "videos": [
           {
             "chapterNumber": "Unit 4.1 a",
-            "title": "എഐ മനുഷ്യന്റെ അസ്തിത്വത്തിന് ഭീഷണിയാകുമോ? (Value Alignment & Existential Threat to Humanity)",
+            "title": "എഐ മനുഷ്യന്റെ അസ്തിത്വ ഭീഷണിയോ? (Value Alignment & Existential Risk) | Calicut Univ",
             "chapter": "Unit 4.1 a: Value Alignment · Existential Risk · Nick Bostrom & Stuart Russell",
             "duration": "22:00",
             "language": "Bilingual (Malayalam & English)",
             "youtubeId": "uiB6PFp5P_I",
-            "thumbnail": "https://i.ytimg.com/vi/uiB6PFp5P_I/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/uiB6PFp5P_I/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>വാല്യൂ അലൈൻമെന്റ് പ്രോബ്ലം (Value Alignment Problem):</strong> കൃത്രിമ ബുദ്ധിയുടെ ലക്ഷ്യങ്ങളും മനുഷ്യരാശിയുടെ ധാർമ്മിക മൂല്യങ്ങളും തമ്മിലുള്ള പൊരുത്തക്കേടുകൾ.",
+              "<strong>അസ്തിത്വ ഭീഷണി (Existential Risk):</strong> നിക്ക് ബോസ്ട്രോം (Nick Bostrom), മാക്സ് ടെഗ്മാർക്ക് എന്നിവർ ചൂണ്ടിക്കാണിക്കുന്ന സൂപ്പർഇന്റലിജൻസ് സൃഷ്ടിച്ചേക്കാവുന്ന നിയന്ത്രണാതീത സാഹചര്യങ്ങൾ.",
+              "<strong>ഒർത്തോഗണാലിറ്റി തീസിസ് (Orthogonality Thesis):</strong> ബുദ്ധിശക്തിയുടെ തോതും ആത്യന്തിക ലക്ഷ്യങ്ങളും തമ്മിൽ നേരിട്ട് ബന്ധമില്ല; ഏത് ബുദ്ധിമാനായ ഏജന്റിനും ഏത് വിചിത്ര ലക്ഷ്യവും ആകാം.",
+              "<strong>ഇൻസ്ട്രുമെന്റൽ കൺവെർജൻസ് (Instrumental Convergence):</strong> സ്വയം നിലനിൽപ്പ്, വിഭവങ്ങൾ ശേഖരിക്കൽ തുടങ്ങിയ അടിസ്ഥാന ഉപലക്ഷ്യങ്ങൾ ഏത് AI സിസ്റ്റവും സ്വമേധയാ തിരഞ്ഞെടുക്കാം."
+            ],
+            "examTip": "യൂണിവേഴ്സിറ്റി 10 മാർക്ക് ചോദ്യം: 'Explain the Value Alignment Problem in AI ethics with reference to Nick Bostrom's Superintelligence'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 4.1 b",
-            "title": "AI-യുടെ ധാർമ്മിക തത്വങ്ങൾ (Foundational Ethical Principles of AI)",
+            "title": "AI-യുടെ ധാർമ്മിക തത്വങ്ങൾ (Foundational Ethical Principles of AI) | Calicut Univ",
             "chapter": "Unit 4.1 b: 5 Core Ethical Principles · Value Alignment & Governance",
             "duration": "14:15",
             "language": "Bilingual (Malayalam & English)",
             "youtubeId": "_6n810PKN9c",
-            "thumbnail": "https://i.ytimg.com/vi/_6n810PKN9c/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/_6n810PKN9c/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>യൂണെസ്കോ AI ധാർമ്മിക മാർഗ്ഗരേഖകൾ (UNESCO AI Ethics, 2021):</strong> സുതാര്യത, സമത്വം, സ്വകാര്യത, മനുഷ്യാവകാശ സംരക്ഷണം എന്നിവ ഉറപ്പാക്കൽ.",
+              "<strong>നാല് അടിസ്ഥാന തത്ത്വങ്ങൾ:</strong> ഉപകാരപ്രദമായിരിക്കുക (Beneficence), ദോഷമുണ്ടാക്കാതിരിക്കുക (Non-maleficence), സ്വയംഭരണാധികാരം (Autonomy), നീതി (Justice).",
+              "<strong>ഡിസൈൻ തലത്തിലെ നൈതികത (Ethics by Design):</strong> അൽഗോരിതങ്ങൾ നിർമ്മിക്കുന്ന ആദ്യ ഘട്ടത്തിൽ തന്നെ ധാർമ്മിക മൂല്യങ്ങൾ കോഡ് ചെയ്യപ്പെടണം.",
+              "<strong>മനുഷ്യ മേൽനോട്ടം (Human-in-the-loop):</strong> നിർണ്ണായക തീരുമാനങ്ങളിൽ അന്തിമ വിവേചനാധികാരം എപ്പോഴും മനുഷ്യന്റെ നിയന്ത്രണത്തിലായിരിക്കണം."
+            ],
+            "examTip": "പ്രധാന ചോദ്യം: 'Examine the core ethical principles for AI governance formulated by UNESCO and Asilomar Conferences'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 4.2 a",
-            "title": "അൽഗോരിതമിക് പക്ഷപാതങ്ങളും സാമൂഹിക ബന്ധങ്ങളും (Algorithmic Bias & Social Embeddedness)",
+            "title": "അൽഗോരിതമിക് പക്ഷപാതങ്ങൾ (Algorithmic Bias & Social Discrimination) | Calicut Univ",
             "chapter": "Unit 4.2 a: Data Poisoning · Historical Discrimination · Situated Power",
             "duration": "16:45",
             "language": "Bilingual (Malayalam & English)",
             "youtubeId": "ReMCiz7ckYs",
-            "thumbnail": "https://i.ytimg.com/vi/ReMCiz7ckYs/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/ReMCiz7ckYs/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>അൽഗോരിതമിക് പക്ഷപാതം (Algorithmic Bias):</strong> മുൻകാല ഡാറ്റയിലെ വംശീയ, ലിംഗ, ജാതി വിവേചനങ്ങൾ മെഷീൻ ലേണിംഗ് മോഡലുകളിലേക്ക് പകർത്തപ്പെടുന്നത്.",
+              "<strong>പ്രൊപ്പബ്ലിക്ക കോമ്പാസ് പഠനം (COMPAS Case Study):</strong> ജയിൽപ്പുള്ളികളുടെ ജാമ്യ സാധ്യത പ്രവചിക്കുന്ന അൽഗോരിതം ആഫ്രിക്കൻ-അമേരിക്കൻ ജനവിഭാഗങ്ങൾക്കെതിരെ വിവേചനം കാട്ടിയ സംഭവം.",
+              "<strong>ഡാറ്റാ സെലക്ഷൻ പിശകുകൾ (Historical & Sampling Bias):</strong> പ്രാതിനിധ്യമില്ലാത്ത പരിശീലന ഡാറ്റ AI മോഡലുകളെ മുൻവിധിയോടെ പ്രവർത്തിക്കാൻ പ്രേരിപ്പിക്കുന്നു.",
+              "<strong>സാമൂഹിക പ്രത്യാഘാതങ്ങൾ:</strong> തൊഴിൽ അഭിമുഖങ്ങൾ, വായ്പാ അനുമതികൾ, കുറ്റാന്വേഷണം എന്നിവയിലെ പക്ഷപാതപരമായ തീരുമാനങ്ങൾ."
+            ],
+            "examTip": "ഹ്രസ്വ ഉപന്യാസം: 'How does historical bias in training data perpetuate social discrimination in automated decision systems?'",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 4.2 b",
-            "title": "എ.ഐ എന്ന കണ്ണാടി: സാമൂഹിക പ്രതിഫലനങ്ങൾ (AI as a Mirror: Society & Algorithmic Reflection)",
+            "title": "എ.ഐ സമൂഹത്തിന്റെ കണ്ണാടി (AI as a Mirror of Human Society) | Calicut Univ",
             "chapter": "Unit 4.2 b: Cultural Reflection · Algorithmic Embeddedness & Power Dynamics",
             "duration": "08:24",
             "language": "Malayalam",
             "youtubeId": "5vaYMdGdu4g",
-            "thumbnail": "https://i.ytimg.com/vi/5vaYMdGdu4g/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/5vaYMdGdu4g/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>സാമൂഹിക പ്രതിഫലനങ്ങൾ:</strong> മനുഷ്യ സമൂഹത്തിലെ നിലവിലുള്ള അസമത്വങ്ങളെയും മുൻവിധികളെയും AI ഒരു കണ്ണാടി പോലെ പതിന്മടങ്ങ് വലുതായി പ്രതിഫലിപ്പിക്കുന്നു.",
+              "<strong>ഭാഷാ മോഡലുകളിലെ ലിംഗവിവേചനം:</strong> 'ഡോക്ടർ' എന്നാൽ പുരുഷനായും 'നഴ്സ്' എന്നാൽ സ്ത്രീയായും അസോസിയേറ്റ് ചെയ്യുന്ന അൽഗോരിതമിക് പാറ്റേണുകൾ.",
+              "<strong>നിഷ്പക്ഷതയുടെ മിഥ്യ (Myth of Algorithmic Neutrality):</strong> മാത്തമാറ്റിക്കൽ കോഡുകൾ എന്ന പേരിൽ അൽഗോരിതങ്ങൾ പൂർണ്ണമായും മൂല്യനിഷ്പക്ഷമല്ല എന്ന തിരിച്ചറിവ്.",
+              "<strong>ധാർമ്മിക തിരുത്തൽ:</strong> ഡാറ്റാബേസുകളിൽ തുല്യ പ്രാതിനിധ്യവും ഡി-ബയസിംഗ് (Debiasing) അൽഗോരിതങ്ങളും ഏർപ്പെടുത്തൽ."
+            ],
+            "examTip": "വിമർശനാത്മക ചോദ്യം: 'Critically analyze the claim that Artificial Intelligence merely mirrors societal prejudices'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 4.2 c",
-            "title": "അൽഗോരിതങ്ങളിലെ വിവേചനം തടയാനാകുമോ? (Mitigating Algorithmic Discrimination & Technical Fairness)",
+            "title": "അൽഗോരിത വിവേചനം തടയൽ (Mitigating Algorithmic Discrimination) | Calicut Univ",
             "chapter": "Unit 4.2 c: Fairness Metrics · Impossibility Theorem · Debias Techniques",
             "duration": "12:15",
             "language": "Malayalam",
             "youtubeId": "uQOdA1he-iE",
-            "thumbnail": "https://i.ytimg.com/vi/uQOdA1he-iE/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/uQOdA1he-iE/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>ന്യായബോധമുള്ള AI (Fairness, Accountability & Transparency - FAccT):</strong> അൽഗോരിത നിർമ്മാണത്തിൽ സുതാര്യതയും ഓഡിറ്റിംഗും നിർബന്ധമാക്കൽ.",
+              "<strong>പ്രീ-പ്രോസസ്സിംഗ് & ഇൻ-പ്രോസസ്സിംഗ് പരിഹാരങ്ങൾ:</strong> ഡാറ്റാ സാമ്പിളുകൾ പുനഃക്രമീകരിക്കലും നിയന്ത്രിത ഒപ്റ്റിമൈസേഷൻ അൽഗോരിതങ്ങൾ ഉപയോഗിക്കലും.",
+              "<strong>എക്സ്പ്ലൈനബിൾ AI (XAI):</strong> അൽഗോരിതം എടുത്ത തീരുമാനത്തിന് പിന്നിലെ യുക്തി മനുഷ്യന് വായിച്ചു മനസ്സിലാക്കാൻ പാകത്തിൽ ലഭ്യമാക്കൽ.",
+              "<strong>നിയമനിർമ്മാണം:</strong> യൂറോപ്യൻ യൂണിയന്റെ EU AI Act പോലുള്ള നിയമപരമായ ചട്ടക്കൂടുകൾ വഴി കർശന നിരീക്ഷണം."
+            ],
+            "examTip": "10 മാർക്ക് ഉപന്യാസം: 'What is Explainable AI (XAI)? Discuss the key technical and regulatory approaches to eliminate algorithmic bias'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 4.3 a",
-            "title": "സ്വയംഭരണ വാഹനങ്ങളും ട്രോളി പ്രശ്നവും (Ethical Rules for Autonomous Vehicles: The Trolley Problem)",
+            "title": "സ്വയംഭരണ വാഹനങ്ങളും ട്രോളി പ്രശ്നവും (Autonomous Vehicles & Trolley Problem) | Calicut Univ",
             "chapter": "Unit 4.3 a: Trolley Problem · Moral Machine Experiment · Utilitarian vs Deontology",
             "duration": "15:30",
             "language": "Malayalam",
             "youtubeId": "oTEhOh_z5NA",
-            "thumbnail": "https://i.ytimg.com/vi/oTEhOh_z5NA/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/oTEhOh_z5NA/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>ട്രോളി പ്രശ്നം (Philippa Foot's Trolley Problem, 1967):</strong> അനിവാര്യമായ അപകട ഘട്ടത്തിൽ കാൽനടയാത്രക്കാരെയോ യാത്രക്കാരെയോ ആരെ രക്ഷിക്കണം എന്ന ധർമ്മസങ്കടം.",
+              "<strong>യൂട്ടിലിറ്റേറിയനിസം (Utilitarianism - Bentham & Mill):</strong> കൂടുതൽ ആളുകളുടെ ജീവൻ രക്ഷിക്കാൻ വേണ്ടി കുറഞ്ഞ ആളുകളെ ബലികൊടുക്കുന്ന സമീപനം.",
+              "<strong>ഡീയോന്റോളജി (Kantian Deontology):</strong> വ്യക്തികളെ ഉപകരണങ്ങളായി കാണരുതെന്നും ആരെയും ബോധപൂർവ്വം അപകടത്തിലേക്ക് തള്ളിയിടരുതെന്നും ഉള്ള നിബന്ധന.",
+              "<strong>മോറൽ മെഷീൻ പരീക്ഷണം (MIT Moral Machine Experiment):</strong> വിവിധ സംസ്കാരങ്ങളിലെ ആളുകൾ അപകടങ്ങളിൽ ജീവന്റെ മൂല്യം എങ്ങനെ തീരുമാനിക്കുന്നു എന്നതിനെക്കുറിച്ചുള്ള ആഗോള പഠനം."
+            ],
+            "examTip": "പരീക്ഷാ ചോദ്യം: 'How does the classical Trolley Problem apply to the programming of autonomous vehicles? Contrast the utilitarian and deontological resolutions'.",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 4.3 b",
-            "title": "AI കോടതിയും നൈതിക ഉത്തരവാദിത്തവും (AI as Legal Agent & Moral Patiency)",
+            "title": "AI കോടതിയും നൈതിക ഉത്തരവാദിത്തവും (AI as Legal Agent & Moral Patient) | Calicut Univ",
             "chapter": "Unit 4.3 b: AI in Judicial Systems · Algorithmic Jurisprudence & Moral Agency",
             "duration": "11:40",
             "language": "Malayalam",
             "youtubeId": "cND0PVx_Jdk",
-            "thumbnail": "https://i.ytimg.com/vi/cND0PVx_Jdk/hqdefault.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/cND0PVx_Jdk/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>ധാർമ്മിക ഏജന്റ് vs പേഷ്യന്റ് (Moral Agent vs Moral Patient):</strong> നന്മതിന്മകൾ തിരിച്ച് പ്രവർത്തിക്കാൻ ശേഷിയുള്ള ഏജന്റുകൾ vs ധാർമ്മിക പരിഗണന അർഹിക്കുന്ന ജീവികൾ.",
+              "<strong>നിയമപരമായ വ്യക്തിത്വം (Electronic Personhood):</strong> കോർപ്പറേഷനുകൾക്ക് ഉള്ളതുപോലെ അഡ്വാൻസ്ഡ് റോബോട്ടുകൾക്ക് നിയമപരമായ വ്യക്തിത്വം നൽകണമെന്ന വാദങ്ങൾ.",
+              "<strong>അവകാശങ്ങളും സംരക്ഷണവും:</strong> ഭാവിയിൽ ബോധമുള്ള AI ഉണ്ടായാൽ അവയെ വെറും ഉപകരണങ്ങളായി അടിമപ്പെടുത്തുന്നത് ധാർമ്മികമാണോ എന്ന ചോദ്യം.",
+              "<strong>അന്താരാഷ്ട്ര നിയമങ്ങൾ:</strong> നിലവിലെ നിയമവ്യവസ്ഥകളിൽ AI ഉപകരണങ്ങൾക്ക് സ്വന്തമായി ഉത്തരവാദിത്തമില്ല, ഉടമസ്ഥർക്കാണ് ശിക്ഷ ലഭിക്കുന്നത്."
+            ],
+            "examTip": "പ്രധാന ഹ്രസ്വചോദ്യം: 'Distinguish between a Moral Agent and a Moral Patient. Should autonomous AI systems be granted legal personhood?'",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 4.3 c",
-            "title": "ധാർമ്മിക കർതൃത്വവും ഉത്തരവാദിത്ത വിടവും (Moral Agency, Black-Box Opacity & The Responsibility Gap)",
+            "title": "ധാർമ്മിക കർതൃത്വവും ഉത്തരവാദിത്ത വിടവും (Moral Agency & Responsibility Gap) | Calicut Univ",
             "chapter": "Unit 4.3 c: Responsibility Gap · Moral Patiency vs Moral Agency · Legal Liability",
             "duration": "18:20",
             "language": "Malayalam",
-            "youtubeId": "qrlC8o73n4Q",
-            "thumbnail": "https://i.ytimg.com/vi/qrlC8o73n4Q/hqdefault.jpg"
+            "youtubeId": null,
+            "thumbnail": "https://i.ytimg.com/vi/qrlC8o73n4Q/hqdefault.jpg",
+            "studyPoints": [
+              "<strong>റെസ്പോൺസിബിലിറ്റി ഗ്യാപ് (The Responsibility Gap - Andreas Matthias, 2004):</strong> മെഷീൻ സ്വയം പഠിച്ച് തീരുമാനമെടുക്കുമ്പോൾ ഉണ്ടാകുന്ന ദുരന്തങ്ങൾക്ക് പ്രോഗ്രാമറെയോ ഉടമയെയോ മെഷീനെയോ ഉത്തരവാദിയാക്കാൻ കഴിയാത്ത പ്രതിസന്ധി.",
+              "<strong>ബ്ലാക്ക്-ബോക്സ് പ്രോബ്ലം (Black-Box Opacity):</strong> ഡീപ് ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ ലക്ഷക്കണക്കിന് പാരാമീറ്ററുകൾ ഉപയോഗിച്ച് എടുത്ത തീരുമാനങ്ങളുടെ യുക്തി മനുഷ്യന് മുൻകൂട്ടി പ്രവചിക്കാൻ കഴിയില്ല.",
+              "<strong>ധാർമ്മിക വിടവ് (Moral Deficit):</strong> ശിക്ഷിക്കാൻ കഴിയാത്ത ഒരു അൽഗോരിതത്തിന്മേൽ പരമ്പരാഗത നീതിന്യായ വ്യവസ്ഥകൾ പരാജയപ്പെടുന്നത്.",
+              "<strong>കണിശമായ നിയമപരമായ ബാധ്യത (Strict Liability):</strong> അൽഗോരിത പിഴവുകൾക്ക് നിർമ്മാതാക്കൾ തന്നെ നഷ്ടപരിഹാരം നൽകണമെന്ന കർശന വ്യവസ്ഥ."
+            ],
+            "examTip": "പ്രധാന 10 മാർക്ക് ഉപന്യാസം: 'Critically examine the concept of the Responsibility Gap in AI ethics as formulated by Andreas Matthias'.",
+            "malayalam_cc": true
           }
         ]
       },
       {
-        "moduleName": "MODULE 05: PHILOSOPHICAL UNDERPINNING OF AI & THE FUTURE OF HUMANITY (ഭാവി കാഴ്ചപ്പാടുകൾ)",
+        "moduleName": "MODULE 05: THE FUTURE OF HUMANITY AND AI (FYUGP PHI1CJ101)",
         "videos": [
           {
             "chapterNumber": "Unit 5.1 & 5.2",
-            "title": "സിമുലേഷൻ vs യഥാർത്ഥ അറിവും മനുഷ്യന്റെ സ്വത്വ പ്രതിസന്ധിയും (Simulation vs Understanding & Human Uniqueness)",
-            "chapter": "Unit 5.1 & 5.2: Ontological Reality vs Functional Simulation · De-Centering the Human Subject",
-            "duration": "25:00",
+            "title": "എഐ കാലത്തെ ദാർശനിക ചോദ്യങ്ങൾ (New Philosophical Questions in AI) | Calicut Univ",
+            "chapter": "Human Uniqueness · Free Will vs Determinism · Synthetic Consciousness",
+            "duration": "18:00",
             "youtubeId": "",
-            "language": "Malayalam",
+            "language": "English & Malayalam",
             "studyPoints": [
-              "പ്രകടനവും ബോധവും തമ്മിലുള്ള വിടവ്: ജനറേറ്റീവ് AI വലിയ ഡാറ്റകൾ പ്രോസസ്സ് ചെയ്യുമ്പോഴും അതിന് ആത്മനിഷ്ഠ അനുഭവങ്ങൾ (Qualia) ഇല്ലെന്ന യാഥാർത്ഥ്യം.",
-              "മനുഷ്യന്റെ സവിശേഷതയ്ക്കേറ്റ നാലാമത്തെ പ്രഹരം: കോപ്പർനിക്കസ്, ഡാർവിൻ, ഫ്രോയിഡ് എന്നിവർക്ക് ശേഷം മനുഷ്യന്റെ ബുദ്ധിശക്തിയുടെ പ്രത്യേകതയെ ചോദ്യം ചെയ്യുന്ന AI.",
-              "തൊഴിലും മനുഷ്യന്റെ അർത്ഥവും: സർഗ്ഗാത്മക ജോലികളും യുക്തിചിന്തയും ഓട്ടോമേറ്റ് ചെയ്യപ്പെടുമ്പോൾ മനുഷ്യന്റെ ആന്തരിക ജീവിതത്തിനുണ്ടാകുന്ന മാറ്റങ്ങൾ.",
-              "കോഗ്നിറ്റീവ് അട്രോഫി (Cognitive Atrophy): ചിന്തയും തീരുമാനങ്ങളും അൽഗോരിതങ്ങൾക്ക് പൂർണ്ണമായി വിട്ടുകൊടുക്കുമ്പോൾ മനുഷ്യന്റെ സ്വാഭാവിക ശേഷികൾ ദുർബലപ്പെടുന്ന അവസ്ഥ."
+              "<strong>00:00 - 04:17 | എഐ കാലഘട്ടവും മനുഷ്യന്റെ തനിമയും (Who are We?):</strong> ചിന്തിക്കാനും സർഗ്ഗാത്മകമായി പ്രവർത്തിക്കാനും മെഷീനുകൾ പഠിക്കുമ്പോൾ മനുഷ്യൻ എന്ന സവിശേഷ സ്വത്വത്തിന്റെ പുനർനിർവ്വചനം.",
+              "<strong>04:17 - 08:35 | സ്വതന്ത്രേച്ഛ vs അൽഗോരിതമിക് ഡിറ്റർമിനിസം (Free Will vs Determinism):</strong> മനുഷ്യന്റെ തിരഞ്ഞെടുപ്പുകളെ പ്രവചിക്കുകയും നിയന്ത്രിക്കുകയും ചെയ്യുന്ന ബിഗ് ഡാറ്റ അൽഗോരിതങ്ങൾ.",
+              "<strong>08:35 - 12:53 | ധാർമ്മിക ഉത്തരവാദിത്തം ആർക്ക്? (Moral Accountability):</strong> ഓട്ടോണമസ് സിസ്റ്റങ്ങൾ ഉണ്ടാക്കുന്ന വിനാശങ്ങൾക്ക് ആര് മറുപടി പറയും?",
+              "<strong>12:53 - 17:11 | ഡിജിറ്റൽ ബോധവും കൃത്രിമ ആത്മാവും (Synthetic Consciousness):</strong> സിലിക്കൺ സർക്യൂട്ടുകളിൽ ബോധം ഉണരുമോ അതോ മനുഷ്യൻ വെറും ഒരു ഭൗതിക യന്ത്രം മാത്രമാണോ?",
+              "<strong>17:11 - 18:00 | സർവ്വകലാശാലാ സംഗ്രഹം (Calicut Univ Review):</strong> എഐ യുഗത്തിലെ മനുഷ്യന്റെ സവിശേഷതകളും പരീക്ഷാ ചോദ്യോത്തരങ്ങളും."
             ],
-            "examTip": "Calicut University ചോദ്യം: 'സിമുലേഷൻ യഥാർത്ഥ അറിവിന് തുല്യമാണോ?' ഫിലോസഫി ഓഫ് AI-യുടെ വെളിച്ചത്തിൽ ചർച്ച ചെയ്യുക."
+            "examTip": "യൂണിവേഴ്സിറ്റി ഉപന്യാസ ചോദ്യം: 'How does Artificial Intelligence challenge traditional conceptions of Free Will and Human Uniqueness?'",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Unit 5.3 - 5.5",
-            "title": "സിംഗുലാരിറ്റിയും ആഗോള ഭരണക്രമവും സന്തുലിത ഭാവിയും (Technological Singularity, Global Governance & Balanced Future)",
+            "title": "ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റിയും ഭാവിയും (Technological Singularity & Future) | Calicut Univ",
             "chapter": "Unit 5.3 - 5.5: Singularity · Global Governance · Amalgamation of Science & Philosophy",
             "duration": "25:00",
             "youtubeId": "",
@@ -1577,7 +1689,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ആഗോള ഭരണക്രമവും യുനെസ്കോ ചട്ടക്കൂടും: എഐയെ മനുഷ്യനന്മയ്ക്ക് മാത്രമായി നിയന്ത്രിക്കാനുള്ള അന്താരാഷ്ട്ര ധാർമ്മിക ഉടമ്പടികൾ.",
               "ശാസ്ത്രത്തിന്റെയും തത്ത്വചിന്തയുടെയും സംയോജനം: കേവല സാങ്കേതിക വികാസത്തിനപ്പുറം ദാർശനിക വിവേകത്തോടെ AI-യെ നയിക്കേണ്ടതിന്റെ അനിവാര്യത."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: 'ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റി' മാനവരാശിയുടെ ഭാവിയെ എങ്ങനെ മാറ്റിമറിക്കും? ശാസ്ത്രവും തത്ത്വചിന്തയും എങ്ങനെ സമന്വയിപ്പിക്കണം?"
+            "examTip": "Calicut University FYUGP ചോദ്യം: 'ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റി' മാനവരാശിയുടെ ഭാവിയെ എങ്ങനെ മാറ്റിമറിക്കും? ശാസ്ത്രവും തത്ത്വചിന്തയും എങ്ങനെ സമന്വയിപ്പിക്കണം?",
+            "malayalam_cc": true
           }
         ]
       }
@@ -2688,9 +2801,9 @@ window.VOICE_EXPLANATIONS_DATA = {
                     "title": "അറബിക് അക്ഷരമാലയും അടിസ്ഥാന വ്യാകരണവും (Arabic Alphabet & Basic Grammar)",
                     "chapter": "അക്ഷരമാല, മഖാരിജ്, ഹറകത്ത്, ഇസ്മ്-ഫിഅ്ല്-ഹർഫ്, മഅ്രിഫ-നകിറ, ശംസിയ്യ-ഖമരിയ്യ, ലിംഗ-വചന നിയമങ്ങൾ",
                     "duration": "18:00",
-                    "youtubeId": "",
+                    "youtubeId": "rb5CfCS7mT0",
                     "videoUrl": null,
-                    "thumbnail": "arabic_mod1_ch01_production/thumbnails/Arabic_Mod1_Ch01_Thumbnail.png",
+                    "thumbnail": "https://i.ytimg.com/vi/rb5CfCS7mT0/hqdefault.jpg",
                     "language": "Arabic",
                     "studyPoints": [
                         "<strong>അക്ഷരമാലയും ഉച്ചാരണ സ്ഥാനങ്ങളും (Makharīj):</strong> 28 വ്യഞ്ജനാക്ഷരങ്ങൾ. ഓരോ അക്ഷരത്തിന്റെയും കൃത്യമായ സ്വരസ്ഥാനം (തൊണ്ട, നാവ്, ചുണ്ടുകൾ).",
@@ -2708,9 +2821,9 @@ window.VOICE_EXPLANATIONS_DATA = {
                     "title": "ക്രിയാപദങ്ങളും വാക്യഘടനയും (Arabic Verbal Sentences & Tenses)",
                     "chapter": "മാളീ (ഭൂതകാലം), മുളാരിഅ് (വർത്തമാനം/ഭാവി), അംറ് (ആജ്ഞാ ക്രിയകൾ), ജുംല ഫിഅ്ലിയ്യ & നാമവിശേഷണ വാക്യങ്ങൾ",
                     "duration": "20:00",
-                    "youtubeId": "",
+                    "youtubeId": "USLqNTABWVI",
                     "videoUrl": null,
-                    "thumbnail": "arabic_mod1_ch02_production/thumbnails/Arabic_Mod1_Ch02_Thumbnail.png",
+                    "thumbnail": "https://i.ytimg.com/vi/USLqNTABWVI/hqdefault.jpg",
                     "language": "Arabic",
                     "studyPoints": [
                         "<strong>അൽ-ഫിഅ്ലുൽ മാളീ (Past Tense):</strong> അടിസ്ഥാന ത്രിയക്ഷര രൂപം (ഉദാ: കതബ, ഫഅല, ദഹബ). കർത്താവിന്റെ ലിംഗ-വചനത്തിനനുസരിച്ചുള്ള 14 സംയോജന രൂപങ്ങൾ (Conjugation).",
@@ -2731,9 +2844,9 @@ window.VOICE_EXPLANATIONS_DATA = {
                     "title": "ക്ലാസിക്കൽ & ആധുനിക പാഠഭാഗങ്ങൾ (Classical & Modern Arabic Texts)",
                     "chapter": "അധ്വാനത്തിന്റെ മഹത്വം (ഥർവത്തുൽ അമൽ), പിതാവിന്റെ ഉപദേശങ്ങൾ, ക്ലാസിക്കൽ അറബിക് സാഹിത്യ വിശകലനം",
                     "duration": "22:00",
-                    "youtubeId": "",
+                    "youtubeId": "aOgymHqbK8k",
                     "videoUrl": null,
-                    "thumbnail": "arabic_mod2_ch03_production/thumbnails/Arabic_Mod2_Ch03_Thumbnail.png",
+                    "thumbnail": "https://i.ytimg.com/vi/aOgymHqbK8k/hqdefault.jpg",
                     "language": "Arabic",
                     "studyPoints": [
                         "<strong>ഥർവത്തുൽ അമൽ (Work Is Wealth):</strong> തൊഴിലിന്റെ മഹത്വവും സ്വാശ്രയത്വവും വ്യക്തമാക്കുന്ന അറബിക് പാഠഭാഗം. പിതാവ് മകന് നൽകുന്ന മൂന്ന് അമൂല്യ ഉപദേശങ്ങൾ.",
@@ -2748,9 +2861,9 @@ window.VOICE_EXPLANATIONS_DATA = {
                     "title": "ദൈനംദിന അറബി സംഭാഷണങ്ങൾ (Conversational Arabic in Daily Life)",
                     "chapter": "മാർക്കറ്റ്, വിമാനത്താവളം, ആശുപത്രി, ഓഫീസ് സംഭാഷണങ്ങൾ, സമയവും ആരോഗ്യവും (അൽ-വഖ്തു വസ്സിഹ്ഹ)",
                     "duration": "19:00",
-                    "youtubeId": "",
+                    "youtubeId": "OKnXFgDqFug",
                     "videoUrl": null,
-                    "thumbnail": "arabic_mod2_ch04_production/thumbnails/Arabic_Mod2_Ch04_Thumbnail.png",
+                    "thumbnail": "https://i.ytimg.com/vi/OKnXFgDqFug/hqdefault.jpg",
                     "language": "Arabic",
                     "studyPoints": [
                         "<strong>അൽ-ഹിവാറാത്തുൽ യൗമിയ്യ (Daily Dialogues):</strong> വിപണിയിലെ വിലപേശലുകൾ, വിമാനത്താവളത്തിലെ ചെക്ക്-ഇൻ, ഇമിഗ്രേഷൻ സംഭാഷണങ്ങൾ.",
@@ -2770,9 +2883,9 @@ window.VOICE_EXPLANATIONS_DATA = {
                     "title": "ഔദ്യോഗിക എഴുത്തുകുത്തുകളും വാണിജ്യ അറബിയും (Commercial Arabic & Business Letters)",
                     "chapter": "ബിസിനസ് കത്തുകൾ, ബാങ്കിംഗ്, ഓർഡർ ഫോമുകൾ, ഇൻവോയ്സ്, ഔദ്യോഗിക മെമ്മോകൾ & വാണിജ്യ സാങ്കേതിക പദാവലി",
                     "duration": "21:00",
-                    "youtubeId": "",
+                    "youtubeId": "OQfXlhCslBY",
                     "videoUrl": null,
-                    "thumbnail": "arabic_mod3_ch05_production/thumbnails/Arabic_Mod3_Ch05_Thumbnail.png",
+                    "thumbnail": "https://i.ytimg.com/vi/OQfXlhCslBY/hqdefault.jpg",
                     "language": "Arabic",
                     "studyPoints": [
                         "<strong>വാണിജ്യ അറബിയുടെ സ്വഭാവം:</strong> വ്യക്തത, കൃത്യത, സംക്ഷിപ്തത എന്നിവയാർന്ന പ്രൊഫഷണൽ അറബിക് എഴുത്തുരീതികൾ.",
@@ -2792,9 +2905,9 @@ window.VOICE_EXPLANATIONS_DATA = {
                     "title": "വിവർത്തന രീതികൾ: അറബിക് - മലയാളം - ഇംഗ്ലീഷ് (Translation Methods: Arabic-Mal-Eng)",
                     "chapter": "വിവർത്തന തത്ത്വങ്ങൾ, സാങ്കേതിക വാക്യങ്ങൾ, ശൈലികൾ, പഴഞ്ചൊല്ലുകൾ (അംഥാൽ) & ദ്വിഭാഷാ പരിശീലനങ്ങൾ",
                     "duration": "23:00",
-                    "youtubeId": "",
+                    "youtubeId": "xmmSpkecMCk",
                     "videoUrl": null,
-                    "thumbnail": "arabic_mod4_ch06_production/thumbnails/Arabic_Mod4_Ch06_Thumbnail.png",
+                    "thumbnail": "https://i.ytimg.com/vi/xmmSpkecMCk/hqdefault.jpg",
                     "language": "Arabic",
                     "studyPoints": [
                         "<strong>വിവർത്തന സിദ്ധാന്തങ്ങൾ:</strong> വാചിക വിവർത്തനം (Literal) vs ആശയ വിവർത്തനം (Dynamic/Idiomatic). അറബി-മലയാളം വാക്യഘടനകളിലെ വ്യത്യാസങ്ങൾ (VSO vs SOV).",
