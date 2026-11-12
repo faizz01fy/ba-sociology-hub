@@ -2395,8 +2395,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · വ്യക്തിഗത & മാർക്കറ്റ് ഡിമാൻഡ്, ഡിമാൻഡ് ഷിഫ്റ്റുകൾ",
             "duration": "06:21",
             "youtubeId": "Mu1Ktkzr_ME",
-            "videoUrl": "/micro-demand-review.html",
-            "thumbnail": "/thumbnails/micro-demand-review.png",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/Mu1Ktkzr_ME/hqdefault.jpg",
             "studyPoints": [
               "ഡിമാൻഡ് എന്നത് വാങ്ങാനുള്ള ആഗ്രഹവും അതോടൊപ്പം വില നൽകാനുള്ള സാമ്പത്തിക ശേഷിയും (purchasing power) ചേർന്നതാണ്.",
               "മറ്റ് ഘടകങ്ങൾ സ്ഥിരമായിരിക്കുമ്പോൾ വില കൂടുമ്പോൾ ഡിമാൻഡ് കുറയുകയും വില കുറയുമ്പോൾ ഡിമാൻഡ് കൂടുകയും ചെയ്യുന്നു (Law of Demand).",
@@ -2417,8 +2417,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · സപ്ലൈ നിയമം, സപ്ലൈ ഫംഗ്ഷൻ & ഷിഫ്റ്റുകൾ",
             "duration": "14:52",
             "youtubeId": "CylKbnNZtm0",
-            "videoUrl": "/micro-unit2-review.html",
-            "thumbnail": "/thumbnails/micro-unit-2-review.png",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/CylKbnNZtm0/hqdefault.jpg",
             "studyPoints": [
               "Supply Definition (ഏതെങ്കിലും സാധനത്തിന്റെ അളവ്, വില, സമയം)",
               "Supply Function (SX = f(PX, PZ, T, C, GP))",
@@ -2442,8 +2442,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · സന്തുലിത വിലയും അളവും, സർപ്ലസ് & ഷോർട്ടേജ്",
             "duration": "15:51",
             "youtubeId": "zJsY7Sbx2To",
-            "videoUrl": "/micro-unit3-review.html",
-            "thumbnail": "/thumbnails/micro-unit-3-review.png",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/zJsY7Sbx2To/hqdefault.jpg",
             "studyPoints": [
               "Market Equilibrium: Qd equals Qs",
               "Equilibrium Price: P star and Q star",
@@ -2496,7 +2496,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · അപചയ സീമാന്ത പ്രയോജന നിയമവും സമ-സീമാന്ത പ്രയോജനവും",
             "duration": "23:26",
             "youtubeId": "Jj-JWuNJjRU",
-            "videoUrl": "https://www.youtube.com/watch?v=Jj-JWuNJjRU",
+            "videoUrl": null,
             "thumbnail": "https://i.ytimg.com/vi/Jj-JWuNJjRU/hqdefault.jpg",
             "studyPoints": [
               "<strong>കാർഡിനൽ പ്രയോജന സിദ്ധാന്തം:</strong> സംതൃപ്തിയെ യൂട്ടിൽസ് എന്ന സംഖ്യാ രൂപത്തിൽ അളക്കാമെന്ന് ആൽഫ്രഡ് മാർഷൽ സമർത്ഥിക്കുന്നു.",
@@ -2516,7 +2516,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · ഇൻഡിഫറൻസ് കർവ് പ്രത്യേകതകൾ, MRS & മുൻഗണനാ ഭൂപടം",
             "duration": "18:16",
             "youtubeId": "z8tbT2SiepA",
-            "thumbnail": "/thumbnails/Consumer_Preferences_Mod2_Unit6_Thumbnail.png",
+            "thumbnail": "https://i.ytimg.com/vi/z8tbT2SiepA/hqdefault.jpg",
             "studyPoints": [
               "<strong>Indifference Curve (IC):</strong> Represents locus of all commodity bundles providing identical levels of overall satisfaction.",
               "<strong>Marginal Rate of Substitution (MRS):</strong> The rate at which a consumer trades good Y for good X: MRS_xy = -dy/dx = MUx/MUy.",
@@ -2540,7 +2540,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>ഉപഭോക്തൃ സന്തുലിതാവസ്ഥ:</strong> ഇൻഡിഫറൻസ് കർവിന്റെ ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ പരമാവധി സംതൃപ്തി ലഭിക്കുന്നു."
             ],
             "examTip": "ബജറ്റ് രേഖയുടെ ചെരിവ് -Px/Py നിർണ്ണയിക്കുന്ന രീതിയും വിലമാറ്റവും വരുമാന മാറ്റവും തമ്മിലുള്ള ഗ്രാഫിക്കൽ വ്യത്യാസവും 6/10 മാർക്ക് ചോദ്യങ്ങളായി ആവർത്തിച്ചു വരാറുണ്ട്.",
-            "videoUrl": "https://www.youtube.com/watch?v=9H8683I4Ad8",
+            "videoUrl": null,
             "language": "Malayalam",
             "audioUrl": "/audio/micro_unit08_masterclass.mp3",
             "malayalam_cc": true
@@ -2576,7 +2576,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · സോൾ പ്രൊപ്രൈറ്റർഷിപ്പ്, പാർട്ണർഷിപ്പ്, കോർപ്പറേഷൻ & പ്രിൻസിപ്പൽ-ഏജന്റ്",
             "duration": "15:38",
             "youtubeId": "W6b1q1WUJbo",
-            "videoUrl": "https://www.youtube.com/watch?v=W6b1q1WUJbo",
+            "videoUrl": null,
             "thumbnail": "https://i.ytimg.com/vi/W6b1q1WUJbo/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
@@ -2661,7 +2661,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · കോൺസ്റ്റന്റ് (CRS), ഇൻക്രീസിംഗ് (IRS), ഡിമിനിഷിംഗ് (DRS)",
             "duration": "25:20",
             "youtubeId": "9gX0HzBZ0Bc",
-            "videoUrl": "https://www.youtube.com/watch?v=9gX0HzBZ0Bc",
+            "videoUrl": null,
             "thumbnail": "https://i.ytimg.com/vi/9gX0HzBZ0Bc/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
