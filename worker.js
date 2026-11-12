@@ -289,7 +289,7 @@ Ensure criterion marks add up to awardedMarks and never exceed 10.`;
     }
     if (url.pathname === "/live-owner.js" && (request.method === "GET" || request.method === "HEAD")) return new Response(OWNER_LIVE_SCRIPT,{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
     if (url.pathname === "/traffic-tracker.js" && (request.method === "GET" || request.method === "HEAD")) return new Response(TRACKER_SCRIPT,{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
-    if (url.pathname === '/api/study-helper' || url.pathname === '/api/study-helper/status') return handleStudyHelper(request, env);
+    if (url.pathname === '/api/answer-evaluate-text' || url.pathname === '/api/study-helper' || url.pathname === '/api/study-helper/status') return handleStudyHelper(request, env);
     if (url.pathname === '/api/notices') return handleUniversityNotices(request, env, ctx);
     if (url.pathname === '/api/whatsapp/webhook') return handleWhatsAppWebhook(request, env, ctx);
     if (url.pathname === '/api/whatsapp/updates') return handleWhatsAppList(request, env);
