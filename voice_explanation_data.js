@@ -2107,13 +2107,14 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സ്വതന്ത്ര ഇച്ഛയും ധാർമ്മിക ബാധ്യതയും (Free Will & Moral Responsibility): പ്രവൃത്തികൾ തിരഞ്ഞെടുക്കാനുള്ള മനുഷ്യന്റെ വിവേകവും സ്വന്തം കർമ്മങ്ങളിലുള്ള ഉത്തരവാദിത്തവും."
             ],
             "examTip": "Calicut University Focus: 'Explain the nature, scope, and principal branches of Ethics with special emphasis on Free Will and Moral Responsibility'.",
-            "thumbnail": "/thumbnails/ethics_thumb_01.jpg"
+            "thumbnail": "/thumbnails/ethics_thumb_01.jpg",
+            "videoUrl": null
           },
           {
             "chapterNumber": "Module 01 Masterclass",
             "title": "ധർമ്മശാസ്ത്രം ആമുഖവും തത്വങ്ങളും (Introduction to Dharmashastra & Western Ethics)",
             "chapter": "Academic Hub Special · ഋതം, ധർമ്മം, പുരുഷാർത്ഥങ്ങൾ & പാശ്ചാത്യ-പൗരസ്ത്യ സമന്വയം",
-            "duration": "18:30",
+            "duration": "06:41",
             "youtubeId": "s3xGsLMCY1o",
             "audioUrl": "",
             "language": "English",
@@ -2123,7 +2124,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "മൂന്ന് ഋണങ്ങൾ (Three Debts): ദേവഋണം, ഋഷിഋണം, പിതൃഋണം എന്നിവ തീർക്കാനുള്ള സാമൂഹിക-ധാർമ്മിക കടമകൾ."
             ],
             "examTip": "University Exam Tip: 'Critically examine the concept of Dharma and Purusharthas in Indian moral philosophy'.",
-            "thumbnail": "/thumbnails/ethics_thumb_02.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/s3xGsLMCY1o/hqdefault.jpg",
+            "videoUrl": null
           },
           {
             "chapterNumber": "Part 01",
@@ -2220,7 +2222,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "അവകാശങ്ങളും കടമകളും തമ്മിലുള്ള പരസ്പരബന്ധം (Correlation of Rights and Duties): ഓരോ വ്യക്തിയുടെയും അവകാശം മറ്റുള്ളവരുടെ ധാർമ്മിക കടമയായി മാറുന്നു."
             ],
             "examTip": "University Exam Tip: 'Explain Aristotle's Doctrine of the Mean with suitable examples and elaborate on the four Cardinal Virtues'.",
-            "thumbnail": "/thumbnails/ethics_thumb_03.jpg"
+            "thumbnail": "/thumbnails/ethics_thumb_03.jpg",
+            "videoUrl": null
           },
           {
             "chapterNumber": "Chapter 03",
@@ -2236,7 +2239,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "നന്മയും നീതിയും (Goodness & Justice): വ്യക്തിഗത സദാചാരവും സാമൂഹിക ക്ഷേമവും തമ്മിലുള്ള ആരോഗ്യകരമായ സന്തുലിതാവസ്ഥ."
             ],
             "examTip": "University Exam Tip: 'Discuss Conscience as the subjective norm of morality and evaluate its role in resolving ethical conflicts'.",
-            "thumbnail": "/thumbnails/ethics_thumb_04.jpg"
+            "thumbnail": "/thumbnails/ethics_thumb_04.jpg",
+            "videoUrl": null
           },
           {
             "chapterNumber": "Part 01",
@@ -2262,8 +2266,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 04",
             "title": "കൺസിക്വൻഷ്യലിസവും ഡിയോന്റോളജിക്കൽ എത്തിക്സും (Consequentialism & Deontological Ethics)",
             "chapter": "Academic Hub Special · ടെലിയോളജിക്കൽ സിദ്ധാന്തം vs ഇമ്മാനുവൽ കാന്റിന്റെ കടമ സിദ്ധാന്തം",
-            "duration": "16:22",
-            "youtubeId": "AXKs5HdTUTw",
+            "duration": "16:23",
+            "youtubeId": "cAI0VvuMm3o",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -2272,7 +2276,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "കാറ്റഗോറിക്കൽ ഇംപറേറ്റീവ് (Categorical Imperative): സാർവ്വലൗകിക നിയമമാക്കാൻ കഴിയുന്ന പരമോന്നത ധാർമ്മിക ആജ്ഞകൾ മാത്രം അനുസരിക്കുക."
             ],
             "examTip": "Calicut University Focus: 'Distinguish between Teleological and Deontological theories with special reference to Kant's Categorical Imperative'.",
-            "thumbnail": "/thumbnails/ethics_thumb_05.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/cAI0VvuMm3o/hqdefault.jpg",
+            "videoUrl": null
           },
           {
             "chapterNumber": "Chapter 05",
@@ -2288,7 +2293,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ആക്റ്റ് vs റൂൾ യൂട്ടിലിറ്റേറിയനിസം (Act vs Rule Utilitarianism): വ്യക്തിഗത പ്രവൃത്തികളുടെ ഫലം കണക്കാക്കുന്നതും പൊതുവായ നൈതിക നിയമങ്ങൾ പാലിക്കുന്നതും."
             ],
             "examTip": "University Exam Tip: 'Critically evaluate Utilitarianism comparing Bentham's quantitative hedonism with Mill's qualitative refinement'.",
-            "thumbnail": "/thumbnails/ethics_thumb_06.jpg"
+            "thumbnail": "/thumbnails/ethics_thumb_06.jpg",
+            "videoUrl": null
           }
         ]
       },
@@ -2299,8 +2305,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 06",
             "title": "കുറ്റവാളികളെ നമ്മൾ എന്തിനാണ് ശിക്ഷിക്കുന്നത്? (Theories of Punishment: Why Do We Punish?)",
             "chapter": "Academic Hub Special · പ്രതികാരം, ഭയം, പ്രതിരോധം & പരിഷ്കരണ സിദ്ധാന്തങ്ങളുടെ ധാർമ്മിക വിശകലനം",
-            "duration": "18:57",
-            "youtubeId": "AXKs5HdTUTw",
+            "duration": "18:58",
+            "youtubeId": "4YknAHNj7x4",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -2310,7 +2316,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "പരിഷ്കരണ സിദ്ധാന്തം (Reformative Theory): കുറ്റവാളിയെ മാനസിക പരിവർത്തനത്തിലൂടെ നല്ലൊരു പൗരനാക്കി മാറ്റുക (ആധുനിക നീതിശാസ്ത്രം ഏറ്റവും കൂടുതൽ മുൻഗണന നൽകുന്ന സമീപനം)."
             ],
             "examTip": "Calicut University Focus: 'Critically examine the various Theories of Punishment and justify why the Reformative Theory is favored in modern jurisprudence'.",
-            "thumbnail": "/thumbnails/ethics_thumb_07.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/4YknAHNj7x4/hqdefault.jpg",
+            "videoUrl": null
           }
         ]
       },
@@ -2321,8 +2328,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 07",
             "title": "ദയാവധവും ഡീപ് ഇക്കോളജിയും പ്രായോഗിക ധാർമ്മികതയിൽ (Euthanasia & Deep Ecology in Applied Ethics)",
             "chapter": "Academic Hub Special · ബയോഎത്തിക്സ്, അന്തസ്സോടെ മരിക്കാനുള്ള അവകാശം & പരിസ്ഥിതി ധർമ്മശാസ്ത്രം",
-            "duration": "19:28",
-            "youtubeId": "1Va07j8OQSA",
+            "duration": "19:29",
+            "youtubeId": "EII8YGQlSAc",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -2331,14 +2338,15 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ആന്ത്രോപോസെൻട്രിക് vs ഇക്കോസെൻട്രിക് വീക്ഷണം (Anthropocentric vs Ecocentric): മനുഷ്യകേന്ദ്രീകൃത ചൂഷണത്തിനെതിരെയുള്ള പരിസ്ഥിതി നൈതികത."
             ],
             "examTip": "Calicut University Focus: 'Discuss ethical dilemmas surrounding Euthanasia and explain the core tenets of Deep Ecology'.",
-            "thumbnail": "/thumbnails/ethics_thumb_08.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/EII8YGQlSAc/hqdefault.jpg",
+            "videoUrl": null
           },
           {
             "chapterNumber": "Chapter 08",
             "title": "പ്രായോഗിക നൈതികതയും ധാർമ്മിക പ്രതിസന്ധികളും (Applied Ethics & Practical Dilemmas)",
             "chapter": "Academic Hub Special · കാഷ്വിസ്ട്രി, ട്രോളി പ്രശ്നം, പ്രൊഫഷണൽ & സൈബർ എത്തിക്സ്",
-            "duration": "14:10",
-            "youtubeId": "9MW6gIEwWtU",
+            "duration": "14:11",
+            "youtubeId": "8DFAD8HVkrs",
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
@@ -2347,13 +2355,14 @@ window.VOICE_EXPLANATIONS_DATA = {
               "പ്രൊഫഷണൽ, മെഡിക്കൽ & സൈബർ എത്തിക്സ്: തൊഴിൽ മേഖലകളിലും ഡിജിറ്റൽ യുഗത്തിലും മനസ്സാക്ഷിയോടെയുള്ള തീരുമാനങ്ങൾ."
             ],
             "examTip": "Calicut University Focus: 'Explain how Casuistry and Ethical frameworks help resolve modern moral dilemmas such as the Trolley Problem'.",
-            "thumbnail": "/thumbnails/ethics_thumb_09.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/8DFAD8HVkrs/hqdefault.jpg",
+            "videoUrl": null
           },
           {
             "chapterNumber": "Module 5 Masterclass",
             "title": "Applied Ethics: From Casuistry to Real-World Dilemmas",
             "chapter": "Casuistry, Professional Ethics, Bioethics & Tech Ethics",
-            "duration": "14:20",
+            "duration": "08:22",
             "youtubeId": "9MW6gIEwWtU",
             "audioUrl": "",
             "language": "English",
@@ -2363,7 +2372,8 @@ window.VOICE_EXPLANATIONS_DATA = {
               "Technological & Environmental Responsibility: Obligations toward digital privacy, AI alignment, and ecological preservation."
             ],
             "examTip": "Calicut University Focus: 'Explain how Casuistry serves as a bridge between abstract moral theories and applied real-world decisions'.",
-            "thumbnail": "/thumbnails/ethics_thumb_10.jpg"
+            "thumbnail": "https://i.ytimg.com/vi/9MW6gIEwWtU/hqdefault.jpg",
+            "videoUrl": null
           }
         ]
       }
