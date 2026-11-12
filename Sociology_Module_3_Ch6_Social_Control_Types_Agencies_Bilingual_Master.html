@@ -295,6 +295,29 @@
   }
 </style>
 
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
 </head>
 <body>
   <h1 style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">Module 3 - Chapter 3.6: Social Control: Types and Agencies</h1>
@@ -702,5 +725,24 @@
   })();
 </script>
 
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
 </body>
 </html>

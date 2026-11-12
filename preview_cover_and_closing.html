@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ARA1FA102 - Cover Page and Closing Page Previews</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #e2e8f0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+
+  .page-container {
+    width: 794px; /* Standard A4 width at 96 DPI */
+    min-height: 1123px; /* Standard A4 height */
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  /* ========================================================
+     COVER PAGE STYLING (Strictly following Guidelines)
+     ======================================================== */
+  .cover-page {
+    padding: 56px 50px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: radial-gradient(circle at top right, #f8fafc 0%, #ffffff 70%);
+    border: 1px solid #cbd5e1;
+  }
+
+  .cover-header {
+    border-bottom: 2px solid #0284c7;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .institution-block {
+    text-align: left;
+  }
+
+  .inst-title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #0f172a;
+    text-transform: uppercase;
+  }
+
+  .inst-sub {
+    font-size: 13px;
+    color: #475569;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+
+  .course-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid #bae6fd;
+    letter-spacing: 0.5px;
+  }
+
+  .cover-hero {
+    margin: 20px 0 35px;
+    text-align: center;
+  }
+
+  .course-code-tag {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 800;
+    color: #0284c7;
+    background: #f0f9ff;
+    padding: 4px 16px;
+    border-radius: 20px;
+    border: 1px solid #e0f2fe;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .arabic-script-title {
+    font-family: 'Amiri', serif;
+    font-size: 38px;
+    color: #047857;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    direction: rtl;
+  }
+
+  .main-title-en {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+
+  .main-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f766e;
+    line-height: 1.4;
+    margin-bottom: 18px;
+  }
+
+  .unit-strip {
+    background: linear-gradient(90deg, #0f172a, #1e3a8a);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 15px auto 25px;
+    display: inline-block;
+    max-width: 90%;
+  }
+
+  .unit-title-en {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .unit-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #93c5fd;
+    margin-top: 4px;
+  }
+
+  /* Two Column Preview Table on Cover */
+  .cover-table-wrapper {
+    margin: 10px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .bilingual-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .bilingual-table th {
+    padding: 10px 14px;
+    font-weight: 700;
+    text-align: left;
+    border-bottom: 1px solid #cbd5e1;
+  }
+
+  .th-en {
+    width: 50%;
+    background-color: #dbeafe;
+    color: #1e3a8a;
+    border-right: 1px solid #cbd5e1;
+  }
+
+  .th-ml {
+    width: 50%;
+    background-color: #d1fae5;
+    color: #065f46;
+    font-family: 'Noto Sans Malayalam', sans-serif;
+  }
+
+  .bilingual-table td {
+    padding: 12px 14px;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .col-en {
+    background-color: #f0f7ff;
+    color: #243b53;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .col-ml {
+    background-color: #f0faf4;
+    color: #236b5b;
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  /* Academic Highlighting */
+  .hl-date {
+    background-color: #fef9c3;
+    color: #854d0e;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  .hl-event {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  .hl-scholar {
+    background-color: #dcfce7;
+    color: #15803d;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  .hl-concept {
+    background-color: #fef08a;
+    color: #713f12;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  .cover-footer {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #64748b;
+  }
+
+  /* ========================================================
+     CLOSING PAGE STYLING (Strictly following Guidelines)
+     ======================================================== */
+  .closing-page {
+    padding: 50px 50px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+  }
+
+  .closing-header {
+    border-bottom: 2px solid #0f766e;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+  }
+
+  .closing-badge {
+    display: inline-block;
+    background: #ccfbf1;
+    color: #0f766e;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  .closing-title-en {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 4px;
+  }
+
+  .closing-title-ml {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f766e;
+  }
+
+  .closing-summary-box {
+    margin-bottom: 24px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .section-subtitle-bar {
+    background: #f1f5f9;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #334155;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #cbd5e1;
+  }
+
+  .closing-footer {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #64748b;
+  }
+
+  .check-icon {
+    color: #16a34a;
+    font-weight: 800;
+    margin-right: 4px;
+  }
+</style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+
+  <!-- ========================================================
+       FIRST PAGE — COVER PAGE
+       ======================================================== -->
+  <div class="page-container cover-page" id="cover-page">
+    
+    <div>
+      <div class="cover-header">
+        <div class="institution-block">
+          <div class="inst-title">Centre for Distance and Online Education (CDOE)</div>
+          <div class="inst-sub">University of Calicut, Kerala — 673 635</div>
+        </div>
+        <div class="course-badge">AEC 2 · BILINGUAL NOTES</div>
+      </div>
+
+      <div class="cover-hero">
+        <span class="course-code-tag">Course Code: ARA1FA102</span>
+        <div class="arabic-script-title">المهارات الأساسية في اللغة العربية</div>
+        <h1 class="main-title-en">Basic Arabic Language Skills</h1>
+        <h2 class="main-title-ml">അടിസ്ഥാന അറബിക് ഭാഷാ വൈദഗ്ധ്യം</h2>
+        
+        <div class="unit-strip">
+          <div class="unit-title-en">Unit I: Greetings and Introductions (التحيات والتعارف)</div>
+          <div class="unit-title-ml">യൂണിറ്റ് I: അഭിവാദനങ്ങളും ആമുഖങ്ങളും</div>
+        </div>
+      </div>
+
+      <div class="cover-table-wrapper">
+        <table class="bilingual-table">
+          <thead>
+            <tr>
+              <th class="th-en">Academic Scope & Syllabus Overview</th>
+              <th class="th-ml">അക്കാദമിക് ഉള്ളടക്ക രൂപരേഖ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-en">
+                <strong>Course Level:</strong> Self-Learning E-Content for <span class="hl-concept">Languages, Humanities &amp; BA Programmes</span>.
+              </td>
+              <td class="col-ml">
+                <strong>കോഴ്സ് തലം:</strong> <span class="hl-concept">ലാംഗ്വേജസ്, ഹ്യുമാനിറ്റീസ് &amp; മറ്റ് ബി.എ. പ്രോഗ്രാമുകൾക്കായുള്ള</span> സ്വയംപഠന ഇ-കണ്ടന്റ്.
+              </td>
+            </tr>
+            <tr>
+              <td class="col-en">
+                <strong>Unit Objective:</strong> Enable students to master communicative Arabic through <span class="hl-concept">Self-Introduction (التعريف بالنفس)</span>, <span class="hl-concept">Introducing Others (التعريف بشخص آخر)</span>, and <span class="hl-concept">Social Greetings (التحيات الاجتماعية)</span>.
+              </td>
+              <td class="col-ml">
+                <strong>യൂണിറ്റ് ലക്ഷ്യം:</strong> <span class="hl-concept">സ്വയം പരിചയപ്പെടുത്തൽ (التعريف بالنفس)</span>, <span class="hl-concept">മറ്റുള്ളവരെ പരിചയപ്പെടുത്തൽ (التعريف بشخص آخر)</span>, <span class="hl-concept">സാമൂഹിക അഭിവാദനങ്ങൾ (التحيات الاجتماعية)</span> എന്നിവയിലൂടെ പ്രായോഗിക അറബിക് വിനിമയശേഷി കൈവരിക്കുക.
+              </td>
+            </tr>
+            <tr>
+              <td class="col-en">
+                <strong>Linguistic Significance:</strong> Arabic is spoken by over <span class="hl-date">400 million</span> native speakers across <span class="hl-concept">22 countries</span> as an official language and UN medium.
+              </td>
+              <td class="col-ml">
+                <strong>ഭാഷാപരമായ പ്രാധാന്യം:</strong> ഔദ്യോഗിക ഭാഷയായും യു.എൻ. മാധ്യമമായും <span class="hl-concept">22 രാജ്യങ്ങളിലായി</span> <span class="hl-date">40 കോടിയിലധികം (400 million)</span> ആളുകൾ അറബിക് സംസാരിക്കുന്നു.
+              </td>
+            </tr>
+            <tr>
+              <td class="col-en">
+                <strong>Layout Format:</strong> Verified sentence-by-sentence side-by-side English and Malayalam academic study notes.
+              </td>
+              <td class="col-ml">
+                <strong>ലേഔട്ട് ക്രമം:</strong> കൃത്യമായ വാക്യങ്ങൾ നിരത്തിയുള്ള ഇംഗ്ലീഷ് - മലയാളം വശങ്ങളോടുവശം ചേർത്തുള്ള അക്കാദമിക് പഠന സഹായി.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <span>Calicut University CDOE · ARA1FA102 · Unit I Study Companion</span>
+      <span>First Page — Cover Page</span>
+    </div>
+
+  </div>
+
+  <!-- ========================================================
+       LAST PAGE — CLOSING PAGE
+       ======================================================== -->
+  <div class="page-container closing-page" id="closing-page">
+
+    <div>
+      <div class="closing-header">
+        <span class="closing-badge">Unit Completion &amp; Key Takeaways</span>
+        <h2 class="closing-title-en">Academic Summary &amp; Core Takeaways</h2>
+        <div class="closing-title-ml">അക്കാദമിക് സംഗ്രഹവും പ്രധാന ആശയങ്ങളും</div>
+      </div>
+
+      <div class="closing-summary-box">
+        <div class="section-subtitle-bar">Summary of Unit I: Basic Arabic Language Skills (ARA1FA102)</div>
+        <table class="bilingual-table">
+          <thead>
+            <tr>
+              <th class="th-en">English Academic Review</th>
+              <th class="th-ml">മലയാള അക്കാദമിക് അവലോകനം</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-en">
+                <span class="check-icon">✓</span><strong>1. Self-Introduction (التعريف بالنفس):</strong> Mastered basic personal descriptions using nominal sentences with pronouns like <span class="hl-concept">أنا (I am)</span>, name, nationality, residence (<span class="hl-concept">أعيش في</span>), and ambition (<span class="hl-concept">أحلم بأن أكون</span>).
+              </td>
+              <td class="col-ml">
+                <span class="check-icon">✓</span><strong>1. സ്വയം പരിചയപ്പെടുത്തൽ (التعريف بالنفس):</strong> <span class="hl-concept">أنا (ഞാൻ)</span> എന്ന സർവ്വനാമം, പേര്, രാജ്യം, താമസസ്ഥലം (<span class="hl-concept">أعيش في</span>), ഭാവി ലക്ഷ്യം (<span class="hl-concept">أحلم بأن أكون</span>) എന്നിവ ഉപയോഗിച്ചുള്ള ലളിത നാമവാക്യ ഘടനകൾ സ്വായത്തമാക്കി.
+              </td>
+            </tr>
+            <tr>
+              <td class="col-en">
+                <span class="check-icon">✓</span><strong>2. Introducing Others (التعريف بشخص آخر):</strong> Learned masculine and feminine demonstrative pronouns <span class="hl-concept">هذا (This - masc.)</span> and <span class="hl-concept">هذه (This - fem.)</span> to introduce colleagues, friends, and family members.
+              </td>
+              <td class="col-ml">
+                <span class="check-icon">✓</span><strong>2. മറ്റുള്ളവരെ പരിചയപ്പെടുത്തൽ (التعريف بشخص آخر):</strong> സഹപ്രവർത്തകരേയും സുഹൃത്തുക്കളേയും കുടുംബാംഗങ്ങളേയും പരിചയപ്പെടുത്താൻ <span class="hl-concept">هذا (ഇവൻ / ഇദ്ദേഹം)</span>, <span class="hl-concept">هذه (ഇവൾ / ഇവർ)</span> എന്നീ സൂചക സർവ്വനാമങ്ങൾ ഉപയോഗിക്കാൻ പഠിച്ചു.
+              </td>
+            </tr>
+            <tr>
+              <td class="col-en">
+                <span class="check-icon">✓</span><strong>3. Social Greetings &amp; Politeness:</strong> Appropriately applying contextual greetings such as <span class="hl-event">السلام عليكم</span> (peace greeting), <span class="hl-event">صباح الخير / صباح النور</span> (morning), and courteous responses (<span class="hl-concept">أهلاً وسهلاً</span>, <span class="hl-concept">شكراً</span>).
+              </td>
+              <td class="col-ml">
+                <span class="check-icon">✓</span><strong>3. സാമൂഹിക അഭിവാദനങ്ങളും മര്യാദകളും:</strong> <span class="hl-event">അസ്സലാമു അലൈക്കും</span> (സമാധാനാശംസ), <span class="hl-event">സ്വബാഹുൽ ഖൈർ / സ്വബാഹുന്നുർ</span> (പ്രഭാത വന്ദനം), സന്ദർഭോചിതമായ പ്രത്യുത്തരങ്ങൾ (<span class="hl-concept">അഹ്ലൻ വസഹ്ലൻ</span>, <span class="hl-concept">ശുക്റൻ</span>) എന്നിവ കൃത്യമായി പ്രയോഗിക്കാൻ സാധിക്കുന്നു.
+              </td>
+            </tr>
+            <tr>
+              <td class="col-en">
+                <span class="check-icon">✓</span><strong>4. Interrogative Particles (أدوات الاستفهام):</strong> Effective conversational questioning using <span class="hl-scholar">من (Who)</span>, <span class="hl-scholar">ما / ماذا (What)</span>, <span class="hl-scholar">أين (Where)</span>, <span class="hl-scholar">متى (When)</span>, <span class="hl-scholar">كيف (How)</span>, and <span class="hl-scholar">هل (Is/Do)</span>.
+              </td>
+              <td class="col-ml">
+                <span class="check-icon">✓</span><strong>4. ചോദ്യശബ്ദങ്ങൾ (أدوات الاستفهام):</strong> സംഭാഷണങ്ങളിൽ ചോദ്യങ്ങൾ ചോദിക്കാൻ <span class="hl-scholar">മൻ (ആര്)</span>, <span class="hl-scholar">മാ / മാദാ (എന്ത്)</span>, <span class="hl-scholar">ഐന (എവിടെ)</span>, <span class="hl-scholar">മതാ (എപ്പോൾ)</span>, <span class="hl-scholar">കൈഫ (എങ്ങനെ)</span>, <span class="hl-scholar">ഹൽ (ആണോ)</span> എന്നിവ പ്രയോജനപ്പെടുത്തുന്നു.
+              </td>
+            </tr>
+            <tr>
+              <td class="col-en">
+                <span class="check-icon">✓</span><strong>5. Prepositions (حروف الجر):</strong> Proper syntactic usage of particles including <span class="hl-concept">في (In)</span>, <span class="hl-concept">على (On)</span>, <span class="hl-concept">من (From)</span>, <span class="hl-concept">إلى (To)</span>, and <span class="hl-concept">بـ (With/By)</span> in everyday communication.
+              </td>
+              <td class="col-ml">
+                <span class="check-icon">✓</span><strong>5. വിഭക്തി പ്രത്യയങ്ങൾ (حروف الجر):</strong> ദൈനംദിന വ്യവഹാരങ്ങളിൽ <span class="hl-concept">ഫീ (ഇൽ / ഉള്ളിൽ)</span>, <span class="hl-concept">അലാ (മേൽ)</span>, <span class="hl-concept">മിൻ (നിന്ന്)</span>, <span class="hl-concept">ഇലാ (ലേക്ക്)</span>, <span class="hl-concept">ബി (കൊണ്ട്)</span> എന്നീ അവ്യയങ്ങളുടെ ശരിയായ പ്രയോഗരീതി.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px; margin-top: 15px; font-size: 12.5px; color: #475569; line-height: 1.6;">
+        <strong style="color: #0f172a;">Academic Progress Note:</strong> Unit I lays the communicative foundation for subsequent units in classical literature, prose, and poetic comprehension. Revision exercises, practice dialogues, and the 20 Challenge Questions section ensure mastery of examinable competencies.
+      </div>
+    </div>
+
+    <div class="closing-footer">
+      <span>University of Calicut · CDOE · ARA1FA102 Basic Arabic Language Skills</span>
+      <span>Last Page — Closing Page</span>
+    </div>
+
+  </div>
+
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

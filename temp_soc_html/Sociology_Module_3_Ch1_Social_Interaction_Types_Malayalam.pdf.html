@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 3 · അധ്യായം 3.1: സാമൂഹിക പ്രതിപ്രവർത്തനം: തരങ്ങൾ</title>
+  <style>
+    :root {
+      --c1: #581c87;
+      --c2: #7e22ce;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #581c87), var(--c2, #7e22ce));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(88, 28, 135, 0.2);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f3e8ff;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #e9d5ff;
+}
+
+.badge {
+  display: inline-block;
+  background: #faf5ff;
+  color: #6b21a8;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #d8b4fe;
+}
+
+h2 {
+  color: var(--c1, #581c87);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #7e22ce;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #faf5ff;
+  border-left: 4px solid var(--c2, #7e22ce);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-purple {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+/* Diagrams & Visual Charts */
+.diagram-container {
+  background: #ffffff;
+  border: 1.5px solid #e9d5ff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.05);
+}
+
+.diagram-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 11pt;
+  color: #581c87;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.flow-step {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border: 1.5px solid #c084fc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #581c87;
+  min-width: 130px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(107, 33, 168, 0.08);
+}
+
+.flow-step small {
+  display: block;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #6b21a8;
+  margin-top: 4px;
+}
+
+.flow-arrow {
+  color: #9333ea;
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+.tree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.tree-card {
+  background: #fdf4ff;
+  border: 1px solid #d8b4fe;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.tree-card h4 {
+  margin: 0 0 6px 0;
+  color: #6b21a8;
+  font-size: 10pt;
+  font-weight: 700;
+  border-bottom: 1px solid #e9d5ff;
+  padding-bottom: 4px;
+}
+
+.tree-card p {
+  margin: 0;
+  font-size: 9pt;
+  line-height: 1.6;
+  color: #334155;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f3e8ff;
+  color: #581c87;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #faf5ff;
+}
+
+/* Bilingual Entry Blocks */
+.bilingual-entry {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-left: 4px solid #7e22ce;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(107, 33, 168, 0.04);
+}
+
+.bilingual-entry .en-part {
+  color: #1e293b;
+  font-size: 10pt;
+  line-height: 1.7;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.bilingual-entry .ml-part {
+  color: #3b0764;
+  font-size: 10pt;
+  line-height: 1.85;
+}
+
+.en-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #bfdbfe;
+}
+
+.ml-tag {
+  display: inline-block;
+  background: #faf5ff;
+  color: #7e22ce;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #d8b4fe;
+}
+
+/* LMS Question & Answer Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #7e22ce;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #581c87;
+  margin-bottom: 8px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  background: #faf5ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #9333ea;
+}
+
+/* MCQ Cards */
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #581c87;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #f3e8ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid #d8b4fe;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Module 3: Individual and Society)</h4>
+    <h1>മൊഡ്യൂൾ 3 · അധ്യായം 3.1: സാമൂഹിക പ്രതിപ്രവർത്തനം: തരങ്ങൾ</h1>
+    <div class="meta">Module 3 · Chapter 3.1: Social Interaction: Types & Social Processes · Calicut University B.A. Sociology FYUGP · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Chapter Overview:</strong> Social interaction is the foundational dynamic of all social life. This chapter examines the definition and nature of interaction, establishes its two indispensable preconditions (social contact and communication), analyzes associative processes that bind society (Cooperation, Accommodation, Assimilation), evaluates dissociative processes that divide society (Competition, Conflict), and contrasts their structural functions.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>അധ്യായ അവലോകനം:</strong> മനുഷ്യന്റെ സാമൂഹിക ജീവിതത്തിന്റെ ജീവനാഡിയാണ് സാമൂഹിക പ്രതിപ്രവർത്തനം (Social Interaction). പ്രതിപ്രവർത്തനത്തിന്റെ നിർവ്വചനവും സ്വഭാവവും, അതിന്റെ അവിഭാജ്യ മുൻവ്യവസ്ഥകളായ സാമൂഹിക സമ്പർക്കവും ആശയവിനിമയവും, സമൂഹത്തെ ഒന്നിപ്പിക്കുന്ന സഹവർത്തിത്വ പ്രക്രിയകൾ (സഹകരണം, അനുരഞ്ജനം, സ്വാംശീകരണം), സമൂഹത്തിൽ ഭിന്നതയുണ്ടാക്കുന്ന വിഘടിത പ്രക്രിയകൾ (മത്സരം, സംഘർഷം) എന്നിവ ഈ അധ്യായത്തിൽ സമഗ്രമായി പഠിക്കുന്നു.
+  </div>
+</div>
+
+<div class="card">
+  <h4 class="sub-head" style="margin-top:0;">പ്രധാന പഠന ലക്ഷ്യങ്ങൾ (Core Competencies):</h4>
+  <ul>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Define Interaction:</strong> Understand social interaction as reciprocal interplay where actions of one elicit reactions in another.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>പ്രതിപ്രവർത്തനത്തിന്റെ നിർവ്വചനം:</strong> രണ്ട് അല്ലെങ്കിൽ അതിലധികം വ്യക്തികൾ പരസ്പരം പെരുമാറ്റങ്ങളെ സ്വാധീനിക്കുകയും പ്രതികരിക്കുകയും ചെയ്യുന്ന ചലനാത്മക പ്രക്രിയ മനസ്സിലാക്കുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Identify Preconditions:</strong> Grasp how physical/symbolic Social Contact and meaningful Communication enable interaction.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>അടിസ്ഥാന മുൻവ്യവസ്ഥകൾ:</strong> സാമൂഹിക സമ്പർക്കവും (Social Contact) അർത്ഥവത്തായ ആശയവിനിമയവും (Communication) ഇല്ലാതെ പ്രതിപ്രവർത്തനം സാധ്യമല്ലെന്ന് തിരിച്ചറിയുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Analyze Associative Processes:</strong> Master the forms of Cooperation (Primary, Secondary, Tertiary), Accommodation (Compromise, Toleration, Arbitration), and Assimilation.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>സഹവർത്തിത്വ പ്രക്രിയകൾ:</strong> സഹകരണം (പ്രൈമറി, സെക്കൻഡറി, ടെർഷ്യറി), അനുരഞ്ജനം (കോംപ്രമൈസ്, ആർബിട്രേഷൻ, ടോളറേഷൻ), സ്വാംശീകരണം എന്നിവ വിശകലനം ചെയ്യുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Analyze Dissociative Processes:</strong> Contrast impersonal, continuous Competition with personal, intermittent, violent Conflict.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിഘടിത പ്രക്രിയകൾ:</strong> അഹിംസാത്മകവും നിയമവിധേയവുമായ മത്സരവും (Competition) വ്യക്തിപരവും നേരിട്ടുള്ളതുമായ സംഘർഷവും (Conflict) തമ്മിലുള്ള വ്യത്യാസം പഠിക്കുക.</div>
+    </li>
+  </ul>
+</div>
+
+<h2>2. സൈദ്ധാന്തിക അടിത്തറയും നിർവ്വചനങ്ങളും (Theoretical Foundations & Definitions)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Definitions of Social Interaction & Processes:</strong><br>
+    • <strong>Dawson and Gettys:</strong> "Social interaction is a process by which men penetrate the minds of one another." It involves inter-stimulation and mutual response.<br>
+    • <strong>Gillin and Gillin:</strong> "Social processes are the characteristic ways in which relations of individuals and groups take shape in social life." Gillin and Gillin broadly categorized all interactions into Associative (conjunctive) and Dissociative (disjunctive) processes.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>സാമൂഹിക പ്രതിപ്രവർത്തനത്തിന്റെ നിർവ്വചനങ്ങൾ:</strong><br>
+    • <strong>ഡോസൺ & ഗെറ്റിസ്:</strong> "സാമൂഹിക പ്രതിപ്രവർത്തനം എന്നത് മനുഷ്യർ പരസ്പരം മനസ്സുകളിലേക്ക് കടന്നുചെല്ലുകയും പരസ്പര പ്രേരണയിലൂടെയും പ്രതികരണത്തിലൂടെയും ബന്ധങ്ങൾ സ്ഥാപിക്കുകയും ചെയ്യുന്ന പ്രക്രിയയാണ്."<br>
+    • <strong>ഗില്ലിൻ & ഗില്ലിൻ:</strong> "സാമൂഹിക ജീവിതത്തിൽ വ്യക്തികളും ഗ്രൂപ്പുകളും തമ്മിലുള്ള ബന്ധങ്ങൾ രൂപംകൊള്ളുന്ന സവിശേഷ മാർഗ്ഗങ്ങളെയാണ് സാമൂഹിക പ്രക്രിയകൾ എന്ന് വിളിക്കുന്നത്." ഇവയെ സഹവർത്തിത്വ പ്രക്രിയകൾ (Associative), വിഘടിത പ്രക്രിയകൾ (Dissociative) എന്നിങ്ങനെ തിരിക്കാം.
+  </div>
+</div>
+
+<div class="card-purple">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>The Two Preconditions of Social Interaction:</strong><br>
+    1. <strong>Social Contact:</strong> The initial bridge between actors. Contact may be <em>direct/primary</em> (face-to-face bodily co-presence) or <em>indirect/secondary</em> (mediated through telephone, letters, electronic internet channels). Contact can be positive (attraction) or negative (repulsion).<br>
+    2. <strong>Communication:</strong> The transmission and reciprocal interpretation of shared symbolic meaning. Interaction cannot occur without common symbols (language, vocal intonation, gestures, sign language).
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>പ്രതിപ്രവർത്തനത്തിന്റെ രണ്ട് മുൻവ്യവസ്ഥകൾ:</strong><br>
+    1. <strong>സാമൂഹിക സമ്പർക്കം (Social Contact):</strong> വ്യക്തികൾ തമ്മിലുള്ള ബന്ധത്തിന്റെ തുടക്കം. ഇത് <em>നേരിട്ടുള്ളത്</em> (മുഖാമുഖമുള്ള സമ്പർക്കം) അല്ലെങ്കിൽ <em>പരോക്ഷമായത്</em> (ഫോൺ, കത്തുകൾ, ഇന്റർനെറ്റ് എന്നിവ വഴിയുള്ള സമ്പർക്കം) ആകാം.<br>
+    2. <strong>ആശയവിനിമയം (Communication):</strong> പങ്കുവെക്കപ്പെട്ട ചിഹ്നങ്ങളിലൂടെയുള്ള ആശയ കൈമാറ്റം. പൊതുവായ ഭാഷയോ ചിഹ്നങ്ങളോ ആംഗ്യങ്ങളോ ഇല്ലാതെ പ്രതിപ്രവർത്തനം സാധ്യമല്ല.
+  </div>
+</div>
+
+<h2>3. സാമൂഹിക പ്രക്രിയകളുടെ ഘടനാ ചിത്രം (Structural Taxonomy of Social Processes)</h2>
+<div class="diagram-container">
+  <div class="diagram-title">സാമൂഹിക പ്രക്രിയകളുടെ വർഗ്ഗീകരണം (Taxonomy of Social Processes)</div>
+  <div class="tree-grid">
+    <div class="tree-card" style="border-left: 4px solid #059669;">
+      <h4>1. Associative Processes (സഹവർത്തിത്വ പ്രക്രിയകൾ)</h4>
+      <p><strong>EN:</strong> Unifying processes promoting solidarity and harmony:<br>
+      • <strong>Cooperation:</strong> Joint effort for shared goals (Primary, Secondary, Tertiary).<br>
+      • <strong>Accommodation:</strong> Adjustment to prevent or suspend open conflict (Compromise, Toleration, Arbitration).<br>
+      • <strong>Assimilation:</strong> Cultural fusion where different ethnic groups blend into a common cultural identity.<br>
+      <strong>ML:</strong> ജനങ്ങളെ ഒന്നിപ്പിക്കുകയും ഐക്യം ഉണ്ടാക്കുകയും ചെയ്യുന്ന പ്രക്രിയകൾ:<br>
+      • <strong>സഹകരണം (Cooperation):</strong> പൊതുലക്ഷ്യത്തിനായി ഒരുമിച്ചു പ്രവർത്തിക്കൽ.<br>
+      • <strong>അനുരഞ്ജനം (Accommodation):</strong> സംഘർഷങ്ങൾ അവസാനിപ്പിച്ച് ഒത്തുതീർപ്പിലെത്തൽ.<br>
+      • <strong>സ്വാംശീകരണം (Assimilation):</strong> വ്യത്യസ്ത സംസ്കാരങ്ങൾ ലയിച്ച് ഒന്നായി മാറുന്ന അവസ്ഥ.</p>
+    </div>
+    <div class="tree-card" style="border-left: 4px solid #dc2626;">
+      <h4>2. Dissociative Processes (വിഘടിത പ്രക്രിയകൾ)</h4>
+      <p><strong>EN:</strong> Disunifying processes creating separation and opposition:<br>
+      • <strong>Competition:</strong> Impersonal, non-violent, rule-bound struggle for scarce rewards (honors, jobs, capital).<br>
+      • <strong>Conflict:</strong> Direct, conscious, personalized, often violent struggle to eliminate, injure, or overpower the adversary.<br>
+      <strong>ML:</strong> സമൂഹത്തിൽ ഭിന്നതയും വിദ്വേഷവും മത്സരവും ഉണ്ടാക്കുന്ന പ്രക്രിയകൾ:<br>
+      • <strong>മത്സരം (Competition):</strong> അപൂർവ്വമായ ലക്ഷ്യങ്ങൾക്കായി നിയമങ്ങൾക്ക് വിധേയമായി നടത്തുന്ന അഹിംസാത്മക പോരാട്ടം.<br>
+      • <strong>സംഘർഷം (Conflict):</strong> എതിരാളിയെ തോൽപ്പിക്കാനോ നശിപ്പിക്കാനോ ലക്ഷ്യമിട്ട് നടത്തുന്ന നേരിട്ടുള്ളതും വൈകാരികവുമായ പോരാട്ടം.</p>
+    </div>
+  </div>
+</div>
+
+<h2>4. സഹകരണം vs മത്സരം vs സംഘർഷം (Cooperation vs Competition vs Conflict)</h2>
+<table>
+  <thead>
+    <tr>
+      <th>മാനദണ്ഡം</th>
+      <th>Cooperation (സഹകരണം)</th>
+      <th>Competition (മത്സരം)</th>
+      <th>Conflict (സംഘർഷം)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>സ്വഭാവം (Nature)</strong></td>
+      <td>സഹവർത്തിത്വം (Associative)</td>
+      <td>വിഘടിതം (Dissociative)</td>
+      <td>വിഘടിതം (Dissociative)</td>
+    </tr>
+    <tr>
+      <td><strong>വ്യക്തിപരമായ ബന്ധം</strong></td>
+      <td>വ്യക്തിപരം (Personal)</td>
+      <td>വ്യക്തിപരമല്ല (Impersonal)</td>
+      <td>വ്യക്തിപരം (Highly Personal)</td>
+    </tr>
+    <tr>
+      <td><strong>തുടർച്ച (Continuity)</strong></td>
+      <td>തുടർച്ചയായ പ്രക്രിയ (Continuous)</td>
+      <td>തുടർച്ചയായ പ്രക്രിയ (Continuous)</td>
+      <td>ഇടവിട്ടുണ്ടാകുന്നത് (Intermittent)</td>
+    </tr>
+    <tr>
+      <td><strong>നിയമങ്ങൾ (Rules)</strong></td>
+      <td>പരസ്പര സഹായം</td>
+      <td>കർശന നിയമങ്ങൾ പാലിക്കുന്നു</td>
+      <td>നിയമങ്ങൾ കാറ്റിൽ പറത്തുന്നു</td>
+    </tr>
+    <tr>
+      <td><strong>അക്രമം (Violence)</strong></td>
+      <td>അക്രമമില്ല (Non-violent)</td>
+      <td>അക്രമമില്ല (Peaceful)</td>
+      <td>അക്രമസാധ്യതയുള്ളത് (Violent)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>5. എൽ.എം.എസ് ചോദ്യോത്തരങ്ങൾ (LMS Check Your Progress Questions & Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. Define social interaction and explain its two essential prerequisites. / സാമൂഹിക പ്രതിപ്രവർത്തനം നിർവ്വചിച്ച് അതിന്റെ രണ്ട് പ്രധാന മുൻവ്യവസ്ഥകൾ വിശദീകരിക്കുക.</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> Social interaction is the dynamic, reciprocal process through which two or more individuals consciously act toward and influence each other's thoughts, feelings, and behaviors. Its two essential prerequisites are: (1) <strong>Social Contact</strong> — the establishing of physical or mediated sensory connection, and (2) <strong>Communication</strong> — the transmission and mutual interpretation of meaningful symbols, gestures, and language without which contact remains sterile.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> രണ്ട് അല്ലെങ്കിൽ അതിലധികം വ്യക്തികൾ പരസ്പരം സ്വാധീനിക്കുകയും പ്രതികരിക്കുകയും ചെയ്യുന്ന ചലനാത്മക പ്രക്രിയയാണ് സാമൂഹിക പ്രതിപ്രവർത്തനം. ഇതിന്റെ രണ്ട് അടിസ്ഥാന മുൻവ്യവസ്ഥകൾ: (1) <strong>സാമൂഹിക സമ്പർക്കം (Social Contact)</strong> — വ്യക്തികൾ തമ്മിൽ നേരിട്ടോ മാധ്യമങ്ങൾ വഴിയോ ഉണ്ടാകുന്ന ബന്ധം; (2) <strong>ആശയവിനിമയം (Communication)</strong> — പങ്കുവെക്കപ്പെട്ട ചിഹ്നങ്ങൾ, ഭാഷ, ആംഗ്യങ്ങൾ എന്നിവയിലൂടെ പരസ്പരം അർത്ഥം ഗ്രഹിക്കുന്ന പ്രക്രിയ.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. Contrast competition and conflict with appropriate sociological examples. / മത്സരവും സംഘർഷവും തമ്മിലുള്ള വ്യത്യാസങ്ങൾ ഉദാഹരണ സഹിതം വ്യക്തമാക്കുക.</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> <strong>Competition</strong> is an impersonal, continuous, peaceful struggle where individuals strive for scarce rewards according to socially recognized rules (e.g. candidates taking a civil service examination without personal animosity). <strong>Conflict</strong> is a personalized, intermittent, emotionally charged struggle where actors deliberately seek to eliminate, harm, or neutralize their rivals, often violating established norms (e.g. communal riots, gang wars, or military combat).</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> <strong>മത്സരം (Competition)</strong> എന്നത് വ്യക്തിവിദ്വേഷമില്ലാതെ, നിയമങ്ങൾ പാലിച്ച് അപൂർവ്വമായ ലക്ഷ്യങ്ങൾക്കായി നടത്തുന്ന അഹിംസാത്മക പോരാട്ടമാണ് (ഉദാ: സിവിൽ സർവീസ് പരീക്ഷ എഴുതുന്ന ഉദ്യോഗാർത്ഥികൾ). എന്നാൽ <strong>സംഘർഷം (Conflict)</strong> എന്നത് വ്യക്തിപരമായ പകയോടെ, എതിരാളിയെ നശിപ്പിക്കാനോ തോൽപ്പിക്കാനോ ലക്ഷ്യമിട്ട് നിയമങ്ങൾ ലംഘിച്ചു നടത്തുന്ന വൈകാരിക പോരാട്ടമാണ് (ഉദാ: വർഗ്ഗീയ കലാപങ്ങൾ, യുദ്ധങ്ങൾ).</div>
+</div>
+
+<h2>6. പരീക്ഷാ ബഹുവിശേഷ ചോദ്യങ്ങൾ (Chapter 3.1 Examination MCQs)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">1. What are the two essential prerequisites of social interaction? / സാമൂഹിക പ്രതിപ്രവർത്തനത്തിന്റെ അടിസ്ഥാന മുൻവ്യവസ്ഥകൾ ഏവ?</div>
+    <div class="q-options">
+      A) Physical strength and money / ശാരീരിക ശക്തിയും പണവും<br>
+      B) Social contact and communication / സാമൂഹിക സമ്പർക്കവും ആശയവിനിമയവും<br>
+      C) Geographical proximity and blood relation / ഭൂമിശാസ്ത്രപരമായ അടുപ്പവും രക്തബന്ധവും<br>
+      D) Political authority and law / രാഷ്ട്രീയ അധികാരവും നിയമവും
+    </div>
+    <div class="q-ans">Answer: B) Social contact and communication / സാമൂഹിക സമ്പർക്കവും ആശയവിനിമയവും</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Interaction fundamentally requires contact and meaningful communication.<br>
+      <strong>ML:</strong> സമ്പർക്കവും (Contact) ആശയവിനിമയവും (Communication) ഇല്ലാതെ പരസ്പര പ്രതിപ്രവർത്തനം നടക്കില്ല.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. Which of the following is classified as an associative social process? / താഴെ പറയുന്നവയിൽ സഹവർത്തിത്വ പ്രക്രിയ ഏതാണ്?</div>
+    <div class="q-options">
+      A) Competition / മത്സരം<br>
+      B) Conflict / സംഘർഷം<br>
+      C) Cooperation / സഹകരണം<br>
+      D) War / യുദ്ധം
+    </div>
+    <div class="q-ans">Answer: C) Cooperation / സഹകരണം</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Cooperation, accommodation, and assimilation are associative (integrative) processes.<br>
+      <strong>ML:</strong> മനുഷ്യരെ ഒന്നിപ്പിക്കുന്ന പ്രക്രിയയാണ് സഹകരണം; മത്സരം വിഘടിത പ്രക്രിയയാണ്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. What is the key characteristic distinguishing competition from conflict? / മത്സരത്തെ സംഘർഷത്തിൽ നിന്നും വേർതിരിക്കുന്ന പ്രധാന സവിശേഷത എന്താണ്?</div>
+    <div class="q-options">
+      A) Competition is personal, conflict is impersonal / മത്സരം വ്യക്തിപരമാണ്<br>
+      B) Competition is rule-bound and impersonal, conflict is personalized and rule-violating / മത്സരം നിയമവിധേയവും വ്യക്തിപരമല്ലാത്തതുമാണ്<br>
+      C) Competition always uses weapons / മത്സരം ആയുധങ്ങൾ ഉപയോഗിക്കുന്നു<br>
+      D) Conflict is continuous and peaceful / സംഘർഷം സമാധാനപരമാണ്
+    </div>
+    <div class="q-ans">Answer: B) Competition is rule-bound and impersonal, conflict is personalized and rule-violating</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Competition operates peacefully within established rules; conflict targets the person directly.<br>
+      <strong>ML:</strong> മത്സരം നിയമങ്ങൾക്ക് വിധേയമായി നടക്കുമ്പോൾ സംഘർഷം നേരിട്ടുള്ള ശത്രുതയിലാണ് പ്രവർത്തിക്കുന്നത്.
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. സോഷ്യോളജി പഠന സഹായി · Introduction to Sociology (SOC1CJ101)</span>
+    <span>സമ്പൂർണ്ണ മലയാള പരിഭാഷ, ചോദ്യോത്തരങ്ങൾ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

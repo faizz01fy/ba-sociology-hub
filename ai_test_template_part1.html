@@ -245,7 +245,30 @@ html body #result #motivation{
 /* Hide the empty message placeholder in Performance Analysis; keep all report content unchanged */
 html body #result #message:empty{display:none!important}
 </style>
-  </head><body><div class="wrap">
+  <style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head><body><div class="wrap">
 <section id="start" class="card"><h1 class="main-title">Philosophy of AI MCQ Test</h1><div id="greeting" class="greeting"></div><p><b>60 Questions • 30 Minutes</b></p><div class="field info-field"><b class="big-label">Student Name</b><input id="name"></div><div class="field info-field"><b class="big-label">Subject</b><div class="subject-display">Philosophy of AI</div></div><br><button id="startBtn" class="btn primary">Start Mock Test</button><p id="msg"></p></section>
 <section id="test" class="card hidden"><div class="top"><b id="counter"></b><span class="time-label"><b class="time-word">Time:</b> <span id="timer" class="timer">30:00</span></span></div><div id="nav" class="nav"></div><div id="question" class="q"></div><div id="options"></div><div class="actions"><button id="prev" class="btn secondary">Previous</button><button id="next" class="btn primary">Next</button><button id="submit" class="btn danger" style="display:none">Submit Test</button></div></section>
 <section id="result" class="card hidden">
@@ -288,3 +311,23 @@ html body #result #message:empty{display:none!important}
 <h2 class="review-heading">Question-wise Review</h2><div id="review"></div>
 </section></div>
 <script>
+
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>

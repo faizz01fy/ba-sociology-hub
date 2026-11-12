@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>അധ്യായം 5: അടിസ്ഥാന വികസന സൂചകം: യഥാർത്ഥ വരുമാനം</title>
+  <style>
+    :root {
+      --c1: #065f46;
+      --c2: #059669;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 16mm 14mm 16mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #065f46), var(--c2, #059669));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a7f3d0;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #d1fae5;
+}
+
+.badge {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #065f46;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #a7f3d0;
+}
+
+h2 {
+  color: var(--c1, #065f46);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 26px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #0f766e;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #f8fafc;
+  border-left: 4px solid var(--c2, #059669);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-rose {
+  background: #fff1f2;
+  border-left: 4px solid #e11d48;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f1f5f9;
+  border-left: 4px solid #475569;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #047857;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #ecfdf5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.qa-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 8px;
+  font-size: 11pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 10pt;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 10pt;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #059669;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 1: ചരിത്രപരമായ പശ്ചാത്തലം (Module 1: Historical Precedents)</h4>
+    <h1>അധ്യായം 5: അടിസ്ഥാന വികസന സൂചകം: യഥാർത്ഥ വരുമാനം</h1>
+    <div class="meta">Module 1 · Part 5: Basic Indicator of Development: Real Income · Calicut University B.A. Economics / Sociology · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="card">
+  <ul>
+    <li><strong>ദേശീയ വരുമാനത്തിന്റെ അളവുകോലുകൾ (Measures of National Income):</strong> ജി.ഡി.പി (GDP), ജി.എൻ.പി (GNP), എൻ.എൻ.പി (NNP) എന്നിവയുടെ കൃത്യമായ നിർവ്വചനങ്ങൾ മനസ്സിലാക്കുക.</li>
+    <li><strong>നാമമാത്ര ജി.ഡി.പിയും യഥാർത്ഥ ജി.ഡി.പിയും (Nominal vs. Real GDP):</strong> പണപ്പെരുപ്പത്തിന്റെ സ്വാധീനം ഒഴിവാക്കി യഥാർത്ഥ ഉത്പാദന വളർച്ച അളക്കാൻ ജി.ഡി.പി ഡിഫ്ലേറ്ററും അടിസ്ഥാന വർഷവും (Base Year) ഉപയോഗിക്കുന്നത് പഠിക്കുക.</li>
+    <li><strong>പ്രതിശീർഷ യഥാർത്ഥ വരുമാന പ്രവണതകൾ (Per Capita Real Income Trends):</strong> സ്വാതന്ത്ര്യാനന്തര ഇന്ത്യയിലെ പ്രതിശീർഷ വരുമാനത്തിലെ ഘടനാപരമായ വളർച്ചാ മാറ്റങ്ങൾ വിശകലനം ചെയ്യുക.</li>
+    <li><strong>യഥാർത്ഥ വരുമാനത്തിന്റെ പരിമിതികൾ (Limitations as a Welfare Metric):</strong> വരുമാന വിതരണത്തിലെ അസമത്വം, കരിഞ്ചന്ത, ഗാർഹിക സേവനങ്ങളുടെ ഒഴിവാക്കൽ തുടങ്ങിയ പോരായ്മകൾ തിരിച്ചറിയുക.</li>
+  </ul>
+</div>
+
+<h2>2. സാമ്പത്തിക പശ്ചാത്തലം (Economic Setting)</h2>
+<p>
+ഒരു സമ്പദ്‌വ്യവസ്ഥയുടെ സാമ്പത്തിക പ്രകടനവും ആരോഗ്യവും അളക്കാനുള്ള ഏറ്റവും പരമ്പരാഗതവും സാർവ്വത്രികവുമായ മാനദണ്ഡമാണ് ദേശീയ വരുമാനം. സെൻട്രൽ സ്റ്റാറ്റിസ്റ്റിക്കൽ ഓഫീസ് (CSO - നിലവിൽ NSO) ആണ് ഇന്ത്യയിൽ ദേശീയ വരുമാന കണക്കുകൾ തയ്യാറാക്കുന്നത്.
+</p>
+
+<h2>3. സമഗ്ര പാഠഭാഗ പരിഭാഷയും ആശയ വിശകലനവും (Detailed Text Analysis)</h2>
+
+<h3 class="sub-head">(i) പ്രധാന ദേശീയ വരുമാന ആശയങ്ങൾ (Core National Income Aggregates)</h3>
+<ul>
+  <li><strong>മൊത്തം ആഭ്യന്തര ഉത്പാദനം (Gross Domestic Product - GDP):</strong> ഒരു സാമ്പത്തിക വർഷത്തിൽ ഒരു രാജ്യത്തിന്റെ ആഭ്യന്തര അതിർത്തിക്കുള്ളിൽ ഉത്പാദിപ്പിക്കപ്പെടുന്ന എല്ലാ അന്തിമ ചരക്കുകളുടെയും സേവനങ്ങളുടെയും ആകെ വിപണി മൂല്യം.</li>
+  <li><strong>മൊത്തം ദേശീയ ഉത്പാദനം (Gross National Product - GNP):</strong> ആഭ്യന്തര അതിർത്തിയിലെ ഉത്പാദനത്തോടൊപ്പം രാജ്യത്തെ പൗരന്മാർ വിദേശത്തുനിന്ന് നേടുന്ന അറ്റ വരുമാനവും (Net Factor Income from Abroad - NFIA) ചേർത്ത തുക (GNP = GDP + NFIA).</li>
+  <li><strong>അറ്റ ദേശീയ ഉത്പാദനം (Net National Product - NNP at Factor Cost):</strong> യന്ത്രങ്ങളുടെ തേയ്മാനം (Depreciation) കിഴിച്ചുള്ള ദേശീയ വരുമാനം. ഇതാണ് ഒരു രാജ്യത്തിന്റെ യഥാർത്ഥ ദേശീയ വരുമാനം (National Income = NNP at FC).</li>
+</ul>
+
+<h3 class="sub-head">(ii) നാമമാത്ര ജി.ഡി.പിയും യഥാർത്ഥ ജി.ഡി.പിയും (Nominal GDP vs. Real GDP)</h3>
+<div class="card-amber">
+  <p><strong>നാമമാത്ര ജി.ഡി.പി (Nominal GDP at Current Prices):</strong> നടപ്പ് വർഷത്തിലെ വിപണി വിലയിൽ കണക്കാക്കുന്ന ജി.ഡി.പി. ചരക്കുകളുടെ ഉത്പാദനം വർദ്ധിച്ചില്ലെങ്കിലും വിലക്കയറ്റം (പണപ്പെരുപ്പം) മൂലം ഇത് വർദ്ധിച്ചതായി കാണിക്കാം.</p>
+  <p><strong>യഥാർത്ഥ ജി.ഡി.പി (Real GDP at Constant Prices):</strong> മുൻകൂട്ടി നിശ്ചയിച്ച ഒരു അടിസ്ഥാന വർഷത്തിലെ (Base Year) സ്ഥിര വിലയിൽ കണക്കാക്കുന്ന ജി.ഡി.പി. ഇത് പണപ്പെരുപ്പത്തിന്റെ സ്വാധീനം ഒഴിവാക്കി യഥാർത്ഥ ഭൗതിക ഉത്പാദനത്തിലുണ്ടായ വളർച്ചയെ മാത്രം പ്രതിഫലിപ്പിക്കുന്നു.</p>
+  <p><strong>ജി.ഡി.പി ഡിഫ്ലേറ്റർ (GDP Deflator):</strong> സമ്പദ്‌വ്യവസ്ഥയിലെ മൊത്തത്തിലുള്ള വിലക്കയറ്റ നിരക്ക് അളക്കാനുള്ള സമവാക്യം: <em>GDP Deflator = (Nominal GDP / Real GDP) &times; 100</em>.</p>
+</div>
+
+<h3 class="sub-head">(iii) യഥാർത്ഥ വരുമാനത്തിന്റെ പരിമിതികൾ (Limitations of Real Income as a Measure of Development)</h3>
+<div class="card-rose">
+  <ul>
+    <li><strong>1. വരുമാന വിതരണത്തിലെ അസമത്വം:</strong> പ്രതിശീർഷ വരുമാനം എന്നത് ഒരു ശരാശരി സംഖ്യ മാത്രമാണ്; രാജ്യത്തെ പകുതിയിലധികം സമ്പത്തും ഒരു ശതമാനം കോടീശ്വരന്മാരുടെ കൈകളിലാണെങ്കിൽ പോലും ഉയർന്ന പ്രതിശീർഷ വരുമാനം കാണിക്കും.</li>
+    <li><strong>2. കമ്പോളത്തിന് പുറത്തുള്ള ഉത്പാദനം (Non-market Transactions):</strong> വീട്ടമ്മമാരുടെ കഠിനധ്വാനം, ഗ്രാമീണ ബാർട്ടർ ഇടപാടുകൾ, സ്വന്തം കൃഷിയിടത്തിൽ നിന്നുള്ള ഉപഭോഗം എന്നിവ ജി.ഡി.പിയിൽ കണക്കാക്കപ്പെടുന്നില്ല.</li>
+    <li><strong>3. സമാന്തര സമ്പദ്‌വ്യവസ്ഥ (Black Economy):</strong> നികുതി വെട്ടിക്കുന്നതിലൂടെ കണക്കിൽപ്പെടാതെ പോകുന്ന കള്ളപ്പണവും അനധികൃത ഇടപാടുകളും യഥാർത്ഥ വരുമാനത്തെ മറച്ചുവെക്കുന്നു.</li>
+    <li><strong>4. പരിസ്ഥിതി തകർച്ച (Environmental Externalities):</strong> വ്യവസായശാലകൾ പുറന്തള്ളുന്ന വായു-ജല മലിനീകരണവും വനനശീകരണവും കണക്കിലെടുക്കാതെയാണ് ജി.ഡി.പി കൂട്ടുന്നത് (Green GDP കണക്കാക്കേണ്ടതിന്റെ ആവശ്യകത).</li>
+  </ul>
+</div>
+
+<h2>4. എൽ.എം.എസ് പാഠപുസ്തക ചോദ്യോത്തരങ്ങൾ (LMS Questions & Detailed Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. Distinguish between Nominal GDP and Real GDP. (നാമമാത്ര ജി.ഡി.പിയും യഥാർത്ഥ ജി.ഡി.പിയും തമ്മിലുള്ള വ്യത്യാസം എന്താണ്?)</div>
+  <div class="qa-ans-en"><strong>English:</strong> Nominal GDP measures the total monetary value of all final goods and services produced within a country evaluated at current market prices, meaning it can inflate purely due to rising price levels (inflation) without any real increase in physical output. In contrast, Real GDP evaluates output using constant prices from a fixed base year, stripping out the distortionary impact of inflation to accurately measure the actual physical growth of goods and services.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> നാമമാത്ര ജി.ഡി.പി (Nominal GDP) നടപ്പ് വർഷത്തിലെ വിപണി വിലയെ അടിസ്ഥാനമാക്കി കണക്കാക്കുന്നു; അതിനാൽ ഉത്പാദനം കൂടിയില്ലെങ്കിലും പണപ്പെരുപ്പം കാരണം ഇതിൽ വർദ്ധനവ് കാണിക്കാം. എന്നാൽ യഥാർത്ഥ ജി.ഡി.പി (Real GDP) ഒരു നിശ്ചിത അടിസ്ഥാന വർഷത്തിലെ സ്ഥിര വിലയിലാണ് കണക്കാക്കുന്നത്; ഇത് വിലക്കയറ്റത്തിന്റെ സ്വാധീനം ഒഴിവാക്കി ഭൗതിക ഉത്പാദനത്തിലുണ്ടായ യഥാർത്ഥ വർദ്ധനവിനെ മാത്രം കൃത്യമായി പ്രതിഫലിപ്പിക്കുന്നു.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. What is the GDP Deflator and how is it calculated? (എന്താണ് ജി.ഡി.പി ഡിഫ്ലേറ്റർ? അത് എങ്ങനെ കണക്കാക്കുന്നു?)</div>
+  <div class="qa-ans-en"><strong>English:</strong> The GDP Deflator is a comprehensive price index reflecting the overall rate of price change (inflation/deflation) for all domestically produced final goods and services in an economy. It is calculated by dividing Nominal GDP by Real GDP and multiplying by 100: GDP Deflator = (Nominal GDP / Real GDP) &times; 100.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> ഒരു സമ്പദ്‌വ്യവസ്ഥയിൽ ഉത്പാദിപ്പിക്കപ്പെടുന്ന എല്ലാ ഉത്പന്നങ്ങളുടെയും സേവനങ്ങളുടെയും മൊത്തത്തിലുള്ള വില നിലവാരത്തിലുണ്ടാകുന്ന മാറ്റം (പണപ്പെരുപ്പം) അളക്കുന്ന സൂചികയാണ് ജി.ഡി.പി ഡിഫ്ലേറ്റർ. നാമമാത്ര ജി.ഡി.പിയെ യഥാർത്ഥ ജി.ഡി.പി കൊണ്ട് ഹരിച്ച് 100 കൊണ്ട് ഗുണിച്ചാണ് ഇത് കണക്കാക്കുന്നത് (GDP Deflator = Nominal GDP ÷ Real GDP &times; 100).</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q3. Why does real per capita income fail to serve as a complete indicator of social welfare? (പ്രതിശീർഷ യഥാർത്ഥ വരുമാനം സാമൂഹിക ക്ഷേമത്തിന്റെ സമ്പൂർണ്ണ അളവുകോലാകാത്തത് എന്തുകൊണ്ട്?)</div>
+  <div class="qa-ans-en"><strong>English:</strong> Real per capita income is merely an arithmetic average that conceals stark socio-economic disparities. It fails as a welfare measure because: (1) It ignores income distribution, concealing vast wealth concentration in top percentiles while millions live in squalor; (2) It ignores human development fundamentals like life expectancy, infant mortality, literacy, and gender equity; (3) It excludes vital unpaid domestic and care work; (4) It treats environmental pollution and resource depletion as output gains rather than welfare losses.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> പ്രതിശീർഷ വരുമാനം എന്നത് കേവലമൊരു ഗണിത ശരാശരി മാത്രമാണ്. ഇത് ജനക്ഷേമത്തിന്റെ പൂർണ്ണ അളവുകോലാകാത്തതിന് കാരണങ്ങൾ: (1) ഇത് വരുമാന വിതരണത്തിലെ കൊടും അസമത്വത്തെ മറച്ചുവെക്കുന്നു; (2) ആയുർദൈർഘ്യം, സാക്ഷരത, ശിശുമരണ നിരക്ക്, സ്ത്രീ സമത്വം തുടങ്ങിയ ഗുണപരമായ മാനവ വികസന സൂചകങ്ങളെ പരിഗണിക്കുന്നില്ല; (3) സ്ത്രീകളുടെ വീട്ടുവേലയും കുട്ടികളുടെ പരിചരണവും ഇതിൽ ഉൾപ്പെടുന്നില്ല; (4) പ്രകൃതി നശീകരണവും വിഭവ ശോഷണവും മൂലമുണ്ടാകുന്ന പാരിസ്ഥിതിക നാശങ്ങളെ ഇത് കണക്കിലെടുക്കുന്നില്ല.</div>
+</div>
+
+<h2>5. 20 പ്രധാന മൾട്ടിപ്പിൾ ചോയ്‌സ് ചോദ്യങ്ങൾ (20 Important MCQs with Answers & Rationale)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">1. ഒരു രാജ്യത്തിന്റെ ആഭ്യന്തര അതിർത്തിക്കുള്ളിൽ ഉത്പാദിപ്പിക്കപ്പെടുന്ന ചരക്കുകളുടെയും സേവനങ്ങളുടെയും ആകെ വിപണി മൂല്യം ഏതാണ്? / What is the market value of all final goods and services produced within a nation's borders in a year?</div>
+    <div class="q-options">A) മൊത്തം ആഭ്യന്തര ഉത്പാദനം (GDP)<br>B) പ്രതിശീർഷ വരുമാനം<br>C) വിദേശനാണ്യ ശേഖരം<br>D) ധനക്കമ്മി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ജി.ഡി.പി (Gross Domestic Product) ആണ് ഒരു രാജ്യത്തിന്റെ ഭൂമിശാസ്ത്രപരമായ ആഭ്യന്തര ഉത്പാദനത്തെ അളക്കുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. ജി.ഡി.പിയും ജി.എൻ.പിയും തമ്മിലുള്ള പ്രധാന വ്യത്യാസം നിർണ്ണയിക്കുന്ന ഘടകം ഏതാണ്? / What accounts for the difference between GDP and GNP?</div>
+    <div class="q-options">A) വിദേശത്തുനിന്നുള്ള അറ്റ വരുമാനം (Net Factor Income from Abroad - NFIA)<br>B) ജി.എസ്.ടി നികുതികൾ<br>C) കൃഷിയിലെ സബ്സിഡികൾ<br>D) ജനസംഖ്യാ വർദ്ധനവ്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: GNP = GDP + NFIA; വിദേശത്തുനിന്നുള്ള അറ്റ വരുമാനം കൂട്ടുമ്പോഴാണ് ജി.എൻ.പി ലഭിക്കുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. ഒരു സമ്പദ്‌വ്യവസ്ഥയുടെ യഥാർത്ഥ ദേശീയ വരുമാനം (National Income) എന്ന് സാങ്കേതികമായി വിളിക്കുന്നത് ഏതിനെയാണ്? / Technically, 'National Income' of an economy represents:</div>
+    <div class="q-options">A) GDP at Market Price<br>B) NNP at Factor Cost (ഘടക ചെലവിലെ അറ്റ ദേശീയ ഉത്പാദനം)<br>C) GNP at Market Price<br>D) വ്യക്തിഗത വരുമാനം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: NNP at Factor Cost (തേയ്മാനം കിഴിച്ചുള്ള ഘടക ചെലവിലെ അറ്റ ഉത്പാദനം) ആണ് ഔദ്യോഗിക ദേശീയ വരുമാനം.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">4. പണപ്പെരുപ്പത്തിന്റെ സ്വാധീനം ഒഴിവാക്കി സ്ഥിരവിലയിൽ കണക്കാക്കുന്ന ജി.ഡി.പി അറിയപ്പെടുന്നത്: / GDP calculated at constant base-year prices adjusted for inflation is:</div>
+    <div class="q-options">A) നാമമാത്ര ജി.ഡി.പി (Nominal GDP)<br>B) യഥാർത്ഥ ജി.ഡി.പി (Real GDP)<br>C) ധനപരമായ ജി.ഡി.പി<br>D) വിദേശ ജി.ഡി.പി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: യഥാർത്ഥ ജി.ഡി.പിയാണ് ഉത്പാദനത്തിലെ യഥാർത്ഥ ഭൗതിക മാറ്റത്തെ അളക്കുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">5. ജി.ഡി.പി ഡിഫ്ലേറ്റർ കണക്കാക്കുന്ന സമവാക്യം ഏത്? / What is the formula for calculating the GDP Deflator?</div>
+    <div class="q-options">A) (Nominal GDP / Real GDP) &times; 100<br>B) (Real GDP / Nominal GDP) &times; 100<br>C) GDP &times; CPI<br>D) GDP - Inflation</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: നാമമാത്ര ജി.ഡി.പിയെ യഥാർത്ഥ ജി.ഡി.പി കൊണ്ട് ഹരിച്ച് 100 കൊണ്ട് ഗുണിച്ചാൽ ജി.ഡി.പി ഡിഫ്ലേറ്റർ ലഭിക്കും.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">6. ഇന്ത്യയിൽ ദേശീയ വരുമാന കണക്കുകൾ ഔദ്യോഗികമായി തയ്യാറാക്കി പ്രസിദ്ധീകരിക്കുന്ന സർക്കാർ ഏജൻസി? / Which official agency in India computes and releases National Income estimates?</div>
+    <div class="q-options">A) റിസർവ് ബാങ്ക് ഓഫ് ഇന്ത്യ<br>B) നാഷണൽ സ്റ്റാറ്റിസ്റ്റിക്കൽ ഓഫീസ് (NSO / CSO)<br>C) നീതി ആയോഗ്<br>D) ഫിനാൻസ് കമ്മീഷൻ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: കേന്ദ്ര സ്ഥിതിവിവര മന്ത്രാലയത്തിന് കീഴിലുള്ള NSO (പഴയ CSO) ആണ് ദേശീയ വരുമാനം കണക്കാക്കുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">7. നിലവിൽ ഇന്ത്യയിൽ ജി.ഡി.പി കണക്കാക്കുന്നതിനുള്ള ഔദ്യോഗിക അടിസ്ഥാന വർഷം (Base Year) ഏതാണ്? / What is the current base year used for calculating India's GDP?</div>
+    <div class="q-options">A) 1993–94<br>B) 2004–05<br>C) 2011–12<br>D) 2020–21</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: C</div>
+    <div class="q-exp">വിശദീകരണം: 2015-ൽ വരുത്തിയ മാറ്റപ്രകാരം 2011-12 ആണ് ഇന്ത്യയുടെ ഔദ്യോഗിക അടിസ്ഥാന വർഷം.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">8. ജി.ഡി.പിയിൽ ഉൾപ്പെടാത്ത സാമ്പത്തിക ഇടപാടിന് ഉദാഹരണമേത്? / Which of the following is excluded from GDP calculation?</div>
+    <div class="q-options">A) പുതിയ കാർ നിർമ്മാണം<br>B) വീട്ടമ്മമാരുടെ പ്രതിഫലമില്ലാത്ത വീട്ടുജോലികൾ (Unpaid domestic housework)<br>C) സോഫ്റ്റ്‌വെയർ കയറ്റുമതി<br>D) ഡോക്ടറുടെ പരിശോധനാ ഫീസ്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: വിപണിയിൽ പണമിടപാട് നടക്കാത്ത ഗാർഹിക സേവനങ്ങൾ ജി.ഡി.പിയിൽ കണക്കാക്കപ്പെടുന്നില്ല.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">9. പരിസ്ഥിതി നാശവും പ്രകൃതി വിഭവങ്ങളുടെ ശോഷണവും കിഴിച്ചുകൊണ്ട് കണക്കാക്കുന്ന ജി.ഡി.പിയെ എന്തുവിളിക്കുന്നു? / GDP adjusted for environmental damage and natural resource depletion is called:</div>
+    <div class="q-options">A) നീല ജി.ഡി.പി<br>B) പച്ച ജി.ഡി.പി (Green GDP)<br>C) മഞ്ഞ ജി.ഡി.പി<br>D) വെളുത്ത ജി.ഡി.പി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: പ്രകൃതിക്ക് വരുത്തുന്ന നാശനഷ്ടങ്ങളുടെ മൂല്യം കുറച്ച് യഥാർത്ഥ പാരിസ്ഥിതിക വളർച്ച അളക്കുന്നതാണ് ഗ്രീൻ ജി.ഡി.പി.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">10. യന്ത്രങ്ങളുടെയും കെട്ടിടങ്ങളുടെയും വാർഷിക തേയ്മാനത്തെ സാമ്പത്തിക ശാസ്ത്രത്തിൽ എന്തുവിളിക്കുന്നു? / The annual wear and tear of capital equipment is termed:</div>
+    <div class="q-options">A) പണപ്പെരുപ്പം<br>B) ഡിപ്രിസിയേഷൻ / മൂല്യക്ഷയം (Depreciation)<br>C) കറന്റ് അക്കൗണ്ട് കമ്മി<br>D) ഓഹരി വിറ്റഴിക്കൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: Gross-ൽ നിന്ന് Depreciation കിഴിക്കുമ്പോഴാണ് Net (അറ്റ മൂല്യം) ലഭിക്കുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">11. യഥാർത്ഥ വരുമാനം ഒരു സമൂഹത്തിന്റെ ക്ഷേമത്തിന്റെ പൂർണ്ണ സൂചകമാകാത്തതിന് പ്രധാന കാരണം? / Real income fails as an absolute welfare metric primarily because:</div>
+    <div class="q-options">A) കണക്കുകൂട്ടാൻ എളുപ്പമാണ്<br>B) വരുമാന വിതരണത്തിലെ അസമത്വം മറച്ചുവെക്കപ്പെടുന്നു (Conceals inequality in wealth distribution)<br>C) സർക്കാർ രേഖകളിൽ ലഭ്യമല്ല<br>D) ആർ.ബി.ഐ ഇത് അംഗീകരിക്കുന്നില്ല</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ഒരു ന്യൂനപക്ഷം സമ്പന്നരുടെ വളർച്ച കാരണം ശരാശരി ഉയർന്നാലും ജനങ്ങളിൽ ബഹുഭൂരിപക്ഷവും പട്ടിണിയിലാകാം.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">12. ഒരു രാജ്യത്ത് നിർമ്മിക്കപ്പെടുന്ന ഉത്പന്നങ്ങളുടെയും സേവനങ്ങളുടെയും അളവിൽ വർദ്ധനവില്ലാതെ ജി.ഡി.പി ഉയരാൻ കാരണം? / Why can nominal GDP rise without an increase in physical output?</div>
+    <div class="q-options">A) കയറ്റുമതി കുറഞ്ഞതിനാൽ<br>B) വിലക്കയറ്റം അഥവാ പണപ്പെരുപ്പം മൂലം (Due to general price inflation)<br>C) നികുതി നിരക്ക് കുറഞ്ഞതിനാൽ<br>D) ജനസംഖ്യ കുറഞ്ഞതിനാൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: നാമമാത്ര ജി.ഡി.പി നടപ്പുവിലയിലാണ് അളക്കുന്നത്, അതിനാൽ വില കൂടിയാൽ ജി.ഡി.പി സംഖ്യ വലുതാകും.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">13. കൈമാറ്റ വരുമാനങ്ങൾ (Transfer Payments - ഉദാ: വയോജന പെൻഷൻ, സ്കോളർഷിപ്പ്) ദേശീയ വരുമാനത്തിൽ കൂട്ടാത്തത് എന്തുകൊണ്ട്? / Why are transfer payments excluded from National Income?</div>
+    <div class="q-options">A) അവ നിയമവിരുദ്ധമായതിനാൽ<br>B) യാതൊരു ഉത്പാദന പ്രവർത്തനവും പ്രതിഫലമായി നടക്കാത്തതിനാൽ (No productive output corresponds to them)<br>C) തുക വളരെ ചെറുതായതിനാൽ<br>D) ബാങ്കുകൾ വഴി നൽകാത്തതിനാൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: കൈമാറ്റ വരുമാനങ്ങൾ ഒരു വശത്തേക്ക് മാത്രമുള്ള ധനസഹായങ്ങളാണ്; പുതിയ ചരക്കുകളോ സേവനങ്ങളോ ഉത്പാദിപ്പിക്കപ്പെടുന്നില്ല.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">14. നികുതി നൽകാതെ സാമ്പത്തിക കണക്കുകളിൽ ഉൾപ്പെടാതെ പോകുന്ന ഇടപാടുകളുടെ സമ്പദ്‌വ്യവസ്ഥ ഏതാണ്? / The shadow economic activity escaping official taxation and records is:</div>
+    <div class="q-options">A) ധവള സമ്പദ്‌വ്യവസ്ഥ<br>B) സമാന്തര അഥവാ കള്ളപ്പണ സമ്പദ്‌വ്യവസ്ഥ (Parallel / Black Economy)<br>C) സമ്മിശ്ര സമ്പദ്‌വ്യവസ്ഥ<br>D) സോഷ്യലിസ്റ്റ് സമ്പദ്‌വ്യവസ്ഥ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ബ്ലാക്ക് ഇക്കോണമി ജി.ഡി.പി കണക്കുകളുടെ കൃത്യതയെ സാരമായി ബാധിക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">15. ഇന്ത്യയിൽ സ്വതന്ത്ര്യാനന്തരം ജി.ഡി.പിയിൽ ഏറ്റവും കൂടുതൽ വിഹിതം വഹിച്ചിരുന്ന കാർഷിക മേഖല നിലവിൽ എത്രാം സ്ഥാനത്താണ്? / Agriculture, which contributed the largest GDP share in 1950, currently accounts for approximately:</div>
+    <div class="q-options">A) 50% ൽ അധികം<br>B) ഏതാണ്ട് 15% മുതൽ 18% വരെ (Around 15–18%)<br>C) 80%<br>D) 2% ൽ താഴെ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ജി.ഡി.പിയിൽ കൃഷിയുടെ പങ്ക് 17 ശതമാനത്തിലേക്ക് ചുരുങ്ങി, എങ്കിലും പകുതിയോളം പേർ തൊഴിലിനായി കൃഷിയെ ആശ്രയിക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">16. വാങ്ങി ശേഷി സമാനത (Purchasing Power Parity - PPP) അടിസ്ഥാനത്തിൽ ഇന്ത്യയുടെ സമ്പദ്‌വ്യവസ്ഥ ആഗോളതലത്തിൽ എത്രാം സ്ഥാനത്താണ്? / On a Purchasing Power Parity (PPP) basis, India's GDP rank globally is:</div>
+    <div class="q-options">A) ഒന്നാം സ്ഥാനം<br>B) മൂന്നാം സ്ഥാനം (3rd Largest behind US & China)<br>C) പത്താം സ്ഥാനം<br>D) ഇരുപതാം സ്ഥാനം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: പി.പി.പി (PPP) അടിസ്ഥാനത്തിൽ ചൈനയ്ക്കും അമേരിക്കയ്ക്കും തൊട്ടുപിന്നിൽ ഇന്ത്യ ലോകത്തെ മൂന്നാമത്തെ വലിയ സമ്പദ്‌വ്യവസ്ഥയാണ്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">17. എൻ.ഡി.പി (Net Domestic Product) കണക്കാക്കാൻ ജി.ഡി.പിയിൽ നിന്ന് എന്ത് കുറയ്ക്കണം? / To calculate Net Domestic Product (NDP), what must be deducted from GDP?</div>
+    <div class="q-options">A) പരോക്ഷ നികുതികൾ<br>B) മൂല്യക്ഷയം അഥവാ തേയ്മാനം (Depreciation)<br>C) സബ്സിഡികൾ<br>D) വിദേശ സഹായം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: NDP = GDP - Depreciation.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">18. സാമ്പത്തിക ശാസ്ത്രജ്ഞനായ സൈമൺ കുസ്നെറ്റ്സ് (Simon Kuznets) എന്തിനാണ് നോബൽ സമ്മാനം നേടിയത്? / Simon Kuznets received the Nobel Prize for his seminal work on:</div>
+    <div class="q-options">A) ഓഹരി വിപണി വിശകലനം<br>B) ദേശീയ വരുമാന കണക്കുകൂട്ടലും സാമ്പത്തിക വളർച്ചാ ചരിത്രവും (National Income Accounting & Growth)<br>C) ഗെയിം തിയറി<br>D) ബാങ്കിംഗ് നിയന്ത്രണം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ആധുനിക ദേശീയ വരുമാന കണക്കുകൂട്ടൽ രീതികളുടെ ഉപജ്ഞാതാവാണ് സൈമൺ കുസ്നെറ്റ്സ്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">19. ഇന്ത്യയിൽ ആദ്യമായി ദേശീയ വരുമാനം ശാസ്ത്രീയമായി കണക്കാക്കാൻ ശ്രമിച്ച വ്യക്തി ആര്? / Who made the first pioneering statistical attempt to estimate India's National Income in 1867–68?</div>
+    <div class="q-options">A) പി.സി. മഹലനോബിസ്<br>B) ദാദാഭായ് നവറോജി (Dadabhai Naoroji)<br>C) ഡോ. വി.കെ.ആർ.വി. റാവു<br>D) ആർ.സി. ദത്ത്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ദാദാഭായ് നവറോജിയാണ് 1868-ൽ ഇന്ത്യയിൽ ആദ്യമായി പ്രതിശീർഷ വരുമാനം (20 രൂപ) കണക്കാക്കിയത്. പിന്നീട് 1931-ൽ ഡോ. വി.കെ.ആർ.വി. റാവു ആദ്യ ശാസ്ത്രീയ കണക്കുകൂട്ടൽ നടത്തി.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">20. ഉയർന്ന യഥാർത്ഥ വരുമാനം ഉണ്ടായിട്ടും ഒരു രാജ്യത്തെ ജനജീവിതം പിന്നോക്കമാകുന്നത് എപ്പോഴാണ്? / Why can a nation with high real income still exhibit poor human living standards?</div>
+    <div class="q-options">A) ആശുപത്രികളും സ്കൂളുകളും ശുചിത്വ സംവിധാനങ്ങളും ലഭ്യമാകാത്തപ്പോൾ (Deficits in public health, education, and social safety nets)<br>B) വിദേശികൾ വരാതിരിക്കുമ്പോൾ<br>C) ഇന്റർനെറ്റ് സ്പീഡ് കൂടുമ്പോൾ<br>D) ഉത്പാദനം കൂടുമ്പോൾ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: പണം ഉണ്ടെങ്കിലും ആരോഗ്യ-വിദ്യാഭ്യാസ സൗകര്യങ്ങളും വിതരണ നീതിയും ഇല്ലെങ്കിൽ ജനജീവിതം ദയനീയമായി തുടരും.</div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. ഡിഗ്രി പഠന സഹായി · Development Issues in Indian Economy</span>
+    <span>സമഗ്ര മലയാള പരിഭാഷ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

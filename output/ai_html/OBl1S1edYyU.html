@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@700;800;900&family=Gayathri:wght@700;900&family=Manjari:wght@700;900&family=Noto+Sans+Malayalam:wght@700;900&family=Orbitron:wght@800;900&family=Outfit:wght@700;900&family=Space+Grotesk:wght@700&family=Syne:wght@800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1A000E 0%, #33051C 50%, #4D092B 100%);
+      font-family: 'Noto Sans Malayalam', 'Cinzel', serif;
+      color: #FFFFFF;
+      position: relative;
+    }
+    
+    /* Background subtle grid */
+    .grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* Top Left Channel Banner Pill */
+    .top-bar {
+      position: absolute;
+      top: 36px;
+      left: 56px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 10;
+    }
+    .channel-tag {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1.5px solid #FF3366;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(8px);
+    }
+    .channel-tag .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #FF3366;
+      box-shadow: 0 0 10px #FF3366;
+    }
+    .syllabus-badge {
+      background: rgba(51, 5, 28, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #FFB800;
+      letter-spacing: 0.5px;
+    }
+
+    /* Main Left Content Panel */
+    .content-panel {
+      position: absolute;
+      top: 110px;
+      left: 56px;
+      width: 660px;
+      z-index: 10;
+    }
+    .module-badge {
+      display: inline-block;
+      font-family: 'Orbitron', 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 2.5px;
+      color: #FFB800;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      text-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+    .title-malayalam {
+      font-size: 58px;
+      font-weight: 900;
+      line-height: 1.14;
+      color: #FFFFFF;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0,0,0,0.6);
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .title-english {
+      font-family: 'Outfit', 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #FF3366;
+      line-height: 1.25;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+      margin-bottom: 26px;
+      border-left: 4px solid #FFB800;
+      padding-left: 14px;
+    }
+    .features-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .feature-pill {
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #E2E8F0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .feature-pill span {
+      color: #FF3366;
+    }
+
+    /* Right Artwork Container */
+    .art-container {
+      position: absolute;
+      top: 50px;
+      right: 30px;
+      width: 580px;
+      height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    /* Bottom Status Bar */
+    .bottom-bar {
+      position: absolute;
+      bottom: 26px;
+      left: 56px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      color: #94A3B8;
+      z-index: 10;
+    }
+    .bottom-bar .hub-url {
+      color: #FFFFFF;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+    }
+    .bottom-bar .sep {
+      color: rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+
+  <div class="top-bar">
+    <div class="channel-tag">
+      <div class="dot"></div>
+      ACADEMIC HUB
+    </div>
+    <div class="syllabus-badge">CALICUT UNIVERSITY FYUGP</div>
+    <div class="syllabus-badge" style="color: #FF3366;">PHILOSOPHICAL CRITIQUE</div>
+  </div>
+
+  <div class="content-panel">
+    <div class="module-badge">MODULE 02 · CHAPTER 3</div>
+    <h1 class="title-malayalam">ചൈനീസ് റൂം<br>ആർഗ്യുമെന്റ്</h1>
+    <div class="title-english">John Searle · Syntax vs Semantics</div>
+    <div class="features-row">
+      <div class="feature-pill"><span>✓</span> സിലബസ് വിശകലനം</div>
+      <div class="feature-pill"><span>✓</span> സമഗ്ര മാസ്റ്റർക്ലാസ്</div>
+      <div class="feature-pill"><span>✓</span> പരീക്ഷാ ടിപ്പുകൾ</div>
+    </div>
+  </div>
+
+  <div class="art-container">
+    
+        <svg viewBox="0 0 600 600" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="roomGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FF3366" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="300" cy="300" r="260" fill="url(#roomGlow)"/>
+          
+          <!-- The Closed Isometric Chamber Room -->
+          <polygon points="300,90 500,200 500,430 300,530 100,430 100,200" fill="#1C0412" stroke="#FF3366" stroke-width="6"/>
+          <line x1="300" y1="200" x2="300" y2="530" stroke="#FF3366" stroke-width="4" opacity="0.6"/>
+          <line x1="100" y1="200" x2="300" y2="300" stroke="#FF3366" stroke-width="4" opacity="0.6"/>
+          <line x1="500" y1="200" x2="300" y2="300" stroke="#FF3366" stroke-width="4" opacity="0.6"/>
+          
+          <!-- Input Slot (Left) -->
+          <rect x="150" y="270" width="60" height="15" rx="4" fill="#000" stroke="#FFB800" stroke-width="3"/>
+          <polygon points="120,277 145,265 145,290" fill="#FFB800"/>
+          <text x="180" y="255" fill="#FFB800" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">INPUT</text>
+
+          <!-- Chinese Characters on Paper Sheet -->
+          <g transform="translate(190, 290) rotate(-10)">
+            <rect x="0" y="0" width="80" height="95" rx="4" fill="#FFFDF0" stroke="#FF3366" stroke-width="2"/>
+            <text x="40" y="55" fill="#C00000" font-family="'Noto Serif SC', serif" font-size="44" font-weight="900" text-anchor="middle">心</text>
+            <text x="40" y="80" fill="#666" font-family="monospace" font-size="10" text-anchor="middle">[MIND?]</text>
+          </g>
+
+          <!-- Inside Rulebook -->
+          <g transform="translate(260, 340)">
+            <rect x="0" y="0" width="100" height="70" rx="4" fill="#FF3366" opacity="0.9"/>
+            <text x="50" y="25" fill="#FFFFFF" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">RULEBOOK</text>
+            <text x="50" y="45" fill="#FFFFFF" font-family="monospace" font-size="11" text-anchor="middle">IF 心 THEN 智</text>
+            <text x="50" y="60" fill="#FFB800" font-family="monospace" font-size="10" text-anchor="middle">SYNTAX ONLY</text>
+          </g>
+
+          <!-- Output Slot (Right) -->
+          <rect x="390" y="270" width="60" height="15" rx="4" fill="#000" stroke="#FF3366" stroke-width="3"/>
+          <polygon points="480,277 455,265 455,290" fill="#FF3366"/>
+          <text x="420" y="255" fill="#FF3366" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">OUTPUT</text>
+
+          <g transform="translate(340, 240) rotate(15)">
+            <rect x="0" y="0" width="80" height="95" rx="4" fill="#FFFDF0" stroke="#FFB800" stroke-width="2"/>
+            <text x="40" y="55" fill="#0A0A0A" font-family="'Noto Serif SC', serif" font-size="44" font-weight="900" text-anchor="middle">智</text>
+            <text x="40" y="80" fill="#666" font-family="monospace" font-size="10" text-anchor="middle">[WISDOM?]</text>
+          </g>
+
+          <!-- Bottom Warning Banner -->
+          <rect x="150" y="470" width="300" height="38" rx="8" fill="rgba(0,0,0,0.8)" stroke="#FF3366" stroke-width="2"/>
+          <text x="300" y="495" fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle">SYNTAX ≠ SEMANTICS</text>
+        </svg>
+        
+  </div>
+
+  <div class="bottom-bar">
+    <span class="hub-url">🌐 academichubfaiz.in</span>
+    <span class="sep">|</span>
+    <span>PHILOSOPHY OF ARTIFICIAL INTELLIGENCE</span>
+    <span class="sep">|</span>
+    <span>100% FREE STUDY PORTAL</span>
+  </div>
+</body>
+</html>

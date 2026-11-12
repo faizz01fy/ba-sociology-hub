@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 2: പ്രാക്ടീസിങ് സോഷ്യോളജി (സോഷ്യോളജി പ്രയോഗത്തിൽ)</title>
+  <style>
+    :root {
+      --c1: #581c87;
+      --c2: #7e22ce;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #581c87), var(--c2, #7e22ce));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(88, 28, 135, 0.2);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f3e8ff;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #e9d5ff;
+}
+
+.badge {
+  display: inline-block;
+  background: #faf5ff;
+  color: #6b21a8;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #d8b4fe;
+}
+
+h2 {
+  color: var(--c1, #581c87);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #7e22ce;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #faf5ff;
+  border-left: 4px solid var(--c2, #7e22ce);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-purple {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+/* Diagrams & Visual Charts */
+.diagram-container {
+  background: #ffffff;
+  border: 1.5px solid #e9d5ff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.05);
+}
+
+.diagram-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 11pt;
+  color: #581c87;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.flow-step {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border: 1.5px solid #c084fc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #581c87;
+  min-width: 130px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(107, 33, 168, 0.08);
+}
+
+.flow-step small {
+  display: block;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #6b21a8;
+  margin-top: 4px;
+}
+
+.flow-arrow {
+  color: #9333ea;
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+.tree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.tree-card {
+  background: #fdf4ff;
+  border: 1px solid #d8b4fe;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.tree-card h4 {
+  margin: 0 0 6px 0;
+  color: #6b21a8;
+  font-size: 10pt;
+  font-weight: 700;
+  border-bottom: 1px solid #e9d5ff;
+  padding-bottom: 4px;
+}
+
+.tree-card p {
+  margin: 0;
+  font-size: 9pt;
+  line-height: 1.6;
+  color: #334155;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f3e8ff;
+  color: #581c87;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #faf5ff;
+}
+
+/* Bilingual Entry Blocks */
+.bilingual-entry {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-left: 4px solid #7e22ce;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(107, 33, 168, 0.04);
+}
+
+.bilingual-entry .en-part {
+  color: #1e293b;
+  font-size: 10pt;
+  line-height: 1.7;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.bilingual-entry .ml-part {
+  color: #3b0764;
+  font-size: 10pt;
+  line-height: 1.85;
+}
+
+.en-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #bfdbfe;
+}
+
+.ml-tag {
+  display: inline-block;
+  background: #faf5ff;
+  color: #7e22ce;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #d8b4fe;
+}
+
+/* LMS Question & Answer Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #7e22ce;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #581c87;
+  margin-bottom: 8px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  background: #faf5ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #9333ea;
+}
+
+/* MCQ Cards */
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #581c87;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #f3e8ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid #d8b4fe;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 2: രീതിശാസ്ത്രവും സൈദ്ധാന്തിക ചട്ടക്കൂടും (Module 2: Practicing Sociology)</h4>
+    <h1>മൊഡ്യൂൾ 2: പ്രാക്ടീസിങ് സോഷ്യോളജി (സോഷ്യോളജി പ്രയോഗത്തിൽ)</h1>
+    <div class="meta">Module 2 · Practicing Sociology: Theories, Research Methods, Process & Ethics · Calicut University B.A. Sociology FYUGP · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Module Overview:</strong> Module 2 explores the methodological and theoretical toolkit of practicing sociologists. It examines how theoretical paradigms (Functionalism, Conflict Theory, Symbolic Interactionism) guide inquiry, contrasts Basic, Applied, and Clinical sociology, outlines the 7-step scientific research process, compares quantitative and qualitative methods, and establishes ethical guidelines governing sociological investigation.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>മൊഡ്യൂൾ അവലോകനം:</strong> സോഷ്യോളജിസ്റ്റുകളുടെ ഗവേഷണ രീതിശാസ്ത്രവും സൈദ്ധാന്തിക ചട്ടക്കൂടുമാണ് രണ്ടാം മൊഡ്യൂൾ ചർച്ച ചെയ്യുന്നത്. ഫങ്ഷണലിസം, കോൺഫ്ലിക്റ്റ്, സിംബോളിക് ഇന്ററാക്ഷനിസം തുടങ്ങിയ സിദ്ധാന്തങ്ങൾ ഗവേഷണത്തെ എങ്ങനെ നയിക്കുന്നു, പ്യുവർ, അപ്ലൈഡ്, ക്ലിനിക്കൽ സോഷ്യോളജികളുടെ വ്യത്യാസങ്ങൾ, 7 ഘട്ടങ്ങളുള്ള ശാസ്ത്രീയ ഗവേഷണ രീതി, ക്വാണ്ടിറ്റേറ്റീവ്-ക്വാളിറ്റേറ്റീവ് രീതികൾ, ഗവേഷണ ധാർമ്മികത (Research Ethics) എന്നിവ ഇതിൽ സമഗ്രമായി പഠിക്കുന്നു.
+  </div>
+</div>
+
+<div class="card">
+  <h4 class="sub-head" style="margin-top:0;">പ്രധാന പഠന ലക്ഷ്യങ്ങൾ (Core Competencies):</h4>
+  <ul>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Master Core Perspectives:</strong> Distinguish macro-level paradigms (Functionalism and Conflict Theory) from micro-level paradigms (Symbolic Interactionism).</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>പ്രധാന സിദ്ധാന്തങ്ങൾ:</strong> മാക്രോ തലത്തിലുള്ള ഫങ്ഷണലിസം, കോൺഫ്ലിക്റ്റ് സിദ്ധാന്തങ്ങളും മൈക്രോ തലത്തിലുള്ള സിംബോളിക് ഇന്ററാക്ഷനിസവും വേർതിരിച്ചു മനസ്സിലാക്കുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Differentiate Practice Domains:</strong> Grasp the distinct goals of Basic (knowledge generation), Applied (policy evaluation), and Clinical (therapeutic intervention) sociology.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>പ്രായോഗിക മേഖലകൾ:</strong> പ്യുവർ സോഷ്യോളജി (അറിവ് നിർമ്മാണം), അപ്ലൈഡ് സോഷ്യോളജി (നയരൂപീകരണം), ക്ലിനിക്കൽ സോഷ്യോളജി (ചികിത്സാപരമായ ഇടപെടൽ) എന്നിവയുടെ ലക്ഷ്യങ്ങൾ തിരിച്ചറിയുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Execute Scientific Steps:</strong> Navigate the 7 systematic phases of sociological research from problem formulation to hypothesis testing and reporting.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>ശാസ്ത്രീയ ഗവേഷണ ഘട്ടങ്ങൾ:</strong> പ്രശ്നം നിർവ്വചിക്കൽ മുതൽ സിദ്ധാന്ത രൂപീകരണവും റിപ്പോർട്ട് തയ്യാറാക്കലും വരെയുള്ള 7 ഗവേഷണ ഘട്ടങ്ങൾ ക്രമമായി പ്രയോഗിക്കുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Uphold Research Ethics:</strong> Implement informed consent, ensure participant confidentiality, preserve respondent anonymity, and maintain objective reflexivity.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>ഗവേഷണ ധാർമ്മികത:</strong> സമ്മതപത്രം (Informed Consent), രഹസ്യാത്മകത, വ്യക്തിവിവര സംരക്ഷണം, വസ്തുനിഷ്ഠത എന്നിവ ഗവേഷണത്തിൽ ഉറപ്പുവരുത്തുക.</div>
+    </li>
+  </ul>
+</div>
+
+<h2>2. പ്രധാന സൈദ്ധാന്തിക വീക്ഷണങ്ങൾ (Major Theoretical Perspectives)</h2>
+<div class="tree-grid">
+  <div class="tree-card" style="border-left: 4px solid #2563eb;">
+    <h4>1. Structural Functionalism (സ്ട്രക്ചറൽ ഫങ്ഷണലിസം)</h4>
+    <p><strong>Key Theorists:</strong> Émile Durkheim, Talcott Parsons, Robert K. Merton.<br>
+    <strong>English:</strong> Views society as a complex, organic system whose constituent parts (institutions like family, education, economy) work in harmony to promote solidarity and stability. Merton distinguished <em>Manifest functions</em> (intended, recognized consequences) from <em>Latent functions</em> (unintended, hidden consequences) and <em>Dysfunctions</em> (disruptive patterns).<br>
+    <strong>മലയാളം:</strong> എമിൽ ഡർക്കൈം, ടാൽകോട്ട് പാർസൺസ്, റോബർട്ട് കെ. മെർട്ടൺ എന്നിവർ നയിച്ച വീക്ഷണം. സമൂഹത്തെ വിവിധ ഭാഗങ്ങൾ പരസ്പരം ഒത്തുപ്രവർത്തിക്കുന്ന ഒരു ജൈവിക ശരീരമായി കാണുന്നു. മെർട്ടന്റെ പ്രകടിത ധർമ്മങ്ങൾ (Manifest), അന്തർലീന ധർമ്മങ്ങൾ (Latent), തകരാറുകൾ (Dysfunctions) എന്നിവ പ്രധാനമാണ്.</p>
+  </div>
+  <div class="tree-card" style="border-left: 4px solid #dc2626;">
+    <h4>2. Conflict Perspective (കോൺഫ്ലിക്റ്റ് തിയറി)</h4>
+    <p><strong>Key Theorists:</strong> Karl Marx, Friedrich Engels, Max Weber, C. Wright Mills.<br>
+    <strong>English:</strong> Depicts society as an arena of fundamental inequality, scarce resources, and perpetual class struggles. Under capitalism, the dominant class (Bourgeoisie) exploits the subordinate working class (Proletariat). Conflict is the engine of historical progress and revolutionary social change.<br>
+    <strong>മലയാളം:</strong> കാൾ മാർക്സ്, മാക്സ് വെബർ എന്നിവരുടെ വീക്ഷണം. സമൂഹം വിഭവങ്ങൾക്കായുള്ള വർഗ്ഗപോരാട്ടങ്ങളുടെ വേദിയാണ്. മുതലാളിത്തത്തിൽ ബൂർഷ്വാസികൾ തൊഴിലാളികളെ ചൂഷണം ചെയ്യുന്നു. സംഘർഷമാണ് ചരിത്രപരമായ സാമൂഹിക മാറ്റങ്ങളുടെ ചാലകശക്തി.</p>
+  </div>
+  <div class="tree-card" style="border-left: 4px solid #059669; grid-column: 1 / -1;">
+    <h4>3. Symbolic Interactionism (സിംബോളിക് ഇന്ററാക്ഷനിസം)</h4>
+    <p><strong>Key Theorists:</strong> George Herbert Mead, Charles Horton Cooley, Herbert Blumer.<br>
+    <strong>English:</strong> A micro-level sociological perspective focusing on face-to-face interaction and the social construction of reality. Humans act toward things and people based on the shared meanings and symbols (language, gestures) developed through social communication.<br>
+    <strong>മലയാളം:</strong> ജോർജ്ജ് ഹെർബർട്ട് മീഡ്, ഹെർബർട്ട് ബ്ലൂമർ എന്നിവരുടെ മൈക്രോ തലത്തിലുള്ള വീക്ഷണം. മനുഷ്യർ ചിഹ്നങ്ങളിലൂടെയും (Symbols) ഭാഷയിലൂടെയും ആശയവിനിമയം നടത്തി പരസ്പരം നൽകുന്ന അർത്ഥങ്ങളുടെ അടിസ്ഥാനത്തിലാണ് സാമൂഹിക യാഥാർത്ഥ്യങ്ങൾ രൂപപ്പെടുന്നത്.</p>
+  </div>
+</div>
+
+<h2>3. സോഷ്യോളജിയുടെ മൂന്ന് പ്രായോഗിക തലങ്ങൾ (Basic, Applied & Clinical Sociology)</h2>
+<table>
+  <thead>
+    <tr>
+      <th>മാനദണ്ഡം</th>
+      <th>Basic / Pure Sociology</th>
+      <th>Applied Sociology</th>
+      <th>Clinical Sociology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>പ്രധാന ലക്ഷ്യം</strong></td>
+      <td>അറിവ് നിർമ്മാണം (Knowledge generation and theoretical understanding).</td>
+      <td>സാമൂഹിക പ്രശ്ന പരിഹാരം (Policy design, program evaluation, problem-solving).</td>
+      <td>നേരിട്ടുള്ള ചികിത്സാ ഇടപെടൽ (Therapeutic intervention, direct clinical practice).</td>
+    </tr>
+    <tr>
+      <td><strong>ഉപയോക്താക്കൾ</strong></td>
+      <td>അക്കാദമിക് പണ്ഡിതർ, സർവ്വകലാശാലകൾ, ശാസ്ത്രജ്ഞർ.</td>
+      <td>സർക്കാരുകൾ, എൻ.ജി.ഒകൾ, ആസൂത്രണ കമ്മീഷനുകൾ, കോർപ്പറേറ്റുകൾ.</td>
+      <td>വ്യക്തികൾ, കുടുംബങ്ങൾ, കമ്മ്യൂണിറ്റികൾ, മാനസികാരോഗ്യ കേന്ദ്രങ്ങൾ.</td>
+    </tr>
+    <tr>
+      <td><strong>ഉദാഹരണം</strong></td>
+      <td>ദാരിദ്ര്യത്തിന്റെ ഘടനാപരമായ കാരണങ്ങളെക്കുറിച്ചുള്ള ഗവേഷണ പ്രബന്ധം.</td>
+      <td>ദാരിദ്ര്യ നിർമ്മാർജ്ജന പദ്ധതികളുടെ (ഉദാ: തൊഴിലുറപ്പ്) ഫലപ്രാപ്തി വിലയിരുത്തൽ.</td>
+      <td>കുടുംബ കലഹങ്ങൾ പരിഹരിക്കാൻ സോഷ്യൽ വർക്കർ നടത്തുന്ന കൗൺസിലിംഗ്.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. ശാസ്ത്രീയ ഗവേഷണത്തിന്റെ 7 ഘട്ടങ്ങൾ (The 7-Step Scientific Research Process)</h2>
+<div class="diagram-container">
+  <div class="diagram-title">സോഷ്യോളജിക്കൽ റിസർച്ച് സൈക്കിൾ (Sociological Research Process)</div>
+  <div class="flow-chart">
+    <div class="flow-step">1. പ്രശ്ന നിർവ്വചനം<small>Formulating Problem</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">2. സാഹിത്യ അവലോകനം<small>Literature Review</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">3. സിദ്ധാന്ത രൂപീകരണം<small>Hypothesis</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">4. റിസർച്ച് ഡിസൈൻ<small>Research Design</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">5. വിവര ശേഖരണം<small>Data Collection</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">6. ഡാറ്റാ അപഗ്രഥനം<small>Data Analysis</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">7. നിഗമനവും റിപ്പോർട്ടും<small>Report & Conclusion</small></div>
+  </div>
+</div>
+
+<h2>5. ഗവേഷണ ധാർമ്മികത (Research Ethics in Sociology)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Ethical Mandates:</strong> Sociological research must strictly protect the dignity, safety, and privacy of human subjects. The core ethical pillars are:
+    <ul>
+      <li><strong>Informed Consent:</strong> Subjects must voluntarily agree to participate after being fully briefed on the research purpose and risks.</li>
+      <li><strong>Anonymity & Confidentiality:</strong> Identities of participants must never be revealed; data must be secured and coded.</li>
+      <li><strong>Protection from Harm:</strong> Research must not inflict physical, psychological, legal, or social damage on respondents.</li>
+      <li><strong>Value Neutrality & Integrity:</strong> Researchers must disclose funding sources and avoid manipulating findings to suit personal biases.</li>
+    </ul>
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>പ്രധാന ഗവേഷണ ധാർമ്മികതകൾ:</strong> മനുഷ്യരെ പഠനവിധേയമാക്കുമ്പോൾ സോഷ്യോളജിസ്റ്റുകൾ പാലിക്കേണ്ട പ്രധാന നിയമങ്ങൾ:
+    <ul>
+      <li><strong>അറിവോടെയുള്ള സമ്മതം (Informed Consent):</strong> പഠനത്തിന്റെ ലക്ഷ്യങ്ങളെക്കുറിച്ചും അപകടസാധ്യതകളെക്കുറിച്ചും വ്യക്തമായി ധരിപ്പിച്ച ശേഷമുള്ള സ്വമേധയാ ഉള്ള സമ്മതം.</li>
+      <li><strong>രഹസ്യാത്മകത (Confidentiality & Anonymity):</strong> പ്രതികരണക്കാരുടെ പേരുവിവരങ്ങൾ ഒരു കാരണവശാലും പരസ്യപ്പെടുത്തരുത്; വിവരങ്ങൾ സുരക്ഷിതമായി സൂക്ഷിക്കണം.</li>
+      <li><strong>ദ്രോഹങ്ങളിൽ നിന്നുള്ള സംരക്ഷണം:</strong> ഗവേഷണം മൂലം ആളുകൾക്ക് മാനസികമോ ശാരീരികമോ നിയമപരമോ ആയ ഒരു ദോഷവും ഉണ്ടാകരുത്.</li>
+      <li><strong>വസ്തുനിഷ്ഠതയും നിഷ്പക്ഷതയും (Value Neutrality):</strong> ഗവേഷകൻ സ്വന്തം മുൻവിധികളോ പക്ഷപാതങ്ങളോ ഗവേഷണ ഫലങ്ങളിൽ കൂട്ടിക്കലർത്തരുത്.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>6. എൽ.എം.എസ് ചോദ്യോത്തരങ്ങൾ (Module 2 Key Questions & Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. What is the fundamental difference between Basic, Applied, and Clinical Sociology? / പ്യുവർ, അപ്ലൈഡ്, ക്ലിനിക്കൽ സോഷ്യോളജികൾ തമ്മിലുള്ള വ്യത്യാസമെന്ത്?</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> <strong>Basic Sociology</strong> focuses purely on expanding academic knowledge and formulating general social laws without immediate practical application. <strong>Applied Sociology</strong> uses sociological knowledge to address real-world community problems, evaluate government programs, and advise policy makers. <strong>Clinical Sociology</strong> engages in direct therapeutic intervention and planned counseling to solve specific problems for individuals, families, or small organizations.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> <strong>പ്യുവർ സോഷ്യോളജി</strong> പെട്ടെന്നുള്ള പ്രായോഗിക ലക്ഷ്യമില്ലാതെ സൈദ്ധാന്തിക അറിവ് നിർമ്മിക്കുന്നതിലും നിയമങ്ങൾ കണ്ടെത്തുന്നതിലും ശ്രദ്ധ കേന്ദ്രീകരിക്കുന്നു. <strong>അപ്ലൈഡ് സോഷ്യോളജി</strong> സാമൂഹിക പ്രശ്നങ്ങൾ പരിഹരിക്കാനും സർക്കാർ നയങ്ങൾ വിലയിരുത്താനും അറിവുകൾ പ്രയോഗിക്കുന്നു. <strong>ക്ലിനിക്കൽ സോഷ്യോളജി</strong> വ്യക്തികൾക്കും കുടുംബങ്ങൾക്കും കൗൺസിലിംഗും ചികിത്സാപരമായ ഇടപെടലുകളും നടത്തി നേരിട്ട് മാറ്റങ്ങൾ വരുത്തുന്നു.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. Contrast Quantitative and Qualitative research methods in sociology. / ക്വാണ്ടിറ്റേറ്റീവ്, ക്വാളിറ്റേറ്റീവ് ഗവേഷണ രീതികൾ തമ്മിൽ താരതമ്യം ചെയ്യുക.</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> <strong>Quantitative methods</strong> (e.g. structured questionnaires, statistical surveys) collect numerical data to identify patterns, test hypotheses, and make mathematical generalizations across large representative samples. <strong>Qualitative methods</strong> (e.g. participant observation, unstructured in-depth interviews, ethnography) focus on deep textual, symbolic, and interpretive meanings from the subjective perspective of participants.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> <strong>ക്വാണ്ടിറ്റേറ്റീവ് രീതികൾ</strong> (സർവേകൾ, ചോദ്യാവലികൾ) സംഖ്യാപരമായ വിവരങ്ങൾ ശേഖരിച്ച് ഗണിതശാസ്ത്ര വിശകലനത്തിലൂടെ സാമാന്യവൽക്കരണം നടത്തുന്നു. <strong>ക്വാളിറ്റേറ്റീവ് രീതികൾ</strong> (നിരീക്ഷണം, ആഴത്തിലുള്ള അഭിമുഖങ്ങൾ) ആളുകളുടെ ആത്മനിഷ്ഠമായ അനുഭവങ്ങളും ചിന്തകളും അവ നൽകുന്ന അർത്ഥങ്ങളും ആഴത്തിൽ മനസ്സിലാക്കാൻ ശ്രമിക്കുന്നു.</div>
+</div>
+
+<h2>7. പരീക്ഷാ ബഹുവിശേഷ ചോദ്യങ്ങൾ (Module 2 Examination MCQs)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">1. Which sociological perspective views society as an organic system of interrelated parts working for equilibrium? / സമൂഹത്തെ പരസ്പര ബന്ധിതമായ ഒരു ജൈവിക ഘടനയായി കാണുന്ന വീക്ഷണം ഏതാണ്?</div>
+    <div class="q-options">
+      A) Conflict Theory / കോൺഫ്ലിക്റ്റ് സിദ്ധാന്തം<br>
+      B) Structural Functionalism / സ്ട്രക്ചറൽ ഫങ്ഷണലിസം<br>
+      C) Symbolic Interactionism / സിംബോളിക് ഇന്ററാക്ഷനിസം<br>
+      D) Post-modernism / പോസ്റ്റ്-മോഡേണിസം
+    </div>
+    <div class="q-ans">Answer: B) Structural Functionalism / സ്ട്രക്ചറൽ ഫങ്ഷണലിസം</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Functionalism (Durkheim, Parsons) conceptualizes society as integrated institutions functioning for stability.<br>
+      <strong>ML:</strong> സമൂഹത്തിലെ സ്ഥാപനങ്ങൾ സ്ഥിരതയ്ക്കായി ഒത്തുപ്രവർത്തിക്കുന്നു എന്ന് വാദിക്കുന്നത് ഫങ്ഷണലിസമാണ്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. Robert K. Merton introduced which pair of concepts regarding institutional functions? / സ്ഥാപന ധർമ്മങ്ങളെക്കുറിച്ച് റോബർട്ട് കെ. മെർട്ടൺ അവതരിപ്പിച്ച സങ്കല്പങ്ങൾ ഏവ?</div>
+    <div class="q-options">
+      A) Primary and Secondary / പ്രൈമറി, സെക്കൻഡറി<br>
+      B) Manifest and Latent functions / പ്രകടിത, അന്തർലീന ധർമ്മങ്ങൾ<br>
+      C) Material and Non-material / മെറ്റീരിയൽ, നോൺ-മെറ്റീരിയൽ<br>
+      D) Pure and Applied / പ്യുവർ, അപ്ലൈഡ്
+    </div>
+    <div class="q-ans">Answer: B) Manifest and Latent functions / പ്രകടിത, അന്തർലീന ധർമ്മങ്ങൾ</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Merton identified manifest (intended) and latent (unintended) functions alongside dysfunctions.<br>
+      <strong>ML:</strong> പ്രകടിത ധർമ്മങ്ങളും (Manifest) അന്തർലീന ധർമ്മങ്ങളും (Latent) മെർട്ടന്റെ പ്രധാന സംഭാവനയാണ്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. What is the fundamental ethical mandate requiring voluntary subject agreement after full disclosure? / വിവരങ്ങൾ പൂർണ്ണമായി മനസ്സിലാക്കിയ ശേഷം സ്വമേധയാ സമ്മതം നൽകുന്ന ധാർമ്മിക തത്ത്വം ഏത്?</div>
+    <div class="q-options">
+      A) Peer Review / പിയർ റിവ്യൂ<br>
+      B) Informed Consent / അറിവോടെയുള്ള സമ്മതം (Informed Consent)<br>
+      C) Secondary Analysis / സെക്കൻഡറി അനാലിസിസ്<br>
+      D) Statistical Significance / സ്റ്റാറ്റിസ്റ്റിക്കൽ സിഗ്നിഫിക്കൻസ്
+    </div>
+    <div class="q-ans">Answer: B) Informed Consent / അറിവോടെയുള്ള സമ്മതം</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Informed consent ensures subjects voluntarily participate with full awareness of research objectives and rights.<br>
+      <strong>ML:</strong> പഠനത്തെക്കുറിച്ച് പൂർണ്ണമായി അറിഞ്ഞുകൊണ്ടുള്ള പങ്കാളിയുടെ സ്വമേധയാ ഉള്ള സമ്മതമാണിത്.
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. സോഷ്യോളജി പഠന സഹായി · Introduction to Sociology (SOC1CJ101)</span>
+    <span>സമ്പൂർണ്ണ മലയാള പരിഭാഷ, ചോദ്യോത്തരങ്ങൾ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

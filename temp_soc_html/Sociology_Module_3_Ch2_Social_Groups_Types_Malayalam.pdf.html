@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 3 · അധ്യായം 3.2: സാമൂഹിക ഗ്രൂപ്പുകൾ: തരങ്ങൾ</title>
+  <style>
+    :root {
+      --c1: #581c87;
+      --c2: #7e22ce;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #581c87), var(--c2, #7e22ce));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(88, 28, 135, 0.2);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f3e8ff;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #e9d5ff;
+}
+
+.badge {
+  display: inline-block;
+  background: #faf5ff;
+  color: #6b21a8;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #d8b4fe;
+}
+
+h2 {
+  color: var(--c1, #581c87);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #7e22ce;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #faf5ff;
+  border-left: 4px solid var(--c2, #7e22ce);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-purple {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+/* Diagrams & Visual Charts */
+.diagram-container {
+  background: #ffffff;
+  border: 1.5px solid #e9d5ff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.05);
+}
+
+.diagram-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 11pt;
+  color: #581c87;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.flow-step {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border: 1.5px solid #c084fc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #581c87;
+  min-width: 130px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(107, 33, 168, 0.08);
+}
+
+.flow-step small {
+  display: block;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #6b21a8;
+  margin-top: 4px;
+}
+
+.flow-arrow {
+  color: #9333ea;
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+.tree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.tree-card {
+  background: #fdf4ff;
+  border: 1px solid #d8b4fe;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.tree-card h4 {
+  margin: 0 0 6px 0;
+  color: #6b21a8;
+  font-size: 10pt;
+  font-weight: 700;
+  border-bottom: 1px solid #e9d5ff;
+  padding-bottom: 4px;
+}
+
+.tree-card p {
+  margin: 0;
+  font-size: 9pt;
+  line-height: 1.6;
+  color: #334155;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f3e8ff;
+  color: #581c87;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #faf5ff;
+}
+
+/* Bilingual Entry Blocks */
+.bilingual-entry {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-left: 4px solid #7e22ce;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(107, 33, 168, 0.04);
+}
+
+.bilingual-entry .en-part {
+  color: #1e293b;
+  font-size: 10pt;
+  line-height: 1.7;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.bilingual-entry .ml-part {
+  color: #3b0764;
+  font-size: 10pt;
+  line-height: 1.85;
+}
+
+.en-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #bfdbfe;
+}
+
+.ml-tag {
+  display: inline-block;
+  background: #faf5ff;
+  color: #7e22ce;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #d8b4fe;
+}
+
+/* LMS Question & Answer Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #7e22ce;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #581c87;
+  margin-bottom: 8px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  background: #faf5ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #9333ea;
+}
+
+/* MCQ Cards */
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #581c87;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #f3e8ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid #d8b4fe;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Module 3: Individual and Society)</h4>
+    <h1>മൊഡ്യൂൾ 3 · അധ്യായം 3.2: സാമൂഹിക ഗ്രൂപ്പുകൾ: തരങ്ങൾ</h1>
+    <div class="meta">Module 3 · Chapter 3.2: Social Groups: Characteristics, Typologies & Significance · Calicut University B.A. Sociology FYUGP · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Chapter Overview:</strong> Human beings are quintessential group animals; society exists in and through groups. This chapter analyzes the definition and characteristics of social groups, contrasts groups with aggregates and categories, evaluates Charles Horton Cooley's seminal distinction between Primary and Secondary groups, examines William Graham Sumner's In-Group vs. Out-Group, investigates Herbert Hyman and Robert K. Merton's Reference Group theory, and explores Ferdinand Tönnies' Gemeinschaft and Gesellschaft.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>അധ്യായ അവലോകനം:</strong> മനുഷ്യൻ സാമൂഹിക ഗ്രൂപ്പുകളിലൂടെയാണ് ജീവിക്കുന്നത്. സാമൂഹിക ഗ്രൂപ്പിന്റെ നിർവ്വചനവും സവിശേഷതകളും, ആൾക്കൂട്ടങ്ങളും (Aggregates) കാറ്റഗറികളും തമ്മിലുള്ള വ്യത്യാസം, സി.എച്ച്. കൂലിയുടെ പ്രൈമറി-സെക്കൻഡറി ഗ്രൂപ്പുകൾ, ഡബ്ല്യു.ജി. സംനറുടെ ഇൻ-ഗ്രൂപ്പ് vs ഔട്ട്-ഗ്രൂപ്പ്, മെർട്ടന്റെ റഫറൻസ് ഗ്രൂപ്പ് സിദ്ധാന്തം, ഫെർഡിനാൻഡ് ടോണീസിന്റെ ജെമൈൻഷാഫ്റ്റ്-ജെസൽഷാഫ്റ്റ് മാതൃകകൾ എന്നിവ ഈ അധ്യായത്തിൽ വിശദമായി പഠിക്കുന്നു.
+  </div>
+</div>
+
+<div class="card">
+  <h4 class="sub-head" style="margin-top:0;">പ്രധാന ശേഷികൾ (Core Competencies):</h4>
+  <ul>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Define Social Groups:</strong> Distinguish true sociological groups (with mutual awareness and we-feeling) from mere demographic aggregates and categories.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>ഗ്രൂപ്പിന്റെ നിർവ്വചനം:</strong> പരസ്പര അവബോധവും 'നമ്മൾ' എന്ന ബോധവുമുള്ള (We-feeling) യഥാർത്ഥ സാമൂഹിക ഗ്രൂപ്പുകളെ ആൾക്കൂട്ടങ്ങളിൽ നിന്നും തിരിച്ചറിയുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Compare Primary & Secondary Groups:</strong> Master Cooley's criteria regarding group size, emotional intimacy, physical proximity, and durability.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>പ്രൈമറി vs സെക്കൻഡറി ഗ്രൂപ്പുകൾ:</strong> സി.എച്ച്. കൂലിയുടെ മുഖാമുഖ കൂട്ടായ്മകളും (Primary) ഔദ്യോഗികവും വിശാലവുമായ സെക്കൻഡറി ഗ്രൂപ്പുകളും താരതമ്യം ചെയ്യുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Evaluate In-Group vs Out-Group Dynamics:</strong> Analyze how ethnocentrism, group loyalty, and social distance shape inter-group relations.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>ഇൻ-ഗ്രൂപ്പും ഔട്ട്-ഗ്രൂപ്പും:</strong> സ്വന്തം ഗ്രൂപ്പിനോടുള്ള കൂറും അന്യഗ്രൂപ്പുകളോടുള്ള അകൽച്ചയും (Ethnocentrism) എങ്ങനെ പ്രവർത്തിക്കുന്നു എന്ന് വിലയിരുത്തുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Apply Reference Group Theory:</strong> Examine Merton's concepts of anticipatory socialization and relative deprivation.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>റഫറൻസ് ഗ്രൂപ്പ് സിദ്ധാന്തം:</strong> വ്യക്തികൾ തങ്ങളുടെ വിലയിരുത്തലിനായി ഉപയോഗിക്കുന്ന റഫറൻസ് ഗ്രൂപ്പുകളെയും ആന്റിസിപ്പേറ്ററി സോഷ്യലൈസേഷനെയും വിശകലനം ചെയ്യുക.</div>
+    </li>
+  </ul>
+</div>
+
+<h2>2. ആശയ അടിത്തറയും നിർവ്വചനങ്ങളും (Definitions & Characteristics)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Definitions of Social Group:</strong><br>
+    • <strong>MacIver and Page:</strong> "By social group we mean any collection of human beings who are brought into social relationships with one another." Relationships must be reciprocal and conscious.<br>
+    • <strong>Harry M. Johnson:</strong> A social group is an aggregate of individuals who share a system of social interaction with common norms and roles.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>സാമൂഹിക ഗ്രൂപ്പിന്റെ നിർവ്വചനങ്ങൾ:</strong><br>
+    • <strong>മാക്ഐവർ & പേജ്:</strong> "പരസ്പരം സാമൂഹിക ബന്ധങ്ങളിൽ ഏർപ്പെട്ടിരിക്കുന്ന മനുഷ്യരുടെ ഏതൊരു കൂട്ടായ്മയെയും സാമൂഹിക ഗ്രൂപ്പ് എന്ന് വിളിക്കാം." ഈ ബന്ധങ്ങൾ ബോധപൂർവ്വവും പരസ്പരമുള്ളതുമായിരിക്കണം.<br>
+    • <strong>ഹാരി എം. ജോൺസൺ:</strong> പൊതുവായ മാനദണ്ഡങ്ങളും റോളുകളും പങ്കുവെക്കുന്ന സാമൂഹിക പ്രതിപ്രവർത്തന സംവിധാനമുള്ള വ്യക്തികളുടെ കൂട്ടായ്മയാണ് ഗ്രൂപ്പ്.
+  </div>
+</div>
+
+<div class="card-purple">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Essential Characteristics of a Social Group:</strong><br>
+    1. <strong>Reciprocal Interaction:</strong> Members must interact and possess mutual awareness.<br>
+    2. <strong>'We-Feeling' (Sense of Belonging):</strong> Shared solidarity distinguishing members from non-members.<br>
+    3. <strong>Common Norms & Values:</strong> Internal rules structuring member conduct.<br>
+    4. <strong>Shared Objectives:</strong> Collective goals uniting the membership.<br>
+    5. <strong>Group Structure:</strong> Differentiation of roles and statuses within the group.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>സാമൂഹിക ഗ്രൂപ്പിന്റെ പ്രധാന സവിശേഷതകൾ:</strong><br>
+    1. <strong>പരസ്പര പ്രതിപ്രവർത്തനം:</strong> അംഗങ്ങൾ പരസ്പരം അറിയുന്നവരും ഇടപെടുന്നവരുമായിരിക്കണം.<br>
+    2. <strong>'നമ്മൾ' എന്ന ബോധം (We-feeling):</strong> അംഗങ്ങൾ തമ്മിലുള്ള ആത്മബന്ധവും ഗ്രൂപ്പ് ഐക്യവും.<br>
+    3. <strong>പൊതുവായ മാനദണ്ഡങ്ങൾ (Norms):</strong> ഗ്രൂപ്പിന്റെ പെരുമാറ്റച്ചട്ടങ്ങൾ.<br>
+    4. <strong>പൊതു ലക്ഷ്യങ്ങൾ:</strong> അംഗങ്ങളെ ഒന്നിപ്പിക്കുന്ന കൂട്ടായ താത്പര്യങ്ങൾ.<br>
+    5. <strong>ഗ്രൂപ്പ് ഘടന:</strong> അംഗങ്ങൾക്കിടയിലെ പദവികളും റോളുകളും.
+  </div>
+</div>
+
+<h2>3. പ്രൈമറി ഗ്രൂപ്പുകളും സെക്കൻഡറി ഗ്രൂപ്പുകളും (Primary vs Secondary Groups: C.H. Cooley)</h2>
+<table>
+  <thead>
+    <tr>
+      <th>മാനദണ്ഡം</th>
+      <th>Primary Group (പ്രൈമറി ഗ്രൂപ്പ്)</th>
+      <th>Secondary Group (സെക്കൻഡറി ഗ്രൂപ്പ്)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>വലിപ്പം (Size)</strong></td>
+      <td>ചെറുത് (Small size, few members).</td>
+      <td>വലുത് (Large, dispersed membership).</td>
+    </tr>
+    <tr>
+      <td><strong>ബന്ധങ്ങളുടെ സ്വഭാവം</strong></td>
+      <td>മുഖാമുഖം, വ്യക്തിപരം, അടുപ്പമുള്ളത് (Intimate, face-to-face).</td>
+      <td>ഔദ്യോഗികം, പരോക്ഷം, വ്യക്തിപരമല്ലാത്തത് (Impersonal, formal).</td>
+    </tr>
+    <tr>
+      <td><strong>ലക്ഷ്യം (Orientation)</strong></td>
+      <td>ബന്ധം തന്നെ ഒരു ലക്ഷ്യമാണ് (End in itself).</td>
+      <td>ലക്ഷ്യം നേടാനുള്ള ഉപകരണം മാത്രം (Means to an end).</td>
+    </tr>
+    <tr>
+      <td><strong>നിയന്ത്രണം (Control)</strong></td>
+      <td>അനൗപചാരികം (Customs, love, folkways).</td>
+      <td>ഔപചാരികം (Written rules, contracts, laws).</td>
+    </tr>
+    <tr>
+      <td><strong>ഉദാഹരണങ്ങൾ</strong></td>
+      <td>കുടുംബം, കളിക്കൂട്ടുകാർ, അടുത്ത സുഹൃത്തുക്കൾ.</td>
+      <td>രാഷ്ട്രീയ പാർട്ടികൾ, കമ്പനികൾ, ലേബർ യൂണിയനുകൾ.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. ഇൻ-ഗ്രൂപ്പ്, ഔട്ട്-ഗ്രൂപ്പ് & റഫറൻസ് ഗ്രൂപ്പുകൾ (In-Group, Out-Group & Reference Groups)</h2>
+<div class="tree-grid">
+  <div class="tree-card" style="border-left: 4px solid #7e22ce;">
+    <h4>1. In-Group vs Out-Group (W.G. Sumner, 1906)</h4>
+    <p><strong>English:</strong> In <em>Folkways</em> (1906), Sumner distinguished the <strong>In-Group ('We-group')</strong>, to which an individual belongs and feels intense loyalty, sympathy, and camaraderie, from the <strong>Out-Group ('They-group')</strong>, toward which one feels social distance, indifference, avoidance, or hostility. This dynamic fosters <em>Ethnocentrism</em> — the belief that one's own group is superior to all others.<br>
+    <strong>മലയാളം:</strong> 1906-ൽ ഡബ്ല്യു.ജി. സംനർ അവതരിപ്പിച്ച തരംതിരിവ്. <strong>ഇൻ-ഗ്രൂപ്പ് ('നമ്മുടെ ഗ്രൂപ്പ്')</strong> അംഗങ്ങൾക്ക് പരസ്പരം സ്നേഹവും ഐക്യവും തോന്നുന്ന സ്വന്തം ഗ്രൂപ്പാണ്. <strong>ഔട്ട്-ഗ്രൂപ്പ് ('അന്യരുടെ ഗ്രൂപ്പ്')</strong> അകൽച്ചയും ശത്രുതയും തോന്നുന്ന പുറത്തുള്ള ഗ്രൂപ്പുകളാണ്. ഇത് പലപ്പോഴും സ്വന്തം ഗ്രൂപ്പാണ് ശ്രേഷ്ഠം എന്ന എത്‌നോസെൻട്രിസത്തിലേക്ക് (Ethnocentrism) നയിക്കുന്നു.</p>
+  </div>
+  <div class="tree-card" style="border-left: 4px solid #059669;">
+    <h4>2. Reference Groups (Herbert Hyman, 1942 & Robert K. Merton, 1950)</h4>
+    <p><strong>English:</strong> A reference group is any group that an individual uses as a standard for evaluating their own attitudes, status, and behavior, whether they are a member of that group or not. Merton emphasized <em>Anticipatory Socialization</em> — individuals adopting the values of a group they aspire to join — and <em>Relative Deprivation</em> — feelings of dissatisfaction arising from comparing oneself with privileged reference groups.<br>
+    <strong>മലയാളം:</strong> വ്യക്തികൾ തങ്ങളുടെ പെരുമാറ്റത്തെയും പദവിയെയും വിലയിരുത്താൻ മാനദണ്ഡമായി കാണുന്ന ഗ്രൂപ്പുകളെയാണ് റഫറൻസ് ഗ്രൂപ്പ് എന്ന് വിളിക്കുന്നത്. ഒരാൾ ആ ഗ്രൂപ്പിൽ അംഗമായിരിക്കണമെന്ന് നിർബന്ധമില്ല. മെർട്ടന്റെ ആന്റിസിപ്പേറ്ററി സോഷ്യലൈസേഷനും (മുന്നൊരുക്കം) റിലേറ്റീവ് ഡിപ്രിവേഷനും (താരതമ്യേനയുള്ള അതൃപ്തി) ഇതിന്റെ ഭാഗമാണ്.</p>
+  </div>
+</div>
+
+<h2>5. എൽ.എം.എസ് ചോദ്യോത്തരങ്ങൾ (LMS Check Your Progress Questions & Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. Define a primary group and state its main characteristics with examples. / പ്രൈമറി ഗ്രൂപ്പ് നിർവ്വചിച്ച് അതിന്റെ പ്രധാന സവിശേഷതകൾ ഉദാഹരണ സഹിതം വ്യക്തമാക്കുക.</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> Coined by <strong>Charles Horton Cooley</strong> in 1909 (<em>Social Organization</em>), a <strong>primary group</strong> is characterized by intimate, face-to-face association, small size, continuous physical proximity, emotional bonds, and mutual sympathy. The relationship is an end in itself rather than a means to an end. Classic examples include the <strong>family</strong>, childhood playgroup, and intimate friendship cliques.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> 1909-ൽ <strong>സി.എച്ച്. കൂലി</strong> അവതരിപ്പിച്ച ആശയമാണ് <strong>പ്രൈമറി ഗ്രൂപ്പ്</strong>. മുഖാമുഖമുള്ള സമ്പർക്കം, ചെറിയ വലിപ്പം, ആഴത്തിലുള്ള വൈകാരിക അടുപ്പം, അനൗപചാരിക നിയന്ത്രണം എന്നിവയാണ് ഇതിന്റെ സവിശേഷതകൾ. ബന്ധം മറ്റെന്തിന്റെയെങ്കിലും ലക്ഷ്യത്തിനല്ല, ബന്ധം തന്നെയാണ് ലക്ഷ്യം. <strong>കുടുംബം</strong>, ബാല്യകാല കളിസംഘങ്ങൾ, അടുത്ത സുഹൃദ്‌വലയം എന്നിവ ഉദാഹരണങ്ങളാണ്.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. What is a reference group? Explain Robert K. Merton's contribution to reference group theory. / റഫറൻസ് ഗ്രൂപ്പ് എന്നാൽ എന്ത്? മെർട്ടന്റെ സംഭാവന വ്യക്തമാക്കുക.</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> First coined by Herbert Hyman (1942) and elaborated by <strong>Robert K. Merton</strong> (1950), a <strong>reference group</strong> is a social group that serves as a comparative benchmark for individuals in shaping their behavior, identity, and aspirations, even if they are not formal members. Merton introduced <em>anticipatory socialization</em> (learning the culture of a non-membership group in advance) and <em>relative deprivation</em> (perceiving oneself as disadvantaged compared to a chosen reference group).</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> ഹെർബർട്ട് ഹൈമാൻ അവതരിപ്പിക്കുകയും <strong>റോബർട്ട് കെ. മെർട്ടൺ</strong> വികസിപ്പിക്കുകയും ചെയ്ത ആശയമാണ് <strong>റഫറൻസ് ഗ്രൂപ്പ്</strong>. ഒരാൾ അതിൽ അംഗമായിരിക്കണമെന്ന് നിർബന്ധമില്ലാതെ, തന്റെ സ്വഭാവവും ജീവിതരീതിയും രൂപപ്പെടുത്താൻ മാതൃകയാക്കുന്ന ഗ്രൂപ്പാണിത്. ഒരു ഗ്രൂപ്പിൽ ചേരാൻ വേണ്ടി മുൻകൂട്ടി അവരുടെ സംസ്കാരം പഠിക്കുന്ന ആന്റിസിപ്പേറ്ററി സോഷ്യലൈസേഷനും താൻ മറ്റുള്ളവരെക്കാൾ പിന്നിലാണെന്ന റിലേറ്റീവ് ഡിപ്രിവേഷനും മെർട്ടന്റെ കണ്ടെത്തലുകളാണ്.</div>
+</div>
+
+<h2>6. പരീക്ഷാ ബഹുവിശേഷ ചോദ്യങ്ങൾ (Chapter 3.2 Examination MCQs)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">1. Who introduced the concept of 'Primary Group' in sociological literature? / സോഷ്യോളജിയിൽ 'പ്രൈമറി ഗ്രൂപ്പ്' എന്ന ആശയം അവതരിപ്പിച്ചത് ആര്?</div>
+    <div class="q-options">
+      A) Émile Durkheim / എമിൽ ഡർക്കൈം<br>
+      B) Charles Horton Cooley / സി.എച്ച്. കൂലി<br>
+      C) W.G. Sumner / ഡബ്ല്യു.ജി. സംനർ<br>
+      D) Karl Marx / കാൾ മാർക്സ്
+    </div>
+    <div class="q-ans">Answer: B) Charles Horton Cooley / സി.എച്ച്. കൂലി</div>
+    <div class="q-exp">
+      <strong>EN:</strong> C.H. Cooley introduced the concept in his 1909 book 'Social Organization'.<br>
+      <strong>ML:</strong> 1909-ൽ 'സോഷ്യൽ ഓർഗനൈസേഷൻ' എന്ന പുസ്തകത്തിലാണ് കൂലി ഈ ആശയം അവതരിപ്പിച്ചത്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. In-Group and Out-Group classification was formulated by: / ഇൻ-ഗ്രൂപ്പ്, ഔട്ട്-ഗ്രൂപ്പ് വർഗ്ഗീകരണം മുന്നോട്ടുവെച്ചത് ആര്?</div>
+    <div class="q-options">
+      A) Robert K. Merton / റോബർട്ട് കെ. മെർട്ടൺ<br>
+      B) William Graham Sumner / ഡബ്ല്യു.ജി. സംനർ<br>
+      C) Ferdinand Tönnies / ഫെർഡിനാൻഡ് ടോണീസ്<br>
+      D) George Simmel / ജോർജ്ജ് സിമ്മൽ
+    </div>
+    <div class="q-ans">Answer: B) William Graham Sumner / ഡബ്ല്യു.ജി. സംനർ</div>
+    <div class="q-exp">
+      <strong>EN:</strong> W.G. Sumner formulated In-Group and Out-Group in his 1906 classic 'Folkways'.<br>
+      <strong>ML:</strong> 1906-ൽ 'ഫോക്ക് വേയ്സ്' എന്ന പുസ്തകത്തിലാണ് സംനർ ഈ തരംതിരിവ് നടത്തിയത്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. What is the process of learning values of a group one aspires to join called? / ചേരാൻ ആഗ്രഹിക്കുന്ന ഗ്രൂപ്പിന്റെ മൂല്യങ്ങൾ മുൻകൂട്ടി പഠിക്കുന്നതിന് എന്ത് പേര് പറയുന്നു?</div>
+    <div class="q-options">
+      A) Resocialization / റീസോഷ്യലൈസേഷൻ<br>
+      B) Anticipatory Socialization / ആന്റിസിപ്പേറ്ററി സോഷ്യലൈസേഷൻ<br>
+      C) Negative Socialization / നെഗറ്റീവ് സോഷ്യലൈസേഷൻ<br>
+      D) Reverse Socialization / റിവേഴ്സ് സോഷ്യലൈസേഷൻ
+    </div>
+    <div class="q-ans">Answer: B) Anticipatory Socialization / ആന്റിസിപ്പേറ്ററി സോഷ്യലൈസേഷൻ</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Merton identified anticipatory socialization as preparing for future reference group membership.<br>
+      <strong>ML:</strong> ഭാവിയിൽ ചേരാൻ ഉദ്ദേശിക്കുന്ന ഗ്രൂപ്പിന്റെ രീതികൾ മുൻകൂട്ടി സ്വായത്തമാക്കുന്നതിനെ ആന്റിസിപ്പേറ്ററി സോഷ്യലൈസേഷൻ എന്ന് വിളിക്കുന്നു.
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. സോഷ്യോളജി പഠന സഹായി · Introduction to Sociology (SOC1CJ101)</span>
+    <span>സമ്പൂർണ്ണ മലയാള പരിഭാഷ, ചോദ്യോത്തരങ്ങൾ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthem by Leonard Cohen — Full Screen PDF Class | Academic Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #070a13; color: #f1f5f9; }
+        .malayalam { font-family: 'Noto Sans Malayalam', sans-serif; }
+        .cinematic-title { font-family: 'Cinzel', serif; letter-spacing: 0.12em; }
+        .glass-cinema { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        @keyframes soundWave { 0%, 100% { height: 6px; } 50% { height: 26px; } }
+        .wave-bar { width: 4px; border-radius: 9999px; background: linear-gradient(to top, #f59e0b, #ef4444); animation: soundWave 1.2s ease-in-out infinite; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between select-none relative bg-black">
+
+    <header class="relative z-20 flex items-center justify-between px-8 py-4 border-b border-white/10 bg-black/60 backdrop-blur-md">
+        <div class="flex items-center gap-4">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-600 to-red-600 flex items-center justify-center text-white text-lg shadow-lg shadow-amber-500/20">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <div>
+                <span class="text-xs font-bold tracking-widest text-amber-400 uppercase">Calicut University • ENG1FA101(1B) • Module 1 Chapter 2</span>
+                <h1 class="cinematic-title text-xl font-black text-white tracking-wide">ANTHEM — LEONARD COHEN</h1>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full text-xs">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                <span class="text-slate-300 font-semibold">Arun (Midhun)</span>
+                <span class="text-white/30">•</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-400 animate-pulse"></span>
+                <span class="text-slate-300 font-semibold">Anjali (Sobhana)</span>
+            </div>
+
+            <div class="bg-amber-500/10 border border-amber-500/30 text-amber-300 px-4 py-1.5 rounded-full text-xs font-bold font-mono">
+                PAGE <span id="pageIndexText">01</span> / 08
+            </div>
+
+            <button onclick="toggleFullScreen()" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-slate-300 transition-all">
+                <i class="fa-solid fa-expand"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="relative z-10 flex-1 flex items-center justify-center p-4 md:p-8">
+        <div class="relative w-full max-w-7xl aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl border border-white/10 glass-cinema flex flex-col justify-between">
+            <div class="absolute inset-0">
+                <img id="currentSlideImg" src="video_slides/slide_1.png" alt="PDF Presentation Slide" class="w-full h-full object-contain bg-slate-950">
+            </div>
+
+            <div class="relative z-20 mt-auto p-6 bg-gradient-to-t from-black via-black/85 to-transparent">
+                <div class="bg-black/75 backdrop-blur-md border border-white/15 p-4 rounded-xl shadow-2xl flex items-center gap-4">
+                    <div id="speakerAvatar" class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 to-amber-700 flex items-center justify-center text-white font-bold text-lg shadow-md shrink-0">
+                        A
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span id="speakerName" class="text-xs font-bold uppercase tracking-wider text-amber-400">Arun</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-0.5 rounded text-slate-300 font-mono">Host</span>
+                        </div>
+                        <p id="subMalayalam" class="malayalam text-base md:text-lg font-bold text-white leading-snug">
+                            "Hello Everyone, ellarkum sugamalle! നമ്മുടെ പുതിയ ലേണിംഗ് പോഡ്‌കാസ്റ്റ് സീരീസിലേക്ക് എല്ലാവർക്കും ഹൃദ്യമായ സ്വാഗതം..."
+                        </p>
+                    </div>
+                    <div id="waveVisualizer" class="flex items-center gap-1 h-6 opacity-0 transition-opacity">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar" style="animation-delay: 0.2s;"></div>
+                        <div class="wave-bar" style="animation-delay: 0.4s;"></div>
+                        <div class="wave-bar" style="animation-delay: 0.1s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="relative z-20 px-8 py-3 border-t border-white/10 bg-black/60 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+            <div class="flex items-center gap-2 overflow-x-auto py-1">
+                <button onclick="goToPage(1)" class="page-btn px-3 py-1 rounded text-xs font-bold bg-amber-500 text-black">1. Bio & Refrain</button>
+                <button onclick="goToPage(2)" class="page-btn px-3 py-1 rounded text-xs font-bold bg-white/5 hover:bg-white/10 text-slate-300">2. Lyrics 1-4</button>
+                <button onclick="goToPage(3)" class="page-btn px-3 py-1 rounded text-xs font-bold bg-white/5 hover:bg-white/10 text-slate-300">3. Lyrics 5-6</button>
+                <button onclick="goToPage(4)" class="page-btn px-3 py-1 rounded text-xs font-bold bg-white/5 hover:bg-white/10 text-slate-300">4. Interpretation</button>
+                <button onclick="goToPage(5)" class="page-btn px-3 py-1 rounded text-xs font-bold bg-white/5 hover:bg-white/10 text-slate-300">5. Themes 1 & 2</button>
+                <button onclick="goToPage(6)" class="page-btn px-3 py-1 rounded text-xs font-bold bg-white/5 hover:bg-white/10 text-slate-300">6. Resistance</button>
+                <button onclick="goToPage(7)" class="page-btn px-3 py-1 rounded text-xs font-bold bg-white/5 hover:bg-white/10 text-slate-300">7. MCQs 1-8</button>
+                <button onclick="goToPage(8)" class="page-btn px-3 py-1 rounded text-xs font-bold bg-white/5 hover:bg-white/10 text-slate-300">8. Essays & Outro</button>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button onclick="prevPage()" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-slate-300">
+                    <i class="fa-solid fa-backward-step"></i>
+                </button>
+                <button id="playBtn" onclick="togglePlay()" class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 to-rose-600 flex items-center justify-center text-white text-lg shadow-lg hover:scale-105 active:scale-95 transition-all">
+                    <i id="playIcon" class="fa-solid fa-play ml-0.5"></i>
+                </button>
+                <button onclick="nextPage()" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-slate-300">
+                    <i class="fa-solid fa-forward-step"></i>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <span id="currentTime" class="text-xs font-mono text-slate-400">00:00</span>
+                <div class="w-32 h-1.5 bg-white/10 rounded-full overflow-hidden relative cursor-pointer" onclick="seek(event)">
+                    <div id="progBar" class="h-full bg-amber-500 w-0"></div>
+                </div>
+                <span id="durTime" class="text-xs font-mono text-slate-500">09:14</span>
+            </div>
+        </div>
+    </footer>
+
+    <audio id="masterAudio" src="Anthem_Leonard_Cohen_Malayalam_Master.wav" preload="metadata"></audio>
+
+    <script>
+        const PAGE_STARTS = [0, 89.78, 184.84, 249.92, 316.66, 354.34, 377.23, 463.04];
+        let currentPage = 1;
+        const audio = document.getElementById('masterAudio');
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const progBar = document.getElementById('progBar');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durTimeEl = document.getElementById('durTime');
+        const slideImg = document.getElementById('currentSlideImg');
+        const pageIndexText = document.getElementById('pageIndexText');
+        const wave = document.getElementById('waveVisualizer');
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playIcon.className = "fa-solid fa-pause";
+                wave.style.opacity = "1";
+            } else {
+                audio.pause();
+                playIcon.className = "fa-solid fa-play ml-0.5";
+                wave.style.opacity = "0";
+            }
+        }
+
+        function goToPage(pg) {
+            currentPage = pg;
+            slideImg.src = `video_slides/slide_${pg}.png`;
+            pageIndexText.textContent = pg < 10 ? '0' + pg : pg;
+            audio.currentTime = PAGE_STARTS[pg - 1];
+            updateButtons();
+        }
+
+        function nextPage() {
+            if (currentPage < 8) goToPage(currentPage + 1);
+        }
+
+        function prevPage() {
+            if (currentPage > 1) goToPage(currentPage - 1);
+        }
+
+        function updateButtons() {
+            document.querySelectorAll('.page-btn').forEach((btn, idx) => {
+                if (idx + 1 === currentPage) {
+                    btn.className = "page-btn px-3 py-1 rounded text-xs font-bold bg-amber-500 text-black";
+                } else {
+                    btn.className = "page-btn px-3 py-1 rounded text-xs font-bold bg-white/5 hover:bg-white/10 text-slate-300";
+                }
+            });
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            const cur = audio.currentTime;
+            const dur = audio.duration || 554.4;
+            progBar.style.width = ((cur / dur) * 100) + '%';
+            
+            const m = Math.floor(cur / 60);
+            const s = Math.floor(cur % 60);
+            currentTimeEl.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+
+            for (let i = PAGE_STARTS.length - 1; i >= 0; i--) {
+                if (cur >= PAGE_STARTS[i]) {
+                    if (currentPage !== i + 1) {
+                        currentPage = i + 1;
+                        slideImg.src = `video_slides/slide_${currentPage}.png`;
+                        pageIndexText.textContent = currentPage < 10 ? '0' + currentPage : currentPage;
+                        updateButtons();
+                    }
+                    break;
+                }
+            }
+        });
+
+        audio.addEventListener('loadedmetadata', () => {
+            const d = audio.duration;
+            const dm = Math.floor(d / 60);
+            const ds = Math.floor(d % 60);
+            durTimeEl.textContent = `${dm.toString().padStart(2, '0')}:${ds.toString().padStart(2, '0')}`;
+        });
+
+        function seek(e) {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const clickPos = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = clickPos * (audio.duration || 554.4);
+        }
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+            }
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                togglePlay();
+            } else if (e.code === 'ArrowRight') {
+                nextPage();
+            } else if (e.code === 'ArrowLeft') {
+                prevPage();
+            }
+        });
+    </script>
+</body>
+</html>

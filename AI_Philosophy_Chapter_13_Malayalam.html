@@ -203,6 +203,29 @@
         color: #047857;
     }
     </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
 </head>
 <body>
 
@@ -998,13 +1021,18 @@ eg A)$. In AI, this forms the theoretical backbone of <b>Automated Theorem Prove
                 <!-- 12 -->
                 <div class="knock-card rose">
                     <div class="knock-title">12. Cakraka as Circular Deadlock</div>
-                    <div class="knock-desc-en">Circular reasoning loops ($A ightarrow B ightarrow C ightarrow A$) map to fatal deadlocks and infinite loops in code.</div>
+                    <div class="knock-desc-en">Circular reasoning loops ($A 
+ightarrow B 
+ightarrow C 
+ightarrow A$) map to fatal deadlocks and infinite loops in code.</div>
                     <div class="knock-desc-ml">ചക്രകം എന്നത് കമ്പ്യൂട്ടർ പ്രോഗ്രാമുകളിലെ ഇൻഫിനിറ്റ് ലൂപ്പിനും ഡെഡ്‌ലോക്കിനും സമാനമായ യുക്തിദോഷമാണ്.</div>
                 </div>
                 <!-- 13 -->
                 <div class="knock-card blue">
                     <div class="knock-title">13. Anavasthā as Stack Overflow</div>
-                    <div class="knock-desc-en">Unbounded infinite regress ($A ightarrow B ightarrow C \dots$) maps to memory stack exhaustion in recursive computing.</div>
+                    <div class="knock-desc-en">Unbounded infinite regress ($A 
+ightarrow B 
+ightarrow C \dots$) maps to memory stack exhaustion in recursive computing.</div>
                     <div class="knock-desc-ml">അനവസ്ഥ എന്നത് അവസാനമില്ലാതെ തുടർന്ന് മെമ്മറി തകരുന്ന സ്റ്റാക്ക് ഓവർഫ്ലോയ്ക്ക് തുല്യമാണ്.</div>
                 </div>
                 <!-- 14 -->
@@ -1058,5 +1086,24 @@ eg A)$. In AI, this forms the theoretical backbone of <b>Automated Theorem Prove
     </div>
 </div>
 
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Philosophy of AI - Chapter 17: Embedding AI in Social Relations</title>
+    <style>
+
+    @page {
+        size: A4 portrait;
+        margin: 5.5mm 6.5mm;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans', 'Noto Sans Malayalam', 'Segoe UI', Tahoma, sans-serif;
+        font-size: 8.35pt;
+        line-height: 1.45;
+        color: #1e293b;
+        background: #ffffff;
+    }
+    .page-container {
+        width: 100%;
+        height: 100%;
+        max-height: 278mm;
+        page-break-after: always;
+        page-break-inside: avoid;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    .page-header {
+        border-bottom: 2px solid #0284c7;
+        padding-bottom: 3.5px;
+        margin-bottom: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .header-left .module-title {
+        font-size: 7.2pt;
+        font-weight: 700;
+        color: #0369a1;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 1.5px;
+    }
+    .header-left .chapter-title {
+        font-size: 11pt;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0;
+        line-height: 1.2;
+    }
+    .header-right {
+        text-align: right;
+    }
+    .header-right .page-badge {
+        background: #0284c7;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 7.5pt;
+        padding: 2.5px 7px;
+        border-radius: 4px;
+        display: inline-block;
+    }
+    .header-right .topic-sub {
+        font-size: 6.8pt;
+        color: #64748b;
+        margin-top: 2px;
+        font-weight: 500;
+    }
+
+    .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 6.5px;
+    }
+
+    /* Dual bilingual cards */
+    .concept-card {
+        border-radius: 5px;
+        border: 1px solid #cbd5e1;
+        background: #ffffff;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    .card-top-bar {
+        padding: 3.5px 8px;
+        font-weight: 700;
+        font-size: 8.4pt;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #ffffff;
+    }
+    .card-top-bar.eng-bar {
+        background: #1e3a8a; /* Sapphire Blue */
+    }
+    .card-top-bar.mal-bar {
+        background: #047857; /* Forest Emerald Green */
+    }
+    .card-body {
+        padding: 6.5px 8.5px;
+        font-size: 8.15pt;
+        line-height: 1.45;
+        color: #1e293b;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .lead-text {
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 2px;
+    }
+    .bullet-list {
+        margin: 0;
+        padding-left: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5px;
+    }
+    .bullet-list li {
+        margin: 0;
+    }
+    .bullet-list li strong {
+        color: #0f172a;
+    }
+    
+    .example-box {
+        background: #f8fafc;
+        border-left: 3.5px solid #0284c7;
+        padding: 4px 7.5px;
+        border-radius: 3px;
+        font-size: 7.9pt;
+        line-height: 1.4;
+        margin-top: 2.5px;
+    }
+    .example-box.mal-ex {
+        border-left-color: #059669;
+        background: #f0fdf4;
+    }
+    .example-title {
+        font-weight: 700;
+        color: #0369a1;
+        font-size: 7.9pt;
+        margin-bottom: 1.5px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .example-title.mal-ex-title {
+        color: #047857;
+    }
+
+    .key-points-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5.5px;
+        margin-top: 2px;
+    }
+    .point-box {
+        background: #f1f5f9;
+        border-radius: 4px;
+        padding: 4.5px 6.5px;
+        border: 1px solid #e2e8f0;
+        font-size: 7.8pt;
+        line-height: 1.35;
+    }
+    .point-box strong {
+        color: #1e293b;
+        display: block;
+        font-size: 8pt;
+        margin-bottom: 1px;
+    }
+
+    /* Page footer */
+    .page-footer {
+        border-top: 1px solid #cbd5e1;
+        padding-top: 3.5px;
+        margin-top: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 6.9pt;
+        color: #64748b;
+    }
+    .page-footer .footer-left {
+        font-weight: 600;
+        color: #475569;
+    }
+    .page-footer .footer-right {
+        font-weight: 700;
+        color: #0284c7;
+    }
+
+    /* Page 10 20-box grid */
+    .grid-20 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 4.5px 6px;
+        height: 100%;
+    }
+    .card-20 {
+        border-radius: 4.5px;
+        border: 1px solid #cbd5e1;
+        padding: 4.5px 6.5px;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-size: 7.45pt;
+        line-height: 1.32;
+    }
+    .card-20.c-blue {
+        border-top: 3px solid #1e3a8a;
+        background: #f8fafc;
+    }
+    .card-20.c-green {
+        border-top: 3px solid #047857;
+        background: #f0fdf4;
+    }
+    .card-20.c-amber {
+        border-top: 3px solid #d97706;
+        background: #fffbeb;
+    }
+    .card-20.c-purple {
+        border-top: 3px solid #7c3aed;
+        background: #faf5ff;
+    }
+    .card-20.c-teal {
+        border-top: 3px solid #0d9488;
+        background: #f0fdfa;
+    }
+    .card-20-header {
+        font-weight: 800;
+        font-size: 7.8pt;
+        margin-bottom: 2px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+    .c-blue .card-20-header { color: #1e3a8a; }
+    .c-green .card-20-header { color: #047857; }
+    .c-amber .card-20-header { color: #b45309; }
+    .c-purple .card-20-header { color: #6d28d9; }
+    .c-teal .card-20-header { color: #0f766e; }
+
+    .card-20-mal {
+        color: #047857;
+        font-weight: 700;
+        font-size: 7.4pt;
+        margin-bottom: 1.5px;
+    }
+    .card-20-desc {
+        color: #334155;
+        font-size: 7.35pt;
+        line-height: 1.32;
+    }
+    .card-20-ex {
+        margin-top: 2px;
+        font-size: 7.1pt;
+        background: rgba(0,0,0,0.03);
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #475569;
+    }
+    
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <div class="page-header">
+            <div class="header-left">
+                <div class="module-title">MODULE 4 &bull; CHAPTER 4 &bull; SECTION 4.2(B)</div>
+                <h1 class="chapter-title">Embedding AI in Social Relations: Embedded Devices & Embedded AI</h1>
+            </div>
+            <div class="header-right">
+                <span class="page-badge">PAGE 01 / 10</span>
+                <div class="topic-sub">Embedded Hardware & Intelligence</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- English Section -->
+            <div class="concept-card">
+                <div class="card-top-bar eng-bar">
+                    <span>1. Foundations of Embedded Devices & Technical Architecture</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">Hardware Architecture & Computing Constraints</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">An embedded device is defined as an apparatus incorporating a computer system designed to perform specialized functions with real-time computing capabilities.</div>
+                    <ul class="bullet-list">
+                        <li><strong>Specialized vs General-Purpose:</strong> Unlike general-purpose computers designed for unbounded computational versatility, an embedded device is compact and addresses dedicated, narrow requirements such as device control or dedicated processing.</li>
+                        <li><strong>Processing Constraints & Microcontrollers:</strong> Operates using microcontrollers or specialized processors with lower clock speeds and power draw, where memory capacity is physically constrained by device dimensions.</li>
+                        <li><strong>Lightweight Software Architecture:</strong> Runs dedicated, lightweight embedded operating systems (RTOS) executing stripped-down application software engineered purely for real-time responsiveness and deterministic task execution.</li>
+                        <li><strong>Socio-Technical Evolution:</strong> Advances in silicon engineering and miniature sensors have transformed traditionally passive devices into intelligent embedded systems, bringing computation directly into physical human spaces.</li>
+                    </ul>
+                    <div class="example-box">
+                        <div class="example-title"><span>Example:</span> Microcontroller vs Personal Computer</div>
+                        An electronic washing machine or microwave incorporates a dedicated microcontroller executing a real-time control loop to monitor water levels, heat, and motor rotation, contrasting completely with an open-ended personal computer running arbitrary multi-threaded software.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Malayalam Section -->
+            <div class="concept-card">
+                <div class="card-top-bar mal-bar">
+                    <span>ഉൾച്ചേർത്ത ഉപകരണങ്ങളും എംബഡഡ് ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസും</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">സാങ്കേതിക നിർവചനവും സവിശേഷതകളും</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">പ്രത്യേക ലക്ഷ്യങ്ങൾക്കായി തത്സമയ കമ്പ്യூട്ടിംഗ് നിർവഹിക്കുന്നതിന് ഉപകരണങ്ങൾക്കുള്ളിൽ കമ്പ്യൂട്ടർ സിസ്റ്റം ഉൾച്ചേർക്കുന്നതിനെയാണ് 'എംബഡഡ് ഡിവൈസ്' (Embedded Device) എന്ന് വിളിക്കുന്നത്.</div>
+                    <ul class="bullet-list">
+                        <li><strong>പ്രത്യേക ദൗത്യങ്ങൾ:</strong> പൊതുവായ ആവശ്യങ്ങൾക്കുള്ള കമ്പ്യൂട്ടറുകളിൽ നിന്ന് വ്യത്യസ്തമായി, ഇവ വളരെ ഒതുക്കമുള്ളതും (compact) കൃത്യമായി നിർവ്വചിക്കപ്പെട്ട പ്രത്യേക ജോലികൾ മാത്രം ചെയ്യുന്നതുമാണ്.</li>
+                        <li><strong>മൈക്രോകൺട്രോളറുകളുടെ പ്രവർത്തനം:</strong> ഉപകരണത്തിന്റെ വലിപ്പ പരിമിതികൾ കാരണം ഇവയിൽ പരിമിതമായ മെമ്മറിയും കാര്യക്ഷമതയുമുള്ള മൈക്രോകൺട്രോളറുകൾ ഉപയോഗിക്കുന്നു.</li>
+                        <li><strong>ഭാരം കുറഞ്ഞ സോഫ്റ്റ്‌വെയർ (Lightweight OS):</strong> പ്രത്യേക ജോലികൾ മാത്രം വേഗത്തിൽ നിർവഹിക്കാൻ രൂപകൽപ്പന ചെയ്ത ഒതുക്കമുള്ള ഓപ്പറേറ്റിംഗ് സിസ്റ്റങ്ങളും സോഫ്റ്റ്‌വെയറുകളുമാണ് ഇതിൽ പ്രവർത്തിക്കുന്നത്.</li>
+                        <li><strong>എംബഡഡ് AI-യുടെ ആവിർഭാവം:</strong> മൈക്രോപ്രോസസ്സറുകളിലും സെൻസറുകളിലുമുണ്ടായ മുന്നേറ്റം വഴി ഉപകരണങ്ങൾക്ക് സ്വയം തീരുമാനമെടുക്കാനും വിവരങ്ങൾ അപഗ്രഥിക്കാനുമുള്ള ബുദ്ധിപരമായ ശേഷി ലഭിക്കുന്നു.</li>
+                    </ul>
+                    <div class="example-box mal-ex">
+                        <div class="example-title mal-ex-title"><span>ഉദാഹരണം:</span> വാഷിംഗ് മെഷീനുകളിലെ മൈക്രോകൺട്രോളർ</div>
+                        ഒരു വാഷിംഗ് മെഷീനിലെ മൈക്രോകൺട്രോളർ തുണിയുടെ ഭാരവും വെള്ളത്തിന്റെ അളവും തത്സമയം പരിശോധിച്ച് പ്രവർത്തിക്കുമ്പോൾ, അത് എംബഡഡ് സിസ്റ്റത്തിന്റെ കൃത്യമായ ലക്ഷ്യബോധമുള്ള പ്രവർത്തനത്തിന് ഉത്തമ ഉദാഹരണമാണ്.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</span>
+            <span class="footer-right">Section 4.2(B) &bull; Page 1</span>
+        </div>
+    </div>
+    
+    <div class="page-container">
+        <div class="page-header">
+            <div class="header-left">
+                <div class="module-title">MODULE 4 &bull; CHAPTER 4 &bull; SECTION 4.2(B)</div>
+                <h1 class="chapter-title">Embodied Intelligence & Biological Analogy in Embedded Systems</h1>
+            </div>
+            <div class="header-right">
+                <span class="page-badge">PAGE 02 / 10</span>
+                <div class="topic-sub">Embodied AI & System-on-a-Chip</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- English Section -->
+            <div class="concept-card">
+                <div class="card-top-bar eng-bar">
+                    <span>2. Embodied Intelligence: Physical Casings & Environmental Interaction</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">Physical Manifestation of AI Agents</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">Embodied intelligence is intricately connected to embedded AI, representing a specialized physical application where intelligence is housed within a physical structure interacting with reality.</div>
+                    <ul class="bullet-list">
+                        <li><strong>Physical Casings & Actuation:</strong> Embodied intelligence possesses explicit specifications for physical casings, sensory inputs, and physical actuators, establishing a tangible presence that actively intervenes in the surrounding physical and social environment.</li>
+                        <li><strong>Subset Relationship:</strong> Within theoretical taxonomy, embodied intelligence constitutes a functional subset of embedded intelligence, combining embedded processing with physical embodiment.</li>
+                        <li><strong>Biological Evolution Analogy:</strong> Embedded AI has transitioned from static, simple algorithmic automation into complex, polymorphic architectures that mirror biological evolution, adapting dynamically to environmental variations.</li>
+                        <li><strong>SoC Autonomous Decisions:</strong> In modern smart automation, System-on-a-Chip (SoC) architectures assess real-time sensor streams locally to execute instantaneous decisions without requiring centralized human intervention.</li>
+                    </ul>
+                    <div class="example-box">
+                        <div class="example-title"><span>Example:</span> Intelligent Automated Lighting Systems</div>
+                        Home automation lighting systems utilize infrared sensors connected to a System-on-a-Chip to assess human presence and ambient lux levels, autonomously activating and deactivating illumination through continuous local sensory evaluation.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Malayalam Section -->
+            <div class="concept-card">
+                <div class="card-top-bar mal-bar">
+                    <span>എംബോഡിഡ് ഇന്റലിജൻസും ജൈവ പരിണാമ സമാനതകളും</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">ഭൗതിക സാന്നിധ്യവും സിസ്റ്റം-ഓൺ-എ-ചിപ്പ് (SoC) ഘടനയും</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">എംബഡഡ് കൃത്രിമബുദ്ധിയുടെ ഒരു പ്രത്യേക രൂപമാണ് 'എംബോഡിഡ് ഇന്റലിജൻസ്' (Embodied Intelligence); ഇത് ഭൗതിക ശരീരത്തോടുകൂടി ചുറ്റുപാടുകളുമായി നേരിട്ട് സംവദിക്കുന്നു.</div>
+                    <ul class="bullet-list">
+                        <li><strong>ഭൗതിക ഘടനയും സെൻസറുകളും:</strong> സെൻസറുകളും ചലനശേഷിയുള്ള ഘടകങ്ങളും (actuators) ഒരു ഭൗതിക കൂടിൽ (physical casing) സംയോജിപ്പിച്ച് ചുറ്റുപാടുകളുമായി നേരിട്ട് ഇടപഴകാൻ ഇവയ്ക്ക് സാധിക്കുന്നു.</li>
+                        <li><strong>ഉപവിഭാഗം (Subset):</strong> സാങ്കേതിക ശാഖയെന്ന നിലയിൽ, എംബോഡിഡ് ഇന്റലിജൻസ് എന്നത് എംബഡഡ് ഇന്റലിജൻസിന്റെ ഒരു സവിശേഷ ഉപവിഭാഗമായി നിലകൊള്ളുന്നു.</li>
+                        <li><strong>ജൈവ പരിണാമവുമായുള്ള സാദൃശ്യം:</strong> ലളിതമായ ഘടനകളിൽ നിന്നും സങ്കീർണ്ണവും ബഹുരൂപവുമായ (polymorphic) രൂപങ്ങളിലേക്കുള്ള എംബഡഡ് സിസ്റ്റങ്ങളുടെ മാറ്റം ജൈവ പരിണാമത്തിന് സമാനമാണ്.</li>
+                        <li><strong>SoC വഴിയുള്ള സ്വയംഭരണ തീരുമാനങ്ങൾ:</strong> സിസ്റ്റം-ഓൺ-എ-ചിപ്പ് (SoC) ഘടകങ്ങൾ ഉപയോഗിച്ച് സെൻസറുകൾ നൽകുന്ന വിവരങ്ങൾ തത്സമയം അപഗ്രഥിച്ച് ഉപകരണങ്ങൾ ബാഹ്യ ഇടപെടലുകളില്ലാതെ സ്വതന്ത്രമായി തീരുമാനമെടുക്കുന്നു.</li>
+                    </ul>
+                    <div class="example-box mal-ex">
+                        <div class="example-title mal-ex-title"><span>ഉദാഹരണം:</span> സ്മാർട്ട് ഹോം ലൈറ്റിംഗ് സംവിധാനം</div>
+                        മുറിയിൽ മനുഷ്യരുടെ സാന്നിധ്യമുണ്ടോയെന്ന് സെൻസറുകൾ വഴി തിരിച്ചറിഞ്ഞ്, സ്വിച്ചുകൾ സ്വയം ഓണാക്കുകയും ആളുകൾ പോകുമ്പോൾ ഓഫ് ചെയ്യുകയും ചെയ്യുന്ന ഇന്റലിജന്റ് ലൈറ്റിംഗ് സിസ്റ്റം ഒരു SoC-യുടെ സ്വതന്ത്ര തീരുമാനത്തിന് ഉദാഹരണമാണ്.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</span>
+            <span class="footer-right">Section 4.2(B) &bull; Page 2</span>
+        </div>
+    </div>
+    
+    <div class="page-container">
+        <div class="page-header">
+            <div class="header-left">
+                <div class="module-title">MODULE 4 &bull; CHAPTER 4 &bull; SECTION 4.2(B)</div>
+                <h1 class="chapter-title">Real-Time Embedded Applications: Image Recognition & Autonomous Vehicles</h1>
+            </div>
+            <div class="header-right">
+                <span class="page-badge">PAGE 03 / 10</span>
+                <div class="topic-sub">Public Safety & The Driverless Future</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- English Section -->
+            <div class="concept-card">
+                <div class="card-top-bar eng-bar">
+                    <span>3. High-Speed Image Recognition & Autonomous Transportation</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">Real-Time Edge Analytics & Automotive Safety</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">Advancements in embedded hardware enable ultra-compact imaging devices running real-time AI algorithms, redefining physical surveillance and transport mobility.</div>
+                    <ul class="bullet-list">
+                        <li><strong>Miniature Edge Vision:</strong> Miniaturized embedded imaging devices combine superior onboard compute power with real-time computer vision algorithms to detect dangerous activities and threats in public spaces instantly.</li>
+                        <li><strong>Critical Automotive Embedded Subsystems:</strong> Autonomous vehicles rely entirely on embedded systems for mission-critical operations including real-time navigation, airbag deployment timing, and anti-lock braking systems (ABS).</li>
+                        <li><strong>Billions in Corporate R&D:</strong> Major global technology enterprises including Google, Tesla, and Uber are investing billions of dollars in autonomous research and development to realize a fully driverless future.</li>
+                        <li><strong>Realistic Societal Horizon:</strong> Despite hyper-accelerated laboratory development, fully autonomous vehicles will not replace conventional human driving overnight; widespread highway integration will require an estimated 10 to 15 years.</li>
+                    </ul>
+                    <div class="example-box">
+                        <div class="example-title"><span>Example:</span> Anti-Lock Braking & Autonomous Emergency Braking</div>
+                        Automotive embedded microcontrollers monitor individual wheel rotation speeds hundreds of times per second, executing pulsed hydraulic braking to prevent skidding during sudden obstacles, saving lives through real-time autonomous actuation.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Malayalam Section -->
+            <div class="concept-card">
+                <div class="card-top-bar mal-bar">
+                    <span>തത്സമയ ഇമേജ് തിരിച്ചറിയലും സ്വയംനിയന്ത്രിത വാഹനങ്ങളും</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">പൊതുസുരക്ഷയും ഡ്രൈവർരഹിത ഭാവിയുടെ സാധ്യതകളും</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">വലിപ്പക്കുറവും ഉയർന്ന പ്രോസസ്സിംഗ് ശേഷിയുമുള്ള എംബഡഡ് സാങ്കേതികവിദ്യ വീഡിയോകളിലെ ദൃശ്യങ്ങൾ തത്സമയം തിരിച്ചറിയാനും വാഹനങ്ങൾ സ്വയം നിയന്ത്രിക്കാനും വഴിയൊരുക്കുന്നു.</div>
+                    <ul class="bullet-list">
+                        <li><strong>തത്സമയ ഇമേജ് റെക്കഗ്നിഷൻ:</strong> വലിപ്പം കുറഞ്ഞ അത്യാധുനിക ക്യാമറകളും AI അൽഗോരിതങ്ങളും ചേർന്ന് പൊതുസ്ഥലങ്ങളിലെ അസ്വാഭാവികമോ അപകടകരമോ ആയ സാഹചര്യങ്ങൾ ഞൊടിയിടയിൽ തിരിച്ചറിയുന്നു.</li>
+                        <li><strong>വാഹനങ്ങളിലെ നിർണായക നിയന്ത്രണങ്ങൾ:</strong> നാവിഗേഷൻ, എയർബാഗ് വിന്യാസം, ആന്റി-ലോക്ക് ബ്രേക്കിംഗ് സിസ്റ്റം (ABS) തുടങ്ങിയ അതീവ സുരക്ഷാ പ്രവർത്തനങ്ങൾ നിർവഹിക്കുന്നത് എംബഡഡ് സിസ്റ്റങ്ങളാണ്.</li>
+                        <li><strong>കോർപ്പറേറ്റ് നിക്ഷേപങ്ങൾ:</strong> ഡ്രൈവർരഹിത ഗതാഗതം യാഥാർത്ഥ്യമാക്കാൻ ഗൂഗിൾ, ടെസ്‌ല, ഊബർ തുടങ്ങിയ പ്രമുഖ കമ്പനികൾ കോടിക്കണക്കിന് ഡോളറാണ് ഗവേഷണങ്ങൾക്കായി ചെലവഴിക്കുന്നത്.</li>
+                        <li><strong>ഭാവിയുടെ സമയപരിധി:</strong> ആളുകൾ ഡ്രൈവിംഗ് പൂർണ്ണമായി ഉപേക്ഷിക്കാൻ സമയമെടുക്കും; ഹൈവേകളിൽ സ്വയംനിയന്ത്രിത വാഹനങ്ങൾ സാർവ്വത്രികമാകാൻ ഇനിയും 10 മുതൽ 15 വർഷം വരെ എടുത്തേക്കാം.</li>
+                    </ul>
+                    <div class="example-box mal-ex">
+                        <div class="example-title mal-ex-title"><span>ഉദാഹരണം:</span> വാഹനങ്ങളിലെ എമർജൻസി ബ്രേക്കിംഗ് സംവിധാനം</div>
+                        മുൻപിൽ പെട്ടെന്ന് തടസ്സങ്ങൾ ഉണ്ടാകുമ്പോൾ കാറിലെ സെൻസറുകൾ അപകടസാധ്യത സ്വയം തിരിച്ചറിഞ്ഞ് തത്സമയം ബ്രേക്ക് പ്രവർത്തിപ്പിച്ച് അപകടം ഒഴിവാക്കുന്നത് എംബഡഡ് ഇന്റലിജൻസിന് മികച്ച ഉദാഹരണമാണ്.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</span>
+            <span class="footer-right">Section 4.2(B) &bull; Page 3</span>
+        </div>
+    </div>
+    
+    <div class="page-container">
+        <div class="page-header">
+            <div class="header-left">
+                <div class="module-title">MODULE 4 &bull; CHAPTER 4 &bull; SECTION 4.2(B)</div>
+                <h1 class="chapter-title">Virtual Assistants as Social Intermediaries & Relational Dynamics</h1>
+            </div>
+            <div class="header-right">
+                <span class="page-badge">PAGE 04 / 10</span>
+                <div class="topic-sub">Conversational AI & Interpersonal Norms</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- English Section -->
+            <div class="concept-card">
+                <div class="card-top-bar eng-bar">
+                    <span>4. Conversational Agents: Mediating Human-to-Digital Interaction</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">Voice Interfaces & Social Communication Shifts</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">Virtual assistants such as Siri, Alexa, and Google Assistant operate as conversational AI systems that engage users through natural language voice and text communication.</div>
+                    <ul class="bullet-list">
+                        <li><strong>Routine Task Execution:</strong> They facilitate everyday operations by answering queries, establishing reminders, routing communications, and organizing schedules, integrating deeply into household and workplace environments.</li>
+                        <li><strong>Social Intermediaries:</strong> Virtual assistants serve as cognitive intermediaries between human beings and digital services, progressively altering interpersonal communication habits and organizational rituals.</li>
+                        <li><strong>Altering Social Norms:</strong> By conditioning users to issue verbal commands without social courtesies, conversational agents subtlely reshape interpersonal communication norms, conversational patience, and behavioral expectations.</li>
+                        <li><strong>The Filtering Dilemma:</strong> While automated filtering protects users from malicious scams and harassment, aggressive algorithmic gating risks blocking critical communications from family or friends, causing misunderstandings and emotional isolation.</li>
+                    </ul>
+                    <div class="example-box">
+                        <div class="example-title"><span>Example:</span> Accidental Blocking of Family Emergencies</div>
+                        An AI virtual assistant configured to silence unknown or anomalous incoming contacts may automatically divert an urgent message from an estranged relative's hospital telephone, leading to relationship strain and communicative breakdown.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Malayalam Section -->
+            <div class="concept-card">
+                <div class="card-top-bar mal-bar">
+                    <span>വെർച്വൽ അസിസ്റ്റന്റുകൾ: സാമൂഹിക മധ്യസ്ഥതയും ആശയവിനിമയ മാറ്റങ്ങളും</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">സംഭാഷണ രൂപത്തിലുള്ള AI-യും ബന്ധങ്ങളിലെ സ്വാധീനവും</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">സിരി (Siri), അലക്സ (Alexa), ഗൂഗിൾ അസിസ്റ്റന്റ് തുടങ്ങിയ വെർച്വൽ അസിസ്റ്റന്റുകൾ ശബ്ദത്തിലൂടെയും എഴുത്തിലൂടെയും മനുഷ്യരുമായി സംവദിക്കുന്ന AI സംവിധാനങ്ങളാണ്.</div>
+                    <ul class="bullet-list">
+                        <li><strong>ദൈനംദിന സേവനങ്ങൾ:</strong> ചോദ്യങ്ങൾക്ക് മറുപടി നൽകുക, ഓർമ്മപ്പെടുത്തലുകൾ സജ്ജമാക്കുക, സന്ദേശങ്ങൾ അയക്കുക, ഷെഡ്യൂളുകൾ ക്രമീകരിക്കുക തുടങ്ങിയ ജോലികൾ ചെയ്ത് ഇവ മനുഷ്യരെ സഹായിക്കുന്നു.</li>
+                        <li><strong>സാമൂഹിക മധ്യസ്ഥർ (Social Intermediaries):</strong> മനുഷ്യനും ഡിജിറ്റൽ ലോകത്തിനും ഇടയിലുള്ള ഇടനിലക്കാരായി പ്രവർത്തിച്ചുകൊണ്ട്, ഇവ ആളുകളുടെ പരസ്പര ആശയവിനിമയ ശീലങ്ങളിലും തീരുമാനങ്ങളിലും വലിയ മാറ്റങ്ങൾ വരുത്തുന്നു.</li>
+                        <li><strong>പെരുമാറ്റ രീതികളിലെ മാറ്റങ്ങൾ:</strong> വെർച്വൽ അസിസ്റ്റന്റുകളോട് നിരന്തരം ആജ്ഞാപിക്കുന്ന രീതി കുട്ടികളുടെയും മുതിർന്നവരുടെയും സാധാരണ സംസാരശൈലിയെയും ക്ഷമയെയും ദോഷകരമായി ബാധിച്ചേക്കാം.</li>
+                        <li><strong>ഫിൽട്ടറിംഗ് വെല്ലുവിളികൾ:</strong> അനാവശ്യ കോളുകളും തട്ടിപ്പുകളും തടയാൻ AI സഹായിക്കുമെങ്കിലും, പ്രിയപ്പെട്ടവരിൽ നിന്നുള്ള നിർണായക സന്ദേശങ്ങൾ തെറ്റായി ബ്ലോക്ക് ചെയ്യുന്നത് തെറ്റിദ്ധാരണകൾക്കും ഒറ്റപ്പെടലിനും കാരണമായേക്കാം.</li>
+                    </ul>
+                    <div class="example-box mal-ex">
+                        <div class="example-title mal-ex-title"><span>ഉദാഹരണം:</span> സുപ്രധാന സന്ദേശങ്ങൾ തടസ്സപ്പെടൽ</div>
+                        ഒരു പുതിയ നമ്പറിൽ നിന്ന് കുടുംബാംഗം അയച്ച അടിയന്തിര സന്ദേശം തട്ടിപ്പാണെന്ന് (spam) തെറ്റിദ്ധരിച്ച് AI അസിസ്റ്റന്റ് മാറ്റിനിർത്തുമ്പോൾ, അത് കുടുംബബന്ധങ്ങളിൽ അപ്രതീക്ഷിത വിള്ളലുകൾ ഉണ്ടാക്കുന്നു.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</span>
+            <span class="footer-right">Section 4.2(B) &bull; Page 4</span>
+        </div>
+    </div>
+    
+    <div class="page-container">
+        <div class="page-header">
+            <div class="header-left">
+                <div class="module-title">MODULE 4 &bull; CHAPTER 4 &bull; SECTION 4.2(B)</div>
+                <h1 class="chapter-title">Healthcare AI & Ethical Intermediation in Clinical Care</h1>
+            </div>
+            <div class="header-right">
+                <span class="page-badge">PAGE 05 / 10</span>
+                <div class="topic-sub">Clinical Decision Support & Doctor-Patient Trust</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- English Section -->
+            <div class="concept-card">
+                <div class="card-top-bar eng-bar">
+                    <span>5. AI in Medicine: Diagnostic Precision & Interpersonal Ethics</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">Clinical Diagnostics & Institutional Mediation</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">In healthcare ecosystems, artificial intelligence systems execute disease diagnosis, medical image analysis, patient risk prediction, and hospital resource management.</div>
+                    <ul class="bullet-list">
+                        <li><strong>Diagnostic Decision Support:</strong> AI algorithms detect micro-pathologies in radiology scans and histopathology slides, assisting physicians and healthcare practitioners in diagnostic accuracy and therapeutic workflows.</li>
+                        <li><strong>The Social Intermediary in Medicine:</strong> By standing between patients and clinicians, AI influences diagnoses, treatment pathways, and institutional access to critical intensive care facilities.</li>
+                        <li><strong>Transformation of Clinical Trust:</strong> While AI elevates procedural speed and pattern recognition, it fundamentally alters the therapeutic alliance, potentially eroding human empathy and patient trust in medical intuition.</li>
+                        <li><strong>Ethical Dilemmas of Delegation:</strong> Over-reliance introduces acute ethical hazards including systemic diagnostic bias, loss of practitioner autonomy, and ambiguity regarding malpractice liability in automated misdiagnoses.</li>
+                    </ul>
+                    <div class="example-box">
+                        <div class="example-title"><span>Example:</span> AI Triage & ICU Bed Prioritization</div>
+                        During acute healthcare surges, an automated predictive scoring algorithm ranks patients for ventilator access, placing an algorithmic filter upon human survival decisions where physician moral judgment must retain ultimate authority.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Malayalam Section -->
+            <div class="concept-card">
+                <div class="card-top-bar mal-bar">
+                    <span>ആരോഗ്യരംഗത്തെ AI-യും ചികിത്സാ ബന്ധങ്ങളിലെ ധാർമ്മികതയും</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">രോഗനിർണ്ണയവും ഡോക്ടർ-രോഗി ബന്ധത്തിലെ മാറ്റങ്ങളും</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">രോഗനിർണയം, മെഡിക്കൽ ഇമേജ് പരിശോധന, രോഗസാധ്യത പ്രവചിക്കൽ, ആശുപത്രി വിഭവങ്ങളുടെ വിതരണം എന്നിവയ്ക്കായി ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് വ്യാപകമായി ഉപയോഗിക്കുന്നു.</div>
+                    <ul class="bullet-list">
+                        <li><strong>ചികിത്സാ സഹായം:</strong> എക്സ്-റേ, എം.ആർ.ഐ സ്കാനുകൾ അതിവേഗം പരിശോധിച്ച് സൂക്ഷ്മമായ രോഗലക്ഷണങ്ങൾ കണ്ടെത്താൻ ഡോക്ടർമാരെയും മെഡിക്കൽ വിദഗ്ദ്ധരെയും AI അൽഗോരിതങ്ങൾ സഹായിക്കുന്നു.</li>
+                        <li><strong>സാമൂഹിക ഇടനിലക്കാരൻ:</strong> രോഗിക്കും ഡോക്ടർക്കും ഇടയിൽ ഒരു സാമൂഹിക മധ്യസ്ഥനായി പ്രവർത്തിച്ചുകൊണ്ട്, രോഗനിർണ്ണയത്തിലും ലഭ്യമാകുന്ന ചികിത്സകളിലും AI വലിയ സ്വാധീനം ചെലുത്തുന്നു.</li>
+                        <li><strong>വിശ്വാസ്യതയിലെ മാറ്റങ്ങൾ:</strong> കൃത്യതയും വേഗതയും വർദ്ധിപ്പിക്കുമ്പോഴും, ഡോക്ടറും രോഗിയും തമ്മിലുള്ള ആത്മബന്ധത്തെയും വിശ്വാസത്തെയും ബാധിക്കുമോ എന്ന ആശങ്ക നിലനിൽക്കുന്നു.</li>
+                        <li><strong>ധാർമ്മിക പ്രതിസന്ധികൾ:</strong> നിർണായക മെഡിക്കൽ തീരുമാനങ്ങളിൽ മനുഷ്യന്റെ വിവേചനശേഷി നഷ്ടപ്പെടൽ, അൽഗോരിത പക്ഷപാതം, തെറ്റായ രോഗനിർണയമുണ്ടായാൽ ആര് ഉത്തരവാദി എന്നതുപോലുള്ള പ്രശ്നങ്ങൾ ഉയരുന്നു.</li>
+                    </ul>
+                    <div class="example-box mal-ex">
+                        <div class="example-title mal-ex-title"><span>ഉദാഹരണം:</span> ഐ.സി.യു ബെഡ് വിതരണത്തിലെ അൽഗോരിതം</div>
+                        ആശുപത്രികളിൽ തിരക്ക് കൂടുമ്പോൾ രോഗികളുടെ രക്ഷപ്പെടാനുള്ള സാധ്യത വിലയിരുത്തി ഐ.സി.യു സൗകര്യങ്ങൾ മുൻഗണനാക്രമത്തിൽ അനുവദിക്കാൻ AI നിർദ്ദേശിക്കുമ്പോൾ, ജീവൻ സംബന്ധിച്ച അന്തിമ തീരുമാനം ഡോക്ടർ തന്നെ എടുക്കേണ്ടതുണ്ട്.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</span>
+            <span class="footer-right">Section 4.2(B) &bull; Page 5</span>
+        </div>
+    </div>
+    
+    <div class="page-container">
+        <div class="page-header">
+            <div class="header-left">
+                <div class="module-title">MODULE 4 &bull; CHAPTER 4 &bull; SECTION 4.2(B)</div>
+                <h1 class="chapter-title">Social Media Algorithms & The Curation of Social Reality</h1>
+            </div>
+            <div class="header-right">
+                <span class="page-badge">PAGE 06 / 10</span>
+                <div class="topic-sub">Algorithmic Filters & Deterioration of Social Skills</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- English Section -->
+            <div class="concept-card">
+                <div class="card-top-bar eng-bar">
+                    <span>6. The Three Pillars of Algorithmic Curation & Social Isolation</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">Echo Chambers & Interpersonal Skill Decay</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">Social media recommendation algorithms govern human relational networks through three foundational mechanisms: Who you see, Whom you associate with, and What perspectives you encounter.</div>
+                    <ul class="bullet-list">
+                        <li><strong>Who You See (Content Feeds):</strong> The algorithm determines which stories and posts appear in user feeds, constricting perception of social reality into artificial "filter bubbles" lacking diversity.</li>
+                        <li><strong>Whom You Associate With (Network Formation):</strong> Automated engines recommend friends, followers, or professional contacts based on shared behavioral profiles, narrowing the organic heterogeneity of social circles.</li>
+                        <li><strong>What Perspectives You Encounter (Confirmation Bias):</strong> Content curation prioritizes posts mirroring past engagement, entrenching preconceived ideological dogmas and polarizing societal discourse.</li>
+                        <li><strong>Reduced Social Skills & Isolation:</strong> Augmented dependence on chatbots and virtual intermediaries causes marked deterioration in face-to-face communication, empathy, and social conflict resolution.</li>
+                    </ul>
+                    <div class="example-box">
+                        <div class="example-title"><span>Example:</span> Ideological Echo Chambers in Social Feeds</div>
+                        A social platform algorithm repeatedly feeds hyper-partisan political content to an engaged user, completely shielding them from contrary factual viewpoints and creating an unbridgeable social rift between citizens.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Malayalam Section -->
+            <div class="concept-card">
+                <div class="card-top-bar mal-bar">
+                    <span>സോഷ്യൽ മീഡിയ അൽഗോരിതങ്ങളും സാമൂഹിക നൈപുണ്യങ്ങളുടെ അപചയവും</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">ഫിൽട്ടർ ബബ്ബിളുകളും ഏകാന്തതയുടെ വെല്ലുവിളികളും</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">സോഷ്യൽ മീഡിയ അൽഗോരിതങ്ങൾ മൂന്ന് പ്രധാന ഘടകങ്ങളിലൂടെയാണ് ഉപയോക്താക്കളുടെ സാമൂഹിക യാഥാർത്ഥ്യത്തെയും ബന്ധങ്ങളെയും നിയന്ത്രിക്കുന്നത്.</div>
+                    <ul class="bullet-list">
+                        <li><strong>ആരെ കാണണം (Who you see):</strong> നിങ്ങളുടെ ഫീഡിൽ ഏതെല്ലാം സുഹൃത്തുക്കളുടെ പോസ്റ്റുകൾ വരണമെന്ന് അൽഗോരിതം തീരുമാനിക്കുന്നു; ഇത് ഇതര കാഴ്ചപ്പാടുകൾ മറച്ചുവെച്ച് 'ഫിൽട്ടർ ബബ്ബിൾ' (Filter Bubble) സൃഷ്ടിക്കുന്നു.</li>
+                        <li><strong>ആരുമായി ബന്ധപ്പെടണം (Whom you associate with):</strong> സമാന താല്പര്യങ്ങളും പെരുമാറ്റ രീതികളുമുള്ളവരെ മാത്രം സുഹൃത്തുക്കളായി നിർദ്ദേശിക്കുന്നത് സാമൂഹിക വലയത്തിന്റെ വൈവിധ്യം ഇല്ലാതാക്കുന്നു.</li>
+                        <li><strong>ഏത് വീക്ഷണം ലഭിക്കുന്നു:</strong> മുൻപ് ലൈക്ക് ചെയ്ത പോസ്റ്റുകൾക്ക് സമാനമായവ വീണ്ടും കാണിച്ച് മുൻവിധികളെ (Confirmation bias) ശക്തിപ്പെടുത്തുകയും സമൂഹത്തിൽ ഭിന്നത വളർത്തുകയും ചെയ്യുന്നു.</li>
+                        <li><strong>സാമൂഹിക നൈപുണ്യങ്ങളുടെ അപചയം (Reduced Social Skills):</strong> നേരിട്ടുള്ള സംഭാഷണങ്ങൾക്ക് പകരം ചാറ്റ്‌ബോട്ടുകളെയും സ്ക്രീനുകളെയും ആശ്രയിക്കുന്നത് നേരിട്ട് സംസാരിക്കാനുള്ള കഴിവ് കുറയ്ക്കുകയും ആഴത്തിലുള്ള ഏകാന്തതയിലേക്ക് നയിക്കുകയും ചെയ്യുന്നു.</li>
+                    </ul>
+                    <div class="example-box mal-ex">
+                        <div class="example-title mal-ex-title"><span>ഉദാഹരണം:</span> വ്യക്തിഗത വാർത്താ ഫീഡുകളും ഒറ്റപ്പെടലും</div>
+                        ഒരേ രാഷ്ട്രീയ ചിന്താഗതിയിലുള്ള വാർത്തകൾ മാത്രം അൽഗോരിതം നിരന്തരം കാണിക്കുമ്പോൾ, വ്യത്യസ്ത അഭിപ്രായമുള്ള സുഹൃത്തുക്കളോട് നേരിട്ട് ആരോഗ്യകരമായി സംവദിക്കാൻ കഴിയാതെ ആളുകൾ ഒറ്റപ്പെടുന്ന അവസ്ഥ.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</span>
+            <span class="footer-right">Section 4.2(B) &bull; Page 6</span>
+        </div>
+    </div>
+    
+    <div class="page-container">
+        <div class="page-header">
+            <div class="header-left">
+                <div class="module-title">MODULE 4 &bull; CHAPTER 4 &bull; SECTION 4.2(B)</div>
+                <h1 class="chapter-title">Ethical Safeguards: Autonomy & Upholding Human Dignity</h1>
+            </div>
+            <div class="header-right">
+                <span class="page-badge">PAGE 07 / 10</span>
+                <div class="topic-sub">Safeguarding Autonomy & Moral Agency</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- English Section -->
+            <div class="concept-card">
+                <div class="card-top-bar eng-bar">
+                    <span>7. Preserving Human Autonomy & Moral Agency Against Algorithmic Coercion</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">Free Will Protection & Anti-Manipulation</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">Safeguarding individual autonomy constitutes a fundamental ethical obligation when embedding AI systems into intimate social fabrics and democratic life.</div>
+                    <ul class="bullet-list">
+                        <li><strong>The Nature of Autonomy:</strong> Autonomy denotes the inherent capacity of moral agents to make independent, uncoerced, and informed choices regarding their own lives, convictions, and behavioral paths.</li>
+                        <li><strong>Assistance vs Manipulation:</strong> While well-designed AI aids rational decision-making, covert algorithmic personalization and hyper-targeted nudging risk transforming legitimate persuasion into psychological coercion.</li>
+                        <li><strong>Dark Patterns & Exploitation:</strong> Exploitative design paradigms in advertising and political micro-targeting prey upon cognitive vulnerabilities, undermining authentic human self-determination.</li>
+                        <li><strong>Upholding Human Dignity:</strong> Human dignity demands treating individuals as conscious moral actors possessing intrinsic value, never degrading citizens into mere data commodities or targets for behavioral conversion.</li>
+                    </ul>
+                    <div class="example-box">
+                        <div class="example-title"><span>Example:</span> Micro-Targeted Political Disinformation Campaigns</div>
+                        AI algorithms harvesting behavioral telemetry to blast emotionally manipulative campaign advertisements to psychologically vulnerable voters convert autonomous democratic choice into covert algorithmic coercion.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Malayalam Section -->
+            <div class="concept-card">
+                <div class="card-top-bar mal-bar">
+                    <span>ധാർമ്മിക സുരക്ഷ: വ്യക്തിസ്വാതന്ത്ര്യവും മനുഷ്യന്റെ അന്തസ്സും</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">സ്വയംനിർണ്ണയാവകാശവും ആൽഗോരിത നിർബന്ധിതാവസ്ഥയും</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">സാമൂഹിക ഇടപെടലുകളിൽ AI ഉൾച്ചേർക്കുമ്പോൾ വ്യക്തിസ്വാതന്ത്ര്യവും സ്വയംനിർണ്ണയാവകാശവും (Autonomy) സംരക്ഷിക്കുക എന്നത് ഏറ്റവും പ്രധാനപ്പെട്ട ധാർമ്മിക ബാധ്യതയാണ്.</div>
+                    <ul class="bullet-list">
+                        <li><strong>സ്വയംനിർണ്ണയാവകാശം:</strong> ബാഹ്യ സമ്മർദ്ദങ്ങളില്ലാതെ, സ്വന്തം യുക്തി ഉപയോഗിച്ച് ജീവിതത്തിൽ സ്വതന്ത്രവും ബോധപൂർവ്വവുമായ തീരുമാനങ്ങളെടുക്കാനുള്ള മനുഷ്യന്റെ കഴിവാണ് സ്വയംനിർണ്ണയാവകാശം.</li>
+                        <li><strong>സഹായവും വഞ്ചനയും:</strong> നല്ല രീതിയിൽ നിർമ്മിച്ച AI സഹായിയായി പ്രവർത്തിക്കുമ്പോൾ, അനുചിതമായ അൽഗോരിത പ്രേരണകൾ (nudges) മനുഷ്യന്റെ സ്വതന്ത്ര ഇച്ഛയെ ഹനിക്കുകയും അടിമപ്പെടുത്തുകയും ചെയ്യുന്നു.</li>
+                        <li><strong>ഡാർക്ക് പാറ്റേണുകൾ (Dark Patterns):</strong> പരസ്യങ്ങളിലും തെരഞ്ഞെടുപ്പ് പ്രചാരണങ്ങളിലും ഉപയോക്താക്കളുടെ വൈകാരിക ദൗർബല്യങ്ങളെ ചൂഷണം ചെയ്ത് നടത്തുന്ന ഇടപെടലുകൾ ആളുകളെക്കൊണ്ട് അവിചാരിത തീരുമാനങ്ങൾ എടുപ്പിക്കുന്നു.</li>
+                        <li><strong>മനുഷ്യന്റെ അന്തസ്സ് നിലനിർത്തൽ:</strong> മനുഷ്യരെ വെറും ഡാറ്റാ പോയിന്റുകളായോ ലാഭമുണ്ടാക്കാനുള്ള ഉപകരണങ്ങളായോ കാണാതെ, അന്തസ്സും ആത്മാഭിമാനവുമുള്ള ധാർമ്മിക വ്യക്തികളായി അംഗീകരിക്കണം.</li>
+                    </ul>
+                    <div class="example-box mal-ex">
+                        <div class="example-title mal-ex-title"><span>ഉദാഹരണം:</span> വ്യക്തിഗത വോട്ടർ സ്വാധീനം</div>
+                        സാമൂഹിക മാധ്യമങ്ങളിലെ സ്വകാര്യ വിവരങ്ങൾ അപഗ്രഥിച്ച് തെരഞ്ഞെടുപ്പ് വേളയിൽ വോട്ടർമാരെ വൈകാരികമായി സ്വാധീനിക്കുന്ന പരസ്യങ്ങൾ വഴി വഞ്ചനാപരമായി തീരുമാനങ്ങൾ മാറ്റിയെടുക്കുന്നത് സ്വയംനിർണ്ണയാവകാശത്തിന്റെ ലംഘനമാണ്.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</span>
+            <span class="footer-right">Section 4.2(B) &bull; Page 7</span>
+        </div>
+    </div>
+    
+    <div class="page-container">
+        <div class="page-header">
+            <div class="header-left">
+                <div class="module-title">MODULE 4 &bull; CHAPTER 4 &bull; SECTION 4.2(B)</div>
+                <h1 class="chapter-title">Maintaining Human Accountability & Critical System Resilience</h1>
+            </div>
+            <div class="header-right">
+                <span class="page-badge">PAGE 08 / 10</span>
+                <div class="topic-sub">Human-in-the-Loop & Cyber-Physical Robustness</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- English Section -->
+            <div class="concept-card">
+                <div class="card-top-bar eng-bar">
+                    <span>8. Human-in-the-Loop Governance & Infrastructure Resilience</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">High-Stakes Decision Sovereignty & Cyber Security</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">Retaining ultimate human accountability for consequential decisions represents an irreducible imperative for the ethical governance of artificial intelligence in society.</div>
+                    <ul class="bullet-list">
+                        <li><strong>The Void of Moral Agency:</strong> Artificial intelligence lacks moral consciousness, genuine empathy, and legal liability; it cannot experience guilt, remorse, or legal culpability for catastrophic outcomes.</li>
+                        <li><strong>High-Stakes Decision Discretion:</strong> In domains profoundly touching human life, liberty, and justice (e.g., criminal sentencing, medical triage), AI must remain an advisory instrument, with ultimate discretion retained by humans.</li>
+                        <li><strong>Systemic Security & Resilience:</strong> Embedding AI into vital social arteries—including electrical grids, healthcare networks, transit, and governance—exposes society to catastrophic failure if systems lack cyber resilience.</li>
+                        <li><strong>Defense Against Societal Disruption:</strong> Inadequate resilience invites systemic paralysis, decision hijacking, and social destabilization; systems must be engineered to endure malicious cyberattacks and maintain functionality under duress.</li>
+                    </ul>
+                    <div class="example-box">
+                        <div class="example-title"><span>Example:</span> Judicial Sentencing & Risk Assessment Tools</div>
+                        An AI recidivism algorithm may compute statistical probability distributions, but the human judge must retain sole constitutional authority to examine ethical context, weigh mercy, and deliver the final verdict.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Malayalam Section -->
+            <div class="concept-card">
+                <div class="card-top-bar mal-bar">
+                    <span>മാനുഷിക ഉത്തരവാദിത്തവും നിർണായക സംവിധാനങ്ങളുടെ സുരക്ഷയും</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">ഹ്യൂമൻ-ഇൻ-ദി-ലൂപ്പും സൈബർ പ്രതിരോധശേഷിയും</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">നിർണായക തീരുമാനങ്ങളിലെ അന്തിമ ഉത്തരവാദിത്തം മനുഷ്യരിൽ തന്നെ നിലനിർത്തുക എന്നത് AI സമൂഹത്തിൽ സുരക്ഷിതമായി ഉൾച്ചേർക്കുന്നതിനുള്ള അടിസ്ഥാന തത്വമാണ്.</div>
+                    <ul class="bullet-list">
+                        <li><strong>ധാർമ്മിക ഏജൻസിയുടെ അഭാവം:</strong> AI സിസ്റ്റങ്ങൾക്ക് സഹതാപമോ ധാർമ്മിക ബോധമോ നിയമപരമായ ബാധ്യതയോ ഇല്ല; അവയ്ക്ക് തെറ്റുകളിൽ പശ്ചാത്തപിക്കാനോ ശിക്ഷ അനുഭവിക്കാനോ കഴിയില്ല.</li>
+                        <li><strong>നിർണായക മേഖലകളിലെ മനുഷ്യ നിയന്ത്രണം:</strong> കോടതിവിധികൾ, ജീവൻരക്ഷാ ചികിത്സ തുടങ്ങിയ അതീവ പ്രാധാന്യമുള്ള കാര്യങ്ങളിൽ തീരുമാനങ്ങൾ പൂർണ്ണമായി അൽഗോരിതങ്ങൾക്ക് വിട്ടുകൊടുക്കാതെ മനുഷ്യൻ തന്നെ എടുക്കണം.</li>
+                        <li><strong>സാമൂഹിക സുരക്ഷയും പ്രതിരോധശേഷിയും (Resilience):</strong> ആരോഗ്യം, ഗതാഗതം, വാർത്താവിനിമയം, ഭരണം തുടങ്ങിയ സുപ്രധാന മേഖലകളിൽ AI ഉൾച്ചേർക്കുമ്പോൾ ഉണ്ടാകുന്ന സാങ്കേതിക തകരാറുകൾ വലിയ ദുരന്തങ്ങൾക്ക് വഴിവെക്കാം.</li>
+                        <li><strong>സൈബർ ആക്രമണങ്ങളെ ചെറുക്കൽ:</strong> ദുരുപയോഗങ്ങളിൽ നിന്നും സൈബർ ആക്രമണങ്ങളിൽ നിന്നും സ്വയം പരിരക്ഷ നേടാനും പ്രതികൂല സാഹചര്യങ്ങളിലും പ്രവർത്തനം തുടരാനുമുള്ള കരുത്ത് AI സംവിധാനങ്ങൾക്കുണ്ടാകണം.</li>
+                    </ul>
+                    <div class="example-box mal-ex">
+                        <div class="example-title mal-ex-title"><span>ഉദാഹരണം:</span> ജുഡീഷ്യൽ തീരുമാനങ്ങളിലെ മാനുഷിക വിവേചനാധികാരം</div>
+                        ഒരു പ്രതിയുടെ കുറ്റവാസനാ സാധ്യത AI സോഫ്റ്റ്‌വെയർ കണക്കുകൂട്ടിയാലും, സാഹചര്യങ്ങളും മാനുഷിക വശങ്ങളും പരിഗണിച്ച് ശിക്ഷ വിധിക്കാനുള്ള അന്തിമ അധികാരം ന്യായാധിപനിൽ തന്നെ നിക്ഷിപ്തമായിരിക്കണം.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</span>
+            <span class="footer-right">Section 4.2(B) &bull; Page 8</span>
+        </div>
+    </div>
+    
+    <div class="page-container">
+        <div class="page-header">
+            <div class="header-left">
+                <div class="module-title">MODULE 4 &bull; CHAPTER 4 &bull; SECTION 4.2(B)</div>
+                <h1 class="chapter-title">Design Principles: Ethics-by-Design & Multidisciplinary Synergy</h1>
+            </div>
+            <div class="header-right">
+                <span class="page-badge">PAGE 09 / 10</span>
+                <div class="topic-sub">Ethics-by-Design & Human-AI Collaborative Synergy</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- English Section -->
+            <div class="concept-card">
+                <div class="card-top-bar eng-bar">
+                    <span>9. Architectural Ethics & Transdisciplinary Governance</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">Ethics-by-Design & Human-Centered Augmentation</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">Ethics-by-Design denotes the proactive methodology of embedding moral principles directly into the design and engineering architecture of AI systems from inception.</div>
+                    <ul class="bullet-list">
+                        <li><strong>Proactive Architectural Ethics:</strong> Principles of justice, transparency, accountability, privacy, and safety are baked into mathematical models and codebases, rather than confronting harm retroactively.</li>
+                        <li><strong>Inclusion of Ethicists & Social Scientists:</strong> Technical coding efficiency alone is insufficient; ethicists, sociologists, and legal scholars examine power dynamics, cultural sensitivities, and social inequities early in design.</li>
+                        <li><strong>Demographic Diversity in Design Teams:</strong> Homogeneous teams generate blind spots; integrating individuals across genders, ethnicities, and cultures prevents discriminatory outcomes against marginalized populations.</li>
+                        <li><strong>Augmentation Over Replacement:</strong> AI should serve as an instrument that amplifies human intellect rather than supplanting human agency, enabling collaborative synergy to tackle climate change, disease, and economic hardship.</li>
+                    </ul>
+                    <div class="example-box">
+                        <div class="example-title"><span>Example:</span> Pre-Deployment Ethical Impact Assessment</div>
+                        Before releasing a national welfare distribution AI, a joint board of computer scientists, sociologists, and civil rights ethicists audits the algorithmic model to eliminate systemic biases against rural low-income families.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Malayalam Section -->
+            <div class="concept-card">
+                <div class="card-top-bar mal-bar">
+                    <span>എത്തിക്സ്-ബൈ-ഡിസൈനും വിവിധ ശാഖകളുടെ സഹകരണവും</span>
+                    <span style="font-size: 7.5pt; opacity: 0.9;">ധാർമ്മിക രൂപകൽപ്പനയും മനുഷ്യ-AI സഹവർത്തിത്വവും</span>
+                </div>
+                <div class="card-body">
+                    <div class="lead-text">AI സിസ്റ്റങ്ങൾ നിർമ്മിച്ചു കഴിഞ്ഞ ശേഷം പ്രശ്നങ്ങൾ പരിഹരിക്കുന്നതിന് പകരം, തുടക്കം മുതൽ തന്നെ ധാർമ്മിക തത്വങ്ങൾ അതിൽ ഉൾച്ചേർക്കുന്ന രീതിയാണ് 'എത്തിക്സ്-ബൈ-ഡിസൈൻ' (Ethics-by-Design).</div>
+                    <ul class="bullet-list">
+                        <li><strong>തുടക്കം മുതലുള്ള ധാർമ്മികത:</strong> നീതി, സുതാര്യത, ഉത്തരവാദിത്തം, സ്വകാര്യത, സുരക്ഷ തുടങ്ങിയ മാനുഷിക മൂല്യങ്ങൾ സാങ്കേതികവിദ്യയുടെ രൂപകൽപ്പനയുടെ തുടക്കത്തിലേ ഉറപ്പാക്കുന്നു.</li>
+                        <li><strong>സാമൂഹിക ശാസ്ത്രജ്ഞരുടെ പങ്ക്:</strong> സാങ്കേതിക വിദഗ്ദ്ധർക്ക് പുറമെ തത്ത്വചിന്തകരും സാമൂഹിക ശാസ്ത്രജ്ഞരും നിർമ്മാണ ഘട്ടത്തിൽ പങ്കാളികളാകുന്നത് അധികാര ബന്ധങ്ങളെയും സാമൂഹിക ആഘാതങ്ങളെയും തിരിച്ചറിയാൻ സഹായിക്കുന്നു.</li>
+                        <li><strong>വൈവിധ്യമാർന്ന ടീമുകൾ:</strong> സ്ത്രീകളും വിവിധ സംസ്കാരങ്ങളിലും പ്രായത്തിലുമുള്ള ആളുകളും ചേർന്നുള്ള നിർമ്മാണ സമിതികൾ പക്ഷപാതരഹിതമായ AI സിസ്റ്റങ്ങൾ വികസിപ്പിക്കാൻ അത്യന്താപേക്ഷിതമാണ്.</li>
+                        <li><strong>മനുഷ്യബുദ്ധിയുടെ ശാക്തീകരണം:</strong> AI മനുഷ്യനെ മാറ്റിസ്ഥാപിക്കാനുള്ളതല്ല, മറിച്ച് കാലാവസ്ഥാ വ്യതിയാനവും രോഗങ്ങളും പോലുള്ള ആഗോള വെല്ലുവിളികൾ നേരിടാൻ മനുഷ്യന്റെ ശേഷിയെ ഉയർത്താനുള്ള ഉപകരണമാണ്.</li>
+                    </ul>
+                    <div class="example-box mal-ex">
+                        <div class="example-title mal-ex-title"><span>ഉദാഹരണം:</span> ക്ഷേമ പദ്ധതികളിലെ ധാർമ്മിക ഓഡിറ്റിംഗ്</div>
+                        സർക്കാർ ആനുകൂല്യങ്ങൾ വിതരണം ചെയ്യുന്ന AI സിസ്റ്റം പുറത്തിറക്കുന്നതിന് മുൻപ് തന്നെ ദരിദ്രവിഭാഗങ്ങൾക്ക് അത് തടസ്സമാകുന്നില്ലെന്ന് സാമൂഹിക വിദഗ്ദ്ധരും സാങ്കേതിക വിദഗ്ദ്ധരും ചേർന്ന് ഉറപ്പുവരുത്തുന്നത്.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</span>
+            <span class="footer-right">Section 4.2(B) &bull; Page 9</span>
+        </div>
+    </div>
+    
+    <div class="page-container">
+        <div class="page-header">
+            <div class="header-left">
+                <div class="module-title">MODULE 4 &bull; CHAPTER 4 &bull; SECTION 4.2(B) &bull; EXAM DRILL</div>
+                <h1 class="chapter-title">High-Yield Exam Focus: 20 Core Concepts & Exam Solutions</h1>
+            </div>
+            <div class="header-right">
+                <span class="page-badge">PAGE 10 / 10</span>
+                <div class="topic-sub">Review Questions & Knock Your Brain</div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="grid-20">
+                <!-- 1 -->
+                <div class="card-20 c-blue">
+                    <div class="card-20-header">1. Embedded Device Definition</div>
+                    <div class="card-20-mal">ഉൾച്ചേർത്ത ഉപകരണം (Embedded Device)</div>
+                    <div class="card-20-desc">A compact computing system executing specialised functions with real-time responsiveness using constrained microcontrollers.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Washing machine microcontroller</div>
+                </div>
+                <!-- 2 -->
+                <div class="card-20 c-green">
+                    <div class="card-20-header">2. Concept of Embedded AI</div>
+                    <div class="card-20-mal">എംബഡഡ് കൃത്രിമബുദ്ധി (Embedded AI)</div>
+                    <div class="card-20-desc">Autonomous decision-making and edge analysis executed directly onboard dedicated microcontrollers or System-on-Chips.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: On-device sensor anomaly detection</div>
+                </div>
+                <!-- 3 -->
+                <div class="card-20 c-amber">
+                    <div class="card-20-header">3. Embodied Intelligence</div>
+                    <div class="card-20-mal">എംബോഡിഡ് ഇന്റലിജൻസ് (Embodied AI)</div>
+                    <div class="card-20-desc">A functional subset of embedded AI possessing a physical casing, sensors, and actuators interacting directly with environment.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Robotic arm with visual feedback</div>
+                </div>
+                <!-- 4 -->
+                <div class="card-20 c-purple">
+                    <div class="card-20-header">4. Biological Evolution Analogy</div>
+                    <div class="card-20-mal">ജൈവ പരിണാമ സമാനത (Evolution Analogy)</div>
+                    <div class="card-20-desc">The progression of embedded AI from simplistic automated switches to polymorphic adaptive structures mirroring organic evolution.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Adaptive sensor networks in buildings</div>
+                </div>
+                <!-- 5 -->
+                <div class="card-20 c-teal">
+                    <div class="card-20-header">5. System-on-a-Chip (SoC)</div>
+                    <div class="card-20-mal">സിസ്റ്റം-ഓൺ-എ-ചിപ്പ് (SoC)</div>
+                    <div class="card-20-desc">Integrated microchip combining processing cores, memory, and sensor interfaces to execute autonomous local inferences.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Autonomous lighting controller</div>
+                </div>
+                <!-- 6 -->
+                <div class="card-20 c-blue">
+                    <div class="card-20-header">6. Real-Time Image Recognition</div>
+                    <div class="card-20-mal">തത്സമയ ഇമേജ് തിരിച്ചറിയൽ</div>
+                    <div class="card-20-desc">Compact embedded computer vision algorithms executing instantaneous threat identification to enhance public safety.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Public safety danger detection cameras</div>
+                </div>
+                <!-- 7 -->
+                <div class="card-20 c-green">
+                    <div class="card-20-header">7. Automotive Embedded Systems</div>
+                    <div class="card-20-mal">വാഹനങ്ങളിലെ എംബഡഡ് സിസ്റ്റങ്ങൾ</div>
+                    <div class="card-20-desc">Critical microcontrollers executing real-time navigation, airbag deployment timing, and anti-lock braking systems.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: ABS pulsed hydraulic control</div>
+                </div>
+                <!-- 8 -->
+                <div class="card-20 c-amber">
+                    <div class="card-20-header">8. Driverless Transition Horizon</div>
+                    <div class="card-20-mal">ഡ്രൈവർരഹിത ഗതാഗത സമയപരിധി</div>
+                    <div class="card-20-desc">Despite massive R&D by Tesla, Google, and Uber, full highway autonomy requires 10 to 15 years before widespread public adoption.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: 10-15 year realistic highway horizon</div>
+                </div>
+                <!-- 9 -->
+                <div class="card-20 c-purple">
+                    <div class="card-20-header">9. Virtual Assistants as Intermediaries</div>
+                    <div class="card-20-mal">വെർച്വൽ അസിസ്റ്റന്റുകൾ: മധ്യസ്ഥർ</div>
+                    <div class="card-20-desc">Conversational agents (Siri, Alexa) acting as social intermediaries between humans and digital services, altering communication norms.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Voice scheduling and command habits</div>
+                </div>
+                <!-- 10 -->
+                <div class="card-20 c-teal">
+                    <div class="card-20-header">10. Social Isolation & Filtering Risk</div>
+                    <div class="card-20-mal">ആശയവിനിമയ തടസ്സവും ഏകാന്തതയും</div>
+                    <div class="card-20-desc">Aggressive spam filtering algorithms accidentally blocking vital family messages, eroding trust and causing social friction.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Muting urgent family hospital calls</div>
+                </div>
+                <!-- 11 -->
+                <div class="card-20 c-blue">
+                    <div class="card-20-header">11. Healthcare AI Intermediation</div>
+                    <div class="card-20-mal">ആരോഗ്യരംഗത്തെ AI മധ്യസ്ഥത</div>
+                    <div class="card-20-desc">AI diagnostic tools mediating doctor-patient relationships, influencing diagnostic confidence, care access, and clinical trust.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Algorithmic radiology report flags</div>
+                </div>
+                <!-- 12 -->
+                <div class="card-20 c-green">
+                    <div class="card-20-header">12. Social Media Triad of Curation</div>
+                    <div class="card-20-mal">സോഷ്യൽ മീഡിയ നിയന്ത്രണ തൂണുകൾ</div>
+                    <div class="card-20-desc">The algorithmic triumvirate: Who you see (feed), Whom you associate with (friends), and What perspectives you encounter.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Algorithmic friend suggestions</div>
+                </div>
+                <!-- 13 -->
+                <div class="card-20 c-amber">
+                    <div class="card-20-header">13. Filter Bubbles & Confirmation Bias</div>
+                    <div class="card-20-mal">ഫിൽട്ടർ ബബ്ബിളും മുൻവിധികളും</div>
+                    <div class="card-20-desc">Curation prioritizing past interactions narrows worldviews into ideological echo chambers, deepening social polarization.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Hyper-partisan political feeds</div>
+                </div>
+                <!-- 14 -->
+                <div class="card-20 c-purple">
+                    <div class="card-20-header">14. Deterioration of Social Skills</div>
+                    <div class="card-20-mal">സാമൂഹിക നൈപുണ്യങ്ങളുടെ അപചയം</div>
+                    <div class="card-20-desc">Heavy reliance on AI conversational bots reduces interpersonal face-to-face communication capacity and emotional empathy.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Anxiety in face-to-face discourse</div>
+                </div>
+                <!-- 15 -->
+                <div class="card-20 c-teal">
+                    <div class="card-20-header">15. Safeguarding Autonomy</div>
+                    <div class="card-20-mal">വ്യക്തിസ്വാതന്ത്ര്യ സംരക്ഷണം (Autonomy)</div>
+                    <div class="card-20-desc">Protecting individuals from algorithmic coercion and dark patterns, ensuring decisions remain unmanipulated and voluntary.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Preventing deceptive commercial nudges</div>
+                </div>
+                <!-- 16 -->
+                <div class="card-20 c-blue">
+                    <div class="card-20-header">16. Upholding Human Dignity</div>
+                    <div class="card-20-mal">മനുഷ്യന്റെ അന്തസ്സ് (Human Dignity)</div>
+                    <div class="card-20-desc">Recognizing humans as moral actors with intrinsic worth rather than optimizable data commodities or behavioral targets.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Rejecting predatory psychometric profiling</div>
+                </div>
+                <!-- 17 -->
+                <div class="card-20 c-green">
+                    <div class="card-20-header">17. Maintaining Human Accountability</div>
+                    <div class="card-20-mal">മാനുഷിക ഉത്തരവാദിത്തം (Accountability)</div>
+                    <div class="card-20-desc">Because AI lacks moral agency and legal liability, ultimate authority in high-stakes life decisions must reside with humans.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Human judge holding final sentencing rule</div>
+                </div>
+                <!-- 18 -->
+                <div class="card-20 c-amber">
+                    <div class="card-20-header">18. Infrastructure Resilience & Security</div>
+                    <div class="card-20-mal">പ്രതിരോധശേഷിയും സുരക്ഷയും (Resilience)</div>
+                    <div class="card-20-desc">Shielding critical social infrastructure (power, healthcare, transport) from cyberattacks and cascading operational outages.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: Cyber-resilient smart energy grids</div>
+                </div>
+                <!-- 19 -->
+                <div class="card-20 c-purple">
+                    <div class="card-20-header">19. Ethics-by-Design Methodology</div>
+                    <div class="card-20-mal">എത്തിക്സ്-ബൈ-ഡിസൈൻ (Ethics-by-Design)</div>
+                    <div class="card-20-desc">Proactively embedding fairness, transparency, privacy, and accountability into AI architecture from the very inception.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: LMS MCQ 1: Answer C (Ethics-by-Design)</div>
+                </div>
+                <!-- 20 -->
+                <div class="card-20 c-teal">
+                    <div class="card-20-header">20. Multidisciplinary Collaboration</div>
+                    <div class="card-20-mal">ബഹുമുഖ സമിതികളും AI കൂട്ടായ്മയും</div>
+                    <div class="card-20-desc">Involving ethicists, social scientists, and diverse demographics to identify social harms and augment human problem-solving.</div>
+                    <div class="card-20-ex">ഉദാഹരണം: LMS MCQ 5: Answer B (Identify social risks)</div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="footer-left">Philosophy of Artificial Intelligence &bull; Core Reading &bull; University of Calicut</span>
+            <span class="footer-right">Section 4.2(B) &bull; Page 10</span>
+        </div>
+    </div>
+    
+</body>
+</html>

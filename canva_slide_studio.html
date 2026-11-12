@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva & Canvas Slide Studio | Academic Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&family=Noto+Sans+Malayalam:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .malayalam-font {
+            font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.4);
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(99, 102, 241, 0.7);
+        }
+    </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+
+    <!-- Header Bar -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50 px-6 py-3.5 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25">
+                <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+            </div>
+            <div>
+                <h1 class="text-lg font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">
+                    Canva & Canvas Slide Studio
+                </h1>
+                <p class="text-xs text-slate-400">High-DPI HTML5 Canvas Generator • Dual Language (EN + ML) • Canva Bulk Export</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <button id="btnExportCanvaCSV" class="px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-xl text-xs font-semibold shadow-md shadow-teal-900/30 flex items-center gap-2 transition-all">
+                <i class="fa-solid fa-file-csv text-sm"></i> Canva Bulk CSV
+            </button>
+            <button id="btnDownloadPNG" class="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-xl text-xs font-semibold shadow-md shadow-indigo-900/30 flex items-center gap-2 transition-all">
+                <i class="fa-solid fa-download text-sm"></i> Download Current Slide (PNG)
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <div class="flex-1 grid grid-cols-12 gap-6 p-6 max-w-[1920px] mx-auto w-full">
+
+        <!-- Left Controls Sidebar -->
+        <aside class="col-span-12 lg:col-span-4 xl:col-span-3 space-y-5 overflow-y-auto max-h-[calc(100vh-100px)] pr-1">
+            
+            <!-- Slide Deck Navigation -->
+            <div class="glass-panel p-4 rounded-2xl border border-slate-800">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Slide Navigator</span>
+                    <span id="slideCounter" class="text-xs font-semibold px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">1 of 4</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="btnPrevSlide" class="flex-1 py-2 bg-slate-800 hover:bg-slate-700 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition">
+                        <i class="fa-solid fa-chevron-left"></i> Previous
+                    </button>
+                    <button id="btnNextSlide" class="flex-1 py-2 bg-slate-800 hover:bg-slate-700 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition">
+                        Next <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <button id="btnAddSlide" class="px-3 py-2 bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-300 rounded-xl text-xs font-semibold transition" title="Add New Slide">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Format & Theme Settings -->
+            <div class="glass-panel p-4 rounded-2xl border border-slate-800 space-y-4">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-sliders text-indigo-400"></i> Canvas Dimensions & Theme
+                </h2>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Canvas Aspect Ratio</label>
+                    <select id="selectRatio" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500 outline-none">
+                        <option value="1920x1080">16:9 Landscape Video / Slide (1920 × 1080)</option>
+                        <option value="1080x1920">9:16 Story / Shorts / Reel (1080 × 1920)</option>
+                        <option value="1080x1080">1:1 Square Post / Flashcard (1080 × 1080)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Color Theme</label>
+                    <select id="selectTheme" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500 outline-none">
+                        <option value="midnight">Midnight Indigo (Deep Academic)</option>
+                        <option value="emerald">Emerald Cyber (Science & Tech)</option>
+                        <option value="crimson">Crimson Velvet (Philosophy / Ethics)</option>
+                        <option value="sunset">Sunset Gold (Economics / History)</option>
+                        <option value="dark">Slate Minimal (Clean Modern)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Slide Layout Template</label>
+                    <select id="selectTemplate" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500 outline-none">
+                        <option value="split">Two-Column Academic Concept</option>
+                        <option value="title">Hero Title & Subtitle Slide</option>
+                        <option value="flashcard">Active Recall Flashcard (Q&A)</option>
+                        <option value="quote">Key Quote & Attribution</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Content Editor Form -->
+            <div class="glass-panel p-4 rounded-2xl border border-slate-800 space-y-4">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-pen-nib text-indigo-400"></i> Content Fields
+                </h2>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Badge / Subject Tag</label>
+                    <input id="inputBadge" type="text" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500 outline-none" value="SOCIOLOGY • സോഷ്യോളജി">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Chapter / Top Right Pill</label>
+                    <input id="inputChapter" type="text" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500 outline-none" value="CHAPTER 01 • ലെക്ചർ 1">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Primary Title (Malayalam or English)</label>
+                    <textarea id="inputTitleMalayalam" rows="2" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500 outline-none malayalam-font">സോഷ്യോളജിക്കൽ ഭാവനയും ശാസ്ത്രീയ ഗവേഷണ രീതികളും</textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Secondary Title / English Subtitle</label>
+                    <input id="inputTitleEnglish" type="text" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500 outline-none" value="Sociological Imagination & Scientific Research Methods">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Summary / Concept Overview</label>
+                    <textarea id="inputOverview" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500 outline-none malayalam-font">വ്യക്തിജീവിതത്തിലെ അനുഭവങ്ങളെ വലിയ സാമൂഹിക സാഹചര്യങ്ങളുമായി ബന്ധിപ്പിച്ചു വിശകലനം ചെയ്യുന്ന സി. റൈറ്റ് മിൽസിന്റെ സിദ്ധാന്തവും പ്രധാന ഗവേഷണ സമ്പ്രദായങ്ങളും.</textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Key Points / Cards (1 per line)</label>
+                    <textarea id="inputBullets" rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500 outline-none">1. സി. റൈറ്റ് മിൽസ് (C. Wright Mills - 1959)
+2. വ്യക്തിപരമായ പ്രയാസങ്ങളും സാമൂഹിക പ്രശ്നങ്ങളും
+3. ഗുണപരമായതും അളവ്പരവുമായ ഗവേഷണം (Qualitative vs Quantitative)
+4. ശാസ്ത്രീയ നിരീക്ഷണത്തിന്റെ പ്രാധാന്യം</textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Footer / Author Note</label>
+                    <input id="inputFooter" type="text" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500 outline-none" value="Calicut University Syllabus • Exam Focused Key Points">
+                </div>
+            </div>
+
+            <!-- Import / Preset Loader -->
+            <div class="glass-panel p-4 rounded-2xl border border-slate-800 space-y-3">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-bolt text-indigo-400"></i> Course Presets
+                </h2>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="loadPreset('sociology')" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 rounded-xl text-xs text-left truncate font-medium transition">
+                        📘 Sociology
+                    </button>
+                    <button onclick="loadPreset('ethics')" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 rounded-xl text-xs text-left truncate font-medium transition">
+                        ⚖️ Ethics
+                    </button>
+                    <button onclick="loadPreset('economics')" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 rounded-xl text-xs text-left truncate font-medium transition">
+                        📈 Economics
+                    </button>
+                    <button onclick="loadPreset('ai')" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 rounded-xl text-xs text-left truncate font-medium transition">
+                        🤖 AI Philosophy
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Preview & Canvas Display Area -->
+        <main class="col-span-12 lg:col-span-8 xl:col-span-9 flex flex-col items-center justify-start space-y-4">
+            
+            <!-- Canvas Container Box -->
+            <div class="w-full glass-panel p-4 rounded-3xl border border-slate-800 flex flex-col items-center justify-center shadow-2xl relative">
+                
+                <!-- Toolbar overlay -->
+                <div class="w-full flex items-center justify-between pb-3 px-2 border-b border-slate-800/80 mb-3 text-xs text-slate-400">
+                    <div class="flex items-center gap-3">
+                        <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> Live HTML5 Canvas
+                        </span>
+                        <span id="canvasResLabel" class="text-slate-500 font-mono">1920 × 1080 (16:9)</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <label class="flex items-center gap-1.5 cursor-pointer">
+                            <input id="checkGrid" type="checkbox" class="rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
+                            <span>Safe Margins</span>
+                        </label>
+                        <button id="btnFullscreen" class="hover:text-white transition" title="Preview Full View">
+                            <i class="fa-solid fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Canvas Element -->
+                <div class="w-full flex items-center justify-center overflow-hidden bg-slate-950 rounded-2xl border border-slate-800/60 p-2">
+                    <canvas id="slideCanvas" class="max-w-full max-h-[72vh] object-contain rounded-xl shadow-2xl transition-all duration-200"></canvas>
+                </div>
+
+                <!-- Bottom Helper Bar -->
+                <div class="w-full mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400 px-2">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-indigo-400"></i>
+                        <span>Ready to export: Use high-res PNG for video generation or Canva CSV for bulk templating.</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button id="btnCopyJSON" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-slate-300 font-medium transition">
+                            <i class="fa-solid fa-copy"></i> Copy Slide JSON
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Canva Bulk Create Info Card -->
+            <div class="w-full glass-panel p-5 rounded-2xl border border-indigo-500/20 bg-indigo-950/20 text-xs text-slate-300 space-y-2">
+                <div class="flex items-center gap-2 font-bold text-indigo-300 uppercase tracking-wider text-sm">
+                    <i class="fa-brands fa-canva text-indigo-400 text-base"></i> How to use this with Canva "Bulk Create"
+                </div>
+                <p class="leading-relaxed">
+                    1. Click <strong>"Canva Bulk CSV"</strong> above to download the formatted data file.<br>
+                    2. In Canva, open any Presentation or Video template, go to <strong>Apps</strong> on the left sidebar & search <strong>"Bulk Create"</strong>.<br>
+                    3. Click <strong>"Upload CSV"</strong>, right-click your slide text boxes in Canva, select <strong>"Connect Data"</strong> (Badge, Title, Subtitle, Bullets), and hit <strong>Generate</strong>!
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script Logic -->
+    <script>
+        // Preset Decks
+        const PRESET_DECKS = {
+            sociology: [
+                {
+                    badge: "SOCIOLOGY • സോഷ്യോളജി",
+                    chapter: "CHAPTER 01",
+                    titleMalayalam: "സോഷ്യോളജിക്കൽ ഭാവനയും ഗവേഷണ രീതികളും",
+                    titleEnglish: "Sociological Imagination & Scientific Research Methods",
+                    overview: "വ്യക്തിജീവിതത്തിലെ അനുഭവങ്ങളെ വലിയ സാമൂഹിക സാഹചര്യങ്ങളുമായി ബന്ധിപ്പിച്ചു വിശകലനം ചെയ്യുന്ന സി. റൈറ്റ് മിൽസിന്റെ സിദ്ധാന്തവും പ്രധാന ഗവേഷണ സമ്പ്രദായങ്ങളും.",
+                    bullets: [
+                        "1. സി. റൈറ്റ് മിൽസ് (C. Wright Mills - 1959)",
+                        "2. വ്യക്തിപരമായ പ്രയാസങ്ങളും സാമൂഹിക പ്രശ്നങ്ങളും",
+                        "3. ഗുണപരമായതും അളവ്പരവുമായ ഗവേഷണം (Qualitative vs Quantitative)",
+                        "4. സാമൂഹിക സ്ഥാപനങ്ങളുടെ സ്വാധീനം"
+                    ],
+                    footer: "Calicut University Syllabus • Sociology Core",
+                    theme: "midnight",
+                    template: "split"
+                },
+                {
+                    badge: "SOCIOLOGY • തിയറികൾ",
+                    chapter: "CHAPTER 02",
+                    titleMalayalam: "പ്രമുഖ സോഷ്യോളജിക്കൽ വീക്ഷണങ്ങൾ",
+                    titleEnglish: "Major Sociological Perspectives & Paradigms",
+                    overview: "സമൂഹത്തെ മനസ്സിലാക്കാനുള്ള മൂന്ന് പ്രധാന ശാസ്ത്രീയ കാഴ്ചപ്പാടുകൾ: ഫങ്ഷണലിസം, കോൺഫ്ലിക്റ്റ് തിയറി, സിംബോളിക് ഇന്ററാക്ഷനിസം.",
+                    bullets: [
+                        "1. സ്ട്രക്ചറൽ ഫങ്ഷണലിസം (എമിൽ ഡർഖൈം)",
+                        "2. സംഘർഷ സിദ്ധാന്തം (കാൾ മാർക്സ്)",
+                        "3. പ്രതീകാത്മക ഇടപെടൽ വാദം (മാക്സ് വെബർ)",
+                        "4. മാക്രോ vs മൈക്രോ സോഷ്യോളജി വിശകലനം"
+                    ],
+                    footer: "Sociology Paper 1 • Key Highlights",
+                    theme: "emerald",
+                    template: "split"
+                }
+            ],
+            ethics: [
+                {
+                    badge: "ETHICS • എത്തിക്സ്",
+                    chapter: "MODULE 01",
+                    titleMalayalam: "ധാർമ്മികതയുടെ അടിസ്ഥാന തത്വങ്ങൾ",
+                    titleEnglish: "Fundamental Principles of Moral Philosophy",
+                    overview: "ശരിയും തെറ്റും തിരിച്ചറിയാനുള്ള ദാർശനിക അടിത്തറകളും ഉത്തമ ജീവിതത്തിനായുള്ള മൂല്യബോധവും.",
+                    bullets: [
+                        "1. ഡിഓന്റോളജി (കടമ കേന്ദ്രീകൃത നീതിശാസ്ത്രം - കാന്റ്)",
+                        "2. യൂട്ടിലിറ്റേറിയനിസം (സന്തുഷ്ടി വർദ്ധിപ്പിക്കൽ - ബെന്താം & മിൽ)",
+                        "3. സദ്ഗുണ ധാർമ്മികത (Virtue Ethics - അരിസ്റ്റോട്ടിൽ)",
+                        "4. ആധുനിക സാമൂഹിക നീതിയുടെ വ്യാഖ്യാനങ്ങൾ"
+                    ],
+                    footer: "Fundamentals of Ethics • Core Module",
+                    theme: "crimson",
+                    template: "split"
+                }
+            ],
+            economics: [
+                {
+                    badge: "ECONOMICS • സാമ്പത്തിക ശാസ്ത്രം",
+                    chapter: "UNIT 03",
+                    titleMalayalam: "ഇന്ത്യൻ സാമ്പത്തിക വ്യവസ്ഥയുടെ വളർച്ച",
+                    titleEnglish: "Development Issues in Indian Economy",
+                    overview: "1991 ലെ സാമ്പത്തിക പരിഷ്കാരങ്ങളും (LPG), പട്ടിണി നിർമ്മാർജ്ജനം, തൊഴിലവസരങ്ങൾ എന്നിവയിലെ വെല്ലുവിളികളും.",
+                    bullets: [
+                        "1. ഉദാരവൽക്കരണം, സ്വകാര്യവൽക്കരണം, ആഗോളവൽക്കരണം",
+                        "2. കാർഷിക മേഖലയിലെ പ്രതിസന്ധികൾ",
+                        "3. സേവന മേഖലയുടെ കുതിച്ചുചാട്ടം",
+                        "4. സുസ്ഥിര വികസന ലക്ഷ്യങ്ങൾ (SDGs)"
+                    ],
+                    footer: "Indian Economy • Development Issues",
+                    theme: "sunset",
+                    template: "split"
+                }
+            ],
+            ai: [
+                {
+                    badge: "AI & SOCIETY • കൃത്രിമബുദ്ധി",
+                    chapter: "SPECIAL TOPIC",
+                    titleMalayalam: "ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ്: ദാർശനിക വെല്ലുവിളികൾ",
+                    titleEnglish: "Philosophy of Artificial Intelligence & Consciousness",
+                    overview: "മെഷീനുകൾക്ക് ചിന്തിക്കാനും തീരുമാനങ്ങളെടുക്കാനും സാധിക്കുമോ? അലൻ ട്യൂറിംഗിന്റെ പരീക്ഷണം മുതൽ ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ വരെ.",
+                    bullets: [
+                        "1. ട്യൂറിംഗ് ടെസ്റ്റും ചൈനീസ് റൂം ആർഗ്യുമെന്റും (John Searle)",
+                        "2. സിംബയോസിസും യന്ത്ര ബോധവും (Machine Consciousness)",
+                        "3. ഓട്ടോമേഷനും തൊഴിൽ വിപണിയും",
+                        "4. അൽഗോരിതമിക് പക്ഷപാതവും എത്തിക്സും"
+                    ],
+                    footer: "Philosophy of AI • Interdisciplinary Studies",
+                    theme: "midnight",
+                    template: "split"
+                }
+            ]
+        };
+
+        // State
+        let currentDeck = [...PRESET_DECKS.sociology];
+        let currentSlideIndex = 0;
+
+        // Elements
+        const canvas = document.getElementById('slideCanvas');
+        const ctx = canvas.getContext('2d');
+        const selectRatio = document.getElementById('selectRatio');
+        const selectTheme = document.getElementById('selectTheme');
+        const selectTemplate = document.getElementById('selectTemplate');
+        const inputBadge = document.getElementById('inputBadge');
+        const inputChapter = document.getElementById('inputChapter');
+        const inputTitleMalayalam = document.getElementById('inputTitleMalayalam');
+        const inputTitleEnglish = document.getElementById('inputTitleEnglish');
+        const inputOverview = document.getElementById('inputOverview');
+        const inputBullets = document.getElementById('inputBullets');
+        const inputFooter = document.getElementById('inputFooter');
+        const slideCounter = document.getElementById('slideCounter');
+        const canvasResLabel = document.getElementById('canvasResLabel');
+        const checkGrid = document.getElementById('checkGrid');
+
+        // Dimensions
+        let targetWidth = 1920;
+        let targetHeight = 1080;
+
+        // Theme Palettes
+        const THEMES = {
+            midnight: {
+                bgGrad: ['#030712', '#0f172a', '#1e1b4b'],
+                accent: '#6366f1',
+                accentGrad: ['#6366f1', '#a855f7'],
+                badgeBg: 'rgba(99, 102, 241, 0.15)',
+                badgeBorder: '#818cf8',
+                cardBg: 'rgba(15, 23, 42, 0.75)',
+                cardBorder: 'rgba(255, 255, 255, 0.08)',
+                textPrimary: '#f8fafc',
+                textSecondary: '#94a3b8',
+                highlight: '#38bdf8'
+            },
+            emerald: {
+                bgGrad: ['#022c22', '#064e3b', '#021810'],
+                accent: '#10b981',
+                accentGrad: ['#10b981', '#14b8a6'],
+                badgeBg: 'rgba(16, 185, 129, 0.18)',
+                badgeBorder: '#34d399',
+                cardBg: 'rgba(6, 78, 59, 0.45)',
+                cardBorder: 'rgba(52, 211, 153, 0.2)',
+                textPrimary: '#ecfdf5',
+                textSecondary: '#a7f3d0',
+                highlight: '#6ee7b7'
+            },
+            crimson: {
+                bgGrad: ['#450a0a', '#1e0505', '#110202'],
+                accent: '#f43f5e',
+                accentGrad: ['#f43f5e', '#fb7185'],
+                badgeBg: 'rgba(244, 63, 94, 0.2)',
+                badgeBorder: '#fb7185',
+                cardBg: 'rgba(30, 10, 15, 0.65)',
+                cardBorder: 'rgba(244, 63, 94, 0.25)',
+                textPrimary: '#fff1f2',
+                textSecondary: '#fecdd3',
+                highlight: '#fda4af'
+            },
+            sunset: {
+                bgGrad: ['#451a03', '#271005', '#0f0502'],
+                accent: '#f59e0b',
+                accentGrad: ['#f59e0b', '#d97706'],
+                badgeBg: 'rgba(245, 158, 11, 0.2)',
+                badgeBorder: '#fbbf24',
+                cardBg: 'rgba(35, 15, 5, 0.6)',
+                cardBorder: 'rgba(245, 158, 11, 0.25)',
+                textPrimary: '#fffbeb',
+                textSecondary: '#fde68a',
+                highlight: '#fcd34d'
+            },
+            dark: {
+                bgGrad: ['#020617', '#090d16', '#0f172a'],
+                accent: '#38bdf8',
+                accentGrad: ['#38bdf8', '#0ea5e9'],
+                badgeBg: 'rgba(56, 189, 248, 0.15)',
+                badgeBorder: '#7dd3fc',
+                cardBg: 'rgba(15, 23, 42, 0.8)',
+                cardBorder: 'rgba(255, 255, 255, 0.1)',
+                textPrimary: '#f8fafc',
+                textSecondary: '#94a3b8',
+                highlight: '#bae6fd'
+            }
+        };
+
+        function setResolution(w, h) {
+            targetWidth = w;
+            targetHeight = h;
+            canvas.width = w;
+            canvas.height = h;
+            canvasResLabel.innerText = `${w} × ${h} (${w === 1920 ? '16:9' : (w === 1080 && h === 1920 ? '9:16' : '1:1')})`;
+            renderCanvas();
+        }
+
+        // Helper: Rounded Rectangle
+        function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
+            ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+            if (fill) ctx.fill();
+            if (stroke) ctx.stroke();
+            ctx.restore();
+        }
+
+        // Word Wrapping text on Canvas
+        function wrapText(ctx, text, x, y, maxWidth, lineHeight, maxLines = 10) {
+            const words = text.split(' ');
+            let line = '';
+            let lineCount = 0;
+            
+            for (let n = 0; n < words.length; n++) {
+                const testLine = line + words[n] + ' ';
+                const metrics = ctx.measureText(testLine);
+                const testWidth = metrics.width;
+                if (testWidth > maxWidth && n > 0) {
+                    ctx.fillText(line, x, y);
+                    line = words[n] + ' ';
+                    y += lineHeight;
+                    lineCount++;
+                    if (lineCount >= maxLines - 1 && n < words.length - 1) {
+                        ctx.fillText(line.trim() + '...', x, y);
+                        return y;
+                    }
+                } else {
+                    line = testLine;
+                }
+            }
+            ctx.fillText(line, x, y);
+            return y;
+        }
+
+        // Master Canvas Rendering Engine
+        function renderCanvas() {
+            const theme = THEMES[selectTheme.value] || THEMES.midnight;
+            const template = selectTemplate.value;
+            const w = canvas.width;
+            const h = canvas.height;
+
+            // 1. Background Gradient
+            const bgGrad = ctx.createRadialGradient(w * 0.2, h * 0.2, 50, w * 0.5, h * 0.5, w * 0.9);
+            bgGrad.addColorStop(0, theme.bgGrad[2]);
+            bgGrad.addColorStop(0.5, theme.bgGrad[1]);
+            bgGrad.addColorStop(1, theme.bgGrad[0]);
+            ctx.fillStyle = bgGrad;
+            ctx.fillRect(0, 0, w, h);
+
+            // Subtle Mesh circles
+            ctx.save();
+            const glow = ctx.createRadialGradient(w * 0.85, h * 0.2, 10, w * 0.85, h * 0.2, 400);
+            glow.addColorStop(0, theme.badgeBg);
+            glow.addColorStop(1, 'transparent');
+            ctx.fillStyle = glow;
+            ctx.beginPath();
+            ctx.arc(w * 0.85, h * 0.2, 400, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+
+            // 2. Header Bar
+            const padX = w * 0.05;
+            const padY = h * 0.06;
+
+            // Badge Pill (Left)
+            ctx.save();
+            ctx.fillStyle = theme.badgeBg;
+            ctx.strokeStyle = theme.badgeBorder;
+            ctx.lineWidth = 1.5;
+            roundRect(ctx, padX, padY, 380, 52, 26, true, true);
+
+            ctx.fillStyle = theme.highlight;
+            ctx.font = "bold 18px 'Plus Jakarta Sans', sans-serif";
+            ctx.fillText(inputBadge.value.toUpperCase(), padX + 24, padY + 33);
+            ctx.restore();
+
+            // Chapter Pill (Right)
+            ctx.save();
+            const chapText = inputChapter.value.toUpperCase();
+            ctx.font = "bold 16px 'Plus Jakarta Sans', sans-serif";
+            const chapWidth = ctx.measureText(chapText).width + 50;
+            const chapX = w - padX - chapWidth;
+
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+            ctx.lineWidth = 1.5;
+            roundRect(ctx, chapX, padY, chapWidth, 52, 26, true, true);
+
+            ctx.fillStyle = theme.textPrimary;
+            ctx.fillText(chapText, chapX + 25, padY + 33);
+            ctx.restore();
+
+            // 3. Layout Variations
+            if (template === 'split') {
+                renderSplitLayout(w, h, padX, padY, theme);
+            } else if (template === 'title') {
+                renderTitleLayout(w, h, padX, padY, theme);
+            } else if (template === 'flashcard') {
+                renderFlashcardLayout(w, h, padX, padY, theme);
+            } else if (template === 'quote') {
+                renderQuoteLayout(w, h, padX, padY, theme);
+            }
+
+            // 4. Footer Bar
+            ctx.save();
+            ctx.fillStyle = theme.textSecondary;
+            ctx.font = "14px 'Plus Jakarta Sans', sans-serif";
+            ctx.fillText(inputFooter.value, padX, h - padY * 0.7);
+
+            // Watermark brand
+            const brand = "ACADEMIC VIDEO & SLIDE ENGINE";
+            const brandWidth = ctx.measureText(brand).width;
+            ctx.fillStyle = 'rgba(255,255,255,0.3)';
+            ctx.fillText(brand, w - padX - brandWidth, h - padY * 0.7);
+            ctx.restore();
+
+            // Safe Margins Guide
+            if (checkGrid.checked) {
+                ctx.save();
+                ctx.strokeStyle = 'rgba(239, 68, 68, 0.4)';
+                ctx.lineWidth = 1;
+                ctx.setLineDash([8, 8]);
+                ctx.strokeRect(padX, padY, w - padX * 2, h - padY * 2);
+                ctx.restore();
+            }
+        }
+
+        function renderSplitLayout(w, h, padX, padY, theme) {
+            const contentTop = padY + 90;
+            const contentHeight = h - contentTop - (padY * 1.5);
+            const colWidth = (w - padX * 2 - 40) / 2;
+
+            // Left Column: Main Title & Overview
+            ctx.save();
+            // Malayalam Title
+            ctx.fillStyle = theme.textPrimary;
+            ctx.font = "bold 44px 'Noto Sans Malayalam', 'Manjari', sans-serif";
+            const nextY = wrapText(ctx, inputTitleMalayalam.value, padX, contentTop + 45, colWidth - 20, 58, 3);
+
+            // English Subtitle
+            ctx.fillStyle = theme.textSecondary;
+            ctx.font = "600 24px 'Plus Jakarta Sans', sans-serif";
+            const subY = wrapText(ctx, inputTitleEnglish.value, padX, nextY + 45, colWidth - 20, 34, 2);
+
+            // Overview Card
+            const cardY = subY + 30;
+            const cardH = contentHeight - (cardY - contentTop);
+            if (cardH > 100) {
+                ctx.fillStyle = theme.cardBg;
+                ctx.strokeStyle = theme.cardBorder;
+                ctx.lineWidth = 1;
+                roundRect(ctx, padX, cardY, colWidth, cardH, 20, true, true);
+
+                ctx.fillStyle = theme.highlight;
+                ctx.font = "bold 14px 'Plus Jakarta Sans', sans-serif";
+                ctx.fillText("CORE ESSENCE / സംഗ്രഹം", padX + 30, cardY + 40);
+
+                ctx.fillStyle = theme.textPrimary;
+                ctx.font = "400 20px 'Noto Sans Malayalam', 'Manjari', sans-serif";
+                wrapText(ctx, inputOverview.value, padX + 30, cardY + 75, colWidth - 60, 32, 6);
+            }
+            ctx.restore();
+
+            // Right Column: Key Concept Cards (Bullet list)
+            const rightX = padX + colWidth + 40;
+            const bullets = inputBullets.value.split('\n').filter(b => b.trim().length > 0);
+            
+            ctx.save();
+            ctx.fillStyle = theme.cardBg;
+            ctx.strokeStyle = theme.cardBorder;
+            ctx.lineWidth = 1.5;
+            roundRect(ctx, rightX, contentTop, colWidth, contentHeight, 24, true, true);
+
+            // Right Header Pill
+            ctx.fillStyle = theme.accent;
+            ctx.font = "bold 16px 'Plus Jakarta Sans', sans-serif";
+            ctx.fillText("KEY TAKEAWAYS • പ്രധാന വസ്തുതകൾ", rightX + 36, contentTop + 48);
+
+            // Render Bullet Rows
+            const rowHeight = (contentHeight - 80) / Math.max(bullets.length, 1);
+            bullets.forEach((point, idx) => {
+                const rowY = contentTop + 85 + (idx * rowHeight);
+
+                // Row pill background
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.03)';
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
+                ctx.lineWidth = 1;
+                roundRect(ctx, rightX + 24, rowY, colWidth - 48, rowHeight - 16, 14, true, true);
+
+                // Bullet Number Badge
+                ctx.fillStyle = theme.accent;
+                ctx.beginPath();
+                ctx.arc(rightX + 48, rowY + (rowHeight - 16) / 2, 12, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.fillStyle = '#ffffff';
+                ctx.font = "bold 12px 'Plus Jakarta Sans', sans-serif";
+                ctx.textAlign = 'center';
+                ctx.fillText(String(idx + 1), rightX + 48, rowY + (rowHeight - 16) / 2 + 4);
+                ctx.textAlign = 'left';
+
+                // Bullet text
+                ctx.fillStyle = theme.textPrimary;
+                ctx.font = "500 18px 'Noto Sans Malayalam', 'Manjari', sans-serif";
+                ctx.fillText(point.replace(/^\d+[\.\)]\s*/, ''), rightX + 75, rowY + (rowHeight - 16) / 2 + 6);
+            });
+            ctx.restore();
+        }
+
+        function renderTitleLayout(w, h, padX, padY, theme) {
+            ctx.save();
+            ctx.textAlign = 'center';
+            const midX = w / 2;
+            const midY = h / 2;
+
+            // Center Badge
+            ctx.fillStyle = theme.badgeBg;
+            ctx.strokeStyle = theme.badgeBorder;
+            ctx.lineWidth = 1.5;
+            roundRect(ctx, midX - 160, midY - 200, 320, 48, 24, true, true);
+            ctx.fillStyle = theme.highlight;
+            ctx.font = "bold 16px 'Plus Jakarta Sans', sans-serif";
+            ctx.fillText(inputBadge.value.toUpperCase(), midX, midY - 170);
+
+            // Giant Malayalam Title
+            ctx.fillStyle = theme.textPrimary;
+            ctx.font = "bold 56px 'Noto Sans Malayalam', 'Manjari', sans-serif";
+            wrapText(ctx, inputTitleMalayalam.value, midX, midY - 80, w * 0.8, 76, 2);
+
+            // English Subtitle
+            ctx.fillStyle = theme.textSecondary;
+            ctx.font = "600 28px 'Plus Jakarta Sans', sans-serif";
+            wrapText(ctx, inputTitleEnglish.value, midX, midY + 50, w * 0.75, 42, 2);
+
+            // Divider Bar
+            ctx.fillStyle = theme.accent;
+            ctx.fillRect(midX - 60, midY + 120, 120, 4);
+
+            // Overview text
+            ctx.fillStyle = theme.textPrimary;
+            ctx.font = "400 22px 'Noto Sans Malayalam', 'Manjari', sans-serif";
+            wrapText(ctx, inputOverview.value, midX, midY + 160, w * 0.65, 36, 3);
+
+            ctx.restore();
+        }
+
+        function renderFlashcardLayout(w, h, padX, padY, theme) {
+            ctx.save();
+            const midX = w / 2;
+            const cardW = Math.min(w * 0.85, 1200);
+            const cardH = h * 0.65;
+            const cardX = (w - cardW) / 2;
+            const cardY = (h - cardH) / 2;
+
+            // Outer Card
+            ctx.fillStyle = theme.cardBg;
+            ctx.strokeStyle = theme.badgeBorder;
+            ctx.lineWidth = 2;
+            roundRect(ctx, cardX, cardY, cardW, cardH, 28, true, true);
+
+            // Card Header
+            ctx.fillStyle = theme.accent;
+            ctx.font = "bold 18px 'Plus Jakarta Sans', sans-serif";
+            ctx.fillText("ACTIVE RECALL • CONCEPT FLASHCARD", cardX + 40, cardY + 50);
+
+            // Question / Title
+            ctx.fillStyle = theme.textPrimary;
+            ctx.font = "bold 38px 'Noto Sans Malayalam', 'Manjari', sans-serif";
+            wrapText(ctx, inputTitleMalayalam.value, cardX + 40, cardY + 110, cardW - 80, 52, 2);
+
+            // Answer Box
+            const ansY = cardY + 200;
+            const ansH = cardH - 240;
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+            ctx.lineWidth = 1;
+            roundRect(ctx, cardX + 30, ansY, cardW - 60, ansH, 20, true, true);
+
+            ctx.fillStyle = theme.highlight;
+            ctx.font = "bold 15px 'Plus Jakarta Sans', sans-serif";
+            ctx.fillText("EXPLANATION & ANALYSIS:", cardX + 50, ansY + 36);
+
+            ctx.fillStyle = theme.textPrimary;
+            ctx.font = "400 22px 'Noto Sans Malayalam', 'Manjari', sans-serif";
+            wrapText(ctx, inputOverview.value, cardX + 50, ansY + 74, cardW - 100, 36, 4);
+
+            ctx.restore();
+        }
+
+        function renderQuoteLayout(w, h, padX, padY, theme) {
+            ctx.save();
+            const midX = w / 2;
+            const midY = h / 2;
+
+            // Quote Symbol
+            ctx.fillStyle = theme.badgeBg;
+            ctx.font = "bold 120px 'Plus Jakarta Sans', serif";
+            ctx.textAlign = 'center';
+            ctx.fillText('“', midX, midY - 120);
+
+            // Quote Malayalam text
+            ctx.fillStyle = theme.textPrimary;
+            ctx.font = "italic bold 42px 'Noto Sans Malayalam', 'Manjari', sans-serif";
+            wrapText(ctx, inputOverview.value, midX, midY - 40, w * 0.75, 60, 4);
+
+            // Author / Source
+            ctx.fillStyle = theme.highlight;
+            ctx.font = "bold 24px 'Plus Jakarta Sans', sans-serif";
+            ctx.fillText(`— ${inputTitleEnglish.value}`, midX, midY + 140);
+
+            ctx.restore();
+        }
+
+        // Synchronize Form with Current Slide
+        function syncFormFromState() {
+            const slide = currentDeck[currentSlideIndex];
+            if (!slide) return;
+
+            inputBadge.value = slide.badge || "";
+            inputChapter.value = slide.chapter || "";
+            inputTitleMalayalam.value = slide.titleMalayalam || "";
+            inputTitleEnglish.value = slide.titleEnglish || "";
+            inputOverview.value = slide.overview || "";
+            inputBullets.value = Array.isArray(slide.bullets) ? slide.bullets.join('\n') : (slide.bullets || "");
+            inputFooter.value = slide.footer || "";
+            if (slide.theme) selectTheme.value = slide.theme;
+            if (slide.template) selectTemplate.value = slide.template;
+
+            slideCounter.innerText = `${currentSlideIndex + 1} of ${currentDeck.length}`;
+            renderCanvas();
+        }
+
+        function saveFormToState() {
+            if (!currentDeck[currentSlideIndex]) {
+                currentDeck[currentSlideIndex] = {};
+            }
+            const slide = currentDeck[currentSlideIndex];
+            slide.badge = inputBadge.value;
+            slide.chapter = inputChapter.value;
+            slide.titleMalayalam = inputTitleMalayalam.value;
+            slide.titleEnglish = inputTitleEnglish.value;
+            slide.overview = inputOverview.value;
+            slide.bullets = inputBullets.value.split('\n').filter(b => b.trim().length > 0);
+            slide.footer = inputFooter.value;
+            slide.theme = selectTheme.value;
+            slide.template = selectTemplate.value;
+        }
+
+        // Event Listeners for live updates
+        [inputBadge, inputChapter, inputTitleMalayalam, inputTitleEnglish, inputOverview, inputBullets, inputFooter].forEach(el => {
+            el.addEventListener('input', () => {
+                saveFormToState();
+                renderCanvas();
+            });
+        });
+
+        [selectTheme, selectTemplate, checkGrid].forEach(el => {
+            el.addEventListener('change', () => {
+                saveFormToState();
+                renderCanvas();
+            });
+        });
+
+        selectRatio.addEventListener('change', (e) => {
+            const [w, h] = e.target.value.split('x').map(Number);
+            setResolution(w, h);
+        });
+
+        // Navigation
+        document.getElementById('btnPrevSlide').addEventListener('click', () => {
+            if (currentSlideIndex > 0) {
+                saveFormToState();
+                currentSlideIndex--;
+                syncFormFromState();
+            }
+        });
+
+        document.getElementById('btnNextSlide').addEventListener('click', () => {
+            if (currentSlideIndex < currentDeck.length - 1) {
+                saveFormToState();
+                currentSlideIndex++;
+                syncFormFromState();
+            }
+        });
+
+        document.getElementById('btnAddSlide').addEventListener('click', () => {
+            saveFormToState();
+            currentDeck.push({
+                badge: inputBadge.value,
+                chapter: `SLIDE ${String(currentDeck.length + 1).padStart(2, '0')}`,
+                titleMalayalam: "പുതിയ ആശയം അല്ലെങ്കിൽ വിഷയം",
+                titleEnglish: "New Concept or Key Takeaway",
+                overview: "ഇവിടെ പുതിയ ആശയത്തിന്റെ ലഘു വിവരണം നൽകുക.",
+                bullets: ["1. പ്രധാന പോയിന്റ് ഒന്ന്", "2. പ്രധാന പോയിന്റ് രണ്ട്"],
+                footer: inputFooter.value,
+                theme: selectTheme.value,
+                template: selectTemplate.value
+            });
+            currentSlideIndex = currentDeck.length - 1;
+            syncFormFromState();
+        });
+
+        // Preset Loader
+        window.loadPreset = function(presetKey) {
+            if (PRESET_DECKS[presetKey]) {
+                currentDeck = JSON.parse(JSON.stringify(PRESET_DECKS[presetKey]));
+                currentSlideIndex = 0;
+                syncFormFromState();
+            }
+        };
+
+        // Export Canvas to PNG
+        document.getElementById('btnDownloadPNG').addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.download = `slide_${currentSlideIndex + 1}_${Date.now()}.png`;
+            link.href = canvas.toDataURL('image/png', 1.0);
+            link.click();
+        });
+
+        // Export Deck to Canva Bulk Create CSV
+        document.getElementById('btnExportCanvaCSV').addEventListener('click', () => {
+            saveFormToState();
+            let csv = "Badge,Chapter,TitleMalayalam,TitleEnglish,Overview,KeyPoint1,KeyPoint2,KeyPoint3,Footer\n";
+
+            currentDeck.forEach(slide => {
+                const escapeCsv = (str) => `"${(str || '').replace(/"/g, '""').replace(/\n/g, ' ')}"`;
+                const b = slide.bullets || [];
+                const row = [
+                    escapeCsv(slide.badge),
+                    escapeCsv(slide.chapter),
+                    escapeCsv(slide.titleMalayalam),
+                    escapeCsv(slide.titleEnglish),
+                    escapeCsv(slide.overview),
+                    escapeCsv(b[0] || ''),
+                    escapeCsv(b[1] || ''),
+                    escapeCsv(b[2] || ''),
+                    escapeCsv(slide.footer)
+                ];
+                csv += row.join(",") + "\n";
+            });
+
+            const blob = new Blob(["\uFEFF" + csv], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `canva_bulk_create_${Date.now()}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        // Copy JSON
+        document.getElementById('btnCopyJSON').addEventListener('click', () => {
+            saveFormToState();
+            navigator.clipboard.writeText(JSON.stringify(currentDeck, null, 2)).then(() => {
+                alert("Slide deck JSON copied to clipboard!");
+            });
+        });
+
+        // Initialize Canvas
+        setResolution(1920, 1080);
+        syncFormFromState();
+
+        // Ensure fonts are loaded before first paint
+        if (document.fonts) {
+            document.fonts.ready.then(() => {
+                renderCanvas();
+            });
+        }
+    </script>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

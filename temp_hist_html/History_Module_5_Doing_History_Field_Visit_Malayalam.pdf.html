@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 5: പ്രായോഗിക ചരിത്ര പഠനം | Doing History & Field Exploration</title>
+  <style>
+    :root {
+      --c1: #4a044e;
+      --c2: #701a75;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #4a044e), var(--c2, #701a75));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(74, 4, 78, 0.25);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fdf4ff;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #f5d0fe;
+}
+
+.badge {
+  display: inline-block;
+  background: #fdf4ff;
+  color: #701a75;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #f0abfc;
+}
+
+h2 {
+  color: var(--c1, #4a044e);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #f5d0fe;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #701a75;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #fdf4ff;
+  border-left: 4px solid var(--c2, #701a75);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-plum {
+  background: #fdf4ff;
+  border-left: 4px solid #86198f;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+/* Diagrams & Visual Charts */
+.diagram-container {
+  background: #ffffff;
+  border: 1.5px solid #f5d0fe;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(112, 26, 117, 0.05);
+}
+
+.diagram-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 11pt;
+  color: #4a044e;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.flow-step {
+  background: #fdf4ff;
+  border: 1.5px solid #d946ef;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 9.5pt;
+  color: #4a044e;
+  text-align: center;
+}
+
+.flow-step small {
+  display: block;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #701a75;
+}
+
+.flow-arrow {
+  color: #a21caf;
+  font-weight: 900;
+  font-size: 14pt;
+}
+
+/* Tree Grid */
+.tree-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 16px 0;
+}
+
+.tree-card {
+  background: #fdf4ff;
+  border: 1px solid #f0abfc;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.tree-card h4 {
+  margin: 0 0 6px 0;
+  color: #701a75;
+  font-size: 10pt;
+  font-weight: 700;
+}
+
+.tree-card p {
+  margin: 0;
+  font-size: 9pt;
+  line-height: 1.6;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 9.5pt;
+}
+
+th, td {
+  border: 1px solid #e2e8f0;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #fdf4ff;
+  color: #4a044e;
+  font-weight: 700;
+}
+
+tr:nth-child(even) td {
+  background: #fafaf9;
+}
+
+/* Q&A Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #f5d0fe;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #4a044e;
+  margin-bottom: 8px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  background: #fdf4ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #86198f;
+}
+
+/* MCQ Cards */
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #f5d0fe;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #4a044e;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #fdf4ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid #f0abfc;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>Module 5 · Doing History</h4>
+    <h1>മൊഡ്യൂൾ 5: പ്രായോഗിക ചരിത്ര പഠനം | Doing History & Field Exploration</h1>
+    <div class="meta">HIS1CJ101 · Module 5 · Practical Field Study, Heritage Sites & Report Guidelines · Calicut University B.A. History FYUGP (HIS1CJ101) · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+  <div class="card card-plum">
+    <div class="badge">HIS1CJ101 · MODULE 5 · OFFICIAL PRACTICAL CURRICULUM</div>
+    <h2>മൊഡ്യൂൾ 5: പ്രായോഗിക ചരിത്ര പഠനം | Module 5: Doing History & Field Exploration</h2>
+    <p><strong>English:</strong> Comprehensive practical guidebook covering archaeological field exploration, site visits, heritage walks, oral history methodology, and assignment project report guidelines for the 10-mark internal practical component.</p>
+    <p><strong>മലയാളം:</strong> പുരാവസ്തു കേന്ദ്ര സന്ദർശനം (Field Visit), പൈതൃക നടത്തം (Heritage Walk), വാമൊഴി ചരിത്ര ശേഖരണം, ഫീൽഡ് വർക്ക് റിപ്പോർട്ട് തയ്യാറാക്കൽ എന്നിവയെക്കുറിച്ചുള്ള പ്രായോഗിക ചരിത്ര പഠന സഹായി.</p>
+  </div>
+
+  <h2>1. Major Archaeological & Heritage Sites in Kerala (പ്രധാന ചരിത്ര കേന്ദ്രങ്ങൾ)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ചരിത്ര കേന്ദ്രം (Heritage Site)</th>
+        <th>സ്ഥാനം (Location)</th>
+        <th>ചരിത്രപരമായ പ്രാധാന്യം (Historical Significance)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Edakkal Caves (ഇടയ്ക്കൽ ഗുഹ)</strong></td>
+        <td>അമ്പുകുത്തി മല, സുൽത്താൻ ബത്തേരി, വയനാട്</td>
+        <td>ചരിത്രാതീത ശിലാ കൊത്തുപണികൾ (Petroglyphs), നവീന ശിലായുധങ്ങൾ, ബ്രാഹ്മി-വട്ടെഴുത്ത് ലിഖിതങ്ങൾ.</td>
+      </tr>
+      <tr>
+        <td><strong>Marayur (മറയൂർ)</strong></td>
+        <td>ചിന്നാർ, ഇടുക്കി</td>
+        <td>നൂറുകണക്കിന് മുനിയറകൾ (Dolmens), കാവിമണ്ണിൽ വരച്ച പ്രകൃതിദത്ത ഗുഹാചിത്രങ്ങൾ (Pictographs).</td>
+      </tr>
+      <tr>
+        <td><strong>Porkkalam & Ariyannur (പോർക്കുളം, അരിയന്നൂർ)</strong></td>
+        <td>തൃശൂർ ജില്ല</td>
+        <td>കുടക്കല്ലുകൾ, തൊപ്പിക്കല്ലുകൾ, ലാറ്ററൈറ്റ് വെട്ടുഗുഹകൾ; ബി.കെ. ഥാപ്പർ ഖനനം നടത്തിയ കേന്ദ്രം.</td>
+      </tr>
+      <tr>
+        <td><strong>Kodungallur & Cheraman Parambu</strong></td>
+        <td>തൃശൂർ തീരദേശം</td>
+        <td>മഹോദയപുരം ചേര പെരുമാൾ സാമ്രാജ്യത്തിന്റെ ആസ്ഥാനം, ചേരമാൻ ജുമാ മസ്ജിദ്, തിരുവഞ്ചിക്കുളം ക്ഷേത്രം.</td>
+      </tr>
+      <tr>
+        <td><strong>Pattanam (പട്ടണം)</strong></td>
+        <td>വടക്കൻ പറവൂർ, എറണാകുളം</td>
+        <td>പ്രാചീന മുസിരിസ് തുറമുഖത്തിന്റെ ഖനന കേന്ദ്രം; റോമൻ ആംഫോറകൾ, കപ്പൽത്തട്ട്, മരത്തോണി.</td>
+      </tr>
+      <tr>
+        <td><strong>Vizhinjam (വിഴിഞ്ഞം)</strong></td>
+        <td>തിരുവനന്തപുരം</td>
+        <td>ആയ് രാജവംശത്തിന്റെ തലസ്ഥാന തുറമുഖം; ഗുഹാ ക്ഷേത്രം, വിദേശ മൺപാത്ര അവശിഷ്ടങ്ങൾ.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Fieldwork Methodology & Assignment Report Format (ഫീൽഡ് റിപ്പോർട്ട് മാർഗ്ഗനിർദ്ദേശങ്ങൾ)</h2>
+  <div class="tree-grid">
+    <div class="tree-card">
+      <h4>Field Survey Guidelines (ഫീൽഡ് സന്ദർശന ഘട്ടങ്ങൾ)</h4>
+      <p>1. <strong>Pre-visit Survey:</strong> Literature review of site excavation reports.<br>
+      2. <strong>On-site Documentation:</strong> Photography, sketching monument orientation, GPS tagging, and note-taking.<br>
+      3. <strong>Oral History Gathering:</strong> Interviewing local elders and traditional custodians using structured questionnaires.</p>
+    </div>
+    <div class="tree-card">
+      <h4>Report Format (റിപ്പോർട്ടിന്റെ ഘടന - 10 Marks)</h4>
+      <p>1. <strong>Title Page:</strong> Student details, course code (HIS1CJ101), site visited.<br>
+      2. <strong>Historical Context:</strong> Chronology and significance of the site.<br>
+      3. <strong>Physical Description:</strong> Architectural typology, materials used.<br>
+      4. <strong>Photographic Evidence:</strong> Captured images with analytic captions.<br>
+      5. <strong>Conclusion & Preservation Assessment:</strong> Threat of weathering, urbanization, and heritage recommendations.</p>
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. ഹിസ്റ്ററി പഠന സഹായി · History of Keralam up to 12th Century (HIS1CJ101)</span>
+    <span>സമ്പൂർണ്ണ മലയാള പരിഭാഷ, ചോദ്യോത്തരങ്ങൾ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

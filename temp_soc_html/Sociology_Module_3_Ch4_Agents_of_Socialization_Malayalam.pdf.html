@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 3 · അധ്യായം 3.4: സോഷ്യലൈസേഷന്റെ ഏജൻസികൾ</title>
+  <style>
+    :root {
+      --c1: #581c87;
+      --c2: #7e22ce;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #581c87), var(--c2, #7e22ce));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(88, 28, 135, 0.2);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f3e8ff;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #e9d5ff;
+}
+
+.badge {
+  display: inline-block;
+  background: #faf5ff;
+  color: #6b21a8;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #d8b4fe;
+}
+
+h2 {
+  color: var(--c1, #581c87);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #7e22ce;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #faf5ff;
+  border-left: 4px solid var(--c2, #7e22ce);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-purple {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+/* Diagrams & Visual Charts */
+.diagram-container {
+  background: #ffffff;
+  border: 1.5px solid #e9d5ff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.05);
+}
+
+.diagram-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 11pt;
+  color: #581c87;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.flow-step {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border: 1.5px solid #c084fc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #581c87;
+  min-width: 130px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(107, 33, 168, 0.08);
+}
+
+.flow-step small {
+  display: block;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #6b21a8;
+  margin-top: 4px;
+}
+
+.flow-arrow {
+  color: #9333ea;
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+.tree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.tree-card {
+  background: #fdf4ff;
+  border: 1px solid #d8b4fe;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.tree-card h4 {
+  margin: 0 0 6px 0;
+  color: #6b21a8;
+  font-size: 10pt;
+  font-weight: 700;
+  border-bottom: 1px solid #e9d5ff;
+  padding-bottom: 4px;
+}
+
+.tree-card p {
+  margin: 0;
+  font-size: 9pt;
+  line-height: 1.6;
+  color: #334155;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f3e8ff;
+  color: #581c87;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #faf5ff;
+}
+
+/* Bilingual Entry Blocks */
+.bilingual-entry {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-left: 4px solid #7e22ce;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(107, 33, 168, 0.04);
+}
+
+.bilingual-entry .en-part {
+  color: #1e293b;
+  font-size: 10pt;
+  line-height: 1.7;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.bilingual-entry .ml-part {
+  color: #3b0764;
+  font-size: 10pt;
+  line-height: 1.85;
+}
+
+.en-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #bfdbfe;
+}
+
+.ml-tag {
+  display: inline-block;
+  background: #faf5ff;
+  color: #7e22ce;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #d8b4fe;
+}
+
+/* LMS Question & Answer Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #7e22ce;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #581c87;
+  margin-bottom: 8px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  background: #faf5ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #9333ea;
+}
+
+/* MCQ Cards */
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #581c87;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #f3e8ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid #d8b4fe;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Module 3: Individual and Society)</h4>
+    <h1>മൊഡ്യൂൾ 3 · അധ്യായം 3.4: സോഷ്യലൈസേഷന്റെ ഏജൻസികൾ</h1>
+    <div class="meta">Module 3 · Chapter 3.4: Agencies & Agents of Socialization · Calicut University B.A. Sociology FYUGP · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Chapter Overview:</strong> Culture does not transmit itself automatically; it operates through concrete social institutions termed 'Agents of Socialization'. This chapter explores the primary and secondary agencies responsible for human socialization: the Family, Peer Groups, School (formal and hidden curriculum), Digital Mass Media, Workplace, and Religion, evaluating their changing dynamics in the 21st century.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>അധ്യായ അവലോകനം:</strong> സംസ്കാരം തനിയെ പകരുന്ന ഒന്നല്ല; അത് പ്രത്യേക സാമൂഹിക സ്ഥാപനങ്ങളിലൂടെയാണ് തലമുറകളിലേക്ക് പകരുന്നത്. ഇവയെയാണ് 'സോഷ്യലൈസേഷന്റെ ഏജൻസികൾ' എന്ന് വിളിക്കുന്നത്. കുടുംബം, പിയർ ഗ്രൂപ്പുകൾ (സുഹൃത്തുക്കൾ), വിദ്യാലയങ്ങൾ (ഔപചാരിക സിലബസും ഹിഡൻ കരിക്കുലവും), ഡിജിറ്റൽ മാധ്യമങ്ങൾ, തൊഴിലിടങ്ങൾ, മതം എന്നിവ മനുഷ്യന്റെ വ്യക്തിത്വ വികാസത്തിൽ വഹിക്കുന്ന പങ്കാണ് ഈ അധ്യായത്തിൽ ചർച്ച ചെയ്യുന്നത്.
+  </div>
+</div>
+
+<div class="card">
+  <h4 class="sub-head" style="margin-top:0;">പ്രധാന ശേഷികൾ (Core Competencies):</h4>
+  <ul>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Assess Family as First Agent:</strong> Understand the family's primacy in language transmission, gender socialization, and initial moral security.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>കുടുംബത്തിന്റെ പങ്ക്:</strong> മാതൃഭാഷ, ലിംഗപദവി പഠനം (Gender roles), വൈകാരിക സുരക്ഷിതത്വം എന്നിവയിൽ കുടുംബത്തിന്റെ പ്രാധാന്യം മനസ്സിലാക്കുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Evaluate Peer Group Dynamics:</strong> Differentiate peer relationships based on egalitarian equality from adult hierarchical authority.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>കളിസംഘങ്ങളുടെ സ്വഭാവം:</strong> മുതിർന്നവരുടെ അധികാരത്തിൽ നിന്നും വ്യത്യസ്തമായി സമപ്രായക്കാർക്കിടയിലെ തുല്യതാ ബന്ധങ്ങൾ വ്യക്തിത്വത്തെ സ്വാധീനിക്കുന്നത് എങ്ങനെ എന്ന് പഠിക്കുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Analyze School & Hidden Curriculum:</strong> Contrast the manifest formal syllabus with the latent hidden curriculum of discipline and obedience.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിദ്യാലയവും ഹിഡൻ കരിക്കുലവും:</strong> ഔദ്യോഗിക പാഠപുസ്തക പഠനത്തിനൊപ്പം വിദ്യാലയങ്ങൾ പഠിപ്പിക്കുന്ന കൃത്യനിഷ്ഠ, മത്സരം, അനുസരണ തുടങ്ങിയ അദൃശ്യ പാഠങ്ങൾ (Hidden Curriculum) വിശകലനം ചെയ്യുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Evaluate Digital Mass Media:</strong> Assess how smartphones, algorithms, and social media platforms alter modern youth socialization.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>ഡിജിറ്റൽ മാധ്യമങ്ങളുടെ സ്വാധീനം:</strong> സ്മാർട്ട്ഫോണുകളും സോഷ്യൽ മീഡിയയും പുതിയ തലമുറയുടെ ചിന്തകളെയും സംസ്കാരത്തെയും മാറ്റിമറിക്കുന്നത് വിലയിരുത്തുക.</div>
+    </li>
+  </ul>
+</div>
+
+<h2>2. പ്രധാന ഏജൻസികളുടെ അപഗ്രഥനം (Analysis of Primary & Secondary Agents)</h2>
+<div class="tree-grid">
+  <div class="tree-card" style="border-left: 4px solid #7e22ce;">
+    <h4>1. The Family (കുടുംബം)</h4>
+    <p><strong>EN:</strong> The universal foundation of primary socialization. Teaches initial mother tongue, moral values, dietary customs, and gender roles. Provides unconditional emotional security.<br>
+    <strong>ML:</strong> കുട്ടിയുടെ ആദ്യ വിദ്യാലയം. മാതൃഭാഷ, അടിസ്ഥാന സംസ്കാരം, മര്യാദകൾ, കുടുംബ മൂല്യങ്ങൾ എന്നിവ പകർന്നു നൽകുന്നു.</p>
+  </div>
+  <div class="tree-card" style="border-left: 4px solid #059669;">
+    <h4>2. The Peer Group (സുഹൃത്തുക്കൾ / കളിസംഘം)</h4>
+    <p><strong>EN:</strong> Micro-social group of similar age and status. Unlike family, peer relations are egalitarian and horizontal, fostering autonomy, personal independence, and youth subcultures.<br>
+    <strong>ML:</strong> തുല്യ പ്രായത്തിലുള്ളവരുടെ കൂട്ടായ്മ. മാതാപിതാക്കളുടെ അധികാരത്തിൽ നിന്നും മാറി സ്വാതന്ത്ര്യവും നേതൃപാടവവും സഹവർത്തിത്വവും ഇവിടെ പഠിക്കുന്നു.</p>
+  </div>
+  <div class="tree-card" style="border-left: 4px solid #2563eb;">
+    <h4>3. The School (വിദ്യാലയം)</h4>
+    <p><strong>EN:</strong> The first formal bureaucratic agency. Operates through: (a) <em>Formal curriculum</em> (sciences, humanities), and (b) <em>Hidden Curriculum</em> (punctuality, discipline, competition, hierarchy).<br>
+    <strong>ML:</strong> കുട്ടിയുടെ ആദ്യത്തെ ഔദ്യോഗിക വേദി. പാഠപുസ്തക പഠനത്തോടൊപ്പം നിയമങ്ങൾ പാലിക്കാനും മത്സരങ്ങളിൽ പങ്കെടുക്കാനുമുള്ള പരിശീലനം നൽകുന്നു.</p>
+  </div>
+  <div class="tree-card" style="border-left: 4px solid #d97706;">
+    <h4>4. Mass Media & Internet (ഡിജിറ്റൽ മാധ്യമങ്ങൾ)</h4>
+    <p><strong>EN:</strong> One-way and interactive electronic dissemination (television, internet, social media platforms). Transmits cultural icons, consumer desires, political beliefs, and globalized worldviews.<br>
+    <strong>ML:</strong> ടെലിവിഷൻ, ഇന്റർനെറ്റ്, സോഷ്യൽ മീഡിയ എന്നിവയിലൂടെ വിവരങ്ങളും ലോകസംസ്കാരവും അതിവേഗം സ്വാംശീകരിക്കുന്നു.</p>
+  </div>
+</div>
+
+<h2>3. എൽ.എം.എസ് ചോദ്യോത്തരങ്ങൾ (Chapter 3.4 Key Questions & Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. Why is the family considered the most fundamental agency of socialization? / കുടുംബത്തെ ഏറ്റവും അടിസ്ഥാനപരമായ സോഷ്യലൈസേഷൻ ഏജൻസിയായി കണക്കാക്കുന്നത് എന്തുകൊണ്ട്?</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> The family is the first and most enduring agent of socialization. It has primary custody over the infant during the most impressionable years of neural and emotional development. It provides the initial mother tongue, transmits deeply rooted cultural and religious values, enforces gender roles, and offers the essential emotional bonding without which psychological stability is compromised.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> കുട്ടിയുടെ മനസ്സിൽ ഏറ്റവും കൂടുതൽ സ്വാധീനം ചെലുത്താൻ കഴിയുന്ന ശൈശവകാലത്ത് കുട്ടി കുടുംബത്തിലാണ് വളരുന്നത്. മാതൃഭാഷ, സ്നേഹം, ധാർമ്മിക മൂല്യങ്ങൾ, ആചാരങ്ങൾ എന്നിവ പകർന്നു നൽകുന്നത് കുടുംബമാണ്. കുടുംബം നൽകുന്ന മാനസിക സുരക്ഷിതത്വമാണ് ഒരു വ്യക്തിയുടെ ജീവിതത്തിന്റെ അടിത്തറ.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. What is meant by the 'Hidden Curriculum' in school socialization? / വിദ്യാലയങ്ങളിലെ 'ഹിഡൻ കരിക്കുലം' (Hidden Curriculum) എന്നാൽ എന്താണ്?</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> The <strong>Hidden Curriculum</strong> refers to the unwritten, unofficial, and unintended lessons, values, and perspectives that students learn in school beyond formal academic subjects. These include learning to sit quietly, obey bureaucratic authority, meet strict deadlines, compete with peers for grades, accept social hierarchy, and conform to institutional schedules required by modern capitalist workplaces.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> വിദ്യാലയങ്ങളിലെ ഔദ്യോഗിക പാഠപുസ്തകങ്ങൾക്ക് പുറമെ, സ്കൂൾ അന്തരീക്ഷത്തിൽ നിന്നും വിദ്യാർത്ഥികൾ അറിയാതെ പഠിച്ചെടുക്കുന്ന അദൃശ്യ പാഠങ്ങളെയാണ് <strong>ഹിഡൻ കരിക്കുലം</strong> എന്ന് വിളിക്കുന്നത്. മുതിർന്നവരെ അനുസരിക്കുക, സമയനിഷ്ഠ പാലിക്കുക, ക്ലാസിൽ നിശബ്ദത പാലിക്കുക, പരീക്ഷകളിൽ മറ്റുള്ളവരുമായി മത്സരിക്കുക എന്നിവയെല്ലാം ഇതിൽ ഉൾപ്പെടുന്നു.</div>
+</div>
+
+<h2>4. പരീക്ഷാ ബഹുവിശേഷ ചോദ്യങ്ങൾ (Chapter 3.4 Examination MCQs)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">1. Which agent of socialization operates on an egalitarian horizontal status among members? / തുല്യ പദവിയിലുള്ള അംഗങ്ങൾക്കിടയിൽ പ്രവർത്തിക്കുന്ന ഏജൻസി ഏതാണ്?</div>
+    <div class="q-options">
+      A) School / വിദ്യാലയം<br>
+      B) Peer Group / പിയർ ഗ്രൂപ്പ് (സുഹൃദ്‌സംഘം)<br>
+      C) Workplace / തൊഴിലിടം<br>
+      D) Military / സൈന്യം
+    </div>
+    <div class="q-ans">Answer: B) Peer Group / പിയർ ഗ്രൂപ്പ്</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Unlike family and school, peer groups are based on equality of age and social standing.<br>
+      <strong>ML:</strong> സമപ്രായക്കാരായ സുഹൃത്തുക്കൾക്കിടയിൽ തുല്യതയും സ്വാതന്ത്ര്യവുമാണ് ഉള്ളത്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. Unwritten lessons regarding discipline and obedience taught in schools are known as: / വിദ്യാലയങ്ങൾ പഠിപ്പിക്കുന്ന അദൃശ്യ നിയമങ്ങൾ ഏത് പേരിലറിയപ്പെടുന്നു?</div>
+    <div class="q-options">
+      A) Formal curriculum / ഔദ്യോഗിക സിലബസ്<br>
+      B) Hidden curriculum / ഹിഡൻ കരിക്കുലം<br>
+      C) Vocational training / വൊക്കേഷണൽ പരിശീലനം<br>
+      D) Remedial coaching / റിമീഡിയൽ കോച്ചിംഗ്
+    </div>
+    <div class="q-ans">Answer: B) Hidden curriculum / ഹിഡൻ കരിക്കുലം</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Hidden curriculum socializes students into societal norms of conformity and obedience.<br>
+      <strong>ML:</strong> സ്കൂളുകൾ വഴി പഠിക്കുന്ന അനുസരണയും കൃത്യനിഷ്ഠയുമാണ് ഹിഡൻ കരിക്കുലം.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. Which is the earliest agency responsible for primary socialization? / പ്രൈമറി സോഷ്യലൈസേഷന് ഉത്തരവാദിയായ ആദ്യ ഏജൻസി ഏത്?</div>
+    <div class="q-options">
+      A) Mass Media / മാധ്യമങ്ങൾ<br>
+      B) Family / കുടുംബം<br>
+      C) Political party / രാഷ്ട്രീയ പാർട്ടി<br>
+      D) College / കോളേജ്
+    </div>
+    <div class="q-ans">Answer: B) Family / കുടുംബം</div>
+    <div class="q-exp">
+      <strong>EN:</strong> The family is the first universal agency every child encounters.<br>
+      <strong>ML:</strong> ജനിച്ചയുടൻ കുട്ടി സമ്പർക്കം പുലർത്തുന്ന ആദ്യ ഏജൻസി കുടുംബമാണ്.
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. സോഷ്യോളജി പഠന സഹായി · Introduction to Sociology (SOC1CJ101)</span>
+    <span>സമ്പൂർണ്ണ മലയാള പരിഭാഷ, ചോദ്യോത്തരങ്ങൾ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

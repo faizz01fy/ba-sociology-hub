@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Mobile Subjects Restructure Hub</title>
+  <!-- style.css removed for clean mobile preview -->
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      width: 375px !important;
+      margin: 0 auto !important;
+      padding: 6px !important;
+      box-sizing: border-box !important;
+      background: #f8fafc !important;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    }
+    
+    /* Dedicated Mobile View Styles */
+    .mobile-subjects-panel {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 8px 6px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e2e8f0;
+      margin: 0 auto 14px auto;
+      width: 100%;
+      width: 100% !important; max-width: 100% !important;
+      box-sizing: border-box;
+    }
+    
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding: 0 4px;
+    }
+    .panel-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .panel-badge {
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 12px;
+      border: 1px solid #dbeafe;
+    }
+
+    /* All 12 Subjects in 3 Clean Balanced Columns fitting screen exactly */
+    .subject-grid-mobile {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 5px;
+      width: 100%;
+    }
+
+    .subj-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 6px 2px;
+      border-radius: 11px;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      min-height: 52px; min-width: 0;
+      overflow: hidden;
+    }
+
+    .subj-tile.active {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%) !important;
+      border-color: #1d4ed8 !important;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+      transform: translateY(-2px);
+    }
+
+    .subj-tile .tile-icon {
+      font-size: 14px;
+      font-weight: 800;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .subj-tile.active .tile-icon {
+      background: rgba(255, 255, 255, 0.22);
+      color: #ffffff !important;
+    }
+
+    .subj-tile .tile-title {
+      font-size: 9.5px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: #334155;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      padding: 0 2px;
+    }
+
+    .subj-tile.active .tile-title {
+      color: #ffffff !important;
+      font-weight: 800;
+    }
+
+    /* Active Subject Detail Section */
+    .active-subject-card {
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      padding: 14px;
+      margin: 0 auto 24px auto;
+      width: 100%;
+      width: 100% !important; max-width: 100% !important;
+      box-sizing: border-box;
+    }
+
+    .active-subject-card .subject-cover {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .active-subject-card .subject-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .active-subject-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 12px 0;
+    }
+
+    /* Selective Part Filter Tabs (Show Part of it only) */
+    .parts-filter-bar {
+      display: flex;
+      gap: 5px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .parts-filter-bar::-webkit-scrollbar { display: none; }
+
+    .part-pill {
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #475569;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .part-pill.active {
+      background: #1e3a8a;
+      color: #ffffff;
+      border-color: #1e3a8a;
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.25);
+    }
+
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .links-list a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .badge-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #e2e8f0;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .badge-icon.rose { background: #ffe4e6; color: #e11d48; }
+    .badge-icon.blue { background: #dbeafe; color: #2563eb; }
+    .badge-icon.purple { background: #ede9fe; color: #7c3aed; }
+    .badge-icon.green { background: #dcfce7; color: #16a34a; }
+    .badge-icon.orange { background: #ffedd5; color: #ea580c; }
+    .badge-icon.gold { background: #fef3c7; color: #d97706; }
+
+    .link-details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .link-details small {
+      font-size: 10px;
+      color: #64748b;
+      font-weight: 500;
+      margin-top: 1px;
+    }
+    .link-arrow {
+      color: #94a3b8;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    
+    .view-chip {
+      background: #dbeafe;
+      color: #1e40af;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 6px;
+      margin-left: 6px;
+    }
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+
+  <!-- MOBILE ALL SUBJECTS SCREEN -->
+  <div class="mobile-subjects-panel">
+    <div class="panel-header">
+      <div class="panel-title"><span>📚</span> All 12 Subjects</div>
+      <div class="panel-badge">Tap Subject to View</div>
+    </div>
+    
+    <div class="subject-grid-mobile">
+      <!-- 1. Malayalam -->
+      <div class="subj-tile active" id="tile-malayalam" onclick="switchSubject('malayalam')">
+        <span class="tile-icon" style="color:#e11d48;">അ</span>
+        <span class="tile-title">Malayalam</span>
+      </div>
+      <!-- 2. English -->
+      <div class="subj-tile" id="tile-english" onclick="switchSubject('english')">
+        <span class="tile-icon" style="color:#2563eb;">Aa</span>
+        <span class="tile-title">English</span>
+      </div>
+      <!-- 3. Sociology -->
+      <div class="subj-tile" id="tile-sociology" onclick="switchSubject('sociology')">
+        <span class="tile-icon" style="color:#7c3aed;">◎</span>
+        <span class="tile-title">Sociology</span>
+      </div>
+      <!-- 4. Philosophy of AI -->
+      <div class="subj-tile" id="tile-ai" onclick="switchSubject('ai')">
+        <span class="tile-icon" style="color:#059669;">✧</span>
+        <span class="tile-title">Philosophy of AI</span>
+      </div>
+      <!-- 5. Philosophy of Education -->
+      <div class="subj-tile" id="tile-edu" onclick="switchSubject('edu')">
+        <span class="tile-icon" style="color:#ea580c;">✎</span>
+        <span class="tile-title">Education Phil</span>
+      </div>
+      <!-- 6. Development Issues in Indian Economy -->
+      <div class="subj-tile" id="tile-economy" onclick="switchSubject('economy')">
+        <span class="tile-icon" style="color:#16a34a;">₹</span>
+        <span class="tile-title">Indian Economy</span>
+      </div>
+      <!-- 7. Fundamentals of Ethics -->
+      <div class="subj-tile" id="tile-ethics" onclick="switchSubject('ethics')">
+        <span class="tile-icon" style="color:#059669;">◇</span>
+        <span class="tile-title">Ethics</span>
+      </div>
+      <!-- 8. Microeconomic Foundation -->
+      <div class="subj-tile" id="tile-micro" onclick="switchSubject('micro')">
+        <span class="tile-icon" style="color:#2563eb;">₹</span>
+        <span class="tile-title">Microeconomics</span>
+      </div>
+      <!-- 9. Arabic -->
+      <div class="subj-tile" id="tile-arabic" onclick="switchSubject('arabic')">
+        <span class="tile-icon" style="color:#d97706;">ع</span>
+        <span class="tile-title">Arabic</span>
+      </div>
+      <!-- 10. Hindi -->
+      <div class="subj-tile" id="tile-hindi" onclick="switchSubject('hindi')">
+        <span class="tile-icon" style="color:#dc2626;">हि</span>
+        <span class="tile-title">Hindi</span>
+      </div>
+      <!-- 11. Mathematics -->
+      <div class="subj-tile" id="tile-maths" onclick="switchSubject('maths')">
+        <span class="tile-icon" style="color:#0891b2;">∑</span>
+        <span class="tile-title">Mathematics</span>
+      </div>
+      <!-- 12. History of Keralam -->
+      <div class="subj-tile" id="tile-history" onclick="switchSubject('history')">
+        <span class="tile-icon" style="color:#7c3aed;">🏛</span>
+        <span class="tile-title">History of Keralam</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVE SELECTED SUBJECT CARD (SHOWING PART OF IT ONLY) -->
+  <div class="active-subject-card" id="activeCard">
+    <img class="subject-cover" id="cardImage" src="https://images.unsplash.com/photo-1548782033-3ac3a62ece8d?auto=format&fit=crop&w=560&h=315&q=70" alt="Cover">
+    <div class="subject-header-row">
+      <span class="badge-icon purple" id="cardIcon">◎</span>
+      <span style="font-size:10px; font-weight:800; color:#64748b; letter-spacing:0.5px;" id="cardCategory">CORE SUBJECT</span>
+    </div>
+    <h3 id="cardTitle">Sociology</h3>
+
+    <!-- Selective Filter for Parts (Show Part of it only) -->
+    <div class="parts-filter-bar">
+      <button class="part-pill active" onclick="filterPart('all', this)">All Parts</button>
+      <button class="part-pill" onclick="filterPart('pdf', this)">📖 LMS PDF</button>
+      <button class="part-pill" onclick="filterPart('guide', this)">📝 Reading Guide</button>
+      <button class="part-pill" onclick="filterPart('mcq', this)">⚡ MCQ Tests</button>
+      <button class="part-pill" onclick="filterPart('voice', this)">🎙️ Voice Lectures</button>
+    </div>
+
+    <!-- Active Parts Links List -->
+    <div class="links-list" id="cardLinks">
+      <a href="#" class="item-pdf">
+        <span class="badge-icon blue">EN</span>
+        <div class="link-details">
+          <strong>LMS PDF</strong>
+          <small>Modules 1–5 PDF Chapters</small>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+      <a href="soc-reading" class="item-guide">
+        <span class="badge-icon rose">അ</span>
+        <div class="link-details">
+          <strong>Malayalam Reading (Guide)</strong>
+          <small>All modules in Malayalam &amp; English</small>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+      <a href="sociology-study-notes" class="item-guide">
+        <span class="badge-icon green">CORE</span>
+        <div class="link-details">
+          <strong>Study Notes (Mod 1–5)<span class="view-chip">THEORY</span></strong>
+          <small>Key Concepts &amp; Thinkers analysis</small>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+      <a href="sociology-without-timer" class="item-mcq">
+        <span class="badge-icon gold">⚡</span>
+        <div class="link-details">
+          <strong>MCQ Test<span class="view-chip" style="background:#fee2e2;color:#b91c1c;">235 Qs</span></strong>
+          <small>Full Chapter-wise Practice Questions</small>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+      <a href="voice-explanation?subject=sociology" class="item-voice">
+        <span class="badge-icon purple">🎙️</span>
+        <div class="link-details">
+          <strong>Voice Explanation (Mal)<span class="view-chip" style="background:#fef3c7;color:#b45309;">AUDIO</span></strong>
+          <small>Malayalam Voice Lectures &amp; Breakdowns</small>
+        </div>
+        <span class="link-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function filterPart(part, btn) {
+      document.querySelectorAll('.part-pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      
+      const items = document.querySelectorAll('#cardLinks a');
+      items.forEach(item => {
+        if (part === 'all') {
+          item.style.display = 'flex';
+        } else if (item.classList.contains('item-' + part)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function switchSubject(subjectKey) {
+      document.querySelectorAll('.subj-tile').forEach(t => t.classList.remove('active'));
+      const activeTile = document.getElementById('tile-' + subjectKey);
+      if (activeTile) activeTile.classList.add('active');
+
+      // Update card title, image, and reset part filters
+      if (subjectKey === 'sociology') {
+        document.getElementById('cardTitle').innerText = 'Sociology';
+        document.getElementById('cardCategory').innerText = 'CORE SUBJECT';
+        document.getElementById('cardIcon').innerText = '◎';
+        document.getElementById('cardImage').src = 'https://images.unsplash.com/photo-1548782033-3ac3a62ece8d?auto=format&fit=crop&w=560&h=315&q=70';
+      } else if (subjectKey === 'malayalam') {
+        document.getElementById('cardTitle').innerText = 'Malayalam';
+        document.getElementById('cardCategory').innerText = 'LANGUAGE';
+        document.getElementById('cardIcon').innerText = 'അ';
+        document.getElementById('cardImage').src = 'https://images.unsplash.com/photo-1621178754488-8fb090bad709?auto=format&fit=crop&w=560&h=315&q=70';
+      } else if (subjectKey === 'ai') {
+        document.getElementById('cardTitle').innerText = 'Philosophy of AI';
+        document.getElementById('cardCategory').innerText = 'MINOR COURSE';
+        document.getElementById('cardIcon').innerText = '✧';
+        document.getElementById('cardImage').src = 'https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?auto=format&fit=crop&w=560&h=315&q=70';
+      }
+      // Reset filter to all
+      filterPart('all', document.querySelector('.part-pill'));
+    }
+  </script>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

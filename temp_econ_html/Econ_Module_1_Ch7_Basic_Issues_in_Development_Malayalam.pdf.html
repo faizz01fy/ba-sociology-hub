@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>അധ്യായം 7: സാമ്പത്തിക വികസനത്തിലെ അടിസ്ഥാന പ്രശ്നങ്ങൾ</title>
+  <style>
+    :root {
+      --c1: #065f46;
+      --c2: #059669;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 16mm 14mm 16mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #065f46), var(--c2, #059669));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a7f3d0;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #d1fae5;
+}
+
+.badge {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #065f46;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #a7f3d0;
+}
+
+h2 {
+  color: var(--c1, #065f46);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 26px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #0f766e;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #f8fafc;
+  border-left: 4px solid var(--c2, #059669);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-rose {
+  background: #fff1f2;
+  border-left: 4px solid #e11d48;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f1f5f9;
+  border-left: 4px solid #475569;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #047857;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #ecfdf5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.qa-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 8px;
+  font-size: 11pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 10pt;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 10pt;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #059669;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 1: ചരിത്രപരമായ പശ്ചാത്തലം (Module 1: Historical Precedents)</h4>
+    <h1>അധ്യായം 7: സാമ്പത്തിക വികസനത്തിലെ അടിസ്ഥാന പ്രശ്നങ്ങൾ</h1>
+    <div class="meta">Module 1 · Part 7: Basic Issues in Economic Development · Calicut University B.A. Economics / Sociology · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="card">
+  <ul>
+    <li><strong>ഘടനാപരമായ തടസ്സങ്ങൾ (Structural Bottlenecks):</strong> ഇന്ത്യൻ വികസന പാതയിലെ പശ്ചാത്തല സൗകര്യങ്ങളുടെ പോരായ്മകളും ഉത്പാദന തടസ്സങ്ങളും മനസ്സിലാക്കുക.</li>
+    <li><strong>ജനസംഖ്യാപരമായ ലാഭവിഹിതവും വെല്ലുവിളികളും (Demographic Dividend vs. Challenge):</strong> ഇന്ത്യയിലെ യുവജന സാന്നിധ്യം സാമ്പത്തിക വളർച്ചയ്ക്ക് എങ്ങനെ പ്രയോജനപ്പെടുത്താമെന്ന് പഠിക്കുക.</li>
+    <li><strong>മേഖലാ അസമത്വങ്ങൾ (Regional Disparities):</strong> സമ്പന്ന സംസ്ഥാനങ്ങളും പിന്നോക്ക സംസ്ഥാനങ്ങളും തമ്മിലുള്ള സാമ്പത്തിക അന്തരം വിശകലനം ചെയ്യുക.</li>
+    <li><strong>പാരിസ്ഥിതിക വെല്ലുവിളികൾ (Environmental Sustainability):</strong> സാമ്പത്തിക വളർച്ചയും പരിസ്ഥിതി സംരക്ഷണവും തമ്മിലുള്ള വൈരുദ്ധ്യവും പരിഹാരങ്ങളും വിലയിരുത്തുക.</li>
+  </ul>
+</div>
+
+<h2>2. സാമ്പത്തിക പശ്ചാത്തലം (Economic Setting)</h2>
+<p>
+ആഗോളതലത്തിൽ ഏറ്റവും വേഗത്തിൽ വളരുന്ന സമ്പദ്‌വ്യവസ്ഥകളിലൊന്നായി ഇന്ത്യ മാറിയപ്പോഴും, സമ്പദ്‌വ്യവസ്ഥയുടെ അടിത്തട്ടിൽ നിരവധി ഘടനാപരമായ പ്രശ്നങ്ങൾ നിലനിൽക്കുന്നു. മതിയായ അടിസ്ഥാന സൗകര്യങ്ങളുടെ അഭാവം, ഗുണനിലവാരമുള്ള തൊഴിലുകളുടെ കുറവ്, സംസ്ഥാനങ്ങൾ തമ്മിലുള്ള വലിയ അസമത്വം, രൂക്ഷമാകുന്ന കാലാവസ്ഥാ വ്യതിയാനം എന്നിവ ഇന്ത്യയുടെ മുന്നേറ്റത്തിന് വലിയ വെല്ലുവിളിയാണ്.
+</p>
+
+<h2>3. സമഗ്ര പാഠഭാഗ പരിഭാഷയും ആശയ വിശകലനവും (Detailed Text Analysis)</h2>
+
+<h3 class="sub-head">(i) ജനസംഖ്യാപരമായ ലാഭവിഹിതം (The Demographic Dividend)</h3>
+<div class="card-teal">
+  <p>ഒരു രാജ്യത്തിലെ മൊത്തം ജനസംഖ്യയിൽ ആശ്രിതരുടെ (കുട്ടികളും വയോധികരും) അനുപാതത്തേക്കാൾ തൊഴിലെടുക്കാൻ പ്രാപ്തിയുള്ള അധ്വാനിക്കുന്ന പ്രായക്കാരുടെ (15 മുതൽ 64 വയസ്സുവരെയുള്ളവർ) അനുപാതം ഗണ്യമായി വർദ്ധിക്കുന്ന അവസ്ഥയാണിത്.</p>
+  <ul>
+    <li><strong>ഇന്ത്യയുടെ സാധ്യത:</strong> ഇന്ത്യയിലെ ജനസംഖ്യയുടെ ശരാശരി പ്രായം 28 വയസ്സാണ്. ലോകത്തെ ഏറ്റവും കൂടുതൽ യുവജനങ്ങളുള്ള രാജ്യമാണ് ഇന്ത്യ.</li>
+    <li><strong>വെല്ലുവിളി:</strong> ഈ യുവജനങ്ങൾക്ക് മികച്ച വിദ്യാഭ്യാസവും തൊഴിൽ വൈദഗ്ദ്ധ്യവും (Skill Training) ലഭ്യമാക്കാതിരിക്കുകയോ, ആവശ്യത്തിന് തൊഴിലവസരങ്ങൾ സൃഷ്ടിക്കാതിരിക്കുകയോ ചെയ്താൽ ഈ ലാഭവിഹിതം 'ജനസംഖ്യാപരമായ ദുരന്തമായി' (Demographic Disaster) മാറും.</li>
+  </ul>
+</div>
+
+<h3 class="sub-head">(ii) മേഖലാ അസമത്വങ്ങൾ (Regional Disparities)</h3>
+<p>
+ഇന്ത്യയിൽ എല്ലാ സംസ്ഥാനങ്ങളും ഒരുപോലെയല്ല വികസിച്ചത്. മഹാരാഷ്ട്ര, ഗുജറാത്ത്, കർണാടക, തമിഴ്നാട്, കേരളം തുടങ്ങിയ പടിഞ്ഞാറൻ-ദക്ഷിണേന്ത്യൻ സംസ്ഥാനങ്ങൾ വ്യാവസായിക, സേവന, മാനവ വികസന തലങ്ങളിൽ വൻ മുന്നേറ്റം നടത്തിയപ്പോൾ, വടക്കേ ഇന്ത്യയിലെയും മധ്യേന്ത്യയിലെയും സംസ്ഥാനങ്ങൾ (ബിഹാർ, യു.പി, ഒഡീഷ, മധ്യപ്രദേശ് - പഴയ ബിമാരു / BIMARU സംസ്ഥാനങ്ങൾ) പ്രതിശീർഷ വരുമാനത്തിലും ദാരിദ്ര്യ നിർമ്മാർജ്ജനത്തിലും വളരെ പിന്നിലാണ്.
+</p>
+
+<h3 class="sub-head">(iii) പശ്ചാത്തല സൗകര്യങ്ങളിലെ കുറവ് (Infrastructure Deficits)</h3>
+<div class="card-amber">
+  <ul>
+    <li><strong>ഊർജ്ജ മേഖല:</strong> കൽക്കരി ആശ്രിതത്വം കുറയ്ക്കലും പുനരുപയോഗ ഊർജ്ജത്തിലേക്ക് (സോളാർ, വിൻഡ്) അതിവേഗം മാറേണ്ടതിന്റെ ആവശ്യകത.</li>
+    <li><strong>ഗതാഗത-ലോജിസ്റ്റിക്സ് ചെലവ്:</strong> ഇന്ത്യയിലെ ലോജിസ്റ്റിക്സ് ചെലവ് ജി.ഡി.പിയുടെ 13-14 ശതമാനമാണ്; ഇത് ചൈനയിലും പാശ്ചാത്യ രാജ്യങ്ങളിലും 8-9 ശതമാനം മാത്രമാണ്. 'പി.എം ഗതിശക്തി' (PM Gati Shakti), 'ഭാരത്‌മാല' എന്നിവയിലൂടെ ഈ ചെലവ് കുറയ്ക്കാനുള്ള ശ്രമങ്ങൾ നടക്കുന്നു.</li>
+    <li><strong>നഗരവൽക്കരണ പ്രതിസന്ധി:</strong> അശാസ്ത്രീയമായ നഗരവൽക്കരണം ചേരികളുടെ വർദ്ധനവിനും കുടിവെള്ള-മാലിന്യ സംസ്കരണ പ്രശ്നങ്ങൾക്കും കാരണമാകുന്നു.</li>
+  </ul>
+</div>
+
+<h3 class="sub-head">(iv) പരിസ്ഥിതിയും സുസ്ഥിരതയും (Environment & Climate Vulnerability)</h3>
+<p>
+വ്യാവസായികവൽക്കരണവും അനിയന്ത്രിതമായ പ്രകൃതി ചൂഷണവും നദീ മലിനീകരണത്തിനും വായു മലിനീകരണത്തിനും (ഉദാ: ഡൽഹിയിലെ ശീതകാല വായു വിഷബാധ) ഇടയാക്കുന്നു. ആഗോള താപനം മൂലം മൺസൂണിലെ അനിശ്ചിതത്വം വർദ്ധിക്കുന്നത് ഇന്ത്യൻ കാർഷിക സമ്പദ്‌വ്യവസ്ഥയെ ഗുരുതരമായി ബാധിക്കുന്നു.
+</p>
+
+<h2>4. എൽ.എം.എസ് പാഠപുസ്തക ചോദ്യോത്തരങ്ങൾ (LMS Questions & Detailed Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. What is the Demographic Dividend and how can India realize it? (എന്താണ് ജനസംഖ്യാപരമായ ലാഭവിഹിതം? ഇന്ത്യക്ക് ഇത് എങ്ങനെ പ്രയോജനപ്പെടുത്താം?)</div>
+  <div class="qa-ans-en"><strong>English:</strong> The Demographic Dividend refers to the economic growth potential that arises when a nation's working-age population (ages 15–64) outnumbers its non-working dependent population. India has a median age of ~28 years, offering a strategic window until approximately 2040–2050. To harvest this dividend, India must: (1) Invest aggressively in public education and high-demand technical skill training; (2) Create abundant productive formal jobs in manufacturing and green industries; (3) Improve healthcare outcomes so the labour force remains productive and resilient.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> ഒരു രാജ്യത്തെ ജനസംഖ്യയിൽ ആശ്രിതരുടെ എണ്ണത്തേക്കാൾ ജോലി ചെയ്യാൻ കഴിവുള്ള 15 മുതൽ 64 വയസ്സുവരെയുള്ള തൊഴിലാളികളുടെ എണ്ണം ഗണ്യമായി വർദ്ധിക്കുന്നതിലൂടെ ലഭിക്കുന്ന സാമ്പത്തിക നേട്ടമാണിത്. ഇന്ത്യയുടെ ശരാശരി പ്രായം 28 വയസ്സാണ്; ഈ സുവർണ്ണാവസരം 2045-50 വരെ നിലനിൽക്കും. ഈ നേട്ടം കൊയ്യാൻ ഇന്ത്യ ചെയ്യേണ്ടത്: (1) ഗുണനിലവാരമുള്ള വിദ്യാഭ്യാസത്തിലും സാങ്കേതിക നൈപുണ്യ വികസനത്തിലും നിക്ഷേപിക്കുക; (2) ഉത്പാദന മേഖലയിലും സേവന മേഖലയിലും മാന്യമായ പുതിയ തൊഴിലവസരങ്ങൾ സൃഷ്ടിക്കുക; (3) തൊഴിലാളികൾക്ക് മികച്ച ആരോഗ്യ പരിപാലനം ഉറപ്പാക്കുക.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. What factors cause persistent regional economic imbalances in India? (ഇന്ത്യയിലെ സംസ്ഥാനങ്ങൾ തമ്മിലുള്ള സാമ്പത്തിക അസമത്വങ്ങൾക്ക് കാരണമായ ഘടകങ്ങൾ എന്തൊക്കെയാണ്?)</div>
+  <div class="qa-ans-en"><strong>English:</strong> Regional disparities in India stem from: (1) Historical and geographical advantages: Coastal southern and western states had sea access and early colonial infrastructure; (2) The Freight Equalization Policy (1952–1993), which deprived mineral-rich eastern states (Bihar, Jharkhand, Odisha) of their natural locational advantage by subsidizing transport for inland states; (3) Governance and human capital: Southern states invested heavily in literacy, land reforms, and health, attracting foreign investments, while northern BIMARU states struggled with institutional weaknesses and population pressures.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> ഇന്ത്യയിലെ മേഖലാ അസമത്വങ്ങൾക്ക് പ്രധാന കാരണങ്ങൾ: (1) ചരിത്രപരവും ഭൂമിശാസ്ത്രപരവുമായ ഘടകങ്ങൾ: തുറമുഖങ്ങളുള്ള പടിഞ്ഞാറൻ-ദക്ഷിണേന്ത്യൻ സംസ്ഥാനങ്ങൾക്ക് വിദേശ വ്യാപാരത്തിലും വ്യവസായത്തിലും മുൻതൂക്കം ലഭിച്ചു; (2) ചരക്കുകൂലി ഏകീകരണ നയം (Freight Equalization Policy, 1952-1993): ധാതു സമ്പന്നമായ ബിഹാർ, ഒഡീഷ സംസ്ഥാനങ്ങളുടെ ലൊക്കേഷൻ ആനുകൂല്യം നഷ്ടപ്പെടുകയും അവ വ്യാവസായികമായി പിന്നോട്ട് പോവുകയും ചെയ്തു; (3) ഭരണനിർവ്വഹണവും മാനവ വികസനവും: ദക്ഷിണേന്ത്യൻ സംസ്ഥാനങ്ങൾ വിദ്യാഭ്യാസത്തിലും ആരോഗ്യത്തിലും ഭൂനിയമ പരിഷ്കാരങ്ങളിലും വൻ നിക്ഷേപം നടത്തി പുതിയ വിദേശ നിക്ഷേപങ്ങളെ ആകർഷിച്ചപ്പോൾ, വടക്കേ ഇന്ത്യൻ സംസ്ഥാനങ്ങളിൽ ജനസംഖ്യാ വർദ്ധനവും ഭരണപരമായ പിന്നോക്കാവസ്ഥയും തുടരുന്നു.</div>
+</div>
+
+<h2>5. 20 പ്രധാന മൾട്ടിപ്പിൾ ചോയ്‌സ് ചോദ്യങ്ങൾ (20 Important MCQs with Answers & Rationale)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">1. ജനസംഖ്യയിൽ അധ്വാനിക്കുന്ന പ്രായക്കാരുടെ (15-64 വയസ്സ്) അനുപാതം വർദ്ധിക്കുന്നതിനെ എന്തുവിളിക്കുന്നു? / When the working-age population outnumbers dependants, it creates a:</div>
+    <div class="q-options">A) ജനസംഖ്യാ വിസ്ഫോടനം<br>B) ജനസംഖ്യാപരമായ ലാഭവിഹിതം (Demographic Dividend)<br>C) ജനന നിരക്ക് മാന്ദ്യം<br>D) തൊഴിലില്ലായ്മാ പ്രതിസന്ധി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: തൊഴിലെടുക്കുന്ന ജനങ്ങളുടെ എണ്ണം കൂടുമ്പോൾ സമ്പാദ്യവും നിക്ഷേപവും ഉത്പാദനവും കൂടാനുള്ള സാധ്യതയാണ് ഡെമോഗ്രാഫിക് ഡിവിഡൻഡ്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. ഇന്ത്യയിലെ ജനസംഖ്യയുടെ ശരാശരി മധ്യസ്ഥ പ്രായം (Median Age) എത്രയാണ്? / What is the approximate median age of India's population today?</div>
+    <div class="q-options">A) 28 വയസ്സ് (Around 28 years)<br>B) 38 വയസ്സ്<br>C) 45 വയസ്സ്<br>D) 52 വയസ്സ്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ഇന്ത്യയിലെ ജനസംഖ്യയുടെ ശരാശരി പ്രായം 28 വയസ്സാണ്, ഇത് ലോകത്തെ ഏറ്റവും യുവത്വമുള്ള രാജ്യങ്ങളിലൊന്നാക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. മുൻപ് ഇന്ത്യയിലെ പിന്നോക്ക സംസ്ഥാനങ്ങളെ സൂചിപ്പിക്കാൻ ഉപയോഗിച്ചിരുന്ന 'ബിമാരു' (BIMARU) എന്ന ചുരുക്കപ്പേര് നിർദ്ദേശിച്ച സാമ്പത്തിക ശാസ്ത്രജ്ഞൻ? / Who coined the acronym 'BIMARU' for laggard states?</div>
+    <div class="q-options">A) ആശിഷ് ബോസ് (Ashish Bose)<br>B) അമർത്യ സെൻ<br>C) പ്രണബ് മുഖർജി<br>D) ബിമൽ ജലാൻ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: 1980-കളിൽ ജനസംഖ്യാ ശാസ്ത്രജ്ഞനായ ആശിഷ് ബോസാണ് ബിഹാർ, മധ്യപ്രദേശ്, രാജസ്ഥാൻ, യു.പി എന്നീ സംസ്ഥാനങ്ങളെ സൂചിപ്പിക്കാൻ ബിമാരു എന്ന വാക്ക് ഉപയോഗിച്ചത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">4. ഇന്ത്യയിൽ ഖനിജ സമ്പന്നമായ കിഴക്കൻ സംസ്ഥാനങ്ങളുടെ വ്യാവസായിക വളർച്ചയെ തകർത്ത കേന്ദ്ര സർക്കാർ നയം ഏത്? / Which central policy disadvantaged mineral-rich eastern states between 1952 and 1993?</div>
+    <div class="q-options">A) ചരക്കുകൂലി ഏകീകരണ നയം (Freight Equalization Policy)<br>B) ഹരിത വിപ്ലവ സബ്സിഡി<br>C) വ്യവസായ ലൈസൻസിങ്<br>D) കയറ്റുമതി നികുതി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ഇന്ത്യയിലെവിടെയും കൽക്കരിയും ഇരുമ്പും ഒരേ റെയിൽവേ കൂലിയിൽ ലഭ്യമാക്കിയതോടെ കിഴക്കൻ സംസ്ഥാനങ്ങൾക്ക് ഫാക്ടറികൾ നഷ്ടപ്പെട്ടു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">5. ഇന്ത്യയിൽ ചരക്ക് നീക്ക ചെലവ് കുറയ്ക്കാനും ഗതാഗത ശൃംഖല ഏകോപിപ്പിക്കാനും ആവിഷ്കരിച്ച ദേശീയ മാസ്റ്റർ പ്ലാൻ? / The multi-modal infrastructure connectivity national master plan is:</div>
+    <div class="q-options">A) പി.എം ഗതിശക്തി (PM Gati Shakti Master Plan)<br>B) സ്റ്റാർട്ടപ്പ് ഇന്ത്യ<br>C) ഡിജിറ്റൽ ഇന്ത്യ<br>D) മേക്ക് ഇൻ ഇന്ത്യ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: റെയിൽ, റോഡ്, തുറമുഖങ്ങൾ, വ്യോമയാനം എന്നിവയെ സംയോജിപ്പിച്ച് ലോജിസ്റ്റിക്സ് ചെലവ് കുറയ്ക്കാനാണ് ഗതിശക്തി പദ്ധതി ലക്ഷ്യമിടുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">6. തൊഴിലെടുക്കാൻ ശേഷിയുള്ള പ്രായപരിധിയായി അന്താരാഷ്ട്ര തലത്തിൽ കണക്കാക്കുന്നത് ഏതാണ്? / The internationally standard working-age bracket is defined as:</div>
+    <div class="q-options">A) 5 മുതൽ 14 വയസ്സ് വരെ<br>B) 15 മുതൽ 64 വയസ്സ് വരെ (15 to 64 years)<br>C) 25 മുതൽ 40 വയസ്സ് വരെ<br>D) 60 വയസ്സിന് മുകളിൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: 15 നും 64 നും ഇടയിൽ പ്രായമുള്ളവരാണ് ഉത്പാദനക്ഷമമായ അധ്വാനിക്കുന്ന വിഭാഗം.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">7. ഒരു സമ്പദ്‌വ്യവസ്ഥയിൽ യുവാക്കൾക്ക് ആവശ്യത്തിന് തൊഴിൽ ലഭിക്കാതെ വരുമ്പോൾ ജനസംഖ്യാപരമായ ലാഭവിഹിതം എന്തിലേക്ക് നയിക്കും? / Failure to provide quality jobs to youth turns the demographic dividend into a:</div>
+    <div class="q-options">A) സമ്പൂർണ്ണ സുസ്ഥിരതയിലേക്ക്<br>B) ജനസംഖ്യാപരമായ ദുരന്തത്തിലേക്ക് (Demographic Disaster / Social Unrest)<br>C) സാമ്പത്തിക മിച്ചത്തിലേക്ക്<br>D) വിദേശ കടം കുറയുന്നതിലേക്ക്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: തൊഴിലില്ലായ്മയും നൈപുണ്യക്കുറവും യുവജനങ്ങളിൽ നിരാശയും സാമൂഹിക അരക്ഷിതാവസ്ഥയും ഉണ്ടാക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">8. ഇന്ത്യയിലെ പ്രധാന ദേശീയപാതകളെ ബന്ധിപ്പിക്കുന്ന എക്സ്പ്രസ് വേ ശൃംഖല വികസന പദ്ധതി ഏത്? / The flagship highway development project of India is:</div>
+    <div class="q-options">A) സാഗർമാല<br>B) ഭാരത്‌മാല പരിയോജന (Bharatmala Pariyojana)<br>C) ഉഡാൻ<br>D) സ്മാർട്ട് സിറ്റി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ഭാരത്‌മാല പദ്ധതിയിലൂടെ രാജ്യത്തെ അതിർത്തി-തീരദേശ റോഡുകളും സാമ്പത്തിക ഇടനാഴികളും വികസിപ്പിക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">9. തുറമുഖങ്ങളുടെ ആധുനികവൽക്കരണവും തീരദേശ ഷിപ്പിംഗ് വികസനവും ലക്ഷ്യമിടുന്ന പദ്ധതി ഏത്? / Which flagship program targets port-led direct infrastructure development?</div>
+    <div class="q-options">A) സാഗർമാല പദ്ധതി (Sagarmala Project)<br>B) ഭാരത്‌മാല<br>C) ഉജ്ജ്വല<br>D) സൗഭാഗ്യ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: തുറമുഖ കേന്ദ്രീകൃത വികസനത്തിനാണ് സാഗർമാല പദ്ധതി രൂപീകരിച്ചത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">10. ഇന്ത്യയിൽ മൊത്തം തൊഴിലിന്റെ സിംഹഭാഗവും നിലനിൽക്കുന്നത് ഏത് മേഖലയിലാണ്? / In which sector does the overwhelming majority of India's workforce operate?</div>
+    <div class="q-options">A) സംഘടിത കോർപ്പറേറ്റ് മേഖല<br>B) അസംഘടിത അഥവാ അനൗപചാരിക മേഖല (Informal / Unorganized Sector ~85-90%)<br>C) സർക്കാർ മേഖല<br>D) വിദേശ കമ്പനികൾ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ഇന്ത്യയിലെ 85-90 ശതമാനം തൊഴിലാളികളും സാമൂഹിക സുരക്ഷയോ പെൻഷനോ ഇല്ലാത്ത അനൗപചാരിക മേഖലയിലാണ് ജോലി ചെയ്യുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">11. ഇന്ത്യയിലെ നഗരവൽക്കരണം പ്രധാനമായും നേരിടുന്ന വെല്ലുവിളി ഏത്? / What is a premier challenge created by rapid, unplanned urbanization in India?</div>
+    <div class="q-options">A) നഗരങ്ങളിൽ ആളില്ലാതാകുന്നത്<br>B) ചേരികളുടെ വ്യാപനം, കുടിവെള്ള-മാലിന്യ സംസ്കരണ പ്രതിസന്ധികൾ (Slum expansion, sanitation, and water distress)<br>C) വായു മലിനീകരണം പൂർണ്ണമായി കുറയുന്നത്<br>D) ഫാക്ടറികൾ അടച്ചുപൂട്ടുന്നത്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ആസൂത്രണമില്ലാത്ത നഗരവൽക്കരണം ചേരികൾക്കും പരിസ്ഥിതി പ്രശ്നങ്ങൾക്കും കാരണമാകുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">12. സമ്പദ്‌വ്യവസ്ഥയിലെ സാമ്പത്തിക വളർച്ചയും പരിസ്ഥിതി മലിനീകരണവും തമ്മിലുള്ള ബന്ധം വ്യക്തമാക്കുന്ന വക്രരേഖ ഏത്? / Which hypothesis posits that environmental degradation first rises and then falls with GDP growth?</div>
+    <div class="q-options">A) ഫിലിപ്സ് വക്രരേഖ<br>B) പാരിസ്ഥിതിക കുസ്നെറ്റ്സ് വക്രരേഖ (Environmental Kuznets Curve)<br>C) ലോറൻസ് വക്രരേഖ<br>D) എംഗൽസ് വക്രരേഖ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: വികസനത്തിന്റെ ആദ്യഘട്ടത്തിൽ മലിനീകരണം കൂടുകയും രാജ്യം സമ്പന്നമാകുമ്പോൾ മലിനീകരണം കുറയുകയും ചെയ്യുമെന്നാണ് ഈ വക്രരേഖ പറയുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">13. കാലാവസ്ഥാ വ്യതിയാനത്തിനെതിരായ ഇന്ത്യയുടെ ആഗോള പ്രതിബദ്ധതയിൽ പൂജ്യം കാർബൺ ഉദ്വമനം (Net Zero) ലക്ഷ്യമിടുന്ന വർഷം? / Target year pledged by India at COP26 to achieve Net Zero carbon emissions:</div>
+    <div class="q-options">A) 2030<br>B) 2050<br>C) 2070 (Year 2070)<br>D) 2100</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: C</div>
+    <div class="q-exp">വിശദീകരണം: ഗ്ലാസ്‌ഗോ ഉച്ചകോടിയിൽ 2070-ഓടെ കാർബൺ പുറന്തള്ളൽ നെറ്റ് സീറോയിലെത്തിക്കുമെന്ന് ഇന്ത്യ പ്രഖ്യാപിച്ചു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">14. ഇന്ത്യയിലെ ജി.ഡി.പിയിലേക്ക് ഏറ്റവും കൂടുതൽ വിഹിതം നൽകുന്ന നഗരം ഏതാണ്? / Which metropolitan city contributes the single largest share to India's GDP?</div>
+    <div class="q-options">A) ചെന്നൈ<br>B) മുംബൈ (Mumbai - Financial Capital)<br>C) കൊൽക്കത്ത<br>D) ഹൈദരാബാദ്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ഇന്ത്യയുടെ സാമ്പത്തിക തലസ്ഥാനമായ മുംബൈയാണ് ദേശീയ ജി.ഡി.പിയിലേക്ക് ഏറ്റവും ഉയർന്ന വിഹിതം നൽകുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">15. ഒരു രാജ്യത്ത് ജി.ഡി.പി വളരുമ്പോഴും തൊഴിലില്ലായ്മ കുറയാതിരിക്കുന്ന വിരോധാഭാസത്തെ എന്തുവിളിക്കുന്നു? / The paradox where high GDP growth fails to generate commensurate formal jobs is:</div>
+    <div class="q-options">A) സമഗ്ര വളർച്ച<br>B) തൊഴിൽരഹിത വളർച്ച (Jobless Growth)<br>C) വിദേശ വളർച്ച<br>D) മിശ്ര വളർച്ച</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: മൂലധന കേന്ദ്രീകൃത സാങ്കേതികവിദ്യകളുടെ ഉപയോഗം മൂലം ഉത്പാദനം കൂടുമ്പോഴും പുതിയ തൊഴിലുകൾ സൃഷ്ടിക്കപ്പെടുന്നില്ല.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">16. ഇന്ത്യയിൽ വടക്കുകിഴക്കൻ സംസ്ഥാനങ്ങളുടെ വികസനത്തിനായി രൂപീകരിച്ച പ്രത്യേക കേന്ദ്ര മന്ത്രാലയം ഏത്? / Which dedicated central ministry oversees development in North Eastern states?</div>
+    <div class="q-options">A) നീതി ആയോഗ്<br>B) DoNER (Ministry of Development of North Eastern Region)<br>C) കൃഷി മന്ത്രാലയം<br>D) വിദേശകാര്യ മന്ത്രാലയം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: വടക്കുകിഴക്കൻ സംസ്ഥാനങ്ങളിലെ മേഖലാ അസമത്വം പരിഹരിക്കാൻ 2001-ൽ DoNER മന്ത്രാലയം രൂപീകരിച്ചു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">17. കാർഷിക മേഖലയിൽ ഉണ്ടാകുന്ന അനിശ്ചിതത്വങ്ങൾക്ക് പ്രധാനപ്പെട്ട പ്രകൃതിദത്ത കാരണം ഏതാണ്? / Which unpredictable environmental factor heavily swings Indian agricultural growth?</div>
+    <div class="q-options">A) മൺസൂൺ മഴയുടെ വ്യതിയാനം (Monsoon Vagaries & Climate Shocks)<br>B) കാറ്റിന്റെ വേഗത കുറയുന്നത്<br>C) ശീതകാലത്തിന്റെ ദൈർഘ്യം<br>D) ചന്ദ്രഗ്രഹണം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ഇന്ത്യയിലെ 50% കൃഷിഭൂമിയും ഇന്നും മഴയെ ആശ്രയിക്കുന്നതിനാൽ മൺസൂൺ പിഴച്ചാൽ കാർഷിക പ്രതിസന്ധി ഉണ്ടാകുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">18. പ്രാദേശിക വികസന അസമത്വം പരിഹരിക്കുന്നതിനായി കേന്ദ്ര നികുതി വരുമാനം സംസ്ഥാനങ്ങൾക്കിടയിൽ പങ്കുവെക്കുന്നത് ആരാണ്? / Which constitutional commission decides the sharing of central taxes with states?</div>
+    <div class="q-options">A) ധനകാര്യ കമ്മീഷൻ (Finance Commission of India - Article 280)<br>B) തെരഞ്ഞെടുപ്പ് കമ്മീഷൻ<br>C) യു.പി.എസ്.സി<br>D) ദേശീയ സുരക്ഷാ കൗൺസിൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ഭരണഘടനയുടെ അനുച്ഛേദം 280 പ്രകാരം രൂപീകരിക്കുന്ന ഫിനാൻസ് കമ്മീഷനാണ് സംസ്ഥാനങ്ങൾക്ക് വിഭവങ്ങൾ വിഭജിച്ചു നൽകുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">19. പശ്ചാത്തല സൗകര്യ വികസനത്തിൽ സ്വകാര്യ മൂലധനവും സർക്കാരും കൈകോർക്കുന്ന രീതി അറിയപ്പെടുന്നത്: / The institutional development financing partnership model between government and private enterprise is:</div>
+    <div class="q-options">A) പൂർണ്ണ ദേശസാൽക്കരണം<br>B) പി.പി.പി മാതൃക (Public-Private Partnership - PPP Model)<br>C) വിദേശ കടം<br>D) സ്വകാര്യ കുത്തകാവകാശം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: റോഡുകൾ, വിമാനത്താവളങ്ങൾ, തുറമുഖങ്ങൾ എന്നിവ നിർമ്മിക്കാൻ PPP മാതൃക വ്യാപകമായി ഉപയോഗിക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">20. ഇന്ത്യയുടെ സമഗ്ര സാമ്പത്തിക വികസനത്തിന് ഏറ്റവും അത്യാവശ്യമായ സമീപനം ഏതാണ്? / Which policy paradigm is essential for long-term sustainable development in India?</div>
+    <div class="q-options">A) സമ്പന്നർക്ക് മാത്രം നികുതിയിളവ് നൽകൽ<br>B) സുസ്ഥിരവും എല്ലാവരെയും ഉൾക്കൊള്ളുന്നതുമായ വികസനം (Sustainable & Inclusive Growth)<br>C) പരിസ്ഥിതി പൂർണ്ണമായി തകർക്കൽ<br>D) ഇറക്കുമതി പൂർണ്ണമായി നിരോധിക്കൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: പരിസ്ഥിതി സംരക്ഷണത്തോടൊപ്പം സമൂഹത്തിലെ എല്ലാ തട്ടുകളിലുള്ള ജനങ്ങളിലേക്കും വികസന നേട്ടങ്ങൾ എത്തുന്ന സന്തുലിതമായ വികസനമാണ് രാജ്യത്തിനാവശ്യം.</div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. ഡിഗ്രി പഠന സഹായി · Development Issues in Indian Economy</span>
+    <span>സമഗ്ര മലയാള പരിഭാഷ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

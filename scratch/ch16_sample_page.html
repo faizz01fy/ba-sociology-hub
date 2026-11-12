@@ -1,0 +1,206 @@
+<style>
+    @page {
+        size: A4 portrait;
+        margin: 5.5mm 6.5mm;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans', 'Noto Sans Malayalam', 'Segoe UI', Tahoma, sans-serif;
+        font-size: 8.35pt;
+        line-height: 1.45;
+        color: #1e293b;
+        background: #ffffff;
+    }
+    .page-container {
+        width: 100%;
+        height: 100%;
+        max-height: 278mm;
+        page-break-after: always;
+        page-break-inside: avoid;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .page-container:last-child {
+        page-break-after: avoid;
+    }
+    .page-header {
+        border-bottom: 2px solid #047857;
+        padding-bottom: 3.5px;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .header-left .sub-title {
+        font-size: 6.8pt;
+        font-weight: 700;
+        color: #047857;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .header-left .main-title {
+        font-size: 11pt;
+        font-weight: 800;
+        color: #0f172a;
+        margin-top: 1px;
+    }
+    .header-right {
+        text-align: right;
+    }
+    .header-right .page-num {
+        font-size: 8.8pt;
+        font-weight: 800;
+        color: #047857;
+        background: #ecfdf5;
+        padding: 2px 7px;
+        border-radius: 4px;
+        border: 1px solid #a7f3d0;
+    }
+    .section-banner {
+        background: linear-gradient(135deg, #065f46 0%, #047857 50%, #0d9488 100%);
+        color: #ffffff;
+        padding: 4.5px 9px;
+        border-radius: 5px;
+        font-size: 8.2pt;
+        font-weight: 700;
+        margin-bottom: 5.5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .content-flow {
+        display: flex;
+        flex-direction: column;
+        gap: 5.5px;
+        flex-grow: 1;
+    }
+    .dual-concept-card {
+        border: 1px solid #cbd5e1;
+        border-radius: 5.5px;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .card-en {
+        background: #f8fafc;
+        border-left: 3.5px solid #1e3a8a;
+        padding: 4.8px 8.0px;
+    }
+    .card-ml {
+        background: #f0fdf4;
+        border-left: 3.5px solid #047857;
+        border-top: 1px dashed #d1fae5;
+        padding: 4.8px 8.0px;
+    }
+    .card-title-en {
+        font-size: 8.2pt;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 1.8px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .card-title-ml {
+        font-size: 8.2pt;
+        font-weight: 700;
+        color: #065f46;
+        margin-bottom: 1.8px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .card-desc-en {
+        font-size: 7.7pt;
+        line-height: 1.41;
+        color: #334155;
+    }
+    .card-desc-ml {
+        font-size: 7.55pt;
+        line-height: 1.43;
+        color: #166534;
+    }
+    .card-example {
+        background: #fefce8;
+        border-left: 3px solid #ca8a04;
+        padding: 3.5px 6.5px;
+        margin-top: 3.5px;
+        font-size: 7.3pt;
+        line-height: 1.38;
+        color: #713f12;
+        border-radius: 0 3px 3px 0;
+    }
+    .card-example b {
+        color: #854d0e;
+    }
+    .grid-2col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5.5px;
+    }
+    .knock-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 5px;
+        padding: 5.0px 7.0px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    .knock-card.blue { border-left: 3.2px solid #2563eb; background: #eff6ff; }
+    .knock-card.emerald { border-left: 3.2px solid #059669; background: #ecfdf5; }
+    .knock-card.amber { border-left: 3.2px solid #d97706; background: #fffbeb; }
+    .knock-card.purple { border-left: 3.2px solid #7c3aed; background: #faf5ff; }
+    .knock-card.teal { border-left: 3.2px solid #0d9488; background: #f0fdfa; }
+    .knock-card.rose { border-left: 3.2px solid #e11d48; background: #fff1f2; }
+    .knock-title {
+        font-size: 7.7pt;
+        font-weight: 700;
+        margin-bottom: 2px;
+        color: #0f172a;
+    }
+    .knock-desc-en {
+        font-size: 7.25pt;
+        line-height: 1.4;
+        color: #334155;
+        margin-bottom: 2px;
+    }
+    .knock-desc-ml {
+        font-size: 7.15pt;
+        line-height: 1.42;
+        color: #1e293b;
+    }
+    .page-footer {
+        border-top: 1px solid #cbd5e1;
+        padding-top: 4px;
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 6.6pt;
+        color: #64748b;
+    }
+    .page-footer .footer-left {
+        font-weight: 600;
+    }
+    .page-footer .footer-right {
+        font-weight: 700;
+        color: #047857;
+    }
+    </style>
+<div class="page-container">
+    <div class="page-header">
+        <div class="header-left">
+            <div class="sub-title">Module 4: Ethics of Artificial Intelligence &bull; Chapter 16</div>
+            <div class="main-title">4.2 (A) Preventing Algorithmic Biases in Learning Algorithms</div>
+        </div>
+        <div class="header-right">
+            <div class="page-num">Page 01 of 10</div>
+        </div>
+    </div>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <title>എൽ.എം.എസ്. മോഡൽ ചോദ്യോത്തര വിശകലനം: പാർട്ട് 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Noto+Sans+Malayalam:wght@500;600;700;800;900&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            background: radial-gradient(circle at 15% 20%, rgba(245, 158, 11, 0.15) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 45%),
+                        radial-gradient(circle at 50% 85%, rgba(99, 102, 241, 0.20) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 1) 0%, rgba(2, 6, 23, 1) 100%);
+            font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+            color: #f8fafc;
+        }
+        .malayalam { font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif; }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body class="flex flex-col justify-between p-8 select-none">
+    <header class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-4">
+            <div class="glass-panel px-5 py-2.5 rounded-2xl flex items-center gap-3.5 bg-slate-900/85 border-amber-500/30">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-600 to-orange-500 flex items-center justify-center text-white text-base shadow-md shadow-amber-600/30">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                </div>
+                <div>
+                    <div class="text-lg font-black tracking-tight text-white flex items-center gap-2">ACADEMIC HUB · MASTERCLASS EXPLAINER</div>
+                    <div class="malayalam text-xs font-bold tracking-wider text-amber-300">കേരള ചരിത്രം 12-ാം നൂറ്റാണ്ടുവരെ · കാലിക്കറ്റ് സർവ്വകലാശാല B.A. History FYUGP</div>
+                </div>
+            </div>
+            <div class="glass-panel px-4 py-2.5 rounded-2xl flex items-center gap-2.5 bg-slate-900/80 border-cyan-500/30">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span class="malayalam text-xs font-bold tracking-wide text-cyan-300">MODULE 02 · CHAPTER 02: ശിലാ ഗുഹകളും പ്രാചീന ശിലാകലയും</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <div class="glass-panel px-5 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500/15 to-orange-500/15 border-amber-500/40 flex items-center gap-2.5">
+                <i class="fa-solid fa-clipboard-question text-amber-400 text-base"></i>
+                <span class="malayalam text-sm font-extrabold text-amber-300 tracking-wider">ROCK SHELTERS & PREHISTORIC ART · SCENE 14</span>
+            </div>
+            <div class="glass-panel px-4 py-2.5 rounded-2xl bg-slate-900/80 border-slate-700 text-xs font-mono text-slate-300">SCENE 14/16</div>
+        </div>
+    </header>
+
+    <main class="grid grid-cols-12 gap-5 my-auto items-stretch h-[870px]">
+        <div class="col-span-3 rounded-3xl p-5 flex flex-col justify-between border-2 border-amber-400 shadow-2xl shadow-amber-500/20 ring-2 ring-amber-400/40 bg-slate-900/95">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-[10px] px-3 py-1 rounded-full uppercase tracking-wider bg-amber-500 text-slate-950 font-black shadow-md shadow-amber-500/40">LEAD SPEAKER · KIRA</span>
+                    <div class="flex items-center gap-2 text-amber-400 text-xs font-black uppercase tracking-wider animate-pulse">
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> സംസാരിക്കുന്നു · LIVE
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-amber-600/30 p-3">
+                        <i class="fa-solid fa-user-astronaut"></i>
+                    </div>
+                    <div>
+                        <div class="malayalam text-lg font-black text-white">കിര (Kira)</div>
+                        <div class="malayalam text-xs text-amber-400 font-semibold">അക്കാദമിക് അവതാരക & ഗവേഷക</div>
+                        <div class="text-[9px] text-slate-400 font-mono">Natural Voice · Sobhana Neural</div>
+                    </div>
+                </div>
+                <div class="text-xs text-slate-300 font-medium leading-relaxed bg-slate-950/60 p-4 rounded-2xl border border-slate-800 mb-4">
+                    <span class="malayalam text-amber-400 font-bold block mb-1.5"><i class="fa-solid fa-graduation-cap mr-1.5"></i>പാഠഭാഗ ലക്ഷ്യം (Learning Objective):</span>
+                    <span class="malayalam text-slate-200">കാലിക്കറ്റ് സർവ്വകലാശാലാ എൽ.എം.എസ്. പാഠപുസ്തകത്തിലെ എല്ലാ 25 മോഡൽ പരീക്ഷാ ചോദ്യോത്തരങ്ങളുടെയും സമഗ്ര പഠന അവലോകനം.</span>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-slate-950/40 border border-slate-800 text-slate-400 text-xs">
+                    <div class="malayalam font-bold text-slate-300 mb-1">അധ്യായം പ്രധാന മേഖലകൾ:</div>
+                    <ul class="malayalam space-y-1 text-[11px] text-slate-400">
+                        <li>✓ എൽ.എം.എസ്. 25 മോഡൽ ചോദ്യോത്തരങ്ങൾ</li>
+                        <li>✓ പെട്രോഗ്ലിഫുകൾ vs പിക്ടോഗ്രാഫുകൾ</li>
+                        <li>✓ ആചാര പുണ്യകേന്ദ്രം vs വാസസ്ഥലം</li>
+                        <li>✓ നരരൂപ ചിത്രങ്ങളും സിന്ധു ലിപിയും</li>
+                        <li>✓ 3,000 വർഷത്തെ തീർത്ഥാടന തുടർച്ച</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                <span>Presenter Mic</span>
+                <span class="text-amber-400">● 100% Natural Human Speech</span>
+            </div>
+        </div>
+
+        <div class="col-span-6 glass-panel rounded-3xl p-6 bg-slate-900/90 border-slate-700/60 flex flex-col justify-between shadow-2xl">
+            <div>
+                <div class="flex items-center justify-between mb-2">
+                    <div>
+                        <div class="inline-block px-2.5 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[11px] font-mono font-bold tracking-widest uppercase mb-1">ROCK SHELTERS & PREHISTORIC ART · SCENE 14</div>
+                        <h1 class="malayalam text-xl font-black text-amber-400 tracking-tight leading-snug">എൽ.എം.എസ്. മോഡൽ ചോദ്യോത്തര വിശകലനം: പാർട്ട് 2</h1>
+                        <h2 class="text-xs font-semibold text-slate-300">LMS Model Q&A Breakdown: Iconography & Megalithic Links (Part 2)</h2>
+                    </div>
+                </div>
+                <div class="my-2 rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-black/60 flex items-center justify-center h-[330px] p-2 relative group">
+                    
+        <div class="h-full flex flex-col justify-center items-center p-3">
+            <div class="w-full grid grid-cols-3 gap-2.5 mb-2 text-left">
+                <div class="p-3 rounded-2xl bg-slate-900/90 border border-slate-700">
+                    <div class="text-[10px] font-mono text-amber-400 font-bold uppercase mb-1">Q5 · നരരൂപങ്ങൾ</div>
+                    <p class="malayalam text-[11px] text-slate-300">ത്രികോണാകൃതിയിലുള്ള ശരീരം, ആചാരപരമായ തലപ്പാവുകൾ, പ്രതീകാത്മക ഭാവന.</p>
+                </div>
+                <div class="p-3 rounded-2xl bg-slate-900/90 border border-slate-700">
+                    <div class="text-[10px] font-mono text-cyan-400 font-bold uppercase mb-1">Q6 · ഇടയ്ക്കൽ ബിംബങ്ങൾ</div>
+                    <p class="malayalam text-[11px] text-slate-300">മുഖംമൂടി ശമൻ, ഭരണീ രൂപം, ചക്രങ്ങൾ, വില്ലും അമ്പും, വലക്കണ്ണികൾ.</p>
+                </div>
+                <div class="p-3 rounded-2xl bg-slate-900/90 border border-slate-700">
+                    <div class="text-[10px] font-mono text-emerald-400 font-bold uppercase mb-1">Q7 · മറയൂർ മൃഗങ്ങൾ</div>
+                    <p class="malayalam text-[11px] text-slate-300">കാവിമൺ ചിത്രങ്ങൾ: മാൻകൂട്ടങ്ങൾ, ആനകൾ, കാട്ടുപോത്ത്, പുലി, കാളകൾ.</p>
+                </div>
+            </div>
+            <div class="w-full grid grid-cols-2 gap-2.5 mb-2 text-left">
+                <div class="p-2.5 rounded-xl bg-slate-900/90 border border-amber-500/40">
+                    <div class="text-[10px] font-mono text-amber-300 font-bold uppercase mb-0.5">Q8 · സൂപ്പർ ഇമ്പോസിഷൻ (Superimposition)</div>
+                    <p class="malayalam text-[11px] text-slate-300">പഴയ ചിത്രങ്ങൾക്ക് മുകളിൽ പുതിയ ചിത്രങ്ങൾ വരച്ച് കാലപ്പഴക്കം നിർണ്ണയിക്കുന്ന ശാസ്ത്രീയ രീതി.</p>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-900/90 border border-indigo-500/40">
+                    <div class="text-[10px] font-mono text-indigo-300 font-bold uppercase mb-0.5">Q9 · മഹാശിലായുഗ സംസ്കാര ബന്ധം</div>
+                    <p class="malayalam text-[11px] text-slate-300">ഗുഹാ ചിഹ്നങ്ങളും മുനിയറകളിലെയും കറുപ്പും ചുവപ്പും മൺപാത്രങ്ങളിലെയും ലിപികളും തമ്മിലുള്ള സാമ്യം.</p>
+                </div>
+            </div>
+        </div>
+        
+                    <div class="absolute bottom-2 right-3 px-2.5 py-1 rounded-lg bg-black/75 backdrop-blur-md text-[10px] text-amber-300 font-mono border border-amber-500/30">
+                        <i class="fa-solid fa-shapes mr-1"></i> Prehistoric Rock Art Visual
+                    </div>
+                </div>
+                <div class="p-3.5 rounded-2xl border border-amber-500/40 bg-amber-950/30 shadow-xl mb-3">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="malayalam text-[11px] font-extrabold uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
+                            <i class="fa-solid fa-quote-left text-xs"></i> കിര സംസാരിക്കുന്നു (Kira Explaining)
+                        </span>
+                        <div class="flex items-center gap-1">
+                            <span class="w-1.5 h-3.5 bg-amber-400 rounded-full animate-bounce"></span>
+                            <span class="w-1.5 h-5 bg-orange-400 rounded-full animate-bounce delay-75"></span>
+                            <span class="w-1.5 h-2.5 bg-cyan-400 rounded-full animate-bounce delay-150"></span>
+                        </div>
+                    </div>
+                    <p class="malayalam text-slate-100 text-xs leading-relaxed font-medium">"അടുത്ത ചോദ്യങ്ങളിലേക്ക് കടക്കാം. ചോദ്യം അഞ്ച്: നരരൂപ ചിത്രീകരണങ്ങൾ എന്നാൽ എന്ത്? മനുഷ്യരൂപങ്ങളെ പ്രതീകാത്മകമായി ശിലകളിൽ ചിത്രീകരിക്കുന്ന രീതിയാണിത്. ത്രികോണാകൃതിയിലുള്ള ശരീരം, തലപ്പാവുകൾ, ആചാരപരമായ നിൽപ്പ് എന്നിവ ഇതിന്റെ പ്രധാന സവിശേഷതകളാണ്. ചോദ്യം ആറ്: ഇടയ്ക്കലിലെ പ്രധാന ചിത്രീകരണങ്ങൾ ഏതെല്ലാമാണ്? മുഖംമൂടി ധരിച്ച മന്ത്രവാദി, ഭരണിയുടെ രൂപമുള്ള ശരീരം, കേന്ദ്രീകൃത വൃത്തങ്ങളുള്ള ചക്രങ്ങൾ, അമ്പും വില്ലും, വലക്കണ്ണികൾ, മൃഗരൂപങ്ങൾ എന്നിവയാണ് പ്രധാന ചിത്രങ്ങൾ. ചോദ്യം ഏഴ്: മറയൂരിലെ പ്രധാന മൃഗചിത്രങ്ങൾ ഏവ? കാവിമണ്ണിൽ വരച്ച മാൻകൂട്ടങ്ങൾ, ആനകൾ, കാട്ടുപോത്ത്, കടുവ, പൂഞ്ഞയുള്ള കാള എന്നിവയാണ് മറയൂരിലെ പ്രധാന മൃഗങ്ങൾ. ചോദ്യം എട്ട്: സൂപ്പർ ഇമ്പോസിഷൻ എന്നാൽ എന്ത്? പഴയ ശിലാചിത്രങ്ങൾക്ക് മുകളിലായി പുതിയ ചിത്രങ്ങൾ വരച്ചുചേർക്കുന്ന രീതിയാണിത്. ചിത്രങ്ങളുടെ കാലപ്പഴക്കം നിർണ്ണയിക്കാൻ ഇത് പുരാവസ്തു ശാസ്ത്രജ്ഞരെ സഹായിക്കുന്നു. ചോദ്യം ഒൻപത്: ശിലാകലകളും മഹാശിലായുഗ സംസ്കാരവും തമ്മിലുള്ള ബന്ധം എന്ത്? ശിലാഗുഹകളിലെ ചക്രങ്ങളും കുഴികളും ചിഹ്നങ്ങളും മഹാശിലായുഗ മൺപാത്രങ്ങളിലും മുനിയറകളിലും കാണപ്പെടുന്നു. ഇത് നവീന ശിലായുഗത്തിനും ഇരുമ്പുയുഗ മഹാശിലായുഗ സംസ്കാരത്തിനും ഇടയിലുള്ള സാംസ്കാരിക തുടർച്ചയെ തെളിയിക്കുന്നു."</p>
+                </div>
+                <div>
+                    <div class="malayalam text-[11px] font-extrabold uppercase tracking-wider text-slate-400 mb-1.5 flex items-center gap-1.5">
+                        <i class="fa-solid fa-book-bookmark text-amber-400 text-xs"></i> പ്രധാന ചരിത്ര ആശയങ്ങൾ (Key Academic Concepts)
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+        <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-2.5">
+            <div class="w-5 h-5 rounded-md bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 text-[11px] font-bold shrink-0 mt-0.5">●</div>
+            <div>
+                <div class="malayalam text-xs font-bold text-amber-300">ഇടയ്ക്കൽ ബിംബങ്ങൾ</div>
+                <div class="text-[10px] text-slate-400">Masked Sorcerer, Concentric Wheeled Circles, Bow & Arrow, Jar Anthropomorph</div>
+            </div>
+        </div>
+        
+        <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-2.5">
+            <div class="w-5 h-5 rounded-md bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 text-[11px] font-bold shrink-0 mt-0.5">●</div>
+            <div>
+                <div class="malayalam text-xs font-bold text-amber-300">മഹാശിലായുഗ സംസ്കാര ബന്ധം</div>
+                <div class="text-[10px] text-slate-400">Cultural continuity between Late Neolithic rock art & Iron Age Megalithic culture</div>
+            </div>
+        </div>
+        </div>
+                </div>
+            </div>
+            <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+                <span class="malayalam italic text-slate-300">നരരൂപങ്ങൾ, ഇടയ്ക്കലിലെ പ്രധാന ബിംബങ്ങൾ, മറയൂരിലെ മൃഗങ്ങൾ, സൂപ്പർ ഇമ്പോസിഷൻ, മഹാശിലായുഗ ബന്ധം.</span>
+                <span class="font-mono text-slate-500">1080p Full HD</span>
+            </div>
+        </div>
+
+        <div class="col-span-3 rounded-3xl p-5 flex flex-col justify-between border-2 border-slate-800/80 bg-slate-950/70">
+            <div>
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-[10px] px-3 py-1 rounded-full uppercase tracking-wider bg-slate-800 text-slate-300 font-bold">SYLLABUS BLUEPRINT</span>
+                    <span class="text-xs font-mono text-amber-400">HIS1CJ101</span>
+                </div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-13 h-13 rounded-2xl bg-gradient-to-tr from-cyan-600 to-indigo-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-cyan-600/30 p-3">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <div class="malayalam text-base font-black text-white">പരീക്ഷാ സഹായി</div>
+                        <div class="malayalam text-[11px] text-cyan-400 font-semibold">മോഡൽ ചോദ്യോത്തരങ്ങൾ</div>
+                        <div class="text-[9px] text-slate-400 font-mono">Calicut University FYUGP</div>
+                    </div>
+                </div>
+                <div class="text-xs text-slate-300 font-medium leading-relaxed bg-slate-900/60 p-3.5 rounded-2xl border border-slate-800 mb-3">
+                    <span class="malayalam text-cyan-400 font-bold block mb-1">പരീക്ഷാ ചോദ്യ മാതൃകകൾ:</span>
+                    <div class="malayalam space-y-1 text-[11px]">
+                        <div class="flex items-center justify-between text-slate-300">
+                            <span>● സെക്ഷൻ എ (ഹ്രസ്വ ചോദ്യങ്ങൾ)</span>
+                            <span class="text-[10px] font-mono text-amber-400">3 Marks</span>
+                        </div>
+                        <div class="flex items-center justify-between text-slate-300">
+                            <span>● സെക്ഷൻ ബി (ചെറു ഉപന്യാസം)</span>
+                            <span class="text-[10px] font-mono text-cyan-400">5 Marks</span>
+                        </div>
+                        <div class="flex items-center justify-between text-slate-300">
+                            <span>● സെക്ഷൻ സി (പ്രധാന ഉപന്യാസം)</span>
+                            <span class="text-[10px] font-mono text-emerald-400">10 Marks</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-xs text-slate-300 font-medium leading-relaxed bg-slate-900/60 p-3.5 rounded-2xl border border-slate-800">
+                    <span class="malayalam text-amber-400 font-bold block mb-1">പരീക്ഷാ വിജയം ഉറപ്പാക്കാൻ:</span>
+                    <span class="malayalam text-[11px] text-slate-300">പെട്രോഗ്ലിഫുകളും പിക്ടോഗ്രാഫുകളും തമ്മിലുള്ള വ്യത്യാസം, ആചാര സങ്കേത സിദ്ധാന്തം, ചേര ലിഖിതങ്ങൾ എന്നിവ കൃത്യമായി വിശകലനം ചെയ്യുക.</span>
+                </div>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                <span>Academic Weightage</span>
+                <span class="text-amber-400">● Core Exam Chapter</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center text-[11px] text-slate-500 font-mono mt-2">
+        Academic Hub Calicut University BA History Honours · Module 2: Prehistoric & Megalithic Age · Chapter 2: Rock Shelters & Prehistoric Art
+    </footer>
+</body>
+</html>

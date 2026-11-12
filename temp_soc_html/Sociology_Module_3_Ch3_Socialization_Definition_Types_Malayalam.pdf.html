@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 3 · അധ്യായം 3.3: സോഷ്യലൈസേഷൻ: നിർവ്വചനവും തരങ്ങളും</title>
+  <style>
+    :root {
+      --c1: #581c87;
+      --c2: #7e22ce;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #581c87), var(--c2, #7e22ce));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(88, 28, 135, 0.2);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f3e8ff;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #e9d5ff;
+}
+
+.badge {
+  display: inline-block;
+  background: #faf5ff;
+  color: #6b21a8;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #d8b4fe;
+}
+
+h2 {
+  color: var(--c1, #581c87);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #7e22ce;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #faf5ff;
+  border-left: 4px solid var(--c2, #7e22ce);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-purple {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+/* Diagrams & Visual Charts */
+.diagram-container {
+  background: #ffffff;
+  border: 1.5px solid #e9d5ff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.05);
+}
+
+.diagram-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 11pt;
+  color: #581c87;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.flow-step {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border: 1.5px solid #c084fc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #581c87;
+  min-width: 130px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(107, 33, 168, 0.08);
+}
+
+.flow-step small {
+  display: block;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #6b21a8;
+  margin-top: 4px;
+}
+
+.flow-arrow {
+  color: #9333ea;
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+.tree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.tree-card {
+  background: #fdf4ff;
+  border: 1px solid #d8b4fe;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.tree-card h4 {
+  margin: 0 0 6px 0;
+  color: #6b21a8;
+  font-size: 10pt;
+  font-weight: 700;
+  border-bottom: 1px solid #e9d5ff;
+  padding-bottom: 4px;
+}
+
+.tree-card p {
+  margin: 0;
+  font-size: 9pt;
+  line-height: 1.6;
+  color: #334155;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f3e8ff;
+  color: #581c87;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #faf5ff;
+}
+
+/* Bilingual Entry Blocks */
+.bilingual-entry {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-left: 4px solid #7e22ce;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(107, 33, 168, 0.04);
+}
+
+.bilingual-entry .en-part {
+  color: #1e293b;
+  font-size: 10pt;
+  line-height: 1.7;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.bilingual-entry .ml-part {
+  color: #3b0764;
+  font-size: 10pt;
+  line-height: 1.85;
+}
+
+.en-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #bfdbfe;
+}
+
+.ml-tag {
+  display: inline-block;
+  background: #faf5ff;
+  color: #7e22ce;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #d8b4fe;
+}
+
+/* LMS Question & Answer Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #7e22ce;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #581c87;
+  margin-bottom: 8px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  background: #faf5ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #9333ea;
+}
+
+/* MCQ Cards */
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #581c87;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #f3e8ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid #d8b4fe;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Module 3: Individual and Society)</h4>
+    <h1>മൊഡ്യൂൾ 3 · അധ്യായം 3.3: സോഷ്യലൈസേഷൻ: നിർവ്വചനവും തരങ്ങളും</h1>
+    <div class="meta">Module 3 · Chapter 3.3: Socialization: Definition, Types & Significance · Calicut University B.A. Sociology FYUGP · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Chapter Overview:</strong> Socialization is the continuous, lifelong learning process through which a biological human infant transforms into an active, culture-bearing social person. This chapter examines the definition and nature of socialization, explores the Nature vs. Nurture debate using evidence from feral children, analyzes the primary types of socialization (Primary, Secondary, Anticipatory, Developmental, and Resocialization), and highlights its function in sustaining societal continuity.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>അധ്യായ അവലോകനം:</strong> ജനിച്ചുവീഴുന്ന ഒരു സാധാരണ ജീവി മാത്രമായ മനുഷ്യശിശുവിനെ സംസ്കാരമുള്ള ഒരു സാമൂഹിക വ്യക്തിയാക്കി മാറ്റുന്ന ആജീവനാന്ത പഠന പ്രക്രിയയാണ് സോഷ്യലൈസേഷൻ (സാമൂഹികവൽക്കരണം). സോഷ്യലൈസേഷന്റെ നിർവ്വചനവും സ്വഭാവവും, ജീവശാസ്ത്രപരമായ വളർച്ചയും സാമൂഹിക വളർച്ചയും തമ്മിലുള്ള വ്യത്യാസം (Nature vs Nurture), കാട്ടുകുട്ടികളുടെ (Feral Children) ഉദാഹരണങ്ങൾ, സോഷ്യലൈസേഷന്റെ വിവിധ തരങ്ങൾ (പ്രൈമറി, സെക്കൻഡറി, ആന്റിസിപ്പേറ്ററി, ഡെവലപ്‌മെന്റൽ, റീസോഷ്യലൈസേഷൻ) എന്നിവ ഈ അധ്യായത്തിൽ വിശദമായി പഠിക്കുന്നു.
+  </div>
+</div>
+
+<div class="card">
+  <h4 class="sub-head" style="margin-top:0;">പ്രധാന ശേഷികൾ (Core Competencies):</h4>
+  <ul>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Define Socialization:</strong> Internalize definitions from Ogburn, Bogardus, and Green regarding normative conformity and social development.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>നിർവ്വചനങ്ങൾ ഗ്രഹിക്കുക:</strong> ഓഗ്ബേൺ, ബൊഗാർഡസ് എന്നിവർ മുന്നോട്ടുവെച്ച പെരുമാറ്റച്ചട്ടങ്ങൾ സ്വായത്തമാക്കുന്ന പ്രക്രിയയായി സോഷ്യലൈസേഷനെ നിർവ്വചിക്കുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Analyze Feral Children Cases:</strong> Grasp how extreme isolation (e.g. Anna, Isabelle, Kamala) proves that human traits require social interaction to develop.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>കാട്ടുകുട്ടികളുടെ അനുഭവങ്ങൾ:</strong> സമൂഹത്തിൽ നിന്നും ഒറ്റപ്പെട്ടു വളർന്ന കുട്ടികളുടെ ഉദാഹരണങ്ങൾ വഴി മനുഷ്യ സ്വഭാവം രൂപപ്പെടാൻ സാമൂഹിക സമ്പർക്കം അത്യന്താപേക്ഷിതമാണെന്ന് മനസ്സിലാക്കുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Classify Types of Socialization:</strong> Differentiate Primary, Secondary, Anticipatory, Developmental, and Total Institution Resocialization.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>സോഷ്യലൈസേഷന്റെ തരങ്ങൾ:</strong> കുടുംബത്തിൽ നടക്കുന്ന പ്രൈമറി സോഷ്യലൈസേഷൻ, സ്കൂളിലെ സെക്കൻഡറി, ഭാവി റോളിനായുള്ള ആന്റിസിപ്പേറ്ററി, ജയിലുകളിലെ റീസോഷ്യലൈസേഷൻ എന്നിവ തരംതിരിക്കുക.</div>
+    </li>
+  </ul>
+</div>
+
+<h2>2. ആശയ അടിത്തറയും നിർവ്വചനങ്ങളും (Definitions & Nature vs Nurture)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Core Definitions of Socialization:</strong><br>
+    • <strong>William F. Ogburn:</strong> "Socialization is the process whereby the individual learns to conform to the norms of the group."<br>
+    • <strong>Emory S. Bogardus:</strong> "Socialization is the process of working together, of developing group responsibility, and of being guided by the welfare needs of others."
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>സോഷ്യലൈസേഷന്റെ പ്രധാന നിർവ്വചനങ്ങൾ:</strong><br>
+    • <strong>വില്യം എഫ്. ഓഗ്ബേൺ:</strong> "ഒരു വ്യക്തി തന്റെ ഗ്രൂപ്പിന്റെ നിയമങ്ങളും പെരുമാറ്റച്ചട്ടങ്ങളും സ്വായത്തമാക്കാൻ പഠിക്കുന്ന പ്രക്രിയയാണ് സോഷ്യലൈസേഷൻ."<br>
+    • <strong>ഇ.എസ്. ബൊഗാർഡസ്:</strong> "മറ്റുള്ളവരുമായി സഹകരിച്ചു പ്രവർത്തിക്കാനും, ഗ്രൂപ്പ് ഉത്തരവാദിത്തങ്ങൾ വളർത്തിയെടുക്കാനും, പരക്ഷേമത്തിനായി ജീവിക്കാനും മനുഷ്യൻ പഠിക്കുന്ന പ്രക്രിയയാണ് സോഷ്യലൈസേഷൻ."
+  </div>
+</div>
+
+<div class="card-purple">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>The Nature vs. Nurture Debate & Feral Children:</strong> Is human behavior governed by biological genetics (Nature) or social learning (Nurture)? Sociologists point to documented cases of feral children (isolated from all human contact, such as Anna, Isabelle, and Kamala of Midnapore). These children could not speak, walked on all fours, exhibited primal animal reactions, and lacked human emotions, demonstrating that biology only provides the physical shell; the 'human mind and self' can only be born through human socialization.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>പ്രകൃതിയോ പരിശീലനമോ? (Nature vs Nurture):</strong> മനുഷ്യന്റെ സ്വഭാവം ജീവശാസ്ത്രപരമാണോ (Nature) അതോ സാമൂഹികമായ പഠനമാണോ (Nurture)? കാട്ടിൽ മൃഗങ്ങൾക്കൊപ്പം വളർന്ന കുട്ടികളുടെയും മുറികളിൽ പൂട്ടിയിടപ്പെട്ട അന്ന, ഇസബെല്ല, കമല തുടങ്ങിയ കാട്ടുകുട്ടികളുടെയും ചരിത്രം തെളിയിക്കുന്നത് മനുഷ്യന് സംസാരിക്കാനും വസ്ത്രം ധരിക്കാനും ചിന്തിക്കാനും സ്നേഹിക്കാനും കഴിയുന്നത് ജന്മനാ ലഭിക്കുന്ന കഴിവുകൾ കൊണ്ടല്ല, മറിച്ച് സമൂഹത്തിൽ നിന്നുള്ള സോഷ്യലൈസേഷൻ കൊണ്ടാണ് എന്നാണ്.
+  </div>
+</div>
+
+<h2>3. സോഷ്യലൈസേഷന്റെ പ്രധാന തരങ്ങൾ (Types of Socialization)</h2>
+<table>
+  <thead>
+    <tr>
+      <th>തരം (Type)</th>
+      <th>വിവരണം (English Description)</th>
+      <th>മലയാളം വിശദീകരണം</th>
+      <th>ഉദാഹരണം</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Primary Socialization</strong></td>
+      <td>Occurs in early childhood within the family; internalizes language, basic moral rules, and core identity.</td>
+      <td>ബാല്യകാലത്ത് കുടുംബത്തിൽ നടക്കുന്ന പ്രാഥമിക പഠനം; മാതൃഭാഷയും അടിസ്ഥാന മര്യാദകളും പഠിക്കുന്നു.</td>
+      <td>അമ്മ കുട്ടിക്ക് സംസാരിക്കാനും ഭക്ഷണം കഴിക്കാനും പഠിപ്പിക്കുന്നത്.</td>
+    </tr>
+    <tr>
+      <td><strong>2. Secondary Socialization</strong></td>
+      <td>Occurs throughout later childhood and life in formal institutions outside family.</td>
+      <td>കുടുംബത്തിന് പുറത്ത് സ്കൂളുകളിലും കോളേജുകളിലും സുഹൃത്തുക്കളിലും നിന്ന് നേടുന്ന അറിവുകൾ.</td>
+      <td>സ്കൂളിൽ കൃത്യനിഷ്ഠയും പരീക്ഷാ നിയമങ്ങളും പഠിക്കുന്നത്.</td>
+    </tr>
+    <tr>
+      <td><strong>3. Anticipatory Socialization</strong></td>
+      <td>Rehearsing and adopting values of a future role or group one aspires to enter.</td>
+      <td>ഭാവിയിൽ തങ്ങൾ എത്തിച്ചേരാൻ ആഗ്രഹിക്കുന്ന ഒരു പദവിക്കായി മുൻകൂട്ടി തയ്യാറെടുക്കുന്ന പ്രക്രിയ.</td>
+      <td>ഒരു മെഡിക്കൽ വിദ്യാർത്ഥി ഡോക്ടറുടെ ഭാഷയും പെരുമാറ്റരീതിയും മുൻകൂട്ടി ശീലിക്കുന്നത്.</td>
+    </tr>
+    <tr>
+      <td><strong>4. Developmental Socialization</strong></td>
+      <td>Acquiring new skills and insights as role demands expand within an existing status.</td>
+      <td>ഇപ്പോഴുള്ള പദവിയിൽ തന്നെ പുതിയ കഴിവുകളും സാങ്കേതികവിദ്യകളും സ്വായത്തമാക്കുന്നത്.</td>
+      <td>ഒരു അധ്യാപകൻ ഓൺലൈൻ ക്ലാസ് എടുക്കാനുള്ള സോഫ്റ്റ്‌വെയറുകൾ പഠിക്കുന്നത്.</td>
+    </tr>
+    <tr>
+      <td><strong>5. Re-socialization</strong></td>
+      <td>Radically discarding old behavior patterns and internalizing totally new values in Total Institutions.</td>
+      <td>പഴയ ശീലങ്ങളും സ്വഭാവങ്ങളും പൂർണ്ണമായി ഉപേക്ഷിച്ച് തികച്ചും പുതിയ ജീവിതരീതി സ്വീകരിക്കുന്നത്.</td>
+      <td>ജയിലുകളിലോ മിലിട്ടറി ക്യാമ്പുകളിലോ നടക്കുന്ന കഠിനമായ പുനർപരിശീലനം.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. എൽ.എം.എസ് ചോദ്യോത്തരങ്ങൾ (Chapter 3.3 Key Questions & Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. Define socialization and explain the significance of primary socialization. / സോഷ്യലൈസേഷൻ നിർവ്വചിച്ച് പ്രൈമറി സോഷ്യലൈസേഷന്റെ പ്രാധാന്യം വ്യക്തമാക്കുക.</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> Socialization is the lifelong social learning process whereby an individual acquires the language, beliefs, values, and normative behaviors of their society. <strong>Primary socialization</strong> is the foundational phase occurring during infancy and early childhood, primarily inside the family. It is irreversible and establishes basic emotional security, cognitive development, language acquisition, and moral conscience.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> ഒരു വ്യക്തി തന്റെ സമൂഹത്തിന്റെ സംസ്കാരവും ഭാഷയും മൂല്യങ്ങളും പെരുമാറ്റച്ചട്ടങ്ങളും സ്വായത്തമാക്കുന്ന ആജീവനാന്ത പ്രക്രിയയാണ് സോഷ്യലൈസേഷൻ. ബാല്യകാലത്ത് കുടുംബത്തിൽ വെച്ച് നടക്കുന്നതാണ് <strong>പ്രൈമറി സോഷ്യലൈസേഷൻ</strong>. മനുഷ്യന്റെ അടിസ്ഥാന വ്യക്തിത്വവും മാതൃഭാഷയും വൈകാരിക സുരക്ഷിതത്വവും രൂപപ്പെടുന്നത് ഈ ഘട്ടത്തിലാണ്.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. What is re-socialization? In what context did Erving Goffman discuss it? / റീസോഷ്യലൈസേഷൻ എന്നാൽ എന്ത്? എർവിംഗ് ഗോഫ്മാൻ ഇത് വിശദീകരിച്ചത് ഏത് സാഹചര്യത്തിലാണ്?</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> <strong>Re-socialization</strong> is the radical unlearning of past behaviors, values, and identities, and the coercive internalization of a fundamentally new set of norms. Sociologist <strong>Erving Goffman</strong> (1961) analyzed re-socialization within <strong>Total Institutions</strong> (such as maximum-security prisons, psychiatric asylums, and military boot camps) where inmates are isolated from broader society, stripped of previous identities, and systematically reshaped.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> മുൻപ് പഠിച്ച ശീലങ്ങളും സ്വഭാവങ്ങളും പൂർണ്ണമായി മായ്ച്ചുകളഞ്ഞ് പുതിയൊരു ജീവിതരീതി നിർബന്ധപൂർവ്വം പഠിപ്പിക്കുന്നതിനെയാണ് <strong>റീസോഷ്യലൈസേഷൻ</strong> എന്ന് വിളിക്കുന്നത്. സോഷ്യോളജിസ്റ്റായ <strong>എർവിംഗ് ഗോഫ്മാൻ</strong> തന്റെ 'ടോട്ടൽ ഇൻസ്റ്റിറ്റ്യൂഷനുകൾ' (Total Institutions - ജയിലുകൾ, മാനസികാരോഗ്യ കേന്ദ്രങ്ങൾ, മിലിട്ടറി ബാരക്കുകൾ) എന്ന പഠനത്തിലാണ് ഈ ആശയം വിശദീകരിച്ചത്.</div>
+</div>
+
+<h2>5. പരീക്ഷാ ബഹുവിശേഷ ചോദ്യങ്ങൾ (Chapter 3.3 Examination MCQs)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">1. What is the lifelong process of internalizing society's culture called? / സമൂഹത്തിന്റെ സംസ്കാരം സ്വാംശീകരിക്കുന്ന ആജീവനാന്ത പ്രക്രിയ ഏതാണ്?</div>
+    <div class="q-options">
+      A) Urbanization / നഗരവൽക്കരണം<br>
+      B) Socialization / സോഷ്യലൈസേഷൻ<br>
+      C) Secularization / മതേതരവൽക്കരണം<br>
+      D) Industrialization / വ്യവസായവൽക്കരണം
+    </div>
+    <div class="q-ans">Answer: B) Socialization / സോഷ്യലൈസേഷൻ</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Socialization is the transmission of culture across generations.<br>
+      <strong>ML:</strong> സംസ്കാരം തലമുറകളിലേക്ക് കൈമാറുന്ന പ്രക്രിയയാണ് സോഷ്യലൈസേഷൻ.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. In which setting does primary socialization predominantly take place? / പ്രൈമറി സോഷ്യലൈസേഷൻ പ്രധാനമായും നടക്കുന്നത് എവിടെയാണ്?</div>
+    <div class="q-options">
+      A) Corporate office / കോർപ്പറേറ്റ് ഓഫീസ്<br>
+      B) Family / കുടുംബം<br>
+      C) University / സർവ്വകലാശാല<br>
+      D) Trade Union / ട്രേഡ് യൂണിയൻ
+    </div>
+    <div class="q-ans">Answer: B) Family / കുടുംബം</div>
+    <div class="q-exp">
+      <strong>EN:</strong> The family is the universal, foundational agency for primary socialization.<br>
+      <strong>ML:</strong> കുട്ടിയുടെ ആദ്യത്തെയും ഏറ്റവും പ്രധാനപ്പെട്ടതുമായ പരിശീലന കളരി കുടുംബമാണ്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. Who analyzed the process of re-socialization in 'Total Institutions'? / 'ടോട്ടൽ ഇൻസ്റ്റിറ്റ്യൂഷനുകളിലെ' റീസോഷ്യലൈസേഷൻ പഠിച്ച പണ്ഡിതൻ ആര്?</div>
+    <div class="q-options">
+      A) Erving Goffman / എർവിംഗ് ഗോഫ്മാൻ<br>
+      B) Karl Marx / കാൾ മാർക്സ്<br>
+      C) Max Weber / മാക്സ് വെബർ<br>
+      D) Auguste Comte / ഓഗസ്റ്റ് കോംതെ
+    </div>
+    <div class="q-ans">Answer: A) Erving Goffman / എർവിംഗ് ഗോഫ്മാൻ</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Goffman examined total institutions like prisons and asylums in his 1961 work 'Asylums'.<br>
+      <strong>ML:</strong> ജയിലുകളിലെയും ആശുപത്രികളിലെയും റീസോഷ്യലൈസേഷൻ പഠിച്ചത് എർവിംഗ് ഗോഫ്മാനാണ്.
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. സോഷ്യോളജി പഠന സഹായി · Introduction to Sociology (SOC1CJ101)</span>
+    <span>സമ്പൂർണ്ണ മലയാള പരിഭാഷ, ചോദ്യോത്തരങ്ങൾ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 3 · അധ്യായം 4: ശുഭാപ്തിവിശ്വാസം (Optimism: An Essay) · Helen Keller — 'Optimism: An Essay'</title>
+  <style>
+    :root {
+      --c1: #b45309;
+      --c2: #f59e0b;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 10mm 10mm 10mm 10mm;
+  @bottom-left {
+    content: "Calicut University FYUGP · English Language Skills (ENG1B01) · Strictly Bilingual Edition";
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', sans-serif;
+    font-size: 7.5pt;
+    color: #64748b;
+  }
+  @bottom-right {
+    content: "Page " counter(page);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 8pt;
+    font-weight: 700;
+    color: #1e3a8a;
+  }
+}
+
+*, *:before, *:after { box-sizing: border-box; }
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Malayalam', 'Manjari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #0f172a;
+  line-height: 1.7;
+  font-size: 9.8pt;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #1e3a8a) 0%, var(--c2, #2563eb) 60%, #3b82f6 100%);
+  color: white;
+  padding: 18px 22px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.15);
+}
+
+.header-banner .badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.header-banner h1 {
+  margin: 0 0 4px 0;
+  font-size: 16.5pt;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.header-banner .ml-sub {
+  font-family: 'Noto Sans Malayalam', sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  color: #bfdbfe;
+  margin-bottom: 6px;
+}
+
+.header-banner .meta {
+  font-size: 8.5pt;
+  color: #e0e7ff;
+}
+
+.highlighter-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 7px 12px;
+  margin-bottom: 16px;
+  font-size: 8.2pt;
+}
+
+.highlighter-legend-title {
+  font-weight: 800;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* HIGH-PRECISION COLOR-CODED HIGHLIGHTERS */
+mark.hl-date {
+  background: #fef08a !important;
+  color: #854d0e !important;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid #fde047;
+  display: inline-block;
+  line-height: 1.35;
+}
+
+mark.hl-thinker {
+  background: #ede9fe !important;
+  color: #5b21b6 !important;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd6fe;
+  display: inline-block;
+  line-height: 1.35;
+}
+
+mark.hl-event {
+  background: #dcfce7 !important;
+  color: #166534 !important;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid #bbf7d0;
+  display: inline-block;
+  line-height: 1.35;
+}
+
+mark.hl-author {
+  background: #fee2e2 !important;
+  color: #991b1b !important;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid #fecaca;
+  display: inline-block;
+  line-height: 1.35;
+}
+
+h2 {
+  color: var(--c1, #1e3a8a);
+  font-size: 12.5pt;
+  border-bottom: 2px solid #dbeafe;
+  padding-bottom: 4px;
+  margin-top: 18px;
+  margin-bottom: 12px;
+  font-weight: 800;
+  page-break-after: avoid;
+}
+
+h3 {
+  color: #0f766e;
+  font-size: 11pt;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  page-break-after: avoid;
+}
+
+.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+/* BILINGUAL ENTRY SYSTEM */
+.bilingual-entry {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--c2, #2563eb);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.bilingual-entry .en-part {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.65;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.bilingual-entry .ml-part {
+  color: #1e3a8a;
+  font-family: 'Noto Sans Malayalam', sans-serif;
+  font-size: 9.5pt;
+  line-height: 1.75;
+}
+
+.en-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 7.5pt;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  border: 1px solid #bfdbfe;
+}
+
+.ml-tag {
+  display: inline-block;
+  background: #fdf4ff;
+  color: #7e22ce;
+  font-size: 7.5pt;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  border: 1px solid #e9d5ff;
+}
+
+.card, .card-teal, .card-amber, .card-rose, .card-indigo, .card-blue, .quote-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--c2, #2563eb);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+}
+
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--c2, #2563eb);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.6;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.qa-ans-ml {
+  color: #1e3a8a;
+  font-family: 'Noto Sans Malayalam', sans-serif;
+  font-size: 9.5pt;
+  line-height: 1.7;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 16px 0;
+  font-size: 9pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 7px 10px;
+  text-align: left;
+}
+
+th {
+  background: #eff6ff;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* 20 EXAM POINTS WITH CARDS SECTION (+1 FONT SIZE ON FINAL PAGE) */
+.exam-points-section {
+  page-break-before: always;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.exam-section-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exam-section-header h2 {
+  color: #ffffff !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 12pt !important;
+  font-weight: 800 !important;
+}
+
+.exam-section-header p {
+  color: #bfdbfe;
+  margin: 0;
+  font-size: 8.8pt !important;
+}
+
+.exam-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.5px;
+}
+
+.exam-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-left: 3.5px solid var(--c2, #2563eb);
+  border-radius: 5px;
+  padding: 2.5px 5px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.exam-card-badge {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 7.5pt !important;
+  font-weight: 800;
+  padding: 0px 4px;
+  border-radius: 3px;
+  margin-bottom: 1px;
+  border: 1px solid #bfdbfe;
+  line-height: 1.25;
+}
+
+.exam-card-en {
+  font-size: 8.1pt !important;
+  line-height: 1.30 !important;
+  color: #0f172a;
+  margin-bottom: 1px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 1px;
+}
+
+.exam-card-ml {
+  font-family: 'Noto Sans Malayalam', sans-serif;
+  font-size: 8.1pt !important;
+  line-height: 1.36 !important;
+  color: #1e3a8a;
+}
+
+  </style>
+</head>
+<body>
+  <div class="header-banner">
+    <div class="badge">Calicut University · FYUGP Semester 1 · English Language Skills</div>
+    <h1>മൊഡ്യൂൾ 3: വായനാ വൈദഗ്ദ്ധ്യം (Module 3: Reading Skills) · മൊഡ്യൂൾ 3 · അധ്യായം 4: ശുഭാപ്തിവിശ്വാസം (Optimism: An Essay)</h1>
+    <div class="ml-sub">Helen Keller — 'Optimism: An Essay'</div>
+    <div class="meta">Comprehensive Strictly Bilingual Study Companion (English & Malayalam) · Color-Coded Highlighters</div>
+  </div>
+
+  <div class="highlighter-legend">
+    <span class="highlighter-legend-title">📌 Highlighter Key:</span>
+    <span><mark class="hl-date">📅 Dates</mark></span>
+    <span><mark class="hl-thinker">💡 Thinkers / Influencers</mark></span>
+    <span><mark class="hl-event">🏛️ Historic Events</mark></span>
+    <span><mark class="hl-author">✍️ Authors / Orators</mark></span>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="card">
+<ul>
+<li><strong>പ്രചോദനാത്മക പ്രബന്ധ വായന (Inspirational Essay Analysis):</strong> ഹെലൻ കെല്ലറുടെ <em>Optimism</em> എന്ന ഉപന്യാസത്തിലെ ദാർശനിക ആശയങ്ങളും ഭാഷാ സൗന്ദര്യവും ആസ്വദിക്കുക.</li>
+<li><strong>ജീവിതാഭിമുഖ്യവും പ്രതിസന്ധി തരണം ചെയ്യലും (Resilience &amp; Overcoming Adversity):</strong> അന്ധതയെയും ബധിരതയെയും അതിജീവിച്ച് മനുഷ്യകുലത്തിന് പ്രത്യാശ പകർന്ന കെല്ലറുടെ ജീവിത മാതൃക ഗ്രഹിക്കുക.</li>
+<li><strong>കർമ്മത്തിന്റെ സുവിശേഷം (The Gospel of Work):</strong> വെറുതെ സ്വപ്നം കാണുന്ന വ്യാജ ശുഭാപ്തിവിശ്വാസവും, കഠിനാധ്വാനത്തിൽ അധിഷ്ഠിതമായ യഥാർത്ഥ ശുഭാപ്തിവിശ്വാസവും തമ്മിലുള്ള വ്യത്യാസം തിരിച്ചറിയുക.</li>
+</ul>
+</div>
+<h2>2. എഴുത്തുകാരിയെക്കുറിച്ച് (About <mark class="hl-author">Helen Keller</mark>)</h2>
+<p>
+അമേരിക്കയിലെ ഏറ്റവും ധീരയായ എഴുത്തുകാരിയും പ്രഭാഷകയും മനുഷ്യാവകാശ പോരാളിയുമായിരുന്നു <strong><mark class="hl-author">ഹെലൻ കെല്ലർ</mark> (<mark class="hl-author">Helen Keller</mark>, 1880–<mark class="hl-date">1968</mark>)</strong>. കേവലം 19 മാസം പ്രായമുള്ളപ്പോൾ കടുത്ത അസുഖം മൂലം കാഴ്ചയും കേൾവിയും സംസാരശേഷിയും നഷ്ടപ്പെട്ട അവർ, തന്റെ പ്രിയ അധ്യാപിക ആൻ സള്ളിവന്റെ (<mark class="hl-thinker">Anne Sullivan</mark>) നിരന്തര പരിശ്രമത്തിലൂടെ ലോകത്തിന്റെ വിസ്മയമായി മാറി. ബധിരയും അന്ധയുമായ ആദ്യ കോളേജ് ബിരുദധാരിയായി (Radcliffe College) മാറിയ അവർ തൊഴിലാളികളുടെയും സ്ത്രീകളുടെയും അംഗപരിമിതരുടെയും അവകാശങ്ങൾക്കായി ലോകമെമ്പാടും സഞ്ചരിച്ചു. <mark class="hl-date">1903</mark>-ൽ കോളേജ് പഠനകാലത്താണ് <em>Optimism: An Essay</em> രചിച്ചത്.
+</p>
+<h2>3. ഉപന്യാസത്തിന്റെ സമഗ്ര പാഠഭാഗ പരിഭാഷയും ആശയങ്ങളും (Detailed Text Analysis)</h2>
+<h3 class="sub-head">(i) വ്യക്തിപരമായ അനുഭവത്തിൽ നിന്നുള്ള പ്രത്യാശ (Grounding Optimism in Personal Experience)</h3>
+<div class="bilingual-entry"><div class="en-part"><span class="en-tag">EN</span><strong><mark class="hl-author">Helen Keller</mark> — 'Optimism: An Essay': </strong>In-depth curricular analysis, critical literary interpretation, and official syllabus context for this theme.</div><div class="ml-part"><span class="ml-tag">ML</span>തന്റെ ശുഭാപ്തിവിശ്വാസം സുഖലോലുപതയിൽ ജീവിക്കുന്ന ആരുടെയെങ്കിലും വായുവിൽപ്പറയുന്ന സിദ്ധാന്തമല്ലെന്ന് കെല്ലർ വ്യക്തമാക്കുന്നു. കണ്ണുകൊണ്ട് സൂര്യനെ കാണാൻ കഴിയില്ലെങ്കിലും, ലോകത്തെ തൊട്ടറിയാനും മനസ്സ് കൊണ്ട് പ്രകാശം അനുഭവിക്കാനും തനിക്ക് സാധിക്കുന്നു.</div></div>
+<div class="quote-box">
+"If I am happy in spite of my deprivations, if my happiness is so deep that it is a faith, my testimony to the creed of optimism is worthy of hearing."
+(എന്റെ എല്ലാ ശാരീരിക പരിമിതികൾക്കിടയിലും ഞാൻ സന്തോഷവതിയാണെങ്കിൽ, എന്റെ സന്തോഷം ഒരു വിശ്വാസം പോലെ അത്രമേൽ ആഴത്തിലുള്ളതാണെങ്കിൽ, ശുഭാപ്തിവിശ്വാസത്തെക്കുറിച്ചുള്ള എന്റെ സാക്ഷ്യം കേൾക്കാൻ ലോകം ബാധ്യസ്ഥരാണ്!)
+</div>
+<h3 class="sub-head">(ii) ഭാഷയുടെ വെളിച്ചവും ആന്തരിക സ്വാതന്ത്ര്യവും (Language as Liberation)</h3>
+<div class="bilingual-entry"><div class="en-part"><span class="en-tag">EN</span><strong><mark class="hl-author">Helen Keller</mark> — 'Optimism: An Essay': </strong>In-depth curricular analysis, critical literary interpretation, and official syllabus context for this theme.</div><div class="ml-part"><span class="ml-tag">ML</span>ഭാഷ പഠിക്കുന്നതിന് മുമ്പ് താൻ അന്ധകാരത്തിൽ തനിച്ചായിരുന്നു എന്ന് കെല്ലർ ഓർമ്മിക്കുന്നു. എന്നാൽ ആൻ സള്ളിവൻ തന്റെ കയ്യിൽ 'W-A-T-E-R' എന്ന് എഴുതിത്തന്ന ആ നിമിഷം അക്ഷരങ്ങൾ ജീവനായി മാറി! ഭാഷ തന്റെ ആത്മാവിന് സ്വാതന്ത്ര്യം നൽകി; ലോകവുമായി സംവദിക്കാനും അറിവ് നേടാനും അത് വാതിലുകൾ തുറന്നു.</div></div>
+<h3 class="sub-head">(iii) വ്യാജ ശുഭാപ്തിവിശ്വാസത്തിനെതിരെയുള്ള താക്കീത് (Critique of False Optimism)</h3>
+<div class="bilingual-entry"><div class="en-part"><span class="en-tag">EN</span><strong><mark class="hl-author">Helen Keller</mark> — 'Optimism: An Essay': </strong>In-depth curricular analysis, critical literary interpretation, and official syllabus context for this theme.</div><div class="ml-part"><span class="ml-tag">ML</span>ദാരിദ്ര്യവും സാമൂഹിക അസമത്വങ്ങളും പട്ടിണിയും കണ്ണടച്ച് ഇരുട്ടാക്കിക്കൊണ്ട് "എല്ലാം ശുഭമാണ്" എന്ന് പറയുന്ന ഉപരിപ്ലവമായ വ്യാജ ശുഭാപ്തിവിശ്വാസത്തെ കെല്ലർ വെറുക്കുന്നു. യഥാർത്ഥ ശുഭാപ്തിവിശ്വാസി വേദനകളെയും അനീതികളെയും തുറന്ന കണ്ണുകളോടെ കാണുകയും, അവയെ ഇല്ലാതാക്കാൻ കർമ്മരംഗത്തിറങ്ങുകയും ചെയ്യുന്നു.</div></div>
+<h3 class="sub-head">(iv) കർമ്മമാണ് ശുഭാപ്തിവിശ്വാസം (The Gospel of Work)</h3>
+<div class="card-amber">
+<p style="font-size:12pt; font-weight:700; color:#92400e;">
+  "The desire and will to work is optimism itself."<br/>
+  (പ്രവർത്തിക്കാനുള്ള ആഗ്രഹവും ഇച്ഛാശക്തിയും തന്നെയാണ് യഥാർത്ഥ ശുഭാപ്തിവിശ്വാസം!)
+  </p>
+<div class="bilingual-entry"><div class="en-part"><span class="en-tag">EN</span><strong><mark class="hl-author">Helen Keller</mark> — 'Optimism: An Essay': </strong>In-depth curricular analysis, critical literary interpretation, and official syllabus context for this theme.</div><div class="ml-part"><span class="ml-tag">ML</span>തോമസ് കാർലൈലിന്റെ വാക്കുകൾ ഉദ്ധരിച്ചുകൊണ്ട് അവർ പറയുന്നു: വെറുതെ സ്വപ്നം കാണുന്നവരല്ല, മറിച്ച് സമൂഹത്തിന് വേണ്ടി കഠിനാധ്വാനം ചെയ്യുന്നവരാണ് ലോകത്തെ മുന്നോട്ട് നയിക്കുന്നത്. പണമുണ്ടാക്കാൻ മാത്രമല്ല, മനുഷ്യന്റെ ആത്മാഭിമാനത്തിനും ജീവിത ലക്ഷ്യത്തിനും ജോലി അനിവാര്യമാണ്.</div></div>
+</div>
+<h2>4. പ്രധാന പദാവലി (Glossary)</h2>
+<table>
+<tr>
+<th>ഇംഗ്ലീഷ് പദം</th>
+<th>മലയാളം അർത്ഥം</th>
+<th>വിശദീകരണം</th>
+</tr>
+<tr>
+<td><strong>Optimism</strong></td>
+<td>ശുഭാപ്തിവിശ്വാസം</td>
+<td>പ്രതിസന്ധികളിലും ഭാവിയിൽ നന്മ സംഭവിക്കുമെന്ന ഉറച്ച പ്രത്യാശ.</td>
+</tr>
+<tr>
+<td><strong>Pessimism</strong></td>
+<td>നിരാശാവാദം</td>
+<td>എല്ലാ കാര്യങ്ങളിലും കുറവുകളും പരാജയങ്ങളും മാത്രം കാണുന്ന മനോഭാവം.</td>
+</tr>
+<tr>
+<td><strong>Gospel of Work</strong></td>
+<td>കർമ്മത്തിന്റെ സുവിശേഷം</td>
+<td>തൊഴിലും കഠിനാധ്വാനവുമാണ് ജീവിതത്തിന്റെ മോചന മാർഗ്ഗം എന്ന ദർശനം.</td>
+</tr>
+</table>
+<h2>5. പാഠപുസ്തക ചോദ്യങ്ങളും പൂർണ്ണ ഉത്തരങ്ങളും (LMS Questions Answered)</h2>
+<div class="qa-card">
+<div class="qa-q">Q1. What does <mark class="hl-author">Helen Keller</mark> mean by true optimism? (യഥാർത്ഥ ശുഭാപ്തിവിശ്വാസം കൊണ്ട് <mark class="hl-author">ഹെലൻ കെല്ലർ</mark> എന്താണ് ഉദ്ദേശിക്കുന്നത്?)</div>
+<div class="qa-ans-en"><span class="en-tag">EN</span><strong>Answer in English:</strong> True optimism is not blind denial of suffering, but the moral courage, faith, and determination to confront pain and social injustice directly, working actively to overcome them through love, knowledge, and service.</div>
+<div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാള വിശദീകരണം:</strong> സങ്കടങ്ങളെയും പരാജയങ്ങളെയും കണ്ടില്ലെന്ന് നടിക്കുന്നതല്ല, മറിച്ച് അവയെ ധൈര്യപൂർവ്വം നേരിടാനും കഠിനാധ്വാനത്തിലൂടെ വിജയം കൈവരിക്കാനുമുള്ള ഇച്ഛാശക്തിയാണ് യഥാർത്ഥ ശുഭാപ്തിവിശ്വാസം.</div>
+</div>
+<div class="qa-card">
+<div class="qa-q">Q2. How did learning language transform <mark class="hl-author">Helen Keller</mark>'s life? (ഭാഷ പഠിച്ചത് ഹെലൻ കെല്ലറുടെ ജീവിതത്തെ എങ്ങനെ മാറ്റിമറിച്ചു?)</div>
+<div class="qa-ans-en"><span class="en-tag">EN</span><strong>Answer in English:</strong> Before acquiring language, she lived in complete sensory isolation, silence, and rage. Language opened the universe to her mind, connected her to human thought, granted her self-awareness, and liberated her spirit to pursue higher education and global advocacy.</div>
+<div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാള വിശദീകരണം:</strong> ഭാഷ ലഭിക്കുന്നതിന് മുമ്പ് ഇരുട്ടിലും ദേഷ്യത്തിലും ഒറ്റപ്പെട്ടു കഴിഞ്ഞിരുന്ന അവർക്ക് അക്ഷരങ്ങൾ കിട്ടിയതോടെ പുറംലോകവുമായി സംസാരിക്കാനും അറിവ് നേടാനും സ്വന്തം ആത്മാവിനെ സ്വതന്ത്രമാക്കാനും സാധിച്ചു.</div>
+</div>
+<div class="qa-card">
+<div class="qa-q">Q3. Why does <mark class="hl-author">Helen Keller</mark> criticise "false optimism"? (വ്യാജ ശുഭാപ്തിവിശ്വാസത്തെ കെല്ലർ വിമർശിക്കുന്നത് എന്തുകൊണ്ട്?)</div>
+<div class="qa-ans-en"><span class="en-tag">EN</span><strong>Answer in English:</strong> She criticizes false optimism because it promotes passive complacency, ignoring social injustice, poverty, and human agony with shallow, foolish smiles. True optimism demands proactive responsibility and active work to heal the world.</div>
+<div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാള വിശദീകരണം:</strong> പട്ടിണിയും പീഡനങ്ങളും നിലനിൽക്കുമ്പോൾ "എല്ലാം നല്ലതാണ്" എന്ന് പറയുന്നത് കാപട്യമാണ്; യാഥാർത്ഥ്യങ്ങളെ തിരുത്താൻ ഇറങ്ങിത്തിരിക്കുകയാണ് വേണ്ടത്.</div>
+</div>
+<div class="qa-card">
+<div class="qa-q">Q4. Why does <mark class="hl-author">Helen Keller</mark> consider work an expression of optimism? (ജോലിയെ ശുഭാപ്തിവിശ്വാസത്തിന്റെ പ്രകടനമായി കെല്ലർ കാണുന്നത് എന്തുകൊണ്ട്?)</div>
+<div class="qa-ans-en"><span class="en-tag">EN</span><strong>Answer in English:</strong> Productive, honest labor is proof that one believes in the future and in one's capacity to improve the human condition. The will to work asserts that human effort matters and gives dignity, purpose, and tangible fruit to hope.</div>
+<div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാള വിശദീകരണം:</strong> നാളെയെക്കുറിച്ചുള്ള ഉറച്ച പ്രതീക്ഷയാണ് മനുഷ്യനെ ജോലി ചെയ്യാൻ പ്രേരിപ്പിക്കുന്നത്. അധ്വാനം ജീവിതത്തിന് അന്തസ്സും പുരോഗതിയും നൽകുന്നു.</div>
+</div>
+
+
+
+
+  
+  <div class="exam-points-section">
+    <div class="exam-section-header">
+      <h2>🎯 20 High-Yield Exam Points & Key Takeaways</h2>
+      <p>മൊഡ്യൂൾ 3 · അധ്യായം 4: ശുഭാപ്തിവിശ്വാസം (Optimism: An Essay) · 20 Exam Cards in English & Malayalam</p>
+    </div>
+    <div class="exam-cards-grid">
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 01 · At what age did Helen Keller los...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>At what age did <mark class="hl-author">Helen Keller</mark> lose her sight and hearing?:</strong> B. At 19 months old</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. At 19 months old</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 02 · In which year was Helen Keller's...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>In which year was <mark class="hl-author">Helen Keller</mark>'s "Optimism: An Essay" published?:</strong> B. <mark class="hl-date">1903</mark></div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. <mark class="hl-date">1903</mark></div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 03 · Who was Helen Keller's lifelong ...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>Who was <mark class="hl-author">Helen Keller</mark>'s lifelong teacher and companion?:</strong> B. <mark class="hl-thinker">Anne Sullivan</mark></div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. <mark class="hl-thinker">Anne Sullivan</mark></div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 04 · Which college did Helen Keller g...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>Which college did <mark class="hl-author">Helen Keller</mark> graduate from, becoming the first deafblind person to earn a BA degree?:</strong> A. Radcliffe College (Harvard)</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> A. Radcliffe College (Harvard)</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 05 · According to Keller, true optimi...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>According to Keller, true optimism is rooted in::</strong> B. Personal experience of overcoming suffering with courage and faith</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. Personal experience of overcoming suffering with courage and faith</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 06 · What was the first word Helen Ke...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>What was the first word <mark class="hl-author">Helen Keller</mark> recognized when cold water flowed over her hand?:</strong> B. Water</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. Water</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 07 · Whose "gospel of work" does Hele...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>Whose "gospel of work" does <mark class="hl-author">Helen Keller</mark> invoke in her essay?:</strong> A. Thomas Carlyle</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> A. Thomas Carlyle</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 08 · Complete Keller's quote: "The de...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>Complete Keller's quote: "The desire and will to work is __________ itself.":</strong> B. optimism</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. optimism</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 09 · Why does Keller condemn "blind o...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>Why does Keller condemn "blind or false optimism"?:</strong> B. It ignores real suffering, social injustice, and discourages reform</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. It ignores real suffering, social injustice, and discourages reform</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 10 · How does Keller describe her sta...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>How does Keller describe her state before acquiring language?:</strong> B. An unconscious phantom living in dark, silent isolation</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. An unconscious phantom living in dark, silent isolation</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 11 · What tactile reading system did ...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>What tactile reading system did <mark class="hl-author">Helen Keller</mark> master?:</strong> B. Braille</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. Braille</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 12 · Besides advocacy for the blind, ...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>Besides advocacy for the blind, <mark class="hl-author">Helen Keller</mark> was an ardent champion of::</strong> B. Women's suffrage, civil rights, and labor reform</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. Women's suffrage, civil rights, and labor reform</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 13 · In Keller's view, can external p...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>In Keller's view, can external physical limitations crush the human spirit?:</strong> B. No; internal faith, knowledge, and purpose transcend all physical barriers</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. No; internal faith, knowledge, and purpose transcend all physical barriers</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 14 · What literary tone characterizes...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>What literary tone characterizes <mark class="hl-author">Helen Keller</mark>'s prose in "Optimism"?:</strong> B. Triumphant, eloquent, intellectually rigorous, and deeply sincere</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. Triumphant, eloquent, intellectually rigorous, and deeply sincere</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 15 · What role does education play in...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>What role does education play in Keller's philosophy?:</strong> B. It is the greatest liberating force that connects human souls</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. It is the greatest liberating force that connects human souls</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 16 · What was the title of Helen Kell...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>What was the title of <mark class="hl-author">Helen Keller</mark>'s world-famous autobiography published in <mark class="hl-date">1903</mark>?:</strong> A. The Story of My Life</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> A. The Story of My Life</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 17 · Pessimism, according to Keller, ...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>Pessimism, according to Keller, breeds::</strong> B. Inaction, paralysis, and despair</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. Inaction, paralysis, and despair</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 18 · Keller states that no pessimist ...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>Keller states that no pessimist ever::</strong> B. Discovered the secret of the stars, sailed to an uncharted land, or opened a new heaven to the human spirit</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. Discovered the secret of the stars, sailed to an uncharted land, or opened a new heaven to the human spirit</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 19 · In academic reading skills, what...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>In academic reading skills, what type of text is "Optimism"?:</strong> B. Philosophical and persuasive argumentative essay</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. Philosophical and persuasive argumentative essay</div>
+      </div>
+
+      <div class="exam-card">
+        <div class="exam-card-badge">Card 20 · What is the supreme takeaway fro...</div>
+        <div class="exam-card-en"><span class="en-tag">EN</span> <strong>What is the supreme takeaway from <mark class="hl-author">Helen Keller</mark>'s essay for university students?:</strong> B. That with determination, active work, and faith, any adversity can be converted into triumph</div>
+        <div class="exam-card-ml"><span class="ml-tag">ML</span> <strong>വിശദീകരണം:</strong> B. That with determination, active work, and faith, any adversity can be converted into triumph</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

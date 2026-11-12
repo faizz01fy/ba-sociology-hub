@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>അധ്യായം 6: വികസന സൂചകങ്ങൾ: ആരോഗ്യവും വിദ്യാഭ്യാസവും</title>
+  <style>
+    :root {
+      --c1: #065f46;
+      --c2: #059669;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 16mm 14mm 16mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #065f46), var(--c2, #059669));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a7f3d0;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #d1fae5;
+}
+
+.badge {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #065f46;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #a7f3d0;
+}
+
+h2 {
+  color: var(--c1, #065f46);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 26px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #0f766e;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #f8fafc;
+  border-left: 4px solid var(--c2, #059669);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-rose {
+  background: #fff1f2;
+  border-left: 4px solid #e11d48;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f1f5f9;
+  border-left: 4px solid #475569;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #047857;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #ecfdf5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.qa-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 8px;
+  font-size: 11pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 10pt;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 10pt;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #059669;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 1: ചരിത്രപരമായ പശ്ചാത്തലം (Module 1: Historical Precedents)</h4>
+    <h1>അധ്യായം 6: വികസന സൂചകങ്ങൾ: ആരോഗ്യവും വിദ്യാഭ്യാസവും</h1>
+    <div class="meta">Module 1 · Part 6: Indicators of Development: Health & Education · Calicut University B.A. Economics / Sociology · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="card">
+  <ul>
+    <li><strong>മാനവ മൂലധന രൂപീകരണം (Human Capital Formation):</strong> മനുഷ്യരിലുള്ള നിക്ഷേപമാണ് ഏറ്റവും ഉയർന്ന സാമ്പത്തിക വികസന സ്രോതസ്സെന്ന് മനസ്സിലാക്കുക.</li>
+    <li><strong>ആരോഗ്യ സൂചകങ്ങൾ (Health Indicators):</strong> ശിശുമരണ നിരക്ക് (IMR), മാതൃമരണ നിരക്ക് (MMR), ആയുർദൈർഘ്യം (Life Expectancy) എന്നിവ വിശകലനം ചെയ്യുക.</li>
+    <li><strong>വിദ്യാഭ്യാസ സൂചകങ്ങൾ (Educational Indicators):</strong> സാക്ഷരതാ നിരക്ക്, മൊത്തം എൻറോൾമെന്റ് അനുപാതം (GER), ലിംഗ തുല്യത സൂചിക (GPI), സ്കൂൾ പഠന വർഷങ്ങൾ എന്നിവ പഠിക്കുക.</li>
+    <li><strong>മാനവ വികസന സൂചിക (Human Development Index - HDI):</strong> യു.എൻ.ഡി.പി (UNDP) എച്ച്.ഡി.ഐ കണക്കാക്കുന്ന രീതിയും ഇന്ത്യയുടെ റാങ്കിംഗും കേരള മാതൃകയും വിലയിരുത്തുക.</li>
+  </ul>
+</div>
+
+<h2>2. സൈദ്ധാന്തിക പശ്ചാത്തലം (Theoretical Framework)</h2>
+<p>
+ആധുനിക സാമ്പത്തിക ശാസ്ത്രത്തിൽ ജനങ്ങൾ കേവലം ഉപഭോക്താക്കൾ മാത്രമല്ല, മറിച്ച് ഉത്പാദനക്ഷമതയുള്ള ഏറ്റവും വലിയ ആസ്തികളാണ്. ആരോഗ്യമുള്ളതും അറിവുള്ളതുമായ ഒരു ജനതയെ സൃഷ്ടിക്കാൻ വിദ്യാഭ്യാസം, പൊതുജനാരോഗ്യം, ശുദ്ധജലം, പോഷകാഹാരം എന്നിവയിൽ നടത്തുന്ന നിക്ഷേപത്തെയാണ് <strong>മാനവ മൂലധന രൂപീകരണം (Human Capital Formation)</strong> എന്ന് വിളിക്കുന്നത്.
+</p>
+
+<h2>3. സമഗ്ര പാഠഭാഗ പരിഭാഷയും ആശയ വിശകലനവും (Detailed Text Analysis)</h2>
+
+<h3 class="sub-head">(i) പ്രധാന ആരോഗ്യ സൂചകങ്ങൾ (Key Health Indicators)</h3>
+<div class="card-teal">
+  <ul>
+    <li><strong>ജനനസമയത്തെ ആയുർദൈർഘ്യം (Life Expectancy at Birth):</strong> ഒരു കുഞ്ഞ് ജനിച്ച് എത്ര വയസ്സുവരെ ജീവിച്ചിരിക്കാൻ സാധ്യതയുണ്ടെന്ന ശരാശരി കണക്ക് (ഇന്ത്യയിൽ 1947-ലെ 32 വയസ്സിൽ നിന്ന് നിലവിൽ 70 വയസ്സ് കവിഞ്ഞു).</li>
+    <li><strong>ശിശുമരണ നിരക്ക് (Infant Mortality Rate - IMR):</strong> ഒരു വർഷത്തിൽ ജീവനോടെ ജനിക്കുന്ന 1000 കുഞ്ഞുങ്ങളിൽ ഒരു വയസ്സ് തികയുന്നതിന് മുൻപ് മരണപ്പെടുന്ന കുട്ടികളുടെ എണ്ണം.</li>
+    <li><strong>മാതൃമരണ നിരക്ക് (Maternal Mortality Ratio - MMR):</strong> പ്രസവസംബന്ധമായ സങ്കീർണ്ണതകൾ മൂലം ഒരു ലക്ഷം പ്രസവങ്ങളിൽ മരണപ്പെടുന്ന അമ്മമാരുടെ എണ്ണം.</li>
+    <li><strong>കുട്ടികളിലെ പോഷകാഹാരക്കുറവ്:</strong> വളർച്ചാ മുരടിപ്പ് (Stunting - ഉയരക്കുറവ്), ഭാരക്കുറവ് (Wasting) എന്നിവ ഇന്ത്യയിൽ ഇന്നും ഗുരുതരമായ വെല്ലുവിളിയായി തുടരുന്നു.</li>
+  </ul>
+</div>
+
+<h3 class="sub-head">(ii) പ്രധാന വിദ്യാഭ്യാസ സൂചകങ്ങൾ (Educational Indicators)</h3>
+<div class="card-blue">
+  <ul>
+    <li><strong>സാക്ഷരതാ നിരക്ക് (Literacy Rate):</strong> ഏഴ് വയസ്സോ അതിൽ കൂടുതലോ പ്രായമുള്ളവരിൽ ഏതെങ്കിലും ഒരു ഭാഷ മനസ്സിലാക്കാനും വായിക്കാനും എഴുതാനും കഴിയുന്നവരുടെ ശതമാനം (2011 സെൻസസ് പ്രകാരം ഇന്ത്യയിൽ 74.04%; കേരളത്തിൽ 94%).</li>
+    <li><strong>മൊത്തം പ്രവേശന അനുപാതം (Gross Enrolment Ratio - GER):</strong> സ്കൂൾ, കോളേജ് തലങ്ങളിൽ ഔദ്യോഗിക പ്രായപരിധിയിലുള്ള കുട്ടികളിൽ യഥാർത്ഥത്തിൽ ചേർന്നവരുടെ ശതമാനം.</li>
+    <li><strong>വിദ്യാഭ്യാസ അവകാശ നിയമം (RTE Act, 2009):</strong> 6 മുതൽ 14 വയസ്സുവരെയുള്ള എല്ലാ കുട്ടികൾക്കും സൗജന്യവും നിർബന്ധിതവുമായ പ്രാഥമിക വിദ്യാഭ്യാസം മൗലികാവകാശമാക്കി (ഭരണഘടന ആർട്ടിക്കിൾ 21A).</li>
+  </ul>
+</div>
+
+<h3 class="sub-head">(iii) മാനവ വികസന സൂചിക (Human Development Index - HDI)</h3>
+<p>
+1990-ൽ പാകിസ്ഥാൻ സാമ്പത്തിക ശാസ്ത്രജ്ഞനായ മഹ്ബൂബ് ഉൽ ഹഖും അമർത്യ സെന്നും ചേർന്ന് യു.എൻ.ഡി.പിക്ക് (UNDP) വേണ്ടി വികസിപ്പിച്ചെടുത്ത ആഗോള സൂചികയാണ് എച്ച്.ഡി.ഐ. ഇതിന് മൂന്ന് പ്രധാന മാനങ്ങളുണ്ട്:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>മാനം (Dimension)</th>
+      <th>ഉപയോഗിക്കുന്ന സൂചകം (Indicator)</th>
+      <th>ലക്ഷ്യം</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. ദീർഘായുസ്സും ആരോഗ്യവും (Health)</strong></td>
+      <td>ജനനസമയത്തെ ആയുർദൈർഘ്യം (Life Expectancy at Birth)</td>
+      <td>കുറഞ്ഞത് 20 വയസ്സ്, പരമാവധി 85 വയസ്സ്</td>
+    </tr>
+    <tr>
+      <td><strong>2. വിജ്ഞാനം / വിദ്യാഭ്യാസം (Education)</strong></td>
+      <td>പ്രതീക്ഷിത സ്കൂൾ വർഷങ്ങളും (Expected Years) മുതിർന്നവരുടെ ശരാശരി സ്കൂൾ വർഷങ്ങളും (Mean Years)</td>
+      <td>സാക്ഷരതയും വിജ്ഞാന ശേഖരണവും</td>
+    </tr>
+    <tr>
+      <td><strong>3. മാന്യമായ ജീവിതനിലവാരം (Living Standards)</strong></td>
+      <td>പ്രതിശീർഷ മൊത്തം ദേശീയ വരുമാനം (GNI per capita in PPP $)</td>
+      <td>വാങ്ങൽ ശേഷി അടിസ്ഥാനമാക്കിയുള്ള വരുമാനം</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. എൽ.എം.എസ് പാഠപുസ്തക ചോദ്യോത്തരങ്ങൾ (LMS Questions & Detailed Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. What are the dimensions and indicators of the Human Development Index (HDI)? (മാനവ വികസന സൂചികയുടെ മാനങ്ങളും സൂചകങ്ങളും ഏതെല്ലാമാണ്?)</div>
+  <div class="qa-ans-en"><strong>English:</strong> The Human Development Index (HDI) developed by the UNDP is a geometric mean of normalized indices across three core dimensions of human development: (1) Health Dimension: Measured by Life Expectancy at Birth; (2) Knowledge / Education Dimension: Measured through a composite of Mean Years of Schooling (for adults aged 25+) and Expected Years of Schooling (for school-age children); (3) Decent Standard of Living: Measured by Gross National Income (GNI) per capita in Purchasing Power Parity (PPP) US Dollars.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> യു.എൻ.ഡി.പി (UNDP) കണക്കാക്കുന്ന മാനവ വികസന സൂചിക (HDI) മൂന്ന് അടിസ്ഥാന മാനങ്ങളുടെ ജ്യാമിതീയ ശരാശരിയാണ്: (1) ആരോഗ്യ മാനം: ജനനസമയത്തെ ആയുർദൈർഘ്യം കൊണ്ട് അളക്കുന്നു; (2) വിദ്യാഭ്യാസ മാനം: 25 വയസ്സിന് മുകളിലുള്ളവരുടെ ശരാശരി സ്കൂൾ വർഷങ്ങളും സ്കൂൾ പ്രായത്തിലുള്ള കുട്ടികളുടെ പ്രതീക്ഷിക്കപ്പെടുന്ന സ്കൂൾ വർഷങ്ങളും ചേർത്ത് അളക്കുന്നു; (3) മാന്യമായ ജീവിതനിലവാര മാനം: വാങ്ങൽ ശേഷി സമാനതയിലുള്ള (PPP ഡോളർ) പ്രതിശീർഷ മൊത്തം ദേശീയ വരുമാനം (GNI per capita) കൊണ്ട് അളക്കുന്നു.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. Define Infant Mortality Rate (IMR) and Maternal Mortality Ratio (MMR). (ശിശുമരണ നിരക്കും മാതൃമരണ നിരക്കും നിർവ്വചിക്കുക.)</div>
+  <div class="qa-ans-en"><strong>English:</strong> Infant Mortality Rate (IMR) is the probability of a child dying before completing one year of age per 1,000 live births in a given year. Maternal Mortality Ratio (MMR) is the number of maternal deaths occurring during pregnancy or within 42 days of termination of pregnancy due to obstetric causes per 100,000 live births during the same period. Both indicators reflect the accessibility, equity, and quality of a nation's public healthcare architecture.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> ശിശുമരണ നിരക്ക് (IMR): ഒരു നിശ്ചിത വർഷത്തിൽ ജീവനോടെ ജനിക്കുന്ന 1000 കുട്ടികളിൽ ഒരു വയസ്സ് പൂർത്തിയാകുന്നതിന് മുൻപ് മരണപ്പെടുന്ന കുട്ടികളുടെ എണ്ണമാണിത്. മാതൃമരണ നിരക്ക് (MMR): പ്രസവസംബന്ധമായ കാരണങ്ങളാൽ ഗർഭാവസ്ഥയിലോ പ്രസവിച്ച് 42 ദിവസത്തിനകമോ ഒരു ലക്ഷം ജീവനുള്ള പ്രസവങ്ങളിൽ മരണപ്പെടുന്ന അമ്മമാരുടെ എണ്ണമാണിത്. ഇവ രണ്ടും ഒരു രാജ്യത്തെ പൊതുജനാരോഗ്യ സംവിധാനത്തിന്റെ ഗുണനിലവാരത്തെയാണ് സൂചിപ്പിക്കുന്നത്.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q3. Why is education considered an indispensable foundation for economic development? (സാമ്പത്തിക വികസനത്തിന് വിദ്യാഭ്യാസം അത്യന്താപേക്ഷിതമായ അടിത്തറയായി കണക്കാക്കുന്നത് എന്തുകൊണ്ട്?)</div>
+  <div class="qa-ans-en"><strong>English:</strong> Education is the cornerstone of human capital formation. It elevates labour productivity by imparting critical cognitive and technical skills, encourages technological innovation, improves health literacy, slows excessive fertility rates, and enhances social mobility. Economically, educated individuals earn higher real wages, fostering inclusive economic expansion and breaking the intergenerational vicious cycle of poverty.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> വിദ്യാഭ്യാസം മാനവ മൂലധനത്തിന്റെ കാതലായ ഘടകമാണ്. തൊഴിലാളികൾക്ക് സാങ്കേതിക വിജ്ഞാനവും കാര്യക്ഷമതയും നൽകി ഉത്പാദനക്ഷമത കൂട്ടാൻ ഇത് സഹായിക്കുന്നു. വ്യക്തികളിൽ പുരോഗമന ചിന്താഗതി വളർത്തുകയും, ആരോഗ്യ ബോധം നൽകുകയും, ജനസംഖ്യാ വർദ്ധനവ് നിയന്ത്രിക്കാൻ സഹായിക്കുകയും ചെയ്യുന്നു. സാമ്പത്തികമായി, വിദ്യാസമ്പന്നരായ തൊഴിലാളികൾക്ക് ഉയർന്ന വരുമാനം നേടാൻ സാധിക്കുന്നത് തലമുറകളായുള്ള ദാരിദ്ര്യത്തിന്റെ ദുഷ്ടവലയത്തെ തകർക്കാൻ സഹായിക്കുന്നു.</div>
+</div>
+
+<h2>5. 20 പ്രധാന മൾട്ടിപ്പിൾ ചോയ്‌സ് ചോദ്യങ്ങൾ (20 Important MCQs with Answers & Rationale)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">1. യു.എൻ.ഡി.പിയുടെ മാനവ വികസന സൂചിക (HDI) വികസിപ്പിച്ച സാമ്പത്തിക ശാസ്ത്രജ്ഞൻ ആര്? / Who created the Human Development Index (HDI) for the UNDP in 1990?</div>
+    <div class="q-options">A) മഹ്ബൂബ് ഉൽ ഹഖ് (Mahbub ul Haq) & അമർത്യ സെൻ<br>B) മിൽട്ടൺ ഫ്രീഡ്മാൻ<br>C) പോൾ ക്രൂഗ്മാൻ<br>D) അഡാ സ്മിത്ത്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: പാകിസ്ഥാനി സാമ്പത്തിക വിദഗ്ദ്ധനായ മഹ്ബൂബ് ഉൽ ഹഖിന്റെ നേതൃത്വത്തിൽ അമർത്യ സെന്നിന്റെ പങ്കാളിത്തത്തോടെയാണ് HDI രൂപകൽപ്പന ചെയ്തത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. ജീവനോടെ ജനിക്കുന്ന 1000 കുഞ്ഞുങ്ങളിൽ ഒരു വയസ്സ് തികയുന്നതിന് മുൻപ് മരിക്കുന്ന കുട്ടികളുടെ എണ്ണം ഏതാണ്? / Number of deaths of infants under one year of age per 1,000 live births is:</div>
+    <div class="q-options">A) മാതൃമരണ നിരക്ക്<br>B) ശിശുമരണ നിരക്ക് (Infant Mortality Rate - IMR)<br>C) ക്രൂഡ് ജനന നിരക്ക്<br>D) ഫെർട്ടിലിറ്റി നിരക്ക്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: IMR ആണ് രാജ്യത്തെ ശിശു ആരോഗ്യ പരിപാലനത്തിന്റെ ഏറ്റവും പ്രധാന സൂചകം.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. മാതൃമരണ നിരക്ക് (MMR) എത്ര പ്രസവങ്ങളിലാണ് കണക്കാക്കുന്നത്? / Maternal Mortality Ratio (MMR) is expressed per:</div>
+    <div class="q-options">A) 1,000 പ്രസവങ്ങളിൽ<br>B) 1,00,000 ജീവനുള്ള പ്രസവങ്ങളിൽ (100,000 Live Births)<br>C) 10,000 പ്രസവങ്ങളിൽ<br>D) 50,000 പ്രസവങ്ങളിൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: MMR അന്താരാഷ്ട്ര തലത്തിൽ ഒരു ലക്ഷം ജീവനുള്ള പ്രസവങ്ങളെ അടിസ്ഥാനമാക്കിയാണ് കണക്കാക്കുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">4. ഇന്ത്യയിൽ 6 മുതൽ 14 വയസ്സുവരെയുള്ള കുട്ടികൾക്ക് സൗജന്യവും നിർബന്ധിതവുമായ വിദ്യാഭ്യാസം ഉറപ്പുനൽകിയ ഭരണഘടനാ ഭേദഗതി ഏത്? / Which Constitutional Amendment Act introduced Article 21A for Right to Education?</div>
+    <div class="q-options">A) 42-ാം ഭേദഗതി<br>B) 86-ാം ഭേദഗതി 2002 (86th Amendment Act)<br>C) 73-ാം ഭേദഗതി<br>D) 91-ാം ഭേദഗതി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: 86-ാം ഭരണഘടനാ ഭേദഗതിയിലൂടെ ആർട്ടിക്കിൾ 21A ചേർത്ത് പ്രാഥമിക വിദ്യാഭ്യാസം മൗലികാവകാശമാക്കി.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">5. എച്ച്.ഡി.ഐ (HDI) സൂചികയുടെ മൂല്യം ഏതിനിടയിലാണ് നിർണ്ണയിക്കപ്പെടുന്നത്? / What is the scoring scale range of the Human Development Index?</div>
+    <div class="q-options">A) 0 മുതൽ 100 വരെ<br>B) 0 മുതൽ 1 വരെ (Between 0 and 1)<br>C) 1 മുതൽ 10 വരെ<br>D) -1 മുതൽ +1 വരെ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: 0 നും 1 നും ഇടയിലാണ് എച്ച്.ഡി.ഐ സ്കോർ നൽകുന്നത്; 1-ലേക്ക് അടുക്കുംതോറും വികസനം കൂടുതലാണെന്ന് വ്യക്തമാക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">6. 2011-ലെ സെൻസസ് പ്രകാരം ഇന്ത്യയിൽ ഏറ്റവും ഉയർന്ന സാക്ഷരതയുള്ള സംസ്ഥാനം ഏതാണ്? / As per the 2011 Census, which Indian state holds the highest literacy rate?</div>
+    <div class="q-options">A) തമിഴ്നാട്<br>B) കേരളം (Kerala - 94%)<br>C) മിസോറാം<br>D) ഗോവ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: 94 ശതമാനം സാക്ഷരതയോടെ കേരളം ഇന്ത്യയിൽ ഒന്നാമതാണ്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">7. മാനവ വികസന സൂചികയിൽ (HDI) വിദ്യാഭ്യാസ മാനം കണക്കാക്കാൻ ഉപയോഗിക്കുന്ന രണ്ട് സൂചകങ്ങൾ ഏതെല്ലാം? / Which two indicators compute the Education dimension in the modern HDI?</div>
+    <div class="q-options">A) സ്കൂളുകളുടെ എണ്ണവും ബസ്സുകളുടെ എണ്ണവും<br>B) പ്രതീക്ഷിക്കുന്ന സ്കൂൾ വർഷങ്ങളും മുതിർന്നവരുടെ ശരാശരി സ്കൂൾ വർഷങ്ങളും (Expected Years & Mean Years of Schooling)<br>C) പരീക്ഷാ മാർക്കുകളും സ്കൂൾ ഫീസും<br>D) ലൈബ്രറി പുസ്തകങ്ങളുടെ എണ്ണം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: 2010 മുതൽ യു.എൻ.ഡി.പി ഈ രണ്ട് സൂചകങ്ങളാണ് വിദ്യാഭ്യാസ മാനം കണക്കാക്കാൻ ഉപയോഗിക്കുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">8. ഇന്ത്യയിലെ പ്രശസ്തമായ 'ആയുഷ്മാൻ ഭാരത്' (Ayushman Bharat / PM-JAY) പദ്ധതി ലക്ഷ്യമിടുന്നത് എന്ത്? / What is the primary objective of the Ayushman Bharat PM-JAY scheme?</div>
+    <div class="q-options">A) വിദേശത്തേക്ക് പോകുന്നവർക്ക് സൗജന്യ വിസ<br>B) ദരിദ്ര കുടുംബങ്ങൾക്ക് പ്രതിവർഷം 5 ലക്ഷം രൂപയുടെ സൗജന്യ ദ്വിതീയ-ത്രിതീയ ആശുപത്രി ചികിത്സാ ഇൻഷുറൻസ് (₹5 lakh health cover per family)<br>C) സൗജന്യ ബൈക്ക് വിതരണം<br>D) വിരമിച്ച ഉദ്യോഗസ്ഥർക്ക് പെൻഷൻ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ലോകത്തിലെ ഏറ്റവും വലിയ സർക്കാർ ധനസഹായ ആരോഗ്യ ഇൻഷുറൻസ് പദ്ധതിയാണിത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">9. പ്രായത്തിന് ആനുപാതികമായി ഉയരം ഇല്ലാതിരിക്കുന്ന അവസ്ഥയെ (Low height for age) എന്തുവിളിക്കുന്നു? / In child malnutrition metrics, low height-for-age is known as:</div>
+    <div class="q-options">A) വേസ്റ്റിംഗ് (Wasting)<br>B) സ്റ്റണ്ടിംഗ് അഥവാ വളർച്ചാ മുരടിപ്പ് (Stunting)<br>C) അമിതവണ്ണം (Obesity)<br>D) അനീമിയ (Anemia)</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: നീണ്ടുനിൽക്കുന്ന കടുത്ത പോഷകാഹാരക്കുറവ് കാരണമുണ്ടാകുന്ന വളർച്ചാ മുരടിപ്പാണ് സ്റ്റണ്ടിംഗ്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">10. സ്കൂളുകളിൽ കുട്ടികളുടെ പ്രവേശനം വർദ്ധിപ്പിക്കാനും പോഷകാഹാരക്കുറവ് പരിഹരിക്കാനും ആരംഭിച്ച പദ്ധതി? / Which welfare program provides nutritious hot cooked meals to school children?</div>
+    <div class="q-options">A) ഉച്ചഭക്ഷണ പദ്ധതി / പി.എം പോഷൺ (Mid-Day Meal Scheme / PM-POSHAN)<br>B) സുകന്യാ സമൃദ്ധി<br>C) പി.എം കിസാൻ<br>D) ഉജ്ജ്വല യോജന</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: കാമരാജ് തമിഴ്‌നാട്ടിൽ തുടങ്ങി പിന്നീട് സുപ്രീം കോടതി നിർദ്ദേശപ്രകാരം രാജ്യവ്യാപകമാക്കിയ പദ്ധതിയാണിത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">11. ഇന്ത്യയിലെ പുതിയ ദേശീയ വിദ്യാഭ്യാസ നയം (NEP 2020) നിർദ്ദേശിച്ച സ്കൂൾ ഘടന ഏതാണ്? / What pedagogical structure was introduced by the National Education Policy (NEP 2020)?</div>
+    <div class="q-options">A) 10 + 2<br>B) 5 + 3 + 3 + 4 (Foundational, Preparatory, Middle, Secondary)<br>C) 8 + 4<br>D) 6 + 6</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: പഴയ 10+2 സമ്പ്രദായത്തിന് പകരമായി 5+3+3+4 മാതൃക NEP 2020 കൊണ്ടുവന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">12. ജി.ഡി.പിയുടെ എത്ര ശതമാനമാണ് വിദ്യാഭ്യാസത്തിനായി ചെലവഴിക്കണമെന്ന് കോത്താരി കമ്മീഷൻ (1966) ശുപാർശ ചെയ്തത്? / What target percentage of GDP did the Kothari Commission recommend for public education spending?</div>
+    <div class="q-options">A) 2%<br>B) 6% (6% of GDP)<br>C) 12%<br>D) 20%</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ജി.ഡി.പിയുടെ കുറഞ്ഞത് 6 ശതമാനമെങ്കിലും വിദ്യാഭ്യാസത്തിനായി മാറ്റിവെക്കണമെന്നാണ് ശുപാർശ.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">13. കുട്ടികളിൽ ഉയരത്തിന് ആനുപാതികമായി ഭാരം ഇല്ലാതിരിക്കുന്ന (Low weight-for-height) അവസ്ഥ: / In malnutrition assessment, low weight-for-height indicates:</div>
+    <div class="q-options">A) സ്റ്റണ്ടിംഗ്<br>B) വേസ്റ്റിംഗ് (Wasting - acute malnutrition)<br>C) അമിത ഭാരം<br>D) റിക്കറ്റ്സ്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: പെട്ടെന്നുണ്ടാകുന്ന പോഷകാഹാരക്കുറവ് കൊണ്ടോ രോഗം കൊണ്ടോ തൂക്കം കുറയുന്ന അവസ്ഥയാണ് വേസ്റ്റിംഗ്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">14. ഇന്ത്യയിലെ ഗ്രാമീണ ആരോഗ്യ പ്രവർത്തകരായ 'ആശ' (ASHA) യുടെ പൂർണ്ണരൂപം എന്ത്? / What does the acronym 'ASHA' stand for in public healthcare?</div>
+    <div class="q-options">A) Accredited Social Health Activist<br>B) Association of State Health Agents<br>C) All State Hospital Assistance<br>D) Auxiliary Social Health Aid</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ദേശീയ ഗ്രാമീണ ആരോഗ്യ ദൗത്യത്തിന് (NRHM) കീഴിൽ പ്രവർത്തിക്കുന്ന വോളണ്ടിയർമാരാണ് ആശാ പ്രവർത്തകർ.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">15. വിദ്യാഭ്യാസം, ആരോഗ്യം എന്നിവയിൽ വ്യക്തികൾക്കായി നടത്തുന്ന നിക്ഷേപം സൃഷ്ടിക്കുന്നത് എന്തിനെയാണ്? / Public investment in education, training, and healthcare builds:</div>
+    <div class="q-options">A) ഭൗതിക മൂലധനം (Physical capital)<br>B) മാനവ മൂലധനം (Human Capital)<br>C) വിദേശ കടം<br>D) കറൻസി മിച്ചം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ജനങ്ങളുടെ അറിവും ആരോഗ്യവും ഉത്പാദനക്ഷമതയും വർദ്ധിപ്പിക്കുന്നതിനെയാണ് മാനവ മൂലധന രൂപീകരണം എന്ന് വിളിക്കുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">16. ലിംഗ വികസന സൂചിക (Gender Development Index - GDI) പ്രധാനമായും എന്തിനാണ് ഉപയോഗിക്കുന്നത്? / What does the Gender Development Index (GDI) measure?</div>
+    <div class="q-options">A) സ്ത്രീകളുടെ സ്വർണ്ണ ഉപയോഗം<br>B) മാനവ വികസന നേട്ടങ്ങളിലെ സ്ത്രീ-പുരുഷ അന്തരം (Gender inequalities in HDI achievements)<br>C) വനിതാ പോലീസുകാരുടെ എണ്ണം<br>D) സ്ത്രീകളുടെ വോട്ടവകാശം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ആരോഗ്യം, വിദ്യാഭ്യാസം, വരുമാനം എന്നിവയിൽ സ്ത്രീകൾ പുരുഷന്മാരെ അപേക്ഷിച്ച് എത്രത്തോളം തുല്യരാണെന്ന് GDI അളക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">17. ഇന്ത്യയിൽ ശിശുമരണ നിരക്ക് (IMR) ഏറ്റവും കുറഞ്ഞ സംസ്ഥാനം ഏതാണ്? / Which state in India consistently records the lowest Infant Mortality Rate?</div>
+    <div class="q-options">A) ഉത്തർപ്രദേശ്<br>B) കേരളം (Kerala - single digit IMR ~6 per 1,000)<br>C) ബിഹാർ<br>D) മധ്യപ്രദേശ്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: കേരളത്തിലെ ശിശുമരണ നിരക്ക് വികസിത രാജ്യങ്ങളോട് കിടപിടിക്കുന്ന വിധത്തിൽ സിംഗിൾ ഡിജിറ്റിലാണ് (6-7).</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">18. പ്രാഥമിക തലത്തിൽ ആൺകുട്ടികളുടെയും പെൺകുട്ടികളുടെയും എൻറോൾമെന്റ് തുല്യത അളക്കുന്ന സൂചകം: / The indicator assessing female-to-male ratio in school enrolment is:</div>
+    <div class="q-options">A) സാക്ഷരതാ നിരക്ക്<br>B) ലിംഗ തുല്യത സൂചിക (Gender Parity Index - GPI)<br>C) ആയുർദൈർഘ്യം<br>D) വർക്ക്ഫോഴ്സ് പങ്കാളിത്തം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ജെൻഡർ പാരിറ്റി ഇൻഡക്സ് (GPI) സ്കൂൾ പ്രവേശനത്തിൽ ലിംഗസമത്വം ഉണ്ടോ എന്ന് പരിശോധിക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">19. ആഗോള മാനവ വികസന സൂചികയിൽ (UNDP HDI) ഇന്ത്യ ഏത് വിഭാഗത്തിലാണ് ഉൾപ്പെടുന്നത്? / In the global HDI classification, India falls under which category?</div>
+    <div class="q-options">A) അതിഉയർന്ന വികസനം (Very High)<br>B) ഇടത്തരം മാനവ വികസനം (Medium Human Development Category)<br>C) ഏറ്റവും കുറഞ്ഞ വിഭാഗം<br>D) ലിസ്റ്റിൽ ഉൾപ്പെട്ടിട്ടില്ല</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ഏകദേശം 0.64 സ്കോറോടെ ഇന്ത്യ മീഡിയം ഹ്യൂമൻ ഡെവലപ്പ്മെന്റ് വിഭാഗത്തിലാണ് സ്ഥിതി ചെയ്യുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">20. ആരോഗ്യകരമായ ഒരു സമൂഹത്തിൽ സാമ്പത്തിക വളർച്ച സ്വാഭാവികമായി വേഗത്തിലാകാൻ കാരണം? / Why does health investment organically accelerate economic development?</div>
+    <div class="q-options">A) തൊഴിലാളികളുടെ രോഗാവധി കുറയുകയും ഉത്പാദനക്ഷമതയും അധ്വാനശേഷിയും വർദ്ധിക്കുകയും ചെയ്യുന്നതിനാൽ (Higher productivity, fewer lost workdays, and extended working lives)<br>B) കൂടുതൽ മരുന്നുകൾ വിറ്റുപോകുന്നതിനാൽ<br>C) ആശുപത്രികൾ നികുതി നൽകുന്നതിനാൽ<br>D) ജനസംഖ്യ കൂടുന്നതിനാൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: നല്ല ആരോഗ്യമുള്ള ജനതയ്ക്ക് കൂടുതൽ കാലം കാര്യക്ഷമമായി തൊഴിലെടുക്കാനും ദേശീയ ഉത്പാദനം വർദ്ധിപ്പിക്കാനും സാധിക്കും.</div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. ഡിഗ്രി പഠന സഹായി · Development Issues in Indian Economy</span>
+    <span>സമഗ്ര മലയാള പരിഭാഷ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

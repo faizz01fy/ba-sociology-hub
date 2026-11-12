@@ -3,12 +3,162 @@
 
 <head>
   <title>Sociology Videos</title>
-  </head>
+  
+<style id="video-nav-blink-styles">
+  @keyframes blink-nav-back {
+    0%, 100% {
+      transform: scale(1);
+      filter: brightness(1);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+    }
+    50% {
+      transform: scale(1.04);
+      filter: brightness(1.2);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.75);
+    }
+  }
+  @keyframes blink-nav-home {
+    0%, 100% {
+      transform: scale(1);
+      filter: brightness(1);
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.45);
+    }
+    50% {
+      transform: scale(1.04);
+      filter: brightness(1.2);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.75);
+    }
+  }
+  .video-top-nav {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 0 0 20px 0 !important;
+    padding: 10px 16px !important;
+    background: #ffffff !important;
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+    position: sticky !important;
+    top: 10px !important;
+    z-index: 100 !important;
+  }
+  .video-top-nav .btn-back,
+  .video-bottom-nav .btn-back {
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #4338ca 100%) !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+    font-weight: 850 !important;
+    text-shadow: 0 1px 2px rgba(15, 23, 42, 0.4);
+    animation: blink-nav-back 2.2s infinite ease-in-out !important;
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 40px;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-size: 13.5px;
+  }
+  .video-top-nav .btn-home,
+  .video-bottom-nav .btn-home {
+    background: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%) !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+    font-weight: 850 !important;
+    text-shadow: 0 1px 2px rgba(15, 23, 42, 0.4);
+    animation: blink-nav-home 2.2s infinite ease-in-out !important;
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    text-decoration: none;
+    white-space: nowrap;
+    min-height: 40px;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-size: 13.5px;
+  }
+  .video-top-nav .btn-back:hover,
+  .video-top-nav .btn-home:hover,
+  .video-bottom-nav .btn-back:hover,
+  .video-bottom-nav .btn-home:hover {
+    animation-play-state: paused !important;
+    transform: translateY(-2px) scale(1.04) !important;
+  }
+  .video-bottom-nav {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 14px !important;
+    margin-top: 30px !important;
+    padding-top: 20px !important;
+    border-top: 1.5px solid #e2e8f0 !important;
+  }
+</style>
+
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
 
 <body>
 
+  <!-- Premium Sticky Top Back & Home Navigation (Active in PC & Mobile with Blink) -->
+  <nav class="video-top-nav" aria-label="Video navigation">
+    <button type="button" class="btn-back" onclick="if(window.history.length>1){window.history.back();}else{window.location.href='/';}" aria-label="Go back">← Back</button>
+    <a class="btn-home" href="/#top" aria-label="Academic Hub Home">⌂ Home</a>
+  </nav>
+
+
 <h1>Sociology Videos Working ✅</h1>
 
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
 </body>
 
 </html>

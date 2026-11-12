@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 3: പ്രാചീന ചരിത്രകാലത്തെ കേരളം | Early Historic Keralam</title>
+  <style>
+    :root {
+      --c1: #4a044e;
+      --c2: #701a75;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #4a044e), var(--c2, #701a75));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(74, 4, 78, 0.25);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fdf4ff;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #f5d0fe;
+}
+
+.badge {
+  display: inline-block;
+  background: #fdf4ff;
+  color: #701a75;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #f0abfc;
+}
+
+h2 {
+  color: var(--c1, #4a044e);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #f5d0fe;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #701a75;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #fdf4ff;
+  border-left: 4px solid var(--c2, #701a75);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-plum {
+  background: #fdf4ff;
+  border-left: 4px solid #86198f;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+/* Diagrams & Visual Charts */
+.diagram-container {
+  background: #ffffff;
+  border: 1.5px solid #f5d0fe;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(112, 26, 117, 0.05);
+}
+
+.diagram-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 11pt;
+  color: #4a044e;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.flow-step {
+  background: #fdf4ff;
+  border: 1.5px solid #d946ef;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 9.5pt;
+  color: #4a044e;
+  text-align: center;
+}
+
+.flow-step small {
+  display: block;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #701a75;
+}
+
+.flow-arrow {
+  color: #a21caf;
+  font-weight: 900;
+  font-size: 14pt;
+}
+
+/* Tree Grid */
+.tree-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 16px 0;
+}
+
+.tree-card {
+  background: #fdf4ff;
+  border: 1px solid #f0abfc;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.tree-card h4 {
+  margin: 0 0 6px 0;
+  color: #701a75;
+  font-size: 10pt;
+  font-weight: 700;
+}
+
+.tree-card p {
+  margin: 0;
+  font-size: 9pt;
+  line-height: 1.6;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 9.5pt;
+}
+
+th, td {
+  border: 1px solid #e2e8f0;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #fdf4ff;
+  color: #4a044e;
+  font-weight: 700;
+}
+
+tr:nth-child(even) td {
+  background: #fafaf9;
+}
+
+/* Q&A Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #f5d0fe;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #4a044e;
+  margin-bottom: 8px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  background: #fdf4ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #86198f;
+}
+
+/* MCQ Cards */
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #f5d0fe;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #4a044e;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #fdf4ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid #f0abfc;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>Module 3 · Early Historic Keralam</h4>
+    <h1>മൊഡ്യൂൾ 3: പ്രാചീന ചരിത്രകാലത്തെ കേരളം | Early Historic Keralam</h1>
+    <div class="meta">HIS1CJ101 · Module 3 · Sangam Texts, Tinais, Indo-Roman Trade, Muziris & Pattanam · Calicut University B.A. History FYUGP (HIS1CJ101) · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+  <div class="card card-plum">
+    <div class="badge">HIS1CJ101 · MODULE 3 · OFFICIAL LMS TEXTBOOK</div>
+    <h2>മൊഡ്യൂൾ 3: പ്രാചീന ചരിത്രകാലത്തെ കേരളം | Module 3: Early Historic Keralam</h2>
+    <p><strong>English:</strong> Comprehensive bilingual study text covering all seven parts of the Calicut University LMS curriculum: Early Tamil Literature, Tinai concept, Greco-Roman Trade, Pattanam and Vizhinjam Excavations, Early Historic Society & Polity, Muvendar, Kurunila Mannar, and complete answers to all 10 MCQs and university essay questions.</p>
+    <p><strong>മലയാളം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാലയുടെ ഒഫീഷ്യൽ LMS പാഠപുസ്തകത്തിലെ 7 ഭാഗങ്ങളും: സംഘകാല സാഹിത്യം, ഐന്തിണകൾ, ഗ്രീക്കോ-റോമൻ വാണിജ്യം, പട്ടണം & വിഴിഞ്ഞം ഖനനങ്ങൾ, സമൂഹം, മൂവേന്തർ, കുറുനില മന്നർ, എല്ലാ 10 മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങളും ഉപന്യാസ ചോദ്യോത്തരങ്ങളും ഉൾക്കൊള്ളുന്ന സമ്പൂർണ്ണ പഠന സഹായി.</p>
+  </div>
+
+  <h2>Part I: Early Tamil Literature (സംഘകാല സാഹിത്യം)</h2>
+  <div class="tree-grid">
+    <div class="tree-card">
+      <h4>Sangam Corpus (സംഘസാഹിത്യ സമാഹാരങ്ങൾ)</h4>
+      <p>Dated broadly between 300 BCE and 300 CE. Comprises:<br>
+      <strong>Ettuttokai (എട്ടുത്തൊകൈ - Eight Anthologies):</strong> Includes <em>Akananuru</em>, <em>Purananuru</em>, <em>Natrinai</em>, <em>Kuruntokai</em>, and <em>Patittuppattu</em>.<br>
+      <strong>Patittuppattu (പതിറ്റുപത്ത്):</strong> The premier historical text for Kerala, containing ten tens of poems eulogizing ten generations of Chera kings.<br>
+      <strong>Pattuppattu (പത്തുപ്പാട്ട് - Ten Idylls):</strong> Includes long poetic descriptions like <em>Maduraikkanci</em> and <em>Mullaippattu</em>.</p>
+    </div>
+    <div class="tree-card">
+      <h4>Akam vs Puram (അകം - പുറം കാവ്യങ്ങൾ)</h4>
+      <p><strong>Akam (അകം):</strong> "Inner world" poetry dealing with love, emotional devotion, and domestic life.<br>
+      <strong>Puram (പുറം):</strong> "Outer world" poetry celebrating heroism, military expeditions, kingly charity (Kodai), and the sacrifice of fallen warriors (commemorated through Natukal hero stones).<br>
+      <strong>Grammar & Ethics:</strong> <em>Tolkappiyam</em> (grammar and poetic conventions) and <em>Tirukkural</em> by Tiruvalluvar.</p>
+    </div>
+  </div>
+
+  <h2>Part II: The Tinai Concept & Cultural Landscape (ഐന്തിണകൾ)</h2>
+  <div class="diagram-container">
+    <div class="diagram-title">🌿 സംഘകാല ഐന്തിണ വ്യവസ്ഥ | The Five Tinais of Early Tamizhakam</div>
+    <div class="flow-chart">
+      <div class="flow-step">കുറിഞ്ചി (Kurinji)<small>മലനിരകൾ · വേട്ടയാടൽ<br>ദൈവം: മുരുകൻ</small></div>
+      <div class="flow-arrow">➔</div>
+      <div class="flow-step">മുല്ലൈ (Mullai)<small>പുൽമേടുകൾ · കാലിമേയ്ക്കൽ<br>ദൈവം: മായോൻ</small></div>
+      <div class="flow-arrow">➔</div>
+      <div class="flow-step">മരുതം (Marutam)<small>ഫലഭൂയിഷ്ഠ വയലുകൾ · നെൽകൃഷി<br>ദൈവം: വേന്തൻ (ഇന്ദ്രൻ)</small></div>
+      <div class="flow-arrow">➔</div>
+      <div class="flow-step">നെയ്തൽ (Neytal)<small>കടൽത്തീരം · മീൻപിടുത്തം<br>ദൈവം: വരുണൻ</small></div>
+      <div class="flow-arrow">➔</div>
+      <div class="flow-step">പാലൈ (Palai)<small>വരണ്ട പ്രദേശം · ധീരത/കൊള്ള<br>ദൈവം: കൊറ്റവൈ</small></div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>തിണ (Landscape)</th>
+        <th>ഭൂപ്രകൃതി (Topography)</th>
+        <th>തൊഴിൽ (Occupation)</th>
+        <th>ദൈവം & പൂവ് (Deity & Flower)</th>
+        <th>സാമൂഹിക ജീവിതം (Social Life)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Kurinji (കുറിഞ്ചി)</strong></td>
+        <td>പർവ്വതങ്ങളും മലനിരകളും (Hills & Mountains)</td>
+        <td>വേട്ടയാടൽ, തേൻ-കിഴങ്ങ് ശേഖരണം</td>
+        <td>മുരുകൻ (Murugan) · കുറിഞ്ചിപ്പൂവ്</td>
+        <td>കാനവർ, കുറവർ; രാത്രിയിലെ പ്രണയസമാഗമം.</td>
+      </tr>
+      <tr>
+        <td><strong>Mullai (മുല്ലൈ)</strong></td>
+        <td>കാടുകളും പുൽമേടുകളും (Pastoral Forests)</td>
+        <td>കന്നുകാലി വളർത്തൽ, പാൽ ഉത്പാദനം</td>
+        <td>മായോൻ (Mayon/Vishnu) · മുല്ലപ്പൂവ്</td>
+        <td>ആയർ, ഇടയർ; കാത്തിരിപ്പ് (Waiting).</td>
+      </tr>
+      <tr>
+        <td><strong>Marutam (മരുതം)</strong></td>
+        <td>നദീതീര സമതലങ്ങൾ (Fertile River Plains)</td>
+        <td>സ്ഥിര കാർഷിക നെൽകൃഷി (Paddy)</td>
+        <td>വേന്തൻ (Vendan/Indra) · മരുതംപൂവ്</td>
+        <td>ഉഴവർ (കർഷകർ); പ്രണയകലഹങ്ങൾ (Sulking).</td>
+      </tr>
+      <tr>
+        <td><strong>Neytal (നെയ്തൽ)</strong></td>
+        <td>കടലും തീരപ്രദേശങ്ങളും (Seashore & Coast)</td>
+        <td>മത്സ്യബന്ധനം, ഉപ്പുണ്ടാക്കൽ (Salt trade)</td>
+        <td>വരുണൻ (Varunan) · നെയ്തൽപൂവ്</td>
+        <td>പരതവർ, ഉമണർ (ഉപ്പു വ്യാപാരികൾ); വിരഹം.</td>
+      </tr>
+      <tr>
+        <td><strong>Palai (പാലൈ)</strong></td>
+        <td>വരണ്ട മണൽപ്രദേശങ്ങൾ (Arid Wastelands)</td>
+        <td>വഴിമോഷണം, യുദ്ധം, പോരാട്ടം</td>
+        <td>കൊറ്റവൈ (Korravai) · പാലൈപ്പൂവ്</td>
+        <td>മറവർ, വേടർ; വേർപാട് (Separation).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Part III: Greco-Roman Writings & Indo-Roman Trade (വിദേശ വാണിജ്യം)</h2>
+  <p><strong>English:</strong> Classical Western texts provide vivid testimony of Kerala's international commerce: the <em>Periplus of the Erythraean Sea</em> (anonymous, 1st century CE), Pliny the Elder's <em>Natural History</em> (c. 77 CE), Claudius Ptolemy's <em>Geography</em> (2nd century CE), and the <em>Tabula Peutingeriana</em> (Roman road map showing a Temple of Augustus at Muziris). The navigational discovery of the periodic monsoon winds by <strong>Hippalus</strong> (c. 45 CE) allowed Roman merchant vessels to sail from Berenike on the Red Sea across the open Arabian Sea directly to Muziris in 40 days.</p>
+  <p><strong>മലയാളം:</strong> എ.ഡി ഒന്നാം നൂറ്റാണ്ടിലെ ഗ്രീക്കോ-റോമൻ ഗ്രന്ഥങ്ങൾ കേരളത്തിന്റെ സമുദ്രവാണിജ്യത്തെക്കുറിച്ച് വ്യക്തമായ വിവരങ്ങൾ നൽകുന്നു: <em>പെരിപ്ലസ് ഓഫ് ദി എറിത്രിയൻ സീ</em>, പ്ലിനിയുടെ <em>നാച്ചുറൽ ഹിസ്റ്ററി</em>, ടോളമിയുടെ <em>ജ്യോഗ്രഫി</em>, റോമൻ മാപ്പായ <em>പൂട്ടഞ്ചർ ടേബിൾ</em> (മുസിരിസിലെ അഗസ്റ്റസ് ചക്രവർത്തിയുടെ ക്ഷേത്രം ഇതിൽ രേഖപ്പെടുത്തിയിട്ടുണ്ട്). എ.ഡി 45-ൽ <strong>ഹിപ്പാലസ്</strong> മൺസൂൺ കാറ്റുകൾ കണ്ടെത്തിയതോടെ ചെങ്കടലിൽ നിന്ന് 40 ദിവസം കൊണ്ട് കപ്പലുകൾ നേരിട്ട് മുസിരിസിലെത്തി.</p>
+  <ul>
+    <li><strong>Export Commodities from Kerala:</strong> Black pepper (known in Rome as <em>Yavanapriya</em> - black gold), fine Malabar beryl, pearls, ivory, ginger, cinnamon, and tortoiseshell.</li>
+    <li><strong>Imports into Kerala:</strong> Roman gold and silver denarii (hoarded extensively at Eyyal and Kottayam), Italian wine in pointed amphora jars, fine Terra Sigillata pottery, copper, tin, lead, and glass.</li>
+  </ul>
+
+  <h2>Part IV: Pattanam and Vizhinjam Excavations (പട്ടണം, വിഴിഞ്ഞം ഖനനങ്ങൾ)</h2>
+  <div class="tree-grid">
+    <div class="tree-card">
+      <h4>Pattanam Excavations (പട്ടണം ഖനനം)</h4>
+      <p>Conducted by the Kerala Council for Historical Research (KCHR) near Kodungallur. Unearthed: an ancient brick wharf, a 6-metre-long dugout canoe (wooden boat), thousands of Roman amphora sherds, Rouletted Ware, Roman intaglio gemstones depicting Sphinx and Apollo, Chera copper coins with elephant/bow symbols, and semi-precious beads. Confirmed Pattanam as the active hub of ancient Muziris.</p>
+    </div>
+    <div class="tree-card">
+      <h4>Vizhinjam Excavations (വിഴിഞ്ഞം ഖനനം)</h4>
+      <p>Located south of Thiruvananthapuram; mentioned in the Periplus as <em>Balita</em>. Excavated by the Department of Archaeology. Served as the premier port and fortified capital of the Ay dynasty. Findings include imported Roman pottery, West Asian turquoise glazed ware, Chinese porcelain, and beads, proving multi-millennial Indian Ocean trade.</p>
+    </div>
+  </div>
+
+  <h2>Part V, VI & VII: Society, Polity, Muvendar & Kurunila Mannar (ഭരണസംവിധാനം)</h2>
+  <div class="diagram-container">
+    <div class="diagram-title">👑 സംഘകാല രാഷ്ട്രീയ ശ്രേണി | Sangam Political Hierarchy</div>
+    <div class="flow-chart">
+      <div class="flow-step">മൂവേന്തർ (Muvendar)<small>The Three Crowned Kings<br>ചേരർ, ചോളർ, പാണ്ഡ്യർ</small></div>
+      <div class="flow-arrow">➔</div>
+      <div class="flow-step">കുറുനില മന്നർ (Kurunila Mannar)<small>Chieftains &amp; Patrons<br>ആയ്, നണ്ണൻ, പാരി, കാരി</small></div>
+      <div class="flow-arrow">➔</div>
+      <div class="flow-step">കിഴാർമാർ (Kizhars)<small>Village Clan Heads<br>ഗോത്രത്തലവന്മാർ</small></div>
+    </div>
+  </div>
+
+  <ul>
+    <li><strong>Muvendar (മൂവേന്തർ):</strong> The three crowned dynasties of Tamilakam:
+      <ul>
+        <li><strong>Cheras (ചേരർ):</strong> Royal emblem was the Bow and Arrow (Villu); capitals at Vanji and Karur; ports at Muziris and Tyndis; eulogized in <em>Patittuppattu</em>.</li>
+        <li><strong>Cholas (ചോളർ):</strong> Emblem: Tiger (Puli); capital: Uraiyur; port: Kaveripattinam (Puhar); ruler: Karikala Chola.</li>
+        <li><strong>Pandyas (പാണ്ഡ്യർ):</strong> Emblem: Twin Fish (Kayal); capital: Madurai; port: Korkai (famous for pearl fishery); ruler: Nedunchezhian.</li>
+      </ul>
+    </li>
+    <li><strong>Kurunila Mannar (കുറുനില മന്നർ):</strong> Independent chieftains ruling hill forts:
+      <ul>
+        <li><strong>Ay Dynasty (ആയ് രാജവംശം):</strong> Ruled the Podiyil hills (Western Ghats); Ay Andiran was celebrated for his charity.</li>
+        <li><strong>Ezhimala (ഏഴിമല):</strong> Nannan ruled the northern Malabar coast; famous for military valor.</li>
+        <li><strong>Seven Velir Patrons (ഏഴ് വള്ളലുകൾ):</strong> Pari (Parambu hill), Kari, Ori, Began, Adigaiman, Nalli, and Ay celebrated for patronizing poets and bards (Panar).</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>LMS റിവ്യൂ ചോദ്യോത്തരങ്ങൾ | Answers to All MCQs and Essay Questions</h2>
+
+  <h3>Official Multiple Choice Questions (LMS Textbook Pages 34–36)</h3>
+  <div class="mcq-grid">
+    <div class="q-box">
+      <div class="q-title">1. Sangam literature is generally dated between:</div>
+      <div class="q-options">A. 1000 BCE – 500 BCE | B. 300 BCE – 300 CE | C. 500 CE – 1000 CE | D. 1200 CE – 1500 CE</div>
+      <div class="q-ans">Answer: B. 300 BCE – 300 CE</div>
+      <div class="q-exp">സംഘകാല സാഹിത്യത്തിന്റെ പൊതുവായി അംഗീകരിക്കപ്പെട്ട കാലഘട്ടം ബി.സി.ഇ 300 മുതൽ സി.ഇ 300 വരെയാണ്.</div>
+    </div>
+    <div class="q-box">
+      <div class="q-title">2. Which of the following is an example of Akam literature?</div>
+      <div class="q-options">A. Akananuru | B. Purananuru | C. Patittuppattu | D. Silappadikaram</div>
+      <div class="q-ans">Answer: A. Akananuru</div>
+      <div class="q-exp">അകനാനൂറ് പ്രണയവും വ്യക്തിഗത ജീവിതവും പ്രമേയമാക്കുന്ന അകം കൃതിയാണ്; പുറനാനൂറും പതിറ്റുപത്തും പുറം വിഭാഗത്തിൽ പെടുന്നു.</div>
+    </div>
+    <div class="q-box">
+      <div class="q-title">3. The presiding deity of the Kurinji landscape is:</div>
+      <div class="q-options">A. Mayon | B. Murugan | C. Vendan | D. Varunan</div>
+      <div class="q-ans">Answer: B. Murugan</div>
+      <div class="q-exp">കുറിഞ്ചി മലമ്പ്രദേശത്തിന്റെ ദൈവം മുരുകനാണ് (മായോൻ - മുല്ലൈ, വേന്തൻ - മരുതം, വരുണൻ - നെയ്തൽ).</div>
+    </div>
+    <div class="q-box">
+      <div class="q-title">4. Which landscape is associated with agriculture and fertile river valleys?</div>
+      <div class="q-options">A. Mullai | B. Marutam | C. Kurinji | D. Palai</div>
+      <div class="q-ans">Answer: B. Marutam</div>
+      <div class="q-exp">ഫലഭൂയിഷ്ഠമായ നദീതടങ്ങളും സ്ഥിര നെൽകൃഷിയുമായി ബന്ധപ്പെട്ട തിണയാണ് മരുതം.</div>
+    </div>
+    <div class="q-box">
+      <div class="q-title">5. The author of Thirukkural is:</div>
+      <div class="q-options">A. Ilango Adigal | B. Thiruvalluvar | C. Kapilar | D. Paranar</div>
+      <div class="q-ans">Answer: B. Thiruvalluvar</div>
+      <div class="q-exp">തിരുക്കുറലിന്റെ കർത്താവ് തിരുവള്ളുവരാണ്.</div>
+    </div>
+    <div class="q-box">
+      <div class="q-title">6. Which Greco-Roman text provides detailed information about Muziris and the Malabar spice trade?</div>
+      <div class="q-options">A. Indica | B. Periplus of the Erythraean Sea | C. Geographia | D. Natural History</div>
+      <div class="q-ans">Answer: B. Periplus of the Erythraean Sea</div>
+      <div class="q-exp">പെരിപ്ലസ് ഓഫ് ദി എറിത്രിയൻ സീ ആണ് മുസിരിസ് തുറമുഖത്തെക്കുറിച്ചും കുരുമുളക് വ്യാപാരത്തെക്കുറിച്ചും ഏറ്റവും കൃത്യമായ വിവരങ്ങൾ നൽകുന്നത്.</div>
+    </div>
+    <div class="q-box">
+      <div class="q-title">7. Pattanam is widely identified with the ancient port of:</div>
+      <div class="q-options">A. Tyndis | B. Muziris | C. Nelcynda | D. Korkai</div>
+      <div class="q-ans">Answer: B. Muziris</div>
+      <div class="q-exp">പുരാവസ്തു ഖനനങ്ങളിലൂടെ കണ്ടെത്തിയ തെളിവുകളുടെ അടിസ്ഥാനത്തിൽ പട്ടണം പ്രാചീന മുസിരിസ് ആണെന്ന് പരക്കെ കരുതപ്പെടുന്നു.</div>
+    </div>
+    <div class="q-box">
+      <div class="q-title">8. The term Muvendar refers to:</div>
+      <div class="q-options">A. Three Crowned Kings | B. Three Merchant Guilds | C. Three Village Assemblies | D. Three Gods</div>
+      <div class="q-ans">Answer: A. Three Crowned Kings (Cheras, Cholas, Pandyas)</div>
+      <div class="q-exp">തമിഴകം ഭരിച്ചിരുന്ന മൂന്ന് കിരീടം ധരിച്ച രാജാക്കന്മാരെയാണ് (ചേര, ചോള, പാണ്ഡ്യ) മൂവേന്തർ എന്ന് വിളിക്കുന്നത്.</div>
+    </div>
+    <div class="q-box">
+      <div class="q-title">9. Which among the following was a famous Kurunila Mannar known for ruling Podiyil Hills?</div>
+      <div class="q-options">A. Nannan | B. Ay Andiran | C. Pari | D. Kari</div>
+      <div class="q-ans">Answer: B. Ay Andiran</div>
+      <div class="q-exp">പൊതിയിൽ മലനിരകൾ കേന്ദ്രമാക്കി ഭരിച്ചിരുന്ന പ്രസിദ്ധനായ ആയ് വംശ തലവനാണ് ആയ് അന്തിരൻ.</div>
+    </div>
+    <div class="q-box">
+      <div class="q-title">10. Hero stones erected in memory of fallen warriors were known as:</div>
+      <div class="q-options">A. Kodakkal | B. Natukal / Virakkal | C. Menhir | D. Dolmen</div>
+      <div class="q-ans">Answer: B. Natukal / Virakkal</div>
+      <div class="q-exp">യുദ്ധത്തിൽ വീരമൃത്യു വരിച്ച പടയാളികളുടെ സ്മരണയ്ക്കായി നാട്ടിയ കല്ലുകളാണ് നടുകല്ല് (വീരക്കല്ല്).</div>
+    </div>
+  </div>
+
+  <h3>Comprehensive Essay Questions</h3>
+  <div class="qa-card">
+    <div class="qa-q">Essay 1: Critically examine the social, economic, political, and cultural features of Early Historic South Indian society (300 BCE–500 CE).</div>
+    <div class="qa-ans-en"><strong>English:</strong> Early Historic South India (Sangam Age) was an agro-pastoral kinship society organized around the ecological Tinai system. Economically, subsistence varied from Kurinji hunting to Marutam wet-rice farming, supercharged by lucrative Indo-Roman maritime commerce. Socially, clan egalitarianism was transitioning toward status stratification where warrior chieftains (Vendan, Mannar) accumulated wealth through predatory warfare and redistributed cattle and luxury goods to poets (Panar) and kinfolk. Heroic ethics dominated culture, crystallized in the worship of Natukal stones and Korravai.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> സംഘകാലത്തെ ദക്ഷിണേന്ത്യൻ സമൂഹം തിണകളെ അടിസ്ഥാനമാക്കിയുള്ള കാർഷിക-ഗോത്ര സമൂഹമായിരുന്നു. കുറിഞ്ചിയിലെ വേട്ടയാടൽ മുതൽ മരുതത്തിലെ നെൽകൃഷി വരെ ഉപജീവനമാർഗ്ഗങ്ങളായി നിലനിന്നു. റോമാക്കാരുമായുള്ള കുരുമുളക് വ്യാപാരം സാമ്പത്തിക അഭിവൃദ്ധി നൽകി. സമ്പത്ത് വീതംവെച്ച് നൽകുന്ന 'കൊടൈ' സമ്പ്രദായവും, വീരന്മാരുടെ സ്മരണയ്ക്കായി നാട്ടിയ നടുകല്ലുകളും ഇക്കാലത്തെ സവിശേഷതകളായിരുന്നു.</div>
+  </div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. ഹിസ്റ്ററി പഠന സഹായി · History of Keralam up to 12th Century (HIS1CJ101)</span>
+    <span>സമ്പൂർണ്ണ മലയാള പരിഭാഷ, ചോദ്യോത്തരങ്ങൾ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

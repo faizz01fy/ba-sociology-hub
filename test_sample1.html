@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@600;700;800&family=Manjari:wght@700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    position: relative;
+    background: #030b22;
+    font-family: 'Baloo Chettan 2', sans-serif;
+  }
+
+  /* Artwork layer on right */
+  .artwork-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 720px;
+    height: 720px;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .artwork-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Vignette & transition mask */
+  .artwork-vignette {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #030b22 0%, rgba(3, 11, 34, 0.85) 15%, rgba(3, 11, 34, 0) 45%);
+    pointer-events: none;
+  }
+
+  /* Left navy background with subtle radial glow */
+  .left-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 650px;
+    height: 720px;
+    background: radial-gradient(circle at 45% 45%, #082159 0%, #030e2a 65%, #020718 100%);
+    z-index: 2;
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  }
+
+  /* Subtle ambient golden dust / glow */
+  .ambient-glow {
+    position: absolute;
+    top: 250px;
+    left: 200px;
+    width: 450px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 180, 50, 0.08) 0%, transparent 70%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Content layer */
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 720px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* Header Branding */
+  .header {
+    position: absolute;
+    top: 40px;
+    left: 175px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .logo-icon {
+    width: 68px;
+    height: 52px;
+  }
+  .brand-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+  .brand-text span {
+    color: #ffb703;
+  }
+
+  /* Titles */
+  .title-area {
+    position: absolute;
+    top: 155px;
+    left: 35px;
+    width: 650px;
+  }
+  .title-line-1 {
+    font-family: 'Baloo Chettan 2', sans-serif;
+    font-size: 82px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.9);
+    white-space: nowrap;
+  }
+  .title-line-2 {
+    font-family: 'Baloo Chettan 2', sans-serif;
+    font-size: 84px;
+    font-weight: 800;
+    background: linear-gradient(180deg, #ffe259 0%, #ffa751 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.85));
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-top: -6px;
+    white-space: nowrap;
+  }
+
+  /* Author line */
+  .author-container {
+    position: absolute;
+    top: 450px;
+    left: 35px;
+    width: 630px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+  }
+  .author-line-decor {
+    height: 1.5px;
+    width: 55px;
+    background: linear-gradient(90deg, transparent, #ffc837);
+  }
+  .author-line-decor.right {
+    background: linear-gradient(90deg, #ffc837, transparent);
+  }
+  .author-text {
+    font-family: 'Baloo Chettan 2', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.5px;
+  }
+
+  /* Module / Chapter Badge */
+  .badge-container {
+    position: absolute;
+    top: 512px;
+    left: 165px;
+    width: 375px;
+    height: 48px;
+    border-radius: 9999px;
+    background: linear-gradient(180deg, #ffe082 0%, #ffb300 45%, #f57f17 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+    border: 2px solid #fff59d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .badge-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+    color: #05102a;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Bottom Ribbon */
+  .ribbon-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 660px;
+    height: 105px;
+    z-index: 12;
+  }
+  .subject-container {
+    position: absolute;
+    bottom: 16px;
+    left: 115px;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+  }
+  .subject-text {
+    font-family: 'Baloo Chettan 2', sans-serif;
+    font-size: 29px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  }
+</style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <!-- Left Background -->
+  <div class="left-bg"></div>
+  <div class="ambient-glow"></div>
+
+  <!-- Right Artwork -->
+  <div class="artwork-container">
+    <img src="file:///C:/Users/HP/OneDrive/Desktop/Projects/PDF python/assets/reference/chapter1_artwork.png" class="artwork-img">
+    <div class="artwork-vignette"></div>
+  </div>
+
+  <!-- Vector Bottom Ribbon -->
+  <svg class="ribbon-svg" viewBox="0 0 660 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="ribbonFill" x1="0" y1="50" x2="660" y2="50" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#021a4f"/>
+        <stop offset="35%" stop-color="#052773"/>
+        <stop offset="85%" stop-color="#021442"/>
+        <stop offset="100%" stop-color="#010a26" stop-opacity="0.9"/>
+      </linearGradient>
+      <linearGradient id="goldEdge" x1="0" y1="0" x2="660" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#ffe57f"/>
+        <stop offset="30%" stop-color="#ffd54f"/>
+        <stop offset="70%" stop-color="#ffb300"/>
+        <stop offset="100%" stop-color="#f57f17"/>
+      </linearGradient>
+      <linearGradient id="flourishGold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#fff176"/>
+        <stop offset="100%" stop-color="#f57f17"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Base Ribbon Body -->
+    <path d="M 0 105 L 0 22 C 30 18, 70 12, 130 12 C 220 12, 380 28, 540 22 C 590 20, 630 14, 660 0 L 660 105 Z" fill="url(#ribbonFill)"/>
+
+    <!-- Brilliant Gold Ribbon Edge -->
+    <path d="M 0 22 C 30 18, 70 12, 130 12 C 220 12, 380 28, 540 22 C 590 20, 630 14, 660 0" stroke="url(#goldEdge)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <path d="M 0 24 C 30 20, 70 14, 130 14 C 220 14, 380 30, 540 24 C 590 22, 630 16, 660 2" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+
+    <!-- Kerala Gold Floral Flourish (Bottom Left) -->
+    <g transform="translate(18, 38) scale(0.68)">
+      <!-- Central flower -->
+      <path d="M 35 35 C 35 20, 45 10, 50 0 C 55 10, 65 20, 65 35 C 55 45, 45 45, 35 35 Z" fill="url(#flourishGold)"/>
+      <path d="M 20 30 C 15 15, 25 5, 35 0 C 35 15, 30 25, 20 30 Z" fill="url(#flourishGold)"/>
+      <path d="M 80 30 C 85 15, 75 5, 65 0 C 65 15, 70 25, 80 30 Z" fill="url(#flourishGold)"/>
+      <!-- Side petal curls -->
+      <path d="M 10 45 C 5 35, 10 25, 20 25 C 22 35, 18 42, 10 45 Z" fill="url(#flourishGold)"/>
+      <path d="M 90 45 C 95 35, 90 25, 80 25 C 78 35, 82 42, 90 45 Z" fill="url(#flourishGold)"/>
+      <!-- Lower leaves & vines -->
+      <path d="M 0 60 C 15 50, 30 52, 45 60 C 30 65, 15 65, 0 60 Z" fill="url(#flourishGold)"/>
+      <path d="M 100 60 C 85 50, 70 52, 55 60 C 70 65, 85 65, 100 60 Z" fill="url(#flourishGold)"/>
+      <!-- Center dot & bud -->
+      <circle cx="50" cy="38" r="5" fill="#fff9c4"/>
+      <circle cx="50" cy="50" r="4" fill="#ffb300"/>
+    </g>
+  </svg>
+
+  <div class="content">
+    <!-- Header Branding -->
+    <div class="header">
+      <!-- Gold Book Icon -->
+      <svg class="logo-icon" viewBox="0 0 70 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bookGold" x1="0" y1="0" x2="70" y2="54" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#ffe082"/>
+            <stop offset="40%" stop-color="#ffb300"/>
+            <stop offset="100%" stop-color="#f57f17"/>
+          </linearGradient>
+        </defs>
+        <!-- Open book spine & pages -->
+        <path d="M 35 16 C 30 11, 20 7, 5 9 L 5 44 C 20 42, 30 46, 35 50 C 40 46, 50 42, 65 44 L 65 9 C 50 7, 40 11, 35 16 Z" fill="url(#bookGold)" fill-rule="evenodd"/>
+        <!-- Inner page cutouts -->
+        <path d="M 32 20 C 27 16, 18 13, 9 14 L 9 40 C 18 39, 27 42, 32 45 Z" fill="#041235"/>
+        <path d="M 38 20 C 43 16, 52 13, 61 14 L 61 40 C 52 39, 43 42, 38 45 Z" fill="#041235"/>
+        <!-- Radiating sunburst / book glow lines -->
+        <path d="M 20 18 C 25 21, 29 27, 31 34" stroke="url(#bookGold)" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M 50 18 C 45 21, 41 27, 39 34" stroke="url(#bookGold)" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Central bookmark / emblem -->
+        <polygon points="35,13 32,2 38,2" fill="url(#bookGold)"/>
+      </svg>
+
+      <div class="brand-text">ACADEMIC <span>HUB</span></div>
+    </div>
+
+    <!-- Main Title -->
+    <div class="title-area">
+      <div class="title-line-1">എന്റെ ഗുരുനാഥനെ</div>
+      <div class="title-line-2">ഓർക്കുമ്പോൾ</div>
+    </div>
+
+    <!-- Author -->
+    <div class="author-container">
+      <div class="author-line-decor"></div>
+      <div class="author-text">കലാമണ്ഡലം ഹൈദരാലി</div>
+      <div class="author-line-decor right"></div>
+    </div>
+
+    <!-- Module · Chapter Badge -->
+    <div class="badge-container">
+      <div class="badge-text">MODULE 1 • CHAPTER 1</div>
+    </div>
+
+    <!-- Subject Ribbon Text -->
+    <div class="subject-container">
+      <div class="subject-text">മലയാള സാഹിത്യാനുശീലനം</div>
+    </div>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

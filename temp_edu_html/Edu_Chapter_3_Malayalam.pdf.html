@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<title>Module 1 · Chapter 3: Functions, Scope & Philosophical Foundations of Education</title>
+<style>
+:root {
+  --c1: #3730a3;
+  --c2: #4f46e5;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: #0f172a;
+  line-height: 1.85;
+  font-size: 10.2pt;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #3730a3), var(--c2, #4f46e5));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(55, 48, 163, 0.22);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fef3c7;
+  font-weight: 700;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17pt;
+  font-weight: 800;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #e0e7ff;
+}
+
+.badge {
+  display: inline-block;
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 800;
+  margin-bottom: 14px;
+  border: 1px solid #c7d2fe;
+}
+
+h2 {
+  color: var(--c1, #3730a3);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 800;
+}
+
+h3 {
+  color: var(--c2, #4f46e5);
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #f8fafc;
+  border-left: 4px solid var(--c1, #3730a3);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-indigo {
+  background: #eef2ff;
+  border-left: 4px solid #4f46e5;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* Bilingual Entry Blocks */
+.bilingual-entry {
+  background: #ffffff;
+  border: 1px solid #e0e7ff;
+  border-left: 4px solid var(--c1, #3730a3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(55, 48, 163, 0.05);
+}
+
+.bilingual-entry .en-part {
+  color: #1e293b;
+  font-size: 10pt;
+  line-height: 1.7;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #cbd5e1;
+  padding-bottom: 6px;
+}
+
+.bilingual-entry .ml-part {
+  color: #1e1b4b;
+  font-size: 10pt;
+  line-height: 1.85;
+}
+
+.en-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #bfdbfe;
+}
+
+.ml-tag {
+  display: inline-block;
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #fde68a;
+}
+
+/* Thinker Profile Box */
+.thinker-box {
+  background: #fdf4ff;
+  border: 1.5px solid #f0abfc;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 18px 0;
+  page-break-inside: avoid;
+}
+
+.thinker-title {
+  color: #86198f;
+  font-weight: 800;
+  font-size: 11pt;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Comparison Table */
+table.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 9.3pt;
+  page-break-inside: avoid;
+}
+
+table.compare-table th {
+  background: var(--c1, #3730a3);
+  color: #ffffff;
+  padding: 10px 12px;
+  text-align: left;
+  border: 1px solid #cbd5e1;
+  font-weight: 700;
+}
+
+table.compare-table td {
+  padding: 9px 12px;
+  border: 1px solid #e2e8f0;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+table.compare-table tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* Key Terminology Table */
+table.vocab-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 9.3pt;
+  page-break-inside: avoid;
+}
+
+table.vocab-table th {
+  background: #1e1b4b;
+  color: #ffffff;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 700;
+  border: 1px solid #cbd5e1;
+}
+
+table.vocab-table td {
+  padding: 9px 12px;
+  border: 1px solid #e2e8f0;
+  line-height: 1.6;
+}
+
+table.vocab-table tr:nth-child(even) {
+  background: #faf5ff;
+}
+
+/* LMS Question & Answer Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #d97706;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 800;
+  color: #92400e;
+  margin-bottom: 8px;
+  font-size: 10.3pt;
+}
+
+.qa-ans-en {
+  color: #1e293b;
+  font-size: 9.5pt;
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+
+.qa-ans-ml {
+  color: #1e1b4b;
+  font-size: 9.5pt;
+  line-height: 1.8;
+  background: #fffbeb;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 2px solid #f59e0b;
+}
+
+/* 20 High Priority Exam Points Section */
+.exam-points-box {
+  background: #ffffff;
+  border: 2px solid #818cf8;
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.08);
+}
+
+.exam-points-header {
+  text-align: center;
+  border-bottom: 2px solid #e0e7ff;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.exam-points-header h3 {
+  margin: 0 0 4px 0;
+  color: #3730a3;
+  font-size: 13pt;
+  font-weight: 800;
+}
+
+.exam-points-header p {
+  margin: 0;
+  color: #6366f1;
+  font-size: 9.5pt;
+  font-weight: 700;
+}
+
+.exam-point-item {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+  page-break-inside: avoid;
+}
+
+.exam-point-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.point-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-weight: 800;
+  color: #3730a3;
+  font-size: 10pt;
+  margin-bottom: 4px;
+}
+
+.point-num {
+  background: #3730a3;
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8pt;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.point-desc-en {
+  color: #334155;
+  font-size: 9.3pt;
+  line-height: 1.6;
+  margin-left: 30px;
+  margin-bottom: 4px;
+}
+
+.point-desc-ml {
+  color: #1e1b4b;
+  font-size: 9.3pt;
+  line-height: 1.75;
+  margin-left: 30px;
+  background: #eef2ff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-left: 2px solid #818cf8;
+}
+
+/* Exam Cracker Quick Recall */
+.cracker-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1.5px solid #fcd34d;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 18px 0;
+  page-break-inside: avoid;
+}
+
+.cracker-title {
+  color: #92400e;
+  font-weight: 800;
+  font-size: 11pt;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+</style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+
+<div class="header-banner">
+  <h4>മൊഡ്യൂൾ 1: വിദ്യാഭ്യാസത്തിന്റെ ദാർശനിക അടിത്തറ (Module 1: Philosophical Basis of Education)</h4>
+  <h1>അധ്യായം 3: തത്ത്വചിന്തയുടെ ധർമ്മങ്ങളും വ്യാപ്തിയും (Functions & Scope of Philosophy and Philosophy of Education)</h1>
+  <div class="meta">Module 1 · Chapter 3: Functions, Scope & Philosophical Foundations of Education · Calicut University B.A. Sociology FYUG (PHL1FM 105) · Complete Bilingual Study Guide</div>
+</div>
+
+
+<div class="card">
+  <span class="badge">LMS SYLLABUS UNITS 1.3 & 1.4 · PAGES 16–40</span>
+  <h2>1.3 & 1.4 തത്ത്വചിന്തയുടെ ധർമ്മങ്ങളും വ്യാപ്തിയും (Functions & Scope of Philosophy)</h2>
+  <p>LMS പാഠപുസ്തകത്തിന്റെ 16 മുതൽ 40 വരെയുള്ള പേജുകളുടെ സമ്പൂർണ്ണ ദ്വിഭാഷാ വിശകലനം. തത്ത്വചിന്തയുടെ അടിസ്ഥാന ശാഖകളായ തത്ത്വമീമാംസ (Metaphysics), ജ്ഞാനമീമാംസ (Epistemology), മൂല്യമീമാംസ (Axiology), യുക്തിശാസ്ത്രം (Logic) എന്നിവയും, തത്ത്വചിന്തയുടെ ഊഹാധിഷ്ഠിത, വിശകലനാത്മക, മാനദണ്ഡപരമായ ധർമ്മങ്ങളും, ഫിലോസഫി ഓഫ് എഡ്യൂക്കേഷന്റെ പ്രായോഗിക ലക്ഷ്യങ്ങളും ഔദ്യോഗിക LMS ചോദ്യോത്തരങ്ങളും ഇതിൽ ഉൾപ്പെടുത്തിയിരിക്കുന്നു.</p>
+</div>
+
+<div class="bilingual-entry">
+  <div class="en-part"><span class="en-tag">EN</span>Etymologically, 'Philosophy' comes from the Greek 'Philos' (love) and 'Sophia' (wisdom)—the relentless love of wisdom. Philosophy is not an esoteric, detached contemplation, but an active, disciplined quest for fundamental truths regarding existence, knowledge, and value. The LMS text defines five core functions of philosophy that directly shape educational theory.</div>
+  <div class="ml-part"><span class="ml-tag">ML</span>ഭാഷാപരമായി 'ഫിലോസഫി' എന്ന പദം 'ഫിലോസ്' (സ്നേഹം), 'സോഫിയ' (ജ്ഞാനം) എന്നീ രണ്ട് ഗ്രീക്ക് പദങ്ങളിൽ നിന്നാണ് ഉണ്ടായത്—ജ്ഞാനത്തോടുള്ള അടങ്ങാത്ത സ്നേഹമാണ് തത്ത്വചിന്ത. ഇത് ജീവിതത്തിൽ നിന്ന് അകന്നുനിൽക്കുന്ന ചിന്തയല്ല; മറിച്ച് മനുഷ്യന്റെ അസ്തിത്വം, അറിവ്, ധാർമ്മിക മൂല്യങ്ങൾ എന്നിവയുടെ അടിസ്ഥാന യാഥാർത്ഥ്യങ്ങളെ കണ്ടെത്താനുള്ള സജീവമായ അന്വേഷണമാണ്. വിദ്യാഭ്യാസത്തെ രൂപപ്പെടുത്തുന്ന തത്ത്വചിന്തയുടെ അഞ്ച് അടിസ്ഥാന ധർമ്മങ്ങളെ LMS പാഠപുസ്തകം എടുത്തുപറയുന്നു.</div>
+</div>
+
+<div class="card-indigo">
+  <h3>1.3 തത്ത്വചിന്തയുടെ 5 അടിസ്ഥാന ധർമ്മങ്ങൾ (The Five Core Functions of Philosophy)</h3>
+
+  <div class="bilingual-entry">
+    <div class="en-part"><span class="en-tag">EN</span><strong>1. The Speculative Function:</strong> Human experience is fragmented. The speculative function builds grand, coherent worldviews that attempt to synthesize disparate experiences into an overarching metaphysical framework. It asks ultimate questions: What is the cosmos? What is the destiny of human life? In education, it provides high ideals and overarching aims.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span><strong>1. ഊഹാധിഷ്ഠിത ധർമ്മം (Speculative Function):</strong> മനുഷ്യന്റെ അനുഭവങ്ങൾ പലപ്പോഴും ചിതറിപ്പോയതാണ്. പ്രകൃതി, പ്രപഞ്ചം, മനുഷ്യന്റെ പരമമായ നിയോഗം എന്നിവയെക്കുറിച്ച് സമഗ്രമായ ഒരു ദാർശനിക കാഴ്ചപ്പാട് (Worldview) രൂപപ്പെടുത്തുകയാണ് ഊഹാധിഷ്ഠിത ധർമ്മം ചെയ്യുന്നത്. വിദ്യാഭ്യാസത്തിന് ഉദാത്തമായ ലക്ഷ്യങ്ങളും കാഴ്ചപ്പാടുകളും നൽകുന്നത് ഈ ധർമ്മമാണ്.</div>
+  </div>
+
+  <div class="bilingual-entry">
+    <div class="en-part"><span class="en-tag">EN</span><strong>2. The Analytical Function:</strong> If speculation builds concepts, the analytical function acts as the intellectual inspector. It meticulously clarifies language, dissects ambiguous educational slogans (e.g., 'child-centered', 'quality education'), dismantles logical fallacies, and demands precision in educational discourse.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span><strong>2. വിശകലനാത്മക ധർമ്മം (Analytical Function):</strong> ആശയങ്ങളെയും ഭാഷയെയും സൂക്ഷ്മമായി പരിശോധിക്കുന്ന ധർമ്മമാണിത്. വിദ്യാഭ്യാസ രംഗത്ത് ഉപയോഗിക്കുന്ന അവ്യക്തമായ പദപ്രയോഗങ്ങളെയും മുദ്രാവാക്യങ്ങളെയും ('കുട്ടി കേന്ദ്രീകൃത വിദ്യാഭ്യാസം', 'ഗുണനിലവാരം') വിശകലനം ചെയ്യുകയും യുക്തിപരമായ വൈകല്യങ്ങൾ ഇല്ലാതാക്കി കൃത്യത കൊണ്ടുവരികയും ചെയ്യുന്നു.</div>
+  </div>
+
+  <div class="bilingual-entry">
+    <div class="en-part"><span class="en-tag">EN</span><strong>3. The Prescriptive / Normative Function:</strong> Science describes 'what is'; philosophy establishes 'what ought to be'. It sets moral and ethical standards, evaluates educational curricula, and guides educators on what knowledge is of most worth, guiding righteous human action.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span><strong>3. മാനദണ്ഡപരമായ ധർമ്മം (Prescriptive / Normative Function):</strong> ശാസ്ത്രം 'എന്താണ് നിലനിൽക്കുന്നത്' എന്ന് വിവരിക്കുമ്പോൾ, തത്ത്വചിന്ത 'എന്തായിരിക്കണം' (What ought to be) എന്ന് നിശ്ചയിക്കുന്നു. വിദ്യാഭ്യാസത്തിന്റെ മൂല്യങ്ങളും സദാചാര മാനദണ്ഡങ്ങളും തീരുമാനിക്കുകയും ഏത് അറിവാണ് ഏറ്റവും മൂല്യവത്തായത് എന്ന് നിർണ്ണയിക്കുകയും ചെയ്യുന്നത് ഈ ധർമ്മമാണ്.</div>
+  </div>
+
+  <div class="bilingual-entry">
+    <div class="en-part"><span class="en-tag">EN</span><strong>4. The Integrative Function:</strong> Modern academia suffers from hyper-specialization. Psychology, sociology, neuroscience, and pedagogy often operate in silos. Philosophy integrates these disparate empirical findings into a harmonious, unified understanding of the human person.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span><strong>4. സമന്വയ ധർമ്മം (Integrative Function):</strong> മനശാസ്ത്രം, സോഷ്യോളജി, ന്യൂറോസയൻസ്, പെഡഗോഗി എന്നീ വിവിധ ശാഖകൾ വെവ്വേറെ കണ്ടെത്തുന്ന അറിവുകളെ പരസ്പരം കോർത്തിണക്കി മനുഷ്യനെക്കുറിച്ചുള്ള സമഗ്രമായ ഒരു ബോധമാക്കി മാറ്റുന്ന ധർമ്മമാണിത്.</div>
+  </div>
+
+  <div class="bilingual-entry">
+    <div class="en-part"><span class="en-tag">EN</span><strong>5. The Transformative / Pedagogical Function:</strong> Philosophy is not just an academic discipline; it is a way of living (Pierre Hadot). It cultivates intellectual humility, challenges complacency, transforms unexamined dogmas, and turns teachers into reflective practitioners.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span><strong>5. പരിവർത്തന ധർമ്മം (Transformative / Pedagogical Function):</strong> തത്ത്വചിന്ത ഒരു വെറും പുസ്തക വിഷയമല്ല, മറിച്ച് അതൊരു ജീവിതരീതിയാണ്. അത് മനുഷ്യനിൽ ബൗദ്ധിക വിനയവും സ്വയംവിമർശനവും വളർത്തുന്നു; അന്ധവിശ്വാസങ്ങളെ തിരുത്തി അധ്യാപകരെ ചിന്താശേഷിയുള്ള മാർഗ്ഗദർശികളാക്കി മാറ്റുന്നു.</div>
+  </div>
+</div>
+
+<div class="card-amber">
+  <h2>1.3.1 തത്ത്വചിന്തയുടെ വ്യാപ്തിയും പ്രധാന ശാഖകളും (The Scope of Philosophy)</h2>
+  <p>LMS പാഠപുസ്തകം പേജ് 22 മുതൽ 28 വരെ വിശദീകരിക്കുന്ന തത്ത്വചിന്തയുടെ നാല് അടിസ്ഥാന സ്തംഭങ്ങൾ:</p>
+</div>
+
+<!-- METAPHYSICS -->
+<div class="thinker-box">
+  <div class="thinker-title">🌌 1. തത്ത്വമീമാംസ (Metaphysics: The Theory of Ultimate Reality)</div>
+  <div class="bilingual-entry">
+    <div class="en-part"><span class="en-tag">EN</span>Metaphysics investigates the fundamental nature of reality, existence, and being (Ontology). It addresses: Is the universe purely material (Materialism/Naturalism), or is ultimate reality spiritual and ideal (Idealism)? Does God exist? What is the Mind-Body problem? In education, our metaphysical view of the child determines whether we treat the student as a biological organism, an economic resource, or a divine soul.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span>യാഥാർത്ഥ്യത്തിന്റെ ആത്യന്തിക സ്വഭാവത്തെക്കുറിച്ചുള്ള അന്വേഷണമാണ് തത്ത്വമീമാംസ (Metaphysics / Ontology). ഈ പ്രപഞ്ചം കേവലം ഭൗതിക വസ്തുക്കളാൽ നിർമ്മിതമാണോ (Materialism/Naturalism), അതോ ആത്മീയ യാഥാർത്ഥ്യമാണോ (Idealism)? മനസ്സ് എന്താണ്? തുടങ്ങിയ ചോദ്യങ്ങൾക്ക് ഇത് ഉത്തരം തേടുന്നു. ഒരു കുട്ടിയെ കേവലം ഒരു ജൈവ ശരീരമായി കാണണമോ അതോ ഉദാത്തമായ ആത്മാവായി കാണണമോ എന്നത് വിദ്യാഭ്യാസത്തിലെ മെറ്റാഫിസിക്സ് തീരുമാനിക്കുന്നു.</div>
+  </div>
+</div>
+
+<!-- EPISTEMOLOGY -->
+<div class="thinker-box">
+  <div class="thinker-title">📚 2. ജ്ഞാനമീമാംസ (Epistemology: The Theory of Knowledge)</div>
+  <div class="bilingual-entry">
+    <div class="en-part"><span class="en-tag">EN</span>Epistemology is the philosophical study of the nature, sources, scope, and validity of knowledge. What does it mean to 'know'? Traditional philosophy defines knowledge as <strong>Justified True Belief (JTB)</strong>.
+    <br>• <strong>Rationalism (Descartes, Spinoza):</strong> Reason and intellect are the primary source of knowledge; innate ideas exist.
+    <br>• <strong>Empiricism (Locke, Hume):</strong> Sensory experience and observation are the exclusive foundation of knowledge.
+    <br>• <strong>Theories of Truth:</strong> Correspondence Theory (truth corresponds to objective facts), Coherence Theory (truth coheres with a web of consistent beliefs), and Pragmatic Theory (truth is what works fruitfully in practice).
+    <br>In education, epistemology governs our teaching methods: lecture versus laboratory discovery.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span>അറിവിന്റെ ഉറവിടം, സ്വഭാവം, സാധുത, പരിധികൾ എന്നിവയെക്കുറിച്ചുള്ള അന്വേഷണമാണ് ജ്ഞാനമീമാംസ (Epistemology). അറിവ് എന്നാൽ എന്ത്? പരമ്പരാഗത ദർശനപ്രകാരം അറിവ് എന്നാൽ 'ന്യായീകരിക്കപ്പെട്ട യഥാർത്ഥ വിശ്വാസമാണ്' (Justified True Belief).
+    <br>• <strong>യുക്തിവാദം (Rationalism):</strong> യുക്തിയും ബുദ്ധിയുമാണ് അറിവിന്റെ പ്രാഥമിക ഉറവിടം.
+    <br>• <strong>അനുഭവവാദം (Empiricism):</strong> ഇന്ദ്രിയാനുഭവങ്ങളും നിരീക്ഷണങ്ങളുമാണ് അറിവിന് ആധാരം.
+    <br>• <strong>സത്യത്തിന്റെ സിദ്ധാന്തങ്ങൾ:</strong> പൊരുത്തപ്പെടൽ സിദ്ധാന്തം (Correspondence), പൊരുത്തം/യോജിപ്പ് സിദ്ധാന്തം (Coherence), പ്രായോഗിക സിദ്ധാന്തം (Pragmatic Theory).
+    <br>വിദ്യാഭ്യാസത്തിൽ നമ്മൾ ഏത് അധ്യാപന രീതി തിരഞ്ഞെടുക്കണം (പ്രഭാഷണ രീതിയാണോ അതോ പരീക്ഷണ രീതിയാണോ) എന്നത് ജ്ഞാനമീമാംസയാണ് നിശ്ചയിക്കുന്നത്.</div>
+  </div>
+</div>
+
+<!-- AXIOLOGY -->
+<div class="thinker-box">
+  <div class="thinker-title">💎 3. മൂല്യമീമാംസ (Axiology: Ethics & Aesthetics)</div>
+  <div class="bilingual-entry">
+    <div class="en-part"><span class="en-tag">EN</span>Axiology studies the nature of values and value judgments. It bifurcates into:
+    <br>• <strong>Ethics (Moral Philosophy):</strong> Investigates right and wrong action. Includes Metaethics, Utilitarianism (consequential happiness), Kantian Deontology (duty-based universal ethics), and Virtue Ethics (character habituation).
+    <br>• <strong>Aesthetics (Philosophy of Art):</strong> Investigates beauty, artistic expression, and taste.
+    <br>In education, axiology guides the values curriculum, school discipline, and the moral climate of the classroom.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span>മൂല്യങ്ങളെയും അവയുടെ വിധിനിർണ്ണയങ്ങളെയും കുറിച്ചുള്ള ശാഖയാണ് മൂല്യമീമാംസ (Axiology). ഇത് രണ്ടായി തിരിയുന്നു:
+    <br>• <strong>സദാചാര തത്ത്വചിന്ത (Ethics):</strong> ശരിയും തെറ്റും എന്തെന്ന് അന്വേഷിക്കുന്നു (യൂട്ടിലിറ്റേറിയനിസം, കാന്റിന്റെ കടമയെക്കുറിച്ചുള്ള ധാർമ്മികത, അരിസ്റ്റോട്ടിലിന്റെ സദ്ഗുണ ചിന്ത).
+    <br>• <strong>സൗന്ദര്യശാസ്ത്രം (Aesthetics):</strong> കല, ഭംഗി, സൗന്ദര്യാസ്വാദനം എന്നിവയെക്കുറിച്ച് പഠിക്കുന്നു.
+    <br>വിദ്യാഭ്യാസത്തിൽ മൂല്യബോധം, അച്ചടക്കം, വിദ്യാലയ അന്തരീക്ഷം എന്നിവയെ രൂപപ്പെടുത്തുന്നത് ആക്സിയോളജിയാണ്.</div>
+  </div>
+</div>
+
+<!-- LOGIC -->
+<div class="thinker-box">
+  <div class="thinker-title">🧠 4. യുക്തിശാസ്ത്രം (Logic: The Art of Valid Reasoning)</div>
+  <div class="bilingual-entry">
+    <div class="en-part"><span class="en-tag">EN</span>Logic establishes the formal principles of sound reasoning. It encompasses Deductive reasoning (moving from universal premises to certain specific conclusions) and Inductive reasoning (moving from specific empirical observations to probable general laws), as well as the identification of logical fallacies. Logic is the core tool of critical thinking in education.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span>ശരിയായ ചിന്തയുടെയും സാധുതയുള്ള യുക്തിവാദങ്ങളുടെയും നിയമങ്ങൾ പഠിപ്പിക്കുന്ന ശാഖയാണ് യുക്തിശാസ്ത്രം (Logic). പൊതു തത്ത്വത്തിൽ നിന്ന് പ്രത്യേക വസ്തുതകളിലേക്ക് എത്തുന്ന നിഗമന രീതിയും (Deductive logic), പ്രത്യേക അനുഭവങ്ങളിൽ നിന്ന് പൊതു നിയമങ്ങൾ ഉണ്ടാക്കുന്ന ആഗമന രീതിയും (Inductive logic) ഇതിൽ ഉൾപ്പെടുന്നു. തെറ്റായ ചിന്തകളെ ഒഴിവാക്കി ശരിയായി ചിന്തിക്കാൻ വിദ്യാർത്ഥികളെ പരിശീലിപ്പിക്കുന്ന ഉപകരണമാണിത്.</div>
+  </div>
+</div>
+
+<!-- REVIEW QA FROM LMS -->
+<div class="card-amber">
+  <h2>LMS അവലോകന ചോദ്യോത്തരങ്ങൾ (Official LMS Review Questions & Answers)</h2>
+  <div class="qa-card">
+    <div class="qa-q">Q1. The philosophical view that all that exists is physical or material is called?</div>
+    <div class="qa-ans-en"><strong>Answer:</strong> Materialism / Naturalism. In contrast, Idealism asserts that ultimate reality is non-material and mental or spiritual.</div>
+    <div class="qa-ans-ml"><strong>ഉത്തരം:</strong> ഭൗതികവാദം (Materialism) അല്ലെങ്കിൽ പ്രകൃതിവാദം (Naturalism). നിലനിൽക്കുന്നതെല്ലാം ഭൗതിക പദാർത്ഥങ്ങളാണെന്ന് ഇത് കരുതുന്നു. നേരെമറിച്ച്, യാഥാർത്ഥ്യം ആത്മീയമാണെന്ന് ആദർശവാദം (Idealism) പഠിപ്പിക്കുന്നു.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q2. The concept of 'Eudaimonia' is central to which classical philosopher's ethical and educational thought?</div>
+    <div class="qa-ans-en"><strong>Answer:</strong> Aristotle. Eudaimonia represents human flourishing, achieved when humans exercise their rational capacities in accordance with virtue.</div>
+    <div class="qa-ans-ml"><strong>ഉത്തരം:</strong> അരിസ്റ്റോട്ടിൽ (Aristotle). വിവേകത്തോടെ സദ്ഗുണങ്ങൾ ശീലിച്ച് ജീവിക്കുന്നതിലൂടെ ലഭിക്കുന്ന പരമോന്നത ആത്മവികാസവും ആനന്ദവുമാണ് 'യൂഡൈമോണിയ'.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q3. "Education is not a preparation for life, but life itself"—who formulated this revolutionary dictum?</div>
+    <div class="qa-ans-en"><strong>Answer:</strong> John Dewey (Pragmatist philosopher). He rejected traditional education that treated children as passive future adults, insisting that school must be an active, living community today.</div>
+    <div class="qa-ans-ml"><strong>ഉത്തരം:</strong> ജോൺ ഡ്യൂവി (John Dewey). വിദ്യാഭ്യാസം ഭാവിയിലേക്കുള്ള വെറും ഒരുക്കമല്ല, മറിച്ച് അനുഭവസമ്പന്നമായ വിദ്യാഭ്യാസം തന്നെയാണ് ജീവിതം എന്ന് ഡ്യൂവി പ്രഖ്യാപിച്ചു.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">Q4. What is the fundamental interdependence between Philosophy and Education according to educational thinkers?</div>
+    <div class="qa-ans-en"><strong>Answer:</strong> "Philosophy is the theory of education, while education is the dynamic, practical side of philosophy." As John Adams stated, education is the active aspect of a philosophical faith.</div>
+    <div class="qa-ans-ml"><strong>ഉത്തരം:</strong> തത്ത്വചിന്ത എന്നത് സിദ്ധാന്തവും (Theory), വിദ്യാഭ്യാസം എന്നത് അതിന്റെ പ്രായോഗിക പ്രവർത്തന രൂപവുമാണ് (Practice). തത്ത്വചിന്ത ചിന്തിക്കുന്നു, വിദ്യാഭ്യാസം അതിനെ ജീവിതത്തിൽ പ്രാവർത്തികമാക്കുന്നു.</div>
+  </div>
+</div>
+
+<!-- 20 EXAM POINTS -->
+<div class="exam-points-box">
+  <div class="exam-points-header">
+    <h3>പരീക്ഷാ സഹായി: 20 ഹൈ-പ്രയോറിറ്റി പോയിന്റുകൾ (20 High-Priority Exam Points)</h3>
+    <p>യൂണിവേഴ്സിറ്റി പരീക്ഷയ്ക്കായി അധ്യായം 3-ൽ നിന്നും തിരഞ്ഞെടുക്കപ്പെട്ട അതിപ്രധാന പോയിന്റുകൾ</p>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">01</span><span>Love of Wisdom</span></div>
+    <div class="point-desc-en">Philosophy originates from Greek 'Philos' (love) and 'Sophia' (wisdom)—the disciplined quest for ultimate truths.</div>
+    <div class="point-desc-ml">ഫിലോസ് (സ്നേഹം), സോഫിയ (ജ്ഞാനം) എന്നിവയിൽ നിന്നാണ് തത്ത്വചിന്ത എന്ന വാക്ക് ഉണ്ടായത്; ജ്ഞാനത്തോടുള്ള അന്വേഷണമാണിത്.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">02</span><span>Speculative Function</span></div>
+    <div class="point-desc-en">Constructs broad syntheses and worldviews to give human existence overarching direction and lofty ideals.</div>
+    <div class="point-desc-ml">പ്രപഞ്ചത്തെക്കുറിച്ചും ജീവിതത്തെക്കുറിച്ചും സമഗ്രമായ കാഴ്ചപ്പാടുകളും ഉദാത്ത ലക്ഷ്യങ്ങളും നിർമ്മിക്കുന്ന ഊഹാധിഷ്ഠിത ധർമ്മം.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">03</span><span>Analytical Function</span></div>
+    <div class="point-desc-en">Clarifies concepts, analyzes linguistic ambiguity, and ensures logical coherence in educational discourse.</div>
+    <div class="point-desc-ml">വിദ്യാഭ്യാസ സംവാദങ്ങളിലെ പദങ്ങളെയും ആശയങ്ങളെയും യുക്തിസഹമായി വിശകലനം ചെയ്ത് വ്യക്തത ഉറപ്പാക്കുന്ന ധർമ്മം.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">04</span><span>Normative Function</span></div>
+    <div class="point-desc-en">Prescribes moral standards and guidelines for 'what ought to be', deciding what knowledge is most valuable.</div>
+    <div class="point-desc-ml">എന്താണ് ഉചിതം, ഏത് അറിവാണ് മൂല്യവത്തായത് എന്ന് മാനദണ്ഡങ്ങൾ നിശ്ചയിക്കുന്ന ധർമ്മം.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">05</span><span>Integrative Function</span></div>
+    <div class="point-desc-en">Synthesizes empirical findings of psychology, sociology, and biology into a unified vision of human education.</div>
+    <div class="point-desc-ml">വിവിധ ശാസ്ത്ര ശാഖകളിലെ കണ്ടെത്തലുകളെ സമന്വയിപ്പിച്ച് മനുഷ്യനെക്കുറിച്ചുള്ള സമഗ്രമായ അറിവ് നിർമ്മിക്കുന്ന ധർമ്മം.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">06</span><span>Metaphysics / Ontology</span></div>
+    <div class="point-desc-en">The study of ultimate reality; explores whether existence is primarily material or spiritual in nature.</div>
+    <div class="point-desc-ml">യാഥാർത്ഥ്യത്തിന്റെ അടിത്തറ ഭൗതികമാണോ അതോ ആത്മീയമാണോ എന്ന് അന്വേഷിക്കുന്ന തത്ത്വമീമാംസ.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">07</span><span>Epistemology Definition</span></div>
+    <div class="point-desc-en">The philosophical study of knowledge, its nature, criteria, sources, and validity (Justified True Belief).</div>
+    <div class="point-desc-ml">അറിവിന്റെ ഉറവിടത്തെയും സ്വഭാവത്തെയും ന്യായീകരണത്തെയും കുറിച്ച് പഠിക്കുന്ന ജ്ഞാനമീമാംസ.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">08</span><span>Rationalism vs Empiricism</span></div>
+    <div class="point-desc-en">Rationalism locates knowledge in innate reason; Empiricism insists all knowledge arises from sensory perception.</div>
+    <div class="point-desc-ml">യുക്തിവാദത്തിൽ അറിവ് മനസ്സിൽ അന്തർലീനമാണ്; അനുഭവവാദത്തിൽ അറിവ് ഇന്ദ്രിയാനുഭവങ്ങളിൽ നിന്ന് മാത്രം ഉണ്ടാകുന്നു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">09</span><span>Correspondence Truth Theory</span></div>
+    <div class="point-desc-en">A statement is true if and only if it accurately corresponds to objective, external facts in reality.</div>
+    <div class="point-desc-ml">ഒരു പ്രസ്താവന ബാഹ്യമായ യഥാർത്ഥ വസ്തുതകളുമായി പൊരുത്തപ്പെടുമ്പോൾ മാത്രമേ അത് സത്യമാകൂ എന്ന സിദ്ധാന്തം.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">10</span><span>Coherence Truth Theory</span></div>
+    <div class="point-desc-en">Truth is established when a proposition fits consistently and harmoniously within a comprehensive system of beliefs.</div>
+    <div class="point-desc-ml">ആശയങ്ങൾ പരസ്പര വിരുദ്ധമല്ലാതെ നിലവിലുള്ള വിശ്വാസ വ്യവസ്ഥയുമായി യോജിച്ചുനിൽക്കുമ്പോൾ സത്യം തെളിയുന്നു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">11</span><span>Pragmatic Truth Theory</span></div>
+    <div class="point-desc-en">Truth is verified by its practical efficacy, utility, and concrete experiential consequences in life.</div>
+    <div class="point-desc-ml">ജീവിതത്തിൽ പ്രായോഗികമായി ഫലപ്രദമായി പ്രവർത്തിക്കുന്നതാണ് സത്യമെന്ന് പ്രാഗ്മാറ്റിക് തിയറി പറയുന്നു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">12</span><span>Axiology Breakdown</span></div>
+    <div class="point-desc-en">Divided into Ethics (the study of moral goodness and justice) and Aesthetics (the study of beauty and art).</div>
+    <div class="point-desc-ml">മൂല്യമീമാംസ എന്നത് എത്തിക്സ് (സദാചാരം/നന്മ), ഈസ്തെറ്റിക്സ് (സൗന്ദര്യം/കല) എന്നിങ്ങനെ വിഭജിക്കപ്പെടുന്നു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">13</span><span>Logic in Education</span></div>
+    <div class="point-desc-en">Teaches deductive and inductive valid inference, shielding students from fallacious, manipulative arguments.</div>
+    <div class="point-desc-ml">യുക്തിസഹമായ നിഗമനങ്ങളിൽ എത്താനും അബദ്ധ വാദങ്ങളെ തിരിച്ചറിയാനും സഹായിക്കുന്ന ചിന്താ ശാസ്ത്രം.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">14</span><span>Philosophy as Theory of Education</span></div>
+    <div class="point-desc-en">Philosophy provides the theoretical blueprints and values; education is the dynamic laboratory executing them.</div>
+    <div class="point-desc-ml">തത്ത്വചിന്ത എന്നത് ദർശനപരമായ കാഴ്ചപ്പാടാണ്; വിദ്യാഭ്യാസം അതിനെ പ്രായോഗികമായി പരീക്ഷിക്കുന്ന ലബോറട്ടറിയാണ്.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">15</span><span>Pedagogical Authority Modes</span></div>
+    <div class="point-desc-en">Classrooms reflect underlying philosophy: authoritarian (dogmatic), democratic (cooperative), or laissez-faire.</div>
+    <div class="point-desc-ml">ക്ലാസ്റൂം രീതികൾ ദാർശനിക വീക്ഷണത്തെ പ്രതിഫലിപ്പിക്കുന്നു: കർശന അധികാരം, ജനാധിപത്യ സഹകരണം, അല്ലെങ്കിൽ പൂർണ്ണ സ്വാതന്ത്ര്യം.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">16</span><span>What Knowledge is of Most Worth?</span></div>
+    <div class="point-desc-en">Herbert Spencer's fundamental curricular question that every philosophy of education must explicitly answer.</div>
+    <div class="point-desc-ml">ഏത് അറിവാണ് ഏറ്റവും മൂല്യവത്തായത് എന്ന ഹെർബർട്ട് സ്പെൻസറുടെ ക്ലാസിക്കൽ ചോദ്യമാണ് പാഠ്യപദ്ധതി രൂപപ്പെടുത്തുന്നത്.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">17</span><span>Reflective Practitioner</span></div>
+    <div class="point-desc-en">Philosophy transforms teachers from passive curriculum technicians into conscious, reflective educators.</div>
+    <div class="point-desc-ml">അധ്യാപകരെ വെറും സിലബസ് തീർക്കുന്ന യന്ത്രങ്ങളാക്കാതെ ചിന്താശേഷിയുള്ള മാർഗ്ഗദർശികളാക്കി തത്ത്വചിന്ത മാറ്റുന്നു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">18</span><span>Applied Philosophy Branches</span></div>
+    <div class="point-desc-en">Includes philosophy of science, philosophy of law, philosophy of mind, and philosophy of education.</div>
+    <div class="point-desc-ml">ശാസ്ത്ര ദർശനം, നിയമ ദർശനം, വിദ്യാഭ്യാസ തത്ത്വചിന്ത തുടങ്ങിയ പ്രായോഗിക ദാർശനിക ശാഖകൾ.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">19</span><span>Democracy in Practice</span></div>
+    <div class="point-desc-en">Education provides the epistemic foundation for critical citizenship, preventing tyranny and demagoguery.</div>
+    <div class="point-desc-ml">വിമർശനാത്മക പൗരബോധം നൽകി ജനാധിപത്യത്തെ സ്വേച്ഛാധിപത്യത്തിൽ നിന്ന് രക്ഷിക്കാൻ വിദ്യാഭ്യാസം അനിവാര്യമാണ്.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">20</span><span>Holistic Synthesis</span></div>
+    <div class="point-desc-en">The highest philosophical goal of education is cultivating integrated beings possessing wisdom, virtue, and agency.</div>
+    <div class="point-desc-ml">ജ്ഞാനം, സദ്ഗുണം, സാമൂഹിക കർമ്മശേഷി എന്നിവ സമന്വയിച്ച ഉത്തമ വ്യക്തിത്വങ്ങളെ സൃഷ്ടിക്കലാണ് പരമമായ ദാർശനിക ലക്ഷ്യം.</div>
+  </div>
+</div>
+
+
+<div class="footer">
+  <span>Calicut University · BA Sociology FYUG · PHL1FM 105: Philosophy of Education</span>
+  <span>Bilingual LMS Study Guide · Exclusive Syllabus Coverage</span>
+</div>
+
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

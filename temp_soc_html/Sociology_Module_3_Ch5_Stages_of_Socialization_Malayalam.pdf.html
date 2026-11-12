@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 3 · അധ്യായം 3.5: സോഷ്യലൈസേഷന്റെ ഘട്ടങ്ങൾ</title>
+  <style>
+    :root {
+      --c1: #581c87;
+      --c2: #7e22ce;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #581c87), var(--c2, #7e22ce));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(88, 28, 135, 0.2);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f3e8ff;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #e9d5ff;
+}
+
+.badge {
+  display: inline-block;
+  background: #faf5ff;
+  color: #6b21a8;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #d8b4fe;
+}
+
+h2 {
+  color: var(--c1, #581c87);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #7e22ce;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #faf5ff;
+  border-left: 4px solid var(--c2, #7e22ce);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-purple {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+/* Diagrams & Visual Charts */
+.diagram-container {
+  background: #ffffff;
+  border: 1.5px solid #e9d5ff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.05);
+}
+
+.diagram-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 11pt;
+  color: #581c87;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.flow-step {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border: 1.5px solid #c084fc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #581c87;
+  min-width: 130px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(107, 33, 168, 0.08);
+}
+
+.flow-step small {
+  display: block;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #6b21a8;
+  margin-top: 4px;
+}
+
+.flow-arrow {
+  color: #9333ea;
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+.tree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.tree-card {
+  background: #fdf4ff;
+  border: 1px solid #d8b4fe;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.tree-card h4 {
+  margin: 0 0 6px 0;
+  color: #6b21a8;
+  font-size: 10pt;
+  font-weight: 700;
+  border-bottom: 1px solid #e9d5ff;
+  padding-bottom: 4px;
+}
+
+.tree-card p {
+  margin: 0;
+  font-size: 9pt;
+  line-height: 1.6;
+  color: #334155;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f3e8ff;
+  color: #581c87;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #faf5ff;
+}
+
+/* Bilingual Entry Blocks */
+.bilingual-entry {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-left: 4px solid #7e22ce;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(107, 33, 168, 0.04);
+}
+
+.bilingual-entry .en-part {
+  color: #1e293b;
+  font-size: 10pt;
+  line-height: 1.7;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.bilingual-entry .ml-part {
+  color: #3b0764;
+  font-size: 10pt;
+  line-height: 1.85;
+}
+
+.en-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #bfdbfe;
+}
+
+.ml-tag {
+  display: inline-block;
+  background: #faf5ff;
+  color: #7e22ce;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #d8b4fe;
+}
+
+/* LMS Question & Answer Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #7e22ce;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #581c87;
+  margin-bottom: 8px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  background: #faf5ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #9333ea;
+}
+
+/* MCQ Cards */
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #581c87;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #f3e8ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid #d8b4fe;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 3: വ്യക്തിയും സമൂഹവും (Module 3: Individual and Society)</h4>
+    <h1>മൊഡ്യൂൾ 3 · അധ്യായം 3.5: സോഷ്യലൈസേഷന്റെ ഘട്ടങ്ങൾ</h1>
+    <div class="meta">Module 3 · Chapter 3.5: Stages of Socialization & Theories of Self · Calicut University B.A. Sociology FYUGP · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Chapter Overview:</strong> Personality development unfolds across progressive stages throughout the human life course. This chapter explores: (1) Life-course developmental phases (Infancy, Childhood, Adolescence, Adulthood, Old Age); (2) Charles Horton Cooley's 'Looking-Glass Self' (1902); (3) George Herbert Mead's 'Mind, Self, and Society' (1934), exploring the dialectic of the 'I' and 'Me', role-taking stages (Imitation, Play, Game), and the 'Generalized Other'; and (4) Sigmund Freud's psychoanalytic model.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>അധ്യായ അവലോകനം:</strong> മനുഷ്യന്റെ വ്യക്തിത്വ വികാസം വിവിധ ഘട്ടങ്ങളിലൂടെയാണ് പൂർത്തിയാകുന്നത്. മനുഷ്യ ജീവിതത്തിലെ ഘട്ടങ്ങൾ (ശൈശവം, ബാല്യം, കൗമാരം, യൗവ്വനം, വാർദ്ധക്യം), സി.എച്ച്. കൂലിയുടെ 'ലുക്കിംഗ് ഗ്ലാസ് സെൽഫ്' (കണ്ണാടി നോക്കുന്ന ആത്മാവ്), ജോർജ്ജ് ഹെർബർട്ട് മീഡിന്റെ 'ഐ' (I), 'മീ' (Me) സിദ്ധാന്തവും റോൾ-ടേക്കിംഗ് ഘട്ടങ്ങളും (ഇമിറ്റേഷൻ, പ്ലേ, ഗെയിം, ജനറലൈസ്ഡ് അദർ), ഫ്രോയിഡിന്റെ മനശാസ്ത്ര മോഡൽ എന്നിവ ഈ അധ്യായത്തിൽ സമഗ്രമായി പഠിക്കുന്നു.
+  </div>
+</div>
+
+<div class="card">
+  <h4 class="sub-head" style="margin-top:0;">പ്രധാന സിദ്ധാന്തങ്ങൾ (Core Theoretical Models):</h4>
+  <ul>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Cooley's Looking-Glass Self:</strong> Master the 3 sequential steps through which individuals construct self-identity from imagined social reactions.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>കൂലിയുടെ ലുക്കിംഗ് ഗ്ലാസ് സെൽഫ്:</strong> മറ്റുള്ളവരുടെ മനസ്സിൽ നാം എങ്ങനെ കാണപ്പെടുന്നു എന്ന ഭാവനയിലൂടെ സ്വത്വബോധം (Self-concept) നിർമ്മിക്കുന്ന 3 ഘട്ടങ്ങൾ പഠിക്കുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Mead's Dialectic of 'I' and 'Me':</strong> Differentiate the spontaneous subjective 'I' from the socialized conventional 'Me'.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>മീഡിന്റെ 'I', 'Me' സിദ്ധാന്തം:</strong> വ്യക്തിയുടെ സ്വന്തം ആഗ്രഹങ്ങളും സ്വതസിദ്ധമായ പ്രതികരണങ്ങളുമായ 'ഐ'യും, സമൂഹത്തിന്റെ നിയമങ്ങൾ ഉൾക്കൊണ്ട 'മീ'യും തമ്മിലുള്ള ബന്ധം മനസ്സിലാക്കുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Mead's Developmental Stages:</strong> Navigate Preparatory/Imitation stage, Play stage (significant others), Game stage (multiple roles), and the Generalized Other.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>മീഡിന്റെ വികാസ ഘട്ടങ്ങൾ:</strong> അനുകരണ ഘട്ടം (Imitation), പ്ലേ സ്റ്റേജ് (Play), ഗെയിം സ്റ്റേജ് (Game), സമൂഹത്തിന്റെ പൊതു പ്രതീക്ഷകളായ 'ജനറലൈസ്ഡ് അദർ' (Generalized Other) എന്നിവ അപഗ്രഥിക്കുക.</div>
+    </li>
+  </ul>
+</div>
+
+<h2>2. സി.എച്ച്. കൂലിയുടെ ലുക്കിംഗ് ഗ്ലാസ് സെൽഫ് (C.H. Cooley's Looking-Glass Self, 1902)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Core Proposition:</strong> In <em>Human Nature and the Social Order</em> (1902), Charles Horton Cooley argued that society acts as a mirror (looking-glass) in which we see ourselves. Self-concept is entirely social, formed through three sequential steps:
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>സിദ്ധാന്തത്തിന്റെ കാതൽ:</strong> 1902-ൽ സി.എച്ച്. കൂലി അവതരിപ്പിച്ച സിദ്ധാന്തം. സമൂഹം ഒരു കണ്ണാടിയാണ്; മറ്റുള്ളവർ നമ്മെ എങ്ങനെ കാണുന്നു എന്നതിന്റെ അടിസ്ഥാനത്തിലാണ് നാം നമ്മെക്കുറിച്ച് ഒരു ധാരണ ഉണ്ടാക്കുന്നത്. ഇതിന് 3 ഘട്ടങ്ങളുണ്ട്:
+  </div>
+</div>
+
+<div class="diagram-container">
+  <div class="diagram-title">ലുക്കിംഗ് ഗ്ലാസ് സെൽഫിന്റെ 3 ഘട്ടങ്ങൾ (Cooley's 3-Step Looking-Glass Process)</div>
+  <div class="flow-chart">
+    <div class="flow-step">1. രൂപ ഭാവന<small>Imagination of our appearance to others</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">2. വിധി ഭാവന<small>Imagination of their judgment of that appearance</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">3. ആത്മവികാരം<small>Self-feeling (Pride or Mortification)</small></div>
+  </div>
+</div>
+
+<h2>3. ജി.എച്ച്. മീഡിന്റെ സ്വത്വ സിദ്ധാന്തം (G.H. Mead's Theory of Self: 'I' and 'Me')</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>The Self as a Social Product (1934):</strong> George Herbert Mead established that selfhood is born through social interaction and symbolic communication. The Self is divided into:
+    <ul>
+      <li><strong>The 'I':</strong> The unsocialized, spontaneous, creative, impulsive, subjective active component of the self.</li>
+      <li><strong>The 'Me':</strong> The socialized, objective component; the organized set of attitudes of others that the individual assumes and conforms to.</li>
+    </ul>
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>മീഡിന്റെ സ്വത്വ സിദ്ധാന്തം (Mind, Self, and Society - 1934):</strong> സ്വത്വം എന്നത് സാമൂഹിക പ്രതിപ്രവർത്തനത്തിലൂടെ ഉണ്ടാകുന്ന ഒന്നാണ്. ഇതിന് രണ്ട് ഭാഗങ്ങളുണ്ട്:
+    <ul>
+      <li><strong>'ഐ' (I):</strong> വ്യക്തിയുടെ സ്വതസിദ്ധവും സർഗ്ഗാത്മകവുമായ ആത്മനിഷ്ഠ ഭാഗം (വ്യക്തിപരമായ ആഗ്രഹങ്ങൾ).</li>
+      <li><strong>'മീ' (Me):</strong> സമൂഹം പഠിപ്പിച്ച നിയമങ്ങളും മൂല്യങ്ങളും ഉൾക്കൊണ്ട സാമൂഹികവൽക്കരിക്കപ്പെട്ട ഭാഗം (സമൂഹത്തിന്റെ പ്രതീക്ഷകൾ).</li>
+    </ul>
+  </div>
+</div>
+
+<div class="diagram-container">
+  <div class="diagram-title">മീഡിന്റെ റോൾ-ടേക്കിംഗ് ഘട്ടങ്ങൾ (Mead's Role-Taking Stages)</div>
+  <div class="flow-chart">
+    <div class="flow-step">1. ഇമിറ്റേഷൻ സ്റ്റേജ്<small>Imitation (0-2 Yrs): Mimicking actions</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">2. പ്ലേ സ്റ്റേജ്<small>Play Stage (3-5 Yrs): Significant Others</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">3. ഗെയിം സ്റ്റേജ്<small>Game Stage (6+ Yrs): Multiple Roles</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">4. ജനറലൈസ്ഡ് അദർ<small>Generalized Other: Community Norms</small></div>
+  </div>
+</div>
+
+<h2>4. എൽ.എം.എസ് ചോദ്യോത്തരങ്ങൾ (Chapter 3.5 Key Questions & Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. Explain C.H. Cooley's concept of 'Looking-Glass Self' with its three steps. / സി.എച്ച്. കൂലിയുടെ 'ലുക്കിംഗ് ഗ്ലാസ് സെൽഫ്' സിദ്ധാന്തവും അതിന്റെ മൂന്ന് ഘട്ടങ്ങളും വിശദീകരിക്കുക.</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> Formulated by <strong>Charles Horton Cooley</strong> (1902), the <strong>Looking-Glass Self</strong> posits that an individual's sense of self is a social product reflected back from others. Its three steps are: (1) We imagine how we appear to others; (2) We imagine the judgment that other people make of our appearance; and (3) We develop a self-feeling (such as pride or shame) based on our interpretation of those imagined evaluations.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> 1902-ൽ <strong>സി.എച്ച്. കൂലി</strong> അവതരിപ്പിച്ച സിദ്ധാന്തമാണിത്. സമൂഹം ഒരു കണ്ണാടിയാണ്; മറ്റുള്ളവർ നമ്മെ എങ്ങനെ വിലയിരുത്തുന്നു എന്ന ഭാവനയിലാണ് നമ്മുടെ സ്വത്വബോധം വളരുന്നത്. മൂന്ന് ഘട്ടങ്ങൾ: (1) നാം മറ്റുള്ളവരുടെ മുന്നിൽ എങ്ങനെ പ്രത്യക്ഷപ്പെടുന്നു എന്ന ഭാവന; (2) മറ്റുള്ളവർ നമ്മെ എങ്ങനെ വിലയിരുത്തുന്നു എന്ന ഭാവന; (3) ഈ ചിന്തയിൽ നിന്നും ഉണ്ടാകുന്ന ആത്മവികാരം (അഭിമാനമോ അപമാനമോ).</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. Differentiate George Herbert Mead's 'I' and 'Me'. / ജി.എച്ച്. മീഡിന്റെ 'ഐ' (I), 'മീ' (Me) എന്നിവ തമ്മിലുള്ള വ്യത്യാസമെന്ത്?</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> In Mead's theory, the Self is a dialogue between two components: The <strong>'I'</strong> is the spontaneous, unpredictable, creative, and subjective self that initiates action. The <strong>'Me'</strong> is the socialized, objective self that represents internalized social expectations, rules, and the generalized other. The 'Me' provides normative guidance and restraint, while the 'I' provides individual agency and initiative.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> മീഡിന്റെ സിദ്ധാന്തത്തിൽ സ്വത്വത്തിന് രണ്ട് ഭാഗങ്ങളുണ്ട്: <strong>'ഐ' (I)</strong> എന്നത് വ്യക്തിയുടെ സർഗ്ഗാത്മകവും സ്വതസിദ്ധവുമായ വ്യക്തിഗത ഭാഗമാണ്. എന്നാൽ <strong>'മീ' (Me)</strong> എന്നത് സമൂഹത്തിന്റെ നിയമങ്ങളും വിലക്കുകളും മനസ്സിലാക്കി പെരുമാറുന്ന സാമൂഹികവൽക്കരിക്കപ്പെട്ട ഭാഗമാണ്. 'ഐ' പ്രവർത്തിക്കുമ്പോൾ 'മീ' അതിനെ നിയന്ത്രിക്കുന്നു.</div>
+</div>
+
+<h2>5. പരീക്ഷാ ബഹുവിശേഷ ചോദ്യങ്ങൾ (Chapter 3.5 Examination MCQs)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">1. Who authored 'Human Nature and the Social Order' (1902) introducing the Looking-Glass Self? / ലുക്കിംഗ് ഗ്ലാസ് സെൽഫ് അവതരിപ്പിച്ച കൃതി രചിച്ചത് ആര്?</div>
+    <div class="q-options">
+      A) George Herbert Mead / ജി.എച്ച്. മീഡ്<br>
+      B) Charles Horton Cooley / സി.എച്ച്. കൂലി<br>
+      C) Sigmund Freud / സിഗ്മണ്ട് ഫ്രോയിഡ്<br>
+      D) Jean Piaget / ജീൻ പിയാഷെ
+    </div>
+    <div class="q-ans">Answer: B) Charles Horton Cooley / സി.എച്ച്. കൂലി</div>
+    <div class="q-exp">
+      <strong>EN:</strong> C.H. Cooley coined the term Looking-Glass Self in 1902.<br>
+      <strong>ML:</strong> 1902-ൽ സി.എച്ച്. കൂലിയാണ് ഈ സിദ്ധാന്തം അവതരിപ്പിച്ചത്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. In Mead's framework, what represents the organized expectations of the wider community? / മീഡിന്റെ സിദ്ധാന്തത്തിൽ സമൂഹത്തിന്റെ പൊതു പ്രതീക്ഷകളെ വിളിക്കുന്നത്:</div>
+    <div class="q-options">
+      A) Significant Other / സിഗ്നിഫിക്കന്റ് അദർ<br>
+      B) Generalized Other / ജനറലൈസ്ഡ് അദർ<br>
+      C) Superego / സൂപ്പർ ഈഗോ<br>
+      D) Looking-Glass / ലുക്കിംഗ് ഗ്ലാസ്
+    </div>
+    <div class="q-ans">Answer: B) Generalized Other / ജനറലൈസ്ഡ് അദർ</div>
+    <div class="q-exp">
+      <strong>EN:</strong> The Generalized Other is the internalized collective expectations of society.<br>
+      <strong>ML:</strong> സമൂഹത്തിന്റെ പൊതുവായ നിയമങ്ങളെ മീഡ് 'ജനറലൈസ്ഡ് അദർ' എന്ന് വിളിച്ചു.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. Which component of Mead's self represents spontaneity and individual agency? / മീഡിന്റെ സിദ്ധാന്തത്തിൽ സ്വതസിദ്ധമായ വ്യക്തിഗത ഭാഗം ഏതാണ്?</div>
+    <div class="q-options">
+      A) The 'Me' / 'മീ'<br>
+      B) The 'I' / 'ഐ'<br>
+      C) The Id / ഇഡ്<br>
+      D) The Superego / സൂപ്പർ ഈഗോ
+    </div>
+    <div class="q-ans">Answer: B) The 'I' / 'ഐ'</div>
+    <div class="q-exp">
+      <strong>EN:</strong> The 'I' is the spontaneous and creative subjective component.<br>
+      <strong>ML:</strong> 'ഐ' എന്നത് വ്യക്തിയുടെ സ്വതസിദ്ധമായ പ്രതികരണമാണ്.
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. സോഷ്യോളജി പഠന സഹായി · Introduction to Sociology (SOC1CJ101)</span>
+    <span>സമ്പൂർണ്ണ മലയാള പരിഭാഷ, ചോദ്യോത്തരങ്ങൾ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

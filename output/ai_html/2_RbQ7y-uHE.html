@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@700;800;900&family=Gayathri:wght@700;900&family=Manjari:wght@700;900&family=Noto+Sans+Malayalam:wght@700;900&family=Orbitron:wght@800;900&family=Outfit:wght@700;900&family=Space+Grotesk:wght@700&family=Syne:wght@800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #14100D 0%, #291F18 50%, #3D2D22 100%);
+      font-family: 'Gayathri', 'Cinzel', serif;
+      color: #FFFFFF;
+      position: relative;
+    }
+    
+    /* Background subtle grid */
+    .grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* Top Left Channel Banner Pill */
+    .top-bar {
+      position: absolute;
+      top: 36px;
+      left: 56px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 10;
+    }
+    .channel-tag {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1.5px solid #E0A96D;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(8px);
+    }
+    .channel-tag .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #E0A96D;
+      box-shadow: 0 0 10px #E0A96D;
+    }
+    .syllabus-badge {
+      background: rgba(41, 31, 24, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #00E5FF;
+      letter-spacing: 0.5px;
+    }
+
+    /* Main Left Content Panel */
+    .content-panel {
+      position: absolute;
+      top: 110px;
+      left: 56px;
+      width: 660px;
+      z-index: 10;
+    }
+    .module-badge {
+      display: inline-block;
+      font-family: 'Orbitron', 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 2.5px;
+      color: #00E5FF;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      text-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+    .title-malayalam {
+      font-size: 58px;
+      font-weight: 900;
+      line-height: 1.14;
+      color: #FFFFFF;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0,0,0,0.6);
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .title-english {
+      font-family: 'Outfit', 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #E0A96D;
+      line-height: 1.25;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+      margin-bottom: 26px;
+      border-left: 4px solid #00E5FF;
+      padding-left: 14px;
+    }
+    .features-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .feature-pill {
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #E2E8F0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .feature-pill span {
+      color: #E0A96D;
+    }
+
+    /* Right Artwork Container */
+    .art-container {
+      position: absolute;
+      top: 50px;
+      right: 30px;
+      width: 580px;
+      height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    /* Bottom Status Bar */
+    .bottom-bar {
+      position: absolute;
+      bottom: 26px;
+      left: 56px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      color: #94A3B8;
+      z-index: 10;
+    }
+    .bottom-bar .hub-url {
+      color: #FFFFFF;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+    }
+    .bottom-bar .sep {
+      color: rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+
+  <div class="top-bar">
+    <div class="channel-tag">
+      <div class="dot"></div>
+      ACADEMIC HUB
+    </div>
+    <div class="syllabus-badge">CALICUT UNIVERSITY FYUGP</div>
+    <div class="syllabus-badge" style="color: #E0A96D;">CLASSICAL EPISTEMOLOGY</div>
+  </div>
+
+  <div class="content-panel">
+    <div class="module-badge">MODULE 03 · CHAPTER 3</div>
+    <h1 class="title-malayalam">പ്ലാറ്റോയുടെ JTB-യും<br>എഐ വിജ്ഞാനവും</h1>
+    <div class="title-english">Justified True Belief & Machine Truth</div>
+    <div class="features-row">
+      <div class="feature-pill"><span>✓</span> സിലബസ് വിശകലനം</div>
+      <div class="feature-pill"><span>✓</span> സമഗ്ര മാസ്റ്റർക്ലാസ്</div>
+      <div class="feature-pill"><span>✓</span> പരീക്ഷാ ടിപ്പുകൾ</div>
+    </div>
+  </div>
+
+  <div class="art-container">
+    
+        <svg viewBox="0 0 600 600" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="platoGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#E0A96D" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="300" cy="300" r="260" fill="url(#platoGlow)"/>
+
+          <!-- Plato's Tripartite Venn Diagram of Justified True Belief -->
+          <!-- Circle 1: Belief -->
+          <circle cx="230" cy="260" r="120" fill="rgba(224, 169, 109, 0.25)" stroke="#E0A96D" stroke-width="4"/>
+          <!-- Circle 2: Truth -->
+          <circle cx="370" cy="260" r="120" fill="rgba(0, 229, 255, 0.25)" stroke="#00E5FF" stroke-width="4"/>
+          <!-- Circle 3: Justification -->
+          <circle cx="300" cy="360" r="120" fill="rgba(255, 255, 255, 0.2)" stroke="#FFFFFF" stroke-width="4"/>
+
+          <!-- Intersection: KNOWLEDGE (JTB) -->
+          <circle cx="300" cy="295" r="35" fill="#00E5FF" opacity="0.8"/>
+          <text x="300" y="302" fill="#000000" font-family="'Orbitron', sans-serif" font-size="14" font-weight="900" text-anchor="middle">JTB</text>
+
+          <!-- Labels -->
+          <text x="180" y="200" fill="#E0A96D" font-family="'Cinzel', serif" font-size="18" font-weight="bold" text-anchor="middle">BELIEF</text>
+          <text x="420" y="200" fill="#00E5FF" font-family="'Cinzel', serif" font-size="18" font-weight="bold" text-anchor="middle">TRUTH</text>
+          <text x="300" y="515" fill="#FFFFFF" font-family="'Cinzel', serif" font-size="18" font-weight="bold" text-anchor="middle">JUSTIFICATION</text>
+
+          <!-- Greek Column Pedestal Accent -->
+          <line x1="160" y1="540" x2="440" y2="540" stroke="#E0A96D" stroke-width="6"/>
+          <line x1="190" y1="555" x2="410" y2="555" stroke="#E0A96D" stroke-width="4"/>
+        </svg>
+        
+  </div>
+
+  <div class="bottom-bar">
+    <span class="hub-url">🌐 academichubfaiz.in</span>
+    <span class="sep">|</span>
+    <span>PHILOSOPHY OF ARTIFICIAL INTELLIGENCE</span>
+    <span class="sep">|</span>
+    <span>100% FREE STUDY PORTAL</span>
+  </div>
+</body>
+</html>

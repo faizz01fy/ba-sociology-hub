@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva Bulk Create Automation Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #090d16;
+            --surface: #111827;
+            --surface-card: #1f2937;
+            --border: #374151;
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --canva-gradient: linear-gradient(135deg, #00c4cc 0%, #7d2ae8 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Bar */
+        header {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-badge {
+            background: var(--canva-gradient);
+            color: white;
+            font-weight: 800;
+            font-size: 13px;
+            padding: 6px 12px;
+            border-radius: 9999px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .brand h1 {
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-canva {
+            background: var(--canva-gradient);
+            color: white;
+            box-shadow: 0 4px 14px rgba(125, 42, 232, 0.3);
+        }
+
+        .btn-canva:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background: var(--surface-card);
+        }
+
+        /* Layout */
+        .workspace {
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            flex: 1;
+            overflow: hidden;
+            height: calc(100vh - 72px);
+        }
+
+        /* Left Sidebar: Controls & Guide */
+        .sidebar {
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            padding: 24px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .panel-box {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .panel-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        select, input[type="text"], input[type="number"] {
+            width: 100%;
+            background: #0f172a;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: white;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        select:focus, input:focus {
+            border-color: var(--primary);
+        }
+
+        /* Connect Data Cheatsheet */
+        .tag-pill {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            color: #a5b4fc;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin: 3px 2px;
+        }
+
+        /* Right Area: Mockup Canvas */
+        .preview-area {
+            background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #090d16 100%);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .counter-badge {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Phone / Reel 9:16 Mockup Frame */
+        .phone-frame {
+            width: 360px;
+            height: 640px;
+            background: #000000;
+            border-radius: 40px;
+            border: 8px solid #2d3748;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(99, 102, 241, 0.2);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px 24px 30px 24px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mock-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%);
+            z-index: 1;
+        }
+
+        .mock-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .mock-top {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mock-category {
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .data-mapping-badge {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            background: #e11d48;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-bottom: 4px;
+        }
+
+        .mock-hook {
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1.25;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+
+        .mock-mid {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .mock-buildup {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .mock-payoff {
+            font-size: 16px;
+            font-weight: 700;
+            color: #34d399;
+            line-height: 1.4;
+            border-top: 1px dashed rgba(255, 255, 255, 0.15);
+            padding-top: 10px;
+        }
+
+        .mock-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .mock-cta {
+            background: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .mock-hashtags {
+            font-size: 11px;
+            color: #94a3b8;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Steps walkthrough */
+        .step-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            background: var(--primary);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-text {
+            font-size: 13px;
+            line-height: 1.45;
+            color: #cbd5e1;
+        }
+
+        .step-text strong {
+            color: white;
+        }
+    </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="brand">
+            <span class="brand-badge">Canva Pro / Free</span>
+            <h1>Bulk Create Automation Studio</h1>
+        </div>
+        <div class="header-actions">
+            <button class="btn btn-outline" id="loadCsvBtn">📂 Load CSV</button>
+            <button class="btn btn-primary" id="downloadCsvBtn">💾 Download Canva CSV</button>
+            <a href="https://www.canva.com/templates/" target="_blank" class="btn btn-canva">🎨 Open Canva</a>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <div class="workspace">
+        
+        <!-- Sidebar Controls -->
+        <div class="sidebar">
+            
+            <!-- Template Configuration -->
+            <div class="panel-box">
+                <div class="panel-title">
+                    <span>⚙️ Format & Topic</span>
+                    <span id="formatBadge" style="font-size: 11px; color: var(--accent);">VIRAL REELS</span>
+                </div>
+                
+                <div class="form-group">
+                    <label>Select Automation Format</label>
+                    <select id="templateSelect">
+                        <option value="viral_reels">Viral Short / Reel (3-Part Hook-Buildup-Payoff)</option>
+                        <option value="quiz_trivia">Quiz & Trivia Challenge (Q & 4 Options)</option>
+                        <option value="myth_vs_fact">Myth vs Fact / Truth Debunker</option>
+                        <option value="quotes_wisdom">Deep Quotes & Stoic Wisdom</option>
+                        <option value="academic_flashcards">Academic Flashcards & Exam Prep</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Card Topic / Category</label>
+                    <input type="text" id="topicInput" value="Neuroscience & High Performance">
+                </div>
+
+                <button class="btn btn-primary" style="width: 100%; justify-content: center;" id="generateBtn">
+                    ⚡ Generate 5 Cards
+                </button>
+            </div>
+
+            <!-- Canva Connect Data Mapping Cheatsheet -->
+            <div class="panel-box">
+                <div class="panel-title">
+                    <span>🏷️ Canva Data Tags</span>
+                    <span style="font-size: 11px; color: var(--text-muted);">In Your CSV</span>
+                </div>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+                    In Canva, right click any text or button element ➔ select <strong>Connect Data</strong> ➔ pick:
+                </p>
+                <div id="tagsList">
+                    <!-- Dynamic tag pills -->
+                </div>
+            </div>
+
+            <!-- Canva Bulk Create 4-Step Guide -->
+            <div class="panel-box">
+                <div class="panel-title">
+                    <span>🚀 4-Step Canva Workflow</span>
+                </div>
+
+                <div class="step-row">
+                    <div class="step-num">1</div>
+                    <div class="step-text"><strong>Choose Template:</strong> Open any 1080x1920 Reel or 1080x1080 Post in Canva.</div>
+                </div>
+
+                <div class="step-row">
+                    <div class="step-num">2</div>
+                    <div class="step-text"><strong>Open Bulk Create:</strong> In the left sidebar, click <strong>Apps</strong> ➔ Search <strong>"Bulk Create"</strong>.</div>
+                </div>
+
+                <div class="step-row">
+                    <div class="step-num">3</div>
+                    <div class="step-text"><strong>Upload CSV:</strong> Click <strong>"Upload data"</strong> and select your downloaded CSV file.</div>
+                </div>
+
+                <div class="step-row">
+                    <div class="step-num">4</div>
+                    <div class="step-text"><strong>Connect & Generate:</strong> Right-click each box ➔ <strong>Connect Data</strong> ➔ Click <strong>"Generate pages"</strong>!</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Preview Live Canvas -->
+        <div class="preview-area">
+            
+            <div class="nav-controls">
+                <button class="btn btn-outline" id="prevCardBtn">◀ Prev</button>
+                <div class="counter-badge" id="cardCounter">Card 1 of 5</div>
+                <button class="btn btn-outline" id="nextCardBtn">Next ▶</button>
+            </div>
+
+            <!-- Mobile Phone Frame (9:16 Vertical Video / Story / Reel) -->
+            <div class="phone-frame" id="mockPhone" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=720&q=80');">
+                <div class="mock-overlay"></div>
+                
+                <div class="mock-content">
+                    <div class="mock-top">
+                        <span class="data-mapping-badge">{{Topic}}</span>
+                        <div class="mock-category" id="prevCategory">NEUROSCIENCE</div>
+                        <span class="data-mapping-badge">{{Part_1_Hook}}</span>
+                        <div class="mock-hook" id="prevHook">Your Brain Erases Memories While You Sleep Unless You Do This.</div>
+                    </div>
+
+                    <div class="mock-mid">
+                        <span class="data-mapping-badge">{{Part_2_Buildup}}</span>
+                        <div class="mock-buildup" id="prevBuildup">The brain flushes metabolic toxins and prunes weak neural pathways during slow-wave delta sleep.</div>
+                        <span class="data-mapping-badge">{{Part_3_Payoff}}</span>
+                        <div class="mock-payoff" id="prevPayoff">💡 Review your hardest concept for 2 minutes right before bed to tag it for synaptic consolidation.</div>
+                    </div>
+
+                    <div class="mock-bottom">
+                        <span class="data-mapping-badge">{{Call_To_Action}}</span>
+                        <div class="mock-cta" id="prevCta">SAVE FOR TONIGHT'S STUDY</div>
+                        <span class="data-mapping-badge">{{Hashtags}}</span>
+                        <div class="mock-hashtags" id="prevHashtags">#Neuroscience #MemoryHacks #FocusTips</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Hidden File Input for CSV -->
+    <input type="file" id="csvFileInput" accept=".csv" style="display: none;">
+
+    <script>
+        // Preset Data
+        const SAMPLE_DATASETS = {
+            viral_reels: [
+                {
+                    Topic: "Focus & Discipline",
+                    Part_1_Hook: "The 5-Second Rule That Kills Procrastination",
+                    Part_2_Buildup: "Your brain takes exactly 5 seconds to generate self-doubt and hesitation excuses.",
+                    Part_3_Payoff: "Count backwards: 5-4-3-2-1 and take physical action before resistance fires.",
+                    Call_To_Action: "Try this today & save this Reel!",
+                    Hashtags: "#ProductivityHacks #BrainScience #Discipline"
+                },
+                {
+                    Topic: "Learning Science",
+                    Part_1_Hook: "Why Highlighting Your Notes Is Ruining Your Exam Scores",
+                    Part_2_Buildup: "Rereading text creates 'false fluency'—you recognize words without owning the concepts.",
+                    Part_3_Payoff: "Close the book and force active recall. Effortful retrieval triggers 3x higher retention.",
+                    Call_To_Action: "Tag a study partner below! 📚",
+                    Hashtags: "#StudySmart #ActiveRecall #ExamPrep"
+                },
+                {
+                    Topic: "Cognitive Energy",
+                    Part_1_Hook: "One Phone Check Costs You 23 Minutes of IQ",
+                    Part_2_Buildup: "Cognitive scientists discovered 'attention residue' sticks to your brain after every notification.",
+                    Part_3_Payoff: "Work in 45-minute airplane-mode sprints to protect your prefrontal cortex.",
+                    Call_To_Action: "Follow for daily focus routines! ⚡",
+                    Hashtags: "#DeepWork #FocusNow #DailyHabits"
+                },
+                {
+                    Topic: "Stoic Philosophy",
+                    Part_1_Hook: "Seneca's 2,000-Year-Old Antidote for Overthinking",
+                    Part_2_Buildup: "We suffer vastly more in our anxious imagination than in actual physical reality.",
+                    Part_3_Payoff: "Ask yourself: Is this catastrophe happening right now, or only in my head?",
+                    Call_To_Action: "Save this reminder for tough days.",
+                    Hashtags: "#Stoicism #MentalHealth #PeaceOfMind"
+                },
+                {
+                    Topic: "Compound Growth",
+                    Part_1_Hook: "1% Better Every Day Isn't 3.65x Better",
+                    Part_2_Buildup: "Most people do simple addition when calculating personal skill progression.",
+                    Part_3_Payoff: "Compounded daily: 1.01 to the power of 365 = 37.78 times better in one year.",
+                    Call_To_Action: "Drop a 🔥 if you're executing today!",
+                    Hashtags: "#CompoundEffect #AtomicHabits #Growth"
+                }
+            ],
+            quiz_trivia: [
+                {
+                    Question_Number: "Q1",
+                    Category: "AI & Philosophy",
+                    Question: "Who proposed the 'Chinese Room' argument against strong artificial intelligence?",
+                    Option_A: "A) Alan Turing",
+                    Option_B: "B) John Searle",
+                    Option_C: "C) Nick Bostrom",
+                    Option_D: "D) Marvin Minsky",
+                    Correct_Answer: "B) John Searle",
+                    Explanation: "John Searle in 1980 showed that syntax manipulation does not equate to genuine semantic understanding."
+                },
+                {
+                    Question_Number: "Q2",
+                    Category: "Neuroscience",
+                    Question: "Which brain structure is primary in consolidating short-term memory into long-term storage?",
+                    Option_A: "A) Cerebellum",
+                    Option_B: "B) Hippocampus",
+                    Option_C: "C) Amygdala",
+                    Option_D: "D) Thalamus",
+                    Correct_Answer: "B) Hippocampus",
+                    Explanation: "The hippocampus is located in the temporal lobe and plays the central role in memory consolidation."
+                }
+            ],
+            myth_vs_fact: [
+                {
+                    Topic: "Human Brain",
+                    Common_Myth: "Myth: Humans only use 10% of their brain capacity.",
+                    The_Truth: "Fact: Modern brain imaging proves you use nearly 100% of your brain throughout each day.",
+                    Scientific_Reason: "Evolutionary biology confirms unused biological tissue atrophies and vanishes.",
+                    Key_Takeaway: "You already have full brain power—train how effectively you direct your focus!"
+                }
+            ],
+            quotes_wisdom: [
+                {
+                    Category: "Stoicism",
+                    Quote: "You have power over your mind - not outside events. Realize this, and you will find strength.",
+                    Author: "Marcus Aurelius (Meditations)",
+                    Context_or_Era: "Roman Emperor & Stoic Philosopher",
+                    Modern_Application: "Stop stressing over external algorithms or market swings; control your own daily output."
+                }
+            ],
+            academic_flashcards: [
+                {
+                    Card_ID: "#01",
+                    Subject: "Sociology",
+                    Concept_Name: "Sociological Imagination",
+                    Simple_Definition: "The awareness of the relationship between personal experience and wider society.",
+                    Real_World_Example: "Seeing rising student debt not just as personal fault, but as systemic macroeconomic change.",
+                    Exam_Memory_Trick: "C. Wright Mills: Bridge Biography with History."
+                }
+            ]
+        };
+
+        let currentDataset = SAMPLE_DATASETS.viral_reels;
+        let currentIndex = 0;
+
+        const templateSelect = document.getElementById('templateSelect');
+        const prevCategory = document.getElementById('prevCategory');
+        const prevHook = document.getElementById('prevHook');
+        const prevBuildup = document.getElementById('prevBuildup');
+        const prevPayoff = document.getElementById('prevPayoff');
+        const prevCta = document.getElementById('prevCta');
+        const prevHashtags = document.getElementById('prevHashtags');
+        const cardCounter = document.getElementById('cardCounter');
+        const tagsList = document.getElementById('tagsList');
+        const formatBadge = document.getElementById('formatBadge');
+
+        function updateTags() {
+            tagsList.innerHTML = '';
+            if (currentDataset.length === 0) return;
+            const keys = Object.keys(currentDataset[0]);
+            keys.forEach(k => {
+                const pill = document.createElement('span');
+                pill.className = 'tag-pill';
+                pill.textContent = `{{${k}}}`;
+                tagsList.appendChild(pill);
+            });
+        }
+
+        function renderCard(idx) {
+            if (currentDataset.length === 0) return;
+            if (idx < 0) idx = 0;
+            if (idx >= currentDataset.length) idx = currentDataset.length - 1;
+            currentIndex = idx;
+
+            const item = currentDataset[currentIndex];
+            cardCounter.textContent = `Card ${currentIndex + 1} of ${currentDataset.length}`;
+
+            // Adapt view to columns
+            if (item.Topic || item.Category || item.Subject) {
+                prevCategory.textContent = item.Topic || item.Category || item.Subject;
+            }
+            if (item.Part_1_Hook || item.Question || item.Common_Myth || item.Quote || item.Concept_Name) {
+                prevHook.textContent = item.Part_1_Hook || item.Question || item.Common_Myth || `"${item.Quote}"` || item.Concept_Name;
+            }
+            if (item.Part_2_Buildup || item.Option_A || item.The_Truth || item.Author || item.Simple_Definition) {
+                let buildupText = item.Part_2_Buildup;
+                if (item.Option_A) {
+                    buildupText = `${item.Option_A} | ${item.Option_B}\n${item.Option_C} | ${item.Option_D}`;
+                } else if (item.The_Truth) {
+                    buildupText = item.The_Truth;
+                } else if (item.Author) {
+                    buildupText = `— ${item.Author} (${item.Context_or_Era || ''})`;
+                } else if (item.Simple_Definition) {
+                    buildupText = item.Simple_Definition;
+                }
+                prevBuildup.textContent = buildupText;
+            }
+            if (item.Part_3_Payoff || item.Correct_Answer || item.Scientific_Reason || item.Modern_Application || item.Real_World_Example) {
+                prevPayoff.textContent = item.Part_3_Payoff || `Correct: ${item.Correct_Answer} (${item.Explanation || ''})` || item.Scientific_Reason || item.Modern_Application || item.Real_World_Example;
+            }
+            if (item.Call_To_Action || item.Key_Takeaway || item.Exam_Memory_Trick) {
+                prevCta.textContent = item.Call_To_Action || item.Key_Takeaway || item.Exam_Memory_Trick;
+            }
+            if (item.Hashtags) {
+                prevHashtags.textContent = item.Hashtags;
+            } else {
+                prevHashtags.textContent = "#CanvaBulkCreate #Automation";
+            }
+        }
+
+        templateSelect.addEventListener('change', (e) => {
+            const key = e.target.value;
+            currentDataset = SAMPLE_DATASETS[key] || SAMPLE_DATASETS.viral_reels;
+            formatBadge.textContent = key.replace('_', ' ').toUpperCase();
+            currentIndex = 0;
+            updateTags();
+            renderCard(0);
+        });
+
+        document.getElementById('prevCardBtn').addEventListener('click', () => {
+            if (currentIndex > 0) renderCard(currentIndex - 1);
+        });
+
+        document.getElementById('nextCardBtn').addEventListener('click', () => {
+            if (currentIndex < currentDataset.length - 1) renderCard(currentIndex + 1);
+        });
+
+        // Download CSV directly in browser
+        document.getElementById('downloadCsvBtn').addEventListener('click', () => {
+            if (currentDataset.length === 0) return alert('No data to export.');
+            
+            const keys = Object.keys(currentDataset[0]);
+            let csvContent = '\uFEFF'; // UTF-8 BOM
+            csvContent += keys.map(k => `"${k.replace(/"/g, '""')}"`).join(',') + '\r\n';
+
+            currentDataset.forEach(row => {
+                const line = keys.map(k => {
+                    const val = (row[k] || '').toString().replace(/\r?\n/g, ' ').replace(/"/g, '""');
+                    return `"${val}"`;
+                }).join(',');
+                csvContent += line + '\r\n';
+            });
+
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `canva_bulk_create_${templateSelect.value}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        // Load custom CSV file
+        document.getElementById('loadCsvBtn').addEventListener('click', () => {
+            document.getElementById('csvFileInput').click();
+        });
+
+        document.getElementById('csvFileInput').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (evt) => {
+                const text = evt.target.result;
+                const lines = text.split(/\r?\n/).filter(l => l.trim().length > 0);
+                if (lines.length < 2) return alert('CSV must have header row and data rows.');
+
+                // Simple CSV parse
+                const parseCSVLine = (line) => {
+                    const row = [];
+                    let insideQuote = false;
+                    let currentStr = '';
+                    for (let char of line) {
+                        if (char === '"') insideQuote = !insideQuote;
+                        else if (char === ',' && !insideQuote) {
+                            row.push(currentStr.trim());
+                            currentStr = '';
+                        } else {
+                            currentStr += char;
+                        }
+                    }
+                    row.push(currentStr.trim());
+                    return row;
+                };
+
+                const headers = parseCSVLine(lines[0]).map(h => h.replace(/^"|"$/g, ''));
+                const customData = [];
+                for (let i = 1; i < lines.length; i++) {
+                    const values = parseCSVLine(lines[i]).map(v => v.replace(/^"|"$/g, ''));
+                    const obj = {};
+                    headers.forEach((h, idx) => {
+                        obj[h] = values[idx] || '';
+                    });
+                    customData.push(obj);
+                }
+
+                if (customData.length > 0) {
+                    currentDataset = customData;
+                    formatBadge.textContent = "CUSTOM CSV IMPORT";
+                    currentIndex = 0;
+                    updateTags();
+                    renderCard(0);
+                    alert(`Loaded ${customData.length} cards from ${file.name}!`);
+                }
+            };
+            reader.readAsText(file);
+        });
+
+        // Initialize view
+        updateTags();
+        renderCard(0);
+    </script>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

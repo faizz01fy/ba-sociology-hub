@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 3: ഇന്ത്യയിലെ സാമ്പത്തിക അസമത്വം: അളവുകോലുകൾ, രൂപങ്ങൾ, പരിഹാരങ്ങൾ</title>
+  <style>
+    :root {
+      --c1: #065f46;
+      --c2: #059669;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 16mm 14mm 16mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #065f46), var(--c2, #059669));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a7f3d0;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #d1fae5;
+}
+
+.badge {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #065f46;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #a7f3d0;
+}
+
+h2 {
+  color: var(--c1, #065f46);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 26px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #0f766e;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #f8fafc;
+  border-left: 4px solid var(--c2, #059669);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-rose {
+  background: #fff1f2;
+  border-left: 4px solid #e11d48;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f1f5f9;
+  border-left: 4px solid #475569;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #047857;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #ecfdf5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.qa-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 8px;
+  font-size: 11pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 10pt;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 10pt;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #059669;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 3: അസമത്വം (Module 3: Inequality)</h4>
+    <h1>മൊഡ്യൂൾ 3: ഇന്ത്യയിലെ സാമ്പത്തിക അസമത്വം: അളവുകോലുകൾ, രൂപങ്ങൾ, പരിഹാരങ്ങൾ</h1>
+    <div class="meta">Module 3: Inequality in India — Metrics, Dimensions & Policy Interventions · Calicut University B.A. Economics / Sociology · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="card">
+  <ul>
+    <li><strong>സാമ്പത്തിക അസമത്വത്തിന്റെ അളവുകോലുകൾ (Measurement Tools):</strong> ലോറൻസ് വക്രരേഖ (Lorenz Curve), ജിനി ഗുണകം (Gini Coefficient), കുസ്നെറ്റ്സ് വക്രരേഖ എന്നിവ മനസ്സിലാക്കുക.</li>
+    <li><strong>വരുമാന അസമത്വവും സമ്പത്ത് അസമത്വവും (Income vs. Wealth Inequality):</strong> ഒഴുക്കും (Flow) ശേഖരവും (Stock) തമ്മിലുള്ള അന്തരം തിരിച്ചറിയുക.</li>
+    <li><strong>ഇന്ത്യയിലെ അസമത്വത്തിന്റെ രൂപങ്ങൾ (Dimensions of Inequality in India):</strong> വ്യക്തിഗത അസമത്വം, ജാതി-സാമൂഹിക അസമത്വം, ലിംഗ അസമത്വം, ഗ്രാമീണ-നഗര അന്തരം, മേഖലാ അസമത്വങ്ങൾ എന്നിവ വിശകലനം ചെയ്യുക.</li>
+    <li><strong>അസമത്വം ലഘൂകരിക്കാനുള്ള നയപരമായ മാർഗ്ഗങ്ങൾ (Policy Interventions):</strong> പുരോഗമന നികുതി സമ്പ്രദായം (Progressive Taxation), ഭൂനിയമ പരിഷ്കാരങ്ങൾ, സാർവ്വത്രിക പൊതുവിദ്യാഭ്യാസ-ആരോഗ്യ നിക്ഷേപം എന്നിവ വിലയിരുത്തുക.</li>
+  </ul>
+</div>
+
+<h2>2. സൈദ്ധാന്തിക അടിത്തറ (Theoretical Framework)</h2>
+<p>
+ഒരു സമൂഹത്തിൽ ഉത്പാദിപ്പിക്കപ്പെടുന്ന സമ്പത്തും വരുമാനവും ജനങ്ങൾക്കിടയിൽ എത്രത്തോളം തുല്യമായോ അസമമായോ വിതരണം ചെയ്യപ്പെടുന്നു എന്നതിന്റെ വിശകലനമാണ് സാമ്പത്തിക അസമത്വം. ജി.ഡി.പി കുതിച്ചുയരുമ്പോഴും ഭൂരിപക്ഷം ജനങ്ങളിലേക്ക് അതിന്റെ നേട്ടങ്ങൾ എത്താതിരിക്കുന്നത് സാമൂഹിക സംഘർഷങ്ങൾക്കും സുസ്ഥിര വികസന മുരടിപ്പിനും കാരണമാകുന്നു.
+</p>
+
+<h2>3. സമഗ്ര പാഠഭാഗ പരിഭാഷയും ആശയ വിശകലനവും (Detailed Text Analysis)</h2>
+
+<h3 class="sub-head">(i) അസമത്വം അളക്കുന്ന സാങ്കേതിക ഉപകരണങ്ങൾ (Tools for Measuring Inequality)</h3>
+<div class="card-teal">
+  <h4>1. ലോറൻസ് വക്രരേഖ (Lorenz Curve, 1905)</h4>
+  <p>മാക്സ് ഒ. ലോറൻസ് വികസിപ്പിച്ച ഈ ഗ്രാഫിക്കൽ രേഖയിൽ X-അക്ഷത്തിൽ ജനസംഖ്യയുടെ സഞ്ചിത ശതമാനവും (Cumulative % of Population), Y-അക്ഷത്തിൽ അവർ കൈവശം വെക്കുന്ന വരുമാനത്തിന്റെ സഞ്ചിത ശതമാനവും (Cumulative % of Income) അടയാളപ്പെടുത്തുന്നു. 45 ഡിഗ്രി ചരിവുള്ള രേഖയെ 'സമ്പൂർണ്ണ സമത്വ രേഖ' (Line of Absolute Equality) എന്ന് വിളിക്കുന്നു. ലോറൻസ് വക്രരേഖ സമത്വ രേഖയിൽ നിന്ന് എത്രത്തോളം അകന്നുപോകുന്നുവോ, അത്രത്തോളം അസമത്വം കൂടുതലാണെന്ന് വ്യക്തമാകുന്നു.</p>
+</div>
+
+<div class="card-amber">
+  <h4>2. ജിനി ഗുണകം (Gini Coefficient, 1912)</h4>
+  <p>ഇറ്റാലിയൻ സ്റ്റാറ്റിസ്റ്റീഷ്യനായ കൊറാഡോ ജിനി ലോറൻസ് വക്രരേഖയെ അടിസ്ഥാനമാക്കി തയ്യാറാക്കിയ ഗണിത സൂചികയാണിത്.</p>
+  <ul>
+    <li><strong>സമവാക്യം:</strong> സമ്പൂർണ്ണ സമത്വ രേഖയ്ക്കും ലോറൻസ് വക്രരേഖയ്ക്കും ഇടയിലുള്ള വിസ്തീർണ്ണത്തെ സമത്വ രേഖയ്ക്ക് താഴെയുള്ള മൊത്തം വിസ്തീർണ്ണം കൊണ്ട് ഹരിക്കുക (G = Area A / (Area A + Area B)).</li>
+    <li><strong>സ്കെയിൽ:</strong> <strong>0 മുതൽ 1 വരെ</strong>. 0 എന്നാൽ സമ്പൂർണ്ണ സമത്വം (എല്ലാവർക്കും ഒരേ വരുമാനം); 1 എന്നാൽ സമ്പൂർണ്ണ അസമത്വം (രാജ്യത്തെ മുഴുവൻ വരുമാനവും ഒരാളുടെ കൈയിൽ).</li>
+  </ul>
+</div>
+
+<div class="card-blue">
+  <h4>3. കുസ്നെറ്റ്സ് അനുമാനം (Kuznets Hypothesis)</h4>
+  <p>നോബൽ സമ്മാന ജേതാവായ സൈമൺ കുസ്നെറ്റ്സ് മുന്നോട്ടുവെച്ച ഈ സിദ്ധാന്തപ്രകാരം, ഒരു പരമ്പരാഗത കാർഷിക സമ്പദ്‌വ്യവസ്ഥ വ്യാവസായികവൽക്കരണത്തിന്റെ ആദ്യ ഘട്ടങ്ങളിലേക്ക് കടക്കുമ്പോൾ വരുമാന അസമത്വം കുത്തനെ ഉയരുന്നു; എന്നാൽ രാജ്യം വികസനത്തിന്റെ ഉയർന്ന തലത്തിലെത്തുമ്പോൾ അസമത്വം തനിയെ കുറയുന്നു (Inverted-U shaped curve). എന്നാൽ ഇന്ത്യയിൽ ഉദാരവൽക്കരണത്തിന് ശേഷം വർഷങ്ങളായി കുതിച്ചുയരുന്ന വളർച്ചയിലും അസമത്വം കുറയാത്തത് കുസ്നെറ്റ്സ് സിദ്ധാന്തത്തിന്റെ പരിമിതിയായി ചൂണ്ടിക്കാണിക്കപ്പെടുന്നു.</p>
+</div>
+
+<h3 class="sub-head">(ii) ഇന്ത്യയിലെ അസമത്വത്തിന്റെ പ്രധാന തലങ്ങൾ (Dimensions of Inequality)</h3>
+<ul>
+  <li><strong>സമ്പത്തിന്റെ കൊടും കേന്ദ്രീകരണം:</strong> വേൾഡ് ഇനീക്വാലിറ്റി ലാബ് (World Inequality Lab 2024) റിപ്പോർട്ട് പ്രകാരം, ഇന്ത്യയിലെ ഏറ്റവും മുകളിലുള്ള 1% ശതകോടീശ്വരന്മാർ രാജ്യത്തിന്റെ മൊത്തം ദേശീയ സമ്പത്തിന്റെ <strong>40.1%</strong> കൈവശം വെക്കുന്നു; ഇത് ബ്രിട്ടീഷ് കൊളോണിയൽ കാലഘട്ടത്തേക്കാൾ ഭയാനകമായ നിലയിലാണ്.</li>
+  <li><strong>സാമൂഹിക-ജാതി അസമത്വം:</strong> പട്ടികജാതി (SC), പട്ടികവർഗ്ഗ (ST) വിഭാഗങ്ങൾ ഇന്നും ഭൂവുടമസ്ഥതയിലും ഔപചാരിക തൊഴിലുകളിലും ഗണ്യമായി പിന്നോക്കമാണ്.</li>
+  <li><strong>ലിംഗ അസമത്വം (Gender Disparity):</strong> സ്ത്രീകളുടെ തൊഴിൽ പങ്കാളിത്ത നിരക്ക് (FLFPR) പുരുഷന്മാരേക്കാൾ വളരെ കുറവാണ്; തുല്യ ജോലികൾക്ക് പോലും സ്ത്രീകൾക്ക് പുരുഷന്മാരേക്കാൾ കുറഞ്ഞ കൂലി ലഭിക്കുന്ന അവസ്ഥ തുടരുന്നു.</li>
+  <li><strong>ഗ്രാമ-നഗര അന്തരം (Rural-Urban Divide):</strong> നഗരങ്ങളിലെ പ്രതിശീർഷ ഉപഭോഗ ചെലവ് ഗ്രാമീണ മേഖലയേക്കാൾ ഇരട്ടിയിലധികമാണ്.</li>
+</ul>
+
+<h3 class="sub-head">(iii) അസമത്വത്തിനുള്ള കാരണങ്ങളും നയപരമായ പരിഹാരങ്ങളും</h3>
+<table>
+  <thead>
+    <tr>
+      <th>കാരണങ്ങൾ (Root Causes)</th>
+      <th>പരിഹാര മാർഗ്ഗങ്ങൾ (Policy Solutions)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>മൂലധന കേന്ദ്രീകൃത വളർച്ചയും തൊഴിൽരഹിത വളർച്ചയും.</td>
+      <td>തൊഴിൽസാധ്യത കൂടിയ ചെറുകിട-ഇടത്തരം സംരംഭങ്ങൾക്ക് (MSME) പ്രോത്സാഹനം.</td>
+    </tr>
+    <tr>
+      <td>പരോക്ഷ നികുതികളിലുള്ള (GST) അമിത ആശ്രിതത്വം (Regressive Tax).</td>
+      <td>ശതകോടീശ്വരന്മാർക്ക് മേൽ സമ്പത്ത് നികുതിയും (Wealth Tax) പാരമ്പര്യ സ്വത്ത് നികുതിയും (Inheritance Tax) ഏർപ്പെടുത്തൽ.</td>
+    </tr>
+    <tr>
+      <td>സ്വകാര്യ വിദ്യാഭ്യാസ-ആരോഗ്യ മേഖലകളിലെ ഭീമമായ കൊള്ളച്ചെലവ്.</td>
+      <td>സാർവ്വത്രികവും സൗജന്യവുമായ ഉന്നത നിലവാരമുള്ള പൊതുവിദ്യാഭ്യാസവും സർക്കാർ ആശുപത്രികളും ഉറപ്പാക്കൽ.</td>
+    </tr>
+    <tr>
+      <td>ഭൂമിയുടെയും പ്രകൃതിവിഭവങ്ങളുടെയും അസമമായ ഉടമസ്ഥത.</td>
+      <td>ഭൂപരിഷ്കരണ നിയമങ്ങൾ കർശനമായി നടപ്പാക്കലും ഭൂമിയില്ലാത്ത കർഷകർക്ക് പട്ടയം നൽകലും.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. എൽ.എം.എസ് പാഠപുസ്തക ചോദ്യോത്തരങ്ങൾ (LMS Questions & Detailed Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. Explain the construction and significance of the Lorenz Curve and the Gini Coefficient. (ലോറൻസ് വക്രരേഖയുടെയും ജിനി ഗുണകത്തിന്റെയും നിർമ്മാണവും പ്രാധാന്യവും വ്യക്തമാക്കുക.)</div>
+  <div class="qa-ans-en"><strong>English:</strong> The Lorenz Curve is a cumulative graphical depiction of income or wealth distribution where the horizontal axis plots the cumulative percentage of population (ranked from poorest to richest) and the vertical axis plots the cumulative percentage of total national income earned. The 45-degree diagonal represents perfect equality. The Gini Coefficient is the mathematical ratio measuring the area between the 45-degree equality line and the actual Lorenz curve (Area A) divided by the total triangular area under the equality line (Area A + B). Ranging from 0 (perfect equality) to 1 (complete inequality), it is the global gold standard for assessing macroeconomic income and wealth disparity.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> ലോറൻസ് വക്രരേഖ എന്നത് സമൂഹത്തിലെ വരുമാന അല്ലെങ്കിൽ സമ്പത്ത് വിതരണത്തിന്റെ ഗ്രാഫിക്കൽ ചിത്രീകരണമാണ്. ഇതിൽ X-അക്ഷത്തിൽ ദരിദ്രർ മുതൽ സമ്പന്നർ വരെയുള്ള ജനസംഖ്യയുടെ സഞ്ചിത ശതമാനവും Y-അക്ഷത്തിൽ അവർ കൈവശം വെക്കുന്ന ദേശീയ വരുമാനത്തിന്റെ സഞ്ചിത ശതമാനവും രേഖപ്പെടുത്തുന്നു. 45 ഡിഗ്രി രേഖ സമ്പൂർണ്ണ സമത്വത്തെ സൂചിപ്പിക്കുന്നു. ഈ സമത്വ രേഖയ്ക്കും ലോറൻസ് കർവിനും ഇടയിലുള്ള വിസ്തീർണ്ണത്തെ മൊത്തം വിസ്തീർണ്ണം കൊണ്ട് ഹരിക്കുമ്പോൾ ലഭിക്കുന്ന ഗണിത സംഖ്യയാണ് ജിനി ഗുണകം (Gini Coefficient). ഇതിന്റെ സ്കെയിൽ 0 മുതൽ 1 വരെയാണ്; 0 സമ്പൂർണ്ണ സമത്വത്തെയും 1 സമ്പൂർണ്ണ അസമത്വത്തെയും കാണിക്കുന്നു. ലോകമെമ്പാടും സാമ്പത്തിക അസമത്വം അളക്കുന്നതിനുള്ള ഏറ്റവും അംഗീകൃത മാനദണ്ഡമാണിത്.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. What is the Kuznets Inverted-U Hypothesis on inequality? (അസമത്വത്തെക്കുറിച്ചുള്ള കുസ്നെറ്റ്സിന്റെ ഇൻവേർട്ടഡ്-യു അനുമാനം എന്താണ്?)</div>
+  <div class="qa-ans-en"><strong>English:</strong> Nobel laureate Simon Kuznets proposed that in the early phases of economic transformation—as an agrarian society industrializes and urbanizes—income inequality initially widens sharply because capital and lucrative opportunities concentrate in the hands of early industrial capitalists and urban elites. However, as development matures, higher per capita income, widespread education, democratisation, welfare state policies, and progressive taxation eventually reverse inequality, tracing an Inverted-U shaped curve over time.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> നോബൽ സമ്മാന ജേതാവായ സൈമൺ കുസ്നെറ്റ്സ് അവതരിപ്പിച്ച സിദ്ധാന്തമാണിത്. ഒരു രാജ്യം കാർഷിക സമ്പദ്‌വ്യവസ്ഥയിൽ നിന്ന് വ്യവസായവൽക്കരണത്തിലേക്ക് കടക്കുന്ന പ്രാരംഭ ഘട്ടത്തിൽ മൂലധനവും നേട്ടങ്ങളും നഗരങ്ങളിലെ വ്യവസായികളിലേക്ക് കേന്ദ്രീകരിക്കുന്നതിനാൽ വരുമാന അസമത്വം കുത്തനെ വർദ്ധിക്കുന്നു. എന്നാൽ രാജ്യം വികസനത്തിന്റെ ഉയർന്ന തലത്തിലെത്തുമ്പോൾ, സാർവ്വത്രിക വിദ്യാഭ്യാസം, ജനാധിപത്യ ബോധം, തൊഴിലാളി അവകാശങ്ങൾ, പുരോഗമന നികുതികൾ എന്നിവയിലൂടെ വരുമാനം പുനർവിതരണം ചെയ്യപ്പെടുകയും അസമത്വം സ്വാഭാവികമായി കുറയുകയും ചെയ്യുന്നു. ഈ ബന്ധത്തെ ഒരു തലതിരിഞ്ഞ 'U' (Inverted-U) ആകൃതിയിലാണ് കുസ്നെറ്റ്സ് രേഖപ്പെടുത്തിയത്.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q3. Suggest concrete fiscal policy measures to curb growing economic inequality in India. (ഇന്ത്യയിലെ വർദ്ധിച്ചുവരുന്ന സാമ്പത്തിക അസമത്വം കുറയ്ക്കുന്നതിനുള്ള പ്രായോഗിക ധനനയ പരിഹാരങ്ങൾ നിർദ്ദേശിക്കുക.)</div>
+  <div class="qa-ans-en"><strong>English:</strong> Policy measures to compress inequality in India include: (1) Reforming the tax structure: Reintroducing a progressive Wealth Tax and Inheritance/Estate Duty on the ultra-rich top 1%, while rationalizing regressive GST rates on mass-consumption goods; (2) Universalizing human capital investments: Raising public health expenditure to at least 2.5% of GDP and education to 6% of GDP, ensuring free, world-class schools and hospitals; (3) Championing labour-intensive manufacturing and MSMEs to generate massive formal employment; (4) Strengthening progressive social safety nets (universal basic pension, urban employment guarantee, and expanded PDS).</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> ഇന്ത്യയിൽ അസമത്വം കുറയ്ക്കാൻ സ്വീകരിക്കേണ്ട നയപരമായ പരിഹാരങ്ങൾ: (1) നികുതി പരിഷ്കാരം: അതിസമ്പന്നരായ 1 ശതമാനം ശതകോടീശ്വരന്മാർക്ക് മേൽ സമ്പത്ത് നികുതിയും (Wealth Tax) പാരമ്പര്യ സ്വത്ത് നികുതിയും ഏർപ്പെടുത്തുക; ഒപ്പം സാധാരണക്കാർ വാങ്ങുന്ന അവശ്യസാധനങ്ങളുടെ ജി.എസ്.ടി നിരക്ക് കുറയ്ക്കുക; (2) പൊതുനിക്ഷേപം ഉയർത്തുക: ആരോഗ്യ ബജറ്റ് ജി.ഡി.പിയുടെ 2.5 ശതമാനമായും വിദ്യാഭ്യാസ ബജറ്റ് 6 ശതമാനമായും വർദ്ധിപ്പിച്ച് സൗജന്യ പൊതുസേവനങ്ങൾ നൽകുക; (3) ചെറുകിട-ഇടത്തരം വ്യവസായങ്ങളെ (MSME) പ്രോത്സാഹിപ്പിച്ച് ലക്ഷക്കണക്കിന് പുതിയ തൊഴിലുകൾ സൃഷ്ടിക്കുക; (4) നഗര തൊഴിലുറപ്പ് പദ്ധതിയും സാർവ്വത്രിക സാമൂഹിക സുരക്ഷാ പെൻഷനുകളും നടപ്പിലാക്കുക.</div>
+</div>
+
+<h2>5. 20 പ്രധാന മൾട്ടിപ്പിൾ ചോയ്‌സ് ചോദ്യങ്ങൾ (20 Important MCQs with Answers & Rationale)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">1. ലോറൻസ് വക്രരേഖ (Lorenz Curve) പ്രധാനമായും എന്തിനെയാണ് ഗ്രാഫിക്കലായി ചിത്രീകരിക്കുന്നത്? / What does the Lorenz Curve graphically represent?</div>
+    <div class="q-options">A) നാണയപ്പെരുപ്പ നിരക്ക്<br>B) വരുമാന അല്ലെങ്കിൽ സമ്പത്ത് അസമത്വം (Income or wealth inequality)<br>C) സാക്ഷരതാ നിരക്കിലെ മാറ്റം<br>D) ജനന-മരണ നിരക്കുകൾ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ജനസംഖ്യാ വിഹിതവും അവർ കൈവശം വെക്കുന്ന വരുമാന വിഹിതവും തമ്മിലുള്ള അസമത്വമാണ് ലോറൻസ് കർവ് കാണിക്കുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. ജിനി ഗുണകത്തിന്റെ (Gini Coefficient) മൂല്യം 0 (പൂജ്യം) ആയാൽ അത് എന്തിനെ സൂചിപ്പിക്കുന്നു? / A Gini Coefficient value of 0 signifies:</div>
+    <div class="q-options">A) സമ്പൂർണ്ണ അസമത്വം<br>B) സമ്പൂർണ്ണ സമത്വം (Perfect Equality - everyone has equal income)<br>C) കടുത്ത ദാരിദ്ര്യം<br>D) ഉയർന്ന പണപ്പെരുപ്പം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ജിനി സൂചിക 0 എന്നാൽ എല്ലാവർക്കും കൃത്യമായി ഒരേ വരുമാനമുള്ള സമ്പൂർണ്ണ സമത്വാവസ്ഥയാണ്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. ജിനി ഗുണകത്തിന്റെ മൂല്യം 1 (ഒന്ന്) ആയാൽ അർത്ഥമാക്കുന്നത് എന്ത്? / A Gini Coefficient value of 1 represents:</div>
+    <div class="q-options">A) സമ്പൂർണ്ണ സമത്വം<br>B) സമ്പൂർണ്ണ അസമത്വം (Absolute Inequality - one person possesses all income)<br>C) ധനക്കമ്മി ഇല്ലായ്മ<br>D) ജനസംഖ്യാ സ്ഥിരത</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ജിനി സൂചിക 1 എന്നാൽ രാജ്യത്തെ മുഴുവൻ വരുമാനവും ഒരാളുടെ കൈയിൽ മാത്രമുള്ള പരമാവധി അസമത്വമാണ്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">4. സാമ്പത്തിക വികസനത്തിന്റെ ആദ്യഘട്ടത്തിൽ അസമത്വം കൂടുകയും പിന്നീട് കുറയുകയും ചെയ്യുമെന്ന് സമർത്ഥിച്ച വക്രരേഖ? / Which inverted-U hypothesis models inequality rising and then falling as GDP grows?</div>
+    <div class="q-options">A) ഫിലിപ്സ് വക്രരേഖ<br>B) കുസ്നെറ്റ്സ് വക്രരേഖ (Kuznets Curve)<br>C) ലാഫർ വക്രരേഖ<br>D) എംഗൽസ് വക്രരേഖ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: സൈമൺ കുസ്നെറ്റ്സിന്റെ സിദ്ധാന്തമാണിത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">5. വേൾഡ് ഇനീക്വാലിറ്റി ലാബ് 2024 റിപ്പോർട്ട് പ്രകാരം ഇന്ത്യയിലെ ഏറ്റവും മുകളിലുള്ള 1% സമ്പന്നർ കൈവശം വെക്കുന്ന ദേശീയ സമ്പത്ത് എത്ര? / According to the World Inequality Lab 2024, the top 1% in India holds over:</div>
+    <div class="q-options">A) 5%<br>B) 40.1% of national wealth<br>C) 15%<br>D) 2%</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ഇന്ത്യയിലെ സമ്പത്ത് കേന്ദ്രീകരണം ചരിത്രത്തിലെ ഏറ്റവും ഉയർന്ന നിലയിലാണെന്ന് (40.1%) റിപ്പോർട്ട് വ്യക്തമാക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">6. ഏറ്റവും മുകളിലുള്ള 10% സമ്പന്നരുടെ വരുമാനത്തെ ഏറ്റവും താഴെയുള്ള 40% ദരിദ്രരുടെ വരുമാനം കൊണ്ട് ഹരിക്കുന്ന അനുപാതം ഏത്? / The ratio comparing the income share of the top 10% to that of the bottom 40% is:</div>
+    <div class="q-options">A) പാൽമ അനുപാതം (Palma Ratio)<br>B) ജിനി റേഷ്യോ<br>C) എച്ച്.ഡി.ഐ അനുപാതം<br>D) കറന്റ് അക്കൗണ്ട് റേഷ്യോ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ഗബ്രിയേൽ പാൽമ വികസിപ്പിച്ചെടുത്ത പാൽമ റേഷ്യോ (Palma Ratio) ആധുനിക അസമത്വ പഠനങ്ങളിൽ വ്യാപകമായി ഉപയോഗിക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">7. നികുതിദായകന്റെ വരുമാനം കൂടുമ്പോൾ നികുതി നിരക്കും ആനുപാതികമായി വർദ്ധിക്കുന്ന സമ്പ്രദായം ഏതാണ്? / A tax system where the tax rate increases as the taxable amount increases is:</div>
+    <div class="q-options">A) പരോക്ഷ നികുതി<br>B) പുരോഗമന നികുതി സമ്പ്രദായം (Progressive Tax System)<br>C) അനുപാതിക നികുതി (Proportional Tax)<br>D) പിന്തിരിപ്പൻ നികുതി (Regressive Tax)</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: വരുമാനം കൂടിയവരിൽ നിന്ന് ഉയർന്ന നിരക്കിൽ നികുതി ഈടാക്കുന്നത് അസമത്വം കുറയ്ക്കാൻ സഹായിക്കുന്നു (ഉദാ: ആദായനികുതി).</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">8. ജി.എസ്.ടി (GST) പോലുള്ള പരോക്ഷ നികുതികളെ 'പിന്തിരിപ്പൻ' (Regressive) എന്ന് വിളിക്കാൻ കാരണം എന്ത്? / Why are indirect consumption taxes like GST termed regressive?</div>
+    <div class="q-options">A) സർക്കാരിന് വരുമാനം നൽകാത്തതിനാൽ<br>B) പാവപ്പെട്ടവരും പണക്കാരും ഒരേ നിരക്കിൽ നികുതി നൽകേണ്ടി വരികയും ദരിദ്രരുടെ വരുമാനത്തിന്റെ വലിയൊരു പങ്ക് ഇതിലേക്ക് പോവുകയും ചെയ്യുന്നതിനാൽ (It takes a higher percentage of income from poor households)<br>C) ബാങ്കുകൾ ഇതിനെ എതിർക്കുന്നതിനാൽ<br>D) വിദേശികൾ നികുതി നൽകാത്തതിനാൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ഒരു സോപ്പോ എണ്ണയോ വാങ്ങുമ്പോൾ കോടീശ്വരനും ദിവസക്കൂലിക്കാരനും ഒരേ നികുതിയാണ് നൽകുന്നത്; ഇത് പാവപ്പെട്ടവർക്ക് വലിയ ഭാരമാകുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">9. ലോറൻസ് വക്രരേഖയിലെ 45 ഡിഗ്രി ചരിവുള്ള നേർരേഖ എന്തിനെ പ്രതിനിധീകരിക്കുന്നു? / The 45-degree diagonal line in a Lorenz curve graph represents:</div>
+    <div class="q-options">A) പരമാവധി അസമത്വം<br>B) സമ്പൂർണ്ണ സമത്വ രേഖ (Line of Absolute / Perfect Equality)<br>C) പണപ്പെരുപ്പ വളർച്ച<br>D) ദാരിദ്ര്യരേഖ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: 45 ഡിഗ്രി വരയിലാണെങ്കിൽ 20% ജനങ്ങൾക്ക് 20% വരുമാനം, 50% ജനങ്ങൾക്ക് 50% വരുമാനം എന്ന പൂർണ്ണ തുല്യതയായിരിക്കും.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">10. വരുമാന അസമത്വത്തേക്കാൾ (Income Inequality) ഇന്ത്യയിൽ കൂടുതൽ ആഴത്തിലുള്ള അസമത്വം ഏതാണ്? / In India, which form of economic disparity is significantly more skewed than income disparity?</div>
+    <div class="q-options">A) ഭക്ഷണ ഉപഭോഗം<br>B) സമ്പത്ത് അസമത്വം (Wealth Inequality - real estate, stocks, financial assets)<br>C) തുണിത്തരങ്ങൾ വാങ്ങൽ<br>D) ടിക്കറ്റ് നിരക്കുകൾ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ഭൂമി, ഓഹരികൾ, ആസ്തികൾ തുടങ്ങിയ സമ്പത്തിന്റെ വിതരണത്തിലാണ് വരുമാനത്തേക്കാൾ ഭയാനകമായ അസമത്വം നിലനിൽക്കുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">11. ഉദാരവൽക്കരണത്തിന് ശേഷം ഇന്ത്യയിലെ ജിനി ഗുണകത്തിന് (Gini Coefficient) എന്ത് മാറ്റമാണ് സംഭവിച്ചത്? / How has India's Gini coefficient moved in the post-1991 reform era?</div>
+    <div class="q-options">A) കുത്തനെ കുറഞ്ഞു<br>B) ഗണ്യമായി ഉയർന്നു (Increased, indicating rising inequality)<br>C) പൂജ്യത്തിലെത്തി<br>D) മാറ്റമില്ലാതെ തുടർന്നു</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ഉദാരവൽക്കരണ കാലത്ത് സാമ്പത്തിക അസമത്വം വർദ്ധിച്ചതായി പഠനങ്ങൾ തെളിയിക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">12. ഇന്ത്യയിൽ കാർഷിക മേഖലയിലെ ഭൂപരിഷ്കരണ നിയമങ്ങൾ ഏറ്റവും വിജയകരമായി നടപ്പിലാക്കിയ രണ്ട് സംസ്ഥാനങ്ങൾ? / Which two states successfully implemented sweeping land reforms to compress rural inequality?</div>
+    <div class="q-options">A) ഗുജറാത്തും രാജസ്ഥാനും<br>B) കേരളവും പശ്ചിമ ബംഗാളും (Kerala and West Bengal)<br>C) ഉത്തർപ്രദേശും ബിഹാറും<br>D) പഞ്ചാബും ഹരിയാനയും</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: കേരളത്തിലെയും (1969) ബംഗാളിലെയും (ഓപ്പറേഷൻ ബർഗ) ഭൂപരിഷ്കരണങ്ങൾ കർഷകർക്ക് ഭൂവുടമസ്ഥത നൽകി ഗ്രാമീണ അസമത്വം കുറച്ചു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">13. ഒരു വ്യക്തിക്ക് തന്റെ സാമ്പത്തിക പിന്നോക്കാവസ്ഥ കാരണം നല്ല വിദ്യാഭ്യാസമോ ആരോഗ്യപരിപാലനമോ ലഭിക്കാതെ പോകുന്നതിലൂടെ ഉണ്ടാകുന്നത്: / Lack of access to quality schooling and healthcare based on birth status creates:</div>
+    <div class="q-options">A) അവസരങ്ങളുടെ അസമത്വം (Inequality of Opportunity)<br>B) വാണിജ്യ സമത്വം<br>C) ധനപരമായ ക്രമീകരണം<br>D) ഓഹരി വിപണി മാറ്റം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: സമത്വപൂർണ്ണമായ തുടക്കവും അവസരങ്ങളും ലഭിക്കാത്തത് അസമത്വം തലമുറകളിലേക്ക് പടരാൻ കാരണമാകുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">14. പാരമ്പര്യമായി ലഭിക്കുന്ന ഭീമമായ സ്വത്തുക്കൾക്ക് മേൽ ചുമത്തുന്ന നികുതി ഏതാണ്? / A tax levied on the total value of property inherited upon death is:</div>
+    <div class="q-options">A) സേവന നികുതി<br>B) എസ്റ്റേറ്റ് ഡ്യൂട്ടി / പാരമ്പര്യ സ്വത്ത് നികുതി (Inheritance Tax / Estate Duty)<br>C) എക്സൈസ് ഡ്യൂട്ടി<br>D) കസ്റ്റംസ് ഡ്യൂട്ടി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: സ്വത്ത് കേന്ദ്രീകരണം തടയാൻ പല പാശ്ചാത്യ രാജ്യങ്ങളും ഇൻഹെറിറ്റൻസ് ടാക്സ് ഈടാക്കുന്നു (ഇന്ത്യയിൽ 1985-ൽ ഇത് നിർത്തലാക്കി).</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">15. ഇന്ത്യയിൽ സ്ത്രീകൾ ചെയ്യുന്ന അദൃശ്യവും പ്രതിഫലമില്ലാത്തതുമായ വീട്ടുജോലികൾ (Unpaid Care Work) സൃഷ്ടിക്കുന്ന അസമത്വം: / Unpaid domestic care work performed disproportionately by women reflects:</div>
+    <div class="q-options">A) സാങ്കേതിക അസമത്വം<br>B) ലിംഗപരമായ സാമ്പത്തിക അസമത്വം (Gender Economic Inequality)<br>C) ബാങ്കിംഗ് അസമത്വം<br>D) വിദേശ വ്യാപാര അസമത്വം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: സ്ത്രീകൾ ദിവസവും മണിക്കൂറുകളോളം ചെയ്യുന്ന ഗാർഹിക അധ്വാനം സാമ്പത്തികമായി വിലമതിക്കപ്പെടാതെ പോകുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">16. ഉന്നത വിദ്യാഭ്യാസ രംഗത്ത് നിലനിൽക്കുന്ന അസമത്വം പരിഹരിക്കാൻ ഇന്ത്യൻ ഭരണഘടന വിഭാവനം ചെയ്ത സംവിധാനം ഏതാണ്? / What affirmative action tool does the Indian Constitution provide to tackle historical social inequality?</div>
+    <div class="q-options">A) സൗജന്യ വിദേശ യാത്രകൾ<br>B) സംവരണം (Reservation / Affirmative Action Policy)<br>C) നികുതി പൂർണ്ണമായി ഒഴിവാക്കൽ<br>D) പണം നേരിട്ട് വിതരണം ചെയ്യൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: വിദ്യാഭ്യാസത്തിലും സർക്കാർ ജോലികളിലും പിന്നോക്ക വിഭാഗങ്ങൾക്ക് നൽകുന്ന സംവരണം സാമൂഹിക തുല്യത ഉറപ്പാക്കാനാണ്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">17. ഇന്ത്യയിലെ നഗരങ്ങളും ഗ്രാമങ്ങളും തമ്മിലുള്ള അസമത്വം കുറയ്ക്കാൻ സഹായിക്കുന്ന കാതലായ നടപടി ഏത്? / Which strategy would most effectively close the urban-rural prosperity chasm?</div>
+    <div class="q-options">A) ഗ്രാമീണ വ്യവസായങ്ങളും മികച്ച സ്കൂളുകളും ആശുപത്രികളും ഗ്രാമങ്ങളിൽ സ്ഥാപിക്കൽ (Rural industrialization and infrastructure modernization)<br>B) ഗ്രാമങ്ങളിലുള്ളവരെല്ലാം നഗരത്തിലേക്ക് മാറാൻ പറയൽ<br>C) കൃഷി പൂർണ്ണമായി തടയൽ<br>D) റോഡുകൾ നിർമ്മിക്കാതിരിക്കൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ഗ്രാമങ്ങളിൽ ആധുനിക അടിസ്ഥാന സൗകര്യങ്ങളും മൂല്യവർദ്ധിത കാർഷിക വ്യവസായങ്ങളും ഉണ്ടാക്കിയാൽ നഗരങ്ങളിലേക്കുള്ള പലായനവും അസമത്വവും കുറയും.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">18. 'ക്യാപിറ്റൽ ഇൻ ദി ട്വന്റി-ഫസ്റ്റ് സെഞ്ച്വറി' (Capital in the Twenty-First Century) എന്ന ആഗോള പ്രശസ്ത അസമത്വ പഠന ഗ്രന്ഥം രചിച്ച സാമ്പത്തിക ശാസ്ത്രജ്ഞൻ? / Who authored the landmark 2013 book 'Capital in the Twenty-First Century'?</div>
+    <div class="q-options">A) തോമസ് പിക്കറ്റി (Thomas Piketty)<br>B) പോൾ സാമുവൽസൺ<br>C) ജോസഫ് സ്റ്റിഗ്ലിറ്റ്സ്<br>D) ജെഫ്രി സാച്ച്സ്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ഫ്രഞ്ച് സാമ്പത്തിക വിദഗ്ദ്ധനായ തോമസ് പിക്കറ്റിയാണ് ആധുനിക മുതലാളിത്തത്തിലെ സമ്പത്ത് കേന്ദ്രീകരണത്തെ ഡാറ്റാ സഹിതം തുറന്നുകാട്ടിയത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">19. ദരിദ്രർക്ക് നേരിട്ട് സാമ്പത്തിക സഹായം നൽകുന്നതിലൂടെ ചോർച്ച ഒഴിവാക്കാൻ ഇന്ത്യയിൽ കൊണ്ടുവന്ന സാങ്കേതിക ചട്ടക്കൂട്? / The financial inclusion trinity used in India for targeted direct benefit transfers is:</div>
+    <div class="q-options">A) ജാം ട്രിനിറ്റി (JAM Trinity - Jan Dhan, Aadhaar, Mobile)<br>B) ജി.എസ്.ടി നെറ്റ്‌വർക്ക്<br>C) നിഫ്റ്റി ഫിഫ്റ്റി<br>D) സ്വിഫ്റ്റ് സംവിധാനം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ജൻധൻ ബാങ്ക് അക്കൗണ്ട്, ആധാർ, മൊബൈൽ എന്നിവ ബന്ധിപ്പിച്ച് സബ്സിഡികൾ ഇടനിലക്കാരില്ലാതെ അക്കൗണ്ടിലേക്ക് നൽകുന്നു (DBT).</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">20. സാമ്പത്തിക അസമത്വം നിയന്ത്രിക്കപ്പെടാതെ വർദ്ധിച്ചാൽ രാജ്യത്ത് ഉണ്ടാകുന്ന അപകടകരമായ പ്രത്യാഘാതം? / Unchecked, severe economic inequality typically triggers:</div>
+    <div class="q-options">A) ജനാധിപത്യം കൂടുതൽ ശക്തിപ്പെടും<br>B) സാമൂഹിക അസ്വസ്ഥതകൾ, കുറ്റകൃത്യങ്ങളുടെ വർദ്ധനവ്, ജനകീയ പ്രതിഷേധങ്ങൾ (Social instability, democratic erosion, and heightened crime)<br>C) എല്ലാവരും സ്വയം കോടീശ്വരന്മാരാകും<br>D) പരിസ്ഥിതി തനിയെ സംരക്ഷിക്കപ്പെടും</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: കടുത്ത അസമത്വം ജനങ്ങളിൽ അരക്ഷിതാവസ്ഥയും പ്രതിഷേധങ്ങളും സൃഷ്ടിക്കുകയും രാജ്യത്തിന്റെ ദീർഘകാല സമാധാനത്തെയും വളർച്ചയെയും തകർക്കുകയും ചെയ്യുന്നു.</div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. ഡിഗ്രി പഠന സഹായി · Development Issues in Indian Economy</span>
+    <span>സമഗ്ര മലയാള പരിഭാഷ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

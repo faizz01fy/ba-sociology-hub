@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 1: ഇൻട്രൊഡ്യൂസിങ് സോഷ്യോളജി (സോഷ്യോളജിയുടെ ആമുഖം)</title>
+  <style>
+    :root {
+      --c1: #581c87;
+      --c2: #7e22ce;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #581c87), var(--c2, #7e22ce));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(88, 28, 135, 0.2);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f3e8ff;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #e9d5ff;
+}
+
+.badge {
+  display: inline-block;
+  background: #faf5ff;
+  color: #6b21a8;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #d8b4fe;
+}
+
+h2 {
+  color: var(--c1, #581c87);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #7e22ce;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #faf5ff;
+  border-left: 4px solid var(--c2, #7e22ce);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-purple {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+/* Diagrams & Visual Charts */
+.diagram-container {
+  background: #ffffff;
+  border: 1.5px solid #e9d5ff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.05);
+}
+
+.diagram-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 11pt;
+  color: #581c87;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.flow-step {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border: 1.5px solid #c084fc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #581c87;
+  min-width: 130px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(107, 33, 168, 0.08);
+}
+
+.flow-step small {
+  display: block;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #6b21a8;
+  margin-top: 4px;
+}
+
+.flow-arrow {
+  color: #9333ea;
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+.tree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.tree-card {
+  background: #fdf4ff;
+  border: 1px solid #d8b4fe;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.tree-card h4 {
+  margin: 0 0 6px 0;
+  color: #6b21a8;
+  font-size: 10pt;
+  font-weight: 700;
+  border-bottom: 1px solid #e9d5ff;
+  padding-bottom: 4px;
+}
+
+.tree-card p {
+  margin: 0;
+  font-size: 9pt;
+  line-height: 1.6;
+  color: #334155;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f3e8ff;
+  color: #581c87;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #faf5ff;
+}
+
+/* Bilingual Entry Blocks */
+.bilingual-entry {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-left: 4px solid #7e22ce;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(107, 33, 168, 0.04);
+}
+
+.bilingual-entry .en-part {
+  color: #1e293b;
+  font-size: 10pt;
+  line-height: 1.7;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.bilingual-entry .ml-part {
+  color: #3b0764;
+  font-size: 10pt;
+  line-height: 1.85;
+}
+
+.en-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #bfdbfe;
+}
+
+.ml-tag {
+  display: inline-block;
+  background: #faf5ff;
+  color: #7e22ce;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #d8b4fe;
+}
+
+/* LMS Question & Answer Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #7e22ce;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #581c87;
+  margin-bottom: 8px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  background: #faf5ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #9333ea;
+}
+
+/* MCQ Cards */
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #581c87;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #f3e8ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid #d8b4fe;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 1: സോഷ്യോളജിയുടെ ഉത്ഭവവും സ്വഭാവവും (Module 1: Introducing Sociology)</h4>
+    <h1>മൊഡ്യൂൾ 1: ഇൻട്രൊഡ്യൂസിങ് സോഷ്യോളജി (സോഷ്യോളജിയുടെ ആമുഖം)</h1>
+    <div class="meta">Module 1 · Introducing Sociology: Origin, Science, Nature, Scope & Applications · Calicut University B.A. Sociology FYUGP · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Module Overview:</strong> Module 1 establishes the foundational baseline of sociology. It examines the socio-historical conditions that triggered the emergence of sociology in 19th-century Europe, evaluates the criteria establishing sociology as an empirical social science, compares the formalistic and synthetic schools regarding its scope, explores C. Wright Mills' 'Sociological Imagination', and contrasts sociological inquiry with common-sense perceptions.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>മൊഡ്യൂൾ അവലോകനം:</strong> സോഷ്യോളജിയുടെ അടിസ്ഥാനപരമായ അടിത്തറയാണ് ഒന്നാം മൊഡ്യൂൾ ചർച്ച ചെയ്യുന്നത്. 19-ാം നൂറ്റാണ്ടിലെ യൂറോപ്പിൽ സോഷ്യോളജിയുടെ ഉദയത്തിന് കാരണമായ സാമൂഹിക-ചരിത്ര പശ്ചാത്തലം, സോഷ്യോളജിയുടെ ശാസ്ത്രീയ സ്വഭാവം, വ്യാപ്തിയെ സംബന്ധിച്ച ഫോർമലിസ്റ്റിക് - സിന്തറ്റിക് സ്കൂളുകൾ, സി. റൈറ്റ് മിൽസിന്റെ 'സോഷ്യോളജിക്കൽ ഇമാജിനേഷൻ', സാമാന്യബോധത്തിൽ നിന്നുള്ള സോഷ്യോളജിയുടെ വ്യത്യാസം എന്നിവ ഇതിൽ അപഗ്രഥിക്കുന്നു.
+  </div>
+</div>
+
+<div class="card">
+  <h4 class="sub-head" style="margin-top:0;">പ്രധാന ശേഷികൾ (Core Competencies):</h4>
+  <ul>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Historical Genesis:</strong> Understand how the Enlightenment, French Revolution (1789), and Industrial Revolution catalyzed the birth of sociology.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>ചരിത്രപരമായ ഉത്ഭവം:</strong> ജ്ഞാനോദയം, ഫ്രഞ്ച് വിപ്ലവം (1789), വ്യാവസായിക വിപ്ലവം എന്നിവ സോഷ്യോളജിയുടെ രൂപീകരണത്തിന് വഴിയൊരുക്കിയത് എങ്ങനെയെന്ന് മനസ്സിലാക്കുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Sociology as a Science:</strong> Analyze Robert Bierstedt's 8 characteristics defining sociology as a categorical, pure, generalizing, and empirical science.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>സോഷ്യോളജി ഒരു ശാസ്ത്രമെന്ന നിലയിൽ:</strong> റോബർട്ട് ബിയർസ്റ്റെഡ് മുന്നോട്ടുവെച്ച എട്ട് സവിശേഷതകളുടെ അടിസ്ഥാനത്തിൽ സോഷ്യോളജിയുടെ ശാസ്ത്രീയ സ്വഭാവം വിശകലനം ചെയ്യുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Scope of the Discipline:</strong> Differentiate the Formalistic/Specialistic School (Simmel, Weber) from the Synthetic School (Durkheim, Ginsberg).</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിഷയ വ്യാപ്തി:</strong> ഫോർമലിസ്റ്റിക് സ്കൂളും (സിമ്മൽ, വെബർ) സിന്തറ്റിക് സ്കൂളും (ഡർക്കൈം, ഗിൻസ്ബർഗ്) തമ്മിലുള്ള ആശയ വ്യത്യാസങ്ങൾ തിരിച്ചറിയുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>The Sociological Imagination:</strong> Apply C. Wright Mills' framework connecting personal troubles of milieu to public issues of social structure.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>സോഷ്യോളജിക്കൽ ഇമാജിനേഷൻ:</strong> സി. റൈറ്റ് മിൽസിന്റെ വ്യക്തിഗത പ്രശ്നങ്ങളും (Personal Troubles) പൊതു സാമൂഹിക പ്രശ്നങ്ങളും (Public Issues) തമ്മിലുള്ള ബന്ധം പ്രയോഗിക്കുക.</div>
+    </li>
+  </ul>
+</div>
+
+<h2>2. ചരിത്രപരമായ ഉത്ഭവവും ബൗദ്ധിക പശ്ചാത്തലവും (Historical Genesis & Thinkers)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>The Intellectual & Socio-Economic Engine:</strong> Sociology did not develop in an intellectual vacuum. It arose as a direct scientific response to the catastrophic breakdown of traditional European feudal society and the chaotic emergence of modern industrial capitalism. Three pivotal historical revolutions formed the bedrock of sociology:
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>ചരിത്രപരമായ ഉത്ഭവം:</strong> സോഷ്യോളജി പെട്ടെന്ന് രൂപപ്പെട്ട ഒന്നല്ല. യൂറോപ്പിലെ പരമ്പരാഗത ഫ്യൂഡൽ വ്യവസ്ഥ തകരുകയും ആധുനിക വ്യവസായ മുതലാളിത്തം ഉയർന്നുവരികയും ചെയ്തപ്പോൾ ഉണ്ടായ സാമൂഹിക പ്രതിസന്ധികൾക്ക് ശാസ്ത്രീയ പരിഹാരം കാണാനുള്ള അന്വേഷണമാണ് സോഷ്യോളജിക്ക് ജന്മം നൽകിയത്. ഇതിന് വഴിയൊരുക്കിയ മൂന്ന് വിപ്ലവങ്ങൾ താഴെ പറയുന്നവയാണ്:
+  </div>
+</div>
+
+<div class="diagram-container">
+  <div class="diagram-title">സോഷ്യോളജിയുടെ ഉത്ഭവത്തിന് കാരണമായ ത്രിവിധ വിപ്ലവങ്ങൾ (The Triple Revolution Engine)</div>
+  <div class="tree-grid">
+    <div class="tree-card">
+      <h4>1. The Enlightenment (ജ്ഞാനോദയം)</h4>
+      <p><strong>EN:</strong> 18th-century intellectual movement substituting religious dogma and theological superstition with secular rationalism, critical inquiry, empirical observation, and human liberty.<br>
+      <strong>ML:</strong> മതപരമായ അന്ധവിശ്വാസങ്ങൾക്ക് പകരം യുക്തിചിന്തയ്ക്കും (Rationalism), ശാസ്ത്രീയ നിരീക്ഷണങ്ങൾക്കും (Empiricism), മനുഷ്യസ്വാതന്ത്ര്യത്തിനും മുൻഗണന നൽകിയ 18-ാം നൂറ്റാണ്ടിലെ ബൗദ്ധിക മുന്നേറ്റം.</p>
+    </div>
+    <div class="tree-card">
+      <h4>2. The French Revolution (1789)</h4>
+      <p><strong>EN:</strong> Dismantled monarchical tyranny and feudal privileges, proclaiming liberty, equality, and fraternity, but also unleashing political instability that demanded new social order.<br>
+      <strong>ML:</strong> ഫ്യൂഡൽ ഭരണകൂടത്തെ തകർത്തെറിഞ്ഞ് സ്വാതന്ത്ര്യം, സമത്വം, സാഹോദര്യം എന്നീ ആധുനിക മൂല്യങ്ങൾ സ്ഥാപിച്ചെങ്കിലും യൂറോപ്പിൽ രാഷ്ട്രീയ അരക്ഷിതാവസ്ഥ സൃഷ്ടിച്ച ഫ്രഞ്ച് വിപ്ലവം.</p>
+    </div>
+    <div class="tree-card">
+      <h4>3. The Industrial Revolution</h4>
+      <p><strong>EN:</strong> Shifted agrarian craft economies to mechanised factory production in Britain, creating rapid urbanization, working-class exploitation, urban slums, and modern class divisions.<br>
+      <strong>ML:</strong> പരമ്പരാഗത കാർഷിക സമ്പദ്‌വ്യവസ്ഥയെ മാറ്റി ഫാക്ടറി സമ്പ്രദായവും നീരാവി യന്ത്രങ്ങളും സൃഷ്ടിച്ച് നഗരവൽക്കരണത്തിനും ചേരികൾക്കും തൊഴിലാളി ചൂഷണത്തിനും വഴിവെച്ച വ്യാവസായിക വിപ്ലവം.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card-purple">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Auguste Comte (1798–1857) — The Father of Sociology:</strong> French philosopher Auguste Comte coined the term <em>'Sociology'</em> in 1839 in his work <em>Cours de Philosophie Positive</em>. The word is an etymological hybrid combining the Latin <em>'Socius'</em> (companion, society) and the Greek <em>'Logos'</em> (science, study). Comte initially termed it <strong>'Social Physics'</strong> (Physique Sociale) because he sought to establish a science of society as objective and rigorously empirical as natural physics.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>ഓഗസ്റ്റ് കോംതെ (Auguste Comte - 1798–1857) — സോഷ്യോളജിയുടെ പിതാവ്:</strong> 1839-ൽ തന്റെ <em>'കോഴ്സ് ഡി ഫിലോസഫി പോസിറ്റീവ്'</em> എന്ന കൃതിയിലാണ് ഓഗസ്റ്റ് കോംതെ 'സോഷ്യോളജി' എന്ന പദം ആദ്യമായി നിർമ്മിച്ചത്. ലത്തീൻ പദമായ <em>'Socius'</em> (കൂട്ടുകാരൻ/സമൂഹം), ഗ്രീക്ക് പദമായ <em>'Logos'</em> (പഠനം/ശാസ്ത്രം) എന്നിവ സംയോജിപ്പിച്ചാണ് ഈ പേര് നൽകിയത്. ഭൗതികശാസ്ത്രത്തിന്റെ ശാസ്ത്രീയ കൃത്യതയോടെ സമൂഹത്തെ പഠിക്കാൻ ഉദ്ദേശിച്ചുകൊണ്ട് അദ്ദേഹം ആദ്യം ഇതിനെ 'സോഷ്യൽ ഫിസിക്സ്' (Social Physics) എന്നാണ് വിളിച്ചിരുന്നത്.
+  </div>
+</div>
+
+<div class="diagram-container">
+  <div class="diagram-title">ഓഗസ്റ്റ് കോംതെയുടെ ത്രിഘട്ട നിയമം (Comte's Law of Three Stages)</div>
+  <div class="flow-chart">
+    <div class="flow-step">1. തിയോളജിക്കൽ ഘട്ടം<small>Theological: Divine/Supernatural Will</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">2. മെറ്റാഫിസിക്കൽ ഘട്ടം<small>Metaphysical: Abstract Philosophical Forces</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">3. പോസിറ്റീവ് ഘട്ടം<small>Positive: Scientific Observation & Laws</small></div>
+  </div>
+</div>
+
+<h2>3. നിർവ്വചനങ്ങളും ശാസ്ത്രീയ സ്വഭാവവും (Definitions & Scientific Nature)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Core Definitions of Sociology:</strong><br>
+    • <strong>Émile Durkheim:</strong> "Sociology is the science of social institutions, their genesis and their functioning."<br>
+    • <strong>Max Weber:</strong> "Sociology is a science which attempts the interpretive understanding of social action in order thereby to arrive at a causal explanation of its course and effects."<br>
+    • <strong>Morris Ginsberg:</strong> "Sociology is the study of human interactions and interrelations, their conditions and consequences."
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>സോഷ്യോളജിയുടെ പ്രധാന നിർവ്വചനങ്ങള്:</strong><br>
+    • <strong>എമിൽ ഡർക്കൈം:</strong> "സാമൂഹിക സ്ഥാപനങ്ങൾ, അവയുടെ ഉത്ഭവം, പ്രവർത്തനം എന്നിവയെക്കുറിച്ചുള്ള ശാസ്ത്രമാണ് സോഷ്യോളജി."<br>
+    • <strong>മാക്സ് വെബർ:</strong> "സാമൂഹിക പ്രവർത്തനങ്ങളെ വ്യാഖ്യാനപരമായി മനസ്സിലാക്കുകയും (Interpretive Understanding) അവയുടെ കാരണങ്ങളെയും ഫലങ്ങളെയും കണ്ടെത്തുകയും ചെയ്യുന്ന ശാസ്ത്രമാണ് സോഷ്യോളജി."<br>
+    • <strong>മോറിസ് ഗിൻസ്ബർഗ്:</strong> "മനുഷ്യർ തമ്മിലുള്ള പരസ്പര പ്രതിപ്രവർത്തനങ്ങളെയും ബന്ധങ്ങളെയും അവയുടെ സാഹചര്യങ്ങളെയും അനന്തരഫലങ്ങളെയും കുറിച്ചുള്ള പഠനമാണ് സോഷ്യോളജി."
+  </div>
+</div>
+
+<h3 class="sub-head">റോബർട്ട് ബിയർസ്റ്റെഡിന്റെ എട്ട് മാനദണ്ഡങ്ങൾ (Robert Bierstedt's 8 Characteristics)</h3>
+<table>
+  <thead>
+    <tr>
+      <th>മാനദണ്ഡം</th>
+      <th>Characteristic (English)</th>
+      <th>സവിശേഷത (Malayalam)</th>
+      <th>വിശദീകരണം (Scientific Meaning)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong>Social Science, not Natural</strong></td>
+      <td>സാമൂഹിക ശാസ്ത്രം</td>
+      <td>Focuses on human society and relationships, not physical universe or matter.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>Categorical, not Normative</strong></td>
+      <td>പോസിറ്റീവ് ശാസ്ത്രം</td>
+      <td>Concerns what 'is', not what 'ought to be'. Value-neutral analysis.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>Pure, not Applied</strong></td>
+      <td>പ്യുവർ സയൻസ്</td>
+      <td>Seeks objective theoretical knowledge; application is done by policy/administration.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>Generalizing, not Particularizing</strong></td>
+      <td>സാമാന്യവൽക്കരണ ശാസ്ത്രം</td>
+      <td>Discovers general laws (nomothetic), unlike history which studies unique events (idiographic).</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong>Abstract, not Concrete</strong></td>
+      <td>അമൂർത്ത ശാസ്ത്രം</td>
+      <td>Studies forms and patterns of relationships, not tangible physical objects.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong>General, not Special</strong></td>
+      <td>ജനറൽ സയൻസ്</td>
+      <td>Studies all social aspects broadly, unlike economics or political science which study specific sub-fields.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><strong>Rational & Empirical</strong></td>
+      <td>യുക്തിപരവും അനുഭവവേദ്യവും</td>
+      <td>Combines rational logical deduction with empirical field observation.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><strong>Independent Science</strong></td>
+      <td>സ്വതന്ത്ര ശാസ്ത്രം</td>
+      <td>Has its own subject matter, theories, and methodologies, independent of philosophy.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. വിഷയ വ്യാപ്തി: രണ്ട് സ്കൂളുകൾ (Scope of Sociology: Two Schools)</h2>
+<div class="tree-grid">
+  <div class="tree-card" style="border-left: 4px solid #7e22ce;">
+    <h4>1. Formalistic / Specialistic School (ഫോർമലിസ്റ്റിക് സ്കൂൾ)</h4>
+    <p><strong>Thinkers:</strong> Georg Simmel, Max Weber, Ferdinand Tönnies, Alfred Vierkandt, Leopold von Wiese.<br>
+    <strong>Core Thesis:</strong> Sociology must be a distinct, specialized, pure science. It should study only the <em>abstract forms</em> of social interaction (e.g. competition, subordination, conflict) rather than their historical or empirical content.<br>
+    <strong>മലയാളം:</strong> ജോർജ്ജ് സിമ്മൽ, മാക്സ് വെബർ എന്നിവർ നയിച്ച സ്കൂൾ. സോഷ്യോളജി ഒരു സവിശേഷ ശാസ്ത്രമായിരിക്കണം. സാമൂഹിക ബന്ധങ്ങളുടെ ഉള്ളടക്കത്തെയല്ല, മറിച്ച് അവയുടെ <em>ബാഹ്യരൂപങ്ങളെയാണ് (Forms of Interaction)</em> സോഷ്യോളജി പഠിക്കേണ്ടത്.</p>
+  </div>
+  <div class="tree-card" style="border-left: 4px solid #059669;">
+    <h4>2. Synthetic School (സിന്തറ്റിക് സ്കൂൾ)</h4>
+    <p><strong>Thinkers:</strong> Émile Durkheim, Morris Ginsberg, L.T. Hobhouse, Pitirim Sorokin.<br>
+    <strong>Core Thesis:</strong> Society is an organic, interconnected whole. Sociology cannot isolate forms from content; it must synthesize the findings of all social sciences to build general sociological laws.<br>
+    <strong>മലയാളം:</strong> എമിൽ ഡർക്കൈം, മോറിസ് ഗിൻസ്ബർഗ് എന്നിവർ നയിച്ച സ്കൂൾ. സമൂഹത്തെ ഒരു ജൈവിക ഘടനയായി സമഗ്രമായി പഠിക്കണം. വിവിധ സാമൂഹിക ശാസ്ത്രങ്ങളുടെ കണ്ടെത്തലുകളെ സംയോജിപ്പിച്ചുകൊണ്ടുള്ള ഒരു സാമാന്യ ശാസ്ത്രമായിരിക്കണം സോഷ്യോളജി.</p>
+  </div>
+</div>
+
+<h2>5. സോഷ്യോളജിക്കൽ ഇമാജിനേഷൻ vs സാമാന്യബോധം (Sociological Imagination vs Common Sense)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>C. Wright Mills' Sociological Imagination (1959):</strong> Mills defined it as the vivid mental capacity to shift between perspectives and grasp the vital connection between personal biography and historical social structure. It differentiates:
+    <ul>
+      <li><strong>Personal Troubles of Milieu:</strong> Private difficulties occurring within the individual's direct character and immediate personal relationships (e.g. one person losing a job).</li>
+      <li><strong>Public Issues of Social Structure:</strong> Systemic crises transcending the individual, rooted in institutional malfunctions of society (e.g. mass structural unemployment in a deindustrialized economy).</li>
+    </ul>
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>സി. റൈറ്റ് മിൽസിന്റെ 'സോഷ്യോളജിക്കൽ ഇമാജിനേഷൻ' (1959):</strong> വ്യക്തിയുടെ അനുഭവങ്ങളും വലിയ സാമൂഹിക ചരിത്ര ഘടനയും തമ്മിലുള്ള അവിഭാജ്യ ബന്ധം തിരിച്ചറിയാനുള്ള ബൗദ്ധിക ശേഷിയാണിത്. ഇത് രണ്ട് കാര്യങ്ങളെ വേർതിരിക്കുന്നു:
+    <ul>
+      <li><strong>വ്യക്തിഗത പ്രശ്നങ്ങൾ (Personal Troubles):</strong> വ്യക്തിയുടെ പരിമിതമായ സ്വകാര്യ ജീവിതത്തിലുണ്ടാകുന്ന ബുദ്ധിമുട്ടുകൾ (ഉദാഹരണത്തിന്: ഒരാൾക്ക് മാത്രം ജോലി നഷ്ടപ്പെടുന്നത്).</li>
+      <li><strong>പൊതു സാമൂഹിക പ്രശ്നങ്ങൾ (Public Issues):</strong> സമൂഹത്തിന്റെ ഘടനാപരമായ തകരാറുകൾ മൂലം വലിയൊരു വിഭാഗം ജനങ്ങളെ ബാധിക്കുന്ന പ്രതിസന്ധികൾ (ഉദാഹരണത്തിന്: രാജ്യത്തെ സാമ്പത്തിക തകർച്ച മൂലം ലക്ഷക്കണക്കിന് ആളുകൾ തൊഴിൽരഹിതരാകുന്നത്).</li>
+    </ul>
+  </div>
+</div>
+
+<h2>6. എൽ.എം.എസ് ചോദ്യോത്തരങ്ങൾ (LMS Check Your Progress Questions & Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. Who coined the term 'Sociology' and in which year? Trace its etymology. / 'സോഷ്യോളജി' എന്ന പദം നിർമ്മിച്ചത് ആര്? ഏത് വർഷം? പദോത്പത്തി വിശദീകരിക്കുക.</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> French philosopher <strong>Auguste Comte</strong> coined the term 'Sociology' in <strong>1839</strong> in his book <em>Cours de Philosophie Positive</em>. The word derives from the Latin <em>'Socius'</em> (meaning companion, associate, or society) and the Greek <em>'Logos'</em> (meaning science, speech, or rational study). Together it signifies the scientific study of society.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> ഫ്രഞ്ച് തത്ത്വചിന്തകനായ <strong>ഓഗസ്റ്റ് കോംതെ</strong> <strong>1839</strong>-ൽ തന്റെ <em>'കോഴ്സ് ഡി ഫിലോസഫി പോസിറ്റീവ്'</em> എന്ന കൃതിയിലാണ് 'സോഷ്യോളജി' എന്ന പദം രൂപപ്പെടുത്തിയത്. ലത്തീൻ പദമായ <em>'Socius'</em> (കൂട്ടുകാരൻ/സമൂഹം), ഗ്രീക്ക് പദമായ <em>'Logos'</em> (ശാസ്ത്രം/പഠനം) എന്നിവ സംയോജിപ്പിച്ചാണ് ഇത് നിർമ്മിച്ചത്. സമൂഹത്തെക്കുറിച്ചുള്ള ശാസ്ത്രീയ പഠനമാണ് ഇതിന്റെ അർത്ഥം.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. Distinguish between the Formalistic School and Synthetic School regarding the scope of sociology. / സോഷ്യോളജിയുടെ വ്യാപ്തിയെ സംബന്ധിച്ച ഫോർമലിസ്റ്റിക്, സിന്തറ്റിക് സ്കൂളുകൾ തമ്മിലുള്ള വ്യത്യാസമെന്ത്?</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> The <strong>Formalistic School</strong> (Simmel, Weber) argues that sociology should be a specialized, pure science studying only the <em>forms of social relationships</em> (e.g., competition, domination), leaving content to other disciplines. The <strong>Synthetic School</strong> (Durkheim, Ginsberg) counters that society is an integrated organism; therefore, sociology must be a general science synthesizing all social sciences to understand society holistically.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> <strong>ഫോർമലിസ്റ്റിക് സ്കൂൾ</strong> (സിമ്മൽ, വെബർ) വാദിക്കുന്നത് സോഷ്യോളജി ഒരു സവിശേഷ ശാസ്ത്രമായിരിക്കണമെന്നും സാമൂഹിക ബന്ധങ്ങളുടെ ഉള്ളടക്കത്തെയല്ല, ബാഹ്യ രൂപങ്ങളെയാണ് (Forms) പഠിക്കേണ്ടത് എന്നുമാണ്. എന്നാൽ <strong>സിന്തറ്റിക് സ്കൂൾ</strong> (ഡർക്കൈം, ഗിൻസ്ബർഗ്) വാദിക്കുന്നത് സമൂഹം പരസ്പര ബന്ധിതമായ ഒന്നായതിനാൽ എല്ലാ സാമൂഹിക ശാസ്ത്രങ്ങളുടെയും കണ്ടെത്തലുകൾ സമന്വയിപ്പിച്ച് സമൂഹത്തെ സമഗ്രമായി പഠിക്കുന്ന ഒരു സാമാന്യ ശാസ്ത്രമായിരിക്കണം സോഷ്യോളജി എന്നാണ്.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q3. What is C. Wright Mills' 'Sociological Imagination'? Differentiate personal troubles from public issues. / സി. റൈറ്റ് മിൽസിന്റെ 'സോഷ്യോളജിക്കൽ ഇമാജിനേഷൻ' എന്നാൽ എന്ത്? വ്യക്തിഗത പ്രശ്നങ്ങളും പൊതു പ്രശ്നങ്ങളും താരതമ്യം ചെയ്യുക.</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> Introduced in 1959, the <strong>Sociological Imagination</strong> is the cognitive capacity to grasp how individual life experiences intersect with broader historical and structural forces. <em>Personal troubles</em> occur within an individual's private biography (e.g. an individual losing employment due to personal laziness). In contrast, <em>public issues</em> arise from societal institutional crises (e.g. 15 million citizens unemployed due to factory automation or nationwide economic collapse).</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> വ്യക്തിയുടെ ജീവിതാനുഭവങ്ങളെയും വലിയ സാമൂഹിക-ചരിത്ര ഘടനകളെയും തമ്മിൽ ബന്ധിപ്പിച്ച് മനസ്സിലാക്കാനുള്ള ബൗദ്ധിക ശേഷിയാണ് <strong>സോഷ്യോളജിക്കൽ ഇമാജിനേഷൻ</strong> (1959). <em>വ്യക്തിഗത പ്രശ്നങ്ങൾ (Personal Troubles)</em> ഒരു വ്യക്തിയുടെ സ്വഭാവം കൊണ്ടോ സ്വകാര്യ ജീവിതത്തിലോ ഉണ്ടാകുന്നതാണ് (ഉദാ: മടി കാരണം ഒരാൾക്ക് ജോലി നഷ്ടപ്പെടുന്നത്). എന്നാൽ <em>പൊതു പ്രശ്നങ്ങൾ (Public Issues)</em> സമൂഹത്തിന്റെ ഘടനാപരമായ തകരാറുകൾ മൂലം ഉണ്ടാകുന്നതാണ് (ഉദാ: സാമ്പത്തിക മാന്ദ്യം കാരണം ലക്ഷക്കണക്കിന് ആളുകൾക്ക് ജോലി നഷ്ടപ്പെടുന്നത്).</div>
+</div>
+
+<h2>7. പരീക്ഷാ ബഹുവിശേഷ ചോദ്യങ്ങൾ (Module 1 Examination MCQs)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">1. In which year did Auguste Comte coin the term 'Sociology'? / ഏത് വർഷമാണ് ഓഗസ്റ്റ് കോംതെ 'സോഷ്യോളജി' എന്ന പദം നിർമ്മിച്ചത്?</div>
+    <div class="q-options">
+      A) 1789<br>
+      B) 1839<br>
+      C) 1857<br>
+      D) 1895
+    </div>
+    <div class="q-ans">Answer: B) 1839</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Comte coined the term in 1839 in his Cours de Philosophie Positive.<br>
+      <strong>ML:</strong> 1839-ൽ തന്റെ കോഴ്സ് ഡി ഫിലോസഫി പോസിറ്റീവ് എന്ന ഗ്രന്ഥത്തിലാണ് കോംതെ ഈ പദം ആദ്യമായി ഉപയോഗിച്ചത്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. Before coining 'Sociology', what term did Comte use to describe the science of society? / സോഷ്യോളജിക്ക് മുൻപ് കോംതെ ഉപയോഗിച്ച പദം എന്തായിരുന്നു?</div>
+    <div class="q-options">
+      A) Social Biology / സോഷ്യൽ ബയോളജി<br>
+      B) Social Chemistry / സോഷ്യൽ കെമിസ്ട്രി<br>
+      C) Social Physics / സോഷ്യൽ ഫിസിക്സ്<br>
+      D) Social Philosophy / സോഷ്യൽ ഫിലോസഫി
+    </div>
+    <div class="q-ans">Answer: C) Social Physics / സോഷ്യൽ ഫിസിക്സ്</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Comte initially termed it 'Physique Sociale' (Social Physics) aiming for mathematical rigor.<br>
+      <strong>ML:</strong> ഭൗതികശാസ്ത്രത്തിന്റെ കൃത്യതയോടെ സമൂഹത്തെ പഠിക്കാൻ ഉദ്ദേശിച്ച് അദ്ദേഹം ഇതിനെ 'സോഷ്യൽ ഫിസിക്സ്' എന്ന് വിളിച്ചു.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. Which school of thought argues that sociology should study only the abstract forms of social interaction? / സാമൂഹിക ബന്ധങ്ങളുടെ അമൂർത്ത രൂപങ്ങളെ മാത്രം പഠിക്കണമെന്ന് വാദിച്ച സ്കൂൾ ഏതാണ്?</div>
+    <div class="q-options">
+      A) Synthetic School / സിന്തറ്റിക് സ്കൂൾ<br>
+      B) Formalistic / Specialistic School / ഫോർമലിസ്റ്റിക് സ്കൂൾ<br>
+      C) Frankfurt School / ഫ്രാങ്ക്ഫർട്ട് സ്കൂൾ<br>
+      D) Chicago School / ഷിക്കാഗോ സ്കൂൾ
+    </div>
+    <div class="q-ans">Answer: B) Formalistic / Specialistic School / ഫോർമലിസ്റ്റിക് സ്കൂൾ</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Georg Simmel and the Formalistic school argued sociology must focus purely on interactional forms.<br>
+      <strong>ML:</strong> ജോർജ്ജ് സിമ്മലിന്റെ നേതൃത്വത്തിലുള്ള ഫോർമലിസ്റ്റിക് സ്കൂളാണ് സോഷ്യോളജി ബന്ധങ്ങളുടെ രൂപങ്ങളെ മാത്രം പഠിക്കണമെന്ന് വാദിച്ചത്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">4. Who wrote the seminal work 'The Sociological Imagination' (1959)? / 'ദി സോഷ്യോളജിക്കൽ ഇമാജിനേഷൻ' (1959) രചിച്ചത് ആര്?</div>
+    <div class="q-options">
+      A) C. Wright Mills / സി. റൈറ്റ് മിൽസ്<br>
+      B) Talcott Parsons / ടാൽകോട്ട് പാർസൺസ്<br>
+      C) Robert K. Merton / റോബർട്ട് കെ. മെർട്ടൺ<br>
+      D) Anthony Giddens / ആന്റണി ഗിഡൻസ്
+    </div>
+    <div class="q-ans">Answer: A) C. Wright Mills / സി. റൈറ്റ് മിൽസ്</div>
+    <div class="q-exp">
+      <strong>EN:</strong> C. Wright Mills published 'The Sociological Imagination' in 1959.<br>
+      <strong>ML:</strong> 1959-ൽ സി. റൈറ്റ് മിൽസാണ് വ്യക്തിയും സമൂഹവും തമ്മിലുള്ള ബന്ധം വിശദീകരിക്കുന്ന ഈ കൃതി രചിച്ചത്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">5. According to Robert Bierstedt, sociology is a: / റോബർട്ട് ബിയർസ്റ്റെഡിന്റെ അഭിപ്രായത്തിൽ സോഷ്യോളജി ഒരു:</div>
+    <div class="q-options">
+      A) Normative science / നോർമേറ്റീവ് ശാസ്ത്രം<br>
+      B) Categorical and pure science / പോസിറ്റീവും പ്യുവറുമായ ശാസ്ത്രം<br>
+      C) Natural science / പ്രകൃതി ശാസ്ത്രം<br>
+      D) Particularizing science / ഐഡിയോഗ്രാഫിക് ശാസ്ത്രം
+    </div>
+    <div class="q-ans">Answer: B) Categorical and pure science / പോസിറ്റീവും പ്യുവറുമായ ശാസ്ത്രം</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Bierstedt classified sociology as categorical (factual) rather than normative, and pure rather than applied.<br>
+      <strong>ML:</strong> സോഷ്യോളജി എന്തായിരിക്കണം എന്നല്ല, എന്താണ് ഉള്ളത് എന്ന് പഠിക്കുന്ന പോസിറ്റീവും ശുദ്ധവുമായ ശാസ്ത്രമാണെന്ന് ബിയർസ്റ്റെഡ് വ്യക്തമാക്കി.
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. സോഷ്യോളജി പഠന സഹായി · Introduction to Sociology (SOC1CJ101)</span>
+    <span>സമ്പൂർണ്ണ മലയാള പരിഭാഷ, ചോദ്യോത്തരങ്ങൾ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

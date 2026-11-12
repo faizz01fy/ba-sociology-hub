@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Psychology Revision Keyword Map - Academic Hub</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+      font-size: 8pt;
+      line-height: 1.34;
+      color: #0f172a;
+      background: #f1f5f9;
+    }
+
+    .page-container {
+      width: 210mm;
+      height: 297mm;
+      padding: 7mm 9.5mm 6mm 9.5mm;
+      position: relative;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .header-box {
+      background: linear-gradient(135deg, #091e3a 0%, #102a4e 55%, #0d3b66 100%);
+      border-radius: 7px;
+      padding: 5.5px 12px;
+      color: #ffffff;
+      margin-bottom: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      border-bottom: 2.5px solid #0284c7;
+    }
+
+    .header-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5px;
+    }
+
+    .brand-hub {
+      font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 800;
+      color: #fbbf24;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .brand-hub::before {
+      content: '🎓';
+      font-size: 8.5pt;
+    }
+
+    .website-tag {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #dc2626;
+      font-size: 6.8pt;
+      font-weight: 800;
+      padding: 1.5px 8px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .filled-page-badge {
+      background: #0284c7;
+      color: #ffffff;
+      font-size: 7pt;
+      font-weight: 800;
+      padding: 1.5px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.4px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .header-title-en {
+      font-size: 10.8pt;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .header-title-ml {
+      font-family: 'Noto Sans Malayalam', 'Nirmala UI', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-top: 1px;
+      line-height: 1.25;
+    }
+
+    .header-subtitle {
+      font-size: 6.7pt;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-top: 1.5px;
+      letter-spacing: 0.2px;
+    }
+
+    .mcq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      flex: 1;
+    }
+
+    .fresh-mcq-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+      overflow: hidden;
+    }
+
+    .card-top-strip {
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 3px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .q-badge {
+      background: #0f172a;
+      color: #38bdf8;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 3px;
+      letter-spacing: 0.4px;
+    }
+
+    .q-topic {
+      font-size: 6.6pt;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .card-content {
+      padding: 4.5px 8px 4px 8px;
+    }
+
+    .q-text-english {
+      font-size: 8.2pt;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.28;
+      margin-bottom: 2px;
+    }
+
+    .ml-light-blue {
+      font-family: 'Noto Sans Malayalam', 'Nirmala UI', sans-serif !important;
+      color: #0284c7 !important;
+      font-weight: 600;
+    }
+
+    .q-text-malayalam {
+      font-size: 7.6pt;
+      line-height: 1.33;
+      margin-bottom: 4px;
+    }
+
+    .options-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px 6px;
+      margin-bottom: 4px;
+    }
+
+    .opt-cell {
+      display: flex;
+      align-items: flex-start;
+      gap: 4px;
+      font-size: 7.3pt;
+      line-height: 1.22;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 2.5px 5.5px;
+    }
+
+    .opt-cell.correct-opt {
+      background: #f0fdf4;
+      border-color: #86efac;
+    }
+
+    .opt-key {
+      font-weight: 800;
+      color: #1e40af;
+      min-width: 13px;
+    }
+
+    .correct-opt .opt-key {
+      color: #15803d;
+    }
+
+    .opt-txt-en {
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .correct-opt .opt-txt-en {
+      color: #14532d;
+    }
+
+    .opt-txt-ml {
+      font-size: 6.9pt;
+      display: inline-block;
+    }
+
+    .answer-strip {
+      background: #f0fdf4;
+      border-top: 1px solid #bbf7d0;
+      padding: 2.5px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 7.1pt;
+    }
+
+    .ans-left-group {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ans-badge {
+      background: #16a34a;
+      color: #ffffff;
+      font-size: 6.8pt;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 3px;
+      letter-spacing: 0.3px;
+    }
+
+    .ans-title-en {
+      font-weight: 700;
+      color: #15803d;
+    }
+
+    .ans-title-ml {
+      font-size: 7.1pt;
+    }
+
+    .ans-note {
+      font-size: 6.7pt;
+      color: #3f6212;
+      font-style: italic;
+    }
+
+    .highlight-purple {
+      background: #f3e8ff;
+      color: #581c87;
+      font-weight: 700;
+      padding: 0 2.5px;
+      border-radius: 2px;
+    }
+
+    .highlight-yellow {
+      background: #fef08a;
+      color: #713f12;
+      font-weight: 700;
+      padding: 0 2.5px;
+      border-radius: 2px;
+    }
+
+    .page-footer {
+      border-top: 1.5px solid #cbd5e1;
+      padding-top: 3.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 6.8pt;
+      color: #64748b;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .footer-brand {
+      color: #fbbf24;
+      background: #0f172a;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 800;
+      font-size: 6.6pt;
+    }
+
+    .footer-web {
+      color: #dc2626;
+      font-weight: 700;
+    }
+
+    .footer-pill {
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 800;
+      padding: 1.5px 7px;
+      border-radius: 3px;
+      font-size: 6.7pt;
+    }
+    
+    .table-container {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.2pt;
+      line-height: 1.25;
+      margin-top: 3px;
+    }
+    .table-container th {
+      background: #0f2b48;
+      color: #ffffff;
+      padding: 4px 6px;
+      text-align: left;
+      font-weight: 800;
+      border: 1px solid #cbd5e1;
+      text-transform: uppercase;
+      font-size: 6.8pt;
+      letter-spacing: 0.3px;
+    }
+    .table-container td {
+      padding: 3.5px 6px;
+      border: 1px solid #cbd5e1;
+      vertical-align: middle;
+    }
+    .table-container tr:nth-child(even) {
+      background: #f8fafc;
+    }
+    .table-container tr:hover {
+      background: #f0fdf4;
+    }
+    .clue-col {
+      font-weight: 700;
+      color: #0f172a;
+      width: 32%;
+    }
+    .concept-col {
+      color: #1e3a8a;
+      font-weight: 700;
+      width: 36%;
+    }
+    .ml-col {
+      width: 32%;
+    }
+    .theme-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+      margin-top: 3px;
+    }
+    .theme-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 5px;
+      padding: 4.5px 7px;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+    .theme-title {
+      font-size: 7.4pt;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 1.5px solid #0284c7;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .theme-points {
+      margin: 0;
+      padding-left: 12px;
+      font-size: 6.9pt;
+      line-height: 1.28;
+      color: #334155;
+    }
+    .theme-points li {
+      margin-bottom: 2px;
+    }
+    </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  
+    <div class="page-container">
+      <div>
+        <div class="header-box">
+          <div class="header-top-row">
+            <span class="brand-hub">ACADEMIC HUB</span>
+            <span class="website-tag">🌐 www.academichub.in</span>
+            <span class="filled-page-badge">PAGE 01 / 02</span>
+          </div>
+          <div class="header-title-en">HIGH-PRIORITY PSYCHOLOGY & PEDAGOGY CORE THEMES</div>
+          <div class="header-title-ml">വിദ്യാഭ്യാസ മനഃശാസ്ത്രം · അതിപ്രധാന റിവിഷൻ സിദ്ധാന്തങ്ങൾ</div>
+          <div class="header-subtitle">KTET • LPST / UPST • CTET COMPREHENSIVE THEORETICAL SYNOPSIS</div>
+        </div>
+
+        <div class="theme-card-grid">
+          
+        <div class="theme-card">
+          <div class="theme-title">
+            <span>1. Piaget — Cognitive Development</span>
+            <span class="ml-light-blue" style="font-size:7pt;">പിയാഷെ: ജ്ഞാനവികാസ സിദ്ധാന്തം</span>
+          </div>
+          <ul class="theme-points">
+            <li><strong>Sensorimotor (0–2 yrs)</strong>: <span class='ml-light-blue'>സെൻസറിമോട്ടോർ</span> — Object permanence develops / ഇന്ദ്രിയചാലക ഘട്ടം</li><li><strong>Pre-operational (2–7 yrs)</strong>: <span class='ml-light-blue'>പ്രീ-ഓപ്പറേഷണൽ</span> — Egocentrism, lack of conservation / സ്വാർത്ഥ ചിന്ത</li><li><strong>Concrete operational (7–11 yrs)</strong>: <span class='ml-light-blue'>കോൺക്രീറ്റ് ഓപ്പറേഷൻസ്</span> — Logical thought on concrete objects, reversibility</li><li><strong>Formal operational (11+ yrs)</strong>: <span class='ml-light-blue'>ഫോർമൽ ഓപ്പറേഷൻസ്</span> — Abstract thinking, systematic hypothesis testing</li>
+          </ul>
+        </div>
+        
+        <div class="theme-card">
+          <div class="theme-title">
+            <span>2. Erikson — Psychosocial Development</span>
+            <span class="ml-light-blue" style="font-size:7pt;">എറിക്സൺ: മനോസാമൂഹിക വികാസം</span>
+          </div>
+          <ul class="theme-points">
+            <li><strong>Trust vs Mistrust (0–1 yr)</strong>: <span class='ml-light-blue'>വിശ്വാസം vs അവിശ്വാസം</span> — Infancy · Hope / സുരക്ഷിതത്വ ബോധം</li><li><strong>Autonomy vs Shame (1–3 yrs)</strong>: <span class='ml-light-blue'>സ്വയംഭരണം vs ലജ്ജ</span> — Toddlerhood · Will / സ്വയം നിയന്ത്രണം</li><li><strong>Initiative vs Guilt (3–6 yrs)</strong>: <span class='ml-light-blue'>തുടക്കം vs കുറ്റബോധം</span> — Early childhood · Purpose / സംരംഭകത്വം</li><li><strong>Industry vs Inferiority (6–12 yrs)</strong>: <span class='ml-light-blue'>കർമ്മോത്സുകത vs അപകർഷത</span> — School age · Competence / പ്രവർത്തന മികവ്</li><li><strong>Identity vs Role Confusion (12–18)</strong>: <span class='ml-light-blue'>സ്വത്വബോധം vs ആശയക്കുഴപ്പം</span> — Adolescence · Fidelity / വ്യക്തിത്വം</li>
+          </ul>
+        </div>
+        
+        <div class="theme-card">
+          <div class="theme-title">
+            <span>3. Kohlberg — Moral Development</span>
+            <span class="ml-light-blue" style="font-size:7pt;">കോൾബർഗ്: ധാർമ്മിക വികാസ സിദ്ധാന്തം</span>
+          </div>
+          <ul class="theme-points">
+            <li><strong>Pre-conventional Level</strong>: <span class='ml-light-blue'>പ്രീ-കൺവെൻഷണൽ</span> — Stage 1: Punishment & Obedience; Stage 2: Individualism/Reward</li><li><strong>Conventional Level</strong>: <span class='ml-light-blue'>കൺവെൻഷണൽ</span> — Stage 3: Good boy/girl; Stage 4: Law & Order orientation</li><li><strong>Post-conventional Level</strong>: <span class='ml-light-blue'>പോസ്റ്റ്-കൺവെൻഷണൽ</span> — Stage 5: Social contract; Stage 6: Universal ethics</li>
+          </ul>
+        </div>
+        
+        <div class="theme-card">
+          <div class="theme-title">
+            <span>4. Learning Theories & Conditioning</span>
+            <span class="ml-light-blue" style="font-size:7pt;">പഠന സിദ്ധാന്തങ്ങൾ</span>
+          </div>
+          <ul class="theme-points">
+            <li><strong>Ivan Pavlov</strong>: <span class='ml-light-blue'>ഇവാൻ പാവ്‌ലോവ്</span> — Classical conditioning: UCS, UCR, CS, CR, stimulus generalization</li><li><strong>B.F. Skinner</strong>: <span class='ml-light-blue'>ബി.എഫ്. സ്കിന്നർ</span> — Operant conditioning: Reinforcement schedules, shaping, extinction</li><li><strong>Albert Bandura</strong>: <span class='ml-light-blue'>ആൽബർട്ട് ബന്ദുര</span> — Social observational learning: Attention, retention, motor reproduction, motivation</li><li><strong>Kohler & Gestalt</strong>: <span class='ml-light-blue'>കോഹ്‌ലർ / ഗെസ്റ്റാൾട്ട്</span> — Insight learning (Aha! phenomenon) tested on chimpanzee Sultan</li>
+          </ul>
+        </div>
+        
+        <div class="theme-card">
+          <div class="theme-title">
+            <span>5. Vygotsky & Constructivism</span>
+            <span class="ml-light-blue" style="font-size:7pt;">വൈഗോട്സ്കി: സാമൂഹനവത്കരണം</span>
+          </div>
+          <ul class="theme-points">
+            <li><strong>ZPD (Zone of Proximal Dev.)</strong>: <span class='ml-light-blue'>പ്രോക്സിമൽ ഡെവലപ്മെന്റ്</span> — Distance between independent solving and guided ability</li><li><strong>Scaffolding</strong>: <span class='ml-light-blue'>സ്കാഫോൾഡിംഗ്</span> — Temporary calibrated assistance withdrawn as mastery grows</li><li><strong>MKO (More Knowledgeable Other)</strong>: <span class='ml-light-blue'>കൂടുതൽ അറിവുള്ളയാൾ</span> — Peers, mentors, or digital scaffolds aiding cognitive growth</li>
+          </ul>
+        </div>
+        
+        <div class="theme-card">
+          <div class="theme-title">
+            <span>6. Intelligence Theories</span>
+            <span class="ml-light-blue" style="font-size:7pt;">ബുദ്ധി സിദ്ധാന്തങ്ങൾ</span>
+          </div>
+          <ul class="theme-points">
+            <li><strong>Spearman (Two-Factor)</strong>: <span class='ml-light-blue'>സ്പിയർമാൻ (ദ്വിഘടകം)</span> — General factor ('g') + Specific factors ('s')</li><li><strong>Howard Gardner (Multiple Int.)</strong>: <span class='ml-light-blue'>ഹോവാർഡ് ഗാർഡ്നർ</span> — 8 distinct intelligences (Linguistic, Spatial, Kinesthetic, etc.)</li><li><strong>Robert Sternberg (Triarchic)</strong>: <span class='ml-light-blue'>റോബർട്ട് സ്റ്റെർൻബർഗ്</span> — Analytical, Creative, and Practical intelligence</li><li><strong>J.P. Guilford (SI Model)</strong>: <span class='ml-light-blue'>ഗിൽഫോർഡ് (SI മോഡൽ)</span> — Structure of Intellect: Operations, Contents, Products</li>
+          </ul>
+        </div>
+        
+        <div class="theme-card">
+          <div class="theme-title">
+            <span>7. Motivation & Emotion</span>
+            <span class="ml-light-blue" style="font-size:7pt;">പ്രചോദനവും വികാരങ്ങളും</span>
+          </div>
+          <ul class="theme-points">
+            <li><strong>Maslow's Hierarchy</strong>: <span class='ml-light-blue'>മാസ്ലോയുടെ ശ്രേണി</span> — Physiological → Safety → Love/Belonging → Esteem → Self-actualisation</li><li><strong>McClelland's Triad</strong>: <span class='ml-light-blue'>മെക് ക്ലീലാൻഡ്</span> — Need for Achievement (nAch), Affiliation (nAff), Power (nPower)</li><li><strong>Daniel Goleman</strong>: <span class='ml-light-blue'>ഡാനിയൽ ഗോൾമാൻ</span> — Emotional Intelligence (EQ): Self-awareness, regulation, empathy</li>
+          </ul>
+        </div>
+        
+        <div class="theme-card">
+          <div class="theme-title">
+            <span>8. Assessment & Evaluation</span>
+            <span class="ml-light-blue" style="font-size:7pt;">വിലയിരുത്തലും അളക്കലും</span>
+          </div>
+          <ul class="theme-points">
+            <li><strong>Formative Assessment</strong>: <span class='ml-light-blue'>രൂപീകരണ വിലയിരുത്തൽ</span> — Assessment FOR / AS learning (continuous diagnostics)</li><li><strong>Summative Assessment</strong>: <span class='ml-light-blue'>സംഗ്രഹാത്മക വിലയിരുത്തൽ</span> — Assessment OF learning (terminal grade certification)</li><li><strong>Diagnostic & Portfolio</strong>: <span class='ml-light-blue'>ഡയഗ്നോസ്റ്റിക് & പോർട്ട്ഫോളിയോ</span> — Pinpointing learning gaps followed by evidence-based remediation</li>
+          </ul>
+        </div>
+        
+        <div class="theme-card">
+          <div class="theme-title">
+            <span>9. Inclusive Education & Disabilities</span>
+            <span class="ml-light-blue" style="font-size:7pt;">ഉൾച്ചേർക്കലും ഭിന്നശേഷിയും</span>
+          </div>
+          <ul class="theme-points">
+            <li><strong>PWD Act 1995 & RPWD Act 2016</strong>: <span class='ml-light-blue'>PWD & RPWD നിയമങ്ങൾ</span> — Expanded from 7 to 21 disability categories with equal rights</li><li><strong>Dyslexia / Dysgraphia / Dyscalculia</strong>: <span class='ml-light-blue'>പഠന വൈകല്യങ്ങൾ</span> — Reading / Writing / Mathematical specific learning disorders</li><li><strong>Dyspraxia & Multisensory method</strong>: <span class='ml-light-blue'>ഡിസ്പ്രാക്സിയ & പരിഹാരങ്ങൾ</span> — Motor coordination dysfunction; visual/tactile learning scaffolds</li>
+          </ul>
+        </div>
+        
+        <div class="theme-card">
+          <div class="theme-title">
+            <span>10. Personality & Defense Mechanisms</span>
+            <span class="ml-light-blue" style="font-size:7pt;">വ്യക്തിത്വവും പ്രതിരോധ തന്ത്രങ്ങളും</span>
+          </div>
+          <ul class="theme-points">
+            <li><strong>Gordon Allport Traits</strong>: <span class='ml-light-blue'>ആൾപോർട്ട് ട്രെയിറ്റുകൾ</span> — Cardinal (dominant), Central (core building blocks), Secondary traits</li><li><strong>Freud's Mind Architecture</strong>: <span class='ml-light-blue'>ഫ്രോയിഡിന്റെ മനസ്സ്</span> — Id (pleasure), Ego (reality), Superego (moral conscience)</li><li><strong>Defense Mechanisms</strong>: <span class='ml-light-blue'>പ്രതിരോധ തന്ത്രങ്ങൾ</span> — Rationalisation, Projection, Sublimation, Displacement, Repression</li>
+          </ul>
+        </div>
+        
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <div>
+          <span class="footer-brand">ACADEMIC HUB</span>
+          <span>· HIGH-PRIORITY PSYCHOLOGY REVISION GUIDE</span>
+        </div>
+        <div class="footer-web">🌐 www.academichub.in</div>
+        <div class="footer-pill">PAGE 01 / 02</div>
+      </div>
+    </div>
+    
+  
+    <div class="page-container">
+      <div>
+        <div class="header-box">
+          <div class="header-top-row">
+            <span class="brand-hub">ACADEMIC HUB</span>
+            <span class="website-tag">🌐 www.academichub.in</span>
+            <span class="filled-page-badge">PAGE 02 / 02</span>
+          </div>
+          <div class="header-title-en">LAST-MINUTE EXAM KEYWORD & CONCEPT RECALL MAP</div>
+          <div class="header-title-ml">അവസാന നിമിഷ പരീക്ഷാ കീവേഡ് മാപ്പ് · തൽക്ഷണ ഓർമ്മപ്പെടുത്തൽ</div>
+          <div class="header-subtitle">KTET • LPST / UPST • CTET DIRECT EXAM CLUE-TO-THEORY LOOKUP MATRIX</div>
+        </div>
+
+        <table class="table-container">
+          <thead>
+            <tr>
+              <th>Exam Trigger / Scenario Clue</th>
+              <th>Theorist & Core Academic Concept</th>
+              <th>മലയാളം തത്വവും വിശദീകരണവും</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr>
+          <td class="clue-col">Punishment avoidance</td>
+          <td class="concept-col">Lawrence Kohlberg — Pre-conventional Morality</td>
+          <td class="ml-col ml-light-blue">ശിക്ഷ ഒഴിവാക്കൽ → പ്രീ-കൺവെൻഷണൽ ഘട്ടം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Primary-school crisis (6–12 yrs)</td>
+          <td class="concept-col">Erik Erikson — Industry vs Inferiority</td>
+          <td class="ml-col ml-light-blue">കർമ്മോത്സുകത vs അപകർഷതാബോധം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Adolescent identity search</td>
+          <td class="concept-col">Erik Erikson — Identity vs Role Confusion</td>
+          <td class="ml-col ml-light-blue">സ്വത്വബോധം vs ആശയക്കുഴപ്പം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Object permanence emergence</td>
+          <td class="concept-col">Jean Piaget — Sensorimotor Stage (0–2 yrs)</td>
+          <td class="ml-col ml-light-blue">വസ്തുക്കളുടെ സ്ഥിരതാബോധം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Inability to conserve volume/shape</td>
+          <td class="concept-col">Jean Piaget — Pre-operational Stage (2–7 yrs)</td>
+          <td class="ml-col ml-light-blue">സംരക്ഷണബോധക്കുറവ് / സെൻട്രേഷൻ</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">ZPD & Calibrated Scaffolding</td>
+          <td class="concept-col">Lev Vygotsky — Socio-Cultural Constructivism</td>
+          <td class="ml-col ml-light-blue">പ്രോക്സിമൽ വികാസ മേഖല / താങ്ങ് നൽകൽ</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Meaningful verbal learning / Advance Organiser</td>
+          <td class="concept-col">David Ausubel — Cognitive Reception Learning</td>
+          <td class="ml-col ml-light-blue">അഡ്വാൻസ് ഓർഗനൈസർ / അർത്ഥപൂർണ്ണ പഠനം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Observational learning & Modelling</td>
+          <td class="concept-col">Albert Bandura — Social Cognitive Theory</td>
+          <td class="ml-col ml-light-blue">നിരീക്ഷണ പഠനം / മാതൃകാനുകരണം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Stimulus generalisation & extinction</td>
+          <td class="concept-col">Ivan Pavlov — Classical Conditioning</td>
+          <td class="ml-col ml-light-blue">ഉത്തേജക സാമാന്യവൽക്കരണവും വംശനാശവും</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Reinforcement schedules & shaping</td>
+          <td class="concept-col">B.F. Skinner — Operant Conditioning</td>
+          <td class="ml-col ml-light-blue">പ്രബലന പട്ടികകൾ / ഓപ്പറന്റ് അനുബന്ധം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Sudden Aha! insight in problem solving</td>
+          <td class="concept-col">Wolfgang Köhler — Gestalt Insight Learning</td>
+          <td class="ml-col ml-light-blue">ഉൾക്കാഴ്ചാ പഠനം (സുൽത്താൻ പരീക്ഷണം)</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">General factor ('g') and specific ('s')</td>
+          <td class="concept-col">Charles Spearman — Two-Factor Intelligence</td>
+          <td class="ml-col ml-light-blue">ബുദ്ധിയുടെ ദ്വിഘടക സിദ്ധാന്തം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Three-dimensional Intellect (180 factors)</td>
+          <td class="concept-col">J.P. Guilford — Structure of Intellect (SI)</td>
+          <td class="ml-col ml-light-blue">സ്ട്രക്ചർ ഓഫ് ഇന്റലിജക്റ്റ് മോഡൽ</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Analytical, Creative, Practical intelligence</td>
+          <td class="concept-col">Robert Sternberg — Triarchic Theory of Mind</td>
+          <td class="ml-col ml-light-blue">ട്രയാർചിക് ബുദ്ധി സിദ്ധാന്തം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Multiple Intelligences (Frames of Mind)</td>
+          <td class="concept-col">Howard Gardner — 8 Multiple Intelligences</td>
+          <td class="ml-col ml-light-blue">ബഹുമുഖ ബുദ്ധി സിദ്ധാന്തം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Need for Achievement, Affiliation, Power</td>
+          <td class="concept-col">David McClelland — Acquired Needs Theory</td>
+          <td class="ml-col ml-light-blue">നേട്ട പ്രചോദന സിദ്ധാന്തം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Five-tier hierarchical human needs</td>
+          <td class="concept-col">Abraham Maslow — Self-Actualisation Model</td>
+          <td class="ml-col ml-light-blue">ആവശ്യങ്ങളുടെ ശ്രേണീകൃത സിദ്ധാന്തം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Learned habits become independent drives</td>
+          <td class="concept-col">Gordon Allport — Functional Autonomy</td>
+          <td class="ml-col ml-light-blue">ഫങ്ഷണൽ ഓട്ടോണമി (സ്വയംഭരണാധികാരം)</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Emotional intelligence popularisation</td>
+          <td class="concept-col">Daniel Goleman — Emotional Competence</td>
+          <td class="ml-col ml-light-blue">വൈകാരിക ബുദ്ധി / സഹാനുഭൂതി</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Reading & decoding learning disability</td>
+          <td class="concept-col">Dyslexia — Phonological Processing Disorder</td>
+          <td class="ml-col ml-light-blue">ഡിസ്ലെക്സിയ (വായനാ വൈകല്യം)</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Fine-motor writing & handwriting difficulty</td>
+          <td class="concept-col">Dysgraphia — Written Expression Deficit</td>
+          <td class="ml-col ml-light-blue">ഡിസ്ഗ്രാഫിയ (എഴുത്ത് വൈകല്യം)</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Mathematical & calculation disability</td>
+          <td class="concept-col">Dyscalculia — Numerical Cognition Deficit</td>
+          <td class="ml-col ml-light-blue">ഡിസ്കാൽക്കുലിയ (ഗണിത വൈകല്യം)</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Motor coordination & planning disorder</td>
+          <td class="concept-col">Dyspraxia — Developmental Motor Disorder</td>
+          <td class="ml-col ml-light-blue">ഡിസ്പ്രാക്സിയ (ചാലക ഏകോപന വൈകല്യം)</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Authentic collection of student artefacts</td>
+          <td class="concept-col">Portfolio Assessment — Authentic Evaluation</td>
+          <td class="ml-col ml-light-blue">പോർട്ട്ഫോളിയോ വിലയിരുത്തൽ</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Pinpointing learning gaps & weaknesses</td>
+          <td class="concept-col">Diagnostic Assessment & Remediation</td>
+          <td class="ml-col ml-light-blue">ഡയഗ്നോസ്റ്റിക് ടെസ്റ്റ് & പരിഹാരബോധനം</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">New learning inhibits recall of old memories</td>
+          <td class="concept-col">Retroactive Interference (Memory Decay)</td>
+          <td class="ml-col ml-light-blue">റിട്രോആക്ടീവ് തടസ്സം (പുതിയത് പഴയതിനെ തടയുന്നു)</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Old learning inhibits recall of new memories</td>
+          <td class="concept-col">Proactive Interference (Memory Decay)</td>
+          <td class="ml-col ml-light-blue">പ്രോആക്ടീവ് തടസ്സം (പഴയത് പുതിയതിനെ തടയുന്നു)</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Specific concrete instances → Universal rule</td>
+          <td class="concept-col">Inductive Teaching Method (Observation-based)</td>
+          <td class="ml-col ml-light-blue">ആഗമന രീതി (പ്രത്യേകത്തിൽ നിന്ന് പൊതുവിലേക്ക്)</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">General theory/rule → Specific applications</td>
+          <td class="concept-col">Deductive Teaching Method (Rule-first)</td>
+          <td class="ml-col ml-light-blue">നിഗമന രീതി (പൊതുവിൽ നിന്ന് പ്രത്യേകത്തിലേക്ക്)</td>
+        </tr>
+        
+        <tr>
+          <td class="clue-col">Multiple novel solutions & flexibility</td>
+          <td class="concept-col">Divergent Thinking — Core of Creative Mind</td>
+          <td class="ml-col ml-light-blue">വ്യതിരിക്ത ചിന്ത (സർഗ്ഗാത്മകതയുടെ ആധാരം)</td>
+        </tr>
+        
+          </tbody>
+        </table>
+      </div>
+
+      <div class="page-footer">
+        <div>
+          <span class="footer-brand">ACADEMIC HUB</span>
+          <span>· LAST-MINUTE EXAM KEYWORD RECALL MATRIX</span>
+        </div>
+        <div class="footer-web">🌐 www.academichub.in</div>
+        <div class="footer-pill">PAGE 02 / 02</div>
+      </div>
+    </div>
+    
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,2391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Academic Hub // Control Room Watch</title>
+<style>
+:root {
+  --bg-core: #060912;
+  --bg-surface: #0c1424;
+  --bg-surface-elevated: #142036;
+  --bg-card: rgba(14, 22, 38, 0.85);
+  --border-subtle: rgba(56, 189, 248, 0.24);
+  --border-card: rgba(148, 163, 184, 0.16);
+  --accent-cyan: #38bdf8;
+  --accent-cyan-glow: rgba(56, 189, 248, 0.3);
+  --accent-emerald: #10b981;
+  --accent-emerald-glow: rgba(16, 185, 129, 0.3);
+  --accent-purple: #c084fc;
+  --accent-purple-glow: rgba(192, 132, 252, 0.3);
+  --accent-gold: #f59e0b;
+  --accent-gold-glow: rgba(245, 158, 11, 0.35);
+  --accent-amber: #fbbf24;
+  --accent-rose: #f43f5e;
+  --accent-indigo: #818cf8;
+  --text-pure: #ffffff;
+  --text-main: #f1f5f9;
+  --text-muted: #cbd5e1;
+  --text-dim: #94a3b8;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'JetBrains Mono', Consolas, Menlo, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: var(--bg-core);
+  background-image: 
+    radial-gradient(ellipse 90% 60% at 50% -20%, rgba(56, 189, 248, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 85% 15%, rgba(245, 158, 11, 0.08), transparent),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+  padding: 18px 24px 60px;
+}
+
+/* TOP COMMAND HUD */
+.hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 22px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  margin-bottom: 22px;
+}
+.brand-title { display: flex; align-items: center; gap: 14px; }
+.brand-radar {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-emerald);
+  box-shadow: 0 0 12px var(--accent-emerald);
+  position: relative;
+}
+.brand-radar::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-emerald);
+  opacity: 0.7;
+  animation: radar-pulse 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes radar-pulse {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+.brand-text h1 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-pure);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-text h1 span {
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  padding: 3px 8px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 4px;
+}
+.brand-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+  margin-top: 2px;
+}
+
+.hud-clocks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--border-card);
+}
+.clock-item { display: flex; flex-direction: column; }
+.clock-label { font-size: 11px; font-weight: 700; color: var(--text-dim); letter-spacing: 0.05em; text-transform: uppercase; }
+.clock-time { font-size: 15px; font-weight: 700; font-family: var(--font-mono); color: var(--accent-cyan); }
+
+.hud-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.refresh-rate-label { font-family: var(--font-sans); font-size: 12px; font-weight: 700; color: var(--text-muted); display: inline-flex; align-items: center; gap: 6px; }
+.select-inline {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-card);
+  background: var(--bg-surface-elevated);
+  color: var(--text-main);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.18s ease;
+}
+.btn:hover { background: rgba(56, 189, 248, 0.15); border-color: var(--accent-cyan); color: var(--text-pure); }
+.btn-primary {
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+  border-color: #38bdf8;
+  color: #fff;
+  box-shadow: 0 0 14px rgba(6, 182, 212, 0.35);
+}
+.btn-primary:hover { background: linear-gradient(135deg, #0369a1, #0891b2); color: #fff; box-shadow: 0 0 18px rgba(6, 182, 212, 0.5); }
+.btn-gold {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+  border-color: #fbbf24;
+  color: #1e1302;
+  font-weight: 800;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.35);
+}
+.btn-gold:hover { background: linear-gradient(135deg, #b45309, #d97706); color: #fff; box-shadow: 0 0 18px rgba(245, 158, 11, 0.55); }
+.btn-danger {
+  background: rgba(244, 63, 94, 0.15);
+  border-color: rgba(244, 63, 94, 0.4);
+  color: #fda4af;
+}
+.btn-danger:hover { background: rgba(244, 63, 94, 0.3); color: #fff; }
+
+/* LIVE HEARTBEAT & TELEMETRY STRIP */
+    .sync-pulse-dot {
+      animation: pulse-glow 2s infinite ease-in-out;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.45; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    .telemetry-hud-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 12px;
+      padding: 10px 18px;
+      margin-bottom: 22px;
+      font-size: 12.5px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+    .hud-strip-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dim);
+    }
+    .engine-live-pulse {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      box-shadow: 0 0 10px var(--accent-emerald);
+      animation: pulse-glow 1.5s infinite ease-in-out;
+    }
+    .strip-sep { opacity: 0.4; }
+    .hud-strip-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dim);
+    }
+    .owner-ip-pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #a7f3d0;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 3px 9px;
+      border-radius: 6px;
+    }
+
+    /* TOP KPI METRICS GRID */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.kpi-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 18px 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+.kpi-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
+.kpi-card.live::before { background: var(--accent-emerald); }
+.kpi-card.today::before { background: var(--accent-cyan); }
+.kpi-card.buffer::before { background: var(--accent-indigo); }
+.kpi-card.popular::before { background: var(--accent-purple); }
+
+.kpi-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.kpi-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); }
+.kpi-badge { font-size: 11px; font-family: var(--font-mono); font-weight: 700; padding: 2px 7px; border-radius: 999px; text-transform: uppercase; }
+.kpi-badge.live { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+.kpi-badge.today { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+.kpi-badge.total { background: rgba(129, 140, 248, 0.2); color: #a5b4fc; }
+.kpi-badge.popular { background: rgba(192, 132, 252, 0.2); color: #d8b4fe; }
+
+.kpi-val { font-size: 30px; font-weight: 800; font-family: var(--font-mono); color: var(--text-pure); line-height: 1.1; margin-bottom: 6px; }
+.kpi-val small { font-size: 13px; font-weight: 600; color: var(--text-dim); margin-left: 4px; }
+.kpi-foot { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--text-muted); }
+.kpi-foot span.highlight { color: var(--text-pure); font-weight: 700; }
+
+/* ULTRA-PREMIUM NAVIGATION TABS */
+.nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(13, 20, 36, 0.88);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 6px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.tab-btn {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 10px 18px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.tab-btn:hover {
+  color: var(--text-pure);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.tab-icon { font-size: 15px; display: inline-flex; align-items: center; justify-content: center; }
+
+/* TAB THEMES */
+.tab-btn#tab-btn-geo.active {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(6, 182, 212, 0.08));
+  color: #fff;
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.tab-btn#tab-btn-yesterday.active {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.26), rgba(217, 119, 6, 0.1));
+  color: #fff;
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.tab-btn#tab-btn-radar.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.24), rgba(5, 150, 105, 0.08));
+  color: #fff;
+  border-color: rgba(16, 185, 129, 0.55);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.tab-btn#tab-btn-content.active {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.24), rgba(147, 51, 234, 0.08));
+  color: #fff;
+  border-color: rgba(192, 132, 252, 0.55);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.tab-btn .badge-pill {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-dim);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.tab-btn#tab-btn-geo.active .badge-pill.cyan { background: #38bdf8; color: #04101e; font-weight: 800; box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
+.tab-btn#tab-btn-yesterday .badge-pill.gold { background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); }
+.tab-btn#tab-btn-yesterday.active .badge-pill.gold { background: #f59e0b; color: #1e1302; font-weight: 800; box-shadow: 0 0 12px rgba(245, 158, 11, 0.6); }
+.tab-btn#tab-btn-radar .badge-pill.emerald { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }
+.tab-btn#tab-btn-radar.active .badge-pill.emerald { background: #10b981; color: #032117; font-weight: 800; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6); }
+.tab-btn#tab-btn-content .badge-pill.purple { background: rgba(192, 132, 252, 0.18); color: #d8b4fe; border: 1px solid rgba(192, 132, 252, 0.35); }
+.tab-btn#tab-btn-content.active .badge-pill.purple { background: #c084fc; color: #200438; font-weight: 800; box-shadow: 0 0 12px rgba(192, 132, 252, 0.6); }
+
+/* CONTROL ROOM PANELS */
+.control-panel { display: grid; gap: 24px; }
+.station-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+.station-card[hidden] { display: none !important; }
+.station-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-card);
+}
+.station-header h2 { font-size: 16px; font-weight: 800; letter-spacing: 0.03em; color: var(--text-pure); display: flex; align-items: center; gap: 10px; }
+.station-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.station-dot.cyan { background: var(--accent-cyan); box-shadow: 0 0 12px var(--accent-cyan); }
+.station-dot.gold { background: var(--accent-gold); box-shadow: 0 0 12px var(--accent-gold); }
+.station-dot.emerald { background: var(--accent-emerald); box-shadow: 0 0 12px var(--accent-emerald); }
+.station-dot.purple { background: var(--accent-purple); box-shadow: 0 0 12px var(--accent-purple); }
+.station-desc { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+.header-action-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.date-chip {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: rgba(245, 158, 11, 0.14);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* YESTERDAY EXECUTIVE BRIEFING BANNER */
+.yesterday-digest-card {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(15, 23, 42, 0.85) 60%), var(--bg-card);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+.yesterday-digest-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 5px; height: 100%;
+  background: linear-gradient(180deg, #f59e0b, #fbbf24);
+}
+.digest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.digest-badge {
+  font-size: 11.5px;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  color: #fbbf24;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.digest-time {
+  font-size: 11.5px;
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+}
+.digest-summary-text {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-pure);
+  margin-bottom: 18px;
+}
+.digest-summary-text strong {
+  color: #fde047;
+  font-weight: 700;
+}
+.digest-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+}
+.dq-item { display: flex; flex-direction: column; }
+.dq-label { font-size: 10.5px; font-weight: 700; font-family: var(--font-mono); color: var(--text-dim); letter-spacing: 0.04em; }
+.dq-value { font-size: 13.5px; font-weight: 700; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.highlight-cyan { color: var(--accent-cyan); }
+.highlight-gold { color: #fbbf24; }
+.highlight-emerald { color: #34d399; }
+.highlight-purple { color: #c084fc; }
+
+/* YESTERDAY 4-KPI GRID */
+.yesterday-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.ykpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 16px 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+.ykpi-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
+.ykpi-card.views::before { background: #f59e0b; }
+.ykpi-card.visitors::before { background: #38bdf8; }
+.ykpi-card.ratio::before { background: #10b981; }
+.ykpi-card.repeats::before { background: #c084fc; }
+.ykpi-label { font-size: 11.5px; font-weight: 700; font-family: var(--font-mono); color: var(--text-dim); text-transform: uppercase; }
+.ykpi-val { font-size: 28px; font-weight: 800; font-family: var(--font-mono); color: var(--text-pure); line-height: 1.1; margin: 6px 0; }
+.ykpi-val small { font-size: 12.5px; font-weight: 600; color: var(--text-dim); margin-left: 4px; }
+.ykpi-sub { font-size: 12px; color: var(--text-muted); }
+
+/* 24-HOUR HOURLY INGRESS BAR CHART */
+.yesterday-chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 22px;
+}
+.chart-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.chart-title { font-size: 14px; font-weight: 800; color: var(--text-pure); display: flex; align-items: center; gap: 8px; }
+.chart-desc { font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
+.chart-legend { display: flex; align-items: center; gap: 16px; font-size: 12px; color: var(--text-muted); }
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-dot { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+.legend-dot.normal { background: #38bdf8; }
+.legend-dot.peak { background: #f59e0b; box-shadow: 0 0 8px #f59e0b; }
+
+.chart-bars-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 130px;
+  padding: 16px 8px 6px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: 14px;
+}
+.chart-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  position: relative;
+  cursor: pointer;
+}
+.chart-bar-fill {
+  width: 100%;
+  min-height: 4px;
+  border-radius: 3px 3px 1px 1px;
+  background: linear-gradient(180deg, #38bdf8, rgba(56, 189, 248, 0.25));
+  transition: all 0.2s ease;
+}
+.chart-bar-col:hover .chart-bar-fill {
+  background: linear-gradient(180deg, #7dd3fc, rgba(56, 189, 248, 0.6));
+  filter: drop-shadow(0 0 8px #38bdf8);
+}
+.chart-bar-col.peak .chart-bar-fill {
+  background: linear-gradient(180deg, #f59e0b, rgba(245, 158, 11, 0.35));
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.45);
+}
+.chart-bar-col.peak:hover .chart-bar-fill {
+  background: linear-gradient(180deg, #fbbf24, rgba(245, 158, 11, 0.7));
+  filter: drop-shadow(0 0 10px #f59e0b);
+}
+.chart-bar-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  border: 1px solid var(--accent-cyan);
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: #fff;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.chart-bar-col:hover .chart-bar-tooltip { display: block; }
+.chart-time-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  padding: 0 4px;
+}
+
+/* DUAL SPLIT GRID */
+.yesterday-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.station-subcard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.subcard-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.subcard-head h4 { font-size: 13.5px; font-weight: 800; color: var(--text-pure); display: flex; align-items: center; gap: 8px; }
+.subcard-badge { font-size: 11px; font-family: var(--font-mono); font-weight: 700; color: var(--accent-gold); background: rgba(245, 158, 11, 0.15); padding: 2px 7px; border-radius: 999px; }
+
+.table-wrapper.mini { max-height: 290px; overflow-y: auto; }
+.rank-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+}
+.rank-1 { background: rgba(245, 158, 11, 0.25); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.5); }
+.rank-2 { background: rgba(148, 163, 184, 0.25); color: #e2e8f0; border: 1px solid rgba(148, 163, 184, 0.4); }
+.rank-3 { background: rgba(217, 119, 6, 0.25); color: #f97316; border: 1px solid rgba(217, 119, 6, 0.4); }
+.rank-norm { color: var(--text-dim); }
+
+/* DEMOGRAPHICS BARS */
+.demo-section { display: flex; flex-direction: column; gap: 6px; }
+.demo-title { font-size: 11px; font-family: var(--font-mono); font-weight: 700; color: var(--text-dim); letter-spacing: 0.04em; }
+.demo-bars { display: flex; flex-direction: column; gap: 8px; }
+.demo-row { display: flex; flex-direction: column; gap: 3px; }
+.demo-row-head { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--text-main); }
+.demo-track { height: 6px; background: rgba(255, 255, 255, 0.08); border-radius: 999px; overflow: hidden; }
+.demo-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #d97706, #fbbf24); }
+.demo-fill.cyan { background: linear-gradient(90deg, #0284c7, #38bdf8); }
+.demo-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.demo-pill {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-pure);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* FILTERS & SEARCH ROW */
+.filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-card);
+}
+.search-wrap {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-card);
+  border-radius: 6px;
+  padding: 0 10px;
+}
+.search-wrap:focus-within {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+}
+.search-icon { font-size: 13px; color: var(--text-dim); }
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 9px 0;
+  color: var(--text-pure);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+}
+.search-input:focus { outline: none; }
+.search-input::placeholder { color: var(--text-dim); }
+.filter-group { display: flex; align-items: center; gap: 8px; }
+.filter-label { font-size: 12px; font-weight: 700; color: var(--text-dim); }
+.filter-select {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-card);
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: var(--text-pure);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* DATA TABLES */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-card);
+  background: rgba(10, 16, 28, 0.7);
+}
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th {
+  background: #0c1322;
+  color: #93c5fd;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+td {
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  color: var(--text-main);
+  vertical-align: middle;
+}
+tr:nth-child(even) td { background: rgba(255, 255, 255, 0.015); }
+tr:hover td { background: rgba(56, 189, 248, 0.07); }
+
+/* GOOGLE BOT HIGHLIGHT */
+@keyframes bot-blink-once {
+  0% { background: rgba(56, 189, 248, 0.45); }
+  50% { background: rgba(245, 158, 11, 0.45); }
+  100% { background: rgba(56, 189, 248, 0.09); }
+}
+.google-bot-row {
+  border-left: 3px solid #f59e0b !important;
+  animation: bot-blink-once 1.2s ease-out 1 forwards;
+}
+.google-bot-row td { font-weight: normal !important; }
+.google-bot-row .ip-badge {
+  font-weight: normal !important;
+  color: #f59e0b !important;
+  border-color: rgba(245, 158, 11, 0.5) !important;
+  background: rgba(245, 158, 11, 0.16) !important;
+}
+
+/* RIFI VISITOR HIGHLIGHT & BLINK */
+@keyframes rifi-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.97); }
+}
+@keyframes rifi-dot-pulse {
+  0% { transform: scale(0.7); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.7); }
+  70% { transform: scale(1.25); box-shadow: 0 0 0 6px rgba(236, 72, 153, 0); }
+  100% { transform: scale(0.7); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+}
+.rifi-row {
+  border-left: 3px solid #ec4899 !important;
+  background: rgba(236, 72, 153, 0.04) !important;
+}
+.rifi-badge {
+  background: rgba(236, 72, 153, 0.18) !important;
+  color: #f472b6 !important;
+  border: 1px solid rgba(236, 72, 153, 0.5) !important;
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  box-shadow: 0 0 8px rgba(236, 72, 153, 0.25);
+  animation: rifi-blink 1.4s ease-in-out infinite;
+}
+.rifi-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ec4899;
+  display: inline-block;
+  box-shadow: 0 0 6px #ec4899;
+  animation: rifi-dot-pulse 1.4s infinite;
+}
+.ip-badge.rifi-ip {
+  color: #f472b6 !important;
+  border-color: rgba(236, 72, 153, 0.5) !important;
+  background: rgba(236, 72, 153, 0.12) !important;
+}
+
+/* VISITOR STYLED ELEMENTS */
+.time-stamp {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.ip-badge {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+.visits-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+}
+.visits-badge.multi {
+  background: rgba(16, 185, 129, 0.18);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+.visits-badge.single {
+  background: rgba(148, 163, 184, 0.14);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+.country-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-pure);
+}
+.country-flag { font-size: 15px; }
+.location-text { font-size: 13px; color: var(--text-muted); }
+.path-pill {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: #93c5fd;
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  padding: 3px 8px;
+  border-radius: 6px;
+  word-break: break-all;
+}
+.activity-pill-sub {
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 5px;
+  line-height: 1.35;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 260px;
+  word-break: break-word;
+  padding: 3px 7px;
+  border-radius: 6px;
+}
+.activity-hearing { color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.28); }
+.activity-watching { color: #fb7185; background: rgba(251, 113, 133, 0.12); border: 1px solid rgba(251, 113, 133, 0.28); }
+.activity-reading { color: #34d399; background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.28); }
+.activity-test { color: #fde047; background: rgba(253, 224, 71, 0.12); border: 1px solid rgba(253, 224, 71, 0.28); }
+.activity-general { color: #cbd5e1; background: rgba(148, 163, 184, 0.10); border: 1px solid rgba(148, 163, 184, 0.22); }
+
+/* DETAILS & SECTIONS */
+details.section-details summary, details.popular-details summary {
+  cursor: pointer;
+  color: var(--accent-cyan);
+  font-size: 12.5px;
+  font-weight: 700;
+  outline: none;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+details.section-details summary:hover, details.popular-details summary:hover {
+  background: rgba(56, 189, 248, 0.12);
+  color: #7dd3fc;
+}
+.section-visit-list { margin: 6px 0 0; padding-left: 16px; font-size: 12px; color: var(--text-muted); }
+.section-visit-list li { margin: 3px 0; }
+
+/* RADAR GRID */
+.radar-live-badge { font-size: 13px; font-family: var(--font-mono); font-weight: 700; color: var(--accent-emerald); }
+.radar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.radar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.radar-card.active-card {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.18);
+}
+.radar-card-info h4 { font-size: 14px; font-weight: 700; color: var(--text-pure); margin-bottom: 4px; }
+.radar-card-path { font-size: 12px; font-family: var(--font-mono); color: var(--text-dim); }
+.radar-card-count { text-align: right; }
+.radar-card-count .num { font-size: 24px; font-weight: 800; font-family: var(--font-mono); color: var(--accent-emerald); }
+.radar-card-count .label { font-size: 10px; text-transform: uppercase; color: var(--text-dim); font-family: var(--font-mono); font-weight: 700; }
+
+/* COUNTRY GRID */
+.country-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.country-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  padding: 11px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.country-card .flag { font-size: 24px; }
+.country-card .c-info { flex: 1; }
+.country-card .c-name { font-size: 13px; font-weight: 700; color: var(--text-pure); }
+.country-card .c-visitors { font-size: 11.5px; font-family: var(--font-mono); color: var(--text-muted); margin-top: 1px; }
+
+/* PAGINATION */
+.pagination-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+.page-controls { display: flex; gap: 8px; }
+
+/* LOGIN SCREEN */
+.login-wrapper { display: flex; justify-content: center; align-items: center; min-height: 80vh; }
+.login-box {
+  width: 100%;
+  max-width: 440px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 32px 28px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+.login-box h2 { font-size: 19px; font-weight: 800; letter-spacing: 0.04em; color: var(--text-pure); margin-bottom: 6px; }
+.login-sub { font-size: 11px; font-family: var(--font-mono); color: var(--text-dim); letter-spacing: 0.05em; margin-bottom: 22px; }
+.login-field { text-align: left; margin-bottom: 16px; }
+.login-field label { display: block; font-size: 11px; font-weight: 700; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 6px; }
+.login-field input {
+  width: 100%;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 11px 14px;
+  color: var(--text-pure);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+.login-field input:focus { outline: none; border-color: var(--accent-cyan); box-shadow: 0 0 12px rgba(56, 189, 248, 0.3); }
+.login-status { margin-top: 12px; font-size: 13px; font-family: var(--font-mono); color: var(--accent-rose); min-height: 18px; }
+
+@media (max-width: 768px) {
+  body { padding: 12px 14px 40px; font-size: 13px; }
+  .hud-header { flex-direction: column; align-items: stretch; gap: 14px; padding: 14px 16px; }
+  .hud-clocks { justify-content: space-between; flex-wrap: wrap; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .yesterday-split-grid { grid-template-columns: 1fr; }
+  .nav-tabs { gap: 4px; padding: 4px; }
+  .tab-btn { padding: 9px 12px; font-size: 12px; }
+}
+  </style>
+</head>
+<body>
+
+<header class="hud-header">
+  <div class="brand-title">
+    <div class="brand-radar"></div>
+    <div class="brand-text">
+      <h1>ACADEMIC HUB // CONTROL ROOM <span>TRAFFIC TERMINAL</span></h1>
+      <div class="brand-sub">OPERATIONS WATCH & VISITOR TELEMETRY · SECURE OWNER CONSOLE</div>
+    </div>
+  </div>
+
+  <div class="hud-clocks">
+    <div class="clock-item">
+      <span class="clock-label">SYSTEM TIME (IST)</span>
+      <span class="clock-time" id="ist-clock">Loading...</span>
+    </div>
+    <div class="clock-item">
+      <span class="clock-label">COORDINATED UNIVERSAL</span>
+      <span class="clock-time" id="utc-clock">Loading...</span>
+    </div>
+    <div class="clock-item">
+      <span class="clock-label">RADAR LINK</span>
+      <span class="clock-time" id="radar-link-status" style="color:var(--accent-emerald)">● NOMINAL</span>
+    </div>
+    <div class="clock-item">
+      <span class="clock-label">TRAFFIC WATCH</span>
+      <span class="clock-time" id="quota-guard-status" style="color:var(--accent-emerald)">● ACTIVE 24/7</span>
+    </div>
+    <div class="clock-item" id="hud-last-sync-box">
+      <span class="clock-label">DATA RADAR SYNC</span>
+      <span class="clock-time" id="last-sync-time" style="color:var(--accent-cyan); display:flex; align-items:center; gap:6px;">
+        <span class="sync-pulse-dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent-cyan);box-shadow:0 0 8px var(--accent-cyan);"></span>
+        <span>Connecting...</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="hud-actions">
+    <button class="btn btn-primary" id="btn-force-sync" type="button">⚡ FORCE REFRESH</button>
+    <label class="refresh-rate-label" for="sync-interval">
+      SYNC:
+      <select id="sync-interval" class="select-inline">
+        <option value="15000" selected>15s</option>
+        <option value="30000">30s</option>
+        <option value="60000">60s</option>
+        <option value="0">PAUSE</option>
+      </select>
+    </label>
+    <a href="/" class="btn">HUB HOME</a>
+    <button class="btn btn-danger" id="logout" type="button">SIGN OUT</button>
+  </div>
+</header>
+
+<section class="kpi-grid">
+  <div class="kpi-card live">
+    <div class="kpi-head">
+      <span class="kpi-title">LIVE ACTIVE NOW</span>
+      <span class="kpi-badge live">● 90s RADAR</span>
+    </div>
+    <div class="kpi-val"><span id="live-active-count">3</span> <small>CONCURRENT</small></div>
+    <div class="kpi-foot">
+      <span>Spread across</span>
+      <span class="highlight" id="live-pages-summary">1 active study page</span>
+    </div>
+  </div>
+
+  <div class="kpi-card today">
+    <div class="kpi-head">
+      <span class="kpi-title">TODAY'S INGRESS (IST)</span>
+      <span class="kpi-badge today" id="today-badge">2026-11-07</span>
+    </div>
+    <div class="kpi-val"><span id="today-visitors">12</span> <small>VISITORS</small></div>
+    <div class="kpi-foot">
+      <span class="highlight" id="today-views">35</span> page views · <span id="today-ratio">2.92</span> views/user
+    </div>
+  </div>
+
+  <div class="kpi-card buffer">
+    <div class="kpi-head">
+      <span class="kpi-title">7-DAY TELEMETRY BUFFER</span>
+      <span class="kpi-badge total">ROLLING</span>
+    </div>
+    <div class="kpi-val"><span id="buffer-views">84</span> <small>LOGS</small></div>
+    <div class="kpi-foot">
+      <span class="highlight" id="buffer-ips">28</span> distinct IPs · <span id="buffer-repeats">0%</span> repeat
+    </div>
+  </div>
+
+  <div class="kpi-card popular">
+    <div class="kpi-head">
+      <span class="kpi-title">TOP ACCESSED CONTENT</span>
+      <span class="kpi-badge popular">LEADER</span>
+    </div>
+    <div class="kpi-val" style="font-size:18px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" id="top-content-name">—</div>
+    <div class="kpi-foot">
+      <span class="highlight" id="top-content-views">0 views</span> · <span id="top-content-visitors">0 visitors</span>
+    </div>
+  </div>
+</section>
+
+<!-- TELEMETRY & OWNER SHIELD STATUS BANNER -->
+<div class="telemetry-hud-strip">
+  <div class="hud-strip-left">
+    <span class="engine-live-pulse"></span>
+    <span class="strip-label">RADAR ENGINE:</span>
+    <strong id="strip-engine-status" style="color:var(--accent-emerald);">LIVE & STREAMING</strong>
+    <span class="strip-sep">·</span>
+    <span class="strip-sub" id="strip-sync-info">Telemetry active (updates in real-time)</span>
+  </div>
+  <div class="hud-strip-right">
+    <span class="shield-icon">🛡️</span>
+    <span class="shield-text">Owner Protection:</span>
+    <span class="owner-ip-pill" id="owner-shield-pill">Active (Admin IP excluded from student counts)</span>
+  </div>
+</div>
+
+<!-- ULTRA-PREMIUM NAVIGATION TABS -->
+<nav class="nav-tabs" role="tablist">
+  <button class="tab-btn active" id="tab-btn-geo" type="button" role="tab" aria-selected="true">
+    <span class="tab-icon">👥</span>
+    <span class="tab-title">VISITORS & IP AUDIT</span>
+    <span class="badge-pill cyan" id="badge-total-ips">28 IPs</span>
+  </button>
+  <button class="tab-btn" id="tab-btn-yesterday" type="button" role="tab" aria-selected="false">
+    <span class="tab-icon">⏮️</span>
+    <span class="tab-title">YESTERDAY'S RECAP</span>
+    <span class="badge-pill gold" id="badge-yesterday-views">84 VIEWS</span>
+  </button>
+  <button class="tab-btn" id="tab-btn-radar" type="button" role="tab" aria-selected="false">
+    <span class="tab-icon">🛰️</span>
+    <span class="tab-title">LIVE RADAR PRESENCE</span>
+    <span class="badge-pill emerald" id="badge-live-tabs">3 ACTIVE</span>
+  </button>
+  <button class="tab-btn" id="tab-btn-content" type="button" role="tab" aria-selected="false">
+    <span class="tab-icon">📊</span>
+    <span class="tab-title">CONTENT LEADERBOARD</span>
+    <span class="badge-pill purple" id="badge-total-pages">0</span>
+  </button>
+</nav>
+
+<main class="control-panel">
+  <!-- TAB 1: VISITORS & IP AUDIT (DEFAULT OPEN TAB) -->
+  <section class="station-card" id="panel-geo">
+    <div class="station-header">
+      <div>
+        <h2><span class="station-dot cyan"></span> VISITOR AUDIT & INGRESS TELEMETRY</h2>
+        <p class="station-desc">Deep telemetry records by visitor IP, regional geolocations, visit velocity, and chronological section breadcrumbs.</p>
+      </div>
+      <div>
+        <button class="btn btn-primary" id="btn-export-traffic" type="button">📥 EXPORT TRAFFIC CSV</button>
+      </div>
+    </div>
+
+    <!-- COUNTRY BREAKDOWN CARDS -->
+    <div class="country-grid" id="country-summary-grid">
+      <!-- Rendered dynamically -->
+    </div>
+
+    <div class="filter-row">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="traffic-search-input" placeholder="Search IP Address, City, Country, or Page Path..." value="">
+      </div>
+      <div class="filter-group">
+        <label for="traffic-page-size" class="filter-label">ROWS:</label>
+        <select class="filter-select" id="traffic-page-size">
+          <option value="25" selected>25 rows</option>
+          <option value="50">50 rows</option>
+          <option value="100">100 rows</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th style="min-width:125px">Last Active</th>
+            <th style="min-width:110px">Visitor IP</th>
+            <th style="min-width:80px">Visits</th>
+            <th style="min-width:120px">Country</th>
+            <th style="min-width:145px">Location & ISP</th>
+            <th style="min-width:130px">Device & Source</th>
+            <th style="min-width:170px">Current Page &amp; Activity</th>
+            <th style="min-width:160px">Section Trail</th>
+          </tr>
+        </thead>
+        <tbody id="rows">
+          <!-- Rendered dynamically -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagination-bar">
+      <span id="traffic-page-info" class="page-info">Page 1 of 1</span>
+      <div class="page-controls">
+        <button class="btn" id="traffic-prev-page" type="button" disabled>◀ PREVIOUS</button>
+        <button class="btn" id="traffic-next-page" type="button" disabled>NEXT ▶</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 2: YESTERDAY TELEMETRY & KNOWLEDGE RECAP (NEW TAB!) -->
+  <section class="station-card" id="panel-yesterday" hidden>
+    <div class="station-header">
+      <div>
+        <h2><span class="station-dot gold"></span> YESTERDAY TELEMETRY & KNOWLEDGE RECAP</h2>
+        <p class="station-desc">24-hour retrospective of yesterday's student ingress, popular study assets, traffic velocity, and platform demographics.</p>
+      </div>
+      <div class="header-action-group">
+        <span class="date-chip" id="yesterday-date-chip">📅 YESTERDAY (IST)</span>
+        <button class="btn btn-gold" id="btn-export-yesterday" type="button">📥 EXPORT YESTERDAY CSV</button>
+      </div>
+    </div>
+
+    <!-- EXECUTIVE BRIEFING / KNOWLEDGE DIGEST -->
+    <div class="yesterday-digest-card">
+      <div class="digest-header">
+        <div class="digest-badge">⚡ EXECUTIVE TELEMETRY BRIEF</div>
+        <div class="digest-time" id="yesterday-range-text">24-HOUR IST WINDOW (00:00 – 23:59 IST)</div>
+      </div>
+      <div class="digest-summary-text" id="yesterday-brief-text">
+        Synthesizing yesterday's learning telemetry...
+      </div>
+      <div class="digest-quick-grid">
+        <div class="dq-item">
+          <span class="dq-label">TOP STUDY CONTENT</span>
+          <span class="dq-value highlight-cyan" id="yd-top-content">—</span>
+        </div>
+        <div class="dq-item">
+          <span class="dq-label">PEAK STUDY RUSH</span>
+          <span class="dq-value highlight-gold" id="yd-peak-hour">—</span>
+        </div>
+        <div class="dq-item">
+          <span class="dq-label">PRIMARY DEVICE</span>
+          <span class="dq-value highlight-emerald" id="yd-primary-device">—</span>
+        </div>
+        <div class="dq-item">
+          <span class="dq-label">MAIN INGRESS SOURCE</span>
+          <span class="dq-value highlight-purple" id="yd-primary-source">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 YESTERDAY METRIC CARDS -->
+    <div class="yesterday-kpi-grid">
+      <div class="ykpi-card views">
+        <div class="ykpi-label">TOTAL VIEWS YESTERDAY</div>
+        <div class="ykpi-val"><span id="yd-kpi-views">84</span> <small>VIEWS</small></div>
+        <div class="ykpi-sub">Total page requests logged</div>
+      </div>
+      <div class="ykpi-card visitors">
+        <div class="ykpi-label">UNIQUE STUDENT VISITORS</div>
+        <div class="ykpi-val"><span id="yd-kpi-visitors">28</span> <small>STUDENTS</small></div>
+        <div class="ykpi-sub">Distinct client IP addresses</div>
+      </div>
+      <div class="ykpi-card ratio">
+        <div class="ykpi-label">STUDY DEPTH RATIO</div>
+        <div class="ykpi-val"><span id="yd-kpi-ratio">0.0</span> <small>VIEWS/USER</small></div>
+        <div class="ykpi-sub">Average materials read per student</div>
+      </div>
+      <div class="ykpi-card repeats">
+        <div class="ykpi-label">REPEAT STUDY SESSIONS</div>
+        <div class="ykpi-val"><span id="yd-kpi-repeats">0%</span> <small>LOYAL</small></div>
+        <div class="ykpi-sub"><span id="yd-kpi-repeat-count">0</span> repeat learners returned</div>
+      </div>
+    </div>
+
+    <!-- 24-HOUR TRAFFIC VELOCITY HOURLY INGRESS BAR CHART -->
+    <div class="yesterday-chart-card">
+      <div class="chart-header">
+        <div>
+          <h3 class="chart-title">
+            <span class="chart-icon">📊</span> 24-HOUR TRAFFIC VELOCITY (IST HOURLY INGRESS)
+          </h3>
+          <p class="chart-desc">Visual distribution of student requests from 00:00 to 23:00 IST yesterday.</p>
+        </div>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-dot normal"></span> Standard Hour</span>
+          <span class="legend-item"><span class="legend-dot peak"></span> Peak Rush Hour</span>
+        </div>
+      </div>
+      <div class="chart-bars-wrap" id="yesterday-hourly-chart">
+        <!-- 24 hourly bars rendered dynamically -->
+      </div>
+      <div class="chart-time-labels">
+        <span>00:00</span>
+        <span>04:00</span>
+        <span>08:00</span>
+        <span>12:00</span>
+        <span>16:00</span>
+        <span>20:00</span>
+        <span>23:00</span>
+      </div>
+    </div>
+
+    <!-- DUAL SPLIT GRID: TOP CONTENT & AUDIENCE DEMOGRAPHICS -->
+    <div class="yesterday-split-grid">
+      <!-- Left: Top Content Studied Yesterday -->
+      <div class="station-subcard">
+        <div class="subcard-head">
+          <h4><span class="subcard-icon">🏆</span> TOP CONTENT STUDIED YESTERDAY</h4>
+          <span class="subcard-badge" id="yd-content-count">0 ITEMS</span>
+        </div>
+        <div class="table-wrapper mini">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:48px">#</th>
+                <th>Study Page / Section</th>
+                <th style="width:80px">Views</th>
+                <th style="width:90px">Students</th>
+              </tr>
+            </thead>
+            <tbody id="yesterday-popular-rows">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Right: Devices, Channels & Regions -->
+      <div class="station-subcard">
+        <div class="subcard-head">
+          <h4><span class="subcard-icon">📱</span> AUDIENCE CHANNELS & PLATFORMS</h4>
+          <span class="subcard-badge">DEMOGRAPHICS</span>
+        </div>
+        <div class="demo-section">
+          <div class="demo-title">DEVICE TYPES</div>
+          <div class="demo-bars" id="yesterday-device-bars">
+            <!-- Progress bars rendered dynamically -->
+          </div>
+        </div>
+        <div class="demo-section" style="margin-top:16px;">
+          <div class="demo-title">TRAFFIC SOURCES / REFERRERS</div>
+          <div class="demo-bars" id="yesterday-referrer-bars">
+            <!-- Progress bars rendered dynamically -->
+          </div>
+        </div>
+        <div class="demo-section" style="margin-top:16px;">
+          <div class="demo-title">TOP GEOGRAPHIC LOCATIONS</div>
+          <div class="demo-pills" id="yesterday-location-pills">
+            <!-- Country/City pills rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- YESTERDAY VISITOR LOGS TABLE -->
+    <div class="yesterday-visitors-section" style="margin-top:22px;">
+      <div class="filter-row">
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" id="yd-search-input" placeholder="Search yesterday's visitors by IP, city, device, page...">
+        </div>
+        <span class="page-info" id="yd-visitor-count-info">0 Visitors Logged</span>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th style="min-width:115px">Time (IST)</th>
+              <th style="min-width:110px">Visitor IP</th>
+              <th style="min-width:75px">Visits</th>
+              <th style="min-width:110px">Country</th>
+              <th style="min-width:145px">Location & ISP</th>
+              <th style="min-width:130px">Device & Source</th>
+              <th style="min-width:170px">Materials Studied</th>
+            </tr>
+          </thead>
+          <tbody id="yesterday-visitor-rows">
+            <!-- Rendered dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 3: LIVE AUDIENCE RADAR -->
+  <section class="station-card" id="panel-radar" hidden>
+    <div class="station-header">
+      <div>
+        <h2><span class="station-dot emerald"></span> LIVE AUDIENCE RADAR (CONCURRENT TABS STREAM)</h2>
+        <p class="station-desc">Telemetry active within the last 90 seconds. Highlights concurrent study clusters and live student sessions.</p>
+      </div>
+      <div>
+        <span class="radar-live-badge" id="radar-summary-text">● CHECKING RADAR...</span>
+      </div>
+    </div>
+
+    <div class="radar-grid" id="live-pages-grid">
+      <!-- Rendered dynamically -->
+    </div>
+  </section>
+
+  <!-- TAB 4: CONTENT LEADERBOARD -->
+  <section class="station-card" id="panel-content" hidden>
+    <div class="station-header">
+      <div>
+        <h2><span class="station-dot purple"></span> CONTENT POPULARITY & ACCESS LEADERBOARD</h2>
+        <p class="station-desc">Ranked by section visits and unique student readers since tracking began.</p>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:70px">Rank</th>
+            <th>Learning Page / Section</th>
+            <th style="width:120px">Total Views</th>
+            <th style="width:140px">Unique Visitors</th>
+            <th style="width:130px">Views / Visitor</th>
+            <th style="width:180px">Last Activity (IST)</th>
+            <th style="min-width:200px">Visitor IP Deep Audit</th>
+          </tr>
+        </thead>
+        <tbody id="popular-page-rows">
+          <!-- Rendered dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script>
+    // LIVE CONTROL ROOM SCRIPT
+    function setText(id, val) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = (val !== null && val !== undefined) ? String(val) : '—';
+    }
+
+    function countryInfo(code){
+      if(!code||code==='XX')return {flag:'🌐',name:'Unknown'};
+      if(code==='T1')return {flag:'🧅',name:'Tor Network'};
+      if(!/^[A-Z]{2}$/.test(code))return {flag:'🌐',name:'Unknown'};
+      const flag=String.fromCodePoint(...Array.from(code,c=>127397+c.charCodeAt(0)));
+      try{return {flag,name:(new Intl.DisplayNames(['en'],{type:'region'}).of(code)||code)+' ('+code+')'};}catch{return {flag,name:code};}
+    }
+
+    function formatIST(val){
+      const d=new Date(val);
+      if(Number.isNaN(d.getTime()))return String(val||"Unknown");
+      return d.toLocaleString('en-IN',{timeZone:'Asia/Kolkata',dateStyle:'medium',timeStyle:'medium'});
+    }
+
+    function indiaDayStr(time) {
+      return new Date(time + 330 * 60 * 1000).toISOString().slice(0, 10);
+    }
+
+    let lastSyncTimestamp = Date.now();
+    function updateSyncTicker() {
+      const el = document.getElementById('last-sync-time');
+      if (!el) return;
+      if (!lastSyncTimestamp) {
+        el.innerHTML = '<span class="sync-pulse-dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent-amber);box-shadow:0 0 8px var(--accent-amber);"></span><span>Connecting...</span>';
+        return;
+      }
+      const diffSec = Math.floor((Date.now() - lastSyncTimestamp) / 1000);
+      const timeStr = new Date(lastSyncTimestamp).toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }) + ' IST';
+      let color = 'var(--accent-emerald)';
+      let label = diffSec <= 1 ? 'Just now' : (diffSec < 60 ? (diffSec + 's ago') : (Math.floor(diffSec / 60) + 'm ' + (diffSec % 60) + 's ago'));
+      if (diffSec >= 60) color = 'var(--accent-amber)';
+      if (diffSec >= 180) color = 'var(--accent-rose)';
+      el.innerHTML = '<span class="sync-pulse-dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:' + color + ';box-shadow:0 0 8px ' + color + ';"></span><span>● ' + label + '</span> <span style="font-size:0.75rem;opacity:0.7;font-weight:normal;">(' + timeStr + ')</span>';
+    }
+
+    function updateClocks() {
+      try {
+        const now = new Date();
+        const istStr = now.toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata', hour12: false }) + ' IST';
+        const utcStr = now.toLocaleTimeString('en-GB', { timeZone: 'UTC', hour12: false }) + ' UTC';
+        setText('ist-clock', istStr);
+        setText('utc-clock', utcStr);
+        const quotaGuard = document.getElementById('quota-guard-status');
+        if (quotaGuard) {
+          quotaGuard.style.color = 'var(--accent-emerald)';
+          quotaGuard.textContent = '● ACTIVE 24/7';
+        }
+        updateSyncTicker();
+      } catch (e) {
+        console.warn('Clock error:', e);
+      }
+    }
+    setInterval(updateClocks, 1000);
+    updateClocks();
+
+    // STATE
+    let trafficRecords = [];
+    let popularPageRecords = [];
+    let liveData = { active: 0, pages: [] };
+    let yesterdayData = null;
+    let trafficPage = 1;
+
+    // IMMEDIATE SSR HYDRATION
+    const __INITIAL__ = {"today":{"day":"2026-11-07","views":35,"visitors":12},"yesterday":{"day":"2026-11-06","views":84,"visitors":28,"records":[{"ip":"117.216.55.10","visits":4,"country":"IN","region":"Kerala","city":"Kozhikode","isp":"BSNL","device":"📱 Android","ref":"💬 WhatsApp","time":1794238233199,"path":"/ai-reading.html","sections":[{"name":"AI & Philosophy Module 3","visits":4}]}],"popularPages":[{"section":"AI & Philosophy Module 3","path":"/ai-reading.html","visits":38,"visitors":16}],"hourly":[2,0,0,1,0,0,3,5,8,12,7,6,9,11,14,18,10,8,6,5,3,2,1,0],"peakHour":{"hour":15,"views":18},"devices":{"📱 Android":62,"💻 Windows PC":18,"🍏 iPhone":4},"referrers":{"💬 WhatsApp":45,"🔖 Direct / Saved":25,"🔍 Google Search":14},"locations":{"Kozhikode, Kerala":38,"Malappuram, Kerala":22,"Ernakulam, Kerala":14}},"records":[],"popularPages":[],"views":84,"uniqueIPs":28,"liveData":{"active":3,"pages":[{"section":"AI Reading","count":3}]}};
+    if (__INITIAL__) {
+      if (Array.isArray(__INITIAL__.records)) trafficRecords = __INITIAL__.records;
+      if (Array.isArray(__INITIAL__.popularPages)) popularPageRecords = __INITIAL__.popularPages;
+      if (__INITIAL__.liveData) liveData = __INITIAL__.liveData;
+      if (__INITIAL__.yesterday) yesterdayData = __INITIAL__.yesterday;
+      try { renderTraffic(); } catch(e) {}
+      try { renderPopularPages(); } catch(e) {}
+      try { renderLiveRadar(); } catch(e) {}
+      try { renderYesterday(); } catch(e) {}
+    }
+
+    function getPathFallbackActivity(path) {
+      if (!path || path === '/' || path === '/index.html') return '🏠 Hub Home';
+      const p = String(path).toLowerCase();
+      if (p.includes('voice-explanation')) return '🎧 Voice Explanations';
+      if (p.includes('study-guide-reader')) return '📖 Study Guide Reader';
+      if (p.includes('ktet-500-mcq-test')) return '📝 KTET 500 MCQ Test';
+      if (p.includes('sociology-without-timer') || p.includes('sociology-test') || p.includes('sociology_test')) return '📝 Sociology Practice Test';
+      if (p.includes('economictest')) return '📝 Economics MCQ Test';
+      if (p.includes('mal-pdf')) return '📖 Malayalam Study Notes';
+      if (p.includes('arabic-reading')) return '📖 Arabic Reading Room';
+      if (p.includes('hindi-reading')) return '📖 Hindi Reading Room';
+      if (p.includes('hist-reading')) return '📖 History Reading Room';
+      if (p.includes('econ-reading')) return '📖 Economics Reading Room';
+      if (p.includes('ai-reading')) return '📖 AI & Philosophy Reading';
+      if (p.includes('about')) return 'ℹ️ About Hub';
+      if (p.includes('contact')) return '📬 Contact';
+      let clean = String(path || '');
+      if (clean.startsWith('/')) clean = clean.slice(1);
+      if (clean.endsWith('.html')) clean = clean.slice(0, -5);
+      return '📄 ' + clean.split(/[-_]+/).join(' ');
+    }
+
+    function formatShortIP(ip) {
+      if (!ip || typeof ip !== "string") return "Unknown";
+      if (ip.includes(":") && ip.length > 18) {
+        const parts = ip.split(":").filter(Boolean);
+        if (parts.length >= 3) {
+          return parts[0] + ":" + parts[1] + ":..:" + parts[parts.length - 1];
+        }
+        return ip.slice(0, 10) + ".." + ip.slice(-4);
+      }
+      return ip;
+    }
+
+    function isRifiVisitor(ip) {
+      if (!ip || typeof ip !== "string") return false;
+      const clean = ip.trim().toLowerCase();
+      if (clean === "2401:4900:..:13a9") return true;
+      if (clean.includes("2401:4900") && clean.endsWith("13a9")) return true;
+      if (formatShortIP(clean) === "2401:4900:..:13a9") return true;
+      return false;
+    }
+
+    // RENDER TRAFFIC (VISITORS WITH IP & DETAILS)
+    function renderTraffic() {
+      try {
+        const searchEl = document.getElementById('traffic-search-input');
+        const search = (searchEl ? searchEl.value : "").trim().toLowerCase();
+        const sizeEl = document.getElementById('traffic-page-size');
+        const size = Math.max(1, Number(sizeEl ? sizeEl.value : 25) || 25);
+
+        let filtered = trafficRecords.filter(item => {
+          if (!search) return true;
+          const info = countryInfo(item.country);
+          const isRifi = isRifiVisitor(item.ip);
+          const hay = [item.ip, (isRifi ? 'rifi' : ''), item.country, info.name, item.region, item.city, item.isp, item.device, item.ref, item.path, ...(item.sections||[]).map(s=>s.name)].filter(Boolean).join(' ').toLowerCase();
+          return hay.includes(search);
+        });
+
+        // Country Summary Grid
+        const countryGrid = document.getElementById('country-summary-grid');
+        if (countryGrid) {
+          countryGrid.replaceChildren();
+          const countryMap = new Map();
+          for (const item of trafficRecords) {
+            const c = item.country || 'XX';
+            const curr = countryMap.get(c) || { count: 0, visits: 0 };
+            curr.count += 1;
+            curr.visits += (item.visits || 1);
+            countryMap.set(c, curr);
+          }
+
+          const topCountries = Array.from(countryMap.entries()).sort((a,b) => b[1].count - a[1].count).slice(0, 6);
+          for (const [code, stat] of topCountries) {
+            const info = countryInfo(code);
+            const card = document.createElement('div');
+            card.className = 'country-card';
+            card.innerHTML = '<span class="flag">' + info.flag + '</span>' +
+              '<div class="c-info">' +
+                '<div class="c-name">' + info.name.split(' (')[0] + '</div>' +
+                '<div class="c-visitors">' + stat.count + ' IP' + (stat.count===1?'':'s') + ' · ' + stat.visits + ' visit' + (stat.visits===1?'':'s') + '</div>' +
+              '</div>';
+            countryGrid.append(card);
+          }
+        }
+
+        // Pagination
+        const totalPages = Math.max(1, Math.ceil(filtered.length / size));
+        trafficPage = Math.min(Math.max(1, trafficPage), totalPages);
+        const start = (trafficPage - 1) * size;
+        const pageItems = filtered.slice(start, start + size);
+
+        const rows = document.getElementById('rows');
+        if (rows) {
+          rows.replaceChildren();
+
+          if (!pageItems.length) {
+            const emptyTr = document.createElement('tr');
+            emptyTr.innerHTML = '<td colspan="8" style="text-align:center; padding:36px; color:var(--text-dim); font-size:14px;">' + (trafficRecords.length ? 'NO VISITOR RECORDS FOUND FOR CURRENT FILTER' : 'NO VISITOR TRAFFIC LOGGED YET') + '</td>';
+            rows.append(emptyTr);
+          }
+
+          for (const v of pageItems) {
+            const tr = document.createElement('tr');
+            const isGoogleBot = (v.isp && /Google/i.test(v.isp)) || (v.ip && (v.ip.startsWith('66.249.') || /Google/i.test(v.ip))) || (v.device && /Google/i.test(v.device));
+            const isRifi = isRifiVisitor(v.ip);
+            if (isGoogleBot) {
+              tr.className = 'google-bot-row';
+            } else if (isRifi) {
+              tr.className = 'rifi-row';
+            }
+
+            // Last Active (IST)
+            const tdTime = document.createElement('td');
+            const isLiveRecent = (Date.now() - v.time) < 90 * 1000;
+            const liveBadgeHtml = (isRifi && isLiveRecent) ? ' <span class="rifi-badge" style="font-size:9px;padding:1px 5px;margin-left:4px;"><span class="rifi-dot"></span>ACTIVE NOW</span>' : '';
+            tdTime.innerHTML = '<span class="time-stamp">' + formatIST(v.time) + '</span>' + liveBadgeHtml;
+            tr.append(tdTime);
+
+            // Visitor IP Address
+            const tdIp = document.createElement('td');
+            const shortIp = formatShortIP(v.ip);
+            let ownerBadgeHtml = '';
+            if (v.isOwner) {
+              ownerBadgeHtml = '<div style="margin-top:4px;"><span style="background:rgba(245,158,11,0.18);color:#fbbf24;border:1px solid rgba(245,158,11,0.45);border-radius:4px;padding:2px 7px;font-size:10.5px;font-weight:800;letter-spacing:0.04em;display:inline-flex;align-items:center;gap:3px;font-family:var(--font-mono);">👑 OWNER VISIT</span></div>';
+            } else if (isRifi) {
+              ownerBadgeHtml = '<div style="margin-top:4px;"><span class="rifi-badge"><span class="rifi-dot"></span>🎯 rifi</span></div>';
+            }
+            tdIp.innerHTML = '<span class="ip-badge' + (isRifi ? ' rifi-ip' : '') + '" title="Full IP: ' + v.ip + '" style="font-family:var(--font-mono);font-size:11.5px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;cursor:help;">' + shortIp + '</span>' + ownerBadgeHtml;
+            tr.append(tdIp);
+
+            // Total Visits
+            const tdVisits = document.createElement('td');
+            if (v.isOwner) {
+              tdVisits.innerHTML = '<span class="visits-badge" style="background:rgba(245,158,11,0.14);color:#fbbf24;border:1px solid rgba(245,158,11,0.3);font-size:11px;font-weight:600;">' + v.visits + ' visit' + (v.visits===1?'':'s') + ' <small style="display:block;font-size:9.5px;opacity:0.85;color:var(--text-dim);">(not counted)</small></span>';
+              tr.style.background = 'rgba(245, 158, 11, 0.03)';
+            } else if (isRifi) {
+              tdVisits.innerHTML = '<span class="visits-badge multi" style="background:rgba(236,72,153,0.15);color:#f472b6;border:1px solid rgba(236,72,153,0.35);font-size:11px;font-weight:700;">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
+            } else {
+              tdVisits.innerHTML = '<span class="visits-badge ' + (v.visits > 1 ? 'multi' : 'single') + '">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
+            }
+            tr.append(tdVisits);
+
+            // Country
+            const tdC = document.createElement('td');
+            const info = countryInfo(v.country);
+            tdC.innerHTML = '<span class="country-pill"><span class="country-flag">' + info.flag + '</span> ' + info.name + '</span>';
+            tr.append(tdC);
+
+            // State / City & ISP
+            const tdLoc = document.createElement('td');
+            tdLoc.className = 'location-text';
+            const loc = [v.region, v.city].filter(Boolean).join(', ') || 'Unknown';
+            if (v.isp) {
+              const locDiv = document.createElement('div');
+              locDiv.textContent = loc;
+              const ispDiv = document.createElement('div');
+              ispDiv.style.cssText = 'font-size:11px;color:var(--text-dim);font-family:var(--font-mono);margin-top:2px;display:flex;align-items:center;gap:4px;';
+              const iconSpan = document.createElement('span');
+              iconSpan.textContent = '📶';
+              const nameSpan = document.createElement('span');
+              nameSpan.textContent = v.isp;
+              ispDiv.append(iconSpan, nameSpan);
+              tdLoc.append(locDiv, ispDiv);
+            } else {
+              tdLoc.textContent = loc;
+            }
+            tr.append(tdLoc);
+
+            // Device & Source
+            const tdDev = document.createElement('td');
+            tdDev.className = 'location-text';
+            const devDiv = document.createElement('div');
+            devDiv.style.cssText = 'font-weight:600;font-size:11.5px;display:flex;align-items:center;gap:3px;white-space:nowrap;';
+            devDiv.textContent = v.device || '📱 Mobile / Web';
+            const srcDiv = document.createElement('div');
+            srcDiv.style.cssText = 'font-size:10.5px;color:var(--text-dim);margin-top:2px;display:flex;align-items:center;gap:3px;white-space:nowrap;';
+            srcDiv.textContent = v.ref || '🔖 Direct / Saved';
+            tdDev.append(devDiv, srcDiv);
+            tr.append(tdDev);
+
+            // Current Page & Activity
+            const tdPage = document.createElement('td');
+            const pathDiv = document.createElement('div');
+            pathDiv.innerHTML = '<span class="path-pill">' + (v.path || '/') + '</span>';
+            tdPage.append(pathDiv);
+
+            let act = v.latestSection || (Array.isArray(v.sections) && v.sections.length > 0 ? v.sections[0].name : '');
+            act = String(act || getPathFallbackActivity(v.path) || '');
+
+            if (act) {
+              const actDiv = document.createElement('div');
+              let actClass = 'activity-general';
+              if (act.includes('Hearing') || act.includes('🎧') || act.includes('🔊') || act.includes('🎙️')) {
+                actClass = 'activity-hearing';
+              } else if (act.includes('Watching') || act.includes('▶️')) {
+                actClass = 'activity-watching';
+              } else if (act.includes('Reading') || act.includes('📖') || act.includes('📄')) {
+                actClass = 'activity-reading';
+              } else if (act.includes('Test') || act.includes('MCQ') || act.includes('Quiz') || act.includes('📝')) {
+                actClass = 'activity-test';
+              }
+              actDiv.className = 'activity-pill-sub ' + actClass;
+              actDiv.textContent = act;
+              tdPage.append(actDiv);
+            }
+            tr.append(tdPage);
+
+            // Section Trail
+            const tdTrail = document.createElement('td');
+            const sections = Array.isArray(v.sections) ? v.sections : [];
+            if (sections.length) {
+              const details = document.createElement('details');
+              details.className = 'section-details';
+              const summary = document.createElement('summary');
+              summary.textContent = '📂 Visited ' + sections.length + ' section' + (sections.length === 1 ? '' : 's');
+              details.append(summary);
+              const ul = document.createElement('ul');
+              ul.className = 'section-visit-list';
+              for (const s of sections) {
+                const li = document.createElement('li');
+                li.textContent = (s.name || 'Page') + ' — ' + (s.visits || 1) + ' visit' + (s.visits === 1 ? '' : 's') + ' (Last: ' + formatIST(s.lastVisit) + ')';
+                ul.append(li);
+              }
+              details.append(ul);
+              tdTrail.append(details);
+            } else {
+              tdTrail.innerHTML = '<span style="color:var(--text-dim); font-size:12.5px;">No section trail</span>';
+            }
+            tr.append(tdTrail);
+
+            rows.append(tr);
+          }
+        }
+
+        const first = filtered.length ? start + 1 : 0;
+        const last = Math.min(start + pageItems.length, filtered.length);
+        setText('traffic-page-info', "Showing " + first + "–" + last + " of " + filtered.length + " IPs · Page " + trafficPage + " of " + totalPages);
+        const prevBtn = document.getElementById('traffic-prev-page');
+        if (prevBtn) prevBtn.disabled = trafficPage <= 1;
+        const nextBtn = document.getElementById('traffic-next-page');
+        if (nextBtn) nextBtn.disabled = trafficPage >= totalPages;
+        setText('badge-total-ips', trafficRecords.length + ' IPs');
+      } catch (renderErr) {
+        console.warn('renderTraffic error:', renderErr);
+      }
+    }
+
+    // RENDER POPULAR PAGES
+    function renderPopularPages() {
+      try {
+        const tbody = document.getElementById('popular-page-rows');
+        if (!tbody) return;
+        tbody.replaceChildren();
+        const visitorsByIP = new Map(trafficRecords.map(v => [v.ip, v]));
+
+        if (!popularPageRecords.length) {
+          const emptyTr = document.createElement('tr');
+          emptyTr.innerHTML = '<td colspan="7" style="text-align:center; padding:36px; color:var(--text-dim); font-size:14px;">NO CONTENT PAGE VIEWS RECORDED YET</td>';
+          tbody.append(emptyTr);
+        }
+
+        if (popularPageRecords.length > 0) {
+          const topP = popularPageRecords[0];
+          setText('top-content-name', topP.section || topP.path || 'Top Page');
+          setText('top-content-views', (topP.visits || 0) + ' views');
+          const topVisCount = Array.isArray(topP.visitors) ? topP.visitors.length : (topP.visitors || 0);
+          setText('top-content-visitors', topVisCount + ' visitors');
+        }
+
+        for (const [idx, p] of popularPageRecords.entries()) {
+          const tr = document.createElement('tr');
+          const tdRank = document.createElement('td');
+          tdRank.innerHTML = '<strong style="color:var(--accent-cyan); font-family:var(--font-mono);">#' + (idx + 1) + '</strong>';
+          tr.append(tdRank);
+
+          const tdPage = document.createElement('td');
+          tdPage.innerHTML = '<strong style="color:var(--text-pure); font-size:14px;">' + (p.section || 'Learning Page') + '</strong><br><span class="path-pill" style="font-size:11px; margin-top:3px; display:inline-block;">' + (p.path || '/') + '</span>';
+          tr.append(tdPage);
+
+          const tdVisits = document.createElement('td');
+          tdVisits.innerHTML = '<strong style="font-family:var(--font-mono); font-size:14px;">' + (p.visits || 0) + '</strong>';
+          tr.append(tdVisits);
+
+          const visitorsCount = Array.isArray(p.visitors) ? p.visitors.length : 0;
+          const tdVisitors = document.createElement('td');
+          tdVisitors.innerHTML = '<span class="ip-badge" style="font-size:12px;">' + visitorsCount + ' unique</span>';
+          tr.append(tdVisitors);
+
+          const tdRatio = document.createElement('td');
+          tdRatio.style.fontFamily = 'var(--font-mono)';
+          tdRatio.textContent = visitorsCount ? ((p.visits || 0) / visitorsCount).toFixed(2) : '—';
+          tr.append(tdRatio);
+
+          const tdLast = document.createElement('td');
+          tdLast.innerHTML = '<span class="time-stamp">' + formatIST(p.lastVisit) + '</span>';
+          tr.append(tdLast);
+
+          const tdDetails = document.createElement('td');
+          const details = document.createElement('details');
+          details.className = 'popular-details';
+          const summary = document.createElement('summary');
+          summary.textContent = '🔍 Inspect ' + visitorsCount + ' IP' + (visitorsCount === 1 ? '' : 's');
+          details.append(summary);
+          
+          const ul = document.createElement('ul');
+          ul.className = 'section-visit-list';
+          for (const visitor of (p.visitors || [])) {
+            const vIp = typeof visitor === "object" ? String(visitor.ip || "Unknown") : String(visitor);
+            const vVisits = typeof visitor === "object" ? Number(visitor.visits || 1) : 1;
+            const vTime = typeof visitor === "object" ? visitor.lastVisit : 0;
+            const li = document.createElement('li');
+            const geo = visitorsByIP.get(vIp);
+            const flag = countryInfo(geo?.country).flag;
+            const loc = [geo?.city, geo?.region].filter(Boolean).join(', ');
+            const isRifiAudit = isRifiVisitor(vIp);
+            if (isRifiAudit) {
+              li.innerHTML = flag + ' <span class="rifi-badge" style="font-size:9.5px;padding:1px 5px;margin-right:3px;"><span class="rifi-dot"></span>🎯 rifi</span> <span style="color:#f472b6;font-family:var(--font-mono);">' + formatShortIP(vIp) + '</span> · ' + vVisits + ' visit' + (vVisits===1?'':'s') + ' · ' + formatIST(vTime) + (loc ? ' (' + loc + ')' : '');
+            } else {
+              li.textContent = flag + ' ' + vIp + ' — ' + vVisits + ' visit' + (vVisits===1?'':'s') + ' · ' + formatIST(vTime) + (loc ? ' (' + loc + ')' : '');
+            }
+            ul.append(li);
+          }
+          details.append(ul);
+          tdDetails.append(details);
+          tr.append(tdDetails);
+
+          tbody.append(tr);
+        }
+        setText('badge-total-pages', String(popularPageRecords.length));
+      } catch (popErr) {
+        console.warn('renderPopularPages error:', popErr);
+      }
+    }
+
+    // RENDER LIVE RADAR
+    function renderLiveRadar() {
+      try {
+        const count = Number(liveData.active) || 0;
+        setText('live-active-count', count);
+        setText('badge-live-tabs', count + ' ACTIVE');
+        setText('radar-summary-text', '● ' + count + ' ACTIVE TABS IN 90s');
+
+        const pages = Array.isArray(liveData.pages) ? liveData.pages : [];
+        setText('live-pages-summary', count ? (pages.length + ' active study page' + (pages.length === 1 ? '' : 's')) : 'no active sessions');
+
+        const grid = document.getElementById('live-pages-grid');
+        if (grid) {
+          grid.replaceChildren();
+
+          if (!pages.length) {
+            grid.innerHTML = '<p style="color:var(--text-dim); font-size:14px; padding:18px;">No concurrent visitors detected on learning pages in the last 90 seconds.</p>';
+          } else {
+            for (const p of pages) {
+              const card = document.createElement('div');
+              card.className = 'radar-card active-card';
+              card.innerHTML = '<div class="radar-card-info">' +
+                  '<h4>' + (p.section || 'Academic Hub Portal') + '</h4>' +
+                  '<div class="radar-card-path">' + (p.path || '/') + '</div>' +
+                '</div>' +
+                '<div class="radar-card-count">' +
+                  '<div class="num">' + (p.count || 1) + '</div>' +
+                  '<div class="label">ACTIVE TABS</div>' +
+                '</div>';
+              grid.append(card);
+            }
+          }
+        }
+      } catch (err) {
+        console.warn('renderLiveRadar error:', err);
+      }
+    }
+
+    // RENDER YESTERDAY'S RECAP & INTELLIGENCE (NEW!)
+    function renderYesterday() {
+      try {
+        const now = Date.now();
+        const yesterdayTime = now - 24 * 60 * 60 * 1000;
+        const yDate = new Date(yesterdayTime + 330 * 60 * 1000);
+        const yDayStr = yDate.toISOString().slice(0, 10);
+        const yDateDisplay = yDate.toLocaleDateString('en-IN', { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' });
+        setText('yesterday-date-chip', '📅 ' + yDateDisplay);
+
+        // Filter yesterday records from trafficRecords or yesterdayData
+        let yRecords = [];
+        if (yesterdayData && Array.isArray(yesterdayData.records) && yesterdayData.records.length > 0) {
+          yRecords = yesterdayData.records;
+        } else {
+          yRecords = trafficRecords.filter(r => !r.isOwner && indiaDayStr(r.time) === yDayStr);
+        }
+
+        const totalViews = yesterdayData?.views || yRecords.reduce((acc, r) => acc + (r.visits || 1), 0);
+        const uniqueVisitors = yesterdayData?.visitors || yRecords.length;
+        const ratio = uniqueVisitors ? (totalViews / uniqueVisitors).toFixed(2) : '0';
+        const repeatCount = yRecords.filter(r => r.visits > 1).length;
+        const repeatPct = yRecords.length ? Math.round((repeatCount / yRecords.length) * 100) : 0;
+
+        // Update Tab Badge & KPI Cards
+        setText('badge-yesterday-views', totalViews + ' VIEWS');
+        setText('yd-kpi-views', totalViews);
+        setText('yd-kpi-visitors', uniqueVisitors);
+        setText('yd-kpi-ratio', ratio);
+        setText('yd-kpi-repeats', repeatPct + '%');
+        setText('yd-kpi-repeat-count', repeatCount);
+
+        // Hourly Array & Peak
+        let hourly = yesterdayData?.hourly;
+        if (!Array.isArray(hourly) || hourly.length !== 24) {
+          hourly = Array(24).fill(0);
+          for (const r of yRecords) {
+            const h = new Date(r.time + 330 * 60 * 1000).getUTCHours();
+            if (h >= 0 && h < 24) hourly[h] += (r.visits || 1);
+          }
+        }
+        let peakH = yesterdayData?.peakHour?.hour ?? 0;
+        let peakViews = yesterdayData?.peakHour?.views ?? 0;
+        if (!peakViews) {
+          hourly.forEach((cnt, idx) => {
+            if (cnt > peakViews) { peakViews = cnt; peakH = idx; }
+          });
+        }
+
+        function formatHour(h) {
+          const ampm = h >= 12 ? 'PM' : 'AM';
+          const h12 = h % 12 || 12;
+          const nextH = (h + 1) % 24;
+          const nextAmpm = nextH >= 12 ? 'PM' : 'AM';
+          const nextH12 = nextH % 12 || 12;
+          return h12 + ':00 ' + ampm + ' – ' + nextH12 + ':00 ' + nextAmpm + ' IST';
+        }
+
+        const peakHourStr = peakViews > 0 ? (formatHour(peakH) + ' (' + peakViews + ' views)') : 'Low Ingress';
+        setText('yd-peak-hour', peakHourStr);
+
+        // Popular Pages for Yesterday
+        let yPopular = [];
+        if (yesterdayData && Array.isArray(yesterdayData.popularPages) && yesterdayData.popularPages.length > 0) {
+          yPopular = yesterdayData.popularPages;
+        } else {
+          const map = new Map();
+          for (const r of yRecords) {
+            for (const s of (r.sections || [])) {
+              const name = s.name || r.path || 'Study Material';
+              const curr = map.get(name) || { section: name, path: r.path, visits: 0, visitors: new Set() };
+              curr.visits += (s.visits || 1);
+              curr.visitors.add(r.ip);
+              map.set(name, curr);
+            }
+          }
+          yPopular = Array.from(map.values()).map(item => ({
+            ...item,
+            visitors: Array.from(item.visitors)
+          })).sort((a,b) => b.visits - a.visits);
+        }
+
+        const topYContent = yPopular.length > 0 ? (yPopular[0].section || yPopular[0].path) : '—';
+        const topYViews = yPopular.length > 0 ? (yPopular[0].visits + ' views') : '';
+        setText('yd-top-content', topYContent + (topYViews ? ' · ' + topYViews : ''));
+        setText('yd-content-count', yPopular.length + ' ITEMS');
+
+        // Demographics: Devices & Sources & Locations
+        const devMap = yesterdayData?.devices || {};
+        const refMap = yesterdayData?.referrers || {};
+        const locMap = yesterdayData?.locations || {};
+
+        if (!yesterdayData?.devices) {
+          for (const r of yRecords) {
+            const dev = r.device || 'Mobile / Web';
+            devMap[dev] = (devMap[dev] || 0) + (r.visits || 1);
+            const ref = r.ref || 'Direct / Saved';
+            refMap[ref] = (refMap[ref] || 0) + (r.visits || 1);
+            const loc = [r.city, r.region].filter(Boolean).join(', ') || (r.country && r.country !== 'XX' ? r.country : 'Unknown');
+            locMap[loc] = (locMap[loc] || 0) + (r.visits || 1);
+          }
+        }
+
+        const topDevEntries = Object.entries(devMap).sort((a,b) => b[1] - a[1]);
+        const topRefEntries = Object.entries(refMap).sort((a,b) => b[1] - a[1]);
+        const topLocEntries = Object.entries(locMap).sort((a,b) => b[1] - a[1]);
+
+        const topDevice = topDevEntries.length > 0 ? topDevEntries[0][0] : 'Mobile';
+        const topSource = topRefEntries.length > 0 ? topRefEntries[0][0] : 'Direct';
+        setText('yd-primary-device', topDevice);
+        setText('yd-primary-source', topSource);
+
+        // Synthesize Executive Brief Text
+        const briefEl = document.getElementById('yesterday-brief-text');
+        if (briefEl) {
+          if (totalViews === 0 && uniqueVisitors === 0) {
+            briefEl.innerHTML = 'Yesterday on <strong>' + yDateDisplay + '</strong>, the hub experienced a quiet cycle with <strong>0 public ingress requests</strong> recorded in the active buffer. Radar and tracking remain operational.';
+          } else {
+            const devPct = totalViews ? Math.round(((topDevEntries[0]?.[1] || 0) / totalViews) * 100) : 0;
+            briefEl.innerHTML = 'Yesterday on <strong>' + yDateDisplay + '</strong>, Academic Hub recorded <strong>' + totalViews + ' total page views</strong> across <strong>' + uniqueVisitors + ' unique student' + (uniqueVisitors === 1 ? '' : 's') + '</strong> with an average engagement of <strong>' + ratio + ' views/student</strong>. ' +
+              'Peak study rush transpired at <strong>' + (peakViews > 0 ? formatHour(peakH) : 'spread throughout the day') + '</strong>' + (peakViews > 0 ? ' (' + peakViews + ' views)' : '') + '. ' +
+              'The most accessed learning material was <strong>' + (topYContent !== '—' ? topYContent : 'the Course Hub Portal') + '</strong>' + (topYViews ? ' (' + topYViews + ')' : '') + '. ' +
+              'Learners connected predominantly using <strong>' + topDevice + '</strong> (~' + devPct + '%) via <strong>' + topSource + '</strong>, with <strong>' + repeatPct + '%</strong> repeat visitors returning for revision.';
+          }
+        }
+
+        // Render 24-Hour Bar Chart
+        const chartWrap = document.getElementById('yesterday-hourly-chart');
+        if (chartWrap) {
+          chartWrap.replaceChildren();
+          const maxVal = Math.max(...hourly, 1);
+          for (let h = 0; h < 24; h++) {
+            const v = hourly[h] || 0;
+            const pct = Math.max(3, Math.round((v / maxVal) * 100));
+            const col = document.createElement('div');
+            col.className = 'chart-bar-col' + (h === peakH && v > 0 ? ' peak' : '');
+            
+            const fill = document.createElement('div');
+            fill.className = 'chart-bar-fill';
+            fill.style.height = pct + '%';
+
+            const tip = document.createElement('div');
+            tip.className = 'chart-bar-tooltip';
+            tip.textContent = String(h).padStart(2,'0') + ':00 IST · ' + v + ' view' + (v === 1 ? '' : 's');
+
+            col.append(tip, fill);
+            chartWrap.append(col);
+          }
+        }
+
+        // Render Popular Content List (Yesterday)
+        const popTbody = document.getElementById('yesterday-popular-rows');
+        if (popTbody) {
+          popTbody.replaceChildren();
+          if (!yPopular.length) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = '<td colspan="4" style="text-align:center; padding:22px; color:var(--text-dim); font-size:13px;">No study assets accessed yesterday</td>';
+            popTbody.append(tr);
+          } else {
+            for (const [idx, p] of yPopular.slice(0, 15).entries()) {
+              const tr = document.createElement('tr');
+              const rankCls = idx === 0 ? 'rank-1' : (idx === 1 ? 'rank-2' : (idx === 2 ? 'rank-3' : 'rank-norm'));
+              const vCount = Array.isArray(p.visitors) ? p.visitors.length : (typeof p.visitors === 'number' ? p.visitors : 0);
+              tr.innerHTML = '<td><span class="rank-badge ' + rankCls + '">#' + (idx + 1) + '</span></td>' +
+                '<td><strong style="color:var(--text-pure); font-size:13px;">' + (p.section || 'Learning Material') + '</strong><br><span class="path-pill" style="font-size:10.5px; margin-top:2px; display:inline-block;">' + (p.path || '/') + '</span></td>' +
+                '<td><strong style="font-family:var(--font-mono); color:#fbbf24;">' + (p.visits || 0) + '</strong></td>' +
+                '<td><span class="ip-badge" style="font-size:11px;">' + vCount + '</span></td>';
+              popTbody.append(tr);
+            }
+          }
+        }
+
+        // Render Devices Progress Bars
+        const devContainer = document.getElementById('yesterday-device-bars');
+        if (devContainer) {
+          devContainer.replaceChildren();
+          const devTotal = topDevEntries.reduce((acc, [, val]) => acc + val, 0) || 1;
+          for (const [name, val] of topDevEntries.slice(0, 5)) {
+            const pct = Math.round((val / devTotal) * 100);
+            const row = document.createElement('div');
+            row.className = 'demo-row';
+            row.innerHTML = '<div class="demo-row-head"><span>' + name + '</span><strong>' + pct + '% <small style="color:var(--text-dim); font-weight:normal;">(' + val + ')</small></strong></div>' +
+              '<div class="demo-track"><div class="demo-fill" style="width:' + pct + '%"></div></div>';
+            devContainer.append(row);
+          }
+        }
+
+        // Render Referrers Progress Bars
+        const refContainer = document.getElementById('yesterday-referrer-bars');
+        if (refContainer) {
+          refContainer.replaceChildren();
+          const refTotal = topRefEntries.reduce((acc, [, val]) => acc + val, 0) || 1;
+          for (const [name, val] of topRefEntries.slice(0, 5)) {
+            const pct = Math.round((val / refTotal) * 100);
+            const row = document.createElement('div');
+            row.className = 'demo-row';
+            row.innerHTML = '<div class="demo-row-head"><span>' + name + '</span><strong>' + pct + '% <small style="color:var(--text-dim); font-weight:normal;">(' + val + ')</small></strong></div>' +
+              '<div class="demo-track"><div class="demo-fill cyan" style="width:' + pct + '%"></div></div>';
+            refContainer.append(row);
+          }
+        }
+
+        // Render Top Locations Pills
+        const locContainer = document.getElementById('yesterday-location-pills');
+        if (locContainer) {
+          locContainer.replaceChildren();
+          for (const [name, val] of topLocEntries.slice(0, 8)) {
+            const pill = document.createElement('span');
+            pill.className = 'demo-pill';
+            pill.innerHTML = '📍 ' + name + ' <strong style="color:var(--accent-cyan);">' + val + '</strong>';
+            locContainer.append(pill);
+          }
+        }
+
+        // Render Yesterday Visitors Table (with filter)
+        const ydSearchEl = document.getElementById('yd-search-input');
+        const ydSearch = (ydSearchEl ? ydSearchEl.value : "").trim().toLowerCase();
+        let filteredYd = yRecords.filter(item => {
+          if (!ydSearch) return true;
+          const info = countryInfo(item.country);
+          const hay = [item.ip, item.country, info.name, item.region, item.city, item.isp, item.device, item.ref, item.path, ...(item.sections||[]).map(s=>s.name)].filter(Boolean).join(' ').toLowerCase();
+          return hay.includes(ydSearch);
+        });
+
+        setText('yd-visitor-count-info', filteredYd.length + ' of ' + yRecords.length + ' Visitors');
+
+        const yRows = document.getElementById('yesterday-visitor-rows');
+        if (yRows) {
+          yRows.replaceChildren();
+          if (!filteredYd.length) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = '<td colspan="7" style="text-align:center; padding:32px; color:var(--text-dim); font-size:13.5px;">No yesterday visitor sessions found matching filter</td>';
+            yRows.append(tr);
+          } else {
+            for (const v of filteredYd) {
+              const tr = document.createElement('tr');
+              const info = countryInfo(v.country);
+              const loc = [v.region, v.city].filter(Boolean).join(', ') || 'Unknown';
+              const acts = (v.sections || []).map(s => s.name).slice(0, 3).join(', ') || getPathFallbackActivity(v.path);
+              
+              tr.innerHTML = '<td><span class="time-stamp">' + formatIST(v.time) + '</span></td>' +
+                '<td><span class="ip-badge" title="' + v.ip + '">' + formatShortIP(v.ip) + '</span></td>' +
+                '<td><span class="visits-badge ' + (v.visits > 1 ? 'multi' : 'single') + '">' + v.visits + ' visit' + (v.visits===1?'':'s') + '</span></td>' +
+                '<td><span class="country-pill"><span class="country-flag">' + info.flag + '</span> ' + info.name.split(' (')[0] + '</span></td>' +
+                '<td><div class="location-text">' + loc + '</div>' + (v.isp ? '<div style="font-size:11px; color:var(--text-dim); font-family:var(--font-mono);">📶 ' + v.isp + '</div>' : '') + '</td>' +
+                '<td><div style="font-size:12px; font-weight:600;">' + (v.device || '📱 Mobile') + '</div><div style="font-size:11px; color:var(--text-dim);">' + (v.ref || '🔖 Direct') + '</div></td>' +
+                '<td><div class="path-pill">' + (v.path || '/') + '</div><div style="font-size:11px; color:#cbd5e1; margin-top:3px;">' + acts + '</div></td>';
+              yRows.append(tr);
+            }
+          }
+        }
+      } catch (yErr) {
+        console.warn('renderYesterday error:', yErr);
+      }
+    }
+
+    // DATA FETCHING (CACHE BUSTED & DEFENSIVE)
+    async function refreshLiveVisitors() {
+      try {
+        const res = await fetch('/api/admin/live-visitors?_t=' + Date.now(), { cache: 'no-store', credentials: 'same-origin' });
+        if (res.status === 401) { location.href = '/admin/login'; return; }
+        const d = await res.json();
+        if (res.ok && d) {
+          liveData = d;
+          lastSyncTimestamp = Date.now();
+        } else {
+          liveData = { active: 0, pages: [] };
+        }
+      } catch (err) {
+        console.warn('Live visitors fetch error:', err);
+        liveData = { active: 0, pages: [] };
+      } finally {
+        try { renderLiveRadar(); } catch (e) { console.error('renderLiveRadar error:', e); }
+      }
+    }
+
+    async function refreshTraffic() {
+      try {
+        const res = await fetch('/api/admin/traffic?_t=' + Date.now(), { cache: 'no-store', credentials: 'same-origin' });
+        if (res.status === 401) { location.href = '/admin/login'; return; }
+        if (!res.ok) {
+          console.warn('Traffic response error status:', res.status);
+          const link = document.getElementById('radar-link-status');
+          if (link) { link.textContent = '● SYNC RETRY (' + res.status + ')'; link.style.color = 'var(--accent-amber)'; }
+          return;
+        }
+        const d = await res.json();
+        if (d && Array.isArray(d.records)) {
+          trafficRecords = d.records;
+          popularPageRecords = Array.isArray(d.popularPages) ? d.popularPages : [];
+          if (d.yesterday) yesterdayData = d.yesterday;
+          lastSyncTimestamp = Date.now();
+          const link = document.getElementById('radar-link-status');
+          if (link) {
+            if (d.error) {
+              link.textContent = '● DATA NOTICE';
+              link.style.color = 'var(--accent-amber)';
+            } else {
+              link.textContent = '● NOMINAL';
+              link.style.color = 'var(--accent-emerald)';
+            }
+          }
+          if (d.ownerIp) {
+            setText('owner-shield-pill', 'Active (Admin IP ' + d.ownerIp + ' excluded)');
+          }
+          
+          if (d.today) {
+            setText('today-badge', d.today.day || 'TODAY');
+            setText('today-visitors', d.today.visitors || 0);
+            setText('today-views', d.today.views || 0);
+            setText('today-ratio', d.today.visitors ? (d.today.views / d.today.visitors).toFixed(2) : '0');
+          }
+
+          setText('buffer-views', d.views !== undefined ? d.views : trafficRecords.length);
+          setText('buffer-ips', d.uniqueIPs !== undefined ? d.uniqueIPs : trafficRecords.length);
+          
+          const repeatIps = trafficRecords.filter(v => v.visits > 1).length;
+          const repPct = trafficRecords.length ? ((repeatIps / trafficRecords.length) * 100).toFixed(1) : 0;
+          setText('buffer-repeats', repPct + '%');
+        }
+      } catch (err) {
+        console.warn('Traffic fetch error:', err);
+        const link = document.getElementById('radar-link-status');
+        if (link) { link.textContent = '● SYNC RETRY'; link.style.color = 'var(--accent-amber)'; }
+      } finally {
+        try { renderTraffic(); } catch (e) { console.error('renderTraffic error:', e); }
+        try { renderPopularPages(); } catch (e) { console.error('renderPopularPages error:', e); }
+        try { renderYesterday(); } catch (e) { console.error('renderYesterday error:', e); }
+      }
+    }
+
+    function exportTrafficCSV() {
+      if (!trafficRecords.length) { alert('No traffic records to export.'); return; }
+      const headers = ['Visitor IP', 'Total Visits', 'Country', 'Region', 'City', 'Broadband / ISP', 'Device', 'Traffic Source', 'Last Active (IST)', 'Latest Page Path'];
+      const rows = trafficRecords.map(v => [
+        v.ip,
+        v.visits,
+        '"' + (v.country || 'XX') + '"',
+        '"' + (v.region || '').replace(/"/g, '""') + '"',
+        '"' + (v.city || '').replace(/"/g, '""') + '"',
+        '"' + (v.isp || '').replace(/"/g, '""') + '"',
+        '"' + (v.device || '').replace(/"/g, '""') + '"',
+        '"' + (v.ref || '').replace(/"/g, '""') + '"',
+        '"' + formatIST(v.time) + '"',
+        '"' + (v.path || '/').replace(/"/g, '""') + '"'
+      ]);
+      const csv = [headers.join(','), ...rows.map(row => row.join(','))].join(String.fromCharCode(10));
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'Academic_Hub_Traffic_Audit_' + new Date().toISOString().slice(0, 10) + '.csv';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    function exportYesterdayCSV() {
+      const now = Date.now();
+      const yDayStr = new Date(now - 24 * 60 * 60 * 1000 + 330 * 60 * 1000).toISOString().slice(0, 10);
+      const yRecs = (yesterdayData && Array.isArray(yesterdayData.records) && yesterdayData.records.length > 0)
+        ? yesterdayData.records
+        : trafficRecords.filter(r => !r.isOwner && indiaDayStr(r.time) === yDayStr);
+
+      if (!yRecs.length) { alert('No yesterday traffic records to export.'); return; }
+      const headers = ['Visitor IP', 'Visits Yesterday', 'Country', 'Region', 'City', 'ISP', 'Device', 'Traffic Source', 'Timestamp (IST)', 'Latest Page'];
+      const rows = yRecs.map(v => [
+        v.ip,
+        v.visits,
+        '"' + (v.country || 'XX') + '"',
+        '"' + (v.region || '').replace(/"/g, '""') + '"',
+        '"' + (v.city || '').replace(/"/g, '""') + '"',
+        '"' + (v.isp || '').replace(/"/g, '""') + '"',
+        '"' + (v.device || '').replace(/"/g, '""') + '"',
+        '"' + (v.ref || '').replace(/"/g, '""') + '"',
+        '"' + formatIST(v.time) + '"',
+        '"' + (v.path || '/').replace(/"/g, '""') + '"'
+      ]);
+      const csv = [headers.join(','), ...rows.map(row => row.join(','))].join(String.fromCharCode(10));
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'Academic_Hub_Yesterday_Audit_' + yDayStr + '.csv';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    // TABS LOGIC
+    const stations = [
+      { id: 'geo', tab: 'tab-btn-geo', panel: 'panel-geo' },
+      { id: 'yesterday', tab: 'tab-btn-yesterday', panel: 'panel-yesterday' },
+      { id: 'radar', tab: 'tab-btn-radar', panel: 'panel-radar' },
+      { id: 'content', tab: 'tab-btn-content', panel: 'panel-content' }
+    ];
+
+    function activateStation(id) {
+      for (const s of stations) {
+        const isMatch = s.id === id;
+        const btn = document.getElementById(s.tab);
+        const pnl = document.getElementById(s.panel);
+        if (btn) {
+          btn.classList.toggle('active', isMatch);
+          btn.setAttribute('aria-selected', String(isMatch));
+        }
+        if (pnl) pnl.hidden = !isMatch;
+      }
+      if (id === 'yesterday') {
+        renderYesterday();
+      }
+    }
+
+    for (const s of stations) {
+      const btn = document.getElementById(s.tab);
+      if (btn) btn.onclick = () => activateStation(s.id);
+    }
+
+    // HASH NAVIGATION CHECK
+    if (location.hash === '#yesterday' || location.hash === '#recap') {
+      activateStation('yesterday');
+    } else if (location.hash === '#radar' || location.hash === '#live') {
+      activateStation('radar');
+    } else if (location.hash === '#content') {
+      activateStation('content');
+    } else {
+      activateStation('geo');
+    }
+
+    // EVENTS & INTERACTIVE MANUAL SYNC
+    let isManualSyncing = false;
+    async function triggerManualSync() {
+      if (isManualSyncing) return;
+      isManualSyncing = true;
+      const syncBtn = document.getElementById('btn-force-sync');
+      const radarLink = document.getElementById('radar-link-status');
+      if (syncBtn) {
+        syncBtn.disabled = true;
+        syncBtn.style.opacity = '0.75';
+        syncBtn.innerHTML = '🔄 SYNCING...';
+      }
+      if (radarLink) {
+        radarLink.textContent = '● SYNCING...';
+        radarLink.style.color = 'var(--accent-cyan)';
+      }
+      try {
+        await Promise.allSettled([refreshLiveVisitors(), refreshTraffic()]);
+        if (syncBtn) {
+          syncBtn.innerHTML = '✓ SYNCED!';
+          syncBtn.style.boxShadow = '0 0 16px rgba(16, 185, 129, 0.7)';
+          syncBtn.style.borderColor = 'var(--accent-emerald)';
+          syncBtn.style.color = '#fff';
+        }
+        if (radarLink) {
+          radarLink.textContent = '● SYNCED NOW';
+          radarLink.style.color = 'var(--accent-emerald)';
+        }
+      } catch (err) {
+        console.warn('Manual sync failed:', err);
+        if (syncBtn) {
+          syncBtn.innerHTML = '⚠️ RETRY';
+          syncBtn.style.color = 'var(--accent-amber)';
+        }
+      } finally {
+        setTimeout(() => {
+          isManualSyncing = false;
+          if (syncBtn) {
+            syncBtn.disabled = false;
+            syncBtn.style.opacity = '1';
+            syncBtn.innerHTML = '⚡ FORCE REFRESH';
+            syncBtn.style.boxShadow = '';
+            syncBtn.style.borderColor = '';
+            syncBtn.style.color = '';
+          }
+        }, 1200);
+      }
+    }
+
+    const syncBtn = document.getElementById('btn-force-sync');
+    if (syncBtn) syncBtn.onclick = triggerManualSync;
+
+    // IMMEDIATE AUTO-REFRESH ON VISIBILITY & FOCUS (NO FREEZE)
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        refreshLiveVisitors();
+        refreshTraffic();
+      }
+    });
+    window.addEventListener('focus', () => {
+      refreshLiveVisitors();
+      refreshTraffic();
+    });
+
+    const exportBtn = document.getElementById('btn-export-traffic');
+    if (exportBtn) exportBtn.onclick = exportTrafficCSV;
+
+    const exportYdBtn = document.getElementById('btn-export-yesterday');
+    if (exportYdBtn) exportYdBtn.onclick = exportYesterdayCSV;
+
+    const searchInput = document.getElementById('traffic-search-input');
+    if (searchInput) searchInput.oninput = () => { trafficPage = 1; renderTraffic(); };
+    const pageSizeSelect = document.getElementById('traffic-page-size');
+    if (pageSizeSelect) pageSizeSelect.onchange = () => { trafficPage = 1; renderTraffic(); };
+    const prevPageBtn = document.getElementById('traffic-prev-page');
+    if (prevPageBtn) prevPageBtn.onclick = () => { trafficPage = Math.max(1, trafficPage - 1); renderTraffic(); };
+    const nextPageBtn = document.getElementById('traffic-next-page');
+    if (nextPageBtn) nextPageBtn.onclick = () => { trafficPage++; renderTraffic(); };
+
+    const ydSearchInput = document.getElementById('yd-search-input');
+    if (ydSearchInput) ydSearchInput.oninput = renderYesterday;
+
+    const logoutBtn = document.getElementById('logout');
+    if (logoutBtn) logoutBtn.onclick = async () => {
+      try {
+        await fetch('/api/admin/logout', { method: 'POST' });
+      } finally {
+        location.href = '/admin/login';
+      }
+    };
+
+    // POLLING CYCLE
+    let pollIntervalId = null;
+    function setPollingInterval(ms) {
+      if (pollIntervalId) clearInterval(pollIntervalId);
+      if (ms > 0) {
+        pollIntervalId = setInterval(() => {
+          if (!document.hidden) {
+            refreshLiveVisitors();
+            refreshTraffic();
+          }
+        }, ms);
+      }
+    }
+
+    const syncIntervalSelect = document.getElementById('sync-interval');
+    if (syncIntervalSelect) syncIntervalSelect.onchange = (e) => {
+      setPollingInterval(Number(e.target.value));
+    };
+
+    // INITIAL TRIGGER
+    try { refreshLiveVisitors(); } catch (e) { console.warn(e); }
+    try { refreshTraffic(); } catch (e) { console.warn(e); }
+    setPollingInterval(15000);
+  </script>
+</body>
+</html>

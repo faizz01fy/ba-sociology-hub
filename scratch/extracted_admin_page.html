@@ -1,0 +1,206 @@
+
+<header class="hud-header">
+  <div class="brand-title">
+    <div class="brand-radar"></div>
+    <div class="brand-text">
+      <h1>ACADEMIC HUB // CONTROL ROOM <span>TRAFFIC WATCH</span></h1>
+      <div class="brand-sub">OPERATIONS WATCH & VISITOR TELEMETRY · SECURE OWNER CONSOLE</div>
+    </div>
+  </div>
+
+  <div class="hud-clocks">
+    <div class="clock-item">
+      <span class="clock-label">SYSTEM TIME (IST)</span>
+      <span class="clock-time" id="ist-clock">Loading...</span>
+    </div>
+    <div class="clock-item">
+      <span class="clock-label">COORDINATED UNIVERSAL</span>
+      <span class="clock-time" id="utc-clock">Loading...</span>
+    </div>
+    <div class="clock-item">
+      <span class="clock-label">RADAR LINK</span>
+      <span class="clock-time" id="radar-link-status" style="color:var(--accent-emerald)">● NOMINAL</span>
+    </div>
+    <div class="clock-item">
+      <span class="clock-label">TRAFFIC WATCH</span>
+      <span class="clock-time" id="quota-guard-status" style="color:var(--accent-emerald)">● ACTIVE 24/7</span>
+    </div>
+  </div>
+
+  <div class="hud-actions">
+    <button class="btn btn-primary" id="btn-force-sync" type="button">⚡ FORCE REFRESH</button>
+    <label class="refresh-rate-label" for="sync-interval">
+      SYNC:
+      <select id="sync-interval" class="select-inline">
+        <option value="15000" selected>15s</option>
+        <option value="30000">30s</option>
+        <option value="60000">60s</option>
+        <option value="0">PAUSE</option>
+      </select>
+    </label>
+    <a href="/" class="btn">HUB HOME</a>
+    <button class="btn btn-danger" id="logout" type="button">SIGN OUT</button>
+  </div>
+</header>
+
+<section class="kpi-grid">
+  <div class="kpi-card live">
+    <div class="kpi-head">
+      <span class="kpi-title">LIVE ACTIVE NOW</span>
+      <span class="kpi-badge live">● 90s RADAR</span>
+    </div>
+    <div class="kpi-val"><span id="live-active-count">0</span> <small>CONCURRENT</small></div>
+    <div class="kpi-foot">
+      <span>Spread across</span>
+      <span class="highlight" id="live-pages-summary">checking active tabs...</span>
+    </div>
+  </div>
+
+  <div class="kpi-card today">
+    <div class="kpi-head">
+      <span class="kpi-title">TODAY'S INGRESS (IST)</span>
+      <span class="kpi-badge today" id="today-badge">TODAY</span>
+    </div>
+    <div class="kpi-val"><span id="today-visitors">0</span> <small>VISITORS</small></div>
+    <div class="kpi-foot">
+      <span class="highlight" id="today-views">0</span> page views · <span id="today-ratio">0</span> views/user
+    </div>
+  </div>
+
+  <div class="kpi-card buffer">
+    <div class="kpi-head">
+      <span class="kpi-title">7-DAY TELEMETRY BUFFER</span>
+      <span class="kpi-badge total">ROLLING</span>
+    </div>
+    <div class="kpi-val"><span id="buffer-views">0</span> <small>LOGS</small></div>
+    <div class="kpi-foot">
+      <span class="highlight" id="buffer-ips">0</span> distinct IPs · <span id="buffer-repeats">0%</span> repeat
+    </div>
+  </div>
+
+  <div class="kpi-card popular">
+    <div class="kpi-head">
+      <span class="kpi-title">TOP ACCESSED CONTENT</span>
+      <span class="kpi-badge popular">LEADER</span>
+    </div>
+    <div class="kpi-val" style="font-size:20px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" id="top-content-name">—</div>
+    <div class="kpi-foot">
+      <span class="highlight" id="top-content-views">0 views</span> · <span id="top-content-visitors">0 visitors</span>
+    </div>
+  </div>
+</section>
+
+<nav class="nav-tabs" role="tablist">
+  <button class="tab-btn active" id="tab-btn-geo" type="button" role="tab" aria-selected="true">👥 VISITORS & IP AUDIT <span class="badge-pill" id="badge-total-ips">0 IPs</span></button>
+  <button class="tab-btn" id="tab-btn-radar" type="button" role="tab" aria-selected="false">🛰️ LIVE RADAR PRESENCE <span class="badge-pill" id="badge-live-tabs">0 ACTIVE</span></button>
+  <button class="tab-btn" id="tab-btn-content" type="button" role="tab" aria-selected="false">📊 CONTENT LEADERBOARD <span class="badge-pill" id="badge-total-pages">0</span></button>
+</nav>
+
+<main class="control-panel">
+  <!-- TAB 1: VISITORS & IP AUDIT (DEFAULT OPEN TAB) -->
+  <section class="station-card" id="panel-geo">
+    <div class="station-header">
+      <div>
+        <h2><span class="station-dot"></span> VISITOR AUDIT & INGRESS TELEMETRY</h2>
+        <p class="station-desc">Deep telemetry records by visitor IP, regional geolocations, visit velocity, and chronological section breadcrumbs.</p>
+      </div>
+      <div>
+        <button class="btn btn-primary" id="btn-export-traffic" type="button">📥 EXPORT TRAFFIC CSV</button>
+      </div>
+    </div>
+
+    <!-- COUNTRY BREAKDOWN CARDS -->
+    <div class="country-grid" id="country-summary-grid">
+      <!-- Rendered dynamically -->
+    </div>
+
+    <div class="filter-row">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="traffic-search-input" placeholder="Search IP Address, City, Country, or Page Path..." value="">
+      </div>
+      <div class="filter-group">
+        <label for="traffic-page-size" class="filter-label">ROWS:</label>
+        <select class="filter-select" id="traffic-page-size">
+          <option value="25" selected>25 rows</option>
+          <option value="50">50 rows</option>
+          <option value="100">100 rows</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th style="min-width:125px">Last Active</th>
+            <th style="min-width:110px">Visitor IP</th>
+            <th style="min-width:80px">Visits</th>
+            <th style="min-width:120px">Country</th>
+            <th style="min-width:145px">Location & ISP</th>
+            <th style="min-width:130px">Device & Source</th>
+            <th style="min-width:170px">Current Page &amp; Activity</th>
+            <th style="min-width:160px">Section Trail</th>
+          </tr>
+        </thead>
+        <tbody id="rows">
+          <!-- Rendered dynamically -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagination-bar">
+      <span id="traffic-page-info" class="page-info">Page 1 of 1</span>
+      <div class="page-controls">
+        <button class="btn" id="traffic-prev-page" type="button" disabled>◀ PREVIOUS</button>
+        <button class="btn" id="traffic-next-page" type="button" disabled>NEXT ▶</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 2: LIVE AUDIENCE RADAR -->
+  <section class="station-card" id="panel-radar" hidden>
+    <div class="station-header">
+      <div>
+        <h2><span class="station-dot"></span> LIVE AUDIENCE RADAR (CONCURRENT TABS STREAM)</h2>
+        <p class="station-desc">Telemetry active within the last 90 seconds. Highlights concurrent study clusters and live student sessions.</p>
+      </div>
+      <div>
+        <span class="radar-live-badge" id="radar-summary-text">● CHECKING RADAR...</span>
+      </div>
+    </div>
+
+    <div class="radar-grid" id="live-pages-grid">
+      <!-- Rendered dynamically -->
+    </div>
+  </section>
+
+  <!-- TAB 3: CONTENT LEADERBOARD -->
+  <section class="station-card" id="panel-content" hidden>
+    <div class="station-header">
+      <div>
+        <h2><span class="station-dot"></span> CONTENT POPULARITY & ACCESS LEADERBOARD</h2>
+        <p class="station-desc">Ranked by section visits and unique student readers since tracking began.</p>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:70px">Rank</th>
+            <th>Learning Page / Section</th>
+            <th style="width:120px">Total Views</th>
+            <th style="width:140px">Unique Visitors</th>
+            <th style="width:130px">Views / Visitor</th>
+            <th style="width:180px">Last Activity (IST)</th>
+            <th style="min-width:200px">Visitor IP Deep Audit</th>
+          </tr>
+        </thead>
+        <tbody id="popular-page-rows">
+          <!-- Rendered dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>

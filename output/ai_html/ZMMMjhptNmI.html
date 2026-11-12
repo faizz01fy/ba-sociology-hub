@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@700;800;900&family=Gayathri:wght@700;900&family=Manjari:wght@700;900&family=Noto+Sans+Malayalam:wght@700;900&family=Orbitron:wght@800;900&family=Outfit:wght@700;900&family=Space+Grotesk:wght@700&family=Syne:wght@800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #10061A 0%, #1F0D33 50%, #30144D 100%);
+      font-family: 'Noto Sans Malayalam', 'Syne', sans-serif;
+      color: #FFFFFF;
+      position: relative;
+    }
+    
+    /* Background subtle grid */
+    .grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* Top Left Channel Banner Pill */
+    .top-bar {
+      position: absolute;
+      top: 36px;
+      left: 56px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 10;
+    }
+    .channel-tag {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1.5px solid #C77DFF;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(8px);
+    }
+    .channel-tag .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #C77DFF;
+      box-shadow: 0 0 10px #C77DFF;
+    }
+    .syllabus-badge {
+      background: rgba(31, 13, 51, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #7B2CBF;
+      letter-spacing: 0.5px;
+    }
+
+    /* Main Left Content Panel */
+    .content-panel {
+      position: absolute;
+      top: 110px;
+      left: 56px;
+      width: 660px;
+      z-index: 10;
+    }
+    .module-badge {
+      display: inline-block;
+      font-family: 'Orbitron', 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 2.5px;
+      color: #7B2CBF;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      text-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+    .title-malayalam {
+      font-size: 58px;
+      font-weight: 900;
+      line-height: 1.14;
+      color: #FFFFFF;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0,0,0,0.6);
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .title-english {
+      font-family: 'Outfit', 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #C77DFF;
+      line-height: 1.25;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+      margin-bottom: 26px;
+      border-left: 4px solid #7B2CBF;
+      padding-left: 14px;
+    }
+    .features-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .feature-pill {
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #E2E8F0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .feature-pill span {
+      color: #C77DFF;
+    }
+
+    /* Right Artwork Container */
+    .art-container {
+      position: absolute;
+      top: 50px;
+      right: 30px;
+      width: 580px;
+      height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    /* Bottom Status Bar */
+    .bottom-bar {
+      position: absolute;
+      bottom: 26px;
+      left: 56px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      color: #94A3B8;
+      z-index: 10;
+    }
+    .bottom-bar .hub-url {
+      color: #FFFFFF;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+    }
+    .bottom-bar .sep {
+      color: rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+
+  <div class="top-bar">
+    <div class="channel-tag">
+      <div class="dot"></div>
+      ACADEMIC HUB
+    </div>
+    <div class="syllabus-badge">CALICUT UNIVERSITY FYUGP</div>
+    <div class="syllabus-badge" style="color: #C77DFF;">BLACK-BOX OPACITY</div>
+  </div>
+
+  <div class="content-panel">
+    <div class="module-badge">MODULE 03 · MASTERCLASS</div>
+    <h1 class="title-malayalam">ബ്ലാക്ക് ബോക്സ്<br>ഒപ്പാസിറ്റിയും AI-യും</h1>
+    <div class="title-english">Algorithmic Opacity & The Problem of Reason</div>
+    <div class="features-row">
+      <div class="feature-pill"><span>✓</span> സിലബസ് വിശകലനം</div>
+      <div class="feature-pill"><span>✓</span> സമഗ്ര മാസ്റ്റർക്ലാസ്</div>
+      <div class="feature-pill"><span>✓</span> പരീക്ഷാ ടിപ്പുകൾ</div>
+    </div>
+  </div>
+
+  <div class="art-container">
+    
+        <svg viewBox="0 0 600 600" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="boxGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#C77DFF" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="300" cy="300" r="260" fill="url(#boxGlow)"/>
+
+          <!-- 3D Isometric Black Box -->
+          <!-- Top Face -->
+          <polygon points="300,100 480,200 300,300 120,200" fill="#1C0F2B" stroke="#C77DFF" stroke-width="5"/>
+          <!-- Left Face -->
+          <polygon points="120,200 300,300 300,500 120,400" fill="#0F0619" stroke="#C77DFF" stroke-width="5"/>
+          <!-- Right Face -->
+          <polygon points="480,200 300,300 300,500 480,400" fill="#150824" stroke="#C77DFF" stroke-width="5"/>
+
+          <!-- Secret Glowing Internal Circuitry visible through translucent box -->
+          <g stroke="#7B2CBF" stroke-width="3" opacity="0.8" fill="none">
+            <line x1="300" y1="300" x2="300" y2="400"/>
+            <circle cx="300" cy="350" r="12" fill="#C77DFF"/>
+            <line x1="210" y1="250" x2="300" y2="350"/>
+            <line x1="390" y1="250" x2="300" y2="350"/>
+            <circle cx="210" cy="250" r="8" fill="#FFF"/>
+            <circle cx="390" cy="250" r="8" fill="#FFF"/>
+          </g>
+
+          <!-- Input arrow (White data) -->
+          <line x1="40" y1="200" x2="105" y2="200" stroke="#FFFFFF" stroke-width="6"/>
+          <polygon points="115,200 100,190 100,210" fill="#FFFFFF"/>
+          <text x="60" y="180" fill="#FFFFFF" font-family="monospace" font-size="14" font-weight="bold">INPUT</text>
+
+          <!-- Output arrow (Unexplained Decision) -->
+          <line x1="495" y1="400" x2="560" y2="400" stroke="#7B2CBF" stroke-width="6"/>
+          <polygon points="570,400 555,390 555,410" fill="#7B2CBF"/>
+          <text x="500" y="380" fill="#7B2CBF" font-family="monospace" font-size="14" font-weight="bold">OUTPUT</text>
+
+          <!-- Big Lock Question Mark -->
+          <text x="300" y="225" fill="#C77DFF" font-family="'Orbitron', sans-serif" font-size="52" font-weight="900" text-anchor="middle">?</text>
+          <text x="300" y="540" fill="#FFFFFF" font-family="'Orbitron', sans-serif" font-size="18" font-weight="bold" text-anchor="middle">OPACITY · UNKNOWN REASON</text>
+        </svg>
+        
+  </div>
+
+  <div class="bottom-bar">
+    <span class="hub-url">🌐 academichubfaiz.in</span>
+    <span class="sep">|</span>
+    <span>PHILOSOPHY OF ARTIFICIAL INTELLIGENCE</span>
+    <span class="sep">|</span>
+    <span>100% FREE STUDY PORTAL</span>
+  </div>
+</body>
+</html>

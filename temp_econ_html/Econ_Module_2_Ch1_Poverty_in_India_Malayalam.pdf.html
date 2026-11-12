@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 2: ഇന്ത്യയിലെ ദാരിദ്ര്യം: നിർവ്വചനം, അളവുകോലുകൾ, ലഘൂകരണ പദ്ധതികൾ</title>
+  <style>
+    :root {
+      --c1: #065f46;
+      --c2: #059669;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 16mm 14mm 16mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #065f46), var(--c2, #059669));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a7f3d0;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #d1fae5;
+}
+
+.badge {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #065f46;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #a7f3d0;
+}
+
+h2 {
+  color: var(--c1, #065f46);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 26px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #0f766e;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #f8fafc;
+  border-left: 4px solid var(--c2, #059669);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-rose {
+  background: #fff1f2;
+  border-left: 4px solid #e11d48;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f1f5f9;
+  border-left: 4px solid #475569;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #047857;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #ecfdf5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.qa-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 8px;
+  font-size: 11pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 10pt;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 10pt;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #059669;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 2: ദാരിദ്ര്യം (Module 2: Poverty)</h4>
+    <h1>മൊഡ്യൂൾ 2: ഇന്ത്യയിലെ ദാരിദ്ര്യം: നിർവ്വചനം, അളവുകോലുകൾ, ലഘൂകരണ പദ്ധതികൾ</h1>
+    <div class="meta">Module 2: Poverty in India — Concepts, Estimation & Alleviation Programmes · Calicut University B.A. Economics / Sociology · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="card">
+  <ul>
+    <li><strong>ദാരിദ്ര്യത്തിന്റെ സങ്കല്പങ്ങൾ (Concepts of Poverty):</strong> സമ്പൂർണ്ണ ദാരിദ്ര്യവും (Absolute Poverty) ആപേക്ഷിക ദാരിദ്ര്യവും (Relative Poverty), അമർത്യ സെന്നിന്റെ ശേഷി ദൗർലഭ്യ സമീപനവും മനസ്സിലാക്കുക.</li>
+    <li><strong>ദാരിദ്ര്യരേഖാ നിർണ്ണയ കമ്മറ്റികൾ (Committees on Poverty Line Estimation):</strong> ദണ്ഡേക്കർ-രഥ്, അലഗ്, ലക്ഡാവാല, സുരേഷ് തെണ്ടുൽക്കർ, സി. രംഗരാജൻ സമിതികളുടെ ശുപാർശകൾ പഠിക്കുക.</li>
+    <li><strong>ബഹുമുഖ ദാരിദ്ര്യ സൂചിക (Multidimensional Poverty Index - MPI):</strong> ആഗോള എം.പി.ഐയും നീതി ആയോഗിന്റെ ദേശീയ എം.പി.ഐയും തമ്മിലുള്ള താരതമ്യം വിലയിരുത്തുക.</li>
+    <li><strong>ദാരിദ്ര്യ ലഘൂകരണ പദ്ധതികൾ (Poverty Alleviation Programmes):</strong> മഹാത്മാഗാന്ധി ദേശീയ ഗ്രാമീണ തൊഴിലുറപ്പ് പദ്ധതി (MGNREGA), ദേശീയ ഭക്ഷ്യസുരക്ഷാ നിയമം (NFSA), NRLM എന്നിവയുടെ സ്വാധീനം വിശകലനം ചെയ്യുക.</li>
+  </ul>
+</div>
+
+<h2>2. സൈദ്ധാന്തിക പശ്ചാത്തലം (Theoretical & Conceptual Foundations)</h2>
+<p>
+ദാരിദ്ര്യം എന്നത് കേവലം വരുമാനക്കുറവ് മാത്രമല്ല; അത് അന്തസ്സോടെയുള്ള മനുഷ്യജീവിതത്തിന് ആവശ്യമായ അടിസ്ഥാന ആവശ്യങ്ങളായ പോഷകാഹാരം, സുരക്ഷിതമായ പാർപ്പിടം, ശുദ്ധജലം, വിദ്യാഭ്യാസം, ആരോഗ്യ സേവനങ്ങൾ എന്നിവ നിഷേധിക്കപ്പെടുന്ന ബഹുമുഖമായ (multidimensional) സാമൂഹികാവസ്ഥയാണ്.
+</p>
+
+<h2>3. സമഗ്ര പാഠഭാഗ പരിഭാഷയും ആശയ വിശകലനവും (Detailed Text Analysis)</h2>
+
+<h3 class="sub-head">(i) സമ്പൂർണ്ണ ദാരിദ്ര്യവും ആപേക്ഷിക ദാരിദ്ര്യവും (Absolute vs. Relative Poverty)</h3>
+<table>
+  <thead>
+    <tr>
+      <th>മാനദണ്ഡം</th>
+      <th>സമ്പൂർണ്ണ ദാരിദ്ര്യം (Absolute Poverty)</th>
+      <th>ആപേക്ഷിക ദാരിദ്ര്യം (Relative Poverty)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>നിർവ്വചനം</strong></td>
+      <td>ജീവന്റെ നിലനിൽപ്പിന് ആവശ്യമായ മിനിമം പോഷകാഹാരവും ഭൗതിക ആവശ്യങ്ങളും നിറവേറ്റാൻ കഴിയാത്ത അവസ്ഥ.</td>
+      <td>സമൂഹത്തിലെ മറ്റ് വിഭാഗങ്ങളുമായി താരതമ്യം ചെയ്യുമ്പോൾ അനുഭവപ്പെടുന്ന സാമ്പത്തിക അസമത്വവും പിന്നോക്കാവസ്ഥയും.</td>
+    </tr>
+    <tr>
+      <td><strong>അളവുകോൽ</strong></td>
+      <td>ദാരിദ്ര്യരേഖ (Poverty Line - കലോറി അഥവാ ഉപഭോഗ ചെലവ്).</td>
+      <td>ലോറൻസ് വക്രരേഖ, ജിനി ഗുണകം, വരുമാന വിഹിത തട്ടുകൾ.</td>
+    </tr>
+    <tr>
+      <td><strong>പ്രാധാന്യം</strong></td>
+      <td>ഇന്ത്യയെപ്പോലുള്ള വികസ്വര രാജ്യങ്ങളിലെ പ്രധാന പഠന വിഷയം.</td>
+      <td>വികസിത സമ്പന്ന രാജ്യങ്ങളിലെ അസമത്വം അളക്കാൻ ഉപയോഗിക്കുന്നു.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="sub-head">(ii) ഇന്ത്യയിലെ ദാരിദ്ര്യരേഖാ നിർണ്ണയ ചരിത്രം (Evolution of Poverty Line Committees)</h3>
+<div class="card-amber">
+  <ul>
+    <li><strong>1. വി.എം. ദണ്ഡേക്കർ & നീലകണ്ഠ രഥ് (1971):</strong> പ്രതിദിനം ഗ്രാമ-നഗര വ്യത്യാസമില്ലാതെ <strong>2,250 കലോറി</strong> ഭക്ഷണം വാങ്ങാനുള്ള ചെലവാണ് ദാരിദ്ര്യരേഖയായി കണക്കാക്കിയത്.</li>
+    <li><strong>2. വൈ.കെ. അലഗ് ടാസ്ക് ഫോഴ്സ് (1979):</strong> കലോറി ആവശ്യകതയെ രണ്ടായി തരംതിരിച്ചു: ഗ്രാമപ്രദേശങ്ങളിൽ കഠിനാധ്വാനം കൂടുതൽ ആവശ്യമുള്ളതിനാൽ <strong>2,400 കലോറിയും</strong>, നഗരങ്ങളിൽ <strong>2,100 കലോറിയും</strong>.</li>
+    <li><strong>3. ഡി.ടി. ലക്ഡാവാല കമ്മിറ്റി (1993):</strong> സംസ്ഥാനങ്ങൾ തമ്മിലുള്ള ജീവിതച്ചെലവ് വ്യത്യാസങ്ങൾ പരിഗണിച്ച് സംസ്ഥാനാടിസ്ഥാനത്തിൽ പ്രത്യേക ദാരിദ്ര്യരേഖകൾ കൊണ്ടുവന്നു. ഇതിനായി ഗ്രാമങ്ങളിൽ കാർഷിക തൊഴിലാളി വിലസൂചികയും (CPI-AL) നഗരങ്ങളിൽ വ്യാവസായിക തൊഴിലാളി വിലസൂചികയും (CPI-IW) ഉപയോഗിച്ചു.</li>
+    <li><strong>4. സുരേഷ് തെണ്ടുൽക്കർ കമ്മിറ്റി (2009):</strong> കേവലം കലോറി അളവിന് പകരമായി വ്യക്തികളുടെ വിദ്യാഭ്യാസം, ആരോഗ്യം, പോഷകാഹാരം എന്നിവയ്ക്കുള്ള ചെലവ് കൂടി ഉൾപ്പെടുത്തി. 2011–12-ൽ ഗ്രാമങ്ങളിൽ പ്രതിദിനം <strong>₹27.20</strong> (പ്രതിമാസം ₹816), നഗരങ്ങളിൽ <strong>₹33.30</strong> (പ്രതിമാസം ₹1,000) എന്നിങ്ങനെ നിശ്ചയിച്ചു. ഇതനുസരിച്ച് ഇന്ത്യയിലെ ദാരിദ്ര്യം <strong>21.9%</strong> ആയി കണക്കാക്കപ്പെട്ടു.</li>
+    <li><strong>5. സി. രംഗരാജൻ കമ്മിറ്റി (2014):</strong> കൂടുതൽ ഉയർന്ന പോഷകാഹാര നിലവാരം നിശ്ചയിച്ചു (ഗ്രാമങ്ങളിൽ 2,155 കലോറി, നഗരങ്ങളിൽ 2,090 കലോറി + പ്രോട്ടീൻ, കൊഴുപ്പ്). ഗ്രാമങ്ങളിൽ പ്രതിദിനം <strong>₹32</strong> (പ്രതിമാസം ₹972), നഗരങ്ങളിൽ <strong>₹47</strong> (പ്രതിമാസം ₹1,407) ദാരിദ്ര്യരേഖയാക്കി. ഇതനുസരിച്ച് ഇന്ത്യയിലെ ദരിദ്രരുടെ അനുപാതം <strong>29.5%</strong> ആയി ഉയർന്നു.</li>
+  </ul>
+</div>
+
+<h3 class="sub-head">(iii) ബഹുമുഖ ദാരിദ്ര്യ സൂചിക (Multidimensional Poverty Index - MPI)</h3>
+<p>
+ഓക്സ്ഫോർഡ് പോവർട്ടി ആൻഡ് ഹ്യൂമൻ ഡെവലപ്പ്മെന്റ് ഇനിഷ്യേറ്റീവും (OPHI) യു.എൻ.ഡി.പിയും ചേർന്ന് വികസിപ്പിച്ച എം.പി.ഐ 3 മാനങ്ങളിലായി 10 സൂചകങ്ങൾ ഉപയോഗിക്കുന്നു:
+</p>
+<div class="card-teal">
+  <ul>
+    <li><strong>1. ആരോഗ്യം (Health):</strong> പോഷകാഹാരം (Nutrition), ശിശുമരണ നിരക്ക് (Child Mortality).</li>
+    <li><strong>2. വിദ്യാഭ്യാസം (Education):</strong> സ്കൂൾ പഠന വർഷങ്ങൾ (Years of Schooling), സ്കൂൾ ഹാജർ (School Attendance).</li>
+    <li><strong>3. ജീവിതനിലവാരം (Standard of Living):</strong> പാചകവാതകം, ശുചിമുറി, കുടിവെള്ളം, വൈദ്യുതി, പാർപ്പിടം, ആസ്തികൾ.</li>
+    <li><strong>നീതി ആയോഗിന്റെ ദേശീയ എം.പി.ഐ (NITI Aayog National MPI):</strong> ഇന്ത്യയുടെ ദേശീയ സൂചികയിൽ 2 സൂചകങ്ങൾ കൂടി അധികമായി ചേർത്തു: <em>ഗർഭകാല ശുശ്രൂഷ (Antenatal Care)</em>, <em>ബാങ്ക് അക്കൗണ്ട് ഉടമസ്ഥത (Bank Account)</em> (ആകെ 12 സൂചകങ്ങൾ).</li>
+  </ul>
+</div>
+
+<h3 class="sub-head">(iv) പ്രധാന ദാരിദ്ര്യ ലഘൂകരണ പദ്ധതികൾ (Flagship Poverty Alleviation Programmes)</h3>
+<ul>
+  <li><strong>മഹാത്മാഗാന്ധി തൊഴിലുറപ്പ് പദ്ധതി (MGNREGA 2005):</strong> ഗ്രാമീണ കുടുംബങ്ങളിലെ പ്രായപൂർത്തിയായ അവിദഗ്ദ്ധ തൊഴിലാളികൾക്ക് വർഷത്തിൽ കുറഞ്ഞത് 100 ദിവസത്തെ വേതന തൊഴിൽ നിയമപരമായി ഉറപ്പുനൽകുന്നു. ഇത് ഗ്രാമീണ വാങ്ങൽശേഷി ഉയർത്തുകയും കുടിയേറ്റം കുറയ്ക്കുകയും ചെയ്തു.</li>
+  <li><strong>ദേശീയ ഭക്ഷ്യസുരക്ഷാ നിയമം (NFSA 2013):</strong> ജനസംഖ്യയുടെ മൂന്നിൽ രണ്ട് ഭാഗത്തിന് (ഗ്രാമങ്ങളിൽ 75%, നഗരങ്ങളിൽ 50%) സബ്സിഡി നിരക്കിൽ ഭക്ഷ്യധാന്യങ്ങൾ അവകാശമായി നൽകുന്നു.</li>
+  <li><strong>ദേശീയ ഗ്രാമീണ ഉപജീവന മിഷൻ (NRLM / DAY-NRLM):</strong> വനിതാ സ്വയംസഹായ സംഘങ്ങളിലൂടെ (SHGs / കുടുംബശ്രീ) പാവപ്പെട്ട കുടുംബങ്ങൾക്ക് തൊഴിലും വരുമാനവും ഉറപ്പാക്കുന്നു.</li>
+</ul>
+
+<h2>4. എൽ.എം.എസ് പാഠപുസ്തക ചോദ്യോത്തരങ്ങൾ (LMS Questions & Detailed Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. Distinguish between Absolute Poverty and Relative Poverty. (സമ്പൂർണ്ണ ദാരിദ്ര്യവും ആപേക്ഷിക ദാരിദ്ര്യവും തമ്മിലുള്ള വ്യത്യാസം എന്താണ്?)</div>
+  <div class="qa-ans-en"><strong>English:</strong> Absolute poverty is a condition of extreme physical deprivation where an individual or household lacks the minimal financial resources necessary to secure life-sustaining biological essentials: sufficient caloric intake, clean drinking water, shelter, and clothing. It is measured against a fixed benchmark called the Poverty Line. Relative poverty, in contrast, is an inequality metric that assesses a household's standard of living relative to the prevailing economic prosperity of the surrounding society (e.g., households earning below 50% or 60% of the median national income), meaning it persists even in wealthy nations.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> സമ്പൂർണ്ണ ദാരിദ്ര്യം എന്നാൽ ജീവന്റെ നിലനിൽപ്പിന് ആവശ്യമായ ഭക്ഷണം, ശുദ്ധജലം, പാർപ്പിടം, വസ്ത്രം തുടങ്ങിയ പ്രാഥമിക ഭൗതിക ആവശ്യങ്ങൾ പോലും നിറവേറ്റാൻ കഴിയാത്ത കൊടിയ നിസ്സഹായാവസ്ഥയാണ്. ഇത് ഒരു നിശ്ചിത ദാരിദ്ര്യരേഖയെ (Poverty Line) അടിസ്ഥാനമാക്കിയാണ് കണക്കാക്കുന്നത്. എന്നാൽ ആപേക്ഷിക ദാരിദ്ര്യം എന്നത് സമൂഹത്തിലെ മറ്റ് ജനവിഭാഗങ്ങളുടെ വരുമാനവുമായി താരതമ്യം ചെയ്യുമ്പോൾ ഉണ്ടാകുന്ന അസമത്വമാണ് (ഉദാഹരണത്തിന്, സമൂഹത്തിലെ ശരാശരി വരുമാനത്തിന്റെ പകുതിയിൽ താഴെ വരുമാനമുള്ള അവസ്ഥ). സമ്പന്ന രാജ്യങ്ങളിൽ പോലും ആപേക്ഷിക ദാരിദ്ര്യം നിലനിൽക്കുന്നു.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. Critically examine the recommendations of the Suresh Tendulkar Committee (2009). (സുരേഷ് തെണ്ടുൽക്കർ കമ്മിറ്റിയുടെ (2009) ശുപാർശകൾ നിരൂപണം ചെയ്യുക.)</div>
+  <div class="qa-ans-en"><strong>English:</strong> The Suresh Tendulkar Committee overhauled India's poverty estimation by: (1) Moving away from the rigid caloric-norm anchor; (2) Adopting a uniform consumption basket based on Mixed Reference Period (MRP); (3) Explicitly factoring in private household expenditures on essential health and schooling; (4) Setting a single urban poverty basket as the national benchmark to recalculate rural poverty lines. Applying this methodology to NSSO 2011–12 data yielded poverty lines of ₹27.20/day (rural) and ₹33.30/day (urban), estimating national poverty at 21.9% (270 million persons). However, it faced severe public criticism for pitching the poverty threshold unrealistically low.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> സുരേഷ് തെണ്ടുൽക്കർ കമ്മിറ്റി ഇന്ത്യയുടെ ദാരിദ്ര്യരേഖാ നിർണ്ണയത്തിൽ വരുത്തിയ വിപ്ലവകരമായ മാറ്റങ്ങൾ: (1) പഴഞ്ചൻ കലോറി മാനദണ്ഡം ഉപേക്ഷിച്ചു; (2) മിശ്രിത റഫറൻസ് കാലയളവിനെ (MRP) അടിസ്ഥാനമാക്കി ഏകീകൃത ഉപഭോഗ കൊട്ട തയ്യാറാക്കി; (3) കുടുംബങ്ങൾ സ്വന്തം പോക്കറ്റിൽ നിന്ന് ചെലവഴിക്കുന്ന വിദ്യാഭ്യാസം, ആരോഗ്യം എന്നിവയ്ക്കുള്ള തുക കണക്കിലെടുത്തു; (4) നഗര ഉപഭോഗ നിലവാരത്തെ മാനദണ്ഡമാക്കി ഗ്രാമീണ ദാരിദ്ര്യരേഖ പുനർനിർണ്ണയിച്ചു. 2011-12-ൽ ഗ്രാമങ്ങളിൽ പ്രതിദിനം ₹27.20-ഉം നഗരങ്ങളിൽ ₹33.30-ഉം നിശ്ചയിച്ചതിലൂടെ ഇന്ത്യയിലെ ദാരിദ്ര്യം 21.9% ആണെന്ന് സമിതി കണ്ടെത്തി. എന്നാൽ ഈ തുക അത്യന്തം തുച്ഛമാണെന്നും യഥാർത്ഥ പട്ടിണിയെ മറച്ചുവെക്കുന്നുവെന്നും വ്യാപകമായി വിമർശിക്കപ്പെട്ടു.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q3. Explain the structure and methodology of the Multidimensional Poverty Index (MPI). (ബഹുമുഖ ദാരിദ്ര്യ സൂചികയുടെ (MPI) ഘടനയും രീതിശാസ്ത്രവും വിശദീകരിക്കുക.)</div>
+  <div class="qa-ans-en"><strong>English:</strong> The Multidimensional Poverty Index (MPI) assesses acute overlapping deprivations experienced simultaneously by an individual using the Alkire-Foster method across 3 equally weighted dimensions (Health, Education, Living Standards) and 10 nested indicators. A person is categorized as multidimensionally poor if deprived in one-third (33.33%) or more of the weighted indicators. India's NITI Aayog customized the National MPI by adding two indicators: Antenatal Care (Health) and Bank Accounts (Living Standards). The MPI captures the Headcount Ratio (H) as well as the Intensity of Poverty (A), yielding MPI = H &times; A.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> ഒ.പി.എച്ച്.ഐ (OPHI), യു.എൻ.ഡി.പി എന്നിവർ വികസിപ്പിച്ച ആൽക്കൈർ-ഫോസ്റ്റർ രീതിയിലൂടെയാണ് ബഹുമുഖ ദാരിദ്ര്യ സൂചിക കണക്കാക്കുന്നത്. ഇതിൽ ആരോഗ്യം, വിദ്യാഭ്യാസം, ജീവിതനിലവാരം എന്നീ 3 തുല്യഭാരമുള്ള മാനങ്ങളിലായി 10 സൂചകങ്ങളുണ്ട്. ഭാരപ്പെടുത്തിയ സൂചകങ്ങളിൽ മൂന്നിലൊന്നിൽ (33.33%) കൂടുതൽ ഇല്ലായ്മകൾ ഒരേസമയം അനുഭവിക്കുന്ന വ്യക്തിയെ ബഹുമുഖ ദരിദ്രനായി കണക്കാക്കുന്നു. നീതി ആയോഗ് ഇതിലേക്ക് ഗർഭകാല പരിശോധനയും ബാങ്ക് അക്കൗണ്ടും കൂടി ഉൾപ്പെടുത്തി 12 സൂചകങ്ങളാക്കി. ദരിദ്രരുടെ എണ്ണത്തോടൊപ്പം (Headcount) ദാരിദ്ര്യത്തിന്റെ കാഠിന്യവും (Intensity) ഗുണിച്ചാണ് എം.പി.ഐ കണ്ടെത്തുന്നത് (MPI = H &times; A).</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q4. Evaluate the impact of MGNREGA on rural poverty alleviation and female empowerment. (ഗ്രാമീണ ദാരിദ്ര്യ നിർമ്മാർജ്ജനത്തിലും സ്ത്രീ ശാക്തീകരണത്തിലും തൊഴിലുറപ്പ് പദ്ധതിയുടെ (MGNREGA) പങ്കിനെ വിലയിരുത്തുക.)</div>
+  <div class="qa-ans-en"><strong>English:</strong> Enacted in 2005, the Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA) provides a legal guarantee of 100 days of unskilled wage employment per financial year to rural households. Its transformative impacts include: (1) Acting as an essential social safety net during agricultural lean seasons and distress droughts; (2) Creating productive village assets like check-dams, rural roads, and water conservation ponds; (3) Empowering women, who constitute over 55% of the workforce, by mandating equal wages paid directly into personal bank accounts; (4) Elevating agricultural market baseline wages across rural India.</div>
+  <div class="qa-ans-ml"><strong>മലയാളം പരിഭാഷ:</strong> 2005-ൽ പാർലമെന്റ് പാസാക്കിയ തൊഴിലുറപ്പ് പദ്ധതി ഗ്രാമീണ കുടുംബങ്ങൾക്ക് പ്രതിവർഷം 100 ദിവസത്തെ വേതന തൊഴിൽ നിയമപരമായി ഉറപ്പുനൽകുന്നു. പ്രധാന നേട്ടങ്ങൾ: (1) കാർഷിക മാന്ദ്യ കാലങ്ങളിലും വരൾച്ചാ സമയങ്ങളിലും പട്ടിണി ഒഴിവാക്കുന്ന സാമൂഹിക സുരക്ഷാ കവചമായി ഇത് പ്രവർത്തിക്കുന്നു; (2) തടയണകൾ, ജലസംഭരണികൾ, ഗ്രാമീണ റോഡുകൾ തുടങ്ങിയ ഗ്രാമീണ ആസ്തികൾ നിർമ്മിക്കുന്നു; (3) തൊഴിലാളികളിൽ 55 ശതമാനത്തിലധികവും സ്ത്രീകളാണ്; തുല്യവേതനം നേരിട്ട് ബാങ്ക് അക്കൗണ്ടിലേക്ക് നൽകുന്നത് വഴി ഗ്രാമീണ സ്ത്രീകളുടെ സാമ്പത്തിക സ്വാതന്ത്ര്യം ഗണ്യമായി വർദ്ധിച്ചു; (4) ഗ്രാമീണ കമ്പോളത്തിൽ കാർഷിക കൂലി നിരക്ക് ഉയർത്താൻ ഇത് വഴിയൊരുക്കി.</div>
+</div>
+
+<h2>5. 20 പ്രധാന മൾട്ടിപ്പിൾ ചോയ്‌സ് ചോദ്യങ്ങൾ (20 Important MCQs with Answers & Rationale)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">1. സ്വാതന്ത്ര്യാനന്തര ഇന്ത്യയിൽ ആദ്യമായി 2,250 കലോറി മാനദണ്ഡമാക്കി ദാരിദ്ര്യരേഖ കണക്കാക്കിയ സമിതി? / Which committee first formulated a 2,250 kcal calorie-based poverty line in India in 1971?</div>
+    <div class="q-options">A) വി.എം. ദണ്ഡേക്കർ & നീലകണ്ഠ രഥ് (V.M. Dandekar and N. Rath)<br>B) തെണ്ടുൽക്കർ സമിതി<br>C) രംഗരാജൻ സമിതി<br>D) ലക്ഡാവാല സമിതി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: 1971-ൽ ദണ്ഡേക്കറും രഥും ചേർന്നാണ് കലോറി അടിസ്ഥാനത്തിൽ ദാരിദ്ര്യരേഖാ നിർണ്ണയം നടത്തിയത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. ഗ്രാമങ്ങളിൽ 2,400 കലോറിയും നഗരങ്ങളിൽ 2,100 കലോറിയും ദാരിദ്ര്യ മാനദണ്ഡമായി നിശ്ചയിച്ച ടാസ്ക് ഫോഴ്സ് ഏതാണ്? / Which Task Force recommended the 2,400 kcal (rural) and 2,100 kcal (urban) calorie norms?</div>
+    <div class="q-options">A) അലഗ് ടാസ്ക് ഫോഴ്സ് (Y.K. Alagh Task Force 1979)<br>B) കോത്താരി കമ്മീഷൻ<br>C) നരസിംഹം കമ്മിറ്റി<br>D) സ്വാമിനാഥൻ കമ്മീഷൻ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ഡോ. വൈ.കെ. അലഗ് അധ്യക്ഷനായ പ്ലാനിംഗ് കമ്മീഷൻ ടാസ്ക് ഫോഴ്സാണ് ഈ നിർദ്ദേശം നൽകിയത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. സംസ്ഥാനാടിസ്ഥാനത്തിലുള്ള വിലസൂചികകൾ (CPI-AL, CPI-IW) ഉപയോഗിച്ച് ദാരിദ്ര്യരേഖ നിശ്ചയിക്കാൻ ശുപാർശ ചെയ്ത വിദഗ്ദ്ധ സമിതി? / Which committee recommended state-specific poverty lines using CPI-AL and CPI-IW?</div>
+    <div class="q-options">A) ഡി.ടി. ലക്ഡാവാല കമ്മിറ്റി (D.T. Lakdawala Committee 1993)<br>B) കേൽക്കർ സമിതി<br>C) ബൽവന്ത് റായ് മേത്ത സമിതി<br>D) സർക്കാരിയ കമ്മീഷൻ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ലക്ഡാവാല സമിതിയാണ് സംസ്ഥാനങ്ങളിലെ വില വ്യത്യാസങ്ങൾ പരിഗണിച്ച് പ്രത്യേക ദാരിദ്ര്യരേഖകൾ കൊണ്ടുവന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">4. സുരേഷ് തെണ്ടുൽക്കർ കമ്മിറ്റി (2009) റിപ്പോർട്ട് പ്രകാരം 2011–12-ൽ ഇന്ത്യയിലെ ദാരിദ്ര്യ ശതമാനം എത്രയായിരുന്നു? / According to the Tendulkar Committee methodology, what was India's poverty ratio in 2011–12?</div>
+    <div class="q-options">A) 54.9%<br>B) 21.9% (21.9% of the population)<br>C) 37.2%<br>D) 10.5%</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: തെണ്ടുൽക്കർ രീതിശാസ്ത്രമനുസരിച്ച് 2011-12-ൽ ഇന്ത്യയിലെ ദാരിദ്ര്യ നിരക്ക് 21.9% ആയിരുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">5. സി. രംഗരാജൻ കമ്മിറ്റി (2014) ഗ്രാമീണ-നഗര പ്രദേശങ്ങളിൽ പ്രതിദിനം നിശ്ചയിച്ച ദാരിദ്ര്യരേഖ തുക എത്ര? / The Rangarajan Committee (2014) estimated daily per capita poverty thresholds at:</div>
+    <div class="q-options">A) ഗ്രാമങ്ങളിൽ ₹10, നഗരങ്ങളിൽ ₹15<br>B) ഗ്രാമങ്ങളിൽ ₹32, നഗരങ്ങളിൽ ₹47 (Rural ₹32, Urban ₹47 per day)<br>C) ഗ്രാമങ്ങളിൽ ₹100, നഗരങ്ങളിൽ ₹200<br>D) ഗ്രാമങ്ങളിലും നഗരങ്ങളിലും ₹50</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: രംഗരാജൻ സമിതി പ്രതിമാസം ഗ്രാമങ്ങളിൽ ₹972 (പ്രതിദിനം ₹32), നഗരങ്ങളിൽ ₹1,407 (പ്രതിദിനം ₹47) എന്നിങ്ങനെ ദാരിദ്ര്യരേഖ ഉയർത്തി.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">6. ആഗോള ബഹുമുഖ ദാരിദ്ര്യ സൂചികയിൽ (Global MPI) എത്ര സൂചകങ്ങൾ ഉൾപ്പെടുന്നു? / How many indicators are utilized in the Global Multidimensional Poverty Index?</div>
+    <div class="q-options">A) 5<br>B) 10 (10 Indicators across 3 dimensions)<br>C) 15<br>D) 20</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ആരോഗ്യം, വിദ്യാഭ്യാസം, ജീവിതനിലവാരം എന്നീ 3 മാനങ്ങളിലായി 10 സൂചകങ്ങളാണ് ഗ്ലോബൽ എം.പി.ഐയിലുള്ളത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">7. നീതി ആയോഗിന്റെ ദേശീയ ബഹുമുഖ ദാരിദ്ര്യ സൂചികയിൽ (National MPI) അധികമായി ചേർത്ത രണ്ട് സൂചകങ്ങൾ ഏതെല്ലാം? / Which two additional indicators did NITI Aayog include in India's National MPI?</div>
+    <div class="q-options">A) സ്മാർട്ട്ഫോണും ഇന്റർനെറ്റും<br>B) ഗർഭകാല ശുശ്രൂഷയും ബാങ്ക് അക്കൗണ്ടും (Antenatal Care and Bank Account)<br>C) ഇരുചക്ര വാഹനവും ടെലിവിഷനും<br>D) സ്വർണ്ണവും വസ്ത്രങ്ങളും</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ആഗോള 10 സൂചകങ്ങൾക്ക് പുറമെ ഗർഭകാല പരിചരണവും ജൻധൻ ബാങ്ക് അക്കൗണ്ടും ചേർത്ത് 12 സൂചകങ്ങളാക്കി.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">8. മഹാത്മാഗാന്ധി ദേശീയ ഗ്രാമീണ തൊഴിലുറപ്പ് നിയമം (MGNREGA) പാർലമെന്റ് പാസാക്കിയ വർഷം ഏത്? / In which year was the MGNREGA Act passed by the Indian Parliament?</div>
+    <div class="q-options">A) 2001<br>B) 2005 (Enacted in 2005)<br>C) 2010<br>D) 2014</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: 2005 സെപ്റ്റംബറിലാണ് നിയമം പാസാക്കിയത്; 2006 ഫെബ്രുവരി മുതൽ നടപ്പിലാക്കി.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">9. തൊഴിലുറപ്പ് പദ്ധതി പ്രകാരം ഒരു ഗ്രാമീണ കുടുംബത്തിന് വർഷത്തിൽ കുറഞ്ഞത് എത്ര ദിവസത്തെ വേതന തൊഴിൽ ഉറപ്പുനൽകുന്നു? / How many days of guaranteed unskilled wage employment does MGNREGA mandate per year?</div>
+    <div class="q-options">A) 50 ദിവസം<br>B) 100 ദിവസം (100 Days guaranteed wage employment)<br>C) 150 ദിവസം<br>D) 365 ദിവസം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: സാമ്പത്തിക വർഷത്തിൽ അവിദഗ്ദ്ധ തൊഴിലാളികൾക്ക് കുറഞ്ഞത് 100 ദിവസത്തെ തൊഴിൽ നിയമപരമായി നൽകുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">10. ദേശീയ ഭക്ഷ്യസുരക്ഷാ നിയമം (NFSA) രാജ്യത്ത് പ്രാബല്യത്തിൽ വന്ന വർഷം ഏത്? / In which year was the National Food Security Act (NFSA) enacted in India?</div>
+    <div class="q-options">A) 2008<br>B) 2013 (Enacted in 2013)<br>C) 2016<br>D) 2020</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: 2013-ലെ ഭക്ഷ്യസുരക്ഷാ നിയമപ്രകാരം അർഹതപ്പെട്ട കുടുംബങ്ങൾക്ക് അരി, ഗോതമ്പ് എന്നിവ കിലോഗ്രാമിന് 3, 2 രൂപ നിരക്കിൽ ഉറപ്പാക്കി.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">11. ദാരിദ്ര്യരേഖയ്ക്ക് താഴെയുള്ള ജനങ്ങളുടെ ശതമാനത്തെ സൂചിപ്പിക്കുന്ന സ്ഥിതിവിവരക്കണക്ക് ഏതാണ്? / The proportion of a population living below the official poverty line is called:</div>
+    <div class="q-options">A) ഹെഡ്കൗണ്ട് അനുപാതം (Headcount Ratio - HCR)<br>B) ഗിനി ഗുണകം<br>C) ഡെറ്റ് റേഷ്യോ<br>D) സി.ഡി അനുപാതം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: മൊത്തം ജനസംഖ്യയിൽ എത്ര ശതമാനം പേർ ദാരിദ്ര്യരേഖയ്ക്ക് താഴെയാണെന്ന് വ്യക്തമാക്കുന്നതാണ് Headcount Ratio.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">12. ദരിദ്രർ ദാരിദ്ര്യരേഖയിൽ നിന്ന് എത്രത്തോളം അകലെയാണെന്ന് അളക്കുന്ന സൂചിക ഏത്? / Which indicator measures the average depth of poverty deficit below the poverty line?</div>
+    <div class="q-options">A) പോവർട്ടി ഗ്യാപ്പ് ഇൻഡക്സ് (Poverty Gap Index - PGI)<br>B) ആയുർദൈർഘ്യ സൂചിക<br>C) വിലക്കയറ്റ സൂചിക<br>D) സാക്ഷരതാ സൂചിക</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ദാരിദ്ര്യരേഖയ്ക്ക് താഴെയുള്ളവരുടെ വരുമാനക്കമ്മി (ദാരിദ്ര്യത്തിന്റെ ആഴം) PGI അളക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">13. ദരിദ്രരിലെ ഏറ്റവും ദരിദ്രരായവരുടെ കഷ്ടപ്പാടിന് കൂടുതൽ ഭാരം നൽകുന്ന ദാരിദ്ര്യ സൂചിക ഏതാണ്? / Which poverty index assigns higher weight to the poorest among the poor?</div>
+    <div class="q-options">A) സ്ക്വയേർഡ് പോവർട്ടി ഗ്യാപ്പ് (Squared Poverty Gap / FGT Metric)<br>B) ഹെഡ്കൗണ്ട് റേഷ്യോ<br>C) സെൻസസ് റേഷ്യോ<br>D) ആർ.ബി.ഐ സൂചിക</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ഫോസ്റ്റർ-ഗ്രീർ-തോർബെക്ക് (FGT) മെട്രിക് ദാരിദ്ര്യത്തിന്റെ കാഠിന്യത്തെയും ദരിദ്രർക്കിടയിലെ അസമത്വത്തെയും അളക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">14. ലോകബാങ്കിന്റെ അന്താരാഷ്ട്ര കൊടിയ ദാരിദ്ര്യ മാനദണ്ഡം (Extreme Poverty Line) എത്രയാണ്? / What is the World Bank's international extreme poverty line (PPP per day)?</div>
+    <div class="q-options">A) $1.00<br>B) $2.15 (Currently $2.15 per person/day in 2017 PPP)<br>C) $5.00<br>D) $10.00</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: 2022-ൽ പുതുക്കിയതനുസരിച്ച് പ്രതിദിനം 2.15 യു.എസ് ഡോളറാണ് അന്താരാഷ്ട്ര ദാരിദ്ര്യരേഖ.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">15. ഇന്ത്യയിൽ ദേശീയ ഉപഭോക്തൃ ചെലവ് സർവേകൾ (Consumer Expenditure Surveys) നടത്തിയിരുന്ന സ്ഥാപനം? / Which organization conducted Consumer Expenditure Surveys used to calculate poverty?</div>
+    <div class="q-options">A) എൻ.എസ്.എസ്.ഒ (NSSO / National Sample Survey Office)<br>B) നീതി ആയോഗ്<br>C) സെബി<br>D) എസ്.ബി.ഐ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: NSSO വീടുകളിൽ നേരിട്ടെത്തി ശേഖരിക്കുന്ന ഉപഭോഗ കണക്കുകളെ അടിസ്ഥാനമാക്കിയാണ് ദാരിദ്ര്യം അളന്നിരുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">16. തൊഴിലുറപ്പ് പദ്ധതിയിൽ ജോലി ചെയ്യുന്നവർക്ക് തുല്യവേതനവും അക്കൗണ്ടിലേക്ക് നേരിട്ടുള്ള പണവും നൽകിയത് വഴി ഏറ്റവും കൂടുതൽ പ്രയോജനം ലഭിച്ച വിഭാഗം? / Which social demographic benefited the most via MGNREGA direct-to-bank wage parity?</div>
+    <div class="q-options">A) വൻകിട കരാറുകാർ<br>B) ഗ്രാമീണ സ്ത്രീകൾ (Rural Women - over 55% participation)<br>C) വ്യവസായികൾ<br>D) നഗര കച്ചവടക്കാർ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: തൊഴിലുറപ്പ് പദ്ധതി ഗ്രാമീണ സ്ത്രീകളുടെ സാമ്പത്തിക ശാക്തീകരണത്തിനും കുടുംബത്തിലെ പദവിക്കും വലിയ കരുത്തായി.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">17. നീതി ആയോഗിന്റെ ദേശീയ ബഹുമുഖ ദാരിദ്ര്യ സൂചിക പ്രകാരം ഇന്ത്യയിൽ ഏറ്റവും കുറഞ്ഞ ദാരിദ്ര്യ നിരക്കുള്ള സംസ്ഥാനം ഏതാണ്? / Which Indian state recorded the lowest multidimensional poverty in NITI Aayog's National MPI?</div>
+    <div class="q-options">A) ഗുജറാത്ത്<br>B) കേരളം (Kerala - below 0.6%)<br>C) ബിഹാർ<br>D) പശ്ചിമ ബംഗാൾ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: കേരളത്തിൽ ബഹുമുഖ ദാരിദ്ര്യ നിരക്ക് ഒരു ശതമാനത്തിൽ താഴെയാണ് (ഏറ്റവും കുറവ്).</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">18. ദാരിദ്ര്യരേഖ നിർണ്ണയിക്കുന്നതിൽ 'Uniform Reference Period' (URP) എന്നതുകൊണ്ട് അർത്ഥമാക്കുന്നത് എന്ത്? / What does 'Uniform Reference Period' (URP) mean in consumption expenditure surveys?</div>
+    <div class="q-options">A) കഴിഞ്ഞ 30 ദിവസത്തെ ഉപഭോഗ വിവരങ്ങൾ എല്ലാ ഇനങ്ങൾക്കും ഒരേപോലെ ശേഖരിക്കൽ (30-day recall period for all items)<br>B) വർഷത്തിൽ ഒരു തവണ മാത്രം പഠനം നടത്തൽ<br>C) പാവപ്പെട്ടവരുടെ മാത്രം കണക്കെടുക്കൽ<br>D) റേഷൻ കടകളിലെ കണക്ക് പരിശോധിക്കൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: മുൻപ് എല്ലാ സാധനങ്ങൾക്കും കഴിഞ്ഞ 30 ദിവസത്തെ ഉപഭോഗമാണ് ചോദിച്ചിരുന്നത് (URP). പിന്നീട് വസ്ത്രം, പാദരക്ഷ എന്നിവയ്ക്ക് ഒരു വർഷം പരിഗണിക്കുന്ന MRP രീതി വന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">19. ഇന്ത്യയിൽ ദരിദ്ര കുടുംബങ്ങൾക്ക് സൗജന്യ എൽ.പി.ജി ഗ്യാസ് കണക്ഷൻ നൽകുന്ന കേന്ദ്ര പദ്ധതി ഏത്? / Which central scheme provides subsidized/free clean cooking LPG connections to BPL households?</div>
+    <div class="q-options">A) പ്രധാനമന്ത്രി ഉജ്ജ്വല യോജന (PM Ujjwala Yojana)<br>B) പി.എം കിസാൻ<br>C) പി.എം ആവാസ്<br>D) ജൻധൻ യോജന</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: വിറകടുപ്പുകളിൽ നിന്നുള്ള പുക ശ്വസിക്കുന്നത് തടയാനും വനിതാ ആരോഗ്യം സംരക്ഷിക്കാനുമാണ് ഉജ്ജ്വല യോജന ആരംഭിച്ചത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">20. ശാശ്വതമായ ദാരിദ്ര്യ നിർമ്മാർജ്ജനത്തിന് ഏറ്റവും ഫലപ്രദമായ മാർഗ്ഗം ഏതാണ്? / The most effective long-term sustainable route to eradicate poverty is:</div>
+    <div class="q-options">A) സൗജന്യങ്ങൾ മാത്രം സ്ഥിരമായി വിതരണം ചെയ്യൽ<br>B) ഗുണമേന്മയുള്ള വിദ്യാഭ്യാസവും ആരോഗ്യവും നൈപുണ്യ പരിശീലനവും മാന്യമായ തൊഴിലവസരങ്ങളും നൽകൽ (Quality education, healthcare, skill development, and formal jobs)<br>C) പണം അച്ചടിച്ച് എല്ലാവർക്കും നൽകൽ<br>D) കൃഷിഭൂമി പൂർണ്ണമായി ഉപേക്ഷിക്കൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: മനുഷ്യശേഷി വികസിപ്പിക്കുകയും അവർക്ക് സ്വന്തമായി വരുമാനമുണ്ടാക്കാനുള്ള മാന്യമായ തൊഴിലവസരങ്ങൾ നൽകുകയുമാണ് ദാരിദ്ര്യത്തിന് ശാശ്വത പരിഹാരം.</div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. ഡിഗ്രി പഠന സഹായി · Development Issues in Indian Economy</span>
+    <span>സമഗ്ര മലയാള പരിഭാഷ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

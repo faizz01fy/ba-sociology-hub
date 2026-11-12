@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 1: കേരളം: ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും | Module 1: Landscape & Environment</title>
+  <style>
+    :root {
+      --c1: #4a044e;
+      --c2: #701a75;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #4a044e), var(--c2, #701a75));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(74, 4, 78, 0.25);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fdf4ff;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #f5d0fe;
+}
+
+.badge {
+  display: inline-block;
+  background: #fdf4ff;
+  color: #701a75;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #f0abfc;
+}
+
+h2 {
+  color: var(--c1, #4a044e);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #f5d0fe;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #701a75;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #fdf4ff;
+  border-left: 4px solid var(--c2, #701a75);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-plum {
+  background: #fdf4ff;
+  border-left: 4px solid #86198f;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+/* Diagrams & Visual Charts */
+.diagram-container {
+  background: #ffffff;
+  border: 1.5px solid #f5d0fe;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(112, 26, 117, 0.05);
+}
+
+.diagram-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 11pt;
+  color: #4a044e;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.flow-step {
+  background: #fdf4ff;
+  border: 1.5px solid #d946ef;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 9.5pt;
+  color: #4a044e;
+  text-align: center;
+}
+
+.flow-step small {
+  display: block;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #701a75;
+}
+
+.flow-arrow {
+  color: #a21caf;
+  font-weight: 900;
+  font-size: 14pt;
+}
+
+/* Tree Grid */
+.tree-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 16px 0;
+}
+
+.tree-card {
+  background: #fdf4ff;
+  border: 1px solid #f0abfc;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.tree-card h4 {
+  margin: 0 0 6px 0;
+  color: #701a75;
+  font-size: 10pt;
+  font-weight: 700;
+}
+
+.tree-card p {
+  margin: 0;
+  font-size: 9pt;
+  line-height: 1.6;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 9.5pt;
+}
+
+th, td {
+  border: 1px solid #e2e8f0;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #fdf4ff;
+  color: #4a044e;
+  font-weight: 700;
+}
+
+tr:nth-child(even) td {
+  background: #fafaf9;
+}
+
+/* Q&A Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #f5d0fe;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #4a044e;
+  margin-bottom: 8px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  background: #fdf4ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #86198f;
+}
+
+/* MCQ Cards */
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #f5d0fe;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #4a044e;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #fdf4ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid #f0abfc;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>Module 1 · Landscape and Environment</h4>
+    <h1>മൊഡ്യൂൾ 1: കേരളം: ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും | Module 1: Landscape & Environment</h1>
+    <div class="meta">HIS1CJ101 · Module 1 · Complete LMS Textbook & All 27 Answered Questions · Calicut University B.A. History FYUGP (HIS1CJ101) · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+  <div class="card card-plum">
+    <div class="badge">HIS1CJ101 · MODULE 1 · OFFICIAL LMS TEXTBOOK</div>
+    <h2>മൊഡ്യൂൾ 1: കേരളം: ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും | Module 1: Landscape and Environment</h2>
+    <p><strong>English:</strong> Full comprehensive bilingual study text covering all 9 syllabus sections (I.1.A to I.1.I), ecological zones, Western Ghats plateaus and passes, 44 rivers, backwaters, detailed soil classification, monsoons, biodiversity, and all 27 review questions from the university textbook.</p>
+    <p><strong>മലയാളം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാലയുടെ ഒഫീഷ്യൽ LMS പാഠപുസ്തകത്തിലെ 9 പാഠഭാഗങ്ങളും (I.1.A മുതൽ I.1.I വരെ), പശ്ചിമഘട്ട പീഠഭൂമികളും ചുരങ്ങളും, 44 നദികളും കായലുകളും, വിശദമായ മണ്ണുതരങ്ങളും, മൺസൂൺ പ്രതിഭാസങ്ങളും, എല്ലാ 27 പരീക്ഷാ ചോദ്യോത്തരങ്ങളും ഉൾക്കൊള്ളുന്ന സമ്പൂർണ്ണ പഠന സഹായി.</p>
+  </div>
+
+  <h2>I.1. Keralam as a Region (കേരളം ഒരു സവിശേഷ ഭൂപ്രദേശം)</h2>
+  <div class="tree-grid">
+    <div class="tree-card">
+      <h4>Geographical Coordinates & Area (അതിരുകളും വിസ്തീർണ്ണവും)</h4>
+      <p><strong>Area:</strong> 38,863 sq.km (narrow scalene strip).<br>
+      <strong>Latitude:</strong> 8°17'30" N to 12°27'40" N.<br>
+      <strong>Longitude:</strong> 74°51'57" E to 77°24'47" E.<br>
+      <strong>Boundaries:</strong> Western Ghats to the East, Arabian Sea to the West. Bordered by Dakshina Kannada, Kodagu, and Mysore (Karnataka) in North/NE; Nilgiris, Coimbatore, Madurai, Ramanathapuram, Tirunelveli, and Kanyakumari (Tamil Nadu) in East/SE.</p>
+    </div>
+    <div class="tree-card">
+      <h4>ഭൂമിശാസ്ത്രപരമായ അതിരുകൾ (Malayalam Translation)</h4>
+      <p><strong>വിസ്തീർണ്ണം:</strong> 38,863 ചതുരശ്ര കിലോമീറ്റർ (വിഷമ ത്രികോണാകൃതി).<br>
+      <strong>അക്ഷാംശം:</strong> 8°17'30" വടക്ക് മുതൽ 12°27'40" വടക്ക് വരെ.<br>
+      <strong>രേഖാംശം:</strong> 74°51'57" കിഴക്ക് മുതൽ 77°24'47" കിഴക്ക് വരെ.<br>
+      <strong>അതിരുകൾ:</strong> കിഴക്ക് പശ്ചിമഘട്ടം, പടിഞ്ഞാറ് അറബിക്കടൽ. വടക്ക് കർണ്ണാടകയിലെ ദക്ഷിണ കന്നഡ, കുടക്, മൈസൂർ ജില്ലകൾ; കിഴക്കും തെക്കുകിഴക്കും തമിഴ്നാട്ടിലെ നീലഗിരി, കോയമ്പത്തൂർ, മധുര, രാമനാഥപുരം, തിരുനെൽവേലി, കന്യാകുമാരി ജില്ലകൾ.</p>
+    </div>
+  </div>
+
+  <h2>I.1.A. Geographical Features (ഭൂപ്രകൃതി സവിശേഷതകൾ)</h2>
+  <p><strong>English:</strong> Physiographically and topographically, Kerala is divided into three distinct longitudinal zones: Highlands, Midlands, and Lowlands.</p>
+  <p><strong>മലയാളം:</strong> ഭൂപ്രകൃതിയുടെയും ചരിവിന്റെയും അടിസ്ഥാനത്തിൽ കേരളത്തെ മൂന്ന് പ്രധാന ഭൂപ്രകൃതി മേഖലകളായി തിരിച്ചിരിക്കുന്നു: മലനാട് (Highlands), ഇടനാട് (Midlands), തീരപ്രദേശം (Lowlands).</p>
+
+  <div class="diagram-container">
+    <div class="diagram-title">🏔️ കേരളത്തിന്റെ ഭൂപ്രകൃതി മേഖലകൾ | Physiographic Cross-Section of Kerala</div>
+    <div class="flow-chart">
+      <div class="flow-step">തീരപ്രദേശം (Lowlands)<small>&lt; 7.5 മീറ്റർ ഉയരം (16.4% വിസ്തൃതി)<br>കായലുകൾ, തീരസമതലങ്ങൾ, തെങ്ങ്, മത്സ്യം</small></div>
+      <div class="flow-arrow">➔</div>
+      <div class="flow-step">ഇടനാട് (Midlands)<small>7.5 - 600 മീറ്റർ ഉയരം (41.8% വിസ്തൃതി)<br>ചെങ്കൽ കുന്നുകൾ, നെല്ല്, റബ്ബർ, കശുമാവ്</small></div>
+      <div class="flow-arrow">➔</div>
+      <div class="flow-step">മലനാട് (Highlands)<small>&gt; 600 - 2695 മീറ്റർ (41.8% വിസ്തൃതി)<br>പശ്ചിമഘട്ടം, നിത്യഹരിത വനങ്ങൾ, സുഗന്ധവ്യഞ്ജനങ്ങൾ</small></div>
+    </div>
+  </div>
+
+  <ul>
+    <li><strong>Highlands (മലനാട് - >600m):</strong> Represents 41.8% of the total land area. Comprises towering peaks (Anamudi 2,695m), dense tropical rain forests, and plantation crops (cardamom, pepper, tea, coffee).</li>
+    <li><strong>Midlands (ഇടനാട് - 7.5 to 600m):</strong> Accounts for 41.8% of the land area. Characterized by lateritic hills, undulating terrain, fertile river valleys, paddy fields, tapioca, and cashew cultivation.</li>
+    <li><strong>Lowlands (തീരപ്രദേശം - <7.5m):</strong> Accounts for 16.4% of the land area. Comprises coastal alluvial plains, sandy beaches, lagoons (Kayals), barrier flats, deltaic floodplains, and coconut palms. Direct sea-meeting cliffs occur at Varkala, Vizhinjam, and Bekal.</li>
+  </ul>
+
+  <h2>I.1.B. The Western Ghats & Interior Plateaus (പശ്ചിമഘട്ടവും പീഠഭൂമികളും)</h2>
+  <p><strong>English:</strong> The Western Ghats (Sahyadri) form a continuous wall along the eastern border of Kerala extending over 450 km. It features four major elevated interior plateaus with laterite caps:</p>
+  <p><strong>മലയാളം:</strong> കേരളത്തിന്റെ കിഴക്കൻ അതിർത്തിയിൽ 450 കിലോമീറ്ററിലധികം നീളത്തിൽ ഒരു വൻമതിൽ പോലെ പശ്ചിമഘട്ടം സ്ഥിതിചെയ്യുന്നു. ഇതിൽ പ്രധാനപ്പെട്ട നാല് പീഠഭൂമികളുണ്ട്:</p>
+  <ol>
+    <li><strong>Wayanad Plateau (വയനാട് പീഠഭൂമി):</strong> Average elevation 700 to 2,100 metres; slopes eastward towards Mysore and Nilgiris; drained by the eastward-flowing Kabani river; ancient settlement zone.</li>
+    <li><strong>Nelliampathi Plateau (നെല്ലിയാമ്പതി പീഠഭൂമി):</strong> Located in Palakkad district, elevation 900 to 1,500 metres; marked by steep escarpments dropping into the Palakkad Gap; rich coffee and tea estates.</li>
+    <li><strong>Munnar Plateau (മൂന്നാർ പീഠഭൂമി):</strong> High ranges of Idukki district; elevation exceeds 1,500 to 2,600 metres; home to Anamudi (2,695m - highest peak in Peninsular India south of the Himalayas); shola forests.</li>
+    <li><strong>Greater Periyar Plateau (പെരിയാർ പീഠഭൂമി):</strong> Spans Idukki and Pathanamthitta; elevation 900 to 1,800 metres; catchment area of the Periyar and Pamba rivers; thick evergreen forests.</li>
+  </ol>
+
+  <h2>I.1.C. Passes in the Western Ghats (പശ്ചിമഘട്ടത്തിലെ ചുരങ്ങൾ)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ചുരം (Pass)</th>
+        <th>ഉയരം / വീതി (Elevation/Width)</th>
+        <th>ബന്ധിപ്പിക്കുന്ന മേഖലകൾ (Connecting Regions)</th>
+        <th>ചരിത്രപരമായ പ്രാധാന്യം (Historical Significance)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Palakkad Gap (പാലക്കാട് ചുരം)</strong></td>
+        <td>75-100m elevation / 30-40 km wide</td>
+        <td>പാലക്കാട് ↔ കോയമ്പത്തൂർ (തമിഴ്നാട്)</td>
+        <td>ഏറ്റവും വലിയ പ്രകൃതിദത്ത വിള്ളൽ. വാണിജ്യം, സൈനിക മുന്നേറ്റങ്ങൾ (ചോളന്മാർ, ഹൈദരാലി, ടിപ്പു), തമിഴ്-മലയാള സംസ്കാര വിനിമയം.</td>
+      </tr>
+      <tr>
+        <td><strong>Bodinayakkannur Pass</strong></td>
+        <td>High Ranges (~1,200m)</td>
+        <td>ഇടുക്കി ↔ മധുര / തേനി</td>
+        <td>ഏലം, കുരുമുളക് വ്യാപാര പാത; പാണ്ഡ്യ-ചേര ബന്ധങ്ങൾ.</td>
+      </tr>
+      <tr>
+        <td><strong>Gudalur Pass (ഗൂഡല്ലൂർ ചുരം)</strong></td>
+        <td>~900 metres elevation</td>
+        <td>വയനാട് / നിലമ്പൂർ ↔ നീലഗിരി (ഗൂഡല്ലൂർ)</td>
+        <td>സുരളി നദീതടത്തിലൂടെയുള്ള പൈതൃക വ്യാപാര പാത.</td>
+      </tr>
+      <tr>
+        <td><strong>Ariankavu Pass (ആര്യങ്കാവ് ചുരം)</strong></td>
+        <td>~400 metres elevation (2.5 km wide)</td>
+        <td>കൊല്ലം / പുനലൂർ ↔ തിരുനെൽവേലി</td>
+        <td>തെക്കൻ കേരളത്തെയും പാണ്ഡ്യനാടിനെയും ബന്ധിപ്പിച്ച പ്രധാന പാത; കുരുമുളക് വ്യാപാരം.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>I.1.D. The Indian Ocean & European Relations (ഇന്ത്യൻ മഹാസമുദ്രവും യൂറോപ്യൻ ബന്ധങ്ങളും)</h2>
+  <p><strong>English:</strong> The Arabian Sea coastline stretching over 560 km made Kerala an active player in international maritime trade. The monsoon winds facilitated Greek, Roman, Arab, and Chinese shipping. During the colonial era, European powers established fortified trade outposts along the coast:</p>
+  <p><strong>മലയാളം:</strong> 560 കിലോമീറ്ററിലധികം നീളമുള്ള കടൽത്തീരം കേരളത്തെ ആഗോള വാണിജ്യത്തിന്റെ കേന്ദ്രമാക്കി മാറ്റി. കൊളോണിയൽ കാലഘട്ടത്തിൽ യൂറോപ്യൻ ശക്തികൾ തങ്ങളുടെ ആധിപത്യം ഉറപ്പിക്കാൻ തീരങ്ങളിൽ കോട്ടകൾ നിർമ്മിച്ചു:</p>
+  <ul>
+    <li><strong>Anjengo Fort (അഞ്ചുതെങ്ങ് കോട്ട - 1695):</strong> British East India Company's primary fortified trading post in southern Kerala.</li>
+    <li><strong>Tankassery Fort (തങ്കശ്ശേരി കോട്ട, കൊല്ലം):</strong> Portuguese (St. Thomas Fort) and later Dutch commercial stronghold.</li>
+    <li><strong>Pallippuram Fort (പള്ളിപ്പുറം കോട്ട, എറണാകുളം - 1503):</strong> Built by the Portuguese; the oldest surviving European fort in India.</li>
+    <li><strong>Thalassery Fort (തലശ്ശേരി കോട്ട - 1708):</strong> British bastion controlling the northern Malabar spice trade.</li>
+    <li><strong>St. Angelo Fort (കണ്ണൂർ കോട്ട - 1505):</strong> Built by the first Portuguese Viceroy, Francisco de Almeida.</li>
+  </ul>
+
+  <h2>I.1.E. The River Systems of Kerala (കേരളത്തിലെ നദീവ്യവസ്ഥ - 44 നദികൾ)</h2>
+  <p><strong>English:</strong> Kerala is drained by 44 rivers. 41 rivers flow westward into the Arabian Sea or backwaters, and 3 flow eastward into Karnataka and Tamil Nadu (Kabani, Bhavani, and Pambar). Because of the steep descent from the Western Ghats, Kerala rivers are torrential, short, non-navigable in upper reaches, and do not form deltas.</p>
+  <p><strong>മലയാളം:</strong> കേരളത്തിലൂടെ 44 നദികൾ ഒഴുകുന്നു. ഇതിൽ 41 എണ്ണം പടിഞ്ഞാറോട്ടും (അറബിക്കടലിലേക്കോ കായലുകളിലേക്കോ) 3 എണ്ണം കിഴക്കോട്ടും (കബനി, ഭവാനി, പാമ്പാർ) ഒഴുകുന്നു. പശ്ചിമഘട്ടത്തിന്റെ കുത്തനെയുള്ള ചരിവ് കാരണം നദികൾ നീളം കുറഞ്ഞവയും വേഗത്തിൽ ഒഴുകുന്നവയുമാണ്; ഇവ ഡെൽറ്റകൾ രൂപപ്പെടുത്തുന്നില്ല.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>നദി (River)</th>
+        <th>നീളം (Length)</th>
+        <th>ഉത്ഭവം (Origin)</th>
+        <th>പ്രധാന പോഷകനദികൾ & ചരിത്ര പ്രാധാന്യം (Tributaries & Significance)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1. Periyar (പെരിയാർ)</strong></td>
+        <td>244 km</td>
+        <td>ശിവഗിരി കുന്നുകൾ (Sivagiri Hills, 1,830m)</td>
+        <td>ഏറ്റവും നീളം കൂടിയ നദി. പോഷകനദികൾ: മുതിരപ്പുഴ, മുല്ലയാർ, പെരുന്തുറൈ. ആലുവ ശിവരാത്രി മണപ്പുറം; കേരളത്തിന്റെ ജീവരേഖ; ഇടുക്കി ഡാം.</td>
+      </tr>
+      <tr>
+        <td><strong>2. Bharathapuzha (ഭാരതപ്പുഴ / നിള)</strong></td>
+        <td>209 km</td>
+        <td>ആനമല (Anamalai Hills, 1,964m)</td>
+        <td>കേരളത്തിന്റെ സാംസ്കാരിക നദി. പോഷകനദികൾ: ഗായത്രിപ്പുഴ, കണ്ണാടിപ്പുഴ, കൽപ്പാത്തിപ്പുഴ, തൂതപ്പുഴ. മാമാങ്ക വേദി (തിരുനാവായ).</td>
+      </tr>
+      <tr>
+        <td><strong>3. Pamba (പമ്പ)</strong></td>
+        <td>176 km</td>
+        <td>പീരുമേട് കുന്നുകൾ (Peerumedu, 1,650m)</td>
+        <td>'ദക്ഷിണ ഭാഗീരഥി'. കുട്ടനാടൻ നെൽപ്പാടങ്ങളെ ഫലഭൂയിഷ്ഠമാക്കുന്നു. പോഷകനദികൾ: കക്കി, അഴുത, കക്കാട്, മണിമല. ശബരിമല, ആറന്മുള വള്ളംകളി.</td>
+      </tr>
+      <tr>
+        <td><strong>4. Chaliyar (ചാലിയാർ)</strong></td>
+        <td>169 km</td>
+        <td>ഇളമ്പലേരി കുന്നുകൾ (Ilambaleri Hills, 2,068m)</td>
+        <td>കരിമ്പുഴ, പുന്നപ്പുഴ സംഗമത്തിൽ സ്വർണ്ണ മണൽത്തരികൾ (Placer gold). നിലമ്പൂർ തേക്ക് തടികൾ ഒഴുക്കാൻ ഉപയോഗിച്ചു. ബേപ്പൂർ തുറമുഖത്ത് കടലിൽ ചേരുന്നു.</td>
+      </tr>
+      <tr>
+        <td><strong>5. Chalakudi (ചാലക്കുടിപ്പുഴ)</strong></td>
+        <td>145 km</td>
+        <td>ആനമല കുന്നുകൾ</td>
+        <td>അതിരപ്പിള്ളി, വാഴച്ചാൽ വെള്ളച്ചാട്ടങ്ങൾ; ജൈവവൈവിധ്യ സമൃദ്ധമായ നദീതീരം. പെരിയാറിന്റെ പോഷകനദിയായി സംഗമിക്കുന്നു.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>I.1.F. Backwaters & Lakes (കായലുകളും തടാകങ്ങളും)</h2>
+  <ul>
+    <li><strong>Vembanad Lake (വേമ്പനാട്ട് കായൽ):</strong> The largest brackish water lake in Kerala (length 96.5 km, area ~205 sq.km). Spans Ernakulam, Kottayam, and Alappuzha. Fed by 10 rivers. Known for Kuttanad below-sea-level farming, the Thanneermukkom saltwater barrier, and the Nehru Trophy boat race.</li>
+    <li><strong>Ashtamudi Lake (അഷ്ടമുടിക്കായൽ):</strong> Located in Kollam district; area 61.4 sq.km. Shaped like an octopus with 8 branches (Ashta-mudi). Historic trade portal linking internal waterways to the ancient port of Quilon (Kollam). Designated Ramsar wetland.</li>
+  </ul>
+
+  <h2>I.1.G. Comprehensive Soils of Kerala (കേരളത്തിലെ മണ്ണുതരങ്ങൾ)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>മണ്ണിന്റെ ഇനം (Soil Type)</th>
+        <th>വിതരണം (Distribution)</th>
+        <th>സവിശേഷതകളും വിളകളും (Characteristics & Crops)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1. Laterite Soil (ചെങ്കൽ മണ്ണ്)</strong></td>
+        <td>ഇടനാട്, മലപ്പുറം, കോഴിക്കോട്, കണ്ണൂർ (65% വിസ്തൃതി)</td>
+        <td>കഠിനമായ ചെങ്കൽ പ്രതലം, ഇരുമ്പ്-അലുമിനിയം സാന്നിധ്യം. റബ്ബർ, കശുമാവ്, കുരുമുളക്.</td>
+      </tr>
+      <tr>
+        <td><strong>2. Red Loams (ചുവന്ന പശിമരാശി)</strong></td>
+        <td>തിരുവനന്തപുരം, നെയ്യാറ്റിൻകര</td>
+        <td>ഇരുമ്പിന്റെ സാന്നിധ്യം മൂലം ചുവപ്പുനിറം; മരച്ചീനി, പച്ചക്കറികൾ.</td>
+      </tr>
+      <tr>
+        <td><strong>3. Coastal Alluvial (തീരദേശ എക്കൽമണ്ണ്)</strong></td>
+        <td>തീരദേശ സമതലങ്ങൾ (Alappuzha, Kollam, Kozhikode)</td>
+        <td>മണൽ നിറഞ്ഞത്; ഉയർന്ന ജലനിർഗ്ഗമനം; തെങ്ങ് കൃഷി.</td>
+      </tr>
+      <tr>
+        <td><strong>4. Riverine Alluvial (നദീതീര എക്കൽമണ്ണ്)</strong></td>
+        <td>നദീതടങ്ങൾ (ഭാരതപ്പുഴ, പെരിയാർ, പമ്പ)</td>
+        <td>വളരെ ഫലഭൂയിഷ്ഠം; ഉയർന്ന ഓർഗാനിക് ഘടകങ്ങൾ; നെല്ല്, വാഴ, കരിമ്പ്.</td>
+      </tr>
+      <tr>
+        <td><strong>5. Greyish-Onattukara Soils (ഓണാട്ടുകര മണ്ണ്)</strong></td>
+        <td>ഓണാട്ടുകര പ്രദേശം (കരുനാഗപ്പള്ളി, മാവേലിക്കര)</td>
+        <td>ചാരനിറമുള്ള മണൽമണ്ണ്; എള്ള്, കപ്പ, പയറുവർഗ്ഗങ്ങൾ.</td>
+      </tr>
+      <tr>
+        <td><strong>6. Brown Hydromorphic Soils</strong></td>
+        <td>ഇടനാടൻ താഴ്‌വരകൾ</td>
+        <td>അമിത ഈർപ്പം; ജലസേചിത നെൽകൃഷി.</td>
+      </tr>
+      <tr>
+        <td><strong>7. Hydromorphic Saline (പൊക്കാളി മണ്ണ്)</strong></td>
+        <td>എറണാകുളം, വൈപ്പിൻ, പറവൂർ തീരദേശങ്ങൾ</td>
+        <td>ഉപ്പുരസമുള്ള വെള്ളം കയറുന്ന മണ്ണ്; പരമ്പരാഗത പൊക്കാളി നെല്ലും ചെമ്മീൻ കെട്ടും.</td>
+      </tr>
+      <tr>
+        <td><strong>8. Acid Saline Soils (കുട്ടനാട് മണ്ണുകൾ):</strong><br>
+        • Kāyal Soils<br>• Karapadam Soils<br>• Kari Soils</td>
+        <td>കുട്ടനാട് മേഖല (സമുദ്രനിരപ്പിന് 1-2 മീറ്റർ താഴെ)</td>
+        <td>ഉയർന്ന അസിഡിറ്റിയും ഇരുമ്പ്-സൾഫേറ്റുകളും; 'കരിമണ്ണ്' കറുത്ത പീറ്റ് മണ്ണാണ്. പ്രത്യേക ചിറകെട്ടി നെൽകൃഷി ചെയ്യുന്നു.</td>
+      </tr>
+      <tr>
+        <td><strong>9. Black Soils (കറുത്ത പരുത്തിമണ്ണ്)</strong></td>
+        <td>ചിറ്റൂർ താലൂക്ക് (പാലക്കാട്)</td>
+        <td>ഡെക്കാൻ ലാവ പ്രവാഹത്തിന്റെ സ്വാധീനം; ഉയർന്ന കളിമൺ സാന്നിധ്യം; പരുത്തി, നിലക്കടല.</td>
+      </tr>
+      <tr>
+        <td><strong>10. Forest Loams (വന മണ്ണ്)</strong></td>
+        <td>പശ്ചിമഘട്ട മലനിരകൾ</td>
+        <td>ഇലകൾ ജീർണ്ണിച്ചുണ്ടായ ഹ്യൂമസ് സമൃദ്ധം; തേയില, കാപ്പി, ഏലം, തേക്ക്.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>I.1.H. Climate & Monsoons (കാലാവസ്ഥയും മൺസൂണും)</h2>
+  <div class="diagram-container">
+    <div class="diagram-title">🌧️ കേരളത്തിലെ കാലവർഷ ചക്രം | The Monsoon Cycle of Kerala</div>
+    <div class="flow-chart">
+      <div class="flow-step">ഇടവപ്പാതി (SW Monsoon)<small>ജൂൺ - സെപ്റ്റംബർ (60-65% മഴ)<br>വിരിപ്പ് നെൽകൃഷി</small></div>
+      <div class="flow-arrow">➔</div>
+      <div class="flow-step">തുലാവർഷം (NE Monsoon)<small>ഒക്ടോബർ - നവംബർ (25% മഴ)<br>മുണ്ടകൻ നെൽകൃഷി</small></div>
+      <div class="flow-arrow">➔</div>
+      <div class="flow-step">വേനൽക്കാലം (Summer)<small>ഡിസംബർ - മെയ്<br>പുഞ്ചകൃഷി, കുരുമുളക് വിളവെടുപ്പ്</small></div>
+    </div>
+  </div>
+
+  <h2>I.1.I. Flora & Fauna (സസ്യജന്തുജാലങ്ങളും ജൈവവൈവിധ്യവും)</h2>
+  <p><strong>English:</strong> The Western Ghats is one of the world's eight "hottest hotspots" of biological diversity. Endemic flora includes teak (Tectona grandis), rosewood, sandalwood, and spices like black pepper (Malabar pepper, Piper nigrum), cardamom, and cinnamon. The legendary botanical treatise <em>Hortus Malabaricus</em> (1678–1693) compiled by Dutch Governor Hendrik van Rheede documented 742 medicinal plants of Kerala with the assistance of Itty Achudan Vaidyan. Fauna includes the Asian elephant, Nilgiri tahr (Varaiadu at Eravikulam), lion-tailed macaque (Silent Valley), and the Malabar giant squirrel.</p>
+  <p><strong>മലയാളം:</strong> ലോകത്തിലെ എട്ട് പ്രധാന ജൈവവൈവിധ്യ ഹോട്ട്സ്പോട്ടുകളിൽ ഒന്നാണ് പശ്ചിമഘട്ടം. തേക്ക്, ഈട്ടി, ചന്ദനം, കുരുമുളക്, ഏലം, കറുവപ്പട്ട തുടങ്ങിയ സസ്യസമ്പത്താൽ സമ്പന്നമാണ് കേരളം. ഡച്ച് ഗവർണർ ഹെൻഡ്രിക് വാൻ റീഡ് ഇട്ടി അച്യുതൻ വൈദ്യരുടെ സഹായത്തോടെ തയ്യാറാക്കിയ <em>ഹോർത്തൂസ് മലബാറിക്കൂസ്</em> (1678–1693) എന്ന ഗ്രന്ഥത്തിൽ കേരളത്തിലെ 742 ഔഷധ സസ്യങ്ങളെക്കുറിച്ച് വിവരിച്ചിട്ടുണ്ട്. ഏഷ്യൻ ആന, നീലഗിരി വരയാട് (ഇരവികുളം), സിംഹവാലൻ കുരങ്ങ് (സൈലന്റ് വാലി), മലബാർ അണ്ണാൻ തുടങ്ങിയവ പ്രധാന ജന്തുജാലങ്ങളാണ്.</p>
+
+  <h2>LMS റിവ്യൂ ചോദ്യോത്തരങ്ങൾ | Complete Answers to All 27 Textbook Questions</h2>
+
+  <h3>Section A: Short Answer Concepts (3 Marks Each)</h3>
+  <div class="qa-card">
+    <div class="qa-q">1. Geomorphology (ഭൂപ്രകൃതിശാസ്ത്രം)</div>
+    <div class="qa-ans-en"><strong>English:</strong> The scientific study of landforms, physical relief, and Earth surface processes that divided Kerala into Highlands (>600m), Midlands (7.5–600m), and Lowlands (<7.5m).</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> ഭൂമിയുടെ ഉപരിതല സവിശേഷതകളെയും ഭൂപ്രകൃതിയെയും കുറിച്ചുള്ള ശാസ്ത്രീയ പഠനമാണ് ജിയോമോർഫോളജി. കേരളത്തെ മലനാട്, ഇടനാട്, തീരപ്രദേശം എന്നിങ്ങനെ തിരിക്കുന്നത് ഇതാണ്.</div>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">2. Western Ghats (പശ്ചിമഘട്ടം)</div>
+    <div class="qa-ans-en"><strong>English:</strong> Continuous mountain range of 450 km along Kerala's eastern frontier acting as a barrier to monsoon clouds, creating torrential rains and rich biodiversity.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കേരളത്തിന്റെ കിഴക്കൻ അതിർത്തിയിലുള്ള 450 കി.മീ നീളമുള്ള മലനിരകൾ. മൺസൂൺ കാറ്റുകളെ തടഞ്ഞുനിർത്തി കേരളത്തിൽ കനത്ത മഴ പെയ്യിക്കുന്ന പ്രകൃതിദത്ത മതിൽ.</div>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">3. Mountain Pass (ചുരം)</div>
+    <div class="qa-ans-en"><strong>English:</strong> A natural gap or navigable route through a mountain barrier; in Kerala, Palakkad, Bodinayakkannur, Gudalur, and Ariankavu passes facilitated historic trade and cultural diffusion.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> മലനിരകൾക്കിടയിലൂടെയുള്ള പ്രകൃതിദത്തമായ സഞ്ചാരപാതയാണ് ചുരം. പാലക്കാട്, ആര്യങ്കാവ്, ബോഡിനായ്ക്കന്നൂർ ചുരങ്ങൾ കേരള-തമിഴ് വാണിജ്യ-സാംസ്കാരിക വിനിമയങ്ങൾക്ക് വഴിയൊരുക്കി.</div>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">4. Backwaters (കായലുകൾ)</div>
+    <div class="qa-ans-en"><strong>English:</strong> Lagoons and estuaries connected parallel to the coastline forming natural inland waterways; Vembanad (205 sq.km) and Ashtamudi (61.4 sq.km) are the largest.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കടലിന് സമാന്തരമായി കാണപ്പെടുന്ന ഉപ്പുരസമുള്ള ജലാശയങ്ങളാണ് കായലുകൾ. ഉൾനാടൻ ജലഗതാഗതത്തിനും മത്സ്യബന്ധനത്തിനും ഉപയോഗിക്കുന്നു. വേമ്പനാട്, അഷ്ടമുടി എന്നിവ പ്രധാനപ്പെട്ടവയാണ്.</div>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">5. Estuaries (അഴികൾ / പൊഴികൾ)</div>
+    <div class="qa-ans-en"><strong>English:</strong> Tidal mouths of rivers where freshwater meets seawater; permanent openings are Azhis (e.g., Kochi Azhi, Kodungallur Azhi) and seasonal sand-barred openings are Pozhis.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> നദികൾ സമുദ്രവുമായി ചേരുന്ന അഴിമുഖങ്ങൾ. സ്ഥിരമായി കടലുമായി ബന്ധപ്പെടുന്നവ അഴികൾ (കൊച്ചി, കൊടുങ്ങല്ലൂർ) എന്നും, മണൽതിട്ടയാൽ താൽക്കാലികമായി അടയുന്നവ പൊഴികൾ എന്നും അറിയപ്പെടുന്നു.</div>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">6. Monsoon (മൺസൂൺ)</div>
+    <div class="qa-ans-en"><strong>English:</strong> Seasonal wind reversal yielding two rainfall phases: Southwest Monsoon (Edavappathi, June–Sept, 60–65%) and Northeast Monsoon (Thulavarsham, Oct–Nov, 25%).</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> ഋതുക്കൾക്കനുസരിച്ച് കാറ്റിന്റെ ദിശയിലുണ്ടാകുന്ന മാറ്റമാണ് മൺസൂൺ. ഇടവപ്പാതി (തെക്കുപടിഞ്ഞാറൻ മൺസൂൺ), തുലാവർഷം (വടക്കുകിഴക്കൻ മൺസൂൺ) എന്നിങ്ങനെ രണ്ട് ഘട്ടങ്ങളിലായി കേരളത്തിൽ മഴ ലഭിക്കുന്നു.</div>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">7. Laterite Soil (ചെങ്കൽ മണ്ണ്)</div>
+    <div class="qa-ans-en"><strong>English:</strong> Reddish vesicular soil formed by high tropical temperature and heavy rainfall weathering, covering ~65% of Kerala's midland hills, extensively used for building blocks.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> ഉയർന്ന ചൂടും കനത്ത മഴയും മൂലം പാറകൾക്ക് രാസമാറ്റം സംഭവിച്ചുണ്ടാകുന്ന ചുവന്ന മണ്ണാണ് ചെങ്കൽ മണ്ണ്. കേരളത്തിലെ ഇടനാടൻ കുന്നുകളിൽ ഭൂരിഭാഗവും (65%) ഇതാണ്; വീടുനിർമ്മാണത്തിന് വെട്ടുകല്ല് ഉപയോഗിക്കുന്നു.</div>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">8. Biodiversity (ജൈവവൈവിധ്യം)</div>
+    <div class="qa-ans-en"><strong>English:</strong> The vast wealth of biological plant and animal species endemic to Kerala's Western Ghats rainforests, containing unique species like the Nilgiri tahr and lion-tailed macaque.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> ഒരു പ്രദേശത്തെ വിവിധയിനം സസ്യങ്ങളുടെയും ജന്തുക്കളുടെയും സമൃദ്ധിയെ ജൈവവൈവിധ്യം എന്ന് വിളിക്കുന്നു. പശ്ചിമഘട്ടത്തിലെ സൈലന്റ് വാലി, ഇരവികുളം തുടങ്ങിയവ ഇതിന്റെ കേന്ദ്രങ്ങളാണ്.</div>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">9. Midland (ഇടനാട്)</div>
+    <div class="qa-ans-en"><strong>English:</strong> The intermediate undulating landscape lying between 7.5 and 600 metres elevation, comprising 41.8% of Kerala, characterized by laterite hills, paddy valleys, and cash crops.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> 7.5 മുതൽ 600 മീറ്റർ വരെ ഉയരമുള്ള മലനാടിനും തീരപ്രദേശത്തിനും ഇടയിലുള്ള പ്രദേശം (41.8% വിസ്തൃതി). ചെങ്കൽ കുന്നുകളും നെൽവയലുകളും റബ്ബർ കൃഷിയും നിറഞ്ഞതാണ് ഇടനാട്.</div>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">10. High Ranges (ഹൈറേഞ്ച്)</div>
+    <div class="qa-ans-en"><strong>English:</strong> Mountainous elevations in the Western Ghats exceeding 1,500m (in Idukki and Wayanad), home to Anamudi, shola grasslands, cardamom, and tea plantations.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> പശ്ചിമഘട്ടത്തിൽ 1,500 മീറ്ററിലധികം ഉയരമുള്ള മലയോര മേഖലകളാണ് ഹൈറേഞ്ച് (ഇടുക്കി, വയനാട്). ആനമുടി, ചോല വനങ്ങൾ, തേയില, ഏലം തോട്ടങ്ങൾ എന്നിവ ഇവിടെ സ്ഥിതിചെയ്യുന്നു.</div>
+  </div>
+
+  <h3>Section B: Short Essays (5 Marks Each)</h3>
+  <div class="qa-card">
+    <div class="qa-q">11. Explain the concept of Keralam as a distinct ecological region.</div>
+    <div class="qa-ans-en"><strong>English:</strong> Kerala constitutes a distinct eco-geographic unit bounded by the Arabian Sea on the West and the Western Ghats on the East. This physical containment isolated it from continental North India while orienting it seaward toward the Indian Ocean rim. The sharp topographic variation across 70–120 km width creates distinct microclimates, unique drainage networks of 44 rivers, fertile soils, and reliable monsoon precipitation, giving rise to specialized agro-economic practices and a unique cultural identity.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കിഴക്ക് പശ്ചിമഘട്ടവും പടിഞ്ഞാറ് അറബിക്കടലും അതിരിടുന്ന കേരളം ഒരു സവിശേഷ പാരിസ്ഥിതിക മേഖലയാണ്. ഈ പ്രകൃതിദത്ത അതിരുകൾ കേരളത്തെ ഉപഭൂഖണ്ഡത്തിൽ നിന്ന് ഒരു പരിധി വരെ വേർതിരിച്ചു നിർത്തുകയും എന്നാൽ സമുദ്രവ്യാപാരത്തിലേക്ക് നയിക്കുകയും ചെയ്തു. 70 മുതൽ 120 കി.മീ മാത്രം വീതിയിൽ മലനാട്, ഇടനാട്, തീരപ്രദേശം എന്നീ മൂന്ന് മേഖലകളും 44 നദികളും രണ്ട് മൺസൂണുകളും ചേരുമ്പോൾ കേരളത്തിൽ തനതായ കാർഷിക-സാമൂഹിക സംസ്കാരം രൂപപ്പെട്ടു.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">12. Describe the significance of the Western Ghats in shaping the environment of Keralam.</div>
+    <div class="qa-ans-en"><strong>English:</strong> The Western Ghats act as a climatic regulator and ecological backbone for Kerala. Standing up to 2,695 metres, they intercept the moisture-laden Southwest Monsoon clouds, causing orographic precipitation of nearly 3,000 mm annually. They serve as the birthplace for all 44 rivers, maintain perennial water tables, preserve tropical rainforests and shola biomes, and nurture high-value spices like cardamom and pepper that historically attracted global maritime merchants.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കേരളത്തിന്റെ പരിസ്ഥിതിയെ നിർണ്ണയിക്കുന്ന ജീവനാഡിയാണ് പശ്ചിമഘട്ടം. സമുദ്രനിരപ്പിൽ നിന്ന് ശരാശരി 1,500 മീറ്ററിലധികം ഉയരമുള്ള ഈ മലനിരകൾ തെക്കുപടിഞ്ഞാറൻ മൺസൂൺ കാറ്റുകളെ തടഞ്ഞുനിർത്തി 3,000 മില്ലിമീറ്റർ വരെ മഴ പെയ്യിക്കുന്നു. കേരളത്തിലെ 44 നദികളുടെയും ഉത്ഭവം പശ്ചിമഘട്ടത്തിൽ നിന്നാണ്. കുരുമുളക്, ഏലം, തേക്ക് തുടങ്ങിയ അമൂല്യ സമ്പത്തുകൾ ലോക വാണിജ്യത്തിൽ കേരളത്തിന് പ്രമുഖ സ്ഥാനം നേടിക്കൊടുത്തു.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">13. Discuss the major passes in the Western Ghats and their importance.</div>
+    <div class="qa-ans-en"><strong>English:</strong> The Western Ghats are pierced by natural gaps that allowed overland connectivity. The Palakkad Gap (30–40 km wide) is the most critical breach, facilitating commercial caravans, Chola/Pandya military incursions, and cultural assimilation between Tamilakam and Kerala. Other secondary passes include the Bodinayakkannur Pass (linking Idukki to Madurai for spice traffic), Gudalur Pass (connecting Wayanad/Nilambur to Mysore/Nilgiris), and Ariankavu Pass (connecting Kollam to Tirunelveli), which stimulated regional trade routes and political linkages.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> പശ്ചിമഘട്ടത്തിലെ പ്രധാന ചുരങ്ങൾ കേരളത്തെ അയൽ സംസ്ഥാനങ്ങളുമായി ബന്ധിപ്പിക്കുന്ന പ്രവേശന കവാടങ്ങളായിരുന്നു. പാലക്കാട് ചുരം (30–40 കി.മീ വീതി) വാണിജ്യ സംഘങ്ങൾക്കും ചോള-പാണ്ഡ്യ സൈന്യങ്ങൾക്കും വഴിതുറന്നു. ബോഡിനായ്ക്കന്നൂർ ചുരം ഇടുക്കിയെ മധുരയുമായും, ഗൂഡല്ലൂർ ചുരം വയനാടിനെ മൈസൂരുമായും, ആര്യങ്കാവ് ചുരം കൊല്ലത്തെ തിരുനെൽവേലിയുമായും ബന്ധിപ്പിച്ചു.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">14. Examine the role of the Indian Ocean in influencing Kerala’s climate and trade.</div>
+    <div class="qa-ans-en"><strong>English:</strong> The Indian Ocean (Arabian Sea) provided a 560 km maritime highway that defined Kerala's external destiny. Climatically, ocean evaporation feeds both monsoon seasons and moderates land temperatures with steady diurnal sea breezes. Commercially, the discovery of the monsoon winds (traditionally attributed to Hippalus) allowed direct open-sea sailing from the Red Sea and Persian Gulf to ports like Muziris, Tyndis, and Nelcynda. Roman denarii hoards, Arab dhows, Chinese junks, and European colonial fleets transformed Kerala's coastal urban centers into cosmopolitan maritime trade emporia.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കേരളത്തിന്റെ കാലാവസ്ഥയെയും സമ്പദ്‌വ്യവസ്ഥയെയും രൂപപ്പെടുത്തിയത് ഇന്ത്യൻ മഹാസമുദ്രമാണ്. സമുദ്രത്തിൽ നിന്നുള്ള നീരാവിയാണ് കേരളത്തിലെ രണ്ട് മൺസൂണുകൾക്കും കാരണമാകുന്നത്. വാണിജ്യപരമായി, മൺസൂൺ കാറ്റിന്റെ ദിശ മനസ്സിലാക്കിയ നാവികർ റോം, അറേബ്യ, ചൈന തുടങ്ങിയ രാജ്യങ്ങളിൽ നിന്ന് മുസിരിസ്, തിണ്ടിസ് തുറമുഖങ്ങളിലെത്തി കുരുമുളകും സുഗന്ധവ്യഞ്ജനങ്ങളും വാങ്ങി. പിൽക്കാലത്ത് യൂറോപ്യൻ കൊളോണിയൽ ശക്തികൾ കേരളത്തിലെത്തിയതും കടൽ വഴിയാണ്.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">15. Write a note on the significance of rivers in shaping the history of Keralam.</div>
+    <div class="qa-ans-en"><strong>English:</strong> Kerala's 44 rivers served as the cradles of human settlement and agrarian civilization. Major rivers like the Bharathapuzha, Periyar, and Pamba supported agrarian surplus, temple institutions, and urban clusters. The Periyar hosted ancient Muziris and the Mahodayapuram capital; the Bharathapuzha fostered Thirunavaya (Mamankam) and Vedic learning centers (Kadalundi, Sukapuram); the Chaliyar supported the timber and gold-washing trade of Beypore. Rivers also served as highways for moving timber, pepper, and foodgrains before the advent of modern roadways.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കേരളത്തിലെ 44 നദികളാണ് ജനവാസ കേന്ദ്രങ്ങളും കാർഷിക സംസ്കാരങ്ങളും വളർത്തിയെടുത്തത്. പെരിയാറിന്റെ തീരത്താണ് മുസിരിസും മഹോദയപുരവും വളർന്നത്; ഭാരതപ്പുഴയുടെ തീരത്ത് മാമാങ്കവും വൈദിക പാഠശാലകളും നിലനിന്നു; പമ്പാനദി കുട്ടനാട്ടിലെ കാർഷിക വിപ്ലവത്തിന് വഴിയൊരുക്കി. ചാലിയാർ വഴി നിലമ്പൂർ തേക്ക് ബേപ്പൂരിലെത്തിച്ചു. റോഡുകൾ വരുന്നതിനുമുമ്പ് പ്രധാന ചരക്കുഗതാഗതം നദികളിലൂടെയായിരുന്നു.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">16. Discuss different types of soil in Kerala and their distribution.</div>
+    <div class="qa-ans-en"><strong>English:</strong> Kerala exhibits 10 major soil varieties: Laterite soil is most extensive (65% in midland hills, ideal for rubber/cashew); Red loams occur in southern Thiruvananthapuram; Coastal alluvium lines the shoreline, supporting coconut groves; Riverine alluvium along riverbanks provides prime paddy soils; Greyish-Onattukara soils support pulses and sesame; Hydromorphic saline soils (Pokkali) allow seasonal paddy-cum-prawn culture in Ernakulam/Alappuzha; Acid saline soils in Kuttanad (Kayal, Karapadam, Kari peaty soil) support below-sea-level farming; Black soils in Chittur (Palakkad) nurture cotton; and Forest loams rich in organic humus sustain high-range plantation crops.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കേരളത്തിൽ 10 പ്രധാന മണ്ണുതരങ്ങളുണ്ട്: ഇടനാട്ടിൽ കാണപ്പെടുന്ന ചെങ്കൽ മണ്ണ് (65%), തെക്കൻ കേരളത്തിലെ ചുവന്ന പശിമരാശി മണ്ണ്, തീരദേശത്തെ എക്കൽ മണ്ണ് (തെങ്ങ് കൃഷി), നദീതീരങ്ങളിലെ ഫലഭൂയിഷ്ഠമായ എക്കൽ മണ്ണ് (നെൽകൃഷി), ഓണാട്ടുകര മണ്ണ് (എള്ള്, പയർ), പൊക്കാളി മണ്ണ് (ഉപ്പുരസമുള്ള വെള്ളത്തിലെ നെല്ലും ചെമ്മീൻ കെട്ടും), കുട്ടനാട്ടിലെ കരിമണ്ണും കായൽ മണ്ണും (അസിഡിറ്റി കൂടിയ പീറ്റ് മണ്ണ്), പാലക്കാട് ചിറ്റൂരിലെ കറുത്ത പരുത്തിമണ്ണ്, വനപ്രദേശങ്ങളിലെ ജൈവസമ്പുഷ്ടമായ വനമണ്ണ് (തേയില, കാപ്പി, ഏലം).</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">17. Explain the monsoon system and its impact on the economy of Keralam.</div>
+    <div class="qa-ans-en"><strong>English:</strong> Kerala receives an average annual rainfall of ~3,000 mm distributed across two monsoon seasons. The Southwest Monsoon (Edavappathi, June–September) delivers 60–65% of precipitation and governs the primary agrarian cycle (Virippu paddy crop). The Northeast Monsoon (Thulavarsham, October–November) brings 25% of rainfall through cyclonic showers, nurturing the second crop (Mundakan). Heavy monsoons fill hydroelectric reservoirs, replenish inland aquifers, and support cash-crop plantations, though excessive rainfall causes recurrent floods, soil erosion, and disruption to coastal fisheries.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കേരളത്തിലെ സാമ്പത്തിക വ്യവസ്ഥയുടെ ആധാരശിലയാണ് മൺസൂൺ. വർഷത്തിൽ ശരാശരി 3,000 മി.മീ മഴ ലഭിക്കുന്നു. ഇടവപ്പാതി (ജൂൺ-സെപ്റ്റംബർ) 60-65% മഴ നൽകി 'വിരിപ്പ്' നെൽകൃഷിയെ സഹായിക്കുന്നു. തുലാവർഷം (ഒക്ടോബർ-നവംബർ) 'മുണ്ടകൻ' കൃഷിക്ക് വെള്ളം നൽകുന്നു. ജലവൈദ്യുതി ഉത്പാദനത്തിനും കാർഷിക വിളകൾക്കും മൺസൂൺ അത്യന്താപേക്ഷിതമാണ്.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">18. Describe the medical and historical significance of the flora and fauna of Keralam.</div>
+    <div class="qa-ans-en"><strong>English:</strong> Kerala's tropical climate supports immense biodiversity. Historically, rare medicinal plants fostered the indigenous Ashtavaidya Ayurvedic tradition. The 17th-century Latin compendium <em>Hortus Malabaricus</em> (12 volumes, 1678–1693) published by Hendrik van Rheede with Ezhava Ayurvedic physician Itty Achudan documented 742 medicinal plants with Malayalam scripts, establishing Kerala flora in international science. Valuable hardwood trees (teak, rosewood, sandalwood) enabled indigenous boat-building (Uru of Beypore) and temple architecture, while spices attracted global trade.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കേരളത്തിലെ ഔഷധസസ്യങ്ങൾ അഷ്ടവൈദ്യ ആയുർവേദ പാരമ്പര്യത്തിന് അടിത്തറയിട്ടു. 17-ാം നൂറ്റാണ്ടിൽ ഡച്ച് ഗവർണർ വാൻ റീഡ്, ഇട്ടി അച്യുതൻ വൈദ്യരുടെ സഹായത്തോടെ തയ്യാറാക്കിയ <em>ഹോർത്തൂസ് മലബാറിക്കൂസ്</em> (1678-1693) കേരളത്തിലെ 742 സസ്യങ്ങളുടെ ഔഷധ ഗുണങ്ങൾ ലോകത്തിന് മുന്നിലെത്തിച്ചു. തേക്ക് തടികൾ ബേപ്പൂരിലെ ഉരു നിർമ്മാണത്തിനും ക്ഷേത്ര കൊത്തുപണികൾക്കും ഉപയോഗിച്ചു. കുരുമുളകും ഏലവും ആഗോള വാണിജ്യ ആകർഷണമായി.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">19. Examine the ecological importance of backwaters and their role in Kerala’s economy.</div>
+    <div class="qa-ans-en"><strong>English:</strong> Backwaters (Kayals) are coastal wetlands formed by river-sea interactions. They act as flood buffers during monsoons, maintain estuarine fisheries, prevent coastal salinity intrusion, and support inland navigation (National Waterway 3). Historically, ports on backwaters (Kollam, Alappuzha, Kochi, Kodungallur) connected interior pepper-growing hinterlands to foreign sea routes. Today, backwaters are centers of coir retting, boat races, and modern tourism.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> നദികളും കടലും ചേരുന്ന തീരദേശ തണ്ണീർത്തടങ്ങളാണ് കായലുകൾ. വെള്ളപ്പൊക്കത്തെ തടയാനും മത്സ്യസമ്പത്ത് നിലനിർത്താനും ഉപ്പുവെള്ളം കരയിലേക്ക് കയറുന്നത് തടയാനും ഇവ സഹായിക്കുന്നു. പ്രാചീനകാലം മുതൽ കൊച്ചി, കൊല്ലം, ആലപ്പുഴ, കൊടുങ്ങല്ലൂർ കായൽ തുറമുഖങ്ങൾ വഴി ഉൾനാടൻ ചരക്കുകൾ വിദേശത്തേക്ക് കൊണ്ടുപോയി. കയർ വ്യവസായം, വള്ളംകളി, വിനോദസഞ്ചാരം എന്നിവ കായലുകളെ ആശ്രയിച്ചു നിലനിൽക്കുന്നു.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">20. Discuss the impact of climate and monsoons on Kerala’s agriculture and lifestyle.</div>
+    <div class="qa-ans-en"><strong>English:</strong> The agrarian calendar of Kerala is synchronized with the monsoon rhythm: sowing coincides with early Edavappathi rains, weeding follows intermittent sunny breaks, and harvesting marks the Onam festival (Chingam/September). Architectural traditions—such as steeply sloped tiled roofs, overhanging eaves, inner courtyards (Nadumuttam), and wooden gables—evolved directly to withstand torrential rains and humid air. Traditional cuisine (rice, coconut, cooling curd, pepper broths) and cultural rituals (Karkidaka Chikitsa, temple festivals in summer) reflect climatic adaptation.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കേരളീയ ജീവിതരീതിയും കാർഷിക കലണ്ടറും മൺസൂണുമായി ഇഴചേർന്നു കിടക്കുന്നു. വിത്തുവിതയ്ക്കലും വിളവെടുപ്പും മൺസൂണിനെ അടിസ്ഥാനമാക്കിയാണ്; ചിങ്ങത്തിലെ ഓണം കാർഷിക സമൃദ്ധിയുടെ ആഘോഷമാണ്. കനത്ത മഴയെ പ്രതിരോധിക്കാൻ ചരിഞ്ഞ മേൽക്കൂരകളും നടുമുറ്റങ്ങളും വാസ്തുവിദ്യയിൽ ഇടംനേടി. കർക്കടക മാസത്തിലെ സുഖചികിത്സയും വേനൽക്കാലത്തെ ക്ഷേത്രോത്സവങ്ങളും കാലാവസ്ഥയോടുള്ള പൊരുത്തപ്പെടലുകളാണ്.</div>
+  </div>
+
+  <h3>Section C: Long Essays (10 Marks Each)</h3>
+  <div class="qa-card">
+    <div class="qa-q">21. Critically examine Keralam as a unique geographical and cultural region, highlighting its boundaries, ecological zones, and historical evolution.</div>
+    <div class="qa-ans-en"><strong>English:</strong> Kerala is an exceptional ecological corridor spanning 38,863 sq.km between 8°17'N and 12°27'N. Bounded firmly by the Western Ghats and Arabian Sea, it developed as an insulated yet globally outward-looking society. The threefold longitudinal division (Highlands, Midlands, Lowlands) fostered distinct economic activities: spice collection in highlands, agrarian rice surplus in midlands, and seafaring trade along the lowlands. The 44 river basins nurtured settlement pockets, while the Palakkad Gap permitted continuous cultural interactions with Tamilakam. This geographic unity created the historical basis for a distinct linguistic, artistic, and social identity that culminated in medieval Keralam.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> പശ്ചിമഘട്ടത്താലും അറബിക്കടലാലും സംരക്ഷിക്കപ്പെട്ട 38,863 ച.കി.മീ വിസ്തൃതിയുള്ള കേരളം ഭൂമിശാസ്ത്രപരമായും സാംസ്കാരികമായും ഒരു സവിശേഷ മേഖലയാണ്. മലനാട്, ഇടനാട്, തീരപ്രദേശം എന്നീ മൂന്ന് മേഖലകൾ വ്യത്യസ്ത ഉത്പാദന മേഖലകളായി വർത്തിച്ചു: മലനാട്ടിലെ സുഗന്ധവ്യഞ്ജന ശേഖരണം, ഇടനാട്ടിലെ നെൽകൃഷി, തീരദേശത്തെ സമുദ്രവാണിജ്യം. 44 നദികൾ ജനവാസ കേന്ദ്രങ്ങളെ പോഷിപ്പിച്ചപ്പോൾ, പാലക്കാട് ചുരം തമിഴകവുമായുള്ള നിരന്തര സമ്പർക്കത്തിന് വഴിയൊരുക്കി. ഈ പാരിസ്ഥിതിക ഐക്യമാണ് കേരളത്തിന്റെ തനതായ ഭാഷ, വാസ്തുവിദ്യ, ജീവിതരീതി എന്നിവ രൂപപ്പെടുത്തിയത്.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">22. Evaluate the ecological and economic significance of the Western Ghats in Keralam.</div>
+    <div class="qa-ans-en"><strong>English:</strong> The Western Ghats (Sahyadri) constitute the ecological spine of Kerala. Rising to 2,695m (Anamudi), they form an impermeable barrier intercepting Southwest Monsoons, generating ~3,000 mm of annual rainfall and feeding 44 river basins. Economically, the Ghats provided ancient Kerala with world-famous export goods: black pepper ("black gold"), cardamom, cinnamon, teak, and ivory. Modern Kerala depends entirely on Ghat reservoirs for hydroelectricity (Idukki, Sabarigiri) and drinking water, while mountain slopes support tea, coffee, and rubber plantations. As a UNESCO World Heritage biodiversity hotspot, they harbor endemic species and dense rainforests essential for the subcontinent's climate stability.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കേരളത്തിന്റെ പാരിസ്ഥിതികവും സാമ്പത്തികവുമായ നട്ടെല്ലാണ് പശ്ചിമഘട്ടം. 2,695 മീറ്റർ വരെ ഉയരമുള്ള ഈ മലനിരകൾ മൺസൂൺ കാറ്റുകളെ തടഞ്ഞുനിർത്തി മഴ പെയ്യിക്കുകയും 44 നദികൾക്ക് ജന്മം നൽകുകയും ചെയ്യുന്നു. സാമ്പത്തികമായി, കുരുമുളക്, ഏലം, തേക്ക് തുടങ്ങിയ ഉത്പന്നങ്ങൾ വിദേശ വാണിജ്യത്തെ സമ്പന്നമാക്കി. ഇന്ന് ഇടുക്കി ഉൾപ്പെടെയുള്ള ജലവൈദ്യുത പദ്ധതികളും തേയില-കാപ്പി തോട്ടങ്ങളും പശ്ചിമഘട്ടത്തെ ആശ്രയിച്ചാണ് നിലനിൽക്കുന്നത്. യുനെസ്കോയുടെ പൈതൃക പട്ടികയിലുള്ള ഈ ജൈവവൈവിധ്യ മേഖല കാലാവസ്ഥാ സ്ഥിരതയ്ക്കും കുടിവെള്ള ലഭ്യതയ്ക്കും അത്യന്താപേക്ഷിതമാണ്.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">23. Discuss the role of mountain passes in facilitating cultural and commercial interactions in Kerala history.</div>
+    <div class="qa-ans-en"><strong>English:</strong> Mountain passes breach the formidable Western Ghats, functioning as corridors of historical exchange. The Palakkad Gap (30–40 km wide) was the primary artery facilitating migration of artisans, merchants (Manigramam guilds), and Tamil Brahmins; military campaigns of Cholas, Pandyas, Hyder Ali, and Tipu Sultan; and transmission of architectural and linguistic elements. The Bodinayakkannur and Gudalur passes facilitated high-range spice caravans toward Madurai and the Deccan. The southern Ariankavu Pass connected Kollam to the Pandya trade network of Tirunelveli. These passes ensured that Kerala, despite its mountain barrier, remained intrinsically tied to peninsular Indian geopolitics and culture.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> പശ്ചിമഘട്ടത്തിലെ മലമ്പാതകളും ചുരങ്ങളുമാണ് കേരളത്തെ ബാഹ്യലോകവുമായി ബന്ധിപ്പിച്ച വാണിജ്യ-സാംസ്കാരിക ഇടനാഴികൾ. 30-40 കി.മീ വീതിയുള്ള പാലക്കാട് ചുരം വഴി കൈവേലക്കാരും വ്യാപാരികളും തമിഴ് ബ്രാഹ്മണരും കേരളത്തിലേക്ക് കുടിയേറി. ചോളന്മാരുടെയും പാണ്ഡ്യന്മാരുടെയും ടിപ്പുസുൽത്താന്റെയും സൈന്യങ്ങൾ നീങ്ങിയത് ഇതുവഴിയാണ്. തെക്കൻ കേരളത്തിലെ ആര്യങ്കാവ് ചുരം കൊല്ലത്തെ പാണ്ഡ്യ വാണിജ്യവുമായി ബന്ധിപ്പിച്ചു. പശ്ചിമഘട്ടം ഒരു വന്മതിലായി നിലകൊണ്ടപ്പോഴും ഈ ചുരങ്ങൾ കേരളത്തെ ദക്ഷിണേന്ത്യൻ സംസ്കാരവുമായി സജീവമായി നിലനിർത്തി.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">24. Analyze the relationship between the Indian Ocean and Keralam’s historical development, with focus on trade networks and colonial European outposts.</div>
+    <div class="qa-ans-en"><strong>English:</strong> The Indian Ocean was the primary catalyst of Kerala's cosmopolitan history. Seasonal monsoon winds connected the Malabar coast to Egypt, the Persian Gulf, and Rome in the early historic era, making Muziris an international trading emporium. During medieval centuries, Arab, Jewish, and Chinese merchants established enduring mercantile settlements. In 1498, Vasco da Gama's arrival marked the dawn of European maritime colonialism. The Portuguese, Dutch, and British constructed fortified bases along the Kerala coast (Pallippuram 1503, Kannur St. Angelo 1505, Anjengo 1695, Thalassery 1708), leveraging naval power and treaties with local Naduvazhis to monopolize the pepper trade, which eventually transformed trade outposts into territorial empires.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കേരള ചരിത്രത്തിന്റെ വികാസത്തെ ഏറ്റവും സ്വാധീനിച്ച ഘടകമാണ് ഇന്ത്യൻ മഹാസമുദ്രം. മൺസൂൺ കാറ്റുകൾ ഉപയോഗിച്ച് റോമൻ, അറബ്, ചൈനീസ് വ്യാപാരികൾ മുസിരിസിലും കൊല്ലത്തും എത്തി. എ.ഡി 1498-ൽ വാസ്കോഡ ഗാമ കാപ്പാട് എത്തിയതോടെ യൂറോപ്യൻ കൊളോണിയൽ അധിനിവേശം ആരംഭിച്ചു. പോർച്ചുഗീസുകാരും ഡച്ചുകാരും ബ്രിട്ടീഷുകാരും പള്ളിപ്പുറം, കണ്ണൂർ, അഞ്ചുതെങ്ങ്, തലശ്ശേരി എന്നിവിടങ്ങളിൽ കോട്ടകൾ നിർമ്മിച്ച് കുരുമുളക് വ്യാപാരത്തിൽ കുത്തക സ്ഥാപിക്കുകയും പിന്നീട് നാടുവാഴികളെ കീഴ്പ്പെടുത്തി രാഷ്ട്രീയ ആധിപത്യം സ്ഥാപിക്കുകയും ചെയ്തു.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">25. Provide a detailed account of the river systems of Keralam and their role in shaping settlement patterns, agriculture, and trade.</div>
+    <div class="qa-ans-en"><strong>English:</strong> Kerala possesses 44 rivers (41 west-flowing, 3 east-flowing) covering a total drainage basin of over 30,000 sq.km. The Periyar (244km), Bharathapuzha (209km), Pamba (176km), and Chaliyar (169km) shaped agrarian settlements and cultural geography. Rivers deposited fertile alluvium along midland valleys, supporting wet-rice agriculture and temple corporations (Brahmaswam and Devaswam lands). River mouths provided sheltered anchorages for port towns like Kodungallur (Periyar), Beypore (Chaliyar), and Purakkad (Pamba). Before roads, riverways served as arteries for floating hill timber and transporting spices to coastal emporia, thus directly determining demographic density and urbanization patterns.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കേരളത്തിലെ 44 നദികൾ (41 പടിഞ്ഞാറോട്ടും 3 കിഴക്കോട്ടും) ജനവാസ കേന്ദ്രങ്ങളെയും കാർഷിക സാമ്പത്തിക വ്യവസ്ഥയെയും രൂപപ്പെടുത്തി. പെരിയാർ, ഭാരതപ്പുഴ, പമ്പ, ചാലിയാർ എന്നിവയാണ് പ്രധാനപ്പെട്ടവ. നദീതടങ്ങളിലെ എക്കൽമണ്ണിലാണ് ഫലഭൂയിഷ്ഠമായ നെൽവയലുകളും ക്ഷേത്ര കേന്ദ്രീകൃത ഗ്രാമങ്ങളും വളർന്നുവന്നത്. നദീമുഖങ്ങൾ പ്രകൃതിദത്ത തുറമുഖങ്ങളായി (കൊടുങ്ങല്ലൂർ, ബേപ്പൂർ, പുറക്കാട്). മലയോരങ്ങളിൽ നിന്നുള്ള തടിയും കുരുമുളകും തീരങ്ങളിലേക്ക് എത്തിച്ചിരുന്നത് നദികളിലൂടെയായിരുന്നു; നദീതീരങ്ങളാണ് കേരളത്തിലെ നഗരവൽക്കരണത്തിന് തുടക്കമിട്ടത്.</div>
+  </div>
+
+  <div class="qa-card">
+    <div class="qa-q">26. Analyze the distribution and characteristics of soil types in Kerala and their agricultural implications.</div>
+    <div class="qa-ans-en"><strong>English:</strong> Soil diversity in Kerala is governed by topography, parent crystalline rocks, and heavy monsoon weathering. The dominant Laterite soil (65% in midlands) is rich in iron/aluminum sesquioxides with high permeability, ideally suited for rubber, cashew, pepper, and coconut. Riverine alluvium along riverbanks provides high nutrient content for intensive paddy and banana cultivation. Coastal sandy alluvium with high salinity suits coconut groves and littoral vegetation. Acid saline soils in Kuttanad (Kayal, Karapadam, and Kari soils) represent unique below-sea-level wetland ecology requiring seasonal dewatering for paddy cultivation. The hydromorphic Pokkali soils in Ernakulam allow an ingenious rotational crop of saline-tolerant rice and prawn filtration. In Chittur (Palakkad), black soils derived from Deccan traps support cotton, while forest loams in the high ranges sustain export cash crops like cardamom and tea.</div>
+    <div class="qa-ans-ml"><strong>മലയാളം:</strong> കേരളത്തിലെ വൈവിധ്യമാർന്ന ഭൂപ്രകൃതിയും കനത്ത മഴയും 10 വ്യത്യസ്ത മണ്ണുതരങ്ങൾക്ക് കാരണമായി. ഇടനാട്ടിലെ ചെങ്കൽ മണ്ണ് (65%) റബ്ബർ, കശുമാവ്, കുരുമുളക് എന്നിവയ്ക്ക് അനുയോജ്യമാണ്. നദീതടങ്ങളിലെ എക്കൽമണ്ണ് നെല്ല്, വാഴ കൃഷികൾക്ക് ഏറ്റവും മികച്ചതാണ്. കുട്ടനാട്ടിലെ കരിമണ്ണും കായൽ മണ്ണും അസിഡിറ്റി കൂടുതലുള്ളവയാണെങ്കിലും കായൽ ചിറകെട്ടി വെള്ളം വറ്റിച്ച് സവിശേഷ നെൽകൃഷി നടത്തുന്നു. എറണാകുളത്തെ പൊക്കാളി മണ്ണിൽ ഉപ്പുവെള്ളത്തെ പ്രതിരോധിക്കുന്ന നെല്ലും തുടർന്ന് ചെമ്മീൻ വളർത്തലും നടക്കുന്നു. ചിറ്റൂരിലെ കറുത്ത മണ്ണിൽ പരുത്തിയും മലനിരകളിലെ വനമണ്ണിൽ തേയിലയും ഏലവും സമൃദ്ധമായി വളരുന്നു.</div>
+  </div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. ഹിസ്റ്ററി പഠന സഹായി · History of Keralam up to 12th Century (HIS1CJ101)</span>
+    <span>സമ്പൂർണ്ണ മലയാള പരിഭാഷ, ചോദ്യോത്തരങ്ങൾ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

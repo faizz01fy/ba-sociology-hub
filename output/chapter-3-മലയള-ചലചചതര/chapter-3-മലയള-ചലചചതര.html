@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280, height=720, initial-scale=1.0">
+<title>മലയാള ചലച്ചിത്ര ഗാനങ്ങൾ - Thumbnail</title>
+<!-- Google Fonts: Authentic Malayalam Fonts with Full Conjunct Support + Montserrat for Branding -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@700;800&family=Chilanka&family=Gayathri:wght@700&family=Manjari:wght@400;700&family=Noto+Serif+Malayalam:wght@700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #040d1e;
+    --bg-mid: #081d3d;
+    --bg-glow: #10356c;
+    --ambient-glow: rgba(255, 179, 0, 0.14);
+    --ribbon-0: #071a36;
+    --ribbon-1: #0f3366;
+    --ribbon-2: #030a17;
+
+    --gold-light: #ffe675;
+    --gold-main: #ffb703;
+    --gold-dark: #e67e22;
+    --text-white: #ffffff;
+
+    --title-font: 'Noto Serif Malayalam', serif;
+    --author-font: 'Noto Serif Malayalam', serif;
+    --subject-font: 'Noto Serif Malayalam', serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-dark);
+    font-family: var(--title-font);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ─── LAYER 1: CLEAN LESSON ARTWORK (Right ~50%) ─── */
+  .artwork-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 720px;
+    height: 720px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .artwork-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* Feathered Vignette Mask transitioning smoothly into background tone */
+  .artwork-vignette {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      var(--bg-dark) 0%,
+      var(--bg-dark) 8%,
+      rgba(0, 0, 0, 0.65) 20%,
+      rgba(0, 0, 0, 0.0) 38%
+    );
+    pointer-events: none;
+  }
+
+  /* ─── LAYER 2: RICH COLORED BACKDROP & RADIAL ATMOSPHERE ─── */
+  .left-navy-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 720px;
+    height: 720px;
+    background: radial-gradient(circle at 38% 38%, var(--bg-glow) 0%, var(--bg-mid) 58%, var(--bg-dark) 100%);
+    z-index: 2;
+    mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  }
+
+  /* Thematic Ambient Glow */
+  .ambient-warm-glow {
+    position: absolute;
+    top: 170px;
+    left: 150px;
+    width: 560px;
+    height: 440px;
+    background: radial-gradient(circle, var(--ambient-glow) 0%, transparent 70%);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  /* ─── LAYER 3: VECTOR BOTTOM RIBBON ─── */
+  .ribbon-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 680px;
+    height: 110px;
+    z-index: 12;
+    pointer-events: none;
+  }
+
+  /* ─── LAYER 4: EDITABLE TYPOGRAPHY & BRANDING ─── */
+  .content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 720px;
+    z-index: 15;
+    pointer-events: none;
+  }
+
+  /* Channel Branding / Header */
+  .header-brand {
+    position: absolute;
+    top: 36px;
+    left: 180px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-icon {
+    width: 76px;
+    height: 56px;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+  }
+
+  .brand-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 2.2px;
+    color: var(--text-white);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  }
+
+  .brand-text .hub {
+    color: var(--gold-main);
+  }
+
+  /* Main Lesson Title: Line 1 (White Oversized) */
+  .title-line-1 {
+    position: absolute;
+    top: 130px;
+    left: 35px;
+    font-family: var(--title-font);
+    font-size: 68px;
+    font-weight: 700;
+    color: var(--text-white);
+    -webkit-text-stroke: 1.5px #ffffff;
+    line-height: 1.0;
+    letter-spacing: -1.2px;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.95), 0 2px 4px rgba(0, 0, 0, 0.95);
+    white-space: nowrap;
+  }
+
+  /* Main Lesson Title: Line 2 (Gold Massive Display Hierarchy) */
+  .title-line-2 {
+    position: absolute;
+    top: 245px;
+    left: 35px;
+    display: inline-block;
+    font-family: var(--title-font);
+    font-size: 110px;
+    font-weight: 700;
+    background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold-main) 45%, var(--gold-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2.5px rgba(255, 183, 3, 0.65);
+    filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.95));
+    line-height: 1.0;
+    letter-spacing: -3.2px;
+    transform: scaleY(1.95);
+    transform-origin: top left;
+    white-space: nowrap;
+  }
+
+  /* Author Row Flanked by Gold Accent Bars */
+  .author-row {
+    position: absolute;
+    top: 430px;
+    left: 35px;
+    width: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .author-accent-bar {
+    height: 2.5px;
+    width: 65px;
+    background: linear-gradient(90deg, transparent, var(--gold-main));
+  }
+
+  .author-accent-bar.right {
+    background: linear-gradient(90deg, var(--gold-main), transparent);
+  }
+
+  .author-name {
+    font-family: var(--author-font);
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--text-white);
+    -webkit-text-stroke: 0.8px #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+    letter-spacing: 0.5px;
+  }
+
+  /* Gold Module · Chapter Pill Badge */
+  .module-chapter-badge {
+    position: absolute;
+    top: 510px;
+    left: 120px;
+    width: 480px;
+    height: 72px;
+    border-radius: 9999px;
+    background: linear-gradient(180deg, #ffe28a 0%, var(--gold-main) 45%, var(--gold-dark) 100%);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.75), inset 0 1px 2px rgba(255, 255, 255, 0.7);
+    border: 2px solid #fff3a8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .badge-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2.6px;
+    color: #020b22;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
+  }
+
+  /* Curved Subject Ribbon Text */
+  .subject-ribbon-text {
+    position: absolute;
+    bottom: 16px;
+    left: 115px;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+  }
+
+  .subject-name {
+    font-family: var(--subject-font);
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--text-white);
+    -webkit-text-stroke: 0.8px #ffffff;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+  }
+</style>
+</head>
+<body>
+
+  <!-- Layer 2: Colored Text Area -->
+  <div class="left-navy-backdrop"></div>
+  <div class="ambient-warm-glow"></div>
+
+  <!-- Layer 1: Clean Lesson-Specific Artwork with Vignette -->
+  <div class="artwork-layer">
+    <img src="file:///C:/Users/HP/OneDrive/Desktop/Projects/PDF%20python/.agents/skills/malayalam-youtube-thumbnail/assets/chapter13_artwork.png" alt="Lesson Artwork" class="artwork-image">
+    <div class="artwork-vignette"></div>
+  </div>
+
+  <!-- Layer 3: Curved Color-Harmonized Subject Ribbon -->
+  <svg class="ribbon-svg" viewBox="0 0 680 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="ribbonFill" x1="0" y1="55" x2="680" y2="55" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#071a36"/>
+        <stop offset="35%" stop-color="#0f3366"/>
+        <stop offset="80%" stop-color="#071a36"/>
+        <stop offset="100%" stop-color="#030a17" stop-opacity="0.95"/>
+      </linearGradient>
+      <linearGradient id="goldEdge" x1="0" y1="0" x2="680" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#ffe885"/>
+        <stop offset="35%" stop-color="#ffd54f"/>
+        <stop offset="75%" stop-color="#ffb300"/>
+        <stop offset="100%" stop-color="#e67e22"/>
+      </linearGradient>
+      <linearGradient id="flourishGold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#fff59d"/>
+        <stop offset="50%" stop-color="#ffca28"/>
+        <stop offset="100%" stop-color="#f57f17"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Base Curved Ribbon -->
+    <path d="M 0 110 L 0 24 C 40 20, 80 14, 150 14 C 260 14, 420 32, 560 25 C 610 22, 650 15, 680 0 L 680 110 Z" fill="url(#ribbonFill)"/>
+
+    <!-- Dual Glowing Gold Edge Trim -->
+    <path d="M 0 24 C 40 20, 80 14, 150 14 C 260 14, 420 32, 560 25 C 610 22, 650 15, 680 0" stroke="url(#goldEdge)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <path d="M 0 26 C 40 22, 80 16, 150 16 C 260 16, 420 34, 560 27 C 610 24, 650 17, 680 2" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+
+    <!-- Kerala Gold Floral Flourish (Bottom Left) -->
+    <g transform="translate(18, 38) scale(0.72)">
+      <path d="M 35 35 C 35 20, 45 10, 50 0 C 55 10, 65 20, 65 35 C 55 45, 45 45, 35 35 Z" fill="url(#flourishGold)"/>
+      <path d="M 20 30 C 15 15, 25 5, 35 0 C 35 15, 30 25, 20 30 Z" fill="url(#flourishGold)"/>
+      <path d="M 80 30 C 85 15, 75 5, 65 0 C 65 15, 70 25, 80 30 Z" fill="url(#flourishGold)"/>
+      <path d="M 10 45 C 5 35, 10 25, 20 25 C 22 35, 18 42, 10 45 Z" fill="url(#flourishGold)"/>
+      <path d="M 90 45 C 95 35, 90 25, 80 25 C 78 35, 82 42, 90 45 Z" fill="url(#flourishGold)"/>
+      <path d="M 0 60 C 15 50, 30 52, 45 60 C 30 65, 15 65, 0 60 Z" fill="url(#flourishGold)"/>
+      <path d="M 100 60 C 85 50, 70 52, 55 60 C 70 65, 85 65, 100 60 Z" fill="url(#flourishGold)"/>
+      <circle cx="50" cy="38" r="5" fill="#fff9c4"/>
+      <circle cx="50" cy="50" r="4" fill="#ffb300"/>
+    </g>
+  </svg>
+
+  <!-- Layer 4: Editable Lettering & Typography -->
+  <div class="content-overlay">
+
+    <!-- ACADEMIC HUB Branding & Gold Book Icon -->
+    <div class="header-brand">
+      <svg class="logo-icon" viewBox="0 0 74 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bookGold" x1="0" y1="0" x2="74" y2="56" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#ffe28a"/>
+            <stop offset="35%" stop-color="#ffb703"/>
+            <stop offset="100%" stop-color="#e67e22"/>
+          </linearGradient>
+        </defs>
+        <!-- Open book cover and spine -->
+        <path d="M 37 16 C 31 11, 20 7, 5 9 L 5 46 C 20 44, 31 48, 37 52 C 43 48, 54 44, 69 46 L 69 9 C 54 7, 43 11, 37 16 Z" fill="url(#bookGold)"/>
+        <!-- Inner page cutouts -->
+        <path d="M 34 20 C 28 16, 18 13, 9 14 L 9 42 C 18 41, 28 44, 34 47 Z" fill="#040d1e"/>
+        <path d="M 40 20 C 46 16, 56 13, 65 14 L 65 42 C 56 41, 46 44, 40 47 Z" fill="#040d1e"/>
+        <!-- Page lines -->
+        <path d="M 21 19 C 26 22, 30 28, 32 35" stroke="url(#bookGold)" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M 53 19 C 48 22, 44 28, 42 35" stroke="url(#bookGold)" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Central bookmark tip -->
+        <polygon points="37,14 34,2 40,2" fill="url(#bookGold)"/>
+      </svg>
+      <div class="brand-text">ACADEMIC <span class="hub">HUB</span></div>
+    </div>
+
+    <!-- Oversized Lesson Title -->
+    <div class="title-line-1">മലയാള ചലച്ചിത്ര</div>
+    <div class="title-line-2">ഗാനങ്ങൾ</div>
+
+    <!-- Author Row Flanked by Gold Accent Bars -->
+    <div class="author-row">
+      <div class="author-accent-bar"></div>
+      <div class="author-name">പി. ഭാസ്കരൻ · വയലാർ · ഒ.എൻ.വി.</div>
+      <div class="author-accent-bar right"></div>
+    </div>
+
+    <!-- Gold MODULE · CHAPTER Badge -->
+    <div class="module-chapter-badge">
+      <div class="badge-label">MODULE 4 • CHAPTER 3</div>
+    </div>
+
+    <!-- Bottom Curved Subject Ribbon Text -->
+    <div class="subject-ribbon-text">
+      <div class="subject-name">മലയാള സാഹിത്യാനുശീലനം</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

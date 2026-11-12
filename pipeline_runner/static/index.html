@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Pipeline Runner Hub</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --primary-glow: rgba(16, 185, 129, 0.25);
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --accent: #6366f1;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+    input, textarea, select, button {
+      font-family: inherit;
+    }
+    /* Scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #374151;
+      border-radius: 4px;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s ease;
+      touch-action: manipulation;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #032b1d;
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+    .btn-primary:active {
+      transform: scale(0.98);
+      background: var(--primary-hover);
+    }
+    .btn-secondary {
+      background: #1f2937;
+      color: #e5e7eb;
+      border: 1px solid #374151;
+    }
+    .btn-secondary:hover {
+      background: #374151;
+    }
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    .btn-danger:hover {
+      background: rgba(239, 68, 68, 0.25);
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px;
+      transition: border-color 0.15s;
+    }
+    .card:hover {
+      border-color: #374151;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: #1f2937;
+      color: #9ca3af;
+      letter-spacing: 0.5px;
+    }
+    /* Modals & Overlays */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-sheet {
+      background: #111827;
+      border: 1px solid #283548;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 560px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      max-height: 90vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+    }
+    @media (max-width: 640px) {
+      .modal-sheet {
+        padding: 18px;
+        max-height: 94vh;
+      }
+    }
+    .input-field {
+      width: 100%;
+      background: #090d16;
+      border: 1px solid #283548;
+      border-radius: 12px;
+      padding: 12px 14px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .input-field:focus {
+      border-color: var(--primary);
+    }
+    .label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #9ca3af;
+      margin-bottom: 6px;
+    }
+    /* Toast */
+    #toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      left: 20px;
+      max-width: 380px;
+      margin-left: auto;
+      background: #10b981;
+      color: #032b1d;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 13px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      z-index: 9999;
+      transform: translateY(-80px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    #toast.toast-error {
+      background: #ef4444;
+      color: #ffffff;
+    }
+    #toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast">
+    <span id="toast-icon">✓</span>
+    <span id="toast-text">Message</span>
+  </div>
+
+  <!-- 1. LOGIN MODAL -->
+  <div id="modal-login" class="overlay">
+    <div class="modal-sheet" style="max-width: 380px; text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 12px;">⚡</div>
+      <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">Pipeline Runner Hub</h2>
+      <p style="font-size: 13px; color: #9ca3af; margin-bottom: 20px;">Enter security PIN to access remote control</p>
+      
+      <form id="form-login" onsubmit="doLogin(event)">
+        <div style="margin-bottom: 16px;">
+          <input type="password" id="input-login-pin" class="input-field mono" style="text-align: center; font-size: 20px; letter-spacing: 4px;" placeholder="Default: 1234" required autofocus>
+        </div>
+        <p id="login-error" style="color: var(--danger); font-size: 12px; margin-bottom: 14px; display: none;"></p>
+        <button type="submit" id="btn-login-submit" class="btn btn-primary" style="width: 100%;">
+          <span>Unlock Dashboard</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. MAIN APP CONTAINER -->
+  <div id="app-root" style="display: flex; flex: 1; flex-direction: column;">
+    <!-- Header -->
+    <header style="background: #111827; border-bottom: 1px solid #1f2937; padding: 12px 18px; position: sticky; top: 0; z-index: 100;">
+      <div style="max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="background: linear-gradient(135deg, #10b981, #06b6d4); width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #022c22; font-size: 18px;">⚡</div>
+          <div>
+            <h1 style="font-size: 16px; font-weight: 800; line-height: 1;">Pipeline Hub</h1>
+            <span style="font-size: 11px; color: #9ca3af;">Remote Web Execution</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <button onclick="copyCurrentUrl()" class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" title="Copy Link">
+            <span>🔗 Share Link</span>
+          </button>
+          <button onclick="openPinModal()" class="btn btn-secondary" style="padding: 6px 10px; font-size: 14px;" title="Change PIN">🔑</button>
+          <button onclick="doLogout()" class="btn btn-secondary" style="padding: 6px 10px; font-size: 14px; color: #f87171;" title="Logout">🚪</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <div style="max-width: 1000px; margin: 0 auto; width: 100%; padding: 18px 18px 8px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+        <div style="display: flex; gap: 8px;">
+          <button id="nav-btn-pipelines" onclick="setTab('pipelines')" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">
+            <span>Pipelines</span>
+            <span id="badge-count" style="background: rgba(0,0,0,0.25); padding: 2px 7px; border-radius: 10px; font-size: 11px;">0</span>
+          </button>
+          <button id="nav-btn-history" onclick="setTab('history')" class="btn btn-secondary" style="padding: 8px 16px; font-size: 13px;">
+            <span>History</span>
+          </button>
+        </div>
+
+        <button onclick="openCreateModal()" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">
+          <span>+ Add Pipeline</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- TAB 1: PIPELINES -->
+    <main id="view-pipelines" style="max-width: 1000px; margin: 0 auto; width: 100%; padding: 12px 18px 60px;">
+      <div id="pipelines-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 16px;">
+        <!-- Rendered via JS -->
+      </div>
+    </main>
+
+    <!-- TAB 2: HISTORY -->
+    <main id="view-history" style="display: none; max-width: 1000px; margin: 0 auto; width: 100%; padding: 12px 18px 60px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <h3 style="font-size: 14px; color: #9ca3af;">Execution Logs</h3>
+        <button onclick="clearHistory()" class="btn btn-secondary" style="font-size: 11px; padding: 4px 10px; color: #f87171;">Clear All</button>
+      </div>
+      <div id="history-container" style="display: flex; flex-direction: column; gap: 10px;">
+        <!-- Rendered via JS -->
+      </div>
+    </main>
+  </div>
+
+  <!-- 3. ADD / EDIT PIPELINE MODAL -->
+  <div id="modal-pipeline" class="overlay">
+    <div class="modal-sheet">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; border-bottom: 1px solid #1f2937; padding-bottom: 12px;">
+        <h3 id="modal-pipe-title" style="font-size: 17px; font-weight: 800;">Add New Pipeline</h3>
+        <button type="button" onclick="closePipelineModal()" style="background: none; border: none; color: #9ca3af; font-size: 20px; cursor: pointer; padding: 4px;">✕</button>
+      </div>
+
+      <!-- Quick Presets -->
+      <div style="margin-bottom: 16px; background: #090d16; padding: 10px 12px; border-radius: 12px; border: 1px solid #1f2937;">
+        <span style="font-size: 11px; font-weight: 700; color: #6b7280; text-transform: uppercase; display: block; margin-bottom: 6px;">Quick Presets:</span>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <button type="button" onclick="applyPreset('notebooklm')" class="btn btn-secondary" style="padding: 4px 10px; font-size: 11px;">⚡ NotebookLM Auto</button>
+          <button type="button" onclick="applyPreset('wrangler')" class="btn btn-secondary" style="padding: 4px 10px; font-size: 11px;">🚀 Cloudflare Deploy</button>
+          <button type="button" onclick="applyPreset('health')" class="btn btn-secondary" style="padding: 4px 10px; font-size: 11px;">🩺 Health Check</button>
+        </div>
+      </div>
+
+      <form id="form-pipeline" onsubmit="savePipeline(event)">
+        <input type="hidden" id="field-pipe-id">
+
+        <div style="margin-bottom: 14px;">
+          <label class="label">Pipeline Name *</label>
+          <input type="text" id="field-pipe-name" class="input-field" placeholder="e.g. Process & Deploy NotebookLM" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
+          <div>
+            <label class="label">Category</label>
+            <input type="text" id="field-pipe-cat" class="input-field" placeholder="General">
+          </div>
+          <div>
+            <label class="label">Working Directory</label>
+            <input type="text" id="field-pipe-cwd" class="input-field mono" value=".">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <label class="label">Description (Optional)</label>
+          <input type="text" id="field-pipe-desc" class="input-field" placeholder="Short description...">
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+            <label class="label" style="margin: 0;">Commands / Steps * (One per line)</label>
+            <span style="font-size: 10px; color: #6b7280;">Executes in sequence</span>
+          </div>
+          <textarea id="field-pipe-steps" class="input-field mono" rows="5" placeholder="python notebooklm_auto_pipeline.py" style="color: #6ee7b7; font-size: 13px;" required></textarea>
+        </div>
+
+        <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+          <input type="checkbox" id="field-pipe-stop" checked style="width: 16px; height: 16px; accent-color: var(--primary);">
+          <label for="field-pipe-stop" style="font-size: 12px; color: #d1d5db; cursor: pointer;">Stop immediately if any step fails</label>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <button type="button" onclick="closePipelineModal()" class="btn btn-secondary">Cancel</button>
+          <button type="submit" id="btn-pipe-save" class="btn btn-primary">
+            <span id="save-btn-text">Save Pipeline</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. LIVE CONSOLE / TERMINAL DRAWER -->
+  <div id="drawer-terminal" style="position: fixed; inset: auto 0 0 0; background: #05080e; border-top: 1px solid #283548; z-index: 2000; box-shadow: 0 -10px 40px rgba(0,0,0,0.8); transform: translateY(100%); transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); height: 75vh; display: flex; flex-direction: column;">
+    <div style="background: #111827; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1f2937;">
+      <div style="display: flex; align-items: center; gap: 10px; overflow: hidden;">
+        <span id="term-status" class="tag" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">RUNNING</span>
+        <span id="term-name" style="font-weight: 700; font-size: 13px; color: #e5e7eb; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 250px;">Pipeline</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button id="btn-term-stop" onclick="stopCurrentRun()" class="btn btn-danger" style="padding: 4px 10px; font-size: 11px;">■ Stop</button>
+        <button onclick="clearTerminalLogs()" class="btn btn-secondary" style="padding: 4px 8px; font-size: 11px;">Clear</button>
+        <button onclick="closeTerminalDrawer()" class="btn btn-secondary" style="padding: 4px 8px; font-size: 11px;">✕ Close</button>
+      </div>
+    </div>
+
+    <!-- Output lines -->
+    <div id="term-body" class="mono" style="flex: 1; padding: 14px; overflow-y: auto; font-size: 12px; line-height: 1.6; color: #d1d5db; -webkit-overflow-scrolling: touch;">
+      <!-- Streamed via JS -->
+    </div>
+
+    <div style="background: #090d16; padding: 6px 14px; border-top: 1px solid #1f2937; display: flex; justify-content: space-between; font-size: 11px; color: #6b7280;">
+      <span id="term-duration">Duration: 0s</span>
+      <label style="display: flex; align-items: center; gap: 4px; cursor: pointer;">
+        <input type="checkbox" id="term-autoscroll" checked style="accent-color: var(--primary);"> Auto-scroll
+      </label>
+    </div>
+  </div>
+
+  <!-- 5. CHANGE PIN MODAL -->
+  <div id="modal-pin" class="overlay">
+    <div class="modal-sheet" style="max-width: 360px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+        <h3 style="font-size: 16px; font-weight: 700;">Change Security PIN</h3>
+        <button onclick="closePinModal()" style="background: none; border: none; color: #9ca3af; font-size: 18px; cursor: pointer;">✕</button>
+      </div>
+      <form onsubmit="changePin(event)">
+        <div style="margin-bottom: 12px;">
+          <label class="label">Current PIN</label>
+          <input type="password" id="input-pin-old" class="input-field" required>
+        </div>
+        <div style="margin-bottom: 18px;">
+          <label class="label">New PIN</label>
+          <input type="password" id="input-pin-new" class="input-field" required>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 8px;">
+          <button type="button" onclick="closePinModal()" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    let token = localStorage.getItem('pipeline_pin') || '';
+    let pipelines = [];
+    let currentSocket = null;
+    let currentRunId = null;
+
+    // Toast
+    function showToast(text, isError = false) {
+      const toast = document.getElementById('toast');
+      const icon = document.getElementById('toast-icon');
+      const msg = document.getElementById('toast-text');
+      
+      icon.textContent = isError ? '✖' : '✓';
+      msg.textContent = text;
+      toast.className = isError ? 'toast-error show' : 'show';
+
+      setTimeout(() => {
+        toast.className = '';
+      }, 3000);
+    }
+
+    // App Initialization
+    window.addEventListener('load', async () => {
+      // Direct instant dashboard load without PIN barrier
+      document.getElementById('modal-login').classList.remove('active');
+      document.getElementById('app-root').style.display = 'flex';
+      loadPipelines();
+    });
+
+    async function testToken(t) {
+      try {
+        const res = await fetch(`/api/pipelines?token=${encodeURIComponent(t)}`, {
+          headers: { 'X-Auth-Token': t }
+        });
+        return res.ok;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function showLoginModal() {
+      document.getElementById('modal-login').classList.add('active');
+      document.getElementById('app-root').style.display = 'none';
+    }
+
+    function showApp() {
+      document.getElementById('modal-login').classList.remove('active');
+      document.getElementById('app-root').style.display = 'flex';
+      loadPipelines();
+    }
+
+    async function doLogin(e) {
+      e.preventDefault();
+      const pin = document.getElementById('input-login-pin').value.trim();
+      const err = document.getElementById('login-error');
+      const btn = document.getElementById('btn-login-submit');
+
+      btn.disabled = true;
+      btn.textContent = 'Verifying...';
+
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ pin })
+        });
+        if (res.ok) {
+          token = pin;
+          localStorage.setItem('pipeline_pin', pin);
+          err.style.display = 'none';
+          showApp();
+        } else {
+          err.textContent = 'Incorrect PIN. Default is 1234';
+          err.style.display = 'block';
+        }
+      } catch (ex) {
+        err.textContent = 'Connection failed. Please retry.';
+        err.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Unlock Dashboard';
+      }
+    }
+
+    function doLogout() {
+      localStorage.removeItem('pipeline_pin');
+      token = '';
+      showLoginModal();
+    }
+
+    function copyCurrentUrl() {
+      navigator.clipboard.writeText(window.location.href);
+      showToast('Dashboard link copied!');
+    }
+
+    // Navigation Tabs
+    function setTab(tab) {
+      const pView = document.getElementById('view-pipelines');
+      const hView = document.getElementById('view-history');
+      const pBtn = document.getElementById('nav-btn-pipelines');
+      const hBtn = document.getElementById('nav-btn-history');
+
+      if (tab === 'pipelines') {
+        pView.style.display = 'block';
+        hView.style.display = 'none';
+        pBtn.className = 'btn btn-primary';
+        hBtn.className = 'btn btn-secondary';
+        loadPipelines();
+      } else {
+        pView.style.display = 'none';
+        hView.style.display = 'block';
+        pBtn.className = 'btn btn-secondary';
+        hBtn.className = 'btn btn-primary';
+        loadHistory();
+      }
+    }
+
+    // Load & Render Pipelines
+    async function loadPipelines() {
+      try {
+        const res = await fetch(`/api/pipelines?token=${encodeURIComponent(token)}`, {
+          headers: { 'X-Auth-Token': token }
+        });
+        if (res.ok) {
+          pipelines = await res.json();
+          document.getElementById('badge-count').textContent = pipelines.length;
+          renderPipelines();
+        }
+      } catch (e) {
+        showToast('Error loading pipelines', true);
+      }
+    }
+
+    function renderPipelines() {
+      const container = document.getElementById('pipelines-container');
+      if (pipelines.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 40px; border: 1px dashed #374151; border-radius: 16px; color: #9ca3af;">
+            <p>No pipelines found. Click <strong>+ Add Pipeline</strong> above to create one.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = pipelines.map(p => {
+        const steps = p.steps || [];
+        const preview = steps.slice(0, 3).map((s, i) => `
+          <div style="color: #9ca3af; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            <span style="color: var(--primary); font-weight: 700;">${i+1}.</span> ${escapeHtml(s)}
+          </div>
+        `).join('');
+
+        return `
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                <span class="tag">${escapeHtml(p.category || 'General')}</span>
+                <div style="display: flex; gap: 4px;">
+                  <button onclick="editPipeline('${p.id}')" class="btn btn-secondary" style="padding: 3px 8px; font-size: 11px;">Edit</button>
+                  <button onclick="deletePipeline('${p.id}')" class="btn btn-danger" style="padding: 3px 8px; font-size: 11px;">✕</button>
+                </div>
+              </div>
+              <h4 style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px;">${escapeHtml(p.name)}</h4>
+              <p style="font-size: 12px; color: #9ca3af; margin-bottom: 12px; line-height: 1.4;">${escapeHtml(p.description || '')}</p>
+              
+              <div class="mono" style="background: #090d16; padding: 8px 10px; border-radius: 10px; border: 1px solid #1f2937; margin-bottom: 14px;">
+                ${preview}
+                ${steps.length > 3 ? `<div style="font-size: 10px; color: #6b7280; font-style: italic; margin-top: 4px;">+${steps.length - 3} more steps</div>` : ''}
+              </div>
+            </div>
+
+            <button onclick="runPipeline('${p.id}')" class="btn btn-primary" style="width: 100%; font-size: 13px; padding: 10px;">
+              <span>▶ Run Pipeline Now</span>
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Modal Add / Edit
+    function openCreateModal() {
+      document.getElementById('form-pipeline').reset();
+      document.getElementById('field-pipe-id').value = '';
+      document.getElementById('field-pipe-cwd').value = '.';
+      document.getElementById('field-pipe-stop').checked = true;
+      document.getElementById('modal-pipe-title').textContent = 'Add New Pipeline';
+      document.getElementById('save-btn-text').textContent = 'Save Pipeline';
+      document.getElementById('modal-pipeline').classList.add('active');
+    }
+
+    function editPipeline(id) {
+      const p = pipelines.find(x => x.id === id);
+      if (!p) return;
+      document.getElementById('field-pipe-id').value = p.id;
+      document.getElementById('field-pipe-name').value = p.name || '';
+      document.getElementById('field-pipe-cat').value = p.category || '';
+      document.getElementById('field-pipe-cwd').value = p.cwd || '.';
+      document.getElementById('field-pipe-desc').value = p.description || '';
+      document.getElementById('field-pipe-steps').value = (p.steps || []).join('\n');
+      document.getElementById('field-pipe-stop').checked = p.stop_on_error !== false;
+      document.getElementById('modal-pipe-title').textContent = 'Edit Pipeline';
+      document.getElementById('save-btn-text').textContent = 'Update Pipeline';
+      document.getElementById('modal-pipeline').classList.add('active');
+    }
+
+    function closePipelineModal() {
+      document.getElementById('modal-pipeline').classList.remove('active');
+    }
+
+    function applyPreset(type) {
+      if (type === 'notebooklm') {
+        document.getElementById('field-pipe-name').value = 'NotebookLM Auto Pipeline Watcher';
+        document.getElementById('field-pipe-cat').value = 'Content Automation';
+        document.getElementById('field-pipe-desc').value = 'Watches Downloads folder, creates video, generates study cards with Gemini, uploads to YouTube, and deploys live.';
+        document.getElementById('field-pipe-cwd').value = '.';
+        document.getElementById('field-pipe-steps').value = 'python notebooklm_auto_pipeline.py';
+      } else if (type === 'wrangler') {
+        document.getElementById('field-pipe-name').value = 'Deploy Cloudflare Worker';
+        document.getElementById('field-pipe-cat').value = 'Deployment';
+        document.getElementById('field-pipe-desc').value = 'Deploys latest worker.js live to Cloudflare';
+        document.getElementById('field-pipe-cwd').value = '.';
+        document.getElementById('field-pipe-steps').value = 'npx wrangler deploy';
+      } else if (type === 'health') {
+        document.getElementById('field-pipe-name').value = 'System Health Check';
+        document.getElementById('field-pipe-cat').value = 'Maintenance';
+        document.getElementById('field-pipe-desc').value = 'Verifies Python, FFmpeg, and API connectivity';
+        document.getElementById('field-pipe-cwd').value = '.';
+        document.getElementById('field-pipe-steps').value = 'python --version\nffmpeg -version';
+      }
+    }
+
+    async function savePipeline(e) {
+      e.preventDefault();
+      const id = document.getElementById('field-pipe-id').value.trim();
+      const name = document.getElementById('field-pipe-name').value.trim();
+      const category = document.getElementById('field-pipe-cat').value.trim() || 'General';
+      const cwd = document.getElementById('field-pipe-cwd').value.trim() || '.';
+      const desc = document.getElementById('field-pipe-desc').value.trim();
+      const stepsRaw = document.getElementById('field-pipe-steps').value;
+      const stopOnError = document.getElementById('field-pipe-stop').checked;
+
+      const steps = stepsRaw.split('\n').map(s => s.trim()).filter(Boolean);
+      if (steps.length === 0) {
+        showToast('Please enter at least one step command', true);
+        return;
+      }
+
+      const saveBtn = document.getElementById('btn-pipe-save');
+      const saveText = document.getElementById('save-btn-text');
+      saveBtn.disabled = true;
+      saveText.textContent = 'Saving...';
+
+      const payload = {
+        name,
+        category,
+        cwd,
+        description: desc,
+        steps,
+        stop_on_error: stopOnError
+      };
+
+      try {
+        const url = id 
+          ? `/api/pipelines/${id}?token=${encodeURIComponent(token)}` 
+          : `/api/pipelines?token=${encodeURIComponent(token)}`;
+        const method = id ? 'PUT' : 'POST';
+
+        const res = await fetch(url, {
+          method,
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Auth-Token': token
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          closePipelineModal();
+          showToast(id ? 'Pipeline updated!' : 'Pipeline created!');
+          loadPipelines();
+        } else {
+          showToast('Failed to save pipeline', true);
+        }
+      } catch (err) {
+        showToast('Network error while saving', true);
+      } finally {
+        saveBtn.disabled = false;
+        saveText.textContent = id ? 'Update Pipeline' : 'Save Pipeline';
+      }
+    }
+
+    async function deletePipeline(id) {
+      if (!confirm('Delete this pipeline?')) return;
+      try {
+        const res = await fetch(`/api/pipelines/${id}?token=${encodeURIComponent(token)}`, {
+          method: 'DELETE',
+          headers: { 'X-Auth-Token': token }
+        });
+        if (res.ok) {
+          showToast('Pipeline deleted');
+          loadPipelines();
+        }
+      } catch (e) {
+        showToast('Failed to delete', true);
+      }
+    }
+
+    // Execution & Live Terminal
+    async function runPipeline(id) {
+      try {
+        const res = await fetch(`/api/pipelines/${id}/run?token=${encodeURIComponent(token)}`, {
+          method: 'POST',
+          headers: { 'X-Auth-Token': token }
+        });
+        if (res.ok) {
+          const data = await res.json();
+          openTerminal(data.run_id, data.pipeline_name);
+        } else {
+          showToast('Failed to start pipeline', true);
+        }
+      } catch (e) {
+        showToast('Network error starting pipeline', true);
+      }
+    }
+
+    let pollInterval = null;
+    let seenLogKeys = new Set();
+
+    function openTerminal(runId, title) {
+      currentRunId = runId;
+      seenLogKeys.clear();
+
+      document.getElementById('term-name').textContent = title;
+      const statusBadge = document.getElementById('term-status');
+      statusBadge.textContent = 'RUNNING';
+      statusBadge.style.background = 'rgba(245, 158, 11, 0.2)';
+      statusBadge.style.color = '#fbbf24';
+
+      document.getElementById('btn-term-stop').style.display = 'inline-flex';
+      document.getElementById('term-body').innerHTML = '';
+      document.getElementById('drawer-terminal').style.transform = 'translateY(0)';
+
+      appendLog({ time: new Date().toLocaleTimeString(), type: 'system', text: `🚀 Launching: ${title}...` });
+
+      if (currentSocket) {
+        try { currentSocket.close(); } catch(e){}
+      }
+      if (pollInterval) {
+        clearInterval(pollInterval);
+      }
+
+      // 1. Try WebSocket
+      try {
+        const proto = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        currentSocket = new WebSocket(`${proto}//${window.location.host}/ws/runs/${runId}`);
+
+        currentSocket.onmessage = (event) => {
+          try {
+            const msg = JSON.parse(event.data);
+            appendLog(msg);
+          } catch(e){}
+        };
+      } catch (e) {}
+
+      // 2. HTTP Polling Fallback (Guaranteed to work everywhere)
+      pollInterval = setInterval(async () => {
+        if (!currentRunId || currentRunId !== runId) {
+          clearInterval(pollInterval);
+          return;
+        }
+        try {
+          const res = await fetch(`/api/runs/${runId}/logs`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data.logs) {
+              for (const l of data.logs) {
+                appendLog(l);
+              }
+            }
+            if (data.status && data.status !== 'RUNNING') {
+              appendLog({ type: 'completed', status: data.status, duration: data.duration });
+              clearInterval(pollInterval);
+            }
+          }
+        } catch (e) {}
+      }, 1000);
+    }
+
+    function appendLog(log) {
+      if (!log) return;
+      const key = `${log.time}_${log.type}_${log.text}`;
+      if (log.type !== 'completed' && seenLogKeys.has(key)) {
+        return; // Avoid duplicate line
+      }
+      if (log.type !== 'completed') {
+        seenLogKeys.add(key);
+      }
+
+      const body = document.getElementById('term-body');
+      const autoscroll = document.getElementById('term-autoscroll').checked;
+
+      if (log.type === 'completed') {
+        const statusBadge = document.getElementById('term-status');
+        document.getElementById('btn-term-stop').style.display = 'none';
+
+        if (log.status === 'SUCCESS') {
+          statusBadge.textContent = 'SUCCESS ✓';
+          statusBadge.style.background = 'rgba(16, 185, 129, 0.2)';
+          statusBadge.style.color = '#34d399';
+        } else if (log.status === 'CANCELLED') {
+          statusBadge.textContent = 'CANCELLED ⏹';
+          statusBadge.style.background = 'rgba(107, 114, 128, 0.3)';
+          statusBadge.style.color = '#9ca3af';
+        } else {
+          statusBadge.textContent = 'FAILED ✖';
+          statusBadge.style.background = 'rgba(239, 68, 68, 0.2)';
+          statusBadge.style.color = '#f87171';
+        }
+        document.getElementById('term-duration').textContent = `Duration: ${log.duration || ''}`;
+        return;
+      }
+
+      let color = '#d1d5db';
+      if (log.type === 'step_header') color = '#38bdf8; font-weight: bold; margin-top: 8px;';
+      if (log.type === 'system') color = '#34d399; font-weight: 600;';
+      if (log.type === 'success') color = '#34d399;';
+      if (log.type === 'error') color = '#f87171; font-weight: bold;';
+      if (log.type === 'stderr') color = '#fbbf24;';
+
+      const div = document.createElement('div');
+      div.style.cssText = `color: ${color}; word-break: break-all;`;
+      div.innerHTML = `<span style="color: #4b5563; margin-right: 6px;">[${log.time || ''}]</span>${escapeHtml(log.text || '')}`;
+      body.appendChild(div);
+
+      if (autoscroll) {
+        body.scrollTop = body.scrollHeight;
+      }
+    }
+
+    // History
+    async function loadHistory() {
+      try {
+        const res = await fetch(`/api/history?token=${encodeURIComponent(token)}`, {
+          headers: { 'X-Auth-Token': token }
+        });
+        if (res.ok) {
+          const list = await res.json();
+          renderHistory(list);
+        }
+      } catch(e){}
+    }
+
+    function renderHistory(list) {
+      const c = document.getElementById('history-container');
+      if (!list || list.length === 0) {
+        c.innerHTML = '<div style="text-align: center; color: #6b7280; padding: 30px;">No execution history yet.</div>';
+        return;
+      }
+
+      c.innerHTML = list.map(item => {
+        let tagColor = '#fbbf24';
+        if (item.status === 'SUCCESS') tagColor = '#34d399';
+        if (item.status === 'FAILED') tagColor = '#f87171';
+
+        return `
+          <div class="card" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                <span class="tag" style="color: ${tagColor};">${item.status}</span>
+                <span style="font-weight: 700; font-size: 13px; color: #fff;">${escapeHtml(item.pipeline_name)}</span>
+              </div>
+              <div style="font-size: 11px; color: #6b7280;">${item.started_at} • ${item.duration || 'running'}</div>
+            </div>
+            <button onclick="openTerminal('${item.id}', '${escapeHtml(item.pipeline_name)}')" class="btn btn-secondary" style="font-size: 11px; padding: 4px 10px;">View Logs</button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function clearHistory() {
+      if (!confirm('Clear all execution history?')) return;
+      try {
+        await fetch(`/api/history?token=${encodeURIComponent(token)}`, {
+          method: 'DELETE',
+          headers: { 'X-Auth-Token': token }
+        });
+        loadHistory();
+        showToast('History cleared');
+      } catch(e){}
+    }
+
+    // Change PIN
+    function openPinModal() {
+      document.getElementById('modal-pin').classList.add('active');
+    }
+    function closePinModal() {
+      document.getElementById('modal-pin').classList.remove('active');
+    }
+    async function changePin(e) {
+      e.preventDefault();
+      const old_pin = document.getElementById('input-pin-old').value.trim();
+      const new_pin = document.getElementById('input-pin-new').value.trim();
+
+      try {
+        const res = await fetch(`/api/auth/change-pin?token=${encodeURIComponent(token)}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Auth-Token': token
+          },
+          body: JSON.stringify({ old_pin, new_pin })
+        });
+        if (res.ok) {
+          token = new_pin;
+          localStorage.setItem('pipeline_pin', new_pin);
+          closePinModal();
+          showToast('PIN successfully changed!');
+        } else {
+          showToast('Current PIN incorrect', true);
+        }
+      } catch(e) {
+        showToast('Failed to update PIN', true);
+      }
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+  </script>
+</body>
+</html>

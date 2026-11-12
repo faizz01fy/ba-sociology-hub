@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<title>മലയാള സാഹിത്യാനുശീലനം - സമ്പൂർണ്ണ പാഠപുസ്തകം | Literary Practice in Malayalam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 22mm 18mm 22mm 18mm;
+  }
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.85;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Cover Page */
+  .cover-page {
+    page-break-after: always;
+    min-height: 250mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20mm 15mm;
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+  }
+
+  .cover-univ-title {
+    font-family: 'Cinzel', serif, 'Noto Sans Malayalam';
+    font-size: 20pt;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+
+  .cover-prog {
+    font-size: 12pt;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  .cover-main-title {
+    font-family: 'Manjari', 'Noto Sans Malayalam', sans-serif;
+    font-size: 26pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+
+  .cover-sub-title {
+    font-size: 13pt;
+    font-weight: 600;
+    color: #0284c7;
+    margin-bottom: 25px;
+  }
+
+  .cover-badge-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background: #e0f2fe;
+    border: 1px solid #7dd3fc;
+    color: #0369a1;
+    border-radius: 20px;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+
+  .cover-logo-img {
+    width: 130px;
+    height: auto;
+    margin: 15px 0;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.08));
+  }
+
+  .cover-dept {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 15px;
+  }
+
+  .cover-author-box {
+    margin-top: 25px;
+    padding: 12px 24px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  }
+
+  .cover-author-label {
+    font-size: 10pt;
+    color: #64748b;
+    margin-bottom: 3px;
+  }
+
+  .cover-author-name {
+    font-size: 13pt;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  /* Table of Contents */
+  .toc-page {
+    page-break-after: always;
+    padding-top: 10mm;
+  }
+
+  .toc-title {
+    font-family: 'Manjari', sans-serif;
+    font-size: 20pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    border-bottom: 2px solid #38bdf8;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .toc-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 15px;
+  }
+
+  .toc-card-header {
+    font-size: 13.5pt;
+    font-weight: 700;
+    color: #0369a1;
+    margin-bottom: 12px;
+    border-bottom: 1px dashed #cbd5e1;
+    padding-bottom: 8px;
+  }
+
+  .toc-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .toc-item-title {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 11pt;
+  }
+
+  .toc-item-author {
+    color: #64748b;
+    font-size: 9.5pt;
+    margin-top: 2px;
+  }
+
+  /* Chapter styling */
+  .chapter-section {
+    page-break-before: always;
+    padding-top: 5mm;
+  }
+
+  .chapter-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #0369a1 100%);
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 22px;
+  }
+
+  .chapter-module-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .chapter-title {
+    font-family: 'Manjari', sans-serif;
+    font-size: 18pt;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+  }
+
+  .chapter-author-sub {
+    font-size: 11pt;
+    color: #bae6fd;
+    font-weight: 500;
+  }
+
+  /* Author Box */
+  .author-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 5px solid #16a34a;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 18px 0 22px 0;
+    font-size: 10.5pt;
+    line-height: 1.8;
+  }
+
+  .author-box-title {
+    font-family: 'Manjari', sans-serif;
+    font-size: 12pt;
+    font-weight: 700;
+    color: #15803d;
+    margin-bottom: 6px;
+  }
+
+  /* Content typography */
+  p {
+    margin: 0 0 14px 0;
+    text-align: justify;
+    text-justify: inter-word;
+    word-break: keep-all;
+    line-height: 1.85;
+  }
+
+  .section-subhead {
+    font-family: 'Manjari', sans-serif;
+    font-size: 14pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 24px 0 10px 0;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 4px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 700;
+    font-size: 9.5pt;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
+
+  /* Interview Q&A styling */
+  .qa-block {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    page-break-inside: avoid;
+  }
+
+  .qa-question {
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .qa-num {
+    background: #0284c7;
+    color: #ffffff;
+    font-size: 9pt;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    height: fit-content;
+    white-space: nowrap;
+  }
+
+  .qa-answer {
+    color: #334155;
+    padding-left: 28px;
+    line-height: 1.85;
+    text-align: justify;
+  }
+
+  /* Questions & Model Answers */
+  .questions-container {
+    background: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-left: 5px solid #d97706;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 24px 0;
+  }
+
+  .questions-header {
+    font-family: 'Manjari', sans-serif;
+    font-size: 13.5pt;
+    font-weight: 700;
+    color: #b45309;
+    margin-bottom: 12px;
+    border-bottom: 1px dashed #fde68a;
+    padding-bottom: 6px;
+  }
+
+  .q-item {
+    margin-bottom: 14px;
+    line-height: 1.8;
+  }
+
+  .q-title {
+    font-weight: 700;
+    color: #78350f;
+  }
+
+  .q-hint {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #fde68a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 6px;
+    font-size: 10pt;
+    color: #451a03;
+  }
+
+  /* Answer key box */
+  .answer-key-box {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-left: 5px solid #475569;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+
+  .answer-key-title {
+    font-family: 'Manjari', sans-serif;
+    font-size: 13pt;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 10px;
+  }
+
+  .answer-item {
+    margin-bottom: 10px;
+    line-height: 1.8;
+  }
+
+  .answer-num {
+    font-weight: 700;
+    color: #1e293b;
+  }
+</style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+
+<div class="cover-page">
+  <div class="cover-header">
+    <div class="cover-univ-title">University of Calicut</div>
+    <div class="cover-prog">Four year Undergraduate Programme (CUFYUGP)</div>
+    <div class="cover-main-title">മലയാള സാഹിത്യാനുശീലനം</div>
+    <div class="cover-sub-title">(Literary Practice in Malayalam)</div>
+    <div class="cover-badge-container">
+      <span class="cover-badge">കാലിക്കറ്റ് സർവ്വകലാശാല · ബി.എ. ഒന്നാം സെമസ്റ്റർ മലയാളം</span>
+      <span class="cover-badge">Ability Enhancement Course (AEC)</span>
+    </div>
+  </div>
+  
+  <div>
+    <img src="data:image/jpeg;base64,/9j/7gAOQWRvYmUAZAAAAAAB/9sAQwAOCgsNCwkODQwNEA8OERYkFxYUFBYsICEaJDQuNzYzLjIyOkFTRjo9Tj4yMkhiSU5WWF1eXThFZm1lWmxTW11Z/9sAQwEPEBAWExYqFxcqWTsyO1lZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZ/8AAEQgDSANIAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A9JooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKQnHWoZLuCP78qj8aLXAnorOl1qwjBzOpP1rPn8V2cedpDVapzeyJckjoaK46XxvEDhIc1Vl8ayN92LFarDVH0J9pE7uivOJPFt033ciq7+KL9ukhFWsJMXtYnp9FeVHxHqR/wCWxpv/AAkGo/8APwaf1OfcXtkerUteT/2/qP8Az8GlHiDUf+fg0fU59w9sj1eivKx4j1If8tjUqeKL9erk0vqcx+1R6fRXnMfi66X7wJq5F41kX70Oal4Woh+1id1RXHxeN4WOHhxWhB4qs5cbiFqHQqLdDU4vqdBRWfFrNjJ0nX86tR3UEn3JFP41m4tboq6JqKSlqRhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFIeBzQAtFU7jUrW3Ul5lyO2awL3xlbxZSFCzetaRpTlsiXJLc6onAyary39rD/rJlH4153eeKL6ckI5VayJrqe4b95IzE10xwbfxMzdZdD0S88U2dvnaQ/wBKxbrxozgiGMrXLR2VzMRshds+1atp4XvbjGRsz6itvY0YfEyOeb2I7jxJqExOJSoqhLqF1N9+VjXV23goqQZpAa17fwtYRgb03Gh16MdkHJN7nm6xyydFZqnTTbuT7sD/AJV6jFpFlD9yEVbSGNBhUUfhWbxnZFKj3Z5bDoF9J/yyI/CrsXhK8fqcfhXpGB6Cis3i59CvZI4FPBNw33pQKnXwQ38UwruKKh4mp3H7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" class="cover-logo-img" alt="University of Calicut Emblem">
+    <div class="cover-dept">Centre for Distance and Online Education (CDOE)</div>
+    <div style="font-size: 11pt; color: #475569;">University of Calicut</div>
+  </div>
+
+  <div class="cover-author-box">
+    <div class="cover-author-label">പഠനക്കുറിപ്പുകൾ തയ്യാറാക്കിയത്</div>
+    <div class="cover-author-name">ഡോ. രാജുക്കുട്ടൻ പി.ജി.</div>
+    <div style="font-size: 10pt; color: #64748b; margin-top: 2px;">സി.ഡി.ഒ.ഇ., കാലിക്കറ്റ് സർവ്വകലാശാല</div>
+  </div>
+</div>
+
+<div class="toc-page">
+  <div class="toc-title">വിഷയസൂചിക (Table of Contents)</div>
+  <div class="toc-card">
+    <div class="toc-card-header">മൊഡ്യൂൾ 1: ഗദ്യവും വിവർത്തനവും (Prose and Translation)</div>
+    
+    <div class="toc-item">
+      <div>
+        <div class="toc-item-title">1. ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ</div>
+        <div class="toc-item-author">കലാമണ്ഡലം ഹൈദരാലി (ആത്മകഥാഗ്രന്ഥം: ഓർമ്മതൻ വിസ്മയം)</div>
+      </div>
+      <div style="font-weight: 700; color: #0284c7;">അധ്യായം 1</div>
+    </div>
+    
+    <div class="toc-item">
+      <div>
+        <div class="toc-item-title">2. സഞ്ചാരസാഹിത്യം: കിഴവനും ക്രാക്കാത്തൂവ്വായും</div>
+        <div class="toc-item-author">എസ്.കെ. പൊറ്റെക്കാട്ട് (കൃതി: ഇന്തോനേഷ്യൻ ഡയറി)</div>
+      </div>
+      <div style="font-weight: 700; color: #0284c7;">അധ്യായം 2</div>
+    </div>
+    
+    <div class="toc-item">
+      <div>
+        <div class="toc-item-title">3. അഭിമുഖം: മാധവിക്കുട്ടിയുമായി അക്ബർ കക്കട്ടിൽ നടത്തിയ അഭിമുഖം</div>
+        <div class="toc-item-author">അക്ബർ കക്കട്ടിൽ (കൃതി: സർഗ്ഗസമീക്ഷ)</div>
+      </div>
+      <div style="font-weight: 700; color: #0284c7;">അധ്യായം 3</div>
+    </div>
+    
+    <div class="toc-item" style="border-bottom: none;">
+      <div>
+        <div class="toc-item-title">4. ചരിത്രപാഠം / ലേഖനം: അർമേനിയയിലെ ഷോഗോമാൻ തെലിരിയനെ അറിയാമോ?</div>
+        <div class="toc-item-author">സജി മാർക്കോസ് (ഡാർക്ക് ടൂറിസം യാത്രാവിവരണം)</div>
+      </div>
+      <div style="font-weight: 700; color: #0284c7;">അധ്യായം 4</div>
+    </div>
+  </div>
+</div>
+
+<div class="chapter-section">
+  <div class="chapter-header">
+    <div class="chapter-module-badge">മൊഡ്യൂൾ 1 · അധ്യായം 1</div>
+    <div class="chapter-title">ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ</div>
+    <div class="chapter-author-sub">കലാമണ്ഡലം ഹൈദരാലി</div>
+  </div>
+
+  <p>ഒരാളുടെ ജീവിതം അയാൾ സ്വയം എഴുതുന്നതാണ് ആത്മകഥ അഥവാ ഓട്ടോബയോഗ്രാഫി. സെൽഫ് എന്നർത്ഥം വരുന്ന ഓട്ടോസ് എന്ന പദവും ജീവിതകഥ എന്നർത്ഥം വരുന്ന ബയോസ് എന്ന പദവും എഴുത്ത് എന്നർത്ഥം വരുന്ന ഗ്രാഫിയ എന്ന പദവും ചേർന്നാണ് ഓട്ടോബയോഗ്രാഫി എന്ന പദത്തിന്റെ ഉദ്ഭവം.</p>
+  
+  <p>ആത്മകഥയിലൂടെ ഒരാൾ സ്വന്തം ജീവിതാനുഭവങ്ങൾ ആത്മനിഷ്ഠവും വൈകാരികവുമായി ആവിഷ്കരിക്കുന്നു. ജീവിതത്തെക്കുറിച്ചുള്ള നിരീക്ഷണങ്ങൾ പല സന്ദർഭങ്ങളെ അവതരിപ്പിച്ചുകൊണ്ട് വ്യക്തമാക്കുകയാണ് ഒട്ടുമിക്ക ആത്മകഥകളും സാധാരണയായി സ്വീകരിക്കുന്ന രീതിശാസ്ത്രം. വർത്തമാനകാലജീവിതത്തിൽനിന്ന് ഭൂതകാലത്തിലേക്കാണ് ആത്മകഥകൾ വികസിക്കുന്നതായി കാണുന്നത്. ആത്മപ്രകാശനത്തിന്റെ സന്തോഷവും സഹജീവികളെ സഹതാപത്തോടെ നോക്കിക്കാണാനുള്ള താല്പര്യവും സ്വന്തം മനഃസാക്ഷിയെ കണ്ടെത്താനുള്ള ശ്രമവും ആത്മകഥാരചനയിൽ കാണാം. ഓർമ്മക്കുറിപ്പുകൾ, ഡയറികൾ, കത്തുകൾ, പുസ്തകങ്ങൾ എന്നിങ്ങനെ പല രൂപത്തിൽ ആത്മകഥകൾ ലഭ്യമാണ്.</p>
+
+  <div class="author-box">
+    <div class="author-box-title">കലാമണ്ഡലം ഹൈദരാലി (1946 – 2006)</div>
+    <p style="margin-bottom: 6px;">1946 ഒക്ടോബർ 6ന് വടക്കാഞ്ചേരിക്കടുത്ത് ഓട്ടുപാറയിൽ ജനനം. പതിനൊന്നാം വയസ്സിൽ കലാമണ്ഡലത്തിൽ കഥകളി സംഗീതവിദ്യാർത്ഥിയായി. പഠനാനന്തരം 1960ൽ അരങ്ങേറ്റം. ഫാക്റ്റിൽ കഥകളി സംഗീത അധ്യാപകനായി 1965ൽ ജോലി നേടി.</p>
+    <p style="margin-bottom: 0;">കലാമണ്ഡലം അവാർഡ്, കഥകളി സംഗീതവും കർണ്ണാടകസംഗീതവും താരതമ്യപ്പെടുത്തിയുള്ള ഗവേഷണത്തിന് കേന്ദ്ര മാനവവിഭവശേഷിവകുപ്പിന്റെ ഫെലോഷിപ്പ്, ഉണ്ണായിവാര്യർ പുരസ്കാരം തുടങ്ങി ഒട്ടേറെ പുരസ്കാരങ്ങൾ ലഭിച്ചു. ജാതിമതഭേദങ്ങൾക്കപ്പുറം കഥകളിസംഗീതത്തെ ജനകീയമാക്കിയ അദ്ദേഹം 2006 ജനുവരി 5ന് അന്തരിച്ചു. <strong>ആത്മകഥകൾ:</strong> ഓർമ്മതൻ വിസ്മയം, മഞ്ജുതരം.</p>
+  </div>
+
+  <p>‘എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ’ എന്ന ആത്മകഥാഭാഗം ‘ഓർമ്മതൻ വിസ്മയം’ എന്ന ആത്മകഥാഗ്രന്ഥത്തിൽ നിന്നുള്ളതാണ്. കലാമണ്ഡലത്തിൽ കഥകളി സംഗീതം പഠിക്കാൻ എത്തിയപ്പോഴുള്ള കയ്പേറിയതും മധുരിക്കുന്നതുമായ അനുഭവങ്ങളിലൂടെ കടന്നുപോകുകയാണ് ഈ ആത്മകഥാ അധ്യായത്തിൽ ഹൈദരാലി ചെയ്യുന്നത്. സ്വാതന്ത്ര്യാനന്തരം ഏകദേശം പത്തുവർഷങ്ങൾക്കപ്പുറമാണ് ഹൈദരാലി കലാമണ്ഡലത്തിലെത്തുന്നത്. അക്കാലത്തെ കേരളീയസമൂഹം നാം ഇന്ന് കാണുന്നതിൽനിന്നും കുറച്ചുകൂടി ജാതിമതഭേദചിന്തകളാൽ സങ്കുചിതമായിരുന്നു. അങ്ങനെയുള്ള കാലത്ത് സധൈര്യം അദ്ദേഹം കലാമണ്ഡലത്തിലേക്ക് കടന്നുവരികയും പഠനം ആരംഭിക്കുകയും ചെയ്തു. കലയോടുള്ള തീവ്രമായ അഭിനിവേശമാണ് അദ്ദേഹത്തിന് കലാകാരനായി അഥവാ സംഗീതജ്ഞനായി മാറാനുള്ള കരുത്ത് നൽകിയത്. തനിക്കുണ്ടായ ദുരനുഭവങ്ങളെല്ലാം സ്വപ്രയത്നം കൊണ്ടും ത്യാഗപൂർണ്ണമായ ജീവിതം കൊണ്ടും അദ്ദേഹം മധുരിക്കുന്ന ഓർമ്മകളാക്കി മാറ്റിയത് നമുക്ക് ഈ ആത്മകഥയിൽ കാണാൻ സാധിക്കും.</p>
+
+  <div class="section-subhead">പാഠം: കഥകളി സംഗീതത്തിന്റെ പരിഷ്കാരങ്ങൾ</div>
+
+  <p>കഥകളി ഒട്ടേറെ പരിഷ്കാരങ്ങൾക്കൊടുവിലാണ് ഇന്ന് ലോകം അംഗീകരിക്കുന്ന ഒരു കലാരൂപമായി രൂപാന്തരം പ്രാപിച്ചത്. അതിനെക്കുറിച്ചല്ല കലാമണ്ഡലം ഹൈദരാലി പറയുന്നത് കഥകളിസംഗീതത്തെക്കുറിച്ചാണ്. മൈക്കില്ലാത്ത പഴയകാലത്ത് കഥകളിഗായകർ എല്ലാവർക്കും കേൾക്കാൻവേണ്ടി വലിയ ശബ്ദത്തിൽ പാടാൻ നിർബന്ധിതരായി. അങ്ങനെ വരുമ്പോൾ ഭാവത്തെ അവർ കൊല്ലുന്ന അവസ്ഥയിലെത്തി. ബഹുമാനിക്കേണ്ടവരുടെ മുമ്പിൽ ദാസന്മാർ സ്വരം താഴ്ത്തി പറയുന്നതിനുപകരം ഉച്ചത്തിൽ പാടിയാൽ എങ്ങനെയിരിക്കും അതായിരുന്നു അക്കാലത്ത് സംഭവിച്ചുകൊണ്ടിരുന്നത്. ഉദാഹരണത്തിന് 'അജിതഹരേ! പരിപാഹിമാം'. ആത്മഗതമായി അവതരിപ്പിക്കേണ്ട മറിമാൻകണ്ണി, വിജനബത രഹസ്യമായി പറയേണ്ട 'കണ്ടിവാർ കുഴലീ' എന്നിവയെല്ലാം യഥാർത്ഥ ഭാവത്തിൽ പാടാൻ കഴിയാറില്ല എന്ന് അദ്ദേഹം പറയുന്നു. ഇന്ന് സ്വരം താഴ്ത്തേണ്ടിടത്ത് താഴ്ത്തിയും പൊക്കിയും ഭാവത്തിനു ചേർന്ന സംഗീതമാണ് ഇന്നാവശ്യം. മുൻപ് പാട്ടായിരുന്നത് ഇന്ന് സംഗീതമായി. ഇതുകൊണ്ട് ജനങ്ങളെ കൂടുതൽ ആകർഷിക്കാൻ സാധിച്ചു എന്നത് മൂടിവെയ്ക്കാൻ പറ്റാത്ത സത്യമാണ്. കഥകളിസംഗീതത്തിന് ഇന്ന് ലഭിച്ചുകൊണ്ടിരിക്കുന്ന നേട്ടങ്ങളുടെ പുറകിൽ ശ്രീ വെങ്കിടകൃഷ്ണഭാഗവതരാണെന്ന് ഹൈദരാലി സാക്ഷ്യപ്പെടുത്തുന്നു.</p>
+
+  <p>വെങ്കിടകൃഷ്ണഭാഗവതരുടെ ശിഷ്യനായ കലാമണ്ഡലം നീലകണ്ഠൻ നമ്പീശനാശാനും വെങ്കിടകൃഷ്ണഭാഗവതരുടെ ശാസ്ത്രീയരീതിതന്നെയാണ് കഥകളിസംഗീതത്തിൽ പിന്തുടർന്നത്. തെക്കുനിന്ന് ചേർത്തല കുട്ടപ്പക്കുറുപ്പും കഥകളി സംഗീതത്തിന് വലിയ സംഭാവനനൽകി ഇവരെല്ലാവരും ശാസ്ത്രീയാടിസ്ഥാനത്തിൽ കഥകളി സംഗീതത്തെ സമീപിച്ചത്. ഇവരാരുംതന്നെ സോപാനസംഗീതത്തിലല്ലായിരുന്നു പാടിവന്നത്. ശിവരാമൻ നായരാശാൻ സോപാനസംഗീതശൈലിയിലേ പാടിയിരുന്നുള്ളൂ. പക്ഷേ കഥകളിസംഗീതം 'സോപാനസംഗീതശൈലിയിലേ പാടാവൂ' എന്നു ശഠിച്ചിരുന്നവർപോലും ശിവരാമൻനായരാശാനെ അംഗീകരിക്കാനും തയ്യാറായിരുന്നു.</p>
+
+  <p>1957 ആഗസ്റ്റ്മാസം കലാമണ്ഡലം നീലകണ്ഠൻ നമ്പീശനാശാന് ദക്ഷിണ കൊടുത്ത് ഹൈദരാലി പഠനം തുടങ്ങി. നീലകണ്ഠൻ നമ്പീശൻ തന്റെ ഗുരുവായ വെങ്കിടകൃഷ്ണഭാഗവതരുടെ ഫോട്ടോയുടെ കീഴിലിരുന്ന് അദ്ദേഹത്തെ നമസ്കരിച്ചുകൊണ്ടാണ് ഹൈദരാലിയുടെ ശിരസ്സിൽ കൈവെച്ച് അനുഗ്രഹിച്ചത്. ഇതെല്ലാം കഴിഞ്ഞപ്പോഴാണ് നീലകണ്ഠൻ നമ്പീശനെയും വെങ്കിടകൃഷ്ണഭാഗവതരെയും ഹൈദരാലി തിരിച്ചറിഞ്ഞത്.</p>
+
+  <p>മതഭ്രാന്തുള്ളവരും തീണ്ടലും തൊടീലും ആഢ്യത്തവും നിറഞ്ഞ പല സ്വഭാവക്കാരുമായ ഹിന്ദുക്കളുടെ ഇടയിൽ ഈ അഹിന്ദുവായ ഞാൻ എല്ലാം സഹിച്ച് എട്ടുവർഷം തള്ളിനീക്കിയത് ബഹുമാന്യഗുരുക്കന്മാരായ നമ്പീശനാശാന്റെയും ശിവരാമൻനായരാശാന്റെയും വാത്സല്യവും പ്രോത്സാഹനവും കൊണ്ടുമാത്രമാണെന്ന് ഹൈദരാലി അനുസ്മരിക്കുന്നുണ്ട്. ആശാന്മാർ പാടിത്തരുന്നത് പെട്ടെന്ന് പഠിക്കാൻ വളരെ ബുദ്ധിമുട്ടി ഒരു മുസ്ലിമായതുകൊണ്ട് സംസ്കൃതം വഴങ്ങാൻ സമയമെടുക്കും എന്നു മനസ്സിലാക്കിയ ഗുരുക്കന്മാർ പിന്നീട് കഥ തെറ്റിച്ചാൽ കടുത്ത ശിക്ഷ നൽകി. ആശാന്റെ തല്ലും കൂട്ടുകാരുടെ കുത്തുവാക്കുകളും കേൾക്കുമ്പോൾ എങ്ങനെയും കലാമണ്ഡലത്തിൽനിന്ന് ചാടിപ്പോകണമെന്നു തോന്നി. പക്ഷേ ഗുരുനാഥന്റെ വാത്സല്യപൂർവ്വമായ പെരുമാറ്റം തന്നെ അവിടെ തന്നെ പിടിച്ചുനിർത്തിയെന്ന് ഹൈദരാലി ഓർക്കുന്നു. നമ്പീശനാശാന് പാടാൻ മൈക്കിന്റെ ആവശ്യം വന്നിരുന്നില്ല എന്നും ശിഷ്യൻ പാടുമ്പോൾ മൈക്ക് അവരുടെ വായ്ക്കുള്ളിൽ ആയിപ്പോകുന്നതുകൊണ്ട് അത് കാണാൻ പോലും പറ്റില്ലെന്ന് ഹൈദരാലി സ്വയം പരിഹസിക്കുന്നു. അരങ്ങേറ്റനാളിൽ ചെവിക്കു കിട്ടിയ അടിയിൽ കേൾവി തകരാറിലായ കാര്യം അദ്ദേഹം ഓർക്കുന്നു. എന്നാൽ അതിൽ വേദനിച്ച ആശാൻ കാപ്പിയും പലഹാരങ്ങളും ഉപദേശങ്ങളും നൽകി തന്നെ സത്കരിച്ച കാര്യവും അദ്ദേഹം എടുത്തുപറയുന്നു.</p>
+
+  <p>നമ്പീശനാശാന്റെ ശിഷ്യവാത്സല്യം എല്ലാവരിലും ഒരുപോലെയായിരുന്നു എന്നതിന് തെളിവാണ് എന്റെ അരങ്ങേറ്റം. 1960ൽ ശങ്കരൻ എമ്പ്രാന്തിരിയും ഞാനും ഒരുമിച്ചാണ് അരങ്ങേറിയത്. ഞാൻ പൊന്നാനിയും എമ്പ്രാന്തിരി ശിങ്കിടിയും. അങ്ങനെ വേണമെന്ന് ആശാന്റെ തീരുമാനമായിരുന്നു. പൂണൂലിന് ആയിരുന്നില്ല എളിയവനായ എനിക്കായിരുന്നു സ്ഥാനം. ഈയൊരൊറ്റ കാര്യം മതി നമ്പീശനാശാന്റെ ശിഷ്യവാത്സല്യം ഒരുപോലെയായിരുന്നു എന്നു മനസ്സിലാക്കാൻ എന്ന് പറഞ്ഞുകൊണ്ട് തന്റെ ഗുരുവിന്റെ സമഭാവത്തെ ഹൈദരാലി എടുത്തു പറയുന്നുണ്ട്.</p>
+
+  <p>നമ്പീശനാശാൻ എല്ലാ വിദ്യാർത്ഥികൾക്കും കൂടി ശ്ലോകത്തിന്റെ മൂന്നാമത്തെ വരി വിസ്തരിച്ചു പാടുന്നതിൽ മത്സരം ഏർപ്പെടുത്തിയപ്പോൾ അതിൽ ഹൈദരാലി പാടുന്നതിനെ പ്രകീർത്തിച്ച് ഇങ്ങനെ വേണം പാടാൻ എന്ന് പറഞ്ഞു പ്രോത്സാഹിപ്പിച്ചതും, അമ്പലങ്ങളിലെ കഥകളിക്ക് കൊണ്ടുപോകാനാകാത്തതിൽ ഉള്ള വിഷമവും അദ്ദേഹം ഹൈദരാലിയോട് പറയുമായിരുന്നു. 'നീയുണ്ടെന്ന് സങ്കല്പിച്ചാണ് ഞാൻ പാടാൻ ആരംഭിക്കുക' എന്ന് പറഞ്ഞത് അദ്ദേഹം ഓർത്തെടുക്കുന്നുണ്ട്. കൂടെ പാടുന്ന സമയങ്ങളിലെല്ലാം പാടാൻ അനുവദിക്കുമെന്നും 'ശിഷ്യന്റെ പാട്ടും കേൾക്കട്ടെ' എന്ന മനോഭാവമാണ് ആശാനുണ്ടാകുകയെന്നും അദ്ദേഹം എഴുതുന്നു. നമ്പീശനാശാൻ ശിഷ്യരെ പഠിപ്പിച്ച് വാർത്തെടുക്കുന്നതിലും വേദികളിൽ പാടി പേരെടുക്കുന്നതിലും ഒരുപോലെ വിജയം വരിച്ചു. അദ്ദേഹത്തിന്റെ മാസ്റ്റർപീസ് രാഗം തോടിയാണ് അതെവിടെ വന്നാലും അദ്ദേഹം വിസ്തരിച്ചു പാടും. നളചരിതം നമ്പീശനാശാന്റെ സംഗീതം കൊണ്ടാണ് ഇത്രയും പ്രസിദ്ധി നേടിയതെന്നാണ് ഹൈദരാലിയുടെ അഭിപ്രായം. 'അവൻ നന്നാകും മിടുക്കനാകും' എന്നൊക്കെ തന്നെക്കുറിച്ച് മറ്റുള്ളവരോട് പറഞ്ഞതായി അവർ ഹൈദരാലിയോട് പറയുന്ന അനുഭവവും അദ്ദേഹം ഈ ആത്മകഥയിൽ എഴുതുന്നുണ്ട്.</p>
+
+  <p>എന്റെ ഗുരുനാഥന്റെ കൃപാകടാക്ഷത്താലൊന്നു മാത്രമാണ് ഞാനീരംഗത്ത് പിടിച്ചുനിൽക്കുന്നത്. അദ്ദേഹം ശ്രീ എം.കെ.കെ. നായർസാറിനോട് പറഞ്ഞ് എനിക്ക് ഫാക്റ്റിൽ കഥകളി വിദ്യാലയത്തിൽ സംഗീതാധ്യാപകനായി ജോലി വാങ്ങിത്തന്നത് എന്നെന്നും ഞാൻ ഓർക്കും എന്ന് ഗുരുകൃപയെപ്പറ്റി ഹൈദരാലി വാചാലനാകുന്നുണ്ട്. ആ ഗുരുവിന്റെ മരണം കഥകളി ലോകത്തിന് കനത്ത നഷ്ടം വരുത്തിവെച്ചെന്നും കഥകളി സംഗീതത്തിന് ഇന്ന് ഒരു നാഥനില്ലാത്ത സ്ഥിതിയാണുള്ളതെന്നും അദ്ദേഹം പരിതപിക്കുന്നു. എട്ടുവർഷം കഥകളി സംഗീതം പഠിച്ച ഞങ്ങൾ പുറത്ത്, പേനയും കടലാസും ഉണ്ടെങ്കിൽ അവർ എഴുതുന്നതാണിന്നത്തെ കഥകളി സംഗീതം. നമ്പീശനാശാൻ 'ഗുരുവായൂരപ്പാ' എന്ന് വിളിച്ച് അണിയറക്കുള്ളിൽ മറഞ്ഞെങ്കിലും കഥകളി ലോകത്ത് വലിയൊരു ശിഷ്യസമ്പത്ത് അദ്ദേഹത്തിനുണ്ട് എന്ന് ഓർമ്മപ്പെടുത്തിയും മറ്റു ഗുരുനാഥന്മാരായ കലാമണ്ഡലം ശിവരാമൻനായരാശാന്റെയും കാവുങ്ങൽ മാധവപ്പണിക്കരാശാന്റെയും സ്മരണ എന്റെ മനസ്സിൽ നിറയുന്നു എന്ന് ഭക്ത്യാദരപൂർവ്വം പറഞ്ഞുകൊണ്ടാണ് അദ്ദേഹം ഈ ആത്മകഥാഭാഗം അവസാനിപ്പിക്കുന്നത്.</p>
+
+  <div class="questions-container">
+    <div class="questions-header">ചോദ്യങ്ങളും ഉത്തരസൂചികകളും</div>
+    <div class="q-item">
+      <div class="q-title">1. കലാമണ്ഡലം ഹൈദരാലി ജനിച്ച വർഷം ഏത്?</div>
+      <div class="q-hint">1946 ഒക്ടോബർ 6.</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">2. 'ഓർമ്മതൻ വിസ്മയം' ആരുടെ ആത്മകഥയാണ്?</div>
+      <div class="q-hint">കലാമണ്ഡലം ഹൈദരാലിയുടെ ആത്മകഥാഗ്രന്ഥമാണ് 'ഓർമ്മതൻ വിസ്മയം'.</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">3. ആത്മകഥയുടെ പ്രത്യേകതകൾ എന്തെല്ലാം?</div>
+      <div class="q-hint"><strong>സൂചന:</strong> ജീവിതകഥ സ്വയം എഴുതുന്നതാണ് ആത്മകഥ. വൈകാരികവും ആത്മനിഷ്ഠവുമായിരിക്കും. വർത്തമാനകാലത്തിൽനിന്ന് ഭൂതകാലത്തിലെ ഓർമ്മകളിലേക്ക് സഞ്ചരിക്കുന്നതാണ് ആത്മകഥ. മറ്റുള്ളവരെ സഹതാപത്തോടെ മനസ്സിലാക്കാൻ ശ്രമിക്കുന്നു. മനസ്സാക്ഷിയെ വിലയിരുത്തുന്നു.</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">4. 'അന്നുതൊട്ട് ഞാനും കലാമണ്ഡലത്തിൽ സംഗീതവിദ്യാർത്ഥിയായി' – സന്ദർഭം വിവരിക്കുക.</div>
+      <div class="q-hint"><strong>സൂചന:</strong> 1957 കലാമണ്ഡലത്തിലെ അധ്യയനദിവസം – കലാമണ്ഡലം നീലകണ്ഠൻ നമ്പീശനാശാന് ഗുരുദക്ഷിണ കൊടുക്കുന്നു – വെങ്കിടകൃഷ്ണഭാഗവതരുടെ ഫോട്ടോയുടെ താഴെയിരുന്നുള്ള പഠനാരംഭം – അവരുടെ ഗുരുശിഷ്യബന്ധം – നമ്പീശൻ ആദ്യഗുരു – ആശാൻ നിഷ്കളങ്കൻ, ലോലമായ മനസ്സുള്ളവൻ.</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">5. നീലകണ്ഠൻ നമ്പീശനാശാന്റെ ഓർമ്മകൾ കലാമണ്ഡലം ഹൈദരാലിയുടെ ആത്മകഥയിലൂടെ കടന്നുപോകുന്നതെങ്ങനെ?</div>
+      <div class="q-hint"><strong>സൂചന:</strong> കലാമണ്ഡലം – അരങ്ങേറ്റം – ഗുരുവിന്റെ ശിക്ഷ – സഹപാഠികളുടെ പരിഹാസം – മുസ്ലിം ബാലൻ എന്ന സമ്മർദ്ദം – 'നീയെന്നിക്ക് മകനെപ്പോലെയാണ് നന്നായി പഠിക്കണം' എന്ന ഉപദേശം – ക്ഷേത്രങ്ങളിൽ പാടാൻ കഴിയാത്തതിലുള്ള നമ്പീശനാശാന്റെ വിഷമം – കഥകളിസംഗീതത്തിന് ഗുരുക്കന്മാർ നൽകിയ സംഭാവന – കലാമണ്ഡലം ഹൈദരാലിയുടെയും ശങ്കരൻ എമ്പ്രാന്തിരിയുടെയും അരങ്ങേറ്റം – അരങ്ങത്തും കളരിയിലും ശോഭിച്ച ഗുരു – 'ഗുരുവായൂരപ്പാ' എന്നു വിളിച്ചുള്ള മരണം – ശിഷ്യസമ്പത്ത് – കഥകളി സംഗീതത്തിന് നൽകിയ സംഭാവനകൾ.</div>
+    </div>
+  </div>
+</div>
+
+<div class="chapter-section">
+  <div class="chapter-header">
+    <div class="chapter-module-badge">മൊഡ്യൂൾ 1 · അധ്യായം 2</div>
+    <div class="chapter-title">സഞ്ചാരസാഹിത്യം: കിഴവനും ക്രാക്കാത്തൂവ്വായും</div>
+    <div class="chapter-author-sub">എസ്.കെ. പൊറ്റെക്കാട്ട്</div>
+  </div>
+
+  <p>പാറേമ്മാക്കൽ തോമ്മാക്കത്തനാർ രചിച്ച വർത്തമാനപുസ്തകം അഥവാ റോമായാത്രയാണ് മലയാളത്തിൽ ആദ്യം എഴുതപ്പെട്ട സഞ്ചാരസാഹിത്യം. 1790നും 1799നും ഇടയിലാണ് ഈ കൃതി എഴുതിയത് എന്നാണ് കരുതപ്പെടുന്നത്. എന്നാൽ ഇത് അച്ചടിക്കുന്നതിന് 1936 വരെ സമയമെടുത്തു. ആദ്യമായി മലയാളത്തിൽ അച്ചടിക്കപ്പെട്ട യാത്രാവിവരണം പരുമലതിരുമേനിയുടെ ഊർശ്ലേം യാത്രാവിവരണമാണ് (1895). കടയാട്ട് ഗോവിന്ദമേനോൻ രചിച്ച കാശിയാത്രാ റിപ്പോർട്ട് (1897), ബാരിസ്റ്റർ ജി.പി. പിള്ള രചിച്ച ലണ്ടനും പാരീസും (1897) തുടങ്ങിയവ ആദ്യകാലത്തെഴുതപ്പെട്ട ശ്രദ്ധേയ യാത്രാവിവരണങ്ങളാണ്. ചരിത്രം, ഭൂമിശാസ്ത്രം, കല, സാഹിത്യം, നരവംശശാസ്ത്രം, രാഷ്ട്രതന്ത്രം, ധനശാസ്ത്രം, പ്രകൃതിശാസ്ത്രം തുടങ്ങി ഏതു വിജ്ഞാനത്തേയും യാത്രാവിവരണവുമായി കൂട്ടിച്ചേർക്കാൻ യാത്രാവിവരണം എഴുതുന്നവർക്ക് കഴിയുന്നുണ്ട്. ഇതിന് മികച്ച ഉദാഹരണമാണ് എസ്.കെ. പൊറ്റെക്കാട്ട്. ഏതു രാജ്യത്തേക്ക് യാത്ര തിരിക്കുമ്പോഴും ആ രാജ്യത്തിന്റെ ഒട്ടുമിക്ക സവിശേഷതകളും മനസ്സിലാക്കുന്ന, അത് തന്റെ എഴുത്തിൽ എടുത്തുകാണിക്കുന്ന എഴുത്തുകാരനായിരുന്നു എസ്.കെ. അദ്ദേഹത്തിന്റെ യാത്രകളുടെയും എഴുത്തിന്റെയും യഥാർത്ഥമൂല്യം മനസ്സിലാക്കണമെങ്കിൽ അദ്ദേഹം യാത്ര ചെയ്തിരുന്ന കാലഘട്ടത്തിലെ അസൗകര്യങ്ങൾ മനസ്സിലാക്കണം. ജീവൻ പണയം വച്ചാണ് പല ഭൂഖണ്ഡങ്ങളിലും അദ്ദേഹം സഞ്ചരിച്ചത്. പല തരത്തിലുള്ള അപകടങ്ങളിൽ നിന്നെല്ലാം അദ്ദേഹം രക്ഷപ്പെട്ടത് യാത്രാവിവരണങ്ങളിൽ അദ്ദേഹം എഴുതുന്നുണ്ട്. സഞ്ചാരസാഹിത്യത്തിൽ എഴുത്തുകാരന്റെ ആത്മവാംശത്തിന് പ്രാധാന്യമുണ്ട്. യാത്രചെയ്ത സ്ഥലങ്ങളുടെയും കണ്ട കാഴ്ചകളുടെയും വർണ്ണനകൾക്കപ്പുറം യാത്രയ്ക്കായി ചെയ്ത ഒരുക്കങ്ങൾ, സഹയാത്രികരോടൊപ്പമുള്ള അനുഭവങ്ങൾ, എഴുത്തുകാരന്റെ കാഴ്ചപ്പാടുകൾ തുടങ്ങിയവകൂടി ഉൾപ്പെടുന്നതാണ് മികച്ച യാത്രാവിവരണങ്ങൾ. ഈ എല്ലാ സവിശേഷതകളും എസ്.കെ. പൊറ്റെക്കാട്ടിന്റെ യാത്രാവിവരണങ്ങളിൽ ഉണ്ട്.</p>
+
+  <div class="author-box">
+    <div class="author-box-title">എസ്.കെ. പൊറ്റെക്കാട്ട് (1913 – 1982)</div>
+    <p style="margin-bottom: 6px;">സഞ്ചാരസാഹിത്യകാരൻ എന്നതിനുപുറമേ നോവലിസ്റ്റ്, ചെറുകഥാകൃത്ത് എന്നീ നിലകളിൽ ശ്രദ്ധേയനാണ് എസ്.കെ. പൊറ്റെക്കാട്ട്. യാത്രകളിലെ വൈവിധ്യം അവതരിപ്പിച്ചുകൊണ്ടും സാഹിത്യമൂല്യം ഉയർത്തിപ്പിടിച്ചുകൊണ്ടും എഴുതപ്പെട്ടതാണ് എസ്.കെ.യുടെ സഞ്ചാരസാഹിത്യകൃതികൾ.</p>
+    <p style="margin-bottom: 6px;"><strong>പ്രധാന യാത്രാവിവരണങ്ങൾ:</strong> കാശ്മീർ (1948), യാത്രാസ്മരണകൾ (1949), കാപ്പിരികളുടെ നാട്ടിൽ (1951), സിംഹഭൂമി (1954), നൈൽ ഡയറി (1954), ഇന്നത്തെ യൂറോപ്പ് (1955), പാതിരാസൂര്യന്റെ നാട്ടിൽ (1956), സോവിയറ്റ് ഡയറി (1957), ഇന്തോനേഷ്യൻ ഡയറി (1955), ബാലിദ്വീപ് (1958), ലണ്ടൻ നോട്ട് ബുക്ക് (1970), ബോഹീമിയൻ ചിത്രങ്ങൾ (1960), കെയ്റോ കത്തുകൾ (1974), ക്ലിയോപാട്രയുടെ നാട്ടിൽ (1977), ഹിമാലയസാമ്രാജ്യത്തിൽ (1967).</p>
+    <p style="margin-bottom: 0;">ഇവയ്ക്കു പുറമേ ഒരു ദേശത്തിന്റെ കഥ, ഒരു തെരുവിന്റെ കഥ തുടങ്ങിയ മലയാളത്തിലെ പ്രശസ്ത നോവലുകളും അദ്ദേഹം രചിച്ചു. സഞ്ചാരസാഹിത്യത്തെ മലയാളത്തിൽ സ്വതന്ത്ര അസ്തിത്വമുള്ള ഒരു സാഹിത്യപ്രസ്ഥാനമാക്കി മാറ്റുന്നതിൽ മുഖ്യ പങ്കു വഹിച്ചു.</p>
+  </div>
+
+  <p>ഇന്തോനേഷ്യൻ ഡയറി എന്ന യാത്രാവിവരണഗ്രന്ഥത്തിലെ ഒരധ്യായമാണ് കിഴവനും ക്രാക്കാത്തൂവ്വായും. 1953ൽ ജാവയിലെ തുറമുഖ പട്ടണമായ സുരബായയിലേക്ക് നടത്തിയ യാത്രയാണ് 1955ൽ ഈ അധ്യായത്തിൽ എസ്.കെ. എഴുതിയിട്ടുള്ളത്. ഇതിനെ മൂന്ന് ഭാഗങ്ങളാക്കി അദ്ദേഹം തിരിക്കുന്നു. കപ്പലിന്റെ ഡക്കിൽ തന്നോടൊപ്പം യാത്ര ചെയ്യുന്നവരെ പരിചയപ്പെടുത്തുന്ന <strong>സ്ത്രീലോകം</strong> എന്ന ഒന്നാം ഭാഗം. രണ്ടാം ഭാഗത്തിൽ ഏണസ്റ്റ് ഹെമിങ്‌വേയുടെ 'കിഴവനും കടലും' എന്ന വിഖ്യാത നോവലിന്റെ വായനാനുഭവം കടൽയാത്രയുമായി ചേർന്ന് ഓർത്തെടുക്കുകയാണ്. <strong>മത്സ്യവേട്ട</strong> എന്ന ഈ ഭാഗത്ത് സാന്തിയാഗോയുടെ മത്സ്യവേട്ടയുടെ പോരാട്ടവും അവതരിപ്പിക്കുന്നു. 'രാക്ഷസന്റെ വിശ്വരൂപം' എന്ന മൂന്നാം ഭാഗത്തിന്റെ അവസാനം യാത്രയ്ക്കിടയിൽ കണ്ട ക്രാക്കാത്തൂവ്വാ എന്ന അഗ്നിപർവ്വതത്തിന്റെ ചരിത്രത്തിലേക്ക് കടന്നുപോകുന്നു. ഇങ്ങനെ മൂന്ന് വ്യത്യസ്ത മേഖലകളെ ചേർത്തു വെച്ചുകൊണ്ടാണ് ഈ അധ്യായം ആദിമധ്യാന്ത പൊരുത്തത്തോടെ മനോഹരമായി അവസാനിപ്പിക്കുന്നത്.</p>
+
+  <div class="section-subhead">1. ഡെക്ക് ജീവിതവും സ്ത്രീലോകവും</div>
+
+  <p>യാത്രയ്ക്കിടയിൽ ഉറക്കമുണർന്ന എസ്.കെ. നോമ്പോ ഫ്ലാസ്കിൽ നിറച്ചുകൊടുത്ത തേയിലത്തണ്ണിയും റുജിത്തോ സംഭാവന ചെയ്ത ടിൻ പാലും പഞ്ചസാരയും ഉപയോഗിച്ച് രാവിലത്തെ ചായ തയ്യാറാക്കി കുടിച്ചു. കുറേ നേരം തന്റെ കട്ടിലിൽ തന്നെ കിടന്നു. പത്തുവാർ ദൂരെ തണ്ണീർക്കുഴലിനടുത്ത് പെണ്ണുങ്ങളുടെ ബഹളം. അവർ കുളിക്കാനും വസ്ത്രം കഴുകാനും കുഴലിന്റെ ചുറ്റും തിക്കിത്തിരക്കുന്നു. കുറച്ചുകഴിഞ്ഞപ്പോൾ നോമ്പോ പ്രാതൽ കൊണ്ടുവരട്ടെയെന്നന്വേഷിച്ചു. എന്താണ് പ്രാതൽ എന്ന് ചോദിക്കാതെ കൊണ്ടുവരാൻ പറഞ്ഞപ്പോൾ നോമ്പോ ഒരലുമിനിയ താലത്തിൽ കുറച്ചു 'നാസി' (വറുത്ത ചോറ്) യും ഒരു വലിയ കഷണം മീനും മുൻപിൽ കൊണ്ടുവന്നു വച്ചു. എസ്.കെ. അത് അങ്ങനെതന്നെ തുഖീമാന്റെ മകനു കൊടുത്തു. തന്റെ ബിസ്കറ്റ് പൊതിയഴിച്ചു കുറേ ബിസ്കറ്റെടുത്തു തിന്നു വിശപ്പടക്കി. റുജിത്തോ പകർന്നുതന്ന കരിഞ്ചായയും കുടിച്ചു. സഹയാത്രികരായ ജാവക്കാരുടെ സഹായമനോഭാവം കൊണ്ട് ഒരതിഥിയെപ്പോലെ അദ്ദേഹം കപ്പൽഡക്കിൽ കഴിഞ്ഞുകൂടി.</p>
+
+  <p>സ്ത്രീലോകം എന്ന തലക്കെട്ടിൽ കപ്പൽ യാത്രികരായ ചില സ്ത്രീകളെക്കുറിച്ച് എസ്.കെ. വിവരിക്കുന്നുണ്ട്. ആ കൂട്ടത്തിൽ സാമാന്യം സുന്ദരിയും നിറം കൊണ്ട് വെള്ളക്കാരിയെന്നും ചകിരിത്തലപ്പുപോലത്തെ തലമുടികൊണ്ട് ഏതോ ദക്ഷിണസമുദ്രദ്വീപുകാരിയെന്നും തോന്നുന്നവളുമായ ഒരു സ്ത്രീ കിടന്നിരുന്നു. ചുവന്ന പട്ടു ഫ്രോക്കു ധരിച്ച് കഴുത്തിലൊരു കൃത്രിമപ്പവിഴമാലയണിഞ്ഞു കാണുന്ന ആ മിശ്രവർഗ്ഗക്കാരിപ്പെണ്ണിനു സദാനേരവും ഉറക്കമാണ്. മണിക്കൂറുകളുടെ ഇടവേളയിൽ അവൾ എഴുന്നേറ്റു കരിഞ്ചായത്തണ്ണികുടിക്കുകയും മേക്കപ്പിടുകയും ചെയ്തതിനു ശേഷം വീണ്ടും കിടന്നുറങ്ങും. അവളുടെ അരികിലായി കുറേ വർണ്ണക്കൊട്ടകളും കെട്ടുകളും ഒരു പുതിയ തോൽപ്പെട്ടിയും മറ്റും കൂട്ടിവെച്ചിട്ടുണ്ട്. അതിന്റെ മൂർദ്ധാവിലായി വർണ്ണക്കടലാസുകൊണ്ടുണ്ടാക്കിയ നല്ല കൗതുകം തോന്നിക്കുന്നൊരു പൂച്ചെണ്ടും കുത്തിനിർത്തിയിരുന്നു. ഈ ഭാണ്ഡക്കെട്ടിനരികിലായി ഒരു കിഴവിത്തള്ള – അവളുടെ ദാസിയോ അമ്മയോ ആയിരിക്കാം. സദാ കാവലിരിക്കുന്നതും കാണാം. കരയാൻ പോകുന്ന മട്ടിലിരിക്കുന്ന ആ മൂത്തമ്മയുടെ തലയിലേക്ക് ആ സാധനങ്ങളെല്ലാം കപ്പലിന്റെ ആട്ടത്തിനിടയിൽ ഉരുണ്ടുപിരണ്ടു വീഴുകയുണ്ടായി. ആ അത്യാഹിതത്തിനു ശേഷം ആ സാധനങ്ങളെല്ലാം താങ്ങിപ്പിടിച്ചുകൊണ്ടാണ് അവർ ഇരുന്നിരുന്നത്.</p>
+
+  <p>തലയണയുറപോലത്തെ ഒരു ചുവന്ന ഫ്രോക്ക് ധരിച്ച മറ്റൊരു തെക്കൻദ്വീപുകാരി സദാ കടലിലേക്കു നോക്കിക്കൊണ്ട് പോർട്ട് ഹോളിനടുത്ത് കൂട്ടിയിട്ട ഗ്യാസ് പൈപ്പുകളുടെ മീതെ സ്ഥലം പിടിച്ചിട്ടുണ്ട്. കാതുകളിൽ വലിയ സ്വർണ്ണവട്ടക്കണ്ണി തൂക്കിയിട്ട ഒരു കോങ്കണ്ണിച്ചി, അവൾ കടലിൽച്ചാടി ആത്മഹത്യ ചെയ്യാൻ തക്കം പാർത്തിരിക്കുകയാണെന്നു തോന്നും. എപ്പോഴും അവളെ ആ ഗ്യാസ് പൈപ്പുകളുടെ മേലേ കാണാം.</p>
+
+  <p>പുരുഷന്മാർ പത്തായപ്പുറത്തിരുന്നു തിക്കിത്തിരക്കി ചീട്ടുകളിക്കുന്നു. അതിനു പിറകിൽ ഒരു ജാവക്കാരി, വെറ്റിലമുറുക്കിച്ചോപ്പിച്ച ചുണ്ടുകൾക്കിടയിലൂടെ സ്വർണ്ണപ്പല്ലുകൾ പുറത്തുകാട്ടി സുഖനിദ്രകൊള്ളുന്നു. വിദ്യുദ്ദീപത്തിന്റെ പ്രകാശത്തിൽ അവളുടെ സ്വർണ്ണം പൂശിയ പല്ലുകൾ മിന്നുന്നതു കാണാൻ നല്ല കൗതുകമുണ്ട്. അവളുടെ അരികെ വെളുത്ത വസ്ത്രങ്ങളും തൊപ്പിയും ധരിച്ച കറുത്തു കുറിയൊരു മനുഷ്യൻ സദാമുഖവും താങ്ങിക്കൊണ്ട് കുത്തിയിരിക്കുന്നു. അയാളൊരു ഭക്തനാണെന്നു തോന്നുന്നു. പത്തായപ്പുറത്ത് നിന്ന് താഴെയിറങ്ങി മുണ്ടുവിരിച്ച് ഇടയ്ക്കിടെ നിസ്കരിക്കുന്നതു കാണാം. ഭാഗവതർ തന്റെ പ്രാണപ്രേയസിയായ തംബുരുവിനെ അരികെ കിടത്തി സുഖമായി ഉറങ്ങുകയാണ്. കപ്പൽ ഒമ്പതുമണിക്ക് ബങ്കാദ്വീപിനെ സമീപിച്ചു ഒന്നരമണിക്കൂർ നേരം ബങ്കാദ്വീപുകണ്ടുകൊണ്ടായിരുന്നു യാത്ര. ഇന്നലെ വായിക്കാനാരംഭിച്ച 'കിഴവനും കടലും' എസ്.കെ. കയ്യിലെടുത്തു തുറന്നു.</p>
+
+  <div class="section-subhead">2. മത്സ്യവേട്ട: സാന്തിയാഗോയുടെ കടൽപ്പോരാട്ടം</div>
+
+  <p>കിഴവനും കടലും വായിച്ചുകൊണ്ടിരിക്കുന്ന എസ്.കെ. സാന്തിയാഗോയോടൊപ്പം സഞ്ചരിച്ചുകൊണ്ടിരിക്കുന്നതുപോലെയാണ് ഈ ഭാഗത്തെ അവതരണം. ചെറിയമീനുകൾ ചൂണ്ടയിൽ കോർത്തിട്ട സാന്തിയാഗോയ്ക്ക് പത്ത് റാത്തൽ വലിപ്പമുള്ള 'തൂണ' മീനെ കിട്ടി അതിനെ അയാൾ തോണിയിലേക്കു വലിച്ചിട്ടു. "മുറിച്ച് ഇരകെട്ടാൻ നല്ലൊരു കോളായി" എന്ന് ചിന്തിക്കുകയും ചെയ്തു. ഒരു നാഴിക ആഴമുള്ള നീരാഴിയുടെ മാറിലൂടെയാണ് കിഴവൻ ഇപ്പോൾ സഞ്ചരിക്കുന്നത്. കടലിലെ മത്സ്യങ്ങളോട് അയാൾ ശാന്തനായി സംസാരിക്കുന്നു. കരയിലെ ബേസ്ബോൾ മത്സരക്കളിയുടെ അവസാനഫലത്തെപ്പറ്റി ഉറക്കെ ചിന്തിച്ചും വിമർശിച്ചും കൊണ്ടാണ് അയാൾ നേരം പോക്കുന്നത്.</p>
+
+  <p>നേരം ഉച്ചയായി. കിഴവന്റെ ചൂണ്ടലിൽ ഒരു കൂറ്റൻ മത്സ്യം കുടുങ്ങിയിട്ടുണ്ട്. കടലിന്റെ അടിത്തട്ടിൽ പരക്കം പായുന്ന മീൻ അറുനൂറ് അടി താഴെയായിരിക്കണം. കിഴവൻ കയർ അയച്ചുകൊടുത്തു 1800 അടി വരെ അങ്ങനെ അയച്ചുകൊടുക്കത്തക്ക നീളം ആ ചൂണ്ടൽക്കയറിനുണ്ട്. അതൊരു രാക്ഷസമത്സ്യമാണെന്നു തോന്നുന്നു. കടലിന്റെ പല ദിക്കുകളിലേക്കും ചൂണ്ടൽക്കയറും വലിച്ചുകൊണ്ട് അതു കുതിക്കുന്നു. അതിനനുസരിച്ച് ആ കൊച്ചുതോണിയും കിഴവനും ഓടിക്കൊണ്ടിരിക്കുന്നു. അത് പൊന്തിവരുന്ന ലക്ഷണമൊന്നും കാണുന്നില്ല.</p>
+
+  <p>മത്സ്യം പെട്ടെന്ന് കടലിനടിയിലേക്കു പോയാലും ചത്തുമുങ്ങിപ്പോയാലും തോണിയും ഒപ്പം പോയതു തന്നെയെന്ന് കിഴവൻ വരാൻ പോകുന്ന ആപത്തിനെക്കുറിച്ചു ചിന്തിച്ചു. ഭാഗ്യവശാൽ അങ്ങനെയൊന്നും ചിന്തിച്ചില്ല. ചൂണ്ടൽക്കയറും കൊണ്ട് പ്രാണനുവേണ്ടി മത്സ്യം അതേ നിരപ്പിൽ മുന്നോട്ടു പായുകയാണ്. സാന്തിയാഗോ കുപ്പിയിൽ നിന്ന് ഒരിറക്കുവെള്ളമെടുത്ത് കുടിച്ച് പാമരത്തിന്റെ കടയ്ക്കൽ ഇരുന്നു.</p>
+
+  <p>ഹവാനതീരം കാഴ്ചയിൽനിന്നു തീരെ മറഞ്ഞു. "സാരമില്ല" കിഴവൻ തനിയെ പറഞ്ഞു "രാത്രിയിൽ പട്ടണപ്രഭാമണ്ഡലം കണ്ട് കര തിരിച്ചറിഞ്ഞു മടങ്ങാം." രാത്രി തീരാറായിട്ടും മത്സ്യത്തിന്റെ ഉഗ്രസവാരിക്കു മാറ്റം സംഭവിച്ചില്ല. ഇപ്പോഴത് കിഴക്കോട്ടാണ് സഞ്ചരിക്കുന്നതെന്ന് കിഴവനു മനസ്സിലായി. ചൂണ്ടൽക്കയർ ചുമലിലെ ചർമ്മത്തെ മുറിപ്പെടുത്തിയപ്പോൾ ഇര സൂക്ഷിച്ച പെട്ടിയിൽനിന്ന് ഒരു ചാക്കിൻ കഷണമെടുത്തു തെരികയുണ്ടാക്കി ചുമലിൽ വച്ചു.</p>
+
+  <p>നക്ഷത്രങ്ങളെ നോക്കിക്കൊണ്ട് കിഴവൻ സമുദ്രത്തിലേക്കു ശഠേയെന്ന് മൂത്രമൊഴിച്ചു. മീൻ പൊടുന്നനേ ഒന്നു പിടഞ്ഞു. ഓർക്കാപ്പുറത്ത് അടികിട്ടിയപോലെ കിഴവൻ തോണിക്കൊമ്പിലേക്കു നെറ്റികുത്തി വീണു. പുരികത്തിന്റെ മീതേ മുറിപറ്റി ചോരയൊലിച്ചു. "ആ പയ്യൻ സഹായത്തിനുണ്ടായിരുന്നെങ്കിൽ!" നേരം പുലർന്നു. മത്സ്യം ഓട്ടം മതിയാക്കുന്ന മട്ടു കാണുന്നില്ല. അതിപ്പോൾ വടക്കോട്ടാണ് ഓടിക്കൊണ്ടിരിക്കുന്നത്. കിഴവൻ കുഴങ്ങി. "എന്റെ പൊൻമീനേ, നിന്നോടെനിക്കു പെരുത്തു സ്നേഹവും ബഹുമാനവുമുണ്ട്. എന്നാലും മോന്തിക്കു മുമ്പേ നിന്നെ ഞാൻ സംഹരിക്കും കേട്ടോ."</p>
+
+  <p>കിഴവന്റെ കൈതറിച്ച് മരകഷണം പോലായപ്പോൾ കയർ ഇടത്തേ ചുമലിലേക്കുമാറ്റി. മർക്കടമുഷ്ടിക്കാരനായ മത്സ്യത്തോട് പൊരുതി നിൽക്കാനുള്ള ബലം കിട്ടുന്നതിന് എന്തെങ്കിലും ഭക്ഷണം കഴിച്ചേ മതിയാവൂ എന്നുതോന്നി. കിഴവൻ പച്ച തൂണാമത്സ്യത്തിന്റെ ഇറച്ചി അരിഞ്ഞെടുത്ത് ചവച്ചുതുടങ്ങി നല്ല സ്വാദുണ്ട്. കുറച്ച് ഉപ്പുകൂടിയുണ്ടായിരുന്നെങ്കിൽ എന്നു ചിന്തിച്ചു. തൂണാമീനിന്റെ മേൽപ്പൊടിയായി കുറച്ചു പച്ച അയലയും അയാൾ ചവച്ചുതിന്നു. അത് ദഹിച്ചു രക്തത്തിൽ കലരുമ്പോൾ കൈയിന്റെ തരിപ്പു മാറുമെന്ന് കിഴവൻ കരുതി.</p>
+
+  <div class="section-subhead">3. രാക്ഷസന്റെ വിശ്വരൂപം: ക്രാക്കാത്തൂവ്വാ അഗ്നിപർവ്വതം</div>
+
+  <p>കടലിന്റെ ഉപരിതലത്തിൽ ഒരു മുഴ പൊങ്ങി വരുന്നു. ചൂണ്ടൽ വിഴുങ്ങിയ മത്സ്യഗന്ധർവ്വൻ സഹികെട്ടു വായുവിലേക്ക് തുള്ളാനുള്ള ഭാവമാണ് അതോ! അത് ഒരു ചാട്ടം ചാടുന്നു. ചെമ്പിന്റെ നിറം കലർന്ന തലയും പുറവും. മാന്തളിരിന്റെ നിറത്തിലുള്ള വരയും കുറിയും. മിന്നുന്ന പള്ള. മരച്ചട്ടുകത്തിന്റെ ആകൃതിയിലുള്ള ഈർച്ചവാൾത്തലയോടു കൂടിയ തേറ്റ. അരിവാളുപോലത്തെ വാലും. മത്സ്യത്തിന്റെ രൂപം കണ്ടു കിഴവൻ വിസ്മയിച്ചുപോയി. ഇതു സ്വപ്നമോ യാഥാർത്ഥ്യമോ. തന്റെ തോണിയേക്കാൾ രണ്ടടി കവിഞ്ഞുനിൽക്കുന്ന പഹയൻ – മാർലിൻ മത്സ്യമാണ്. ആയിരം റാത്തൽ ഉള്ള ഒരു മത്സ്യത്തെ കൂട്ടുകാരുടെ സഹായത്തോടെ പിടിച്ചത് കിഴവൻ ഓർത്തു. ഇത് താൻ കണ്ടതിനേക്കാളും കേട്ടതിനേക്കാളും ഏറ്റവും വലിയ ഒരു സാധാരണ സൃഷ്ടിതന്നെ. മത്സ്യം തന്റെ വിശ്വരൂപം പ്രദർശിപ്പിച്ച് വീണ്ടും വെള്ളത്തിൽ താഴ്ന്നു സവാരി തുടർന്നു.</p>
+
+  <p>മധ്യാഹ്നത്തോടുകൂടി കിഴവന്റെ ഇടതുകയ്യുടെ തരിപ്പ് മാറി. ആഫ്രിക്കൻ കപ്പലിൽ ജോലി ചെയ്തിരുന്ന സമയത്ത് ശക്തനായ ഒരു കാപ്പിരിയുമായി തുടർച്ചയായി പഞ്ചപിടിച്ചു ജയിച്ച ഇരുമ്പു ചട്ടുകം പോലത്തെ ഈ കയ്യാണ് ഒരു മീനുമായി ഏറ്റുമുട്ടി തരിച്ചുപോയത്. രാത്രി വളരെ നാഴിക കഴിഞ്ഞു കിഴവൻ അത്താഴത്തിന് ചെറുചൂണ്ടലിൽ കിട്ടിയ ഡോൾഫിൻ മത്സ്യത്തെ കണ്ടിച്ചുതിന്നു. ഒന്നുരണ്ട് പാറുമീനുകളെയും കിട്ടി. പാറുമീൻ തിന്നാൻ നല്ല രുചിയുണ്ട്. കിഴവൻ അങ്ങനെ ചവച്ചുകൊണ്ടിരിക്കുമ്പോൾ മത്സ്യം വീണ്ടും ചാടി. ഇത്തവണ നല്ല ഉയരത്തിലേക്കാണ് ചാട്ടം – കിഴവൻ കയർ അയച്ചുകൊടുത്തു. "അവൻ അങ്ങനെ ഇനിയും ചാടട്ടെ. ചാടിയാലേ അവന്റെ മാറത്തെ സഞ്ചിയിൽ കാറ്റ് നിറയുകയുള്ളൂ. സഞ്ചിയിൽ കാറ്റു നിറഞ്ഞാൽപ്പിന്നെ അവന് അധികം ആഴത്തിലേക്ക് മുങ്ങാൻ സാധിക്കുകയില്ല."</p>
+
+  <p>മത്സ്യം വട്ടം ചുറ്റുകയാണ്. ആ വൃത്തം ക്രമേണ ചുരുങ്ങിവരുന്നുണ്ട്. പക്ഷേ, കിഴവന്റെ ശക്തി ക്ഷയിച്ചു വരുകയാണ്. അയാളുടെ കണ്ണിൽ കറുത്ത പുള്ളികൾ ഉദിക്കുന്നു. നെറ്റിയിലും കണ്ണിന്റെ മുകളിലുമുള്ള മുറിവുകൾ നീറുന്നു. ബോധക്ഷയമുണ്ടായേക്കുമോ എന്നൊരു ശങ്ക. മത്സ്യം തോണിയുടെ പള്ളയ്ക്കരികെ ഒന്നു പൊന്തിയപ്പോൾ കയർ താഴ്ത്തി കാലുകൊണ്ട് അമർത്തിവിട്ട് കിഴവൻ അവശേഷിച്ച സർവ്വശക്തിയും സംഭരിച്ചു ചാട്ടുളി മാറിനൊപ്പം ഉയരം വരുന്ന നെഞ്ചിലെ ഇരകിന്റെ നേർക്ക് ആഞ്ഞെറിഞ്ഞു. ഉളി മത്സ്യത്തിന്റെ ഇറച്ചിയിൽ ആഞ്ഞുതറച്ചു. അതിന്റെ മാറിലെ രക്തം വെള്ളത്തിൽ കലങ്ങി. അത് ബലവും സൗന്ദര്യവും ജീവശക്തിയും പ്രദർശിപ്പിച്ചുകൊണ്ട് വായുവിൽ തങ്ങിനിന്നു. പിന്നെ വെള്ളത്തിലേക്ക് പതിച്ചു. കടൽവെള്ളം കിഴവന്റെയും തോണിയുടെയും മീതെ തെറിച്ചു.</p>
+
+  <p>"വാടാ മീനേ, വാ" കിഴവൻ തോണി മീനിന്റെ അരികിലേക്കണച്ച്, അതിന്റെ തലയിലൂടെയും വാലിലൂടെയും കയർ ചുറ്റിവരിഞ്ഞു കെട്ടി, തൊണ്ടയിലൂടെയും കയർ കോർത്തു തിരുകി. ആ ജഡത്തെ തോണിയോടിറച്ചു കെട്ടി. കാറ്റുപായ കെട്ടി ശരിപ്പെടുത്തി പുറപ്പെട്ടു. 1500 റാത്തലിൽ കുറയാതെ കാണും. കിഴവന് തവുക്കയുടെ ആവശ്യമില്ലായിരുന്നു. പായയുടെ ചായ്വും കാറ്റിന്റെ സ്പർശവും കൊണ്ട് മാർഗ്ഗം മനസ്സിലാക്കി യാത്രയാരംഭിച്ചു. കിഴവൻ കടൽച്ചണ്ടി ഒരു പിടിവാരി തോണിയിലിട്ടു. ആ പായൽപ്പാടയിൽ ചെറിയ ചെമ്മീനുകളുണ്ടായിരുന്നു. ചെമ്മീന്റെ തല നുള്ളിക്കളഞ്ഞ് തോടും വാലും കളയാതെ വായിലിട്ട് ചവച്ചു തുടങ്ങി. കുപ്പിയിൽ രണ്ടിറക്ക് വെള്ളം ബാക്കിയുള്ളതും കുടിച്ചു.</p>
+
+  <p>നോവലിലെ സാന്തിയാഗോയുടെ പോരാട്ടം ഇപ്രകാരം വർണ്ണിച്ചശേഷം കപ്പൽ ഡക്കിൽനിന്ന് നോക്കുമ്പോൾ വിദൂരതയിൽ ഒരു ദ്വീപ് അദ്ദേഹത്തിന്റെ കണ്ണിൽപ്പെട്ടു. നോമ്പോ അത് ക്രാക്കാത്തൂവ്വാ ആണെന്ന് പരിചയപ്പെടുത്തി. തുടർന്ന് ലോകത്തിലെ ഏറ്റവും ഭയങ്കരമായ ആ അഗ്നിപർവ്വതത്തേയും അതിന്റെ ചരിത്രത്തേയും എസ്.കെ. വായനക്കാർക്കു മുമ്പിൽ അവതരിപ്പിക്കുന്നു. 1883ൽ ക്രാക്കാത്തൂവ്വായുടെ വിസ്ഫോടനത്തിൽ 3600റോളം പേർ മരിക്കുകയും 3000 മൈൽ ദൂരം വരെ അതിന്റെ വിസ്ഫോടന ശബ്ദം മുഴങ്ങുകയും ചെയ്തു. ഈ വിസ്ഫോടനത്തിന്റെ ആഘാതവും നാശനഷ്ടങ്ങളും എസ്.കെ. വിവരിക്കുന്നുണ്ട്. ഇപ്രകാരം താൻ കണ്ട സ്ഥലങ്ങളും അനുഭൂതികളും അറിവുകളുമെല്ലാം എസ്.കെ. തന്റെ കൃതികളിൽ ഉൾപ്പെടുത്തുന്നു. അതുകൊണ്ടു തന്നെ എസ്.കെ.യുടെ ഏതു യാത്രാവിവരണവും ഏതു രാജ്യത്തെക്കുറിച്ചുള്ളതായാലും ആ രാജ്യത്തെ സാമൂഹിക സാംസ്കാരിക കാര്യങ്ങളെക്കുറിച്ച് അറിവു പകരുന്നവയാണ്.</p>
+
+  <div class="questions-container">
+    <div class="questions-header">മാതൃകാ ചോദ്യങ്ങൾ</div>
+    
+    <div style="font-weight: 700; color: #92400e; margin-bottom: 8px;">ലഘു ചോദ്യങ്ങൾ</div>
+    <div class="q-item">
+      <div class="q-title">1. എസ്.കെ. ഒന്നാം ക്ലാസ് ടിക്കറ്റ് ഉപേക്ഷിച്ച് ഡക്ക് യാത്ര തെരഞ്ഞെടുക്കാനുണ്ടായ കാരണമെന്ത്?</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">2. എസ്.കെ.യുടെ യാത്രാവേളയിൽ അദ്ദേഹം വായിച്ചുകൊണ്ടിരുന്ന പുസ്തകമേത്? സവിശേഷതയെന്ത്?</div>
+    </div>
+
+    <div style="font-weight: 700; color: #92400e; margin: 14px 0 8px 0;">ഖണ്ഡികാ ചോദ്യങ്ങൾ</div>
+    <div class="q-item">
+      <div class="q-title">3. കപ്പൽ ഡക്കിലെ എസ്.കെ. കണ്ട ലോകത്തെ വിവരിക്കുക.</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">4. ക്രാക്കാത്തൂവ്വായുടേതായി എസ്.കെ. പറഞ്ഞുവെക്കുന്ന കാര്യങ്ങൾ എന്തെല്ലാം?</div>
+    </div>
+
+    <div style="font-weight: 700; color: #92400e; margin: 14px 0 8px 0;">ഉപന്യാസ ചോദ്യങ്ങൾ</div>
+    <div class="q-item">
+      <div class="q-title">5. കിഴവനും കടലും എന്ന കൃതിയെ അതിലെ സാന്തിയാഗോ എന്ന വൃദ്ധനെ എങ്ങനെയാണ് എസ്.കെ. ചിത്രീകരിക്കുന്നത്?</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">6. ജാവയിലേക്കുള്ള എസ്.കെ.യുടെ കപ്പൽ യാത്രാനുഭവങ്ങൾ ചുരുക്കി വിവരിക്കുക.</div>
+    </div>
+  </div>
+
+  <div class="answer-key-box">
+    <div class="answer-key-title">ഉത്തര സൂചിക</div>
+    <div class="answer-item"><span class="answer-num">1.</span> കപ്പൽ യാത്രകളിലെ അപ്പർ ക്ലാസുകളിലെ കൃത്രിമവും മുഷിപ്പനുമായ സമ്പ്രദായങ്ങളോടുള്ള മടുപ്പ് – പുതിയ അനുഭവങ്ങൾക്ക് വേണ്ടി – സാധാരണക്കാർക്കൊപ്പം, അവരുടെ ജീവിതാനുഭവങ്ങൾ മനസ്സിലാക്കാൻ.</div>
+    <div class="answer-item"><span class="answer-num">2.</span> കിഴവനും കടലും – സാന്തിയാഗോ എന്ന വൃദ്ധന്റെ ജീവിതപോരാട്ടങ്ങൾ – കടൽ – മീൻപിടുത്തം – ഹെമിങ്‌വേയുടെ നോവൽ.</div>
+    <div class="answer-item"><span class="answer-num">3.</span> 1953 ഫെബ്രുവരിയിൽ ജാവയിലേക്കുനടത്തിയ യാത്ര – ഇന്തോനേഷ്യൻ ഡയറി – ഡക്കിലെ സഹയാത്രികരായ സ്ത്രീകൾ – പുരുഷന്മാർ – അവരുടെ സ്നേഹം, സഹായ മനോഭാവം – കപ്പൽ വേലക്കാരനായ നോമ്പോ – സുമാത്രക്കാരൻ തുഖീമാൻ – ഇന്തോനേഷ്യൻ പട്ടാളക്കാരനായ റുജിത്തോ – ചുവന്ന പട്ടുടുപ്പും കഴുത്തിൽ കൃത്രിമ പവിഴമാലയുമണിഞ്ഞ് സദാ ഉറങ്ങുന്ന മിശ്രവർഗ്ഗക്കാരിയായ സുന്ദരി – അവളുടെ അമ്മയോ ദാസിയോ ആയ കിഴവി – സദാ കടലിലേക്ക് നോക്കിയിരിക്കുന്ന കോങ്കണ്ണുള്ള മറ്റൊരു സ്ത്രീ.</div>
+    <div class="answer-item"><span class="answer-num">4.</span> ലോകത്തിലെ തന്നെ ഭയങ്കരമായ അഗ്നിപർവ്വതം – 1883ൽ അതിന്റെ വിസ്ഫോടനം – 3600 പേർ മരിക്കുകയുണ്ടായി – 3000 മൈൽ വരെ അതിന്റെ വിസ്ഫോടന ശബ്ദം മുഴങ്ങി – അപകടത്തിന്റെ ആഘാതം – നാശം – ഇവയെക്കുറിച്ച് എസ്.കെ. വിവരിക്കുന്നു.</div>
+    <div class="answer-item"><span class="answer-num">5.</span> നോബൽ സമ്മാന ജേതാവായ ഹെമിങ്‌വേയുടെ പ്രശസ്ത രചന – സാന്തിയാഗോ എന്ന വൃദ്ധന്റെ ജീവിതം – വീക്ഷണം – പോരാട്ടം – നിരന്തരമായ അധ്വാനം – ധൈര്യം – തന്റെ ലക്ഷ്യത്തിനുവേണ്ടി ക്ഷമയോടെ കാത്തിരിക്കാനുള്ള മനോഭാവം – തന്റെ കടൽയാത്രയുമായി നോവലിനെ ബന്ധിപ്പിക്കുന്ന എസ്.കെ. സാന്തിയാഗോയോടൊപ്പം സഞ്ചരിക്കുന്നു എന്ന പ്രതീതി പാഠഭാഗം ഉണ്ടാക്കുന്നു.</div>
+    <div class="answer-item"><span class="answer-num">6.</span> അപ്പർ ക്ലാസ് ഒഴിവാക്കി ഡക്കിൽ സഞ്ചരിക്കുന്നു – ജാവക്കാരായ യാത്രികരെ വിവരിക്കുന്നു – സ്ത്രീ ലോകം എന്ന തലക്കെട്ടിൽ സ്ത്രീ യാത്രികരെ വർണ്ണിക്കുന്നു – കിഴവനും കടലും നോവൽ വായിക്കുന്നു – സാന്തിയാഗോ എന്ന വൃദ്ധന്റെ ജീവിതം നോക്കി തന്റെ യാത്രാവിവരണത്തിൽ വിവരിക്കുന്നു – വൃദ്ധന്റെ ജീവിതം – പോരാട്ടം – നിരന്തരമായ അധ്വാനം – ധൈര്യം – ക്രാക്കാത്തൂവ്വാ എന്ന അഗ്നിപർവ്വതം – ചരിത്രം.</div>
+  </div>
+</div>
+
+<div class="chapter-section">
+  <div class="chapter-header">
+    <div class="chapter-module-badge">മൊഡ്യൂൾ 1 · അധ്യായം 3</div>
+    <div class="chapter-title">അഭിമുഖം: മാധവിക്കുട്ടിയുമായി അക്ബർ കക്കട്ടിൽ നടത്തിയ അഭിമുഖം</div>
+    <div class="chapter-author-sub">അക്ബർ കക്കട്ടിൽ</div>
+  </div>
+
+  <div class="author-box">
+    <div class="author-box-title">അക്ബർ കക്കട്ടിൽ (1954 – 2016)</div>
+    <p style="margin-bottom: 6px;">1954ൽ ജനിച്ച അക്ബർ കക്കട്ടിൽ ചെറുകഥാകൃത്തും നോവലിസ്റ്റുമായിരുന്നു. അധ്യാപകനായിരുന്ന അദ്ദേഹം കാരൂർ നീലകണ്ഠപിള്ളയ്ക്ക് ശേഷം അധ്യാപകസമൂഹത്തെക്കുറിച്ച് ഏറ്റവും കൂടുതലെഴുതിയ സാഹിത്യകാരനാണ്. ‘പാഠം 30’ എന്ന പേരിൽ അക്ബർ എഴുതിയ സർവ്വീസ് കഥകൾ മലയാളത്തിലെ ആദ്യത്തെ അധ്യാപക സർവ്വീസ് സ്റ്റോറിയായി കണക്കാക്കപ്പെടുന്നു. അക്ബറിന്റെ കഥകളിലെയും നോവലുകളിലെയും ദേശം മലബാറാണ്. ആധുനികതയ്ക്ക് ശേഷം മലയാളത്തിൽ വേരുറച്ച പുതുഭാവുകത്വം പങ്കിട്ട കഥകളായിരുന്നു അദ്ദേഹത്തിന്റേത്. നർമ്മമാണ് അദ്ദേഹത്തിന്റെ കഥകളുടെ പ്രധാന സവിശേഷതയായി വിലയിരുത്തപ്പെട്ടിട്ടുള്ളത്.</p>
+    <p style="margin-bottom: 6px;"><strong>പ്രധാന കൃതികൾ:</strong> ആറാംകാലം, മൈലാഞ്ചിക്കാറ്റ്, ശമീലഫഹ്മി, അധ്യാപകകഥകൾ, നാദാപുരം, 2011ലെ ആൺകുട്ടി, ഇപ്പോൾ ഉണ്ടാകുന്നത്, പതിനൊന്ന് നോവലുകൾ, മൃത്യുയോഗം, സ്ത്രൈണം, വടക്കുനിന്നൊരു കുടുംബവൃത്താന്തം, സ്കൂൾ ഡയറി, സർഗ്ഗസമീക്ഷ, വരൂ അടൂരിലേക്ക് പോകാം.</p>
+    <p style="margin-bottom: 0;"><strong>പുരസ്കാരങ്ങൾ:</strong> അങ്കണം സാഹിത്യ അവാർഡ്, എസ്.കെ. പൊറ്റെക്കാട്ട് അവാർഡ്, ജോസഫ് മുണ്ടശ്ശേരി അവാർഡ്, കേരള സാഹിത്യ അക്കാദമി അവാർഡ്, അബുദാബി ശക്തി അവാർഡ്. മലയാള സാഹിത്യത്തിലെ ഇരുപത്തിയഞ്ച് പ്രതിഭകളുടെ കൃതികളിലൂടെയും വ്യക്തിത്വങ്ങളിലൂടെയും സഞ്ചരിക്കുന്ന അഭിമുഖങ്ങളുടെ സമാഹാരമാണ് <em>സർഗ്ഗസമീക്ഷ</em>. അക്ബർ കക്കട്ടിൽ നടത്തിയ ഈ അഭിമുഖങ്ങളിലൊന്നാണ് ഈ പാഠഭാഗം.</p>
+  </div>
+
+  <p>അക്ബർ കക്കട്ടിലിന്റെ അഭിമുഖത്തിന്റെ ആദ്യഭാഗം മാധവിക്കുട്ടിയുടെ കൃതികളുടെ നിരൂപണമാണ്. രണ്ടാം ഭാഗം മാധവിക്കുട്ടിയുടെ എഴുത്തുജീവിതവും വ്യക്തിജീവിതവുമാണ്. മൂന്നാം ഭാഗം കക്കട്ടിലിന്റെ ചോദ്യങ്ങൾക്കുള്ള മാധവിക്കുട്ടിയുടെ ഉത്തരങ്ങളാണ്. ഈ ഉത്തരങ്ങളിൽ എഴുത്ത്, വ്യക്തി, ലോകവീക്ഷണം എന്നിവ വ്യക്തമായി തെളിഞ്ഞുകാണുന്നു.</p>
+
+  <div class="section-subhead">ഭാഗം – 1: മാധവിക്കുട്ടിയുടെ കഥാലോകം</div>
+
+  <p>കമലദാസ് എന്ന പേരിൽ അറിയപ്പെടുന്ന ഇംഗ്ലീഷ് എഴുത്തുകാരിയാണ് മാധവിക്കുട്ടി. ഇംഗ്ലീഷ് കവിതകൾക്ക് ഒട്ടേറെ പുരസ്കാരങ്ങളും അവർക്ക് ലഭിച്ചു. മനുഷ്യ മനസ്സിന്റെ ലോലതലങ്ങൾ അനാവൃതമാക്കുന്ന ചെറുകഥകളാണ് മാധവിക്കുട്ടിയുടേത്. സ്വന്തം ഹൃദയത്തിന്റെ ആഴങ്ങളിൽ അസ്വാസ്ഥ്യം പടർത്തുന്ന അനുഭവങ്ങൾ പകർത്തിയതാണ് മാധവിക്കുട്ടിയുടെ രചനകളെന്നു കാണാം. സാമുദായിക ജീവിതത്തിലെ അനീതികളും പൊള്ളത്തരങ്ങളും മനസ്സിലാക്കി അതിനെതിരെ ഗർജ്ജിക്കുന്ന പ്രകൃതം അവർക്ക് എപ്പോഴുമുണ്ടായിരുന്നു. തന്റെ മനസ്സിന് ഇത്തരത്തിലേറ്റ മുറിവുകളാണ് കൃതികളിലൂടെ നാം കാണുന്നത്. സത്യങ്ങളെന്നപോലെ അപ്രിയസത്യങ്ങളും ആവിഷ്കരിക്കാൻ ധൈര്യം കാണിക്കുന്നതിന്റെ പേരിൽ എപ്പോഴും അവർ വിവാദങ്ങളിൽ ചെന്ന് ചാടിയിട്ടുണ്ട്. സ്വാഭാവികമായി ഏറെ തെറ്റിദ്ധരിക്കപ്പെട്ട വ്യക്തിത്വത്തിന് ഉടമകൂടിയാണ് മാധവിക്കുട്ടി.</p>
+
+  <p>മുൻവിധികളില്ലാതെ താനേ വാർന്നുവീഴുന്നുവെന്ന പ്രതീതി ജനിപ്പിക്കും വിധത്തിലുള്ളതാണ് മാധവിക്കുട്ടിയുടെ രചനാലോകം. സത്യസന്ധതയാണ് അതിന്റെ മുഖമുദ്ര. അസാധാരണമായ രചനാവിഷയങ്ങൾ, രചനയിൽ പാലിക്കുന്ന മിതത്വം, നിസ്സംഗത നിറഞ്ഞ കഥപറച്ചിൽ എന്നിവ അവരുടെ കഥകൾക്ക് കൂടുതൽ ശക്തി പകരുന്നു. പ്രത്യേകമായ മാനസികലോകം വായനക്കാരിൽ സൃഷ്ടിക്കാൻ ഓരോ കഥകൾക്കും സാധിച്ചു എന്നത് ഒരു യാഥാർത്ഥ്യമാണ്. സംഭവപ്രധാനമല്ലാത്ത, ഭാവപ്രധാനമാകുന്ന കഥകൾ വായനക്കാരനെ അസ്വാസ്ഥ്യത്തിലേക്ക് തള്ളിവിടുന്നതും മാധവിക്കുട്ടിയുടെ രചനാകൗശലമാണ്.</p>
+
+  <p>മാധവിക്കുട്ടിയുടെ കഥാപ്രപഞ്ചത്തിൽ നിന്ന് എന്തൊക്കെയാണ് നമുക്ക് കിട്ടുന്നത്. 'രാജാവിനു കുപ്പായമില്ല' എന്ന് വിളിച്ചുപറഞ്ഞ ബാലമനസ്സിന്റെ നിഷ്കളങ്കത ആ എഴുത്തിൽ കാണാം. പരിഷ്കൃതസമൂഹത്തിലെ നാഗരിക വനിതകളുടെ പൊട്ടിത്തെറിച്ച ജീവിതത്തിന്റെ ചിത്രങ്ങൾ അവിടെയുണ്ട്. ഭിന്നാഭിപ്രായങ്ങളുള്ള മനുഷ്യരുടെ ദൗർബല്യങ്ങളുണ്ട്. സാമൂഹിക ജീവിതത്തിന്റെ പരസ്പരം പൊരുത്തപ്പെടാത്ത ഭിന്നമുഖങ്ങളുണ്ട്. മനുഷ്യബന്ധങ്ങളുടെ ശീതളിമയും ഊഷ്മളതയുമുണ്ട്. ഗൃഹാതുരത്വത്തിന്റെ സ്നേഹസ്മൃതികളുണ്ട്. രതിയുടെ ഇക്കിളിയും തീഷ്ണഗന്ധവുമുണ്ട്. അയുക്തികങ്ങളായ അന്തരംഗചലനങ്ങളുണ്ട്. ഇതിലോരോന്നും വായിച്ചുകഴിയുമ്പോൾ ഒരു കാര്യം ഉറപ്പാകുന്നു. ഇതിൽ കണ്ട മനുഷ്യഹൃദയം അപൂർവ്വ സാഹചര്യങ്ങളിൽ അകപ്പെട്ടതാണ്.</p>
+
+  <p>ഒരു കഥ അവതരിപ്പിക്കാൻ മാധവിക്കുട്ടിക്ക് ഒരുപാട് വാക്യങ്ങളോ വാക്കുകളോ വേണ്ട. 'രക്താർബുദം' എന്ന ചെറിയ കഥ ശീർഷകം കൊണ്ടുതന്നെ ഒരാഘാതമേല്പിക്കുന്നുണ്ട്. അമ്മയുടെ നിർബന്ധം കൊണ്ട് മകളെ ബോർഡിംഗിലാക്കി. പക്ഷേ അവൾക്ക് അസുഖമാണെന്നു മനസ്സിലായതോടെ അമ്മ മകളെ കൊണ്ടുവരികയും തിരിച്ചയക്കാതിരിക്കുകയുമാണ് ഇക്കഥയിൽ. പല അർത്ഥമാനങ്ങളുമുണ്ട് ഈ കൊച്ചുകഥയ്ക്ക്. പരിഷ്കൃതലോകത്തിന്റെ പൊങ്ങച്ചം ഒരു ഭാഗത്ത്. രോഗത്തിൽ അലിഞ്ഞുപോകുന്ന മനസ്സിന്റെ ആർദ്രത മറുഭാഗത്ത്. അമ്മയും അച്ഛനും തമ്മിൽ അമ്മയും മകളും തമ്മിൽ അച്ഛനും മകളും തമ്മിൽ ഒക്കെയുള്ള ബന്ധങ്ങളുടെ കൊളുത്തുകൾ ഇതിനിടയിൽ നാം തിരിച്ചറിയുന്നു. ഇതെല്ലാം കുറഞ്ഞ വാക്കുകളിലാണ് മാധവിക്കുട്ടി അവതരിപ്പിക്കുന്നത്. ഈ ആവിഷ്കാരചാതുരി അവരുടെ എല്ലാ കഥകളിലും തെളിഞ്ഞു കാണാം.</p>
+
+  <p>'നുണകൾ' എന്ന കഥ, കുട്ടികൾ ലോകം നോക്കിക്കാണുന്നത് മുതിർന്നവരുടേതിൽ നിന്നും വളരെ വ്യത്യസ്തമായാണെന്ന് സൂക്ഷ്മമായി അവതരിപ്പിക്കുന്നു. കുട്ടികളുടെ ഇടയിൽ കാപട്യമോ കളങ്കമോ ഇല്ലെന്ന് അവർക്കറിയാം. പക്ഷേ, ആ നിർദോഷതയാകട്ടെ, മുതിർന്നവർക്ക് ഒരു താക്കീതായി തീരും. അച്ഛന്റെ അവിഹിതവേഴ്ച കാണാനിടയായ മകൻ പിറ്റേന്ന് താൻ കണ്ട ഒരു സ്വപ്നത്തെക്കുറിച്ച് അമ്മയോടു പറയുമ്പോൾ തന്നിലേക്ക് നീളുന്ന ചൂണ്ടുവിരലാണെന്നു കരുതി അച്ഛൻ നുണ പറയരുതെന്ന് അവനെ വിലക്കുകയാണ്. അമ്മയും ഇതേ ഉപദേശം നൽകുമ്പോൾ ഭർത്താവിലേക്കുള്ള ഭാര്യയുടെ സ്നേഹത്തിന്റേയും വിശ്വാസ്യതയുടെയും വാതിൽക്കൂടി വായനക്കാരന്റെ മുമ്പിൽ തുറക്കുകയാണ്. കപടതകൾക്കൊപ്പം സ്നേഹവും നിഷ്കളങ്കതയും ഇവിടെ വാഴുന്നുണ്ടെന്നും നമുക്ക് ബോധ്യപ്പെടുന്നു.</p>
+
+  <p>സ്ത്രീപുരുഷബന്ധങ്ങളെ നിർവ്വചിക്കാൻ മാധവിക്കുട്ടിയുടെ രചനകളിൽ എന്നും ശ്രമമുണ്ടായിട്ടുണ്ട്. പുരുഷനെ തള്ളിപ്പറയുന്ന ഒരു മനസ്സല്ല അവരുടേത്. ഒരു സ്ത്രീ സ്ത്രീയാവണമെങ്കിൽ അവളുടെ സ്ത്രീത്വത്തെ അംഗീകരിക്കാൻ ഒരു പുരുഷൻ വേണമെന്ന ദർശനം 'സ്വാതന്ത്ര്യജീവികൾ' അടക്കമുള്ള കഥകളിൽ അവർ പ്രഖ്യാപിച്ചിട്ടുണ്ട്. 'കടൽ മയൂരം' എന്ന നീണ്ടകഥയിലെ പ്രൊഫസർ രേണുകാദേവിയുടെ അന്ത്യം ഈ കാഴ്ചപ്പാടിൽ വേണം വിലയിരുത്താൻ. സ്ത്രീ പുരുഷബന്ധത്തെ തരംതാഴ്ന്നതായി കണക്കാക്കിയിരുന്ന അവർ സിംഗപ്പൂരിൽ വെച്ച് തന്നേക്കാൾ പ്രായം കുറഞ്ഞ ഒരു മലേഷ്യക്കാരനുമായി ലൈംഗികബന്ധത്തിലേർപ്പെട്ട് അതിന്റെ മൂർച്ചയിൽ മരണമടയുകയാണ്. പുരുഷന്മാരോട് മതിപ്പില്ലാത്ത രേണുകാദേവിയുടെ 'ഈഗോ' കൂടിയാണ് ഇവിടെ മരിക്കുന്നത്. എന്നാൽ പുരുഷന്റെ അഹങ്കാരത്തേയും ദുരഭിമാനത്തേയും അംഗീകരിച്ചുകൊടുക്കാനും മാധവിക്കുട്ടി തയ്യാറല്ല. ഒരു ഡോബർമാൻ നായയുടെ കാവലിൽ ആട്ടുകട്ടിലിരുന്നാടുന്ന 'ആട്ടുകട്ടിൽ' എന്ന നീണ്ടകഥയിലെ രാജലക്ഷ്മി ക്രൂരനായ ഒരു പുരുഷന്റെ സംരക്ഷണത്തേക്കാൾ വിലമതിച്ചത് ഡോബർമാൻ നായയുടെ കാവലായിരുന്നു. 'എന്നെന്നും താര'യിൽ കാമുകിയിരിക്കെ അടുപ്പം കാണിച്ച ചെറുപ്പക്കാരന്റെ പ്രേമം അവഗണിക്കുകയും അവളെ അയാൾ ഉപേക്ഷിച്ചുവെന്ന് ഉറപ്പായപ്പോൾ ആ പ്രേമം സ്വീകരിക്കുകയും ചെയ്യുന്ന ഉഷ നട്ടെല്ലുള്ള സ്ത്രീത്വത്തിന്റെ മറ്റൊരു പ്രതീകമാണ്.</p>
+
+  <p>സ്വവർഗ്ഗരതി ദാമ്പത്യത്തേക്കാൾ ആഹ്ലാദകരമായി അനുഭവപ്പെടുന്നുണ്ട് 'ചന്ദനമര'ങ്ങളിലെ ഷീലയ്ക്ക്. മനപ്പൊരുത്തമില്ലാത്ത ദാമ്പത്യം തന്നെ എല്ലാ അസംതൃപ്തികൾക്കും കാരണം 'കടലിന്റെ വക്കത്ത് ഒരുവീട്' എന്ന കഥ നോക്കുക. മദ്യപാനത്തിന്റെ പേരിൽ ജോലിയിൽ നിന്നു പുറത്തായി, വീടും വീട്ടുസാമഗ്രികളും പൈസയുമില്ലാതെ ഒരു വലിയ നഗരത്തിൽ ഭാര്യയോടൊപ്പം റോഡരികിൽ കിടന്നുറങ്ങുന്നവനാണ് അറുമുഖൻ. ആകെയുണ്ടായിരുന്ന പുതപ്പ് ഭാര്യ അപരിചിതനായ യുവാവിനു സമ്മാനിച്ചപ്പോൾ അറുമുഖൻ അതിനെ ചോദ്യം ചെയ്തു. 'അയാൾ എന്നോട് സംഗീതത്തെപ്പറ്റി സംസാരിച്ചു' എന്നാണ് പുതപ്പ് കൊടുത്തതിന് കാരണമായി അവൾ പുഞ്ചിരിയോടെ പറഞ്ഞത്. മനപ്പൊരുത്തമുണ്ടെങ്കിൽ ദാരിദ്ര്യത്തിന്റെ തീച്ചൂളയിൽ ഉരുകുമ്പോൾ പോലും ആശ്വാസമേറിയേനെ എന്ന് ഈ കഥ ധ്വനിപ്പിക്കുന്നു.</p>
+
+  <p>'അമ്മ' എന്ന കഥയിൽ പഴയതലമുറയുടെ നൊമ്പരങ്ങളാണ് അവതരിപ്പിക്കുന്നത്. ഇരുപതു പൈസക്ക് പച്ചക്കറി വാങ്ങി മടങ്ങുന്ന ഒരു വൃദ്ധയെ കറുത്ത മെഴ്സിഡീസ് കാർ തള്ളിയിടുന്നു. 'എന്തുപറ്റി അമ്മേ' എന്ന് ഒരു പാൽക്കാരൻ ചോദിക്കുമ്പോൾ 'ഇവിടെക്കിടക്കൂ അമ്മേ' എന്ന് ഡോക്ടർ പറയുമ്പോൾ വളർന്നുവലുതായ മക്കളിൽനിന്ന് തനിക്കു കിട്ടാതെപോയ മാതൃത്വത്തിന്റെ സാന്ദ്രിമ അവരറിയുകയാണ്. മക്കൾക്ക് തന്നെക്കൊണ്ട് ഒരാവശ്യവുമില്ലെന്ന് അവരോർത്തുപോവുന്നു. 'ദയ എന്ന വികാരം' എന്ന കഥ ഇതിന്റെ മറുപുറമാണ്. ആഗ്രഹിക്കുന്ന സ്നേഹം കിട്ടാത്ത മകനാണിതിൽ. പരിഷ്കൃത സമൂഹത്തിൽ ബന്ധങ്ങൾക്കേറ്റ തേയ്മാനം ഈ കഥകളിലൂടെ മാധവിക്കുട്ടി തൊട്ടുകാണിക്കുന്നു. 'ജാനു പറഞ്ഞ കഥ'യാകട്ടെ ഗ്രാമീണ നിഷ്കളങ്കതയെക്കുറിച്ച് പറയുന്നു. ജാനു എഴുതുന്നമട്ടിൽ എഴുതപ്പെട്ട ഈ കഥ സംഭാഷണങ്ങൾ ചേർന്ന് മികച്ച കഥ എങ്ങനെ സൃഷ്ടിക്കാം എന്നതിന് ഉദാഹരണം കൂടിയാണ്.</p>
+
+  <p>മൃത്യുവാസന ശക്തമായി ആവിഷ്കരിക്കുന്ന കഥകളും മാധവിക്കുട്ടി എഴുതിയിട്ടുണ്ട്. ഓപ്പറേഷൻ കഴിഞ്ഞു വീട്ടിലേക്കു മടങ്ങുമ്പോൾ ആരോ തന്നെ പിന്തുടരുന്നതായി അനുഭവപ്പെടുന്നത് ചിത്രീകരിക്കുന്ന കഥയാണ് മലഞ്ചെരുവിൽ. എനിക്ക് മരിക്കാൻ സമയമായിട്ടില്ലെന്നു പറഞ്ഞ് പുറത്തിറങ്ങിയിട്ടും മരണത്തിന്റെ വായിൽ ചെന്നുവീഴുന്നതും (പക്ഷിയുടെ മണം) – മരണാസക്തി പച്ചയായി തന്നെ വ്യക്തമാക്കി മരണം കാത്തിരിക്കുന്നതും (മുഖമില്ലാത്ത കപ്പിത്താൻ) ആയ കഥാപാത്രങ്ങളെ ഇത്തരം കഥകളിൽ കാണാം. മരണത്തെ മുഖാമുഖം കാണുമ്പോൾ ആർക്കും ഭാവി ഒരു ബാധ്യതയായിരിക്കില്ല അങ്ങനെ ഒരു മാനസികാവസ്ഥയിൽ മാധവിക്കുട്ടി എഴുതിയ അസാധാരണമായ ആത്മകഥയാണ് എന്റെ കഥ. ഇതൊരു ഭാവനാസൃഷ്ടിയാണെന്ന് പറഞ്ഞതായി കണ്ടെങ്കിലും ഈ ഇന്റർവ്യൂവിലും പിന്നീടും അവർ വിശദമാക്കിയ കാര്യങ്ങൾ വരികൾക്കിടയിൽ വായിക്കുമ്പോൾ 'എന്റെ കഥ' ആത്മകഥ തന്നെ. മലയാളസാഹിത്യത്തിലെ ഒരു സ്ഫോടനമായിരുന്നു 1973ൽ പുറത്തിറങ്ങിയ എന്റെകഥ. ഒന്നുമറിയാത്ത പ്രായത്തിൽ വിവാഹിതയാകേണ്ടിവന്ന ഒരു സ്ത്രീയുടെ ജീവിതാനുഭവങ്ങൾ ഇതിൽ അനാവരണം ചെയ്യുന്നു. മാന്യതയുടേതായ പല മുഖംമൂടികളും അവർ പിച്ചിച്ചീന്തുന്നു.</p>
+
+  <p>ചെറുകഥയ്ക്ക് പിരിമുറുക്കം നൽകാനും ഭാവസാന്ദ്രമായ കവിതയുടെ അനുഭൂതി തീവ്രത വരുത്താനും ശില്പഭദ്രത നേടാനും മനഃശാസ്ത്രപരമായ ഉൾക്കാഴ്ചയോടെ ആധുനിക മനുഷ്യന്റെ പ്രത്യേകിച്ചും സ്ത്രീകളുടെ അന്തർധാരകൾ തിരയാനും മൂല്യച്യുതികൾക്കെതിരേ വെല്ലുവിളി ഉയർത്താനും സാധിച്ച മാധവിക്കുട്ടി പക്ഷേ നോവലിൽ ഒരു വിജയമായില്ല. 'മാനസി', 'മാധവിക്കുട്ടിയുടെ മൂന്നു നോവലുകൾ' എന്നിവയുൾപ്പെടെ 12 പുസ്തകങ്ങൾ നോവലിന്റെ ലേബലിലാണ് വന്നതെങ്കിലും അവയ്ക്ക് നീണ്ടകഥയുടെ പ്രയോജനം മാത്രമേ നേടാൻ സാധിച്ചുള്ളു. 'കഥ'യുടെ പരിമിതികളെ അവയ്ക്ക് മറികടക്കാനാവാത്തതാണ് അതിനുകാരണം. അടിസ്ഥാനപരമായി ഒരു കവിയായ മാധവിക്കുട്ടി ചുരുക്കി, ചെറുതാക്കി എഴുതുന്നതിനാലാണ് അവരുടെ പ്രതിഭ പ്രവർത്തിക്കുന്നത്. അതുകൊണ്ടുതന്നെയാവണം വിശാലമായ ജീവിതത്തെ സമഗ്രമായി ചിത്രീകരിക്കേണ്ട നോവലിന്റെ മണ്ഡലം അവർ തന്നെ സമ്മതിക്കുന്നപോലെ അവർക്ക് അപ്രാപ്യമായി തോന്നുന്നത്.</p>
+
+  <p>ഇംഗ്ലീഷ് കവിയായ കമലദാസിനെയാണ് പല സാഹിത്യാസ്വാദകർക്കും ഇഷ്ടം. ഇന്തോ-ആംഗ്ലിയൻ കവികളിൽ അവർക്ക് സമുന്നത സ്ഥാനമുണ്ട്. പുരുഷമേധാവിത്വത്തിന്റെ ലോകത്തിൽ സ്ത്രീയുടെ ധീരമായ ശബ്ദം കൂസലില്ലാതെ ഉച്ചത്തിൽ വിളിച്ചുപറയുന്ന കമലദാസിന്റെ വാക്കുകളിൽ മൂർച്ചയും പ്രയോഗങ്ങളുടെ സൂക്ഷ്മതയും കാണാം. പരിമിതമായ 'റെയ്ഞ്ച്' എന്ന ന്യൂനതയാണ് മാധവിക്കുട്ടിയുടെ കവിതകൾക്ക് ചാർത്തിക്കൊടുത്തിരിക്കുന്നത്. നിലവിലുള്ള രീതികളെ എതിർക്കണമെന്ന നിർബന്ധം പ്രകടനപരമായി പോകുന്നതുപോലെയും തോന്നാറുണ്ട്.</p>
+
+  <p>മാധവിക്കുട്ടിയുടെ തുറന്നുപറച്ചിലുകൾക്ക് അതിരുകളില്ലാതാവുന്നത് പലപ്പോഴും അസുഖകരമാവാറുണ്ട്. ഷീലയും കല്യാണിക്കുട്ടിയും തമ്മിലുള്ള അപൂർവ്വമായ സ്നേഹത്തിന്റെ കഥപറയുന്ന 'ചന്ദനമര'ങ്ങളിൽ പുരുഷലിംഗത്തെ വർണ്ണിക്കുന്ന ഭാഗം ഓർക്കുക. ഇതില്ലായിരുന്നെങ്കിലും ചന്ദനമരങ്ങൾക്ക് ഒരിടിവും പറ്റില്ലായിരുന്നു. ഉള്ളതുകൊണ്ട് അല്പം കല്ലുകടിയാവുകയും ചെയ്തു.</p>
+
+  <div class="section-subhead">ഭാഗം – 2: ജീവചരിത്രക്കുറിപ്പ്</div>
+
+  <p>പ്രശസ്ത കവയിത്രിയായിരുന്ന നാലപ്പാട്ട് ബാലാമണിയമ്മയുടെയും മാതൃഭൂമി മാനേജിങ് എഡിറ്ററായിരുന്ന വി.എം. നായരുടെയും മകളായി 1932 മാർച്ച് 31ന് പൊന്നാനി താലൂക്കിലെ പുന്നയൂർക്കുളത്ത് ജനനം. 13-ാം വയസ്സിൽ വിവാഹിതയായി. ഭർത്താവ് ഇന്റർനാഷണൽ മോണിറ്ററി ഫണ്ടിന്റെ സീനിയർ കൺസൾട്ടന്റായിരുന്ന മാധവദാസ്. അദ്ദേഹം 1992 ജൂലൈ മാസം അന്തരിച്ചു. കമലദാസ് എന്നാണ് യഥാർത്ഥ പേര്. മാധവിക്കുട്ടി തൂലികാനാമമാണ്. ഇംഗ്ലീഷിൽ എഴുതിയിരുന്നത് കമലദാസ് എന്ന പേരിലാണ്. ഇസ്ലാംമതത്തിലേക്ക് പരിവർത്തനം ചെയ്യപ്പെട്ട സമയത്ത് കമലാസുരയ്യ എന്ന പേര് സ്വീകരിക്കുകയും ചെയ്തു. മോനു നാലപ്പാട്ട്, ചിന്നൻദാസ്, ജയസൂര്യദാസ് എന്നിവർ മക്കളാണ്. മൂന്നുപേരും ടൈംസ് ഓഫ് ഇന്ത്യയിൽ ജീവനക്കാരായിരുന്നു. കൽക്കത്തയിലും ബോംബെയിലുമായി ഒരുപാട് വർഷങ്ങൾ ജീവിച്ച മാധവിക്കുട്ടി ഈ ഇന്റർവ്യൂ സമയത്ത് തിരുവനന്തപുരം സ്ഥാണുവിളാസ് ബംഗ്ലാവിലാണ് താമസിച്ചിരുന്നതെന്ന് അക്ബർ കക്കട്ടിൽ വ്യക്തമാക്കുന്നു.</p>
+
+  <p>ഔപചാരിക വിദ്യാഭ്യാസം നേടാനായില്ലെങ്കിലും മലയാളത്തിലും ഇംഗ്ലീഷിലും അഗാധ പാണ്ഡിത്യം മാധവിക്കുട്ടിക്കുണ്ടായിരുന്നു. നാലപ്പാട്ടു വീട്ടിലെ വൈജ്ഞാനികവും സാഹിത്യപരവുമായ അന്തരീക്ഷം ആഴത്തിലുള്ള അറിവുനേടാൻ മാധവിക്കുട്ടിയെ സഹായിച്ചു.</p>
+
+  <p>പത്താംവയസ്സിൽ മാതൃഭൂമി ആഴ്ചപ്പതിപ്പിൽ പ്രസിദ്ധീകരിച്ച 'കുഷ്ഠരോഗി'യാണ് ആദ്യകഥ. ആദ്യസമാഹാരം 1955ൽ പുറത്തിറക്കിയ മതിലുകളാണ്. 12 നോവലുകളും 27 കഥാസമാഹാരങ്ങളും ഉൾപ്പെടെ 68 കൃതികൾ പുറത്തിറങ്ങിയിട്ടുണ്ട്. ബെസ്റ്റ് ഓഫ് കമലദാസ്, കളക്ടഡ് പോയംസ്, ഓൾഡ് പ്ലേ ഹൗസ്, ദി ഡിസ്റ്റൻസ്, സമ്മർ ഇൻ കൽക്കത്ത തുടങ്ങിയ ഇംഗ്ലീഷ് കവിതാസമാഹാരങ്ങളും ഇതിൽപ്പെടും. ഇവയിൽ ചില മലയാള വിവർത്തനങ്ങളും പ്രസിദ്ധീകരിച്ചിട്ടുണ്ട്. എന്റെ കഥ 15 വിദേശ ഭാഷകളിലേക്ക് വിവർത്തനം ചെയ്തിട്ടുണ്ട്. 1964ലെ ഏഷ്യൻ രാജ്യങ്ങളിലെ ഇംഗ്ലീഷ് കൃതികൾക്കുള്ള കെന്റ് അവാർഡ് 'സമ്മർ ഇൻ കൽക്കത്ത'യ്ക്കും ആശാൻ വേൾഡ് പ്രൈസ്, കേന്ദ്രസാഹിത്യ അക്കാദമി പുരസ്കാരം എന്നിവ കളക്ടഡ് പോയംസിനും ലഭിച്ചിട്ടുണ്ട്. കേരള സാഹിത്യ അക്കാദമി അവാർഡ്, ആശാൻ വേൾഡ് പ്രൈസ്, എൻ.വി. പുരസ്കാരം, വയലാർ അവാർഡ്, ഗാന്ധി മിഷൻ കേരള അവാർഡ്, സാഹിത്യ അക്കാദമി വിശിഷ്ടാംഗത്വം എന്നീ പുരസ്കാരങ്ങൾക്ക് അർഹയായി. നിർഭയമായ പത്രപ്രവർത്തനത്തിനുള്ള ഒരവാർഡും കരസ്ഥമാക്കി. 1984ൽ വേൾഡ് അക്കാദമി ഓഫ് ആർട്ട് ആന്റ് കൾച്ചർ ഡി.ലിറ്റ് ബിരുദം നൽകി ആദരിച്ചു. അതേവർഷം സാഹിത്യത്തിനുള്ള നോബൽ സമ്മാനത്തിന് മാധവിക്കുട്ടിയുടെ പേര് നിർദ്ദേശിക്കപ്പെട്ടു.</p>
+
+  <p>അമേരിക്ക, വെസ്റ്റ് ഇൻഡീസ്, മസ്കറ്റ്, സിംഗപ്പൂർ, ജർമ്മനി, ആസ്ട്രേലിയ, ശ്രീലങ്ക എന്നീ രാജ്യങ്ങൾ സന്ദർശിച്ചിട്ടുണ്ട്. ലോക്സഭയിലേക്ക് മത്സരിച്ചു. പോയറ്റ് മാസികയുടെ ഓറിയന്റ് എഡിറ്റർ, കേരള ഫോറസ്ട്രി ബോർഡ് ചെയർമാൻ, കേരള ചിൽഡ്രൻസ് ഫിലിം സൊസൈറ്റി പ്രസിഡണ്ട്, ബഹുതന്ത്രകയുടെ ഫൗണ്ടർ, ഇല്ലസ്ട്രേറ്റഡ് വീക്കിലി ഓഫ് ഇന്ത്യയുടെ പോയട്രി എഡിറ്റർ എന്നിങ്ങനെ ഒട്ടേറെ സ്ഥാനങ്ങളിലിരുന്നിട്ടുണ്ട്. 2009 മെയ് 31ന് മാധവിക്കുട്ടി ലോകത്തോട് വിടപറഞ്ഞു. അവസാന കാലത്ത് പൂനയിലായിരുന്നു താമസിച്ചിരുന്നത്.</p>
+
+  <p>മാധവിക്കുട്ടിയെ അക്ബർ ഇങ്ങനെ ഓർത്തെടുക്കുന്നു: "അനുഗൃഹീതയായ ഈ എഴുത്തുകാരിയെ ഞാൻ ആദ്യം കാണുന്നത് വടകരയിൽ വെച്ചാണ്, ഒരു പ്രസംഗവേദിയിൽ. രണ്ടാമത് സർഗ്ഗസമീക്ഷയ്ക്കുവേണ്ടി വീട്ടിൽച്ചെന്നപ്പോൾ, പിന്നീട് പലതവണ നേരിട്ടിടപെടാൻ അവസരമുണ്ടായി. സ്ത്രീത്വത്തിന്റെ സജീവസാന്നിധ്യമായിരുന്നു അവർ. ഇതൾപോലുള്ള കണ്ണുകളിൽ പ്രേമവും കാരുണ്യവും കലർന്ന ദീപ്തഭാവം. വലിയ പൊട്ട്. ഒരു സാധാരണ സ്ത്രീയെപ്പോലെ ആഭരണങ്ങൾ വാരിയണിഞ്ഞ അവരുടെ വസ്ത്രധാരണവും നിറപ്പകിട്ടാർന്നതാണ്. മൂക്കുത്തിയും മുഖവും ഒരു വടക്കേ ഇന്ത്യൻ ഭാവമുണ്ടാക്കുന്നുണ്ട്. ക്യാമറയ്ക്കു മുന്നിൽ അവർ ഒരു മോഡലിനെപ്പോലെ നിന്നു. നിഷ്കളങ്കമായ ചിരിയും വള്ളുവനാടൻ രീതിയിലുള്ള സംസാരവുമായിരുന്നു അവരുടേത്."</p>
+
+  <div class="section-subhead">ഭാഗം – 3: അഭിമുഖ സംഭാഷണം (21 ചോദ്യോത്തരങ്ങൾ)</div>
+
+  <p>മാധവിക്കുട്ടിയുടെ കഥകളിലെ കുട്ടികൾ, അമ്മമാർ, മറ്റ് സ്ത്രീ കഥാപാത്രങ്ങൾ എന്നിവരെക്കുറിച്ചുള്ള സവിശേഷ ചോദ്യങ്ങളോടെയാണ് അഭിമുഖം ആരംഭിക്കുന്നത്. ഏതൊരു കഥാപാത്രത്തെ ആവിഷ്കരിക്കുമ്പോഴും ആ കഥാപാത്രവുമായി തന്മയീഭവിക്കാനുള്ള മാധവിക്കുട്ടിയുടെ സവിശേഷമായ സിദ്ധി ഉത്തരങ്ങളിൽ കാണാം. ഗൃഹാതുരത്വവും നാഗരികമായ കാഴ്ചപ്പാടുകളും ഒരുപോലെ മാധവിക്കുട്ടിയുടെ കഥകളിൽ കാണാം. കഥാകാരിയുടെ ജീവിതപരിസരവും അനുഭവങ്ങളും കഥകളിൽ കാണാൻ കഴിയും. മാധവിക്കുട്ടി എന്ന എഴുത്തുകാരിയുടെ സവിശേഷ വ്യക്തിത്വത്തെ അടയാളപ്പെടുത്തുന്ന അഭിമുഖമാണിത്. പ്രധാനപ്പെട്ട ചോദ്യങ്ങളും ഉത്തരങ്ങളും താഴെ കൊടുക്കുന്നു.</p>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 1</span> കുട്ടികളുടെ മനസ്സിലേക്കിറങ്ങി അവരെപ്പോലെ കഥ പറയാൻ ‘മാധവിക്കുട്ടി’ക്ക് ഒരു പ്രത്യേക വൈദഗ്ധ്യമുണ്ട്. ഈ ശിശുസഹജമായ മനസ്സ് എങ്ങനെ നിലനിർത്താൻ കഴിയുന്നു?</div>
+    <div class="qa-answer">ശരീരത്തിന്റെ വാർദ്ധക്യം അംഗീകരിക്കാത്ത മനസ്സാണ് എനിക്കു കിട്ടിയിരിക്കുന്നത് എന്ന് ചിലപ്പോൾ തോന്നാറുണ്ട്. പതിനഞ്ചാം വയസ്സിൽ എനിക്കുണ്ടായിരുന്ന കാഴ്ചപ്പാടിലൂടെയാണ് ഞാൻ ഇന്നും ജീവിതത്തെയും ലോകത്തെയും നോക്കി കാണുന്നത്.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 2</span> ജീവിത യാഥാർത്ഥ്യങ്ങളെ ആദ്യമായി പരിചയപ്പെടുമ്പോൾ നൊമ്പരം അനുഭവിക്കുന്ന ഒരു കുട്ടി നായികയായ കഥയുണ്ടല്ലോ – ‘പ്രഭാതം’ ഈ കഥ ഇപ്പറഞ്ഞ സാഹചര്യങ്ങളിൽ എങ്ങനെ വിശദീകരിക്കാം?</div>
+    <div class="qa-answer">അർജ്ജുനൻ ഒരിക്കൽ കുട്ടികൾ മരിച്ചതിൽ ദുഃഖിക്കുന്ന ബ്രാഹ്മണ ദമ്പതികൾക്കായി ശരങ്ങൾ കൊണ്ട് ഒരു സൂതികാഗൃഹം നിർമ്മിച്ചുവെന്ന് മുത്തശ്ശി പറഞ്ഞു കേട്ടിട്ടുണ്ട്. എന്നിട്ടും കുഞ്ഞു പിറന്നപ്പോൾ മരണത്തെ അകറ്റി നിർത്താൻ സാധിച്ചില്ല. എന്റെ കഥാപാത്രവും വീട്ടുകാർ തങ്ങളുടെ സ്നേഹംകൊണ്ട് നിർമ്മിച്ച ഒരു സുരക്ഷിത ഗൃഹത്തിലായിരുന്നു ജീവിച്ചിരുന്നത്. മാതുവമ്മയുടെ കുടിലിൽ പോയപ്പോൾ ആ കുട്ടിക്ക് യാതൊരു രക്ഷാകവചവും സഹായത്തിനുണ്ടായിരുന്നില്ല.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 3</span> ‘ഉണ്ണി’ എന്ന കഥയിലെത്തുമ്പോൾ നിങ്ങളുടെ ‘കുട്ടി’ക്ക് മറ്റൊരു തലം ഉണ്ടാകുന്നുണ്ടല്ലോ. ഭർത്താവിനെ കാത്തിരിക്കുമ്പോൾ കേറിവരുന്ന പയ്യനോട് മമത തോന്നുകയും ഭർത്താവിന്റെ അപകടമരണ വാർത്തയെത്തിയപ്പോൾ അവനെ ക്രൂരമായി പുറത്താക്കുകയും ചെയ്യുന്ന സ്ത്രീ പിന്നെ അവനെ അന്വേഷിക്കുന്നു:</div>
+    <div class="qa-answer">സ്ത്രീയുടെ ഭർത്താവ് വിമാനാപകടത്തിൽ മരിച്ചു. യഥാർത്ഥത്തിൽ ആ മനുഷ്യൻ താൻ ഉണ്ണിയായിരുന്ന കാലം മാത്രമേ വിലപ്പെട്ടതായി കരുതിയിരുന്നുള്ളൂ. സാവധാനത്തിൽ വാർദ്ധക്യത്തിലെത്തുന്ന ശരീരം നശിച്ചപ്പോൾ ആത്മാവ് പഴയ രൂപം വീണ്ടെടുത്ത് ഭാര്യയുടെ അടുത്ത് പ്രത്യക്ഷപ്പെട്ടു. ഭാര്യക്ക് ആഗതൻ തന്റെ ഭർത്താവിന്റെ ആത്മാവാണെന്നു മനസ്സിലാക്കാൻ വളരെയധികം നേരം വേണ്ടിവന്നു.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 4</span> അമ്മ (ബാലാമണിയമ്മ) ഒരു കവിതയിൽ ഈ പ്രകൃതിയിലെ എല്ലാ ചരാചരങ്ങളെയും കൊച്ചുകുട്ടികളെപ്പോലെ കാണുന്നുണ്ടല്ലോ. ഈ വശം നിങ്ങൾ എങ്ങനെ കാണുന്നു?</div>
+    <div class="qa-answer">പ്രകൃതിയിലെ ചരാചരങ്ങൾ എന്റെ അമ്മയ്ക്ക് കൊച്ചുകുട്ടികളെപ്പോലെ ആയിരുന്നില്ല. ആ കവിതയിലെ സ്ത്രീക്കുമാത്രം ചരാചരങ്ങൾ കുട്ടികളായിരുന്നു. എന്റെ അമ്മയ്ക്ക് നായ്ക്കളെ ഇഷ്ടമല്ല. അവയോട് വിരോധമുണ്ട്. മൃഗങ്ങളെ സ്നേഹിക്കാൻ എന്റെ അമ്മയ്ക്ക് യഥാർത്ഥ ജീവിതത്തിൽ സാധിച്ചില്ല.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 5</span> ഒരു യുവതിയുടെ സ്നേഹം കിട്ടിയിരുന്ന വീട്ടിലേക്ക് വർഷങ്ങൾക്കുശേഷം കേറിവരുന്ന സുകുമാരമേനവനിലേക്ക് നിങ്ങൾ പ്രവേശിച്ചതെങ്ങനെയാണ്?</div>
+    <div class="qa-answer">‘മൂടിക്കെട്ടിയ സായാഹ്നം’ എന്ന കഥ എഴുതിയപ്പോൾ ഞാൻ യുവതിയായിരുന്നു. സെന്റിമെന്റൽ സാഹിത്യം പ്രബലമായിരുന്ന കാലഘട്ടവും, വാർദ്ധക്യം ബാധിച്ചവരുടെ ഉള്ളിൽ പ്രവേശിച്ച് ആ കഥയെഴുതി.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 6</span> ഭാര്യയുടെ ശവദാഹം കഴിഞ്ഞ് തിരിച്ചെത്തിയശേഷം അത്താഴത്തിനിരിക്കുന്ന മരണമെന്തെന്നറിയാത്ത കുട്ടികൾ, അമ്മ വെച്ച നെയ്പായസത്തെക്കുറിച്ചു പറയുന്ന നല്ല വാക്കുകൾ കേട്ട് കണ്ണീരടക്കാനാവാതെ രംഗം വിടുന്ന ഭർത്താവ്, ഇവർ വരുന്ന കഥയിൽ വരികൾക്കിടയിലെ ജീവിതമല്ലേ പ്രധാനം? ‘നെയ്പായസ’ത്തിന്റെ രചനാപശ്ചാത്തലം അറിയാനാഗ്രഹമുണ്ട്.</div>
+    <div class="qa-answer">ബോംബെയിൽ ഞാൻ താമസിച്ചിരുന്നത് മധ്യവർത്തികൾ മാത്രം താമസിക്കുന്ന ഒരു കോളനിയിലാണ്. അവിടെ സ്വയം വീടുവൃത്തിയാക്കലും വസ്ത്രം അലക്കലും പാചകം ചെയ്യലും നടത്തുന്ന കുടുംബിനികളെ ഞാൻ അതീവ താല്പര്യത്തോടെ, ആദരവോടെ നോക്കിക്കണ്ടു. അവരുടെ മധ്യവർത്തിത്വം എന്റെ മനസ്സിൽ റൊമാന്റിക്കായി മാറി. അത്തരം കുടുംബിനികളുടെ വില അവരുടെ ഭർത്താക്കന്മാർക്കും കുട്ടികൾക്കും മാത്രമേ മനസ്സിലാവുകയുള്ളൂവെന്ന യാഥാർത്ഥ്യം എന്നെ അലട്ടി. ഭർത്താവിന്റെ വികാരരഹിതമായ ഇരിപ്പും ഓഫീസിലേക്ക് അയക്കുവാൻ തയ്യാറാക്കുന്ന ലീവ് ലെറ്ററിനെപ്പറ്റിയുള്ള ചിന്തകളും മധ്യവർത്തി ജീവിതത്തിന്റെ ട്രാജഡിക് ടച്ചസ്സായി ഞാൻ കണ്ടു. അത്തരം കഥകൾ എഴുതുമ്പോൾ ഞാൻ ഒരേ സമയത്തു ചിരിക്കുകയും കരയുകയും ചെയ്യാറുണ്ടായിരുന്നു.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 7</span> നിങ്ങളുടെ പല കഥകളിലും ഗൃഹാതുരത്വത്തിന്റെ തീവ്രമായ സ്പർശമുണ്ട്. ഒരുതറവാട്, ഒരു പണിക്കാരത്തി, വലിയ ഒരു പറമ്പ്, ഒരു കുളം. ഇവയോ ഇവയിലേതെങ്കിലുമോ അത്തരം കഥകളിൽ ഒരു സജീവ സാന്നിധ്യമാണ്. ജന്മദേശത്തിനുപുറത്ത് ഏറെ താമസിക്കേണ്ടിവന്നു എന്നതാവുമോ ഈ 'തൊട്ടറിവേലി'നു പിന്നിൽ?</div>
+    <div class="qa-answer">എനിക്കു സുപരിചിതരായിരുന്ന കഥാപാത്രങ്ങൾ നിറഞ്ഞതാവും എന്റെ രചനകൾ. പിന്നിട്ട സ്വർഗ്ഗങ്ങളെപ്പറ്റി എഴുതിക്കൊണ്ടേയിരിക്കും ഞാൻ. ഗ്രാമമെന്നു മാത്രമല്ല നഗരവും എന്റെ രചനകളിൽ അണിനിരക്കുന്നു.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 8</span> നിങ്ങൾ നാലപ്പാട്ടു തറവാട്ടിലല്ലായിരുന്നെങ്കിൽ ബാല്യകാല സ്മരണകൾക്ക് ഇന്നുള്ളത്ര ഗ്രാമീണത്വവും തീവ്രതയും ഉണ്ടാകുമായിരുന്നെന്നു തോന്നുന്നുണ്ടോ?</div>
+    <div class="qa-answer">കൽക്കത്തയിൽ മാത്രം ജീവിച്ചിരുന്നെങ്കിൽ ഗ്രാമീണത്വം എന്റെ ബാല്യകാല സ്മരണകളിൽ ഉണ്ടാകുമായിരുന്നില്ല എന്നത് സത്യമാണ്. ഗ്രാമീണത്വവും നാഗരികത്വവും ഒരേ നാணயത്തിന്റെ രണ്ടുവശങ്ങളായി മാറി.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 9</span> നേരത്തെ ‘ഉണ്ണി’യുടെ കാര്യത്തിൽ സൂചിപ്പിച്ചതുപോലെ യുക്ത്യാതീതമായ-പക്ഷേ, സ്പർശിച്ചറിയുന്ന-ചില യാഥാർത്ഥ്യങ്ങൾ നിങ്ങളിലെ കഥാകാരിയെ പലപ്പോഴും വേട്ടയാടുന്നതായി പല കഥകളും ദ്യോതിപ്പിക്കുന്നു. ഈയൊരവസ്ഥയിലെത്താനുള്ള അനുഭവമെന്താണ്?</div>
+    <div class="qa-answer">എന്റെ മുഖ്യഗുരു ഇൻസ്റ്റിങ്റ്റാണ്. മണത്തറിയുവാനുള്ള ആ കഴിവിനെ ഞാൻ ആശ്രയിക്കാറുണ്ട്. മഞ്ഞിന്റെ മൂടലുള്ള പ്രഭാതത്തിൽ നിറഞ്ഞു കാണാനാവാത്ത വേളയിൽ കാറോടിച്ചുപോവുന്നയാളാണ് ഞാൻ. എന്റെ അകത്ത് ദീപമെന്നപോലെ നിലനിൽക്കുന്ന ഇൻസ്റ്റിങ്റ്റിന്റെ പ്രകാശം മാത്രമേ എനിക്കു മാർഗ്ഗനിർദ്ദേശം നൽകാറുള്ളൂ.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 10</span> ടെക്സ്റ്റൈൽ കമ്പനിയിൽ ജോലി തേടി, കൂറ്റൻ കെട്ടിടത്തിലെത്തിയ യുവതി തുണിക്ക് നിറക്കൂട്ടുകൾ നൽകുന്ന വിഭാഗമാണെന്നു ധരിച്ച് (Dying) എന്ന ബോർഡുവെച്ച മുറിയിൽ, സുഖമായി മരിക്കാൻ ഏർപ്പാടുചെയ്യുന്ന ചെറുപ്പക്കാരന്റെ മുന്നിലെത്തുന്നതും മരിക്കാൻ സമയമായില്ലെന്നു പറഞ്ഞ് അവിടെ നിന്ന് രക്ഷപ്പെട്ട് പുറത്തു കടക്കാനാവാത്ത വിധം കേടായ ലിഫ്റ്റിൽ കുടുങ്ങിപ്പോകുന്നതുമായ കഥയിൽ ആ ചെറുപ്പക്കാരൻ പറയുന്ന പക്ഷിയുടെ മണം മരണത്തിന്റേതാണല്ലോ. ആ കഥയ്ക്കു പിന്നിൽ സ്വാനുഭവങ്ങൾ വല്ലതുമുണ്ടോ? അതോ സർറിയലിസ്റ്റിക് ചിന്തകൾ മാത്രമോ?</div>
+    <div class="qa-answer">പക്ഷിയുടെ മണം എഴുതുമ്പോൾ എന്റെ മനസ്സിൽ സർറിയലിസ്റ്റ് ചിന്തകൾ ഉണ്ടായിരുന്നില്ല. കൽക്കത്തയ്ക്കു മാറ്റമായി എന്റെ ഭർത്താവ് അവിടെ എന്നോടൊപ്പം താമസമാക്കിയപ്പോൾ അദ്ദേഹത്തെ ഗൃഹഭരണത്തിൽ സഹായിക്കുവാനായി ഒരു ഉദ്യോഗം കിട്ടുവാൻ ഞാൻ ശ്രമിച്ചു. കൽക്കത്തയിലെ ജീർണ്ണിച്ച ഒരു കെട്ടിടത്തിൽ ഞാൻ പ്രവേശിച്ചു. ജോലി കിട്ടിയില്ല. ലിഫ്റ്റ് കേടുവന്നിരിക്കുന്നു. ഭയങ്കര ശബ്ദത്തോടെ അത് കൂരിരുട്ടിൽ മുങ്ങി. ഞാൻ മരിച്ചില്ല മരിക്കാമായിരുന്നു എന്ന് പിന്നീട് പല പ്രാവശ്യം തോന്നി.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 11</span> ‘ഒരു കാൽ ജീവിക്കുന്നവരുടെ ലോകത്തും മറ്റേ കാൽ മരിച്ചവരുടെ ലോകത്തും ചവിട്ടുക എന്നതാണ് ഒരു മനുഷ്യജീവിക്കു സ്വീകരിക്കാൻ കഴിയുന്ന ഏറ്റവും പൂർണ്ണമായ നില. അപ്പോൾ ആ വ്യക്തിക്ക് സമനില കിട്ടുന്നു. ഉൾക്കാഴ്ച കൂടുതൽ അഗാധമാവുന്നു എന്റെ’ കഥയിൽ മാധവിക്കുട്ടി ഇങ്ങനെ എഴുതുകയുണ്ടായി. സാഹിത്യജീവിതത്തിലും വ്യക്തിജീവിതത്തിലും ഇങ്ങനെ ഒരനുഭവത്തെ സാക്ഷാത്കരിക്കാൻ കഴിഞ്ഞിട്ടുണ്ടോ?</div>
+    <div class="qa-answer">ഞാൻ ഹൃദ്രോഗിയാണ്. എനിക്ക് മറ്റുള്ളവരെപ്പോലെ കോണിപ്പടികൾ അനായാസേന കയറുവാനും അധ്വാനിക്കുവാനും വയ്യ. ഏതുനിമിഷവും മരിച്ചുവീഴാമെന്ന താക്കീതും മനസ്സിൽ വെച്ചാണ് ഞാൻ ജീവിക്കുന്നത്. അതുകൊണ്ടാവും എന്റെ കാൽവെപ്പുകൾക്ക് ഒരു പ്രത്യേകത കൈവന്നത്.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 12</span> ‘എന്റെ കഥ’ വെറുമൊരു നുണക്കഥയാണെന്ന് പിൽക്കാലത്ത് തുറന്നടിച്ചല്ലോ. എന്താണ് ഇങ്ങനെ വരാൻ?</div>
+    <div class="qa-answer">കഥ കഥയാണ്, ചരിത്രമല്ല. സത്യത്തെ ഞൊറിയും ആഭരണവും ധരിപ്പിച്ചേക്കാം. അതാണല്ലോ സാഹിത്യ രചനയുടെ ആദ്യപാഠം.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 13</span> നിങ്ങളുടെ കഥകളിൽ ഏറ്റവും ഇഷ്ടപ്പെട്ടതാണ് ‘ചതുരംഗം’ എന്ന് മുമ്പൊരിക്കൽ എഴുതുകയുണ്ടായല്ലോ. തന്നേക്കാൾ വയസ്സുചെന്ന ഒരാളെ കാമിക്കുന്ന ഒരു സ്ത്രീയുടെ, ശരീരം സ്ഥാപിക്കുന്ന അടിമത്തത്തെപ്പറ്റിയുള്ള ആ കഥയോട് പ്രത്യേക മമതാബന്ധത്തിനു കാരണമെന്താണ്?</div>
+    <div class="qa-answer">ആ കഥയ്ക്കു പിന്നിൽ എന്റെ ജീവിതത്തിലെ ഒരു സുപ്രധാന സംഭവുണ്ടായിരുന്നു. എന്നെ അംഗീകരിക്കാത്ത ഒരാൾ കഥ വായിച്ചതിനുശേഷം എന്നിൽ അനുരക്തനായി എന്റെ അടിമയായി മാറിയത് ഞാൻ ഓർക്കുന്നു.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 14</span> നമ്മുടെ സദാചാരനിയമങ്ങളെ രചനകളിൽ ധിക്കരിക്കുന്നതിനു പിന്നിൽ ബോധപൂർവ്വമായ എന്തെങ്കിലും ശ്രമമുണ്ടോ? ‘ചന്ദനമരങ്ങൾ’ എഴുതാനുള്ള പ്രേരണ എന്തായിരുന്നു?</div>
+    <div class="qa-answer">പൊതുവിൽ കാണപ്പെടുന്ന സദാചാരനിയമങ്ങളുടെ അസ്തിവാരം ശരീരമാണ്. നശ്വരമായ വസ്തു എന്റെ സദാചാര നിയമങ്ങളുടെ തറക്കല്ലായി നിൽക്കുന്നത് ഹൃദയമാണ്. പ്രേമമാണ്. പെൺകുട്ടികൾ തമ്മിലും ചേതോഹരമായ പ്രേമം ജനിക്കാമെന്ന് എനിക്ക് അറിയാം. ആ അറിവിന്റെ വെളിച്ചത്തിൽ ‘ചന്ദനമരങ്ങൾ’ എഴുതി.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 15</span> ചെറുകഥകളിലേതുപോലെ തീവ്രമായ ഒരു ഭാവപ്രപഞ്ചം നിങ്ങൾക്ക് നോവലുകളിൽ സൃഷ്ടിക്കാൻ കഴിഞ്ഞിട്ടുണ്ടോ?</div>
+    <div class="qa-answer">നോവൽ എഴുതാൻ എനിക്കു കഴിവില്ല എന്നു ഞാൻ മനസ്സിലാക്കിയിരിക്കുന്നു. ശ്രമിച്ചു പരാജയപ്പെട്ടു.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 16</span> സ്ത്രീയുടെ രചന ആത്മാവിൽ കിണർ കുഴിച്ചിറങ്ങുന്നതുപോലെയുള്ള ഒരു പ്രക്രിയയാണെന്ന് നിങ്ങൾ പറയാറുണ്ടല്ലോ. അതൊന്നു വിശദീകരിക്കാമോ?</div>
+    <div class="qa-answer">സ്ത്രീക്ക് അനുഭവ ദാരിദ്ര്യം ഉണ്ടാവുമെന്നു നിരൂപകന്മാർ പറഞ്ഞുകേട്ടിട്ടുണ്ട്. മദ്യപാനത്തെപ്പറ്റിയും കമ്പോളത്തെപ്പറ്റിയും യുദ്ധത്തെപ്പറ്റിയും വേശ്യാലയത്തെപ്പറ്റിയും സാഹിത്യകാരിക്ക് എഴുതാൻ കഴിയില്ല എന്ന് അവർ പറയുന്നു. ഒരാൾക്ക് രണ്ട് ജീവിതങ്ങളുണ്ട്. ബാഹ്യമായതും ആന്തരികമായതും. ആന്തരിക ജീവിതത്തിൽ ഏറെ പ്രാധാന്യം കൽപ്പിച്ചാൽ രചന മോശപ്പെടുകയില്ല എന്ന് ഞാൻ പൂർണ്ണമായും വിശ്വസിക്കുന്നു.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 17</span> മലയാളത്തിലെ മറ്റ് എഴുത്തുകാരികളെ എങ്ങനെ കാണുന്നു? ആരോടാണ് കൂടുതൽ പ്രിയം?</div>
+    <div class="qa-answer">അമ്മയെ ഏറ്റവും കൂടുതൽ സ്നേഹിക്കുന്നു. പിന്നെ സുഗതയെ. രാജലക്ഷ്മി ആത്മഹത്യ ചെയ്തുവെന്ന് വിശ്വസിക്കുന്നില്ല. എഴുതി തീർക്കാൻ പുസ്തകങ്ങൾ ബാക്കി കിടക്കുമ്പോൾ എഴുത്തുകാർ ആത്മഹത്യ ചെയ്യുകയില്ല. അവരെ ആരോ കൊന്ന് കെട്ടിത്തൂക്കിയതാവും എന്ന് എനിക്ക് തോന്നുന്നു.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 18</span> മഹാഭാരതത്തിൽ ഏറ്റവും തിളക്കമുള്ളതായി നിങ്ങൾക്ക് തോന്നിയ സ്ത്രീ കഥാപാത്രം ആരാണ്?</div>
+    <div class="qa-answer">ദ്രൗപദി.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 19</span> എന്തുകൊണ്ടാണങ്ങനെ തോന്നിയതെന്ന് പറയാമോ?</div>
+    <div class="qa-answer">വെളിപ്പെടുത്താത്ത പല സംഭവങ്ങളും നിറഞ്ഞതായിരിക്കാം ദ്രൗപദിയുടെ ജീവിതം. അർജ്ജുനനുമായി തനിച്ച് ശയ്യാഗൃഹത്തിൽ വിശ്രമിക്കുമ്പോൾ അവർ തന്റെ പ്രേമത്തെ വെളിപ്പെടുത്തിയിരിക്കാം. ദ്രൗപദി ട്രാജിക് ഫിഗറായത് ദുശ്ശാസനനാൽ വസ്ത്രാക്ഷേപം ചെയ്യപ്പെട്ടതിനാലല്ല. നാല് പരപുരുഷന്മാരുടെ ലാളന അനുഭവിക്കേണ്ടിവന്നതിനാലാണ് ദ്രൗപദി ദുഃഖപുത്രിയായത്. കിടക്കയെ കുരിശായി കണ്ടവൾ, സന്തോഷവതിയെന്നും സംതൃപ്തയെന്നും അഭിനയിക്കേണ്ടിവന്നവൾ.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 20</span> പുതിയ കാലത്തെ ഫെമിനിസ്റ്റ് പാഠങ്ങളോടുള്ള കാഴ്ചപ്പാടെന്താണ്?</div>
+    <div class="qa-answer">ഞാനും ഫെമിനിസ്റ്റാണ്. സ്ത്രീക്ക് പുരുഷനെ ആവശ്യമുണ്ടെന്ന് പഠിച്ച് അറിഞ്ഞ ഫെമിനിസ്റ്റ്.</div>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-question"><span class="qa-num">ചോദ്യം 21</span> തനിക്കു പിന്നാലെ വരുന്ന കഥാകാരന്മാരെക്കുറിച്ചോ കഥാകാരികളെക്കുറിച്ചോ നിങ്ങൾ അഭിപ്രായം പറയുന്നതായി കാണാറില്ല. ഇത് പുതിയ തലമുറയിൽ പ്രതീക്ഷയില്ലാത്തതുകൊണ്ടോ? അതോ അവരെ വിലയിരുത്താൻ സമയമായില്ല എന്നതുകൊണ്ടോ?</div>
+    <div class="qa-answer">പുതിയ കഥാകൃത്തുക്കൾ പഴകട്ടെ അപ്പോൾ അവരുടെ രചനകളെപ്പറ്റി അഭിപ്രായം പറയാം. അഭിപ്രായപ്രകടനങ്ങൾ എഴുത്തുകാരെ കുറച്ചു നേരത്തേക്കെങ്കിലും വഴിതെറ്റിക്കും. അതു ശരിയല്ലല്ലോ!</div>
+  </div>
+
+  <div class="questions-container">
+    <div class="questions-header">മാതൃകാ ചോദ്യങ്ങൾ</div>
+    
+    <div style="font-weight: 700; color: #92400e; margin-bottom: 8px;">ലഘു ചോദ്യങ്ങൾ</div>
+    <div class="q-item">
+      <div class="q-title">1. പ്രൊഫസർ രേണുകാദേവിയുടെ അന്ത്യം ചിത്രീകരിക്കുന്ന മാധവിക്കുട്ടിയുടെ കഥയേത്?</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">2. ‘എന്റെ കഥ’ നുണക്കഥയാണെന്ന് പറയാനുള്ള കാരണമെന്താണെന്നാണ് മാധവിക്കുട്ടി പറയുന്നത്?</div>
+    </div>
+
+    <div style="font-weight: 700; color: #92400e; margin: 14px 0 8px 0;">ഖണ്ഡികാ ചോദ്യങ്ങൾ</div>
+    <div class="q-item">
+      <div class="q-title">3. ‘ചന്ദനമരങ്ങൾ’ എന്ന കഥ രചിക്കാനുള്ള പ്രേരണ എന്താണെന്നാണ് മാധവിക്കുട്ടി പറയുന്നത്?</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">4. ‘നെയ്പായസ’ത്തിന്റെ രചനാ പശ്ചാത്തലത്തെക്കുറിച്ച് മാധവിക്കുട്ടി പറയുന്ന വിശദീകരണമെന്ത്?</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">5. കുട്ടികളുടെ മനസ്സിലേക്കിറങ്ങി കഥ പറയുന്ന വൈദഗ്ധ്യത്തെക്കുറിച്ച് മാധവിക്കുട്ടിയുടെ അഭിപ്രായമെന്ത്?</div>
+    </div>
+
+    <div style="font-weight: 700; color: #92400e; margin: 14px 0 8px 0;">ഉപന്യാസ ചോദ്യങ്ങൾ</div>
+    <div class="q-item">
+      <div class="q-title">6. മാധവിക്കുട്ടിയുടെ എഴുത്തിന്റെ സവിശേഷതകൾ അക്ബർ കക്കട്ടിൽ എങ്ങനെയാണ് അഭിമുഖത്തിലൂടെ പുറത്തു കൊണ്ടുവരുന്നത്?</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">7. സ്ത്രീ ജീവിതം മാധവിക്കുട്ടിയുടെ രചനകളിൽ തെളിഞ്ഞു നിൽക്കുന്നതെങ്ങനെയെന്ന് വിശദമാക്കുക?</div>
+    </div>
+  </div>
+
+  <div class="answer-key-box">
+    <div class="answer-key-title">ഉത്തര സൂചിക</div>
+    <div class="answer-item"><span class="answer-num">1.</span> കടൽമയൂരം.</div>
+    <div class="answer-item"><span class="answer-num">2.</span> കഥ കഥയാണ് – ചരിത്രമല്ല – സത്യത്തെ ഞൊറിയും ആഭരണവും ധരിപ്പിക്കുന്നതാണ് കഥ – സാഹിത്യരചനയുടെ ആദ്യപാഠം അതാണ്.</div>
+    <div class="answer-item"><span class="answer-num">3.</span> പെൺകുട്ടികൾ തമ്മിൽ ചേതോഹരമായ പ്രേമം ജനിക്കാം – സദാചാരനിയമങ്ങളുടെ അസ്തിവാരം ശരീരമാണ് – എന്റെ സദാചാര നിയമങ്ങളുടെ തറക്കല്ലായി നിൽക്കുന്നത് ഹൃദയമാണ് – പ്രേമമാണ് – ചന്ദനമരങ്ങളിലെ കഥാപാത്ര വിശദീകരണവും എഴുതാം.</div>
+    <div class="answer-item"><span class="answer-num">4.</span> ബോംബെയിൽ താമസിക്കുന്ന കാലം – കോളനിജീവിതം – മധ്യവർത്തികളായ വീട്ടമ്മമാർ – വീട്ടുജോലികൾ സ്വയം ചെയ്യുന്നവർ – അവരെ മാധവിക്കുട്ടി ആദരവോടെ കണ്ടു – ആ വീട്ടമ്മമാരുടെ വില ഭർത്താക്കന്മാർക്കും മക്കൾക്കും മാത്രമേ അറിയൂ – ഭർത്താവിന്റെ വികാരരഹിതമായ ഇരിപ്പ് – ജീവിതത്തിന്റെ ട്രാജിക് ടച്ചസ്സായി കാണാം – ഇത്തരം സാഹചര്യങ്ങളിൽ നിന്ന് പിറന്ന കഥ.</div>
+    <div class="answer-item"><span class="answer-num">5.</span> ശരീരത്തിന്റെ വളർച്ചയും വാർദ്ധക്യവും അംഗീകരിക്കാത്ത മനസ്സാണ് മാധവിക്കുട്ടിയുടേത് – എന്ന് മാധവിക്കുട്ടി – പതിനഞ്ചു വയസ്സിലെ കാഴ്ചപ്പാടാണ് ഇന്നും – അതുകൊണ്ട് കുട്ടികളുടെ മനസ്സിലേക്കിറങ്ങാൻ എളുപ്പമുണ്ട് – ഓരോ കഥാപാത്രത്തിന്റേയും മനസ്സിലേക്കിറങ്ങി കഥ പറയുമ്പോൾ അവരുടെ ലോകം ആവിഷ്കരിക്കാൻ സാധിക്കുമെന്ന് മാധവിക്കുട്ടി.</div>
+    <div class="answer-item"><span class="answer-num">6.</span> അക്ബർ കക്കട്ടിൽ – മാധവിക്കുട്ടി ഇവരെക്കുറിച്ച് ഒരു പാരഗ്രാഫ് എഴുതി തുടങ്ങാം – കഥകളുടെ പ്രത്യേകത – ഭാഷ – കഥ പറയുന്ന രീതി – കുട്ടികളുടെയും സ്ത്രീകളുടെയും മനസ്സ് ആവിഷ്കരിക്കാനുള്ള കഴിവ് – നാലപ്പാട്ട് തറവാട് കേന്ദ്രീകരിച്ചുള്ള സ്മരണകളും മറ്റും – നോവലുകൾ – സവിശേഷതകൾ – കഥ തന്നെയാണ് മാധവിക്കുട്ടിയുടെ തട്ടകം എന്നുറപ്പിക്കുന്ന പ്രസ്താവനകൾ – ഇംഗ്ലീഷിൽ എഴുതിയ കവിതകൾ – മൊത്തം സാഹിത്യ സംഭാവനകൾ.</div>
+    <div class="answer-item"><span class="answer-num">7.</span> മാധവിക്കുട്ടിയെക്കുറിച്ചുള്ള ജീവചരിത്രക്കുറിപ്പ് – രചനകളെ പരിചയപ്പെടുത്താം – സ്ത്രീജീവിതം പ്രത്യേകിച്ച് ഒറ്റപ്പെട്ട, ഉപേക്ഷിക്കപ്പെട്ട സ്ത്രീകളുടെ ലോകം – പലതരത്തിലുള്ള സ്ത്രീ ജീവിതം – ഗ്രാമം നഗരം – സ്ത്രീ ജീവിതത്തിന്റെ വ്യത്യാസങ്ങൾ – മാധവിക്കുട്ടിയുടെ പതിമൂന്നാം വയസ്സിലെ വിവാഹം – അനുഭവങ്ങൾ എങ്ങനെ കഥകൾക്ക് വിഷയമായി എന്ന അന്വേഷണം – എന്റെ കഥയിലെ തുറന്നെഴുത്ത് – ഇതെല്ലാം വിഷയമാക്കി മൂന്ന് പുറത്തിൽ കുറയാതെ വികസിപ്പിച്ചെഴുതാം.</div>
+  </div>
+</div>
+
+<div class="chapter-section">
+  <div class="chapter-header">
+    <div class="chapter-module-badge">മൊഡ്യൂൾ 1 · അധ്യായം 4</div>
+    <div class="chapter-title">ചരിത്രപാഠം / ലേഖനം: അർമേനിയയിലെ ഷോഗോമാൻ തെലിരിയനെ അറിയാമോ? അദ്ദേഹം കൊന്ന യുവതുർക്കിയെയോ?</div>
+    <div class="chapter-author-sub">സജി മാർക്കോസ്</div>
+  </div>
+
+  <div class="author-box">
+    <div class="author-box-title">സജി മാർക്കോസ് (ഡാർക്ക് ടൂറിസ്റ്റ്, സാമൂഹിക പ്രവർത്തകൻ)</div>
+    <p style="margin-bottom: 6px;">ഡാർക്ക് ടൂറിസ്റ്റ്, സാമൂഹിക പ്രവർത്തകൻ, ടി.വി. ഡിബേറ്റ് പാനലിസ്റ്റ് എന്നിങ്ങനെ പ്രശസ്തനായ സജി മാർക്കോസ് ബഹ്റൈൻ കിങ്ഡം ഹൗസിംഗ് മന്ത്രാലയത്തിലെ സീനിയർ പ്രോജക്റ്റ് മാനേജറും സാങ്കേതിക ഉപദേശകനുമാണ്.</p>
+    <p style="margin-bottom: 0;"><strong>ഡാർക്ക് ടൂറിസം (Dark Tourism):</strong> വംശഹത്യയുടെ മ്യൂസിയങ്ങൾ, യുദ്ധസെമിത്തേരികൾ, മരണസ്ഥലങ്ങൾ, പല തരത്തിലുള്ള ദുരന്തങ്ങളും കഷ്ടപ്പാടുകളും അനുഭവിക്കുന്ന ഇടങ്ങൾ തുടങ്ങിയവയിലേക്ക് നടത്തുന്ന യാത്രകളെയാണ് ഡാർക്ക് ടൂറിസം എന്നു പറയുന്നത്. സജി മാർക്കോസ് ഡാർക്ക് ടൂറിസ്റ്റായി നിരവധി രാജ്യങ്ങൾ സന്ദർശിക്കുകയും അവിടുത്തെ അനുഭവങ്ങളെ ചരിത്ര സംഭവങ്ങളുമായി കോർത്തിണക്കി വർഗ്ഗീയതയ്ക്കും മതവിദ്വേഷത്തിനും എതിരെ പ്രഭാഷണങ്ങൾ നടത്തുകയും ചെയ്തു.</p>
+  </div>
+
+  <p>1912 മുതൽ 1919 വരെ ഓട്ടോമൻ തുർക്കി ഭരണകൂടം അർമേനിയയിൽ നടത്തിയ വംശഹത്യയാണ് അർമേനിയൻ വംശഹത്യ. ചരിത്രത്തിൽ അടയാളപ്പെടുത്തിയിട്ടുള്ള വംശഹത്യകളിൽ അതിക്രൂരമായ ഒന്നായിരുന്നു അത്. ഇതിനെക്കുറിച്ച് പ്രതിപാദിക്കുന്ന വീഡിയോ പോഡ്കാസ്റ്റാണ് ‘അർമേനിയയിലെ ഷോഗോമാൻ തെലിരിയനെ അറിയാമോ? അദ്ദേഹം കൊന്ന യുവതുർക്കിയെയോ?’ എന്നത്. ട്രൂ കോപ്പി തിങ്ക് എന്ന വെബ് പോർട്ടലിലാണ് ഇത് പ്രസിദ്ധീകരിച്ചു വന്നിട്ടുള്ളത്. ഷോഗോമാൻ തെലിരിയൻ എന്ന അർമേനിയൻ വംശജന്റെ ജീവിതകഥ പറയുന്നതിലൂടെ അർമേനിയ എന്ന മോണോ എത്ത്നിക് രാജ്യത്തെക്കുറിച്ചും അവിടെ തുർക്കി ഭരണകൂടം നടത്തിയ ഭീകരമായ വംശഹത്യയെക്കുറിച്ചുമാണ് സജി മാർക്കോസ് വിശദമാക്കുന്നത്.</p>
+
+  <div class="section-subhead">1. ചരിത്രപ്രസിദ്ധമായ ബെർലിൻ വിചാരണയും വിധിയും</div>
+
+  <p>1921 ഏപ്രിൽ മാസത്തിൽ ബെർലിൻ ഹൈക്കോടതിയിൽ ഒരു കൊലപാതക കേസ് വിധി പറയുന്നു. പ്രതി ഷോഗോമാൻ തെലിരിയനായിരുന്നു. ലോകത്തൊരിടത്തും പ്രസ്താവിക്കാത്ത വിധിന്യായമാണ് ഈ കേസിൽ കോടതി പ്രസ്താവിച്ചത്. ഷോഗോമാൻ തെലിരിയന്റെ പേരിലുള്ള കുറ്റം തെളിയിക്കപ്പെട്ടു. കൊലപാതകി തെലിരിയനാണെന്ന് കോടതിക്ക് ബോധ്യപ്പെട്ടു. കൊലപാതകശേഷം പ്രതി സംഭവസ്ഥലത്തുനിന്ന് ഓടി രക്ഷപ്പെട്ടില്ല. പോലീസ് വന്ന് അറസ്റ്റുചെയ്യുന്നതുവരെ അയാൾ അവിടെ തന്നെ നിന്നു. അർമേനിയൻ വംശജനായ എം.ആർ. ഗ്രിഗോറിയസ് എന്ന ക്രിസ്ത്യൻ പുരോഹിതനായിരുന്നു തെലിരിയന്റെ വക്കീൽ. തെലിരിയന് മാനസിക വിഭ്രാന്തിയുണ്ടെന്ന് വക്കീൽ കോടതിയിൽ വാദിച്ചു. എന്നാൽ തനിക്ക് അത്തരം പ്രശ്നങ്ങളൊന്നുമില്ലെന്നും താൻ തന്നെയാണ് കൊലപാതകം നടത്തിയതെന്നും തെലിരിയൻ പറഞ്ഞു. അരമണിക്കൂർ നേരം കഴിഞ്ഞ് കോടതി വിധി പ്രഖ്യാപിക്കുമെന്ന് പറഞ്ഞ് പിരിഞ്ഞു.</p>
+
+  <p>കോടതി വീണ്ടും ചേർന്നു. വിധി പ്രസ്താവിച്ചത് ഇങ്ങനെയായിരുന്നു: <em>'പ്രതി കുറ്റം ചെയ്തുവെന്ന് സംശയാതീതമായി തെളിയിക്കപ്പെട്ടിട്ടുണ്ട്. പക്ഷേ പ്രതി ശിക്ഷാർഹനല്ല.'</em> അത്യപൂർവ്വമായ ഈ കോടതി വിധിയിലൂടെ തെലിരിയൻ കുറ്റവിമുക്തനായി.</p>
+
+  <p>അതിനുശേഷം ഷോഗോമാൻ തെലിരിയൻ നേരെ സെർബിയയിലേക്ക് കുടിയേറി താസാമിലീഖിയെന്ന പേരിൽ ഇരുപതു വർഷത്തോളം അദ്ദേഹം സെർബിയയിൽ കഴിഞ്ഞു. തുർക്കി ഏജന്റ്സ് ഇക്കാലമത്രയും അദ്ദേഹത്തെ തിരഞ്ഞുകൊണ്ടിരുന്നു. ഒടുവിൽ അവർ അദ്ദേഹത്തെ കണ്ടെത്തി അത് തെലിരിയന് മനസ്സിലായി. തെലിരിയൻ മെമ്പറായ ഒരു ഹണ്ടിംഗ് ഗ്രൂപ്പിൽ ഉന്നതതല സ്വാധീനത്തോടെ കടന്നുവന്ന് ഒരാൾ തനിക്കൊപ്പം ഹണ്ടിങ്ങിന് വരണം എന്ന് തെലിരിയനെ നിർബന്ധിച്ചു. അസാധാരണമായ എന്തൊക്കെയോ തനിക്കുചുറ്റും സംഭവിക്കുന്നുവെന്ന് തെലിരിയന് ബോധ്യമായി.</p>
+
+  <p>കുറ്റാന്വേഷണ മേധാവി താസാമിലീഖിയെ വിളിച്ചു പറഞ്ഞു: 'തുർക്കി ഏജന്റ്സ് ഷോഗോമാൻ തെലിരിയൻ എന്നൊരാളെ അന്വേഷിക്കുന്നുണ്ട്. അദ്ദേഹം ഏത് നിമിഷവും കൊല്ലപ്പെടും. അത് നിങ്ങളാണെങ്കിൽ എനിക്കു നിങ്ങളെ രക്ഷിക്കാൻ കഴിഞ്ഞേക്കും. അത് നിങ്ങളാണോ?' ഇരുപത് വർഷമായി സൂക്ഷിച്ച രഹസ്യം തെലിരിയൻ അവിടെ പറയുകയാണ് – <strong>ഞാനാണ് അയാൾ!</strong></p>
+
+  <p>ഓട്ടോമൻ ഭരണകൂടത്തിലെ അവസാനത്തെ ഉപപ്രധാനമന്ത്രിയായിരുന്നു തലാത് പാഷ. തലാത് പാഷയെ ബെർലിനിൽ വച്ച് വെടിവെച്ചുകൊന്നു എന്നുള്ളതാണ് തെലിരിയന്റെ പേരിലുള്ള കുറ്റം. അവിടെനിന്ന് ഷോഗോമാൻ തെലിരിയൻ തന്റെ ജീവിതം പറയുന്നു.</p>
+
+  <div class="section-subhead">2. സജി മാർക്കോസിന്റെ അർമേനിയൻ യാത്രാനുഭവങ്ങൾ</div>
+
+  <p>ഈ കഥ കേട്ടശേഷം ഷോഗോമാൻ തെലിരിയന്റെ ബാക്കി കഥ അറിയാനായി ഞാൻ അർമേനിയയിലേക്ക് പോയിരുന്നു. ലോകത്തിലെ ആദ്യത്തെ ക്രിസ്ത്യൻ രാജ്യമാണ് അർമേനിയ. അതുകൊണ്ടുതന്നെ അർമേനിയ ഇന്നും പൂർണ്ണമായി മോണോ എത്നിക് രാജ്യമാണ്. അവിടെ എനിക്ക് ഭാഷാപ്രശ്നം നേരിട്ടു. ഇംഗ്ലീഷ് അറിയാവുന്ന ചുരുക്കം പേരെ അവിടെയുള്ളൂ.</p>
+
+  <p>അങ്ങനെയിരിക്കുമ്പോൾ ഓൺലൈനിൽ ഞാൻ എഫ്രൈം റഫായേൽ എന്നൊരാളെ പരിചയപ്പെട്ടു. നിത്യസംഭാഷണങ്ങൾക്കൊടുവിൽ ഞങ്ങൾ നല്ല സുഹൃത്തുക്കളായി മാറി. ഷോഗോമാൻ തെലിരിയനെക്കുറിച്ച് അന്വേഷിച്ചതായിരുന്നു ഞങ്ങളുടെ സൗഹൃദത്തിന്റെ അടിസ്ഥാനം. നമ്മൾ ഭഗത് സിംഗിനെയോ സുഭാഷ് ചന്ദ്രബോസിനെയോ ഒക്കെ കരുതുന്നതുപോലെയാണ് അർമേനിയക്കാർക്ക് തെലിരിയൻ എന്ന് എനിക്ക് മനസ്സിലായി. അവരുടെ വീരപുത്രനാണ് തെലിരിയൻ. അദ്ദേഹത്തെക്കുറിച്ചറിയാനും അദ്ദേഹം ജീവിച്ചിരുന്ന സ്ഥലങ്ങൾ കാണാനുമാണ് ഞാൻ വന്നതെന്ന് സുഹൃത്തിനോട് പറഞ്ഞു.</p>
+
+  <p>ആകസ്മികമായാണ് എഫ്രൈം റഫായേലിനെ കണ്ടുമുട്ടിയതെങ്കിലും അദ്ദേഹത്തിന്റെ വല്യമ്മ ഇന്ന് ജീവിച്ചിരിപ്പുണ്ട്. ഈ വല്യമ്മ അർമേനിയൻ വംശഹത്യയെ അതിജീവിച്ച് ജീവിച്ചിരിക്കുന്നവരിൽ ഒരു പക്ഷേ അവസാനത്തെ വ്യക്തിയായിരിക്കും. 1919ൽ വംശഹത്യ അവസാനിക്കുന്നു. ഓട്ടോമൻ ഭരണകൂടം തകരുന്നു. റിപ്പബ്ലിക് ഓഫ് തുർക്കി നിലവിൽ വരുന്നു. അന്നവർക്ക് നാലു വയസ്സായിരുന്നു. അവരുടെ മാതാപിതാക്കൾ പ്രാണരക്ഷാർത്ഥം ജോർജ്ജിയയിലെ ബെട്ടുമഗ്രാമത്തിലേക്ക് 600 കിലോമീറ്റർ നടന്നുപോയി. മെർസയെന്നാണ് ആ വല്യമ്മയുടെ പേര്. പിന്നെ കരിങ്കടൽ കടന്ന് ബൾഗേറിയയിൽ കുടിയേറ്റക്കാരായി താമസിച്ചു. സ്റ്റാലിന്റെ ഭരണകാലത്ത് അർമേനിയ റഷ്യയുടെ അധീനതയിലായി. സോവിയറ്റ് യൂണിയൻ തകർന്നതോടെ അർമേനിയ സ്വതന്ത്രരാജ്യമായി മാറി. അപ്പോൾ അർമേനിയക്കാർ കുടിയേറ്റ പ്രദേശങ്ങൾ വിട്ട് തിരിച്ചുവന്നു.</p>
+
+  <p>പഴയകാലത്തെക്കുറിച്ച് കൃത്യമായി ഓർമ്മയില്ലെങ്കിലും ഈ വംശഹത്യ അതിജീവിച്ച് ജീവിച്ചിരിക്കുന്ന ഭൂമിയിലെ ഏക വ്യക്തി ഈ മെർസയെന്ന സ്ത്രീയായിരിക്കും. എറബൻ എന്ന തലസ്ഥാന നഗരിയിൽ നിന്ന് അകലെയല്ലാതെ എരിബൂനിയെന്ന ഗ്രാമത്തിൽ മെർസ ജീവിച്ചിരിപ്പുണ്ട്. അപ്പോൾ ഞാൻ പറഞ്ഞു: 'എങ്കിൽ നിശ്ചയമായും എനിക്കവരെ കാണണം.'</p>
+
+  <p>മെർസയെ കണ്ടപ്പോൾ അവർക്ക് അർമേനിയൻ ഭാഷയും റഷ്യൻഭാഷയും മാത്രമേ അറിയൂ. എഫ്രൈം ആണ് ദ്വിഭാഷിയായത്. ഒരു പഴയ തുകൽപ്പെട്ടി അവൻ എന്നെ തുറന്നു കാണിച്ചു. പഴയ നോട്ടുകൾ പഴകിപ്പോയ ഫോട്ടോകൾ ഇവയെല്ലാം അർമേനിയയിൽ നിന്ന് പലായനം ചെയ്ത കാലത്ത് കൊണ്ടുവന്നതാണ്. ഇതെല്ലാം ഒന്നാം ലോക മഹായുദ്ധകാലത്തിനുമുമ്പ് അവരുടെ നാട്ടിലുണ്ടായിരുന്നതാണ്. ഏത് സന്ദർശകൻ വന്നാലും മെർസ ഇതെല്ലാം കാണിച്ചു കൊടുത്ത് നിർത്താതെ സംസാരിക്കും.</p>
+
+  <p>അവിടെനിന്ന് ഇറങ്ങിയശേഷം നേരെപ്പോയത് എരവൻ പട്ടണത്തിലെ വംശഹത്യാ സ്മാരകത്തിലേക്കാണ്. എറബനിലെ ഈ അർമേനിയൻ വംശഹത്യാസ്മാരകം മണ്ണിനടിയിലാണ് പണിതിരിക്കുന്നത്. 'നരകത്തിന്റെ രൂപത്തിൽ' എന്ന വിശേഷണത്തോടെയാണ് ഇത് നിർമ്മിച്ചിരിക്കുന്നത്. നരകത്തിന്റെ ഓരോ നിലകൾ താഴോട്ട് ഇറങ്ങുമ്പോഴും അതിൽ പീഡനങ്ങളുടെ ഗൗരവം കൂടും എന്ന പ്രത്യേകത അവിടെ കാണാം. അവിടെ കൊലപാതകങ്ങളുടെ തീവ്രത വർദ്ധിക്കുകയും കൂട്ടിയിട്ടിരിക്കുന്ന ശവങ്ങളുടെയും അനാഥരാക്കപ്പെട്ട കുട്ടികളുടെയും എണ്ണം കൂടും.</p>
+
+  <p>ആദ്യത്തെ നിലയിൽ 1912ൽ ഓട്ടോമൻ ഭരണകൂടം അർമേനിയൻ വംശജരെ എങ്ങനെ ഒറ്റപ്പെടുത്തിയെന്നും മൃഗവാഹനങ്ങൾ തടഞ്ഞു എന്നും കോടതി വിലക്ക് ഏർപ്പെടുത്തി നിയമസംവിധാനത്തിൽ നിന്ന് എങ്ങനെ പുറത്താക്കി എന്നും വ്യക്തമാക്കുന്നുണ്ട്. ഇങ്ങനെ തുർക്കിഫിക്കേഷൻ നിയമങ്ങൾ ശക്തമാക്കിയതെങ്ങനെയെന്ന കാര്യങ്ങളാണ് ആദ്യത്തെ നിലയിലുള്ളത്. മലയാളത്തിലിറങ്ങിയ യുവതുർക്കികൾ എന്ന് പറയുന്ന സിനിമ യുവതുർക്കികൾ ആരായിരുന്നു എന്ന് അന്വേഷിച്ചിട്ടുണ്ടോയെന്ന് എനിക്ക് സംശയമാണ്. തലാത് പാഷ, എൻവർ പാഷ, ഇസ്മായിൽ പാഷ ഇവരാണ് തുർക്കി ഓട്ടോമൻ ഭരണകൂടത്തിലെ മൂന്ന് പ്രധാനപ്പെട്ട മന്ത്രിമാർ. ഇവർ യങ് തുർക്സ് എന്നറിയപ്പെട്ടു.</p>
+
+  <div class="section-subhead">3. വംശഹത്യയുടെ ക്രൂരതകളും തെലിരിയന്റെ പ്രതികാരവും</div>
+
+  <p>രണ്ടാമത്തെയും മൂന്നാമത്തെയും നാലാമത്തെയും നിലകൾ ഇറങ്ങി താഴേക്ക് ചെല്ലുമ്പോൾ തെരുവുകളിൽ ശവങ്ങൾ കുന്നുകൂടി കിടക്കുന്നതും മാതാപിതാക്കൾ നഷ്ടപ്പെട്ട കുട്ടികൾക്ക് പള്ളികൾ അഭയകേന്ദ്രമാകുന്നതും കാണാം. ഇവരെ സംരക്ഷിക്കാനൊന്നും ഭരണകൂടം തയ്യാറായില്ല. അതിനുപകരം സിറിയൻ മരുഭൂമിയിലെ ഡെത്ത് ക്യാമ്പിലേക്ക് സ്ത്രീകളെയും കുട്ടികളെയും ഭക്ഷണമോ വെള്ളമോ കൊടുക്കാതെ 6 ദിവസം നടത്തിക്കൊണ്ടുപോകും. ഇതിനെ ഡെത്ത് മാർച്ച് എന്നാണ് തുർക്കി ഉദ്യോഗസ്ഥർ വിളിച്ചിരുന്നത്. ഈ യാത്രക്കിടെ 80% പേരും കൊല്ലപ്പെടും. അപ്പോൾ അവർക്ക് ചെലവിനുകൊടുക്കേണ്ട ബാധ്യതപോലും ഭരണകൂടത്തിനില്ല. നീന്തലറിയാത്ത സ്ത്രീകളെയും കുട്ടികളെയും വലിയ ബാർജുകളിൽ കയറ്റി കരിങ്കടലിലേക്ക് തള്ളിവിടും. അമിതഭാരം മൂലം ബാർജ് താഴ്ന്ന് എല്ലാവരും കടലിൽ മുങ്ങി മരിക്കും. എന്താണ് ഇതിനു പിന്നിലെ കാരണം – കപട ദേശീയത തന്നെ.</p>
+
+  <p>അർമേനിയയിലെ പ്രധാനപ്പെട്ട കച്ചവടക്കാരെല്ലാം ക്രിസ്ത്യൻ മതവിഭാഗത്തിൽപ്പെട്ടവരായിരുന്നു. ഇന്ത്യയിൽ വന്ന് ഇവർ വ്യാപാരബന്ധങ്ങൾ ഉണ്ടാക്കിയിരുന്നു. അർമേനിയക്കാർ റഷ്യയുമായി ഒരു ബന്ധം സ്ഥാപിച്ചാൽ തുർക്കി ഭരണകൂടത്തിന് അതൊരു ക്ഷീണമാകുമെന്ന ഭയം അവരെ വംശഹത്യയ്ക്ക് പ്രേരിപ്പിച്ചു. മാത്രമല്ല അർമേനിയക്കാർ പ്രധാന കച്ചവടക്കാരായ ഇസ്താംബുൾ തന്ത്രപ്രധാനമായൊരു തുറമുഖമായിരുന്നു. ഇവിടുത്തെ അർമേനിയക്കാർ ഇസ്ലാമിസ്റ്റ് ഓട്ടോമൻ ഭരണകൂടത്തിനൊരു ഭീഷണിയാകുമോ എന്ന ചിന്തയും കപടദേശീയതയും അതിലുപരി അർമേനിയൻ പൗരന്മാരോടുള്ള പകയും അവരെ വകവരുത്താൻ കാരണമായി. 18 ലക്ഷം അർമേനിയക്കാരെ ഒന്നാം ലോകമഹായുദ്ധകാലത്തെ അർമേനിയൻ വംശഹത്യയിൽ കൊന്നുകളഞ്ഞു. 20 ലക്ഷം അർമേനിയക്കാരിൽ 90% ശതമാനവും പല തരത്തിൽ കൊലചെയ്യപ്പെട്ടു.</p>
+
+  <p>എന്റെ കയ്യിൽ ഷോഗോമാൻ തെലിരിയന്റെ ഒരു ഫോട്ടോയുണ്ട്. അതുമായി നടന്ന് താഴെയെത്തി. കാര്യങ്ങൾ വിശദീകരിക്കുന്നത് ഒരു പെൺകുട്ടിയാണ്. വംശഹത്യ കാലത്ത് ജീവിച്ചിരുന്നവരുടെ രണ്ടാം തലമുറയിൽപ്പെട്ടവളാണ് ആ കുട്ടി. വളരെ വികാരാധീനയായാണ് അവർ വംശഹത്യയുടെയും തെലിരിയന്റെയും കാര്യങ്ങൾ വിശദീകരിച്ചത്. അതുകേട്ട് ഞാനും തെലിരിയന്റെ ചിത്രത്തിനുമുൻപിൽ വികാരാധീനനായി നിന്നുപോയി. പെൺകുട്ടി തെലിരിയന്റെ ജീവിതം വിവരിച്ചു. നാലു വയസ്സുള്ളപ്പോൾ അമ്മയ്ക്കും സഹോദരങ്ങൾക്കുമൊപ്പം ഡെത്ത് മാർച്ചിൽ സിറിയൻ മരുഭൂമിയിലേക്കു കൊണ്ടുപോകുമ്പോൾ അമ്മ മരിച്ചു. അച്ഛനെ അതിനു മുൻപേ കൊന്നുകളഞ്ഞിരുന്നു. സഹോദരങ്ങളും മരിച്ചു. ആ നാലുവയസ്സുകാരൻ അമ്മയ്ക്ക് കാവൽനിന്നു. മരിച്ചുവീണവരുടെ സ്വർണ്ണാഭരണങ്ങൾ മോഷ്ടിക്കാൻ പട്ടാളക്കാർ കുതിരപ്പുറത്ത് വന്നു അവർ മനുഷ്യരുടെ സ്വർണ്ണപ്പല്ലുകൾ വരെ എടുത്തുകൊണ്ടുപോയി. മണലിൽ കമിഴ്ന്നു കിടന്നാണ് തെലിരിയൻ രക്ഷപ്പെട്ടത്. അവിടെ നിന്ന് ഓടിപ്പോയ തെലിരിയൻ ഒരു കുർദ്ദ് സ്ത്രീയുടെ വീട്ടിൽ എത്തിപ്പെട്ടു. തന്റെ ശരീരത്തിൽ ജീവൻ ബാക്കിയായത് പ്രതികാരം ചെയ്യുന്നതിന് വേണ്ടിയായിരുന്നു. <em>'ഞാൻ ജനിച്ചതു തന്നെ പ്രതികാരം ചെയ്യുന്നതിനാണ്'</em> എന്ന് തെലിരിയൻ പിന്നീടു പറഞ്ഞിട്ടുണ്ട്.</p>
+
+  <p>ആരും അർമേനിയക്കാർക്ക് അഭയം കൊടുക്കരുതെന്ന ഓട്ടോമൻ ഭരണകൂടത്തിന്റെ നിയമം മൂലം കുർദ്ദു സ്ത്രീ ഒരാഴ്ചയ്ക്കുശേഷം ഭയം മൂലം തെലിരിയനെ ഒഴിവാക്കി. ആരോഗ്യം വീണ്ടെടുത്ത അവൻ റഷ്യൻ അതിർത്തിയിലെ എൽസ്ങ്കാർ എന്ന ഗ്രാമത്തിലേക്ക് ഓടിപ്പോയി. അവിടെ താമസിച്ച് അവൻ വളർന്നു രാഷ്ട്രീയ കാലാവസ്ഥകൾ മാറിയപ്പോൾ 1919ൽ അറേബ്യൻ രാജ്യങ്ങളെല്ലാം ഓട്ടോമൻ ഗവൺമെന്റിൽ നിന്ന് പിരിഞ്ഞുപോയി. ഓട്ടോമൻ ഭരണകൂടം ഇല്ലാതായി. പകരം റിപ്പബ്ലിക് ഓഫ് തുർക്കി നിലവിൽ വന്നു. പിന്നീട് വർഷങ്ങൾക്കുശേഷമാണ് അർമേനിയ സ്വതന്ത്രമാകുന്നത്.</p>
+
+  <p>പിന്നീട് ലോകത്തിന്റെ വിവിധ ഭാഗങ്ങളിൽ ചിതറിപ്പോയ അർമേനിയക്കാർ ഒത്തുചേർന്നു. അമേരിക്കയിലെ ബോസ്റ്റണിൽ പതിനൊന്ന് അർമേനിയക്കാർ കൂടി ചേർന്ന് തങ്ങളോട് ക്രൂരത കാട്ടിയവരോട് പ്രതികാരം ചെയ്യാൻ തീരുമാനിക്കുന്നു (ഓപ്പറേഷൻ നെമെസിസ്). അവർ പതിനൊന്ന് പേരുടെ ലിസ്റ്റുണ്ടാക്കി അതിൽ ഒന്നാമത്തെ പേര് തലാത് പാഷയുടേതായിരുന്നു. ഈ ഓപ്പറേഷന്റെ സംഘാടകൻ സെർബിയയിൽ താമസിക്കുന്ന തെലിരിയനെ കണ്ടെത്തുകയും തലാത്പാഷയെ കൊല്ലാൻ ആവശ്യപ്പെടുകയും ചെയ്തു. തലാത് പാഷ ഇപ്പോൾ ബെർലിനിലാണ്. യാത്രാരേഖകൾ ശരിയാക്കി തരും. തോക്കും ഒറ്റ ബുള്ളറ്റും, പിടിക്കപ്പെട്ടാൽ അത് നിങ്ങളുടെ ഉത്തരവാദിത്തം ഇതായിരുന്നു വ്യവസ്ഥ.</p>
+
+  <p>അതനുസരിച്ച് ഷോഗോമാൻ തെലിരിയൻ ബെർലിനിലേക്ക് താമസം മാറ്റി. അവിടെ അതിസമ്പന്നനായി തലാത് പാഷ താമസിക്കുന്നുണ്ട്. അതിനടുത്തായിരുന്നു തെലിരിയന്റെ വാടക വീട്. നിരന്തരം തലാത്പാഷയെ നിരീക്ഷിച്ച തെലിരിയൻ അയാളുടെ യാത്രാവേളകൾ മനസ്സിലാക്കി. അതിന് നാലുമാസമെടുത്തു. വൈകുന്നേരങ്ങളിൽ ഒറ്റയ്ക്ക് നടക്കാനിറങ്ങുന്ന പാഷയെ പിന്തുടർന്ന് അയാളോട് ചോദിച്ചു 'തലാത്പാഷ' ഇതുമാത്രമേ ചോദിച്ചുള്ളൂ. പാഷ ഞെട്ടിപ്പോയി. കാരണം ആ പേരറിയുന്നവർ അന്ന് ബെർലിനിൽ ഉണ്ടായിരുന്നില്ല. 25 കാരനായ തെലിരിയൻ ആ ക്രൂരനായ ഭരണാധികാരിയുടെ നെറ്റിയിൽ തന്നെ വെടിവെച്ചു. അയാൾ തലച്ചോറ് തകർന്ന് മരിച്ചുവീണു. തെലിരിയൻ അവിടെത്തന്നെ നിന്നു പോലീസ് വന്നു, പിടികൊടുത്തു.</p>
+
+  <p>വംശഹത്യയിൽ നിന്ന് രക്ഷപ്പെട്ട ക്രിസ്ത്യൻ പുരോഹിതനായ മാർഗ്രിഗോറിയസാണ് കോടതിയിൽ തെലിരിയനുവേണ്ടി കേസ് വാദിച്ചത്. കൺമുന്നിൽ വെച്ച് അമ്മയും സഹോദരങ്ങളും മരിച്ചു വീഴുന്നതു കാണേണ്ടിവന്നതുകൊണ്ട് തെലിരിയന് മാനസിക വിഭ്രാന്തിയുണ്ടായെന്നും അതാണ് ഈ കൊലപാതകത്തിലേക്ക് നയിച്ചതെന്നും മാർഗ്രിഗോറിയസ് വാദിച്ചു. എന്നാൽ തെലിരിയൻ ഇത് തള്ളിക്കളഞ്ഞു. തനിക്ക് മാനസിക വിഭ്രാന്തിയില്ലെന്നും താൻ തന്നെയാണ് പാഷയെ കൊന്നതെന്നും തെലിരിയൻ കോടതിയിൽ ഏറ്റുപറഞ്ഞു. പക്ഷേ ഞാൻ നിരപരാധിയാണ് കൊലപാതകി തലാത്പാഷയാണ്. അതുകൊണ്ട് എന്നെ വിട്ടയക്കണം. കോടതി അന്തിമ വിധിക്കു മുൻപ് അരമണിക്കൂർ പിരിഞ്ഞു. പിന്നീട് കോടതി ചേർന്നപ്പോൾ വിധി പ്രഖ്യാപിച്ചു: <em>"ഇദ്ദേഹം കൊലപാതകിയാണ്. കുറ്റകൃത്യം സംശയാതീതമായി തെളിയിക്കപ്പെട്ടിരിക്കുന്നു. പക്ഷേ ഇദ്ദേഹം ശിക്ഷാർഹനല്ല."</em> കോടതി വെറുതെവിട്ട തെലിരിയൻ സെർബിയയിൽ താമസിക്കുമ്പോൾ തന്നെ തുർക്കിയുടെ ഏജന്റ്സ് പ്രതികാരം ചെയ്യാനായി അന്വേഷിച്ചു ചെന്നു. അത് മനസ്സിലാക്കിയ തെലിരിയൻ കാസാബ്ലാങ്കയിലേക്ക് കുടിയേറി. അവിടെയും അന്വേഷണങ്ങൾ വന്നപ്പോൾ അദ്ദേഹം അമേരിക്കയിലേക്ക് കുടിയേറി. അവിടെ കുടുംബത്തോടൊപ്പം അദ്ദേഹം സമാധാനമായി ജീവിച്ചു. മക്കളെ വളർത്തി. അദ്ദേഹത്തെ കണ്ടെത്താൻ തുർക്കിയുടെ ഏജന്റ്സിനു കഴിഞ്ഞിട്ടില്ല. അമേരിക്കയിലെ അറാരത്ത് അർമേനിയൻ ചർച്ചിന്റെ സെമിത്തേരിയിൽ അദ്ദേഹത്തിന്റെ ശവക്കല്ലറ ഇന്നുമുണ്ട്.</p>
+
+  <p>ഇതെല്ലാം വിവരിക്കുന്ന പെൺകുട്ടിയുടെ മുഖത്തെ വികാരവിചാരങ്ങൾ ഞാൻ അത്ഭുതത്തോടെ നോക്കി. വംശഹത്യാസ്മാരകത്തിന്റെ ഒമ്പതാം നില കഴിഞ്ഞാൽ മനുഷ്യർക്ക് സഹിക്കാൻ കഴിയുന്ന കാര്യങ്ങളല്ല ഉള്ളത്. ഇതെല്ലാം ചെയ്തവർ എങ്ങനെ ജീവിച്ചു എന്ന് അത്ഭുതം തോന്നി. വ്യത്യസ്തമായ ആഹാരം കഴിക്കുന്നതുകൊണ്ട്, വ്യത്യസ്തമായ ദൈവത്തെ ആരാധിച്ചതുകൊണ്ട്, വ്യത്യസ്തമായ ആചാരങ്ങൾ പുലർത്തുന്നതുകൊണ്ട് ഒരു മനുഷ്യൻ ശത്രുവാണെന്ന് പ്രഖ്യാപിക്കുന്ന നിലയിലേക്ക് എങ്ങനെ മനുഷ്യന് മാറാൻ പറ്റുന്നു. ചരിത്രം മുൻപിൽ നിൽക്കുമ്പോഴും വർഗ്ഗീയതയെക്കുറിച്ച് സംസാരിക്കുന്ന ഭരണകൂടങ്ങൾ ഇത് മനസ്സിലാക്കുന്നില്ല ഇക്കാലത്തും.</p>
+
+  <div class="questions-container">
+    <div class="questions-header">മാതൃകാ ചോദ്യങ്ങൾ</div>
+    
+    <div style="font-weight: 700; color: #92400e; margin-bottom: 8px;">ലഘു ചോദ്യങ്ങൾ</div>
+    <div class="q-item">
+      <div class="q-title">1. അർമേനിയൻ വംശജനായ ഷോഗോമാൻ തെലിരിയന്റെ അച്ഛനും അമ്മയും സഹോദരങ്ങളും കൊല്ലപ്പെട്ടതെങ്ങനെ?</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">2. ഡാർക്ക് ടൂറിസം എന്നാലെന്ത്? അർമേനിയൻ വംശഹത്യയ്ക്ക് ഡാർക്ക് ടൂറിസവുമായി ഇക്കാലത്ത് ബന്ധം വരുന്നതെങ്ങനെ?</div>
+    </div>
+
+    <div style="font-weight: 700; color: #92400e; margin: 14px 0 8px 0;">ഖണ്ഡികാ ചോദ്യങ്ങൾ</div>
+    <div class="q-item">
+      <div class="q-title">3. 1925ൽ ഷോഗോമാൻ തെലിരിയന്റെ കേസിൽ ബെർലിൻ ഹൈക്കോടതി പുറപ്പെടുവിച്ച വിധി എന്തായിരുന്നു?</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">4. അർമേനിയൻ വംശഹത്യാസ്മാരകത്തെക്കുറിച്ച് ഒരു പുറത്തിൽ കവിയാതെ കുറിപ്പെഴുതുക.</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">5. തുർക്കി ഓട്ടോമൻ ഭരണകൂടം നടപ്പാക്കിയ വംശഹത്യയുടെ ചരിത്രം എന്തായിരുന്നു?</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">6. ഷോഗോമാൻ തെലിരിയന്റെ ജീവിതം അർമേനിയൻ വംശഹത്യയുടെ പശ്ചാത്തലത്തിൽ വിവരിക്കുക.</div>
+    </div>
+    <div class="q-item">
+      <div class="q-title">7. കപടദേശീയതയും മതവും അധിനിവേശത്തിനും വംശഹത്യയ്ക്കും വേണ്ട ഉപകരണങ്ങളാക്കുന്നത് അർമേനിയൻ വംശഹത്യാചരിത്രം പരിശോധിക്കുമ്പോൾ കാണാൻ കഴിയുന്നതെങ്ങനെ?</div>
+    </div>
+  </div>
+
+  <div class="answer-key-box">
+    <div class="answer-key-title">ഉത്തര സൂചിക</div>
+    <div class="answer-item"><span class="answer-num">1.</span> അർമേനിയൻ വംശഹത്യയിൽ – അച്ഛനെ ആദ്യമേ കൊന്നു – അമ്മയേയും സഹോദരങ്ങളെയും 6 ദിവസം സിറിയൻ മരുഭൂമിയിലൂടെയുള്ള ഡെത്ത് മാർച്ചിൽ പങ്കെടുപ്പിച്ചു – അവർ അവിടെ മരിച്ചുവീണു – 4 വയസ്സുകാരനായ തെലിരിയൻ രക്ഷപ്പെട്ടു.</div>
+    <div class="answer-item"><span class="answer-num">2.</span> വംശഹത്യാസ്മാരകങ്ങൾ, യുദ്ധഭൂമി, കലാപസ്ഥലങ്ങൾ, ദുരന്തസ്ഥലങ്ങൾ ഇവിടേക്ക് നടത്തുന്ന യാത്രയാണ് ഡാർക്ക് ടൂറിസം. അർമേനിയയിലെ വംശഹത്യാസ്മാരകത്തിലേക്ക് ടൂർ സംഘടിപ്പിക്കുമ്പോൾ അത് ഡാർക്ക് ടൂറിസമാവുന്നു. ഇതാണ് ബന്ധം.</div>
+    <div class="answer-item"><span class="answer-num">3.</span> തലാത് പാഷയെ കൊന്നത് ഷോഗോമാൻ തെലിരിയനാണ് – സംശയലേശമന്യേ തെളിയിക്കപ്പെട്ട കാര്യമാണിത് – പക്ഷേ ഷോഗോമാൻ തെലിരിയൻ നിരപരാധിയാണ്. കാരണം അയാൾ 18 ലക്ഷം പേരെ കൊന്നൊടുക്കിയ വംശഹത്യയുടെ ദുരന്തം അനുഭവിച്ചയാളാണ് – അതുകൊണ്ട് അയാളെ വെറുതേ വിടുന്നു.</div>
+    <div class="answer-item"><span class="answer-num">4.</span> അർമേനിയൻ വംശഹത്യാസ്മാരകം ‘നരക’ത്തെ അനുഭവപ്പെടുത്തുന്നു – ആദ്യനിലകളിൽ വംശഹത്യയുടെ കാരണങ്ങൾ – തുർക്കി ഓട്ടോമൻ ഭരണകൂടത്തിന്റെ ക്രൂരതകളുടെ വിവരണം – താഴേക്ക് 9-ാമത്തെ നിലയിലെത്തുമ്പോൾ തെരുവുകളിലെ ശവങ്ങൾ – തെലിരിയന്റെ ജീവിതം – 18 ലക്ഷം അർമേനിയക്കാർ കൊല്ലപ്പെട്ടു.</div>
+    <div class="answer-item"><span class="answer-num">5.</span> കപടദേശീയത, അധിനിവേശം, മതവിദ്വേഷം ഇതെല്ലാം വംശഹത്യയിലേക്കു നയിച്ചു. അർമേനിയക്കാരായ ക്രിസ്ത്യൻ കച്ചവടക്കാർ റഷ്യയുമായി ചേർന്ന് ഭീഷണിയാകുമോ എന്ന തുർക്കി ഭരണകൂടത്തിന്റെ ഭയം – ഇതെല്ലാം വംശഹത്യയിൽ തെളിഞ്ഞു കാണാം.</div>
+    <div class="answer-item"><span class="answer-num">6.</span> തെലിരിയന്റെ 4-ാം വയസ്സിൽ അച്ഛനമ്മമാരും സഹോദരങ്ങളും കൊല ചെയ്യപ്പെടുന്നു – കുർദ്ദു സ്ത്രീയുടെ അടുത്ത് അഭയം – റഷ്യൻ അതിർത്തി ഗ്രാമത്തിലേക്ക് പലായനം – ജീവിതം – പ്രതികാരം – തലാത്പാഷയെ കൊല്ലുന്നു – കോടതി കുറ്റം തെളിഞ്ഞിട്ടും വെറുതെ വിടുന്നു – തുർക്കി ഏജന്റ്സ് വധിക്കാൻ വേണ്ടി പിന്തുടരുന്നു – സെർബിയയിൽ നിന്നും തെലിരിയൻ അമേരിക്കയിലേക്ക് രക്ഷപ്പെടുന്നു – അവിടെ കുടുംബത്തോടൊപ്പം ജീവിക്കുന്നു – തുർക്കി ഏജന്റ്സിന് അദ്ദേഹത്തെ കണ്ടെത്താനായില്ല – അദ്ദേഹത്തിന്റെ കല്ലറ ഇപ്പോൾ സ്മാരകം.</div>
+    <div class="answer-item"><span class="answer-num">7.</span> തുർക്കി ഓട്ടോമൻ ഭരണകൂടം അർമേനിയയിൽ അധിനിവേശം സ്ഥാപിക്കുകയും 18 ലക്ഷം പേരെ കൊന്നൊടുക്കുകയും ചെയ്തു. ഇത് കപടദേശീയതയെ മുൻനിർത്തിയായിരുന്നു. മതം ഇതിനുവേണ്ടി ഉപയോഗിച്ചു – വ്യത്യസ്ത സംസ്കാരങ്ങളെ മാനിക്കാതെ വംശഹത്യയ്ക്ക് ഇരയാക്കി – ലോകത്ത് ഇത്തരത്തിലുള്ള സംഘർഷം നിരന്തരം നടക്കുന്നു. അർമേനിയൻ വംശഹത്യയിൽ ഇത് കൃത്യമായി കാണാൻ സാധിക്കും – ക്രിസ്ത്യാനികളായ കച്ചവടക്കാരെ – അവരുടെ സ്വാധീനത്തെയെല്ലാം ഭയന്നാണ് വംശഹത്യയ്ക്ക് ഒരു ഭരണകൂടം തയ്യാറെടുത്തതെന്നാണ് ചരിത്രം – ഷോഗോമാൻ തെലിരിയന്റെ ജീവിതത്തിലൂടെ നോക്കുമ്പോൾ കൃത്യമായി ഇതെല്ലാം തെളിഞ്ഞുവരും.</div>
+  </div>
+</div>
+
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

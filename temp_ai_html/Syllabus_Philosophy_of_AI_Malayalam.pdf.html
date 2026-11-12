@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>സിലബസ്: ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിന്റെ തത്ത്വചിന്ത (PHL1MN 102)</title>
+  <style>
+    :root {
+      --c1: #0f766e;
+      --c2: #0d9488;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #0f172a;
+  line-height: 1.85;
+  font-size: 10.2pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #0f766e), var(--c2, #0d9488));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(15, 118, 110, 0.22);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ccfbf1;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17pt;
+  font-weight: 800;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #e6fffa;
+}
+
+.badge {
+  display: inline-block;
+  background: #f0fdfa;
+  color: #0f766e;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #99f6e4;
+}
+
+h2 {
+  color: var(--c1, #0f766e);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: var(--c2, #0d9488);
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #f0fdfa;
+  border-left: 4px solid var(--c1, #0f766e);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-purple {
+  background: #faf5ff;
+  border-left: 4px solid #9333ea;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-rose {
+  background: #fff1f2;
+  border-left: 4px solid #e11d48;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+/* Diagrams & Visual Charts */
+.diagram-container {
+  background: #ffffff;
+  border: 1.5px solid #ccfbf1;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.06);
+}
+
+.diagram-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 11pt;
+  color: var(--c1, #0f766e);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.flow-step {
+  background: linear-gradient(135deg, #f0fdfa, #ccfbf1);
+  border: 1.5px solid #5eead4;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #0f766e;
+  min-width: 130px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.08);
+}
+
+.flow-step small {
+  display: block;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #115e59;
+  margin-top: 4px;
+}
+
+.flow-arrow {
+  color: var(--c1, #0f766e);
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+.tree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.tree-card {
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.tree-card h4 {
+  margin: 0 0 6px 0;
+  color: #0f766e;
+  font-size: 10pt;
+  font-weight: 700;
+  border-bottom: 1px solid #ccfbf1;
+  padding-bottom: 4px;
+}
+
+.tree-card p {
+  margin: 0;
+  font-size: 9pt;
+  line-height: 1.6;
+  color: #334155;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #ccfbf1;
+  color: #0f766e;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #f0fdfa;
+}
+
+/* Bilingual Entry Blocks */
+.bilingual-entry {
+  background: #ffffff;
+  border: 1px solid #ccfbf1;
+  border-left: 4px solid var(--c1, #0f766e);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(15, 118, 110, 0.05);
+}
+
+.bilingual-entry .en-part {
+  color: #1e293b;
+  font-size: 10pt;
+  line-height: 1.7;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.bilingual-entry .ml-part {
+  color: #042f2e;
+  font-size: 10pt;
+  line-height: 1.85;
+}
+
+.en-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #bfdbfe;
+}
+
+.ml-tag {
+  display: inline-block;
+  background: #f0fdfa;
+  color: #0f766e;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #99f6e4;
+}
+
+/* LMS Question & Answer Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--c1, #0f766e);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 700;
+  color: var(--c1, #0f766e);
+  margin-bottom: 8px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  background: #f0fdfa;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #14b8a6;
+}
+
+/* 20 Important Exam Points Section */
+.exam-points-box {
+  background: #ffffff;
+  border: 1.5px solid #99f6e4;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.05);
+}
+
+.exam-points-header {
+  font-size: 12pt;
+  font-weight: 800;
+  color: var(--c1, #0f766e);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ccfbf1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.exam-point-item {
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+  page-break-inside: avoid;
+}
+
+.exam-point-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.point-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-weight: 700;
+  color: #0f766e;
+  font-size: 10pt;
+  margin-bottom: 4px;
+}
+
+.point-num {
+  background: var(--c1, #0f766e);
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8pt;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.point-desc-en {
+  color: #334155;
+  font-size: 9.3pt;
+  line-height: 1.6;
+  margin-left: 30px;
+  margin-bottom: 4px;
+}
+
+.point-desc-ml {
+  color: #042f2e;
+  font-size: 9.3pt;
+  line-height: 1.75;
+  margin-left: 30px;
+  background: #f0fdfa;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-left: 2px solid #5eead4;
+}
+
+/* MCQ Cards */
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #ccfbf1;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.2pt;
+}
+
+.q-options {
+  font-size: 9.3pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: var(--c1, #0f766e);
+  font-weight: 700;
+  font-size: 9.3pt;
+  background: #ccfbf1;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid #99f6e4;
+}
+
+.q-exp {
+  font-size: 8.8pt;
+  color: #475569;
+  margin-top: 5px;
+  line-height: 1.55;
+  background: #f8fafc;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>സിലബസ് രൂപരേഖ (Course Curriculum & Evaluation Architecture)</h4>
+    <h1>സിലബസ്: ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിന്റെ തത്ത്വചിന്ത (PHL1MN 102)</h1>
+    <div class="meta">Course Syllabus · Philosophy of Artificial Intelligence (PHL1MN 102) · Calicut University FYUGP · Calicut University B.A. Philosophy FYUGP (PHL1MN 102) · Complete Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. കോഴ്സ് ആമുഖവും പഠന ലക്ഷ്യങ്ങളും (Course Overview & Learning Objectives)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Course Overview:</strong> 'Philosophy of Artificial Intelligence' (Course Code: <strong>PHL1MN 102</strong>) is a first-semester Minor Course under the Four Year Undergraduate Programme (FYUGP) of the University of Calicut, carrying 4 academic credits. This interdisciplinary course teaches students how to think philosophically about artificial intelligence at a high level of abstraction. No prior exposure to computer science or cognitive science is presupposed. The curriculum encompasses the intellectual foundations of AI, the classical symbolic paradigm, theories of knowledge in Indian (Buddhism, Nyaya) and Western (Dualism, Behaviorism, Functionalism) epistemologies, and modern ethical dilemmas surrounding autonomous machines, superintelligence, and the future of human civilization.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>കോഴ്സ് ആമുഖം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാലയുടെ നാലുവർഷ ബിരുദ പ്രോഗ്രാമിലെ (FYUGP) ഒന്നാം സെമസ്റ്റർ മൈനർ കോഴ്സാണ് <strong>'ഫിലോസഫി ഓഫ് ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ്' (PHL1MN 102)</strong>. 4 ക്രെഡിറ്റുകളുള്ള ഈ കോഴ്സ് വിദ്യാർത്ഥികൾക്ക് കമ്പ്യൂട്ടർ സയൻസോ കോഗ്നിറ്റീവ് സയൻസോ മുൻപ് പഠിച്ചിട്ടില്ലെങ്കിലും നിർമ്മിത ബുദ്ധിയെക്കുറിച്ചുള്ള തത്ത്വചിന്താപരമായ ചിന്താശേഷി വളർത്തിയെടുക്കാൻ സഹായിക്കുന്നു. AI-യുടെ ഉത്ഭവം, ക്ലാസിക്കൽ മോഡലുകൾ, ഇന്ത്യൻ-പാശ്ചാത്യ ജ്ഞാനശാസ്ത്രങ്ങൾ (ബുദ്ധമതം, ന്യായ, ഡെസ്കാർട്ടസിന്റെ ഡ്യുവലിസം, ബിഹേവിയറിസം, ഫങ്ഷണലിസം), ധാർമ്മിക പ്രതിസന്ധികൾ, സൂപ്പർ ഇന്റലിജൻസ് എന്നിവ ഇതിൽ സമഗ്രമായി ഉൾക്കൊള്ളുന്നു.
+  </div>
+</div>
+
+<div class="card">
+  <h4 class="sub-head" style="margin-top:0;">പ്രധാന കോഴ്സ് പഠന ലക്ഷ്യങ്ങൾ (Expected Course Outcomes - Bloom's Taxonomy):</h4>
+  <ul>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Foundational Concepts:</strong> Gain firm knowledge of critical concepts and theoretical approaches to Artificial Intelligence from ancient logic to modern computation.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>അടിസ്ഥാന ആശയങ്ങൾ:</strong> പുരാതന യുക്തിചിന്ത മുതൽ ആധുനിക കമ്പ്യൂട്ടിംഗ് വരെയുള്ള AI-യുടെ അടിസ്ഥാന സിദ്ധാന്തങ്ങളും ചരിത്രപരമായ വികാസവും ഗ്രഹിക്കുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Classical AI & Philosophy of Mind:</strong> Identify the classical symbolic version of AI, Alan Turing's Imitation Game, John Searle's Chinese Room, and Cartesian disembodied intelligence.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>ക്ലാസിക്കൽ AI-യും മനസ്സിന്റെ തത്ത്വചിന്തയും:</strong> പ്രതീകാത്മക AI, ട്യൂറിംഗ് ടെസ്റ്റ്, ജോൺ സിയർളിന്റെ ചൈനീസ് റൂം പരീക്ഷണം, ഡെസ്കാർട്ടസിന്റെ ഡ്യുവലിസം, ശരീരമില്ലാത്ത ബുദ്ധിശക്തി എന്നിവ വിശകലനം ചെയ്യുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Comparative Epistemologies:</strong> Understand theories of knowledge in AI through both Indian (Buddhism, Nyaya) and Western (Identity Theory, Behaviorism, Functionalism) philosophical frameworks.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>താരതമ്യ ജ്ഞാനശാസ്ത്രം:</strong> ഇന്ത്യൻ ദർശനങ്ങളിലെ (ബുദ്ധ, ന്യായ) പ്രമാണ വിചാരങ്ങളും പാശ്ചാത്യ വീക്ഷണങ്ങളിലെ (ഐഡന്റിറ്റി തിയറി, ബിഹേവിയറിസം, ഫങ്ഷണലിസം) അറിവ് നിർമ്മാണ രീതികളും വിലയിരുത്തുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Ethical & Existential Implications:</strong> Analyze the value alignment problem, algorithmic biases, autonomous decision-making (Trolley Problem), moral agency, and existential risks to humanity.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>ധാർമ്മിക-നിലനിൽപ്പ് വെല്ലുവിളികൾ:</strong> സ്വയംഭരണ AI സംവിധാനങ്ങളുടെ മൂല്യ അനുയോജ്യത, അൽഗോരിതം പക്ഷപാതങ്ങൾ, ട്രോളി പ്രശ്നം, മോറൽ ഏജൻസി, മനുഷ്യരാശിയുടെ ഭാവിയും നിലനിൽപ്പും എന്നിവ പരിശോധിക്കുക.</div>
+    </li>
+  </ul>
+</div>
+
+<h2>2. കോഴ്സ് ഘടനയും ക്രെഡിറ്റ് വിഭജനവും (Course Structure & Credit Blueprint)</h2>
+<div class="diagram-container">
+  <div class="diagram-title">FYUGP ഒന്നാം സെമസ്റ്റർ ഫിലോസഫി ഓഫ് AI ഘടന (PHL1MN 102 Blueprint)</div>
+  <div class="flow-chart">
+    <div class="flow-step">കോഴ്സ് കോഡ്<small>PHL1MN 102 (Minor)</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">ആകെ ക്രെഡിറ്റുകൾ<small>4 Academic Credits</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">അധ്യയന സമയം<small>4 Hours/Week (60 Hours)</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">മൂല്യനിർണ്ണയം<small>20% Internal + 80% External</small></div>
+  </div>
+</div>
+
+<h2>3. അഞ്ച് പ്രധാന മൊഡ്യൂളുകളുടെ ഉള്ളടക്ക രൂപരേഖ (Detailed 5-Module Blueprint)</h2>
+<div class="tree-grid">
+  <div class="tree-card">
+    <h4>Module 1: Introduction to Artificial Intelligence (10 Hrs, 15 Marks)</h4>
+    <p><strong>English:</strong> History and foundations of AI (Aristotle to Dartmouth 1956); Can a machine think? (Alan Turing's operationalism); Philosophy in the light of AI (computational representation and reasoning).<br>
+    <strong>മലയാളം:</strong> AI-യുടെ ചരിത്രവും ഉത്ഭവവും (അരിസ്റ്റോട്ടിൽ മുതൽ 1956 ഡാർട്ട്മൗത്ത് വരെ); യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാനാകുമോ? (ട്യൂറിംഗ് ടെസ്റ്റ്); AI-യുടെ വെളിച്ചത്തിൽ തത്ത്വചിന്ത.</p>
+  </div>
+  <div class="tree-card">
+    <h4>Module 2: Classical Version of Artificial Intelligence (20 Hrs, 20 Marks)</h4>
+    <p><strong>English:</strong> Problems in Classical Symbolic AI (GOFAI, rule-based systems); Turing Test; Chinese Room Experiment (Searle); Descartes and Philosophy of Mind; Disembodied intelligence and Dreyfus' critique.<br>
+    <strong>മലയാളം:</strong> ക്ലാസിക്കൽ പ്രതീകാത്മക AI-യിലെ പ്രശ്നങ്ങൾ; ട്യൂറിംഗ് ടെസ്റ്റ്; ചൈനീസ് റൂം പരീക്ഷണം (ജോൺ സിയർൾ); ഡെസ്കാർട്ടസും മനസ്സിന്റെ തത്ത്വചിന്തയും; ശരീരമില്ലാത്ത ബുദ്ധിശക്തി.</p>
+  </div>
+  <div class="tree-card">
+    <h4>Module 3: Theories of Knowledge in Artificial Intelligence (15 Hrs, 20 Marks)</h4>
+    <p><strong>English:</strong> Indian Epistemology (Buddhism: Pramanas, Pratityasamutpada; Nyaya: 4 Pramanas, 5-step syllogism); Western Epistemology (Identity Theory, Behaviorism, Functionalism, Multiple Realizability); Epistemological implications in AI.<br>
+    <strong>മലയാളം:</strong> ഇന്ത്യൻ ജ്ഞാനശാസ്ത്രം (ബുദ്ധമതം, ന്യായ ദർശനം); പാശ്ചാത്യ ജ്ഞാനശാസ്ത്രം (ഐഡന്റിറ്റി തിയറി, ബിഹേവിയറിസം, ഫങ്ഷണലിസം); AI-യിലെ വിജ്ഞാനശാസ്ത്രപരമായ പ്രത്യാഘാതങ്ങൾ.</p>
+  </div>
+  <div class="tree-card">
+    <h4>Module 4: Ethical & Philosophical Implications of AI (15 Hrs, 15 Marks)</h4>
+    <p><strong>English:</strong> Value alignment problem; Existential threat & superintelligence; Algorithmic bias and fairness; AI in social relations (ELIZA effect, surveillance capitalism); Moral rules for self-driving cars (Trolley Problem); Moral harm & moral agency.<br>
+    <strong>മലയാളം:</strong> AI ലക്ഷ്യങ്ങളെ മനുഷ്യ മൂല്യങ്ങളുമായി യോജിപ്പിക്കൽ; നിലനിൽപ്പ് ഭീഷണി; അൽഗോരിതം പക്ഷപാതങ്ങൾ; സാമൂഹിക ബന്ധങ്ങളിലെ AI; ഓട്ടോണമസ് കാറുകളിലെ ധാർമ്മിക നിയമങ്ങൾ; മോറൽ ഏജൻസിയും ഉത്തരവാദിത്തവും.</p>
+  </div>
+  <div class="tree-card" style="grid-column: 1 / -1;">
+    <h4>Module 5: Philosophical Underpinning of AI & Future of Humanity (10 Hrs, 10 Marks)</h4>
+    <p><strong>English:</strong> Open-ended module: Simulation vs authentic understanding; Technological Singularity (Kurzweil); Human-AI co-evolution, transhumanism, cyborg ethics, and international AI governance frameworks (UNESCO).<br>
+    <strong>മലയാളം:</strong> അനുകരണവും യഥാർത്ഥ ഗ്രഹണശക്തിയും തമ്മിലുള്ള വ്യത്യാസം; ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റി; മനുഷ്യ-AI സഹവർത്തിത്വം; ട്രാൻസ്-ഹ്യൂമനിസം; ആഗോള ഭരണ-നിയന്ത്രണ ചട്ടക്കൂടുകൾ.</p>
+  </div>
+</div>
+
+<h2>4. പരീക്ഷാ രീതിയും മാർക്ക് വിഭജനവും (Evaluation Scheme & Examination Blueprint)</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ഘടകം (Component)</th>
+      <th>വിവരണം (Description - English & Malayalam)</th>
+      <th>മാർക്ക് (Marks)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ഇന്റേണൽ അസസ്സ്മെന്റ് (Internal Evaluation)</strong></td>
+      <td>
+        <span class="en-tag">EN</span>Continuous evaluation comprising written class tests (6 marks), assignment/seminar presentation (8 marks), and class attendance (6 marks).<br>
+        <span class="ml-tag">ML</span>ക്ലാസ് പരീക്ഷകൾ (6), സെമിനാർ അവതരണം / അസൈൻമെന്റ് (8), ഹാജർ (6) എന്നിവ ഉൾപ്പെടുന്ന നിരന്തര മൂല്യനിർണ്ണയം.
+      </td>
+      <td><strong>20 Marks</strong></td>
+    </tr>
+    <tr>
+      <td><strong>എൻഡ് സെമസ്റ്റർ യൂണിവേഴ്സിറ്റി പരീക്ഷ (External Exam)</strong></td>
+      <td>
+        <span class="en-tag">EN</span>Calicut University written examination (2 hours) assessing foundational concepts, analytical arguments, critical essays, and multiple-choice questions.<br>
+        <span class="ml-tag">ML</span>കാലിക്കറ്റ് സർവ്വകലാശാല നടത്തുന്ന 2 മണിക്കൂർ തിയറി പരീക്ഷ (ഒബ്ജക്റ്റീവ്, ഷോർട്ട് നോട്ട്, എസ്സേ ചോദ്യങ്ങൾ).
+      </td>
+      <td><strong>80 Marks</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>5. സിലബസ് എൽ.എം.എസ് ചോദ്യോത്തരങ്ങൾ (Syllabus Model Questions & Answers)</h2>
+<div class="qa-card">
+  <div class="qa-q">Q1. Why is the study of philosophy essential for artificial intelligence? / ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസിൽ തത്ത്വചിന്താ പഠനം അത്യന്താപേക്ഷിതമാകുന്നത് എന്തുകൊണ്ട്?</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> Philosophy is vital to AI because foundational questions—such as what constitutes a 'mind', whether computation can produce genuine 'consciousness', how knowledge is legitimately represented, and how autonomous algorithms should make moral decisions—cannot be answered by technical engineering alone. Philosophical rigor clarifies definitions, guards against algorithmic prejudice, and aligns machine objectives with human well-being.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> സാങ്കേതിക വിദ്യ കൊണ്ട് മാത്രം മനസ്സ് എന്നാൽ എന്താണ്, കമ്പ്യൂട്ടറുകൾക്ക് യഥാർത്ഥ 'ബോധം' ഉണ്ടാകുമോ, അറിവ് എങ്ങനെ നിർമ്മിക്കപ്പെടുന്നു, യന്ത്രങ്ങൾ എങ്ങനെ നീതിപൂർവ്വം തീരുമാനങ്ങൾ എടുക്കണം എന്നീ മൗലിക ചോദ്യങ്ങൾക്ക് ഉത്തരം കണ്ടെത്താനാവില്ല. ഈ ചോദ്യങ്ങളെ കൃത്യമായി അപഗ്രഥിക്കാനും സാങ്കേതിക വിദ്യയെ മനുഷ്യനന്മയ്ക്കായി വഴിതിരിച്ചുവിടാനും തത്ത്വചിന്ത അത്യന്താപേക്ഷിതമാണ്.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. What are the key thematic areas across the 5 modules of PHL1MN 102? / PHL1MN 102-ന്റെ 5 മൊഡ്യൂളുകളിലെ പ്രധാന വിഷയങ്ങൾ ഏവ?</div>
+  <div class="qa-ans-en"><span class="en-tag">EN</span><strong>English Answer:</strong> The curriculum progresses systematically across 5 thematic areas: (1) History and philosophical foundations of AI; (2) The Classical symbolic paradigm, Turing test, and Searle's critique; (3) Epistemological models in Indian (Buddhist, Nyaya) and Western thought; (4) Ethical dilemmas including algorithmic bias, autonomous vehicles, and existential risk; and (5) Future horizons, machine consciousness, and human-AI co-evolution.</div>
+  <div class="qa-ans-ml"><span class="ml-tag">ML</span><strong>മലയാളം പരിഭാഷ:</strong> 5 പ്രധാന മേഖലകളിലൂടെയാണ് കോഴ്സ് വികസിക്കുന്നത്: (1) AI-യുടെ ചരിത്രവും തത്ത്വചിന്താപരമായ ഉത്ഭവവും; (2) ക്ലാസിക്കൽ പ്രതീകാത്മക മാതൃകയും ട്യൂറിംഗ്, സിയർൾ എന്നിവരുടെ വാദങ്ങളും; (3) ഇന്ത്യൻ (ബുദ്ധ, ന്യായ), പാശ്ചാത്യ ജ്ഞാനശാസ്ത്ര സിദ്ധാന്തങ്ങൾ; (4) അൽഗോരിതം പക്ഷപാതം, ട്രോളി പ്രശ്നം, നിലനിൽപ്പ് ഭീഷണി എന്നിവയുൾപ്പെടുന്ന ധാർമ്മിക വിചാരങ്ങൾ; (5) യന്ത്ര ബോധവും മനുഷ്യ-AI സഹവർത്തിത്വവും.</div>
+</div>
+
+<h2>6. സിലബസ് പരീക്ഷാ പ്രധാന പോയിന്റുകൾ (20 Important Exam Points with Deeper Explanation)</h2>
+<div class="exam-points-box">
+  <div class="exam-points-header">
+    <span>PHL1MN 102 സിലബസ് രൂപരേഖ — 20 നിർണ്ണായക പരീക്ഷാ പോയിന്റുകൾ</span>
+    <span class="badge">High-Yield Exam Points</span>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">1</span> Course Code & Nomenclature / കോഴ്സ് വിവരങ്ങൾ</div>
+    <div class="point-desc-en">PHL1MN 102 designates 'Philosophy of Artificial Intelligence' as an academic Minor course carrying 4 credits under Calicut University FYUGP regulations.</div>
+    <div class="point-desc-ml">കാലിക്കറ്റ് സർവ്വകലാശാല FYUGP ചട്ടക്കൂടിലെ 4 ക്രെഡിറ്റുള്ള 'ഫിലോസഫി ഓഫ് ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ്' മൈനർ കോഴ്സാണിത്.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">2</span> Interdisciplinary Scope / ഇന്റർഡിസിപ്ലിനറി സ്വഭാവം</div>
+    <div class="point-desc-en">The course integrates formal philosophical inquiry (epistemology, ethics, ontology) with cognitive science and computational paradigms without requiring technical coding knowledge.</div>
+    <div class="point-desc-ml">കമ്പ്യൂട്ടർ കോഡിംഗ് ആവശ്യമില്ലാതെ തന്നെ തത്ത്വചിന്തയെയും (ജ്ഞാനശാസ്ത്രം, നീതിശാസ്ത്രം) കോഗ്നിറ്റീവ് സയൻസിനെയും കൂട്ടിയിണക്കുന്ന പാഠ്യപദ്ധതിയാണിത്.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">3</span> Historical Progression / ചരിത്രപരമായ വികാസം</div>
+    <div class="point-desc-en">Traces machine intelligence from ancient Greek formal logic (Aristotle) through Leibniz, Boole, and Turing to the landmark 1956 Dartmouth conference.</div>
+    <div class="point-desc-ml">അരിസ്റ്റോട്ടിലിന്റെ ന്യായയുക്തിചിന്തയിൽ തുടങ്ങി ലെബ്നിസ്, ജോർജ്ജ് ബൂൾ, അലൻ ട്യൂറിംഗ് വഴി 1956-ലെ ഡാർട്ട്മൗത്ത് വർക്ക്ഷോപ്പ് വരെയുള്ള ചരിത്രം വ്യക്തമാക്കുന്നു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">4</span> Operational Definition of Thought / ചിന്തയുടെ പ്രായോഗിക നിർവ്വചനം</div>
+    <div class="point-desc-en">Alan Turing substituted the metaphysical question 'Can machines think?' with an empirical behavioral game: the Imitation Game or Turing Test (1950).</div>
+    <div class="point-desc-ml">'യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാനാകുമോ?' എന്ന ചോദ്യത്തിന് പകരമായി ട്യൂറിംഗ് ടെസ്റ്റ് എന്ന പ്രായോഗിക പെരുമാറ്റ പരീക്ഷണം മുന്നോട്ട് വെച്ചു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">5</span> Classical Symbolic AI (GOFAI) / ഗുഡ് ഓൾഡ് ഫാഷൻഡ് AI</div>
+    <div class="point-desc-en">Module 2 critiques rule-based, symbolic manipulation paradigms that treat intelligence purely as algorithmic syntax operating on symbols.</div>
+    <div class="point-desc-ml">ബുദ്ധിയെ വെറും ചിട്ടയായ പ്രതീക കൈകാര്യം ചെയ്യലായി കണ്ട ആദ്യകാല റൂൾ-ബേസ്ഡ് AI മോഡലുകളുടെ ന്യൂനതകൾ മൊഡ്യൂൾ 2 വ്യക്തമാക്കുന്നു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">6</span> Searle's Chinese Room Argument / ചൈനീസ് റൂം പരീക്ഷണം</div>
+    <div class="point-desc-en">John Searle (1980) proved that syntactic symbol processing inside a computer is fundamentally insufficient for semantic understanding and genuine intentionality.</div>
+    <div class="point-desc-ml">പ്രതീകങ്ങൾ ചിട്ടയോടെ കൈകാര്യം ചെയ്യുന്നത് (Syntax) യഥാർത്ഥ അർത്ഥബോധത്തിന് (Semantics) തുല്യമാകില്ലെന്ന് ജോൺ സിയർൾ തെളിയിച്ചു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">7</span> Cartesian Dualism / കാർട്ടീഷ്യൻ ഡ്യുവലിസം</div>
+    <div class="point-desc-en">René Descartes separated thinking substance (res cogitans) from material extended substance (res extensa), establishing the mind-body problem central to AI.</div>
+    <div class="point-desc-ml">ഡെസ്കാർട്ടസ് മനസ്സിനെയും (ചിന്തിക്കുന്ന വസ്തു) ശരീരത്തെയും (ഭൗതിക വസ്തു) രണ്ടായി വേർതിരിച്ച് മനസ്സ്-ശരീര ബന്ധത്തിലെ പ്രശ്നങ്ങൾക്ക് അടിത്തറയിട്ടു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">8</span> Dreyfus' Embodiment Thesis / എംബോഡിമെന്റ് വാദം</div>
+    <div class="point-desc-en">Hubert Dreyfus argued that genuine intelligence cannot exist as a disembodied computer program because understanding requires a physical body interacting with a situational world.</div>
+    <div class="point-desc-ml">യഥാർത്ഥ ബുദ്ധിക്ക് ഭൗതിക ശരീരവും ലോകവുമായുള്ള അനുഭവസമ്പർക്കവും അത്യന്താപേക്ഷിതമാണെന്ന് ഹ്യൂബർട്ട് ഡ്രെയ്ഫസ് സമർത്ഥിച്ചു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">9</span> Buddhist Epistemology / ബുദ്ധമത ജ്ഞാനശാസ്ത്രം</div>
+    <div class="point-desc-en">Buddhism (Dignaga, Dharmakirti) accepts two valid Pramanas—Pratyaksha (direct perception) and Anumana (inference)—and views consciousness through Pratityasamutpada.</div>
+    <div class="point-desc-ml">പ്രത്യക്ഷം, അനുമാനം എന്നീ രണ്ട് പ്രമാണങ്ങളെ മാത്രം സ്വീകരിക്കുന്ന ബുദ്ധമതം ബോധത്തെ പരസ്പര ആശ്രിതമായ ഒഴുക്കായി (പ്രതീത്യസമുത്പാദം) കാണുന്നു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">10</span> Nyaya Logic & 4 Pramanas / ന്യായ ദർശനം</div>
+    <div class="point-desc-en">Nyaya philosophy recognizes 4 valid cognitive sources (Pratyaksha, Anumana, Upamana, Shabda) and a rigorous 5-step syllogism mirroring AI expert systems.</div>
+    <div class="point-desc-ml">പ്രത്യക്ഷം, അനുമാനം, ഉപമാനം, ശബ്ദം എന്നീ 4 പ്രമാണങ്ങളും 5 ഘട്ടങ്ങളുള്ള യുക്തിരീതിയും ന്യായ ദർശനത്തിന്റെ പ്രത്യേകതയാണ്.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">11</span> Mind-Brain Identity Theory / ഐഡന്റിറ്റി തിയറി</div>
+    <div class="point-desc-en">Physicalist view (Place, Smart) asserting that mental states are strictly identical to neurophysiological brain states.</div>
+    <div class="point-desc-ml">മാനസിക അവസ്ഥകൾ തലച്ചോറിലെ നാഡീ പ്രവർത്തനങ്ങൾക്ക് തികച്ചും തുല്യമാണെന്ന് വാദിക്കുന്ന ഭൗതികവാദ സിദ്ധാന്തമാണിത്.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">12</span> Philosophical Behaviorism / ബിഹേവിയറിസം</div>
+    <div class="point-desc-en">Gilbert Ryle rejected Descartes' 'Ghost in the Machine' as a category mistake, arguing mental concepts describe behavioral dispositions, directly inspiring Turing.</div>
+    <div class="point-desc-ml">ഗിൽബർട്ട് റൈൽ മനസ്സിനെ ശരീരത്തിനുള്ളിലെ പ്രേതമായി കാണുന്നത് തള്ളിക്കളയുകയും പെരുമാറ്റ രീതികളിലൂടെ മനസ്സിനെ നിർവ്വചിക്കുകയും ചെയ്തു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">13</span> Functionalism & Multiple Realizability / ഫങ്ഷണലിസം</div>
+    <div class="point-desc-en">Hilary Putnam posited that mental states are defined by their functional roles, allowing minds to be realized in biological brains, silicon chips, or synthetic substrates.</div>
+    <div class="point-desc-ml">മനസ്സ് അതിന്റെ പ്രവർത്തന ധർമ്മങ്ങളാൽ നിർവ്വചിക്കപ്പെടുന്നു; അതിനാൽ ജൈവിക മസ്തിഷ്കത്തിലും കമ്പ്യൂട്ടർ ചിപ്പുകളിലും ബുദ്ധി സാധ്യമാണെന്ന് ഫങ്ഷണലിസം വാദിക്കുന്നു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">14</span> Epistemological Implications / വിജ്ഞാനശാസ്ത്ര സ്വാധീനം</div>
+    <div class="point-desc-en">Examines expert systems, Fifth Generation computers, and Michael Polanyi's tacit knowledge ('we know more than we can tell') as boundaries of machine encoding.</div>
+    <div class="point-desc-ml">നമുക്ക് വാക്കുകളിൽ വിവരിക്കാൻ കഴിയാത്ത 'നിശ്ശബ്ദ ജ്ഞാനം' (Tacit Knowledge) മെഷീനുകളിലേക്ക് പകർത്താനുള്ള പരിമിതികൾ അപഗ്രഥിക്കുന്നു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">15</span> Value Alignment Problem / മൂല്യ അനുയോജ്യതാ പ്രതിസന്ധി</div>
+    <div class="point-desc-en">The grave engineering challenge of guaranteeing that autonomous AI agents consistently pursue objectives aligned with nuanced human values and survival (Stuart Russell).</div>
+    <div class="point-desc-ml">സ്വയംഭരണ യന്ത്രങ്ങളുടെ ലക്ഷ്യങ്ങൾ മനുഷ്യന്റെ യഥാർത്ഥ നന്മയുമായും മൂല്യങ്ങളുമായും ഒത്തുപോകുന്നു എന്ന് ഉറപ്പുവരുത്താനുള്ള വെല്ലുവിളിയാണിത്.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">16</span> Existential Threat & Superintelligence / നിലനിൽപ്പ് ഭീഷണി</div>
+    <div class="point-desc-en">Nick Bostrom's formulation of the control problem: superintelligent systems pursuing instrumental convergence (resource acquisition, self-preservation) could endanger humanity.</div>
+    <div class="point-desc-ml">മനുഷ്യനെക്കാൾ ബുദ്ധിയുള്ള സൂപ്പർ ഇന്റലിജൻസ് യന്ത്രങ്ങൾ സ്വന്തം നിലനിൽപ്പിനായി വിഭവങ്ങൾ പിടിച്ചെടുക്കുന്നത് മനുഷ്യവംശത്തിന് ഭീഷണിയാകുമെന്ന് നിക്ക് ബോസ്ട്രോം മുന്നറിയിപ്പ് നൽകുന്നു.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">17</span> Algorithmic Bias & The Black Box / അൽഗോരിതം പക്ഷപാതം</div>
+    <div class="point-desc-en">Machine learning models absorbing societal historical prejudices from datasets and making opaque, unexplainable life decisions violating justice and civil rights.</div>
+    <div class="point-desc-ml">പഠന ഡാറ്റയിലെ മുൻവിധികളിലൂടെ സ്ത്രീ-വംശീയ വിവേചനങ്ങൾ ആവർത്തിക്കുന്നതും തീരുമാനങ്ങൾ വിശദീകരിക്കാൻ കഴിയാത്ത ബ്ലാക്ക് ബോക്സ് അവസ്ഥയും.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">18</span> The Trolley Problem & Autonomous Vehicles / ട്രോളി പ്രശ്നം</div>
+    <div class="point-desc-en">Evaluating whether an autonomous self-driving car should sacrifice its passenger to save multiple pedestrians (Utilitarianism vs Kantian deontology).</div>
+    <div class="point-desc-ml">സ്വയം ഓടുന്ന കാറുകൾ അപകടഘട്ടങ്ങളിൽ ആരെ രക്ഷിക്കണം എന്ന് തീരുമാനിക്കുന്നതിലെ ധാർമ്മിക കുഴപ്പങ്ങൾ (യൂട്ടിലിറ്റേറിയനിസം vs കാന്റിയൻ എത്തിക്സ്).</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">19</span> Moral Agency vs Moral Patience / ധാർമ്മിക പദവികൾ</div>
+    <div class="point-desc-en">Distinguishing between entities that can be held morally accountable (agents) and sentient beings that deserve ethical protection from suffering (patients).</div>
+    <div class="point-desc-ml">സ്വന്തം കർമ്മങ്ങൾക്ക് ഉത്തരവാദിയാകുന്ന 'മോറൽ ഏജന്റും' ദ്രോഹങ്ങളിൽ നിന്ന് സംരക്ഷണം അർഹിക്കുന്ന 'മോറൽ പേഷ്യന്റും' തമ്മിലുള്ള വ്യത്യാസം.</div>
+  </div>
+
+  <div class="exam-point-item">
+    <div class="point-head"><span class="point-num">20</span> Technological Singularity & Co-Evolution / സിംഗുലാരിറ്റിയും ഭാവിയും</div>
+    <div class="point-desc-en">Ray Kurzweil's hypothesis that recursively self-improving AI will trigger an irreversible intelligence explosion, demanding proactive global ethical governance.</div>
+    <div class="point-desc-ml">യന്ത്രങ്ങൾ സ്വയം ബുദ്ധി വർദ്ധിപ്പിച്ച് മനുഷ്യനിയന്ത്രണത്തിന് അതീതമാകുന്ന ഘട്ടവും (Singularity) അന്താരാഷ്ട്ര നിയമനിർമ്മാണത്തിന്റെ ആവശ്യകതയും.</div>
+  </div>
+</div>
+
+<h2>7. സിലബസ് മാതൃകാ ബഹുവിശേഷ ചോദ്യങ്ങൾ (Examination MCQs)</h2>
+<div class="mcq-grid">
+  <div class="q-box">
+    <div class="q-title">1. What is the official course code for Philosophy of Artificial Intelligence under Calicut University FYUGP? / കാലിക്കറ്റ് സർവ്വകലാശാല FYUGP-ൽ ഫിലോസഫി ഓഫ് AI കോഴ്സിന്റെ കോഡ് ഏതാണ്?</div>
+    <div class="q-options">
+      A) SOC1CJ101<br>
+      B) PHL1MN 102<br>
+      C) ENG1A01<br>
+      D) HIS1CJ101
+    </div>
+    <div class="q-ans">Answer: B) PHL1MN 102</div>
+    <div class="q-exp">
+      <strong>EN:</strong> PHL1MN 102 is the designated Minor Course code for Philosophy of Artificial Intelligence carrying 4 credits.<br>
+      <strong>ML:</strong> PHL1MN 102 എന്നത് ഫിലോസഫി ഓഫ് ആർട്ടിഫിഷ്യൽ ഇന്റലിജൻസ് കോഴ്സിന്റെ ഔദ്യോഗിക കോഡാണ്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. How many credits and total instructional hours are allocated to PHL1MN 102? / ഈ കോഴ്സിന് അനുവദിച്ചിട്ടുള്ള ക്രെഡിറ്റുകളും അധ്യയന മണിക്കൂറുകളും എത്ര?</div>
+    <div class="q-options">
+      A) 2 Credits, 30 Hours<br>
+      B) 3 Credits, 45 Hours<br>
+      C) 4 Credits, 60 Hours<br>
+      D) 5 Credits, 75 Hours
+    </div>
+    <div class="q-ans">Answer: C) 4 Credits, 60 Hours</div>
+    <div class="q-exp">
+      <strong>EN:</strong> The course carries 4 academic credits corresponding to 60 total lecture hours (4 hours per week).<br>
+      <strong>ML:</strong> 4 ക്രെഡിറ്റുകളും ആകെ 60 അധ്യയന മണിക്കൂറുകളുമാണ് (ആഴ്ചയിൽ 4 മണിക്കൂർ) അനുവദിച്ചിട്ടുള്ളത്.
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. What is the ratio between Continuous Internal Evaluation and the University End-Semester Examination? / ഇന്റേണൽ, എക്സ്റ്റേണൽ പരീക്ഷകളുടെ മാർക്ക് അനുപാതം എത്ര?</div>
+    <div class="q-options">
+      A) 50% Internal : 50% External<br>
+      B) 20% Internal : 80% External (20 : 80 Marks)<br>
+      C) 30% Internal : 70% External<br>
+      D) 10% Internal : 90% External
+    </div>
+    <div class="q-ans">Answer: B) 20% Internal : 80% External (20 : 80 Marks)</div>
+    <div class="q-exp">
+      <strong>EN:</strong> Assessment is apportioned into 20 marks Continuous Internal Assessment and 80 marks for the University End-Semester Examination.<br>
+      <strong>ML:</strong> 20 മാർക്ക് ഇന്റേണൽ മൂല്യനിർണ്ണയത്തിനും 80 മാർക്ക് യൂണിവേഴ്സിറ്റി തിയറി പരീക്ഷയ്ക്കുമായി വീതിച്ചിരിക്കുന്നു.
+    </div>
+  </div>
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. ഫിലോസഫി പഠന സഹായി · Philosophy of Artificial Intelligence (PHL1MN 102)</span>
+    <span>സമ്പൂർണ്ണ മലയാള പരിഭാഷ, ചോദ്യോത്തരങ്ങൾ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

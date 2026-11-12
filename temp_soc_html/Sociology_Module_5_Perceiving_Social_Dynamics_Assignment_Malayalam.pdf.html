@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 5: സോഷ്യൽ ഡൈനാമിക്സ് തിരിച്ചറിയൽ (ഫീൽഡ് വർക്കും പ്രൊജക്റ്റ് മാർഗ്ഗരേഖയും)</title>
+  <style>
+    :root {
+      --c1: #581c87;
+      --c2: #7e22ce;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 15mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #581c87), var(--c2, #7e22ce));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(88, 28, 135, 0.2);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f3e8ff;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #e9d5ff;
+}
+
+.badge {
+  display: inline-block;
+  background: #faf5ff;
+  color: #6b21a8;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #d8b4fe;
+}
+
+h2 {
+  color: var(--c1, #581c87);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #7e22ce;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #faf5ff;
+  border-left: 4px solid var(--c2, #7e22ce);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-purple {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+/* Diagrams & Visual Charts */
+.diagram-container {
+  background: #ffffff;
+  border: 1.5px solid #e9d5ff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  page-break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.05);
+}
+
+.diagram-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 11pt;
+  color: #581c87;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flow-chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.flow-step {
+  background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  border: 1.5px solid #c084fc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #581c87;
+  min-width: 130px;
+  flex: 1;
+  box-shadow: 0 2px 6px rgba(107, 33, 168, 0.08);
+}
+
+.flow-step small {
+  display: block;
+  font-size: 8pt;
+  font-weight: 500;
+  color: #6b21a8;
+  margin-top: 4px;
+}
+
+.flow-arrow {
+  color: #9333ea;
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+.tree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.tree-card {
+  background: #fdf4ff;
+  border: 1px solid #d8b4fe;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.tree-card h4 {
+  margin: 0 0 6px 0;
+  color: #6b21a8;
+  font-size: 10pt;
+  font-weight: 700;
+  border-bottom: 1px solid #e9d5ff;
+  padding-bottom: 4px;
+}
+
+.tree-card p {
+  margin: 0;
+  font-size: 9pt;
+  line-height: 1.6;
+  color: #334155;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f3e8ff;
+  color: #581c87;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #faf5ff;
+}
+
+/* Bilingual Entry Blocks */
+.bilingual-entry {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-left: 4px solid #7e22ce;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(107, 33, 168, 0.04);
+}
+
+.bilingual-entry .en-part {
+  color: #1e293b;
+  font-size: 10pt;
+  line-height: 1.7;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.bilingual-entry .ml-part {
+  color: #3b0764;
+  font-size: 10pt;
+  line-height: 1.85;
+}
+
+.en-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #bfdbfe;
+}
+
+.ml-tag {
+  display: inline-block;
+  background: #faf5ff;
+  color: #7e22ce;
+  font-size: 8pt;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #d8b4fe;
+}
+
+/* LMS Question & Answer Cards */
+.qa-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #7e22ce;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #581c87;
+  margin-bottom: 8px;
+  font-size: 10.5pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 9.5pt;
+  line-height: 1.75;
+  background: #faf5ff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #9333ea;
+}
+
+/* MCQ Cards */
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #581c87;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #f3e8ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+  border: 1px solid #d8b4fe;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 5px;
+  line-height: 1.55;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 5: പ്രായോഗിക ഫീൽഡ് അസസ്സ്മെന്റ് (Module 5: Practical Field Assessment)</h4>
+    <h1>മൊഡ്യൂൾ 5: സോഷ്യൽ ഡൈനാമിക്സ് തിരിച്ചറിയൽ (ഫീൽഡ് വർക്കും പ്രൊജക്റ്റ് മാർഗ്ഗരേഖയും)</h1>
+    <div class="meta">Module 5 · Perceiving Social Dynamics: Empirical Fieldwork & Internal Project Guidelines · Calicut University B.A. Sociology FYUGP · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. മൊഡ്യൂൾ ലക്ഷ്യങ്ങളും ഫീൽഡ് വർക്ക് മാർഗ്ഗരേഖയും (Objectives & Field Protocol)</h2>
+<div class="bilingual-entry">
+  <div class="en-part">
+    <span class="en-tag">EN</span><strong>Module Overview:</strong> In the Four-Year Undergraduate Programme (FYUGP) of Calicut University for BA Sociology Major (Core Course <code>SOC1CJ101 - Introduction to Sociology</code>), <strong>Module 5 constitutes the compulsory practical Continuous Internal Evaluation (CIE) component (20 Marks)</strong>. Sociology is an empirical science, not an armchair philosophy. The fundamental objective of Module 5 is to transition undergraduate students from passive absorption of theoretical concepts into active field researchers. Students identify a pressing local social issue within their panchayat or municipality, design a structured inquiry tool (Questionnaire or Interview Schedule), survey 15 to 25 authentic respondents ethically, tabulate primary data, synthesize empirical findings with sociological concepts, and compile a formal scientific research project report defended through viva-voce presentation.
+  </div>
+  <div class="ml-part">
+    <span class="ml-tag">ML</span><strong>മൊഡ്യൂൾ അവലോകനം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാലയുടെ നാലുവർഷ ബിരുദ പ്രോഗ്രാമിലെ (FYUGP) ഒന്നാം സെമസ്റ്റർ സോഷ്യോളജി മേജർ പേപ്പറിന്റെ (SOC1CJ101) <strong>പ്രായോഗിക ഇന്റേണൽ അസസ്സ്മെന്റ് മൊഡ്യൂളാണ് മൊഡ്യൂൾ 5 (20 മാർക്ക്)</strong>. സോഷ്യോളജി കേവലമായ ഒരു തത്ത്വചിന്തയല്ല, മറിച്ച് അനുഭവവേദ്യമായ ഒരു ശാസ്ത്രമാണ്. ക്ലാസ്സ് മുറിയിലെ സിദ്ധാന്ത പഠനത്തിനപ്പുറം യഥാർത്ഥ സമൂഹത്തിലേക്ക് നേരിട്ട് ഇറങ്ങിച്ചെന്ന് ഒരു പ്രാദേശിക പ്രശ്നത്തെ ശാസ്ത്രീയമായി നിരീക്ഷിച്ച് മനസ്സിലാക്കുക എന്നതാണ് ഇതിന്റെ ലക്ഷ്യം. സ്വന്തം പഞ്ചായത്തിലോ വാർഡിലോ ഉള്ള ഒരു സാമൂഹിക വിഷയം തെരഞ്ഞെടുത്ത്, 15 മുതൽ 25 വരെ വിവരദാതാക്കളിൽ നിന്ന് ചോദ്യാവലി വഴി വിവരങ്ങൾ ശേഖരിച്ച്, പട്ടികപ്പെടുത്തി, സമഗ്രമായ ഒരു പ്രൊജക്റ്റ് റിപ്പോർട്ട് തയ്യാറാക്കി വൈവയിലൂടെ അത് സമർപ്പിക്കാൻ വിദ്യാർത്ഥിക്ക് സാധിക്കുന്നു.
+  </div>
+</div>
+
+<div class="card">
+  <h4 class="sub-head" style="margin-top:0;">പ്രധാന അക്കാദമിക് ഗവേഷണ ശേഷികൾ (Core Research Competencies):</h4>
+  <ul>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Formulate Empirically Feasible Problems:</strong> Select a locally situated, observable sociological problem and articulate 3-4 precise, measurable objectives.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിഷയം തെരഞ്ഞെടുക്കലും ലക്ഷ്യങ്ങളും:</strong> സ്വന്തം പരിസരത്തുള്ള പ്രസക്തമായ ഒരു സാമൂഹിക പ്രശ്നം കണ്ടെത്തുകയും 3-4 കൃത്യമായ പഠന ലക്ഷ്യങ്ങൾ രൂപീകരിക്കുകയും ചെയ്യുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Design Methodological Instruments:</strong> Construct a balanced 12-15 item Questionnaire / Interview Schedule comprising demographic, closed, and open-ended questions.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>ടൂൾ നിർമ്മാണം:</strong> ജനസംഖ്യാപരമായ വിവരങ്ങളും വിഷയസംബന്ധമായ 12 മുതൽ 15 വരെയുള്ള ചോദ്യങ്ങളും അടങ്ങിയ വ്യക്തമായ ചോദ്യാവലി തയ്യാറാക്കുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Adhere to Strict Research Ethics:</strong> Practice Informed Consent, participant anonymity, data confidentiality, and non-judgmental empathy during field interactions.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>ഗവേഷണ ധാർമ്മികത (Ethics):</strong> വിവരദാതാക്കളുടെ മുൻകൂർ സമ്മതം വാങ്ങുക (Informed Consent), അവരുടെ വ്യക്തിഗത വിവരങ്ങൾ രഹസ്യമായി സൂക്ഷിക്കുക, മാന്യമായി പെരുമാറുക.</div>
+    </li>
+    <li>
+      <div class="en-part"><span class="en-tag">EN</span><strong>Tabulate and Interpret Primary Data:</strong> Convert raw responses into systematic frequency tables and calculate percentages to substantiate sociological findings.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>ഡാറ്റാ അപഗ്രഥനം:</strong> ശേഖരിച്ച വിവരങ്ങൾ പട്ടികകളാക്കി മാറ്റി (Tabulation) ശതമാനം കണക്കാക്കി സോഷ്യോളജിക്കൽ വീക്ഷണത്തോടെ വ്യാഖ്യാനിക്കുക.</div>
+    </li>
+  </ul>
+</div>
+
+<h2>2. ഫീൽഡ് വർക്കിന്റെ 7-ഘട്ട പ്രക്രിയ (The Seven-Stage Empirical Fieldwork Protocol)</h2>
+<div class="diagram-container">
+  <div class="diagram-title">ഫീൽഡ് അസൈൻമെന്റ് പ്രൊട്ടോക്കോൾ ഫ്ലോചാർട്ട് (7-Stage Research Architecture)</div>
+  <div class="flow-chart">
+    <div class="flow-step">1. വിഷയം കണ്ടെത്തൽ<small>Formulate Topic</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">2. ലക്ഷ്യങ്ങൾ നിശ്ചയിക്കൽ<small>Define 3-4 Objectives</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">3. ചോദ്യാവലി തയ്യാറാക്കൽ<small>Design 15-Item Tool</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">4. ഫീൽഡ് സർവേ<small>Survey 15-25 People</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">5. പട്ടികപ്പെടുത്തൽ<small>Tabulation & Percentages</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">6. റിപ്പോർട്ട് രചന<small>5-Chapter Report</small></div>
+    <div class="flow-arrow">➔</div>
+    <div class="flow-step">7. വൈവ & സെമിനാർ<small>Viva-Voce Defense</small></div>
+  </div>
+</div>
+
+<h2>3. നിർദ്ദേശിക്കപ്പെടുന്ന മാതൃകാ പ്രൊജക്റ്റ് വിഷയങ്ങൾ (Recommended Kerala Empirical Topics)</h2>
+<div class="tree-grid">
+  <div class="tree-card" style="border-left: 4px solid #7e22ce;">
+    <h4>1. വയോജന സംരക്ഷണവും ഒറ്റപ്പെടലും (Elderly Well-Being)</h4>
+    <div class="en-part"><span class="en-tag">EN</span>Investigating the psychological, economic, and healthcare challenges faced by geriatric citizens in nuclear families amidst large-scale youth emigration in rural Kerala.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span>യുവാക്കൾ വിദേശത്തേക്ക് കുടിയേറിയ സാഹചര്യത്തിൽ അണുകുടുംബങ്ങളിൽ ജീവിക്കുന്ന വയോജനങ്ങളുടെ ആരോഗ്യ-മാനസിക പ്രശ്നങ്ങളും ഒറ്റപ്പെടലും.</div>
+  </div>
+  <div class="tree-card" style="border-left: 4px solid #059669;">
+    <h4>2. കുടുംബശ്രീയും സ്ത്രീ ശാക്തീകരണവും (Kudumbashree & Empowerment)</h4>
+    <div class="en-part"><span class="en-tag">EN</span>Assessing how microcredit Self-Help Groups (SHGs) under Kudumbashree have enhanced women's financial autonomy, leadership, and decision-making within households.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span>കുടുംബശ്രീ അയൽക്കൂട്ടങ്ങൾ വഴി സ്ത്രീകളുടെ സാമ്പത്തിക സ്വയംപര്യാപ്തതയിലും കുടുംബത്തിലെ തീരുമാനമെടുക്കൽ ശേഷിയിലും ഉണ്ടായ വിപ്ലവകരമായ മാറ്റങ്ങൾ.</div>
+  </div>
+  <div class="tree-card" style="border-left: 4px solid #2563eb;">
+    <h4>3. ഡിജിറ്റൽ വിഭജനവും വിദ്യാർത്ഥികളും (Digital Media & Youth)</h4>
+    <div class="en-part"><span class="en-tag">EN</span>Analyzing smartphone addiction, social media usage patterns, and screen-time impacts on academic study habits and peer socialization among college students.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span>കോളേജ് വിദ്യാർത്ഥികൾക്കിടയിലെ സ്മാർട്ട്‌ഫോൺ ഉപയോഗവും സമൂഹമാധ്യമങ്ങൾ പഠനത്തിലും മാനസികാരോഗ്യത്തിലും ഉണ്ടാക്കുന്ന നല്ലതും ചീത്തയുമായ സ്വാധീനങ്ങളും.</div>
+  </div>
+  <div class="tree-card" style="border-left: 4px solid #e11d48;">
+    <h4>4. മാലിന്യ സംസ്കരണവും ശുചിത്വബോധവും (Solid Waste Management)</h4>
+    <div class="en-part"><span class="en-tag">EN</span>Evaluating public compliance with source-level plastic segregation and Haritha Karma Sena door-to-door collection in municipal or grama panchayat wards.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span>പ്ലാസ്റ്റിക് മാലിന്യങ്ങൾ തരംതിരിക്കുന്നതിലും ഹരിത കർമ്മസേനയുടെ പ്രവർത്തനങ്ങളോടും ജനങ്ങൾ പുലർത്തുന്ന മനോഭാവവും അവബോധവും.</div>
+  </div>
+  <div class="tree-card" style="border-left: 4px solid #d97706; grid-column: 1 / -1;">
+    <h4>5. അന്തർസംസ്ഥാന കുടിയേറ്റ തൊഴിലാളികൾ (Inter-State Migrant Labor)</h4>
+    <div class="en-part"><span class="en-tag">EN</span>Exploring living conditions, wage equity, language barriers, and social inclusion/exclusion experiences of migrant workers ('Guest Workers') in Kerala.</div>
+    <div class="ml-part"><span class="ml-tag">ML</span>കേരളത്തിലെ അന്യസംസ്ഥാന തൊഴിലാളികൾ നേരിടുന്ന ജീവിത സാഹചര്യങ്ങൾ, വേതനം, ഭാഷാപരമായ പ്രയാസങ്ങൾ, പ്രാദേശിക സമൂഹവുമായുള്ള ബന്ധങ്ങൾ.</div>
+  </div>
+</div>
+
+<h2>4. ഇന്റേണൽ മാർക്ക് വിഭജന മാനദണ്ഡങ്ങൾ (Assessment Rubrics Breakdown - 20 Marks)</h2>
+<table>
+  <thead>
+    <tr>
+      <th>മാനദണ്ഡം (Assessment Criterion)</th>
+      <th>മൂല്യനിർണ്ണയ വിവരണം (Detailed Evaluative Indicators)</th>
+      <th>മാർക്ക് (Weightage)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. വിഷയ തെരഞ്ഞെടുപ്പും പ്രസക്തിയും</strong><br><small>Topic Selection & Objectives</small></td>
+      <td>
+        <div class="en-part"><span class="en-tag">EN</span>Sociological relevance of chosen local topic, clarity in problem statement, and 3-4 precise, achievable objectives.</div>
+        <div class="ml-part"><span class="ml-tag">ML</span>സോഷ്യോളജിക്കൽ പ്രസക്തിയുള്ള വിഷയം തെരഞ്ഞെടുക്കൽ, പഠനത്തിന്റെ ആവശ്യകത വ്യക്തമാക്കൽ, കൃത്യമായ ലക്ഷ്യങ്ങൾ.</div>
+      </td>
+      <td><strong>4 മാർക്ക്</strong></td>
+    </tr>
+    <tr>
+      <td><strong>2. രീതിശാസ്ത്രവും ഫീൽഡ് ടൂളും</strong><br><small>Methodology & Tool Quality</small></td>
+      <td>
+        <div class="en-part"><span class="en-tag">EN</span>Validity and structure of the 12-15 item Questionnaire / Schedule, ethical adherence, and genuine survey of 15-25 respondents.</div>
+        <div class="ml-part"><span class="ml-tag">ML</span>ചോദ്യാവലിയുടെ കൃത്യത, സാമ്പിളിംഗ് രീതി, വിവരദാതാക്കളിൽ നിന്നുള്ള വിവരശേഖരണം, ഗവേഷണ ധാർമ്മികത.</div>
+      </td>
+      <td><strong>5 മാർക്ക്</strong></td>
+    </tr>
+    <tr>
+      <td><strong>3. ഡാറ്റാ അപഗ്രഥനവും കണ്ടെത്തലുകളും</strong><br><small>Tabulation, Analysis & Findings</small></td>
+      <td>
+        <div class="en-part"><span class="en-tag">EN</span>Quality of frequency tables, percentage computations, logical interpretations, and actionable sociological recommendations.</div>
+        <div class="ml-part"><span class="ml-tag">ML</span>പട്ടികപ്പെടുത്തൽ, ശതമാന കണക്കുകൾ, കണ്ടെത്തലുകൾ ക്രോഡീകരിക്കൽ, പ്രായോഗിക പരിഹാര നിർദ്ദേശങ്ങൾ.</div>
+      </td>
+      <td><strong>5 മാർക്ക്</strong></td>
+    </tr>
+    <tr>
+      <td><strong>4. റിപ്പോർട്ടിന്റെ ഘടനയും രൂപവും</strong><br><small>Academic Report Formatting</small></td>
+      <td>
+        <div class="en-part"><span class="en-tag">EN</span>5-chapter structure (Introduction, Review, Methodology, Analysis, Conclusion), bibliography/references, and questionnaire appendix.</div>
+        <div class="ml-part"><span class="ml-tag">ML</span>ആമുഖം, അധ്യായങ്ങൾ, ഉപസംഹാരം, റഫറൻസുകൾ, ഉപയോഗിച്ച ചോദ്യാവലിയുടെ അനുബന്ധം എന്നിവ കൃത്യമായി ചിട്ടപ്പെടുത്തൽ.</div>
+      </td>
+      <td><strong>3 മാർക്ക്</strong></td>
+    </tr>
+    <tr>
+      <td><strong>5. സെമിനാർ അവതരണവും വൈവയും</strong><br><small>Viva-Voce & Defense</small></td>
+      <td>
+        <div class="en-part"><span class="en-tag">EN</span>Oral presentation of research findings, conceptual defense before faculty, and answering examiner queries accurately.</div>
+        <div class="ml-part"><span class="ml-tag">ML</span>ക്ലാസ്സ് റൂം പ്രസന്റേഷൻ, അധ്യാപകരുടെ ചോദ്യങ്ങൾക്ക് ആത്മവിശ്വാസത്തോടെ മറുപടി നൽകൽ, കണ്ടെത്തിയ വിഷയങ്ങൾ വ്യക്തമാക്കൽ.</div>
+      </td>
+      <td><strong>3 മാർക്ക്</strong></td>
+    </tr>
+    <tr>
+      <td><strong>ആകെ ഇന്റേണൽ മാർക്ക്</strong><br><small>Total Continuous Evaluation</small></td>
+      <td>
+        <div class="en-part"><span class="en-tag">EN</span>Integral component of Semester 1 B.A. Sociology FYUGP Major Grade.</div>
+        <div class="ml-part"><span class="ml-tag">ML</span>ഒന്നാം സെമസ്റ്റർ ബിരുദ മാർക്കിലേക്ക് നേരിട്ട് ചേർക്കപ്പെടുന്ന ഇന്റേണൽ മാർക്ക്.</div>
+      </td>
+      <td><strong>20 മാർക്ക്</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>5. എൽ.എം.എസ് പാഠപുസ്തക ചോദ്യോത്തരങ്ങൾ (LMS Questions & Detailed Bilingual Answers)</h2>
+
+<div class="qa-card">
+  <div class="qa-q">Q1. What is the fundamental academic objective of the Module 5 Assignment in SOC1CJ101? (SOC1CJ101-ൽ മൊഡ്യൂൾ 5 അസൈൻമെന്റിന്റെ അടിസ്ഥാന അക്കാദമിക് ലക്ഷ്യം എന്താണ്?)</div>
+  <div class="qa-ans-en">
+    <strong>English:</strong> The primary objective is empirical experiential learning. It transitions undergraduate students from passive classroom absorption of theoretical paradigms into active empirical researchers. Students learn to conceptualize a real-world social issue within their local community, operationalize sociological concepts into field questions, adhere strictly to ethical research standards, engage directly with diverse human respondents, analyze primary data systematically, and present coherent academic findings.
+  </div>
+  <div class="qa-ans-ml">
+    <strong>മലയാളം പരിഭാഷ:</strong> പുസ്തകങ്ങളിൽ വായിച്ചുപഠിച്ച സിദ്ധാന്തങ്ങളെ യഥാർത്ഥ സമൂഹത്തിലേക്ക് ഇറങ്ങി നിരീക്ഷിച്ച് അനുഭവവേദ്യമാക്കുക എന്നതാണ് മൊഡ്യൂൾ 5-ന്റെ പ്രധാന ലക്ഷ്യം. സ്വന്തം ചുറ്റുപാടുകളിലെ ഒരു പ്രശ്നം തെരഞ്ഞെടുത്ത്, ചോദ്യാവലി ഉണ്ടാക്കി, മനുഷ്യരെ നേരിട്ട് കണ്ട് സംസാരിച്ച് വിവരങ്ങൾ ശേഖരിക്കാനും, ഗവേഷണ ധാർമ്മികത പാലിച്ച് ശാസ്ത്രീയമായി റിപ്പോർട്ട് തയ്യാറാക്കാനും വിദ്യാർത്ഥികളെ ഇത് പരിശീലിപ്പിക്കുന്നു.
+  </div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q2. Outline the standard five-chapter structure of a Sociological Field Project Report. (ഒരു സോഷ്യോളജിക്കൽ ഫീൽഡ് പ്രൊജക്റ്റ് റിപ്പോർട്ടിന്റെ സാധാരണ അഞ്ച് അധ്യായ ഘടന എന്താണെന്ന് വ്യക്തമാക്കുക.)</div>
+  <div class="qa-ans-en">
+    <strong>English:</strong> A standard sociological field report comprises:
+    • <strong>Title Page & Acknowledgments:</strong> Topic, student register number, supervisor certificate.
+    • <strong>Chapter 1: Introduction:</strong> Statement of the problem, significance of the study, and research objectives.
+    • <strong>Chapter 2: Review of Literature:</strong> Brief synthesis of earlier studies and sociological theoretical background.
+    • <strong>Chapter 3: Research Methodology:</strong> Geographical area, sample size (15-25 respondents), tool (Questionnaire/Schedule), data collection procedures, and limitations.
+    • <strong>Chapter 4: Data Presentation & Analysis:</strong> Percentage tables, charts, and sociological interpretations.
+    • <strong>Chapter 5: Major Findings, Suggestions & Conclusion:</strong> Key empirical discoveries, practical policy suggestions, and concluding remarks.
+    • <strong>Appendix:</strong> Blank copy of questionnaire used and reference bibliography.
+  </div>
+  <div class="qa-ans-ml">
+    <strong>മലയാളം പരിഭാഷ:</strong> ഒരു ശാസ്ത്രീയ പ്രൊജക്റ്റ് റിപ്പോർട്ടിൽ താഴെ പറയുന്ന അഞ്ച് പ്രധാന അധ്യായങ്ങൾ ഉണ്ടായിരിക്കണം:
+    • <strong>ടൈറ്റിൽ പേജ് & സാക്ഷ്യപത്രം:</strong> പഠന വിഷയം, വിദ്യാർത്ഥിയുടെ രജിസ്റ്റർ നമ്പർ, അധ്യാപകന്റെ സാക്ഷ്യപത്രം.
+    • <strong>അധ്യായം 1: ആമുഖം (Introduction):</strong> പ്രശ്നത്തിന്റെ പശ്ചാത്തലം, പഠനത്തിന്റെ പ്രാധാന്യം, പ്രധാന ലക്ഷ്യങ്ങൾ.
+    • <strong>അധ്യായം 2: സാഹിത്യ അവലോകനം (Review of Literature):</strong> ഈ വിഷയത്തിൽ മുൻപ് നടന്നിട്ടുള്ള പഠനങ്ങൾ, സോഷ്യോളജി സിദ്ധാന്തങ്ങൾ.
+    • <strong>അധ്യായം 3: രീതിശാസ്ത്രം (Methodology):</strong> പഠന പ്രദേശം, സാമ്പിൾ വലുപ്പം (15-25 ആളുകൾ), ഉപയോഗിച്ച ചോദ്യാവലി, വിവരശേഖരണ രീതി, പരിമിതികൾ.
+    • <strong>അധ്യായം 4: വിവരങ്ങളുടെ പട്ടികപ്പെടുത്തലും അപഗ്രഥനവും (Data Analysis):</strong> ടേബിളുകൾ, ശതമാന കണക്കുകൾ, സോഷ്യോളജിക്കൽ വിശകലനം.
+    • <strong>അധ്യായം 5: പ്രധാന കണ്ടെത്തലുകൾ & പരിഹാരങ്ങൾ (Findings & Suggestions):</strong> സർവേയിലൂടെ കണ്ടെത്തിയ കാര്യങ്ങൾ, നിർദ്ദേശങ്ങൾ, ഉപസംഹാരം.
+    • <strong>അനുബന്ധം:</strong> സർവേയ്ക്ക് ഉപയോഗിച്ച ചോദ്യാവലിയുടെ പകർപ്പ്, ഗ്രന്ഥസൂചി (References).
+  </div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q3. Detail the crucial ethical principles a student researcher must adhere to during field interviews. (ഫീൽഡ് സർവേ നടത്തുമ്പോൾ ഒരു വിദ്യാർത്ഥി നിർബന്ധമായും പാലിക്കേണ്ട ഗവേഷണ ധാർമ്മികതകൾ എന്തൊക്കെയാണ്?)</div>
+  <div class="qa-ans-en">
+    <strong>English:</strong> Sociological inquiry demands rigorous compliance with research ethics to safeguard participant dignity:
+    (1) <strong>Informed Consent:</strong> Clearly explaining the purely academic nature of the study and obtaining voluntary, unforced agreement before beginning questions;
+    (2) <strong>Anonymity and Confidentiality:</strong> Ensuring respondents that personal names, addresses, and identifying markers will never be disclosed publicly or recorded on published tables;
+    (3) <strong>Right to Withdraw:</strong> Respecting the respondent's absolute prerogative to refuse to answer any sensitive query or terminate the interview at any moment;
+    (4) <strong>Non-Maleficence:</strong> Guaranteeing that participants experience no psychological distress, legal vulnerability, or social embarrassment due to their truthful responses; and
+    (5) <strong>Objectivity and Respectful Empathy:</strong> Maintaining neutrality without lecturing, arguing, or showing cultural bias toward the respondent's views.
+  </div>
+  <div class="qa-ans-ml">
+    <strong>മലയാളം പരിഭാഷ:</strong> ഗവേഷണം നടത്തുമ്പോൾ വിവരദാതാക്കളുടെ അവകാശങ്ങളും അന്തസ്സും സംരക്ഷിക്കാൻ താഴെ പറയുന്ന തത്ത്വങ്ങൾ നിർബന്ധമായും പാലിക്കണം:
+    (1) <strong>അറിവോടെയുള്ള സമ്മതം (Informed Consent):</strong> ഇതൊരു പഠന പ്രൊജക്റ്റിന്റെ ഭാഗമാണെന്ന് വ്യക്തമാക്കുകയും അവരുടെ പൂർണ്ണ സമ്മതത്തോടെ മാത്രം ചോദ്യങ്ങൾ ചോദിക്കുകയും ചെയ്യുക;
+    (2) <strong>രഹസ്യാത്മകത (Confidentiality & Anonymity):</strong> അവരുടെ പേരോ മേൽവിലാസമോ ഒരു കാരണവശാലും പുറത്തുവിടില്ലെന്ന് ഉറപ്പുനൽകുക;
+    (3) <strong>പിന്മാറാനുള്ള സ്വാതന്ത്ര്യം:</strong> ഏതെങ്കിലും ചോദ്യത്തിന് മറുപടി നൽകാൻ താൽപ്പര്യമില്ലെങ്കിൽ അവരെ നിർബന്ധിക്കരുത്;
+    (4) <strong>ഉപദ്രവിക്കാതിരിക്കൽ (Non-Maleficence):</strong> വിവരങ്ങൾ നൽകിയതുകൊണ്ട് അവർക്ക് കുടുംബത്തിലോ സമൂഹത്തിലോ എന്തെങ്കിലും പ്രയാസങ്ങൾ ഉണ്ടാകാൻ ഇടവരരുത്;
+    (5) <strong>വസ്തുനിഷ്ഠതയും ബഹുമാനവും:</strong> മുൻവിധികളില്ലാതെ അവരുടെ ഉത്തരങ്ങൾ ക്ഷമയോടെ കേൾക്കുകയും ആരോടും തർക്കിക്കാതിരിക്കുകയും ചെയ്യുക.
+  </div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-q">Q4. How does empirical fieldwork transform a student's 'Sociological Imagination' (C. Wright Mills)? (ഫീൽഡ് വർക്ക് ഒരു വിദ്യാർത്ഥിയുടെ 'സോഷ്യോളജിക്കൽ ഇമാജിനേഷനെ' എങ്ങനെ വികസിപ്പിക്കുന്നു?)</div>
+  <div class="qa-ans-en">
+    <strong>English:</strong> In 1959, American sociologist C. Wright Mills coined the concept of <strong>The Sociological Imagination</strong>—the intellectual capacity to perceive the profound connection between an individual's private personal troubles (e.g. unemployment, loneliness, divorce) and larger public structural issues of social history. Conducting direct field interviews enables students to transcend superficial personal blame. For example, when interviewing an elderly widow living alone in a village, the student realizes her loneliness is not merely a private tragedy, but a direct structural outcome of macro-level changes: the breakdown of agrarian joint families, youth emigration driven by globalization, and inadequate public social security systems. Fieldwork thereby operationalizes Mills' sociological imagination by revealing the societal architecture behind individual lived experiences.
+  </div>
+  <div class="qa-ans-ml">
+    <strong>മലയാളം പരിഭാഷ:</strong> 1959-ൽ സി. റൈറ്റ് മിൽസ് (C. Wright Mills) അവതരിപ്പിച്ച ആശയമാണ് <strong>'സോഷ്യോളജിക്കൽ ഇമാജിനേഷൻ' (സാമൂഹിക ഭാവന)</strong>. ഒരു വ്യക്തി അനുഭവിക്കുന്ന സ്വകാര്യ ദുരിതങ്ങളും (തൊഴിലില്ലായ്മ, ഒറ്റപ്പെടൽ) വലിയ സാമൂഹിക ഘടനയിലെ പ്രശ്നങ്ങളും തമ്മിലുള്ള ബന്ധം തിരിച്ചറിയാനുള്ള ചിന്താശേഷിയാണിത്. ഫീൽഡ് സർവേ നടത്തുമ്പോൾ വിദ്യാർത്ഥിക്ക് ഈ ബോധ്യം നേരിട്ട് ഉണ്ടാകുന്നു. ഉദാഹരണത്തിന്, ഗ്രാമത്തിൽ ഒറ്റപ്പെട്ടു കഴിയുന്ന ഒരു വൃദ്ധയെ കാണുമ്പോൾ, അത് അവരുടെ മാത്രം വ്യക്തിപരമായ പ്രശ്നമല്ലെന്നും മറിച്ച് കൂട്ടുകുടുംബങ്ങളുടെ തകർച്ച, ഗൾഫ് കുടിയേറ്റം, സർക്കാർ സംരക്ഷണ സംവിധാനങ്ങളുടെ കുറവ് തുടങ്ങിയ വലിയ സാമൂഹിക മാറ്റങ്ങളുടെ ഫലമാണെന്നും വിദ്യാർത്ഥി തിരിച്ചറിയുന്നു. ഇത് വിദ്യാർത്ഥിയെ മികച്ചൊരു സോഷ്യോളജിസ്റ്റാക്കി മാറ്റുന്നു.
+  </div>
+</div>
+
+<h2>7. 15 പ്രധാന മൾട്ടിപ്പിൾ ചോയ്‌സ് ചോദ്യങ്ങൾ (15 Detailed Bilingual MCQs with Answers & Rationale)</h2>
+<div class="mcq-grid">
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>1. What is the fundamental instructional purpose of Module 5 in FYUGP BA Sociology?</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>1. FYUGP ബി.എ. സോഷ്യോളജിയിൽ മൊഡ്യൂൾ 5 പ്രധാനമായും എന്തിനാണ് രൂപകൽപ്പന ചെയ്തിട്ടുള്ളത്?</div>
+    </div>
+    <div class="q-options">
+      A) Hands-on empirical fieldwork and Continuous Internal Evaluation (പ്രായോഗിക ഫീൽഡ് വർക്കും ഇന്റേണൽ അസസ്സ്മെന്റും)<br>
+      B) Passing a pure physical sports trial<br>
+      C) Memorizing Sanskrit grammar<br>
+      D) Drawing architectural building plans
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> Module 5 provides experiential training in identifying real-world social problems through primary field surveys.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> വിദ്യാർത്ഥികളിൽ പ്രായോഗിക ഗവേഷണ പാടവം വളർത്താനുള്ള ഫീൽഡ് അസൈൻമെന്റാണിത്.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>2. What is the prescribed sample size for the undergraduate Module 5 micro-project?</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>2. ഒന്നാം സെമസ്റ്റർ ബിരുദ ഫീൽഡ് വർക്കിനായി സാധാരണയായി തെരഞ്ഞെടുക്കേണ്ട സാമ്പിൾ വലുപ്പം എത്രയാണ്?</div>
+    </div>
+    <div class="q-options">
+      A) 15 to 25 authentic respondents (15 മുതൽ 25 വരെ വിവരദാതാക്കൾ)<br>
+      B) Exactly 1 individual only<br>
+      C) Fifty thousand citizens<br>
+      D) Animals and plants exclusively
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> 15-25 respondents offer an optimal balance of statistical feasibility and in-depth experiential learning for semester 1.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> ബിരുദ തലത്തിലെ അസൈൻമെന്റിനായി 15-25 സാമ്പിളുകളാണ് ഏറ്റവും അനുയോജ്യം.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>3. The pre-planned standardized list of questions used by a student to collect primary data is a:</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>3. വിവരശേഖരണത്തിനായി വിദ്യാർത്ഥി മുൻകൂട്ടി തയ്യാറാക്കുന്ന ചോദ്യങ്ങളുടെ പട്ടികയ്ക്ക് എന്ത് പറയുന്നു?</div>
+    </div>
+    <div class="q-options">
+      A) Questionnaire / Interview Schedule (ചോദ്യാവലി / ഇന്റർവ്യൂ ഷെഡ്യൂൾ)<br>
+      B) Daily newspaper article<br>
+      C) Syllabus receipt<br>
+      D) Personal diary
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A (Questionnaire / Schedule)<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A (ചോദ്യാവലി)
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> A structured questionnaire operationalizes sociological research questions into standardized field queries.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> വിവരദാതാക്കളിൽ നിന്ന് വസ്തുനിഷ്ഠമായി മറുപടികൾ ശേഖരിക്കാനുള്ള ടൂളാണിത്.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>4. Obtaining the voluntary, informed consent of participants before interviewing is an indispensable rule of:</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>4. വിവരദാതാക്കളിൽ നിന്ന് മുൻകൂട്ടി അനുമതി വാങ്ങി മാത്രം പഠനം നടത്തുക എന്നത് എന്തിന്റെ നിയമമാണ്?</div>
+    </div>
+    <div class="q-options">
+      A) Research Ethics (ഗവേഷണ ധാർമ്മികത / Research Ethics)<br>
+      B) Corporate commercial marketing<br>
+      C) Military interrogation<br>
+      D) Political campaigning
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A (Research Ethics)<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A (ഗവേഷണ ധാർമ്മികത)
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> Respecting human autonomy and dignity is the cornerstone of academic research ethics.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> റിസർച്ച് എത്തിക്സിന്റെ ഏറ്റവും അടിസ്ഥാന തത്ത്വമാണിത്.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>5. Primary numerical survey data is systematically organized and displayed in a research report using:</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>5. പ്രൊജക്റ്റ് റിപ്പോർട്ടിൽ ശേഖരിച്ച വിവരങ്ങൾ ക്രമീകരിച്ച് പ്രദർശിപ്പിക്കാൻ ഉപയോഗിക്കുന്ന രീതി:</div>
+    </div>
+    <div class="q-options">
+      A) Frequency Tabulation and Percentages (പട്ടികകളും ശതമാന കണക്കുകളും)<br>
+      B) Poetic fiction writing<br>
+      C) Blank unwritten lines<br>
+      D) Random doodle drawings
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> Tabulation allows quantitative data to be inspected, compared, and percentages computed clearly.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> വിവരങ്ങളെ ടേബിളുകളാക്കി മാറ്റി ശതമാനം കണക്കാക്കുന്നത് പഠനം വ്യക്തമാക്കുന്നു.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>6. The interactive oral defense where students explain their project to evaluators is termed:</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>6. പ്രൊജക്റ്റ് തയ്യാറാക്കിയ ശേഷം വിദ്യാർത്ഥികൾ നേരിടേണ്ട വാചാ പരീക്ഷ ഏതാണ്?</div>
+    </div>
+    <div class="q-options">
+      A) Viva-Voce / Seminar Defense (വൈവ-വോസി / സെമിനാർ അവതരണം)<br>
+      B) Sports race<br>
+      C) Singing audition<br>
+      D) Silent reading
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A (Viva-Voce)<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A (വൈവ-വോസി)
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> The viva-voce assesses the student's authentic grasp of findings and conceptual reasoning.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> റിപ്പോർട്ടിനെ ആസ്പദമാക്കി അധ്യാപകർ ചോദിക്കുന്ന ചോദ്യങ്ങൾക്ക് മറുപടി നൽകണം.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>7. What constitutes an exemplary sociological micro-research topic?</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>7. ഒരു നല്ല ഗവേഷണ വിഷയത്തിന്റെ ഏറ്റവും പ്രധാനപ്പെട്ട ഗുണം എന്താണ്?</div>
+    </div>
+    <div class="q-options">
+      A) Local relevance, observable social significance, and empirical feasibility (പ്രാദേശിക പ്രസക്തിയും പഠന സാധ്യതയും)<br>
+      B) Requiring millions in funding<br>
+      C) Involving imaginary alien planets<br>
+      D) Complete incomprehensibility
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> Feasibility within the local community guarantees authentic firsthand data collection.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> വിദ്യാർത്ഥിക്ക് നേരിട്ട് നിരീക്ഷിക്കാൻ സാധിക്കുന്ന പ്രസക്തമായ വിഷയമായിരിക്കണം.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>8. The ethical agreement ensuring respondents participate freely with full awareness of purpose is:</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>8. പഠനത്തിൽ പങ്കെടുക്കുന്ന ആളുകളിൽ നിന്ന് വാങ്ങേണ്ട ബോധപൂർവ്വമായ സമ്മതത്തിന് പറയുന്ന പേര്:</div>
+    </div>
+    <div class="q-options">
+      A) Informed Consent (ഇൻഫോംഡ് കൺസെന്റ് / അറിവോടെയുള്ള സമ്മതം)<br>
+      B) Bank loan guarantee<br>
+      C) Driving license permit<br>
+      D) Stamp deed registration
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A (Informed Consent)<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A (ഇൻഫോംഡ് കൺസെന്റ്)
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> Informed consent mandates voluntary assent after full disclosure of research intentions.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> പഠന ലക്ഷ്യം വ്യക്തമാക്കി ആളുകളുടെ സ്വതന്ത്ര സമ്മതം തേടണം.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>9. What document must be appended at the end of the project report as an Appendix?</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>9. പ്രൊജക്റ്റ് റിപ്പോർട്ടിന്റെ അവസാനം അനുബന്ധമായി (Appendix) ചേർക്കേണ്ടത് എന്താണ്?</div>
+    </div>
+    <div class="q-options">
+      A) A blank specimen of the Questionnaire / Tool used (ഉപയോഗിച്ച ചോദ്യാവലിയുടെ പകർപ്പ്)<br>
+      B) Bus transit passes<br>
+      C) Film cinema tickets<br>
+      D) Commercial supermarket bills
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> Appending the tool validates the methodological authenticity of empirical data gathering.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> വിവരശേഖരണത്തിന് ഉപയോഗിച്ച ചോദ്യാവലി റിപ്പോർട്ടിന്റെ അവസാനം ചേർക്കുന്നു.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>10. What is the greatest practical skill acquired by a student through empirical fieldwork?</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>10. ഫീൽഡ് പ്രൊജക്റ്റിലൂടെ ഒരു വിദ്യാർത്ഥി ആർജ്ജിക്കുന്ന ഏറ്റവും വലിയ പ്രായോഗിക നേട്ടം എന്താണ്?</div>
+    </div>
+    <div class="q-options">
+      A) Scientific empirical observation and critical sociological analysis of real-world phenomena (സാമൂഹിക യാഥാർത്ഥ്യങ്ങളെ ശാസ്ത്രീയമായി നിരീക്ഷിക്കാനുള്ള കഴിവ്)<br>
+      B) Tourism sightseeing<br>
+      C) Retail trade bargaining<br>
+      D) Complete avoidance of exams
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> Fieldwork cultivates critical thinking, empathy, and objective scientific verification.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> സാമൂഹിക പ്രശ്നങ്ങളെ വസ്തുനിഷ്ഠമായി സമീപിക്കാനുള്ള ശേഷി വളർത്തുന്നു.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>11. The unethical academic offense of copying another researcher's text without citation is:</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>11. മറ്റൊരു ഗവേഷകന്റെ രചനകൾ സ്വന്തം പേരിൽ അനുവാദമില്ലാതെ പകർത്തിച്ചേർക്കുന്ന തെറ്റായ പ്രവണത:</div>
+    </div>
+    <div class="q-options">
+      A) Plagiarism (പ്ലാജിയറിസം / ഗ്രന്ഥചോരണം)<br>
+      B) Stratified Sampling<br>
+      C) Triangulation<br>
+      D) Participant Observation
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A (Plagiarism)<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A (പ്ലാജിയറിസം)
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> Plagiarism represents severe intellectual misconduct violating academic integrity.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> അക്കാദമിക് രംഗത്ത് ഗുരുതരമായ ധാർമ്മിക ലംഘനമാണ് ഗ്രന്ഥചോരണം.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>12. The concluding chapter of a project report synthesizes Findings with practical:</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>12. പ്രൊജക്റ്റ് റിപ്പോർട്ടിലെ കണ്ടെത്തലുകൾ (Findings) അടിസ്ഥാനമാക്കി നൽകേണ്ട അധ്യായം:</div>
+    </div>
+    <div class="q-options">
+      A) Sociological Suggestions and Policy Recommendations (പരിഹാര നിർദ്ദേശങ്ങൾ)<br>
+      B) Imaginary fictional tales<br>
+      C) Astrological horoscopes<br>
+      D) Weather forecasts
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> Applied sociology connects empirical diagnoses with constructive community solutions.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> കണ്ടെത്തിയ പ്രശ്നങ്ങൾ പരിഹരിക്കാനുള്ള പ്രായോഗിക നിർദ്ദേശങ്ങൾ സമർപ്പിക്കണം.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>13. What mindset must a student investigator maintain while interviewing community members?</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>13. ഫീൽഡ് സർവേ നടത്തുമ്പോൾ ഗവേഷകൻ പുലർത്തേണ്ട പ്രധാന മനോഭാവം എന്താണ്?</div>
+    </div>
+    <div class="q-options">
+      A) Scientific objectivity, respectful neutrality, and active listening (വസ്തുനിഷ്ഠതയും ബഹുമാനവും)<br>
+      B) Arrogant aggressive argumentation<br>
+      C) Coercive physical intimidation<br>
+      D) Mocking religious customs
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> Objectivity and empathy elicit genuine, uninhibited responses from participants.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> വിവരദാതാക്കളോട് ബഹുമാനത്തോടെയും വസ്തുനിഷ്ഠമായും പെരുമാറണം.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>14. What is the total maximum mark weightage assigned to the Module 5 CIE assessment?</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>14. മൊഡ്യൂൾ 5 ഇന്റേണൽ അസസ്സ്മെന്റിൽ അസൈൻമെന്റിനായി നീക്കിവെച്ചിരിക്കുന്ന ആകെ മാർക്ക് എത്രയാണ്?</div>
+    </div>
+    <div class="q-options">
+      A) 20 Marks (20 മാർക്ക് - Continuous Internal Evaluation component)<br>
+      B) 100 Marks<br>
+      C) 2 Marks only<br>
+      D) Zero Marks
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A (20 Marks)<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A (20 മാർക്ക്)
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> Under Calicut University FYUGP guidelines, Module 5 forms the core 20-mark practical component.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> ഇന്റേണൽ ഇവാല്യുവേഷൻ പ്രക്രിയയിലാകെ 20 മാർക്കാണുള്ളത്.</div>
+    </div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">
+      <div class="en-part"><span class="en-tag">EN</span>15. Who provides academic supervision and approves the questionnaire during the project?</div>
+      <div class="ml-part"><span class="ml-tag">ML</span>15. ഒരു വിദ്യാർത്ഥിക്ക് ഫീൽഡ് പ്രൊജക്റ്റ് പൂർത്തിയാക്കാൻ സഹായിക്കുന്ന അക്കാദമിക് മാർഗ്ഗദർശി ആരാണ്?</div>
+    </div>
+    <div class="q-options">
+      A) College Faculty Mentor / Department Guide (ഡിപ്പാർട്ട്മെന്റിലെ അധ്യാപകൻ / ഫാക്കൽറ്റി മെന്റർ)<br>
+      B) Unrelated social media strangers<br>
+      C) Cinema actors<br>
+      D) Commercial shopkeepers
+    </div>
+    <div class="q-ans">
+      <span class="en-tag">EN</span>Correct Answer: A<br>
+      <span class="ml-tag">ML</span>ശരിയായ ഉത്തരം: A
+    </div>
+    <div class="q-exp">
+      <div class="en-part"><span class="en-tag">EN</span><strong>Rationale:</strong> The assigned faculty mentor guides topic formulation, tool vetting, and report finalization.</div>
+      <div class="ml-part"><span class="ml-tag">ML</span><strong>വിശദീകരണം:</strong> വിഷയം തെരഞ്ഞെടുക്കുന്നത് മുതൽ റിപ്പോർട്ട് പൂർത്തിയാക്കുന്നത് വരെ അധ്യാപകന്റെ മേൽനോട്ടം ഉണ്ടാകും.</div>
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. സോഷ്യോളജി പഠന സഹായി · Introduction to Sociology (SOC1CJ101)</span>
+    <span>സമ്പൂർണ്ണ മലയാള പരിഭാഷ, ചോദ്യോത്തരങ്ങൾ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@700;800;900&family=Gayathri:wght@700;900&family=Manjari:wght@700;900&family=Noto+Sans+Malayalam:wght@700;900&family=Orbitron:wght@800;900&family=Outfit:wght@700;900&family=Space+Grotesk:wght@700&family=Syne:wght@800&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #130324 0%, #240A42 50%, #3B1266 100%);
+      font-family: 'Anek Malayalam', 'Poppins', sans-serif;
+      color: #FFFFFF;
+      position: relative;
+    }
+    
+    /* Background subtle grid */
+    .grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* Top Left Channel Banner Pill */
+    .top-bar {
+      position: absolute;
+      top: 36px;
+      left: 56px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 10;
+    }
+    .channel-tag {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1.5px solid #9D4EDD;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(8px);
+    }
+    .channel-tag .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #9D4EDD;
+      box-shadow: 0 0 10px #9D4EDD;
+    }
+    .syllabus-badge {
+      background: rgba(36, 10, 66, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #00F5D4;
+      letter-spacing: 0.5px;
+    }
+
+    /* Main Left Content Panel */
+    .content-panel {
+      position: absolute;
+      top: 110px;
+      left: 56px;
+      width: 660px;
+      z-index: 10;
+    }
+    .module-badge {
+      display: inline-block;
+      font-family: 'Orbitron', 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 2.5px;
+      color: #00F5D4;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      text-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+    .title-malayalam {
+      font-size: 58px;
+      font-weight: 900;
+      line-height: 1.14;
+      color: #FFFFFF;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0,0,0,0.6);
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .title-english {
+      font-family: 'Outfit', 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #9D4EDD;
+      line-height: 1.25;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+      margin-bottom: 26px;
+      border-left: 4px solid #00F5D4;
+      padding-left: 14px;
+    }
+    .features-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .feature-pill {
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #E2E8F0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .feature-pill span {
+      color: #9D4EDD;
+    }
+
+    /* Right Artwork Container */
+    .art-container {
+      position: absolute;
+      top: 50px;
+      right: 30px;
+      width: 580px;
+      height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    /* Bottom Status Bar */
+    .bottom-bar {
+      position: absolute;
+      bottom: 26px;
+      left: 56px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      color: #94A3B8;
+      z-index: 10;
+    }
+    .bottom-bar .hub-url {
+      color: #FFFFFF;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+    }
+    .bottom-bar .sep {
+      color: rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+
+  <div class="top-bar">
+    <div class="channel-tag">
+      <div class="dot"></div>
+      ACADEMIC HUB
+    </div>
+    <div class="syllabus-badge">CALICUT UNIVERSITY FYUGP</div>
+    <div class="syllabus-badge" style="color: #9D4EDD;">EMBODIED COGNITION</div>
+  </div>
+
+  <div class="content-panel">
+    <div class="module-badge">MODULE 02 · CHAPTER 5</div>
+    <h1 class="title-malayalam">ശരീരമില്ലാത്ത ബുദ്ധിശക്തിയും<br>AI-യും</h1>
+    <div class="title-english">Disembodied Mind · Dreyfus & Andy Clark</div>
+    <div class="features-row">
+      <div class="feature-pill"><span>✓</span> സിലബസ് വിശകലനം</div>
+      <div class="feature-pill"><span>✓</span> സമഗ്ര മാസ്റ്റർക്ലാസ്</div>
+      <div class="feature-pill"><span>✓</span> പരീക്ഷാ ടിപ്പുകൾ</div>
+    </div>
+  </div>
+
+  <div class="art-container">
+    
+        <svg viewBox="0 0 600 600" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="embGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#9D4EDD" stop-opacity="0.7"/>
+              <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="300" cy="300" r="260" fill="url(#embGlow)"/>
+          
+          <!-- Robotic Sensor Hand Reaching Out -->
+          <g stroke="#00F5D4" stroke-width="4" fill="none" stroke-linecap="round">
+            <!-- Arm beam -->
+            <path d="M 80 500 L 220 380 L 290 320"/>
+            <circle cx="220" cy="380" r="18" fill="#9D4EDD" stroke="#FFF" stroke-width="3"/>
+            
+            <!-- Mechanical fingers -->
+            <!-- Thumb -->
+            <path d="M 290 320 L 260 250 L 270 200" stroke-width="5"/>
+            <circle cx="260" cy="250" r="8" fill="#00F5D4"/>
+            <circle cx="270" cy="200" r="6" fill="#FFF"/>
+
+            <!-- Index -->
+            <path d="M 310 300 L 330 210 L 350 160" stroke-width="5"/>
+            <circle cx="330" cy="210" r="8" fill="#00F5D4"/>
+            <circle cx="350" cy="160" r="6" fill="#FFF"/>
+
+            <!-- Middle -->
+            <path d="M 325 315 L 370 230 L 400 180" stroke-width="5"/>
+            <circle cx="370" cy="230" r="8" fill="#00F5D4"/>
+            <circle cx="400" cy="180" r="6" fill="#FFF"/>
+
+            <!-- Ring -->
+            <path d="M 330 335 L 390 270 L 430 230" stroke-width="5"/>
+            <circle cx="390" cy="270" r="8" fill="#00F5D4"/>
+            <circle cx="430" cy="230" r="6" fill="#FFF"/>
+          </g>
+
+          <!-- Sensor Touch Ripple -->
+          <circle cx="350" cy="160" r="25" fill="none" stroke="#00F5D4" stroke-width="2" opacity="0.8"/>
+          <circle cx="350" cy="160" r="50" fill="none" stroke="#9D4EDD" stroke-width="2" opacity="0.5"/>
+          <circle cx="350" cy="160" r="80" fill="none" stroke="#9D4EDD" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.3"/>
+
+          <!-- Organic Natural Physical Environment Leaves/World -->
+          <path d="M 360 150 C 420 100 480 130 500 200 C 460 220 400 200 360 150 Z" fill="rgba(0, 245, 212, 0.2)" stroke="#00F5D4" stroke-width="3"/>
+          <path d="M 360 150 Q 430 160 500 200" stroke="#00F5D4" stroke-width="2"/>
+
+          <!-- Floating Disembodied Brain in Cage (Critique) -->
+          <g transform="translate(110, 100)">
+            <rect x="0" y="0" width="130" height="130" rx="16" fill="rgba(0,0,0,0.7)" stroke="#9D4EDD" stroke-width="2" stroke-dasharray="6 6"/>
+            <circle cx="65" cy="55" r="30" fill="none" stroke="#FFF" stroke-width="2" opacity="0.4"/>
+            <text x="65" y="105" fill="#9D4EDD" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">DISEMBODIED?</text>
+            <line x1="20" y1="20" x2="110" y2="110" stroke="#FF0055" stroke-width="4"/>
+          </g>
+        </svg>
+        
+  </div>
+
+  <div class="bottom-bar">
+    <span class="hub-url">🌐 academichubfaiz.in</span>
+    <span class="sep">|</span>
+    <span>PHILOSOPHY OF ARTIFICIAL INTELLIGENCE</span>
+    <span class="sep">|</span>
+    <span>100% FREE STUDY PORTAL</span>
+  </div>
+</body>
+</html>

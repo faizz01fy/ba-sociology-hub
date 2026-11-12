@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>മൊഡ്യൂൾ 5: ഇന്ത്യയിലെ ധനക്കമ്മിയും പണപ്പെരുപ്പവും — ദാരിദ്ര്യ-തൊഴിലില്ലായ്മാ നിർണ്ണയ പ്രായോഗിക പ്രൊജക്റ്റുകൾ</title>
+  <style>
+    :root {
+      --c1: #065f46;
+      --c2: #059669;
+    }
+    
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Manjari:wght@400;700&display=swap');
+
+@page {
+  size: A4;
+  margin: 16mm 14mm 16mm 14mm;
+}
+
+body {
+  font-family: 'Noto Sans Malayalam', 'Manjari', 'Nirmala UI', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  line-height: 1.85;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, var(--c1, #065f46), var(--c2, #059669));
+  color: white;
+  padding: 22px 26px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.header-banner h4 {
+  margin: 0 0 4px 0;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a7f3d0;
+  font-weight: 600;
+}
+
+.header-banner h1 {
+  margin: 0 0 6px 0;
+  font-size: 17.5pt;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.header-banner .meta {
+  font-size: 9.5pt;
+  color: #d1fae5;
+}
+
+.badge {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #065f46;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 9pt;
+  font-weight: 700;
+  margin-bottom: 14px;
+  border: 1px solid #a7f3d0;
+}
+
+h2 {
+  color: var(--c1, #065f46);
+  font-size: 13.5pt;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-top: 26px;
+  margin-bottom: 14px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h3 {
+  color: #0f766e;
+  font-size: 11.5pt;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  page-break-after: avoid;
+  font-weight: 700;
+}
+
+h4.sub-head {
+  color: #334155;
+  font-size: 10.5pt;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background: #f8fafc;
+  border-left: 4px solid var(--c2, #059669);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-teal {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-amber {
+  background: #fffbeb;
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-rose {
+  background: #fff1f2;
+  border-left: 4px solid #e11d48;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.card-blue {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.quote-box {
+  background: #f1f5f9;
+  border-left: 4px solid #475569;
+  padding: 12px 18px;
+  font-style: italic;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+th {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.mcq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.q-box {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px 16px;
+  page-break-inside: avoid;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.q-title {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-size: 10.5pt;
+}
+
+.q-options {
+  font-size: 9.5pt;
+  color: #334155;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.q-ans {
+  color: #047857;
+  font-weight: 700;
+  font-size: 9.5pt;
+  background: #ecfdf5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.q-exp {
+  font-size: 9pt;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.qa-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+}
+
+.qa-q {
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 8px;
+  font-size: 11pt;
+}
+
+.qa-ans-en {
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 10pt;
+}
+
+.qa-ans-ml {
+  color: #0f172a;
+  font-size: 10pt;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #059669;
+}
+
+.footer {
+  margin-top: 36px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+  font-size: 8.5pt;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+}
+
+  </style>
+<style id="hub-universal-protection">
+*, *::before, *::after {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+img {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+}
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+  <div class="header-banner">
+    <h4>മൊഡ്യൂൾ 5: തുറന്ന സാമ്പത്തിക പ്രശ്നങ്ങൾ (Module 5: Open-Ended Issues)</h4>
+    <h1>മൊഡ്യൂൾ 5: ഇന്ത്യയിലെ ധനക്കമ്മിയും പണപ്പെരുപ്പവും — ദാരിദ്ര്യ-തൊഴിലില്ലായ്മാ നിർണ്ണയ പ്രായോഗിക പ്രൊജക്റ്റുകൾ</h1>
+    <div class="meta">Module 5: Fiscal Deficit & Inflation in India — Empirical Projects on Poverty and Unemployment Estimation · Calicut University B.A. Economics / Sociology · Comprehensive Bilingual Study Guide</div>
+  </div>
+
+  
+<h2>1. പഠന ലക്ഷ്യങ്ങൾ (Learning Objectives)</h2>
+<div class="card">
+  <ul>
+    <li><strong>ധനക്കമ്മി (Fiscal Deficit):</strong> സർക്കാരിന്റെ ആകെ ചെലവും കടമൊഴികെയുള്ള ആകെ വരുമാനവും തമ്മിലുള്ള അന്തരം മനസ്സിലാക്കുക; സമീപകാല പ്രവണതകളും FRBM ലക്ഷ്യങ്ങളും വിശകലനം ചെയ്യുക.</li>
+    <li><strong>പണപ്പെരുപ്പം (Inflation):</strong> വിലക്കയറ്റത്തിന്റെ പ്രവണതകൾ, ഉപഭോക്തൃ വിലസൂചിക (CPI), മൊത്തവില സൂചിക (WPI), ആർ.ബി.ഐയുടെ പണനയ ചട്ടക്കൂട് (Flexible Inflation Targeting - 4% &plusmn; 2%).</li>
+    <li><strong>ധനക്കമ്മിയും പണപ്പെരുപ്പവും തമ്മിലുള്ള പരസ്പരബന്ധം (Interlinkage):</strong> കമ്മി പണമാക്കൽ (Deficit Monetization), ഡിമാൻഡ് പുൾ - കോസ്റ്റ് പുഷ് പണപ്പെരുപ്പം, ആഗോള അസംസ്കൃത എണ്ണവിലയുടെ സ്വാധീനം.</li>
+    <li><strong>പ്രായോഗിക പ്രൊജക്റ്റ് 1 (Project 1 - Poverty Estimation using MRP):</strong> ഒരു തദ്ദേശ സ്വയംഭരണ വാർഡിൽ MRP (Marginal Revenue Product) രീതി ഉപയോഗിച്ച് ദാരിദ്ര്യം തിട്ടപ്പെടുത്തുന്നതിനുള്ള 9 ഘട്ടങ്ങളുള്ള ഗവേഷണ രൂപരേഖ.</li>
+    <li><strong>പ്രായോഗിക പ്രൊജക്റ്റ് 2 (Project 2 - Unemployment Measurement):</strong> പ്രാദേശിക തലത്തിൽ സാമ്പിൾ സർവേ / സെൻസസ് രീതികൾ ഉപയോഗിച്ച് തൊഴിലില്ലായ്മ നിരക്ക്, LFPR, WPR എന്നിവ കണക്കാക്കൽ.</li>
+  </ul>
+</div>
+
+<h2>2. ഇന്ത്യയിലെ ധനക്കമ്മി: പ്രവണതകളും പ്രത്യാഘാതങ്ങളും (Fiscal Deficit in India)</h2>
+<p>
+സർക്കാരിന്റെ മൊത്തം ചെലവും കടമെടുപ്പ് ഒഴികെയുള്ള മൊത്തം റവന്യൂ വരവും തമ്മിലുള്ള വ്യത്യാസത്തെയാണ് <strong>ധനക്കമ്മി (Fiscal Deficit)</strong> എന്ന് വിളിക്കുന്നത്. ഒരു സാമ്പത്തിക വർഷത്തിൽ ഭരണച്ചെലവുകൾക്കും വികസന പ്രവർത്തനങ്ങൾക്കുമായി സർക്കാർ എത്രത്തോളം തുക കടമെടുക്കേണ്ടി വരുന്നു എന്നതിന്റെ കൃത്യമായ സൂചകമാണിത്.
+</p>
+<div class="card">
+  <code>ധനക്കമ്മി = ആകെ ചെലവ് - (റവന്യൂ വരുമാനം + കടമെടുപ്പല്ലാത്ത മൂലധന വരവുകൾ)</code>
+</div>
+
+<h3 class="sub-head">(i) സമീപകാല പ്രവണതകളും ഔദ്യോഗിക കണക്കുകളും (Recent Trends & FRBM Glide Path)</h3>
+<table>
+  <thead>
+    <tr>
+      <th>സാമ്പത്തിക വർഷം</th>
+      <th>ധനക്കമ്മി (GDP യുടെ %)</th>
+      <th>തുക (കോടി രൂപയിൽ)</th>
+      <th>പ്രത്യേകതകളും നിരീക്ഷണങ്ങളും</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>2020–21 (COVID-19)</strong></td>
+      <td><strong>9.2% &ndash; 9.5%</strong></td>
+      <td>₹18.18 ലക്ഷം കോടി</td>
+      <td>കോവിഡ് മഹാമാരിയെ തുടർന്നുള്ള ആരോഗ്യച്ചെലവുകൾ, സൗജന്യ റേഷൻ, ലോക്ക്ഡൗൺ വരുമാനത്തകർച്ച.</td>
+    </tr>
+    <tr>
+      <td><strong>2021–22</strong></td>
+      <td><strong>6.71%</strong></td>
+      <td>₹16.85 ലക്ഷം കോടി</td>
+      <td>സമ്പദ്‌വ്യവസ്ഥയുടെ പുനരുജ്ജീവനവും മെച്ചപ്പെട്ട നികുതി പിരിവും കാരണം കമ്മി കുറഞ്ഞു.</td>
+    </tr>
+    <tr>
+      <td><strong>2022–23</strong></td>
+      <td><strong>6.40%</strong></td>
+      <td>₹16.54 ലക്ഷം കോടി</td>
+      <td>ബജറ്റ് ലക്ഷ്യമായ 6.4 ശതമാനത്തിൽ നിലനിർത്താൻ സാധിച്ചു.</td>
+    </tr>
+    <tr>
+      <td><strong>2023–24</strong></td>
+      <td><strong>5.60%</strong></td>
+      <td>₹16.55 ലക്ഷം കോടി</td>
+      <td>നികുതി വരുമാനത്തിലെ മികച്ച വളർച്ച വഴി തിരുത്തിയ എസ്റ്റിമേറ്റായ 5.8% നേക്കാൾ മെച്ചപ്പെട്ടു.</td>
+    </tr>
+    <tr>
+      <td><strong>2024–25 (ബജറ്റ്)</strong></td>
+      <td><strong>4.80%</strong></td>
+      <td>₹16.13 ലക്ഷം കോടി</td>
+      <td>ധന ഏകീകരണ പാതയിലുള്ള സുപ്രധാന ചുവടുവെപ്പ്.</td>
+    </tr>
+    <tr>
+      <td><strong>2025–26 (ലക്ഷ്യം)</strong></td>
+      <td><strong>4.40%</strong></td>
+      <td>₹15.69 ലക്ഷം കോടി</td>
+      <td>FRBM ആക്ട് ലക്ഷ്യമായ 3-4% പരിധിയിലേക്ക് തിരിച്ചെത്താനുള്ള ഔദ്യോഗിക ലക്ഷ്യം.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="sub-head">(ii) ധനക്കമ്മിയുടെ കാരണങ്ങളും മാക്രോ-ഇക്കണോമിക് പ്രത്യാഘാതങ്ങളും (Macroeconomic Implications)</h3>
+<div class="card">
+  <ul>
+    <li><strong>കാരണങ്ങൾ:</strong> ജി.എസ്.ടി/നികുതി വരുമാനത്തിലെ കുറവ്, സബ്സിഡികളും സാമൂഹിക ക്ഷേമച്ചെലവുകളും, സാമ്പത്തിക മാന്ദ്യകാലത്തെ ഉത്തേജക പാക്കേജുകൾ (Counter-cyclical Fiscal Policy), അടിസ്ഥാന സൗകര്യ മൂലധന നിക്ഷേപം (CapEx).</li>
+    <li><strong>ഹ്രസ്വകാല നേട്ടം:</strong> മാന്ദ്യകാലത്ത് വിപണിയിലെ ആവശ്യകത (Demand) വർദ്ധിപ്പിക്കാനും വളർച്ച നിലനിർത്താനും സഹായിക്കുന്നു.</li>
+    <li><strong>ദീർഘകാല അപകടങ്ങൾ:</strong> അനിയന്ത്രിതമായ കമ്മി സ്വകാര്യ നിക്ഷേപകർക്ക് വായ്പ ലഭിക്കുന്നത് തടസ്സപ്പെടുത്തുന്നു (Crowding-out Effect), പലിശ നിരക്കുകൾ ഉയർത്തുന്നു, ഭാവി തലമുറയുടെ മേൽ കടബാധ്യതയും പലിശ തിരിച്ചടവ് ഭാരവും വർദ്ധിപ്പിക്കുന്നു.</li>
+  </ul>
+</div>
+
+<h2>3. ഇന്ത്യയിലെ പണപ്പെരുപ്പ പ്രവണതകൾ (Inflation Trends in India)</h2>
+<p>
+ഒരു സമ്പദ്‌വ്യവസ്ഥയിൽ സാധനങ്ങളുടെയും സേവനങ്ങളുടെയും പൊതുവിലനിലവാരത്തിൽ ഉണ്ടാകുന്ന സുസ്ഥിരമായ വർദ്ധനവിനെയാണ് <strong>പണപ്പെരുപ്പം (Inflation)</strong> എന്ന് പറയുന്നത്. ഇന്ത്യയിൽ പണപ്പെരുപ്പം പ്രധാനമായും ഉപഭോക്തൃ വിലസൂചിക (Consumer Price Index - CPI) അടിസ്ഥാനമാക്കിയാണ് റിസർവ് ബാങ്ക് നിരീക്ഷിക്കുന്നത്.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>വർഷം</th>
+      <th>പ്രതിവർഷ പണപ്പെരുപ്പ നിരക്ക്</th>
+      <th>കാരണങ്ങളും നയപരമായ ഇടപെടലുകളും</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>2021</strong></td>
+      <td>5.1%</td>
+      <td>കോവിഡ് അനന്തര വിതരണ ശൃംഖലയിലെ തടസ്സങ്ങൾ, ഇന്ധന വിലക്കയറ്റം.</td>
+    </tr>
+    <tr>
+      <td><strong>2022</strong></td>
+      <td>6.7%</td>
+      <td>റഷ്യ-യുക്രെയ്ൻ യുദ്ധം കാരണമുണ്ടായ ആഗോള എണ്ണവില വർദ്ധനവ്, ആഗോള ചരക്കുക്ഷാമം.</td>
+    </tr>
+    <tr>
+      <td><strong>2023</strong></td>
+      <td>5.6%</td>
+      <td>ഭക്ഷ്യധാന്യങ്ങളുടെയും പച്ചക്കറികളുടെയും (തക്കാളി, ഉള്ളി) വിലക്കയറ്റം; RBI പലിശ നിരക്കുകൾ ഉയർത്തി (Repo Rate Hike).</td>
+    </tr>
+    <tr>
+      <td><strong>2024</strong></td>
+      <td>5.1%</td>
+      <td>പണനയ നിയന്ത്രണങ്ങളിലൂടെ വിലക്കയറ്റം മിതമായ തോതിലേക്ക് എത്തിച്ചു.</td>
+    </tr>
+    <tr>
+      <td><strong>2025 (പ്രതീക്ഷിക്കുന്നത്)</strong></td>
+      <td>2.6% &ndash; 4.0%</td>
+      <td>സാധാരണ മൺസൂണും ആഗോള വിതരണ ശൃംഖലയുടെ സ്ഥിരതയും വഴി നിയന്ത്രണ വിധേയമാക്കൽ.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="card">
+  <h3>പണപ്പെരുപ്പത്തിന്റെ പ്രധാന ഘടകങ്ങൾ (Key Drivers of Inflation):</h3>
+  <ul>
+    <li><strong>ഡിമാൻഡ് പുൾ പണപ്പെരുപ്പം (Demand-Pull Inflation):</strong> സാമ്പത്തിക വളർച്ചയും വരുമാനവും കൂടുമ്പോൾ സാധനങ്ങളുടെ ആവശ്യകത വിതരണത്തേക്കാൾ അധികമാകുന്ന അവസ്ഥ.</li>
+    <li><strong>കോസ്റ്റ് പുഷ് പണപ്പെരുപ്പം (Cost-Push Inflation):</strong> അസംസ്കൃത വസ്തുക്കളുടെ വിലക്കയറ്റം, വേതന വർദ്ധനവ്, ആഗോള ക്രൂഡ് ഓയിൽ വില എന്നിവ കാരണം ഉൽപ്പാദനച്ചെലവ് കൂടുന്ന അവസ്ഥ.</li>
+    <li><strong>RBI പണനയം:</strong> റിസർവ് ബാങ്കിന്റെ ലക്ഷ്യം 4 ശതമാനവും (&plusmn;2% സഹിഷ്ണുതാ പരിധി [2% മുതൽ 6% വരെ]) ആണ്. പണപ്പെരുപ്പം കൂടുമ്പോൾ ആർ.ബി.ഐ റിപ്പോ നിരക്ക് ഉയർത്തി പണലഭ്യത കുറയ്ക്കുന്നു.</li>
+  </ul>
+</div>
+
+<h2>4. ധനക്കമ്മിയും പണപ്പെരുപ്പവും തമ്മിലുള്ള ബന്ധം (Relationship between Fiscal Deficit and Inflation)</h2>
+<div class="card">
+  <ol>
+    <li><strong>നേരിട്ടുള്ള ബന്ധം (കമ്മി പണമാക്കൽ - Monetization of Deficit):</strong> സർക്കാരിന്റെ കമ്മി നികത്താൻ കേന്ദ്ര ബാങ്ക് പുതിയ കറൻസി അച്ചടിക്കുകയാണെങ്കിൽ, കമ്പോളത്തിൽ പണത്തിന്റെ അളവ് (Money Supply) ക്രമാതീതമായി കൂടുകയും കടുത്ത പണപ്പെരുപ്പത്തിന് കാരണമാവുകയും ചെയ്യും.</li>
+    <li><strong>പരോക്ഷമായ ബന്ധം (Indirect Link):</strong> സർക്കാരിന്റെ വൻതോതിലുള്ള വികസന-ക്ഷേമ ചെലവുകൾ ജനങ്ങളുടെ കൈവശമുള്ള ക്രയശേഷി വർദ്ധിപ്പിക്കുന്നു. എന്നാൽ വിപണിയിലെ സാധനങ്ങളുടെ വിതരണം അതനുസരിച്ച് വർദ്ധിച്ചില്ലെങ്കിൽ വിലക്കയറ്റം അനിവാര്യമാകും.</li>
+    <li><strong>ആഗോള എണ്ണവിലയുടെ പങ്കു്:</strong> ഇന്ത്യ എണ്ണയുടെ 85% ഇറക്കുമതി ചെയ്യുന്നതിനാൽ അന്താരാഷ്ട്ര വിലവർദ്ധനവ് ഇന്ത്യയിലെ ഗതാഗതച്ചെലവ് ഉയർത്തുകയും അത് എല്ലാ മേഖലകളിലേക്കും പടരുകയും ചെയ്യുന്നു (ഇറക്കുമതി ചെയ്ത പണപ്പെരുപ്പം).</li>
+  </ol>
+</div>
+
+<h2>5. പ്രായോഗിക പ്രൊജക്റ്റ് 1: തദ്ദേശ സ്വയംഭരണ വാർഡിൽ MRP രീതി ഉപയോഗിച്ചുള്ള ദാരിദ്ര്യ നിർണ്ണയം</h2>
+<div class="card">
+  <h3>പ്രൊജക്റ്റ് തലക്കെട്ട്: “Estimation of Poverty using the MRP Method in an LSG Ward”</h3>
+  <p><strong>പദ്ധതിയുടെ 9 ശാസ്ത്രീയ ഘട്ടങ്ങൾ (Step-by-Step Methodology):</strong></p>
+  <ol>
+    <li><strong>ഘട്ടം 1: ലക്ഷ്യങ്ങൾ നിർണ്ണയിക്കൽ (Define Objectives):</strong> പ്രദേശത്തെ തൊഴിലാളികളുടെ ഉൽപ്പാദനക്ഷമതയും (MRP) വേതനവും കണ്ടെത്തുക; ദാരിദ്ര്യരേഖയ്ക്ക് താഴെയുള്ളവരെ തിരിച്ചറിയുക.</li>
+    <li><strong>ഘട്ടം 2: സാഹിത്യ അവലോകനം (Literature Review):</strong> തെണ്ടുൽക്കർ, രംഗരാജൻ സമിതി റിപ്പോർട്ടുകൾ, NSSO കൺസ്യൂമർ എക്സ്പെൻഡിച്ചർ ഡാറ്റ, ലേബർ ബ്യൂറോ സ്ഥിതിവിവരക്കണക്കുകൾ എന്നിവ പഠിക്കുക.</li>
+    <li><strong>ഘട്ടം 3: വിവര ശേഖരണം (Data Collection):</strong> വാർഡിലെ 50 അല്ലെങ്കിൽ 100 കുടുംബങ്ങളിൽ നിന്ന് നേരിട്ടുള്ള സർവേ (Primary Survey Questionnaire) വഴി തൊഴിൽ മണിക്കൂറുകൾ, വേതനം, ഉൽപ്പാദനം എന്നിവ ശേഖരിക്കൽ.</li>
+    <li><strong>ഘട്ടം 4: MRP രീതിയുടെ തത്വം (Marginal Revenue Product Concept):</strong>
+      <br>തൊഴിലാളിയുടെ സീമാന്ത ഭൗതിക ഉൽപ്പാദനത്തെ (MPP) കമ്പോള വില (MR) കൊണ്ട് ഗുണിച്ചാണ് MRP കണ്ടെത്തുന്നത്:
+      <br><code>MRP = MPP &times; MR</code>
+    </li>
+    <li><strong>ഘട്ടം 5: ഡാറ്റാ വിശകലനം (Data Analysis):</strong> ഓരോ തൊഴിലാളിയുടെയും MRP കണക്കാക്കി, ആ പ്രദേശത്തെ മിനിമം ജീവതവേതനവുമായി (Poverty Line Wage) താരതമ്യം ചെയ്യുന്നു.
+      <br><em>തൊഴിലാളിയുടെ MRP &lt; ദാരിദ്ര്യരേഖാ വേതനം ആണെങ്കിൽ അയാൾ ദരിദ്രനായി കണക്കാക്കപ്പെടുന്നു.</em>
+    </li>
+    <li><strong>ഘട്ടം 6: ഫലങ്ങളുടെ അവതരണം (Presentation of Results):</strong> വാർഡിലെ ദാരിദ്ര്യ നിരക്ക് (Headcount Ratio), കാർഷിക-നിർമ്മാണ മേഖലകളിലെ അസമത്വം എന്നിവ പട്ടികകളും ബാർ ചാർട്ടുകളും വഴി രേഖപ്പെടുത്തുക.</li>
+    <li><strong>ഘട്ടം 7: നിഗമനങ്ങളും നിർദ്ദേശങ്ങളും (Conclusion & Policy Recommendations):</strong> കുറഞ്ഞ ഉൽപ്പാദനക്ഷമതയ്ക്ക് കാരണം നൈപുണ്യമില്ലായ്മയാണെന്ന് കണ്ടെത്തി നൈപുണ്യ പരിശീലനം, കൂലി സബ്സിഡി എന്നിവ ശുപാർശ ചെയ്യുക.</li>
+    <li><strong>ഘട്ടം 8: റഫറൻസുകൾ (References):</strong> സർക്കാർ റിപ്പോർട്ടുകൾ, സാമ്പത്തിക സർവേ, പാഠപുസ്തകങ്ങൾ എന്നിവ കൃത്യമായി ചേർക്കുക.</li>
+    <li><strong>ഘട്ടം 9: അനുബന്ധങ്ങൾ (Appendices):</strong> സർവേ ചോദ്യാവലി, കണക്കുകൂട്ടലുകൾ, അടിസ്ഥാന സ്ഥിതിവിവരക്കണക്കുകൾ എന്നിവ ഉൾപ്പെടുത്തുക.</li>
+  </ol>
+</div>
+
+<h2>6. പ്രായോഗിക പ്രൊജക്റ്റ് 2: തദ്ദേശ മേഖലയിലെ തൊഴിലില്ലായ്മാ സർവേ</h2>
+<div class="card">
+  <h3>പ്രൊജക്റ്റ് തലക്കെട്ട്: “Measurement of Unemployment in the Local Territory”</h3>
+  <p><strong>അളവെടുപ്പ് രീതികൾ (Methodological Framework):</strong></p>
+  <ul>
+    <li><strong>സെൻസസ് രീതി (Census Method):</strong> വാർഡിലെ മുഴുവൻ കുടുംബങ്ങളെയും സന്ദർശിച്ച് വിവരങ്ങൾ രേഖപ്പെടുത്തുന്നു (സമഗ്രമായ വിവരങ്ങൾ ലഭിക്കും, എന്നാൽ കൂടുതൽ ചെലവും സമയവും ആവശ്യമാണ്).</li>
+    <li><strong>സാമ്പിൾ സർവേ രീതി (Sample Survey / PLFS Model):</strong> വാർഡിലെ ജനസംഖ്യയെ പ്രതിനിധീകരിക്കുന്ന 100 കുടുംബങ്ങളെ റാൻഡമായി തെരഞ്ഞെടുത്ത് NSSO മാനദണ്ഡങ്ങൾ പ്രകാരം UPS, CWS, CDS സ്റ്റാറ്റസ് രേഖപ്പെടുത്തുന്നു.</li>
+    <li><strong>എംപ്ലോയ്‌മെന്റ് എക്സ്ചേഞ്ച് രീതി (Registration Method):</strong> പ്രാദേശിക എക്സ്ചേഞ്ചിൽ രജിസ്റ്റർ ചെയ്ത ഉദ്യോഗാർത്ഥികളുടെ കണക്കുകൾ ഉപയോഗിക്കുന്നു (എല്ലാവരും രജിസ്റ്റർ ചെയ്യാത്തതിനാൽ കൃത്യത കുറവായിരിക്കും).</li>
+  </ul>
+
+  <h3>കണക്കുകൂട്ടൽ മാതൃക (Hypothetical Ward Model):</h3>
+  <ul>
+    <li>വാർഡിലെ ആകെ പ്രവർത്തന പ്രായത്തിലുള്ള ജനസംഖ്യ (15-59 വയസ്സ്) = 1,000 പേർ</li>
+    <li>തൊഴിൽ സേന (Labour Force - ജോലി ചെയ്യുന്നവരും അന്വേഷിക്കുന്നവരും) = 600 പേർ</li>
+    <li>തൊഴിലുള്ളവർ (Employed) = 540 പേർ</li>
+    <li>തൊഴിലില്ലാത്തവർ (Unemployed) = 60 പേർ</li>
+    <li><strong>തൊഴിലില്ലായ്മ നിരക്ക് (Unemployment Rate)</strong> = <code>(60 / 600) &times; 100 = 10%</code></li>
+    <li><strong>തൊഴിൽ പങ്കാളിത്ത നിരക്ക് (LFPR)</strong> = <code>(600 / 1000) &times; 100 = 60%</code></li>
+    <li><strong>തൊഴിലാളി ജനസംഖ്യാ അനുപാതം (WPR)</strong> = <code>(540 / 1000) &times; 100 = 54%</code></li>
+  </ul>
+</div>
+
+<h2>7. പ്രധാന 20 മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങളും ഉത്തരങ്ങളും (20 Important MCQs with Detailed Rationale)</h2>
+<div class="mcq-section">
+
+  <div class="q-box">
+    <div class="q-title">1. സർക്കാരിന്റെ ആകെ ചെലവും കടമെടുപ്പൊഴികെയുള്ള ആകെ റവന്യൂ വരുമാനവും തമ്മിലുള്ള അന്തരത്തെ വിളിക്കുന്നത്? / The gap between government's total expenditure and total revenue excluding borrowings is:</div>
+    <div class="q-options">A) റവന്യൂ കമ്മി (Revenue Deficit)<br>B) ധനക്കമ്മി (Fiscal Deficit)<br>C) പ്രാഥമിക കമ്മി (Primary Deficit)<br>D) കറന്റ് അക്കൗണ്ട് കമ്മി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: സർക്കാരിന് ചെലവുകൾ നിർവ്വഹിക്കാൻ എത്ര തുക കടമെടുക്കേണ്ടി വരുന്നു എന്ന് വ്യക്തമാക്കുന്ന സൂചകമാണ് ധനക്കമ്മി.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">2. കോവിഡ് മഹാമാരി കാലത്ത് (2020-21) ഇന്ത്യയിലെ ധനക്കമ്മി GDP യുടെ എത്ര ശതമാനമായി ഉയർന്നു? / During the COVID-19 pandemic (2020-21), India's fiscal deficit surged to approximately:</div>
+    <div class="q-options">A) 3.5%<br>B) 5.2%<br>C) 9.2% &ndash; 9.5%<br>D) 15.0%</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: C</div>
+    <div class="q-exp">വിശദീകരണം: വരുമാനത്തകർച്ചയും ഉയർന്ന സൗജന്യ ഭക്ഷ്യധാന്യ-ആരോഗ്യ ഉത്തേജക ചെലവുകളും കാരണം ധനക്കമ്മി റെക്കോർഡ് ഉയരമായ 9.2-9.5 ശതമാനത്തിലെത്തി.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">3. ഇന്ത്യയിൽ ധനക്കമ്മി നിയന്ത്രിക്കുന്നതിനായി 2003-ൽ പാസ്സാക്കിയ നിയമം ഏതാണ്? / Which act was enacted in 2003 in India to institutionalize fiscal discipline?</div>
+    <div class="q-options">A) കമ്പനി നിയമം<br>B) FRBM ആക്ട് (Fiscal Responsibility and Budget Management Act)<br>C) ധനകാര്യ കമ്മീഷൻ ആക്ട്<br>D) ജി.എസ്.ടി ആക്ട്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: കേന്ദ്ര സർക്കാരിന്റെ ധനക്കമ്മി GDP യുടെ 3 ശതമാനത്തിലേക്ക് താഴ്ത്താൻ ലക്ഷ്യമിട്ട് കൊണ്ടുവന്ന നിയമമാണ് FRBM ആക്ട്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">4. റിസർവ് ബാങ്ക് ഓഫ് ഇന്ത്യയുടെ ഫ്ലെക്സിബിൾ പണപ്പെരുപ്പ ലക്ഷ്യം (Inflation Target) എത്രയാണ്? / Under the Flexible Inflation Targeting framework, the RBI targets CPI inflation at:</div>
+    <div class="q-options">A) 2%<br>B) 4% (&plusmn;2% സഹിഷ്ണുതാ പരിധി)<br>C) 8%<br>D) 1%</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ആർ.ബി.ഐയുടെ പണനയ ചട്ടക്കൂട് പ്രകാരം 4% ആണ് അടിസ്ഥാന ലക്ഷ്യം, 2% മുതൽ 6% വരെയുള്ള പരിധിക്കുള്ളിൽ നിലനിർത്താൻ നിർദ്ദേശിക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">5. സർക്കാരിന്റെ കമ്മി നികത്താൻ പുതിയ കറൻസി അച്ചടിക്കുന്ന രീതിയെ എന്ത് വിളിക്കുന്നു? / Financing government deficits by printing new money is known as:</div>
+    <div class="q-options">A) കമ്മി പണമാക്കൽ (Deficit Monetization)<br>B) തുറന്ന വിപണി പ്രവർത്തനം<br>C) ക്രൗഡിംഗ് ഔട്ട്<br>D) കടപ്പത്ര വിൽപന</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: സെൻട്രൽ ബാങ്കിൽ നിന്ന് കടമെടുത്ത് കറൻസി അടിച്ചിറക്കി കമ്മി നികത്തുന്നത് പണപ്പെരുപ്പത്തിന് (Inflation) കാരണമാകുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">6. ഉൽപ്പാദനച്ചെലവുകൾ (വേതനം, അസംസ്കൃത വസ്തുക്കളുടെ വില, ഇന്ധനവില) വർദ്ധിക്കുന്നത് കൊണ്ടുണ്ടാകുന്ന വിലക്കയറ്റമേത്? / Inflation triggered by rising costs of inputs like fuel and wages is:</div>
+    <div class="q-options">A) ഡിമാൻഡ് പുൾ പണപ്പെരുപ്പം<br>B) കോസ്റ്റ് പുഷ് പണപ്പെരുപ്പം (Cost-Push Inflation)<br>C) അതിപണപ്പെരുപ്പം<br>D) സ്തംഭനാവസ്ഥ പണപ്പെരുപ്പം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ഉൽപ്പാദനച്ചെലവ് കൂടുമ്പോൾ ഉൽപ്പാദകർ വിപണി വില ഉയർത്താൻ നിർബന്ധിതരാകുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">7. സർക്കാർ വൻതോതിൽ വിപണിയിൽ നിന്ന് കടമെടുക്കുമ്പോൾ സ്വകാര്യ സംരംഭകർക്ക് വായ്പ ലഭിക്കാതാവുന്ന അവസ്ഥ? / When massive government borrowings reduce loanable funds available to private investors, it is termed:</div>
+    <div class="q-options">A) മൾട്ടിപ്ലയർ ഇഫക്ട്<br>B) ക്രൗഡിംഗ് ഔട്ട് പ്രഭാവം (Crowding-out Effect)<br>C) പണനയ ഇഫക്ട്<br>D) എയ്ഞ്ചൽ നികുതി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: സർക്കാർ വൻതോതിൽ ബാങ്കുകളിൽ നിന്ന് വായ്പ എടുക്കുമ്പോൾ പലിശനിരക്ക് ഉയരുകയും സ്വകാര്യ ബിസിനസുകൾക്ക് മൂലധനം കുറയുകയും ചെയ്യുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">8. മാർജിനൽ റെവന്യൂ പ്രൊഡക്റ്റ് (MRP) കണക്കാക്കുന്നതിനുള്ള സമവാക്യമേത്? / The formula for Marginal Revenue Product (MRP) is:</div>
+    <div class="q-options">A) MPP &times; MR (Marginal Physical Product &times; Marginal Revenue)<br>B) Total Output / Total Labour<br>C) Price &divide; Quantity<br>D) GDP &times; CPI</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: ഒരു അധിക തൊഴിലാളിയെ നിയമിക്കുമ്പോൾ ലഭിക്കുന്ന അധിക ഉൽപ്പാദനത്തെ (MPP) അതിന്റെ വിപണി വിലകൊണ്ട് (MR) ഗുണിച്ചാണ് MRP കണ്ടെത്തുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">9. MRP രീതിയിൽ ഒരു തൊഴിലാളിയെ എപ്പോഴാണ് ദരിദ്രനായി കണക്കാക്കുന്നത്? / Under the MRP approach, a worker is considered below poverty line if:</div>
+    <div class="q-options">A) MRP &gt; മിനിമം വേതനം<br>B) MRP &lt; ദാരിദ്ര്യരേഖാ വേതനം (Poverty Line Wage)<br>C) MRP = 0<br>D) തൊഴിലാളിക്ക് ബിരുദമില്ലെങ്കിൽ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: തൊഴിലാളിയുടെ ഉൽപ്പാദനക്ഷമത വഴിയുള്ള വരുമാന മൂല്യം മിനിമം ഉപജീവനച്ചെലവിനേക്കാൾ താഴെയാകുമ്പോൾ അയാൾ ദരിദ്രനായി മാറുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">10. ഇന്ത്യയിൽ ഉപഭോക്തൃ തലത്തിലുള്ള ചില്ലറ വിലക്കയറ്റം അളക്കാൻ ആർ.ബി.ഐ ഉപയോഗിക്കുന്ന സൂചിക? / Which price index is primarily used by RBI for inflation targeting at the retail consumer level?</div>
+    <div class="q-options">A) മൊത്തവില സൂചിക (WPI)<br>B) ഉപഭോക്തൃ വിലസൂചിക (Consumer Price Index - CPI)<br>C) കയറ്റുമതി സൂചിക<br>D) ബോംബെ സെൻസെക്സ്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ഊർജിത് പട്ടേൽ സമിതിയുടെ ശുപാർശ പ്രകാരം ഉപഭോക്താക്കൾ നേരിട്ട് അനുഭവിക്കുന്ന ചില്ലറ പണപ്പെരുപ്പം അളക്കുന്ന CPI ആണ് ആർ.ബി.ഐ മാനദണ്ഡമാക്കിയത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">11. ഒരു പ്രദേശത്തെ ആകെ പ്രവർത്തന പ്രായത്തിലുള്ള ജനസംഖ്യ 1,000 ഉം, തൊഴിൽ സേന 600 ഉം ആണെങ്കിൽ തൊഴിൽ പങ്കാളിത്ത നിരക്ക് (LFPR) എത്ര? / If the working age population is 1,000 and the labour force is 600, the LFPR is:</div>
+    <div class="q-options">A) 10%<br>B) 50%<br>C) 60%<br>D) 80%</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: C</div>
+    <div class="q-exp">വിശദീകരണം: LFPR = (തൊഴിൽ സേന / പ്രവർത്തന പ്രായത്തിലുള്ള ജനസംഖ്യ) &times; 100 = (600 / 1000) &times; 100 = 60%.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">12. തൊഴിൽ സേനയിലെ 600 പേരിൽ 60 പേർ തൊഴിൽരഹിതരാണെങ്കിൽ തൊഴിലില്ലായ്മ നിരക്ക് (Unemployment Rate) എത്ര? / If 60 out of 600 individuals in the labour force are unemployed, the unemployment rate is:</div>
+    <div class="q-options">A) 6%<br>B) 10%<br>C) 12%<br>D) 15%</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: തൊഴിലില്ലായ്മ നിരക്ക് = (തൊഴിലില്ലാത്തവർ / തൊഴിൽ സേന) &times; 100 = (60 / 600) &times; 100 = 10%.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">13. കേന്ദ്ര ബജറ്റ് 2025-26 ലെ ധനക്കമ്മി ലക്ഷ്യമായി പ്രഖ്യാപിച്ചിരിക്കുന്നത് GDP യുടെ എത്ര ശതമാനമാണ്? / The projected fiscal deficit target for India by FY 2025-26 is:</div>
+    <div class="q-options">A) 6.4%<br>B) 5.6%<br>C) 4.4%<br>D) 2.0%</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: C</div>
+    <div class="q-exp">വിശദീകരണം: കോവിഡിന് ശേഷമുള്ള ധന ഏകീകരണ പദ്ധതി പ്രകാരം 2025-26 ഓടെ ധനക്കമ്മി 4.5 ശതമാനത്തിന് താഴെയാക്കുക (4.4%) എന്നതാണ് കേന്ദ്ര സർക്കാർ ലക്ഷ്യം.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">14. പണപ്പെരുപ്പത്തിൽ ഭക്ഷ്യവസ്തുക്കളുടെയും ഇന്ധനങ്ങളുടെയും ചാഞ്ചാട്ടമുള്ള വിലകൾ ഒഴിവാക്കി കണക്കാക്കുന്ന നിരക്ക്? / Inflation that excludes volatile food and energy components is called:</div>
+    <div class="q-options">A) ഹെഡ്‌ലൈൻ പണപ്പെരുപ്പം<br>B) കോർ പണപ്പെരുപ്പം (Core Inflation)<br>C) ഹൈപ്പർ ഇൻഫ്ലേഷൻ<br>D) മിതമായ പണപ്പെരുപ്പം</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: താത്കാലിക ഘടകങ്ങളായ ഭക്ഷ്യ-ഇന്ധന വിലകൾ ഒഴിവാക്കി സമ്പദ്‌വ്യവസ്ഥയിലെ അടിസ്ഥാന വിലക്കയറ്റ പ്രവണത കാണിക്കുന്നതാണ് കോർ ഇൻഫ്ലേഷൻ.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">15. പ്രാദേശിക എംപ്ലോയ്‌മെന്റ് എക്സ്ചേഞ്ചുകളിൽ രജിസ്റ്റർ ചെയ്ത വിവരങ്ങൾ ഉപയോഗിച്ച് തൊഴിലില്ലായ്മ അളക്കുന്നതിലെ പ്രധാന പോരായ്മ? / What is the major limitation of the employment exchange registration method?</div>
+    <div class="q-options">A) ചെലവ് വളരെ കൂടുതലാണ്<br>B) എല്ലാ തൊഴിൽരഹിതരും എക്സ്ചേഞ്ചിൽ രജിസ്റ്റർ ചെയ്യാറില്ല (Underestimation)<br>C) കംപ്യൂട്ടർ ഉപയോഗിക്കാൻ കഴിയില്ല<br>D) ഗ്രാമങ്ങളിൽ എക്സ്ചേഞ്ച് ഇല്ല</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: യഥാർത്ഥ തൊഴിലന്വേഷകരിൽ വലിയൊരു ശതമാനം എക്സ്ചേഞ്ചിൽ രജിസ്റ്റർ ചെയ്യാത്തതിനാൽ കൃത്യമായ അളവെടുപ്പ് സാധ്യമല്ല.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">16. സർക്കാരിന്റെ റവന്യൂ ചെലവ് റവന്യൂ വരുമാനത്തേക്കാൾ കൂടുതലാകുന്ന അവസ്ഥയെ എന്ത് വിളിക്കുന്നു? / When government revenue expenditure exceeds revenue receipts, it is called:</div>
+    <div class="q-options">A) ധനക്കമ്മി<br>B) റവന്യൂ കമ്മി (Revenue Deficit)<br>C) പ്രാഥമിക കമ്മി<br>D) വ്യാപാര കമ്മി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ദൈനംദിന ഭരണച്ചെലവുകൾ സ്വന്തം വരുമാനത്തിൽ നിന്ന് നിർവ്വഹിക്കാൻ കഴിയാത്ത അവസ്ഥയാണിത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">17. ധനക്കമ്മിയിൽ നിന്ന് മുൻകാല കടങ്ങളുടെ പലിശ തിരിച്ചടവ് തുക കുറച്ചാൽ ലഭിക്കുന്നത്? / Fiscal deficit minus interest payments equals:</div>
+    <div class="q-options">A) റവന്യൂ കമ്മി<br>B) പ്രാഥമിക കമ്മി (Primary Deficit)<br>C) വ്യാപാര കമ്മി<br>D) ബജറ്റ് കമ്മി</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: പ്രാഥമിക കമ്മി = ധനക്കമ്മി - പലിശ തിരിച്ചടവ്. നടപ്പ് സാമ്പത്തിക വർഷത്തിലെ സർക്കാരിന്റെ യഥാർത്ഥ ബാധ്യത ഇത് കാണിക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">18. പ്രാദേശിക സർവേകളിൽ സാമ്പിൾ തിരഞ്ഞെടുപ്പിൽ പക്ഷപാതം ഒഴിവാക്കാൻ ഏറ്റവും അനുയോജ്യമായ രീതി? / The most suitable sampling technique to avoid bias in local household surveys is:</div>
+    <div class="q-options">A) സൗകര്യപ്രദമായ സാമ്പിളിംഗ്<br>B) സ്ട്രാറ്റിഫൈഡ് റാൻഡം സാമ്പിളിംഗ് (Stratified Random Sampling)<br>C) ജഡ്ജ്മെന്റൽ സാമ്പിളിംഗ്<br>D) സ്നോബോൾ സാമ്പിളിംഗ്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: ജനങ്ങളെ വരുമാന-ജാതി തട്ടുകളായി തിരിച്ച് ഓരോ തട്ടിൽ നിന്നും യാദൃശ്ചികമായി വീടുകൾ തിരഞ്ഞെടുക്കുന്നത് പ്രാതിനിധ്യ സ്വഭാവം ഉറപ്പാക്കുന്നു.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">19. ഇന്ത്യയിൽ മൊത്തവില സൂചിക (WPI) തയ്യാറാക്കി പ്രസിദ്ധീകരിക്കുന്ന മന്ത്രാലയം ഏതാണ്? / Which ministry publishes the Wholesale Price Index (WPI) in India?</div>
+    <div class="q-options">A) ധനകാര്യ മന്ത്രാലയം<br>B) വാണിജ്യ വ്യവസായ മന്ത്രാലയം (Ministry of Commerce and Industry - DPIIT)<br>C) കൃഷി മന്ത്രാലയം<br>D) നീതി ആയോഗ്</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: B</div>
+    <div class="q-exp">വിശദീകരണം: വ്യവസായ ആഭ്യന്തര വ്യാപാര പ്രോത്സാഹന വകുപ്പിലെ (DPIIT) സാമ്പത്തിക ഉപദേഷ്ടാവിന്റെ ഓഫീസാണ് WPI പുറത്തിറക്കുന്നത്.</div>
+  </div>
+
+  <div class="q-box">
+    <div class="q-title">20. ഉയർന്ന പണപ്പെരുപ്പ നിരക്കും സാമ്പത്തിക മുരടിപ്പും (Stagnation) തൊഴിലില്ലായ്മയും ഒരേസമയം ഉണ്ടാകുന്ന അപകടകരമായ സാമ്പത്തിക അവസ്ഥ? / A condition of stagnant economic growth combined with high inflation and unemployment is called:</div>
+    <div class="q-options">A) സ്തംഭനാവസ്ഥ പണപ്പെരുപ്പം (Stagflation)<br>B) ഡിഫ്ലേഷൻ<br>C) ഹൈപ്പർ ഇൻഫ്ലേഷൻ<br>D) റിഫ്ലേഷൻ</div>
+    <div class="q-ans">ശരിയായ ഉത്തരം: A</div>
+    <div class="q-exp">വിശദീകരണം: സ്തംഭനാവസ്ഥയും (Stagnation) പണപ്പെരുപ്പവും (Inflation) ഒത്തുചേരുന്ന സ്റ്റാഗ്ഫ്ലേഷൻ സമ്പദ്‌വ്യവസ്ഥയെ ഗുരുതരമായ പ്രതിസന്ധിയിലാക്കുന്നു.</div>
+  </div>
+
+</div>
+
+
+  <div class="footer">
+    <span>കാലിക്കറ്റ് സർവ്വകലാശാല ബി.എ. ഡിഗ്രി പഠന സഹായി · Development Issues in Indian Economy</span>
+    <span>സമഗ്ര മലയാള പരിഭാഷ & പരീക്ഷാ സഹായി</span>
+  </div>
+<script id="hub-universal-protection-script">
+(function() {
+  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
+  window.addEventListener('keydown', function(e) {
+    var k = e.key ? e.key.toLowerCase() : '';
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
+      e.preventDefault(); e.stopPropagation(); return false;
+    }
+  }, true);
+  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
+  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
+})();
+</script>
+</body>
+</html>
