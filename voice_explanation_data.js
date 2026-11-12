@@ -694,7 +694,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 01",
             "title": "വായനാ രീതികൾ (Reading Strategies & Comprehension) | Calicut Univ",
             "chapter": "Introduction to Reading Skills · Skimming, Scanning & Critical Inference",
-            "duration": "14:15",
+            "duration": "17:42",
             "thumbnail": "https://i.ytimg.com/vi/9aLkAUYFWF8/hqdefault.jpg",
             "youtubeId": "9aLkAUYFWF8",
             "videoUrl": null,
