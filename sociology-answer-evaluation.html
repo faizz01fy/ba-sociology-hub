@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102b59">
+<title>Testing | Academic Hub Auto Answer Evaluation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#102b59;--blue:#2563eb;--ink:#172033;--muted:#64748b;--line:#dbe3ef;--bg:#f4f7fb;--green:#047857}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#eef4ff,#f8fafc 340px);color:var(--ink);font:16px/1.6 "DM Sans",sans-serif}.wrap{width:min(900px,calc(100% - 28px));margin:28px auto 60px}.top{background:linear-gradient(125deg,#0c1e40,#1d4ed8);color:white;padding:26px;border-radius:20px;box-shadow:0 16px 36px #16356a26}.brand{font-size:12px;font-weight:800;letter-spacing:1.5px;color:#bfdbfe}.top h1{font-size:clamp(25px,5vw,36px);line-height:1.2;margin:8px 0}.top p{color:#dbeafe;margin:0}.tag{display:inline-block;padding:4px 9px;border-radius:999px;background:#d1fae5;color:#065f46;font-size:11px;font-weight:800;margin-top:14px}.panel{background:white;border:1px solid var(--line);border-radius:17px;padding:22px;margin-top:18px;box-shadow:0 8px 24px #0f2b5c0a}.eyebrow{color:#1d4ed8;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.panel h2{font-size:21px;margin:5px 0 12px}.meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.meta span{background:#eff6ff;color:#1e40af;border:1px solid #dbeafe;padding:5px 9px;border-radius:8px;font-size:12px;font-weight:700}.question{padding:17px;border:1px solid #c7d7f5;border-left:4px solid #2563eb;background:#f5f8ff;border-radius:12px;margin:14px 0}.question h3{margin:0 0 8px;font-size:18px}.ml{font-family:"Noto Sans Malayalam","DM Sans",sans-serif}.muted{color:var(--muted);font-size:13px}.field{margin:16px 0}.field label{display:block;font-weight:700;margin-bottom:7px}.field input[type=text],.field input[type=password]{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:10px;font:inherit}.langs{display:flex;gap:10px;flex-wrap:wrap}.lang{border:1px solid var(--line);border-radius:10px;padding:10px 13px;display:flex;gap:8px;align-items:center}.upload{border:2px dashed #9bb5df;background:#f8fbff;padding:24px 15px;text-align:center;border-radius:14px}.upload input{display:block;width:100%;margin-top:12px}.btn{border:0;border-radius:11px;background:linear-gradient(120deg,#1d4ed8,#1e40af);color:#fff;padding:13px 19px;font:700 15px "DM Sans",sans-serif;cursor:pointer;width:100%;margin-top:10px}.btn:disabled{opacity:.55;cursor:wait}.status{display:none;padding:13px;border-radius:10px;margin-top:14px;font-size:14px}.status.show{display:block}.status.info{background:#eff6ff;color:#1e40af}.status.error{background:#fff1f2;color:#9f1239}.status.success{background:#ecfdf5;color:#065f46}.result{display:none}.result.show{display:block}.score{font-size:36px;font-weight:800;color:#047857}.result pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 "DM Sans",sans-serif;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:14px}.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:18px}a.back{display:inline-block;color:#1d4ed8;font-weight:700;margin-bottom:12px}
+.answer-input{width:100%;min-height:12rem;resize:vertical;padding:12px;border:1px solid #94a3b8;border-radius:10px;font:inherit}
+.answer-input:focus-visible{outline:2px solid #1d4ed8;outline-offset:2px}
+</style>
+</head>
+<body>
+<main class="wrap">
+<a class="back" href="/">← Back to Academic Hub</a>
+<header class="top"><div class="brand">ACADEMIC HUB · PILOT TEST</div><h1>Auto Answer Evaluation</h1><p>Type or dictate your answer in English or Malayalam, then submit it for automatic feedback.</p><span class="tag">TESTING · CHAPTER 1 · 5 MARKS</span></header>
+<section class="panel">
+<div class="eyebrow">BA Sociology · Semester 1</div>
+<h2>Module 1 – Introducing Sociology</h2>
+<div class="meta"><span>Chapter 1 / Unit 1</span><span>Emergence of Sociology</span><span>5 Marks</span></div>
+<div class="question">
+<h3>Question (English)</h3>
+<p><strong>Explain the historical, economic and intellectual forces that contributed to the emergence of Sociology. (5 marks)</strong></p>
+<hr style="border:0;border-top:1px solid #dbe3ef;margin:14px 0">
+<h3 class="ml">ചോദ്യം (മലയാളം)</h3>
+<p class="ml">സമൂഹശാസ്ത്രത്തിന്റെ ആവിർഭാവത്തിന് കാരണമായ ചരിത്രപരവും സാമ്പത്തികവും ബൗദ്ധികവുമായ ഘടകങ്ങൾ വിശദീകരിക്കുക. (5 മാർക്ക്)</p>
+</div>
+</section>
+<form id="answerForm" class="panel">
+  <h2>Your answer</h2>
+  <div class="field">
+    <label for="language">Answer and feedback language</label>
+    <select id="language" name="language"><option value="en">English</option><option value="ml">മലയാളം</option></select>
+  </div>
+  <div class="field">
+    <label for="answer">Type or speak your answer</label>
+    <p id="dictationHelp" class="muted">To speak, tap the microphone on your phone keyboard or use your computer’s dictation shortcut. Select the matching keyboard language and correct any transcription errors before submitting.</p>
+    <textarea class="answer-input" id="answer" name="answer" maxlength="4000" required aria-describedby="dictationHelp" lang="en"></textarea>
+  </div>
+  <button id="submitBtn" class="btn" type="submit">Submit for Evaluation</button>
+  <div id="status" class="status" role="status" aria-live="polite"></div>
+</form>
+<section id="result" class="panel result" aria-labelledby="resultHeading">
+  <h2 id="resultHeading" tabindex="-1">Evaluation report</h2>
+  <div id="score" class="score"></div>
+  <ul id="criteria"></ul>
+  <p id="feedback"></p>
+</section>
+<p class="footer">AI-generated marks are for practice. Submit only your answer text, without personal details.</p>
+</main>
+<script>
+const form = document.getElementById('answerForm');
+const answer = document.getElementById('answer');
+const language = document.getElementById('language');
+const statusBox = document.getElementById('status');
+const submit = document.getElementById('submitBtn');
+const result = document.getElementById('result');
+
+language.addEventListener('change', () => { answer.lang = language.value; });
+
+function showStatus(message, type) {
+  statusBox.textContent = message;
+  statusBox.className = 'status show ' + type;
+}
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  result.classList.remove('show');
+  const text = answer.value.trim();
+  if (!text) {
+    showStatus('Enter your answer first.', 'error');
+    answer.focus();
+    return;
+  }
+  submit.disabled = true;
+  showStatus('Evaluating your answer…', 'info');
+  try {
+    const response = await fetch('/api/answer-evaluate-text', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({answer: text, language: language.value})
+    });
+    const data = await response.json().catch(() => null);
+    if (!response.ok || !data) throw new Error(data?.error || 'Evaluation is unavailable. Please try again.');
+    document.getElementById('score').textContent = data.awardedMarks + ' / ' + data.maximumMarks;
+    document.getElementById('criteria').replaceChildren(...data.criteria.map(({label, awarded, maximum}) => {
+      const item = document.createElement('li');
+      item.textContent = label + ' — ' + awarded + ' / ' + maximum;
+      return item;
+    }));
+    document.getElementById('feedback').textContent = data.feedback;
+    result.classList.add('show');
+    showStatus('Evaluation complete.', 'success');
+    document.getElementById('resultHeading').focus();
+  } catch (error) {
+    showStatus(error.message, 'error');
+  } finally {
+    submit.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
