@@ -112,6 +112,112 @@ function unavailableLmsPdfResponse(request) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    // Academic Hub: temporary, access-code-protected handwritten answer evaluation pilot.
+    if (url.pathname === "/api/answer-evaluate" && request.method === "POST") {
+      const origin = request.headers.get("Origin") || "";
+      if (origin && new URL(origin).origin !== url.origin) {
+        return Response.json({ error: "Request origin is not allowed." }, { status: 403 });
+      }
+      if (!env.GEMINI_API_KEY || !env.ANSWER_TEST_CODE) {
+        return Response.json({ error: "AI evaluation is not configured yet. The administrator must add GEMINI_API_KEY and ANSWER_TEST_CODE as Worker secrets." }, { status: 503 });
+      }
+      const declaredLength = Number(request.headers.get("Content-Length") || 0);
+      if (declaredLength > 8 * 1024 * 1024 + 65536) {
+        return Response.json({ error: "File too large. Maximum upload size is 8 MB." }, { status: 413 });
+      }
+      let form;
+      try { form = await request.formData(); }
+      catch { return Response.json({ error: "Could not read the uploaded form." }, { status: 400 }); }
+
+      const accessCode = String(form.get("accessCode") || "");
+      if (accessCode !== env.ANSWER_TEST_CODE) {
+        return Response.json({ error: "Incorrect pilot access code." }, { status: 401 });
+      }
+      const file = form.get("answerFile");
+      if (!file || typeof file.arrayBuffer !== "function") {
+        return Response.json({ error: "Please upload one PDF or image answer sheet." }, { status: 400 });
+      }
+      if (file.size > 8 * 1024 * 1024) {
+        return Response.json({ error: "File too large. Maximum upload size is 8 MB." }, { status: 413 });
+      }
+      const allowedTypes = ["application/pdf", "image/jpeg", "image/png", "image/webp"];
+      if (!allowedTypes.includes(file.type)) {
+        return Response.json({ error: "Unsupported file type. Upload PDF, JPG, PNG or WEBP." }, { status: 415 });
+      }
+
+      const language = String(form.get("language") || "English");
+      const studentName = String(form.get("studentName") || "Pilot student").slice(0, 100);
+      const question = "Explain the historical, economic and intellectual forces that contributed to the emergence of Sociology. (10 marks)";
+      const rubric = [
+        "Industrial Revolution and economic/social changes: factory system, urbanisation, migration, labour exploitation, class divisions and disruption of traditional social relations (up to 2.5 marks).",
+        "French Revolution (1789): decline of feudal and hereditary privileges, liberty/equality/fraternity, political upheaval and the need to understand social order (up to 2.5 marks).",
+        "Enlightenment and intellectual change: reason, secular thinking, empirical observation, scientific method and belief that society can be studied systematically (up to 2.5 marks).",
+        "Auguste Comte and formalisation: coined the term Sociology in 1838; earlier used Social Physics; established the scientific study of society (up to 2.5 marks)."
+      ].join("\n");
+
+      const bytes = new Uint8Array(await file.arrayBuffer());
+      let binary = "";
+      for (let i = 0; i < bytes.length; i += 0x8000) {
+        binary += String.fromCharCode(...bytes.subarray(i, Math.min(i + 0x8000, bytes.length)));
+      }
+      const base64 = btoa(binary);
+      const prompt = `You are an undergraduate university practice examiner for Calicut University BA Sociology Semester 1. Evaluate the uploaded handwritten answer sheet for exactly this question:
+${question}
+
+Student answer language selected: ${language}. The handwriting may contain English or Malayalam. Read the page carefully and evaluate the substance, not exact wording. If the answer is in Malayalam, understand it and give feedback in simple English, with Malayalam terms where useful. The student name is ${studentName}.
+
+MARKING RUBRIC (10 marks total):
+${rubric}
+
+Rules:
+- First transcribe/understand the relevant answer. Do not invent text that is not legible.
+- Award marks fairly for correct equivalent ideas, even if expressed differently or in Malayalam.
+- Do not award marks merely for keywords without explanation.
+- Do not penalise minor language errors unless meaning is affected.
+- If no answer is visible, pages are missing, or handwriting is too unclear to assess, set needsHumanReview=true and do not guess a score; awardedMarks must be 0 in that case.
+- Be constructive and concise. This is practice feedback, not an official university grade.
+- Return ONLY valid JSON, no markdown, using this schema:
+{"question":"string","maximumMarks":10,"awardedMarks":number,"readingConfidence":"high|medium|low","needsHumanReview":boolean,"detectedLanguage":"English|Malayalam|Mixed|Unclear","answerSummary":"string","criterionScores":[{"criterion":"string","marksAwarded":number,"marksAvailable":number,"comment":"string"}],"strengths":["string"],"missingPoints":["string"],"improvements":["string"],"overallFeedback":"string"}.
+Ensure criterion marks add up to awardedMarks and never exceed 10.`;
+
+      try {
+        const aiResponse = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + encodeURIComponent(env.GEMINI_API_KEY), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [{ role: "user", parts: [
+              { text: prompt },
+              { inline_data: { mime_type: file.type, data: base64 } }
+            ]}],
+            generationConfig: { temperature: 0.1, responseMimeType: "application/json" }
+          })
+        });
+        const aiData = await aiResponse.json().catch(() => ({}));
+        if (!aiResponse.ok) {
+          const detail = aiData?.error?.message || "Gemini API request failed.";
+          return Response.json({ error: detail }, { status: 502 });
+        }
+        const raw = aiData?.candidates?.[0]?.content?.parts?.map(part => part.text || "").join("").trim();
+        if (!raw) return Response.json({ error: "AI returned no readable evaluation. Please try a clearer scan." }, { status: 502 });
+        let evaluation;
+        try { evaluation = JSON.parse(raw.replace(/^\`\`\`(?:json)?\s*/i, "").replace(/\s*\`\`\`$/, "")); }
+        catch { return Response.json({ error: "AI response could not be parsed. Please try again." }, { status: 502 }); }
+
+        const marks = Number(evaluation.awardedMarks);
+        if (!Number.isFinite(marks) || marks < 0 || marks > 10) {
+          return Response.json({ error: "AI returned an invalid mark. Please submit again or request manual review." }, { status: 502 });
+        }
+        evaluation.awardedMarks = Math.round(marks * 2) / 2;
+        evaluation.maximumMarks = 10;
+        evaluation.studentName = studentName;
+        evaluation.fileName = String(file.name || "answer-sheet").slice(0, 120);
+        evaluation.pilotNotice = "AI-generated practice feedback. Not an official university grade.";
+        return Response.json(evaluation, { headers: { "Cache-Control": "no-store" } });
+      } catch (error) {
+        return Response.json({ error: "Evaluation service error: " + String(error?.message || error) }, { status: 502 });
+      }
+    }
     // Option A: Prune/Externalize third-party and raw university LMS PDFs
     const pdfPathLower = url.pathname.toLowerCase();
     if (pdfPathLower.endsWith('.pdf')) {
