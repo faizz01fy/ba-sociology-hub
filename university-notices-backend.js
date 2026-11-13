@@ -1,6 +1,6 @@
 // university-notices-backend.js - Live Auto-fetcher, Crawler & Caching API for Calicut University Notices
 // Strictly sorted by descending verified publication timestamp.
-// Auto-synchronized at 2026-11-08 19:24:02 IST
+// Auto-synchronized at 2026-11-13 20:22:56 IST
 
 const CACHE_TTL_SECONDS = 60; // 60s edge cache for rapid live synchronization
 const FIFTEEN_DAYS_MS = 15 * 24 * 60 * 60 * 1000;
@@ -10,30 +10,479 @@ const ONE_MONTH_MS = 30 * 24 * 60 * 60 * 1000;
 const VERIFIED_NOTICES_DATASET = [
   {
     "id": "gen-1",
-    "title": "കാലിക്കറ്റ് സർവകലാശാല വാർത്തകൾ;കാലിക്കറ്റ് സർവകലാശാലാ ബൊട്ടാണിക്കൽ ഗാർഡൻ ഇനി ജൈവവൈവിധ്യ പൈതൃക കേന്ദ്രം",
-    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPMXlmUTZvbW5UTWRrSmM5ejdqMjZzVG80UjBnLU1aZzlTWTN5c3BtNFlCNVc2VFJfeDYtMHZmcWMyTFdKQWtNaFNJeHFkdDJsRHU3ck1MMDFXRkZGZDFERTJOOEdZdllwaGJKaXhiMlRCN2JQQnpDa09CWkltZFVpOUtkOVFjRmlIUmNSaHpLVGtwNERnSGQtSUVUTWxZMURMSE8xdEluM2lwTEtXTXJVYm93VS1CcmFaeDdWaEY2b0tTd19s?oc=5",
+    "title": "കാലിക്കറ്റ് സർവകലാശാല വാർത്തകൾ;സി.ഡി.എം.ആർ.പി. പത്താം വാർഷികാഘോഷത്തിന് തിങ്കളാഴ്ച തുടക്കം",
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdkR1ZWpDVHo5MTNzeUFGSmZmb2RoOVp0TUhUdXFsbllnRDV5TXpoVWEyaXkxWTAyN3BQRkNmaXRYX0tZOGs5NE1YNmsxQ0N5dWZvblZ5SVJNLVZjS0YzLU80NU1udWJJdy1SX2s5Wmwtb2R5YnZuaWpCVTlaYmtaZnM5LUkzXy03WkpiazdQYTg0NjQtekhNRHRia3UxbnpRMk5LRXg5SEdpdmVSb0E?oc=5",
     "category": "general",
     "category_label": "CUC News",
     "sub_type": "Media News",
-    "date": "07 Nov 2026",
-    "published_at": "2026-11-07T18:48:19+05:30",
-    "timestamp": 1794057499000,
+    "date": "13 Nov 2026",
+    "published_at": "2026-11-13T18:15:24+05:30",
+    "timestamp": 1794573924000,
     "is_new": true,
     "source": "Malabarinews"
   },
   {
-    "id": "sse855",
-    "title": "Notification - Postponement of Third Semester MCA (2020 Scheme - 2022 Admission) One Time Regular Supplementary Examinations, September 2026",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-11-07 17:19:40_sse855.pdf",
+    "id": "gen-2",
+    "title": "Calicut University Result 2026 Released for PG Courses",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQMnlmNE0wYXJwbDJnenMxcUQ0UXhkYU5Sc05fbjgyODh2dGtYM1N2VzRiYWVvOWlha0plT0xHLVR3WkM0QmZZWkU0eHFFQkZyS0c2LVRIcHdRX2Z3Y2Ezb19rcnZHV3dyQjUzZzItV0tnOHNObXNuelNNYmNxUVp0Zk9sM3UzY25YUEpjenVKck9MWWp5V3VJd0t5ZkZLeXE5aVlhMXN6eERtd2c0d3hHYkJNTlBjZw?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Exam & Schedule",
+    "date": "13 Nov 2026",
+    "published_at": "2026-11-13T17:44:36+05:30",
+    "timestamp": 1794572076000,
+    "is_new": true,
+    "source": "KollegeApply News"
+  },
+  {
+    "id": "gen-3",
+    "title": "Calicut University Result 2026 Out - Check PG Result Online at results.uoc.ac.in",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQU1c3eDlCWU80TnhfX25naFZuOFFxMVpHblQzc25SYUxWcTBzNVBkSXBWaUd0d0lrTlJmWkRlenFxUmtkUHQyYWNZM3RkWlN4LXdoMkdFX3E1aVYzT0lsMkY5XzBDUWhYcWlPbjFteVZwT2JsR0NzSkVJZktfVElnMVVzTFlkTkxsRE9FcVphd2RpZXpYQ01jRDBweVJvb09XaUlGaGlR?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Exam & Schedule",
+    "date": "13 Nov 2026",
+    "published_at": "2026-11-13T17:19:25+05:30",
+    "timestamp": 1794570565000,
+    "is_new": true,
+    "source": "FreeJobAlert.Com"
+  },
+  {
+    "id": "sse858",
+    "title": "Revised Commencement Notification for First Semester M.A./M.Sc/M.Com/M.S.W/ M.A. Journalism & Mass Communication/ M.T.T.M/ M.B.E/ M.T.H.M/M.H.M (CBCSS PG - 2019 Scheme) One Time Regular Supplementary Examinations, September 2026, for 2022 admission candidates of affiliated colleges & First Semester M.A./M.Sc/M.Com (CBCSS PG SDE 2019 Scheme) One Time Regular Supplementary Examinations September 2025(2021 Admission)/ September 2026(2022 Admission)for the candidates of School of Distance Education",
+    "url": "https://docs.uoc.ac.in/website/sse/2026-11-13 17:05:11_sse858.pdf",
     "category": "regular",
     "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Postponement",
-    "date": "07 Nov 2026",
-    "published_at": "2026-11-07T17:19:40+05:30",
-    "timestamp": 1794052180000,
+    "sub_type": "Exam Notice",
+    "date": "13 Nov 2026",
+    "published_at": "2026-11-13T17:05:11+05:30",
+    "timestamp": 1794569711000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": [
+      "cdoe"
+    ]
+  },
+  {
+    "id": "sse857",
+    "title": "Notification regarding the Re-Examination of the Course \"ECO3C09 - International Trade\" (QP Code : D 150027) of Third Semester M.A Economics (CBCSS PG 2019 Scheme - 2022 Admission) One Time Regular Supplementary Examinations September 2026 and Third Semester M.A Economics (CBCSS PG SDE 2019 Scheme) One Time Regular Supplementary Examinations September 2025 (for 2021 Admission) / September 2026 (for 2022 Admission)",
+    "url": "https://docs.uoc.ac.in/website/sse/2026-11-13 16:57:24_sse857.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "13 Nov 2026",
+    "published_at": "2026-11-13T16:57:24+05:30",
+    "timestamp": 1794569244000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": [
+      "cdoe"
+    ]
+  },
+  {
+    "id": "exnot11441",
+    "title": "Notification regarding the link for uploading Internal Marks in respect of First Semester CUFYUGP Deficiency Regular Examination November 2025 (2025 Admission) for the candidates of affiliated colleges.",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-13 16:10:59_exnot11441.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Internal Exam",
+    "date": "13 Nov 2026",
+    "published_at": "2026-11-13T16:10:59+05:30",
+    "timestamp": 1794566459000,
     "is_new": true,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
+  },
+  {
+    "id": "exnot11440",
+    "title": "Notification regrading the link for uploading APC and Internal Marks in respect of First Semester CUFYUGP Regular Examination November 2026 (2026 Admission) for the candidates of affiliated colleges",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-13 16:09:37_exnot11440.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Internal Exam",
+    "date": "13 Nov 2026",
+    "published_at": "2026-11-13T16:09:37+05:30",
+    "timestamp": 1794566377000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "gen-8",
+    "title": "Calicut University Recruitment 2026: Walk-in for 2 Vacancies",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQZzhsWGh3OWI2TGwtaUlwNHgzT290cWNzdjZVT0FRR2oyYmRmZU1sclJHY05TMDJ0WUhhTnBvVTBWVnI0UDVrYThnYTBVM0JBUGdmay1qSWI0ZENHa0VFRlo1ZTZIWHN6UHp0aXFlUGJ2LTZQT0xUa1Y1VzlHaEJlMFhSUE1xSjhESS1wVldpVVFHLURXWEYzWEc0b3lJUlVQUVFMMVZqd3E?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "13 Nov 2026",
+    "published_at": "2026-11-13T16:00:27+05:30",
+    "timestamp": 1794565827000,
+    "is_new": true,
+    "source": "FreeJobAlert.Com"
+  },
+  {
+    "id": "exnot11439",
+    "title": "Notification regarding the Re-Examination of the Course \"ECO3C09- International Trade\" (QP Code : D 150027) of Third Semester M.A. Economics (PG- CBCSS- 2019 Scheme- 2023 Admission onwards) November 2026 Examination for the candidates of affiliated colleges and Third Semester M.A. Economics (P.G.-SDE-CBCSS) Supplementary/ Improvement Examination November 2026 (2019 Scheme 2023 admission only) for the candidates of the School of Distance Education/ CDOE",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-13 15:11:17_exnot11439.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "13 Nov 2026",
+    "published_at": "2026-11-13T15:11:17+05:30",
+    "timestamp": 1794562877000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": [
+      "cdoe"
+    ]
+  },
+  {
+    "id": "exnot11438",
+    "title": "Notification regarding the recording the details of candidates of B.Tech Programme (2024 Scheme- 2024 Admission) of Institute of Engineering & Technology, Kohinoor, who are eligible for NSS Grace Marks",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-13 14:57:29_exnot11438.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "13 Nov 2026",
+    "published_at": "2026-11-13T14:57:29+05:30",
+    "timestamp": 1794562049000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "gen-11",
+    "title": "കാലിക്കറ്റ് സർവകലാശാല വാർത്തകൾ; പരീക്ഷാതീയതിയിൽ മാറ്റം",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZGpyaExhU1JPUF9hN3VlUnNzNDNaZnI2bk9DLUhOMkZwcnByN3pTdW9XZHoyZFFCNHk3TlVmZUhqNlFSWkVTOXZUd2s4cjNDN2t3SnJ1QzVWdzdJM0VOT2MxZm1ZUWRUeW5CTWlqc2FRQWw0VkQxendUSERzQ3J4SkloQWNqdWRFVzdIVQ?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Exam & Schedule",
+    "date": "12 Nov 2026",
+    "published_at": "2026-11-12T18:02:59+05:30",
+    "timestamp": 1794486779000,
+    "is_new": true,
+    "source": "Malabarinews"
+  },
+  {
+    "id": "exnot11437",
+    "title": "Notification regarding the rescheduling of First Semester M.A./ M.Sc./ M.Com./ M.S.W./ M.A. Journalism and Mass Communication/ M.T.T.M/ MTHM/ MHM / MCA / M.Sc. Health and Yoga Therapy Regular/ Supplementary/ Improvement Examinations November 2026 (PG- CBCSS- 2019 Scheme) for the candidates of affiliated colleges / Centre for Distance and Online Education (CDOE)",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-12 12:05:04_exnot11437.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "12 Nov 2026",
+    "published_at": "2026-11-12T12:05:04+05:30",
+    "timestamp": 1794465304000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": [
+      "cdoe"
+    ]
+  },
+  {
+    "id": "exnot11436",
+    "title": "പരീക്ഷാഭവൻ - ബി . കോം വിഭാഗം - നാലു വർഷ ബിരുദ പ്രോഗ്രാം (ഓണേഴ്‌സ്) നവംബർ 2026 [2024 പ്രവേശനം] (അഫിലിയേറ്റഡ് കോളജുകൾ) റഗുലർ പരീക്ഷകളുടെ (B.Com Honours / B.Com Professional Honours/ Sales Management / BBA Honours / BTHM /BHA Honours)ഉത്തരക്കടലാസ് മൂല്യനിർണയം - 1, 3, 5 സെമസ്റ്റർ പരീക്ഷകൾക്കായി തയ്യാറാക്കിയ ബോർഡ് ഓഫ് എക്സാമിനേഴ്സ്ന്റെ പാനൽ",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-12 10:54:25_exnot11436.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "12 Nov 2026",
+    "published_at": "2026-11-12T10:54:25+05:30",
+    "timestamp": 1794461065000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "exnot11435",
+    "title": "പരീക്ഷാഭവൻ - ബി . കോം വിഭാഗം - ബാർകോഡ് സമ്പ്രദായത്തിലുള്ള അഞ്ചാം സെമസ്റ്റർ ബിരുദ [സി.ബി.സി.എസ്.എസ്. - (2021 - 2023 പ്രവേശനം)] നവംബർ 2026 സപ്ലിമെന്ററി & ഇസ്രുമെന്റ്റ് പരീക്ഷകളുടെ മൂല്യനിർണയക്യാമ്പുകൾ - ക്യാമ്പ് ചെയർ പേഴ്സൺ നിയമനം",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-12 10:51:16_exnot11435.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "12 Nov 2026",
+    "published_at": "2026-11-12T10:51:16+05:30",
+    "timestamp": 1794460876000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "cdoe-15",
+    "title": "Notification - The walk-in-interview for preparing a panel of Assistant Professors in Master of Business Administration (MBA) on contract basis at the Centre for Distance and Online Education",
+    "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/11/Notification12.11.2026_MBA.pdf",
+    "category": "cdoe",
+    "category_label": "CDOE (Distance/Online)",
+    "sub_type": "Notification",
+    "date": "12 Nov 2026",
+    "published_at": "2026-11-12T10:00:00+05:30",
+    "timestamp": 1794457800000,
+    "is_new": true,
+    "source": "CDOE Calicut University"
+  },
+  {
+    "id": "gen-16",
+    "title": "Calicut University B.Tech Time Table 2026 Out - Check 3rd Sem Exam Dates Online @ uoc.ac.in",
+    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQR0F1MXA2b3pQZDh5aFhFT0JWTWg3YUZNMkEzLXdRVWJYNW14V3FjbkV1bW5VdHhLS01qeFIwZWJxaTNCdnB5N2l4X0h4U09EYWVQVEtCXy1GTkZMVkgydjBfUHZEbE92MVRIM2t0MmE1dE4tUXMyRFpvZGJLSmtpZEN6Z3g1Mkw0dVhXMnBBMEpoTXdvVkVRaEdrMm5DRGJBcWNIRlY0Z2c4MnRYX3hSQ2dWOHlSNVlVbElyQUg0dw?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Exam & Schedule",
+    "date": "11 Nov 2026",
+    "published_at": "2026-11-11T17:58:40+05:30",
+    "timestamp": 1794400120000,
+    "is_new": true,
+    "source": "FreeJobAlert.Com"
+  },
+  {
+    "id": "exnot11433",
+    "title": "Notification regarding the rescheduling of the Minor Courses (MN) offered by B.Des of Third Semester Four Year Under Graduate (FYUGP) Regular/supplementary/ Improvement Examination November 2026(2024 admission onwards) for the candidates of affiliated colleges",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-11 15:56:15_exnot11433.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "11 Nov 2026",
+    "published_at": "2026-11-11T15:56:15+05:30",
+    "timestamp": 1794392775000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "exnot11432",
+    "title": "Time table for Third Semester B.Tech Regular/ Supplementary/ Improvement (2024 Scheme- 2024 Admission onwards) Examination November 2026",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-11 15:50:23_exnot11432.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Timetable",
+    "date": "11 Nov 2026",
+    "published_at": "2026-11-11T15:50:23+05:30",
+    "timestamp": 1794392423000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "exnot11431",
+    "title": "Revised Notification regarding the online registration of Third Semester B.Tech Supplementary (2019 Scheme- 2021 to 2023 Admissions) Examination November 2026",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-11 15:26:37_exnot11431.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Registration",
+    "date": "11 Nov 2026",
+    "published_at": "2026-11-11T15:26:37+05:30",
+    "timestamp": 1794390997000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "exnot11430",
+    "title": "Previous year M.A.Economics (1994 to 1999 Admissions) One Time Regular Supplementary Examinations September 2023",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-11 10:29:12_exnot11430.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "11 Nov 2026",
+    "published_at": "2026-11-11T10:29:12+05:30",
+    "timestamp": 1794373152000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "exnot11429",
+    "title": "Revised Notification regarding the online registration of Third Semester B.Tech Regular/ Supplementary/ Improvement (2024 Scheme- 2024 Admission onwards) Examination November 2026",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-11 10:22:31_exnot11429.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Registration",
+    "date": "11 Nov 2026",
+    "published_at": "2026-11-11T10:22:31+05:30",
+    "timestamp": 1794372751000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "sse856",
+    "title": "Postponement Notification of Third Semester M.Sc. Computer Science (CBCSS PG 2019 Scheme - 2022 Admission) One Time Regular Supplementary Examinations, September 2026, for the candidates of Affiliated Colleges",
+    "url": "https://docs.uoc.ac.in/website/sse/2026-11-11 10:13:07_sse856.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Postponement",
+    "date": "11 Nov 2026",
+    "published_at": "2026-11-11T10:13:07+05:30",
+    "timestamp": 1794372187000,
+    "is_new": true,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "gen-23",
+    "title": "Calicut University Electricity Worker Recruitment 2026 – Apply Online",
+    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPaUdSTzRDLXMzWmhSb05kQ3c0UXFLWnVlYnVGTmo4ZzR2RW80WnhUUzJnaU4teUdLTlNUV3NkRmdoNU45MU5LOWM3VktIUlRCNFNCMHJZUDVHS0tQTzZuTzgyTDhTbWJ4U29ha1UwaDdHckRIZE9PdlQ0SkxIWDg5LW04anMyaVo0ekY4Vi11b1pka3RzcDlzcmFNMERfSzZsZ1FpNUFlSThGb210eTFtR3o5Yw?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "10 Nov 2026",
+    "published_at": "2026-11-10T17:01:40+05:30",
+    "timestamp": 1794310300000,
+    "is_new": false,
+    "source": "FreeJobAlert.Com"
+  },
+  {
+    "id": "exnot11427",
+    "title": "Exam Notification for the Minor Courses (MN) offered by B.A Music Honours- MUS3MN207 - Popular Songs Other genres of Third Semester Four Year Under Graduate (FYUGP) Regular/supplementary/improvement Examination November 2026(2025 Admission only) for the candidates of affiliated colleges.",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-10 12:58:04_exnot11427.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "10 Nov 2026",
+    "published_at": "2026-11-10T12:58:04+05:30",
+    "timestamp": 1794295684000,
+    "is_new": false,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "adm-25",
+    "title": "PGDRP 2026 - Provisional Rank List Published - Press release",
+    "url": "https://admission.uoc.ac.in/downloads/1794293610_Press_Release_PartTimeCourses8304.pdf",
+    "category": "admission",
+    "category_label": "Directorate of Admission",
+    "sub_type": "Allotment",
+    "date": "10 Nov 2026",
+    "published_at": "2026-11-10T12:23:30+05:30",
+    "timestamp": 1794293610000,
+    "is_new": true,
+    "source": "Directorate of Admission (DoA)"
+  },
+  {
+    "id": "exnot11426",
+    "title": "Position List (Final) - MA Economics(CBCSS) Examinations - April 2026",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-10 10:59:46_exnot11426.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "10 Nov 2026",
+    "published_at": "2026-11-10T10:59:46+05:30",
+    "timestamp": 1794288586000,
+    "is_new": false,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "exnot11425",
+    "title": "Position List (Final) - MA Philosophy (CBCSS) Examinations - April 2026",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-10 10:58:32_exnot11425.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "10 Nov 2026",
+    "published_at": "2026-11-10T10:58:32+05:30",
+    "timestamp": 1794288512000,
+    "is_new": false,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "exnot11424",
+    "title": "Position List (Final) - MA Econometrics(CBCSS) Examinations - April 2026",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-10 10:56:49_exnot11424.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "10 Nov 2026",
+    "published_at": "2026-11-10T10:56:49+05:30",
+    "timestamp": 1794288409000,
+    "is_new": false,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "exnot11423",
+    "title": "Position List (Final) - MSc Fashion & Textile Designing (CBCSS) Examinations - April 2026",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-10 10:54:43_exnot11423.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "10 Nov 2026",
+    "published_at": "2026-11-10T10:54:43+05:30",
+    "timestamp": 1794288283000,
+    "is_new": false,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "exnot11422",
+    "title": "Position List (Final) - MA Development Economics(CBCSS) Examinations - April 2026",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-10 10:52:15_exnot11422.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "10 Nov 2026",
+    "published_at": "2026-11-10T10:52:15+05:30",
+    "timestamp": 1794288135000,
+    "is_new": false,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "exnot11421",
+    "title": "Commencement Notification - First Semester - U.G. (CUCBCSS & CBCSS) Supplementary / Improvement Examinations November 2026 (2021 to 2023 Admission) for the candidates of Affiliated Colleges / School of Drama and Fine Arts, Dr. John Matthai Centre, Aranattukara, Thrissur / Centre for Distance and Online Education (CDOE) / Private Registration.",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-09 15:45:11_exnot11421.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Registration",
+    "date": "09 Nov 2026",
+    "published_at": "2026-11-09T15:45:11+05:30",
+    "timestamp": 1794219311000,
+    "is_new": false,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": [
+      "cdoe"
+    ]
+  },
+  {
+    "id": "exnot11420",
+    "title": "Commencement notification - First Semester CUFYUGP Regular/ Supplementary/ Improvement Examinations November 2026 (2024 Admission onwards) and Deficiency Regular/ Supplementary/ Improvement Examinations November 2025 (2024 Admission onwards), for the candidates of Affiliated Colleges",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-09 15:24:54_exnot11420.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Exam Notice",
+    "date": "09 Nov 2026",
+    "published_at": "2026-11-09T15:24:54+05:30",
+    "timestamp": 1794218094000,
+    "is_new": false,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "exnot11419",
+    "title": "Notification regarding the link for uploading APC and Internal Marks in respect of Third Semester B.PEd (Two year Course) Regular Examination November 2026 (2025 Admission)",
+    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-09 15:00:22_exnot11419.pdf",
+    "category": "regular",
+    "category_label": "Regular / Exam Bhavan",
+    "sub_type": "Internal Exam",
+    "date": "09 Nov 2026",
+    "published_at": "2026-11-09T15:00:22+05:30",
+    "timestamp": 1794216622000,
+    "is_new": false,
+    "source": "Pareeksha Bhavan (UOC)",
+    "cross_categories": []
+  },
+  {
+    "id": "gen-34",
+    "title": "Calicut University to resume classes online after campus violence, students barred from entry",
+    "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPNUN5RjZ3eE9mc0Q4ODRxYXcyeVpVMnplNnRqbmhtN05QWjJIVW5FR3JZTl9ocEdiQVRZLUtJc2tLVDQ2SFhLVVFGUDlNVUZERkMxSHNpTGM3YjB5TVliMTNOYU4xVUpQcmZUOGIteUpnQklNaGExVjJkaVRKQ3RVVlJMRXFtQWV4bXd3TkoyenNwUjJ2bGVSOWxfeE9tUXNmN2EtMnF0U0JqTVkxSkc1WkppSFVFaXpLaXF4azhjQ19Fcm96aC1LQ0tiUEk2X1Y1QkZxZ19iVnZwaXRNMmlkcHBHeGtQd9IB8wFBVV95cUxOZml1ZWZQWEIzQ0djaWc1Y0s3Vk1ERV9OMk5TZjFLdEJ6Mmh2cDRENDJFREJscm1GckJ1bTl2c29RaGJBZGN2RnEtWFVCQWF0NUdHZzdZd3BENzY2S0M3SlQ4aHhnbFgxS3Z4b1lBWW9LSU1CSjNVUkVSMXRKMi1YcUN6TU91aWh6MXpqczl6R2hocWNjYXFFLU9Ra1drQkVBYk1yM1FVcGVNaWd1RzZPdFhRQXhnbEFBamZoYWFld3dfa3ZYVHJpNG1WUEZ0NVR2NE1ndTFnLWN0R0p2b1QzT3A0d0RNVWJUZVV1anN1LVJRalU?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "08 Nov 2026",
+    "published_at": "2026-11-08T19:32:26+05:30",
+    "timestamp": 1794146546000,
+    "is_new": false,
+    "source": "The New Indian Express"
   },
   {
     "id": "exnot11418",
@@ -45,7 +494,7 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "07 Nov 2026",
     "published_at": "2026-11-07T17:13:10+05:30",
     "timestamp": 1794051790000,
-    "is_new": true,
+    "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
   },
@@ -59,7 +508,7 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "07 Nov 2026",
     "published_at": "2026-11-07T17:00:59+05:30",
     "timestamp": 1794051059000,
-    "is_new": true,
+    "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
   },
@@ -73,7 +522,7 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "07 Nov 2026",
     "published_at": "2026-11-07T17:00:19+05:30",
     "timestamp": 1794051019000,
-    "is_new": true,
+    "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
   },
@@ -87,7 +536,7 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "07 Nov 2026",
     "published_at": "2026-11-07T16:59:04+05:30",
     "timestamp": 1794050944000,
-    "is_new": true,
+    "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
   },
@@ -101,7 +550,7 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "07 Nov 2026",
     "published_at": "2026-11-07T16:58:23+05:30",
     "timestamp": 1794050903000,
-    "is_new": true,
+    "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
   },
@@ -115,7 +564,7 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "07 Nov 2026",
     "published_at": "2026-11-07T14:55:15+05:30",
     "timestamp": 1794043515000,
-    "is_new": true,
+    "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
   },
@@ -129,12 +578,12 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "07 Nov 2026",
     "published_at": "2026-11-07T14:54:53+05:30",
     "timestamp": 1794043493000,
-    "is_new": true,
+    "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
   },
   {
-    "id": "gen-10",
+    "id": "gen-42",
     "title": "Calicut University botanical garden named Keralam’s second biodiversity heritage site",
     "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOaHFNQTZoakFONndvYmtLMkJ5SFFuRXBiQzJSVGNlaGFXeWM3Yk5BSGtlS25zUFU5OWgzbHNtOVhFdy1KNjBtNEpkVEN4RWVMYWhpaTZ4RmJNYlQyT3AzbkhQYUw2eUQxdXlEY2RrQmtSbFNxZkYxUExZdjJHejNPTkNrVTB5aF8tQ1FIS1VHR290dmtiLUxyUEY0c1pLM3NNdG5rQUIxZFp5aHMyQzVfUHE1WXpGTFFvRkFYVlMwYzB2NmhkMEo3VThoNTMtNWd1eGh3aTFBMlQ3RlN5R1NMZVZhSjDSAesBQVVfeXFMTUNQeFRybUJCU25GOS1MY29sRmNqN2dEWTl2SEhXckdOcEZkd053MmlLWkVZbGNELXNUOU9mWG9nbTc4cXVHV1E5Y2hCcnctOWlaTHRESWtzWUVXV0Z0MzZSMlYxMDQyYnFTa2g0VnJfZXRuY29TZzhfWHNoeFJZRUx5VVhsYnYzMUpzakFtYjBGUF9xOXNrRmZoQVJZWFZJNHBzLXFCVWlDeS1FektBMlI2RFREWFlSNXcxVS1zZGgtT2FONTA5eUN6emMwLWV3SWJnV0FvYUhLbk5fdU45RzFwVjJjZFZraXlKcw?oc=5",
     "category": "general",
@@ -143,21 +592,8 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "07 Nov 2026",
     "published_at": "2026-11-07T07:00:00+05:30",
     "timestamp": 1794015000000,
-    "is_new": true,
+    "is_new": false,
     "source": "The Hindu"
-  },
-  {
-    "id": "gen-11",
-    "title": "കാലിക്കറ്റ് സർവകലാശാല ബൊട്ടാണിക്കൽ ഗാർഡൻ ഇനി ജൈവവൈവിധ്യ പൈതൃക കേന്ദ്രം",
-    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPNDNRaGYzZTBkOTlVQnlzOUkzTFQ0SGFkMXI4VWkwU1BqcmF2WXp0ZHppcEVTb0kzRjFGQ3ozWVA2ZEJxV0Z6cjNWNGJCTGlqei11NW1NWkh0TFVWNERPNGk1QmhQVG5UMXZIaUhFS213WEZHMWZxeUVqSXEwYmhLeDFMZV9hLUc0ZkhZdW9FQjVCdjR2VEZBOWE3MDAwSXBiTm9sOVBwc2xMNDBEMWNORFg1blhuanA0c1VPMjdQZ2tkcVJweTc3a0ZCdU9oejDSAc8BQVVfeXFMTzQzUWhmM2UwZDk5VUJ5czlJM0xUNEhhZDFyOFVpMFNQanJhdll6dGR6aXBFU29JM0YxRkN6M1lQNmRCcVdGenIzVjRiQkxpanotdTVtTVpIdExVVjRETzRpNUJoUFRuVDF2SGlIRUttd1hGRzFmcXlFaklxMGJoS3gxTGVfYS1HNGZIWXVvRUI1QnY0dlRGQTlhNzAwMElwYk5vbDlQcHNsTDQwRDFjTkRYNW5YbmpwNHNVTzI3UGdrZHFScHk3N2tGQnVPaHow?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "06 Nov 2026",
-    "published_at": "2026-11-06T18:49:55+05:30",
-    "timestamp": 1793971195000,
-    "is_new": true,
-    "source": "Mathrubhumi"
   },
   {
     "id": "exnot11411",
@@ -169,7 +605,7 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "06 Nov 2026",
     "published_at": "2026-11-06T16:38:01+05:30",
     "timestamp": 1793963281000,
-    "is_new": true,
+    "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
   },
@@ -183,7 +619,7 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "06 Nov 2026",
     "published_at": "2026-11-06T15:04:09+05:30",
     "timestamp": 1793957649000,
-    "is_new": true,
+    "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
   },
@@ -197,7 +633,7 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "06 Nov 2026",
     "published_at": "2026-11-06T14:43:07+05:30",
     "timestamp": 1793956387000,
-    "is_new": true,
+    "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
   },
@@ -211,7 +647,7 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "06 Nov 2026",
     "published_at": "2026-11-06T10:56:50+05:30",
     "timestamp": 1793942810000,
-    "is_new": true,
+    "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
   },
@@ -225,7 +661,7 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "06 Nov 2026",
     "published_at": "2026-11-06T10:52:31+05:30",
     "timestamp": 1793942551000,
-    "is_new": true,
+    "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
   },
@@ -316,17 +752,30 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-23",
+    "id": "gen-54",
     "title": "Keralam Higher Education dept seeks explanation from Calicut University over pro-V-C’s appointment",
     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQanJSeHpzSXlWMEVGV0VKZVV5T1UtSVBwd2dUQ1BvR294UzlCUnBmOUZaQkFqbWJobTBlUXBBd3RRZWRUWmNOVGFvRFFLRXRHVVJJVXdGS25TM0V3RHNTRlVpbXZhY0R3dVRoSXFHdWhwNW04Tl9oeVB3em1aU0hYWlJvbkpzdUpLNExSeFdtN3VXMmpzLTc0bUlMZHRxb1hqUWNsM2tZaEhHcUhpU21BMThxY2dXYWVYbHNqMTFFNHFLOWVpUUh3ZXpqeHVPZk1DQjBnN2lQLUdKV2VJVlhYSkhIVF9PM0k4dWRJenVBdmhCM2ZJekHSAfwBQVVfeXFMTzJPeXZ5YVlrdnQtbVEtZzZXZnFlWGstRVFUSGlVZkk3Y3BnM3pEaXRXQnFmM0xoRHJkUmFNMkRDTkJqRkkwLWRod2hUTV80RUtGNkdIbE5ESUNFTkdZakRFbzh1TlpmZTBycHpnazZjYjh3XzRwUGxLa19vNV92VXdyMGUzd2ZfeUpEdGVxaDhhb05YT2tmQWpvOVhWMkRNaVVwOU1SLXh1UGJsMmlCbjJhaHlsWk1xWDNuMExCZGpVWElLT0l1c25kTU9LM0JoLTYxQU1odXFzaXJkN1pLZXE5TWg5N1haYzJmZWhPaEdRSmFGQnE0NzV1N3o1?oc=5",
     "category": "general",
     "category_label": "CUC News",
     "sub_type": "Media News",
     "date": "05 Nov 2026",
-    "published_at": "2026-11-05T12:03:38+05:30",
-    "timestamp": 1793860418000,
+    "published_at": "2026-11-05T13:30:00+05:30",
+    "timestamp": 1793865600000,
     "is_new": false,
     "source": "The Hindu"
+  },
+  {
+    "id": "gen-55",
+    "title": "Calicut University Result 2026 Out - Check PG Results Online @ uoc.ac.in",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOU1A2SDVtbURYX2NxbVhST19iaHFpdTQ1a3pNYjVheE9mNGJhb2ZCWlJyb05HR2RRb1FZTnZiSmk1TE5MbURpR2liSjdTLVBHU055NjBJcFVxNVdWazYzQjNDSWZYeVFHZFNkNzVHWlQxZlM4UGtkTElsZG1fWkNmUHVrS2lKSjRCU1ZTTFNES3BOSEp2bnVZSml0RlBodld3SWxGaFRPYw?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Exam & Schedule",
+    "date": "05 Nov 2026",
+    "published_at": "2026-11-05T13:30:00+05:30",
+    "timestamp": 1793865600000,
+    "is_new": false,
+    "source": "FreeJobAlert.Com"
   },
   {
     "id": "exnot11402",
@@ -343,73 +792,20 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-25",
-    "title": "കാലിക്കറ്റ് സർവകലാശാല പ്രോ വൈസ് ചാൻസലർ നിയമനം: വിശദീകരണം തേടി ഉന്നത വിദ്യാഭ്യാസ വകുപ്പ്",
-    "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPaGRWZFhhX2xEdVhxVXZkQXVrdHZjUTNJSlFGQjF5bTBWX0FvcU1XT0tvbmJSSzl5dGhfa3ZLUVR4c0ZCX2t1YmI5V3VSZkRCcnBIZUVwTUdSVlJ0aUJMdVBVWEprN3NfNDRTUFA1eUE5alAwejdIbThBdVA4MlVGYnhtZ0NRb2FJdnVUX0NZTzdsZmlOQlVJRUphQlFPNlQxQS10bXRoaGpQbDYydlJNS2dFZEVTclNtUlcwR21wRXkyN3hQaW01eExVY25Ua2Z6RU9tTDVBRjlUNjJQcWh0bnRkVUp2Wk1EUVHSAfcBQVVfeXFMUGtid3ZTbmlGOVF5a094S2p4OFhhSFRva1NIS29SRXA5VUY3TWd1aDRKMHNQTnRlV1NkaC1VaTU2blhkbkdnNjQwSGxiVjFmN3NxV2JvdU1QM2szUVRCMi10Rk1ZeEMzTkdKRzJvZE56T3NPbXJTVGdrenVwTlAzLXpPUEF6bGMyV25qa0J4UlhWZFR5R05fWkwyY005cWlOT0ZhNFRjNmZEa2hWU1lFcXBJWmVBYVB2Tjd0alJmdXR0ZjN5MUhvdkxOY3NBX3BhMndTSjFQbmN0VDlncmo1TTg0OVJlNjNPM2hleXp2NEdXdU1sZWpNSQ?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "05 Nov 2026",
-    "published_at": "2026-11-05T11:07:37+05:30",
-    "timestamp": 1793857057000,
-    "is_new": false,
-    "source": "News Malayalam 24x7"
-  },
-  {
-    "id": "gen-26",
-    "title": "Calicut University Result 2026 Out - Check PG Results Online @ uoc.ac.in",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOU1A2SDVtbURYX2NxbVhST19iaHFpdTQ1a3pNYjVheE9mNGJhb2ZCWlJyb05HR2RRb1FZTnZiSmk1TE5MbURpR2liSjdTLVBHU055NjBJcFVxNVdWazYzQjNDSWZYeVFHZFNkNzVHWlQxZlM4UGtkTElsZG1fWkNmUHVrS2lKSjRCU1ZTTFNES3BOSEp2bnVZSml0RlBodld3SWxGaFRPYw?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Exam & Schedule",
-    "date": "05 Nov 2026",
-    "published_at": "2026-11-05T10:44:33+05:30",
-    "timestamp": 1793855673000,
-    "is_new": false,
-    "source": "FreeJobAlert.Com"
-  },
-  {
-    "id": "gen-27",
-    "title": "കാലിക്കറ്റ് സർവകലാശാല പ്രോ വി.സി നിയമനം: വിശദീകരണം തേടി ഉന്നത വിദ്യാഭ്യാസ വകുപ്പ് | Calicut University",
-    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOUUtCN09lZzJDNExGQnc2SUZibE9PQ3dpdlpRZmZIRkFnSXVPZ0FiVjI1M0toQU5jZkVkX2EtUU1Pd20yZ2s3WVJESjVXdklvWkpGTWQ0bUFNUGxXR1RNb3dKS0thSVBQNl8zSDBRdE1mQWxjdTFUeEZsNW9uUmI1ekU1MzlyWVJQcDZzdy1lQkhOS0N2elNnbDJNb0NVUkl2X05Ic1dvcWVYUkliSG1WLUtyRUFGQQ?oc=5",
+    "id": "gen-57",
+    "title": "കാലിക്കറ്റ് സർവകലാശാല പ്രോ വി.സി നിയമനം; ഉന്നത വിദ്യാഭ്യാസ വകുപ്പ് വിശദീകരണം തേടി",
+    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQSFE4cE9FTE9sclJlMGdDLVpJQV8yaDIzRUpkT0dQcV9Na3BhY0VybjlpWUZPTVVFS28yY1U0X2RjS2RLSmFHUkN3bm0zckhRWEVXV3hFSkNfVGZwSERpQlpLMHdERHFycVc5aVU2TkZ6QjFrVkRTaU5Xb2pzeTdrOXFDSndiZmZMeWNjVGNVRl9FUk8xWmRQSW1TVnNGNFpQd0Y3NG90LXZtUE9oSDhIVDJFNEs0V2dZcWFWZllfZEY4NlVYUm5OWA?oc=5",
     "category": "general",
     "category_label": "CUC News",
     "sub_type": "National & Regulatory",
     "date": "05 Nov 2026",
-    "published_at": "2026-11-05T08:19:32+05:30",
-    "timestamp": 1793846972000,
+    "published_at": "2026-11-05T08:42:57+05:30",
+    "timestamp": 1793848377000,
     "is_new": false,
-    "source": "Times Kerala"
+    "source": "Express Kerala"
   },
   {
-    "id": "gen-28",
-    "title": "കാലിക്കറ്റ് സർവകലാശാല പ്രോ വൈസ് ചാൻസിലർ നിയമനം ; വിശദീകരണം ആവശ്യപ്പെട്ട് ഉന്നത വിദ്യാഭ്യാസ വകുപ്പ്",
-    "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQREdCOTVtblB3M1Fxc3hpaEhXNzlEdmNUQ2RReVRvVUU5OHlRMzNId0owR21lY3VHdlhtUk5tU25EcjQ0UnFhckEwLXBzTmRIcnB0VE1hMEpfaGRFTnhOamI2U3FZMTBkd2wzenJEWDByZjBuUnhsaGxQNjFlWkJuOXVDWXNWZTNvZ3ZwV2FNWEJTOHBQaWFWd2VqRmYyS3dzd2ZtZU1ldW1NaWNDaWFHYk5uUFNwNmM0ZDF2aWUxeWdwZlNMS2Zzekh0eTVKYVNp?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "05 Nov 2026",
-    "published_at": "2026-11-05T08:00:36+05:30",
-    "timestamp": 1793845836000,
-    "is_new": false,
-    "source": "Pathanamthitta Media"
-  },
-  {
-    "id": "exnot11401",
-    "title": "Examination cancellation and re-examination of the Major Course HIS5CJ303 - School of Historical Thoughts (QP code D 153352) of Fifth Semester (CUFYUGP) Regular Examination November 2026 (2024 Admission) for the candidates of affiliated colleges, held on Thursday, 29.10.2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-11-04 15:25:21_exnot11401.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Notice",
-    "date": "04 Nov 2026",
-    "published_at": "2026-11-04T15:25:21+05:30",
-    "timestamp": 1793786121000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "gen-30",
+    "id": "gen-58",
     "title": "Calicut University Seat Allotment 2027: FYUGP Admission List, UG Student Portal",
     "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9KZzZzNXBjaWFkQWd5ZmgzS2hDaEtIVVBTU2V6SWNhYk5QQngxZ01HZDRfWkFHaWJLMTNlSFJ5VDR3a2dpcmZNTXdNSUlkSDlYcXFvTDNUT3E5N2tTOHVSVm1GVmJIUkVGSTdsdnpaTjhDOUtpUnJWbDNfMA?oc=5",
     "category": "general",
@@ -420,6 +816,32 @@ const VERIFIED_NOTICES_DATASET = [
     "timestamp": 1793779200000,
     "is_new": false,
     "source": "Careers360"
+  },
+  {
+    "id": "gen-59",
+    "title": "Calicut University Women Security Guard Recruitment 2026 – Walkin",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQaHlUSkxYTG5xdkNiM2JfSmdySEZFaW92S21IeW9RV3p2elZ3SU5sSDFWRmR3NXE3T1ZGc1ZzSnA0b2tKZk5DY01DUU54akUwX3VOWjRaODlqS2dPZHhkMkppMXdzUzJURndRaFBTeUdRRzRNZUJoTzhhT3NKb1l3bF92Sm1GY0JZdzNNMElvMTI1STRPM3J1N2FmSU5nbG1rZmxRUw?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "04 Nov 2026",
+    "published_at": "2026-11-04T13:30:00+05:30",
+    "timestamp": 1793779200000,
+    "is_new": false,
+    "source": "FreeJobAlert.Com"
+  },
+  {
+    "id": "gen-60",
+    "title": "Calicut University M.A Results 2026 Out - Check 4th Sem Result Online @ uoc.ac.in",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQa3pkMDc1ejM3OU1fblpGdVVmMDFoSkMxMWcwZ1F0dWpaTzBuNkFucldNa3pOVjhBNGF4b2FVcXhZc0FtRXhBeE1rTDZnNmtMVkFnanR2RGxta1d1VDFQUlp2Wnkxa0lIXzVZZ3JuRURPbUg2cERKM19KTHV6TU5tNG9lRWliS3U4SU92WFd1M0EwRHpVU0Q4V05abjJNd1hpbFlUOTJVTG9nR3RtS0lSckJ3?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Exam & Schedule",
+    "date": "04 Nov 2026",
+    "published_at": "2026-11-04T13:30:00+05:30",
+    "timestamp": 1793779200000,
+    "is_new": false,
+    "source": "FreeJobAlert.Com"
   },
   {
     "id": "exnot11400",
@@ -448,19 +870,6 @@ const VERIFIED_NOTICES_DATASET = [
     "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
-  },
-  {
-    "id": "gen-33",
-    "title": "Calicut University M.A Results 2026 Out - Check 4th Sem Result Online @ uoc.ac.in",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQa3pkMDc1ejM3OU1fblpGdVVmMDFoSkMxMWcwZ1F0dWpaTzBuNkFucldNa3pOVjhBNGF4b2FVcXhZc0FtRXhBeE1rTDZnNmtMVkFnanR2RGxta1d1VDFQUlp2Wnkxa0lIXzVZZ3JuRURPbUg2cERKM19KTHV6TU5tNG9lRWliS3U4SU92WFd1M0EwRHpVU0Q4V05abjJNd1hpbFlUOTJVTG9nR3RtS0lSckJ3?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Exam & Schedule",
-    "date": "04 Nov 2026",
-    "published_at": "2026-11-04T10:32:26+05:30",
-    "timestamp": 1793768546000,
-    "is_new": false,
-    "source": "FreeJobAlert.Com"
   },
   {
     "id": "exnot11398",
@@ -603,70 +1012,30 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-44",
+    "id": "gen-73",
     "title": "Calicut University Result 2026 Out - Check UG Results Online @ uoc.ac.in",
     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdjhZNmhGYWdHQTl2d0dGWHdUYWxCRDdtMUQtTkdMUGhDV19sNVZ4bW5XQ21OLW9CVFVFM0NLUEpWLWxrRklxUVg4bUd0ajU4MlNMR1ZmclZxRDRQYi0xbnJidTBOS1J3WlVvRnJLaGl6OWt3aEZaNWV2T3pvWEFCMFBjVFdBWm93MzJIOGliMGxEXzdFd2NyWmJVTGxZd2JXdkxteDZJbw?oc=5",
     "category": "general",
     "category_label": "CUC News",
     "sub_type": "Exam & Schedule",
     "date": "02 Nov 2026",
-    "published_at": "2026-11-02T16:17:04+05:30",
-    "timestamp": 1793616424000,
+    "published_at": "2026-11-02T13:30:00+05:30",
+    "timestamp": 1793606400000,
     "is_new": false,
     "source": "FreeJobAlert.Com"
   },
   {
-    "id": "gen-45",
+    "id": "gen-74",
     "title": "'ആരാണ് പറഞ്ഞത് ലീഗിന്റെ മൂരിത്തരം പോവുകയാണെന്ന്?'; കാലിക്കറ്റ് സർവകലാശാല സംഘർഷത്തിൽ പി.ശ്രീരാമകൃഷ്ണൻ",
     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOdUt1aHVvNmxWNDFNUGlJQUlTeUNDc1dfYWQxZmRoUTVBSXhlRWtRb3NNcXZNenFSU1Z1SEtaSkpsTlUwSnBScmx1cHYxd1dneHd5WDJBa3JteF82S2RxUV9jRVZBZXBWbjhnN0xVM1E2UnRuLVJGZ19pWHBEZXFZc0c2Mml4Nl9pS1VzSk5vX2xtQ1duaTQxN2Z6ejZrclnSAaQBQVVfeXFMT2pOLWt1aU9BSV83bXRwd1dnZlpkQ1VBR1JsQlBMR2FJWjc3QzZsSmppZWlqRExpX1BPMWdRbmxqYmF0VG5BWUxiZnFVeGE2cnl5VDdkNkZ0dS1xd2NycXd2NFVKclNqUTNXRVQ3by1nS0FvMEJHaWgwejN0SnlDR01XZExhR3h4UHJuVzhKVGg0Mjc5OUdzTXp0VWJDbFQtZjAyd0U?oc=5",
     "category": "general",
     "category_label": "CUC News",
     "sub_type": "Media News",
     "date": "01 Nov 2026",
-    "published_at": "2026-11-01T19:54:11+05:30",
-    "timestamp": 1793543051000,
+    "published_at": "2026-11-01T12:30:00+05:30",
+    "timestamp": 1793516400000,
     "is_new": false,
     "source": "Media One"
-  },
-  {
-    "id": "exnot11388",
-    "title": "Notification regarding the postponement of Third Semester M.Sc. Food Science and Technology, M.Sc. Computer Science Regular/ Supplementary/ Improvement Examinations, November 2026 for the candidates of affiliated colleges & Third Semester MCA Regular/ Supplementary Examinations November 2026 (2020 Scheme- 2023 Admission onwards)",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-31 16:10:56_exnot11388.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Postponement",
-    "date": "31 Oct 2026",
-    "published_at": "2026-10-31T16:10:56+05:30",
-    "timestamp": 1793443256000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "gen-47",
-    "title": "Calicut University campus violence; three arrested for attacks on MSF workers",
-    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOFlFcEtHc0tCY0lLQ3hZN3BjRVgwZ1lHZWpyZ2tkM3F5aWVvazloQ1BNd0stMGxBc09aWVBWMXBiSzQzWVVrLUpHZ00zVHJIYmltaC0zTWZNM3Z5aWJQcjVEVTRIUmROWi1mc2hyMkxlV0x4UjZhWlRxcWJZRFlENU1tOS1kMXRsUXRJZUdndHZtbm5WazVYT2FfS0R0RUllREVQeHQzcGktZw?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "31 Oct 2026",
-    "published_at": "2026-10-31T15:38:56+05:30",
-    "timestamp": 1793441336000,
-    "is_new": false,
-    "source": "Onmanorama"
-  },
-  {
-    "id": "gen-48",
-    "title": "സംഘർഷാവസ്ഥക്ക് ശമനമില്ല, കാലിക്കറ്റ് സർവകലാശാല ക്യാമ്പസ് അനിശ്ചിതകാലത്തേക്ക് അടച്ചു; ഹോസ്റ്റലുകൾ ഒഴിയാൻ വിദ്യാർഥികൾക്ക് നിർദേശം",
-    "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOWlJrWWQyUTNvVF9vWHNfeFhEeU1nWFlacU1YWkVGVV9hQWFETmI0TFhQQk5pSi05QjRrajBZTGIwVzI3YV8xSkRPMFB5UUtlV0pKX3ZtNld4ZE9KOXRYazdaX0tHSEY2SjhmOEVCNGdoY0dUZFA1ZF96RHdWS1A4Z3p3MExPWmxZTDVUdTNlM01uREoxYU1nVzA0Z0Vib3k0M0xnZ0ZXenpqdzFIcVRrZnQ3REJES3k0ZVUxMVNVMWZtZjBPbDYzUXNHM2dLSm5MVzgzdFhRWnlob1pIUEHSAeMBQVVfeXFMUGhkQ1R5MlRNd251dzVoUHJ0UGs3ckYtMUIwd295dzdBUzJpVkJCeEFSNjRJbW5uSVM0SWI5WEpRV24zZkY4d29IMmY0eGkyR0hIRmQ3NXBrSnBZVURKSTB2UUw4NWtoeEdudEp5eU5UaWFGbzNNVnpGWXlLNW0tb081WEFfZzZoT0xzdjFzWDFDU3pjUkFWYVRGRW9uVjdQQm9Gby02WjlUNjVxRlktandPM19mUk1pc1VkMWlHZW5hN1ZhUnF2NGY4aU5IaU1zQTQ2ZzlQcnJxQWZGQmxUcXdfMVk?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "31 Oct 2026",
-    "published_at": "2026-10-31T15:21:35+05:30",
-    "timestamp": 1793440295000,
-    "is_new": false,
-    "source": "Asianet News Malayalam"
   },
   {
     "id": "exnot11387",
@@ -683,32 +1052,6 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-50",
-    "title": "കാലിക്കറ്റ് സർവകലാശാല ക്യാമ്പസിലെ സംഘർഷം; അറസ്റ്റിലായവരുടെ എണ്ണം ആറായി",
-    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQT1dqX2lYT1FnZTZLNG9oU2hpdzg2b0dCVy0yei1qeEN6MUFrc2dGckhNVmx4aWhHSGlqbFRyM1RpcVEyaE9IQnlvMnF4VTNfSHdQNVdUcUxGWGFTNGZ3ZlhRTzVmdktQSE5vS3p0WWJjQWRrQWJJaENSWXI5UHNFNXdLMDdRQjNudnVLOUhWQ1BPUENuUVplWS1nalFobUxzbWhBbEVpVWxSY2VHUWJDb3F2QmM5TUl3eWZSUW1sbmowd9IBxwFBVV95cUxNaHVCck14QjFEUVdVMXZELUg5dGUtaGdWODROQnl3QnkwdmZGdlAzOVVLRDY1b0JpbnlGdUdtWUhfTDhYbUlRQkJuWldxekR4ZGxmcUZzbFdINE4zMDNyOEJjNkxLSE91emx4VkxrWW56c0hfVlZIc010WGQycnNfLS1UNEQ2RHBzSGFJVUJpWTNxWnprN0IyVDZpUHhqWVhkVGQ0VzN2YldnbWNDbFBCdG1tT0Z0c1AxTUQzd1hOdTBzd3lBenR3?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "31 Oct 2026",
-    "published_at": "2026-10-31T14:59:54+05:30",
-    "timestamp": 1793438994000,
-    "is_new": false,
-    "source": "Asianet News Malayalam"
-  },
-  {
-    "id": "gen-51",
-    "title": "എസ്എഫ്‌ഐ കാലിക്കറ്റ് സർവകലാശാല ഹോസ്റ്റൽ ആയുധപ്പുരകളാക്കി മാറ്റുന്നു; ആഭ്യന്തരവകുപ്പ് ഇടപെടണം: ടി.വി...",
-    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9ab1NYVjdPTHBuSmoteWZhUUw2SVZLTGU2dExJQnF4Y0FIT21SaVlHX1ZHSmZqLWFkVWgtdkFmWDMwRFY2M0JKdVU0d1BhdXM1TG1SdG52aTRORGVUMklRTmxjMHN3Y3llN2RtNlB5OWp0cEJlbXZCcnJ30gF_QVVfeXFMTkNtaGNXb204SUpPT2lzeHdzUmduOGJkaUlrTUNqc2NZRmtDWWRKc1pzT0FWZTlvMkUwc2FJN1YzNWxEbXZXbmZlckRELVBZcEFIZXVLVm9MYVJ0dXR5bk53cEFqWm1neXlNUHl5Skw5SHBGY082WEt3RktDTm9PVQ?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "31 Oct 2026",
-    "published_at": "2026-10-31T14:58:39+05:30",
-    "timestamp": 1793438919000,
-    "is_new": false,
-    "source": "Media One"
-  },
-  {
     "id": "exnot11386",
     "title": "RESULT NOTIFICATION SECOND SEMESTER M.SC. BIOTECHNOLOGY APRIL 2026 EXAMINATION ( 2025 ADMISSION)",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-31 14:57:04_exnot11386.pdf",
@@ -723,7 +1066,46 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-53",
+    "id": "gen-77",
+    "title": "സംഘർഷാവസ്ഥക്ക് ശമനമില്ല, കാലിക്കറ്റ് സർവകലാശാല ക്യാമ്പസ് അനിശ്ചിതകാലത്തേക്ക് അടച്ചു; ഹോസ്റ്റലുകൾ ഒഴിയാൻ വിദ്യാർഥികൾക്ക് നിർദേശം",
+    "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOWlJrWWQyUTNvVF9vWHNfeFhEeU1nWFlacU1YWkVGVV9hQWFETmI0TFhQQk5pSi05QjRrajBZTGIwVzI3YV8xSkRPMFB5UUtlV0pKX3ZtNld4ZE9KOXRYazdaX0tHSEY2SjhmOEVCNGdoY0dUZFA1ZF96RHdWS1A4Z3p3MExPWmxZTDVUdTNlM01uREoxYU1nVzA0Z0Vib3k0M0xnZ0ZXenpqdzFIcVRrZnQ3REJES3k0ZVUxMVNVMWZtZjBPbDYzUXNHM2dLSm5MVzgzdFhRWnlob1pIUEHSAeMBQVVfeXFMUGhkQ1R5MlRNd251dzVoUHJ0UGs3ckYtMUIwd295dzdBUzJpVkJCeEFSNjRJbW5uSVM0SWI5WEpRV24zZkY4d29IMmY0eGkyR0hIRmQ3NXBrSnBZVURKSTB2UUw4NWtoeEdudEp5eU5UaWFGbzNNVnpGWXlLNW0tb081WEFfZzZoT0xzdjFzWDFDU3pjUkFWYVRGRW9uVjdQQm9Gby02WjlUNjVxRlktandPM19mUk1pc1VkMWlHZW5hN1ZhUnF2NGY4aU5IaU1zQTQ2ZzlQcnJxQWZGQmxUcXdfMVk?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "31 Oct 2026",
+    "published_at": "2026-10-31T12:30:00+05:30",
+    "timestamp": 1793430000000,
+    "is_new": false,
+    "source": "Asianet News Malayalam"
+  },
+  {
+    "id": "gen-78",
+    "title": "കാലിക്കറ്റ് സർവകലാശാല ക്യാമ്പസിലെ സംഘർഷം; അറസ്റ്റിലായവരുടെ എണ്ണം ആറായി",
+    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQT1dqX2lYT1FnZTZLNG9oU2hpdzg2b0dCVy0yei1qeEN6MUFrc2dGckhNVmx4aWhHSGlqbFRyM1RpcVEyaE9IQnlvMnF4VTNfSHdQNVdUcUxGWGFTNGZ3ZlhRTzVmdktQSE5vS3p0WWJjQWRrQWJJaENSWXI5UHNFNXdLMDdRQjNudnVLOUhWQ1BPUENuUVplWS1nalFobUxzbWhBbEVpVWxSY2VHUWJDb3F2QmM5TUl3eWZSUW1sbmowd9IBxwFBVV95cUxNaHVCck14QjFEUVdVMXZELUg5dGUtaGdWODROQnl3QnkwdmZGdlAzOVVLRDY1b0JpbnlGdUdtWUhfTDhYbUlRQkJuWldxekR4ZGxmcUZzbFdINE4zMDNyOEJjNkxLSE91emx4VkxrWW56c0hfVlZIc010WGQycnNfLS1UNEQ2RHBzSGFJVUJpWTNxWnprN0IyVDZpUHhqWVhkVGQ0VzN2YldnbWNDbFBCdG1tT0Z0c1AxTUQzd1hOdTBzd3lBenR3?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "31 Oct 2026",
+    "published_at": "2026-10-31T12:30:00+05:30",
+    "timestamp": 1793430000000,
+    "is_new": false,
+    "source": "Asianet News Malayalam"
+  },
+  {
+    "id": "gen-79",
+    "title": "കാലിക്കറ്റ് സര്‍വകലാശാല UDSF-SFI സംഘര്‍ഷത്തില്‍ 5 പേര്‍ അറസ്റ്റില്‍ | Calicut university",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcDN5VlZ4VkVpck1hbTluekJvajgySWZZdHV5R1pLSjNnWDZnSGJ2d3I2Y1k3bm1zeE5PVVc4WjNrd1BmUGpoeDhKbkhieFF1bGVhaWNYcldZQnBWaDBpU3ZTUUNYX0hRVzE5bml2VTJEbGFzOXZFQmtWemJNNTBRUHkwTjk1QUd4dnBtU2pvSGJMQmJxOTMydGJsMDJ4U2FidjZ4Z3pMQi16T0s0SjR0NWtrdDVLQdIBuwFBVV95cUxON2lUUHlHTnNRa2VsbE1RMnNuUXVTREF1M3VTNEgyclhrd2JkNWgyV25BTTdwVHhRSWVILWZ3YVlIRlpqbzZmQ2YzdjFXcjRUWXBWc2E3anJiS3NLUnhRR1l1dWFuOXoyZ21EeTNRWXpwNmVZaE14MjY1RzF6WVhxa3pwVnd5aWtncVliNmJfN0IxaUllYS1fM21rTEZtWGdBNmJhUXlkNy1YbmhBdjFRUWlyaDJ5eloyaGJr?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "31 Oct 2026",
+    "published_at": "2026-10-31T12:30:00+05:30",
+    "timestamp": 1793430000000,
+    "is_new": false,
+    "source": "Asianet News Malayalam"
+  },
+  {
+    "id": "gen-80",
     "title": "കാലിക്കറ്റ് സ‍ർവകലാശാല ക്യാംപസ് സംഘർഷം; കൂടുതൽ അറസ്റ്റുകൾ ഇന്ന് ഉണ്ടാകും | Calicut university",
     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOc0RMNVhyRDBxbjFMa1ZDaG5pLWdJYmFvRThoaW1EZmh6UlRXU3REUFRRNHhpYVFjR3ZQNFoxc1k4N3Q5bGlkajZweFV6d090YTdNLTdfSFk3SmpjQ2ZlV0RqNFpCMWlYUHVQQlJmQktTSzhWaGx6WnRHMlZFVG1ES241VmY2QWtfMDhaaVU5T1h3aEllbkx0dXNoRmI5R3ZZamZfajFfbmduM1V4RHZTTVVWUlBCU1Ry0gG-AUFVX3lxTFB4RmZUSV9CeVFZQVNjbjd2dTJBc1RleTZQVnhPX0xyaTNVV2l4Nk94ZVk1YW1fckhEa0ZFa09nX2tCZDFJUmFFaS1RT2lpb3lrOV9fRWJsQVFoUkpfdktQUnE1MlBOb3R5ZnJwNkVyR0ZWMS1pMmpvcTlyV1R2aDBPTTBIS2JnSnNMdU5IMVBPV1haSE9CN3c1eU5sa1dBeldRU2NLVXpsU3JvUkxNNzZUMUlNZmlrQmxZRXVmU2c?oc=5",
     "category": "general",
@@ -736,12 +1118,64 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Asianet News Malayalam"
   },
   {
-    "id": "gen-54",
+    "id": "gen-81",
+    "title": "‘കാശ്മീർ ഭീകരന്മാരെ പോലെ മുഖം മറച്ചെത്തി’; കാലിക്കറ്റ് സർവകലാശാല സംഘർഷത്തിൽ പാണക്കാട് തങ്ങൾ നിലപാട്...",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQW8xT3FFQUhJNHpjU1hDaDlDSXk5MG5XZFdwU1JVLUkyWnJNclFwblFkcENUek1DU3JyMGRxb1l6VDdoN3BEMll4SWFNTWt5dVN2S2xHTWlxYjg3VUJiSG94WmV0S3lJY1EweEs1N2xmc25OZGxUdHBvYXg5aGtpT09nZ1RVQ2R0Wlh0SXg1b09qQ0NHb0pRRld2RzFpaEpzczU5N3Vsei1uRzhKT0NWR2tlNndXZ9IBuwFBVV95cUxOYjlxZ0xmY0dvYlVNYWY3NTRWU3ZuZGNRVmpfOHFHLUY4elVYNjdDUlFRT0VEU193bC1Ud3owN09PX1N2SER4bElqMGw5NEtfekRxUUxZYVZUZTFYQ0hmSzdqS1drME1WT2tCMUlZNU1ZaWRKSi1KcWM1QXFfWGdfR1NWMnpqUkRFeG4tVXVXTV9RNUNpUjdIRnBURnNEb3JMMmdFLTVFN0J5aE1NVGVYSTh4TDlQNEZIZmZ3?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "31 Oct 2026",
+    "published_at": "2026-10-31T12:30:00+05:30",
+    "timestamp": 1793430000000,
+    "is_new": false,
+    "source": "Madhyamam"
+  },
+  {
+    "id": "gen-82",
+    "title": "എസ്എഫ്‌ഐ കാലിക്കറ്റ് സർവകലാശാല ഹോസ്റ്റൽ ആയുധപ്പുരകളാക്കി മാറ്റുന്നു; ആഭ്യന്തരവകുപ്പ് ഇടപെടണം: ടി.വി...",
+    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9ab1NYVjdPTHBuSmoteWZhUUw2SVZLTGU2dExJQnF4Y0FIT21SaVlHX1ZHSmZqLWFkVWgtdkFmWDMwRFY2M0JKdVU0d1BhdXM1TG1SdG52aTRORGVUMklRTmxjMHN3Y3llN2RtNlB5OWp0cEJlbXZCcnJ30gF_QVVfeXFMTkNtaGNXb204SUpPT2lzeHdzUmduOGJkaUlrTUNqc2NZRmtDWWRKc1pzT0FWZTlvMkUwc2FJN1YzNWxEbXZXbmZlckRELVBZcEFIZXVLVm9MYVJ0dXR5bk53cEFqWm1neXlNUHl5Skw5SHBGY082WEt3RktDTm9PVQ?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "31 Oct 2026",
+    "published_at": "2026-10-31T12:30:00+05:30",
+    "timestamp": 1793430000000,
+    "is_new": false,
+    "source": "Media One"
+  },
+  {
+    "id": "gen-83",
+    "title": "Calicut University campus violence; three arrested for attacks on MSF workers",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOFlFcEtHc0tCY0lLQ3hZN3BjRVgwZ1lHZWpyZ2tkM3F5aWVvazloQ1BNd0stMGxBc09aWVBWMXBiSzQzWVVrLUpHZ00zVHJIYmltaC0zTWZNM3Z5aWJQcjVEVTRIUmROWi1mc2hyMkxlV0x4UjZhWlRxcWJZRFlENU1tOS1kMXRsUXRJZUdndHZtbm5WazVYT2FfS0R0RUllREVQeHQzcGktZw?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "31 Oct 2026",
+    "published_at": "2026-10-31T12:30:00+05:30",
+    "timestamp": 1793430000000,
+    "is_new": false,
+    "source": "Onmanorama"
+  },
+  {
+    "id": "gen-84",
     "title": "Calicut University Result 2026 Out - Check FYIP and M.Sc Online @ results.uoc.ac.in",
     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPMmZKSmppREFsYS1KLUJBQUl1cG9IY1NoYlE5V3pwdEZEbHE4elBfQmhyTkhKaFFTbVp1bjBBT1BRNTJ0VnBDS2dHeVhsTGJ6bzZSOGVJVzBlX3pmdmNQdEhrSzdidmJlbnQwOEJuRmdYcDRETGJCbk9uaHpWNS1fNWphYUFfZEZnRzM3RWNnalJaampQNHAxVzFUdE9pRHVxNlg4dEVJcE5pZw?oc=5",
     "category": "general",
     "category_label": "CUC News",
     "sub_type": "Exam & Schedule",
+    "date": "31 Oct 2026",
+    "published_at": "2026-10-31T12:30:00+05:30",
+    "timestamp": 1793430000000,
+    "is_new": false,
+    "source": "FreeJobAlert.Com"
+  },
+  {
+    "id": "gen-85",
+    "title": "University of Calicut Security Guard Recruitment 2026 – Walkin",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPSWZRSWNmUlo0Q2EtRFd4eFNnOFd6QXJWYWlCeUhwUWUzMnVBdTVmbHZTS0tDeXJ4T1Z0eTQzLWdka0YyMVRaUDhFV3hVWWpJaGNJY2VnU2xLak9wd0FlUmdpM0RoNERfY0U1ejgtMHBUZ1pZSjZHZUExdzYyc29aa3pVUE9hdE43RjVsYk9mM1YxUTN3MU1qc3hwYmg0X1RQ?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
     "date": "31 Oct 2026",
     "published_at": "2026-10-31T12:30:00+05:30",
     "timestamp": 1793430000000,
@@ -847,71 +1281,6 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-62",
-    "title": "‘കാശ്മീർ ഭീകരന്മാരെ പോലെ മുഖം മറച്ചെത്തി’; കാലിക്കറ്റ് സർവകലാശാല സംഘർഷത്തിൽ പണക്കാട് തങ്ങൾ നിലപാട്...",
-    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQW8xT3FFQUhJNHpjU1hDaDlDSXk5MG5XZFdwU1JVLUkyWnJNclFwblFkcENUek1DU3JyMGRxb1l6VDdoN3BEMll4SWFNTWt5dVN2S2xHTWlxYjg3VUJiSG94WmV0S3lJY1EweEs1N2xmc25OZGxUdHBvYXg5aGtpT09nZ1RVQ2R0Wlh0SXg1b09qQ0NHb0pRRld2RzFpaEpzczU5N3Vsei1uRzhKT0NWR2tlNndXZ9IBuwFBVV95cUxOYjlxZ0xmY0dvYlVNYWY3NTRWU3ZuZGNRVmpfOHFHLUY4elVYNjdDUlFRT0VEU193bC1Ud3owN09PX1N2SER4bElqMGw5NEtfekRxUUxZYVZUZTFYQ0hmSzdqS1drME1WT2tCMUlZNU1ZaWRKSi1KcWM1QXFfWGdfR1NWMnpqUkRFeG4tVXVXTV9RNUNpUjdIRnBURnNEb3JMMmdFLTVFN0J5aE1NVGVYSTh4TDlQNEZIZmZ3?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "31 Oct 2026",
-    "published_at": "2026-10-31T09:29:26+05:30",
-    "timestamp": 1793419166000,
-    "is_new": false,
-    "source": "Madhyamam"
-  },
-  {
-    "id": "gen-63",
-    "title": "കാലിക്കറ്റ് സര്‍വകലാശാല UDSF-SFI സംഘര്‍ഷത്തില്‍ 5 പേര്‍ അറസ്റ്റില്‍ | Calicut university",
-    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcDN5VlZ4VkVpck1hbTluekJvajgySWZZdHV5R1pLSjNnWDZnSGJ2d3I2Y1k3bm1zeE5PVVc4WjNrd1BmUGpoeDhKbkhieFF1bGVhaWNYcldZQnBWaDBpU3ZTUUNYX0hRVzE5bml2VTJEbGFzOXZFQmtWemJNNTBRUHkwTjk1QUd4dnBtU2pvSGJMQmJxOTMydGJsMDJ4U2FidjZ4Z3pMQi16T0s0SjR0NWtrdDVLQdIBuwFBVV95cUxON2lUUHlHTnNRa2VsbE1RMnNuUXVTREF1M3VTNEgyclhrd2JkNWgyV25BTTdwVHhRSWVILWZ3YVlIRlpqbzZmQ2YzdjFXcjRUWXBWc2E3anJiS3NLUnhRR1l1dWFuOXoyZ21EeTNRWXpwNmVZaE14MjY1RzF6WVhxa3pwVnd5aWtncVliNmJfN0IxaUllYS1fM21rTEZtWGdBNmJhUXlkNy1YbmhBdjFRUWlyaDJ5eloyaGJr?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "31 Oct 2026",
-    "published_at": "2026-10-31T04:02:07+05:30",
-    "timestamp": 1793399527000,
-    "is_new": false,
-    "source": "Asianet News Malayalam"
-  },
-  {
-    "id": "gen-64",
-    "title": "കാലിക്കറ്റ് സർവകലാശാല ക്യാമ്പസിലെ സംഘർഷം യുഡിഎസ്എഫ്, എസ്എഫ്ഐ പ്രവർത്തകർ അറസ്റ്റിൽ",
-    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQYmhNLU4zWTJOX3kzLWQxdmlsaElDaTJRMFhubG1ybnZjNEtmUmpwYmVVckJrQ1ZyNDlYZjlZWC1DdHdDNVpXY0VwMU1GMF9WejRXOHBySFdoVV9vNE1ydlFnV0lGelZFblY2ZnNSS1FrZV9lemRmTVFKYndyUXBUR29HLVVkY3RuN0loZ3p3ZFZHWXFuYUFhVkdSeW9fNGZiWGw3NloxeHJxRGpab2JuM0Vmc2ZMeE9RQzdkMUVNOFBxaGw50gHKAUFVX3lxTFBSUmtsMU5oUEplbmF4TTJuY0l5TnpQMGpkTFFMTkZ6YURZOGllMzd0ZVZ1NlBrVGJxQ1FyLU8wbllMeE9reE9VYmlydmwtbEwwSjU0NGVkRkNubC04YW92NE14M1JtcDJ4SThwWkdfbFRQQkViams5Y2JBaUU5Vk00d0xKek1qRkRtcGdXSHNYbFBXZkE1WC1OMTFER3pzdDVDLXhmZXdOYjl1SHFCZlotdUFYLXdFdkZrb2VtUU51UVZZNldiMFZEN3c?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "30 Oct 2026",
-    "published_at": "2026-10-30T21:12:22+05:30",
-    "timestamp": 1793374942000,
-    "is_new": false,
-    "source": "Asianet News Malayalam"
-  },
-  {
-    "id": "gen-65",
-    "title": "Calicut University VC warns of expulsion over campus violence; petrol bombs target MSF leaders' houses",
-    "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQVlRQUEZvcDVud0tDM0ZmbWFPX3FWRFA5TERCOHI5NFp5d0J5Vjg2bERjQnZqQ3JXbjRKYUVfYWlpeG80dUxBc2dKSC1EdURhUWN4Q0t2UDd6b0IzOG56VmxJdVBCVXQzMzJyODhVNmwxT3lBeU9WeHBVQnlBQS1Mc3A4TThWYmxLN2Fod2s0WTNyTnRHYzUxNksxcUlxOC1Ia0k3TVUzYmdvYkNBaGRISGc4M2JJM3F4U0dCZnRzY3B4aUZEZTR6MUYtVE5qTTd6VUxCOElOUUtkeFgxOWktdWx6YWdfX1Z5REY0?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "30 Oct 2026",
-    "published_at": "2026-10-30T18:20:35+05:30",
-    "timestamp": 1793364635000,
-    "is_new": false,
-    "source": "Onmanorama"
-  },
-  {
-    "id": "gen-66",
-    "title": "Leftists Attacked After SFI Victory at Calicut University",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNzhJYnhJcG9XUHhVTHJma3ZHNDRJNExFaEdNNkFpUld3VGt1UGhBOWJoVTZSVGVvN2dxZ3MxdFBBT0lKWXRpWkYwLTE3TFRNSUw3VmhKT1pzazl6T1ZhMllVaWY0WUVlSzQ4ZGhUWjlWa3dQVnlVSHk4dDc1c1g0QklTU3NsQk1xOVZNYnAzb9IBlAFBVV95cUxNYk1UMG05OTFGM00teThHZ2tkMjdGaGVYVDZ3eTFqUmk5TTQxVy1kb0lqVmZkYlVOMWhvZTRqRjJ3dlpjVUhFdXcxUmozNzUyUm9IekpfZUluNzZXRG9Iazl6azE5dDRGQzBaZGdtdm5fMzdNa0w3S19ob3ZQNDF5aWVOQi1NelNodTAzRnlTVUFtV2ww?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "30 Oct 2026",
-    "published_at": "2026-10-30T17:07:24+05:30",
-    "timestamp": 1793360244000,
-    "is_new": false,
-    "source": "Tfipost.com"
-  },
-  {
     "id": "exnot11378",
     "title": "Time table for Eighth Semester B.Tech (2019 Scheme) Supplementary/ Improvement Examinations November 2026 (2022 Admission), Supplementary Examinations April 2026 (2021 admission), Supplementary Examinations November 2025 (2020 Admission) & Supplementary Examinations April 2025 (2019 Admission)",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-30 12:59:07_exnot11378.pdf",
@@ -926,9 +1295,9 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-68",
-    "title": "Muslims thrash leftists after SFI wins student body elections at Calicut University in Kerala: Here is what we know so far",
-    "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQdVZWeXc1N2cyWUI4cU1DR1dNZVFRYy10MGRxM29ROV9VS19fU0NJSGp1X2l6QVV5ZUstd3o3aEpYVFZqMUY5WG5oSXd2UDJVVWRCZ3BPaWJVRjhfbGhFTlF3dnU4RG1zNlZ6SGxnTFVacGZUYU1FbWVTUnJ1dXF1Z3RxRFFMZmNXdEJadS14RVV2MzZLSUtJX2VVYS1TV3M0NkJlaUJJV2ZNNExkTk50SEhkeU1GbmE2cll4SzlVRS1INDdCSHlCTV85NDRSUWFEbHV0cjJR?oc=5",
+    "id": "gen-94",
+    "title": "കാലിക്കറ്റ് സർവകലാശാല ക്യാമ്പസിലെ സംഘർഷം യുഡിഎസ്എഫ്, എസ്എഫ്ഐ പ്രവർത്തകർ അറസ്റ്റിൽ",
+    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQYmhNLU4zWTJOX3kzLWQxdmlsaElDaTJRMFhubG1ybnZjNEtmUmpwYmVVckJrQ1ZyNDlYZjlZWC1DdHdDNVpXY0VwMU1GMF9WejRXOHBySFdoVV9vNE1ydlFnV0lGelZFblY2ZnNSS1FrZV9lemRmTVFKYndyUXBUR29HLVVkY3RuN0loZ3p3ZFZHWXFuYUFhVkdSeW9fNGZiWGw3NloxeHJxRGpab2JuM0Vmc2ZMeE9RQzdkMUVNOFBxaGw50gHKAUFVX3lxTFBSUmtsMU5oUEplbmF4TTJuY0l5TnpQMGpkTFFMTkZ6YURZOGllMzd0ZVZ1NlBrVGJxQ1FyLU8wbllMeE9reE9VYmlydmwtbEwwSjU0NGVkRkNubC04YW92NE14M1JtcDJ4SThwWkdfbFRQQkViams5Y2JBaUU5Vk00d0xKek1qRkRtcGdXSHNYbFBXZkE1WC1OMTFER3pzdDVDLXhmZXdOYjl1SHFCZlotdUFYLXdFdkZrb2VtUU51UVZZNldiMFZEN3c?oc=5",
     "category": "general",
     "category_label": "CUC News",
     "sub_type": "Media News",
@@ -936,10 +1305,36 @@ const VERIFIED_NOTICES_DATASET = [
     "published_at": "2026-10-30T12:30:00+05:30",
     "timestamp": 1793343600000,
     "is_new": false,
-    "source": "OpIndia"
+    "source": "Asianet News Malayalam"
   },
   {
-    "id": "gen-69",
+    "id": "gen-95",
+    "title": "അടിയോടടി; കാലിക്കറ്റ് സർവകലാശാല തെരഞ്ഞെടുപ്പ് കയ്യാങ്കളി ആശുപത്രിയിലും| Calicut University | SFI",
+    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQYlBrTW9QNzZnemtUNzhGbWE1RTZ6c19fb3hOWFdiZnlMR2lkdG5nZjk5ZU1YSXo5SjBWMGF5NE4tVkFoM1pwVHp0QThVWWZGM1psMDNSanc2WGRJYW5XdTJIcUlUWEd4VVBNVTVwYmFKZXFXbHdWV21fMDNFdzRwdVU0c3lDUkdOaUpHaHhBcUhOYUJ6TG1QZXkwaWRkdmhWdGkyYkk4LTlnM041cTQzekpHdDhNdG9ncU5SeHg5eW13VzRPajVRTNIBzgFBVV95cUxPX3BrSEpFcFdyYkNCWVB0b2piR3dWa0JrOXlkQ2NST0l1aW5wWnR5TC1yTGo0OUhTeVRDTVI2a21QaGgtakVHenFESjhzLUlfX2E2RlBMSTJCMXZiNktKa2kyUG5GczdBOFNaV2t6MFRJbWNobmlIcFIzMzhXS0EtaExFdl8tZHQ3Rnl1YXUxM3N6WlczRHg5SkRVV205TlF4NGV0Zk4zVGFhYzRhN1VpZUpHZEtRVWJET1l2MTBCNHhQS3NmMFJxVmxDU042UQ?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "30 Oct 2026",
+    "published_at": "2026-10-30T12:30:00+05:30",
+    "timestamp": 1793343600000,
+    "is_new": false,
+    "source": "Asianet News Malayalam"
+  },
+  {
+    "id": "gen-96",
+    "title": "Calicut University VC warns of expulsion over campus violence; petrol bombs target MSF leaders' houses",
+    "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQVlRQUEZvcDVud0tDM0ZmbWFPX3FWRFA5TERCOHI5NFp5d0J5Vjg2bERjQnZqQ3JXbjRKYUVfYWlpeG80dUxBc2dKSC1EdURhUWN4Q0t2UDd6b0IzOG56VmxJdVBCVXQzMzJyODhVNmwxT3lBeU9WeHBVQnlBQS1Mc3A4TThWYmxLN2Fod2s0WTNyTnRHYzUxNksxcUlxOC1Ia0k3TVUzYmdvYkNBaGRISGc4M2JJM3F4U0dCZnRzY3B4aUZEZTR6MUYtVE5qTTd6VUxCOElOUUtkeFgxOWktdWx6YWdfX1Z5REY0?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "30 Oct 2026",
+    "published_at": "2026-10-30T12:30:00+05:30",
+    "timestamp": 1793343600000,
+    "is_new": false,
+    "source": "Onmanorama"
+  },
+  {
+    "id": "gen-97",
     "title": "Calicut University campus clashes: CPI(M) Keralam secretary M.V. Govindan condemns attacks on SFI activists",
     "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQdzZFdHZtQzQxb01lRDlLeFVlTURJQlhrQXpvX0xvVGZjRzhwa29FNmhDZGYzQ3YzQTlxa0ZaRmhhalVWQ2hzTnBnMEtmMW10M19TM3hJU0FIUDZXUTRpYjZBSUFfS1BiU0I1Y0tQNEcwVGdiOEx4bWxJTGhGdG1YdkFlNzBHOEIyYXdBeVVaTFdBMDNqaU9EcVVBc1ZEVThFWlplSklLUUhrQnFaaVk5NlRQbVBPTlU3aTA5ZmpkLTNVMVJ2MzFFcmtsaDVVSFVGYmMxUjZNNWZKVElVTEdKV3JuTFo2bXljN2h4NWsxekVlNDlWQUlXTVQ4S23SAYMCQVVfeXFMUHhYLU5keG9sbmJtOU5xZTlCcnlfdHh3dTJjOU1zVm92ZlNhdjRoNVhYTm9LM2xMcUdqcnBaV25oTHZua2JtWk5sLVNlQ0dEdExzMHJTb3lOOXR2VjUybjRmd2Zvc2JOTHFwbV9VMk1ZelcwN1hXbDZJaGFiRWJINDBibU9KTDU0cXhXSW16Mk9hU1JlR1l3djJDNVFoUG9wcVoyem9iOElibGUxY2EyaFRFX21PbzY3MkxVWEdEYUZ4NTFRbFNPMEdqMkw3NFJSZ2liRVlhMjFwWW9kb2xlb0RGMVdQRWJ0eWVlRW1XZ1Q2bG84NWkza1ZMYVE3MGNWUGk5MA?oc=5",
     "category": "general",
@@ -952,7 +1347,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "The Hindu"
   },
   {
-    "id": "gen-70",
+    "id": "gen-98",
     "title": "Calicut University Result 2026 Out - Check PG Diploma and MA Revaluation Results Released",
     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQWThjN0ZaQ2ZEblg4dnhTdjlKVXZIUWcySzBKTlFEMUQzdF96bmFTSC1pVFJiMjVoaGFRTkZCSTQyQS1BM2VrT0QwX1h1bFFCRjgzTkJzSzFGOWlvSFVJaW4xT3FtN0x0Uk5BQWd3TjhxNU5BeEFxeXVSc0pBXzZkS3BGV0loR3lPSzlaRm5PdGEtVmdBY3M2Ty00Y0pIZHI3NkFBbGVRMEJJUW8yd1ZhcUtFbGlMWFJVVVVTbGR4bWRwaVdycE5uWGpGanJHQQ?oc=5",
     "category": "general",
@@ -963,6 +1358,19 @@ const VERIFIED_NOTICES_DATASET = [
     "timestamp": 1793343600000,
     "is_new": false,
     "source": "FreeJobAlert.Com"
+  },
+  {
+    "id": "gen-99",
+    "title": "Muslims thrash leftists after SFI wins student body elections at Calicut University in Kerala: Here is what we know so far",
+    "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQdVZWeXc1N2cyWUI4cU1DR1dNZVFRYy10MGRxM29ROV9VS19fU0NJSGp1X2l6QVV5ZUstd3o3aEpYVFZqMUY5WG5oSXd2UDJVVWRCZ3BPaWJVRjhfbGhFTlF3dnU4RG1zNlZ6SGxnTFVacGZUYU1FbWVTUnJ1dXF1Z3RxRFFMZmNXdEJadS14RVV2MzZLSUtJX2VVYS1TV3M0NkJlaUJJV2ZNNExkTk50SEhkeU1GbmE2cll4SzlVRS1INDdCSHlCTV85NDRSUWFEbHV0cjJR?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "30 Oct 2026",
+    "published_at": "2026-10-30T12:30:00+05:30",
+    "timestamp": 1793343600000,
+    "is_new": false,
+    "source": "OpIndia"
   },
   {
     "id": "exnot11377",
@@ -988,59 +1396,6 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "30 Oct 2026",
     "published_at": "2026-10-30T12:04:40+05:30",
     "timestamp": 1793342080000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "gen-73",
-    "title": "അടിയോടടി; കാലിക്കറ്റ് സർവകലാശാല തെരഞ്ഞെടുപ്പ് കയ്യാങ്കളി ആശുപത്രിയിലും| Calicut University | SFI",
-    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQYlBrTW9QNzZnemtUNzhGbWE1RTZ6c19fb3hOWFdiZnlMR2lkdG5nZjk5ZU1YSXo5SjBWMGF5NE4tVkFoM1pwVHp0QThVWWZGM1psMDNSanc2WGRJYW5XdTJIcUlUWEd4VVBNVTVwYmFKZXFXbHdWV21fMDNFdzRwdVU0c3lDUkdOaUpHaHhBcUhOYUJ6TG1QZXkwaWRkdmhWdGkyYkk4LTlnM041cTQzekpHdDhNdG9ncU5SeHg5eW13VzRPajVRTNIBzgFBVV95cUxPX3BrSEpFcFdyYkNCWVB0b2piR3dWa0JrOXlkQ2NST0l1aW5wWnR5TC1yTGo0OUhTeVRDTVI2a21QaGgtakVHenFESjhzLUlfX2E2RlBMSTJCMXZiNktKa2kyUG5GczdBOFNaV2t6MFRJbWNobmlIcFIzMzhXS0EtaExFdl8tZHQ3Rnl1YXUxM3N6WlczRHg5SkRVV205TlF4NGV0Zk4zVGFhYzRhN1VpZUpHZEtRVWJET1l2MTBCNHhQS3NmMFJxVmxDU042UQ?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "30 Oct 2026",
-    "published_at": "2026-10-30T01:10:26+05:30",
-    "timestamp": 1793302826000,
-    "is_new": false,
-    "source": "Asianet News Malayalam"
-  },
-  {
-    "id": "gen-74",
-    "title": "കാലിക്കറ്റ് സർവകലാശാലയിൽ പരീക്ഷാ നടത്തിപ്പിൽ വീണ്ടും വൻ വീഴ്ച; ചോദ്യപേപ്പർ മാറി നൽകി",
-    "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNb3ZLMlowWFpHRFdCd21NT0NNaVQ0VFZHXzRwTTF1UFpUYjhaZ1hFNEJualZMNjFqTjQ3S2xYdEFsal9qeGVXM21mRzdUM1h1SWl0WmtKTVVnY2dFalduaHF2TmZ3eFNZTjNwYW53ejNUSV80REJYUENOdlZjR2RHN1NHOWJJVnQ3VnNyNXRiRjkxNmxBS194Q0FxVFlLYkkxMEdiVkFkSjdxN2s1WmNfRy1EYXcySUdHNjVPdWM0YjZLcVJPOUNUdlA3VGZVYi14bVZUT3QwSFZ6cHk2cmNqNm5Sb0hhQ1QyVDFxckZVX05rTDNFZy1BdzhB0gH_AUFVX3lxTFByYUtEUUlSTG1EQ1BTMW1GelZfQnpGLV8zWnB0amd5MkVmOUpsUEpxX1NabXRySlk5ZFA4QTAtT0sxQm1rUVlfNGtBRHpab0JIa2lxOVg5VkhWQnpfbF92UWl1bG9HbkFRUFNvU2F5ekM5ems4THZTMjV6X0h1ZVRyLU9FeGhQSXZlUF9HVDRwMVRNQWNMR2tkNTBqWXNrSTQ3Q1ZmSUd3YjEzZFltSFE1b0YzVi1nNDE0dUJQeHBaYkZqR3RwLVhWclRKcGIwdl95VDYxMThBN1JwVmxlM09LdDVDdlp0bVZzWDFDbzdldjh0UVBYZlFtVzJBeU9zOA?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Exam & Schedule",
-    "date": "29 Oct 2026",
-    "published_at": "2026-10-29T21:23:55+05:30",
-    "timestamp": 1793289235000,
-    "is_new": false,
-    "source": "Asianet News Malayalam"
-  },
-  {
-    "id": "gen-75",
-    "title": "കാലിക്കറ്റ് സർവകലാശാല സംഘർഷത്തിൽ പരിക്കേറ്റവരെ ആശുപത്രിയിലും മർദ്ദിച്ചു; 8 എംഎസ്എഫ് പ്രവർത്തകർക്കെതിരെ കേസ്, അന്വേഷണത്തിന് നാലംഗ സമിതി",
-    "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNNVVfNUlIRHYwTUlMLUhkQmxrODUwY2UzbDJVTUpsQzYyaFRhdTVyUGEtQkdCZm4wNVRIUjdKalp4NTVLLVZVa201ZGVfWHNfWXlnNzRkRHZFVzBETklsZnZuRHBzTmFrMC1NY2hDVFJ4X3BQSnludk1LeFFDODdMWWNpU3ctSzVLLXBodS1lQmNXdHdSLUFaclNxT3NHUmZ1Q3dpN2VSNm1OLVpkVWwyb3RYaHRHNUVlUmdwdWxjR3JZc0hkcEV1eVNxV3FOWUdNZ0UwOC1sLVhMdFB0M1Jj0gHkAUFVX3lxTE1PblE4Y1dTLTBoZHlMM3hZTTFCcTljaGV6eFNVVGt1LWpNQy1HOURBd05pNjdBRmxpdmVsS2FSSm52NzZYOGlaVDFRUXQ3UURUeFM3WEZhNFVweFBWNXBYTjBNRDhac1ZuWGFlRXFxZjNkclNGdTV3YTExX3RCN0RqZmxad1ZmOVhldjVVTGtKY0NucC0zQTVFM19qWEljNUxzY0tSSkpObWRBM29hTDA0T1B3WlJEeUt3M29qM080bHktY21TWjNhbmVNRm5OY3BNZENoM2RwcHJEOElDczRiVnhHTQ?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "29 Oct 2026",
-    "published_at": "2026-10-29T20:34:36+05:30",
-    "timestamp": 1793286276000,
-    "is_new": false,
-    "source": "Asianet News Malayalam"
-  },
-  {
-    "id": "sse848",
-    "title": "Postponement notification of Third Semester MSc. Computer Science (CBCSS- PG- 2019 Scheme- 2022 Admission) One Time Regular Supplementary Examinations September 2026 for the candidates of Affiliated Colleges & Third Semester MCA (2020 Scheme- 2022 Admission) One Time Regular Supplementary Examinations September 2026, scheduled on 30/10/2026",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-29 17:11:12_sse848.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "29 Oct 2026",
-    "published_at": "2026-10-29T17:11:12+05:30",
-    "timestamp": 1793274072000,
     "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
@@ -1088,34 +1443,6 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "sse847",
-    "title": "Postponement & Rescheduling Notification of the Sixth and Tenth Semester B.B.A., LL.B. (Hons.) One-Time Regular Supplementary Examinations – September 2025 (2016 Admission) / September 2026 (2017 Admission)",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-29 14:45:47_sse847.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Postponement",
-    "date": "29 Oct 2026",
-    "published_at": "2026-10-29T14:45:47+05:30",
-    "timestamp": 1793265347000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse846",
-    "title": "Postponement & Rescheduling Notification of the Sixth and Tenth Semester B.B.A., LL.B. (Hons.) One-Time Regular Supplementary Examinations – September 2025 (2016 Admission) / September 2026 (2017 Admission)",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-29 14:44:37_sse846.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Postponement",
-    "date": "29 Oct 2026",
-    "published_at": "2026-10-29T14:44:37+05:30",
-    "timestamp": 1793265277000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
     "id": "exnot11372",
     "title": "Notification for uploading the APC / Internal Marks of Seventh Semester Integrated P.G. (CBCSS) Regular Examination November 2026 (2023 Admission) for the candidates of Affiliated Colleges",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-29 14:36:50_exnot11372.pdf",
@@ -1125,62 +1452,6 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "29 Oct 2026",
     "published_at": "2026-10-29T14:36:50+05:30",
     "timestamp": 1793264810000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse845",
-    "title": "Notification/ Time Table - Postponement of Third Semester PG (CBCSS - 2019 Scheme) One Time Regular Supplementary Examinations September 2024 (2020 Admision)/September 2025 (2021 Admission)/September 2026 (2022 Admission), scheduled on 23.10.2026 & 26.10.2026",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-29 14:24:31_sse845.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "29 Oct 2026",
-    "published_at": "2026-10-29T14:24:31+05:30",
-    "timestamp": 1793264071000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse844",
-    "title": "Postponement & Rescheduling Notification of the Sixth Semester LL.B Unitary Degree (3-year) (2015 Scheme) One Time Regular Supplementary Examinations September 2025 (for 2018 Admission) & Sixth Semester LL.B Unitary Degree (3-year) (2015 Scheme) One Time Regular Supplementary Examinations September 2026 (for 2019 Admission),",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-29 14:17:36_sse844.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Postponement",
-    "date": "29 Oct 2026",
-    "published_at": "2026-10-29T14:17:36+05:30",
-    "timestamp": 1793263656000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse843",
-    "title": "Postponement & Rescheduling Notification of the Sixth Semester LL.B Unitary Degree (3-year) (2015 Scheme) One Time Regular Supplementary Examinations September 2025 (for 2018 Admission) & Sixth Semester LL.B Unitary Degree (3-year) (2015 Scheme) One Time Regular Supplementary Examinations September 2026 (for 2019 Admission),",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-29 14:14:21_sse843.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Postponement",
-    "date": "29 Oct 2026",
-    "published_at": "2026-10-29T14:14:21+05:30",
-    "timestamp": 1793263461000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse842",
-    "title": "Notification - Postponement of Third Semester PG (CBCSS - 2019 Scheme) One Time Regular Supplementary Examinations September 2024 (2020 Admision)/September 2025 (2021 Admission)/September 2026 (2022 Admission), scheduled on 23.10.2026 & 26.10.2026",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-29 14:13:56_sse842.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "29 Oct 2026",
-    "published_at": "2026-10-29T14:13:56+05:30",
-    "timestamp": 1793263436000,
     "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
@@ -1244,7 +1515,7 @@ const VERIFIED_NOTICES_DATASET = [
     ]
   },
   {
-    "id": "gen-91",
+    "id": "gen-110",
     "title": "Clash on campus: police keep vigil in Calicut University in Keralam; classes suspended",
     "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNSVl0cFNBNVh6VENpWEJ3S3QyM1NnWWdLZjFwX0Y0M1BCOHZUWFZDR2tZOEVMc3hsbTFlS3NTNGhhUDdpcEVDMmVQQk5kYXFLaW1OSnNHeTNCYVVXMFZaNDBhNzBpUzdfNlZ4eWppQnk2dXhBV2dJZWNWd0tYcWFFREUtaEptakNuZmxNY0hNMFFnMHZKd2I4Yzc2cFNlQVotWHkyNEZNTndmT3RxWVVlU21OdkVMU0t2UjVWUTJ0R19IOEtZR3Fjci10WGp3X29feldIY0tyRFhxRFNTWG4wY3VTbUjSAesBQVVfeXFMTjFLeHFZU2doc2ZHeGUzd1AwQm9lNU5Ccnktc2V4V1F2cmVKemg0UnVjTmlvQ1puYXNQXzRSVTFhQjJQMjBEWmNnNXNoRzBxbERBbmZjbVgxNE5HSUZXeWpvZmFwNGJiZGFBblpGOVI2U0NtSng0SlpmeW9zXzN0MWJpdGN5bzBrOGxKRE1SSzVRcHhXNjg4NlM5MHp6cFhPWTI4OGpXYnJkUGU0Ukh2RnJTRC1IUHoxNEFES3JLaVdGbmRQVE90VnRhS3VOSFhKTHY1aGdfcllnS3NCWVZHUXhwd25UVFpFSm5Ucw?oc=5",
     "category": "general",
@@ -1257,7 +1528,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "The Hindu"
   },
   {
-    "id": "gen-92",
+    "id": "gen-111",
     "title": "SFI sweeps Calicut University campus union polls, wins all nine seats",
     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxORmU3bzdkSTRQQnYtVkI2Q1d2ZWk0UERMZW9ybFVrR3lvYlhoaWxTXzgzUWpSVEhWVENER3ZHTkZKTWk0OXRRX0tlcll6Tk8xbEN5MFUzR3dPUEhUcnlxbHRZNldUVlQwbmQ1cjhoZzBFazM4cEdnWU1XZ0ZfOGRWcG5uV2t3emxWQmZnSXlxc014R3Z4N2dRMDlJNjBMNlpsdUhkT1dmT0R2SlpqUXpaaEx4R1l6UWRicTUxcmJyaFI?oc=5",
     "category": "general",
@@ -1270,7 +1541,33 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Onmanorama"
   },
   {
-    "id": "gen-93",
+    "id": "gen-112",
+    "title": "കാലിക്കറ്റ് സർവകലാശാല സംഘർഷത്തിൽ പരിക്കേറ്റവരെ ആശുപത്രിയിലും മർദ്ദിച്ചു; 8 എംഎസ്എഫ് പ്രവർത്തകർക്കെതിരെ കേസ്, അന്വേഷണത്തിന് നാലംഗ സമിതി",
+    "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNNVVfNUlIRHYwTUlMLUhkQmxrODUwY2UzbDJVTUpsQzYyaFRhdTVyUGEtQkdCZm4wNVRIUjdKalp4NTVLLVZVa201ZGVfWHNfWXlnNzRkRHZFVzBETklsZnZuRHBzTmFrMC1NY2hDVFJ4X3BQSnludk1LeFFDODdMWWNpU3ctSzVLLXBodS1lQmNXdHdSLUFaclNxT3NHUmZ1Q3dpN2VSNm1OLVpkVWwyb3RYaHRHNUVlUmdwdWxjR3JZc0hkcEV1eVNxV3FOWUdNZ0UwOC1sLVhMdFB0M1Jj0gHkAUFVX3lxTE1PblE4Y1dTLTBoZHlMM3hZTTFCcTljaGV6eFNVVGt1LWpNQy1HOURBd05pNjdBRmxpdmVsS2FSSm52NzZYOGlaVDFRUXQ3UURUeFM3WEZhNFVweFBWNXBYTjBNRDhac1ZuWGFlRXFxZjNkclNGdTV3YTExX3RCN0RqZmxad1ZmOVhldjVVTGtKY0NucC0zQTVFM19qWEljNUxzY0tSSkpObWRBM29hTDA0T1B3WlJEeUt3M29qM080bHktY21TWjNhbmVNRm5OY3BNZENoM2RwcHJEOElDczRiVnhHTQ?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "29 Oct 2026",
+    "published_at": "2026-10-29T12:30:00+05:30",
+    "timestamp": 1793257200000,
+    "is_new": false,
+    "source": "Asianet News Malayalam"
+  },
+  {
+    "id": "gen-113",
+    "title": "കാലിക്കറ്റ് സർവകലാശാലയിൽ പരീക്ഷാ നടത്തിപ്പിൽ വീണ്ടും വൻ വീഴ്ച; ചോദ്യപേപ്പർ മാറി നൽകി",
+    "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNb3ZLMlowWFpHRFdCd21NT0NNaVQ0VFZHXzRwTTF1UFpUYjhaZ1hFNEJualZMNjFqTjQ3S2xYdEFsal9qeGVXM21mRzdUM1h1SWl0WmtKTVVnY2dFalduaHF2TmZ3eFNZTjNwYW53ejNUSV80REJYUENOdlZjR2RHN1NHOWJJVnQ3VnNyNXRiRjkxNmxBS194Q0FxVFlLYkkxMEdiVkFkSjdxN2s1WmNfRy1EYXcySUdHNjVPdWM0YjZLcVJPOUNUdlA3VGZVYi14bVZUT3QwSFZ6cHk2cmNqNm5Sb0hhQ1QyVDFxckZVX05rTDNFZy1BdzhB0gH_AUFVX3lxTFByYUtEUUlSTG1EQ1BTMW1GelZfQnpGLV8zWnB0amd5MkVmOUpsUEpxX1NabXRySlk5ZFA4QTAtT0sxQm1rUVlfNGtBRHpab0JIa2lxOVg5VkhWQnpfbF92UWl1bG9HbkFRUFNvU2F5ekM5ems4THZTMjV6X0h1ZVRyLU9FeGhQSXZlUF9HVDRwMVRNQWNMR2tkNTBqWXNrSTQ3Q1ZmSUd3YjEzZFltSFE1b0YzVi1nNDE0dUJQeHBaYkZqR3RwLVhWclRKcGIwdl95VDYxMThBN1JwVmxlM09LdDVDdlp0bVZzWDFDbzdldjh0UVBYZlFtVzJBeU9zOA?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Exam & Schedule",
+    "date": "29 Oct 2026",
+    "published_at": "2026-10-29T12:30:00+05:30",
+    "timestamp": 1793257200000,
+    "is_new": false,
+    "source": "Asianet News Malayalam"
+  },
+  {
+    "id": "gen-114",
     "title": "Calicut University Technician Recruitment 2026 – Apply Online",
     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZ2I2UlBaRHZfUGpyN0ZQYjM1V1NidVNrUFZPM2x0aHQ0SDc3S0FNbkc2MGZkZE9VMUdQTFNDZmZFbm80bFlGblNfdG9ReFBxS29YdERDWnVTUWRDZ3o5UzdWWU9MeE5ST3ZIWUI3ZUJZbGYxSE5iUVphN0FsNUY2Rnh2OXRESmt4Y19SNXpWUWZrc3JEQ3d4U1o3dTNHbnlrOHF1RThTVV8?oc=5",
     "category": "general",
@@ -1299,33 +1596,7 @@ const VERIFIED_NOTICES_DATASET = [
     ]
   },
   {
-    "id": "gen-95",
-    "title": "SFI | കാലിക്കറ്റ് യൂണിവേഴ്സിറ്റി ക്യാമ്പസ് തെരഞ്ഞെടുപ്പിൽ മുഴുവൻ സീറ്റിലും എസ്എഫ്ഐ | SFI Wins All Seats in Calicut University Campus Students' Union Election",
-    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbi1xNzJXS1BqN1ctMWRGT2xTdDRpUEZRZndIdjhUeUprWkJPbTVtOUxna3hYWUN3UENwVVdrdXlsSjBsUHhRY0Qxd1REZjdXVTNHN0c2a256ZXBuakt4Nm95QWd5aUh2T2xHNTFjLURVRjJxSzF2Y3pyWWdaVWxmcElENXpnWUhXcGN1eG8tbzFFM3NvRnVvUnZOdVRhYTkwRXBpTUU2bkd1SVU?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Campus & Syndicate",
-    "date": "29 Oct 2026",
-    "published_at": "2026-10-29T00:42:34+05:30",
-    "timestamp": 1793214754000,
-    "is_new": false,
-    "source": "Kairali News Online"
-  },
-  {
-    "id": "gen-96",
-    "title": "Calicut University campus tense after SFI-UDSF clash; classes suspended for two days",
-    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPa1haRVdEZjFNY1RIMGtsLUpIUFVWUkhKVHhMTGtzcHh0N3JJdEZvd29ZVDFOZ25WVnBJMnAtNFFxcENkcl9tUEZEM1liSThQWE94c2xCWHlySWFwOUJPY3NnaHRhZVh0Z2EzUnlnYzF0SUltZWhoMzduY29aTFVWeVB5MWxOQ09DMmIxSkl1WGZVd3RCaFppWkg2MnFGai0wM1lEYTRuQmZ0cmh3Tl9JUlZlTEZkckNqdHczWk5aSU85eXBmV0Ezbmljcw?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "28 Oct 2026",
-    "published_at": "2026-10-28T12:30:00+05:30",
-    "timestamp": 1793170800000,
-    "is_new": false,
-    "source": "Onmanorama"
-  },
-  {
-    "id": "gen-97",
+    "id": "gen-116",
     "title": "സംഘർഷം: കാലിക്കറ്റ് സർവകലാശാല ക്യാമ്പസ് അടച്ചിടും, വിദ്യാർഥികൾ ഹോസ്റ്റൽ ഒഴിയണമെന്ന് നിർദേശം; ഡിഎസ്‍യു തെരഞ്ഞെടുപ്പിൽ എല്ലാസീറ്റും എസ്എഫ്ഐക്ക്",
     "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPUlVHb0FEUE1TT25hVGlkV3RTbEt0SjlZUmhSc2ZIbVZDVDlDV2JaTjlHaVFXdWxkQlZ2YlREMF9NTld1NTJ4ei13YTNUOUwyNHV0SlQxeDM0ME81VmRPRkY4N3gwd0xZT1NPV3RXSTkwdzIzb2VUSWRZckVsdHV0WnBRaHNoSUtwTTMxbUVtSDNaZW5rTElHLTZ4eUhUTjlEcHdjYUlVZ1BGRFZMWXdZWk5Eb2FMMnhHOWc5TnJab25HSm00bm85eWlIWGNFcWhNZHZ30gHYAUFVX3lxTE9WWXYzbkZLZ1NBQmVHWG5tV2hBcDVzRVp2dnhCYWVyblJOaEhCVEZoT19MRVVEdmpPT3ctR2M5U3VCV25oUFU2eEktTjFBVE9GaElxUkF3clpEaExnbGFxWHdOVWluZ2dmZ3VZRVVScjF6OTBhdE5ZM3J4dkpRVkZLZ2hSdDZPWGVtMWM2SzdUYm9XM0JWZEFnUE12eUU5MDdCNExqMGF0N1dWRWFBT3NJTWRnY0Nlb2RoTUhrTVhobkxmNldJMndtWUZzajRrcVQzSWtSZXBzZw?oc=5",
     "category": "general",
@@ -1338,7 +1609,20 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Asianet News Malayalam"
   },
   {
-    "id": "gen-98",
+    "id": "gen-117",
+    "title": "Calicut University campus tense after SFI-UDSF clash; classes suspended for two days",
+    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPa1haRVdEZjFNY1RIMGtsLUpIUFVWUkhKVHhMTGtzcHh0N3JJdEZvd29ZVDFOZ25WVnBJMnAtNFFxcENkcl9tUEZEM1liSThQWE94c2xCWHlySWFwOUJPY3NnaHRhZVh0Z2EzUnlnYzF0SUltZWhoMzduY29aTFVWeVB5MWxOQ09DMmIxSkl1WGZVd3RCaFppWkg2MnFGai0wM1lEYTRuQmZ0cmh3Tl9JUlZlTEZkckNqdHczWk5aSU85eXBmV0Ezbmljcw?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Media News",
+    "date": "28 Oct 2026",
+    "published_at": "2026-10-28T12:30:00+05:30",
+    "timestamp": 1793170800000,
+    "is_new": false,
+    "source": "Onmanorama"
+  },
+  {
+    "id": "gen-118",
     "title": "Calicut University Programmer Recruitment 2026: Walk-in",
     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQNGNtZlhMWlBTbnJCcWRvN1Z5WGFueDhhOUlCWTFmRG5hcnEwQUhqTXhPZWJxWEJDSm9fSU9XR2NlYmRCSnJPNTdELW5oSzdxYzJ0Z29oUHNUOFZIN0ZLbzB3cHBmaHA1TkU1SGxHWlpsQksxdkVDZ3ZVMHlUSl8zckY4aE90OTVfbnVDVGlyb2VnUzJnUDc4?oc=5",
     "category": "general",
@@ -1351,20 +1635,6 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "FreeJobAlert.Com"
   },
   {
-    "id": "exnot11366",
-    "title": "Postponement Notification regarding the Tenth Semester B.Com., LL.B. (Hons.) (2020 & 2021 Admission) Regular/ Supplementary Examinations, March 2026 & Sixth Semester B.Com., LL.B. (Honours) (2020 to 2023 Admissions) Regular/ Supplementary Examinations March 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-27 15:24:38_exnot11366.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Postponement",
-    "date": "27 Oct 2026",
-    "published_at": "2026-10-27T15:24:38+05:30",
-    "timestamp": 1793094878000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
     "id": "exnot11365",
     "title": "Notification for uploading the Internal Marks / APC of Third Semester B.Ed. Degree (2 year course) Regular Examination November 2026 (2025 Admission) for candidates of University Teacher Education Centres and Affiliated Training College",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-27 15:17:31_exnot11365.pdf",
@@ -1374,20 +1644,6 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "27 Oct 2026",
     "published_at": "2026-10-27T15:17:31+05:30",
     "timestamp": 1793094451000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11364",
-    "title": "Revised Notification & Time table- Special Examination i.r.o. Third Semester (PG-CBCSS) Regular Examination November 2025 for the candidate Aswathi P K (Reg.No.EKAYMCS001)",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-27 15:13:45_exnot11364.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "27 Oct 2026",
-    "published_at": "2026-10-27T15:13:45+05:30",
-    "timestamp": 1793094225000,
     "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
@@ -1405,50 +1661,6 @@ const VERIFIED_NOTICES_DATASET = [
     "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
-  },
-  {
-    "id": "exnot11362",
-    "title": "Revised notification regarding Online registration of First Semester PG (CCSS-2024) Regular/Supplementary/Improvement Examination November 2026 (2024 Admission onwards) and Third Semester PG (CCSS-2024) Regular/ Supplementary/Improvement Examination November 2026 (2024 Admission onwards) for the candidates of University Teaching Departments",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-27 14:03:20_exnot11362.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Registration",
-    "date": "27 Oct 2026",
-    "published_at": "2026-10-27T14:03:20+05:30",
-    "timestamp": 1793090000000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11361",
-    "title": "Revised notification regarding Online registration of First Semester PG (CCSS-2024) Regular/Supplementary/Improvement Examination November 2026 (2024 Admission onwards) and Third Semester PG (CCSS-2024) Regular/ Supplementary/Improvement Examination November 2026 (2024 Admission onwards) for the candidates of University Teaching Departments",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-27 13:34:57_exnot11361.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Registration",
-    "date": "27 Oct 2026",
-    "published_at": "2026-10-27T13:34:57+05:30",
-    "timestamp": 1793088297000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11359",
-    "title": "Postponement Notification for Third Semester M.A./ M.Sc./ M.Com./ M.S.W./ M.A. Journalism and Mass Communication/ M.T.T.M/ MTHM/ MHM R/S/I Examinations November 2026 (PG- CBCSS- 2019 Scheme) for the candidates of affiliated colleges, Third Semester M.A./ M.Sc./ M.Com (P.G.-SDE-CBCSS) S/I Examination November 2026 (2019 Scheme) for the candidates of the SDE/ CDOE & Third Semester M.Sc Health and Yoga Therapy R/S Examination December 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-27 13:07:29_exnot11359.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Postponement",
-    "date": "27 Oct 2026",
-    "published_at": "2026-10-27T13:07:29+05:30",
-    "timestamp": 1793086649000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": [
-      "cdoe"
-    ]
   },
   {
     "id": "exnot11358",
@@ -1493,20 +1705,6 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "exnot11354",
-    "title": "Postponement notification of Fifth Semester CUFYUGP Regular Examination November 2026 (2024 Admission) for the candidates of Affiliated Colleges, scheduled to be held on 26.10.2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-26 17:06:34_exnot11354.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "26 Oct 2026",
-    "published_at": "2026-10-26T17:06:34+05:30",
-    "timestamp": 1793014594000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
     "id": "exnot11353",
     "title": "Notification regarding the Rescheduling of postponed Examinations of Fifth & Ninth Semeste Integrated P.G. Regular / Supplementary / Improvement Examination (CBCSS) November 2026 for the candidates of Affiliated Colleges",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-26 17:04:32_exnot11353.pdf",
@@ -1521,7 +1719,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "adm-111",
+    "id": "adm-125",
     "title": "PhD-2026 Last date extended",
     "url": "https://admission.uoc.ac.in/downloads/1793013440_Press_Release_PhD1138.pdf",
     "category": "admission",
@@ -1620,19 +1818,6 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-118",
-    "title": "Calicut University Result 2026 Out - Check UG & PG Result Online @ uoc.ac.in",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWkQxdDRzd3Y3c2pjakN6M21JWHBZako2c053QXM4SFVIemRWR1NEbEY3R05WeFRqak5zbWZGdEZDYWVjYkt6YmxOdXhsNjd5dzBsTWh1UEV5VWdrOWdLWFV2R1U1YmFtX0xPRXJSeTJ1YlVEMHIwQi1FZ2F3TVB1UExFcXVsR080OEN1S0IzRnROTWxCNG9aX0o0ZXZmOUpVcURqYWR4Y3c0U2pya3JR?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Exam & Schedule",
-    "date": "26 Oct 2026",
-    "published_at": "2026-10-26T12:30:00+05:30",
-    "timestamp": 1792998000000,
-    "is_new": false,
-    "source": "FreeJobAlert.Com"
-  },
-  {
     "id": "exnot11343",
     "title": "Notification regarding the link for Online registration of the Third Year Bachelor of Hotel Management & Catering Technology (BHM & CT) Regular/ Supplementary Examination April 2027 (2023 & 2024 Admissions)/ Third Year Bachelor of Hotel Management (BHM) Supplementary Examination April 2027 (2022 Admission only) for the candidates of Oriental School of Hotel Management, Lakkidi, Wayanad.",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-26 11:08:03_exnot11343.pdf",
@@ -1689,20 +1874,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-123",
-    "title": "ഇടിമിന്നലിൽ കാലിക്കറ്റ് യൂണിവേഴ്സിറ്റി ഇന്റർനെറ്റ് ഫയർവാൾ തകരാറിലായി; പ്രവർത്തനം സ്തംഭിച്ചു, പരീക്ഷകൾ മാറ്റി",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQeVh6T21aQlJHM0JRc2s4U29OZFBsOTVYUHI4b3BRMlI5ZjB1UnpILWUyMzdTdFR3WGNKZjhUNF9rdjJZU0pCMDV2bnNyZzFaRmxBWGVxU3pqTDFocUhDR291bXgxSzhuLXpqeTNWdnpGWWxlUF9FUHZqZ1lTaGwwaUZ3TGFIbkJPRGNzU3lLZ04xRlBfajV0YWhJaG5QQlBVVFJyRUxB0gGrAUFVX3lxTE9DR1JHdjI1S3h3VzlWbzI5UDZvREJQMExRRGt0cFpGNi02MGxNZGFaTnliVzYwRzEwMmlyODR0LXFOVzVfRDR3RVllR2FQYjhxZzNNSXI1T0kwaU40WmJCcEZpUXhFTHlvMVpOVlJ4ZWFVbFVpNUFzVDM2dVlmVXl6N0h4bC1tcUFnb1FORjNvem55S2FLbXhob1Q1YVFMekN0LWI5TkdpS3NGRQ?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Exam & Schedule",
-    "date": "24 Oct 2026",
-    "published_at": "2026-10-24T12:30:00+05:30",
-    "timestamp": 1792825200000,
-    "is_new": false,
-    "source": "Mathrubhumi"
-  },
-  {
-    "id": "gen-124",
+    "id": "gen-136",
     "title": "നെറ്റ്‌വർക്ക് തകരാർ പരിഹരിച്ചില്ല, തിങ്കളാഴ്ചത്തെ എല്ലാ പരീക്ഷകളും മാറ്റിവെച്ച് കാലിക്കറ്റ് സർവകലാശാല",
     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxObkMxb1lkWHhvWUhOTlJ2anh5WG5ZQ2tuR1NSazRpY0NpTEVWRXVIWUhLa2dHSklJcFdPZFFiTjFRU3JZU0ZyYkkwclpsWVJjLTF6dWJ4VGNtTmQ0dWNncnJjalVBYkprd2paMW9UYUlEc1FDVndKVzN3Q2dBWWZQRVFJUGdCejJlY2tBU2N0OHE5VkM4bThiUVlmYklOWklQWTJEM2pWanVUZkRjNGJlY0E0cFIyZDRuYlgzWVJEMjZyajdSMXVLTmxBUHZjS0d2aGfSAdcBQVVfeXFMUHQ4d0dGQWpaV2hHVWVyQWN2Wm0tSVU0M29EVGZsazhIMkFaaC15d1hWcDV2OThvQmp0M3lVbmI1Z0p3cVRhYUl6QVZVRkk3MlpYVUhpb1Q5eEtPMUNjSnl5NzlzazF4VUVrb2pHWjV5ZXowQkpITVZzYl9uWWo4NXJ3Z1o5aVNVZENvZU9FVG5iTGotQnZYU2VYOVdXZS11WmZpSVNta2lfWEM5U0JZOXlmWmNldXRTelJPbDlYOWJWZzhtQ3g4c0R6aUc0OFVUSEprUE1fLTg?oc=5",
     "category": "general",
@@ -1715,9 +1887,9 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Asianet News Malayalam"
   },
   {
-    "id": "gen-125",
-    "title": "സാങ്കേതിക തടസം; കാലിക്കറ്റ് സർവകലാശാലയിൽ നടക്കാനിരിക്കുന്ന പരീക്ഷ മാറ്റി",
-    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOYjk1QzhpOV9wdHk4SkFROHVBbDhYSG5Jc0dPOC1FcjNaNjZVU3FTc2c4MnVNSmlQRVVVNm1JUV9XNGxxSHJHZzZVUVc1aDVYa0RiVGw2ZHp0cXBrbjlfQm5ZYzB3TldDMnJERldKUkFrLTkwTVcyU1htZEpFVmtTOGx0OHQtZ1J3aHM4bWR5djBfZ09pNHBsSXNZemVIOHowQUZfdlRWejdUblhVVXhpSXQ3ZGFRZw?oc=5",
+    "id": "gen-137",
+    "title": "ഇടിമിന്നലിൽ കാലിക്കറ്റ് യൂണിവേഴ്സിറ്റി ഇന്റർനെറ്റ് ഫയർവാൾ തകരാറിലായി; പ്രവർത്തനം സ്തംഭിച്ചു, പരീക്ഷകൾ മാറ്റി",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQeVh6T21aQlJHM0JRc2s4U29OZFBsOTVYUHI4b3BRMlI5ZjB1UnpILWUyMzdTdFR3WGNKZjhUNF9rdjJZU0pCMDV2bnNyZzFaRmxBWGVxU3pqTDFocUhDR291bXgxSzhuLXpqeTNWdnpGWWxlUF9FUHZqZ1lTaGwwaUZ3TGFIbkJPRGNzU3lLZ04xRlBfajV0YWhJaG5QQlBVVFJyRUxB0gGrAUFVX3lxTE9DR1JHdjI1S3h3VzlWbzI5UDZvREJQMExRRGt0cFpGNi02MGxNZGFaTnliVzYwRzEwMmlyODR0LXFOVzVfRDR3RVllR2FQYjhxZzNNSXI1T0kwaU40WmJCcEZpUXhFTHlvMVpOVlJ4ZWFVbFVpNUFzVDM2dVlmVXl6N0h4bC1tcUFnb1FORjNvem55S2FLbXhob1Q1YVFMekN0LWI5TkdpS3NGRQ?oc=5",
     "category": "general",
     "category_label": "CUC News",
     "sub_type": "Exam & Schedule",
@@ -1725,10 +1897,23 @@ const VERIFIED_NOTICES_DATASET = [
     "published_at": "2026-10-24T12:30:00+05:30",
     "timestamp": 1792825200000,
     "is_new": false,
-    "source": "ETV Bharat"
+    "source": "Mathrubhumi"
   },
   {
-    "id": "gen-126",
+    "id": "gen-138",
+    "title": "കാലിക്കറ്റ് സർവകലാശാല തിങ്കളാഴ്‌ച നടത്താനിരുന്ന പരീക്ഷകൾ മാറ്റിവച്ചു",
+    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOd2V5Z0dMYjlqRWZKcFpuQkRnQXFWZGVtOEsweFVEelpQZlhnSFhMbmFpbGN5Q3l3Q2JKb2FMcmlId1FwTlJRSDJUZmdlNm9VbU1tYVJFQ2c0SHMya1IwN3kydFBlSnJaWUlUN3lUYUU1UzdlWHRIZDFCMWRSQ2pXZW1OUk9RS2RPeGRv?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Exam & Schedule",
+    "date": "24 Oct 2026",
+    "published_at": "2026-10-24T12:30:00+05:30",
+    "timestamp": 1792825200000,
+    "is_new": false,
+    "source": "Kerala Kaumudi"
+  },
+  {
+    "id": "gen-139",
     "title": "Lightning disrupts Friday exams; Calicut University postpones Monday tests too",
     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOOFIxdmdVY2hrSV9ZM3hQWHVyWl9MTDhnVGhEQks2N0JhV1NCUU94UU93eHoyNnF6RnlfWWlmb3VkQ3N5LUs3RXpjVUJ4MkViT2tBWUtId1FrZ1UxbWpCSjg3ZXhIbTc2Uy1hMUQ1T05oUzBxdzc5cTR4cnkyMGJzVl9MdHFnelJyWEZlbWNodXk4VmhwQXN3WTZieGJ2LUdEQ3A5Y1dEYm0xTmJZektJUU1DbGk?oc=5",
     "category": "general",
@@ -1741,7 +1926,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Kerala Kaumudi"
   },
   {
-    "id": "gen-127",
+    "id": "gen-140",
     "title": "Calicut University Exam Update: All Monday Exams Postponed After Network Outage Remains Unresolved",
     "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPTGpDUHFCTFJzQkNaUU5hcTRFc2w3UmhKZUZGS1FlS1gxaDV3SFR3WFB4dURLMk9RYzVLdElVeC1CZW1CMmFja2F3VzJ6eDdwRW9tYmkxRHhia3BoaFZYaHB2bWpWMVFyNVlCREM3Rk5jSGJsaEFmbmpsTlUyZjd6ejNIS2VZRWRNQU9scWhtMEF2RTdVOGhsUkl1eGhVTFVUVjBwMXI1U29TbzZJLTZYTTlKUFRWUlc3NjliUnlLMm5ncE9JUzVnbDI0MEpiQUJNVmRiLdIB2gFBVV95cUxObGRRSjY1akRHQTFBd3NTbUNicmVlaGR2dE1HMkkybndhZWMtdE9zbzA4OGNiU1FDeG95QlQwNmx2YTFvdzUyZzRKTlRub2hTZDAtYy1qMFNRNWlGSGc2Y3dTOFhlU3ZzYndhM2p2bFgyR1RERTNkYm5QM2Vnc091ZFlMeXV3emlqbmc2NnZadnZOaW45TmN0cHhBbXRqazhzYkVJWXhfLUp1X3JKU0tyc21ZLVQtX1Y3cUhqakJfR3FCMDV1YkVhQ0p0ZEdIQWVCclhLYjJsRVZhZw?oc=5",
     "category": "general",
@@ -1752,19 +1937,6 @@ const VERIFIED_NOTICES_DATASET = [
     "timestamp": 1792825200000,
     "is_new": false,
     "source": "Asianet Newsable"
-  },
-  {
-    "id": "gen-128",
-    "title": "ശക്തമായ മഴ; എംജി, കാലിക്കറ്റ് സർവകലാശാല പരീക്ഷകൾ മാറ്റി, ഇന്ന് അറിയേണ്ടതെല്ലാം",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPOHVGMEQ0U19uanVrYmc3d0R3Z2pNdVN3LXhFUThJWHhBdTdWdFdkYlI3Z0F3UWlGdTV0cXUtMnVyVko5SXZSUy0zV01vS0t6dXRQUUd4c1Zzc1g0VzdMWUd2UFV5U21peU9sR2drX3BaSGJhMGViUjJiYkZOYVRVZlh0UDU4M2xQTVphQWRjZ3l6aV9VaDg1WVJYZWNJbzYzbnZsaDZSUXhWY2FCWC1LVS1tQ1NWS1nSAbwBQVVfeXFMTnRwVWNPTEo4ZU92d05zS29tTWpOYTdOc1BVVmppSkp5a1Z2R2Y4V09pb2ZEdnFURUhyUTFTUnZBVVVaSUZCOU83aXIxUkxwQWx0by1OUzBwZHgtekY5ZGUtZGJ4STg0NnR6TG9maEdKX1BDVlRLVVlPc1VJLTE4RzJ3Q0M4ODFCcDNhaDVoTURpamlrRXVUMzN2UFAzcmoyWWNPVXlRbXIzMmtPSDFwX1JOd2h4bEZ1UnRDLWM?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Exam & Schedule",
-    "date": "23 Oct 2026",
-    "published_at": "2026-10-23T12:30:00+05:30",
-    "timestamp": 1792738800000,
-    "is_new": false,
-    "source": "Asianet News Malayalam"
   },
   {
     "id": "exnot11339",
@@ -1809,21 +1981,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "exnot11334",
-    "title": "Notification regarding the online registration of Second Semester PG Diploma in Data Science and Analytics (Project Mode) (2024 admn onwards) Regular/ Supplementary Examinations April 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-22 12:54:43_exnot11334.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Registration",
-    "date": "22 Oct 2026",
-    "published_at": "2026-10-22T12:54:43+05:30",
-    "timestamp": 1792653883000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "gen-133",
+    "id": "gen-144",
     "title": "കാലിക്കറ്റ് സർവകലാശാല നാളെ നടത്താനിരുന്ന എല്ലാ പരീക്ഷകളും മാറ്റിവെച്ചു",
     "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOWmczZkJVdXlZclEyTzNhUWJhanNBM2lROUFHekJXUW5UMjBUcVV1WU1NX2xBS296UXV1RmY0SU5QaXpGdmZqTlU2MFJ4cnU2Q0VCa05nUlVyT0FoN1NQUy1mMTlCeXdzTkRPZGZ5QVN6NnUwRTd3cGtjUVNZYXN2TUx2QTZiR2lFcGVWWThQM1FpS1RZcHdmSjYxM0RRazRzc25YUmhxQjU2WkNyX3NGX0lrZGNDQ0dWNi13dko4WEwySHYzXzI4N2RaS2xTRGdvVjJSTUNQWXZNUdIB3wFBVV95cUxPZ2pKNk9DbWhLNmdoR1BZb2cxdTZiWENQTWxFSUJaQ0lUbmEyOG1aUTk1dkU0eExyY2pWQkRZWmpZME1qUnl3NThfdjJ6R1FEcVp4bENTSTkxeDB1Vk9PcnpHZGZTRFdRX2EwOHJDQTJ3U3VrSW1QMk9UZEhTc1ZRYl9TckVneXdBZnFxaDhwanJDSU53cUlDNHJ2dE1MUmY4MGc3elFyVUxtQ19BZDV0SkQ5cHRxVEJwNVVUajBvMHllTWZYUlN2cGZuM2FJQktweHZUbnZSMnRKZlEwVVpR?oc=5",
     "category": "general",
@@ -1836,7 +1994,20 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Asianet News Malayalam"
   },
   {
-    "id": "gen-134",
+    "id": "gen-145",
+    "title": "കാലിക്കറ്റ് സർവകലാശാല നാളത്തെ പരീക്ഷകൾ മാറ്റി; ഇന്റേണൽ, പ്രാക്റ്റിക്കൽ പരീക്ഷകൾക്ക് മാറ്റമില്ല",
+    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPTm9xNENJSXQ5Z1U0bkhlMUtrMTVER0g3bVE4bF80OF8yakhHdEljeE5zOXJZeXFOTF9kbndoTEs1VU1jbW40Rmdsd1V0VE5nRnFmTzd2U1NfX21NQVQtZkR1MkZUNUE5Y1hZN2lsSG1tZlpyNU55RWYzYmNSSW5JeWNRT0Y?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Exam & Schedule",
+    "date": "22 Oct 2026",
+    "published_at": "2026-10-22T12:30:00+05:30",
+    "timestamp": 1792652400000,
+    "is_new": false,
+    "source": "Jaihind News"
+  },
+  {
+    "id": "gen-146",
     "title": "ഇടിമിന്നലിൽ സർവർ തകരാറിലായി: കാലിക്കറ്റ് സർവകലാശാല നാളത്തെ പരീക്ഷകൾ മാറ്റി | Madhyamam",
     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNYWVVd3h1blFSQ0FlRHNiYUlDYzBQNFljLTJxQjFra0VIRTVQZ1RBcUt3ZldHODB2aUw2SGpTb0RQRHFaVjFURlY2RENkV04xOXR4VzNHSmQ1ZkFLZkZZdlE5WHd2akFNanl1c2VvUXFadGdLWTFyMElSNXNfcS1CZFV0UjRSTkdXSVVla3FLeUtGemFvTTg3TlNpWXdsckxJQ01nc1ZZS0g3MEZHUEIzSHNqVWRDeWd1RkFzeNIBwgFBVV95cUxOMWlWdUhtdVpBMFNObER4N1ZIenRyaS1YT0d0VG1ybGhDcVE0UDdkN3pZaXoyVm51aGNITFFHSzhxdGYyR3NDU241a3ZJSGhQRkdVclhuWnUyTVdNaVJpX2hRRm5XYTBRTTdJOG5UQVVKMEZPMDNkUldBSW9zNUx1SzdQbE5BYWhwWEs1Y1FhOUNZZFo0aDBveDQ4VEFzSVlETXg2aVBHSDVpTEI3eEtqc2FMaFk0ckI0ekhUSDJpUGVKQQ?oc=5",
     "category": "general",
@@ -1849,7 +2020,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Madhyamam"
   },
   {
-    "id": "gen-135",
+    "id": "gen-147",
     "title": "University of Calicut postpones October 23 exams due to technical reasons",
     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPd3BaSWRXQ1JLTE5oZkUwaW1lNUhaYldEVjlDTk9mWm5uaFpMTDNOY3BaM3JGWTROQzJnaHoxUnl4QVlzUktnNEZyMXNfdm1KcjB1OS1wV29ESzZUM3ZOUG9YVXRTaF9sMDJ0emNDNHRkemVXU0NIN3JCYVRTTnk0NG1mSFBDMS1GTnhrdXZmV1UxTEE?oc=5",
     "category": "general",
@@ -1862,7 +2033,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Kerala Kaumudi"
   },
   {
-    "id": "gen-136",
+    "id": "gen-148",
     "title": "Calicut University boards row puts Kerala’s UDF govt under fire over ‘Sangh links’",
     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxORjMzUlZSdWZibnBIcjJKMnMwdGUxcG1pdjdkc2FkVGs2VjR0LVJCX3RXWmp6NUxMY0plbkhJUmFEX0JVZ1h3X0NiMU9Sd00tR1lYTVozd2U1RjFJWXVPeFhNOVp3cmg4QzI4QnJXbmJnMnNmd2xLdVh1bzZpNGdYeEJpMVpLTkhMbEkwUGxSM3pHMFFkZDRPQzgwU0dzbjE4am9DMmRIa3p1VDB2U1ZHV1lDZnBZU1k3?oc=5",
     "category": "general",
@@ -1875,7 +2046,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "The Federal"
   },
   {
-    "id": "gen-137",
+    "id": "gen-149",
     "title": "കാലിക്കറ്റ് സർവകലാശാല അക്കാദമിക് സമിതി നിയമനങ്ങളിൽ സംഘപരിവാർ സ്വാധീനം; യുഡിഎഫ് മൗനത്തിനെതിരെ എസ്എഫ്ഐയും ഫ്രറ്റേണിറ്റിയും",
     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQT2NFLVVKTkR2SzVOU0gtd2FxZGxBQ1RITWxPM2s4UmdMNVVDZHo2QlBKTUNhM3I3SGI1T0taNzF6QmhpT1RQVjBaMnh1aGVpTEplb0szbkpKcDZCX2xPUWNTeHFUMlU2TmFzWGJ5dDg5N3VfcDZoNlE1X3JBQUVtSEpoSjdzVTQ0NTB5Z1NIZks4UVotVXNWLWNSRjBVd1ZFQXhsSU1Pd2lhVlFmSnVVdXhpRU55a3o0Zk5kZlR3b9IBzAFBVV95cUxQVVoxRXFhWm44czhjcEdIcjU3VVpiRTlIeU52NDZXMmZtWXJTRWJ3TFY1WjBsRnkzSGc3U2tfVFlrTmVSUEYwZzFXVkhlRC1nNzdrUXVITnlPcU9EUVZ5bk1aRmx4UnJUM1VZQnlHU0ZxWm1yb3ZrYzFLdlhUZHBBZWxCZkxEQU8yejVkNWJBRjZZZ1hHOGxGOTJQUnRDTTlJS180ZnBvSFh6N1lrc0ctTVdUUTFxVjJmbExoRGxRaC0zd1ZlQ2ZjbkdrS3c?oc=5",
     "category": "general",
@@ -1888,7 +2059,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Samakalika Malayalam"
   },
   {
-    "id": "gen-138",
+    "id": "gen-150",
     "title": "കാലിക്കറ്റ് സർവകലാശാല പഠനബോർഡിൽ മരിച്ച അധ്യാപികയും; യോഗ്യരായവരെ മാറ്റിനിർത്തിയെന്ന് ആരോപണം",
     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOcWt0WVNEaGxDeXI2V3ZObHNCd2NjUUI0N2lpS3BmWXBwVjY4by1NbF9QZFc4RldrVVFZN2FSeWZvbDJwcFVxNnFZM3BTdWFMbzNVQ0R1azR2ODlQMXF4VG9jQnRieFJRTkJJU2otRUNLbmJkZ0ctZ3o4SWlKXzFCSWtYLVhzdDgwS0NDWXV1NkVvMWRLNzJ3RFk4Y3HSAaIBQVVfeXFMTVBVdWNhLV9PcW9ISnBLVFQ0ODE5MkNqLWhQNWdZcnRVMWtnMno1WjM1MmhOVlIwUEpmcWRtVUdYT0YzYWFkWUFweXA1UEs2cDZqZV9zM05uRmt0c3NGQ19NTEx3a3hOQ18xbVhsUmdYazllamowSXB0dG9zUWJ2MUhrQ0oyNzgyQVVZbFpValFWNGtPRnVzSW9GbjAtbDBOQVh3?oc=5",
     "category": "general",
@@ -1899,89 +2070,6 @@ const VERIFIED_NOTICES_DATASET = [
     "timestamp": 1792393200000,
     "is_new": false,
     "source": "Mathrubhumi"
-  },
-  {
-    "id": "gen-139",
-    "title": "മരിച്ച അധ്യാപികയെ ബോർഡ് ഓഫ് സ്റ്റഡീസ് അംഗമാക്കി കാലിക്കറ്റ് സർവകലാശാല",
-    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5xeFR2SWtOekloTFRKUHdEZzZUSjVoRDN0S2dXOFVmXzlFNXhWVTNYd0ZZVFZMLUs4eDVjeGZzb3VDWTd4U0E1YXRseFYwMzA2TktCbUljMm5PQ2dVQVFxRjU4TFdJT0YyYjRmTEtaWlR2Q1ZjSElvbGtkNkVoZVk?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "18 Oct 2026",
-    "published_at": "2026-10-18T12:30:00+05:30",
-    "timestamp": 1792306800000,
-    "is_new": false,
-    "source": "Deshabhimani"
-  },
-  {
-    "id": "sse840",
-    "title": "Notification/ Time Table - Postponement of Third Semester PG (CBCSS 2019 Scheme) One Time Regular Supplementary Examinations September 2024 (2020 Admision)/September 2025 (2021 Admission)/September 2026 (2022 Admission), scheduled on 28.10.2026.",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-17 17:25:42_sse840.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "17 Oct 2026",
-    "published_at": "2026-10-17T17:25:42+05:30",
-    "timestamp": 1792238142000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse839",
-    "title": "Notification - Postponement of Third Semester PG (CBCSS - 2019 Scheme) One Time Regular Supplementary Examinations September 2024 (2020 Admision)/September 2025 (2021 Admission)/September 2026 (2022 Admission), scheduled on 28.10.2026.",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-17 17:24:09_sse839.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "17 Oct 2026",
-    "published_at": "2026-10-17T17:24:09+05:30",
-    "timestamp": 1792238049000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse838",
-    "title": "Revised Time Table for the Third Semester MCA (2020 Scheme - 2022 Admission) One Time Regular Supplementary Examinations, September 2026",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-17 17:16:46_sse838.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "17 Oct 2026",
-    "published_at": "2026-10-17T17:16:46+05:30",
-    "timestamp": 1792237606000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse837",
-    "title": "Revised Notification/Time Table for the Third Semester MCA (2020 Scheme - 2022 Admission) One Time Regular Supplementary Examinations, September 2026",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-17 17:14:30_sse837.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "17 Oct 2026",
-    "published_at": "2026-10-17T17:14:30+05:30",
-    "timestamp": 1792237470000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11333",
-    "title": "Special Examination i.r.o. Third Semester (PG-CBCSS) Regular Examination November 2025 for the candidate Aswathi P K (Reg.No.EKAYMCS001)",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-17 16:59:32_exnot11333.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Notice",
-    "date": "17 Oct 2026",
-    "published_at": "2026-10-17T16:59:32+05:30",
-    "timestamp": 1792236572000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
   },
   {
     "id": "exnot11332",
@@ -2026,20 +2114,6 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "exnot11329",
-    "title": "Notification regarding the Online registration of Seventh Semester Integrated P.G. Regular Examinations November 2026, for the candidates of Affiliated Colleges (CBCSS) admitted through lateral entry",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-17 15:40:57_exnot11329.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Registration",
-    "date": "17 Oct 2026",
-    "published_at": "2026-10-17T15:40:57+05:30",
-    "timestamp": 1792231857000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
     "id": "exnot11328",
     "title": "Notification regarding online registration of First Semester MBA International Finance & MBA Health Care Management (CUCSS- 2024 Scheme- 2024 Admission onwards) Regular/ Supplementary Examinations January 2027",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-17 15:32:00_exnot11328.pdf",
@@ -2068,7 +2142,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-151",
+    "id": "gen-156",
     "title": "Calicut University UG Result 2026 Out - Check Revaluation Results Online @ uoc.ac.in",
     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPV0dPbFYwVGlScDRIZFIxc3dwZVo0VlBmMzV2Tm4zelN4ZC1aLW9tOXhXaHh2dFpXMm9JNzNhV0hzenQwYzlGVjYxOEF6c0wyQmRhNHE2QVNudWxhclBEeHEyXzVNTkt6clpWQjA1MkNEazVBY0VaSUtQdVBoNnY0VnFPMWNvVFBwSlRlU2doN3VIRF9UUXcwd1FJQ3hXcm9wTE15NS1ZQXg3Zm40Rm16RFBFTjVqZEk?oc=5",
     "category": "general",
@@ -2081,7 +2155,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "FreeJobAlert.Com"
   },
   {
-    "id": "adm-152",
+    "id": "adm-157",
     "title": "PhD 2026 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1792216457_Notifications_PhD4293.pdf",
     "category": "admission",
@@ -2094,7 +2168,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-153",
+    "id": "adm-158",
     "title": "PhD 2026: Online application commences on 17.10.2026 at 11.00 am",
     "url": "https://admission.uoc.ac.in/downloads/1792154399_Press_Release_PhD6638.pdf",
     "category": "admission",
@@ -2265,7 +2339,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-165",
+    "id": "gen-170",
     "title": "Institutional Development Plan",
     "url": "https://docs.uoc.ac.in/website/news/2026-10-16%2014:22:48_new2371.pdf",
     "category": "general",
@@ -2488,6 +2562,19 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
+    "id": "gen-186",
+    "title": "Calicut University Result 2026 Out - Check UG & PG Result Online @ uoc.ac.in",
+    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObW5kWHhTZnV5N0xPbWU3VlNMNUtVOXE4b0RaYkhHeFlucVFnaEtIRkVYWng3X0d1LVJHT2RnX1JlSE5XdmFpQ1J5cy1xbDNDaHVzSUVwUHkzLVRGbklkRVNSQWxiY2c3OWZOd0RoRFhRTFAyQ3pmWTc3Q0d5dXc1aTNLSF9HZ1Z0cHlibl9acmhZTVU4bGptT2V5X0U0cFFyUjliN0V2d1FMeHB3a09V?oc=5",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Exam & Schedule",
+    "date": "15 Oct 2026",
+    "published_at": "2026-10-15T12:30:00+05:30",
+    "timestamp": 1792047600000,
+    "is_new": false,
+    "source": "FreeJobAlert.Com"
+  },
+  {
     "id": "exnot11298",
     "title": "Time table for Third Semester Integrated B.Des. + M.Des. Dual Degree Programme (2023 Scheme - 2025 Admission) Regular Examinations November 2026",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-15 10:04:47_exnot11298.pdf",
@@ -2502,7 +2589,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "cdoe-182",
+    "id": "cdoe-188",
     "title": "TIME TABLE FOR THE FIRST SEMESTER UG ONLINE COURSE INTERNAL EXAMINATIONS (BA HISTORY AND BA SOCIOLOGY – SCHEMES A AND B) FOR THE ACADEMIC YEAR 2025–2026, ACADEMIC SESSION FEBRUARY 2026 (FOR UG ONLINE CANDIDATES OF THE CENTRE FOR DISTANCE AND ONLINE EDUCATION (CDOE))",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/10/UG-First-Sem-internal-Exam-set-2_revised-Notification.pdf",
     "category": "cdoe",
@@ -2515,7 +2602,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-183",
+    "id": "cdoe-189",
     "title": "Notification regarding extension of Scheme Change application period for candidates admitted to CDOE Online UG and PG Programmes in the February 2026 Admission Session",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/10/CHEME-CHANGE-EXTENSION.pdf",
     "category": "cdoe",
@@ -2528,7 +2615,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-184",
+    "id": "cdoe-190",
     "title": "Notification regarding Scheme Change Application for candidates admitted to CDOE Online UG and PG Programmes in the February 2026 Admission Session",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/10/Notification-Scheme-Change-224993-CDOE-H-ASST-4-2026-Admn.pdf",
     "category": "cdoe",
@@ -2541,7 +2628,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-185",
+    "id": "cdoe-191",
     "title": "കാലിക്കറ്റ് സർവകലാശാലയുടെ ഓൺലൈൻ എം.ബി.എ. പ്രവേശനം: ഫീസ് അടയ്ക്കുന്നതിനുള്ള സമയപരിധി ഒക്ടോബർ 13 വരെ നീട്ടി.",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/10/NEW-PRESS-RELEASE-38739-CDOE-A-ASST-2-2026-Admn.pdf",
     "category": "cdoe",
@@ -2554,7 +2641,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-186",
+    "id": "cdoe-192",
     "title": "Notification for Spot Admission (through the admission portal) to the Vacant Seats in the Online MBA (Human Resource Management) Programme (UGC-Entitled) for the Academic Year 2026-27 (August 2026 Academic Session)",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/10/38739-CDOE-A-ASST-2-2026-Admn-ONLINE-MBA-HRM-SPOT-ADMISSION-NOTIFICATION.pdf",
     "category": "cdoe",
@@ -2567,7 +2654,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-187",
+    "id": "cdoe-193",
     "title": "PUBLICATION OF RANK LIST FOR ONLINE MBA (HUMAN RESOURCE MANAGEMENT) PROGRAMME (UGC-ENTITLED) - CENTRE FOR DISTANCE AND ONLINE EDUCATION FOR THE ACADEMIC YEAR 2026-27 (AUGUST 2026 SESSION)",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/10/Ranklist-MBA.pdf",
     "category": "cdoe",
@@ -2580,7 +2667,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-188",
+    "id": "cdoe-194",
     "title": "Notification - Internal Examination of First Semester UG Online courses (BA SOCIOLOGY,BA HISTORY ) for The Centre For Distance and Online Education (CDOE) for the Academic Year 2025–26, Academic Session February 2026",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/10/UG-first-sem-internal-exam-notification-2025_26-adm-feb-session-.pdf",
     "category": "cdoe",
@@ -2619,36 +2706,6 @@ const VERIFIED_NOTICES_DATASET = [
     "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
-  },
-  {
-    "id": "exnot11295",
-    "title": "Notification regarding the online registration of First, Third, Fifth, Seventh & Ninth Semester Integrated PG Regular / Supplementary / Improvement Examination November 2026 for candidates of University Teaching Departments",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-14 17:07:41_exnot11295.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Registration",
-    "date": "14 Oct 2026",
-    "published_at": "2026-10-14T17:07:41+05:30",
-    "timestamp": 1791977861000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11294",
-    "title": "Notification regarding the postponement of Fifth Semester U.G. (CBCSS & CUCBCSS) Supplementary / Improvement Examination November 2026 / November 2025 for the candidates of Affiliated Colleges / School of Drama and Fine Arts, Dr. John Matthai Centre, Aranattukara, Thrissur / Private Registration / Centre for Distance and Online Education (CDOE)",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-14 16:52:12_exnot11294.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Postponement",
-    "date": "14 Oct 2026",
-    "published_at": "2026-10-14T16:52:12+05:30",
-    "timestamp": 1791976932000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": [
-      "cdoe"
-    ]
   },
   {
     "id": "exnot11293",
@@ -2721,33 +2778,6 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-198",
-    "title": "Calicut University Revaluation Result 2026 Out - Check M.A & M.Com Result Online @ uoc.ac.in",
-    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQb1ZDVGRVc0c3TjQxSl9lVWtlblk1aXJlY1Q2bGlnLW1ERm50dExwSHB1WldSRWE2Nm1Ua2YwMTVDcEc1OWgzR21iQ1FXTG1pdFdGYktTZ3ZoNy1WWE0tcDlnbWxrME1DUFRTQzBSeWxMYU1ZYy1NTl9RZjM3RDFGMDk5SjFGVUdnaTFlM1RPUnZzZURaMGg1Wl9MNjZBUVpra3p1R19Md0ozZENPR1c1N3c1SDl6Nnp3RDNlWFFWcFk4Zw?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Exam & Schedule",
-    "date": "14 Oct 2026",
-    "published_at": "2026-10-14T12:30:00+05:30",
-    "timestamp": 1791961200000,
-    "is_new": false,
-    "source": "FreeJobAlert.Com"
-  },
-  {
-    "id": "exnot11288",
-    "title": "Notification regarding the online registration of Third Semester B.Com., LL.B. (Hons.) (2021 to 2025 Admissions) Regular/ Supplementary Examinations, October 2026/ Third Semester B.Com., LL.B. (Hons.) (2020 Admission) Supplementary Examinations, October 2025",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-14 10:43:14_exnot11288.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Registration",
-    "date": "14 Oct 2026",
-    "published_at": "2026-10-14T10:43:14+05:30",
-    "timestamp": 1791954794000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
     "id": "exnot11287",
     "title": "Corrected schedule of Fifth Semester Four Year Under Graduate (FYUGP) Regular Examinations November 2026 (2024 Admission onwards) for the candidates of Affiliated Colleges.",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-14 10:19:27_exnot11287.pdf",
@@ -2804,20 +2834,6 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "exnot11283",
-    "title": "Notification regarding the postponement of Sixth Semester LL.B. Unitary Degree (3-year) (2015 Scheme - 2020 to 2023 Admissions) Regular / Supplementary Examinations April 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-13 15:35:10_exnot11283.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Postponement",
-    "date": "13 Oct 2026",
-    "published_at": "2026-10-13T15:35:10+05:30",
-    "timestamp": 1791885910000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
     "id": "exnot11282",
     "title": "Notification for uploading APC and Internal Marks in respect of Third Semester LLM Regular Examination November (2025 Admission only) for the candidates of Department of Law, Calicut University Campus",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-13 15:30:17_exnot11282.pdf",
@@ -2846,50 +2862,6 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "exnot11279",
-    "title": "Notification regarding the postponement of Sixth & Tenth Semester B.B.A., LL.B. (Hons.) Regular / Supplementary Examinations April 2026 / November 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-13 15:21:37_exnot11279.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Postponement",
-    "date": "13 Oct 2026",
-    "published_at": "2026-10-13T15:21:37+05:30",
-    "timestamp": 1791885097000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11277",
-    "title": "Notification regarding the online registration of First Semester B.Voc. - CUFYVP Regular / Supplementary / Improvement Examination November 2026 (2025 & 2026 Admission), for the candidates of Affiliated Colleges",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-13 09:50:48_exnot11277.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Registration",
-    "date": "13 Oct 2026",
-    "published_at": "2026-10-13T09:50:48+05:30",
-    "timestamp": 1791865248000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11276",
-    "title": "Commencement Notification for First Semester M.A./ M.Sc./ M.Com./ M.S.W./ M.A. Journalism and Mass Communication/ M.T.T.M/ MTHM/ MHM R/S/I Exam Nov 2026 (PG- CBCSS- 2019 Scheme- 2023 Admission onwards) for the candidates of affiliated colleges, M.A./ M.Sc./ M.Com (P.G.-SDE-CBCSS) S/I Exam Nov 2026 (2019 Scheme) for SDE/ CDOE, First Semester MCA (2026 Scheme) Regular Exam Nov 2026, MCA Supplementary Exam Nov 2026 (2020 Scheme) & First Semester M.Sc Health and Yoga Therapy R/S Exam Dec 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-12 17:00:30_exnot11276.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Notice",
-    "date": "12 Oct 2026",
-    "published_at": "2026-10-12T17:00:30+05:30",
-    "timestamp": 1791804630000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": [
-      "cdoe"
-    ]
-  },
-  {
     "id": "exnot11275",
     "title": "Commencement notification of Third Semester Examination November 2026 (2024 Admission onwards) for the candidates of Affiliated Colleges.",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-12 16:38:41_exnot11275.pdf",
@@ -2902,19 +2874,6 @@ const VERIFIED_NOTICES_DATASET = [
     "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
-  },
-  {
-    "id": "gen-211",
-    "title": "Calicut University Assistant Professor Recruitment 2026 – Apply Online",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZzJzTThzeTRMMERVenhyQ0lFdnFKdUY0U1NOZ3Y3U1JFdmNIdEY0a2lpSHpiR3dhdWFUdWpKWGZUdU95ekdFdW9YVGVQVTUwSW0wX1NQN2ViRFZCNkUwN0c0ZFZRYnBSWVVBU0JpV3RBVHVRSmxodVluYmJneE5SWnMyVnFUR3FoRnBzaGwwWVdGeHBQeDBYZHN1YXk4Mm8yQ2F6c0ozV1Q2ZmtaNzJmNXJuWlM?oc=5",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Media News",
-    "date": "12 Oct 2026",
-    "published_at": "2026-10-12T12:30:00+05:30",
-    "timestamp": 1791788400000,
-    "is_new": false,
-    "source": "FreeJobAlert.Com"
   },
   {
     "id": "exnot11274",
@@ -2984,20 +2943,6 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "09 Oct 2026",
     "published_at": "2026-10-09T12:29:01+05:30",
     "timestamp": 1791529141000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11268",
-    "title": "Notification for uploading APC and Internal Marks in respect of Third Semester B.Voc. - CUFYVP Regular Examination November 2026 (2025 Admission) for the candidates of affiliated colleges",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-09 09:49:02_exnot11268.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Internal Exam",
-    "date": "09 Oct 2026",
-    "published_at": "2026-10-09T09:49:02+05:30",
-    "timestamp": 1791519542000,
     "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
@@ -3073,34 +3018,6 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "exnot11260",
-    "title": "Notification regarding the online registration of the First Semester B.Ed. (2 year) Degree (2021 Syllabus Year - 2023 Admission onwards) Regular / Supplementary Examinations November 2026, for the candidates of University Teacher Education Centres and affiliated Training Colleges",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-06 12:24:30_exnot11260.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Registration",
-    "date": "06 Oct 2026",
-    "published_at": "2026-10-06T12:24:30+05:30",
-    "timestamp": 1791269670000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11259",
-    "title": "Notification regarding the link for Online registration of First Semester (CBCSS - UG) Supplementary / Improvement Examination November 2026 (2021 to 2023 Admissions)for the candidates of Affiliated Colleges and BTA for the candidates of the School of Drama and Fine Arts, Dr. John Matthai Centre, Aranattukara, Thrissur.",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-05 16:27:54_exnot11259.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Registration",
-    "date": "05 Oct 2026",
-    "published_at": "2026-10-05T16:27:54+05:30",
-    "timestamp": 1791197874000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
     "id": "exnot11254",
     "title": "Notification regarding the link for online registration of First Semester FYUGP Regular Examinations November 2026 (2026 Admission) / Deficiency Regular Examination November 2025 (2025 Admission), for the candidates of Affiliated Colleges.",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-05 16:13:23_exnot11254.pdf",
@@ -3115,62 +3032,6 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "exnot11253",
-    "title": "Time Table for Fourth Semester B.Com., LL.B. (Hons.) (2020 to 2024 Admission) Regular/ Supplementary Examinations, March 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-05 12:43:19_exnot11253.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "05 Oct 2026",
-    "published_at": "2026-10-05T12:43:19+05:30",
-    "timestamp": 1791184399000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11252",
-    "title": "Time Table for Sixth Semester B.Com., LL.B. (Honours) (2020 to 2023 Admissions) Regular/ Supplementary Examinations March 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-05 12:43:06_exnot11252.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "05 Oct 2026",
-    "published_at": "2026-10-05T12:43:06+05:30",
-    "timestamp": 1791184386000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11251",
-    "title": "Time Table for Eighth Semester B.Com., LL.B. (Hons.) (2020 to 2022 Admissions) Regular/ Supplementary Examinations, March 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-05 12:42:56_exnot11251.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "05 Oct 2026",
-    "published_at": "2026-10-05T12:42:56+05:30",
-    "timestamp": 1791184376000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11250",
-    "title": "Time Table for Tenth Semester B.Com., LL.B. (Hons.) (2020 & 2021 Admission) Regular/ Supplementary Examinations, March 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-10-05 12:42:43_exnot11250.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "05 Oct 2026",
-    "published_at": "2026-10-05T12:42:43+05:30",
-    "timestamp": 1791184363000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
     "id": "exnot11248",
     "title": "Notification for uploading APC and Internal Marks in respect of Third Semester Four Year Under Graduate (FYUGP) Regular Examination November 2026 (2025 Admission) for the candidates of affiliated colleges.",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-10-05 12:00:49_exnot11248.pdf",
@@ -3180,62 +3041,6 @@ const VERIFIED_NOTICES_DATASET = [
     "date": "05 Oct 2026",
     "published_at": "2026-10-05T12:00:49+05:30",
     "timestamp": 1791181849000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse818",
-    "title": "Notification/Time Table for Eighth Semester B.B.A., LL.B (Hons.) (2011 Scheme- 2016 Admission) One Time Regular Supplementary Examinations September 2025 & Eighth Semester B.B.A., LL.B (Hons.) (2011 Scheme- 2017 Admission) One Time Regular Supplementary Examinations September 2026",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-05 11:26:34_sse818.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "05 Oct 2026",
-    "published_at": "2026-10-05T11:26:34+05:30",
-    "timestamp": 1791179794000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse816",
-    "title": "Notification/Time Table for Fourth Semester B.B.A., LL.B (Hons.) (2011 Scheme- 2016 Admission) One Time Regular Supplementary Examinations September 2025 & Fourth Semester B.B.A., LL.B (Hons.) (2011 Scheme- 2017 Admission) One Time Regular Supplementary Examinations September 2026",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-05 11:22:53_sse816.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "05 Oct 2026",
-    "published_at": "2026-10-05T11:22:53+05:30",
-    "timestamp": 1791179573000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse814",
-    "title": "Notification/Time Table for Eighth Semester B.B.A., LL.B (Hons.) (2011 Scheme- 2016 Admission) One Time Regular Supplementary Examinations September 2025 & Eighth Semester B.B.A., LL.B (Hons.) (2011 Scheme- 2017 Admission) One Time Regular Supplementary Examinations September 2026",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-05 11:07:57_sse814.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "05 Oct 2026",
-    "published_at": "2026-10-05T11:07:57+05:30",
-    "timestamp": 1791178677000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse812",
-    "title": "Notification/Time Table for Fourth Semester B.B.A., LL.B (Hons.) (2011 Scheme- 2016 Admission) One Time Regular Supplementary Examinations September 2025 & Fourth Semester B.B.A., LL.B (Hons.) (2011 Scheme- 2017 Admission) One Time Regular Supplementary Examinations September 2026",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-10-05 11:05:36_sse812.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "05 Oct 2026",
-    "published_at": "2026-10-05T11:05:36+05:30",
-    "timestamp": 1791178536000,
     "is_new": false,
     "source": "Pareeksha Bhavan (UOC)",
     "cross_categories": []
@@ -3437,34 +3242,6 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "sse801",
-    "title": "Notification/Time Table for Fourth Semester LL.B Unitary Degree (3-year) (2015 Scheme - 2018 Admission) One Time Regular Supplementary Examinations September 2025 & Fourth Semester LL.B Unitary Degree (3-year) (2015 Scheme - 2019 Admission) One Time Regular Supplementary Examinations September 2026,",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-09-26 15:32:26_sse801.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "26 Sep 2026",
-    "published_at": "2026-09-26T15:32:26+05:30",
-    "timestamp": 1790416946000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "sse799",
-    "title": "Notification/Time Table for Fourth Semester LL.B Unitary Degree (3-year) (2015 Scheme - 2018 Admission) One Time Regular Supplementary Examinations September 2025 & Fourth Semester LL.B Unitary Degree (3-year) (2015 Scheme - 2019 Admission) One Time Regular Supplementary Examinations September 2026,",
-    "url": "https://docs.uoc.ac.in/website/sse/2026-09-26 15:23:22_sse799.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "26 Sep 2026",
-    "published_at": "2026-09-26T15:23:22+05:30",
-    "timestamp": 1790416402000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
     "id": "exnot11193",
     "title": "Result-II Semester M.Com CCSS (Regular - 2025 admission) April 2026 Examination.",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-09-23 16:30:55_exnot11193.pdf",
@@ -3509,66 +3286,6 @@ const VERIFIED_NOTICES_DATASET = [
     ]
   },
   {
-    "id": "exnot11190",
-    "title": "TIME TABLE FOR FIFTH SEMESTER B.VOC. REGULAR / SUPPLEMENTARY / IMPROVEMENT EXAMINATIONS NOVEMBER 2026 (2021 ADMISSION TO 2024 ADMISSION [CBCSS - V - UG])",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-09-23 11:24:46_exnot11190.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "23 Sep 2026",
-    "published_at": "2026-09-23T11:24:46+05:30",
-    "timestamp": 1790142886000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11189",
-    "title": "TIME TABLE OF OPEN COURSES FOR FIFTH SEMESTER (CBCSS-U.G.) SUPPLEMENTARY / IMPROVEMENT EXAMINATIONS NOVEMBER 2026 (2021 TO 2023 ADMISSIONS) (FOR CANDIDATES OF CENTRE FOR DISTANCE AND ONLINE EDUCATION (CDOE) / PRIVATE REGISTRATION )",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-09-23 11:12:23_exnot11189.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "23 Sep 2026",
-    "published_at": "2026-09-23T11:12:23+05:30",
-    "timestamp": 1790142143000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": [
-      "cdoe"
-    ]
-  },
-  {
-    "id": "exnot11188",
-    "title": "Revised Notification regarding the commencement of Fifth Semester - U.G. (CUCBCSS & CBCSS) Supplementary / Improvement Examinations November 2026 (2021 to 2023 Admission - CBCSS - U.G.) for the candidates of Affiliated Colleges / School of Drama and Fine Arts, Dr. John Matthai Centre, Aranattukara, Thrissur / Centre for Distance and Online Education (CDOE) / Private Registration",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-09-23 11:03:46_exnot11188.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Exam Registration",
-    "date": "23 Sep 2026",
-    "published_at": "2026-09-23T11:03:46+05:30",
-    "timestamp": 1790141626000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": [
-      "cdoe"
-    ]
-  },
-  {
-    "id": "exnot11187",
-    "title": "TIME TABLE FOR NINTH SEMESTER INTEGRATED P.G. REGULAR / SUPPLEMENTARY / IMPROVEMENT EXAMINATION (CBCSS) NOVEMBER 2026 (2020 to 2022 ADMISSIONS) (FOR THE CANDIDATES OF AFFILIATED COLLEGES)",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-09-23 10:39:41_exnot11187.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "23 Sep 2026",
-    "published_at": "2026-09-23T10:39:41+05:30",
-    "timestamp": 1790140181000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
     "id": "exnot11183",
     "title": "Examination Schedule - Fifth Semester CUFYUGP Regular Examination November 2026 (2024 Admission) for the candidates of Affiliated Colleges",
     "url": "https://docs.uoc.ac.in/website/notifications/2026-09-22 12:43:51_exnot11183.pdf",
@@ -3611,7 +3328,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "adm-261",
+    "id": "adm-241",
     "title": "MPEd (CUCET 2026) - Last Date of online registration extended till 22.09.2026",
     "url": "https://admission.uoc.ac.in/downloads/1789540165_Press_Release_entrance6904.pdf",
     "category": "admission",
@@ -3624,91 +3341,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "exnot11158",
-    "title": "TIME TABLE FOR FOURTH SEMESTER LL.B UNITARY DEGREE (3-YEAR) (2015 SCHEME - 2020 TO 2024 ADMISSIONS) REGULAR / SUPPLEMENTARY EXAMINATIONS APRIL 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-09-15 15:09:17_exnot11158.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "15 Sep 2026",
-    "published_at": "2026-09-15T15:09:17+05:30",
-    "timestamp": 1789465157000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11157",
-    "title": "TIME TABLE FOR SIXTH SEMESTER LL.B UNITARY DEGREE (3-YEAR) (2015 SCHEME - 2020 TO 2023 ADMISSIONS) REGULAR / SUPPLEMENTARY EXAMINATIONS APRIL 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-09-15 15:07:41_exnot11157.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "15 Sep 2026",
-    "published_at": "2026-09-15T15:07:41+05:30",
-    "timestamp": 1789465061000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11156",
-    "title": "TIME TABLE FOR FOURTH SEMESTER B.B.A., LL.B (Hons.) (2011 SCHEME - 2019 TO 2024 ADMISSIONS) REGULAR / SUPPLEMENTARY EXAMINATIONS APRIL 2026 AND FOR FOURTH SEMESTER B.B.A., LL.B (Hons.) (2011 SCHEME - 2018 ADMISSION) SUPPLEMENTARY EXAMINATION NOVEMBER 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-09-15 14:55:40_exnot11156.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "15 Sep 2026",
-    "published_at": "2026-09-15T14:55:40+05:30",
-    "timestamp": 1789464340000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11155",
-    "title": "TIME TABLE FOR SIXTH SEMESTER B.B.A., LL.B (Hons.) (2011 SCHEME - 2019 TO 2023 ADMISSIONS) REGULAR / SUPPLEMENTARY EXAMINATIONS APRIL 2026 AND FOR SIXTH SEMESTER B.B.A., LL.B (Hons.) (2011 SCHEME - 2018 ADMISSION) SUPPLEMENTARY EXAMINATIONS NOVEMBER 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-09-15 14:51:53_exnot11155.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "15 Sep 2026",
-    "published_at": "2026-09-15T14:51:53+05:30",
-    "timestamp": 1789464113000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11154",
-    "title": "TIME TABLE FOR EIGHTH SEMESTER B.B.A., LL.B (Hons.) (2011 SCHEME - 2019 TO 2022 ADMISSIONS) REGULAR / SUPPLEMENTARY EXAMINATIONS APRIL 2026 AND FOR EIGHTH SEMESTER B.B.A., LL.B (Hons.) (2011 SCHEME - 2018 ADMISSION) SUPPLEMENTARY EXAMINATIONS NOVEMBER 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-09-15 14:46:23_exnot11154.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "15 Sep 2026",
-    "published_at": "2026-09-15T14:46:23+05:30",
-    "timestamp": 1789463783000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "exnot11153",
-    "title": "TIME TABLE FOR TENTH SEMESTER B.B.A, LL.B (Hons.) (2011 SCHEME - 2019 TO 2021 ADMISSIONS) REGULAR / SUPPLEMENTARY EXAMINATIONS APRIL 2026 AND TENTH SEMESTER B.B.A, LL.B (Hons.) (2011 SCHEME - 2018 ADMISSION) SUPPLEMENTARY EXAMINATION NOVEMBER 2026",
-    "url": "https://docs.uoc.ac.in/website/notifications/2026-09-15 14:44:37_exnot11153.pdf",
-    "category": "regular",
-    "category_label": "Regular / Exam Bhavan",
-    "sub_type": "Timetable",
-    "date": "15 Sep 2026",
-    "published_at": "2026-09-15T14:44:37+05:30",
-    "timestamp": 1789463677000,
-    "is_new": false,
-    "source": "Pareeksha Bhavan (UOC)",
-    "cross_categories": []
-  },
-  {
-    "id": "cdoe-268",
+    "id": "cdoe-242",
     "title": "Notification for Extension of the Last Date for Registration to the Online MBA (Human Resource Management) Programme (UGC-Entitled) for the Academic Year 2026–27 (August 2026 Academic Session)",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/09/38739-CDOE-A-ASST-2-2026-Adm-Online-MBA-Registration-extended.pdf",
     "category": "cdoe",
@@ -3721,7 +3354,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-269",
+    "id": "cdoe-243",
     "title": "Notification for extension of last date for admission to online Undergraduate and Postgraduate programmes (UGC-entitled) for the academic year 2026–27 (August 2026 academic session)",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/09/EXTENSION-NOTIFICATION-38739-CDOE-A-ASST-2-2026-Admn-2.pdf",
     "category": "cdoe",
@@ -3734,7 +3367,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-270",
+    "id": "cdoe-244",
     "title": "Notifiation - UG First Semester Assignment Submission (2026 Feb. Admission)- reg.",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/09/Notification-UG-First-Semester-Assignment-Submission.pdf",
     "category": "cdoe",
@@ -3747,7 +3380,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-271",
+    "id": "cdoe-245",
     "title": "Notification for admission to Online MBA (Human Resource Management) Programme (UGC-Entitled) for the Academic year 2026–27, Academic Session August 2026",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/09/Online-MBAHRM-Notification-38739-CDOE-A-ASST-2-2026-Admn.pdf",
     "category": "cdoe",
@@ -3760,7 +3393,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-272",
+    "id": "cdoe-246",
     "title": "Notification for Admission to Online B.Com. (Honours) Programme (UGC-Entitled) for the Academic Year 2026–27, August 2026 Session",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/09/Online-B.com-Honours-Notification-38739-CDOE-A-ASST-2-2026-Admn_I.pdf",
     "category": "cdoe",
@@ -3773,7 +3406,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-273",
+    "id": "cdoe-247",
     "title": "Notification - The walk-in-interview for preparing a panel of Assistant Professors in Arabic on contract basis at the Centre for Distance and Online Education.",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/09/Notification-Arabic-44942-CDOE-C-ASST-1-2025-Admn.pdf",
     "category": "cdoe",
@@ -3786,7 +3419,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-274",
+    "id": "cdoe-248",
     "title": "Notification for extension of last date for admission to online Undergraduate and Postgraduate programmes (UGC-entitled) for the academic year 2026–27 (August 2026 Session)",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/09/EXTENSION-NOTIFICATION-38739-CDOE-A-ASST-2-2026-Admn.pdf",
     "category": "cdoe",
@@ -3799,7 +3432,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-275",
+    "id": "cdoe-249",
     "title": "Revised Postal Charge - reg.",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/09/8970-2026-Admn.pdf",
     "category": "cdoe",
@@ -3812,7 +3445,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "adm-276",
+    "id": "adm-250",
     "title": "Afsal Ul Ulama 2026-27 admission - Extended",
     "url": "https://admission.uoc.ac.in/downloads/1789125666_Press_Release_afsal8926.pdf",
     "category": "admission",
@@ -3853,7 +3486,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "adm-279",
+    "id": "adm-253",
     "title": "Press release - B.Ed 2026-27 admission - Online registration extended till 05/09/206 , 11 a.m",
     "url": "https://admission.uoc.ac.in/downloads/1788435648_Press_Release_bedu3782.pdf",
     "category": "admission",
@@ -3896,7 +3529,7 @@ const VERIFIED_NOTICES_DATASET = [
     ]
   },
   {
-    "id": "adm-282",
+    "id": "adm-256",
     "title": "2026-27 Late Inter-University Transfers to Third and Fifth Semesters of FYUGP",
     "url": "https://admission.uoc.ac.in/downloads/1788430179_Press_Release_Transfer2984.pdf",
     "category": "admission",
@@ -3909,7 +3542,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-283",
+    "id": "adm-257",
     "title": "2026-27 Late Inter-University Transfers to Third and Fifth Semesters of FYUGP - Late Application Notification",
     "url": "https://admission.uoc.ac.in/downloads/1788430100_Notifications_Transfer5566.pdf",
     "category": "admission",
@@ -3950,7 +3583,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "adm-286",
+    "id": "adm-260",
     "title": "Extension of last date of Afsal Ul Ulama Preliminary - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1788323964_Press_Release_afsal6502.pdf",
     "category": "admission",
@@ -3963,7 +3596,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-287",
+    "id": "adm-261",
     "title": "Integrated PG in affiliated colleges - Last Date of Admission extended till 11/09/2026",
     "url": "https://admission.uoc.ac.in/downloads/1787562531_Press_Release_IP8362.pdf",
     "category": "admission",
@@ -3976,7 +3609,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-288",
+    "id": "adm-262",
     "title": "PGCAP 2026 : Last date of admission extended to 11.09.2026",
     "url": "https://admission.uoc.ac.in/downloads/1787387903_Press_Release_pg8142.pdf",
     "category": "admission",
@@ -4005,7 +3638,7 @@ const VERIFIED_NOTICES_DATASET = [
     ]
   },
   {
-    "id": "adm-290",
+    "id": "adm-264",
     "title": "BPEd & BPES(Integrated) - Late Registration, Last Date:29.08.2026",
     "url": "https://admission.uoc.ac.in/downloads/1787304448_Press_Release_entrance6139.pdf",
     "category": "admission",
@@ -4018,7 +3651,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-291",
+    "id": "adm-265",
     "title": "PGDRP - 2026 Entrance Examination",
     "url": "https://admission.uoc.ac.in/downloads/1787138753_Press_Release_PartTimeCourses4771.pdf",
     "category": "admission",
@@ -4031,7 +3664,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-292",
+    "id": "adm-266",
     "title": "Rank list published",
     "url": "https://admission.uoc.ac.in/downloads/1787133199_Press_Release_ug4733.pdf",
     "category": "admission",
@@ -4044,7 +3677,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-293",
+    "id": "adm-267",
     "title": "Certificate Course in Professional Dog Training and Canine Forensics 2026 Batch I - Online Registration extended up to 31.08.2026",
     "url": "https://admission.uoc.ac.in/downloads/1787132406_Press_Release_PartTimeCourses9410.pdf",
     "category": "admission",
@@ -4057,7 +3690,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-294",
+    "id": "adm-268",
     "title": "MBA Admissions 2026 - Online Registration Reopened up to 14.09.2026, 4.00 PM",
     "url": "https://admission.uoc.ac.in/downloads/1787132316_Press_Release_MBA2147.pdf",
     "category": "admission",
@@ -4070,7 +3703,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-295",
+    "id": "adm-269",
     "title": "PGDRP Entrance Test 2026 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1787118737_Press_Release_PartTimeCourses8110.pdf",
     "category": "admission",
@@ -4083,7 +3716,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-296",
+    "id": "adm-270",
     "title": "Revised Schedule for FYUG-CAP 2026 Admission",
     "url": "https://admission.uoc.ac.in/downloads/1787118652_Press_Release_ug5157.pdf",
     "category": "admission",
@@ -4096,7 +3729,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-297",
+    "id": "adm-271",
     "title": "Late College Transfer Rank List Published",
     "url": "https://admission.uoc.ac.in/downloads/1786957334_Press_Release_Transfer6192.pdf",
     "category": "admission",
@@ -4123,7 +3756,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "cdoe-299",
+    "id": "cdoe-273",
     "title": "Notification - The walk-in-interview for preparing a panel of Assistant Professors in Master of Business Administration(MBA) on contract basis",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/08/MBA-Notification-126526-CDOE-C-ASST-1-2026-Admn.pdf",
     "category": "cdoe",
@@ -4136,7 +3769,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "adm-300",
+    "id": "adm-274",
     "title": "PGDRP-2026 Last date extended up to 17.08.2026",
     "url": "https://admission.uoc.ac.in/downloads/1786705379_Press_Release_PartTimeCourses3609.pdf",
     "category": "admission",
@@ -4165,7 +3798,7 @@ const VERIFIED_NOTICES_DATASET = [
     ]
   },
   {
-    "id": "adm-302",
+    "id": "adm-276",
     "title": "FYUG-2026-27-EDITING",
     "url": "https://admission.uoc.ac.in/downloads/1786621678_Press_Release_ug9059.pdf",
     "category": "admission",
@@ -4210,7 +3843,7 @@ const VERIFIED_NOTICES_DATASET = [
     ]
   },
   {
-    "id": "adm-305",
+    "id": "adm-279",
     "title": "B.Ed 2026 : Late Registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1786448438_Press_Release_bedu1409.pdf",
     "category": "admission",
@@ -4223,7 +3856,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-306",
+    "id": "adm-280",
     "title": "MBA Admissions 2026 - Online Registration Reopened up to 14.08.2026, 4.00 PM",
     "url": "https://admission.uoc.ac.in/downloads/1786344587_Press_Release_MBA1515.pdf",
     "category": "admission",
@@ -4250,7 +3883,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "adm-308",
+    "id": "adm-282",
     "title": "FYUG-2026-27-FIFTH ALLOTMENT PUBLISHED",
     "url": "https://admission.uoc.ac.in/downloads/1786338271_Press_Release_ug6096.pdf",
     "category": "admission",
@@ -4277,7 +3910,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "adm-310",
+    "id": "adm-284",
     "title": "2026 - 27 - Inter-Collegiate Late Application - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1785929857_Press_Release_ug2067.pdf",
     "category": "admission",
@@ -4290,7 +3923,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-311",
+    "id": "adm-285",
     "title": "2026 - 27 - Inter-Collegiate Late Application - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1785929756_Notifications_ug6406.pdf",
     "category": "admission",
@@ -4303,7 +3936,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-312",
+    "id": "adm-286",
     "title": "PGDRP 2026 NOTIFICATION - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1785913837_Press_Release_PartTimeCourses9670.pdf",
     "category": "admission",
@@ -4316,7 +3949,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-313",
+    "id": "adm-287",
     "title": "Non English Entrance Examination 2026 27 - Result Published",
     "url": "https://admission.uoc.ac.in/downloads/1785840825_Press_Release_pg5724.pdf",
     "category": "admission",
@@ -4329,7 +3962,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-314",
+    "id": "adm-288",
     "title": "Certificate Course in Professional Dog Training and Canine Forensics 2026 Batch I - Online Registration extended up to 10.08.2026",
     "url": "https://admission.uoc.ac.in/downloads/1785827538_Press_Release_PartTimeCourses5520.pdf",
     "category": "admission",
@@ -4342,7 +3975,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-315",
+    "id": "adm-289",
     "title": "PGDRP 2026: NOTIFICATION",
     "url": "https://admission.uoc.ac.in/downloads/1785822843_Notifications_PartTimeCourses2041.pdf",
     "category": "admission",
@@ -4355,7 +3988,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-316",
+    "id": "adm-290",
     "title": "B.Ed admission 2026-27 Extended till 10-08-2026, 5 PM\"",
     "url": "https://admission.uoc.ac.in/downloads/1785753814_Press_Release_bedu6068.pdf",
     "category": "admission",
@@ -4368,7 +4001,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-317",
+    "id": "adm-291",
     "title": "FYUG-2026-27-LATE REGISTRATION & EDITING",
     "url": "https://admission.uoc.ac.in/downloads/1785736535_Press_Release_ug4296.pdf",
     "category": "admission",
@@ -4381,7 +4014,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-318",
+    "id": "adm-292",
     "title": "MBA Admissions 2026 - Online Registration Reopened up to 05.08.2026, 4.00 PM",
     "url": "https://admission.uoc.ac.in/downloads/1785475303_Press_Release_MBA2049.pdf",
     "category": "admission",
@@ -4394,7 +4027,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-319",
+    "id": "adm-293",
     "title": "Afzal-Ul-Ulama (Preliminary ) 2026-27 admission extended till 28/08/2026 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1785405351_Press_Release_afsal5188.pdf",
     "category": "admission",
@@ -4407,7 +4040,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-320",
+    "id": "adm-294",
     "title": "FYUGCAP 2026-27 :Fourth Allotment Published Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1785239849_Press_Release_ug5017.pdf",
     "category": "admission",
@@ -4420,7 +4053,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-321",
+    "id": "adm-295",
     "title": "B.Ed Admission 2026 - Sport Quota Rank list published",
     "url": "https://admission.uoc.ac.in/downloads/1785151861_Press_Release_bedu5056.pdf",
     "category": "admission",
@@ -4433,7 +4066,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-322",
+    "id": "adm-296",
     "title": "FYUG INTER UNIVERSITY TRANSFER -Rank list published",
     "url": "https://admission.uoc.ac.in/downloads/1784999996_Press_Release_ug3073.pdf",
     "category": "admission",
@@ -4446,7 +4079,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-323",
+    "id": "adm-297",
     "title": "PGCAP 2026 - Admission Process after 27.07.2026 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1784955529_Press_Release_pg1046.pdf",
     "category": "admission",
@@ -4459,7 +4092,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-324",
+    "id": "adm-298",
     "title": "PGCAP 2026 - Admission Process after 27.07.2026 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1784902043_Press_Release_pg1564.pdf",
     "category": "admission",
@@ -4472,7 +4105,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-325",
+    "id": "adm-299",
     "title": "FYUGP INTER UNIVERSITY PROVISIONAL RANK LIST PUBLISHED.",
     "url": "https://admission.uoc.ac.in/downloads/1784901903_Press_Release_ug4309.pdf",
     "category": "admission",
@@ -4485,7 +4118,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-326",
+    "id": "adm-300",
     "title": "CUCET 2026 -MSW, MCA, MA Journalism & Mass Communication - Late Registration",
     "url": "https://admission.uoc.ac.in/downloads/1784798729_Press_Release_entrance4458.pdf",
     "category": "admission",
@@ -4498,7 +4131,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-327",
+    "id": "adm-301",
     "title": "M.Ed 2026-27 -Provisional Waiting rank list published",
     "url": "https://admission.uoc.ac.in/downloads/1784797247_Press_Release_medu8596.pdf",
     "category": "admission",
@@ -4525,7 +4158,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "adm-329",
+    "id": "adm-303",
     "title": "PGCAP 2026 - Admission from waiting rank list - extended to 27.07.2026- Press release",
     "url": "https://admission.uoc.ac.in/downloads/1784632667_Press_Release_pg4117.pdf",
     "category": "admission",
@@ -4554,7 +4187,7 @@ const VERIFIED_NOTICES_DATASET = [
     ]
   },
   {
-    "id": "adm-331",
+    "id": "adm-305",
     "title": "FYUG-2026-27- Late Registration and Editing",
     "url": "https://admission.uoc.ac.in/downloads/1784550503_Press_Release_ug2140.pdf",
     "category": "admission",
@@ -4567,7 +4200,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-332",
+    "id": "adm-306",
     "title": "B.Ed 2026 waiting rank list published",
     "url": "https://admission.uoc.ac.in/downloads/1784548217_Press_Release_bedu1700.pdf",
     "category": "admission",
@@ -4594,7 +4227,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "adm-334",
+    "id": "adm-308",
     "title": "Hall Ticket - Non BA English Entrance - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1784366725_Press_Release_pg8849.pdf",
     "category": "admission",
@@ -4607,7 +4240,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-335",
+    "id": "adm-309",
     "title": "2026-27 AY - Inter-University Transfers to Third and Fifth Semesters of FYUGP",
     "url": "https://admission.uoc.ac.in/downloads/1784288651_Notifications_ug4764.pdf",
     "category": "admission",
@@ -4620,7 +4253,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-336",
+    "id": "adm-310",
     "title": "2026-27 AY - Inter-University Transfers to Third and Fifth Semesters of FYUGP",
     "url": "https://admission.uoc.ac.in/downloads/1784288529_Press_Release_ug5504.pdf",
     "category": "admission",
@@ -4633,7 +4266,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-337",
+    "id": "adm-311",
     "title": "CUCET 2026 - MPEd, BPES(Integrated) & BPEd - Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1784198947_Press_Release_entrance7762.pdf",
     "category": "admission",
@@ -4646,7 +4279,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-338",
+    "id": "adm-312",
     "title": "PGCAP 2026 - Late Registration & Editing Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1784178204_Press_Release_pg1952.pdf",
     "category": "admission",
@@ -4659,7 +4292,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-339",
+    "id": "adm-313",
     "title": "PGCAP 2026 - Late Registration & Editing Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1784115205_Press_Release_pg6412.pdf",
     "category": "admission",
@@ -4688,7 +4321,7 @@ const VERIFIED_NOTICES_DATASET = [
     ]
   },
   {
-    "id": "cdoe-341",
+    "id": "cdoe-315",
     "title": "Notification - Panel for video recording of online courses (Sociology, History, Economics, Political Science, Commerce, English & Malayalam) - applications invited -reg",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/07/Notification-panel-2.pdf",
     "category": "cdoe",
@@ -4701,7 +4334,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-342",
+    "id": "cdoe-316",
     "title": "Notification for Admission to Online Undergraduate and Postgraduate Programmes (UGC- Entitled) for the Academic Year 2026–27, Academic Session August 2026.",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/07/notification_2026.pdf",
     "category": "cdoe",
@@ -4714,7 +4347,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-343",
+    "id": "cdoe-317",
     "title": "Notification - Panel for video recording of online MBA programme - applications invited -reg",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/07/Notification-Panel-for-MBA.pdf",
     "category": "cdoe",
@@ -4727,7 +4360,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "cdoe-344",
+    "id": "cdoe-318",
     "title": "Press Relese - Panel for video recording of MBA online course - applications invited",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/07/PR-MBA.pdf",
     "category": "cdoe",
@@ -4740,7 +4373,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "adm-345",
+    "id": "adm-319",
     "title": "College Transfer Admission date extended to 15.07.26 , 5 P.M",
     "url": "https://admission.uoc.ac.in/downloads/1784029833_Press_Release_ug5221.pdf",
     "category": "admission",
@@ -4753,7 +4386,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-346",
+    "id": "adm-320",
     "title": "CU CET 2026 - Late Registration, Last Date:18.07.2026 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1784029518_Press_Release_entrance8071.pdf",
     "category": "admission",
@@ -4766,7 +4399,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-347",
+    "id": "adm-321",
     "title": "MBA 2026 admission Provisional rank list (Second Phase) published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1784005928_Press_Release_MBA7203.pdf",
     "category": "admission",
@@ -4779,7 +4412,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-348",
+    "id": "adm-322",
     "title": "Certificate Course in Professional Dog Training and Canine Forensics 2026 Batch I - Online Registration extended up to 20.07.2026",
     "url": "https://admission.uoc.ac.in/downloads/1783937175_Press_Release_entrance4273.pdf",
     "category": "admission",
@@ -4792,7 +4425,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-349",
+    "id": "adm-323",
     "title": "FYUG-2026-27- Third Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1783937064_Press_Release_ug2605.pdf",
     "category": "admission",
@@ -4805,7 +4438,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-350",
+    "id": "adm-324",
     "title": "IP CAP Rank list 2026-27 published",
     "url": "https://admission.uoc.ac.in/downloads/1783930816_Press_Release_IP1037.pdf",
     "category": "admission",
@@ -4818,7 +4451,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-351",
+    "id": "adm-325",
     "title": "M.Ed secondt allotment published",
     "url": "https://admission.uoc.ac.in/downloads/1783694359_Press_Release_medu5675.pdf",
     "category": "admission",
@@ -4831,7 +4464,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-352",
+    "id": "adm-326",
     "title": "Revised Admission schedule of B.Ed / B.Ed Special Education (Hearing Impairment and Intellectual Disability ) for the academic year 2026 - 27",
     "url": "https://admission.uoc.ac.in/downloads/1783693653_Press_Release_bedu9186.pdf",
     "category": "admission",
@@ -4844,7 +4477,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-353",
+    "id": "adm-327",
     "title": "PGCAP 2026: Confirmation for Non English Entrance - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1783657991_Press_Release_pg8436.pdf",
     "category": "admission",
@@ -4857,7 +4490,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-354",
+    "id": "adm-328",
     "title": "College Transfer Provisional Rank List (FYUGP Third and Fifth Semester ) Published",
     "url": "https://admission.uoc.ac.in/downloads/1783505661_Press_Release_ug4009.pdf",
     "category": "admission",
@@ -4870,7 +4503,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-355",
+    "id": "adm-329",
     "title": "PGCAP 2026 - Provisional Rank List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1783423994_Press_Release_pg5891.pdf",
     "category": "admission",
@@ -4883,7 +4516,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-356",
+    "id": "adm-330",
     "title": "B.Ed / B.Ed special education second allotment published",
     "url": "https://admission.uoc.ac.in/downloads/1783423277_Press_Release_bedu2956.pdf",
     "category": "admission",
@@ -4896,7 +4529,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-357",
+    "id": "adm-331",
     "title": "FYUGCAP 2026-27 Edit Facility Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1783336686_Press_Release_ug3718.pdf",
     "category": "admission",
@@ -4909,7 +4542,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-358",
+    "id": "adm-332",
     "title": "Afsal Ul Ulama Preliminary 2026 second allotment published",
     "url": "https://admission.uoc.ac.in/downloads/1783334306_Press_Release_afsal5134.pdf",
     "category": "admission",
@@ -4922,7 +4555,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-359",
+    "id": "adm-333",
     "title": "BPEd, BPES(Integrated) and MPEd - Provisional Rank List Published",
     "url": "https://admission.uoc.ac.in/downloads/1783331390_Press_Release_entrance7234.pdf",
     "category": "admission",
@@ -4935,7 +4568,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "cdoe-360",
+    "id": "cdoe-334",
     "title": "Press Release - Admission to Online Undergraduate and Postgraduate Programmes (UGC- Entitled) for the Academic Year 2026–27, Academic Session August 2026.",
     "url": "https://cdoe.uoc.ac.in/wp-content/uploads/2026/07/Press-release-06.07.26.pdf",
     "category": "cdoe",
@@ -4948,7 +4581,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "CDOE Calicut University"
   },
   {
-    "id": "adm-361",
+    "id": "adm-335",
     "title": "M.Ed 2026 - 27 : First Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1783078828_Press_Release_medu1629.pdf",
     "category": "admission",
@@ -4961,7 +4594,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-362",
+    "id": "adm-336",
     "title": "FYUG SECOND ALLOTMENT ADMISSION DATE EXTENDED",
     "url": "https://admission.uoc.ac.in/downloads/1782991337_Press_Release_ug5927.pdf",
     "category": "admission",
@@ -4974,7 +4607,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-363",
+    "id": "adm-337",
     "title": "PGCAP 2026-27 : Late Registration, Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1782991055_Press_Release_pg9222.pdf",
     "category": "admission",
@@ -4987,7 +4620,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-364",
+    "id": "adm-338",
     "title": "Afzal - Ul - Ulama (Preliminary) 2026 - 27: First Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1782882260_Press_Release_afsal3550.pdf",
     "category": "admission",
@@ -5000,7 +4633,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-365",
+    "id": "adm-339",
     "title": "PGCAP 2026 - Late Registration & Editing",
     "url": "https://admission.uoc.ac.in/downloads/1782882081_Press_Release_pg9156.pdf",
     "category": "admission",
@@ -5013,7 +4646,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-366",
+    "id": "adm-340",
     "title": "PGCAP 2026 - Late Registration & Editing",
     "url": "https://admission.uoc.ac.in/downloads/1782820252_Press_Release_pg3744.pdf",
     "category": "admission",
@@ -5026,7 +4659,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-367",
+    "id": "adm-341",
     "title": "The last date for submitting 2026 AY College Transfer applications has been extended up to 02.07.2026, 5:00 P.M",
     "url": "https://admission.uoc.ac.in/downloads/1782819835_Press_Release_ug3220.pdf",
     "category": "admission",
@@ -5039,7 +4672,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-368",
+    "id": "adm-342",
     "title": "FYUG-2026-27- Second Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1782818204_Press_Release_ug9768.pdf",
     "category": "admission",
@@ -5052,7 +4685,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-369",
+    "id": "adm-343",
     "title": "Certificate Course in Professional Dog Training and Canine Forensics 2026 Batch I - Online Registration extended up to 10.07.2026",
     "url": "https://admission.uoc.ac.in/downloads/1782753953_Press_Release_entrance6461.pdf",
     "category": "admission",
@@ -5065,7 +4698,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-370",
+    "id": "adm-344",
     "title": "Integrated PG 2026-27 - Second Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1782729789_Press_Release_IP3769.pdf",
     "category": "admission",
@@ -5078,7 +4711,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-371",
+    "id": "adm-345",
     "title": "B.Ed / B.Ed Special Education First Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1782727443_Press_Release_bedu5062.pdf",
     "category": "admission",
@@ -5091,7 +4724,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-372",
+    "id": "adm-346",
     "title": "CUCET 2026 - MA Journalism & Mass Communication, MSW - Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1782635075_Press_Release_entrance2161.pdf",
     "category": "admission",
@@ -5104,7 +4737,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-373",
+    "id": "adm-347",
     "title": "The link for confirmation for non english entrance will be reopened on 27.06.2026",
     "url": "https://admission.uoc.ac.in/downloads/1782538069_Press_Release_pg7013.pdf",
     "category": "admission",
@@ -5117,7 +4750,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-374",
+    "id": "adm-348",
     "title": "The link for confirmation for non english entrance will be reopened on 27.06.2026",
     "url": "https://admission.uoc.ac.in/downloads/1782538034_Press_Release_pg1513.pdf",
     "category": "admission",
@@ -5130,7 +4763,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-375",
+    "id": "adm-349",
     "title": "2026-27 AY College Transfer - FYUGP Third and Fifth Semesters - Online registration Started - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1782386957_Press_Release_ug9576.pdf",
     "category": "admission",
@@ -5143,7 +4776,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-376",
+    "id": "adm-350",
     "title": "2026-27 AY College Transfer - FYUGP Third and Fifth Semesters",
     "url": "https://admission.uoc.ac.in/downloads/1782386764_Notifications_ug6872.pdf",
     "category": "admission",
@@ -5156,7 +4789,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-377",
+    "id": "adm-351",
     "title": "PGCAP 2026 - Second Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1782296533_Press_Release_pg4200.pdf",
     "category": "admission",
@@ -5169,7 +4802,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-378",
+    "id": "adm-352",
     "title": "PGCAP 2026 - Second Allotment Published - Press Release (English)",
     "url": "https://admission.uoc.ac.in/downloads/1782296494_Press_Release_pg5883.pdf",
     "category": "admission",
@@ -5182,7 +4815,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-379",
+    "id": "adm-353",
     "title": "CUCET 2026 : Rank List Published",
     "url": "https://admission.uoc.ac.in/downloads/1782294608_Press_Release_entrance1293.pdf",
     "category": "admission",
@@ -5195,7 +4828,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-380",
+    "id": "adm-354",
     "title": "MBA Final Rank List - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1782217939_Latest_News_MBA8854.pdf",
     "category": "admission",
@@ -5208,7 +4841,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-381",
+    "id": "adm-355",
     "title": "IPCAP 2026 - 27 : First Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1782210205_Press_Release_IP6799.pdf",
     "category": "admission",
@@ -5221,7 +4854,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-382",
+    "id": "adm-356",
     "title": "Afzal - Ul - Ulama (Preliminary) 2026 - 27 : Trial Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1782198708_Press_Release_afsal4385.pdf",
     "category": "admission",
@@ -5234,7 +4867,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-383",
+    "id": "adm-357",
     "title": "FYUGP 2026 : First Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1782133290_Press_Release_ug6127.pdf",
     "category": "admission",
@@ -5247,7 +4880,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-384",
+    "id": "adm-358",
     "title": "MBA 2026 : Admission Provisional Rank List Published.",
     "url": "https://admission.uoc.ac.in/downloads/1782129278_Press_Release_MBA5095.pdf",
     "category": "admission",
@@ -5260,7 +4893,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-385",
+    "id": "adm-359",
     "title": "CUCET 2026 - Online Registration Open for M.A. Development Studies, Integrated MTA, and M.A. Music. Last Date for Registration: 26.06.2026, 10:00 AM.",
     "url": "https://admission.uoc.ac.in/downloads/1782112442_Press_Release_entrance3115.pdf",
     "category": "admission",
@@ -5273,7 +4906,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-386",
+    "id": "adm-360",
     "title": "M A Development Studies (To fill the vacancies that arise due to students exiting after the sixth semester of the Integrated MA Development Studies Programme (2023 admission batch))",
     "url": "https://admission.uoc.ac.in/downloads/1782112143_Notifications_entrance9369.pdf",
     "category": "admission",
@@ -5286,7 +4919,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-387",
+    "id": "adm-361",
     "title": "MBA Admissions 2026: Online Registration Reopened up to 27.06.2026, 4.00 PM - KMAT 2026 Session II Qualified Candidates Can Also Apply",
     "url": "https://admission.uoc.ac.in/downloads/1781954901_Press_Release_MBA4014.pdf",
     "category": "admission",
@@ -5299,7 +4932,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-388",
+    "id": "adm-362",
     "title": "CU-CET 2026 : Provisional Rank list Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1781868400_Press_Release_entrance3727.pdf",
     "category": "admission",
@@ -5312,7 +4945,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-389",
+    "id": "adm-363",
     "title": "B.Ed/ B.Ed Special Education Trial Allotment published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1781868176_Press_Release_bedu9335.pdf",
     "category": "admission",
@@ -5341,7 +4974,7 @@ const VERIFIED_NOTICES_DATASET = [
     ]
   },
   {
-    "id": "adm-391",
+    "id": "adm-365",
     "title": "Integrated PG 2026-27 - Trial Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1781781524_Press_Release_IP2228.pdf",
     "category": "admission",
@@ -5354,7 +4987,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-392",
+    "id": "adm-366",
     "title": "Post Graduate Diploma in Digital Media Production (Project Mode) programme - Online Registration extended up to 29.06.2026",
     "url": "https://admission.uoc.ac.in/downloads/1781764671_Press_Release_PartTimeCourses5031.pdf",
     "category": "admission",
@@ -5367,7 +5000,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-393",
+    "id": "adm-367",
     "title": "PGCAP 2026 - First Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1781697061_Press_Release_pg7153.pdf",
     "category": "admission",
@@ -5380,7 +5013,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-394",
+    "id": "adm-368",
     "title": "PGCAP 2026 - First Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1781696942_Press_Release_pg3957.pdf",
     "category": "admission",
@@ -5393,7 +5026,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-395",
+    "id": "adm-369",
     "title": "M.Ed - online registration extended to 27-06-26",
     "url": "https://admission.uoc.ac.in/downloads/1781696401_Press_Release_medu1506.pdf",
     "category": "admission",
@@ -5406,7 +5039,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-396",
+    "id": "adm-370",
     "title": "Certificate Course in Professional Dog Training and Canine Forensics 2026 - Batch I, Online Registration Commenced, Last date- 27.06.2026",
     "url": "https://admission.uoc.ac.in/downloads/1781523512_Press_Release_PartTimeCourses4109.pdf",
     "category": "admission",
@@ -5419,7 +5052,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-397",
+    "id": "adm-371",
     "title": "Certificate Course in Professional Dog Training and Canine Forensics 2026 - Batch I - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1781523459_Notifications_PartTimeCourses3378.pdf",
     "category": "admission",
@@ -5432,7 +5065,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-398",
+    "id": "adm-372",
     "title": "Afsal Ul Ulama Preliminary registration - Extended till 20-06-2026",
     "url": "https://admission.uoc.ac.in/downloads/1781523316_Press_Release_afsal4909.pdf",
     "category": "admission",
@@ -5445,7 +5078,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-399",
+    "id": "adm-373",
     "title": "B.Ed B.Ed Special Education - Online Registration - extended till 15/06/2026 5.00 PM",
     "url": "https://admission.uoc.ac.in/downloads/1781506383_Press_Release_bedu5680.pdf",
     "category": "admission",
@@ -5458,7 +5091,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-400",
+    "id": "adm-374",
     "title": "B.Ed / B.Ed Special Education - Online Registration Extended till 15/06/2026, 11 am",
     "url": "https://admission.uoc.ac.in/downloads/1781264076_Press_Release_bedu4739.pdf",
     "category": "admission",
@@ -5471,7 +5104,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-401",
+    "id": "adm-375",
     "title": "PGCAP 2026 - Confirmation of attendance for Entrance examination for non BA (English)",
     "url": "https://admission.uoc.ac.in/downloads/1781263445_Press_Release_pg1411.pdf",
     "category": "admission",
@@ -5484,7 +5117,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-402",
+    "id": "adm-376",
     "title": "PGCAP 2026 - Confirmation of attendance for Entrance examination for non BA (English)",
     "url": "https://admission.uoc.ac.in/downloads/1781263376_Press_Release_pg2382.pdf",
     "category": "admission",
@@ -5497,7 +5130,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-403",
+    "id": "adm-377",
     "title": "PGCAP 2026 - Trial Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1781261378_Press_Release_pg3766.pdf",
     "category": "admission",
@@ -5510,7 +5143,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-404",
+    "id": "adm-378",
     "title": "The Physical Test of BPES(Integrated), BPED and MPED : Another chance on June 17",
     "url": "https://admission.uoc.ac.in/downloads/1781161952_Press_Release_entrance6013.pdf",
     "category": "admission",
@@ -5523,7 +5156,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-405",
+    "id": "adm-379",
     "title": "MEd Online Registration for 2026-2027 - Last Date 17.06.2026 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1781090913_Press_Release_medu3226.pdf",
     "category": "admission",
@@ -5536,7 +5169,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-406",
+    "id": "adm-380",
     "title": "M.Ed 2026 : Online Registration - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1781090853_Notifications_medu7906.pdf",
     "category": "admission",
@@ -5549,7 +5182,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-407",
+    "id": "adm-381",
     "title": "M.Ed 2026 : Online Registration - Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1781090795_Prospectus_medu9090.pdf",
     "category": "admission",
@@ -5562,7 +5195,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-408",
+    "id": "adm-382",
     "title": "Afzal Ul Ulama (Preliminary) Date Extended upto 15.06.2026 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1781086281_Press_Release_afsal3573.pdf",
     "category": "admission",
@@ -5575,7 +5208,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-409",
+    "id": "adm-383",
     "title": "PGCAP 2026 - Date extended to 08.06.2026, 4.00 pm",
     "url": "https://admission.uoc.ac.in/downloads/1780726862_Press_Release_pg7378.pdf",
     "category": "admission",
@@ -5588,7 +5221,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-410",
+    "id": "adm-384",
     "title": "Project Mode Diploma 2026: Online Registration Extended - Last Date: 15.06.2026",
     "url": "https://admission.uoc.ac.in/downloads/1780558187_Press_Release_PartTimeCourses3459.pdf",
     "category": "admission",
@@ -5601,7 +5234,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-411",
+    "id": "adm-385",
     "title": "Post Graduate Diploma in Digital Media Production (Project Mode) programme - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1780558136_Notifications_PartTimeCourses5693.pdf",
     "category": "admission",
@@ -5614,7 +5247,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-412",
+    "id": "adm-386",
     "title": "FYUGP 2026 - 27 : Online Registration Commenced - Last Date: 12.06.2026",
     "url": "https://admission.uoc.ac.in/downloads/1780401565_Press_Release_ug2392.pdf",
     "category": "admission",
@@ -5627,7 +5260,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-413",
+    "id": "adm-387",
     "title": "FYUGP 2026 - 27 : Online Registration - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1780400855_Notifications_ug1275.pdf",
     "category": "admission",
@@ -5640,7 +5273,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-414",
+    "id": "adm-388",
     "title": "IP CAP Online Registration for 2026-27- Commenced - Last date to apply 12.06.2026",
     "url": "https://admission.uoc.ac.in/downloads/1780400389_Press_Release_IP2133.pdf",
     "category": "admission",
@@ -5653,7 +5286,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-415",
+    "id": "adm-389",
     "title": "IPCAP 2026 - 27 : Online Registration - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1780400259_Notifications_IP2461.pdf",
     "category": "admission",
@@ -5666,7 +5299,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-416",
+    "id": "adm-390",
     "title": "B.Ed / B.Ed Special Education Online Registration for 2026 -27 admission - Extended till 10/06/2026",
     "url": "https://admission.uoc.ac.in/downloads/1780383400_Press_Release_bedu7017.pdf",
     "category": "admission",
@@ -5679,7 +5312,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-417",
+    "id": "adm-391",
     "title": "B.Ed 2026 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1780141160_Prospectus_bedu5890.pdf",
     "category": "admission",
@@ -5692,7 +5325,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-418",
+    "id": "adm-392",
     "title": "PGCAP 2026 : Online Registration Date extended to 05.06.2026, 5.00PM",
     "url": "https://admission.uoc.ac.in/downloads/1780050021_Press_Release_pg3094.pdf",
     "category": "admission",
@@ -5705,7 +5338,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-419",
+    "id": "adm-393",
     "title": "Afzal - Ul - Ulama (Preliminary) 2026 - 27: Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1779795411_Press_Release_afsal2488.pdf",
     "category": "admission",
@@ -5718,7 +5351,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-420",
+    "id": "adm-394",
     "title": "Afzal - Ul - Ulama (Preliminary) 2026 - 27: Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1779795324_Prospectus_afsal3013.pdf",
     "category": "admission",
@@ -5731,7 +5364,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-421",
+    "id": "adm-395",
     "title": "Afzal - Ul - Ulama (Preliminary) 2026 - 27: Notification",
     "url": "https://admission.uoc.ac.in/downloads/1779795258_Notifications_afsal6472.pdf",
     "category": "admission",
@@ -5744,7 +5377,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-422",
+    "id": "adm-396",
     "title": "Project Mode Diploma 2026: Online Registration Commenced- Last Date: 02.06.2026 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1779535589_Press_Release_PartTimeCourses4999.pdf",
     "category": "admission",
@@ -5757,7 +5390,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-423",
+    "id": "adm-397",
     "title": "Project Mode Diploma 2026: Online Registration Commenced- Last Date: 02.06.2026",
     "url": "https://admission.uoc.ac.in/downloads/1779535539_Notifications_PartTimeCourses8702.pdf",
     "category": "admission",
@@ -5770,7 +5403,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-424",
+    "id": "adm-398",
     "title": "B.Ed / B.Ed Special Education Online Registration for 2026-27 - Commenced - Last Date to apply 03/06/2026",
     "url": "https://admission.uoc.ac.in/downloads/1779344205_Press_Release_bedu1670.pdf",
     "category": "admission",
@@ -5783,7 +5416,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-425",
+    "id": "adm-399",
     "title": "PGCAP 2026 : Online Registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1779277464_Press_Release_pg6404.pdf",
     "category": "admission",
@@ -5796,7 +5429,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-426",
+    "id": "adm-400",
     "title": "PGCAP 2026 : Online Registration - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1779276800_Notifications_pg3751.pdf",
     "category": "admission",
@@ -5809,7 +5442,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-427",
+    "id": "adm-401",
     "title": "CU-CET 2026 : Hall ticket released. The candidates can download the Hall Ticket from Student Login",
     "url": "https://admission.uoc.ac.in/downloads/1778225139_Press_Release_entrance5649.pdf",
     "category": "admission",
@@ -5822,7 +5455,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-428",
+    "id": "adm-402",
     "title": "CUCET - 2026- Eligibility Updations (MSc Statistics and MPEd) - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1776921346_Press_Release_entrance8749.pdf",
     "category": "admission",
@@ -5835,7 +5468,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-429",
+    "id": "adm-403",
     "title": "CUCET - 2026- Eligibility Updations (MSc Statistics and MPEd)",
     "url": "https://admission.uoc.ac.in/downloads/1776921290_Prospectus_entrance5292.pdf",
     "category": "admission",
@@ -5848,7 +5481,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-430",
+    "id": "adm-404",
     "title": "CU-CET 2026 : Last Date for Online Registration Extended till 25.04.2026",
     "url": "https://admission.uoc.ac.in/downloads/1776338335_Press_Release_entrance3077.pdf",
     "category": "admission",
@@ -5861,7 +5494,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-431",
+    "id": "adm-405",
     "title": "Certificate Course in Professional Dog Training and Canine Forensics 2025 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1775800405_Press_Release_PartTimeCourses5608.pdf",
     "category": "admission",
@@ -5874,7 +5507,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-432",
+    "id": "adm-406",
     "title": "MBA Admission 2026 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1774433783_Press_Release_MBA9429.pdf",
     "category": "admission",
@@ -5887,7 +5520,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-433",
+    "id": "adm-407",
     "title": "MBA 2026: Notification cum Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1774433719_Notifications_MBA1654.pdf",
     "category": "admission",
@@ -5900,7 +5533,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-434",
+    "id": "adm-408",
     "title": "CU CET 2026 Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1774266059_Press_Release_entrance8483.pdf",
     "category": "admission",
@@ -5913,7 +5546,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-435",
+    "id": "adm-409",
     "title": "CU-CET 2026 Notification",
     "url": "https://admission.uoc.ac.in/downloads/1774265657_Notifications_entrance5721.pdf",
     "category": "admission",
@@ -5926,7 +5559,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-436",
+    "id": "adm-410",
     "title": "Certificate Course on Professional Dog Training and Canine Forensics- Batch II - Online Registration Commenced, Last date - 23.03.2026",
     "url": "https://admission.uoc.ac.in/downloads/1773211151_Press_Release_PartTimeCourses5756.pdf",
     "category": "admission",
@@ -5939,7 +5572,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-437",
+    "id": "adm-411",
     "title": "Certificate Course in Professional Dog Training and Canine Forensics -Batch II",
     "url": "https://admission.uoc.ac.in/downloads/1773211008_Notifications_PartTimeCourses3526.pdf",
     "category": "admission",
@@ -5952,7 +5585,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-438",
+    "id": "adm-412",
     "title": "Entrance Oriented UG,PG,Integrated PG & LLM (CU-CET 2026) - Online Registration Will be started soon. Tentative date of Entrance Test : 2026 May 14,15 & 16",
     "url": "https://admission.uoc.ac.in/downloads/1772881362_Press_Release_entrance3664.pdf",
     "category": "admission",
@@ -5981,7 +5614,7 @@ const VERIFIED_NOTICES_DATASET = [
     ]
   },
   {
-    "id": "adm-440",
+    "id": "adm-414",
     "title": "Ph.D 2025 : Short List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1772450746_Press_Release_PhD6202.pdf",
     "category": "admission",
@@ -5994,7 +5627,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-441",
+    "id": "adm-415",
     "title": "2024 BATCH FYUGP - FOURTH SEMESTER COLLEGE TRANSFER - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1769685730_Press_Release_ug5830.pdf",
     "category": "admission",
@@ -6007,7 +5640,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-442",
+    "id": "adm-416",
     "title": "2024 BATCH FYUGP - FOURTH SEMESTER COLLEGE TRANSFER - Application Date extended to 28.01.2026 3:00 PM",
     "url": "https://admission.uoc.ac.in/downloads/1769513609_Press_Release_ug8899.pdf",
     "category": "admission",
@@ -6020,7 +5653,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-443",
+    "id": "adm-417",
     "title": "Fourth Semester College Transfer - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1769064823_Press_Release_ug6125.pdf",
     "category": "admission",
@@ -6033,7 +5666,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-444",
+    "id": "adm-418",
     "title": "Fourth Semester College Transfer - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1768991283_Notifications_ug2336.pdf",
     "category": "admission",
@@ -6078,7 +5711,7 @@ const VERIFIED_NOTICES_DATASET = [
     ]
   },
   {
-    "id": "adm-447",
+    "id": "adm-421",
     "title": "PhD : 2025 admission- Late Registration (Malayalam) - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1767001016_Press_Release_PhD6802.pdf",
     "category": "admission",
@@ -6091,7 +5724,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-448",
+    "id": "adm-422",
     "title": "PhD : 2025 admission- Late Registration",
     "url": "https://admission.uoc.ac.in/downloads/1767000914_Press_Release_PhD5659.pdf",
     "category": "admission",
@@ -6104,7 +5737,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-449",
+    "id": "adm-423",
     "title": "Ph.D 2025 - Online Registration Started - Press Release (Malayalam)",
     "url": "https://admission.uoc.ac.in/downloads/1765797568_Press_Release_PhD4636.pdf",
     "category": "admission",
@@ -6117,7 +5750,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-450",
+    "id": "adm-424",
     "title": "Ph.D 2025 - Online Registration Started - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1765797510_Press_Release_PhD6805.pdf",
     "category": "admission",
@@ -6130,7 +5763,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-451",
+    "id": "adm-425",
     "title": "Ph.D 2025 - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1765796208_Notifications_PhD4534.pdf",
     "category": "admission",
@@ -6143,7 +5776,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-452",
+    "id": "adm-426",
     "title": "Certificate and Diploma courses in Hindi.- Online Registration extended up to 20.12.2025",
     "url": "https://admission.uoc.ac.in/downloads/1765794031_Press_Release_PartTimeCourses7868.pdf",
     "category": "admission",
@@ -6156,7 +5789,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-453",
+    "id": "adm-427",
     "title": "Notification for admission to Diploma in Digital Media Production, offered in Project Mode - 2025-2026 (II Batch) - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1764917816_Press_Release_PartTimeCourses6973.pdf",
     "category": "admission",
@@ -6169,7 +5802,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-454",
+    "id": "adm-428",
     "title": "Notification for admission to Diploma in Digital Media Production, offered in Project Mode - 2025-2026 (II Batch)",
     "url": "https://admission.uoc.ac.in/downloads/1764917691_Notifications_PartTimeCourses5538.pdf",
     "category": "admission",
@@ -6182,7 +5815,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-455",
+    "id": "adm-429",
     "title": "PG Diploma in Translation & Secretarial Practice in Hindi, Certificate Course in Commercial & Spoken Hindi - 2026 - 27 - Online Registration Commenced, Last date: 10.12.2025",
     "url": "https://admission.uoc.ac.in/downloads/1764916701_Press_Release_PartTimeCourses7718.pdf",
     "category": "admission",
@@ -6195,7 +5828,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-456",
+    "id": "adm-430",
     "title": "PG Diploma in Translation & Secretarial Practice in Hindi, Certificate Course in Commercial & Spoken Hindi - 2026 -27",
     "url": "https://admission.uoc.ac.in/downloads/1764916613_Notifications_PartTimeCourses5281.pdf",
     "category": "admission",
@@ -6208,7 +5841,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-457",
+    "id": "adm-431",
     "title": "Certificate programme in Professional Dog Training and Canine Forensics - Rank List Published",
     "url": "https://admission.uoc.ac.in/downloads/1764326560_Press_Release_PartTimeCourses6967.pdf",
     "category": "admission",
@@ -6249,7 +5882,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "adm-460",
+    "id": "adm-434",
     "title": "Certificate Course in Professional Dog Training and Canine Forensics - Online Registration extended up to 10.11.2025",
     "url": "https://admission.uoc.ac.in/downloads/1762172085_Press_Release_PartTimeCourses5786.pdf",
     "category": "admission",
@@ -6276,7 +5909,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "adm-462",
+    "id": "adm-436",
     "title": "Certificate Course in Professional Dog Training and Canine Forensics Online Registration Commenced -Notification",
     "url": "https://admission.uoc.ac.in/downloads/1761132995_Notifications_PartTimeCourses4148.pdf",
     "category": "admission",
@@ -6289,7 +5922,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-463",
+    "id": "adm-437",
     "title": "Certificate Course in Professional Dog Training and Canine Forensics Online Registration Commenced Last date- 31.10.2025",
     "url": "https://admission.uoc.ac.in/downloads/1761132943_Press_Release_PartTimeCourses7261.pdf",
     "category": "admission",
@@ -6302,7 +5935,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-464",
+    "id": "adm-438",
     "title": "M.Ed Waiting Rank List - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1760349298_Press_Release_medu3755.pdf",
     "category": "admission",
@@ -6315,7 +5948,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "gen-465",
+    "id": "gen-439",
     "title": "Academic Council",
     "url": "https://docs.uoc.ac.in/website/news/2025-10-13%2015:09:25_new2155.pdf",
     "category": "general",
@@ -6328,7 +5961,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "adm-466",
+    "id": "adm-440",
     "title": "BPEd & BPES(Integrated) - Late Registration, Last Date:10.10.2025",
     "url": "https://admission.uoc.ac.in/downloads/1759836080_Press_Release_entrance4350.pdf",
     "category": "admission",
@@ -6341,7 +5974,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-467",
+    "id": "adm-441",
     "title": "M.Ed Admission 2025- Second Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1759145561_Press_Release_medu4544.pdf",
     "category": "admission",
@@ -6354,7 +5987,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-468",
+    "id": "adm-442",
     "title": "M.Ed admission 2025-26- First Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1758615265_Press_Release_medu8266.pdf",
     "category": "admission",
@@ -6367,7 +6000,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-469",
+    "id": "adm-443",
     "title": "FYUGP-2025-26 - Admission re-opened from 22.09.2025 to 23.09.2025",
     "url": "https://admission.uoc.ac.in/downloads/1758518971_Press_Release_ug3125.pdf",
     "category": "admission",
@@ -6380,7 +6013,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-470",
+    "id": "adm-444",
     "title": "FYUGP-2025-26 - Admission re-opened from 22.09.2025 to 23.09.2025",
     "url": "https://admission.uoc.ac.in/downloads/1758367572_Press_Release_ug5600.pdf",
     "category": "admission",
@@ -6393,7 +6026,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-471",
+    "id": "adm-445",
     "title": "MPED 2025 Admission on 26.09.2025",
     "url": "https://admission.uoc.ac.in/downloads/1758348282_Press_Release_entrance5866.pdf",
     "category": "admission",
@@ -6406,7 +6039,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-472",
+    "id": "adm-446",
     "title": "M.Ed 2025-26 online registration date extended upto 18.09.2025",
     "url": "https://admission.uoc.ac.in/downloads/1757672255_Press_Release_medu4633.pdf",
     "category": "admission",
@@ -6419,7 +6052,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-473",
+    "id": "adm-447",
     "title": "IP CAP-2025-26 - Admission reopened until 15.09.2025",
     "url": "https://admission.uoc.ac.in/downloads/1757653311_Press_Release_IP9039.pdf",
     "category": "admission",
@@ -6432,7 +6065,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-474",
+    "id": "adm-448",
     "title": "CUCET 2025- Admission - extended",
     "url": "https://admission.uoc.ac.in/downloads/1757413653_Press_Release_entrance3306.pdf",
     "category": "admission",
@@ -6445,7 +6078,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-475",
+    "id": "adm-449",
     "title": "PGCAP2025 : Admission - Date Extended - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1757399782_Press_Release_pg4272.pdf",
     "category": "admission",
@@ -6458,7 +6091,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-476",
+    "id": "adm-450",
     "title": "FYUGP-2025-26 - Admission extended until 10.09.2025",
     "url": "https://admission.uoc.ac.in/downloads/1757399337_Press_Release_ug4286.pdf",
     "category": "admission",
@@ -6471,7 +6104,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-477",
+    "id": "adm-451",
     "title": "FYUGP-2025-26 - Admission reopened until 08.09.2025",
     "url": "https://admission.uoc.ac.in/downloads/1756898734_Press_Release_ug4525.pdf",
     "category": "admission",
@@ -6484,7 +6117,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-478",
+    "id": "adm-452",
     "title": "BPES (Integrated) Admissions on 15th Sept and BPED Admission on 16th Sept",
     "url": "https://admission.uoc.ac.in/downloads/1756726294_Press_Release_entrance5739.pdf",
     "category": "admission",
@@ -6497,7 +6130,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-479",
+    "id": "adm-453",
     "title": "POST GRADUATE DIPLOMA IN REHABILITATION PSYCHOLOGY (PGDRP) - Rank Lists Published.'",
     "url": "https://admission.uoc.ac.in/downloads/1756712382_Press_Release_PartTimeCourses3842.pdf",
     "category": "admission",
@@ -6510,7 +6143,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-480",
+    "id": "adm-454",
     "title": "M.Edu 2025-26 Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1756466579_Press_Release_medu2502.pdf",
     "category": "admission",
@@ -6523,7 +6156,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-481",
+    "id": "adm-455",
     "title": "The Rnklists(REVISED) of BPES (INTEGRATED) and B.P.ED (BACHELOR OF PHYSICAL EDUCATION) have been published.",
     "url": "https://admission.uoc.ac.in/downloads/1756277179_Press_Release_entrance9186.pdf",
     "category": "admission",
@@ -6536,7 +6169,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-482",
+    "id": "adm-456",
     "title": "IP CAP 2025-26 Last date for the Admission is extended",
     "url": "https://admission.uoc.ac.in/downloads/1755757054_Press_Release_IP5315.pdf",
     "category": "admission",
@@ -6549,7 +6182,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-483",
+    "id": "adm-457",
     "title": "FYUGP-2025-26 - Last date for the admission extended",
     "url": "https://admission.uoc.ac.in/downloads/1755754236_Press_Release_ug8934.pdf",
     "category": "admission",
@@ -6562,7 +6195,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-484",
+    "id": "adm-458",
     "title": "MBA 2025 : Last Date Extended & Late Registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1755321599_Press_Release_MBA1681.pdf",
     "category": "admission",
@@ -6575,7 +6208,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-485",
+    "id": "adm-459",
     "title": "B.Ed. 2025 : SPORTS QUOTA RANK LIST - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1755084421_Press_Release_bedu1048.pdf",
     "category": "admission",
@@ -6588,7 +6221,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-486",
+    "id": "adm-460",
     "title": "FYUGP-2025-26- EDITING",
     "url": "https://admission.uoc.ac.in/downloads/1754898188_Press_Release_ug6838.pdf",
     "category": "admission",
@@ -6601,7 +6234,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-487",
+    "id": "adm-461",
     "title": "B.Ed Commerce Waiting Rank List Published",
     "url": "https://admission.uoc.ac.in/downloads/1754652659_Press_Release_bedu3307.pdf",
     "category": "admission",
@@ -6614,7 +6247,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-488",
+    "id": "adm-462",
     "title": "PGCAP25- reporting at colleges - date extended - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1754652484_Press_Release_pg9305.pdf",
     "category": "admission",
@@ -6627,7 +6260,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-489",
+    "id": "adm-463",
     "title": "IP CAP 2025-26 RANK LIST Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1754635152_Press_Release_IP4118.pdf",
     "category": "admission",
@@ -6640,7 +6273,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-490",
+    "id": "adm-464",
     "title": "FYUGP INTER UNIVERSITY RANK LIST PUBLISHED",
     "url": "https://admission.uoc.ac.in/downloads/1754479331_Press_Release_ug4586.pdf",
     "category": "admission",
@@ -6653,7 +6286,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-491",
+    "id": "adm-465",
     "title": "FYUG-2025-26- Second Supplementary Allotment Published(For Aided Programmes Only)",
     "url": "https://admission.uoc.ac.in/downloads/1754457754_Press_Release_ug4952.pdf",
     "category": "admission",
@@ -6666,7 +6299,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-492",
+    "id": "adm-466",
     "title": "B.Ed Commerce First Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1754301172_Press_Release_bedu6358.pdf",
     "category": "admission",
@@ -6679,7 +6312,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-493",
+    "id": "adm-467",
     "title": "MBA 2025- GD & Interview- Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1754291271_Press_Release_MBA5020.pdf",
     "category": "admission",
@@ -6692,7 +6325,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-494",
+    "id": "adm-468",
     "title": "Post Graduate Diploma in Rehabilitation Psychology (PGDRP) - 2025 - Hall ticket Released",
     "url": "https://admission.uoc.ac.in/downloads/1754120371_Press_Release_PartTimeCourses4731.pdf",
     "category": "admission",
@@ -6705,7 +6338,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-495",
+    "id": "adm-469",
     "title": "Admission process after 31.07.2025 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1754023658_Press_Release_pg9554.pdf",
     "category": "admission",
@@ -6718,7 +6351,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-496",
+    "id": "adm-470",
     "title": "BPED & BPES(Integrated) Revised Provisional Rank list Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1753871952_Press_Release_entrance8461.pdf",
     "category": "admission",
@@ -6731,7 +6364,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-497",
+    "id": "adm-471",
     "title": "FYUG-2025-26-First Supplementary Allotment Published(For Aided Programmes Only)",
     "url": "https://admission.uoc.ac.in/downloads/1753788988_Press_Release_ug3293.pdf",
     "category": "admission",
@@ -6744,7 +6377,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-498",
+    "id": "adm-472",
     "title": "ADMISSION NOTIFICATION FOR B.Ed. COMMERCE PROGRAMME 2025-26 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1753772208_Press_Release_bedu3730.pdf",
     "category": "admission",
@@ -6757,7 +6390,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-499",
+    "id": "adm-473",
     "title": "ADMISSION NOTIFICATION FOR B.Ed. COMMERCE PROGRAMME 2025-26",
     "url": "https://admission.uoc.ac.in/downloads/1753769784_Notifications_bedu6561.pdf",
     "category": "admission",
@@ -6770,7 +6403,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-500",
+    "id": "adm-474",
     "title": "FYUGP INTER UNIVERSITY TRANSFER NOTIFICATION",
     "url": "https://admission.uoc.ac.in/downloads/1753703461_Notifications_ug5206.pdf",
     "category": "admission",
@@ -6783,7 +6416,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-501",
+    "id": "adm-475",
     "title": "FYUGP INTER UNIVERSITY TRANSFER PRESS RELEASE",
     "url": "https://admission.uoc.ac.in/downloads/1753703409_Press_Release_ug8265.pdf",
     "category": "admission",
@@ -6796,7 +6429,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-502",
+    "id": "adm-476",
     "title": "Hall Ticket - Non BA English Entrance - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1753685355_Press_Release_pg4061.pdf",
     "category": "admission",
@@ -6809,7 +6442,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-503",
+    "id": "adm-477",
     "title": "PG Diploma in Data Science and Analytics Entrance examination - Hall ticket Released",
     "url": "https://admission.uoc.ac.in/downloads/1753097722_Press_Release_entrance6578.pdf",
     "category": "admission",
@@ -6822,7 +6455,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-504",
+    "id": "adm-478",
     "title": "MBA 2025 Late Registration Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1752922227_Press_Release_MBA5916.pdf",
     "category": "admission",
@@ -6835,7 +6468,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-505",
+    "id": "adm-479",
     "title": "FYUG - 2025-26 : Late Registration",
     "url": "https://admission.uoc.ac.in/downloads/1752832020_Press_Release_ug2129.pdf",
     "category": "admission",
@@ -6848,7 +6481,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-506",
+    "id": "adm-480",
     "title": "Diploma in Digital Media Production - Online Registration: Last Date 24.07.2025",
     "url": "https://admission.uoc.ac.in/downloads/1752750688_Press_Release_PartTimeCourses5765.pdf",
     "category": "admission",
@@ -6861,7 +6494,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-507",
+    "id": "adm-481",
     "title": "CU CET 2025 - Late Registration, Last Date:25.07.2025",
     "url": "https://admission.uoc.ac.in/downloads/1752750072_Press_Release_entrance7684.pdf",
     "category": "admission",
@@ -6874,7 +6507,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-508",
+    "id": "adm-482",
     "title": "PGCAP 2025 - Provisional Rank List published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1752747394_Press_Release_pg5420.pdf",
     "category": "admission",
@@ -6887,7 +6520,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-509",
+    "id": "adm-483",
     "title": "Inter-college transfer (including Major Switching) admission extended till 16.07.2025 5 PM",
     "url": "https://admission.uoc.ac.in/downloads/1752473317_Press_Release_ug7258.pdf",
     "category": "admission",
@@ -6900,7 +6533,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-510",
+    "id": "adm-484",
     "title": "FYUGCAP 2025-26 : Third Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1752227493_Press_Release_ug7383.pdf",
     "category": "admission",
@@ -6913,7 +6546,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-511",
+    "id": "adm-485",
     "title": "B.Ed/ B.Ed special Education 2025- Second Allotment Published.",
     "url": "https://admission.uoc.ac.in/downloads/1752146712_Press_Release_bedu6485.pdf",
     "category": "admission",
@@ -6926,7 +6559,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-512",
+    "id": "adm-486",
     "title": "PGCAP 2025 - Edit / Rank List / Late Registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1752143669_Press_Release_ug5326.pdf",
     "category": "admission",
@@ -6939,7 +6572,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-513",
+    "id": "adm-487",
     "title": "2025-26 FYUGP ADMISSION -Third allotment Postponed",
     "url": "https://admission.uoc.ac.in/downloads/1751956227_Press_Release_ug2020.pdf",
     "category": "admission",
@@ -6952,7 +6585,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-514",
+    "id": "adm-488",
     "title": "Press Release - PGCAP Date Extended - Community Quota Rank List Published",
     "url": "https://admission.uoc.ac.in/downloads/1751888719_Press_Release_pg8204.pdf",
     "category": "admission",
@@ -6965,7 +6598,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-515",
+    "id": "adm-489",
     "title": "Post Graduate Diploma in Rehabilitation Psychology(PGDRP) : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1751870163_Notifications_PartTimeCourses9088.pdf",
     "category": "admission",
@@ -6978,7 +6611,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-516",
+    "id": "adm-490",
     "title": "Post Graduate Diploma in Rehabilitation Psychology(PGDRP)- Online Registration Commenced, Last date- 18.07.2025",
     "url": "https://admission.uoc.ac.in/downloads/1751869946_Press_Release_PartTimeCourses7178.pdf",
     "category": "admission",
@@ -6991,7 +6624,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-517",
+    "id": "adm-491",
     "title": "2025 - 26 FYUGP College Transfer (Including Major Switching) - Rank list Published",
     "url": "https://admission.uoc.ac.in/downloads/1751692635_Press_Release_ug4476.pdf",
     "category": "admission",
@@ -7004,7 +6637,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-518",
+    "id": "adm-492",
     "title": "MBA 2025 Admission Provisional Rank List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1751628461_Press_Release_MBA1293.pdf",
     "category": "admission",
@@ -7017,7 +6650,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-519",
+    "id": "adm-493",
     "title": "PGCAP 2025 - Second Allotment Published - Press Release (English)",
     "url": "https://admission.uoc.ac.in/downloads/1751624867_Press_Release_pg4262.pdf",
     "category": "admission",
@@ -7030,7 +6663,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-520",
+    "id": "adm-494",
     "title": "PGCAP 2025 - Second Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1751624830_Press_Release_pg3994.pdf",
     "category": "admission",
@@ -7043,7 +6676,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-521",
+    "id": "adm-495",
     "title": "FYUGCAP 2025 : Editing - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1751518169_Press_Release_ug9413.pdf",
     "category": "admission",
@@ -7056,7 +6689,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-522",
+    "id": "adm-496",
     "title": "B.Ed(Except Commerce option)/B.Ed Special Education First allotment published.",
     "url": "https://admission.uoc.ac.in/downloads/1751455396_Press_Release_bedu3998.pdf",
     "category": "admission",
@@ -7069,7 +6702,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-523",
+    "id": "adm-497",
     "title": "Afzal ul ulama preliminary 2025 - Second allotment Published.",
     "url": "https://admission.uoc.ac.in/downloads/1751452358_Press_Release_afsal4836.pdf",
     "category": "admission",
@@ -7082,7 +6715,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-524",
+    "id": "adm-498",
     "title": "FYUGCAP 2025: PwD Quota Admission - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1751351299_Press_Release_ug8751.pdf",
     "category": "admission",
@@ -7095,7 +6728,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-525",
+    "id": "adm-499",
     "title": "FYUGCAP 2025: Community Quota Rank List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1751351259_Press_Release_ug7992.pdf",
     "category": "admission",
@@ -7108,7 +6741,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-526",
+    "id": "adm-500",
     "title": "FYUGP COLLEGE / UNIVERSITY TRANSFER : Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1751266401_Press_Release_ug3932.pdf",
     "category": "admission",
@@ -7121,7 +6754,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-527",
+    "id": "adm-501",
     "title": "FYUGP COLLEGE / UNIVERSITY TRANSFER : Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1751266336_Press_Release_ug2355.pdf",
     "category": "admission",
@@ -7134,7 +6767,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-528",
+    "id": "adm-502",
     "title": "IPCAP 2025 - 26 : Second Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1751110273_Press_Release_IP1662.pdf",
     "category": "admission",
@@ -7147,7 +6780,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-529",
+    "id": "adm-503",
     "title": "PGCAP 2025 - First Allotment Published (English)- Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1751101793_Press_Release_pg8777.pdf",
     "category": "admission",
@@ -7160,7 +6793,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-530",
+    "id": "adm-504",
     "title": "PGCAP 2025 - First Allotment Published (Malayalam) - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1751101624_Press_Release_pg6542.pdf",
     "category": "admission",
@@ -7173,7 +6806,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-531",
+    "id": "adm-505",
     "title": "FYUGCAP 2025-26 SECOND ALLOTMENT PUBLISHED",
     "url": "https://admission.uoc.ac.in/downloads/1751011557_Press_Release_ug6862.pdf",
     "category": "admission",
@@ -7186,7 +6819,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-532",
+    "id": "adm-506",
     "title": "MSW & MA Journalism and Mass Communication- Allotment Published",
     "url": "https://admission.uoc.ac.in/downloads/1751006645_Press_Release_entrance7744.pdf",
     "category": "admission",
@@ -7199,7 +6832,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-533",
+    "id": "adm-507",
     "title": "Afzal Ul Ulama preliminary 2025 - First allotment published.",
     "url": "https://admission.uoc.ac.in/downloads/1750934076_Press_Release_afsal6745.pdf",
     "category": "admission",
@@ -7212,7 +6845,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-534",
+    "id": "adm-508",
     "title": "INTER COLLEGE MAJOR SWITCHING / COLLEGE TRANSFER WITH EXISTING MAJOR 2025 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1750851322_Notifications_ug2023.pdf",
     "category": "admission",
@@ -7225,7 +6858,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-535",
+    "id": "adm-509",
     "title": "Press Release - PGCAP 2025 - MA English entrance attendance confirmation link for Non English candidates English",
     "url": "https://admission.uoc.ac.in/downloads/1750766035_Press_Release_pg7271.pdf",
     "category": "admission",
@@ -7238,7 +6871,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-536",
+    "id": "adm-510",
     "title": "Press Release - PGCAP 2025 - MA English entrance attendance confirmation link for Non English candidates",
     "url": "https://admission.uoc.ac.in/downloads/1750765840_Press_Release_pg5924.pdf",
     "category": "admission",
@@ -7251,7 +6884,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-537",
+    "id": "adm-511",
     "title": "B.Ed/ B.Ed Special Education 2025 : Trial Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1750750722_Press_Release_bedu2114.pdf",
     "category": "admission",
@@ -7264,7 +6897,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-538",
+    "id": "adm-512",
     "title": "MBA 2025 - Group Discussion & Interview (Phase 2) -Schedule - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/DCMS- Press Release and list of the candidate 001 (1).pdf",
     "category": "admission",
@@ -7277,7 +6910,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-539",
+    "id": "adm-513",
     "title": "CU-CET 2025- Provisional Rank Lists Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1750742173_Press_Release_entrance9319.pdf",
     "category": "admission",
@@ -7290,7 +6923,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-540",
+    "id": "adm-514",
     "title": "PGCAP 2025 - Trial Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1750688440_Press_Release_pg4319.pdf",
     "category": "admission",
@@ -7303,7 +6936,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-541",
+    "id": "adm-515",
     "title": "IPCAP 2025 - 26 : First Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1750679497_Press_Release_IP4170.pdf",
     "category": "admission",
@@ -7316,7 +6949,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-542",
+    "id": "adm-516",
     "title": "FYUGCAP 2025-26 : First Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1750657393_Press_Release_ug8152.pdf",
     "category": "admission",
@@ -7329,7 +6962,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-543",
+    "id": "adm-517",
     "title": "Afzal - Ul - Ulama (Preliminary) 2025 - 26 : Afzal ul ulama preliminary 2025 - Trial Allotment - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1750500415_Press_Release_afsal5927.pdf",
     "category": "admission",
@@ -7342,7 +6975,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-544",
+    "id": "adm-518",
     "title": "B.Ed 2025 - 26 : Admission Schedule",
     "url": "https://admission.uoc.ac.in/downloads/1750493138_Press_Release_bedu5755.pdf",
     "category": "admission",
@@ -7355,7 +6988,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-545",
+    "id": "adm-519",
     "title": "Afzal - Ul - Ulama (Preliminary) 2025 - 26 : Admission Schedule",
     "url": "https://admission.uoc.ac.in/downloads/1750493072_Press_Release_afsal7230.pdf",
     "category": "admission",
@@ -7368,7 +7001,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-546",
+    "id": "adm-520",
     "title": "The Physical Test of BPES(Integrated), BPED and MPED",
     "url": "https://admission.uoc.ac.in/downloads/1750435660_Press_Release_entrance3156.pdf",
     "category": "admission",
@@ -7381,7 +7014,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-547",
+    "id": "adm-521",
     "title": "IPCAP 2025 - 26 : Trial Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1750245656_Press_Release_IP3490.pdf",
     "category": "admission",
@@ -7394,7 +7027,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-548",
+    "id": "adm-522",
     "title": "FYUGCAP 2025-26 : Trial Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1750147228_Press_Release_ug9365.pdf",
     "category": "admission",
@@ -7407,7 +7040,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-549",
+    "id": "adm-523",
     "title": "MBA Admission 2025 - Online Registration extended upto 19/06/2025, 4.00 pm - KMAT session 2 qualified can also apply",
     "url": "https://admission.uoc.ac.in/downloads/1750075286_Press_Release_MBA7331.pdf",
     "category": "admission",
@@ -7420,7 +7053,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-550",
+    "id": "adm-524",
     "title": "B.Ed Registration 2025 - 26 : Online Registration - last date extended up to19.06.2025",
     "url": "https://admission.uoc.ac.in/downloads/1750074889_Press_Release_bedu8230.pdf",
     "category": "admission",
@@ -7433,7 +7066,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-551",
+    "id": "adm-525",
     "title": "PGCAP 2025 - Online Registration - last date extended up to19.06.2025",
     "url": "https://admission.uoc.ac.in/downloads/1749813691_Press_Release_pg7947.pdf",
     "category": "admission",
@@ -7446,7 +7079,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-552",
+    "id": "adm-526",
     "title": "MBA Admission 2025 - Online Registration upto 16/06/2025, KMAT session 2 qualified can also apply",
     "url": "https://admission.uoc.ac.in/downloads/1749555760_Press_Release_MBA9331.pdf",
     "category": "admission",
@@ -7459,7 +7092,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-553",
+    "id": "adm-527",
     "title": "B.Ed 2025 - 26 : online Registration started - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1749210846_Press_Release_bedu3616.pdf",
     "category": "admission",
@@ -7472,7 +7105,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-554",
+    "id": "adm-528",
     "title": "PROSPECTUS FOR ADMISSION TO B. Ed. PROGRAMME IN THE TRAINING COLLEGES AFFILIATED TO CALICUT UNIVERSITY FOR THE ACADEMIC YEAR 2025-2026",
     "url": "https://admission.uoc.ac.in/downloads/1749210527_Prospectus_bedu5777.pdf",
     "category": "admission",
@@ -7485,7 +7118,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-555",
+    "id": "adm-529",
     "title": "B.Ed. Special Education (Hearing Impaired/Intellectual Disability) 2025-2026 - Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1749210473_Prospectus_bedu5470.pdf",
     "category": "admission",
@@ -7498,7 +7131,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-556",
+    "id": "adm-530",
     "title": "ADMISSION NOTIFICATION FOR B.Ed. SPECIAL EDUCATION (HEARING IMPAIRED/INTELLECTUAL DISABILITY) 2025-2026",
     "url": "https://admission.uoc.ac.in/downloads/1749210380_Notifications_bedu6057.pdf",
     "category": "admission",
@@ -7511,7 +7144,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-557",
+    "id": "adm-531",
     "title": "B.Ed 2025 - 26 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1749210218_Notifications_bedu5016.pdf",
     "category": "admission",
@@ -7524,7 +7157,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-558",
+    "id": "adm-532",
     "title": "Afzal - Ul - Ulama (Preliminary) 2025 - 26 : Online Registration Extended up to 18.06.2025 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1749122597_Press_Release_afsal8203.pdf",
     "category": "admission",
@@ -7537,7 +7170,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-559",
+    "id": "adm-533",
     "title": "The Physical Test of BPES(Integrated), BPED and MPED has been Scheduled - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1749117587_Press_Release_entrance3546.pdf",
     "category": "admission",
@@ -7550,7 +7183,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-560",
+    "id": "adm-534",
     "title": "PGCAP 2025 -26 : Online Registration Started",
     "url": "https://admission.uoc.ac.in/downloads/1749037649_Press_Release_pg2818.pdf",
     "category": "admission",
@@ -7563,7 +7196,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-561",
+    "id": "adm-535",
     "title": "PGCAP 2025 - 26 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1749037499_Notifications_pg7685.pdf",
     "category": "admission",
@@ -7576,7 +7209,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-562",
+    "id": "adm-536",
     "title": "Project Mode Diploma/PG Diploma Programmes - Online Registration extended up to 15.06.2025",
     "url": "https://admission.uoc.ac.in/downloads/1748860333_Press_Release_PartTimeCourses6762.pdf",
     "category": "admission",
@@ -7589,7 +7222,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "gen-563",
+    "id": "gen-537",
     "title": "Finance Committee",
     "url": "https://docs.uoc.ac.in/website/news/2025-05-31%2016:19:41_new2049.pdf",
     "category": "general",
@@ -7602,7 +7235,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-564",
+    "id": "gen-538",
     "title": "Recognition/Approval (2(f)),12B)",
     "url": "https://docs.uoc.ac.in/website/news/2025-05-31%2016:16:15_new2048.pdf",
     "category": "general",
@@ -7615,7 +7248,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "adm-565",
+    "id": "adm-539",
     "title": "CU-CET 2025 : Integrated MTA - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1748687335_Press_Release_entrance2757.pdf",
     "category": "admission",
@@ -7628,7 +7261,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "gen-566",
+    "id": "gen-540",
     "title": "Affiliated Colleges",
     "url": "https://docs.uoc.ac.in/website/news/2025-05-31%2012:20:46_new2045.pdf",
     "category": "general",
@@ -7641,7 +7274,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-567",
+    "id": "gen-541",
     "title": "Board of Studies",
     "url": "https://docs.uoc.ac.in/website/news/2025-05-31%2011:44:50_new2044.pdf",
     "category": "general",
@@ -7654,7 +7287,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "adm-568",
+    "id": "adm-542",
     "title": "B.Voc 2025 - 26 Under Graduate Programmes : Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1748605210_Press_Release_ug2296.pdf",
     "category": "admission",
@@ -7667,7 +7300,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-569",
+    "id": "adm-543",
     "title": "B.Voc 2025 - 26 Under Graduate Programmes : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1748605071_Notifications_ug7088.pdf",
     "category": "admission",
@@ -7680,7 +7313,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-570",
+    "id": "adm-544",
     "title": "IPCAP 2025 - 26 : Online Registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1748604925_Press_Release_IP5229.pdf",
     "category": "admission",
@@ -7693,7 +7326,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-571",
+    "id": "adm-545",
     "title": "IPCAP 2025 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1748603038_Prospectus_IP7632.pdf",
     "category": "admission",
@@ -7706,7 +7339,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-572",
+    "id": "adm-546",
     "title": "IPCAP 2025 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1748602836_Notifications_IP6726.pdf",
     "category": "admission",
@@ -7719,7 +7352,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-573",
+    "id": "adm-547",
     "title": "FYUGCAP 2025-26 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1748424976_Notifications_ug1854.pdf",
     "category": "admission",
@@ -7732,7 +7365,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-574",
+    "id": "adm-548",
     "title": "FYUGCAP 2025-26 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1748418502_Prospectus_ug7672.pdf",
     "category": "admission",
@@ -7745,7 +7378,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-575",
+    "id": "adm-549",
     "title": "FYUGCAP 2025-26 : Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1748346048_Press_Release_ug8031.pdf",
     "category": "admission",
@@ -7758,7 +7391,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-576",
+    "id": "adm-550",
     "title": "FYUGCAP 2025-26 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1748345372_Prospectus_ug8620.pdf",
     "category": "admission",
@@ -7771,7 +7404,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-577",
+    "id": "adm-551",
     "title": "Project Mode Diploma/PG Diploma Notification - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1748083399_Press_Release_PartTimeCourses1324.pdf",
     "category": "admission",
@@ -7784,7 +7417,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-578",
+    "id": "adm-552",
     "title": "Project Mode Diploma/PG Diploma Notification",
     "url": "https://admission.uoc.ac.in/downloads/1748083265_Notifications_PartTimeCourses7634.pdf",
     "category": "admission",
@@ -7797,7 +7430,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-579",
+    "id": "adm-553",
     "title": "Afzal - Ul - Ulama (Preliminary) 2025 - 26 : Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1747888973_Press_Release_afsal8488.pdf",
     "category": "admission",
@@ -7810,7 +7443,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-580",
+    "id": "adm-554",
     "title": "Afzal - Ul - Ulama (Preliminary) 2025 - 26 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1747888938_Notifications_afsal7547.pdf",
     "category": "admission",
@@ -7823,7 +7456,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-581",
+    "id": "adm-555",
     "title": "Afzal - Ul - Ulama (Preliminary) 2025 - 26 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1747888870_Prospectus_afsal6889.pdf",
     "category": "admission",
@@ -7836,7 +7469,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-582",
+    "id": "adm-556",
     "title": "PhD 2024 Admission : Short List Revision - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1747116150_Press_Release_PhD3601.pdf",
     "category": "admission",
@@ -7849,7 +7482,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-583",
+    "id": "adm-557",
     "title": "CUCET 2025 : Entrance exam - Hall Ticket Released -Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1746697120_Press_Release_entrance7746.pdf",
     "category": "admission",
@@ -7862,7 +7495,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-584",
+    "id": "adm-558",
     "title": "PhD 2024 Admission : Online Reporting - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1746687329_Press_Release_PhD6755.pdf",
     "category": "admission",
@@ -7875,7 +7508,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-585",
+    "id": "adm-559",
     "title": "Ph.D 2024 : Short List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1746443180_Press_Release_PhD8839.pdf",
     "category": "admission",
@@ -7888,7 +7521,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-586",
+    "id": "adm-560",
     "title": "CU-CET 2025- Last date for Online registration extended till 30.04.2025 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1745579362_Press_Release_entrance1193.pdf",
     "category": "admission",
@@ -7901,7 +7534,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-587",
+    "id": "adm-561",
     "title": "Attention: MPEd Applicants - Upper age relaxation for SC/ST candidates (5 years )and SEBC candidates(3 years)",
     "url": "https://admission.uoc.ac.in/downloads/1745493890_Press_Release_entrance9498.pdf",
     "category": "admission",
@@ -7914,7 +7547,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-588",
+    "id": "adm-562",
     "title": "MBA 2025 - Online Registration Date Extended - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1745234474_Press_Release_MBA3579.pdf",
     "category": "admission",
@@ -7927,7 +7560,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-589",
+    "id": "adm-563",
     "title": "MBA 2025 - Online Registration Date Extended - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1744284126_Press_Release_MBA4548.pdf",
     "category": "admission",
@@ -7940,7 +7573,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-590",
+    "id": "adm-564",
     "title": "CU-CET 2025 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1743247472_Notifications_entrance2477.pdf",
     "category": "admission",
@@ -7953,7 +7586,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-591",
+    "id": "adm-565",
     "title": "MBA Registration 2025 : Online registration commenced - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1743230690_Press_Release_MBA2329.pdf",
     "category": "admission",
@@ -7966,7 +7599,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-592",
+    "id": "adm-566",
     "title": "MBA Registration 2025 : Notification-cum-Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1743230595_Notifications_MBA7434.pdf",
     "category": "admission",
@@ -7979,7 +7612,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-593",
+    "id": "adm-567",
     "title": "Ph.D 2024 Entrance Examination - Hall Tickets released - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1743157943_Press_Release_PhD7499.pdf",
     "category": "admission",
@@ -7992,7 +7625,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-594",
+    "id": "adm-568",
     "title": "Ph.D 2024 Entrance Examination - Time Table published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1742901318_Press_Release_PhD7217.pdf",
     "category": "admission",
@@ -8005,7 +7638,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-595",
+    "id": "adm-569",
     "title": "PhD 2024 Online Registration - Last Date Extended upto 10.03.2025",
     "url": "https://admission.uoc.ac.in/downloads/1741066327_Press_Release_PhD1374.pdf",
     "category": "admission",
@@ -8018,7 +7651,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-596",
+    "id": "adm-570",
     "title": "Ph.D 2024 - Last Date Extended upto 03.03.2025 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1740468391_Latest_News_press2531.pdf",
     "category": "admission",
@@ -8031,7 +7664,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-597",
+    "id": "adm-571",
     "title": "Ph.D 2024 - Last Date Extended upto 20.02.2025 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1739258010_Press_Release_PhD5947.pdf",
     "category": "admission",
@@ -8044,7 +7677,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-598",
+    "id": "adm-572",
     "title": "Ph.D 2024 - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1737700066_Notifications_PhD1429.pdf",
     "category": "admission",
@@ -8057,7 +7690,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-599",
+    "id": "adm-573",
     "title": "Ph.D 2024 - Online registration started - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1737459703_Press_Release_PhD5680.pdf",
     "category": "admission",
@@ -8070,7 +7703,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-600",
+    "id": "adm-574",
     "title": "Diploma/Certificate Programmes in Arabic 2024 - last date extended upto 31.12.2024",
     "url": "https://admission.uoc.ac.in/downloads/1735198275_Press_Release_PartTimeCourses2027.pdf",
     "category": "admission",
@@ -8083,7 +7716,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-601",
+    "id": "adm-575",
     "title": "Certificate course in Commercial & Spoken Hindi 2025 - last date extended upto 30.12.2024",
     "url": "https://admission.uoc.ac.in/downloads/1735007546_Press_Release_PartTimeCourses3454.pdf",
     "category": "admission",
@@ -8096,7 +7729,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-602",
+    "id": "adm-576",
     "title": "Certificate/Diploma Courses in the department of Hindi 2025- Registration started.",
     "url": "https://admission.uoc.ac.in/downloads/1733484790_Press_Release_PartTimeCourses3703.pdf",
     "category": "admission",
@@ -8109,7 +7742,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-603",
+    "id": "adm-577",
     "title": "Certificate/Diploma Courses in the department of Hindi 2025 - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1733484690_Notifications_PartTimeCourses6325.pdf",
     "category": "admission",
@@ -8122,7 +7755,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-604",
+    "id": "adm-578",
     "title": "Certificate/Diploma Courses in the Department of Arabic 2024 - Notifications",
     "url": "https://admission.uoc.ac.in/downloads/1732877882_Notifications_PartTimeCourses1674.pdf",
     "category": "admission",
@@ -8135,7 +7768,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-605",
+    "id": "adm-579",
     "title": "Certificate/Diploma Courses in the Department of Arabic 2024 - Registration Started",
     "url": "https://admission.uoc.ac.in/downloads/1732877791_Press_Release_PartTimeCourses1695.pdf",
     "category": "admission",
@@ -8148,7 +7781,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-606",
+    "id": "adm-580",
     "title": "Integrated MTA - Rank List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1732427130_Press_Release_entrance6710.pdf",
     "category": "admission",
@@ -8175,7 +7808,7 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "adm-608",
+    "id": "adm-582",
     "title": "Admission to the MPEd programme conducts on 18.11.2024.",
     "url": "https://admission.uoc.ac.in/downloads/1731567341_Press_Release_medu5261.pdf",
     "category": "admission",
@@ -8188,7 +7821,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-609",
+    "id": "adm-583",
     "title": "Revised Notification of Project Mode Diploma Programmes",
     "url": "https://admission.uoc.ac.in/downloads/1731050601_Notifications_PartTimeCourses3834.pdf",
     "category": "admission",
@@ -8201,7 +7834,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-610",
+    "id": "adm-584",
     "title": "Project Mode Diploma Programmes(Diploma in Digital Media Production, PG Diploma in Data Science and Analytics and Post Graduate Diploma in Commercial Tissue Culture of Agri- Horticultural Crops) - Online Registration - Last Date :10-11-2024",
     "url": "https://admission.uoc.ac.in/downloads/1730287362_Press_Release_PartTimeCourses4944.pdf",
     "category": "admission",
@@ -8214,7 +7847,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-611",
+    "id": "adm-585",
     "title": "Late Registration for 5 year integrated MTA - Last Date - 06.11.2024",
     "url": "https://admission.uoc.ac.in/downloads/1730114150_Press_Release_entrance8314.pdf",
     "category": "admission",
@@ -8227,7 +7860,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-612",
+    "id": "adm-586",
     "title": "MBA 2024 - admission to vacant seats upto 2.00 pm, 25.10.2024",
     "url": "https://admission.uoc.ac.in/downloads/1729832346_Press_Release_MBA3256.pdf",
     "category": "admission",
@@ -8240,7 +7873,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-613",
+    "id": "adm-587",
     "title": "M.Ed 2024 : Waiting Ranklist Published",
     "url": "https://admission.uoc.ac.in/downloads/1729589144_Press_Release_medu2598.pdf",
     "category": "admission",
@@ -8253,7 +7886,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-614",
+    "id": "adm-588",
     "title": "M.Ed 2024-25 : Late Registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1729161341_Press_Release_medu4662.pdf",
     "category": "admission",
@@ -8266,7 +7899,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-615",
+    "id": "adm-589",
     "title": "M.Ed 2024 : Second Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1728890158_Press_Release_medu5474.pdf",
     "category": "admission",
@@ -8279,7 +7912,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-616",
+    "id": "adm-590",
     "title": "M.Ed 2024 - First Allotment - Additional Information - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1728366049_Press_Release_medu8703.pdf",
     "category": "admission",
@@ -8292,7 +7925,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-617",
+    "id": "adm-591",
     "title": "MBA 2024 : Late Registration upto 09.10.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1728035924_Press_Release_MBA3215.pdf",
     "category": "admission",
@@ -8305,7 +7938,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-618",
+    "id": "adm-592",
     "title": "M.Ed Admission 2024 - 25 : Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1728025309_Press_Release_medu6708.pdf",
     "category": "admission",
@@ -8318,7 +7951,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-619",
+    "id": "adm-593",
     "title": "Online Registration for 5 year integrated MTA - Last Date extended up to 30.09.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1727247089_Press_Release_entrance2575.pdf",
     "category": "admission",
@@ -8331,7 +7964,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-620",
+    "id": "adm-594",
     "title": "M.Ed-2024 Last date extended up to 01/10/2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1727172443_Press_Release_medu9435.pdf",
     "category": "admission",
@@ -8344,7 +7977,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-621",
+    "id": "adm-595",
     "title": "M.Ed admission 2024-25 : Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1726227602_Press_Release_medu6727.pdf",
     "category": "admission",
@@ -8357,7 +7990,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-622",
+    "id": "adm-596",
     "title": "M.Ed admission 2024-25 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1726227565_Prospectus_medu1177.pdf",
     "category": "admission",
@@ -8370,7 +8003,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-623",
+    "id": "adm-597",
     "title": "M.Ed admission 2024-25 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1726227505_Notifications_medu6682.pdf",
     "category": "admission",
@@ -8383,7 +8016,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-624",
+    "id": "adm-598",
     "title": "Online Registration for 5 year integrated MTA - Last Date 23.09.2024",
     "url": "https://admission.uoc.ac.in/downloads/1726225306_Press_Release_entrance6514.pdf",
     "category": "admission",
@@ -8396,7 +8029,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-625",
+    "id": "adm-599",
     "title": "Online Registration for 5 year integrated MTA - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1726225079_Notifications_entrance8576.pdf",
     "category": "admission",
@@ -8409,7 +8042,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-626",
+    "id": "adm-600",
     "title": "Press Release - PGCAP 2024 Editing and Late Registration",
     "url": "https://admission.uoc.ac.in/downloads/1725967592_Press_Release_pg6130.pdf",
     "category": "admission",
@@ -8422,7 +8055,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-627",
+    "id": "adm-601",
     "title": "MBA 2024 : Late Registration - Candidates without KMAT/CMAT/CAT Score also can Apply - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1725692737_Press_Release_MBA9292.pdf",
     "category": "admission",
@@ -8435,7 +8068,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-628",
+    "id": "adm-602",
     "title": "Press Release - PGCAP 2024 - Last date for waiting Rank List (revised) based admission",
     "url": "https://admission.uoc.ac.in/downloads/1725621768_Press_Release_pg7960.pdf",
     "category": "admission",
@@ -8448,7 +8081,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-629",
+    "id": "adm-603",
     "title": "MBA 2024 : Late Registration - Candidates without KMAT/CMAT/CAT Score also can Apply - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1725521984_Press_Release_MBA6757.pdf",
     "category": "admission",
@@ -8461,7 +8094,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-630",
+    "id": "adm-604",
     "title": "B.Ed 2024 : Admission Extended till 07.09.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1725445678_Press_Release_bedu1081.pdf",
     "category": "admission",
@@ -8474,7 +8107,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-631",
+    "id": "adm-605",
     "title": "Press Release - PGCAP 2024 - waiting Rank List (revised) based admission w.e.f. 06.09.2024",
     "url": "https://admission.uoc.ac.in/downloads/1725438564_Press_Release_pg4094.pdf",
     "category": "admission",
@@ -8487,7 +8120,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-632",
+    "id": "adm-606",
     "title": "FYUGP 2024 - 25 : Late Registration & Admission have been Extended to 04.09.2024 10:00PM - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1725254175_Press_Release_ug3690.pdf",
     "category": "admission",
@@ -8500,7 +8133,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-633",
+    "id": "adm-607",
     "title": "PGCAP 2024 - Rank List - MA English Entrance (For Non English Core/Main Degree Holders)",
     "url": "https://admission.uoc.ac.in/downloads/1724928845_Press_Release_pg7546.pdf",
     "category": "admission",
@@ -8513,7 +8146,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-634",
+    "id": "adm-608",
     "title": "B.Ed Commerce 2024- Waiting Rank List Published",
     "url": "https://admission.uoc.ac.in/downloads/1724917678_Press_Release_bedu7244.pdf",
     "category": "admission",
@@ -8526,7 +8159,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-635",
+    "id": "adm-609",
     "title": "Press Release - PGCAP 2024 - waiting Rank List based admission postponed",
     "url": "https://admission.uoc.ac.in/downloads/1724512476_Press_Release_pg5218.pdf",
     "category": "admission",
@@ -8539,7 +8172,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-636",
+    "id": "adm-610",
     "title": "FYUGP 2024: Last date for admission extended upto 31.08.2024.",
     "url": "https://admission.uoc.ac.in/downloads/1724492322_Press_Release_ug7587.pdf",
     "category": "admission",
@@ -8552,7 +8185,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-637",
+    "id": "adm-611",
     "title": "B.Ed Commerce - Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1724308474_Press_Release_bedu1619.pdf",
     "category": "admission",
@@ -8565,7 +8198,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-638",
+    "id": "adm-612",
     "title": "CUCAT 2024 : Late registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1724067844_Press_Release_entrance6726.pdf",
     "category": "admission",
@@ -8578,7 +8211,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-639",
+    "id": "adm-613",
     "title": "PGCAP 2024 : Waiting Rank List -Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1724067453_Press_Release_pg7616.pdf",
     "category": "admission",
@@ -8591,7 +8224,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-640",
+    "id": "adm-614",
     "title": "B.Ed Commerce option- Registration Started - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1723790728_Press_Release_bedu2608.pdf",
     "category": "admission",
@@ -8604,7 +8237,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-641",
+    "id": "adm-615",
     "title": "ADMISSION NOTIFICATION FOR B.Ed. COMMERCE PROGRAMME 2024-25",
     "url": "https://admission.uoc.ac.in/downloads/1723790498_Notifications_bedu9473.pdf",
     "category": "admission",
@@ -8617,7 +8250,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-642",
+    "id": "adm-616",
     "title": "FYUGP 2024 - 25 : Late Registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1723533153_Press_Release_ug5924.pdf",
     "category": "admission",
@@ -8630,7 +8263,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-643",
+    "id": "adm-617",
     "title": "FYUGP 2024: Rank List for Aided Programmes - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1723455193_Press_Release_ug1794.pdf",
     "category": "admission",
@@ -8643,7 +8276,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-644",
+    "id": "adm-618",
     "title": "PGCAP 2024 Editing and Late Registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1723098640_Press_Release_pg1117.pdf",
     "category": "admission",
@@ -8656,7 +8289,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-645",
+    "id": "adm-619",
     "title": "FYUG CAP 2024: Second Supplementary Allotment - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1722945241_Press_Release_ug1999.pdf",
     "category": "admission",
@@ -8669,7 +8302,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-646",
+    "id": "adm-620",
     "title": "Admission to the programmes BPES(I) and BPEd conducts on 08.08.2024 and 09.08.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1722925084_Press_Release_entrance8145.pdf",
     "category": "admission",
@@ -8682,7 +8315,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-647",
+    "id": "adm-621",
     "title": "PGCAP 2024 : Admission Tickets - MA English entrance for Non English candidates - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1722857056_Press_Release_pg6283.pdf",
     "category": "admission",
@@ -8695,7 +8328,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-648",
+    "id": "adm-622",
     "title": "PGCAP 2024 - online/e-mail reporting - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1722598752_Press_Release_pg5973.pdf",
     "category": "admission",
@@ -8708,7 +8341,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-649",
+    "id": "adm-623",
     "title": "CUCAT 2024 : (PG/Integrated PG/LLM Offered in University Teaching Departments)- Vacancy List - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1722598379_Press_Release_entrance5922.pdf",
     "category": "admission",
@@ -8721,7 +8354,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-650",
+    "id": "adm-624",
     "title": "MBA 2024 - Rank list published. Complaints if any shall be reported on or before 02.08.2024, 4.00 pm - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1722576829_Press_Release_entrance9510.pdf",
     "category": "admission",
@@ -8734,7 +8367,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-651",
+    "id": "adm-625",
     "title": "FYUG CAP 2024: Rank List for Self Financing Programmes - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1722505956_Press_Release_ug2634.pdf",
     "category": "admission",
@@ -8747,7 +8380,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-652",
+    "id": "adm-626",
     "title": "IPCAP 2024 : Rank List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1722498018_Press_Release_IP9341.pdf",
     "category": "admission",
@@ -8760,7 +8393,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-653",
+    "id": "adm-627",
     "title": "FYUGP 2024 : First Supplementary Allotment Last Date of Admission Extended - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1722406443_Press_Release_ug4543.pdf",
     "category": "admission",
@@ -8773,7 +8406,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-654",
+    "id": "adm-628",
     "title": "PGCAP 2024 : Second Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1722341127_Press_Release_pg8415.pdf",
     "category": "admission",
@@ -8786,7 +8419,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-655",
+    "id": "adm-629",
     "title": "MSW, MCA and MA Journalism & Mass Communication Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1721986385_Press_Release_entrance1254.pdf",
     "category": "admission",
@@ -8799,7 +8432,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-656",
+    "id": "adm-630",
     "title": "FYUG CAP 2024: First Supplementary Allotment - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1721978290_Press_Release_ug9329.pdf",
     "category": "admission",
@@ -8812,7 +8445,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-657",
+    "id": "adm-631",
     "title": "B.Ed programme 2024-25 : Waiting Rank List and Late Registration",
     "url": "https://admission.uoc.ac.in/downloads/1721815649_Press_Release_bedu9432.pdf",
     "category": "admission",
@@ -8825,7 +8458,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-658",
+    "id": "adm-632",
     "title": "PGCAP 2024 - Community Quota Reporting - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1721802952_Press_Release_pg7614.pdf",
     "category": "admission",
@@ -8838,7 +8471,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-659",
+    "id": "adm-633",
     "title": "PGCAP 2024 - First Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1721797468_Press_Release_pg7705.pdf",
     "category": "admission",
@@ -8851,7 +8484,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-660",
+    "id": "adm-634",
     "title": "FYUGP 2024 - 25 : Permission to Completing Application",
     "url": "https://admission.uoc.ac.in/downloads/1721627040_Press_Release_ug4355.pdf",
     "category": "admission",
@@ -8864,7 +8497,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-661",
+    "id": "adm-635",
     "title": "PGCAP 2024 : MA English Entrance Attendance Confirmation link for Non English candidates - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1721471163_Press_Release_entrance8369.pdf",
     "category": "admission",
@@ -8877,7 +8510,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-662",
+    "id": "adm-636",
     "title": "MBA 2024 : Late Registration upto 20.07.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1721299767_Press_Release_MBA7890.pdf",
     "category": "admission",
@@ -8890,7 +8523,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-663",
+    "id": "adm-637",
     "title": "IPCAP 2024 - 25 : Editing - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1721216219_Press_Release_IP7335.pdf",
     "category": "admission",
@@ -8903,7 +8536,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-664",
+    "id": "adm-638",
     "title": "B.Ed 2024 : Second Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1721204530_Press_Release_bedu8988.pdf",
     "category": "admission",
@@ -8916,7 +8549,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-665",
+    "id": "adm-639",
     "title": "PGCAP 2024 - Trial Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1721199298_Press_Release_pg4564.pdf",
     "category": "admission",
@@ -8929,7 +8562,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-666",
+    "id": "adm-640",
     "title": "FYUGP 2024 - 25 : Late Registration & Editing - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1721036991_Press_Release_ug7017.pdf",
     "category": "admission",
@@ -8942,7 +8575,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-667",
+    "id": "adm-641",
     "title": "FYUG CAP 2024: Third Allotment Admission Reg - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1720681871_Press_Release_ug5342.pdf",
     "category": "admission",
@@ -8955,7 +8588,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-668",
+    "id": "adm-642",
     "title": "MA Epigraphy & Manuscriptology - Entrance Examination Cancelled - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1720604435_Press_Release_entrance8337.pdf",
     "category": "admission",
@@ -8968,7 +8601,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-669",
+    "id": "adm-643",
     "title": "PG Diploma in Data Science and Analytics, Diploma in Digital Media Production - Entrance examination - Hall ticket Released",
     "url": "https://admission.uoc.ac.in/downloads/1720435247_Press_Release_entrance5620.pdf",
     "category": "admission",
@@ -8981,7 +8614,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-670",
+    "id": "adm-644",
     "title": "Afzal Ul Ulama (Preliminary) : First Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1720425687_Press_Release_afsal8545.pdf",
     "category": "admission",
@@ -8994,7 +8627,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-671",
+    "id": "adm-645",
     "title": "B.Ed - First Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1720250867_Press_Release_bedu3340.pdf",
     "category": "admission",
@@ -9007,7 +8640,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-672",
+    "id": "adm-646",
     "title": "FYUG CAP 2024: Third Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1720159453_Press_Release_ug7354.pdf",
     "category": "admission",
@@ -9020,7 +8653,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-673",
+    "id": "adm-647",
     "title": "Afzal Ul Ulama (Preliminary) : Trial Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1720001824_Press_Release_afsal6502.pdf",
     "category": "admission",
@@ -9033,7 +8666,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-674",
+    "id": "adm-648",
     "title": "FYUGCAP 2024: Community Quota Rank List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1719821278_Press_Release_ug7258.pdf",
     "category": "admission",
@@ -9046,7 +8679,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-675",
+    "id": "adm-649",
     "title": "FYUGCAP 2024 : PwD Quota List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1719654272_Press_Release_entrance4900.pdf",
     "category": "admission",
@@ -9059,7 +8692,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-676",
+    "id": "adm-650",
     "title": "B.Ed programme 2024-25 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1719647660_Prospectus_bedu6939.pdf",
     "category": "admission",
@@ -9072,7 +8705,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-677",
+    "id": "adm-651",
     "title": "B.Ed 2024- Trial Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1719645134_Press_Release_bedu9852.pdf",
     "category": "admission",
@@ -9085,7 +8718,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-678",
+    "id": "adm-652",
     "title": "FYUGCAP 2024: Second Allotment & Admission - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1719572659_Press_Release_ug6794.pdf",
     "category": "admission",
@@ -9098,7 +8731,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-679",
+    "id": "adm-653",
     "title": "CUCAT 2024 : Provisional Rank Lists Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1719487346RankList_entrance6916.pdf",
     "category": "admission",
@@ -9111,7 +8744,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-680",
+    "id": "adm-654",
     "title": "FYUGCAP 2024 : Second Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1719414930_Press_Release_ug9913.pdf",
     "category": "admission",
@@ -9124,7 +8757,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-681",
+    "id": "adm-655",
     "title": "Medical fitness certificate format to be produced for BPEd & MPEd physical test",
     "url": "https://admission.uoc.ac.in/downloads/1719309399_Press_Release_entrance6104.pdf",
     "category": "admission",
@@ -9137,7 +8770,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-682",
+    "id": "adm-656",
     "title": "PGCAP 2024 : Online Registration - Last Date Extended up to 08.07.2024 - 05.00pm",
     "url": "https://admission.uoc.ac.in/downloads/",
     "category": "admission",
@@ -9150,7 +8783,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-683",
+    "id": "adm-657",
     "title": "PGCAP 2024 : Online Registration Last Date Extended Upto 28.06.2024, 5 pm",
     "url": "https://admission.uoc.ac.in/downloads/1719055649_Press_Release_pg3785.pdf",
     "category": "admission",
@@ -9163,7 +8796,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-684",
+    "id": "adm-658",
     "title": "BPEd - Physical Test/Certificate Verification - 2024 May 27 & 28 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1718969728_Press_Release_entrance4426.pdf",
     "category": "admission",
@@ -9176,7 +8809,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-685",
+    "id": "adm-659",
     "title": "MBA 2024 : Last Date Extended till 29.06.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1718951068_Press_Release_MBA7785.pdf",
     "category": "admission",
@@ -9189,7 +8822,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-686",
+    "id": "adm-660",
     "title": "Afzal - Ul - Ulama (Preliminary) 2024 - 25 : Online Registration Extended upto 30.06.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1718950943_Press_Release_afsal3773.pdf",
     "category": "admission",
@@ -9202,7 +8835,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-687",
+    "id": "adm-661",
     "title": "FYUGCAP 2024 - 25 : First Allotment Published.. - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1718889101_Press_Release_ug4476.pdf",
     "category": "admission",
@@ -9215,7 +8848,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-688",
+    "id": "adm-662",
     "title": "IPCAP 2024 - 25 : First Allotment Published.. - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1718882030_Press_Release_IP4659.pdf",
     "category": "admission",
@@ -9228,7 +8861,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-689",
+    "id": "adm-663",
     "title": "B.Ed 2024: Online Registration Extended upto 22.06.2024",
     "url": "https://admission.uoc.ac.in/downloads/1718694716_Press_Release_bedu8295.pdf",
     "category": "admission",
@@ -9241,7 +8874,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-690",
+    "id": "adm-664",
     "title": "Certificate programmes in the department of Russian and Comparative literature - Registration started",
     "url": "https://admission.uoc.ac.in/downloads/1718448333_Press_Release_PartTimeCourses6393.pdf",
     "category": "admission",
@@ -9254,7 +8887,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-691",
+    "id": "adm-665",
     "title": "PGCAP 2024 - Online Registration Started - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1718273543_Press_Release_pg3019.pdf",
     "category": "admission",
@@ -9267,7 +8900,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-692",
+    "id": "adm-666",
     "title": "PGCAP 2024 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1718273083_Notifications_pg8326.pdf",
     "category": "admission",
@@ -9280,7 +8913,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-693",
+    "id": "adm-667",
     "title": "Project Mode diploma programmes - Online registration extended till 20.06.2024",
     "url": "https://admission.uoc.ac.in/downloads/1718256363_Press_Release_PartTimeCourses9377.pdf",
     "category": "admission",
@@ -9293,7 +8926,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-694",
+    "id": "adm-668",
     "title": "MBA 2024 - Online registration facility for CMAT - 2024 qualified candidates is available now - last date: 15.06.2024",
     "url": "https://admission.uoc.ac.in/downloads/1718256314_Press_Release_MBA6650.pdf",
     "category": "admission",
@@ -9306,7 +8939,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-695",
+    "id": "adm-669",
     "title": "MA Epigraphy and Manuscriptology , Integrated MA Sanskrit(General) - Online Registration extended up to 17.06.2024",
     "url": "https://admission.uoc.ac.in/downloads/1718256226_Press_Release_entrance3536.pdf",
     "category": "admission",
@@ -9319,7 +8952,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-696",
+    "id": "adm-670",
     "title": "FYUGCAP 2024 - 25 : Trial Allotment Published.. - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1718196257_Press_Release_ug7866.pdf",
     "category": "admission",
@@ -9332,7 +8965,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-697",
+    "id": "adm-671",
     "title": "IPCAP 2024: Online Registration Extended upto 14.06.2024",
     "url": "https://admission.uoc.ac.in/downloads/1718171449_Press_Release_IP5717.pdf",
     "category": "admission",
@@ -9345,7 +8978,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-698",
+    "id": "adm-672",
     "title": "FYUGCAP 2024 - 25 : Online Registration Extended upto 10.06.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1717757065_Press_Release_ug6054.pdf",
     "category": "admission",
@@ -9358,7 +8991,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-699",
+    "id": "adm-673",
     "title": "Project Mode diploma programmes- online Registration extended - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1717743184_Press_Release_PartTimeCourses9987.pdf",
     "category": "admission",
@@ -9371,7 +9004,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-700",
+    "id": "adm-674",
     "title": "B.Ed. Special Education (Hearing Impaired/Intellectual Disability) 2024-2025",
     "url": "https://admission.uoc.ac.in/downloads/1717740129_Prospectus_bedu7586.pdf",
     "category": "admission",
@@ -9384,7 +9017,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-701",
+    "id": "adm-675",
     "title": "MBA 2024 - Online Registration extended up to 15.06.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1717734806_Press_Release_MBA9277.pdf",
     "category": "admission",
@@ -9397,7 +9030,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-702",
+    "id": "adm-676",
     "title": "Afzal Ul Ulama Preliminary 2024 : Online Registration Extended upto 18.06.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1717667168_Press_Release_afsal3901.pdf",
     "category": "admission",
@@ -9410,7 +9043,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-703",
+    "id": "adm-677",
     "title": "IPCAP 2024: Online Registration Extended upto 10.06.2024",
     "url": "https://admission.uoc.ac.in/downloads/1717500585_Press_Release_IP6460.pdf",
     "category": "admission",
@@ -9423,7 +9056,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "gen-704",
+    "id": "gen-678",
     "title": "Fee details",
     "url": "https://docs.uoc.ac.in/website/news/2024-06-01%2011:08:26_new1805.pdf",
     "category": "general",
@@ -9436,7 +9069,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "adm-705",
+    "id": "adm-679",
     "title": "B.Ed. Special Education (Hearing Impaired/Intellectual Disability) 2024 - 25 -Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1717140271_Prospectus_bedu5563.pdf",
     "category": "admission",
@@ -9449,7 +9082,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-706",
+    "id": "adm-680",
     "title": "B.Ed. Special Education (Hearing Impaired/Intellectual Disability) 2024 - 25 - Noification",
     "url": "https://admission.uoc.ac.in/downloads/1717140174_Notifications_bedu3925.pdf",
     "category": "admission",
@@ -9462,7 +9095,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-707",
+    "id": "adm-681",
     "title": "B.Ed programme 2024-25 : Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1717138912_Press_Release_bedu5947.pdf",
     "category": "admission",
@@ -9475,7 +9108,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-708",
+    "id": "adm-682",
     "title": "B.Ed programme 2024-25 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1717138775_Notifications_bedu5646.pdf",
     "category": "admission",
@@ -9488,7 +9121,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-709",
+    "id": "adm-683",
     "title": "B.Ed programme 2024-25 :",
     "url": "https://admission.uoc.ac.in/downloads/1717138541_Prospectus_bedu5700.pdf",
     "category": "admission",
@@ -9501,7 +9134,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-710",
+    "id": "adm-684",
     "title": "IPCAP 2024 - 25 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1716373340_Prospectus_IP6349.pdf",
     "category": "admission",
@@ -9514,7 +9147,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-711",
+    "id": "adm-685",
     "title": "IPCAP 2024 - 25 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1716373235_Notifications_IP8197.pdf",
     "category": "admission",
@@ -9527,7 +9160,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-712",
+    "id": "adm-686",
     "title": "IPCAP 2024 - 24 : Registration Started - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1716373164_Press_Release_IP8704.pdf",
     "category": "admission",
@@ -9540,7 +9173,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-713",
+    "id": "adm-687",
     "title": "Afzal Ul Ulama Preliminary 2024- Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1716290310_Prospectus_afsal3424.pdf",
     "category": "admission",
@@ -9553,7 +9186,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-714",
+    "id": "adm-688",
     "title": "Afzal Ul Ulama Preliminary 2024- Notification",
     "url": "https://admission.uoc.ac.in/downloads/1716290274_Notifications_afsal6452.pdf",
     "category": "admission",
@@ -9566,7 +9199,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-715",
+    "id": "adm-689",
     "title": "Afzal Ul Ulama Preliminary 2024- Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1716290230_Press_Release_afsal4241.pdf",
     "category": "admission",
@@ -9579,7 +9212,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-716",
+    "id": "adm-690",
     "title": "CUCAT 2024 Entrance Exam - Hall Ticket Released",
     "url": "https://admission.uoc.ac.in/downloads/1716288818_Press_Release_entrance8144.pdf",
     "category": "admission",
@@ -9592,7 +9225,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-717",
+    "id": "adm-691",
     "title": "Project Mode Diploma Programmes - Online Registration extended up to 10.06.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1716269478_Press_Release_PartTimeCourses7012.pdf",
     "category": "admission",
@@ -9605,7 +9238,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-718",
+    "id": "adm-692",
     "title": "Four Year Under Graduate Programmes and three year Under Graduate B.Voc Programmes - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1716030824_Press_Release_ug8966.pdf",
     "category": "admission",
@@ -9618,7 +9251,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-719",
+    "id": "adm-693",
     "title": "Four Year Under Graduate Programmes and three year Under Graduate B.Voc Programmes - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1716030347_Notifications_ug3470.pdf",
     "category": "admission",
@@ -9631,7 +9264,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-720",
+    "id": "adm-694",
     "title": "MBA 2024 - Online Registration extended up to 31.05.2024",
     "url": "https://admission.uoc.ac.in/downloads/1715839287_Press_Release_MBA5222.pdf",
     "category": "admission",
@@ -9644,7 +9277,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-721",
+    "id": "adm-695",
     "title": "CUCAT 2024 - One Time Editing Facility for the Registered Candidates is Available Now - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1715154539_Press_Release_entrance9565.pdf",
     "category": "admission",
@@ -9657,7 +9290,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-722",
+    "id": "adm-696",
     "title": "MBA 2024 - Online Registration Commenced",
     "url": "https://admission.uoc.ac.in/downloads/1714634369_Press_Release_MBA7895.pdf",
     "category": "admission",
@@ -9670,7 +9303,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-723",
+    "id": "adm-697",
     "title": "CUCAT 2024 : Last date for Online registration - Extended up to 12.05.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1714041213_Press_Release_entrance4334.pdf",
     "category": "admission",
@@ -9683,7 +9316,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-724",
+    "id": "adm-698",
     "title": "Newly introduced Project Mode Diploma Programmes - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1713612118_Press_Release_PartTimeCourses1813.pdf",
     "category": "admission",
@@ -9696,7 +9329,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-725",
+    "id": "adm-699",
     "title": "Newly introduced Project Mode Diploma Programmes - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1713611997_Notifications_PartTimeCourses6537.pdf",
     "category": "admission",
@@ -9709,7 +9342,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-726",
+    "id": "adm-700",
     "title": "Newly Sanctioned PG/Integrated PG Programmes - Press Release & Notification",
     "url": "https://admission.uoc.ac.in/downloads/1713346577_Press_Release_entrance2644.pdf",
     "category": "admission",
@@ -9722,7 +9355,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-727",
+    "id": "adm-701",
     "title": "CUCAT 2024 : Last date for Online registration - Extended till 26.04.2024 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1713248360_Press_Release_entrance6120.pdf",
     "category": "admission",
@@ -9735,7 +9368,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-728",
+    "id": "adm-702",
     "title": "CUCAT 2024 - Registration started - Last Date: 15.04.2024",
     "url": "https://admission.uoc.ac.in/downloads/1711803449_Press_Release_entrance3223.pdf",
     "category": "admission",
@@ -9748,7 +9381,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-729",
+    "id": "adm-703",
     "title": "CUCAT 2024 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1711776358_Notifications_entrance1975.pdf",
     "category": "admission",
@@ -9761,7 +9394,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-730",
+    "id": "adm-704",
     "title": "CUCAT 2024 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/CUCAU_2024_prospectus.pdf",
     "category": "admission",
@@ -9774,7 +9407,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-731",
+    "id": "adm-705",
     "title": "Admission to PG Diploma/Certificate course in Hindi Department 2023 - rank list published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1702276101_Press_Release_PartTimeCourses7376.pdf",
     "category": "admission",
@@ -9787,7 +9420,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-732",
+    "id": "adm-706",
     "title": "Admission to Certificate course in Russian/German/French 2023 - last date extended up to 15.12.2023 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1702276036_Press_Release_PartTimeCourses4365.pdf",
     "category": "admission",
@@ -9800,7 +9433,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-733",
+    "id": "adm-707",
     "title": "BPES(Integrated), BPEd, MPEd Late registration Rank List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1701189384_Press_Release_entrance5940.pdf",
     "category": "admission",
@@ -9813,7 +9446,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-734",
+    "id": "adm-708",
     "title": "Ph.D 2023 - Hall tickets - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1700646050_Press_Release_PhD6492.pdf",
     "category": "admission",
@@ -9826,7 +9459,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-735",
+    "id": "adm-709",
     "title": "Ph.D 2023 entrance examination will be held on 02.12.2023 (Saturday) - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1700117101_Press_Release_PhD6741.pdf",
     "category": "admission",
@@ -9839,7 +9472,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-736",
+    "id": "adm-710",
     "title": "Certificate/Diploma Courses in the department of Hindi & department of Russian and Comparative literature - Registration started",
     "url": "https://admission.uoc.ac.in/downloads/1700026904_Press_Release_PartTimeCourses9488.pdf",
     "category": "admission",
@@ -9852,7 +9485,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-737",
+    "id": "adm-711",
     "title": "MPEd, BPEd and BPES late registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1700026778_Press_Release_entrance4752.pdf",
     "category": "admission",
@@ -9865,7 +9498,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-738",
+    "id": "adm-712",
     "title": "Ph.D 2023 - Online Registration Last Date Extended Upto 30.10.2023, 5 pm - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1698473197_Press_Release_PhD5863.pdf",
     "category": "admission",
@@ -9878,7 +9511,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-739",
+    "id": "adm-713",
     "title": "MBA 2023 Late Registration Extension - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1697709306_Press_Release_MBA9820.pdf",
     "category": "admission",
@@ -9891,7 +9524,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-740",
+    "id": "adm-714",
     "title": "BPES(Integrated)- Rank list published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1697453464_Press_Release_entrance6297.pdf",
     "category": "admission",
@@ -9904,7 +9537,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-741",
+    "id": "adm-715",
     "title": "BPES(Integrated)- Rank list published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1697453419_Press_Release_entrance9774.pdf",
     "category": "admission",
@@ -9917,7 +9550,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-742",
+    "id": "adm-716",
     "title": "Ph.D 2023 Notification",
     "url": "https://admission.uoc.ac.in/downloads/1697197256_Notifications_PhD6330.pdf",
     "category": "admission",
@@ -9930,7 +9563,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-743",
+    "id": "adm-717",
     "title": "Ph.D 2023 - Online registration started - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1697197181_Press_Release_PhD3670.pdf",
     "category": "admission",
@@ -9943,7 +9576,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-744",
+    "id": "adm-718",
     "title": "PG Admission closure date extended till 12.10.2023, 3pm - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1696914764_Press_Release_pg5089.pdf",
     "category": "admission",
@@ -9956,7 +9589,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-745",
+    "id": "adm-719",
     "title": "Two Year B.P.Ed & M.P.Ed Rank List published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1696678748_Press_Release_entrance1471.pdf",
     "category": "admission",
@@ -9969,7 +9602,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-746",
+    "id": "adm-720",
     "title": "Certificate/Diploma programme in arabic - Rank list Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1696503753_Press_Release_PartTimeCourses2213.pdf",
     "category": "admission",
@@ -9982,7 +9615,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-747",
+    "id": "adm-721",
     "title": "PG admission closure date extended till 06.10.2023, 3 pm - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1696072453_Press_Release_pg4168.pdf",
     "category": "admission",
@@ -9995,7 +9628,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-748",
+    "id": "adm-722",
     "title": "UGCAP 2023 - Admission Date Extended - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1695987324_Press_Release_ug6032.pdf",
     "category": "admission",
@@ -10008,7 +9641,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-749",
+    "id": "adm-723",
     "title": "4 year BPES ( Integrated) Entrance Examination - Hall Ticket Released - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1695982229_Press_Release_entrance1135.pdf",
     "category": "admission",
@@ -10021,7 +9654,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-750",
+    "id": "adm-724",
     "title": "RE-NOTIFICATION-CUM-PROSPECTUS for admission to BPES Integrated (4 years) programme 2023",
     "url": "https://admission.uoc.ac.in/downloads/1695626971_Notifications_entrance7991.pdf",
     "category": "admission",
@@ -10034,7 +9667,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-751",
+    "id": "adm-725",
     "title": "CUCAT 2023: Late Registration- last date extended till 30-09-2023",
     "url": "https://admission.uoc.ac.in/downloads/1695619902_Press_Release_entrance1008.pdf",
     "category": "admission",
@@ -10047,7 +9680,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-752",
+    "id": "adm-726",
     "title": "BPES Integrated re-notification - Press release",
     "url": "https://admission.uoc.ac.in/downloads/1695539905_Press_Release_entrance6415.pdf",
     "category": "admission",
@@ -10060,7 +9693,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-753",
+    "id": "adm-727",
     "title": "PGCAP 2023 - Regarding filling up of the Vacant Seats - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1695192061_Press_Release_pg2318.pdf",
     "category": "admission",
@@ -10073,7 +9706,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-754",
+    "id": "adm-728",
     "title": "B.Ed Commerce Admission - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1694777682_Press_Release_bedu1491.pdf",
     "category": "admission",
@@ -10086,7 +9719,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-755",
+    "id": "adm-729",
     "title": "UGCAP 2023: Regarding Filling up of Vacant Seats - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1694777533_Press_Release_ug7399.pdf",
     "category": "admission",
@@ -10099,7 +9732,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-756",
+    "id": "adm-730",
     "title": "BPEd & MPEd Entrance Exam - Hall Ticket Released - Press release",
     "url": "https://admission.uoc.ac.in/downloads/1694516602_Press_Release_entrance4191.pdf",
     "category": "admission",
@@ -10112,7 +9745,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-757",
+    "id": "adm-731",
     "title": "B.Ed 2023: Commerce Option Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1694428370_Press_Release_bedu5289.pdf",
     "category": "admission",
@@ -10125,7 +9758,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-758",
+    "id": "adm-732",
     "title": "Entrance Test for BPEd(2 Year) & MPEd - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1694085349_Press_Release_entrance3183.pdf",
     "category": "admission",
@@ -10138,7 +9771,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-759",
+    "id": "adm-733",
     "title": "M. Ed 2023-24 : Waiting Rank List - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1693653163_Press_Release_medu8204.pdf",
     "category": "admission",
@@ -10151,7 +9784,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-760",
+    "id": "adm-734",
     "title": "Diploma/Certificate Course 2023 - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1693549959_Notifications_PartTimeCourses7229.pdf",
     "category": "admission",
@@ -10164,7 +9797,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-761",
+    "id": "adm-735",
     "title": "Certificate/Diploma Courses in the department of Arabic- Registration started - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1693048441_Press_Release_PartTimeCourses2121.pdf",
     "category": "admission",
@@ -10177,7 +9810,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-762",
+    "id": "adm-736",
     "title": "CUCAT 2023: Late Registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1692961570_Press_Release_entrance4206.pdf",
     "category": "admission",
@@ -10190,7 +9823,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-763",
+    "id": "adm-737",
     "title": "M. Ed 2023-24 First Allotment/ Rank List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1692713939_Press_Release_medu2781.pdf",
     "category": "admission",
@@ -10203,7 +9836,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-764",
+    "id": "adm-738",
     "title": "MBA 2023 Late Registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1692704626_Press_Release_MBA6048.pdf",
     "category": "admission",
@@ -10216,7 +9849,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-765",
+    "id": "adm-739",
     "title": "IPCAP 2023: Waiting Rank List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1692415689_Press_Release_IP6511.pdf",
     "category": "admission",
@@ -10229,7 +9862,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-766",
+    "id": "adm-740",
     "title": "PGCAP 2023 : Waiting Rank List - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1692350390_Press_Release_pg2779.pdf",
     "category": "admission",
@@ -10242,7 +9875,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-767",
+    "id": "adm-741",
     "title": "M.Ed-2023 Last Date Extended - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1692186131_Press_Release_medu2845.pdf",
     "category": "admission",
@@ -10255,7 +9888,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-768",
+    "id": "adm-742",
     "title": "Integrated PG Edit facility available till 16-08-2023 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1691995624_Press_Release_IP4195.pdf",
     "category": "admission",
@@ -10268,7 +9901,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-769",
+    "id": "adm-743",
     "title": "M.Ed Registration extended upto 15-08-2023 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1691995516_Press_Release_medu2075.pdf",
     "category": "admission",
@@ -10281,7 +9914,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-770",
+    "id": "adm-744",
     "title": "PGCAP 2023 Editing and Late Registration - Last Date Extended till 14.08.2023, 5 pm - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1691746923_Press_Release_pg7838.pdf",
     "category": "admission",
@@ -10294,7 +9927,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-771",
+    "id": "adm-745",
     "title": "UGCAP 2023 : Waiting Rank List to Aided Programmes",
     "url": "https://admission.uoc.ac.in/downloads/1691662883_Press_Release_ug7675.pdf",
     "category": "admission",
@@ -10307,7 +9940,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-772",
+    "id": "adm-746",
     "title": "MBA 2023 : Provisional Rank list Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1691644799_Press_Release_MBA4454.pdf",
     "category": "admission",
@@ -10320,7 +9953,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-773",
+    "id": "adm-747",
     "title": "B.Ed Admission 2023 - 24 : Waiting Rank List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1691487037_Press_Release_bedu4947.pdf",
     "category": "admission",
@@ -10333,7 +9966,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-774",
+    "id": "adm-748",
     "title": "PGCAP 2023 Editing and Late Registration - Last Date Extended till 10.08.2023, 3 pm - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1691409477_Press_Release_pg6329.pdf",
     "category": "admission",
@@ -10346,7 +9979,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-775",
+    "id": "adm-749",
     "title": "UGCAP 2023: Second Supplementary Allotment",
     "url": "https://admission.uoc.ac.in/downloads/1691233763_Press_Release_ug2559.pdf",
     "category": "admission",
@@ -10359,7 +9992,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-776",
+    "id": "adm-750",
     "title": "PGCAP 2023 - Hall Tickets for MA English Entrance Examination (For Non-English Core/Main Degree Candidates) - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1691149169_Press_Release_pg3701.pdf",
     "category": "admission",
@@ -10372,7 +10005,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-777",
+    "id": "adm-751",
     "title": "UGCAP 2023: Waiting Rank List to Self Financing Programmes - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1691062726_Press_Release_ug1917.pdf",
     "category": "admission",
@@ -10385,7 +10018,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-778",
+    "id": "adm-752",
     "title": "MBA 2023 - Group Discussion & Interview (Phase 2) -Schedule - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1690976824_Press_Release_MBA2343.pdf",
     "category": "admission",
@@ -10398,7 +10031,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-779",
+    "id": "adm-753",
     "title": "B.Ed Admission 2023 - Edit option and Late Registration facility available - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1690975535_Press_Release_bedu1660.pdf",
     "category": "admission",
@@ -10411,7 +10044,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-780",
+    "id": "adm-754",
     "title": "UGCAP 2023: First Supplementary Allotment - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1690898781_Press_Release_ug2963.pdf",
     "category": "admission",
@@ -10424,7 +10057,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-781",
+    "id": "adm-755",
     "title": "M.Ed Admission 2023- Online registration started - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1690876216_Press_Release_medu8876.pdf",
     "category": "admission",
@@ -10437,7 +10070,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-782",
+    "id": "adm-756",
     "title": "M.Ed Admission 2023 - Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1690876059_Prospectus_medu3690.pdf",
     "category": "admission",
@@ -10450,7 +10083,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-783",
+    "id": "adm-757",
     "title": "M.Ed Admission 2023 - Notification",
     "url": "https://admission.uoc.ac.in/downloads/1690876014_Notifications_medu7103.pdf",
     "category": "admission",
@@ -10463,7 +10096,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-784",
+    "id": "adm-758",
     "title": "B.Ed admission 2023-24 - Second allotment published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1690463623_Press_Release_bedu2134.pdf",
     "category": "admission",
@@ -10476,7 +10109,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-785",
+    "id": "adm-759",
     "title": "PGCAP 2023 - Community Rank List Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1690389029_Press_Release_pg3195.pdf",
     "category": "admission",
@@ -10489,7 +10122,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-786",
+    "id": "adm-760",
     "title": "PGCAP 2023 - Second Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1690388949_Press_Release_pg1615.pdf",
     "category": "admission",
@@ -10502,7 +10135,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-787",
+    "id": "adm-761",
     "title": "MBA online registration last date 29.07.2023, 5.00 PM - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1690379326_Press_Release_MBA2968.pdf",
     "category": "admission",
@@ -10515,7 +10148,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-788",
+    "id": "adm-762",
     "title": "Afzal ul ulama (Preliminary) 2023-24 - Second Allotment published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1690200973_Press_Release_afsal2408.pdf",
     "category": "admission",
@@ -10528,7 +10161,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-789",
+    "id": "adm-763",
     "title": "BEd second allotment will be published on 27/07/2023",
     "url": "https://admission.uoc.ac.in/downloads/#",
     "category": "admission",
@@ -10541,7 +10174,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-790",
+    "id": "adm-764",
     "title": "UGCAP 2023 : Editing & Late Registration",
     "url": "https://admission.uoc.ac.in/downloads/1690030461_Press_Release_ug2770.pdf",
     "category": "admission",
@@ -10554,7 +10187,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-791",
+    "id": "adm-765",
     "title": "IPCAP 2023 : Late Registration - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1690015455_Press_Release_IP7954.pdf",
     "category": "admission",
@@ -10567,7 +10200,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-792",
+    "id": "adm-766",
     "title": "MBA admission 2023 - schedule of GD and Interview - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1690012170_Press_Release_MBA4836.pdf",
     "category": "admission",
@@ -10580,7 +10213,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-793",
+    "id": "adm-767",
     "title": "PGCAP 2023 - Community Quota Reporting - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1689953716_Press_Release_pg4226.pdf",
     "category": "admission",
@@ -10593,7 +10226,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-794",
+    "id": "adm-768",
     "title": "PGCAP 2023 - First Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1689953601_Press_Release_pg8929.pdf",
     "category": "admission",
@@ -10606,7 +10239,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-795",
+    "id": "adm-769",
     "title": "B.Ed Admission 2023 - Edit facility available till 22/07/2023, 5 pm",
     "url": "https://admission.uoc.ac.in/downloads/1689933750_Press_Release_bedu7318.pdf",
     "category": "admission",
@@ -10619,7 +10252,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-796",
+    "id": "adm-770",
     "title": "CUCAT 2023 - MA JOURNALISM & MASS COMMUNICATION , MSW, MCA - Allotment published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1689855532_Press_Release_entrance2144.pdf",
     "category": "admission",
@@ -10632,7 +10265,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-797",
+    "id": "adm-771",
     "title": "PGCAP 2023 - MA English entrance attendance confirmation link for Non English candidates - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1689828714_Press_Release_pg4160.pdf",
     "category": "admission",
@@ -10645,7 +10278,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-798",
+    "id": "adm-772",
     "title": "Afzal ul ulama Preliminary 2023-24 - First Allotment published.",
     "url": "https://admission.uoc.ac.in/downloads/1689759082_Press_Release_afsal3748.pdf",
     "category": "admission",
@@ -10658,7 +10291,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-799",
+    "id": "adm-773",
     "title": "Integrated PG - Second Allotment",
     "url": "https://admission.uoc.ac.in/downloads/1689419126_Press_Release_IP1762.pdf",
     "category": "admission",
@@ -10671,7 +10304,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-800",
+    "id": "adm-774",
     "title": "B.Ed admission 2023-24 - First Allotment published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1689317471_Press_Release_bedu4584.pdf",
     "category": "admission",
@@ -10684,7 +10317,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-801",
+    "id": "adm-775",
     "title": "UGCAP 2023: PwD Quota Admission - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1689312887_Press_Release_ug2104.pdf",
     "category": "admission",
@@ -10697,7 +10330,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-802",
+    "id": "adm-776",
     "title": "Afzal ul ulama preliminary 2023-24 - Trial Allotment published.",
     "url": "https://admission.uoc.ac.in/downloads/1689229138_Press_Release_afsal6810.pdf",
     "category": "admission",
@@ -10710,7 +10343,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-803",
+    "id": "adm-777",
     "title": "PGCAP 2023 : Trial Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1689165758_Press_Release_pg7113.pdf",
     "category": "admission",
@@ -10723,7 +10356,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-804",
+    "id": "adm-778",
     "title": "UGCAP 2023 : Community Quota Rank List Published.",
     "url": "https://admission.uoc.ac.in/downloads/1689165587_Press_Release_ug9980.pdf",
     "category": "admission",
@@ -10736,7 +10369,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-805",
+    "id": "adm-779",
     "title": "UGCAP 2023: Third Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1689071177_Press_Release_ug4049.pdf",
     "category": "admission",
@@ -10749,7 +10382,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-806",
+    "id": "adm-780",
     "title": "IPCAP 2023 : First Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1689068947_Press_Release_IP5488.pdf",
     "category": "admission",
@@ -10762,7 +10395,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-807",
+    "id": "adm-781",
     "title": "B.Ed Trial Allotment published ( Except Commerce option) - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1688643542_Press_Release_bedu6775.pdf",
     "category": "admission",
@@ -10775,7 +10408,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-808",
+    "id": "adm-782",
     "title": "MBA 2023 - Link for online registration is available , Last date: 12.07.2023",
     "url": "https://admission.uoc.ac.in/downloads/1688639727_Press_Release_entrance7680.pdf",
     "category": "admission",
@@ -10788,7 +10421,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-809",
+    "id": "adm-783",
     "title": "Admission started to entrance based PG programmes [CUCAT 2023] - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1688545824_Press_Release_entrance4395.pdf",
     "category": "admission",
@@ -10801,7 +10434,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-810",
+    "id": "adm-784",
     "title": "UGCAP 2023 : Second Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1688373080_Press_Release_ug5617.pdf",
     "category": "admission",
@@ -10814,7 +10447,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-811",
+    "id": "adm-785",
     "title": "PGCAP 2023 - Online Registration Last Date Extended Upto 05.07.2023, 5 pm",
     "url": "https://admission.uoc.ac.in/downloads/1688361327_Press_Release_pg3467.pdf",
     "category": "admission",
@@ -10827,7 +10460,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-812",
+    "id": "adm-786",
     "title": "Afzal ul ulama preliminary 2023- Online Registration last date extended upto 10.07.2023.",
     "url": "https://admission.uoc.ac.in/downloads/1688188811_Press_Release_afsal5379.pdf",
     "category": "admission",
@@ -10840,7 +10473,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-813",
+    "id": "adm-787",
     "title": "UGCAP 2023 : Mandatory Fee Payment/Higher option Cancellation/Community Quota Reporting - Date Extended - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1687869787_Press_Release_ug2549.pdf",
     "category": "admission",
@@ -10853,7 +10486,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-814",
+    "id": "adm-788",
     "title": "The Entrance test and Physical test for BPE (Integrated) & BPEd programmes, scheduled on 30.06.2023 & 04.07.2023, has been postponed",
     "url": "https://admission.uoc.ac.in/downloads/1687865690_Press_Release_entrance6693.pdf",
     "category": "admission",
@@ -10866,7 +10499,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-815",
+    "id": "adm-789",
     "title": "PGCAP 2023 - Online Registration Last Date Extended Upto 01.07.2023, 5 pm",
     "url": "https://admission.uoc.ac.in/downloads/1687856542_Press_Release_pg5374.pdf",
     "category": "admission",
@@ -10879,7 +10512,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-816",
+    "id": "adm-790",
     "title": "UGCAP 2023 : Community Quota Reporting - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1687779482_Press_Release_ug4200.pdf",
     "category": "admission",
@@ -10892,7 +10525,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-817",
+    "id": "adm-791",
     "title": "IPCAP 2023 Registration Extended up to 4/7/2023 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1687779277_Press_Release_IP6109.pdf",
     "category": "admission",
@@ -10905,7 +10538,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-818",
+    "id": "adm-792",
     "title": "UGCAP 2023 : First Allotment Published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1687602204_Press_Release_ug6121.pdf",
     "category": "admission",
@@ -10918,7 +10551,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-819",
+    "id": "adm-793",
     "title": "B.Ed 2023 - 24: B.Ed, Special B.Ed online Registration extended upto 28.06.2023 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1687515594_Press_Release_bedu7372.pdf",
     "category": "admission",
@@ -10931,7 +10564,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-820",
+    "id": "adm-794",
     "title": "Afzal - Ul - Ulama (Preliminary) : Date Extended - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1687502807_Press_Release_afsal6451.pdf",
     "category": "admission",
@@ -10944,7 +10577,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-821",
+    "id": "adm-795",
     "title": "UGCAP 2023: Trial Allotment published - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1687262664_Press_Release_ug8892.pdf",
     "category": "admission",
@@ -10957,7 +10590,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-822",
+    "id": "adm-796",
     "title": "IPCAP 2023: Registration Extended - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1687157120_Press_Release_IP1062.pdf",
     "category": "admission",
@@ -10970,7 +10603,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-823",
+    "id": "adm-797",
     "title": "PGCAP 2023 - Online Registration Started - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1686911607_Press_Release_pg8888.pdf",
     "category": "admission",
@@ -10983,7 +10616,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-824",
+    "id": "adm-798",
     "title": "PGCAP 2023 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1686911166_Notifications_pg4334.pdf",
     "category": "admission",
@@ -10996,7 +10629,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-825",
+    "id": "adm-799",
     "title": "B.Ed 2023 : Registration Extended - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1686898776_Press_Release_bedu5738.pdf",
     "category": "admission",
@@ -11009,7 +10642,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-826",
+    "id": "adm-800",
     "title": "Afzal - Ul - Ulama (Preliminary) 2023 : Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1686295632_Press_Release_afsal2680.pdf",
     "category": "admission",
@@ -11022,7 +10655,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-827",
+    "id": "adm-801",
     "title": "Afzal - Ul - Ulama (Preliminary) 2023 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1686295574_Prospectus_afsal4288.pdf",
     "category": "admission",
@@ -11035,7 +10668,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-828",
+    "id": "adm-802",
     "title": "Afzal - Ul - Ulama (Preliminary) 2023 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1686295464_Notifications_afsal2403.pdf",
     "category": "admission",
@@ -11048,7 +10681,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-829",
+    "id": "adm-803",
     "title": "NOTIFICATION-CUM-PROSPECTUS FOR BPE Integrated (4 years) programme2023 and REVISED NOTIFICATION FOR BPEd (2 Year) programme 2023",
     "url": "https://admission.uoc.ac.in/downloads/1686294051_Notifications_entrance9084.pdf",
     "category": "admission",
@@ -11061,7 +10694,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-830",
+    "id": "adm-804",
     "title": "BPE (Integrated) and BPEd - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1686286765_Press_Release_entrance2577.pdf",
     "category": "admission",
@@ -11074,7 +10707,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-831",
+    "id": "adm-805",
     "title": "IPCAP 2023: Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1686142459_Press_Release_IP3849.pdf",
     "category": "admission",
@@ -11087,7 +10720,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-832",
+    "id": "adm-806",
     "title": "IPCAP 2023 - 24 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1685792768_Prospectus_IP8544.pdf",
     "category": "admission",
@@ -11100,7 +10733,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-833",
+    "id": "adm-807",
     "title": "IPCAP 2023 - 24 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1685792699_Notifications_IP7658.pdf",
     "category": "admission",
@@ -11113,7 +10746,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-834",
+    "id": "adm-808",
     "title": "IPCAP 2023 : Online registration started - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1685792446_Press_Release_IP9174.pdf",
     "category": "admission",
@@ -11126,7 +10759,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-835",
+    "id": "adm-809",
     "title": "B.Ed admission 2023-24 : Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1685690569_Press_Release_bedu6456.pdf",
     "category": "admission",
@@ -11139,7 +10772,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-836",
+    "id": "adm-810",
     "title": "B.Ed 2023 - 24 Prospectus: Special Education (Hearing Impaired/Intellectual Disability)",
     "url": "https://admission.uoc.ac.in/downloads/1685690338_Prospectus_bedu4533.pdf",
     "category": "admission",
@@ -11152,7 +10785,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-837",
+    "id": "adm-811",
     "title": "B.Ed 2023 - 24 : NOTIFICATION FOR B.Ed. SPECIAL EDUCATION (HEARING IMPAIRED/INTELLECTUAL DISABILITY)",
     "url": "https://admission.uoc.ac.in/downloads/1685690244_Notifications_bedu5341.pdf",
     "category": "admission",
@@ -11165,7 +10798,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-838",
+    "id": "adm-812",
     "title": "B.Ed 2023 - 24 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1685690141_Prospectus_bedu5359.pdf",
     "category": "admission",
@@ -11178,7 +10811,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-839",
+    "id": "adm-813",
     "title": "B.Ed 2023 - 24 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1685690061_Notifications_bedu9622.pdf",
     "category": "admission",
@@ -11191,7 +10824,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-840",
+    "id": "adm-814",
     "title": "UGCAP 2023 : Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1685355352_Press_Release_ug6991.pdf",
     "category": "admission",
@@ -11204,7 +10837,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-841",
+    "id": "adm-815",
     "title": "UGCAP2023 : Notification",
     "url": "https://admission.uoc.ac.in/downloads/1685351292_Notifications_ug9474.pdf",
     "category": "admission",
@@ -11217,7 +10850,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-842",
+    "id": "adm-816",
     "title": "CUCAT 2023 Entrance Exam : Hall Ticket Released - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1683626426_Press_Release_entrance4939.pdf",
     "category": "admission",
@@ -11230,7 +10863,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-843",
+    "id": "adm-817",
     "title": "CUCAT 2023 - Online Registration extended till 27.04.2023 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1681726072_Press_Release_entrance6282.pdf",
     "category": "admission",
@@ -11243,7 +10876,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-844",
+    "id": "adm-818",
     "title": "MBA 2023 online registration extended till 02.05.2023 - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1681194754_Press_Release_MBA5082.pdf",
     "category": "admission",
@@ -11256,7 +10889,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-845",
+    "id": "adm-819",
     "title": "CUCAT2023 : Integrated PG in Campus - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1679742687_Press_Release_IP3508.pdf",
     "category": "admission",
@@ -11269,7 +10902,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-846",
+    "id": "adm-820",
     "title": "Revised details regarding Integrated PG programmes in University Campus",
     "url": "https://admission.uoc.ac.in/downloads/1679659502_Notifications_entrance9730.pdf",
     "category": "admission",
@@ -11282,7 +10915,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-847",
+    "id": "adm-821",
     "title": "CUCAT 2023 - 24 : Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1679414135_Press_Release_entrance4556.pdf",
     "category": "admission",
@@ -11295,7 +10928,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-848",
+    "id": "adm-822",
     "title": "CUCAT 2023 - 24 : NOTIFICATION FOR ADMISSION TO ENTRANCE ORIENTED PG/5 YEAR INTEGRATED PG/ BPEd/LLM WITH DOUBLE SPECIALIZATION PROGRAMMES 2023",
     "url": "https://admission.uoc.ac.in/downloads/1679413772_Notifications_entrance9735.pdf",
     "category": "admission",
@@ -11308,7 +10941,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-849",
+    "id": "adm-823",
     "title": "MBA 2023 : Online registration started- Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1678272795_Press_Release_MBA7733.pdf",
     "category": "admission",
@@ -11321,7 +10954,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-850",
+    "id": "adm-824",
     "title": "MBA 2023 : Notification cum Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1678272689_Notifications_MBA4145.pdf",
     "category": "admission",
@@ -11334,7 +10967,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-851",
+    "id": "adm-825",
     "title": "CUCAT 2023 : Tentative Schedule - Press Release",
     "url": "https://admission.uoc.ac.in/downloads/1676023239_Press_Release_entrance4337.pdf",
     "category": "admission",
@@ -11347,7 +10980,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "gen-852",
+    "id": "gen-826",
     "title": "RELEASE ORDER",
     "url": "http://docs.uoc.ac.in/website/news/2022-09-14%2018:10:53_new1188.pdf",
     "category": "general",
@@ -11360,7 +10993,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-853",
+    "id": "gen-827",
     "title": "ADMINISTRATIVE SANCTION",
     "url": "http://docs.uoc.ac.in/website/news/2022-09-14%2018:10:14_new1185.pdf",
     "category": "general",
@@ -11373,7 +11006,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "adm-854",
+    "id": "adm-828",
     "title": "Revised Prospectus for Admission to B.Ed Programme 2022 - 23",
     "url": "https://admission.uoc.ac.in/downloads/1660129097_Prospectus_bedu6106.pdf",
     "category": "admission",
@@ -11386,7 +11019,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-855",
+    "id": "adm-829",
     "title": "B.Ed. Special Education (Hearing Impaired/Intellectual Disability) 2022 - 23 - Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1659692315_Prospectus_bedu2698.pdf",
     "category": "admission",
@@ -11399,7 +11032,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-856",
+    "id": "adm-830",
     "title": "Prospectus for Admission to B.Ed Programme",
     "url": "https://admission.uoc.ac.in/downloads/1659691595_Prospectus_bedu8710.pdf",
     "category": "admission",
@@ -11412,7 +11045,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-857",
+    "id": "adm-831",
     "title": "Prospectus for Admission to M.Ed Programme",
     "url": "https://admission.uoc.ac.in/downloads/1659607896_Prospectus_medu2056.pdf",
     "category": "admission",
@@ -11425,7 +11058,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-858",
+    "id": "adm-832",
     "title": "PGCAP 2022 : Admission - Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1658753568_Prospectus_pg3388.pdf",
     "category": "admission",
@@ -11438,7 +11071,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-859",
+    "id": "adm-833",
     "title": "Prospectus for Admission to Integrated PG programmes",
     "url": "https://admission.uoc.ac.in/downloads/1657790621_Prospectus_IP5155.pdf",
     "category": "admission",
@@ -11451,7 +11084,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-860",
+    "id": "adm-834",
     "title": "UGCAP- 2022 : Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/UGCAP2022-Prospectus.pdf",
     "category": "admission",
@@ -11464,7 +11097,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-861",
+    "id": "adm-835",
     "title": "Afzal ul ulama( Preliminary) 2022 - 23- Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1656934713_Prospectus_afsal6237.pdf",
     "category": "admission",
@@ -11477,7 +11110,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-862",
+    "id": "adm-836",
     "title": "Erratum to Prospectus CUCAT 2022 - Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1650086619_Prospectus_entrance7725.pdf",
     "category": "admission",
@@ -11490,7 +11123,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "adm-863",
+    "id": "adm-837",
     "title": "CUCAT 2022- Online registration for PG/ Integrated PG/BPEd/BPEd Integrated/LLM Programmes - Prospectus",
     "url": "https://admission.uoc.ac.in/downloads/1649245255_Prospectus_entrance8831.pdf",
     "category": "admission",
@@ -11503,7 +11136,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "Directorate of Admission (DoA)"
   },
   {
-    "id": "gen-864",
+    "id": "gen-838",
     "title": "PLAN REVIEW",
     "url": "http://docs.uoc.ac.in/website/news/2021-08-10%2014:07:33_new963.pdf",
     "category": "general",
@@ -11516,7 +11149,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-865",
+    "id": "gen-839",
     "title": "PLAN PROGRESS",
     "url": "http://docs.uoc.ac.in/website/news/2021-08-10%2014:07:26_new962.pdf",
     "category": "general",
@@ -11529,7 +11162,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-866",
+    "id": "gen-840",
     "title": "RELEASE ORDER",
     "url": "http://docs.uoc.ac.in/website/news/2021-08-10%2014:07:16_new961.pdf",
     "category": "general",
@@ -11542,7 +11175,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-867",
+    "id": "gen-841",
     "title": "ADMINISTRATIVE SANCTION",
     "url": "http://docs.uoc.ac.in/website/news/2021-08-10%2014:06:40_new960.pdf",
     "category": "general",
@@ -11555,7 +11188,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "reg-868",
+    "id": "reg-842",
     "title": "Notifications",
     "url": "http://results.uoc.ac.in/",
     "category": "regular",
@@ -11569,7 +11202,33 @@ const VERIFIED_NOTICES_DATASET = [
     "cross_categories": []
   },
   {
-    "id": "gen-869",
+    "id": "gen-843",
+    "title": "Provisional selection list of All India Inter University Weightlifting(W) 2026-27",
+    "url": "https://uoc.ac.in/index.php/see-all-news/item/662-provisional-selection-list-of-all-india-inter-university-weightlifting-w-2026-27",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Official Order",
+    "date": "Recent",
+    "published_at": "",
+    "timestamp": 0,
+    "is_new": false,
+    "source": "University of Calicut (Official)"
+  },
+  {
+    "id": "gen-844",
+    "title": "Provisional selection list of All India Inter University Weightlifting(M) 2026-27",
+    "url": "https://uoc.ac.in/index.php/see-all-news/item/661-provisional-selection-list-of-all-india-inter-university-weightlifting-m-2026-27",
+    "category": "general",
+    "category_label": "CUC News",
+    "sub_type": "Official Order",
+    "date": "Recent",
+    "published_at": "",
+    "timestamp": 0,
+    "is_new": false,
+    "source": "University of Calicut (Official)"
+  },
+  {
+    "id": "gen-845",
     "title": "Selection list of All India Inter University Archery(M&W) 2026-27",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/660-selection-list-of-all-india-inter-university-archery-m-w-2026-27",
     "category": "general",
@@ -11582,7 +11241,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-870",
+    "id": "gen-846",
     "title": "Ph.D Vacancy Notification (Any time Registration)",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/658-ph-d-vacancy-notification-any-time-registration",
     "category": "general",
@@ -11595,7 +11254,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-871",
+    "id": "gen-847",
     "title": "CDC – Inviting Applications for Permanent Increase of Seats in Existing Programmes in Affiliated Colleges of the University of Calicut for the Academic Years 2027–28 and 2028–29, up to the Limit Prescribed by the Statute – Reg.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/657-cdc-inviting-applications-for-permanent-increase-of-seats-in-existing-programmes-in-affiliated-colleges-of-the-university-of-calicut-for-the-academic-years-2027-28-and-2028-29-up-to-the-limit-prescribed-by-the-statute-reg",
     "category": "general",
@@ -11608,7 +11267,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-872",
+    "id": "gen-848",
     "title": "Selection list of All India Inter University Arm Wrestling(WOMEN) 2026-27",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/656-selection-list-of-all-india-inter-university-arm-wrestling-women-2026-27",
     "category": "general",
@@ -11621,7 +11280,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-873",
+    "id": "gen-849",
     "title": "Selection list of All India Inter University Arm Wrestling(MEN) 2026-27",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/655-selection-list-of-all-india-inter-university-arm-wrestling-men-2026-27",
     "category": "general",
@@ -11634,7 +11293,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-874",
+    "id": "gen-850",
     "title": "Selection list of All India Inter University Boxing(WOMEN) 2026-27",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/654-selection-list-of-all-india-inter-university-boxing-women-2026-27",
     "category": "general",
@@ -11647,7 +11306,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-875",
+    "id": "gen-851",
     "title": "Selection list of All India Inter University Boxing(MEN) 2026-27",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/653-selection-list-of-all-india-inter-university-boxing-men-2026-27",
     "category": "general",
@@ -11660,7 +11319,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-876",
+    "id": "gen-852",
     "title": "University Merit Scholarship 2025-26 Admission Notification",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/652-university-merit-scholarship-2025-26-admission-notification",
     "category": "general",
@@ -11673,7 +11332,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-877",
+    "id": "gen-853",
     "title": "Def-Space Autumn Internship 2026, as a part of Def-Space Education and Innovation: for innovators and learners.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/651-def-space-autumn-internship-2026-as-a-part-of-def-space-education-and-innovation-for-innovators-and-learners",
     "category": "general",
@@ -11686,7 +11345,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-878",
+    "id": "gen-854",
     "title": "4th Annual conference of the SHSK",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/650-4th-annual-conference-of-the-shsk",
     "category": "general",
@@ -11699,7 +11358,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-879",
+    "id": "gen-855",
     "title": "NATIONAL TESTING AGENCY (NTA) : UGC - NET DECEMBER, 2025 List of Candidates Qualified for Award of ''National Fellowship for Other Backward Classes (NFOBC)''.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/649-national-testing-agency-nta-ugc-net-december-2025-list-of-candidates-qualified-for-award-of-national-fellowship-for-other-backward-classes-nfobc",
     "category": "general",
@@ -11712,7 +11371,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-880",
+    "id": "gen-856",
     "title": "Tentative Sports Calendar",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/648-tentative-sports-calendar-2026-27",
     "category": "general",
@@ -11725,7 +11384,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-881",
+    "id": "gen-857",
     "title": "NOTIFICATION FOR THE SELECTION OF JUNIOR RESEARCH FELLOW/PROJECT ASSOCIATE",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/647-notification-for-the-selection-of-junior-research-fellow-project-associate",
     "category": "general",
@@ -11738,7 +11397,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-882",
+    "id": "gen-858",
     "title": "Canteen Quotaion notice - IET",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/646-canteen-quotaion-notice-iet",
     "category": "general",
@@ -11751,7 +11410,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-883",
+    "id": "gen-859",
     "title": "Forensic Science - Auction of dogs",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/645-forensic-science-auction-of-dogs",
     "category": "general",
@@ -11764,7 +11423,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-884",
+    "id": "gen-860",
     "title": "Walkin interview postponed - School of Drama and Fine Arts",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/644-walkin-interview-postponed-school-of-drama-and-fine-arts",
     "category": "general",
@@ -11777,7 +11436,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-885",
+    "id": "gen-861",
     "title": "Instruction to students and parents: Regarding the affiliation status of new self-financing programs in autonomous colleges.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/643-instruction-to-students-and-parents-regarding-the-affiliation-status-of-new-self-financing-programs-in-autonomous-colleges",
     "category": "general",
@@ -11790,7 +11449,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-886",
+    "id": "gen-862",
     "title": "Interview with Vice Chancellor - Radio CU",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/642-radio-cu-interview",
     "category": "general",
@@ -11803,7 +11462,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-887",
+    "id": "gen-863",
     "title": "Press Release for the Appointment of Assistant Professors on daily wage basis in the University Teaching Departments",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/641-press-release-for-the-appointment-of-assistant-professors-on-daily-wage-basis-in-the-university-teaching-departments",
     "category": "general",
@@ -11816,7 +11475,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-888",
+    "id": "gen-864",
     "title": "3-Day Artificial Intelligence",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/640-3-day-artificial-intelligence",
     "category": "general",
@@ -11829,7 +11488,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-889",
+    "id": "gen-865",
     "title": "Circular regarding the extension of the last date for application for starting new Programmes in Govt/Aided Colleges for the academic year 2026-27",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/639-circular-regarding-the-extension-of-the-last-date-for-application-for-starting-new-programmes-in-govt-aided-colleges-for-the-academic-year-2026-27",
     "category": "general",
@@ -11842,7 +11501,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-890",
+    "id": "gen-866",
     "title": "Sardar Vallabhbhai Patel National Unity Award – Inviting Nominations – Regarding.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/638-sardar-vallabhbhai-patel-national-unity-award-inviting-nominations-regarding",
     "category": "general",
@@ -11855,7 +11514,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-891",
+    "id": "gen-867",
     "title": "Ph. D. in Forensic Science Admission 2026 (any time registration) Provisional Rank list of eligible candidates.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/637-ph-d-in-forensic-science-admission-2026-any-time-registration-provisional-rank-list-of-eligible-candidates",
     "category": "general",
@@ -11868,7 +11527,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-892",
+    "id": "gen-868",
     "title": "The 2-Day Helicopter Design Workshop & 3- Day Artificial Intelligence Workshop",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/636-the-2-day-helicopter-design-workshop-3-day-artificial-intelligence-workshop",
     "category": "general",
@@ -11881,7 +11540,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-893",
+    "id": "gen-869",
     "title": "Department of Journalism and Mass Communication - Notification for PhD Application",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/635-department-of-journalism-and-mass-communication-notification-for-phd-application",
     "category": "general",
@@ -11894,7 +11553,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-894",
+    "id": "gen-870",
     "title": "Ph.D Rank list for Eligible Candidate-Department of Zoology.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/634-ph-d-rank-list-for-eligible-candidate-department-of-zoology",
     "category": "general",
@@ -11907,7 +11566,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-895",
+    "id": "gen-871",
     "title": "Spot admission for the B.Com Computer Application Programme at ITSR Chethalayam",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/633-spot-admission-for-the-b-com-computer-application-programme-at-itsr-chethalayam",
     "category": "general",
@@ -11920,7 +11579,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-896",
+    "id": "gen-872",
     "title": "Notification-Last Date Extended - MA Sociology programme at ITSR Chethalayam.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/632-notification-last-date-extended-ma-sociology-programme-at-itsr-chethalayam",
     "category": "general",
@@ -11933,7 +11592,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-897",
+    "id": "gen-873",
     "title": "Workshop on Research and Publication Ethics",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/631-workshop-on-research-and-publication-ethics",
     "category": "general",
@@ -11946,7 +11605,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-898",
+    "id": "gen-874",
     "title": "DCMS- Ph.D vacancy notification",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/630-dcms-ph-d-vacancy-notification",
     "category": "general",
@@ -11959,7 +11618,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-899",
+    "id": "gen-875",
     "title": "Extended the application deadline for the Prof. M.M.Ghani Award for the Best College Teachers for the academic years 2023-2024 and 2024-2025",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/629-extended-the-application-deadline-for-the-prof-m-m-ghani-award-for-the-best-college-teachers-for-the-academic-years-2023-2024-and-2024-2025",
     "category": "general",
@@ -11972,7 +11631,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-900",
+    "id": "gen-876",
     "title": "Applications are invited by EMMRC, University of Calicut, for the upcoming Massive Open Online Course (MOOC) offered through the SWAYAM portal. For more information, please visit www.emmrccalicut.org",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/628-applications-are-invited-by-emmrc-university-of-calicut-for-the-upcoming-massive-open-online-course-mooc-offered-through-the-swayam-portal-for-more-information-please-visit-www-emmrccalicut-org",
     "category": "general",
@@ -11985,7 +11644,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-901",
+    "id": "gen-877",
     "title": "Applications are invited for one vacant PhD position (Any-time category) from candidates possessing an independent fellowship (CSIR/UGC-JRF) in the Department of Botany.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/627-applications-are-invited-for-one-vacant-phd-position-any-time-category-from-candidates-possessing-an-independent-fellowship-csir-ugc-jrf-in-the-department-of-botany",
     "category": "general",
@@ -11998,7 +11657,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-902",
+    "id": "gen-878",
     "title": "Applications are invited from valid JRF holders (Central/ State Agencies) for admission to the Ph.D. programme in the Department of Forensic Science, University of Calicut.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/626-applications-are-invited-from-valid-jrf-holders-central-state-agencies-for-admission-to-the-ph-d-programme-in-the-department-of-forensic-science-university-of-calicut",
     "category": "general",
@@ -12011,7 +11670,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-903",
+    "id": "gen-879",
     "title": "WALK-IN INTERVIEW FOR INTERN RECRUITMENT",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/625-walk-in-interview-for-intern-recruitment",
     "category": "general",
@@ -12024,7 +11683,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-904",
+    "id": "gen-880",
     "title": "Applications are invited from JRF Holders(Central/State agencies) for admission to the PhD Programme in the Department of Zoology, University of Calicut.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/624-applications-are-invited-from-jrf-holders-central-state-agencies-for-admission-to-the-phd-programme-in-the-department-of-zoology-university-of-calicut",
     "category": "general",
@@ -12037,7 +11696,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-905",
+    "id": "gen-881",
     "title": "Applications are invited for third semester college transfer of B.Arch students between colleges affiliated to University of Calicut during the academic year, 2026-2027.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/623-applications-are-invited-for-third-semester-college-transfer-of-b-arch-students-between-colleges-affiliated-to-university-of-calicut-during-the-academic-year-2026-2027",
     "category": "general",
@@ -12050,7 +11709,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-906",
+    "id": "gen-882",
     "title": "Admission Notification and Application Form for Admission MA Sociology programme 2026-27 - ITSR Chethalayam",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/622-admission-notification-and-application-form-for-admission-ma-sociology-programme-2026-27-itsr-chethalayam",
     "category": "general",
@@ -12063,7 +11722,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-907",
+    "id": "gen-883",
     "title": "Def-Space Summer Internship 2026",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/621-def-space-summer-internship-2026",
     "category": "general",
@@ -12076,7 +11735,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-908",
+    "id": "gen-884",
     "title": "Admission Notification and Application Form for Admission to Four Year UG Programmes - ITSR Chethalayam-2026",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/620-admission-notification-and-application-form-for-admission-to-four-year-ug-programmes-itsr-chethalayam-2026",
     "category": "general",
@@ -12089,7 +11748,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-909",
+    "id": "gen-885",
     "title": "Provisional Selection list of Calicut University Powerlifting(Women) team for All India Inter University Powerlifting(W) Championship 2025-26",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/619-provisional-selection-list-of-calicut-university-powerlifting-women-team-for-all-india-inter-university-powerlifting-w-championship-2025-26",
     "category": "general",
@@ -12102,7 +11761,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-910",
+    "id": "gen-886",
     "title": "The University of Calicut invites application from distinguished academicians for appointment as Emeritus Professor in the Department of Biotechnology",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/618-the-university-of-calicut-invites-application-from-distinguished-academicians-for-appointment-as-emeritus-professor-in-the-department-of-biotechnology",
     "category": "general",
@@ -12115,7 +11774,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-911",
+    "id": "gen-887",
     "title": "NOTIFICATION FOR THE SELECTION OF RESEARCH ASSISTANT",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/617-notification-for-the-selection-of-research-assistant",
     "category": "general",
@@ -12128,7 +11787,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-912",
+    "id": "gen-888",
     "title": "Regarding the correction of discrepancies in the data submitted by colleges for the First Semester FYUGP November 2024.",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/616-regarding-the-correction-of-discrepancies-in-the-data-submitted-by-colleges-for-the-first-semester-fyugp-november-2024",
     "category": "general",
@@ -12141,7 +11800,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-913",
+    "id": "gen-889",
     "title": "NOTIFICATION FOR THE POSTING OF GUEST FACULTIES ON HOURLY BASIS",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/615-notification-for-the-posting-of-guest-faculties-on-hourly-basis",
     "category": "general",
@@ -12154,7 +11813,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-914",
+    "id": "gen-890",
     "title": "DPE- All India Inter University Tug of War(M&W) Championship 2025-26",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/614-dpe-all-india-inter-university-tug-of-war-m-w-championship-2025-26",
     "category": "general",
@@ -12167,7 +11826,7 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-915",
+    "id": "gen-891",
     "title": "DPE- All India Inter University Waterpolo(Men) Championship 2025-26",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/613-dpe-all-india-inter-university-waterpolo-men-championship-2025-26",
     "category": "general",
@@ -12180,35 +11839,9 @@ const VERIFIED_NOTICES_DATASET = [
     "source": "University of Calicut (Official)"
   },
   {
-    "id": "gen-916",
+    "id": "gen-892",
     "title": "DPE- All India Inter University Tug of War(M&W) Championship 2025-26",
     "url": "https://uoc.ac.in/index.php/see-all-news/item/612-dpe-all-india-inter-university-tug-of-war-m-w-championship-2025-26",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Official Order",
-    "date": "Recent",
-    "published_at": "",
-    "timestamp": 0,
-    "is_new": false,
-    "source": "University of Calicut (Official)"
-  },
-  {
-    "id": "gen-917",
-    "title": "DPE - Application Form for Summer Coaching Camp - 2026",
-    "url": "https://uoc.ac.in/index.php/see-all-news/item/611-dpe-application-form-for-summer-coaching-camp-2026",
-    "category": "general",
-    "category_label": "CUC News",
-    "sub_type": "Official Order",
-    "date": "Recent",
-    "published_at": "",
-    "timestamp": 0,
-    "is_new": false,
-    "source": "University of Calicut (Official)"
-  },
-  {
-    "id": "gen-918",
-    "title": "DPE - Application Form for Summer Coaching Camp in Swimming - 2026",
-    "url": "https://uoc.ac.in/index.php/see-all-news/item/610-dpe-application-form-for-summer-coaching-camp-in-swimming-2026",
     "category": "general",
     "category_label": "CUC News",
     "sub_type": "Official Order",

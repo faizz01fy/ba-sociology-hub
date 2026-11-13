@@ -832,6 +832,21 @@ export class StudyHubChat {
           ...studentSections.map(r => r && r.ip).filter(Boolean)
         ]);
         const records = groupTrafficByIP(safeTraffic, safeSections, ownerIp);
+        const rawRecords = safeTraffic.slice().sort((a,b) => (b.time||0) - (a.time||0)).map(r => {
+          const ip = String(r.ip || "Unknown");
+          const isOwner = Boolean(r.isOwner || (ownerIp && ip === ownerIp));
+          const rSections = safeSections.filter(s => s && s.ip === ip && Math.abs((s.time||0) - (r.time||0)) < 30 * 60 * 1000)
+            .map(s => ({ name: s.section, visits: 1, lastVisit: s.time }));
+          return {
+            ...r,
+            ip,
+            isOwner,
+            visits: 1,
+            sections: rSections,
+            latestSection: rSections.length ? rSections[0].name : "",
+            latestSectionTime: rSections.length ? rSections[0].lastVisit : 0
+          };
+        });
         const popularPages = groupPopularPages(safeSections, ownerIp);
         
         const livePages = new Map();
@@ -848,6 +863,7 @@ export class StudyHubChat {
         return json({
           ok: true,
           records,
+          rawRecords,
           popularPages,
           views: safeTraffic.length,
           uniqueIPs: uniqueIPs.size,
@@ -901,10 +917,26 @@ export class StudyHubChat {
           ...studentSections.map(r => r && r.ip).filter(Boolean)
         ]);
         const records = groupTrafficByIP(safeTraffic, safeSections, ownerIp);
+        const rawRecords = safeTraffic.slice().sort((a,b) => (b.time||0) - (a.time||0)).map(r => {
+          const ip = String(r.ip || "Unknown");
+          const isOwner = Boolean(r.isOwner || (ownerIp && ip === ownerIp));
+          const rSections = safeSections.filter(s => s && s.ip === ip && Math.abs((s.time||0) - (r.time||0)) < 30 * 60 * 1000)
+            .map(s => ({ name: s.section, visits: 1, lastVisit: s.time }));
+          return {
+            ...r,
+            ip,
+            isOwner,
+            visits: 1,
+            sections: rSections,
+            latestSection: rSections.length ? rSections[0].name : "",
+            latestSectionTime: rSections.length ? rSections[0].lastVisit : 0
+          };
+        });
         const popularPages = groupPopularPages(safeSections, ownerIp);
         const yesterday = await this.getYesterdayStats(now, safeTraffic, safeSections, ownerIp);
         return json({
           records,
+          rawRecords,
           popularPages,
           views: safeTraffic.length,
           uniqueIPs: uniqueIPs.size,
@@ -1237,6 +1269,11 @@ function adminPage(authorized, initialData = null) {
 
 <!-- ULTRA-PREMIUM NAVIGATION TABS -->
 <nav class="nav-tabs" role="tablist">
+  <button class="tab-btn" id="tab-btn-bots" type="button" role="tab" aria-selected="false">
+    <span class="tab-icon">🤖</span>
+    <span class="tab-title">BOTS VISIT</span>
+    <span class="badge-pill orange" id="badge-total-bots">0 BOTS</span>
+  </button>
   <button class="tab-btn active" id="tab-btn-geo" type="button" role="tab" aria-selected="true">
     <span class="tab-icon">👥</span>
     <span class="tab-title">VISITORS & IP AUDIT</span>
@@ -1256,11 +1293,6 @@ function adminPage(authorized, initialData = null) {
     <span class="tab-icon">📊</span>
     <span class="tab-title">CONTENT LEADERBOARD</span>
     <span class="badge-pill purple" id="badge-total-pages">${popularPages.length}</span>
-  </button>
-  <button class="tab-btn" id="tab-btn-bots" type="button" role="tab" aria-selected="false">
-    <span class="tab-icon">🤖</span>
-    <span class="tab-title">BOTS VISIT</span>
-    <span class="badge-pill orange" id="badge-total-bots">0 BOTS</span>
   </button>
 </nav>
 
@@ -1282,18 +1314,28 @@ function adminPage(authorized, initialData = null) {
       <!-- Rendered dynamically -->
     </div>
 
-    <div class="filter-row">
-      <div class="search-wrap">
+    <div class="filter-row" style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
+      <div class="search-wrap" style="flex:1; min-width:260px;">
         <span class="search-icon">🔍</span>
         <input type="text" class="search-input" id="traffic-search-input" placeholder="Search IP Address, City, Country, or Page Path..." value="">
       </div>
-      <div class="filter-group">
-        <label for="traffic-page-size" class="filter-label">ROWS:</label>
-        <select class="filter-select" id="traffic-page-size">
-          <option value="25" selected>25 rows</option>
-          <option value="50">50 rows</option>
-          <option value="100">100 rows</option>
-        </select>
+      <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+        <div class="view-mode-toggle" style="display:inline-flex; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:3px; gap:4px;">
+          <button type="button" id="btn-view-each-visit" class="btn btn-sm" style="background:#06b6d4; color:#0f172a; font-weight:800; font-size:11px; padding:4px 10px; border-radius:6px; border:none; cursor:pointer;" title="List every individual visit report chronologically">
+            ⚡ EACH VISIT (<span id="count-each-visit">0</span>)
+          </button>
+          <button type="button" id="btn-view-grouped-ip" class="btn btn-sm" style="background:transparent; color:var(--text-dim); font-weight:700; font-size:11px; padding:4px 10px; border-radius:6px; border:none; cursor:pointer;" title="Group and collapse visits by IP address">
+            👥 GROUPED BY IP (<span id="count-grouped-ip">0</span>)
+          </button>
+        </div>
+        <div class="filter-group">
+          <label for="traffic-page-size" class="filter-label">ROWS:</label>
+          <select class="filter-select" id="traffic-page-size">
+            <option value="25" selected>25 rows</option>
+            <option value="50">50 rows</option>
+            <option value="100">100 rows</option>
+          </select>
+        </div>
       </div>
     </div>
 
@@ -1323,6 +1365,74 @@ function adminPage(authorized, initialData = null) {
         <button class="btn" id="traffic-prev-page" type="button" disabled>◀ PREVIOUS</button>
         <button class="btn" id="traffic-next-page" type="button" disabled>NEXT ▶</button>
       </div>
+    </div>
+  </section>
+
+<section class="station-card" id="panel-bots" hidden>
+    <div class="station-header">
+      <div>
+        <h2><span class="station-dot orange"></span> BOTS &amp; SEARCH ENGINE CRAWLER TELEMETRY</h2>
+        <p class="station-desc">Complete census of indexed search engines, AI models, and automated spiders visiting Academic Hub. Tracks yesterday's crawl rate, lifetime crawl count, and all sections visited.</p>
+      </div>
+      <div class="header-action-group">
+        <span class="date-chip" id="bots-date-chip">🤖 ACTIVE CRAWLERS</span>
+        <button class="btn btn-primary" id="btn-export-bots" type="button">📥 EXPORT BOTS CSV</button>
+      </div>
+    </div>
+
+    <!-- BOT SUMMARY KPI CARDS -->
+    <div class="yesterday-kpi-grid">
+      <div class="ykpi-card views">
+        <div class="ykpi-label">TOTAL BOT HITS</div>
+        <div class="ykpi-val"><span id="bot-kpi-hits">0</span> <small>CRAWLS</small></div>
+        <div class="ykpi-sub">Total page and section requests by bots</div>
+      </div>
+      <div class="ykpi-card visitors">
+        <div class="ykpi-label">DISTINCT BOT FAMILIES</div>
+        <div class="ykpi-val"><span id="bot-kpi-count">0</span> <small>CRAWLERS</small></div>
+        <div class="ykpi-sub">Googlebot, Bingbot, GPTBot, Claude, etc.</div>
+      </div>
+      <div class="ykpi-card ratio">
+        <div class="ykpi-label">SECTIONS CRAWLED</div>
+        <div class="ykpi-val"><span id="bot-kpi-sections">0</span> <small>SECTIONS</small></div>
+        <div class="ykpi-sub">Unique study materials indexed</div>
+      </div>
+      <div class="ykpi-card repeats">
+        <div class="ykpi-label">YESTERDAY CRAWLS</div>
+        <div class="ykpi-val"><span id="bot-kpi-yesterday">0</span> <small>YESTERDAY</small></div>
+        <div class="ykpi-sub">Bot ingress logged in yesterday's window</div>
+      </div>
+    </div>
+
+    <!-- FILTER & SEARCH BAR -->
+    <div class="filter-row">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="bots-search-input" placeholder="Search Bot Name, IP, Crawled Section, or ISP..." value="">
+      </div>
+      <div class="filter-group">
+        <span class="filter-label" id="bot-table-summary">0 Bot Crawlers Logged</span>
+      </div>
+    </div>
+
+    <!-- BOT ROSTER & CRAWL TRAIL TABLE -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th style="min-width:180px">Bot Name &amp; Identity</th>
+            <th style="min-width:100px">Total Crawls</th>
+            <th style="min-width:110px">Sections Crawled</th>
+            <th style="min-width:140px">Yesterday Visit</th>
+            <th style="min-width:140px">Until Last Visit</th>
+            <th style="min-width:140px">IP &amp; Network (ISP)</th>
+            <th style="min-width:240px">Sections &amp; URLs Crawled</th>
+          </tr>
+        </thead>
+        <tbody id="bot-visitor-rows">
+          <!-- Rendered dynamically -->
+        </tbody>
+      </table>
     </div>
   </section>
 
@@ -1549,73 +1659,7 @@ function adminPage(authorized, initialData = null) {
   </section>
 
   <!-- TAB 5: BOTS VISIT (SEARCH ENGINE & AI CRAWLER TELEMETRY) -->
-  <section class="station-card" id="panel-bots" hidden>
-    <div class="station-header">
-      <div>
-        <h2><span class="station-dot orange"></span> BOTS &amp; SEARCH ENGINE CRAWLER TELEMETRY</h2>
-        <p class="station-desc">Complete census of indexed search engines, AI models, and automated spiders visiting Academic Hub. Tracks yesterday's crawl rate, lifetime crawl count, and all sections visited.</p>
-      </div>
-      <div class="header-action-group">
-        <span class="date-chip" id="bots-date-chip">🤖 ACTIVE CRAWLERS</span>
-        <button class="btn btn-primary" id="btn-export-bots" type="button">📥 EXPORT BOTS CSV</button>
-      </div>
-    </div>
-
-    <!-- BOT SUMMARY KPI CARDS -->
-    <div class="yesterday-kpi-grid">
-      <div class="ykpi-card views">
-        <div class="ykpi-label">TOTAL BOT HITS</div>
-        <div class="ykpi-val"><span id="bot-kpi-hits">0</span> <small>CRAWLS</small></div>
-        <div class="ykpi-sub">Total page and section requests by bots</div>
-      </div>
-      <div class="ykpi-card visitors">
-        <div class="ykpi-label">DISTINCT BOT FAMILIES</div>
-        <div class="ykpi-val"><span id="bot-kpi-count">0</span> <small>CRAWLERS</small></div>
-        <div class="ykpi-sub">Googlebot, Bingbot, GPTBot, Claude, etc.</div>
-      </div>
-      <div class="ykpi-card ratio">
-        <div class="ykpi-label">SECTIONS CRAWLED</div>
-        <div class="ykpi-val"><span id="bot-kpi-sections">0</span> <small>SECTIONS</small></div>
-        <div class="ykpi-sub">Unique study materials indexed</div>
-      </div>
-      <div class="ykpi-card repeats">
-        <div class="ykpi-label">YESTERDAY CRAWLS</div>
-        <div class="ykpi-val"><span id="bot-kpi-yesterday">0</span> <small>YESTERDAY</small></div>
-        <div class="ykpi-sub">Bot ingress logged in yesterday's window</div>
-      </div>
-    </div>
-
-    <!-- FILTER & SEARCH BAR -->
-    <div class="filter-row">
-      <div class="search-wrap">
-        <span class="search-icon">🔍</span>
-        <input type="text" class="search-input" id="bots-search-input" placeholder="Search Bot Name, IP, Crawled Section, or ISP..." value="">
-      </div>
-      <div class="filter-group">
-        <span class="filter-label" id="bot-table-summary">0 Bot Crawlers Logged</span>
-      </div>
-    </div>
-
-    <!-- BOT ROSTER & CRAWL TRAIL TABLE -->
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th style="min-width:180px">Bot Name &amp; Identity</th>
-            <th style="min-width:100px">Total Crawls</th>
-            <th style="min-width:110px">Sections Crawled</th>
-            <th style="min-width:140px">Yesterday Visit</th>
-            <th style="min-width:140px">Until Last Visit</th>
-            <th style="min-width:140px">IP &amp; Network (ISP)</th>
-            <th style="min-width:240px">Sections &amp; URLs Crawled</th>
-          </tr>
-        </thead>
-        <tbody id="bot-visitor-rows">
-          <!-- Rendered dynamically -->
-        </tbody>
-      </table>
-    </div>
-  </section>
+  
 </main>
 ` : `
 <div class="login-wrapper">
@@ -2675,22 +2719,21 @@ details.section-details summary:hover, details.popular-details summary:hover {
 
     // STATE
     let trafficRecords = [];
+    let rawTrafficRecords = [];
+    let trafficViewMode = 'each'; // 'each' | 'grouped'
     let popularPageRecords = [];
     let liveData = { active: 0, pages: [] };
     let yesterdayData = null;
     let trafficPage = 1;
 
-    // IMMEDIATE SSR HYDRATION
+    // IMMEDIATE SSR HYDRATION DATA STORE
     const __INITIAL__ = ${JSON.stringify(initialData || null)};
     if (__INITIAL__) {
       if (Array.isArray(__INITIAL__.records)) trafficRecords = __INITIAL__.records;
+      if (Array.isArray(__INITIAL__.rawRecords)) rawTrafficRecords = __INITIAL__.rawRecords;
       if (Array.isArray(__INITIAL__.popularPages)) popularPageRecords = __INITIAL__.popularPages;
       if (__INITIAL__.liveData) liveData = __INITIAL__.liveData;
       if (__INITIAL__.yesterday) yesterdayData = __INITIAL__.yesterday;
-      try { renderTraffic(); } catch(e) {}
-      try { renderPopularPages(); } catch(e) {}
-      try { renderLiveRadar(); } catch(e) {}
-      try { renderYesterday(); } catch(e) {}
     }
 
     function getPathFallbackActivity(path) {
@@ -2744,7 +2787,14 @@ details.section-details summary:hover, details.popular-details summary:hover {
         const sizeEl = document.getElementById('traffic-page-size');
         const size = Math.max(1, Number(sizeEl ? sizeEl.value : 25) || 25);
 
-        let filtered = trafficRecords.filter(item => {
+        // Update counts on view mode toggle
+        const totalRaw = rawTrafficRecords.length || trafficRecords.reduce((acc, r) => acc + (r.visits || 1), 0);
+        setText('count-each-visit', totalRaw);
+        setText('count-grouped-ip', trafficRecords.length);
+
+        const activeDataset = (trafficViewMode === 'each' && rawTrafficRecords.length > 0) ? rawTrafficRecords : trafficRecords;
+
+        let filtered = activeDataset.filter(item => {
           if (!search) return true;
           const info = countryInfo(item.country);
           const isRifi = isRifiVisitor(item.ip);
@@ -2824,15 +2874,26 @@ details.section-details summary:hover, details.popular-details summary:hover {
             tdIp.innerHTML = '<span class="ip-badge' + (isRifi ? ' rifi-ip' : '') + '" title="Full IP: ' + v.ip + '" style="font-family:var(--font-mono);font-size:11.5px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;cursor:help;">' + shortIp + '</span>' + ownerBadgeHtml;
             tr.append(tdIp);
 
-            // Total Visits
+            // Total Visits / Individual Visit
             const tdVisits = document.createElement('td');
-            if (v.isOwner) {
-              tdVisits.innerHTML = '<span class="visits-badge" style="background:rgba(245,158,11,0.14);color:#fbbf24;border:1px solid rgba(245,158,11,0.3);font-size:11px;font-weight:600;">' + v.visits + ' visit' + (v.visits===1?'':'s') + ' <small style="display:block;font-size:9.5px;opacity:0.85;color:var(--text-dim);">(not counted)</small></span>';
-              tr.style.background = 'rgba(245, 158, 11, 0.03)';
-            } else if (isRifi) {
-              tdVisits.innerHTML = '<span class="visits-badge multi" style="background:rgba(236,72,153,0.15);color:#f472b6;border:1px solid rgba(236,72,153,0.35);font-size:11px;font-weight:700;">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
+            if (trafficViewMode === 'each') {
+              if (v.isOwner) {
+                tdVisits.innerHTML = '<span class="visits-badge" style="background:rgba(245,158,11,0.14);color:#fbbf24;border:1px solid rgba(245,158,11,0.3);font-size:11px;font-weight:600;">👑 Single Visit <small style="display:block;font-size:9.5px;opacity:0.85;color:var(--text-dim);">(owner)</small></span>';
+                tr.style.background = 'rgba(245, 158, 11, 0.03)';
+              } else if (isRifi) {
+                tdVisits.innerHTML = '<span class="visits-badge multi" style="background:rgba(236,72,153,0.15);color:#f472b6;border:1px solid rgba(236,72,153,0.35);font-size:11px;font-weight:700;">🎯 Visit Record</span>';
+              } else {
+                tdVisits.innerHTML = '<span class="visits-badge single" style="background:rgba(6,182,212,0.12);color:#22d3ee;border:1px solid rgba(6,182,212,0.3);">⚡ Visit Record</span>';
+              }
             } else {
-              tdVisits.innerHTML = '<span class="visits-badge ' + (v.visits > 1 ? 'multi' : 'single') + '">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
+              if (v.isOwner) {
+                tdVisits.innerHTML = '<span class="visits-badge" style="background:rgba(245,158,11,0.14);color:#fbbf24;border:1px solid rgba(245,158,11,0.3);font-size:11px;font-weight:600;">' + v.visits + ' visit' + (v.visits===1?'':'s') + ' <small style="display:block;font-size:9.5px;opacity:0.85;color:var(--text-dim);">(not counted)</small></span>';
+                tr.style.background = 'rgba(245, 158, 11, 0.03)';
+              } else if (isRifi) {
+                tdVisits.innerHTML = '<span class="visits-badge multi" style="background:rgba(236,72,153,0.15);color:#f472b6;border:1px solid rgba(236,72,153,0.35);font-size:11px;font-weight:700;">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
+              } else {
+                tdVisits.innerHTML = '<span class="visits-badge ' + (v.visits > 1 ? 'multi' : 'single') + '">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
+              }
             }
             tr.append(tdVisits);
 
@@ -3355,6 +3416,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
         const d = await res.json();
         if (d && Array.isArray(d.records)) {
           trafficRecords = d.records;
+          if (Array.isArray(d.rawRecords)) rawTrafficRecords = d.rawRecords;
           popularPageRecords = Array.isArray(d.popularPages) ? d.popularPages : [];
           if (d.yesterday) yesterdayData = d.yesterday;
           lastSyncTimestamp = Date.now();
@@ -3396,6 +3458,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
         try { renderYesterday(); } catch (e) { console.error('renderYesterday error:', e); }
         try { renderBots(); } catch (e) { console.error('renderBots error:', e); }
       }
+    }
 
     // BOTS & SEARCH CRAWLERS LOGIC
     function identifyBotName(v) {
@@ -3444,8 +3507,8 @@ details.section-details summary:hover, details.popular-details summary:hover {
       const yDayStr = indiaDayStr(now - 24 * 60 * 60 * 1000);
       const botGroups = new Map();
 
-      // Look across all trafficRecords (and yesterday records)
-      const allRecords = [...trafficRecords];
+      // Look across all rawTrafficRecords / trafficRecords (and yesterday records)
+      const allRecords = rawTrafficRecords.length > 0 ? [...rawTrafficRecords] : [...trafficRecords];
       if (yesterdayData && Array.isArray(yesterdayData.records)) {
         for (const yr of yesterdayData.records) {
           if (!allRecords.some(r => r.ip === yr.ip && r.time === yr.time)) {
@@ -3639,14 +3702,12 @@ details.section-details summary:hover, details.popular-details summary:hover {
         b.ispList.join('; '),
         b.sectionList.map(s => s.name + ' (' + s.count + ' hits)').join('; ')
       ]);
-      const csv = [headers.join(','), ...rows.map(r => r.map(x => '"' + String(x).replace(/"/g, '""') + '"').join(','))].join('\n');
+      const csv = [headers.join(','), ...rows.map(r => r.map(x => '"' + String(x).replace(/"/g, '""') + '"').join(','))].join(String.fromCharCode(10));
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a'); a.href = url; a.download = 'Academic_Hub_Bots_Crawl_Audit_' + new Date().toISOString().slice(0, 10) + '.csv';
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(() => URL.revokeObjectURL(url), 1000);
-    }
-
     }
 
     function exportTrafficCSV() {
@@ -3703,11 +3764,11 @@ details.section-details summary:hover, details.popular-details summary:hover {
 
     // TABS LOGIC
     const stations = [
+      { id: 'bots', tab: 'tab-btn-bots', panel: 'panel-bots' },
       { id: 'geo', tab: 'tab-btn-geo', panel: 'panel-geo' },
       { id: 'yesterday', tab: 'tab-btn-yesterday', panel: 'panel-yesterday' },
       { id: 'radar', tab: 'tab-btn-radar', panel: 'panel-radar' },
-      { id: 'content', tab: 'tab-btn-content', panel: 'panel-content' },
-      { id: 'bots', tab: 'tab-btn-bots', panel: 'panel-bots' }
+      { id: 'content', tab: 'tab-btn-content', panel: 'panel-content' }
     ];
 
     function activateStation(id) {
@@ -3721,10 +3782,16 @@ details.section-details summary:hover, details.popular-details summary:hover {
         }
         if (pnl) pnl.hidden = !isMatch;
       }
-      if (id === 'yesterday') {
+      if (id === 'geo') {
+        renderTraffic();
+      } else if (id === 'yesterday') {
         renderYesterday();
       } else if (id === 'bots') {
         renderBots();
+      } else if (id === 'radar') {
+        renderLiveRadar();
+      } else if (id === 'content') {
+        renderPopularPages();
       }
     }
 
@@ -3822,6 +3889,28 @@ details.section-details summary:hover, details.popular-details summary:hover {
     const botsSearchInput = document.getElementById('bots-search-input');
     if (botsSearchInput) botsSearchInput.oninput = renderBots;
 
+    const btnEach = document.getElementById('btn-view-each-visit');
+    const btnGrouped = document.getElementById('btn-view-grouped-ip');
+    if (btnEach && btnGrouped) {
+      btnEach.onclick = () => {
+        trafficViewMode = 'each';
+        btnEach.style.background = '#06b6d4';
+        btnEach.style.color = '#0f172a';
+        btnGrouped.style.background = 'transparent';
+        btnGrouped.style.color = 'var(--text-dim)';
+        trafficPage = 1;
+        renderTraffic();
+      };
+      btnGrouped.onclick = () => {
+        trafficViewMode = 'grouped';
+        btnGrouped.style.background = '#06b6d4';
+        btnGrouped.style.color = '#0f172a';
+        btnEach.style.background = 'transparent';
+        btnEach.style.color = 'var(--text-dim)';
+        trafficPage = 1;
+        renderTraffic();
+      };
+    }
     const searchInput = document.getElementById('traffic-search-input');
     if (searchInput) searchInput.oninput = () => { trafficPage = 1; renderTraffic(); };
     const pageSizeSelect = document.getElementById('traffic-page-size');
@@ -3862,7 +3951,13 @@ details.section-details summary:hover, details.popular-details summary:hover {
       setPollingInterval(Number(e.target.value));
     };
 
-    // INITIAL TRIGGER
+    // INITIAL TRIGGER (Render hydrated data immediately, then poll)
+    try { renderTraffic(); } catch (e) { console.warn('Init renderTraffic error:', e); }
+    try { renderPopularPages(); } catch (e) { console.warn('Init renderPopularPages error:', e); }
+    try { renderLiveRadar(); } catch (e) { console.warn('Init renderLiveRadar error:', e); }
+    try { renderYesterday(); } catch (e) { console.warn('Init renderYesterday error:', e); }
+    try { renderBots(); } catch (e) { console.warn('Init renderBots error:', e); }
+
     try { refreshLiveVisitors(); } catch (e) { console.warn(e); }
     try { refreshTraffic(); } catch (e) { console.warn(e); }
     setPollingInterval(15000);

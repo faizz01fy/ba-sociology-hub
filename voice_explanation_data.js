@@ -787,9 +787,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 02",
             "title": "ഡോ. അംബേദ്കറുടെ ചരിത്ര പ്രസംഗം (Dr. B.R. Ambedkar's Speech) | Calicut Univ",
             "chapter": "Dr. B.R. Ambedkar · Constitutional Vision, Liberty & Social Justice",
-            "duration": "07:23",
-            "thumbnail": "https://i.ytimg.com/vi/9jh28iFtS9U/hqdefault.jpg",
-            "youtubeId": "9jh28iFtS9U",
+            "duration": "22:00",
+            "thumbnail": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
+            "youtubeId": null,
             "videoUrl": null,
             "language": "Malayalam",
             "malayalam_cc": false,
@@ -840,7 +840,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 18
+    "totalVideos": 13
   },
   "sociology": {
     "name": "Sociology (Introduction to Sociology)",
@@ -855,7 +855,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 01",
             "title": "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination & Research) | Sociology | Calicut Univ",
             "chapter": "Academic Hub Special · സി. റൈറ്റ് മിൽസ് & റിസർച്ച് മെത്തേഡ്സ് (C. Wright Mills & Research Methods)",
-            "duration": "27:00",
+            "duration": "27",
             "youtubeId": "uMxIIznPo-w",
             "studyPoints": [
               "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination - C. Wright Mills): വ്യക്തിഗത പ്രശ്നങ്ങളെ (Personal Troubles) വലിയ സാമൂഹിക സാഹചര്യങ്ങളുമായി (Public Issues) ബന്ധിപ്പിച്ചു വിശകലനം ചെയ്യാനുള്ള സവിശേഷ ശേഷി.",
@@ -870,7 +870,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 02",
             "title": "പോസിറ്റിവിസവും സോഷ്യോളജിയും (Positivism & Micro-Macro Sociology) | Calicut Univ",
             "chapter": "Micro & Macro Levels · Positivism & Comte (സൂക്ഷ്മ-സ്ഥൂല തലങ്ങളും പോസിറ്റിവിസവും)",
-            "duration": "13:00",
+            "duration": "13",
             "youtubeId": "WyReGfMhJJs",
             "studyPoints": [
               "മൈക്രോ vs മാക്രോ സോഷ്യോളജി: വ്യക്തികൾ തമ്മിലുള്ള മുഖാമുഖ സമ്പർക്കങ്ങളെയും ദൈനംദിന സംഭാഷണങ്ങളെയും പഠിക്കുന്ന മൈക്രോ തലവും (Micro-level), സമ്പദ്‌വ്യവസ്ഥ, ഭരണകൂടം, മതങ്ങൾ തുടങ്ങിയ വൻകിട വ്യവസ്ഥിതികളെ അപഗ്രഥിക്കുന്ന മാക്രോ തലവും (Macro-level).",
@@ -986,7 +986,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Agents of Socialization · Family, School, Peer Groups, Media & Workplace (സാമൂഹികവൽക്കരണ ഏജൻസികൾ)",
             "duration": "16:15",
             "youtubeId": "uf8WYWO9-Tk",
-            "thumbnail": "https://i.ytimg.com/vi/uf8WYWO9-Tk/hqdefault.jpg",
+            "thumbnail": "/thumbnails/sociology_agents_of_socialization_mod3/thumb.png",
             "language": "English & Malayalam",
             "studyPoints": [
               "ആമുഖവും എച്ച്.ടി. മജുംദാർ നിർവ്വചനവും: ജൈവിക ജീവിയെ പൂർണ്ണ സാമൂഹിക വ്യക്തിത്വമാക്കി മാറ്റുന്ന ആജീവനാന്ത പ്രക്രിയ; എച്ച്.ടി. മജുംദാറിന്റെ ആധികാരിക നിർവ്വചനം.",
@@ -1002,7 +1002,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 04",
             "title": "സമൂഹത്തിന്റെ നിർമ്മിതികൾ (Social Construction of Reality) | Calicut Univ",
             "chapter": "Social Construction of Reality · Agency vs Structure (സാമൂഹിക യാഥാർത്ഥ്യ നിർമ്മിതി)",
-            "duration": "20:00",
+            "duration": "20",
             "youtubeId": "EJt-7kG_-E8",
             "studyPoints": [
               "സാമൂഹിക യാഥാർത്ഥ്യത്തിന്റെ നിർമ്മിതി (Berger & Luckmann - The Social Construction of Reality, 1966): നാം അനുഭവിക്കുന്ന യാഥാർത്ഥ്യങ്ങൾ പ്രകൃതിദത്തമല്ല, മറിച്ച് മനുഷ്യർ ചേർന്ന് നിർമ്മിച്ചെടുത്തതാണ്.",
@@ -1018,7 +1018,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 05",
             "title": "സോഷ്യലൈസേഷൻ പാളിച്ചകൾ (Socialization Failures & Identity) | Calicut Univ",
             "chapter": "Socialization Failures · Anomie, Deviance & Re-socialization (സോഷ്യലൈസേഷൻ പാളിച്ചകളും അനോമിയും)",
-            "duration": "22:00",
+            "duration": "22",
             "youtubeId": "KEg51ekQTWY",
             "studyPoints": [
               "സോഷ്യലൈസേഷൻ പാളിച്ചകൾ (Failures in Socialization): അപര്യാപ്തമായ ശ്രദ്ധ, കുടുംബത്തിലെ താളപ്പിഴകൾ, വിരുദ്ധ സന്ദേശങ്ങൾ എന്നിവ വ്യക്തികളിൽ സൃഷ്ടിക്കുന്ന പെരുമാറ്റ വൈകല്യങ്ങളും വ്യതിയാനങ്ങളും (Deviance).",
@@ -1034,7 +1034,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 06",
             "title": "ഫ്രോയിഡ്, മീഡ്, പിയാഷെ (Theories of Socialization) | Sociology | Calicut Univ",
             "chapter": "Freud, Mead & Piaget · Development of the Social Self (സാമൂഹിക വ്യക്തിത്വ വികാസം)",
-            "duration": "19:00",
+            "duration": "19",
             "youtubeId": "uf8WYWO9-Tk",
             "studyPoints": [
               "സിഗ്മണ്ട് ഫ്രോയിഡിന്റെ മനോവിശകലന സിദ്ധാന്തം (Psychoanalytic Theory): ജൈവിക കാമനകളുടെ ഇഡ് (Id), യാഥാർത്ഥ്യബോധമുള്ള ഈഗോ (Ego), സദാചാരബോധത്തിന്റെ സൂപ്പർഈഗോ (Superego) എന്നിവ തമ്മിലുള്ള സംഘർഷം.",
@@ -1050,7 +1050,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 07",
             "title": "സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary & Secondary) | Sociology | Calicut Univ",
             "chapter": "C.H. Cooley's Primary Groups · Secondary Groups · Sumner's In/Out Groups · Merton's Reference Groups",
-            "duration": "21:00",
+            "duration": "21",
             "youtubeId": "jedN-7Z72Fk",
             "studyPoints": [
               "<strong>00:00 - 04:36 | സോഷ്യൽ ഗ്രൂപ്പുകളുടെ സ്വഭാവം:</strong> പരസ്പര ബന്ധവും 'ഞങ്ങൾ' എന്ന ഐക്യബോധവും (We-feeling) ഉള്ള കൂട്ടായ്മകൾ (Harry M. Johnson, Ogburn).",
@@ -1068,7 +1068,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 08",
             "title": "ബ്യൂറോക്രസിയും ആൾക്കൂട്ടവും (Formal Organizations & Crowds) | Calicut Univ",
             "chapter": "Max Weber's Bureaucracy & Gustave Le Bon's Crowd Psychology (ഔപചാരിക സംഘടനകളും ആൾക്കൂട്ടവും)",
-            "duration": "18:00",
+            "duration": "18",
             "youtubeId": "uMxIIznPo-w",
             "studyPoints": [
               "<strong>00:00 - 03:37 | ഔപചാരിക സംഘടനകൾ:</strong> ആധുനിക സമൂഹത്തിലെ സങ്കീർണ്ണമായ തൊഴിൽ വിഭജനവും പ്രത്യേക ലക്ഷ്യങ്ങൾക്കായുള്ള വലിയ കൂട്ടായ്മകളും.",
@@ -1101,7 +1101,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 10",
             "title": "സംഘർഷവും സമൂഹവും (Social Conflict: Lewis Coser & Marx) | Sociology | Calicut Univ",
             "chapter": "Functions of Social Conflict · Coser & Marx (സാമൂഹിക സംഘർഷത്തിന്റെ ധർമ്മങ്ങൾ)",
-            "duration": "21:00",
+            "duration": "21",
             "youtubeId": "N6XM-ScWqeo",
             "studyPoints": [
               "കാൾ മാർക്സിന്റെ വർഗ്ഗ സംഘർഷ സിദ്ധാന്തം (Karl Marx - Class Conflict): ചൂഷകരും ചൂഷിതരും തമ്മിലുള്ള ചരിത്രപരമായ വൈരുദ്ധ്യങ്ങൾ.",
@@ -1117,7 +1117,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 11",
             "title": "സാമൂഹിക നിയന്ത്രണ മാർഗങ്ങൾ (Social Control & Sanctions) | Sociology | Calicut Univ",
             "chapter": "Formal & Informal Social Control · E.A. Ross & Sanctions (സാമൂഹിക നിയന്ത്രണ മാർഗ്ഗങ്ങൾ & സാങ്ഷനുകൾ)",
-            "duration": "20:00",
+            "duration": "20",
             "youtubeId": "QidpySg9v80",
             "studyPoints": [
               "<strong>00:00 - 03:52 | സാമൂഹിക നിയന്ത്രണത്തിന്റെ സ്വഭാവം:</strong> ഇ.എ. റോസ് (E.A. Ross, 1901); സമൂഹത്തിൽ അരാജകത്വം ഒഴിവാക്കാനും ഐക്യം നിലനിർത്താനുമുള്ള സംവിധാനങ്ങൾ.",
@@ -1139,7 +1139,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 4.1",
             "title": "സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics & Evolution) | Calicut Univ",
             "chapter": "Society · Characteristics & Types: Agrarian, Industrial & Post-Industrial (സമൂഹത്തിന്റെ പരിണാമം)",
-            "duration": "16:00",
+            "duration": "16",
             "youtubeId": "zEagx74glsc",
             "studyPoints": [
               "സമൂഹം (Society): പരസ്പര ബന്ധങ്ങളുടെ സങ്കീർണ്ണമായ വല (MacIver & Page - 'Web of Social Relationships').",
@@ -1155,7 +1155,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 4.2",
             "title": "സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions: Family & Marriage) | Calicut Univ",
             "chapter": "Social Institutions: Family, Marriage & Kinship (കുടുംബം, വിവാഹം, ബന്ധുത്വം & മതം)",
-            "duration": "20:00",
+            "duration": "20",
             "youtubeId": "z1jXxahDWUw",
             "studyPoints": [
               "<strong>00:00 - 04:02 | എന്താണ് സാമൂഹിക സ്ഥാപനം?:</strong> സമൂഹത്തിന്റെ സുസ്ഥിരമായ നിലനിൽപ്പിനും ആവശ്യങ്ങൾക്കും വേണ്ടിയുള്ള സംഘടിത ചട്ടക്കൂടുകളും ആചാരങ്ങളും.",
@@ -1172,7 +1172,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 4.3",
             "title": "പദവികളും റോളുകളും (Social Structure: Status & Role Conflict) | Calicut Univ",
             "chapter": "Social Structure: Ralph Linton's Status & Merton's Role Theory (പദവി, റോൾ & റോൾ കോൺഫ്ലിക്റ്റ്)",
-            "duration": "10:00",
+            "duration": "10",
             "youtubeId": "7Qkp0t6g9Qc",
             "studyPoints": [
               "<strong>00:00 - 02:03 | സാമൂഹിക ഘടന (Social Structure):</strong> റാഡ്ക്ലിഫ് ബ്രൗണും പാർസൺസും നിർവ്വചിച്ച പദവികളുടെയും റോളുകളുടെയും പരസ്പരബന്ധിതമായ ചട്ടക്കൂട്.",
@@ -1189,7 +1189,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 4.4",
             "title": "സാമൂഹിക മാറ്റവും ഘടകങ്ങളും (Social Change: Factors & Theories) | Calicut Univ",
             "chapter": "Social Change · Catalysts, Cultural Lag & Major Theories (സാമൂഹിക മാറ്റത്തിന്റെ സിദ്ധാന്തങ്ങൾ)",
-            "duration": "21:00",
+            "duration": "21",
             "youtubeId": "jfBES35jpzw",
             "studyPoints": [
               "സാമൂഹിക മാറ്റം (Social Change): സാമൂഹിക വ്യവസ്ഥിതിയിലും ബന്ധങ്ങളിലും മൂല്യങ്ങളിലും വരുന്ന ഘടനാപരമായ പരിവർത്തനം.",
@@ -1205,14 +1205,14 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 20
+    "totalVideos": 21
   },
   "philosophy-of-ai": {
     "name": "Philosophy of Artificial Intelligence",
     "badge": "🤖",
     "iconClass": "icon-cyan",
     "tag": "BA PHILOSOPHY HONOURS · PHI1CJ101 / FYUGP",
-    "totalVideos": 27,
+    "totalVideos": "13 Comprehensive Video Lectures",
     "modules": [
       {
         "moduleName": "MODULE 01: HISTORICAL & FOUNDATIONAL PERSPECTIVES (FYUGP PHI1CJ101)",
@@ -1267,7 +1267,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: സിംബോളിക് AI-യും കണക്ഷനിസവും തമ്മിലുള്ള ദാർശനികവും സാങ്കേതികവുമായ വ്യത്യാസങ്ങൾ താരതമ്യം ചെയ്യുക.",
             "thumbnail": "https://i.ytimg.com/vi/Vq-Bc0TI7L0/hqdefault.jpg",
-            "videoUrl": null,
+            "videoUrl": "https://www.youtube.com/watch?v=Vq-Bc0TI7L0",
             "malayalam_cc": true
           },
           {
@@ -1285,7 +1285,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University ചോദ്യം: അലൻ ട്യൂറിംഗിന്റെ 'ഇമിറ്റേഷൻ ഗെയിം' സിദ്ധാന്തവും അതിനെതിരെയുള്ള പ്രധാന ദാർശനിക വിമർശനങ്ങളും വിലയിരുത്തുക.",
             "thumbnail": "https://i.ytimg.com/vi/1Va07j8OQSA/hqdefault.jpg",
-            "videoUrl": null,
+            "videoUrl": "https://www.youtube.com/watch?v=1Va07j8OQSA",
             "malayalam_cc": true
           }
         ]
@@ -1348,7 +1348,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഡെക്കാർട്ടിന്റെ ഡ്യൂവലിസവും എഐയും (Descartes, Mind & Digital Dualism) | Calicut Univ",
             "chapter": "Unit 2.2 a: Cartesian Dualism · Res Cogitans vs Res Extensa · Physical Mechanism",
             "duration": "19:00",
-            "youtubeId": "",
+            "youtubeId": "fEzSc4YXW4s",
+            "thumbnail": "https://i.ytimg.com/vi/fEzSc4YXW4s/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
               "ഡെക്കാർട്ടിന്റെ മൈൻഡ്-ബോഡി ദ്വൈതവാദം: ചിന്തിക്കുന്ന മനസ്സ് (Res Cogitans), ഭൗതികമായ ശരീരം (Res Extensa) എന്നിവ തമ്മിലുള്ള വിഭജനം.",
@@ -1404,7 +1405,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "15:02",
             "youtubeId": "626Pz--vDxk",
             "thumbnail": "https://i.ytimg.com/vi/626Pz--vDxk/hqdefault.jpg",
-            "videoUrl": null,
+            "videoUrl": "https://www.youtube.com/watch?v=626Pz--vDxk",
             "language": "Malayalam (Two-Speaker Conversational Masterclass)",
             "studyPoints": [
               "ബുദ്ധമതത്തിലെ രണ്ട് പ്രമാണങ്ങൾ: ദിങ്നാഗനും (Pramāṇasamuccaya) ധർമ്മകീർത്തിയും (Nyāyabindu) ശബ്ദപ്രമാണത്തെ നിരാകരിച്ച് പ്രത്യക്ഷവും (Pratyakṣa) അനുമാനവും (Anumāna) മാത്രം അംഗീകരിച്ചു.",
@@ -1438,8 +1439,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "പാശ്ചാത്യ വിജ്ഞാനശാസ്ത്രവും എഐയും (Western Epistemology & AI) | Calicut Univ",
             "chapter": "Western Epistemology · Rationalism, Empiricism & Kant's Synthesis in AI",
             "duration": "19:40",
-            "youtubeId": null,
-            "language": "Malayalam",
+            "youtubeId": "h49OapnTcxI",            "language": "Malayalam",
             "studyPoints": [
               "<strong>പ്ലേറ്റോയുടെ ജ്ഞാനമീമാംസ (Platonic Epistemology):</strong> ന്യായീകരിക്കപ്പെട്ട സത്യവിശ്വാസം (Justified True Belief - JTB) എന്ന പരമ്പരാഗത അറിവിന്റെ നിർവ്വചനം.",
               "<strong>യുക്തിവാദവും അനുഭവവാദവും (Rationalism vs Empiricism):</strong> സിംബോളിക് AI-യിലെ ഡിഡക്റ്റീവ് യുക്തി (ഡെക്കാർട്ട്, ലൈബ്നിസ്) vs മെഷീൻ ലേണിംഗിലെ ഇൻഡക്റ്റീവ് ഡാറ്റാ ലേണിംഗ് (ലോക്ക്, ഹ്യൂം).",
@@ -1643,8 +1643,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Unit 4.3 c: Responsibility Gap · Moral Patiency vs Moral Agency · Legal Liability",
             "duration": "18:20",
             "language": "Malayalam",
-            "youtubeId": null,
-            "thumbnail": "https://i.ytimg.com/vi/qrlC8o73n4Q/hqdefault.jpg",
+            "youtubeId": "mNA2qltalns",            "thumbnail": "https://i.ytimg.com/vi/qrlC8o73n4Q/hqdefault.jpg",
             "studyPoints": [
               "<strong>റെസ്പോൺസിബിലിറ്റി ഗ്യാപ് (The Responsibility Gap - Andreas Matthias, 2004):</strong> മെഷീൻ സ്വയം പഠിച്ച് തീരുമാനമെടുക്കുമ്പോൾ ഉണ്ടാകുന്ന ദുരന്തങ്ങൾക്ക് പ്രോഗ്രാമറെയോ ഉടമയെയോ മെഷീനെയോ ഉത്തരവാദിയാക്കാൻ കഴിയാത്ത പ്രതിസന്ധി.",
               "<strong>ബ്ലാക്ക്-ബോക്സ് പ്രോബ്ലം (Black-Box Opacity):</strong> ഡീപ് ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ ലക്ഷക്കണക്കിന് പാരാമീറ്ററുകൾ ഉപയോഗിച്ച് എടുത്ത തീരുമാനങ്ങളുടെ യുക്തി മനുഷ്യന് മുൻകൂട്ടി പ്രവചിക്കാൻ കഴിയില്ല.",
@@ -1664,7 +1663,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "എഐ കാലത്തെ ദാർശനിക ചോദ്യങ്ങൾ (New Philosophical Questions in AI) | Calicut Univ",
             "chapter": "Human Uniqueness · Free Will vs Determinism · Synthetic Consciousness",
             "duration": "18:00",
-            "youtubeId": "",
+            "youtubeId": "RW9Pb-UHMpE",
             "language": "English & Malayalam",
             "studyPoints": [
               "<strong>00:00 - 04:17 | എഐ കാലഘട്ടവും മനുഷ്യന്റെ തനിമയും (Who are We?):</strong> ചിന്തിക്കാനും സർഗ്ഗാത്മകമായി പ്രവർത്തിക്കാനും മെഷീനുകൾ പഠിക്കുമ്പോൾ മനുഷ്യൻ എന്ന സവിശേഷ സ്വത്വത്തിന്റെ പുനർനിർവ്വചനം.",
@@ -1681,7 +1680,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റിയും ഭാവിയും (Technological Singularity & Future) | Calicut Univ",
             "chapter": "Unit 5.3 - 5.5: Singularity · Global Governance · Amalgamation of Science & Philosophy",
             "duration": "25:00",
-            "youtubeId": "",
+            "youtubeId": "K_1zUvokuuU",
             "language": "Malayalam",
             "studyPoints": [
               "ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റി (Technological Singularity - Kurzweil): AI സ്വയം മെച്ചപ്പെടുത്തി മനുഷ്യബുദ്ധിയെ മറികടക്കുന്ന ഘട്ടം.",
@@ -2107,7 +2106,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സ്വതന്ത്ര ഇച്ഛയും ധാർമ്മിക ബാധ്യതയും (Free Will & Moral Responsibility): പ്രവൃത്തികൾ തിരഞ്ഞെടുക്കാനുള്ള മനുഷ്യന്റെ വിവേകവും സ്വന്തം കർമ്മങ്ങളിലുള്ള ഉത്തരവാദിത്തവും."
             ],
             "examTip": "Calicut University Focus: 'Explain the nature, scope, and principal branches of Ethics with special emphasis on Free Will and Moral Responsibility'.",
-            "thumbnail": "https://i.ytimg.com/vi/3AJOPvBY9KA/hqdefault.jpg",
+            "thumbnail": "/thumbnails/ethics_thumb_01.jpg",
             "videoUrl": null
           },
           {
@@ -2222,7 +2221,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "അവകാശങ്ങളും കടമകളും തമ്മിലുള്ള പരസ്പരബന്ധം (Correlation of Rights and Duties): ഓരോ വ്യക്തിയുടെയും അവകാശം മറ്റുള്ളവരുടെ ധാർമ്മിക കടമയായി മാറുന്നു."
             ],
             "examTip": "University Exam Tip: 'Explain Aristotle's Doctrine of the Mean with suitable examples and elaborate on the four Cardinal Virtues'.",
-            "thumbnail": "https://i.ytimg.com/vi/AXKs5HdTUTw/hqdefault.jpg",
+            "thumbnail": "/thumbnails/ethics_thumb_03.jpg",
             "videoUrl": null
           },
           {
@@ -2239,7 +2238,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "നന്മയും നീതിയും (Goodness & Justice): വ്യക്തിഗത സദാചാരവും സാമൂഹിക ക്ഷേമവും തമ്മിലുള്ള ആരോഗ്യകരമായ സന്തുലിതാവസ്ഥ."
             ],
             "examTip": "University Exam Tip: 'Discuss Conscience as the subjective norm of morality and evaluate its role in resolving ethical conflicts'.",
-            "thumbnail": "https://i.ytimg.com/vi/0_peGPXEbrc/hqdefault.jpg",
+            "thumbnail": "/thumbnails/ethics_thumb_04.jpg",
             "videoUrl": null
           },
           {
@@ -2293,7 +2292,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ആക്റ്റ് vs റൂൾ യൂട്ടിലിറ്റേറിയനിസം (Act vs Rule Utilitarianism): വ്യക്തിഗത പ്രവൃത്തികളുടെ ഫലം കണക്കാക്കുന്നതും പൊതുവായ നൈതിക നിയമങ്ങൾ പാലിക്കുന്നതും."
             ],
             "examTip": "University Exam Tip: 'Critically evaluate Utilitarianism comparing Bentham's quantitative hedonism with Mill's qualitative refinement'.",
-            "thumbnail": "https://i.ytimg.com/vi/WU7_Bjoa5f0/hqdefault.jpg",
+            "thumbnail": "/thumbnails/ethics_thumb_06.jpg",
             "videoUrl": null
           }
         ]
@@ -2395,8 +2394,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · വ്യക്തിഗത & മാർക്കറ്റ് ഡിമാൻഡ്, ഡിമാൻഡ് ഷിഫ്റ്റുകൾ",
             "duration": "06:21",
             "youtubeId": "Mu1Ktkzr_ME",
-            "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/Mu1Ktkzr_ME/hqdefault.jpg",
+            "videoUrl": "/micro-demand-review.html",
+            "thumbnail": "/thumbnails/micro-demand-review.png",
             "studyPoints": [
               "ഡിമാൻഡ് എന്നത് വാങ്ങാനുള്ള ആഗ്രഹവും അതോടൊപ്പം വില നൽകാനുള്ള സാമ്പത്തിക ശേഷിയും (purchasing power) ചേർന്നതാണ്.",
               "മറ്റ് ഘടകങ്ങൾ സ്ഥിരമായിരിക്കുമ്പോൾ വില കൂടുമ്പോൾ ഡിമാൻഡ് കുറയുകയും വില കുറയുമ്പോൾ ഡിമാൻഡ് കൂടുകയും ചെയ്യുന്നു (Law of Demand).",
@@ -2417,8 +2416,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · സപ്ലൈ നിയമം, സപ്ലൈ ഫംഗ്ഷൻ & ഷിഫ്റ്റുകൾ",
             "duration": "14:52",
             "youtubeId": "CylKbnNZtm0",
-            "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/CylKbnNZtm0/hqdefault.jpg",
+            "videoUrl": "/micro-unit2-review.html",
+            "thumbnail": "/thumbnails/micro-unit-2-review.png",
             "studyPoints": [
               "Supply Definition (ഏതെങ്കിലും സാധനത്തിന്റെ അളവ്, വില, സമയം)",
               "Supply Function (SX = f(PX, PZ, T, C, GP))",
@@ -2442,8 +2441,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · സന്തുലിത വിലയും അളവും, സർപ്ലസ് & ഷോർട്ടേജ്",
             "duration": "15:51",
             "youtubeId": "zJsY7Sbx2To",
-            "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/zJsY7Sbx2To/hqdefault.jpg",
+            "videoUrl": "/micro-unit3-review.html",
+            "thumbnail": "/thumbnails/micro-unit-3-review.png",
             "studyPoints": [
               "Market Equilibrium: Qd equals Qs",
               "Equilibrium Price: P star and Q star",
@@ -2496,7 +2495,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · അപചയ സീമാന്ത പ്രയോജന നിയമവും സമ-സീമാന്ത പ്രയോജനവും",
             "duration": "23:26",
             "youtubeId": "Jj-JWuNJjRU",
-            "videoUrl": null,
+            "videoUrl": "https://www.youtube.com/watch?v=Jj-JWuNJjRU",
             "thumbnail": "https://i.ytimg.com/vi/Jj-JWuNJjRU/hqdefault.jpg",
             "studyPoints": [
               "<strong>കാർഡിനൽ പ്രയോജന സിദ്ധാന്തം:</strong> സംതൃപ്തിയെ യൂട്ടിൽസ് എന്ന സംഖ്യാ രൂപത്തിൽ അളക്കാമെന്ന് ആൽഫ്രഡ് മാർഷൽ സമർത്ഥിക്കുന്നു.",
@@ -2516,7 +2515,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · ഇൻഡിഫറൻസ് കർവ് പ്രത്യേകതകൾ, MRS & മുൻഗണനാ ഭൂപടം",
             "duration": "18:16",
             "youtubeId": "z8tbT2SiepA",
-            "thumbnail": "https://i.ytimg.com/vi/z8tbT2SiepA/hqdefault.jpg",
+            "thumbnail": "/thumbnails/Consumer_Preferences_Mod2_Unit6_Thumbnail.png",
             "studyPoints": [
               "<strong>Indifference Curve (IC):</strong> Represents locus of all commodity bundles providing identical levels of overall satisfaction.",
               "<strong>Marginal Rate of Substitution (MRS):</strong> The rate at which a consumer trades good Y for good X: MRS_xy = -dy/dx = MUx/MUy.",
@@ -2540,7 +2539,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>ഉപഭോക്തൃ സന്തുലിതാവസ്ഥ:</strong> ഇൻഡിഫറൻസ് കർവിന്റെ ടാൻജൻസി ബിന്ദുവിൽ <code>MRS_xy = Px / Py</code> ആകുമ്പോൾ പരമാവധി സംതൃപ്തി ലഭിക്കുന്നു."
             ],
             "examTip": "ബജറ്റ് രേഖയുടെ ചെരിവ് -Px/Py നിർണ്ണയിക്കുന്ന രീതിയും വിലമാറ്റവും വരുമാന മാറ്റവും തമ്മിലുള്ള ഗ്രാഫിക്കൽ വ്യത്യാസവും 6/10 മാർക്ക് ചോദ്യങ്ങളായി ആവർത്തിച്ചു വരാറുണ്ട്.",
-            "videoUrl": null,
+            "videoUrl": "https://www.youtube.com/watch?v=9H8683I4Ad8",
             "language": "Malayalam",
             "audioUrl": "/audio/micro_unit08_masterclass.mp3",
             "malayalam_cc": true
@@ -2576,7 +2575,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · സോൾ പ്രൊപ്രൈറ്റർഷിപ്പ്, പാർട്ണർഷിപ്പ്, കോർപ്പറേഷൻ & പ്രിൻസിപ്പൽ-ഏജന്റ്",
             "duration": "15:38",
             "youtubeId": "W6b1q1WUJbo",
-            "videoUrl": null,
+            "videoUrl": "https://www.youtube.com/watch?v=W6b1q1WUJbo",
             "thumbnail": "https://i.ytimg.com/vi/W6b1q1WUJbo/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
@@ -2661,7 +2660,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · കോൺസ്റ്റന്റ് (CRS), ഇൻക്രീസിംഗ് (IRS), ഡിമിനിഷിംഗ് (DRS)",
             "duration": "25:20",
             "youtubeId": "9gX0HzBZ0Bc",
-            "videoUrl": null,
+            "videoUrl": "https://www.youtube.com/watch?v=9gX0HzBZ0Bc",
             "thumbnail": "https://i.ytimg.com/vi/9gX0HzBZ0Bc/hqdefault.jpg",
             "language": "Malayalam",
             "studyPoints": [
@@ -2842,23 +2841,23 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "അറബിക് അക്ഷരമാലയും അടിസ്ഥാന വ്യാകരണവും (Arabic Alphabet & Basic Grammar)",
-            "chapter": "അക്ഷരമാല, മഖാരിജ്, ഹറകത്ത്, ഇസ്മ്-ഫിഅ്ല്-ഹർഫ്, മഅ്രിഫ-നകിറ, ശംസിയ്യ-ഖമരിയ്യ, ലിംഗ-വചന നിയമങ്ങൾ",
-            "duration": "18:00",
-            "youtubeId": "rb5CfCS7mT0",
+            "title": "അഭിവാദനങ്ങളും ആമുഖങ്ങളും — അത്തഹിയ്യാതു വത്തആറുഫ് (Greetings & Introductions)",
+            "chapter": "സ്വയം പരിചയപ്പെടുത്തൽ (സലാഹുദ്ദീൻ & ആയിഷ), മറ്റുള്ളവരെ പരിചയപ്പെടുത്തൽ, അഭിവാദനങ്ങളും മറുപടികളും, ചോദ്യശബ്ദങ്ങൾ, ഹുറൂഫുൽ ജർറ്",
+            "duration": "07:36",
+            "youtubeId": "P4mcyo5AQ2M",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/rb5CfCS7mT0/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/P4mcyo5AQ2M/hqdefault.jpg",
             "language": "Arabic",
             "studyPoints": [
-              "<strong>അക്ഷരമാലയും ഉച്ചാരണ സ്ഥാനങ്ങളും (Makharīj):</strong> 28 വ്യഞ്ജനാക്ഷരങ്ങൾ. ഓരോ അക്ഷരത്തിന്റെയും കൃത്യമായ സ്വരസ്ഥാനം (തൊണ്ട, നാവ്, ചുണ്ടുകൾ).",
-              "<strong>ഹ്രസ്വ-ദീർഘ സ്വരങ്ങൾ (Harakat & Madd):</strong> ഫത്‌ഹ (a), കസ്ര (i), ളമ്മ (u) എന്നിവ ഹ്രസ്വ സ്വരങ്ങളും; അലിഫ്, വാവ്, യാഅ് എന്നിവ ദീർഘസ്വരങ്ങളുമാണ്.",
-              "<strong>കലിമയുടെ വിഭജനം (Ism, Fi‘l, Ḥarf):</strong> അറബി പദങ്ങൾ മൂന്ന് വിധം — നാമം (Ism), ക്രിയ (Fi‘l), അവ്യയം (Ḥarf).",
-              "<strong>മഅ്രിഫയും നകിറയും (Definiteness):</strong> തൻവീൻ ഉള്ളവ അനിശ്ചിത നാമവും (Nakirah), 'അൽ-' (ال) ചേർത്താൽ നിശ്ചിത നാമവുമാണ് (Ma‘rifah).",
-              "<strong>ശംസിയ്യ & ഖമരിയ്യ അക്ഷരങ്ങൾ:</strong> 14 ശംസിയ്യ അക്ഷരങ്ങളിൽ ലാം ലയിച്ചു ഷദ്ദ് വരുന്നു; 14 ഖമരിയ്യ അക്ഷരങ്ങളിൽ ലാം സ്പഷ്ടമായി ഉച്ചരിക്കപ്പെടുന്നു.",
-              "<strong>ലിംഗവും വചനവും (Gender & Number):</strong> താഉൽ മർബൂത്വ (ة) സ്ത്രീലിംഗ അടയാളം. മുഫ്റദ് (ഏകവചനം), മുഥന്ന (ദ്വിവചനം - ആനി/ഐനി), ജംഅ് (ബഹുവചനം - സാലിം & തക്സീർ).",
-              "<strong>സിഫത്തും ഇളാഫത്തും:</strong> സിഫത്ത്-മൗസൂഫ് നാല് കാര്യങ്ങളിലും (ലിംഗം, വചനം, വിഭക്തി, നിശ്ചിതത്വം) പൊരുത്തപ്പെടുന്നു. ഇളാഫത്തിൽ ആദ്യ പദം (മുളാഫ്) തൻവീനും 'അൽ'ഉം സ്വീകരിക്കില്ല; രണ്ടാമത്തെ പദം (മുളാഫുൻ ഇലൈഹി) മജ്റൂറായിരിക്കും."
+              "<strong>അത്തഹിയ്യാതു വത്തആറുഫ് (Greetings & Introductions):</strong> 22 രാജ്യങ്ങളിലായി 40 കോടിയിലധികം ആളുകൾ സംസാരിക്കുന്ന അറബിക് ഭാഷയിലെ പ്രായോഗിക വിനിമയങ്ങൾ.",
+              "<strong>സ്വയം പരിചയപ്പെടുത്തൽ (Self-Introduction):</strong> 'അന' (ഞാൻ) എന്ന സർവ്വനാമത്തിൽ ആരംഭിക്കുന്ന ലളിത നാമവാക്യങ്ങൾ (സലാഹുദ്ദീൻ & ആയിഷ മാതൃകകൾ).",
+              "<strong>മറ്റൊരാളെ പരിചയപ്പെടുത്തൽ:</strong> പുല്ലിംഗത്തിന് 'ഹാദാ' (ഇത് എന്റെ സുഹൃത്ത് ഉമർ) എന്നും സ്ത്രീലിംഗത്തിന് 'ഹാദിഹി' (ഇത് എന്റെ സഹോദരി ഫാത്തിമ) എന്നുമുള്ള പ്രയോഗങ്ങൾ.",
+              "<strong>അഭിവാദനങ്ങളും മറുപടികളും:</strong> അസ്സലാമു അലൈക്കും - വഅലൈക്കുമുസ്സലാം, മർഹബൻ - മർഹബൻ ബിക്, സ്വബാഹുൽ ഖൈർ - സ്വബാഹുന്നൂർ, ശുക്റൻ ജസീലം - അഫ്വൻ.",
+              "<strong>ചോദ്യശബ്ദങ്ങൾ (Adawāt al-Istifhām):</strong> മാ (നാമങ്ങൾക്ക്), മാദാ (ക്രിയകൾക്ക്), ലിമാദാ, മൻ, ലിമൻ, ഹൽ, മതാ, ഐന, കൈഫ, കമ്, അയ്യു എന്നിവയുടെ പ്രായോഗിക വാക്യങ്ങൾ.",
+              "<strong>ഹുറൂഫുൽ ജർറും അവ്യയങ്ങളും:</strong> മിൻ, ഇലാ, ഫീ, അലാ, അൻ എന്നിവയ്ക്ക് ശേഷം വരുന്ന നാമങ്ങൾ കസ്ര കൊണ്ട് മജ്റൂറാകുന്നു.",
+              "<strong>കാലിക്കറ്റ് യൂണിവേഴ്സിറ്റി ചോദ്യോത്തരങ്ങൾ:</strong> ഔദ്യോഗിക സിലബസിലെ 20 വെല്ലുവിളി ചോദ്യങ്ങളുടെ പൂർണ്ണ ഉത്തര സൂചികയും പ്രായോഗിക സംഭാഷണവും."
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി പരീക്ഷയ്ക്ക് സിഫത്ത്-മൗസൂഫ് വ്യത്യാസം, ഇളാഫത്ത് നിയമങ്ങൾ, ശംസിയ്യ-ഖമരിയ്യ അക്ഷരങ്ങളുടെ പട്ടിക, തൻവീൻ പ്രയോഗങ്ങൾ എന്നിവ 5 & 10 മാർക്ക് വിഭാഗത്തിൽ ചോദിക്കാറുണ്ട്."
+            "examTip": "കാലിക്കറ്റ് യൂണിവേഴ്സിറ്റി പരീക്ഷയിൽ സ്വയം പരിചയപ്പെടുത്തൽ (5 വാക്യങ്ങൾ), 10 മാർക്കിന്റെ മാതൃകാ സംഭാഷണം (ഹിവാർ), ചോദ്യശബ്ദങ്ങളും ഹുറൂഫുൽ ജർറുകളും ഉപയോഗിച്ചുള്ള വാക്യ നിർമ്മിതി എന്നിവ നിർബന്ധമായും ചോദിക്കും."
           },
           {
             "chapterNumber": "Chapter 02",
@@ -2884,38 +2883,61 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 02: READING COMPREHENSION & TEXTS (قطرات الندى وقراءات عربية)",
         "videos": [
           {
-            "chapterNumber": "Chapter 03",
-            "title": "ക്ലാസിക്കൽ & ആധുനിക പാഠഭാഗങ്ങൾ (Classical & Modern Arabic Texts)",
-            "chapter": "അധ്വാനത്തിന്റെ മഹത്വം (ഥർവത്തുൽ അമൽ), പിതാവിന്റെ ഉപദേശങ്ങൾ, ക്ലാസിക്കൽ അറബിക് സാഹിത്യ വിശകലനം",
-            "duration": "22:00",
-            "youtubeId": "aOgymHqbK8k",
+            "chapterNumber": "Chapter 02",
+            "title": "അധ്വാനം സമ്പത്ത് — അൽ-അമലു സർവത് (Work Is Wealth)",
+            "chapter": "പിതാവിന്റെ വിടവാങ്ങൽ ഉപദേശം, യഥാർത്ഥ അനന്തരാവകാശം, സമ്പത്തിന്റെ പരിമിതികൾ, മൂന്ന് അമൂല്യ ഉപദേശങ്ങൾ (തൊഴിൽ, ആരോഗ്യം, വിശ്വസ്തത)",
+            "duration": "05:08",
+            "youtubeId": "pVTBssQb4kM",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/aOgymHqbK8k/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/pVTBssQb4kM/hqdefault.jpg",
             "language": "Arabic",
             "studyPoints": [
-              "<strong>ഥർവത്തുൽ അമൽ (Work Is Wealth):</strong> തൊഴിലിന്റെ മഹത്വവും സ്വാശ്രയത്വവും വ്യക്തമാക്കുന്ന അറബിക് പാഠഭാഗം. പിതാവ് മകന് നൽകുന്ന മൂന്ന് അമൂല്യ ഉപദേശങ്ങൾ.",
-              "<strong>ക്ലാസിക്കൽ ശൈലികൾ:</strong> ഖുർആനിക സൂക്തങ്ങളും തിരുവചനങ്ങളും ഉദ്ധരിച്ചുകൊണ്ടുള്ള ഭാഷാ ശൈലി.",
-              "<strong>ആശയഗ്രഹണ വ്യായാമങ്ങൾ:</strong> പാഠഭാഗത്തെ ആസ്പദമാക്കിയുള്ള ചോദ്യോത്തരങ്ങൾ, സംഗ്രഹ രചന, ശരി/തെറ്റ് കണ്ടെത്തൽ.",
-              "<strong>പദാവലി സമ്പുഷ്ടീകരണം (Vocabulary):</strong> ക്ലാസിക്കൽ അറബിക് സാഹിത്യത്തിൽ ഉപയോഗിക്കുന്ന ഉന്നത പദങ്ങളും അവയുടെ മലയാള/ഇംഗ്ലീഷ് അർത്ഥങ്ങളും."
+              "<strong>അൽ-അമലു സർവത് (Work Is Wealth):</strong> ജീവിത സായാഹ്നത്തിൽ പിതാവ് മകന് നൽകുന്ന അമൂല്യമായ മൂന്ന് ജീവിതോപദേശങ്ങൾ.",
+              "<strong>സമ്പത്തിന്റെ പരിമിതികൾ:</strong> പണം കൊണ്ട് മികച്ച ഭക്ഷണം വാങ്ങാം എന്നാൽ വിശപ്പ് വാങ്ങാനാവില്ല; മരുന്ന് വാങ്ങാം എന്നാൽ ആരോഗ്യം വാങ്ങാനാവില്ല; അനുയായികളെ വാങ്ങാം എന്നാൽ ആത്മാർത്ഥത വാങ്ങാനാവില്ല.",
+              "<strong>ഉപദേശം 1 (കൈത്തൊഴിൽ):</strong> കൈവശമുള്ള ഒരു തൊഴിൽ (സ്വൻഅഃ ഫിൽ യദ്) ദാരിദ്ര്യത്തിൽ നിന്നുള്ള കാവലാണ്.",
+              "<strong>ഉപദേശം 2 (ആരോഗ്യം):</strong> ശാരീരിക ആരോഗ്യം മനുഷ്യന്റെ പ്രതിരോധ പരിചയും വലിയ ആധാരവുമാണ്.",
+              "<strong>ഉപദേശം 3 (വിശ്വസ്തത):</strong> വിശ്വസ്തതയും സൽപ്പേരും (അൽ-അമാനഃ വ ഹുസ്നുസ്സുംഅഃ) വറ്റാത്ത നിധിയും സമ്പത്തുമാണ്.",
+              "<strong>വ്യാകരണ നിയമങ്ങൾ:</strong> 'ലാ തഖുൽ' (വിലക്ക് വാക്യം), 'ഇന്ന' (തൗക്കീദ്), 'ലാകിന്ന' (ഇസ്തിദ്‌റാക്) എന്നിവയുടെ പ്രയോഗങ്ങൾ."
             ],
-            "examTip": "ഥർവത്തുൽ അമൽ പാഠത്തിലെ ഉപദേശങ്ങൾ, പാഠസംഗ്രഹം, അനുബന്ധ വ്യാകരണ ചോദ്യങ്ങൾ എന്നിവ ഉപന്യാസ രൂപത്തിൽ തയ്യാറാക്കുക."
+            "examTip": "കാലിക്കറ്റ് യൂണിവേഴ്സിറ്റി പരീക്ഷയിൽ 'അൽ-അമലു സർവത്' എന്ന വിഷയത്തിൽ 10 മാർക്കിന്റെ ഉപന്യാസം ചോദിക്കാറുണ്ട്. മൂന്ന് ഉപദേശങ്ങളും അവയുടെ സന്ദേശവും കൃത്യമായി പഠിക്കുക."
+          },
+          {
+            "chapterNumber": "Chapter 03",
+            "title": "അറബിക് നർമ്മകഥകൾ — ത്വറാഇഫ് അറബിയ്യ (Arabic Anecdotes)",
+            "chapter": "അഅ്റാബിയും ഖലീഫ മഅ്മൂനും, വൃദ്ധന്റെ മറുപടി, അപ്പത്തെ പരിചയം, കല്ലും പട്ടികളും, വയറുവേദനയ്ക്ക് കൺമഷി, കിണറ്റിൽ വീണ വ്യാകരണക്കാരൻ",
+            "duration": "08:36",
+            "youtubeId": "wYrnmU61yHQ",
+            "videoUrl": null,
+            "thumbnail": "https://i.ytimg.com/vi/wYrnmU61yHQ/hqdefault.jpg",
+            "language": "Arabic",
+            "studyPoints": [
+              "<strong>ത്വറാഇഫ് അറബിയ്യ (Arabic Anecdotes):</strong> ക്ലാസിക്കൽ അറബിക് സാഹിത്യത്തിലെ അതിപ്രശസ്തമായ 5 നർമ്മകഥകളും ആക്ഷേപഹാസ്യങ്ങളും.",
+              "<strong>അഅ്റാബിയും ഖലീഫ മഅ്മൂനും:</strong> ഹജ്ജിന് പണമില്ലാതെ വന്ന ബദവി 'സഹായം തേടിയാണ് വന്നത് ഫത്‌വയല്ല' എന്ന് നൽകിയ ബുദ്ധിപൂർവ്വമായ മറുപടി.",
+              "<strong>വൃദ്ധന്റെ മറുപടി (അന ബൈനഹുമാ):</strong> വിഡ്ഢിയാണോ വിവരമില്ലാത്തവനാണോ എന്ന് പരിഹസിച്ച രണ്ട് യുവാക്കൾക്കിടയിലിരുന്ന് 'ഞാൻ രണ്ടിനും നടുവിലാണ്' എന്ന തിരിച്ചടി.",
+              "<strong>കിണറ്റിൽ വീണ വ്യാകരണക്കാരൻ:</strong> ജീവൻ രക്ഷിക്കുന്നതിനേക്കാൾ വിഭക്തി നിയമങ്ങൾക്ക് കാർക്കശ്യം കാട്ടിയ വ്യാകരണ പണ്ഡിതന്റെ ആക്ഷേപഹാസ്യം.",
+              "<strong>ഹുറൂഫുൽ ജർറും ഹാലും:</strong> ഹർഫു ജർറുകൾക്ക് ശേഷം വരുന്ന നാമങ്ങൾ മജ്റൂറാകൽ, അവസ്ഥ വ്യക്തമാക്കുന്ന 'ഹാൽ' (മുസ്തജ്ദിയൻ) മൻസൂബാകൽ നിയമങ്ങൾ.",
+              "<strong>പദാവലിയും വാക്യ രൂപീകരണവും:</strong> നഫഖ, സഖത്വ അൻക, മുസ്തജ്ദി, അഹ്മഖ്, യുകയ്യിദ്, ഇസ്തിഅ്സാൻ എന്നീ പദങ്ങളുടെ അർത്ഥങ്ങളും വാക്യ നിർമ്മിതിയും."
+            ],
+            "examTip": "കാലിക്കറ്റ് യൂണിവേഴ്സിറ്റി പരീക്ഷയിൽ 'മൻ ഖാല വ ലിമൻ' (ആര് ആരോട് പറഞ്ഞു), ഹുറൂഫുൽ ജർറുകളുടെ വിഭക്തി പൂരിപ്പിക്കൽ, കഥകളുടെ സംഗ്രഹം (ഖുലാസതുത്-ത്വറാഇഫ്) എന്നിവ നിർബന്ധമായും ചോദിക്കും."
           },
           {
             "chapterNumber": "Chapter 04",
-            "title": "ദൈനംദിന അറബി സംഭാഷണങ്ങൾ (Conversational Arabic in Daily Life)",
-            "chapter": "മാർക്കറ്റ്, വിമാനത്താവളം, ആശുപത്രി, ഓഫീസ് സംഭാഷണങ്ങൾ, സമയവും ആരോഗ്യവും (അൽ-വഖ്തു വസ്സിഹ്ഹ)",
-            "duration": "19:00",
-            "youtubeId": "OKnXFgDqFug",
+            "title": "സമയവും ആരോഗ്യവും — അൽ-വഖ്തു വസ്സിഹ്ഹ (Time and Health)",
+            "chapter": "നബി വചനം (രണ്ട് അനുഗ്രഹങ്ങൾ), സമയത്തിന്റെ വില, ആരോഗ്യ സംരക്ഷണ ശീലങ്ങൾ, ചോദ്യോത്തരങ്ങൾ, വ്യാകരണം",
+            "duration": "05:54",
+            "youtubeId": "0x97BHkYH7I",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/OKnXFgDqFug/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/0x97BHkYH7I/hqdefault.jpg",
             "language": "Arabic",
             "studyPoints": [
-              "<strong>അൽ-ഹിവാറാത്തുൽ യൗമിയ്യ (Daily Dialogues):</strong> വിപണിയിലെ വിലപേശലുകൾ, വിമാനത്താവളത്തിലെ ചെക്ക്-ഇൻ, ഇമിഗ്രേഷൻ സംഭാഷണങ്ങൾ.",
-              "<strong>ആശുപത്രിയും ആരോഗ്യവും:</strong> രോഗലക്ഷണങ്ങൾ വിവരിക്കൽ, ഡോക്ടറുമായുള്ള ആശയവിനിമയം, മരുന്നുകളുടെ കുറിപ്പടി മനസ്സിലാക്കൽ.",
-              "<strong>അൽ-വഖ്തു വസ്സിഹ്ഹ (Time and Health):</strong> സമയത്തിന്റെ വില, ആരോഗ്യ സംരക്ഷണം, പ്രവാചക വചനങ്ങളുടെ വെളിച്ചത്തിലുള്ള ചർച്ചകൾ.",
-              "<strong>ചോദ്യശബ്ദങ്ങൾ (Adawāt al-Istifhām):</strong> മാ, മാദാ, മൻ, ഐന, മതാ, കൈഫ, കമ്, ലിമാദാ, ഹൽ എന്നിവയുടെ പ്രായോഗിക വാക്യങ്ങൾ."
+              "<strong>അൽ-വഖ്തു വസ്സിഹ്ഹ (Time and Health):</strong> മനുഷ്യൻ ഏറ്റവും കൂടുതൽ വഞ്ചിതരാകുന്ന രണ്ട് ദിവ്യാനുഗ്രഹങ്ങൾ — ആരോഗ്യവും ഒഴിവുസമയവും (നിഅ്മതാനി മഗ്ബൂനുൻ ഫീഹിമാ കസീറുൻ മിനന്നാസ്).",
+              "<strong>സമയത്തിന്റെ അമൂല്യത:</strong> ആയുസ്സ് പരിമിതമാണ്; സമയം ഒരു വാളാണ്, നീ അതിനെ മുറിച്ചില്ലെങ്കിൽ അത് നിന്നെ മുറിക്കും (അൽ-വഖ്തു കസ്സൈഫ്).",
+              "<strong>ആരോഗ്യം കിരീടമാണ്:</strong> ആരോഗ്യം എന്നത് ആരോഗ്യവാന്മാരുടെ തലയിലെ കിരീടമാണ്, അത് രോഗികൾക്ക് മാത്രമേ കാണാനാവൂ (അസ്സിഹ്ഹതു താജുൻ അലാ റുഊസിൽ അസ്വഹിഹ്ഹാഅ്).",
+              "<strong>ആരോഗ്യ സംരക്ഷണ ശീലങ്ങൾ:</strong> പോഷകാഹാരം, വ്യായാമം, ആവശ്യത്തിന് ഉറക്കം, സമയക്രമീകരണം, അമിതഭക്ഷണത്തിൽ നിന്നും മാനസിക സമ്മർദ്ദത്തിൽ നിന്നുമുള്ള വിട്ടുനിൽക്കൽ.",
+              "<strong>കാലിക്കറ്റ് യൂണിവേഴ്സിറ്റി ചോദ്യോത്തരങ്ങൾ:</strong> മാ ഹുമാന്നിഅ്മതാൻ, ലിമാദാ ശുള്ളിഹൽ വഖ്തു ബിസ്സൈഫ്, കൈഫ നുഹാഫിളു അലാ സിഹ്ഹതിനാ തുടങ്ങിയ പരീക്ഷാ ചോദ്യങ്ങളുടെ പൂർണ്ണ ഉത്തരങ്ങൾ.",
+              "<strong>പ്രായോഗിക വ്യാകരണം:</strong> മുസന്ന (ദ്വിവചനം - ആനി / ഐനി), മാളി-മുളാരിഅ്-അംറ് ക്രിയകൾ, ജുംല ഇസ്മിയ്യ നിർമ്മിതികൾ."
             ],
-            "examTip": "മാർക്കറ്റിലോ വിമാനത്താവളത്തിലോ നടക്കുന്ന ഒരു സംഭാഷണം തയ്യാറാക്കാൻ (10 മാർക്ക് ഡയലോഗ് റൈറ്റിംഗ്) പരീക്ഷയ്ക്ക് ചോദിക്കാറുണ്ട്."
+            "examTip": "കാലിക്കറ്റ് യൂണിവേഴ്സിറ്റി പരീക്ഷയിൽ 'അൽ-വഖ്തു വസ്സിഹ്ഹ' എന്ന വിഷയത്തിൽ ഉപന്യാസവും പ്രവാചക വചനത്തിന്റെ വിശദീകരണവും ദ്വിവചന (മുസന്ന) രൂപീകരണവും നിർബന്ധമായും ചോദിക്കും."
           }
         ]
       },
@@ -3409,6 +3431,6 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 14
+    "totalVideos": 0
   }
 };
