@@ -130,7 +130,16 @@ const THEORY_BANK = [
     "Explain two factors that bring about social change.",
     "സാമൂഹിക മാറ്റത്തിന് കാരണമാകുന്ന രണ്ട് ഘടകങ്ങൾ വിശദീകരിക്കുക.",
     "Meaning of social change; explanation of two factors such as technology, migration or policy."
-  ]
+  ],
+  ["What is participant observation? Give an example.","പങ്കാളിത്ത നിരീക്ഷണം എന്താണ്? ഒരു ഉദാഹരണം നൽകുക.","Researcher joins activities; observes and records behaviour; example."],
+  ["How do an interview and a questionnaire differ?","അഭിമുഖവും ചോദ്യാവലിയും എങ്ങനെ വ്യത്യാസപ്പെടുന്നു?","Interview dialogue and follow-up; questionnaire standardised questions; suitable use."],
+  ["Distinguish cooperation and competition with examples.","ഉദാഹരണങ്ങളോടെ സഹകരണവും മത്സരവും വേർതിരിക്കുക.","Shared goal and joint action; pursuit of limited reward; examples."],
+  ["Distinguish primary and secondary socialisation.","പ്രാഥമികവും ദ്വിതീയവുമായ സാമൂഹീകരണത്തെ വേർതിരിക്കുക.","Early basic learning; wider social settings and roles; examples."],
+  ["Why does socialisation continue into adulthood? Give an example.","മുതിർന്ന പ്രായത്തിലും സാമൂഹീകരണം തുടരുന്നത് എന്തുകൊണ്ട്? ഒരു ഉദാഹരണം നൽകുക.","Lifelong learning; new roles and expectations; example."],
+  ["What is a society? Explain two characteristics.","സമൂഹം എന്താണ്? രണ്ട് സവിശേഷതകൾ വിശദീകരിക്കുക.","Enduring network of social relations; interdependence; shared norms or institutions."],
+  ["What is a social institution? Explain with an example.","സാമൂഹിക സ്ഥാപനം എന്താണ്? ഒരു ഉദാഹരണത്തോടെ വിശദീകരിക്കുക.","Stable pattern of norms and roles; meets social needs; linked example."],
+  ["How would you record an observation of social interaction in a public place?","ഒരു പൊതുസ്ഥലത്തെ സാമൂഹിക ഇടപെടൽ എങ്ങനെ നിരീക്ഷിച്ച് രേഖപ്പെടുത്തും?","Choose setting and behaviour; record concrete observations; protect privacy and distinguish inference."],
+  ["How can you use a sociology concept to explain a pattern in your observation assignment?","നിരീക്ഷണ അസൈൻമെന്റിൽ കണ്ട ഒരു രീതി സമൂഹശാസ്ത്ര ആശയം ഉപയോഗിച്ച് എങ്ങനെ വിശദീകരിക്കാം?","Identify an observed pattern; name and define a suitable concept; explain link using evidence."]
 ];
 
 const THEORY_MODEL_ANSWERS = [
@@ -165,16 +174,26 @@ const THEORY_MODEL_ANSWERS = [
   [
     "Social change is a shift in social relationships or institutions over time. Technology changes how people work and communicate. Migration brings people with different experiences into contact and can change local languages, habits and institutions.",
     "കാലക്രമത്തിൽ സാമൂഹിക ബന്ധങ്ങളിലോ സ്ഥാപനങ്ങളിലോ ഉണ്ടാകുന്ന മാറ്റമാണ് സാമൂഹിക മാറ്റം. സാങ്കേതികവിദ്യ ആളുകളുടെ ജോലിയും ആശയവിനിമയവും മാറ്റുന്നു. കുടിയേറ്റം വ്യത്യസ്ത അനുഭവങ്ങളുള്ള ആളുകളെ തമ്മിൽ ബന്ധിപ്പിക്കുകയും പ്രാദേശിക ഭാഷകളിലും ശീലങ്ങളിലും സ്ഥാപനങ്ങളിലും മാറ്റം വരുത്തുകയും ചെയ്യാം."
-  ]
+  ],
+  ["The researcher takes part in a group’s activities while systematically observing it. For example, joining a neighbourhood clean-up can reveal how volunteers share tasks.","ഒരു സംഘത്തിന്റെ പ്രവർത്തനങ്ങളിൽ പങ്കെടുത്തുകൊണ്ട് ഗവേഷകൻ അതിനെ ക്രമബദ്ധമായി നിരീക്ഷിക്കുന്നു. ഉദാഹരണത്തിന്, പ്രദേശത്തെ ശുചീകരണത്തിൽ പങ്കെടുത്താൽ സന്നദ്ധപ്രവർത്തകർ ജോലി എങ്ങനെ പങ്കിടുന്നുവെന്ന് മനസ്സിലാക്കാം."],
+  ["An interview allows a researcher to ask follow-up questions. A questionnaire uses the same prepared questions to collect comparable responses from many people.","അഭിമുഖത്തിൽ ഗവേഷകന് തുടർചോദ്യങ്ങൾ ചോദിക്കാം. ചോദ്യാവലിയിൽ ഒരേ ചോദ്യങ്ങൾ ഉപയോഗിച്ച് പലരിൽ നിന്ന് താരതമ്യം ചെയ്യാവുന്ന മറുപടികൾ ശേഖരിക്കാം."],
+  ["Students working together on a report cooperate toward a shared goal. Students competing for a single prize seek the same limited reward.","ഒരു റിപ്പോർട്ട് തയ്യാറാക്കാൻ ഒരുമിച്ച് പ്രവർത്തിക്കുന്ന വിദ്യാർത്ഥികൾ പൊതുലക്ഷ്യത്തിനായി സഹകരിക്കുന്നു. ഒരു സമ്മാനത്തിനായി മത്സരിക്കുന്ന വിദ്യാർത്ഥികൾ പരിമിതമായ ഒരേ നേട്ടം ലക്ഷ്യമിടുന്നു."],
+  ["Primary socialisation teaches basic language and norms, often within the family. Secondary socialisation teaches roles and rules in wider settings such as a school or workplace.","പ്രാഥമിക സാമൂഹീകരണത്തിൽ അടിസ്ഥാന ഭാഷയും ചട്ടങ്ങളും സാധാരണയായി കുടുംബത്തിൽ നിന്ന് പഠിക്കുന്നു. ദ്വിതീയ സാമൂഹീകരണത്തിൽ വിദ്യാലയം, ജോലിസ്ഥലം തുടങ്ങിയ ഇടങ്ങളിലെ പങ്കുകളും ചട്ടങ്ങളും പഠിക്കുന്നു."],
+  ["People enter new roles throughout life and learn their expectations. For example, a new employee learns the workplace’s routines and how to cooperate with colleagues.","ജീവിതത്തിന്റെ വിവിധ ഘട്ടങ്ങളിൽ പുതിയ പങ്കുകളും അവയോടുള്ള പ്രതീക്ഷകളും പഠിക്കുന്നു. ഉദാഹരണത്തിന്, പുതിയ ജീവനക്കാരൻ ജോലിസ്ഥലത്തെ രീതികളും സഹപ്രവർത്തകരുമായി ചേർന്ന് പ്രവർത്തിക്കുന്നതും പഠിക്കുന്നു."],
+  ["A society is an enduring network of social relationships. People depend on one another for different needs, and shared norms and institutions help organise their interactions.","നിലനിൽക്കുന്ന സാമൂഹിക ബന്ധങ്ങളുടെ ശൃംഖലയാണ് സമൂഹം. വിവിധ ആവശ്യങ്ങൾക്കായി ആളുകൾ പരസ്പരം ആശ്രയിക്കുന്നു. പൊതുവായ ചട്ടങ്ങളും സ്ഥാപനങ്ങളും അവരുടെ ഇടപെടലുകൾ ക്രമപ്പെടുത്തുന്നു."],
+  ["A social institution is an established pattern of rules and roles that meets a social need. Education organises learning through roles such as teacher and student and practices such as assessment.","ഒരു സാമൂഹിക ആവശ്യം നിറവേറ്റുന്ന സ്ഥിരമായ ചട്ടങ്ങളുടെയും പങ്കുകളുടെയും ക്രമമാണ് സാമൂഹിക സ്ഥാപനം. അധ്യാപകൻ, വിദ്യാർത്ഥി എന്നീ പങ്കുകളിലൂടെയും മൂല്യനിർണ്ണയം പോലുള്ള രീതികളിലൂടെയും വിദ്യാഭ്യാസം പഠനത്തെ ക്രമപ്പെടുത്തുന്നു."],
+  ["Choose a setting such as a bus stop and a behaviour such as queueing. Record what people do without names, then distinguish observed events from your interpretation.","ബസ് സ്റ്റോപ്പ് പോലുള്ള ഇടവും വരിനിൽക്കൽ പോലുള്ള പെരുമാറ്റവും തിരഞ്ഞെടുക്കുക. പേരുകൾ രേഖപ്പെടുത്താതെ ആളുകൾ ചെയ്യുന്നത് കുറിക്കുക. കണ്ട കാര്യങ്ങളും സ്വന്തം വ്യാഖ്യാനവും വേർതിരിക്കുക."],
+  ["If commuters consistently wait their turn and object to queue jumping, describe both behaviours. Link the pattern to a social norm and explain how reactions help maintain it.","യാത്രക്കാർ പതിവായി ഊഴം കാത്തുനിൽക്കുകയും വരി തെറ്റിക്കുന്നതിനെ എതിർക്കുകയും ചെയ്യുന്നെങ്കിൽ രണ്ടും രേഖപ്പെടുത്തുക. അതിനെ സാമൂഹിക ചട്ടവുമായി ബന്ധിപ്പിച്ച് പ്രതികരണങ്ങൾ ആ ചട്ടം നിലനിർത്തുന്നതെങ്ങനെ എന്ന് വിശദീകരിക്കുക."]
 ];
 
+const THEORY_MODULES = [1,1,1,3,3,3,4,4,2,2,3,3,3,4,4,5,5];
+
 function theoryQuestions() {
-  const ids = THEORY_BANK.map((_, id) => id);
-  for (let i = ids.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [ids[i], ids[j]] = [ids[j], ids[i]];
-  }
-  return ids.slice(0, 5).map(id => ({id, en:THEORY_BANK[id][0], ml:THEORY_BANK[id][1]}));
+  return [1,2,3,4,5].map(module => {
+    const ids = THEORY_MODULES.flatMap((value,id) => value === module ? [id] : []);
+    const id = ids[Math.floor(Math.random() * ids.length)];
+    return {id, module, en:THEORY_BANK[id][0], ml:THEORY_BANK[id][1]};
+  });
 }
 
 const THEORY_FEEDBACK_KEYS = ['review', 'focus', 'structure'];
@@ -218,7 +237,7 @@ function readTheory(raw, input) {
   return {results,total:results.reduce((sum,row) => sum + row.marks,0),maximumMarks:15};
 }
 
-export async function handleStudyHelper(request, env) {
+export async function handleStudyHelper(request, env, canOpenTheory) {
   const url = new URL(request.url);
   const evaluating = url.pathname === '/api/answer-evaluate-text';
   const available = env.STUDY_AI_DISABLED !== 'true' && typeof env.AI?.run === 'function' && !!env.STUDY_QUOTA;
@@ -232,6 +251,9 @@ export async function handleStudyHelper(request, env) {
   let input, messages, theory;
   try {
     input = await boundedJSON(request);
+    if (evaluating && ['theory-start', 'theory-grade'].includes(input?.mode) && !(await canOpenTheory?.())) {
+      return reply({error:'Unlock the mock exam to continue. / തുടരാൻ പരീക്ഷ തുറക്കുക.'},401);
+    }
     if (evaluating && input?.mode === 'theory-start') {
       const questions = theoryQuestions();
       return await examSessions.fetch(new Request('https://study-quota/theory-start', {

@@ -24,6 +24,73 @@ const SESSION_MAX_MESSAGES = 5;
 const ROOM_WINDOW_MS = 60 * 1000;
 const ROOM_MAX_MESSAGES = 40;
 
+
+// Temporary preview gate. Set MOCK_EXAM_PASSWORD as a Worker secret.
+// Change mockPreviewEnabled to false to reopen the exam.
+const mockPreviewEnabled = true;
+const mockExamPath = '/sociology-theory-mock';
+const mockCookie = '__Host-hub_mock';
+
+async function mockProof(env) {
+  if (!env.MOCK_EXAM_PASSWORD || !env.ADMIN_PASSWORD || env.ADMIN_PASSWORD.length < 16) return null;
+  return digest('mock-preview:v1:' + env.ADMIN_PASSWORD + ':' + env.MOCK_EXAM_PASSWORD);
+}
+
+function mockEquals(a, b) {
+  if (!a || !b || a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}
+
+async function canOpenMock(request, env) {
+  if (!mockPreviewEnabled) return true;
+  const token = (request.headers.get('Cookie') || '').match(/(?:^|;\s*)__Host-hub_mock=([a-f0-9]{64})(?:;|$)/)?.[1];
+  return mockEquals(token, await mockProof(env));
+}
+
+function isMockPage(path) {
+  try { return /^\/sociology-theory-mock(?:\.html)?\/?$/i.test(decodeURIComponent(path).replace(/\/{2,}/g,'/')); }
+  catch { return false; }
+}
+
+async function mockPreview(request, env) {
+  const headers = new Headers({'Cache-Control':'private, no-store','Vary':'Cookie','X-Robots-Tag':'noindex, nofollow'});
+  const url = new URL(request.url);
+  if (request.method === 'POST') {
+    if (request.headers.get('Origin') !== url.origin) return new Response(null,{status:403,headers});
+    let password;
+    try {
+      const len = Number(request.headers.get('Content-Length'));
+      if (!(len > 0 && len <= 256) || !request.headers.get('Content-Type')?.startsWith('application/x-www-form-urlencoded')) {
+        return new Response(null,{status:400,headers});
+      }
+      password = new URLSearchParams(await request.text()).get('password');
+    } catch { return new Response(null,{status:400,headers}); }
+    const proof = await mockProof(env);
+    if (proof && mockEquals(password,env.MOCK_EXAM_PASSWORD)) {
+      headers.set('Location',mockExamPath);
+      headers.set('Set-Cookie',mockCookie + '=' + proof + '; Path=/; Secure; HttpOnly; SameSite=Strict');
+      return new Response(null,{status:303,headers});
+    }
+  } else if (request.method !== 'GET' && request.method !== 'HEAD') {
+    headers.set('Allow','GET, HEAD, POST');
+    return new Response(null,{status:405,headers});
+  } else if (await canOpenMock(request,env)) {
+    if (url.pathname !== mockExamPath) {
+      headers.set('Location',mockExamPath);
+      return new Response(null,{status:303,headers});
+    }
+    const response = await env.ASSETS.fetch(request);
+    const privateAsset = new Response(response.body,response);
+    for (const [key,value] of headers) privateAsset.headers.set(key,value);
+    return privateAsset;
+  }
+  headers.set('Content-Type','text/html; charset=utf-8');
+  const error = request.method === 'POST' ? '<p role="alert">Incorrect password. <span lang="ml">പാസ്‌വേഡ് തെറ്റാണ്.</span></p>' : '';
+  return new Response(request.method === 'HEAD' ? null : `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mock Exam Preview · Academic Hub</title><style>body{background:#f2f5ff;color:#192346;font:16px/1.55 system-ui;margin:0;padding:16px}main{max-width:420px;margin:8vh auto;background:white;border-radius:18px;padding:24px}input,button{display:block;box-sizing:border-box;width:100%;min-height:48px;padding:10px;margin:8px 0 14px;font:inherit;border-radius:10px}input{border:1px solid #8996bd}button{background:#4338ca;color:white;border:0;font-weight:700;cursor:pointer}</style><main><h1>Sociology Mock Exam</h1><p>Enter the preview password to continue.</p><p lang="ml">തുടരാൻ പാസ്‌വേഡ് നൽകുക.</p>${error}<form method="post" action="${mockExamPath}"><label for="password">Password · <span lang="ml">പാസ്‌വേഡ്</span></label><input type="password" id="password" name="password" inputmode="numeric" autocomplete="current-password" maxlength="64" required><button>Unlock · <span lang="ml">തുറക്കുക</span></button></form><a href="/#tests">Back to practice tests</a></main></html>`,{status:request.method === 'POST' ? 403 : 200,headers});
+}
+
 function isPrivateBuPath(pathname) {
   let candidate = String(pathname || "/");
   for (let depth = 0; depth < 5; depth += 1) {
@@ -112,6 +179,7 @@ function unavailableLmsPdfResponse(request) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if (mockPreviewEnabled && isMockPage(url.pathname)) return mockPreview(request, env);
     // Option A: Prune/Externalize third-party and raw university LMS PDFs
     const pdfPathLower = url.pathname.toLowerCase();
     if (pdfPathLower.endsWith('.pdf')) {
@@ -183,7 +251,7 @@ export default {
     }
     if (url.pathname === "/live-owner.js" && (request.method === "GET" || request.method === "HEAD")) return new Response(OWNER_LIVE_SCRIPT,{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
     if (url.pathname === "/traffic-tracker.js" && (request.method === "GET" || request.method === "HEAD")) return new Response(TRACKER_SCRIPT,{headers:{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store","X-Content-Type-Options":"nosniff"}});
-    if (url.pathname === '/api/answer-evaluate-text' || url.pathname === '/api/study-helper' || url.pathname === '/api/study-helper/status') return handleStudyHelper(request, env);
+    if (url.pathname === '/api/answer-evaluate-text' || url.pathname === '/api/study-helper' || url.pathname === '/api/study-helper/status') return handleStudyHelper(request, env, () => canOpenMock(request, env));
     if (url.pathname === '/api/notices') return handleUniversityNotices(request, env, ctx);
     if (url.pathname === '/api/whatsapp/webhook') return handleWhatsAppWebhook(request, env, ctx);
     if (url.pathname === '/api/whatsapp/updates') return handleWhatsAppList(request, env);
