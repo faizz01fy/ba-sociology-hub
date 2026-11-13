@@ -16,6 +16,7 @@
 .answer-instructions p:last-child{margin-bottom:0}
 .revision{background:#eefcf8;border:1px solid #a6ddd2}.revision h2{font-size:1.1rem}.revision h3{font-size:1rem;margin:0 0 8px;color:#145a53}.revision article{margin:0 0 10px;padding:12px;border:1px solid #bfe5db}.revision p:last-child{margin:0}.revision button{margin-bottom:10px;background:#15665e}#revision-scroll{max-height:245px;overflow:auto;overscroll-behavior:contain}
 @media(min-width:900px){main{max-width:1040px}.exam-prep{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:18px;align-items:start}.revision:only-child,.exam-prep:has(#setup[hidden]) .revision{grid-column:1/-1}}
+.more-explanation{margin-top:12px;border:1px solid #82bdad;border-radius:10px;padding:0 12px;background:#fff}.more-explanation summary{cursor:pointer;min-height:48px;padding-block:12px;font-weight:700;color:#145a53}.more-explanation summary:focus-visible{outline:2px solid #0d9488;outline-offset:2px}
 </style>
 <main>
 <a href="/#tests">← Practice tests</a>
@@ -79,6 +80,41 @@ function add(parent, tag, value, className) {
   parent.append(element);
   return element;
 }
+const detailedExplanations = [
+  [
+    "Sociology looks for patterns across people’s experiences. A student’s marks tell you something about one person. Comparing study conditions across many students can show how family income, transport or school resources affect educational opportunities. In your answer, define sociology, name what it studies, then connect one example to that scope.",
+    "പലരുടെയും അനുഭവങ്ങളിൽ ആവർത്തിക്കുന്ന രീതികൾ സമൂഹശാസ്ത്രം കണ്ടെത്തുന്നു. ഒരു വിദ്യാർത്ഥിയുടെ മാർക്ക് ആ വ്യക്തിയെക്കുറിച്ച് ചില വിവരങ്ങൾ നൽകും. പല വിദ്യാർത്ഥികളുടെയും പഠനസാഹചര്യങ്ങൾ താരതമ്യം ചെയ്താൽ കുടുംബവരുമാനം, യാത്രാസൗകര്യം, സ്കൂളിലെ വിഭവങ്ങൾ എന്നിവ വിദ്യാഭ്യാസ അവസരങ്ങളെ എങ്ങനെ സ്വാധീനിക്കുന്നു എന്ന് മനസ്സിലാക്കാം. നിർവചനം നൽകി, പഠനവിഷയങ്ങൾ സൂചിപ്പിച്ച്, ഒരു ഉദാഹരണം അവയുമായി ബന്ധിപ്പിക്കുക."
+  ],
+  [
+    "Explain the chain of change: factories concentrated work in towns, migration expanded those towns, and wage labour changed relationships between workers and owners. Crowded housing and poor working conditions raised questions about how society was organised. Connect these changes to the need for systematic study.",
+    "മാറ്റങ്ങളുടെ തുടർച്ച വിശദീകരിക്കുക. ഫാക്ടറികൾ തൊഴിൽ നഗരങ്ങളിൽ കേന്ദ്രീകരിച്ചു. കുടിയേറ്റം നഗരങ്ങളെ വളർത്തി. കൂലിത്തൊഴിൽ തൊഴിലാളികളും ഉടമകളും തമ്മിലുള്ള ബന്ധം മാറ്റി. തിങ്ങിപ്പാർപ്പും മോശം തൊഴിൽസാഹചര്യങ്ങളും സമൂഹത്തിന്റെ ഘടനയെക്കുറിച്ച് ചോദ്യങ്ങൾ ഉയർത്തി. ഈ മാറ്റങ്ങളെ ക്രമബദ്ധമായ സാമൂഹിക പഠനത്തിന്റെ ആവശ്യവുമായി ബന്ധിപ്പിക്കുക."
+  ],
+  [
+    "Mills connects biography with wider social conditions. If many qualified workers lose jobs when an industry shuts down, individual decisions explain only part of the pattern. The closure is also a public issue. Define the idea, describe the personal trouble, then explain the wider cause.",
+    "മിൽസ് വ്യക്തിയുടെ ജീവിതാനുഭവങ്ങളെ വിശാലമായ സാമൂഹിക സാഹചര്യങ്ങളുമായി ബന്ധിപ്പിക്കുന്നു. ഒരു വ്യവസായം അടച്ചുപൂട്ടുമ്പോൾ നിരവധി യോഗ്യരായ തൊഴിലാളികൾക്ക് ജോലി നഷ്ടപ്പെട്ടാൽ വ്യക്തിപരമായ തീരുമാനങ്ങൾ കൊണ്ട് മാത്രം അത് വിശദീകരിക്കാനാവില്ല. അടച്ചുപൂട്ടൽ ഒരു പൊതുസാമൂഹിക പ്രശ്നവുമാണ്. ആശയം നിർവചിച്ച് വ്യക്തിപരമായ ബുദ്ധിമുട്ടും അതിന്റെ വിശാലമായ കാരണവും വിശദീകരിക്കുക."
+  ],
+  [
+    "Compare the relationship and its purpose. Close friends usually value the relationship itself. Members of a committee may interact mainly to complete a shared task. Group size alone does not settle the distinction. Give one example of each and explain what makes it fit.",
+    "ബന്ധത്തിന്റെ സ്വഭാവവും ലക്ഷ്യവും താരതമ്യം ചെയ്യുക. അടുത്ത സുഹൃത്തുക്കൾ സാധാരണയായി ബന്ധത്തിന് തന്നെ വില നൽകുന്നു. ഒരു കമ്മിറ്റിയിലെ അംഗങ്ങൾ പൊതുവായ ജോലി പൂർത്തിയാക്കാനായി ഇടപെടുന്നു. സംഘത്തിന്റെ വലുപ്പം മാത്രം ഈ വ്യത്യാസം നിർണ്ണയിക്കുന്നില്ല. ഓരോ വിഭാഗത്തിനും ഒരു ഉദാഹരണം നൽകി അത് യോജിക്കുന്നതിന്റെ കാരണം പറയുക."
+  ],
+  [
+    "Socialisation is learning how to participate in society. At home, a child may learn language and how to share. At school, group projects and classroom routines teach cooperation and responsibility beyond the family. Define socialisation first, then explain one example for each institution.",
+    "സമൂഹത്തിൽ എങ്ങനെ ഇടപെടണമെന്ന് പഠിക്കുന്ന പ്രക്രിയയാണ് സാമൂഹീകരണം. വീട്ടിൽ കുട്ടി ഭാഷയും പങ്കുവെക്കാനുള്ള ശീലവും പഠിക്കുന്നു. വിദ്യാലയത്തിലെ കൂട്ടുപ്രവർത്തനങ്ങളും ക്ലാസ് ദിനചര്യയും കുടുംബത്തിനു പുറത്തുള്ള സഹകരണവും ഉത്തരവാദിത്തവും പഠിപ്പിക്കുന്നു. ആദ്യം സാമൂഹീകരണം നിർവചിക്കുക. തുടർന്ന് ഓരോ സ്ഥാപനത്തിനും ഒരു ഉദാഹരണം വിശദീകരിക്കുക."
+  ],
+  [
+    "Focus on who enforces the rule and how. A traffic fine follows a written rule and comes from an authorised body. Disapproval for cutting a queue comes from other people and enforces an everyday norm. Compare both using the same two points: the rule and the response to breaking it.",
+    "ചട്ടം ആരാണ് നടപ്പാക്കുന്നത്, എങ്ങനെയാണ് നടപ്പാക്കുന്നത് എന്നീ കാര്യങ്ങളിൽ ശ്രദ്ധിക്കുക. ഗതാഗതപ്പിഴ എഴുതപ്പെട്ട നിയമത്തെ അടിസ്ഥാനമാക്കിയുള്ളതാണ്. അധികാരപ്പെട്ട സ്ഥാപനമാണ് അത് ചുമത്തുന്നത്. വരിയിൽ ഇടിച്ചുകയറുമ്പോഴുള്ള അതൃപ്തി മറ്റുള്ളവരിൽ നിന്നാണ് വരുന്നത്. ചട്ടവും അത് ലംഘിച്ചാലുള്ള പ്രതികരണവും ഉപയോഗിച്ച് രണ്ടിനെയും താരതമ്യം ചെയ്യുക."
+  ],
+  [
+    "A status names a social position. A role describes what others expect from someone in that position. A class representative holds a position, and communicating classmates’ concerns is part of the role. Use the same example for both terms to make the distinction clear.",
+    "സാമൂഹിക പദവി ഒരാൾ വഹിക്കുന്ന സ്ഥാനത്തെ സൂചിപ്പിക്കുന്നു. ആ സ്ഥാനത്തുള്ള ആളിൽ നിന്ന് മറ്റുള്ളവർ പ്രതീക്ഷിക്കുന്ന പെരുമാറ്റമാണ് പങ്ക്. ക്ലാസ് പ്രതിനിധി എന്നത് ഒരു സ്ഥാനമാണ്. സഹപാഠികളുടെ പ്രശ്നങ്ങൾ അറിയിക്കുന്നത് ആ പങ്കിന്റെ ഭാഗമാണ്. വ്യത്യാസം വ്യക്തമാക്കാൻ ഒരേ ഉദാഹരണം രണ്ടിനും ഉപയോഗിക്കുക."
+  ],
+  [
+    "Name each factor and show how it changes a social pattern. Smartphones can shift communication from local meetings to online groups. Migration can bring new languages and customs into a neighbourhood. Explain the effect of each factor so the answer goes beyond listing two words.",
+    "ഓരോ ഘടകവും പേരെടുത്ത് അത് സാമൂഹിക ജീവിതരീതിയെ എങ്ങനെ മാറ്റുന്നു എന്ന് വിശദീകരിക്കുക. സ്മാർട്ട്ഫോണുകൾ നേരിട്ടുള്ള കൂടിക്കാഴ്ചകളിൽ നിന്ന് ഓൺലൈൻ കൂട്ടായ്മകളിലേക്ക് ആശയവിനിമയം മാറ്റാം. കുടിയേറ്റം ഒരു പ്രദേശത്ത് പുതിയ ഭാഷകളും ആചാരങ്ങളും കൊണ്ടുവരാം. രണ്ട് ഘടകങ്ങൾ പട്ടികപ്പെടുത്തുന്നതിനൊപ്പം ഓരോന്നിന്റെയും ഫലം വിശദീകരിക്കുക."
+  ]
+];
+
 function render() {
   byId('setup').hidden = true;
   byId('revision').hidden = !attempt.report;
@@ -138,6 +174,14 @@ function render() {
       } else {
         add(box, 'h4', 'Model answer points');
         add(box, 'p', result.answerPoints);
+      }
+      const explanation = detailedExplanations[question.id];
+      if (explanation) {
+        const details = add(box, 'details', '', 'more-explanation');
+        const summary = add(details, 'summary', 'Get more explanation · ');
+        add(summary, 'span', 'കൂടുതൽ വിശദീകരണം').lang = 'ml';
+        add(details, 'p', explanation[0]).lang = 'en';
+        add(details, 'p', explanation[1]).lang = 'ml';
       }
     }
   });
