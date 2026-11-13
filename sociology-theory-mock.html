@@ -33,8 +33,8 @@
     <li><strong>ടൈപ്പ് ചെയ്യാൻ:</strong> ഇംഗ്ലീഷിലോ മലയാളത്തിലോ ഉത്തരം ടൈപ്പ് ചെയ്യാം.</li>
     <li><strong>സംസാരിച്ച് ടൈപ്പ് ചെയ്യാൻ:</strong> ഫോണിൽ ഉത്തരം എഴുതാനുള്ള ബോക്‌സിൽ തൊടുക. കീബോർഡിൽ ഇംഗ്ലീഷോ മലയാളമോ തിരഞ്ഞെടുത്ത് മൈക്രോഫോൺ അമർത്തി സംസാരിക്കുക. സമർപ്പിക്കുന്നതിന് മുമ്പ് വന്ന എഴുത്ത് വായിച്ച് തെറ്റുകൾ തിരുത്തുക.</li>
   </ul>
-  <p>You can submit early. Results unlock when the timer ends.</p>
-  <p lang="ml">സമയം തീരുന്നതിനു മുമ്പും ഉത്തരം സമർപ്പിക്കാം. സമയം തീർന്നാൽ ഫലം കാണാം.</p>
+  <p>Submit whenever you finish. Grading starts immediately.</p>
+  <p lang="ml">ഉത്തരം എഴുതിക്കഴിഞ്ഞാൽ ഉടൻ സമർപ്പിക്കാം. സമർപ്പിച്ചാലുടൻ മൂല്യനിർണ്ണയം ആരംഭിക്കും.</p>
 </section>
 <button id="start" type="button">Start Mock Exam</button>
 </section>
@@ -115,9 +115,16 @@ function render() {
     if (result) {
       const box = add(card, 'section', '', 'feedback');
       add(box, 'h3', result.marks + ' / 3 marks');
-      add(box, 'p', result.feedback);
-      add(box, 'h4', 'Model answer points');
-      add(box, 'p', result.answerPoints);
+      add(box, 'h4', 'Feedback · നിർദ്ദേശങ്ങൾ');
+      add(box, 'p', result.feedback).lang = attempt.language;
+      if (result.modelAnswer) {
+        add(box, 'h4', 'Model answer · മാതൃകാ ഉത്തരം');
+        add(box, 'p', result.modelAnswer.en).lang = 'en';
+        add(box, 'p', result.modelAnswer.ml).lang = 'ml';
+      } else {
+        add(box, 'h4', 'Model answer points');
+        add(box, 'p', result.answerPoints);
+      }
     }
   });
   byId('submit').hidden = attempt.locked;
@@ -130,7 +137,7 @@ function lock() {
   render();
 }
 async function evaluate() {
-  if (busy || attempt.report || Date.now() < attempt.deadline) return;
+  if (busy || attempt.report || !attempt.locked) return;
   busy = true;
   byId('retry').hidden = true;
   status('Evaluating your answers…');
@@ -139,7 +146,7 @@ async function evaluate() {
       answers:attempt.questions.map(({id},i) => ({id,text:attempt.answers[i]}))});
     save();
     render();
-    status('Result: ' + attempt.report.total + ' / 15. Review the feedback under each question.');
+    status('Result: ' + attempt.report.total + ' / 15. Compare each answer with the model, then start a new mock to practise again.');
   } catch (error) {
     status(error.message + ' Your answers are still saved on this device.');
     byId('retry').hidden = false;
@@ -148,16 +155,14 @@ async function evaluate() {
 function tick() {
   if (!attempt) return;
   const seconds = Math.max(0, Math.ceil((attempt.deadline - Date.now())/1000));
-  byId('clock-label').textContent = attempt.report ? 'Final score' : seconds ? 'Time remaining' : 'Time is up';
+  byId('clock-label').textContent = attempt.report ? 'Final score' : attempt.locked ? 'Answers submitted' : seconds ? 'Time remaining' : 'Time is up';
   byId('clock-digits').textContent = attempt.report ? attempt.report.total + ' / 15' :
     String(Math.floor(seconds/60)).padStart(2,'0') + ':' + String(seconds%60).padStart(2,'0');
   byId('clock').dataset.urgent = String(seconds > 0 && seconds <= 300);
   byId('clock-ring').hidden = Boolean(attempt.report);
   byId('clock-ring').style.setProperty('--remaining', Math.min(100, seconds / 18) + '%');
-  if (!seconds) {
-    lock();
-    if (byId('retry').hidden) evaluate();
-  } else if (attempt.locked) status('Answers submitted. Results unlock when the timer reaches zero.');
+  if (!seconds) lock();
+  if (attempt.locked && byId('retry').hidden) evaluate();
 }
 byId('start').onclick = async () => {
   byId('start').disabled = true;
