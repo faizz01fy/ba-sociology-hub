@@ -186,7 +186,7 @@ const THEORY_MODEL_ANSWERS = [
   ["If commuters consistently wait their turn and object to queue jumping, describe both behaviours. Link the pattern to a social norm and explain how reactions help maintain it.","യാത്രക്കാർ പതിവായി ഊഴം കാത്തുനിൽക്കുകയും വരി തെറ്റിക്കുന്നതിനെ എതിർക്കുകയും ചെയ്യുന്നെങ്കിൽ രണ്ടും രേഖപ്പെടുത്തുക. അതിനെ സാമൂഹിക ചട്ടവുമായി ബന്ധിപ്പിച്ച് പ്രതികരണങ്ങൾ ആ ചട്ടം നിലനിർത്തുന്നതെങ്ങനെ എന്ന് വിശദീകരിക്കുക."]
 ];
 
-const THEORY_MODULES = [1,1,1,3,3,3,4,4,2,2,3,3,3,4,4,5,5];
+const THEORY_MODULES = [1,1,2,3,3,3,4,4,2,2,3,3,3,4,4,5,5];
 
 function theoryQuestions() {
   return [1,2,3,4,5].map(module => {
