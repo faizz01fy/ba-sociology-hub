@@ -491,7 +491,7 @@ export default {
       })).catch(() => {});
       ctx.waitUntil(task);
 
-      const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|voice-explanation|voice|econ_voice|ai-pdf|mal-pdf|psc-cracker)(?:\.html)?$/i.test(url.pathname);
+      const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|soc-lms|sociology-answer-evaluation|voice-explanation|voice|econ_voice|ai-pdf|mal-pdf|psc-cracker)(?:\.html)?$/i.test(url.pathname);
       
       const isEU = request.cf?.isEUCountry === "1" || request.cf?.isEUCountry === true;
       const euCountries = new Set([
