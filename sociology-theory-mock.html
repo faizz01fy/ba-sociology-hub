@@ -3,6 +3,12 @@
 <title>Sociology Mock Exam · Academic Hub</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f2f5ff;color:#192346;font:16px/1.55 system-ui,sans-serif}main{max-width:720px;margin:auto;padding:16px}a{color:#4338ca}header,article,.panel{border-radius:18px;padding:20px;margin:14px 0;background:white}header{background:linear-gradient(120deg,#37239a,#174d87);color:white}h1,h2,p{margin:0 0 12px}button,select,textarea{font:inherit}button,select{min-height:48px;padding:10px 16px;border-radius:12px}button{border:0;background:#4338ca;color:white;font-weight:700;cursor:pointer}button:disabled{opacity:.6}textarea{width:100%;min-height:128px;padding:12px;border:1px solid #8996bd;border-radius:12px}textarea:focus-visible,button:focus-visible{outline:3px solid #0d9488;outline-offset:3px}.timer{position:sticky;top:0;background:#192346;color:white;padding:12px 18px;border-radius:12px;z-index:1;font-variant-numeric:tabular-nums}.feedback{background:#e5faf3;border-radius:12px;padding:14px;margin-top:12px}.marks{color:#086451;font-weight:750}small{display:block;margin:8px 0}label{display:block;font-weight:650}#submit{width:100%}[hidden]{display:none!important}
+.timer{display:flex;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(110deg,#25175e,#2149a2);box-shadow:0 5px 18px #211b6940;border:1px solid #8c88e5;top:4px}
+.timer[data-urgent="true"]{background:linear-gradient(110deg,#7f1d3c,#a52b42)}
+.clock-label{display:block;font-size:.8rem;font-weight:750;letter-spacing:.06em}
+.clock-digits{display:block;font:800 clamp(1.8rem,7vw,2.65rem)/1.1 system-ui,sans-serif;font-variant-numeric:tabular-nums}
+.clock-ring{width:48px;height:48px;flex:none;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#6ee7dc var(--remaining,100%),#ffffff40 0)}
+.clock-ring span{display:grid;place-items:center;width:39px;height:39px;border-radius:50%;background:#241c59;font-size:1.25rem}
 </style>
 <main>
 <a href="/#tests">← Practice tests</a>
@@ -12,7 +18,10 @@
 <p>Type each answer or dictate with your keyboard microphone. You can submit early. Results unlock when the timer ends.</p>
 <button id="start" type="button">Start Mock Exam</button>
 </section>
-<div class="timer" id="clock" hidden></div>
+<div class="timer" id="clock" hidden>
+  <div><span class="clock-label" id="clock-label">Time remaining</span><strong class="clock-digits" id="clock-digits" role="timer" aria-labelledby="clock-label">30:00</strong></div>
+  <div class="clock-ring" id="clock-ring" aria-hidden="true"><span>◷</span></div>
+</div>
 <form id="exam" hidden><div id="questions"></div><button id="submit" type="submit">Submit answers</button></form>
 <div class="panel" id="status" role="status" hidden></div>
 <button type="button" id="retry" hidden>Retry evaluation</button>
@@ -109,8 +118,12 @@ async function evaluate() {
 function tick() {
   if (!attempt) return;
   const seconds = Math.max(0, Math.ceil((attempt.deadline - Date.now())/1000));
-  byId('clock').textContent = attempt.report ? 'Final score: ' + attempt.report.total + ' / 15' :
-    'Time left: ' + Math.floor(seconds/60) + ':' + String(seconds%60).padStart(2,'0');
+  byId('clock-label').textContent = attempt.report ? 'Final score' : seconds ? 'Time remaining' : 'Time is up';
+  byId('clock-digits').textContent = attempt.report ? attempt.report.total + ' / 15' :
+    String(Math.floor(seconds/60)).padStart(2,'0') + ':' + String(seconds%60).padStart(2,'0');
+  byId('clock').dataset.urgent = String(seconds > 0 && seconds <= 300);
+  byId('clock-ring').hidden = Boolean(attempt.report);
+  byId('clock-ring').style.setProperty('--remaining', Math.min(100, seconds / 18) + '%');
   if (!seconds) {
     lock();
     if (byId('retry').hidden) evaluate();
