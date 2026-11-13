@@ -464,6 +464,12 @@ export default {
         headers: pdfHeaders
       });
     }
+    if (request.method === "GET" && response.headers.get("Content-Type")?.includes("text/html") && !response.ok) {
+      return new HTMLRewriter().on("script[src*='pagead2.googlesyndication.com']", {
+        element(el) { el.remove(); }
+      }).transform(response);
+    }
+
     if (request.method === "GET" && response.ok && response.headers.get("Content-Type")?.includes("text/html")) {
       const hasAdminCookie = (request.headers.get("Cookie") || "").includes("__Host-hub_admin=");
       let isOwner = false;
@@ -491,7 +497,7 @@ export default {
       })).catch(() => {});
       ctx.waitUntil(task);
 
-      const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|soc-lms|sociology-answer-evaluation|voice-explanation|voice|econ_voice|ai-pdf|mal-pdf|psc-cracker)(?:\.html)?$/i.test(url.pathname);
+      const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|[a-z0-9-]+-lms|sociology-answer-evaluation|voice-explanation|voice|econ_voice|ai-pdf|mal-pdf|psc-cracker)(?:\.html)?$/i.test(url.pathname);
       
       const isEU = request.cf?.isEUCountry === "1" || request.cf?.isEUCountry === true;
       const euCountries = new Set([
