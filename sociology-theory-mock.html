@@ -14,10 +14,13 @@
 .answer-instructions ul{padding-inline-start:1.3rem;margin:0 0 12px}
 .answer-instructions li+li{margin-top:6px}
 .answer-instructions p:last-child{margin-bottom:0}
+.revision{background:#eefcf8;border:1px solid #a6ddd2}.revision h2{font-size:1.1rem}.revision h3{font-size:1rem;margin:0 0 8px;color:#145a53}.revision article{margin:0 0 10px;padding:12px;border:1px solid #bfe5db}.revision p:last-child{margin:0}.revision button{margin-bottom:10px;background:#15665e}#revision-scroll{max-height:245px;overflow:auto;overscroll-behavior:contain}
+@media(min-width:900px){main{max-width:1040px}.exam-prep{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:18px;align-items:start}.revision:only-child,.exam-prep:has(#setup[hidden]) .revision{grid-column:1/-1}}
 </style>
 <main>
 <a href="/#tests">← Practice tests</a>
 <header><h1>Sociology Mock Exam</h1><p>5 questions · 3 marks each · 30 minutes</p></header>
+<div class="exam-prep" id="exam-prep">
 <section class="panel" id="setup">
 <label for="language">Feedback language</label><select id="language"><option value="en">English</option><option value="ml">മലയാളം</option></select>
 <section class="answer-instructions" aria-labelledby="answer-instructions-title">
@@ -35,6 +38,15 @@
 </section>
 <button id="start" type="button">Start Mock Exam</button>
 </section>
+<aside class="panel revision" id="revision" aria-labelledby="revision-title">
+  <h2 id="revision-title">Sociology notes <span lang="ml">· പഠനക്കുറിപ്പുകൾ</span></h2>
+  <button id="revision-toggle" type="button" hidden>Pause scrolling</button>
+  <div id="revision-scroll" tabindex="0" role="region" aria-labelledby="revision-title"><article><h3>Social norms <span lang="ml">· സാമൂഹിക ചട്ടങ്ങൾ</span></h3><p>Waiting in a queue is an unwritten rule. Ask what happens when someone breaks it.</p><p lang="ml">വരിയിൽ കാത്തുനിൽക്കുന്നത് എഴുതിവെക്കാത്ത ഒരു ചട്ടമാണ്. ഒരാൾ അത് ലംഘിച്ചാൽ മറ്റുള്ളവർ എങ്ങനെ പ്രതികരിക്കും?</p></article>
+<article><h3>Culture <span lang="ml">· സംസ്കാരം</span></h3><p>A greeting can mean different things in different communities. Its meaning is learned through interaction.</p><p lang="ml">ഒരേ അഭിവാദനത്തിന് വ്യത്യസ്ത സമൂഹങ്ങളിൽ വ്യത്യസ്ത അർത്ഥമുണ്ടാകാം. ഇടപെടലുകളിലൂടെയാണ് ആ അർത്ഥം പഠിക്കുന്നത്.</p></article>
+<article><h3>Social inequality <span lang="ml">· സാമൂഹിക അസമത്വം</span></h3><p>Two students with equal ability may have different access to transport, devices, or quiet study space.</p><p lang="ml">ഒരേ കഴിവുള്ള രണ്ട് വിദ്യാർത്ഥികൾക്ക് യാത്രാസൗകര്യം, പഠനോപകരണങ്ങൾ, ശാന്തമായ പഠനസ്ഥലം എന്നിവ ഒരുപോലെ ലഭിക്കണമെന്നില്ല.</p></article>
+<article><h3>Observation <span lang="ml">· നിരീക്ഷണം</span></h3><p>To study a bus stop, note where people stand and how they board. Separate what you observe from what you infer.</p><p lang="ml">ഒരു ബസ് സ്റ്റോപ്പ് പഠിക്കാൻ ആളുകൾ എവിടെ നിൽക്കുന്നു, എങ്ങനെ ബസിൽ കയറുന്നു എന്ന് കുറിക്കുക. കണ്ടതും അതിൽനിന്ന് അനുമാനിച്ചതും വേർതിരിക്കുക.</p></article></div>
+</aside>
+</div>
 <div class="timer" id="clock" hidden>
   <div><span class="clock-label" id="clock-label">Time remaining</span><strong class="clock-digits" id="clock-digits" role="timer" aria-labelledby="clock-label">30:00</strong></div>
   <div class="clock-ring" id="clock-ring" aria-hidden="true"><span>◷</span></div>
@@ -69,6 +81,7 @@ function add(parent, tag, value, className) {
 }
 function render() {
   byId('setup').hidden = true;
+  byId('revision').hidden = !attempt.report;
   byId('clock').hidden = false;
   byId('exam').hidden = false;
   const list = byId('questions');
@@ -168,5 +181,24 @@ byId('retry').onclick = evaluate;
 byId('again').onclick = () => { try { localStorage.removeItem(key); } catch {} location.reload(); };
 if (attempt?.questions?.length === 5) { render(); tick(); }
 setInterval(tick,1000);
+const notes = byId('revision-scroll');
+const toggleNotes = byId('revision-toggle');
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+let notesPaused = reduceMotion.matches;
+let notesHovered = false;
+toggleNotes.hidden = false;
+function updateNotesButton() {
+  toggleNotes.textContent = notesPaused ? 'Play scrolling / സ്ക്രോൾ തുടങ്ങുക' : 'Pause scrolling / സ്ക്രോൾ നിർത്തുക';
+}
+updateNotesButton();
+toggleNotes.onclick = () => { notesPaused = !notesPaused; updateNotesButton(); };
+notes.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') notesHovered = true; });
+notes.addEventListener('pointerleave', () => { notesHovered = false; });
+notes.addEventListener('touchstart', () => { notesPaused = true; updateNotesButton(); }, {passive:true});
+setInterval(() => {
+  if (notesPaused || notesHovered || notes.contains(document.activeElement) || document.hidden || byId('revision').hidden) return;
+  const bottom = notes.scrollHeight - notes.clientHeight;
+  if (bottom > 0) notes.scrollTop = notes.scrollTop >= bottom - 1 ? 0 : notes.scrollTop + 1;
+}, 85);
 </script>
 </html>
