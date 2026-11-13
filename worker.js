@@ -499,6 +499,8 @@ export default {
 
       const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|[a-z0-9-]+-lms|sociology-answer-evaluation|voice-explanation|voice|econ_voice|ai-pdf|mal-pdf|psc-cracker)(?:\.html)?$/i.test(url.pathname);
       
+      const canLoadAds = !isUtilityPath && !/test|mock|(?:^|\/)[^/]+-without-timer(?:\.html)?\/?$/i.test(url.pathname);
+
       const isEU = request.cf?.isEUCountry === "1" || request.cf?.isEUCountry === true;
       const euCountries = new Set([
         "AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE",
@@ -531,7 +533,7 @@ export default {
 
 
             // Standard AdSense script on all monetized content pages (loads published Google CMP message & ads)
-            if (!isUtilityPath && !/test|mock/i.test(url.pathname)) {
+            if (canLoadAds) {
               el.append('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>', { html: true });
             }
           }
@@ -548,7 +550,7 @@ export default {
         })
         .on("body", {
           element(el) {
-            if (requiresConsent && !isUtilityPath && !/test|mock/i.test(url.pathname)) {
+            if (requiresConsent && canLoadAds) {
               // Discreet button to reopen Google certified privacy choices if needed
               el.append('<button hidden id="hub-consent-reopen" type="button" aria-label="Privacy and Cookie Settings" style="position:fixed;bottom:12px;left:12px;z-index:9999;background:rgba(23,59,53,0.92);color:#fff;border:1px solid rgba(255,255,255,0.4);border-radius:6px;padding:6px 12px;font:500 12px system-ui,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.25);">🛡️ Privacy &amp; Cookie Settings</button>', { html: true });
             }
