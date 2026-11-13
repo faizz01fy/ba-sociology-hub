@@ -34,6 +34,28 @@ input{border:1px solid #819d91}button{background:#086454;color:white;border:0;fo
 <input id="password" type="password" name="password" inputmode="numeric" autocomplete="current-password" maxlength="64" required>
 <button>Unlock quiz</button></form><a href="/">Back to Academic Hub</a></main></body></html>`;
 
+const semesterPage = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calicut University FYUGP | Academic Hub</title>
+<style>
+body{margin:0;padding:20px;background:#edf5f0;color:#153236;font:16px/1.55 system-ui,sans-serif}
+main{max-width:620px;margin:5vh auto;padding:clamp(18px,5vw,32px);background:#fff;border:1px solid #cfdfd6;border-radius:18px}
+h1{line-height:1.15;margin:8px 0 20px}h2{margin:0 0 10px}h3{margin:0 0 8px}
+a{color:#086454}summary{cursor:pointer;font-weight:750;padding:11px 0}
+section{padding:15px;border:1px solid #cfdfd6;border-radius:12px}
+.quiz{display:block;padding:10px 12px;border-radius:8px;background:#e5f4ec;text-decoration:none;font-weight:700}
+.quiz small{display:block;font-weight:400}footer{margin-top:18px}
+</style></head><body><main><small>Academic Hub</small>
+<h1>Calicut University FYUGP (Regular)</h1>
+<details open><summary>IMA DS Semester 1</summary>
+<section aria-labelledby="subjects"><h2 id="subjects">Subjects</h2>
+<h3>English</h3>
+<a class="quiz" href="${fyugpQuizPath}?quiz=idioms">VAP Session 4 · Idioms Quiz
+<small>Interactive questions with explanations and past, present, and future examples</small></a>
+</section></details>
+<footer><a href="/">Back to Academic Hub</a></footer></main></body></html>`;
+
 export async function handleFyugpQuiz(request, env, equals) {
   const headers = new Headers({
     'Cache-Control':'private, no-store',
@@ -86,6 +108,7 @@ export async function handleFyugpQuiz(request, env, equals) {
     return new Response(request.method === 'HEAD' ? null : unlockPage, {headers});
   }
   if (request.method === 'HEAD') return new Response(null, {headers});
+  if (url.searchParams.get('quiz') !== 'idioms') return new Response(semesterPage, {headers});
   const key = await crypto.subtle.importKey('raw', decodeBytes(env.FYUGP_QUIZ_KEY), 'AES-GCM', false, ['decrypt']);
   const payload = decodeBytes(encryptedQuiz);
   const html = await crypto.subtle.decrypt({name:'AES-GCM', iv:payload.subarray(0,12)}, key, payload.subarray(12));
