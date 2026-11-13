@@ -840,7 +840,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 13
+    "totalVideos": 18
   },
   "sociology": {
     "name": "Sociology (Introduction to Sociology)",
@@ -855,7 +855,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 01",
             "title": "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination & Research) | Sociology | Calicut Univ",
             "chapter": "Academic Hub Special · സി. റൈറ്റ് മിൽസ് & റിസർച്ച് മെത്തേഡ്സ് (C. Wright Mills & Research Methods)",
-            "duration": "27",
+            "duration": "27:00",
             "youtubeId": "uMxIIznPo-w",
             "studyPoints": [
               "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination - C. Wright Mills): വ്യക്തിഗത പ്രശ്നങ്ങളെ (Personal Troubles) വലിയ സാമൂഹിക സാഹചര്യങ്ങളുമായി (Public Issues) ബന്ധിപ്പിച്ചു വിശകലനം ചെയ്യാനുള്ള സവിശേഷ ശേഷി.",
@@ -870,7 +870,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 02",
             "title": "പോസിറ്റിവിസവും സോഷ്യോളജിയും (Positivism & Micro-Macro Sociology) | Calicut Univ",
             "chapter": "Micro & Macro Levels · Positivism & Comte (സൂക്ഷ്മ-സ്ഥൂല തലങ്ങളും പോസിറ്റിവിസവും)",
-            "duration": "13",
+            "duration": "13:00",
             "youtubeId": "WyReGfMhJJs",
             "studyPoints": [
               "മൈക്രോ vs മാക്രോ സോഷ്യോളജി: വ്യക്തികൾ തമ്മിലുള്ള മുഖാമുഖ സമ്പർക്കങ്ങളെയും ദൈനംദിന സംഭാഷണങ്ങളെയും പഠിക്കുന്ന മൈക്രോ തലവും (Micro-level), സമ്പദ്‌വ്യവസ്ഥ, ഭരണകൂടം, മതങ്ങൾ തുടങ്ങിയ വൻകിട വ്യവസ്ഥിതികളെ അപഗ്രഥിക്കുന്ന മാക്രോ തലവും (Macro-level).",
@@ -986,7 +986,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Agents of Socialization · Family, School, Peer Groups, Media & Workplace (സാമൂഹികവൽക്കരണ ഏജൻസികൾ)",
             "duration": "16:15",
             "youtubeId": "uf8WYWO9-Tk",
-            "thumbnail": "/thumbnails/sociology_agents_of_socialization_mod3/thumb.png",
+            "thumbnail": "https://i.ytimg.com/vi/uf8WYWO9-Tk/hqdefault.jpg",
             "language": "English & Malayalam",
             "studyPoints": [
               "ആമുഖവും എച്ച്.ടി. മജുംദാർ നിർവ്വചനവും: ജൈവിക ജീവിയെ പൂർണ്ണ സാമൂഹിക വ്യക്തിത്വമാക്കി മാറ്റുന്ന ആജീവനാന്ത പ്രക്രിയ; എച്ച്.ടി. മജുംദാറിന്റെ ആധികാരിക നിർവ്വചനം.",
@@ -1002,7 +1002,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 04",
             "title": "സമൂഹത്തിന്റെ നിർമ്മിതികൾ (Social Construction of Reality) | Calicut Univ",
             "chapter": "Social Construction of Reality · Agency vs Structure (സാമൂഹിക യാഥാർത്ഥ്യ നിർമ്മിതി)",
-            "duration": "20",
+            "duration": "20:00",
             "youtubeId": "EJt-7kG_-E8",
             "studyPoints": [
               "സാമൂഹിക യാഥാർത്ഥ്യത്തിന്റെ നിർമ്മിതി (Berger & Luckmann - The Social Construction of Reality, 1966): നാം അനുഭവിക്കുന്ന യാഥാർത്ഥ്യങ്ങൾ പ്രകൃതിദത്തമല്ല, മറിച്ച് മനുഷ്യർ ചേർന്ന് നിർമ്മിച്ചെടുത്തതാണ്.",
@@ -1018,7 +1018,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 05",
             "title": "സോഷ്യലൈസേഷൻ പാളിച്ചകൾ (Socialization Failures & Identity) | Calicut Univ",
             "chapter": "Socialization Failures · Anomie, Deviance & Re-socialization (സോഷ്യലൈസേഷൻ പാളിച്ചകളും അനോമിയും)",
-            "duration": "22",
+            "duration": "22:00",
             "youtubeId": "KEg51ekQTWY",
             "studyPoints": [
               "സോഷ്യലൈസേഷൻ പാളിച്ചകൾ (Failures in Socialization): അപര്യാപ്തമായ ശ്രദ്ധ, കുടുംബത്തിലെ താളപ്പിഴകൾ, വിരുദ്ധ സന്ദേശങ്ങൾ എന്നിവ വ്യക്തികളിൽ സൃഷ്ടിക്കുന്ന പെരുമാറ്റ വൈകല്യങ്ങളും വ്യതിയാനങ്ങളും (Deviance).",
@@ -1034,7 +1034,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 06",
             "title": "ഫ്രോയിഡ്, മീഡ്, പിയാഷെ (Theories of Socialization) | Sociology | Calicut Univ",
             "chapter": "Freud, Mead & Piaget · Development of the Social Self (സാമൂഹിക വ്യക്തിത്വ വികാസം)",
-            "duration": "19",
+            "duration": "19:00",
             "youtubeId": "uf8WYWO9-Tk",
             "studyPoints": [
               "സിഗ്മണ്ട് ഫ്രോയിഡിന്റെ മനോവിശകലന സിദ്ധാന്തം (Psychoanalytic Theory): ജൈവിക കാമനകളുടെ ഇഡ് (Id), യാഥാർത്ഥ്യബോധമുള്ള ഈഗോ (Ego), സദാചാരബോധത്തിന്റെ സൂപ്പർഈഗോ (Superego) എന്നിവ തമ്മിലുള്ള സംഘർഷം.",
@@ -1050,7 +1050,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 07",
             "title": "സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary & Secondary) | Sociology | Calicut Univ",
             "chapter": "C.H. Cooley's Primary Groups · Secondary Groups · Sumner's In/Out Groups · Merton's Reference Groups",
-            "duration": "21",
+            "duration": "21:00",
             "youtubeId": "jedN-7Z72Fk",
             "studyPoints": [
               "<strong>00:00 - 04:36 | സോഷ്യൽ ഗ്രൂപ്പുകളുടെ സ്വഭാവം:</strong> പരസ്പര ബന്ധവും 'ഞങ്ങൾ' എന്ന ഐക്യബോധവും (We-feeling) ഉള്ള കൂട്ടായ്മകൾ (Harry M. Johnson, Ogburn).",
@@ -1068,7 +1068,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 08",
             "title": "ബ്യൂറോക്രസിയും ആൾക്കൂട്ടവും (Formal Organizations & Crowds) | Calicut Univ",
             "chapter": "Max Weber's Bureaucracy & Gustave Le Bon's Crowd Psychology (ഔപചാരിക സംഘടനകളും ആൾക്കൂട്ടവും)",
-            "duration": "18",
+            "duration": "18:00",
             "youtubeId": "uMxIIznPo-w",
             "studyPoints": [
               "<strong>00:00 - 03:37 | ഔപചാരിക സംഘടനകൾ:</strong> ആധുനിക സമൂഹത്തിലെ സങ്കീർണ്ണമായ തൊഴിൽ വിഭജനവും പ്രത്യേക ലക്ഷ്യങ്ങൾക്കായുള്ള വലിയ കൂട്ടായ്മകളും.",
@@ -1101,7 +1101,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 10",
             "title": "സംഘർഷവും സമൂഹവും (Social Conflict: Lewis Coser & Marx) | Sociology | Calicut Univ",
             "chapter": "Functions of Social Conflict · Coser & Marx (സാമൂഹിക സംഘർഷത്തിന്റെ ധർമ്മങ്ങൾ)",
-            "duration": "21",
+            "duration": "21:00",
             "youtubeId": "N6XM-ScWqeo",
             "studyPoints": [
               "കാൾ മാർക്സിന്റെ വർഗ്ഗ സംഘർഷ സിദ്ധാന്തം (Karl Marx - Class Conflict): ചൂഷകരും ചൂഷിതരും തമ്മിലുള്ള ചരിത്രപരമായ വൈരുദ്ധ്യങ്ങൾ.",
@@ -1117,7 +1117,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 11",
             "title": "സാമൂഹിക നിയന്ത്രണ മാർഗങ്ങൾ (Social Control & Sanctions) | Sociology | Calicut Univ",
             "chapter": "Formal & Informal Social Control · E.A. Ross & Sanctions (സാമൂഹിക നിയന്ത്രണ മാർഗ്ഗങ്ങൾ & സാങ്ഷനുകൾ)",
-            "duration": "20",
+            "duration": "20:00",
             "youtubeId": "QidpySg9v80",
             "studyPoints": [
               "<strong>00:00 - 03:52 | സാമൂഹിക നിയന്ത്രണത്തിന്റെ സ്വഭാവം:</strong> ഇ.എ. റോസ് (E.A. Ross, 1901); സമൂഹത്തിൽ അരാജകത്വം ഒഴിവാക്കാനും ഐക്യം നിലനിർത്താനുമുള്ള സംവിധാനങ്ങൾ.",
@@ -1139,7 +1139,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 4.1",
             "title": "സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics & Evolution) | Calicut Univ",
             "chapter": "Society · Characteristics & Types: Agrarian, Industrial & Post-Industrial (സമൂഹത്തിന്റെ പരിണാമം)",
-            "duration": "16",
+            "duration": "16:00",
             "youtubeId": "zEagx74glsc",
             "studyPoints": [
               "സമൂഹം (Society): പരസ്പര ബന്ധങ്ങളുടെ സങ്കീർണ്ണമായ വല (MacIver & Page - 'Web of Social Relationships').",
@@ -1155,7 +1155,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 4.2",
             "title": "സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions: Family & Marriage) | Calicut Univ",
             "chapter": "Social Institutions: Family, Marriage & Kinship (കുടുംബം, വിവാഹം, ബന്ധുത്വം & മതം)",
-            "duration": "20",
+            "duration": "20:00",
             "youtubeId": "z1jXxahDWUw",
             "studyPoints": [
               "<strong>00:00 - 04:02 | എന്താണ് സാമൂഹിക സ്ഥാപനം?:</strong> സമൂഹത്തിന്റെ സുസ്ഥിരമായ നിലനിൽപ്പിനും ആവശ്യങ്ങൾക്കും വേണ്ടിയുള്ള സംഘടിത ചട്ടക്കൂടുകളും ആചാരങ്ങളും.",
@@ -1172,7 +1172,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 4.3",
             "title": "പദവികളും റോളുകളും (Social Structure: Status & Role Conflict) | Calicut Univ",
             "chapter": "Social Structure: Ralph Linton's Status & Merton's Role Theory (പദവി, റോൾ & റോൾ കോൺഫ്ലിക്റ്റ്)",
-            "duration": "10",
+            "duration": "10:00",
             "youtubeId": "7Qkp0t6g9Qc",
             "studyPoints": [
               "<strong>00:00 - 02:03 | സാമൂഹിക ഘടന (Social Structure):</strong> റാഡ്ക്ലിഫ് ബ്രൗണും പാർസൺസും നിർവ്വചിച്ച പദവികളുടെയും റോളുകളുടെയും പരസ്പരബന്ധിതമായ ചട്ടക്കൂട്.",
@@ -1189,7 +1189,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 4.4",
             "title": "സാമൂഹിക മാറ്റവും ഘടകങ്ങളും (Social Change: Factors & Theories) | Calicut Univ",
             "chapter": "Social Change · Catalysts, Cultural Lag & Major Theories (സാമൂഹിക മാറ്റത്തിന്റെ സിദ്ധാന്തങ്ങൾ)",
-            "duration": "21",
+            "duration": "21:00",
             "youtubeId": "jfBES35jpzw",
             "studyPoints": [
               "സാമൂഹിക മാറ്റം (Social Change): സാമൂഹിക വ്യവസ്ഥിതിയിലും ബന്ധങ്ങളിലും മൂല്യങ്ങളിലും വരുന്ന ഘടനാപരമായ പരിവർത്തനം.",
@@ -1205,14 +1205,14 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 21
+    "totalVideos": 20
   },
   "philosophy-of-ai": {
     "name": "Philosophy of Artificial Intelligence",
     "badge": "🤖",
     "iconClass": "icon-cyan",
     "tag": "BA PHILOSOPHY HONOURS · PHI1CJ101 / FYUGP",
-    "totalVideos": "13 Comprehensive Video Lectures",
+    "totalVideos": 27,
     "modules": [
       {
         "moduleName": "MODULE 01: HISTORICAL & FOUNDATIONAL PERSPECTIVES (FYUGP PHI1CJ101)",
@@ -1267,7 +1267,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: സിംബോളിക് AI-യും കണക്ഷനിസവും തമ്മിലുള്ള ദാർശനികവും സാങ്കേതികവുമായ വ്യത്യാസങ്ങൾ താരതമ്യം ചെയ്യുക.",
             "thumbnail": "https://i.ytimg.com/vi/Vq-Bc0TI7L0/hqdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=Vq-Bc0TI7L0",
+            "videoUrl": null,
             "malayalam_cc": true
           },
           {
@@ -1285,7 +1285,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University ചോദ്യം: അലൻ ട്യൂറിംഗിന്റെ 'ഇമിറ്റേഷൻ ഗെയിം' സിദ്ധാന്തവും അതിനെതിരെയുള്ള പ്രധാന ദാർശനിക വിമർശനങ്ങളും വിലയിരുത്തുക.",
             "thumbnail": "https://i.ytimg.com/vi/1Va07j8OQSA/hqdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=1Va07j8OQSA",
+            "videoUrl": null,
             "malayalam_cc": true
           }
         ]
@@ -1404,7 +1404,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "15:02",
             "youtubeId": "626Pz--vDxk",
             "thumbnail": "https://i.ytimg.com/vi/626Pz--vDxk/hqdefault.jpg",
-            "videoUrl": "https://www.youtube.com/watch?v=626Pz--vDxk",
+            "videoUrl": null,
             "language": "Malayalam (Two-Speaker Conversational Masterclass)",
             "studyPoints": [
               "ബുദ്ധമതത്തിലെ രണ്ട് പ്രമാണങ്ങൾ: ദിങ്നാഗനും (Pramāṇasamuccaya) ധർമ്മകീർത്തിയും (Nyāyabindu) ശബ്ദപ്രമാണത്തെ നിരാകരിച്ച് പ്രത്യക്ഷവും (Pratyakṣa) അനുമാനവും (Anumāna) മാത്രം അംഗീകരിച്ചു.",
@@ -2107,7 +2107,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സ്വതന്ത്ര ഇച്ഛയും ധാർമ്മിക ബാധ്യതയും (Free Will & Moral Responsibility): പ്രവൃത്തികൾ തിരഞ്ഞെടുക്കാനുള്ള മനുഷ്യന്റെ വിവേകവും സ്വന്തം കർമ്മങ്ങളിലുള്ള ഉത്തരവാദിത്തവും."
             ],
             "examTip": "Calicut University Focus: 'Explain the nature, scope, and principal branches of Ethics with special emphasis on Free Will and Moral Responsibility'.",
-            "thumbnail": "/thumbnails/ethics_thumb_01.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/3AJOPvBY9KA/hqdefault.jpg",
             "videoUrl": null
           },
           {
@@ -2222,7 +2222,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "അവകാശങ്ങളും കടമകളും തമ്മിലുള്ള പരസ്പരബന്ധം (Correlation of Rights and Duties): ഓരോ വ്യക്തിയുടെയും അവകാശം മറ്റുള്ളവരുടെ ധാർമ്മിക കടമയായി മാറുന്നു."
             ],
             "examTip": "University Exam Tip: 'Explain Aristotle's Doctrine of the Mean with suitable examples and elaborate on the four Cardinal Virtues'.",
-            "thumbnail": "/thumbnails/ethics_thumb_03.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/AXKs5HdTUTw/hqdefault.jpg",
             "videoUrl": null
           },
           {
@@ -2239,7 +2239,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "നന്മയും നീതിയും (Goodness & Justice): വ്യക്തിഗത സദാചാരവും സാമൂഹിക ക്ഷേമവും തമ്മിലുള്ള ആരോഗ്യകരമായ സന്തുലിതാവസ്ഥ."
             ],
             "examTip": "University Exam Tip: 'Discuss Conscience as the subjective norm of morality and evaluate its role in resolving ethical conflicts'.",
-            "thumbnail": "/thumbnails/ethics_thumb_04.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/0_peGPXEbrc/hqdefault.jpg",
             "videoUrl": null
           },
           {
@@ -2293,7 +2293,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ആക്റ്റ് vs റൂൾ യൂട്ടിലിറ്റേറിയനിസം (Act vs Rule Utilitarianism): വ്യക്തിഗത പ്രവൃത്തികളുടെ ഫലം കണക്കാക്കുന്നതും പൊതുവായ നൈതിക നിയമങ്ങൾ പാലിക്കുന്നതും."
             ],
             "examTip": "University Exam Tip: 'Critically evaluate Utilitarianism comparing Bentham's quantitative hedonism with Mill's qualitative refinement'.",
-            "thumbnail": "/thumbnails/ethics_thumb_06.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/WU7_Bjoa5f0/hqdefault.jpg",
             "videoUrl": null
           }
         ]
