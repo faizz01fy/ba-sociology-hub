@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sociology Mock Exam · Academic Hub</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f5ff;color:#192346;font:16px/1.55 system-ui,sans-serif}main{max-width:720px;margin:auto;padding:16px}a{color:#4338ca}header,article,.panel{border-radius:18px;padding:20px;margin:14px 0;background:white}header{background:linear-gradient(120deg,#37239a,#174d87);color:white}h1,h2,p{margin:0 0 12px}button,select,textarea{font:inherit}button,select{min-height:48px;padding:10px 16px;border-radius:12px}button{border:0;background:#4338ca;color:white;font-weight:700;cursor:pointer}button:disabled{opacity:.6}textarea{width:100%;min-height:128px;padding:12px;border:1px solid #8996bd;border-radius:12px}textarea:focus-visible,button:focus-visible{outline:3px solid #0d9488;outline-offset:3px}.timer{position:sticky;top:0;background:#192346;color:white;padding:12px 18px;border-radius:12px;z-index:1;font-variant-numeric:tabular-nums}.feedback{background:#e5faf3;border-radius:12px;padding:14px;margin-top:12px}.marks{color:#086451;font-weight:750}small{display:block;margin:8px 0}label{display:block;font-weight:650}#submit{width:100%}[hidden]{display:none!important}
+</style>
+<main>
+<a href="/#tests">← Practice tests</a>
+<header><h1>Sociology Mock Exam</h1><p>5 questions · 3 marks each · 30 minutes</p></header>
+<section class="panel" id="setup">
+<label for="language">Feedback language</label><select id="language"><option value="en">English</option><option value="ml">മലയാളം</option></select>
+<p>Type each answer or dictate with your keyboard microphone. You can submit early. Results unlock when the timer ends.</p>
+<button id="start" type="button">Start Mock Exam</button>
+</section>
+<div class="timer" id="clock" hidden></div>
+<form id="exam" hidden><div id="questions"></div><button id="submit" type="submit">Submit answers</button></form>
+<div class="panel" id="status" role="status" hidden></div>
+<button type="button" id="retry" hidden>Retry evaluation</button>
+<button type="button" id="again" hidden>Start a new mock</button>
+</main>
+<script>
+const byId = id => document.getElementById(id);
+const key = 'academic-hub-sociology-theory-v1';
+let attempt, busy = false;
+try { attempt = JSON.parse(localStorage.getItem(key)); } catch {}
+function save() { try { localStorage.setItem(key, JSON.stringify(attempt)); } catch {} }
+function status(message) { byId('status').hidden = false; byId('status').textContent = message; }
+async function request(payload) {
+  const response = await fetch('/api/answer-evaluate-text', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload), signal:AbortSignal.timeout(60000)
+  });
+  const data = await response.json().catch(() => null);
+  if (!response.ok || !data) throw Error(data?.error || 'Could not reach the evaluator. Please try again.');
+  return data;
+}
+function add(parent, tag, value, className) {
+  const element = document.createElement(tag);
+  element.textContent = value;
+  if (className) element.className = className;
+  parent.append(element);
+  return element;
+}
+function render() {
+  byId('setup').hidden = true;
+  byId('clock').hidden = false;
+  byId('exam').hidden = false;
+  const list = byId('questions');
+  list.replaceChildren();
+  attempt.questions.forEach((question, i) => {
+    const card = add(list, 'article', '');
+    const heading = add(card, 'h2', (i+1) + '. ' + (attempt.language === 'ml' ? question.ml : question.en));
+    const alternate = add(card, 'p', attempt.language === 'ml' ? question.en : question.ml);
+    heading.lang = attempt.language;
+    alternate.lang = attempt.language === 'ml' ? 'en' : 'ml';
+    add(card, 'p', '3 marks', 'marks');
+    const label = add(card, 'label', 'Your answer');
+    label.htmlFor = 'answer-' + i;
+    add(card, 'small', 'Type here or tap your keyboard microphone to dictate.');
+    const input = add(card, 'textarea', '');
+    input.id = label.htmlFor;
+    input.lang = attempt.language;
+    input.maxLength = 1000;
+    input.value = attempt.answers[i];
+    input.readOnly = attempt.locked;
+    input.addEventListener('input', () => {
+      if (Date.now() >= attempt.deadline) {
+        input.value = attempt.answers[i];
+        tick();
+        return;
+      }
+      attempt.answers[i] = input.value;
+      save();
+    });
+    const result = attempt.report?.results.find(row => row.id === question.id);
+    if (result) {
+      const box = add(card, 'section', '', 'feedback');
+      add(box, 'h3', result.marks + ' / 3 marks');
+      add(box, 'p', result.feedback);
+      add(box, 'h4', 'Model answer points');
+      add(box, 'p', result.answerPoints);
+    }
+  });
+  byId('submit').hidden = attempt.locked;
+  byId('again').hidden = !attempt.report;
+}
+function lock() {
+  if (attempt.locked) return;
+  attempt.locked = true;
+  save();
+  render();
+}
+async function evaluate() {
+  if (busy || attempt.report || Date.now() < attempt.deadline) return;
+  busy = true;
+  byId('retry').hidden = true;
+  status('Evaluating your answers…');
+  try {
+    attempt.report = await request({mode:'theory-grade',session:attempt.session,language:attempt.language,
+      answers:attempt.questions.map(({id},i) => ({id,text:attempt.answers[i]}))});
+    save();
+    render();
+    status('Result: ' + attempt.report.total + ' / 15. Review the feedback under each question.');
+  } catch (error) {
+    status(error.message + ' Your answers are still saved on this device.');
+    byId('retry').hidden = false;
+  } finally { busy = false; }
+}
+function tick() {
+  if (!attempt) return;
+  const seconds = Math.max(0, Math.ceil((attempt.deadline - Date.now())/1000));
+  byId('clock').textContent = attempt.report ? 'Final score: ' + attempt.report.total + ' / 15' :
+    'Time left: ' + Math.floor(seconds/60) + ':' + String(seconds%60).padStart(2,'0');
+  if (!seconds) {
+    lock();
+    if (byId('retry').hidden) evaluate();
+  } else if (attempt.locked) status('Answers submitted. Results unlock when the timer reaches zero.');
+}
+byId('start').onclick = async () => {
+  byId('start').disabled = true;
+  try {
+    const {questions,session,deadline} = await request({mode:'theory-start'});
+    attempt = {questions,answers:Array(5).fill(''),language:byId('language').value,deadline,session,locked:false};
+    save();
+    byId('status').hidden = true;
+    render();
+    tick();
+  } catch (error) { status(error.message); }
+  finally { byId('start').disabled = false; }
+};
+byId('exam').onsubmit = event => {
+  event.preventDefault();
+  if (Date.now() < attempt.deadline && !confirm('Submit and lock your answers now?')) return;
+  lock();
+  tick();
+};
+byId('retry').onclick = evaluate;
+byId('again').onclick = () => { try { localStorage.removeItem(key); } catch {} location.reload(); };
+if (attempt?.questions?.length === 5) { render(); tick(); }
+setInterval(tick,1000);
+</script>
+</html>
