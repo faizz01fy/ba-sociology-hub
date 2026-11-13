@@ -115,8 +115,22 @@ function render() {
     if (result) {
       const box = add(card, 'section', '', 'feedback');
       add(box, 'h3', result.marks + ' / 3 marks');
-      add(box, 'h4', 'Feedback · നിർദ്ദേശങ്ങൾ');
-      add(box, 'p', result.feedback).lang = attempt.language;
+      if (result.feedbackBilingual) {
+        const sections = [
+          ['review', 'Why you got this mark', 'ഈ മാർക്ക് ലഭിച്ചതിന്റെ കാരണം'],
+          ['focus', 'What to focus on', 'ശ്രദ്ധിക്കേണ്ട കാര്യങ്ങൾ'],
+          ['structure', 'How to structure your answer', 'ഉത്തരം എങ്ങനെ ക്രമീകരിക്കാം']
+        ];
+        for (const [key, english, malayalam] of sections) {
+          const heading = add(box, 'h4', english + ' · ');
+          add(heading, 'span', malayalam).lang = 'ml';
+          add(box, 'p', result.feedbackBilingual.en[key]).lang = 'en';
+          add(box, 'p', result.feedbackBilingual.ml[key]).lang = 'ml';
+        }
+      } else {
+        add(box, 'h4', 'Feedback · നിർദ്ദേശങ്ങൾ');
+        add(box, 'p', result.feedback).lang = attempt.language;
+      }
       if (result.modelAnswer) {
         add(box, 'h4', 'Model answer · മാതൃകാ ഉത്തരം');
         add(box, 'p', result.modelAnswer.en).lang = 'en';
