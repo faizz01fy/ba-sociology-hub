@@ -8,6 +8,7 @@ function isAllowedOrigin(origin, workerOrigin) {
          o.endsWith(".workers.dev");
 }
 
+import {fyugpQuizPath, handleFyugpQuiz} from './fyugp-quiz.js';
 import {handleStudyHelper} from './study-helper-backend.js';
 export {StudyHelperQuota} from './study-helper-backend.js';
 import {handleUniversityNotices} from './university-notices-backend.js';
@@ -214,6 +215,9 @@ export default {
       url.protocol = "https:";
       if (isWww) url.hostname = "academichubfaiz.in";
       return Response.redirect(url.toString(), 301);
+    }
+    if (url.pathname === fyugpQuizPath || url.pathname === fyugpQuizPath + "/") {
+      return handleFyugpQuiz(request, env, mockEquals);
     }
     if (url.pathname === "/api/tts") {
       const tl = url.searchParams.get("tl") || "ml";
