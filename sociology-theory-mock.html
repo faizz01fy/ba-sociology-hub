@@ -14,9 +14,111 @@
 .answer-instructions ul{padding-inline-start:1.3rem;margin:0 0 12px}
 .answer-instructions li+li{margin-top:6px}
 .answer-instructions p:last-child{margin-bottom:0}
-.revision{background:#eefcf8;border:1px solid #a6ddd2}.revision h2{font-size:1.1rem}.revision h3{font-size:1rem;margin:0 0 8px;color:#145a53}.revision article{margin:0 0 10px;padding:12px;border:1px solid #bfe5db}.revision p:last-child{margin:0}.revision button{margin-bottom:10px;background:#15665e}#revision-scroll{max-height:245px;overflow:auto;overscroll-behavior:contain}
-@media(min-width:900px){main{max-width:1040px}.exam-prep{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:18px;align-items:start}.revision:only-child,.exam-prep:has(#setup[hidden]) .revision{grid-column:1/-1}}
+.revision{background:#f0fdf4;border:1.5px solid #86efac;position:sticky;top:16px;box-shadow:0 4px 18px rgba(22,101,52,0.08)}.revision h2{font-size:1.15rem;color:#14532d;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;border-bottom:1.5px solid #bbf7d0;padding-bottom:10px;margin-bottom:12px}.revision-pill{background:#16a34a;color:#fff;font-size:0.75rem;padding:3px 8px;border-radius:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em}
+.revision article{margin:0 0 12px;padding:14px;border:1px solid #bbf7d0;border-radius:12px;background:#ffffff;box-shadow:0 2px 6px rgba(0,0,0,0.02);transition:transform 0.15s,box-shadow 0.15s}
+.revision article:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(22,101,52,0.1)}
+.revision h3{font-size:1rem;margin:0 0 6px;color:#15803d;font-weight:750;line-height:1.35}
+.revision .sub-ml{font-size:0.88rem;color:#166534;margin-bottom:8px;font-weight:600}
+.revision p{font-size:0.88rem;line-height:1.55;color:#1e293b;margin:0 0 8px}
+.revision .concept-box{background:#f8fafc;border-left:3.5px solid #16a34a;padding:8px 10px;margin:8px 0;border-radius:0 8px 8px 0;font-size:0.84rem}
+.revision .concept-box strong{color:#0f172a}
+.revision .takeaway-box{background:#fefce8;border:1px solid #fef08a;padding:8px 10px;margin-top:8px;border-radius:8px;font-size:0.83rem;color:#713f12}
+.revision button{margin-bottom:10px;background:#15803d;color:#fff;font-weight:700;border:0;border-radius:8px;padding:8px 14px;cursor:pointer}
+.revision button:hover{background:#166534}
+#revision-scroll{max-height:560px;overflow-y:auto;overscroll-behavior:contain;padding-right:4px;scroll-behavior:smooth}
+#revision-scroll::-webkit-scrollbar{width:6px}
+#revision-scroll::-webkit-scrollbar-thumb{background:#86efac;border-radius:4px}
+@media(min-width:900px){main{max-width:1200px}.exam-prep{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:24px;align-items:start}.revision:only-child,.exam-prep:has(#setup[hidden]) .revision{grid-column:auto}}
 .more-explanation{margin-top:12px;border:1px solid #82bdad;border-radius:10px;padding:0 12px;background:#fff}.more-explanation summary{cursor:pointer;min-height:48px;padding-block:12px;font-weight:700;color:#145a53}.more-explanation summary:focus-visible{outline:2px solid #0d9488;outline-offset:2px}
+
+.voice-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  background: #f8faff;
+  border: 1px solid #c7d2fe;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 10px 0;
+}
+.voice-bar .voice-badge {
+  font-size: 0.78rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #37239a;
+  background: #e0e7ff;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+.voice-bar button {
+  min-height: 38px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-dictate {
+  background: #4338ca;
+  color: #fff;
+}
+.btn-dictate.listening {
+  background: #dc2626 !important;
+  animation: pulse-red 1.2s infinite;
+}
+.btn-record {
+  background: #0284c7;
+  color: #fff;
+}
+.btn-record.recording {
+  background: #e11d48 !important;
+  animation: pulse-red 1.2s infinite;
+}
+.lang-select-voice {
+  min-height: 36px;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  border: 1px solid #8996bd;
+  background: #fff;
+  color: #1e1b4b;
+}
+.voice-status-pill {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1e1b4b;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.audio-preview-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+.audio-preview-wrap audio {
+  height: 36px;
+  flex: 1;
+}
+.btn-discard-audio {
+  background: #fee2e2;
+  color: #991b1b;
+  min-height: 34px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+@keyframes pulse-red {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+  70% { transform: scale(1.02); box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
 </style>
 <main>
 <a href="/#tests">← Practice tests</a>
@@ -42,14 +144,13 @@
 <button id="start" type="button">Start Mock Exam</button>
 </section>
 <aside class="panel revision" id="revision" aria-labelledby="revision-title">
-  <h2 id="revision-title">Sociology notes <span lang="ml">· പഠനക്കുറിപ്പുകൾ</span></h2>
-  <button id="revision-toggle" type="button" hidden>Pause scrolling</button>
-  <button id="revision-next" type="button">Get another revision tip <span lang="ml">· മറ്റൊരു പഠനസൂചന</span></button>
-  <div id="revision-tip" aria-live="polite"></div>
-  <div id="revision-scroll" tabindex="0" role="region" aria-labelledby="revision-title"><article><h3>Social norms <span lang="ml">· സാമൂഹിക ചട്ടങ്ങൾ</span></h3><p>Waiting in a queue is an unwritten rule. Ask what happens when someone breaks it.</p><p lang="ml">വരിയിൽ കാത്തുനിൽക്കുന്നത് എഴുതിവെക്കാത്ത ഒരു ചട്ടമാണ്. ഒരാൾ അത് ലംഘിച്ചാൽ മറ്റുള്ളവർ എങ്ങനെ പ്രതികരിക്കും?</p></article>
-<article><h3>Culture <span lang="ml">· സംസ്കാരം</span></h3><p>A greeting can mean different things in different communities. Its meaning is learned through interaction.</p><p lang="ml">ഒരേ അഭിവാദനത്തിന് വ്യത്യസ്ത സമൂഹങ്ങളിൽ വ്യത്യസ്ത അർത്ഥമുണ്ടാകാം. ഇടപെടലുകളിലൂടെയാണ് ആ അർത്ഥം പഠിക്കുന്നത്.</p></article>
-<article><h3>Social inequality <span lang="ml">· സാമൂഹിക അസമത്വം</span></h3><p>Two students with equal ability may have different access to transport, devices, or quiet study space.</p><p lang="ml">ഒരേ കഴിവുള്ള രണ്ട് വിദ്യാർത്ഥികൾക്ക് യാത്രാസൗകര്യം, പഠനോപകരണങ്ങൾ, ശാന്തമായ പഠനസ്ഥലം എന്നിവ ഒരുപോലെ ലഭിക്കണമെന്നില്ല.</p></article>
-<article><h3>Observation <span lang="ml">· നിരീക്ഷണം</span></h3><p>To study a bus stop, note where people stand and how they board. Separate what you observe from what you infer.</p><p lang="ml">ഒരു ബസ് സ്റ്റോപ്പ് പഠിക്കാൻ ആളുകൾ എവിടെ നിൽക്കുന്നു, എങ്ങനെ ബസിൽ കയറുന്നു എന്ന് കുറിക്കുക. കണ്ടതും അതിൽനിന്ന് അനുമാനിച്ചതും വേർതിരിക്കുക.</p></article></div>
+  <h2 id="revision-title"><span>Module Knowledge Feed <span lang="ml">· പാഠഭാഗങ്ങൾ</span></span><span class="revision-pill">Auto-Scroll</span></h2>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+    <button id="revision-toggle" type="button">Pause scrolling / സ്ക്രോൾ നിർത്തുക</button>
+    <button id="revision-next" type="button">Jump Next / അടുത്തത്</button>
+  </div>
+  <div id="revision-tip" aria-live="polite" style="display:none;"></div>
+  <div id="revision-scroll" tabindex="0" role="region" aria-labelledby="revision-title"></div>
 </aside>
 </div>
 <div class="timer" id="clock" hidden>
@@ -65,7 +166,9 @@
 const byId = id => document.getElementById(id);
 const key = 'academic-hub-sociology-theory-v1';
 let attempt, busy = false;
-try { attempt = JSON.parse(localStorage.getItem(key)); } catch {}
+// Always reset to a fresh start when opened (do not keep old state)
+try { localStorage.removeItem(key); } catch {}
+attempt = null;
 function save() { try { localStorage.setItem(key, JSON.stringify(attempt)); } catch {} }
 function status(message) { byId('status').hidden = false; byId('status').textContent = message; }
 async function request(payload) {
@@ -130,7 +233,7 @@ const detailedExplanations = [
 
 function render() {
   byId('setup').hidden = true;
-  byId('revision').hidden = !attempt.report;
+  byId('revision').hidden = false;
   byId('clock').hidden = false;
   byId('exam').hidden = false;
   const list = byId('questions');
@@ -142,10 +245,201 @@ function render() {
     heading.lang = attempt.language;
     alternate.lang = attempt.language === 'ml' ? 'en' : 'ml';
     add(card, 'p', (question.module ? 'Module ' + question.module + ' · ' : '') + '3 marks', 'marks');
-    const label = add(card, 'label', 'Your answer');
+    const label = add(card, 'label', 'Your answer / നിങ്ങളുടെ ഉത്തരം:');
     label.htmlFor = 'answer-' + i;
-    add(card, 'small', 'Type here or tap your keyboard microphone to dictate.');
+
+    // Dual Voice Assistant Toolbar (Option 1: Live Dictate Speech-to-Text & Option 2: WhatsApp Voice Note)
+    const voiceBar = add(card, 'div', '', 'voice-bar');
+    voiceBar.setAttribute('role', 'region');
+    voiceBar.setAttribute('aria-label', 'Bilingual Voice Input Assistant');
+
+    const badge = add(voiceBar, 'span', '🎙️ Voice input', 'voice-badge');
+
+    // Language selector for speech recognition
+    const langSelect = add(voiceBar, 'select', '', 'lang-select-voice');
+    langSelect.title = 'Dictation Language';
+    const optMl = add(langSelect, 'option', 'മലയാളം (ml-IN)');
+    optMl.value = 'ml-IN';
+    const optEn = add(langSelect, 'option', 'English (en-IN)');
+    optEn.value = 'en-IN';
+    if (attempt.language === 'en') langSelect.value = 'en-IN';
+
+    // Option 1: Live Speech-To-Text Button
+    const btnDictate = add(voiceBar, 'button', '🎙️ Live Dictate', 'btn-dictate');
+    btnDictate.type = 'button';
+    btnDictate.title = 'Speak and transcribe directly into the answer box';
+
+    // Option 2: WhatsApp style audio note recorder
+    const btnRecord = add(voiceBar, 'button', '🔴 Record Note', 'btn-record');
+    btnRecord.type = 'button';
+    btnRecord.title = 'Record audio voice note (WhatsApp style)';
+
+    const voiceStatus = add(voiceBar, 'span', '', 'voice-status-pill');
+
+    const previewWrap = add(voiceBar, 'div', '', 'audio-preview-wrap');
+    previewWrap.style.display = 'none';
+    const audioPreview = add(previewWrap, 'audio', '');
+    audioPreview.controls = true;
+    const btnDiscard = add(previewWrap, 'button', '🗑️ Discard', 'btn-discard-audio');
+    btnDiscard.type = 'button';
+
     const input = add(card, 'textarea', '');
+    input.placeholder = 'Type your answer or speak using the voice buttons above...';
+
+    // Wire up Option 1: Live Dictation (Web Speech API)
+    let recognition = null;
+    let isListening = false;
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (SpeechRecognition) {
+      recognition = new SpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = true;
+
+      recognition.onstart = () => {
+        isListening = true;
+        btnDictate.classList.add('listening');
+        btnDictate.textContent = '⏹️ Stop Dictating';
+        voiceStatus.textContent = '● Listening (' + (langSelect.value === 'ml-IN' ? 'മലയാളം' : 'English') + ')...';
+        voiceStatus.style.color = '#dc2626';
+      };
+
+      recognition.onresult = event => {
+        let finalChunk = '';
+        for (let r = event.resultIndex; r < event.results.length; ++r) {
+          if (event.results[r].isFinal) {
+            finalChunk += event.results[r][0].transcript + ' ';
+          }
+        }
+        if (finalChunk) {
+          const current = input.value.trim();
+          input.value = (current ? current + ' ' : '') + finalChunk.trim();
+          attempt.answers[i] = input.value;
+          save();
+        }
+      };
+
+      recognition.onerror = event => {
+        isListening = false;
+        btnDictate.classList.remove('listening');
+        btnDictate.textContent = '🎙️ Live Dictate';
+        voiceStatus.textContent = 'Mic error: ' + (event.error || 'Check mic permission');
+        voiceStatus.style.color = '#991b1b';
+      };
+
+      recognition.onend = () => {
+        isListening = false;
+        btnDictate.classList.remove('listening');
+        btnDictate.textContent = '🎙️ Live Dictate';
+        if (voiceStatus.textContent.startsWith('● Listening')) {
+          voiceStatus.textContent = '✓ Transcribed';
+          voiceStatus.style.color = '#059669';
+        }
+      };
+
+      btnDictate.onclick = () => {
+        if (attempt.locked) return;
+        if (isListening) {
+          recognition.stop();
+        } else {
+          recognition.lang = langSelect.value;
+          try {
+            recognition.start();
+          } catch (e) {
+            recognition.stop();
+            setTimeout(() => { try { recognition.start(); } catch {} }, 250);
+          }
+        }
+      };
+    } else {
+      btnDictate.disabled = true;
+      btnDictate.title = 'Live dictation not supported in this browser. Use WhatsApp voice note or keyboard mic.';
+      btnDictate.textContent = '🎙️ Dictate (Use Chrome/Safari)';
+    }
+
+    // Wire up Option 2: WhatsApp Voice Note (MediaRecorder)
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let isRecordingAudio = false;
+    let recordTimerInterval = null;
+    let recordSeconds = 0;
+
+    btnRecord.onclick = async () => {
+      if (attempt.locked) return;
+      if (isRecordingAudio) {
+        // Stop recording
+        if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+        return;
+      }
+
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunks = [];
+        mediaRecorder = new MediaRecorder(stream);
+
+        mediaRecorder.ondataavailable = e => {
+          if (e.data.size > 0) audioChunks.push(e.data);
+        };
+
+        mediaRecorder.onstart = () => {
+          isRecordingAudio = true;
+          recordSeconds = 0;
+          btnRecord.classList.add('recording');
+          btnRecord.textContent = '⏹️ Stop Note';
+          voiceStatus.textContent = '🔴 00:00 (Recording...)';
+          voiceStatus.style.color = '#e11d48';
+
+          recordTimerInterval = setInterval(() => {
+            recordSeconds++;
+            const mm = String(Math.floor(recordSeconds / 60)).padStart(2, '0');
+            const ss = String(recordSeconds % 60).padStart(2, '0');
+            voiceStatus.textContent = '🔴 ' + mm + ':' + ss;
+            if (recordSeconds >= 180) { // Max 3 minutes
+              if (mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+            }
+          }, 1000);
+        };
+
+        mediaRecorder.onstop = () => {
+          clearInterval(recordTimerInterval);
+          isRecordingAudio = false;
+          btnRecord.classList.remove('recording');
+          btnRecord.textContent = '🔴 Record Note';
+          stream.getTracks().forEach(track => track.stop());
+
+          const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+          const audioUrl = URL.createObjectURL(audioBlob);
+          audioPreview.src = audioUrl;
+          previewWrap.style.display = 'flex';
+          voiceStatus.textContent = '✓ Voice note ready';
+          voiceStatus.style.color = '#0284c7';
+
+          // Mark note in answer if empty
+          if (!input.value.trim()) {
+            input.value = '[Voice Note Attached - ' + Math.ceil(recordSeconds) + 's]';
+            attempt.answers[i] = input.value;
+            save();
+          }
+        };
+
+        mediaRecorder.start();
+      } catch (err) {
+        voiceStatus.textContent = 'Mic access blocked: ' + err.message;
+        voiceStatus.style.color = '#991b1b';
+      }
+    };
+
+    btnDiscard.onclick = () => {
+      audioPreview.src = '';
+      previewWrap.style.display = 'none';
+      voiceStatus.textContent = 'Note discarded';
+      voiceStatus.style.color = '#64748b';
+      if (input.value.startsWith('[Voice Note Attached')) {
+        input.value = '';
+        attempt.answers[i] = '';
+        save();
+      }
+    };
     input.id = label.htmlFor;
     input.lang = attempt.language;
     input.maxLength = 1000;
@@ -257,47 +551,78 @@ byId('retry').onclick = evaluate;
 byId('again').onclick = () => { try { localStorage.removeItem(key); } catch {} location.reload(); };
 if (attempt?.questions?.length === 5) { render(); tick(); }
 setInterval(tick,1000);
-const revisionModules = [1,1,2,3,3,3,4,4,2,2,3,3,3,4,4,5,5];
+const moduleKnowledgeCards = [{"key": "soc_mod_1", "title": "Module 1 · Introducing Sociology", "titleMl": "മൊഡ്യൂൾ 1 · ഇൻട്രൊഡ്യൂസിങ് സോഷ്യോളജി", "overview": "Examines the genesis, definition, nature, and scope of Sociology as an independent social science. Traces Enlightenment philosophy, French Revolution, Industrial Revolution, Auguste Comte's positivism, early masters (Durkheim, Marx, Weber, Spencer), and compares the Formalistic and Synthetic schools of thought.", "overviewMl": "ഒരു സ്വതന്ത്ര ശാസ്ത്രമെന്ന നിലയിൽ സോഷ്യോളജിയുടെ ഉത്ഭവം, നിർവ്വചനം, സ്വഭാവം, വ്യാപ്തി എന്നിവ വിശദീകരിക്കുന്നു. ജ്ഞാനോദയം, ഫ്രഞ്ച് വിപ്ലവം, വ്യാവസായിക വിപ്ലവം, കോംതെയുടെ പോസിറ്റിവിസം, ക്ലാസിക്കൽ ചിന്തകർ, ഫോർമലിസ്റ്റിക് - സിന്തറ്റിക് സ്കൂളുകൾ എന്നിവ പഠനവിധേയമാക്കുന്നു.", "concepts": [{"term": "Positivism", "termMal": "പോസിറ്റിവിസം", "definition": "Application of scientific empirical methods to social phenomena.", "definitionMal": "ശാസ്ത്രീയ നിരീക്ഷണത്തിലൂടെ സമൂഹത്തെ പഠിക്കുന്ന രീതി."}, {"term": "Sociological Imagination", "termMal": "സോഷ്യോളജിക്കൽ ഭാവന", "definition": "Ability to see the interplay between personal biography and historical social forces (C. Wright Mills).", "definitionMal": "വ്യക്തിജീവിതവും സാമൂഹിക ചരിത്രവും തമ്മിലുള്ള ബന്ധം തിരിച്ചറിയാനുള്ള ശേഷി."}, {"term": "Anomie", "termMal": "അനോമി", "definition": "A condition of social deregulation and normlessness (Durkheim).", "definitionMal": "സാമൂഹിക മാനദണ്ഡങ്ങളും നിയന്ത്രണങ്ങളും തകരുന്ന അവസ്ഥ."}], "takeaways": [{"en": "Comte is Father of Sociology (1839); Positivism and Law of Three Stages.", "mal": "സോഷ്യോളജിയുടെ പിതാവ് ഓഗസ്റ്റ് കോംതെയാണ് (1839); പോസിറ്റിവിസവും മൂന്ന് ഘട്ടങ്ങളുടെ നിയമവും അദ്ദേഹത്തിന്റേതാണ്."}, {"en": "Distinguish between Durkheim's social facts, Marx's class conflict, and Weber's social action.", "mal": "ഡർക്കൈമിന്റെ സോഷ്യൽ ഫാക്റ്റുകൾ, മാർക്സിന്റെ വർഗ്ഗസമരം, വെബറുടെ സോഷ്യൽ ആക്ഷൻ എന്നിവ തമ്മിലുള്ള വ്യത്യാസം പഠിക്കുക."}]}, {"key": "soc_mod_2", "title": "Module 2 · Practicing Sociology", "titleMl": "മൊഡ്യൂൾ 2 · പ്രാക്റ്റീസിങ് സോഷ്യോളജി", "overview": "Detailed study of sociological paradigms (Structural Functionalism, Conflict Theory, Symbolic Interactionism, Ethnomethodology) and scientific research methodology. Covers quantitative and qualitative tools, participant observation, surveys, sampling, hypothesis testing, Verstehen, and research ethics.", "overviewMl": "സോഷ്യോളജിക്കൽ വീക്ഷണങ്ങളും (സ്ട്രക്ചറൽ ഫങ്ഷണലിസം, കോൺഫ്ലിക്റ്റ് തിയറി, സിംബോളിക് ഇന്ററാക്ഷനിസം, എത്‌നോമെത്തഡോളജി) ശാസ്ത്രീയ ഗവേഷണ രീതികളും വിശദീകരിക്കുന്നു. ക്വാണ്ടിറ്റേറ്റീവ്, ക്വാളിറ്റേറ്റീവ് രീതികൾ, പങ്കാളിത്ത നിരീക്ഷണം, ചോദ്യാവലി, സാമ്പിളിംഗ്, വെർസ്റ്റെഹെൻ, ഗവേഷണ ധാർമ്മികത എന്നിവ ഉൾക്കൊള്ളുന്നു.", "concepts": [{"term": "Verstehen", "termMal": "വെർസ്റ്റെഹെൻ", "definition": "Weber's method of empathetic understanding of the meaning people attach to their actions.", "definitionMal": "മനുഷ്യരുടെ പ്രവർത്തനങ്ങൾക്ക് അവർ നൽകുന്ന ആന്തരിക അർത്ഥം മനസ്സിലാക്കുന്ന വെബറുടെ രീതി."}, {"term": "Dramaturgy", "termMal": "ഡ്രാമറ്റർജി", "definition": "Erving Goffman's view that social life resembles theatre with front-stage presentation and back-stage reality.", "definitionMal": "ജീവിതത്തെ ഒരു നാടകമായും ആളുകളെ അഭിനേതാക്കളായും കാണുന്ന ഗോഫ്മാന്റെ ആശയം."}, {"term": "Latent Functions", "termMal": "ലേറ്റന്റ് ഫംഗ്ഷനുകൾ", "definition": "Unintended and unrecognized consequences of social institutions (Merton).", "definitionMal": "പ്രതീക്ഷിക്കാത്തതും തിരിച്ചറിയപ്പെടാത്തതുമായ പരോക്ഷ ഫലങ്ങൾ."}], "takeaways": [{"en": "Distinguish between Functionalism (order), Conflict (power struggle), and Interactionism (meaning creation).", "mal": "ഫങ്ഷണലിസം (സ്ഥിരത), കോൺഫ്ലിക്റ്റ് (അധികാര സമരം), ഇന്ററാക്ഷനിസം (അർത്ഥ നിർമ്മാണം) എന്നിവ തമ്മിലുള്ള വ്യത്യാസം തിരിച്ചറിയുക."}, {"en": "Remember Harold Garfinkel founded Ethnomethodology, Goffman developed Dramaturgy, and Merton distinguished manifest/latent functions.", "mal": "ഗാർഫിങ്കൽ എത്‌നോമെത്തഡോളജിയും, ഗോഫ്മാൻ ഡ്രാമറ്റർജിയും, മെർട്ടൺ മാനിഫെസ്റ്റ്/ലേറ്റന്റ് ഫംഗ്ഷനുകളും അവതരിപ്പിച്ചു."}]}, {"key": "soc_mod_3_1", "title": "Module 3 · Chapter 3.1: Social Interaction: Types", "titleMl": "മൊഡ്യൂൾ 3 · അധ്യായം 3.1: സാമൂഹിക പ്രതിപ്രവർത്തനം: തരങ്ങൾ", "overview": "Examines social interaction as the fundamental dynamic foundation of social life. Analyzes associative processes (Cooperation, Accommodation, Assimilation) and dissociative processes (Competition, Conflict), their characteristics, sociological functions, and conditions of occurrence.", "overviewMl": "സാമൂഹിക ജീവിതത്തിന്റെ ചാലകശക്തിയായ സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങളെ (Social Interaction) വിശദീകരിക്കുന്നു. യോജിപ്പുള്ള പ്രക്രിയകളും (സഹകരണം, അക്കൊമഡേഷൻ, അസിമിലേഷൻ) വിയോജിപ്പുള്ള പ്രക്രിയകളും (മത്സരം, സംഘർഷം), അവയുടെ സവിശേഷതകളും പ്രാധാന്യവും വിശകലനം ചെയ്യുന്നു.", "concepts": [{"term": "Social Interaction", "termMal": "സാമൂഹിക പ്രതിപ്രവർത്തനം", "definition": "The reciprocal influence people exert upon each other through communication and actions.", "definitionMal": "ആളുകൾ പരസ്പരം ആശയവിനിമയത്തിലൂടെയും പ്രവർത്തനങ്ങളിലൂടെയും ചെലുത്തുന്ന പരസ്പര സ്വാധീനം."}, {"term": "Accommodation", "termMal": "അക്കൊമഡേഷൻ", "definition": "A process of social adjustment that eases conflict between groups while preserving identity.", "definitionMal": "തർക്കങ്ങൾ ലഘൂകരിച്ച് ഐക്യത്തോടെ ജീവിക്കാൻ നടത്തുന്ന ക്രമീകരണം."}, {"term": "Assimilation", "termMal": "അസിമിലേഷൻ", "definition": "Cultural absorption and fusion of minority groups into the mainstream culture.", "definitionMal": "ഒരു സംസ്കാരം മറ്റൊന്നിലേക്ക് പൂർണ്ണമായി ലയിച്ചുചേരുന്ന പ്രക്രിയ."}], "takeaways": [{"en": "Remember the distinction: Cooperation, Accommodation, and Assimilation bring people together; Competition and Conflict divide.", "mal": "സഹകരണവും അക്കൊമഡേഷനും ആളുകളെ ഒന്നിപ്പിക്കുമ്പോൾ മത്സരവും സംഘർഷവും ഭിന്നതയുണ്ടാക്കുന്നു."}, {"en": "Assimilation is slow, unconscious, and permanent, whereas accommodation is conscious and often temporary.", "mal": "അസിമിലേഷൻ സാവധാനമുള്ളതും ശാശ്വതവുമായ മാറ്റമാണ്, അക്കൊമഡേഷൻ ബോധപൂർവ്വമായ താൽക്കാലിക ക്രമീകരണമാണ്."}]}, {"key": "soc_mod_3_2", "title": "Module 3 · Chapter 3.2: Social Groups: Types", "titleMl": "മൊഡ്യൂൾ 3 · അധ്യായം 3.2: സാമൂഹിക ഗ്രൂപ്പുകൾ: തരങ്ങൾ", "overview": "Comprehensive classification and structural analysis of social groups in society. Details Charles Horton Cooley's Primary and Secondary groups, W.G. Sumner's In-Group and Out-Group dichotomy, Hyman and Merton's Reference Groups, Ferdinand Tönnies' Gemeinschaft and Gesellschaft, and structural distinctions between aggregates and organized associations.", "overviewMl": "സമൂഹത്തിലെ സാമൂഹിക ഗ്രൂപ്പുകളുടെ വർഗ്ഗീകരണവും വിശകലനവും. സി. എച്ച്. കൂലിയുടെ പ്രൈമറി-സെക്കൻഡറി ഗ്രൂപ്പുകൾ, സംനറുടെ ഇൻ-ഗ്രൂപ്പ് - ഔട്ട്-ഗ്രൂപ്പ്, ഹൈമാന്റെയും മെർട്ടന്റെയും റഫറൻസ് ഗ്രൂപ്പുകൾ, ടോണീസിന്റെ ജെമിൻഷാഫ്റ്റ് - ജെസെൽഷാഫ്റ്റ്, അഗ്രിഗേറ്റുകളും ഓർഗനൈസ്ഡ് അസോസിയേഷനുകളും തമ്മിലുള്ള വ്യത്യാസങ്ങൾ വിശദീകരിക്കുന്നു.", "concepts": [{"term": "Primary Group", "termMal": "പ്രൈമറി ഗ്രൂപ്പ്", "definition": "Small, intimate, enduring social group sharing personal relationships (Cooley).", "definitionMal": "ആഴത്തിലുള്ള വ്യക്തിഗത സ്നേഹബന്ധങ്ങൾ പങ്കിടുന്ന ചെറിയ ഗ്രൂപ്പ് (കൂലി)."}, {"term": "Reference Group", "termMal": "റഫറൻസ് ഗ്രൂപ്പ്", "definition": "Any group that individuals look to for guidance, values, and identity standards (Hyman/Merton).", "definitionMal": "തങ്ങളുടെ സ്വഭാവരൂപീകരണത്തിന് ആളുകൾ മാനദണ്ഡമാക്കുന്ന ഗ്രൂപ്പ്."}, {"term": "Gemeinschaft", "termMal": "ജെമിൻഷാഫ്റ്റ്", "definition": "Traditional, close-knit, community-oriented social order bound by blood and kinship.", "definitionMal": "രക്തബന്ധത്തിലും പരമ്പരാഗത ഐക്യത്തിലും അധിഷ്ഠിതമായ ഗ്രാമീണ സമൂഹം."}], "takeaways": [{"en": "Family is the prime example of a primary group; corporations and political parties are secondary groups.", "mal": "കുടുംബം പ്രൈമറി ഗ്രൂപ്പിനും കമ്പനികളും പാർട്ടികളും സെക്കൻഡറി ഗ്രൂപ്പുകൾക്കും ഉദാഹരണമാണ്."}, {"en": "Distinguish between In-Groups (we-feeling) and Out-Groups (they-feeling), coined by W.G. Sumner.", "mal": "ഡബ്ല്യു. ജി. സംനർ അവതരിപ്പിച്ച ഇൻ-ഗ്രൂപ്പ് (ഞങ്ങൾ), ഔട്ട്-ഗ്രൂപ്പ് (അവർ) എന്നിവ തമ്മിലുള്ള വ്യത്യാസം പഠിക്കുക."}]}, {"key": "soc_mod_3_3", "title": "Module 3 · Chapter 3.3: Socialization: Definition and Types", "titleMl": "മൊഡ്യൂൾ 3 · അധ്യായം 3.3: സോഷ്യലൈസേഷൻ: നിർവ്വചനവും തരങ്ങളും", "overview": "Analysis of socialization as the lifelong transformative process through which a biological human infant is transformed into an active social person. Covers definition, functions, primary, secondary, developmental, anticipatory socialization, and resocialization in total institutions.", "overviewMl": "ഒരു ജൈവിക ശിശുവിനെ പൂർണ്ണ സാമൂഹിക ജീവിയാക്കി മാറ്റുന്ന ആയുഷ്കാല പ്രക്രിയയായ സോഷ്യലൈസേഷന്റെ വിശകലനം. നിർവ്വചനം, പ്രവർത്തനങ്ങൾ, പ്രൈമറി, സെക്കൻഡറി, ആന്റിസിപ്പേറ്ററി സോഷ്യലൈസേഷൻ, റീ-സോഷ്യലൈസേഷൻ എന്നിവ വിശദീകരിക്കുന്നു.", "concepts": [{"term": "Socialization", "termMal": "സോഷ്യലൈസേഷൻ", "definition": "The lifelong process by which individuals internalize societal culture and develop their human potential.", "definitionMal": "വ്യക്തികൾ സാമൂഹിക സംസ്കാരം ഉൾക്കൊണ്ട് തങ്ങളുടെ വ്യക്തിത്വം വികസിപ്പിച്ചെടുക്കുന്ന ജീവിതകാല പ്രക്രിയ."}, {"term": "Anticipatory Socialization", "termMal": "ആന്റിസിപ്പേറ്ററി സോഷ്യലൈസേഷൻ", "definition": "Learning the values and roles of a future desired group to facilitate integration (Robert Merton).", "definitionMal": "ഒരു പുതിയ ഗ്രൂപ്പിൽ ചേരുന്നതിന് മുന്നോടിയായി അവരുടെ സ്വഭാവരീതികൾ മുൻകൂട്ടി പരിശീലിക്കൽ."}, {"term": "Resocialization", "termMal": "റീ-സോഷ്യലൈസേഷൻ", "definition": "Disruptive dismantling of old identity and installation of new behavioral patterns.", "definitionMal": "പഴയ വ്യക്തിത്വത്തെ മാറ്റി പൂർണ്ണമായി പുതിയൊരു സ്വഭാവരീതി വളർത്തിയെടുക്കൽ."}], "takeaways": [{"en": "Primary socialization occurs in early childhood via family; secondary occurs outside the home.", "mal": "പ്രൈമറി സോഷ്യലൈസേഷൻ കുട്ടിക്കാലത്ത് കുടുംബത്തിലൂടെ നടക്കുമ്പോൾ സെക്കൻഡറി വീടിന് പുറത്ത് നടക്കുന്നു."}, {"en": "Anticipatory socialization is conceptualized by Robert K. Merton; resocialization takes place in total institutions.", "mal": "ആന്റിസിപ്പേറ്ററി സോഷ്യലൈസേഷൻ മെർട്ടന്റെ സംഭാവനയാണ്; റീ-സോഷ്യലൈസേഷൻ നടക്കുന്നത് ജയിൽ, മിലിട്ടറി തുടങ്ങിയ ഇടങ്ങളിലാണ്."}]}, {"key": "soc_mod_3_4", "title": "Module 3 · Chapter 3.4: Agents of Socialization", "titleMl": "മൊഡ്യൂൾ 3 · അധ്യായം 3.4: സോഷ്യലൈസേഷന്റെ മാധ്യമങ്ങൾ", "overview": "Explores the fundamental institutional agencies responsible for transmitting norms, skills, values, and cultural habits across generations. Details the roles of the Family (primary foundational agency), Peer Groups (egalitarian socialization), Schools (formal curriculum and hidden curriculum), Mass Media & Digital Networks, Religion, and the Workplace.", "overviewMl": "തലമുറകളിലൂടെ സംസ്കാരവും മൂല്യങ്ങളും കൈമാറുന്ന പ്രധാന മാധ്യമങ്ങളെ (Agents of Socialization) അപഗ്രഥിക്കുന്നു. കുടുംബം (പ്രഥമ മാധ്യമം), സമപ്രായക്കാരുടെ കൂട്ടായ്മ, വിദ്യാലയങ്ങൾ (ഔദ്യോഗികവും മറഞ്ഞിരിക്കുന്നതുമായ സിലബസ്), മാധ്യമങ്ങൾ, മതം, തൊഴിലിടം എന്നിവയുടെ പങ്ക് വിശദീകരിക്കുന്നു.", "concepts": [{"term": "Hidden Curriculum", "termMal": "മറഞ്ഞിരിക്കുന്ന സിലബസ്", "definition": "Unwritten, unofficial lessons and values taught informally in schools (discipline, hierarchy).", "definitionMal": "സ്കൂളുകളിൽ ഔദ്യോഗിക പുസ്തകങ്ങൾക്ക് പുറമെ അച്ചടക്കവും അനുസരണയും പഠിപ്പിക്കുന്ന അദൃശ്യ രീതികൾ."}, {"term": "Primary Agency", "termMal": "പ്രഥമ മാധ്യമം", "definition": "The family as the foundational environment where initial personality is molded.", "definitionMal": "കുട്ടിയുടെ ആദ്യ വ്യക്തിത്വ രൂപീകരണം നടക്കുന്ന കുടുംബം."}, {"term": "Media Socialization", "termMal": "മാധ്യമ സോഷ്യലൈസേഷൻ", "definition": "The shaping of values, beliefs, and behaviors through digital and broadcast information.", "definitionMal": "ടിവി, ഇന്റർനെറ്റ്, പത്രങ്ങൾ എന്നിവയിലൂടെ ചിന്തകളെ രൂപപ്പെടുത്തുന്ന പ്രക്രിയ."}], "takeaways": [{"en": "Family is the primary, universal agent of early childhood socialization.", "mal": "ശൈശവത്തിലെ സോഷ്യലൈസേഷന്റെ സാർവ്വത്രികമായ പ്രഥമ മാധ്യമം കുടുംബമാണ്."}, {"en": "Schools teach not only formal academic subjects but also the 'hidden curriculum' of discipline, punctuality, and social hierarchy.", "mal": "സ്കൂളുകൾ സിലബസിനൊപ്പം 'ഹിഡൻ കരിക്കുല'ത്തിലൂടെ അച്ചടക്കവും കൃത്യനിഷ്ഠയും പഠിപ്പിക്കുന്നു."}]}, {"key": "soc_mod_3_5", "title": "Module 3 · Chapter 3.5: Stages of Socialization", "titleMl": "മൊഡ്യൂൾ 3 · അധ്യായം 3.5: സോഷ്യലൈസേഷന്റെ ഘട്ടങ്ങൾ", "overview": "Examines developmental theories of human socialization across the life course. Details Sigmund Freud's psychoanalytic model (Id, Ego, Superego; Oral, Anal, Phallic, Oedipus/Electra complex, Latency, Genital stages), George Herbert Mead's social self (Imitation, Play, and Game stages; 'I' and 'Me'; Generalized Other), and Jean Piaget's cognitive development.", "overviewMl": "മനുഷ്യന്റെ സോഷ്യലൈസേഷൻ ഘട്ടങ്ങളെക്കുറിച്ചുള്ള വികസന സിദ്ധാന്തങ്ങൾ. സിഗ്മണ്ട് ഫ്രോയിഡിന്റെ സിദ്ധാന്തം (ഇഡ്, ഈഗോ, സൂപ്പർ ഈഗോ; ഈഡിപ്പസ്/ഇലക്ട്ര കോംപ്ലക്സ്, വിവിധ ഘട്ടങ്ങൾ), ജി. എച്ച്. മീഡിന്റെ 'സെൽഫ്' സിദ്ധാന്തം (അനുകരണം, പ്ലേ സ്റ്റേജ്, ഗെയിം സ്റ്റേജ്, 'ഐ' - 'മീ', ജനറലൈസ്ഡ് അദർ), ജീൻ പിയാഷെയുടെ വിജ്ഞാന വികാസ ഘട്ടങ്ങൾ എന്നിവ വിശദീകരിക്കുന്നു.", "concepts": [{"term": "Generalized Other", "termMal": "ജനറലൈസ്ഡ് അദർ", "definition": "Internalized attitudes, expectations, and demands of the larger community as a whole (Mead).", "definitionMal": "സമൂഹം മുഴുവൻ തന്നിൽ നിന്ന് എന്താണ് പ്രതീക്ഷിക്കുന്നത് എന്നതിനെക്കുറിച്ചുള്ള പൊതുബോധം (മീഡ്)."}, {"term": "'I' and 'Me'", "termMal": "'ഐ' യും 'മീ' യും", "definition": "Mead's dual components of self: 'I' is spontaneous agency; 'Me' is socialized conscience.", "definitionMal": "മീഡിന്റെ രണ്ട് ഘടകങ്ങൾ: 'ഐ' വ്യക്തിഗത ചോദനയും, 'മീ' സമൂഹം പഠിപ്പിച്ച മൂല്യങ്ങളുമാണ്."}, {"term": "Superego", "termMal": "സൂപ്പർ ഈഗോ", "definition": "The moral arm of personality embodying parents' and society's moral prohibitions (Freud).", "definitionMal": "ശരിതെറ്റുകളെ നിയന്ത്രിക്കുന്ന ആന്തരിക മനസ്സാക്ഷി (ഫ്രോയിഡ്)."}], "takeaways": [{"en": "Remember Mead's progression: Imitation -> Play stage -> Game stage ('Generalized Other').", "mal": "മീഡിന്റെ ക്രമം ഓർക്കുക: അനുകരണം -> പ്ലേ സ്റ്റേജ് -> ഗെയിം സ്റ്റേജ് (ജനറലൈസ്ഡ് അദർ)."}, {"en": "In Freud's model, the Oedipus complex occurs in the Phallic stage; Superego represents internalized social control.", "mal": "ഫ്രോയിഡിന്റെ ഫാലിക് ഘട്ടത്തിലാണ് ഈഡിപ്പസ് കോംപ്ലക്സ് ഉണ്ടാകുന്നത്; സൂപ്പർ ഈഗോ എന്നാൽ സാമൂഹിക നിയന്ത്രണമാണ്."}]}, {"key": "soc_mod_3_6", "title": "Module 3 · Chapter 3.6: Social Control: Types and Agencies", "titleMl": "മൊഡ്യൂൾ 3 · അധ്യായം 3.6: സാമൂഹിക നിയന്ത്രണം: തരങ്ങളും ഏജൻസികളും", "overview": "Comprehensive analysis of social control mechanisms essential for maintaining social order and equilibrium. Traces E.A. Ross's foundational sociology of order, distinguishes formal control (written laws, courts, police, prisons) from informal control (folkways, mores, customs, family, religion, public opinion), and examines positive and negative sanctions.", "overviewMl": "സമൂഹത്തിൽ ക്രമസമാധാനവും സ്ഥിരതയും നിലനിർത്താൻ ആവശ്യമായ സാമൂഹിക നിയന്ത്രണ സംവിധാനങ്ങളുടെ വിശകലനം. ഇ. എ. റോസിന്റെ സിദ്ധാന്തം, ഔപചാരിക നിയന്ത്രണം (നിയമങ്ങൾ, കോടതി, പോലീസ്), അനൗപചാരിക നിയന്ത്രണം (ആചാരങ്ങൾ, ഫോക്ക്വേസ്, മോർസ്, കുടുംബം, പൊതുജനാഭിപ്രായം), പോസിറ്റീവ് - നെഗറ്റീവ് സാങ്ഷനുകൾ എന്നിവ വിശദീകരിക്കുന്നു.", "concepts": [{"term": "Social Control", "termMal": "സാമൂഹിക നിയന്ത്രണം", "definition": "The system of measures society employs to regulate members' behavior and maintain equilibrium.", "definitionMal": "ക്രമസമാധാനം കാത്തുസൂക്ഷിക്കാൻ സമൂഹം ഉപയോഗിക്കുന്ന നിയന്ത്രണ സംവിധാനം."}, {"term": "Folkways vs Mores", "termMal": "ഫോക്ക്വേസും മോർസും", "definition": "Sumner's distinction: Folkways are customary conventions; Mores are strict moral imperatives essential for welfare.", "definitionMal": "ദൈനംദിന ശീലങ്ങളാണ് ഫോക്ക്വേസ്; സമൂഹത്തിന്റെ നിലനിൽപ്പിന് നിർബന്ധമായ സദാചാര നിയമങ്ങളാണ് മോർസ്."}, {"term": "Sanctions", "termMal": "സാങ്ഷനുകൾ", "definition": "Social reactions of approval or disapproval applied to enforce norms.", "definitionMal": "നിയമങ്ങൾ അനുസരിക്കാൻ പ്രേരിപ്പിക്കുന്ന അംഗീകാരങ്ങളും ശിക്ഷകളും."}], "takeaways": [{"en": "E.A. Ross coined and established Social Control (1901).", "mal": "സോഷ്യൽ കൺട്രോൾ എന്ന ആശയം അവതരിപ്പിച്ചത് ഇ. എ. റോസ് ആണ് (1901)."}, {"en": "State and police represent formal control; family, customs, and mores represent informal control.", "mal": "പോലീസും നിയമവും ഔപചാരിക നിയന്ത്രണവും, കുടുംബവും ആചാരങ്ങളും അനൗപചാരിക നിയന്ത്രണവുമാണ്."}]}, {"key": "soc_mod_4_1", "title": "Module 4 · Chapter 4.1: Society: Characteristics and Types", "titleMl": "മൊഡ്യൂൾ 4 · അധ്യായം 4.1: സമൂഹം: സവിശേഷതകളും തരങ്ങളും", "overview": "Comprehensive exploration of human society: etymology (Latin 'socius'), classical definitions (MacIver & Page's 'web of social relationships'), core characteristics (likeness, difference, interdependence, cooperation), and historical evolutionary typology spanning Hunting-Gathering, Pastoral, Horticultural, Agrarian, Industrial, and Post-Industrial Information societies.", "overviewMl": "മനുഷ്യ സമൂഹത്തെക്കുറിച്ചുള്ള സമഗ്ര പഠനം: ഉത്ഭവം (ലത്തീൻ പദമായ 'സോഷ്യസ്'), മക്കൈവർ & പേജിന്റെ 'സാമൂഹിക ബന്ധങ്ങളുടെ വല' എന്ന നിർവ്വചനം, സവിശേഷതകൾ (സാദൃശ്യം, വൈവിധ്യം, പരസ്പരാശ്രയത്വം), ചരിത്രപരമായ പരിണാമ ഘട്ടങ്ങൾ (വേട്ടയാടൽ, കാർഷിക, വ്യാവസായിക, പോസ്റ്റ്-ഇൻഡസ്ട്രിയൽ വിവര സാങ്കേതിക സമൂഹം).", "concepts": [{"term": "Web of Social Relationships", "termMal": "സാമൂഹിക ബന്ധങ്ങളുടെ വല", "definition": "MacIver's definition highlighting the dynamic, intangible network connecting all people.", "definitionMal": "ആളുകളെ തമ്മിൽ പരസ്പരം ബന്ധിപ്പിക്കുന്ന അദൃശ്യവും ചലനാത്മകവുമായ ബന്ധങ്ങളുടെ ശൃംഖല."}, {"term": "Agrarian Society", "termMal": "കാർഷിക സമൂഹം", "definition": "A society whose economy is fundamentally based on producing and maintaining crops and farmland.", "definitionMal": "കൃഷിയും ഭൂമിയും അടിസ്ഥാനമാക്കിയുള്ള ഉപജീവന വ്യവസ്ഥ."}, {"term": "Post-Industrial Society", "termMal": "പോസ്റ്റ്-ഇൻഡസ്ട്രിയൽ സമൂഹം", "definition": "A society transitioning from goods production to service and knowledge production (Daniel Bell).", "definitionMal": "വസ്തുക്കളുടെ ഉൽപ്പാദനത്തിൽ നിന്ന് വിവരങ്ങളുടെയും സേവനങ്ങളുടെയും ഉൽപ്പാദനത്തിലേക്ക് മാറിയ ആധുനിക സമൂഹം."}], "takeaways": [{"en": "MacIver defined society as 'a web of social relationships'.", "mal": "സമൂഹം എന്നാൽ 'സാമൂഹിക ബന്ധങ്ങളുടെ വല'യാണെന്ന് മക്കൈവർ നിർവ്വചിച്ചു."}, {"en": "Industrial society is defined by factory production; Post-Industrial society by information technology and knowledge services.", "mal": "വ്യാവസായിക സമൂഹം ഫാക്ടറി ഉൽപ്പാദനത്തിലും പോസ്റ്റ്-ഇൻഡസ്ട്രിയൽ സമൂഹം വിവരസാങ്കേതികവിദ്യയിലും അധിഷ്ഠിതമാണ്."}]}, {"key": "soc_mod_4_2", "title": "Module 4 · Chapter 4.2: Social Institutions", "titleMl": "മൊഡ്യൂൾ 4 · അധ്യായം 4.2: സാമൂഹിക സ്ഥാപനങ്ങൾ", "overview": "Rigorous sociological analysis of social institutions as organized, stable, enduring patterns of social relationships designed to fulfill basic human needs. Covers definition (Sumner, MacIver), primary characteristics, manifest vs latent functions, and the five fundamental social institutions: Family, Marriage, Kinship, Economy, Polity, and Religion.", "overviewMl": "അടിസ്ഥാന മനുഷ്യ ആവശ്യങ്ങൾ നിറവേറ്റുന്നതിനായി സമൂഹം ചിട്ടപ്പെടുത്തിയിട്ടുള്ള സാമൂഹിക സ്ഥാപനങ്ങളെക്കുറിച്ചുള്ള (Social Institutions) വിശദമായ പഠനം. നിർവ്വചനം, സവിശേഷതകൾ, മാനിഫെസ്റ്റ്-ലേറ്റന്റ് ധർമ്മങ്ങൾ, അഞ്ച് പ്രധാന സ്ഥാപനങ്ങൾ (കുടുംബം, വിവാഹം, ബന്ധുത്വം, സമ്പദ്‌വ്യവസ്ഥ, രാഷ്ട്രീയം, മതം) എന്നിവ വിശകലനം ചെയ്യുന്നു.", "concepts": [{"term": "Social Institution", "termMal": "സാമൂഹിക സ്ഥാപനം", "definition": "An organized system of social relationships embodying common values and procedures meeting human needs.", "definitionMal": "സമൂഹത്തിന്റെ സുപ്രധാന ആവശ്യങ്ങൾ നിറവേറ്റുന്നതിനായി ക്രമീകരിക്കപ്പെട്ടിട്ടുള്ള സാമൂഹിക ബന്ധങ്ങളുടെ ഘടന."}, {"term": "Enacted Institutions", "termMal": "എനാക്റ്റഡ് ഇൻസ്റ്റിറ്റ്യൂഷനുകൾ", "definition": "Institutions intentionally created through formal law and planning (e.g. universities, stock exchanges, constitutions).", "definitionMal": "ബോധപൂർവ്വമായ നിയമനിർമ്മാണത്തിലൂടെയും ആസൂത്രണത്തിലൂടെയും സൃഷ്ടിക്കപ്പെട്ട സ്ഥാപനങ്ങൾ."}, {"term": "Crescive Institutions", "termMal": "ക്രെസീവ് ഇൻസ്റ്റിറ്റ്യൂഷനുകൾ", "definition": "Institutions that develop spontaneously and unconsciously out of mores over time (e.g. family, property, marriage).", "definitionMal": "കാലക്രമേണ ആചാരങ്ങളിൽ നിന്നും ശീലങ്ങളിൽ നിന്നും സ്വാഭാവികമായി രൂപപ്പെട്ടുവന്ന പരമ്പരാഗത സ്ഥാപനങ്ങൾ."}], "takeaways": [{"en": "Distinguish between Crescive (unconscious customary origins like family) and Enacted (deliberately planned like state laws).", "mal": "സ്വാഭാവികമായി ഉണ്ടായ ക്രെസീവ് സ്ഥാപനങ്ങളും (കുടുംബം) നിയമങ്ങളിലൂടെ ഉണ്ടായ എനാക്റ്റഡ് സ്ഥാപനങ്ങളും തമ്മിലുള്ള വ്യത്യാസം പഠിക്കുക."}, {"en": "Institutions exist to satisfy basic societal needs: order (polity), sustenance (economy), reproduction (family).", "mal": "ക്രമം (ഭരണകൂടം), ഭക്ഷണം (സമ്പദ്‌വ്യവസ്ഥ), നിലനിൽപ്പ് (കുടുംബം) എന്നീ ആവശ്യങ്ങൾ നിറവേറ്റാനാണ് സ്ഥാപനങ്ങൾ ഉള്ളത്."}]}, {"key": "soc_mod_4_3", "title": "Module 4 · Chapter 4.3: Social Structure: Status and Role", "titleMl": "മൊഡ്യൂൾ 4 · അധ്യായം 4.3: സാമൂഹിക ഘടന: പദവിയും പങ്കും", "overview": "Detailed exploration of the building blocks of social structure. Analyzes the concept of Status (Ascribed vs Achieved, Status Set, Master Status) formulated by Ralph Linton, and Role (Role Performance, Role Set, Role Conflict, Role Strain) analyzed by Robert K. Merton and Erving Goffman.", "overviewMl": "സാമൂഹിക ഘടനയുടെ അടിസ്ഥാന ശിലകളായ പദവിയും (Status) പങ്കും (Role) വിശദീകരിക്കുന്ന സമഗ്ര പഠനം. റാൽഫ് ലിന്റന്റെ വർഗ്ഗീകരണം (ജന്മസിദ്ധ പദവി, ആർജ്ജിത പദവി, മാസ്റ്റർ സ്റ്റാറ്റസ്), റോബർട്ട് കെ. മെർട്ടന്റെ റോൾ സെറ്റ്, റോൾ കോൺഫ്ലിക്റ്റ്, റോൾ സ്ട്രെയിൻ എന്നിവ വിശകലനം ചെയ്യുന്നു.", "concepts": [{"term": "Ascribed Status", "termMal": "ജന്മസിദ്ധ പദവി", "definition": "A social position conferred at birth or involuntarily based on inherited attributes (Linton).", "definitionMal": "ജനനം കൊണ്ട് വ്യക്തിക്ക് ലഭിക്കുന്ന മാറ്റാൻ കഴിയാത്ത പദവി."}, {"term": "Achieved Status", "termMal": "ആർജ്ജിത പദവി", "definition": "A social position acquired through personal effort, qualifications, and choices.", "definitionMal": "സ്വന്തം കഴിവും പ്രയത്നവും കൊണ്ട് നേടിയെടുക്കുന്ന പദവി."}, {"term": "Role Conflict", "termMal": "റോൾ കോൺഫ്ലിക്റ്റ്", "definition": "Clash between expectations of two or more distinct social positions occupied by one individual.", "definitionMal": "രണ്ട് വ്യത്യസ്ത പദവികളിലെ ആവശ്യങ്ങൾ പരസ്പരം ഏറ്റുമുട്ടുമ്പോൾ ഉണ്ടാകുന്ന സംഘർഷം."}], "takeaways": [{"en": "Remember: Status is occupied (position); Role is played (action/behavior).", "mal": "പദവി (Status) എന്നത് വഹിക്കുന്ന സ്ഥാനമാണ്; റോൾ (Role) എന്നത് പ്രവർത്തിക്കുന്ന പങ്കാണ്."}, {"en": "Ralph Linton distinguished Ascribed vs Achieved status; Robert Merton formulated the 'Role Set'.", "mal": "റാൽഫ് ലിന്റൺ പദവികളെയും, റോബർട്ട് മെർട്ടൺ റോൾ സെറ്റിനെയും പരിചയപ്പെടുത്തി."}]}, {"key": "soc_mod_4_4", "title": "Module 4 · Chapter 4.4: Social Change: Factors", "titleMl": "മൊഡ്യൂൾ 4 · അധ്യായം 4.4: സാമൂഹിക മാറ്റം: ഘടകങ്ങൾ", "overview": "Comprehensive exploration of social change: definitions, universal characteristics, and multi-causal drivers. Analyzes William F. Ogburn's Theory of Cultural Lag (Material vs Non-Material culture), technological innovations, demographic/biological shifts, environmental disruptions, and economic/cultural factors in transforming human civilizations.", "overviewMl": "സാമൂഹിക മാറ്റത്തെക്കുറിച്ചുള്ള (Social Change) വിശദമായ പഠനം: നിർവ്വചനം, സാർവ്വത്രിക സവിശേഷതകൾ, പ്രധാന കാരണങ്ങൾ. വില്യം എഫ്. ഒഗ്ബേണിന്റെ 'കൾച്ചറൽ ലാഗ്' (ഭൗതിക - അഭൗതിക സംസ്കാരങ്ങൾ തമ്മിലുള്ള വിടവ്), സാങ്കേതിക കണ്ടുപിടുത്തങ്ങൾ, ജനസംഖ്യാ വ്യതിയാനങ്ങൾ, പരിസ്ഥിതി-സാമ്പത്തിക മാറ്റങ്ങൾ എന്നിവ വിശകലനം ചെയ്യുന്നു.", "concepts": [{"term": "Cultural Lag", "termMal": "കൾച്ചറൽ ലാഗ്", "definition": "The maladjustment gap when non-material culture trails behind rapid material technology (Ogburn).", "definitionMal": "ഭൗതിക സാങ്കേതികവിദ്യയുടെ വളർച്ചയ്ക്കൊപ്പം ചിന്തകളും നിയമങ്ങളും വളരാതെ വരുമ്പോൾ ഉണ്ടാകുന്ന വിടവ് (ഒഗ്ബേൺ)."}, {"term": "Diffusion", "termMal": "സാംസ്കാരിക വ്യാപനം (Diffusion)", "definition": "The spread of cultural beliefs, technologies, and social activities from one group to another.", "definitionMal": "ഒരു സമൂഹത്തിൽ നിന്ന് മറ്റൊരു സമൂഹത്തിലേക്ക് പുതിയ ആശയങ്ങളും സാങ്കേതികവിദ്യകളും പടരുന്ന പ്രക്രിയ."}, {"term": "Evolution vs Revolution", "termMal": "പരിണാമവും വിപ്ലവവും", "definition": "Evolution is slow, gradual organic change; Revolution is sudden, radical structural rupture.", "definitionMal": "പരിണാമം സാവധാനത്തിലുള്ള തുടർച്ചയായ മാറ്റമാണ്; വിപ്ലവം പെട്ടെന്നുള്ള സമൂല പരിവർത്തനമാണ്."}], "takeaways": [{"en": "William F. Ogburn formulated the Theory of Cultural Lag in 1922.", "mal": "1922-ൽ വില്യം എഫ്. ഒഗ്ബേൺ ആണ് കൾച്ചറൽ ലാഗ് തിയറി അവതരിപ്പിച്ചത്."}, {"en": "Material culture changes faster than non-material culture (customs, laws, ethics), causing cultural lag.", "mal": "ഭൗതിക സാങ്കേതികവിദ്യകൾ നിയമങ്ങളെക്കാളും ആചാരങ്ങളെക്കാളും വേഗത്തിൽ മാറുന്നതാണ് കൾച്ചറൽ ലാഗിന് കാരണം."}]}, {"key": "soc_mod_5", "title": "Module 5 · Perceiving Social Dynamics: Assignment Instructions", "titleMl": "മൊഡ്യൂൾ 5 · സോഷ്യൽ ഡൈനാമിക്സ് തിരിച്ചറിയൽ: അസൈൻമെന്റ് മാർഗ്ഗനിർദ്ദേശങ്ങൾ", "overview": "Guidelines for undergraduate internal assessment, empirical fieldwork, and practical sociological inquiry under the Calicut University FYUGP curriculum. Details steps for field observations, choosing localized social themes (gender, environment, aging, education, labor), questionnaire formulation, data collection, ethical considerations, and structuring formal academic project reports.", "overviewMl": "കാലിക്കറ്റ് സർവ്വകലാശാല FYUGP സിലബസ് പ്രകാരമുള്ള ബിരുദ ഇന്റേണൽ അസസ്സ്മെന്റ്, പ്രായോഗിക ഫീൽഡ് വർക്ക്, സോഷ്യോളജിക്കൽ അന്വേഷണ മാർഗ്ഗനിർദ്ദേശങ്ങൾ. ഫീൽഡ് നിരീക്ഷണ ഘട്ടങ്ങൾ, വിഷയ തെരഞ്ഞെടുപ്പ് (ലിംഗപദവി, പരിസ്ഥിതി, വാർദ്ധക്യം, തൊഴിൽ), ചോദ്യാവലി തയ്യാറാക്കൽ, ഡാറ്റ ശേഖരണം, ഗവേഷണ ധാർമ്മികത, അന്തിമ റിപ്പോർട്ട് തയ്യാറാക്കൽ എന്നിവ വിശദീകരിക്കുന്നു.", "concepts": [{"term": "Empirical Fieldwork", "termMal": "പ്രായോഗിക ഫീൽഡ് വർക്ക്", "definition": "Direct, firsthand observation and collection of social data in the natural community setting.", "definitionMal": "ക്ലാസ് മുറിക്ക് പുറത്ത് സമൂഹത്തിൽ നേരിട്ട് ചെന്ന് വിവരങ്ങൾ ശേഖരിക്കുന്ന രീതി."}, {"term": "Informed Consent", "termMal": "അറിവോടെയുള്ള സമ്മതം", "definition": "Voluntary agreement of research participants based on clear understanding of study aims and privacy safeguards.", "definitionMal": "പങ്കെടുക്കുന്ന ആളുകളുടെ സമ്മതവും അവരുടെ വിവരങ്ങളുടെ രഹസ്യസ്വഭാവവും ഉറപ്പാക്കൽ."}, {"term": "Sociological Inquiry", "termMal": "സോഷ്യോളജിക്കൽ അന്വേഷണം", "definition": "Systematic scientific investigation into real-world social problems through theoretical frameworks.", "definitionMal": "സാമൂഹിക പ്രശ്നങ്ങളെ ശാസ്ത്രീയമായി പരിശോധിച്ച് പരിഹാരങ്ങൾ നിർദ്ദേശിക്കുന്ന രീതി."}], "takeaways": [{"en": "Module 5 connects classroom sociology theory with hands-on community fieldwork.", "mal": "തിയറി പഠനത്തെ യഥാർത്ഥ സമൂഹവുമായി നേരിട്ട് ബന്ധിപ്പിക്കുന്നതാണ് മൊഡ്യൂൾ 5."}, {"en": "Essential ethics in fieldwork: participant informed consent, anonymity, and factual objectivity.", "mal": "ഫീൽഡ് വർക്കിലെ പ്രധാന ധാർമ്മികത: ആളുകളുടെ സമ്മതം വാങ്ങൽ, വിവരങ്ങളുടെ രഹസ്യസ്വഭാവം, സത്യസന്ധത."}]}];
 const revisionNotes = byId('revision-scroll');
-const existingNotes = [...revisionNotes.children];
-const tipCards = detailedExplanations.map(([en, ml], id) => {
-  const card = add(revisionNotes, 'article', '');
-  const heading = add(card, 'h3', 'Module ' + revisionModules[id] + ' · ');
-  add(heading, 'span', 'മോഡ്യൂൾ ' + revisionModules[id]).lang = 'ml';
-  add(card, 'p', en).lang = 'en';
-  add(card, 'p', ml).lang = 'ml';
-  return card;
+revisionNotes.replaceChildren();
+
+// Render all comprehensive modules and chapters
+moduleKnowledgeCards.forEach((mod, idx) => {
+  const article = add(revisionNotes, 'article', '');
+  const h3 = add(article, 'h3', mod.title);
+  if (mod.titleMl) {
+    const subMl = add(article, 'div', mod.titleMl, 'sub-ml');
+    subMl.lang = 'ml';
+  }
+  if (mod.overview) {
+    const pEn = add(article, 'p', mod.overview);
+    pEn.lang = 'en';
+  }
+  if (mod.overviewMl) {
+    const pMl = add(article, 'p', mod.overviewMl);
+    pMl.lang = 'ml';
+    pMl.style.color = '#15803d';
+  }
+  if (mod.concepts && mod.concepts.length) {
+    mod.concepts.forEach(c => {
+      const cBox = add(article, 'div', '', 'concept-box');
+      cBox.innerHTML = '<strong>' + (c.term || '') + ' (' + (c.termMal || '') + '):</strong> ' +
+        (c.definition || '') + '<br><span lang="ml" style="color:#166534;">' + (c.definitionMal || '') + '</span>';
+    });
+  }
+  if (mod.takeaways && mod.takeaways.length) {
+    mod.takeaways.forEach(t => {
+      const tBox = add(article, 'div', '', 'takeaway-box');
+      tBox.innerHTML = '<strong>💡 Key Takeaway:</strong> ' + (t.en || '') +
+        '<div lang="ml" style="margin-top:4px;">' + (t.mal || '') + '</div>';
+    });
+  }
 });
-const deck = [...existingNotes, ...tipCards];
-let remainingTips = [], lastTip;
-function nextTip() {
-  if (!remainingTips.length) remainingTips = [...deck];
-  const choices = remainingTips.filter(card => card !== lastTip);
-  const card = (choices.length ? choices : remainingTips)[Math.floor(Math.random() * (choices.length || remainingTips.length))];
-  remainingTips.splice(remainingTips.indexOf(card), 1);
-  lastTip = card;
-  byId('revision-tip').replaceChildren(card.cloneNode(true));
-}
-byId('revision-next').onclick = nextTip;
-nextTip();
+
+// Autoscroll & Controls
 const notes = revisionNotes;
 const toggleNotes = byId('revision-toggle');
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
 let notesPaused = reduceMotion.matches;
 let notesHovered = false;
-toggleNotes.hidden = false;
+
 function updateNotesButton() {
-  toggleNotes.textContent = notesPaused ? 'Play scrolling / സ്ക്രോൾ തുടങ്ങുക' : 'Pause scrolling / സ്ക്രോൾ നിർത്തുക';
+  toggleNotes.textContent = notesPaused ? '▶ Play auto-scroll / സ്ക്രോൾ തുടങ്ങുക' : '⏸ Pause auto-scroll / സ്ക്രോൾ നിർത്തുക';
 }
 updateNotesButton();
 toggleNotes.onclick = () => { notesPaused = !notesPaused; updateNotesButton(); };
+
+byId('revision-next').onclick = () => {
+  const articles = [...notes.querySelectorAll('article')];
+  if (!articles.length) return;
+  const currentTop = notes.scrollTop;
+  const nextArt = articles.find(a => a.offsetTop > currentTop + 30);
+  if (nextArt) {
+    notes.scrollTo({ top: nextArt.offsetTop - 10, behavior: 'smooth' });
+  } else {
+    notes.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+};
+
 notes.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') notesHovered = true; });
 notes.addEventListener('pointerleave', () => { notesHovered = false; });
 notes.addEventListener('touchstart', () => { notesPaused = true; updateNotesButton(); }, {passive:true});
+
 setInterval(() => {
   if (notesPaused || notesHovered || notes.contains(document.activeElement) || document.hidden || byId('revision').hidden) return;
   const bottom = notes.scrollHeight - notes.clientHeight;
-  if (bottom > 0) notes.scrollTop = notes.scrollTop >= bottom - 1 ? 0 : notes.scrollTop + 1;
-}, 85);
+  if (bottom > 0) {
+    notes.scrollTop = notes.scrollTop >= bottom - 1 ? 0 : notes.scrollTop + 1;
+  }
+}, 70);
 </script>
 </html>
