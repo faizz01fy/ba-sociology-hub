@@ -21,7 +21,8 @@ async function sessionProof(secret, expires) {
   }
 }
 
-const unlockPage = `<!doctype html>
+function renderUnlockPage(formAction, errorHtml = '') {
+  return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Calicut University FYUGP | Academic Hub</title>
@@ -44,14 +45,15 @@ a:hover{text-decoration:underline}
 <small style="color:#086454;font-weight:700;text-transform:uppercase;letter-spacing:0.08em">Protected FYUGP Section</small>
 <h1>Calicut University FYUGP</h1>
 <p>Enter the student password to access IMA DS Semester 1 English VAP Quiz.</p>
-<!-- FEEDBACK -->
-<form method="post" action="${fyugpQuizPath}">
+${errorHtml}
+<form method="post" action="${formAction}">
 <label for="password" style="font-weight:600;font-size:0.9rem;color:#153236">Access Password</label>
 <input id="password" type="password" name="password" inputmode="numeric" autocomplete="current-password" maxlength="64" placeholder="Enter password (e.g. 1234)" required>
 <button type="submit">Unlock FYUGP Section</button>
 </form>
 <div style="text-align:center;margin-top:16px"><a href="/">← Back to Academic Hub</a></div>
 </main></body></html>`;
+}
 
 const semesterPage = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
@@ -150,9 +152,7 @@ export async function handleFyugpQuiz(request, env, equals) {
     }
     const password = new URLSearchParams(body + decoder.decode()).get('password');
     if (!equals(password, targetPassword)) {
-      const renderedUnlock = unlockPage
-        .replace('${fyugpQuizPath}', unlockFormAction)
-        .replace('<!-- FEEDBACK -->', '<p role="alert">Incorrect password. Try entering 1234.</p>');
+      const renderedUnlock = renderUnlockPage(unlockFormAction, '<p role="alert">Incorrect password. Try entering 1234.</p>');
       return new Response(renderedUnlock, {status:403, headers});
     }
     const expires = now + sessionSeconds;
@@ -168,7 +168,7 @@ export async function handleFyugpQuiz(request, env, equals) {
   }
   const session = (request.headers.get('Cookie') || '').match(/(?:^|;\s*)__Host-fyugp_quiz=(\d{1,12})\.([a-f0-9]{64})(?:;|$)/);
   if (!session || Number(session[1]) <= now || !equals(session[2], await sessionProof(signingSecret, session[1]))) {
-    const renderedUnlock = unlockPage.replace('${fyugpQuizPath}', unlockFormAction);
+    const renderedUnlock = renderUnlockPage(unlockFormAction);
     return new Response(request.method === 'HEAD' ? null : renderedUnlock, {headers});
   }
   if (request.method === 'HEAD') return new Response(null, {headers});

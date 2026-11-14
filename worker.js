@@ -1756,27 +1756,27 @@ function adminPage(authorized, initialData = null) {
 
   const styles = `
 :root {
-  --bg-core: #060912;
-  --bg-surface: #0c1424;
-  --bg-surface-elevated: #142036;
-  --bg-card: rgba(14, 22, 38, 0.85);
-  --border-subtle: rgba(56, 189, 248, 0.24);
-  --border-card: rgba(148, 163, 184, 0.16);
-  --accent-cyan: #38bdf8;
-  --accent-cyan-glow: rgba(56, 189, 248, 0.3);
-  --accent-emerald: #10b981;
-  --accent-emerald-glow: rgba(16, 185, 129, 0.3);
-  --accent-purple: #c084fc;
-  --accent-purple-glow: rgba(192, 132, 252, 0.3);
-  --accent-gold: #f59e0b;
-  --accent-gold-glow: rgba(245, 158, 11, 0.35);
-  --accent-amber: #fbbf24;
-  --accent-rose: #f43f5e;
-  --accent-indigo: #818cf8;
-  --text-pure: #ffffff;
-  --text-main: #f1f5f9;
-  --text-muted: #cbd5e1;
-  --text-dim: #94a3b8;
+  --bg-core: #f1f5f9;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.96);
+  --border-subtle: #cbd5e1;
+  --border-card: #e2e8f0;
+  --accent-cyan: #0284c7;
+  --accent-cyan-glow: rgba(2, 132, 199, 0.18);
+  --accent-emerald: #059669;
+  --accent-emerald-glow: rgba(5, 150, 105, 0.18);
+  --accent-purple: #7c3aed;
+  --accent-purple-glow: rgba(124, 58, 237, 0.18);
+  --accent-gold: #d97706;
+  --accent-gold-glow: rgba(217, 119, 6, 0.2);
+  --accent-amber: #b45309;
+  --accent-rose: #e11d48;
+  --accent-indigo: #4338ca;
+  --text-pure: #0f172a;
+  --text-main: #1e293b;
+  --text-muted: #475569;
+  --text-dim: #64748b;
   --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'JetBrains Mono', Consolas, Menlo, monospace;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
@@ -1784,10 +1784,10 @@ function adminPage(authorized, initialData = null) {
 body {
   background-color: var(--bg-core);
   background-image: 
-    radial-gradient(ellipse 90% 60% at 50% -20%, rgba(56, 189, 248, 0.12), transparent),
-    radial-gradient(ellipse 60% 40% at 85% 15%, rgba(245, 158, 11, 0.08), transparent),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    radial-gradient(ellipse 90% 60% at 50% -20%, rgba(2, 132, 199, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 85% 15%, rgba(217, 119, 6, 0.05), transparent),
+    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
   color: var(--text-main);
   font-family: var(--font-sans);
@@ -1808,7 +1808,7 @@ body {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: 14px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
   margin-bottom: 22px;
 }
 .brand-title { display: flex; align-items: center; gap: 14px; }
@@ -1866,7 +1866,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  background: rgba(0, 0, 0, 0.4);
+  background: #f8fafc;
   padding: 8px 18px;
   border-radius: 8px;
   border: 1px solid var(--border-card);
@@ -1997,7 +1997,7 @@ body {
   padding: 18px 20px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
 }
 .kpi-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
 .kpi-card.live::before { background: var(--accent-emerald); }
@@ -2023,14 +2023,14 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(13, 20, 36, 0.88);
+  background: #ffffff;
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
   padding: 6px;
   margin-bottom: 24px;
   overflow-x: auto;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
 }
 .tab-btn {
   font-family: var(--font-sans);
@@ -2117,7 +2117,7 @@ body {
   border: 1px solid var(--border-card);
   border-radius: 14px;
   padding: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
 }
 .station-card[hidden] { display: none !important; }
 .station-header {
@@ -2450,29 +2450,29 @@ body {
   overflow-x: auto;
   border-radius: 8px;
   border: 1px solid var(--border-card);
-  background: rgba(10, 16, 28, 0.7);
+  background: #ffffff;
 }
 table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 th {
-  background: #0c1322;
-  color: #93c5fd;
+  background: #f8fafc;
+  color: #1e293b;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.05em;
   padding: 12px 14px;
   text-align: left;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 2px solid #cbd5e1;
   white-space: nowrap;
 }
 td {
   padding: 11px 14px;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  border-bottom: 1px solid #f1f5f9;
   color: var(--text-main);
   vertical-align: middle;
 }
-tr:nth-child(even) td { background: rgba(255, 255, 255, 0.015); }
-tr:hover td { background: rgba(56, 189, 248, 0.07); }
+tr:nth-child(even) td { background: #fafafa; }
+tr:hover td { background: #f0f9ff; }
 
 /* GOOGLE BOT HIGHLIGHT */
 @keyframes bot-blink-once {
@@ -2592,7 +2592,7 @@ tr:hover td { background: rgba(56, 189, 248, 0.07); }
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 600;
-  color: #93c5fd;
+  color: #1e293b;
   background: rgba(14, 165, 233, 0.1);
   border: 1px solid rgba(14, 165, 233, 0.25);
   padding: 3px 8px;
@@ -2864,7 +2864,24 @@ details.section-details summary:hover, details.popular-details summary:hover {
         setText('count-each-visit', totalRaw);
         setText('count-grouped-ip', trafficRecords.length);
 
-        const activeDataset = (trafficViewMode === 'each' && rawTrafficRecords.length > 0) ? rawTrafficRecords : trafficRecords;
+        let activeDataset;
+        const totalVisitsByIp = new Map(trafficRecords.map(r => [r.ip, r.visits || 1]));
+
+        if (trafficViewMode === 'each' && rawTrafficRecords.length > 0) {
+          // Collapse multiple owner visits into one single master entry with combined visit tally and full section trail
+          const ownerEntry = trafficRecords.find(r => r.isOwner);
+          const studentVisits = rawTrafficRecords.filter(r => !r.isOwner).map(r => {
+            const tot = totalVisitsByIp.get(r.ip) || (r.visits || 1);
+            return { ...r, totalVisits: tot };
+          });
+          if (ownerEntry) {
+            activeDataset = [{ ...ownerEntry, totalVisits: ownerEntry.visits || 1 }, ...studentVisits];
+          } else {
+            activeDataset = studentVisits;
+          }
+        } else {
+          activeDataset = trafficRecords.map(r => ({ ...r, totalVisits: r.visits || 1 }));
+        }
 
         let filtered = activeDataset.filter(item => {
           if (!search) return true;
@@ -2950,12 +2967,14 @@ details.section-details summary:hover, details.popular-details summary:hover {
             const tdVisits = document.createElement('td');
             if (trafficViewMode === 'each') {
               if (v.isOwner) {
-                tdVisits.innerHTML = '<span class="visits-badge" style="background:rgba(245,158,11,0.14);color:#fbbf24;border:1px solid rgba(245,158,11,0.3);font-size:11px;font-weight:600;">👑 Single Visit <small style="display:block;font-size:9.5px;opacity:0.85;color:var(--text-dim);">(owner)</small></span>';
+                tdVisits.innerHTML = '<span class="visits-badge" style="background:rgba(245,158,11,0.14);color:#fbbf24;border:1px solid rgba(245,158,11,0.3);font-size:11px;font-weight:700;">👑 ' + (v.visits || 1) + ' Visits Collapsed <small style="display:block;font-size:9.5px;opacity:0.9;color:var(--text-dim);font-weight:500;">(all in one entry)</small></span>';
                 tr.style.background = 'rgba(245, 158, 11, 0.03)';
               } else if (isRifi) {
-                tdVisits.innerHTML = '<span class="visits-badge multi" style="background:rgba(236,72,153,0.15);color:#f472b6;border:1px solid rgba(236,72,153,0.35);font-size:11px;font-weight:700;">🎯 Visit Record</span>';
+                const count = v.totalVisits || v.visits || 1;
+                tdVisits.innerHTML = '<span class="visits-badge multi" style="background:rgba(236,72,153,0.15);color:#f472b6;border:1px solid rgba(236,72,153,0.35);font-size:11.5px;font-weight:700;">🎯 ' + count + ' ' + (count === 1 ? 'Visit' : 'Visits') + '</span>';
               } else {
-                tdVisits.innerHTML = '<span class="visits-badge single" style="background:rgba(6,182,212,0.12);color:#22d3ee;border:1px solid rgba(6,182,212,0.3);">⚡ Visit Record</span>';
+                const count = v.totalVisits || v.visits || 1;
+                tdVisits.innerHTML = '<span class="visits-badge single" style="background:rgba(6,182,212,0.12);color:#22d3ee;border:1px solid rgba(6,182,212,0.3);font-size:11.5px;font-weight:700;">⚡ ' + count + ' ' + (count === 1 ? 'Visit' : 'Visits') + '</span>';
               }
             } else {
               if (v.isOwner) {
