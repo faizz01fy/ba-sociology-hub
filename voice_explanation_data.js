@@ -1068,8 +1068,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 08",
             "title": "ബ്യൂറോക്രസിയും ആൾക്കൂട്ടവും (Formal Organizations & Crowds) | Calicut Univ",
             "chapter": "Max Weber's Bureaucracy & Gustave Le Bon's Crowd Psychology (ഔപചാരിക സംഘടനകളും ആൾക്കൂട്ടവും)",
-            "duration": "18",
-            "youtubeId": "uMxIIznPo-w",
+            "duration": "18:00",
+            "youtubeId": "VDASZEsOqj0",
             "studyPoints": [
               "<strong>00:00 - 03:37 | ഔപചാരിക സംഘടനകൾ:</strong> ആധുനിക സമൂഹത്തിലെ സങ്കീർണ്ണമായ തൊഴിൽ വിഭജനവും പ്രത്യേക ലക്ഷ്യങ്ങൾക്കായുള്ള വലിയ കൂട്ടായ്മകളും.",
               "<strong>03:37 - 07:15 | മാക്സ് വെബറുടെ ഉദ്യോഗസ്ഥവൃന്ദം (Max Weber's Bureaucracy):</strong> അധികാരശ്രേണി (Hierarchy), എഴുതപ്പെട്ട നിയമങ്ങൾ, നിഷ്പക്ഷത, യോഗ്യതയ്ക്കുള്ള മുൻഗണന.",
@@ -1078,7 +1078,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "പ്രധാന 10-മാർക്ക് ചോദ്യം: 'Describe the key characteristics of Bureaucracy as formulated by Max Weber' & 'Examine Le Bon's theory of Crowd Psychology'.",
             "language": "English & Malayalam",
-            "malayalam_cc": true
+            "malayalam_cc": true,
+            "thumbnail": "https://i.ytimg.com/vi/VDASZEsOqj0/hqdefault.jpg"
           },
           {
             "chapterNumber": "Chapter 09",
@@ -1439,7 +1440,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "പാശ്ചാത്യ വിജ്ഞാനശാസ്ത്രവും എഐയും (Western Epistemology & AI) | Calicut Univ",
             "chapter": "Western Epistemology · Rationalism, Empiricism & Kant's Synthesis in AI",
             "duration": "19:40",
-            "youtubeId": "h49OapnTcxI",            "language": "Malayalam",
+            "youtubeId": "h49OapnTcxI",
+            "language": "Malayalam",
             "studyPoints": [
               "<strong>പ്ലേറ്റോയുടെ ജ്ഞാനമീമാംസ (Platonic Epistemology):</strong> ന്യായീകരിക്കപ്പെട്ട സത്യവിശ്വാസം (Justified True Belief - JTB) എന്ന പരമ്പരാഗത അറിവിന്റെ നിർവ്വചനം.",
               "<strong>യുക്തിവാദവും അനുഭവവാദവും (Rationalism vs Empiricism):</strong> സിംബോളിക് AI-യിലെ ഡിഡക്റ്റീവ് യുക്തി (ഡെക്കാർട്ട്, ലൈബ്നിസ്) vs മെഷീൻ ലേണിംഗിലെ ഇൻഡക്റ്റീവ് ഡാറ്റാ ലേണിംഗ് (ലോക്ക്, ഹ്യൂം).",
@@ -1643,7 +1645,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Unit 4.3 c: Responsibility Gap · Moral Patiency vs Moral Agency · Legal Liability",
             "duration": "18:20",
             "language": "Malayalam",
-            "youtubeId": "mNA2qltalns",            "thumbnail": "https://i.ytimg.com/vi/qrlC8o73n4Q/hqdefault.jpg",
+            "youtubeId": "mNA2qltalns",
+            "thumbnail": "https://i.ytimg.com/vi/qrlC8o73n4Q/hqdefault.jpg",
             "studyPoints": [
               "<strong>റെസ്പോൺസിബിലിറ്റി ഗ്യാപ് (The Responsibility Gap - Andreas Matthias, 2004):</strong> മെഷീൻ സ്വയം പഠിച്ച് തീരുമാനമെടുക്കുമ്പോൾ ഉണ്ടാകുന്ന ദുരന്തങ്ങൾക്ക് പ്രോഗ്രാമറെയോ ഉടമയെയോ മെഷീനെയോ ഉത്തരവാദിയാക്കാൻ കഴിയാത്ത പ്രതിസന്ധി.",
               "<strong>ബ്ലാക്ക്-ബോക്സ് പ്രോബ്ലം (Black-Box Opacity):</strong> ഡീപ് ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ ലക്ഷക്കണക്കിന് പാരാമീറ്ററുകൾ ഉപയോഗിച്ച് എടുത്ത തീരുമാനങ്ങളുടെ യുക്തി മനുഷ്യന് മുൻകൂട്ടി പ്രവചിക്കാൻ കഴിയില്ല.",
@@ -2414,8 +2417,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 02",
             "title": "സപ്ലൈ സിദ്ധാന്തവും വിപണി സവിശേഷതകളും (Supply: Law, Determinants & LMS Review)",
             "chapter": "Academic Hub Special · സപ്ലൈ നിയമം, സപ്ലൈ ഫംഗ്ഷൻ & ഷിഫ്റ്റുകൾ",
-            "duration": "14:52",
-            "youtubeId": "CylKbnNZtm0",
+            "duration": "08:59",
+            "youtubeId": "gHAZ4EVPvv4",
             "videoUrl": "/micro-unit2-review.html",
             "thumbnail": "/thumbnails/micro-unit-2-review.png",
             "studyPoints": [
