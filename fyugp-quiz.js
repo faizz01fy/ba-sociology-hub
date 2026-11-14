@@ -126,6 +126,94 @@ section{padding:18px;border:1px solid #d5e4dc;border-radius:14px;margin-top:12px
   border-radius: 6px;
   font-weight: 700;
 }
+.card-content-block {
+  margin-top: 20px;
+  background: #ffffff;
+  border: 1.5px solid #d1fae5;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(6, 78, 59, 0.05);
+}
+.card-content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 2px solid #ecfdf5;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.card-content-header h4 {
+  margin: 0;
+  font-size: 1.22rem;
+  color: #065f46;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-content-header .badge-topic {
+  background: #059669;
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.debate-group {
+  margin-bottom: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  transition: border-color .15s ease, background .15s ease;
+}
+.debate-group:last-child {
+  margin-bottom: 0;
+}
+.debate-group:hover {
+  background: #f0fdf4;
+  border-color: #a7f3d0;
+}
+.debate-category-title {
+  font-size: 0.95rem;
+  font-weight: 750;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.debate-phrases {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.debate-phrases li {
+  font-size: 0.92rem;
+  color: #334155;
+  line-height: 1.45;
+  position: relative;
+  padding-left: 20px;
+}
+.debate-phrases li::before {
+  content: "💬";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+.debate-phrases li strong {
+  color: #065f46;
+}
 footer{margin-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:16px;border-top:1px solid #e2e8f0;font-size:0.9rem}
 .nav-breadcrumbs{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;margin-bottom:14px;color:#6b7280;flex-wrap:wrap}
 .nav-breadcrumbs a{color:#086454;text-decoration:none}
@@ -154,6 +242,79 @@ footer{margin-top:24px;display:flex;justify-content:space-between;align-items:ce
   </div>
   <div class="quiz-desc">Complete syllabus test covering all 59 idioms with detailed past/present/future context examples and comprehensive matching sets.</div>
 </a>
+
+<div class="card-content-block" id="debate-card">
+  <div class="card-content-header">
+    <h4>🎙️ DEBATE</h4>
+    <span class="badge-topic">Speaking &amp; Argumentation Skills</span>
+  </div>
+
+  <div class="debate-group">
+    <div class="debate-category-title">🏁 Opening and Stating the Topic</div>
+    <ul class="debate-phrases">
+      <li>"The motion for debate today is..."</li>
+      <li>"Today's topic of debate is..."</li>
+      <li>"The first point I would like to raise is..."</li>
+      <li>"Our position is the following..."</li>
+    </ul>
+  </div>
+
+  <div class="debate-group">
+    <div class="debate-category-title">📊 Presenting Main Arguments</div>
+    <ul class="debate-phrases">
+      <li>"The most important argument is..."</li>
+      <li>"There is clear evidence that..."</li>
+      <li>"Our analysis demonstrated why..."</li>
+      <li>"For instance..." / "To illustrate this point..."</li>
+    </ul>
+  </div>
+
+  <div class="debate-group">
+    <div class="debate-category-title">➕ Adding Points</div>
+    <ul class="debate-phrases">
+      <li>"Furthermore..." / "Moreover..." / "In addition..."</li>
+      <li>"Not only that, but also..."</li>
+    </ul>
+  </div>
+
+  <div class="debate-group">
+    <div class="debate-category-title">👂 Acknowledging and Listening</div>
+    <ul class="debate-phrases">
+      <li>"I see your point, but I think..."</li>
+      <li>"Yes, I understand, but my opinion is that..."</li>
+      <li>"That's a good point, but here's another way to look at it..."</li>
+      <li>"I'm afraid I can't quite agree with your point."</li>
+    </ul>
+  </div>
+
+  <div class="debate-group">
+    <div class="debate-category-title">🤝 Expressing Agreement</div>
+    <ul class="debate-phrases">
+      <li>"I agree completely."</li>
+      <li>"I couldn't agree with you more."</li>
+      <li>"That's just how I see it."</li>
+    </ul>
+  </div>
+
+  <div class="debate-group">
+    <div class="debate-category-title">🛡️ Expressing Disagreement (Polite &amp; Diplomatic)</div>
+    <ul class="debate-phrases">
+      <li>"I hear what you're saying, although I have a different opinion."</li>
+      <li>"I understand where you're coming from, but..."</li>
+      <li>"That's not a convincing argument."</li>
+      <li>"I must disagree because the facts suggest otherwise."</li>
+    </ul>
+  </div>
+
+  <div class="debate-group">
+    <div class="debate-category-title">🎯 Concluding and Summarizing</div>
+    <ul class="debate-phrases">
+      <li>"To sum up, here are the main points..."</li>
+      <li>"It all boils down to..."</li>
+      <li>"As a final word..."</li>
+    </ul>
+  </div>
+</div>
 </section>
 </details>
 <footer>
