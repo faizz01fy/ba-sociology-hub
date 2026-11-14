@@ -5239,15 +5239,43 @@
         color: #ffffff !important;
       }
 
-      /* 3-Column Subject Cards Grid */
+      /* Base Subject Cards Grid (Mobile-First 1-column) */
       #subjects .subjects-container {
         display: grid !important;
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-        gap: 20px !important;
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
         align-items: stretch !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
 
-      /* Match Mockup Card Order on Desktop */
+      /* Exam Orientation Button Spanning */
+      #subjects .subject-card .language-tab[data-exam-orientation="true"] {
+        grid-column: 1 / -1 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        min-height: 42px !important;
+        padding: 8px 12px !important;
+      }
+      #subjects .subject-card .language-tab[data-exam-orientation="true"] .language-badge {
+        flex: 0 0 auto !important;
+      }
+      #subjects .subject-card .language-tab[data-exam-orientation="true"] .language-copy {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2px !important;
+        min-width: 0 !important;
+      }
+      #subjects .subject-card .language-tab[data-exam-orientation="true"] .language-copy strong {
+        font-size: 13px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex-wrap: wrap !important;
+      }
+
+      /* Match Mockup Card Order */
       .subject-card[data-subject="English"] { order: 1; }
       .subject-card[data-subject="Malayalam"] { order: 2; }
       .subject-card[data-subject="Sociology"] { order: 3; }
@@ -5260,8 +5288,6 @@
       .subject-card[data-subject="Hindi"] { order: 10; }
       .subject-card[data-subject="Mathematics"] { order: 11; }
       .subject-card[data-subject="History of Keralam"] { order: 12; }
-
-    }
 
     /* ==========================================================================
        UNIVERSAL MODERN SUBJECT CARDS & PRACTICE CARDS (DESKTOP + TABLET + MOBILE)
@@ -5623,12 +5649,14 @@
         flex: 0 0 auto !important;
       }
 
-      /* Mock Tests & Exam Practice -> Same 3-Column Pastel Subject Card Theme */
+      /* Mock Tests & Exam Practice -> Base Mobile-First */
       .test-grid {
         display: grid !important;
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-        gap: 20px !important;
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
         margin-bottom: 32px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
       .test-card {
         position: relative !important;
@@ -5820,17 +5848,34 @@
       }
       .hub-main-footer .footer-bottom-row a {
         color: #cbd5e1 !important;
-      
+      }
 
-/* Desktop-specific grid overrides */
-@media (min-width: 1024px) {
-  #subjects .subjects-container {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 24px !important;
-  }
-}
-/* Mobile Optimization for Universal Subject Cards (< 1024px & < 768px) */
-    @media (max-width: 1023px) {
+    /* Tablet Grid Overrides (768px - 1023px) */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .topbar {
+        padding: 8px 16px !important;
+        gap: 10px !important;
+      }
+      .topbar .nav-links {
+        display: flex !important;
+        flex: 1 1 auto !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        gap: 4px !important;
+        justify-content: flex-start !important;
+      }
+      .topbar .nav-links::-webkit-scrollbar {
+        display: none !important;
+      }
+      .topbar .nav-links a {
+        flex: 0 0 auto !important;
+        min-width: auto !important;
+        white-space: nowrap !important;
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+      }
       #subjects .subjects-container {
         display: grid !important;
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -5841,22 +5886,135 @@
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 16px !important;
       }
+      .desktop-hero-banner {
+        display: flex !important;
+      }
+      .desktop-hero-sem-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+      }
+      .sem-cards-deck {
+        display: none !important;
+      }
     }
 
+    /* Desktop Grid Overrides (>= 1024px) */
+    @media (min-width: 1024px) {
+      #subjects .subjects-container {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+      }
+      .test-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+      }
+      .desktop-hero-banner {
+        display: flex !important;
+      }
+      .desktop-hero-sem-tabs {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+      }
+      .sem-cards-deck {
+        display: none !important;
+      }
+    }
+
+    /* Mobile Viewport Overrides (< 768px) — Clean, Beautiful, No Squishing */
     @media (max-width: 767px) {
+      /* Mobile Topbar */
+      .topbar {
+        flex-wrap: wrap !important;
+        padding: 8px 12px 10px !important;
+        gap: 8px !important;
+        height: auto !important;
+        min-height: 56px !important;
+      }
+      .topbar .brand {
+        flex: 0 0 auto !important;
+      }
+      .topbar .nav-links {
+        order: 3 !important;
+        flex: 1 0 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        gap: 6px !important;
+        padding: 4px 6px !important;
+        border: 1px solid #37373d !important;
+        border-radius: 12px !important;
+        background: #1b1b20 !important;
+        box-sizing: border-box !important;
+      }
+      .topbar .nav-links::-webkit-scrollbar {
+        display: none !important;
+      }
+      .topbar .nav-links a {
+        flex: 0 0 auto !important;
+        min-width: auto !important;
+        white-space: nowrap !important;
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+      }
+
+      /* Main container padding */
+      main {
+        padding: 14px 12px 36px !important;
+      }
+
+      /* Semester switcher on mobile: Clean 2x2 grid */
+      .desktop-hero-banner {
+        display: block !important;
+        padding: 4px 0 14px !important;
+      }
+      .desktop-hero-sem-tabs {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+      }
+      .desktop-hero-pill {
+        padding: 10px 12px !important;
+        font-size: 11.5px !important;
+        border-radius: 12px !important;
+      }
+      .desktop-hero-pill-sem {
+        font-size: 9.5px !important;
+        padding: 2px 6px !important;
+      }
+      .desktop-hero-pill-badge {
+        font-size: 8.5px !important;
+        padding: 2px 6px !important;
+      }
+      .sem-cards-deck {
+        display: none !important;
+      }
+
+      /* Single-Column Subject Cards Grid on Mobile (100% width, no squishing) */
       #subjects .subjects-container {
         display: grid !important;
         grid-template-columns: 1fr !important;
+        width: 100% !important;
         gap: 14px !important;
       }
       .test-grid {
         display: grid !important;
         grid-template-columns: 1fr !important;
+        width: 100% !important;
         gap: 14px !important;
       }
       #subjects .subject-card {
         border-radius: 16px !important;
         margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
       #subjects .subject-card .subject-cover {
         display: none !important;
@@ -5880,7 +6038,9 @@
         border-radius: 9px !important;
       }
       #subjects .subject-card .language-copy strong {
-        font-size: 12.5px !important;
+        font-size: 12px !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
       }
       #subjects .subject-card .language-badge {
         width: 20px !important;
@@ -16350,32 +16510,6 @@ if(subject==='Arabic') return modules([
   document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
 })();
 
-</script>
-<script>
-  (() => {
-    const addMalayalamExamLink = () => {
-      const heading = [...document.querySelectorAll('.subject-card h3')]
-        .find((item) => item.textContent.trim() === 'Malayalam');
-      const resources = heading?.closest('.subject-card')?.querySelector('.resource-list');
-      const reading = resources?.querySelector('a[href*="mal-guide"]');
-      if (!resources || !reading || resources.querySelector('[data-exam-orientation]')) return false;
-      const link = document.createElement('a');
-      link.href = '/malayalam-exam-orientation';
-      link.className = 'language-tab language-tab--navigate';
-      link.dataset.examOrientation = 'true';
-      link.setAttribute('aria-label', 'Open Malayalam Exam Orientation');
-      link.innerHTML = '<span class="language-badge" aria-hidden="true" style="background:#087b71;color:#fff;">EXAM</span><span class="language-copy"><strong>Exam orientation <span class="ml">പരീക്ഷാ ഒരുക്കം</span></strong><small>English + Malayalam exam preparation and MCQ tips</small></span><span class="language-arrow" aria-hidden="true">↗</span>';
-      reading.insertAdjacentElement('afterend', link);
-      return true;
-    };
-    if (!addMalayalamExamLink()) {
-      let attempts = 0;
-      const retry = window.setInterval(() => {
-        attempts += 1;
-        if (addMalayalamExamLink() || attempts >= 20) window.clearInterval(retry);
-      }, 250);
-    }
-  })();
 </script>
 </body>
 
