@@ -4,7 +4,7 @@ const quizAppHtml = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#102c31">
-<title>Idiomatic Expressions | VAP Session 4</title>
+<title>Idioms Learning | English Ability Enhancement</title>
 <style>
 :root{font-family:"DM Sans",system-ui,sans-serif;color:#153236;background:#f1f5f2;line-height:1.55;--ink:#153236;--green:#086454;--line:#d5e1da}
 *{box-sizing:border-box}body{margin:0}button,select{font:inherit;color:inherit}button{cursor:pointer}button:disabled{cursor:default}button:focus-visible,select:focus-visible{outline:3px solid #2670b6;outline-offset:3px}
@@ -21,8 +21,8 @@ h2{margin:4px 0 12px;font-size:clamp(1.35rem,4vw,1.85rem);line-height:1.23;lette
 </head>
 <body>
 <header class="hero"><div class="wrap">
-<div class="nav-breadcrumbs"><a href="/">Academic Hub</a> <span>→</span> <a href="/calicut-university-fyugp">FYUGP</a> <span>→</span> <span>IMA DS Semester 1</span> <span>→</span> <span>English</span> <span>→</span> <span style="color:#fff">VAP Quiz</span></div>
-<div class="course">Listening &amp; Speaking · Session 4</div><h1>Idiomatic Expressions</h1><p>Learn what common expressions mean and practise using them in context.</p></div></header>
+<div class="nav-breadcrumbs"><a href="/">Academic Hub</a> <span>→</span> <a href="/calicut-university-fyugp">FYUGP</a> <span>→</span> <span>IMA DS Semester 1</span> <span>→</span> <span>English</span> <span>→</span> <span style="color:#fff">Idioms Learning</span></div>
+<div class="course">Listening &amp; Speaking · English AEC</div><h1>Idioms Learning</h1><p>Learn what common idiomatic expressions mean and practise using them in context.</p></div></header>
 <main class="wrap">
 <nav class="tabs" aria-label="Quiz sections">
 <button type="button" data-mode="practice" aria-pressed="true">Idiom practice</button>
@@ -30,7 +30,7 @@ h2{margin:4px 0 12px;font-size:clamp(1.35rem,4vw,1.85rem);line-height:1.23;lette
 <button type="button" data-mode="context" aria-pressed="false">Fill in the blank</button>
 </nav>
 <section class="card" id="card" aria-label="Quiz"></section>
-<p class="footer">Adapted from VAP Session 4 · Ability Enhancement Course · Calicut University FYUGP</p>
+<p class="footer">Idioms Learning Module · English Ability Enhancement Course · Calicut University FYUGP</p>
 </main>
 <script>
 const idioms = \`

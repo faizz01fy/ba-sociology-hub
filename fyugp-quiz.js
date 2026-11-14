@@ -44,7 +44,7 @@ a:hover{text-decoration:underline}
 <div class="nav-breadcrumbs"><a href="/">Academic Hub</a> <span>→</span> <span>FYUGP</span> <span>→</span> <span>IMA DS Sem 1</span></div>
 <small style="color:#086454;font-weight:700;text-transform:uppercase;letter-spacing:0.08em">Protected FYUGP Section</small>
 <h1>Calicut University FYUGP</h1>
-<p>Enter the student password to access IMA DS Semester 1 English VAP Quiz.</p>
+<p>Enter the student password to access IMA DS Semester 1 English Idioms Learning.</p>
 ${errorHtml}
 <form method="post" action="${formAction}">
 <label for="password" style="font-weight:600;font-size:0.9rem;color:#153236">Access Password</label>
@@ -88,13 +88,13 @@ footer{margin-top:24px;display:flex;justify-content:space-between;align-items:ce
 <summary><span>📁 <strong>IMA DS Semester 1</strong> (Integrated MA Development Studies)</span></summary>
 <section aria-labelledby="subjects">
 <h2 id="subjects">Subjects &amp; Learning Modules</h2>
-<h3>📘 English — Ability Enhancement Course (VAP)</h3>
+<h3>📘 English — Ability Enhancement Course</h3>
 <a class="quiz-card" href="${fyugpQuizPath}?quiz=idioms">
   <div class="quiz-title">
-    <span>🎯 VAP Session 4 · Idioms Interactive Quiz</span>
-    <span class="badge-live">OPEN QUIZ →</span>
+    <span>🎯 Idioms Learning · Interactive Practice &amp; Quiz</span>
+    <span class="badge-live">OPEN LEARNING →</span>
   </div>
-  <div class="quiz-desc">Comprehensive interactive quiz with MCQs, Matching, Context Fill-in-the-Blank, instant answer grading, and contextual examples across Past, Present, and Future tenses.</div>
+  <div class="quiz-desc">Master 59 essential idioms with meaning breakdowns, contextual examples across Past, Present, and Future tenses, plus interactive Matching and Fill-in-the-Blank practice.</div>
 </a>
 </section>
 </details>
