@@ -853,16 +853,16 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination & Research) | Sociology | Calicut Univ",
-            "chapter": "Academic Hub Special · സി. റൈറ്റ് മിൽസ് & റിസർച്ച് മെത്തേഡ്സ് (C. Wright Mills & Research Methods)",
-            "duration": "27",
-            "youtubeId": "uMxIIznPo-w",
+            "title": "സോഷ്യോളജിയുടെ സ്വഭാവവും വ്യാപ്തിയും (Nature & Scope of Sociology) | Calicut Univ",
+            "chapter": "Nature, Scope, Subject Matter & Science of Society (സോഷ്യോളജിയുടെ സ്വഭാവവും വ്യാപ്തിയും)",
+            "duration": "33:51",
+            "youtubeId": "mUahYKgz1QU",
             "studyPoints": [
-              "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination - C. Wright Mills): വ്യക്തിഗത പ്രശ്നങ്ങളെ (Personal Troubles) വലിയ സാമൂഹിക സാഹചര്യങ്ങളുമായി (Public Issues) ബന്ധിപ്പിച്ചു വിശകലനം ചെയ്യാനുള്ള സവിശേഷ ശേഷി.",
-              "ശാസ്ത്രീയ ഗവേഷണ രീതികൾ: അനുഭവവേദ്യമായ ഡാറ്റ ശേഖരണം (Empirical Observation), സാമാന്യവൽക്കരണം, സിദ്ധാന്ത രൂപീകരണം.",
-              "ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ: ആഴത്തിലുള്ള പങ്കാളിത്ത നിരീക്ഷണങ്ങളും സ്റ്റാറ്റിസ്റ്റിക്കൽ സർവേകളും സമന്വയിപ്പിക്കുന്ന രീതി."
+              "സോഷ്യോളജിയുടെ സ്വഭാവം (Nature of Sociology as a Science): നിരീക്ഷണം, താരതമ്യം, ചരിത്ര വിശകലനം എന്നിവയിലൂടെ മാനവിക ബന്ധങ്ങളെയും സാമൂഹിക പ്രതിഭാസങ്ങളെയും പഠിക്കുന്ന ശാസ്ത്രീയ അന്വേഷണം.",
+              "വിഷയവ്യാപ്തി (Scope & Subject Matter): ഓഗസ്റ്റ് കോംത്, എമിൽ ഡർക്കൈം എന്നിവർ മുന്നോട്ടുവെച്ച സാമൂഹിക സ്ഥാപനങ്ങളുടെയും ഘടനകളുടെയും സമഗ്ര വിശകലനം.",
+              "പ്രാധാന്യം (Significance & Objectives): പ്രബുദ്ധതയും നവോത്ഥാനവും (Enlightenment & Renaissance) ശാസ്ത്രീയ യുക്തിചിന്തയിലൂടെ സോഷ്യോളജിയുടെ ആവിർഭാവത്തിന് വഴിയൊരുക്കിയ ചരിത്രപശ്ചാത്തലം."
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Distinguish between Personal Troubles and Public Issues with examples according to C. Wright Mills'.",
+            "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Explain the nature and scope of sociology. Discuss whether sociology is a true science with suitable arguments'.",
             "language": "English & Malayalam",
             "malayalam_cc": true
           },
@@ -887,6 +887,22 @@ window.VOICE_EXPLANATIONS_DATA = {
       {
         "moduleName": "MODULE 02: PRACTICING SOCIOLOGY (FYUGP SOU1CJ101)",
         "videos": [
+          {
+            "chapterNumber": "Chapter 01",
+            "title": "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination & Research) | Sociology | Calicut Univ",
+            "chapter": "Practicing Sociology · C. Wright Mills & Analytical Research (Page 1-30)",
+            "duration": "26:55",
+            "youtubeId": "uMxIIznPo-w",
+            "thumbnail": "https://i.ytimg.com/vi/uMxIIznPo-w/hqdefault.jpg",
+            "studyPoints": [
+              "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination - C. Wright Mills): വ്യക്തിഗത പ്രശ്നങ്ങളെ (Personal Troubles) വലിയ സാമൂഹിക സാഹചര്യങ്ങളുമായി (Public Issues) ബന്ധിപ്പിച്ചു വിശകലനം ചെയ്യാനുള്ള സവിശേഷ ശേഷി.",
+              "ശാസ്ത്രീയ ഗവേഷണ രീതികൾ: അനുഭവവേദ്യമായ ഡാറ്റ ശേഖരണം (Empirical Observation), സാമാന്യവൽക്കരണം, സിദ്ധാന്ത രൂപീകരണം.",
+              "ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ: ആഴത്തിലുള്ള പങ്കാളിത്ത നിരീക്ഷണങ്ങളും സ്റ്റാറ്റിസ്റ്റിക്കൽ സർവേകളും സമന്വയിപ്പിക്കുന്ന രീതി."
+            ],
+            "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Distinguish between Personal Troubles and Public Issues with examples according to C. Wright Mills'.",
+            "language": "English & Malayalam",
+            "malayalam_cc": true
+          },
           {
             "chapterNumber": "Masterclass (V1)",
             "title": "സോഷ്യോളജി പ്രയോഗത്തിൽ (Practicing Sociology) - V1 | Sociology | Calicut Univ",
@@ -2442,9 +2458,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 03",
             "title": "വിപണി സന്തുലിതാവസ്ഥ (Market Equilibrium & Price Determination)",
             "chapter": "Academic Hub Special · സന്തുലിത വിലയും അളവും, സർപ്ലസ് & ഷോർട്ടേജ്",
-            "duration": "15:51",
-            "youtubeId": "zJsY7Sbx2To",
-            "videoUrl": "/micro-unit3-review.html",
+            "duration": "08:42",            "youtubeId": "ULJedrxANeY",            "videoUrl": "/micro-unit3-review.html",
             "thumbnail": "/thumbnails/micro-unit-3-review.png",
             "studyPoints": [
               "Market Equilibrium: Qd equals Qs",
