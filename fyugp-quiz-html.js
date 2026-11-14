@@ -495,16 +495,16 @@ select:focus { border-color: #059669; }
 </head>
 <body>
 <header class="hero"><div class="wrap">
-<div class="nav-breadcrumbs"><a href="/">Academic Hub</a> <span>→</span> <a href="/calicut-university-fyugp">FYUGP</a> <span>→</span> <span>IMA DS Semester 1</span> <span>→</span> <span>English</span> <span>→</span> <span style="color:#fff">Idioms Learning</span></div>
-<div class="course">Listening &amp; Speaking · English AEC</div><h1>Idioms Learning</h1><p>Learn what common idiomatic expressions mean and practise using them in context.</p></div></header>
+<div class="nav-breadcrumbs"><a href="/">Academic Hub</a> <span>→</span> <a href="/calicut-university-fyugp">FYUGP</a> <span>→</span> <span>IMA DS Semester 1</span> <span>→</span> <span>English</span> <span>→</span> <span id="hero-crumb" style="color:#fff">Idioms Learning</span></div>
+<div class="course" id="hero-course">Listening &amp; Speaking · English AEC</div><h1 id="hero-title">Idioms Learning</h1><p id="hero-desc">Learn what common idiomatic expressions mean and practise using them in context.</p></div></header>
 <main class="wrap">
 <nav class="tabs" aria-label="Learning modes">
-<button type="button" data-mode="practice" aria-pressed="true">🎯 Idiom Practice <span class="tab-count">59 Qs</span></button>
-<button type="button" data-mode="context" aria-pressed="false">✍️ Fill in the Blank <span class="tab-count">59 Qs</span></button>
-<button type="button" data-mode="match" aria-pressed="false">🧩 Matching Sets <span class="tab-count">12 Sets</span></button>
+<button type="button" data-mode="practice" aria-pressed="true">🎯 Idiom Practice <span class="tab-count" id="count-practice">59 Qs</span></button>
+<button type="button" data-mode="context" aria-pressed="false">✍️ Fill in the Blank <span class="tab-count" id="count-context">59 Qs</span></button>
+<button type="button" data-mode="match" aria-pressed="false">🧩 Matching Sets <span class="tab-count" id="count-match">12 Sets</span></button>
 </nav>
 <section class="card" id="card" aria-label="Quiz"></section>
-<p class="footer">Idioms Learning Module · English Ability Enhancement Course · Calicut University FYUGP</p>
+<p class="footer" id="footer-text">Idioms Learning Module · English Ability Enhancement Course · Calicut University FYUGP</p>
 </main>
 <script>
 const idioms = \`
@@ -629,7 +629,50 @@ const tenseExamples = [
   ["The reporters dug around in old records last week.", "She digs around in the archives whenever she needs more facts.", "I'll dig around in my old emails for the receipt."],
   ["She was a bright spark in our class last year.", "He's a bright spark who solves puzzles quickly.", "She'll be the bright spark on tomorrow's quiz team."]
 ];
-const matchingGroups = [[55,1,9,6,10],[19,16,28,21,34],[44,40,50,45,38]];
+const queryQuiz = new URLSearchParams(window.location.search).get("quiz");
+const is25Mode = queryQuiz === "25" || queryQuiz === "internal-25";
+
+if (is25Mode) {
+  document.title = "25 Idioms Test for Internal Exam Prep | English Ability Enhancement";
+  const heroCrumb = document.querySelector("#hero-crumb");
+  const heroCourse = document.querySelector("#hero-course");
+  const heroTitle = document.querySelector("#hero-title");
+  const heroDesc = document.querySelector("#hero-desc");
+  const footerText = document.querySelector("#footer-text");
+  const countPractice = document.querySelector("#count-practice");
+  const countContext = document.querySelector("#count-context");
+  const countMatch = document.querySelector("#count-match");
+
+  if (heroCrumb) heroCrumb.textContent = "25 Idioms Test for Internal Exam Prep";
+  if (heroCourse) heroCourse.innerHTML = "⚡ INTERNAL EXAM PREP · 25 HIGH-YIELD IDIOMS";
+  if (heroTitle) heroTitle.textContent = "25 Idioms Test for Internal Exam Prep";
+  if (heroDesc) heroDesc.textContent = "Targeted practice covering the first 25 syllabus idioms with MCQs, context sentence fill-in-the-blank, and 5 interactive matching sets.";
+  if (footerText) footerText.textContent = "25 Idioms Test for Internal Exam Prep · Calicut University FYUGP";
+  if (countPractice) countPractice.textContent = "25 Qs";
+  if (countContext) countContext.textContent = "25 Qs";
+  if (countMatch) countMatch.textContent = "5 Sets";
+}
+
+const activeIdioms = is25Mode ? idioms.slice(0, 25) : idioms;
+const activeBlanks = is25Mode ? rawBlanks.slice(0, 25) : rawBlanks;
+
+// 5 matching sets of 5 idioms (0-24) for 25 mode, 12 matching sets covering syllabus for full mode
+const fullMatchingGroups = [
+  [0, 1, 2, 3, 4],
+  [5, 6, 7, 8, 9],
+  [10, 11, 12, 13, 14],
+  [15, 16, 17, 18, 19],
+  [20, 21, 22, 23, 24],
+  [25, 26, 27, 28, 29],
+  [30, 31, 32, 33, 34],
+  [35, 36, 37, 38, 39],
+  [40, 41, 42, 43, 44],
+  [45, 46, 47, 48, 49],
+  [50, 51, 52, 53, 54],
+  [55, 56, 57, 58, 0]
+];
+const matchingGroups = is25Mode ? fullMatchingGroups.slice(0, 5) : fullMatchingGroups;
+
 const shuffle = items => {
   const copy = [...items];
   for (let i = copy.length - 1; i > 0; i--) {
@@ -638,8 +681,8 @@ const shuffle = items => {
   }
   return copy;
 };
-const practice = idioms.map(([idiom, meaning, example], index) => {
-  const other = idioms.filter((_, i) => i !== index && !([45,52].includes(index) && [45,52].includes(i)));
+const practice = activeIdioms.map(([idiom, meaning, example], index) => {
+  const other = activeIdioms.filter((_, i) => i !== index && !([45,52].includes(index) && [45,52].includes(i)));
   return {
     idiomId: index,
     title: idiom,
@@ -946,9 +989,9 @@ const rawBlanks = [
     "why": "“A bright spark” designates an exceptionally witty, perceptive, or clever individual."
   }
 ];
-const context = rawBlanks.map((item, index) => {
-  const otherIdxs = idioms.map((_, i) => i).filter(i => i !== index);
-  const shuffledOther = shuffle(otherIdxs).slice(0, 3).map(i => idioms[i][0]);
+const context = activeBlanks.map((item, index) => {
+  const otherIdxs = activeIdioms.map((_, i) => i).filter(i => i !== index);
+  const shuffledOther = shuffle(otherIdxs).slice(0, 3).map(i => activeIdioms[i][0]);
   return {
     idiomId: index,
     title: item.sentence,

@@ -73,9 +73,59 @@ details[open] summary::after{transform:rotate(180deg)}
 section{padding:18px;border:1px solid #d5e4dc;border-radius:14px;margin-top:12px}
 .quiz-card{display:flex;flex-direction:column;gap:6px;padding:14px 16px;border-radius:12px;background:#f0fdf4;border:1.5px solid #a7f3d0;text-decoration:none;transition:all .15s ease}
 .quiz-card:hover{background:#dcfce7;border-color:#4ade80;transform:translateY(-1px)}
-.quiz-title{font-weight:800;font-size:1.05rem;color:#065f46;display:flex;align-items:center;justify-content:space-between}
+.quiz-title{font-weight:800;font-size:1.05rem;color:#065f46;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .quiz-desc{font-size:0.88rem;color:#166534;line-height:1.45}
 .badge-live{background:#059669;color:#fff;font-size:0.75rem;padding:3px 8px;border-radius:6px;font-weight:700}
+@keyframes blinkPriority {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.97); }
+}
+@keyframes pulseBorder {
+  0%, 100% { border-color: #059669; box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.45); }
+  50% { border-color: #10b981; box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+}
+.card-exam-prep {
+  border: 2px solid #059669;
+  background: #ecfdf5;
+  animation: pulseBorder 2s infinite ease-in-out;
+  position: relative;
+}
+.card-exam-prep .badge-blink {
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  animation: blinkPriority 1.2s infinite ease-in-out;
+}
+.card-secondary {
+  margin-top: 14px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+}
+.card-secondary .quiz-title {
+  color: #334155;
+}
+.card-secondary .quiz-desc {
+  color: #64748b;
+}
+.card-secondary:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+.card-secondary .badge-secondary {
+  background: #64748b;
+  color: #ffffff;
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+}
 footer{margin-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:16px;border-top:1px solid #e2e8f0;font-size:0.9rem}
 .nav-breadcrumbs{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;margin-bottom:14px;color:#6b7280;flex-wrap:wrap}
 .nav-breadcrumbs a{color:#086454;text-decoration:none}
@@ -89,12 +139,20 @@ footer{margin-top:24px;display:flex;justify-content:space-between;align-items:ce
 <section aria-labelledby="subjects">
 <h2 id="subjects">Subjects &amp; Learning Modules</h2>
 <h3>📘 English — Ability Enhancement Course</h3>
-<a class="quiz-card" href="${fyugpQuizPath}?quiz=idioms">
+<a class="quiz-card card-exam-prep" href="${fyugpQuizPath}?quiz=25">
   <div class="quiz-title">
-    <span>🎯 Idioms Learning · Interactive Practice &amp; Quiz</span>
-    <span class="badge-live">OPEN LEARNING →</span>
+    <span>🎯 25 idioms test for internal exam prep</span>
+    <span class="badge-blink">🔴 HIGH PRIORITY · TEST NOW →</span>
   </div>
-  <div class="quiz-desc">Master 59 essential idioms with meaning breakdowns, contextual examples across Past, Present, and Future tenses, plus interactive Matching and Fill-in-the-Blank practice.</div>
+  <div class="quiz-desc">Focus preparation for internal exams using the first 25 essential idioms: interactive practice, fill-in-the-blank, and 5 matching sets.</div>
+</a>
+
+<a class="quiz-card card-secondary" href="${fyugpQuizPath}?quiz=idioms">
+  <div class="quiz-title">
+    <span>📚 Full Idioms Test &amp; Mastery (All 59 Idioms)</span>
+    <span class="badge-secondary">FULL SYLLABUS →</span>
+  </div>
+  <div class="quiz-desc">Complete syllabus test covering all 59 idioms with detailed past/present/future context examples and comprehensive matching sets.</div>
 </a>
 </section>
 </details>
@@ -157,7 +215,8 @@ export async function handleFyugpQuiz(request, env, equals) {
     }
     const expires = now + sessionSeconds;
     const proof = await sessionProof(signingSecret, expires);
-    const redirectTarget = url.searchParams.get('quiz') === 'idioms' ? (fyugpQuizPath + '?quiz=idioms') : fyugpQuizPath;
+    const q = url.searchParams.get('quiz');
+    const redirectTarget = (q === 'idioms' || q === '25' || q === 'internal-25') ? (fyugpQuizPath + '?quiz=' + q) : fyugpQuizPath;
     headers.set('Location', redirectTarget);
     headers.set('Set-Cookie', `${cookieName}=${expires}.${proof}; Max-Age=${sessionSeconds}; Path=/; Secure; HttpOnly; SameSite=Lax`);
     return new Response(null, {status:303, headers});
@@ -172,7 +231,8 @@ export async function handleFyugpQuiz(request, env, equals) {
     return new Response(request.method === 'HEAD' ? null : renderedUnlock, {headers});
   }
   if (request.method === 'HEAD') return new Response(null, {headers});
-  if (url.searchParams.get('quiz') === 'idioms') {
+  const quizParam = url.searchParams.get('quiz');
+  if (quizParam === 'idioms' || quizParam === '25' || quizParam === 'internal-25') {
     return new Response(quizAppHtml, {headers});
   }
   return new Response(semesterPage, {headers});
