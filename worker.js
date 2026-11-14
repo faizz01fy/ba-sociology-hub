@@ -3266,6 +3266,15 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
       return Response.redirect(new URL('/history-mock-test', request.url).toString(), 301);
     }
 
+    // Policy Page Canonical Redirects (100% AdSense & Legal Compliance)
+    if (url.pathname === '/privacy' || url.pathname === '/privacy.html') {
+      return Response.redirect(new URL('/privacy-policy', request.url).toString(), 301);
+    }
+    if (url.pathname === '/terms-of-service' || url.pathname === '/terms-and-conditions' ||
+        url.pathname === '/terms-of-service.html' || url.pathname === '/terms-and-conditions.html') {
+      return Response.redirect(new URL('/terms', request.url).toString(), 301);
+    }
+
     // Secure PDF Routing: Intercept any direct browser navigation/access to any .pdf file and route to reader only
     if ((request.method === "GET" || request.method === "HEAD") && url.pathname.toLowerCase().endsWith('.pdf')) {
       if (isBrowserNavigation || !isInternalReader) {
