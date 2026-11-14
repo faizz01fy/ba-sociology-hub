@@ -16353,6 +16353,32 @@ if(subject==='Arabic') return modules([
 })();
 
 </script>
+<script>
+  (() => {
+    const addMalayalamExamLink = () => {
+      const heading = [...document.querySelectorAll('.subject-card h3')]
+        .find((item) => item.textContent.trim() === 'Malayalam');
+      const resources = heading?.closest('.subject-card')?.querySelector('.resource-list');
+      const reading = resources?.querySelector('a[href*="mal-guide"]');
+      if (!resources || !reading || resources.querySelector('[data-exam-orientation]')) return false;
+      const link = document.createElement('a');
+      link.href = '/malayalam-exam-orientation';
+      link.className = 'language-tab language-tab--navigate';
+      link.dataset.examOrientation = 'true';
+      link.setAttribute('aria-label', 'Open Malayalam Exam Orientation');
+      link.innerHTML = '<span class="language-badge" aria-hidden="true" style="background:#087b71;color:#fff;">EXAM</span><span class="language-copy"><strong>Exam orientation <span class="ml">പരീക്ഷാ ഒരുക്കം</span></strong><small>English + Malayalam exam preparation and MCQ tips</small></span><span class="language-arrow" aria-hidden="true">↗</span>';
+      reading.insertAdjacentElement('afterend', link);
+      return true;
+    };
+    if (!addMalayalamExamLink()) {
+      let attempts = 0;
+      const retry = window.setInterval(() => {
+        attempts += 1;
+        if (addMalayalamExamLink() || attempts >= 20) window.clearInterval(retry);
+      }, 250);
+    }
+  })();
+</script>
 </body>
 
 </html>
