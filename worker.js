@@ -220,6 +220,16 @@ function unavailableLmsPdfResponse(request) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if (url.pathname === '/ads.txt') {
+      return new Response('google.com, pub-6526381938888583, DIRECT, f08c47fec0942fa0\n', {
+        status: 200,
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8',
+          'Cache-Control': 'public, max-age=3600',
+          'Access-Control-Allow-Origin': '*'
+        }
+      });
+    }
     if (url.pathname === '/malayalam-exam-orientation' || url.pathname === '/malayalam-exam-orientation.html') {
       const assetReq = new Request(new URL('/malayalam-exam-orientation.html', request.url), request);
       const resp = await env.ASSETS.fetch(assetReq);
@@ -4228,8 +4238,8 @@ function adminPage(authorized, initialData = null) {
   </button>
   <button class="tab-btn" id="tab-btn-lfl" type="button" role="tab" aria-selected="false">
     <span class="tab-icon">⚖️</span>
-    <span class="tab-title">LfL ANALYSIS</span>
-    <span class="badge-pill blue" id="badge-lfl-growth" style="background:#dbeafe; color:#1d4ed8; font-weight:800;">LfL AUDIT</span>
+    <span class="tab-title">LfL ANALYSIS (Ys vs Td)</span>
+    <span class="badge-pill blue" id="badge-lfl-growth" style="background:#dbeafe; color:#1d4ed8; font-weight:800;">Ys ➔ Td</span>
   </button>
   <button class="tab-btn" id="tab-btn-radar" type="button" role="tab" aria-selected="false">
     <span class="tab-icon">🛰️</span>
@@ -4395,10 +4405,15 @@ function adminPage(authorized, initialData = null) {
 
   <!-- TAB 2: YESTERDAY TELEMETRY & KNOWLEDGE RECAP (NEW TAB!) -->
   <section class="station-card" id="panel-yesterday" hidden>
-    <div class="station-header">
+    <div class="station-header" style="background:linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #3730a3 100%); color:#ffffff; padding:20px 24px; border-radius:12px 12px 0 0;">
       <div>
-        <h2><span class="station-dot gold"></span> YESTERDAY TELEMETRY & KNOWLEDGE RECAP</h2>
-        <p class="station-desc">24-hour retrospective of yesterday's student ingress, popular study assets, traffic velocity, and platform demographics.</p>
+        <h2 style="color:#ffffff; display:flex; align-items:center; gap:10px; margin:0; font-size:17.5px; font-weight:800;">
+          <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#818cf8; box-shadow:0 0 8px #818cf8;"></span>
+          YESTERDAY TELEMETRY & KNOWLEDGE RECAP (00:00 – 23:59 IST)
+        </h2>
+        <p class="station-desc" style="color:#c7d2fe; margin-top:4px; font-size:13px;">
+          24-hour retrospective of yesterday's student ingress, popular study assets, traffic velocity, and platform demographics.
+        </p>
       </div>
       <div class="header-action-group">
         <span class="date-chip" id="yesterday-date-chip">📅 YESTERDAY (IST)</span>
@@ -4571,67 +4586,151 @@ function adminPage(authorized, initialData = null) {
 
   <!-- TAB: LfL ANALYSIS (LIKE-FOR-LIKE YESTERDAY VS TODAY) -->
   <section class="station-card" id="panel-lfl" hidden>
-    <div class="station-header">
-      <div>
-        <h2><span class="station-dot cyan"></span> LfL ANALYSIS · YESTERDAY VS TODAY (PURE HUMAN LEARNERS)</h2>
-        <p class="station-desc">Like-for-like comparative telemetry benchmarking student traffic velocity, material engagement, and reading depth. Bots and owner visits are 100% excluded.</p>
-      </div>
-      <div class="header-action-group">
-        <span class="date-chip" style="background:#e0f2fe; color:#0369a1; border:1px solid #7dd3fc;">⚖️ LIKE-FOR-LIKE BENCHMARK</span>
+    <div class="station-header" style="background:linear-gradient(135deg, #0369a1 0%, #0284c7 100%); color:#ffffff; padding:20px 24px; border-radius:12px 12px 0 0;">
+      <div style="display:flex; align-items:center; justify-content:space-between; width:100%; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h2 style="color:#ffffff; display:flex; align-items:center; gap:10px; margin:0; font-size:17.5px; font-weight:800;">
+            <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#38bdf8; box-shadow:0 0 8px #38bdf8;"></span>
+            LfL ANALYSIS · YESTERDAY (Ys) VS TODAY (Td) · PURE HUMAN LEARNERS
+          </h2>
+          <p class="station-desc" style="color:#e0f2fe; margin-top:4px; font-size:13px;">
+            Like-for-like comparative telemetry benchmarking student traffic velocity, material engagement, and reading depth. Bots and owner visits are 100% excluded.
+          </p>
+        </div>
+        <div class="header-action-group">
+          <span class="date-chip" style="background:#ffffff; color:#0369a1; font-weight:800; border:none; padding:6px 14px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.15);">
+            ⚖️ Ys (Yesterday) ➔ Td (Today) BENCHMARK
+          </span>
+        </div>
       </div>
     </div>
 
-    <!-- LfL EXECUTIVE SUMMARY CARD -->
-    <div class="yesterday-digest-card" style="background:linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(240, 249, 255, 0.95)), var(--bg-surface); border:1px solid #93c5fd;">
-      <div class="digest-header">
-        <div class="digest-badge" style="color:#0284c7;">📊 EXECUTIVE LfL TRAFFIC DELTA</div>
-        <div class="digest-time" id="lfl-window-time">COMPARISON: YESTERDAY (FULL DAY) VS TODAY (ACTIVE IST)</div>
+    <!-- LfL EXECUTIVE SUMMARY CARD (High Contrast, Clear Crisp Slate Typography) -->
+    <div style="margin:20px 24px 16px; padding:18px 20px; background:#f0f9ff; border:1.5px solid #bae6fd; border-radius:10px;">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; border-bottom:1px solid #e0f2fe; padding-bottom:10px; margin-bottom:10px;">
+        <div style="color:#0369a1; font-weight:800; font-size:12.5px; letter-spacing:0.04em; display:flex; align-items:center; gap:6px;">
+          <span>📊</span> EXECUTIVE LfL TRAFFIC DELTA (Ys ➔ Td)
+        </div>
+        <div id="lfl-window-time" style="color:#475569; font-size:11.5px; font-weight:600; font-family:var(--font-mono);">
+          COMPARISON: Ys (Yesterday Full Day) VS Td (Today Active IST)
+        </div>
       </div>
-      <div class="digest-summary-text" id="lfl-summary-text" style="color:#0f172a; font-weight:600;">
+      <div id="lfl-summary-text" style="color:#0f172a; font-weight:600; font-size:13.5px; line-height:1.5;">
         Calculating like-for-like ingress variance...
       </div>
     </div>
 
-    <!-- LfL COMPARISON 4-KPI BENCHMARK GRID -->
-    <div class="yesterday-kpi-grid">
-      <div class="ykpi-card views" style="border:1px solid #bae6fd; background:var(--bg-surface);">
-        <div class="ykpi-label">PAGE VIEWS DELTA</div>
-        <div class="ykpi-val" id="lfl-kpi-views">0 <small>LfL</small></div>
-        <div class="ykpi-sub" id="lfl-kpi-views-sub">Yesterday vs Today</div>
+    <!-- LfL COMPARISON 4-KPI BENCHMARK GRID (Ys first, Td second) -->
+    <div class="yesterday-kpi-grid" style="padding:0 24px;">
+      <div class="ykpi-card views" style="border:1.5px solid #bae6fd; background:#ffffff; border-radius:10px; padding:16px;">
+        <div class="ykpi-label" style="color:#0369a1; font-weight:800; font-size:11px;">PAGE VIEWS (Ys ➔ Td)</div>
+        <div class="ykpi-val" id="lfl-kpi-views" style="color:#0f172a; font-size:24px; font-weight:900; margin:6px 0;">0 <small>LfL</small></div>
+        <div class="ykpi-sub" id="lfl-kpi-views-sub" style="color:#475569; font-weight:600; font-size:12px;">Ys 0 ➔ Td 0</div>
       </div>
-      <div class="ykpi-card visitors" style="border:1px solid #bae6fd; background:var(--bg-surface);">
-        <div class="ykpi-label">UNIQUE STUDENTS DELTA</div>
-        <div class="ykpi-val" id="lfl-kpi-visitors">0 <small>STUDENTS</small></div>
-        <div class="ykpi-sub" id="lfl-kpi-visitors-sub">Yesterday vs Today</div>
+      <div class="ykpi-card visitors" style="border:1.5px solid #bae6fd; background:#ffffff; border-radius:10px; padding:16px;">
+        <div class="ykpi-label" style="color:#0369a1; font-weight:800; font-size:11px;">UNIQUE STUDENTS (Ys ➔ Td)</div>
+        <div class="ykpi-val" id="lfl-kpi-visitors" style="color:#0f172a; font-size:24px; font-weight:900; margin:6px 0;">0 <small>STUDENTS</small></div>
+        <div class="ykpi-sub" id="lfl-kpi-visitors-sub" style="color:#475569; font-weight:600; font-size:12px;">Ys 0 ➔ Td 0</div>
       </div>
-      <div class="ykpi-card ratio" style="border:1px solid #bae6fd; background:var(--bg-surface);">
-        <div class="ykpi-label">ENGAGEMENT DEPTH</div>
-        <div class="ykpi-val" id="lfl-kpi-depth">0.0 <small>PAGES/STUDENT</small></div>
-        <div class="ykpi-sub" id="lfl-kpi-depth-sub">Average reading velocity</div>
+      <div class="ykpi-card ratio" style="border:1.5px solid #bae6fd; background:#ffffff; border-radius:10px; padding:16px;">
+        <div class="ykpi-label" style="color:#0369a1; font-weight:800; font-size:11px;">ENGAGEMENT DEPTH (Ys ➔ Td)</div>
+        <div class="ykpi-val" id="lfl-kpi-depth" style="color:#0f172a; font-size:24px; font-weight:900; margin:6px 0;">0.0 <small>PAGES/STUDENT</small></div>
+        <div class="ykpi-sub" id="lfl-kpi-depth-sub" style="color:#475569; font-weight:600; font-size:12px;">Reading velocity (Ys vs Td)</div>
       </div>
-      <div class="ykpi-card repeats" style="border:1px solid #bae6fd; background:var(--bg-surface);">
-        <div class="ykpi-label">REPEAT RETENTION RATE</div>
-        <div class="ykpi-val" id="lfl-kpi-retention">0% <small>RETENTION</small></div>
-        <div class="ykpi-sub" id="lfl-kpi-retention-sub">Returning active learners</div>
+      <div class="ykpi-card repeats" style="border:1.5px solid #bae6fd; background:#ffffff; border-radius:10px; padding:16px;">
+        <div class="ykpi-label" style="color:#0369a1; font-weight:800; font-size:11px;">REPEAT RETENTION (Ys ➔ Td)</div>
+        <div class="ykpi-val" id="lfl-kpi-retention" style="color:#0f172a; font-size:24px; font-weight:900; margin:6px 0;">0% <small>RETENTION</small></div>
+        <div class="ykpi-sub" id="lfl-kpi-retention-sub" style="color:#475569; font-weight:600; font-size:12px;">Returning learners (Ys vs Td)</div>
       </div>
     </div>
 
-    <!-- SIDE-BY-SIDE LfL COMPARATIVE MATRIX TABLE -->
-    <div class="table-wrapper" style="margin-top:20px;">
+    <!-- SIDE-BY-SIDE LfL COMPARATIVE MATRIX TABLE (Ys first, Td second) -->
+    <div class="table-wrapper" style="margin:20px 24px 10px;">
+      <div style="font-size:13.5px; font-weight:800; color:#0f172a; margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+        <span>📋</span> CORE BENCHMARK MATRIX (Ys = Yesterday, Td = Today)
+      </div>
       <table>
         <thead>
-          <tr>
+          <tr style="background:#f8fafc; color:#334155; font-size:11px; font-weight:800; letter-spacing:0.04em;">
             <th style="min-width:200px">Ingress Metric</th>
-            <th style="min-width:140px">⏮️ Yesterday (Full Day)</th>
-            <th style="min-width:140px">📅 Today (Live Ingress)</th>
-            <th style="min-width:130px">Variance / Growth</th>
-            <th style="min-width:180px">Status & Health</th>
+            <th style="min-width:140px">⏮️ Ys (Yesterday Full Day)</th>
+            <th style="min-width:140px">📅 Td (Today Live Ingress)</th>
+            <th style="min-width:130px">Variance / Growth (Ys ➔ Td)</th>
+            <th style="min-width:180px">Status & Trajectory</th>
           </tr>
         </thead>
         <tbody id="lfl-comparison-rows">
           <!-- Rendered dynamically -->
         </tbody>
       </table>
+    </div>
+
+    <!-- BOOMING INTERVAL & HOURLY VELOCITY BREAKDOWN (Ys vs Td) -->
+    <div style="margin:20px 24px 10px; padding:18px 20px; background:#ffffff; border:1.5px solid #e2e8f0; border-radius:10px;">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+        <div>
+          <h3 style="margin:0; font-size:14.5px; font-weight:800; color:#0f172a; display:flex; align-items:center; gap:8px;">
+            <span>⚡</span> BOOMING TIME INTERVAL · Ys (Yesterday) VS Td (Today)
+          </h3>
+          <p style="margin:2px 0 0; font-size:12px; color:#475569;">
+            Identifies which hours saw surging human student study waves and peak ingress.
+          </p>
+        </div>
+        <div id="lfl-booming-banner" style="font-size:12px; font-weight:800; padding:5px 12px; border-radius:6px; background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe;">
+          Analyzing Peak Intervals...
+        </div>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; text-align:left; font-size:12.5px;">
+          <thead>
+            <tr style="background:#f8fafc; border-bottom:1px solid #e2e8f0; color:#475569; font-size:11px; font-weight:800;">
+              <th style="padding:8px 12px;">Time Slot (IST)</th>
+              <th style="padding:8px 12px; text-align:right;">⏮️ Ys Views</th>
+              <th style="padding:8px 12px; text-align:right;">📅 Td Views</th>
+              <th style="padding:8px 12px; text-align:right;">Delta (Td - Ys)</th>
+              <th style="padding:8px 12px;">Pacing / Booming Indicator</th>
+            </tr>
+          </thead>
+          <tbody id="lfl-hourly-rows">
+            <!-- Rendered dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- REGIONAL GEOGRAPHIC BREAKDOWN (CITY / STATE / COUNTRY: Ys vs Td) -->
+    <div style="margin:20px 24px 24px; padding:18px 20px; background:#ffffff; border:1.5px solid #e2e8f0; border-radius:10px;">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+        <div>
+          <h3 style="margin:0; font-size:14.5px; font-weight:800; color:#0f172a; display:flex; align-items:center; gap:8px;">
+            <span>🌍</span> REGIONAL GEOGRAPHIC INGRESS · CITY / STATE / COUNTRY (Ys ➔ Td)
+          </h3>
+          <p style="margin:2px 0 0; font-size:12px; color:#475569;">
+            Human learner distribution across cities, states, and nations comparing Yesterday vs Today.
+          </p>
+        </div>
+        <div style="font-size:11.5px; color:#64748b; font-weight:600;">
+          Pure Human Learners Only (Zero Bots)
+        </div>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; text-align:left; font-size:12.5px;">
+          <thead>
+            <tr style="background:#f8fafc; border-bottom:1px solid #e2e8f0; color:#475569; font-size:11px; font-weight:800;">
+              <th style="padding:8px 12px;">City / State / Country</th>
+              <th style="padding:8px 12px; text-align:right;">⏮️ Ys Views</th>
+              <th style="padding:8px 12px; text-align:right;">📅 Td Views</th>
+              <th style="padding:8px 12px; text-align:right;">Variance (Td - Ys)</th>
+              <th style="padding:8px 12px;">Trend Direction</th>
+            </tr>
+          </thead>
+          <tbody id="lfl-geo-rows">
+            <!-- Rendered dynamically -->
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -5806,10 +5905,10 @@ body {
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .tab-btn#tab-btn-yesterday.active {
-  background: #d97706;
+  background: #312e81;
   color: #ffffff;
-  border-color: rgba(245, 158, 11, 0.6);
-  box-shadow: 0 0 22px rgba(245, 158, 11, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: #6366f1;
+  box-shadow: 0 0 22px rgba(49, 46, 129, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .tab-btn#tab-btn-radar.active {
   background: #059669;
@@ -5836,8 +5935,8 @@ body {
   letter-spacing: 0.02em;
 }
 .tab-btn#tab-btn-geo.active .badge-pill.cyan { background: #38bdf8; color: #04101e; font-weight: 800; box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
-.tab-btn#tab-btn-yesterday .badge-pill.gold { background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); }
-.tab-btn#tab-btn-yesterday.active .badge-pill.gold { background: #f59e0b; color: #1e1302; font-weight: 800; box-shadow: 0 0 12px rgba(245, 158, 11, 0.6); }
+.tab-btn#tab-btn-yesterday .badge-pill.gold { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; font-weight: 800; }
+.tab-btn#tab-btn-yesterday.active .badge-pill.gold { background: #4338ca; color: #ffffff; font-weight: 800; box-shadow: 0 0 12px rgba(67, 56, 202, 0.5); }
 .tab-btn#tab-btn-radar .badge-pill.emerald { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }
 .tab-btn#tab-btn-radar.active .badge-pill.emerald { background: #10b981; color: #032117; font-weight: 800; box-shadow: 0 0 12px rgba(16, 185, 129, 0.6); }
 .tab-btn#tab-btn-content .badge-pill.purple { background: rgba(192, 132, 252, 0.18); color: #d8b4fe; border: 1px solid rgba(192, 132, 252, 0.35); }
@@ -5884,25 +5983,25 @@ body {
 .date-chip {
   font-family: var(--font-mono);
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 800;
   padding: 6px 14px;
   border-radius: 8px;
-  background: rgba(245, 158, 11, 0.14);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.35);
+  background: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
 
-/* YESTERDAY EXECUTIVE BRIEFING BANNER */
+/* YESTERDAY EXECUTIVE BRIEFING BANNER - HIGH CONTRAST CRISP SLATE */
 .yesterday-digest-card {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(15, 23, 42, 0.85) 60%), var(--bg-card);
-  border: 1px solid rgba(245, 158, 11, 0.35);
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
   border-radius: 12px;
-  padding: 20px 24px;
+  padding: 22px 24px;
   margin-bottom: 22px;
-  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.12);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
   position: relative;
   overflow: hidden;
 }
@@ -5911,7 +6010,7 @@ body {
   position: absolute;
   top: 0; left: 0;
   width: 5px; height: 100%;
-  background: linear-gradient(180deg, #f59e0b, #fbbf24);
+  background: linear-gradient(180deg, #3730a3, #4f46e5);
 }
 .digest-header {
   display: flex;
@@ -5919,45 +6018,56 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 10px;
 }
 .digest-badge {
-  font-size: 11.5px;
+  font-size: 12px;
   font-family: var(--font-mono);
   font-weight: 800;
-  color: #fbbf24;
-  letter-spacing: 0.05em;
+  color: #312e81;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 .digest-time {
   font-size: 11.5px;
   font-family: var(--font-mono);
-  color: var(--text-dim);
+  color: #475569;
+  font-weight: 600;
 }
 .digest-summary-text {
   font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--text-pure);
+  line-height: 1.65;
+  color: #0f172a;
   margin-bottom: 18px;
+  font-weight: 500;
 }
 .digest-summary-text strong {
-  color: #fde047;
-  font-weight: 700;
+  color: #0f172a;
+  font-weight: 800;
+  background: #f1f5f9;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
 }
 .digest-quick-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 16px;
 }
 .dq-item { display: flex; flex-direction: column; }
-.dq-label { font-size: 10.5px; font-weight: 700; font-family: var(--font-mono); color: var(--text-dim); letter-spacing: 0.04em; }
-.dq-value { font-size: 13.5px; font-weight: 700; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.highlight-cyan { color: var(--accent-cyan); }
-.highlight-gold { color: #fbbf24; }
-.highlight-emerald { color: #34d399; }
-.highlight-purple { color: #c084fc; }
+.dq-label { font-size: 11px; font-weight: 800; font-family: var(--font-mono); color: #475569; letter-spacing: 0.04em; }
+.dq-value { font-size: 14px; font-weight: 800; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.highlight-cyan { color: #0284c7; }
+.highlight-gold { color: #3730a3; }
+.highlight-emerald { color: #047857; }
+.highlight-purple { color: #6d28d9; }
 
 /* YESTERDAY 4-KPI GRID */
 .yesterday-kpi-grid {
@@ -5967,23 +6077,23 @@ body {
   margin-bottom: 22px;
 }
 .ykpi-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
   border-radius: 12px;
-  padding: 16px 20px;
+  padding: 18px 20px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
 }
 .ykpi-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
-.ykpi-card.views::before { background: #f59e0b; }
-.ykpi-card.visitors::before { background: #38bdf8; }
-.ykpi-card.ratio::before { background: #10b981; }
-.ykpi-card.repeats::before { background: #c084fc; }
-.ykpi-label { font-size: 11.5px; font-weight: 700; font-family: var(--font-mono); color: var(--text-dim); text-transform: uppercase; }
-.ykpi-val { font-size: 28px; font-weight: 800; font-family: var(--font-mono); color: var(--text-pure); line-height: 1.1; margin: 6px 0; }
-.ykpi-val small { font-size: 12.5px; font-weight: 600; color: var(--text-dim); margin-left: 4px; }
-.ykpi-sub { font-size: 12px; color: var(--text-muted); }
+.ykpi-card.views::before { background: #3730a3; }
+.ykpi-card.visitors::before { background: #0284c7; }
+.ykpi-card.ratio::before { background: #047857; }
+.ykpi-card.repeats::before { background: #6d28d9; }
+.ykpi-label { font-size: 11.5px; font-weight: 800; font-family: var(--font-mono); color: #475569; text-transform: uppercase; }
+.ykpi-val { font-size: 28px; font-weight: 900; font-family: var(--font-mono); color: #0f172a; line-height: 1.1; margin: 6px 0; }
+.ykpi-val small { font-size: 12.5px; font-weight: 700; color: #475569; margin-left: 4px; }
+.ykpi-sub { font-size: 12px; color: #64748b; font-weight: 500; }
 
 /* 24-HOUR HOURLY INGRESS BAR CHART */
 .yesterday-chart-card {
@@ -6008,9 +6118,9 @@ body {
   gap: 6px;
   height: 130px;
   padding: 16px 8px 6px;
-  background: rgba(0, 0, 0, 0.35);
+  background: #f8fafc;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid #cbd5e1;
   margin-top: 14px;
 }
 .chart-bar-col {
@@ -6035,12 +6145,12 @@ body {
   filter: drop-shadow(0 0 8px #38bdf8);
 }
 .chart-bar-col.peak .chart-bar-fill {
-  background: linear-gradient(180deg, #f59e0b, rgba(245, 158, 11, 0.35));
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.45);
+  background: linear-gradient(180deg, #4338ca, #6366f1);
+  box-shadow: 0 0 10px rgba(67, 56, 202, 0.35);
 }
 .chart-bar-col.peak:hover .chart-bar-fill {
-  background: linear-gradient(180deg, #fbbf24, rgba(245, 158, 11, 0.7));
-  filter: drop-shadow(0 0 10px #f59e0b);
+  background: linear-gradient(180deg, #3730a3, #4f46e5);
+  filter: drop-shadow(0 0 10px #4338ca);
 }
 .chart-bar-tooltip {
   display: none;
@@ -6079,8 +6189,8 @@ body {
   margin-bottom: 22px;
 }
 .station-subcard {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
   border-radius: 12px;
   padding: 18px 20px;
 }
@@ -6090,7 +6200,7 @@ body {
   align-items: center;
   margin-bottom: 14px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid #f1f5f9;
 }
 .subcard-head h4 { font-size: 13.5px; font-weight: 800; color: var(--text-pure); display: flex; align-items: center; gap: 8px; }
 .subcard-badge { font-size: 11px; font-family: var(--font-mono); font-weight: 700; color: var(--accent-gold); background: rgba(245, 158, 11, 0.15); padding: 2px 7px; border-radius: 999px; }
@@ -7305,12 +7415,12 @@ function updateTodayDeepMetrics() {
         const visitorsPct = yVisitors ? Math.round((visitorsDelta / yVisitors) * 100) : 0;
         const visitorsSign = visitorsDelta > 0 ? '+' : '';
 
-        // KPI values
+        // KPI values with Ys first, Td second
         setText('lfl-kpi-views', viewsSign + viewsDelta + ' (' + viewsSign + viewsPct + '%)');
-        setText('lfl-kpi-views-sub', yViews + ' Yest ➔ ' + tViews + ' Today');
+        setText('lfl-kpi-views-sub', 'Ys ' + yViews + ' ➔ Td ' + tViews);
         setText('lfl-kpi-visitors', visitorsSign + visitorsDelta + ' (' + visitorsSign + visitorsPct + '%)');
-        setText('lfl-kpi-visitors-sub', yVisitors + ' Yest ➔ ' + tVisitors + ' Today');
-        setText('lfl-kpi-depth', tRatio + ' vs ' + yRatio);
+        setText('lfl-kpi-visitors-sub', 'Ys ' + yVisitors + ' ➔ Td ' + tVisitors);
+        setText('lfl-kpi-depth', 'Ys ' + yRatio + ' ➔ Td ' + tRatio);
         setText('lfl-kpi-depth-sub', 'Pages read per human student');
 
         // Repeat students
@@ -7318,51 +7428,245 @@ function updateTodayDeepMetrics() {
         const tRepeatPct = tVisitors ? Math.round((tRepeats / tVisitors) * 100) : 0;
         const yRepeats = yestHuman.filter(r => (r.visits || 1) > 1).length;
         const yRepeatPct = yVisitors ? Math.round((yRepeats / yVisitors) * 100) : 0;
-        setText('lfl-kpi-retention', tRepeatPct + '% vs ' + yRepeatPct + '%');
-        setText('lfl-kpi-retention-sub', tRepeats + ' repeat students today');
+        setText('lfl-kpi-retention', 'Ys ' + yRepeatPct + '% ➔ Td ' + tRepeatPct + '%');
+        setText('lfl-kpi-retention-sub', 'Ys ' + yRepeats + ' ➔ Td ' + tRepeats + ' returning students');
 
-        // Summary text
+        // Executive Summary Text (Crisp slate and emerald styling, zero low-contrast yellow)
         const summaryEl = document.getElementById('lfl-summary-text');
         if (summaryEl) {
-          const trendWord = viewsDelta >= 0 ? 'Surging' : 'Pacing';
-          const trendColor = viewsDelta >= 0 ? '#047857' : '#b45309';
-          summaryEl.innerHTML = '<span style="color:' + trendColor + '; font-weight:800;">' + trendWord + ' Human Study Velocity:</span> Academic Hub has recorded <strong>' + tVisitors + ' human student visitors</strong> reading <strong>' + tViews + ' study modules</strong> today, compared to ' + yVisitors + ' students and ' + yViews + ' pages yesterday. <em>All bot crawlers (Google, Bing, OpenAI, etc.) and owner visits are strictly filtered out of this audit.</em>';
+          const isGood = viewsDelta >= 0;
+          const trendWord = isGood ? 'Surging' : 'Pacing';
+          const badgeText = isGood ? '🟢 POSITIVE GROWTH TRAJECTORY' : '🟠 MID-DAY PACING ACCRUAL';
+          const badgeStyle = isGood 
+            ? 'background:#dcfce7; color:#047857; border:1px solid #86efac;' 
+            : 'background:#fef3c7; color:#92400e; border:1px solid #fcd34d;';
+          
+          summaryEl.innerHTML = '<div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">' +
+            '<span style="display:inline-flex; align-items:center; gap:5px; padding:3px 10px; border-radius:6px; font-weight:800; font-size:12px; font-family:var(--font-mono); ' + badgeStyle + '">' + badgeText + '</span>' +
+            '<span style="font-size:12px; font-weight:700; color:' + (isGood ? '#047857' : '#b45309') + ';">' + trendWord + ' Velocity (Ys ➔ Td)</span>' +
+            '</div>' +
+            '<div style="color:#0f172a; line-height:1.6;">' +
+            'Academic Hub has recorded <strong style="background:#f1f5f9; padding:2px 6px; border-radius:4px; border:1px solid #e2e8f0; color:#0f172a;">Ys ' + yVisitors + ' ➔ Td ' + tVisitors + ' human student visitors</strong> who engaged with <strong style="background:#f1f5f9; padding:2px 6px; border-radius:4px; border:1px solid #e2e8f0; color:#0f172a;">Ys ' + yViews + ' ➔ Td ' + tViews + ' study modules</strong> today. ' +
+            'Engagement depth stands at <strong style="background:#f1f5f9; padding:2px 6px; border-radius:4px; border:1px solid #e2e8f0; color:#0284c7;">' + tRatio + ' pages/student</strong> (vs Ys ' + yRatio + ').' +
+            '</div>' +
+            '<div style="margin-top:8px; font-size:12px; font-weight:700; color:#475569; display:flex; align-items:center; gap:6px;">' +
+            '<span>🛡️</span> All automated crawlers, bot scanners, and owner visits are 100% eliminated from this comparison.' +
+            '</div>';
         }
 
-        // Comparative Table
+        // 1. Core Comparative Matrix Table (Ys first, Td second)
         const tbody = document.getElementById('lfl-comparison-rows');
         if (tbody) {
           tbody.replaceChildren();
           const metrics = [
-            { name: 'Pure Human Student Visitors', y: yVisitors, t: tVisitors, diff: visitorsDelta, pct: visitorsPct },
-            { name: 'Study Content Page Views', y: yViews, t: tViews, diff: viewsDelta, pct: viewsPct },
-            { name: 'Average Pages Read Per Learner', y: yRatio + ' pages', t: tRatio + ' pages', diff: (Number(tRatio) - Number(yRatio)).toFixed(2), pct: null },
-            { name: 'Repeat Study Sessions (>1 visits)', y: yRepeats + ' (' + yRepeatPct + '%)', t: tRepeats + ' (' + tRepeatPct + '%)', diff: tRepeats - yRepeats, pct: null }
+            { name: 'Pure Human Student Visitors', y: 'Ys ' + yVisitors, t: 'Td ' + tVisitors, diff: visitorsDelta, pct: visitorsPct },
+            { name: 'Study Content Page Views', y: 'Ys ' + yViews, t: 'Td ' + tViews, diff: viewsDelta, pct: viewsPct },
+            { name: 'Average Pages Read Per Learner', y: 'Ys ' + yRatio + ' pages', t: 'Td ' + tRatio + ' pages', diff: (Number(tRatio) - Number(yRatio)).toFixed(2), pct: null },
+            { name: 'Repeat Study Sessions (>1 visits)', y: 'Ys ' + yRepeats + ' (' + yRepeatPct + '%)', t: 'Td ' + tRepeats + ' (' + tRepeatPct + '%)', diff: tRepeats - yRepeats, pct: null }
           ];
 
           for (const m of metrics) {
             const tr = document.createElement('tr');
+            tr.style.borderBottom = '1px solid #f1f5f9';
             const tdName = document.createElement('td');
-            tdName.innerHTML = '<strong>' + m.name + '</strong>';
+            tdName.style.padding = '10px 14px';
+            tdName.innerHTML = '<strong style="color:#0f172a;">' + m.name + '</strong>';
+            
             const tdY = document.createElement('td');
-            tdY.textContent = String(m.y);
+            tdY.style.padding = '10px 14px';
+            tdY.innerHTML = '<span style="color:#475569; font-weight:700; font-family:var(--font-mono);">' + m.y + '</span>';
+            
             const tdT = document.createElement('td');
-            tdT.innerHTML = '<strong style="color:#0284c7;">' + m.t + '</strong>';
+            tdT.style.padding = '10px 14px';
+            tdT.innerHTML = '<strong style="color:#0284c7; font-weight:800; font-family:var(--font-mono);">' + m.t + '</strong>';
+            
             const tdDiff = document.createElement('td');
+            tdDiff.style.padding = '10px 14px';
             const isPos = typeof m.diff === 'number' ? m.diff >= 0 : !String(m.diff).startsWith('-');
-            const diffColor = isPos ? '#047857' : '#b45309';
-            const diffBg = isPos ? '#dcfce7' : '#fef3c7';
+            const diffColor = isPos ? '#047857' : '#0369a1';
+            const diffBg = isPos ? '#dcfce7' : '#e0f2fe';
             const diffSign = isPos ? '+' : '';
             const pctStr = m.pct !== null ? ' (' + diffSign + m.pct + '%)' : '';
             tdDiff.innerHTML = '<span style="background:' + diffBg + '; color:' + diffColor + '; padding:3px 9px; border-radius:6px; font-weight:800; font-family:var(--font-mono); font-size:12px;">' + diffSign + m.diff + pctStr + '</span>';
 
             const tdStatus = document.createElement('td');
-            tdStatus.innerHTML = isPos ? '<span style="color:#047857; font-weight:700;">🟢 Positive Trajectory</span>' : '<span style="color:#b45309; font-weight:700;">🟡 Mid-Day Accrual</span>';
+            tdStatus.style.padding = '10px 14px';
+            tdStatus.innerHTML = isPos 
+              ? '<span style="color:#047857; font-weight:700; display:inline-flex; align-items:center; gap:4px;">🟢 Positive Trajectory</span>' 
+              : '<span style="color:#0284c7; font-weight:700; display:inline-flex; align-items:center; gap:4px;">🔵 Active Mid-Day Accrual</span>';
 
             tr.append(tdName, tdY, tdT, tdDiff, tdStatus);
             tbody.append(tr);
           }
         }
+
+        // 2. Booming Interval & Hourly Comparison (Ys vs Td)
+        let yHourly = yesterdayData?.hourly;
+        if (!Array.isArray(yHourly) || yHourly.length !== 24) {
+          yHourly = Array(24).fill(0);
+          for (const r of yestHuman) {
+            const h = new Date(r.time + 330 * 60 * 1000).getUTCHours();
+            if (h >= 0 && h < 24) yHourly[h] += (r.visits || 1);
+          }
+        }
+
+        const tHourly = Array(24).fill(0);
+        for (const r of todayHuman) {
+          const h = new Date(r.time + 330 * 60 * 1000).getUTCHours();
+          if (h >= 0 && h < 24) tHourly[h] += (r.visits || 1);
+        }
+
+        // Determine current hour in IST
+        const curIstHour = new Date(now + 330 * 60 * 1000).getUTCHours();
+
+        // Find which hour is booming (highest positive delta or highest today volume)
+        let maxBoomDelta = -Infinity;
+        let boomingHour = curIstHour;
+        for (let h = 0; h <= curIstHour; h++) {
+          const delta = tHourly[h] - yHourly[h];
+          if (delta > maxBoomDelta) {
+            maxBoomDelta = delta;
+            boomingHour = h;
+          }
+        }
+
+        function formatHourSlot(h) {
+          const ampm = h >= 12 ? 'PM' : 'AM';
+          const h12 = h % 12 || 12;
+          const nextH = (h + 1) % 24;
+          const nextAmpm = nextH >= 12 ? 'PM' : 'AM';
+          const nextH12 = nextH % 12 || 12;
+          return h12 + ':00 ' + ampm + ' – ' + nextH12 + ':00 ' + nextAmpm;
+        }
+
+        const boomBannerEl = document.getElementById('lfl-booming-banner');
+        if (boomBannerEl) {
+          const boomSlotStr = formatHourSlot(boomingHour);
+          const boomDiffSign = maxBoomDelta >= 0 ? '+' : '';
+          boomBannerEl.innerHTML = '🔥 <strong>Booming Window:</strong> ' + boomSlotStr + ' (Td ' + tHourly[boomingHour] + ' vs Ys ' + yHourly[boomingHour] + ' · <span style="font-family:var(--font-mono);">' + boomDiffSign + maxBoomDelta + '</span>)';
+        }
+
+        const hourlyTbody = document.getElementById('lfl-hourly-rows');
+        if (hourlyTbody) {
+          hourlyTbody.replaceChildren();
+          for (let h = 0; h <= Math.min(23, curIstHour); h++) {
+            const hTr = document.createElement('tr');
+            hTr.style.borderBottom = '1px solid #f1f5f9';
+            if (h === boomingHour && tHourly[h] > 0) {
+              hTr.style.background = '#f0fdf4';
+            }
+
+            const tdSlot = document.createElement('td');
+            tdSlot.style.padding = '8px 12px';
+            tdSlot.innerHTML = '<strong>' + formatHourSlot(h) + '</strong>';
+
+            const tdYh = document.createElement('td');
+            tdYh.style.padding = '8px 12px';
+            tdYh.style.textAlign = 'right';
+            tdYh.innerHTML = '<span style="color:#64748b; font-family:var(--font-mono); font-weight:700;">' + yHourly[h] + '</span>';
+
+            const tdTh = document.createElement('td');
+            tdTh.style.padding = '8px 12px';
+            tdTh.style.textAlign = 'right';
+            tdTh.innerHTML = '<strong style="color:#0284c7; font-family:var(--font-mono);">' + tHourly[h] + '</strong>';
+
+            const deltaH = tHourly[h] - yHourly[h];
+            const isPosH = deltaH >= 0;
+            const signH = isPosH ? '+' : '';
+            const tdDh = document.createElement('td');
+            tdDh.style.padding = '8px 12px';
+            tdDh.style.textAlign = 'right';
+            tdDh.innerHTML = '<span style="padding:2px 7px; border-radius:4px; font-weight:800; font-family:var(--font-mono); font-size:11.5px; background:' + (isPosH ? '#dcfce7' : '#e0f2fe') + '; color:' + (isPosH ? '#047857' : '#0369a1') + ';">' + signH + deltaH + '</span>';
+
+            const tdBoom = document.createElement('td');
+            tdBoom.style.padding = '8px 12px';
+            if (h === boomingHour && tHourly[h] > 0) {
+              tdBoom.innerHTML = '<span style="background:#bbf7d0; color:#15803d; font-weight:800; font-size:11px; padding:2px 8px; border-radius:4px;">🔥 PEAK BOOMING</span>';
+            } else if (deltaH > 0) {
+              tdBoom.innerHTML = '<span style="color:#047857; font-weight:700; font-size:11px;">⚡ Surging vs Ys</span>';
+            } else if (h === curIstHour) {
+              tdBoom.innerHTML = '<span style="color:#0284c7; font-weight:700; font-size:11px;">⏱️ Current Ingress Slot</span>';
+            } else {
+              tdBoom.innerHTML = '<span style="color:#64748b; font-size:11px;">Normal Pace</span>';
+            }
+
+            hTr.append(tdSlot, tdYh, tdTh, tdDh, tdBoom);
+            hourlyTbody.append(hTr);
+          }
+        }
+
+        // 3. Geographic Regional Comparison (City / State / Country: Ys vs Td)
+        const yGeoMap = {};
+        for (const r of yestHuman) {
+          const parts = [r.city, r.region, (r.country && r.country !== 'XX' ? r.country : '')].filter(Boolean);
+          const key = parts.length > 0 ? parts.join(', ') : (r.country || 'India (Direct)');
+          yGeoMap[key] = (yGeoMap[key] || 0) + (r.visits || 1);
+        }
+
+        const tGeoMap = {};
+        for (const r of todayHuman) {
+          const parts = [r.city, r.region, (r.country && r.country !== 'XX' ? r.country : '')].filter(Boolean);
+          const key = parts.length > 0 ? parts.join(', ') : (r.country || 'India (Direct)');
+          tGeoMap[key] = (tGeoMap[key] || 0) + (r.visits || 1);
+        }
+
+        // Merge all distinct locations
+        const allLocations = Array.from(new Set([...Object.keys(yGeoMap), ...Object.keys(tGeoMap)]));
+        allLocations.sort((a, b) => {
+          const tA = tGeoMap[a] || 0;
+          const tB = tGeoMap[b] || 0;
+          return tB - tA;
+        });
+
+        const geoTbody = document.getElementById('lfl-geo-rows');
+        if (geoTbody) {
+          geoTbody.replaceChildren();
+          for (const loc of allLocations.slice(0, 15)) {
+            const yv = yGeoMap[loc] || 0;
+            const tv = tGeoMap[loc] || 0;
+            const diffG = tv - yv;
+            const isPosG = diffG >= 0;
+            const signG = isPosG ? '+' : '';
+
+            const gTr = document.createElement('tr');
+            gTr.style.borderBottom = '1px solid #f1f5f9';
+
+            const tdLoc = document.createElement('td');
+            tdLoc.style.padding = '8px 12px';
+            tdLoc.innerHTML = '<strong style="color:#0f172a;">📍 ' + escapeHtml(loc) + '</strong>';
+
+            const tdYg = document.createElement('td');
+            tdYg.style.padding = '8px 12px';
+            tdYg.style.textAlign = 'right';
+            tdYg.innerHTML = '<span style="color:#64748b; font-family:var(--font-mono); font-weight:700;">' + yv + '</span>';
+
+            const tdTg = document.createElement('td');
+            tdTg.style.padding = '8px 12px';
+            tdTg.style.textAlign = 'right';
+            tdTg.innerHTML = '<strong style="color:#0284c7; font-family:var(--font-mono);">' + tv + '</strong>';
+
+            const tdDg = document.createElement('td');
+            tdDg.style.padding = '8px 12px';
+            tdDg.style.textAlign = 'right';
+            tdDg.innerHTML = '<span style="padding:2px 7px; border-radius:4px; font-weight:800; font-family:var(--font-mono); font-size:11.5px; background:' + (isPosG ? '#dcfce7' : '#e0f2fe') + '; color:' + (isPosG ? '#047857' : '#0369a1') + ';">' + signG + diffG + '</span>';
+
+            const tdTrend = document.createElement('td');
+            tdTrend.style.padding = '8px 12px';
+            if (tv > 0 && yv === 0) {
+              tdTrend.innerHTML = '<span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:11px; padding:2px 7px; border-radius:4px;">✨ NEW INGRESS REGION</span>';
+            } else if (diffG > 0) {
+              tdTrend.innerHTML = '<span style="color:#047857; font-weight:700; font-size:11px;">📈 Surging Velocity</span>';
+            } else if (diffG === 0) {
+              tdTrend.innerHTML = '<span style="color:#64748b; font-size:11px;">⚖️ Equal to Yesterday</span>';
+            } else {
+              tdTrend.innerHTML = '<span style="color:#0284c7; font-size:11px;">Accruing throughout today</span>';
+            }
+
+            gTr.append(tdLoc, tdYg, tdTg, tdDg, tdTrend);
+            geoTbody.append(gTr);
+          }
+        }
+
       } catch (lflErr) {
         console.warn('renderLfL error:', lflErr);
       }
