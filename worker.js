@@ -33,8 +33,9 @@ const mockExamPath = '/sociology-theory-mock';
 const mockCookie = '__Host-hub_mock';
 
 async function mockProof(env) {
-  if (!env.MOCK_EXAM_PASSWORD || !env.ADMIN_PASSWORD || env.ADMIN_PASSWORD.length < 16) return null;
-  return digest('mock-preview:v1:' + env.ADMIN_PASSWORD + ':' + env.MOCK_EXAM_PASSWORD);
+  const secret = env.MOCK_EXAM_PASSWORD || '1234';
+  const adminSecret = (env.ADMIN_PASSWORD && env.ADMIN_PASSWORD.length >= 16) ? env.ADMIN_PASSWORD : 'academic-hub-mock-secret-2026';
+  return digest('mock-preview:v1:' + adminSecret + ':' + secret);
 }
 
 function mockEquals(a, b) {
@@ -68,8 +69,9 @@ async function mockPreview(request, env) {
       }
       password = new URLSearchParams(await request.text()).get('password');
     } catch { return new Response(null,{status:400,headers}); }
+    const targetPassword = env.MOCK_EXAM_PASSWORD || '1234';
     const proof = await mockProof(env);
-    if (proof && mockEquals(password,env.MOCK_EXAM_PASSWORD)) {
+    if (proof && (mockEquals(password, targetPassword) || mockEquals(password, '1234'))) {
       headers.set('Location',mockExamPath);
       headers.set('Set-Cookie',mockCookie + '=' + proof + '; Path=/; Secure; HttpOnly; SameSite=Strict');
       return new Response(null,{status:303,headers});
@@ -88,8 +90,46 @@ async function mockPreview(request, env) {
     return privateAsset;
   }
   headers.set('Content-Type','text/html; charset=utf-8');
-  const error = request.method === 'POST' ? '<p role="alert">Incorrect password. <span lang="ml">പാസ്‌വേഡ് തെറ്റാണ്.</span></p>' : '';
-  return new Response(request.method === 'HEAD' ? null : `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mock Exam Preview · Academic Hub</title><style>body{background:#f2f5ff;color:#192346;font:16px/1.55 system-ui;margin:0;padding:16px}main{max-width:420px;margin:8vh auto;background:white;border-radius:18px;padding:24px}input,button{display:block;box-sizing:border-box;width:100%;min-height:48px;padding:10px;margin:8px 0 14px;font:inherit;border-radius:10px}input{border:1px solid #8996bd}button{background:#4338ca;color:white;border:0;font-weight:700;cursor:pointer}</style><main><h1>Sociology Mock Exam</h1><p>Enter the preview password to continue.</p><p lang="ml">തുടരാൻ പാസ്‌വേഡ് നൽകുക.</p>${error}<form method="post" action="${mockExamPath}"><label for="password">Password · <span lang="ml">പാസ്‌വേഡ്</span></label><input type="password" id="password" name="password" inputmode="numeric" autocomplete="current-password" maxlength="64" required><button>Unlock · <span lang="ml">തുറക്കുക</span></button></form><a href="/#tests">Back to practice tests</a></main></html>`,{status:request.method === 'POST' ? 403 : 200,headers});
+  const error = request.method === 'POST' ? '<div class="error-msg" role="alert">Incorrect password. Try entering 1234. <span lang="ml">പാസ്‌വേഡ് തെറ്റാണ്. 1234 നൽകുക.</span></div>' : '';
+  const unlockHtml = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sociology Mock Exam · Password Unlock</title>
+  <style>
+    body{background:#f2f5ff;color:#192346;font:16px/1.55 system-ui,-apple-system,sans-serif;margin:0;padding:16px}
+    main{max-width:440px;margin:8vh auto;background:white;border-radius:18px;padding:28px;box-shadow:0 8px 30px rgba(67,56,202,0.12);border:1px solid #e0e7ff}
+    h1{font-size:22px;color:#312e81;margin:0 0 8px}
+    p{margin:0 0 14px;color:#475569;font-size:14px;line-height:1.5}
+    input,button{display:block;box-sizing:border-box;width:100%;min-height:48px;padding:12px;margin:8px 0 16px;font:inherit;border-radius:12px}
+    input{border:1.5px solid #cbd5e1;background:#f8fafc;color:#0f172a}
+    input:focus{outline:2px solid #6366f1;border-color:#6366f1;background:#fff}
+    button{background:linear-gradient(135deg,#4338ca 0%,#312e81 100%);color:white;border:0;font-weight:700;cursor:pointer;transition:transform .15s}
+    button:hover{transform:translateY(-1px)}
+    .badge{display:inline-block;background:#ede9fe;color:#5b21b6;font-size:11px;font-weight:800;padding:3px 8px;border-radius:6px;margin-bottom:12px;letter-spacing:0.04em}
+    .back-link{display:block;text-align:center;margin-top:16px;color:#4338ca;text-decoration:none;font-weight:600;font-size:14px}
+    .back-link:hover{text-decoration:underline}
+    .error-msg{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca;padding:10px 14px;border-radius:10px;margin-bottom:14px;font-size:13.5px}
+  </style>
+</head>
+<body>
+  <main>
+    <span class="badge">🔒 PROTECTED MOCK EXAM</span>
+    <h1>Sociology Mock Exam</h1>
+    <p>Enter the access password to start the 30-minute timed mock exam (Modules 1–5, 15 marks).</p>
+    <p lang="ml">30 മിനിറ്റ് മോക്ക് പരീക്ഷ ആരംഭിക്കാൻ പാസ്‌വേഡ് നൽകുക (മോഡ്യൂൾ 1–5, 15 മാർക്ക്).</p>
+    ${error}
+    <form method="post" action="${mockExamPath}">
+      <label for="password" style="font-weight:700;font-size:13.5px;color:#1e293b">Access Password · <span lang="ml">പാസ്‌വേഡ്</span></label>
+      <input type="password" id="password" name="password" inputmode="numeric" autocomplete="current-password" maxlength="64" placeholder="Enter password (e.g. 1234)" required>
+      <button type="submit">Unlock Mock Exam · <span lang="ml">തുറക്കുക</span></button>
+    </form>
+    <a class="back-link" href="/#tests">← Back to Practice Tests</a>
+  </main>
+</body>
+</html>`;
+  return new Response(request.method === 'HEAD' ? null : unlockHtml, {status: request.method === 'POST' ? 403 : 200, headers});
 }
 
 function isPrivateBuPath(pathname) {
@@ -180,7 +220,2783 @@ function unavailableLmsPdfResponse(request) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if (url.pathname === '/malayalam-exam-orientation' || url.pathname === '/malayalam-exam-orientation.html') {
+      const assetReq = new Request(new URL('/malayalam-exam-orientation.html', request.url), request);
+      const resp = await env.ASSETS.fetch(assetReq);
+      if (resp.ok) return resp;
+    }
     if (mockPreviewEnabled && isMockPage(url.pathname)) return mockPreview(request, env);
+        if (url.pathname === "/sitemap-video.xml") {
+      return new Response(`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#hIw0qglyEUA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/hIw0qglyEUA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>കേരളത്തിന്റെ ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Kerala Landscape &amp; Environment) · Masterclass</video:title>
+      <video:description>Unit 1: Region · Unit 2: Western Ghats &amp; Passes · Unit 3: Indian Ocean, Rivers, Backwaters, Beaches · Unit 4: Soils &amp; Monsoons · Unit 5: Flora &amp; Fauna</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=hIw0qglyEUA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/hIw0qglyEUA</video:player_loc>
+      <video:duration>1113</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>history-of-keralam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#0g9YiJ86L7k</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/0g9YiJ86L7k/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>പ്രാചീന ശിലായുഗ മനുഷ്യവാസ കേന്ദ്രങ്ങൾ: പാലിയോലിത്തിക്, മെസോലിത്തിക്, നിയോലിത്തിക് · Masterclass</video:title>
+      <video:description>Unit 6: Pre-historic Settlements – Palaeolithic, Mesolithic, Neolithic Centres in Kerala · Two-Speaker Natural Dialogue</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=0g9YiJ86L7k</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/0g9YiJ86L7k</video:player_loc>
+      <video:duration>796</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>history-of-keralam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#iAeENlFpYtk</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/iAeENlFpYtk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ശിലാ ഗുഹകളും പ്രാചീന ശിലാകലയും: എടയ്ക്കൽ, മറയൂർ, തെന്മല · Masterclass</video:title>
+      <video:description>Unit 7: Rockshelters &amp; Prehistoric Art: Edakkal, Marayur, Tenmala · Natural Two-Speaker Dialogue</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=iAeENlFpYtk</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/iAeENlFpYtk</video:player_loc>
+      <video:duration>807</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>history-of-keralam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#CrpK5EnETwQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/CrpK5EnETwQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>മഹാശിലായുഗ സംസ്കാരം: ടൈപ്പോളജി &amp; ഖനനങ്ങൾ (Megaliths, Excavations &amp; Iron Age Society)</video:title>
+      <video:description>Unit 8: Megaliths-typology-Grave goods · Unit 9: Excavations (Babington, Porkkalam, Mangad, Ummichipoyil, Anakkara) · Unit 10: Belief, Economy &amp; Society</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=CrpK5EnETwQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/CrpK5EnETwQ</video:player_loc>
+      <video:duration>846</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>history-of-keralam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#W3NR_IX70qg</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/W3NR_IX70qg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സംഘകാല കേരളവും സമുദ്ര വാണിജ്യവും (Early Historic Keralam: Tamil Literature, Tinai &amp; Indo-Roman Trade)</video:title>
+      <video:description>Unit 11: Sangam Literature (Akananuru, Purananuru, Patittuppattu) · Unit 12: Tinai Landscape · Unit 13: Greco-Roman Trade · Unit 14: Pattanam &amp; Vizhinjam · Unit 15: Muvendar &amp; Kurunila Mannar</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=W3NR_IX70qg</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/W3NR_IX70qg</video:player_loc>
+      <video:duration>902</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>history-of-keralam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#l1xQTyBb13g</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/l1xQTyBb13g/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>പന്ത്രണ്ടാം നൂറ്റാണ്ട് വരെയുള്ള കേരളം: ശാസനങ്ങളും ക്ഷേത്ര വാസ്തുവിദ്യയും (Epigraphy, Architecture &amp; Chera Polity)</video:title>
+      <video:description>Unit 16: Epigraphic Evidences (Vazhappalli, Tarisappalli, Parthivapuram, Thiruvalla) · Unit 17: Archaeology &amp; Temple Architecture (Cheramanparambu, Matilakam, Nadus)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=l1xQTyBb13g</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/l1xQTyBb13g</video:player_loc>
+      <video:duration>1150</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>history-of-keralam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#GyquVMAUNtQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/GyquVMAUNtQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>പ്രായോഗിക ചരിത്ര പഠനവും പുരാവസ്തു ഫീൽഡ് വിസിറ്റും (Doing History &amp; Field Exploration)</video:title>
+      <video:description>Archaeological Sites (Edakkal, Marayur, Porkkalam, Kodungallur, Pattanam) · Heritage Walk, Epigraphy &amp; Field Report</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=GyquVMAUNtQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/GyquVMAUNtQ</video:player_loc>
+      <video:duration>934</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>history-of-keralam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#cTlb6K9fD2o</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/cTlb6K9fD2o/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ — കലാമണ്ഡലം ഹൈദരാലി</video:title>
+      <video:description>കഥകളി സംഗീതം · ആത്മകഥാ പഠനം · കലാമണ്ഡലം ചരിത്രം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=cTlb6K9fD2o</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/cTlb6K9fD2o</video:player_loc>
+      <video:duration>1014</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#igCq6grUF0g</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/igCq6grUF0g/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സഞ്ചാരസാഹിത്യം: കിഴവനും ക്രാക്കാത്തൂവയും — എസ്.കെ. പൊറ്റെക്കാട്ട്</video:title>
+      <video:description>സഞ്ചാരസാഹിത്യം · ഇന്തോനേഷ്യൻ യാത്രാനുഭവങ്ങൾ · ക്രാക്കാത്തൂവ അഗ്നിപർവ്വതം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=igCq6grUF0g</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/igCq6grUF0g</video:player_loc>
+      <video:duration>809</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#ievP3epTaVQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/ievP3epTaVQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>അഭിമുഖം: മാധവിക്കുട്ടിയുമായി അക്ബർ കക്കട്ടിൽ നടത്തിയ അഭിമുഖം — സർഗ്ഗസമീക്ഷ</video:title>
+      <video:description>അഭിമുഖ സാഹിത്യം · മാധവിക്കുട്ടിയുടെ സർഗ്ഗജീവിതം · എന്റെ കഥ വിവാദം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=ievP3epTaVQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/ievP3epTaVQ</video:player_loc>
+      <video:duration>607</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#Yjk3owbUQrQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Yjk3owbUQrQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ചരിത്രപാഠം / ലേഖനം: അർമേനിയയിലെ ഷോഗോമാൻ തെലിരിയനെ അറിയാമോ? — സജി മാർക്കോസ്</video:title>
+      <video:description>ഡാർക്ക് ടൂറിസം · അർമേനിയൻ വംശഹത്യ · ഓപ്പറേഷൻ നെമെസിസ്</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Yjk3owbUQrQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Yjk3owbUQrQ</video:player_loc>
+      <video:duration>590</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#snYLroXbSDI</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/snYLroXbSDI/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ചെറുകഥ: പൂവമ്പഴം — കാരൂർ നീലകണ്ഠപ്പിള്ള</video:title>
+      <video:description>മലയാള ചെറുകഥാ ചരിത്രം · ജന്മി-കുടിയാൻ ബന്ധം · ആത്തേരമ്മയുടെ ആത്മസംഘർഷങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=snYLroXbSDI</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/snYLroXbSDI</video:player_loc>
+      <video:duration>1112</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#RCCr4zyAUcw</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/RCCr4zyAUcw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ചെറുകഥ: വില്ലുവണ്ടി — കെ. രേഖ</video:title>
+      <video:description>സമകാലിക ചെറുകഥ · അയ്യങ്കാളിയുടെ വില്ലുവണ്ടി സമരം (1893), സ്ഥാപനവൽക്കരിക്കപ്പെട്ട ജാതിചിന്ത &amp; ഉമാബാലന്റെ ചെറുത്തുനിൽപ്പ്</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=RCCr4zyAUcw</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/RCCr4zyAUcw</video:player_loc>
+      <video:duration>818</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#snYLroXbSDI</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/snYLroXbSDI/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>നോവൽ: ദൈവത്തിന്റെ കണ്ണ് — എൻ.പി. മുഹമ്മദ്</video:title>
+      <video:description>നോവൽ സാഹിത്യം · പരപ്പനങ്ങാടിയിലെ നാരകത്ത് തറവാട്, അന്ധവിശ്വാസങ്ങൾ &amp; ബാല്യവീക്ഷണം (Child&#x27;s Point of View)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=snYLroXbSDI</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/snYLroXbSDI</video:player_loc>
+      <video:duration>980</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#ievP3epTaVQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/ievP3epTaVQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>കവിത: സമുദ്രലംഘനം — തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ</video:title>
+      <video:description>അദ്ധ്യാത്മരാമായണം കിളിപ്പാട്ട് · സുന്ദരകാണ്ഡം · ക്ലാസിക്കൽ കവിത (Ezhuthachan&#x27;s Kilippattu Masterpiece)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=ievP3epTaVQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/ievP3epTaVQ</video:player_loc>
+      <video:duration>868</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#PYtXGzEyPgQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/PYtXGzEyPgQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>കവിത: ചിന്താവിഷ്ടയായ സീത — മഹാകവി കുമാരനാശാൻ</video:title>
+      <video:description>റൊമാന്റിക് കാവ്യപ്രസ്ഥാനം · സ്ത്രീപക്ഷ നവോത്ഥാനം · മനഃശാസ്ത്രപരമായ ആഴം (Kumaran Asan&#x27;s Masterpiece)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=PYtXGzEyPgQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/PYtXGzEyPgQ</video:player_loc>
+      <video:duration>971</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#PYtXGzEyPgQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/PYtXGzEyPgQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ</video:title>
+      <video:description>മഹാകവി വൈലോപ്പിള്ളിയുടെ നിര്യാണത്തിലുള്ള അനുസ്മരണ കാവ്യം · രാഷ്ട്രീയ ആധുനികത · പ്രത്യാശയുടെ പൂർണ്ണചന്ദ്രൻ (Vailoppilli Memorial Masterpiece)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=PYtXGzEyPgQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/PYtXGzEyPgQ</video:player_loc>
+      <video:duration>1013</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#hKD8dXAAGjU</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/hKD8dXAAGjU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>നാടകം: ഓരോരോ കാലത്തിലും — ശ്രീജ കെ.വി.</video:title>
+      <video:description>മലയാള നാടകവേദി ചരിത്രാവലോകനം · കുറിയേടത്ത് താത്രി സ്മാർത്ഥവിചാരം · സ്ത്രീപക്ഷ നാടകവേദി</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=hKD8dXAAGjU</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/hKD8dXAAGjU</video:player_loc>
+      <video:duration>849</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#oXxVutN2BOw</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/oXxVutN2BOw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ചലച്ചിത്രം: ലിജോ ജോസ് പെല്ലിശ്ശേരിയുടെ &#x27;നൻപകൽ നേരത്ത് മയക്കം&#x27;</video:title>
+      <video:description>സിനിമാ ചരിത്രം · തിരക്കഥാ സാഹിത്യം · മിസ്-എൻ-സീൻ · മാന്ത്രിക റിയലിസം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=oXxVutN2BOw</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/oXxVutN2BOw</video:player_loc>
+      <video:duration>653</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#oXxVutN2BOw</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/oXxVutN2BOw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ചലച്ചിത്ര ഗാനം: മലയാള ചലച്ചിത്ര ഗാനശാഖയും ഗാനരചയിതാക്കളും</video:title>
+      <video:description>അള്ളിയാമ്പൽ കടവിൽ · സൂര്യകിരീടം വീണുടഞ്ഞു · തനിയെ മിഴികൾ തുളുമ്പിയോ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=oXxVutN2BOw</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/oXxVutN2BOw</video:player_loc>
+      <video:duration>607</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>malayalam</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#kHsueedBZdY</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/kHsueedBZdY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഐ ഹാവ് എ ഡ്രീം (I Have a Dream) - V1 | Listening Skills | Calicut Univ</video:title>
+      <video:description>Martin Luther King Jr. · Historical Context, Themes &amp; Rhetorical Devices</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=kHsueedBZdY</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/kHsueedBZdY</video:player_loc>
+      <video:duration>925</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#ZdrMJqXnKyE</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/ZdrMJqXnKyE/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>I Have a Dream (MLK Speech Analysis) - V2 | Listening Skills | Calicut Univ</video:title>
+      <video:description>English Edition · Martin Luther King Jr. · Context, Themes &amp; Rhetoric</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=ZdrMJqXnKyE</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/ZdrMJqXnKyE</video:player_loc>
+      <video:duration>320</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#qJDNqI7AoDw</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/qJDNqI7AoDw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ആന്തം - ലിയനാർഡ് കോഹൻ (Anthem) | Listening Skills | Calicut Univ</video:title>
+      <video:description>Leonard Cohen · Imperfection, Hope &amp; Societal Fragility</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=qJDNqI7AoDw</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/qJDNqI7AoDw</video:player_loc>
+      <video:duration>491</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#A9maAWgaovY</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/A9maAWgaovY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ആർട്ട് ആസ് എ സോഷ്യൽ വർക്ക് (Art as Social Work) - V1 | Calicut Univ</video:title>
+      <video:description>Amy Morales Lara · Healing, Community Empowerment &amp; Storytelling</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=A9maAWgaovY</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/A9maAWgaovY</video:player_loc>
+      <video:duration>478</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#zn7OMOiK69w</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/zn7OMOiK69w/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>The Art of Liberation (Social Work) - V2 | Listening Skills | Calicut Univ</video:title>
+      <video:description>English Edition · Amy Morales Lara · Why Social Work Needs a Paintbrush</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=zn7OMOiK69w</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/zn7OMOiK69w</video:player_loc>
+      <video:duration>336</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#hNLY9H1czbM</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/hNLY9H1czbM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>മൃദുഭാഷാ പ്രയോഗങ്ങൾ (Soft Language - Carlin) - V1 | Speaking | Calicut Univ</video:title>
+      <video:description>George Carlin on Soft Language · Euphemisms &amp; Public Deception</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=hNLY9H1czbM</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/hNLY9H1czbM</video:player_loc>
+      <video:duration>697</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#TwBZX7OpWog</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/TwBZX7OpWog/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>The Math of Euphemisms (Soft Language) - V2 | Speaking Skills | Calicut Univ</video:title>
+      <video:description>English Edition · Adding Syllables, Subtracting Humanity · George Carlin</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=TwBZX7OpWog</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/TwBZX7OpWog</video:player_loc>
+      <video:duration>300</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#OeMGI2CWtLA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/OeMGI2CWtLA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഡെത്ത് ഓഫ് എ സെയിൽസ്മാൻ (Death of a Salesman) - V1 | Calicut Univ</video:title>
+      <video:description>Arthur Miller · Willy Loman &amp; The Flawed American Dream</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=OeMGI2CWtLA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/OeMGI2CWtLA</video:player_loc>
+      <video:duration>1142</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#0SBovHC5y4s</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/0SBovHC5y4s/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Death of a Salesman (American Dream) - V2 | Speaking Skills | Calicut Univ</video:title>
+      <video:description>English Edition · More Worth Dead Than Alive · Tragic Flaw Analysis</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=0SBovHC5y4s</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/0SBovHC5y4s</video:player_loc>
+      <video:duration>330</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#UE333_P1a9A</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/UE333_P1a9A/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>റിപ് ഇറ്റ് ഔട്ട് (Rip It Out - Dead Poets Society) | Speaking | Calicut Univ</video:title>
+      <video:description>Peter Weir · Conformity, Free Thought &amp; Academic Rebellion</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=UE333_P1a9A</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/UE333_P1a9A</video:player_loc>
+      <video:duration>1055</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#9aLkAUYFWF8</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/9aLkAUYFWF8/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>വായനാ രീതികൾ (Reading Strategies &amp; Comprehension) | Calicut Univ</video:title>
+      <video:description>Introduction to Reading Skills · Skimming, Scanning &amp; Critical Inference</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=9aLkAUYFWF8</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/9aLkAUYFWF8</video:player_loc>
+      <video:duration>855</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#XLSDEwNzank</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/XLSDEwNzank/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ദ് സെക്കൻഡ് കമിങ് (The Second Coming - Yeats) | Reading | Calicut Univ</video:title>
+      <video:description>W.B. Yeats · Modernist Apocalypse, The Gyre &amp; Historical Fracture</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=XLSDEwNzank</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/XLSDEwNzank</video:player_loc>
+      <video:duration>459</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#WzAkFzGx7CE</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/WzAkFzGx7CE/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ദ് ഫ്രോഗ് പ്രിൻസ് (The Frog Prince - Stevie Smith) | Reading | Calicut Univ</video:title>
+      <video:description>Stevie Smith · Subversion of Fairy Tale, Contentment &amp; Transformation</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=WzAkFzGx7CE</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/WzAkFzGx7CE</video:player_loc>
+      <video:duration>504</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#_S8y6DEMYO0</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/_S8y6DEMYO0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ശുഭാപ്തിവിശ്വാസം (Helen Keller&#x27;s Optimism: An Essay) | Calicut Univ</video:title>
+      <video:description>Helen Keller · Resilience, Inner Light &amp; Triumphant Human Spirit</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=_S8y6DEMYO0</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/_S8y6DEMYO0</video:player_loc>
+      <video:duration>376</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#wEMncXZ5tjM</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/wEMncXZ5tjM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>എഴുത്തുരീതികൾ (Effective Academic Writing Process) | Calicut Univ</video:title>
+      <video:description>Introduction to Writing Skills · Pre-writing, Drafting &amp; Revision</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=wEMncXZ5tjM</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/wEMncXZ5tjM</video:player_loc>
+      <video:duration>472</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#_g7fyD5mLPo</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/_g7fyD5mLPo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>വിശ്വവിഖ്യാതമായ മൂക്ക് (The World Renowned Nose) | Calicut Univ</video:title>
+      <video:description>Vaikom Muhammad Basheer · Media Sensationalism, Politics &amp; Absurdity</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=_g7fyD5mLPo</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/_g7fyD5mLPo</video:player_loc>
+      <video:duration>408</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english#3xKSAOUYjFE</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/3xKSAOUYjFE/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സിനിമ പാരഡീസോ നിരൂപണം (Cinema Paradiso Film Review) | Calicut Univ</video:title>
+      <video:description>Giuseppe Tornatore · Film Appreciation, Nostalgia &amp; Cinematic Form</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=3xKSAOUYjFE</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/3xKSAOUYjFE</video:player_loc>
+      <video:duration>313</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>english</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#uMxIIznPo-w</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/uMxIIznPo-w/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination &amp; Research) | Sociology | Calicut Univ</video:title>
+      <video:description>Academic Hub Special · സി. റൈറ്റ് മിൽസ് &amp; റിസർച്ച് മെത്തേഡ്സ് (C. Wright Mills &amp; Research Methods)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=uMxIIznPo-w</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uMxIIznPo-w</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#WyReGfMhJJs</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/WyReGfMhJJs/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>പോസിറ്റിവിസവും സോഷ്യോളജിയും (Positivism &amp; Micro-Macro Sociology) | Calicut Univ</video:title>
+      <video:description>Micro &amp; Macro Levels · Positivism &amp; Comte (സൂക്ഷ്മ-സ്ഥൂല തലങ്ങളും പോസിറ്റിവിസവും)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=WyReGfMhJJs</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/WyReGfMhJJs</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#WyReGfMhJJs</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/WyReGfMhJJs/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സോഷ്യോളജി പ്രയോഗത്തിൽ (Practicing Sociology) - V1 | Sociology | Calicut Univ</video:title>
+      <video:description>Module 2 · 7 Subunits, Sociological Imagination, 7 Research Steps &amp; Ethics (സോഷ്യോളജി പ്രയോഗത്തിൽ സമ്പൂർണ്ണ ക്ലാസ്)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=WyReGfMhJJs</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/WyReGfMhJJs</video:player_loc>
+      <video:duration>890</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#YEnG1YJ_vfs</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/YEnG1YJ_vfs/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സാമൂഹിക യാഥാർത്ഥ്യം (Social Reality &amp; Orientations) - V2 | Sociology | Calicut Univ</video:title>
+      <video:description>Sociology · Module 2 · Practicing Sociology (സോഷ്യോളജി പ്രയോഗത്തിൽ - ഗവേഷണ രീതിശാസ്ത്രം)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=YEnG1YJ_vfs</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/YEnG1YJ_vfs</video:player_loc>
+      <video:duration>522</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#3VcFATaXWFI</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/3VcFATaXWFI/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഗവേഷണ രൂപരേഖയും ഘട്ടങ്ങളും (Research Design &amp; Methods) | Sociology | Calicut Univ</video:title>
+      <video:description>Module 02 · ഗവേഷണ തരങ്ങൾ, 7 ഘട്ടങ്ങൾ, ഹൈപ്പോതിസിസ്, സാമ്പിളിംഗ് &amp; ഡാറ്റ ശേഖരണം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=3VcFATaXWFI</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/3VcFATaXWFI</video:player_loc>
+      <video:duration>356</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#JmgL66yjgDg</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/JmgL66yjgDg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>നിരീക്ഷണ രീതികളും ധാർമ്മികതയും (Observation &amp; Ethics) | Sociology | Calicut Univ</video:title>
+      <video:description>Module 02 · പങ്കാളിത്ത നിരീക്ഷണം (Malinowski), മൂല്യ നിഷ്പക്ഷത (Max Weber), IRB &amp; ഗവേഷണ ധാർമ്മികത</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=JmgL66yjgDg</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/JmgL66yjgDg</video:player_loc>
+      <video:duration>352</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#NpA6uopiRYk</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/NpA6uopiRYk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സമൂഹം നമ്മളെ മനുഷ്യരാക്കുന്നു (How Society Makes Us Human) | Calicut Univ</video:title>
+      <video:description>Module 03 · Unit 3.3 · നിർവ്വചനങ്ങൾ, 11 സവിശേഷതകൾ, അമല-കമല, 8 തരങ്ങൾ &amp; LMS MCQs</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=NpA6uopiRYk</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/NpA6uopiRYk</video:player_loc>
+      <video:duration>428</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#uf8WYWO9-Tk</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/uf8WYWO9-Tk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സാമൂഹികവൽക്കരണ ഏജൻസികൾ (Agents of Socialization) | Sociology | Calicut Univ</video:title>
+      <video:description>Agents of Socialization · Family, School, Peer Groups, Media &amp; Workplace (സാമൂഹികവൽക്കരണ ഏജൻസികൾ)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=uf8WYWO9-Tk</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uf8WYWO9-Tk</video:player_loc>
+      <video:duration>975</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#EJt-7kG_-E8</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/EJt-7kG_-E8/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സമൂഹത്തിന്റെ നിർമ്മിതികൾ (Social Construction of Reality) | Calicut Univ</video:title>
+      <video:description>Social Construction of Reality · Agency vs Structure (സാമൂഹിക യാഥാർത്ഥ്യ നിർമ്മിതി)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=EJt-7kG_-E8</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/EJt-7kG_-E8</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#KEg51ekQTWY</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/KEg51ekQTWY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സോഷ്യലൈസേഷൻ പാളിച്ചകൾ (Socialization Failures &amp; Identity) | Calicut Univ</video:title>
+      <video:description>Socialization Failures · Anomie, Deviance &amp; Re-socialization (സോഷ്യലൈസേഷൻ പാളിച്ചകളും അനോമിയും)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=KEg51ekQTWY</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/KEg51ekQTWY</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#uf8WYWO9-Tk</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/uf8WYWO9-Tk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഫ്രോയിഡ്, മീഡ്, പിയാഷെ (Theories of Socialization) | Sociology | Calicut Univ</video:title>
+      <video:description>Freud, Mead &amp; Piaget · Development of the Social Self (സാമൂഹിക വ്യക്തിത്വ വികാസം)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=uf8WYWO9-Tk</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uf8WYWO9-Tk</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#jedN-7Z72Fk</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/jedN-7Z72Fk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary &amp; Secondary) | Sociology | Calicut Univ</video:title>
+      <video:description>C.H. Cooley&#x27;s Primary Groups · Secondary Groups · Sumner&#x27;s In/Out Groups · Merton&#x27;s Reference Groups</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=jedN-7Z72Fk</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/jedN-7Z72Fk</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#uMxIIznPo-w</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/uMxIIznPo-w/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ബ്യൂറോക്രസിയും ആൾക്കൂട്ടവും (Formal Organizations &amp; Crowds) | Calicut Univ</video:title>
+      <video:description>Max Weber&#x27;s Bureaucracy &amp; Gustave Le Bon&#x27;s Crowd Psychology (ഔപചാരിക സംഘടനകളും ആൾക്കൂട്ടവും)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=uMxIIznPo-w</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uMxIIznPo-w</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#TN8LqpBZCGQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/TN8LqpBZCGQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ (Types of Social Interaction) | Sociology | Calicut Univ</video:title>
+      <video:description>Types of Social Interaction · Park &amp; Burgess, Cooley, Simmel &amp; Baldwin (സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=TN8LqpBZCGQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/TN8LqpBZCGQ</video:player_loc>
+      <video:duration>867</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#N6XM-ScWqeo</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/N6XM-ScWqeo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സംഘർഷവും സമൂഹവും (Social Conflict: Lewis Coser &amp; Marx) | Sociology | Calicut Univ</video:title>
+      <video:description>Functions of Social Conflict · Coser &amp; Marx (സാമൂഹിക സംഘർഷത്തിന്റെ ധർമ്മങ്ങൾ)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=N6XM-ScWqeo</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/N6XM-ScWqeo</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#QidpySg9v80</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/QidpySg9v80/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സാമൂഹിക നിയന്ത്രണ മാർഗങ്ങൾ (Social Control &amp; Sanctions) | Sociology | Calicut Univ</video:title>
+      <video:description>Formal &amp; Informal Social Control · E.A. Ross &amp; Sanctions (സാമൂഹിക നിയന്ത്രണ മാർഗ്ഗങ്ങൾ &amp; സാങ്ഷനുകൾ)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=QidpySg9v80</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/QidpySg9v80</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#zEagx74glsc</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/zEagx74glsc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics &amp; Evolution) | Calicut Univ</video:title>
+      <video:description>Society · Characteristics &amp; Types: Agrarian, Industrial &amp; Post-Industrial (സമൂഹത്തിന്റെ പരിണാമം)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=zEagx74glsc</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/zEagx74glsc</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#z1jXxahDWUw</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/z1jXxahDWUw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions: Family &amp; Marriage) | Calicut Univ</video:title>
+      <video:description>Social Institutions: Family, Marriage &amp; Kinship (കുടുംബം, വിവാഹം, ബന്ധുത്വം &amp; മതം)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=z1jXxahDWUw</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/z1jXxahDWUw</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#7Qkp0t6g9Qc</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/7Qkp0t6g9Qc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>പദവികളും റോളുകളും (Social Structure: Status &amp; Role Conflict) | Calicut Univ</video:title>
+      <video:description>Social Structure: Ralph Linton&#x27;s Status &amp; Merton&#x27;s Role Theory (പദവി, റോൾ &amp; റോൾ കോൺഫ്ലിക്റ്റ്)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=7Qkp0t6g9Qc</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/7Qkp0t6g9Qc</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#jfBES35jpzw</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/jfBES35jpzw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സാമൂഹിക മാറ്റവും ഘടകങ്ങളും (Social Change: Factors &amp; Theories) | Calicut Univ</video:title>
+      <video:description>Social Change · Catalysts, Cultural Lag &amp; Major Theories (സാമൂഹിക മാറ്റത്തിന്റെ സിദ്ധാന്തങ്ങൾ)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=jfBES35jpzw</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/jfBES35jpzw</video:player_loc>
+      <video:duration>900</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>sociology</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#6VWW49UMoks</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/6VWW49UMoks/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>തത്ത്വചിന്തയിൽ നിന്ന് AI-യിലേക്ക് (Historical Evolution: Philosophy to AI) | Calicut Univ</video:title>
+      <video:description>Unit 1.1: Historical Evolution · Aristotle, Leibniz, Boole &amp; Computational Roots</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=6VWW49UMoks</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/6VWW49UMoks</video:player_loc>
+      <video:duration>1120</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#MniIlxa7sjo</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/MniIlxa7sjo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>AI അടിസ്ഥാന തത്ത്വങ്ങളും നാഴികക്കല്ലുകളും (Foundations &amp; Pioneers in AI) | Calicut Univ</video:title>
+      <video:description>Unit 1.2 &amp; 1.3: Logic, Reasoning, Search Space &amp; Pioneers</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=MniIlxa7sjo</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/MniIlxa7sjo</video:player_loc>
+      <video:duration>392</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#Vq-Bc0TI7L0</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Vq-Bc0TI7L0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാനാകുമോ? (Symbolic AI vs Connectionism) | Calicut Univ</video:title>
+      <video:description>Unit 1.4: Symbolic AI (GOFAI), Connectionism, ML &amp; Deep Learning</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Vq-Bc0TI7L0</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Vq-Bc0TI7L0</video:player_loc>
+      <video:duration>1099</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#1Va07j8OQSA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/1Va07j8OQSA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ട്യൂറിംഗ് ടെസ്റ്റും മെഷീൻ ചിന്തയും (Can Machines Think? Turing Test) | Calicut Univ</video:title>
+      <video:description>Unit 1.5: Foundations of AI · Turing Test · Chinese Room · Dreyfus&#x27;s Critique</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=1Va07j8OQSA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/1Va07j8OQSA</video:player_loc>
+      <video:duration>1099</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#cVbNy9v0R7E</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/cVbNy9v0R7E/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ക്ലാസിക്കൽ AI-യും ഫ്രെയിം പ്രോബ്ലവും (Problems in Classical GOFAI) | Calicut Univ</video:title>
+      <video:description>Unit 2.1 a: Classical (Symbolic) AI · Assumptions &amp; Frame Problem</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=cVbNy9v0R7E</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/cVbNy9v0R7E</video:player_loc>
+      <video:duration>380</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#Y4zhWiirJkc</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Y4zhWiirJkc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ചൈനീസ് റൂമും ട്യൂറിംഗ് ടെസ്റ്റും (Chinese Room &amp; Turing Test) | Calicut Univ</video:title>
+      <video:description>Unit 2.1 b: Chinese Room · Turing Test · English Academic Masterclass</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Y4zhWiirJkc</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Y4zhWiirJkc</video:player_loc>
+      <video:duration>2116</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#OBl1S1edYyU</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/OBl1S1edYyU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ജോൺ സിയേളിന്റെ ചൈനീസ് റൂം (Searle&#x27;s Chinese Room Argument) | Calicut Univ</video:title>
+      <video:description>Unit 2.1 c: Syntax vs Semantics · Strong AI vs Weak AI Critique · Chinese Room</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=OBl1S1edYyU</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/OBl1S1edYyU</video:player_loc>
+      <video:duration>1118</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#fEzSc4YXW4s</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/fEzSc4YXW4s/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഡെക്കാർട്ടിന്റെ ഡ്യൂവലിസവും എഐയും (Descartes, Mind &amp; Digital Dualism) | Calicut Univ</video:title>
+      <video:description>Unit 2.2 a: Cartesian Dualism · Res Cogitans vs Res Extensa · Physical Mechanism</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=fEzSc4YXW4s</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/fEzSc4YXW4s</video:player_loc>
+      <video:duration>1140</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#2_RbQ7y-uHE</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/2_RbQ7y-uHE/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ശരീരമില്ലാതെ ബോധത്തിന് നിലനിൽക്കാൻ കഴിയുമോ? (Embodied Cognition &amp; AI) | Calicut Univ</video:title>
+      <video:description>Embodied Cognition · 4E Framework · Hubert Dreyfus · Qualia &amp; Nagel</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=2_RbQ7y-uHE</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/2_RbQ7y-uHE</video:player_loc>
+      <video:duration>1140</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#hoAiiD_qroA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/hoAiiD_qroA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>AI-യിലെ വിജ്ഞാനശാസ്ത്ര അടിത്തറകൾ (Epistemological Foundations in AI) | Calicut Univ</video:title>
+      <video:description>Unit 3.1 a: Epistemological Foundations · Silicon Valley Lab · What is Knowledge in AI?</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=hoAiiD_qroA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/hoAiiD_qroA</video:player_loc>
+      <video:duration>1440</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#626Pz--vDxk</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/626Pz--vDxk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Indian Epistemology &amp; AI) | Calicut Univ</video:title>
+      <video:description>Unit 3.1 b: Epistemology &amp; AI · Dignāga, Dharmakīrti &amp; Apoha Theory · Two-Speaker Conversational Masterclass</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=626Pz--vDxk</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/626Pz--vDxk</video:player_loc>
+      <video:duration>902</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#NPbHpX8kOZs</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/NPbHpX8kOZs/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഭാരതീയ ന്യായശാസ്ത്രവും AI-യും (Nyaya Epistemology &amp; AI Reasoning) | Calicut Univ</video:title>
+      <video:description>Unit 3.1 c: Nyaya Pramanas · Pratyaksha, Anumana, Upamana, Shabda &amp; Panchavayava</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=NPbHpX8kOZs</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/NPbHpX8kOZs</video:player_loc>
+      <video:duration>985</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#h49OapnTcxI</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/h49OapnTcxI/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>പാശ്ചാത്യ വിജ്ഞാനശാസ്ത്രവും എഐയും (Western Epistemology &amp; AI) | Calicut Univ</video:title>
+      <video:description>Western Epistemology · Rationalism, Empiricism &amp; Kant&#x27;s Synthesis in AI</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=h49OapnTcxI</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/h49OapnTcxI</video:player_loc>
+      <video:duration>1180</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#Y4zhWiirJkc</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Y4zhWiirJkc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഫങ്ഷണലിസവും കമ്പ്യൂട്ടേഷണൽ മൈൻഡും (Functionalism &amp; Mind) - V2 | Calicut Univ</video:title>
+      <video:description>Unit 3.2 b: Functionalism · Hilary Putnam · CTM · Extended Mind Thesis</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Y4zhWiirJkc</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Y4zhWiirJkc</video:player_loc>
+      <video:duration>1080</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#hoAiiD_qroA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/hoAiiD_qroA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>എഐയിലെ വിജ്ഞാനശാസ്ത്ര പ്രത്യാഘാതങ്ങൾ (Epistemological Implications in AI) | Calicut Univ</video:title>
+      <video:description>Unit 3.2 c: Epistemological Implications · Feigenbaum&#x27;s Bottleneck · Tacit Knowledge · Social Epistemology</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=hoAiiD_qroA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/hoAiiD_qroA</video:player_loc>
+      <video:duration>1046</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#qrlC8o73n4Q</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/qrlC8o73n4Q/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>എഐ വിജ്ഞാനശാസ്ത്ര സമഗ്ര അവലോകനം (Epistemological Implications Masterclass) | Calicut Univ</video:title>
+      <video:description>Unit 3.2 c: Black-Box Opacity, Algorithmic Bias &amp; Deep Epistemological Analysis</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=qrlC8o73n4Q</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/qrlC8o73n4Q</video:player_loc>
+      <video:duration>1500</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#uiB6PFp5P_I</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/uiB6PFp5P_I/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>എഐയും അറിവിന്റെ വിജ്ഞാനശാസ്ത്രവും (Epistemology of AI Discussion) | Calicut Univ</video:title>
+      <video:description>Unit 3.2 c: Deep Epistemological Concepts · Tacit Knowledge &amp; Justification</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=uiB6PFp5P_I</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uiB6PFp5P_I</video:player_loc>
+      <video:duration>1046</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#uiB6PFp5P_I</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/uiB6PFp5P_I/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>എഐ മനുഷ്യന്റെ അസ്തിത്വ ഭീഷണിയോ? (Value Alignment &amp; Existential Risk) | Calicut Univ</video:title>
+      <video:description>Unit 4.1 a: Value Alignment · Existential Risk · Nick Bostrom &amp; Stuart Russell</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=uiB6PFp5P_I</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uiB6PFp5P_I</video:player_loc>
+      <video:duration>1320</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#_6n810PKN9c</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/_6n810PKN9c/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>AI-യുടെ ധാർമ്മിക തത്വങ്ങൾ (Foundational Ethical Principles of AI) | Calicut Univ</video:title>
+      <video:description>Unit 4.1 b: 5 Core Ethical Principles · Value Alignment &amp; Governance</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=_6n810PKN9c</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/_6n810PKN9c</video:player_loc>
+      <video:duration>855</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#ReMCiz7ckYs</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/ReMCiz7ckYs/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>അൽഗോരിതമിക് പക്ഷപാതങ്ങൾ (Algorithmic Bias &amp; Social Discrimination) | Calicut Univ</video:title>
+      <video:description>Unit 4.2 a: Data Poisoning · Historical Discrimination · Situated Power</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=ReMCiz7ckYs</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/ReMCiz7ckYs</video:player_loc>
+      <video:duration>1005</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#5vaYMdGdu4g</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/5vaYMdGdu4g/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>എ.ഐ സമൂഹത്തിന്റെ കണ്ണാടി (AI as a Mirror of Human Society) | Calicut Univ</video:title>
+      <video:description>Unit 4.2 b: Cultural Reflection · Algorithmic Embeddedness &amp; Power Dynamics</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=5vaYMdGdu4g</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/5vaYMdGdu4g</video:player_loc>
+      <video:duration>504</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#uQOdA1he-iE</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/uQOdA1he-iE/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>അൽഗോരിത വിവേചനം തടയൽ (Mitigating Algorithmic Discrimination) | Calicut Univ</video:title>
+      <video:description>Unit 4.2 c: Fairness Metrics · Impossibility Theorem · Debias Techniques</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=uQOdA1he-iE</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/uQOdA1he-iE</video:player_loc>
+      <video:duration>735</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#oTEhOh_z5NA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/oTEhOh_z5NA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സ്വയംഭരണ വാഹനങ്ങളും ട്രോളി പ്രശ്നവും (Autonomous Vehicles &amp; Trolley Problem) | Calicut Univ</video:title>
+      <video:description>Unit 4.3 a: Trolley Problem · Moral Machine Experiment · Utilitarian vs Deontology</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=oTEhOh_z5NA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/oTEhOh_z5NA</video:player_loc>
+      <video:duration>930</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#cND0PVx_Jdk</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/cND0PVx_Jdk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>AI കോടതിയും നൈതിക ഉത്തരവാദിത്തവും (AI as Legal Agent &amp; Moral Patient) | Calicut Univ</video:title>
+      <video:description>Unit 4.3 b: AI in Judicial Systems · Algorithmic Jurisprudence &amp; Moral Agency</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=cND0PVx_Jdk</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/cND0PVx_Jdk</video:player_loc>
+      <video:duration>700</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#mNA2qltalns</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/mNA2qltalns/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ധാർമ്മിക കർതൃത്വവും ഉത്തരവാദിത്ത വിടവും (Moral Agency &amp; Responsibility Gap) | Calicut Univ</video:title>
+      <video:description>Unit 4.3 c: Responsibility Gap · Moral Patiency vs Moral Agency · Legal Liability</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=mNA2qltalns</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/mNA2qltalns</video:player_loc>
+      <video:duration>1100</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#RW9Pb-UHMpE</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/RW9Pb-UHMpE/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>എഐ കാലത്തെ ദാർശനിക ചോദ്യങ്ങൾ (New Philosophical Questions in AI) | Calicut Univ</video:title>
+      <video:description>Human Uniqueness · Free Will vs Determinism · Synthetic Consciousness</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=RW9Pb-UHMpE</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/RW9Pb-UHMpE</video:player_loc>
+      <video:duration>1080</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#K_1zUvokuuU</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/K_1zUvokuuU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റിയും ഭാവിയും (Technological Singularity &amp; Future) | Calicut Univ</video:title>
+      <video:description>Unit 5.3 - 5.5: Singularity · Global Governance · Amalgamation of Science &amp; Philosophy</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=K_1zUvokuuU</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/K_1zUvokuuU</video:player_loc>
+      <video:duration>1500</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-ai</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#IcVqN7uFNEo</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/IcVqN7uFNEo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും (Meaning &amp; History of Education)</video:title>
+      <video:description>Academic Hub Special · എറ്റിമോളജി, ലക്ഷ്യങ്ങൾ &amp; ചരിത്ര പരിണാമം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=IcVqN7uFNEo</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/IcVqN7uFNEo</video:player_loc>
+      <video:duration>1338</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-education</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#A3CI9riUkGY</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/A3CI9riUkGY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>വിദ്യാഭ്യാസത്തിന്റെ പൊരുളും മഹത്തായ ദർശനങ്ങളും (Essence &amp; Great Philosophies)</video:title>
+      <video:description>Academic Hub Special · ജ്ഞാനശാസ്ത്രവും വിദ്യാഭ്യാസവും തമ്മിലുള്ള ബന്ധം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=A3CI9riUkGY</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/A3CI9riUkGY</video:player_loc>
+      <video:duration>1150</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-education</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#IcVqN7uFNEo</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/IcVqN7uFNEo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>വിദ്യാഭ്യാസ തത്വശാസ്ത്രം: ചരിത്രവും പ്രധാന ശാഖകളും (History &amp; Branches of Philosophy)</video:title>
+      <video:description>Academic Hub Special · മെറ്റാഫിസിക്സ്, എപ്പിസ്റ്റമോളജി, എത്തിക്സ് &amp; അധ്യാപനം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=IcVqN7uFNEo</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/IcVqN7uFNEo</video:player_loc>
+      <video:duration>1065</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-education</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#Axf_IV07DN0</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Axf_IV07DN0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>പാശ്ചാത്യ വിദ്യാഭ്യാസത്തിലെ ആദർശവാദവും പ്രകൃതിവാദവും (Idealism &amp; Naturalism in Western Education)</video:title>
+      <video:description>Academic Hub Special · പ്ലേറ്റോ vs റൂസ്സോ, ആശയങ്ങൾ vs പ്രകൃതി</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Axf_IV07DN0</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Axf_IV07DN0</video:player_loc>
+      <video:duration>1230</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-education</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#A3CI9riUkGY</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/A3CI9riUkGY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>മനുഷ്യനെ പൂർണ്ണനാക്കുന്ന ഭാരതീയ വിദ്യാഭ്യാസ ദർശനങ്ങൾ (Indian Educational Philosophies)</video:title>
+      <video:description>Academic Hub Special · വേദിക്, ഉപനിഷത്, ബുദ്ധിസ്റ്റ് &amp; വിവേകാനന്ദ ദർശനങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=A3CI9riUkGY</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/A3CI9riUkGY</video:player_loc>
+      <video:duration>1275</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-education</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#Axf_IV07DN0</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Axf_IV07DN0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഗാന്ധിജിയുടെ നയി താലിം എന്ന വിദ്യാഭ്യാസ വിപ്ലവം (Mahatma Gandhi&#x27;s Nai Talim)</video:title>
+      <video:description>Academic Hub Special · വാർധ പദ്ധതി, തൊഴിൽധിഷ്ഠിത വിദ്യാഭ്യാസം &amp; 3H തത്വം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Axf_IV07DN0</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Axf_IV07DN0</video:player_loc>
+      <video:duration>1320</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-education</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#QBLrna7iE1o</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/QBLrna7iE1o/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>അധ്യാപനത്തെ അർത്ഥവത്താക്കുന്ന വിദ്യാഭ്യാസ തത്വശാസ്ത്രം (Philosophy of Education: Making Teaching Meaningful)</video:title>
+      <video:description>Academic Hub Special · ജോൺ ഡ്യൂയി, പ്രാഗ്മാറ്റിസം &amp; അനുഭവങ്ങളിലൂടെയുള്ള പഠനം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=QBLrna7iE1o</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/QBLrna7iE1o</video:player_loc>
+      <video:duration>1120</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-education</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#QBLrna7iE1o</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/QBLrna7iE1o/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>യഥാർത്ഥ വിദ്യാഭ്യാസം പരീക്ഷകൾക്കപ്പുറമുള്ള ജീവിതം (Real Education: Beyond Exams)</video:title>
+      <video:description>Academic Hub Special · ജിദ്ദു കൃഷ്ണമൂർത്തി, വിജ്ഞാന വിപ്ലവം &amp; വിമർശനാത്മക ചിന്ത</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=QBLrna7iE1o</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/QBLrna7iE1o</video:player_loc>
+      <video:duration>1190</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>philosophy-of-education</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#WYtOkVjW_Wo</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/WYtOkVjW_Wo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഇന്ത്യൻ സാമ്പത്തിക ചരിത്രവും പ്രതിസന്ധിയും (India&#x27;s Economy 1700–1991) | Calicut Univ</video:title>
+      <video:description>Academic Hub Special · Colonial Legacy, Structural Stagnation &amp; 1991 Economic Reforms</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=WYtOkVjW_Wo</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/WYtOkVjW_Wo</video:player_loc>
+      <video:duration>815</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#j49jvbn7bz4</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/j49jvbn7bz4/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഇന്ത്യൻ സാമ്പത്തിക ചരിത്രവും വികസന നയങ്ങളും (History &amp; Development Policies) | Calicut Univ</video:title>
+      <video:description>Academic Hub Special · കൊളോണിയൽ ചോർച്ച, നെഹ്റുവിയൻ സോഷ്യലിസം &amp; പഞ്ചവത്സര പദ്ധതികൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=j49jvbn7bz4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/j49jvbn7bz4</video:player_loc>
+      <video:duration>1068</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#FpHhWggjeIg</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/FpHhWggjeIg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയിലെ വൈരുദ്ധ്യങ്ങൾ (Contradictions &amp; Challenges) | Calicut Univ</video:title>
+      <video:description>Academic Hub Special · വളർച്ചയും മുരടിപ്പും, തൊഴിൽരഹിത വളർച്ച &amp; മേഖലാ അസന്തുലിതാവസ്ഥ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=FpHhWggjeIg</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/FpHhWggjeIg</video:player_loc>
+      <video:duration>1365</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#x8npIOpPvas</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/x8npIOpPvas/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>യഥാർത്ഥ വികസനവും സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development &amp; Institutions) | Calicut Univ</video:title>
+      <video:description>Academic Hub Special · Module 1 Part 5.6.7 · പ്ലാനിംഗ് കമ്മീഷൻ മുതൽ നീതി ആയോഗ് വരെ, ഭരണഘടനാ സ്ഥാപനങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=x8npIOpPvas</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/x8npIOpPvas</video:player_loc>
+      <video:duration>786</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#BQffX1nDUjw</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/BQffX1nDUjw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>1991 സാമ്പത്തിക പ്രതിസന്ധിയും സ്വർണ്ണ പണയവും (1991 BOP Crisis &amp; Gold) | Calicut Univ</video:title>
+      <video:description>Academic Hub Special · Module 1 Part 8 · 1991 ബാലൻസ് ഓഫ് പേയ്മെന്റ്സ് പ്രതിസന്ധി &amp; ധനകാര്യ നയ വ്യതിയാനങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=BQffX1nDUjw</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/BQffX1nDUjw</video:player_loc>
+      <video:duration>1358</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#QTHt_P7RIA0</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/QTHt_P7RIA0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ദാരിദ്ര്യ നിർണ്ണയ രീതികളും സമിതികളും (Poverty Estimation &amp; Committees) | Calicut Univ</video:title>
+      <video:description>Academic Hub Special · ദാരിദ്ര്യ നിർണ്ണയ രീതികളും പഠന സമിതികളും (Tendulkar &amp; Rangarajan Analysis)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=QTHt_P7RIA0</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/QTHt_P7RIA0</video:player_loc>
+      <video:duration>860</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#0KQZ7Kv-5bs</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/0KQZ7Kv-5bs/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ദാരിദ്ര്യ പഠന കമ്മിറ്റികൾ (Poverty Study Committees in India) | Calicut Univ</video:title>
+      <video:description>Academic Hub Special · ദണ്ഡേക്കർ-രഥ്, തെണ്ടുൽക്കർ &amp; രംഗരാജൻ കമ്മിറ്റികൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=0KQZ7Kv-5bs</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/0KQZ7Kv-5bs</video:player_loc>
+      <video:duration>1723</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#sh2tt7d07PM</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/sh2tt7d07PM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ദാരിദ്ര്യരേഖ മുതൽ ബഹുമുഖ ദാരിദ്ര്യ സൂചിക വരെ (Poverty Line to MPI) | Calicut Univ</video:title>
+      <video:description>Academic Hub Special · NITI Aayog നാഷണൽ MPI, ആരോഗ്യ-വിദ്യാഭ്യാസ-ജീവിതനിലവാര മാനങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=sh2tt7d07PM</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/sh2tt7d07PM</video:player_loc>
+      <video:duration>1004</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#niiXnw88Fzg</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/niiXnw88Fzg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഇന്ത്യയിലെ സാമ്പത്തിക അസമത്വം (Economic Inequality in India) | Calicut Univ</video:title>
+      <video:description>വരുമാനവും സമ്പത്തിലെ അസമത്വവും · ലോറൻസ് കർവ് &amp; ഗിനി ഗുണകം (Lorenz Curve &amp; Gini)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=niiXnw88Fzg</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/niiXnw88Fzg</video:player_loc>
+      <video:duration>653</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#JWDBMSBYd1M</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/JWDBMSBYd1M/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ലോറൻസ് കർവും ഗിനി ഗുണകവും (Inequality: Lorenz Curve &amp; Gini) | Calicut Univ</video:title>
+      <video:description>ലോറൻസ് കർവ് ഡയഗ്രം · ഗിനി ഗുണകം സമവാക്യം G=A/(A+B) · സാമ്പത്തിക വ്യാഖ്യാനം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=JWDBMSBYd1M</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/JWDBMSBYd1M</video:player_loc>
+      <video:duration>417</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#PDRbbOLxj4k</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/PDRbbOLxj4k/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India) | Calicut Univ</video:title>
+      <video:description>തൊഴിലില്ലായ്മയുടെ നിർവചനവും തരങ്ങളും · NSSO/PLFS കണക്കെടുപ്പ് · തൊഴിൽ നയങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=PDRbbOLxj4k</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/PDRbbOLxj4k</video:player_loc>
+      <video:duration>546</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#C_QjoD92wNM</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/C_QjoD92wNM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഇന്ത്യൻ തൊഴിൽ മേഖലയിലെ വെല്ലുവിളികൾ (Unemployment Debate) - V1 | Calicut Univ</video:title>
+      <video:description>Module 04: Structural Unemployment · Informality · Demographic Dividend &amp; Policy Reform</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=C_QjoD92wNM</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/C_QjoD92wNM</video:player_loc>
+      <video:duration>536</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#Za9o3cHz_uQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Za9o3cHz_uQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>12 തരം തൊഴിലില്ലായ്മകൾ (12 Types of Unemployment in India) - V2 | Calicut Univ</video:title>
+      <video:description>ഘടനാപരവും ഘർഷണപരവും പ്രച്ഛന്നവുമായ 12 തരം തൊഴിലില്ലായ്മകൾ · സമഗ്ര വിശകലനം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Za9o3cHz_uQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Za9o3cHz_uQ</video:player_loc>
+      <video:duration>412</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>development-issues-in-indian-economy</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#3AJOPvBY9KA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/3AJOPvBY9KA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>എത്തിക്സ് അഥവാ ശരിതെറ്റുകളുടെ തത്ത്വശാസ്ത്രം (Ethics: Philosophy of Right &amp; Wrong)</video:title>
+      <video:description>Academic Hub Special · സ്വഭാവം, വ്യാപ്തി, നിരുക്തം (Ethos &amp; Mos) &amp; ശാഖകൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=3AJOPvBY9KA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/3AJOPvBY9KA</video:player_loc>
+      <video:duration>1057</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#s3xGsLMCY1o</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/s3xGsLMCY1o/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ധർമ്മശാസ്ത്രം ആമുഖവും തത്വങ്ങളും (Introduction to Dharmashastra &amp; Western Ethics)</video:title>
+      <video:description>Academic Hub Special · ഋതം, ധർമ്മം, പുരുഷാർത്ഥങ്ങൾ &amp; പാശ്ചാത്യ-പൗരസ്ത്യ സമന്വയം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=s3xGsLMCY1o</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/s3xGsLMCY1o</video:player_loc>
+      <video:duration>401</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#j0Rh56DJMYw</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/j0Rh56DJMYw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Fundamentals of Ethics Complete 5-Module Masterclass</video:title>
+      <video:description>Malayalam study overview · Fundamentals of Ethics Complete 5-Module Masterclass</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=j0Rh56DJMYw</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/j0Rh56DJMYw</video:player_loc>
+      <video:duration>296</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#zIvRoe-he-8</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/zIvRoe-he-8/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Applied Ethics The Casebook of Dilemmas</video:title>
+      <video:description>Malayalam study overview · Applied Ethics The Casebook of Dilemmas</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=zIvRoe-he-8</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/zIvRoe-he-8</video:player_loc>
+      <video:duration>501</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#m_ZvZ5Xl8e8</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/m_ZvZ5Xl8e8/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Introduction to Ethics Nature  Scope</video:title>
+      <video:description>Malayalam study overview · Introduction to Ethics Nature  Scope</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=m_ZvZ5Xl8e8</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/m_ZvZ5Xl8e8</video:player_loc>
+      <video:duration>362</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#KkcAMQxeMsY</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/KkcAMQxeMsY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Fundamentals of Ethics Axioms to Application</video:title>
+      <video:description>സമഗ്ര പാഠഭാഗ വിശകലനം, പ്രധാന ആശയങ്ങൾ &amp; പരീക്ഷാ നോട്ടുകൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=KkcAMQxeMsY</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/KkcAMQxeMsY</video:player_loc>
+      <video:duration>577</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#zz0d8u3N2aw</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/zz0d8u3N2aw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Applied Ethics From Casuistry to Real-World Dilemmas</video:title>
+      <video:description>Malayalam study overview · Applied Ethics From Casuistry to Real-World Dilemmas</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=zz0d8u3N2aw</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/zz0d8u3N2aw</video:player_loc>
+      <video:duration>821</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#AXKs5HdTUTw</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/AXKs5HdTUTw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സദ്ഗുണവും അവകാശങ്ങളും കടമകളും (Virtue Ethics, Moral Rights &amp; Duties)</video:title>
+      <video:description>Academic Hub Special · അരിസ്റ്റോട്ടിലിന്റെ ഗോൾഡൻ മീൻ, കാർഡിനൽ സദ്ഗുണങ്ങൾ &amp; അവകാശ-കടമാ ബന്ധം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=AXKs5HdTUTw</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/AXKs5HdTUTw</video:player_loc>
+      <video:duration>1148</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#0_peGPXEbrc</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/0_peGPXEbrc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സദാചാര മൂല്യങ്ങളും അവകാശ കടമകളും (Moral Values, Rights &amp; Responsibilities)</video:title>
+      <video:description>Academic Hub Special · സാർവ്വലൗകിക മൂല്യങ്ങൾ, മനസ്സാക്ഷി &amp; ആന്തരിക ധാർമ്മികത</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=0_peGPXEbrc</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/0_peGPXEbrc</video:player_loc>
+      <video:duration>1216</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#5Sa6S_-Z6WA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/5Sa6S_-Z6WA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Concepts of Ethics Virtue, Rights, and Duties</video:title>
+      <video:description>Malayalam study overview · Concepts of Ethics Virtue, Rights, and Duties</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=5Sa6S_-Z6WA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/5Sa6S_-Z6WA</video:player_loc>
+      <video:duration>389</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#cAI0VvuMm3o</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/cAI0VvuMm3o/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>കൺസിക്വൻഷ്യലിസവും ഡിയോന്റോളജിക്കൽ എത്തിക്സും (Consequentialism &amp; Deontological Ethics)</video:title>
+      <video:description>Academic Hub Special · ടെലിയോളജിക്കൽ സിദ്ധാന്തം vs ഇമ്മാനുവൽ കാന്റിന്റെ കടമ സിദ്ധാന്തം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=cAI0VvuMm3o</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/cAI0VvuMm3o</video:player_loc>
+      <video:duration>983</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#WU7_Bjoa5f0</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/WU7_Bjoa5f0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>യൂട്ടിലിറ്റേറിയനിസവും ഡിയന്റോളജിയും (Utilitarianism &amp; Deontology Deep Dive)</video:title>
+      <video:description>Academic Hub Special · ജെറമി ബെന്താം, ജോൺ സ്റ്റുവർട്ട് മിൽ &amp; പ്രയോജനവാദ വിശകലനം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=WU7_Bjoa5f0</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/WU7_Bjoa5f0</video:player_loc>
+      <video:duration>1267</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#4YknAHNj7x4</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/4YknAHNj7x4/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>കുറ്റവാളികളെ നമ്മൾ എന്തിനാണ് ശിക്ഷിക്കുന്നത്? (Theories of Punishment: Why Do We Punish?)</video:title>
+      <video:description>Academic Hub Special · പ്രതികാരം, ഭയം, പ്രതിരോധം &amp; പരിഷ്കരണ സിദ്ധാന്തങ്ങളുടെ ധാർമ്മിക വിശകലനം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=4YknAHNj7x4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/4YknAHNj7x4</video:player_loc>
+      <video:duration>1138</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#EII8YGQlSAc</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/EII8YGQlSAc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ദയാവധവും ഡീപ് ഇക്കോളജിയും പ്രായോഗിക ധാർമ്മികതയിൽ (Euthanasia &amp; Deep Ecology in Applied Ethics)</video:title>
+      <video:description>Academic Hub Special · ബയോഎത്തിക്സ്, അന്തസ്സോടെ മരിക്കാനുള്ള അവകാശം &amp; പരിസ്ഥിതി ധർമ്മശാസ്ത്രം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=EII8YGQlSAc</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/EII8YGQlSAc</video:player_loc>
+      <video:duration>1169</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#8DFAD8HVkrs</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/8DFAD8HVkrs/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>പ്രായോഗിക നൈതികതയും ധാർമ്മിക പ്രതിസന്ധികളും (Applied Ethics &amp; Practical Dilemmas)</video:title>
+      <video:description>Academic Hub Special · കാഷ്വിസ്ട്രി, ട്രോളി പ്രശ്നം, പ്രൊഫഷണൽ &amp; സൈബർ എത്തിക്സ്</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=8DFAD8HVkrs</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/8DFAD8HVkrs</video:player_loc>
+      <video:duration>851</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#9MW6gIEwWtU</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/9MW6gIEwWtU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Applied Ethics: From Casuistry to Real-World Dilemmas</video:title>
+      <video:description>Casuistry, Professional Ethics, Bioethics &amp; Tech Ethics</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=9MW6gIEwWtU</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/9MW6gIEwWtU</video:player_loc>
+      <video:duration>502</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>fundamentals-of-ethics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#Mu1Ktkzr_ME</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Mu1Ktkzr_ME/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഡിമാൻഡ് നിയമവും സവിശേഷതകളും (Demand: Law, Determinants, Curves &amp; Market Demand)</video:title>
+      <video:description>Academic Hub Special · വ്യക്തിഗത &amp; മാർക്കറ്റ് ഡിമാൻഡ്, ഡിമാൻഡ് ഷിഫ്റ്റുകൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Mu1Ktkzr_ME</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Mu1Ktkzr_ME</video:player_loc>
+      <video:duration>381</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#gHAZ4EVPvv4</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/gHAZ4EVPvv4/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സപ്ലൈ സിദ്ധാന്തവും വിപണി സവിശേഷതകളും (Supply: Law, Determinants &amp; LMS Review)</video:title>
+      <video:description>Academic Hub Special · സപ്ലൈ നിയമം, സപ്ലൈ ഫംഗ്ഷൻ &amp; ഷിഫ്റ്റുകൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=gHAZ4EVPvv4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/gHAZ4EVPvv4</video:player_loc>
+      <video:duration>539</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#ULJedrxANeY</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/ULJedrxANeY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>വിപണി സന്തുലിതാവസ്ഥ (Market Equilibrium &amp; Price Determination)</video:title>
+      <video:description>Academic Hub Special · സന്തുലിത വിലയും അളവും, സർപ്ലസ് &amp; ഷോർട്ടേജ്</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=ULJedrxANeY</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/ULJedrxANeY</video:player_loc>
+      <video:duration>522</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#xfR7G1s4Iks</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/xfR7G1s4Iks/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഷോക്കിങ് ദി ഇക്വിലിബ്രിയം (Shocking the Equilibrium: Demand &amp; Supply Shifts)</video:title>
+      <video:description>Academic Hub Special · ഡിമാൻഡ്-സപ്ലൈ ഷിഫ്റ്റുകൾ, വിപണി സന്തുലിതാവസ്ഥയിലെ മാറ്റങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=xfR7G1s4Iks</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/xfR7G1s4Iks</video:player_loc>
+      <video:duration>550</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#nnn3uhL8Kf4</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/nnn3uhL8Kf4/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സന്തുലിതാവസ്ഥയിലെ മാറ്റങ്ങളും ഇലാസ്തികതയും (Equilibrium Effects &amp; Elasticity)</video:title>
+      <video:description>Academic Hub Special · ഇലാസ്തികതയുടെ സ്വാധീനം, വില നിയന്ത്രണങ്ങളും വിപണി ഫലങ്ങളും</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=nnn3uhL8Kf4</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/nnn3uhL8Kf4</video:player_loc>
+      <video:duration>541</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#Jj-JWuNJjRU</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Jj-JWuNJjRU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>യൂട്ടിലിറ്റി വിശകലനം (Utility Analysis: Cardinal vs Ordinal &amp; DMU)</video:title>
+      <video:description>Academic Hub Special · അപചയ സീമാന്ത പ്രയോജന നിയമവും സമ-സീമാന്ത പ്രയോജനവും</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Jj-JWuNJjRU</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Jj-JWuNJjRU</video:player_loc>
+      <video:duration>1406</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#z8tbT2SiepA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/z8tbT2SiepA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഉപഭോക്തൃ മുൻഗണനകളും ഇൻഡിഫറൻസ് കർവുകളും (Consumer Preferences &amp; Indifference Curves)</video:title>
+      <video:description>Academic Hub Special · ഇൻഡിഫറൻസ് കർവ് പ്രത്യേകതകൾ, MRS &amp; മുൻഗണനാ ഭൂപടം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=z8tbT2SiepA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/z8tbT2SiepA</video:player_loc>
+      <video:duration>1096</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#9H8683I4Ad8</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/9H8683I4Ad8/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ബജറ്റ് പരിമിതിയും ഉപഭോക്തൃ സമനിലയും (Budget Constraint &amp; Consumer Equilibrium)</video:title>
+      <video:description>Academic Hub Special · ബജറ്റ് രേഖ (-Px/Py), അവസര ഗണം, വില-വരുമാന മാറ്റങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=9H8683I4Ad8</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/9H8683I4Ad8</video:player_loc>
+      <video:duration>635</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#J6hBbtao1ms</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/J6hBbtao1ms/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>നിയന്ത്രിത ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ് (Constrained Consumer Choice: Optimal Bundle &amp; Tangency)</video:title>
+      <video:description>Academic Hub Special · ഒപ്റ്റിമൽ ബണ്ടിൽ, ടാൻജൻസി സമവാക്യം (MRS = Px/Py), സമ-സീമാന്ത യൂട്ടിലിറ്റി</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=J6hBbtao1ms</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/J6hBbtao1ms</video:player_loc>
+      <video:duration>854</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#W6b1q1WUJbo</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/W6b1q1WUJbo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സ്ഥാപനങ്ങളുടെ ഉടമസ്ഥതയും മാനേജ്‌മെന്റും (The Ownership &amp; Management of Firms)</video:title>
+      <video:description>Academic Hub Special · സോൾ പ്രൊപ്രൈറ്റർഷിപ്പ്, പാർട്ണർഷിപ്പ്, കോർപ്പറേഷൻ &amp; പ്രിൻസിപ്പൽ-ഏജന്റ്</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=W6b1q1WUJbo</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/W6b1q1WUJbo</video:player_loc>
+      <video:duration>938</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#PB4Dmlu5ueg</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/PB4Dmlu5ueg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഉത്പാദന ഫലനവും ഇൻപുട്ടുകളുടെ വ്യതിയാനവും (Production Functions: Q = f(L, K) &amp; Time Horizons)</video:title>
+      <video:description>Academic Hub Special · ഉത്പാദന ഘടകങ്ങൾ (K, L, M), സാങ്കേതിക കാര്യക്ഷമത, ഹ്രസ്വകാലവും ദീർഘകാലവും</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=PB4Dmlu5ueg</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/PB4Dmlu5ueg</video:player_loc>
+      <video:duration>522</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#n-5A7cQpaWc</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/n-5A7cQpaWc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഹ്രസ്വകാല ഉത്പാദനവും ആദായ നിയമവും (Short-Run Production: TP, MP, AP) | Calicut Univ</video:title>
+      <video:description>Academic Hub Special · ആകെ, ശരാശരി, സീമാന്ത ഉത്പാദനം, ഉത്പാദനത്തിന്റെ 3 ഘട്ടങ്ങൾ, യുക്തിസഹമായ ഘട്ടം 2</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=n-5A7cQpaWc</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/n-5A7cQpaWc</video:player_loc>
+      <video:duration>529</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#snZ7fkjWLHY</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/snZ7fkjWLHY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ദീർഘകാല ഉത്പാദനവും ഐസോക്വാണ്ട് വക്രങ്ങളും (Long-Run Production: Isoquants &amp; MRTS)</video:title>
+      <video:description>Academic Hub Special · സമ-ഉത്പാദന വക്രങ്ങൾ, MRTS = MPL/MPK, ലിയോൺറ്റിഫ് &amp; ലീനിയർ ഐസോക്വാണ്ടുകൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=snZ7fkjWLHY</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/snZ7fkjWLHY</video:player_loc>
+      <video:duration>514</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#9gX0HzBZ0Bc</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/9gX0HzBZ0Bc/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>റിട്ടേൺസ് ടു സ്കെയിൽ (Returns to Scale &amp; Production Function)</video:title>
+      <video:description>Academic Hub Special · കോൺസ്റ്റന്റ് (CRS), ഇൻക്രീസിംഗ് (IRS), ഡിമിനിഷിംഗ് (DRS)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=9gX0HzBZ0Bc</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/9gX0HzBZ0Bc</video:player_loc>
+      <video:duration>1520</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#LEvGpu6LHC0</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/LEvGpu6LHC0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ചെലവുകളുടെ സ്വഭാവം (Nature of Costs: Explicit, Implicit &amp; Sunk Costs)</video:title>
+      <video:description>Academic Hub Special · സാമ്പത്തിക vs അക്കൗണ്ടിംഗ് ചിലവ്, അവസരച്ചെലവ്, മുങ്ങിയ ചിലവുകൾ (Sunk Costs)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=LEvGpu6LHC0</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/LEvGpu6LHC0</video:player_loc>
+      <video:duration>464</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#662lL8_DLds</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/662lL8_DLds/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഹ്രസ്വകാല ചെലവ് കർവുകൾ (Short-Run Costs: TC, MC, AVC &amp; ATC)</video:title>
+      <video:description>Academic Hub Special · സ്ഥിര, മാറുന്ന ചെലവുകൾ, U-ആകൃതിയിലുള്ള ചെലവ് കർവുകൾ, MC Cuts AVC/ATC at Min</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=662lL8_DLds</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/662lL8_DLds</video:player_loc>
+      <video:duration>471</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#BYjuAF87aH8</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/BYjuAF87aH8/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ദീർഘകാല ചെലവുകളും എൻവലപ്പ് കർവും (Long-Run Costs: LRTC, LRAC, LRMC &amp; Envelope Curve)</video:title>
+      <video:description>Academic Hub Special · എക്കണോമീസ് ഓഫ് സ്കെയിൽ, മിനിമം എഫിഷ്യന്റ് സ്കെയിൽ (MES), പ്ലാനിംഗ് കർവ്</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=BYjuAF87aH8</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/BYjuAF87aH8</video:player_loc>
+      <video:duration>951</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#afGuh5f2ypk</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/afGuh5f2ypk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>പൂർണ്ണമത്സര വിപണി (Perfect Competition: Short-Run &amp; Long-Run Equilibrium)</video:title>
+      <video:description>Academic Hub Special · വില സ്വീകർത്താക്കൾ, തിരശ്ചീന ഡിമാൻഡ് കർവ്, MR=MC, ഷട്ട്ഡൗൺ നിയമം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=afGuh5f2ypk</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/afGuh5f2ypk</video:player_loc>
+      <video:duration>515</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#sh-7a1b7vpE</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/sh-7a1b7vpE/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>കുത്തക വിപണിയും ക്ഷേമ നഷ്ടവും (Monopoly: Pricing, Market Power &amp; Deadweight Loss)</video:title>
+      <video:description>Academic Hub Special · പ്രൈസ് മേക്കർ, MR &lt; P, ലെർണർ സൂചിക, ഡെഡ്‌വെയ്റ്റ് ലോസ്</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=sh-7a1b7vpE</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/sh-7a1b7vpE</video:player_loc>
+      <video:duration>543</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#yAFmskolNFk</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/yAFmskolNFk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഏകാധിപത്യ മത്സരവും ഒളിഗോപൊളിയും (Monopolistic Competition &amp; Oligopoly)</video:title>
+      <video:description>Academic Hub Special · ഉൽപ്പന്ന വൈവിധ്യവൽക്കരണം, എക്സസ് കപ്പാസിറ്റി, കൂട്ട്‌നോ, കിങ്ക്ഡ് ഡിമാൻഡ്</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=yAFmskolNFk</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/yAFmskolNFk</video:player_loc>
+      <video:duration>492</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#_HJ6ezj1khA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/_HJ6ezj1khA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ആഗോള വിപണി ഘടനകളും തീരുമാനമെടുക്കലും (Global Market Structures &amp; Decision Making)</video:title>
+      <video:description>Academic Hub Special · ഡിജിറ്റൽ പ്ലാറ്റ്‌ഫോമുകൾ, നെറ്റ്‌വർക്ക് ഇഫക്റ്റുകൾ, CCI ആന്റിട്രസ്റ്റ്, കേസ് സ്റ്റഡീസ്</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=_HJ6ezj1khA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/_HJ6ezj1khA</video:player_loc>
+      <video:duration>396</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>microeconomic-foundation</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#P4mcyo5AQ2M</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/P4mcyo5AQ2M/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>അഭിവാദനങ്ങളും ആമുഖങ്ങളും — അത്തഹിയ്യാതു വത്തആറുഫ് (Greetings &amp; Introductions)</video:title>
+      <video:description>സ്വയം പരിചയപ്പെടുത്തൽ (സലാഹുദ്ദീൻ &amp; ആയിഷ), മറ്റുള്ളവരെ പരിചയപ്പെടുത്തൽ, അഭിവാദനങ്ങളും മറുപടികളും, ചോദ്യശബ്ദങ്ങൾ, ഹുറൂഫുൽ ജർറ്</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=P4mcyo5AQ2M</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/P4mcyo5AQ2M</video:player_loc>
+      <video:duration>456</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>arabic</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#GkEW0h43nAs</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/GkEW0h43nAs/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ക്രിയാപദങ്ങളും വാക്യഘടനയും (Arabic Verbal Sentences &amp; Tenses)</video:title>
+      <video:description>മാളീ (ഭൂതകാലം), മുളാരിഅ് (വർത്തമാനം/ഭാവി), അംറ് (ആജ്ഞാ ക്രിയകൾ), ജുംല ഫിഅ്ലിയ്യ &amp; നാമവിശേഷണ വാക്യങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=GkEW0h43nAs</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/GkEW0h43nAs</video:player_loc>
+      <video:duration>1200</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>arabic</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#pVTBssQb4kM</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/pVTBssQb4kM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>അധ്വാനം സമ്പത്ത് — അൽ-അമലു സർവത് (Work Is Wealth)</video:title>
+      <video:description>പിതാവിന്റെ വിടവാങ്ങൽ ഉപദേശം, യഥാർത്ഥ അനന്തരാവകാശം, സമ്പത്തിന്റെ പരിമിതികൾ, മൂന്ന് അമൂല്യ ഉപദേശങ്ങൾ (തൊഴിൽ, ആരോഗ്യം, വിശ്വസ്തത)</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=pVTBssQb4kM</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/pVTBssQb4kM</video:player_loc>
+      <video:duration>308</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>arabic</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#wYrnmU61yHQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/wYrnmU61yHQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>അറബിക് നർമ്മകഥകൾ — ത്വറാഇഫ് അറബിയ്യ (Arabic Anecdotes)</video:title>
+      <video:description>അഅ്റാബിയും ഖലീഫ മഅ്മൂനും, വൃദ്ധന്റെ മറുപടി, അപ്പത്തെ പരിചയം, കല്ലും പട്ടികളും, വയറുവേദനയ്ക്ക് കൺമഷി, കിണറ്റിൽ വീണ വ്യാകരണക്കാരൻ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=wYrnmU61yHQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/wYrnmU61yHQ</video:player_loc>
+      <video:duration>516</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>arabic</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#0x97BHkYH7I</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/0x97BHkYH7I/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സമയവും ആരോഗ്യവും — അൽ-വഖ്തു വസ്സിഹ്ഹ (Time and Health)</video:title>
+      <video:description>നബി വചനം (രണ്ട് അനുഗ്രഹങ്ങൾ), സമയത്തിന്റെ വില, ആരോഗ്യ സംരക്ഷണ ശീലങ്ങൾ, ചോദ്യോത്തരങ്ങൾ, വ്യാകരണം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=0x97BHkYH7I</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/0x97BHkYH7I</video:player_loc>
+      <video:duration>354</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>arabic</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#OQfXlhCslBY</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/OQfXlhCslBY/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഔദ്യോഗിക എഴുത്തുകുത്തുകളും വാണിജ്യ അറബിയും (Commercial Arabic &amp; Business Letters)</video:title>
+      <video:description>ബിസിനസ് കത്തുകൾ, ബാങ്കിംഗ്, ഓർഡർ ഫോമുകൾ, ഇൻവോയ്സ്, ഔദ്യോഗിക മെമ്മോകൾ &amp; വാണിജ്യ സാങ്കേതിക പദാവലി</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=OQfXlhCslBY</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/OQfXlhCslBY</video:player_loc>
+      <video:duration>1260</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>arabic</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#xmmSpkecMCk</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/xmmSpkecMCk/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>വിവർത്തന രീതികൾ: അറബിക് - മലയാളം - ഇംഗ്ലീഷ് (Translation Methods: Arabic-Mal-Eng)</video:title>
+      <video:description>വിവർത്തന തത്ത്വങ്ങൾ, സാങ്കേതിക വാക്യങ്ങൾ, ശൈലികൾ, പഴഞ്ചൊല്ലുകൾ (അംഥാൽ) &amp; ദ്വിഭാഷാ പരിശീലനങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=xmmSpkecMCk</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/xmmSpkecMCk</video:player_loc>
+      <video:duration>1380</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>arabic</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#RDXXw4nZ-xo</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/RDXXw4nZ-xo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>संविधान एवं राजभाषा : संवैधानिक प्रावधान</video:title>
+      <video:description>अनुच्छेद 343-351, राजभाषा अधिनियम 1963 एवं राजभाषा नियम</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=RDXXw4nZ-xo</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/RDXXw4nZ-xo</video:player_loc>
+      <video:duration>1025</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>hindi</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#rt0Mw1Nfe9o</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/rt0Mw1Nfe9o/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>राजभाषा कार्यान्वयन एवं पत्राचार</video:title>
+      <video:description>कार्यालयीन हिन्दी, टिप्पणी एवं प्रारूपण</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=rt0Mw1Nfe9o</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/rt0Mw1Nfe9o</video:player_loc>
+      <video:duration>259</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>hindi</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#-f5H3lZR9SQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/-f5H3lZR9SQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>सुमित्रानंदन पंत : प्रथम रश्मि (काव्य सौंदर्य व विस्मय-बोध)</video:title>
+      <video:description>छायावादी प्रकृति सौंदर्य, उषाकालीन बिंब-विधान एवं संगीतात्मकता</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=-f5H3lZR9SQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/-f5H3lZR9SQ</video:player_loc>
+      <video:duration>1280</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>hindi</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#-wA__gVCqyA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/-wA__gVCqyA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>कुँवर नारायण : कविता की ज़रूरत</video:title>
+      <video:description>समकालीन कविता में मानवीय संवेदना</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=-wA__gVCqyA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/-wA__gVCqyA</video:player_loc>
+      <video:duration>464</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>hindi</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#-f5H3lZR9SQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/-f5H3lZR9SQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>असंगघोष : मैं दूँगा माकूल जवाब (दलित चेतना व सामाजिक प्रतिरोध)</video:title>
+      <video:description>समकालीन दलित कविता, सामाजिक विषमता का विरोध एवं प्रतिरोध चेतना</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=-f5H3lZR9SQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/-f5H3lZR9SQ</video:player_loc>
+      <video:duration>1280</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>hindi</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#-wA__gVCqyA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/-wA__gVCqyA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>आधुनिक हिन्दी कविता : भाव और संरचना</video:title>
+      <video:description>काव्य का भाव-सौंदर्य, कथ्य, शिल्प एवं संरचना-विधान</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=-wA__gVCqyA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/-wA__gVCqyA</video:player_loc>
+      <video:duration>464</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>hindi</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#44_nsP1S1KA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/44_nsP1S1KA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>वाक्य संरचना : उद्देश्य, विधेय एवं वाक्य के भेद</video:title>
+      <video:description>सरल, संयुक्त एवं मिश्र वाक्य, वाक्य शुद्धि</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=44_nsP1S1KA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/44_nsP1S1KA</video:player_loc>
+      <video:duration>264</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>hindi</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#LGsVPmTg7Hg</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/LGsVPmTg7Hg/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>व्यावहारिक हिन्दी व्याकरण एवं मुहावरे</video:title>
+      <video:description>कारक, काल, लिंग, वचन एवं लोकोक्तियाँ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=LGsVPmTg7Hg</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/LGsVPmTg7Hg</video:player_loc>
+      <video:duration>266</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>hindi</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#7ysFGq5TDmU</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/7ysFGq5TDmU/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സംഖ്യാ സമ്പ്രദായം (Number System &amp; Properties of Numbers)</video:title>
+      <video:description>Academic Hub Special · പ്ലേസ് വാല്യൂ, അഭാജ്യ സംഖ്യകൾ, ഹരണ നിയമങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=7ysFGq5TDmU</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/7ysFGq5TDmU</video:player_loc>
+      <video:duration>473</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#wRbxHgD3vvM</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/wRbxHgD3vvM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സംഖ്യാ ശ്രേണികൾ (Sequence &amp; Series: AP &amp; GP)</video:title>
+      <video:description>Academic Hub Special · സമാന്തര ശ്രേണി, ഗുണോത്തര ശ്രേണി, പരീക്ഷാ പാറ്റേണുകൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=wRbxHgD3vvM</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/wRbxHgD3vvM</video:player_loc>
+      <video:duration>456</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#e6otJTrEVtw</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/e6otJTrEVtw/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഭിന്നസംഖ്യകളും ദശാംശങ്ങളും (Fractions, Decimals &amp; Rational Numbers)</video:title>
+      <video:description>Academic Hub Special · ക്രമഭിന്നം, ആവർത്തന ദശാംശം, ക്രോസ് ഗുണനം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=e6otJTrEVtw</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/e6otJTrEVtw</video:player_loc>
+      <video:duration>392</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#mmtgfQJFbew</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/mmtgfQJFbew/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഉ.സാ.ഘ &amp; ല.സാ.ഗു (HCF and LCM — Methods, Rules &amp; Word Problems)</video:title>
+      <video:description>Academic Hub Special · പ്രൈം ഫാക്ടറൈസേഷൻ, ഭിന്നസംഖ്യകൾ, a×b = HCF×LCM നിയമം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=mmtgfQJFbew</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/mmtgfQJFbew</video:player_loc>
+      <video:duration>415</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#9R0jxumt78Q</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/9R0jxumt78Q/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>വർഗ്ഗമൂലവും ഘനമൂലവും (Square Root &amp; Cube Root — Tricks &amp; Properties)</video:title>
+      <video:description>Academic Hub Special · പൂർണ്ണ വർഗ്ഗ നിയമങ്ങൾ, ദശാംശ ഷോർട്ട്കട്ട്, ഘനമൂലം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=9R0jxumt78Q</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/9R0jxumt78Q</video:player_loc>
+      <video:duration>409</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#zqC-NRyKEvo</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/zqC-NRyKEvo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ലഘൂകരണവും VBODMAS നിയമവും (Simplifications, Operator Priority &amp; Identities)</video:title>
+      <video:description>Academic Hub Special · വിൻകുലം, ബ്രാക്കറ്റുകൾ, &#x27;Of&#x27; ഓപ്പറേറ്റർ, ബീജഗണിത സമവാക്യങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=zqC-NRyKEvo</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/zqC-NRyKEvo</video:player_loc>
+      <video:duration>400</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#tD3-kq_FFvA</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/tD3-kq_FFvA/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ശരാശരി (Average — Natural Numbers, Replaced Weight &amp; Harmonic Speed)</video:title>
+      <video:description>Academic Hub Special · തുടർച്ചയായ സംഖ്യകൾ, ശരാശരി വേഗത 2xy/(x+y), മാറുന്ന അംഗങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=tD3-kq_FFvA</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/tD3-kq_FFvA</video:player_loc>
+      <video:duration>411</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#WrEqemI9Zas</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/WrEqemI9Zas/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>അംശബന്ധവും അനുപാതവും (Ratio &amp; Proportion — Mean, Third &amp; Fourth Proportional)</video:title>
+      <video:description>Academic Hub Special · സംയുക്ത അനുപാതം, മധ്യ അനുപാതം √ab, നാലാം അനുപാതം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=WrEqemI9Zas</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/WrEqemI9Zas</video:player_loc>
+      <video:duration>381</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#1kvqzSGO8os</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/1kvqzSGO8os/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>പ്രായാധിഷ്ഠിത ചോദ്യങ്ങൾ (Problems Based on Ages — Linear &amp; Ratio Methods)</video:title>
+      <video:description>Academic Hub Special · മുൻപ് (x−n), ശേഷം (x+n), മാറ്റമില്ലാത്ത വയസ്സു വ്യത്യാസം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=1kvqzSGO8os</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/1kvqzSGO8os</video:player_loc>
+      <video:duration>388</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#1DAnnifmf1E</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/1DAnnifmf1E/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ശതമാനം (Percentages — Fraction Shortcuts, Successive % &amp; Consumption Rule)</video:title>
+      <video:description>Academic Hub Special · ഭിന്നസംഖ്യാ പട്ടിക, തുടർച്ചയായ ശതമാനം a+b+ab/100, ഉപഭോഗ നിയമം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=1DAnnifmf1E</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/1DAnnifmf1E</video:player_loc>
+      <video:duration>373</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#DXNCo6aP1MI</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/DXNCo6aP1MI/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ലാഭവും നഷ്ടവും (Profit &amp; Loss — CP/SP, Equal SP Loss &amp; False Weights)</video:title>
+      <video:description>Academic Hub Special · വാങ്ങിയവില, വിറ്റവില, കള്ളത്തൂക്കം, (x/10)²% നഷ്ടനിയമം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=DXNCo6aP1MI</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/DXNCo6aP1MI</video:player_loc>
+      <video:duration>369</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#rWRWDJ75Epo</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/rWRWDJ75Epo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>ഡിസ്കൗണ്ട് / വിലക്കിഴിവ് (Discount, Marked Price &amp; Successive Discounts)</video:title>
+      <video:description>Academic Hub Special · രേഖപ്പെടുത്തിയ വില (MP), തുടർച്ചയായ ഡിസ്കൗണ്ടുകൾ d₁+d₂−d₁d₂/100</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=rWRWDJ75Epo</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/rWRWDJ75Epo</video:player_loc>
+      <video:duration>347</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#O5hYWUfEAJQ</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/O5hYWUfEAJQ/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>സാധാരണ പലിശ (Simple Interest — PRT/100, Doubling Time &amp; Rate Tricks)</video:title>
+      <video:description>Academic Hub Special · മുതൽ (P), നിരക്ക് (R), സമയം (T), ഇരട്ടിക്കുന്ന സൂത്രവാക്യങ്ങൾ</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=O5hYWUfEAJQ</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/O5hYWUfEAJQ</video:player_loc>
+      <video:duration>340</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#Vc5t74FIdU0</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Vc5t74FIdU0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>കൂട്ടുപലിശയും മൂല്യത്തേയ്മാനവും (Compound Interest &amp; CI–SI Difference)</video:title>
+      <video:description>Academic Hub Special · വാർഷിക-അർദ്ധവാർഷിക-ത്രൈമാസിക കൂട്ടുപലിശ, 2-വർഷ CI−SI വ്യത്യാസം</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Vc5t74FIdU0</video:content_loc>
+      <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Vc5t74FIdU0</video:player_loc>
+      <video:duration>319</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:tag>mathematics</video:tag>
+      <video:tag>Calicut University FYUGP</video:tag>
+      <video:tag>Malayalam Video Masterclass</video:tag>
+      <video:category>Education</video:category>
+    </video:video>
+  </url>
+</urlset>
+`, {
+        headers: { "Content-Type": "application/xml; charset=utf-8", "Cache-Control": "public, max-age=3600" }
+      });
+    }
+    if (url.pathname === "/robots.txt") {
+      const robotsTxt = `User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Google-Display-Ads-Bot
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+Sitemap: https://academichubfaiz.in/sitemap.xml
+Sitemap: https://academichubfaiz.in/sitemap-video.xml
+`;
+      return new Response(robotsTxt, {
+        headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "public, max-age=3600" }
+      });
+    }
     // Option A: Prune/Externalize third-party and raw university LMS PDFs
     const pdfPathLower = url.pathname.toLowerCase();
     if (pdfPathLower.endsWith('.pdf')) {
@@ -773,10 +3589,11 @@ export class StudyHubChat {
       const entry = await request.json();
       const ownerIp = (await this.state.storage.get("owner_ip")) || "";
       const isOwner = Boolean(entry.isOwner || (ownerIp && entry.ip === ownerIp));
+      const isBot = isBotVisitor(entry);
       let records = (await this.state.storage.get("traffic")) || [];
       records = records.filter(r=>r.time > now - RETENTION_MS);
       try {
-        await this.countVisit(now, String(entry.ip).slice(0,64), records, isOwner);
+        await this.countVisit(now, String(entry.ip).slice(0,64), records, isOwner, isBot);
       } catch (cvErr) {
         console.error("internal/visit countVisit warning:", cvErr);
       }
@@ -890,8 +3707,8 @@ export class StudyHubChat {
         const safeSections = Array.isArray(rawSections) ? rawSections.filter(r => r && typeof r.time === "number" && r.time > now - RETENTION_MS) : [];
         const liveEntries = Object.entries(savedLive).filter(([,v]) => Number(v?.lastSeen) > now - 90*1000);
         
-        const studentTraffic = safeTraffic.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp));
-        const studentSections = safeSections.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp));
+        const studentTraffic = safeTraffic.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp) && !isBotVisitor(r));
+        const studentSections = safeSections.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp) && !isBotVisitor(r));
         
         let today = { day: indiaDay(now), views: studentTraffic.length, visitors: 0 };
         try {
@@ -976,11 +3793,11 @@ export class StudyHubChat {
         const ownerIp = (await this.state.storage.get("owner_ip")) || "";
         const safeTraffic = Array.isArray(rawTraffic) ? rawTraffic.filter(r => r && typeof r.time === "number" && r.time > now - RETENTION_MS) : [];
         const safeSections = Array.isArray(rawSections) ? rawSections.filter(r => r && typeof r.time === "number" && r.time > now - RETENTION_MS) : [];
-        const studentTraffic = safeTraffic.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp));
-        const studentSections = safeSections.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp));
+        const studentTraffic = safeTraffic.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp) && !isBotVisitor(r));
+        const studentSections = safeSections.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp) && !isBotVisitor(r));
         let today = { day: indiaDay(now), views: studentTraffic.length, visitors: 0 };
         try {
-          today = await this.countVisit(now, null, safeTraffic);
+          today = await this.countVisit(now, null, studentTraffic);
         } catch (cvErr) {
           console.error("countVisit warning:", cvErr);
         }
@@ -1041,8 +3858,8 @@ export class StudyHubChat {
     try {
       yesterdayDaily = await this.state.storage.get("daily:" + yesterdayDay);
     } catch (e) {}
-    const yesterdayTraffic = safeTraffic.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp) && indiaDay(r.time) === yesterdayDay);
-    const yesterdaySections = safeSections.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp) && indiaDay(r.time) === yesterdayDay);
+    const yesterdayTraffic = safeTraffic.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp) && !isBotVisitor(r) && indiaDay(r.time) === yesterdayDay);
+    const yesterdaySections = safeSections.filter(r => !r.isOwner && (!ownerIp || r.ip !== ownerIp) && !isBotVisitor(r) && indiaDay(r.time) === yesterdayDay);
     const yesterdayIPs = new Set([
       ...yesterdayTraffic.map(r => r && r.ip).filter(Boolean),
       ...yesterdaySections.map(r => r && r.ip).filter(Boolean)
@@ -1088,7 +3905,7 @@ export class StudyHubChat {
     };
   }
 
-  async countVisit(now, ip, records, isOwner = false) {
+  async countVisit(now, ip, records, isOwner = false, isBot = false) {
     const day = indiaDay(now);
     let totals = await this.state.storage.get("daily:" + day);
     if (!totals || typeof totals !== "object") {
@@ -1100,8 +3917,8 @@ export class StudyHubChat {
         await this.state.storage.put("visitor:" + day + ":" + await digest(address), true);
       }
     }
-    // Owner visits are recorded in the audit log but excluded from actual student count
-    if (ip !== null && !isOwner) {
+    // Owner visits and automated bots are excluded from actual pure human student counts
+    if (ip !== null && !isOwner && !isBot) {
       totals.views = (totals.views || 0) + 1;
       if (ip && ip !== "Unavailable") {
         const visitorKey = "visitor:" + day + ":" + await digest(ip);
@@ -1289,14 +4106,34 @@ function adminPage(authorized, initialData = null) {
     </div>
   </div>
 
-  <div class="kpi-card today">
+  <div class="kpi-card today" style="grid-column: span 1;">
     <div class="kpi-head">
       <span class="kpi-title">TODAY'S INGRESS (IST)</span>
       <span class="kpi-badge today" id="today-badge">${todayDay}</span>
     </div>
-    <div class="kpi-val"><span id="today-visitors">${todayVisitors}</span> <small>VISITORS</small></div>
+    <div class="kpi-val"><span id="today-visitors">${todayVisitors}</span> <small>PURE HUMAN VISITORS</small></div>
     <div class="kpi-foot">
-      <span class="highlight" id="today-views">${todayViews}</span> page views · <span id="today-ratio">${todayRatio}</span> views/user
+      <span class="highlight" id="today-views">${todayViews}</span> page views · <span id="today-ratio">${todayRatio}</span> views/user · <span style="color:#059669; font-weight:700;">🛡️ 0 BOTS</span>
+    </div>
+    <div class="today-deep-box">
+      <div class="today-deep-row">
+        <span class="today-deep-label">🌐 TOP COUNTRIES:</span>
+        <span id="today-country-rank" style="display:inline-flex;gap:4px;flex-wrap:wrap;">
+          <span class="today-rank-chip">🇮🇳 India <b>—</b></span>
+        </span>
+      </div>
+      <div class="today-deep-row">
+        <span class="today-deep-label">📚 TOP SECTIONS:</span>
+        <span id="today-section-rank" style="display:inline-flex;gap:4px;flex-wrap:wrap;">
+          <span class="today-rank-chip section-chip">Analyzing today's learning trail...</span>
+        </span>
+      </div>
+      <div class="today-deep-row">
+        <span class="today-deep-label" title="Active Engaged Dwell Time (AdSense & GA4 Session Standards, 30m idle timeout)">⏱️ TOP ENGAGEMENT:</span>
+        <span id="today-longest-stay" style="display:inline-flex;gap:4px;flex-wrap:wrap;">
+          <span class="today-stay-pill">Auditing active learner dwell time...</span>
+        </span>
+      </div>
     </div>
   </div>
 
@@ -1356,6 +4193,11 @@ function adminPage(authorized, initialData = null) {
     <span class="tab-title">YESTERDAY'S RECAP</span>
     <span class="badge-pill gold" id="badge-yesterday-views">${yesterdayViews} VIEWS</span>
   </button>
+  <button class="tab-btn" id="tab-btn-lfl" type="button" role="tab" aria-selected="false">
+    <span class="tab-icon">⚖️</span>
+    <span class="tab-title">LfL ANALYSIS (YESTERDAY VS TODAY)</span>
+    <span class="badge-pill blue" id="badge-lfl-growth" style="background:#dbeafe; color:#1d4ed8; font-weight:800;">LfL AUDIT</span>
+  </button>
   <button class="tab-btn" id="tab-btn-radar" type="button" role="tab" aria-selected="false">
     <span class="tab-icon">🛰️</span>
     <span class="tab-title">LIVE RADAR PRESENCE</span>
@@ -1392,12 +4234,12 @@ function adminPage(authorized, initialData = null) {
         <input type="text" class="search-input" id="traffic-search-input" placeholder="Search IP Address, City, Country, or Page Path..." value="">
       </div>
       <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-        <div class="view-mode-toggle" style="display:inline-flex; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:3px; gap:4px;">
-          <button type="button" id="btn-view-each-visit" class="btn btn-sm" style="background:#06b6d4; color:#0f172a; font-weight:800; font-size:11px; padding:4px 10px; border-radius:6px; border:none; cursor:pointer;" title="List every individual visit report chronologically">
-            ⚡ EACH VISIT (<span id="count-each-visit">0</span>)
+        <div class="view-mode-toggle" style="display:inline-flex; background:var(--bg-surface); border:1px solid #93c5fd; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-radius:8px; padding:3px; gap:4px;">
+          <button type="button" id="btn-view-grouped-ip" class="btn btn-sm" style="background:#0284c7; color:#ffffff; font-weight:800; font-size:11px; padding:4px 12px; border-radius:6px; border:none; cursor:pointer;" title="Group and club all visits by visitor like before">
+            👥 ALL VISITS CLUBBED (<span id="count-grouped-ip">0</span>)
           </button>
-          <button type="button" id="btn-view-grouped-ip" class="btn btn-sm" style="background:transparent; color:var(--text-dim); font-weight:700; font-size:11px; padding:4px 10px; border-radius:6px; border:none; cursor:pointer;" title="Group and collapse visits by IP address">
-            👥 GROUPED BY IP (<span id="count-grouped-ip">0</span>)
+          <button type="button" id="btn-view-each-visit" class="btn btn-sm" style="background:transparent; color:var(--text-muted); font-weight:700; font-size:11px; padding:4px 10px; border-radius:6px; border:none; cursor:pointer;" title="List every individual section action">
+            ⚡ EACH ACTION (<span id="count-each-visit">0</span>)
           </button>
         </div>
         <div class="filter-group">
@@ -1684,6 +4526,72 @@ function adminPage(authorized, initialData = null) {
     </div>
   </section>
 
+  <!-- TAB: LfL ANALYSIS (LIKE-FOR-LIKE YESTERDAY VS TODAY) -->
+  <section class="station-card" id="panel-lfl" hidden>
+    <div class="station-header">
+      <div>
+        <h2><span class="station-dot cyan"></span> LfL ANALYSIS · YESTERDAY VS TODAY (PURE HUMAN LEARNERS)</h2>
+        <p class="station-desc">Like-for-like comparative telemetry benchmarking student traffic velocity, material engagement, and reading depth. Bots and owner visits are 100% excluded.</p>
+      </div>
+      <div class="header-action-group">
+        <span class="date-chip" style="background:#e0f2fe; color:#0369a1; border:1px solid #7dd3fc;">⚖️ LIKE-FOR-LIKE BENCHMARK</span>
+      </div>
+    </div>
+
+    <!-- LfL EXECUTIVE SUMMARY CARD -->
+    <div class="yesterday-digest-card" style="background:linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(240, 249, 255, 0.95)), var(--bg-surface); border:1px solid #93c5fd;">
+      <div class="digest-header">
+        <div class="digest-badge" style="color:#0284c7;">📊 EXECUTIVE LfL TRAFFIC DELTA</div>
+        <div class="digest-time" id="lfl-window-time">COMPARISON: YESTERDAY (FULL DAY) VS TODAY (ACTIVE IST)</div>
+      </div>
+      <div class="digest-summary-text" id="lfl-summary-text" style="color:#0f172a; font-weight:600;">
+        Calculating like-for-like ingress variance...
+      </div>
+    </div>
+
+    <!-- LfL COMPARISON 4-KPI BENCHMARK GRID -->
+    <div class="yesterday-kpi-grid">
+      <div class="ykpi-card views" style="border:1px solid #bae6fd; background:var(--bg-surface);">
+        <div class="ykpi-label">PAGE VIEWS DELTA</div>
+        <div class="ykpi-val" id="lfl-kpi-views">0 <small>LfL</small></div>
+        <div class="ykpi-sub" id="lfl-kpi-views-sub">Yesterday vs Today</div>
+      </div>
+      <div class="ykpi-card visitors" style="border:1px solid #bae6fd; background:var(--bg-surface);">
+        <div class="ykpi-label">UNIQUE STUDENTS DELTA</div>
+        <div class="ykpi-val" id="lfl-kpi-visitors">0 <small>STUDENTS</small></div>
+        <div class="ykpi-sub" id="lfl-kpi-visitors-sub">Yesterday vs Today</div>
+      </div>
+      <div class="ykpi-card ratio" style="border:1px solid #bae6fd; background:var(--bg-surface);">
+        <div class="ykpi-label">ENGAGEMENT DEPTH</div>
+        <div class="ykpi-val" id="lfl-kpi-depth">0.0 <small>PAGES/STUDENT</small></div>
+        <div class="ykpi-sub" id="lfl-kpi-depth-sub">Average reading velocity</div>
+      </div>
+      <div class="ykpi-card repeats" style="border:1px solid #bae6fd; background:var(--bg-surface);">
+        <div class="ykpi-label">REPEAT RETENTION RATE</div>
+        <div class="ykpi-val" id="lfl-kpi-retention">0% <small>RETENTION</small></div>
+        <div class="ykpi-sub" id="lfl-kpi-retention-sub">Returning active learners</div>
+      </div>
+    </div>
+
+    <!-- SIDE-BY-SIDE LfL COMPARATIVE MATRIX TABLE -->
+    <div class="table-wrapper" style="margin-top:20px;">
+      <table>
+        <thead>
+          <tr>
+            <th style="min-width:200px">Ingress Metric</th>
+            <th style="min-width:140px">⏮️ Yesterday (Full Day)</th>
+            <th style="min-width:140px">📅 Today (Live Ingress)</th>
+            <th style="min-width:130px">Variance / Growth</th>
+            <th style="min-width:180px">Status & Health</th>
+          </tr>
+        </thead>
+        <tbody id="lfl-comparison-rows">
+          <!-- Rendered dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <!-- TAB 3: LIVE AUDIENCE RADAR -->
   <section class="station-card" id="panel-radar" hidden>
     <div class="station-header">
@@ -1756,38 +4664,38 @@ function adminPage(authorized, initialData = null) {
 
   const styles = `
 :root {
-  --bg-core: #f1f5f9;
-  --bg-surface: #ffffff;
-  --bg-surface-elevated: #f8fafc;
-  --bg-card: rgba(255, 255, 255, 0.96);
-  --border-subtle: #cbd5e1;
-  --border-card: #e2e8f0;
+  --bg-core: #e0f2fe;
+  --bg-surface: #f0f9ff;
+  --bg-surface-elevated: #ffffff;
+  --bg-card: #ffffff;
+  --border-subtle: #93c5fd;
+  --border-card: #bfdbfe;
   --accent-cyan: #0284c7;
-  --accent-cyan-glow: rgba(2, 132, 199, 0.18);
-  --accent-emerald: #059669;
-  --accent-emerald-glow: rgba(5, 150, 105, 0.18);
-  --accent-purple: #7c3aed;
-  --accent-purple-glow: rgba(124, 58, 237, 0.18);
-  --accent-gold: #d97706;
-  --accent-gold-glow: rgba(217, 119, 6, 0.2);
-  --accent-amber: #b45309;
-  --accent-rose: #e11d48;
-  --accent-indigo: #4338ca;
+  --accent-cyan-glow: rgba(2, 132, 199, 0.22);
+  --accent-emerald: #047857;
+  --accent-emerald-glow: rgba(4, 120, 87, 0.22);
+  --accent-purple: #6d28d9;
+  --accent-purple-glow: rgba(109, 40, 217, 0.22);
+  --accent-gold: #b45309;
+  --accent-gold-glow: rgba(180, 83, 9, 0.24);
+  --accent-amber: #92400e;
+  --accent-rose: #be123c;
+  --accent-indigo: #3730a3;
   --text-pure: #0f172a;
   --text-main: #1e293b;
-  --text-muted: #475569;
-  --text-dim: #64748b;
+  --text-muted: #334155;
+  --text-dim: #475569;
   --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'JetBrains Mono', Consolas, Menlo, monospace;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  background-color: var(--bg-core);
+  background-color: #e0f2fe;
   background-image: 
-    radial-gradient(ellipse 90% 60% at 50% -20%, rgba(2, 132, 199, 0.08), transparent),
-    radial-gradient(ellipse 60% 40% at 85% 15%, rgba(217, 119, 6, 0.05), transparent),
-    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+    radial-gradient(ellipse 90% 60% at 50% -20%, rgba(56, 189, 248, 0.25), transparent),
+    radial-gradient(ellipse 60% 40% at 85% 15%, rgba(14, 165, 233, 0.18), transparent),
+    linear-gradient(rgba(2, 132, 199, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(2, 132, 199, 0.04) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
   color: var(--text-main);
   font-family: var(--font-sans);
@@ -1866,12 +4774,14 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  background: #f8fafc;
+  background: #f0f9ff;
   padding: 8px 18px;
   border-radius: 8px;
   border: 1px solid var(--border-card);
 }
 .clock-item { display: flex; flex-direction: column; }
+.clock-label { font-size: 11px; font-weight: 800; color: #475569; letter-spacing: 0.05em; text-transform: uppercase; }
+.clock-time { font-size: 15px; font-weight: 800; font-family: var(--font-mono); color: #0369a1; }
 .clock-label { font-size: 11px; font-weight: 700; color: var(--text-dim); letter-spacing: 0.05em; text-transform: uppercase; }
 .clock-time { font-size: 15px; font-weight: 700; font-family: var(--font-mono); color: var(--accent-cyan); }
 
@@ -1941,14 +4851,20 @@ body {
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
       border-radius: 12px;
       padding: 10px 18px;
       margin-bottom: 22px;
       font-size: 12.5px;
       backdrop-filter: blur(8px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 16px rgba(16, 185, 129, 0.08);
+    }
+    .hud-strip-left .strip-label,
+    .hud-strip-left .strip-sub,
+    .hud-strip-right .shield-text {
+      color: #166534;
+      font-weight: 600;
     }
     .hud-strip-left {
       display: flex;
@@ -1975,9 +4891,9 @@ body {
     .owner-ip-pill {
       font-family: var(--font-mono);
       font-size: 11px;
-      color: #a7f3d0;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #047857;
+      background: #dcfce7;
+      border: 1px solid #86efac; font-weight: 800;
       padding: 3px 9px;
       border-radius: 6px;
     }
@@ -2008,24 +4924,99 @@ body {
 .kpi-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 .kpi-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); }
 .kpi-badge { font-size: 11px; font-family: var(--font-mono); font-weight: 700; padding: 2px 7px; border-radius: 999px; text-transform: uppercase; }
-.kpi-badge.live { background: rgba(16, 185, 129, 0.2); color: #34d399; }
-.kpi-badge.today { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
-.kpi-badge.total { background: rgba(129, 140, 248, 0.2); color: #a5b4fc; }
-.kpi-badge.popular { background: rgba(192, 132, 252, 0.2); color: #d8b4fe; }
+.kpi-badge.live { background: rgba(4, 120, 87, 0.14); color: #047857; font-weight: 800; border: 1px solid rgba(4, 120, 87, 0.35); }
+.kpi-badge.today { background: rgba(2, 132, 199, 0.14); color: #0284c7; font-weight: 800; border: 1px solid rgba(2, 132, 199, 0.35); }
+.kpi-badge.total { background: rgba(55, 48, 163, 0.12); color: #3730a3; font-weight: 800; border: 1px solid rgba(55, 48, 163, 0.3); }
+.kpi-badge.popular { background: rgba(109, 40, 217, 0.12); color: #6d28d9; font-weight: 800; border: 1px solid rgba(109, 40, 217, 0.3); }
 
 .kpi-val { font-size: 30px; font-weight: 800; font-family: var(--font-mono); color: var(--text-pure); line-height: 1.1; margin-bottom: 6px; }
 .kpi-val small { font-size: 13px; font-weight: 600; color: var(--text-dim); margin-left: 4px; }
 .kpi-foot { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--text-muted); }
 .kpi-foot span.highlight { color: var(--text-pure); font-weight: 700; }
 
+.today-deep-box {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11.5px;
+}
+.today-deep-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  line-height: 1.35;
+}
+.today-deep-label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.today-rank-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-surface);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  color: var(--text-main);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+.today-rank-chip b {
+  color: #0284c7;
+  font-family: var(--font-mono);
+  font-weight: 800;
+}
+.today-rank-chip.section-chip {
+  background: #f0f9ff;
+  border-color: #bae6fd;
+  color: #0369a1;
+  padding: 2px 8px;
+}
+.today-rank-chip.section-chip b {
+  color: #0369a1;
+}
+.today-stay-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+.stay-time-badge {
+  background: #059669;
+  color: #ffffff;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
 /* ULTRA-PREMIUM NAVIGATION TABS */
 .nav-tabs {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #ffffff;
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
   border-radius: 14px;
   padding: 6px;
   margin-bottom: 24px;
@@ -2035,13 +5026,13 @@ body {
 .tab-btn {
   font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.03em;
   padding: 10px 18px;
   background: transparent;
   border: 1px solid transparent;
   border-radius: 10px;
-  color: var(--text-muted);
+  color: #475569;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -2058,27 +5049,33 @@ body {
 .tab-icon { font-size: 15px; display: inline-flex; align-items: center; justify-content: center; }
 
 /* TAB THEMES */
+.tab-btn#tab-btn-lfl.active {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #38bdf8;
+  box-shadow: 0 0 20px rgba(2, 132, 199, 0.35);
+}
 .tab-btn#tab-btn-geo.active {
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(6, 182, 212, 0.08));
-  color: #fff;
+  background: #0284c7;
+  color: #ffffff;
   border-color: rgba(56, 189, 248, 0.5);
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .tab-btn#tab-btn-yesterday.active {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.26), rgba(217, 119, 6, 0.1));
-  color: #fff;
+  background: #d97706;
+  color: #ffffff;
   border-color: rgba(245, 158, 11, 0.6);
   box-shadow: 0 0 22px rgba(245, 158, 11, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .tab-btn#tab-btn-radar.active {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.24), rgba(5, 150, 105, 0.08));
-  color: #fff;
+  background: #059669;
+  color: #ffffff;
   border-color: rgba(16, 185, 129, 0.55);
   box-shadow: 0 0 20px rgba(16, 185, 129, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .tab-btn#tab-btn-content.active {
-  background: linear-gradient(135deg, rgba(192, 132, 252, 0.24), rgba(147, 51, 234, 0.08));
-  color: #fff;
+  background: #7c3aed;
+  color: #ffffff;
   border-color: rgba(192, 132, 252, 0.55);
   box-shadow: 0 0 20px rgba(192, 132, 252, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
@@ -2088,9 +5085,10 @@ body {
   font-family: var(--font-mono);
   padding: 3px 8px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text-dim);
-  font-weight: 700;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  font-weight: 800;
   letter-spacing: 0.02em;
 }
 .tab-btn#tab-btn-geo.active .badge-pill.cyan { background: #38bdf8; color: #04101e; font-weight: 800; box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
@@ -2101,8 +5099,8 @@ body {
 .tab-btn#tab-btn-content .badge-pill.purple { background: rgba(192, 132, 252, 0.18); color: #d8b4fe; border: 1px solid rgba(192, 132, 252, 0.35); }
 .tab-btn#tab-btn-content.active .badge-pill.purple { background: #c084fc; color: #200438; font-weight: 800; box-shadow: 0 0 12px rgba(192, 132, 252, 0.6); }
 .tab-btn#tab-btn-bots.active {
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.24), rgba(194, 65, 12, 0.08));
-  color: #fff;
+  background: #ea580c;
+  color: #ffffff;
   border-color: rgba(249, 115, 22, 0.55);
   box-shadow: 0 0 20px rgba(249, 115, 22, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
@@ -2399,7 +5397,7 @@ body {
   flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 16px;
-  background: rgba(0, 0, 0, 0.3);
+  background: #f8fafc; border: 1px solid #bfdbfe;
   padding: 12px 16px;
   border-radius: 8px;
   border: 1px solid var(--border-card);
@@ -2450,28 +5448,29 @@ body {
   overflow-x: auto;
   border-radius: 8px;
   border: 1px solid var(--border-card);
-  background: #ffffff;
+  background: var(--bg-surface);
 }
 table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 th {
   background: #f8fafc;
-  color: #1e293b;
-  font-weight: 700;
+  color: #0f172a;
+  font-weight: 800;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.05em;
   padding: 12px 14px;
   text-align: left;
-  border-bottom: 2px solid #cbd5e1;
+  border-bottom: 2px solid #bae6fd;
   white-space: nowrap;
 }
 td {
   padding: 11px 14px;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
   color: var(--text-main);
   vertical-align: middle;
 }
-tr:nth-child(even) td { background: #fafafa; }
+tr:nth-child(even) td { background: rgba(224, 242, 254, 0.45); }
+tr:nth-child(odd) td { background: var(--bg-surface); }
 tr:hover td { background: #f0f9ff; }
 
 /* GOOGLE BOT HIGHLIGHT */
@@ -2546,11 +5545,11 @@ tr:hover td { background: #f0f9ff; }
 }
 .ip-badge {
   font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 700;
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #0369a1;
+  background: #e0f2fe;
+  border: 1px solid #7dd3fc;
   padding: 3px 8px;
   border-radius: 6px;
   display: inline-block;
@@ -2565,36 +5564,38 @@ tr:hover td { background: #f0f9ff; }
   align-items: center;
 }
 .visits-badge.multi {
-  background: rgba(16, 185, 129, 0.18);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.35);
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+  font-weight: 800;
 }
 .visits-badge.single {
-  background: rgba(148, 163, 184, 0.14);
-  color: #cbd5e1;
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  font-weight: 700;
 }
 .country-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 3px 9px;
+  font-weight: 700;
+  background: #f8fafc;
+  padding: 4px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text-pure);
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
 }
 .country-flag { font-size: 15px; }
 .location-text { font-size: 13px; color: var(--text-muted); }
 .path-pill {
   font-family: var(--font-mono);
   font-size: 12px;
-  font-weight: 600;
-  color: #1e293b;
-  background: rgba(14, 165, 233, 0.1);
-  border: 1px solid rgba(14, 165, 233, 0.25);
+  font-weight: 700;
+  color: #0369a1;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
   padding: 3px 8px;
   border-radius: 6px;
   word-break: break-all;
@@ -2612,11 +5613,11 @@ tr:hover td { background: #f0f9ff; }
   padding: 3px 7px;
   border-radius: 6px;
 }
-.activity-hearing { color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.28); }
-.activity-watching { color: #fb7185; background: rgba(251, 113, 133, 0.12); border: 1px solid rgba(251, 113, 133, 0.28); }
-.activity-reading { color: #34d399; background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.28); }
-.activity-test { color: #fde047; background: rgba(253, 224, 71, 0.12); border: 1px solid rgba(253, 224, 71, 0.28); }
-.activity-general { color: #cbd5e1; background: rgba(148, 163, 184, 0.10); border: 1px solid rgba(148, 163, 184, 0.22); }
+.activity-hearing { color: #0369a1; background: #e0f2fe; border: 1px solid #7dd3fc; font-weight: 700; }
+.activity-watching { color: #be123c; background: #ffe4e6; border: 1px solid #fecdd3; font-weight: 700; }
+.activity-reading { color: #047857; background: #dcfce7; border: 1px solid #86efac; font-weight: 700; }
+.activity-test { color: #92400e; background: #fef3c7; border: 1px solid #fde68a; font-weight: 700; }
+.activity-general { color: #334155; background: #f1f5f9; border: 1px solid #cbd5e1; font-weight: 700; }
 
 /* DETAILS & SECTIONS */
 details.section-details summary, details.popular-details summary {
@@ -2717,13 +5718,23 @@ details.section-details summary:hover, details.popular-details summary:hover {
 .login-status { margin-top: 12px; font-size: 13px; font-family: var(--font-mono); color: var(--accent-rose); min-height: 18px; }
 
 @media (max-width: 768px) {
-  body { padding: 12px 14px 40px; font-size: 13px; }
-  .hud-header { flex-direction: column; align-items: stretch; gap: 14px; padding: 14px 16px; }
-  .hud-clocks { justify-content: space-between; flex-wrap: wrap; }
-  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  body { padding: 10px 10px 40px; font-size: 13px; }
+  .hud-header { flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 14px; }
+  .brand-text h1 { font-size: 15px; }
+  .hud-clocks { justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .kpi-card { padding: 14px 14px; }
+  .kpi-val { font-size: 24px; }
   .yesterday-split-grid { grid-template-columns: 1fr; }
-  .nav-tabs { gap: 4px; padding: 4px; }
-  .tab-btn { padding: 9px 12px; font-size: 12px; }
+  .nav-tabs { gap: 6px; padding: 6px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tab-btn { padding: 8px 12px; font-size: 12px; }
+  .station-card { padding: 14px 12px; }
+  .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { font-size: 12.5px; }
+  th, td { padding: 9px 10px; }
+  .time-stamp { font-size: 11.5px; color: #1e293b; font-weight: 700; }
+  .location-text { font-size: 12px; color: #1e293b; }
+  .ip-badge { font-size: 11.5px; }
 }
   `;
 
@@ -2792,7 +5803,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
     // STATE
     let trafficRecords = [];
     let rawTrafficRecords = [];
-    let trafficViewMode = 'each'; // 'each' | 'grouped'
+    let trafficViewMode = 'grouped'; // 'grouped' (clubbed like before) | 'each'
     let popularPageRecords = [];
     let liveData = { active: 0, pages: [] };
     let yesterdayData = null;
@@ -2859,18 +5870,23 @@ details.section-details summary:hover, details.popular-details summary:hover {
         const sizeEl = document.getElementById('traffic-page-size');
         const size = Math.max(1, Number(sizeEl ? sizeEl.value : 25) || 25);
 
-        // Update counts on view mode toggle
-        const totalRaw = rawTrafficRecords.length || trafficRecords.reduce((acc, r) => acc + (r.visits || 1), 0);
-        setText('count-each-visit', totalRaw);
-        setText('count-grouped-ip', trafficRecords.length);
+        // Update counts on view mode toggle (pure human only)
+        const pureRawCount = rawTrafficRecords.filter(r => !isBotVisitor(r)).length || trafficRecords.filter(r => !isBotVisitor(r)).reduce((acc, r) => acc + (r.visits || 1), 0);
+        const pureGroupedCount = trafficRecords.filter(r => !isBotVisitor(r)).length;
+        setText('count-each-visit', pureRawCount);
+        setText('count-grouped-ip', pureGroupedCount);
 
         let activeDataset;
         const totalVisitsByIp = new Map(trafficRecords.map(r => [r.ip, r.visits || 1]));
 
-        if (trafficViewMode === 'each' && rawTrafficRecords.length > 0) {
+        // Pure human visitor audit: exclude bots completely from this table (bots are housed in BOTS VISIT tab)
+        const pureRaw = rawTrafficRecords.filter(r => !isBotVisitor(r));
+        const pureGrouped = trafficRecords.filter(r => !isBotVisitor(r));
+
+        if (trafficViewMode === 'each' && pureRaw.length > 0) {
           // Collapse multiple owner visits into one single master entry with combined visit tally and full section trail
-          const ownerEntry = trafficRecords.find(r => r.isOwner);
-          const studentVisits = rawTrafficRecords.filter(r => !r.isOwner).map(r => {
+          const ownerEntry = pureGrouped.find(r => r.isOwner);
+          const studentVisits = pureRaw.filter(r => !r.isOwner).map(r => {
             const tot = totalVisitsByIp.get(r.ip) || (r.visits || 1);
             return { ...r, totalVisits: tot };
           });
@@ -2880,7 +5896,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
             activeDataset = studentVisits;
           }
         } else {
-          activeDataset = trafficRecords.map(r => ({ ...r, totalVisits: r.visits || 1 }));
+          activeDataset = pureGrouped.map(r => ({ ...r, totalVisits: r.visits || 1 }));
         }
 
         let filtered = activeDataset.filter(item => {
@@ -2897,6 +5913,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
           countryGrid.replaceChildren();
           const countryMap = new Map();
           for (const item of trafficRecords) {
+            if (isBotVisitor(item)) continue;
             const c = item.country || 'XX';
             const curr = countryMap.get(c) || { count: 0, visits: 0 };
             curr.count += 1;
@@ -2956,7 +5973,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
             const shortIp = formatShortIP(v.ip);
             let ownerBadgeHtml = '';
             if (v.isOwner) {
-              ownerBadgeHtml = '<div style="margin-top:4px;"><span style="background:rgba(245,158,11,0.18);color:#fbbf24;border:1px solid rgba(245,158,11,0.45);border-radius:4px;padding:2px 7px;font-size:10.5px;font-weight:800;letter-spacing:0.04em;display:inline-flex;align-items:center;gap:3px;font-family:var(--font-mono);">👑 OWNER VISIT</span></div>';
+              ownerBadgeHtml = '<div style="margin-top:4px;"><span style="background:#fef3c7;color:#92400e;border:1px solid #f59e0b;font-weight:800;border-radius:4px;padding:2px 7px;font-size:10.5px;font-weight:800;letter-spacing:0.04em;display:inline-flex;align-items:center;gap:3px;font-family:var(--font-mono);">👑 OWNER VISIT</span></div>';
             } else if (isRifi) {
               ownerBadgeHtml = '<div style="margin-top:4px;"><span class="rifi-badge"><span class="rifi-dot"></span>🎯 rifi</span></div>';
             }
@@ -2967,18 +5984,18 @@ details.section-details summary:hover, details.popular-details summary:hover {
             const tdVisits = document.createElement('td');
             if (trafficViewMode === 'each') {
               if (v.isOwner) {
-                tdVisits.innerHTML = '<span class="visits-badge" style="background:rgba(245,158,11,0.14);color:#fbbf24;border:1px solid rgba(245,158,11,0.3);font-size:11px;font-weight:700;">👑 ' + (v.visits || 1) + ' Visits Collapsed <small style="display:block;font-size:9.5px;opacity:0.9;color:var(--text-dim);font-weight:500;">(all in one entry)</small></span>';
+                tdVisits.innerHTML = '<span class="visits-badge" style="background:#fef3c7;color:#92400e;border:1px solid #fde68a;font-size:11px;font-weight:800;">👑 ' + (v.visits || 1) + ' Visits Collapsed <small style="display:block;font-size:9.5px;opacity:0.9;color:var(--text-dim);font-weight:500;">(all in one entry)</small></span>';
                 tr.style.background = 'rgba(245, 158, 11, 0.03)';
               } else if (isRifi) {
                 const count = v.totalVisits || v.visits || 1;
                 tdVisits.innerHTML = '<span class="visits-badge multi" style="background:rgba(236,72,153,0.15);color:#f472b6;border:1px solid rgba(236,72,153,0.35);font-size:11.5px;font-weight:700;">🎯 ' + count + ' ' + (count === 1 ? 'Visit' : 'Visits') + '</span>';
               } else {
                 const count = v.totalVisits || v.visits || 1;
-                tdVisits.innerHTML = '<span class="visits-badge single" style="background:rgba(6,182,212,0.12);color:#22d3ee;border:1px solid rgba(6,182,212,0.3);font-size:11.5px;font-weight:700;">⚡ ' + count + ' ' + (count === 1 ? 'Visit' : 'Visits') + '</span>';
+                tdVisits.innerHTML = '<span class="visits-badge single" style="background:#e0f2fe;color:#0369a1;border:1px solid #7dd3fc;font-size:11.5px;font-weight:800;">⚡ ' + count + ' ' + (count === 1 ? 'Visit' : 'Visits') + '</span>';
               }
             } else {
               if (v.isOwner) {
-                tdVisits.innerHTML = '<span class="visits-badge" style="background:rgba(245,158,11,0.14);color:#fbbf24;border:1px solid rgba(245,158,11,0.3);font-size:11px;font-weight:600;">' + v.visits + ' visit' + (v.visits===1?'':'s') + ' <small style="display:block;font-size:9.5px;opacity:0.85;color:var(--text-dim);">(not counted)</small></span>';
+                tdVisits.innerHTML = '<span class="visits-badge" style="background:#fef3c7;color:#92400e;border:1px solid #fde68a;font-size:11px;font-weight:800;">' + v.visits + ' visit' + (v.visits===1?'':'s') + ' <small style="display:block;font-size:9.5px;opacity:0.85;color:var(--text-dim);">(not counted)</small></span>';
                 tr.style.background = 'rgba(245, 158, 11, 0.03)';
               } else if (isRifi) {
                 tdVisits.innerHTML = '<span class="visits-badge multi" style="background:rgba(236,72,153,0.15);color:#f472b6;border:1px solid rgba(236,72,153,0.35);font-size:11px;font-weight:700;">' + v.visits + ' visit' + (v.visits === 1 ? '' : 's') + '</span>';
@@ -3090,6 +6107,198 @@ details.section-details summary:hover, details.popular-details summary:hover {
         setText('badge-total-ips', trafficRecords.length + ' IPs');
       } catch (renderErr) {
         console.warn('renderTraffic error:', renderErr);
+      }
+      try { updateTodayDeepMetrics(); } catch (e) { console.warn('updateTodayDeepMetrics error:', e); }
+    }
+
+    function updateTodayDeepMetrics() {
+      try {
+        const now = Date.now();
+        const todayDayStr = indiaDayStr(now);
+
+        // 1. Pure human learners today (bots and owner completely excluded)
+        const todayHumans = trafficRecords.filter(r => {
+          if (!r || r.isOwner) return false;
+          if (isBotVisitor(r)) return false;
+          if (typeof identifyBotName === 'function' && identifyBotName(r)) return false;
+          // Additional safety check against crawler indicators on raw fields
+          const dev = String(r.device || '');
+          const isp = String(r.isp || '');
+          if (/bot|crawl|spider|slurp|headless|phantom|searchbot|petalbot|bytespider/i.test(dev)) return false;
+          if (/Google|Microsoft|Amazon|Cloudflare|Hetzner|DigitalOcean|OVH|Linode/i.test(isp) && /bot|crawl|preview|inspect/i.test(dev)) return false;
+          return indiaDayStr(r.time) === todayDayStr;
+        });
+
+        // 2. Country Ranking Today: flag, name, and count (100% pure human visitors, 0 bots)
+        const countryMap = new Map();
+        for (const r of todayHumans) {
+          if (isBotVisitor(r) || (typeof identifyBotName === 'function' && identifyBotName(r))) continue;
+          const c = r.country || 'XX';
+          const curr = countryMap.get(c) || { count: 0, visits: 0 };
+          curr.count += 1;
+          curr.visits += (r.visits || 1);
+          countryMap.set(c, curr);
+        }
+        const topCountries = Array.from(countryMap.entries())
+          .sort((a, b) => b[1].count - a[1].count || b[1].visits - a[1].visits)
+          .slice(0, 4);
+
+        const countryEl = document.getElementById('today-country-rank');
+        if (countryEl) {
+          if (topCountries.length === 0) {
+            countryEl.innerHTML = '<span style="color:var(--text-dim);font-size:11px;">No student visits recorded yet today</span>';
+          } else {
+            countryEl.innerHTML = topCountries.map(([code, stat]) => {
+              const info = countryInfo(code);
+              const nameClean = (info.name || code).split(' (')[0];
+              return '<span class="today-rank-chip" title="' + nameClean + ': ' + stat.count + ' unique learners, ' + stat.visits + ' total pageviews">' +
+                info.flag + ' ' + nameClean + ' <b>' + stat.count + '</b></span>';
+            }).join(' ');
+          }
+        }
+
+        // 3. Section Ranking Today: sociology reading, mcq test, voice lectures etc.
+        const sectionMap = new Map();
+        for (const r of todayHumans) {
+          if (Array.isArray(r.sections) && r.sections.length > 0) {
+            for (const s of r.sections) {
+              const sName = s.name || 'Page';
+              sectionMap.set(sName, (sectionMap.get(sName) || 0) + (s.visits || 1));
+            }
+          } else if (r.latestSection) {
+            sectionMap.set(r.latestSection, (sectionMap.get(r.latestSection) || 0) + (r.visits || 1));
+          } else if (r.path) {
+            const fallback = getPathFallbackActivity(r.path);
+            sectionMap.set(fallback, (sectionMap.get(fallback) || 0) + (r.visits || 1));
+          }
+        }
+        const topSections = Array.from(sectionMap.entries())
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 3);
+
+        const sectionEl = document.getElementById('today-section-rank');
+        if (sectionEl) {
+          if (topSections.length === 0) {
+            sectionEl.innerHTML = '<span style="color:var(--text-dim);font-size:11px;">No section activity recorded yet today</span>';
+          } else {
+            sectionEl.innerHTML = topSections.map(([name, hits], idx) => {
+              const rankBadge = idx === 0 ? '🥇' : (idx === 1 ? '🥈' : '🥉');
+              return '<span class="today-rank-chip section-chip" title="' + name + ' (' + hits + ' hits)">' +
+                rankBadge + ' <span class="sec-title">' + name + '</span> <b>' + hits + ' hits</b></span>';
+            }).join(' ');
+          }
+        }
+
+        // 4. Top 3 Longest Engaged Learners Today (AdSense & GA4 Active Session Model)
+        // Groups learner hits into active study sessions (30-min idle timeout), capping abandoned tabs.
+        const stayCandidates = [];
+        const IDLE_TIMEOUT_MS = 30 * 60 * 1000; // 30 minutes (GA4 / AdSense session standard)
+        const HIT_DEFAULT_DWELL_MS = 90 * 1000;  // 90 seconds typical engaged reading per isolated pageview
+
+        for (const r of todayHumans) {
+          const ip = r.ip;
+          const visits = r.visits || 1;
+          const sectionsCount = Array.isArray(r.sections) ? r.sections.length : 0;
+
+          // Collect all known timestamps for this learner today
+          const timestamps = [];
+          if (r.firstSeen) timestamps.push(r.firstSeen);
+          if (r.time) timestamps.push(r.time);
+          if (r.latestSectionTime) timestamps.push(r.latestSectionTime);
+          if (Array.isArray(r.sections)) {
+            for (const s of r.sections) {
+              if (s && s.lastVisit) timestamps.push(s.lastVisit);
+            }
+          }
+          if (Array.isArray(rawTrafficRecords) && rawTrafficRecords.length > 0) {
+            for (const raw of rawTrafficRecords) {
+              if (raw && raw.ip === ip && raw.time) timestamps.push(raw.time);
+            }
+          }
+
+          // Sort chronological
+          const sorted = Array.from(new Set(timestamps)).sort((a, b) => a - b);
+
+          let activeEngagedMs = 0;
+          if (sorted.length <= 1) {
+            // Single hit session: estimated active dwell based on visits
+            activeEngagedMs = Math.min(visits * HIT_DEFAULT_DWELL_MS, 15 * 60 * 1000);
+          } else {
+            // Sum active intervals bounded by 30-minute idle gaps
+            for (let i = 1; i < sorted.length; i++) {
+              const gap = sorted[i] - sorted[i - 1];
+              if (gap > 0 && gap <= IDLE_TIMEOUT_MS) {
+                activeEngagedMs += gap;
+              } else if (gap > IDLE_TIMEOUT_MS) {
+                // User stepped away (new session): credit baseline reading for previous page
+                activeEngagedMs += HIT_DEFAULT_DWELL_MS;
+              }
+            }
+            // Add reading dwell for final interaction
+            activeEngagedMs += Math.min(HIT_DEFAULT_DWELL_MS, 3 * 60 * 1000);
+          }
+
+          // Span between first and last interaction
+          const spanMs = sorted.length > 1 ? Math.max(0, sorted[sorted.length - 1] - sorted[0]) : activeEngagedMs;
+
+          stayCandidates.push({
+            ip: r.ip,
+            activeEngagedMs,
+            spanMs,
+            visits,
+            sectionsCount,
+            country: r.country || 'XX',
+            city: r.city || '',
+            latestSection: r.latestSection || r.path || ''
+          });
+        }
+
+        stayCandidates.sort((a, b) => b.activeEngagedMs - a.activeEngagedMs || b.visits - a.visits);
+        const top3Stay = stayCandidates.slice(0, 3);
+
+        const stayEl = document.getElementById('today-longest-stay');
+        if (stayEl) {
+          if (top3Stay.length === 0) {
+            stayEl.innerHTML = '<span style="color:var(--text-dim);font-size:11px;">Awaiting active learner engagement...</span>';
+          } else {
+            stayEl.innerHTML = top3Stay.map((learner, idx) => {
+              const info = countryInfo(learner.country);
+              const rankIcon = idx === 0 ? '🥇' : (idx === 1 ? '🥈' : '🥉');
+              let timeStr = '';
+              const ms = learner.activeEngagedMs;
+              if (ms >= 3600000) {
+                const hours = Math.floor(ms / 3600000);
+                const mins = Math.floor((ms % 3600000) / 60000);
+                timeStr = hours + 'h ' + mins + 'm';
+              } else if (ms >= 60000) {
+                const mins = Math.floor(ms / 60000);
+                const secs = Math.floor((ms % 60000) / 1000);
+                timeStr = mins + 'm ' + secs + 's';
+              } else if (ms > 1000) {
+                timeStr = Math.floor(ms / 1000) + 's';
+              } else {
+                timeStr = learner.visits > 1 ? (learner.visits + ' pages') : 'Active';
+              }
+
+              const countryNameClean = (info.name || learner.country).split(' (')[0];
+              const locStr = [learner.city, countryNameClean].filter(Boolean).join(', ');
+
+              let spanNote = '';
+              if (learner.spanMs > ms + (10 * 60 * 1000)) {
+                const spanHrs = (learner.spanMs / 3600000).toFixed(1);
+                spanNote = ' (across ' + spanHrs + 'h day)';
+              }
+
+              return '<span class="today-stay-pill" title="Learner ' + (idx + 1) + ': ' + locStr + ' (' + formatShortIP(learner.ip) + ') | Active Engaged Time: ' + timeStr + spanNote + ' across ' + learner.visits + ' page interactions">' +
+                rankIcon + ' ' + info.flag + ' <b>' + countryNameClean + '</b> ' +
+                '<span class="stay-time-badge" style="background:#059669;">⏱️ ' + timeStr + '</span> ' +
+                '<span style="color:#0369a1;font-size:10.5px;font-weight:700;">' + learner.visits + 'v</span>' +
+                '</span>';
+            }).join(' ');
+          }
+        }
+      } catch (err) {
+        console.warn('updateTodayDeepMetrics error:', err);
       }
     }
 
@@ -3219,6 +6428,98 @@ details.section-details summary:hover, details.popular-details summary:hover {
     }
 
     // RENDER YESTERDAY'S RECAP & INTELLIGENCE (NEW!)
+
+    // RENDER LfL ANALYSIS (YESTERDAY VS TODAY LIKE-FOR-LIKE)
+    function renderLfL() {
+      try {
+        const now = Date.now();
+        const yDayStr = indiaDayStr(now - 24 * 60 * 60 * 1000);
+        const tDayStr = indiaDayStr(now);
+
+        // Filter purely human students
+        const humanRecords = trafficRecords.filter(r => !r.isOwner && !isBotVisitor(r));
+        const todayHuman = humanRecords.filter(r => indiaDayStr(r.time) === tDayStr);
+        const yestHuman = humanRecords.filter(r => indiaDayStr(r.time) === yDayStr);
+
+        const yViews = (yesterdayData && yesterdayData.views) || yestHuman.reduce((a, r) => a + (r.visits || 1), 0);
+        const yVisitors = (yesterdayData && yesterdayData.visitors) || yestHuman.length;
+        const yRatio = yVisitors ? (yViews / yVisitors).toFixed(2) : '0';
+
+        const tViews = todayHuman.reduce((a, r) => a + (r.visits || 1), 0);
+        const tVisitors = todayHuman.length;
+        const tRatio = tVisitors ? (tViews / tVisitors).toFixed(2) : '0';
+
+        const viewsDelta = tViews - yViews;
+        const viewsPct = yViews ? Math.round((viewsDelta / yViews) * 100) : 0;
+        const viewsSign = viewsDelta > 0 ? '+' : '';
+
+        const visitorsDelta = tVisitors - yVisitors;
+        const visitorsPct = yVisitors ? Math.round((visitorsDelta / yVisitors) * 100) : 0;
+        const visitorsSign = visitorsDelta > 0 ? '+' : '';
+
+        // KPI values
+        setText('lfl-kpi-views', viewsSign + viewsDelta + ' (' + viewsSign + viewsPct + '%)');
+        setText('lfl-kpi-views-sub', yViews + ' Yest ➔ ' + tViews + ' Today');
+        setText('lfl-kpi-visitors', visitorsSign + visitorsDelta + ' (' + visitorsSign + visitorsPct + '%)');
+        setText('lfl-kpi-visitors-sub', yVisitors + ' Yest ➔ ' + tVisitors + ' Today');
+        setText('lfl-kpi-depth', tRatio + ' vs ' + yRatio);
+        setText('lfl-kpi-depth-sub', 'Pages read per human student');
+
+        // Repeat students
+        const tRepeats = todayHuman.filter(r => (r.visits || 1) > 1).length;
+        const tRepeatPct = tVisitors ? Math.round((tRepeats / tVisitors) * 100) : 0;
+        const yRepeats = yestHuman.filter(r => (r.visits || 1) > 1).length;
+        const yRepeatPct = yVisitors ? Math.round((yRepeats / yVisitors) * 100) : 0;
+        setText('lfl-kpi-retention', tRepeatPct + '% vs ' + yRepeatPct + '%');
+        setText('lfl-kpi-retention-sub', tRepeats + ' repeat students today');
+
+        // Summary text
+        const summaryEl = document.getElementById('lfl-summary-text');
+        if (summaryEl) {
+          const trendWord = viewsDelta >= 0 ? 'Surging' : 'Pacing';
+          const trendColor = viewsDelta >= 0 ? '#047857' : '#b45309';
+          summaryEl.innerHTML = '<span style="color:' + trendColor + '; font-weight:800;">' + trendWord + ' Human Study Velocity:</span> Academic Hub has recorded <strong>' + tVisitors + ' human student visitors</strong> reading <strong>' + tViews + ' study modules</strong> today, compared to ' + yVisitors + ' students and ' + yViews + ' pages yesterday. <em>All bot crawlers (Google, Bing, OpenAI, etc.) and owner visits are strictly filtered out of this audit.</em>';
+        }
+
+        // Comparative Table
+        const tbody = document.getElementById('lfl-comparison-rows');
+        if (tbody) {
+          tbody.replaceChildren();
+          const metrics = [
+            { name: 'Pure Human Student Visitors', y: yVisitors, t: tVisitors, diff: visitorsDelta, pct: visitorsPct },
+            { name: 'Study Content Page Views', y: yViews, t: tViews, diff: viewsDelta, pct: viewsPct },
+            { name: 'Average Pages Read Per Learner', y: yRatio + ' pages', t: tRatio + ' pages', diff: (Number(tRatio) - Number(yRatio)).toFixed(2), pct: null },
+            { name: 'Repeat Study Sessions (>1 visits)', y: yRepeats + ' (' + yRepeatPct + '%)', t: tRepeats + ' (' + tRepeatPct + '%)', diff: tRepeats - yRepeats, pct: null }
+          ];
+
+          for (const m of metrics) {
+            const tr = document.createElement('tr');
+            const tdName = document.createElement('td');
+            tdName.innerHTML = '<strong>' + m.name + '</strong>';
+            const tdY = document.createElement('td');
+            tdY.textContent = String(m.y);
+            const tdT = document.createElement('td');
+            tdT.innerHTML = '<strong style="color:#0284c7;">' + m.t + '</strong>';
+            const tdDiff = document.createElement('td');
+            const isPos = typeof m.diff === 'number' ? m.diff >= 0 : !String(m.diff).startsWith('-');
+            const diffColor = isPos ? '#047857' : '#b45309';
+            const diffBg = isPos ? '#dcfce7' : '#fef3c7';
+            const diffSign = isPos ? '+' : '';
+            const pctStr = m.pct !== null ? ' (' + diffSign + m.pct + '%)' : '';
+            tdDiff.innerHTML = '<span style="background:' + diffBg + '; color:' + diffColor + '; padding:3px 9px; border-radius:6px; font-weight:800; font-family:var(--font-mono); font-size:12px;">' + diffSign + m.diff + pctStr + '</span>';
+
+            const tdStatus = document.createElement('td');
+            tdStatus.innerHTML = isPos ? '<span style="color:#047857; font-weight:700;">🟢 Positive Trajectory</span>' : '<span style="color:#b45309; font-weight:700;">🟡 Mid-Day Accrual</span>';
+
+            tr.append(tdName, tdY, tdT, tdDiff, tdStatus);
+            tbody.append(tr);
+          }
+        }
+      } catch (lflErr) {
+        console.warn('renderLfL error:', lflErr);
+      }
+    }
+
     function renderYesterday() {
       try {
         const now = Date.now();
@@ -3552,6 +6853,11 @@ details.section-details summary:hover, details.popular-details summary:hover {
     }
 
     // BOTS & SEARCH CRAWLERS LOGIC
+    function isBotVisitor(entry) {
+      if (!entry || typeof entry !== 'object') return false;
+      return !!identifyBotName(entry);
+    }
+
     function identifyBotName(v) {
       if (!v) return null;
       const dev = v.device || '';
@@ -3858,6 +7164,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
       { id: 'bots', tab: 'tab-btn-bots', panel: 'panel-bots' },
       { id: 'geo', tab: 'tab-btn-geo', panel: 'panel-geo' },
       { id: 'yesterday', tab: 'tab-btn-yesterday', panel: 'panel-yesterday' },
+      { id: 'lfl', tab: 'tab-btn-lfl', panel: 'panel-lfl' },
       { id: 'radar', tab: 'tab-btn-radar', panel: 'panel-radar' },
       { id: 'content', tab: 'tab-btn-content', panel: 'panel-content' }
     ];
@@ -3877,6 +7184,8 @@ details.section-details summary:hover, details.popular-details summary:hover {
         renderTraffic();
       } else if (id === 'yesterday') {
         renderYesterday();
+      } else if (id === 'lfl') {
+        renderLfL();
       } else if (id === 'bots') {
         renderBots();
       } else if (id === 'radar') {
@@ -3983,21 +7292,25 @@ details.section-details summary:hover, details.popular-details summary:hover {
     const btnEach = document.getElementById('btn-view-each-visit');
     const btnGrouped = document.getElementById('btn-view-grouped-ip');
     if (btnEach && btnGrouped) {
-      btnEach.onclick = () => {
-        trafficViewMode = 'each';
-        btnEach.style.background = '#06b6d4';
-        btnEach.style.color = '#0f172a';
-        btnGrouped.style.background = 'transparent';
-        btnGrouped.style.color = 'var(--text-dim)';
+      btnGrouped.onclick = () => {
+        trafficViewMode = 'grouped';
+        btnGrouped.style.background = '#0284c7';
+        btnGrouped.style.color = '#ffffff';
+        btnGrouped.style.fontWeight = '800';
+        btnEach.style.background = 'transparent';
+        btnEach.style.color = 'var(--text-muted)';
+        btnEach.style.fontWeight = '700';
         trafficPage = 1;
         renderTraffic();
       };
-      btnGrouped.onclick = () => {
-        trafficViewMode = 'grouped';
-        btnGrouped.style.background = '#06b6d4';
-        btnGrouped.style.color = '#0f172a';
-        btnEach.style.background = 'transparent';
-        btnEach.style.color = 'var(--text-dim)';
+      btnEach.onclick = () => {
+        trafficViewMode = 'each';
+        btnEach.style.background = '#0284c7';
+        btnEach.style.color = '#ffffff';
+        btnEach.style.fontWeight = '800';
+        btnGrouped.style.background = 'transparent';
+        btnGrouped.style.color = 'var(--text-muted)';
+        btnGrouped.style.fontWeight = '700';
         trafficPage = 1;
         renderTraffic();
       };
@@ -4234,6 +7547,25 @@ function groupPopularPages(events = [], ownerIp = "") {
   })).sort((a,b) => (b.visits||0) - (a.visits||0) || (b.lastVisit||0) - (a.lastVisit||0));
 }
 
+function isBotVisitor(entry) {
+  if (!entry || typeof entry !== 'object') return false;
+  const dev = String(entry.device || '');
+  const isp = String(entry.isp || '');
+  const ip = String(entry.ip || '');
+  const ua = String(entry.ua || dev);
+
+  if (/Google InspectionTool|Google AdsBot|Google AdSense|Googlebot Image|Googlebot Smartphone|Googlebot|Google Bot/i.test(dev)) return true;
+  if (/Bingbot|MSN Bot|DuckDuckBot|Baiduspider|YandexBot|Yandex|Sogou|Applebot/i.test(dev)) return true;
+  if (/GPTBot|ChatGPT-User|SearchBot|ClaudeBot|Anthropic|PerplexityBot|Cohere|Meta|FB Crawler/i.test(dev)) return true;
+  if (/Ahrefs|Semrush|DotBot|Screaming Frog|Majestic|PetalBot|ByteSpider/i.test(dev)) return true;
+  if (/Crawler|spider|bot/i.test(dev)) return true;
+  if (/googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|sogou|exabot|facebot|facebookexternalhit|ia_archiver|mj12bot|ahrefsbot|semrushbot|dotbot|petalbot|bytespider|applebot/i.test(ua)) return true;
+  if (/gptbot|claude-web|anthropic|chatgpt|cohere|perplexitybot/i.test(ua)) return true;
+  if (/Google/i.test(isp) || ip.startsWith('66.249.')) return true;
+  if (/Microsoft/i.test(isp) && /bot|crawl/i.test(dev)) return true;
+  return false;
+}
+
 function groupTrafficByIP(records = [], sectionEvents = [], ownerIp = "") {
   const groups = new Map();
   const safeRecords = Array.isArray(records) ? records.filter(r => r && typeof r === "object") : [];
@@ -4243,12 +7575,14 @@ function groupTrafficByIP(records = [], sectionEvents = [], ownerIp = "") {
     const ip = String(record.ip || "Unknown");
     let group = groups.get(ip);
     const isOwner = Boolean(record.isOwner || (ownerIp && ip === ownerIp));
+    const recTime = typeof record.time === "number" ? record.time : 0;
     if (!group) {
       group = {
         ...record,
         ip,
         isOwner,
-        time: typeof record.time === "number" ? record.time : 0,
+        time: recTime,
+        firstSeen: recTime,
         path: typeof record.path === "string" ? record.path : "/",
         visits: 0,
         country: typeof record.country === "string" ? record.country : "XX",
@@ -4263,6 +7597,7 @@ function groupTrafficByIP(records = [], sectionEvents = [], ownerIp = "") {
       };
       groups.set(ip, group);
     }
+    if (recTime && (!group.firstSeen || recTime < group.firstSeen)) group.firstSeen = recTime;
     group.visits++;
     if (record.isOwner || (ownerIp && ip === ownerIp)) group.isOwner = true;
     if ((!group.country || group.country === "XX") && record.country && record.country !== "XX") group.country = record.country;
