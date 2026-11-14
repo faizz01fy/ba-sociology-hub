@@ -4,19 +4,493 @@ const quizAppHtml = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#102c31">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <title>Idioms Learning | English Ability Enhancement</title>
 <style>
-:root{font-family:"DM Sans",system-ui,sans-serif;color:#153236;background:#f1f5f2;line-height:1.55;--ink:#153236;--green:#086454;--line:#d5e1da}
-*{box-sizing:border-box}body{margin:0}button,select{font:inherit;color:inherit}button{cursor:pointer}button:disabled{cursor:default}button:focus-visible,select:focus-visible{outline:3px solid #2670b6;outline-offset:3px}
-.wrap{width:min(100% - 32px,760px);margin:auto}.hero{background:radial-gradient(ellipse at 95% 5%,#285d55,transparent 62%),#102c31;color:#fff;padding:35px 0 61px}.course{color:#b2e7d5;font-size:.78rem;letter-spacing:.13em;font-weight:800;text-transform:uppercase}.hero h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(2.6rem,7vw,4.3rem);letter-spacing:-.045em;line-height:1.02;margin:12px 0}.hero p{color:#d5e7e2;margin:0;max-width:48ch}
-main{margin-top:-29px!important;padding-bottom:30px}.tabs{display:flex;gap:5px;padding:5px;background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:15px;box-shadow:0 4px 16px #102c3110}.tabs button{flex:1;padding:10px 4px;border:0;border-radius:9px;background:transparent;font-weight:700;font-size:clamp(.79rem,2.4vw,.94rem)}.tabs button[aria-pressed=true]{background:#dcf2e8;color:#075646}
-.card{padding:clamp(18px,4.5vw,36px);background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 12px 34px #102c310a}.status,.actions{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.status{color:#455d59;font-size:.86rem;font-weight:700}progress{display:block;width:100%;height:8px;margin:10px 0 25px;appearance:none;border:0;background:#eaf0eb;border-radius:20px;overflow:hidden}progress::-webkit-progress-bar{background:#eaf0eb}progress::-webkit-progress-value{background:#258973;border-radius:20px}progress::-moz-progress-bar{background:#258973}
-h2{margin:4px 0 12px;font-size:clamp(1.35rem,4vw,1.85rem);line-height:1.23;letter-spacing:-.025em}h2:focus{outline:none}.prompt{margin:0 0 16px;color:#455d59}.choices{display:grid;gap:8px}.choice{display:flex;text-align:left;align-items:center;gap:12px;min-height:52px;padding:9px 12px;border:1px solid var(--line);border-radius:11px;background:#fafcfb}.choice:not(:disabled):hover{background:#edf7f1;border-color:#73a996}.letter{display:grid;place-items:center;min-width:29px;height:29px;border-radius:8px;background:#e9efeb;font-size:.82rem;font-weight:800}.choice.good,.message.good{background:#e6f6ed;border-color:#72ad90}.choice.bad,.message.bad{background:#fdf0e9;border-color:#dfa692}.mark{margin-left:auto;font-weight:800}.feedback:not(:empty){margin-top:16px}.message{border:1px solid var(--line);border-radius:11px;padding:12px 14px}.message p{margin:4px 0 0}.actions{margin-top:18px}.primary,.secondary{min-height:44px;padding:9px 15px;border-radius:9px;font-weight:750}.primary{background:var(--green);color:white;border:1px solid var(--green)}.primary:disabled{background:#e2e9e5;color:#596b65;border-color:#e2e9e5}.secondary{background:white;border:1px solid var(--line)}.secondary:disabled{opacity:.55}.match{display:grid;grid-template-columns:1fr 1.3fr;align-items:center;gap:8px 16px;padding:12px 0;border-bottom:1px solid var(--line)}select{width:100%;min-width:0;min-height:44px;border:1px solid #aabdb2;border-radius:8px;background:#fafcfb;padding:6px}.match-feedback{grid-column:1/-1;color:#31554b;font-size:.833em}.review{padding-left:22px}.review li{margin-bottom:12px}.footer{margin:16px 2px 0;font-size:.79rem;color:#4c635e}@media(max-width:520px){.match{grid-template-columns:1fr}.hero{padding-top:27px}}
-.tense-examples{margin:9px 0 0;padding:9px 0 0;list-style:none;border-top:1px solid #15323630}.tense-examples li+li{margin-top:4px}.tense-examples strong{display:inline-block;min-width:4.3em}
-.nav-breadcrumbs{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;margin-bottom:14px;color:#d5e7e2;flex-wrap:wrap}
-.nav-breadcrumbs a{color:#b2e7d5;text-decoration:none}
-.nav-breadcrumbs a:hover{text-decoration:underline}
-.nav-breadcrumbs span{opacity:.7}
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --bg-hero: linear-gradient(135deg, #064e3b 0%, #065f46 45%, #047857 100%);
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+  --ink-primary: #0f172a;
+  --ink-secondary: #334155;
+  --ink-muted: #64748b;
+  --emerald-main: #059669;
+  --emerald-dark: #065f46;
+  --emerald-light: #ecfdf5;
+  --emerald-border: #a7f3d0;
+  --border-subtle: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  color: var(--ink-primary);
+  background-color: #f1f5f9;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+button, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+button:focus-visible, select:focus-visible { outline: 3px solid #3b82f6; outline-offset: 2px; }
+
+.hero {
+  background: var(--bg-hero);
+  color: #ffffff;
+  padding: clamp(32px, 6vw, 56px) 16px clamp(52px, 8vw, 76px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(6, 78, 59, 0.25);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.wrap {
+  width: min(100% - 32px, 860px);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #a7f3d0;
+  flex-wrap: wrap;
+}
+.nav-breadcrumbs a {
+  color: #d1fae5;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.nav-breadcrumbs a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.nav-breadcrumbs span { opacity: 0.75; }
+
+.course-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ecfdf5;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.3rem, 6vw, 3.6rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+.hero p {
+  color: #d1fae5;
+  font-size: clamp(0.96rem, 2vw, 1.12rem);
+  max-width: 64ch;
+  line-height: 1.5;
+}
+
+main {
+  margin-top: -38px !important;
+  padding-bottom: 50px;
+}
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-lg);
+}
+.tabs button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 10px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--ink-secondary);
+  font-weight: 700;
+  font-size: clamp(0.85rem, 2.2vw, 0.98rem);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.tabs button:hover:not([aria-pressed="true"]) {
+  background: #f1f5f9;
+  color: var(--ink-primary);
+}
+.tabs button[aria-pressed="true"] {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+}
+.tabs button .tab-count {
+  font-size: 0.76rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.08);
+}
+.tabs button[aria-pressed="true"] .tab-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.card {
+  padding: clamp(22px, 5vw, 40px);
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  box-shadow: var(--shadow-xl);
+  transition: transform 0.2s ease;
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--emerald-dark);
+}
+.status-pill {
+  background: var(--emerald-light);
+  color: var(--emerald-dark);
+  border: 1px solid var(--emerald-border);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.status-pill::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+progress {
+  display: block;
+  width: 100%;
+  height: 9px;
+  margin: 12px 0 24px;
+  appearance: none;
+  border: 0;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+progress::-webkit-progress-bar { background: #e2e8f0; }
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+  border-radius: 20px;
+}
+progress::-moz-progress-bar { background: #059669; }
+
+h2 {
+  font-family: var(--font-display);
+  margin: 6px 0 14px;
+  font-size: clamp(1.4rem, 4vw, 1.95rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+h2:focus { outline: none; }
+.prompt {
+  margin: 0 0 20px;
+  color: var(--ink-secondary);
+  font-size: 1.02rem;
+  font-weight: 500;
+}
+
+.choices {
+  display: grid;
+  gap: 10px;
+}
+.choice {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  gap: 14px;
+  min-height: 56px;
+  padding: 12px 18px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 14px;
+  background: #ffffff;
+  color: var(--ink-primary);
+  font-size: 1.02rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.18s ease;
+}
+.choice:not(:disabled):hover {
+  background: #f8fafc;
+  border-color: #059669;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.12);
+}
+.letter {
+  display: grid;
+  place-items: center;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.88rem;
+  font-weight: 800;
+  transition: all 0.18s ease;
+}
+.choice:not(:disabled):hover .letter {
+  background: #d1fae5;
+  color: #065f46;
+}
+.choice.good {
+  background: #ecfdf5 !important;
+  border-color: #10b981 !important;
+  color: #065f46 !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2) !important;
+}
+.choice.good .letter {
+  background: #059669 !important;
+  color: #ffffff !important;
+}
+.choice.bad {
+  background: #fef2f2 !important;
+  border-color: #ef4444 !important;
+  color: #991b1b !important;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.18) !important;
+}
+.choice.bad .letter {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+}
+.mark {
+  margin-left: auto;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.feedback:not(:empty) { margin-top: 22px; }
+.message {
+  border-radius: 16px;
+  padding: 18px 20px;
+  border: 1.5px solid transparent;
+  animation: fadeIn 0.25s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.message.good {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border-color: #a7f3d0;
+  color: #065f46;
+}
+.message.bad {
+  background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%);
+  border-color: #fecaca;
+  color: #991b1b;
+}
+.message strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.message p {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin: 4px 0;
+}
+
+.tense-examples {
+  margin: 14px 0 0;
+  padding: 14px 0 0;
+  list-style: none;
+  border-top: 1.5px dashed rgba(6, 95, 70, 0.2);
+}
+.message.bad .tense-examples {
+  border-top-color: rgba(153, 27, 27, 0.2);
+}
+.tense-examples li {
+  font-size: 0.94rem;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+.tense-examples strong {
+  display: inline-block;
+  min-width: 4.6em;
+  color: #047857;
+  font-weight: 800;
+}
+.message.bad .tense-examples strong { color: #b91c1c; }
+
+.match {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+  gap: 12px 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.match label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-primary);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease;
+}
+select:focus { border-color: #059669; }
+.match-feedback {
+  grid-column: 1 / -1;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  font-size: 0.92rem;
+  color: #334155;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+.primary, .secondary {
+  min-height: 48px;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.18s ease;
+}
+.primary {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: #ffffff;
+  border: 0;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+}
+.primary:not(:disabled):hover {
+  background: linear-gradient(135deg, #047857 0%, #064e3b 100%);
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.45);
+}
+.primary:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  box-shadow: none;
+}
+.secondary {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: var(--ink-secondary);
+}
+.secondary:not(:disabled):hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  color: var(--ink-primary);
+}
+.secondary:disabled { opacity: 0.45; }
+
+.review {
+  padding-left: 24px;
+  margin: 18px 0;
+}
+.review li {
+  margin-bottom: 16px;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+.review li strong {
+  color: #047857;
+  font-size: 1.05rem;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .match { grid-template-columns: 1fr; gap: 8px; }
+  .tabs { flex-direction: column; gap: 4px; }
+  .tabs button { padding: 10px; }
+  .actions { flex-direction: column-reverse; }
+  .actions button { width: 100%; justify-content: center; }
+}
 </style>
 </head>
 <body>
@@ -24,10 +498,10 @@ h2{margin:4px 0 12px;font-size:clamp(1.35rem,4vw,1.85rem);line-height:1.23;lette
 <div class="nav-breadcrumbs"><a href="/">Academic Hub</a> <span>→</span> <a href="/calicut-university-fyugp">FYUGP</a> <span>→</span> <span>IMA DS Semester 1</span> <span>→</span> <span>English</span> <span>→</span> <span style="color:#fff">Idioms Learning</span></div>
 <div class="course">Listening &amp; Speaking · English AEC</div><h1>Idioms Learning</h1><p>Learn what common idiomatic expressions mean and practise using them in context.</p></div></header>
 <main class="wrap">
-<nav class="tabs" aria-label="Quiz sections">
-<button type="button" data-mode="practice" aria-pressed="true">Idiom practice</button>
-<button type="button" data-mode="match" aria-pressed="false">Matching</button>
-<button type="button" data-mode="context" aria-pressed="false">Fill in the blank</button>
+<nav class="tabs" aria-label="Learning modes">
+<button type="button" data-mode="practice" aria-pressed="true">🎯 Idiom Practice <span class="tab-count">59 Qs</span></button>
+<button type="button" data-mode="context" aria-pressed="false">✍️ Fill in the Blank <span class="tab-count">59 Qs</span></button>
+<button type="button" data-mode="match" aria-pressed="false">🧩 Matching Sets <span class="tab-count">12 Sets</span></button>
 </nav>
 <section class="card" id="card" aria-label="Quiz"></section>
 <p class="footer">Idioms Learning Module · English Ability Enhancement Course · Calicut University FYUGP</p>
@@ -175,22 +649,315 @@ const practice = idioms.map(([idiom, meaning, example], index) => {
     why: example
   };
 });
-const context = [
+const rawBlanks = [
   {
-    title: "It would be better to apply to several companies instead of just one. Don’t ____.",
-    options: ["spill the beans","let the cat out of the bag","bite off more than you can chew","put all your eggs in one basket"],
-    correct: "put all your eggs in one basket",
-    idiomId: 40,
-    why: "Applying to only one company puts all your chances on a single option. Applying to several spreads the risk."
+    "sentence": "After three top candidates turned down the job offer, the committee was ______ to find a replacement.",
+    "idiom": "Scrape the barrel",
+    "why": "“Scrape the barrel” means resorting to the least desirable choices when better options are exhausted."
   },
   {
-    title: "She’s disappointed she didn’t get her dream job. The sooner she ____ and accepts it, the sooner she can move on.",
-    options: ["bites off more than she can chew","bites the bullet","barks up the wrong tree","breaks new ground"],
-    correct: "bites the bullet",
-    idiomId: 17,
-    why: "Accepting the rejection is difficult. To bite the bullet is to face an unpleasant situation you have been putting off or would rather avoid."
+    "sentence": "By shouting insults at his former supervisor upon resigning, David chose to ______.",
+    "idiom": "Burn your boats or bridges",
+    "why": "“Burn your boats or bridges” means making it impossible or very difficult to return to an earlier situation."
+  },
+  {
+    "sentence": "Their groundbreaking research in gene therapy is set to ______ in medical science.",
+    "idiom": "Break new ground",
+    "why": "“Break new ground” means doing something truly innovative, original, or unprecedented."
+  },
+  {
+    "sentence": "On launch day, the author's new thriller novel began to ______ across all bookstores.",
+    "idiom": "Sell like hot cakes",
+    "why": "“Sell like hot cakes” means selling out extremely quickly and in high demand."
+  },
+  {
+    "sentence": "Without an agreed agenda, the committee members argued for two hours and ended up ______.",
+    "idiom": "Run around in circles",
+    "why": "“Run around in circles” means exerting lots of energy and effort without achieving real progress."
+  },
+  {
+    "sentence": "The defense attorney smiled calmly because she still had ______ to reveal in court.",
+    "idiom": "Have an ace up your sleeve",
+    "why": "“Have an ace up your sleeve” means having a secret, powerful advantage or backup plan in reserve."
+  },
+  {
+    "sentence": "Because he pursued contemporary theatre rather than family medicine, his relatives viewed him as ______.",
+    "idiom": "A black sheep",
+    "why": "“A black sheep” refers to a member considered odd, disgraced, or an outsider by the family or group."
+  },
+  {
+    "sentence": "After sustaining a severe fracture in the final lap, the marathon runner was ______.",
+    "idiom": "Down for the count",
+    "why": "“Down for the count” means being completely defeated, exhausted, or incapacitated from continuing."
+  },
+  {
+    "sentence": "I am happy to review your essay draft, but I ______ at doing your homework assignments for you.",
+    "idiom": "Draw the line",
+    "why": "“Draw the line” means setting a firm moral or practical boundary on what you are willing to accept."
+  },
+  {
+    "sentence": "When his car broke down in the remote jungle and his phone battery died, he was truly ______.",
+    "idiom": "Up a creek without a paddle",
+    "why": "“Up a creek without a paddle” describes being stuck in a critical predicament with no easy escape."
+  },
+  {
+    "sentence": "Our senior campus representative advised us to ______ for upcoming internship circulars.",
+    "idiom": "Keep an ear to the ground",
+    "why": "“Keep an ear to the ground” means staying alert, watchful, and informed about emerging developments."
+  },
+  {
+    "sentence": "After running fifteen kilometres along the beach path, the athletes sat down and ______.",
+    "idiom": "Eat like a horse",
+    "why": "“Eat like a horse” means eating exceptionally large quantities of food with immense appetite."
+  },
+  {
+    "sentence": "A tiny mistake in the balance sheet triggered late penalties and an audit in ______.",
+    "idiom": "A snowball effect",
+    "why": "“A snowball effect” refers to an escalating sequence where one small event accumulates momentum."
+  },
+  {
+    "sentence": "Vikram demonstrates the same brilliant carpentry craftsmanship as his father; he is ______.",
+    "idiom": "A chip off the old block",
+    "why": "“A chip off the old block” characterizes someone who closely mirrors a parent's qualities or talents."
+  },
+  {
+    "sentence": "She earned first prize in the national debate championship ______ by honoring all rules.",
+    "idiom": "Fair and square",
+    "why": "“Fair and square” means achieved honestly, transparently, and strictly according to official regulations."
+  },
+  {
+    "sentence": "Missing the 8 AM express train turned out to be ______ when it derailed later that morning.",
+    "idiom": "A blessing in disguise",
+    "why": "“A blessing in disguise” is an event that seems unfortunate at first but later yields great fortune."
+  },
+  {
+    "sentence": "Generic plastic phone accessories and cheap keychains are ______ in this weekend flea market.",
+    "idiom": "A dime a dozen",
+    "why": "“A dime a dozen” denotes items or ideas that are commonplace, abundant, and easily acquired."
+  },
+  {
+    "sentence": "Rather than delaying the uncomfortable dental procedure any longer, she decided to ______.",
+    "idiom": "Bite the bullet",
+    "why": "“Bite the bullet” means facing a painful, daunting, or unpleasant duty with resolute courage."
+  },
+  {
+    "sentence": "We have finalized all thirty presentation slides, so let us pack up and ______.",
+    "idiom": "Call it a day",
+    "why": "“Call it a day” means deciding to bring a work session or activity to an end for the time being."
+  },
+  {
+    "sentence": "It is his first shift operating the front dispatch desk, so please ______ if he takes extra time.",
+    "idiom": "Cut somebody some slack",
+    "why": "“Cut somebody some slack” means showing leniency, patience, and avoiding harsh criticism."
+  },
+  {
+    "sentence": "The building contractors attempted to ______ on foundation concrete, causing structural cracks.",
+    "idiom": "Cut corners",
+    "why": "“Cut corners” means skipping essential stages or quality measures to save money, time, or labor."
+  },
+  {
+    "sentence": "When the aerodynamics simulation crashed during the first test, the team had to ______.",
+    "idiom": "Go back to the drawing board",
+    "why": "“Go back to the drawing board” means restarting planning from scratch after an approach completely fails."
+  },
+  {
+    "sentence": "The first semester courses can feel overwhelming at times, but ______ and keep practicing daily.",
+    "idiom": "Hang in there",
+    "why": "“Hang in there” is an encouraging phrase urging someone to endure hardship and maintain resilience."
+  },
+  {
+    "sentence": "Entering your attendance registration code on the student portal is easy; ______.",
+    "idiom": "It's not rocket science",
+    "why": "“It's not rocket science” emphasizes that a task is relatively straightforward and uncomplicated."
+  },
+  {
+    "sentence": "The dean forgave his honest bookkeeping oversight and chose to ______ with a simple reminder.",
+    "idiom": "Let someone off the hook",
+    "why": "“Let someone off the hook” means releasing someone from punishment, culpability, or an obligation."
+  },
+  {
+    "sentence": "If you wait until after tomorrow's final deadline to submit the form, you will totally ______.",
+    "idiom": "Miss the boat",
+    "why": "“Miss the boat” means losing a valuable opportunity or window of advantage due to tardiness."
+  },
+  {
+    "sentence": "Waking up at 5 AM for endurance drills is painful, but the coach always repeats: ______.",
+    "idiom": "No pain, no gain",
+    "why": "“No pain, no gain” reminds us that true progress, skill, or strength demands strenuous exertion."
+  },
+  {
+    "sentence": "Wipe away your tears, take a steadying breath, and ______ before entering the interview room.",
+    "idiom": "Pull yourself together",
+    "why": "“Pull yourself together” means recovering emotional composure, calm control, and focus."
+  },
+  {
+    "sentence": "The third sudden rent increase within four months was ______ that prompted the tenants to move.",
+    "idiom": "The last straw",
+    "why": "“The last straw” describes the ultimate minor trouble that makes an accumulating burden intolerable."
+  },
+  {
+    "sentence": "Working three days in the office and two from home gives me team interaction and quiet focus; it is ______.",
+    "idiom": "The best of both worlds",
+    "why": "“The best of both worlds” refers to enjoying the distinct advantages of two contrasting situations."
+  },
+  {
+    "sentence": "The courier misdelivered my passport and then, to ______, demanded a penalty fee for replacement.",
+    "idiom": "Add insult to injury",
+    "why": "“Add insult to injury” means exacerbating an already humiliating or painful predicament."
+  },
+  {
+    "sentence": "You have been sitting by the window in deep silence for ten minutes; ______?",
+    "idiom": "A penny for your thoughts",
+    "why": "“A penny for your thoughts” is a warm, polite invitation asking what another person is thinking about."
+  },
+  {
+    "sentence": "Their fierce forty-minute debate regarding what color mug to buy for the staff room was ______.",
+    "idiom": "A storm in a teacup",
+    "why": "“A storm in a teacup” describes disproportionate excitement, fury, or drama over an insignificant matter."
+  },
+  {
+    "sentence": "If you suspect Priya borrowed your lecture notes, you are ______; she was away all week.",
+    "idiom": "Bark up the wrong tree",
+    "why": "“Bark up the wrong tree” means directing accusations, efforts, or investigations in the wrong direction."
+  },
+  {
+    "sentence": "By taking on five research electives while preparing for competitive exams, he ______.",
+    "idiom": "Bite off more than you can chew",
+    "why": "“Bite off more than you can chew” means undertaking responsibilities larger than your capacity."
+  },
+  {
+    "sentence": "A short, fun trivia contest at the start of orientation helped ______ among unfamiliar students.",
+    "idiom": "Break the ice",
+    "why": "“Break the ice” means easing initial awkwardness, social tension, or shyness in a new group."
+  },
+  {
+    "sentence": "Evaluating a short lyric poem with the exact criteria used for an 800-page historical novel is ______.",
+    "idiom": "Compare apples and oranges",
+    "why": "“Compare apples and oranges” means comparing things so fundamentally different that comparison is invalid."
+  },
+  {
+    "sentence": "Importing bespoke titanium aircraft components will ______ and severely strain our budget.",
+    "idiom": "Cost an arm and a leg",
+    "why": "“Cost an arm and a leg” is a common idiom meaning to be exceedingly expensive or financially draining."
+  },
+  {
+    "sentence": "Whenever a junior batchmate asks for programming guidance, Ananya will assist ______.",
+    "idiom": "At the drop of a hat",
+    "why": "“At the drop of a hat” means taking action instantly, willingly, and without delay."
+  },
+  {
+    "sentence": "Reserving hotel suites before hearing whether the university funded the project is ______.",
+    "idiom": "Count your chickens before they hatch",
+    "why": "“Count your chickens before they hatch” warns against banking on positive outcomes before they materialize."
+  },
+  {
+    "sentence": "Instead of staking your entire scholarship prospect on a single college application, ______.",
+    "idiom": "Don't put all your eggs in one basket",
+    "why": "“Don't put all your eggs in one basket” advises diversifying options to avoid risking everything at once."
+  },
+  {
+    "sentence": "The sudden road closure cancelled our trip but gave us time to finish our reports, showing that ______.",
+    "idiom": "Every cloud has a silver lining",
+    "why": "“Every cloud has a silver lining” conveys that even frustrating circumstances possess a beneficial aspect."
+  },
+  {
+    "sentence": "After years of playing loud music late at night, the arrogant neighbor finally got ______.",
+    "idiom": "Get a taste of your own medicine",
+    "why": "“Get a taste of your own medicine” means receiving the same harsh or unfair treatment one gave to others."
+  },
+  {
+    "sentence": "Offended by his disrespectful comments at lunch, Maya decided to ______ and refused to answer him.",
+    "idiom": "Give someone the cold shoulder",
+    "why": "“Give someone the cold shoulder” means intentionally ignoring, snubbing, or displaying cold aloofness."
+  },
+  {
+    "sentence": "Searching the entire town for an unregistered antique shop with a fake address became ______.",
+    "idiom": "Go on a wild goose chase",
+    "why": "“Go on a wild goose chase” denotes a hopeless, chaotic, and completely futile quest."
+  },
+  {
+    "sentence": "Rohan inadvertently ______ when he congratulated the winner before the official jury announcement.",
+    "idiom": "Let the cat out of the bag",
+    "why": "“Let the cat out of the bag” means inadvertently disclosing private or surprise information."
+  },
+  {
+    "sentence": "I accidentally formatted my memory card and lost two days of lecture recordings; well, ______.",
+    "idiom": "Live and learn",
+    "why": "“Live and learn” expresses philosophical acceptance of gaining wisdom through unexpected mistakes."
+  },
+  {
+    "sentence": "Review every clause of the tenancy agreement before handing over the deposit; always ______.",
+    "idiom": "Look before you leap",
+    "why": "“Look before you leap” stresses considering all risks and repercussions prior to taking bold actions."
+  },
+  {
+    "sentence": "Having arrived an hour late after two previous disciplinary warnings, the clerk is skating ______.",
+    "idiom": "On thin ice",
+    "why": "“On thin ice” describes walking in an precarious position where the slightest error triggers catastrophe."
+  },
+  {
+    "sentence": "Because her sister lives in California and she works in Calicut, the siblings meet only ______.",
+    "idiom": "Once in a blue moon",
+    "why": "“Once in a blue moon” is an idiomatic phrase meaning an event transpires extremely infrequently."
+  },
+  {
+    "sentence": "During our product design review, I will ______ to test whether our business model has flaws.",
+    "idiom": "Play devil's advocate",
+    "why": "“Play devil's advocate” means arguing an opposing viewpoint purely to examine the strength of an idea."
+  },
+  {
+    "sentence": "Because regional tax rates were uncertain, the board chose to ______ until the next fiscal quarter.",
+    "idiom": "Put something on ice",
+    "why": "“Put something on ice” means temporarily deferring, postponing, or freezing an initiative."
+  },
+  {
+    "sentence": "Please do not ______ regarding the surprise retirement celebration planned for our director.",
+    "idiom": "Spill the beans",
+    "why": "“Spill the beans” means prematurely or indiscreetly divulging a well-kept secret."
+  },
+  {
+    "sentence": "I cannot join you for coffee this afternoon due to urgent revisions, but can I ______ for Saturday?",
+    "idiom": "Take a rain check",
+    "why": "“Take a rain check” means declining an invitation gracefully while proposing to reschedule later."
+  },
+  {
+    "sentence": "Until the board issues an authenticated press notice, accept these unverified market rumours ______.",
+    "idiom": "Take it with a grain of salt",
+    "why": "“Take it with a grain of salt” means regarding assertions with healthy skepticism and reservation."
+  },
+  {
+    "sentence": "Stop ______ and state clearly whether you will attend tomorrow's seminar or not.",
+    "idiom": "Beat around the bush",
+    "why": "“Beat around the bush” means avoiding direct discussion of the central matter through evasion."
+  },
+  {
+    "sentence": "His claim that he lost his term paper because an alien spacecraft scanned his drive was ______.",
+    "idiom": "Hard to swallow",
+    "why": "“Hard to swallow” characterizes explanations or statements that are utterly implausible or difficult to accept."
+  },
+  {
+    "sentence": "Investigative reporters had to ______ in dusty municipal property records to uncover the corruption.",
+    "idiom": "Dig around",
+    "why": "“Dig around” means probing, investigating, and diligently searching for hidden facts."
+  },
+  {
+    "sentence": "With her sharp intellect and lightning-quick logical deductions, young Meera is truly ______.",
+    "idiom": "A bright spark",
+    "why": "“A bright spark” designates an exceptionally witty, perceptive, or clever individual."
   }
 ];
+const context = rawBlanks.map((item, index) => {
+  const otherIdxs = idioms.map((_, i) => i).filter(i => i !== index);
+  const shuffledOther = shuffle(otherIdxs).slice(0, 3).map(i => idioms[i][0]);
+  return {
+    idiomId: index,
+    title: item.sentence,
+    prompt: "Choose the idiom that best fills in the blank.",
+    correct: item.idiom,
+    options: shuffle([item.idiom, ...shuffledOther]),
+    why: item.why
+  };
+});
 const lessons = {
   practice,
   context,
