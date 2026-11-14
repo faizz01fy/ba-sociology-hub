@@ -115,8 +115,21 @@ export async function handleFyugpQuiz(request, env, equals) {
   const targetPassword = env.FYUGP_QUIZ_PASSWORD || '1234';
   const signingSecret = env.FYUGP_QUIZ_KEY || (env.ADMIN_PASSWORD ? 'fyugp:' + env.ADMIN_PASSWORD : 'fyugp-hub-secret-default-2026-v1');
 
+  function isOriginAllowed(origin) {
+    if (!origin) return true;
+    try {
+      const o = new URL(origin).hostname.toLowerCase();
+      return o === 'academichubfaiz.in' || o === 'www.academichubfaiz.in' || o.endsWith('.academichubfaiz.in') || o.endsWith('.workers.dev');
+    } catch {
+      return false;
+    }
+  }
+
+  const unlockFormAction = url.pathname + (url.search || '');
+
   if (request.method === 'POST') {
-    if (request.headers.get('Origin') !== url.origin) return new Response(null, {status:403, headers});
+    const origin = request.headers.get('Origin');
+    if (origin && !isOriginAllowed(origin)) return new Response(null, {status:403, headers});
     if (!request.headers.get('Content-Type')?.startsWith('application/x-www-form-urlencoded')) {
       return new Response(null, {status:415, headers});
     }
@@ -137,11 +150,15 @@ export async function handleFyugpQuiz(request, env, equals) {
     }
     const password = new URLSearchParams(body + decoder.decode()).get('password');
     if (!equals(password, targetPassword)) {
-      return new Response(unlockPage.replace('<!-- FEEDBACK -->', '<p role="alert">Incorrect password. Try entering 1234.</p>'), {status:403, headers});
+      const renderedUnlock = unlockPage
+        .replace('${fyugpQuizPath}', unlockFormAction)
+        .replace('<!-- FEEDBACK -->', '<p role="alert">Incorrect password. Try entering 1234.</p>');
+      return new Response(renderedUnlock, {status:403, headers});
     }
     const expires = now + sessionSeconds;
     const proof = await sessionProof(signingSecret, expires);
-    headers.set('Location', fyugpQuizPath);
+    const redirectTarget = url.searchParams.get('quiz') === 'idioms' ? (fyugpQuizPath + '?quiz=idioms') : fyugpQuizPath;
+    headers.set('Location', redirectTarget);
     headers.set('Set-Cookie', `${cookieName}=${expires}.${proof}; Max-Age=${sessionSeconds}; Path=/; Secure; HttpOnly; SameSite=Lax`);
     return new Response(null, {status:303, headers});
   }
@@ -151,7 +168,8 @@ export async function handleFyugpQuiz(request, env, equals) {
   }
   const session = (request.headers.get('Cookie') || '').match(/(?:^|;\s*)__Host-fyugp_quiz=(\d{1,12})\.([a-f0-9]{64})(?:;|$)/);
   if (!session || Number(session[1]) <= now || !equals(session[2], await sessionProof(signingSecret, session[1]))) {
-    return new Response(request.method === 'HEAD' ? null : unlockPage, {headers});
+    const renderedUnlock = unlockPage.replace('${fyugpQuizPath}', unlockFormAction);
+    return new Response(request.method === 'HEAD' ? null : renderedUnlock, {headers});
   }
   if (request.method === 'HEAD') return new Response(null, {headers});
   if (url.searchParams.get('quiz') === 'idioms') {
