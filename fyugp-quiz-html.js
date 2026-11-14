@@ -44,7 +44,7 @@ button:focus-visible, select:focus-visible { outline: 3px solid #3b82f6; outline
 .hero {
   background: var(--bg-hero);
   color: #ffffff;
-  padding: clamp(32px, 6vw, 56px) 16px clamp(52px, 8vw, 76px);
+  padding: clamp(14px, 3vw, 22px) 16px clamp(28px, 4.5vw, 36px);
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(6, 78, 59, 0.25);
@@ -84,7 +84,7 @@ button:focus-visible, select:focus-visible { outline: 3px solid #3b82f6; outline
   gap: 8px;
   font-size: 0.85rem;
   font-weight: 600;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   color: #a7f3d0;
   flex-wrap: wrap;
 }
@@ -113,12 +113,12 @@ button:focus-visible, select:focus-visible { outline: 3px solid #3b82f6; outline
   text-transform: uppercase;
   padding: 4px 12px;
   border-radius: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 .hero h1 {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.3rem, 6vw, 3.6rem);
+  font-size: clamp(1.4rem, 3.2vw, 1.95rem);
   letter-spacing: -0.03em;
   line-height: 1.1;
   margin-bottom: 10px;
@@ -132,7 +132,7 @@ button:focus-visible, select:focus-visible { outline: 3px solid #3b82f6; outline
 }
 
 main {
-  margin-top: -38px !important;
+  margin-top: -22px !important;
   padding-bottom: 50px;
 }
 
@@ -144,7 +144,7 @@ main {
   background: #ffffff;
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   box-shadow: var(--shadow-md);
 }
 .tabs button {
@@ -697,7 +697,7 @@ if (is25Mode) {
   if (heroCrumb) heroCrumb.textContent = "25 Idioms Test for Internal Exam Prep";
   if (heroCourse) heroCourse.innerHTML = "⚡ INTERNAL EXAM PREP · 25 HIGH-YIELD IDIOMS";
   if (heroTitle) heroTitle.textContent = "25 Idioms Test for Internal Exam Prep";
-  if (heroDesc) heroDesc.textContent = "Targeted practice covering the first 25 syllabus idioms with MCQs, context sentence fill-in-the-blank, and 5 interactive matching sets.";
+  if (heroDesc) heroDesc.textContent = "25 high-priority idioms for internal exams: MCQs, fill-in-the-blank, and 5 matching sets.";
   if (footerText) footerText.textContent = "25 Idioms Test for Internal Exam Prep · Calicut University FYUGP";
   if (countPractice) countPractice.textContent = "25 Qs";
   if (countContext) countContext.textContent = "25 Qs";
