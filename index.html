@@ -16366,6 +16366,22 @@ if(subject==='Arabic') return modules([
   window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
   document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
 })();
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const malayalamHeading = [...document.querySelectorAll('.subject-card h3')]
+      .find(heading => heading.textContent.trim() === 'Malayalam');
+    const resources = malayalamHeading?.closest('.subject-card')?.querySelector('.resource-list');
+    const readingTab = resources?.querySelector('a[href*="mal-guide"]');
+    if (!resources || !readingTab || resources.querySelector('[data-exam-orientation]')) return;
+    const orientationTab = document.createElement('a');
+    orientationTab.href = '/malayalam-exam-orientation';
+    orientationTab.className = 'language-tab language-tab--navigate';
+    orientationTab.setAttribute('data-exam-orientation', 'true');
+    orientationTab.setAttribute('aria-label', 'Open Malayalam Exam Orientation');
+    orientationTab.innerHTML = '<span class="language-badge" aria-hidden="true" style="background:#087b71;color:#fff;">EXAM</span><span class="language-copy"><strong>Exam orientation</strong><small>Clear full-page exam preparation guide</small></span><span class="language-arrow" aria-hidden="true">↗</span>';
+    readingTab.insertAdjacentElement('afterend', orientationTab);
+  });
+</script>
 </script>
 </body>
 
