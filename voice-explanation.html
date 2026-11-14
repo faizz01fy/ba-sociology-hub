@@ -5962,7 +5962,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
 
         const hasEnglish = (subject.modules || []).some(mod => (mod.videos || []).some(v => v.language === 'English'));
-        const isBilingualSubject = (currentSlug === 'sociology') || (subject.modules || []).some(mod => (mod.videos || []).some(v => (v.language && v.language.includes('English') && v.language.includes('Malayalam'))));
+        const isBilingualSubject = (subject.modules || []).some(mod => (mod.videos || []).some(v => (v.language && v.language.includes('English') && v.language.includes('Malayalam'))));
         const isHindiSubject = (currentSlug === 'hindi') || (subject.name && subject.name.toLowerCase().includes('hindi'));
         const isArabicSubject = (currentSlug === 'arabic') || (subject.name && subject.name.toLowerCase().includes('arabic'));
 
@@ -6091,11 +6091,11 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
           filteredVids.forEach(v => {
 
-            const defaultLang = (currentSlug === 'hindi') ? 'Hindi' : ((currentSlug === 'arabic') ? 'Arabic' : ((currentSlug === 'sociology') ? 'English & Malayalam' : 'Malayalam'));
-            const language = (currentSlug === 'sociology') ? 'English & Malayalam' : (v.language || defaultLang);
+            const defaultLang = (currentSlug === 'hindi') ? 'Hindi' : ((currentSlug === 'arabic') ? 'Arabic' : 'Malayalam');
+            const language = v.language || defaultLang;
 
             const isEnglish = language === 'English';
-            const isBilingual = (currentSlug === 'sociology') || language.includes('Bilingual') || (language.includes('English') && language.includes('Malayalam'));
+            const isBilingual = language.includes('Bilingual') || (language.includes('English') && language.includes('Malayalam'));
 
             const card = document.createElement('article');
 
@@ -6147,7 +6147,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
               langHeading = '<strong>Arabic Video</strong>';
               langClass = ' arabic-video-heading';
             } else if (isEnglish) {
-              langHeading = '<strong>English Videos</strong>';
+              langHeading = '<strong>English Video</strong>';
               langClass = ' english-video-heading';
             } else if (isBilingual) {
               langHeading = '<strong>English &amp; Malayalam Video</strong>';

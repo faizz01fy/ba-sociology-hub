@@ -852,34 +852,35 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 01: INTRODUCING SOCIOLOGY (FYUGP SOU1CJ101)",
         "videos": [
           {
-            "chapterNumber": "Chapter 01",
-            "title": "സോഷ്യോളജിയുടെ സ്വഭാവവും വ്യാപ്തിയും (Nature & Scope of Sociology) | Calicut Univ",
-            "chapter": "Nature, Scope, Subject Matter & Science of Society (സോഷ്യോളജിയുടെ സ്വഭാവവും വ്യാപ്തിയും)",
-            "duration": "33:51",
-            "youtubeId": "mUahYKgz1QU",
+            "chapterNumber": "Chapter 01 (Part 1)",
+            "title": "സോഷ്യോളജിയുടെ ഉത്ഭവം (Origin & Social Forces) - Part 1 | Sociology | Calicut Univ",
+            "chapter": "Origin & Development of Sociology · Social & Political Forces (സോഷ്യോളജിയുടെ ഉത്ഭവം: വ്യാവസായിക-ഫ്രഞ്ച് വിപ്ലവങ്ങൾ)",
+            "duration": "27:21",
+            "youtubeId": "N4qIWXbXOfQ",
             "studyPoints": [
-              "സോഷ്യോളജിയുടെ സ്വഭാവം (Nature of Sociology as a Science): നിരീക്ഷണം, താരതമ്യം, ചരിത്ര വിശകലനം എന്നിവയിലൂടെ മാനവിക ബന്ധങ്ങളെയും സാമൂഹിക പ്രതിഭാസങ്ങളെയും പഠിക്കുന്ന ശാസ്ത്രീയ അന്വേഷണം.",
-              "വിഷയവ്യാപ്തി (Scope & Subject Matter): ഓഗസ്റ്റ് കോംത്, എമിൽ ഡർക്കൈം എന്നിവർ മുന്നോട്ടുവെച്ച സാമൂഹിക സ്ഥാപനങ്ങളുടെയും ഘടനകളുടെയും സമഗ്ര വിശകലനം.",
-              "പ്രാധാന്യം (Significance & Objectives): പ്രബുദ്ധതയും നവോത്ഥാനവും (Enlightenment & Renaissance) ശാസ്ത്രീയ യുക്തിചിന്തയിലൂടെ സോഷ്യോളജിയുടെ ആവിർഭാവത്തിന് വഴിയൊരുക്കിയ ചരിത്രപശ്ചാത്തലം."
+              "സോഷ്യോളജിയുടെ നിർവചനങ്ങളും ക്ലാസിക്കൽ വീക്ഷണങ്ങളും: ലാറ്റിൻ 'Socius', ഗ്രീക്ക് 'Logos'. ഓഗസ്റ്റ് കോംതിന്റെ ശാസ്ത്രീയ പഠനവും, എമിൽ ഡർക്കൈമിന്റെ സാമൂഹിക സ്ഥാപനങ്ങളുടെ ശാസ്ത്രവും, മാക്സ് വെബറുടെ വ്യാഖ്യാന പഠനവും (Verstehen).",
+              "വ്യാവസായിക വിപ്ലവം (Industrial Revolution) വരുത്തിവെച്ച 5 വലിയ സാമൂഹിക മാറ്റങ്ങൾ: നഗരവൽക്കരണം (Urbanization), കുടിയേറ്റം (Migration), അണുകുടുംബങ്ങളുടെ ഉദയം, ബൂർഷ്വാസി-തൊഴിലാളിവർഗ്ഗ ധ്രുവീകരണം (Marxian class analysis), ചേരികളും പുതിയ സാമൂഹിക പ്രശ്നങ്ങളും (Social Pathology).",
+              "1789-ലെ ഫ്രഞ്ച് വിപ്ലവം (French Revolution): ഫ്യൂഡൽ മൂന്ന് എസ്റ്റേറ്റുകളുടെ (Clergy, Nobility, Third Estate) തകർച്ചയും സമ്പൂർണ്ണ രാജവാഴ്ചയുടെ അന്ത്യവും.",
+              "വിപ്ലവ ദർശനങ്ങൾ: സ്വാതന്ത്ര്യം, സമത്വം, സാഹോദര്യം (Liberty, Equality, Fraternity), വ്യക്തിവാദം (Individualism), ജനാധിപത്യം, മതേതരത്വം (Secularism). വിപ്ലവാനന്തര സാമൂഹിക അരാജകത്വവും ക്രമത്തിനായുള്ള (Social Order) അന്വേഷണവും."
             ],
-            "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Explain the nature and scope of sociology. Discuss whether sociology is a true science with suitable arguments'.",
-            "language": "English & Malayalam",
+            "examTip": "Calicut University FYUGP ചോദ്യം: 'Examine the social and political forces responsible for the emergence of sociology' & 'Short notes on Social Pathology, Three Estates, and Individualism'.",
+            "language": "Malayalam",
             "malayalam_cc": true
           },
           {
-            "chapterNumber": "Chapter 02",
-            "title": "പോസിറ്റിവിസവും സോഷ്യോളജിയും (Positivism & Micro-Macro Sociology) | Calicut Univ",
-            "chapter": "Micro & Macro Levels · Positivism & Comte (സൂക്ഷ്മ-സ്ഥൂല തലങ്ങളും പോസിറ്റിവിസവും)",
-            "duration": "13",
-            "youtubeId": "WyReGfMhJJs",
+            "chapterNumber": "Chapter 01 (Part 2)",
+            "title": "സോഷ്യോളജിയുടെ ഉത്ഭവം (Intellectual Forces) - Part 2 | Sociology | Calicut Univ",
+            "chapter": "Origin & Development of Sociology · Intellectual Forces (സോഷ്യോളജിയുടെ ഉത്ഭവം: നവോത്ഥാനവും ജ്ഞാനോദയവും)",
+            "duration": "26:14",
+            "youtubeId": "BqoIUZZoKJQ",
             "studyPoints": [
-              "മൈക്രോ vs മാക്രോ സോഷ്യോളജി: വ്യക്തികൾ തമ്മിലുള്ള മുഖാമുഖ സമ്പർക്കങ്ങളെയും ദൈനംദിന സംഭാഷണങ്ങളെയും പഠിക്കുന്ന മൈക്രോ തലവും (Micro-level), സമ്പദ്‌വ്യവസ്ഥ, ഭരണകൂടം, മതങ്ങൾ തുടങ്ങിയ വൻകിട വ്യവസ്ഥിതികളെ അപഗ്രഥിക്കുന്ന മാക്രോ തലവും (Macro-level).",
-              "ഓഗസ്റ്റ് കോംതും പോസിറ്റിവിസവും (Auguste Comte's Positivism): പ്രകൃതിശാസ്ത്രങ്ങളിലെപ്പോലെ നേരിട്ടുള്ള നിരീക്ഷണത്തിലൂടെയും ശാസ്ത്രീയ തെളിവുകളിലൂടെയും സാമൂഹിക നിയമങ്ങൾ കണ്ടെത്താൻ കഴിയുമെന്ന വാദം.",
-              "കോംതിന്റെ മൂന്ന് ഘട്ടങ്ങൾ (Law of Three Stages): തിയോളജിക്കൽ (ദൈവശാസ്ത്രപരം), മെറ്റാഫിസിക്കൽ (തത്ത്വശാസ്ത്രപരം), പോസിറ്റീവ് അഥവാ സയന്റിഫിക് (ശാസ്ത്രീയപരം) ഘട്ടങ്ങൾ.",
-              "സ്ട്രക്ചറലിസവും സിംബോളിക് ഇന്ററാക്ഷനിസവും: എമിൽ ഡർക്കൈമിന്റെ സോഷ്യൽ ഫാക്ട്സും (Social Facts) മാക്സ് വെബറുടെ വേർസ്റ്റെഹെൻ (Verstehen) കാഴ്ചപ്പാടും."
+              "ബൗദ്ധിക ശക്തികൾ (Intellectual Forces): നവോത്ഥാനവും ജ്ഞാനോദയവും മനുഷ്യന്റെ ചിന്തയിലുണ്ടാക്കിയ ശാസ്ത്രീയ ഉണർവുകൾ.",
+              "നവോത്ഥാനം (Renaissance) & മാനവികത (Humanism): മനുഷ്യന്റെ അന്തസ്സിനും യുക്തിക്കും മുൻഗണന (Francesco Petrarch, Erasmus), വ്യക്തിവാദം, അനുഭവവാദം (Empiricism - Francis Bacon & John Locke), ശാസ്ത്ര വിപ്ലവം (Copernicus & Galileo).",
+              "ജ്ഞാനോദയം (The Enlightenment / Age of Reason): യുക്തിചിന്തയുടെ ആധിപത്യം (Rationalism), പരമ്പരാഗത അധികാരങ്ങളുടെ വിമർശനം (Voltaire & Montesquieu), ന്യൂട്ടോണിയൻ ശാസ്ത്ര മാതൃകകൾ, റൂസ്സോയുടെ ജനഹിത സിദ്ധാന്തം (General Will).",
+              "ഓഗസ്റ്റ് കോംതും പോസിറ്റിവിസവും (Positivism): ശാസ്ത്രീയ നിരീക്ഷണം, ദി കോഴ്സ് ഓഫ് പോസിറ്റീവ് ഫിലോസഫി (1838), മൂന്ന് ഘട്ടങ്ങളുടെ നിയമം (Theological, Metaphysical, Positive), സോഷ്യോളജി ഒരു ശാസ്ത്രമോ (Robert Bierstedt's The Social Order)."
             ],
-            "examTip": "Calicut University FYUGP ചോദ്യം: 'Distinguish between Micro and Macro Sociology with examples' & 'Discuss Auguste Comte's Positivism and Law of Three Stages'.",
-            "language": "English & Malayalam",
+            "examTip": "Calicut University FYUGP ചോദ്യം: 'Discuss the intellectual forces that led to the development of sociology' & 'Explain Auguste Comte's Positivism and Law of Three Stages'.",
+            "language": "Malayalam",
             "malayalam_cc": true
           }
         ]
@@ -900,7 +901,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ: ആഴത്തിലുള്ള പങ്കാളിത്ത നിരീക്ഷണങ്ങളും സ്റ്റാറ്റിസ്റ്റിക്കൽ സർവേകളും സമന്വയിപ്പിക്കുന്ന രീതി."
             ],
             "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Distinguish between Personal Troubles and Public Issues with examples according to C. Wright Mills'.",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "malayalam_cc": true
           },
           {
@@ -909,7 +910,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Module 2 · 7 Subunits, Sociological Imagination, 7 Research Steps & Ethics (സോഷ്യോളജി പ്രയോഗത്തിൽ സമ്പൂർണ്ണ ക്ലാസ്)",
             "duration": "14:50",
             "youtubeId": "WyReGfMhJJs",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "studyPoints": [
               "സി. റൈറ്റ് മിൽസിന്റെ സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination), കാപ്പി കുടിയുടെ 4 മാനങ്ങൾ, വ്യക്തിപരമായ പ്രശ്നങ്ങളും പൊതുവിഷയങ്ങളും (Personal Troubles vs Public Issues).",
               "സാമൂഹിക ഗവേഷണത്തിന്റെ 7 ഘട്ടങ്ങൾ, പി.വി. യംഗ് & സി.എ. മോസർ നിർവ്വചനങ്ങൾ, റിസർച്ച് എത്തിക്സും ഇൻഫോംഡ് കോൺസെന്റും.",
@@ -920,11 +921,11 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Masterclass (V2)",
-            "title": "സാമൂഹിക യാഥാർത്ഥ്യം (Social Reality & Orientations) - V2 | Sociology | Calicut Univ",
+            "title": "English Video",
             "chapter": "Sociology · Module 2 · Practicing Sociology (സോഷ്യോളജി പ്രയോഗത്തിൽ - ഗവേഷണ രീതിശാസ്ത്രം)",
             "duration": "8:42",
             "youtubeId": "YEnG1YJ_vfs",
-            "language": "English & Malayalam",
+            "language": "English",
             "studyPoints": [
               "Micro vs. Macro Sociology (സൂക്ഷ്മ-സ്ഥൂല തലങ്ങൾ): Micro sociology analyzes small-scale, everyday face-to-face interactions and subjective meanings (Herbert Blumer's Symbolic Interactionism, Erving Goffman's Dramaturgy, Alfred Schutz's Phenomenology). Macro sociology studies large-scale social systems, institutions, and structural patterns (Émile Durkheim's Social Facts, Karl Marx's Class Conflict).",
               "Positivist Orientation (പോസിറ്റിവിസ്റ്റ് ശാസ്ത്രീയ രീതി): Originating with Auguste Comte and Émile Durkheim; treats society as an objective reality governed by discoverable social laws using empirical observation, quantitative measurement, replication, and value neutrality (നിഷ്പക്ഷത).",
@@ -1000,10 +1001,10 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 3.4",
             "title": "സാമൂഹികവൽക്കരണ ഏജൻസികൾ (Agents of Socialization) | Sociology | Calicut Univ",
             "chapter": "Agents of Socialization · Family, School, Peer Groups, Media & Workplace (സാമൂഹികവൽക്കരണ ഏജൻസികൾ)",
-            "duration": "16:15",
-            "youtubeId": "uf8WYWO9-Tk",
+            "duration": "16:16",
+            "youtubeId": "LqhkuyEAWBM",
             "thumbnail": "/thumbnails/sociology_agents_of_socialization_mod3/thumb.png",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "studyPoints": [
               "ആമുഖവും എച്ച്.ടി. മജുംദാർ നിർവ്വചനവും: ജൈവിക ജീവിയെ പൂർണ്ണ സാമൂഹിക വ്യക്തിത്വമാക്കി മാറ്റുന്ന ആജീവനാന്ത പ്രക്രിയ; എച്ച്.ടി. മജുംദാറിന്റെ ആധികാരിക നിർവ്വചനം.",
               "പ്രാഥമിക ഏജൻസി (കുടുംബം): കുട്ടിയുടെ ആദ്യ സാമൂഹിക ലോകം; അമ്മ പ്രഥമ അധ്യാപിക; സ്നേഹം, കരുതൽ, അച്ചടക്കം, ലിംഗപദവി പഠനം, മുഖാമുഖ സമ്പർക്കം, വൈകാരിക പിന്തുണ (8 പ്രധാന ധർമ്മങ്ങൾ).",
@@ -1027,7 +1028,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഏജൻസി vs സ്ട്രക്ചർ (Individual Agency vs Social Structure): വ്യക്തികൾക്ക് സ്വന്തം നിലയിൽ തീരുമാനങ്ങളെടുക്കാനുള്ള ശേഷിയും (Agency), വ്യക്തിയെ നിയന്ത്രിക്കുന്ന സാമൂഹിക വ്യവസ്ഥിതികളും (Structure)."
             ],
             "examTip": "പ്രധാന യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Explain Peter Berger and Thomas Luckmann's concept of Social Construction of Reality'.",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "malayalam_cc": true
           },
           {
@@ -1043,7 +1044,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ലേബലിംഗ് തിയറിയും റീ-സോഷ്യലൈസേഷനും: ഹൊവാർഡ് ബെക്കറുടെ ലേബലിംഗ് സിദ്ധാന്തവും എർവിംഗ് ഗോഫ്മാന്റെ ടോട്ടൽ ഇൻസ്റ്റിറ്റ്യൂഷനുകളിലെ (Total Institutions) പുനർ-സാമൂഹികവൽക്കരണവും."
             ],
             "examTip": "Calicut University ചോദ്യം: 'Define Anomie according to Emile Durkheim and explain how socialization failures lead to social deviance'.",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "malayalam_cc": true
           },
           {
@@ -1059,7 +1060,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ജീൻ പിയാഷെയുടെ വൈജ്ഞാനിക വികാസ ഘട്ടങ്ങൾ (Jean Piaget's Cognitive Development): സെൻസറി-മോട്ടോർ, പ്രീ-ഓപ്പറേഷണൽ, കോൺക്രീറ്റ് ഓപ്പറേഷണൽ, ഫോർമൽ ഓപ്പറേഷണൽ ഘട്ടങ്ങൾ."
             ],
             "examTip": "പ്രധാന 10 മാർക്ക് ഉപന്യാസ ചോദ്യം: 'Critically examine G.H. Mead's theory of the development of Self (I and Me)'.",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "malayalam_cc": true
           },
           {
@@ -1076,7 +1077,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>18:24 - 21:00 | റഫറൻസ് ഗ്രൂപ്പുകൾ (Herbert Hyman & Robert K. Merton):</strong> വ്യക്തികൾ തങ്ങളുടെ നിലപാടുകൾ വിലയിരുത്താൻ മാതൃകയാക്കുന്ന താരതമ്യ ഗ്രൂപ്പുകൾ."
             ],
             "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Distinguish between Primary and Secondary Groups as outlined by C.H. Cooley' & 'Explain Robert K. Merton's concept of Reference Group'.",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "thumbnail": "https://i.ytimg.com/vi/jedN-7Z72Fk/hqdefault.jpg",
             "malayalam_cc": true
           },
@@ -1093,7 +1094,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>10:52 - 14:30 | ആൾക്കൂട്ട തരങ്ങൾ (Herbert Blumer):</strong> കാഷ്വൽ, കൺവെൻഷണൽ, എക്സ്പ്രസീവ്, ആക്റ്റിംഗ് ക്രൗഡുകൾ; ജനക്കൂട്ട അക്രമങ്ങളും പരിഭ്രാന്തിയും (Panics & Mobs)."
             ],
             "examTip": "പ്രധാന 10-മാർക്ക് ചോദ്യം: 'Describe the key characteristics of Bureaucracy as formulated by Max Weber' & 'Examine Le Bon's theory of Crowd Psychology'.",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "malayalam_cc": true
           },
           {
@@ -1103,7 +1104,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "14:27",
             "youtubeId": "TN8LqpBZCGQ",
             "thumbnail": "https://i.ytimg.com/vi/TN8LqpBZCGQ/hqdefault.jpg",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "studyPoints": [
               "സാമൂഹിക പ്രതിപ്രവർത്തനം (Social Interaction): മനുഷ്യ ബന്ധങ്ങളുടെ അടിസ്ഥാന ശില; ഗ്രീൻ, പാർക്ക് & ബർഗസ്, ഡോസൺ & ഗെറ്റിസ് എന്നിവരുടെ നിർവ്വചനങ്ങൾ; സമ്പർക്കവും (Contact in Time & Space) ആശയവിനിമയവും.",
               "സഹകരണം (Cooperation): ലാറ്റിൻ 'co' + 'operating'; പൊതു ലക്ഷ്യവും സംഘടിത അദ്ധ്വാനവും; പ്രത്യക്ഷ, പരോക്ഷ, പ്രൈമറി, സെക്കൻഡറി, ടെർഷ്യറി സഹകരണങ്ങൾ; സി.എച്ച്. കൂലി, യംഗ് & മാക്ക്, മാക്ഐവർ വിശകലനം.",
@@ -1125,7 +1126,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സേഫ്റ്റി വാൽവ് ഇൻസ്റ്റിറ്റ്യൂഷനുകൾ: ചെറിയ പരാതികൾ തുറന്നുപറഞ്ഞ് വലിയ പൊട്ടിത്തെറികൾ ഒഴിവാക്കുന്ന രീതി."
             ],
             "examTip": "പ്രധാന ചോദ്യം: 'Discuss the positive functions of social conflict according to Lewis Coser'.",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "thumbnail": "https://i.ytimg.com/vi/N6XM-ScWqeo/hqdefault.jpg",
             "malayalam_cc": true
           },
@@ -1142,7 +1143,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>11:38 - 15:31 | സാങ്ഷനുകൾ (Positive & Negative Sanctions):</strong> പ്രശംസയും പ്രതിഫലങ്ങളും (പോസിറ്റീവ്) vs പിഴയും ജയിൽശിക്ഷയും ബഹിഷ്കരണവും (നെഗറ്റീവ്)."
             ],
             "examTip": "പ്രധാന 10-മാർക്ക് ചോദ്യം: 'Distinguish between Formal and Informal Means of Social Control with suitable examples'.",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "thumbnail": "https://i.ytimg.com/vi/QidpySg9v80/hqdefault.jpg",
             "malayalam_cc": true
           }
@@ -1163,7 +1164,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഡാനിയൽ ബെല്ലിന്റെ പോസ്റ്റ്-ഇൻഡസ്ട്രിയൽ സിദ്ധാന്തം: സേവന മേഖലയുടെ വളർച്ചയും വിജ്ഞാന സാങ്കേതിക വിദ്യയും എഐയും സമൂഹത്തിൽ വരുത്തുന്ന സമൂലമായ മാറ്റങ്ങൾ."
             ],
             "examTip": "Calicut University പ്രധാന ചോദ്യം: 'Trace the evolution of society from agrarian to post-industrial society with key characteristics'.",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "thumbnail": "https://i.ytimg.com/vi/zEagx74glsc/hqdefault.jpg",
             "malayalam_cc": true
           },
@@ -1180,7 +1181,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>12:07 - 16:09 | ബന്ധുത്വവും മതവും (Kinship & Religion):</strong> രക്തബന്ധവും (Consanguineous) വിവാഹബന്ധവും (Affinal); സാമൂഹിക സദാചാരവും നിയന്ത്രണവും."
             ],
             "examTip": "യൂണിവേഴ്സിറ്റി ചോദ്യം: 'Define Social Institution and examine the changing structural and functional aspects of Family'.",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "thumbnail": "https://i.ytimg.com/vi/z1jXxahDWUw/hqdefault.jpg",
             "malayalam_cc": true
           },
@@ -1197,7 +1198,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>06:10 - 08:14 | റോൾ കോൺഫ്ലിക്റ്റും റോൾ സ്ട്രെയിനും (Role Conflict & Role Strain):</strong> ഒന്നിലധികം വിരുദ്ധ പദവികൾ വഹിക്കുമ്പോഴുണ്ടാകുന്ന സംഘർഷങ്ങൾ (ഉദാ: ജോലി ചെയ്യുന്ന അമ്മ)."
             ],
             "examTip": "ഷോർട്ട് എസ്സേ ചോദ്യം: 'Distinguish between Ascribed and Achieved Status. Explain Role Conflict with suitable examples'.",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "thumbnail": "https://i.ytimg.com/vi/7Qkp0t6g9Qc/hqdefault.jpg",
             "malayalam_cc": true
           },
@@ -1214,7 +1215,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സിദ്ധാന്തങ്ങൾ: ലീനിയർ സിദ്ധാന്തങ്ങൾ (Comte & Spencer) vs ചാക്രിക സിദ്ധാന്തങ്ങൾ (Spengler & Sorokin)."
             ],
             "examTip": "പരീക്ഷാ ഹൈലൈറ്റ് (10 Mark Essay): 'Critically evaluate William F. Ogburn's theory of Cultural Lag in the context of technological advancements'.",
-            "language": "English & Malayalam",
+            "language": "Malayalam",
             "thumbnail": "https://i.ytimg.com/vi/jfBES35jpzw/hqdefault.jpg",
             "malayalam_cc": true
           }
@@ -1455,7 +1456,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "പാശ്ചാത്യ വിജ്ഞാനശാസ്ത്രവും എഐയും (Western Epistemology & AI) | Calicut Univ",
             "chapter": "Western Epistemology · Rationalism, Empiricism & Kant's Synthesis in AI",
             "duration": "19:40",
-            "youtubeId": "h49OapnTcxI",            "language": "Malayalam",
+            "youtubeId": "h49OapnTcxI",
+            "language": "Malayalam",
             "studyPoints": [
               "<strong>പ്ലേറ്റോയുടെ ജ്ഞാനമീമാംസ (Platonic Epistemology):</strong> ന്യായീകരിക്കപ്പെട്ട സത്യവിശ്വാസം (Justified True Belief - JTB) എന്ന പരമ്പരാഗത അറിവിന്റെ നിർവ്വചനം.",
               "<strong>യുക്തിവാദവും അനുഭവവാദവും (Rationalism vs Empiricism):</strong> സിംബോളിക് AI-യിലെ ഡിഡക്റ്റീവ് യുക്തി (ഡെക്കാർട്ട്, ലൈബ്നിസ്) vs മെഷീൻ ലേണിംഗിലെ ഇൻഡക്റ്റീവ് ഡാറ്റാ ലേണിംഗ് (ലോക്ക്, ഹ്യൂം).",
@@ -1659,7 +1661,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Unit 4.3 c: Responsibility Gap · Moral Patiency vs Moral Agency · Legal Liability",
             "duration": "18:20",
             "language": "Malayalam",
-            "youtubeId": "mNA2qltalns",            "thumbnail": "https://i.ytimg.com/vi/qrlC8o73n4Q/hqdefault.jpg",
+            "youtubeId": "mNA2qltalns",
+            "thumbnail": "https://i.ytimg.com/vi/qrlC8o73n4Q/hqdefault.jpg",
             "studyPoints": [
               "<strong>റെസ്പോൺസിബിലിറ്റി ഗ്യാപ് (The Responsibility Gap - Andreas Matthias, 2004):</strong> മെഷീൻ സ്വയം പഠിച്ച് തീരുമാനമെടുക്കുമ്പോൾ ഉണ്ടാകുന്ന ദുരന്തങ്ങൾക്ക് പ്രോഗ്രാമറെയോ ഉടമയെയോ മെഷീനെയോ ഉത്തരവാദിയാക്കാൻ കഴിയാത്ത പ്രതിസന്ധി.",
               "<strong>ബ്ലാക്ക്-ബോക്സ് പ്രോബ്ലം (Black-Box Opacity):</strong> ഡീപ് ന്യൂറൽ നെറ്റ്‌വർക്കുകൾ ലക്ഷക്കണക്കിന് പാരാമീറ്ററുകൾ ഉപയോഗിച്ച് എടുത്ത തീരുമാനങ്ങളുടെ യുക്തി മനുഷ്യന് മുൻകൂട്ടി പ്രവചിക്കാൻ കഴിയില്ല.",
@@ -2430,7 +2433,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 02",
             "title": "സപ്ലൈ സിദ്ധാന്തവും വിപണി സവിശേഷതകളും (Supply: Law, Determinants & LMS Review)",
             "chapter": "Academic Hub Special · സപ്ലൈ നിയമം, സപ്ലൈ ഫംഗ്ഷൻ & ഷിഫ്റ്റുകൾ",
-            "duration": "08:59",            "youtubeId": "gHAZ4EVPvv4",            "videoUrl": "/micro-unit2-review.html",
+            "duration": "08:59",
+            "youtubeId": "gHAZ4EVPvv4",
+            "videoUrl": "/micro-unit2-review.html",
             "thumbnail": "/thumbnails/micro-unit-2-review.png",
             "studyPoints": [
               "Supply Definition (ഏതെങ്കിലും സാധനത്തിന്റെ അളവ്, വില, സമയം)",
@@ -2453,7 +2458,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Unit 03",
             "title": "വിപണി സന്തുലിതാവസ്ഥ (Market Equilibrium & Price Determination)",
             "chapter": "Academic Hub Special · സന്തുലിത വിലയും അളവും, സർപ്ലസ് & ഷോർട്ടേജ്",
-            "duration": "08:42",            "youtubeId": "ULJedrxANeY",            "videoUrl": "/micro-unit3-review.html",
+            "duration": "08:42",
+            "youtubeId": "ULJedrxANeY",
+            "videoUrl": "/micro-unit3-review.html",
             "thumbnail": "/thumbnails/micro-unit-3-review.png",
             "studyPoints": [
               "Market Equilibrium: Qd equals Qs",
