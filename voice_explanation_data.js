@@ -889,6 +889,24 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 02: PRACTICING SOCIOLOGY (FYUGP SOU1CJ101)",
         "videos": [
           {
+            "chapterNumber": "Sociology Mod 2 Part 1",
+            "title": "സോഷ്യോളജിക്കൽ ഇമാജിനേഷൻ & സാമാന്യബോധം | Sociology Mod 2 Part 1 covering page - 1 to 19",
+            "chapter": "Practicing Sociology · C. Wright Mills, Common Sense vs Sociology, Other Social Sciences & 15-Mark Essay (Pages 1–19)",
+            "duration": "28:00",
+            "youtubeId": "ttb_C8OuR0I",
+            "thumbnail": "https://i.ytimg.com/vi/ttb_C8OuR0I/hqdefault.jpg",
+            "language": "Malayalam",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "സോഷ്യോളജിയും മറ്റ് സാമൂഹിക ശാസ്ത്രങ്ങളും: പൊളിറ്റിക്കൽ സയൻസ് (Polis & Scientia), ഇക്കണോമിക്സ് (Oikonomia), ഹിസ്റ്ററി (Historia), ആന്ത്രപ്പോളജി (Anthropos & Logos) എന്നിവയുമായുള്ള അതിർവരമ്പുകളും സമഗ്രതയും.",
+              "സോഷ്യോളജിക്കൽ ചിന്താരീതിയും സാമാന്യബോധവും: മുൻവിധികൾ നിറഞ്ഞ കോമൺ സെൻസിന് അപ്പുറം ശാസ്ത്രീയ നിരീക്ഷണങ്ങളിലൂടെയും തെളിവുകളിലൂടെയും എമിൽ ഡർക്കൈം (Suicide Theory), മാക്സ് വെബർ (Protestant Ethic) എന്നിവർ നടത്തിയ വിപ്ലവകരമായ പഠനങ്ങൾ.",
+              "സി. റൈറ്റ് മിൽസിന്റെ സോഷ്യോളജിക്കൽ ഇമാജിനേഷൻ (1959): മനസ്സിന്റെ ഗുണവിശേഷം (Quality of Mind), ഒരു കപ്പ് കാപ്പിയുടെ 4 മാനങ്ങൾ (പ്രതീകാത്മക മൂല്യം, കഫീൻ ലഹരി, ആഗോള സാമ്പത്തിക ചൂഷണം, ഫെയർ ട്രേഡ്).",
+              "പേഴ്സണൽ ട്രബിൾസ് vs പബ്ലിക് ഇഷ്യൂസ്: തൊഴിലില്ലായ്മ, കുടുംബ തകർച്ച, യുദ്ധം എന്നിവയുടെ സാമൂഹിക ഘടനാപരമായ വിശകലനവും വ്യക്തിഗത വിജയങ്ങളുടെ പിന്നിലെ പ്രിവിലേജുകളും.",
+              "ജീവചരിത്രവും ചരിത്രവും തമ്മിലുള്ള സമാഗമം (Biography & History) കൂടാതെ 2-മാർക്ക്, 6-മാർക്ക്, 15-മാർക്ക് യൂണിവേഴ്സിറ്റി പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ."
+            ],
+            "examTip": "Calicut University 15-മാർക്ക് മാസ്റ്റർ ചോദ്യം: സി. റൈറ്റ് മിൽസിന്റെ സോഷ്യോളജിക്കൽ ഇമാജിനേഷൻ (പേഴ്സണൽ ട്രബിൾസ് vs പബ്ലിക് ഇഷ്യൂസ്, കാപ്പിയുടെ ഉദാഹരണങ്ങൾ, ജീവചരിത്രവും ചരിത്രവും)."
+          },
+          {
             "chapterNumber": "Chapter 01",
             "title": "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination & Research) | Sociology | Calicut Univ",
             "chapter": "Practicing Sociology · C. Wright Mills & Analytical Research (Page 1-30)",
@@ -901,7 +919,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ഗുണാത്മക & അളവ്ശാസ്ത്ര രീതികൾ: ആഴത്തിലുള്ള പങ്കാളിത്ത നിരീക്ഷണങ്ങളും സ്റ്റാറ്റിസ്റ്റിക്കൽ സർവേകളും സമന്വയിപ്പിക്കുന്ന രീതി."
             ],
             "examTip": "യൂണിവേഴ്സിറ്റി ഫോക്കസ്: 'Distinguish between Personal Troubles and Public Issues with examples according to C. Wright Mills'.",
-            "language": "Malayalam",
+            "language": "English & Malayalam",
             "malayalam_cc": true
           },
           {

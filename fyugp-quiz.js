@@ -25,10 +25,10 @@ function renderUnlockPage(formAction, errorHtml = '') {
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calicut University FYUGP | Academic Hub</title>
+<title>IMA DS Semester 1 | Calicut University FYUGP | Academic Hub</title>
 <style>
 body{background:#edf5f0;color:#153236;font:16px/1.55 system-ui,sans-serif;margin:0;padding:16px}
-main{max-width:420px;margin:8vh auto;background:white;border:1px solid #cfdfd6;border-radius:18px;padding:26px;box-shadow:0 8px 24px rgba(16,44,49,0.06)}
+main{max-width:440px;margin:8vh auto;background:white;border:1px solid #cfdfd6;border-radius:18px;padding:26px;box-shadow:0 8px 24px rgba(16,44,49,0.06)}
 h1{line-height:1.18;margin:8px 0;font-size:1.45rem;color:#086454}
 p{color:#455d59;font-size:0.95rem;margin:8px 0 16px}
 input,button{display:block;box-sizing:border-box;width:100%;min-height:46px;margin:7px 0 14px;padding:9px 12px;border-radius:9px;font:inherit}
@@ -41,26 +41,246 @@ a:hover{text-decoration:underline}
 .nav-breadcrumbs{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;margin-bottom:14px;color:#6b7280;flex-wrap:wrap}
 .nav-breadcrumbs a{color:#086454}
 </style></head><body><main>
-<div class="nav-breadcrumbs"><a href="/">Academic Hub</a> <span>→</span> <span>FYUGP</span> <span>→</span> <span>IMA DS Sem 1</span></div>
-<small style="color:#086454;font-weight:700;text-transform:uppercase;letter-spacing:0.08em">Protected FYUGP Section</small>
-<h1>Calicut University FYUGP</h1>
-<p>Enter the student password to access IMA DS Semester 1 English Idioms Learning.</p>
+<div class="nav-breadcrumbs"><a href="/">Academic Hub</a> <span>→</span> <a href="${fyugpQuizPath}">FYUGP</a> <span>→</span> <span>1. IMA DS</span></div>
+<small style="color:#086454;font-weight:700;text-transform:uppercase;letter-spacing:0.08em">Protected Student Section</small>
+<h1>1. IMA DS Semester 1</h1>
+<p>Enter student password to access IMA DS Semester 1 English AEC learning modules &amp; internal exam prep.</p>
 ${errorHtml}
 <form method="post" action="${formAction}">
 <label for="password" style="font-weight:600;font-size:0.9rem;color:#153236">Access Password</label>
-<input id="password" type="password" name="password" inputmode="numeric" autocomplete="current-password" maxlength="64" placeholder="Enter password (e.g. 1234)" required>
-<button type="submit">Unlock FYUGP Section</button>
+<input id="password" type="password" name="password" inputmode="numeric" autocomplete="current-password" maxlength="64" placeholder="Enter password (e.g. 1234)" required autofocus>
+<button type="submit">Unlock IMA DS Section</button>
 </form>
-<div style="text-align:center;margin-top:16px"><a href="/">← Back to Academic Hub</a></div>
+<div style="text-align:center;margin-top:16px"><a href="${fyugpQuizPath}">← Back to FYUGP Department Directory</a></div>
 </main>
 <script src="/traffic-tracker.js?v=20261105_act2" defer></script>
 </body></html>`;
 }
 
-const semesterPage = `<!doctype html>
+// 1. PUBLIC LANDING PAGE: Calicut University FYUGP Regular (No internal exam questions shown in public)
+const publicPortalPage = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calicut University FYUGP | Academic Hub</title>
+<title>Calicut University FYUGP (Regular) | Academic Hub</title>
+<style>
+body{margin:0;padding:20px;background:#edf5f0;color:#153236;font:16px/1.55 system-ui,sans-serif}
+main{max-width:720px;margin:4vh auto;padding:clamp(20px,5vw,36px);background:#fff;border:1px solid #cfdfd6;border-radius:20px;box-shadow:0 10px 30px rgba(16,44,49,0.06)}
+h1{line-height:1.15;margin:8px 0 12px;font-size:clamp(1.6rem,4vw,2.1rem);color:#102c31}
+.portal-subtitle{font-size:0.95rem;color:#455d59;margin:0 0 20px;line-height:1.5}
+.nav-breadcrumbs{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;margin-bottom:14px;color:#6b7280;flex-wrap:wrap}
+.nav-breadcrumbs a{color:#086454;text-decoration:none}
+.nav-breadcrumbs a:hover{text-decoration:underline}
+.dept-tabs-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 18px 0 24px;
+}
+.dept-tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.5px solid #d5e4dc;
+  background: #ffffff;
+  color: #153236;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 750;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(16, 44, 49, 0.04);
+}
+.dept-tab-btn:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(16, 44, 49, 0.08);
+}
+.dept-tab-btn--active {
+  background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+  border-color: #059669;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(6, 78, 59, 0.25);
+}
+.dept-tab-btn--active:hover {
+  border-color: #34d399;
+}
+.dept-tab-btn--locked {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #64748b;
+  cursor: pointer;
+}
+.dept-tab-btn--locked:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+.dept-tab-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+.dept-tab-btn--active .dept-tab-num {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+.dept-tab-btn--locked .dept-tab-num {
+  background: #e2e8f0;
+  color: #64748b;
+}
+.dept-tab-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.dept-badge-active {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.dept-badge-locked {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+.dept-alert-toast {
+  display: none;
+  margin: 12px 0 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  color: #92400e;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  animation: fadeIn 0.25s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.dept-overview-card {
+  margin-top: 18px;
+  background: #f0fdf4;
+  border: 1.5px solid #a7f3d0;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 14px rgba(6, 78, 59, 0.05);
+}
+.btn-enter-dept {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+  color: #ffffff;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 750;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 4px 12px rgba(6, 78, 59, 0.25);
+}
+.btn-enter-dept:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 16px rgba(6, 78, 59, 0.35);
+}
+footer{margin-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:16px;border-top:1px solid #e2e8f0;font-size:0.9rem}
+</style>
+</head>
+<body>
+<main>
+<div class="nav-breadcrumbs"><a href="/">Academic Hub</a> <span>→</span> <span style="color:#086454">Calicut University FYUGP (Regular)</span></div>
+<small style="color:#086454;font-weight:800;letter-spacing:0.08em;text-transform:uppercase">Official Portal · Regular Degree Programmes</small>
+<h1>Calicut University FYUGP (Regular)</h1>
+<p class="portal-subtitle">Official 4-year undergraduate curriculum directory for Calicut University campus departments. Select a department below:</p>
+
+<!-- 4 Main Department Tabs -->
+<div class="dept-tabs-nav" role="tablist" aria-label="Calicut University FYUGP Departments">
+  <a href="${fyugpQuizPath}?dept=imads" class="dept-tab-btn dept-tab-btn--active" role="tab" aria-selected="true" id="tab-dept-imads">
+    <div style="display:flex;align-items:center;">
+      <span class="dept-tab-num">1</span>
+      <span class="dept-tab-title">1. IMA DS</span>
+    </div>
+    <span class="dept-tab-badge dept-badge-active">● Active</span>
+  </a>
+  <button type="button" class="dept-tab-btn dept-tab-btn--locked" role="tab" aria-selected="false" id="tab-dept-polsci" onclick="handleLockedDept('2. MA Political Science')">
+    <div style="display:flex;align-items:center;">
+      <span class="dept-tab-num">2</span>
+      <span class="dept-tab-title">2. MA Political Science</span>
+    </div>
+    <span class="dept-tab-badge dept-badge-locked">🔒 Locked</span>
+  </button>
+  <button type="button" class="dept-tab-btn dept-tab-btn--locked" role="tab" aria-selected="false" id="tab-dept-soc" onclick="handleLockedDept('3. MA Sociology')">
+    <div style="display:flex;align-items:center;">
+      <span class="dept-tab-num">3</span>
+      <span class="dept-tab-title">3. MA Sociology</span>
+    </div>
+    <span class="dept-tab-badge dept-badge-locked">🔒 Locked</span>
+  </button>
+  <button type="button" class="dept-tab-btn dept-tab-btn--locked" role="tab" aria-selected="false" id="tab-dept-hist" onclick="handleLockedDept('4. MA History')">
+    <div style="display:flex;align-items:center;">
+      <span class="dept-tab-num">4</span>
+      <span class="dept-tab-title">4. MA History</span>
+    </div>
+    <span class="dept-tab-badge dept-badge-locked">🔒 Locked</span>
+  </button>
+</div>
+
+<div id="dept-alert-box" class="dept-alert-toast" role="alert"></div>
+
+<!-- Department Overview Card: 1. IMA DS (No internal questions in public) -->
+<div class="dept-overview-card">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:8px;">
+    <h3 style="margin:0;color:#065f46;font-size:1.18rem;font-weight:800;">📁 1. IMA DS (Integrated M.A. Development Studies)</h3>
+    <span style="background:#059669;color:#ffffff;font-size:0.75rem;padding:3px 10px;border-radius:9999px;font-weight:800;letter-spacing:0.04em;">● ACTIVE · SEMESTER 1</span>
+  </div>
+  <p style="color:#166534;font-size:0.92rem;margin:0 0 16px;line-height:1.5;">
+    First Semester Five Year Integrated P.G. Programme (2025 Admission). Access semester syllabus, English AEC coursework, internal question banks, and learning modules inside the protected IMA DS department.
+  </p>
+  <a href="${fyugpQuizPath}?dept=imads" class="btn-enter-dept">
+    🔒 Enter 1. IMA DS Department →
+  </a>
+</div>
+
+<footer>
+<a href="/">← Return to Academic Hub Home</a>
+<span style="color:#64748b;font-size:0.8rem">Official Academic Hub</span>
+</footer>
+</main>
+<script>
+function handleLockedDept(name) {
+  var alertBox = document.getElementById('dept-alert-box');
+  if (alertBox) {
+    alertBox.style.display = 'block';
+    alertBox.innerHTML = '<strong>🔒 ' + name + ' is currently locked.</strong><br>The Calicut University FYUGP regular curriculum, syllabus breakdown, internal question banks, and learning modules for this department are being digitized. Please check back soon or explore <strong>1. IMA DS</strong>!';
+    alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } else {
+    alert('🔒 ' + name + ' is currently locked.\\nCurriculum coming soon for Calicut University FYUGP regular students.');
+  }
+}
+</script>
+<script src="/traffic-tracker.js?v=20261105_act2" defer></script>
+</body></html>`;
+
+// 2. PROTECTED IMA DS PAGE: Strictly inside IMA DS (Protected / Not in Public)
+const imaDsPage = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IMA DS Semester 1 | Calicut University FYUGP | Academic Hub</title>
 <style>
 body{margin:0;padding:20px;background:#edf5f0;color:#153236;font:16px/1.55 system-ui,sans-serif}
 main{max-width:680px;margin:4vh auto;padding:clamp(20px,5vw,36px);background:#fff;border:1px solid #cfdfd6;border-radius:20px;box-shadow:0 10px 30px rgba(16,44,49,0.06)}
@@ -239,6 +459,7 @@ footer{margin-top:24px;display:flex;justify-content:space-between;align-items:ce
   font-size: 0.92rem;
   font-weight: 750;
   text-align: left;
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 2px 6px rgba(16, 44, 49, 0.04);
@@ -253,18 +474,11 @@ footer{margin-top:24px;display:flex;justify-content:space-between;align-items:ce
   color: #ffffff;
   box-shadow: 0 4px 14px rgba(6, 78, 59, 0.25);
 }
-.dept-tab-btn--active:hover {
-  border-color: #34d399;
-}
 .dept-tab-btn--locked {
   background: #f8fafc;
   border-color: #e2e8f0;
   color: #64748b;
   cursor: pointer;
-}
-.dept-tab-btn--locked:hover {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
 }
 .dept-tab-num {
   display: inline-flex;
@@ -323,18 +537,18 @@ footer{margin-top:24px;display:flex;justify-content:space-between;align-items:ce
 }
 </style></head><body><main>
 <div class="nav-breadcrumbs"><a href="/">Academic Hub</a> <span>→</span> <a href="${fyugpQuizPath}">FYUGP</a> <span>→</span> <span style="color:#086454">IMA DS Semester 1</span></div>
-<small style="color:#086454;font-weight:800;letter-spacing:0.08em;text-transform:uppercase">Verified Curriculum · Semester 1</small>
-<h1>Calicut University FYUGP (Regular)</h1>
+<small style="color:#086454;font-weight:800;letter-spacing:0.08em;text-transform:uppercase">Protected Student Section · Semester 1</small>
+<h1>Calicut University FYUGP — IMA DS</h1>
 
-<!-- 4 Main Department Tabs (1. IMA DS Active, 3 Locked) -->
+<!-- 4 Main Department Tabs -->
 <div class="dept-tabs-nav" role="tablist" aria-label="Calicut University FYUGP Departments">
-  <button type="button" class="dept-tab-btn dept-tab-btn--active" role="tab" aria-selected="true" id="tab-dept-imads" onclick="showDept('imads')">
+  <a href="${fyugpQuizPath}?dept=imads" class="dept-tab-btn dept-tab-btn--active" role="tab" aria-selected="true" id="tab-dept-imads">
     <div style="display:flex;align-items:center;">
       <span class="dept-tab-num">1</span>
       <span class="dept-tab-title">1. IMA DS</span>
     </div>
     <span class="dept-tab-badge dept-badge-active">● Active</span>
-  </button>
+  </a>
   <button type="button" class="dept-tab-btn dept-tab-btn--locked" role="tab" aria-selected="false" id="tab-dept-polsci" onclick="handleLockedDept('2. MA Political Science')">
     <div style="display:flex;align-items:center;">
       <span class="dept-tab-num">2</span>
@@ -359,6 +573,8 @@ footer{margin-top:24px;display:flex;justify-content:space-between;align-items:ce
 </div>
 
 <div id="dept-alert-box" class="dept-alert-toast" role="alert"></div>
+
+<!-- Protected Modules (strictly inside IMA DS) -->
 <details open>
 <summary><span>📁 <strong>IMA DS Semester 1</strong> (Integrated MA Development Studies)</span></summary>
 <section aria-labelledby="subjects">
@@ -455,8 +671,8 @@ footer{margin-top:24px;display:flex;justify-content:space-between;align-items:ce
 </section>
 </details>
 <footer>
-<a href="/">← Return to Academic Hub Home</a>
-<span style="color:#64748b;font-size:0.8rem">Authorized Access Active</span>
+<a href="${fyugpQuizPath}">← Return to FYUGP Department Directory</a>
+<span style="color:#64748b;font-size:0.8rem">Authorized Student Access Active</span>
 </footer>
 </main>
 <script>
@@ -470,32 +686,115 @@ function handleLockedDept(name) {
     alert('🔒 ' + name + ' is currently locked.\\nCurriculum coming soon for Calicut University FYUGP regular students.');
   }
 }
-function showDept(name) {
-  var alertBox = document.getElementById('dept-alert-box');
-  if (alertBox) alertBox.style.display = 'none';
-}
 </script>
 <script src="/traffic-tracker.js?v=20261105_act2" defer></script>
 </body></html>`;
 
 export async function handleFyugpQuiz(request, env, equals) {
-  const headers = new Headers({
+  const url = new URL(request.url);
+  const now = Math.floor(Date.now() / 1000);
+  const targetPassword = env.FYUGP_QUIZ_PASSWORD || '1234';
+  const signingSecret = env.FYUGP_QUIZ_KEY || (env.ADMIN_PASSWORD ? 'fyugp:' + env.ADMIN_PASSWORD : 'fyugp-hub-secret-default-2026-v1');
+
+  function isOriginAllowed(origin) {
+    if (!origin) return true;
+    try {
+      const o = new URL(origin).hostname.toLowerCase();
+      return o === 'academichubfaiz.in' || o === 'www.academichubfaiz.in' || o.endsWith('.academichubfaiz.in') || o.endsWith('.workers.dev');
+    } catch {
+      return false;
+    }
+  }
+
+  const unlockFormAction = url.pathname + (url.search || '?dept=imads');
+
+  // Handle password unlock submission (POST)
+  if (request.method === 'POST') {
+    const origin = request.headers.get('Origin');
+    if (origin && !isOriginAllowed(origin)) return new Response(null, {status:403});
+    if (!request.headers.get('Content-Type')?.startsWith('application/x-www-form-urlencoded')) {
+      return new Response(null, {status:415});
+    }
+    const reader = request.body?.getReader();
+    if (!reader) return new Response(null, {status:400});
+    let size = 0;
+    let body = '';
+    const decoder = new TextDecoder();
+    for (;;) {
+      const {done, value} = await reader.read();
+      if (done) break;
+      size += value.byteLength;
+      if (size > 512) {
+        await reader.cancel();
+        return new Response(null, {status:413});
+      }
+      body += decoder.decode(value, {stream:true});
+    }
+    const password = new URLSearchParams(body + decoder.decode()).get('password');
+    if (!equals(password, targetPassword)) {
+      const renderedUnlock = renderUnlockPage(unlockFormAction, '<p role="alert">Incorrect password. Try entering 1234.</p>');
+      return new Response(renderedUnlock, {
+        status: 403,
+        headers: {
+          'Content-Type':'text/html; charset=utf-8',
+          'Cache-Control':'private, no-store',
+          'X-Robots-Tag':'noindex, nofollow'
+        }
+      });
+    }
+    const expires = now + sessionSeconds;
+    const proof = await sessionProof(signingSecret, expires);
+    const q = url.searchParams.get('quiz');
+    const redirectTarget = (q === 'idioms' || q === '25' || q === 'internal-25') 
+      ? (fyugpQuizPath + '?quiz=' + q) 
+      : (fyugpQuizPath + '?dept=imads');
+    return new Response(null, {
+      status: 303,
+      headers: {
+        'Location': redirectTarget,
+        'Set-Cookie': `${cookieName}=${expires}.${proof}; Max-Age=${sessionSeconds}; Path=/; Secure; HttpOnly; SameSite=Lax`
+      }
+    });
+  }
+
+  if (request.method !== 'GET' && request.method !== 'HEAD') {
+    return new Response(null, {status:405, headers: {'Allow':'GET, HEAD, POST'}});
+  }
+
+  // Check if student is accessing IMA DS or internal quiz
+  const isImaDs = url.searchParams.get('dept') === 'imads' || url.searchParams.has('quiz');
+
+  if (isImaDs) {
+    const protectedHeaders = new Headers({
+      'Cache-Control':'private, no-store',
+      'Vary':'Cookie',
+      'X-Robots-Tag':'noindex, nofollow',
+      'X-Content-Type-Options':'nosniff',
+      'Content-Type':'text/html; charset=utf-8'
+    });
+
+    const session = (request.headers.get('Cookie') || '').match(/(?:^|;\s*)__Host-fyugp_quiz=(\d{1,12})\.([a-f0-9]{64})(?:;|$)/);
+    if (!session || Number(session[1]) <= now || !equals(session[2], await sessionProof(signingSecret, session[1]))) {
+      const renderedUnlock = renderUnlockPage(unlockFormAction);
+      return new Response(request.method === 'HEAD' ? null : renderedUnlock, {headers: protectedHeaders});
+    }
+
+    if (request.method === 'HEAD') return new Response(null, {headers: protectedHeaders});
+
+    const quizParam = url.searchParams.get('quiz');
+    if (quizParam === 'idioms' || quizParam === '25' || quizParam === 'internal-25') {
+      return new Response(quizAppHtml, {headers: protectedHeaders});
+    }
+    return new Response(imaDsPage, {headers: protectedHeaders});
+  }
+
+  // Public Landing Page: Calicut University FYUGP Regular (No internal exam questions shown in public)
+  const publicHeaders = new Headers({
     'Cache-Control':'public, max-age=60, s-maxage=300',
     'X-Robots-Tag':'index, follow',
     'X-Content-Type-Options':'nosniff',
     'Content-Type':'text/html; charset=utf-8'
   });
-  const url = new URL(request.url);
-
-  if (request.method !== 'GET' && request.method !== 'HEAD') {
-    headers.set('Allow','GET, HEAD');
-    return new Response(null, {status:405, headers});
-  }
-  if (request.method === 'HEAD') return new Response(null, {headers});
-
-  const quizParam = url.searchParams.get('quiz');
-  if (quizParam === 'idioms' || quizParam === '25' || quizParam === 'internal-25') {
-    return new Response(quizAppHtml, {headers});
-  }
-  return new Response(semesterPage, {headers});
+  if (request.method === 'HEAD') return new Response(null, {headers: publicHeaders});
+  return new Response(publicPortalPage, {headers: publicHeaders});
 }
