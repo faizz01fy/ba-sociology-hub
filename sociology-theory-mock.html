@@ -208,6 +208,16 @@
   100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
 }
 
+
+/* Compact red-on-black exam timer */
+body:has(#exam:not([hidden])) .timer {position:fixed;top:calc(env(safe-area-inset-top, 0px) + 8px);left:8px;right:auto;width:max-content;max-width:calc(100vw - 16px);margin:0;padding:5px 9px;gap:6px;background:#080808;color:#ff3030;border:1px solid #f52222;border-radius:12px;box-shadow:0 2px 9px #0003;z-index:1000}
+body:has(#exam:not([hidden])) .timer[data-urgent="true"] {background:#080808;border-color:#ff3030}
+body:has(#exam:not([hidden])) .analog-clock-wrap {width:22px;height:22px}
+body:has(#exam:not([hidden])) .clock-digits {font-size:14px;line-height:1;color:#ff3030;letter-spacing:0}
+body:has(#exam:not([hidden])) .clock-label {display:none}
+body:has(#exam:not([hidden])) .analog-clock .dial-face {fill:#080808;stroke:#ff3030}
+body:has(#exam:not([hidden])) .analog-clock .dial-progress,body:has(#exam:not([hidden])) .analog-clock .hand,body:has(#exam:not([hidden])) .analog-clock .tick {stroke:#ff3030}
+body:has(#exam:not([hidden])) .analog-clock .center-cap {fill:#ff3030}
 </style>
 <main>
 <a href="/#tests">← Practice tests</a>
@@ -386,7 +396,7 @@ function render() {
 
     if (SpeechRecognition) {
       recognition = new SpeechRecognition();
-      recognition.continuous = true;
+      recognition.continuous = false; // More reliable on mobile Safari
       recognition.interimResults = true;
 
       recognition.onstart = () => {
@@ -416,7 +426,7 @@ function render() {
         isListening = false;
         btnDictate.classList.remove('listening');
         btnDictate.textContent = '🎙️ Live Dictate';
-        voiceStatus.textContent = 'Mic error: ' + (event.error || 'Check mic permission');
+        voiceStatus.textContent = ['service-not-allowed','not-allowed','language-not-supported'].includes(event.error) ? 'Browser dictation unavailable. Tap answer box and use the iPhone keyboard microphone.' : 'Dictation error: ' + (event.error || 'Check microphone permission');
         voiceStatus.style.color = '#991b1b';
       };
 
@@ -445,7 +455,8 @@ function render() {
         }
       };
     } else {
-      btnDictate.disabled = true;
+      btnDictate.disabled = false;
+      btnDictate.onclick = () => { input.focus(); voiceStatus.textContent = 'Use the microphone on your phone keyboard to dictate.'; };
       btnDictate.title = 'Live dictation not supported in this browser. Use WhatsApp voice note or keyboard mic.';
       btnDictate.textContent = '🎙️ Dictate (Use Chrome/Safari)';
     }
@@ -466,9 +477,11 @@ function render() {
       }
 
       try {
+        if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) throw new Error('Audio recording is not supported in this browser. Open the site in Safari and allow microphone access.');
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         audioChunks = [];
-        mediaRecorder = new MediaRecorder(stream);
+        const mime = ['audio/mp4','audio/webm;codecs=opus','audio/webm'].find(t => MediaRecorder.isTypeSupported(t));
+        mediaRecorder = mime ? new MediaRecorder(stream, {mimeType:mime}) : new MediaRecorder(stream);
 
         mediaRecorder.ondataavailable = e => {
           if (e.data.size > 0) audioChunks.push(e.data);
@@ -500,9 +513,12 @@ function render() {
           btnRecord.textContent = '🔴 Record Note';
           stream.getTracks().forEach(track => track.stop());
 
-          const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+          const audioBlob = new Blob(audioChunks, { type: mediaRecorder.mimeType || audioChunks[0]?.type || 'audio/mp4' });
+          if (!audioBlob.size) { voiceStatus.textContent = 'No audio captured. Please try again.'; return; }
+          if (audioPreview.dataset.blobUrl) URL.revokeObjectURL(audioPreview.dataset.blobUrl);
           const audioUrl = URL.createObjectURL(audioBlob);
           audioPreview.src = audioUrl;
+          audioPreview.dataset.blobUrl = audioUrl;
           previewWrap.style.display = 'flex';
           voiceStatus.textContent = '✓ Voice note ready';
           voiceStatus.style.color = '#0284c7';
@@ -515,6 +531,7 @@ function render() {
           }
         };
 
+        mediaRecorder.onerror = () => { stream.getTracks().forEach(track => track.stop()); voiceStatus.textContent = 'Recording failed. Please retry.'; };
         mediaRecorder.start();
       } catch (err) {
         voiceStatus.textContent = 'Mic access blocked: ' + err.message;
@@ -523,7 +540,10 @@ function render() {
     };
 
     btnDiscard.onclick = () => {
+      audioPreview.pause();
       audioPreview.src = '';
+      if (audioPreview.dataset.blobUrl) URL.revokeObjectURL(audioPreview.dataset.blobUrl);
+      delete audioPreview.dataset.blobUrl;
       previewWrap.style.display = 'none';
       voiceStatus.textContent = 'Note discarded';
       voiceStatus.style.color = '#64748b';
