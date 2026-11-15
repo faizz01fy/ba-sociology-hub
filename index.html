@@ -5063,10 +5063,12 @@
       .desktop-hero-sem-tabs {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-auto-rows: 1fr;
         gap: 12px;
         flex: 1 1 auto;
         width: 100%;
         max-width: 100%;
+        align-items: stretch;
       }
       .desktop-hero-pill {
         display: flex;
@@ -5076,11 +5078,30 @@
         gap: 8px;
         padding: 12px 14px;
         border-radius: 14px;
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 1.25;
         box-shadow: 0 4px 14px rgba(9, 20, 44, 0.08);
         transition: transform 0.16s ease, box-shadow 0.16s ease;
+        height: 100%;
+        min-height: 104px;
+        box-sizing: border-box;
+      }
+      .desktop-hero-pill-body {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 100%;
+      }
+      .desktop-hero-pill-title {
+        font-size: 12px;
+        font-weight: 750;
+        line-height: 1.25;
+        display: block;
+      }
+      .desktop-hero-pill-sub {
+        font-size: 10.5px;
+        font-weight: 600;
+        opacity: 0.9;
+        letter-spacing: 0.02em;
+        display: block;
       }
       /* Tab 1: BA Sociology & History Sem 1 — Active Royal Blue */
       .desktop-hero-pill--active {
@@ -5925,7 +5946,9 @@
       }
       .desktop-hero-sem-tabs {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-auto-rows: 1fr !important;
         gap: 10px !important;
+        align-items: stretch !important;
       }
       .sem-cards-deck {
         display: none !important;
@@ -5949,7 +5972,9 @@
       }
       .desktop-hero-sem-tabs {
         grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        grid-auto-rows: 1fr !important;
         gap: 12px !important;
+        align-items: stretch !important;
       }
       .sem-cards-deck {
         display: none !important;
@@ -6012,20 +6037,53 @@
       .desktop-hero-sem-tabs {
         display: grid !important;
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-auto-rows: 1fr !important;
         gap: 8px !important;
+        align-items: stretch !important;
       }
       .desktop-hero-pill {
-        padding: 10px 12px !important;
-        font-size: 11.5px !important;
+        padding: 10px 10px !important;
         border-radius: 12px !important;
+        height: 100% !important;
+        min-height: 96px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+      }
+      .desktop-hero-pill-top {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        gap: 4px !important;
       }
       .desktop-hero-pill-sem {
-        font-size: 9.5px !important;
-        padding: 2px 6px !important;
+        font-size: 8.5px !important;
+        padding: 2px 5px !important;
+        white-space: nowrap !important;
+        letter-spacing: 0.04em !important;
       }
       .desktop-hero-pill-badge {
-        font-size: 8.5px !important;
-        padding: 2px 6px !important;
+        font-size: 8px !important;
+        padding: 2px 5px !important;
+        white-space: nowrap !important;
+      }
+      .desktop-hero-pill-body {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3px !important;
+        width: 100% !important;
+      }
+      .desktop-hero-pill-title {
+        font-size: 11px !important;
+        line-height: 1.25 !important;
+        font-weight: 750 !important;
+      }
+      .desktop-hero-pill-sub {
+        font-size: 9.5px !important;
+        line-height: 1.2 !important;
+        opacity: 0.9 !important;
       }
       .sem-cards-deck {
         display: none !important;
@@ -6202,34 +6260,52 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
     <section class="desktop-hero-banner" aria-label="Academic Hub Programs &amp; Semesters">
       <div class="desktop-hero-sem-tabs" role="tablist" aria-label="Select Degree Program &amp; Semester">
-        <div class="desktop-hero-pill desktop-hero-pill--active" role="tab" aria-selected="true">
+        <!-- Tab 1: Calicut University CDOE FYUGP SEM 1 (Active) -->
+        <div class="desktop-hero-pill desktop-hero-pill--active" role="tab" aria-selected="true" title="Calicut University CDOE FYUGP SEM 1 - Active">
           <div class="desktop-hero-pill-top">
-            <span class="desktop-hero-pill-sem">SEM 1 &middot; CALICUT FYUGP</span>
+            <span class="desktop-hero-pill-sem">CALICUT CDOE</span>
             <span class="desktop-hero-pill-badge">&bull; ACTIVE</span>
           </div>
-          <span>BA Sociology &amp; History</span>
+          <div class="desktop-hero-pill-body">
+            <span class="desktop-hero-pill-title">Calicut University CDOE FYUGP SEM 1</span>
+            <span class="desktop-hero-pill-sub">BA Sociology &amp; History</span>
+          </div>
         </div>
-        <div class="desktop-hero-pill desktop-hero-pill--sem2" role="tab" aria-selected="false" aria-disabled="true" title="Semester 2 coming soon">
+
+        <!-- Tab 2: Calicut University CDOE FYUGP SEM 2 (Locked) -->
+        <div class="desktop-hero-pill desktop-hero-pill--sem2" role="tab" aria-selected="false" aria-disabled="true" title="Calicut University CDOE FYUGP SEM 2 coming soon">
           <div class="desktop-hero-pill-top">
-            <span class="desktop-hero-pill-sem">SEM 2 &middot; CALICUT FYUGP</span>
+            <span class="desktop-hero-pill-sem">CALICUT CDOE</span>
             <span class="desktop-hero-pill-badge">&#x1F512; LOCKED</span>
           </div>
-          <span>BA Sociology &amp; History</span>
+          <div class="desktop-hero-pill-body">
+            <span class="desktop-hero-pill-title">Calicut University CDOE FYUGP SEM 2</span>
+            <span class="desktop-hero-pill-sub">BA Sociology &amp; History</span>
+          </div>
         </div>
+
+        <!-- Tab 3: Calicut University FYUGP (Regular) (Active) -->
         <a href="/calicut-university-fyugp" class="desktop-hero-pill desktop-hero-pill--regular" role="tab" aria-selected="true" title="Calicut University FYUGP (Regular) - 4 Main Departments">
           <div class="desktop-hero-pill-top">
-            <span class="desktop-hero-pill-sem">CALICUT FYUGP</span>
+            <span class="desktop-hero-pill-sem">CALICUT REGULAR</span>
             <span class="desktop-hero-pill-badge">&bull; ACTIVE</span>
           </div>
-          <span>Calicut University FYUGP (Regular)</span>
-          <span style="display:block;font-size:10px;opacity:0.9;margin-top:4px;font-weight:600;letter-spacing:0.02em;">1. IMA DS (Active) &bull; 3 Locked</span>
+          <div class="desktop-hero-pill-body">
+            <span class="desktop-hero-pill-title">Calicut University FYUGP (Regular)</span>
+            <span class="desktop-hero-pill-sub">1. IMA DS (Active) &bull; 3 Locked</span>
+          </div>
         </a>
+
+        <!-- Tab 4: IGNOU Academic Hub (Locked) -->
         <div class="desktop-hero-pill desktop-hero-pill--ignou" role="tab" aria-selected="false" aria-disabled="true" title="IGNOU Academic Hub coming soon">
           <div class="desktop-hero-pill-top">
             <span class="desktop-hero-pill-sem">IGNOU HUB</span>
             <span class="desktop-hero-pill-badge">&#x1F512; LOCKED</span>
           </div>
-          <span>IGNOU Academic Hub</span>
+          <div class="desktop-hero-pill-body">
+            <span class="desktop-hero-pill-title">IGNOU Academic Hub</span>
+            <span class="desktop-hero-pill-sub">UG Degree Programs</span>
+          </div>
         </div>
       </div>
     </section>
@@ -6237,23 +6313,23 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
         <div class="sem-cards-deck" role="region" aria-label="Calicut University Programs &amp; Semesters">
 
       <!-- CARD 1: SEMESTER 1 (ACTIVE) -->
-      <a href="#subjects" class="sem-card sem-card-active" id="sem1-card" aria-label="BA Sociology & History SEM 1 - Active">
+      <a href="#subjects" class="sem-card sem-card-active" id="sem1-card" aria-label="Calicut University CDOE FYUGP SEM 1 - Active">
         <div class="sem-card-inner">
           <span class="sem-mini-icon sem-icon-active" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="m3 9.5 9-4.5 9 4.5-9 4.5-9-4.5Z"></path><path d="M6.5 11.5v4.2c3.3 2.1 7.7 2.1 11 0v-4.2M21 10v5"></path></svg>
           </span>
-          <span class="sem-card-text">BA Sociology &amp; History <strong>SEM 1</strong></span>
+          <span class="sem-card-text">Calicut Univ CDOE FYUGP <strong>SEM 1</strong><br><small style="font-size:0.75rem;font-weight:600;color:#1e40af;">BA Sociology &amp; History</small></span>
         </div>
         <span class="sem-mini-badge sem-badge-active"><span class="sem-live-dot"></span> Active</span>
       </a>
 
-      <!-- CARD 2: BA SOCIOLOGY & HISTORY SEM 2 (LOCKED) -->
-      <div class="sem-card sem-card-locked sem-card--sem2" id="sem2-card" role="button" tabindex="0" aria-disabled="true" aria-label="BA Sociology & History SEM 2 - Locked" onclick="alert('🔒 BA Sociology & History SEM 2 is currently locked.')">
+      <!-- CARD 2: CALICUT UNIVERSITY CDOE FYUGP SEM 2 (LOCKED) -->
+      <div class="sem-card sem-card-locked sem-card--sem2" id="sem2-card" role="button" tabindex="0" aria-disabled="true" aria-label="Calicut University CDOE FYUGP SEM 2 - Locked" onclick="alert('🔒 Calicut University CDOE FYUGP SEM 2 is currently locked.')">
         <div class="sem-card-inner">
           <span class="sem-mini-icon sem-icon-locked" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
           </span>
-          <span class="sem-card-text sem-text-locked">BA Sociology &amp; History <strong>SEM 2</strong></span>
+          <span class="sem-card-text sem-text-locked">Calicut Univ CDOE FYUGP <strong>SEM 2</strong><br><small style="font-size:0.75rem;font-weight:600;color:#6b21a8;">BA Sociology &amp; History</small></span>
         </div>
         <span class="sem-mini-badge sem-badge-locked">🔒 Locked</span>
       </div>
