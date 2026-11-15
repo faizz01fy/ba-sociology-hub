@@ -1560,8 +1560,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Unit 4.1 a: Value Alignment · Existential Risk · Nick Bostrom & Stuart Russell",
             "duration": "22:00",
             "language": "Bilingual (Malayalam & English)",
-            "youtubeId": "uiB6PFp5P_I",
-            "thumbnail": "https://i.ytimg.com/vi/uiB6PFp5P_I/hqdefault.jpg",
+            "youtubeId": "gGvp0v0bAW0",
+            "thumbnail": "https://i.ytimg.com/vi/gGvp0v0bAW0/hqdefault.jpg",
             "studyPoints": [
               "<strong>വാല്യൂ അലൈൻമെന്റ് പ്രോബ്ലം (Value Alignment Problem):</strong> കൃത്രിമ ബുദ്ധിയുടെ ലക്ഷ്യങ്ങളും മനുഷ്യരാശിയുടെ ധാർമ്മിക മൂല്യങ്ങളും തമ്മിലുള്ള പൊരുത്തക്കേടുകൾ.",
               "<strong>അസ്തിത്വ ഭീഷണി (Existential Risk):</strong> നിക്ക് ബോസ്ട്രോം (Nick Bostrom), മാക്സ് ടെഗ്മാർക്ക് എന്നിവർ ചൂണ്ടിക്കാണിക്കുന്ന സൂപ്പർഇന്റലിജൻസ് സൃഷ്ടിച്ചേക്കാവുന്ന നിയന്ത്രണാതീത സാഹചര്യങ്ങൾ.",
