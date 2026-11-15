@@ -52,7 +52,9 @@ ${errorHtml}
 <button type="submit">Unlock FYUGP Section</button>
 </form>
 <div style="text-align:center;margin-top:16px"><a href="/">← Back to Academic Hub</a></div>
-</main></body></html>`;
+</main>
+<script src="/traffic-tracker.js?v=20261105_act2" defer></script>
+</body></html>`;
 }
 
 const semesterPage = `<!doctype html>
@@ -321,77 +323,25 @@ footer{margin-top:24px;display:flex;justify-content:space-between;align-items:ce
 <a href="/">← Return to Academic Hub Home</a>
 <span style="color:#64748b;font-size:0.8rem">Authorized Access Active</span>
 </footer>
-</main></body></html>`;
+</main>
+<script src="/traffic-tracker.js?v=20261105_act2" defer></script>
+</body></html>`;
 
 export async function handleFyugpQuiz(request, env, equals) {
   const headers = new Headers({
-    'Cache-Control':'private, no-store',
-    'Vary':'Cookie',
-    'X-Robots-Tag':'noindex, nofollow',
+    'Cache-Control':'public, max-age=60, s-maxage=300',
+    'X-Robots-Tag':'index, follow',
     'X-Content-Type-Options':'nosniff',
     'Content-Type':'text/html; charset=utf-8'
   });
   const url = new URL(request.url);
-  const now = Math.floor(Date.now() / 1000);
-  const targetPassword = env.FYUGP_QUIZ_PASSWORD || '1234';
-  const signingSecret = env.FYUGP_QUIZ_KEY || (env.ADMIN_PASSWORD ? 'fyugp:' + env.ADMIN_PASSWORD : 'fyugp-hub-secret-default-2026-v1');
 
-  function isOriginAllowed(origin) {
-    if (!origin) return true;
-    try {
-      const o = new URL(origin).hostname.toLowerCase();
-      return o === 'academichubfaiz.in' || o === 'www.academichubfaiz.in' || o.endsWith('.academichubfaiz.in') || o.endsWith('.workers.dev');
-    } catch {
-      return false;
-    }
-  }
-
-  const unlockFormAction = url.pathname + (url.search || '');
-
-  if (request.method === 'POST') {
-    const origin = request.headers.get('Origin');
-    if (origin && !isOriginAllowed(origin)) return new Response(null, {status:403, headers});
-    if (!request.headers.get('Content-Type')?.startsWith('application/x-www-form-urlencoded')) {
-      return new Response(null, {status:415, headers});
-    }
-    const reader = request.body?.getReader();
-    if (!reader) return new Response(null, {status:400, headers});
-    let size = 0;
-    let body = '';
-    const decoder = new TextDecoder();
-    for (;;) {
-      const {done, value} = await reader.read();
-      if (done) break;
-      size += value.byteLength;
-      if (size > 512) {
-        await reader.cancel();
-        return new Response(null, {status:413, headers});
-      }
-      body += decoder.decode(value, {stream:true});
-    }
-    const password = new URLSearchParams(body + decoder.decode()).get('password');
-    if (!equals(password, targetPassword)) {
-      const renderedUnlock = renderUnlockPage(unlockFormAction, '<p role="alert">Incorrect password. Try entering 1234.</p>');
-      return new Response(renderedUnlock, {status:403, headers});
-    }
-    const expires = now + sessionSeconds;
-    const proof = await sessionProof(signingSecret, expires);
-    const q = url.searchParams.get('quiz');
-    const redirectTarget = (q === 'idioms' || q === '25' || q === 'internal-25') ? (fyugpQuizPath + '?quiz=' + q) : fyugpQuizPath;
-    headers.set('Location', redirectTarget);
-    headers.set('Set-Cookie', `${cookieName}=${expires}.${proof}; Max-Age=${sessionSeconds}; Path=/; Secure; HttpOnly; SameSite=Lax`);
-    return new Response(null, {status:303, headers});
-  }
   if (request.method !== 'GET' && request.method !== 'HEAD') {
-    headers.set('Allow','GET, HEAD, POST');
+    headers.set('Allow','GET, HEAD');
     return new Response(null, {status:405, headers});
   }
-  const session = (request.headers.get('Cookie') || '').match(/(?:^|;\s*)__Host-fyugp_quiz=(\d{1,12})\.([a-f0-9]{64})(?:;|$)/);
-  if (!session || Number(session[1]) <= now || !equals(session[2], await sessionProof(signingSecret, session[1]))) {
-    const renderedUnlock = renderUnlockPage(unlockFormAction);
-    return new Response(request.method === 'HEAD' ? null : renderedUnlock, {headers});
-  }
   if (request.method === 'HEAD') return new Response(null, {headers});
+
   const quizParam = url.searchParams.get('quiz');
   if (quizParam === 'idioms' || quizParam === '25' || quizParam === 'internal-25') {
     return new Response(quizAppHtml, {headers});

@@ -14,7 +14,7 @@ export {StudyHelperQuota} from './study-helper-backend.js';
 import {handleUniversityNotices} from './university-notices-backend.js';
 import {handleWhatsAppWebhook, handleWhatsAppList} from './whatsapp-webhook-backend.js';
 const CHAT_PATH = "/api/chat";
-const TRACKER_SCRIPT = "(()=>{let last=\"\";function decode(v){try{return decodeURIComponent(v)}catch(e){return v}}function title(v){return String(v||\"\").replace(/[-_]+/g,\" \").split(\" \").map(function(w){return w?w.charAt(0).toUpperCase()+w.slice(1):\"\"}).join(\" \")}function getDetailedActivity(){try{const path=location.pathname||\"/\";const search=location.search||\"\";const hash=decode((location.hash||\"\").slice(1));const params=new URLSearchParams(search);if(path.indexOf(\"voice-explanation\")!==-1){const playing=document.querySelector(\".chapter-card.playing\");const stickyBar=document.getElementById(\"sticky-audio-bar\");const stickyTitleEl=document.getElementById(\"sticky-title\");const stickyTitle=(stickyTitleEl?stickyTitleEl.textContent:\"\").trim();const hasSticky=stickyBar&&stickyBar.style.display!==\"none\"&&stickyTitle&&stickyTitle.indexOf(\"Playing lecture...\")===-1;if(playing||hasSticky){let t=\"\";if(playing){const ct=playing.querySelector(\".card-title\");if(ct)t=ct.textContent.trim()}if(!t&&hasSticky)t=stickyTitle;if(!t&&document.title&&document.title.indexOf(\"|\")!==-1){t=document.title.split(\"|\")[0].trim()}const isVid=playing&&(playing.querySelector(\"iframe\")||playing.querySelector(\"video\"));const prefix=isVid?\"\u25b6\ufe0f Watching: \":\"\ud83c\udfa7 Hearing: \";if(t)return(prefix+t).slice(0,110)}const heroSubj=document.getElementById(\"hero-subject-name\");let subj=heroSubj?heroSubj.textContent.trim():\"\";if(subj&&subj.toLowerCase().indexOf(\"loading\")!==-1)subj=\"\";if(!subj){const qSubj=params.get(\"subject\");if(qSubj)subj=title(qSubj)}if(subj){subj=subj.replace(/^[^\\w\\s\\u0D00-\\u0D7F]+/,\"\").trim();return(\"\ud83c\udfa7 Voice: \"+subj).slice(0,90)}return\"\ud83c\udfa7 Voice Explanations\"}if(path.indexOf(\"study-guide-reader\")!==-1){const badge=document.getElementById(\"activeDocBadge\");let docTitle=badge?badge.textContent.trim():\"\";if(!docTitle||docTitle===\"Study Guide\"){docTitle=params.get(\"title\")||\"\"}if(!docTitle){const f=params.get(\"file\");if(f)docTitle=title(f.split(\"/\").pop().replace(/\\.pdf$/i,\"\"))}if(!docTitle&&document.title){docTitle=document.title.replace(/[\u00b7|].*$/,\"\").trim()}let isSpeaking=false;try{isSpeaking=!!(window.speechSynthesis&&window.speechSynthesis.speaking)}catch(e){}const prefix=isSpeaking?\"\ud83d\udd0a Hearing Read-Aloud: \":\"\ud83d\udcd6 Reading: \";return(prefix+(docTitle||\"Study Guide\")).slice(0,110)}if(path.indexOf(\"test\")!==-1||path.indexOf(\"mcq\")!==-1||path.indexOf(\"quiz\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcdd \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path.indexOf(\"reading\")!==-1||path.indexOf(\"-pdf\")!==-1||path.indexOf(\"notes\")!==-1||path.endsWith(\".pdf.html\")||path.indexOf(\"Companion\")!==-1||path.indexOf(\"Bilingual\")!==-1){let t=document.title?document.title.replace(/[\u00b7|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"\ud83d\udcd6 \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path===\"/\"||path===\"/index.html\"){const labels={top:\"\ud83c\udfe0 Overview\",subjects:\"\ud83d\udcda Semester subjects\",tests:\"\ud83d\udcdd Practice tests\",\"ai-study\":\"\ud83e\udd16 AI Study Helper\",notices:\"\ud83d\udce2 Calicut Univ Notices\",support:\"\ud83d\udcac Support\"};if(labels[hash])return labels[hash];if(hash)return\"\ud83c\udfe0 Home \u00b7 \"+title(hash);return\"\ud83c\udfe0 Hub Home\"}if(document.title&&document.title.length>2){const clean=document.title.replace(/[\u00b7|].*$/,\"\").trim();if(clean&&clean.toLowerCase().indexOf(\"academic hub\")===-1&&clean.toLowerCase().indexOf(\"loading\")===-1){return clean.slice(0,90)}}return title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")).slice(0,90)||\"Academic Hub Portal\"}catch(e){return\"Academic Hub Portal\"}}function record(force){try{const path=location.pathname||\"/\";const label=getDetailedActivity();const key=path+\"::\"+label;if(!force&&key===last)return;last=key;fetch(\"/api/traffic/section\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({path:path,section:label}),keepalive:true}).catch(function(){})}catch(e){}}window.addEventListener(\"hashchange\",function(){record()});window.addEventListener(\"pageshow\",function(){setTimeout(record,250)});window.addEventListener(\"popstate\",function(){record()});window.addEventListener(\"play\",function(){setTimeout(function(){record(true)},150)},true);window.addEventListener(\"pause\",function(){setTimeout(function(){record(true)},150)},true);document.addEventListener(\"click\",function(e){if(e.target&&e.target.closest&&e.target.closest(\".btn-play-voice,.vpp-btn-pause,.vpp-skip-btn,.subj-tab-btn,#voicePlayBtn,#voiceStopBtn,.welcome-ch-btn,.drawer-subject-modules a,.drawer-subject-header\")){setTimeout(function(){record(true)},350)}},{passive:true});try{const titleEl=document.querySelector(\"title\");if(titleEl&&window.MutationObserver){new MutationObserver(function(){setTimeout(function(){record()},200)}).observe(titleEl,{subtree:true,characterData:true,childList:true})}}catch(e){}setTimeout(record,350);function livePresence(active){try{/* owner-beacon enabled */let id=\"\";try{id=sessionStorage.getItem(\"hub_live_visitor\")||\"\";if(!id){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2);sessionStorage.setItem(\"hub_live_visitor\",id)}}catch(e){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2)}fetch(\"/api/traffic/presence\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({visitorId:id,path:location.pathname||\"/\",section:getDetailedActivity(),active:active!==false}),keepalive:true}).catch(function(){})}catch(e){}}setTimeout(function(){livePresence(true)},400);setInterval(function(){if(!document.hidden)livePresence(true)},25000);document.addEventListener(\"visibilitychange\",function(){if(!document.hidden)livePresence(true)});window.addEventListener(\"pagehide\",function(){livePresence(false)})})();";
+const TRACKER_SCRIPT = "(()=>{let last=\"\";function decode(v){try{return decodeURIComponent(v)}catch(e){return v}}function title(v){return String(v||\"\").replace(/[-_]+/g,\" \").split(\" \").map(function(w){return w?w.charAt(0).toUpperCase()+w.slice(1):\"\"}).join(\" \")}function getDetailedActivity(){try{const path=location.pathname||\"/\";const search=location.search||\"\";const hash=decode((location.hash||\"\").slice(1));const params=new URLSearchParams(search);if(path.indexOf(\"calicut-university-fyugp\")!==-1){const q=params.get(\"quiz\");if(q===\"25\"||q===\"internal-25\")return\"📝 25 Idioms Test (Internal Prep)\";if(q===\"idioms\")return\"📚 Full 59 Idioms Mastery\";return\"🎓 Calicut University FYUGP\";}if(path.indexOf(\"voice-explanation\")!==-1){const playing=document.querySelector(\".chapter-card.playing\");const stickyBar=document.getElementById(\"sticky-audio-bar\");const stickyTitleEl=document.getElementById(\"sticky-title\");const stickyTitle=(stickyTitleEl?stickyTitleEl.textContent:\"\").trim();const hasSticky=stickyBar&&stickyBar.style.display!==\"none\"&&stickyTitle&&stickyTitle.indexOf(\"Playing lecture...\")===-1;if(playing||hasSticky){let t=\"\";if(playing){const ct=playing.querySelector(\".card-title\");if(ct)t=ct.textContent.trim()}if(!t&&hasSticky)t=stickyTitle;if(!t&&document.title&&document.title.indexOf(\"|\")!==-1){t=document.title.split(\"|\")[0].trim()}const isVid=playing&&(playing.querySelector(\"iframe\")||playing.querySelector(\"video\"));const prefix=isVid?\"▶️ Watching: \":\"🎧 Hearing: \";if(t)return(prefix+t).slice(0,110)}const heroSubj=document.getElementById(\"hero-subject-name\");let subj=heroSubj?heroSubj.textContent.trim():\"\";if(subj&&subj.toLowerCase().indexOf(\"loading\")!==-1)subj=\"\";if(!subj){const qSubj=params.get(\"subject\");if(qSubj)subj=title(qSubj)}if(subj){subj=subj.replace(/^[^\\w\\s\\u0D00-\\u0D7F]+/,\"\").trim();return(\"🎧 Voice: \"+subj).slice(0,90)}return\"🎧 Voice Explanations\"}if(path.indexOf(\"study-guide-reader\")!==-1){const badge=document.getElementById(\"activeDocBadge\");let docTitle=badge?badge.textContent.trim():\"\";if(!docTitle||docTitle===\"Study Guide\"){docTitle=params.get(\"title\")||\"\"}if(!docTitle){const f=params.get(\"file\");if(f)docTitle=title(f.split(\"/\").pop().replace(/\\.pdf$/i,\"\"))}if(!docTitle&&document.title){docTitle=document.title.replace(/[·|].*$/,\"\").trim()}let isSpeaking=false;try{isSpeaking=!!(window.speechSynthesis&&window.speechSynthesis.speaking)}catch(e){}const prefix=isSpeaking?\"🔊 Hearing Read-Aloud: \":\"📖 Reading: \";return(prefix+(docTitle||\"Study Guide\")).slice(0,110)}if(path.indexOf(\"test\")!==-1||path.indexOf(\"mcq\")!==-1||path.indexOf(\"quiz\")!==-1){let t=document.title?document.title.replace(/[·|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"📝 \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path.indexOf(\"reading\")!==-1||path.indexOf(\"-pdf\")!==-1||path.indexOf(\"notes\")!==-1||path.endsWith(\".pdf.html\")||path.indexOf(\"Companion\")!==-1||path.indexOf(\"Bilingual\")!==-1){let t=document.title?document.title.replace(/[·|].*$/,\"\").trim():\"\";if(!t||t.toLowerCase().indexOf(\"academic hub\")!==-1){const h1=document.querySelector(\"h1\");if(h1)t=h1.textContent.trim()}return(\"📖 \"+(t||title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")))).slice(0,90)}if(path===\"/\"||path===\"/index.html\"){const labels={top:\"🏠 Overview\",subjects:\"📚 Semester subjects\",tests:\"📝 Practice tests\",\"ai-study\":\"🤖 AI Study Helper\",notices:\"📢 Calicut Univ Notices\",support:\"💬 Support\"};if(labels[hash])return labels[hash];if(hash)return\"🏠 Home · \"+title(hash);return\"🏠 Hub Home\"}if(document.title&&document.title.length>2){const clean=document.title.replace(/[·|].*$/,\"\").trim();if(clean&&clean.toLowerCase().indexOf(\"academic hub\")===-1&&clean.toLowerCase().indexOf(\"loading\")===-1){return clean.slice(0,90)}}return title(path.replace(/^\\//,\"\").replace(/\\.html$/,\"\")).slice(0,90)||\"Academic Hub Portal\"}catch(e){return\"Academic Hub Portal\"}}function record(force){try{const path=(location.pathname||\"/\")+(location.search||\"\");const label=getDetailedActivity();const key=path+\"::\"+label;if(!force&&key===last)return;last=key;fetch(\"/api/traffic/section\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({path:path,section:label}),keepalive:true}).catch(function(){})}catch(e){}}window.addEventListener(\"hashchange\",function(){record()});window.addEventListener(\"pageshow\",function(){setTimeout(record,250)});window.addEventListener(\"popstate\",function(){record()});window.addEventListener(\"play\",function(){setTimeout(function(){record(true)},150)},true);window.addEventListener(\"pause\",function(){setTimeout(function(){record(true)},150)},true);document.addEventListener(\"click\",function(e){if(e.target&&e.target.closest&&e.target.closest(\".btn-play-voice,.vpp-btn-pause,.vpp-skip-btn,.subj-tab-btn,#voicePlayBtn,#voiceStopBtn,.welcome-ch-btn,.drawer-subject-modules a,.drawer-subject-header\")){setTimeout(function(){record(true)},350)}},{passive:true});try{const titleEl=document.querySelector(\"title\");if(titleEl&&window.MutationObserver){new MutationObserver(function(){setTimeout(function(){record()},200)}).observe(titleEl,{subtree:true,characterData:true,childList:true})}}catch(e){}setTimeout(record,350);function livePresence(active){try{/* owner-beacon enabled */let id=\"\";try{id=sessionStorage.getItem(\"hub_live_visitor\")||\"\";if(!id){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2);sessionStorage.setItem(\"hub_live_visitor\",id)}}catch(e){id=\"v-\"+Date.now().toString(36)+\"-\"+Math.random().toString(36).slice(2)+\"-\"+Math.random().toString(36).slice(2)}fetch(\"/api/traffic/presence\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({visitorId:id,path:(location.pathname||\"/\")+(location.search||\"\"),section:getDetailedActivity(),active:active!==false}),keepalive:true}).catch(function(){})}catch(e){}}setTimeout(function(){livePresence(true)},400);setInterval(function(){if(!document.hidden)livePresence(true)},25000);document.addEventListener(\"visibilitychange\",function(){if(!document.hidden)livePresence(true)});window.addEventListener(\"pagehide\",function(){livePresence(false)})})();";
 const OWNER_LIVE_SCRIPT = "(()=>{const count=document.getElementById('hub-live-count');if(!count)return;async function update(){try{const response=await fetch('/api/admin/live-visitors',{cache:'no-store',credentials:'same-origin'});if(response.ok){const data=await response.json();const active=Number(data.active)||0;count.textContent=String(active)}}catch(e){}}update();setInterval(()=>{if(!document.hidden)update()},15000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)update()})})();";
 const MAX_NAME = 32;
 const MAX_MESSAGE = 500;
@@ -3042,9 +3042,7 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
       if (isWww) url.hostname = "academichubfaiz.in";
       return Response.redirect(url.toString(), 301);
     }
-    if (url.pathname === fyugpQuizPath || url.pathname === fyugpQuizPath + "/") {
-      return handleFyugpQuiz(request, env, mockEquals);
-    }
+    
     if (url.pathname === "/api/tts") {
       const tl = url.searchParams.get("tl") || "ml";
       const q = url.searchParams.get("q") || "";
@@ -3296,7 +3294,7 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
       }
     }
 
-    let response = await env.ASSETS.fetch(request);
+    let response = (url.pathname === fyugpQuizPath || url.pathname === fyugpQuizPath + "/") ? await handleFyugpQuiz(request, env, mockEquals) : await env.ASSETS.fetch(request);
     if ((request.method === "GET" || request.method === "HEAD") &&
         response.status === 307 && url.pathname.endsWith(".html")) {
       const location = response.headers.get("Location");
@@ -3388,7 +3386,7 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ip: request.headers.get("CF-Connecting-IP") || "Unavailable",
-          path: url.pathname,
+          path: url.pathname + (url.search || ""),
           country: request.cf?.country || "XX",
           region: request.cf?.region || "",
           city: request.cf?.city || "",
@@ -4216,10 +4214,10 @@ function adminPage(authorized, initialData = null) {
 
 <!-- ULTRA-PREMIUM NAVIGATION TABS -->
 <nav class="nav-tabs" role="tablist">
-  <button class="tab-btn" id="tab-btn-bots" type="button" role="tab" aria-selected="false">
-    <span class="tab-icon">🤖</span>
-    <span class="tab-title">BOTS VISIT</span>
-    <span class="badge-pill orange" id="badge-total-bots">0 BOTS</span>
+  <button class="tab-btn" id="tab-btn-radar" type="button" role="tab" aria-selected="false">
+    <span class="tab-icon">🛰️</span>
+    <span class="tab-title">LIVE RADAR</span>
+    <span class="badge-pill emerald" id="badge-live-tabs">${liveActive} ACTIVE</span>
   </button>
   <button class="tab-btn active" id="tab-btn-geo" type="button" role="tab" aria-selected="true">
     <span class="tab-icon">👥</span>
@@ -4231,35 +4229,35 @@ function adminPage(authorized, initialData = null) {
     <span class="tab-title" style="color:#b45309;font-weight:800;">GOOGLE ANALYTICS</span>
     <span class="badge-pill" id="badge-ga4-status" style="background:#fde68a;color:#92400e;font-weight:800;">GA4 LIVE</span>
   </button>
-  <button class="tab-btn" id="tab-btn-yesterday" type="button" role="tab" aria-selected="false">
-    <span class="tab-icon">⏮️</span>
-    <span class="tab-title">YESTERDAY'S RECAP</span>
-    <span class="badge-pill gold" id="badge-yesterday-views">${yesterdayViews} VIEWS</span>
+  <button class="tab-btn" id="tab-btn-adsense" type="button" role="tab" aria-selected="false" style="border:1.5px solid #10b981;background:#ecfdf5;">
+    <span class="tab-icon">💰</span>
+    <span class="tab-title" style="color:#047857;font-weight:800;">ADSENSE EARNINGS</span>
+    <span class="badge-pill" id="badge-est-rpm" style="background:#a7f3d0;color:#065f46;font-weight:800;">REVENUE AUDIT</span>
   </button>
   <button class="tab-btn" id="tab-btn-lfl" type="button" role="tab" aria-selected="false">
     <span class="tab-icon">⚖️</span>
     <span class="tab-title">LfL ANALYSIS (Ys vs Td)</span>
     <span class="badge-pill blue" id="badge-lfl-growth" style="background:#dbeafe; color:#1d4ed8; font-weight:800;">Ys ➔ Td</span>
   </button>
-  <button class="tab-btn" id="tab-btn-radar" type="button" role="tab" aria-selected="false">
-    <span class="tab-icon">🛰️</span>
-    <span class="tab-title">LIVE RADAR</span>
-    <span class="badge-pill emerald" id="badge-live-tabs">${liveActive} ACTIVE</span>
-  </button>
-    <button class="tab-btn" id="tab-btn-adsense" type="button" role="tab" aria-selected="false" style="border:1.5px solid #10b981;background:#ecfdf5;">
-    <span class="tab-icon">💰</span>
-    <span class="tab-title" style="color:#047857;font-weight:800;">ADSENSE EARNINGS</span>
-    <span class="badge-pill" id="badge-est-rpm" style="background:#a7f3d0;color:#065f46;font-weight:800;">REVENUE AUDIT</span>
-  </button>
-    <button class="tab-btn" id="tab-btn-youtube" type="button" role="tab" aria-selected="false" style="border:1.5px solid #ef4444;background:#fef2f2;">
-    <span class="tab-icon">▶️</span>
-    <span class="tab-title" style="color:#b91c1c;font-weight:800;">YOUTUBE STUDIO</span>
-    <span class="badge-pill" id="badge-yt-vids" style="background:#fecaca;color:#991b1b;font-weight:800;">208 VIDS</span>
-  </button>
   <button class="tab-btn" id="tab-btn-content" type="button" role="tab" aria-selected="false">
     <span class="tab-icon">📊</span>
     <span class="tab-title">LEADERBOARD</span>
     <span class="badge-pill purple" id="badge-total-pages">${popularPages.length}</span>
+  </button>
+  <button class="tab-btn" id="tab-btn-youtube" type="button" role="tab" aria-selected="false" style="border:1.5px solid #ef4444;background:#fef2f2;">
+    <span class="tab-icon">▶️</span>
+    <span class="tab-title" style="color:#b91c1c;font-weight:800;">YOUTUBE STUDIO</span>
+    <span class="badge-pill" id="badge-yt-vids" style="background:#fecaca;color:#991b1b;font-weight:800;">208 VIDS</span>
+  </button>
+  <button class="tab-btn" id="tab-btn-yesterday" type="button" role="tab" aria-selected="false">
+    <span class="tab-icon">⏮️</span>
+    <span class="tab-title">YESTERDAY'S RECAP</span>
+    <span class="badge-pill gold" id="badge-yesterday-views">${yesterdayViews} VIEWS</span>
+  </button>
+  <button class="tab-btn" id="tab-btn-bots" type="button" role="tab" aria-selected="false">
+    <span class="tab-icon">🤖</span>
+    <span class="tab-title">BOTS VISIT</span>
+    <span class="badge-pill orange" id="badge-total-bots">0 BOTS</span>
   </button>
 </nav>
 
@@ -6572,23 +6570,60 @@ details.section-details summary:hover, details.popular-details summary:hover {
 .login-status { margin-top: 12px; font-size: 13px; font-family: var(--font-mono); color: var(--accent-rose); min-height: 18px; }
 
 @media (max-width: 768px) {
-  body { padding: 10px 10px 40px; font-size: 13px; }
-  .hud-header { flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 14px; }
+  body { padding: 8px 8px 48px; font-size: 13px; }
+  .hud-header { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px 14px; border-radius: 12px; }
   .brand-text h1 { font-size: 15px; }
-  .hud-clocks { justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-  .kpi-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .kpi-card { padding: 14px 14px; }
-  .kpi-val { font-size: 24px; }
-  .yesterday-split-grid { grid-template-columns: 1fr; }
-  .nav-tabs { gap: 6px; padding: 6px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .tab-btn { padding: 8px 12px; font-size: 12px; }
-  .station-card { padding: 14px 12px; }
-  .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  table { font-size: 12.5px; }
-  th, td { padding: 9px 10px; }
-  .time-stamp { font-size: 11.5px; color: #1e293b; font-weight: 700; }
-  .location-text { font-size: 12px; color: #1e293b; }
-  .ip-badge { font-size: 11.5px; }
+  .hud-clocks { justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .clock-chip { padding: 5px 9px; font-size: 11px; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+  .kpi-card { padding: 12px 12px; border-radius: 12px; }
+  .kpi-val { font-size: 22px; }
+  .kpi-sub { font-size: 11px; }
+  .yesterday-split-grid { grid-template-columns: 1fr; gap: 12px; }
+  /* STICKY TOUCH-OPTIMIZED DESCENDING NAVIGATION TABS */
+  .nav-tabs {
+    position: sticky;
+    top: 8px;
+    z-index: 100;
+    gap: 6px;
+    padding: 6px 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    background: rgba(240, 249, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid #bae6fd;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(14, 116, 144, 0.12);
+    margin-bottom: 16px;
+  }
+  .nav-tabs::-webkit-scrollbar { height: 3px; }
+  .nav-tabs::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 11.5px;
+    gap: 6px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    border-radius: 8px;
+    min-height: 40px;
+    touch-action: manipulation;
+  }
+  .tab-btn .badge-pill { font-size: 10px; padding: 2px 6px; }
+  .station-card { padding: 14px 10px; border-radius: 12px; }
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  table { font-size: 12px; min-width: 640px; }
+  th, td { padding: 8px 8px; }
+  .time-stamp { font-size: 11px; color: #1e293b; font-weight: 700; }
+  .location-text { font-size: 11.5px; color: #1e293b; }
+  .ip-badge { font-size: 11px; }
+  .module-chip { font-size: 11px; max-width: 140px; }
 }
   `;
 
@@ -6676,6 +6711,7 @@ details.section-details summary:hover, details.popular-details summary:hover {
     function getPathFallbackActivity(path) {
       if (!path || path === '/' || path === '/index.html') return '🏠 Hub Home';
       const p = String(path).toLowerCase();
+      if (p.includes('calicut-university-fyugp')) { if (p.includes('25')) return '📝 25 Idioms Test (Internal Prep)'; if (p.includes('idioms')) return '📚 Full 59 Idioms Mastery'; return '🎓 Calicut University FYUGP'; }
       if (p.includes('voice-explanation')) return '🎧 Voice Explanations';
       if (p.includes('study-guide-reader')) return '📖 Study Guide Reader';
       if (p.includes('ktet-500-mcq-test')) return '📝 KTET 500 MCQ Test';

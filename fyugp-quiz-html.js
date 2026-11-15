@@ -1270,6 +1270,7 @@ for (const tab of document.querySelectorAll("[data-mode]")) {
 }
 render();
 </script>
+<script src="/traffic-tracker.js?v=20261105_act2" defer></script>
 </body>
 </html>`;
 
