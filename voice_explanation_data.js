@@ -1257,7 +1257,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "തത്ത്വചിന്തയിൽ നിന്ന് AI-യിലേക്ക് (Historical Evolution: Philosophy to AI) | Calicut Univ",
             "chapter": "Unit 1.1: Historical Evolution · Aristotle, Leibniz, Boole & Computational Roots",
             "duration": "18:40",
-            "youtubeId": "6VWW49UMoks",
+            "youtubeId": "1Va07j8OQSA",
             "language": "Malayalam",
             "studyPoints": [
               "തത്ത്വചിന്താപരമായ വേരുകൾ: അരിസ്റ്റോട്ടിലിന്റെ ഔപചാരിക യുക്തിയും സിലോജിസവും (Formal Logic & Syllogism) എങ്ങനെ കമ്പ്യൂട്ടേഷന്റെ അടിത്തറയായി.",
@@ -1266,7 +1266,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "മെക്കാനിക്കൽ കമ്പ്യൂട്ടേഷന്റെ ഉദയം: ചാൾസ് ബാബേജിന്റെ അനലിറ്റിക്കൽ എഞ്ചിനും അഡാ ലവ്‌ലേസിന്റെ ആദ്യ അൽഗോരിതവും."
             ],
             "examTip": "Calicut University FYUGP ചോദ്യം: അരിസ്റ്റോട്ടിൽ മുതൽ ബൂൾ വരെയുള്ള തത്ത്വചിന്തകർ ആധുനിക AI-യുടെ വികാസത്തിന് നൽകിയ സംഭാവനകൾ വിലയിരുത്തുക.",
-            "thumbnail": "https://i.ytimg.com/vi/6VWW49UMoks/hqdefault.jpg",
+            "thumbnail": "https://i.ytimg.com/vi/1Va07j8OQSA/hqdefault.jpg",
             "malayalam_cc": true
           },
           {
