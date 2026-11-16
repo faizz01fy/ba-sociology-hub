@@ -3398,9 +3398,9 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
       })).catch(() => {});
       ctx.waitUntil(task);
 
-      const isUtilityPath = /^\/(?:privacy-policy|terms|disclaimer|contact|about|study-guide-reader|[a-z0-9-]+-lms|sociology-answer-evaluation|voice-explanation|voice|econ_voice|ai-pdf|mal-pdf|psc-cracker)(?:\.html)?$/i.test(url.pathname);
+      const isUtilityPath = /^\/(?:psc-cracker)(?:\.html)?$/i.test(url.pathname);
       
-      const canLoadAds = !isUtilityPath && !/test|mock|(?:^|\/)[^/]+-without-timer(?:\.html)?\/?$/i.test(url.pathname);
+      const canLoadAds = !isUtilityPath;
 
       const isEU = request.cf?.isEUCountry === "1" || request.cf?.isEUCountry === true;
       const euCountries = new Set([
