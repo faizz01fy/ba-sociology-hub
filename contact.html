@@ -339,22 +339,34 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
           <h2 style="font-size:22px; font-weight:800; color:#0f172a; margin-bottom:12px;">Get in Touch Directly</h2>
           <p style="color:#64748b; font-size:14px; line-height:1.6; margin-bottom:24px;">Academic Hub provides direct communication channels for university students, faculty, and content contributors. For instant assistance with study guides or revision notes, use our direct links below:</p>
 
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px; margin-bottom:24px;">
-            <a href="mailto:support@academichubfaiz.in?subject=Academic%20Hub%20Inquiry" aria-label="Send email to Academic Hub Editorial Team" style="display:flex; align-items:center; gap:14px; padding:18px 22px; border-radius:14px; background:#eff6ff; border:1.5px solid #bfdbfe; text-decoration:none; color:#1e40af; transition:transform 0.15s, box-shadow 0.15s; min-height:64px;">
-              <span style="font-size:30px;" aria-hidden="true">✉️</span>
-              <div>
-                <strong style="display:block; font-size:16px; color:#1e3a8a; font-weight:700;">Email Editorial Team</strong>
-                <span style="font-size:13.5px; color:#2563eb; font-weight:500;">support@academichubfaiz.in</span>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px; margin-bottom:24px;">
+            <div style="padding:20px; border-radius:14px; background:#eff6ff; border:1.5px solid #bfdbfe; display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <span style="font-size:30px;" aria-hidden="true">✉️</span>
+                <div>
+                  <strong style="display:block; font-size:16px; color:#1e3a8a; font-weight:700;">Email Editorial Desk</strong>
+                  <span style="font-size:13.5px; color:#2563eb; font-weight:600;">support@academichubfaiz.in</span>
+                </div>
               </div>
-            </a>
+              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=support@academichubfaiz.in&su=Academic%20Hub%20Inquiry" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:5px; background:#1e40af; color:#ffffff; padding:7px 14px; border-radius:8px; font-size:13px; font-weight:600; text-decoration:none;">Open in Gmail ↗</a>
+                <a href="mailto:support@academichubfaiz.in?subject=Academic%20Hub%20Inquiry" style="display:inline-flex; align-items:center; gap:5px; background:#dbeafe; color:#1e40af; padding:7px 12px; border-radius:8px; font-size:13px; font-weight:600; text-decoration:none;">Default App</a>
+                <button type="button" onclick="copyEmailAddr(this)" style="display:inline-flex; align-items:center; gap:4px; background:#ffffff; color:#334155; border:1px solid #cbd5e1; padding:7px 12px; border-radius:8px; font-size:13px; font-weight:600; cursor:pointer;">📋 Copy</button>
+              </div>
+            </div>
 
-            <a href="https://wa.me/919496102026?text=Hi%20Academic%20Hub%20Team%2C%20I%20have%20an%20inquiry%20regarding%20study%20notes" target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp live chat with student support" style="display:flex; align-items:center; gap:14px; padding:18px 22px; border-radius:14px; background:#f0fdf4; border:1.5px solid #bbf7d0; text-decoration:none; color:#166534; transition:transform 0.15s, box-shadow 0.15s; min-height:64px;">
-              <span style="font-size:30px;" aria-hidden="true">💬</span>
-              <div>
-                <strong style="display:block; font-size:16px; color:#14532d; font-weight:700;">Chat on WhatsApp</strong>
-                <span style="font-size:13.5px; color:#16a34a; font-weight:500;">Student Helpline · Live Chat</span>
+            <div style="padding:20px; border-radius:14px; background:#f0fdf4; border:1.5px solid #bbf7d0; display:flex; flex-direction:column; justify-content:space-between; gap:12px;">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <span style="font-size:30px;" aria-hidden="true">💬</span>
+                <div>
+                  <strong style="display:block; font-size:16px; color:#14532d; font-weight:700;">WhatsApp Support</strong>
+                  <span style="font-size:13.5px; color:#16a34a; font-weight:600;">Student Helpline · Live Chat</span>
+                </div>
               </div>
-            </a>
+              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;">
+                <a href="https://wa.me/919496102026?text=Hi%20Academic%20Hub%20Team%2C%20I%20have%20an%20inquiry%20regarding%20study%20notes" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px; background:#16a34a; color:#ffffff; padding:7px 18px; border-radius:8px; font-size:13px; font-weight:700; text-decoration:none;">Start WhatsApp Chat ↗</a>
+              </div>
+            </div>
           </div>
 
           <div style="background:#f8fafc; border-radius:12px; padding:16px 20px; border-left:4px solid #3b82f6; font-size:13px; color:#475569; line-height:1.6;">
@@ -435,6 +447,18 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
   </footer>
 
   <script>
+    function copyEmailAddr(btn) {
+      navigator.clipboard.writeText('support@academichubfaiz.in').then(function() {
+        var orig = btn.innerHTML;
+        btn.innerHTML = "✓ Copied!";
+        btn.style.color = "#16a34a";
+        setTimeout(function() {
+          btn.innerHTML = orig;
+          btn.style.color = "#334155";
+        }, 2000);
+      });
+    }
+
     function handleContactSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
@@ -446,7 +470,6 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
       if (!name || !email || !message) return;
 
-      // Construct genuine mailto URL
       const subject = encodeURIComponent("[Academic Hub - " + category + "] Message from " + name);
       const body = encodeURIComponent(
         "Sender Name: " + name + "\n" +
@@ -455,14 +478,15 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
         "Message:\n" + message
       );
       const mailtoUrl = "mailto:support@academichubfaiz.in?subject=" + subject + "&body=" + body;
+      const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=support@academichubfaiz.in&su=" + subject + "&body=" + body;
 
-      // Provide immediate delivery options
       statusMsg.className = "status-msg success";
-      statusMsg.innerHTML = "<strong>Opening your email app to send...</strong><br>If your email app didn't open automatically, <a href='" + mailtoUrl + "' style='color:#2563eb; font-weight:bold; text-decoration:underline;'>click here to send directly</a> or connect via <a href='https://wa.me/919496102026?text=" + encodeURIComponent("Hi Academic Hub, my name is " + name + ". " + message) + "' target='_blank' rel='noopener' style='color:#16a34a; font-weight:bold; text-decoration:underline;'>WhatsApp Support</a>.";
+      statusMsg.innerHTML = "<strong>Message Drafted!</strong> Choose how to send:<br><div style='display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;'>" +
+        "<a href='" + gmailUrl + "' target='_blank' rel='noopener' style='display:inline-flex; align-items:center; gap:6px; background:#1e40af; color:#fff; padding:8px 16px; border-radius:8px; font-weight:700; text-decoration:none;'>Open in Gmail Web ↗</a>" +
+        "<a href='" + mailtoUrl + "' style='display:inline-flex; align-items:center; gap:6px; background:#e0e7ff; color:#1e40af; padding:8px 14px; border-radius:8px; font-weight:700; text-decoration:none;'>Default Mail App</a>" +
+        "<a href='https://wa.me/919496102026?text=" + encodeURIComponent("Hi Academic Hub, my name is " + name + ". " + message) + "' target='_blank' rel='noopener' style='display:inline-flex; align-items:center; gap:6px; background:#16a34a; color:#fff; padding:8px 16px; border-radius:8px; font-weight:700; text-decoration:none;'>Send on WhatsApp</a></div>";
       
-      // Trigger the mail client
-      window.location.href = mailtoUrl;
-      submitBtn.innerHTML = "<span>Email Drafted</span> <span aria-hidden='true'>✓</span>";
+      submitBtn.innerHTML = "<span>Inquiry Ready</span> <span aria-hidden='true'>✓</span>";
     }
   </script>
 <script id="hub-universal-protection-script">
