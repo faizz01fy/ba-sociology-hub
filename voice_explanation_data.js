@@ -1037,8 +1037,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "സാമൂഹികവൽക്കരണവും നിയന്ത്രണവും | Sociology Mod 3 Part 3 covering page - 1 to 77",
             "chapter": "Socialization & Social Control · Cooley, Mead, Freud, Stages, Agencies & Order (Pages 1–77)",
             "duration": "30:52",
-            "youtubeId": "LNBMk2WUnF8",
-            "thumbnail": "https://i.ytimg.com/vi/LNBMk2WUnF8/hqdefault.jpg",
+            "youtubeId": "r0jYTxi5Das",
+            "thumbnail": "https://i.ytimg.com/vi/r0jYTxi5Das/hqdefault.jpg",
             "language": "Malayalam",
             "malayalam_cc": true,
             "studyPoints": [
