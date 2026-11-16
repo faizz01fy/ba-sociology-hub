@@ -33,7 +33,7 @@ const mockExamPath = '/sociology-theory-mock';
 const mockCookie = '__Host-hub_mock';
 
 async function mockProof(env) {
-  const secret = env.MOCK_EXAM_PASSWORD || '1234';
+  const secret = (env.MOCK_EXAM_PASSWORD || '010101').trim();
   const adminSecret = (env.ADMIN_PASSWORD && env.ADMIN_PASSWORD.length >= 16) ? env.ADMIN_PASSWORD : 'academic-hub-mock-secret-2026';
   return digest('mock-preview:v1:' + adminSecret + ':' + secret);
 }
@@ -69,9 +69,10 @@ async function mockPreview(request, env) {
       }
       password = new URLSearchParams(await request.text()).get('password');
     } catch { return new Response(null,{status:400,headers}); }
-    const targetPassword = env.MOCK_EXAM_PASSWORD || '1234';
+    const targetPassword = (env.MOCK_EXAM_PASSWORD || '010101').trim();
     const proof = await mockProof(env);
-    if (proof && (mockEquals(password, targetPassword) || mockEquals(password, '1234'))) {
+    const entered = (password || '').trim();
+    if (proof && (mockEquals(entered, targetPassword) || mockEquals(entered, '010101'))) {
       headers.set('Location',mockExamPath);
       headers.set('Set-Cookie',mockCookie + '=' + proof + '; Path=/; Secure; HttpOnly; SameSite=Strict');
       return new Response(null,{status:303,headers});
@@ -90,7 +91,7 @@ async function mockPreview(request, env) {
     return privateAsset;
   }
   headers.set('Content-Type','text/html; charset=utf-8');
-  const error = request.method === 'POST' ? '<div class="error-msg" role="alert">Incorrect password. Try entering 1234. <span lang="ml">പാസ്‌വേഡ് തെറ്റാണ്. 1234 നൽകുക.</span></div>' : '';
+  const error = request.method === 'POST' ? '<div class="error-msg" role="alert">Incorrect password. Try entering 010101. <span lang="ml">പാസ്‌വേഡ് തെറ്റാണ്. 010101 നൽകുക.</span></div>' : '';
   const unlockHtml = `<!doctype html>
 <html lang="en">
 <head>
@@ -122,7 +123,7 @@ async function mockPreview(request, env) {
     ${error}
     <form method="post" action="${mockExamPath}">
       <label for="password" style="font-weight:700;font-size:13.5px;color:#1e293b">Access Password · <span lang="ml">പാസ്‌വേഡ്</span></label>
-      <input type="password" id="password" name="password" inputmode="numeric" autocomplete="current-password" maxlength="64" placeholder="Enter password (e.g. 1234)" required>
+      <input type="password" id="password" name="password" inputmode="numeric" autocomplete="current-password" maxlength="64" placeholder="Enter password (e.g. 010101)" required>
       <button type="submit">Unlock Mock Exam · <span lang="ml">തുറക്കുക</span></button>
     </form>
     <a class="back-link" href="/#tests">← Back to Practice Tests</a>

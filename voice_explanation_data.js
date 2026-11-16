@@ -997,6 +997,42 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 03: INDIVIDUAL AND SOCIETY (FYUGP SOU1CJ101)",
         "videos": [
           {
+            "chapterNumber": "Sociology Mod 3 Part 1",
+            "title": "സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ | Sociology Mod 3 Part 1 covering page - 1 to 39",
+            "chapter": "Social Interaction & Social Processes · Cooperation, Competition, Conflict, Accommodation & Assimilation (Pages 1–39)",
+            "duration": "35:17",
+            "youtubeId": "Fxa_y3n5_nc",
+            "thumbnail": "https://i.ytimg.com/vi/Fxa_y3n5_nc/hqdefault.jpg",
+            "language": "Malayalam",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "സാമൂഹിക പ്രതിപ്രവർത്തനത്തിന്റെ അടിസ്ഥാനങ്ങൾ: സമ്പർക്കത്തിന്റെ രണ്ട് രൂപങ്ങൾ (Contact in Time & Space), ആശയവിനിമയത്തിന്റെ 3 ഘട്ടങ്ങൾ (Sensory, Emotional & Intellectual).",
+              "സഹകരണം (Cooperation): ലാറ്റിൻ പദോത്പത്തി (Co & Operari), മക്കൈവർ & പേജിന്റെ പ്രത്യക്ഷ-പരോക്ഷ സഹകരണങ്ങൾ, എ.ഡബ്ല്യു. ഗ്രീനിന്റെ പ്രൈമറി, സെക്കൻഡറി & ടെർഷ്യറി സഹകരണങ്ങൾ.",
+              "മത്സരം (Competition): വ്യക്തിരഹിതവും തുടർച്ചയായതുമായ സ്വഭാവം, സാമ്പത്തിക-സാമൂഹിക മത്സരങ്ങൾ, പോസിറ്റീവ് ധർമ്മങ്ങളും വ്യക്തിഗത സമ്മർദ്ദങ്ങളും.",
+              "സാമൂഹിക സംഘർഷം (Conflict): ഉത്ഭവ കാരണങ്ങൾ, ഗിള്ളിൻ & ഗിള്ളിന്റെ 5 സംഘർഷ രൂപങ്ങൾ, ലൂയിസ് കോസറുടെ സേഫ്റ്റി വാൽവ് സിദ്ധാന്തവും ആന്തരിക ഐക്യവും.",
+              "പൊരുത്തപ്പെടലും (Accommodation) സ്വാംശീകരണവും (Assimilation): കോംപ്രമൈസ്, ആർബിട്രേഷൻ, ടോളറേഷൻ, സബോർഡിനേഷൻ, കൂടാതെ 2-മാർക്ക്, 6-മാർക്ക്, 15-മാർക്ക് യൂണിവേഴ്സിറ്റി പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ."
+            ],
+            "examTip": "Calicut University 15-മാർക്ക് മാസ്റ്റർ ചോദ്യം: സാമൂഹിക പ്രതിപ്രവർത്തനം നിർവചിച്ച് സഹകരണം, മത്സരം, സംഘർഷം, പൊരുത്തപ്പെടൽ, സ്വാംശീകരണം എന്നീ അഞ്ച് പ്രക്രിയകൾ ഉദാഹരണസഹിതം വിശകലനം ചെയ്യുക."
+          },
+          {
+            "chapterNumber": "Sociology Mod 3 Part 2",
+            "title": "സാമൂഹിക ഗ്രൂപ്പുകൾ | Sociology Mod 3 Part 2 covering page - 1 to 34",
+            "chapter": "Social Groups & Structure · Primary & Secondary Groups, In-Group & Out-Group, Reference Groups (Pages 1–34)",
+            "duration": "29:10",
+            "youtubeId": "uqrTIZNOBtE",
+            "thumbnail": "https://i.ytimg.com/vi/uqrTIZNOBtE/hqdefault.jpg",
+            "language": "Malayalam",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "സാമൂഹിക ഗ്രൂപ്പ് (Social Group): പരസ്പര സാമൂഹിക ഇടപെടലിലൂടെയും (Reciprocal interaction) പൊതുലക്ഷ്യങ്ങളിലൂടെയും പരസ്പരം സ്വാധീനിക്കുന്ന വ്യക്തികളുടെ കൂട്ടായ്മ.",
+              "സി.എച്ച്. കൂലിയുടെ പ്രാഥമിക ഗ്രൂപ്പ് സിദ്ധാന്തം (Primary Groups - 1909): കുടുംബം, കളിസംഘങ്ങൾ, അയൽപക്കം - മുഖാമുഖ സമ്പർക്കവും ആഴത്തിലുള്ള സഹകരണവുമുള്ള കൂട്ടായ്മകൾ.",
+              "ദ്വിതീയ ഗ്രൂപ്പുകൾ (Secondary Groups): ഔപചാരികവും കാര്യസാധ്യത്തിനായുള്ള പ്രത്യേക താൽപ്പര്യ ഗ്രൂപ്പുകളും (Special Interest Groups), പ്രാഥമിക-ദ്വിതീയ ഗ്രൂപ്പുകളുടെ 15-മാർക്ക് താരതമ്യം.",
+              "ഡബ്ല്യു.ജി. സാംനറുടെ ഇൻ-ഗ്രൂപ്പും ഔട്ട്-ഗ്രൂപ്പും (Folkways - 1906): ഞങ്ങൾ (We-Group) vs അവർ (They-Group), ആന്തരിക ഐക്യവും എത്‌നോസെൻട്രിസവും (Ethnocentrism).",
+              "റഫറൻസ് ഗ്രൂപ്പുകൾ (Reference Groups): ഹെർബർട്ട് ഹൈമാൻ, മുസാഫർ ഷെരീഫ്, കൂടാതെ റോബർട്ട് കെ. മെർട്ടന്റെ ആന്റിസിപ്പേറ്ററി സോഷ്യലൈസേഷനും റിലേറ്റീവ് ഡിപ്രൈവേഷനും."
+            ],
+            "examTip": "Calicut University 15-മാർക്ക് മാസ്റ്റർ ചോദ്യം: സാമൂഹിക ഗ്രൂപ്പ് നിർവചിച്ച് സി.എച്ച്. കൂലിയുടെ പ്രാഥമിക-ദ്വിതീയ ഗ്രൂപ്പുകളും സാംനറുടെ ഇൻ-ഔട്ട് ഗ്രൂപ്പുകളും താരതമ്യം ചെയ്ത് വ്യക്തിത്വ വികാസത്തിലുള്ള പങ്ക് വിശദീകരിക്കുക."
+          },
+          {
             "chapterNumber": "Chapter 03",
             "title": "സമൂഹം നമ്മളെ മനുഷ്യരാക്കുന്നു (How Society Makes Us Human) | Calicut Univ",
             "chapter": "Module 03 · Unit 3.3 · നിർവ്വചനങ്ങൾ, 11 സവിശേഷതകൾ, അമല-കമല, 8 തരങ്ങൾ & LMS MCQs",
@@ -1165,7 +1201,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "thumbnail": "https://i.ytimg.com/vi/QidpySg9v80/hqdefault.jpg",
             "malayalam_cc": true
           }
-        ]
+        ],
+        "totalVideos": 12
       },
       {
         "moduleName": "MODULE 04: SOCIOLOGY AND SOCIETY (FYUGP SOU1CJ101)",
@@ -1240,7 +1277,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 21
+    "totalVideos": 24
   },
   "philosophy-of-ai": {
     "name": "Philosophy of Artificial Intelligence",
