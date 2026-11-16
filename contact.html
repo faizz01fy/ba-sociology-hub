@@ -264,29 +264,6 @@
       nav { gap: 12px; }
     }
   </style>
-<style id="hub-universal-protection">
-*, *::before, *::after {
-  -webkit-touch-callout: none !important;
-  -webkit-user-select: none !important;
-  -khtml-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
-}
-img {
-  -webkit-user-drag: none !important;
-  user-drag: none !important;
-}
-@media print {
-  html, body {
-    display: none !important;
-    visibility: hidden !important;
-  }
-}
-a[download], button[download], [download], .btn-download, .download, #downloadBtn, #saveBtn, .save {
-  display: none !important;
-}
-</style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6526381938888583" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -321,7 +298,10 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
           <span class="contact-card-icon" aria-hidden="true">✉️</span>
           <h3>Official Email Desk</h3>
           <p>For detailed queries, academic collaborations, and study material corrections.</p>
-          <a class="btn-link" href="mailto:support@academichubfaiz.in" aria-label="Send email to support@academichubfaiz.in">support@academichubfaiz.in ↗</a>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:10px;">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=support@academichubfaiz.in&su=Academic%20Hub%20Inquiry" target="_blank" rel="noopener noreferrer" style="background:#1e40af; color:#fff; padding:7px 14px; border-radius:8px; text-decoration:none; font-size:13px; font-weight:700;">Open Gmail ↗</a>
+            <button type="button" onclick="copyEmailAddr(this)" style="background:#ffffff; color:#18342c; border:1.5px solid var(--line); padding:6px 12px; border-radius:8px; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s;">📋 Copy Email</button>
+          </div>
         </div>
         <div class="contact-card">
           <span class="contact-card-icon" aria-hidden="true">⏱️</span>
@@ -448,15 +428,47 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
   <script>
     function copyEmailAddr(btn) {
-      navigator.clipboard.writeText('support@academichubfaiz.in').then(function() {
-        var orig = btn.innerHTML;
+      const email = 'support@academichubfaiz.in';
+      const orig = btn.innerHTML;
+
+      function showSuccess() {
         btn.innerHTML = "✓ Copied!";
         btn.style.color = "#16a34a";
+        btn.style.background = "#dcfce7";
+        btn.style.borderColor = "#86efac";
         setTimeout(function() {
           btn.innerHTML = orig;
-          btn.style.color = "#334155";
-        }, 2000);
-      });
+          btn.style.color = "";
+          btn.style.background = "";
+          btn.style.borderColor = "";
+        }, 2200);
+      }
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(showSuccess).catch(function() {
+          fallbackCopy(email);
+        });
+      } else {
+        fallbackCopy(email);
+      }
+
+      function fallbackCopy(text) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        ta.style.top = "-9999px";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        try {
+          document.execCommand('copy');
+          showSuccess();
+        } catch (e) {
+          prompt("Copy this email address:", text);
+        }
+        document.body.removeChild(ta);
+      }
     }
 
     function handleContactSubmit(e) {
@@ -489,24 +501,5 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
       submitBtn.innerHTML = "<span>Inquiry Ready</span> <span aria-hidden='true'>✓</span>";
     }
   </script>
-<script id="hub-universal-protection-script">
-(function() {
-  window.addEventListener('contextmenu', function(e) { e.preventDefault(); e.stopPropagation(); return false; }, true);
-  window.addEventListener('keydown', function(e) {
-    var k = e.key ? e.key.toLowerCase() : '';
-    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'a', 'x'].indexOf(k) !== -1) {
-      e.preventDefault(); e.stopPropagation(); return false;
-    }
-    if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].indexOf(k) !== -1)) {
-      e.preventDefault(); e.stopPropagation(); return false;
-    }
-  }, true);
-  window.addEventListener('dragstart', function(e) { e.preventDefault(); return false; }, true);
-  window.addEventListener('copy', function(e) { e.preventDefault(); return false; }, true);
-  window.addEventListener('cut', function(e) { e.preventDefault(); return false; }, true);
-  window.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, true);
-  document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; }, true);
-})();
-</script>
 </body>
 </html>
