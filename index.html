@@ -15158,12 +15158,10 @@ if(subject==='Arabic') return modules([
 
       }
 
-      if(module.items.length===1 && module.items[0] && module.items[0].href) {
-
-        selectModuleItem(subject,medium,module,moduleIndex,0);
-
+      const firstValidIdx = module.items ? module.items.findIndex(item => item && (item.href || item.chapter)) : -1;
+      if (firstValidIdx >= 0) {
+        selectModuleItem(subject, medium, module, moduleIndex, firstValidIdx);
         return;
-
       }
 
       moduleContent.replaceChildren();
@@ -15332,16 +15330,16 @@ if(subject==='Arabic') return modules([
 
         .map(entry=>entry.index);
 
-      // Sort all modules in descending order (highest module down to lowest: Mod 5 -> Mod 4 -> Mod 3 -> Mod 2 -> Mod 1, followed by Syllabus)
+      // Sort all modules in ascending order (Mod 1 -> Mod 2 -> Mod 3 -> Mod 4 -> Mod 5, followed by Syllabus)
       availableModuleIndexes.sort((a, b) => {
         const nameA = String(modules[a]?.name || '');
         const nameB = String(modules[b]?.name || '');
         const numA = parseInt((nameA.match(/module\s*(\d+)/i) || [])[1] || '0', 10);
         const numB = parseInt((nameB.match(/module\s*(\d+)/i) || [])[1] || '0', 10);
-        if (numA && numB) return numB - numA; // Descending: 5, 4, 3, 2, 1
+        if (numA && numB) return numA - numB; // Ascending: 1, 2, 3, 4, 5
         if (numA && !numB) return -1;
         if (!numA && numB) return 1;
-        return b - a;
+        return a - b;
       });
 
       const defaultGuideModule = (availableModuleIndexes[0] ?? 0);
