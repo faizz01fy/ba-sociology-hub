@@ -849,6 +849,19 @@
     #fastNativeBtn, .fast-native-btn { display: none !important; pointer-events: none !important; }
     * { -webkit-touch-callout: none !important; }
 
+
+    .sr-only, .reader-page-title {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
 </style>
 
 <style id="sgr-pulse-nav-styles">
@@ -2355,27 +2368,22 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
     // Unified Fullscreen Controller (Hardware Fullscreen + Mobile Immersive Theater)
     function toggleFullscreenMode() {
       const doc = document;
+      const root = doc.documentElement;
       const isNativeFull = !!(doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement);
-      const isTheater = document.body.classList.contains('theater-fullscreen');
 
-      if (!isNativeFull && !isTheater) {
-        const root = doc.documentElement;
+      if (!isNativeFull) {
+        document.body.classList.add('theater-fullscreen', 'is-fullscreen');
+        document.documentElement.classList.add('theater-fullscreen', 'is-fullscreen');
+        updateFsUI(true);
         const req = root.requestFullscreen || root.webkitRequestFullscreen || root.mozRequestFullScreen || root.msRequestFullscreen;
         if (req) {
-          req.call(root).catch(() => {
-            document.body.classList.add('theater-fullscreen');
-            updateFsUI(true);
-          });
-        } else {
-          document.body.classList.add('theater-fullscreen');
-          updateFsUI(true);
+          req.call(root).catch(() => {});
         }
       } else {
-        if (isNativeFull) {
-          const exit = doc.exitFullscreen || doc.webkitExitFullscreen || doc.mozCancelFullScreen || doc.msExitFullscreen;
-          if (exit) exit.call(doc).catch(() => {});
-        }
-        document.body.classList.remove('theater-fullscreen');
+        const exit = doc.exitFullscreen || doc.webkitExitFullscreen || doc.mozCancelFullScreen || doc.msExitFullscreen;
+        if (exit) exit.call(doc).catch(() => {});
+        document.body.classList.remove('theater-fullscreen', 'is-fullscreen');
+        document.documentElement.classList.remove('theater-fullscreen', 'is-fullscreen');
         updateFsUI(false);
       }
     }
@@ -2407,17 +2415,25 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
     if (el('mobileFullscreenBtn')) el('mobileFullscreenBtn').onclick = toggleFullscreenMode;
     if (el('openExternalBtn')) el('openExternalBtn').onclick = () => window.open(location.href, '_blank');
 
-    // Auto-maximize on first user gesture when fullscreen parameter or reading file is loaded
+    // Auto-maximize on user gesture (click, touchend, pointerup)
     const tryMaximizeOnGesture = () => {
-      const isTheater = document.body.classList.contains('theater-fullscreen') || document.documentElement.classList.contains('theater-fullscreen');
-      if (isTheater && !document.fullscreenElement && !document.webkitFullscreenElement) {
+      const isNativeFull = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement);
+      if (!isNativeFull) {
         const root = document.documentElement;
         const req = root.requestFullscreen || root.webkitRequestFullscreen || root.mozRequestFullScreen || root.msRequestFullscreen;
-        if (req) req.call(root).catch(() => {});
+        if (req) {
+          req.call(root).then(() => {
+            document.body.classList.add('theater-fullscreen', 'is-fullscreen');
+            document.documentElement.classList.add('theater-fullscreen', 'is-fullscreen');
+            updateFsUI(true);
+            ['click', 'touchend', 'pointerup'].forEach(evt => window.removeEventListener(evt, tryMaximizeOnGesture));
+          }).catch(() => {});
+        }
       }
     };
-    window.addEventListener('click', tryMaximizeOnGesture, { once: true, passive: true });
-    window.addEventListener('touchstart', tryMaximizeOnGesture, { once: true, passive: true });
+    window.addEventListener('click', tryMaximizeOnGesture, { passive: true });
+    window.addEventListener('touchend', tryMaximizeOnGesture, { passive: true });
+    window.addEventListener('pointerup', tryMaximizeOnGesture, { passive: true });
 
     // Resize listener (guards against mobile address-bar resize & pinch jitter)
     let resizeTimer;

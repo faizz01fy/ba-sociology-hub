@@ -1227,6 +1227,23 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 04: SOCIOLOGY AND SOCIETY (FYUGP SOU1CJ101)",
         "videos": [
           {
+            "chapterNumber": "Sociology Mod 4 Part 1",
+            "title": "സമൂഹത്തിന്റെ സ്വഭാവവും പരിണാമവും | Sociology Mod 4 Part 1 covering page - 1 to 25",
+            "chapter": "Society: Characteristics, Human vs Animal & Evolutionary Types (Pages 1–25)",
+            "duration": "28:21",
+            "youtubeId": "zIHPGuYG3gI",
+            "thumbnail": "https://i.ytimg.com/vi/zIHPGuYG3gI/hqdefault.jpg",
+            "language": "Malayalam",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "സമൂഹം (Society): 'സോഷ്യസ്' (Socius) എന്ന ലാറ്റിൻ പദത്തിൽ നിന്ന്; സങ്കീർണ്ണമായ സാമൂഹിക ബന്ധങ്ങളുടെ എപ്പോഴും മാറിക്കൊണ്ടിരിക്കുന്ന ഒരു വലക്കണ്ണി (MacIver & Page).",
+              "സമൂഹത്തിന്റെ അടിസ്ഥാന സവിശേഷതകൾ: സമാനതയും വ്യത്യാസവും (Likeness & Difference), സഹകരണവും സംഘർഷവും (Cooperation & Conflict), പരസ്പരാശ്രയത്വവും തൊഴിൽ വിഭജനവും (Division of Labour), അമൂർത്തത (Abstract Nature).",
+              "മനുഷ്യ സമൂഹവും മൃഗ സമൂഹവും: സഹജവാസനകൾക്ക് (Instincts) പകരം പഠിച്ചെടുത്ത പ്രതീകാത്മക സംസ്കാരത്തിലും (Culture) ഭാഷയിലുമാണ് മനുഷ്യ സമൂഹം നിലനിൽക്കുന്നത്.",
+              "പരിണാമ ഘട്ടങ്ങൾ: കാർഷിക സമൂഹം (Agrarian - കലപ്പ, ഭൂപ്രഭു, കുടിയാൻ, കൂട്ടുകുടുംബം), വ്യാവസായിക സമൂഹം (Industrial - ഫാക്ടറി, കൂട്ട ഉൽപ്പാദനം, ബ്യൂറോക്രസി, അണുകുടുംബം, വർഗ്ഗ സംഘർഷം), വ്യാവസായികാനന്തര സമൂഹം (Post-Industrial - ഡാനിയൽ ബെൽ, അറിവ് സമ്പദ്‌വ്യവസ്ഥ, സേവനമേഖല, ആഗോളവൽക്കരണം)."
+            ],
+            "examTip": "Calicut University 15-മാർക്ക് മാസ്റ്റർ ചോദ്യങ്ങൾ: (1) സമൂഹത്തെ നിർവചിച്ച് മക്കൈവറുടെ അടിസ്ഥാന സവിശേഷതകൾ വിശദീകരിക്കുക; (2) കാർഷിക, വ്യാവസായിക, വ്യാവസായികാനന്തര സമൂഹങ്ങളുടെ സമ്പദ്‌വ്യവസ്ഥ, സാങ്കേതികവിദ്യ, സാമൂഹിക ഘടന എന്നിവ താരതമ്യം ചെയ്യുക."
+          },
+          {
             "chapterNumber": "Chapter 4.1",
             "title": "സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics & Evolution) | Calicut Univ",
             "chapter": "Society · Characteristics & Types: Agrarian, Industrial & Post-Industrial (സമൂഹത്തിന്റെ പരിണാമം)",
@@ -1296,7 +1313,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 24
+    "totalVideos": 26
   },
   "philosophy-of-ai": {
     "name": "Philosophy of Artificial Intelligence",

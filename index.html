@@ -15304,6 +15304,19 @@ if(subject==='Arabic') return modules([
 
           stopChapterBlinking();
 
+          const isAlreadyActive = moduleDialog.dataset.activeItemIndex === String(itemIndex) && moduleDialog.dataset.activeModuleIndex === String(moduleIndex);
+          if (isAlreadyActive) {
+            const item = module.items && module.items[itemIndex];
+            if (item && item.href) {
+              const isLms = moduleDialog.dataset.isLms === 'true' && moduleDialog.dataset.readingOnly !== 'true' && moduleDialog.dataset.isMcqPdf !== 'true';
+              const tabParam = isLms ? '&tab=lms' : (moduleDialog.dataset.readingOnly === 'true' ? '&tab=study_guide' : '&tab=mcq');
+              const isDirectHtml = item.href && (item.href.endsWith('.html') || item.href.includes('.html?') || item.embed === false || item.href.includes('-html'));
+              const rUrl = isDirectHtml ? item.href : ('study-guide-reader.html?file=' + encodeURIComponent(decodeURIComponent(item.href.split('#')[0])) + tabParam + '&fullscreen=1');
+              window.open(rUrl, '_blank');
+              return;
+            }
+          }
+
           selectModuleItem(subject,medium,module,moduleIndex,itemIndex);
 
         });

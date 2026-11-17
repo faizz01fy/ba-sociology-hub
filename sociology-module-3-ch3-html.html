@@ -1967,25 +1967,21 @@
         if (exit) exit.call(document).catch(() => {});
       }
     }
-    // Auto-maximize on first touch or click
-    window.addEventListener('click', function tryAutoMax() {
+    // Auto-maximize on user gesture (click, touchend, pointerup)
+    const tryAutoMax = () => {
       if (!document.fullscreenElement && !document.webkitFullscreenElement) {
         const root = document.documentElement;
         const req = root.requestFullscreen || root.webkitRequestFullscreen || root.mozRequestFullScreen || root.msRequestFullscreen;
-        if (req) req.call(root).catch(() => {});
+        if (req) {
+          req.call(root).then(() => {
+            ['click', 'touchend', 'pointerup'].forEach(evt => window.removeEventListener(evt, tryAutoMax));
+          }).catch(() => {});
+        }
       }
-      window.removeEventListener('click', tryAutoMax);
-      window.removeEventListener('touchstart', tryAutoMax);
-    }, { once: true, passive: true });
-    window.addEventListener('touchstart', function tryAutoMaxTouch() {
-      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-        const root = document.documentElement;
-        const req = root.requestFullscreen || root.webkitRequestFullscreen || root.mozRequestFullScreen || root.msRequestFullscreen;
-        if (req) req.call(root).catch(() => {});
-      }
-      window.removeEventListener('click', tryAutoMaxTouch);
-      window.removeEventListener('touchstart', tryAutoMaxTouch);
-    }, { once: true, passive: true });
+    };
+    window.addEventListener('click', tryAutoMax, { passive: true });
+    window.addEventListener('touchend', tryAutoMax, { passive: true });
+    window.addEventListener('pointerup', tryAutoMax, { passive: true });
   </script>
 
 </body>
