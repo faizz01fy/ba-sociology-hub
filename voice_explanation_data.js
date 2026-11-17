@@ -882,6 +882,22 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Calicut University FYUGP ചോദ്യം: 'Discuss the intellectual forces that led to the development of sociology' & 'Explain Auguste Comte's Positivism and Law of Three Stages'.",
             "language": "Malayalam",
             "malayalam_cc": true
+          },
+          {
+            "chapterNumber": "Chapter 01 (Masterclass)",
+            "title": "സോഷ്യോളജി: ഒരാമുഖം (Introducing Sociology · Visual Masterclass)",
+            "chapter": "സോഷ്യോളജിയുടെ ഉത്ഭവം, സാമൂഹിക പശ്ചാത്തലം, വ്യാപ്തി · സമഗ്ര വിശകലനം",
+            "duration": "06:44",
+            "language": "Malayalam",
+            "youtubeId": "n4qwLih4hcI",
+            "thumbnail": "https://i.ytimg.com/vi/n4qwLih4hcI/hqdefault.jpg",
+            "studyPoints": [
+              "സോഷ്യോളജിയുടെ നിർവചനം: മനുഷ്യ സമൂഹത്തെയും സാമൂഹിക ഇടപെടലുകളെയും കുറിച്ചുള്ള ശാസ്ത്രീയ പഠനം.",
+              "ഉത്ഭവ പശ്ചാത്തലം: ഫ്രഞ്ച് വിപ്ലവം (French Revolution), വ്യാവസായിക വിപ്ലവം (Industrial Revolution), പ്രബുദ്ധത (Enlightenment).",
+              "ഓഗസ്റ്റ് കോംതെ (Auguste Comte): സോഷ്യോളജിയുടെ പിതാവ്; പോസിറ്റിവിസവും (Positivism) ത്രിതല നിയമവും (Law of Three Stages).",
+              "ആധുനിക പ്രസക്തി: മാറുന്ന സാമൂഹിക ഘടനകളും പ്രതിസന്ധികളും മനസ്സിലാക്കാനുള്ള ശാസ്ത്രീയ സമീപനം."
+            ],
+            "examTip": "Calicut University Focus: 'Explain the intellectual and social forces that contributed to the emergence of sociology'."
           }
         ]
       },
@@ -990,6 +1006,22 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University ഹ്രസ്വ/ഉപന്യാസ ചോദ്യങ്ങൾ: 'Participant Observation (Malinowski)', 'Value Neutrality (Max Weber)', കൂടാതെ 'Importance of Ethics in Sociological Research' (Informed Consent, Anonymity vs Confidentiality, Plagiarism/Fabrication, Belmont Report 1979) എന്നിവ ഉറപ്പായും പഠിക്കുക!",
             "malayalam_cc": true
+          },
+          {
+            "chapterNumber": "Chapter 02 (Masterclass)",
+            "title": "സോഷ്യോളജി പരിശീലിക്കാം (Practicing Sociology · Visual Masterclass)",
+            "chapter": "സോഷ്യോളജിക്കൽ ഭാവന · ആന്റണി ഗിഡൻസിന്റെ കാപ്പി സങ്കല്പം · സാമാന്യബോധവും ശാസ്ത്രവും",
+            "duration": "09:18",
+            "language": "Malayalam",
+            "youtubeId": "f9csFQLuF_I",
+            "thumbnail": "https://i.ytimg.com/vi/f9csFQLuF_I/hqdefault.jpg",
+            "studyPoints": [
+              "സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination): സി. റൈറ്റ് മിൽസ് അവതരിപ്പിച്ച ആശയം; വ്യക്തിപരമായ പ്രശ്നങ്ങളും പൊതുപ്രശ്നങ്ങളും തമ്മിലുള്ള ബന്ധം.",
+              "ആന്റണി ഗിഡൻസിന്റെ കാപ്പി ഉദാഹരണം: ഒരു കപ്പ് കാപ്പി കുടിക്കുന്നത് വ്യക്തിപരമായ ആചാരം, സാമൂഹിക ഇടപെടൽ, അന്താരാഷ്ട്ര സാമ്പത്തിക ശൃംഖല എന്നിവയുടെ ഭാഗമാണ്.",
+              "സാമാന്യബോധവും (Common Sense) സോഷ്യോളജിയും തമ്മിലുള്ള വ്യത്യാസം: ശാസ്ത്രീയമായ തെളിവുകളും ചിട്ടയായ ഗവേഷണവും.",
+              "സോഷ്യോളജിയുടെ പ്രായോഗിക മൂല്യം: സാമൂഹിക നയരൂപീകരണം, നവീകരണം, സ്വയം അവബോധം."
+            ],
+            "examTip": "Calicut University Focus: 'Differentiate between sociological knowledge and common sense with Anthony Giddens' coffee illustration'."
           }
         ]
       },
@@ -1219,6 +1251,72 @@ window.VOICE_EXPLANATIONS_DATA = {
             "language": "Malayalam",
             "thumbnail": "https://i.ytimg.com/vi/QidpySg9v80/hqdefault.jpg",
             "malayalam_cc": true
+          },
+          {
+            "chapterNumber": "Chapter 09 (Masterclass)",
+            "title": "സാമൂഹിക ഇടപെടലുകൾ (Types of Social Interaction · Visual Masterclass)",
+            "chapter": "സഹകരണം, മത്സരം, സംഘർഷം, പൊരുത്തപ്പെടൽ, ലയനം · സമഗ്ര സോഷ്യോളജി വിശകലനം",
+            "duration": "08:05",
+            "language": "Malayalam",
+            "studyPoints": [
+              "സാമൂഹിക ഇടപെടലിന്റെ സ്വഭാവം: രണ്ടുപേരോ അതിലധികമോ ആളുകൾ പരസ്പരം സ്വാധീനിക്കുന്ന പ്രക്രിയ.",
+              "സഹകരണം (Cooperation): പൊതുവായ ലക്ഷ്യങ്ങൾക്കായി ഒന്നിച്ചു പ്രവർത്തിക്കൽ (Primary, Secondary, Tertiary).",
+              "മത്സരം (Competition): പരിമിതമായ വിഭവങ്ങൾക്കായി വ്യക്തികളോ ഗ്രൂപ്പുകളോ തമ്മിൽ നിയമങ്ങൾക്കുള്ളിൽ നിന്നുള്ള പരിശ്രമം.",
+              "സംഘർഷം (Conflict): ലക്ഷ്യങ്ങൾ നേടാനായി എതിരാളിയെ പരാജയപ്പെടുത്താനോ ഇല്ലാതാക്കാനോ ഉള്ള ശ്രമം (Lewis Coser's functions of conflict).",
+              "പൊരുത്തപ്പെടലും ലയനവും (Accommodation & Assimilation): സംഘർഷ ലഘൂകരണവും സാംസ്കാരിക ഏകീകരണവും."
+            ],
+            "examTip": "Calicut University Focus: 'Explain associative and dissociative social processes with real-world examples'.",
+            "youtubeId": "TTvyEaWc4iI",
+            "thumbnail": "https://i.ytimg.com/vi/TTvyEaWc4iI/hqdefault.jpg"
+          },
+          {
+            "chapterNumber": "Chapter 07 (Masterclass)",
+            "title": "സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Classification & Dynamics · Visual Masterclass)",
+            "chapter": "പ്രാഥമിക ഗ്രൂപ്പുകൾ (Cooley) · ദ്വിതീയ ഗ്രൂപ്പുകൾ · റഫറൻസ് ഗ്രൂപ്പുകൾ (Merton)",
+            "duration": "06:58",
+            "language": "Malayalam",
+            "studyPoints": [
+              "സാമൂഹിക ഗ്രൂപ്പിന്റെ നിർവചനം: പരസ്പരം തിരിച്ചറിയുന്ന, സമാന മൂല്യങ്ങളും ലക്ഷ്യങ്ങളുമുള്ള വ്യക്തികളുടെ കൂട്ടായ്മ.",
+              "ചാൾസ് ഹോർട്ടൻ കൂലി (C.H. Cooley): പ്രാഥമിക ഗ്രൂപ്പുകൾ (Primary Groups: Face-to-face interaction, emotional intimacy, e.g., Family, Friends).",
+              "ദ്വിതീയ ഗ്രൂപ്പുകൾ (Secondary Groups): ഔപചാരികമായ, ലക്ഷ്യാധിഷ്ഠിതമായ ബന്ധങ്ങൾ (e.g., Political parties, Corporations).",
+              "ഇൻ-ഗ്രൂപ്പും ഔട്ട്-ഗ്രൂപ്പും (William Graham Sumner): 'ഞങ്ങൾ' (We-feeling) എന്ന വികാരവും 'അവർ' എന്ന വികാരവും.",
+              "റഫറൻസ് ഗ്രൂപ്പ് (Robert K. Merton): വ്യക്തികൾ തങ്ങളുടെ നിലപാടുകൾ അളക്കാനായി ആശ്രയിക്കുന്ന മാതൃകാ ഗ്രൂപ്പുകൾ."
+            ],
+            "examTip": "Calicut University Focus: 'Compare and contrast Primary Groups and Secondary Groups with Charles Horton Cooley's insights'.",
+            "youtubeId": "v9P-JPJA-HM",
+            "thumbnail": "https://i.ytimg.com/vi/v9P-JPJA-HM/hqdefault.jpg"
+          },
+          {
+            "chapterNumber": "Chapter 03 (Masterclass)",
+            "title": "സാമൂഹ്യവൽക്കരണം: ആശയവും പ്രക്രിയയും (Concept of Socialization · Visual Masterclass)",
+            "chapter": "ഒരു ജൈവിക ജീവി എങ്ങനെ സാമൂഹിക ജീവിയായി മാറുന്നു · ഏജൻസികളും ധർമ്മങ്ങളും",
+            "duration": "08:24",
+            "language": "Malayalam",
+            "studyPoints": [
+              "സാമൂഹ്യവൽക്കരണത്തിന്റെ അർത്ഥം: വ്യക്തി സമൂഹത്തിന്റെ സംസ്കാരവും മൂല്യങ്ങളും പെരുമാറ്റച്ചട്ടങ്ങളും സ്വാംശീകരിക്കുന്ന ആജീവനാന്ത പ്രക്രിയ.",
+              "ജൈവിക അസ്തിത്വത്തിൽ നിന്ന് സാമൂഹിക അസ്തിത്വത്തിലേക്ക്: മനുഷ്യൻ സഹജവാസനകളോടെ ജനിക്കുന്നു, എന്നാൽ സമൂഹമാണ് അവനെ സംസ്കാരമുള്ള മനുഷ്യനാക്കുന്നത്.",
+              "പ്രധാന ഏജൻസികൾ: കുടുംബം (ആദ്യത്തെ പാഠശാല), വിദ്യാലയം, കൂട്ടുകാർ (Peer Group), മാധ്യമങ്ങൾ (Mass Media).",
+              "സാമൂഹ്യവൽക്കരണത്തിന്റെ പരാജയം: ഒറ്റപ്പെട്ടു വളർന്ന കുട്ടികളുടെ ഉദാഹരണങ്ങൾ (Feral Children) തെളിയിക്കുന്ന സാമൂഹിക പ്രാധാന്യം."
+            ],
+            "examTip": "Calicut University Focus: 'Explain how socialization transforms a biological organism into a social human being'.",
+            "youtubeId": "W0uKLdfQFR4",
+            "thumbnail": "https://i.ytimg.com/vi/W0uKLdfQFR4/hqdefault.jpg"
+          },
+          {
+            "chapterNumber": "Chapter 06 (Masterclass)",
+            "title": "സാമൂഹ്യവൽക്കരണ ഘട്ടങ്ങൾ: സിദ്ധാന്തങ്ങൾ (Stages & Theories of Socialization · Visual Masterclass)",
+            "chapter": "ഫ്രോയിഡ് (Freud) · മീഡ് (Mead) · പിയാഷെ (Piaget) · സമഗ്ര മനശാസ്ത്ര-സോഷ്യോളജി വിശകലനം",
+            "duration": "07:49",
+            "language": "Malayalam",
+            "studyPoints": [
+              "സാമൂഹ്യവൽക്കരണത്തിന്റെ രണ്ട് ഘട്ടങ്ങൾ: പ്രാഥമിക ഘട്ടം (Primary - Family), ദ്വിതീയ ഘട്ടം (Secondary - School & Society).",
+              "സിഗ്മണ്ട് ഫ്രോയിഡിന്റെ സിദ്ധാന്തം (Sigmund Freud): ഇദ് (Id), ഈഗോ (Ego), സൂപ്പർ ഈഗോ (Superego) തമ്മിലുള്ള നിരന്തര പൊരുത്തം.",
+              "ജോർജ്ജ് ഹെർബർട്ട് മീഡിന്റെ സിദ്ധാന്തം (G.H. Mead): 'I' & 'Me' സങ്കല്പം; റോൾ ടേക്കിംഗ് (Role Taking) ഘട്ടങ്ങൾ (Play Stage, Game Stage, Generalized Other).",
+              "ജീൻ പിയാഷെയുടെ വൈജ്ഞാനിക വികാസം (Jean Piaget): കുട്ടികളിലെ യുക്തിചിന്തയുടെയും സദാചാരബോധത്തിന്റെയും വളർച്ചാ ഘട്ടങ്ങൾ."
+            ],
+            "examTip": "Calicut University Focus: 'Elaborate G.H. Mead's theory of self-formation through the concepts of I, Me, and Generalized Other'.",
+            "youtubeId": "qkcCarkAH6c",
+            "thumbnail": "https://i.ytimg.com/vi/qkcCarkAH6c/hqdefault.jpg"
           }
         ],
         "totalVideos": 12
@@ -1347,7 +1445,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 28
+    "totalVideos": 34
   },
   "philosophy-of-ai": {
     "name": "Philosophy of Artificial Intelligence",
