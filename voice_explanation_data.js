@@ -1244,6 +1244,23 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Calicut University 15-മാർക്ക് മാസ്റ്റർ ചോദ്യങ്ങൾ: (1) സമൂഹത്തെ നിർവചിച്ച് മക്കൈവറുടെ അടിസ്ഥാന സവിശേഷതകൾ വിശദീകരിക്കുക; (2) കാർഷിക, വ്യാവസായിക, വ്യാവസായികാനന്തര സമൂഹങ്ങളുടെ സമ്പദ്‌വ്യവസ്ഥ, സാങ്കേതികവിദ്യ, സാമൂഹിക ഘടന എന്നിവ താരതമ്യം ചെയ്യുക."
           },
           {
+            "chapterNumber": "Sociology Mod 4 Part 2",
+            "title": "സാമൂഹിക സ്ഥാപനങ്ങൾ: കുടുംബം, വിവാഹം & ബന്ധുത്വം | Sociology Mod 4 Part 2 covering page - 1 to 15",
+            "chapter": "Social Institutions: Family, Marriage, Kinship & Secondary Pillars (Pages 1–15)",
+            "duration": "27:52",
+            "youtubeId": "71S9AM7T3eM",
+            "thumbnail": "https://i.ytimg.com/vi/71S9AM7T3eM/hqdefault.jpg",
+            "language": "Malayalam",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions): മനുഷ്യന്റെ അടിസ്ഥാനപരമായ ആവശ്യങ്ങൾ നിറവേറ്റുന്നതിനായി സമൂഹം അംഗീകരിച്ച് നടപ്പിലാക്കിയ വ്യവസ്ഥാപിത പെരുമാറ്റച്ചട്ടങ്ങളും നടപടിക്രമങ്ങളും (Morris Ginsberg & MacIver).",
+              "സംഘടന vs സ്ഥാപനം: സംഘടന എന്നത് വ്യക്തികളുടെ ഭൗതിക കൂട്ടായ്മയാണ് (Concrete Association); സ്ഥാപനം എന്നത് അവരെ നയിക്കുന്ന അദൃശ്യ നിയമങ്ങളും നടപടിക്രമങ്ങളുമാണ് (Abstract Norms & Procedures).",
+              "കുടുംബവും വിവാഹവും: ചാൾസ് ഹോർട്ടൺ കൂലിയുടെ പ്രാഥമിക തൊട്ടിൽ (Nursery of Human Nature); ഡബ്ല്യു.എഫ്. ഓഗ്ബേണിന്റെ 6 മൗലിക ധർമ്മങ്ങൾ; വിവാഹത്തിന്റെ വിവിധ രൂപങ്ങൾ (Monogamy, Polygyny, Polyandry) & സാർവ്വത്രിക അഗമ്യഗമന വിലക്ക് (Incest Taboo).",
+              "ബന്ധുത്വം (Kinship): റോബിൻ ഫോക്സ് നിർവചനം; രക്തബന്ധുത്വം (Consanguineous) vs വിവാഹബന്ധുത്വം (Affinal); ജോർജ്ജ് പീറ്റർ മർഡോക്കിന്റെ 3 ബന്ധുത്വ തലങ്ങൾ (Primary 8, Secondary 33, Tertiary 151) & കിൻഷിപ്പ് യൂസേജുകൾ (Avoidance, Joking, Teknonymy, Avunculate)."
+            ],
+            "examTip": "Calicut University 15-മാർക്ക് മാസ്റ്റർ ചോദ്യങ്ങൾ: (1) സാമൂഹിക സ്ഥാപനങ്ങളെ നിർവചിച്ച് അവയുടെ 10 അടിസ്ഥാന സവിശേഷതകളും പ്രാധാന്യവും വിശദീകരിക്കുക; (2) കുടുംബം, വിവാഹം, ബന്ധുത്വം എന്നീ സ്ഥാപനങ്ങളുടെ ഘടന, ധർമ്മങ്ങൾ, സമകാലിക മാറ്റങ്ങൾ എന്നിവ മർഡോക്കിന്റെയും ഓഗ്ബേണിന്റെയും സിദ്ധാന്തങ്ങൾ മുൻനിർത്തി വിശകലനം ചെയ്യുക."
+          },
+          {
             "chapterNumber": "Chapter 4.1",
             "title": "സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics & Evolution) | Calicut Univ",
             "chapter": "Society · Characteristics & Types: Agrarian, Industrial & Post-Industrial (സമൂഹത്തിന്റെ പരിണാമം)",
@@ -1313,7 +1330,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 26
+    "totalVideos": 27
   },
   "philosophy-of-ai": {
     "name": "Philosophy of Artificial Intelligence",
@@ -3113,8 +3130,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "अनुच्छेद 343-351, राजभाषा अधिनियम 1963 एवं राजभाषा नियम",
             "duration": "17:05",
             "language": "Hindi",
-            "youtubeId": "RDXXw4nZ-xo",
-            "thumbnail": "https://i.ytimg.com/vi/RDXXw4nZ-xo/hqdefault.jpg",
+            "youtubeId": null,
+            "thumbnail": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
             "studyPoints": [
               "<strong>संवैधानिक प्रावधान (अनुच्छेद 343):</strong> 14 सितम्बर 1949 को संविधान सभा ने हिन्दी को संघ की राजभाषा के रूप में अंगीकार किया। अनुच्छेद 343(1) के अनुसार संघ की राजभाषा हिन्दी और लिपि देवनागरी है। अंकों का रूप भारतीय अंकों का अंतर्राष्ट्रीय रूप होगा।",
               "<strong>राजभाषा आयोग एवं संसदीय समिति (अनुच्छेद 344):</strong> राष्ट्रपति द्वारा 1955 में श्री बी. जी. खेर की अध्यक्षता में प्रथम राजभाषा आयोग का गठन हुआ। 1957 में पंडित गोविंद वल्लभ पंत की अध्यक्षता में संसदीय राजभाषा समिति गठित हुई।",
