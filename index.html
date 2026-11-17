@@ -1177,7 +1177,42 @@
 
     #module-dialog .module-tabs button[aria-selected="true"]{outline:2px solid rgba(32,88,66,.18);outline-offset:1px;}
 
-    @media(max-width:640px){#module-dialog .module-tabs{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;scrollbar-width:none!important;gap:7px!important;padding:8px 2px 10px!important;}#module-dialog .module-tabs button{flex:0 0 auto!important;min-height:40px!important;padding:8px 14px!important;font-size:13px!important;border-radius:9999px!important;}#module-dialog .module-subtabs{display:flex!important;flex-direction:column!important;gap:7px!important;padding:6px 0 12px!important;}#module-dialog .module-subtabs button{width:100%!important;min-height:44px!important;padding:10px 14px!important;font-size:13px!important;border-radius:10px!important;}}
+    @media(max-width:640px){
+  #module-dialog .module-tabs{
+    display:flex!important;
+    flex-direction:column!important;
+    flex-wrap:nowrap!important;
+    overflow-x:visible!important;
+    gap:8px!important;
+    padding:8px 0 14px!important;
+    width:100%!important;
+  }
+  #module-dialog .module-tabs button{
+    width:100%!important;
+    min-height:44px!important;
+    padding:10px 16px!important;
+    font-size:13.5px!important;
+    font-weight:750!important;
+    border-radius:12px!important;
+    text-align:left!important;
+    justify-content:flex-start!important;
+    box-sizing:border-box!important;
+  }
+  #module-dialog .module-subtabs{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:7px!important;
+    padding:6px 0 12px!important;
+    width:100%!important;
+  }
+  #module-dialog .module-subtabs button{
+    width:100%!important;
+    min-height:44px!important;
+    padding:10px 14px!important;
+    font-size:13px!important;
+    border-radius:10px!important;
+  }
+}
 
   </style>
 
@@ -1473,9 +1508,9 @@
 
       #module-dialog .module-home { min-height:36px;padding:7px 9px;font-size:12px; }
 
-      #module-dialog .module-tabs { display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;scrollbar-width:none!important;gap:7px!important;padding:8px 2px 10px!important; }
+      #module-dialog .module-tabs { display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;overflow-x:visible!important;gap:8px!important;padding:8px 0 14px!important;width:100%!important; }
 
-      #module-dialog .module-tabs button { flex:0 0 auto!important;min-height:40px!important;padding:8px 14px!important;font-size:13px!important;font-weight:700!important;border-radius:9999px!important; }
+      #module-dialog .module-tabs button { width:100%!important;min-height:44px!important;padding:10px 16px!important;font-size:13.5px!important;font-weight:750!important;border-radius:12px!important;text-align:left!important;justify-content:flex-start!important;box-sizing:border-box!important; }
 
       #module-dialog .module-subtabs { display:grid !important; grid-template-columns:1fr !important; gap:8px !important; padding:10px 12px !important; }
 
@@ -14882,11 +14917,13 @@ if(subject==='Arabic') return modules([
 
       const item=module.items[itemIndex];
 
-      Array.from(moduleTabs.children).forEach((button,index)=>{
+      Array.from(moduleTabs.children).forEach((button)=>{
 
-        button.setAttribute('aria-selected',String(index===moduleIndex));
+        const isSel = button.dataset.moduleIndex === String(moduleIndex);
 
-        button.tabIndex=index===moduleIndex?0:-1;
+        button.setAttribute('aria-selected',String(isSel));
+
+        button.tabIndex=isSel?0:-1;
 
       });
 
@@ -15052,11 +15089,13 @@ if(subject==='Arabic') return modules([
 
       blinkChaptersRandomly();
 
-      Array.from(moduleTabs.children).forEach((button,index)=>{
+      Array.from(moduleTabs.children).forEach((button)=>{
 
-        button.setAttribute('aria-selected',String(index===moduleIndex));
+        const isSel = button.dataset.moduleIndex === String(moduleIndex);
 
-        button.tabIndex=index===moduleIndex?0:-1;
+        button.setAttribute('aria-selected',String(isSel));
+
+        button.tabIndex=isSel?0:-1;
 
       });
 
@@ -15220,11 +15259,13 @@ if(subject==='Arabic') return modules([
 
       blinkChaptersRandomly();
 
-      Array.from(moduleTabs.children).forEach((button,index)=>{
+      Array.from(moduleTabs.children).forEach((button)=>{
 
-        button.setAttribute('aria-selected',String(index===moduleIndex));
+        const isSel = button.dataset.moduleIndex === String(moduleIndex);
 
-        button.tabIndex=index===moduleIndex?0:-1;
+        button.setAttribute('aria-selected',String(isSel));
+
+        button.tabIndex=isSel?0:-1;
 
       });
 
@@ -15327,11 +15368,13 @@ if(subject==='Arabic') return modules([
 
       blinkChaptersRandomly();
 
-      Array.from(moduleTabs.children).forEach((button,index)=>{
+      Array.from(moduleTabs.children).forEach((button)=>{
 
-        button.setAttribute('aria-selected',String(index===moduleIndex));
+        const isSel = button.dataset.moduleIndex === String(moduleIndex);
 
-        button.tabIndex=index===moduleIndex?0:-1;
+        button.setAttribute('aria-selected',String(isSel));
+
+        button.tabIndex=isSel?0:-1;
 
       });
 
@@ -15545,21 +15588,23 @@ if(subject==='Arabic') return modules([
 
         .map(entry=>entry.index);
 
-      // Always tab at Module 1 by default across all subjects and tabs
-
-      const mod1Index = availableModuleIndexes.find(idx => {
-
-        const name = String(modules[idx]?.name || '').toLowerCase();
-
-        return name.includes('module 1') || name.includes('module1') || name.includes('മൊഡ്യൂൾ 1');
-
+      // Sort all modules in descending order (highest module down to lowest: Mod 5 -> Mod 4 -> Mod 3 -> Mod 2 -> Mod 1, followed by Syllabus)
+      availableModuleIndexes.sort((a, b) => {
+        const nameA = String(modules[a]?.name || '');
+        const nameB = String(modules[b]?.name || '');
+        const numA = parseInt((nameA.match(/module\s*(\d+)/i) || [])[1] || '0', 10);
+        const numB = parseInt((nameB.match(/module\s*(\d+)/i) || [])[1] || '0', 10);
+        if (numA && numB) return numB - numA; // Descending: 5, 4, 3, 2, 1
+        if (numA && !numB) return -1;
+        if (!numA && numB) return 1;
+        return b - a;
       });
 
-      const defaultGuideModule = (mcqPdf ? (availableModuleIndexes[0] ?? 0) : ((mod1Index !== undefined) ? mod1Index : (availableModuleIndexes[0] ?? 0)));
+      const defaultGuideModule = (availableModuleIndexes[0] ?? 0);
 
-      modules.forEach((module,moduleIndex)=>{
-
-        if(!availableModuleIndexes.includes(moduleIndex)) return;
+      availableModuleIndexes.forEach(moduleIndex => {
+        const module = modules[moduleIndex];
+        if (!module) return;
 
         const button=document.createElement('button');
 
