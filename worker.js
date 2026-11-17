@@ -3426,14 +3426,13 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
       const isPrivacyPolicy = /^\/privacy-policy(?:\.html)?$/i.test(url.pathname);
       const isContactPage = /^\/contact(?:\.html)?$/i.test(url.pathname);
 
-      if (!isPrivacyPolicy) {
-        response = new HTMLRewriter()
+      response = new HTMLRewriter()
         .on("head", {
           element(el) {
             const pauseAds = requiresConsent ? ' (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;' : '';
             el.prepend(`<script>window.HUB_IS_EUROPE = ${requiresConsent};${pauseAds}</script>`, { html: true });
-            el.append('<script src="/consent-banner.js?v=20261110b"></script>', { html: true });
-            if (!isContactPage) {
+            el.append('<script src="/consent-banner.js?v=20261117a"></script>', { html: true });
+            if (!isContactPage && !isPrivacyPolicy) {
               el.append('<style id="hub-protection-global">*,*::before,*::after{-webkit-touch-callout:none!important;-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important}img{-webkit-user-drag:none!important;user-drag:none!important}@media print{html,body{display:none!important;visibility:hidden!important}}a[download],button[download],[download],.btn-download,.download,#downloadBtn,#saveBtn,.save{display:none!important}</style>', { html: true });
             }
 
@@ -3461,8 +3460,10 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
               // Discreet button to reopen Google certified privacy choices if needed
               el.append('<button hidden id="hub-consent-reopen" type="button" aria-label="Privacy and Cookie Settings" style="position:fixed;bottom:12px;left:12px;z-index:9999;background:rgba(23,59,53,0.92);color:#fff;border:1px solid rgba(255,255,255,0.4);border-radius:6px;padding:6px 12px;font:500 12px system-ui,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.25);">🛡️ Privacy &amp; Cookie Settings</button>', { html: true });
             }
-          el.append('<script src="/traffic-tracker.js?v=20261105_act2" defer></script>', { html: true });
-          if (!isContactPage) {
+          if (!isPrivacyPolicy) {
+            el.append('<script src="/traffic-tracker.js?v=20261105_act2" defer></script>', { html: true });
+          }
+          if (!isContactPage && !isPrivacyPolicy) {
             el.append('<script id="hub-universal-protection-worker">(function(){window.addEventListener("contextmenu",function(e){e.preventDefault();e.stopPropagation();return false;},true);window.addEventListener("keydown",function(e){var k=e.key?e.key.toLowerCase():"";if((e.ctrlKey||e.metaKey)&&["s","p","u","c","a","x"].indexOf(k)!==-1){e.preventDefault();e.stopPropagation();return false;}if(e.key==="F12"||((e.ctrlKey||e.metaKey)&&e.shiftKey&&["i","j","c"].indexOf(k)!==-1)){e.preventDefault();e.stopPropagation();return false;}},true);window.addEventListener("dragstart",function(e){e.preventDefault();return false;},true);window.addEventListener("copy",function(e){e.preventDefault();return false;},true);window.addEventListener("cut",function(e){e.preventDefault();return false;},true);window.addEventListener("selectstart",function(e){e.preventDefault();return false;},true);document.addEventListener("contextmenu",function(e){e.preventDefault();return false;},true);})();</script>', { html: true });
           }
 
@@ -3473,7 +3474,6 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
           }
         }
       }).transform(response);
-      }
 
       const htmlHeaders = new Headers(response.headers);
       htmlHeaders.set("Cache-Control", "private, no-cache, no-store, max-age=0, must-revalidate");

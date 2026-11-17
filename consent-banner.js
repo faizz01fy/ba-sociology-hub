@@ -3,10 +3,7 @@
  * Basic Consent Mode for GA4 and Google's IAB TCF consent signal
  */
 (function() {
-  // Google AdSense CMP Requirement: Privacy policy must be 100% free of scripts requiring consent
-  if (typeof location !== 'undefined' && /^\/privacy-policy(?:\.html)?$/i.test(location.pathname)) {
-    return;
-  }
+  const isPrivacyPage = typeof location !== 'undefined' && /^\/privacy-policy(?:\.html)?$/i.test(location.pathname);
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
@@ -15,7 +12,7 @@
   const isEurope = typeof window.HUB_IS_EUROPE !== 'undefined' ? window.HUB_IS_EUROPE : false;
 
   function loadGA4() {
-    if (window._hubGA4Loaded) return;
+    if (isPrivacyPage || window._hubGA4Loaded) return;
     window._hubGA4Loaded = true;
     try {
       if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
