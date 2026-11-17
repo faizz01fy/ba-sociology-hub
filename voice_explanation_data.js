@@ -1261,6 +1261,23 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Calicut University 15-മാർക്ക് മാസ്റ്റർ ചോദ്യങ്ങൾ: (1) സാമൂഹിക സ്ഥാപനങ്ങളെ നിർവചിച്ച് അവയുടെ 10 അടിസ്ഥാന സവിശേഷതകളും പ്രാധാന്യവും വിശദീകരിക്കുക; (2) കുടുംബം, വിവാഹം, ബന്ധുത്വം എന്നീ സ്ഥാപനങ്ങളുടെ ഘടന, ധർമ്മങ്ങൾ, സമകാലിക മാറ്റങ്ങൾ എന്നിവ മർഡോക്കിന്റെയും ഓഗ്ബേണിന്റെയും സിദ്ധാന്തങ്ങൾ മുൻനിർത്തി വിശകലനം ചെയ്യുക."
           },
           {
+            "chapterNumber": "Sociology Mod 4 Part 3",
+            "title": "സാമൂഹിക ഘടന, പദവിയും റോളും & മാറ്റം | Sociology Mod 4 Part 3 covering page - 1 to 36",
+            "chapter": "Social Structure: Status, Role & Theories of Social Change (Pages 1–36)",
+            "duration": "26:34",
+            "youtubeId": "fLUrnq3Hh84",
+            "thumbnail": "https://i.ytimg.com/vi/fLUrnq3Hh84/hqdefault.jpg",
+            "language": "Malayalam",
+            "malayalam_cc": true,
+            "studyPoints": [
+              "സാമൂഹിക ഘടന (Social Structure): വ്യക്തികളും ഗ്രൂപ്പുകളും പദവികളും സ്ഥാപനങ്ങളും ചേർന്ന പരസ്പരബന്ധിത ചട്ടക്കൂട് (A.R. Radcliffe-Brown & Talcott Parsons).",
+              "പദവിയും റോളും (Status & Role): റാൽഫ് ലിന്റന്റെ (Ralph Linton) ആരോപിക്കപ്പെട്ട പദവി (Ascribed - ജനനത്തിലൂടെ) & ആർജിത പദവി (Achieved - പ്രയത്നത്തിലൂടെ); റോബർട്ട് മെർട്ടന്റെ സ്റ്റാറ്റസ് സെറ്റ് & റോൾ സെറ്റ്; എവററ്റ് ഹ്യൂസിന്റെ മാസ്റ്റർ സ്റ്റാറ്റസ്.",
+              "റോൾ കോൺഫ്ലിക്റ്റും റോൾ സ്ട്രെയിനും: ഒന്നിലധികം പദവികൾ തമ്മിലുള്ള പൊരുത്തക്കേട് (Role Conflict - ഉദാ: ജോലി ചെയ്യുന്ന അമ്മ); ഒരൊറ്റ പദവിയുടെ ഉള്ളിലെ സമ്മർദ്ദം (Role Strain - William J. Goode) & എർവിംഗ് ഗോഫ്മാന്റെ റോൾ ഡിസ്റ്റൻസ്.",
+              "സാമൂഹിക മാറ്റം (Social Change): വില്യം എഫ്. ഓഗ്ബേണിന്റെ (William F. Ogburn, 1922) കൾച്ചറൽ ലാഗ് (ഭൗതിക vs അഭൗതിക സംസ്കാരം); മാറ്റത്തിന്റെ 3 ഉറവിടങ്ങൾ (Discovery, Invention, Diffusion); ലീനിയർ (Comte, Spencer), ചാക്രിക (Spengler, Toynbee, Sorokin), വൈരുദ്ധ്യാത്മക ഭൗതികവാദം (Karl Marx)."
+            ],
+            "examTip": "Calicut University 15-മാർക്ക് മാസ്റ്റർ ചോദ്യങ്ങൾ: (1) സാമൂഹിക പദവിയും റോളും നിർവചിച്ച് റാൽഫ് ലിന്റന്റെയും റോബർട്ട് മെർട്ടന്റെയും സംഭാവനകൾ വിലയിരുത്തുക; (2) സാമൂഹിക മാറ്റം നിർവചിച്ച് വില്യം എഫ്. ഓഗ്ബേണിന്റെ കൾച്ചറൽ ലാഗ് സിദ്ധാന്തവും മാറ്റത്തിന്റെ വിവിധ ഘടകങ്ങളും സമഗ്രമായി വിശകലനം ചെയ്യുക."
+          },
+          {
             "chapterNumber": "Chapter 4.1",
             "title": "സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics & Evolution) | Calicut Univ",
             "chapter": "Society · Characteristics & Types: Agrarian, Industrial & Post-Industrial (സമൂഹത്തിന്റെ പരിണാമം)",
@@ -1330,7 +1347,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 27
+    "totalVideos": 28
   },
   "philosophy-of-ai": {
     "name": "Philosophy of Artificial Intelligence",
