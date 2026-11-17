@@ -91,6 +91,7 @@
     html {
       overflow-anchor: none;
       -webkit-text-size-adjust: 100%;
+      touch-action: pan-x pan-y pinch-zoom;
     }
     body {
       margin: 0;
@@ -100,6 +101,7 @@
       font-size: 14px;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
+      touch-action: pan-x pan-y pinch-zoom;
     }
     
     /* Desktop Toolbar */
@@ -1784,9 +1786,9 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
       
       const zVal = el('zoom').value;
       if (zVal === 'fit') {
-        const availWidth = el('reader').clientWidth || window.innerWidth;
-        const padding = isMobile ? 4 : 32;
-        return Math.max(0.25, Math.min(3.0, (availWidth - padding) / original.width));
+        const availWidth = window.innerWidth || el('reader').clientWidth;
+        const padding = isMobile ? 0 : 20;
+        return Math.max(0.25, Math.min(3.5, (availWidth - padding) / original.width));
       }
       if (zVal === 'read') {
         // Dedicated comfortable reading mode: 135% of fit width or minimum 1.25
@@ -2314,15 +2316,15 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
         // Silky smooth glide transition to final pinch ratio
         const finalRatio = targetScale / pinchStartScale;
         readerEl.style.transition = 'transform 0.14s cubic-bezier(0.2, 0.9, 0.3, 1)';
-        readerEl.style.transform = 'scale(' + finalRatio.toFixed(3) + ')';
+        readerEl.style.transform = 'translate3d(0,0,0) scale(' + finalRatio.toFixed(3) + ')';
 
         clearTimeout(pinchDebounceTimer);
         pinchDebounceTimer = setTimeout(async () => {
+          await render(true);
           readerEl.style.transition = '';
           readerEl.style.transform = '';
           readerEl.style.transformOrigin = '';
           readerEl.style.willChange = '';
-          await render(true);
         }, 50);
       } else {
         readerEl.style.transition = 'transform 0.18s ease-out';
@@ -2404,6 +2406,18 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
     if (el('fullscreenBtn')) el('fullscreenBtn').onclick = toggleFullscreenMode;
     if (el('mobileFullscreenBtn')) el('mobileFullscreenBtn').onclick = toggleFullscreenMode;
     if (el('openExternalBtn')) el('openExternalBtn').onclick = () => window.open(location.href, '_blank');
+
+    // Auto-maximize on first user gesture when fullscreen parameter or reading file is loaded
+    const tryMaximizeOnGesture = () => {
+      const isTheater = document.body.classList.contains('theater-fullscreen') || document.documentElement.classList.contains('theater-fullscreen');
+      if (isTheater && !document.fullscreenElement && !document.webkitFullscreenElement) {
+        const root = document.documentElement;
+        const req = root.requestFullscreen || root.webkitRequestFullscreen || root.mozRequestFullScreen || root.msRequestFullscreen;
+        if (req) req.call(root).catch(() => {});
+      }
+    };
+    window.addEventListener('click', tryMaximizeOnGesture, { once: true, passive: true });
+    window.addEventListener('touchstart', tryMaximizeOnGesture, { once: true, passive: true });
 
     // Resize listener (guards against mobile address-bar resize & pinch jitter)
     let resizeTimer;
