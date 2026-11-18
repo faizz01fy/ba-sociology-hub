@@ -18,9 +18,12 @@
     /* Base resets & typography */
     *, *::before, *::after {
       box-sizing: border-box;
-      -webkit-touch-callout: none !important;
-      -webkit-user-select: none !important;
-      user-select: none !important;
+    }
+
+    /* Human-friendly reading selections */
+    ::selection {
+      background: #c7d2fe;
+      color: #1e1b4b;
     }
 
     body {
@@ -486,6 +489,401 @@
         padding-bottom: 10px !important;
       }
     }
+  
+    /* ========================================================================== */
+    /* HUMAN READING ENHANCEMENT: COMFORTABLE FONTS, CONTRAST & RESPONSIVE LAYOUT */
+    /* ========================================================================== */
+
+    /* Allow standard human text selection across all elements */
+    body, p, span, div, h1, h2, h3, h4, h5, h6, li, td, th {
+      -webkit-user-select: text !important;
+      user-select: text !important;
+    }
+
+    /* Chapter reading container max-width & clean spacing */
+    .soc-reading-section {
+      width: 100% !important;
+      max-width: 1000px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+    }
+
+    /* Page container transformation: from cramped PDF page to beautiful web reading card */
+    .soc-chapter-view .page-container,
+    .soc-chapter-view .content-page,
+    .soc-chapter-view .cover-page,
+    .soc-chapter-view .page {
+      width: 100% !important;
+      max-width: 960px !important;
+      height: auto !important;
+      min-height: auto !important;
+      margin: 0 auto 32px auto !important;
+      padding: 32px 36px !important;
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 18px !important;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05), 0 2px 6px rgba(15, 23, 42, 0.02) !important;
+      overflow: visible !important;
+    }
+
+    /* Top bar headers */
+    .top-bar {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      border-bottom: 2px solid #e0e7ff !important;
+      padding-bottom: 8px !important;
+      margin-bottom: 18px !important;
+      font-size: 13px !important;
+    }
+
+    .top-bar-left {
+      font-size: 12.5px !important;
+      font-weight: 700 !important;
+      color: #4f46e5 !important;
+      letter-spacing: 0.5px !important;
+      text-transform: uppercase !important;
+    }
+
+    .top-bar-right {
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      color: #475569 !important;
+      background: #f1f5f9 !important;
+      padding: 3px 10px !important;
+      border-radius: 20px !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+
+    /* Hero Banners */
+    .chapter-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%) !important;
+      color: #ffffff !important;
+      padding: 24px 28px !important;
+      border-radius: 14px !important;
+      margin-bottom: 24px !important;
+      box-shadow: 0 8px 24px rgba(30, 27, 75, 0.15) !important;
+    }
+
+    .hero-tag {
+      font-size: 12px !important;
+      font-weight: 700 !important;
+      letter-spacing: 1px !important;
+      color: #a5b4fc !important;
+      text-transform: uppercase !important;
+      margin-bottom: 8px !important;
+    }
+
+    .hero-title-en {
+      font-size: 22px !important;
+      font-weight: 800 !important;
+      line-height: 1.35 !important;
+      color: #ffffff !important;
+      margin: 0 0 8px 0 !important;
+    }
+
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif !important;
+      font-size: 19px !important;
+      font-weight: 700 !important;
+      line-height: 1.45 !important;
+      color: #e0e7ff !important;
+      margin: 0 !important;
+    }
+
+    /* Content Box / Unit Card */
+    .content-box, .unit-card {
+      border: 1.5px solid #e2e8f0 !important;
+      border-radius: 14px !important;
+      background: #ffffff !important;
+      margin-bottom: 24px !important;
+      overflow: hidden !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02) !important;
+    }
+
+    .section-header, .unit-head {
+      background: linear-gradient(90deg, #f8fafc 0%, #f1f5f9 100%) !important;
+      border-left: 5px solid #4f46e5 !important;
+      padding: 12px 18px !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 4px !important;
+    }
+
+    .section-title-en, .unit-title-en {
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+      line-height: 1.4 !important;
+    }
+
+    .section-title-ml, .unit-title-ml {
+      font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif !important;
+      font-size: 14.5px !important;
+      font-weight: 700 !important;
+      color: #334155 !important;
+      line-height: 1.45 !important;
+    }
+
+    /* Side-by-Side Bilingual Reading Grid */
+    .bilingual-pair {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 16px !important;
+      padding: 16px !important;
+      background: #ffffff !important;
+    }
+
+    /* English block */
+    .block-en {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #3b82f6 !important;
+      border-radius: 10px !important;
+      padding: 16px 18px !important;
+    }
+
+    .block-en-label, .block-label {
+      font-size: 12px !important;
+      font-weight: 800 !important;
+      color: #1d4ed8 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.6px !important;
+      margin-bottom: 10px !important;
+      display: inline-block !important;
+    }
+
+    .block-en p {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 15px !important;
+      color: #1e293b !important;
+      line-height: 1.68 !important;
+      margin: 0 0 12px 0 !important;
+    }
+
+    /* Malayalam block */
+    .block-ml {
+      background: #f0fdf4 !important;
+      border: 1px solid #dcfce7 !important;
+      border-left: 4px solid #10b981 !important;
+      border-radius: 10px !important;
+      padding: 16px 18px !important;
+    }
+
+    .block-ml-label {
+      font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif !important;
+      font-size: 12.5px !important;
+      font-weight: 800 !important;
+      color: #047857 !important;
+      margin-bottom: 10px !important;
+      display: inline-block !important;
+    }
+
+    .block-ml p {
+      font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif !important;
+      font-size: 15px !important;
+      color: #064e3b !important;
+      line-height: 1.78 !important;
+      margin: 0 0 12px 0 !important;
+    }
+
+    .block-en p:last-child,
+    .block-ml p:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    /* Highlighting */
+    .hl-green {
+      background: #bbf7d0 !important;
+      color: #14532d !important;
+      font-weight: 600 !important;
+      padding: 2px 6px !important;
+      border-radius: 4px !important;
+    }
+
+    .hl-yellow {
+      background: #fef08a !important;
+      color: #713f12 !important;
+      font-weight: 600 !important;
+      padding: 2px 6px !important;
+      border-radius: 4px !important;
+    }
+
+    /* Exam Cards, MCQs & Questions */
+    .mcq-card, .qa-card {
+      border: 1.5px solid #cbd5e1 !important;
+      border-radius: 12px !important;
+      padding: 16px 18px !important;
+      margin-bottom: 14px !important;
+      background: #ffffff !important;
+    }
+
+    .mcq-q-en {
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      color: #0f172a !important;
+      line-height: 1.5 !important;
+      margin-bottom: 6px !important;
+    }
+
+    .mcq-q-ml {
+      font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif !important;
+      font-size: 14.5px !important;
+      font-weight: 600 !important;
+      color: #0369a1 !important;
+      line-height: 1.6 !important;
+      margin-bottom: 12px !important;
+    }
+
+    .mcq-opt, .mcq-option {
+      font-size: 14px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 6px !important;
+    }
+
+    /* Syllabus View Styling (id="chapter-view-ai-syl") */
+    #chapter-view-ai-syl .header-banner {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%) !important;
+      color: #ffffff !important;
+      padding: 28px 32px !important;
+      border-radius: 16px !important;
+      margin-bottom: 28px !important;
+    }
+
+    #chapter-view-ai-syl .header-banner h4 {
+      font-size: 13px !important;
+      color: #a5b4fc !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.8px !important;
+      margin: 0 0 8px 0 !important;
+    }
+
+    #chapter-view-ai-syl .header-banner h1 {
+      font-size: 26px !important;
+      font-weight: 850 !important;
+      color: #ffffff !important;
+      margin: 0 0 10px 0 !important;
+      line-height: 1.35 !important;
+    }
+
+    #chapter-view-ai-syl .header-banner .meta {
+      font-size: 13.5px !important;
+      color: #c7d2fe !important;
+      line-height: 1.5 !important;
+    }
+
+    #chapter-view-ai-syl h2 {
+      font-size: 19px !important;
+      font-weight: 800 !important;
+      color: #1e1b4b !important;
+      border-bottom: 2px solid #e0e7ff !important;
+      padding-bottom: 8px !important;
+      margin: 32px 0 18px 0 !important;
+    }
+
+    #chapter-view-ai-syl h4 {
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      color: #312e81 !important;
+      margin: 20px 0 10px 0 !important;
+    }
+
+    .bilingual-entry {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 12px !important;
+      padding: 18px 20px !important;
+      margin-bottom: 20px !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
+    }
+
+    .en-part {
+      font-size: 15px !important;
+      line-height: 1.68 !important;
+      color: #1e293b !important;
+      margin-bottom: 14px !important;
+      padding-bottom: 14px !important;
+      border-bottom: 1px dashed #cbd5e1 !important;
+    }
+
+    .ml-part {
+      font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif !important;
+      font-size: 15px !important;
+      line-height: 1.78 !important;
+      color: #064e3b !important;
+    }
+
+    .en-tag {
+      background: #3b82f6 !important;
+      color: #ffffff !important;
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      padding: 2px 6px !important;
+      border-radius: 4px !important;
+      margin-right: 8px !important;
+      display: inline-block !important;
+    }
+
+    .ml-tag {
+      background: #10b981 !important;
+      color: #ffffff !important;
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      padding: 2px 6px !important;
+      border-radius: 4px !important;
+      margin-right: 8px !important;
+      display: inline-block !important;
+    }
+
+    .page-footer {
+      border-top: 1px solid #e2e8f0 !important;
+      padding-top: 14px !important;
+      margin-top: 24px !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      font-size: 12px !important;
+      color: #64748b !important;
+    }
+
+    .footer-badge {
+      font-size: 11px !important;
+      padding: 3px 8px !important;
+    }
+
+    /* Mobile Responsive optimizations */
+    @media (max-width: 768px) {
+      .soc-chapter-view .page-container,
+      .soc-chapter-view .content-page,
+      .soc-chapter-view .cover-page,
+      .soc-chapter-view .page {
+        padding: 18px 14px !important;
+        border-radius: 12px !important;
+        margin-bottom: 20px !important;
+      }
+      .bilingual-pair {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        padding: 12px !important;
+      }
+      .block-en p, .block-ml p, .en-part, .ml-part {
+        font-size: 14.5px !important;
+        line-height: 1.65 !important;
+      }
+      .hero-title-en {
+        font-size: 18px !important;
+      }
+      .hero-title-ml {
+        font-size: 16px !important;
+      }
+      .top-bar {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+      }
+    }
+
   </style>
 
   <!-- Combined Styles from Chapter Components -->
@@ -1016,6 +1414,366 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 }
 
   </style>
+
+  <!-- Master Reader Enhancements: Font legibility, Card layout, No print squish -->
+  <style id="human-reader-master-styles">
+    /* Global selectable & smooth text */
+    *, *::before, *::after {
+      -webkit-user-select: text !important;
+      user-select: text !important;
+      -webkit-touch-callout: default !important;
+    }
+
+    ::selection {
+      background: #c7d2fe !important;
+      color: #1e1b4b !important;
+    }
+
+    /* Override any 7pt/6pt cramped print sizing on screen */
+    .soc-chapter-view .page-container,
+    .soc-chapter-view .content-page,
+    .soc-chapter-view .cover-page,
+    .soc-chapter-view .page {
+      width: 100% !important;
+      max-width: 960px !important;
+      height: auto !important;
+      max-height: none !important;
+      min-height: auto !important;
+      margin: 0 auto 32px auto !important;
+      padding: 32px 36px !important;
+      background: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 18px !important;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05), 0 2px 6px rgba(15, 23, 42, 0.02) !important;
+      overflow: visible !important;
+      page-break-after: auto !important;
+      break-after: auto !important;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      border-bottom: 2px solid #e0e7ff !important;
+      padding-bottom: 10px !important;
+      margin-bottom: 20px !important;
+    }
+    .top-bar-left {
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      color: #4f46e5 !important;
+      letter-spacing: 0.5px !important;
+      text-transform: uppercase !important;
+    }
+    .top-bar-right {
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      color: #475569 !important;
+      background: #f1f5f9 !important;
+      padding: 4px 12px !important;
+      border-radius: 20px !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+
+    /* Chapter Hero Banner */
+    .chapter-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%) !important;
+      color: #ffffff !important;
+      padding: 24px 28px !important;
+      border-radius: 14px !important;
+      margin-bottom: 24px !important;
+      box-shadow: 0 8px 24px rgba(30, 27, 75, 0.15) !important;
+    }
+    .hero-tag {
+      font-size: 12px !important;
+      font-weight: 700 !important;
+      letter-spacing: 1px !important;
+      color: #a5b4fc !important;
+      text-transform: uppercase !important;
+      margin-bottom: 8px !important;
+    }
+    .hero-title-en {
+      font-size: 22px !important;
+      font-weight: 800 !important;
+      line-height: 1.35 !important;
+      color: #ffffff !important;
+      margin: 0 0 8px 0 !important;
+    }
+    .hero-title-ml {
+      font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif !important;
+      font-size: 19px !important;
+      font-weight: 700 !important;
+      line-height: 1.45 !important;
+      color: #e0e7ff !important;
+      margin: 0 !important;
+    }
+
+    /* Content Box / Unit Card */
+    .content-box, .unit-card {
+      border: 1.5px solid #e2e8f0 !important;
+      border-radius: 14px !important;
+      background: #ffffff !important;
+      margin-bottom: 24px !important;
+      overflow: hidden !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02) !important;
+    }
+    .section-header, .unit-head {
+      background: linear-gradient(90deg, #f8fafc 0%, #f1f5f9 100%) !important;
+      border-left: 5px solid #4f46e5 !important;
+      padding: 12px 18px !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 4px !important;
+    }
+    .section-title-en, .unit-title-en {
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+      line-height: 1.4 !important;
+    }
+    .section-title-ml, .unit-title-ml {
+      font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif !important;
+      font-size: 14.5px !important;
+      font-weight: 700 !important;
+      color: #334155 !important;
+      line-height: 1.45 !important;
+    }
+
+    /* Bilingual Pair Side-by-Side Reading Grid */
+    .bilingual-pair {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 16px !important;
+      padding: 16px !important;
+      background: #ffffff !important;
+    }
+    .block-en {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-left: 4px solid #3b82f6 !important;
+      border-radius: 10px !important;
+      padding: 18px 20px !important;
+    }
+    .block-en-label, .block-label {
+      font-size: 12px !important;
+      font-weight: 800 !important;
+      color: #1d4ed8 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.6px !important;
+      margin-bottom: 10px !important;
+      display: inline-block !important;
+    }
+    .block-en p {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-size: 15px !important;
+      color: #1e293b !important;
+      line-height: 1.68 !important;
+      margin: 0 0 12px 0 !important;
+    }
+    .block-ml {
+      background: #f0fdf4 !important;
+      border: 1px solid #dcfce7 !important;
+      border-left: 4px solid #10b981 !important;
+      border-radius: 10px !important;
+      padding: 18px 20px !important;
+    }
+    .block-ml-label {
+      font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif !important;
+      font-size: 12.5px !important;
+      font-weight: 800 !important;
+      color: #047857 !important;
+      margin-bottom: 10px !important;
+      display: inline-block !important;
+    }
+    .block-ml p {
+      font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif !important;
+      font-size: 15px !important;
+      color: #064e3b !important;
+      line-height: 1.78 !important;
+      margin: 0 0 12px 0 !important;
+    }
+    .block-en p:last-child,
+    .block-ml p:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    /* Syllabus Styling (Syllabus component) */
+    #chapter-view-ai-syl .header-banner {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%) !important;
+      color: #ffffff !important;
+      padding: 28px 32px !important;
+      border-radius: 16px !important;
+      margin-bottom: 28px !important;
+    }
+    #chapter-view-ai-syl .header-banner h4 {
+      font-size: 13px !important;
+      color: #a5b4fc !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.8px !important;
+      margin: 0 0 8px 0 !important;
+    }
+    #chapter-view-ai-syl .header-banner h1 {
+      font-size: 26px !important;
+      font-weight: 850 !important;
+      color: #ffffff !important;
+      margin: 0 0 10px 0 !important;
+      line-height: 1.35 !important;
+    }
+    #chapter-view-ai-syl .header-banner .meta {
+      font-size: 13.5px !important;
+      color: #c7d2fe !important;
+      line-height: 1.5 !important;
+    }
+    #chapter-view-ai-syl h2 {
+      font-size: 19px !important;
+      font-weight: 800 !important;
+      color: #1e1b4b !important;
+      border-bottom: 2px solid #e0e7ff !important;
+      padding-bottom: 8px !important;
+      margin: 32px 0 18px 0 !important;
+    }
+    #chapter-view-ai-syl h4 {
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      color: #312e81 !important;
+      margin: 20px 0 10px 0 !important;
+    }
+    .bilingual-entry {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 12px !important;
+      padding: 18px 20px !important;
+      margin-bottom: 20px !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
+    }
+    .en-part {
+      font-size: 15px !important;
+      line-height: 1.68 !important;
+      color: #1e293b !important;
+      margin-bottom: 14px !important;
+      padding-bottom: 14px !important;
+      border-bottom: 1px dashed #cbd5e1 !important;
+    }
+    .ml-part {
+      font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif !important;
+      font-size: 15px !important;
+      line-height: 1.78 !important;
+      color: #064e3b !important;
+    }
+    .en-tag {
+      background: #3b82f6 !important;
+      color: #ffffff !important;
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      padding: 2px 6px !important;
+      border-radius: 4px !important;
+      margin-right: 8px !important;
+      display: inline-block !important;
+    }
+    .ml-tag {
+      background: #10b981 !important;
+      color: #ffffff !important;
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      padding: 2px 6px !important;
+      border-radius: 4px !important;
+      margin-right: 8px !important;
+      display: inline-block !important;
+    }
+
+    /* Highlights & Notes */
+    .hl-green {
+      background: #bbf7d0 !important;
+      color: #14532d !important;
+      font-weight: 600 !important;
+      padding: 2px 6px !important;
+      border-radius: 4px !important;
+    }
+    .hl-yellow {
+      background: #fef08a !important;
+      color: #713f12 !important;
+      font-weight: 600 !important;
+      padding: 2px 6px !important;
+      border-radius: 4px !important;
+    }
+
+    /* MCQs, Exams, & Practice Questions */
+    .mcq-card, .qa-card {
+      border: 1.5px solid #cbd5e1 !important;
+      border-radius: 12px !important;
+      padding: 16px 18px !important;
+      margin-bottom: 14px !important;
+      background: #ffffff !important;
+    }
+    .mcq-q-en {
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      color: #0f172a !important;
+      line-height: 1.5 !important;
+      margin-bottom: 6px !important;
+    }
+    .mcq-q-ml {
+      font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif !important;
+      font-size: 14.5px !important;
+      font-weight: 600 !important;
+      color: #0369a1 !important;
+      line-height: 1.6 !important;
+      margin-bottom: 12px !important;
+    }
+    .mcq-opt, .mcq-option {
+      font-size: 14px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 6px !important;
+    }
+
+    /* Page Footer */
+    .page-footer {
+      border-top: 1px solid #e2e8f0 !important;
+      padding-top: 14px !important;
+      margin-top: 24px !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      font-size: 12px !important;
+      color: #64748b !important;
+    }
+
+    /* Responsive Mobile Layout */
+    @media (max-width: 768px) {
+      .soc-chapter-view .page-container,
+      .soc-chapter-view .content-page,
+      .soc-chapter-view .cover-page,
+      .soc-chapter-view .page {
+        padding: 18px 14px !important;
+        border-radius: 12px !important;
+        margin-bottom: 20px !important;
+      }
+      .bilingual-pair {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        padding: 12px !important;
+      }
+      .block-en p, .block-ml p, .en-part, .ml-part {
+        font-size: 14.5px !important;
+        line-height: 1.65 !important;
+      }
+      .hero-title-en {
+        font-size: 18px !important;
+      }
+      .hero-title-ml {
+        font-size: 16px !important;
+      }
+      .top-bar {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+      }
+    }
+  </style>
+
+
 </head>
 <body oncontextmenu="event.preventDefault(); return false;">
 
@@ -17343,7 +18101,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
 <!-- DATA & INTERACTIVE SCRIPT -->
 <script>
-const MODULES = [{"id": "mod1", "name": "Module 1 · Introduction to AI", "theme": {"border": "#fda4af", "bg": "#fff1f2", "color": "#be123c", "glow": "rgba(225, 29, 72, 0.4)"}, "chapters": [{"id": "ai-syl", "label": "Syllabus · Philosophy of AI", "title": "Philosophy of AI · Official Syllabus & Outcomes", "desc": "ഔദ്യോഗിക സിലബസ് രൂപരേഖ & സമഗ്ര പഠന ലക്ഷ്യങ്ങൾ · Bilingual Guide", "file": "temp_ai_html/Syllabus_Philosophy_of_AI_Malayalam.pdf.html"}, {"id": "ai-mod1-ch1", "label": "Chapter 1 · History & Foundations", "title": "Philosophy of AI · Module 1 · Chapter 1: History and Foundations", "desc": "നിർമ്മിത ബുദ്ധിയുടെ ചരിത്രവും ദാർശനിക അടിത്തറയും · Full Bilingual Guide", "file": "temp_ai_html/AI_Philosophy_Chapter_1_Malayalam.pdf.html"}, {"id": "ai-mod1-ch2", "label": "Chapter 2 · Can a Machine Think?", "title": "Philosophy of AI · Module 1 · Chapter 2: Can a Machine Think?", "desc": "ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ? ട്യൂറിംഗ് ടെസ്റ്റും ചർച്ച് തീസിസും", "file": "temp_ai_html/AI_Philosophy_Chapter_2_Malayalam.pdf.html"}, {"id": "ai-mod1-ch3", "label": "Chapter 3 · Philosophy in the Light of AI", "title": "Philosophy of AI · Module 1 · Chapter 3: Philosophy in the Light of AI", "desc": "നിർമ്മിത ബുദ്ധിയുടെ വെളിച്ചത്തിൽ തത്ത്വചിന്ത · ദാർശനിക വിശകലനം", "file": "temp_ai_html/AI_Philosophy_Chapter_3_Malayalam.pdf.html"}]}, {"id": "mod2", "name": "Module 2 · Classical Version of AI", "theme": {"border": "#fdba74", "bg": "#fff7ed", "color": "#c2410c", "glow": "rgba(234, 88, 12, 0.4)"}, "chapters": [{"id": "ai-mod2-ch4", "label": "Chapter 4 · Classical Model (GOFAI)", "title": "Philosophy of AI · Module 2 · Chapter 4: Classical AI & GOFAI", "desc": "ക്ലാസിക്കൽ AI മാതൃകയിലെ പ്രശ്നങ്ങൾ (GOFAI സിദ്ധാന്തം)", "file": "temp_ai_html/AI_Philosophy_Chapter_4_Malayalam.pdf.html"}, {"id": "ai-mod2-ch5", "label": "Chapter 5 · Alan Turing Test", "title": "Philosophy of AI · Module 2 · Chapter 5: Alan Turing Test", "desc": "അലൻ ട്യൂറിംഗ് ടെസ്റ്റ് & ഇമിറ്റേഷൻ ഗെയിം ദാർശനികത", "file": "temp_ai_html/AI_Philosophy_Chapter_5_Malayalam.pdf.html"}, {"id": "ai-mod2-ch6", "label": "Chapter 6 · Chinese Room Experiment", "title": "Philosophy of AI · Module 2 · Chapter 6: Chinese Room Experiment", "desc": "ജോൺ സിയേളിന്റെ ചൈനീസ് റൂം പരീക്ഷണം & സിന്റാക്സ് vs സെമാന്റിക്സ്", "file": "temp_ai_html/AI_Philosophy_Chapter_6_Malayalam.pdf.html"}, {"id": "ai-mod2-ch7", "label": "Chapter 7 · Descartes & Philosophy of Mind", "title": "Philosophy of AI · Module 2 · Chapter 7: Descartes and Philosophy of Mind", "desc": "റെനെ ദെക്കാർത്തും മനസ്സിന്റെ തത്ത്വചിന്തയും (ഡ്യുവലിസം)", "file": "temp_ai_html/AI_Philosophy_Chapter_7_Malayalam.pdf.html"}, {"id": "ai-mod2-ch8", "label": "Chapter 8 · Disembodied Intelligence", "title": "Philosophy of AI · Module 2 · Chapter 8: Disembodied Intelligence", "desc": "ശരീരരഹിതമായ ബുദ്ധി (ഡിസ്എംബോഡീഡ് ഇന്റലിജൻസ് സങ്കല്പം)", "file": "temp_ai_html/AI_Philosophy_Chapter_8_Malayalam.pdf.html"}]}, {"id": "mod3", "name": "Module 3 · Theories of Knowledge", "theme": {"border": "#c4b5fd", "bg": "#f5f3ff", "color": "#6d28d9", "glow": "rgba(124, 58, 237, 0.4)"}, "chapters": [{"id": "ai-mod3-ch9", "label": "Chapter 9 · Buddhism Epistemology", "title": "Philosophy of AI · Module 3 · Chapter 9: Buddhism Epistemology", "desc": "ബൗദ്ധ ജ്ഞാനമീമാംസ (പ്രത്യക്ഷവും അനുമാനവും)", "file": "temp_ai_html/AI_Philosophy_Chapter_9_Malayalam.pdf.html"}, {"id": "ai-mod3-ch10", "label": "Chapter 10 · Nyāya Epistemology", "title": "Philosophy of AI · Module 3 · Chapter 10: Nyāya Epistemology", "desc": "ന്യായ ജ്ഞാനമീമാംസ (പ്രമാണങ്ങൾ, പ്രത്യക്ഷം, അനുമാനം, ഉപമാനം, ശബ്ദം)", "file": "temp_ai_html/AI_Philosophy_Chapter_10_Malayalam.pdf.html"}, {"id": "ai-mod3-ch11", "label": "Chapter 11 · Western Epistemology", "title": "Philosophy of AI · Module 3 · Chapter 11: Western Epistemology", "desc": "പാശ്ചാത്യ ജ്ഞാനമീമാംസ (റാഷണലിസം & എംപിരിസിസം)", "file": "temp_ai_html/AI_Philosophy_Chapter_11_Malayalam.pdf.html"}, {"id": "ai-mod3-ch12", "label": "Chapter 12 · Functionalism & Mind", "title": "Philosophy of AI · Module 3 · Chapter 12: Functionalism", "desc": "ഫങ്ഷണലിസം (പ്രവർത്തനവാദം & കമ്പ്യൂട്ടേഷണൽ മൈൻഡ്)", "file": "temp_ai_html/AI_Philosophy_Chapter_12_Malayalam.pdf.html"}, {"id": "ai-mod3-ch13", "label": "Chapter 13 · Epistemological Implications", "title": "Philosophy of AI · Module 3 · Chapter 13: Epistemological Implications in AI", "desc": "നിർമ്മിത ബുദ്ധിയിലെ ജ്ഞാനമീമാംസാ പ്രത്യാഘാതങ്ങൾ", "file": "temp_ai_html/AI_Philosophy_Chapter_13_Malayalam.pdf.html"}]}, {"id": "mod4", "name": "Module 4 · Ethics & Philosophical Implications", "theme": {"border": "#6ee7b7", "bg": "#ecfdf5", "color": "#047857", "glow": "rgba(16, 185, 129, 0.4)"}, "chapters": [{"id": "ai-mod4-ch14", "label": "Chapter 14 · Value Alignment", "title": "Philosophy of AI · Module 4 · Chapter 14: Value Alignment", "desc": "സ്വയംഭരണ AI സംവിധാനങ്ങളുടെ പ്രവർത്തന ലക്ഷ്യങ്ങളെ പൊരുത്തപ്പെടുത്തൽ", "file": "temp_ai_html/AI_Philosophy_Chapter_14_Malayalam.pdf.html"}, {"id": "ai-mod4-ch15", "label": "Chapter 15 · Existential Risk to Humanity", "title": "Philosophy of AI · Module 4 · Chapter 15: Existential Risk", "desc": "AI-യുടെ ഭാവി മാനവരാശിക്ക് ഒരു അസ്തിത്വ ഭീഷണിയാകുമോ?", "file": "temp_ai_html/AI_Philosophy_Chapter_15_Malayalam.pdf.html"}, {"id": "ai-mod4-ch16", "label": "Chapter 16 · Preventing Algorithmic Biases", "title": "Philosophy of AI · Module 4 · Chapter 16: Preventing Algorithmic Biases", "desc": "മെഷീൻ ലേണിംഗ് അൽഗോരിതങ്ങളിലെ പക്ഷപാതങ്ങൾ തടയൽ", "file": "temp_ai_html/AI_Philosophy_Chapter_16_Malayalam.pdf.html"}, {"id": "ai-mod4-ch17", "label": "Chapter 17 · AI in Social Relations", "title": "Philosophy of AI · Module 4 · Chapter 17: AI Systems in Social Relations", "desc": "നമ്മുടെ സാമൂഹിക ബന്ധങ്ങളിൽ AI സംവിധാനങ്ങളെ എങ്ങനെ ഉൾച്ചേർക്കണം?", "file": "temp_ai_html/AI_Philosophy_Chapter_17_Malayalam.pdf.html"}, {"id": "ai-mod4-ch18", "label": "Chapter 18 · Autonomous Vehicles Ethics", "title": "Philosophy of AI · Module 4 · Chapter 18: Ethical Rules for Autonomous Vehicles", "desc": "സ്വയംഭരണ കാറുകൾ പോലുള്ള AI സംവിധാനങ്ങൾ ഏതുതരം ധാർമ്മിക നിയമങ്ങളാണ് ഉപയോഗിക്കേണ്ടത്?", "file": "temp_ai_html/AI_Philosophy_Chapter_18_Malayalam.pdf.html"}, {"id": "ai-mod4-ch19", "label": "Chapter 19 · Moral Harm & Patiency", "title": "Philosophy of AI · Module 4 · Chapter 19: Moral Harm & Patiency", "desc": "AI സംവിധാനങ്ങൾക്ക് ധാർമ്മികമായ ദ്രോഹം അനുഭവിക്കാൻ കഴിയുമോ?", "file": "temp_ai_html/AI_Philosophy_Chapter_19_Malayalam.pdf.html"}, {"id": "ai-mod4-ch20", "label": "Chapter 20 · Moral Agency & Accountability", "title": "Philosophy of AI · Module 4 · Chapter 20: Moral Agency & Accountability", "desc": "AI സംവിധാനങ്ങൾക്ക് ധാർമ്മിക കർതൃത്വങ്ങൾ ആകാൻ കഴിയുമോ? അവയെ എങ്ങനെ ഉത്തരവാദികളാക്കണം?", "file": "temp_ai_html/AI_Philosophy_Chapter_20_Malayalam.pdf.html"}]}, {"id": "mod5", "name": "Module 5 · Future of Humanity", "theme": {"border": "#5eead4", "bg": "#f0fdfa", "color": "#0f766e", "glow": "rgba(20, 184, 166, 0.4)"}, "chapters": [{"id": "ai-mod5-ch21", "label": "Chapter 21 · Machine Cognition Synthesis", "title": "Philosophy of AI · Module 5 · Chapter 21: Philosophical Underpinning & Future of Humanity", "desc": "നിർമ്മിത ബുദ്ധിയുടെ തത്ത്വചിന്തയും മാനവരാശിയുടെ ഭാവിയും (സമഗ്ര പഠനം)", "file": "temp_ai_html/AI_Philosophy_Chapter_21_Malayalam.pdf.html"}, {"id": "ai-mod5-ch22", "label": "Chapter 22 · Indian Epistemology & AI", "title": "Philosophy of AI · Module 5 · Chapter 22: Indian Epistemology, Systems & AI Implications", "desc": "ഭാരതീയ ജ്ഞാനശാസ്ത്രം, ആസ്തിക-നാസ്തിക ദർശനങ്ങൾ & AI സമന്വയം", "file": "temp_ai_html/AI_Philosophy_Chapter_22_Malayalam.pdf.html"}]}];
+const MODULES = [{"id": "mod1", "name": "Module 1 · Introduction to AI", "theme": {"border": "#fda4af", "bg": "#fff1f2", "color": "#be123c", "glow": "rgba(225, 29, 72, 0.4)"}, "chapters": [{"id": "ai-syl", "label": "Syllabus · Philosophy of AI", "title": "Philosophy of AI · Official Syllabus & Outcomes", "desc": "ഔദ്യോഗിക സിലബസ് രൂപരേഖ & സമഗ്ര പഠന ലക്ഷ്യങ്ങൾ · Bilingual Guide", "file": "temp_ai_html/Syllabus_Philosophy_of_AI_Malayalam.pdf.html"}, {"id": "ai-mod1-ch1", "label": "Chapter 1 · History & Foundations", "title": "Philosophy of AI · Module 1 · Chapter 1: History and Foundations", "desc": "നിർമ്മിത ബുദ്ധിയുടെ ചരിത്രവും ദാർശനിക അടിത്തറയും · Full Bilingual Guide", "file": "temp_ai_html/AI_Philosophy_Chapter_1_Malayalam.pdf.html"}, {"id": "ai-mod1-ch2", "label": "Chapter 2 · Can a Machine Think?", "title": "Philosophy of AI · Module 1 · Chapter 2: Can a Machine Think?", "desc": "ഒരു യന്ത്രത്തിന് ചിന്തിക്കാൻ കഴിയുമോ? (Can a Machine Think?) · ട്യൂറിംഗ് ടെസ്റ്റും ചർച്ച് തീസിസും (Turing Test & Church-Turing Thesis)", "file": "temp_ai_html/AI_Philosophy_Chapter_2_Malayalam.pdf.html"}, {"id": "ai-mod1-ch3", "label": "Chapter 3 · Philosophy in the Light of AI", "title": "Philosophy of AI · Module 1 · Chapter 3: Philosophy in the Light of AI", "desc": "നിർമ്മിത ബുദ്ധിയുടെ വെളിച്ചത്തിൽ തത്ത്വചിന്ത (Philosophy in the Light of AI) · ദാർശനിക വിശകലനം (Philosophical Analysis)", "file": "temp_ai_html/AI_Philosophy_Chapter_3_Malayalam.pdf.html"}]}, {"id": "mod2", "name": "Module 2 · Classical Version of AI", "theme": {"border": "#fdba74", "bg": "#fff7ed", "color": "#c2410c", "glow": "rgba(234, 88, 12, 0.4)"}, "chapters": [{"id": "ai-mod2-ch4", "label": "Chapter 4 · Classical Model (GOFAI)", "title": "Philosophy of AI · Module 2 · Chapter 4: Classical AI & GOFAI", "desc": "ക്ലാസിക്കൽ AI മാതൃകയിലെ പ്രശ്നങ്ങൾ (GOFAI സിദ്ധാന്തം)", "file": "temp_ai_html/AI_Philosophy_Chapter_4_Malayalam.pdf.html"}, {"id": "ai-mod2-ch5", "label": "Chapter 5 · Alan Turing Test", "title": "Philosophy of AI · Module 2 · Chapter 5: Alan Turing Test", "desc": "അലൻ ട്യൂറിംഗ് ടെസ്റ്റ് & ഇമിറ്റേഷൻ ഗെയിം (Alan Turing Test & Imitation Game)", "file": "temp_ai_html/AI_Philosophy_Chapter_5_Malayalam.pdf.html"}, {"id": "ai-mod2-ch6", "label": "Chapter 6 · Chinese Room Experiment", "title": "Philosophy of AI · Module 2 · Chapter 6: Chinese Room Experiment", "desc": "ജോൺ സിയേളിന്റെ ചൈനീസ് റൂം പരീക്ഷണം (Searle's Chinese Room Argument: Syntax vs Semantics)", "file": "temp_ai_html/AI_Philosophy_Chapter_6_Malayalam.pdf.html"}, {"id": "ai-mod2-ch7", "label": "Chapter 7 · Descartes & Philosophy of Mind", "title": "Philosophy of AI · Module 2 · Chapter 7: Descartes and Philosophy of Mind", "desc": "റെനെ ദെക്കാർത്തും മനസ്സിന്റെ തത്ത്വചിന്തയും (Descartes & Philosophy of Mind · Cartesian Dualism)", "file": "temp_ai_html/AI_Philosophy_Chapter_7_Malayalam.pdf.html"}, {"id": "ai-mod2-ch8", "label": "Chapter 8 · Disembodied Intelligence", "title": "Philosophy of AI · Module 2 · Chapter 8: Disembodied Intelligence", "desc": "ശരീരരഹിതമായ ബുദ്ധി (Disembodied Intelligence & Embodied Cognition)", "file": "temp_ai_html/AI_Philosophy_Chapter_8_Malayalam.pdf.html"}]}, {"id": "mod3", "name": "Module 3 · Theories of Knowledge", "theme": {"border": "#c4b5fd", "bg": "#f5f3ff", "color": "#6d28d9", "glow": "rgba(124, 58, 237, 0.4)"}, "chapters": [{"id": "ai-mod3-ch9", "label": "Chapter 9 · Buddhism Epistemology", "title": "Philosophy of AI · Module 3 · Chapter 9: Buddhism Epistemology", "desc": "ബൗദ്ധ ജ്ഞാനമീമാംസ (Buddhist Epistemology: Pratyaksha & Anumana)", "file": "temp_ai_html/AI_Philosophy_Chapter_9_Malayalam.pdf.html"}, {"id": "ai-mod3-ch10", "label": "Chapter 10 · Nyāya Epistemology", "title": "Philosophy of AI · Module 3 · Chapter 10: Nyāya Epistemology", "desc": "ന്യായ ജ്ഞാനമീമാംസ (Nyaya Epistemology: Four Pramanas - Pratyaksha, Anumana, Upamana, Shabda)", "file": "temp_ai_html/AI_Philosophy_Chapter_10_Malayalam.pdf.html"}, {"id": "ai-mod3-ch11", "label": "Chapter 11 · Western Epistemology", "title": "Philosophy of AI · Module 3 · Chapter 11: Western Epistemology", "desc": "പാശ്ചാത്യ ജ്ഞാനമീമാംസ (Western Epistemology: Rationalism vs Empiricism)", "file": "temp_ai_html/AI_Philosophy_Chapter_11_Malayalam.pdf.html"}, {"id": "ai-mod3-ch12", "label": "Chapter 12 · Functionalism & Mind", "title": "Philosophy of AI · Module 3 · Chapter 12: Functionalism", "desc": "ഫങ്ഷണലിസം (Functionalism & Computational Theory of Mind)", "file": "temp_ai_html/AI_Philosophy_Chapter_12_Malayalam.pdf.html"}, {"id": "ai-mod3-ch13", "label": "Chapter 13 · Epistemological Implications", "title": "Philosophy of AI · Module 3 · Chapter 13: Epistemological Implications in AI", "desc": "നിർമ്മിത ബുദ്ധിയിലെ ജ്ഞാനമീമാംസാ പ്രത്യാഘാതങ്ങൾ (Epistemological Implications of AI)", "file": "temp_ai_html/AI_Philosophy_Chapter_13_Malayalam.pdf.html"}]}, {"id": "mod4", "name": "Module 4 · Ethics & Philosophical Implications", "theme": {"border": "#6ee7b7", "bg": "#ecfdf5", "color": "#047857", "glow": "rgba(16, 185, 129, 0.4)"}, "chapters": [{"id": "ai-mod4-ch14", "label": "Chapter 14 · Value Alignment", "title": "Philosophy of AI · Module 4 · Chapter 14: Value Alignment", "desc": "സ്വയംഭരണ AI പ്രവർത്തന ലക്ഷ്യങ്ങൾ (The Value Alignment Problem in Autonomous AI)", "file": "temp_ai_html/AI_Philosophy_Chapter_14_Malayalam.pdf.html"}, {"id": "ai-mod4-ch15", "label": "Chapter 15 · Existential Risk to Humanity", "title": "Philosophy of AI · Module 4 · Chapter 15: Existential Risk", "desc": "AI മാനവരാശിക്ക് ഭീഷണിയാകുമോ? (Existential Risk & Future of Humanity)", "file": "temp_ai_html/AI_Philosophy_Chapter_15_Malayalam.pdf.html"}, {"id": "ai-mod4-ch16", "label": "Chapter 16 · Preventing Algorithmic Biases", "title": "Philosophy of AI · Module 4 · Chapter 16: Preventing Algorithmic Biases", "desc": "അൽഗോരിതങ്ങളിലെ പക്ഷപാതങ്ങൾ (Algorithmic Bias, Fairness & Accountability)", "file": "temp_ai_html/AI_Philosophy_Chapter_16_Malayalam.pdf.html"}, {"id": "ai-mod4-ch17", "label": "Chapter 17 · AI in Social Relations", "title": "Philosophy of AI · Module 4 · Chapter 17: AI Systems in Social Relations", "desc": "സാമൂഹിക ബന്ധങ്ങളിലെ AI (AI in Social Relations & Human Interaction)", "file": "temp_ai_html/AI_Philosophy_Chapter_17_Malayalam.pdf.html"}, {"id": "ai-mod4-ch18", "label": "Chapter 18 · Autonomous Vehicles Ethics", "title": "Philosophy of AI · Module 4 · Chapter 18: Ethical Rules for Autonomous Vehicles", "desc": "സ്വയംഭരണ സംവിധാനങ്ങളിലെ ധാർമ്മിക നിയമങ്ങൾ (Moral Algorithms in Autonomous Systems: Trolley Problem)", "file": "temp_ai_html/AI_Philosophy_Chapter_18_Malayalam.pdf.html"}, {"id": "ai-mod4-ch19", "label": "Chapter 19 · Moral Harm & Patiency", "title": "Philosophy of AI · Module 4 · Chapter 19: Moral Harm & Patiency", "desc": "AI ധാർമ്മിക ദ്രോഹം അനുഭവിക്കുമോ? (Moral Patienthood: Can AI Feel Harm or Suffering?)", "file": "temp_ai_html/AI_Philosophy_Chapter_19_Malayalam.pdf.html"}, {"id": "ai-mod4-ch20", "label": "Chapter 20 · Moral Agency & Accountability", "title": "Philosophy of AI · Module 4 · Chapter 20: Moral Agency & Accountability", "desc": "AI ധാർമ്മിക കർതൃത്വങ്ങൾ ആകുമോ? (Moral Agency & Accountability in AI)", "file": "temp_ai_html/AI_Philosophy_Chapter_20_Malayalam.pdf.html"}]}, {"id": "mod5", "name": "Module 5 · Future of Humanity", "theme": {"border": "#5eead4", "bg": "#f0fdfa", "color": "#0f766e", "glow": "rgba(20, 184, 166, 0.4)"}, "chapters": [{"id": "ai-mod5-ch21", "label": "Chapter 21 · Machine Cognition Synthesis", "title": "Philosophy of AI · Module 5 · Chapter 21: Philosophical Underpinning & Future of Humanity", "desc": "AI തത്ത്വചിന്തയും മാനവ ഭാവിയും (Philosophy of AI & Future of Humanity: Comprehensive Synthesis)", "file": "temp_ai_html/AI_Philosophy_Chapter_21_Malayalam.pdf.html"}, {"id": "ai-mod5-ch22", "label": "Chapter 22 · Indian Epistemology & AI", "title": "Philosophy of AI · Module 5 · Chapter 22: Indian Epistemology, Systems & AI Implications", "desc": "ഭാരതീയ ജ്ഞാനശാസ്ത്രം & AI സമന്വയം (Indian Epistemology, Astika/Nastika Traditions & Modern AI Convergence)", "file": "temp_ai_html/AI_Philosophy_Chapter_22_Malayalam.pdf.html"}]}];
 
 // Flat list of all chapters for sequential navigation
 const ALL_CHAPTERS = [];
@@ -17508,11 +18266,11 @@ document.addEventListener('DOMContentLoaded', () => {
 (function() {
   window.addEventListener('contextmenu', e => { e.preventDefault(); return false; }, true);
   window.addEventListener('dragstart', e => { e.preventDefault(); return false; }, true);
-  window.addEventListener('copy', e => { e.preventDefault(); return false; }, true);
-  window.addEventListener('cut', e => { e.preventDefault(); return false; }, true);
+  // copy allowed for reading study notes
+  // cut allowed
   window.addEventListener('keydown', e => {
     const k = e.key ? e.key.toLowerCase() : '';
-    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'u', 'c', 'x', 'a'].includes(k)) {
+    if ((e.ctrlKey || e.metaKey) && ['s', 'u'].includes(k)) {
       e.preventDefault();
       return false;
     }
