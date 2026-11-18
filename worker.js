@@ -28,12 +28,12 @@ const ROOM_MAX_MESSAGES = 40;
 
 // Temporary preview gate. Set MOCK_EXAM_PASSWORD as a Worker secret.
 // Change mockPreviewEnabled to false to reopen the exam.
-const mockPreviewEnabled = true;
+const mockPreviewEnabled = false;
 const mockExamPath = '/sociology-theory-mock';
 const mockCookie = '__Host-hub_mock';
 
 async function mockProof(env) {
-  const secret = (env.MOCK_EXAM_PASSWORD || '010101').trim();
+  const secret = (env.MOCK_EXAM_PASSWORD || '112211').trim();
   const adminSecret = (env.ADMIN_PASSWORD && env.ADMIN_PASSWORD.length >= 16) ? env.ADMIN_PASSWORD : 'academic-hub-mock-secret-2026';
   return digest('mock-preview:v1:' + adminSecret + ':' + secret);
 }
@@ -69,10 +69,10 @@ async function mockPreview(request, env) {
       }
       password = new URLSearchParams(await request.text()).get('password');
     } catch { return new Response(null,{status:400,headers}); }
-    const targetPassword = (env.MOCK_EXAM_PASSWORD || '010101').trim();
+    const targetPassword = (env.MOCK_EXAM_PASSWORD || '112211').trim();
     const proof = await mockProof(env);
     const entered = (password || '').trim();
-    if (proof && (mockEquals(entered, targetPassword) || mockEquals(entered, '010101'))) {
+    if (proof && (mockEquals(entered, targetPassword) || mockEquals(entered, '112211'))) {
       headers.set('Location',mockExamPath);
       headers.set('Set-Cookie',mockCookie + '=' + proof + '; Path=/; Secure; HttpOnly; SameSite=Strict');
       return new Response(null,{status:303,headers});
@@ -91,7 +91,7 @@ async function mockPreview(request, env) {
     return privateAsset;
   }
   headers.set('Content-Type','text/html; charset=utf-8');
-  const error = request.method === 'POST' ? '<div class="error-msg" role="alert">Incorrect password. Try entering 010101. <span lang="ml">പാസ്‌വേഡ് തെറ്റാണ്. 010101 നൽകുക.</span></div>' : '';
+  const error = request.method === 'POST' ? '<div class="error-msg" role="alert">Incorrect password. Try entering 112211. <span lang="ml">പാസ്‌വേഡ് തെറ്റാണ്. 112211 നൽകുക.</span></div>' : '';
   const unlockHtml = `<!doctype html>
 <html lang="en">
 <head>
@@ -123,7 +123,7 @@ async function mockPreview(request, env) {
     ${error}
     <form method="post" action="${mockExamPath}">
       <label for="password" style="font-weight:700;font-size:13.5px;color:#1e293b">Access Password · <span lang="ml">പാസ്‌വേഡ്</span></label>
-      <input type="password" id="password" name="password" inputmode="numeric" autocomplete="current-password" maxlength="64" placeholder="Enter password (e.g. 010101)" required>
+      <input type="password" id="password" name="password" inputmode="numeric" autocomplete="current-password" maxlength="64" placeholder="Enter password (e.g. 112211)" required>
       <button type="submit">Unlock Mock Exam · <span lang="ml">തുറക്കുക</span></button>
     </form>
     <a class="back-link" href="/#tests">← Back to Practice Tests</a>
@@ -3426,13 +3426,14 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
       const isPrivacyPolicy = /^\/privacy-policy(?:\.html)?$/i.test(url.pathname);
       const isContactPage = /^\/contact(?:\.html)?$/i.test(url.pathname);
 
-      response = new HTMLRewriter()
+      if (!isPrivacyPolicy) {
+        response = new HTMLRewriter()
         .on("head", {
           element(el) {
             const pauseAds = requiresConsent ? ' (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;' : '';
             el.prepend(`<script>window.HUB_IS_EUROPE = ${requiresConsent};${pauseAds}</script>`, { html: true });
-            el.append('<script src="/consent-banner.js?v=20261117a"></script>', { html: true });
-            if (!isContactPage && !isPrivacyPolicy) {
+            el.append('<script src="/consent-banner.js?v=20261110b"></script>', { html: true });
+            if (!isContactPage) {
               el.append('<style id="hub-protection-global">*,*::before,*::after{-webkit-touch-callout:none!important;-webkit-user-select:none!important;-moz-user-select:none!important;-ms-user-select:none!important;user-select:none!important}img{-webkit-user-drag:none!important;user-drag:none!important}@media print{html,body{display:none!important;visibility:hidden!important}}a[download],button[download],[download],.btn-download,.download,#downloadBtn,#saveBtn,.save{display:none!important}</style>', { html: true });
             }
 
@@ -3460,10 +3461,8 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
               // Discreet button to reopen Google certified privacy choices if needed
               el.append('<button hidden id="hub-consent-reopen" type="button" aria-label="Privacy and Cookie Settings" style="position:fixed;bottom:12px;left:12px;z-index:9999;background:rgba(23,59,53,0.92);color:#fff;border:1px solid rgba(255,255,255,0.4);border-radius:6px;padding:6px 12px;font:500 12px system-ui,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.25);">🛡️ Privacy &amp; Cookie Settings</button>', { html: true });
             }
-          if (!isPrivacyPolicy) {
-            el.append('<script src="/traffic-tracker.js?v=20261105_act2" defer></script>', { html: true });
-          }
-          if (!isContactPage && !isPrivacyPolicy) {
+          el.append('<script src="/traffic-tracker.js?v=20261105_act2" defer></script>', { html: true });
+          if (!isContactPage) {
             el.append('<script id="hub-universal-protection-worker">(function(){window.addEventListener("contextmenu",function(e){e.preventDefault();e.stopPropagation();return false;},true);window.addEventListener("keydown",function(e){var k=e.key?e.key.toLowerCase():"";if((e.ctrlKey||e.metaKey)&&["s","p","u","c","a","x"].indexOf(k)!==-1){e.preventDefault();e.stopPropagation();return false;}if(e.key==="F12"||((e.ctrlKey||e.metaKey)&&e.shiftKey&&["i","j","c"].indexOf(k)!==-1)){e.preventDefault();e.stopPropagation();return false;}},true);window.addEventListener("dragstart",function(e){e.preventDefault();return false;},true);window.addEventListener("copy",function(e){e.preventDefault();return false;},true);window.addEventListener("cut",function(e){e.preventDefault();return false;},true);window.addEventListener("selectstart",function(e){e.preventDefault();return false;},true);document.addEventListener("contextmenu",function(e){e.preventDefault();return false;},true);})();</script>', { html: true });
           }
 
@@ -3474,6 +3473,7 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
           }
         }
       }).transform(response);
+      }
 
       const htmlHeaders = new Headers(response.headers);
       htmlHeaders.set("Cache-Control", "private, no-cache, no-store, max-age=0, must-revalidate");

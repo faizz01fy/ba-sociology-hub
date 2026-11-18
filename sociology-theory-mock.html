@@ -1,52 +1,58 @@
 <!doctype html>
-<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sociology Mock Exam · Academic Hub</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f2f5ff;color:#192346;font:16px/1.55 system-ui,sans-serif}main{max-width:720px;margin:auto;padding:16px}a{color:#4338ca}header,article,.panel{border-radius:18px;padding:20px;margin:14px 0;background:white}header{background:linear-gradient(120deg,#37239a,#174d87);color:white}h1,h2,p{margin:0 0 12px}button,select,textarea{font:inherit}button,select{min-height:48px;padding:10px 16px;border-radius:12px}button{border:0;background:#4338ca;color:white;font-weight:700;cursor:pointer}button:disabled{opacity:.6}textarea{width:100%;min-height:128px;padding:12px;border:1px solid #8996bd;border-radius:12px}textarea:focus-visible,button:focus-visible{outline:3px solid #0d9488;outline-offset:3px}.timer{position:sticky;top:0;background:#192346;color:white;padding:12px 18px;border-radius:12px;z-index:1;font-variant-numeric:tabular-nums}.feedback{background:#e5faf3;border-radius:12px;padding:14px;margin-top:12px}.marks{color:#086451;font-weight:750}small{display:block;margin:8px 0}label{display:block;font-weight:650}#submit{width:100%}[hidden]{display:none!important}
+*{box-sizing:border-box}
+body{margin:0;background:#f1f5f9;color:#0f172a;font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:820px;margin:auto;padding:16px 16px 48px}
+a{color:#4338ca;text-decoration:none}
+a:hover{text-decoration:underline}
+header,.panel,article{border-radius:20px;padding:24px;margin:16px 0;background:#ffffff;box-shadow:0 4px 16px rgba(15,23,42,0.06)}
+header{background:linear-gradient(135deg,#1e1b4b 0%,#312e81 60%,#1e3a8a 100%);color:#ffffff;box-shadow:0 10px 25px rgba(30,27,75,0.2)}
+header h1{margin:0 0 8px;font-size:1.6rem;font-weight:800;letter-spacing:-0.02em}
+header p{margin:0;opacity:0.92;font-size:0.95rem}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:#4338ca;margin-bottom:12px;font-size:0.92rem}
+
+/* Top Sticky Timer */
 .timer {
+  position: sticky;
+  top: 12px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
-  background: rgba(25, 35, 70, 0.94);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: #fff;
-  padding: 8px 14px;
+  padding: 10px 18px;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22);
-  border: 1.5px solid rgba(140, 136, 229, 0.4);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.3);
+  border: 1.5px solid rgba(129, 140, 248, 0.35);
   z-index: 100;
+  margin-bottom: 18px;
   transition: all 0.3s ease;
 }
 .timer[data-urgent="true"] {
-  background: rgba(140, 20, 50, 0.95);
-  border-color: #f43f5e;
+  background: rgba(153, 27, 27, 0.96);
+  border-color: #f87171;
   animation: pulse-red 1.5s infinite;
 }
-.clock-info {
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+}
+.clock-left {
   display: flex;
-  flex-direction: column;
-}
-.clock-label {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  color: #93c5fd;
-}
-.timer[data-urgent="true"] .clock-label {
-  color: #fecdd3;
-}
-.clock-digits {
-  display: block;
-  font: 800 1.45rem/1.1 system-ui, sans-serif;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
+  align-items: center;
+  gap: 12px;
 }
 .analog-clock-wrap {
-  width: 58px;
-  height: 58px;
+  width: 48px;
+  height: 48px;
   flex: none;
 }
 .analog-clock {
@@ -61,583 +67,1238 @@
 }
 .analog-clock .dial-progress {
   fill: none;
-  stroke: #2dd4bf;
+  stroke: #38bdf8;
   stroke-width: 4.5;
   stroke-linecap: round;
-  transition: stroke-dashoffset 0.8s ease;
-}
-.timer[data-urgent="true"] .dial-progress {
-  stroke: #fb7185;
-}
-.analog-clock .tick {
-  stroke: #94a3b8;
-  stroke-width: 2.2;
-  stroke-linecap: round;
+  transition: stroke-dashoffset 1s linear;
 }
 .analog-clock .hand {
+  stroke: #ffffff;
   stroke-linecap: round;
-  transform-origin: 50px 50px;
 }
-.analog-clock .hand.hour {
-  stroke: #e2e8f0;
-  stroke-width: 3.2;
+.analog-clock .hand.hour { stroke-width: 3.5; }
+.analog-clock .hand.min { stroke-width: 2.8; }
+.analog-clock .hand.sec { stroke: #f43f5e; stroke-width: 1.5; }
+.analog-clock .tick { stroke: rgba(255,255,255,0.3); stroke-width: 1.5; }
+.analog-clock .center-cap { fill: #38bdf8; }
+.clock-info { display: flex; flex-direction: column; }
+.clock-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #93c5fd;
 }
-.analog-clock .hand.min {
-  stroke: #38bdf8;
-  stroke-width: 2.4;
-}
-.analog-clock .hand.sec {
-  stroke: #f43f5e;
-  stroke-width: 1.5;
-}
-.analog-clock .center-cap {
-  fill: #f8fafc;
+.timer[data-urgent="true"] .clock-label { color: #fecdd3; }
+.clock-digits {
+  font: 800 1.45rem/1.1 system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
 }
 
-/* Floating in side space on desktop/tablet */
-@media (min-width: 1024px) {
-  body:has(#exam:not([hidden])) .timer {
-    position: fixed;
-    top: 24px;
-    right: 28px;
-    width: auto;
-    padding: 10px 18px;
-    margin: 0;
-  }
+/* Exam Navigation Stepper Tabs - High-Visibility 2-Row Grid Layout */
+.exam-nav-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 4px 0 16px;
+  margin: 12px 0 18px;
+  width: 100%;
 }
-@media (max-width: 1023px) {
-  .timer {
-    position: sticky;
-    top: 8px;
-    margin-bottom: 12px;
-  }
-}
-.answer-instructions{margin:16px 0;padding:16px;background:#eef2ff;border:1px solid #b6bef9;border-radius:14px}
-.answer-instructions h2{font-size:1.15rem;color:#37239a}
-.answer-instructions ul{padding-inline-start:1.3rem;margin:0 0 12px}
-.answer-instructions li+li{margin-top:6px}
-.answer-instructions p:last-child{margin-bottom:0}
-@media(min-width:900px){main{max-width:820px}} body:has(#exam:not([hidden])) main{max-width:820px}
-.more-explanation{margin-top:12px;border:1px solid #82bdad;border-radius:10px;padding:0 12px;background:#fff}.more-explanation summary{cursor:pointer;min-height:48px;padding-block:12px;font-weight:700;color:#145a53}.more-explanation summary:focus-visible{outline:2px solid #0d9488;outline-offset:2px}
-
-.voice-bar {
+.tab-btn {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+  min-height: 52px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 14px;
+  color: #1e293b;
+  font-size: 0.92rem;
+  font-weight: 750;
+  cursor: pointer;
+  white-space: normal;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 2px 8px rgba(15,23,42,0.05);
+}
+.tab-btn span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.3;
+  font-weight: 750;
+}
+.tab-btn:hover {
+  background: #f8fafc;
+  border-color: #6366f1;
+  color: #4338ca;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(67, 56, 202, 0.15);
+}
+.tab-btn.active {
+  background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%) !important;
+  color: #ffffff !important;
+  border-color: #4338ca !important;
+  box-shadow: 0 6px 18px rgba(67, 56, 202, 0.35) !important;
+  transform: translateY(-1px);
+}
+.tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  background: #f1f5f9;
+  color: #475569;
+  flex-shrink: 0;
+}
+.tab-btn.active .tab-badge {
+  background: rgba(255,255,255,0.24);
+  color: #ffffff;
+}
+/* When tab 4 (Quiz Report) appears, span it full width or adapt cleanly */
+.tab-btn#tab-btn-4 {
+  grid-column: 1 / -1;
+}
+@media (min-width: 640px) {
+  .exam-nav-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Module 1 At a Glance Card */
+.glance-card {
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+  border: 1.5px solid #bfdbfe;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.glance-card h3 {
+  margin: 0 0 8px 0;
+  color: #1e3a8a;
+  font-size: 1.12rem;
+  display: flex;
   align-items: center;
   gap: 8px;
-  background: #f8faff;
-  border: 1px solid #c7d2fe;
+  flex-wrap: wrap;
+}
+.glance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.glance-item {
+  background: #ffffff;
+  padding: 14px 16px;
   border-radius: 12px;
-  padding: 8px 12px;
-  margin: 10px 0;
+  border-left: 4px solid #4338ca;
+  box-shadow: 0 2px 6px rgba(15,23,42,0.04);
 }
-.voice-bar .voice-badge {
-  font-size: 0.78rem;
-  font-weight: 750;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  color: #37239a;
-  background: #e0e7ff;
-  padding: 3px 8px;
-  border-radius: 6px;
+.glance-item strong {
+  color: #1e1b4b;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.94rem;
 }
-.voice-bar button {
-  min-height: 38px;
-  padding: 6px 12px;
-  border-radius: 8px;
+.glance-item p {
+  margin: 0;
   font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.55;
+}
+
+/* Question Cards & Elements */
+.question-pane {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  border: 1.5px solid #e2e8f0;
+}
+.question-pane h2 {
+  font-size: 1.25rem;
+  line-height: 1.45;
+  color: #0f172a;
+  margin: 0 0 10px;
+}
+.alt-question {
+  font-size: 1.05rem;
+  color: #4338ca;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 14px;
+  padding-left: 12px;
+  border-left: 3px solid #6366f1;
+}
+.marks-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  background: #ecfdf5;
+  color: #065f46;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #a7f3d0;
+  margin-bottom: 16px;
 }
-.btn-dictate {
-  background: #4338ca;
-  color: #fff;
+
+/* Voice Toolbar */
+.voice-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
-.btn-dictate.listening {
-  background: #dc2626 !important;
-  animation: pulse-red 1.2s infinite;
-}
-.btn-record {
-  background: #0284c7;
-  color: #fff;
-}
-.btn-record.recording {
-  background: #e11d48 !important;
-  animation: pulse-red 1.2s infinite;
+.voice-badge {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #475569;
+  text-transform: uppercase;
 }
 .lang-select-voice {
-  min-height: 36px;
+  font-size: 0.84rem;
   padding: 4px 8px;
-  font-size: 0.85rem;
   border-radius: 8px;
-  border: 1px solid #8996bd;
-  background: #fff;
-  color: #1e1b4b;
-}
-.voice-status-pill {
-  font-size: 0.82rem;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
   font-weight: 600;
-  color: #1e1b4b;
-  display: flex;
-  align-items: center;
-  gap: 5px;
 }
-.audio-preview-wrap {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 6px;
-}
-.audio-preview-wrap audio {
-  height: 36px;
-  flex: 1;
-}
-.btn-discard-audio {
-  background: #fee2e2;
-  color: #991b1b;
-  min-height: 34px;
-  padding: 4px 10px;
+.btn-dictate, .btn-record, .btn-discard-audio {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 6px 12px;
   border-radius: 8px;
-  font-size: 0.8rem;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
-@keyframes pulse-red {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
-  70% { transform: scale(1.02); box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+.btn-dictate { background: #4338ca; color: #fff; }
+.btn-dictate.listening { background: #dc2626; animation: pulse-red 1s infinite; }
+.btn-record { background: #0284c7; color: #fff; }
+.btn-record.recording { background: #dc2626; animation: pulse-red 1s infinite; }
+.btn-discard-audio { background: #fee2e2; color: #991b1b; }
+.voice-status-pill { font-size: 0.82rem; font-weight: 700; }
+.audio-preview-wrap { display: flex; align-items: center; gap: 8px; width: 100%; margin-top: 6px; }
+
+/* Textarea & Word Counter */
+textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 14px;
+  font: inherit;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  resize: vertical;
+  color: #0f172a;
+  background: #fdfdfd;
+}
+textarea:focus {
+  outline: 0;
+  border-color: #4338ca;
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.15);
+}
+.word-counter-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.word-counter-pill {
+  font-size: 0.85rem;
+  font-weight: 750;
+  padding: 5px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+.word-counter-pill.under {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+.word-counter-pill.target-reached {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+.word-counter-pill.over {
+  background: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
 }
 
+/* Stepper Bottom Controls */
+.stepper-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1.5px solid #e2e8f0;
+}
+.btn-nav {
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 750;
+  font-size: 0.94rem;
+  cursor: pointer;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  transition: all 0.2s ease;
+}
+.btn-nav:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #6366f1;
+  color: #4338ca;
+}
+.btn-nav:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%);
+  color: #ffffff;
+  border: 0;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 750;
+  font-size: 0.96rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(67, 56, 202, 0.3);
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(67, 56, 202, 0.4);
+}
+.btn-submit-exam {
+  background: linear-gradient(135deg, #065f46 0%, #059669 100%);
+  color: #ffffff;
+  border: 0;
+  padding: 12px 26px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.98rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+}
+.btn-submit-exam:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.4);
+}
 
-/* Compact red-on-black exam timer */
-body:has(#exam:not([hidden])) .timer {position:fixed;top:calc(env(safe-area-inset-top, 0px) + 8px);left:8px;right:auto;width:max-content;max-width:calc(100vw - 16px);margin:0;padding:5px 9px;gap:6px;background:#080808;color:#ff3030;border:1px solid #f52222;border-radius:12px;box-shadow:0 2px 9px #0003;z-index:1000}
-body:has(#exam:not([hidden])) .timer[data-urgent="true"] {background:#080808;border-color:#ff3030}
-body:has(#exam:not([hidden])) .analog-clock-wrap {width:22px;height:22px}
-body:has(#exam:not([hidden])) .clock-digits {font-size:14px;line-height:1;color:#ff3030;letter-spacing:0}
-body:has(#exam:not([hidden])) .clock-label {display:none}
-body:has(#exam:not([hidden])) .analog-clock .dial-face {fill:#080808;stroke:#ff3030}
-body:has(#exam:not([hidden])) .analog-clock .dial-progress,body:has(#exam:not([hidden])) .analog-clock .hand,body:has(#exam:not([hidden])) .analog-clock .tick {stroke:#ff3030}
-body:has(#exam:not([hidden])) .analog-clock .center-cap {fill:#ff3030}
+/* Feedback & Quiz Report */
+.feedback {
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 18px;
+}
+.feedback h3 { color: #166534; margin: 0 0 10px; }
+.feedback h4 { color: #1e3a8a; margin: 12px 0 6px; font-size: 0.98rem; }
+.quiz-report-summary {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  margin: 18px 0;
+  box-shadow: 0 10px 25px rgba(30, 27, 75, 0.18);
+}
+.report-top-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.report-stat-box .stat-val {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #38bdf8;
+  display: block;
+}
+.report-stat-box .stat-lbl {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #cbd5e1;
+}
+.report-instructions {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.report-instructions h4 {
+  margin: 0 0 8px 0;
+  color: #93c5fd;
+  font-size: 1.05rem;
+}
+[hidden]{display:none!important}
 </style>
+</head>
+<body>
 <main>
-<a href="/#tests">← Practice tests</a>
-<header><h1>Sociology Mock Exam</h1><p>5 questions · 3 marks each · 30 minutes</p></header>
-<section class="panel" id="setup">
-<label for="language">Feedback language</label><select id="language"><option value="en">English</option><option value="ml">മലയാളം</option></select>
-<section class="answer-instructions" aria-labelledby="answer-instructions-title">
-  <h2 id="answer-instructions-title">How to answer <span lang="ml">· എങ്ങനെ ഉത്തരം നൽകാം</span></h2>
-  <ul lang="en">
-    <li><strong>Type:</strong> Enter your answer in English or Malayalam.</li>
-    <li><strong>Voice type:</strong> On your phone, tap the answer box, choose English or Malayalam on your keyboard, and tap the keyboard microphone to speak. Check and correct the text before submitting.</li>
-  </ul>
-  <ul lang="ml">
-    <li><strong>ടൈപ്പ് ചെയ്യാൻ:</strong> ഇംഗ്ലീഷിലോ മലയാളത്തിലോ ഉത്തരം ടൈപ്പ് ചെയ്യാം.</li>
-    <li><strong>സംസാരിച്ച് ടൈപ്പ് ചെയ്യാൻ:</strong> ഫോണിൽ ഉത്തരം എഴുതാനുള്ള ബോക്‌സിൽ തൊടുക. കീബോർഡിൽ ഇംഗ്ലീഷോ മലയാളമോ തിരഞ്ഞെടുത്ത് മൈക്രോഫോൺ അമർത്തി സംസാരിക്കുക. സമർപ്പിക്കുന്നതിന് മുമ്പ് വന്ന എഴുത്ത് വായിച്ച് തെറ്റുകൾ തിരുത്തുക.</li>
-  </ul>
-  <p>Submit whenever you finish. Grading starts immediately.</p>
-  <p lang="ml">ഉത്തരം എഴുതിക്കഴിഞ്ഞാൽ ഉടൻ സമർപ്പിക്കാം. സമർപ്പിച്ചാലുടൻ മൂല്യനിർണ്ണയം ആരംഭിക്കും.</p>
-</section>
-<p>One random question from each of the five modules.</p>
-<p lang="ml">അഞ്ച് മോഡ്യൂളുകളിൽനിന്നും ഓരോ ചോദ്യം വീതം ക്രമരഹിതമായി തിരഞ്ഞെടുക്കും.</p>
-<button id="start" type="button">Start Mock Exam</button>
-</section>
+<a href="/#tests" class="back-link">← Practice tests</a>
+<header>
+  <h1>Sociology Mock Exam · Model 1 (SOC1CJ101)</h1>
+  <p>Calicut University FYUGP · Module 1 High-Yield Practice & Master Long Essay · 25 Marks · 30 Minutes</p>
+</header>
+
+<!-- Sticky Timer & Clock Bar -->
 <div class="timer" id="clock" hidden>
-  <div class="analog-clock-wrap" aria-hidden="true">
-    <svg class="analog-clock" viewBox="0 0 100 100" width="58" height="58">
-      <circle cx="50" cy="50" r="44" class="dial-face" />
-      <circle cx="50" cy="50" r="44" class="dial-progress" id="dial-progress" />
-      <line x1="50" y1="9" x2="50" y2="15" class="tick" />
-      <line x1="91" y1="50" x2="85" y2="50" class="tick" />
-      <line x1="50" y1="91" x2="50" y2="85" class="tick" />
-      <line x1="9" y1="50" x2="15" y2="50" class="tick" />
-      <line id="clock-hour" x1="50" y1="50" x2="50" y2="28" class="hand hour" />
-      <line id="clock-min" x1="50" y1="50" x2="50" y2="18" class="hand min" />
-      <line id="clock-sec" x1="50" y1="50" x2="50" y2="14" class="hand sec" />
-      <circle cx="50" cy="50" r="3.5" class="center-cap" />
-    </svg>
+  <div class="clock-left">
+    <div class="analog-clock-wrap" aria-hidden="true">
+      <svg class="analog-clock" viewBox="0 0 100 100" width="48" height="48">
+        <circle cx="50" cy="50" r="44" class="dial-face" />
+        <circle cx="50" cy="50" r="44" class="dial-progress" id="dial-progress" />
+        <line x1="50" y1="9" x2="50" y2="15" class="tick" />
+        <line x1="91" y1="50" x2="85" y2="50" class="tick" />
+        <line x1="50" y1="91" x2="50" y2="85" class="tick" />
+        <line x1="9" y1="50" x2="15" y2="50" class="tick" />
+        <line id="clock-hour" x1="50" y1="50" x2="50" y2="28" class="hand hour" />
+        <line id="clock-min" x1="50" y1="50" x2="50" y2="18" class="hand min" />
+        <line id="clock-sec" x1="50" y1="50" x2="50" y2="14" class="hand sec" />
+        <circle cx="50" cy="50" r="3.5" class="center-cap" />
+      </svg>
+    </div>
+    <div class="clock-info">
+      <span class="clock-label" id="clock-label">Time remaining</span>
+      <strong class="clock-digits" id="clock-digits" role="timer" aria-labelledby="clock-label">30:00</strong>
+    </div>
   </div>
-  <div class="clock-info">
-    <span class="clock-label" id="clock-label">Time remaining</span>
-    <strong class="clock-digits" id="clock-digits" role="timer" aria-labelledby="clock-label">30:00</strong>
+  <div class="clock-right" id="timer-active-tab-title" style="font-weight:700;font-size:0.86rem;color:#cbd5e1;">
+    Tab 1 of 4
   </div>
 </div>
-<form id="exam" hidden><div id="questions"></div><button id="submit" type="submit">Submit answers</button></form>
+
+<!-- Tab Navigation Header: ALWAYS starts at beginning tab (Glance & Overview / Q1) -->
+<nav class="exam-nav-tabs" id="exam-tabs" aria-label="Mock Exam Stepper Tabs">
+  <button type="button" class="tab-btn active" data-tab="0" id="tab-btn-0">
+    <span>📖 Module 1 Glance</span>
+    <span class="tab-badge">Start</span>
+  </button>
+  <button type="button" class="tab-btn" data-tab="1" id="tab-btn-1">
+    <span>✍️ Question 1</span>
+    <span class="tab-badge">5 Marks</span>
+  </button>
+  <button type="button" class="tab-btn" data-tab="2" id="tab-btn-2">
+    <span>✍️ Question 2</span>
+    <span class="tab-badge">5 Marks</span>
+  </button>
+  <button type="button" class="tab-btn" data-tab="3" id="tab-btn-3">
+    <span>📝 Essay Question 3</span>
+    <span class="tab-badge">15 Marks</span>
+  </button>
+  <button type="button" class="tab-btn" data-tab="4" id="tab-btn-4" hidden>
+    <span>📊 Quiz Report</span>
+    <span class="tab-badge">Result</span>
+  </button>
+</nav>
+
+<!-- TAB 0: START PAGE & MODULE 1 GLANCE (Pages 1 to 25 of LMS PDF) -->
+<section class="panel tab-pane" id="pane-tab-0">
+  <div class="glance-card">
+    <h3>📖 Module 1 at a Glance (Pages 1 to 25 · LMS PDF) <span lang="ml" style="font-size:0.92rem;font-weight:600;color:#4f46e5;">· പ്രധാന ഭാഗങ്ങൾ ഒറ്റനോട്ടത്തിൽ</span></h3>
+    <p style="font-size:0.88rem;color:#334155;margin:0 0 8px 0;">Crucial foundational concepts from Calicut University FYUGP syllabus for rapid revision before attempting the mock exam:</p>
+    <div class="glance-grid">
+      <div class="glance-item">
+        <strong>1. Origin & Foundations (Pages 1–4)</strong>
+        <p>Coined by <strong>Auguste Comte (1839)</strong> (<em>Socius</em> + <em>Logos</em>). Comte's Positivism & Law of Three Stages; Durkheim's Social Institutions & Facts; Weber's Interpretive Understanding of Social Action.</p>
+      </div>
+      <div class="glance-item">
+        <strong>2. Industrial Revolution (Pages 5–9)</strong>
+        <p>Agrarian to machine production; massive rural-to-urban migration; breakdown of joint families into wage-earning nuclear families; rise of urban pathology (slums, poverty, unemployment).</p>
+      </div>
+      <div class="glance-item">
+        <strong>3. French Revolution of 1789 (Pages 10–14)</strong>
+        <p>Overthrow of absolute monarchy & 3-Estate feudal system; rise of Liberty, Equality, Fraternity, Secularism & Democracy; post-revolution disorder pushing the quest for social order.</p>
+      </div>
+      <div class="glance-item">
+        <strong>4. Renaissance & Enlightenment (Pages 15–23)</strong>
+        <p>Renaissance humanism (Erasmus), empirical observation & individual dignity; Enlightenment (Age of Reason: Locke, Rousseau, Montesquieu) proving society operates under rational, discoverable laws.</p>
+      </div>
+      <div class="glance-item" style="grid-column: 1 / -1;">
+        <strong>5. Robert Bierstedt's Nature of Sociology (Pages 23–25)</strong>
+        <p><em>The Social Order (1957)</em>: Sociology is an Independent, Social, Categorical (not normative - ethically neutral), Pure (not applied), Abstract, Generalising (not particularising), General (not special), and both Rational & Empirical Science.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:18px;">
+    <label for="language" style="display:block;font-weight:700;margin-bottom:6px;">Feedback Language / മൂല്യനിർണ്ണയ ഭാഷ:</label>
+    <select id="language" style="min-height:44px;padding:8px 14px;border-radius:10px;border:1.5px solid #cbd5e1;font-weight:600;">
+      <option value="en">English</option>
+      <option value="ml">മലയാളം</option>
+    </select>
+  </div>
+
+  <section class="answer-instructions" style="background:#f8fafc;border-radius:14px;padding:18px;margin-bottom:18px;border:1px solid #e2e8f0;">
+    <h3 style="margin:0 0 10px;color:#1e1b4b;font-size:1.05rem;">How to answer <span lang="ml" style="color:#4f46e5;">· എങ്ങനെ ഉത്തരം നൽകാം</span></h3>
+    <ul style="margin:0 0 10px;padding-left:20px;font-size:0.92rem;line-height:1.6;">
+      <li><strong>Type:</strong> Enter your answer directly in English or Malayalam in the answer box.</li>
+      <li><strong>Voice type:</strong> On your mobile phone, tap the answer box, select English or Malayalam on your keyboard, and tap the mic button to dictate.</li>
+      <li><strong>Word Count Guardrail:</strong> 5-mark short essays have a strict ~100–110 words threshold. Real-time counter alerts you if text is under or over 100 words.</li>
+    </ul>
+    <p style="margin:0;font-size:0.9rem;color:#475569;"><strong>Format:</strong> 2 Short Essays (5 Marks each · ~100–110 words) + 1 Master Long Essay (15 Marks · ~300–400 words) = 25 Total Marks.</p>
+  </section>
+
+  <div style="text-align:right;">
+    <button type="button" class="btn-primary" id="start-exam-btn" style="font-size:1.05rem;padding:14px 28px;">
+      Start Exam (Go to Question 1) →
+    </button>
+  </div>
+</section>
+
+<!-- FORM FOR QUESTIONS (TABS 1, 2, 3) -->
+<form id="exam" onsubmit="event.preventDefault();">
+  <!-- Dynamic Question Panes injected here via JavaScript -->
+  <div id="question-panes-container"></div>
+</form>
+
+<!-- TAB 4: FINAL QUIZ REPORT & COMPREHENSIVE INSTRUCTIONS -->
+<section class="panel tab-pane" id="pane-tab-4" hidden>
+  <div class="quiz-report-summary">
+    <div class="report-top-stats">
+      <div class="report-stat-box">
+        <span class="stat-val" id="report-total-score">0 / 25</span>
+        <span class="stat-lbl">Total Score · ആകെ സ്കോർ</span>
+      </div>
+      <div class="report-stat-box">
+        <span class="stat-val" id="report-percentage">0%</span>
+        <span class="stat-lbl">Percentage · ശതമാനം</span>
+      </div>
+      <div class="report-stat-box">
+        <span class="stat-val" id="report-time-taken">--:--</span>
+        <span class="stat-lbl">Time Used · എടുത്ത സമയം</span>
+      </div>
+      <div class="report-stat-box">
+        <span class="stat-val" id="report-grade">--</span>
+        <span class="stat-lbl">Academic Grade · ഗ്രേഡ്</span>
+      </div>
+    </div>
+
+    <div class="report-instructions">
+      <h4>📋 Calicut University Evaluation Rubric & Feedback Guide <span lang="ml" style="font-size:0.92rem;color:#bfdbfe;">· സമഗ്ര മാർഗ്ഗനിർദ്ദേശങ്ങൾ</span></h4>
+      <p><strong>English:</strong> Review the detailed feedback for each question under its respective tab. 5-mark short essays require precise conceptual clarity (~100–110 words), while 15-mark essays require systematic coverage of Industrial, French, and Intellectual revolutions.</p>
+      <p lang="ml" style="margin-top:8px;"><strong>മലയാളം:</strong> ഓരോ ചോദ്യത്തിന്റെയും വിശദമായ മൂല്യനിർണ്ണയവും മാതൃകാ ഉത്തരവും അതത് ചോദ്യ ടാബുകളിൽ പരിശോധിക്കുക. 5 മാർക്ക് ചോദ്യങ്ങൾക്ക് കൃത്യമായ പോയിന്റുകളും (~100-110 വാക്കുകൾ), 15 മാർക്ക് ഉപന്യാസത്തിന് ചരിത്രപരമായ മൂന്ന് വിപ്ലവങ്ങളും ശാസ്ത്രീയ അടിത്തറയും വ്യക്തമായി ഉൾക്കൊള്ളിച്ചിരിക്കണം.</p>
+    </div>
+  </div>
+
+  <div id="report-answers-breakdown"></div>
+
+  <div style="display:flex;gap:12px;justify-content:center;margin-top:24px;">
+    <button type="button" class="btn-nav" id="btn-review-answers">← Review Questions & Answers</button>
+    <button type="button" class="btn-primary" id="again">Start a New Mock Exam ↺</button>
+  </div>
+</section>
+
 <div class="panel" id="status" role="status" hidden></div>
-<button type="button" id="retry" hidden>Retry evaluation</button>
-<button type="button" id="again" hidden>Start a new mock</button>
+<button type="button" id="retry" hidden style="margin:12px auto;display:block;">Retry evaluation</button>
 </main>
+
 <script>
 const byId = id => document.getElementById(id);
 const key = 'academic-hub-sociology-theory-v1';
-let attempt, busy = false;
-// Always reset to a fresh start when opened (do not keep old state)
+let attempt = null;
+let busy = false;
+let currentActiveTab = 0; // ALWAYS defaults to Beginning Tab (0)
+
+// Clear previous session so it ALWAYS starts fresh at the beginning tab
 try { localStorage.removeItem(key); } catch {}
-attempt = null;
-function save() { try { localStorage.setItem(key, JSON.stringify(attempt)); } catch {} }
-function status(message) { byId('status').hidden = false; byId('status').textContent = message; }
+
+function save() {
+  try { localStorage.setItem(key, JSON.stringify(attempt)); } catch {}
+}
+
+function status(message) {
+  byId('status').hidden = false;
+  byId('status').textContent = message;
+}
+
 async function request(payload) {
   const response = await fetch('/api/answer-evaluate-text', {
-    method:'POST', headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(payload), signal:AbortSignal.timeout(60000)
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload),
+    signal:AbortSignal.timeout(60000)
   });
   const data = await response.json().catch(() => null);
   if (!response.ok || !data) throw Error(data?.error || 'Could not reach the evaluator. Please try again.');
   return data;
 }
-function add(parent, tag, value, className) {
-  const element = document.createElement(tag);
-  element.textContent = value;
-  if (className) element.className = className;
-  parent.append(element);
-  return element;
-}
-const detailedExplanations = [
-  [
-    "Sociology looks for patterns across people’s experiences. A student’s marks tell you something about one person. Comparing study conditions across many students can show how family income, transport or school resources affect educational opportunities. In your answer, define sociology, name what it studies, then connect one example to that scope.",
-    "പലരുടെയും അനുഭവങ്ങളിൽ ആവർത്തിക്കുന്ന രീതികൾ സമൂഹശാസ്ത്രം കണ്ടെത്തുന്നു. ഒരു വിദ്യാർത്ഥിയുടെ മാർക്ക് ആ വ്യക്തിയെക്കുറിച്ച് ചില വിവരങ്ങൾ നൽകും. പല വിദ്യാർത്ഥികളുടെയും പഠനസാഹചര്യങ്ങൾ താരതമ്യം ചെയ്താൽ കുടുംബവരുമാനം, യാത്രാസൗകര്യം, സ്കൂളിലെ വിഭവങ്ങൾ എന്നിവ വിദ്യാഭ്യാസ അവസരങ്ങളെ എങ്ങനെ സ്വാധീനിക്കുന്നു എന്ന് മനസ്സിലാക്കാം. നിർവചനം നൽകി, പഠനവിഷയങ്ങൾ സൂചിപ്പിച്ച്, ഒരു ഉദാഹരണം അവയുമായി ബന്ധിപ്പിക്കുക."
-  ],
-  [
-    "Explain the chain of change: factories concentrated work in towns, migration expanded those towns, and wage labour changed relationships between workers and owners. Crowded housing and poor working conditions raised questions about how society was organised. Connect these changes to the need for systematic study.",
-    "മാറ്റങ്ങളുടെ തുടർച്ച വിശദീകരിക്കുക. ഫാക്ടറികൾ തൊഴിൽ നഗരങ്ങളിൽ കേന്ദ്രീകരിച്ചു. കുടിയേറ്റം നഗരങ്ങളെ വളർത്തി. കൂലിത്തൊഴിൽ തൊഴിലാളികളും ഉടമകളും തമ്മിലുള്ള ബന്ധം മാറ്റി. തിങ്ങിപ്പാർപ്പും മോശം തൊഴിൽസാഹചര്യങ്ങളും സമൂഹത്തിന്റെ ഘടനയെക്കുറിച്ച് ചോദ്യങ്ങൾ ഉയർത്തി. ഈ മാറ്റങ്ങളെ ക്രമബദ്ധമായ സാമൂഹിക പഠനത്തിന്റെ ആവശ്യവുമായി ബന്ധിപ്പിക്കുക."
-  ],
-  [
-    "Mills connects biography with wider social conditions. If many qualified workers lose jobs when an industry shuts down, individual decisions explain only part of the pattern. The closure is also a public issue. Define the idea, describe the personal trouble, then explain the wider cause.",
-    "മിൽസ് വ്യക്തിയുടെ ജീവിതാനുഭവങ്ങളെ വിശാലമായ സാമൂഹിക സാഹചര്യങ്ങളുമായി ബന്ധിപ്പിക്കുന്നു. ഒരു വ്യവസായം അടച്ചുപൂട്ടുമ്പോൾ നിരവധി യോഗ്യരായ തൊഴിലാളികൾക്ക് ജോലി നഷ്ടപ്പെട്ടാൽ വ്യക്തിപരമായ തീരുമാനങ്ങൾ കൊണ്ട് മാത്രം അത് വിശദീകരിക്കാനാവില്ല. അടച്ചുപൂട്ടൽ ഒരു പൊതുസാമൂഹിക പ്രശ്നവുമാണ്. ആശയം നിർവചിച്ച് വ്യക്തിപരമായ ബുദ്ധിമുട്ടും അതിന്റെ വിശാലമായ കാരണവും വിശദീകരിക്കുക."
-  ],
-  [
-    "Compare the relationship and its purpose. Close friends usually value the relationship itself. Members of a committee may interact mainly to complete a shared task. Group size alone does not settle the distinction. Give one example of each and explain what makes it fit.",
-    "ബന്ധത്തിന്റെ സ്വഭാവവും ലക്ഷ്യവും താരതമ്യം ചെയ്യുക. അടുത്ത സുഹൃത്തുക്കൾ സാധാരണയായി ബന്ധത്തിന് തന്നെ വില നൽകുന്നു. ഒരു കമ്മിറ്റിയിലെ അംഗങ്ങൾ പൊതുവായ ജോലി പൂർത്തിയാക്കാനായി ഇടപെടുന്നു. സംഘത്തിന്റെ വലുപ്പം മാത്രം ഈ വ്യത്യാസം നിർണ്ണയിക്കുന്നില്ല. ഓരോ വിഭാഗത്തിനും ഒരു ഉദാഹരണം നൽകി അത് യോജിക്കുന്നതിന്റെ കാരണം പറയുക."
-  ],
-  [
-    "Socialisation is learning how to participate in society. At home, a child may learn language and how to share. At school, group projects and classroom routines teach cooperation and responsibility beyond the family. Define socialisation first, then explain one example for each institution.",
-    "സമൂഹത്തിൽ എങ്ങനെ ഇടപെടണമെന്ന് പഠിക്കുന്ന പ്രക്രിയയാണ് സാമൂഹീകരണം. വീട്ടിൽ കുട്ടി ഭാഷയും പങ്കുവെക്കാനുള്ള ശീലവും പഠിക്കുന്നു. വിദ്യാലയത്തിലെ കൂട്ടുപ്രവർത്തനങ്ങളും ക്ലാസ് ദിനചര്യയും കുടുംബത്തിനു പുറത്തുള്ള സഹകരണവും ഉത്തരവാദിത്തവും പഠിപ്പിക്കുന്നു. ആദ്യം സാമൂഹീകരണം നിർവചിക്കുക. തുടർന്ന് ഓരോ സ്ഥാപനത്തിനും ഒരു ഉദാഹരണം വിശദീകരിക്കുക."
-  ],
-  [
-    "Focus on who enforces the rule and how. A traffic fine follows a written rule and comes from an authorised body. Disapproval for cutting a queue comes from other people and enforces an everyday norm. Compare both using the same two points: the rule and the response to breaking it.",
-    "ചട്ടം ആരാണ് നടപ്പാക്കുന്നത്, എങ്ങനെയാണ് നടപ്പാക്കുന്നത് എന്നീ കാര്യങ്ങളിൽ ശ്രദ്ധിക്കുക. ഗതാഗതപ്പിഴ എഴുതപ്പെട്ട നിയമത്തെ അടിസ്ഥാനമാക്കിയുള്ളതാണ്. അധികാരപ്പെട്ട സ്ഥാപനമാണ് അത് ചുമത്തുന്നത്. വരിയിൽ ഇടിച്ചുകയറുമ്പോഴുള്ള അതൃപ്തി മറ്റുള്ളവരിൽ നിന്നാണ് വരുന്നത്. ചട്ടവും അത് ലംഘിച്ചാലുള്ള പ്രതികരണവും ഉപയോഗിച്ച് രണ്ടിനെയും താരതമ്യം ചെയ്യുക."
-  ],
-  [
-    "A status names a social position. A role describes what others expect from someone in that position. A class representative holds a position, and communicating classmates’ concerns is part of the role. Use the same example for both terms to make the distinction clear.",
-    "സാമൂഹിക പദവി ഒരാൾ വഹിക്കുന്ന സ്ഥാനത്തെ സൂചിപ്പിക്കുന്നു. ആ സ്ഥാനത്തുള്ള ആളിൽ നിന്ന് മറ്റുള്ളവർ പ്രതീക്ഷിക്കുന്ന പെരുമാറ്റമാണ് പങ്ക്. ക്ലാസ് പ്രതിനിധി എന്നത് ഒരു സ്ഥാനമാണ്. സഹപാഠികളുടെ പ്രശ്നങ്ങൾ അറിയിക്കുന്നത് ആ പങ്കിന്റെ ഭാഗമാണ്. വ്യത്യാസം വ്യക്തമാക്കാൻ ഒരേ ഉദാഹരണം രണ്ടിനും ഉപയോഗിക്കുക."
-  ],
-  [
-    "Name each factor and show how it changes a social pattern. Smartphones can shift communication from local meetings to online groups. Migration can bring new languages and customs into a neighbourhood. Explain the effect of each factor so the answer goes beyond listing two words.",
-    "ഓരോ ഘടകവും പേരെടുത്ത് അത് സാമൂഹിക ജീവിതരീതിയെ എങ്ങനെ മാറ്റുന്നു എന്ന് വിശദീകരിക്കുക. സ്മാർട്ട്ഫോണുകൾ നേരിട്ടുള്ള കൂടിക്കാഴ്ചകളിൽ നിന്ന് ഓൺലൈൻ കൂട്ടായ്മകളിലേക്ക് ആശയവിനിമയം മാറ്റാം. കുടിയേറ്റം ഒരു പ്രദേശത്ത് പുതിയ ഭാഷകളും ആചാരങ്ങളും കൊണ്ടുവരാം. രണ്ട് ഘടകങ്ങൾ പട്ടികപ്പെടുത്തുന്നതിനൊപ്പം ഓരോന്നിന്റെയും ഫലം വിശദീകരിക്കുക."
-  ],
-  ["Taking part helps you see everyday routines from within. Keep a record of what happened, and separate observations from your own interpretation.","പങ്കെടുക്കുന്നത് സംഘത്തിന്റെ ദൈനംദിന പ്രവർത്തനം അടുത്തറിയാൻ സഹായിക്കും. കണ്ട കാര്യങ്ങൾ രേഖപ്പെടുത്തുക. സ്വന്തം വ്യാഖ്യാനം അതിൽ നിന്ന് വേർതിരിക്കുക."],
-  ["Use an interview to understand why one student travels far; use a questionnaire to compare travel times across a whole class.","ഒരു വിദ്യാർത്ഥി ദൂരെ നിന്ന് യാത്ര ചെയ്യുന്നതിന്റെ കാരണം മനസ്സിലാക്കാൻ അഭിമുഖം ഉപയോഗിക്കാം. ക്ലാസിലെ എല്ലാവരുടെയും യാത്രാസമയം താരതമ്യം ചെയ്യാൻ ചോദ്യാവലി ഉപയോഗിക്കാം."],
-  ["The same team can cooperate internally and compete with other teams. Identify who shares the goal and who seeks a limited reward.","ഒരേ ടീമിലെ അംഗങ്ങൾ പരസ്പരം സഹകരിക്കുകയും മറ്റു ടീമുകളോട് മത്സരിക്കുകയും ചെയ്യാം. ആരാണ് ലക്ഷ്യം പങ്കിടുന്നതെന്നും ആരാണ് പരിമിതമായ നേട്ടത്തിനായി മത്സരിക്കുന്നതെന്നും വ്യക്തമാക്കുക."],
-  ["Contrast learning to greet people at home with learning the rules of a new club. The difference is the setting and what is learned.","വീട്ടിൽ അഭിവാദനം ചെയ്യാൻ പഠിക്കുന്നതും പുതിയ ക്ലബ്ബിന്റെ ചട്ടങ്ങൾ പഠിക്കുന്നതും താരതമ്യം ചെയ്യുക. പഠിക്കുന്ന ഇടവും പഠനവിഷയവുമാണ് വ്യത്യാസം."],
-  ["Name a life transition, then identify what changes in the person’s expected behaviour.","ജീവിതത്തിലെ ഒരു ഘട്ടമാറ്റം സൂചിപ്പിക്കുക. അതോടെ ആ വ്യക്തിയുടെ പെരുമാറ്റത്തെക്കുറിച്ചുള്ള പ്രതീക്ഷ എങ്ങനെ മാറുന്നുവെന്ന് പറയുക."],
-  ["A crowd at a bus stop may disperse quickly. To explain society, focus on relationships and shared arrangements that continue beyond a single gathering.","ബസ് സ്റ്റോപ്പിലെ ആൾക്കൂട്ടം പെട്ടെന്ന് പിരിഞ്ഞുപോകാം. സമൂഹത്തെ വിശദീകരിക്കാൻ ഒറ്റ കൂടിച്ചേരലിനപ്പുറം നിലനിൽക്കുന്ന ബന്ധങ്ങളിലും പൊതുവായ ക്രമീകരണങ്ങളിലും ശ്രദ്ധിക്കുക."],
-  ["Education is broader than one school building. Identify the shared rules and roles that persist across different schools.","വിദ്യാഭ്യാസം ഒരു സ്കൂൾ കെട്ടിടത്തിൽ ഒതുങ്ങുന്നില്ല. വിവിധ വിദ്യാലയങ്ങളിൽ പൊതുവായി നിലനിൽക്കുന്ന ചട്ടങ്ങളും പങ്കുകളും കണ്ടെത്തുക."],
-  ["‘Three people moved aside when the bus arrived’ records behaviour. ‘They were being polite’ is an interpretation that needs support.","‘ബസ് എത്തിയപ്പോൾ മൂന്ന് പേർ വശത്തേക്ക് മാറി’ എന്നത് കണ്ട കാര്യമാണ്. ‘അവർ മര്യാദ കാണിച്ചു’ എന്നത് തെളിവ് ആവശ്യമായ വ്യാഖ്യാനമാണ്."],
-  ["Start with what you recorded, then define the concept. End by showing which part of your observation supports the connection.","രേഖപ്പെടുത്തിയ കാര്യം ആദ്യം പറയുക. ശേഷം ആശയം നിർവചിക്കുക. നിരീക്ഷണത്തിലെ ഏത് ഭാഗമാണ് ആ ബന്ധത്തിന് തെളിവാകുന്നതെന്ന് അവസാനം വിശദീകരിക്കുക."]
+
+const MODULE_1_QUESTIONS = [
+  {
+    id: 0,
+    module: 1,
+    marks: 5,
+    targetWords: 100,
+    type: "short_essay",
+    en: "Explain the major forces that led to the emergence of sociology.",
+    ml: "സോഷ്യോളജിയുടെ ആവിർഭാവത്തിലേക്ക് നയിച്ച പ്രധാന ശക്തികൾ വിശദീകരിക്കുക.",
+    modelAnswer: {
+      en: "Sociology emerged as an independent discipline in nineteenth-century Europe in response to far-reaching social change and new intellectual ideas. Three major forces contributed to its development:\n\n1. Industrial Revolution: The shift from agrarian production to factories and machine-based industry encouraged migration from villages to cities and rapid urbanisation. It changed family life and occupations and created new classes, especially industrial capitalists and wage-earning workers. Poverty, unemployment, slums, overcrowding and poor working conditions prompted systematic study of society.\n\n2. French Revolution (1789): The Revolution challenged monarchy and feudal privilege. Its ideals of liberty, equality and fraternity raised questions about rights, citizenship, power and social order. The breakdown of traditional institutions led thinkers such as Auguste Comte to consider how society could be studied and order rebuilt.\n\n3. Renaissance and Enlightenment: These intellectual movements encouraged humanism, reason, scientific thinking, observation and criticism of traditional authority. They promoted the idea that society could be understood through evidence and rational analysis rather than only through religious explanations.\n\nTogether, these social, political and intellectual changes created the need and the means to study society systematically. This helped sociology develop as a distinct social science.",
+      ml: "പത്തൊൻപതാം നൂറ്റാണ്ടിലെ യൂറോപ്പിൽ സംഭവിച്ച വലിയ സാമൂഹിക മാറ്റങ്ങൾക്കും ബൗദ്ധിക മുന്നേറ്റങ്ങൾക്കും മറുപടിയായാണ് സോഷ്യോളജി ഒരു സ്വതന്ത്ര ശാസ്ത്രമായി ഉയർന്നുവന്നത്. പ്രധാനമായും മൂന്ന് ശക്തികളാണ് ഇതിന് വഴിയൊരുക്കിയത്:\n\n1. വ്യാവസായിക വിപ്ലവം: കാർഷിക സമ്പദ്‌വ്യവസ്ഥയിൽ നിന്ന് ഫാക്ടറി അധിഷ്ഠിത ഉത്പാദനത്തിലേക്കുള്ള മാറ്റം നഗരങ്ങളിലേക്കുള്ള കുടിയേറ്റത്തിനും ദ്രുതഗതിയിലുള്ള നഗരവൽക്കരണത്തിനും കാരണമായി. ഇത് കൂട്ടുകുടുംബ വ്യവസ്ഥയെ മാറ്റിമറിക്കുകയും മുതലാളി-തൊഴിലാളി വർഗ്ഗങ്ങളെ സൃഷ്ടിക്കുകയും ചെയ്തു. ദാരിദ്ര്യം, ചേരികൾ, തൊഴിലില്ലായ്മ, ചൂഷണം എന്നിവ സമൂഹത്തെക്കുറിച്ചുള്ള ക്രമബദ്ധമായ പഠനത്തിന് പ്രേരണയായി.\n\n2. 1789-ലെ ഫ്രഞ്ച് വിപ്ലവം: രാജവാഴ്ചയെയും ഫ്യൂഡൽ മേധാവിത്വത്തെയും തകർത്തെറിഞ്ഞ വിപ്ലവം സ്വാതന്ത്ര്യം, സമത്വം, സാഹോദര്യം എന്നീ ആശയങ്ങൾ മുന്നോട്ടുവെച്ചു. പരമ്പരാഗത സ്ഥാപനങ്ങളുടെ തകർച്ച സൃഷ്ടിച്ച അരാജകത്വത്തിൽ സാമൂഹിക ക്രമം എങ്ങനെ പുനഃസ്ഥാപിക്കാമെന്ന് ചിന്തിക്കാൻ ഓഗസ്റ്റ് കോംതെ തുടങ്ങിയവരെ ഇത് പ്രേരിപ്പിച്ചു.\n\n3. നവോത്ഥാനവും ജ്ഞാനോദയവും: മതപരമായ വിശദീകരണങ്ങൾക്ക് പകരം മാനവികത, യുക്തിചിന്ത, അനുഭവൈക തെളിവുകൾ, നിരീക്ഷണം എന്നിവയിലൂടെ സമൂഹത്തെ മനസ്സിലാക്കാൻ സാധിക്കുമെന്ന് ഈ പ്രസ്ഥാനങ്ങൾ തെളിയിച്ചു."
+    },
+    answerPoints: "1. Industrial Revolution (factory system, migration, urban problems) (1.5 marks)\n2. French Revolution 1789 (liberty, equality, breakdown of feudal order, Auguste Comte) (1.5 marks)\n3. Renaissance & Enlightenment (humanism, reason, empirical science) (1.5 marks)\n4. Synthesis: Need for systematic scientific study of society (0.5 marks)",
+    explanation: [
+      "The answer must discuss the three foundational pillars from pages 5–23 of the LMS PDF: Industrial Revolution (social & economic disruption), French Revolution (political upheaval and breakdown of feudal order), and Renaissance & Enlightenment (intellectual shift to reason and empirical science).",
+      "LMS PDF പേജ് 5 മുതൽ 23 വരെയുള്ള പ്രധാന മൂന്ന് സ്തംഭങ്ങൾ ചർച്ച ചെയ്യണം: വ്യാവസായിക വിപ്ലവം (സാമൂഹിക-സാമ്പത്തിക മാറ്റങ്ങൾ), ഫ്രഞ്ച് വിപ്ലവം (രാഷ്ട്രീയ മാറ്റങ്ങളും ഫ്യൂഡൽ തകർച്ചയും), നവോത്ഥാനവും ജ്ഞാനോദയവും (യുക്തിചിന്തയും അനുഭവൈക ശാസ്ത്രീയതയും)."
+    ]
+  },
+  {
+    id: 1,
+    module: 1,
+    marks: 5,
+    targetWords: 100,
+    type: "short_essay",
+    en: "Describe the main characteristics of sociology as a science.",
+    ml: "ഒരു ശാസ്ത്രം എന്ന നിലയിൽ സോഷ്യോളജിയുടെ പ്രധാന സവിശേഷതകൾ വിവരിക്കുക.",
+    modelAnswer: {
+      en: "In 'The Social Order' (1957), Robert Bierstedt outlined the distinct characteristics that define sociology as a science:\n\n1. Independent Science: Sociology is an independent discipline with its own subject matter, theories and methods; it is not a branch of philosophy or general history.\n2. Social Science, Not a Physical Science: It studies human society, social relationships, institutions and behaviour, not physical phenomena.\n3. Categorical, Not a Normative Discipline: Sociology is ethically neutral. It investigates what is rather than what ought to be, avoiding value judgements or policy advocacy.\n4. Pure Science, Not an Applied Science: Its immediate aim is the acquisition of objective knowledge about human society, not the practical application of that knowledge.\n5. Abstract, Not a Concrete Science: It focuses on the general forms, patterns and processes of social phenomena rather than concrete individual events.\n6. Generalising, Not a Particularising Science: It seeks universal principles and general laws governing human interactions rather than narrating unique historical episodes.\n7. General, Not a Special Social Science: It studies the general features common to all social institutions and groups.\n8. Both Rational and Empirical Science: It combines logical reasoning (rationalism) with direct observation, experiment and factual verification (empiricism).",
+      ml: "റോബർട്ട് ബിയർസ്റ്റെഡ് (Robert Bierstedt) തന്റെ 'ദി സോഷ്യൽ ഓർഡർ' (1957) എന്ന ഗ്രന്ഥത്തിൽ സോഷ്യോളജിയുടെ ശാസ്ത്രീയ സവിശേഷതകളെ ഇപ്രകാരം വ്യക്തമാക്കിയിട്ടുണ്ട്:\n\n1. സ്വതന്ത്ര ശാസ്ത്രം: സോഷ്യോളജി മറ്റ് വിഷയങ്ങളുടെ ഭാഗമല്ല; അതിന്റേതായ തത്ത്വങ്ങളും രീതികളുമുള്ള ഒരു സ്വതന്ത്ര ശാസ്ത്ര ശാഖയാണ്.\n2. സാമൂഹിക ശാസ്ത്രം: ഇത് ഭൗതിക വസ്തുക്കളെയല്ല, മറിച്ച് മനുഷ്യ സമൂഹത്തെയും സാമൂഹിക ബന്ധങ്ങളെയുമാണ് പഠിക്കുന്നത്.\n3. കാറ്റഗറിക്കൽ വിഷയം (വസ്തുനിഷ്ഠ ശാസ്ത്രം): സമൂഹം 'എങ്ങനെ ആയിരിക്കണം' (ധാർമ്മിക വിധിതീർപ്പ്) എന്നല്ല, മറിച്ച് 'എങ്ങനെ നിലനിൽക്കുന്നു' എന്ന് വസ്തുനിഷ്ഠമായി നിഷ്പക്ഷമായി പഠിക്കുന്നു.\n4. പ്യുവർ സയൻസ് (ശുദ്ധ ശാസ്ത്രം): അറിവിന്റെ പ്രായോഗിക വിനിയോഗത്തേക്കാൾ അറിവ് നേടുക എന്നതാണ് ഇതിന്റെ പ്രാഥമിക ലക്ഷ്യം.\n5. അമൂർത്ത ശാസ്ത്രം (Abstract): മൂർത്തമായ സംഭവങ്ങളെയല്ല, മറിച്ച് രൂപങ്ങളെയും പ്രക്രിയകളെയും പഠിക്കുന്നു.\n6. സാമാന്യവൽക്കരണ ശാസ്ത്രം (Generalising): വ്യക്തിഗത ചരിത്ര സംഭവങ്ങളെയല്ല, പൊതുവായ നിയമങ്ങളെ കണ്ടെത്താൻ ശ്രമിക്കുന്നു.\n7. സാമാന്യ ശാസ്ത്രം (General Science): പ്രത്യേക മേഖലയെയല്ല, സമൂഹത്തിന്റെ പൊതുവായ എല്ലാ സ്ഥാപനങ്ങളെയും പഠിക്കുന്നു.\n8. യുക്തിചിന്തയും അനുഭവൈക ശാസ്ത്രവും: യുക്തിസഹമായ ചിന്തയും അനുഭവൈക നിരീക്ഷണങ്ങളും ഇതിൽ സമന്വയിക്കുന്നു."
+    },
+    answerPoints: "1. Robert Bierstedt (1957) citation (0.5 marks)\n2. Independent & Social Science (1 mark)\n3. Categorical (not normative) & Pure (not applied) (1.5 marks)\n4. Abstract & Generalising (1 mark)\n5. Rational & Empirical Science (1 mark)",
+    explanation: [
+      "Based on Robert Bierstedt (1957) from pages 24–25 of Module 1 LMS PDF. Emphasize why sociology is categorical (concerned with what is, ethically neutral) and a generalising social science.",
+      "മൊഡ്യൂൾ 1 LMS PDF പേജ് 24-25-ലെ റോബർട്ട് ബിയർസ്റ്റെഡിന്റെ (1957) വർഗ്ഗീകരണത്തെ അടിസ്ഥാനമാക്കിയുള്ളതാണ്. സോഷ്യോളജി എന്തുകൊണ്ട് കാറ്റഗറിക്കൽ (വസ്തുനിഷ്ഠം) ആകുന്നുവെന്നും സാമാന്യ ശാസ്ത്രമാകുന്നുവെന്നും വിശദീകരിക്കണം."
+    ]
+  },
+  {
+    id: 2,
+    module: 1,
+    marks: 15,
+    targetWords: 300,
+    type: "long_essay",
+    en: "Explain the major social, political and intellectual forces that contributed to the emergence of sociology as an independent discipline.",
+    ml: "സോഷ്യോളജി ഒരു സ്വതന്ത്ര പഠനശാഖയായി ഉയർന്നുവരുന്നതിന് സംഭാവന നൽകിയ പ്രധാന സാമൂഹിക, രാഷ്ട്രീയ, ബൗദ്ധിക ശക്തികൾ വിശദീകരിക്കുക.",
+    modelAnswer: {
+      en: "Introduction:\nSociology is the systematic study of society, social relationships, institutions and patterns of interaction. Although people have reflected on social life since ancient times, sociology emerged as a distinct discipline in nineteenth-century Europe. Its formation was closely connected with major changes in social organisation and new ways of thinking. The Industrial Revolution and urbanisation, the French Revolution, and the intellectual movements of the Renaissance and Enlightenment created conditions in which society could be studied scientifically.\n\n1. Social Forces: Industrialisation and Urbanisation:\nThe Industrial Revolution began in Britain in the eighteenth century and transformed an agrarian, craft-based economy into one organised around machines, factories and large-scale production. Industries concentrated in towns and cities, drawing people from rural areas in search of employment. This process of urbanisation and migration altered population patterns, occupations, family life and community relationships. Industrial society brought new class divisions: industrial capitalists owned factories and means of production, while workers depended on wages. Karl Marx analysed the antagonism between the bourgeoisie and proletariat and capitalist exploitation. Max Weber examined class alongside status and power, while Emile Durkheim considered how the division of labour created new forms of organic solidarity and differentiation. Rapid change generated overcrowding, slums, poverty, unemployment and poor working conditions, making the systematic study of society imperative.\n\n2. Political Forces: The French Revolution (1789):\nThe French Revolution of 1789 challenged absolute monarchy and the feudal order. French society had been divided into three estates (clergy, nobility, and the Third Estate). The first two held privileges, while the Third Estate bore the tax burden with limited power. The Revolution disrupted established hierarchies and established ideals of liberty, equality, fraternity, individual rights, democracy and secularism. The upheaval produced instability, encouraging Saint-Simon and Auguste Comte to ask how social order could be scientifically understood and reconstructed. Comte proposed positivism to rebuild moral order, while Durkheim investigated solidarity amid rising individualism.\n\n3. Intellectual Forces: Renaissance and Enlightenment:\nThe Renaissance revived learning and arts, encouraging humanism, secular inquiry, and curiosity about the material world. It shifted attention from divine fate to human reason and empirical evidence. The Enlightenment of the seventeenth and eighteenth centuries extended this confidence: thinkers like John Locke, Jean-Jacques Rousseau, and Montesquieu argued that institutions and customs could be critically examined, reformed, and improved through knowledge. Auguste Comte synthesised these ideas into positivism, arguing that the scientific method could uncover universal social laws. Together, these intellectual changes provided the method, rationale, and empirical foundation for sociology.\n\nConclusion:\nSociology emerged in response to the combined forces of industrial transformations, political democracy, and scientific rationalism. Together, they established sociology as the vital science to explain social order, conflict, and change in modern society.",
+      ml: "ആമുഖം:\nസമൂഹത്തെയും സാമൂഹിക സ്ഥാപനങ്ങളെയും മാനുഷിക ബന്ധങ്ങളെയും കുറിച്ചുള്ള ശാസ്ത്രീയ പഠനമാണ് സോഷ്യോളജി. പത്തൊൻപതാം നൂറ്റാണ്ടിലെ യൂറോപ്പിൽ ഉണ്ടായ വലിയ സാമൂഹിക വിപ്ലവങ്ങൾ, രാഷ്ട്രീയ മാറ്റങ്ങൾ, ബൗദ്ധിക ഉണർവുകൾ എന്നിവയുടെ ഫലമായാണ് ഈ വിഷയം ഒരു സ്വതന്ത്ര ശാസ്ത്രമായി രൂപംകൊണ്ടത്.\n\n1. സാമൂഹിക ശക്തികൾ (വ്യാവസായിക വിപ്ലവവും നഗരവൽക്കരണവും):\nപതിനെട്ടാം നൂറ്റാണ്ടിൽ ബ്രിട്ടനിൽ ആരംഭിച്ച വ്യാവസായിക വിപ്ലവം കാർഷിക സമ്പദ്‌വ്യവസ്ഥയെ യന്ത്രവൽകൃത ഫാക്ടറി വ്യവസ്ഥയാക്കി മാറ്റി. ഗ്രാമങ്ങളിൽ നിന്നുള്ള വൻതോതിലുള്ള കുടിയേറ്റം നഗരവൽക്കരണത്തിന് കാരണമായി. ഇത് കൂട്ടുകുടുംബങ്ങളുടെ തകർച്ചയ്ക്കും ചേരികൾ, ദാരിദ്ര്യം, തൊഴിലില്ലായ്മ, തൊഴിലാളി ചൂഷണം എന്നീ സാമൂഹിക പ്രശ്നങ്ങൾക്കും വഴിവെച്ചു. കാൾ മാർക്സ് മുതലാളി-തൊഴിലാളി വർഗ്ഗ വൈരുദ്ധ്യവും, മാക്സ് വെബർ പദവിയും അധികാരവും, എമിൽ ഡർക്കൈം തൊഴിൽ വിഭജനവും പഠനവിധേയമാക്കി.\n\n2. രാഷ്ട്രീയ ശക്തികൾ (ഫ്രഞ്ച് വിപ്ലവം 1789):\nഫ്രാൻസിലെ രാജവാഴ്ചയെയും മൂന്ന് എസ്റ്റേറ്റുകളായി തിരിഞ്ഞ ഫ്യൂഡൽ അനീതിയെയും ഫ്രഞ്ച് വിപ്ലവം തകർത്തു. സ്വാതന്ത്ര്യം, സമത്വം, സാഹോദര്യം, ജനാധിപത്യം, മതേതരത്വം എന്നീ ആധുനിക മൂല്യങ്ങൾ ഇത് സ്ഥാപിച്ചു. വിപ്ലവാനന്തര സാമൂഹിക അരാജകത്വത്തിൽ ഒരു പുതിയ സാമൂഹിക ക്രമം പുനഃസ്ഥാപിക്കാൻ ശാസ്ത്രീയമായ സാമൂഹിക പഠനം വേണമെന്ന് ഓഗസ്റ്റ് കോംതെയും സെന്റ്-സൈമണും വാദിച്ചു.\n\n3. ബൗദ്ധിക ശക്തികൾ (നവോത്ഥാനവും ജ്ഞാനോദയവും):\nനവോത്ഥാനം മതപരമായ അന്ധവിശ്വാസങ്ങൾക്ക് പകരം മാനവികതയ്ക്കും അനുഭവൈക നിരീക്ഷണങ്ങൾക്കും പ്രാധാന്യം നൽകി. തുടർന്നു വന്ന ജ്ഞാനോദയ കാലഘട്ടം (ലോക്ക്, റൂസ്സോ, മൊണ്ടസ്ക്യൂ) സമൂഹത്തെ യുക്തിഭദ്രമായി പരിഷ്കരിക്കാമെന്ന് തെളിയിച്ചു. ഈ ബൗദ്ധിക വിപ്ലവം പോസിറ്റിവിസത്തിലൂടെ സമൂഹത്തെ ശാസ്ത്രീയമായി പഠിക്കാൻ കോംതെയ്ക്ക് അടിത്തറയൊരുക്കി.\n\nഉപസംഹാരം:\nസാമൂഹിക, രാഷ്ട്രീയ, ബൗദ്ധിക മാറ്റങ്ങളുടെ സമന്വയമാണ് ആധുനിക ലോകത്തിലെ ക്രമവും മാറ്റങ്ങളും പഠിക്കാനുള്ള സ്വതന്ത്ര ശാസ്ത്രമായി സോഷ്യോളജിയെ രൂപപ്പെടുത്തിയത്."
+    },
+    answerPoints: "1. Introduction: Definition, 19th-century European context (2 marks)\n2. Social Forces: Industrial revolution, factory system, migration, urban problems, Marx/Weber/Durkheim analysis (4 marks)\n3. Political Forces: French Revolution (1789), 3 Estates, Liberty/Equality/Fraternity, breakdown of order, Comte & Saint-Simon (4 marks)\n4. Intellectual Forces: Renaissance humanism, Enlightenment age of reason (Locke/Rousseau/Montesquieu), scientific method & positivism (4 marks)\n5. Conclusion: Synthesis of order, conflict, and change in modern society (1 mark)",
+    explanation: [
+      "Comprehensive Calicut University master essay covering Introduction, Social forces (Industrialisation & Urbanisation), Political forces (French Revolution 1789), Intellectual forces (Renaissance & Enlightenment), and Conclusion.",
+      "ആമുഖം, സാമൂഹിക ശക്തികൾ (വ്യാവസായിക വിപ്ലവം, നഗരവൽക്കരണം), രാഷ്ട്രീയ ശക്തികൾ (ഫ്രഞ്ച് വിപ്ലവം 1789), ബൗദ്ധിക ശക്തികൾ (നവോത്ഥാനം, ജ്ഞാനോദയം), ഉപസംഹാരം എന്നീ ഘട്ടങ്ങൾ പൂർണ്ണമായി ഉൾക്കൊള്ളുന്ന 15 മാർക്ക് ഉപന്യാസം."
+    ]
+  }
 ];
 
-function render() {
-  byId('setup').hidden = true;
-  byId('clock').hidden = false;
-  byId('exam').hidden = false;
-  const list = byId('questions');
-  list.replaceChildren();
-  attempt.questions.forEach((question, i) => {
-    const card = add(list, 'article', '');
-    const heading = add(card, 'h2', (i+1) + '. ' + (attempt.language === 'ml' ? question.ml : question.en));
-    const alternate = add(card, 'p', attempt.language === 'ml' ? question.en : question.ml);
-    heading.lang = attempt.language;
-    alternate.lang = attempt.language === 'ml' ? 'en' : 'ml';
-    add(card, 'p', (question.module ? 'Module ' + question.module + ' · ' : '') + '3 marks', 'marks');
-    const label = add(card, 'label', 'Your answer / നിങ്ങളുടെ ഉത്തരം:');
-    label.htmlFor = 'answer-' + i;
-
-    // Dual Voice Assistant Toolbar (Option 1: Live Dictate Speech-to-Text & Option 2: WhatsApp Voice Note)
-    const voiceBar = add(card, 'div', '', 'voice-bar');
-    voiceBar.setAttribute('role', 'region');
-    voiceBar.setAttribute('aria-label', 'Bilingual Voice Input Assistant');
-
-    const badge = add(voiceBar, 'span', '🎙️ Voice input', 'voice-badge');
-
-    // Language selector for speech recognition
-    const langSelect = add(voiceBar, 'select', '', 'lang-select-voice');
-    langSelect.title = 'Dictation Language';
-    const optMl = add(langSelect, 'option', 'മലയാളം (ml-IN)');
-    optMl.value = 'ml-IN';
-    const optEn = add(langSelect, 'option', 'English (en-IN)');
-    optEn.value = 'en-IN';
-    if (attempt.language === 'en') langSelect.value = 'en-IN';
-
-    // Option 1: Live Speech-To-Text Button
-    const btnDictate = add(voiceBar, 'button', '🎙️ Live Dictate', 'btn-dictate');
-    btnDictate.type = 'button';
-    btnDictate.title = 'Speak and transcribe directly into the answer box';
-
-    // Option 2: WhatsApp style audio note recorder
-    const btnRecord = add(voiceBar, 'button', '🔴 Record Note', 'btn-record');
-    btnRecord.type = 'button';
-    btnRecord.title = 'Record audio voice note (WhatsApp style)';
-
-    const voiceStatus = add(voiceBar, 'span', '', 'voice-status-pill');
-
-    const previewWrap = add(voiceBar, 'div', '', 'audio-preview-wrap');
-    previewWrap.style.display = 'none';
-    const audioPreview = add(previewWrap, 'audio', '');
-    audioPreview.controls = true;
-    const btnDiscard = add(previewWrap, 'button', '🗑️ Discard', 'btn-discard-audio');
-    btnDiscard.type = 'button';
-
-    const input = add(card, 'textarea', '');
-    input.placeholder = 'Type your answer or speak using the voice buttons above...';
-
-    // Wire up Option 1: Live Dictation (Web Speech API)
-    let recognition = null;
-    let isListening = false;
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-    if (SpeechRecognition) {
-      recognition = new SpeechRecognition();
-      recognition.continuous = false; // More reliable on mobile Safari
-      recognition.interimResults = true;
-
-      recognition.onstart = () => {
-        isListening = true;
-        btnDictate.classList.add('listening');
-        btnDictate.textContent = '⏹️ Stop Dictating';
-        voiceStatus.textContent = '● Listening (' + (langSelect.value === 'ml-IN' ? 'മലയാളം' : 'English') + ')...';
-        voiceStatus.style.color = '#dc2626';
-      };
-
-      recognition.onresult = event => {
-        let finalChunk = '';
-        for (let r = event.resultIndex; r < event.results.length; ++r) {
-          if (event.results[r].isFinal) {
-            finalChunk += event.results[r][0].transcript + ' ';
-          }
-        }
-        if (finalChunk) {
-          const current = input.value.trim();
-          input.value = (current ? current + ' ' : '') + finalChunk.trim();
-          attempt.answers[i] = input.value;
-          save();
-        }
-      };
-
-      recognition.onerror = event => {
-        isListening = false;
-        btnDictate.classList.remove('listening');
-        btnDictate.textContent = '🎙️ Live Dictate';
-        voiceStatus.textContent = ['service-not-allowed','not-allowed','language-not-supported'].includes(event.error) ? 'Browser dictation unavailable. Tap answer box and use the iPhone keyboard microphone.' : 'Dictation error: ' + (event.error || 'Check microphone permission');
-        voiceStatus.style.color = '#991b1b';
-      };
-
-      recognition.onend = () => {
-        isListening = false;
-        btnDictate.classList.remove('listening');
-        btnDictate.textContent = '🎙️ Live Dictate';
-        if (voiceStatus.textContent.startsWith('● Listening')) {
-          voiceStatus.textContent = '✓ Transcribed';
-          voiceStatus.style.color = '#059669';
-        }
-      };
-
-      btnDictate.onclick = () => {
-        if (attempt.locked) return;
-        if (isListening) {
-          recognition.stop();
-        } else {
-          recognition.lang = langSelect.value;
-          try {
-            recognition.start();
-          } catch (e) {
-            recognition.stop();
-            setTimeout(() => { try { recognition.start(); } catch {} }, 250);
-          }
-        }
-      };
+// TAB SWITCHING LOGIC: Guarantees active tab is rendered and window scrolls to top
+function switchTab(tabIndex) {
+  currentActiveTab = parseInt(tabIndex, 10);
+  
+  // Update Tab Buttons
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    const idx = parseInt(btn.dataset.tab, 10);
+    if (idx === currentActiveTab) {
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
     } else {
-      btnDictate.disabled = false;
-      btnDictate.onclick = () => { input.focus(); voiceStatus.textContent = 'Use the microphone on your phone keyboard to dictate.'; };
-      btnDictate.title = 'Live dictation not supported in this browser. Use WhatsApp voice note or keyboard mic.';
-      btnDictate.textContent = '🎙️ Dictate (Use Chrome/Safari)';
-    }
-
-    // Wire up Option 2: WhatsApp Voice Note (MediaRecorder)
-    let mediaRecorder = null;
-    let audioChunks = [];
-    let isRecordingAudio = false;
-    let recordTimerInterval = null;
-    let recordSeconds = 0;
-
-    btnRecord.onclick = async () => {
-      if (attempt.locked) return;
-      if (isRecordingAudio) {
-        // Stop recording
-        if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
-        return;
-      }
-
-      try {
-        if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) throw new Error('Audio recording is not supported in this browser. Open the site in Safari and allow microphone access.');
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        audioChunks = [];
-        const mime = ['audio/mp4','audio/webm;codecs=opus','audio/webm'].find(t => MediaRecorder.isTypeSupported(t));
-        mediaRecorder = mime ? new MediaRecorder(stream, {mimeType:mime}) : new MediaRecorder(stream);
-
-        mediaRecorder.ondataavailable = e => {
-          if (e.data.size > 0) audioChunks.push(e.data);
-        };
-
-        mediaRecorder.onstart = () => {
-          isRecordingAudio = true;
-          recordSeconds = 0;
-          btnRecord.classList.add('recording');
-          btnRecord.textContent = '⏹️ Stop Note';
-          voiceStatus.textContent = '🔴 00:00 (Recording...)';
-          voiceStatus.style.color = '#e11d48';
-
-          recordTimerInterval = setInterval(() => {
-            recordSeconds++;
-            const mm = String(Math.floor(recordSeconds / 60)).padStart(2, '0');
-            const ss = String(recordSeconds % 60).padStart(2, '0');
-            voiceStatus.textContent = '🔴 ' + mm + ':' + ss;
-            if (recordSeconds >= 180) { // Max 3 minutes
-              if (mediaRecorder.state !== 'inactive') mediaRecorder.stop();
-            }
-          }, 1000);
-        };
-
-        mediaRecorder.onstop = () => {
-          clearInterval(recordTimerInterval);
-          isRecordingAudio = false;
-          btnRecord.classList.remove('recording');
-          btnRecord.textContent = '🔴 Record Note';
-          stream.getTracks().forEach(track => track.stop());
-
-          const audioBlob = new Blob(audioChunks, { type: mediaRecorder.mimeType || audioChunks[0]?.type || 'audio/mp4' });
-          if (!audioBlob.size) { voiceStatus.textContent = 'No audio captured. Please try again.'; return; }
-          if (audioPreview.dataset.blobUrl) URL.revokeObjectURL(audioPreview.dataset.blobUrl);
-          const audioUrl = URL.createObjectURL(audioBlob);
-          audioPreview.src = audioUrl;
-          audioPreview.dataset.blobUrl = audioUrl;
-          previewWrap.style.display = 'flex';
-          voiceStatus.textContent = '✓ Voice note ready';
-          voiceStatus.style.color = '#0284c7';
-
-          // Mark note in answer if empty
-          if (!input.value.trim()) {
-            input.value = '[Voice Note Attached - ' + Math.ceil(recordSeconds) + 's]';
-            attempt.answers[i] = input.value;
-            save();
-          }
-        };
-
-        mediaRecorder.onerror = () => { stream.getTracks().forEach(track => track.stop()); voiceStatus.textContent = 'Recording failed. Please retry.'; };
-        mediaRecorder.start();
-      } catch (err) {
-        voiceStatus.textContent = 'Mic access blocked: ' + err.message;
-        voiceStatus.style.color = '#991b1b';
-      }
-    };
-
-    btnDiscard.onclick = () => {
-      audioPreview.pause();
-      audioPreview.src = '';
-      if (audioPreview.dataset.blobUrl) URL.revokeObjectURL(audioPreview.dataset.blobUrl);
-      delete audioPreview.dataset.blobUrl;
-      previewWrap.style.display = 'none';
-      voiceStatus.textContent = 'Note discarded';
-      voiceStatus.style.color = '#64748b';
-      if (input.value.startsWith('[Voice Note Attached')) {
-        input.value = '';
-        attempt.answers[i] = '';
-        save();
-      }
-    };
-    input.id = label.htmlFor;
-    input.lang = attempt.language;
-    input.maxLength = 1000;
-    input.value = attempt.answers[i];
-    input.readOnly = attempt.locked;
-    input.addEventListener('input', () => {
-      if (Date.now() >= attempt.deadline) {
-        input.value = attempt.answers[i];
-        tick();
-        return;
-      }
-      attempt.answers[i] = input.value;
-      save();
-    });
-    const result = attempt.report?.results.find(row => row.id === question.id);
-    if (result) {
-      const box = add(card, 'section', '', 'feedback');
-      add(box, 'h3', result.marks + ' / 3 marks');
-      if (result.feedbackBilingual) {
-        const sections = [
-          ['review', 'Why you got this mark', 'ഈ മാർക്ക് ലഭിച്ചതിന്റെ കാരണം'],
-          ['focus', 'What to focus on', 'ശ്രദ്ധിക്കേണ്ട കാര്യങ്ങൾ'],
-          ['structure', 'How to structure your answer', 'ഉത്തരം എങ്ങനെ ക്രമീകരിക്കാം']
-        ];
-        for (const [key, english, malayalam] of sections) {
-          const heading = add(box, 'h4', english + ' · ');
-          add(heading, 'span', malayalam).lang = 'ml';
-          add(box, 'p', result.feedbackBilingual.en[key]).lang = 'en';
-          add(box, 'p', result.feedbackBilingual.ml[key]).lang = 'ml';
-        }
-      } else {
-        add(box, 'h4', 'Feedback · നിർദ്ദേശങ്ങൾ');
-        add(box, 'p', result.feedback).lang = attempt.language;
-      }
-      if (result.modelAnswer) {
-        add(box, 'h4', 'Model answer · മാതൃകാ ഉത്തരം');
-        add(box, 'p', result.modelAnswer.en).lang = 'en';
-        add(box, 'p', result.modelAnswer.ml).lang = 'ml';
-      } else {
-        add(box, 'h4', 'Model answer points');
-        add(box, 'p', result.answerPoints);
-      }
-      const explanation = detailedExplanations[question.id];
-      if (explanation) {
-        const details = add(box, 'details', '', 'more-explanation');
-        const summary = add(details, 'summary', 'Get more explanation · ');
-        add(summary, 'span', 'കൂടുതൽ വിശദീകരണം').lang = 'ml';
-        add(details, 'p', explanation[0]).lang = 'en';
-        add(details, 'p', explanation[1]).lang = 'ml';
-      }
+      btn.classList.remove('active');
+      btn.setAttribute('aria-selected', 'false');
     }
   });
-  byId('submit').hidden = attempt.locked;
-  byId('again').hidden = !attempt.report;
+
+  // Update Panes visibility
+  document.querySelectorAll('.tab-pane').forEach(pane => pane.hidden = true);
+  
+  const targetPane = byId('pane-tab-' + currentActiveTab);
+  if (targetPane) {
+    targetPane.hidden = false;
+  }
+
+  // Update sticky timer indicator
+  const titles = [
+    'Start · Module 1 Glance',
+    'Question 1 of 3 (5 Marks)',
+    'Question 2 of 3 (5 Marks)',
+    'Question 3 of 3 (15 Marks Essay)',
+    'Quiz Evaluation Report'
+  ];
+  if (byId('timer-active-tab-title')) {
+    byId('timer-active-tab-title').textContent = titles[currentActiveTab] || '';
+  }
+
+  // Scroll smoothly to top so user never gets stuck at bottom
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-function lock() {
+
+// Attach Tab Button click listeners
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    switchTab(btn.dataset.tab);
+  });
+});
+
+// START EXAM HANDLER
+byId('start-exam-btn').onclick = () => {
+  if (!attempt) {
+    let questions = MODULE_1_QUESTIONS.map(({id,module,marks,en,ml}) => ({id,module,marks,en,ml}));
+    let session = 'soc-mod1-' + Date.now();
+    let deadline = Date.now() + 30 * 60 * 1000;
+    attempt = {
+      questions,
+      answers: Array(questions.length).fill(''),
+      language: byId('language').value,
+      deadline,
+      session,
+      locked: false,
+      startTime: Date.now()
+    };
+    save();
+  }
+  byId('clock').hidden = false;
+  renderQuestions();
+  tick();
+  // Switch to Tab 1 (Question 1)
+  switchTab(1);
+};
+
+// RENDER QUESTIONS IN TABS 1, 2, 3
+function renderQuestions() {
+  const container = byId('question-panes-container');
+  container.replaceChildren();
+
+  attempt.questions.forEach((q, i) => {
+    const tabNum = i + 1;
+    const fullQ = MODULE_1_QUESTIONS[i] || q;
+    const pane = document.createElement('section');
+    pane.className = 'panel tab-pane question-pane';
+    pane.id = 'pane-tab-' + tabNum;
+    pane.hidden = (currentActiveTab !== tabNum);
+
+    // Question header & marks badge
+    const isMl = (attempt.language === 'ml');
+    const marksText = fullQ.marks === 15 
+      ? '15 Marks · Master Long Essay (~300–400 words / ഉപന്യാസം)' 
+      : '5 Marks · Short Essay (~100–110 words / ലഘൂപന്യാസം)';
+    
+    pane.innerHTML = `
+      <div class="marks-badge">⭐ ${marksText}</div>
+      <h2>${i + 1}. ${isMl ? fullQ.ml : fullQ.en}</h2>
+      <div class="alt-question">${isMl ? fullQ.en : fullQ.ml}</div>
+      <label style="display:block;font-weight:700;margin-bottom:8px;">Your Answer / നിങ്ങളുടെ ഉത്തരം:</label>
+    `;
+
+    // Voice Toolbar
+    const voiceBar = document.createElement('div');
+    voiceBar.className = 'voice-bar';
+    voiceBar.innerHTML = `
+      <span class="voice-badge">🎙️ Voice input</span>
+      <select class="lang-select-voice" id="voice-lang-${i}">
+        <option value="ml-IN">മലയാളം (ml-IN)</option>
+        <option value="en-IN" ${attempt.language === 'en' ? 'selected' : ''}>English (en-IN)</option>
+      </select>
+      <button type="button" class="btn-dictate" id="btn-dictate-${i}">🎙️ Live Dictate</button>
+      <button type="button" class="btn-record" id="btn-record-${i}">🔴 Record Note</button>
+      <span class="voice-status-pill" id="voice-status-${i}"></span>
+      <div class="audio-preview-wrap" id="audio-preview-wrap-${i}" style="display:none;">
+        <audio id="audio-elem-${i}" controls></audio>
+        <button type="button" class="btn-discard-audio" id="btn-discard-${i}">🗑️ Discard</button>
+      </div>
+    `;
+    pane.appendChild(voiceBar);
+
+    // Textarea
+    const textarea = document.createElement('textarea');
+    textarea.id = 'answer-' + i;
+    textarea.placeholder = fullQ.marks === 15 
+      ? 'Write your detailed master essay here (~300-400 words) or speak using microphone...' 
+      : 'Write your concise 5-mark short essay here (~100-110 words) or speak using microphone...';
+    textarea.value = attempt.answers[i] || '';
+    textarea.readOnly = attempt.locked;
+    pane.appendChild(textarea);
+
+    // Word counter pill
+    const counterWrap = document.createElement('div');
+    counterWrap.className = 'word-counter-wrap';
+    const pill = document.createElement('span');
+    pill.className = 'word-counter-pill under';
+    pill.id = 'word-pill-' + i;
+    counterWrap.appendChild(pill);
+    pane.appendChild(counterWrap);
+
+    // Update pill function
+    const updateWordCount = () => {
+      const text = textarea.value.trim();
+      const count = text ? text.split(/\s+/).filter(Boolean).length : 0;
+      attempt.answers[i] = textarea.value;
+      save();
+
+      const target = fullQ.targetWords || 100;
+      if (fullQ.marks === 15) {
+        // Long Essay (~300 words)
+        if (count < 250) {
+          pill.className = 'word-counter-pill under';
+          pill.innerHTML = `⚠️ <b>${count}</b> words (Less than 300 words / 300 വാക്കിൽ കുറവ്)`;
+        } else if (count <= 420) {
+          pill.className = 'word-counter-pill target-reached';
+          pill.innerHTML = `✅ <b>${count}</b> words (Optimal essay length / അനുയോജ്യമായ ദൈർഘ്യം)`;
+        } else {
+          pill.className = 'word-counter-pill over';
+          pill.innerHTML = `ℹ️ <b>${count}</b> words (Over 400 words / 400 വാക്കിൽ കൂടുതൽ)`;
+        }
+      } else {
+        // 5-Mark Short Essays (~100-110 words)
+        if (count < 100) {
+          pill.className = 'word-counter-pill under';
+          pill.innerHTML = `⚠️ <b>${count}</b> words (Less than 100 words / 100 വാക്കിൽ കുറവ്)`;
+        } else if (count <= 115) {
+          pill.className = 'word-counter-pill target-reached';
+          pill.innerHTML = `✅ <b>${count}</b> words (Target reached! ~100–110 words)`;
+        } else {
+          pill.className = 'word-counter-pill over';
+          pill.innerHTML = `ℹ️ <b>${count}</b> words (100 words over / 100 വാക്കിൽ കൂടുതൽ)`;
+        }
+      }
+    };
+
+    textarea.addEventListener('input', updateWordCount);
+    updateWordCount(); // Initial count
+
+    // Wire Voice Dictation & Audio Note
+    setupVoice(i, textarea, updateWordCount);
+
+    // If report exists, show feedback box inside question pane
+    if (attempt.report) {
+      const res = attempt.report.results.find(r => r.id === q.id);
+      if (res) {
+        const fbBox = document.createElement('div');
+        fbBox.className = 'feedback';
+        fbBox.innerHTML = `
+          <h3>Marks: ${res.marks} / ${fullQ.marks}</h3>
+          <h4>Why you got this mark · മാർക്കിന്റെ കാരണം:</h4>
+          <p>${attempt.language === 'ml' ? res.feedbackBilingual.ml.review : res.feedbackBilingual.en.review}</p>
+          <h4>What to focus on · ശ്രദ്ധിക്കേണ്ട കാര്യങ്ങൾ:</h4>
+          <p>${attempt.language === 'ml' ? res.feedbackBilingual.ml.focus : res.feedbackBilingual.en.focus}</p>
+          <h4>Model Answer · മാതൃകാ ഉത്തരം:</h4>
+          <p style="white-space:pre-wrap;">${attempt.language === 'ml' ? fullQ.modelAnswer.ml : fullQ.modelAnswer.en}</p>
+        `;
+        pane.appendChild(fbBox);
+      }
+    }
+
+    // Stepper bottom buttons
+    const actions = document.createElement('div');
+    actions.className = 'stepper-actions';
+    
+    // Prev Button
+    const prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.className = 'btn-nav';
+    prevBtn.textContent = (i === 0) ? '← Overview' : '← Previous Question';
+    prevBtn.onclick = () => switchTab(tabNum - 1);
+    actions.appendChild(prevBtn);
+
+    // Next / Submit Button
+    if (i < attempt.questions.length - 1) {
+      const nextBtn = document.createElement('button');
+      nextBtn.type = 'button';
+      nextBtn.className = 'btn-primary';
+      nextBtn.textContent = 'Next Question →';
+      nextBtn.onclick = () => switchTab(tabNum + 1);
+      actions.appendChild(nextBtn);
+    } else {
+      // Last question: Show Submit button or View Report button
+      if (!attempt.report && !attempt.locked) {
+        const subBtn = document.createElement('button');
+        subBtn.type = 'button';
+        subBtn.className = 'btn-submit-exam';
+        subBtn.textContent = 'Submit Answers & Evaluate 🚀';
+        subBtn.onclick = () => {
+          if (confirm('Submit and lock your answers now? Final evaluation will start.')) {
+            lockExam();
+          }
+        };
+        actions.appendChild(subBtn);
+      } else {
+        const repBtn = document.createElement('button');
+        repBtn.type = 'button';
+        repBtn.className = 'btn-primary';
+        repBtn.textContent = 'View Quiz Report 📊 →';
+        repBtn.onclick = () => switchTab(4);
+        actions.appendChild(repBtn);
+      }
+    }
+    pane.appendChild(actions);
+
+    container.appendChild(pane);
+  });
+}
+
+// SETUP VOICE ASSISTANT (Web Speech API & MediaRecorder)
+function setupVoice(index, textarea, onChange) {
+  const btnDictate = byId('btn-dictate-' + index);
+  const btnRecord = byId('btn-record-' + index);
+  const voiceStatus = byId('voice-status-' + index);
+  const langSelect = byId('voice-lang-' + index);
+  const previewWrap = byId('audio-preview-wrap-' + index);
+  const audioElem = byId('audio-elem-' + index);
+  const btnDiscard = byId('btn-discard-' + index);
+
+  if (!btnDictate || !btnRecord) return;
+
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  let recognition = null;
+  let isListening = false;
+
+  if (SpeechRecognition) {
+    recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+
+    recognition.onstart = () => {
+      isListening = true;
+      btnDictate.classList.add('listening');
+      btnDictate.textContent = '⏹️ Stop Dictating';
+      voiceStatus.textContent = '● Listening (' + (langSelect.value === 'ml-IN' ? 'മലയാളം' : 'English') + ')...';
+      voiceStatus.style.color = '#dc2626';
+    };
+
+    recognition.onresult = event => {
+      let chunk = '';
+      for (let r = event.resultIndex; r < event.results.length; ++r) {
+        if (event.results[r].isFinal) {
+          chunk += event.results[r][0].transcript + ' ';
+        }
+      }
+      if (chunk) {
+        const cur = textarea.value.trim();
+        textarea.value = (cur ? cur + ' ' : '') + chunk.trim();
+        onChange();
+      }
+    };
+
+    recognition.onerror = err => {
+      isListening = false;
+      btnDictate.classList.remove('listening');
+      btnDictate.textContent = '🎙️ Live Dictate';
+      voiceStatus.textContent = 'Mic: ' + (err.error || 'error');
+      voiceStatus.style.color = '#991b1b';
+    };
+
+    recognition.onend = () => {
+      isListening = false;
+      btnDictate.classList.remove('listening');
+      btnDictate.textContent = '🎙️ Live Dictate';
+      if (voiceStatus.textContent.startsWith('● Listening')) {
+        voiceStatus.textContent = '✓ Dictation saved';
+        voiceStatus.style.color = '#166534';
+      }
+    };
+
+    btnDictate.onclick = () => {
+      if (isListening) {
+        recognition.stop();
+      } else {
+        recognition.lang = langSelect.value;
+        recognition.start();
+      }
+    };
+  } else {
+    btnDictate.disabled = true;
+    btnDictate.title = 'Web Speech not supported in this browser';
+  }
+
+  // Audio Note Recording
+  let mediaRecorder = null;
+  let audioChunks = [];
+  let isRecording = false;
+
+  btnRecord.onclick = async () => {
+    if (isRecording) {
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+      return;
+    }
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      audioChunks = [];
+      mediaRecorder = new MediaRecorder(stream);
+      mediaRecorder.onstart = () => {
+        isRecording = true;
+        btnRecord.classList.add('recording');
+        btnRecord.textContent = '⏹️ Stop Recording';
+        voiceStatus.textContent = '● Recording note...';
+        voiceStatus.style.color = '#dc2626';
+      };
+      mediaRecorder.ondataavailable = e => { if (e.data.size > 0) audioChunks.push(e.data); };
+      mediaRecorder.onstop = () => {
+        isRecording = false;
+        btnRecord.classList.remove('recording');
+        btnRecord.textContent = '🔴 Record Note';
+        stream.getTracks().forEach(t => t.stop());
+        const blob = new Blob(audioChunks, { type: 'audio/webm' });
+        audioElem.src = URL.createObjectURL(blob);
+        previewWrap.style.display = 'flex';
+        voiceStatus.textContent = '✓ Voice note attached';
+        voiceStatus.style.color = '#0284c7';
+        if (!textarea.value.trim()) {
+          textarea.value = '[Voice Note Attached]';
+          onChange();
+        }
+      };
+      mediaRecorder.start();
+    } catch (err) {
+      voiceStatus.textContent = 'Mic blocked: ' + err.message;
+      voiceStatus.style.color = '#991b1b';
+    }
+  };
+
+  btnDiscard.onclick = () => {
+    audioElem.src = '';
+    previewWrap.style.display = 'none';
+    voiceStatus.textContent = 'Discarded';
+    voiceStatus.style.color = '#64748b';
+    if (textarea.value.startsWith('[Voice Note Attached')) {
+      textarea.value = '';
+      onChange();
+    }
+  };
+}
+
+// LOCK & EVALUATION
+function lockExam() {
   if (attempt.locked) return;
   attempt.locked = true;
   save();
-  render();
+  evaluate();
 }
+
 async function evaluate() {
-  if (busy || attempt.report || !attempt.locked) return;
+  if (busy || attempt.report) return;
   busy = true;
   byId('retry').hidden = true;
-  status('Evaluating your answers…');
+  status('Evaluating your answers with vigilant academic criteria…');
   try {
-    attempt.report = await request({mode:'theory-grade',session:attempt.session,language:attempt.language,
-      answers:attempt.questions.map(({id},i) => ({id,text:attempt.answers[i]}))});
+    let report = null;
+    try {
+      report = await request({
+        mode:'theory-grade',
+        session:attempt.session,
+        language:attempt.language,
+        answers:attempt.questions.map(({id},i) => ({id,text:attempt.answers[i]}))
+      });
+    } catch (err) {
+      // Local vigilant evaluator
+      const results = attempt.questions.map((q, i) => {
+        const fullQ = MODULE_1_QUESTIONS[i] || q;
+        const studentAns = (attempt.answers[i] || '').trim();
+        const wordCount = studentAns ? studentAns.split(/\s+/).filter(Boolean).length : 0;
+        const lower = studentAns.toLowerCase();
+
+        let marks = 0;
+        let review = '', focus = '';
+        let reviewMl = '', focusMl = '';
+
+        if (fullQ.marks === 15) {
+          const kInd = lower.includes('industr') || lower.includes('factor') || lower.includes('urban') || lower.includes('വ്യാവസായിക') || lower.includes('നഗര');
+          const kMarx = lower.includes('marx') || lower.includes('class') || lower.includes('weber') || lower.includes('durkheim') || lower.includes('വർഗ്ഗ');
+          const kFr = lower.includes('french') || lower.includes('1789') || lower.includes('liberty') || lower.includes('equality') || lower.includes('ഫ്രഞ്ച്') || lower.includes('സമത്വം');
+          const kComte = lower.includes('comte') || lower.includes('estate') || lower.includes('order') || lower.includes('കോംതെ');
+          const kRen = lower.includes('renaissance') || lower.includes('humanis') || lower.includes('enlighten') || lower.includes('reason') || lower.includes('നവോത്ഥാന') || lower.includes('യുക്തി');
+          const kSci = lower.includes('empiric') || lower.includes('positiv') || lower.includes('science') || lower.includes('ശാസ്ത്ര');
+
+          let score = 0;
+          if (kInd) score += 2.5;
+          if (kMarx) score += 1.5;
+          if (kFr) score += 2.5;
+          if (kComte) score += 1.5;
+          if (kRen) score += 2.5;
+          if (kSci) score += 1.5;
+
+          if (wordCount >= 250) score += 3.0;
+          else if (wordCount >= 150) score += 2.0;
+          else if (wordCount >= 70) score += 1.0;
+          else if (wordCount > 10) score += 0.5;
+
+          marks = Math.min(15, Math.max(wordCount > 10 ? 2 : 0, Math.round(score * 10) / 10));
+
+          if (marks >= 12) {
+            review = 'Exemplary master essay with comprehensive analytical coverage across Industrial, French, and Intellectual revolutions.';
+            reviewMl = 'വ്യാവസായിക, ഫ്രഞ്ച്, ബൗദ്ധിക വിപ്ലവങ്ങളെ സമഗ്രമായി വിശകലനം ചെയ്ത മികച്ച മാസ്റ്റർ ഉപന്യാസം.';
+            focus = 'Continue maintaining precise theoretical linkage with classical theorists (Marx, Weber, Durkheim, Comte).';
+            focusMl = 'ക്ലാസിക്കൽ ചിന്തകരുമായുള്ള സൈദ്ധാന്തിക ബന്ധം ഇതേപോലെ നിലനിർത്തുക.';
+          } else if (marks >= 8) {
+            review = 'Competent essay covering fundamental social and political forces, but requires deeper exploration of intellectual enlightenment and positivism.';
+            reviewMl = 'സാമൂഹിക, രാഷ്ട്രീയ ശക്തികളെ വ്യക്തമാക്കുന്നുണ്ടെങ്കിലും ജ്ഞാനോദയം, പോസിറ്റിവിസം എന്നിവ കൂടുതൽ വിശദീകരിക്കേണ്ടതുണ്ട്.';
+            focus = 'Elaborate on how the collapse of traditional order led Comte and Saint-Simon to develop sociology as an empirical discipline.';
+            focusMl = 'സാമൂഹിക അരാജകത്വത്തിൽ നിന്ന് ക്രമം വീണ്ടെടുക്കാൻ ശാസ്ത്രീയ പഠനം ആവശ്യമായി വന്ന പശ്ചാത്തലം വ്യക്തമാക്കുക.';
+          } else {
+            review = 'Preliminary response needing substantial development. A 15-mark essay requires systematic treatment of all three pillars (~300–400 words).';
+            reviewMl = 'പ്രാഥമിക വിവരങ്ങൾ മാത്രമുള്ള ഉത്തരം. 15 മാർക്ക് നേടാൻ മൂന്ന് വിപ്ലവങ്ങളും സമഗ്രമായി ചർച്ച ചെയ്യണം (~300–400 വാക്കുകൾ).';
+            focus = 'Incorporate the factory system, urban migration, 1789 French Revolution estates, and Renaissance humanism with empirical methods.';
+            focusMl = 'ഫാക്ടറി സമ്പ്രദായം, നഗര കുടിയേറ്റം, ഫ്രഞ്ച് വിപ്ലവത്തിലെ എസ്റ്റേറ്റുകൾ, നവോത്ഥാന മാനവികത എന്നിവ ഉൾപ്പെടുത്തുക.';
+          }
+        } else {
+          // 5-Mark Short Essays
+          let kw = 0;
+          if (i === 0) {
+            if (lower.includes('industr') || lower.includes('factor') || lower.includes('urban') || lower.includes('വ്യാവസായിക')) kw += 1.25;
+            if (lower.includes('french') || lower.includes('1789') || lower.includes('liberty') || lower.includes('ഫ്രഞ്ച്')) kw += 1.25;
+            if (lower.includes('renaissance') || lower.includes('enlighten') || lower.includes('humanis') || lower.includes('നവോത്ഥാന')) kw += 1.25;
+            if (lower.includes('science') || lower.includes('comte') || lower.includes('order') || lower.includes('ശാസ്ത്ര')) kw += 0.75;
+          } else {
+            if (lower.includes('bierstedt') || lower.includes('independent') || lower.includes('social') || lower.includes('സ്വതന്ത്ര')) kw += 1.0;
+            if (lower.includes('categorical') || lower.includes('normative') || lower.includes('കാറ്റഗറിക്കൽ')) kw += 1.25;
+            if (lower.includes('pure') || lower.includes('abstract') || lower.includes('പ്യുവർ')) kw += 1.0;
+            if (lower.includes('generalising') || lower.includes('general') || lower.includes('ജനറലൈസിംഗ്')) kw += 1.0;
+            if (lower.includes('empirical') || lower.includes('rational') || lower.includes('അനുഭവൈക')) kw += 0.75;
+          }
+
+          let lenScore = 0;
+          if (wordCount >= 90) lenScore = 0.5;
+          else if (wordCount >= 60) lenScore = 0.35;
+          else if (wordCount >= 30) lenScore = 0.2;
+
+          marks = Math.min(5, Math.max(wordCount > 5 ? 1 : 0, Math.round((kw + lenScore) * 10) / 10));
+
+          if (marks >= 4) {
+            review = 'Strong conceptual grasp directly addressing key syllabus requirements within prescribed word length.';
+            reviewMl = 'ആവശ്യമായ പ്രധാന പോയിന്റുകൾ കൃത്യമായ ദൈർഘ്യത്തിൽ അവതരിപ്പിച്ച മികച്ച ഉത്തരം.';
+            focus = 'Maintain concise and dense conceptual expression strictly within the 100–110 word limit.';
+            focusMl = '100-110 വാക്കുകളുടെ പരിധിയിൽ കൃത്യതയോടെ ആശയങ്ങൾ അവതരിപ്പിക്കുന്നത് തുടരുക.';
+          } else {
+            review = 'Adequate short response, but missing one or two key conceptual requirements or falling short of 100 words.';
+            reviewMl = 'മാതൃകാ ഉത്തരത്തിലെ പ്രധാന ഘടകങ്ങൾ പൂർണ്ണമായി ഉൾപ്പെടുത്തിയിട്ടില്ല അല്ലെങ്കിൽ 100 വാക്കുകൾ തികഞ്ഞിട്ടില്ല.';
+            focus = 'Ensure all bulleted core concepts from the model answer are explicitly addressed.';
+            focusMl = 'മാതൃകാ ഉത്തരത്തിലെ എല്ലാ പ്രധാന ഘടകങ്ങളും സ്പർശിക്കാൻ ശ്രദ്ധിക്കുക.';
+          }
+        }
+
+        return {
+          id: q.id,
+          marks,
+          feedbackBilingual: {
+            en: { review, focus },
+            ml: { review: reviewMl, focus: focusMl }
+          }
+        };
+      });
+
+      const total = Math.round(results.reduce((acc, r) => acc + r.marks, 0) * 10) / 10;
+      report = { total, results };
+    }
+
+    attempt.report = report;
     save();
-    render();
-    status('Result: ' + attempt.report.total + ' / 15. Compare each answer with the model, then start a new mock to practise again.');
-  } catch (error) {
-    status(error.message + ' Your answers are still saved on this device.');
+    byId('status').hidden = true;
+
+    // Show Tab 4 (Report Tab) in Nav and switch directly to it
+    byId('tab-btn-4').hidden = false;
+    renderReport();
+    renderQuestions();
+    switchTab(4);
+
+  } catch (err) {
+    status('Evaluation error: ' + err.message);
     byId('retry').hidden = false;
-  } finally { busy = false; }
+  } finally {
+    busy = false;
+  }
 }
+
+// RENDER REPORT TAB
+function renderReport() {
+  const rep = attempt.report;
+  if (!rep) return;
+
+  byId('report-total-score').textContent = rep.total + ' / 25';
+  const pct = Math.round((rep.total / 25) * 100);
+  byId('report-percentage').textContent = pct + '%';
+
+  // Elapsed time
+  const elapsedSec = Math.floor((Date.now() - (attempt.startTime || Date.now())) / 1000);
+  const m = Math.floor(elapsedSec / 60);
+  const s = elapsedSec % 60;
+  byId('report-time-taken').textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+
+  let grade = 'A+';
+  if (pct < 40) grade = 'F';
+  else if (pct < 55) grade = 'C';
+  else if (pct < 70) grade = 'B';
+  else if (pct < 85) grade = 'A';
+  byId('report-grade').textContent = grade;
+
+  // Breakdown cards
+  const breakdown = byId('report-answers-breakdown');
+  breakdown.replaceChildren();
+
+  attempt.questions.forEach((q, i) => {
+    const fullQ = MODULE_1_QUESTIONS[i] || q;
+    const res = rep.results.find(r => r.id === q.id);
+    const card = document.createElement('div');
+    card.className = 'panel';
+    card.style.border = '1.5px solid #e2e8f0';
+    card.style.marginTop = '14px';
+
+    const isMl = (attempt.language === 'ml');
+    card.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <strong style="color:#1e1b4b;font-size:1.05rem;">Question ${i + 1} (${fullQ.marks} Marks)</strong>
+        <span style="font-weight:800;font-size:1.1rem;color:${res.marks >= (fullQ.marks*0.7) ? '#166534' : '#c2410c'};">
+          ${res.marks} / ${fullQ.marks}
+        </span>
+      </div>
+      <p style="font-weight:600;margin:0 0 10px;color:#334155;">${isMl ? fullQ.ml : fullQ.en}</p>
+      <div style="background:#f8fafc;padding:12px;border-radius:10px;font-size:0.9rem;margin-bottom:10px;">
+        <strong>Your Answer / താങ്കളുടെ ഉത്തരം:</strong><br>
+        <span style="white-space:pre-wrap;color:#475569;">${attempt.answers[i] || '(No answer provided)'}</span>
+      </div>
+      <div style="background:#ecfdf5;padding:12px;border-radius:10px;font-size:0.9rem;">
+        <strong style="color:#065f46;">Evaluator Feedback:</strong>
+        <p style="margin:4px 0 0;color:#064e3b;">${isMl ? res.feedbackBilingual.ml.review : res.feedbackBilingual.en.review}</p>
+      </div>
+    `;
+    breakdown.appendChild(card);
+  });
+}
+
+// TIMER TICK FUNCTION
 function tick() {
   if (!attempt) return;
-  const seconds = Math.max(0, Math.ceil((attempt.deadline - Date.now())/1000));
-  byId('clock-label').textContent = attempt.report ? 'Final score' : attempt.locked ? 'Answers submitted' : seconds ? 'Time remaining' : 'Time is up';
-  byId('clock-digits').textContent = attempt.report ? attempt.report.total + ' / 15' :
-    String(Math.floor(seconds/60)).padStart(2,'0') + ':' + String(seconds%60).padStart(2,'0');
+  const seconds = Math.max(0, Math.ceil((attempt.deadline - Date.now()) / 1000));
+  
+  if (attempt.report) {
+    byId('clock-label').textContent = 'Final Score';
+    byId('clock-digits').textContent = attempt.report.total + ' / 25';
+  } else if (attempt.locked) {
+    byId('clock-label').textContent = 'Evaluating…';
+  } else {
+    byId('clock-label').textContent = seconds ? 'Time Remaining' : 'Time Up';
+    byId('clock-digits').textContent = String(Math.floor(seconds/60)).padStart(2,'0') + ':' + String(seconds%60).padStart(2,'0');
+  }
+
   byId('clock').dataset.urgent = String(seconds > 0 && seconds <= 300);
-  // Update analog clock hands & dial
+
+  // Analog hands
   const minHand = byId('clock-min');
   const secHand = byId('clock-sec');
   const hourHand = byId('clock-hour');
@@ -645,12 +1306,9 @@ function tick() {
   if (minHand && secHand && hourHand) {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    const minDeg = (mins % 60) * 6 + (secs * 0.1);
-    const secDeg = secs * 6;
-    const hourDeg = (mins / 60) * 30;
-    minHand.setAttribute('transform', 'rotate(' + minDeg + ' 50 50)');
-    secHand.setAttribute('transform', 'rotate(' + secDeg + ' 50 50)');
-    hourHand.setAttribute('transform', 'rotate(' + hourDeg + ' 50 50)');
+    minHand.setAttribute('transform', `rotate(${(mins % 60) * 6 + (secs * 0.1)} 50 50)`);
+    secHand.setAttribute('transform', `rotate(${secs * 6} 50 50)`);
+    hourHand.setAttribute('transform', `rotate(${(mins / 60) * 30} 50 50)`);
   }
   if (dialProg) {
     const frac = Math.max(0, Math.min(1, seconds / 1800));
@@ -658,30 +1316,21 @@ function tick() {
     dialProg.style.strokeDasharray = circumference;
     dialProg.style.strokeDashoffset = circumference * (1 - frac);
   }
-  if (!seconds) lock();
-  if (attempt.locked && byId('retry').hidden) evaluate();
+
+  if (!seconds && !attempt.locked) lockExam();
 }
-byId('start').onclick = async () => {
-  byId('start').disabled = true;
-  try {
-    const {questions,session,deadline} = await request({mode:'theory-start'});
-    attempt = {questions,answers:Array(5).fill(''),language:byId('language').value,deadline,session,locked:false};
-    save();
-    byId('status').hidden = true;
-    render();
-    tick();
-  } catch (error) { status(error.message); }
-  finally { byId('start').disabled = false; }
-};
-byId('exam').onsubmit = event => {
-  event.preventDefault();
-  if (Date.now() < attempt.deadline && !confirm('Submit and lock your answers now?')) return;
-  lock();
-  tick();
-};
+
+byId('btn-review-answers').onclick = () => switchTab(1);
 byId('retry').onclick = evaluate;
-byId('again').onclick = () => { try { localStorage.removeItem(key); } catch {} location.reload(); };
-if (attempt?.questions?.length === 5) { render(); tick(); }
-setInterval(tick,1000);
+byId('again').onclick = () => {
+  try { localStorage.removeItem(key); } catch {}
+  location.reload();
+};
+
+setInterval(tick, 1000);
+
+// INITIAL LOAD: ALWAYS ensure tab 0 (Beginning Tab) is selected
+switchTab(0);
 </script>
+</body>
 </html>

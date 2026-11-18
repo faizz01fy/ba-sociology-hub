@@ -2219,7 +2219,7 @@ window.VOICE_EXPLANATIONS_DATA = {
                   "title": "ദാരിദ്ര്യ നിർണ്ണയം & ബഹുമുഖ ദാരിദ്ര്യ സൂചിക (MPI) | BA Econ Mod 2 Part 1",
                   "chapter": "Concepts of Poverty · Absolute vs Relative · Calorie Norms · Lakdawala, Tendulkar & Rangarajan · Global MPI & NITI Aayog NMPI",
                   "duration": "31:57",
-                  "youtubeId": "5iSTOupYlEg",
+                  "youtubeId": "vmRDl_WCfrM",
                   "language": "Malayalam",
                   "studyPoints": [
                           "Concepts of Poverty & Capability Approach: Basic human needs deprivation vs Amartya Sen's Capability Approach emphasizing functionings and substantive freedoms over income.",
@@ -2231,6 +2231,25 @@ window.VOICE_EXPLANATIONS_DATA = {
                           "National MPI (NITI Aayog): 12 indicators (adding Maternal Health & Bank Accounts); Kerala ranked #1 with lowest poverty (0.55%) and Kottayam as India's first zero-poverty district."
                   ],
                   "examTip": "Calicut University Focus: 'Explain the concept of poverty and compare the methodologies of Tendulkar and Rangarajan Committees. Detail the structure and indicators of the Multidimensional Poverty Index (MPI) with reference to Alkire-Foster method'.",
+                  "malayalam_cc": true
+          },
+          {
+                  "chapterNumber": "Part 02",
+                  "title": "ദാരിദ്ര്യ ട്രെൻഡുകൾ & ലഘൂകരണ പദ്ധതികൾ | BA Econ Mod 2 Part 2",
+                  "chapter": "Post-Independence Estimates · Poverty Trends · Sandeep Bagchee Critique · IRDP & MGNREGA 2005 · Vulnerable Groups",
+                  "duration": "29:50",
+                  "youtubeId": "2mOVckoujhc",
+                  "language": "Malayalam",
+                  "studyPoints": [
+                          "Post-Independence Estimation Trajectory: 1962 Working Group (₹20 rural / ₹25 urban), Dandekar & Rath (1971, 2250 calories), Alagh Task Force (1979, 2400/2100 calories), Tendulkar Review & Rangarajan 2014.",
+                          "NAS vs NSSO Variance: Why expert committees unanimously preferred NSSO household consumption surveys over National Accounts Statistics due to growing disparities.",
+                          "Historical Poverty Trends & Growth Paradox: Transition from British colonial stagnation to high post-1991 GDP growth; jobless growth dynamics and Amartya Sen's social expenditure critique.",
+                          "RBI FY23 Study: Findings by Das, Gopalakrishnan & Mazumder on post-pandemic household consumption and stark inter-state disparities (Kerala/Goa single digits vs northern states).",
+                          "Poverty Alleviation Evolution: 1970s ad-hocist phase ('Garibi Hatao'), IRDP (1978-79 asset distribution), wage-employment programmes (NREP 1980, RLEGP 1983).",
+                          "Sandeep Bagchee's Critique & MGNREGA 2005: Failure of multiple conflicting objectives and lack of backward/forward linkages; historic transition to rights-based employment guarantee under MGNREGA 2005.",
+                          "High-Poverty Groups & Spatial Traps: Landless rural labor liquidity constraints, urban slum informality, feminization of poverty, SC/ST systemic barriers, and spatial poverty traps."
+                  ],
+                  "examTip": "Calicut University Focus: 'Critically examine the evolution of poverty alleviation programmes in India with special reference to IRDP and MGNREGA. Detail Sandeep Bagchee\\'s critique and the economic characteristics of high-poverty groups.'",
                   "malayalam_cc": true
           },
           {

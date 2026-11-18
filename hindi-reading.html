@@ -951,7 +951,140 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 .ah-chref-card {
   margin-bottom: 24px;
 }
-  </style>
+  
+    /* Unified Colorful & Pulsing/Blinking Bottom Navigation Bar (Home, Back, Top) */
+    @keyframes navBtnBlink {
+      0%, 100% {
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        transform: translateY(0);
+        filter: brightness(1);
+      }
+      50% {
+        box-shadow: 0 0 20px 6px var(--nav-glow, rgba(99, 102, 241, 0.65));
+        transform: translateY(-2px);
+        filter: brightness(1.15);
+      }
+    }
+
+    .soc-bottom-chapter-nav {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      gap: 14px !important;
+      flex-wrap: wrap !important;
+      margin-top: 40px !important;
+      padding: 24px 18px !important;
+      border-top: 2px dashed #cbd5e1 !important;
+      background: linear-gradient(180deg, rgba(248, 250, 252, 0.8) 0%, #ffffff 100%) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .soc-bottom-action-group,
+    .soc-bottom-chapter-group {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      flex-wrap: wrap !important;
+    }
+
+    .soc-bottom-action-group .soc-nav-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 7px !important;
+      padding: 10px 18px !important;
+      border-radius: 12px !important;
+      font-size: 14px !important;
+      font-weight: 800 !important;
+      cursor: pointer !important;
+      text-decoration: none !important;
+      border: none !important;
+      color: #ffffff !important;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      animation: navBtnBlink 2.2s ease-in-out infinite !important;
+    }
+
+    .soc-bottom-action-group .soc-nav-btn-home-action {
+      --nav-glow: rgba(16, 185, 129, 0.7);
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+      animation-delay: 0s !important;
+    }
+
+    .soc-bottom-action-group .soc-nav-btn-back-action {
+      --nav-glow: rgba(99, 102, 241, 0.7);
+      background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%) !important;
+      animation-delay: 0.7s !important;
+    }
+
+    .soc-bottom-action-group .soc-nav-btn-top-action {
+      --nav-glow: rgba(245, 158, 11, 0.75);
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+      animation-delay: 1.4s !important;
+    }
+
+    .soc-bottom-action-group .soc-nav-btn:hover {
+      transform: translateY(-3px) scale(1.03) !important;
+      box-shadow: 0 8px 24px var(--nav-glow, rgba(0, 0, 0, 0.25)) !important;
+    }
+
+    .soc-bottom-chapter-group .soc-chapter-nav-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      padding: 10px 18px !important;
+      border-radius: 12px !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease !important;
+      background: #f8fafc !important;
+      border: 1.5px solid #cbd5e1 !important;
+      color: #1e293b !important;
+    }
+
+    .soc-bottom-chapter-group .soc-chapter-nav-btn:hover {
+      transform: translateY(-2px) !important;
+      background: #f1f5f9 !important;
+      border-color: #94a3b8 !important;
+    }
+
+    .soc-bottom-chapter-group .soc-chapter-nav-btn.primary {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      color: #ffffff !important;
+      border: 1.5px solid #1e40af !important;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+    }
+
+    .soc-bottom-chapter-group .soc-chapter-nav-btn.primary:hover {
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45) !important;
+    }
+
+    @media (max-width: 640px) {
+      .soc-bottom-chapter-nav {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        padding: 16px 12px !important;
+      }
+      .soc-bottom-action-group,
+      .soc-bottom-chapter-group {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        width: 100% !important;
+        gap: 8px !important;
+      }
+      .soc-bottom-action-group .soc-nav-btn,
+      .soc-bottom-chapter-group .soc-chapter-nav-btn {
+        width: 100% !important;
+        padding: 10px 8px !important;
+        font-size: 13px !important;
+        justify-content: center !important;
+        text-align: center !important;
+      }
+    }
+</style>
 </head>
 <body oncontextmenu="return false;">
   <div class="soc-page-wrapper">
@@ -1344,17 +1477,31 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
             
       </div>
 
-      <nav class="soc-bottom-nav-row" aria-label="Chapter Navigation">
-        <button id="soc-prev-btn" type="button" class="soc-nav-btn soc-btn-back" onclick="navigateChapter(-1)">
-          ← Previous Chapter
+          <!-- Bottom Navigation Bar: Home, Back, Top & Chapter Sequence Navigation -->
+    <nav class="soc-bottom-chapter-nav" aria-label="Chapter and page navigation">
+      <div class="soc-bottom-action-group">
+        <a class="soc-nav-btn soc-btn-home soc-nav-btn-home-action" href="/#top" title="Go to Academic Hub Home">
+          <span class="soc-btn-icon">⌂</span> Home
+        </a>
+        <button class="soc-nav-btn soc-btn-back soc-nav-btn-back-action" type="button" onclick="if(window.history.length>1){window.history.back();}else{window.location.href='/#top';}" title="Go Back">
+          <span class="soc-btn-icon">←</span> Back
         </button>
-        <button type="button" class="soc-nav-btn" style="background: #f1f5f9; color: #334155;" onclick="scrollToCard()">
-          ↑ Switch Topic
+        <button class="soc-nav-btn soc-btn-top soc-nav-btn-top-action" type="button" onclick="scrollToTop()" title="Scroll to Top of Page">
+          <span class="soc-btn-icon">↑</span> Top
         </button>
-        <button id="soc-next-btn" type="button" class="soc-nav-btn soc-btn-home" onclick="navigateChapter(1)">
-          Next Chapter →
+      </div>
+      <div class="soc-bottom-chapter-group">
+        <button class="soc-chapter-nav-btn soc-ch-prev-action" id="soc-prev-btn" type="button" onclick="navigateChapter(-1)">
+          ← Previous
         </button>
-      </nav>
+        <button class="soc-chapter-nav-btn soc-ch-switch-action" type="button" onclick="scrollToCard()">
+          ☰ Chapters
+        </button>
+        <button class="soc-chapter-nav-btn primary soc-ch-next-action" id="soc-next-btn" type="button" onclick="navigateChapter(1)">
+          Next →
+        </button>
+      </div>
+    </nav>
 
     </main>
 
@@ -1473,7 +1620,12 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
       }
     }
 
-    function scrollToCard() {
+    
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function scrollToCard() {
       const card = document.getElementById('soc-selector-card');
       if (card) {
         card.scrollIntoView({ behavior: 'smooth' });
