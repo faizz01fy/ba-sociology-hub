@@ -2083,6 +2083,45 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 01: HISTORICAL PERSPECTIVES & DEVELOPMENT POLICIES (FYUGP)",
         "videos": [
           {
+            "chapterNumber": "Part 01",
+            "title": "സാമ്പത്തിക വളർച്ച, വികസന സൂചികകൾ & കൊളോണിയൽ ചരിത്രം | BA Econ Mod 1 Part 1",
+            "chapter": "Historical Precedents · Economic Growth vs Development · Kuznets MEG · Amartya Sen · HDI & MPI · Pre-colonial to Colonial Economy",
+            "duration": "29:34",
+            "youtubeId": "F3t-3aXBSkM",
+            "audioUrl": "",
+            "language": "Malayalam",
+            "studyPoints": [
+                        "സാമ്പത്തിക വളർച്ചയും സാമ്പത്തിക വികസനവും (Growth vs Development): വളർച്ച കേവല അളവ്പരമായ (GDP/PCI) വർദ്ധനവാണെങ്കിൽ, വികസനം ദാരിദ്ര്യം, തൊഴിലില്ലായ്മ, അസമത്വം എന്നിവ കുറയ്ക്കുന്ന ഗുണപരമായ സമഗ്ര മാറ്റമാണ്.",
+                        "സൈമൺ കുസ്‌നെറ്റ്സിന്റെ ആധുനിക സാമ്പത്തിക വളർച്ച (Modern Economic Growth): ഉയർന്ന ആളോഹരി വരുമാന വളർച്ച, ഘടനാപരമായ പരിവർത്തനം (Structural Transformation), നഗരവൽക്കരണം, സാങ്കേതികവിദ്യ എന്നിവയുടെ ആവിർഭാവം.",
+                        "അമർത്യ സെന്നിന്റെ ശേഷി സമീപനം (Capability Approach): വികസനമെന്നത് കേവലം വരുമാനമല്ല, മറിച്ച് മനുഷ്യരുടെ കഴിവുകളും സാധ്യതകളും വികസിപ്പിക്കലും തെരഞ്ഞെടുക്കാനുള്ള സ്വാതന്ത്ര്യം വിപുലപ്പെടുത്തലുമാണ്.",
+                        "വികസന അളവുകോലുകൾ: മോറിസ് ഡി. മോറിസിന്റെ PQLI (ആയുർദൈർഘ്യം, ശിശുമരണനിരക്ക്, സാക്ഷരത) മുതൽ UNDP-യുടെ HDI (ആയുസ്സ്, വിദ്യാഭ്യാസം, ജീവിതനിലവാരം) വരെയുള്ള ബഹുമുഖ സൂചികകൾ.",
+                        "ബഹുമുഖ ദാരിദ്ര്യ സൂചിക (MPI): ആരോഗ്യം, വിദ്യാഭ്യാസം, ജീവിതനിലവാരം എന്നീ 3 തലങ്ങളിലായി 10 സൂചകങ്ങൾ ഉൾപ്പെടുത്തി ദാരിദ്ര്യത്തിന്റെ ആഴവും വ്യാപനവും ഒരേസമയം അളക്കുന്നു.",
+                        "കൊളോണിയൽ കാലഘട്ടത്തിന് മുമ്പുള്ള സമൃദ്ധി (Pre-colonial Economy): ലോക ജിഡിപിയുടെ 24% വിഹിതമുണ്ടായിരുന്ന സമ്പന്നമായ കാർഷിക-കൈത്തറി-വ്യാപാര കേന്ദ്രമായിരുന്നു ഇന്ത്യ.",
+                        "ബ്രിട്ടീഷ് ചൂഷണവും വ്യവസായ തകർച്ചയും (De-industrialization): കാലിക്കോ ആക്റ്റുകൾ, വിവേചനപരമായ നികുതികൾ എന്നിവയിലൂടെ ഇന്ത്യൻ പരമ്പരാഗത തുണി വ്യവസായം തകർക്കപ്പെടുകയും അസംസ്കൃത വസ്തു ശേഖരണ കേന്ദ്രമായി മാറുകയും ചെയ്തു."
+            ],
+            "examTip": "Calicut University Focus: 'Differentiate between Economic Growth and Economic Development. Critically examine Amartya Sen's Capability Approach and analyze the structural features of colonial de-industrialization'.",
+            "malayalam_cc": true
+},
+        {
+                "chapterNumber": "Part 02",
+                "title": "ദാരിദ്ര്യ വലയം, സാമ്പത്തിക ദ്വന്ദ്വത & വളർച്ചാ ഘടകങ്ങൾ | BA Econ Mod 1 Part 2",
+                "chapter": "Colonial Capital Depletion · Underdevelopment · Ragnar Nurkse's Vicious Circles of Poverty · Structural Shifts & Four Growth Pillars",
+                "duration": "35:15",
+                "youtubeId": "FKujJM4_8l4",
+                "language": "Malayalam",
+                "studyPoints": [
+                        "Colonial Impact on Capital: Foreign dominance diverted agricultural surplus abroad, preventing indigenous industrial reinvestment and distorting capital goods creation.",
+                        "Underdevelopment Defined: UN and modern economic consensus define underdevelopment as low per capita real income accompanied by underutilized natural and human resources.",
+                        "Disguised Unemployment & Dualism: Marginal productivity of agricultural labor equals zero (MP_L = 0); J.H. Boeke's social dualism meets Benjamin Higgins's technological dualism.",
+                        "Prebisch-Singer Thesis: Secular deterioration in developing countries' terms of trade due to low income elasticity of demand for primary agricultural exports vs manufactured goods.",
+                        "Ragnar Nurkse's Vicious Circles of Poverty: Mutually reinforcing circular constellations on both Supply Side (Low Income -> Low Savings -> Low Capital -> Low Productivity) and Demand Side (Low Income -> Low Purchasing Power -> Small Market -> Low Investment).",
+                        "Breaking the Vicious Circle: Nurkse's synchronized 'Balanced Growth' investment across complementary consumer industries, generating mutual domestic demand.",
+                        "Four Pillars of Economic Growth: Human Resources (health/skills), Capital Formation (infrastructure/factories), Natural Resources (land/minerals), and Technological Progress."
+                ],
+                "examTip": "Calicut University Focus: 'Explain Ragnar Nurkse\\'s Vicious Circles of Poverty with reference to both supply and demand sides. Critically analyze the structural features of underdevelopment and the four pillars of growth.'",
+                "malayalam_cc": true
+        },
+          {
             "chapterNumber": "Masterclass",
             "title": "ഇന്ത്യൻ സാമ്പത്തിക ചരിത്രവും പ്രതിസന്ധിയും (India's Economy 1700–1991) | Calicut Univ",
             "chapter": "Academic Hub Special · Colonial Legacy, Structural Stagnation & 1991 Economic Reforms",
