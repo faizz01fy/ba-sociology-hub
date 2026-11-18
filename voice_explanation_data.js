@@ -2215,6 +2215,25 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 02: POVERTY ESTIMATION & MULTIDIMENSIONAL POVERTY (FYUGP)",
         "videos": [
           {
+                  "chapterNumber": "Part 01",
+                  "title": "ദാരിദ്ര്യ നിർണ്ണയം & ബഹുമുഖ ദാരിദ്ര്യ സൂചിക (MPI) | BA Econ Mod 2 Part 1",
+                  "chapter": "Concepts of Poverty · Absolute vs Relative · Calorie Norms · Lakdawala, Tendulkar & Rangarajan · Global MPI & NITI Aayog NMPI",
+                  "duration": "31:57",
+                  "youtubeId": "5iSTOupYlEg",
+                  "language": "Malayalam",
+                  "studyPoints": [
+                          "Concepts of Poverty & Capability Approach: Basic human needs deprivation vs Amartya Sen's Capability Approach emphasizing functionings and substantive freedoms over income.",
+                          "Absolute vs Relative Poverty: Absolute poverty as minimum physical subsistence (2400 rural / 2100 urban calories); relative poverty as social inequality measured via Gini coefficient and Lorenz curve.",
+                          "Estimation Methodologies: Why monthly per capita consumption expenditure (MPCE) is preferred over income in India; NSSO recall periods (URP 30-day, MRP 30/365-day, MMRP 7/30/365-day).",
+                          "Expert Committees: Lakdawala (1993, state-specific CPI-AL/IW), Tendulkar (2009, moved beyond calories to ₹27.20 rural / ₹33.30 urban), Rangarajan (2014, restored ICMR calorie/protein/fat norms to ₹32/₹47).",
+                          "Critique of Poverty Lines: N. Krishnaji's critique of poverty line manipulation; severe limitations of Head Count Ratio (HCR) in measuring poverty gap or depth.",
+                          "Global Multidimensional Poverty Index (MPI): OPHI/UNDP 3 dimensions (Health, Education, Living Standards), 10 indicators, Alkire-Foster dual cut-off method (33.33% threshold, M0 = H × A).",
+                          "National MPI (NITI Aayog): 12 indicators (adding Maternal Health & Bank Accounts); Kerala ranked #1 with lowest poverty (0.55%) and Kottayam as India's first zero-poverty district."
+                  ],
+                  "examTip": "Calicut University Focus: 'Explain the concept of poverty and compare the methodologies of Tendulkar and Rangarajan Committees. Detail the structure and indicators of the Multidimensional Poverty Index (MPI) with reference to Alkire-Foster method'.",
+                  "malayalam_cc": true
+          },
+          {
             "chapterNumber": "Masterclass (V1)",
             "title": "ദാരിദ്ര്യ നിർണ്ണയ രീതികളും സമിതികളും (Poverty Estimation & Committees) | Calicut Univ",
             "chapter": "Academic Hub Special · ദാരിദ്ര്യ നിർണ്ണയ രീതികളും പഠന സമിതികളും (Tendulkar & Rangarajan Analysis)",
