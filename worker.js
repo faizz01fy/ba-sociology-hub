@@ -231,6 +231,13 @@ export default {
         }
       });
     }
+    if (url.pathname.startsWith('/assets/pdfjs/') && url.pathname.endsWith('.bcmap')) {
+      const fileName = url.pathname.split('/').pop();
+      return Response.redirect(`https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/cmaps/${fileName}`, 301);
+    }
+    if (url.pathname.startsWith('/posts/') || url.pathname.startsWith('/tag/') || url.pathname.startsWith('/category/')) {
+      return Response.redirect('https://academichubfaiz.in/', 301);
+    }
     if (url.pathname === '/malayalam-exam-orientation' || url.pathname === '/malayalam-exam-orientation.html') {
       const assetReq = new Request(new URL('/malayalam-exam-orientation.html', request.url), request);
       const resp = await env.ASSETS.fetch(assetReq);

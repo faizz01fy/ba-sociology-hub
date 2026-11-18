@@ -2219,7 +2219,7 @@ window.VOICE_EXPLANATIONS_DATA = {
                   "title": "ദാരിദ്ര്യ നിർണ്ണയം & ബഹുമുഖ ദാരിദ്ര്യ സൂചിക (MPI) | BA Econ Mod 2 Part 1",
                   "chapter": "Concepts of Poverty · Absolute vs Relative · Calorie Norms · Lakdawala, Tendulkar & Rangarajan · Global MPI & NITI Aayog NMPI",
                   "duration": "31:57",
-                  "youtubeId": "vmRDl_WCfrM",
+                  "youtubeId": "5D3rv55BbQU",
                   "language": "Malayalam",
                   "studyPoints": [
                           "Concepts of Poverty & Capability Approach: Basic human needs deprivation vs Amartya Sen's Capability Approach emphasizing functionings and substantive freedoms over income.",
