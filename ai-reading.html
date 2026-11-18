@@ -126,45 +126,89 @@
       box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
     }
 
-    /* Module Tabs Ribbon (Ascending Order 1 to 5) */
-    .soc-module-tabs-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      overflow-x: auto;
-      scrollbar-width: thin;
-      padding-bottom: 8px;
-      margin-bottom: 22px;
-      -webkit-overflow-scrolling: touch;
+    /* ========================================================================== */
+    /* MODULE TABS & CHAPTER PILLS — 2 ROWS & ONCE BLINK WITH DIFFERENT COLOURS    */
+    /* ========================================================================== */
+    @keyframes onceBlink {
+      0% {
+        opacity: 0.35;
+        transform: scale(0.96);
+        filter: brightness(0.85);
+      }
+      40% {
+        opacity: 1;
+        transform: scale(1.04);
+        filter: brightness(1.28);
+        box-shadow: 0 0 18px 4px var(--blink-glow, rgba(59, 130, 246, 0.6));
+      }
+      70% {
+        opacity: 0.88;
+        transform: scale(0.99);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      }
     }
+
+    /* Module Tabs Ribbon — Structured in EXACTLY TWO ROWS */
+    .soc-module-tabs-row {
+      display: grid !important;
+      grid-template-columns: repeat(6, 1fr) !important;
+      gap: 10px !important;
+      margin-bottom: 22px !important;
+      overflow-x: visible !important;
+      padding-bottom: 0 !important;
+    }
+
+    /* 5 Modules: Row 1 = 3 items (span 2 each), Row 2 = 2 items (span 3 each) */
+    .soc-module-tabs-row .soc-mod-tab-btn:nth-child(1) { grid-column: span 2; }
+    .soc-module-tabs-row .soc-mod-tab-btn:nth-child(2) { grid-column: span 2; }
+    .soc-module-tabs-row .soc-mod-tab-btn:nth-child(3) { grid-column: span 2; }
+    .soc-module-tabs-row .soc-mod-tab-btn:nth-child(4) { grid-column: span 3; }
+    .soc-module-tabs-row .soc-mod-tab-btn:nth-child(5) { grid-column: span 3; }
+
+    /* For subjects with 3 modules (e.g. Education): Row 1 = 2 items (span 3 each), Row 2 = 1 item (span 6) */
+    .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) .soc-mod-tab-btn:nth-child(1),
+    .soc-mod-tabs-3 .soc-mod-tab-btn:nth-child(1) { grid-column: span 3 !important; }
+    .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) .soc-mod-tab-btn:nth-child(2),
+    .soc-mod-tabs-3 .soc-mod-tab-btn:nth-child(2) { grid-column: span 3 !important; }
+    .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) .soc-mod-tab-btn:nth-child(3),
+    .soc-mod-tabs-3 .soc-mod-tab-btn:nth-child(3) { grid-column: span 6 !important; }
 
     .soc-mod-tab-btn {
       display: inline-flex;
       align-items: center;
-      white-space: nowrap;
-      padding: 9px 18px;
-      border-radius: 999px;
+      justify-content: center;
+      text-align: center;
+      white-space: normal;
+      padding: 10px 14px;
+      border-radius: 12px;
       font-size: 13.5px;
       font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       border: 1.5px solid #cbd5e1;
       background: #ffffff;
       color: #334155;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      flex-shrink: 0;
+      animation: onceBlink 1.1s cubic-bezier(0.25, 1, 0.5, 1) 1;
     }
 
     .soc-mod-tab-btn:hover {
-      border-color: #94a3b8;
-      background: #f8fafc;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      filter: brightness(1.05);
     }
 
-    /* Color styles matching subject palette */
+    /* Distinct Colors for Module Tabs (Matching Academic Hub Multi-Color Standard) */
+    /* Module 1: Rose / Crimson */
     .soc-mod-tab-btn[data-mod="mod1"] {
-      border-color: #fda4af;
-      color: #be123c;
-      background: #fff1f2;
+      border-color: #fda4af !important;
+      color: #be123c !important;
+      background: #fff1f2 !important;
+      --blink-glow: rgba(244, 63, 94, 0.65);
+      animation-delay: 0.05s;
     }
     .soc-mod-tab-btn[data-mod="mod1"].active {
       background: linear-gradient(135deg, #be123c, #f43f5e) !important;
@@ -173,10 +217,13 @@
       box-shadow: 0 6px 18px rgba(244, 63, 94, 0.45) !important;
     }
 
+    /* Module 2: Orange / Amber */
     .soc-mod-tab-btn[data-mod="mod2"] {
-      border-color: #fdba74;
-      color: #c2410c;
-      background: #fff7ed;
+      border-color: #fdba74 !important;
+      color: #c2410c !important;
+      background: #fff7ed !important;
+      --blink-glow: rgba(249, 115, 22, 0.65);
+      animation-delay: 0.12s;
     }
     .soc-mod-tab-btn[data-mod="mod2"].active {
       background: linear-gradient(135deg, #c2410c, #f97316) !important;
@@ -185,10 +232,13 @@
       box-shadow: 0 6px 18px rgba(249, 115, 22, 0.45) !important;
     }
 
+    /* Module 3: Purple / Violet */
     .soc-mod-tab-btn[data-mod="mod3"] {
-      border-color: #c4b5fd;
-      color: #6b21a8;
-      background: #f5f3ff;
+      border-color: #c4b5fd !important;
+      color: #6b21a8 !important;
+      background: #f5f3ff !important;
+      --blink-glow: rgba(139, 92, 246, 0.65);
+      animation-delay: 0.19s;
     }
     .soc-mod-tab-btn[data-mod="mod3"].active {
       background: linear-gradient(135deg, #6b21a8, #8b5cf6) !important;
@@ -197,10 +247,13 @@
       box-shadow: 0 6px 18px rgba(139, 92, 246, 0.45) !important;
     }
 
+    /* Module 4: Emerald / Green */
     .soc-mod-tab-btn[data-mod="mod4"] {
-      border-color: #6ee7b7;
-      color: #065f46;
-      background: #ecfdf5;
+      border-color: #6ee7b7 !important;
+      color: #065f46 !important;
+      background: #ecfdf5 !important;
+      --blink-glow: rgba(16, 185, 129, 0.65);
+      animation-delay: 0.26s;
     }
     .soc-mod-tab-btn[data-mod="mod4"].active {
       background: linear-gradient(135deg, #065f46, #10b981) !important;
@@ -209,10 +262,13 @@
       box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45) !important;
     }
 
+    /* Module 5: Sapphire / Royal Blue */
     .soc-mod-tab-btn[data-mod="mod5"] {
-      border-color: #93c5fd;
-      color: #1e40af;
-      background: #eff6ff;
+      border-color: #93c5fd !important;
+      color: #1e40af !important;
+      background: #eff6ff !important;
+      --blink-glow: rgba(59, 130, 246, 0.65);
+      animation-delay: 0.33s;
     }
     .soc-mod-tab-btn[data-mod="mod5"].active {
       background: linear-gradient(135deg, #1e40af, #3b82f6) !important;
@@ -221,7 +277,7 @@
       box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45) !important;
     }
 
-    /* Chapters Selector Box */
+    /* Chapters Box */
     .soc-chapters-box {
       border: 1.5px solid #e2e8f0;
       border-radius: 18px;
@@ -244,39 +300,143 @@
       margin-bottom: 14px;
     }
 
+    /* Chapter Pills — Structured in TWO ROWS */
     .soc-chapter-pills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 8px 10px !important;
     }
 
-    .soc-ch-pill-btn {
+    .soc-pill-btn, .soc-ch-pill-btn {
+      flex: 1 1 calc(23.5% - 10px) !important;
+      min-width: 170px !important;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 18px;
-      border-radius: 14px;
-      font-size: 13.5px;
+      padding: 9px 14px;
+      border-radius: 12px;
+      font-size: 13px;
       font-weight: 700;
       background: #ffffff;
       border: 1.5px solid #cbd5e1;
       color: #1e293b;
       cursor: pointer;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+      animation: onceBlink 1.1s cubic-bezier(0.25, 1, 0.5, 1) 1;
     }
 
-    .soc-ch-pill-btn:hover {
-      background: #f8fafc;
-      border-color: #94a3b8;
+    .soc-pill-btn:hover, .soc-ch-pill-btn:hover {
       transform: translateY(-1px);
+      filter: brightness(1.05);
     }
 
-    .soc-ch-pill-btn.active {
-      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%) !important;
-      color: #ffffff !important;
-      border-color: #1d4ed8 !important;
-      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4) !important;
+    /* Distinct Multi-Color Scheme for Chapter Pills */
+    .soc-pill-btn:nth-child(8n+1), .soc-ch-pill-btn:nth-child(8n+1) {
+      border-color: #93c5fd; background: #eff6ff; color: #1e40af;
+      --blink-glow: rgba(59, 130, 246, 0.6); animation-delay: 0.04s;
+    }
+    .soc-pill-btn:nth-child(8n+1).active, .soc-ch-pill-btn:nth-child(8n+1).active {
+      background: linear-gradient(135deg, #1e40af, #3b82f6) !important;
+      color: #ffffff !important; border-color: #1e40af !important;
+      box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45) !important;
+    }
+
+    .soc-pill-btn:nth-child(8n+2), .soc-ch-pill-btn:nth-child(8n+2) {
+      border-color: #6ee7b7; background: #ecfdf5; color: #065f46;
+      --blink-glow: rgba(16, 185, 129, 0.6); animation-delay: 0.08s;
+    }
+    .soc-pill-btn:nth-child(8n+2).active, .soc-ch-pill-btn:nth-child(8n+2).active {
+      background: linear-gradient(135deg, #065f46, #10b981) !important;
+      color: #ffffff !important; border-color: #065f46 !important;
+      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45) !important;
+    }
+
+    .soc-pill-btn:nth-child(8n+3), .soc-ch-pill-btn:nth-child(8n+3) {
+      border-color: #c4b5fd; background: #f5f3ff; color: #6b21a8;
+      --blink-glow: rgba(139, 92, 246, 0.6); animation-delay: 0.12s;
+    }
+    .soc-pill-btn:nth-child(8n+3).active, .soc-ch-pill-btn:nth-child(8n+3).active {
+      background: linear-gradient(135deg, #6b21a8, #8b5cf6) !important;
+      color: #ffffff !important; border-color: #6b21a8 !important;
+      box-shadow: 0 6px 18px rgba(139, 92, 246, 0.45) !important;
+    }
+
+    .soc-pill-btn:nth-child(8n+4), .soc-ch-pill-btn:nth-child(8n+4) {
+      border-color: #fde68a; background: #fffbeb; color: #b45309;
+      --blink-glow: rgba(245, 158, 11, 0.6); animation-delay: 0.16s;
+    }
+    .soc-pill-btn:nth-child(8n+4).active, .soc-ch-pill-btn:nth-child(8n+4).active {
+      background: linear-gradient(135deg, #b45309, #f59e0b) !important;
+      color: #ffffff !important; border-color: #b45309 !important;
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.45) !important;
+    }
+
+    .soc-pill-btn:nth-child(8n+5), .soc-ch-pill-btn:nth-child(8n+5) {
+      border-color: #fda4af; background: #fff1f2; color: #be123c;
+      --blink-glow: rgba(244, 63, 94, 0.6); animation-delay: 0.20s;
+    }
+    .soc-pill-btn:nth-child(8n+5).active, .soc-ch-pill-btn:nth-child(8n+5).active {
+      background: linear-gradient(135deg, #be123c, #f43f5e) !important;
+      color: #ffffff !important; border-color: #be123c !important;
+      box-shadow: 0 6px 18px rgba(244, 63, 94, 0.45) !important;
+    }
+
+    .soc-pill-btn:nth-child(8n+6), .soc-ch-pill-btn:nth-child(8n+6) {
+      border-color: #a5f3fc; background: #ecfeff; color: #0e7490;
+      --blink-glow: rgba(6, 182, 212, 0.6); animation-delay: 0.24s;
+    }
+    .soc-pill-btn:nth-child(8n+6).active, .soc-ch-pill-btn:nth-child(8n+6).active {
+      background: linear-gradient(135deg, #0e7490, #06b6d4) !important;
+      color: #ffffff !important; border-color: #0e7490 !important;
+      box-shadow: 0 6px 18px rgba(6, 182, 212, 0.45) !important;
+    }
+
+    .soc-pill-btn:nth-child(8n+7), .soc-ch-pill-btn:nth-child(8n+7) {
+      border-color: #c7d2fe; background: #eef2ff; color: #4338ca;
+      --blink-glow: rgba(99, 102, 241, 0.6); animation-delay: 0.28s;
+    }
+    .soc-pill-btn:nth-child(8n+7).active, .soc-ch-pill-btn:nth-child(8n+7).active {
+      background: linear-gradient(135deg, #4338ca, #6366f1) !important;
+      color: #ffffff !important; border-color: #4338ca !important;
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.45) !important;
+    }
+
+    .soc-pill-btn:nth-child(8n+8), .soc-ch-pill-btn:nth-child(8n+8) {
+      border-color: #fdba74; background: #fff7ed; color: #c2410c;
+      --blink-glow: rgba(249, 115, 22, 0.6); animation-delay: 0.32s;
+    }
+    .soc-pill-btn:nth-child(8n+8).active, .soc-ch-pill-btn:nth-child(8n+8).active {
+      background: linear-gradient(135deg, #c2410c, #f97316) !important;
+      color: #ffffff !important; border-color: #c2410c !important;
+      box-shadow: 0 6px 18px rgba(249, 115, 22, 0.45) !important;
+    }
+
+    /* Responsive 2-Row Guardrails */
+    @media (max-width: 768px) {
+      .soc-module-tabs-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(1) { grid-column: span 1 !important; }
+      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(2) { grid-column: span 1 !important; }
+      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(3) { grid-column: span 1 !important; }
+      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(4) { grid-column: span 1 !important; }
+      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(5) { grid-column: span 2 !important; }
+
+      .soc-chapter-pills-list {
+        display: grid !important;
+        grid-template-rows: auto auto !important; /* Strictly TWO ROWS on mobile too! */
+        grid-auto-flow: column !important;
+        grid-auto-columns: minmax(180px, auto) !important;
+        overflow-x: auto !important;
+        padding-bottom: 6px !important;
+        gap: 8px !important;
+        scrollbar-width: thin !important;
+      }
+      .soc-pill-btn, .soc-ch-pill-btn {
+        flex: none !important;
+        white-space: nowrap !important;
+      }
     }
 
     /* Active Chapter Card: Title & Read Here Button */
