@@ -479,32 +479,124 @@
 
     /* Responsive 2-Row Guardrails */
     @media (max-width: 768px) {
-      .soc-module-tabs-row {
-        display: grid !important;
-        grid-template-rows: auto auto !important; /* STRICTLY TWO ROWS */
-        grid-auto-flow: column !important;
-        grid-auto-columns: minmax(140px, auto) !important;
-        overflow-x: auto !important;
-        padding-bottom: 6px !important;
-        scrollbar-width: thin !important;
+      .soc-portal-container {
+        padding: 10px 8px !important;
       }
-      .soc-module-tabs-row .soc-mod-tab-btn {
-        grid-column: auto !important;
-        white-space: nowrap !important;
+      .soc-header-card {
+        padding: 16px 12px 14px !important;
+        border-radius: 16px !important;
+      }
+      .soc-header-title {
+        font-size: 19px !important;
+        line-height: 1.3 !important;
+      }
+      .soc-header-sub {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        margin-top: 6px !important;
       }
 
-      .soc-chapter-pills-list, .soc-chapter-pills-grid {
+      /* Module Tabs Ribbon — STRICTLY TWO ROWS (Row 1: 2, Row 2: 1 centered) */
+      .soc-module-tabs-row {
         display: grid !important;
-        grid-template-rows: auto auto !important; /* STRICTLY TWO ROWS */
-        grid-auto-flow: column !important;
-        grid-auto-columns: minmax(180px, auto) !important;
-        overflow-x: auto !important;
-        padding-bottom: 6px !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-rows: auto auto !important;
+        grid-auto-flow: row !important;
         gap: 8px !important;
-        scrollbar-width: thin !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: visible !important;
+        padding: 0 !important;
+        margin-bottom: 16px !important;
       }
-      .soc-pill-btn, .soc-ch-pill-btn {
-        white-space: nowrap !important;
+      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(1) { grid-column: span 1 !important; }
+      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(2) { grid-column: span 1 !important; }
+      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(3) { grid-column: span 2 !important; }
+      .soc-module-tabs-row .soc-mod-tab-btn {
+        white-space: normal !important;
+        text-align: center !important;
+        font-size: 12px !important;
+        line-height: 1.25 !important;
+        padding: 10px 6px !important;
+        min-height: 48px !important;
+        border-radius: 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        word-break: break-word !important;
+      }
+
+      /* Chapter Pills — STRICTLY TWO ROWS (2 Columns on Mobile) */
+      .soc-chapter-pills-grid, .soc-chapter-pills-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-auto-flow: row !important;
+        gap: 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: visible !important;
+        padding: 0 !important;
+      }
+
+      /* 3 Items: Item 3 spans 2 columns in row 2 */
+      .soc-chapter-pills-grid:has(> :nth-child(3):last-child) > :nth-child(3),
+      .soc-chapter-pills-list:has(> :nth-child(3):last-child) > :nth-child(3) {
+        grid-column: span 2 !important;
+      }
+
+      .soc-ch-pill-btn, .soc-pill-btn {
+        white-space: normal !important;
+        font-size: 12px !important;
+        line-height: 1.25 !important;
+        padding: 9px 8px !important;
+        text-align: center !important;
+        border-radius: 10px !important;
+        min-height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        word-break: break-word !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+      }
+
+      .soc-active-chapter-card, .soc-active-card {
+        padding: 12px 10px !important;
+        border-radius: 12px !important;
+      }
+
+      .soc-active-chapter-title, .soc-active-title {
+        font-size: 15px !important;
+        line-height: 1.35 !important;
+      }
+
+      .soc-active-chapter-desc, .soc-active-desc {
+        font-size: 12.5px !important;
+        line-height: 1.45 !important;
+      }
+
+      .soc-read-here-btn, .soc-read-btn {
+        width: 100% !important;
+        font-size: 14px !important;
+        padding: 12px 14px !important;
+      }
+
+      .soc-reading-toolbar {
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: stretch !important;
+        padding: 8px 10px !important;
+      }
+
+      .soc-reading-badge {
+        text-align: center !important;
+        font-size: 12px !important;
+      }
+
+      .soc-toolbar-actions {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
       }
     }
 
@@ -718,6 +810,32 @@
         padding-bottom: 10px !important;
       }
     }
+  
+    /* Mobile Viewport Guardrails */
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+    }
+    .soc-portal-container, .soc-nav-card, .soc-active-chapter-card, .soc-chapter-view, .ah-chref-card, .ah-chref-body {
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      overflow-x: hidden !important;
+    }
+    .ah-chref-body table {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      border-collapse: collapse !important;
+      margin: 14px 0 !important;
+    }
+
   </style>
 
   <!-- Combined Styles from Chapter Components -->
@@ -1300,7 +1418,33 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
         text-align: center !important;
       }
     }
-</style>
+
+    /* Mobile Viewport Guardrails */
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+    }
+    .soc-portal-container, .soc-nav-card, .soc-active-chapter-card, .soc-chapter-view, .ah-chref-card, .ah-chref-body {
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      overflow-x: hidden !important;
+    }
+    .ah-chref-body table {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      border-collapse: collapse !important;
+      margin: 14px 0 !important;
+    }
+
+  </style>
 </head>
 <body oncontextmenu="event.preventDefault(); return false;">
 
