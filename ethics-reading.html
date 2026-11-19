@@ -168,6 +168,33 @@
       }
     }
 
+    /* ========================================================================== */
+    /* MODULE TABS & CHAPTER PILLS — STRICTLY 2 ROWS & ONCE BLINK MULTI-COLOR    */
+    /* ========================================================================== */
+    @keyframes onceBlink {
+      0% {
+        opacity: 0.35;
+        transform: scale(0.96);
+        filter: brightness(0.85);
+      }
+      40% {
+        opacity: 1;
+        transform: scale(1.04);
+        filter: brightness(1.28);
+        box-shadow: 0 0 18px 4px var(--blink-glow, rgba(59, 130, 246, 0.6));
+      }
+      70% {
+        opacity: 0.88;
+        transform: scale(0.99);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      }
+    }
+
     /* Module Tabs Ribbon — Structured in EXACTLY TWO ROWS */
     .soc-module-tabs-row {
       display: grid !important;
@@ -178,14 +205,25 @@
       padding-bottom: 0 !important;
     }
 
+    /* 4 Modules: 2x2 grid */
+    .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn:nth-child(1) { grid-column: span 3 !important; }
+    .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn:nth-child(2) { grid-column: span 3 !important; }
+    .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn:nth-child(3) { grid-column: span 3 !important; }
+    .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn:nth-child(4) { grid-column: span 3 !important; }
+
     /* 5 Modules: Row 1 = 3 items (span 2 each), Row 2 = 2 items (span 3 each) */
+    .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(1),
     .soc-module-tabs-row .soc-mod-tab-btn:nth-child(1) { grid-column: span 2; }
+    .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(2),
     .soc-module-tabs-row .soc-mod-tab-btn:nth-child(2) { grid-column: span 2; }
+    .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(3),
     .soc-module-tabs-row .soc-mod-tab-btn:nth-child(3) { grid-column: span 2; }
+    .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(4),
     .soc-module-tabs-row .soc-mod-tab-btn:nth-child(4) { grid-column: span 3; }
+    .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(5),
     .soc-module-tabs-row .soc-mod-tab-btn:nth-child(5) { grid-column: span 3; }
 
-    /* For subjects with 3 modules (e.g. Education): Row 1 = 2 items (span 3 each), Row 2 = 1 item (span 6) */
+    /* 3 Modules: Row 1 = 2 items (span 3 each), Row 2 = 1 item (span 6) */
     .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) .soc-mod-tab-btn:nth-child(1),
     .soc-mod-tabs-3 .soc-mod-tab-btn:nth-child(1) { grid-column: span 3 !important; }
     .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) .soc-mod-tab-btn:nth-child(2),
@@ -315,11 +353,41 @@
       margin-bottom: 14px;
     }
 
-    /* Chapter Pills — Structured in TWO ROWS */
-    .soc-chapter-pills-list {
-      display: flex !important;
-      flex-wrap: wrap !important;
+    /* Chapter Pills — STRICTLY TWO ROWS */
+    .soc-chapter-pills-list, .soc-chapter-pills-grid {
+      display: grid !important;
       gap: 8px 10px !important;
+      width: 100% !important;
+    }
+
+    /* 7 or 8 items -> 4 columns = 2 rows */
+    .soc-chapter-pills-list:has(> :nth-child(7)),
+    .soc-chapter-pills-grid:has(> :nth-child(7)) {
+      grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    /* 5 or 6 items -> 3 columns = 2 rows */
+    .soc-chapter-pills-list:has(> :nth-child(5)):not(:has(> :nth-child(7))),
+    .soc-chapter-pills-grid:has(> :nth-child(5)):not(:has(> :nth-child(7))) {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    /* 3 or 4 items -> 2 columns = 2 rows */
+    .soc-chapter-pills-list:has(> :nth-child(3)):not(:has(> :nth-child(5))),
+    .soc-chapter-pills-grid:has(> :nth-child(3)):not(:has(> :nth-child(5))) {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* For exactly 3 items: Item 3 spans 2 columns in row 2 */
+    .soc-chapter-pills-list:has(> :nth-child(3):last-child) > :nth-child(3),
+    .soc-chapter-pills-grid:has(> :nth-child(3):last-child) > :nth-child(3) {
+      grid-column: span 2 !important;
+    }
+
+    /* 1 or 2 items -> 2 columns */
+    .soc-chapter-pills-list:has(> :nth-child(2):last-child),
+    .soc-chapter-pills-grid:has(> :nth-child(2):last-child) {
+      grid-template-columns: repeat(2, 1fr) !important;
     }
 
     .soc-pill-btn, .soc-ch-pill-btn {
@@ -430,17 +498,22 @@
     /* Responsive 2-Row Guardrails */
     @media (max-width: 768px) {
       .soc-module-tabs-row {
-        grid-template-columns: repeat(2, 1fr) !important;
-      }
-      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(1) { grid-column: span 1 !important; }
-      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(2) { grid-column: span 1 !important; }
-      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(3) { grid-column: span 1 !important; }
-      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(4) { grid-column: span 1 !important; }
-      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(5) { grid-column: span 2 !important; }
-
-      .soc-chapter-pills-list {
         display: grid !important;
-        grid-template-rows: auto auto !important; /* Strictly TWO ROWS on mobile too! */
+        grid-template-rows: auto auto !important; /* STRICTLY TWO ROWS */
+        grid-auto-flow: column !important;
+        grid-auto-columns: minmax(140px, auto) !important;
+        overflow-x: auto !important;
+        padding-bottom: 6px !important;
+        scrollbar-width: thin !important;
+      }
+      .soc-module-tabs-row .soc-mod-tab-btn {
+        grid-column: auto !important;
+        white-space: nowrap !important;
+      }
+
+      .soc-chapter-pills-list, .soc-chapter-pills-grid {
+        display: grid !important;
+        grid-template-rows: auto auto !important; /* STRICTLY TWO ROWS */
         grid-auto-flow: column !important;
         grid-auto-columns: minmax(180px, auto) !important;
         overflow-x: auto !important;
@@ -449,7 +522,6 @@
         scrollbar-width: thin !important;
       }
       .soc-pill-btn, .soc-ch-pill-btn {
-        flex: none !important;
         white-space: nowrap !important;
       }
     }
