@@ -1373,6 +1373,286 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
     }
 
   </style>
+
+
+<style id="universal-2row-standard">
+
+/* ========================================================================== */
+/* UNIVERSAL 2-ROW MODULE & CHAPTER TABS WITH MULTI-COLOR ONCE BLINK          */
+/* ========================================================================== */
+
+@keyframes onceBlink {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.96);
+    filter: brightness(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+    box-shadow: 0 0 18px 4px var(--blink-glow, rgba(59, 130, 246, 0.6));
+    filter: brightness(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: none;
+    filter: brightness(1);
+  }
+}
+
+/* DESKTOP MODULE TABS (STRICTLY 2 ROWS) */
+.soc-module-tabs-row {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+  gap: 10px !important;
+  margin-bottom: 22px !important;
+  overflow-x: visible !important;
+  padding-bottom: 0 !important;
+  width: 100% !important;
+}
+
+/* 4 modules: 2x2 grid */
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn:nth-child(1),
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn:nth-child(2),
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn:nth-child(3),
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn:nth-child(4),
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn {
+  grid-column: span 1 !important;
+}
+
+/* 5 modules: 3 on row 1, 2 on row 2 */
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(1),
+.soc-module-tabs-row .soc-mod-tab-btn:nth-child(1) { grid-column: span 2 !important; }
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(2),
+.soc-module-tabs-row .soc-mod-tab-btn:nth-child(2) { grid-column: span 2 !important; }
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(3),
+.soc-module-tabs-row .soc-mod-tab-btn:nth-child(3) { grid-column: span 2 !important; }
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(4),
+.soc-module-tabs-row .soc-mod-tab-btn:nth-child(4) { grid-column: span 3 !important; }
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(5),
+.soc-module-tabs-row .soc-mod-tab-btn:nth-child(5) { grid-column: span 3 !important; }
+
+/* 3 modules: 2 on row 1, 1 on row 2 */
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) .soc-mod-tab-btn:nth-child(1) { grid-column: span 1 !important; }
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) .soc-mod-tab-btn:nth-child(2) { grid-column: span 1 !important; }
+.soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) .soc-mod-tab-btn:nth-child(3) { grid-column: span 2 !important; }
+
+/* Once Blink on Module Buttons */
+.soc-mod-tab-btn {
+  animation: onceBlink 1.1s cubic-bezier(0.25, 1, 0.5, 1) 1;
+}
+.soc-mod-tab-btn:nth-child(1) { --blink-glow: rgba(59, 130, 246, 0.65); animation-delay: 0.05s; }
+.soc-mod-tab-btn:nth-child(2) { --blink-glow: rgba(16, 185, 129, 0.65); animation-delay: 0.12s; }
+.soc-mod-tab-btn:nth-child(3) { --blink-glow: rgba(245, 158, 11, 0.65); animation-delay: 0.19s; }
+.soc-mod-tab-btn:nth-child(4) { --blink-glow: rgba(139, 92, 246, 0.65); animation-delay: 0.26s; }
+.soc-mod-tab-btn:nth-child(5) { --blink-glow: rgba(244, 63, 94, 0.65); animation-delay: 0.33s; }
+
+/* DESKTOP CHAPTER PILLS (STRICTLY 2 ROWS) */
+.soc-chapter-pills-list, .soc-chapter-pills-grid {
+  display: grid !important;
+  gap: 8px 10px !important;
+  width: 100% !important;
+}
+
+/* 7 or 8 items -> 4 columns = 2 rows */
+.soc-chapter-pills-list:has(> :nth-child(7)),
+.soc-chapter-pills-grid:has(> :nth-child(7)) {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
+/* 5 or 6 items -> 3 columns = 2 rows */
+.soc-chapter-pills-list:has(> :nth-child(5)):not(:has(> :nth-child(7))),
+.soc-chapter-pills-grid:has(> :nth-child(5)):not(:has(> :nth-child(7))) {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+/* 3 or 4 items -> 2 columns = 2 rows */
+.soc-chapter-pills-list:has(> :nth-child(3)):not(:has(> :nth-child(5))),
+.soc-chapter-pills-grid:has(> :nth-child(3)):not(:has(> :nth-child(5))) {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+.soc-chapter-pills-list:has(> :nth-child(3):last-child) > :nth-child(3),
+.soc-chapter-pills-grid:has(> :nth-child(3):last-child) > :nth-child(3) {
+  grid-column: span 2 !important;
+}
+
+/* 1 or 2 items -> 2 columns */
+.soc-chapter-pills-list:not(:has(> :nth-child(3))),
+.soc-chapter-pills-grid:not(:has(> :nth-child(3))) {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* Once Blink on Chapter Pills */
+.soc-pill-btn, .soc-ch-pill-btn, .soc-ch-pill {
+  animation: onceBlink 1.1s cubic-bezier(0.25, 1, 0.5, 1) 1;
+}
+.soc-pill-btn:nth-child(1), .soc-ch-pill-btn:nth-child(1), .soc-ch-pill:nth-child(1) { --blink-glow: rgba(59, 130, 246, 0.6); animation-delay: 0.04s; }
+.soc-pill-btn:nth-child(2), .soc-ch-pill-btn:nth-child(2), .soc-ch-pill:nth-child(2) { --blink-glow: rgba(16, 185, 129, 0.6); animation-delay: 0.08s; }
+.soc-pill-btn:nth-child(3), .soc-ch-pill-btn:nth-child(3), .soc-ch-pill:nth-child(3) { --blink-glow: rgba(139, 92, 246, 0.6); animation-delay: 0.12s; }
+.soc-pill-btn:nth-child(4), .soc-ch-pill-btn:nth-child(4), .soc-ch-pill:nth-child(4) { --blink-glow: rgba(245, 158, 11, 0.6); animation-delay: 0.16s; }
+.soc-pill-btn:nth-child(5), .soc-ch-pill-btn:nth-child(5), .soc-ch-pill:nth-child(5) { --blink-glow: rgba(244, 63, 94, 0.6); animation-delay: 0.20s; }
+.soc-pill-btn:nth-child(6), .soc-ch-pill-btn:nth-child(6), .soc-ch-pill:nth-child(6) { --blink-glow: rgba(6, 182, 212, 0.6); animation-delay: 0.24s; }
+.soc-pill-btn:nth-child(7), .soc-ch-pill-btn:nth-child(7), .soc-ch-pill:nth-child(7) { --blink-glow: rgba(236, 72, 153, 0.6); animation-delay: 0.28s; }
+.soc-pill-btn:nth-child(8), .soc-ch-pill-btn:nth-child(8), .soc-ch-pill:nth-child(8) { --blink-glow: rgba(168, 85, 247, 0.6); animation-delay: 0.32s; }
+
+/* ========================================================================== */
+/* MOBILE VIEWPORT (max-width: 768px) — ZERO HORIZONTAL BLOWOUT & STRICT 2 ROWS*/
+/* ========================================================================== */
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  .soc-portal-container {
+    padding: 10px 8px !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  /* MODULE TABS ON MOBILE — STRICTLY 2 ROWS */
+  /* For 4 modules: 2x2 grid */
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    grid-auto-flow: row !important;
+    gap: 6px !important;
+  }
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn:nth-child(1),
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn:nth-child(2),
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn:nth-child(3),
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn:nth-child(4),
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(4):last-child) .soc-mod-tab-btn {
+    grid-column: span 1 !important;
+  }
+
+  /* For 5 modules: 3 in row 1, 2 in row 2 */
+  .soc-module-tabs-row,
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    grid-auto-flow: row !important;
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: visible !important;
+    padding: 0 !important;
+    margin-bottom: 16px !important;
+  }
+  .soc-module-tabs-row .soc-mod-tab-btn:nth-child(1),
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(1) { grid-column: span 2 !important; }
+  .soc-module-tabs-row .soc-mod-tab-btn:nth-child(2),
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(2) { grid-column: span 2 !important; }
+  .soc-module-tabs-row .soc-mod-tab-btn:nth-child(3),
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(3) { grid-column: span 2 !important; }
+  .soc-module-tabs-row .soc-mod-tab-btn:nth-child(4),
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(4) { grid-column: span 3 !important; }
+  .soc-module-tabs-row .soc-mod-tab-btn:nth-child(5),
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(5):last-child) .soc-mod-tab-btn:nth-child(5) { grid-column: span 3 !important; }
+
+  /* For 3 modules: 2 in row 1, 1 in row 2 */
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    grid-auto-flow: row !important;
+    gap: 6px !important;
+  }
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) .soc-mod-tab-btn:nth-child(1) { grid-column: span 1 !important; }
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) .soc-mod-tab-btn:nth-child(2) { grid-column: span 1 !important; }
+  .soc-module-tabs-row:has(.soc-mod-tab-btn:nth-child(3):last-child) .soc-mod-tab-btn:nth-child(3) { grid-column: span 2 !important; }
+
+  .soc-module-tabs-row .soc-mod-tab-btn {
+    white-space: normal !important;
+    text-align: center !important;
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+    padding: 8px 4px !important;
+    min-height: 46px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    word-break: break-word !important;
+  }
+
+  /* CHAPTER PILLS ON MOBILE — STRICTLY 2 ROWS */
+  /* For <= 4 items: 2 columns, 2 rows (Zero horizontal scroll needed) */
+  .soc-chapter-pills-list:not(:has(> :nth-child(5))),
+  .soc-chapter-pills-grid:not(:has(> :nth-child(5))) {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    grid-auto-flow: row !important;
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: visible !important;
+  }
+  .soc-chapter-pills-list:has(> :nth-child(3):last-child) > :nth-child(3),
+  .soc-chapter-pills-grid:has(> :nth-child(3):last-child) > :nth-child(3) {
+    grid-column: span 2 !important;
+  }
+
+  /* For > 4 items (5, 6, 7, 8): STRICTLY 2 ROWS WITH HORIZONTAL SCROLL */
+  .soc-chapter-pills-list:has(> :nth-child(5)),
+  .soc-chapter-pills-grid:has(> :nth-child(5)),
+  .soc-chapter-pills-list:has(> :nth-child(7)),
+  .soc-chapter-pills-grid:has(> :nth-child(7)) {
+    display: grid !important;
+    grid-template-columns: none !important;
+    grid-template-rows: repeat(2, auto) !important;
+    grid-auto-flow: column !important;
+    grid-auto-columns: max-content !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 8px !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    scrollbar-width: thin !important;
+  }
+
+  .soc-chapter-pills-list .soc-pill-btn,
+  .soc-chapter-pills-list .soc-ch-pill,
+  .soc-chapter-pills-grid .soc-ch-pill-btn,
+  .soc-chapter-pills-grid .soc-pill-btn,
+  .soc-chapter-pills-grid .soc-ch-pill {
+    white-space: nowrap !important;
+    padding: 9px 15px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    min-height: 40px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 9999px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Prevent any table from blowing out viewport */
+  table, .ah-chref-body table {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    box-sizing: border-box !important;
+  }
+}
+
+</style>
 </head>
 <body oncontextmenu="event.preventDefault(); return false;">
 
