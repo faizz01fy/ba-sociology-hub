@@ -898,6 +898,25 @@ window.VOICE_EXPLANATIONS_DATA = {
               "ആധുനിക പ്രസക്തി: മാറുന്ന സാമൂഹിക ഘടനകളും പ്രതിസന്ധികളും മനസ്സിലാക്കാനുള്ള ശാസ്ത്രീയ സമീപനം."
             ],
             "examTip": "Calicut University Focus: 'Explain the intellectual and social forces that contributed to the emergence of sociology'."
+          },
+          {
+            "chapterNumber": "Chapter 01 (English Masterclass)",
+            "title": "Introducing Sociology: Origin, Science, Nature & Scope | BA Sociology Mod 1",
+            "chapter": "Complete Module 1 Syllabus: Historical Emergence, Founding Thinkers, Bierstedt's 7 Characteristics, Scope & Specialized Branches",
+            "duration": "53:54",
+            "youtubeId": "_Bz5HPpXK-c",
+            "thumbnail": "https://i.ytimg.com/vi/_Bz5HPpXK-c/hqdefault.jpg",
+            "studyPoints": [
+              "Historical Foundations & Twin Revolutions: Factory system, urbanization, capitalism, French Revolution (Liberty, Equality, Fraternity), Enlightenment rationality, and Commercial expansion.",
+              "The Founding Thinkers: Auguste Comte (Law of Three Stages, Positivism, Social Statics/Dynamics), Herbert Spencer (Social Darwinism, Organic Analogy), Émile Durkheim (Social Facts), and Max Weber (Verstehen & Social Action).",
+              "Robert Bierstedt's 7 Defining Characteristics: Social science (not natural), Categorical (not normative), Pure (not applied), Abstract (not concrete), Generalizing (not particularizing), Empirical (not rationalistic), and both Rational and Empirical.",
+              "Scope & Dual Schools of Thought: Formalistic/Specialistic School (Simmel, Vierkandt, Von Wiese, Tönnies, Weber) vs. Synthetic School (Durkheim, Hobhouse, Ginsberg, Sorokin), plus Specialized Branches (Rural, Industrial, Medical, Urban, Gender).",
+              "Practical Applications & Exam Bank: C. Wright Mills' Sociological Imagination (Personal Troubles vs Public Issues), Public Policy, Social Impact Assessment (SIA), Crime Prevention, Solved MCQs (Q1–Q23), and 2-8 Mark Model University Essays."
+            ],
+            "examTip": "Calicut University FYUGP High-Yield Focus: Bierstedt's 7 characteristics of sociology, comparison of Formalistic vs Synthetic schools, Auguste Comte's Positivism, and Max Weber's Verstehen.",
+            "language": "English",
+            "lecturers": "Kore & Puck (Co-Teaching Academic Masterclass)",
+            "english_cc": true
           }
         ]
       },
@@ -1022,6 +1041,26 @@ window.VOICE_EXPLANATIONS_DATA = {
               "സോഷ്യോളജിയുടെ പ്രായോഗിക മൂല്യം: സാമൂഹിക നയരൂപീകരണം, നവീകരണം, സ്വയം അവബോധം."
             ],
             "examTip": "Calicut University Focus: 'Differentiate between sociological knowledge and common sense with Anthony Giddens' coffee illustration'."
+          },
+          {
+            "chapterNumber": "Chapter 02 (English Masterclass)",
+            "title": "Practicing Sociology: Methods, Paradigms & Research Ethics | BA Sociology Mod 2",
+            "chapter": "Complete Module 2 Syllabus: Interdisciplinary Relations, Common Sense Critique, Mills' Imagination, 7 Research Steps, Ethics & 3 Paradigms",
+            "duration": "47:49",
+            "youtubeId": "Wcfz9-mgL1k",
+            "thumbnail": "https://i.ytimg.com/vi/Wcfz9-mgL1k/hqdefault.jpg",
+            "studyPoints": [
+              "Interdisciplinary Horizons: Sociology as the synthesizing web (Morris Ginsberg) connecting Political Science (power beyond the state), Economics (critique of Homo Economicus & Granovetter's embeddedness), Anthropology, History (idiographic vs nomothetic), and Social Psychology (Mead & Cooley's Looking-Glass Self).",
+              "Common Sense vs. Scientific Sociology: Deconstructing unexamined, localized habits and victim-blaming dogmas; Peter Berger's debunking motif and Émile Durkheim's empirical study of Suicide.",
+              "The Sociological Imagination: C. Wright Mills' landmark formulation (1959) bridging individual biography with historical social structures; personal troubles of milieu vs. public issues of social structure.",
+              "The Seven Steps of Empirical Research: Problem selection, literature review, testable hypothesis (independent vs dependent variables), research design, data collection, statistical/thematic analysis, and monograph report writing.",
+              "Research Ethics & Human Dignity: Informed consent, absolute confidentiality, protection from physical/psychological harm, Institutional Review Boards (IRBs), and landmark violations (Stanley Milgram, Philip Zimbardo, Laud Humphreys).",
+              "Levels of Analysis & Three Paradigms: Micro-sociology (Symbolic Interactionism, Goffman's Front/Back Stage Dramaturgy, Garfinkel) vs. Macro-sociology (Functionalism & Conflict Theory), synthesized by Anthony Giddens (Structuration) and Pierre Bourdieu (Habitus); complete comparison of Positivist, Interpretative (Weber's Verstehen), and Critical/Emancipatory paradigms."
+            ],
+            "examTip": "Calicut University Core Focus: C. Wright Mills' troubles vs. issues, the 7 sequential research steps (flowchart), comparison of the 3 paradigms (matrix), Weber's Verstehen, and ethical informed consent.",
+            "language": "English",
+            "lecturers": "Kore & Puck (Co-Teaching Academic Masterclass)",
+            "english_cc": true
           }
         ]
       },
@@ -2091,36 +2130,36 @@ window.VOICE_EXPLANATIONS_DATA = {
             "audioUrl": "",
             "language": "Malayalam",
             "studyPoints": [
-                        "സാമ്പത്തിക വളർച്ചയും സാമ്പത്തിക വികസനവും (Growth vs Development): വളർച്ച കേവല അളവ്പരമായ (GDP/PCI) വർദ്ധനവാണെങ്കിൽ, വികസനം ദാരിദ്ര്യം, തൊഴിലില്ലായ്മ, അസമത്വം എന്നിവ കുറയ്ക്കുന്ന ഗുണപരമായ സമഗ്ര മാറ്റമാണ്.",
-                        "സൈമൺ കുസ്‌നെറ്റ്സിന്റെ ആധുനിക സാമ്പത്തിക വളർച്ച (Modern Economic Growth): ഉയർന്ന ആളോഹരി വരുമാന വളർച്ച, ഘടനാപരമായ പരിവർത്തനം (Structural Transformation), നഗരവൽക്കരണം, സാങ്കേതികവിദ്യ എന്നിവയുടെ ആവിർഭാവം.",
-                        "അമർത്യ സെന്നിന്റെ ശേഷി സമീപനം (Capability Approach): വികസനമെന്നത് കേവലം വരുമാനമല്ല, മറിച്ച് മനുഷ്യരുടെ കഴിവുകളും സാധ്യതകളും വികസിപ്പിക്കലും തെരഞ്ഞെടുക്കാനുള്ള സ്വാതന്ത്ര്യം വിപുലപ്പെടുത്തലുമാണ്.",
-                        "വികസന അളവുകോലുകൾ: മോറിസ് ഡി. മോറിസിന്റെ PQLI (ആയുർദൈർഘ്യം, ശിശുമരണനിരക്ക്, സാക്ഷരത) മുതൽ UNDP-യുടെ HDI (ആയുസ്സ്, വിദ്യാഭ്യാസം, ജീവിതനിലവാരം) വരെയുള്ള ബഹുമുഖ സൂചികകൾ.",
-                        "ബഹുമുഖ ദാരിദ്ര്യ സൂചിക (MPI): ആരോഗ്യം, വിദ്യാഭ്യാസം, ജീവിതനിലവാരം എന്നീ 3 തലങ്ങളിലായി 10 സൂചകങ്ങൾ ഉൾപ്പെടുത്തി ദാരിദ്ര്യത്തിന്റെ ആഴവും വ്യാപനവും ഒരേസമയം അളക്കുന്നു.",
-                        "കൊളോണിയൽ കാലഘട്ടത്തിന് മുമ്പുള്ള സമൃദ്ധി (Pre-colonial Economy): ലോക ജിഡിപിയുടെ 24% വിഹിതമുണ്ടായിരുന്ന സമ്പന്നമായ കാർഷിക-കൈത്തറി-വ്യാപാര കേന്ദ്രമായിരുന്നു ഇന്ത്യ.",
-                        "ബ്രിട്ടീഷ് ചൂഷണവും വ്യവസായ തകർച്ചയും (De-industrialization): കാലിക്കോ ആക്റ്റുകൾ, വിവേചനപരമായ നികുതികൾ എന്നിവയിലൂടെ ഇന്ത്യൻ പരമ്പരാഗത തുണി വ്യവസായം തകർക്കപ്പെടുകയും അസംസ്കൃത വസ്തു ശേഖരണ കേന്ദ്രമായി മാറുകയും ചെയ്തു."
+              "സാമ്പത്തിക വളർച്ചയും സാമ്പത്തിക വികസനവും (Growth vs Development): വളർച്ച കേവല അളവ്പരമായ (GDP/PCI) വർദ്ധനവാണെങ്കിൽ, വികസനം ദാരിദ്ര്യം, തൊഴിലില്ലായ്മ, അസമത്വം എന്നിവ കുറയ്ക്കുന്ന ഗുണപരമായ സമഗ്ര മാറ്റമാണ്.",
+              "സൈമൺ കുസ്‌നെറ്റ്സിന്റെ ആധുനിക സാമ്പത്തിക വളർച്ച (Modern Economic Growth): ഉയർന്ന ആളോഹരി വരുമാന വളർച്ച, ഘടനാപരമായ പരിവർത്തനം (Structural Transformation), നഗരവൽക്കരണം, സാങ്കേതികവിദ്യ എന്നിവയുടെ ആവിർഭാവം.",
+              "അമർത്യ സെന്നിന്റെ ശേഷി സമീപനം (Capability Approach): വികസനമെന്നത് കേവലം വരുമാനമല്ല, മറിച്ച് മനുഷ്യരുടെ കഴിവുകളും സാധ്യതകളും വികസിപ്പിക്കലും തെരഞ്ഞെടുക്കാനുള്ള സ്വാതന്ത്ര്യം വിപുലപ്പെടുത്തലുമാണ്.",
+              "വികസന അളവുകോലുകൾ: മോറിസ് ഡി. മോറിസിന്റെ PQLI (ആയുർദൈർഘ്യം, ശിശുമരണനിരക്ക്, സാക്ഷരത) മുതൽ UNDP-യുടെ HDI (ആയുസ്സ്, വിദ്യാഭ്യാസം, ജീവിതനിലവാരം) വരെയുള്ള ബഹുമുഖ സൂചികകൾ.",
+              "ബഹുമുഖ ദാരിദ്ര്യ സൂചിക (MPI): ആരോഗ്യം, വിദ്യാഭ്യാസം, ജീവിതനിലവാരം എന്നീ 3 തലങ്ങളിലായി 10 സൂചകങ്ങൾ ഉൾപ്പെടുത്തി ദാരിദ്ര്യത്തിന്റെ ആഴവും വ്യാപനവും ഒരേസമയം അളക്കുന്നു.",
+              "കൊളോണിയൽ കാലഘട്ടത്തിന് മുമ്പുള്ള സമൃദ്ധി (Pre-colonial Economy): ലോക ജിഡിപിയുടെ 24% വിഹിതമുണ്ടായിരുന്ന സമ്പന്നമായ കാർഷിക-കൈത്തറി-വ്യാപാര കേന്ദ്രമായിരുന്നു ഇന്ത്യ.",
+              "ബ്രിട്ടീഷ് ചൂഷണവും വ്യവസായ തകർച്ചയും (De-industrialization): കാലിക്കോ ആക്റ്റുകൾ, വിവേചനപരമായ നികുതികൾ എന്നിവയിലൂടെ ഇന്ത്യൻ പരമ്പരാഗത തുണി വ്യവസായം തകർക്കപ്പെടുകയും അസംസ്കൃത വസ്തു ശേഖരണ കേന്ദ്രമായി മാറുകയും ചെയ്തു."
             ],
             "examTip": "Calicut University Focus: 'Differentiate between Economic Growth and Economic Development. Critically examine Amartya Sen's Capability Approach and analyze the structural features of colonial de-industrialization'.",
             "malayalam_cc": true
-},
-        {
-                "chapterNumber": "Part 02",
-                "title": "ദാരിദ്ര്യ വലയം, സാമ്പത്തിക ദ്വന്ദ്വത & വളർച്ചാ ഘടകങ്ങൾ | BA Econ Mod 1 Part 2",
-                "chapter": "Colonial Capital Depletion · Underdevelopment · Ragnar Nurkse's Vicious Circles of Poverty · Structural Shifts & Four Growth Pillars",
-                "duration": "35:15",
-                "youtubeId": "FKujJM4_8l4",
-                "language": "Malayalam",
-                "studyPoints": [
-                        "Colonial Impact on Capital: Foreign dominance diverted agricultural surplus abroad, preventing indigenous industrial reinvestment and distorting capital goods creation.",
-                        "Underdevelopment Defined: UN and modern economic consensus define underdevelopment as low per capita real income accompanied by underutilized natural and human resources.",
-                        "Disguised Unemployment & Dualism: Marginal productivity of agricultural labor equals zero (MP_L = 0); J.H. Boeke's social dualism meets Benjamin Higgins's technological dualism.",
-                        "Prebisch-Singer Thesis: Secular deterioration in developing countries' terms of trade due to low income elasticity of demand for primary agricultural exports vs manufactured goods.",
-                        "Ragnar Nurkse's Vicious Circles of Poverty: Mutually reinforcing circular constellations on both Supply Side (Low Income -> Low Savings -> Low Capital -> Low Productivity) and Demand Side (Low Income -> Low Purchasing Power -> Small Market -> Low Investment).",
-                        "Breaking the Vicious Circle: Nurkse's synchronized 'Balanced Growth' investment across complementary consumer industries, generating mutual domestic demand.",
-                        "Four Pillars of Economic Growth: Human Resources (health/skills), Capital Formation (infrastructure/factories), Natural Resources (land/minerals), and Technological Progress."
-                ],
-                "examTip": "Calicut University Focus: 'Explain Ragnar Nurkse\\'s Vicious Circles of Poverty with reference to both supply and demand sides. Critically analyze the structural features of underdevelopment and the four pillars of growth.'",
-                "malayalam_cc": true
-        },
+          },
+          {
+            "chapterNumber": "Part 02",
+            "title": "ദാരിദ്ര്യ വലയം, സാമ്പത്തിക ദ്വന്ദ്വത & വളർച്ചാ ഘടകങ്ങൾ | BA Econ Mod 1 Part 2",
+            "chapter": "Colonial Capital Depletion · Underdevelopment · Ragnar Nurkse's Vicious Circles of Poverty · Structural Shifts & Four Growth Pillars",
+            "duration": "35:15",
+            "youtubeId": "FKujJM4_8l4",
+            "language": "Malayalam",
+            "studyPoints": [
+              "Colonial Impact on Capital: Foreign dominance diverted agricultural surplus abroad, preventing indigenous industrial reinvestment and distorting capital goods creation.",
+              "Underdevelopment Defined: UN and modern economic consensus define underdevelopment as low per capita real income accompanied by underutilized natural and human resources.",
+              "Disguised Unemployment & Dualism: Marginal productivity of agricultural labor equals zero (MP_L = 0); J.H. Boeke's social dualism meets Benjamin Higgins's technological dualism.",
+              "Prebisch-Singer Thesis: Secular deterioration in developing countries' terms of trade due to low income elasticity of demand for primary agricultural exports vs manufactured goods.",
+              "Ragnar Nurkse's Vicious Circles of Poverty: Mutually reinforcing circular constellations on both Supply Side (Low Income -> Low Savings -> Low Capital -> Low Productivity) and Demand Side (Low Income -> Low Purchasing Power -> Small Market -> Low Investment).",
+              "Breaking the Vicious Circle: Nurkse's synchronized 'Balanced Growth' investment across complementary consumer industries, generating mutual domestic demand.",
+              "Four Pillars of Economic Growth: Human Resources (health/skills), Capital Formation (infrastructure/factories), Natural Resources (land/minerals), and Technological Progress."
+            ],
+            "examTip": "Calicut University Focus: 'Explain Ragnar Nurkse\\'s Vicious Circles of Poverty with reference to both supply and demand sides. Critically analyze the structural features of underdevelopment and the four pillars of growth.'",
+            "malayalam_cc": true
+          },
           {
             "chapterNumber": "Masterclass",
             "title": "ഇന്ത്യൻ സാമ്പത്തിക ചരിത്രവും പ്രതിസന്ധിയും (India's Economy 1700–1991) | Calicut Univ",
@@ -2215,42 +2254,42 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 02: POVERTY ESTIMATION & MULTIDIMENSIONAL POVERTY (FYUGP)",
         "videos": [
           {
-                  "chapterNumber": "Part 01",
-                  "title": "ദാരിദ്ര്യ നിർണ്ണയം & ബഹുമുഖ ദാരിദ്ര്യ സൂചിക (MPI) | BA Econ Mod 2 Part 1",
-                  "chapter": "Concepts of Poverty · Absolute vs Relative · Calorie Norms · Lakdawala, Tendulkar & Rangarajan · Global MPI & NITI Aayog NMPI",
-                  "duration": "31:57",
-                  "youtubeId": "5D3rv55BbQU",
-                  "language": "Malayalam",
-                  "studyPoints": [
-                          "Concepts of Poverty & Capability Approach: Basic human needs deprivation vs Amartya Sen's Capability Approach emphasizing functionings and substantive freedoms over income.",
-                          "Absolute vs Relative Poverty: Absolute poverty as minimum physical subsistence (2400 rural / 2100 urban calories); relative poverty as social inequality measured via Gini coefficient and Lorenz curve.",
-                          "Estimation Methodologies: Why monthly per capita consumption expenditure (MPCE) is preferred over income in India; NSSO recall periods (URP 30-day, MRP 30/365-day, MMRP 7/30/365-day).",
-                          "Expert Committees: Lakdawala (1993, state-specific CPI-AL/IW), Tendulkar (2009, moved beyond calories to ₹27.20 rural / ₹33.30 urban), Rangarajan (2014, restored ICMR calorie/protein/fat norms to ₹32/₹47).",
-                          "Critique of Poverty Lines: N. Krishnaji's critique of poverty line manipulation; severe limitations of Head Count Ratio (HCR) in measuring poverty gap or depth.",
-                          "Global Multidimensional Poverty Index (MPI): OPHI/UNDP 3 dimensions (Health, Education, Living Standards), 10 indicators, Alkire-Foster dual cut-off method (33.33% threshold, M0 = H × A).",
-                          "National MPI (NITI Aayog): 12 indicators (adding Maternal Health & Bank Accounts); Kerala ranked #1 with lowest poverty (0.55%) and Kottayam as India's first zero-poverty district."
-                  ],
-                  "examTip": "Calicut University Focus: 'Explain the concept of poverty and compare the methodologies of Tendulkar and Rangarajan Committees. Detail the structure and indicators of the Multidimensional Poverty Index (MPI) with reference to Alkire-Foster method'.",
-                  "malayalam_cc": true
+            "chapterNumber": "Part 01",
+            "title": "ദാരിദ്ര്യ നിർണ്ണയം & ബഹുമുഖ ദാരിദ്ര്യ സൂചിക (MPI) | BA Econ Mod 2 Part 1",
+            "chapter": "Concepts of Poverty · Absolute vs Relative · Calorie Norms · Lakdawala, Tendulkar & Rangarajan · Global MPI & NITI Aayog NMPI",
+            "duration": "31:57",
+            "youtubeId": "5D3rv55BbQU",
+            "language": "Malayalam",
+            "studyPoints": [
+              "Concepts of Poverty & Capability Approach: Basic human needs deprivation vs Amartya Sen's Capability Approach emphasizing functionings and substantive freedoms over income.",
+              "Absolute vs Relative Poverty: Absolute poverty as minimum physical subsistence (2400 rural / 2100 urban calories); relative poverty as social inequality measured via Gini coefficient and Lorenz curve.",
+              "Estimation Methodologies: Why monthly per capita consumption expenditure (MPCE) is preferred over income in India; NSSO recall periods (URP 30-day, MRP 30/365-day, MMRP 7/30/365-day).",
+              "Expert Committees: Lakdawala (1993, state-specific CPI-AL/IW), Tendulkar (2009, moved beyond calories to ₹27.20 rural / ₹33.30 urban), Rangarajan (2014, restored ICMR calorie/protein/fat norms to ₹32/₹47).",
+              "Critique of Poverty Lines: N. Krishnaji's critique of poverty line manipulation; severe limitations of Head Count Ratio (HCR) in measuring poverty gap or depth.",
+              "Global Multidimensional Poverty Index (MPI): OPHI/UNDP 3 dimensions (Health, Education, Living Standards), 10 indicators, Alkire-Foster dual cut-off method (33.33% threshold, M0 = H × A).",
+              "National MPI (NITI Aayog): 12 indicators (adding Maternal Health & Bank Accounts); Kerala ranked #1 with lowest poverty (0.55%) and Kottayam as India's first zero-poverty district."
+            ],
+            "examTip": "Calicut University Focus: 'Explain the concept of poverty and compare the methodologies of Tendulkar and Rangarajan Committees. Detail the structure and indicators of the Multidimensional Poverty Index (MPI) with reference to Alkire-Foster method'.",
+            "malayalam_cc": true
           },
           {
-                  "chapterNumber": "Part 02",
-                  "title": "ദാരിദ്ര്യ ട്രെൻഡുകൾ & ലഘൂകരണ പദ്ധതികൾ | BA Econ Mod 2 Part 2",
-                  "chapter": "Post-Independence Estimates · Poverty Trends · Sandeep Bagchee Critique · IRDP & MGNREGA 2005 · Vulnerable Groups",
-                  "duration": "29:50",
-                  "youtubeId": "2mOVckoujhc",
-                  "language": "Malayalam",
-                  "studyPoints": [
-                          "Post-Independence Estimation Trajectory: 1962 Working Group (₹20 rural / ₹25 urban), Dandekar & Rath (1971, 2250 calories), Alagh Task Force (1979, 2400/2100 calories), Tendulkar Review & Rangarajan 2014.",
-                          "NAS vs NSSO Variance: Why expert committees unanimously preferred NSSO household consumption surveys over National Accounts Statistics due to growing disparities.",
-                          "Historical Poverty Trends & Growth Paradox: Transition from British colonial stagnation to high post-1991 GDP growth; jobless growth dynamics and Amartya Sen's social expenditure critique.",
-                          "RBI FY23 Study: Findings by Das, Gopalakrishnan & Mazumder on post-pandemic household consumption and stark inter-state disparities (Kerala/Goa single digits vs northern states).",
-                          "Poverty Alleviation Evolution: 1970s ad-hocist phase ('Garibi Hatao'), IRDP (1978-79 asset distribution), wage-employment programmes (NREP 1980, RLEGP 1983).",
-                          "Sandeep Bagchee's Critique & MGNREGA 2005: Failure of multiple conflicting objectives and lack of backward/forward linkages; historic transition to rights-based employment guarantee under MGNREGA 2005.",
-                          "High-Poverty Groups & Spatial Traps: Landless rural labor liquidity constraints, urban slum informality, feminization of poverty, SC/ST systemic barriers, and spatial poverty traps."
-                  ],
-                  "examTip": "Calicut University Focus: 'Critically examine the evolution of poverty alleviation programmes in India with special reference to IRDP and MGNREGA. Detail Sandeep Bagchee\\'s critique and the economic characteristics of high-poverty groups.'",
-                  "malayalam_cc": true
+            "chapterNumber": "Part 02",
+            "title": "ദാരിദ്ര്യ ട്രെൻഡുകൾ & ലഘൂകരണ പദ്ധതികൾ | BA Econ Mod 2 Part 2",
+            "chapter": "Post-Independence Estimates · Poverty Trends · Sandeep Bagchee Critique · IRDP & MGNREGA 2005 · Vulnerable Groups",
+            "duration": "29:50",
+            "youtubeId": "2mOVckoujhc",
+            "language": "Malayalam",
+            "studyPoints": [
+              "Post-Independence Estimation Trajectory: 1962 Working Group (₹20 rural / ₹25 urban), Dandekar & Rath (1971, 2250 calories), Alagh Task Force (1979, 2400/2100 calories), Tendulkar Review & Rangarajan 2014.",
+              "NAS vs NSSO Variance: Why expert committees unanimously preferred NSSO household consumption surveys over National Accounts Statistics due to growing disparities.",
+              "Historical Poverty Trends & Growth Paradox: Transition from British colonial stagnation to high post-1991 GDP growth; jobless growth dynamics and Amartya Sen's social expenditure critique.",
+              "RBI FY23 Study: Findings by Das, Gopalakrishnan & Mazumder on post-pandemic household consumption and stark inter-state disparities (Kerala/Goa single digits vs northern states).",
+              "Poverty Alleviation Evolution: 1970s ad-hocist phase ('Garibi Hatao'), IRDP (1978-79 asset distribution), wage-employment programmes (NREP 1980, RLEGP 1983).",
+              "Sandeep Bagchee's Critique & MGNREGA 2005: Failure of multiple conflicting objectives and lack of backward/forward linkages; historic transition to rights-based employment guarantee under MGNREGA 2005.",
+              "High-Poverty Groups & Spatial Traps: Landless rural labor liquidity constraints, urban slum informality, feminization of poverty, SC/ST systemic barriers, and spatial poverty traps."
+            ],
+            "examTip": "Calicut University Focus: 'Critically examine the evolution of poverty alleviation programmes in India with special reference to IRDP and MGNREGA. Detail Sandeep Bagchee\\'s critique and the economic characteristics of high-poverty groups.'",
+            "malayalam_cc": true
           },
           {
             "chapterNumber": "Masterclass (V1)",

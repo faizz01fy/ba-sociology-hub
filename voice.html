@@ -4602,7 +4602,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
   <!-- Load Subject Voice Data -->
 
-  <script src="voice_explanation_data.js?v=1795042401"></script>
+  <script src="voice_explanation_data.js?v=1795097669"></script>
 
 
 
@@ -4912,11 +4912,11 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
           filteredVids.forEach(v => {
 
-            const defaultLang = (currentSlug === 'hindi') ? 'Hindi' : ((currentSlug === 'arabic') ? 'Arabic' : ((currentSlug === 'sociology') ? 'English & Malayalam' : 'Malayalam'));
-            const language = (currentSlug === 'sociology') ? 'English & Malayalam' : (v.language || defaultLang);
+            const defaultLang = (currentSlug === 'hindi') ? 'Hindi' : ((currentSlug === 'arabic') ? 'Arabic' : 'Malayalam');
+            const language = v.language || ((currentSlug === 'sociology') ? 'English & Malayalam' : defaultLang);
 
             const isEnglish = language === 'English';
-            const isBilingual = (currentSlug === 'sociology') || language.includes('Bilingual') || (language.includes('English') && language.includes('Malayalam'));
+            const isBilingual = !isEnglish && ((currentSlug === 'sociology') || language.includes('Bilingual') || (language.includes('English') && language.includes('Malayalam')));
 
             const card = document.createElement('article');
 
