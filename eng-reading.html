@@ -124,45 +124,80 @@
       box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
     }
 
-    /* Module Tabs Ribbon (Scrollable or Wrapping) */
-    .soc-module-tabs-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      overflow-x: auto;
-      scrollbar-width: thin;
-      padding-bottom: 8px;
-      margin-bottom: 22px;
-      -webkit-overflow-scrolling: touch;
+    /* ========================================================================== */
+    /* MODULE TABS & CHAPTER PILLS — 2 ROWS & ONCE BLINK WITH DIFFERENT COLOURS    */
+    /* ========================================================================== */
+    @keyframes onceBlink {
+      0% {
+        opacity: 0.35;
+        transform: scale(0.96);
+        filter: brightness(0.85);
+      }
+      40% {
+        opacity: 1;
+        transform: scale(1.04);
+        filter: brightness(1.28);
+        box-shadow: 0 0 18px 4px var(--blink-glow, rgba(59, 130, 246, 0.6));
+      }
+      70% {
+        opacity: 0.88;
+        transform: scale(0.99);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      }
     }
+
+    /* Module Tabs Ribbon — Structured in EXACTLY TWO ROWS (2 in Row 1, 2 in Row 2) */
+    .soc-module-tabs-row {
+      display: grid !important;
+      grid-template-columns: repeat(6, 1fr) !important;
+      gap: 10px !important;
+      margin-bottom: 22px !important;
+      overflow-x: visible !important;
+      padding-bottom: 0 !important;
+    }
+
+    /* 4 Modules: Row 1 = Module 1 (span 3) & Module 2 (span 3); Row 2 = Module 3 (span 3) & Module 4 (span 3) */
+    .soc-module-tabs-row .soc-mod-tab-btn:nth-child(1) { grid-column: span 3 !important; }
+    .soc-module-tabs-row .soc-mod-tab-btn:nth-child(2) { grid-column: span 3 !important; }
+    .soc-module-tabs-row .soc-mod-tab-btn:nth-child(3) { grid-column: span 3 !important; }
+    .soc-module-tabs-row .soc-mod-tab-btn:nth-child(4) { grid-column: span 3 !important; }
 
     .soc-mod-tab-btn {
       display: inline-flex;
       align-items: center;
-      white-space: nowrap;
-      padding: 9px 18px;
-      border-radius: 999px;
+      justify-content: center;
+      text-align: center;
+      white-space: normal;
+      padding: 11px 16px;
+      border-radius: 12px;
       font-size: 13.5px;
       font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       border: 1.5px solid #cbd5e1;
       background: #ffffff;
       color: #334155;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      flex-shrink: 0;
+      animation: onceBlink 1.1s cubic-bezier(0.25, 1, 0.5, 1) 1;
     }
 
     .soc-mod-tab-btn:hover {
-      border-color: #94a3b8;
-      background: #f8fafc;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      filter: brightness(1.05);
     }
 
-    /* Color styles matching index.html palette */
+    /* Distinct Colors for Module Tabs (Academic Multi-Color Standard) */
+    /* Module 1: Rose / Crimson */
     .soc-mod-tab-btn[data-mod="mod1"] {
-      border-color: #fda4af;
-      color: #be123c;
-      background: #fff1f2;
+      border-color: #fda4af !important;
+      color: #be123c !important;
+      background: #fff1f2 !important;
+      --blink-glow: rgba(244, 63, 94, 0.65);
+      animation-delay: 0.05s;
     }
     .soc-mod-tab-btn[data-mod="mod1"].active {
       background: linear-gradient(135deg, #be123c, #f43f5e) !important;
@@ -171,10 +206,13 @@
       box-shadow: 0 6px 18px rgba(244, 63, 94, 0.45) !important;
     }
 
+    /* Module 2: Orange / Amber */
     .soc-mod-tab-btn[data-mod="mod2"] {
-      border-color: #fdba74;
-      color: #c2410c;
-      background: #fff7ed;
+      border-color: #fdba74 !important;
+      color: #c2410c !important;
+      background: #fff7ed !important;
+      --blink-glow: rgba(249, 115, 22, 0.65);
+      animation-delay: 0.12s;
     }
     .soc-mod-tab-btn[data-mod="mod2"].active {
       background: linear-gradient(135deg, #c2410c, #f97316) !important;
@@ -183,10 +221,13 @@
       box-shadow: 0 6px 18px rgba(249, 115, 22, 0.45) !important;
     }
 
+    /* Module 3: Purple / Violet */
     .soc-mod-tab-btn[data-mod="mod3"] {
-      border-color: #c4b5fd;
-      color: #6b21a8;
-      background: #f5f3ff;
+      border-color: #c4b5fd !important;
+      color: #6b21a8 !important;
+      background: #f5f3ff !important;
+      --blink-glow: rgba(139, 92, 246, 0.65);
+      animation-delay: 0.19s;
     }
     .soc-mod-tab-btn[data-mod="mod3"].active {
       background: linear-gradient(135deg, #6b21a8, #8b5cf6) !important;
@@ -195,10 +236,13 @@
       box-shadow: 0 6px 18px rgba(139, 92, 246, 0.45) !important;
     }
 
+    /* Module 4: Emerald / Green */
     .soc-mod-tab-btn[data-mod="mod4"] {
-      border-color: #6ee7b7;
-      color: #065f46;
-      background: #ecfdf5;
+      border-color: #6ee7b7 !important;
+      color: #065f46 !important;
+      background: #ecfdf5 !important;
+      --blink-glow: rgba(16, 185, 129, 0.65);
+      animation-delay: 0.26s;
     }
     .soc-mod-tab-btn[data-mod="mod4"].active {
       background: linear-gradient(135deg, #065f46, #10b981) !important;
@@ -207,16 +251,165 @@
       box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45) !important;
     }
 
-    .soc-mod-tab-btn[data-mod="mod5"] {
-      border-color: #93c5fd;
-      color: #1e40af;
-      background: #eff6ff;
+    /* Chapters Selector Box */
+    .soc-chapters-selector-box, .soc-chapters-box {
+      border: 1.5px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 16px 18px;
+      background: #ffffff;
+      margin-bottom: 22px;
     }
-    .soc-mod-tab-btn[data-mod="mod5"].active {
+
+    .soc-chapters-box-label, .soc-chapters-header {
+      font-size: 12.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed #cbd5e1;
+      margin-bottom: 14px;
+    }
+
+    /* Chapter Pills — Structured in TWO ROWS */
+    .soc-chapter-pills-grid, .soc-chapter-pills-list {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 8px 10px !important;
+    }
+
+    .soc-ch-pill-btn, .soc-pill-btn {
+      flex: 1 1 calc(23.5% - 10px) !important;
+      min-width: 170px !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      color: #1e293b;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+      animation: onceBlink 1.1s cubic-bezier(0.25, 1, 0.5, 1) 1;
+    }
+
+    .soc-ch-pill-btn:hover, .soc-pill-btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+    }
+
+    /* Distinct Multi-Color Scheme for Chapter Pills */
+    .soc-ch-pill-btn:nth-child(8n+1), .soc-pill-btn:nth-child(8n+1) {
+      border-color: #93c5fd; background: #eff6ff; color: #1e40af;
+      --blink-glow: rgba(59, 130, 246, 0.6); animation-delay: 0.04s;
+    }
+    .soc-ch-pill-btn:nth-child(8n+1).active, .soc-pill-btn:nth-child(8n+1).active {
       background: linear-gradient(135deg, #1e40af, #3b82f6) !important;
-      color: #ffffff !important;
-      border-color: #1e40af !important;
+      color: #ffffff !important; border-color: #1e40af !important;
       box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45) !important;
+    }
+
+    .soc-ch-pill-btn:nth-child(8n+2), .soc-pill-btn:nth-child(8n+2) {
+      border-color: #6ee7b7; background: #ecfdf5; color: #065f46;
+      --blink-glow: rgba(16, 185, 129, 0.6); animation-delay: 0.08s;
+    }
+    .soc-ch-pill-btn:nth-child(8n+2).active, .soc-pill-btn:nth-child(8n+2).active {
+      background: linear-gradient(135deg, #065f46, #10b981) !important;
+      color: #ffffff !important; border-color: #065f46 !important;
+      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45) !important;
+    }
+
+    .soc-ch-pill-btn:nth-child(8n+3), .soc-pill-btn:nth-child(8n+3) {
+      border-color: #c4b5fd; background: #f5f3ff; color: #6b21a8;
+      --blink-glow: rgba(139, 92, 246, 0.6); animation-delay: 0.12s;
+    }
+    .soc-ch-pill-btn:nth-child(8n+3).active, .soc-pill-btn:nth-child(8n+3).active {
+      background: linear-gradient(135deg, #6b21a8, #8b5cf6) !important;
+      color: #ffffff !important; border-color: #6b21a8 !important;
+      box-shadow: 0 6px 18px rgba(139, 92, 246, 0.45) !important;
+    }
+
+    .soc-ch-pill-btn:nth-child(8n+4), .soc-pill-btn:nth-child(8n+4) {
+      border-color: #fde68a; background: #fffbeb; color: #b45309;
+      --blink-glow: rgba(245, 158, 11, 0.6); animation-delay: 0.16s;
+    }
+    .soc-ch-pill-btn:nth-child(8n+4).active, .soc-pill-btn:nth-child(8n+4).active {
+      background: linear-gradient(135deg, #b45309, #f59e0b) !important;
+      color: #ffffff !important; border-color: #b45309 !important;
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.45) !important;
+    }
+
+    .soc-ch-pill-btn:nth-child(8n+5), .soc-pill-btn:nth-child(8n+5) {
+      border-color: #fda4af; background: #fff1f2; color: #be123c;
+      --blink-glow: rgba(244, 63, 94, 0.6); animation-delay: 0.20s;
+    }
+    .soc-ch-pill-btn:nth-child(8n+5).active, .soc-pill-btn:nth-child(8n+5).active {
+      background: linear-gradient(135deg, #be123c, #f43f5e) !important;
+      color: #ffffff !important; border-color: #be123c !important;
+      box-shadow: 0 6px 18px rgba(244, 63, 94, 0.45) !important;
+    }
+
+    .soc-ch-pill-btn:nth-child(8n+6), .soc-pill-btn:nth-child(8n+6) {
+      border-color: #a5f3fc; background: #ecfeff; color: #0e7490;
+      --blink-glow: rgba(6, 182, 212, 0.6); animation-delay: 0.24s;
+    }
+    .soc-ch-pill-btn:nth-child(8n+6).active, .soc-pill-btn:nth-child(8n+6).active {
+      background: linear-gradient(135deg, #0e7490, #06b6d4) !important;
+      color: #ffffff !important; border-color: #0e7490 !important;
+      box-shadow: 0 6px 18px rgba(6, 182, 212, 0.45) !important;
+    }
+
+    .soc-ch-pill-btn:nth-child(8n+7), .soc-pill-btn:nth-child(8n+7) {
+      border-color: #c7d2fe; background: #eef2ff; color: #4338ca;
+      --blink-glow: rgba(99, 102, 241, 0.6); animation-delay: 0.28s;
+    }
+    .soc-ch-pill-btn:nth-child(8n+7).active, .soc-pill-btn:nth-child(8n+7).active {
+      background: linear-gradient(135deg, #4338ca, #6366f1) !important;
+      color: #ffffff !important; border-color: #4338ca !important;
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.45) !important;
+    }
+
+    .soc-ch-pill-btn:nth-child(8n+8), .soc-pill-btn:nth-child(8n+8) {
+      border-color: #fdba74; background: #fff7ed; color: #c2410c;
+      --blink-glow: rgba(249, 115, 22, 0.6); animation-delay: 0.32s;
+    }
+    .soc-ch-pill-btn:nth-child(8n+8).active, .soc-pill-btn:nth-child(8n+8).active {
+      background: linear-gradient(135deg, #c2410c, #f97316) !important;
+      color: #ffffff !important; border-color: #c2410c !important;
+      box-shadow: 0 6px 18px rgba(249, 115, 22, 0.45) !important;
+    }
+
+    /* Responsive 2-Row Guardrails */
+    @media (max-width: 768px) {
+      .soc-module-tabs-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(1) { grid-column: span 1 !important; }
+      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(2) { grid-column: span 1 !important; }
+      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(3) { grid-column: span 1 !important; }
+      .soc-module-tabs-row .soc-mod-tab-btn:nth-child(4) { grid-column: span 1 !important; }
+
+      .soc-chapter-pills-grid, .soc-chapter-pills-list {
+        display: grid !important;
+        grid-template-rows: auto auto !important;
+        grid-auto-flow: column !important;
+        grid-auto-columns: minmax(180px, auto) !important;
+        overflow-x: auto !important;
+        padding-bottom: 6px !important;
+        gap: 8px !important;
+        scrollbar-width: thin !important;
+      }
+      .soc-ch-pill-btn, .soc-pill-btn {
+        flex: none !important;
+        white-space: nowrap !important;
+      }
     }
 
     /* Chapters & Study Topics Selector Box (Dotted Outline as in Screenshot) */
@@ -1560,9 +1753,12 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
         </p>
       </div>
 
-      <!-- Module Tabs (ASCENDING 1..4) -->
+      <!-- Module Tabs (ASCENDING 1..4) — EXACTLY TWO ROWS WITH MULTI-COLOR BLINK -->
       <div class="soc-module-tabs-row" role="tablist" aria-label="English Modules">
-        <button type="button" role="tab" class="soc-mod-tab-btn active" data-mod="mod1" aria-selected="true" onclick="selectModule('mod1')">Module 1 · കേൾവി വൈദഗ്ദ്ധ്യം</button> <button type="button" role="tab" class="soc-mod-tab-btn " data-mod="mod2" aria-selected="false" onclick="selectModule('mod2')">Module 2 · സംസാര വൈദഗ്ദ്ധ്യം</button> <button type="button" role="tab" class="soc-mod-tab-btn " data-mod="mod3" aria-selected="false" onclick="selectModule('mod3')">Module 3 · വായനാ വൈദഗ്ദ്ധ്യം</button> <button type="button" role="tab" class="soc-mod-tab-btn " data-mod="mod4" aria-selected="false" onclick="selectModule('mod4')">Module 4 · എഴുത്ത് വൈദഗ്ദ്ധ്യം</button>
+        <button type="button" role="tab" class="soc-mod-tab-btn active" data-mod="mod1" aria-selected="true" onclick="selectModule('mod1')">Module 1 · കേൾവി വൈദഗ്ദ്ധ്യം (Listening Skills)</button>
+        <button type="button" role="tab" class="soc-mod-tab-btn" data-mod="mod2" aria-selected="false" onclick="selectModule('mod2')">Module 2 · സംസാര വൈദഗ്ദ്ധ്യം (Speaking Skills)</button>
+        <button type="button" role="tab" class="soc-mod-tab-btn" data-mod="mod3" aria-selected="false" onclick="selectModule('mod3')">Module 3 · വായനാ വൈദഗ്ദ്ധ്യം (Reading Skills)</button>
+        <button type="button" role="tab" class="soc-mod-tab-btn" data-mod="mod4" aria-selected="false" onclick="selectModule('mod4')">Module 4 · എഴുത്ത് വൈദഗ്ദ്ധ്യം (Writing Skills)</button>
       </div>
 
       <!-- Chapters Selector Box -->
@@ -1590,6 +1786,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
           <span class="soc-feat-badge">📄 HTML Reading</span>
           <span class="soc-feat-badge">📝 Chapter Summary</span>
           <span class="soc-feat-badge">🎯 Random MCQs</span>
+          <a id="soc-download-pdf-btn" href="English/Malayalam PDF/English_Module_1_Ch1_I_Have_A_Dream_Malayalam.pdf" target="_blank" class="soc-feat-badge" style="background:#eff6ff; border:1.5px solid #93c5fd; color:#1d4ed8; text-decoration:none; font-weight:700; cursor:pointer;" title="Download Official PDF">📥 Download Official PDF / ഒഫീഷ്യൽ പിഡിഎഫ് ↗</a>
         </div>
 
         <div>
@@ -4504,7 +4701,140 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
   </div>
 
   <script>
-    const MODULES = [{"id": "mod1", "name": "Module 1 · കേൾവി വൈദഗ്ദ്ധ്യം", "theme": {"border": "#fda4af", "bg": "#fff1f2", "color": "#be123c", "glow": "rgba(225, 29, 72, 0.4)"}, "chapters": [{"id": "eng-mod1-ch1", "label": "എനിക്കൊരു സ്വപ്നമുണ്ട്", "title": "English · Module 1 · എനിക്കൊരു സ്വപ്നമുണ്ട് (I Have a Dream)", "desc": "ലിങ്കൺ മെമ്മോറിയൽ പ്രസംഗം, സമത്വത്തിനായുള്ള പോരാട്ടം, അഹിംസാ സിദ്ധാന്തം, വംശീയ വിവേചനത്തിനെതിരെയുള്ള വാഗ്ദാനങ്ങൾ.", "chref_idx": 0}, {"id": "eng-mod1-ch2", "label": "ആന്തം — ഗീതം", "title": "English · Module 1 · ആന്തം — ഗീതം (Anthem)", "desc": "അപൂർണ്ണതകളിലൂടെ പ്രവേശിക്കുന്ന പ്രത്യാശയുടെ വെളിച്ചം, കാവ്യഭംഗി, പ്രതീകങ്ങൾ, ആത്മീയ ദർശനം.", "chref_idx": 1}, {"id": "eng-mod1-ch3", "label": "സാമൂഹിക സേവനമായി കല", "title": "English · Module 1 · സാമൂഹിക സേവനമായി കല (Art as Social Work)", "desc": "കലയിലൂടെയുള്ള രോഗശാന്തിയും അതിജീവനവും, സാമൂഹിക ചുവർചിത്രങ്ങൾ, പാർശ്വവത്കരിക്കപ്പെട്ടവരുടെ ശാക്തീകരണം.", "chref_idx": 2}]}, {"id": "mod2", "name": "Module 2 · സംസാര വൈദഗ്ദ്ധ്യം", "theme": {"border": "#fdba74", "bg": "#fff7ed", "color": "#c2410c", "glow": "rgba(234, 88, 12, 0.4)"}, "chapters": [{"id": "eng-mod2-ch1", "label": "മൃദുഭാഷയും ഭാഷാ പ്രയോഗങ്ങളും", "title": "English · Module 2 · മൃദുഭാഷയും ഭാഷാ പ്രയോഗങ്ങളും (Soft Language)", "desc": "'ഷെൽ ഷോക്ക്' മുതൽ 'പി.ടി.എസ്.ഡി' വരെയുള്ള മാറ്റം, ഭാഷയിലെ കാപട്യങ്ങൾ, സ്റ്റാൻഡ്-അപ്പ് കോമഡിയിലെ വാഗ്മിത.", "chref_idx": 3}, {"id": "eng-mod2-ch2", "label": "ഒരു സെയിൽസ്മാന്റെ മരണം", "title": "English · Module 2 · ഒരു സെയിൽസ്മാന്റെ മരണം (The Death of a Salesman)", "desc": "വില്ലി ലോമന്റെ പതനം, ലിൻഡയുടെ വികാരനിർഭരമായ പ്രതിരോധം, മുതലാളിത്ത വ്യാമോഹങ്ങൾ, നാടക സംഭാഷണ വിശകലനം.", "chref_idx": 4}, {"id": "eng-mod2-ch3", "label": "കീറ്റിംഗിന്റെ വിപ്ലവ പാഠം", "title": "English · Module 2 · കീറ്റിംഗിന്റെ വിപ്ലവ പാഠം (Rip It Out)", "desc": "\"കവിത ജീവിക്കാൻ വേണ്ടിയുള്ളതാണ്\", പാഠപുസ്തകം കീറിക്കളയുന്ന അദ്ധ്യാപകൻ, പ്രഭാഷണ കലയും സ്വരഭേദങ്ങളും.", "chref_idx": 5}]}, {"id": "mod3", "name": "Module 3 · വായനാ വൈദഗ്ദ്ധ്യം", "theme": {"border": "#c4b5fd", "bg": "#f5f3ff", "color": "#6d28d9", "glow": "rgba(124, 58, 237, 0.4)"}, "chapters": [{"id": "eng-mod3-ch1", "label": "വായനാ വൈദഗ്ദ്ധ്യ ആമുഖം", "title": "English · Module 3 · വായനാ വൈദഗ്ദ്ധ്യ ആമുഖം (Introduction to Reading Skills)", "desc": "വേഗ വായന, വിവരശേഖരണം, SQ3R പഠന സമ്പ്രദായം, വിമർശനാത്മക വായന (Critical Reading).", "chref_idx": 6}, {"id": "eng-mod3-ch2", "label": "രണ്ടാം വരവ്", "title": "English · Module 3 · രണ്ടാം വരവ് (The Second Coming)", "desc": "നാഗരികതയുടെ തകർച്ച, ചരിത്രത്തിന്റെ ചുഴലികൾ (Gyres), സിംഹ ഉടലുള്ള ക്രൂര മൃഗത്തിന്റെ ഉദയം, കാവ്യ പ്രതീകങ്ങൾ.", "chref_idx": 7}, {"id": "eng-mod3-ch3", "label": "തവള രാജകുമാരൻ", "title": "English · Module 3 · തവള രാജകുമാരൻ (The Frog Prince)", "desc": "റിയൽ എസ്റ്റേറ്റ് ബിൽഡറായ തവള, പരിസ്ഥിതി ചൂഷണം, പരമ്പരാഗത യക്ഷിക്കഥകളുടെ സ്ത്രീപക്ഷ ആക്ഷേപഹാസ്യ പൊളിച്ചെഴുത്ത്.", "chref_idx": 8}, {"id": "eng-mod3-ch4", "label": "ശുഭാപ്തിവിശ്വാസം: ഒരു ഉപന്യാസം", "title": "English · Module 3 · ശുഭാപ്തിവിശ്വാസം: ഒരു ഉപന്യാസം (Optimism: An Essay)", "desc": "പ്രതിസന്ധികളെ അതിജീവിക്കുന്ന ആന്തരിക പ്രകാശം, കർമ്മമാണ് ശുഭാപ്തിവിശ്വാസം, വ്യാജ പ്രത്യാശകൾക്കെതിരെയുള്ള വിമർശനം.", "chref_idx": 9}]}, {"id": "mod4", "name": "Module 4 · എഴുത്ത് വൈദഗ്ദ്ധ്യം", "theme": {"border": "#6ee7b7", "bg": "#ecfdf5", "color": "#047857", "glow": "rgba(16, 185, 129, 0.4)"}, "chapters": [{"id": "eng-mod4-ch1", "label": "എഴുത്ത് വൈദഗ്ദ്ധ്യ ആമുഖം", "title": "English · Module 4 · എഴുത്ത് വൈദഗ്ദ്ധ്യ ആമുഖം (Introduction to Writing Skills)", "desc": "ഖണ്ഡികാ ഘടന (Topic Sentence), എഴുത്തിന്റെ ഘട്ടങ്ങൾ, സംയോജക പദങ്ങൾ (Connectors), സംഗ്രഹം തയ്യാറാക്കൽ.", "chref_idx": 10}, {"id": "eng-mod4-ch2", "label": "അംബേദ്കറുടെ ചരിത്ര പ്രസംഗം", "title": "English · Module 4 · അംബേദ്കറുടെ ചരിത്ര പ്രസംഗം (Ambedkar's 1936 Speech)", "desc": "ജാതി തൊഴിൽ വിഭജനമല്ല തൊഴിലാളികളുടെ വിഭജനമാണ്, സ്വാതന്ത്ര്യം സമത്വം സാഹോദര്യം, യുക്തിഭദ്രമായ ലേഖന ശൈലി.", "chref_idx": 11}, {"id": "eng-mod4-ch3", "label": "വിശ്വവിഖ്യാതമായ മൂക്ക്", "title": "English · Module 4 · വിശ്വവിഖ്യാതമായ മൂക്ക് (The World-Renowned Nose)", "desc": "മൂക്കന്റെ അത്ഭുത വളർച്ച, രാഷ്ട്രീയ കാപട്യങ്ങൾ, മാധ്യമ സെൻസേഷണലിസം, ബഷീറിയൻ മാനവികതയും ആക്ഷേപഹാസ്യവും.", "chref_idx": 12}, {"id": "eng-mod4-ch4", "label": "സിനിമ പാരഡൈസോ ചലച്ചിത്ര ആസ്വാദനം", "title": "English · Module 4 · സിനിമ പാരഡൈസോ ചലച്ചിത്ര ആസ്വാദനം (Cinema Paradiso)", "desc": "സൗഹൃദം, സിനിമാ പ്രണയം, ഗൃഹാതുരത്വം, ഒരു ചലച്ചിത്ര നിരൂപണം എങ്ങനെ തയ്യാറാക്കാം എന്നതിന്റെ ഘടനാ വിശകലനം.", "chref_idx": 13}]}];
+    const MODULES = [
+      {
+        "id": "mod1",
+        "name": "Module 1 · കേൾവി വൈദഗ്ദ്ധ്യം (Listening Skills)",
+        "theme": {"border": "#fda4af", "bg": "#fff1f2", "color": "#be123c", "glow": "rgba(225, 29, 72, 0.4)"},
+        "chapters": [
+          {
+            "id": "eng-mod1-ch1",
+            "label": "എനിക്കൊരു സ്വപ്നമുണ്ട് (I Have a Dream - Martin Luther King Jr.)",
+            "title": "English · Module 1 · എനിക്കൊരു സ്വപ്നമുണ്ട് (I Have a Dream - Martin Luther King Jr.)",
+            "desc": "ലിങ്കൺ മെമ്മോറിയൽ പ്രസംഗം (Lincoln Memorial Speech), പൗരാവകാശ സമരം (Civil Rights Movement), അഹിംസാ സിദ്ധാന്തം (Non-violence), വംശീയ വിവേചനത്തിനെതിരെയുള്ള വാഗ്ദാനങ്ങൾ.",
+            "chref_idx": 0,
+            "pdf_url": "English/Malayalam PDF/English_Module_1_Ch1_I_Have_A_Dream_Malayalam.pdf"
+          },
+          {
+            "id": "eng-mod1-ch2",
+            "label": "ആന്തം — ഗീതം (Anthem - Leonard Cohen)",
+            "title": "English · Module 1 · ആന്തം — ഗീതം (Anthem - Leonard Cohen)",
+            "desc": "അപൂർണ്ണതകളിലൂടെ പ്രവേശിക്കുന്ന പ്രത്യാശയുടെ വെളിച്ചം (Light Through the Cracks), കാവ്യഭംഗി (Poetic Imagery), പ്രതീകങ്ങൾ, ആത്മീയ ദർശനം.",
+            "chref_idx": 1,
+            "pdf_url": "English/Malayalam PDF/English_Module_1_Ch2_Anthem_Malayalam.pdf"
+          },
+          {
+            "id": "eng-mod1-ch3",
+            "label": "സാമൂഹിക സേവനമായി കല (Art as Social Work - E.K. Nayanar)",
+            "title": "English · Module 1 · സാമൂഹിക സേവനമായി കല (Art as Social Work - E.K. Nayanar)",
+            "desc": "സാമൂഹിക പ്രതിബദ്ധത (Social Commitment in Art), ജനകീയ സംസ്കാരം (People's Culture), സാംസ്കാരിക മുന്നേറ്റം, സാധാരണക്കാരന്റെ ജീവിത യാഥാർത്ഥ്യങ്ങൾ.",
+            "chref_idx": 2,
+            "pdf_url": "English/Malayalam PDF/English_Module_1_Ch3_Art_As_Social_Work_Malayalam.pdf"
+          }
+        ]
+      },
+      {
+        "id": "mod2",
+        "name": "Module 2 · സംസാര വൈദഗ്ദ്ധ്യം (Speaking Skills)",
+        "theme": {"border": "#fdba74", "bg": "#fff7ed", "color": "#c2410c", "glow": "rgba(234, 88, 12, 0.4)"},
+        "chapters": [
+          {
+            "id": "eng-mod2-ch1",
+            "label": "സെയിൽസ്മാന്റെ മരണം (Death of a Salesman - Arthur Miller)",
+            "title": "English · Module 2 · സെയിൽസ്മാന്റെ മരണം (Death of a Salesman - Arthur Miller)",
+            "desc": "അമേരിക്കൻ സ്വപ്നത്തിന്റെ തകർച്ച (Collapse of the American Dream), കുടുംബ ബന്ധങ്ങളിലെ വിള്ളലുകൾ (Family Dynamics), വില്ലി ലോമന്റെ ദുരന്തം.",
+            "chref_idx": 3,
+            "pdf_url": "English/Malayalam PDF/English_Module_2_Ch2_Death_Of_A_Salesman_Malayalam.pdf"
+          },
+          {
+            "id": "eng-mod2-ch2",
+            "label": "അത് വലിച്ചുകീറുക (Rip It Out - Dead Poets Society)",
+            "title": "English · Module 2 · അത് വലിച്ചുകീറുക (Rip It Out - Dead Poets Society)",
+            "desc": "പരമ്പരാഗത ചിന്തകളെ വെല്ലുവിളിക്കൽ (Challenging Orthodoxy), വ്യക്തിസ്വാതന്ത്ര്യം (Individual Expression), അധ്യാപന രീതി (Unconventional Pedagogy).",
+            "chref_idx": 4,
+            "pdf_url": "English/Malayalam PDF/English_Module_2_Ch3_Rip_It_Out_Malayalam.pdf"
+          }
+        ]
+      },
+      {
+        "id": "mod3",
+        "name": "Module 3 · വായനാ വൈദഗ്ദ്ധ്യം (Reading Skills)",
+        "theme": {"border": "#c4b5fd", "bg": "#f5f3ff", "color": "#6d28d9", "glow": "rgba(124, 58, 237, 0.4)"},
+        "chapters": [
+          {
+            "id": "eng-mod3-ch1",
+            "label": "വായനാ തന്ത്രങ്ങൾ (Reading Strategies & Comprehension)",
+            "title": "English · Module 3 · വായനാ തന്ത്രങ്ങൾ (Reading Strategies & Comprehension)",
+            "desc": "സ്കിമ്മിംഗ് & സ്കാനിംഗ് (Skimming & Scanning), ഗ്രഹണശേഷി വർദ്ധിപ്പിക്കൽ (Active Reading Strategies), ഘടനാ വിശകലനം (Text Structure Analysis).",
+            "chref_idx": 5,
+            "pdf_url": "English/Malayalam PDF/English_Module_3_Ch1_Reading_Skills_Intro_Malayalam.pdf"
+          },
+          {
+            "id": "eng-mod3-ch2",
+            "label": "രണ്ടാം വരവ് (The Second Coming - W.B. Yeats)",
+            "title": "English · Module 3 · രണ്ടാം വരവ് (The Second Coming - W.B. Yeats)",
+            "desc": "ആധുനിക ലോകത്തിലെ അരാജകത്വം (Modernist Chaos), ചരിത്രത്തിന്റെ ചക്രങ്ങൾ (Gyres of History), അപ്പോക്കലിപ്റ്റിക് ദർശനം (Apocalyptic Vision).",
+            "chref_idx": 6,
+            "pdf_url": "English/Malayalam PDF/English_Module_3_Ch2_The_Second_Coming_Malayalam.pdf"
+          },
+          {
+            "id": "eng-mod3-ch3",
+            "label": "തവള രാജകുമാരൻ (The Frog Prince - Stevie Smith)",
+            "title": "English · Module 3 · തവള രാജകുമാരൻ (The Frog Prince - Stevie Smith)",
+            "desc": "പരമ്പരാഗത യക്ഷിക്കഥകളുടെ പുനർവായന (Subversion of Fairy Tales), നിലനിൽപ്പിന്റെ പ്രതിസന്ധി (Existential Dilemma), പരിവർത്തന ഭയം.",
+            "chref_idx": 7,
+            "pdf_url": "English/Malayalam PDF/English_Module_3_Ch3_The_Frog_Prince_Malayalam.pdf"
+          },
+          {
+            "id": "eng-mod3-ch4",
+            "label": "ശുഭാപ്തിവിശ്വാസം (Optimism - Helen Keller)",
+            "title": "English · Module 3 · ശുഭാപ്തിവിശ്വാസം (Optimism - Helen Keller)",
+            "desc": "പ്രതിസന്ധികളെ അതിജീവിക്കൽ (Overcoming Adversity), ആന്തരിക ശക്തി (Inner Strength), മാനവിക ദർശനം (Humanistic Worldview).",
+            "chref_idx": 8,
+            "pdf_url": "English/Malayalam PDF/English_Module_3_Ch4_Optimism_Helen_Keller_Malayalam.pdf"
+          }
+        ]
+      },
+      {
+        "id": "mod4",
+        "name": "Module 4 · എഴുത്ത് വൈദഗ്ദ്ധ്യം (Writing Skills)",
+        "theme": {"border": "#6ee7b7", "bg": "#ecfdf5", "color": "#047857", "glow": "rgba(16, 185, 129, 0.4)"},
+        "chapters": [
+          {
+            "id": "eng-mod4-ch1",
+            "label": "എഴുത്ത് വൈദഗ്ദ്ധ്യം (Writing Skills, Notices & Reports)",
+            "title": "English · Module 4 · എഴുത്ത് വൈദഗ്ദ്ധ്യം (Writing Skills, Notices, Minutes & Reports)",
+            "desc": "ഔദ്യോഗിക എഴുത്ത് രീതികൾ (Formal Writing Techniques), അജണ്ട & മിനിറ്റ്സ് (Agenda & Minutes), റിപ്പോർട്ട് തയ്യാറാക്കൽ (Report Writing).",
+            "chref_idx": 9,
+            "pdf_url": "English/Malayalam PDF/English_Module_4_Ch1_Writing_Skills_Intro_Malayalam.pdf"
+          },
+          {
+            "id": "eng-mod4-ch2",
+            "label": "1936 പ്രസംഗം (Annihilation of Caste - B.R. Ambedkar)",
+            "title": "English · Module 4 · 1936 പ്രസംഗം (Annihilation of Caste - B.R. Ambedkar)",
+            "desc": "ജാതി വ്യവസ്ഥിതിക്കെതിരെയുള്ള വിമർശനം (Critique of Caste Hierarchy), സാമൂഹിക നീതി (Social Justice), ജനാധിപത്യ മൂല്യങ്ങൾ (Democratic Values).",
+            "chref_idx": 10,
+            "pdf_url": "English/Malayalam PDF/English_Module_4_Ch2_Ambedkar_1936_Speech_Malayalam.pdf"
+          },
+          {
+            "id": "eng-mod4-ch3",
+            "label": "ലോകപ്രശസ്തമായ മൂക്ക് (The World-Renowned Nose - Basheer)",
+            "title": "English · Module 4 · ലോകപ്രശസ്തമായ മൂക്ക് (The World-Renowned Nose - Basheer)",
+            "desc": "രാഷ്ട്രീയ ആക്ഷേപഹാസ്യം (Political Satire), സമൂഹത്തിന്റെ കാപട്യം (Social Hypocrisy), മാധ്യമ സെൻസേഷണലിസം (Media Sensationalism).",
+            "chref_idx": 11,
+            "pdf_url": "English/Malayalam PDF/English_Module_4_Ch3_Basheer_World_Renowned_Nose_Malayalam.pdf"
+          },
+          {
+            "id": "eng-mod4-ch4",
+            "label": "സിനിമ പാരഡീസോ (Cinema Paradiso Film Review)",
+            "title": "English · Module 4 · സിനിമ പാരഡീസോ (Cinema Paradiso Film Review)",
+            "desc": "ചലച്ചിത്രാസ്വാദന കല (Film Appreciation & Review), നൊസ്റ്റാൾജിയ (Nostalgia), സിനിമാ സംസ്കാരം (Cinematic Culture).",
+            "chref_idx": 12,
+            "pdf_url": "English/Malayalam PDF/English_Module_4_Ch4_Cinema_Paradiso_Review_Malayalam.pdf"
+          }
+        ]
+      }
+    ];
 
     const ALL_CHAPTERS = [];
     MODULES.forEach(m => {
@@ -4565,6 +4895,10 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
       document.getElementById('soc-active-title').textContent = chapter.title;
       document.getElementById('soc-active-desc').textContent = chapter.desc;
       document.getElementById('soc-reading-badge-text').textContent = 'Currently Reading: ' + chapter.label;
+      const pdfBtn = document.getElementById('soc-download-pdf-btn');
+      if (pdfBtn && chapter.pdf_url) {
+        pdfBtn.href = chapter.pdf_url;
+      }
 
       const prevBtn = document.getElementById('soc-prev-btn');
       const nextBtn = document.getElementById('soc-next-btn');
