@@ -71,17 +71,19 @@
                   radial-gradient(circle at 90% 90%, #ede9fe 0%, transparent 45%),
                   #f1f5f9;
       color: var(--text-main);
-      line-height: 1.4;
+      line-height: 1.45;
       -webkit-font-smoothing: antialiased;
-      padding: 10px 12px;
+      padding: 24px 16px 48px;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      overflow-x: hidden;
     }
 
     .wrap {
-      max-width: 860px;
+      max-width: 880px;
       width: 100%;
       margin: 0 auto;
     }
@@ -89,11 +91,10 @@
     .card {
       background: var(--card-bg);
       border-radius: var(--radius-xl);
-      padding: 18px 24px;
-      box-shadow: var(--shadow-xl);
-      border: 1px solid rgba(255, 255, 255, 0.85);
+      padding: 24px 28px;
+      box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+      border: 1px solid rgba(226, 232, 240, 0.9);
       position: relative;
-      overflow: hidden;
     }
 
     .hidden {
@@ -325,44 +326,154 @@
       letter-spacing: 0.04em;
     }
 
-    /* INPUT CARD */
+    /* CANDIDATE INPUT CARD & BEACON BLINK */
+    @keyframes beaconGlowPulse {
+      0%, 100% {
+        border-color: #059669;
+        box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.35), 0 0 20px rgba(16, 185, 129, 0.45);
+        background-color: #ffffff;
+        transform: scale(1);
+      }
+      50% {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 4.5px rgba(37, 99, 235, 0.45), 0 0 28px rgba(59, 130, 246, 0.6);
+        background-color: #f0fdf4;
+        transform: scale(1.008);
+      }
+    }
+
+    @keyframes badgePillPulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        box-shadow: 0 2px 10px rgba(5, 150, 105, 0.5);
+      }
+      50% {
+        opacity: 0.88;
+        transform: scale(1.04);
+        background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+        box-shadow: 0 4px 18px rgba(29, 78, 216, 0.65);
+      }
+    }
+
+    @keyframes liveDotPing {
+      0% { transform: scale(0.9); opacity: 1; }
+      50% { transform: scale(1.45); opacity: 0.35; }
+      100% { transform: scale(0.9); opacity: 1; }
+    }
+
+    @keyframes shakeCardError {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+
     .input-card {
       background: #f8fafc;
-      border: 1px solid #cbd5e1;
+      border: 1.5px solid #cbd5e1;
       border-radius: var(--radius-md);
-      padding: 12px 14px;
-      margin-bottom: 14px;
+      padding: 16px 18px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 14px -3px rgba(15, 23, 42, 0.05);
+      transition: all 0.2s ease;
+    }
+
+    .name-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
     }
 
     .input-label {
-      display: block;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: #334155;
-      margin-bottom: 4px;
+      color: #1e293b;
+      margin-bottom: 0;
+    }
+
+    .input-label-primary {
+      color: #0f172a;
+    }
+
+    .input-label-mal {
+      font-family: 'Manjari', sans-serif;
+      font-size: 12px;
+      color: #4f46e5;
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    .name-blink-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Plus Jakarta Sans', 'Manjari', sans-serif;
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #ffffff;
+      padding: 4px 11px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      animation: badgePillPulse 1.7s infinite ease-in-out;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .name-blink-dot {
+      width: 7px;
+      height: 7px;
+      background: #ffffff;
+      border-radius: 50%;
+      display: inline-block;
+      animation: liveDotPing 1.2s infinite ease-in-out;
     }
 
     .name-input-wrapper {
       display: flex;
       align-items: center;
       background: #ffffff;
-      border: 1.5px solid #cbd5e1;
+      border: 2px solid #cbd5e1;
       border-radius: var(--radius-sm);
-      padding: 4px 10px;
-      gap: 8px;
-      transition: all 0.15s ease;
+      padding: 8px 12px;
+      gap: 10px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .name-input-wrapper:focus-within {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px var(--primary-glow);
+    .name-input-wrapper.name-beacon-pulse {
+      animation: beaconGlowPulse 1.8s infinite ease-in-out;
+    }
+
+    .name-input-wrapper:focus-within,
+    .name-input-wrapper.is-filled {
+      animation: none !important;
+      border-color: #059669 !important;
+      box-shadow: 0 0 0 3.5px rgba(5, 150, 105, 0.25), 0 4px 14px rgba(5, 150, 105, 0.12) !important;
+      background-color: #ffffff !important;
+      transform: none !important;
+    }
+
+    .name-input-wrapper.shake-error {
+      animation: shakeCardError 0.4s ease-in-out !important;
+      border-color: #dc2626 !important;
+      box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.35), 0 0 22px rgba(220, 38, 38, 0.45) !important;
     }
 
     .name-input-icon {
-      font-size: 16px;
+      font-size: 18px;
+      flex-shrink: 0;
     }
 
     .name-input-wrapper input {
@@ -370,19 +481,35 @@
       border: 0;
       outline: 0;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 700;
       color: #0f172a;
       background: transparent;
-      padding: 4px 0;
+      padding: 2px 0;
+    }
+
+    .name-input-wrapper input::placeholder {
+      color: #94a3b8;
+      font-weight: 600;
+      font-size: 13.5px;
+    }
+
+    .name-input-action-hint {
+      font-size: 16px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
     }
 
     .start-error-msg {
       color: #dc2626;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
-      margin-top: 4px;
+      margin-top: 6px;
       display: none;
+      padding: 4px 8px;
+      background: #fef2f2;
+      border-radius: 6px;
+      border-left: 3px solid #dc2626;
     }
 
     .subject-pill-row {
@@ -1233,52 +1360,156 @@
       font-weight: 800;
     }
 
-    /* RESPONSIVE MOBILE VIEW (MAX-WIDTH: 600PX) */
-    @media (max-width: 600px) {
+    /* RESPONSIVE MOBILE & TABLET VIEW (MAX-WIDTH: 640PX) */
+    @media (max-width: 640px) {
       body {
-        padding: 4px;
-        height: 100vh;
-        max-height: 100dvh;
-        overflow: hidden;
+        padding: 8px 8px 32px;
+        min-height: 100vh;
+        height: auto;
+        overflow-y: auto;
+        display: block;
       }
       .wrap {
-        height: 100%;
-        max-height: 100dvh;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
       }
       .card {
-        padding: 8px 10px 10px !important;
-        border-radius: 12px !important;
-        height: 100%;
-        max-height: calc(100dvh - 8px);
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
+        padding: 14px 12px 18px !important;
+        border-radius: 16px !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
       }
       #start {
-        overflow-y: auto !important;
-        scrollbar-width: none !important;
-      }
-      #start::-webkit-scrollbar {
-        display: none !important;
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+        padding: 14px 12px 18px !important;
       }
       #result {
-        overflow-y: auto !important;
-        scrollbar-width: none !important;
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+        padding: 14px 12px 18px !important;
       }
-      #result::-webkit-scrollbar {
-        display: none !important;
+      .hero-title {
+        font-size: 20px !important;
+        line-height: 1.3 !important;
       }
-      .hero-title { font-size: 19px !important; }
-      .hero-subtitle { font-size: 11px !important; margin-bottom: 8px; }
-      .exam-specs-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 5px; }
-      .student-dossier-card { grid-template-columns: repeat(2, 1fr) !important; gap: 5px; }
-      .metrics-stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 5px; }
-
-      .quiz-header {
-        padding-bottom: 5px !important;
+      .hero-subtitle {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 10px !important;
+      }
+      .start-badge-row {
+        gap: 6px !important;
+        margin-bottom: 10px !important;
+      }
+      .pill-badge {
+        font-size: 9.5px !important;
+        padding: 3px 8px !important;
+      }
+      .exam-specs-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .spec-card {
+        padding: 10px 8px !important;
+      }
+      .spec-icon {
+        font-size: 16px !important;
+      }
+      .spec-value {
+        font-size: 13.5px !important;
+      }
+      .spec-label {
+        font-size: 8.5px !important;
+      }
+      .input-card {
+        padding: 12px 12px !important;
+        margin-bottom: 12px !important;
+      }
+      .name-label-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
         gap: 6px !important;
       }
-      .quiz-progress-info {
+      .name-blink-badge {
+        font-size: 9.5px !important;
+        padding: 3px 8px !important;
+      }
+      .name-input-wrapper {
+        padding: 8px 10px !important;
+      }
+      .name-input-wrapper input {
+        font-size: 16px !important; /* Prevents auto-zoom on iOS Safari */
+      }
+      .name-input-wrapper input::placeholder {
+        font-size: 12px !important;
+      }
+      .subject-pill-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 4px !important;
+        font-size: 10px !important;
+      }
+      .start-cta-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+      }
+      .btn-start-large {
+        width: 100% !important;
+        justify-content: center !important;
+        font-size: 15px !important;
+        padding: 13px !important;
+      }
+      .start-notice {
+        text-align: center !important;
+        font-size: 10.5px !important;
+      }
+      .sg-preview-wrap {
+        margin-top: 18px !important;
+        padding-top: 16px !important;
+      }
+      .sg-heading {
+        font-size: 16px !important;
+      }
+      .sg-intro {
+        font-size: 12px !important;
+      }
+      .sg-syllabus-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+      .sample-q-opts {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Quiz Active State on Mobile */
+      body.quiz-active {
+        padding: 4px !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        overflow: hidden !important;
+      }
+      body.quiz-active .wrap {
+        height: 100% !important;
+        max-height: 100dvh !important;
+      }
+      body.quiz-active #test {
+        padding: 8px 10px 10px !important;
+        border-radius: 12px !important;
+        height: 100% !important;
+        max-height: calc(100dvh - 8px) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+      }
+      .quiz-header {
+        padding-bottom: 5px !important;
         gap: 6px !important;
       }
       .progress-pill {
@@ -1288,116 +1519,62 @@
         font-size: 13px !important;
       }
       .progress-bar-container {
-        width: 48px !important;
+        width: 44px !important;
         height: 4px !important;
       }
       .lang-switcher .lang-btn {
-        padding: 2px 5px !important;
-        font-size: 9px !important;
+        padding: 2px 6px !important;
+        font-size: 9.5px !important;
       }
       .quiz-timer-hud {
         padding: 2px 7px !important;
         gap: 4px !important;
-        flex-shrink: 0 !important;
-      }
-      .timer-icon {
-        font-size: 11px !important;
-      }
-      .timer-label {
-        display: none !important;
       }
       .timer-digits {
         font-size: 13.5px !important;
       }
-
-      .quiz-top-pinned {
-        flex-shrink: 0;
-        margin-bottom: 8px !important;
-        padding-bottom: 8px !important;
-        border-bottom: 2px solid #e2e8f0 !important;
-        background: var(--card-bg);
-      }
-      .palette-toggle-row {
-        margin: 5px 0 4px !important;
-      }
-      .palette-heading {
-        font-size: 9.5px !important;
-        font-weight: 800 !important;
-      }
-      #paletteSummary {
-        font-size: 9.5px !important;
-      }
       .palette-container {
         grid-template-columns: repeat(15, 1fr) !important;
         gap: 2.5px !important;
-        margin-bottom: 0 !important;
       }
       .nav-btn {
-        height: 20px !important;
+        height: 22px !important;
         font-size: 9.5px !important;
-        font-weight: 700 !important;
-        border-radius: 4px !important;
-      }
-
-      .drag-handle-bar {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        padding: 2px 0 6px !important;
-      }
-      .drag-indicator {
-        width: 36px;
-        height: 4px;
-        background: #cbd5e1;
-        border-radius: 999px;
       }
       .question-box {
-        flex: 1;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
+        flex: 1 !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        overscroll-behavior: contain !important;
         padding-top: 4px !important;
         padding-bottom: 32px !important;
-        scrollbar-width: none !important;
-      }
-      .question-box::-webkit-scrollbar {
-        display: none !important;
-        width: 0 !important;
-      }
-      .q-meta-row {
-        margin-bottom: 6px !important;
-      }
-      .q-category-tag {
-        font-size: 8.5px !important;
-        padding: 2px 6px !important;
       }
       .q-text {
-        font-size: 14px !important;
+        font-size: 14.5px !important;
         line-height: 1.35 !important;
-        margin-bottom: 8px !important;
-      }
-      .options-list {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 7px !important;
-        margin: 8px 0 12px !important;
       }
       .opt-card {
-        padding: 7px 11px !important;
+        padding: 9px 11px !important;
         border-radius: 8px !important;
+        min-height: 44px !important;
       }
       .opt-letter {
-        width: 22px !important;
-        height: 22px !important;
-        font-size: 11px !important;
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 11.5px !important;
       }
       .opt-text {
-        font-size: 12.5px !important;
-        line-height: 1.3 !important;
+        font-size: 13px !important;
+        line-height: 1.35 !important;
       }
-      .explanation-drawer {
-        margin-top: 10px !important;
-        padding: 10px 12px !important;
+      .quiz-footer-nav {
+        gap: 6px !important;
+        padding-top: 6px !important;
+      }
+      .student-dossier-card,
+      .metrics-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
       }
     }
 
@@ -1779,17 +1956,27 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
     </div>
 
     <!-- Candidate Input Card -->
-    <div class="input-card">
-      <label class="input-label" for="candidateName">Candidate Full Name</label>
-      <div class="name-input-wrapper">
-        <span class="name-input-icon">👤</span>
-        <input id="candidateName" type="text" autocomplete="off" maxlength="40" placeholder="Enter your full name to generate your practice report">
+    <div class="input-card" id="candidateInputCard">
+      <div class="name-label-row">
+        <label class="input-label" for="candidateName">
+          <span class="input-label-primary">Candidate Full Name</span>
+          <span class="input-label-mal">വിദ്യാർത്ഥിയുടെ പേര്</span>
+        </label>
+        <div class="name-blink-badge" id="namePromptBadge" title="Required to start assessment">
+          <span class="name-blink-dot"></span>
+          <span class="name-blink-text" id="namePromptText">✍️ ENTER NAME HERE · പേര് നൽകുക</span>
+        </div>
       </div>
-      <div id="startError" class="start-error-msg">⚠️ Please enter your name to begin the assessment.</div>
+      <div class="name-input-wrapper name-beacon-pulse" id="nameInputWrapper">
+        <span class="name-input-icon">👤</span>
+        <input id="candidateName" type="text" autocomplete="off" maxlength="40" placeholder="Type your full name here to unlock assessment...">
+        <span class="name-input-action-hint" id="nameStatusHint">✍️</span>
+      </div>
+      <div id="startError" class="start-error-msg">⚠️ Please enter your full name in the blinking box above to start the assessment.</div>
 
       <div class="subject-pill-row">
         <span>Course Code: <b>ECO1-DEV-01 (Semester 1)</b></span>
-        <span class="subject-active-tag">✨ Indian Economy</span>
+        <span class="subject-active-tag">✨ Development Issues in Indian Economy</span>
       </div>
     </div>
 
@@ -1812,7 +1999,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
       <div class="sg-mod-box"><h3>4. Poverty, Banking &amp; Fiscal Policy</h3><p>Inclusive growth, unemployment metrics, RBI monetary tools, GST framework, and Human Development Index.</p></div>
       </div>
 
-      <div class="sg-protection-pill">🔒 View-Only Protected Study Bank · Saving &amp; Printing Disabled</div>
+      <div class="sg-protection-pill">🏛️ Academic Hub Official Study Bank · Calicut University Syllabus</div>
       <h3 class="sg-subheading">Complete Question Bank — All 201 Solved MCQs &amp; Explanations</h3>
       <div class="sample-q-grid">
       <article class="sample-q-card">
@@ -3682,10 +3869,17 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
     candidateName = $('candidateName').value.trim();
     if (!candidateName) {
       $('startError').style.display = 'block';
+      const wrapper = $('nameInputWrapper');
+      if (wrapper) {
+        wrapper.classList.remove('shake-error');
+        void wrapper.offsetWidth;
+        wrapper.classList.add('shake-error');
+      }
       $('candidateName').focus();
       return;
     }
     $('startError').style.display = 'none';
+    document.body.classList.add('quiz-active');
 
     testQuestions = shuffle(MASTER_QUESTIONS).slice(0, N).map((q, idx) => {
       const shuffledOpts = shuffle(q.options);
@@ -3985,6 +4179,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
   // PRACTICE RESULTS DISPLAY
   function showPracticeReport(correct, wrong, unanswered, attempted, pct, accuracy, auto) {
+    document.body.classList.remove('quiz-active');
     switchScreen('result');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -4228,8 +4423,10 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
     currentPos = 0;
     candidateName = '';
     $('candidateName').value = '';
+    document.body.classList.remove('quiz-active');
     switchScreen('start');
     rotateQuote();
+    if (typeof updateNameBlinkState === 'function') updateNameBlinkState();
   }
 
   $('startBtn').onclick = startTest;
@@ -4239,6 +4436,66 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
   $('saveReportBtn').onclick = saveReportHTML;
   $('printReportBtn').onclick = () => window.print();
   $('restartBtn').onclick = restartTest;
+
+  // Dynamic Candidate Name Input Watcher & Blinking Badge Manager
+  const candidateInput = $('candidateName');
+  const nameWrapper = $('nameInputWrapper');
+  const namePromptBadge = $('namePromptBadge');
+  const namePromptText = $('namePromptText');
+  const nameStatusHint = $('nameStatusHint');
+
+  function updateNameBlinkState() {
+    if (!candidateInput) return;
+    const val = candidateInput.value.trim();
+    if (val.length > 0) {
+      if (nameWrapper) {
+        nameWrapper.classList.remove('name-beacon-pulse');
+        nameWrapper.classList.remove('shake-error');
+        nameWrapper.classList.add('is-filled');
+      }
+      if (namePromptBadge) {
+        namePromptBadge.style.animation = 'none';
+        namePromptBadge.style.background = '#059669';
+        namePromptBadge.style.boxShadow = 'none';
+      }
+      if (namePromptText) {
+        namePromptText.textContent = '✅ NAME READY · പേര് രേഖപ്പെടുത്തി';
+      }
+      if (nameStatusHint) {
+        nameStatusHint.textContent = '✅';
+      }
+      $('startError').style.display = 'none';
+    } else {
+      if (nameWrapper) {
+        nameWrapper.classList.add('name-beacon-pulse');
+        nameWrapper.classList.remove('is-filled');
+      }
+      if (namePromptBadge) {
+        namePromptBadge.style.animation = '';
+        namePromptBadge.style.background = '';
+        namePromptBadge.style.boxShadow = '';
+      }
+      if (namePromptText) {
+        namePromptText.textContent = '✍️ ENTER NAME HERE · പേര് നൽകുക';
+      }
+      if (nameStatusHint) {
+        nameStatusHint.textContent = '✍️';
+      }
+    }
+  }
+
+  if (candidateInput) {
+    candidateInput.addEventListener('input', updateNameBlinkState);
+    candidateInput.addEventListener('focus', () => {
+      if (nameWrapper) nameWrapper.classList.remove('shake-error');
+    });
+  }
+
+  if (namePromptBadge && candidateInput) {
+    namePromptBadge.addEventListener('click', () => {
+      candidateInput.focus();
+    });
+  }
 
   $('candidateName').addEventListener('keydown', e => {
     if (e.key === 'Enter') startTest();

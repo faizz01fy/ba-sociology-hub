@@ -840,7 +840,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 13
+    "totalVideos": 18
   },
   "sociology": {
     "name": "Sociology (Introduction to Sociology)",
@@ -974,7 +974,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Masterclass (V2)",
-            "title": "English Video",
+            "title": "Micro vs Macro Sociology & Three Paradigms",
             "chapter": "Sociology · Module 2 · Practicing Sociology (സോഷ്യോളജി പ്രയോഗത്തിൽ - ഗവേഷണ രീതിശാസ്ത്രം)",
             "duration": "8:42",
             "youtubeId": "YEnG1YJ_vfs",
@@ -1125,7 +1125,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 03",
             "title": "സമൂഹം നമ്മളെ മനുഷ്യരാക്കുന്നു (How Society Makes Us Human) | Calicut Univ",
-            "chapter": "Module 03 · Unit 3.3 · നിർവ്വചനങ്ങൾ, 11 സവിശേഷതകൾ, അമല-കമല, 8 തരങ്ങൾ & LMS MCQs",
+            "chapter": "Module 03 · Unit 3.3 · നിർവ്വചനങ്ങൾ, 11 സവിശേഷതകൾ, അമല-കമല, 8 തരങ്ങൾ & Syllabus MCQs",
             "duration": "07:08",
             "youtubeId": "NpA6uopiRYk",
             "videoUrl": null,
@@ -1525,7 +1525,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 35
+    "totalVideos": 38
   },
   "philosophy-of-ai": {
     "name": "Philosophy of Artificial Intelligence",
@@ -2480,7 +2480,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 13
+    "totalVideos": 17
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",
@@ -2811,7 +2811,7 @@ window.VOICE_EXPLANATIONS_DATA = {
           },
           {
             "chapterNumber": "Unit 02",
-            "title": "സപ്ലൈ സിദ്ധാന്തവും വിപണി സവിശേഷതകളും (Supply: Law, Determinants & LMS Review)",
+            "title": "സപ്ലൈ സിദ്ധാന്തവും വിപണി സവിശേഷതകളും (Supply: Law, Determinants & Syllabus Review)",
             "chapter": "Academic Hub Special · സപ്ലൈ നിയമം, സപ്ലൈ ഫംഗ്ഷൻ & ഷിഫ്റ്റുകൾ",
             "duration": "08:59",
             "youtubeId": "gHAZ4EVPvv4",
@@ -3385,7 +3385,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 6
+    "totalVideos": 7
   },
   "hindi": {
     "name": "Hindi",
@@ -3830,6 +3830,6 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 0
+    "totalVideos": 14
   }
 };
