@@ -1507,8 +1507,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "Society & Sociology: Institutions, Structure & Change | BA Sociology Mod 4",
             "chapter": "Complete Module 4 Syllabus: Units 4.1 to 4.4 · Society, Types, Social Institutions, Status & Role, and Social Change",
             "duration": "39:17",
-            "youtubeId": "RePKojohKZA",
-            "thumbnail": "https://i.ytimg.com/vi/RePKojohKZA/hqdefault.jpg",
+            "youtubeId": "XkADHedVlI0",
+            "thumbnail": "https://i.ytimg.com/vi/XkADHedVlI0/hqdefault.jpg",
             "studyPoints": [
               "Society: Etymology (Latin 'socius' = companion/fellowship); Definitions by MacIver ('web of social relationships'), Ginsberg, and Cooley; Core characteristics: Likeness, Difference, Interdependence, Cooperation & Conflict, and Abstract nature; Evolutionary types: Agrarian (plow, feudalism, joint family), Industrial (steam, division of labor, urbanization, nuclear family), and Post-Industrial (Daniel Bell, service economy, technical class, knowledge axial principle).",
               "Social Institutions: Defined by Durkheim ('science of institutions'), Ginsberg, and Davis; Universal, permanent, normative regulatory frameworks; Primary vs Secondary institutions; W.G. Sumner's Crescive (customary/spontaneous) vs Enacted (statutory/deliberate); Family (nuclear, joint, extended; reproductive & socialization functions); Marriage (monogamy, polygamy: polygyny/polyandry; endogamy vs exogamy); Kinship: Consanguineous (blood) vs Affinal (marriage); Murdock's 3 degrees (8 primary, 33 secondary, 151 tertiary relatives) and kinship usages.",
@@ -3263,9 +3263,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ക്രിയാപദങ്ങളും വാക്യഘടനയും (Arabic Verbal Sentences & Tenses)",
             "chapter": "മാളീ (ഭൂതകാലം), മുളാരിഅ് (വർത്തമാനം/ഭാവി), അംറ് (ആജ്ഞാ ക്രിയകൾ), ജുംല ഫിഅ്ലിയ്യ & നാമവിശേഷണ വാക്യങ്ങൾ",
             "duration": "20:00",
-            "youtubeId": "HCfIXzbRcJI",
+            "youtubeId": null,
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/HCfIXzbRcJI/hqdefault.jpg",
+            "thumbnail": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
             "language": "Arabic",
             "studyPoints": [
               "<strong>അൽ-ഫിഅ്ലുൽ മാളീ (Past Tense):</strong> അടിസ്ഥാന ത്രിയക്ഷര രൂപം (ഉദാ: കതബ, ഫഅല, ദഹബ). കർത്താവിന്റെ ലിംഗ-വചനത്തിനനുസരിച്ചുള്ള 14 സംയോജന രൂപങ്ങൾ (Conjugation).",
