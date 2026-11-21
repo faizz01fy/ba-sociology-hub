@@ -124,3 +124,53 @@
   - AI Assistant / ChatGPT: 172 sessions (**83.72% engagement rate**, 94 sessions in last 7 days!)
   - Organic Search: 88 sessions (68.2% engagement, 53 sessions in last 7 days)
   - Video: 28 sessions (78.6% engagement, 27 sessions in last 7 days)
+
+
+# Academic Hub Comprehensive Periodic Audit & Monitoring (2026-11-21 19:25:00 IST)
+
+## 1. Live Edge Health & Link Validation
+- **Homepage (https://academichubfaiz.in/)**: HTTP 200 OK (Latency: 491ms, Cloudflare Edge)
+- **Robots Endpoint (/robots.txt)**: HTTP 200 OK (0 Disallows, full search engine crawl accessibility)
+- **Core XML Sitemap (/sitemap.xml)**: HTTP 200 OK (100 discovered URLs, read successfully by GSC on 21 Nov 2026)
+- **Video Sitemap (/sitemap-video.xml)**: HTTP 200 OK (171 active video guides)
+- **Retired Endpoint Protection (/psc-cracker)**: HTTP 404 with clean response (0 broken internal links linking to it)
+- **Deep Crawl Status**: Spidered **174 internal pages** with **0 broken URLs** (HTTP != 200), **0 duplicate AdSense scripts**, and **0 internal redirecting .html links**.
+
+## 2. Google Search Console & Indexing Health
+- **Total Clicks**: **11** (Up +10% from baseline)
+- **Total Impressions**: **79** (Up +2.6% from baseline)
+- **Average CTR**: **13.9%** (Strong educational intent)
+- **Average Position**: **7.0** (Top 10 ranking for core Calicut University keywords)
+- **Page Indexing Diagnostics**:
+  - Discovered - currently not indexed: 227 (Validation in progress, 0 failed)
+  - Crawled - currently not indexed: 70 (Validation in progress, 0 failed)
+  - Page with redirect: 84 (Clean canonical and protocol consolidations)
+  - Duplicate without user-selected canonical: 18
+  - Excluded by ‘noindex’ tag: 8 (Legitimate utility/admin exclusions)
+  - Security & Manual Actions: **0 issues detected** (100% clean green rating)
+
+## 3. Google AdSense Compliance (pub-6526381938888583)
+- **Site Review Status**: GETTING_READY (Day 5 of review cycle)
+- **Site Ownership**: Verified via <meta> & DNS
+- **ads.txt**: **Authorized** & crawled
+- **Policy Center**: **0 Violations / 0 Warnings**
+- **Content Enrichment Upgrades**: 
+  - Q1–Q60 on ethics-mock-test.html enriched with deep conceptual rationales, Malayalam translations (explanationMal), and distractor explanations (whyWrong).
+  - Q1–Q20 on economictest.html enriched with economic milestone reasoning.
+  - Mobile layout updated to native document scrolling with an active candidate name beacon pulse.
+
+## 4. Google Analytics 4 (Property 536980027)
+- **Total Sessions (28 Days)**: **3,021 sessions**
+- **Active Users**: **877** (+32 daily increase)
+- **New Users**: **724** (+31 daily increase)
+- **Average Engagement Time**: **6m 48s** (Exceptionally high depth for university study portal)
+- **Top Channels**: Direct (2,691), AI Assistant / ChatGPT (172 sessions, **83.72% engagement**), Organic Search (88 sessions, 68.2% engagement), YouTube (28 sessions).
+
+## 5. YouTube Channel & Closed-Loop SEO Sync
+- **Channel Identity**: Academic Hub (@academichub)
+- **Subscribers**: **36**
+- **Total Video Views**: **2,997**
+- **Total Videos**: **243** (171 public)
+- **Playlists Health**: **12 / 12 Playlists Public & Healthy** across all FYUGP subjects
+- **Title Length Guardrail**: **0 videos > 95 characters** (100% compliant with length and Indic font shaping standard)
+- **Closed-Loop Ecosystem**: Video cards directly bridge between YouTube and Academic Hub subject portals.
