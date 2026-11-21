@@ -337,8 +337,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ",
             "chapter": "മഹാകവി വൈലോപ്പിള്ളിയുടെ നിര്യാണത്തിലുള്ള അനുസ്മരണ കാവ്യം · രാഷ്ട്രീയ ആധുനികത · പ്രത്യാശയുടെ പൂർണ്ണചന്ദ്രൻ (Vailoppilli Memorial Masterpiece)",
             "duration": "09:08",
-            "youtubeId": "R8qF7GH0Zzg",
-            "thumbnail": "https://i.ytimg.com/vi/R8qF7GH0Zzg/hqdefault.jpg",
+            "youtubeId": "CdvG8bEp6W4",
+            "thumbnail": "https://i.ytimg.com/vi/CdvG8bEp6W4/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -2464,6 +2464,26 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "JWDBMSBYd1M",
             "thumbnail": "https://i.ytimg.com/vi/JWDBMSBYd1M/hqdefault.jpg",
             "malayalam_cc": true
+          },
+          {
+            "chapterNumber": "Masterclass",
+            "title": "Economic Inequality in India: Lorenz Curve, Gini & Piketty | English Masterclass",
+            "chapter": "Complete Module 3 Syllabus: Growth vs Distribution Trade-offs, Lorenz Curve Geometry, Gini Coefficient Formula, Ahluwalia-Chenery Index, Lucas Chancel & Thomas Piketty Findings, Regional & Inter-sectoral Disparities",
+            "duration": "15:04",
+            "youtubeId": "QuYuXhhwhnM",
+            "thumbnail": "https://i.ytimg.com/vi/QuYuXhhwhnM/hqdefault.jpg",
+            "studyPoints": [
+              "Economic Growth vs Income Distribution: Simon Kuznets inverted-U hypothesis; capital accumulation vs human capital trade-offs; why high GDP growth does not automatically trickle down.",
+              "Lorenz Curve & Geometric Inequality: Cumulative percentage of population vs cumulative percentage of income; 45° line of absolute equality; bowed departure area indicating depth of inequality.",
+              "Gini Coefficient Formula: Derivation G = A / (A + B) = 2A; bounded between 0 (perfect equality) and 1 (absolute monopoly); statistical measures including Range and Coefficient of Variation (CV = sigma / mu).",
+              "Ahluwalia-Chenery Social Welfare Index: Mathematical formulation G = sum(w_i * g_i); comparing GNP growth weights (favoring rich) vs Equal weights (one-person-one-vote) vs Poverty-weighted growth.",
+              "Post-1991 Liberalization & The Piketty-Chancel Landmark Study (1922-2015): 9-decade historical trajectory; decline under socialist planning (1950s-1980s) followed by sharp escalation post-1991; Top 1% capturing 22% and Top 10% capturing 56% of national income vs Bottom 50% receiving only 15%.",
+              "Regional & Inter-sectoral Disparities: Peninsular/Western states divergence from northern hinterland; agriculture (18% GDP, 45% workforce) vs capital-intensive services; progressive tax reforms and quality public goods as structural remedies."
+            ],
+            "examTip": "Calicut University FYUGP High-Yield Focus: Mathematical derivation of Gini coefficient from Lorenz curve, Ahluwalia-Chenery Social Welfare Index formula and weights, Chancel & Piketty's empirical findings on Indian inequality, and policy mechanisms to counter wealth concentration.",
+            "language": "English",
+            "lecturers": "Kore & Puck (Co-Teaching Academic Masterclass)",
+            "english_cc": true
           }
         ]
       },
@@ -2519,7 +2539,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 19
+    "totalVideos": 20
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",
