@@ -2403,6 +2403,26 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University Focus: 'Explain the three dimensions and twelve indicators of NITI Aayog's National Multidimensional Poverty Index (MPI)'.",
             "malayalam_cc": true
+          },
+          {
+            "chapterNumber": "Module 02 (Complete English Masterclass)",
+            "title": "Poverty Estimation in India: Tendulkar, Rangarajan & MPI | BA Economics Mod 2",
+            "chapter": "Complete Module 2 Syllabus: Concepts of Poverty, Sen's Capabilities, Calorie Norms, Lakdawala, Tendulkar, Rangarajan, URP/MRP Recall, Global & National MPI, IRDP & MGNREGA",
+            "duration": "18:30",
+            "youtubeId": "f9yP6M_-ZRI",
+            "thumbnail": "https://i.ytimg.com/vi/f9yP6M_-ZRI/hqdefault.jpg",
+            "studyPoints": [
+              "Concepts of Poverty & Amartya Sen's Capability Approach: Economic vs material deprivation; freedom and basic capabilities to function; removal of systemic unfreedoms (chronic disease, illiteracy).",
+              "Absolute vs Relative Poverty: Non-negotiable biological subsistence threshold vs relative income inequality and societal exclusion in advanced economies.",
+              "Poverty Line & Calorie Benchmarks: Rationale for household consumption expenditure (MPCE) over volatile informal income; Alagh Task Force nutritional norms (2,400 rural / 2,100 urban kcal).",
+              "Evolution of Expert Committees & Data Recall: Lakdawala (1973-74 basket & URP), Tendulkar (break from calories, MRP, ₹816 rural / ₹1000 urban), and Rangarajan (normative nutrition & non-food rent/transport, ₹972 rural / ₹1407 urban).",
+              "Multidimensional Poverty Index (MPI): Alkire-Foster dual cut-off method (MPI = H × A); 3 equal dimensions (Health, Education, Living Standards); 10 Global vs 12 NITI Aayog National MPI indicators (adding Maternal Health & Bank Accounts).",
+              "Alleviation Programmes & Critical Appraisal: Targeted rural schemes (SFDA, MFAL, Food for Work); IRDP capital subsidies and Sandeep Bagchee's critique of elite capture; MGNREGA 2005 statutory legal work guarantee, female empowerment, and agrarian land reform imperatives."
+            ],
+            "examTip": "Calicut University FYUGP High-Yield Focus: Differences between Tendulkar and Rangarajan poverty lines, URP vs MRP recall periods, Alkire-Foster MPI formula (MPI = H × A), provisions of MGNREGA 2005, and Sandeep Bagchee's critique of IRDP.",
+            "language": "English",
+            "lecturers": "Kore & Puck (Co-Teaching Academic Masterclass)",
+            "english_cc": true
           }
         ]
       },
@@ -2499,7 +2519,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 18
+    "totalVideos": 19
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",
