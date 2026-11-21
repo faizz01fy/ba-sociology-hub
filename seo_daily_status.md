@@ -80,3 +80,47 @@
   - Sessions: **892** | Engaged: **483** (54.15%) | Avg Engagement Time: **2m 31s**
   - Organic Search grew from 2.68% to **4.93%** (Avg engagement time: **6m 05s**)
   - AI Assistant / ChatGPT grew from 5.05% to **8.52%**
+
+
+# Academic Hub Daily SEO, Consoles & AdSense Status (2026-11-21 14:35:00 IST)
+
+## 1. Live Health & Edge Compliance
+- Homepage (`https://academichubfaiz.in/`): HTTP `200` OK (Fast edge delivery: 3.4s full settle)
+- Live `sitemap.xml`: `100` URLs (Success, read **TODAY: 21 Nov 2026**)
+- Live `sitemap-video.xml`: `171` URLs / Videos (Success, read 20 Nov 2026)
+- Edge UI: All 11 subjects active, 10 practice tests live, circular feeds synchronized.
+
+## 2. Google Search Console (Yesterday vs Today Comparison)
+- **Clicks**: 10 $\rightarrow$ **11** (+1 click / +10%)
+- **Impressions**: 77 $\rightarrow$ **79** (+2 impressions / +2.6%)
+- **CTR**: 13.0% $\rightarrow$ **13.9%** (+0.9% boost)
+- **Avg Position**: 7.1 $\rightarrow$ **7.0** (+0.1 ranking improvement)
+- **Top Queries**:
+  1. `academic hub faiz`: 3 clicks, 4 imp, 75.0% CTR, Pos: 1.2
+  2. `calicut university bsc mathematics 1st sem syllabus 2024`: 3 clicks, 6 imp, 50.0% CTR, Pos: 3.8
+  3. `calicut university bsc maths syllabus 2024`: 2 clicks, 4 imp, 50.0% CTR, Pos: 1.0
+  4. `ba sociology calicut university study material`: 1 click, 15 imp, Pos: 6.5
+- **Page Indexing**:
+  - Indexed Pages: **6** (Last GSC calculation snapshot Nov 16)
+  - Not Indexed Pages: **407**
+  - Validation: `Discovered - currently not indexed` (227 pending, 0 failed), `Crawled - currently not indexed` (70 pending, 0 failed).
+- **Security & Manual Actions**: 0 issues detected (Clean green status).
+
+## 3. Google AdSense (pub-6526381938888583)
+- Site Review Status: `GETTING_READY` (Day 5 of review, submitted 16 Nov 2026).
+- `ads.txt`: **Authorized** (Active & Crawled).
+- Policy Center: **0 Violations / 0 Warnings** ("No current issues. Good job!").
+
+## 4. Google Analytics 4 (Property 536980027)
+- **Realtime**: **6 active users** (US: San Jose & Los Angeles, Saudi Arabia: Jeddah, India: Perinthalmanna).
+- **Last 28 Days**:
+  - Active Users: **877** (up from 845 yesterday, **+32 new users**)
+  - New Users: **724** (up from 693 yesterday, **+31 users**)
+  - Avg Engagement Time: **6m 48s** (up from 6m 33s yesterday!)
+  - Total Sessions: **3,021** (surpassed 3K milestone!)
+  - Total Events: **22.5K** (up from 21K yesterday)
+- **Traffic Channels**:
+  - Direct: 2,691 sessions (62.4% engagement)
+  - AI Assistant / ChatGPT: 172 sessions (**83.72% engagement rate**, 94 sessions in last 7 days!)
+  - Organic Search: 88 sessions (68.2% engagement, 53 sessions in last 7 days)
+  - Video: 28 sessions (78.6% engagement, 27 sessions in last 7 days)
