@@ -900,7 +900,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Calicut University Focus: 'Explain the intellectual and social forces that contributed to the emergence of sociology'."
           },
           {
-            "chapterNumber": "Chapter 01 (English Masterclass)",
+            "chapterNumber": "Module 01 (Complete English Masterclass)",
             "title": "Introducing Sociology: Origin, Science, Nature & Scope | BA Sociology Mod 1",
             "chapter": "Complete Module 1 Syllabus: Historical Emergence, Founding Thinkers, Bierstedt's 7 Characteristics, Scope & Specialized Branches",
             "duration": "53:54",
@@ -1043,12 +1043,12 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Calicut University Focus: 'Differentiate between sociological knowledge and common sense with Anthony Giddens' coffee illustration'."
           },
           {
-            "chapterNumber": "Chapter 02 (English Masterclass)",
+            "chapterNumber": "Module 02 (Complete English Masterclass)",
             "title": "Practicing Sociology: Methods, Paradigms & Research Ethics | BA Sociology Mod 2",
             "chapter": "Complete Module 2 Syllabus: Interdisciplinary Relations, Common Sense Critique, Mills' Imagination, 7 Research Steps, Ethics & 3 Paradigms",
             "duration": "47:49",
-            "youtubeId": "Wcfz9-mgL1k",
-            "thumbnail": "https://i.ytimg.com/vi/Wcfz9-mgL1k/hqdefault.jpg",
+            "youtubeId": "u7AIjZb1y_U",
+            "thumbnail": "https://i.ytimg.com/vi/u7AIjZb1y_U/hqdefault.jpg",
             "studyPoints": [
               "Interdisciplinary Horizons: Sociology as the synthesizing web (Morris Ginsberg) connecting Political Science (power beyond the state), Economics (critique of Homo Economicus & Granovetter's embeddedness), Anthropology, History (idiographic vs nomothetic), and Social Psychology (Mead & Cooley's Looking-Glass Self).",
               "Common Sense vs. Scientific Sociology: Deconstructing unexamined, localized habits and victim-blaming dogmas; Peter Berger's debunking motif and Émile Durkheim's empirical study of Suicide.",
@@ -1357,8 +1357,29 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "qkcCarkAH6c",
             "thumbnail": "https://i.ytimg.com/vi/qkcCarkAH6c/hqdefault.jpg"
           }
+        ,
+          {
+            "chapterNumber": "Module 03 (Complete English Masterclass)",
+            "title": "Individual & Society: Interaction, Groups, Socialization & Control | BA Sociology Mod 3",
+            "chapter": "Complete Module 3 Syllabus: Units 3.1 to 3.6 · Social Interaction, Groups, Socialization, Agents, Theories of Self & Social Control",
+            "duration": "38:21",
+            "youtubeId": "6h5tkIREb1I",
+            "thumbnail": "https://i.ytimg.com/vi/6h5tkIREb1I/hqdefault.jpg",
+            "studyPoints": [
+                        "Social Interaction: Dynamic reciprocal influence between two or more persons (N.P. Gist, Dawson & Gettys); Park & Burgess prerequisites (social contact & communication); Five interaction forms: Cooperation (direct, indirect, primary, secondary, tertiary), Competition (impersonal/subconscious; economic, social, political, cultural), Conflict (personal/conscious/intermittent), Accommodation ('Antagonistic cooperation'; 7 methods: yield/coercion, compromise, arbitration, conciliation, toleration, conversion, sublimation), and Assimilation (cultural fusion).",
+                        "Social Groups: Structured human collectives with reciprocal relations and 'we-feeling' (Bottomore, Merton, Johnson); C.H. Cooley's Primary Groups (1909) as 'nurseries of human nature' defined by intimate face-to-face cooperation; Secondary Groups marked by large scale, formal contractual rules, and specialized division of labor; W.G. Sumner's In-Groups vs. Out-Groups and Ethnocentrism; Muzafer Sherif & Robert K. Merton's Reference Groups; Georg Simmel's Dyad vs. Triad dynamics; Crowds vs. Publics.",
+                        "The Socialization Process: Lifelong transformation of biological organisms into cultural personalities (Kimball Young, Anthony Giddens); Jeffrey Arnett's three core goals (impulse control/conscience, role preparation, cultivation of meaning); Eight socialization typologies: Primary, Anticipatory (Merton), Developmental, Resocialization (Erving Goffman's total institutions), Secondary, Adult, Gender, and Group socialization.",
+                        "Agencies of Socialization: Family as the premier primary agency imparting ascribed status, mother tongue, and foundational security; School as the formal secondary agency inculcating cognitive competence, the 'Hidden Curriculum', and meritocratic evaluation; Peer Groups providing horizontal equality and autonomous identity; Mass Media, Organized Religion, Workplace, and the State regulating normative behavior.",
+                        "Theories of Self & Development: Sigmund Freud's tripartite personality structure (Id, Ego, Superego) and five psychosexual stages (Oral, Anal, Phallic, Latency, Genital); George Herbert Mead's social interactionist dialectic of the spontaneous 'I' and the socialized 'Me', evolving across Imitation, Play, and Game stages into the 'Generalized Other'; Jean Piaget's cognitive development (Sensorimotor, Preoperational, Concrete Operational, Formal Operational).",
+                        "Social Control & Agencies: Mechanism maintaining social order and conformity (E.A. Ross, 1901; MacIver; Janowitz); Typologies by Karl Mannheim (Direct vs Indirect), Kimball Young (Positive vs Negative), C.H. Cooley (Conscious vs Unconscious), Georges Gurvitch, and Frederick Lumley; Formal control agencies (Law, State, Courts, Police, Formal Education) vs. Informal agencies (Family, Religion, Customs, Folkways, Mores, Public Opinion)."
+            ],
+            "examTip": "Calicut University Core Focus: Cooley's Primary Groups & looking-glass dynamics, Sumner's In-Group/Out-Group ethnocentrism, Merton's Anticipatory Socialization, Mead's 'I' vs. 'Me' and Generalized Other, Freud's Id/Ego/Superego, and E.A. Ross's Formal vs. Informal Social Control.",
+            "language": "English",
+            "lecturers": "Kore & Puck (Co-Teaching Academic Masterclass)",
+            "english_cc": true
+}
         ],
-        "totalVideos": 12
+        "totalVideos": 13
       },
       {
         "moduleName": "MODULE 04: SOCIOLOGY AND SOCIETY (FYUGP SOU1CJ101)",
@@ -1480,11 +1501,31 @@ window.VOICE_EXPLANATIONS_DATA = {
             "language": "Malayalam",
             "thumbnail": "https://i.ytimg.com/vi/jfBES35jpzw/hqdefault.jpg",
             "malayalam_cc": true
+          }          ,
+          {
+            "chapterNumber": "Module 04 (Complete English Masterclass)",
+            "title": "Society & Sociology: Institutions, Structure & Change | BA Sociology Mod 4",
+            "chapter": "Complete Module 4 Syllabus: Units 4.1 to 4.4 · Society, Types, Social Institutions, Status & Role, and Social Change",
+            "duration": "39:17",
+            "youtubeId": "RePKojohKZA",
+            "thumbnail": "https://i.ytimg.com/vi/RePKojohKZA/hqdefault.jpg",
+            "studyPoints": [
+              "Society: Etymology (Latin 'socius' = companion/fellowship); Definitions by MacIver ('web of social relationships'), Ginsberg, and Cooley; Core characteristics: Likeness, Difference, Interdependence, Cooperation & Conflict, and Abstract nature; Evolutionary types: Agrarian (plow, feudalism, joint family), Industrial (steam, division of labor, urbanization, nuclear family), and Post-Industrial (Daniel Bell, service economy, technical class, knowledge axial principle).",
+              "Social Institutions: Defined by Durkheim ('science of institutions'), Ginsberg, and Davis; Universal, permanent, normative regulatory frameworks; Primary vs Secondary institutions; W.G. Sumner's Crescive (customary/spontaneous) vs Enacted (statutory/deliberate); Family (nuclear, joint, extended; reproductive & socialization functions); Marriage (monogamy, polygamy: polygyny/polyandry; endogamy vs exogamy); Kinship: Consanguineous (blood) vs Affinal (marriage); Murdock's 3 degrees (8 primary, 33 secondary, 151 tertiary relatives) and kinship usages.",
+              "Social Structure: Underlying network of ordered relationships (Spencer organic analogy, Radcliffe-Brown arrangement of persons, Ginsberg complex of institutions); Harry M. Johnson's four foundational elements: Sub-groups, Roles, Norms, and Values.",
+              "Status and Role: Ralph Linton's landmark conceptualization (1936: The Study of Man); Status as an occupied structural position vs Role as the enacted behavioral dynamic; Ascribed status (birth, age, sex, caste) vs Achieved status (merit, education, occupation); Everett Hughes' Master Status; Gerhard Lenski's Status Inconsistency; Robert K. Merton's Role Set; William J. Goode's Role Strain vs Role Conflict; Erving Goffman's Role Distance.",
+              "Social Change: Significant alterations in social structures, institutions, and cultural patterns (Anderson & Parker, Davis, Gillin & Gillin); Primary catalytic factors: Demographic (fertility, mortality, migration), Technological (mechanization, automation, IT revolution), Cultural (Weber's Protestant Ethic, belief systems), and Geographical/Environmental; Three generative sources: Discovery, Invention, and Cultural Diffusion.",
+              "Calicut University Solved Exam Bank: Complete solutions for 2-mark conceptual definitions, 6-mark comparative analyses (Agrarian vs Industrial, Ascribed vs Achieved, Crescive vs Enacted, Strain vs Conflict), and 15-mark essay master frameworks."
+            ],
+            "examTip": "Calicut University FYUGP Core Focus: MacIver's 'web of social relationships', Linton's status/role duality, Merton's role-set vs role conflict, Sumner's crescive vs enacted institutions, Murdock's kinship degrees, and Ogburn/Weber theories of social change.",
+            "language": "English",
+            "lecturers": "Kore & Puck (Co-Teaching Academic Masterclass)",
+            "english_cc": true
           }
         ]
       }
     ],
-    "totalVideos": 34
+    "totalVideos": 35
   },
   "philosophy-of-ai": {
     "name": "Philosophy of Artificial Intelligence",
