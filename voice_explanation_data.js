@@ -336,9 +336,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 03",
             "title": "കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ",
             "chapter": "മഹാകവി വൈലോപ്പിള്ളിയുടെ നിര്യാണത്തിലുള്ള അനുസ്മരണ കാവ്യം · രാഷ്ട്രീയ ആധുനികത · പ്രത്യാശയുടെ പൂർണ്ണചന്ദ്രൻ (Vailoppilli Memorial Masterpiece)",
-            "duration": "16:53",
-            "youtubeId": "PYtXGzEyPgQ",
-            "thumbnail": "https://i.ytimg.com/vi/PYtXGzEyPgQ/hqdefault.jpg",
+            "duration": "09:08",
+            "youtubeId": "R8qF7GH0Zzg",
+            "thumbnail": "https://i.ytimg.com/vi/R8qF7GH0Zzg/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -1356,8 +1356,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "examTip": "Calicut University Focus: 'Elaborate G.H. Mead's theory of self-formation through the concepts of I, Me, and Generalized Other'.",
             "youtubeId": "qkcCarkAH6c",
             "thumbnail": "https://i.ytimg.com/vi/qkcCarkAH6c/hqdefault.jpg"
-          }
-        ,
+          },
           {
             "chapterNumber": "Module 03 (Complete English Masterclass)",
             "title": "Individual & Society: Interaction, Groups, Socialization & Control | BA Sociology Mod 3",
@@ -1366,18 +1365,18 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "6h5tkIREb1I",
             "thumbnail": "https://i.ytimg.com/vi/6h5tkIREb1I/hqdefault.jpg",
             "studyPoints": [
-                        "Social Interaction: Dynamic reciprocal influence between two or more persons (N.P. Gist, Dawson & Gettys); Park & Burgess prerequisites (social contact & communication); Five interaction forms: Cooperation (direct, indirect, primary, secondary, tertiary), Competition (impersonal/subconscious; economic, social, political, cultural), Conflict (personal/conscious/intermittent), Accommodation ('Antagonistic cooperation'; 7 methods: yield/coercion, compromise, arbitration, conciliation, toleration, conversion, sublimation), and Assimilation (cultural fusion).",
-                        "Social Groups: Structured human collectives with reciprocal relations and 'we-feeling' (Bottomore, Merton, Johnson); C.H. Cooley's Primary Groups (1909) as 'nurseries of human nature' defined by intimate face-to-face cooperation; Secondary Groups marked by large scale, formal contractual rules, and specialized division of labor; W.G. Sumner's In-Groups vs. Out-Groups and Ethnocentrism; Muzafer Sherif & Robert K. Merton's Reference Groups; Georg Simmel's Dyad vs. Triad dynamics; Crowds vs. Publics.",
-                        "The Socialization Process: Lifelong transformation of biological organisms into cultural personalities (Kimball Young, Anthony Giddens); Jeffrey Arnett's three core goals (impulse control/conscience, role preparation, cultivation of meaning); Eight socialization typologies: Primary, Anticipatory (Merton), Developmental, Resocialization (Erving Goffman's total institutions), Secondary, Adult, Gender, and Group socialization.",
-                        "Agencies of Socialization: Family as the premier primary agency imparting ascribed status, mother tongue, and foundational security; School as the formal secondary agency inculcating cognitive competence, the 'Hidden Curriculum', and meritocratic evaluation; Peer Groups providing horizontal equality and autonomous identity; Mass Media, Organized Religion, Workplace, and the State regulating normative behavior.",
-                        "Theories of Self & Development: Sigmund Freud's tripartite personality structure (Id, Ego, Superego) and five psychosexual stages (Oral, Anal, Phallic, Latency, Genital); George Herbert Mead's social interactionist dialectic of the spontaneous 'I' and the socialized 'Me', evolving across Imitation, Play, and Game stages into the 'Generalized Other'; Jean Piaget's cognitive development (Sensorimotor, Preoperational, Concrete Operational, Formal Operational).",
-                        "Social Control & Agencies: Mechanism maintaining social order and conformity (E.A. Ross, 1901; MacIver; Janowitz); Typologies by Karl Mannheim (Direct vs Indirect), Kimball Young (Positive vs Negative), C.H. Cooley (Conscious vs Unconscious), Georges Gurvitch, and Frederick Lumley; Formal control agencies (Law, State, Courts, Police, Formal Education) vs. Informal agencies (Family, Religion, Customs, Folkways, Mores, Public Opinion)."
+              "Social Interaction: Dynamic reciprocal influence between two or more persons (N.P. Gist, Dawson & Gettys); Park & Burgess prerequisites (social contact & communication); Five interaction forms: Cooperation (direct, indirect, primary, secondary, tertiary), Competition (impersonal/subconscious; economic, social, political, cultural), Conflict (personal/conscious/intermittent), Accommodation ('Antagonistic cooperation'; 7 methods: yield/coercion, compromise, arbitration, conciliation, toleration, conversion, sublimation), and Assimilation (cultural fusion).",
+              "Social Groups: Structured human collectives with reciprocal relations and 'we-feeling' (Bottomore, Merton, Johnson); C.H. Cooley's Primary Groups (1909) as 'nurseries of human nature' defined by intimate face-to-face cooperation; Secondary Groups marked by large scale, formal contractual rules, and specialized division of labor; W.G. Sumner's In-Groups vs. Out-Groups and Ethnocentrism; Muzafer Sherif & Robert K. Merton's Reference Groups; Georg Simmel's Dyad vs. Triad dynamics; Crowds vs. Publics.",
+              "The Socialization Process: Lifelong transformation of biological organisms into cultural personalities (Kimball Young, Anthony Giddens); Jeffrey Arnett's three core goals (impulse control/conscience, role preparation, cultivation of meaning); Eight socialization typologies: Primary, Anticipatory (Merton), Developmental, Resocialization (Erving Goffman's total institutions), Secondary, Adult, Gender, and Group socialization.",
+              "Agencies of Socialization: Family as the premier primary agency imparting ascribed status, mother tongue, and foundational security; School as the formal secondary agency inculcating cognitive competence, the 'Hidden Curriculum', and meritocratic evaluation; Peer Groups providing horizontal equality and autonomous identity; Mass Media, Organized Religion, Workplace, and the State regulating normative behavior.",
+              "Theories of Self & Development: Sigmund Freud's tripartite personality structure (Id, Ego, Superego) and five psychosexual stages (Oral, Anal, Phallic, Latency, Genital); George Herbert Mead's social interactionist dialectic of the spontaneous 'I' and the socialized 'Me', evolving across Imitation, Play, and Game stages into the 'Generalized Other'; Jean Piaget's cognitive development (Sensorimotor, Preoperational, Concrete Operational, Formal Operational).",
+              "Social Control & Agencies: Mechanism maintaining social order and conformity (E.A. Ross, 1901; MacIver; Janowitz); Typologies by Karl Mannheim (Direct vs Indirect), Kimball Young (Positive vs Negative), C.H. Cooley (Conscious vs Unconscious), Georges Gurvitch, and Frederick Lumley; Formal control agencies (Law, State, Courts, Police, Formal Education) vs. Informal agencies (Family, Religion, Customs, Folkways, Mores, Public Opinion)."
             ],
             "examTip": "Calicut University Core Focus: Cooley's Primary Groups & looking-glass dynamics, Sumner's In-Group/Out-Group ethnocentrism, Merton's Anticipatory Socialization, Mead's 'I' vs. 'Me' and Generalized Other, Freud's Id/Ego/Superego, and E.A. Ross's Formal vs. Informal Social Control.",
             "language": "English",
             "lecturers": "Kore & Puck (Co-Teaching Academic Masterclass)",
             "english_cc": true
-}
+          }
         ],
         "totalVideos": 13
       },
@@ -1501,7 +1500,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "language": "Malayalam",
             "thumbnail": "https://i.ytimg.com/vi/jfBES35jpzw/hqdefault.jpg",
             "malayalam_cc": true
-          }          ,
+          },
           {
             "chapterNumber": "Module 04 (Complete English Masterclass)",
             "title": "Society & Sociology: Institutions, Structure & Change | BA Sociology Mod 4",
@@ -2288,6 +2287,26 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University Focus: 'Trace the genesis of the 1991 Balance of Payments crisis and evaluate how the pledging of gold catalyzed the LPG reforms'.",
             "malayalam_cc": true
+          },
+          {
+            "chapterNumber": "Module 01 (Complete English Masterclass)",
+            "title": "Indian Economy: Colonial Legacy, Planning & 1991 Crisis | BA Economics Mod 1",
+            "chapter": "Complete Module 1 Syllabus: Growth vs Development, Sen's Capabilities, Colonial Drain, Planning Era, Green Revolution, 1991 Crisis, LPG Reforms & Indicators",
+            "duration": "18:46",
+            "youtubeId": "CzMEXTQEkhg",
+            "thumbnail": "https://i.ytimg.com/vi/CzMEXTQEkhg/hqdefault.jpg",
+            "studyPoints": [
+              "Economic Growth vs Multidimensional Development: Quantitative expansion of national GDP versus qualitative structural transformation, poverty eradication, and equitable living standards.",
+              "Amartya Sen's Capability Approach: Development conceptualized as the expansion of substantive human freedoms and capabilities to function, dismantling systemic unfreedoms (poverty, disease, illiteracy).",
+              "Colonial Exploitation & Dadabhai Naoroji's Drain of Wealth: British imperial subordinations, unrequited export surpluses, Home Charges, tariff manipulation, and devastating de-industrialization of indigenous handicrafts.",
+              "Agrarian Disruption & Planning Era (1951-1991): British land revenue systems (Zamindari, Ryotwari, Mahalwari), adoption of the Mixed Economy model, and the Mahalanobis heavy industrialization strategy.",
+              "Agricultural Breakthrough & 1991 LPG Reforms: High-Yielding Variety Green Revolution biochemical package; 1991 Balance of Payments crisis, gold airlift, and New Economic Policy (Liberalisation, Disinvestment Privatisation, FDI Globalisation).",
+              "Welfare Barometers & Exam Review: Real vs Nominal GDP, Per Capita Income formula, Morris D. Morris PQLI, UNDP Human Development Index (HDI), Ragnar Nurkse's Vicious Circles of Poverty, and 3/6/10-mark university question strategy."
+            ],
+            "examTip": "Calicut University FYUGP High-Yield Focus: Dadabhai Naoroji's Drain of Wealth, Mahalanobis heavy capital goods strategy, triggers of the 1991 Balance of Payments crisis, LPG reforms appraisal, and Amartya Sen's Capability Approach.",
+            "language": "English",
+            "lecturers": "Kore & Puck (Co-Teaching Academic Masterclass)",
+            "english_cc": true
           }
         ]
       },
@@ -2480,7 +2499,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 17
+    "totalVideos": 18
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",
