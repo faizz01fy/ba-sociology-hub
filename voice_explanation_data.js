@@ -101,6 +101,25 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>Unit 10 · വിശ്വാസം, സമ്പദ്‌വ്യവസ്ഥ & സമൂഹം:</strong> ഇരുമ്പുപകരണങ്ങളുടെ ഉപയോഗം, കൃഷിയും വേട്ടയും സംയോജിപ്പിച്ച സമ്പദ്‌വ്യവസ്ഥ, മരണാനന്തര ജീവിതത്തിലുള്ള ആഴത്തിലുള്ള വിശ്വാസവും പൂർവ്വികാരാധനയും."
             ],
             "examTip": "മെഗാലിത്തിക് ടൈപ്പോളജി (കുടക്കല്ല്, തൊപ്പിക്കല്ല്, മുനിയറ, വെട്ടുഗുഹകൾ) തമ്മിലുള്ള വ്യത്യാസങ്ങളും ജെ. ബാബിംഗ്ടൺ, പോർക്കുളം ബി.കെ. ഥാപ്പർ ഖനനങ്ങളും വിശദമാക്കുക."
+          },
+          {
+            "chapterNumber": "Masterclass",
+            "title": "Prehistory, Rock Art & Megalithic Culture of Keralam | English Masterclass",
+            "chapter": "Complete Module 2 Syllabus: Palaeolithic (Walayar & Kanjirapuzha), Mesolithic (Thenmala 5200 BP), Neolithic (Wayanad Celts), Edakkal Caves & Marayur Rock Art, Megalithic Architecture (Kudakkallu, Dolmens, Urns) & Landmark Excavations (Porkalam 1948, Mangadu 1000 BCE)",
+            "duration": "09:33",
+            "thumbnail": "https://i.ytimg.com/vi/bzhwYw5xUlU/hqdefault.jpg",
+            "youtubeId": "bzhwYw5xUlU",
+            "language": "English",
+            "studyPoints": [
+              "Palaeolithic & Mesolithic Horizons: Rejection of Eurocentric isolation claims; discovery of quartz pebble choppers in Pleistocene gravel terraces of Walayar and Kanjirapuzha; Dr. P. Rajendran's stratified Thenmala excavation yielding C-14 date of ~5,200 BP (3200 BCE).",
+              "Neolithic Transition & Incipient Agriculture: Philip Lake's 1891 discovery of ground and polished stone celts in Wayanad; axe finds in Pulppalli, Kalpetta, and Aluva; swift cultural transition into the Iron Age.",
+              "Rock Art of Edakkal & Southern Shelters: Ambukuthi split-rock sanctuary (1200m) with 500 sq. ft petroglyphs documented by Fred Fawcett (1901); masked ritual dancers, wheeled chariots, and Harappan symbol affinities; Marayur red ochre pictographs and Ancode shallow carvings.",
+              "Megalithic Burial Typology & Taxonomy: Subterranean types (rock-cut caves scooped into laterite, cists with port-holes, pyriform urn burials / Nannangadis); Surficial types (umbrella-shaped Kudakkallu, convex Toppikkallu, Marayur granite dolmens, and commemorative menhirs).",
+              "Excavations & Chronology: B. K. Thapar's 1948 Porkalam excavation establishing baseline stratigraphy; Dr. T. Satyamurthy's 1992 Mangadu excavation yielding early C-14 date of ~1000 BCE; Anakkara iron smelting slag and bead evidence.",
+              "Socio-Economic & Ethnographic Continuity: Agro-pastoralism (millet, rice, cattle rearing) with specialized blacksmiths and stone quarriers; social differentiation reflected in grave goods; living mortuary survivals among Muduvas, Kurumbas, and Mala Arayas."
+            ],
+            "examTip": "Calicut University High-Yield Essay Blueprint: Focus on the rock art of Edakkal and Marayur (discovery, motifs, significance) and provide a structured comparative analysis of Kerala Megalithic burial typologies (rock-cut caves, Kudakkallu, cists, urns) and landmark excavations (Porkalam and Mangadu).",
+            "english_cc": true
           }
         ]
       },
@@ -356,8 +375,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ",
             "chapter": "മഹാകവി വൈലോപ്പിള്ളിയുടെ നിര്യാണത്തിലുള്ള അനുസ്മരണ കാവ്യം · രാഷ്ട്രീയ ആധുനികത · പ്രത്യാശയുടെ പൂർണ്ണചന്ദ്രൻ (Vailoppilli Memorial Masterpiece)",
             "duration": "09:08",
-            "youtubeId": "yKoQ96wPtB0",
-            "thumbnail": "/thumbnails/malayalam_mod3_ch3_ivanekkoodi.png",
+            "youtubeId": "HiF6pepGCVc",
+            "thumbnail": "https://i.ytimg.com/vi/HiF6pepGCVc/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -449,10 +468,10 @@ window.VOICE_EXPLANATIONS_DATA = {
           {
             "chapterNumber": "Chapter 02",
             "title": "ചലച്ചിത്രം: ലിജോ ജോസ് പെല്ലിശ്ശേരിയുടെ 'നൻപകൽ നേരത്ത് മയക്കം'",
-            "chapter": "സിനിമാ ചരിത്രം · തിരക്കഥാ സാഹിത്യം · മിസ്-എൻ-സീൻ · മാന്ത്രിക റിയലിസം",
+            "chapter": "സിനിമ ചരിത്രം · സങ്കരകല · ഇരട്ട വ്യക്തിത്വം · മിസ്-എൻ-സീനും മോണ്ടാഷും · മാന്ത്രിക റിയലിസം",
             "duration": "10:53",
-            "youtubeId": "ZpBPAU4GH3c",
-            "thumbnail": "/thumbnails/malayalam_mod4_ch2_nanpakal_nerathu_mayakkam.png",
+            "youtubeId": "U2ij1bdQuYk",
+            "thumbnail": "https://i.ytimg.com/vi/U2ij1bdQuYk/hqdefault.jpg",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -462,7 +481,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>മാനവികതയും അതിർത്തികളും:</strong> ഭാഷയ്ക്കും ഭൂപ്രദേശങ്ങൾക്കും അതീതമായി മനുഷ്യബന്ധങ്ങളെയും സ്നേഹത്തെയും അടയാളപ്പെടുത്തുന്ന സിനിമ."
             ],
             "examTip": "'നൻപകൽ നേരത്ത് മയക്കം' എന്ന സിനിമയിലെ മാജിക്കൽ റിയലിസത്തിന്റെ സവിശേഷതകളും മമ്മൂട്ടിയുടെ കഥാപാത്ര പരിണാമവും ഉപന്യാസമായി തയ്യാറാക്കുക.",
-            "audioLength": "11 മിനിറ്റ് സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്",
+            "audioLength": "സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്",
             "description": "ലോക സിനിമയുടെ ഉത്ഭവം മുതൽ മലയാള സിനിമയുടെ വികാസവും, ലിജോ ജോസ് പെല്ലിശ്ശേരി സംവിധാനം ചെയ്ത് മമ്മൂട്ടി അനശ്വരമാക്കിയ 'നൻപകൽ നേരത്ത് മയക്കം' എന്ന ചലച്ചിത്രത്തിന്റെ സൗന്ദര്യശാസ്ത്രവും പാഠപുസ്തക ചോദ്യോത്തരങ്ങളും ഉൾക്കൊള്ളുന്ന സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്.",
             "keyLearningPoints": [
               "സിനിമ എന്ന കല — ലൂമിയർ സഹോദരന്മാർ മുതൽ ദാദാ സാഹിബ് ഫാൽക്കെ വരെ",
