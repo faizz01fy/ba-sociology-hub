@@ -25,6 +25,25 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>Unit 5 · Flora & Fauna:</strong> സുഗന്ധവ്യഞ്ജന സമ്പത്ത് (കുരുമുളക്, ഏലം, ഇഞ്ചി, കറുവപ്പട്ട) പ്രാചീന കാലം മുതലുള്ള വിദേശ സമുദ്രവാണിജ്യത്തിന് പ്രധാന കാരണമായി."
             ],
             "examTip": "കേരളത്തിന്റെ ചരിത്രത്തെ രൂപപ്പെടുത്തുന്നതിൽ പശ്ചിമഘട്ടവും (സഹ്യാദ്രി), പാലക്കാട് ചുരവും, തെക്കുപടിഞ്ഞാറൻ മൺസൂണും വഹിച്ച പങ്കിനെക്കുറിച്ചുള്ള പ്രധാന പരീക്ഷാ ചോദ്യങ്ങൾക്ക് ഈ പോയിന്റുകൾ മുൻഗണനാടിസ്ഥാനത്തിൽ എഴുതുക."
+          },
+          {
+            "chapterNumber": "Masterclass",
+            "title": "Landscape, Environment & Maritime History of Keralam | English Masterclass",
+            "chapter": "Complete Module 1 Syllabus: Geographical Scalene Matrix, 3 Physiographic Zones, Western Ghats & 4 Plateaus, Palakkad Gap & Mountain Passes, Indian Ocean & Muziris, 44 Rivers & Kayals, 10 Soil Typologies & Monsoons",
+            "duration": "19:10",
+            "thumbnail": "https://i.ytimg.com/vi/sq_ZUn0E1u0/hqdefault.jpg",
+            "youtubeId": "sq_ZUn0E1u0",
+            "language": "English",
+            "studyPoints": [
+              "Geographical Matrix & Tripartite Physiography: 38,863 sq. km scalene triangle; Highland (Malanad > 75m, 48% area), Midland (Itayanad 7.5m–75m, 42% area), and Lowland (Kolannad < 7.5m, 10% area); structural insularity vs maritime openness.",
+              "Western Ghats Fault-Scarp & 4 Interior Plateaus: Faulted stepped escarpment from Gondwanaland breakup; Anamudi crest (2,695m); Wayanad (Kabani drainage), Nelliampathi (trellis drainage), Munnar (alpine sholas), and Greater Periyar cardamom plateaus.",
+              "The Palakkad Gap & Trans-Ghat Corridors: 32–40 km breach connecting Malabar with Kongunadu; military highway for Chera, Chola, Pandya, and Mysore armies; Megalithic culture and linguistic diffusion; Ariankavu (400m), Gudalur (900m), and Aruvamozhi passes.",
+              "Maritime Threshold & Classical Trade: 560 km coastline; Muziris (Primum Emporium Indiae), Tyndis, Nelcynda; Roman bullion drain lamented by Pliny; Vasco da Gama (1498) and European naval fortifications (Pallippuram, Anjengo, Tankassery, Thalassery).",
+              "Hydrology & Pedology Foundations: 44 rivers (41 west-flowing including Periyar 244km, Bharathapuzha 209km, Chaliyar 169km + 3 east-flowing Kabani, Bhavani, Pambar); 34 backwaters (Vembanad 205 km², Ashtamudi, Kuttanad below sea-level farming); 10 soil orders led by Buchanan's Laterite (1800 at Angadipuram), Kari peat, and Pokkali saline tracts.",
+              "Monsoons & Botanical Wealth: Dual monsoons (SW Edavappathi & NE Thulavarsham); Hippalus wind discovery (~45 CE) enabling 40-day open-sea sailing; Black Pepper (Yavanapriya), Nilambur teak rafting for Beypore dhows, and royal war elephants."
+            ],
+            "examTip": "Calicut University FYUGP High-Yield Focus: Analyze how the physical features of Keralam (Western Ghats, Palakkad Gap, coastline) shaped its political and cultural history. Explain the strategic role of monsoon winds and the Indian Ocean in global maritime trade.",
+            "english_cc": true
           }
         ]
       },
@@ -153,7 +172,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 7
+    "totalVideos": 8
   },
   "malayalam": {
     "name": "Malayalam",
@@ -2898,7 +2917,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "06:21",
             "youtubeId": "Mu1Ktkzr_ME",
             "videoUrl": "/micro-demand-review.html",
-            "thumbnail": "/thumbnails/micro-demand-review.png",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod1_unit1_demand.png",
             "studyPoints": [
               "ഡിമാൻഡ് എന്നത് വാങ്ങാനുള്ള ആഗ്രഹവും അതോടൊപ്പം വില നൽകാനുള്ള സാമ്പത്തിക ശേഷിയും (purchasing power) ചേർന്നതാണ്.",
               "മറ്റ് ഘടകങ്ങൾ സ്ഥിരമായിരിക്കുമ്പോൾ വില കൂടുമ്പോൾ ഡിമാൻഡ് കുറയുകയും വില കുറയുമ്പോൾ ഡിമാൻഡ് കൂടുകയും ചെയ്യുന്നു (Law of Demand).",
@@ -2920,7 +2939,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "08:59",
             "youtubeId": "gHAZ4EVPvv4",
             "videoUrl": "/micro-unit2-review.html",
-            "thumbnail": "/thumbnails/micro-unit-2-review.png",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod1_unit2_supply.png",
             "studyPoints": [
               "Supply Definition (ഏതെങ്കിലും സാധനത്തിന്റെ അളവ്, വില, സമയം)",
               "Supply Function (SX = f(PX, PZ, T, C, GP))",
@@ -2945,7 +2964,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "08:42",
             "youtubeId": "ULJedrxANeY",
             "videoUrl": "/micro-unit3-review.html",
-            "thumbnail": "/thumbnails/micro-unit-3-review.png",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod1_unit3_equilibrium.png",
             "studyPoints": [
               "Market Equilibrium: Qd equals Qs",
               "Equilibrium Price: P star and Q star",
@@ -2970,7 +2989,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "09:10",
             "youtubeId": "xfR7G1s4Iks",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/xfR7G1s4Iks/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod1_unit4_shocking_equilibrium.png",
             "language": "Malayalam",
             "examTip": "ഡിമാൻഡ്, സപ്ലൈ കർവുകളുടെ ഒരേസമയത്തുള്ള മാറ്റങ്ങൾ (Simultaneous shifts) വിലയിലും അളവിലും വരുത്തുന്ന സ്വാധീനം വ്യക്തമായി പഠിക്കുക.",
             "malayalam_cc": true
@@ -2982,7 +3001,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "09:01",
             "youtubeId": "nnn3uhL8Kf4",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/nnn3uhL8Kf4/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod1_unit5_elasticity.png",
             "language": "Malayalam",
             "examTip": "വില ഇലാസ്തികത സന്തുലിത വിലയെയും അളവിനെയും എങ്ങനെ സ്വാധീനിക്കുന്നുവെന്ന് ഗ്രാഫിക്കലായി വരച്ചു പരിശീലിക്കുക.",
             "malayalam_cc": true
@@ -2999,7 +3018,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "23:26",
             "youtubeId": "Jj-JWuNJjRU",
             "videoUrl": "https://www.youtube.com/watch?v=Jj-JWuNJjRU",
-            "thumbnail": "https://i.ytimg.com/vi/Jj-JWuNJjRU/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod2_unit4_utility.png",
             "studyPoints": [
               "<strong>കാർഡിനൽ പ്രയോജന സിദ്ധാന്തം:</strong> സംതൃപ്തിയെ യൂട്ടിൽസ് എന്ന സംഖ്യാ രൂപത്തിൽ അളക്കാമെന്ന് ആൽഫ്രഡ് മാർഷൽ സമർത്ഥിക്കുന്നു.",
               "<strong>സീമാന്ത പ്രയോജന ക്ഷയ നിയമം (Law of DMU):</strong> തുടർച്ചയായ ഉപഭോഗം നടക്കുമ്പോൾ ഓരോ അധിക യൂണിറ്റിൽ നിന്നും ലഭിക്കുന്ന സംതൃപ്തി (MU) കുറഞ്ഞുവരുന്നു. MU പൂജ്യമാകുമ്പോൾ TU പരമാവധിയിലെത്തുന്നു.",
@@ -3018,7 +3037,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · ഇൻഡിഫറൻസ് കർവ് പ്രത്യേകതകൾ, MRS & മുൻഗണനാ ഭൂപടം",
             "duration": "18:16",
             "youtubeId": "z8tbT2SiepA",
-            "thumbnail": "/thumbnails/Consumer_Preferences_Mod2_Unit6_Thumbnail.png",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod2_unit5_preferences.png",
             "studyPoints": [
               "<strong>Indifference Curve (IC):</strong> Represents locus of all commodity bundles providing identical levels of overall satisfaction.",
               "<strong>Marginal Rate of Substitution (MRS):</strong> The rate at which a consumer trades good Y for good X: MRS_xy = -dy/dx = MUx/MUy.",
@@ -3033,7 +3052,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "Academic Hub Special · ബജറ്റ് രേഖ (-Px/Py), അവസര ഗണം, വില-വരുമാന മാറ്റങ്ങൾ",
             "duration": "10:35",
             "youtubeId": "9H8683I4Ad8",
-            "thumbnail": "https://i.ytimg.com/vi/9H8683I4Ad8/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod2_unit8_budget_constraint.png",
             "studyPoints": [
               "<strong>ബജറ്റ് സമവാക്യവും ഇന്റർസെപ്റ്റുകളും:</strong> <code>Px·Qx + Py·Qy = M</code>. വെർട്ടിക്കൽ ഇന്റർസെപ്റ്റ് <code>M/Py</code>, ഹൊറിസോണ്ടൽ ഇന്റർസെപ്റ്റ് <code>M/Px</code>.",
               "<strong>ചെരിവും അവസരച്ചെലവും:</strong> <code>Slope = -Px/Py</code>. വില അനുപാതം വിപണിയിലെ പ്രതിസ്ഥാപന നിരക്കിനെയും അവസരച്ചെലവിനെയും സൂചിപ്പിക്കുന്നു.",
@@ -3054,7 +3073,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "14:14",
             "youtubeId": "J6hBbtao1ms",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/J6hBbtao1ms/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod2_unit9_constrained_choice.png",
             "language": "Malayalam",
             "studyPoints": [
               "നിയന്ത്രിത ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ് (Constrained Choice): വരുമാനത്തിന്റെയും വിലകളുടെയും പരിമിതിക്കുള്ളിൽ നിന്ന് പരമാവധി സംതൃപ്തി നേടുന്ന പ്രക്രിയ.",
@@ -3079,7 +3098,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "15:38",
             "youtubeId": "W6b1q1WUJbo",
             "videoUrl": "https://www.youtube.com/watch?v=W6b1q1WUJbo",
-            "thumbnail": "https://i.ytimg.com/vi/W6b1q1WUJbo/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod3_unit10_firms.png",
             "language": "Malayalam",
             "studyPoints": [
               "<strong>സ്ഥാപനത്തിന്റെ നിർവചനം (A Firm):</strong> ഉത്പാദനോപാധികളായ ഭൂമി, അധ്വാനം, മൂലധനം എന്നിവ സംയോജിപ്പിച്ച് വിപണിയിൽ വിൽക്കാനായി സാധനങ്ങളും സേവനങ്ങളും നിർമ്മിക്കുന്ന അടിസ്ഥാന സാമ്പത്തിക യൂണിറ്റാണ് സ്ഥാപനം.",
@@ -3100,7 +3119,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "08:42",
             "youtubeId": "PB4Dmlu5ueg",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/PB4Dmlu5ueg/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod3_unit11_production_func.png",
             "language": "Malayalam",
             "studyPoints": [
               "ഉത്പാദനം എന്നത് വിഭവങ്ങളുടെ ഉപയോഗക്ഷമത വർദ്ധിപ്പിച്ച് യൂട്ടിലിറ്റി സൃഷ്ടിക്കുന്ന പ്രക്രിയയാണ് (Utility Creation).",
@@ -3122,7 +3141,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "08:49",
             "youtubeId": "n-5A7cQpaWc",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/n-5A7cQpaWc/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod3_unit12_short_run_returns.png",
             "language": "Malayalam",
             "studyPoints": [
               "ഹ്രസ്വകാല ഉത്പാദന ഫലനം Q = f(L, K̄): മൂലധനം സ്ഥിരമായിരിക്കുമ്പോൾ അധ്വാനത്തിന്റെ അളവ് മാറ്റിക്കൊണ്ട് ഉത്പാദനം ക്രമീകരിക്കുന്നു.",
@@ -3143,7 +3162,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "08:34",
             "youtubeId": "snZ7fkjWLHY",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/snZ7fkjWLHY/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod3_unit13_long_run_isoquants.png",
             "language": "Malayalam",
             "studyPoints": [
               "ദീർഘകാല ഉത്പാദനം Q = f(L, K): എല്ലാ ഘടകങ്ങളും വേരിയബിൾ ആണ്; സ്ഥിര ഘടകങ്ങൾ ഇല്ല.",
@@ -3164,7 +3183,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "25:20",
             "youtubeId": "9gX0HzBZ0Bc",
             "videoUrl": "https://www.youtube.com/watch?v=9gX0HzBZ0Bc",
-            "thumbnail": "https://i.ytimg.com/vi/9gX0HzBZ0Bc/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod3_unit14_returns_to_scale.png",
             "language": "Malayalam",
             "studyPoints": [
               "<strong>റിട്ടേൺസ് ടു സ്കെയിൽ നിർവചനം:</strong> ദീർഘകാലത്തിൽ (Long Run) എല്ലാ ഉത്പാദനോപാധികളും ഒരേ അനുപാതത്തിൽ മാറ്റുമ്പോൾ ഉത്പാദനത്തിൽ ഉണ്ടാകുന്ന ആനുപാതിക പ്രതികരണമാണ് റിട്ടേൺസ് ടു സ്കെയിൽ.",
@@ -3184,7 +3203,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "07:44",
             "youtubeId": "LEvGpu6LHC0",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/LEvGpu6LHC0/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod3_unit15_nature_of_costs.png",
             "language": "Malayalam",
             "studyPoints": [
               "പ്രത്യക്ഷ ചെലവുകൾ (Explicit Costs): ബാഹ്യ വ്യക്തികൾക്ക് പണമായി നൽകുന്ന വേതനം, അസംസ്കൃത വസ്തുക്കളുടെ വില, വാടക മുതലായവ.",
@@ -3204,7 +3223,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "07:51",
             "youtubeId": "662lL8_DLds",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/662lL8_DLds/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod3_unit16_short_run_costs.png",
             "language": "Malayalam",
             "studyPoints": [
               "സ്ഥിരച്ചെലവ് (Fixed Cost: F): ഉത്പാദനത്തിനനുസരിച്ച് മാറാത്ത ചെലവ്. കർവ് തിരശ്ചീന നേര്രേഖയാണ്.",
@@ -3226,7 +3245,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "15:51",
             "youtubeId": "BYjuAF87aH8",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/BYjuAF87aH8/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod3_unit17_long_run_envelope.png",
             "language": "Malayalam",
             "studyPoints": [
               "ഹ്രസ്വകാലവും ദീർഘകാലവും തമ്മിലുള്ള വ്യത്യാസം: ദീർഘകാലത്തിൽ എല്ലാ ഇൻപുട്ടുകളും വേരിയബിൾ ആണ്, ഫിക്സഡ് കോസ്റ്റുകൾ ഇല്ല.",
@@ -3251,7 +3270,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "08:35",
             "youtubeId": "afGuh5f2ypk",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/afGuh5f2ypk/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod4_unit10_perfect_competition.png",
             "language": "Malayalam",
             "studyPoints": [
               "വില സ്വീകർത്താക്കൾ (Price Takers): ധാരാളം സ്ഥാപനങ്ങൾ സമാന ഉൽപ്പന്നങ്ങൾ വിൽക്കുന്നതിനാൽ ഒരു സ്ഥാപനത്തിനും വിലയെ സ്വാധീനിക്കാൻ കഴിയില്ല.",
@@ -3271,7 +3290,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "09:03",
             "youtubeId": "sh-7a1b7vpE",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/sh-7a1b7vpE/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod4_unit11_monopoly.png",
             "language": "Malayalam",
             "studyPoints": [
               "കുത്തക (Monopoly): അടുത്ത പകരക്കാരില്ലാത്ത ഉൽപ്പന്നത്തിന്റെ ഏക വിതരണക്കാരൻ (Price Maker).",
@@ -3291,7 +3310,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "08:12",
             "youtubeId": "yAFmskolNFk",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/yAFmskolNFk/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod4_unit12_monopolistic_oligopoly.png",
             "language": "Malayalam",
             "studyPoints": [
               "ഏകാധിപത്യ മത്സരം: ധാരാളം സ്ഥാപനങ്ങൾ, ഉൽപ്പന്ന വൈവിധ്യവൽക്കരണം, ചേംബർലിന്റെ സെല്ലിംഗ് കോസ്റ്റുകൾ.",
@@ -3316,7 +3335,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "duration": "06:36",
             "youtubeId": "_HJ6ezj1khA",
             "videoUrl": null,
-            "thumbnail": "https://i.ytimg.com/vi/_HJ6ezj1khA/hqdefault.jpg",
+            "thumbnail": "/thumbnails/microeconomics/micro_mod5_unit23_global_markets.png",
             "language": "Malayalam",
             "studyPoints": [
               "4 വിപണി ഘടനകളുടെ താരതമ്യം: പൂർണ്ണമത്സരം മുതൽ കുത്തക വരെ സ്ഥാപനങ്ങളുടെ എണ്ണം, ഉൽപ്പന്ന സ്വഭാവം, വില നിയന്ത്രണം, ദീർഘകാല ലാഭം.",
