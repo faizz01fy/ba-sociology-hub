@@ -321,7 +321,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "റൊമാന്റിക് കാവ്യപ്രസ്ഥാനം · സ്ത്രീപക്ഷ നവോത്ഥാനം · മനഃശാസ്ത്രപരമായ ആഴം (Kumaran Asan's Masterpiece)",
             "duration": "16:11",
             "youtubeId": "gPFUxbfGKwM",
-            "thumbnail": "https://i.ytimg.com/vi/gPFUxbfGKwM/hqdefault.jpg",
+            "thumbnail": "/thumbnails/malayalam_mod3_ch2_chinthavishtayaya_seetha.png",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -360,7 +360,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "മലയാള നാടകവേദി ചരിത്രാവലോകനം · കുറിയേടത്ത് താത്രി സ്മാർത്ഥവിചാരം · സ്ത്രീപക്ഷ നാടകവേദി",
             "duration": "14:09",
             "youtubeId": "_IN_U-38aIo",
-            "thumbnail": "https://i.ytimg.com/vi/_IN_U-38aIo/hqdefault.jpg",
+            "thumbnail": "/thumbnails/malayalam_mod4_ch1_oororokaalathilum.png",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -433,7 +433,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "സിനിമാ ചരിത്രം · തിരക്കഥാ സാഹിത്യം · മിസ്-എൻ-സീൻ · മാന്ത്രിക റിയലിസം",
             "duration": "10:53",
             "youtubeId": "ZpBPAU4GH3c",
-            "thumbnail": "https://i.ytimg.com/vi/ZpBPAU4GH3c/hqdefault.jpg",
+            "thumbnail": "/thumbnails/malayalam_mod4_ch2_nanpakal_nerathu_mayakkam.png",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -465,7 +465,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapter": "അള്ളിയാമ്പൽ കടവിൽ · സൂര്യകിരീടം വീണുടഞ്ഞു · തനിയെ മിഴികൾ തുളുമ്പിയോ",
             "duration": "10:07",
             "youtubeId": "_fwb_tS8xvw",
-            "thumbnail": "https://i.ytimg.com/vi/_fwb_tS8xvw/hqdefault.jpg",
+            "thumbnail": "/thumbnails/malayalam_mod4_ch3_film_songs.png",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
