@@ -337,8 +337,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ",
             "chapter": "മഹാകവി വൈലോപ്പിള്ളിയുടെ നിര്യാണത്തിലുള്ള അനുസ്മരണ കാവ്യം · രാഷ്ട്രീയ ആധുനികത · പ്രത്യാശയുടെ പൂർണ്ണചന്ദ്രൻ (Vailoppilli Memorial Masterpiece)",
             "duration": "09:08",
-            "youtubeId": "CdvG8bEp6W4",
-            "thumbnail": "https://i.ytimg.com/vi/CdvG8bEp6W4/hqdefault.jpg",
+            "youtubeId": "yKoQ96wPtB0",
+            "thumbnail": "/thumbnails/malayalam_mod3_ch3_ivanekkoodi.png",
             "videoUrl": null,
             "language": "Malayalam",
             "studyPoints": [
@@ -2469,9 +2469,9 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Masterclass",
             "title": "Economic Inequality in India: Lorenz Curve, Gini & Piketty | English Masterclass",
             "chapter": "Complete Module 3 Syllabus: Growth vs Distribution Trade-offs, Lorenz Curve Geometry, Gini Coefficient Formula, Ahluwalia-Chenery Index, Lucas Chancel & Thomas Piketty Findings, Regional & Inter-sectoral Disparities",
-            "duration": "15:04",
-            "youtubeId": "QuYuXhhwhnM",
-            "thumbnail": "https://i.ytimg.com/vi/QuYuXhhwhnM/hqdefault.jpg",
+            "duration": "15:10",
+            "youtubeId": "IkEDzVD1wko",
+            "thumbnail": "https://i.ytimg.com/vi/IkEDzVD1wko/hqdefault.jpg",
             "studyPoints": [
               "Economic Growth vs Income Distribution: Simon Kuznets inverted-U hypothesis; capital accumulation vs human capital trade-offs; why high GDP growth does not automatically trickle down.",
               "Lorenz Curve & Geometric Inequality: Cumulative percentage of population vs cumulative percentage of income; 45° line of absolute equality; bowed departure area indicating depth of inequality.",
@@ -2482,7 +2482,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             ],
             "examTip": "Calicut University FYUGP High-Yield Focus: Mathematical derivation of Gini coefficient from Lorenz curve, Ahluwalia-Chenery Social Welfare Index formula and weights, Chancel & Piketty's empirical findings on Indian inequality, and policy mechanisms to counter wealth concentration.",
             "language": "English",
-            "lecturers": "Kore & Puck (Co-Teaching Academic Masterclass)",
+            "lecturers": "Sonia & Libby (British Academic Dialogue)",
             "english_cc": true
           }
         ]
@@ -2535,11 +2535,31 @@ window.VOICE_EXPLANATIONS_DATA = {
             "youtubeId": "Za9o3cHz_uQ",
             "thumbnail": "https://i.ytimg.com/vi/Za9o3cHz_uQ/hqdefault.jpg",
             "malayalam_cc": true
+          },
+          {
+            "chapterNumber": "Masterclass",
+            "title": "Unemployment in India: 12 Types, NSSO Approaches & Policies | English Masterclass",
+            "chapter": "Complete Module 4 Syllabus: Involuntary Unemployment, Labour Force Metrics, 12 Types of Unemployment, Disguised MP_L=0, NSSO Approaches (UPSS/CWS/CDS), 13 Causes, 8 Government Eradication Schemes & NEP 2030",
+            "duration": "16:58",
+            "youtubeId": "_zLh6u4wPF8",
+            "thumbnail": "https://i.ytimg.com/vi/_zLh6u4wPF8/hqdefault.jpg",
+            "language": "English",
+            "lecturers": "Sonia & Libby (British Academic Dialogue)",
+            "studyPoints": [
+              "Conceptual Foundations & Metrics: Involuntary unemployment definition, waste of productive potential, and core ratios: Unemployment Rate (UR = U/LF × 100), Labour Force Participation Rate (LFPR = LF/Pop × 100), and Worker Population Ratio (WPR = WF/Pop × 100).",
+              "Exhaustive Taxonomy of 12 Unemployment Types: Open, Disguised, Seasonal, Cyclical, Educated, Technological, Structural, Underemployment, Casual, Chronic, Frictional, and Voluntary.",
+              "Disguised Unemployment Deep Dive: Arthur Lewis & Ragnar Nurkse models, production function plateau where Marginal Productivity of Labour is zero (MP_L = ΔTP/ΔL = 0), and disguised unemployment as disguised saving potential.",
+              "NSSO / PLFS 3 Measurement Frameworks: Usual Principal and Subsidiary Status (UPSS, 365-day chronic activity), Current Weekly Status (CWS, 7-day recall with 1-hour threshold), and Current Daily Status (CDS, day-by-day person-days measuring underemployment).",
+              "13 Structural Causes of Indian Unemployment: Social & caste rigidity, slow economic growth, population explosion, seasonal nature of agriculture, joint family system decay, decline of cottage and village industries, slow industrial expansion, capital shortages, critical input bottlenecks, defective education system, irrigation deficits, and geographic labour immobility.",
+              "8 Government Eradication Schemes & Forward Strategy: Integrated Rural Development Programme (IRDP 1980), TRYSEM (1979), RSETI/RUDSETI (1982), Jawahar Rozgar Yojana (JRY 1989), MGNREGA (2005 legal guarantee of 100 days), PMKVY (2015), Start-Up India (2016), Stand-Up India (2016), and National Employment Policy (NEP) roadmap."
+            ],
+            "examTip": "Calicut University FYUGP High-Yield Focus: Explain the 12 types of unemployment with special reference to disguised unemployment (MP_L = 0). Critically compare the three NSSO measurement approaches (UPSS, CWS, CDS) and evaluate MGNREGA 2005 as a legal right-to-work intervention.",
+            "english_cc": true
           }
         ]
       }
     ],
-    "totalVideos": 20
+    "totalVideos": 21
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",
