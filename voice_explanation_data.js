@@ -2557,9 +2557,34 @@ window.VOICE_EXPLANATIONS_DATA = {
             "english_cc": true
           }
         ]
+      },
+      {
+        "moduleName": "MODULE 05: FISCAL DEFICIT, INFLATION & MEASUREMENT PROJECTS (FYUGP)",
+        "videos": [
+          {
+            "chapterNumber": "Masterclass",
+            "title": "Fiscal Deficit, Inflation & Measurement Projects | English Masterclass",
+            "chapter": "Complete Module 5 Syllabus: Fiscal Deficit Trends & Monetization, CPI vs WPI Inflation, 9-Step LSG Poverty Measurement (MRP Method: MRP = MPP × P), and 4 Local Territory Unemployment Methodologies (UR, LFPR, EPR Formulas)",
+            "duration": "14:32",
+            "youtubeId": "MvrQBgdmYKE",
+            "thumbnail": "https://i.ytimg.com/vi/MvrQBgdmYKE/hqdefault.jpg",
+            "language": "English",
+            "lecturers": "Sonia & Libby (British Academic Dialogue)",
+            "studyPoints": [
+              "Fiscal Deficit Macro Foundations: Gap between total expenditure and non-debt receipts; drivers including tax deceleration and counter-cyclical crisis spending; short-term stimulus vs long-term crowding-out and debt servicing.",
+              "Official Fiscal Consolidation Glidepath: Pandemic peak at 9.5% (FY21) reduced to 6.71% (FY22 / ₹16.85L Cr), 6.40% (FY23 / ₹16.54L Cr), 5.60% (FY24 / ₹16.55L Cr), 4.80% (FY25 BE), reaching 4.40% (₹15.69L Cr) target by FY2025-26.",
+              "Inflation Dynamics & Monetary-Fiscal Nexus: CPI vs WPI; RBI Flexible Inflation Target (4% ± 2%); trajectory from 5.1% (2021) to 6.7% (2022 crude shock), 5.6% (2023), 5.1% (2024) to 2.6% (2025); direct deficit monetization vs indirect demand-pull and global commodity linkages.",
+              "Grassroots Poverty Project (MRP Method): Complete 9-step blueprint in an LSG ward; neoclassical formula MRP = MPP × P (where MPP = ΔTP / ΔL); poverty decision rule: MRP >= Poverty Line Wage (APL) vs MRP < Poverty Line Wage (BPL).",
+              "Grassroots Unemployment Project (4 Methodologies): Census (Direct Enumeration), Sample Survey (NSSO model), Employment Exchange Registration, and Current Activity Status; capturing open, disguised (MP_L = 0), seasonal, and frictional types.",
+              "Fieldwork Formulas & Worked Survey: Standardized 1,000-person working-age population case; Labour Force = 600, Employed = 540, Unemployed = 60; exact calculations: UR = (60/600) × 100 = 10.0%, LFPR = (600/1000) × 100 = 60.0%, EPR = (540/1000) × 100 = 54.0%."
+            ],
+            "examTip": "Calicut University FYUGP High-Yield Focus: Analyze the post-2020 fiscal consolidation roadmap (9.5% to 4.4%) and its inflation nexus. Outline the 9-step MRP poverty measurement project (MRP = MPP × P) and compute UR, LFPR, and EPR from field survey data.",
+            "english_cc": true
+          }
+        ]
       }
     ],
-    "totalVideos": 21
+    "totalVideos": 22
   },
   "fundamentals-of-ethics": {
     "name": "Fundamentals of Ethics",
