@@ -837,7 +837,56 @@
       margin: 14px 0 !important;
     }
 
-  </style>
+  
+/* Maximized / Full-View Mode */
+.soc-reading-section.is-maximized,
+.soc-reading-view-section.is-maximized,
+#chapter-reading-section.is-maximized {
+  max-width: 100% !important;
+  width: 100% !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  padding: 24px 36px !important;
+}
+
+.soc-page-wrapper.soc-maximized {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.soc-maximize-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f1f5f9;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+}
+.soc-maximize-btn:hover, .soc-maximize-btn.active {
+  background: #ea580c;
+  color: #ffffff;
+  border-color: #ea580c;
+}
+
+@media (max-width: 640px) {
+  .soc-reading-section.is-maximized,
+  .soc-reading-view-section.is-maximized,
+  #chapter-reading-section.is-maximized {
+    padding: 10px 6px !important;
+  }
+}
+
+</style>
 
   <!-- Combined Styles from Chapter Components -->
   <style id="chapter-all-styles">
@@ -1819,6 +1868,21 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
       <a class="soc-nav-btn soc-btn-home" href="/#top">⌂ Home</a>
     </div>
 
+    <!-- Title Block (Single-Line Clamp Typography) -->
+    <div style="text-align: center; margin-bottom: 22px;">
+      <span style="display: inline-block; background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; padding: 4px 14px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 10px;">
+        CALICUT UNIVERSITY · MDC / MINOR COURSE · FYUGP
+      </span>
+      <h1 class="soc-header-title" style="margin: 0 0 6px; font-size: clamp(12px, 3.3vw, 17px); font-weight: 850; color: #0f172a; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+        Philosophy of Education — English Malayalam Reading
+      </h1>
+      <p class="soc-header-sub" style="margin: 0; font-family: 'Noto Sans Malayalam', sans-serif; font-size: clamp(9.5px, 2.6vw, 13px); font-weight: 600; color: #ea580c; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+        ഫിലോസഫി ഓഫ് എഡ്യൂക്കേഷൻ — സമഗ്ര മലയാളം &amp; ഇംഗ്ലീഷ് വായനാ സഹായി (9 ഭാഗങ്ങൾ)
+      </p>
+    </div>
+
+
+
     <!-- Module Tabs Ribbon (Ascending Order: 1 -> 2 -> 3 -> 4 -> 5) -->
     <nav class="soc-module-tabs-row soc-mod-tabs-3" id="soc-module-tabs" aria-label="Course Modules Ascending">
       <button class="soc-mod-tab-btn active" data-mod="mod1" onclick="selectModule('mod1')">Module 1 · Meaning & Functions</button>
@@ -1860,6 +1924,9 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
         <span>📖</span> <span id="soc-reading-badge-text">Currently Reading: Chapter 1 · Meaning & Definitions</span>
       </div>
       <div class="soc-toolbar-actions">
+        <button class="soc-tool-btn soc-maximize-btn" id="soc-maximize-btn" onclick="toggleMaximizeReader()" title="Toggle Full / Maximized View" aria-label="Toggle Full / Maximized View">
+          <span id="soc-maximize-icon">⛶</span> <span id="soc-maximize-text">Full View</span>
+        </button>
         <button class="soc-tool-btn" type="button" onclick="adjustFontSize(-1)">A-</button>
         <button class="soc-tool-btn" type="button" onclick="adjustFontSize(0)">100%</button>
         <button class="soc-tool-btn" type="button" onclick="adjustFontSize(1)">A+</button>
@@ -2526,7 +2593,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
 <!-- REVIEW QA FROM LMS -->
 <div class="card-amber">
-  <h2>LMS അവലോകന ചോദ്യോത്തരങ്ങൾ (Official LMS Review Questions & Answers)</h2>
+  <h2>LMS അവലോകന ചോദ്യോത്തരങ്ങൾ (Review Questions & Answers)</h2>
   <div class="qa-card">
     <div class="qa-q">Q1. The philosophical view that all that exists is physical or material is called?</div>
     <div class="qa-ans-en"><strong>Answer:</strong> Materialism / Naturalism. In contrast, Idealism asserts that ultimate reality is non-material and mental or spiritual.</div>
@@ -3278,7 +3345,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
 <!-- REVIEW QA FROM LMS -->
 <div class="card-indigo">
-  <h2>LMS അവലോകന ചോദ്യോത്തരങ്ങൾ (Official LMS Review Questions & Answers)</h2>
+  <h2>LMS അവലോകന ചോദ്യോത്തരങ്ങൾ (Review Questions & Answers)</h2>
   <div class="qa-card">
     <div class="qa-q">Q1. Western educational philosophy was laid in ancient:</div>
     <div class="qa-ans-en"><strong>Answer:</strong> Ancient Greece. The concepts of logos, paideia, and dialectical inquiry formed the foundation for all subsequent Western philosophies of education.</div>
@@ -3971,7 +4038,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
 <!-- REVIEW QA FROM LMS -->
 <div class="card-amber">
-  <h2>LMS അവലോകന ചോദ്യോത്തരങ്ങൾ (Official LMS Review Questions & Answers)</h2>
+  <h2>LMS അവലോകന ചോദ്യോത്തരങ്ങൾ (Review Questions & Answers)</h2>
   <div class="qa-card">
     <div class="qa-q">Q1. The ultimate aim of education according to whom is the manifestation of the perfection already inherent within the individual?</div>
     <div class="qa-ans-en"><strong>Answer:</strong> Swami Vivekananda. He rooted education in the Vedantic principle of inherent divinity and potential perfection.</div>
@@ -4358,6 +4425,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, true);
 })();
+
+
+function toggleMaximizeReader() {
+  const reader = document.getElementById('chapter-reading-section');
+  const page = document.querySelector('.soc-page-wrapper');
+  const btn = document.getElementById('soc-maximize-btn');
+  const icon = document.getElementById('soc-maximize-icon');
+  const text = document.getElementById('soc-maximize-text');
+
+  if (!reader) return;
+  const isMax = reader.classList.toggle('is-maximized');
+  if (page) page.classList.toggle('soc-maximized', isMax);
+
+  if (isMax) {
+    if (icon) icon.textContent = '🗗';
+    if (text) text.textContent = 'Standard';
+    if (btn) btn.classList.add('active');
+  } else {
+    if (icon) icon.textContent = '⛶';
+    if (text) text.textContent = 'Full View';
+    if (btn) btn.classList.remove('active');
+  }
+
+  reader.scrollIntoView({ behavior: 'smooth' });
+}
+
 </script>
 
 <div class="academic-footer-feedback" style="text-align: center; margin-top: 18px; padding: 10px; font-size: 13px;"><a href="/contact" style="color: #64748b; font-weight: 600; text-decoration: none;">📢 Report Correction / Feedback ↗</a></div>

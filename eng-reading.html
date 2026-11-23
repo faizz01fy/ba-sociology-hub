@@ -1997,6 +1997,55 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
         text-align: center !important;
       }
     }
+
+/* Maximized / Full-View Mode */
+.soc-reading-section.is-maximized,
+.soc-reading-view-section.is-maximized,
+#chapter-reading-section.is-maximized {
+  max-width: 100% !important;
+  width: 100% !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  padding: 24px 36px !important;
+}
+
+.soc-page-wrapper.soc-maximized {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.soc-maximize-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f1f5f9;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+}
+.soc-maximize-btn:hover, .soc-maximize-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+@media (max-width: 640px) {
+  .soc-reading-section.is-maximized,
+  .soc-reading-view-section.is-maximized,
+  #chapter-reading-section.is-maximized {
+    padding: 10px 6px !important;
+  }
+}
+
 </style>
 
 
@@ -2434,6 +2483,9 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
           <span id="soc-reading-badge-text">Currently Reading: എനിക്കൊരു സ്വപ്നമുണ്ട്</span>
         </div>
         <div class="soc-toolbar-actions">
+        <button class="soc-tool-btn soc-maximize-btn" id="soc-maximize-btn" onclick="toggleMaximizeReader()" title="Toggle Full / Maximized View" aria-label="Toggle Full / Maximized View">
+          <span id="soc-maximize-icon">⛶</span> <span id="soc-maximize-text">Full View</span>
+        </button>
           <div class="soc-font-controls">
             <button type="button" class="soc-font-btn" onclick="adjustFontSize(-1)" title="Smaller font">A-</button>
             <button type="button" class="soc-font-btn" onclick="adjustFontSize(0)" title="Reset font">A</button>
@@ -5909,7 +5961,33 @@ function scrollToCard() {
         e.preventDefault();
       }
     });
-  </script>
+  
+
+function toggleMaximizeReader() {
+  const reader = document.getElementById('chapter-reading-section');
+  const page = document.querySelector('.soc-page-wrapper');
+  const btn = document.getElementById('soc-maximize-btn');
+  const icon = document.getElementById('soc-maximize-icon');
+  const text = document.getElementById('soc-maximize-text');
+
+  if (!reader) return;
+  const isMax = reader.classList.toggle('is-maximized');
+  if (page) page.classList.toggle('soc-maximized', isMax);
+
+  if (isMax) {
+    if (icon) icon.textContent = '🗗';
+    if (text) text.textContent = 'Standard';
+    if (btn) btn.classList.add('active');
+  } else {
+    if (icon) icon.textContent = '⛶';
+    if (text) text.textContent = 'Full View';
+    if (btn) btn.classList.remove('active');
+  }
+
+  reader.scrollIntoView({ behavior: 'smooth' });
+}
+
+</script>
 <div class="academic-footer-feedback" style="text-align: center; margin-top: 18px; padding: 10px; font-size: 13px;"><a href="/contact" style="color: #64748b; font-weight: 600; text-decoration: none;">📢 Report Correction / Feedback ↗</a></div>
 </body>
 </html>

@@ -836,7 +836,56 @@
       margin: 14px 0 !important;
     }
 
-  </style>
+  
+/* Maximized / Full-View Mode */
+.soc-reading-section.is-maximized,
+.soc-reading-view-section.is-maximized,
+#chapter-reading-section.is-maximized {
+  max-width: 100% !important;
+  width: 100% !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  padding: 24px 36px !important;
+}
+
+.soc-page-wrapper.soc-maximized {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.soc-maximize-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f1f5f9;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+}
+.soc-maximize-btn:hover, .soc-maximize-btn.active {
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+
+@media (max-width: 640px) {
+  .soc-reading-section.is-maximized,
+  .soc-reading-view-section.is-maximized,
+  #chapter-reading-section.is-maximized {
+    padding: 10px 6px !important;
+  }
+}
+
+</style>
 
   <!-- Combined Styles from Chapter Components -->
   <style id="chapter-all-styles">
@@ -1747,6 +1796,21 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
       <a class="soc-nav-btn soc-btn-home" href="/#top">⌂ Home</a>
     </div>
 
+    <!-- Title Block (Single-Line Clamp Typography) -->
+    <div style="text-align: center; margin-bottom: 22px;">
+      <span style="display: inline-block; background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; padding: 4px 14px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; margin-bottom: 10px;">
+        CALICUT UNIVERSITY · CORE COURSE · FYUGP (HIS1B01)
+      </span>
+      <h1 class="soc-header-title" style="margin: 0 0 6px; font-size: clamp(12px, 3.3vw, 17px); font-weight: 850; color: #0f172a; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+        History of Keralam — English Malayalam Reading
+      </h1>
+      <p class="soc-header-sub" style="margin: 0; font-family: 'Noto Sans Malayalam', sans-serif; font-size: clamp(9.5px, 2.6vw, 13px); font-weight: 600; color: #dc2626; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+        കേരള ചരിത്രം 12-ാം നൂറ്റാണ്ട് വരെ — സമഗ്ര മലയാളം &amp; ഇംഗ്ലീഷ് വായനാ സഹായി (8 ഭാഗങ്ങൾ)
+      </p>
+    </div>
+
+
+
     <!-- Module Tabs Ribbon (Ascending Order: 1 -> 2 -> 3 -> 4 -> 5) -->
     <nav class="soc-module-tabs-row" id="soc-module-tabs" aria-label="Course Modules Ascending">
       <button class="soc-mod-tab-btn active" data-mod="mod1" onclick="selectModule('mod1')">Module 1 · Landscape & Environment</button>
@@ -1790,6 +1854,9 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
         <span>📖</span> <span id="soc-reading-badge-text">Currently Reading: Chapter 1 · Geography & Monsoon</span>
       </div>
       <div class="soc-toolbar-actions">
+        <button class="soc-tool-btn soc-maximize-btn" id="soc-maximize-btn" onclick="toggleMaximizeReader()" title="Toggle Full / Maximized View" aria-label="Toggle Full / Maximized View">
+          <span id="soc-maximize-icon">⛶</span> <span id="soc-maximize-text">Full View</span>
+        </button>
         <button class="soc-tool-btn" type="button" onclick="adjustFontSize(-1)">A-</button>
         <button class="soc-tool-btn" type="button" onclick="adjustFontSize(0)">100%</button>
         <button class="soc-tool-btn" type="button" onclick="adjustFontSize(1)">A+</button>
@@ -1948,7 +2015,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
   
   <div class="card card-plum">
-    <div class="badge">HIS1CJ101 · MODULE 1 · OFFICIAL LMS TEXTBOOK</div>
+    <div class="badge">HIS1CJ101 · MODULE 1 · STUDY TEXTBOOK</div>
     <h2>മൊഡ്യൂൾ 1: കേരളം: ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും | Module 1: Landscape and Environment</h2>
     <p><strong>English:</strong> Full comprehensive bilingual study text covering all 9 syllabus sections (I.1.A to I.1.I), ecological zones, Western Ghats plateaus and passes, 44 rivers, backwaters, detailed soil classification, monsoons, biodiversity, and all 27 review questions from the university textbook.</p>
     <p><strong>മലയാളം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാലയുടെ ഒഫീഷ്യൽ LMS പാഠപുസ്തകത്തിലെ 9 പാഠഭാഗങ്ങളും (I.1.A മുതൽ I.1.I വരെ), പശ്ചിമഘട്ട പീഠഭൂമികളും ചുരങ്ങളും, 44 നദികളും കായലുകളും, വിശദമായ മണ്ണുതരങ്ങളും, മൺസൂൺ പ്രതിഭാസങ്ങളും, എല്ലാ 27 പരീക്ഷാ ചോദ്യോത്തരങ്ങളും ഉൾക്കൊള്ളുന്ന സമ്പൂർണ്ണ പഠന സഹായി.</p>
@@ -2358,7 +2425,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
   
   <div class="card card-plum">
-    <div class="badge">HIS1CJ101 · MODULE 2 · CHAPTER 1 · OFFICIAL LMS TEXTBOOK</div>
+    <div class="badge">HIS1CJ101 · MODULE 2 · CHAPTER 1 · STUDY TEXTBOOK</div>
     <h2>അധ്യായം 1: പ്രാചീന ശിലായുഗ മനുഷ്യവാസ കേന്ദ്രങ്ങൾ | Chapter 1: Prehistoric Settlements</h2>
     <p><strong>English:</strong> Comprehensive bilingual textbook covering the Palaeolithic, Mesolithic (Microliths), and Neolithic (Beginnings of Agriculture) cultures in Kerala based directly on Calicut University LMS curriculum, tool typologies, archaeological excavations, and all 23 model exam questions answered.</p>
     <p><strong>മലയാളം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാലയുടെ ഒഫീഷ്യൽ LMS പാഠപുസ്തകത്തെ അടിസ്ഥാനമാക്കി പ്രാചീന ശിലായുഗം, മധ്യശിലായുഗം (സൂക്ഷ്മ ശിലകൾ), നവീന ശിലായുഗം (കാർഷിക വിപ്ലവം), ശിലായുധങ്ങളുടെ വർഗ്ഗീകരണം, പുരാവസ്തു ഖനനങ്ങൾ, എല്ലാ 23 പരീക്ഷാ ചോദ്യോത്തരങ്ങളും ഉൾക്കൊള്ളുന്ന സമഗ്ര ദ്വിഭാഷാ പഠന സഹായി.</p>
@@ -2531,7 +2598,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
   
   <div class="card card-plum">
-    <div class="badge">HIS1CJ101 · MODULE 2 · CHAPTER 2 · OFFICIAL LMS TEXTBOOK</div>
+    <div class="badge">HIS1CJ101 · MODULE 2 · CHAPTER 2 · STUDY TEXTBOOK</div>
     <h2>അധ്യായം 2: ശിലാ ഗുഹകളും പ്രാചീന ശിലാകലയും | Chapter 2: Rock Shelters & Prehistoric Art</h2>
     <p><strong>English:</strong> Comprehensive bilingual textbook on rock art in Kerala based directly on Calicut University LMS curriculum, covering Edakkal Cave petroglyphs, Marayur pictographs, Ancode engravings, Tenmala shelter, stylistic motifs, dating methodologies, and complete answers to all 25 model exam questions.</p>
     <p><strong>മലയാളം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാലയുടെ ഒഫീഷ്യൽ LMS പാഠപുസ്തകത്തെ അടിസ്ഥാനമാക്കി ഇടയ്ക്കൽ ഗുഹകളിലെ പെട്രോഗ്ലിഫുകൾ, മറയൂരിലെ പിക്ടോഗ്രാഫുകൾ, ആങ്കോട് കൊത്തുപണികൾ, തെന്മല ഗുഹ, ബിംബങ്ങൾ, കാലഗണന, എല്ലാ 25 പരീക്ഷാ ചോദ്യോത്തരങ്ങളും ഉൾക്കൊള്ളുന്ന സമ്പൂർണ്ണ പഠന സഹായി.</p>
@@ -2681,7 +2748,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
   
   <div class="card card-plum">
-    <div class="badge">HIS1CJ101 · MODULE 2 · CHAPTER 3 · OFFICIAL LMS TEXTBOOK</div>
+    <div class="badge">HIS1CJ101 · MODULE 2 · CHAPTER 3 · STUDY TEXTBOOK</div>
     <h2>അധ്യായം 3: മഹാശിലായുഗ സംസ്കാരം (ഇരുമ്പുയുഗം) | Chapter 3: The Megalithic Culture</h2>
     <p><strong>English:</strong> Exhaustive bilingual study text covering the South Indian Iron Age in Kerala based directly on Calicut University LMS curriculum: Megalithic typologies (Kodakkal, Thoppikkal, Rock-cut caves, Dolmens, Cists, Menhirs, Urn burials), pioneering excavations (Babington 1819, B.K. Thapar Porkkalam 1948), grave goods, Black & Red Ware, iron metallurgy, socio-economic structure, and complete answers to all 78 textbook questions.</p>
     <p><strong>മലയാളം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാലയുടെ ഒഫീഷ്യൽ LMS പാഠപുസ്തകത്തെ അടിസ്ഥാനമാക്കി കേരളത്തിലെ മഹാശിലായുഗ (ഇരുമ്പുയുഗ) സംസ്കാരം: കുടക്കല്ലുകൾ, തൊപ്പിക്കല്ലുകൾ, വെട്ടുഗുഹകൾ, മുനിയറകൾ, നന്നങ്ങാടികൾ, ഖനനങ്ങൾ (ബാബിംഗ്ടൺ 1819, ബി.കെ. ഥാപ്പർ പോർക്കുളം 1948), ശവക്കല്ലറ വസ്തുക്കൾ (Grave goods), ഇരുമ്പ് ആയുധങ്ങൾ, ബി.ആർ.ഡബ്ല്യു മൺപാത്രങ്ങൾ, എല്ലാ 78 ചോദ്യോത്തരങ്ങളും ഉൾക്കൊള്ളുന്ന സമഗ്ര പഠന സഹായി.</p>
@@ -2823,7 +2890,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
   
   <div class="card card-plum">
-    <div class="badge">HIS1CJ101 · MODULE 3 · OFFICIAL LMS TEXTBOOK</div>
+    <div class="badge">HIS1CJ101 · MODULE 3 · STUDY TEXTBOOK</div>
     <h2>മൊഡ്യൂൾ 3: പ്രാചീന ചരിത്രകാലത്തെ കേരളം | Module 3: Early Historic Keralam</h2>
     <p><strong>English:</strong> Comprehensive bilingual study text covering all seven parts of the Calicut University LMS curriculum: Early Tamil Literature, Tinai concept, Greco-Roman Trade, Pattanam and Vizhinjam Excavations, Early Historic Society & Polity, Muvendar, Kurunila Mannar, and complete answers to all 10 MCQs and university essay questions.</p>
     <p><strong>മലയാളം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാലയുടെ ഒഫീഷ്യൽ LMS പാഠപുസ്തകത്തിലെ 7 ഭാഗങ്ങളും: സംഘകാല സാഹിത്യം, ഐന്തിണകൾ, ഗ്രീക്കോ-റോമൻ വാണിജ്യം, പട്ടണം & വിഴിഞ്ഞം ഖനനങ്ങൾ, സമൂഹം, മൂവേന്തർ, കുറുനില മന്നർ, എല്ലാ 10 മൾട്ടിപ്പിൾ ചോയ്സ് ചോദ്യങ്ങളും ഉപന്യാസ ചോദ്യോത്തരങ്ങളും ഉൾക്കൊള്ളുന്ന സമ്പൂർണ്ണ പഠന സഹായി.</p>
@@ -3054,7 +3121,7 @@ a[download], button[download], [download], .btn-download, .download, #downloadBt
 
   
   <div class="card card-plum">
-    <div class="badge">HIS1CJ101 · MODULE 4 · OFFICIAL LMS TEXTBOOK</div>
+    <div class="badge">HIS1CJ101 · MODULE 4 · STUDY TEXTBOOK</div>
     <h2>മൊഡ്യൂൾ 4: പന്ത്രണ്ടാം നൂറ്റാണ്ട് വരെയുള്ള കേരളം | Module 4: Medieval Keralam Upto 12th Century</h2>
     <p><strong>English:</strong> Exhaustive bilingual textbook covering all seven parts of the Calicut University LMS curriculum: Epigraphic Evidences, Archaeology & Temple Architecture, Formation of Nadu, Land Rights & Agrarian Relations, Merchant Guilds, Bhakti Traditions, and the Second Chera Polity (800–1122 CE), with complete answers to all 10 MCQs and university essay questions.</p>
     <p><strong>മലയാളം:</strong> കാലിക്കറ്റ് സർവ്വകലാശാലയുടെ ഒഫീഷ്യൽ LMS പാഠപുസ്തകത്തിലെ 7 ഭാഗങ്ങളും: ശാസനങ്ങൾ (വാഴപ്പള്ളി, തരിസാപ്പള്ളി, ജൂതച്ചെപ്പേട്), ക്ഷേത്ര വാസ്തുവിദ്യ, നാടുകളുടെ രൂപീകരണം, കാർഷിക ഭൂബന്ധങ്ങൾ, വ്യാപാര ഗിൽഡുകൾ, ഭക്തിപ്രസ്ഥാനം, രണ്ടാം ചേര സാമ്രാജ്യം (എ.ഡി 800-1122), എല്ലാ 10 MCQs ചോദ്യങ്ങളും ഉപന്യാസ ചോദ്യോത്തരങ്ങളും ഉൾക്കൊള്ളുന്ന സമ്പൂർണ്ണ പഠന സഹായി.</p>
@@ -3563,6 +3630,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, true);
 })();
+
+
+function toggleMaximizeReader() {
+  const reader = document.getElementById('chapter-reading-section');
+  const page = document.querySelector('.soc-page-wrapper');
+  const btn = document.getElementById('soc-maximize-btn');
+  const icon = document.getElementById('soc-maximize-icon');
+  const text = document.getElementById('soc-maximize-text');
+
+  if (!reader) return;
+  const isMax = reader.classList.toggle('is-maximized');
+  if (page) page.classList.toggle('soc-maximized', isMax);
+
+  if (isMax) {
+    if (icon) icon.textContent = '🗗';
+    if (text) text.textContent = 'Standard';
+    if (btn) btn.classList.add('active');
+  } else {
+    if (icon) icon.textContent = '⛶';
+    if (text) text.textContent = 'Full View';
+    if (btn) btn.classList.remove('active');
+  }
+
+  reader.scrollIntoView({ behavior: 'smooth' });
+}
+
 </script>
 
 <div class="academic-footer-feedback" style="text-align: center; margin-top: 18px; padding: 10px; font-size: 13px;"><a href="/contact" style="color: #64748b; font-weight: 600; text-decoration: none;">📢 Report Correction / Feedback ↗</a></div>
