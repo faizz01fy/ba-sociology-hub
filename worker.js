@@ -249,7 +249,7 @@ export default {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#hIw0qglyEUA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/hIw0qglyEUA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>കേരളത്തിന്റെ ഭൂപ്രകൃതിയും പരിസ്ഥിതിയും (Kerala Landscape &amp; Environment) · Masterclass</video:title>
@@ -265,7 +265,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#0g9YiJ86L7k</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/0g9YiJ86L7k/hqdefault.jpg</video:thumbnail_loc>
       <video:title>പ്രാചീന ശിലായുഗ മനുഷ്യവാസ കേന്ദ്രങ്ങൾ: പാലിയോലിത്തിക്, മെസോലിത്തിക്, നിയോലിത്തിക് · Masterclass</video:title>
@@ -281,7 +281,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#iAeENlFpYtk</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/iAeENlFpYtk/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ശിലാ ഗുഹകളും പ്രാചീന ശിലാകലയും: എടയ്ക്കൽ, മറയൂർ, തെന്മല · Masterclass</video:title>
@@ -297,7 +297,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#CrpK5EnETwQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/CrpK5EnETwQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>മഹാശിലായുഗ സംസ്കാരം: ടൈപ്പോളജി &amp; ഖനനങ്ങൾ (Megaliths, Excavations &amp; Iron Age Society)</video:title>
@@ -313,7 +313,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#W3NR_IX70qg</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/W3NR_IX70qg/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സംഘകാല കേരളവും സമുദ്ര വാണിജ്യവും (Early Historic Keralam: Tamil Literature, Tinai &amp; Indo-Roman Trade)</video:title>
@@ -329,7 +329,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#l1xQTyBb13g</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/l1xQTyBb13g/hqdefault.jpg</video:thumbnail_loc>
       <video:title>പന്ത്രണ്ടാം നൂറ്റാണ്ട് വരെയുള്ള കേരളം: ശാസനങ്ങളും ക്ഷേത്ര വാസ്തുവിദ്യയും (Epigraphy, Architecture &amp; Chera Polity)</video:title>
@@ -345,7 +345,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam#GyquVMAUNtQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=history-of-keralam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/GyquVMAUNtQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>പ്രായോഗിക ചരിത്ര പഠനവും പുരാവസ്തു ഫീൽഡ് വിസിറ്റും (Doing History &amp; Field Exploration)</video:title>
@@ -361,7 +361,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#cTlb6K9fD2o</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/cTlb6K9fD2o/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ആത്മകഥ: എന്റെ ഗുരുനാഥനെ ഓർക്കുമ്പോൾ — കലാമണ്ഡലം ഹൈദരാലി</video:title>
@@ -377,7 +377,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#igCq6grUF0g</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/igCq6grUF0g/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സഞ്ചാരസാഹിത്യം: കിഴവനും ക്രാക്കാത്തൂവയും — എസ്.കെ. പൊറ്റെക്കാട്ട്</video:title>
@@ -393,7 +393,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#ievP3epTaVQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/ievP3epTaVQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>അഭിമുഖം: മാധവിക്കുട്ടിയുമായി അക്ബർ കക്കട്ടിൽ നടത്തിയ അഭിമുഖം — സർഗ്ഗസമീക്ഷ</video:title>
@@ -409,7 +409,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#Yjk3owbUQrQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/Yjk3owbUQrQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ചരിത്രപാഠം / ലേഖനം: അർമേനിയയിലെ ഷോഗോമാൻ തെലിരിയനെ അറിയാമോ? — സജി മാർക്കോസ്</video:title>
@@ -425,7 +425,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#snYLroXbSDI</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/snYLroXbSDI/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ചെറുകഥ: പൂവമ്പഴം — കാരൂർ നീലകണ്ഠപ്പിള്ള</video:title>
@@ -441,7 +441,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#RCCr4zyAUcw</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/RCCr4zyAUcw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ചെറുകഥ: വില്ലുവണ്ടി — കെ. രേഖ</video:title>
@@ -457,7 +457,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#snYLroXbSDI</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/snYLroXbSDI/hqdefault.jpg</video:thumbnail_loc>
       <video:title>നോവൽ: ദൈവത്തിന്റെ കണ്ണ് — എൻ.പി. മുഹമ്മദ്</video:title>
@@ -473,7 +473,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#ievP3epTaVQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/ievP3epTaVQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>കവിത: സമുദ്രലംഘനം — തുഞ്ചത്ത് രാമാനുജൻ എഴുത്തച്ഛൻ</video:title>
@@ -489,7 +489,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#PYtXGzEyPgQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/PYtXGzEyPgQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>കവിത: ചിന്താവിഷ്ടയായ സീത — മഹാകവി കുമാരനാശാൻ</video:title>
@@ -505,7 +505,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#PYtXGzEyPgQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/PYtXGzEyPgQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>കവിത: ഇവനെക്കൂടി — കെ. സച്ചിദാനന്ദൻ</video:title>
@@ -521,7 +521,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#hKD8dXAAGjU</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/hKD8dXAAGjU/hqdefault.jpg</video:thumbnail_loc>
       <video:title>നാടകം: ഓരോരോ കാലത്തിലും — ശ്രീജ കെ.വി.</video:title>
@@ -537,7 +537,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#oXxVutN2BOw</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/oXxVutN2BOw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ചലച്ചിത്രം: ലിജോ ജോസ് പെല്ലിശ്ശേരിയുടെ &#x27;നൻപകൽ നേരത്ത് മയക്കം&#x27;</video:title>
@@ -553,7 +553,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam#oXxVutN2BOw</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=malayalam</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/oXxVutN2BOw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ചലച്ചിത്ര ഗാനം: മലയാള ചലച്ചിത്ര ഗാനശാഖയും ഗാനരചയിതാക്കളും</video:title>
@@ -569,7 +569,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#kHsueedBZdY</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/kHsueedBZdY/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഐ ഹാവ് എ ഡ്രീം (I Have a Dream) - V1 | Listening Skills | Calicut Univ</video:title>
@@ -585,7 +585,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#ZdrMJqXnKyE</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/ZdrMJqXnKyE/hqdefault.jpg</video:thumbnail_loc>
       <video:title>I Have a Dream (MLK Speech Analysis) - V2 | Listening Skills | Calicut Univ</video:title>
@@ -601,7 +601,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#qJDNqI7AoDw</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/qJDNqI7AoDw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ആന്തം - ലിയനാർഡ് കോഹൻ (Anthem) | Listening Skills | Calicut Univ</video:title>
@@ -617,7 +617,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#A9maAWgaovY</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/A9maAWgaovY/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ആർട്ട് ആസ് എ സോഷ്യൽ വർക്ക് (Art as Social Work) - V1 | Calicut Univ</video:title>
@@ -633,7 +633,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#zn7OMOiK69w</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/zn7OMOiK69w/hqdefault.jpg</video:thumbnail_loc>
       <video:title>The Art of Liberation (Social Work) - V2 | Listening Skills | Calicut Univ</video:title>
@@ -649,7 +649,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#hNLY9H1czbM</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/hNLY9H1czbM/hqdefault.jpg</video:thumbnail_loc>
       <video:title>മൃദുഭാഷാ പ്രയോഗങ്ങൾ (Soft Language - Carlin) - V1 | Speaking | Calicut Univ</video:title>
@@ -665,7 +665,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#TwBZX7OpWog</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/TwBZX7OpWog/hqdefault.jpg</video:thumbnail_loc>
       <video:title>The Math of Euphemisms (Soft Language) - V2 | Speaking Skills | Calicut Univ</video:title>
@@ -681,7 +681,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#OeMGI2CWtLA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/OeMGI2CWtLA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഡെത്ത് ഓഫ് എ സെയിൽസ്മാൻ (Death of a Salesman) - V1 | Calicut Univ</video:title>
@@ -697,7 +697,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#0SBovHC5y4s</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/0SBovHC5y4s/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Death of a Salesman (American Dream) - V2 | Speaking Skills | Calicut Univ</video:title>
@@ -713,7 +713,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#UE333_P1a9A</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/UE333_P1a9A/hqdefault.jpg</video:thumbnail_loc>
       <video:title>റിപ് ഇറ്റ് ഔട്ട് (Rip It Out - Dead Poets Society) | Speaking | Calicut Univ</video:title>
@@ -729,7 +729,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#9aLkAUYFWF8</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/9aLkAUYFWF8/hqdefault.jpg</video:thumbnail_loc>
       <video:title>വായനാ രീതികൾ (Reading Strategies &amp; Comprehension) | Calicut Univ</video:title>
@@ -745,7 +745,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#XLSDEwNzank</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/XLSDEwNzank/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ദ് സെക്കൻഡ് കമിങ് (The Second Coming - Yeats) | Reading | Calicut Univ</video:title>
@@ -761,7 +761,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#WzAkFzGx7CE</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/WzAkFzGx7CE/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ദ് ഫ്രോഗ് പ്രിൻസ് (The Frog Prince - Stevie Smith) | Reading | Calicut Univ</video:title>
@@ -777,7 +777,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#_S8y6DEMYO0</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/_S8y6DEMYO0/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ശുഭാപ്തിവിശ്വാസം (Helen Keller&#x27;s Optimism: An Essay) | Calicut Univ</video:title>
@@ -793,7 +793,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#wEMncXZ5tjM</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/wEMncXZ5tjM/hqdefault.jpg</video:thumbnail_loc>
       <video:title>എഴുത്തുരീതികൾ (Effective Academic Writing Process) | Calicut Univ</video:title>
@@ -809,7 +809,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#_g7fyD5mLPo</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/_g7fyD5mLPo/hqdefault.jpg</video:thumbnail_loc>
       <video:title>വിശ്വവിഖ്യാതമായ മൂക്ക് (The World Renowned Nose) | Calicut Univ</video:title>
@@ -825,7 +825,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=english#3xKSAOUYjFE</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=english</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/3xKSAOUYjFE/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സിനിമ പാരഡീസോ നിരൂപണം (Cinema Paradiso Film Review) | Calicut Univ</video:title>
@@ -841,7 +841,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#uMxIIznPo-w</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/uMxIIznPo-w/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സോഷ്യോളജിക്കൽ ഭാവന (Sociological Imagination &amp; Research) | Sociology | Calicut Univ</video:title>
@@ -857,7 +857,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#WyReGfMhJJs</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/WyReGfMhJJs/hqdefault.jpg</video:thumbnail_loc>
       <video:title>പോസിറ്റിവിസവും സോഷ്യോളജിയും (Positivism &amp; Micro-Macro Sociology) | Calicut Univ</video:title>
@@ -873,7 +873,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#WyReGfMhJJs</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/WyReGfMhJJs/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സോഷ്യോളജി പ്രയോഗത്തിൽ (Practicing Sociology) - V1 | Sociology | Calicut Univ</video:title>
@@ -889,7 +889,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#YEnG1YJ_vfs</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/YEnG1YJ_vfs/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സാമൂഹിക യാഥാർത്ഥ്യം (Social Reality &amp; Orientations) - V2 | Sociology | Calicut Univ</video:title>
@@ -905,7 +905,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#3VcFATaXWFI</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/3VcFATaXWFI/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഗവേഷണ രൂപരേഖയും ഘട്ടങ്ങളും (Research Design &amp; Methods) | Sociology | Calicut Univ</video:title>
@@ -921,7 +921,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#JmgL66yjgDg</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/JmgL66yjgDg/hqdefault.jpg</video:thumbnail_loc>
       <video:title>നിരീക്ഷണ രീതികളും ധാർമ്മികതയും (Observation &amp; Ethics) | Sociology | Calicut Univ</video:title>
@@ -937,7 +937,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#NpA6uopiRYk</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/NpA6uopiRYk/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സമൂഹം നമ്മളെ മനുഷ്യരാക്കുന്നു (How Society Makes Us Human) | Calicut Univ</video:title>
@@ -953,7 +953,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#uf8WYWO9-Tk</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/uf8WYWO9-Tk/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സാമൂഹികവൽക്കരണ ഏജൻസികൾ (Agents of Socialization) | Sociology | Calicut Univ</video:title>
@@ -969,7 +969,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#EJt-7kG_-E8</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/EJt-7kG_-E8/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സമൂഹത്തിന്റെ നിർമ്മിതികൾ (Social Construction of Reality) | Calicut Univ</video:title>
@@ -985,7 +985,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#KEg51ekQTWY</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/KEg51ekQTWY/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സോഷ്യലൈസേഷൻ പാളിച്ചകൾ (Socialization Failures &amp; Identity) | Calicut Univ</video:title>
@@ -1001,7 +1001,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#uf8WYWO9-Tk</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/uf8WYWO9-Tk/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഫ്രോയിഡ്, മീഡ്, പിയാഷെ (Theories of Socialization) | Sociology | Calicut Univ</video:title>
@@ -1017,7 +1017,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#jedN-7Z72Fk</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/jedN-7Z72Fk/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സാമൂഹിക ഗ്രൂപ്പുകൾ (Social Groups: Primary &amp; Secondary) | Sociology | Calicut Univ</video:title>
@@ -1033,7 +1033,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#uMxIIznPo-w</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/uMxIIznPo-w/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ബ്യൂറോക്രസിയും ആൾക്കൂട്ടവും (Formal Organizations &amp; Crowds) | Calicut Univ</video:title>
@@ -1049,7 +1049,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#TN8LqpBZCGQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/TN8LqpBZCGQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സാമൂഹിക പ്രതിപ്രവർത്തനങ്ങൾ (Types of Social Interaction) | Sociology | Calicut Univ</video:title>
@@ -1065,7 +1065,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#N6XM-ScWqeo</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/N6XM-ScWqeo/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സംഘർഷവും സമൂഹവും (Social Conflict: Lewis Coser &amp; Marx) | Sociology | Calicut Univ</video:title>
@@ -1081,7 +1081,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#QidpySg9v80</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/QidpySg9v80/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സാമൂഹിക നിയന്ത്രണ മാർഗങ്ങൾ (Social Control &amp; Sanctions) | Sociology | Calicut Univ</video:title>
@@ -1097,7 +1097,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#zEagx74glsc</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/zEagx74glsc/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സമൂഹത്തിന്റെ പരിണാമം (Society: Characteristics &amp; Evolution) | Calicut Univ</video:title>
@@ -1113,7 +1113,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#z1jXxahDWUw</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/z1jXxahDWUw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സാമൂഹിക സ്ഥാപനങ്ങൾ (Social Institutions: Family &amp; Marriage) | Calicut Univ</video:title>
@@ -1129,7 +1129,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#7Qkp0t6g9Qc</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/7Qkp0t6g9Qc/hqdefault.jpg</video:thumbnail_loc>
       <video:title>പദവികളും റോളുകളും (Social Structure: Status &amp; Role Conflict) | Calicut Univ</video:title>
@@ -1145,7 +1145,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology#jfBES35jpzw</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=sociology</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/jfBES35jpzw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സാമൂഹിക മാറ്റവും ഘടകങ്ങളും (Social Change: Factors &amp; Theories) | Calicut Univ</video:title>
@@ -1161,7 +1161,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#6VWW49UMoks</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/6VWW49UMoks/hqdefault.jpg</video:thumbnail_loc>
       <video:title>തത്ത്വചിന്തയിൽ നിന്ന് AI-യിലേക്ക് (Historical Evolution: Philosophy to AI) | Calicut Univ</video:title>
@@ -1177,7 +1177,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#MniIlxa7sjo</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/MniIlxa7sjo/hqdefault.jpg</video:thumbnail_loc>
       <video:title>AI അടിസ്ഥാന തത്ത്വങ്ങളും നാഴികക്കല്ലുകളും (Foundations &amp; Pioneers in AI) | Calicut Univ</video:title>
@@ -1193,7 +1193,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#Vq-Bc0TI7L0</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/Vq-Bc0TI7L0/hqdefault.jpg</video:thumbnail_loc>
       <video:title>യന്ത്രങ്ങൾക്ക് ചിന്തിക്കാനാകുമോ? (Symbolic AI vs Connectionism) | Calicut Univ</video:title>
@@ -1209,7 +1209,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#1Va07j8OQSA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/1Va07j8OQSA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ട്യൂറിംഗ് ടെസ്റ്റും മെഷീൻ ചിന്തയും (Can Machines Think? Turing Test) | Calicut Univ</video:title>
@@ -1225,7 +1225,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#cVbNy9v0R7E</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/cVbNy9v0R7E/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ക്ലാസിക്കൽ AI-യും ഫ്രെയിം പ്രോബ്ലവും (Problems in Classical GOFAI) | Calicut Univ</video:title>
@@ -1241,7 +1241,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#Y4zhWiirJkc</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/Y4zhWiirJkc/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ചൈനീസ് റൂമും ട്യൂറിംഗ് ടെസ്റ്റും (Chinese Room &amp; Turing Test) | Calicut Univ</video:title>
@@ -1257,7 +1257,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#OBl1S1edYyU</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/OBl1S1edYyU/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ജോൺ സിയേളിന്റെ ചൈനീസ് റൂം (Searle&#x27;s Chinese Room Argument) | Calicut Univ</video:title>
@@ -1273,7 +1273,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#fEzSc4YXW4s</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/fEzSc4YXW4s/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഡെക്കാർട്ടിന്റെ ഡ്യൂവലിസവും എഐയും (Descartes, Mind &amp; Digital Dualism) | Calicut Univ</video:title>
@@ -1289,7 +1289,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#2_RbQ7y-uHE</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/2_RbQ7y-uHE/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ശരീരമില്ലാതെ ബോധത്തിന് നിലനിൽക്കാൻ കഴിയുമോ? (Embodied Cognition &amp; AI) | Calicut Univ</video:title>
@@ -1305,7 +1305,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#hoAiiD_qroA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/hoAiiD_qroA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>AI-യിലെ വിജ്ഞാനശാസ്ത്ര അടിത്തറകൾ (Epistemological Foundations in AI) | Calicut Univ</video:title>
@@ -1321,7 +1321,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#626Pz--vDxk</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/626Pz--vDxk/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഭാരതീയ തത്ത്വചിന്തയിലെ പ്രമാണങ്ങളും AI-യും (Indian Epistemology &amp; AI) | Calicut Univ</video:title>
@@ -1337,7 +1337,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#NPbHpX8kOZs</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/NPbHpX8kOZs/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഭാരതീയ ന്യായശാസ്ത്രവും AI-യും (Nyaya Epistemology &amp; AI Reasoning) | Calicut Univ</video:title>
@@ -1353,7 +1353,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#h49OapnTcxI</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/h49OapnTcxI/hqdefault.jpg</video:thumbnail_loc>
       <video:title>പാശ്ചാത്യ വിജ്ഞാനശാസ്ത്രവും എഐയും (Western Epistemology &amp; AI) | Calicut Univ</video:title>
@@ -1369,7 +1369,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#Y4zhWiirJkc</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/Y4zhWiirJkc/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഫങ്ഷണലിസവും കമ്പ്യൂട്ടേഷണൽ മൈൻഡും (Functionalism &amp; Mind) - V2 | Calicut Univ</video:title>
@@ -1385,7 +1385,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#hoAiiD_qroA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/hoAiiD_qroA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>എഐയിലെ വിജ്ഞാനശാസ്ത്ര പ്രത്യാഘാതങ്ങൾ (Epistemological Implications in AI) | Calicut Univ</video:title>
@@ -1401,7 +1401,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#qrlC8o73n4Q</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/qrlC8o73n4Q/hqdefault.jpg</video:thumbnail_loc>
       <video:title>എഐ വിജ്ഞാനശാസ്ത്ര സമഗ്ര അവലോകനം (Epistemological Implications Masterclass) | Calicut Univ</video:title>
@@ -1417,7 +1417,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#uiB6PFp5P_I</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/uiB6PFp5P_I/hqdefault.jpg</video:thumbnail_loc>
       <video:title>എഐയും അറിവിന്റെ വിജ്ഞാനശാസ്ത്രവും (Epistemology of AI Discussion) | Calicut Univ</video:title>
@@ -1433,7 +1433,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#uiB6PFp5P_I</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/uiB6PFp5P_I/hqdefault.jpg</video:thumbnail_loc>
       <video:title>എഐ മനുഷ്യന്റെ അസ്തിത്വ ഭീഷണിയോ? (Value Alignment &amp; Existential Risk) | Calicut Univ</video:title>
@@ -1449,7 +1449,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#_6n810PKN9c</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/_6n810PKN9c/hqdefault.jpg</video:thumbnail_loc>
       <video:title>AI-യുടെ ധാർമ്മിക തത്വങ്ങൾ (Foundational Ethical Principles of AI) | Calicut Univ</video:title>
@@ -1465,7 +1465,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#ReMCiz7ckYs</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/ReMCiz7ckYs/hqdefault.jpg</video:thumbnail_loc>
       <video:title>അൽഗോരിതമിക് പക്ഷപാതങ്ങൾ (Algorithmic Bias &amp; Social Discrimination) | Calicut Univ</video:title>
@@ -1481,7 +1481,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#5vaYMdGdu4g</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/5vaYMdGdu4g/hqdefault.jpg</video:thumbnail_loc>
       <video:title>എ.ഐ സമൂഹത്തിന്റെ കണ്ണാടി (AI as a Mirror of Human Society) | Calicut Univ</video:title>
@@ -1497,7 +1497,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#uQOdA1he-iE</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/uQOdA1he-iE/hqdefault.jpg</video:thumbnail_loc>
       <video:title>അൽഗോരിത വിവേചനം തടയൽ (Mitigating Algorithmic Discrimination) | Calicut Univ</video:title>
@@ -1513,7 +1513,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#oTEhOh_z5NA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/oTEhOh_z5NA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സ്വയംഭരണ വാഹനങ്ങളും ട്രോളി പ്രശ്നവും (Autonomous Vehicles &amp; Trolley Problem) | Calicut Univ</video:title>
@@ -1529,7 +1529,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#cND0PVx_Jdk</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/cND0PVx_Jdk/hqdefault.jpg</video:thumbnail_loc>
       <video:title>AI കോടതിയും നൈതിക ഉത്തരവാദിത്തവും (AI as Legal Agent &amp; Moral Patient) | Calicut Univ</video:title>
@@ -1545,7 +1545,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#mNA2qltalns</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/mNA2qltalns/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ധാർമ്മിക കർതൃത്വവും ഉത്തരവാദിത്ത വിടവും (Moral Agency &amp; Responsibility Gap) | Calicut Univ</video:title>
@@ -1561,7 +1561,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#RW9Pb-UHMpE</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/RW9Pb-UHMpE/hqdefault.jpg</video:thumbnail_loc>
       <video:title>എഐ കാലത്തെ ദാർശനിക ചോദ്യങ്ങൾ (New Philosophical Questions in AI) | Calicut Univ</video:title>
@@ -1577,7 +1577,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai#K_1zUvokuuU</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-ai</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/K_1zUvokuuU/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ടെക്നോളജിക്കൽ സിംഗുലാരിറ്റിയും ഭാവിയും (Technological Singularity &amp; Future) | Calicut Univ</video:title>
@@ -1593,7 +1593,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#IcVqN7uFNEo</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/IcVqN7uFNEo/hqdefault.jpg</video:thumbnail_loc>
       <video:title>വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും (Meaning &amp; History of Education)</video:title>
@@ -1609,7 +1609,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#A3CI9riUkGY</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/A3CI9riUkGY/hqdefault.jpg</video:thumbnail_loc>
       <video:title>വിദ്യാഭ്യാസത്തിന്റെ പൊരുളും മഹത്തായ ദർശനങ്ങളും (Essence &amp; Great Philosophies)</video:title>
@@ -1625,7 +1625,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#IcVqN7uFNEo</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/IcVqN7uFNEo/hqdefault.jpg</video:thumbnail_loc>
       <video:title>വിദ്യാഭ്യാസ തത്വശാസ്ത്രം: ചരിത്രവും പ്രധാന ശാഖകളും (History &amp; Branches of Philosophy)</video:title>
@@ -1641,7 +1641,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#Axf_IV07DN0</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/Axf_IV07DN0/hqdefault.jpg</video:thumbnail_loc>
       <video:title>പാശ്ചാത്യ വിദ്യാഭ്യാസത്തിലെ ആദർശവാദവും പ്രകൃതിവാദവും (Idealism &amp; Naturalism in Western Education)</video:title>
@@ -1657,7 +1657,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#A3CI9riUkGY</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/A3CI9riUkGY/hqdefault.jpg</video:thumbnail_loc>
       <video:title>മനുഷ്യനെ പൂർണ്ണനാക്കുന്ന ഭാരതീയ വിദ്യാഭ്യാസ ദർശനങ്ങൾ (Indian Educational Philosophies)</video:title>
@@ -1673,7 +1673,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#Axf_IV07DN0</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/Axf_IV07DN0/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഗാന്ധിജിയുടെ നയി താലിം എന്ന വിദ്യാഭ്യാസ വിപ്ലവം (Mahatma Gandhi&#x27;s Nai Talim)</video:title>
@@ -1689,7 +1689,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#QBLrna7iE1o</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/QBLrna7iE1o/hqdefault.jpg</video:thumbnail_loc>
       <video:title>അധ്യാപനത്തെ അർത്ഥവത്താക്കുന്ന വിദ്യാഭ്യാസ തത്വശാസ്ത്രം (Philosophy of Education: Making Teaching Meaningful)</video:title>
@@ -1705,7 +1705,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education#QBLrna7iE1o</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=philosophy-of-education</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/QBLrna7iE1o/hqdefault.jpg</video:thumbnail_loc>
       <video:title>യഥാർത്ഥ വിദ്യാഭ്യാസം പരീക്ഷകൾക്കപ്പുറമുള്ള ജീവിതം (Real Education: Beyond Exams)</video:title>
@@ -1721,7 +1721,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#WYtOkVjW_Wo</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/WYtOkVjW_Wo/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഇന്ത്യൻ സാമ്പത്തിക ചരിത്രവും പ്രതിസന്ധിയും (India&#x27;s Economy 1700–1991) | Calicut Univ</video:title>
@@ -1737,7 +1737,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#j49jvbn7bz4</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/j49jvbn7bz4/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഇന്ത്യൻ സാമ്പത്തിക ചരിത്രവും വികസന നയങ്ങളും (History &amp; Development Policies) | Calicut Univ</video:title>
@@ -1753,7 +1753,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#FpHhWggjeIg</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/FpHhWggjeIg/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഇന്ത്യൻ സമ്പദ്‌വ്യവസ്ഥയിലെ വൈരുദ്ധ്യങ്ങൾ (Contradictions &amp; Challenges) | Calicut Univ</video:title>
@@ -1769,7 +1769,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#x8npIOpPvas</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/x8npIOpPvas/hqdefault.jpg</video:thumbnail_loc>
       <video:title>യഥാർത്ഥ വികസനവും സാമ്പത്തിക സ്ഥാപനങ്ങളും (Real Development &amp; Institutions) | Calicut Univ</video:title>
@@ -1785,7 +1785,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#BQffX1nDUjw</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/BQffX1nDUjw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>1991 സാമ്പത്തിക പ്രതിസന്ധിയും സ്വർണ്ണ പണയവും (1991 BOP Crisis &amp; Gold) | Calicut Univ</video:title>
@@ -1801,7 +1801,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#QTHt_P7RIA0</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/QTHt_P7RIA0/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ദാരിദ്ര്യ നിർണ്ണയ രീതികളും സമിതികളും (Poverty Estimation &amp; Committees) | Calicut Univ</video:title>
@@ -1817,7 +1817,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#0KQZ7Kv-5bs</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/0KQZ7Kv-5bs/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ദാരിദ്ര്യ പഠന കമ്മിറ്റികൾ (Poverty Study Committees in India) | Calicut Univ</video:title>
@@ -1833,7 +1833,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#sh2tt7d07PM</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/sh2tt7d07PM/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ദാരിദ്ര്യരേഖ മുതൽ ബഹുമുഖ ദാരിദ്ര്യ സൂചിക വരെ (Poverty Line to MPI) | Calicut Univ</video:title>
@@ -1849,7 +1849,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#niiXnw88Fzg</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/niiXnw88Fzg/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഇന്ത്യയിലെ സാമ്പത്തിക അസമത്വം (Economic Inequality in India) | Calicut Univ</video:title>
@@ -1865,7 +1865,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#JWDBMSBYd1M</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/JWDBMSBYd1M/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ലോറൻസ് കർവും ഗിനി ഗുണകവും (Inequality: Lorenz Curve &amp; Gini) | Calicut Univ</video:title>
@@ -1881,7 +1881,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#PDRbbOLxj4k</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/PDRbbOLxj4k/hqdefault.jpg</video:thumbnail_loc>
       <video:title>തൊഴിലില്ലായ്മയും തൊഴിൽ നയങ്ങളും (Unemployment in India) | Calicut Univ</video:title>
@@ -1897,7 +1897,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#C_QjoD92wNM</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/C_QjoD92wNM/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഇന്ത്യൻ തൊഴിൽ മേഖലയിലെ വെല്ലുവിളികൾ (Unemployment Debate) - V1 | Calicut Univ</video:title>
@@ -1913,7 +1913,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy#Za9o3cHz_uQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=development-issues-in-indian-economy</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/Za9o3cHz_uQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>12 തരം തൊഴിലില്ലായ്മകൾ (12 Types of Unemployment in India) - V2 | Calicut Univ</video:title>
@@ -1929,7 +1929,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#3AJOPvBY9KA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/3AJOPvBY9KA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>എത്തിക്സ് അഥവാ ശരിതെറ്റുകളുടെ തത്ത്വശാസ്ത്രം (Ethics: Philosophy of Right &amp; Wrong)</video:title>
@@ -1945,7 +1945,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#s3xGsLMCY1o</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/s3xGsLMCY1o/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ധർമ്മശാസ്ത്രം ആമുഖവും തത്വങ്ങളും (Introduction to Dharmashastra &amp; Western Ethics)</video:title>
@@ -1961,7 +1961,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#j0Rh56DJMYw</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/j0Rh56DJMYw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Fundamentals of Ethics Complete 5-Module Masterclass</video:title>
@@ -1977,7 +1977,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#zIvRoe-he-8</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/zIvRoe-he-8/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Applied Ethics The Casebook of Dilemmas</video:title>
@@ -1993,7 +1993,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#m_ZvZ5Xl8e8</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/m_ZvZ5Xl8e8/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Introduction to Ethics Nature  Scope</video:title>
@@ -2009,7 +2009,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#KkcAMQxeMsY</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/KkcAMQxeMsY/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Fundamentals of Ethics Axioms to Application</video:title>
@@ -2025,7 +2025,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#zz0d8u3N2aw</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/zz0d8u3N2aw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Applied Ethics From Casuistry to Real-World Dilemmas</video:title>
@@ -2041,7 +2041,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#AXKs5HdTUTw</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/AXKs5HdTUTw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സദ്ഗുണവും അവകാശങ്ങളും കടമകളും (Virtue Ethics, Moral Rights &amp; Duties)</video:title>
@@ -2057,7 +2057,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#0_peGPXEbrc</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/0_peGPXEbrc/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സദാചാര മൂല്യങ്ങളും അവകാശ കടമകളും (Moral Values, Rights &amp; Responsibilities)</video:title>
@@ -2073,7 +2073,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#5Sa6S_-Z6WA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/5Sa6S_-Z6WA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Concepts of Ethics Virtue, Rights, and Duties</video:title>
@@ -2089,7 +2089,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#cAI0VvuMm3o</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/cAI0VvuMm3o/hqdefault.jpg</video:thumbnail_loc>
       <video:title>കൺസിക്വൻഷ്യലിസവും ഡിയോന്റോളജിക്കൽ എത്തിക്സും (Consequentialism &amp; Deontological Ethics)</video:title>
@@ -2105,7 +2105,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#WU7_Bjoa5f0</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/WU7_Bjoa5f0/hqdefault.jpg</video:thumbnail_loc>
       <video:title>യൂട്ടിലിറ്റേറിയനിസവും ഡിയന്റോളജിയും (Utilitarianism &amp; Deontology Deep Dive)</video:title>
@@ -2121,7 +2121,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#4YknAHNj7x4</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/4YknAHNj7x4/hqdefault.jpg</video:thumbnail_loc>
       <video:title>കുറ്റവാളികളെ നമ്മൾ എന്തിനാണ് ശിക്ഷിക്കുന്നത്? (Theories of Punishment: Why Do We Punish?)</video:title>
@@ -2137,7 +2137,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#EII8YGQlSAc</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/EII8YGQlSAc/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ദയാവധവും ഡീപ് ഇക്കോളജിയും പ്രായോഗിക ധാർമ്മികതയിൽ (Euthanasia &amp; Deep Ecology in Applied Ethics)</video:title>
@@ -2153,7 +2153,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#8DFAD8HVkrs</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/8DFAD8HVkrs/hqdefault.jpg</video:thumbnail_loc>
       <video:title>പ്രായോഗിക നൈതികതയും ധാർമ്മിക പ്രതിസന്ധികളും (Applied Ethics &amp; Practical Dilemmas)</video:title>
@@ -2169,7 +2169,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics#9MW6gIEwWtU</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=fundamentals-of-ethics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/9MW6gIEwWtU/hqdefault.jpg</video:thumbnail_loc>
       <video:title>Applied Ethics: From Casuistry to Real-World Dilemmas</video:title>
@@ -2185,7 +2185,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#Mu1Ktkzr_ME</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/Mu1Ktkzr_ME/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഡിമാൻഡ് നിയമവും സവിശേഷതകളും (Demand: Law, Determinants, Curves &amp; Market Demand)</video:title>
@@ -2201,7 +2201,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#gHAZ4EVPvv4</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/gHAZ4EVPvv4/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സപ്ലൈ സിദ്ധാന്തവും വിപണി സവിശേഷതകളും (Supply: Law, Determinants &amp; LMS Review)</video:title>
@@ -2217,7 +2217,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#ULJedrxANeY</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/ULJedrxANeY/hqdefault.jpg</video:thumbnail_loc>
       <video:title>വിപണി സന്തുലിതാവസ്ഥ (Market Equilibrium &amp; Price Determination)</video:title>
@@ -2233,7 +2233,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#xfR7G1s4Iks</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/xfR7G1s4Iks/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഷോക്കിങ് ദി ഇക്വിലിബ്രിയം (Shocking the Equilibrium: Demand &amp; Supply Shifts)</video:title>
@@ -2249,7 +2249,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#nnn3uhL8Kf4</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/nnn3uhL8Kf4/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സന്തുലിതാവസ്ഥയിലെ മാറ്റങ്ങളും ഇലാസ്തികതയും (Equilibrium Effects &amp; Elasticity)</video:title>
@@ -2265,7 +2265,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#Jj-JWuNJjRU</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/Jj-JWuNJjRU/hqdefault.jpg</video:thumbnail_loc>
       <video:title>യൂട്ടിലിറ്റി വിശകലനം (Utility Analysis: Cardinal vs Ordinal &amp; DMU)</video:title>
@@ -2281,7 +2281,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#z8tbT2SiepA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/z8tbT2SiepA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഉപഭോക്തൃ മുൻഗണനകളും ഇൻഡിഫറൻസ് കർവുകളും (Consumer Preferences &amp; Indifference Curves)</video:title>
@@ -2297,7 +2297,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#9H8683I4Ad8</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/9H8683I4Ad8/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ബജറ്റ് പരിമിതിയും ഉപഭോക്തൃ സമനിലയും (Budget Constraint &amp; Consumer Equilibrium)</video:title>
@@ -2313,7 +2313,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#J6hBbtao1ms</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/J6hBbtao1ms/hqdefault.jpg</video:thumbnail_loc>
       <video:title>നിയന്ത്രിത ഉപഭോക്തൃ തിരഞ്ഞെടുപ്പ് (Constrained Consumer Choice: Optimal Bundle &amp; Tangency)</video:title>
@@ -2329,7 +2329,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#W6b1q1WUJbo</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/W6b1q1WUJbo/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സ്ഥാപനങ്ങളുടെ ഉടമസ്ഥതയും മാനേജ്‌മെന്റും (The Ownership &amp; Management of Firms)</video:title>
@@ -2345,7 +2345,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#PB4Dmlu5ueg</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/PB4Dmlu5ueg/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഉത്പാദന ഫലനവും ഇൻപുട്ടുകളുടെ വ്യതിയാനവും (Production Functions: Q = f(L, K) &amp; Time Horizons)</video:title>
@@ -2361,7 +2361,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#n-5A7cQpaWc</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/n-5A7cQpaWc/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഹ്രസ്വകാല ഉത്പാദനവും ആദായ നിയമവും (Short-Run Production: TP, MP, AP) | Calicut Univ</video:title>
@@ -2377,7 +2377,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#snZ7fkjWLHY</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/snZ7fkjWLHY/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ദീർഘകാല ഉത്പാദനവും ഐസോക്വാണ്ട് വക്രങ്ങളും (Long-Run Production: Isoquants &amp; MRTS)</video:title>
@@ -2393,7 +2393,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#9gX0HzBZ0Bc</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/9gX0HzBZ0Bc/hqdefault.jpg</video:thumbnail_loc>
       <video:title>റിട്ടേൺസ് ടു സ്കെയിൽ (Returns to Scale &amp; Production Function)</video:title>
@@ -2409,7 +2409,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#LEvGpu6LHC0</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/LEvGpu6LHC0/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ചെലവുകളുടെ സ്വഭാവം (Nature of Costs: Explicit, Implicit &amp; Sunk Costs)</video:title>
@@ -2425,7 +2425,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#662lL8_DLds</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/662lL8_DLds/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഹ്രസ്വകാല ചെലവ് കർവുകൾ (Short-Run Costs: TC, MC, AVC &amp; ATC)</video:title>
@@ -2441,7 +2441,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#BYjuAF87aH8</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/BYjuAF87aH8/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ദീർഘകാല ചെലവുകളും എൻവലപ്പ് കർവും (Long-Run Costs: LRTC, LRAC, LRMC &amp; Envelope Curve)</video:title>
@@ -2457,7 +2457,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#afGuh5f2ypk</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/afGuh5f2ypk/hqdefault.jpg</video:thumbnail_loc>
       <video:title>പൂർണ്ണമത്സര വിപണി (Perfect Competition: Short-Run &amp; Long-Run Equilibrium)</video:title>
@@ -2473,7 +2473,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#sh-7a1b7vpE</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/sh-7a1b7vpE/hqdefault.jpg</video:thumbnail_loc>
       <video:title>കുത്തക വിപണിയും ക്ഷേമ നഷ്ടവും (Monopoly: Pricing, Market Power &amp; Deadweight Loss)</video:title>
@@ -2489,7 +2489,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#yAFmskolNFk</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/yAFmskolNFk/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഏകാധിപത്യ മത്സരവും ഒളിഗോപൊളിയും (Monopolistic Competition &amp; Oligopoly)</video:title>
@@ -2505,7 +2505,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation#_HJ6ezj1khA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=microeconomic-foundation</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/_HJ6ezj1khA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ആഗോള വിപണി ഘടനകളും തീരുമാനമെടുക്കലും (Global Market Structures &amp; Decision Making)</video:title>
@@ -2521,7 +2521,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#P4mcyo5AQ2M</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/P4mcyo5AQ2M/hqdefault.jpg</video:thumbnail_loc>
       <video:title>അഭിവാദനങ്ങളും ആമുഖങ്ങളും — അത്തഹിയ്യാതു വത്തആറുഫ് (Greetings &amp; Introductions)</video:title>
@@ -2537,7 +2537,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#GkEW0h43nAs</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/GkEW0h43nAs/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ക്രിയാപദങ്ങളും വാക്യഘടനയും (Arabic Verbal Sentences &amp; Tenses)</video:title>
@@ -2553,7 +2553,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#pVTBssQb4kM</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/pVTBssQb4kM/hqdefault.jpg</video:thumbnail_loc>
       <video:title>അധ്വാനം സമ്പത്ത് — അൽ-അമലു സർവത് (Work Is Wealth)</video:title>
@@ -2569,7 +2569,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#wYrnmU61yHQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/wYrnmU61yHQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>അറബിക് നർമ്മകഥകൾ — ത്വറാഇഫ് അറബിയ്യ (Arabic Anecdotes)</video:title>
@@ -2585,7 +2585,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#0x97BHkYH7I</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/0x97BHkYH7I/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സമയവും ആരോഗ്യവും — അൽ-വഖ്തു വസ്സിഹ്ഹ (Time and Health)</video:title>
@@ -2601,7 +2601,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#OQfXlhCslBY</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/OQfXlhCslBY/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഔദ്യോഗിക എഴുത്തുകുത്തുകളും വാണിജ്യ അറബിയും (Commercial Arabic &amp; Business Letters)</video:title>
@@ -2617,7 +2617,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic#xmmSpkecMCk</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=arabic</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/xmmSpkecMCk/hqdefault.jpg</video:thumbnail_loc>
       <video:title>വിവർത്തന രീതികൾ: അറബിക് - മലയാളം - ഇംഗ്ലീഷ് (Translation Methods: Arabic-Mal-Eng)</video:title>
@@ -2633,7 +2633,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#RDXXw4nZ-xo</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/RDXXw4nZ-xo/hqdefault.jpg</video:thumbnail_loc>
       <video:title>संविधान एवं राजभाषा : संवैधानिक प्रावधान</video:title>
@@ -2649,7 +2649,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#rt0Mw1Nfe9o</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/rt0Mw1Nfe9o/hqdefault.jpg</video:thumbnail_loc>
       <video:title>राजभाषा कार्यान्वयन एवं पत्राचार</video:title>
@@ -2665,7 +2665,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#-f5H3lZR9SQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/-f5H3lZR9SQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>सुमित्रानंदन पंत : प्रथम रश्मि (काव्य सौंदर्य व विस्मय-बोध)</video:title>
@@ -2681,7 +2681,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#-wA__gVCqyA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/-wA__gVCqyA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>कुँवर नारायण : कविता की ज़रूरत</video:title>
@@ -2697,7 +2697,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#-f5H3lZR9SQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/-f5H3lZR9SQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>असंगघोष : मैं दूँगा माकूल जवाब (दलित चेतना व सामाजिक प्रतिरोध)</video:title>
@@ -2713,7 +2713,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#-wA__gVCqyA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/-wA__gVCqyA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>आधुनिक हिन्दी कविता : भाव और संरचना</video:title>
@@ -2729,7 +2729,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#44_nsP1S1KA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/44_nsP1S1KA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>वाक्य संरचना : उद्देश्य, विधेय एवं वाक्य के भेद</video:title>
@@ -2745,7 +2745,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi#LGsVPmTg7Hg</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=hindi</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/LGsVPmTg7Hg/hqdefault.jpg</video:thumbnail_loc>
       <video:title>व्यावहारिक हिन्दी व्याकरण एवं मुहावरे</video:title>
@@ -2761,7 +2761,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#7ysFGq5TDmU</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/7ysFGq5TDmU/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സംഖ്യാ സമ്പ്രദായം (Number System &amp; Properties of Numbers)</video:title>
@@ -2777,7 +2777,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#wRbxHgD3vvM</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/wRbxHgD3vvM/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സംഖ്യാ ശ്രേണികൾ (Sequence &amp; Series: AP &amp; GP)</video:title>
@@ -2793,7 +2793,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#e6otJTrEVtw</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/e6otJTrEVtw/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഭിന്നസംഖ്യകളും ദശാംശങ്ങളും (Fractions, Decimals &amp; Rational Numbers)</video:title>
@@ -2809,7 +2809,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#mmtgfQJFbew</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/mmtgfQJFbew/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഉ.സാ.ഘ &amp; ല.സാ.ഗു (HCF and LCM — Methods, Rules &amp; Word Problems)</video:title>
@@ -2825,7 +2825,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#9R0jxumt78Q</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/9R0jxumt78Q/hqdefault.jpg</video:thumbnail_loc>
       <video:title>വർഗ്ഗമൂലവും ഘനമൂലവും (Square Root &amp; Cube Root — Tricks &amp; Properties)</video:title>
@@ -2841,7 +2841,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#zqC-NRyKEvo</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/zqC-NRyKEvo/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ലഘൂകരണവും VBODMAS നിയമവും (Simplifications, Operator Priority &amp; Identities)</video:title>
@@ -2857,7 +2857,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#tD3-kq_FFvA</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/tD3-kq_FFvA/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ശരാശരി (Average — Natural Numbers, Replaced Weight &amp; Harmonic Speed)</video:title>
@@ -2873,7 +2873,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#WrEqemI9Zas</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/WrEqemI9Zas/hqdefault.jpg</video:thumbnail_loc>
       <video:title>അംശബന്ധവും അനുപാതവും (Ratio &amp; Proportion — Mean, Third &amp; Fourth Proportional)</video:title>
@@ -2889,7 +2889,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#1kvqzSGO8os</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/1kvqzSGO8os/hqdefault.jpg</video:thumbnail_loc>
       <video:title>പ്രായാധിഷ്ഠിത ചോദ്യങ്ങൾ (Problems Based on Ages — Linear &amp; Ratio Methods)</video:title>
@@ -2905,7 +2905,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#1DAnnifmf1E</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/1DAnnifmf1E/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ശതമാനം (Percentages — Fraction Shortcuts, Successive % &amp; Consumption Rule)</video:title>
@@ -2921,7 +2921,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#DXNCo6aP1MI</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/DXNCo6aP1MI/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ലാഭവും നഷ്ടവും (Profit &amp; Loss — CP/SP, Equal SP Loss &amp; False Weights)</video:title>
@@ -2937,7 +2937,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#rWRWDJ75Epo</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/rWRWDJ75Epo/hqdefault.jpg</video:thumbnail_loc>
       <video:title>ഡിസ്കൗണ്ട് / വിലക്കിഴിവ് (Discount, Marked Price &amp; Successive Discounts)</video:title>
@@ -2953,7 +2953,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#O5hYWUfEAJQ</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/O5hYWUfEAJQ/hqdefault.jpg</video:thumbnail_loc>
       <video:title>സാധാരണ പലിശ (Simple Interest — PRT/100, Doubling Time &amp; Rate Tricks)</video:title>
@@ -2969,7 +2969,7 @@ export default {
     </video:video>
   </url>
   <url>
-    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics#Vc5t74FIdU0</loc>
+    <loc>https://academichubfaiz.in/voice-explanation?subject=mathematics</loc>
     <video:video>
       <video:thumbnail_loc>https://i.ytimg.com/vi/Vc5t74FIdU0/hqdefault.jpg</video:thumbnail_loc>
       <video:title>കൂട്ടുപലിശയും മൂല്യത്തേയ്മാനവും (Compound Interest &amp; CI–SI Difference)</video:title>
