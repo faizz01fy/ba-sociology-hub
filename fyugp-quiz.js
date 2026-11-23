@@ -62,6 +62,8 @@ const publicPortalPage = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Calicut University FYUGP (Regular) | Academic Hub</title>
+<meta name="description" content="Calicut University FYUGP (Regular) program portal on Academic Hub. Access curriculum roadmaps, English Ability Enhancement resources, and study modules.">
+<link rel="canonical" href="https://academichubfaiz.in/calicut-university-fyugp">
 <style>
 body{margin:0;padding:20px;background:#edf5f0;color:#153236;font:16px/1.55 system-ui,sans-serif}
 main{max-width:720px;margin:4vh auto;padding:clamp(20px,5vw,36px);background:#fff;border:1px solid #cfdfd6;border-radius:20px;box-shadow:0 10px 30px rgba(16,44,49,0.06)}
