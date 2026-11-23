@@ -143,6 +143,25 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>Unit 15 · ആദ്യകാല രാഷ്ട്രീയ ഘടന:</strong> മൂവേന്തർ (ചേരർ, ചോളർ, പാണ്ഡ്യർ) എന്നിവരുടെ അധീശത്വവും; ആയ്, ഏഴിമല (നന്ദൻ) തുടങ്ങിയ കുറുനില മന്നരുടെ ഭരണവും."
             ],
             "examTip": "ഐന്തിണകൾ (Five Tinais) അടിസ്ഥാനമാക്കിയുള്ള ഉപജീവന രീതികളും, പെരിപ്ലസ് രേഖപ്പെടുത്തിയ മുസിരിസ്-റോമൻ സുഗന്ധവ്യഞ്ജന വ്യാപാരവും സംഘകാല ചോദ്യങ്ങൾക്ക് നിർബന്ധമായും പഠിക്കുക."
+          },
+          {
+            "chapterNumber": "Masterclass",
+            "title": "Early Historic Keralam: Sangam, Tinai & Muziris Trade | English Masterclass",
+            "chapter": "Complete Module 3 Syllabus: Sangam Literature (Ettuttokai, Pattuppattu, Akam & Puram, Patittruppattu), The Five Tinais (Kurinci, Mullai, Marutam, Neytal, Palai & Inter-Tinai Barter), Classical Greco-Roman Sources (Periplus, Pliny, Ptolemy), Muziris & Pattanam Excavations (Wharf, Canoe, Roman Amphorae, Coins), Tabula Peutingeriana & Vienna Papyrus, The Muvendar (Cheras, Cholas, Pandyas), and Kurunila Mannar (Ay & Ezhimala Chieftains, Seven Philanthropic Vallalgal)",
+            "duration": "10:17",
+            "thumbnail": "https://i.ytimg.com/vi/3eiMaF03pBc/hqdefault.jpg",
+            "youtubeId": "3eiMaF03pBc",
+            "language": "English",
+            "studyPoints": [
+              "Sangam Corpus & Poetic Conventions: Secular Tamil poetry composed c. 300 BCE–300 CE by Pulavar and Panar; codified into Ettuttokai (Eight Anthologies) and Pattuppattu (Ten Idylls); distinction between Akam (interior love/domesticity) and Puram (public heroism/warfare/kingship); Patittruppattu preserving genealogies and naval conquests of eight Chera monarchs.",
+              "The Five Tinais Eco-Cultural Matrix: Tolkappiyam framework integrating Mutalporul (space/time), Karupporul (deities/occupations), and Uripporul (poetic moods); Kurinci (hills/hunting/Murugan), Mullai (pasture/herding/Mayon), Marutam (riverine paddy/Ventan), Neytal (coast/fishing/salt/Varunan), and Palai (arid/warfare/Korravai); vibrant inter-Tinai barter (Nokku) linking coastal salt with highland spices.",
+              "Classical Greco-Roman Literature & Navigation: Periplus of the Erythraean Sea, Pliny the Elder's Naturalis Historia, Ptolemy's Geographia, and Strabo; Hippalus breakthrough (~45 CE) utilizing SW Monsoon (Edavappathi) for 40-day open-sea direct transit from Aden to Muziris, returning on NE Monsoon.",
+              "Muziris & Pattanam Archaeological Validation: Pliny's 'Primum Emporium Indiae' and Akananuru 149 poem of Yavana gold ships on the Periyar; KCHR multi-season excavations at Pattanam uncovering 6-metre Anjili dugout canoe, brick wharf, teak mooring bollards, tens of thousands of Mediterranean wine amphora shards, Terra Sigillata, and Roman bullion hoards (Kottayam, Eyyal).",
+              "Cartographic & Epigraphic Records: Tabula Peutingeriana depicting 'Templum Augusti' (Temple of Augustus) at Muziris proving resident Roman merchant guilds; 2nd-century Vienna Papyrus documenting bilateral maritime loan contract for cargo aboard the Roman ship Hermapollon sailing to Alexandria.",
+              "Muvendar Hegemony & Kurunila Mannar: The three crowned kings—Cheras (Bow emblem, Vanchi/Muziris), Cholas (Tiger), and Pandyas (Fish); prominent Chera rulers Imayavaramban Nedum Cheralathan and Cheran Senguttuvan (Cilappatikaram Kannagi cult); autonomous chieftains including Ay of Vizhinjam and Nannan of Ezhimala; and the Kadaiyelu Vallalgal (Pari, Pekan, Adiyaman)."
+            ],
+            "examTip": "Calicut University High-Yield Essay Blueprint: Thoroughly examine the eco-cultural concept of the Five Tinais (Mutal, Karu, Uri and inter-Tinai exchange), and critically evaluate the commercial architecture of Indo-Roman trade centered at Muziris (Periplus, Pliny, Pattanam archaeological findings, Tabula Peutingeriana, and Vienna Papyrus).",
+            "english_cc": true
           }
         ]
       },
@@ -396,8 +415,8 @@ window.VOICE_EXPLANATIONS_DATA = {
             "chapterNumber": "Chapter 01",
             "title": "നാടകം: ഓരോരോ കാലത്തിലും — ശ്രീജ കെ.വി.",
             "chapter": "മലയാള നാടകവേദി ചരിത്രാവലോകനം · കുറിയേടത്ത് താത്രി സ്മാർത്ഥവിചാരം · സ്ത്രീപക്ഷ നാടകവേദി",
-            "duration": "14:09",
-            "youtubeId": "_IN_U-38aIo",
+            "duration": "15:04",
+            "youtubeId": "Y1A079YYw5o",
             "thumbnail": "/thumbnails/malayalam_mod4_ch1_oororokaalathilum.png",
             "videoUrl": null,
             "language": "Malayalam",
@@ -408,7 +427,7 @@ window.VOICE_EXPLANATIONS_DATA = {
               "<strong>രംഗഭാഷയുടെ രാഷ്ട്രീയം:</strong> കേവല വിനോദത്തിനപ്പുറം രാഷ്ട്രീയ ചെറുത്തുനിൽപ്പിന്റെയും സ്ത്രീ സ്വാതന്ത്ര്യത്തിന്റെയും മാധ്യമമായി നാടകവേദി മാറിയ ചരിത്രം."
             ],
             "examTip": "കേരളത്തിലെ സാമൂഹിക പരിഷ്കരണത്തിൽ നാടകവേദി വഹിച്ച പങ്കും സ്ത്രീപക്ഷ നാടകങ്ങളുടെ സവിശേഷതകളും വിശകലനം ചെയ്യുക.",
-            "audioLength": "14 മിനിറ്റ് സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്",
+            "audioLength": "15 മിനിറ്റ് സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്",
             "description": "മലയാള നാടകവേദിയുടെ ചരിത്രപരമായ ഉത്ഭവം മുതൽ സ്ത്രീ നാടകവേദിയുടെ ഉദയവും, കുറിയേടത്ത് താത്രി സ്മാർത്ഥവിചാരത്തെ സമകാലിക പെൺജീവിതവുമായി ഇഴചേർക്കുന്ന ശ്രീജ കെ.വിയുടെ വിഖ്യാതമായ 'ഓരോരോ കാലത്തിലും' എന്ന നാടകത്തിന്റെയും പാഠപുസ്തക ചോദ്യോത്തരങ്ങളുടെയും സമ്പൂർണ്ണ മാസ്റ്റർക്ലാസ്സ്.",
             "keyLearningPoints": [
               "മലയാള നാടകവേദിയുടെ ഉത്ഭവം (1882 മണിപ്രവാള ശാകുന്തളം, ചവിട്ടുനാടകം, നാടക കമ്പനികൾ)",
