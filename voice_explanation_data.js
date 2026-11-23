@@ -169,22 +169,21 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE IV: KERALAM UPTO 12TH CENTURY (16 Hours · 22 Marks)",
         "videos": [
           {
-            "chapterNumber": "Masterclass · Full Module 4",
-            "title": "Keralam Upto 12th Century: Cheras, Nadus & Guilds · Complete Masterclass",
-            "chapter": "Complete Module 4 Syllabus: Perumals of Mahodayapuram (800–1124 CE), Nature of Monarchy & Ayiram, Administrative Hierarchy (Perumal, Naduvazhis, Desavazhis & Kuttams), Agrarian Expansion (Wet-Rice, River Valleys & Servitude), Brahmadeya & Devadana Land Grants (32 Brahmin Settlements), Temple Corporations (Uralar & Karalar Tenancy), Customary Law (Muzhikkulam Kacham), Medieval Trade Guilds (Anchuvannam & Manigramam), Royal Charters (Tharisappalli 849 CE & Jewish Copper Plates c. 1000 CE), Cheraman Juma Mosque, Bhakti Movement (Kulasekhara Alwar, Cheraman Perumal Nayanar & Adi Shankaracharya), and Chola-Chera Wars & Swarupams",
-            "duration": "05:53",
-            "thumbnail": "https://i.ytimg.com/vi/GH73T6ax_ok/hqdefault.jpg",
-            "youtubeId": "GH73T6ax_ok",
-            "language": "English",
+            "chapterNumber": "Unit 16 - 17",
+            "title": "പന്ത്രണ്ടാം നൂറ്റാണ്ട് വരെയുള്ള കേരളം: ശാസനങ്ങളും ക്ഷേത്ര വാസ്തുവിദ്യയും (Epigraphy, Architecture & Chera Polity)",
+            "chapter": "Unit 16: Epigraphic Evidences (Vazhappalli, Tarisappalli, Parthivapuram, Thiruvalla) · Unit 17: Archaeology & Temple Architecture (Cheramanparambu, Matilakam, Nadus)",
+            "duration": "19:10",
+            "thumbnail": "https://i.ytimg.com/vi/l1xQTyBb13g/hqdefault.jpg",
+            "youtubeId": "l1xQTyBb13g",
+            "videoUrl": null,
+            "language": "Malayalam",
             "studyPoints": [
-              "The Perumals of Mahodayapuram (800–1124 CE) & Polity: Established at Kodungallur by Kulasekhara Varman; chronological succession reconstructed by Prof. M.G.S. Narayanan using astronomical data; historiographical debates between Elamkulam's centralized imperial state and Narayanan's Brahmin-supported ritual federation; monarch assisted by the elite sworn bodyguard 'Ayiram' (Thousand).",
-              "Territorial Hierarchy & Governance: Decentralized administration spanning 14 hereditary Nadus (Kolathunadu, Eralnadu, Valluvanadu, Venad, etc.) governed by Nadu-udayavar commanding autonomous armed retinues (such as the Arunuttavar of Venad); further subdivided into Desams headed by Desavazhis; democratic checks exercised by Nattukuttam and Desakkuttam popular assemblies.",
-              "Agrarian Expansion & Feudal Institutions: Large-scale transition to wet-rice cultivation along Periyar, Bharathappuzha, and Pamba valleys supported by sluices (Kalingu) and bonded labor (Cherumakkal); institutionalization of tax-exempt Brahmadeya (scholarly) and Devadana (temple) land endowments elevating 32 original Brahmin settlements into wealthy land-owning corporations.",
-              "Tenancy Hierarchy & Temple Customary Law: Socio-economic stratification between Uralar (Brahmin trustees/proprietors) and Karalar (tenant cultivators) bound by fixed grain rents (Pattom and Michavaram); formulation of the Muzhikkulam Kacham code under Bhaskara Ravi Varman penalizing trustee embezzlement with property confiscation and social excommunication.",
-              "Merchant Guilds & Epigraphic Charters: Tharisappalli Copper Plates (849 CE) issued by Ayyan Atikal Tiruvatikal under Sthanu Ravi granting land and 72 aristocratic privileges to East Syrian leader Mar Sapir Iso at Quilon with multi-lingual attestations in Pahlavi, Kufic Arabic, and Judeo-Persian; Jewish Copper Plates (c. 1000 CE) issued by Bhaskara Ravi Varman I granting Anchuvannam guild leadership and royal emblems to Joseph Rabban.",
-              "Cosmopolitanism, Bhakti Movement & Political Decline: Foundational Arab maritime presence commemorated by the Cheraman Juma Mosque at Kodungallur; cultural flourishing through Vaishnava saint-king Kulasekhara Alwar (Mukundamala), Saiva luminary Cheraman Perumal Nayanar (Ponvannattandadi), and Adi Shankaracharya's Advaita Vedanta; final dissolution of the central Chera kingdom following the Chola-Chera conflicts and the rise of autonomous matrilineal Swarupams (Zamorins, Venad, Cochin)."
+              "<strong>Unit 16 · എപ്പിഗ്രാഫിക് തെളിവുകൾ (Epigraphy):</strong> വാഴപ്പള്ളി ശാസനം (832 CE - രാജശേഖര വർമ്മൻ, വട്ടെഴുത്ത് ലിപിയിലെ ആദ്യ രേഖ), തരിസാപ്പള്ളി ശാസനം (849 CE - അയ്യാനടികൾ തിരുവടികൾ ക്രിസ്ത്യൻ വ്യാപാരി മാർ സപീർ ഈശോയ്ക്ക് നൽകിയ അവകാശങ്ങൾ), പാർത്ഥിവപുരം ശാസനം (വിദ്യാകേന്ദ്രമായ ശാല), തിരുവല്ല ചെപ്പേടുകൾ.",
+              "<strong>മഹോദയപുരത്തെ ചേര പെരുമാക്കന്മാർ (AD 800–1124):</strong> കുലശേഖര ആഴ്‌വാർ സ്ഥാപിച്ച രണ്ടാം ചേര സാമ്രാജ്യം. തലസ്ഥാനം മഹോദയപുരം (കൊടുങ്ങല്ലൂർ). ഭാസ്കര രവിവർമ്മൻ, രാമവർമ്മ കുലശേഖരൻ തുടങ്ങിയ പ്രമുഖ ഭരണാധികാരികൾ.",
+              "<strong>Unit 17 · പുരാവസ്തു & ക്ഷേത്ര വാസ്തുവിദ്യ:</strong> ചേരമാൻപറമ്പ്, മതിലകം, തൃക്കുലശേഖരപുരം ക്ഷേത്രങ്ങൾ. ദ്രാവിഡ ശൈലിയും തദ്ദേശീയ തച്ചുശാസ്ത്രവും ഇഴചേർന്ന വൃത്താകാര-ചതുരാകാര ശ്രീകോവിലുകൾ, നമസ്കാര മണ്ഡപങ്ങൾ, ചുമർചിത്രങ്ങൾ.",
+              "<strong>നാടുകളും വാണിജ്യ സംഘങ്ങളും:</strong> 14 നാടുകൾ (കോലത്തുനാട്, ഏറനാട്, വള്ളുവനാട്, വേണാട് മുതലായവ) രൂപപ്പെട്ടതും; അഞ്ചുവണ്ണം, മണിഗ്രാമം, വളഞ്ചിയർ തുടങ്ങിയ വ്യാപാര ഗിൽഡുകളും (Merchant Guilds); ചേരിക്കൽ, ബ്രഹ്മസ്വം, ദേവസ്വം ഭൂവുടമ വ്യവസ്ഥയും."
             ],
-            "examTip": "Focus essays on the administrative hierarchy of Nadus, the socio-economic impact of Brahmadeya land grants and the Muzhikkulam Kacham, and comparative epigraphic rights in the Tharisappalli and Jewish copper plates."
+            "examTip": "വാഴപ്പള്ളി, തരിസാപ്പള്ളി ശാസനങ്ങളുടെ പ്രാധാന്യവും; ചേര പെരുമാക്കന്മാരുടെ കാലത്തെ കാർഷിക വികാസവും ക്ഷേത്ര കേന്ദ്രീകൃത സമൂഹവും എസ്സേ ചോദ്യങ്ങൾക്ക് തയ്യാറാക്കുക."
           }
         ]
       },
@@ -3601,71 +3600,37 @@ window.VOICE_EXPLANATIONS_DATA = {
         "videos": [
           {
             "chapterNumber": "Chapter 01",
-            "title": "सुमित्रानंदन पंत : प्रथम रश्मि (काव्य सौंदर्य व विस्मय-बोध)",
-            "chapter": "छायावादी प्रकृति सौंदर्य, उषाकालीन बिंब-विधान एवं संगीतात्मकता",
-            "duration": "21:20",
-            "language": "Hindi",
-            "youtubeId": "-f5H3lZR9SQ",
-            "thumbnail": "https://i.ytimg.com/vi/-f5H3lZR9SQ/hqdefault.jpg",
-            "studyPoints": [
-              "<strong>कवि परिचय एवं छायावादी दृष्टि:</strong> सुमित्रानंदन पंत छायावाद के प्रमुख स्तंभ हैं जिन्हें 'प्रकृति का सुकुमार कवि' कहा जाता है। 'प्रथम रश्मि' उनकी प्रसिद्ध कविता है जिसमें प्रकृति के सौंदर्य और उषाकाल का अलौकिक वर्णन है।",
-              "<strong>विस्मय-बोध एवं जिज्ञासा:</strong> कवि पक्षियों और प्रकृति के जागरण पर आश्चर्य व्यक्त करता है कि प्रभात की पहली किरण का आभास चिड़िया को सबसे पहले कैसे हुआ—'प्रथम रश्मि का आना रंगिणि! तूने कैसे पहचाना?'",
-              "<strong>प्रकृति का मानवीकरण एवं बिंब-विधान:</strong> रात के अंधकार से प्रकृति के जागरण तक के दृश्य को कोमलकांत पदावली, सजीव ध्वन्यात्मक बिंबों और लाक्षणिक भाषा में प्रस्तुत किया गया है।",
-              "<strong>काव्यात्मक सौंदर्य एवं शिल्प:</strong> कविता में गेयता (संगीतात्मकता), अनुप्रास व रूपक अलंकारों का मनोहारी प्रयोग और तत्सम प्रधान परिष्कृत खड़ी बोली का सौंदर्य दर्शनीय है।"
-            ],
-            "examTip": "विश्वविद्यालय परीक्षा के लिए 'प्रथम रश्मि' कविता में व्यक्त विस्मय-बोध, प्रकृति-चित्रण की विशेषताएं और पंत की लाक्षणिक काव्य-भाषा पर 10 अंक का आलोचनात्मक प्रश्न अवश्य तैयार करें।",
-            "videoUrl": null
-          },
-          {
-            "chapterNumber": "Chapter 02",
-            "title": "कुँवर नारायण : कविता की ज़रूरत",
-            "chapter": "समकालीन कविता में मानवीय संवेदना",
-            "duration": "07:44",
-            "youtubeId": "-wA__gVCqyA",
-            "language": "Hindi",
-            "thumbnail": "https://i.ytimg.com/vi/-wA__gVCqyA/hqdefault.jpg",
-            "videoUrl": null,
-            "studyPoints": [
-              "<strong>समकालीन जीवन में कविता की प्रासंगिकता:</strong> कुँवर नारायण की यह कविता यांत्रिक और उपभोक्तावादी युग में मानवीय संवेदना, करुणा और आत्मीयता को जीवित रखने के लिए कविता को अनिवार्य मानती है।",
-              "<strong>विचारपरकता एवं बौद्धिकता:</strong> कुँवर नारायण की कविता में सपाटबयानी के स्थान पर गंभीर दार्शनिक अंतर्दृष्टि और विवेकशीलता दृष्टिगोचर होती है।",
-              "<strong>मानवीय गरिमा का संरक्षण:</strong> कविता बाजारवाद और संवेदनहीनता के विरुद्ध मनुष्य की अंतरात्मा की रक्षा का मजबूत आधार बनती है।",
-              "<strong>शिल्प और भाषा:</strong> सहज, संयत और आडंबरहीन भाषा शैली जिसमें बिंबों और प्रतीकों का अत्यंत सार्थक प्रयोग है।"
-            ],
-            "examTip": "Calicut University FYUGP परीक्षा के लिए कुँवर नारायण की 'कविता की ज़रूरत' के विचार पक्ष, समकालीन संकट और कविता की भूमिका पर 5 व 10 अंक के प्रश्नों की तैयारी करें।"
-          },
-          {
-            "chapterNumber": "Chapter 03",
-            "title": "असंगघोष : मैं दूँगा माकूल जवाब (दलित चेतना व सामाजिक प्रतिरोध)",
-            "chapter": "समकालीन दलित कविता, सामाजिक विषमता का विरोध एवं प्रतिरोध चेतना",
-            "duration": "21:20",
-            "language": "Hindi",
-            "youtubeId": "-f5H3lZR9SQ",
-            "thumbnail": "https://i.ytimg.com/vi/-f5H3lZR9SQ/hqdefault.jpg",
-            "studyPoints": [
-              "<strong>समकालीन दलित कविता एवं असंगघोष:</strong> असंगघोष हिन्दी दलित साहित्य के प्रमुख कवि हैं जिनकी कविताएं सदियों से शोषित और उपेक्षित वर्ग की पीड़ा व आक्रोश को स्वर देती हैं।",
-              "<strong>प्रतिरोध का सशक्त स्वर:</strong> 'मैं दूँगा माकूल जवाब' में कवि केवल याचना या लाचारी व्यक्त नहीं करता, बल्कि सामाजिक अन्याय, जातिवादी उत्पीड़न और पाखंड के विरुद्ध निर्भीक प्रत्युत्तर (माकूल जवाब) देने का संकल्प लेता है।",
-              "<strong>कथ्य और भाषा का आक्रामक शिल्प:</strong> कविता में बनावटी अलंकरण के स्थान पर जनसाधारण की सीधी, सपाट और चोट करने वाली यथार्थवादी भाषा का प्रयोग हुआ है, जो पाठक के भीतर सामाजिक चेतना जगाती है।",
-              "<strong>समानता एवं आत्मसम्मान की मांग:</strong> कविता सामंती मानसिकता पर सीधा प्रहार करती है और मानवीय गरिमा, समानता व संवैधानिक अधिकारों की पुनःस्थापना पर बल देती है।"
-            ],
-            "examTip": "Calicut University FYUGP परीक्षा के लिए 'मैं दूँगा माकूल जवाब' कविता के मूल भाव, दलित चेतना के स्वरूप तथा सामाजिक यथार्थ के चित्रण पर 5 व 10 अंक के प्रश्नों की तैयारी करें।",
-            "videoUrl": null
-          },
-          {
-            "chapterNumber": "Chapter 04",
             "title": "आधुनिक हिन्दी कविता : भाव और संरचना",
             "chapter": "काव्य का भाव-सौंदर्य, कथ्य, शिल्प एवं संरचना-विधान",
             "duration": "07:44",
             "language": "Hindi",
+            "youtubeId": "-wA__gVCqyA",
+            "thumbnail": "https://i.ytimg.com/vi/-wA__gVCqyA/hqdefault.jpg",
+            "videoUrl": null,
             "studyPoints": [
               "<strong>भाव पक्ष (Thematic & Emotional Dimension):</strong> आधुनिक हिन्दी कविता में कवि की अनुभूति, सामाजिक यथार्थ, मानवीय संवेदना और विचारों की गहन अभिव्यक्ति। भाव कविता की आत्मा है जो पाठक के हृदय में रसानुभूति उत्पन्न करती है।",
               "<strong>संरचना पक्ष (Formal & Structural Dimension):</strong> कविता का बाह्य कलेवर, छंद-विधान, लय, तुक, बिंब, प्रतीक और भाषा शैली। आधुनिक काल में मुक्त छंद (Free Verse) के आगमन के साथ संरचना अधिक लचीली और विचार-प्रधान बनी।",
               "<strong>कथ्य और शिल्प का समन्वय:</strong> आधुनिक कविता केवल रीतिकालीन अलंकरण नहीं बल्कि समकालीन जीवन के द्वंद्व और संघर्षों को नए प्रतीकों और बोलचाल की भाषा में ढालने का सशक्त माध्यम है।",
               "<strong>छायावाद से समकालीन कविता तक का विकास:</strong> छायावादी प्रकृति-चित्रण और वैयक्तिकता से लेकर प्रगतिवाद, प्रयोगवाद और नई कविता में सामाजिक सरोकारों और जन-चेतना का विकास।"
             ],
-            "examTip": "Calicut University FYUGP परीक्षा के लिए आधुनिक कविता के 'भाव पक्ष' (विषयवस्तु, संवेदना) और 'शिल्प/संरचना पक्ष' (भाषा, बिंब, मुक्त छंद) के बीच अंतर और परस्पर संबंधों पर 10 अंक का प्रश्न विशेष रूप से तैयार करें।",
-            "youtubeId": "-wA__gVCqyA",
-            "thumbnail": "https://i.ytimg.com/vi/-wA__gVCqyA/hqdefault.jpg",
-            "videoUrl": null
+            "examTip": "Calicut University FYUGP परीक्षा के लिए आधुनिक कविता के 'भाव पक्ष' (विषयवस्तु, संवेदना) और 'शिल्प/संरचना पक्ष' (भाषा, बिंब, मुक्त छंद) के बीच अंतर और परस्पर संबंधों पर 10 अंक का प्रश्न विशेष रूप से तैयार करें।"
+          },
+          {
+            "chapterNumber": "Chapter 02",
+            "title": "आधुनिक हिन्दी कविता : सुमित्रानंदन पंत व असंगघोष",
+            "chapter": "सुमित्रानंदन पंत (प्रथम रश्मि) एवं असंगघोष (मैं दूँगा माकूल जवाब)",
+            "duration": "21:20",
+            "language": "Hindi",
+            "youtubeId": "-f5H3lZR9SQ",
+            "thumbnail": "https://i.ytimg.com/vi/-f5H3lZR9SQ/hqdefault.jpg",
+            "videoUrl": null,
+            "studyPoints": [
+              "<strong>सुमित्रानंदन पंत एवं छायावादी दृष्टि:</strong> प्रकृति के सुकुमार कवि पंत की 'प्रथम रश्मि' कविता में प्रकृति का विस्मयकारी जागरण, उषाकालीन सौंदर्य और अलौकिक बिंब-विधान का चित्रण है।",
+              "<strong>प्रकृति का मानवीकरण एवं बिंब:</strong> रात के अंधकार से प्रकृति के जागरण तक के दृश्य को कोमलकांत पदावली, सजीव ध्वन्यात्मक बिंबों और लाक्षणिक भाषा में प्रस्तुत किया गया है।",
+              "<strong>समकालीन दलित कविता एवं असंगघोष:</strong> असंगघोष हिन्दी दलित साहित्य के प्रमुख हस्ताक्षर हैं जिनकी कविताएं सदियों से शोषित और उपेक्षित वर्ग की पीड़ा, सामाजिक न्याय और मानवीय गरिमा को स्वर देती हैं।",
+              "<strong>प्रतिरोध की चेतना एवं माकूल जवाब:</strong> 'मैं दूँगा माकूल जवाब' सामंती सोच और सामाजिक शोषण के विरुद्ध शोषित वर्ग के स्वाभिमान, साहस और संवैधानिक समता का उद्घोष है।"
+            ],
+            "examTip": "Calicut University FYUGP परीक्षा के लिए पंत के प्रकृति-चित्रण व विस्मय-बोध तथा असंगघोष की दलित चेतना व सामाजिक प्रतिरोध पर 10 व 15 अंक के निबंधात्मक प्रश्न अत्यंत महत्वपूर्ण हैं।"
           }
         ]
       },
@@ -3711,7 +3676,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 8
+    "totalVideos": 6
   },
   "mathematics": {
     "name": "Mathematics",
