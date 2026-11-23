@@ -3367,6 +3367,7 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
       const pdfHeaders = new Headers(response.headers);
       pdfHeaders.set("Content-Disposition", "inline");
       pdfHeaders.set("X-Content-Type-Options", "nosniff");
+      pdfHeaders.set("X-Robots-Tag", "noindex, follow");
       return new Response(response.body, {
         status: response.status,
         statusText: response.statusText,

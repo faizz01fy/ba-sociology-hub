@@ -169,21 +169,22 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE IV: KERALAM UPTO 12TH CENTURY (16 Hours · 22 Marks)",
         "videos": [
           {
-            "chapterNumber": "Unit 16 - 17",
-            "title": "പന്ത്രണ്ടാം നൂറ്റാണ്ട് വരെയുള്ള കേരളം: ശാസനങ്ങളും ക്ഷേത്ര വാസ്തുവിദ്യയും (Epigraphy, Architecture & Chera Polity)",
-            "chapter": "Unit 16: Epigraphic Evidences (Vazhappalli, Tarisappalli, Parthivapuram, Thiruvalla) · Unit 17: Archaeology & Temple Architecture (Cheramanparambu, Matilakam, Nadus)",
-            "duration": "19:10",
-            "thumbnail": "https://i.ytimg.com/vi/l1xQTyBb13g/hqdefault.jpg",
-            "youtubeId": "l1xQTyBb13g",
-            "videoUrl": null,
-            "language": "Malayalam",
+            "chapterNumber": "Masterclass · Full Module 4",
+            "title": "Keralam Upto 12th Century: Cheras, Nadus & Guilds · Complete Masterclass",
+            "chapter": "Complete Module 4 Syllabus: Perumals of Mahodayapuram (800–1124 CE), Nature of Monarchy & Ayiram, Administrative Hierarchy (Perumal, Naduvazhis, Desavazhis & Kuttams), Agrarian Expansion (Wet-Rice, River Valleys & Servitude), Brahmadeya & Devadana Land Grants (32 Brahmin Settlements), Temple Corporations (Uralar & Karalar Tenancy), Customary Law (Muzhikkulam Kacham), Medieval Trade Guilds (Anchuvannam & Manigramam), Royal Charters (Tharisappalli 849 CE & Jewish Copper Plates c. 1000 CE), Cheraman Juma Mosque, Bhakti Movement (Kulasekhara Alwar, Cheraman Perumal Nayanar & Adi Shankaracharya), and Chola-Chera Wars & Swarupams",
+            "duration": "05:53",
+            "thumbnail": "https://i.ytimg.com/vi/GH73T6ax_ok/hqdefault.jpg",
+            "youtubeId": "GH73T6ax_ok",
+            "language": "English",
             "studyPoints": [
-              "<strong>Unit 16 · എപ്പിഗ്രാഫിക് തെളിവുകൾ (Epigraphy):</strong> വാഴപ്പള്ളി ശാസനം (832 CE - രാജശേഖര വർമ്മൻ, വട്ടെഴുത്ത് ലിപിയിലെ ആദ്യ രേഖ), തരിസാപ്പള്ളി ശാസനം (849 CE - അയ്യാനടികൾ തിരുവടികൾ ക്രിസ്ത്യൻ വ്യാപാരി മാർ സപീർ ഈശോയ്ക്ക് നൽകിയ അവകാശങ്ങൾ), പാർത്ഥിവപുരം ശാസനം (വിദ്യാകേന്ദ്രമായ ശാല), തിരുവല്ല ചെപ്പേടുകൾ.",
-              "<strong>മഹോദയപുരത്തെ ചേര പെരുമാക്കന്മാർ (AD 800–1124):</strong> കുലശേഖര ആഴ്‌വാർ സ്ഥാപിച്ച രണ്ടാം ചേര സാമ്രാജ്യം. തലസ്ഥാനം മഹോദയപുരം (കൊടുങ്ങല്ലൂർ). ഭാസ്കര രവിവർമ്മൻ, രാമവർമ്മ കുലശേഖരൻ തുടങ്ങിയ പ്രമുഖ ഭരണാധികാരികൾ.",
-              "<strong>Unit 17 · പുരാവസ്തു & ക്ഷേത്ര വാസ്തുവിദ്യ:</strong> ചേരമാൻപറമ്പ്, മതിലകം, തൃക്കുലശേഖരപുരം ക്ഷേത്രങ്ങൾ. ദ്രാവിഡ ശൈലിയും തദ്ദേശീയ തച്ചുശാസ്ത്രവും ഇഴചേർന്ന വൃത്താകാര-ചതുരാകാര ശ്രീകോവിലുകൾ, നമസ്കാര മണ്ഡപങ്ങൾ, ചുമർചിത്രങ്ങൾ.",
-              "<strong>നാടുകളും വാണിജ്യ സംഘങ്ങളും:</strong> 14 നാടുകൾ (കോലത്തുനാട്, ഏറനാട്, വള്ളുവനാട്, വേണാട് മുതലായവ) രൂപപ്പെട്ടതും; അഞ്ചുവണ്ണം, മണിഗ്രാമം, വളഞ്ചിയർ തുടങ്ങിയ വ്യാപാര ഗിൽഡുകളും (Merchant Guilds); ചേരിക്കൽ, ബ്രഹ്മസ്വം, ദേവസ്വം ഭൂവുടമ വ്യവസ്ഥയും."
+              "The Perumals of Mahodayapuram (800–1124 CE) & Polity: Established at Kodungallur by Kulasekhara Varman; chronological succession reconstructed by Prof. M.G.S. Narayanan using astronomical data; historiographical debates between Elamkulam's centralized imperial state and Narayanan's Brahmin-supported ritual federation; monarch assisted by the elite sworn bodyguard 'Ayiram' (Thousand).",
+              "Territorial Hierarchy & Governance: Decentralized administration spanning 14 hereditary Nadus (Kolathunadu, Eralnadu, Valluvanadu, Venad, etc.) governed by Nadu-udayavar commanding autonomous armed retinues (such as the Arunuttavar of Venad); further subdivided into Desams headed by Desavazhis; democratic checks exercised by Nattukuttam and Desakkuttam popular assemblies.",
+              "Agrarian Expansion & Feudal Institutions: Large-scale transition to wet-rice cultivation along Periyar, Bharathappuzha, and Pamba valleys supported by sluices (Kalingu) and bonded labor (Cherumakkal); institutionalization of tax-exempt Brahmadeya (scholarly) and Devadana (temple) land endowments elevating 32 original Brahmin settlements into wealthy land-owning corporations.",
+              "Tenancy Hierarchy & Temple Customary Law: Socio-economic stratification between Uralar (Brahmin trustees/proprietors) and Karalar (tenant cultivators) bound by fixed grain rents (Pattom and Michavaram); formulation of the Muzhikkulam Kacham code under Bhaskara Ravi Varman penalizing trustee embezzlement with property confiscation and social excommunication.",
+              "Merchant Guilds & Epigraphic Charters: Tharisappalli Copper Plates (849 CE) issued by Ayyan Atikal Tiruvatikal under Sthanu Ravi granting land and 72 aristocratic privileges to East Syrian leader Mar Sapir Iso at Quilon with multi-lingual attestations in Pahlavi, Kufic Arabic, and Judeo-Persian; Jewish Copper Plates (c. 1000 CE) issued by Bhaskara Ravi Varman I granting Anchuvannam guild leadership and royal emblems to Joseph Rabban.",
+              "Cosmopolitanism, Bhakti Movement & Political Decline: Foundational Arab maritime presence commemorated by the Cheraman Juma Mosque at Kodungallur; cultural flourishing through Vaishnava saint-king Kulasekhara Alwar (Mukundamala), Saiva luminary Cheraman Perumal Nayanar (Ponvannattandadi), and Adi Shankaracharya's Advaita Vedanta; final dissolution of the central Chera kingdom following the Chola-Chera conflicts and the rise of autonomous matrilineal Swarupams (Zamorins, Venad, Cochin)."
             ],
-            "examTip": "വാഴപ്പള്ളി, തരിസാപ്പള്ളി ശാസനങ്ങളുടെ പ്രാധാന്യവും; ചേര പെരുമാക്കന്മാരുടെ കാലത്തെ കാർഷിക വികാസവും ക്ഷേത്ര കേന്ദ്രീകൃത സമൂഹവും എസ്സേ ചോദ്യങ്ങൾക്ക് തയ്യാറാക്കുക."
+            "examTip": "Focus essays on the administrative hierarchy of Nadus, the socio-economic impact of Brahmadeya land grants and the Muzhikkulam Kacham, and comparative epigraphic rights in the Tharisappalli and Jewish copper plates."
           }
         ]
       },
