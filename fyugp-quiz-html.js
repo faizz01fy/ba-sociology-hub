@@ -8,6 +8,8 @@ const quizAppHtml = `<!doctype html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <title>Idioms Learning | English Ability Enhancement</title>
+<meta name="description" content="Calicut University FYUGP English Ability Enhancement Course: Interactive Idioms learning, practice flashcards, and conceptual mastery quizzes.">
+<link rel="canonical" href="https://academichubfaiz.in/calicut-university-fyugp">
 <style>
 :root {
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
