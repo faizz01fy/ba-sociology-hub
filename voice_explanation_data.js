@@ -2083,6 +2083,20 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 01: PHILOSOPHICAL PERSPECTIVES ON EDUCATION",
         "videos": [
           {
+            "chapterNumber": "Masterclass 01",
+            "title": "Philosophy of Education: Module 1 Masterclass | Calicut University FYUGP MDC",
+            "chapter": "Complete Masterclass · തത്ത്വചിന്താപരമായ അടിത്തറ (Full Syllabus & MCQs)",
+            "duration": "21:45",
+            "youtubeId": "F8-mh2mc8E8",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ലാറ്റിൻ പദോൽപ്പത്തി: Educare, Educere, Educatum എന്നിവയും ഗ്രീക്ക് Paideia, Arete സങ്കല്പങ്ങളും.",
+              "ക്ലാസിക്കൽ തത്ത്വചിന്തകർ: സോക്രട്ടീസ് (Maieutics), പ്ലേറ്റോ (Allegory of Cave), അരിസ്റ്റോട്ടിൽ (Eudaimonia), സിസറോ, അക്വിനാസ്, ഇറാസ്മസ്.",
+              "തത്ത്വശാസ്ത്രത്തിന്റെ വ്യാപ്തിയും ധർമ്മങ്ങളും: Metaphysics, Epistemology, Axiology, Logic എന്നിവയും 40 സമഗ്ര ചോദ്യോത്തരങ്ങളും."
+            ],
+            "examTip": "University Masterclass Focus: Comprehensive 40-slide syllabus coverage of Module 1 with full analytical Malayalam explanation and university model exam MCQs."
+          },
+          {
             "chapterNumber": "Chapter 01",
             "title": "വിദ്യാഭ്യാസത്തിന്റെ അർത്ഥവും ചരിത്രപരമായ കാഴ്ചപ്പാടുകളും (Meaning & History of Education)",
             "chapter": "Academic Hub Special · എറ്റിമോളജി, ലക്ഷ്യങ്ങൾ & ചരിത്ര പരിണാമം",
@@ -2207,7 +2221,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 8
+    "totalVideos": 9
   },
   "development-issues-in-indian-economy": {
     "name": "Development Issues in Indian Economy",
