@@ -2191,6 +2191,20 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 03: THINKERS & EDUCATIONAL VISION",
         "videos": [
           {
+            "chapterNumber": "Masterclass 03",
+            "title": "Philosophy of Education: Module 3 Masterclass | Calicut University FYUGP MDC",
+            "chapter": "Complete Masterclass · ഭാരതീയ വിദ്യാഭ്യാസ ദർശനങ്ങൾ: വിവേകാനന്ദൻ, അരബിന്ദോ, ഗാന്ധിജി (Full Syllabus & MCQs)",
+            "duration": "22:55",
+            "youtubeId": "lLu0hOUTtXE",
+            "language": "Malayalam",
+            "studyPoints": [
+              "സ്വാമി വിവേകാനന്ദൻ: 'മനുഷ്യനിൽ അന്തർലീനമായ പൂർണ്ണതയുടെ പ്രകാശനം', മനുഷ്യനിർമ്മാണം (Man-making), സ്വഭാവരൂപീകരണം, ഏകാഗ്രത, ആശയങ്ങളുടെ സ്വാംശീകരണം.",
+              "ശ്രീ അരബിന്ദോ: പൂർണ്ണ വിദ്യാഭ്യാസം (Integral Education), പഞ്ചതല വ്യക്തിത്വം (Physical, Vital, Mental, Psychic, Spiritual), അധ്യാപനത്തിന്റെ മൂന്ന് മൗലിക തത്ത്വങ്ങൾ ('ഒന്നും പഠിപ്പിക്കാനാവില്ല').",
+              "മഹാത്മാഗാന്ധി: 3H സമന്വയം (Head, Heart, Hand), വാർദ്ധാ വിദ്യാഭ്യാസ പദ്ധതി (1937 - Nai Talim), തൊഴിൽ കേന്ദ്രീകൃത ബോധനരീതി, മാതൃഭാഷാ മാധ്യമം, 40 സമഗ്ര മോഡൽ പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ."
+            ],
+            "examTip": "University Masterclass Focus: Comprehensive 40-slide syllabus coverage of Module 3 comparing the educational philosophies of Swami Vivekananda, Sri Aurobindo, and Mahatma Gandhi."
+          },
+          {
             "chapterNumber": "Chapter 06",
             "title": "ഗാന്ധിജിയുടെ നയി താലിം എന്ന വിദ്യാഭ്യാസ വിപ്ലവം (Mahatma Gandhi's Nai Talim)",
             "chapter": "Academic Hub Special · വാർധ പദ്ധതി, തൊഴിൽധിഷ്ഠിത വിദ്യാഭ്യാസം & 3H തത്വം",
@@ -2235,7 +2249,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 10
+    "totalVideos": 11
   },
   "development-issues-in-indian-economy": {
     "name": "Development Issues in Indian Economy",
