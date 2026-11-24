@@ -2995,7 +2995,7 @@ window.VOICE_EXPLANATIONS_DATA = {
             "title": "ഡിമാൻഡ് നിയമവും സവിശേഷതകളും (Demand: Law, Determinants, Curves & Market Demand)",
             "chapter": "Academic Hub Special · വ്യക്തിഗത & മാർക്കറ്റ് ഡിമാൻഡ്, ഡിമാൻഡ് ഷിഫ്റ്റുകൾ",
             "duration": "06:21",
-            "youtubeId": "Mu1Ktkzr_ME",
+            "youtubeId": "Z6a9ga8O4OE",
             "videoUrl": "/micro-demand-review.html",
             "thumbnail": "/thumbnails/microeconomics/micro_mod1_unit1_demand.png",
             "studyPoints": [
