@@ -2144,6 +2144,20 @@ window.VOICE_EXPLANATIONS_DATA = {
         "moduleName": "MODULE 02: MAJOR SCHOOLS OF PHILOSOPHY",
         "videos": [
           {
+            "chapterNumber": "Masterclass 02",
+            "title": "Philosophy of Education: Module 2 Masterclass | Calicut University FYUGP MDC",
+            "chapter": "Complete Masterclass · പാശ്ചാത്യ ദാർശനിക ശാഖകൾ: Idealism, Naturalism, Pragmatism (Full Syllabus & MCQs)",
+            "duration": "20:59",
+            "youtubeId": "B7wfIFrOOCw",
+            "language": "Malayalam",
+            "studyPoints": [
+              "ആദർശവാദം (Idealism): മനസ്സ്, ആശയങ്ങൾ, ആത്മീയ മൂല്യങ്ങൾ എന്നിവയുടെ പരമമായ പ്രാധാന്യം, പ്ലേറ്റോയുടെ ഗുഹാ ഉപമ (Allegory of the Cave), അധ്യാപകൻ ആത്മീയ മാതൃകയായി വർത്തിക്കുന്ന തത്വം.",
+              "പ്രകൃതിവാദം (Naturalism): 'പ്രകൃതിയിലേക്ക് മടങ്ങുക' (Return to Nature), റൂസ്സോയുടെ 'എമിൽ' (Emile), നെഗറ്റീവ് വിദ്യാഭ്യാസം (Negative Education), പ്രകൃതിസഹജമായ പരിപോഷണം.",
+              "പ്രായോഗികവാദം (Pragmatism): ജോൺ ഡ്യൂയിയുടെ ഉപകരണവാദം (Instrumentalism), 'ചെയ്തു പഠിക്കുക' (Learning by Doing), ജനാധിപത്യപരമായ ക്ലാസ്റൂം, 40 സമഗ്ര മോഡൽ പരീക്ഷാ ചോദ്യോത്തരങ്ങൾ."
+            ],
+            "examTip": "University Masterclass Focus: Comprehensive 40-slide syllabus coverage of Module 2 comparing Idealism, Naturalism, and Pragmatism across Metaphysics, Epistemology, Axiology, Curriculum, and Teacher Roles."
+          },
+          {
             "chapterNumber": "Chapter 04",
             "title": "പാശ്ചാത്യ വിദ്യാഭ്യാസത്തിലെ ആദർശവാദവും പ്രകൃതിവാദവും (Idealism & Naturalism in Western Education)",
             "chapter": "Academic Hub Special · പ്ലേറ്റോ vs റൂസ്സോ, ആശയങ്ങൾ vs പ്രകൃതി",
@@ -2221,7 +2235,7 @@ window.VOICE_EXPLANATIONS_DATA = {
         ]
       }
     ],
-    "totalVideos": 9
+    "totalVideos": 10
   },
   "development-issues-in-indian-economy": {
     "name": "Development Issues in Indian Economy",
