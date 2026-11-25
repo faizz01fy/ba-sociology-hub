@@ -3409,7 +3409,8 @@ Sitemap: https://academichubfaiz.in/sitemap-video.xml
 
       const isUtilityPath = /^\/(?:psc-cracker)(?:\.html)?$/i.test(url.pathname);
       
-      const canLoadAds = !isUtilityPath;
+      const isFyugpPage = url.pathname === fyugpQuizPath || url.pathname === fyugpQuizPath + "/";
+      const canLoadAds = !isUtilityPath && !isFyugpPage;
 
       const isEU = request.cf?.isEUCountry === "1" || request.cf?.isEUCountry === true;
       const euCountries = new Set([
