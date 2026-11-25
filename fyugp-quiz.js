@@ -206,9 +206,9 @@ footer{margin-top:24px;display:flex;justify-content:space-between;align-items:ce
 <body>
 <main>
 <div class="nav-breadcrumbs"><a href="/">Academic Hub</a> <span>→</span> <span style="color:#086454">Calicut University FYUGP (Regular)</span></div>
-<small style="color:#086454;font-weight:800;letter-spacing:0.08em;text-transform:uppercase">Official Portal · Regular Degree Programmes</small>
+<small style="color:#086454;font-weight:800;letter-spacing:0.08em;text-transform:uppercase">Independent Study Directory · Regular Degree Programmes</small>
 <h1>Calicut University FYUGP (Regular)</h1>
-<p class="portal-subtitle">Official 4-year undergraduate curriculum directory for Calicut University campus departments. Select a department below:</p>
+<p class="portal-subtitle">Academic Hub is an independent study resource for Calicut University students. It has no affiliation with or endorsement from the University of Calicut. Select a department below:</p>
 
 <!-- 4 Main Department Tabs -->
 <div class="dept-tabs-nav" role="tablist" aria-label="Calicut University FYUGP Departments">
@@ -260,7 +260,7 @@ footer{margin-top:24px;display:flex;justify-content:space-between;align-items:ce
 
 <footer>
 <a href="/">← Return to Academic Hub Home</a>
-<span style="color:#64748b;font-size:0.8rem">Official Academic Hub</span>
+<span style="color:#64748b;font-size:0.8rem">Academic Hub</span>
 </footer>
 </main>
 <script>
